@@ -58,7 +58,9 @@ include/ncbi/connect/ncbi_heapmgr.h
 include/ncbi/connect/ncbi_host_info.h
 include/ncbi/connect/ncbi_host_infop.h
 include/ncbi/connect/ncbi_http_connector.h
+include/ncbi/connect/ncbi_lb.h
 include/ncbi/connect/ncbi_lbsmd.h
+include/ncbi/connect/ncbi_local.h
 include/ncbi/connect/ncbi_memory_connector.h
 include/ncbi/connect/ncbi_priv.h
 include/ncbi/connect/ncbi_sendmail.h
@@ -438,6 +440,7 @@ include/ncbi/seqsplit.h
 include/ncbi/seqsub.h
 include/ncbi/sequtil.h
 include/ncbi/shim3d.h
+include/ncbi/showalignwrap.h
 include/ncbi/simple.h
 include/ncbi/simutil.h
 include/ncbi/smith_waterman.h
@@ -485,6 +488,7 @@ include/ncbi/udvdef.h
 include/ncbi/udviewer.h
 include/ncbi/udvseq.h
 include/ncbi/undefwin.h
+include/ncbi/unified_pvalues.h
 include/ncbi/urkbias.h
 include/ncbi/urkcnsrt.h
 include/ncbi/urkdust.h
@@ -619,7 +623,6 @@ lib/ncbi/libvibrant.a
 %%PORTDOCS%%%%DOCSDIR%%/man/Nentrez.1
 %%PORTDOCS%%%%DOCSDIR%%/man/Psequin.1
 %%PORTDOCS%%%%DOCSDIR%%/man/asn2asn.1
-
 %%PORTDOCS%%%%DOCSDIR%%/man/asn2gb.1
 %%PORTDOCS%%%%DOCSDIR%%/man/asn2xml.1
 %%PORTDOCS%%%%DOCSDIR%%/man/asndhuff.1
@@ -699,6 +702,9 @@ lib/ncbi/libvibrant.a
 %%PORTDOCS%%%%DOCSDIR%%/seq_install/win-netscape.css
 %%PORTDOCS%%%%DOCSDIR%%/sequin.htm
 %%PORTDOCS%%%%DOCSDIR%%/tbl2asn.txt
+%%DATADIR%%/16Score.nhr
+%%DATADIR%%/16Score.nin
+%%DATADIR%%/16Score.nsq
 %%DATADIR%%/BLOSUM45
 %%DATADIR%%/BLOSUM62
 %%DATADIR%%/BLOSUM80
