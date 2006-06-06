@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Catalyst/Helper/Model/DBIC/Schema.pm
-%%SITE_PERL%%/Catalyst/Helper/Model/DBIC/SchemaLoader.pm
 %%SITE_PERL%%/Catalyst/Model/DBIC/Schema.pm
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model/DBIC
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
