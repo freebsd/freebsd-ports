@@ -3,3 +3,4 @@ from scripts written using GD.  It accomplishes this by translating GD
 functions into SVG functions.
 
 WWW: http://search.cpan.org/dist/GD-SVG/
+Author: Todd Harris, PhD <harris@cshl.org>
