@@ -7,7 +7,7 @@
 
 PORTNAME=	XaraLX
 PORTVERSION?=	0.5r1175
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
 DISTFILES?=	${PORTNAME}Src-${PORTVERSION}.tar.bz2
@@ -60,7 +60,7 @@ EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
 PIXMAPSDIR=	${PREFIX}/share/pixmaps
 
 # directories with .xar files
-XARDIRS=	Designs Templates TextDesigns testfiles
+XARDIRS=	Designs Templates
 
 PLIST_SUB+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||} \
