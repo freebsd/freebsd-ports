@@ -1227,6 +1227,7 @@ clementine	ports/x11-wm/clementine
 clex		ports/misc/clex
 clhep		ports/science/clhep
 cli		ports/lang/cli
+cli-msn		ports/net-im/cli-msn
 clibpdf		ports/print/clibpdf
 click		ports/net/click
 clig		ports/devel/clig
