@@ -851,6 +851,7 @@
     SUBDIR += p5-Data-Hexdumper
     SUBDIR += p5-Data-Hierarchy
     SUBDIR += p5-Data-Lazy
+    SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Properties
     SUBDIR += p5-Data-Random
     SUBDIR += p5-Data-Serializer
