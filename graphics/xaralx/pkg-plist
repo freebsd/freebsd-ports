@@ -1,4 +1,4 @@
-bin/XaraLX%%PKGNAMESUFFIX%%
+bin/xaralx%%PKGNAMESUFFIX%%
 %%DESKTOPDIR%%/xaralx%%PKGNAMESUFFIX%%.desktop
 %%PIXMAPSDIR%%/xaralx%%PKGNAMESUFFIX%%.png
 %%EXAMPLESDIR%%/Designs/53 Corvette.xar
