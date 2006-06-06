@@ -1,26 +1,16 @@
---- Makefile.in.orig	Tue May 31 09:57:32 2005
-+++ Makefile.in	Tue Jun  7 21:50:08 2005
+--- Makefile.in.orig	Tue Feb 14 13:14:22 2006
++++ Makefile.in	Sat May 27 20:34:22 2006
 @@ -108,7 +108,7 @@
  	conftest conftest.c so_locations
  
  # SCIBASE for scilab binaries generation
--SCIBASE = scilab-3.1.1
+-SCIBASE = scilab-4.0
 +SCIBASE = scilab
  
  PVMBINDISTFILES = \
  	$(SCIBASE)/pvm3/Readme \
-@@ -258,23 +258,23 @@
- 	tests \
- 	util
- 
--DOCNAME=$(SCIBASE)
-+DOCNAME=scilab
- 
- install:
- 	@if test `pwd`/..  != $(PREFIX)/lib ; then \
- 		install -d $(PREFIX)/lib/$(SCIBASE); \
--		( tar cf - $(INSTBINDISTFILES) @PVMINST1@  | (cd $(PREFIX)/lib/$(SCIBASE) ; tar xf -)); \
-+		( for file in $(INSTBINDISTFILES) @PVMINST1@; do tar cf - $${file}  | (cd $(PREFIX)/lib/$(SCIBASE); tar xf -); done); \
+@@ -263,9 +263,9 @@
+ 		( for file in $(INSTBINDISTFILES) @PVMINST1@; do tar cf - $${file}  | (cd $(PREFIX)/lib/$(SCIBASE); tar xf -); done); \
  		(cd $(PREFIX)/lib/$(SCIBASE);touch .binary; make postinstall PREFIX=$(PREFIX) ) \
  	fi
 -	install -d $(PREFIX)/share/doc/$(DOCNAME)/
@@ -32,20 +22,3 @@
  	install -d $(PREFIX)/bin 
  	$(RM)  $(PREFIX)/bin/scilab
  	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/scilab $(PREFIX)/bin/scilab
--	$(RM)  $(PREFIX)$/bin/intersciXXX
-+	$(RM)  $(PREFIX)/bin/intersci
- 	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/intersci $(PREFIX)/bin/intersci
--	$(RM)  $(PREFIX)$/bin/intersci-n
-+	$(RM)  $(PREFIX)/bin/intersci-n
- 	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/intersci-n $(PREFIX)/bin/intersci-n
- 
- # DESTDIR is the final destination of the file 
-@@ -293,7 +293,7 @@
- 	@$(RM) -f -r contrib 
- 	@mkdir contrib 
- 	@mv contrib-loader.sce contrib/loader.sce
--	@$(RM) man/*/*/*.xml 
-+	@find man -name "*.xml" -print0 | xargs -0 $(RM)
- 	@@STRIP@ bin/scilex;
- 
- uninstall:
