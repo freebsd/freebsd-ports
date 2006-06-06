@@ -422,6 +422,7 @@ apr-svn		ports/devel/apr-svn
 apsfilter	ports/print/apsfilter
 apwal		ports/x11/apwal
 aqbanking	ports/finance/aqbanking
+aqbubble	ports/games/aqbubble
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
 ar-ae_fonts_mono	ports/arabic/ae_fonts_mono
