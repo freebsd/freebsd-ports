@@ -62,6 +62,7 @@
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += konverse
+    SUBDIR += kopete
     SUBDIR += kpopup
     SUBDIR += libicq
     SUBDIR += libicq2000
