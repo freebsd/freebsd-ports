@@ -29,6 +29,9 @@ CONFIGURE_ARGS+=--with-pythondir=${PYTHONBASE}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	${PREFIX}/lib/hk_classes/
 
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON_ia64=	Does not build
+
 OPTIONS=	MYSQL		"Build MySQL driver"		on  \
 		POSTGRESQL	"Build PostrgreSQL driver"	off \
 		ODBC		"Build unixODBC driver"		off \
