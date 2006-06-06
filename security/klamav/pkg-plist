@@ -13,6 +13,8 @@ share/locale/it/LC_MESSAGES/klamav.mo
 share/locale/pl/LC_MESSAGES/klamav.mo
 share/locale/ru/LC_MESSAGES/klamav.mo
 share/locale/pt_BR/LC_MESSAGES/klamav.mo
+share/locale/fr/LC_MESSAGES/klamav.mo
+share/locale/zh_CN/LC_MESSAGES/klamav.mo
 bin/klamav
 share/apps/klamav/eventsrc
 share/applnk/Utilities/klamav.desktop
