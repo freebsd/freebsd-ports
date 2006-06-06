@@ -275,13 +275,13 @@ PLIST_FILES=	${GST_LIB_DIR}/libgsthermescolorspace.so \
 # jpeg
 .if ${GST_PLUGIN}=="jpeg"
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
-CONFLICTS+=	gstreamer-plugins-jpeg-mmx-*
+CONFLICTS+=	gstreamer-plugins-jpeg-mmx-[0-9]*
 .endif
 
 # jpeg-mmx
 .if ${GST_PLUGIN}=="jpeg-mmx"
 LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
-CONFLICTS+=	gstreamer-plugins-jpeg-*.*
+CONFLICTS+=	gstreamer-plugins-jpeg-[0-9]*
 
 GST_PLUGIN_DIR= ext/jpeg
 PLIST_FILES=	${GST_LIB_DIR}/libgstjpeg.so \
