@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.3.1
-PORTREVISION?=	1
+PORTVERSION=	1.3.2
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.1/:bookhtml \
@@ -87,7 +87,7 @@ PLIST_SUB+=		WITHOUT_BDB=""
 
 .if defined(WITH_PERL)
 .if ${PERL_LEVEL} < 500800
-IGNORE=	"Subversion\'s Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again"
+IGNORE=	subversion\'s Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again
 .endif
 SWIG_BINDINGS+=		yes
 USE_PERL5=		yes
@@ -124,19 +124,20 @@ PLIST_SUB+=		WITH_RUBY="@comment "
 .endif
 
 .if defined(WITH_JAVA)
+CATEGORIES+=	java
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 .include "${PORTSDIR}/Mk/bsd.java.mk"
-CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME} 
+CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME}
 PLIST_SUB+=		WITH_JAVA=""
 .else
 PLIST_SUB+=		WITH_JAVA="@comment "
 .endif
 
-.if defined(WITH_JAVA) && ${OSVERSION} < 503000 
+.if defined(WITH_JAVA) && ${OSVERSION} < 503000
 BROKEN="Java bindings are supported only on FreeBSD 5.3 or newer"
 .endif
 
@@ -370,7 +371,7 @@ post-build:
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav libexec/apache2/mod_dav.so
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav ${PREFIX}/${APACHEMODDIR}/mod_dav.so
 .endif
 
 post-install:	${MKREPOS_TARGET}
