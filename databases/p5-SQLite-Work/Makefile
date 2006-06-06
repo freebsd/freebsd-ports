@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQLite-Work
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	databases www perl5
 MASTER_SITES=	http://www.cpan.org/authors/id/R/RU/RUBYKAT/
 PKGNAMEPREFIX=	p5-
