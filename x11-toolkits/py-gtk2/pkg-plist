@@ -105,90 +105,90 @@ lib/pygtk/2.0/pygtk-demo.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/pangocairo.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/pangocairo.so
 libdata/pkgconfig/pygtk-2.0.pc
-%%PORTDOCS%%share/doc/py-gtk/MAPPING
-%%PORTDOCS%%share/doc/py-gtk/THREADS
-%%PORTDOCS%%share/examples/py-gtk/Makefile
-%%PORTDOCS%%share/examples/py-gtk/Makefile.am
-%%PORTDOCS%%share/examples/py-gtk/Makefile.in
-%%PORTDOCS%%share/examples/py-gtk/Makefile.in.bak
-%%PORTDOCS%%share/examples/py-gtk/atk/atk-demo.py
-%%PORTDOCS%%share/examples/py-gtk/glade/README
-%%PORTDOCS%%share/examples/py-gtk/glade/autoconnect.py
-%%PORTDOCS%%share/examples/py-gtk/glade/glade-demo.py
-%%PORTDOCS%%share/examples/py-gtk/glade/test.glade
-%%PORTDOCS%%share/examples/py-gtk/glade/test2.glade
-%%PORTDOCS%%share/examples/py-gtk/gobject/properties.py
-%%PORTDOCS%%share/examples/py-gtk/gobject/signal.py
-%%PORTDOCS%%share/examples/py-gtk/gtk/bin.py
-%%PORTDOCS%%share/examples/py-gtk/gtk/filechooser.py
-%%PORTDOCS%%share/examples/py-gtk/gtk/scrollable.py
-%%PORTDOCS%%share/examples/py-gtk/gtk/sizegroup.py
-%%PORTDOCS%%share/examples/py-gtk/gtk/uimanager.py
-%%PORTDOCS%%share/examples/py-gtk/gtk/widget.py
-%%PORTDOCS%%share/examples/py-gtk/ide/README
-%%PORTDOCS%%share/examples/py-gtk/ide/break.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/browse.py
-%%PORTDOCS%%share/examples/py-gtk/ide/continue.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/dialogs.py
-%%PORTDOCS%%share/examples/py-gtk/ide/edit.py
-%%PORTDOCS%%share/examples/py-gtk/ide/edit.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/gtkcons.py
-%%PORTDOCS%%share/examples/py-gtk/ide/gtkdb.py
-%%PORTDOCS%%share/examples/py-gtk/ide/gtkprof.py
-%%PORTDOCS%%share/examples/py-gtk/ide/minibreak.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/next.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/pyide.py
-%%PORTDOCS%%share/examples/py-gtk/ide/quit.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/return.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/run.xpm
-%%PORTDOCS%%share/examples/py-gtk/ide/step.xpm
-%%PORTDOCS%%share/examples/py-gtk/pango/pangocairo-simple.py
-%%PORTDOCS%%share/examples/py-gtk/pango/utf8-demo.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/__init__.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/appwindow.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/buttonbox.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/changedisplay.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/colorsel.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dialogs.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dnd.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/dndpixmap.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/editable_cells.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/entry_completion.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/expander.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/hypertext.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/alphatest.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/apple-red.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/background.jpg
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/floppybuddy.gif
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-applets.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-calendar.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-foot.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-gimp.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-gmush.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnome-gsame.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gnu-keys.png
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/images/gtk-logo-rgb.gif
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/list_store.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/menu.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/panes.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/pixbufs.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/sizegroup.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/stock_browser.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/textview.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/tree_store.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/treemodel.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/demos/ui_manager.py
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/pygtk-demo
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/pygtk-demo.in
-%%PORTDOCS%%share/examples/py-gtk/pygtk-demo/pygtk-demo.py
-%%PORTDOCS%%share/examples/py-gtk/simple/README
-%%PORTDOCS%%share/examples/py-gtk/simple/dnd.py
-%%PORTDOCS%%share/examples/py-gtk/simple/dndpixmap.py
-%%PORTDOCS%%share/examples/py-gtk/simple/hello.py
-%%PORTDOCS%%share/examples/py-gtk/simple/scribble.py
-%%PORTDOCS%%share/examples/py-gtk/simple/simple.py
-%%PORTDOCS%%share/examples/py-gtk/simple/tooltip.py
+%%PORTDOCS%%%%DOCSDIR%%/MAPPING
+%%PORTDOCS%%%%DOCSDIR%%/THREADS
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.in.bak
+%%PORTDOCS%%%%EXAMPLESDIR%%/atk/atk-demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/glade/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/glade/autoconnect.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/glade/glade-demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/glade/test.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/glade/test2.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/gobject/properties.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gobject/signal.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk/bin.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk/filechooser.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk/scrollable.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk/sizegroup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk/uimanager.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/gtk/widget.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/break.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/browse.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/continue.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/dialogs.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/edit.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/edit.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/gtkcons.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/gtkdb.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/gtkprof.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/minibreak.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/next.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/pyide.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/quit.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/return.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/run.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ide/step.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/pango/pangocairo-simple.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pango/utf8-demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/appwindow.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/buttonbox.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/changedisplay.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/colorsel.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/dialogs.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/dnd.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/dndpixmap.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/editable_cells.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/entry_completion.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/expander.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/hypertext.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/alphatest.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/apple-red.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/background.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/floppybuddy.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnome-applets.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnome-calendar.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnome-foot.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnome-gimp.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnome-gmush.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnome-gsame.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnu-keys.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gtk-logo-rgb.gif
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/list_store.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/menu.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/panes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/pixbufs.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/sizegroup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/stock_browser.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/textview.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/tree_store.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/treemodel.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/ui_manager.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/pygtk-demo
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/pygtk-demo.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/pygtk-demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/dnd.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/dndpixmap.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/hello.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/scribble.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/tooltip.py
 share/pygtk/2.0/codegen/__init__.py
 share/pygtk/2.0/codegen/__init__.pyc
 share/pygtk/2.0/codegen/__init__.pyo
@@ -244,18 +244,18 @@ share/pygtk/2.0/defs/pangocairo.override
 @dirrm share/pygtk/2.0/codegen
 @dirrm share/pygtk/2.0
 @dirrm share/pygtk
-%%PORTDOCS%%@dirrm share/examples/py-gtk/simple
-%%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo/demos/images
-%%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo/demos
-%%PORTDOCS%%@dirrm share/examples/py-gtk/pygtk-demo
-%%PORTDOCS%%@dirrm share/examples/py-gtk/pango
-%%PORTDOCS%%@dirrm share/examples/py-gtk/ide
-%%PORTDOCS%%@dirrm share/examples/py-gtk/gtk
-%%PORTDOCS%%@dirrm share/examples/py-gtk/gobject
-%%PORTDOCS%%@dirrm share/examples/py-gtk/glade
-%%PORTDOCS%%@dirrm share/examples/py-gtk/atk
-%%PORTDOCS%%@dirrm share/examples/py-gtk
-%%PORTDOCS%%@dirrm share/doc/py-gtk
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pygtk-demo/demos/images
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pygtk-demo/demos
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pygtk-demo
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pango
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ide
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gtk
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gobject
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/glade
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/atk
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk
 @dirrm lib/pygtk/2.0/demos/images
 @dirrm lib/pygtk/2.0/demos
