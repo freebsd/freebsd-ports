@@ -1,10 +1,6 @@
 ===>   Please Note:
 
 *******************************************************************************
-       All initial config files have been placed under a samples/ directory.
-       You will need to copy these files into the config directory before
-       running DansGuardian for the first time.
-
        This port has created a log file named dansguardian.log that can get
        quite large.  Please read the newsyslog(8) man page for instructions
        on configuring log rotation and compression.
@@ -13,6 +9,7 @@
        correctly via rcorder.  Please read the comments in the startup script
        for instructions on enabling the daemon.
 
-       DG_CLAMAV, DG_ICAP, or DG_KASP are all experimental options that I am
-       not able to test.  Let me know how these work (or not) for you.
+       DG_CLAMAV, DG_ICAP, DG_KASP, DG_NTLM are all experimental options that I
+       am not currently able to test.  Let me know how these work (or not)
+       for you.  (Patches always welcome.)
 *******************************************************************************

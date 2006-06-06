@@ -1,12 +1,12 @@
 @exec mkdir -p etc/dansguardian
 @exec mkdir -p etc/dansguardian/authplugins
-@exec mkdir -p etc/dansguardian/contentscanners
+%%SCANNERS%%@exec mkdir -p etc/dansguardian/contentscanners
 @exec mkdir -p etc/dansguardian/downloadmanagers
 @exec mkdir -p etc/dansguardian/lists
 @exec mkdir -p etc/dansguardian/lists/authplugins
 @exec mkdir -p etc/dansguardian/lists/blacklists
 @exec mkdir -p etc/dansguardian/lists/blacklists/ads
-@exec mkdir -p etc/dansguardian/lists/contentscanners
+%%SCANNERS%%@exec mkdir -p etc/dansguardian/lists/contentscanners
 @exec mkdir -p etc/dansguardian/lists/downloadmanagers
 @exec mkdir -p etc/dansguardian/lists/phraselists
 @exec mkdir -p etc/dansguardian/lists/phraselists/badwords
@@ -138,6 +138,7 @@ sbin/dansguardian
 etc/dansguardian/authplugins/ident.conf
 etc/dansguardian/authplugins/ip.conf
 etc/dansguardian/authplugins/proxy-basic.conf
+%%NTLMCONF%%etc/dansguardian/authplugins/proxy-ntlm.conf
 etc/dansguardian/lists/authplugins/ipgroups
 etc/dansguardian/lists/exceptionextensionlist
 etc/dansguardian/lists/exceptionfilesitelist
@@ -188,6 +189,7 @@ etc/dansguardian/lists/phraselists/pornography/weighted_dutch
 etc/dansguardian/lists/phraselists/pornography/weighted_french
 etc/dansguardian/lists/phraselists/pornography/weighted_german
 etc/dansguardian/lists/phraselists/pornography/weighted_italian
+etc/dansguardian/lists/phraselists/pornography/weighted_norgwegian
 etc/dansguardian/lists/phraselists/pornography/weighted_portuguese
 etc/dansguardian/lists/phraselists/pornography/weighted_russian
 etc/dansguardian/lists/phraselists/pornography/weighted_spanish
@@ -220,10 +222,10 @@ etc/dansguardian/lists/weightedphraselist
 etc/dansguardian/lists/exceptionphraselist
 etc/dansguardian/lists/urlregexplist
 etc/dansguardian/lists/exceptionregexpurllist
-etc/dansguardian/lists/contentscanners/exceptionvirusmimetypelist
-etc/dansguardian/lists/contentscanners/exceptionvirusextensionlist
-etc/dansguardian/lists/contentscanners/exceptionvirussitelist
-etc/dansguardian/lists/contentscanners/exceptionvirusurllist
+%%SCANNERS%%etc/dansguardian/lists/contentscanners/exceptionvirusmimetypelist
+%%SCANNERS%%etc/dansguardian/lists/contentscanners/exceptionvirusextensionlist
+%%SCANNERS%%etc/dansguardian/lists/contentscanners/exceptionvirussitelist
+%%SCANNERS%%etc/dansguardian/lists/contentscanners/exceptionvirusurllist
 etc/dansguardian/downloadmanagers/default.conf
 etc/dansguardian/downloadmanagers/fancy.conf
 %%CLAMAVCONF%%etc/dansguardian/contentscanners/clamav.conf
@@ -258,8 +260,6 @@ etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/languages/ukenglish
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%
-@dirrm etc/dansguardian/lists/contentscanners
-@dirrm etc/dansguardian/lists/downloadmanagers
 @dirrm etc/dansguardian/lists/phraselists/badwords
 @dirrm etc/dansguardian/lists/phraselists/chat
 @dirrm etc/dansguardian/lists/phraselists/drugadvocacy
@@ -284,12 +284,14 @@ etc/dansguardian/dansguardianf1.conf
 @dirrm etc/dansguardian/lists/phraselists/weapons
 @dirrm etc/dansguardian/lists/phraselists/webmail
 @dirrm etc/dansguardian/lists/phraselists
+@dirrm etc/dansguardian/lists/downloadmanagers
+%%SCANNERS%%@dirrm etc/dansguardian/lists/contentscanners
 @dirrm etc/dansguardian/lists/blacklists/ads
 @dirrm etc/dansguardian/lists/blacklists
 @dirrm etc/dansguardian/lists/authplugins
 @dirrm etc/dansguardian/lists
 @dirrm etc/dansguardian/downloadmanagers
-@dirrm etc/dansguardian/contentscanners
+%%SCANNERS%%@dirrm etc/dansguardian/contentscanners
 @dirrm etc/dansguardian/authplugins
 @dirrm etc/dansguardian
 @unexec echo If permanently deleting this package, /var/log/dansguardian.log  must be removed manually
