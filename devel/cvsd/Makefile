@@ -8,10 +8,11 @@
 
 PORTNAME=	cvsd
 PORTVERSION=	1.0.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ch.tudelft.nl/~arthur/cvsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	CVS pserver daemon
 
 USE_GPG?=	yes
@@ -27,16 +28,22 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 MAN5=		cvsd.conf.5
 MAN8=		cvsd.8 cvsd-buginfo.8 cvsd-buildroot.8 cvsd-passwd.8
 PORTDOCS=	README
-PLIST_FILES=	etc/cvsd/cvsd.conf.sample etc/rc.d/cvsd.sh.sample \
-		sbin/cvsd sbin/cvsd-buginfo sbin/cvsd-buildroot sbin/cvsd-passwd
+PLIST_FILES=	etc/cvsd/cvsd.conf.sample sbin/cvsd sbin/cvsd-buginfo \
+		sbin/cvsd-buildroot sbin/cvsd-passwd
 PLIST_DIRS=	etc/cvsd
+USE_RC_SUBR=	cvsd.sh
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+EXTRA_PATCHES+=	${FILESDIR}/extra-cvsd-buildroot.in
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsd ${PREFIX}/sbin/cvsd
 .for FILE in cvsd-buginfo cvsd-buildroot cvsd-passwd
 	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/sbin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/cvsd.init ${PREFIX}/etc/rc.d/cvsd.sh.sample
 	@${MKDIR} ${PREFIX}/etc/cvsd
 	${INSTALL_DATA} ${WRKSRC}/cvsd.conf-dist ${PREFIX}/etc/cvsd/cvsd.conf.sample
 .for FILE in ${MAN5}
@@ -51,4 +58,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
