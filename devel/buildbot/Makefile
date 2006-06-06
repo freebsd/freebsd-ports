@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buildbot
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,8 @@ MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
 USE_PYTHON=	2.2+
-USE_PYDISTUTILS= yes
-USE_TWISTED_RUN= mail web words
+USE_PYDISTUTILS=	yes
+USE_TWISTED_RUN=	mail web words
 NO_BUILD=	yes
 
 post-patch:
