@@ -16,6 +16,7 @@
     SUBDIR += afm
     SUBDIR += alignmargins
     SUBDIR += amspsfnt
+    SUBDIR += ansiprint
     SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += auctex
