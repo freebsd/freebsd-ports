@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0.5r1250
-PORTREVISION=	1
+PORTVERSION=	0.5r1261
+PORTREVISION=	0
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2
 
@@ -16,6 +16,7 @@ MASTERDIR=	${.CURDIR}/../xaralx
 MD5_FILE=	${.CURDIR}/distinfo
 
 PATCHDIR=	${.CURDIR}/files
-EXTRA_PATCHES=	${MASTERDIR}/files/patch-PreComp_Makefile.am
+
+MAKE_ENV=	INCLUDES="-I${LOCALBASE}/include/dlmalloc"
 
 .include "${MASTERDIR}/Makefile"

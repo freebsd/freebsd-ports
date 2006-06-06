@@ -41,11 +41,11 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
 
 USE_GMAKE=	yes
 # add wxOil with -I- appended to it before any other -I stuff, see below
-MAKE_ENV+=	INCLUDES="-I../wxOil -I- -I${LOCALBASE}/include/dlmalloc"
+MAKE_ENV?=	INCLUDES="-I../wxOil -I- -I${LOCALBASE}/include/dlmalloc"
 
 USE_GCC=	3.4+
 
-MAN1=	XaraLX${PKGNAMESUFFIX}.1
+MAN1=	xaralx${PKGNAMESUFFIX}.1
 
 .if !defined(NOPORTDOCS)
 DOCS_IN_WRKSRC=	AUTHORS GPL LICENSE README
@@ -72,18 +72,14 @@ PLIST_SUB+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 .endif
 
+.if !defined(PKGNAMESUFFIX)
 # we need to strip wxOil from the include path because it contains file
 # named strings.h which when included by /usr/include/string.h results
 # in a complete mess
 post-patch:
 	${REINPLACE_CMD} -E -e 's|-I[^[:space:]]*/wxOil[[:space:]]||g' \
 		${WRKSRC}/Makefile.am
-	${REINPLACE_CMD} -E \
-		-e 's/^Name=Xara LX$$/Name=Xara LX (${PORTVERSION})/' \
-		-e 's/^FilePattern=xaralx;$$/FilePattern=XaraLX/' \
-		-e 's/^Exec=xaralx %F$$/Exec=XaraLX %F/' \
-		-e 's/^TryExec=xaralx$$/TryExec=XaraLX/' \
-		${WRKSRC}/xaralx.desktop
+.endif
 
 pre-configure:
 	cd ${WRKSRC} && \
@@ -96,7 +92,7 @@ do-install:
 	${MKDIR} ${DESKTOPDIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/XaraLX \
-		${PREFIX}/bin/XaraLX${PKGNAMESUFFIX}
+		${PREFIX}/bin/xaralx${PKGNAMESUFFIX}
 	${INSTALL_DATA} ${WRKSRC}/xaralx.desktop \
 		${DESKTOPDIR}/xaralx${PKGNAMESUFFIX}.desktop
 	${INSTALL_DATA} ${WRKSRC}/xaralx.png \
@@ -106,7 +102,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${xardir}/*.xar ${EXAMPLESDIR}/${xardir}/
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/XaraLX.1 \
-		${MANPREFIX}/man/man1/XaraLX${PKGNAMESUFFIX}.1
+		${MANPREFIX}/man/man1/xaralx${PKGNAMESUFFIX}.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/en
