@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	quetoo
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	games
 MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, stable, compatible, and secure Quake II client
 
+USE_AUTOTOOLS=	autoconf:259
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GL=		yes
@@ -21,7 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		${PTHREAD_CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib ${PTHREAD_LIBS}" \
 		OPENGL_CFLAGS="-I${X11BASE}/include" \
-		OPENGL_LIBS="-L${X11BASE}/lib"
+		OPENGL_LIBS="-L${X11BASE}/lib" \
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
@@ -46,6 +47,8 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql
 CONFIGURE_ENV+=	MYSQL_LIBS="-L${LOCALBASE}/lib/mysql -lmysqlclient" \
 		MYSQL_CFLAGS="-I${LOCALBASE}/include"
+.else
+CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -53,14 +56,9 @@ CONFIGURE_ARGS+=	--disable-opt --disable-sse
 .endif
 
 post-extract: .SILENT
-	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}",; \
-		s,-ldl,,; s, -lGL,,' ${WRKSRC}/configure
-.if !defined(WITH_MYSQL)
-	${REINPLACE_CMD} '22266,22268d' ${WRKSRC}/configure
-.else
-	${REINPLACE_CMD} 's,src$$,& @MYSQL_CFLAGS@,' \
-		${WRKSRC}/src/qmass/Makefile.in
-.endif
+	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}",' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -E 's,-ldl,,' ${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} 's,alsa,sdl,' ${WRKSRC}/src/snd_dma.c
 
 do-install:
