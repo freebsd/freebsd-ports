@@ -1,0 +1,84 @@
+--- scripts/Makefile.in.orig	Sat May 27 20:41:36 2006
++++ scripts/Makefile.in	Sat May 27 20:42:07 2006
+@@ -21,14 +21,14 @@
+ 
+ all:: $(PROGRAMS)
+ 
+-CYGDRIVE= -e "s+/cygdrive/\([a-zA-Z]*\)/+\1:/+g" 
++CYGDRIVE= -e "s!/cygdrive/\([a-zA-Z]*\)/!\1:/!g" 
+ SED_CYGDRIVE= @SED_CYGDRIVE@
+ 
+ $(SBIN)/scilab: @SCILABSCRIPT@ $(IP) $(IV)
+ 	@$(RM) $(SBIN)/scilab
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" $(SED_CYGDRIVE) \
+-	-e "s+SCILAB_VERSION+$(SCIVERSION)+" \
+-	-e "s+SCILABGS+@SCILAB_GS@+" @SCILABSCRIPT@ > scilab;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" $(SED_CYGDRIVE) \
++	-e "s!SCILAB_VERSION!$(SCIVERSION)!" \
++	-e "s!SCILABGS!@SCILAB_GS@!" @SCILABSCRIPT@ > scilab;
+ 	@cp scilab $(SBIN)
+ 	@chmod 775 $(SBIN)/scilab
+ 	@$(RM) scilab
+@@ -37,7 +37,7 @@
+ 
+ $(SBIN)/Blatexpr: Blatexpr.g $(IP)
+ 	@$(RM) $(SBIN)/Blatexpr
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" Blatexpr.g > Blatexpr;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" Blatexpr.g > Blatexpr;
+ 	@cp Blatexpr $(SBIN)
+ 	@chmod 775 $(SBIN)/Blatexpr
+ 	@$(RM) Blatexpr
+@@ -45,7 +45,7 @@
+ 
+ $(SBIN)/BEpsf: BEpsf.g $(IP)
+ 	@$(RM) $(SBIN)/BEpsf
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" BEpsf.g > BEpsf;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" BEpsf.g > BEpsf;
+ 	@cp BEpsf $(SBIN)
+ 	@chmod 775 $(SBIN)/BEpsf
+ 	@$(RM) BEpsf
+@@ -53,7 +53,7 @@
+ 
+ $(SBIN)/Blatexpr2: Blatexpr2.g $(IP)
+ 	@$(RM) $(SBIN)/Blatexpr2
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" Blatexpr2.g > Blatexpr2;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" Blatexpr2.g > Blatexpr2;
+ 	@cp Blatexpr2 $(SBIN)
+ 	@chmod 775 $(SBIN)/Blatexpr2
+ 	@$(RM) Blatexpr2
+@@ -61,7 +61,7 @@
+ 
+ $(SBIN)/Blatexprs: Blatexprs.g $(IP)
+ 	@$(RM) $(SBIN)/Blatexprs
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" Blatexprs.g > Blatexprs;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" Blatexprs.g > Blatexprs;
+ 	@cp Blatexprs $(SBIN)
+ 	@chmod 775 $(SBIN)/Blatexprs
+ 	@$(RM) Blatexprs
+@@ -69,7 +69,7 @@
+ 
+ $(SBIN)/Blpr: Blpr.g $(IP)
+ 	@$(RM) $(SBIN)/Blpr
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" Blpr.g > Blpr;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" Blpr.g > Blpr;
+ 	@cp Blpr $(SBIN)
+ 	@chmod 775 $(SBIN)/Blpr
+ 	@$(RM) Blpr
+@@ -77,7 +77,7 @@
+ 
+ $(UTIL)/Blatdoc: Blatdoc.g $(IP)
+ 	@$(RM) $(UTIL)/Blatdoc
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" Blatdoc.g > Blatdoc;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" Blatdoc.g > Blatdoc;
+ 	@cp Blatdoc $(UTIL)
+ 	@chmod 775 $(UTIL)/Blatdoc
+ 	@$(RM) Blatdoc
+@@ -85,7 +85,7 @@
+ 
+ $(UTIL)/Blatdocs: Blatdocs.g $(IP)
+ 	@$(RM) $(UTIL)/Blatdocs
+-	@sed -e "s+SCILAB_DIRECTORY+$(SCIDIR)+" Blatdocs.g > Blatdocs;
++	@sed -e "s!SCILAB_DIRECTORY!$(SCIDIR)!" Blatdocs.g > Blatdocs;
+ 	@cp Blatdocs $(UTIL)
+ 	@chmod 775 $(UTIL)/Blatdocs
+ 	@$(RM) Blatdocs

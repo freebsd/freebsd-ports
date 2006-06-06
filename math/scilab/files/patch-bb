@@ -1,23 +1,15 @@
---- configure.orig	Wed May 25 17:00:45 2005
-+++ configure	Sun Jun  5 22:59:47 2005
-@@ -21331,13 +21331,13 @@
- # FreeBSD  systems (not supported by INRIA)
-   *-*-freebsd*)
-      GCC=yes
--     CC=gcc
-+     CC=$CC
-      CC_OPTIONS="${CFLAGS} -Dfreebsd"
-      CC_LDFLAGS=-lm
+--- configure.orig	Wed Feb  1 21:47:53 2006
++++ configure	Sat May 27 19:27:55 2006
+@@ -22162,7 +22162,7 @@
       CC_PICFLAGS='-fPIC'
       # script shell f77 have bugs, get ours
--     FC=f77
+      FC=$F77
 -     FC_OPTIONS="${CFLAGS} -Dfreebsd"
-+     FC=$F77
 +     FC_OPTIONS="${FFLAGS} -Dfreebsd"
       FC_OPTIONS_O0='-Dfreebsd'
       FC_LDFLAGS='-lm -Wl,--export-dynamic'
       FC_PICFLAGS='-fPIC'
-@@ -24208,7 +24208,8 @@
+@@ -25056,7 +25056,8 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -27,12 +19,12 @@
  int
  main ()
  {
-@@ -26321,7 +26322,7 @@
-     ;;
- esac
+@@ -27200,7 +27201,7 @@
+ 	;;
+ 	esac
  
--GETLIBTK=libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.$SONAME
-+GETLIBTK=libtk$TK_MAJOR_VERSION$TK_MINOR_VERSION.$SONAME
+-	GETLIBTK=libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.$SONAME
++	GETLIBTK=libtk$TK_MAJOR_VERSION$TK_MINOR_VERSION.$SONAME
  
- case "$host" in
-   *-*-darwin*)
+ 	case "$host" in
+ 		*-*-darwin*)
