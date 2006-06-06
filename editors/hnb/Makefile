@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Hierarchical NoteBook a data organizer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

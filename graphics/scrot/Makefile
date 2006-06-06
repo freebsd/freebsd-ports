@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A screen capture utility that utilizes Imlib2
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib

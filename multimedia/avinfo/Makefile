@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://shounen.ru/soft/avinfo/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A utility for displaying AVI header information
 
 WRKSRC=		${WRKDIR}/src

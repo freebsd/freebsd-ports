@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/
 #		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@mail.ru
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
 
 GNU_CONFIGURE=	yes

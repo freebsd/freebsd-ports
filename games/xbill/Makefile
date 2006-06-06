@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xbill.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Save your computers from the evil clutches of Bill
 
 SCORES_DIR?=	${DATADIR}/scores
