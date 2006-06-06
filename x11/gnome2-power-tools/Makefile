@@ -10,7 +10,7 @@ PORTREVISION=	0
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-power-tools
 
-COMMENT=	"Geektoys" for the GNOME 2 power user
+COMMENT=	The 'Geektoys' for the GNOME 2 power user
 
 RUN_DEPENDS=	${X11BASE}/lib/epiphany/2.14/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
