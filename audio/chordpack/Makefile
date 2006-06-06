@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chordpack
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	audio
 MASTER_SITES=	http://sweb.cz/dan.polansky/chordpack/
 EXTRACT_SUFX=	.tgz
