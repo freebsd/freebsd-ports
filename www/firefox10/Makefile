@@ -78,7 +78,6 @@ post-extract::
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
-
 post-patch:
 .for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
 	embedding/minimo
