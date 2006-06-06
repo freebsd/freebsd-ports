@@ -271,6 +271,10 @@ pre-configure:
 .if ${PHP_VER} == 5
 	@${REINPLACE_CMD} -e "s:mod_php4.c:mod_php5.c:" ${WRKDIR}/httpd-horde.conf
 .endif
+.if ${APACHE_VERSION} >= 22
+	@${REINPLACE_CMD} -e "s:IfModule mod_\([^ ]*\)\.c:IfModule \1_module:" \
+	                  ${WRKDIR}/httpd-horde.conf
+.endif
 	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${WRKSRC}/config/mime_drivers.php.dist
 .if !defined(WITHOUT_X11)
 . if !defined(WITHOUT_WV)
