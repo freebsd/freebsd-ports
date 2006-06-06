@@ -3,7 +3,7 @@ bin/xml2po
 libdata/pkgconfig/gnome-doc-utils.pc
 libdata/pkgconfig/xml2po.pc
 share/aclocal/gnome-doc-utils.m4
-share/gnome-doc-utils/gnome-doc-utils.make
+%%DATADIR%%/gnome-doc-utils.make
 share/gnome/help/gnome-doc-make/C/gnome-doc-make.xml
 share/gnome/help/gnome-doc-make/C/legal.xml
 share/gnome/help/gnome-doc-make/C/make-ref.xml
@@ -159,4 +159,4 @@ share/xml2po/gs.pyc
 @dirrm share/gnome/help/gnome-doc-xslt
 @dirrm share/gnome/help/gnome-doc-make/C
 @dirrm share/gnome/help/gnome-doc-make
-@dirrm share/gnome-doc-utils
+@dirrm %%DATADIR%%
