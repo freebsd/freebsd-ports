@@ -2,7 +2,7 @@ bin/gnome-autogen.sh
 bin/gnome-doc-common
 share/aclocal/gnome-common.m4
 share/aclocal/gnome-compiler-flags.m4
-share/gnome-common/data/omf.make
-share/gnome-common/data/xmldocs.make
-@dirrm share/gnome-common/data
-@dirrm share/gnome-common
+%%DATADIR%%/data/omf.make
+%%DATADIR%%/data/xmldocs.make
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

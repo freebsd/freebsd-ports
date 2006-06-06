@@ -112,60 +112,60 @@ lib/libgcompris-1.la
 lib/libgcompris-1.so
 lib/libgcompris-1.so.0
 libdata/pkgconfig/libgcompris-1.0.pc
-share/gcompris/python/admin/__init__.py
-share/gcompris/python/admin/board_list.py
-share/gcompris/python/admin/class_edit.py
-share/gcompris/python/admin/class_list.py
-share/gcompris/python/admin/constants.py
-share/gcompris/python/admin/group_edit.py
-share/gcompris/python/admin/group_list.py
-share/gcompris/python/admin/group_user_list.py
-share/gcompris/python/admin/module.py
-share/gcompris/python/admin/module_boards.py
-share/gcompris/python/admin/module_groups.py
-share/gcompris/python/admin/module_profiles.py
-share/gcompris/python/admin/module_users.py
-share/gcompris/python/admin/profile_edit.py
-share/gcompris/python/admin/profile_group_list.py
-share/gcompris/python/admin/profile_list.py
-share/gcompris/python/admin/user_edit.py
-share/gcompris/python/admin/user_list.py
-share/gcompris/python/admin/wordlist.py
-share/gcompris/python/administration.py
-share/gcompris/python/algorithm.py
-share/gcompris/python/anim.py
-share/gcompris/python/ballcatch.py
-share/gcompris/python/bargame.py
-share/gcompris/python/connect4.py
-share/gcompris/python/connect4p/__init__.py
-share/gcompris/python/connect4p/board.py
-share/gcompris/python/connect4p/human.py
-share/gcompris/python/connect4p/minmax.py
-share/gcompris/python/connect4p/player.py
-share/gcompris/python/connect4p/rules.py
-share/gcompris/python/electric.py
-share/gcompris/python/followline.py
-share/gcompris/python/gcompris/__init__.py
-share/gcompris/python/gcompris/admin/__init__.py
-share/gcompris/python/gcompris/anim/__init__.py
-share/gcompris/python/gcompris/bonus/__init__.py
-share/gcompris/python/gcompris/score/__init__.py
-share/gcompris/python/gcompris/skin/__init__.py
-share/gcompris/python/gcompris/sound/__init__.py
-share/gcompris/python/gcompris/timer/__init__.py
-share/gcompris/python/gcompris/utils/__init__.py
-share/gcompris/python/gnumch.py
-share/gcompris/python/guessnumber.py
-share/gcompris/python/hexagon.py
-share/gcompris/python/login.py
-share/gcompris/python/melody.py
-share/gcompris/python/mosaic.py
-share/gcompris/python/pythontest.py
-share/gcompris/python/redraw.py
-share/gcompris/python/searace.py
-share/gcompris/python/sudoku.py
-share/gcompris/python/tuxpaint.py
-share/gcompris/python/watercycle.py
+%%DATADIR%%/python/admin/__init__.py
+%%DATADIR%%/python/admin/board_list.py
+%%DATADIR%%/python/admin/class_edit.py
+%%DATADIR%%/python/admin/class_list.py
+%%DATADIR%%/python/admin/constants.py
+%%DATADIR%%/python/admin/group_edit.py
+%%DATADIR%%/python/admin/group_list.py
+%%DATADIR%%/python/admin/group_user_list.py
+%%DATADIR%%/python/admin/module.py
+%%DATADIR%%/python/admin/module_boards.py
+%%DATADIR%%/python/admin/module_groups.py
+%%DATADIR%%/python/admin/module_profiles.py
+%%DATADIR%%/python/admin/module_users.py
+%%DATADIR%%/python/admin/profile_edit.py
+%%DATADIR%%/python/admin/profile_group_list.py
+%%DATADIR%%/python/admin/profile_list.py
+%%DATADIR%%/python/admin/user_edit.py
+%%DATADIR%%/python/admin/user_list.py
+%%DATADIR%%/python/admin/wordlist.py
+%%DATADIR%%/python/administration.py
+%%DATADIR%%/python/algorithm.py
+%%DATADIR%%/python/anim.py
+%%DATADIR%%/python/ballcatch.py
+%%DATADIR%%/python/bargame.py
+%%DATADIR%%/python/connect4.py
+%%DATADIR%%/python/connect4p/__init__.py
+%%DATADIR%%/python/connect4p/board.py
+%%DATADIR%%/python/connect4p/human.py
+%%DATADIR%%/python/connect4p/minmax.py
+%%DATADIR%%/python/connect4p/player.py
+%%DATADIR%%/python/connect4p/rules.py
+%%DATADIR%%/python/electric.py
+%%DATADIR%%/python/followline.py
+%%DATADIR%%/python/gcompris/__init__.py
+%%DATADIR%%/python/gcompris/admin/__init__.py
+%%DATADIR%%/python/gcompris/anim/__init__.py
+%%DATADIR%%/python/gcompris/bonus/__init__.py
+%%DATADIR%%/python/gcompris/score/__init__.py
+%%DATADIR%%/python/gcompris/skin/__init__.py
+%%DATADIR%%/python/gcompris/sound/__init__.py
+%%DATADIR%%/python/gcompris/timer/__init__.py
+%%DATADIR%%/python/gcompris/utils/__init__.py
+%%DATADIR%%/python/gnumch.py
+%%DATADIR%%/python/guessnumber.py
+%%DATADIR%%/python/hexagon.py
+%%DATADIR%%/python/login.py
+%%DATADIR%%/python/melody.py
+%%DATADIR%%/python/mosaic.py
+%%DATADIR%%/python/pythontest.py
+%%DATADIR%%/python/redraw.py
+%%DATADIR%%/python/searace.py
+%%DATADIR%%/python/sudoku.py
+%%DATADIR%%/python/tuxpaint.py
+%%DATADIR%%/python/watercycle.py
 share/gnome/applications/gcompris-edit.desktop
 share/gnome/applications/gcompris.desktop
 share/gnome/assetml/gcompris_alphabet_da.assetml
@@ -4203,19 +4203,19 @@ share/locale/zh_TW/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/gcompris/boards/advanced_colors
 @dirrm share/gnome/gcompris/boards
 @dirrm share/gnome/gcompris
-@dirrm share/gcompris/python/gcompris/utils
-@dirrm share/gcompris/python/gcompris/timer
-@dirrm share/gcompris/python/gcompris/sound
-@dirrm share/gcompris/python/gcompris/skin
-@dirrm share/gcompris/python/gcompris/score
-@dirrm share/gcompris/python/gcompris/bonus
-@dirrm share/gcompris/python/gcompris/anim
-@dirrm share/gcompris/python/gcompris/admin
-@dirrm share/gcompris/python/gcompris
-@dirrm share/gcompris/python/connect4p
-@dirrm share/gcompris/python/admin
-@dirrm share/gcompris/python
-@dirrm share/gcompris
+@dirrm %%DATADIR%%/python/gcompris/utils
+@dirrm %%DATADIR%%/python/gcompris/timer
+@dirrm %%DATADIR%%/python/gcompris/sound
+@dirrm %%DATADIR%%/python/gcompris/skin
+@dirrm %%DATADIR%%/python/gcompris/score
+@dirrm %%DATADIR%%/python/gcompris/bonus
+@dirrm %%DATADIR%%/python/gcompris/anim
+@dirrm %%DATADIR%%/python/gcompris/admin
+@dirrm %%DATADIR%%/python/gcompris
+@dirrm %%DATADIR%%/python/connect4p
+@dirrm %%DATADIR%%/python/admin
+@dirrm %%DATADIR%%/python
+@dirrm %%DATADIR%%
 @dirrm lib/gcompris
 @dirrm include/libgcompris-1.0/libgcompris
 @dirrm include/libgcompris-1.0
