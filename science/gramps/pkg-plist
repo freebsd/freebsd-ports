@@ -226,6 +226,8 @@ share/gnome/gramps/dates/Date_fi.py
 share/gnome/gramps/dates/Date_fi.pyo
 share/gnome/gramps/dates/Date_fr.py
 share/gnome/gramps/dates/Date_fr.pyo
+share/gnome/gramps/dates/Date_lt.py
+share/gnome/gramps/dates/Date_lt.pyo
 share/gnome/gramps/dates/Date_nl.py
 share/gnome/gramps/dates/Date_nl.pyo
 share/gnome/gramps/dates/Date_ru.py
@@ -244,6 +246,8 @@ share/gnome/gramps/docgen/LPRDoc.py
 share/gnome/gramps/docgen/LPRDoc.pyo
 share/gnome/gramps/docgen/LaTeXDoc.py
 share/gnome/gramps/docgen/LaTeXDoc.pyo
+share/gnome/gramps/docgen/ODFDoc.py
+share/gnome/gramps/docgen/ODFDoc.pyo
 share/gnome/gramps/docgen/OpenOfficeDoc.py
 share/gnome/gramps/docgen/OpenOfficeDoc.pyo
 share/gnome/gramps/docgen/OpenSpreadSheet.py
@@ -294,6 +298,8 @@ share/gnome/gramps/plugins/Ancestors.py
 share/gnome/gramps/plugins/Ancestors.pyo
 share/gnome/gramps/plugins/BookReport.py
 share/gnome/gramps/plugins/BookReport.pyo
+share/gnome/gramps/plugins/Calendar.py
+share/gnome/gramps/plugins/Calendar.pyo
 share/gnome/gramps/plugins/ChangeNames.py
 share/gnome/gramps/plugins/ChangeNames.pyo
 share/gnome/gramps/plugins/ChangeTypes.py
@@ -395,6 +401,7 @@ share/gnome/gramps/plugins/desbrowse.glade
 share/gnome/gramps/plugins/eval.glade
 share/gnome/gramps/plugins/eventcmp.glade
 share/gnome/gramps/plugins/genewebexport.glade
+share/gnome/gramps/plugins/holidays.xml
 share/gnome/gramps/plugins/leak.glade
 share/gnome/gramps/plugins/merge.glade
 share/gnome/gramps/plugins/patchnames.glade

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gramps
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 desktopfileutils
 GNU_CONFIGURE=	yes
