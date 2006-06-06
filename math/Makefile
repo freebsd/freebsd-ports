@@ -229,6 +229,7 @@
     SUBDIR += p5-Number-WithError-LaTeX
     SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
+    SUBDIR += p5-Set-Partition
     SUBDIR += p5-Set-Window
     SUBDIR += p5-Statistics-ChiSquare
     SUBDIR += p5-Statistics-Contingency
