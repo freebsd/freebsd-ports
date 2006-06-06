@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	An extension to download videos files
 
 XPI_ID=		videodowloader@videodownloader.net
