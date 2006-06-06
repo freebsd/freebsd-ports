@@ -33,7 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 EG_SRC_DIR=	${WRKSRC}/examples
-EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
+EXAMPLESDIR=	${PREFIX}/share/examples/py-gnome
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-gnome-desktop
 .else
@@ -48,9 +48,9 @@ post-patch:
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EG_DST_DIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
