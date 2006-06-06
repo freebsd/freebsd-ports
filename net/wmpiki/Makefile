@@ -9,7 +9,8 @@ PORTNAME=	wmpiki
 PORTVERSION=	0.2.1
 PORTREVISION=	1
 CATEGORIES=	net windowmaker
-MASTER_SITES=	http://clay.ll.pl/download/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	t.kempka@web.de
 COMMENT=	A multiping host checker dockapp
