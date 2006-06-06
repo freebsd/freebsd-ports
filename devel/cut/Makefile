@@ -8,15 +8,15 @@
 PORTNAME=	cut
 PORTVERSION=	2.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.falvotech.com/downloads/
+MASTER_SITES=	http://www.falvotech.com/content/cut/downloads/
 
 MAINTAINER=	sgnezdov@sergei.homeunix.org
 COMMENT=	Unit Testing Framework for C, C++ and Objective-C
 
-DISTVERSIONSUFFIX=	rc1
-
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+
+WRKSRC=		${WRKDIR}/repo
 
 # related to build target
 ALL_TARGET=	bin/cutgen
