@@ -198,6 +198,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mailparse.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mailparse.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mailparse.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_properties.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_properties.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_properties.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_run.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_run.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_run.pyo
@@ -226,6 +229,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_util.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_util.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_vc.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_vc.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_vc.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_web.py
@@ -237,7 +243,7 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/util.py
 %%PYTHON_SITELIBDIR%%/buildbot/util.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/buildbot/test
+@dirrmtry %%PYTHON_SITELIBDIR%%/buildbot/test
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/status
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/slave
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/scripts
