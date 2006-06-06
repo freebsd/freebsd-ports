@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -57,7 +58,7 @@ pre-everything::
 
 post-patch:
 .ifndef PATCH_DEBUG
-	@${RM} -f ${WRKSRC}/config/config_default.php.orig
+	@${RM} -f ${WRKSRC}/config/config_default.php.orig ${WRKSRC}/functions/global.php.orig
 .endif
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
