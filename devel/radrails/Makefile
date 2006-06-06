@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radrails
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	devel ruby java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,6 @@ USE_LINUX=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	linux
-PLIST=		${WRKDIR}/PLIST
 
 ICONDIR=	icons
 ICON=		${ICONDIR}/radrails.png
@@ -41,29 +40,36 @@ DESKTOP_ENTRIES=	\
 	"Development;IDE;" \
 	true
 
-FIND_ARGS=	-s -d .
+PLIST_FILES=	%%DATADIR%%/${ICON} bin/radrails
+PLIST_DIRS=	%%DATADIR%%/${ICONDIR}
 
 .include <bsd.port.pre.mk>
 
-do-configure:
+.if ${OSVERSION} < 500000
+BROKEN= does not build
+.endif
+
+#do-configure:
 
 pre-install:
 	(cd ${WRKDIR}; jar -xf ${WRKSRC}/plugins/org.radrails.ide.ui_${PORTVERSION}.jar ${ICON})
-	${ECHO} "%%DATADIR%%/${ICON}" >> ${PLIST}
 	${CP} ${FILESDIR}/radrails.sh ${WRKDIR}/radrails.sh
 	${REINPLACE_CMD} -E -e "s|%%DATADIR%%|${DATADIR}|g; s|%%JAVA%%|${JAVA}|g" ${WRKDIR}/radrails.sh
-	${ECHO} "bin/radrails" >> ${PLIST}
-	( cd ${WRKSRC} ; \
-	  ${FIND} ${FIND_ARGS} -type f | ${SED} 's|^|%%DATADIR%%/|g' >> ${PLIST} ; \
-	  ${FIND} ${FIND_ARGS} -type d -and -not -name '.' | ${SED} 's|^|@dirrm %%DATADIR%%/|g' >> ${PLIST} )
-	${ECHO} "@dirrm %%DATADIR%%/${ICONDIR}" >>${PLIST}
-	${ECHO} '@dirrm %%DATADIR%%' >> ${PLIST}
 
 do-install:
 	${MKDIR} ${DATADIR}
-	( cd ${WRKSRC} ; ${CP} -Rv `ls -a | ${EGREP} -v '^\.{1,2}$$'` ${DATADIR}/ )
+	( cd ${WRKSRC} \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/\{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \; )
 	${MKDIR} ${DATADIR}/${ICONDIR}
 	${INSTALL_DATA} ${WRKDIR}/${ICON} ${DATADIR}/${ICON}
 	${INSTALL_SCRIPT} ${WRKDIR}/radrails.sh ${PREFIX}/bin/radrails
+
+post-install:
+	@cd ${WRKSRC} \
+	  && ${FIND} -s . -type f \
+	    | ${SED} 's,^\.,${DATADIR:S,^${PREFIX}/,,},' >>${TMPPLIST} \
+	  && ${FIND} -s -d . -type d \
+	    | ${SED} 's,^\.,@dirrm ${DATADIR:S,^${PREFIX}/,,},' >>${TMPPLIST}
 
 .include <bsd.port.post.mk>
