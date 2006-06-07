@@ -1,0 +1,22 @@
+--- ./tremulous-1.1.0-src/src/master/Makefile.orig	Fri Jan 20 20:37:31 2006
++++ ./tremulous-1.1.0-src/src/master/Makefile	Wed Jun  7 16:57:12 2006
+@@ -1,5 +1,5 @@
+ BD_DEBUG=debug-$(PLATFORM)-$(ARCH)
+-BD_RELEASE=release-$(PLATFORM)-$(ARCH)
++BD_RELEASE=release
+ 
+ ifeq ($(PLATFORM),mingw32)
+   BINEXT=.exe
+@@ -15,9 +15,11 @@
+   MKDIR=mkdir
+ endif
+ 
+-CC=gcc
++CC?=gcc
++CFLAGS+=-I$(LOCALBASE)/include
+ RELEASE_CFLAGS=-Wall -O2
+ DEBUG_CFLAGS=-g
++LDFLAGS+=-L$(LOCALBASE)/lib
+ OBJECTS= \
+ 	$(BD)/master.o \
+ 	$(BD)/messages.o \

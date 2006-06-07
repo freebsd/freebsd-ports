@@ -650,6 +650,7 @@
     SUBDIR += tractorgen
     SUBDIR += traindirector
     SUBDIR += tremor
+    SUBDIR += tremulous
     SUBDIR += trigger
     SUBDIR += trimines
     SUBDIR += trojka
