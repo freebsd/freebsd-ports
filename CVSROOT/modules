@@ -2833,6 +2833,7 @@ ganglia-monitor-core	ports/sysutils/ganglia-monitor-core
 ganglia-webfrontend	ports/sysutils/ganglia-webfrontend
 ganttproject	ports/deskutils/ganttproject
 gap		ports/math/gap
+gapcmon		ports/sysutils/gapcmon
 gaphor		ports/devel/gaphor
 garith		ports/games/garith
 garlic		ports/biology/garlic
