@@ -1,0 +1,5 @@
+Wax is a user-friendly layer on top of wxPython. It allows for easier
+GUI programming in a more "Pythonic" way.
+
+Author:	Hans Nowak <hans@zephyrfalcon.org>
+WWW:	http://sourceforge.net/projects/waxgui

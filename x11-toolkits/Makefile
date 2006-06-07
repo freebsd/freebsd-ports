@@ -169,6 +169,7 @@
     SUBDIR += py-kde
     SUBDIR += py-qt
     SUBDIR += py-tkinter
+    SUBDIR += py-wax
     SUBDIR += py-wmgeneral
     SUBDIR += py-wxPython24
     SUBDIR += py-wxPython26
