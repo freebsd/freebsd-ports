@@ -7,7 +7,7 @@
 PORTNAME=		fpconst
 PORTVERSION=		0.7.2
 CATEGORIES=		math python
-MASTER_SITES=		http://research.warnes.net/~warnes/fpconst/
+MASTER_SITES=		http://mac.warnes.net/~warnes/files/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		rui@ruilopes.com
