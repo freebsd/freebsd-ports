@@ -1,0 +1,7 @@
+This is a simple module for doing very very simple quick tests on a
+database, primarily designed to test if a row exists with the correct
+details in a table or not. For more advanced testing (joins, etc) it's
+probably easier for you to roll your own tests by hand than use this
+module.
+
+WWW: http://search.cpan.org/~mark/Test-DatabaseRow-1.04/
