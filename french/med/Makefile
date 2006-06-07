@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}_fichier${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Modélisation et Échanges de Données
+COMMENT=	Modelisation et Echanges de Donnees
 
 BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5

@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	http://download.berlios.de/kompose/
 
 MAINTAINER=	lauri@kde.org
-COMMENT=	Full-screen task manager similar to Exposé(tm)
+COMMENT=	Full-screen task manager similar to Expose(tm)
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
