@@ -1,0 +1,145 @@
+diff -ru bbftpc/bbftp_socket.c bbftp/bbftpc/bbftp_socket.c
+--- bbftpc/bbftp_socket.c	Wed May  7 14:59:17 2003
++++ bbftpc/bbftp_socket.c	Tue Jun  6 23:53:25 2006
+@@ -28,10 +28,10 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <netinet/in.h>
++#include <sys/types.h>
+ #include <netinet/tcp.h>
+ #include <syslog.h>
+ #include <sys/socket.h>
+-#include <sys/types.h>
+ #include <unistd.h>
+ #include <utime.h>
+ 
+diff -ru bbftpc/bbftp_utils.c bbftp/bbftpc/bbftp_utils.c
+--- bbftpc/bbftp_utils.c	Mon Jun 30 14:41:40 2003
++++ bbftpc/bbftp_utils.c	Tue Jun  6 23:55:14 2006
+@@ -44,6 +44,7 @@
+ #ifdef HAVE_BYTESWAP_H
+ #include <byteswap.h>
+ #endif
++#include <sys/time.h>
+ 
+ extern  int     incontrolsock ;
+ extern  int     outcontrolsock ;
+diff -ru bbftpc/setsignals.c bbftp/bbftpc/setsignals.c
+--- bbftpc/setsignals.c	Wed Apr 17 10:44:24 2002
++++ bbftpc/setsignals.c	Tue Jun  6 23:55:59 2006
+@@ -129,9 +129,6 @@
+     if ( sigaction(SIGTSTP,&sga,0) < 0 ) {
+         printmessage(stderr,CASE_FATAL_ERROR,32,timestamp,"Error setting signal SIGTSTP : %s \n",strerror(errno)) ;
+     }
+-    if ( sigaction(SIGPOLL,&sga,0) < 0 ) {
+-        printmessage(stderr,CASE_FATAL_ERROR,32,timestamp,"Error setting signal SIGPOLL : %s \n",strerror(errno)) ;
+-    }
+     if ( sigaction(SIGPROF,&sga,0) < 0 ) {
+         printmessage(stderr,CASE_FATAL_ERROR,32,timestamp,"Error setting signal SIGPROF : %s \n",strerror(errno)) ;
+     }
+diff -ru bbftpd/bbftpd.c bbftp/bbftpd/bbftpd.c
+--- bbftpd/bbftpd.c	Thu Jul 24 15:27:55 2003
++++ bbftpd/bbftpd.c	Tue Jun  6 23:56:46 2006
+@@ -61,6 +61,7 @@
+ #include <limits.h>
+ #include <netdb.h>
+ #include <netinet/in.h>
++#include <sys/types.h>
+ #include <netinet/tcp.h>
+ #include <pwd.h>
+ #include <signal.h>
+diff -ru bbftpd/bbftpd_daemon.c bbftp/bbftpd/bbftpd_daemon.c
+--- bbftpd/bbftpd_daemon.c	Wed Jun 11 17:17:51 2003
++++ bbftpd/bbftpd_daemon.c	Tue Jun  6 23:57:11 2006
+@@ -43,6 +43,7 @@
+ *****************************************************************************/
+ #include <netdb.h>
+ #include <netinet/in.h>
++#include <sys/types.h>
+ #include <netinet/tcp.h>
+ #include <stdio.h>
+ #include <syslog.h>
+diff -ru bbftpd/bbftpd_login.c bbftp/bbftpd/bbftpd_login.c
+--- bbftpd/bbftpd_login.c	Mon Feb 24 10:26:59 2003
++++ bbftpd/bbftpd_login.c	Tue Jun  6 23:59:34 2006
+@@ -47,7 +47,6 @@
+                                      
+  *****************************************************************************/
+ 
+-#include <crypt.h>
+ #include <errno.h>
+ #include <netinet/in.h>
+ #include <pwd.h>
+@@ -287,6 +286,7 @@
+     PAM_BAIL;
+     retcode = pam_acct_mgmt(pamh, 0);
+     PAM_BAIL;
++#define PAM_ESTABLISH_CRED 1
+ #ifdef PAM_ESTABLISH_CRED
+     retcode = pam_setcred(pamh, PAM_ESTABLISH_CRED);
+ #else
+diff -ru bbftpd/bbftpd_signals.c bbftp/bbftpd/bbftpd_signals.c
+--- bbftpd/bbftpd_signals.c	Tue Mar 11 13:34:36 2003
++++ bbftpd/bbftpd_signals.c	Wed Jun  7 00:00:47 2006
+@@ -268,7 +268,7 @@
+         */ 
+         if ( unlinkfile == 1 ) unlink(realfilename) ;
+         clean_child() ;
+-        exit() ;
++        exit(0) ;
+     } else {
+         exit(EINTR) ;
+     }
+@@ -358,10 +358,6 @@
+     }
+     if ( sigaction(SIGTSTP,&sga,0) < 0 ) {
+         syslog(BBFTPD_ERR,"Error sigaction SIGTSTP : %s",strerror(errno)) ;
+-        return(-1) ;
+-    }
+-    if ( sigaction(SIGPOLL,&sga,0) < 0 ) {
+-        syslog(BBFTPD_ERR,"Error sigaction SIGPOLL : %s",strerror(errno)) ;
+         return(-1) ;
+     }
+     if ( sigaction(SIGPROF,&sga,0) < 0 ) {
+diff -ru bbftpd/bbftpd_socket.c bbftp/bbftpd/bbftpd_socket.c
+--- bbftpd/bbftpd_socket.c	Wed Mar  5 12:23:37 2003
++++ bbftpd/bbftpd_socket.c	Wed Jun  7 00:01:04 2006
+@@ -30,10 +30,10 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <netinet/in.h>
++#include <sys/types.h>
+ #include <netinet/tcp.h>
+ #include <syslog.h>
+ #include <sys/socket.h>
+-#include <sys/types.h>
+ #include <unistd.h>
+ #include <utime.h>
+ 
+diff -ru bbftpd/createreceivesock.c bbftp/bbftpd/createreceivesock.c
+--- bbftpd/createreceivesock.c	Wed Apr 17 10:45:10 2002
++++ bbftpd/createreceivesock.c	Wed Jun  7 00:01:20 2006
+@@ -52,10 +52,10 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <netinet/in.h>
++#include <sys/types.h>
+ #include <netinet/tcp.h>
+ #include <syslog.h>
+ #include <sys/socket.h>
+-#include <sys/types.h>
+ #include <unistd.h>
+ 
+ #include <common.h>
+diff -ru bbftpd/signals_routines.c bbftp/bbftpd/signals_routines.c
+--- bbftpd/signals_routines.c	Wed Apr 17 10:45:10 2002
++++ bbftpd/signals_routines.c	Wed Jun  7 00:01:40 2006
+@@ -192,7 +192,7 @@
+         */ 
+         if ( unlinkfile == 1 ) unlink(currentfilename) ;
+         clean_child() ;
+-        exit() ;
++        exit(0) ;
+     } else {
+         exit(EINTR) ;
+     }
