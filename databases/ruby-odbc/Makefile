@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	odbc
-PORTVERSION=	0.997
+PORTVERSION=	0.998
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.ch-werner.de/rubyodbc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby extension library to use ODBC data sources
 
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
