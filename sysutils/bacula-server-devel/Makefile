@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	1.38.6
+DISTVERSION=	1.38.10-beta1-20060606
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -88,10 +88,10 @@ MAN8=		bacula.8
 
 .include <bsd.port.pre.mk>
 
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
-.if defined(WITH_DOCS)
-DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}.tar.gz
-.endif
+#DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
+#.if defined(WITH_DOCS)
+#DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}.tar.gz
+#.endif
 
 .if defined(WITH_DOCS)
 PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
