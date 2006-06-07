@@ -390,7 +390,6 @@
     SUBDIR += monkey
     SUBDIR += moodle
     SUBDIR += mozex
-    SUBDIR += mozex-firefox
     SUBDIR += mozilla
     SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel
@@ -1023,6 +1022,7 @@
     SUBDIR += xpi-locale-switcher
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-mousegestures
+    SUBDIR += xpi-mozex
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download

@@ -2372,3 +2372,4 @@ math/pari-devel|math/pari|2006-06-05|Merged into stable port
 x11-toolkits/gtk12-apireference||2006-06-06|Obsoleted by x11-toolkits/gtk20-reference and friends
 x11-toolkits/gtk20-apireference||2006-06-06|Obsoleted by x11-toolkits/gtk20-reference and friends
 textproc/p5-Text-MagicTemplate||2006-06-07|Has expired
+www/mozex-firefox|www/xpi-mozex|2006-06-07|Standardize port name
