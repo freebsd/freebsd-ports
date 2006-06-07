@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	nb-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Norwegian Bokmål messages and documentation for koffice
+COMMENT=	Norwegian Bokmal messages and documentation for koffice
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
