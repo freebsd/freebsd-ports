@@ -28,7 +28,7 @@ DOCS=		${RUBY_RD_FILES} \
 		${RUBY_RD_HTML_FILES} \
 		doc
 
-RUBY_REQUIRE=	Ruby > 180
+RUBY_REQUIRE=	Ruby >= 180
 
 .include <bsd.port.pre.mk>
 
