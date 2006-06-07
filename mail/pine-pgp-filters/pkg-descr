@@ -6,7 +6,7 @@ encoding to. See INSTALL for how to use it. It's not possible for a sending
 filter to create these kinds of MIME messages, since Pine does not give the
 user the ability to twiddle attachments.
 
-WWW: http://dougbarton.net/FreeBSD/Downloads/
+WWW: http://dougbarton.us/Downloads/
 
 - Doug Barton
 DougB@FreeBSD.org
