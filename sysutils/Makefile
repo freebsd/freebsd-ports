@@ -186,6 +186,7 @@
     SUBDIR += gag
     SUBDIR += ganglia-monitor-core
     SUBDIR += ganglia-webfrontend
+    SUBDIR += gapcmon
     SUBDIR += gcdmaster
     SUBDIR += gcombust
     SUBDIR += gconf-editor
