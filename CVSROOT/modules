@@ -11312,6 +11312,7 @@ py-vertex	ports/net-p2p/py-vertex
 py-visual	ports/graphics/py-visual
 py-vmaps	ports/devel/py-vmaps
 py-vorbis	ports/audio/py-vorbis
+py-wax		ports/x11-toolkits/py-wax
 py-webware	ports/www/py-webware
 py-webware-component	ports/www/py-webware-component
 py-wmgeneral	ports/x11-toolkits/py-wmgeneral
