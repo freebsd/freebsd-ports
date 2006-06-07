@@ -95,6 +95,7 @@ www/siteframe/includes/TagUserRel.class.inc
 www/siteframe/includes/TagView.class.inc
 www/siteframe/includes/Template.class.inc
 www/siteframe/includes/Text.class.inc
+www/siteframe/includes/TopRatedPages.class.inc
 www/siteframe/includes/Trackback.class.inc
 www/siteframe/includes/User.class.inc
 www/siteframe/includes/UserLog.class.inc
@@ -113,6 +114,7 @@ www/siteframe/memos.php
 www/siteframe/misc/README.txt
 www/siteframe/misc/dropall.sql
 www/siteframe/page.php
+www/siteframe/pkg-message
 www/siteframe/plugins/README.txt
 www/siteframe/plugins/email_all_content.php
 www/siteframe/plugins/email_memoranda.php
@@ -146,6 +148,7 @@ www/siteframe/smarty/block.recent.php
 www/siteframe/smarty/block.rss.php
 www/siteframe/smarty/block.tags.php
 www/siteframe/smarty/block.user_files.php
+www/siteframe/smarty/block.user_groups.php
 www/siteframe/smarty/block.user_images.php
 www/siteframe/smarty/function.avgrating.php
 www/siteframe/smarty/function.calendar.php
@@ -170,6 +173,26 @@ www/siteframe/tb.php
 www/siteframe/templates.php
 www/siteframe/templates/acceptance.tpl
 www/siteframe/templates/attachments.tpl
+www/siteframe/templates/blue_blog/action.tpl
+www/siteframe/templates/blue_blog/addtag.tpl
+www/siteframe/templates/blue_blog/admin.tpl
+www/siteframe/templates/blue_blog/archive.tpl
+www/siteframe/templates/blue_blog/blue_blog.jpg
+www/siteframe/templates/blue_blog/custom.tpl
+www/siteframe/templates/blue_blog/edit.tpl
+www/siteframe/templates/blue_blog/empty.tpl
+www/siteframe/templates/blue_blog/error.tpl
+www/siteframe/templates/blue_blog/excerpt.tpl
+www/siteframe/templates/blue_blog/favorites.tpl
+www/siteframe/templates/blue_blog/feeds.tpl
+www/siteframe/templates/blue_blog/file.tpl
+www/siteframe/templates/blue_blog/folder.tpl
+www/siteframe/templates/blue_blog/folders.tpl
+www/siteframe/templates/blue_blog/footer.tpl
+www/siteframe/templates/blue_blog/group.tpl
+www/siteframe/templates/blue_blog/groups.tpl
+www/siteframe/templates/blue_blog/header.tpl
+www/siteframe/templates/blue_blog/imagepopup.tpl
 www/siteframe/templates/blue_blog/images/articlebg.gif
 www/siteframe/templates/blue_blog/images/bg.gif
 www/siteframe/templates/blue_blog/images/h2bg.gif
@@ -180,6 +203,36 @@ www/siteframe/templates/blue_blog/images/searchbox.gif
 www/siteframe/templates/blue_blog/images/sidebar.gif
 www/siteframe/templates/blue_blog/images/style.css
 www/siteframe/templates/blue_blog/index.html
+www/siteframe/templates/blue_blog/index.tpl
+www/siteframe/templates/blue_blog/links.tpl
+www/siteframe/templates/blue_blog/list.tpl
+www/siteframe/templates/blue_blog/list_audit_log.tpl
+www/siteframe/templates/blue_blog/list_invitations.tpl
+www/siteframe/templates/blue_blog/list_texts.tpl
+www/siteframe/templates/blue_blog/login.tpl
+www/siteframe/templates/blue_blog/memos.tpl
+www/siteframe/templates/blue_blog/page.tpl
+www/siteframe/templates/blue_blog/paginator.tpl
+www/siteframe/templates/blue_blog/quotes.tpl
+www/siteframe/templates/blue_blog/register.tpl
+www/siteframe/templates/blue_blog/rssfeed.tpl
+www/siteframe/templates/blue_blog/rte_head_fck.tpl
+www/siteframe/templates/blue_blog/rte_head_tinymce.tpl
+www/siteframe/templates/blue_blog/rte_head_widg.tpl
+www/siteframe/templates/blue_blog/search.tpl
+www/siteframe/templates/blue_blog/searchbox.tpl
+www/siteframe/templates/blue_blog/setup.tpl
+www/siteframe/templates/blue_blog/siteframe.css
+www/siteframe/templates/blue_blog/sitemap.tpl
+www/siteframe/templates/blue_blog/subscriptions.tpl
+www/siteframe/templates/blue_blog/tag.tpl
+www/siteframe/templates/blue_blog/tags.tpl
+www/siteframe/templates/blue_blog/template.ini
+www/siteframe/templates/blue_blog/templates.tpl
+www/siteframe/templates/blue_blog/text.tpl
+www/siteframe/templates/blue_blog/themes.tpl
+www/siteframe/templates/blue_blog/user.tpl
+www/siteframe/templates/blue_blog/users.tpl
 www/siteframe/templates/burnt/addtag.tpl
 www/siteframe/templates/burnt/admin.tpl
 www/siteframe/templates/burnt/archive.tpl
@@ -329,6 +382,7 @@ www/siteframe/templates/leaves/header.tpl
 www/siteframe/templates/leaves/imagepopup.tpl
 www/siteframe/templates/leaves/index.html
 www/siteframe/templates/leaves/index.tpl
+www/siteframe/templates/leaves/leaves.jpg
 www/siteframe/templates/leaves/links.tpl
 www/siteframe/templates/leaves/list.tpl
 www/siteframe/templates/leaves/list_audit_log.tpl
@@ -424,6 +478,59 @@ www/siteframe/templates/simple/themes.tpl
 www/siteframe/templates/simple/user.tpl
 www/siteframe/templates/simple/users.tpl
 www/siteframe/templates/simple/xml.tpl
+www/siteframe/templates/sinorca/action.tpl
+www/siteframe/templates/sinorca/addtag.tpl
+www/siteframe/templates/sinorca/admin.tpl
+www/siteframe/templates/sinorca/archive.tpl
+www/siteframe/templates/sinorca/custom.tpl
+www/siteframe/templates/sinorca/edit.tpl
+www/siteframe/templates/sinorca/empty.tpl
+www/siteframe/templates/sinorca/error.tpl
+www/siteframe/templates/sinorca/excerpt.tpl
+www/siteframe/templates/sinorca/favorites.tpl
+www/siteframe/templates/sinorca/feeds.tpl
+www/siteframe/templates/sinorca/file.tpl
+www/siteframe/templates/sinorca/folder.tpl
+www/siteframe/templates/sinorca/folders.tpl
+www/siteframe/templates/sinorca/footer.tpl
+www/siteframe/templates/sinorca/group.tpl
+www/siteframe/templates/sinorca/groups.tpl
+www/siteframe/templates/sinorca/header.tpl
+www/siteframe/templates/sinorca/imagepopup.tpl
+www/siteframe/templates/sinorca/index.html
+www/siteframe/templates/sinorca/index.tpl
+www/siteframe/templates/sinorca/links.tpl
+www/siteframe/templates/sinorca/list.tpl
+www/siteframe/templates/sinorca/list_audit_log.tpl
+www/siteframe/templates/sinorca/list_invitations.tpl
+www/siteframe/templates/sinorca/list_texts.tpl
+www/siteframe/templates/sinorca/login.tpl
+www/siteframe/templates/sinorca/memos.tpl
+www/siteframe/templates/sinorca/page.tpl
+www/siteframe/templates/sinorca/paginator.tpl
+www/siteframe/templates/sinorca/quotes.tpl
+www/siteframe/templates/sinorca/register.tpl
+www/siteframe/templates/sinorca/rssfeed.tpl
+www/siteframe/templates/sinorca/rte_head_fck.tpl
+www/siteframe/templates/sinorca/rte_head_tinymce.tpl
+www/siteframe/templates/sinorca/rte_head_widg.tpl
+www/siteframe/templates/sinorca/search.tpl
+www/siteframe/templates/sinorca/searchbox.tpl
+www/siteframe/templates/sinorca/setup.tpl
+www/siteframe/templates/sinorca/sinorca-print.css
+www/siteframe/templates/sinorca/sinorca-screen-alt.css
+www/siteframe/templates/sinorca/sinorca-screen.css
+www/siteframe/templates/sinorca/siteframe.css
+www/siteframe/templates/sinorca/sitemap.tpl
+www/siteframe/templates/sinorca/subscriptions.tpl
+www/siteframe/templates/sinorca/tag.tpl
+www/siteframe/templates/sinorca/tags.tpl
+www/siteframe/templates/sinorca/template.ini
+www/siteframe/templates/sinorca/templates.tpl
+www/siteframe/templates/sinorca/text.tpl
+www/siteframe/templates/sinorca/themes.tpl
+www/siteframe/templates/sinorca/user.tpl
+www/siteframe/templates/sinorca/users.tpl
 www/siteframe/templates/subfolders.tpl
 www/siteframe/templates/tb/action.tpl
 www/siteframe/templates/tb/addtag.tpl
@@ -551,3 +658,23 @@ www/siteframe/text.php
 www/siteframe/themes.php
 www/siteframe/user.php
 www/siteframe/users.php
+@dirrm www/siteframe/templates/widescreen
+@dirrm www/siteframe/templates/tb
+@dirrm www/siteframe/templates/sinorca
+@dirrm www/siteframe/templates/simple
+@dirrm www/siteframe/templates/leaves
+@dirrm www/siteframe/templates/default
+@dirrm www/siteframe/templates/burnt
+@dirrm www/siteframe/templates/blue_blog/images
+@dirrm www/siteframe/templates/blue_blog
+@dirrm www/siteframe/templates
+@dirrm www/siteframe/smarty
+@dirrm www/siteframe/plugins
+@dirrm www/siteframe/misc
+@dirrm www/siteframe/lang
+@dirrm www/siteframe/javascript
+@dirrm www/siteframe/includes
+@dirrm www/siteframe/images
+@dirrm www/siteframe/files
+@dirrm www/siteframe/admin
+@dirrm www/siteframe
