@@ -107,8 +107,6 @@ lib/compat/pam_unix.so.2
 lib/compat/snmp_atm.so.2
 lib/compat/snmp_mibII.so.2
 lib/compat/snmp_netgraph.so.2
-%%USE_LDCONFIG%%libdata/ldconfig/compat5x
-%%USE_LDCONFIG%%%%AMD64%%libdata/ldconfig32/compat5x
 %%AMD64%%lib32/compat/libalias.so.4
 %%AMD64%%lib32/compat/libarchive.so.1
 %%AMD64%%lib32/compat/libatm.so.2
