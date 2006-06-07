@@ -9,15 +9,6 @@
  	else
  	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
  	    then
-@@ -21724,7 +21724,7 @@ except: print 0"`
-     fi
-     if test "$with_python" != ""
-     then
--        pythondir=$(PYTHON_SITE_PACKAGES)
-+        pythondir='$(PYTHON_SITE_PACKAGES)'
-     else
-         pythondir='$(libdir)/python$(PYTHON_VERSION)/site-packages'
-     fi
 @@ -22057,7 +22057,7 @@ fi
  
  
