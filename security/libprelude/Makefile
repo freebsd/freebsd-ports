@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -43,11 +43,9 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
