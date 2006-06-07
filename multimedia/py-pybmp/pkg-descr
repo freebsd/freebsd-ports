@@ -1,0 +1,7 @@
+PyBMP is a Python package allowing full control of BMP as well as
+management of its configuration file. BMP (Beep-Media-Player) is
+a multimedia player written for the X Window System.
+It's a clone of the original pyXMMS.
+
+Author:	Scott Grayban sgrayban@borgnet.us
+WWW:	http://dev-1.borgforge.net/pyBMP

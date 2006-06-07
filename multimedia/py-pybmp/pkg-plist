@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/bmp/__init__.py
+%%PYTHON_SITELIBDIR%%/bmp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bmp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bmp/_bmpconfig.so
+%%PYTHON_SITELIBDIR%%/bmp/_bmpcontrol.so
+%%PYTHON_SITELIBDIR%%/bmp/common.py
+%%PYTHON_SITELIBDIR%%/bmp/common.pyc
+%%PYTHON_SITELIBDIR%%/bmp/common.pyo
+%%PYTHON_SITELIBDIR%%/bmp/config.py
+%%PYTHON_SITELIBDIR%%/bmp/config.pyc
+%%PYTHON_SITELIBDIR%%/bmp/config.pyo
+%%PYTHON_SITELIBDIR%%/bmp/control.py
+%%PYTHON_SITELIBDIR%%/bmp/control.pyc
+%%PYTHON_SITELIBDIR%%/bmp/control.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bmp
