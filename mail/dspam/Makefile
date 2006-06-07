@@ -2,7 +2,7 @@
 # Date created:				3 August 2003
 # Whom:					Dominic Marks <dom@wirespeed.org.uk>
 #
-# $Tecnik: ports/mail/dspam/Makefile,v 1.16 2006/06/05 09:21:42 itetcu Exp $
+# $Tecnik: ports/mail/dspam/Makefile,v 1.18 2006/06/07 23:40:55 itetcu Exp $
 # $FreeBSD$
 #
 
@@ -20,7 +20,7 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.6.7
+PORTVER_MAJ=	3.6.8
 #SNAP_DATE=	.20060421.2101
 _UPD_LINE_NO=	14
 
