@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+bin/tunapie
+%%DATADIR%%/AboutTuner.py
+%%DATADIR%%/AboutTuner.pyc
+%%DATADIR%%/RecordQueue.py
+%%DATADIR%%/RecordQueue.pyc
+%%DATADIR%%/RecordTime.py
+%%DATADIR%%/RecordTime.pyc
+%%DATADIR%%/Splash.py
+%%DATADIR%%/Tunapie.py
+%%DATADIR%%/Tunapie.pyc
+%%DATADIR%%/TunerFrame1.py
+%%DATADIR%%/TunerFrame1.pyc
+%%DATADIR%%/TunerInfoDialog.py
+%%DATADIR%%/TunerInfoDialog.pyc
+%%DATADIR%%/TunerPrefs.py
+%%DATADIR%%/TunerPrefs.pyc
+%%DATADIR%%/tplogo.jpg
+%%DATADIR%%/tuner.py
+%%DATADIR%%/tuner.pyc
+%%DATADIR%%/tuneradult.py
+%%DATADIR%%/tunersafe.py
+@dirrm %%DATADIR%%

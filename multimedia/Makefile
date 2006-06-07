@@ -196,6 +196,7 @@
     SUBDIR += tovid
     SUBDIR += toxine
     SUBDIR += transcode
+    SUBDIR += tunapie
     SUBDIR += vamps
     SUBDIR += vcdgear
     SUBDIR += vcdimager
