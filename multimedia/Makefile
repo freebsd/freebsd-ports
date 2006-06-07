@@ -170,6 +170,7 @@
     SUBDIR += pwcbsd
     SUBDIR += py-gstreamer
     SUBDIR += py-gstreamer80
+    SUBDIR += py-pybmp
     SUBDIR += qdvdauthor
     SUBDIR += quodlibet
     SUBDIR += quark
