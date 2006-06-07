@@ -8,7 +8,7 @@
 PORTNAME=	freevrrpd
 PORTVERSION=	0.9.3
 CATEGORIES=	net
-MASTER_SITES=	http://bmw2002.hexod.net/opensource/ \
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
 MASTER_SITE_SUBDIR=	flz/freevrrpd/:freebsd
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT,freebsd
