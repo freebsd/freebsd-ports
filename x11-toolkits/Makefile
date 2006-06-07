@@ -47,9 +47,7 @@
     SUBDIR += gtk-sharp10
     SUBDIR += gtk-sharp20
     SUBDIR += gtk12
-    SUBDIR += gtk12-apireference
     SUBDIR += gtk20
-    SUBDIR += gtk20-apireference
     SUBDIR += gtk20-reference
     SUBDIR += gtkada
     SUBDIR += gtkdatabox
