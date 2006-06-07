@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Curses
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Curses
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for terminal screen handling and optimization
 
 PERL_CONFIGURE=	yes
