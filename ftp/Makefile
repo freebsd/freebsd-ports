@@ -7,6 +7,7 @@
     SUBDIR += axel
     SUBDIR += axelq
     SUBDIR += axyftp
+    SUBDIR += bbftp
     SUBDIR += bftpd
     SUBDIR += bsdftpd-ssl
     SUBDIR += cftp

@@ -1,0 +1,23 @@
+bbFTP is a file transfer software. It implements its own transfer protocol,
+which is optimized for large files (larger than 2GB) and secure as it does not
+read the password in a file and encrypts the connection information.  bbFTP
+main features are:
+
+    * Encoded username and password at connection
+    * SSH and Certificate authentication modules
+    * Multi-stream transfer
+    * Big windows as defined in RFC1323
+    * On-the-fly data compression
+    * Automatic retry
+    * Customizable time-outs
+    * Transfer simulation
+    * AFS authentication integration
+    * RFIO interface
+
+bbFTP is open-source software, released under the GNU General Public License.
+It was written by Gilles Farrache at IN2P3 Computing Center in Lyon, France.
+
+WWW: http://doc.in2p3.fr/bbftp/index.html
+
+- Petr
+hopet@ics.muni.cz
