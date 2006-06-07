@@ -10592,6 +10592,7 @@ polymake	ports/math/polymake
 polyml		ports/lang/polyml
 polypaudio	ports/audio/polypaudio
 polypuzzle	ports/games/polypuzzle
+pongix		ports/games/pongix
 pop-before-smtp	ports/mail/pop-before-smtp
 pop3gwd		ports/mail/pop3gwd
 pop3lite	ports/mail/pop3lite
