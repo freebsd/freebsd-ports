@@ -1,4 +1,4 @@
-# $Tecnik: ports/mail/dspam/files/UPDATING,v 1.13 2006/06/05 09:21:46 itetcu Exp $
+# $Tecnik: ports/mail/dspam/files/UPDATING,v 1.16 2006/06/07 23:45:21 itetcu Exp $
 # $FreeBSD$
 #
 # for each PKGNAME or user option change an entry should be added in this file
@@ -15,6 +15,15 @@ This file concetrate on the FreeBSD / port specific changes and one should read
 also the UPGRADING enclosed in the dspam distribution. You can see it by doing
 in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
+
+###########################################################################
+# dspam-3.6.8
+#
+
+Bugfixes:
+- PostgreSQL fails to connect (always)
+- LDAP client will not build due to header missing from makefile
+
 
 ###########################################################################
 # dspam-3.6.7
