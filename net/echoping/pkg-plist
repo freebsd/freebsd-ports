@@ -1,0 +1,17 @@
+lib/echoping/dns.a
+lib/echoping/dns.la
+lib/echoping/dns.so
+lib/echoping/dns.so.0
+lib/echoping/ldap.a
+lib/echoping/ldap.la
+lib/echoping/ldap.so
+lib/echoping/ldap.so.0
+lib/echoping/random.a
+lib/echoping/random.la
+lib/echoping/random.so
+lib/echoping/random.so.0
+lib/echoping/whois.a
+lib/echoping/whois.la
+lib/echoping/whois.so
+lib/echoping/whois.so.0
+@dirrm lib/echoping
