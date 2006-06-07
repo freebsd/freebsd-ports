@@ -1023,6 +1023,7 @@ cardpics	ports/games/cardpics
 carthage	ports/textproc/carthage
 cascade		ports/cad/cascade
 castor		ports/java/castor
+castpodder	ports/multimedia/castpodder
 catdoc		ports/textproc/catdoc
 catdvi		ports/print/catdvi
 caudium10	ports/www/caudium10
