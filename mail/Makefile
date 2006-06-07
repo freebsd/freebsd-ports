@@ -254,7 +254,6 @@
     SUBDIR += nullmailer
     SUBDIR += offlineimap
     SUBDIR += openwebmail
-    SUBDIR += openwebmail-devel
     SUBDIR += p3scan
     SUBDIR += p5-Email-Abstract
     SUBDIR += p5-Email-Address
