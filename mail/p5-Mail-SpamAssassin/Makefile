@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.1.1
-PORTREVISION=	4
+PORTVERSION=	3.1.3
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -119,6 +118,7 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::Plugin::AntiVirus.3 \
 		Mail::SpamAssassin::Plugin::AutoLearnThreshold.3 \
 		Mail::SpamAssassin::Plugin::DCC.3 \
+		Mail::SpamAssassin::Plugin::DKIM.3 \
 		Mail::SpamAssassin::Plugin::DomainKeys.3 \
 		Mail::SpamAssassin::Plugin::Hashcash.3 \
 		Mail::SpamAssassin::Plugin::MIMEHeader.3 \
@@ -171,13 +171,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
 		-e 's#B_CONFDIR)/init.pre#B_CONFDIR)/init.pre.sample#g' \
 		-e 's#B_CONFDIR)/v310.pre#B_CONFDIR)/v310.pre.sample#g' \
+		-e 's#B_CONFDIR)/v312.pre#B_CONFDIR)/v312.pre.sample#g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 .if defined(WITH_RAZOR)
-	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
+	${REINPLACE_CMD} -e '/Razor2/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
 .endif
 .if defined(WITH_DOMAINKEYS)
-	${REINPLACE_CMD} -e '/DomainKeys/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
+	${REINPLACE_CMD} -e '/DomainKeys/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
 .endif
 .if defined(WITH_RELAY_COUNTRY)
 	${REINPLACE_CMD} -e '/RelayCountry/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
@@ -194,6 +195,9 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v310.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v310.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v310.pre
+	@[ -f ${PREFIX}/etc/mail/spamassassin/v312.pre ] || \
+		${CP} ${PREFIX}/etc/mail/spamassassin/v312.pre.sample \
+			${PREFIX}/etc/mail/spamassassin/v312.pre
 .if defined(WITH_TOOLS)
 	@${MKDIR} ${DATADIR}/tools
 	@for f in ${WRKSRC}/tools/*; do \
