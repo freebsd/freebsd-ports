@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mysql
-PORTVERSION=	2.7
+PORTVERSION=	2.7.1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.tmtm.org/downloads/mysql/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module for accessing MySQL databases with a C API like interface
 
 USE_MYSQL=	yes
