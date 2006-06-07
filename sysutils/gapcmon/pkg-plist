@@ -1,0 +1,9 @@
+bin/gapcmon
+share/applications/gapcmon.desktop
+share/pixmaps/apcupsd.png
+share/pixmaps/charging.png
+share/pixmaps/gapc_prefs.png
+share/pixmaps/onbatt.png
+share/pixmaps/online.png
+share/pixmaps/unplugged.png
+@dirrmtry share/applications

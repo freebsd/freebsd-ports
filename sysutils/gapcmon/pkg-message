@@ -1,0 +1,6 @@
+***
+For GapcMon to work, you must enable apcupsd's NIS by adding the following to
+your apcupsd.conf:
+
+NETSERVER on
+***
