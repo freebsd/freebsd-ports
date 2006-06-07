@@ -569,6 +569,7 @@
     SUBDIR += py-ldap2
     SUBDIR += py-libdnet
     SUBDIR += py-libnet
+    SUBDIR += py-mantissa
     SUBDIR += py-medusa
     SUBDIR += py-mp-random
     SUBDIR += py-pcap

@@ -1,0 +1,10 @@
+Mantissa is an application server.
+
+It provides integration between the Axiom Project object database, and the 
+Twisted Framework, as well as web user-interface utilities.
+
+The goal of Mantissa is to provide a common platform that open-source 
+contributors can use to help us build customized additions to the Divmod 
+service. 
+
+WWW: http://divmod.org/trac/wiki/DivmodMantissa
