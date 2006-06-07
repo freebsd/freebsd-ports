@@ -37,15 +37,11 @@ lib/libjack.so.0
 libdata/pkgconfig/jack.pc
 %%DOCS%%share/jack-audio-connection-kit/reference/html/annotated.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/deprecated.html
-%%DOCS%%share/jack-audio-connection-kit/reference/html/dir_000000.html
-%%DOCS%%share/jack-audio-connection-kit/reference/html/dir_000001.html
-%%DOCS%%share/jack-audio-connection-kit/reference/html/dirs.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.css
 %%DOCS%%share/jack-audio-connection-kit/reference/html/doxygen.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/files.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/fsm.png
 %%DOCS%%share/jack-audio-connection-kit/reference/html/functions.html
-%%DOCS%%share/jack-audio-connection-kit/reference/html/functions_rela.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/functions_vars.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals.html
 %%DOCS%%share/jack-audio-connection-kit/reference/html/globals_defs.html
