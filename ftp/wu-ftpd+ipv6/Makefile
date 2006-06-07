@@ -9,7 +9,7 @@
 
 PORTNAME=	wu-ftpd+ipv6
 PORTVERSION=	2.6.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 DISTNAME=	wu-ftpd-${PORTVERSION}
@@ -24,10 +24,17 @@ COMMENT=	A replacement ftp server for Un*x systems
 CONFLICTS=	wu-ftpd-[0-9]* heimdal-[0-9]*
 
 USE_AUTOTOOLS=	autoconf:213
-CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
+CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
 		--enable-ipv6 \
 		--prefix=${PREFIX} --with-etc-dir=${PREFIX}/etc
+
+.if !defined(WITH_PAM)
+CONFIGURE_ARGS+= --enable-opie
+.else
+CONFIGURE_ARGS+= --enable-pam
+EXTRA_PATCHES+=	${FILESDIR}/ftpd.c-pam
+.endif
 
 MAKE_ENV+=	WARNINGS=-DSPT_TYPE=SPT_BUILTIN
 
