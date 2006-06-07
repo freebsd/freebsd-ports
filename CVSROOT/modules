@@ -6839,7 +6839,6 @@ movingmotif	ports/x11-toolkits/movingmotif
 mowitz		ports/x11-toolkits/mowitz
 mozart		ports/lang/mozart
 mozex		ports/www/mozex
-mozex-firefox	ports/www/mozex-firefox
 mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-devel	ports/www/mozilla-devel
@@ -14560,6 +14559,7 @@ xpi-linkification	ports/www/xpi-linkification
 xpi-locale-switcher	ports/www/xpi-locale-switcher
 xpi-mldonkey	ports/www/xpi-mldonkey
 xpi-mousegestures	ports/www/xpi-mousegestures
+xpi-mozex	ports/www/zpi-mozex
 xpi-no-referrer	ports/www/xpi-no-referrer
 xpi-noscript	ports/www/xpi-noscript
 xpi-pdf_download	ports/www/xpi-pdf_download
