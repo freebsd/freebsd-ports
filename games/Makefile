@@ -497,6 +497,7 @@
     SUBDIR += pmars
     SUBDIR += pmars-sdl
     SUBDIR += polypuzzle
+    SUBDIR += pongix
     SUBDIR += pouetchess
     SUBDIR += powermanga
     SUBDIR += powwow
