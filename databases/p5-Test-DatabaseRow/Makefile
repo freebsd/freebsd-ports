@@ -1,0 +1,35 @@
+# New ports collection makefile for: 	p5-Test-DatabaseRow
+# Date created:				June 3 2006
+# Whom:					Joshua D. Abraham <jabra@ccs.neu.edu>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Test-DatabaseRow
+PORTVERSION=	1.04
+CATEGORIES=	databases perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARKF
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	jabra@ccs.neu.edu
+COMMENT=	Simple database tests
+
+BUILD_DEPENDS=	${SITE_PERL}/mach/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/Test/Builder/Module.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Test::DatabaseRow.3
+
+post-configure:
+	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.0 or higher. Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
