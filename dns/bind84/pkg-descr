@@ -13,4 +13,4 @@ BIND 8 Features
 BIND 8.4.0 Highlights
 	IPv6 transport support for named, named-xfer and ndc.
 
-WWW: http://www.isc.org/products/BIND/
+WWW: http://www.isc.org/index.pl?/sw/bind/
