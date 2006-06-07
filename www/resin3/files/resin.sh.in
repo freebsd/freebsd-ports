@@ -4,6 +4,8 @@
 #
 
 # PROVIDE: %%APP_NAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable %%APP_NAME%%:
