@@ -58,10 +58,6 @@ JAVA_VENDOR=	freebsd bsdjava
 ONLY_FOR_ARCHS=	amd64 i386
 
 .if ${ARCH} == amd64
-BROKEN=		"Work in progress"
-.endif
-
-.if ${ARCH} == amd64
 GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 .else
@@ -161,7 +157,10 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE
 #workarounds
 CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
-.if (${GCCVER} == 4.1.1)
+.if ${ARCH} == amd64
+WITHOUT_MOZILLA=	yes
+.endif
+.if (${GCCVER} == 4.1.2)
 LIB_DEPENDS=   boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=       --with-system-boost=yes #i58343#
 .endif
