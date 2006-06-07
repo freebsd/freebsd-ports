@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	xdg
-PORTVERSION=	${KDE_VERSION}
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	kde-
@@ -17,8 +18,9 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Script which hooks into startkde and helps KDE pick up XDG apps/menus
 
-USE_KDEBASE_VER=3
+.if defined(KDE_PREFIX)
 PREFIX=		${KDE_PREFIX}
+.endif
 
 NO_BUILD=	yes
 

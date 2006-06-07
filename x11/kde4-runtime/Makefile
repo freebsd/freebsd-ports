@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,6 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
+RUN_DEPENDS=	${LOCALBASE}/env/xdg-env.sh:${PORTSDIR}/misc/kde-xdg-env
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
 		xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
