@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.9
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,34 +16,16 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to Sleepycat's Berkeley DB revision 2 or later
 
-LIB_DEPENDS=	db${LIB_SUFFIX}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+USE_BDB=	YES
 
 CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}[2-4]*
-
-.if defined(WITH_BDB2) || defined(WITH_DB2)
-WITH_BDB_VER=	2
-.elif defined(WITH_BDB3) || defined(WITH_DB3)
-WITH_BDB_VER=	3
-.elif defined(WITH_BDB4) || defined(WITH_DB4)
-WITH_BDB_VER=	4
-.elif defined(WITH_BDB41) || defined(WITH_DB41)
-WITH_BDB_VER=	41
-.elif defined(WITH_BDB42) || defined(WITH_DB42) || (defined(WITH_BDB_VER) && ${WITH_BDB_VER} == "42")
-WITH_BDB_VER=	42
-LIB_SUFFIX=	-4.2
-.elif defined(WITH_BDB43) || defined(WITH_DB43) || (defined(WITH_BDB_VER) && ${WITH_BDB_VER} == "43")
-WITH_BDB_VER=	43
-LIB_SUFFIX=	-4.3
-.endif
-WITH_BDB_VER?=	4
-LIB_SUFFIX?=	${WITH_BDB_VER}
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
-CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db${WITH_BDB_VER}" \
-		--with-db-version=${LIB_SUFFIX}
+CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
+		--with-db-lib=${BDB_LIB_DIR}
 INSTALL_TARGET=	site-install
 
 DOCS=		Changes \
@@ -60,6 +42,9 @@ post-build:
 .endif
 
 .include <bsd.port.pre.mk>
+
+DOCSDIR=	${RUBY_MODDOCDIR}
+PORTDOCS=	*
 
 post-install:
 .if !defined(NOPORTDOCS)
