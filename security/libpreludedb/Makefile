@@ -4,8 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.7.1
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -13,7 +12,7 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	prelude.[6-?]:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	prelude.[8-9]:${PORTSDIR}/security/libprelude
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
@@ -26,50 +25,50 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
-CONFIGURE_ARGS+=	--enable-perl
+CONFIGURE_ARGS+=	--with-perl
 PLIST_SUB+=		WITH_PERL=""
 .else
-CONFIGURE_ARGS+=	--disable-perl
+CONFIGURE_ARGS+=	--without-perl
 PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		yes
-CONFIGURE_ARGS+=	--enable-python
+CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON=""
 .else
-CONFIGURE_ARGS+=	--disable-python
+CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--enable-mysql
+CONFIGURE_ARGS+=	--with-mysql
 PLIST_SUB+=		WITH_MYSQL=""
 LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
-CONFIGURE_ARGS+=	--disable-mysql
+CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=		WITH_MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--enable-pgsql
+CONFIGURE_ARGS+=	--with-pgsql
 PLIST_SUB+=		WITH_PGSQL=""
 LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
-CONFIGURE_ARGS+=	--disable-pgsql
+CONFIGURE_ARGS+=	--without-pgsql
 PLIST_SUB+=		WITH_PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=		yes
-CONFIGURE_ARGS+=	--enable-sqlite3
+CONFIGURE_ARGS+=	--with-sqlite3
 PLIST_SUB+=		WITH_SQLITE=""
 LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
 LDCONFIG_DIRS+=		%%PREFIX%%/lib/libpreludedb/plugins/sql
 .else
-CONFIGURE_ARGS+=	--disable-sqlite3
+CONFIGURE_ARGS+=	--without-sqlite3
 PLIST_SUB+=		WITH_SQLITE="@comment "
 .endif
 

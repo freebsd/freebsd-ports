@@ -24,6 +24,7 @@ lib/libpreludedb/plugins/formats/classic.la
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB/PreludeDB.so
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PreludeDB
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_preludedb.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.py
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.pyc
@@ -32,6 +33,7 @@ share/aclocal/libpreludedb.m4
 %%DATADIR%%/classic/mysql-update-14-2.sql
 %%DATADIR%%/classic/mysql-update-14-3.sql
 %%DATADIR%%/classic/mysql-update-14-4.sql
+%%DATADIR%%/classic/mysql-update-14-5.sql
 %%DATADIR%%/classic/mysql.sql
 %%DATADIR%%/classic/mysql2pgsql.sh
 %%DATADIR%%/classic/mysql2sqlite.sh
@@ -39,8 +41,10 @@ share/aclocal/libpreludedb.m4
 %%DATADIR%%/classic/pgsql-update-14-2.sql
 %%DATADIR%%/classic/pgsql-update-14-3.sql
 %%DATADIR%%/classic/pgsql-update-14-4.sql
+%%DATADIR%%/classic/pgsql-update-14-5.sql
 %%DATADIR%%/classic/pgsql.sql
 %%DATADIR%%/classic/sqlite-update-14-4.sql
+%%DATADIR%%/classic/sqlite-update-14-5.sql
 %%DATADIR%%/classic/sqlite.sql
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
