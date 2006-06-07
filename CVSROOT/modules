@@ -674,6 +674,7 @@ bbconf		ports/x11-wm/bbconf
 bbdate		ports/x11-clocks/bbdate
 bbdb		ports/databases/bbdb
 bbdb-emacs20	ports/databases/bbdb-emacs20
+bbftp		ports/ftp/bbftp
 bbjd		ports/misc/bbjd
 bbkeys		ports/x11-wm/bbkeys
 bblimage	ports/science/bblimage
