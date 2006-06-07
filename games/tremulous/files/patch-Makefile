@@ -1,0 +1,302 @@
+--- ./tremulous-1.1.0-src/Makefile.orig	Tue Mar 21 19:28:25 2006
++++ ./tremulous-1.1.0-src/Makefile	Wed Jun  7 16:57:12 2006
+@@ -27,11 +27,20 @@
+   endif
+ endif
+ 
+-BUILD_CLIENT     =
+-BUILD_CLIENT_SMP =
+-BUILD_SERVER     =
+-BUILD_GAME_SO    =
+-BUILD_GAME_QVM   =
++BUILD_CLIENT?=0
++BUILD_CLIENT_SMP?=0
++BUILD_GAME_QVM?=0
++BUILD_GAME_SO?=0
++BUILD_MASTER_SERVER?=0
++BUILD_SERVER?=0
++HAVE_VM_COMPILED?=false
++USE_CODEC_VORBIS?=0
++USE_LOCAL_HEADERS?=0
++USE_OPENAL?=0
++USE_OPENAL_DLOPEN?=0
++USE_OPTIMIZED_CFLAGS?=0
++USE_SDL_AUDIO?=0
++USE_SDL_VIDEO?=0
+ 
+ #############################################################################
+ #
+@@ -89,34 +98,10 @@
+ endif
+ export USE_CCACHE
+ 
+-ifndef USE_SDL
+-USE_SDL=1
+-endif
+-
+-ifndef USE_OPENAL
+-USE_OPENAL=1
+-endif
+-
+-ifndef USE_OPENAL_DLOPEN
+-USE_OPENAL_DLOPEN=0
+-endif
+-
+-ifndef USE_CODEC_VORBIS
+-USE_CODEC_VORBIS=0
+-endif
+-
+-ifndef USE_LOCAL_HEADERS
+-USE_LOCAL_HEADERS=1
+-endif
+-
+-ifndef BUILD_MASTER_SERVER
+-BUILD_MASTER_SERVER=0
+-endif
+-
+ #############################################################################
+ 
+ BD=$(BUILD_DIR)/debug-$(PLATFORM)-$(ARCH)
+-BR=$(BUILD_DIR)/release-$(PLATFORM)-$(ARCH)
++BR=$(BUILD_DIR)/release
+ CDIR=$(MOUNT_DIR)/client
+ SDIR=$(MOUNT_DIR)/server
+ RDIR=$(MOUNT_DIR)/renderer
+@@ -412,18 +397,12 @@
+ 
+ ifeq ($(PLATFORM),freebsd)
+ 
+-  ifneq (,$(findstring alpha,$(shell uname -m)))
+-    ARCH=axp
+-  else #default to x86
+-    ARCH=x86
+-  endif #alpha test
+-
+-
+-  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
++  BASE_CFLAGS = -I$(LOCALBASE)/include -DARCH='\"$(ARCH)\"' -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
+ 
+-  GL_CFLAGS = -I/usr/X11R6/include
++  GL_CFLAGS = -I$(X11BASE)/include
+ 
+   DEBUG_CFLAGS=$(BASE_CFLAGS) -g
++  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -pipe
+ 
+   ifeq ($(USE_OPENAL),1)
+     BASE_CFLAGS += -DUSE_OPENAL=1
+@@ -436,46 +415,62 @@
+     BASE_CFLAGS += -DUSE_CODEC_VORBIS=1
+   endif
+ 
+-  ifeq ($(USE_SDL),1)
+-    BASE_CFLAGS += $(shell sdl11-config --cflags) -DUSE_SDL_VIDEO=1 -DUSE_SDL_SOUND=1
++  ifeq ($(USE_SDL_AUDIO),1)
++    BASE_CFLAGS += $(shell $(SDL_CONFIG) --cflags)
++  else
++    ifeq ($(USE_SDL_VIDEO),1)
++      BASE_CFLAGS += $(shell $(SDL_CONFIG) --cflags)
++    endif
+   endif
+ 
+-  ifeq ($(ARCH),axp)
+-    CC=gcc
+-    BASE_CFLAGS += -DNO_VM_COMPILED
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -ffast-math -funroll-loops \
+-      -fomit-frame-pointer -fexpensive-optimizations
+-  else
+-  ifeq ($(ARCH),x86)
+-    CC=gcc
+-    RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -O3 -mtune=pentiumpro \
+-      -march=pentium -fomit-frame-pointer -pipe -ffast-math \
+-      -falign-loops=2 -falign-jumps=2 -falign-functions=2 \
+-      -funroll-loops -fstrength-reduce
+-  else
+-    BASE_CFLAGS += -DNO_VM_COMPILED
++  ifeq ($(USE_SDL_AUDIO),1)
++    BASE_CFLAGS += -DUSE_SDL_SOUND=1
++  endif
++
++  ifeq ($(USE_SDL_VIDEO),1)
++    BASE_CFLAGS += -DUSE_SDL_VIDEO=1
++  endif
++
++  ifeq ($(USE_OPTIMIZED_CFLAGS),1)
++    RELEASE_CFLAGS+=-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
++       -fexpensive-optimizations
++    ifeq ($(ARCH),i386)
++      RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
++         -fstrength-reduce
++    endif
+   endif
++
++  HAVE_VM_COMPILED?=false
++  ifneq ($(HAVE_VM_COMPILED),true)
++    BASE_CFLAGS += -DNO_VM_COMPILED
+   endif
+ 
+   SHLIBEXT=so
+   SHLIBCFLAGS=-fPIC
+   SHLIBLDFLAGS=-shared $(LDFLAGS)
+ 
+-  THREAD_LDFLAGS=-lpthread
++  THREAD_LDFLAGS=$(PTHREAD_LIBS)
+   # don't need -ldl (FreeBSD)
+-  LDFLAGS=-lm
++  LDFLAGS+=-lm
+ 
+-  CLIENT_LDFLAGS =
++  CLIENT_LDFLAGS = -L$(LOCALBASE)/lib
+ 
+-  ifeq ($(USE_SDL),1)
+-    CLIENT_LDFLAGS += $(shell sdl11-config --libs)
++  ifeq ($(USE_SDL_AUDIO),1)
++    CLIENT_LDFLAGS += $(shell $(SDL_CONFIG) --libs)
+   else
+-    CLIENT_LDFLAGS += -L/usr/X11R6/$(LIB) -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++    ifeq ($(USE_SDL_VIDEO),1)
++      CLIENT_LDFLAGS += $(shell $(SDL_CONFIG) --libs)
++    endif
++  endif
++
++  ifneq ($(USE_SDL_VIDEO),1)
++    CLIENT_LDFLAGS += -L$(X11BASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
+   endif
+ 
+   ifeq ($(USE_OPENAL),1)
++    CLIENT_LDFLAGS += $(THREAD_LDFLAGS)
+     ifneq ($(USE_OPENAL_DLOPEN),1)
+-      CLIENT_LDFLAGS += $(THREAD_LDFLAGS) -lopenal
++      CLIENT_LDFLAGS += -lopenal
+     endif
+   endif
+ 
+@@ -637,21 +632,22 @@
+ TARGETS =
+ 
+ ifneq ($(BUILD_SERVER),0)
+-  TARGETS += $(B)/tremded.$(ARCH)$(BINEXT)
++  TARGETS += $(B)/tremded$(BINEXT)
+ endif
+ 
+ ifneq ($(BUILD_CLIENT),0)
+-  TARGETS += $(B)/tremulous.$(ARCH)$(BINEXT)
+-  ifneq ($(BUILD_CLIENT_SMP),0)
+-    TARGETS += $(B)/tremulous.$(ARCH)$(BINEXT)
+-  endif
++  TARGETS += $(B)/tremulous$(BINEXT)
++endif
++
++ifneq ($(BUILD_CLIENT_SMP),0)
++  TARGETS += $(B)/tremulous-smp$(BINEXT)
+ endif
+ 
+ ifneq ($(BUILD_GAME_SO),0)
+   TARGETS += \
+-    $(B)/base/cgame$(ARCH).$(SHLIBEXT) \
+-    $(B)/base/game$(ARCH).$(SHLIBEXT) \
+-    $(B)/base/ui$(ARCH).$(SHLIBEXT)
++    $(B)/base/cgame.$(SHLIBEXT) \
++    $(B)/base/game.$(SHLIBEXT) \
++    $(B)/base/ui.$(SHLIBEXT)
+ endif
+ 
+ ifneq ($(BUILD_GAME_QVM),0)
+@@ -709,14 +705,14 @@
+ endif
+ 
+ build_release: B=$(BR)
+-build_release: makedirs tools
++build_release: makedirs
+ 	$(MAKE) targets B=$(BR) CFLAGS="$(CFLAGS) $(RELEASE_CFLAGS) $(DEPEND_CFLAGS)"
+ ifeq ($(BUILD_MASTER_SERVER),1)
+ 	$(MAKE) -C $(MASTERDIR) release
+ endif
+ 
+ #Build both debug and release builds
+-all:build_debug build_release
++all:build_release
+ 
+ targets: $(TARGETS)
+ 
+@@ -901,7 +897,7 @@
+   $(B)/client/tr_surface.o \
+   $(B)/client/tr_world.o \
+ 
+-ifeq ($(ARCH),x86)
++ifeq ($(ARCH),i386)
+   Q3OBJ += $(B)/client/vm_x86.o
+   Q3OBJ += \
+     $(B)/client/snd_mixa.o \
+@@ -910,7 +906,7 @@
+     $(B)/client/snapvectora.o
+ endif
+ 
+-ifeq ($(ARCH),x86_64)
++ifeq ($(ARCH),amd64)
+   Q3OBJ += $(B)/client/vm_x86_64.o
+ endif
+ 
+@@ -962,10 +958,10 @@
+     $(B)/client/sdl_glimp_smp.o
+ endif
+ 
+-$(B)/tremulous.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
++$(B)/tremulous$(BINEXT): $(Q3OBJ) $(Q3POBJ) $(LIBSDLMAIN)
+ 	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ) $(CLIENT_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+ 
+-$(B)/tremulous-smp.$(ARCH)$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
++$(B)/tremulous-smp$(BINEXT): $(Q3OBJ) $(Q3POBJ_SMP) $(LIBSDLMAIN)
+ 	$(CC)  -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
+ 		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
+ 
+@@ -1238,12 +1234,12 @@
+   $(B)/ded/null_input.o \
+   $(B)/ded/null_snddma.o
+ 
+-ifeq ($(ARCH),x86)
++ifeq ($(ARCH),i386)
+   Q3DOBJ += $(B)/ded/vm_x86.o $(B)/ded/ftola.o \
+       $(B)/ded/snapvectora.o $(B)/ded/matha.o
+ endif
+ 
+-ifeq ($(ARCH),x86_64)
++ifeq ($(ARCH),amd64)
+   Q3DOBJ += $(B)/ded/vm_x86_64.o
+ endif
+ 
+@@ -1253,7 +1249,7 @@
+   endif
+ endif
+ 
+-$(B)/tremded.$(ARCH)$(BINEXT): $(Q3DOBJ)
++$(B)/tremded$(BINEXT): $(Q3DOBJ)
+ 	$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
+ 
+ $(B)/ded/sv_bot.o : $(SDIR)/sv_bot.c; $(DO_DED_CC)
+@@ -1374,7 +1370,7 @@
+ CGOBJ = $(CGOBJ_) $(B)/base/cgame/cg_syscalls.o
+ CGVMOBJ = $(CGOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
+ 
+-$(B)/base/cgame$(ARCH).$(SHLIBEXT) : $(CGOBJ)
++$(B)/base/cgame.$(SHLIBEXT) : $(CGOBJ)
+ 	$(CC) $(SHLIBLDFLAGS) -o $@ $(CGOBJ)
+ 
+ $(B)/base/vm/cgame.qvm: $(CGVMOBJ) $(CGDIR)/cg_syscalls.asm
+@@ -1418,7 +1414,7 @@
+ GOBJ = $(GOBJ_) $(B)/base/game/g_syscalls.o
+ GVMOBJ = $(GOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
+ 
+-$(B)/base/game$(ARCH).$(SHLIBEXT) : $(GOBJ)
++$(B)/base/game.$(SHLIBEXT) : $(GOBJ)
+ 	$(CC) $(SHLIBLDFLAGS) -o $@ $(GOBJ)
+ 
+ $(B)/base/vm/game.qvm: $(GVMOBJ) $(GDIR)/g_syscalls.asm
+@@ -1444,7 +1440,7 @@
+ UIOBJ = $(UIOBJ_) $(B)/base/ui/ui_syscalls.o
+ UIVMOBJ = $(UIOBJ_:%.o=%.asm) $(B)/base/game/bg_lib.asm
+ 
+-$(B)/base/ui$(ARCH).$(SHLIBEXT) : $(UIOBJ)
++$(B)/base/ui.$(SHLIBEXT) : $(UIOBJ)
+ 	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(UIOBJ)
+ 
+ $(B)/base/vm/ui.qvm: $(UIVMOBJ) $(UIDIR)/ui_syscalls.asm

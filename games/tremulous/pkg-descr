@@ -1,0 +1,21 @@
+Tremulous is a free, open source game that blends a team based FPS with
+elements of an RTS. Players can choose from 2 unique races, aliens and humans.
+Players on both teams are able to build working structures in-game like an
+RTS. These structures provide many functions, the most important being
+spawning. The designated builders must ensure there are spawn structures or
+other players will not be able to rejoin the game after death. Other
+structures provide automated base defense (to some degree), healing functions
+and much more...
+
+Player advancement is different depending on which team you are on. As a
+human, players are rewarded with credits for each alien kill. These credits
+may be used to purchase new weapons and upgrades from the "Armoury". The alien
+team advances quite differently. Upon killing a human foe, the alien is able
+to evolve into a new class. The more kills gained the more powerful the
+classes available.
+
+The overall objective behind Tremulous is to eliminate the opposing team. This
+is achieved by not only killing the opposing players but also removing their
+ability to respawn by destroying their spawn structures.
+
+WWW: http://www.tremulous.net/

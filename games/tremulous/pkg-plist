@@ -1,0 +1,20 @@
+%%DEDICATED%%bin/tremded
+%%MASTER_SERVER%%bin/tremmaster
+%%CLIENT%%bin/tremulous
+%%SMP%%bin/tremulous-smp
+share/pixmaps/tremulous.xpm
+%%DATADIR%%/base/data-1.1.0.pk3
+%%DATADIR%%/base/map-arachnid2-1.1.0.pk3
+%%DATADIR%%/base/map-atcs-1.1.0.pk3
+%%DATADIR%%/base/map-karith-1.1.0.pk3
+%%DATADIR%%/base/map-nexus6-1.1.0.pk3
+%%DATADIR%%/base/map-niveus-1.1.0.pk3
+%%DATADIR%%/base/map-transit-1.1.0.pk3
+%%DATADIR%%/base/map-tremor-1.1.0.pk3
+%%DATADIR%%/base/map-uncreation-1.1.0.pk3
+%%DATADIR%%/base/maprotation.cfg
+%%DATADIR%%/base/server.cfg
+%%DATADIR%%/base/vms-1.1.0.pk3
+@dirrmtry share/pixmaps
+@dirrm %%DATADIR%%/base
+@dirrm %%DATADIR%%
