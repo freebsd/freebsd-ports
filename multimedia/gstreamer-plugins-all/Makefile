@@ -27,11 +27,6 @@ OPTIONS=	# Hacky.. but it works the way it is set up...
 WITHOUT_FAAC=	yes	# Mp4 Dolby license , no package
 WITHOUT_LAME=	yes	# MP3 License , no package
 .endif
-WITHOUT_LADSPA=	yes	# Broken
-WITHOUT_MPEG2ENC=yes	# Broken from updated mjpegtools
-.if ${OSVERSION} < 500000
-WITHOUT_LIBVISUAL=yes	# Broken on 4.x
-.endif
 
 # Remove core, yes
 PLUGS=	${_USE_GSTREAMER_ALL:S/core//:S/yes//}
