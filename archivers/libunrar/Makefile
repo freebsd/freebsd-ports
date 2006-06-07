@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	libunrar
-PORTVERSION=	3.54
-PORTREVISION=	1
+PORTVERSION=	3.60.b4
 CATEGORIES=	archivers
 MASTER_SITES=	http://files2.rarlab.com/rar/ \
 		http://files3.rarlab.com/rar/ \
 		http://files4.rarlab.com/rar/ \
 		http://files5.rarlab.com/rar/ \
 		http://files6.rarlab.com/rar/
-DISTNAME=	unrarsrc-3.5.4
+DISTNAME=	unrarsrc-3.6.4
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Library to work with RAR archivies
