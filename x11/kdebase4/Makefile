@@ -57,7 +57,7 @@ OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} == xorg
-RUN_DEPENDS=	kompmgr:${PORTSDIR}/x11-wm/kompmgr
+RUN_DEPENDS+=	kompmgr:${PORTSDIR}/x11-wm/kompmgr
 .endif
 
 .if !defined(WITHOUT_ARTSWRAPPER)
