@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liboil
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/ \
 		${MASTER_SITE_LOCAL}
@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--disable-gtk-doc
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|\\$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<stdint\.h|<inttypes.h|g' \
 		${WRKSRC}/liboil/liboiltypes.h \
 		${WRKSRC}/liboil/liboilprofile.h \
