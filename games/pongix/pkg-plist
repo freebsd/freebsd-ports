@@ -1,0 +1,10 @@
+bin/pongix
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/fondo_juego.jpg
+%%DATADIR%%/fuente.bmp
+%%DATADIR%%/paleta.bmp
+%%DATADIR%%/pelota.bmp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
