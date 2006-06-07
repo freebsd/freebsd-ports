@@ -5,8 +5,10 @@ sbin/bacula-sd
 sbin/bcopy
 sbin/bextract
 sbin/bls
+sbin/bregex
 sbin/bscan
 sbin/btape
+sbin/bwild
 %%WXCONS%%sbin/wx-console
 %%GNOMECONS%%sbin/gnome-console
 sbin/dbcheck
