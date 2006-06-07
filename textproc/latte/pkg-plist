@@ -22,6 +22,7 @@ lib/liblatte.a
 lib/liblatte.la
 lib/liblatte.so
 lib/liblatte.so.5
+lib/xemacs/site-lisp/latte.el
 share/emacs/site-lisp/latte.el
 %%PORTDOCS%%%%EXAMPLESDIR%%/tests/a.exp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tests/a.latte
@@ -108,5 +109,7 @@ share/emacs/site-lisp/latte.el
 %%DATADIR%%/text.latte
 @dirrm include/latte
 @dirrm %%DATADIR%%
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tests
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
