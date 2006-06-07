@@ -7,7 +7,7 @@
 
 PORTNAME=	latte
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.latte.org/
 
@@ -41,6 +41,8 @@ post-extract:
 post-install:
 	@${LN} -sf latte-html ${PREFIX}/bin/latte
 	${INSTALL_DATA} ${WRKSRC}/latte.el ${PREFIX}/share/emacs/site-lisp
+	${LN} -sf ${PREFIX}/share/emacs/site-lisp/latte.el \
+		  ${PREFIX}/lib/xemacs/site-lisp
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC} --exclude "*Makefile*" -cf - tests | \
