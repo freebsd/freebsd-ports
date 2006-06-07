@@ -1,0 +1,203 @@
+@comment $FreeBSD$
+bin/CastPodder
+bin/castpodder
+bin/iPodder
+%%DATADIR%%/CastPodder-16.png
+%%DATADIR%%/CastPodder-32.png
+%%DATADIR%%/CastPodder-48.png
+%%DATADIR%%/CastPodder.desktop
+%%DATADIR%%/CastPodder.png
+%%DATADIR%%/CastPodder.sh
+%%DATADIR%%/CastPodder.spec
+%%DATADIR%%/CastPodderGui.py
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/Resources/postflight
+%%DATADIR%%/cli.py
+%%DATADIR%%/compat/2x/__init__.py
+%%DATADIR%%/compat/2x/iPodder.py
+%%DATADIR%%/compat/__init__.py
+%%DATADIR%%/erik_reload_module.py
+%%DATADIR%%/favorites.txt
+%%DATADIR%%/gui/OptionsDialog.py
+%%DATADIR%%/gui/__init__.py
+%%DATADIR%%/gui/clipboard.py
+%%DATADIR%%/gui/iPodder.xrc
+%%DATADIR%%/gui/iPodderWindows.py
+%%DATADIR%%/gui/images.py
+%%DATADIR%%/gui/listctrl.py
+%%DATADIR%%/gui/scheduler.py
+%%DATADIR%%/gui/skin.py
+%%DATADIR%%/gui/skins/default.testzip
+%%DATADIR%%/gui/sync-player.xrc
+%%DATADIR%%/gui/titlescreen.xrc
+%%DATADIR%%/gui/tree.py
+%%DATADIR%%/iPodder.icns
+%%DATADIR%%/icons_status/application.ico
+%%DATADIR%%/icons_status/application_small.ico
+%%DATADIR%%/icons_status/box-checked.png
+%%DATADIR%%/icons_status/box-unchecked.png
+%%DATADIR%%/icons_status/icon_checkselected20.png
+%%DATADIR%%/icons_status/icon_disabled.ico
+%%DATADIR%%/icons_status/icon_downloading.ico
+%%DATADIR%%/icons_status/icon_episode_blank.gif
+%%DATADIR%%/icons_status/icon_episode_downloading.gif
+%%DATADIR%%/icons_status/icon_episode_paused.gif
+%%DATADIR%%/icons_status/icon_episode_problem_broken.gif
+%%DATADIR%%/icons_status/icon_episode_problem_intact.gif
+%%DATADIR%%/icons_status/icon_episode_up-downloading.gif
+%%DATADIR%%/icons_status/icon_episode_uploading.gif
+%%DATADIR%%/icons_status/icon_feed_checking.gif
+%%DATADIR%%/icons_status/icon_feed_disabled.gif
+%%DATADIR%%/icons_status/icon_feed_disabled.png
+%%DATADIR%%/icons_status/icon_feed_downloading.gif
+%%DATADIR%%/icons_status/icon_feed_downloading.png
+%%DATADIR%%/icons_status/icon_feed_idle.gif
+%%DATADIR%%/icons_status/icon_feed_idle_empty.gif
+%%DATADIR%%/icons_status/icon_feed_idle_empty.png
+%%DATADIR%%/icons_status/icon_feed_synced.png
+%%DATADIR%%/icons_status/icon_feed_unsubscribed.gif
+%%DATADIR%%/icons_status/icon_idle_empty.ico
+%%DATADIR%%/icons_status/icon_newitem.ico
+%%DATADIR%%/icons_status/icon_notconnected.ico
+%%DATADIR%%/icons_status/icon_scanning_feeds.ico
+%%DATADIR%%/icons_status/installer_icon.ico
+%%DATADIR%%/icons_status/netflder.png
+%%DATADIR%%/icons_status/netflder_open.png
+%%DATADIR%%/icons_status/play-file.png
+%%DATADIR%%/icons_status/remote-sub.png
+%%DATADIR%%/icons_status/remote.png
+%%DATADIR%%/icons_status/sorting_arrow_down.png
+%%DATADIR%%/icons_status/sorting_arrow_up.png
+%%DATADIR%%/icons_status/tb_icon23_checkfeed.png
+%%DATADIR%%/icons_status/tb_icon25_addfeed.png
+%%DATADIR%%/icons_status/tb_icon25_canceldownload.png
+%%DATADIR%%/icons_status/tb_icon25_catchup.png
+%%DATADIR%%/icons_status/tb_icon25_checkfeed.gif
+%%DATADIR%%/icons_status/tb_icon25_checkfeed.png
+%%DATADIR%%/icons_status/tb_icon25_checkselectedfeed.png
+%%DATADIR%%/icons_status/tb_icon25_deletefeed.gif
+%%DATADIR%%/icons_status/tb_icon25_deletefeed.png
+%%DATADIR%%/icons_status/tb_icon25_dir_closeall.png
+%%DATADIR%%/icons_status/tb_icon25_dir_openall.png
+%%DATADIR%%/icons_status/tb_icon25_dir_refresh.png
+%%DATADIR%%/icons_status/tb_icon25_feedproperties.png
+%%DATADIR%%/icons_status/tb_icon25_pausedownload.png
+%%DATADIR%%/icons_status/tb_icon25_removelines.png
+%%DATADIR%%/icons_status/tb_icon25_scheduler_off.png
+%%DATADIR%%/icons_status/tb_icon25_scheduler_on.png
+%%DATADIR%%/icons_status/tb_icon25_spotlight.png
+%%DATADIR%%/images/CastPodder_button.png
+%%DATADIR%%/images/about_logo.bmp
+%%DATADIR%%/images/badge_ipodder.gif
+%%DATADIR%%/images/banner.png
+%%DATADIR%%/images/donate_header_please.bmp
+%%DATADIR%%/images/donate_header_thanks.bmp
+%%DATADIR%%/images/installer-logo.png
+%%DATADIR%%/images/installer-splashscreen.png
+%%DATADIR%%/images/newlogo_ipodder_animated.gif
+%%DATADIR%%/images/paypal.gif
+%%DATADIR%%/images/phbb-logo-castpodder.jpg
+%%DATADIR%%/images/spacer.gif
+%%DATADIR%%/images/splashscreen.bmp
+%%DATADIR%%/ipodder/__init__.py
+%%DATADIR%%/ipodder/compatibility.py
+%%DATADIR%%/ipodder/configuration.py
+%%DATADIR%%/ipodder/conlogging.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/Choker.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/Connecter.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/CurrentRateMeasure.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/Downloader.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/DownloaderFeedback.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/Encrypter.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/HTTPHandler.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/NatCheck.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/PiecePicker.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/RateMeasure.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/RawServer.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/Rerequester.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/Storage.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/StorageWrapper.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/Uploader.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/__init__.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/bencode.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/bitfield.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/btformats.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/download.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/fakeopen.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/parseargs.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/selectpoll.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/testtest.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/track.py
+%%DATADIR%%/ipodder/contrib/BitTorrent/zurllib.py
+%%DATADIR%%/ipodder/contrib/GenericDispatch.py
+%%DATADIR%%/ipodder/contrib/PyRSS2Gen.py
+%%DATADIR%%/ipodder/contrib/__init__.py
+%%DATADIR%%/ipodder/contrib/bloglines.py
+%%DATADIR%%/ipodder/contrib/feedparser.py
+%%DATADIR%%/ipodder/contrib/portalocker.py
+%%DATADIR%%/ipodder/contrib/urlnorm.py
+%%DATADIR%%/ipodder/contrib/webbrowser.py
+%%DATADIR%%/ipodder/core.py
+%%DATADIR%%/ipodder/engine.py
+%%DATADIR%%/ipodder/feeds.py
+%%DATADIR%%/ipodder/grabbers.py
+%%DATADIR%%/ipodder/history.py
+%%DATADIR%%/ipodder/hooks.py
+%%DATADIR%%/ipodder/misc.py
+%%DATADIR%%/ipodder/outlines.py
+%%DATADIR%%/ipodder/players.py
+%%DATADIR%%/ipodder/state.py
+%%DATADIR%%/ipodder/threads.py
+%%DATADIR%%/localization/LanguageModule.py
+%%DATADIR%%/localization/__init__.py
+%%DATADIR%%/localization/catalog/__init__.py
+%%DATADIR%%/localization/catalog/ca.py
+%%DATADIR%%/localization/catalog/da.py
+%%DATADIR%%/localization/catalog/de.py
+%%DATADIR%%/localization/catalog/el.py
+%%DATADIR%%/localization/catalog/en.py
+%%DATADIR%%/localization/catalog/es.py
+%%DATADIR%%/localization/catalog/et.py
+%%DATADIR%%/localization/catalog/eu.py
+%%DATADIR%%/localization/catalog/fi.py
+%%DATADIR%%/localization/catalog/fr.py
+%%DATADIR%%/localization/catalog/ga.py
+%%DATADIR%%/localization/catalog/gl.py
+%%DATADIR%%/localization/catalog/hu.py
+%%DATADIR%%/localization/catalog/it.py
+%%DATADIR%%/localization/catalog/ja.py
+%%DATADIR%%/localization/catalog/ko.py
+%%DATADIR%%/localization/catalog/nl.py
+%%DATADIR%%/localization/catalog/pl.py
+%%DATADIR%%/localization/catalog/pt-BR.py
+%%DATADIR%%/localization/catalog/ru.py
+%%DATADIR%%/localization/catalog/sr.py
+%%DATADIR%%/localization/catalog/sv.py
+%%DATADIR%%/localization/catalog/zh-Hans.py
+%%DATADIR%%/mp3/boing.mp3
+%%DATADIR%%/plugins/add_to_gigadial.py
+%%DATADIR%%/plugins/description_links.py
+%%DATADIR%%/tools/coverage.py
+%%DATADIR%%/tools/id3-0.77.tar.gz
+%%DATADIR%%/tools/mkupdate.py
+%%DATADIR%%/tools/purge.py
+%%DATADIR%%/updater.py
+%%PORTDOCS%%%%DOCSDIR%%/CastPodderUserGuide.pdf
+@dirrm %%DATADIR%%/BitTorrent
+@dirrm %%DATADIR%%/Resources
+@dirrm %%DATADIR%%/compat/2x
+@dirrm %%DATADIR%%/compat
+@dirrm %%DATADIR%%/gui/skins
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%/icons_status
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/ipodder/contrib/BitTorrent
+@dirrm %%DATADIR%%/ipodder/contrib
+@dirrm %%DATADIR%%/ipodder
+@dirrm %%DATADIR%%/localization/catalog
+@dirrm %%DATADIR%%/localization
+@dirrm %%DATADIR%%/mp3
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
