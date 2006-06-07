@@ -2369,3 +2369,5 @@ news/knzb||2006-06-05|Has expired: This seems to be abandonware. Try news/klibid
 x11/linux-gnomelibs||2006-06-05|Has expired: This is a very outdated version of GNOME and it is not used by any port.
 x11-fonts/linux-urw-fonts||2006-06-05|Has expired: "The linuxolator uses the fonts from the X-server or font-server, so there is no need to install fonts into LINUXBASE"
 math/pari-devel|math/pari|2006-06-05|Merged into stable port
+x11-toolkits/gtk12-apireference||2006-06-06|Obsoleted by x11-toolkits/gtk20-reference and friends
+x11-toolkits/gtk20-apireference||2006-06-06|Obsoleted by x11-toolkits/gtk20-reference and friends
