@@ -1,9 +1,11 @@
 bin/gnupod_INIT.pl
 bin/gnupod_addsong.pl
 bin/gnupod_check.pl
+bin/gnupod_convert_APE.pl
 bin/gnupod_convert_FLAC.pl
 bin/gnupod_convert_MIDI.pl
 bin/gnupod_convert_OGG.pl
+bin/gnupod_convert_RIFF.pl
 bin/gnupod_otgsync.pl
 bin/gnupod_search.pl
 bin/mktunes.pl
@@ -11,16 +13,17 @@ bin/tunes2pod.pl
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/FileMagic.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/FooBar.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/iTunesDB.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/lastfm.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/QTfile.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/XMLhelper.pm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/fdl.texi
+%%PORTDOCS%%%%DOCSDIR%%/gnupod.html
+%%PORTDOCS%%%%DOCSDIR%%/gnupod.texi
 %%PORTDOCS%%%%DOCSDIR%%/gnupodrc.example
 %%PORTDOCS%%%%DOCSDIR%%/gnutunesdb.example
-%%PORTDOCS%%%%DOCSDIR%%/gnupod.html
-%%PORTDOCS%%%%DOCSDIR%%/mkspl.html
-%%PORTDOCS%%%%DOCSDIR%%/gnupod.texi
-%%PORTDOCS%%%%DOCSDIR%%/fdl.texi
-%%PORTDOCS%%%%DOCSDIR%%/version.texi
 %%PORTDOCS%%%%DOCSDIR%%/ipod.svg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/mkspl.html
+%%PORTDOCS%%%%DOCSDIR%%/version.texi
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
