@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-package-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby implementation of the gettext library
 
 BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
@@ -23,7 +23,7 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	racc-runtime
 USE_RUBY_SETUP=	yes
 
-RUBY_SHEBANG_FILES=	bin/rgettext ${WRKSRC}/samples/*.rb
+RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
 
 DOCS=		ChangeLog NEWS README
 
