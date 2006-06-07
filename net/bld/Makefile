@@ -8,7 +8,8 @@
 PORTNAME=	bld
 PORTVERSION=	0.3.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.online.redhate.org/bld/
+MASTER_SITES=	http://www.online.redhate.org/bld/ \
+		http://olivier.beyssac.googlepages.com/
 
 MAINTAINER=	obld@r14.freenix.org
 COMMENT=	A blacklisting daemon
