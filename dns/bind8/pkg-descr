@@ -10,4 +10,4 @@ BIND 8 Features
 	-> The server no longer forks for outbound zone transfers
 	-> Many bug fixes
 
-WWW: http://www.isc.org/products/BIND/
+WWW: http://www.isc.org/index.pl?/sw/bind/
