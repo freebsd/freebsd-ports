@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slib
-PORTVERSION=	3a1 # Keep this in sync with lang/slib
+PORTVERSION=	3a3 # Keep this in sync with lang/slib
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-guile
@@ -18,8 +18,6 @@ COMMENT=	SLIB installation for Guile
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
 		guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Does not install
 
 NO_BUILD=	yes
 
