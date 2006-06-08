@@ -7386,6 +7386,7 @@ oases		ports/science/oases
 obby		ports/devel/obby
 obconf		ports/x11-wm/obconf
 obexapp		ports/comms/obexapp
+obfuscatejs	ports/devel/obfuscatejs
 objc		ports/lang/objc
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
