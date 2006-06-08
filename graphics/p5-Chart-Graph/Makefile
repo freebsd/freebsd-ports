@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	Chart-Graph
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
@@ -21,7 +20,6 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		xmgrace:${PORTSDIR}/math/grace \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 PERL_CONFIGURE=	yes
 
 MAN3=	Chart::Graph.3 \
