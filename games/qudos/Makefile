@@ -1,0 +1,203 @@
+# New ports collection makefile for:	qudos
+# Date created:				24 May 2006
+# Whom:					alepulver
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qudos
+PORTVERSION=	0.40
+CATEGORIES=	games
+MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
+DISTNAME=	QuDos-${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		QuDos-${PORTVERSION}-data.tar
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+MAINTAINER=	alepulver@FreeBSD.org
+COMMENT=	Enhaced OpenGL only Quake II engine
+
+USE_BZIP2=	yes
+USE_GCC=	3.2+
+USE_GL=		yes
+USE_GMAKE=	yes
+
+OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" on \
+		ARTS "Enable support for aRts sound daemon" off \
+		BOTS "Enable Ace Bot support in modifications" on \
+		CLIENT "Build client" on \
+		CTF "Build CTF (Capture The Flag) modification" off \
+		DEDICATED "Build dedicated server" on \
+		GAME_MOD "Enable custom addons in main modification" on \
+		GLX "Build OpenGL renderer" on \
+		IPV6 "Enable IPv6 support" off \
+		JABOT "Build JABot modification (bots)" off \
+		JOYSTICK "Enable joystick support" off \
+		QMAX "Enable fancier OpenGL graphics" on \
+		REDBLUE "Enable red-blue 3d glasses renderer" off \
+		RETEXTURE "Enable support for retextured graphics" off \
+		ROGUE "Build Ground Zero (Rogue) mission pack" off \
+		SDLCLIENT "Build SDL client" on \
+		SDLGL "Build SDL OpenGL renderer" on \
+		X86_ASM "Enable x86 assembly support" on \
+		XATRIX "Build The Reckoning (Xatrix) mission pack" off \
+		ZAERO "Build Zaero modification" off
+
+MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES \
+		DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+LIBDIR=		${PREFIX}/lib/${PORTNAME}
+
+MOD_LIST=	3ZB2 CTF JABOT ROGUE XATRIX ZAERO
+
+.include "${.CURDIR}/../quake2-data/Makefile.include"
+
+.include <bsd.port.pre.mk>
+
+.for mod in ${MOD_LIST}
+.   if defined(WITH_${mod})
+MAKE_ENV+=	BUILD_${mod}=YES
+PLIST_SUB+=	${mod}=""
+.   else
+MAKE_ENV+=	BUILD_${mod}=NO
+PLIST_SUB+=	${mod}="@comment "
+.   endif
+.endfor
+
+.if !defined(WITHOUT_GLX) || !defined(WITHOUT_SDLGL)
+USE_GL=		yes
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
+.endif
+
+.if !defined(WITHOUT_SDLCLIENT) || !defined(WITHOUT_SDLGL)
+USE_SDL=	sdl
+.endif
+
+.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDLCLIENT)
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+MAKE_ENV+=	WITH_ARTS=YES
+.endif
+
+.if !defined(WITHOUT_CLIENT)
+MAKE_ENV+=	BUILD_QUAKE2=YES
+PLIST_SUB+=	CLIENT=""
+Q2BIN+=		${PORTNAME}
+.else
+MAKE_ENV+=	BUILD_QUAKE2=NO
+PLIST_SUB+=	CLIENT="@comment "
+.endif
+
+.if !defined(WITHOUT_DEDICATED)
+MAKE_ENV+=	BUILD_DEDICATED=YES
+PLIST_SUB+=	DEDICATED=""
+Q2BIN+=		${PORTNAME}-ded
+.else
+MAKE_ENV+=	BUILD_DEDICATED=NO
+PLIST_SUB+=	DEDICATED="@comment "
+.endif
+
+.if !defined(WITHOUT_GAME)
+MAKE_ENV+=	BUILD_GAME=YES
+PLIST_SUB+=	GAME=""
+.else
+MAKE_ENV+=	BUILD_GAME=NO
+PLIST_SUB+=	GAME="@comment "
+.endif
+
+.if !defined(WITHOUT_GAME_MOD)
+MAKE_ENV+=	WITH_GAME_MOD=YES
+.else
+MAKE_ENV+=	WITH_GAME_MOD=NO
+.endif
+
+.for opt in GLX SDLGL
+.   if !defined(WITHOUT_${opt})
+MAKE_ENV+=	BUILD_${opt}=YES
+PLIST_SUB+=	${opt}=""
+Q2REF+=		${opt:L}
+.   else
+MAKE_ENV+=	BUILD_${opt}=NO
+PLIST_SUB+=	${opt}="@comment "
+.   endif
+.endfor
+
+.if defined(WITH_IPV6)
+MAKE_ENV+=	WITH_IPV6=YES
+.else
+MAKE_ENV+=	WITH_IPV6=NO
+.endif
+
+.if defined(WITH_JOYSTICK)
+MAKE_ENV+=	WITH_JOYSTICK=YES
+.else
+MAKE_ENV+=	WITH_JOYSTICK=NO
+.endif
+
+.if !defined(WITHOUT_QMAX)
+MAKE_ENV+=	WITH_QMAX=YES
+.else
+MAKE_ENV+=	WITH_QMAX=NO
+.endif
+
+.if defined(WITH_REDBLUE)
+MAKE_ENV+=	WITH_REDBLUE=YES
+.else
+MAKE_ENV+=	WITH_REDBLUE=NO
+.endif
+
+.if defined(WITH_RETEXTURE)
+MAKE_ENV+=	WITH_RETEXTURE=YES
+.else
+MAKE_ENV+=	WITH_RETEXTURE=NO
+.endif
+
+.if !defined(WITHOUT_SDLCLIENT)
+MAKE_ENV+=	BUILD_SDLQUAKE2=YES
+PLIST_SUB+=	SDLCLIENT=""
+Q2BIN+=		${PORTNAME}-sdl
+.else
+MAKE_ENV+=	BUILD_SDLQUAKE2=NO
+PLIST_SUB+=	SDLCLIENT="@comment "
+.endif
+
+.if !defined(WITHOUT_X86_ASM)
+MAKE_ENV+=	WITH_X86_ASM=YES
+.else
+MAKE_ENV+=	WITH_X86_ASM=NO
+.endif
+
+post-build:
+.for bin in ${Q2BIN}
+	@cd ${WRKSRC}/quake2 && ${MV} ${bin:S/qudos/QuDos/} ${bin}
+.endfor
+
+do-install:
+.for bin in ${Q2BIN}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${bin} ${PREFIX}/bin
+.endfor
+	${MKDIR} ${LIBDIR}/baseq2
+.for ref in ${Q2REF}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ref_q2${ref}.so ${LIBDIR}
+.endfor
+.if !defined(WITHOUT_GAME)
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
+.endif
+.for mod in ${MOD_LIST:L}
+.if defined(WITH_${mod:U})
+	${MKDIR} ${LIBDIR}/${mod}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${mod}/game.so ${LIBDIR}/${mod}
+.endif
+.endfor
+	${TAR} xf ${DISTDIR}/QuDos-${PORTVERSION}-data.tar -C ${LIBDIR}/baseq2
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/QuDos.txt ${WRKSRC}/docs/Ogg_readme.txt \
+		${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

@@ -551,6 +551,7 @@
     SUBDIR += quake3
     SUBDIR += quake3-data
     SUBDIR += quakeforge
+    SUBDIR += qudos
     SUBDIR += quetoo
     SUBDIR += quit
     SUBDIR += qwdtools
