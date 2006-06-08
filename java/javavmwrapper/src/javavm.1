@@ -130,11 +130,37 @@ Java VM as options.
 For more information on environment variables which can be used to set
 options see
 .Pa %%PREFIX%%/etc/javavm_opts.conf.dist .
+.It Ev JAVAVM_DRYRUN
+When this variable is set, no Java VM is invoked.
+Instead, the Java VM wrapper prints out the following information:
+.Bl -tag -width indent
+.It Ev JAVA_HOME
+The value of the
+.Ev JAVA_HOME
+environment variable which the Java VM wrapper would have set before
+invoking the Java VM.
+.It Ev JAVAVM_CONF
+The Java VM wrapper configuration file being used.
+.It Ev JAVAVM_OPTS_CONF
+The Java VM wrapper option configuration file being used.
+.It Ev JAVAVM_PROG
+The Java VM that would have been invoked.
+.It Ev JAVAVM_OPTS
+The options that would have been passed to the invoked Java VM.
+It is important to note that this variable may not be the same as the
+.Ev JAVAVM_OPTS
+environment variable due to processing of the Java VM wrapper option
+configuration file.
+.It Ev JAVAVM_COMMAND
+The full command line that would have been used to invoke the Java VM.
+.El
 .El
 .Sh FILES
 .Bl -tag -width indent
 .It Pa %%PREFIX%%/etc/javavms
 The location of the Java VM wrapper configuration file.
+.It Pa %%PREFIX%%/etc/javavm_opts.conf
+The location of the Java VM wrapper option configuration file.
 .It Pa %%PORTSDIR%%/Mk/bsd.java.mk
 The file usually used, along with
 .Nm make ,
@@ -157,6 +183,14 @@ with
 This is necessary if MyApp uses JNI, for instance.
 .It Ev JAVA_VERSION="1.2 1.4" Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
 Execute MyApp with either a Java VM that is either version 1.2 or version 1.4.
+.It Ev JAVAVM_DRYRUN=yes Pa %%LOCALBASE%%/bin/java
+Don't invoke the Java VM, but print out information about what would have
+been done.
+This could be used in a script to determine the
+.Ev JAVA_HOME
+that the Java VM wrapper will use, for instance:
+.Lp
+.Ev JAVA_HOME=`env JAVAVM_DRYRUN=yes %%LOCALBASE%%/bin/java | grep '^JAVA_HOME' | cut -c11-`
 .El
 .Sh SEE ALSO
 .Xr checkvms 1 ,
