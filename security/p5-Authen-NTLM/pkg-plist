@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Authen/NTLM.pm
+%%SITE_PERL%%/Authen/NTLM/DES.pm
+%%SITE_PERL%%/Authen/NTLM/MD4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/NTLM/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/NTLM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrm %%SITE_PERL%%/Authen/NTLM
+@dirrmtry %%SITE_PERL%%/Authen

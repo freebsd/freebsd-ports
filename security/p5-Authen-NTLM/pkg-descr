@@ -1,0 +1,11 @@
+The NTLM (Windows NT LAN Manager) authentication scheme is the
+authentication algorithm used by Microsoft.
+
+NTLM authentication scheme is used in DCOM and HTTP environment. It is
+used to authenticate DCE RPC packets in DCOM. It is also used to
+authenticate HTTP packets to MS Web Proxy or MS Web Server.
+
+Currently, it is the authentication scheme Internet Explorer chooses to
+authenticate itself to proxies/web servers that supports NTLM.
+
+WWW: http://search.cpan.org/dist/Authen-NTLM/
