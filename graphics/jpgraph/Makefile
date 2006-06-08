@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jpgraph
-PORTVERSION=	1.20.2
+PORTVERSION=	1.20.4a
 CATEGORIES=	graphics
 MASTER_SITES=	http://members.chello.se/jpgraph/jpgdownloads/
 
@@ -15,7 +15,9 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 USE_PHP=	gd
+DEFAULT_PHP_VER=4
 BROKEN_WITH_PHP=5
 
 NO_CDROM=	The free version cannot be used in a commercial context

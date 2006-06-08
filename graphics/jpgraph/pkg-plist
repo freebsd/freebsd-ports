@@ -2,6 +2,7 @@
 %%DATADIR%%/flags_thumb100x100.dat
 %%DATADIR%%/flags_thumb35x35.dat
 %%DATADIR%%/flags_thumb60x60.dat
+%%DATADIR%%/gd_image.inc.php
 %%DATADIR%%/imgdata_balls.inc
 %%DATADIR%%/imgdata_bevels.inc
 %%DATADIR%%/imgdata_diamonds.inc
@@ -26,6 +27,7 @@
 %%DATADIR%%/jpgraph_imgtrans.php
 %%DATADIR%%/jpgraph_line.php
 %%DATADIR%%/jpgraph_log.php
+%%DATADIR%%/jpgraph_mgraph.php
 %%DATADIR%%/jpgraph_pie.php
 %%DATADIR%%/jpgraph_pie3d.php
 %%DATADIR%%/jpgraph_plotmark.inc
