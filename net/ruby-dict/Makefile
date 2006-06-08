@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
