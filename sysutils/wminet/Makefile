@@ -8,7 +8,8 @@
 PORTNAME=	wminet
 PORTVERSION=	2.0.3
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.neotokyo.org/illusion/downloads/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 
 MAINTAINER=	sk-ports@vegamuse.org
 COMMENT=	Window Maker dockable inetd monitor
