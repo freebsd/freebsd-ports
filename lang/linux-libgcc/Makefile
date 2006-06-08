@@ -7,7 +7,7 @@
 
 PORTNAME=	libgcc
 DISTVERSION=	3.4.4-2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang linux
 MASTER_SITE_SUBDIR=	updates/3/${LINUX_RPM_ARCH}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}.fc3
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.fc3
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Linux libgcc support library
 
-CONFLICTS=	linux_base-fc3-*
+CONFLICTS=	linux_base-fc*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
