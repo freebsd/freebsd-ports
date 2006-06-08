@@ -99,6 +99,7 @@ pre-fetch:
 	@sleep 2
 .endif
 
+USE_DOS2UNIX=	hacks/glx/topblock.c
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
