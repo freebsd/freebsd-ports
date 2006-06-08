@@ -8,7 +8,7 @@
 
 PORTNAME=	cvsd
 PORTVERSION=	1.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://ch.tudelft.nl/~arthur/cvsd/
 
@@ -31,7 +31,7 @@ PORTDOCS=	README
 PLIST_FILES=	etc/cvsd/cvsd.conf.sample sbin/cvsd sbin/cvsd-buginfo \
 		sbin/cvsd-buildroot sbin/cvsd-passwd
 PLIST_DIRS=	etc/cvsd
-USE_RC_SUBR=	cvsd.sh
+USE_RC_SUBR=	cvsd
 
 .include <bsd.port.pre.mk>
 
