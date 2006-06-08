@@ -9,6 +9,7 @@ bin/ruby-setup.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/hookapi.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/metaconfapi.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/news.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/NEWS.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
@@ -17,6 +18,7 @@ bin/ruby-setup.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/hookapi.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/metaconfapi.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/news.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/usage.html
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
