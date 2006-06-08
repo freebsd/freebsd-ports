@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	poppwd
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/poppwd/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	andrew@ugh.net.au
 COMMENT=	Implementation of the Eudora (compatible) password changing protocol
