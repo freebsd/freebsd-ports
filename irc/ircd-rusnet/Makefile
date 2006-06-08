@@ -13,7 +13,7 @@
 PORTNAME=	ircd-rusnet
 PORTVERSION=	1.4.2
 CATEGORIES=	irc russian
-MASTER_SITES=	http://gvs.rinet.ru/rusnet/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	rusnet-${PORTVERSION}
 
 MAINTAINER=	sead@mail.ru
