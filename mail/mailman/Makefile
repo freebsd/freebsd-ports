@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -67,28 +67,28 @@ IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 .if defined(WITH_EXIM3) || defined(WITH_EXIM4) || defined(WITH_POSTFIX)
 BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID+=	mailnull
+MAIL_GID?=	mailnull
 .endif
 
 .if defined(WITH_EXIM3)
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM4) || defined(WITH_POSTFIX)
 BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID+=	nobody
+MAIL_GID?=	nobody
 .endif
 
 .if defined(WITH_EXIM4)
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_POSTFIX)
 BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID+=	mail
+MAIL_GID?=	mail
 .endif
 
 .if defined(WITH_POSTFIX)
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4)
 BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID+=	nobody
+MAIL_GID?=	nobody
 .endif
 
 .if defined(WITH_CHINESE)
