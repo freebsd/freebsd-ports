@@ -17,7 +17,8 @@ COMMENT=	Command-line tools for building TCP client-server applications
 
 OPTIONS=	MAN "Install man(1) pages" on \
 		RSS_DIFF "Patch rblsmtpd for qmail users" off \
-		SSL "Adds support for SSL (Secure Socket Layer)" off
+		SSL "Adds support for SSL (Secure Socket Layer)" off \
+		RBL2SMTPD "Don't drop connection, pass envvar to smtpd" off
 
 NO_PACKAGE=	Unsure of djb's license
 
@@ -48,6 +49,12 @@ PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://www.nrg4u.com/qmail/
 PATCHFILES+=	ucspi-tcp-ssl-20050405.patch.gz
 PATCH_DIST_STRIP=	-p1
+
+.if defined(WITH_RBL2SMTPD)
+PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/garga\/ucspi-tcp\/:rbl2smtpd/}
+PATCHFILES+=		ucspi-tcp_rbl2smtpd.diff:rbl2smtpd
+PATCH_DIST_STRIP=	-p1
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#INCS=-I/usr/local/include|INCS=-I${OPENSSLBASE}/include|g; \

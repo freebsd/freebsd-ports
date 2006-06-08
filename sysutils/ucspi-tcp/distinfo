@@ -10,3 +10,6 @@ SIZE (ucspi-rss.diff) = 1828
 MD5 (ucspi-tcp-ssl-20050405.patch.gz) = cbe2443539d5289ffb5ae2a036e0ba3d
 SHA256 (ucspi-tcp-ssl-20050405.patch.gz) = 931ebeb9ca3ceb9394464aca0c4585048d04fc194fc5a9d4bb49bdd8ac249467
 SIZE (ucspi-tcp-ssl-20050405.patch.gz) = 13173
+MD5 (ucspi-tcp_rbl2smtpd.diff) = 3515b80cb3c50ad9990785704798020f
+SHA256 (ucspi-tcp_rbl2smtpd.diff) = b31092bad79912c4cdaebf65863e249f0f8136d64d9cf486fafeb5561dbc2b88
+SIZE (ucspi-tcp_rbl2smtpd.diff) = 570
