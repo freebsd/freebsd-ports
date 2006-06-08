@@ -1,4 +1,5 @@
-bin/kmquake2
+%%CLIENT%%bin/kmquake2
+%%DEDICATED%%bin/kmquake2-ded
 %%SDL%%bin/kmquake2-sdl
 %%3ZB2%%%%LIBDIR%%/3zb2/kmq2game.so
 %%LIBDIR%%/baseq2/gfx/flare1.png
@@ -7,7 +8,7 @@ bin/kmquake2
 %%LIBDIR%%/baseq2/gfx/flare4.png
 %%LIBDIR%%/baseq2/gfx/flare5.png
 %%LIBDIR%%/baseq2/gfx/flare6.png
-%%LIBDIR%%/baseq2/kmq2game.so
+%%GAME%%%%LIBDIR%%/baseq2/kmq2game.so
 %%LIBDIR%%/baseq2/kmquake2.pk3
 %%CTF%%%%LIBDIR%%/ctf/kmq2game.so
 %%LIGHTS%%%%LIBDIR%%/lights/kmq2game.so

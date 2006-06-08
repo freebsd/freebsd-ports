@@ -1,5 +1,5 @@
 --- ./unix/gl_glx.c.orig	Mon Apr  3 14:40:42 2006
-+++ ./unix/gl_glx.c	Sat May 20 13:51:55 2006
++++ ./unix/gl_glx.c	Thu Jun  8 13:39:12 2006
 @@ -379,15 +379,11 @@
  					}
  					else

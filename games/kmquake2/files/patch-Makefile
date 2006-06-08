@@ -1,16 +1,18 @@
 --- ./Makefile.orig	Mon Apr 10 04:38:03 2006
-+++ ./Makefile	Sat May 20 13:44:43 2006
++++ ./Makefile	Thu Jun  8 15:41:00 2006
 @@ -20,12 +20,12 @@
  #OPTIONS
  ######################################
  
 -BUILD_DATADIR=NO                # Use DATADIR to read (data, renderers, etc.) and ~/.quake2 to write.
-+BUILD_DATADIR=YES                # Use DATADIR to read (data, renderers, etc.) and ~/.quake2 to write.
- BUILD_GAME=YES                  # game$(ARCH).so
- BUILD_KMQUAKE2=YES              # kmquake executable (uses OSS for cdrom and sound)
+-BUILD_GAME=YES                  # game$(ARCH).so
+-BUILD_KMQUAKE2=YES              # kmquake executable (uses OSS for cdrom and sound)
 -BUILD_KMQUAKE2_DEDICATED=YES	# build a dedicated kmquake2 server
 -BUILD_KMQUAKE2_SDL=YES          # kmquake2-sdl executable (uses SDL for cdrom and sound)
 -BUILD_LIBDIR=NO                 # Use LIBDIR to read data and renderers (independent from DATADIR).
++BUILD_DATADIR=YES                # Use DATADIR to read (data, renderers, etc.) and ~/.quake2 to write.
++#BUILD_GAME=YES                  # game$(ARCH).so
++#BUILD_KMQUAKE2=YES              # kmquake executable (uses OSS for cdrom and sound)
 +#BUILD_KMQUAKE2_DEDICATED=YES	# build a dedicated kmquake2 server
 +#BUILD_KMQUAKE2_SDL=YES          # kmquake2-sdl executable (uses SDL for cdrom and sound)
 +BUILD_LIBDIR=YES                 # Use LIBDIR to read data and renderers (independent from DATADIR).
@@ -37,6 +39,15 @@
  
  CLIENT_DIR=$(MOUNT_DIR)/client
  SERVER_DIR=$(MOUNT_DIR)/server
+@@ -62,7 +66,7 @@
+ endif
+ 
+ #Ogg Vorbis support
+-LDFLAGS += \
++CLIENT_LDFLAGS = \
+ 	-lvorbisfile \
+ 	-lvorbis \
+ 	-logg 
 @@ -72,7 +76,7 @@
  X11BASE?=/usr/X11R6
  PREFIX?=$(LOCALBASE)
@@ -55,6 +66,24 @@
  endif
  
  ifeq ($(strip $(BUILD_KMQUAKE2_SDL)),YES)
+@@ -109,7 +113,7 @@
+ 
+ DO_CC=$(CC) $(CFLAGS) -I$(LOCALBASE)/include -o $@ -c $<
+ DO_DED_CC=$(CC) $(CFLAGS) -DDEDICATED_ONLY -o $@ -c $<
+-DO_DED_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) -DDEDICATED_ONLY -o $@ -c $<
++DO_DED_DEBUG_CC=$(CC) $(CFLAGS) -DDEDICATED_ONLY -o $@ -c $<
+ DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+ DO_GL_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) $(GLCFLAGS) -o $@ -c $<
+ DO_AS=$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
+@@ -128,7 +132,7 @@
+ endif
+ 
+ ifeq ($(strip $(BUILD_KMQUAKE2_DEDICATED)),YES)
+- TARGETS += $(BINDIR)/kmquake2_netserver
++ TARGETS += $(BINDIR)/kmquake2-ded
+ endif
+ 
+ ifeq ($(strip $(BUILD_KMQUAKE2_SDL)),YES)
 @@ -136,7 +140,11 @@
  endif
  
@@ -68,16 +97,52 @@
  endif
  
  all:
-@@ -293,6 +301,9 @@
- 	@echo
- 	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_AS_OBJS) $(QUAKE2_SDL_OBJS) $(GLXLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS)
+@@ -164,7 +172,7 @@
+ 		$(BUILD_DEBUG_DIR)/ref_gl \
+ 		$(BUILD_DEBUG_DIR)/game
+ 		
+-	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS+="$(DEBUG_CFLAGS) -DKMQUAKE2_VERSION='\"$(VERSION) Debug\"'" 
++	$(MAKE) targets BUILDDIR=$(BUILD_DEBUG_DIR) CFLAGS="$(DEBUG_CFLAGS) -DKMQUAKE2_VERSION='\"$(VERSION) Debug\"'" 
+ release:
  
+ 	@-mkdir -p $(BUILD_RELEASE_DIR) \
+@@ -174,7 +182,7 @@
+ 		$(BUILD_RELEASE_DIR)/ref_gl \
+ 		$(BUILD_RELEASE_DIR)/game
+ 
+-	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS) -DKMQUAKE2_VERSION='\"$(VERSION)\"'"
++	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(RELEASE_CFLAGS) -DKMQUAKE2_VERSION='\"$(VERSION)\"'"
+ 
+ targets: $(TARGETS)
+ 
+@@ -285,13 +293,16 @@
+ 	@echo
+ 	@echo "==================== Linking $@ ===================="
+ 	@echo
+-	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_AS_OBJS) $(QUAKE2_LNX_OBJS) $(GLXLDFLAGS) $(LDFLAGS)
++	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_AS_OBJS) $(QUAKE2_LNX_OBJS) $(GLXLDFLAGS) $(LDFLAGS) $(CLIENT_LDFLAGS)
+ 
+ $(BINDIR)/kmquake2-sdl : $(QUAKE2_OBJS) $(QUAKE2_AS_OBJS) $(QUAKE2_SDL_OBJS) 
+ 	@echo
+ 	@echo "==================== Linking $@ ===================="
+ 	@echo
+-	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_AS_OBJS) $(QUAKE2_SDL_OBJS) $(GLXLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS)
++	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_AS_OBJS) $(QUAKE2_SDL_OBJS) $(GLXLDFLAGS) $(LDFLAGS) $(SDLLDFLAGS) $(CLIENT_LDFLAGS)
++
 +addons:
 +	$(MAKE) -C ../$(KMQ2_ADDONS) release
-+
+ 
  $(BUILDDIR)/client/cl_cin.o :     	$(CLIENT_DIR)/cl_cin.c
  	$(DO_CC)
- 	
+@@ -586,7 +597,7 @@
+ 	$(BUILDDIR)/ded/cl_null.o \
+ 	$(BUILDDIR)/ded/cd_null.o
+ 
+-$(BINDIR)/kmquake2_netserver : $(Q2DED_OBJS)
++$(BINDIR)/kmquake2-ded : $(Q2DED_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(Q2DED_OBJS) $(LDFLAGS)
+ 
+ $(BUILDDIR)/ded/cmd.o :        $(COMMON_DIR)/cmd.c
 @@ -753,8 +764,8 @@
  	$(BUILDDIR)/game/p_weapon.o \
  	$(BUILDDIR)/game/q_shared.o
