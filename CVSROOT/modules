@@ -11535,6 +11535,7 @@ quasi88		ports/emulators/quasi88
 quat		ports/graphics/quat
 quat-gui	ports/graphics/quat-gui
 qucs		ports/cad/qucs
+qudos		ports/games/qudos
 queequeg	ports/textproc/queequeg
 quelcom		ports/audio/quelcom
 queryperf	ports/dns/queryperf
