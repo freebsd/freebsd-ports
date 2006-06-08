@@ -52,16 +52,16 @@ MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	pcre_table.5 pgsql_table.5 postconf.5 regexp_table.5 relocated.5 \
 	tcp_table.5 transport.5 virtual.5
 
-MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 error.8 flush.8 lmtp.8 \
-	local.8 master.8 oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 \
-	scache.8 showq.8 smtp.8 smtpd.8 spawn.8 tlsmgr.8 trivial-rewrite.8 \
-	verify.8 virtual.8
+MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 error.8 flush.8 local.8 master.8 \
+	oqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
+	smtp.8 smtpd.8 spawn.8 tlsmgr.8 trivial-rewrite.8 verify.8 virtual.8
 
 MLINKS=	sendmail.1 mailq.1 \
 	sendmail.1 newaliases.1 \
 	header_checks.5 body_checks.5 \
 	bounce.8 defer.8 \
-	bounce.8 trace.8
+	bounce.8 trace.8 \
+	smtp.8 lmtp.8
 
 CONF1=	access aliases canonical generic header_checks main.cf master.cf \
 	relocated transport virtual
