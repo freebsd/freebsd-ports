@@ -7,7 +7,7 @@
 
 PORTNAME=	zhcon
 PORTVERSION=	0.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,7 @@ SUB_FILES=	pkg-message
 MAN1=		zhcon.1
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/doc/zhcon.1.in
 	@${REINPLACE_CMD} -Ee 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/display/fbdev.cpp
 	@${REINPLACE_CMD} -e '5 s|#||;'  ${WRKSRC}/src/zhcon.conf
 	@${REINPLACE_CMD} -Ee 's,(\s*=\s*)("?)/usr/local([^"]*)("?),\1\2${PREFIX}\3\4,g' \
