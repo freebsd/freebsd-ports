@@ -8,8 +8,9 @@
 PORTNAME=		Asterisk
 PORTVERSION=		0.08
 CATEGORIES=		misc perl5
-MASTER_SITES=		http://www.portaone.com/~gonzo/
+MASTER_SITES=		http://asterisk.gnuinter.net/files/
 PKGNAMEPREFIX=		p5-
+DISTNAME=		asterisk-perl-${PORTVERSION}
 
 MAINTAINER=		alexander.timoshenko@gmail.com
 COMMENT=		Asterisk perl library
