@@ -625,7 +625,7 @@ ayttm		ports/net-im/ayttm
 az-aspell	ports/textproc/az-aspell
 azureus		ports/net-p2p/azureus
 b2bua		ports/net/b2bua
-b2evo		ports/www/b2evo
+b2evolution	ports/www/b2evolution
 babel		ports/biology/babel
 babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
