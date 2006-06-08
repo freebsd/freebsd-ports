@@ -34,6 +34,77 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ec2f2ff5-f710-11da-9156-000e0c2e438a">
+    <topic>freeradius -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freeradius</name>
+	<range><ge>1.0.0</ge><le>1.0.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The freeradious development team reports:</p>
+	<blockquote cite="http://www.freeradius.org/security.html">
+	  <p>Multiple issues exist with version 1.0.4, and all prior
+	    versions of the server.  Externally exploitable
+	    vulnerabilities exist only for sites that use the
+	    rlm_sqlcounter module.  Those sites may be vulnerable to
+	    SQL injection attacks, similar to the issues noted below.
+	    All sites that have not deployed the rlm_sqlcounter module
+	    are not vulnerable to external exploits.</p>
+	  <p>The issues are:<br /> 
+	    SQL Injection attack in the rlm_sqlcounter module.<br />
+	    Buffer overflow in the rlm_sqlcounter module, that may cause
+	    a server crash. <br />
+	    Buffer overflow while expanding %t, that may cause a server
+	    crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17171</bid>
+      <cvename>CVE-2005-4744</cvename>
+    </references>
+    <dates>
+      <discovery>2005-09-09</discovery>
+      <entry>2006-06-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a216dfd-f710-11da-9156-000e0c2e438a">
+    <topic>freeradius -- authentication bypass vulnerability</topic>
+    <affects>
+      <package>
+	<name>freeradius</name>
+	<range><gt>1.0.0</gt><le>1.1.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The freeradius development team reports:</p>
+	<blockquote cite="http://www.freeradius.org/security.html">
+	  <p>A validation issue exists with the EAP-MSCHAPv2 module
+	    in all versions from 1.0.0 (where the module first
+	    appeared) to 1.1.0. Insufficient input validation was being
+	    done in the EAP-MSCHAPv2 state machine.  A malicious
+	    attacker could manipulate their EAP-MSCHAPv2 client state
+	    machine to potentially convince the server to bypass
+	    authentication checks.  This bypassing could also result
+	    in the server crashing</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17293</bid>
+      <cvename>CVE-2006-1354</cvename>
+    </references>
+    <dates>
+      <discovery>2006-06-03</discovery>
+      <entry>2006-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00784d6e-f4ce-11da-87a1-000c6ec775d9">
     <topic>squirrelmail -- plugin.php local file inclusion
       vulnerability</topic>
