@@ -6,19 +6,15 @@ bin/nmlc
 bin/nmlo
 bin/ntopgen
 bin/nyacc
-lib/nml/_n_setmaphash.cmi
-lib/nml/_n_setmaphash.cmx
-lib/nml/_n_setmaphash.ml
-lib/nml/_n_setmaphash.p.cmx
-lib/nml/_n_typing.cmi
-lib/nml/_n_typing.cmx
-lib/nml/_n_typing.ml
-lib/nml/_n_typing.p.cmx
 lib/nml/arg.cmi
 lib/nml/arg.cmx
 lib/nml/arg.ml
 lib/nml/arg.mli
 lib/nml/arg.p.cmx
+lib/nml/arith_flags.cmx
+lib/nml/arith_status.cmi
+lib/nml/arith_status.cmx
+lib/nml/arith_status.mli
 lib/nml/array.cmi
 lib/nml/array.cmx
 lib/nml/array.ml
@@ -29,6 +25,9 @@ lib/nml/arrayLabels.cmx
 lib/nml/arrayLabels.ml
 lib/nml/arrayLabels.mli
 lib/nml/arrayLabels.p.cmx
+lib/nml/big_int.cmi
+lib/nml/big_int.cmx
+lib/nml/big_int.mli
 lib/nml/bigarray.a
 lib/nml/bigarray.cma
 lib/nml/bigarray.cmi
@@ -76,6 +75,7 @@ lib/nml/digest.mli
 lib/nml/digest.p.cmx
 lib/nml/dllbigarray.so
 lib/nml/dllmldbm.so
+lib/nml/dllnums.so
 lib/nml/dllstr.so
 lib/nml/dllthreads.so
 lib/nml/dllunix.so
@@ -120,6 +120,7 @@ lib/nml/int64.cmx
 lib/nml/int64.ml
 lib/nml/int64.mli
 lib/nml/int64.p.cmx
+lib/nml/int_misc.cmx
 lib/nml/interop.cmi
 lib/nml/interop.cmx
 lib/nml/interop.ml
@@ -142,6 +143,7 @@ lib/nml/libasmrunp.a
 lib/nml/libbigarray.a
 lib/nml/libcamlrun.a
 lib/nml/libmldbm.a
+lib/nml/libnums.a
 lib/nml/libstr.a
 lib/nml/libthreads.a
 lib/nml/libunix.a
@@ -171,12 +173,29 @@ lib/nml/moreLabels.ml
 lib/nml/moreLabels.mli
 lib/nml/moreLabels.p.cmx
 lib/nml/mutex.mli
+lib/nml/nat.cmi
+lib/nml/nat.cmx
+lib/nml/nat.mli
 lib/nml/nativeint.cmi
 lib/nml/nativeint.cmx
 lib/nml/nativeint.ml
 lib/nml/nativeint.mli
 lib/nml/nativeint.p.cmx
+lib/nml/nml_setmaphash_.cmi
+lib/nml/nml_setmaphash_.cmx
+lib/nml/nml_setmaphash_.ml
+lib/nml/nml_setmaphash_.p.cmx
+lib/nml/nml_typing_.cmi
+lib/nml/nml_typing_.cmx
+lib/nml/nml_typing_.ml
+lib/nml/nml_typing_.p.cmx
 lib/nml/ntopmain.cmo
+lib/nml/num.cmi
+lib/nml/num.cmx
+lib/nml/num.mli
+lib/nml/nums.a
+lib/nml/nums.cma
+lib/nml/nums.cmxa
 lib/nml/obj.cmi
 lib/nml/obj.cmx
 lib/nml/obj.ml
@@ -221,6 +240,9 @@ lib/nml/random.cmx
 lib/nml/random.ml
 lib/nml/random.mli
 lib/nml/random.p.cmx
+lib/nml/ratio.cmi
+lib/nml/ratio.cmx
+lib/nml/ratio.mli
 lib/nml/set.cmi
 lib/nml/set.cmx
 lib/nml/set.ml
@@ -275,6 +297,7 @@ lib/nml/stringLabels.cmx
 lib/nml/stringLabels.ml
 lib/nml/stringLabels.mli
 lib/nml/stringLabels.p.cmx
+lib/nml/string_misc.cmx
 lib/nml/sys.cmi
 lib/nml/sys.cmx
 lib/nml/sys.ml
@@ -308,21 +331,21 @@ lib/nml/weak.cmx
 lib/nml/weak.ml
 lib/nml/weak.mli
 lib/nml/weak.p.cmx
-share/doc/nml/Changes
-share/doc/nml/LICENSE
-share/doc/nml/README
-share/nml/contrib/emacs/Makefile
-share/nml/contrib/emacs/README
-share/nml/contrib/emacs/inf-n.el
-share/nml/contrib/emacs/n-compat.el
-share/nml/contrib/emacs/n-font.el
-share/nml/contrib/emacs/n.el
-share/nml/contrib/vim/nml.vim
-@dirrm share/nml/contrib/vim
-@dirrm share/nml/contrib/emacs
-@dirrm share/nml/contrib
-@dirrm share/nml
-@dirrm share/doc/nml
+%%DOCSDIR%%/Changes
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DATADIR%%/contrib/emacs/Makefile
+%%DATADIR%%/contrib/emacs/README
+%%DATADIR%%/contrib/emacs/inf-n.el
+%%DATADIR%%/contrib/emacs/n-compat.el
+%%DATADIR%%/contrib/emacs/n-font.el
+%%DATADIR%%/contrib/emacs/n.el
+%%DATADIR%%/contrib/vim/nml.vim
+@dirrm %%DATADIR%%/contrib/vim
+@dirrm %%DATADIR%%/contrib/emacs
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm lib/nml/threads
 @dirrm lib/nml/caml
 @dirrm lib/nml

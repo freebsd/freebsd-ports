@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nml
-PORTVERSION=	0.92a
-PORTREVISION=	1
+PORTVERSION=	0.92b
 CATEGORIES=	lang
 MASTER_SITES=	http://ropas.snu.ac.kr/n/ \
 		http://sparcs.kaist.ac.kr/~netj/n/ \
@@ -15,6 +14,10 @@ MASTER_SITES=	http://ropas.snu.ac.kr/n/ \
 
 MAINTAINER=	netj@sparcs.kaist.ac.kr
 COMMENT=	A dialect/harmony of Standard ML of New Jersey and Objective Caml
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.92
+
+ONLY_FOR_ARCHS=	i386
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
@@ -25,10 +28,6 @@ ALL_TARGET=	all opt opt.opt
 INSTALL_TARGET=	install installopt
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Broken pkg-plist"
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
