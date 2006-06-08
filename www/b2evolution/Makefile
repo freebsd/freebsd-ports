@@ -1,4 +1,4 @@
-# New ports collection makefile for:	b2evo
+# New ports collection makefile for:	b2evolution
 # Date created:		2005-04-16
 # Whom:			chinsan <chinsan@mail20000.com.tw>
 #
@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	b2evolution
-PORTVERSION=	0.9.1b
+PORTVERSION=	0.9.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evocms
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_ZIP=	YES
+USE_DOS2UNIX=	YES
 
-B2EVO_DATE?=	2005-09-16
-USE_PHP=	mysql pcre session xml xmlrpc
+B2EVO_DATE?=	2006-05-22
+USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
@@ -46,13 +47,9 @@ B2EVO_URL?=	b2evo
 WWWOWN?=	www
 WWWGRP?=	www
 B2EVO_DIR?=	${WWWDOCROOT}/${B2EVO_URL}
-HTACCESS=	${WRKSRC}/blogs/sample.htaccess
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
-
-post-extract:
-	@${TR} -d \\r < ${HTACCESS} > ${HTACCESS}.unix
 
 pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
