@@ -953,6 +953,7 @@
     SUBDIR += p5-Env-PS1
     SUBDIR += p5-Errno
     SUBDIR += p5-Event
+    SUBDIR += p5-Event-Lib
     SUBDIR += p5-Event-RPC
     SUBDIR += p5-Exception-Class
     SUBDIR += p5-Expect-Simple
