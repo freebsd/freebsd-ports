@@ -4,6 +4,6 @@ libexec/linux-ymessenger/ymessenger.desktop
 libexec/linux-ymessenger/ymessenger.kdelnk
 libexec/linux-ymessenger/ymessenger.bin
 bin/linux-ymessenger
-lib/linux-ymessenger/libgtkhtml.so.6
+lib/linux-ymessenger/libgtkhtml.so.0
 @dirrm libexec/linux-ymessenger
 @dirrm lib/linux-ymessenger
