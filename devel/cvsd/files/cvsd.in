@@ -1,0 +1,59 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: cvsd
+# REQUIRE: LOGIN syslogd
+# KEYWORD: nojail shutdown
+
+. %%RC_SUBR%%
+
+name="cvsd"
+rcvar=${name}_enable
+
+command="%%PREFIX%%/sbin/$name"
+command_args='-f $cvsd_config'
+required_files=$cvsd_config
+
+start_precmd=${name}_prestart
+stop_precmd=cvsd_config
+stop_postcmd=${name}_poststop
+
+cvsd_config()
+{
+	osreldate=`sysctl -n kern.osreldate`
+	chrootjail=`sed -n 's/^ *RootJail *\([^ ]*\) *$/\1/p' < $cvsd_config`
+	if [ -z "$chrootjail" ]; then
+		err 1 "RootJail is not specified in $cvsd_config"
+	fi
+
+	pidfile=`sed -n 's/^ *PidFile *\([^ ]*\) *$/\1/p' < $cvsd_config`
+	if [ -z "$pidfile" ]; then
+		err 1 "PidFile is not specified in $cvsd_config"
+	fi
+}
+
+cvsd_prestart()
+{
+	cvsd_config
+	if [ $osreldate -gt 500000 ]; then
+		mount -t devfs devfs $chrootjail/dev
+		devfs -m $chrootjail/dev rule apply hide
+		devfs -m $chrootjail/dev rule apply path null unhide
+		devfs -m $chrootjail/dev rule apply path zero unhide
+	fi
+
+}
+
+cvsd_poststop()
+{
+	if [ $osreldate -gt 500000 ]; then
+		umount -t devfs $chrootjail/dev
+	fi
+}
+
+load_rc_config $name
+
+: ${cvsd_enable="NO"}
+: ${cvsd_config="%%PREFIX%%/etc/$name/$name.conf"}
+
+run_rc_command "$1"
