@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutagen
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,17 +17,10 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
+MAN1=		mutagen-inspect.1 mutagen-pony.1 mid3v2.1 moggsplit.1 \
+		mid3iconv.1
 
-OPTIONS=	VORBIS	"Support to tag Vorbis Files"	on
+post-patch:
+	${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_VORBIS)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
-SUB_LIST+=	VORBIS=
-.else
-SUB_LIST+=	VORBIS="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
