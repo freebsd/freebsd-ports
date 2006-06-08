@@ -7,7 +7,7 @@
 
 PORTNAME=	glest
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ COMMENT=	Free 3d real-time customizable strategy game
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 RUN_DEPENDS=	${X11BASE}/lib/${PORTNAME}/configuration.xml:${PORTSDIR}/games/glest-data
 

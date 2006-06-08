@@ -7,7 +7,7 @@
 
 PORTNAME=	vdrift
 PORTVERSION=	20060221
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ COMMENT=	Open source driving simulation
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${X11BASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes

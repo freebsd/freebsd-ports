@@ -7,7 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	0.2.2
-PORTREVISON=	1
+PORTREVISON=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		openal.0:${PORTSDIR}/audio/openal \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 
 USE_BZIP2=	yes
 USE_GL=		yes

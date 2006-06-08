@@ -7,7 +7,7 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
@@ -22,7 +22,7 @@ BUILD_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk
 RUN_DEPENDS=		${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-common \
 			wxgtk2-2.6-config:${PORTSDIR}/x11-toolkits/wxgtk26 \
 			openal-config:${PORTSDIR}/audio/openal
-LIB_DEPENDS=		alut.0:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=		alut.1:${PORTSDIR}/audio/freealut
 
 SCORCH_VERSION=		39.1
 

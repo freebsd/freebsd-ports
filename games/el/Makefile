@@ -7,6 +7,7 @@
 
 PORTNAME=	el
 PORTVERSION=	112
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.berlios.de/pub/elc/ http://el.tfm.ro/
 DISTFILES=	${EL_PROG} ${EL_DATA}
@@ -18,7 +19,7 @@ COMMENT=	Eternal Lands is a free 3D MMORPG
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		cal3d.11:${PORTSDIR}/graphics/cal3d \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_GNOME=	libxml2
