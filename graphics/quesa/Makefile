@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quesa
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,10 +29,16 @@ INSTALLS_SHLIB=	yes
 
 WRKSRC_EXAMPLES=	${WRKDIR}/${PORTNAME}examples-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
 .if !defined (WITH_EXAMPLES)
 PLIST_SUB=	WITH_EXAMPLES="@comment "
 .else
 PLIST_SUB=	WITH_EXAMPLES=""
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
 .endif
 
 .ifndef (WITH_EXAMPLES)
@@ -70,4 +76,4 @@ post-install:
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
