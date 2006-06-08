@@ -5,42 +5,46 @@
 # $FreeBSD$
 #
 
-##################################################
 PORTNAME=		squeak
 PORTVERSION=		3.6
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
-VMVERSION=		3.6-3
-IMAGEVERSION=		3.6
-PATCHNUMBER=		5429
-
 ##################################################
 MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
 			ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/unix-linux/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/unix-linux/ \
 			http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \
-
+			http://www.squeakland.org/installers/
 DISTFILES=		Squeak-${VMVERSION}.src.tar.gz \
 			Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip \
 			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip \
+			SqueakPlugin.zip \
 			SqueakV3.sources.gz
-
-DIST_SUBDIR=		squeak
 EXTRACT_ONLY=		Squeak-${VMVERSION}.src.tar.gz
 
 ##################################################
 MAINTAINER=		chris@chrisburkert.de
-COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows.
+COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows
+
+# Don't set USE_ZIP as this breaks EXTRACT_CMD.
+BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
 
 ##################################################
-ONLY_FOR_ARCHS= 	i386
+VMVERSION=		3.6-3
+IMAGEVERSION=		3.6
+PATCHNUMBER=		5429
+
+##################################################
+DIST_SUBDIR=		squeak
+ONLY_FOR_ARCHS=		i386
 MAN1=			inisqueak.1 squeak.1
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
 
-# Don't set USE_ZIP as this breaks EXTRACT_CMD.
-BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
+# Plugin image must be writable, because of it copy to user's ~/.npsqueak/ and
+# be updated.
+SHAREMODE=		644
 
 # shared Libaries are to be installed in:
 LDCONFIG_DIRS=		${PREFIX}/share/squeak/${VMVERSION}
@@ -58,34 +62,46 @@ BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../platforms/unix/config/configure
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/share \
-			--without-quartz
+			--without-quartz \
+			LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+
 # don't pass "-s" to install to avoid trying to strip a shell script
 CONFIGURE_ENV=
 
 ##################################################
 # Knobs
 .if defined(WITH_RFB) && (${WITH_RFB}=="no")
-CONFIGURE_ARGS+=        --without-rfb
+CONFIGURE_ARGS+=	--without-rfb
 .endif
 
 .if defined(WITH_NPSQUEAK) && (${WITH_NPSQUEAK}=="no")
-CONFIGURE_ARGS+=        --without-npsqueak
-PLIST_NPSQUEAK=         "@comment feature not wanted - "
+CONFIGURE_ARGS+=	--without-npsqueak
+PLIST_NPSQUEAK=		"@comment feature not wanted - "
 .else
+WITH_NPSQUEAK=		yes
 PLIST_NPSQUEAK=
 .endif
 
 .if defined(WITH_X) && (${WITH_X}=="no")
-CONFIGURE_ARGS+=        --without-x
+CONFIGURE_ARGS+=	--without-x
 PLIST_X=		"@comment feature not wanted - "
 .else
-USE_XLIB=              yes
-CONFIGURE_ARGS+=        --with-x
+USE_XLIB=		yes
+CONFIGURE_ARGS+=	--with-x
 PLIST_X=
 .endif
 
 .if defined(WITH_MPG_MMX) && (${WITH_MPG_MMX}=="yes")
-CONFIGURE_ARGS+=        --enable-mpg-mmx
+CONFIGURE_ARGS+=	--enable-mpg-mmx
+.endif
+
+.if defined(WITH_FFI) && (${WITH_FFI}=="yes")
+LIB_DEPENDS+=		ffi.2:${PORTSDIR}/devel/libffi
+PLIST_FFI=
+EXT_PLUGINS+=		SqueakFFIPrims
+.else
+CONFIGURE_ARGS+=	--without-ffi
+PLIST_FFI=		"@comment feature not wanted - "
 .endif
 
 .ifdef (CC)
@@ -96,11 +112,12 @@ MAKE_ARGS+=		CC="${CC}"
 MAKE_ARGS+=		CCFLAGS="${CFLAGS}"
 .endif
 
-PLIST_SUB=              IMAGEVERSION=${IMAGEVERSION}\
+PLIST_SUB=		IMAGEVERSION=${IMAGEVERSION}\
 			PATCHNUMBER=${PATCHNUMBER}\
 			VMVERSION=${VMVERSION}\
 			PLIST_NPSQUEAK=${PLIST_NPSQUEAK}\
-			PLIST_X=${PLIST_X}
+			PLIST_X=${PLIST_X} \
+			PLIST_FFI=${PLIST_FFI}
 
 .include <bsd.port.pre.mk>
 
@@ -119,6 +136,8 @@ pre-everything::
 	@${ECHO_MSG} "                        ^^^      (default: enabled)"
 	@${ECHO_MSG} "    WITH_X=            [yes|no]  X Windows support"
 	@${ECHO_MSG} "                        ^^^      (default: enabled)"
+	@${ECHO_MSG} "    WITH_FFI=          [yes|no]  FFI support"
+	@${ECHO_MSG} "                            ^^   (default: disabled)"
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} "  additional make arguments"
 	@${ECHO_MSG} "    CC=<aString>"
@@ -126,6 +145,16 @@ pre-everything::
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} " ------------------ Thanks for your attention! ------------------"
 	@${ECHO_MSG} " "
+
+##################################################
+post-patch:
+	${REINPLACE_CMD} \
+		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
+		-e "s,%%X11BASE%%,${X11BASE},g" \
+		${WRKSRC}/platforms/unix/npsqueak/npsqueakregister.in \
+		${WRKSRC}/platforms/unix/npsqueak/Makefile
+# Fix external plugins
+	@${ECHO_MSG} "EXTERNAL_PLUGINS = B3DAcceleratorPlugin UnixOSProcessPlugin XDisplayControlPlugin ${EXT_PLUGINS}" > ${WRKSRC}/src/plugins.ext
 
 ##################################################
 pre-configure:
@@ -144,12 +173,16 @@ post-configure:
 post-install:
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} SqueakV3.sources.gz ${PREFIX}/share/squeak/)
 	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d SqueakV3.sources.gz)
-	(cd ${DISTDIR}/${DIST_SUBDIR} && unzip -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip -d ${WRKDIR})
-	(cd ${DISTDIR}/${DIST_SUBDIR} && unzip -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip -d ${WRKDIR})
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip -d ${WRKDIR})
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip -d ${WRKDIR})
 	(cd ${WRKDIR} && ${INSTALL_DATA} ReadMe.txt ${PREFIX}/share/squeak/)
 .for file in ${FILES_TO_GZIP}
 	(cd ${WRKDIR} && ${GZIP_CMD} ${file} && ${INSTALL_DATA} ${file}.gz ${PREFIX}/share/squeak/)
 .endfor
+.if defined(WITH_NPSQUEAK) && (${WITH_NPSQUEAK}=="yes")
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u SqueakPlugin.zip -d ${WRKDIR})
+	(cd ${WRKDIR} && ${INSTALL_DATA} SqueakPlugin.image ${PREFIX}/share/squeak/npsqueak.image)
+.endif
 	${SED}	-e 's|VERSION=3.5-5180|VERSION=${IMAGEVERSION}-${PATCHNUMBER}|' \
 		-e 's|IMAGE=Squeak3.5-5180|IMAGE=Squeak${IMAGEVERSION}-${PATCHNUMBER}|' \
 		-e 's|CHANGES=Squeak3.5-5180|CHANGES=Squeak${IMAGEVERSION}-${PATCHNUMBER}|' \

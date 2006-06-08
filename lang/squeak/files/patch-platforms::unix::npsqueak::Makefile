@@ -1,0 +1,11 @@
+--- platforms/unix/npsqueak/Makefile.org	Tue Jan 31 10:36:12 2006
++++ platforms/unix/npsqueak/Makefile	Tue Jan 31 10:37:14 2006
+@@ -20,7 +20,7 @@
+ ############ compile and link ###########################
+ 
+ npsqueak.so : npsqueak.o npunix.o 
+-	$(LD) $(LDFLAGS) npsqueak.o npunix.o -o npsqueak.so 
++	$(LD) $(LDFLAGS) npsqueak.o npunix.o -o npsqueak.so -L%%X11BASE%%/lib -lXt -lX11
+ 
+ npsqueak.o: npsqueak.c ../config.h
+ 	$(CC) -c $(CFLAGS) -DVM_LIBDIR=\"$(VM_LIBDIR)\" $<
