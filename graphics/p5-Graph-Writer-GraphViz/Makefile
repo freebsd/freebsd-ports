@@ -28,7 +28,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=	is currently broken under Perl <5.8.0.  This will hopefully be fixed soon.  Please install lang/perl5.8 and try again
+IGNORE=	requires at least Perl 5.8.0+.  Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
