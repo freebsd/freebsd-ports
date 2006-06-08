@@ -494,7 +494,8 @@ post-patch:
 . for option in ${SELECTED_OPTIONS}
 	@${ECHO_CMD} ${option} >> ${WRKSRC}/conf-spamcontrol
 . endfor
-	@cd ${WRKSRC} && ./install_spamcontrol.sh
+	@cd ${WRKSRC} && ./install_spamcontrol.sh && \
+		${PATCH} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
 .elif defined(SLAVE_TLS)
 	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
 		${WRKDIR}/TLS.readme
