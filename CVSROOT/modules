@@ -10627,6 +10627,7 @@ portaudit	ports/security/portaudit
 portaudit-db	ports/security/portaudit-db
 portbrowser	ports/sysutils/portbrowser
 portcheckout	ports/devel/portcheckout
+portconf	ports/sysutils/portconf
 portdowngrade	ports/sysutils/portdowngrade
 porteasy	ports/misc/porteasy
 portell		ports/misc/portell
