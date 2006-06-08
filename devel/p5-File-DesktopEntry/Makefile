@@ -21,4 +21,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=	File::DesktopEntry.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500503
+IGNORE=	newer perl version required. Install lang/perl5 or lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
