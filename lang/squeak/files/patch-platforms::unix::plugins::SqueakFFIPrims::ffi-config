@@ -1,0 +1,10 @@
+--- platforms/unix/plugins/SqueakFFIPrims/ffi-config.org	Wed Apr 26 20:27:53 2006
++++ platforms/unix/plugins/SqueakFFIPrims/ffi-config	Wed Apr 26 20:29:00 2006
+@@ -39,6 +39,7 @@
+ 
+ case ${abi} in
+     linux)		abi=sysv;;
++    freebsd*)		abi=sysv;;
+     darwin*)		abi=darwin;;
+     *)			abi=libffi; lib="-lffi";;
+ esac
