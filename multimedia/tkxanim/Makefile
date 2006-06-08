@@ -8,7 +8,8 @@
 PORTNAME=	tkxanim
 PORTVERSION=	0.43
 CATEGORIES=	multimedia tk82
-MASTER_SITES=	http://members.yourlink.net/aaron/software/linux/
+MASTER_SITES=	http://freshmeat.net/redir/tkxanim/10652/url_tgz/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	jedgar@fxp.org
 COMMENT=	Tcl/Tk frontend to xanim
