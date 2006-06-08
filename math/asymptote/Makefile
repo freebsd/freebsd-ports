@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,6 +44,10 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR}
 
 ALL_TARGET=	asy
 INSTALL_TARGET=	install-asy
+
+.if defined(WITH_GSL)
+LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
+.endif
 
 # Documentation
 .if !defined(NOPORTDOCS)
