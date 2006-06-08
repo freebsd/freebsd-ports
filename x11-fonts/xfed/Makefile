@@ -8,7 +8,8 @@
 PORTNAME=	xfed
 PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/X11/fonts/edit/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
