@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/obfuscatejs
+%%DATADIR%%/consyntools.jar
+@dirrm %%DATADIR%%
