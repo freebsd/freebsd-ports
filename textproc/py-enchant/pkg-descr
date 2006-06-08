@@ -5,5 +5,5 @@ of Enchant with the flexibility of Python and a nice 'Pythonic'
 object-oriented interface. It also aims to provide some higher-level
 functionality than is available in the C API.
 
-Author:	Ryan Kelly <ryan@rfk.id.au>
+Author:	Ryan Kelly
 WWW:	http://pyenchant.sourceforge.net/
