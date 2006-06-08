@@ -9,7 +9,7 @@ PORTNAME=	gkx86info
 PORTVERSION=	0.0.2
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://asdfnews.org/yargon/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
