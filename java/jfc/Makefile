@@ -8,7 +8,7 @@
 PORTNAME=	jfc
 PORTVERSION=	1.1.1
 CATEGORIES=	java
-MASTER_SITES=	http://java.sun.com/products/jfc/
+MASTER_SITES=	#http://java.sun.com/products/jfc/
 DISTNAME=	swing1_1_1
 EXTRACT_SUFX=	.zip
 
