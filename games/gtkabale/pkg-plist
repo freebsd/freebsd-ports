@@ -1,12 +1,12 @@
 bin/gtkabale
-share/gtkabale/ambiguous.png
-share/gtkabale/back.png
-share/gtkabale/cards.png
-share/gtkabale/game-lost.png
-share/gtkabale/game-won.png
-share/gtkabale/gtkrc
-share/gtkabale/help-no.png
-share/gtkabale/help-yes.png
-share/gtkabale/no-move.png
-share/locale/da/LC_MESSAGES/gtkabale.mo
-@dirrm share/gtkabale
+%%DATADIR%%/ambiguous.png
+%%DATADIR%%/back.png
+%%DATADIR%%/cards.png
+%%DATADIR%%/game-lost.png
+%%DATADIR%%/game-won.png
+%%DATADIR%%/gtkrc
+%%DATADIR%%/help-no.png
+%%DATADIR%%/help-yes.png
+%%DATADIR%%/no-move.png
+%%NLS%%share/locale/da/LC_MESSAGES/gtkabale.mo
+@dirrm %%DATADIR%%
