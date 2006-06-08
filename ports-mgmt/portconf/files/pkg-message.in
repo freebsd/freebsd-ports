@@ -1,0 +1,28 @@
+*********************************************************
+
+To enable port-specific make variables, add the following
+lines into your /etc/make.conf file:
+
+============== cut here ==============
+.if !empty(.CURDIR:M/usr/ports*)
+_PORTCONF!=%%PREFIX%%/libexec/portconf
+.for i in ${_PORTCONF:S/|/ /g}
+${i:S/%/ /g}
+.endfor
+.endif
+======================================
+
+and create the %%PREFIX%%/etc/ports.conf configuration
+file with the following syntax:
+
+---------------------------------------------------------
+editors/openoffice*: WITH_CCACHE|LOCALIZED_LANG=it
+www/firefox-i18n: WITHOUT_SWITCHER | FIREFOX_I18N=fr it
+x11/fakeport: CONFIGURE_ARGS=--with-modules="aaa bbb ccc"
+---------------------------------------------------------
+
+Global port directory patterns and blanks around
+the pipe "|" symbol are allowed.
+Values shouldn't be quoted even if they contain spaces.
+
+*********************************************************
