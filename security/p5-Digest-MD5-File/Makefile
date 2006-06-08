@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-MD5-File
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Perl extension for getting MD5 sums for files and urls
 
-PERL_CONFIGURE= yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Digest::MD5::File.3
 
