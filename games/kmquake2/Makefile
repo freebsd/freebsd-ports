@@ -23,27 +23,23 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhanced Quake2 OpenGL only engine with Lazarus support
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		openal.0:${PORTSDIR}/audio/openal \
-		png.5:${PORTSDIR}/graphics/png \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-
-WRKSRC=		${WRKDIR}/KMQuake2_${PORTVERSION:S/.//}_src_unix
 
 USE_BZIP2=	yes
 USE_GCC=	3.2+
 USE_GMAKE=	yes
-USE_GL=		yes
+WRKSRC=		${WRKDIR}/KMQuake2_${PORTVERSION:S/.//}_src_unix
 
 OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" off \
+		CLIENT "Build client" on \
 		CTF "Build Capture The Flag modification" off \
 		DEDICATED "Build dedicated server" on \
+		GAME "Build main game modification" on \
 		HYBRID "Build Rogue-Xatrix hybrid modification" off \
 		LIGHTS "Build Lights modification with bots" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		PAX "Build Pax Imperia modification" off \
-		ROGUE "Build Ground Zero (Rogue( mission pack" off \
+		ROGUE "Build Ground Zero (Rogue) mission pack" off \
 		SDL "Build SDL client" on \
 		XATRIX "Build The Reckoning (Xatrix) mission pack" off \
 		ZAERO "Build Zaero mission pack" off
@@ -61,11 +57,16 @@ KMQ2_FLARES=	Flares.tar
 PAX_DATA=	paximperia.zip
 PAX_PATCH=	pax_101_patch.zip
 
+MOD_LIST=	3ZB2 CTF HYBRID LIGHTS PAX ROGUE XATRIX ZAERO
+
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
-MOD_LIST=	3ZB2 CTF HYBRID LIGHTS PAX ROGUE ROGUE_XATRIX XATRIX ZAERO
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
+    defined(WITHOUT_SDL)
+IGNORE=		needs at least one of CLIENT, DEDICATED and SDL options
+.endif
 
 .for mod in ${MOD_LIST}
 .   if defined(WITH_${mod})
@@ -84,11 +85,35 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-addons__Makefile
 MAKE_ENV+=	KMQ2_ADDONS="${KMQ2_ADDONS:S/${EXTRACT_SUFX}//}"
 .endif
 
+.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL)
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		openal.0:${PORTSDIR}/audio/openal \
+		png.5:${PORTSDIR}/graphics/png \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
+USE_GL=		yes
+.endif
+
+.if !defined(WITHOUT_CLIENT)
+MAKE_ENV+=	BUILD_KMQUAKE2=YES
+PLIST_SUB+=	CLIENT=""
+Q2BIN+=		${PORTNAME}
+.else
+PLIST_SUB+=	CLIENT="@comment "
+.endif
+
 .if !defined(WITHOUT_DEDICATED)
-MAKE_ENV+=	BUILD_DEDICATED=YES
+MAKE_ENV+=	BUILD_KMQUAKE2_DEDICATED=YES
 PLIST_SUB+=	DEDICATED=""
+Q2BIN+=		${PORTNAME}-ded
 .else
 PLIST_SUB+=	DEDICATED="@comment "
+.endif
+
+.if !defined(WITHOUT_GAME)
+MAKE_ENV+=	BUILD_GAME=YES
+PLIST_SUB+=	GAME=""
+.else
+PLIST_SUB+=	GAME="@comment "
 .endif
 
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
@@ -107,6 +132,7 @@ PLIST_SUB+=	PAX="@comment "
 USE_SDL=	sdl
 MAKE_ENV+=	BUILD_KMQUAKE2_SDL=YES
 PLIST_SUB+=	SDL=""
+Q2BIN+=		${PORTNAME}-sdl
 .else
 PLIST_SUB+=	SDL="@comment "
 .endif
@@ -132,12 +158,13 @@ post-extract:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${PORTNAME} ${PREFIX}/bin
-.if !defined(WITHOUT_SDL)
-	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${PORTNAME}-sdl ${PREFIX}/bin
-.endif
+.for bin in ${Q2BIN}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${bin} ${PREFIX}/bin
+.endfor
 	${MKDIR} ${LIBDIR}/baseq2
+.if !defined(WITHOUT_GAME)
 	${CP} -Rp ${WRKSRC}/quake2/baseq2/* ${LIBDIR}/baseq2
+.endif
 .if defined(MOD_REQUESTED)
 	${CP} -Rp ${WRKDIR}/${KMQ2_ADDONS:S/${EXTRACT_SUFX}//}/quake2/* \
 		${LIBDIR}

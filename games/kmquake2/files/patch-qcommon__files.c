@@ -1,5 +1,5 @@
 --- ./qcommon/files.c.orig	Thu Mar 23 06:30:01 2006
-+++ ./qcommon/files.c	Sat May 20 13:44:43 2006
++++ ./qcommon/files.c	Thu Jun  8 13:39:12 2006
 @@ -1314,7 +1314,7 @@
  	char	*homedir;		/* Home directory. */
  

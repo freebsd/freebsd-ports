@@ -1,5 +1,5 @@
 --- ./unix/sys_unix.c.orig	Thu Apr  6 11:30:11 2006
-+++ ./unix/sys_unix.c	Sat May 20 13:44:43 2006
++++ ./unix/sys_unix.c	Thu Jun  8 13:39:12 2006
 @@ -219,23 +219,10 @@
  	void	*(*GetGameAPI) (void *);
  
