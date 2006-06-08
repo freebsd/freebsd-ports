@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://geos.refractions.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

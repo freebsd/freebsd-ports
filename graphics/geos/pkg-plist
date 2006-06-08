@@ -39,5 +39,5 @@ lib/libgeos.so.4
 lib/libgeos_c.a
 lib/libgeos_c.la
 lib/libgeos_c.so
-lib/libgeos_c.so.1
+lib/libgeos_c.so.2
 @dirrm include/geos
