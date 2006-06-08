@@ -10,7 +10,7 @@ PORTNAME=	cfgstoragemk
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://ftp.gnu.org/savannah/files/cfgstoragemk/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	cfgstoragemaker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
