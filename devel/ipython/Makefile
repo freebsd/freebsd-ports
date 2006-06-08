@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.7.1.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}-0.7.1.fix1
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	An enhanced Interactive Python shell
