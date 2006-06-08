@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	ymessenger
-PORTVERSION=	1.0.4.1
+PORTVERSION=	1.0.6.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://download.yahoo.com/dl/unix/
+MASTER_SITES=	http://public.yahoo.com/%7Emmk/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	rh${BASEVERSION:C/([^\.])\..*/\1/}.${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/-\1/}.${MACHINE_ARCH}
-EXTRACT_SUFX=	.rpm
+DISTNAME=	rh9.${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/-\1/}.${MACHINE_ARCH}
+DISTFILES=	${DISTNAME}.rpm ymessenger.bin
+EXTRACT_ONLY=	${DISTNAME}.rpm
 
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	An RPM of Yahoo! Messenger instant messaging client
@@ -27,9 +28,6 @@ ONLY_FOR_ARCHS=	i386
 STRIP=
 NO_FILTER_SHLIBS=yes
 
-# Set the version of linux_base
-BASEVERSION?=	7.1
-
 SHARE_FILES=	yahoo_gnome.png yahoo_kde.xpm ymessenger.desktop\
 		ymessenger.kdelnk
 
@@ -39,8 +37,11 @@ do-extract:
 	@for rpm in ${EXTRACT_ONLY}; do\
 	    (cd ${WRKDIR} &&\
 	    rpm2cpio.pl ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE}/$$rpm |\
-	    ${CPIO} --quiet -id);\
+	    ${CPIO} --quiet -idm);\
 	done
+
+pre-patch:
+	${CP} -fp ${DISTDIR}/ymessenger.bin ${WRKDIR}/opt/ymessenger/bin
 
 post-patch:
 	${SED} -e 's:%%PREFIX%%:${PREFIX}:g' ${FILESDIR}/linux-ymessenger.sh >\
@@ -57,7 +58,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/linux-ymessenger.sh\
 	    ${PREFIX}/bin/linux-ymessenger
 	@${MKDIR} ${PREFIX}/lib/linux-ymessenger
-	${INSTALL_DATA} ${WRKDIR}/opt/ymessenger/lib/libgtkhtml.so.6\
+	${INSTALL_DATA} ${WRKDIR}/opt/ymessenger/lib/libgtkhtml.so.0\
 	    ${PREFIX}/lib/linux-ymessenger
 
 .include <bsd.port.mk>
