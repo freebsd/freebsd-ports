@@ -17,6 +17,7 @@ bin/xasy
 %%DATADIR%%/featpost3D.asy
 %%DATADIR%%/feynman.asy
 %%DATADIR%%/filldraw.asy
+%%DATADIR%%/flowchart.asy
 %%DATADIR%%/fontsize.asy
 %%DATADIR%%/geometry.asy
 %%DATADIR%%/graph.asy
@@ -53,6 +54,7 @@ bin/xasy
 %%EXAMPLESDIR%%/Pythagoras.asy
 %%EXAMPLESDIR%%/PythagoreanTree.asy
 %%EXAMPLESDIR%%/Sierpinski.asy
+%%EXAMPLESDIR%%/advection.asy
 %%EXAMPLESDIR%%/animations/cube.asy
 %%EXAMPLESDIR%%/animations/wheel.asy
 %%EXAMPLESDIR%%/axis3.asy
@@ -92,7 +94,7 @@ bin/xasy
 %%EXAMPLESDIR%%/fermi.asy
 %%EXAMPLESDIR%%/fjortoft.asy
 %%EXAMPLESDIR%%/flow.asy
-%%EXAMPLESDIR%%/flowchart.asy
+%%EXAMPLESDIR%%/flowchartdemo.asy
 %%EXAMPLESDIR%%/generalaxis.asy
 %%EXAMPLESDIR%%/generalaxis3.asy
 %%EXAMPLESDIR%%/grid.asy
@@ -188,6 +190,7 @@ bin/xasy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/
 @dirrm %%EXAMPLESDIR%%/animations
 @dirrm %%EXAMPLESDIR%%
+share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
 @dirrm share/texmf-local/tex/latex/asymptote
 @unexec %%MKTEXLSR%%
