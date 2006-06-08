@@ -4,6 +4,7 @@ VisionEgg/VisionEgg.cfg
 VisionEgg/check-config.py
 VisionEgg/data/az_el.png
 VisionEgg/data/panorama.jpg
+VisionEgg/data/spiral.png
 VisionEgg/data/visionegg.bmp
 VisionEgg/data/visionegg.tif
 VisionEgg/data/water.mov
@@ -20,6 +21,9 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/Daq.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/Daq.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/Daq.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqKeyboard.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqKeyboard.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/DaqKeyboard.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/DaqLPT.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/DaqLPT.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/DaqLPT.pyo
@@ -59,12 +63,21 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PlatformDependent.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/AST_ext.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/AST_ext.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/AST_ext.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/ColorCalGUI.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/ColorCalGUI.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/ColorCalGUI.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/ColorCalServer.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/ColorCalServer.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/ColorCalServer.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/DropinGUI.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/DropinGUI.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/DropinGUI.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/DropinServer.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/DropinServer.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/DropinServer.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/EPhysGUI.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/EPhysGUI.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/EPhysGUI.pyo
@@ -116,6 +129,9 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/TargetServer.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/TargetServer.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/TargetServer.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/VarTypes.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/VarTypes.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/VarTypes.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/__init__.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps/__init__.pyo
@@ -128,6 +144,9 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/QuickTime.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/QuickTime.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/QuickTime.pyo
+%%PYTHON_SITELIBDIR%%/VisionEgg/ResponseControl.py
+%%PYTHON_SITELIBDIR%%/VisionEgg/ResponseControl.pyc
+%%PYTHON_SITELIBDIR%%/VisionEgg/ResponseControl.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/SphereMap.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/SphereMap.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/SphereMap.pyo
@@ -151,9 +170,6 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/darwin_getrefresh.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/darwin_getrefresh.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/darwin_getrefresh.pyo
-%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_maxpriority.py
-%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_maxpriority.pyc
-%%PYTHON_SITELIBDIR%%/VisionEgg/darwin_maxpriority.pyo
 %%PYTHON_SITELIBDIR%%/VisionEgg/gl_qt.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/gl_qt.pyc
 %%PYTHON_SITELIBDIR%%/VisionEgg/gl_qt.pyo
@@ -171,6 +187,8 @@ VisionEgg/test/opengl_info.py
 %%PYTHON_SITELIBDIR%%/VisionEgg/win32_maxpriority.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/VisionEgg/PyroApps
 @dirrm %%PYTHON_SITELIBDIR%%/VisionEgg
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrm %%PYTHON_LIBDIR%%
 @dirrm VisionEgg/test
 @dirrm VisionEgg/data
 @dirrm VisionEgg
