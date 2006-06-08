@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	0.99
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

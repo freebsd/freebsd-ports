@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	0.9.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.reptilelabour.com/software/files/chromium/
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tar.gz \
@@ -19,7 +19,7 @@ COMMENT=	An arcade-style, top-scrolling space shooter
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 
 USE_GL=		yes
 USE_GMAKE=	yes

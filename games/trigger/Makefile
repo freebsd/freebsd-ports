@@ -7,7 +7,7 @@
 
 PORTNAME=	trigger
 PORTVERSION=	0.5.1c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://0day.icculus.org/mirrors/trigger/
 DISTFILES=	trigger-${PORTVERSION}-src${EXTRACT_SUFX} \
@@ -19,7 +19,7 @@ COMMENT=	A rally car racing game
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal \
 		physfs:${PORTSDIR}/devel/physfs \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl image

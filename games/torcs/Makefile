@@ -7,7 +7,7 @@
 
 PORTNAME=		torcs
 DISTVERSION=		1.2.4
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	The Open Racing Car Simulator
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png	\
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes

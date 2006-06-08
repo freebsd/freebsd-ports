@@ -7,6 +7,7 @@
 
 PORTNAME=	SimGear
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		alut.0:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
