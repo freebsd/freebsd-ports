@@ -1,4 +1,4 @@
 bin/wminet
 etc/wminetrc
-%%PORTDOCS%%share/doc/wminet/HINTS
-%%PORTDOCS%%@dirrm share/doc/wminet
+%%PORTDOCS%%%%DOCSDIR%%/HINTS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
