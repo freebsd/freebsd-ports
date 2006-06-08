@@ -60,7 +60,7 @@ IGNORE=		does not work with mlockall(2) on your version of FreeBSD 5.x. Please u
 .if exists(${LOCALBASE}/lib/libcdio.a) || defined(WITH_CDDB)
 WITH_CDDB=	yes
 LIB_DEPENDS+=	cddb.3:${PORTSDIR}/audio/libcddb \
-		cdio.6:${PORTSDIR}/sysutils/libcdio
+		cdio.7:${PORTSDIR}/sysutils/libcdio
 .endif
 
 pre-everything::
