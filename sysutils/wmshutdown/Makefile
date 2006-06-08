@@ -9,7 +9,8 @@ PORTNAME=	wmShutdown
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://grad.icmc.usp.br/~rva/pkgs/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 
 MAINTAINER=	kaname@vamp.jpn.ph
 COMMENT=	Window Maker dock application to shutdown or reboot
