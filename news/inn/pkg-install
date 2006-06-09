@@ -42,10 +42,27 @@ case $2 in
 	    ${NEWSBASE}/spool/overview \
 	    ${NEWSBASE}/spool/tmp
 
-	if [ -d ${NEWSBASE}/db.dist -a ! -f ${NEWSBASE}/db.dist/* ]; then
-		for f in ${NEWSBASE}/db/*; do
-			cp -pR ${f} ${NEWSBASE}/db.dist
-		done
+	if [ ${3:-""} = "PORTMODE" ]; then
+		fc=`ls ${NEWSBASE}/db.dist/* 2>/dev/null | wc -l`
+
+		if [ -d ${NEWSBASE}/db.dist -a $fc -eq 0 ]; then
+			for f in ${NEWSBASE}/db/*; do
+				cp -pR ${f} ${NEWSBASE}/db.dist
+			done
+		else
+			mkdir -p ${NEWSBASE}/db.dist
+			for f in ${NEWSBASE}/db/*; do
+				touch ${NEWSBASE}/db.dist/${f##*/}
+			done
+		fi
+	else
+		fc=`ls ${NEWSBASE}/db/* 2>/dev/null | wc -l`
+
+		if [ -d ${NEWSBASE}/db -a $fc -eq 0 ]; then
+			for f in ${NEWSBASE}/db.dist/*; do
+				cp -pR ${f} ${NEWSBASE}/db
+			done
+		fi
 	fi
 
 	;;
