@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -32,7 +31,7 @@ CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
 INSTALL_TARGET=	site-install
 
 RUBY_RD_FILES=	rubysdl_doc.en.rd \
-		rubysdl_doc.rd
+		rubysdl_doc_old.rd
 
 DOCS_EN=	NEWS.en README.en rubysdl_const_list.txt \
 		${RUBY_RD_FILES:M*.en.rd} \
