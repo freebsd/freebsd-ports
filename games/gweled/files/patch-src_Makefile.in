@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Jun  9 16:10:56 2006
++++ src/Makefile.in	Fri Jun  9 16:11:08 2006
+@@ -178,7 +178,7 @@ Data_DATA = \
+ 	gweled_icon.png \
+ 	gweled_logo.png
+ 
+-gweled_LDADD = @PACKAGE_LIBS@
++gweled_LDADD = @PACKAGE_LIBS@ -Wl,--export-dynamic
+ all: all-am
+ 
+ .SUFFIXES:
