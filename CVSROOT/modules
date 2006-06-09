@@ -2587,7 +2587,7 @@ fpc-base	ports/lang/fpc-base
 fpc-demo	ports/lang/fpc-demo
 fpc-devel	ports/lang/fpc-devel
 fpc-docs	ports/lang/fpc-docs
-fpc-fvision	ports/devel/fpc-fvision
+fpc-fv		ports/devel/fpc-fv
 fpc-gdb		ports/devel/fpc-gdb
 fpc-gdbint	ports/devel/fpc-gdbint
 fpc-ibase	ports/databases/fpc-ibase
