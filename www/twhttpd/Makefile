@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.geocities.com/samngms/twhttpd/download/
 DISTNAME=	twhttpd-${PORTVERSION}
 
-MAINTAINER=	opr@bsdaemon.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure HTTP Proxy
 
 GNU_CONFIGURE=  yes

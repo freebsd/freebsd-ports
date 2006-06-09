@@ -11,7 +11,7 @@ CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	opr@bsdaemon.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Autopsy Forensic Browser is a GUI for Sleuthkit
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ifind:${PORTSDIR}/sysutils/sleuthkit
