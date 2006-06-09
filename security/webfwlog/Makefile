@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	webfwlog
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	http://devel.webfwlog.net/download/patches/
-PATCHFILES=	webfwlog-0.91-order_state.patch
+PATCHFILES=	webfwlog-0.92-date_syntax_url.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	zeus@ix.netcom.com
@@ -48,9 +48,6 @@ CONFIGURE_ARGS+=--with-mysql
 USE_PGSQL=
 CONFIGURE_ARGS+=--with-pgsql
 .endif
-
-BINGRP=		${WWWGRP}
-BINMODE=	4550
 
 pre-install:
 	@${MKDIR} ${PREFIX}/${HTML_DOC_ROOT}
@@ -95,6 +92,8 @@ post-install:
 	@${RM} -f ${PREFIX}/etc/webfwlog.conf.new
 	@${CHMOD} 0555 ${PREFIX}/${HTML_DOC_ROOT}/webfwlog
 	@${CHMOD} 0555 ${PREFIX}/${HTML_DOC_ROOT}/webfwlog/include
+	@${CHOWN} :${WWWGRP} ${PREFIX}/bin/wfwl_syslog
+	@${CHMOD} o-wrx ${PREFIX}/bin/wfwl_syslog
 
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
