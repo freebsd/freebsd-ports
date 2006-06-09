@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graph
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 PORTEPOCH=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -40,7 +40,7 @@ MAN3=		Graph.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later version
+IGNORE=		requires perl 5.6.x or later version
 .endif
 
 .include <bsd.port.post.mk>
