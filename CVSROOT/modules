@@ -12884,6 +12884,7 @@ swatch		ports/security/swatch
 sweep		ports/audio/sweep
 swfdec		ports/graphics/swfdec
 swfdec-plugin	ports/www/swfdec-plugin
+swfmill		ports/graphics/swfmill
 swftools	ports/graphics/swftools
 swhplugins	ports/audio/swhplugins
 swi-pl		ports/lang/swi-pl
