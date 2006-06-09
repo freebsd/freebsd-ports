@@ -93,6 +93,10 @@ int main(int argc, char **argv)
 #else
 		setreuid(-1, getuid());
 #endif
+		if (geteuid() != getuid()) {
+			perror("setuid()");
+			return 2;
+		}
 	}
 
 	if(argc == 0)
