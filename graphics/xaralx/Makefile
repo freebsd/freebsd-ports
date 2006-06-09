@@ -79,6 +79,18 @@ BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 post-patch:
 	${REINPLACE_CMD} -E -e 's|-I[^[:space:]]*/wxOil[[:space:]]||g' \
 		${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -E \
+		-e 's/^Name=Xara LX$$/Name=Xara LX ${PORTVERSION}/' \
+		${WRKSRC}/xaralx.desktop
+.else
+post-patch:
+	${REINPLACE_CMD} -E \
+		-e 's/^Name=Xara LX$$/Name=Xara LX ${PORTVERSION}/' \
+		-e 's/^Icon=xaralx.png$$/Icon=xaralx${PKGNAMESUFFIX}.png/' \
+		-e 's/^FilePattern=xaralx;$$/FilePattern=xaralx${PKGNAMESUFFIX}/' \
+		-e 's/^Exec=xaralx %F$$/Exec=xaralx${PKGNAMESUFFIX} %F/' \
+		-e 's/^TryExec=xaralx$$/TryExec=xaralx${PKGNAMESUFFIX}/' \
+		${WRKSRC}/xaralx.desktop
 .endif
 
 pre-configure:
