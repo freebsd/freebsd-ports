@@ -6,7 +6,6 @@ bin/ssh-add
 bin/ssh-agent
 bin/ssh-keygen
 bin/ssh-keyscan
-etc/rc.d/sshd.sh.sample
 etc/ssh/moduli
 @exec [ -f %D/etc/ssh_config ] && [ ! -f %D/etc/ssh/ssh_config ] && ln %D/etc/ssh_config %D/etc/ssh/ssh_config
 @exec [ -f %D/etc/sshd_config ] && [ ! -f %D/etc/ssh/sshd_config ] && ln %D/etc/sshd_config %D/etc/ssh/sshd_config
