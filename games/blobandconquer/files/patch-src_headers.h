@@ -1,15 +1,14 @@
---- src/headers.h.orig	Mon Apr  3 05:24:55 2006
-+++ src/headers.h	Mon Apr  3 05:26:10 2006
-@@ -18,7 +18,7 @@
+--- src/headers.h.orig	Tue May 30 23:08:58 2006
++++ src/headers.h	Tue May 30 23:09:11 2006
+@@ -20,6 +20,7 @@
  
- */
+ #define GL_GLEXT_PROTOTYPES
  
--#include "mcheck.h"
-+#include <unistd.h>
++#include "unistd.h"
  #include "stdlib.h"
  #include "stdio.h"
  #include "string.h"
-@@ -29,11 +29,11 @@
+@@ -30,11 +31,11 @@
  
  #include "zlib.h"
  
