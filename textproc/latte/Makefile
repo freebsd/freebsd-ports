@@ -41,6 +41,7 @@ post-extract:
 post-install:
 	@${LN} -sf latte-html ${PREFIX}/bin/latte
 	${INSTALL_DATA} ${WRKSRC}/latte.el ${PREFIX}/share/emacs/site-lisp
+	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/latte.el \
 		  ${PREFIX}/lib/xemacs/site-lisp
 .if !defined(NOPORTDOCS)
