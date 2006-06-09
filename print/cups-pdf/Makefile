@@ -7,6 +7,7 @@
 
 PORTNAME=	cups-pdf
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,10 +23,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GHOSTSCRIPT_RUN=	yes
 
-SUBST_CMD=		-e "s,/usr/bin/gs,${LOCALBASE}/bin/gs," \
-			-e 's,/var/tmp,/tmp,' \
-			-e 's,"lp","daemon",' \
-			-e 's,/var/spool/cups-pdf/SPOOL,/var/spool/cups-pdf,'
+SUBST_CMD=		-e "s,\#GhostScript /usr/bin/gs,GhostScript ${LOCALBASE}/bin/gs," \
+			-e 's,\#GSTmp /var/tmp,GSTmp /tmp,' \
+			-e 's,\#Grp lp,Grp daemon,' \
+			-e 's,\#Spool /var/spool/cups-pdf/SPOOL,Spool /var/spool/cups-pdf,'
 
 .ifdef(PDF_VERSION)
 .if ${PDF_VERSION} == 1.2
@@ -35,19 +36,19 @@ SUBST_CMD=		-e "s,/usr/bin/gs,${LOCALBASE}/bin/gs," \
 .else
 BROKEN=		Unsupported PDF-Version selected: ${PDF_VERSION}
 .endif
-SUBST_CMD+=	-e 's,CPPDFVER "1.4",CPPDFVER "${PDF_VERSION}",'
+SUBST_CMD+=	-e "s,\#PDFVer 1.4,PDFVer ${PDF_VERSION},"
 .endif
 
 .ifdef(HOME_SUBDIR)
-SUBST_CMD+=	-e 's,CPOUT "/var/spool/cups-pdf",CPOUT "$$HOME",' -e 's,CPHOMESUB "cups-pdf",CPHOMESUB "${HOME_SUBDIR}",'
+SUBST_CMD+=	-e "s,\#Out /var/spool/cups-pdf/$${USER},Out $${HOME}/${HOME_SUBDIR},"
 .else
 .ifdef(OUTPUT_DIRECTORY)
-SUBST_CMD+=	-e 's,CPOUT "/var/spool/cups-pdf",CPOUT "${OUTPUT_DIRECTORY}",'
+SUBST_CMD+=	-e "s,\#Out /var/spool/cups-pdf/$${USER},Out ${OUTPUT_DIRECTORY},¨
 .endif
 .endif
 
 .ifdef(LOG_DIRECTORY)
-SUBST_CMD+=	-e "s,/var/log/cups,${LOG_DIRECTORY},"
+SUBST_CMD+=	-e "s,\#Log /var/log/cups,Log ${LOG_DIRECTORY},"
 .endif
 
 pre-everything::
@@ -73,7 +74,10 @@ post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/extra/PostscriptColor.ppd.gz
 
 post-configure:
-	@${REINPLACE_CMD} ${SUBST_CMD} ${WRKSRC}/src/cups-pdf.h
+	@${REINPLACE_CMD} ${SUBST_CMD} ${WRKSRC}/extra/cups-pdf.conf
+	@${REINPLACE_CMD} -e \
+	's,CPCONFIG "/etc/cups/cups-pdf.conf",CPCONFIG "${LOCALBASE}/etc/cups/cups-pdf.conf",' \
+	${WRKSRC}/src/cups-pdf.h
 
 do-build:
 	cd ${WRKSRC}/src; ${CC} ${CFLAGS} -o cups-pdf cups-pdf.c
@@ -84,6 +88,12 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf ${LOCALBASE}/etc/cups/cups-pdf.conf.sample
 .endif
+
+post-install:
+	@if [ ! -f ${LOCALBASE}/etc/cups/cups-pdf.conf ]; then \
+	${CP} -p ${LOCALBASE}/etc/cups/cups-pdf.conf.sample ${LOCALBASE}/etc/cups/cups-pdf.conf ; \
+	fi
 
 .include <bsd.port.post.mk>
