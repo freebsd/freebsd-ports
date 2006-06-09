@@ -1,5 +1,36 @@
---- configure.orig	Fri Feb 17 12:20:06 2006
-+++ configure	Fri Feb 17 12:21:32 2006
+--- configure.orig	Fri Mar 17 01:22:59 2006
++++ configure	Fri Jun  9 10:08:08 2006
+@@ -18909,10 +18909,10 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS=" /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(SHELL) /usr/local/bin/libtool'
+ 
+ # Prevent multiple expansion
+ 
+@@ -18947,7 +18947,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="%%PTHREAD_LIBS%% $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -19010,7 +19010,7 @@
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="%%PTHREAD_LIBS%% $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: POSIX thread library is required" >&5
 @@ -19185,7 +19185,7 @@
  _ACEOF
  
@@ -9,3 +40,12 @@
                                  DB_CPPFLAGS="$DB_CPPFLAGS -I$with_mysql/include"
                                  DB_LDFLAGS="$DB_LDFLAGS -L$with_mysql/lib/ -lmysqlclient"
                          else
+@@ -20268,7 +20268,7 @@
+ 
+ # If the compiler is gcc, tune warnings and make the char type unsigned
+ if test "x$GCC" = "xyes"; then
+-	CFLAGS="$CFLAGS -Wall -Wunused -Wno-unused-label -funsigned-char";
++	#CFLAGS="$CFLAGS -Wall -Wunused -Wno-unused-label -funsigned-char";
+         # does this compiler support -Wno-pointer-sign ?
+         svd_CFLAGS="$CFLAGS"
+         CFLAGS="-Wno-pointer-sign $CFLAGS"

@@ -17,8 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
 
 OPTIONS=	MYSQL "Add MySQL support" on \
 		SQLITE " Add Sqlite support" on
@@ -28,8 +27,8 @@ OPTIONS=	MYSQL "Add MySQL support" on \
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/mysql" \
-		LDFLAGS="-L${LOCALBASE}/lib/mysql"
+CONFIGURE_ENV+=	CPPFLAGS+="-I${LOCALBASE}/include/mysql" \
+		LDFLAGS+="-L${LOCALBASE}/lib/mysql"
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
@@ -40,5 +39,8 @@ CONFIGURE_ARGS+=	--with-sqlite=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--without-sqlite
 .endif
+
+post-patch:
+	${REINPLACE_CMD} 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
