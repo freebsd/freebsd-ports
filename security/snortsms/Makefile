@@ -11,7 +11,7 @@ CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	snortsms
 
-MAINTAINER=	snortsms@servangle.dnydns.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A remote management and monitoring interface for Snort based IDS
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
