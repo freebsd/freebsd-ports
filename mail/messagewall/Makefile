@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	messagewall_${PORTVERSION}.orig
 
-MAINTAINER=	opr@bsdaemon.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free SMTP PROXY with filtering
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
