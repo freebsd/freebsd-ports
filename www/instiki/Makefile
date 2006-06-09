@@ -7,19 +7,17 @@
 
 PORTNAME=	instiki
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	www ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9296/ \
-		http://rubyforge.rubyuser.de/instiki/
+MASTER_SITES=	http://rubyforge.rubyuser.de/instiki/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	arsptr@optusnet.com.au
+MAINTAINER=	arsptr@internode.on.net
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/sqlite3_api.so:${PORTSDIR}/databases/ruby-sqlite3
 BUILD_DEPENDS+=	${RUN_DEPENDS} rake:${PORTSDIR}/devel/rubygem-rake
-PATCH_DEPENDS=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	1.8
 
@@ -34,13 +32,37 @@ SUB_LIST+=	INSTIKIDIR=${INSTIKIDIR} \
 SUB_FILES+=	pkg-deinstall
 RUBY_SHEBANG_FILES=instiki
 
-post-patch:
+OPTIONS=	PORT_BLUECLOTH	"Use BlueCloth gem from ports" On
+
+do-build:
 	( cd ${WRKSRC}/db/ && \
 	  rake environment RAILS_ENV=production migrate )
 
 do-install:
 	${CP} -pR ${WRKSRC}/ ${PREFIX}/${INSTIKIDIR}
-	${CP} ${PREFIX}/${INSTIKIDIR}/db/production.db.sqlite3 ${PREFIX}/${INSTIKIDIR}/db/default.db.sqlite3
+	${CP} ${PREFIX}/${INSTIKIDIR}/db/production.db.sqlite3 \
+		${PREFIX}/${INSTIKIDIR}/db/default.db.sqlite3
 	${CHMOD} +x ${PREFIX}/${INSTIKIDIR}/instiki
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PORT_BLUECLOTH)
+
+# can't include this because it redefines do-install.
+# .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
+
+# For now, copy and paste the definition of SPEC_DIR from the above
+REV=		1.8
+GEMS_BASE_DIR=	lib/ruby/gems/${REV}
+SPEC_DIR=	${GEMS_BASE_DIR}/specifications
+
+RUN_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/BlueCloth-1.0.0.gemspec:${PORTSDIR}/www/rubygem-bluecloth
+
+EXTRA_PATCHES+=	${FILESDIR}/bluecloth-patch-lib-chunks-engines-rb
+
+post-patch:
+	${RM} ${WRKSRC}/lib/chunks/engines.rb.orig
+
+.endif
+
+.include <bsd.port.post.mk>

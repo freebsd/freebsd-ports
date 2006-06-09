@@ -23,7 +23,7 @@ command_interpreter="%%RUBY_WITH_SUFFIX%%"
 : ${instiki_enable="NO"}
 : ${instiki_flags="--port %%INSTIKIPORT%% --daemon"}
 
-sig_stop=-KILL
+sig_stop=KILL
 
 load_rc_config $name
 

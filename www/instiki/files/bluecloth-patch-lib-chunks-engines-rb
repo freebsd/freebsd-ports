@@ -1,0 +1,12 @@
+--- lib/chunks/engines.rb.orig	Sun Mar 12 15:57:24 2006
++++ lib/chunks/engines.rb	Tue Jun  6 22:45:16 2006
+@@ -35,7 +35,8 @@
+ 
+   class Markdown < AbstractEngine
+     def mask
+-      require_dependency 'bluecloth_tweaked'
++      require_dependency 'rubygems'
++      require_gem 'BlueCloth'
+       BlueCloth.new(@content, @content.options[:engine_opts]).to_html
+     end
+   end
