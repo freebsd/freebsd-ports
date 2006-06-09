@@ -1,22 +1,5 @@
-%%XPI_XPIDIR%%/chrome/content/help_extern.html
-%%XPI_XPIDIR%%/chrome/content/help_flash.html
-%%XPI_XPIDIR%%/chrome/content/help_flv.html
-%%XPI_XPIDIR%%/chrome/content/help_hidden.html
-%%XPI_XPIDIR%%/chrome/content/help_notfound.html
-%%XPI_XPIDIR%%/chrome/content/help_playlist.html
-%%XPI_XPIDIR%%/chrome/content/help_playtext.html
-%%XPI_XPIDIR%%/chrome/content/help_programs.html
-%%XPI_XPIDIR%%/chrome/content/help_ram.html
-%%XPI_XPIDIR%%/chrome/content/help_rm.html
-%%XPI_XPIDIR%%/chrome/content/help_skim.html
-%%XPI_XPIDIR%%/chrome/content/help_stop.html
-%%XPI_XPIDIR%%/chrome/content/help_streamsave.html
 %%XPI_XPIDIR%%/chrome/content/notfound.xul
 %%XPI_XPIDIR%%/chrome/content/overlay.xul
-%%XPI_XPIDIR%%/chrome/content/pro_ftp.html
-%%XPI_XPIDIR%%/chrome/content/pro_mms.html
-%%XPI_XPIDIR%%/chrome/content/pro_other.html
-%%XPI_XPIDIR%%/chrome/content/pro_rtsp.html
 %%XPI_XPIDIR%%/chrome/content/settings.xul
 %%XPI_XPIDIR%%/chrome/content/streamsave.xul
 %%XPI_XPIDIR%%/chrome/content/unplug.js
@@ -24,7 +7,28 @@
 %%XPI_XPIDIR%%/chrome/content/unplug_rulez.js
 %%XPI_XPIDIR%%/chrome/content/unplug_settings.js
 %%XPI_XPIDIR%%/chrome/content/unplug_streamwiz.js
-%%XPI_XPIDIR%%/chrome/content/zuul.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_extern.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_flash.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_flv.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_notfound.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_playlist.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_playtext.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_programs.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_ram.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_rm.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_skim.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_stop.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/help_streamsave.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/notfound.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/pro_ftp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/pro_mms.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/pro_other.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/pro_rtsp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/settings.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/streamsave.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/unplug.properties
+%%XPI_XPIDIR%%/chrome/locale/unplug/en-US/zuul.html
 %%XPI_XPIDIR%%/chrome/skin/config.png
 %%XPI_XPIDIR%%/chrome/skin/ftp.png
 %%XPI_XPIDIR%%/chrome/skin/help.png
@@ -44,6 +48,7 @@
 %%XPI_XPIDIR%%/chrome/skin/unplug-tool-sm.png
 %%XPI_XPIDIR%%/chrome/skin/unplug.css
 %%XPI_XPIDIR%%/chrome/skin/unplug.png
+%%XPI_XPIDIR%%/chrome/skin/unplug_large.css
 %%XPI_XPIDIR%%/chrome/skin/unstar_flv.png
 %%XPI_XPIDIR%%/chrome/skin/unstar_flvplay.png
 %%XPI_XPIDIR%%/chrome/skin/unstar_link.png
@@ -62,6 +67,9 @@
 %%XPI_XPIDIR%%/defaults/preferences/cn_unplug.js
 %%XPI_XPIDIR%%/install.rdf
 @dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/unplug
+@dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
