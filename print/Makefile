@@ -101,6 +101,7 @@
     SUBDIR += gsfonts
     SUBDIR += gtklp
     SUBDIR += guitartex
+    SUBDIR += gutenprint
     SUBDIR += gv
     SUBDIR += hp2xx
     SUBDIR += hpijs
