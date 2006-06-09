@@ -27,7 +27,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.c ${FILESDIR}/extra-patch-cv.c
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d ; s/^CFLAGS=/CFLAGS+=/' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
-		${WRKSRC}/mt.c
+		${WRKSRC}/mt.c  ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${PREFIX}/bin/
