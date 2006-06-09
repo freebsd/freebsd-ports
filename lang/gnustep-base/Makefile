@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-base
 PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -59,6 +59,13 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
 
+.if defined(GNUSTEP_WITH_BASE_GCC)
+LDCONFIG_GCC=
+.else
+GCCSH!=		(cd ${PORTSDIR}/${GNUSTEP_GCC_PORT} && make -V RC_D_SH)
+LDCONFIG_GCC=	${LOCALBASE}/${GCCSH}
+.endif
+
 post-build:
 .for i in ${MAKE_APPS}
 	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
@@ -67,6 +74,7 @@ post-build:
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" \
+		-e "s=%%LDCONFIG_GCC%%=${LDCONFIG_GCC}=" \
 		${FILESDIR}/GNUstep.sh \
 		> ${WRKSRC}/GNUstep.sh
 
