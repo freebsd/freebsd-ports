@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	veers@disturbed.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities for extracting information from DNS records
 
 USE_PERL5=	YES

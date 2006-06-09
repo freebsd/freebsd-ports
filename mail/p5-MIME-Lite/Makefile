@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	veers@disturbed.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple interface for creating (not parsing!) MIME messages
 
 PERL_CONFIGURE=	YES
