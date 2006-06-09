@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.54.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -141,6 +142,7 @@ do-build:
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
 		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
 		s,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g; \
+		s,/bin/gunzip,/usr/bin/gunzip,g; \
 		s,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g;' \
 		${WRKSRC}/etc/MailScanner.conf
 	${PERL} -pi -e \

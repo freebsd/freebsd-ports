@@ -1,3 +1,7 @@
+Version 4.54.6_1
+=================
+- Path to gunzip in MailScanner.conf fixed
+
 Version 4.54.6
 =================
 - Upgrade to MailScanner 4.54
