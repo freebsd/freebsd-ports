@@ -7,8 +7,9 @@
 
 PORTNAME=		waveplay
 PORTVERSION=		2001.09.24
+PORTREVISION=		1
 CATEGORIES=		audio
-MASTER_SITES=		http://sore.totto.to/~ysonoda/FreeBSD/ports/
+MASTER_SITES=		http://www.sokohiki.org/~yoshi/FreeBSD/ports/
 DISTNAME=		waveplay-20010924
 
 MAINTAINER=		yshd@na.rim.or.jp
