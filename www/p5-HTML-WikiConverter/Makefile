@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-WikiConverter
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -15,10 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	An HTML to wiki markup converter
 
-BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTML/Tree.pm:${PORTSDIR}/www/p5-HTML-Tree
+BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Params-Validate>=0.77:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-HTML-Parser>=3.34:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Tagset>=3.04:${PORTSDIR}/www/p5-HTML-Tagset \
+		p5-HTML-Tree>=3.18:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -30,7 +32,7 @@ MAN3=		HTML::WikiConverter.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		uses Unicode escapes and there requires perl 5.8.x or later
+IGNORE=		requires perl 5.8.x or later due to Unicode escapes
 .endif
 
 .include <bsd.port.post.mk>
