@@ -174,7 +174,6 @@
 %%PYTHON_SITELIBDIR%%/xmantissa/webtheme.py
 %%PYTHON_SITELIBDIR%%/xmantissa/webtheme.pyc
 %%PYTHON_SITELIBDIR%%/xmantissa/webtheme.pyo
-%%PYTHON_SITELIBDIR%%/nevow/athena_private
 @dirrmtry %%PYTHON_SITELIBDIR%%/axiom/plugins
 @dirrmtry %%PYTHON_SITELIBDIR%%/nevow/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/xmantissa/themes/base
