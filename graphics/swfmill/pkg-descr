@@ -1,0 +1,17 @@
+swfmill is an xml2swf and swf2xml processor with import functionalities.
+
+It's most common use is the generation of asset libraries containing
+images (PNG and JPEG), fonts (TTF) or other SWF movies for use with
+MTASC-compiled ActionScript, although swfmill can be used to produce
+both simple and complex SWF structures.
+
+* built around an XSLT/EXSLT processor (libxslt)
+
+* input and output of the XSLT transformation can be either XML or binary SWF
+
+* XSLT commands for importing PNG, JPEG, TTF and SWF, and for mapping
+  SWF ID numbers
+
+* built-in "simple dialect" to support library creation and building simple SWFs
+
+WWW: http://iterative.org/swfmill/

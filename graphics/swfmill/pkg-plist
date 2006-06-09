@@ -1,0 +1,9 @@
+bin/swfmill
+lib/libswft.so.0
+lib/libswft.so
+lib/libswft.la
+lib/libswft.a
+lib/libswfmillxslt.so.0
+lib/libswfmillxslt.so
+lib/libswfmillxslt.la
+lib/libswfmillxslt.a

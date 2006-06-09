@@ -586,6 +586,7 @@
     SUBDIR += svg2swf
     SUBDIR += svgalib
     SUBDIR += swfdec
+    SUBDIR += swfmill
     SUBDIR += swftools
     SUBDIR += synaesthesia
     SUBDIR += tcm
