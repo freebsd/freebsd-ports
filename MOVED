@@ -2374,3 +2374,4 @@ textproc/p5-Text-MagicTemplate||2006-06-07|Has expired
 www/mozex-firefox|www/xpi-mozex|2006-06-07|Standardize port name
 mail/openwebmail-devel||2006-06-07|Has expired
 www/b2evo|www/b2evolution|2006-06-08|Renamed to use real vendor package name
+devel/fpc-fvision|devel/fpc-fv|2006-06-09|Renamed to use correct package name
