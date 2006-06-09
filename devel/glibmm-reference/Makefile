@@ -5,29 +5,28 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 
-PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../glibmm:patch
-BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../glibmm:configure
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:${PORTSDIR}/devel/glibmm \
+		gm4:${PORTSDIR}/devel/m4
 
-PARENT_WRKSRC!=	cd ${.CURDIR}/../glibmm && ${MAKE} -V WRKSRC
-EXTRACT_ONLY=
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/glibmm-2.4
 
 post-patch:
-	@${FIND} ${PARENT_WRKSRC}/examples -name Makefile.in \
+	@${FIND} ${WRKSRC}/examples -name Makefile.in \
 		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-gmmproc_binSCRIPTS||' \
-		${PARENT_WRKSRC}/docs/reference/Makefile.in
+		${WRKSRC}/docs/reference/Makefile.in
 
 post-build:
-	@${TOUCH} ${PARENT_WRKSRC}/docs/reference/html/index.html
+	@${TOUCH} ${WRKSRC}/docs/reference/html/index.html
 
 do-install:
 .for d in docs examples
-	@cd ${PARENT_WRKSRC}/${d} && ${GMAKE} install
+	@cd ${WRKSRC}/${d} && ${GMAKE} install
 .endfor
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"
