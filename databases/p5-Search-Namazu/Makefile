@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Search-Namazu
-PORTVERSION=	0.92
-PORTREVISION=	5
+PORTVERSION=	0.95
 CATEGORIES=	databases perl5
-MASTER_SITES=	http://dist.bsdlab.org/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Search
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -18,8 +18,13 @@ COMMENT=	Namazu library module for perl
 LIB_DEPENDS=	nmz.7:${PORTSDIR}/databases/namazu2
 
 PERL_CONFIGURE=	YES
-USE_GETTEXT=	yes
-CONFIGURE_ENV=	PREFIX=${PREFIX}
+
 MAN3=		Search::Namazu.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Namazu.xs
+.endif
+
+.include <bsd.port.post.mk>
