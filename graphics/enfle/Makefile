@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
-MAINTAINER=	samy@goldmoon.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple plugin-based graphics viewer
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

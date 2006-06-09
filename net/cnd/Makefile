@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	net
 MASTER_SITES=	http://members.iinet.net.au/~lynx/cnd/
 
-MAINTAINER=	sisko@bsdmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console network display
 
 PLIST_FILES=	bin/cnd

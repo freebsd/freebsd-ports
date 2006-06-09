@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://free.babolo.ru/src/ \
 		http://www.a.pike.ru/src/
 
-MAINTAINER=	sand@links.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flood scan detection and blocking daemon
 
 USE_RC_SUBR=	scand
