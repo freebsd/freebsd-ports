@@ -1,3 +1,2 @@
 sbin/spamass-milter
-etc/rc.d/spamass-milter.sh
 %%PORTDOCS%%%%DOCSDIR%%/activation.txt

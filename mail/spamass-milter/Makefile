@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	spamass-milter
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
@@ -51,7 +50,7 @@ WITH_SENDMAIL_BASE=yes
 .if exists(/usr/lib/libmilter.a)
 MILTERBASE=	/usr
 .else
-BROKEN=	"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes"
+BROKEN=	Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
@@ -68,7 +67,7 @@ MILTERLIB=	${MILTERBASE}/lib
 CPPFLAGS+=	-I${MILTERINC}
 LDFLAGS+=	-L${MILTERLIB}
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	spamass-milter
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
@@ -79,7 +78,7 @@ MAN1=		spamass-milter.1
 
 post-patch:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/spamass-milter.sh > ${WRKDIR}/spamass-milter.sh
+		${FILESDIR}/spamass-milter.in > ${WRKDIR}/spamass-milter
 	@${SED} -e's,%%PREFIX%%,${PREFIX},g' \
 		${FILESDIR}/activation.txt > ${WRKDIR}/activation.txt
 .if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
@@ -89,7 +88,6 @@ post-patch:
 		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/spamass-milter.sh ${PREFIX}/etc/rc.d/spamass-milter.sh
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/activation.txt ${DOCSDIR}/activation.txt
