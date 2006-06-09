@@ -69,11 +69,6 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 .endif
 
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING) && !defined(GNOME_SLAVE)
-pre-configure:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
-
 .if !defined(GNOME_SLAVE) || ${.CURDIR:T}=="gnome2-lite"
 OPTIONS=	XSCREENSAVER "Use xscreensaver as screen saver app" off
 .endif
