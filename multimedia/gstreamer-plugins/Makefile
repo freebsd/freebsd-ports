@@ -3,12 +3,13 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/gstreamer-plugins/Makefile,v 1.80 2006/04/28 12:00:14 ahze Exp $
+#   $MCom: ports/multimedia/gstreamer-plugins/Makefile,v 1.86 2006/06/09 18:13:48 ahze Exp $
 #
 
 PORTNAME=	gstreamer
-PORTVERSION?=	0.10.7
-## SET BACK TO PORTREVISION?= when we reset PORTREVISION in all the gst plugin ports
+PORTVERSION?=	${BASE_PORTVERSION}
+PORTREVISION?=	0
+PORTEPOCH=	1
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		http://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
@@ -17,17 +18,8 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		${MASTER_SITE_LOCAL:S|$|ahze/:base|} \
 		${MASTER_SITE_LOCAL:S|$|ahze/:good|} \
 		${MASTER_SITE_LOCAL:S|$|ahze/:bad|} \
-		${MASTER_SITE_LOCAL:S|$|ahze/:ugly|} \
-		http://people.freebsd.org/~ahze/distfiles/:good \
-		http://people.freebsd.org/~ahze/distfiles/:bad \
-		http://people.freebsd.org/~ahze/distfiles/:ugly \
-		http://people.freebsd.org/~ahze/distfiles/:base
+		${MASTER_SITE_LOCAL:S|$|ahze/:ugly|}
 PKGNAMESUFFIX=	-plugins${GST_PLUGIN_SUFFIX}
-DISTFILES=	${BASE_DISTFILE}:base \
-		${BAD_DISTFILE}:bad \
-		${GOOD_DISTFILE}:good \
-		${UGLY_DISTFILE}:ugly
-DIST_SUBDIR=	gnome2
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
@@ -36,7 +28,7 @@ LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
-BASE_PORTVERSION=	${PORTVERSION}
+BASE_PORTVERSION=	0.10.8
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
 BAD_PORTVERSION=	0.10.3
@@ -48,6 +40,7 @@ GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
 UGLY_PORTVERSION=	0.10.3
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
+DIST?=		good
 
 SHLIB_VERSION=	1
 USE_GETTEXT=	yes
@@ -56,7 +49,7 @@ WANT_GSTREAMER=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME+=	gnomehack gnomeprefix gnometarget pkgconfig ltverhack
+USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack
 USE_AUTOTOOLS=	libtool:15
 GST_PLUGIN?=	base
 
@@ -68,20 +61,23 @@ DEFAULT_AUDIOSINK?=	osssink
 DEFAULT_AUDIOSRC?=	osssrc
 
 .include <bsd.port.pre.mk>
-.include "${MASTERDIR}/Makefile.common"
 
 .if ${OSVERSION} < 500000
 IGNORE=	many plugins don't build or even work on 4.x
 .endif
 
 .if ${GST_PLUGIN} == "base"
+DIST=	base
+NO_GSTREAMER_COMMON=	yes
 INSTALLS_SHLIB=	yes
 MAN1=		gst-visualise-0.10.1
-WRKSRC=${WRKDIR}/${BASE_DISTNAME}
-EXTRACT_ONLY=${BASE_DISTFILE}
 PLIST_SUB+=	VERSION="${VERSION}" \
 		SHLIB_VERSION="${SHLIB_VERSION}"
+.else
+USE_GSTREAMER=	yes
 .endif
+
+.include "${MASTERDIR}/Makefile.common"
 
 # cdrom default device
 .ifdef(WITH_CDROM_DEVICE)
