@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	upp
-PORTVERSION=	602
+PORTVERSION=	605
 CATEGORIES=	devel x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	upp-src-602
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
@@ -20,8 +20,15 @@ LIB_DEPENDS=	Xft:${PORTSDIR}/x11-fonts/libXft\
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+
+.if defined(WITH_SDL)
+USE_SDL=	sdl
+.endif
+
+EXTRACT_AFTER_ARGS=	"-d${DISTNAME}"
 
 BUILD_WRKSRC=	${WRKSRC}/uppsrc/ide
 
@@ -33,16 +40,14 @@ INSTALL_DIRS=	Common examples reference uppsrc
 BROKEN=		Ultimate++ is not supported on FreeBSD 4.x
 .endif
 
-post-extract:
-	@${MKDIR} ${WRKDIR}/${DISTNAME}
-	@for d in ${INSTALL_DIRS}; do ${MV} ${WRKDIR}/$$d ${WRKSRC}; done;
+pre-everything::
+.if !defined(WITH_SDL)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define WITH_SDL to install SDL library for running SDL example."
+	@${ECHO_MSG} ""
+.endif
 
 pre-patch:
-	@${FIND} -E ${WRKDIR} -type f -iregex \
-	".*\.(c|h|cpp|icpp|upp|tpp|am|in|lay|key|txt)" -print0 | \
-	${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
-	@for f in `${FIND} -E ${WRKDIR} -type f -name Makefile -print`; \
-	do ${CP} $$f $$f.bak && (${CAT} $$f.bak | ${TR} -d "\r" > $$f); done
 	@${REINPLACE_CMD} -e 's|CFLAGS|C_FLAGS|' ${BUILD_WRKSRC}/Makefile
 
 pre-build:
@@ -51,7 +56,7 @@ pre-build:
 	@${REINPLACE_CMD} -e 's|CINC =(.*)|$1 ${PTHREAD_CFLAGS}|' ${BUILD_WRKSRC}/Makefile
 
 post-build:
-	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(bak|orig)" -exec ${RM} -r {} \;
+	@${RM} ${BUILD_WRKSRC}/Makefile.*
 	@${ECHO_CMD} "BUILDER = \"GCC\"" > ${WRKSRC}/GCC32.bm
 	@${ECHO_CMD} "COMPILER = \"\";" >> ${WRKSRC}/GCC32.bm
 	@${ECHO_CMD} "DEBUG_INFO = \"0\";" >> ${WRKSRC}/GCC32.bm

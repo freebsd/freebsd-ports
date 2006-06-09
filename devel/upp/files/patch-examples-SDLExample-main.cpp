@@ -1,10 +1,11 @@
---- examples/SDLExample/main.cpp.orig	Sat Mar  4 17:47:29 2006
-+++ examples/SDLExample/main.cpp	Sat Mar  4 17:47:41 2006
-@@ -1,6 +1,6 @@
- #include <Core/Core.h>
- 
--#ifdef PLATFORM_WIN32
-+#if defined PLATFORM_WIN32 || defined PLATFORM_FREEBSD
+--- examples/SDLExample/main.cpp.orig	Tue Jun  6 21:18:47 2006
++++ examples/SDLExample/main.cpp	Tue Jun  6 21:18:58 2006
+@@ -3,7 +3,7 @@
+ #ifdef PLATFORM_WIN32
  #include <SDL.h>
  #else
- #include <SDL/SDL.h>
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ #endif
+ 
+ const int maxpoint  = 1000;
