@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.fourthought.com/pub/BisonGen/
 DISTNAME=	BisonGen-${PORTVERSION}
 
-MAINTAINER=	frerich.raabe@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose parser generator for Python
 
 USE_BZIP2=	yes
