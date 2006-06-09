@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yank
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.2.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	yank
@@ -15,20 +14,23 @@ MASTER_SITE_SUBDIR=	yank
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple notekeeper and todo-list manager for GNOME
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gal gconf gnomehack gnomeprefix gnomeprint
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomelibs gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+GCONF_SCHEMAS=	yank.schemas
 
 post-patch:
-	@${REINPLACE_CMD} -E 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC}/src/Plugins -name "Makefile.in" | \
-		${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|_la_LDFLAGS =|& -avoid-version|g'
 
 .include <bsd.port.mk>
