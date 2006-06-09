@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	hsqldb
 DISTNAME=	hsqldb_${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	mwfp@foldl.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An embeddable SQL database written in Java
 
 USE_JAVA=	yes
