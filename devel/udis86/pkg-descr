@@ -1,0 +1,6 @@
+Udis86 is an easy-to-use minimalistic disassembler library (libudis86) for the
+x86 and AMD64 (x86-64) range of instruction set architectures. The primary
+intent of the design and development of udis86 is to aid software development
+projects that entail binary code analysis.
+
+WWW: http://udis86.sourceforge.net/
