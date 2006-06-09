@@ -7,6 +7,7 @@
 
 PORTNAME=	ipython
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -14,6 +15,8 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	An enhanced Interactive Python shell
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect
 
 MAN1=		ipython.1 pycolor.1
 MANCOMPRESSED=	yes
