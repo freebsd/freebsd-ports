@@ -1,5 +1,5 @@
----uppsrc/ide/Makefile.orig	Mon Mar 20 18:36:35 2006
-+++ uppsrc/ide/Makefile	Mon Mar 20 18:37:40 2006
+--- uppsrc/ide/Makefile.orig	Sat Jun  3 15:34:49 2006
++++ uppsrc/ide/Makefile	Sat Jun  3 15:38:38 2006
 @@ -1,13 +1,13 @@
 -UPPDIR1 = /src/uppsrc/
 +UPPDIR1 = ../
@@ -26,7 +26,7 @@
  Macro_PdfDraw = $(Macro)
  
  OutDir = $(OutDir_ide)
--OutFile = /src/ide
+-OutFile = /home/cxl/ide
 +OutFile = $(UPPDIR1)../ide
  
  .PHONY: all
@@ -68,40 +68,40 @@
 -	-mkdir -p $(OutDir_RichText)
 -	-mkdir -p $(OutDir_CtrlCore)
 -	-mkdir -p $(OutDir_PdfDraw)
-+	-$(MKDIR) $(OutDir)
-+	-$(MKDIR) $(OutDir_ide)
-+	-$(MKDIR) $(OutDir_ide_Common)
-+	-$(MKDIR) $(OutDir_ide_LayDes)
-+	-$(MKDIR) $(OutDir_ide_IconDes)
-+	-$(MKDIR) $(OutDir_ide_Builders)
-+	-$(MKDIR) $(OutDir_ide_Debuggers)
-+	-$(MKDIR) $(OutDir_ide_Browser)
-+	-$(MKDIR) $(OutDir_ide_Topic)
-+	-$(MKDIR) $(OutDir_ide_VectorDes)
-+	-$(MKDIR) $(OutDir_CodeEditor)
-+	-$(MKDIR) $(OutDir_Topic)
-+	-$(MKDIR) $(OutDir_CtrlLib)
-+	-$(MKDIR) $(OutDir_Web)
-+	-$(MKDIR) $(OutDir_plugin_bz2)
-+	-$(MKDIR) $(OutDir_HexView)
-+	-$(MKDIR) $(OutDir_Esc)
-+	-$(MKDIR) $(OutDir_Core)
-+	-$(MKDIR) $(OutDir_RichEdit)
-+	-$(MKDIR) $(OutDir_plugin_png)
-+	-$(MKDIR) $(OutDir_plugin_gif)
-+	-$(MKDIR) $(OutDir_Image)
-+	-$(MKDIR) $(OutDir_plugin_tif)
-+	-$(MKDIR) $(OutDir_plugin_jpg)
-+	-$(MKDIR) $(OutDir_Draw)
-+	-$(MKDIR) $(OutDir_plugin_z)
-+	-$(MKDIR) $(OutDir_coff_binobj)
-+	-$(MKDIR) $(OutDir_coff)
-+	-$(MKDIR) $(OutDir_plugin_ndisasm)
-+	-$(MKDIR) $(OutDir_CppBase)
-+	-$(MKDIR) $(OutDir_VectorDes)
-+	-$(MKDIR) $(OutDir_RichText)
-+	-$(MKDIR) $(OutDir_CtrlCore)
-+	-$(MKDIR) $(OutDir_PdfDraw)
++	-${MKDIR} $(OutDir)
++	-${MKDIR} $(OutDir_ide)
++	-${MKDIR} $(OutDir_ide_Common)
++	-${MKDIR} $(OutDir_ide_LayDes)
++	-${MKDIR} $(OutDir_ide_IconDes)
++	-${MKDIR} $(OutDir_ide_Builders)
++	-${MKDIR} $(OutDir_ide_Debuggers)
++	-${MKDIR} $(OutDir_ide_Browser)
++	-${MKDIR} $(OutDir_ide_Topic)
++	-${MKDIR} $(OutDir_ide_VectorDes)
++	-${MKDIR} $(OutDir_CodeEditor)
++	-${MKDIR} $(OutDir_Topic)
++	-${MKDIR} $(OutDir_CtrlLib)
++	-${MKDIR} $(OutDir_Web)
++	-${MKDIR} $(OutDir_plugin_bz2)
++	-${MKDIR} $(OutDir_HexView)
++	-${MKDIR} $(OutDir_Esc)
++	-${MKDIR} $(OutDir_Core)
++	-${MKDIR} $(OutDir_RichEdit)
++	-${MKDIR} $(OutDir_plugin_png)
++	-${MKDIR} $(OutDir_plugin_gif)
++	-${MKDIR} $(OutDir_Image)
++	-${MKDIR} $(OutDir_plugin_tif)
++	-${MKDIR} $(OutDir_plugin_jpg)
++	-${MKDIR} $(OutDir_Draw)
++	-${MKDIR} $(OutDir_plugin_z)
++	-${MKDIR} $(OutDir_coff_binobj)
++	-${MKDIR} $(OutDir_coff)
++	-${MKDIR} $(OutDir_plugin_ndisasm)
++	-${MKDIR} $(OutDir_CppBase)
++	-${MKDIR} $(OutDir_VectorDes)
++	-${MKDIR} $(OutDir_RichText)
++	-${MKDIR} $(OutDir_CtrlCore)
++	-${MKDIR} $(OutDir_PdfDraw)
  
  $(OutFile):  \
  	$(OutDir_ide)SelectPkg.o \
