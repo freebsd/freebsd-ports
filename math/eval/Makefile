@@ -8,12 +8,11 @@
 PORTNAME=	eval
 PORTVERSION=	113
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.doc.ic.ac.uk/Mirrors/wuarchive.wustl.edu/pub/aminet/util/cli/ \
-		ftp://ftp.uni-paderborn.de/ftp/aminet/pub/util/cli/ 
+MASTER_SITES=	ftp://wuarchive.wustl.edu/pub/aminet/util/cli/
 DISTNAME=	Eval${PORTVERSION}
 EXTRACT_SUFX=	.lha
 
-MAINTAINER=	eserte@cs.tu-berlin.de
+MAINTAINER=	slaven@rezic.de
 COMMENT=	A full featured floating point expression evaluator
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
