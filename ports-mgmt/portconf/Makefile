@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portconf
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -26,6 +26,9 @@ do-fetch:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/libexec/${PORTNAME}
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
