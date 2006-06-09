@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	artswrapper
-PORTVERSION=	1.2.2
+PORTVERSION=	1.5.3
 CATEGORIES=	audio
 DISTNAME=	# none
 EXTRACT_SUFX=	# none
