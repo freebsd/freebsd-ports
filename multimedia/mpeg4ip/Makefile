@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	${PKG_NAME_SUFFIX}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
 BUILD_DEPENDS=	mpeg4ip-libmp4v2>=1.5:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2

@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvbpsi/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	${PORTNAME}4-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A library for MPEG TS and DVB PSI tables decoding and generation
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://liboil.freedesktop.org/download/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
 USE_GNOME=	glib20 gnomehack

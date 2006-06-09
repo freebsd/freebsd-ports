@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gpac
 DISTNAME=	gpac-${DISTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gpac MPEG-4 Systems library and headers
 
 WRKSRC=		${WRKDIR}/gpac

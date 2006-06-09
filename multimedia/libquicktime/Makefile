@@ -13,7 +13,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \

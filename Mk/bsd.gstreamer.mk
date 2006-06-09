@@ -11,7 +11,7 @@
 
 .if !defined(_POSTMKINCLUDED) && !defined(Gstreamer_Pre_Include)
 
-Gstreamer_Include_MAINTAINER=	gnome@FreeBSD.org
+Gstreamer_Include_MAINTAINER=	multimedia@FreeBSD.org
 Gstreamer_Pre_Include=		bsd.gstreamer.mk
 
 .endif

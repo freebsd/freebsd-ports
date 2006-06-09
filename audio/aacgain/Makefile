@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://altosdesign.com/aacgain/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Normalizes the volume of mp3 and mp4 files
 
 USE_BZIP2=	yes

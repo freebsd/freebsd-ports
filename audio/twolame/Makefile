@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.ecs.soton.ac.uk/~njh/twolame/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG Audio Layer 2 encoder
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile

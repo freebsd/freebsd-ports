@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

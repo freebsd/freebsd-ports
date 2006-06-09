@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Core set of typical audio and video gstreamer-plugins
 
 USE_X_PREFIX=	yes

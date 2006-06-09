@@ -10,9 +10,8 @@ DISTVERSION=	2.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.virtual-cafe.com/~dhh/tools.d/exifprobe.d/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Probes JPEG or TIFF images and reports contents and structure
-
 
 MAN1=		exifgrep.1 exifprobe.1
 PLIST_FILES=	bin/exifgrep bin/exifprobe

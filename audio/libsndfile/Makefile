@@ -11,7 +11,7 @@ PORTVERSION=	1.0.16
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
