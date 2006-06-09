@@ -279,7 +279,7 @@
     SUBDIR += fnccheck
     SUBDIR += fnorb
     SUBDIR += fortran-utils
-    SUBDIR += fpc-fvision
+    SUBDIR += fpc-fv
     SUBDIR += fpc-gdb
     SUBDIR += fpc-gdbint
     SUBDIR += fpc-regexpr

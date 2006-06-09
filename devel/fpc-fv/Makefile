@@ -5,44 +5,57 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fvision
-PORTVERSION=	1.0.10
-CATEGORIES=	devel
-MASTER_SITES=	http://www.borgsdemons.com/distfiles/
+PORTNAME=	fv
+PORTVERSION=	2.0.2
+CATEGORIES=	devel lang
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://planetmirror.com/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://freepascal.stack.nl/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	freepascal
 PKGNAMEPREFIX=	fpc-
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}.${BUILDNAME}
+EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	FreeVision is a Free Pascal unit for Delphi support
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_GMAKE=	yes
+EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTVERSION}
 ONLY_FOR_ARCHS=	i386
+NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+BUILDNAME=	i386-freebsd
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		BUILDNAME=${BUILDNAME}
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+do-extract:
+# unpack distribution
+	@${MKDIR} ${WRKSRC}
+	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar \
+		--directory ${WRKSRC}
+	@${TAR} xf ${WRKSRC}/binary.${BUILDNAME}.tar \
+		--directory ${WRKSRC}
 
-MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH \
-		FPC=${LOCALBASE}/bin/ppc386 \
-		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
-		INSTALL_BINDIR=${PREFIX}/bin \
-		GCCLIBDIR=/usr/lib \
-		RELEASE=1
-
-post-patch:
-# change to alter amount of optimization
-	@${FIND} ${WRKDIR}/fvision -name "Makefile*" | ${XARGS} \
-		${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
-
-do-build:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/fvision all
+# unpack binary and fv distribution
+	@${MKDIR} ${WRKSRC}/${PORTNAME}
+	@${TAR} zxf ${WRKSRC}/units-${PORTNAME}.${BUILDNAME}.tar.gz \
+		--directory ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/fvision install
-	cd ${WRKDIR}/fvision && ${INSTALL_DATA} \
-		asciitab.o asciitab.ppu \
-		${PREFIX}/lib/fpc/${PORTVERSION}/units/freebsd/fv
+.for DIRE in lib
+	@cd ${WRKSRC}/${PORTNAME}/${DIRE} && \
+		${FIND} * -type d -exec ${MKDIR} "{}" "${PREFIX}/${DIRE}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_SCRIPT} "{}" "${PREFIX}/${DIRE}/{}" \;
+.endfor
 
-.include <bsd.port.post.mk>
+post-install:
+.if !defined (NOPORTDOCS)
+	@cd ${WRKSRC}/${PORTNAME}/share && \
+		${FIND} * -type d -exec ${MKDIR} "{}" "${PREFIX}/share/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/share/{}" \;
+.endif
+
+.include <bsd.port.mk>
