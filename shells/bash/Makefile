@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:    bash3
 # Date created:				30 Jul 2004
 # Whom:					Oliver Eikemeier
@@ -19,7 +20,7 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/
 PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/
-.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
+.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17
 PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}
 PATCHLEVEL=		${patch}
 .endfor
