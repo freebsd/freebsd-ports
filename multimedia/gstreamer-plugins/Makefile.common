@@ -1,5 +1,5 @@
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins/Makefile.common,v 1.40 2006/04/23 21:40:21 marcus Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins/Makefile.common,v 1.47 2006/06/08 20:53:40 ahze Exp $
 # base
 BASE_GST_ALL_PLUGINS= \
 		alsa \
@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=--disable-spc
 PLIST_SUB+=	SPC="@comment "
 #.endif
 
-.if ${GST_PLUGIN}!="base" && !defined(NO_GSTREAMER_COMMON)
+.if !defined(NO_GSTREAMER_COMMON)
 GST_PLUGIN_SUFFIX?=	-${GST_PLUGIN}
 
 COMMENT=	Gstreamer ${GST_PLUGIN} plugin
@@ -127,9 +127,6 @@ PLIST=		${NONEXISTENT}
 PLIST_FILES?=	${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.so \
 		${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.a \
 		${GST_LIB_DIR}/libgst${GST_PLUGIN}${GST_PLIST_SUFFIX}.la
-
-# hack around WRKSRC stuff near the top... fix me
-DIST?=	good
 
 # a52dec
 .if ${GST_PLUGIN}=="a52dec"
@@ -393,24 +390,34 @@ DIST=	bad
 LIB_DEPENDS+=	wavpack.0:${PORTSDIR}/audio/wavpack
 DIST=	bad
 .endif
+.endif # NO_GSTREAMER_COMMON
 
 .if ${DIST}=="base"
 EXTRACT_ONLY=${BASE_DISTFILE}
 WRKSRC=${WRKDIR}/${BASE_DISTNAME}
+PORTVERSION=	${BASE_PORTVERSION}
+DISTFILES+=	${BASE_DISTFILE}:base
 .elif ${DIST}=="bad"
 EXTRACT_ONLY=${BAD_DISTFILE}
 WRKSRC=${WRKDIR}/${BAD_DISTNAME}
+PORTVERSION=	${BAD_PORTVERSION}
+DISTFILES+=	${BAD_DISTFILE}:bad
 .elif ${DIST}=="ugly"
 EXTRACT_ONLY=${UGLY_DISTFILE}
 WRKSRC=${WRKDIR}/${UGLY_DISTNAME}
+PORTVERSION=	${UGLY_PORTVERSION}
+DISTFILES+=	${UGLY_DISTFILE}:ugly
+.elif ${DIST}=="makesum"
+DISTFILES+=	${BASE_DISTFILE}:base ${BAD_DISTFILE}:bad \
+		${UGLY_DISTFILE}:ugly ${GOOD_DISTFILE}:good
 .else
 EXTRACT_ONLY=${GOOD_DISTFILE}
 WRKSRC=${WRKDIR}/${GOOD_DISTNAME}
+PORTVERSION=	${GOOD_PORTVERSION}
+DISTFILES+=	${GOOD_DISTFILE}:good
 .endif
 
-BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
-RUN_DEPENDS+= gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
-
+.if !defined(NO_GSTREAMER_COMMON)
 .if !target(do-build)
 do-build:
 .for dir in ${GST_PREBUILD_DIR} ${GST_PLUGIN_DIR} ${GST_POSTBUILD_DIR}

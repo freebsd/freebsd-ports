@@ -3,7 +3,7 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-good/Makefile,v 1.5 2006/04/02 07:33:41 marcus Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins-good/Makefile,v 1.7 2006/06/08 01:14:31 ahze Exp $
 #
 
 PORTREVISION=	4
@@ -19,15 +19,14 @@ MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 
-EXTRACT_ONLY=	${GOOD_DISTFILE}
-WRKSRC=	${WRKDIR}/${GOOD_DISTNAME}
-
+DIST=	good
 GOOD_GST_DIRS=	gst sys
 PLIST_SUB=	VERSION="${GST_VERSION}"
-NO_GSTREAMER_COMMON=	yes
+
 PLIST=	${.CURDIR}/pkg-plist
 FILESDIR=${.CURDIR}/files
 PATCHDIR=${.CURDIR}/files
+NO_GSTREAMER_COMMON=	yes
 
 do-build:
 .for dir in ${GOOD_GST_DIRS}

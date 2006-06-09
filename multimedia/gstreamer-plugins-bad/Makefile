@@ -3,7 +3,7 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins-bad/Makefile,v 1.2 2006/02/26 19:23:20 marcus Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins-bad/Makefile,v 1.4 2006/06/08 01:14:30 ahze Exp $
 #
 
 PORTREVISION=	0
@@ -19,9 +19,7 @@ MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 
-EXTRACT_ONLY=	${BAD_DISTFILE}
-WRKSRC=	${WRKDIR}/${BAD_DISTNAME}
-
+DIST=	bad
 BAD_GST_DIRS=	gst sys
 PLIST_SUB=	VERSION="${GST_VERSION}"
 NO_GSTREAMER_COMMON=	yes
