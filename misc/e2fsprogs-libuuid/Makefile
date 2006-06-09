@@ -34,4 +34,7 @@ PKGDIR=		${.CURDIR}
 pre-build:
 	${MKDIR} ${WRKSRC}/lib/uuid/elfshared
 
+post-build:
+	cd ${INSTALL_WRKSRC} && ${MAKE} check
+
 .include "${MASTERDIR}/Makefile"
