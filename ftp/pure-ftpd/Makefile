@@ -7,6 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.21
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -47,7 +48,8 @@ OPTIONS=	LDAP	"Support for users in LDAP directories" off \
 		THROTTLING	"Bandwidth throttling" off \
 		BANNER	"Show ${PORTNAME} welcome upon session start" on \
 		UPLOADSCRIPT "Support uploadscript daemon" off \
-		UTF8	"Support for charset conversion (expreimental)" off
+		UTF8	"Support for charset conversion (expreimental)" off \
+		SENDFILE	"Support for the sendfile syscall" on
 
 .include <bsd.port.pre.mk>
 
@@ -113,6 +115,12 @@ CONFIGURE_ARGS+=	--with-uploadscript
 .if defined(WITH_UTF8)
 USE_ICONV=	YES
 CONFIGURE_ARGS+=	--with-rfc2640
+.endif
+
+.if defined(WITH_SENDFILE)
+CONFIGURE_ARGS+=	--with-sendfile
+.else
+CONFIGURE_ARGS+=	--without-sendfile
 .endif
 
 .if ${OSVERSION} > 500000
