@@ -1,3 +1,6 @@
+bin/fear
+bin/fear-recorder
+bin/fearperl
 %%SITE_PERL%%/FEAR/API.pm
 %%SITE_PERL%%/FEAR/API/Agent.pm
 %%SITE_PERL%%/FEAR/API/ChksumRepos.pm
