@@ -11,8 +11,8 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	vcdimager
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool"
+MAINTAINER=	multimedia@FreeBSD.org
+COMMENT=	GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \

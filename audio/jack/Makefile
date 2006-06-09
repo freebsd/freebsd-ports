@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jackit
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A low-latency audio server
 
 LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \

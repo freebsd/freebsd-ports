@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://nas.codebrilliance.com/nas/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
 USE_IMAKE=	yes

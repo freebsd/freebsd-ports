@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	flac-tools
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command-line player for flac audio files
 
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \

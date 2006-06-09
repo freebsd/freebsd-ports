@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/
 DISTNAME=	HandBrake-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
