@@ -10,7 +10,7 @@ PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.falvotech.com/content/cut/downloads/
 
-MAINTAINER=	sgnezdov@sergei.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Testing Framework for C, C++ and Objective-C
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}-${PORTVERSION}
