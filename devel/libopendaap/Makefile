@@ -8,10 +8,10 @@
 PORTNAME=	libopendaap
 PORTVERSION=	0.4.0
 PORTREVISION=	1
-CATEGORIES=	devel net
+CATEGORIES=	devel audio net
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	C lib used to connect to iTunes(R) music shares
 
 USE_BZIP2=	yes
