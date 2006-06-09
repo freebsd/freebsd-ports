@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
-MAINTAINER=	dom@helenmarks.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
