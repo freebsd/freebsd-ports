@@ -1,3 +1,4 @@
+@exec mkdir -p %D/news/db
 news/bin/actmerge
 news/bin/actsync
 news/bin/actsyncd
@@ -105,11 +106,15 @@ news/bin/writelog
 @unexec f=history;      if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
 @unexec f=history.dir;  if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
 @unexec f=newsgroups;   if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
-@unexec rm -f %D/news/db.dist/active       2> /dev/null || true
-@unexec rm -f %D/news/db.dist/active.times 2> /dev/null || true
-@unexec rm -f %D/news/db.dist/history      2> /dev/null || true
-@unexec rm -f %D/news/db.dist/history.dir  2> /dev/null || true
-@unexec rm -f %D/news/db.dist/newsgroups   2> /dev/null || true
+news/db.dist/active
+news/db.dist/active.times
+news/db.dist/history
+news/db.dist/history.dir
+news/db.dist/newsgroups
+@unexec rm -f %D/news/db.dist/active.old      || true
+@unexec rm -f %D/news/db.dist/history.n.dir   || true
+@unexec rm -f %D/news/db.dist/history.n.hash  || true
+@unexec rm -f %D/news/db.dist/history.n.index || true
 %%SUB_WITHOUT_TAGGED_HASH%%@unexec f=history.hash;  if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
 %%SUB_WITHOUT_TAGGED_HASH%%@unexec f=history.index; if cmp -s %D/news/db/$f %D/news/db.dist/$f; then rm -f %D/news/db/$f; fi
 %%SUB_WITHOUT_TAGGED_HASH%%@unexec rm -f %D/news/db.dist/history.hash  2> /dev/null || true
@@ -257,15 +262,15 @@ news/lib/libstorage.a
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry news/tmp
-@dirrm news/spool/overview
-@dirrm news/spool/outgoing
-@dirrm news/spool/innfeed
-@dirrm news/spool/incoming/bad
-@dirrm news/spool/incoming
-@dirrm news/spool/articles
-@dirrm news/spool/archive
-@dirrm news/spool/tmp
-@dirrm news/spool
+@dirrmtry news/spool/overview
+@dirrmtry news/spool/outgoing
+@dirrmtry news/spool/innfeed
+@dirrmtry news/spool/incoming/bad
+@dirrmtry news/spool/incoming
+@dirrmtry news/spool/articles
+@dirrmtry news/spool/archive
+@dirrmtry news/spool/tmp
+@dirrmtry news/spool
 @dirrm news/run
 @dirrm news/lib
 @dirrm news/include/inn

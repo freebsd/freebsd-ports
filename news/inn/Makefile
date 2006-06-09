@@ -7,7 +7,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -184,6 +184,6 @@ post-install:
 		${MV} history.n.$${s} history.$${s} ; \
 	    done ; \
 	fi)
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL PORTMODE
 
 .include <bsd.port.post.mk>
