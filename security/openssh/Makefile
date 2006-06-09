@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -26,13 +26,19 @@ CONFLICTS?=	openssh-portable-* openssh-gssapi-* ssh-1.* ssh2-3.*
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/ssh
 
+USE_RC_SUBR=	sshd
+
+OPTIONS=	AFS "With AFC Support" off \
+		KERBEROS "With Kerberos Support" off \
+		SKEY "With SKEY Support" off
+
 MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1
 MAN5=		ssh_config.5 sshd_config.5
 MAN8=		sshd.8 sftp-server.8 ssh-keysign.8
 MANCOMPRESSED=	yes
 
-MODIFY=		ssh.h sshd_config sshd.sh pathnames.h
+MODIFY=		ssh.h sshd_config pathnames.h
 FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
 		ssh/Makefile ssh-add/Makefile ssh-agent/Makefile \
 		ssh-keygen/Makefile ssh-keyscan/Makefile sshd/Makefile
@@ -63,11 +69,11 @@ MAKE_ENV+=	INET6FLAGS=-DINET6
 MAKE_ENV+=	TCP_WRAPPERS=no
 .endif
 
-.if defined(AFS) && ${AFS} == YES
+.ifdef(WITH_AFS)
 MAKE_ENV+=	AFS=yes
 .endif
 
-.if defined(KERBEROS) && ${KERBEROS} == YES
+.ifdef(WITH_KERBEROS)
 MAKE_ENV+=	KERBEROS=yes
 .endif
 
@@ -78,7 +84,7 @@ PAM=		no
 .endif
 MAKE_ENV+=	PAM=${PAM}
 
-.if defined(SKEY) && ${SKEY} == YES
+.ifdef(WITH_SKEY)
 SKEY_SUFFIX=	-skey
 MAKE_ENV+=	SKEY=yes
 .endif
@@ -89,7 +95,6 @@ ETCSSH=		${PREFIX}/etc/ssh
 PLIST_SUB+=	EMPTYDIR=${EMPTYDIR}
 
 post-extract:
-	@${CP} ${FILESDIR}/sshd.sh ${WRKSRC}/
 .for i in ${ADDLIB}
 	@${CP} ${FILESDIR}/${i} ${WRKSRC}/lib/
 .endfor
@@ -157,7 +162,6 @@ post-install:
 	@${ECHO_MSG} ">> Installing moduli."
 	${INSTALL_DATA} -c ${FILESDIR}/moduli ${ETCSSH}/moduli
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config ${ETCSSH}/ssh_config-dist
 	${INSTALL_DATA} -c ${WRKSRC}/sshd_config ${ETCSSH}/sshd_config-dist
 .if !exists(${ETCSSH}/ssh_config) && !exists(${ETCSSH}/sshd_config) \
