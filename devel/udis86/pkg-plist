@@ -1,0 +1,7 @@
+bin/udcli
+lib/libudis86.a
+include/udis86.h
+include/libudis86/types.h
+include/libudis86/extern.h
+include/libudis86/mnemonics.h
+@dirrm include/libudis86

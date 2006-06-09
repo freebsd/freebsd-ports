@@ -1771,6 +1771,7 @@
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ucpp
+    SUBDIR += udis86
     SUBDIR += upnp
     SUBDIR += upnp104
     SUBDIR += upp
