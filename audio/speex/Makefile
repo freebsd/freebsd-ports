@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	ahze
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An open-source patent-free voice codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg

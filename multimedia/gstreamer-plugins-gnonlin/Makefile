@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer lib for writing non-linear audio and video
 
 USE_X_PREFIX=	yes

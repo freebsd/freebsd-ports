@@ -14,7 +14,7 @@ MASTER_SITES=	http://silicontrip.net/~mark/lavtools/ \
 MASTER_SITE_SUBDIR=	ahze
 DISTFILES=	${CFILES:S/$/.c/}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Mjpeg-tools YUV video stream processing tools
 
 LIB_DEPENDS=	lavjpeg-1.8.0:${PORTSDIR}/multimedia/mjpegtools

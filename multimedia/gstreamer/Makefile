@@ -13,7 +13,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

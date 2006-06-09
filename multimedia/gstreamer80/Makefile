@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${GST_VERSION}
 PKGNAMESUFFIX=	80
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

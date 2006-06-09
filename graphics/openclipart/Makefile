@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.openclipart.org/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}${SVGPNG}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open Clip Art Library
 
 USE_BZIP2=	yes

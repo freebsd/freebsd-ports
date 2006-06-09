@@ -10,7 +10,7 @@ PORTVERSION=	0.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.exiv2.org/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Exif and Iptc metadata manipulation library and tools
 
 GNU_CONFIGURE=	yes

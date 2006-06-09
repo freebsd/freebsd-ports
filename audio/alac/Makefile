@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 DISTNAME=	${PORTNAME}_decoder-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Basic decoder for Apple Lossless Audio Codec files (ALAC)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_decoder

@@ -10,7 +10,7 @@ PORTVERSION=	4.32
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Compress (and restore) both 16 and 24-bit audio files in .wav format
 
 GNU_CONFIGURE=	yes

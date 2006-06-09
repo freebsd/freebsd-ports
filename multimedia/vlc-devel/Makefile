@@ -20,7 +20,7 @@ MASTER_SITES=	http://nightlies.videolan.org/build/source/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.8.6.//}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera

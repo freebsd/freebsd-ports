@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk2-perl
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A set of Perl5 bindings for gstreamer
 
 BUILD_DEPENDS=	p5-Glib2>=1.101:${PORTSDIR}/devel/p5-Glib2 \
