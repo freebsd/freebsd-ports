@@ -17,7 +17,7 @@ DISTNAME=	s9y_${SNAPSHOT}
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	PHP based weblog software
 
-SNAPSHOT=	200604201538
+SNAPSHOT=	200606061537
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
