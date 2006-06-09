@@ -22,6 +22,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-gimp=no
 INSTALLS_SHLIB=	yes
 
+CONFLICTS=	gutenprint-[0-9]*
+
 MAN1=	escputil.1 gimpprint-config.1 ijsgimpprint.1
 MAN3=	gimpprint.3
 MAN7=	gimpprint-color.7 gimpprint-dithers.7 gimpprint-imagetypes.7 \
