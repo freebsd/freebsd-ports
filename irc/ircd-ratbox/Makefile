@@ -8,6 +8,7 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	2.1.8
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/	\
@@ -17,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	shaun@inerd.com
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
+
+CONFLICTS=	rcd-ratbox-devel-[0-9]*
 
 MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
