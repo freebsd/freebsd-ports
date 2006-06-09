@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	v_sim
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -40,7 +40,7 @@ PLIST_SUB+=	REFDOC="@comment "
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile with gcc 2.95"
+BROKEN=		does not compile with gcc 2.95
 .endif
 
 pre-configure:
