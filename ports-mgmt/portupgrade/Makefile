@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
@@ -56,9 +57,9 @@ INSTALL_TARGET+=	install-doc
 
 .if defined(WITH_BDB4)
 # For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 .else
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 .endif
 
 post-install: install-ldconfig-file
