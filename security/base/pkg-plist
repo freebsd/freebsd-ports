@@ -94,6 +94,7 @@ www/base/languages/swedish.lang.php
 www/base/languages/turkish.lang.php
 www/base/setup/base_conf_contents.php
 www/base/setup/index.php
+www/base/setup/setup_db.inc.php
 www/base/setup/setup1.php
 www/base/setup/setup2.php
 www/base/setup/setup3.php
