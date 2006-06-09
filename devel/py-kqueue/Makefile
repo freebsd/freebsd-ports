@@ -14,7 +14,7 @@ PKGNAMEPREFIX=		py-
 DISTNAME=		PyKQueue-${PORTVERSION}
 EXTRACT_SUFX=		.tbz
 
-MAINTAINER=		ports@dclg.ca
+MAINTAINER=		ports2@dclg.ca
 COMMENT=	Python interface to kqueue(2) and kevent(2) system calls
 
 USE_BZIP2=		yes
