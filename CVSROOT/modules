@@ -14267,6 +14267,7 @@ xgfe		ports/math/xgfe
 xglk		ports/games/xglk
 xglobe		ports/astro/xglobe
 xglurbules	ports/graphics/xglurbules
+xgngeo		ports/emulators/xgngeo
 xgobi		ports/math/xgobi
 xgospel		ports/games/xgospel
 xgrab		ports/x11/xgrab
