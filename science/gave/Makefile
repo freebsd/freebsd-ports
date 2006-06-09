@@ -7,7 +7,7 @@
 
 PORTNAME=	gave
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gave/
 DIST_SUBDIR=	ruby
@@ -29,7 +29,7 @@ USE_RUBY_SETUP=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gettext/_locale.so:${PORTSDIR}/devel/ruby-gettext
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/locale_system.so:${PORTSDIR}/devel/ruby-gettext
 .if ${RUBY_VER} >= 1.7
 RUN_DEPENDS+=	${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 .else
