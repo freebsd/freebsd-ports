@@ -22,7 +22,7 @@ MASTER_SITES=	http://ftp.join.uni-muenster.de/pub/documents/selfhtml/ \
 PKGNAMEPREFIX=	de-
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	frerich.raabe@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensive german HTML reference
 
 WRKSRC=		${WRKDIR}

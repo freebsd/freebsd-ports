@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.vcpc.univie.ac.at/vcpc/jhm/code/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	frerich.raabe@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for encrypting and compacting C source code
 
 WRKSRC=		${WRKDIR}/cmunger
