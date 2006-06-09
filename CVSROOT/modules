@@ -3806,6 +3806,7 @@ gurlchecker	ports/www/gurlchecker
 guspat		ports/audio/guspat
 gutenfetch	ports/net/gutenfetch
 gutenmark	ports/textproc/gutenmark
+gutenprint	ports/print/gutenprint
 gv		ports/print/gv
 gv-aspell	ports/textproc/gv-aspell
 gview		ports/graphics/gview
