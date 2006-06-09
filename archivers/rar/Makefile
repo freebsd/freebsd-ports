@@ -9,11 +9,8 @@ PORTNAME=	rar
 PORTVERSION=	3.51
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	http://files2.rarlab.com/rar/ \
-		http://files3.rarlab.com/rar/ \
-		http://files4.rarlab.com/rar/ \
-		http://files5.rarlab.com/rar/ \
-		http://files6.rarlab.com/rar/
+MASTER_SITES=	http://files.rarlab.com/rar/ \
+		http://files2.rarlab.com/rar/
 DISTNAME=	rarbsd-3.5.1
 
 MAINTAINER=	gkovesdan@t-hosting.hu
@@ -40,21 +37,16 @@ STRIP=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
-	(cd ${WRKSRC} && \
-		${INSTALL_MAN} rar.txt ${PREFIX}/man/cat1/rar.1 && \
-		${INSTALL_DATA} rarfiles.lst \
-			${PREFIX}/etc && \
-		${INSTALL_DATA} default.sfx \
-			${PREFIX}/lib )
+	${INSTALL_MAN} ${WRKSRC}/rar.txt ${PREFIX}/man/cat1/rar.1
+	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && \
-		${INSTALL_DATA} technote.txt license.txt \
-				order.htm readme.txt whatsnew.txt \
-				file_id.diz \
-			${DOCSDIR} )
+.for FILE in technote.txt license.txt order.htm readme.txt whatsnew.txt file_id.diz
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
