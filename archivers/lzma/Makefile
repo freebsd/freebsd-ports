@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sevenzip
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	Command line lzma archiver
+COMMENT=	High-ratio LZMA compressor
 
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
