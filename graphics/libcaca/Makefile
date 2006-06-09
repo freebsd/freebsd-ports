@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://sam.zoy.org/projects/libcaca/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
 GNU_CONFIGURE=	yes
