@@ -13445,6 +13445,7 @@ ucspi-unix	ports/sysutils/ucspi-unix
 ude		ports/x11-wm/ude
 udesc_dump	ports/sysutils/udesc_dump
 udfclient	ports/sysutils/udfclient
+udis86		ports/devel/udis86
 udmsearch	ports/www/udmsearch
 udpcast		ports/mbone/udpcast
 udptunnel	ports/net/udptunnel
