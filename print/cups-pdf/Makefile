@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	print
-MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
+MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/ \
+		http://olofsson.de/mirror/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@mark.reidel.info
+MAINTAINER=	simon@olofsson.de
 COMMENT=	A virtual printer for CUPS to produce PDF files
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
@@ -40,10 +40,10 @@ SUBST_CMD+=	-e "s,\#PDFVer 1.4,PDFVer ${PDF_VERSION},"
 .endif
 
 .ifdef(HOME_SUBDIR)
-SUBST_CMD+=	-e "s,\#Out /var/spool/cups-pdf/$${USER},Out $${HOME}/${HOME_SUBDIR},"
+SUBST_CMD+=	-e 's,\#Out /var/spool/cups-pdf/$${USER},Out $${HOME}/${HOME_SUBDIR},'
 .else
 .ifdef(OUTPUT_DIRECTORY)
-SUBST_CMD+=	-e "s,\#Out /var/spool/cups-pdf/$${USER},Out ${OUTPUT_DIRECTORY},¨
+SUBST_CMD+=	-e 's,\#Out /var/spool/cups-pdf/$${USER},Out ${OUTPUT_DIRECTORY},'
 .endif
 .endif
 
