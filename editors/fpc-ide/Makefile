@@ -21,7 +21,7 @@ COMMENT=	Free Pascal integrated IDE/compiler
 
 BUILD_DEPENDS+=	ppc386:${PORTSDIR}/lang/fpc \
 		${LOCALBASE}/lib/fpc/${PORTVERSION}/units/freebsd/gdbint/gdbint.ppu:${PORTSDIR}/devel/fpc-gdbint \
-		${LOCALBASE}/lib/fpc/${PORTVERSION}/units/freebsd/fv/drivers.ppu:${PORTSDIR}/devel/fpc-fvision
+		${LOCALBASE}/lib/fpc/${PORTVERSION}/units/freebsd/fv/drivers.ppu:${PORTSDIR}/devel/fpc-fv
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .if ${OSVERSION} < 470000
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
