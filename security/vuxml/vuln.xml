@@ -34,6 +34,95 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cf3b9a96-f7bb-11da-9156-000e0c2e438a">
+    <topic>smbfs -- chroot escape</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.10</ge><lt>4.10_24</lt></range>
+	<range><ge>4.11</ge><lt>4.11_18</lt></range>
+	<range><ge>5.3</ge><lt>5.3_30</lt></range>
+	<range><ge>5.4</ge><lt>5.4_15</lt></range>
+	<range><ge>5.5</ge><lt>5.5_1</lt></range>
+	<range><ge>6.0</ge><lt>6.0_8</lt></range>
+	<range><ge>6.1</ge><lt>6.1_1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>smbfs does not properly sanitize paths containing a backslash
+	  character; in particular the directory name '..\' is
+	  interpreted as the parent directory by the SMB/CIFS server,
+	  but smbfs handles it in the same manner as any other
+	  directory.</p>
+	<h1>Impact</h1>
+	<p>When inside a chroot environment which resides on a smbfs
+	  mounted file-system it is possible for an attacker to escape
+	  out of this chroot to any other directory on the smbfs
+	  mounted file-system.</p>
+	<h1>Workaround</h1>
+	<p>Mount the smbfs file-systems which need to be used with
+	  chroot on top, in a way so the chroot directory is exactly on
+	  the mount point and not a sub directory</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2654</cvename>
+      <freebsdsa>SA-06:16.smbfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-05-31</discovery>
+      <entry>2006-06-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0ac1aace-f7b9-11da-9156-000e0c2e438a">
+    <topic>ypserv -- Inoperative access controls in ypserv</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.3</ge><lt>5.3_30</lt></range>
+	<range><ge>5.4</ge><lt>5.4_15</lt></range>
+	<range><ge>5.5</ge><lt>5.5_1</lt></range>
+	<range><ge>6.0</ge><lt>6.0_8</lt></range>
+	<range><ge>6.1</ge><lt>6.1_1</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>There are two documented methods of restricting access to
+	 NIS maps through ypserv(8): through the use of the
+	 /var/yp/securenets file, and through the /etc/hosts.allow file.
+       	 While both mechanisms are implemented in the server, a change
+	 in the build process caused the "securenets" access restrictions
+	 to be inadvertantly disabled.</p>
+	<h1>Impact</h1>
+	<p>ypserv(8) will not load or process any of the networks or
+	  hosts specified in the /var/yp/securenets file, rendering
+	  those access controls ineffective.</p>
+	<h1>Workaround</h1>
+	<p>One possible workaround is to use /etc/hosts.allow for access
+	  control, as shown by examples in that file.</p>
+	<p>Another workaround is to use a firewall (e.g., ipfw(4),
+ 	  ipf(4), or pf(4)) to limit access to RPC functions from
+	  untrusted systems or networks, but due to the complexities of
+	  RPC, it might be difficult to create a set of firewall rules
+	  which accomplish this without blocking all access to the
+	  machine in question.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2655</cvename>
+      <freebsdsa>SA-06:15.ypserv</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-05-31</discovery>
+      <entry>2006-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec2f2ff5-f710-11da-9156-000e0c2e438a">
     <topic>freeradius -- multiple vulnerabilities</topic>
     <affects>
@@ -1294,11 +1383,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-1056</cvename>
-      <freebsdsa>SA-06:14</freebsdsa>
+      <freebsdsa>SA-06:14.fpu</freebsdsa>
     </references>
     <dates>
       <discovery>2006-04-19</discovery>
       <entry>2006-04-19</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -2227,12 +2317,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0058</cvename>
-      <freebsdsa>SA-06:13</freebsdsa>
+      <freebsdsa>SA-06:13.sendmail</freebsdsa>
     </references>
     <dates>
       <discovery>2006-03-22</discovery>
       <entry>2006-03-24</entry>
-      <modified>2006-03-24</modified>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -2278,11 +2368,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-1283</cvename>
-      <freebsdsa>SA-06:12</freebsdsa>
+      <freebsdsa>SA-06:12.opie</freebsdsa>
     </references>
     <dates>
       <discovery>2006-03-22</discovery>
       <entry>2006-03-24</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -2319,11 +2410,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0905</cvename>
-      <freebsdsa>SA-06:11</freebsdsa>
+      <freebsdsa>SA-06:11.ipsec</freebsdsa>
     </references>
     <dates>
       <discovery>2006-03-22</discovery>
       <entry>2006-03-24</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -2608,11 +2700,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0900</cvename>
-      <freebsdsa>SA-06:10</freebsdsa>
+      <freebsdsa>SA-06:10.nfs</freebsdsa>
     </references>
     <dates>
       <discovery>2006-03-01</discovery>
       <entry>2006-03-12</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -2679,11 +2772,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0883</cvename>
-      <freebsdsa>SA-06:09</freebsdsa>
+      <freebsdsa>SA-06:09.openssh</freebsdsa>
     </references>
     <dates>
       <discovery>2006-03-01</discovery>
       <entry>2006-03-12</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -3459,11 +3553,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0433</cvename>
-      <freebsdsa>SA-06:08</freebsdsa>
+      <freebsdsa>SA-06:08.sack</freebsdsa>
     </references>
     <dates>
       <discovery>2006-02-01</discovery>
       <entry>2006-02-14</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -3500,11 +3595,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0381</cvename>
-      <freebsdsa>SA-06:07</freebsdsa>
+      <freebsdsa>SA-06:07.pf</freebsdsa>
     </references>
     <dates>
       <discovery>2006-01-25</discovery>
       <entry>2006-02-14</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -3538,11 +3634,12 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <cvename>CVE-2006-0379</cvename>
       <cvename>CVE-2006-0380</cvename>
-      <freebsdsa>SA-06:06</freebsdsa>
+      <freebsdsa>SA-06:06.kmem</freebsdsa>
     </references>
     <dates>
       <discovery>2006-01-25</discovery>
       <entry>2006-02-14</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -3573,11 +3670,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0226</cvename>
-      <freebsdsa>SA-06:05</freebsdsa>
+      <freebsdsa>SA-06:05.80211</freebsdsa>
     </references>
     <dates>
       <discovery>2006-01-18</discovery>
       <entry>2006-02-14</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
@@ -3609,11 +3707,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0054</cvename>
-      <freebsdsa>SA-06:04</freebsdsa>
+      <freebsdsa>SA-06:04.ipfw</freebsdsa>
     </references>
     <dates>
       <discovery>2006-01-11</discovery>
       <entry>2006-02-14</entry>
+      <modified>2006-06-09</modified>
     </dates>
   </vuln>
 
