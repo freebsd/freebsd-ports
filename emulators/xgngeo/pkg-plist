@@ -1,0 +1,42 @@
+bin/xgngeo.py
+%%PORTDOCS%%%%DOCSDIR%%/xgngeo-doc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xgngeo-doc.txt
+%%DATADIR%%/img/chprod.png
+%%DATADIR%%/img/europe.png
+%%DATADIR%%/img/icon.png
+%%DATADIR%%/img/japan.png
+%%DATADIR%%/img/key_A.png
+%%DATADIR%%/img/key_B.png
+%%DATADIR%%/img/key_C.png
+%%DATADIR%%/img/key_COIN.png
+%%DATADIR%%/img/key_D.png
+%%DATADIR%%/img/key_DOWN.png
+%%DATADIR%%/img/key_LEFT.png
+%%DATADIR%%/img/key_RIGHT.png
+%%DATADIR%%/img/key_START.png
+%%DATADIR%%/img/key_UP.png
+%%DATADIR%%/img/usa.png
+%%DATADIR%%/img/xgngeo.png
+share/locale/es/LC_MESSAGES/xgngeo.mo
+share/locale/es/LC_MESSAGES/xgngeo.po
+share/locale/fr/LC_MESSAGES/xgngeo.mo
+share/locale/fr/LC_MESSAGES/xgngeo.po
+share/locale/pl/LC_MESSAGES/xgngeo.mo
+share/locale/pl/LC_MESSAGES/xgngeo.po
+share/locale/pt_BR/LC_MESSAGES/xgngeo.po
+%%DATADIR%%/py/command.py
+%%DATADIR%%/py/configfile.py
+%%DATADIR%%/py/history.py
+%%DATADIR%%/py/rominfos.py
+%%DATADIR%%/py/romrcfile.py
+%%DATADIR%%/py/romrcfile.pyc
+%%DATADIR%%/py/command.pyc
+%%DATADIR%%/py/configfile.pyc
+%%DATADIR%%/py/history.pyc
+%%DATADIR%%/py/rominfos.pyc
+%%DATADIR%%/rominfos.dtd
+%%DATADIR%%/rominfos.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%/py
+@dirrm %%DATADIR%%

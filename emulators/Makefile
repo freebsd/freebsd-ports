@@ -144,6 +144,7 @@
     SUBDIR += wine
     SUBDIR += x48
     SUBDIR += xbraitenberg
+    SUBDIR += xgngeo
     SUBDIR += xgs
     SUBDIR += xmame
     SUBDIR += xmess
