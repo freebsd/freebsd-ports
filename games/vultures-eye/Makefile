@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vultures
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/downloads/${PORTVERSION}/
 PKGNAMESUFFIX=	-eye
