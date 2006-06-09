@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
 
 MAINTAINER=	nox@jelal.kn-bremen.de
-COMMENT=	Command line versions of 7-zip
+COMMENT=	File archiver with high compression ratio
 
 USE_BZIP2=	yes
 MAKEFILE=	makefile
