@@ -1,4 +1,5 @@
 bin/ipython
+bin/irunner
 bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/ColorANSI.py
 %%PYTHON_SITELIBDIR%%/IPython/ColorANSI.pyc
