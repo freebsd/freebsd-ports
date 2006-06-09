@@ -8,17 +8,16 @@
 
 PKGNAMESUFFIX=	-withgcjawt
 
+MASTERDIR=	${.CURDIR}/../../lang/gcc41
+
+.include "${MASTERDIR}/Makefile"
+
 MAINTAINER=	maho@FreeBSD.org
 
 DESCR=	${.CURDIR}/pkg-descr
 
 WITH_JAVA_AWT=	yes
 
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} >= 600105
-BROKEN=	Does not compile on FreeBSD >= 6.1
+BROKEN= Does not compile on FreeBSD >= 6.1
 .endif
-
-MASTERDIR=	${.CURDIR}/../../lang/gcc41
-.include "${MASTERDIR}/Makefile"
