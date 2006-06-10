@@ -63,6 +63,7 @@ IGNORE=	does not work on FreeBSD 4.X
 CONFIGURE_ARGS+=--enable-compat-libdns_sd
 PLIST_SUB+=	LIBDNS=""
 CONFLICTS+=	mDNSResponder-[0-9]*
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+libdns
 .else
 CONFIGURE_ARGS+=--disable-compat-libdns_sd
 PLIST_SUB+=	LIBDNS="@comment "
