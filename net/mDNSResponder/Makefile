@@ -33,6 +33,8 @@ EXTRAMAN8=	dnsextd.8 mDNSResponderPosix.8
 
 MAN8=		mdnsd.8 ${EXTRAMAN8}
 
+CONFLICTS=	avahi+libdns-[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
