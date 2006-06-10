@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+bin/katchtv
+%%DATADIR%%/Docs/Manual/images/live_bookmark2.gif
+%%DATADIR%%/Docs/Manual/images/xml2.gif
+%%DATADIR%%/Docs/Manual/index.html
+%%DATADIR%%/KatchTV
+%%DATADIR%%/thirdparty/feedparser.py
+%%DATADIR%%/thirdparty/urlgrabber-2.9.9/setup.py
+%%DATADIR%%/thirdparty/urlgrabber-2.9.9/urlgrabber/__init__.py
+%%DATADIR%%/thirdparty/urlgrabber-2.9.9/urlgrabber/byterange.py
+%%DATADIR%%/thirdparty/urlgrabber-2.9.9/urlgrabber/grabber.py
+%%DATADIR%%/thirdparty/urlgrabber-2.9.9/urlgrabber/keepalive.py
+%%DATADIR%%/thirdparty/urlgrabber-2.9.9/urlgrabber/mirror.py
+%%DATADIR%%/thirdparty/urlgrabber-2.9.9/urlgrabber/progress.py
+%%DATADIR%%/uicode/KTVMainWindow.py
+%%DATADIR%%/webstyle/progressbar.png
+@dirrm %%DATADIR%%/Docs/Manual/images
+@dirrm %%DATADIR%%/Docs/Manual
+@dirrm %%DATADIR%%/Docs
+@dirrm %%DATADIR%%/thirdparty/urlgrabber-2.9.9/urlgrabber
+@dirrm %%DATADIR%%/thirdparty/urlgrabber-2.9.9
+@dirrm %%DATADIR%%/thirdparty
+@dirrm %%DATADIR%%/uicode
+@dirrm %%DATADIR%%/webstyle
+@dirrm %%DATADIR%%
