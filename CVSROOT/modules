@@ -9305,6 +9305,7 @@ p5-Resources	ports/devel/p5-Resources
 p5-Return-Value	ports/devel/p5-Return-Value
 p5-Roman	ports/math/p5-Roman
 p5-Rose-DB	ports/databases/p5-Rose-DB
+p5-Rose-DB-Object	ports/databases/p5-Rose-DB-Object
 p5-Rose-DateTime	ports/devel/p5-Rose-DateTime
 p5-Rose-Object	ports/devel/p5-Rose-Object
 p5-SAVI-Perl	ports/security/p5-SAVI-Perl
