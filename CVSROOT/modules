@@ -4297,6 +4297,7 @@ ircII		ports/irc/ircII
 ircd-hybrid	ports/irc/ircd-hybrid
 ircd-hybrid-ru	ports/irc/ircd-hybrid-ru
 ircd-ratbox	ports/irc/ircd-ratbox
+ircd-ratbox-devel	ports/irc/ircd-ratbox-devel
 ircd-ru		ports/irc/ircd-ru
 ircd-rusnet	ports/irc/ircd-rusnet
 ircg		ports/irc/ircg
