@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.94.4
-PORTREVISION=	1
+PORTVERSION=	0.95.0
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,7 +18,7 @@ COMMENT=	API compatible clone of the Motif toolkit
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 CONFLICTS?=	open-motif-*
-MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259 libtool:15
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
@@ -50,7 +49,8 @@ MAN3 =	ApplicationShell.3 Composite.3 Constraint.3 Core.3 \
 
 MAN5 =	VirtualBindings.5 mwmrc.5
 
-.if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD) && !defined(WANT_LESSTIF)
+.if defined(HAVE_MOTIF) && !defined(PARALLEL_PACKAGE_BUILD) && !defined(BATCH) && !defined(WANT_LESSTIF)
+MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 IS_INTERACTIVE=	yes
 pre-extract:
 	@${ECHO_CMD} "***********************************************************"
