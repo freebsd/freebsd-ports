@@ -23,6 +23,7 @@
     SUBDIR += e17-theme-blue_default
     SUBDIR += e17-theme-blue_eyed
     SUBDIR += e17-theme-carbon
+    SUBDIR += e17-theme-cthulhain
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
