@@ -25,6 +25,7 @@
     SUBDIR += e17-theme-carbon
     SUBDIR += e17-theme-cthulhain
     SUBDIR += e17-theme-detour
+    SUBDIR += e17-theme-gant
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
