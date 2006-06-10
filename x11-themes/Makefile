@@ -19,6 +19,7 @@
     SUBDIR += cursor-jimmac-theme
     SUBDIR += cursor-neutral-theme
     SUBDIR += cursor-polar-theme
+    SUBDIR += e17-theme-blokkie
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
