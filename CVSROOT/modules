@@ -12441,6 +12441,7 @@ sic		ports/irc/sic
 siconv		ports/converters/siconv
 sid-milter	ports/mail/sid-milter
 sidplay		ports/audio/sidplay
+sidplay2	ports/audio/sidplay2
 sidplayer	ports/audio/sidplayer
 sidplug		ports/www/sidplug
 siege		ports/benchmarks/siege
