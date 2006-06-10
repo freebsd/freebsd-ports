@@ -844,6 +844,7 @@
     SUBDIR += xwelltris
     SUBDIR += xword
     SUBDIR += xworm
+    SUBDIR += xye
     SUBDIR += xzip
     SUBDIR += yadex
     SUBDIR += yahtzee

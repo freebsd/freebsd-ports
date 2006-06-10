@@ -1,0 +1,31 @@
+bin/xye
+
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/format.txt
+%%PORTDOCS%%%%DOCSDIR%%/template.xye.xml
+%%PORTDOCS%%%%DOCSDIR%%/GAMEINTRO.txt
+%%PORTDOCS%%%%DOCSDIR%%/xyeicon.png
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+
+%%DATADIR%%/levels/5levels.xye
+%%DATADIR%%/levels/kye.xye
+%%DATADIR%%/levels/levels.xye
+%%DATADIR%%/levels/logo.xye
+%%DATADIR%%/levels/Mic4.xye
+%%DATADIR%%/levels/pxlevels.xye
+%%DATADIR%%/levels/microban.xsb
+%%DATADIR%%/levels/tutorials.xye
+%%DATADIR%%/res/default.xml
+%%DATADIR%%/res/classic.xml
+%%DATADIR%%/res/xye.png
+%%DATADIR%%/res/kye.png
+%%DATADIR%%/res/fon.bmp
+%%DATADIR%%/res/fon_bold.bmp
+
+@dirrm share/xye/levels
+@dirrm share/xye/res
+@dirrm share/xye
