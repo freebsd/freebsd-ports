@@ -28,6 +28,7 @@
     SUBDIR += e17-theme-gant
     SUBDIR += e17-theme-japan2007
     SUBDIR += e17-theme-milky
+    SUBDIR += e17-theme-neptun
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
