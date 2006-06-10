@@ -1,14 +1,15 @@
 @comment $FreeBSD$
 bin/snort
-etc/snort/classification.config-sample
-etc/snort/gen-msg.map-sample
-etc/snort/generators-sample
-etc/snort/reference.config-sample
-etc/snort/sid-sample
-etc/snort/sid-msg.map-sample
-etc/snort/snort.conf-sample
-etc/snort/threshold.conf-sample
-etc/snort/unicode.map-sample
+etc/snort/classification.config.default
+etc/snort/gen-msg.map.default
+etc/snort/generators.default
+etc/snort/reference.config.default
+etc/snort/sid.default
+etc/snort/sid-msg.map.default
+etc/snort/snort.conf.default
+etc/snort/threshold.conf.default
+etc/snort/unicode.map.default
+@dirrmtry etc/snort/rules
 @dirrmtry etc/snort
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -38,8 +39,17 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/classification.config-sample
 %%EXAMPLESDIR%%/create_mssql
 %%EXAMPLESDIR%%/create_mysql
 %%EXAMPLESDIR%%/create_oracle.sql
 %%EXAMPLESDIR%%/create_postgresql
+%%EXAMPLESDIR%%/gen-msg.map-sample
+%%EXAMPLESDIR%%/generators-sample
+%%EXAMPLESDIR%%/reference.config-sample
+%%EXAMPLESDIR%%/sid-msg.map-sample
+%%EXAMPLESDIR%%/sid-sample
+%%EXAMPLESDIR%%/snort.conf-sample
+%%EXAMPLESDIR%%/threshold.conf-sample
+%%EXAMPLESDIR%%/unicode.map-sample
 @dirrm %%EXAMPLESDIR%%
