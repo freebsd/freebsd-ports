@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	2.4.5p1
+PORTVERSION=	2.5.0p2
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
@@ -100,8 +100,9 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 
 CONFIGURE_ARGS+=--without-client
 
-MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
-		amdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
+MAN8=		amadmin.8 amaespipe.8 amcheck.8 \
+		amcheckdb.8 amcleanup.8 amcrypt.8 amdd.8 \
+		amdump.8 amfetchdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
 		amoverview.8 amreport.8 amrmtape.8 amstatus.8 \
 		amtape.8 amtoc.8 amverify.8 amverifyrun.8 amtapetype.8
 
