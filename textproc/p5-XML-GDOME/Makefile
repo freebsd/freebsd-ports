@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XML-GDOME
-PORTVERSION=	0.83
-PORTREVISION=	5
+PORTVERSION=	0.86
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -38,6 +37,7 @@ MAN3=		XML::GDOME.3 \
 		XML::GDOME::Node.3 \
 		XML::GDOME::NodeList.3 \
 		XML::GDOME::Notation.3 \
+		XML::GDOME::ProcessingInstruction.3 \
 		XML::GDOME::SAX::Builder.3 \
 		XML::GDOME::SAX::Generator.3 \
 		XML::GDOME::SAX::Parser.3 \
@@ -45,10 +45,6 @@ MAN3=		XML::GDOME.3 \
 		XML::GDOME::XPath::Evaluator.3 \
 		XML::GDOME::XPath::NSResolver.3 \
 		XML::GDOME::XPath::Namespace.3 \
-		XML::GDOME::XPath::Result.3 \
-		XML::GDOME::ProcessingInstruction.3
-
-post-patch:
-	${PERL} -i -ne '/die "VERSION"/ or print' ${WRKSRC}/Makefile.PL
+		XML::GDOME::XPath::Result.3
 
 .include <bsd.port.mk>
