@@ -1,0 +1,33 @@
+# New ports collection makefile for:	www/p5-Catalyst-Model-Oryx
+# Date created:				10 June 2006
+# Whom:					Zach Thompson <hideo@lastamericanempire.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Catalyst-Model-Oryx
+PORTVERSION=	0.01
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Catalyst
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	hideo@lastamericanempire.com
+COMMENT=	Oryx model component for Catalyst
+
+BUILD_DEPENDS=	${SITE_PERL}/Oryx.pm:${PORTSDIR}/databases/p5-Oryx \
+		${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=	Catalyst::Helper::Model::Oryx.3 \
+	Catalyst::Model::Oryx.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
