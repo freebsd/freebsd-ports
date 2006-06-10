@@ -14,7 +14,6 @@ lib/ircd-ratbox/modules/autoload/m_admin.so
 lib/ircd-ratbox/modules/autoload/m_away.so
 lib/ircd-ratbox/modules/autoload/m_cap.so
 lib/ircd-ratbox/modules/autoload/m_capab.so
-lib/ircd-ratbox/modules/autoload/m_challenge.so
 lib/ircd-ratbox/modules/autoload/m_close.so
 lib/ircd-ratbox/modules/autoload/m_cmessage.so
 lib/ircd-ratbox/modules/autoload/m_connect.so
@@ -99,6 +98,7 @@ lib/ircd-ratbox/modules/m_squit.so
 %%DATADIR%%/help/opers/away
 %%DATADIR%%/help/opers/capab
 %%DATADIR%%/help/opers/challenge
+%%DATADIR%%/help/opers/chantrace
 %%DATADIR%%/help/opers/close
 %%DATADIR%%/help/opers/cmode
 %%DATADIR%%/help/opers/cnotice
@@ -107,7 +107,6 @@ lib/ircd-ratbox/modules/m_squit.so
 %%DATADIR%%/help/opers/credits
 %%DATADIR%%/help/opers/die
 %%DATADIR%%/help/opers/dline
-%%DATADIR%%/help/opers/eob
 %%DATADIR%%/help/opers/error
 %%DATADIR%%/help/opers/etrace
 %%DATADIR%%/help/opers/gline
@@ -126,6 +125,7 @@ lib/ircd-ratbox/modules/m_squit.so
 %%DATADIR%%/help/opers/locops
 %%DATADIR%%/help/opers/lusers
 %%DATADIR%%/help/opers/map
+%%DATADIR%%/help/opers/masktrace
 %%DATADIR%%/help/opers/modlist
 %%DATADIR%%/help/opers/modload
 %%DATADIR%%/help/opers/modrestart
@@ -164,6 +164,7 @@ lib/ircd-ratbox/modules/m_squit.so
 %%DATADIR%%/help/opers/undline
 %%DATADIR%%/help/opers/ungline
 %%DATADIR%%/help/opers/unkline
+%%DATADIR%%/help/opers/unreject
 %%DATADIR%%/help/opers/unresv
 %%DATADIR%%/help/opers/unxline
 %%DATADIR%%/help/opers/user
