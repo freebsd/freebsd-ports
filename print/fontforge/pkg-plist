@@ -1,5 +1,6 @@
 bin/fontforge
 bin/sfddiff
+bin/acorn2sfd
 lib/libgdraw.la
 lib/libgdraw.so
 lib/libgdraw.so.1
