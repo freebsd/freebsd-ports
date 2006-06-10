@@ -9304,6 +9304,7 @@ p5-ResourcePool-Resource-SOAP-Lite	ports/net/p5-ResourcePool-Resource-SOAP-Lite
 p5-Resources	ports/devel/p5-Resources
 p5-Return-Value	ports/devel/p5-Return-Value
 p5-Roman	ports/math/p5-Roman
+p5-Rose-Object	ports/devel/p5-Rose-Object
 p5-SAVI-Perl	ports/security/p5-SAVI-Perl
 p5-SDL		ports/devel/p5-SDL
 p5-SGMLSpm	ports/textproc/p5-SGMLSpm
