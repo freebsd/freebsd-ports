@@ -7,13 +7,13 @@
 
 PORTNAME=	libsidplay2
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sidplay2
 DISTNAME=	sidplay-libs-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alex@foxybanana.com
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
