@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/miniSAPserver/${PORTVERSION}/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	SAP and SLP announcement for the VLC Media Player
 
 USE_BZIP2=	yes
