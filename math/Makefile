@@ -41,6 +41,7 @@
     SUBDIR += cxsc
     SUBDIR += dcdflib
     SUBDIR += diehard
+    SUBDIR += digitizer
     SUBDIR += dislin
     SUBDIR += djbfft
     SUBDIR += drgeo
