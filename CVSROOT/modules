@@ -9092,6 +9092,7 @@ p5-Net-vCard	ports/misc/p5-Net-vCard
 p5-NetAddr-IP	ports/net-mgmt/p5-NetAddr-IP
 p5-NetAddr-IP-Count	ports/net/p5-NetAddr-IP-Count
 p5-NetAddr-IP-Find	ports/textproc/p5-NetAddr-IP-Find
+p5-NetAddr-IP-Lite	ports/net-mgmt/p5-NetAddr-IP-Lite
 p5-NetCDF	ports/math/p5-NetCDF
 p5-NetPacket	ports/net/p5-NetPacket
 p5-News-Article	ports/news/p5-News-Article
