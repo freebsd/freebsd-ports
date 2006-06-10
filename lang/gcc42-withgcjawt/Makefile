@@ -17,7 +17,3 @@ MAINTAINER=	maho@FreeBSD.org
 DESCR=	${.CURDIR}/pkg-descr
 
 WITH_JAVA_AWT=	yes
-
-.if ${OSVERSION} >= 600105
-BROKEN= Does not compile on FreeBSD >= 6.1
-.endif
