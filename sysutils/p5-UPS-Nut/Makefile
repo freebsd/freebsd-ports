@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.sedl.org/pub/mirrors/CPAN/modules/by-authors/id/K/KP/KPE
 		http://mirror.hiwaay.net/CPAN/modules/by-authors/id/K/KP/KPETERS/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	eric@cirr.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for accessing Network UPS Tools' upsd
 
 PERL_CONFIGURE=	yes

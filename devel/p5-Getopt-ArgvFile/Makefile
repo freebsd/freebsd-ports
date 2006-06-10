@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Getopt
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	eric@cirr.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for processing argument vectors
 
 PERL_CONFIGURE=	yes
