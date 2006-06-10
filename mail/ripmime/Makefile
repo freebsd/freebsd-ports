@@ -8,7 +8,9 @@
 PORTNAME=	ripmime
 PORTVERSION=	1.4.0.6
 CATEGORIES=	mail
-MASTER_SITES=	http://www.pldaniels.com/ripmime/
+MASTER_SITES=	http://www.pldaniels.com/ripmime/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package
