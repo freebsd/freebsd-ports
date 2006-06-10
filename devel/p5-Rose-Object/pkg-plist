@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Rose/Class.pm
+%%SITE_PERL%%/Rose/Class/MakeMethods/Generic.pm
+%%SITE_PERL%%/Rose/Class/MakeMethods/Set.pm
+%%SITE_PERL%%/Rose/Object.pm
+%%SITE_PERL%%/Rose/Object/MakeMethods.pm
+%%SITE_PERL%%/Rose/Object/MakeMethods/DateTime.pm
+%%SITE_PERL%%/Rose/Object/MakeMethods/Generic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/Object/.packlist
+@dirrmtry %%SITE_PERL%%/Rose/Object/MakeMethods
+@dirrmtry %%SITE_PERL%%/Rose/Class/MakeMethods
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
+@dirrmtry %%SITE_PERL%%/Rose/Object
+@dirrmtry %%SITE_PERL%%/Rose/Class
+@dirrmtry %%SITE_PERL%%/Rose
