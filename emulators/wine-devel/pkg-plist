@@ -176,6 +176,7 @@ include/wine/windows/exdispid.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
 include/wine/windows/guiddef.h
+include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
 include/wine/windows/hlink.idl
 include/wine/windows/htmlhelp.h
@@ -202,6 +203,7 @@ include/wine/windows/lmbrowsr.h
 include/wine/windows/lmcons.h
 include/wine/windows/lmerr.h
 include/wine/windows/lmjoin.h
+include/wine/windows/lmmsg.h
 include/wine/windows/lmserver.h
 include/wine/windows/lmshare.h
 include/wine/windows/lmstats.h
@@ -481,6 +483,7 @@ lib/wine/glut32.dll.so
 lib/wine/gphoto2.ds.so
 lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
+lib/wine/hlink.dll.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
 lib/wine/icmp.dll.so
@@ -730,6 +733,7 @@ lib/wine/url.dll.so
 lib/wine/urlmon.dll.so
 lib/wine/user.exe16
 lib/wine/user32.dll.so
+lib/wine/userenv.dll.so
 lib/wine/usp10.dll.so
 lib/wine/uxtheme.dll.so
 lib/wine/vdhcp.vxd.so
@@ -755,6 +759,7 @@ lib/wine/wineboot.exe.so
 lib/wine/winebrowser.exe.so
 lib/wine/winecfg.exe.so
 lib/wine/wineconsole.exe.so
+lib/wine/winecoreaudio.drv.so
 lib/wine/wined3d.dll.so
 lib/wine/winedbg.exe.so
 lib/wine/winedos.dll.so
