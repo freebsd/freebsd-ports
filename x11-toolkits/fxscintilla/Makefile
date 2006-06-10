@@ -20,13 +20,13 @@ CONFIGURE_ARGS+=	--enable-shared --disable-static
 INSTALLS_SHLIB=	yes
 
 OPTIONS=	FOX10 "FOX1.0 support (FOX1.4 by default)" off
-OPTIONS=	FOX12 "FOX1.2 support (FOX1.4 by default)" off
+OPTIONS+=	FOX12 "FOX1.2 support (FOX1.4 by default)" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FOX10)
 FOX_LIB_VER=	1.0.0
-LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox
+LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox10
 CONFIGURE_ARGS+=	--with-fox-1-0
 .elif defined(WITH_FOX12)
 FOX_LIB_VER=	1.2
@@ -34,7 +34,7 @@ LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox12
 CONFIGURE_ARGS+=	--with-fox-1-2
 .else
 FOX_LIB_VER=	1.4
-LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox-devel
+LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox14
 CONFIGURE_ARGS+=	--with-fox-1-4
 .endif
 

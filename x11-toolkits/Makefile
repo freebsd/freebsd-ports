@@ -21,9 +21,9 @@
     SUBDIR += fltk2
     SUBDIR += flu
     SUBDIR += flvw
-    SUBDIR += fox
-    SUBDIR += fox-devel
+    SUBDIR += fox10
     SUBDIR += fox12
+    SUBDIR += fox14
     SUBDIR += fox16
     SUBDIR += fxscintilla
     SUBDIR += fxscintilla-fox10

@@ -16,7 +16,7 @@ DISTNAME=	FXPy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to FOX Graphics library
 
-LIB_DEPENDS=	FOX-1.0:${PORTSDIR}/x11-toolkits/fox
+LIB_DEPENDS=	FOX-1.0:${PORTSDIR}/x11-toolkits/fox10
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

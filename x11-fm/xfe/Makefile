@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	shaun@inerd.com
 COMMENT=	Fast MS-Explorer like filemanager for X
 
-LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox-devel \
+LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14 \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes

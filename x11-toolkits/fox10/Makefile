@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-CONFLICTS=	fox-1.1.*
+LATEST_LINK=	fox10
 
 USE_GL=		yes
 INSTALLS_SHLIB=	yes
