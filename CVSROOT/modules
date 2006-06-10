@@ -1978,6 +1978,7 @@ e-uae		ports/emulators/e-uae
 e16utils	ports/x11-wm/e16utils
 e17-theme-blokkie	ports/x11-themes/e17-theme-blokkie
 e17-theme-blue_default	ports/x11-themes/e17-theme-blue_default
+e17-theme-blue_eyed	ports/x11-themes/e17-theme-blue_eyed
 e2fsprogs	ports/sysutils/e2fsprogs
 e2fsprogs-libuuid	ports/misc/e2fsprogs-libuuid
 e3		ports/editors/e3
