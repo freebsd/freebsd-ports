@@ -18,8 +18,8 @@ WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+SUB_LIST=	XAWVER="${XAWVER}"
 
 .include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
@@ -29,7 +29,6 @@ PLIST_FILES=	lib/libXaw3d.so.6
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
 	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
-	${SED} 's|%%XAWVER%%|${XAWVER}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
 .if ${MACHINE_ARCH} == "alpha"
@@ -39,8 +38,8 @@ post-configure:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/Xaw3d
-	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${DOCSDIR}
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 	${LN} -sf libXaw3d.so.${XAWVER} ${X11BASE}/lib/libXaw3d.so.6
 .endif
