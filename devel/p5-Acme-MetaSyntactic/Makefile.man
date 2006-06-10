@@ -3,6 +3,7 @@
 MAN1+=	meta.1
 
 MAN3+=	Acme::MetaSyntactic.3
+MAN3+=	Acme::MetaSyntactic::Alias.3
 MAN3+=	Acme::MetaSyntactic::List.3
 MAN3+=	Acme::MetaSyntactic::Locale.3
 MAN3+=	Acme::MetaSyntactic::MultiList.3
@@ -19,6 +20,7 @@ MAN3+=	Acme::MetaSyntactic::booze.3
 MAN3+=	Acme::MetaSyntactic::browser.3
 MAN3+=	Acme::MetaSyntactic::buffy.3
 MAN3+=	Acme::MetaSyntactic::chess.3
+MAN3+=	Acme::MetaSyntactic::colors.3
 MAN3+=	Acme::MetaSyntactic::colours.3
 MAN3+=	Acme::MetaSyntactic::constellations.3
 MAN3+=	Acme::MetaSyntactic::contrade.3
