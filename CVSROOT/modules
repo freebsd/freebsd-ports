@@ -1985,6 +1985,7 @@ e17-theme-detour	ports/x11-themes/e17-theme-detour
 e17-theme-gant	ports/x11-themes/e17-theme-gant
 e17-theme-japan2007	ports/x11-themes/e17-theme-japan2007
 e17-theme-milky	ports/x11-themes/e17-theme-milky
+e17-theme-neptun	ports/x11-themes/e17-theme-neptun
 e2fsprogs	ports/sysutils/e2fsprogs
 e2fsprogs-libuuid	ports/misc/e2fsprogs-libuuid
 e3		ports/editors/e3
