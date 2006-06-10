@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xchat
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.4
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://xchat.org/files/source/2.6/
