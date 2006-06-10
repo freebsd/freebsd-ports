@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
-		http://home.earthlink.net/~dvdfrdmn/d/:gdc
+		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
 MASTER_SITE_SUBDIR=	${GCC_MASTER_SITE_SUBDIR}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gdc \
+DISTFILES=	${DISTNAME}.tar.gz:gdc \
 		gcc-core-${GCC_VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-g++-${GCC_VERSIONSTRING}${EXTRACT_SUFX}
+EXTRACT_ONLY=	gcc-core-${GCC_VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	ozawa@ongs.co.jp
@@ -50,7 +51,7 @@ TARGET_GCC=	3.4	# default
 
 .if ${TARGET_GCC} == 4.0
 GCC_VERSION=	4.0.4
-GCC_REVISION=	20060413
+GCC_REVISION=	20060525
 GCC_VERSIONSTRING=	4.0-${GCC_REVISION}
 GCC_MASTER_SITE_SUBDIR=	snapshots/${GCC_VERSIONSTRING}
 .else
@@ -86,6 +87,7 @@ pre-fetch:
 	@${ECHO_CMD}
 
 post-extract:
+	@cd ${WRKDIR} && ${TAR} -xzf ${_DISTDIR}/${DISTNAME}.tar.gz
 	@${MV} ${WRKDIR}/d ${GCCDIR}
 
 post-patch:
@@ -98,7 +100,7 @@ post-patch:
 		${GCCDIR}/d/Make-lang.in
 
 pre-configure:
-	@(cd ${SRCDIR} ; contrib/gcc_update --touch)
+	@(cd ${SRCDIR} && contrib/gcc_update --touch)
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 

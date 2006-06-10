@@ -2,52 +2,6 @@ bin/gdc
 bin/cc1d
 include/d/%%GCC_VER%%/etc/gamma.d
 include/d/%%GCC_VER%%/etc/c/zlib.d
-include/d/%%GCC_VER%%/etc/c/recls/recls.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_assert.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_compiler.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_compiler_dmc.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_compiler_gcc.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_debug.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_defs.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_internal.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_language.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_platform.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_platform_types.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_retcodes.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_unix.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_util.h
-include/d/%%GCC_VER%%/etc/c/recls/recls_win32.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_cccap_dmc.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_cccap_gcc.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_iterator.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_lock_scope.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_null.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_null_mutex.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_nulldef.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/stlsoft_static_initialisers.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_current_directory.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_current_directory_scope.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_environment_variable.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_filesystem_traits.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_findfile_sequence.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_functionals.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_glob_sequence.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_limits.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_process_mutex.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_readdir_sequence.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_spin_mutex.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_string_access.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/unixstl_thread_mutex.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl_atomic_functions.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl_filesystem_traits.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl_findfile_sequence.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl_spin_mutex.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl_system_version.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl_thread_mutex.h
-include/d/%%GCC_VER%%/etc/c/stlsoft/winstl_tls_index.h
 include/d/%%GCC_VER%%/etc/c/zlib/crc32.h
 include/d/%%GCC_VER%%/etc/c/zlib/deflate.h
 include/d/%%GCC_VER%%/etc/c/zlib/infblock.h
@@ -66,15 +20,18 @@ include/d/%%GCC_VER%%/gcc/aix_float.h
 include/d/%%GCC_VER%%/gcc/builtins.d
 include/d/%%GCC_VER%%/gcc/configext.d
 include/d/%%GCC_VER%%/gcc/deh.d
+include/d/%%GCC_VER%%/gcc/fpmath.d
 include/d/%%GCC_VER%%/gcc/support.d
 include/d/%%GCC_VER%%/gcc/threadsem.d
 include/d/%%GCC_VER%%/gcc/unwind.d
 include/d/%%GCC_VER%%/std/array.d
 include/d/%%GCC_VER%%/std/asserterror.d
 include/d/%%GCC_VER%%/std/base64.d
+include/d/%%GCC_VER%%/std/bitarray.d
 include/d/%%GCC_VER%%/std/boxer.d
 include/d/%%GCC_VER%%/std/compiler.d
 include/d/%%GCC_VER%%/std/conv.d
+include/d/%%GCC_VER%%/std/cover.d
 include/d/%%GCC_VER%%/std/cstream.d
 include/d/%%GCC_VER%%/std/ctype.d
 include/d/%%GCC_VER%%/std/date.d
@@ -97,7 +54,6 @@ include/d/%%GCC_VER%%/std/path.d
 include/d/%%GCC_VER%%/std/perf.d
 include/d/%%GCC_VER%%/std/process.d
 include/d/%%GCC_VER%%/std/random.d
-include/d/%%GCC_VER%%/std/recls.d
 include/d/%%GCC_VER%%/std/regexp.d
 include/d/%%GCC_VER%%/std/socket.d
 include/d/%%GCC_VER%%/std/socketstream.d
@@ -116,20 +72,25 @@ include/d/%%GCC_VER%%/std/utf.d
 include/d/%%GCC_VER%%/std/zip.d
 include/d/%%GCC_VER%%/std/zlib.d
 include/d/%%GCC_VER%%/std/c/dirent.d
+include/d/%%GCC_VER%%/std/c/fenv.d
 include/d/%%GCC_VER%%/std/c/math.d
 include/d/%%GCC_VER%%/std/c/process.d
 include/d/%%GCC_VER%%/std/c/stdarg.d
 include/d/%%GCC_VER%%/std/c/stddef.d
 include/d/%%GCC_VER%%/std/c/stdio.d
 include/d/%%GCC_VER%%/std/c/stdlib.d
+include/d/%%GCC_VER%%/std/c/string.d
 include/d/%%GCC_VER%%/std/c/time.d
 include/d/%%GCC_VER%%/std/c/darwin/darwin.d
 include/d/%%GCC_VER%%/std/c/darwin/ldblcompat.d
+include/d/%%GCC_VER%%/std/c/linux/ldblcompat.d
 include/d/%%GCC_VER%%/std/c/linux/linux.d
 include/d/%%GCC_VER%%/std/c/linux/linuxextern.d
 include/d/%%GCC_VER%%/std/c/linux/socket.d
 include/d/%%GCC_VER%%/std/c/mach/mach.d
 include/d/%%GCC_VER%%/std/c/mach/mach_extern.d
+include/d/%%GCC_VER%%/std/c/skyos/compat.d
+include/d/%%GCC_VER%%/std/c/skyos/skyos.d
 include/d/%%GCC_VER%%/std/c/unix/unix.d
 include/d/%%GCC_VER%%/std/c/windows/com.d
 include/d/%%GCC_VER%%/std/c/windows/windows.d
@@ -190,7 +151,6 @@ include/d/%%GCC_VER%%/%%CONF_TARGET%%/gcc/configunix.d
 include/d/%%GCC_VER%%/%%CONF_TARGET%%/phobos-ver-syms
 lib/libgphobos.a
 lib/libgphobos.spec
-@dirrm include/d/%%GCC_VER%%/etc/c/recls
 @dirrm include/d/%%GCC_VER%%/etc/c/stlsoft
 @dirrm include/d/%%GCC_VER%%/etc/c/zlib
 @dirrm include/d/%%GCC_VER%%/etc/c
@@ -199,6 +159,7 @@ lib/libgphobos.spec
 @dirrm include/d/%%GCC_VER%%/std/c/darwin
 @dirrm include/d/%%GCC_VER%%/std/c/linux
 @dirrm include/d/%%GCC_VER%%/std/c/mach
+@dirrm include/d/%%GCC_VER%%/std/c/skyos
 @dirrm include/d/%%GCC_VER%%/std/c/unix
 @dirrm include/d/%%GCC_VER%%/std/c/windows
 @dirrm include/d/%%GCC_VER%%/std/typeinfo
