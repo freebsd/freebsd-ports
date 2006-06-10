@@ -22,7 +22,6 @@ USE_X_PREFIX=	yes
 WXDEP=	wxgtk2-unicode>=2.6.3
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
 		${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
-		md5sum:${PORTSDIR}/archivers/dpkg \
 		xml2-config:${PORTSDIR}/textproc/libxml2 \
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS+=	${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
@@ -79,6 +78,8 @@ BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 post-patch:
 	${REINPLACE_CMD} -E -e 's|-I[^[:space:]]*/wxOil[[:space:]]||g' \
 		${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -E -e 's/^CHECKSUM = md5sum$$/CHECKSUM = md5/' \
+		${WRKSRC}/wxOil/Makefile.am
 	${REINPLACE_CMD} -E \
 		-e 's/^Name=Xara LX$$/Name=Xara LX ${PORTVERSION}/' \
 		${WRKSRC}/xaralx.desktop
