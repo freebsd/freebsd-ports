@@ -89,6 +89,7 @@
     SUBDIR += k9copy
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
+    SUBDIR += katchtv
     SUBDIR += kbtv
     SUBDIR += kdemultimedia3
     SUBDIR += kino
