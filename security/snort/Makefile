@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTVERSION=	2.4.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -33,6 +32,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIG_DIR?=	${PREFIX}/etc/snort
 CONFIG_FILES=	classification.config gen-msg.map generators reference.config \
 		sid sid-msg.map snort.conf threshold.conf unicode.map
+RULES_DIR=	${PREFIX}/etc/snort/rules
+LOGS_DIR=	/var/log/snort
 
 MAN8=		snort.8
 DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
@@ -87,10 +88,13 @@ post-patch:
 
 post-install:
 	[ -d ${CONFIG_DIR} ] || ${MKDIR} ${CONFIG_DIR}
+	[ -d ${EXAMPLESDIR} ] || ${MKDIR} ${EXAMPLESDIR}
+	[ -d ${RULES_DIR} ] || ${MKDIR} ${RULES_DIR}
+	[ -d ${LOGS_DIR} ] || ${MKDIR} ${LOGS_DIR}
 .for f in ${CONFIG_FILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${CONFIG_DIR}/${f}-sample
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${CONFIG_DIR}/${f}.default
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${EXAMPLESDIR}/${f}-sample
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/schemas/create* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
