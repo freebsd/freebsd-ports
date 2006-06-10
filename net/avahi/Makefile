@@ -48,7 +48,8 @@ MAN1=	avahi-browse-domains.1 avahi-browse.1 avahi-publish-address.1 \
 MAN5=	avahi-daemon.conf.5 avahi.service.5 avahi.hosts.5
 MAN8=	avahi-daemon.8 avahi-dnsconfd.8 avahi-dnsconfd.action.8
 
-OPTIONS=	GTK2 "Build a GTK+ 2 browser utility" off
+OPTIONS=	GTK2 "Build a GTK+ 2 browser utility" off \
+		LIBDNS "Enable mDNSResponder compatibility" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -56,6 +57,15 @@ OPTIONS=	GTK2 "Build a GTK+ 2 browser utility" off
 .if !defined(AVAHI_SLAVE)
 .if ${OSVERSION} < 500000
 IGNORE=	does not work on FreeBSD 4.X
+.endif
+
+.if defined(WITH_LIBDNS)
+CONFIGURE_ARGS+=--enable-compat-libdns_sd
+PLIST_SUB+=	LIBDNS=""
+CONFLICTS+=	mDNSResponder-[0-9]*
+.else
+CONFIGURE_ARGS+=--disable-compat-libdns_sd
+PLIST_SUB+=	LIBDNS="@comment "
 .endif
 
 .if defined(WITH_GTK2)
