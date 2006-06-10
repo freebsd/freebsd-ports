@@ -2591,9 +2591,9 @@ fortune-mod-futurama	ports/misc/fortune-mod-futurama
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
 fotaq		ports/games/fotaq
-fox		ports/x11-toolkits/fox
-fox-devel		ports/x11-toolkits/fox-devel
+fox10		ports/x11-toolkits/fox10
 fox12		ports/x11-toolkits/fox12
+fox14		ports/x11-toolkits/fox14
 fox16		ports/x11-toolkits/fox16
 fpc		ports/lang/fpc
 fpc-base	ports/lang/fpc-base

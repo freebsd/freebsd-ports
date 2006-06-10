@@ -15,7 +15,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file editor
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	FOX-1.4.7:${PORTSDIR}/x11-toolkits/fox-devel
+LIB_DEPENDS=	FOX-1.4.7:${PORTSDIR}/x11-toolkits/fox14
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby extension module to use FOX, aka FXRuby
 
 #BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox \
+LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox10 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		fxscintilla.17:${PORTSDIR}/x11-toolkits/fxscintilla-fox10 \
