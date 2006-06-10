@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Rose/DateTime.pm
+%%SITE_PERL%%/Rose/DateTime/Parser.pm
+%%SITE_PERL%%/Rose/DateTime/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DateTime/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/DateTime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
+@dirrmtry %%SITE_PERL%%/Rose/DateTime
+@dirrmtry %%SITE_PERL%%/Rose
