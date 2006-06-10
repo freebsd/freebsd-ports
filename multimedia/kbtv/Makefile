@@ -6,75 +6,110 @@
 #
 
 PORTNAME=	kbtv
-DISTVERSION=	1.0-rc2
+DISTVERSION=	1.1
 CATEGORIES=	multimedia python kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	danny@ricin.com
-COMMENT=	Simple KDE TV viewer for BSD
+COMMENT=	KDE TV viewer for FreeBSD
 
-BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt \
-		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde \
-		mplayer:${PORTSDIR}/multimedia/mplayer
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
+BUILD_DEPENDS=	${RUN_DEPENDS} swig:${PORTSDIR}/devel/swig13
 
 USE_BZIP2=	YES
 USE_KDELIBS_VER=3
 USE_PYTHON=	yes
+USE_SDL=	sdl
+INSTALLS_ICONS=	yes
 
-OPTIONS=	DOCS "Install (KDE) documentation" on \
-		MANPAGES "Install btcontrol manpage" on \
-		MAN_COMPRESS "Compress manpage" on \
-		UIFILES "Install Designer (ui) files" on
+OPTIONS=	PWC "Philips & compatible cameras (pwc)" off \
+		SAA "Philips SAA713x based TV cards (saa)" off \
+		SAA_TUNER_PHILIPS "Philips tuner API" on \
+		SAA_TUNER_PHILIPS_MK3 "Philips MK3 tuner API" off \
+		SAA_TUNER_ALPS "Alps tuner API" off \
+		SAA_TUNER_LG "LG tuner API" off \
+		SAA_TUNER_TEMIC "Temic tuner API" off \
+		SAA_TUNER_NTSC "NTSC tuner standard (default PAL)" off \
+		SAA_TUNER_0xC2 "IIC read address 0xc2 (default 0xc0)" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS) || defined(WITHOUT_DOCS)
-PLIST_SUB+=	DOCS="@comment "
+.if defined(WITH_PWC)
+.if !exists(/usr/src/sys/Makefile)
+IGNORE=		kernel sources required for pwc
+.endif
+PLIST_SUB+=	PWC=""
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
+		/boot/modules/pwc.ko:${PORTSDIR}/multimedia/pwcbsd
 .else
-PLIST_SUB+=	DOCS=""
+PLIST_SUB+=	PWC="@comment "
 .endif
 
-.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_MANPAGES)
-PLIST_SUB+=	MAN="@comment "
+.if defined(WITH_SAA)
+.if !exists(/usr/src/sys/Makefile)
+IGNORE=		kernel sources required for saa
+.endif
+PLIST_SUB+=	SAA=""
 .else
-PLIST_SUB+=	MAN=""
+PLIST_SUB+=	SAA="@comment "
 .endif
 
-.if defined(NOMANCOMPRESS) || defined(WITHOUT_MAN_COMPRESS)
-PLIST_SUB+=	CMAN="man1/btcontrol.1"
-.else
-PLIST_SUB+=	CMAN="man1/btcontrol.1.gz"
-.endif
-
-.if defined(WITHOUT_UIFILES)
-PLIST_SUB+=	UI="@comment "
-.else
-PLIST_SUB+=	UI=""
+.if defined(WITH_PWC) || defined(WITH_SAA)
+NO_PACKAGE=	port requires building against local kernel sources
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX = /usr/local|PREFIX = ${PREFIX}|' \
-		${WRKSRC}/install.cfg
-.if defined(NOPORTDOCS) || defined(WITHOUT_DOCS)
-	@${REINPLACE_CMD} -e 's|INSTALL_DOCS = yes|INSTALL_DOCS = |' \
-		${WRKSRC}/install.cfg
+	@${REINPLACE_CMD} -e 's|FROMPORT = False|FROMPORT = True|' \
+		${WRKSRC}/installprefs.py
+	@${REINPLACE_CMD} -e 's|sdl11-config|${SDL_CONFIG}|g' \
+		${WRKSRC}/do_build.py
+.if defined(WITH_PWC)
+	@${REINPLACE_CMD} -e 's|WITH_PWC = False|WITH_PWC = True|' \
+		${WRKSRC}/buildprefs.py
 .endif
-.if defined(NOMANCOMPRESS) || defined(WITHOUT_MAN_COMPRESS)
-	@${REINPLACE_CMD} -e 's|MANPAGES_COMPRESS = yes|MANPAGES_COMPRESS = |' \
-		${WRKSRC}/install.cfg
+.if defined(WITH_SAA)
+	@${REINPLACE_CMD} -e 's|WITH_SAA = False|WITH_SAA = True|' \
+		${WRKSRC}/buildprefs.py
+.if defined(WITHOUT_SAA_TUNER_PHILIPS)
+.if defined(WITH_SAA_TUNER_PHILIPS_MK3)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER = SAA_TUNER_PHILIPS|SAA_TUNER = SAA_TUNER_PHILIPS_MK3|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_TUNER_ALPS)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER = SAA_TUNER_PHILIPS|SAA_TUNER = SAA_TUNER_ALPS|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_TUNER_LG)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER = SAA_TUNER_PHILIPS|SAA_TUNER = SAA_TUNER_LG|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_TUNER_TEMIC)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER = SAA_TUNER_PHILIPS|SAA_TUNER = SAA_TUNER_TEMIC|' \
+		${WRKSRC}/buildprefs.py
 .endif
-.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_MANPAGES)
-	@${REINPLACE_CMD} -e 's|INSTALL_MANPAGES = yes|INSTALL_MANPAGES = |' \
-		${WRKSRC}/install.cfg
+.if defined(WITH_SAA_TUNER_NTSC)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL|SAA_TUNER_STD = SAA_TUNER_STD_NTSC|' \
+		${WRKSRC}/buildprefs.py
 .endif
-.if defined(WITHOUT_UIFILES)
-	@${REINPLACE_CMD} -e 's|INSTALL_UIFILES = yes|INSTALL_UIFILES = |' \
-		${WRKSRC}/install.cfg
+.if defined(WITH_SAA_TUNER_0xC2)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER_IIC = SAA_IIC_0xC0|SAA_TUNER_IIC = SAA_IIC_0xC2|' \
+		${WRKSRC}/buildprefs.py
+.endif
+.endif
 .endif
 
 do-configure:
-	@(cd ${WRKSRC} && ${MAKE} configure)
+	@cd ${WRKSRC} && ${MAKE} configure
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC} && ${MKDIR} ${DOCSDIR} && \
+	    ${INSTALL_DATA} README NEWS ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
