@@ -30,6 +30,7 @@
     SUBDIR += e17-theme-milky
     SUBDIR += e17-theme-neptun
     SUBDIR += e17-theme-simply_white
+    SUBDIR += e17-theme-winter
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
