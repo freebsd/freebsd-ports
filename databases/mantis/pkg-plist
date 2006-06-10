@@ -1,5 +1,3 @@
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 www/mantis/account_delete.php
 www/mantis/account_page.php
 www/mantis/account_prefs_inc.php

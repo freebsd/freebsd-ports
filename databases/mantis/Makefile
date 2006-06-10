@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mantisbt
@@ -19,14 +19,18 @@ USE_MYSQL=	yes
 USE_APACHE=	yes
 USE_PHP=	yes
 
+SUB_FILES=	pkg-message
+
+post-patch:
+	@${RM} ${WRKSRC}/.cvsignore
+	@${RM} ${WRKSRC}/core/.cvsignore
+
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/www/mantis"
 	${MKDIR} ${PREFIX}/www/mantis
 	${CP} -R ${WRKSRC}/* ${PREFIX}/www/mantis
-#	${MV} ${PREFIX}/www/mantis/config_inc.php.sample ${PREFIX}/www/mantis/config_inc.php
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/mantis
 
-post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
