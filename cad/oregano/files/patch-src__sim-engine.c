@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- src/sim-engine.c.orig
-+++ src/sim-engine.c
-@@ -265,9 +265,9 @@
+--- src/sim-engine.c.orig	Wed May 24 14:16:30 2006
++++ src/sim-engine.c	Wed May 24 21:39:29 2006
+@@ -268,9 +268,9 @@
  	/* TODO Would be recomendable to use pthread? */
  	engine->child_pid = fork();
  	if (engine->child_pid == 0) {
@@ -14,8 +11,8 @@ $FreeBSD$
 +		{ gchar *simexec = oregano.simexec;
          /* !!!!!!!!!!! "-s" "-n" */
  		gchar *args[4] = { simexec, oregano.simtype, (gchar *)netlist, NULL };
- 
-@@ -298,6 +298,7 @@
+ 	
+@@ -300,6 +300,7 @@
  		 * path y todo
  		 */
  		execvp(simexec, args);

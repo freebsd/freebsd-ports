@@ -1,6 +1,6 @@
---- src/simulate.c.orig	Tue Nov 23 04:20:05 2004
-+++ src/simulate.c	Fri Nov 26 18:10:37 2004
-@@ -200,10 +200,10 @@
+--- src/simulate.c.orig	Wed May 24 14:16:30 2006
++++ src/simulate.c	Wed May 24 21:39:29 2006
+@@ -188,10 +188,10 @@
  	GList *parts;
  	GList *p;
  	gchar *prop, *type, *ac;
