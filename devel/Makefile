@@ -1671,6 +1671,7 @@
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
+    SUBDIR += rubygem-tzinfo
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm
