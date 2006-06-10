@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Jun  8 00:04:11 2006
++++ Makefile.in	Thu Jun  8 00:05:26 2006
+@@ -140,7 +140,7 @@
+ SUBDIRS = src
+ include_HEADERS = include/LASi.h
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = ${exec_prefix}/libdata/pkgconfig
+ pkgconfig_DATA = lasi.pc
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

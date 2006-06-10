@@ -443,6 +443,7 @@
     SUBDIR += kscope
     SUBDIR += kxl
     SUBDIR += kyra
+    SUBDIR += lasi
     SUBDIR += lbpp
     SUBDIR += leaktracer
     SUBDIR += lemon
