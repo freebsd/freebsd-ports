@@ -1,0 +1,6 @@
+include/LASi.h
+lib/libLASi.a
+lib/libLASi.la
+lib/libLASi.so
+lib/libLASi.so.0
+libdata/pkgconfig/lasi.pc
