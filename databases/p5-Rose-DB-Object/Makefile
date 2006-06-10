@@ -1,0 +1,101 @@
+# New ports collection makefile for:	databases/p5-Rose-DB-Object
+# Date created:				09 June 2006
+# Whom:					Zach Thompson <hideo@lastamericanempire.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Rose-DB-Object
+PORTVERSION=	0.727
+CATEGORIES=	databases perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Rose
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	hideo@lastamericanempire.com
+COMMENT=	Extensible, high performance RDBMS-OO mapper
+
+BUILD_DEPENDS=	${SITE_PERL}/Rose/DB.pm:${PORTSDIR}/databases/p5-Rose-DB \
+		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
+		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+OPTIONS=	FAST_CLONE	"use Scalar::Util::Clone (requires perl5.8+)"	off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FAST_CLONE)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util/Clone.pm:${PORTSDIR}/devel/p5-Scalar-Util-Clone
+.endif
+
+MAN3=	Rose::DB::Object.3 \
+	Rose::DB::Object::Cached.3 \
+	Rose::DB::Object::ConventionManager.3 \
+	Rose::DB::Object::ConventionManager::Null.3 \
+	Rose::DB::Object::Helpers.3 \
+	Rose::DB::Object::Iterator.3 \
+	Rose::DB::Object::Loader.3 \
+	Rose::DB::Object::MakeMethods::BigNum.3 \
+	Rose::DB::Object::MakeMethods::Date.3 \
+	Rose::DB::Object::MakeMethods::Generic.3 \
+	Rose::DB::Object::MakeMethods::Pg.3 \
+	Rose::DB::Object::MakeMethods::Std.3 \
+	Rose::DB::Object::MakeMethods::Time.3 \
+	Rose::DB::Object::Manager.3 \
+	Rose::DB::Object::Metadata.3 \
+	Rose::DB::Object::Metadata::Column.3 \
+	Rose::DB::Object::Metadata::Column::Array.3 \
+	Rose::DB::Object::Metadata::Column::BigInt.3 \
+	Rose::DB::Object::Metadata::Column::BigSerial.3 \
+	Rose::DB::Object::Metadata::Column::Bitfield.3 \
+	Rose::DB::Object::Metadata::Column::Blob.3 \
+	Rose::DB::Object::Metadata::Column::Boolean.3 \
+	Rose::DB::Object::Metadata::Column::Character.3 \
+	Rose::DB::Object::Metadata::Column::Date.3 \
+	Rose::DB::Object::Metadata::Column::Datetime.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToFraction.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToFraction1.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToFraction2.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToFraction3.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToFraction4.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToFraction5.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToMinute.3 \
+	Rose::DB::Object::Metadata::Column::DatetimeYearToSecond.3 \
+	Rose::DB::Object::Metadata::Column::Decimal.3 \
+	Rose::DB::Object::Metadata::Column::Enum.3 \
+	Rose::DB::Object::Metadata::Column::Epoch.3 \
+	Rose::DB::Object::Metadata::Column::Epoch::HiRes.3 \
+	Rose::DB::Object::Metadata::Column::Float.3 \
+	Rose::DB::Object::Metadata::Column::Integer.3 \
+	Rose::DB::Object::Metadata::Column::Interval.3 \
+	Rose::DB::Object::Metadata::Column::Numeric.3 \
+	Rose::DB::Object::Metadata::Column::Pg::Chkpass.3 \
+	Rose::DB::Object::Metadata::Column::Scalar.3 \
+	Rose::DB::Object::Metadata::Column::Serial.3 \
+	Rose::DB::Object::Metadata::Column::Set.3 \
+	Rose::DB::Object::Metadata::Column::Text.3 \
+	Rose::DB::Object::Metadata::Column::Timestamp.3 \
+	Rose::DB::Object::Metadata::Column::Varchar.3 \
+	Rose::DB::Object::Metadata::ForeignKey.3 \
+	Rose::DB::Object::Metadata::PrimaryKey.3 \
+	Rose::DB::Object::Metadata::Relationship.3 \
+	Rose::DB::Object::Metadata::Relationship::ManyToMany.3 \
+	Rose::DB::Object::Metadata::Relationship::ManyToOne.3 \
+	Rose::DB::Object::Metadata::Relationship::OneToMany.3 \
+	Rose::DB::Object::Metadata::Relationship::OneToOne.3 \
+	Rose::DB::Object::Metadata::UniqueKey.3 \
+	Rose::DB::Object::MixIn.3 \
+	Rose::DB::Object::QueryBuilder.3 \
+	Rose::DB::Object::Std.3 \
+	Rose::DB::Object::Std::Cached.3 \
+	Rose::DB::Object::Std::Metadata.3 \
+	Rose::DB::Object::Tutorial.3 \
+	Rose::DB::Object::Util.3
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires perl 5.6 or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
