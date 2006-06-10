@@ -1,5 +1,5 @@
 --- config/install.sh.orig	Sun Nov 20 06:32:27 2005
-+++ config/install.sh	Thu Jan 12 15:13:59 2006
++++ config/install.sh	Tue Apr 11 14:26:13 2006
 @@ -18,6 +18,8 @@
      nolib=false
  fi
@@ -64,16 +64,22 @@
      cd "$SRCDIR"/runtime/objs
      echo $this: Compiling the run-time system.
      $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
-@@ -324,7 +358,7 @@
+@@ -324,7 +358,13 @@
  	if [ -f runx.$ARCH-$OPSYS ]; then
  	    mv runx.$ARCH-$OPSYS "$RUNDIR"
  	fi
 -	$MAKE MAKE=$MAKE clean
++	if [ -f run.$ARCH-$OPSYS.so ]; then
++	    mv run.$ARCH-$OPSYS.so "$RUNDIR"
++	fi
++	if [ -f run.$ARCH-$OPSYS.a ]; then
++	    mv run.$ARCH-$OPSYS.a "$RUNDIR"
++	fi
 +	[ "$MLNORUNTIMECLEAN" ] || $MAKE MAKE=$MAKE clean
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -350,7 +384,7 @@
+@@ -350,7 +390,7 @@
  	complain "$this !!! Unable to re-create heap image (sml.$HEAP_SUFFIX)."
      fi
  else
@@ -82,7 +88,7 @@
  
      fish "$ROOT"/"$BOOT_FILES"/smlnj/basis
  
-@@ -421,5 +455,12 @@
+@@ -421,5 +461,12 @@
  	complain "$this: !!! Installation of libraries and programs failed."
      fi
  fi

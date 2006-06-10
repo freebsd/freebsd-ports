@@ -6,24 +6,11 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.57
+PORTVERSION=	110.59
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
 DISTFILES=	config.tgz runtime.tgz
-.include <bsd.port.pre.mk>
-.if (${ARCH} == "i386")
-DISTFILES+=	boot.x86-unix.tgz
-#.elif (${ARCH} == "alpha")
-#DISTFILES+=	boot.alpha32-unix.tgz
-.endif
-DISTFILES+=	ml-yacc.tgz ml-lex.tgz smlnj-lib.tgz cml.tgz MLRISC.tgz ckit.tgz
-.if defined(WITH_EVERYTHING) || defined(WITH_RECOMPILE)
-DISTFILES+=	ml-burg.tgz \
-		ml-nlffi-lib.tgz ml-nlffigen.tgz smlnj-c.tgz \
-		eXene.tgz \
-		cm.tgz compiler.tgz system.tgz tools.tgz
-.endif
 EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
@@ -38,11 +25,20 @@ CONFLICTS=	smlnj-110.0.*
 
 ONLY_FOR_ARCHS=	i386
 
+OPTIONS=	EVERYTHING "install everything from the SML/NJ distribution" off \
+		RECOMPILE "recompile the SML compiler - implies EVERYTHING" off
+
+.include <bsd.port.pre.mk>
+
 .if (${ARCH} == "i386")
 MLARCH=		x86
+DISTFILES+=	boot.x86-unix.tgz
 #.elif (${ARCH} == "alpha")
 #MLARCH=		alpha32
+#DISTFILES+=	boot.alpha32-unix.tgz
 .endif
+DISTFILES+=	ml-yacc.tgz ml-lex.tgz lexgen.tgz smlnj-lib.tgz cml.tgz \
+		MLRISC.tgz ckit.tgz heap2asm.tgz
 
 PLIST_SUB=	MLARCH=${MLARCH}
 
@@ -50,16 +46,21 @@ PLIST_SUB=	MLARCH=${MLARCH}
 WITH_EVERYTHING?=	${WITH_RECOMPILE}
 .endif
 
+.if defined(WITH_EVERYTHING)
+DISTFILES+=	ml-burg.tgz ml-nlffi-lib.tgz ml-nlffigen.tgz smlnj-c.tgz \
+		eXene.tgz cm.tgz compiler.tgz system.tgz tools.tgz
+.endif
+
 MLROOTRELATIVE=	smlnj
 MLROOT=		${PREFIX}/${MLROOTRELATIVE}
 MLBIN=		${MLROOT}/bin
 MLLIB=		${MLROOT}/lib
 MLSRCSBASE=	ckit src
-MLSRCSRELATIVE=	${MLROOTRELATIVE}/ckit ${MLROOTRELATIVE}/src
 MLSRCS=		${MLROOT}/ckit ${MLROOT}/src
-MLEXE=		sml ml-yacc ml-lex ml-build ml-makedepend
+MLTARGETS=	heap2asm
+MLEXE=		sml ml-yacc lexgen ml-lex ml-build ml-makedepend heap2exec
 .if defined(WITH_EVERYTHING)
-MLTARGETS=	ml-burg eXene src-smlnj \
+MLTARGETS+=	ml-burg eXene src-smlnj \
 		ml-nlffi-lib ml-nlffigen nowhere pgraph-util
 MLEXE+=		ml-burg ml-nlffigen nowhere
 PLIST=		${WRKDIR}/.PLIST
@@ -93,13 +94,14 @@ post-extract:
 # lines of config/targets. Dependency details are handled by
 # src/system/smlnj/installer using config/dependencies.
 
-.if defined(WITH_EVERYTHING)
 do-configure:
-	${ECHO_CMD} -n > ${WRKDIR}/.tmp.sed
+.if defined(MLTARGETS)
+	${ECHO_CMD} -n > "${WRKDIR}/.tmp.sed"
 .for t in ${MLTARGETS}
-	${ECHO_CMD} '/^#request[ 	]+${t}$$/s/^#//' >> ${WRKDIR}/.tmp.sed
+	${ECHO_CMD} '/^#request[ 	]+${t}$$/s/^#//' >> "${WRKDIR}/.tmp.sed"
 .endfor
-	${SED} -i .default -E -f ${WRKDIR}/.tmp.sed "${WRKDIR}/config/targets"
+	${SED} -i .default -E -f "${WRKDIR}/.tmp.sed" "${WRKDIR}/config/targets"
+.endif
 # Recompilation requires ml-lex and ml-yacc. All requested targets
 # will be built later using the recompiled core system after
 # removing targets.customized. See "do-build" below.
@@ -108,7 +110,6 @@ do-configure:
 	  ${ECHO_CMD} "request	ml-lex" && \
 	  ${ECHO_CMD} "request	src-smlnj" ) \
 	> "${WRKDIR}/config/targets.customized"
-.endif
 .endif
 
 # The build target patches, builds, and installs the system within WRKDIR.
@@ -129,11 +130,11 @@ AUXDEVNULL!=	if [ -w ${AUXDEV}/null ]; then ${ECHO_CMD} -n ${AUXDEV}/null; \
 		else ${ECHO_CMD} -n '${WRKDIR}/.devnull'; fi
 
 MLRUNTIMEPATCHES!=	cd ${FILESDIR} && \
-			( ${LS} do-patch-src::runtime::* 2> ${AUXDEVNULL} || \
+			( ${LS} do-patch-src_runtime_* 2> ${AUXDEVNULL} || \
 			  ${TRUE} )
 .if defined(WITH_EVERYTHING)
 MLSOURCEPATCHES!=	cd ${FILESDIR} && \
-			( ${LS} do-patch-src::* 2> ${AUXDEVNULL} || \
+			( ${LS} do-patch-src_* 2> ${AUXDEVNULL} || \
 			  ${TRUE} )
 .else
 MLSOURCEPATCHES=
@@ -183,6 +184,9 @@ MLSRCEXCLUDEREGEX=	-e '^(@dirrm\ )?${MLROOTRELATIVE}/src/runtime'
 .for excl in ${MLNOINSTALL}
 MLSRCEXCLUDEREGEX+=	-e '/${excl}$$' -e '/${excl}/'
 .endfor
+MLPATCHPATHREGEX=	-E -e 's%(^|[^_])_([^_]|$$)%\1/\2%g' \
+			   -e 's%(^|[^_])__([^_]|$$)%\1_\2%g' \
+			   -e 's%(^|[^_])___([^_]|$$)%\1/_\2%g'
 
 pre-install:
 	@${ECHO} -n '(* Computing package list ...'
@@ -190,11 +194,12 @@ pre-install:
 	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/src/\1%' \
 		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/src/\1%' \
 		> ${MLRUNTIMEPLIST}
-	-@cd ${FILESDIR} && \
-	( ${LS} do-patch-src::runtime::* 2> ${AUXDEVNULL} ) | \
-	${SED} -e 's%::%/%g' | \
-	${SED} -E -e 's%^do-patch-(.*)%${MLROOTRELATIVE}/\1.orig%' \
+.for p in ${MLRUNTIMEPATCHES}
+	@${ECHO_CMD} '${p}' | \
+	${SED} ${MLPATCHPATHREGEX} | \
+	${SED} -E -e 's%^do-patch-(src/.*)%${MLROOTRELATIVE}/\1.orig%' \
 	>> ${MLRUNTIMEPLIST}
+.endfor
 	@cd "${WRKDIR}" && ( \
 	( ${FIND} -s -d ${MLSRCSBASE} \! -type d | \
 	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
