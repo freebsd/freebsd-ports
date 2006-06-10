@@ -7,19 +7,24 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	2.1.8
-CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/	\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/	\
-		http://www.ircd-ratbox.org/download/		\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/
+PORTVERSION=	2.2.2
+CATEGORIES=	irc
+MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
+		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
+		http://www.ircd-ratbox.org/download/testing/		\
+		ftp://ftp.parodius.com/pub/ircd-ratbox/testing/		\
+		http://www.ircd-ratbox.org/download/old/		\
+		ftp://ftp.parodius.com/pub/ircd-ratbox/old/
+PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	shaun@inerd.com
-COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
+COMMENT=	An advanced, stable IRC daemon, used on EFnet ('testing' release)
 
 MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
+
+CONFLICTS=	ircd-ratbox-[0-9]*
 
 LOGDIR=		/var/log/${PORTNAME}
 RUNDIR=		/var/run/${PORTNAME}
@@ -64,6 +69,7 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if defined(WITH_IPV6)
+CATEGORIES+=	ipv6
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -99,10 +105,6 @@ CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 CONFIGURE_ARGS+=	--with-topiclen=${TOPICLEN}
 .endif
 
-.if defined(MAXCLIENTS)
-CONFIGURE_ARGS+=	--with-maxclients=${MAXCLIENTS}
-.endif
-
 #-----------------------------------------------------------------------
 
 pre-configure:
@@ -110,7 +112,6 @@ pre-configure:
 	@${ECHO_MSG} "This port has additional options:"
 	@${ECHO_MSG} "    NICKLEN     [default 9, max 50]    - Max nick length on server"
 	@${ECHO_MSG} "    TOPICLEN    [default 120, max 390] - Max topic length"
-	@${ECHO_MSG} "    MAXCLIENTS  [default 3000]         - Max clients server can handle"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Press CTRL+C now if you wish to set them."
 	@${ECHO_MSG} ""
