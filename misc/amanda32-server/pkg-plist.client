@@ -1,4 +1,6 @@
 @unexec if cmp -s /etc/amandates /dev/null; then rm -f /etc/amandates; fi
+dumper/generic-dumper
+dumper/gnutar
 lib/libamanda-%%SHLIBVER%%.so
 lib/libamanda.so
 lib/libamanda.la
@@ -8,9 +10,9 @@ lib/libamclient.so
 lib/libamclient.la
 lib/libamclient.a
 libexec/amanda/amandad
-libexec/amanda/amqde
 libexec/amanda/calcsize
 libexec/amanda/killpgrp
+libexec/amanda/noop
 libexec/amanda/patch-system
 libexec/amanda/rundump
 libexec/amanda/runtar
@@ -106,3 +108,4 @@ share/examples/amanda/disklist
 @dirrm share/examples/amanda
 @dirrm share/amanda
 @dirrm libexec/amanda
+@dirrm dumper
