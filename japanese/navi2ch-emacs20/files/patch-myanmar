@@ -1,5 +1,5 @@
 --- navi2ch-multibbs.el.orig	Sun Sep 12 12:55:25 2004
-+++ navi2ch-multibbs.el	Sun Jun  4 23:09:29 2006
++++ navi2ch-multibbs.el	Sat Jun 10 08:38:54 2006
 @@ -242,14 +242,8 @@
  (defun navi2ch-multibbs-send-message-retry-confirm (board)
    (let ((func (or (navi2ch-fboundp
@@ -17,13 +17,12 @@
  
  (defun navi2ch-multibbs-send-message
    (from mail message subject board article)
-@@ -279,10 +273,12 @@
+@@ -279,10 +273,11 @@
  					    navi2ch-net-http-proxy-password))
  	 (tries 2)			; 送信試行の最大回数
  	 (message-str "send message...")
 -	 (result 'retry))
 +	 (result 'retry)
-+	 (case-fold-search nil)
 +	 (additional-params nil))
      (dotimes (i tries)
 -      (let ((proc (funcall send from mail message subject bbs key time
@@ -33,24 +32,31 @@
  	(message message-str)
  	(setq result (funcall success-p proc))
  	(cond ((eq result 'retry)
-@@ -291,6 +287,16 @@
+@@ -291,6 +286,23 @@
  		   (insert (decode-coding-string
  			    (navi2ch-net-get-content proc)
  			    navi2ch-coding-system))
 +		   (goto-char (point-min))
 +		   (setq additional-params nil)
-+		   (while (re-search-forward "<input +type=\"?hidden\"? +\
-+name=\\(\"\\([^\"]*\\)\"\\|[^\" \n]*\\) +\
-+value=\\(\"\\([^\"]*\\)\"\\|[^\" \n]+\\) *>"
-+					     nil t)
-+		     (let ((name (or (match-string 2) (match-string 1)))
-+			   (value (or (match-string 4) (match-string 3))))
-+		       (push (cons name value)
-+			     additional-params)))
++		   (let ((case-fold-search t))
++		     (while (re-search-forward "<input\\>[^>]+>" nil t)
++		       (let ((str (match-string 0)) name value
++			     (re
++			      "\\<%s=\\(\"\\([^\"]*\\)\"\\|[^\"> \r\n\t]*\\)"))
++			 (and (string-match (format re "name") str)
++			      (setq name (or (match-string 2 str)
++					     (match-string 1 str)))
++			      (string-match (format re "value") str)
++			      (setq value (or (match-string 2 str)
++					      (match-string 1 str)))
++			      (setq name (navi2ch-replace-html-tag name)
++				    value (navi2ch-replace-html-tag value))
++			      (push (cons name value)
++				    additional-params)))))
  		   (navi2ch-replace-html-tag-with-buffer)
  		   (goto-char (point-min))
  		   (while (re-search-forward "[ \t]*\n\\([ \t]*\n\\)*" nil t)
-@@ -410,10 +416,9 @@
+@@ -410,10 +422,9 @@
  	list))))
  
  (defun navi2ch-2ch-send-message
@@ -62,7 +68,7 @@
  	(param-alist (list
  		      (cons "submit" "書き込む")
  		      (cons "FROM"   (or from ""))
-@@ -424,21 +429,20 @@
+@@ -424,21 +435,20 @@
  		      (if subject
  			  (cons "subject" subject)
  			(cons "key"    key)))))
@@ -71,8 +77,8 @@
 -		     (navi2ch-compare-times (cdr spid) (current-time)))
 -	    (car spid)))
 +    (dolist (x additional-params)
-+      (setq param-alist
-+	    (navi2ch-put-alist (car x) (cdr x) param-alist)))
++      (unless (assoc (car x) param-alist)
++	(push x param-alist)))
      (let ((proc
  	   (navi2ch-net-send-request
  	    url "POST"
