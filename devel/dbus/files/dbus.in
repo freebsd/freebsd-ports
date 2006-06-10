@@ -21,9 +21,15 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/dbus-daemon"
 pidfile="/var/run/dbus/${name}.pid"
 
-stop_postcmd=stop_postcmd
+start_precmd="dbus_prestart"
+stop_postcmd="dbus_poststop"
 
-stop_postcmd()
+dbus_prestart()
+{
+    mkdir -p $(dirname $pidfile)
+}
+
+dbus_poststop()
 {
     rm -f $pidfile
 }
