@@ -7,6 +7,7 @@
 
 PORTNAME=	kbtv
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia python kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/
 EXTRACT_SUFX=	.tbz
@@ -15,7 +16,7 @@ MAINTAINER=	danny@ricin.com
 COMMENT=	KDE TV viewer for FreeBSD
 
 RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
-BUILD_DEPENDS=	${RUN_DEPENDS} swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	${RUN_DEPENDS} swig1.3:${PORTSDIR}/devel/swig13
 
 USE_BZIP2=	YES
 USE_KDELIBS_VER=3
