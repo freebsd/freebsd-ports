@@ -1983,6 +1983,7 @@ e17-theme-carbon	ports/x11-themes/e17-theme-carbon
 e17-theme-cthulhain	ports/x11-themes/e17-theme-cthulhain
 e17-theme-detour	ports/x11-themes/e17-theme-detour
 e17-theme-gant	ports/x11-themes/e17-theme-gant
+e17-theme-japan2007	ports/x11-themes/e17-theme-japan2007
 e2fsprogs	ports/sysutils/e2fsprogs
 e2fsprogs-libuuid	ports/misc/e2fsprogs-libuuid
 e3		ports/editors/e3
