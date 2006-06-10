@@ -1987,6 +1987,7 @@ e17-theme-japan2007	ports/x11-themes/e17-theme-japan2007
 e17-theme-milky	ports/x11-themes/e17-theme-milky
 e17-theme-neptun	ports/x11-themes/e17-theme-neptun
 e17-theme-simply_white	ports/x11-themes/e17-theme-simply_white
+e17-theme-winter	ports/x11-themes/e17-theme-winter
 e2fsprogs	ports/sysutils/e2fsprogs
 e2fsprogs-libuuid	ports/misc/e2fsprogs-libuuid
 e3		ports/editors/e3
