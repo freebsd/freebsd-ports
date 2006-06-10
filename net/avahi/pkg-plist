@@ -51,6 +51,7 @@ include/avahi-compat-howl/salt/salt.h
 include/avahi-compat-howl/salt/signal.h
 include/avahi-compat-howl/salt/socket.h
 include/avahi-compat-howl/salt/time.h
+%%LIBDNS%%include/avahi-compat-libdns_sd/dns_sd.h
 include/avahi-core/core.h
 include/avahi-core/log.h
 include/avahi-core/lookup.h
@@ -74,12 +75,17 @@ lib/libavahi-glib.a
 lib/libavahi-glib.la
 lib/libavahi-glib.so
 lib/libavahi-glib.so.1
+%%LIBDNS%%lib/libdns_sd.a
+%%LIBDNS%%lib/libdns_sd.la
+%%LIBDNS%%lib/libdns_sd.so
+%%LIBDNS%%lib/libdns_sd.so.1
 lib/libhowl.a
 lib/libhowl.la
 lib/libhowl.so
 lib/libhowl.so.0
 libdata/pkgconfig/avahi-client.pc
 libdata/pkgconfig/avahi-compat-howl.pc
+%%LIBDNS%%libdata/pkgconfig/avahi-compat-libdns_sd.pc
 libdata/pkgconfig/avahi-core.pc
 libdata/pkgconfig/avahi-glib.pc
 sbin/avahi-daemon
@@ -101,6 +107,7 @@ sbin/avahi-dnsconfd
 @dirrm %%DATADIR%%
 @dirrm include/avahi-glib
 @dirrm include/avahi-core
+%%LIBDNS%%@dirrm include/avahi-compat-libdns_sd
 @dirrm include/avahi-compat-howl/salt
 @dirrm include/avahi-compat-howl/rendezvous
 @dirrm include/avahi-compat-howl/discovery
