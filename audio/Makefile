@@ -497,6 +497,7 @@
     SUBDIR += shout
     SUBDIR += shoutcast
     SUBDIR += sidplay
+    SUBDIR += sidplay2
     SUBDIR += sidplayer
     SUBDIR += simplemod
     SUBDIR += slimserver
