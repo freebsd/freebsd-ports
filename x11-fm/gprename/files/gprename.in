@@ -6,4 +6,4 @@ then
 else
         dir="$1";
 fi
-perl PREFIX/share/gprename/gprename.pl PREFIX/share/gprename/ $dir &
+perl %%DATADIR%%/bin/gprename.pl %%DATADIR%%/ $dir &
