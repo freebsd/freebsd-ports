@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://ibiblio.org/pub/linux/system/emulators/wine/ \
@@ -24,6 +24,7 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		glut.4:${PORTSDIR}/graphics/libglut
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		LIBS=-Wl,-rpath,${PREFIX}/lib/wine \
