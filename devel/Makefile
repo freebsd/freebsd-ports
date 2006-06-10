@@ -1352,6 +1352,7 @@
     SUBDIR += p5-enum
     SUBDIR += p5-iCal-Parser
     SUBDIR += p5-mixin
+    SUBDIR += p5-orz
     SUBDIR += p5-prefork
     SUBDIR += p5-version
     SUBDIR += p65
