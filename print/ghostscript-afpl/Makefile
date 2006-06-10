@@ -50,7 +50,8 @@ EXTRACT_ONLY=	${GS_SRCS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AFPL Postscript interpreter
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
@@ -79,7 +80,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf13.1 \
 		ps2ps.1 eps2eps.1
 
-XCFLAGS=	-DUPD_SIGNAL=0 -DSTDINT_TYPES_DEFINED=1
+XCFLAGS=	-DUPD_SIGNAL=0 -DHAVE_HYPOT=1 -DSYS_TYPES_HAS_STDINT_TYPES=1
 
 .if defined(A4)
 XCFLAGS+=	-DA4

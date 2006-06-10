@@ -1,10 +1,17 @@
---- lib/ps2epsi.orig	Mon Nov 28 02:17:38 2005
-+++ lib/ps2epsi	Mon Nov 28 02:17:45 2005
-@@ -1,7 +1,8 @@
- #!/bin/sh
- # $Id: ps2epsi,v 1.7.2.1 2002/04/22 20:18:24 giles Exp $
+--- lib/ps2epsi.orig	Sat Jan 28 06:58:27 2006
++++ lib/ps2epsi	Sat May 27 12:37:07 2006
+@@ -5,14 +5,8 @@
+ # executable name set in the makefile
+ GS_EXECUTABLE=gs
  
--tmpfile=/tmp/ps2epsi$$
+-# try to create a temporary file securely
+-tmpdir=/tmp/ps2epsi.$$
+-(umask 077 && mkdir $tmpdir)
+-if ! test -d $tmpdir; then
+-	echo "failed: could not create temporary file"
+-	exit 1
+-fi
+-tmpfile=$tmpdir/ps2epsi$$
 +tmpfile=`mktemp -t ps2epsi.XXXXXX || exit 1`
 +trap "rm -rf $tmpfile" 0 1 2 3 7 13 15
  
