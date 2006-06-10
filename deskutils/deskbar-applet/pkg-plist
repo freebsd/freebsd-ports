@@ -98,11 +98,11 @@ lib/deskbar-applet/handlers/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/defs.py
 %%PYTHON_SITELIBDIR%%/deskbar/defs.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/defs.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.py
-%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/evolution/_evolution.la
-%%PYTHON_SITELIBDIR%%/deskbar/evolution/_evolution.so
+%%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.py
+%%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.pyc
+%%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/__init__.pyo
+%%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/_evolution.la
+%%EVO%%%%PYTHON_SITELIBDIR%%/deskbar/evolution/_evolution.so
 %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/gnomedesktop/__init__.pyo
