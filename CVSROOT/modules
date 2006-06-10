@@ -5049,6 +5049,7 @@ kash3		ports/math/kash3
 kaskade		ports/math/kaskade
 kaspaliste	ports/print/kaspaliste
 katalog		ports/misc/katalog
+katchtv		ports/multimedia/katchtv
 kate-plugins	ports/editors/kate-plugins
 katoob		ports/arabic/katoob
 kavmilter	ports/mail/kavmilter
