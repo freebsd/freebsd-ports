@@ -1981,6 +1981,7 @@ e17-theme-blue_default	ports/x11-themes/e17-theme-blue_default
 e17-theme-blue_eyed	ports/x11-themes/e17-theme-blue_eyed
 e17-theme-carbon	ports/x11-themes/e17-theme-carbon
 e17-theme-cthulhain	ports/x11-themes/e17-theme-cthulhain
+e17-theme-detour	ports/x11-themes/e17-theme-detour
 e2fsprogs	ports/sysutils/e2fsprogs
 e2fsprogs-libuuid	ports/misc/e2fsprogs-libuuid
 e3		ports/editors/e3
