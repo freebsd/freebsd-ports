@@ -16,7 +16,6 @@ MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Peer-to-peer network game engine
 
 DIST_SUBDIR=	python
-USE_GZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-py2play

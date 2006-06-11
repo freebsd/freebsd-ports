@@ -20,7 +20,6 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
 
 DIST_SUBDIR=	python
-USE_GZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}

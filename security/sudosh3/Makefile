@@ -18,7 +18,6 @@ COMMENT=		A sudo shell
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
 
-USE_GZIP=		yes
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"

@@ -26,7 +26,6 @@ APACHEDIR=	${LOCALBASE}/www/data
 INSTALLDIR=	${APACHEDIR}/photo
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_GZIP=	no
 
 do-install:
 		${MKDIR} ${INSTALLDIR}
