@@ -1,12 +1,11 @@
 bin/cron
 bin/crontab
 bin/mcron
-share/guile/site/mcron/config.scm
-share/guile/site/mcron/core.scm
-share/guile/site/mcron/environment.scm
-share/guile/site/mcron/job-specifier.scm
-share/guile/site/mcron/redirect.scm
-share/guile/site/mcron/vixie-specification.scm
-share/guile/site/mcron/vixie-time.scm
-@dirrm share/guile/site/mcron
-@dirrmtry share/guile/site
+%%DATADIR%%/config.scm
+%%DATADIR%%/core.scm
+%%DATADIR%%/environment.scm
+%%DATADIR%%/job-specifier.scm
+%%DATADIR%%/redirect.scm
+%%DATADIR%%/vixie-specification.scm
+%%DATADIR%%/vixie-time.scm
+@dirrm %%DATADIR%%
