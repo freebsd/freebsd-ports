@@ -1,5 +1,5 @@
 --- ./code/unix/linux_glimp.c.orig	Sun Apr 30 11:32:56 2006
-+++ ./code/unix/linux_glimp.c	Wed Jun  7 19:34:25 2006
++++ ./code/unix/linux_glimp.c	Sun Jun 11 17:26:26 2006
 @@ -631,8 +631,14 @@
  
            dx = ((int)event.xmotion.x - mwx);
