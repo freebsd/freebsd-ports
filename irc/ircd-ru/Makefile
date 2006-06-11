@@ -9,7 +9,7 @@ PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
 PORTREVISION=	3
 CATEGORIES=	irc russian
-MASTER_SITES=	ftp://ftp.ircd.ru/pub/ircd-RU/ ftp://ftp.ircd.ru/pub/ircd-RU/old/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	ircd-RU-${PORTVERSION}-02-stable
 
 MAINTAINER=	ports@FreeBSD.org
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=--enable-select
 .endif
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
+BROKEN=		Does not compile on amd64
 .endif
 
 post-patch:
