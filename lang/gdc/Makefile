@@ -98,6 +98,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^\(gcc_d_include_dir\).*|\1 = ${GDC_INC}|' \
 		${GCCDIR}/d/Make-lang.in
+	@${REINPLACE_CMD} -e \
+		's|etc/c/stlsoft||' ${GCCDIR}/d/phobos/Makefile.in
 
 pre-configure:
 	@(cd ${SRCDIR} && contrib/gcc_update --touch)

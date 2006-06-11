@@ -151,7 +151,6 @@ include/d/%%GCC_VER%%/%%CONF_TARGET%%/gcc/configunix.d
 include/d/%%GCC_VER%%/%%CONF_TARGET%%/phobos-ver-syms
 lib/libgphobos.a
 lib/libgphobos.spec
-@dirrm include/d/%%GCC_VER%%/etc/c/stlsoft
 @dirrm include/d/%%GCC_VER%%/etc/c/zlib
 @dirrm include/d/%%GCC_VER%%/etc/c
 @dirrm include/d/%%GCC_VER%%/etc
