@@ -19,14 +19,17 @@
 
 name="c_icap"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/bin/c-icap"
 
+command="%%PREFIX%%/bin/c-icap"
+pidfile="/var/run/c-icap.pid"
 required_dirs="/var/tmp"
 required_files="%%PREFIX%%/etc/c-icap.conf"
-stop_postcmd="rm -f /var/run/c-icap.pid"
 
-# set default
-c_icap_enable=${c_icap_enable:-"NO"}
+stop_postcmd="rm -f $pidfile"
 
+# read settings, set default values
 load_rc_config "$name"
+: ${c_icap_enable="NO"}
+: ${c_icap_flags=""}
+
 run_rc_command "$1"

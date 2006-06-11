@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	c-icap
-PORTVERSION=	220505
-PORTREVISION=	1
+PORTVERSION=	030606
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 				http://bio3k.softboard.ru/uploads/arch/
@@ -26,7 +26,9 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/c_icap
 
 SUB_FILES=	pkg-install pkg-deinstall
 
-OPTIONS=	CLAMAV "With srv_clamav service" on
+OPTIONS=	CLAMAV "Build with srv_clamav service" on \
+			LARGE_FILES "Enable large files support" off \
+			IPV6 "Enable IPv6 support" off
 #		PERL "With Perl support" off
 
 .include <bsd.port.pre.mk>
@@ -52,6 +54,18 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 .else
 PLIST_SUB+=	CLAMAV="@comment "
 CONFIGURE_ARGS+=	--without-clamav
+.endif
+
+.if defined(WITH_LARGE_FILES)
+CONFIGURE_ARGS+=	--enable-large-files
+.else
+CONFIGURE_ARGS+=	--disable-large-files
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-extract:
