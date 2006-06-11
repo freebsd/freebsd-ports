@@ -132,7 +132,6 @@ www/data-dist/egroupware/addressbook/templates/idsociety/images/navbar.png
 www/data-dist/egroupware/addressbook/templates/jerryr/images/navbar-over.png
 www/data-dist/egroupware/addressbook/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/addressbook/templates/jerryr/index.tpl
-www/data-dist/egroupware/addressbook/templates/jerryr/view.tpl
 www/data-dist/egroupware/addressbook/templates/literati/images/navbar.png
 www/data-dist/egroupware/admin/check_acl.php
 www/data-dist/egroupware/admin/doc/README.ldapman
@@ -499,6 +498,7 @@ www/data-dist/egroupware/calendar/egroupware.org/holidays.PL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.PT.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.RU.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.SE.csv
+www/data-dist/egroupware/calendar/egroupware.org/holidays.SK.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.SL.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.TH.csv
 www/data-dist/egroupware/calendar/egroupware.org/holidays.TW.csv
@@ -636,7 +636,6 @@ www/data-dist/egroupware/calendar/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/calendar/templates/jerryr/images/planner.png
 www/data-dist/egroupware/calendar/templates/jerryr/images/today.png
 www/data-dist/egroupware/calendar/templates/jerryr/images/week.png
-www/data-dist/egroupware/calendar/templates/jerryr/images/year.png
 www/data-dist/egroupware/calendar/templates/literati/images/month.png
 www/data-dist/egroupware/calendar/templates/literati/images/navbar.png
 www/data-dist/egroupware/calendar/templates/literati/images/planner.png
@@ -701,14 +700,11 @@ www/data-dist/egroupware/doc/modernize.php
 www/data-dist/egroupware/doc/rpm-build/.rpmmacros
 www/data-dist/egroupware/doc/rpm-build/build-egw-rpms.sh
 www/data-dist/egroupware/doc/rpm-build/class.uiasyncservice.inc.php.patch
-www/data-dist/egroupware/doc/rpm-build/egroupware-apps.spec
-www/data-dist/egroupware/doc/rpm-build/egroupware-fedora.spec
+www/data-dist/egroupware/doc/rpm-build/egroupware-fedora4.spec
 www/data-dist/egroupware/doc/rpm-build/egroupware-suse-php4.spec
 www/data-dist/egroupware/doc/rpm-build/egroupware-suse-php5.spec
-www/data-dist/egroupware/doc/rpm-build/egroupware.spec
 www/data-dist/egroupware/doc/rpm-build/egroupware_fedora.tar.bz2
-www/data-dist/egroupware/doc/rpm-build/egroupware_suse_php4.tar.bz2
-www/data-dist/egroupware/doc/rpm-build/egroupware_suse_php5.tar.bz2
+www/data-dist/egroupware/doc/rpm-build/egroupware_suse.tar.bz2
 www/data-dist/egroupware/doc/rpm-build/manageheader.php.patch
 www/data-dist/egroupware/emailadmin/Changelog
 www/data-dist/egroupware/emailadmin/doc/main.cf
@@ -763,6 +759,8 @@ www/data-dist/egroupware/emailadmin/templates/default/listservers.tpl
 www/data-dist/egroupware/emailadmin/templates/default/nextMatch.tpl
 www/data-dist/egroupware/emailadmin/templates/default/options.tpl
 www/data-dist/egroupware/emailadmin/templates/default/smtprouting.tpl
+www/data-dist/egroupware/emailadmin/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/emailadmin/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/etemplate/doc/dbtools.jpg
 www/data-dist/egroupware/etemplate/doc/et_media/inc/class.et_media.inc.php
 www/data-dist/egroupware/etemplate/doc/et_media/index.php
@@ -1307,6 +1305,7 @@ www/data-dist/egroupware/infolog/setup/phpgw_it.lang
 www/data-dist/egroupware/infolog/setup/phpgw_iw.lang
 www/data-dist/egroupware/infolog/setup/phpgw_ja.lang
 www/data-dist/egroupware/infolog/setup/phpgw_ko.lang
+www/data-dist/egroupware/infolog/setup/phpgw_lt.lang
 www/data-dist/egroupware/infolog/setup/phpgw_lv.lang
 www/data-dist/egroupware/infolog/setup/phpgw_nl.lang
 www/data-dist/egroupware/infolog/setup/phpgw_no.lang
@@ -1860,6 +1859,8 @@ www/data-dist/egroupware/mydms/templates/default/images/treeview/workstation.png
 www/data-dist/egroupware/mydms/templates/default/images/usericon.gif
 www/data-dist/egroupware/mydms/templates/default/viewDocument.tpl
 www/data-dist/egroupware/mydms/templates/default/viewDocument.tpll
+www/data-dist/egroupware/mydms/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/mydms/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/mydms/themes/default/DocumentPageEnd.html
 www/data-dist/egroupware/mydms/themes/default/DocumentPageStart.html
 www/data-dist/egroupware/mydms/themes/default/EndBox.html
@@ -4716,6 +4717,7 @@ www/data-dist/egroupware/phpgwapi/templates/jerryr/images/close.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/delete.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/divSideboxHeader-background.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/divSideboxHeader2-background.png
+www/data-dist/egroupware/phpgwapi/templates/jerryr/images/down.button.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/down.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/dragarea.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/dragarea_left.png
@@ -4820,6 +4822,7 @@ www/data-dist/egroupware/phpgwapi/templates/jerryr/images/tabs-start1.gif
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/tabs-start1.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/textSideBox-background.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/textSideBoxIcon-background.png
+www/data-dist/egroupware/phpgwapi/templates/jerryr/images/up.button.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/up.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/valid-html401.png
 www/data-dist/egroupware/phpgwapi/templates/jerryr/images/valid-xhtml11.png
@@ -5918,6 +5921,8 @@ www/data-dist/egroupware/projectmanager/templates/default/preference_colspan.tpl
 www/data-dist/egroupware/projectmanager/templates/default/pricelist.edit.xet
 www/data-dist/egroupware/projectmanager/templates/default/pricelist.list.xet
 www/data-dist/egroupware/projectmanager/templates/default/roles.xet
+www/data-dist/egroupware/projectmanager/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/projectmanager/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/redirect.php
 www/data-dist/egroupware/registration/doc/README
 www/data-dist/egroupware/registration/doc/TODO
@@ -5977,6 +5982,8 @@ www/data-dist/egroupware/registration/templates/default/personal_info.tpl
 www/data-dist/egroupware/registration/templates/default/tos.tpl
 www/data-dist/egroupware/registration/templates/default/welcome_message.tpl
 www/data-dist/egroupware/registration/templates/idots/layout.tpl
+www/data-dist/egroupware/registration/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/registration/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/resources/README
 www/data-dist/egroupware/resources/TODO
 www/data-dist/egroupware/resources/inc/class.bo_acl.inc.php
@@ -6020,6 +6027,8 @@ www/data-dist/egroupware/resources/templates/default/images/trans16x16.png
 www/data-dist/egroupware/resources/templates/default/images/view_acc.png
 www/data-dist/egroupware/resources/templates/default/show.xet
 www/data-dist/egroupware/resources/templates/default/showdetails.xet
+www/data-dist/egroupware/resources/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/resources/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/rpc.php
 www/data-dist/egroupware/sambaadmin/Changelog
 www/data-dist/egroupware/sambaadmin/inc/class.bosambaadmin.inc.php
@@ -6047,6 +6056,8 @@ www/data-dist/egroupware/sambaadmin/templates/default/editworkstation.tpl
 www/data-dist/egroupware/sambaadmin/templates/default/images/navbar.png
 www/data-dist/egroupware/sambaadmin/templates/default/listworkstations.tpl
 www/data-dist/egroupware/sambaadmin/templates/default/nextmatchtable.tpl
+www/data-dist/egroupware/sambaadmin/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/sambaadmin/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/set_box.php
 www/data-dist/egroupware/setup/admin_account.php
 www/data-dist/egroupware/setup/applications.php
@@ -6567,6 +6578,8 @@ www/data-dist/egroupware/timesheet/templates/default/images/navbar.png
 www/data-dist/egroupware/timesheet/templates/default/index.xet
 www/data-dist/egroupware/timesheet/templates/default/preference_acl_row.tpl
 www/data-dist/egroupware/timesheet/templates/default/preference_colspan.tpl
+www/data-dist/egroupware/timesheet/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/timesheet/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/wiki/action/admin.php
 www/data-dist/egroupware/wiki/action/conflict.php
 www/data-dist/egroupware/wiki/action/diff.php
@@ -6887,8 +6900,13 @@ www/data-dist/egroupware/workflow/templates/default/user_processes.tpl
 www/data-dist/egroupware/workflow/templates/default/user_tabs.tpl
 www/data-dist/egroupware/workflow/templates/default/user_viewinstance.tpl
 www/data-dist/egroupware/workflow/templates/default/view_workitem.tpl
+www/data-dist/egroupware/workflow/templates/jerryr/images/navbar-over.png
+www/data-dist/egroupware/workflow/templates/jerryr/images/navbar.png
 www/data-dist/egroupware/xajax.php
 www/data-dist/egroupware/xmlrpc.php
+www/data-dist/egroupware/home/templates/jerryr/portal.tpl
+@dirrm www/data-dist/egroupware/workflow/templates/jerryr/images
+@dirrm www/data-dist/egroupware/workflow/templates/jerryr
 @dirrm www/data-dist/egroupware/workflow/templates/default/images
 @dirrm www/data-dist/egroupware/workflow/templates/default/css
 @dirrm www/data-dist/egroupware/workflow/templates/default
@@ -6929,6 +6947,8 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/wiki/doc
 @dirrm www/data-dist/egroupware/wiki/action
 @dirrm www/data-dist/egroupware/wiki
+@dirrm www/data-dist/egroupware/timesheet/templates/jerryr/images
+@dirrm www/data-dist/egroupware/timesheet/templates/jerryr
 @dirrm www/data-dist/egroupware/timesheet/templates/default/images
 @dirrm www/data-dist/egroupware/timesheet/templates/default
 @dirrm www/data-dist/egroupware/timesheet/templates
@@ -7026,12 +7046,16 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/setup/inc
 @dirrm www/data-dist/egroupware/setup/doc
 @dirrm www/data-dist/egroupware/setup
+@dirrm www/data-dist/egroupware/sambaadmin/templates/jerryr/images
+@dirrm www/data-dist/egroupware/sambaadmin/templates/jerryr
 @dirrm www/data-dist/egroupware/sambaadmin/templates/default/images
 @dirrm www/data-dist/egroupware/sambaadmin/templates/default
 @dirrm www/data-dist/egroupware/sambaadmin/templates
 @dirrm www/data-dist/egroupware/sambaadmin/setup
 @dirrm www/data-dist/egroupware/sambaadmin/inc
 @dirrm www/data-dist/egroupware/sambaadmin
+@dirrm www/data-dist/egroupware/resources/templates/jerryr/images
+@dirrm www/data-dist/egroupware/resources/templates/jerryr
 @dirrm www/data-dist/egroupware/resources/templates/default/images/resource_icons
 @dirrm www/data-dist/egroupware/resources/templates/default/images
 @dirrm www/data-dist/egroupware/resources/templates/default
@@ -7039,6 +7063,8 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/resources/setup
 @dirrm www/data-dist/egroupware/resources/inc
 @dirrm www/data-dist/egroupware/resources
+@dirrm www/data-dist/egroupware/registration/templates/jerryr/images
+@dirrm www/data-dist/egroupware/registration/templates/jerryr
 @dirrm www/data-dist/egroupware/registration/templates/idots
 @dirrm www/data-dist/egroupware/registration/templates/default/images
 @dirrm www/data-dist/egroupware/registration/templates/default
@@ -7047,6 +7073,8 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/registration/inc
 @dirrm www/data-dist/egroupware/registration/doc
 @dirrm www/data-dist/egroupware/registration
+@dirrm www/data-dist/egroupware/projectmanager/templates/jerryr/images
+@dirrm www/data-dist/egroupware/projectmanager/templates/jerryr
 @dirrm www/data-dist/egroupware/projectmanager/templates/default/images
 @dirrm www/data-dist/egroupware/projectmanager/templates/default
 @dirrm www/data-dist/egroupware/projectmanager/templates
@@ -7452,6 +7480,8 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/news_admin
 @dirrm www/data-dist/egroupware/mydms/themes/default
 @dirrm www/data-dist/egroupware/mydms/themes
+@dirrm www/data-dist/egroupware/mydms/templates/jerryr/images
+@dirrm www/data-dist/egroupware/mydms/templates/jerryr
 @dirrm www/data-dist/egroupware/mydms/templates/default/images/treeview
 @dirrm www/data-dist/egroupware/mydms/templates/default/images/menu
 @dirrm www/data-dist/egroupware/mydms/templates/default/images/buttons
@@ -7567,6 +7597,8 @@ www/data-dist/egroupware/xmlrpc.php
 @dirrm www/data-dist/egroupware/etemplate/doc/et_media
 @dirrm www/data-dist/egroupware/etemplate/doc
 @dirrm www/data-dist/egroupware/etemplate
+@dirrm www/data-dist/egroupware/emailadmin/templates/jerryr/images
+@dirrm www/data-dist/egroupware/emailadmin/templates/jerryr
 @dirrm www/data-dist/egroupware/emailadmin/templates/default/images
 @dirrm www/data-dist/egroupware/emailadmin/templates/default
 @dirrm www/data-dist/egroupware/emailadmin/templates
