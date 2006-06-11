@@ -1,0 +1,104 @@
+#!/bin/sh
+#
+# Show status of LSI Logic's MegaRAID RAID controllers.
+#
+# $FreeBSD$
+#
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+# Defaults.
+: ${daily_status_amr_raid_enable:=NO}
+: ${daily_status_amr_raid_megarc_enable:=NO}
+
+amrstat=${amrstat:-%%PREFIX%%/sbin/amrstat}
+megarc=${megarc:-%%PREFIX%%/sbin/megarc}
+logdir=${logdir:-/var/log}
+
+case "$daily_status_amr_raid_enable" in
+    [Yy][Ee][Ss])
+	echo
+	echo 'Checking status of amr(4) raid controllers:'
+
+	rc=0
+
+	# Checking each controller.
+	for ctrl in `ls -1 /dev/amr[0-9]* | sed -e 's,/dev/amr,,g'`
+	     do
+		echo ""
+		echo "Controller ${ctrl}:"
+		ctrl_log=${logdir}/amr_raid_${ctrl}
+		if test ! -f ${ctrl_log}.today; then
+			touch ${ctrl_log}.today
+		fi
+		mv -f ${ctrl_log}.today ${ctrl_log}.yesterday
+		${amrstat} -c ${ctrl} -g > ${ctrl_log}.today
+		if test -x ${megarc}; then
+		case "$daily_status_amr_raid_megarc_enable" in
+		    [Yy][Ee][Ss])
+			${megarc} -dispCfg -a0 | col -b | grep -v Scanning | \
+			    sed -e '/^A/s/.*/        .../g' >> ${ctrl_log}.today
+		    ;;
+		*)  ;;
+		esac
+		fi
+		lines=`wc -l ${ctrl_log}.today | awk '{ print $1 }'`
+		diff -u -${lines} ${ctrl_log}.yesterday ${ctrl_log}.today
+		raid_rc=$?
+		if test $raid_rc -eq 0; then
+			cat  ${ctrl_log}.today
+		fi
+		[ $rc -eq 0 ] && [ $raid_rc -ne 0 ] && rc=3
+
+		# Checking alarms.
+		#if test -x ${megarc}; then
+		#case "$daily_status_amr_raid_megarc_enable" in
+		#    [Yy][Ee][Ss])
+		#	echo "Alarms:"
+		#	alarms_log=${logdir}/amr_raid_alarms
+		# ----------------------------------------
+		# There seems to be following option but does not seem to
+		# show anything sor me so I cannot verify that it is what
+		# I expect:
+		#	${megarc} -getNVRAMLog -a${ctrl}
+		# For me IPMI has some logs though:
+		#   DATE sel[1]:
+		#     A Drive - Slot/Connector - Fault - Drive Array - Slot 2
+		# ----------------------------------------
+		# Keep following commented out until someone confirms that it
+		# does something useful for him.
+		# ----------------------------------------
+		#	if test ! -f ${alarms_log}.today; then
+		#		touch ${alarms_log}.today
+		#	fi
+		#	mv -f ${alarms_log}.today ${alarms_log}.yesterday
+		#	raid_rc=0
+		#	${megarc} -getNVRAMLog -a${ctrl} > ${alarms_log}.today
+		#	cmp -zs ${alarms_log}.yesterday ${alarms_log}.today
+		#	raid_rc=$?
+		#	if test $raid_rc -ne 0; then
+		#		diff -u ${alarms_log}.yesterday ${alarms_log}.today
+		#	else
+		#		echo "  No new alarms."
+		#	fi
+		#	[ $rc -eq 0 ] && [ $raid_rc -ne 0 ] && rc=3
+		#    ;;
+		#*)  ;;
+		#esac
+		#fi
+
+	     done
+	;;
+
+    *)  rc=0;;
+esac
+
+exit $rc
+
+# end

@@ -1,0 +1,4 @@
+This port provides an utility for getting information from
+LSI Logic's MegaRAID RAID controllers.
+
+WWW: http://lists.freebsd.org/pipermail/freebsd-scsi/2006-February/002294.html
