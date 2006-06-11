@@ -246,6 +246,7 @@
     SUBDIR += lft
     SUBDIR += libconnect
     SUBDIR += libdnet
+    SUBDIR += libexosip2
     SUBDIR += libgnetwork
     SUBDIR += libmms
     SUBDIR += libnet
