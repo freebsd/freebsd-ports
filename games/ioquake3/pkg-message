@@ -1,0 +1,10 @@
+==============================================================================
+
+If you have sound problems with SDL try setting the variable "s_sdlSpeed" to
+"44100". It will be saved to the configuration file.
+
+If you have sound problems with OpenAL recompile without it. Also the OPENAL
+option causes the program to omit restoring gamma and mouse sensivity after
+exitting.
+
+==============================================================================

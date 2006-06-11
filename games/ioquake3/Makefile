@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ioquake3
-PORTVERSION=	1.33
+PORTVERSION=	1.33.${SVN_REV}
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -35,7 +35,7 @@ MAKE_ENV+=	DEFAULT_BASEDIR="${Q3DIR}" LIBDIR="${LIBDIR}" \
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-SVN_REV=	777
+SVN_REV=	797
 VM_ARCHS=	amd64 i386 powerpc
 
 .include <bsd.port.pre.mk>
@@ -139,11 +139,9 @@ do-install:
 .endif
 
 post-install:
-.if defined(WITH_SDL_AUDIO) || defined(WITH_OPENAL)
 	@${ECHO_CMD}
-	@${ECHO_CMD} "WARNING: if you have sound problems try recompiling without SDL_AUDIO and OPENAL options." | ${FMT}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
-.endif
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

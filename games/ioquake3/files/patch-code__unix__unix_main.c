@@ -1,5 +1,5 @@
 --- ./code/unix/unix_main.c.orig	Sun Feb 26 18:22:12 2006
-+++ ./code/unix/unix_main.c	Wed Jun  7 19:34:25 2006
++++ ./code/unix/unix_main.c	Sun Jun 11 17:26:26 2006
 @@ -774,6 +774,7 @@
    char  curpath[MAX_OSPATH];
    char  fname[MAX_OSPATH];
