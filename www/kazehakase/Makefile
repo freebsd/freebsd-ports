@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GECKO=	firefox mozilla seamonkey xulrunner
+USE_GECKO=	firefox mozilla seamonkey xulrunner<->thunderbird firefox-devel<->seamonkey
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
@@ -31,7 +31,6 @@ MAN1=		kazehakase.1
 
 .if defined(WITH_MIGEMO)
 USE_RUBY=	yes
-USE_PERL=	yes
 BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .endif
@@ -84,8 +83,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|thunderbird|xulrunner|' \
-		 ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/migemo|${LOCALBASE}/share/migemo|; \
 		s|=beginner|=medium|' ${WRKSRC}/etc/kzrc
 .if defined(WITH_MIGEMO)
