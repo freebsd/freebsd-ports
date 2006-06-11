@@ -11,7 +11,7 @@ DISTVERSION=	1.0.2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}
-DISTNAME=	${PORTNAME}-source-${DISTVERSION}
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
