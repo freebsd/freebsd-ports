@@ -1,0 +1,55 @@
+# New ports collection makefile for:	mednafen
+# Date created:		2006-02-28
+# Whom:			Charlie & <root@bsd.org.pe>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mednafen
+PORTVERSION=	0.6.1
+CATEGORIES=	emulators games
+MASTER_SITES=	http://mednafen.com/releases/
+
+MAINTAINER=	acardenas@bsd.org.pe
+COMMENT=	Portable multi-system emulator
+
+LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_SDL=	sdl net
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+WRKSRC=	${WRKDIR}/${PORTNAME}
+SUB_FILES=	pkg-message
+
+OPTIONS=	NLS	"Native Language Support"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+FLAG_NLS=	true
+.endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Documentation/mednafen.html ${DOCSDIR}
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

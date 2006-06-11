@@ -1,0 +1,5 @@
+bin/mednafen
+%%NLS%%share/locale/es/LC_MESSAGES/mednafen.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/mednafen.mo
+%%PORTDOCS%%%%DOCSDIR%%/mednafen.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
