@@ -1069,6 +1069,7 @@ cdiff		ports/textproc/cdiff
 cdircmp		ports/sysutils/cdircmp
 cdk		ports/devel/cdk
 cdlabelgen	ports/print/cdlabelgen
+cdo		ports/science/cdo
 cdoc		ports/devel/cdoc
 cdonkey		ports/net-p2p/cdonkey
 cdparanoia	ports/audio/cdparanoia
