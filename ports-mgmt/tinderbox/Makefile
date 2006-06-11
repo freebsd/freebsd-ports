@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -16,20 +15,24 @@ COMMENT=	Port build tinderbox system
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
-		cvsup:${PORTSDIR}/net/cvsup-without-gui
 
-OPTIONS=	PGSQL "With pgsql" On \
-		MYSQL "With mysql" Off
+OPTIONS=	PGSQL "With pgsql" Off \
+		MYSQL "With mysql" On \
+		CSUP  "Use csup for updates" On \
+		CVSUP "Use cvsup for updates" Off
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+MAN1=		tc-configCcache.1 tc-configDistfile.1 tc-configGet.1 \
+		tc-configJail.1 tc-configTinderd.1 tc-init.1
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_PGSQL) && defined(WITHOUT_MYSQL)
-BROKEN=	Tinderbox is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
+IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
 
 USE_PHP=	session
@@ -40,10 +43,18 @@ USE_PHP+=	pgsql
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
-.if defined(WITH_MYSQL)
+.if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
 USE_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+.endif
+
+.if defined(WITH_CSUP)
+RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
+.endif
+
+.if defined(WITH_CVSUP)
+RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
@@ -55,9 +66,10 @@ post-extract:
 
 post-patch:
 .if defined(WITH_MYSQL)
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's,DB_MAN_PREREQS=.*,DB_MAN_PREREQS="databases/p5-DBD-mysql${MYSQL_VER} databases/mysql${MYSQL_VER}-client",' \
 		${WRKSRC}/lib/setup-mysql.sh
+	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
 .endif
 
 do-install:
@@ -65,6 +77,7 @@ do-install:
 	${CP} -R ${WRKSRC}/* ${PREFIX}/tinderbox/scripts
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
