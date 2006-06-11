@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qpxtool
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,9 +22,6 @@ MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
 
 PLIST_FILES=	bin/qpxtool
 PORTDOCS=	README ChangeLog
-
-post-patch:
-	@${REINPLACE_CMD} 's|};||' ${WRKSRC}/transport.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qpxtool ${PREFIX}/bin
