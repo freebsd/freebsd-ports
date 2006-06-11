@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcd
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
