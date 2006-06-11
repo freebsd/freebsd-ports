@@ -7,7 +7,7 @@
 PORTNAME=	warppipe
 PORTVERSION=	0.3.5b
 CATEGORIES=	net games
-MASTER_SITES=	http://www.warppipe.com/download/
+MASTER_SITES=	http://cubeonline.warppipe.com/download/
 DISTNAME=	WarpPipe-0.3.5-bsd
 
 MAINTAINER=	howells@kde.org
