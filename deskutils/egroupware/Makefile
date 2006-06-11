@@ -6,10 +6,11 @@
 
 PORTNAME=	eGroupWare
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	egroupware
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-102
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A web based GroupWare system
@@ -37,7 +38,7 @@ DEST=	${PREFIX}/www/data-dist/egroupware
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
+	@${FIND} ${WRKSRC} -name .svn -type d | ${XARGS} ${RM} -rf
 
 do-install:
 	-${MKDIR} ${DEST}
