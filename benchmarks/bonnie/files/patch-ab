@@ -1,5 +1,5 @@
---- Bonnie.c.orig	Wed Aug 28 09:23:49 1996
-+++ Bonnie.c	Tue Aug 27 09:12:19 2002
+--- Bonnie.c.orig	Wed Aug 28 18:23:49 1996
++++ Bonnie.c	Sun Jun 11 20:26:29 2006
 @@ -49,7 +49,7 @@
  #define Seeks (4000)
  #define UpdateSeek (10)
@@ -9,6 +9,15 @@
  
  /* labels for the tests, used as an array index */
  typedef enum
+@@ -146,7 +146,7 @@
+   /* size is in meg, rounded down to multiple of Chunk */
+   size *= (1024 * 1024);
+   size = Chunk * (size / Chunk);
+-  fprintf(stderr, "File '%s', size: %ld\n", name, size);
++  fprintf(stderr, "File '%s', size: %qd\n", name, (int64_t) size);
+ 
+   /* Fill up a file, writing it a char at a time with the stdio putc() call */
+   fprintf(stderr, "Writing with putc()...");
 @@ -179,7 +179,7 @@
      if (bufindex == Chunk / IntSize)
        bufindex = 0;
@@ -32,10 +41,10 @@
        { /* until Mom says stop */
 -        doseek((long) (random() % (size / Chunk)), fd,
 +        off_t seekto;
-+        if (size < ((off_t)1 << 32))
++        if (size / Chunk < (1 << 25))
 +          seekto = random() % (size / Chunk);
 +        else
-+          seekto = ((off_t)random() << 32 + random()) % (size / Chunk);
++          seekto = (((off_t)random() << 31) + random()) % (size / Chunk);
 +        doseek(seekto, fd,
  	  ((lseek_count++ % UpdateSeek) == 0));
  	if (read(seek_control[0], seek_tickets, 1) != 1)
