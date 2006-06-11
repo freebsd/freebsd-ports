@@ -35,7 +35,5 @@ bin/xaralx%%PKGNAMESUFFIX%%
 %%EXAMPLESDIR%%/Templates/animation.xar
 @dirrm %%EXAMPLESDIR%%/Designs
 @dirrm %%EXAMPLESDIR%%/Templates
-@dirrm %%EXAMPLESDIR%%/TextDesigns
-@dirrm %%EXAMPLESDIR%%/testfiles
 @dirrm %%EXAMPLESDIR%%
 @dirrmtry %%DESKTOPDIR%%
