@@ -664,6 +664,7 @@
     SUBDIR += xmountains
     SUBDIR += xmrm
     SUBDIR += xnview
+    SUBDIR += xoris
     SUBDIR += xpaint
     SUBDIR += xpcd
     SUBDIR += xpdf
