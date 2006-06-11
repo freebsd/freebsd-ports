@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	galaxyhack
-PORTVERSION=	1.62
+PORTVERSION=	1.66
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
-		${PORTNAME}-1.61-data${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	AI script based strategy game
@@ -19,45 +19,55 @@ COMMENT=	AI script based strategy game
 LIB_DEPENDS=	boost_filesystem.3:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-WRKSRC=		${WRKDIR}/src
-
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_SDL=	gfx image mixer sdl
+WRKSRC=		${WRKDIR}/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src
 
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+OPTIONS=	FLEETS "Install additional fleets" off \
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 ALL_TARGET=	${PORTNAME}
 SUB_FILES=	${PORTNAME}-sh
-DATADIRS=	graphics fleets music gamedata standardpictures
+FLEETS_FILE=	gh_fleets_170406.zip
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && ${OSVERSION} < 500000
+IGNORE=		does not compile on FreeBSD < 5.X (needs isspace() function)
+.endif
+
+.if defined(WITH_FLEETS)
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+DISTFILES+=	${FLEETS_FILE}
+PLIST_SUB+=	FLEETS=""
+.else
+PLIST_SUB+=	FLEETS="@comment "
+.endif
+
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/libexec
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/settings.dat ${DATADIR}
-.for d in ${DATADIRS}
-	${CP} -R ${WRKDIR}/${PORTNAME}/${d} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/settings.dat ${DATADIR}
+.for d in fleets gamedata graphics music standardpictures
+	${CP} -R ${WRKSRC}/${d} ${DATADIR}
 .endfor
+.if defined(WITH_FLEETS)
+	@${UNZIP_CMD} -o ${_DISTDIR}/${FLEETS_FILE} -d ${DATADIR}/fleets
+.endif
 
 post-install:
-# Fix permissions.
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${FIND} ${DATADIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	@${FIND} ${DATADIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} ${BINMODE}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" && ${OSVERSION} < 500000
-IGNORE=		does not compile on FreeBSD < 5.X
-.endif
-
-# Enable/disable compilation optimizations.
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	OPTIMIZED_CFLAGS=-O3
-.endif
 
 .include <bsd.port.post.mk>
