@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	3.3.5
+PORTVERSION=	3.3.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
