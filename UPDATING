@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060611:
+  AFFECTS: users of www/c-icap
+  AUTHOR: b3k@mail.ru
+
+  The format of file c-icap.magic has changed.  If you use your own
+  c-icap.magic file remember to convert it to the new format.  It can be done
+  using the convert_old_magic.pl script located in the contrib directory.
+
 20060605:
   AFFECTS: users of net/kdenetwork3
   AUTHOR: kde@FreeBSD.org
