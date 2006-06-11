@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zatacka
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,12 +32,16 @@ post-patch:
 		${WRKSRC}/fx.cpp
 	@${REINPLACE_CMD} -e 's|main_screen.jpg|${DATADIR}/main_screen.jpg|' \
 		${WRKSRC}/fx.cpp
+	@${REINPLACE_CMD} -e 's|maps/|${DATADIR}/maps/|' ${WRKSRC}/fx.cpp
+	@${REINPLACE_CMD} -e '/opendir/ s|maps|${DATADIR}/maps|' ${WRKSRC}/fx.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/main_screen.jpg ${WRKSRC}/barrier.jpg \
 		${WRKSRC}/font.ttf ${DATADIR}
+	${MKDIR} ${DATADIR}/maps
+	${INSTALL_DATA} ${WRKSRC}/maps/*.jpg ${DATADIR}/maps
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
