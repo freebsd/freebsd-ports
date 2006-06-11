@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	gossip
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK2 Jabber Instant Messaging client
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth \
-		dbus-1.2:${PORTSDIR}/devel/dbus
+		dbus-1.2:${PORTSDIR}/devel/dbus \
+		aspell.16:${PORTSDIR}/textproc/aspell
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -24,6 +28,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gnomedocutils
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-dbus=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
