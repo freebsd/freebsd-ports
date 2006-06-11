@@ -34,22 +34,4 @@ info/gcc%%SUFFIX%%/dir
 %%JAVA%%@dirrm lib/security
 %%JAVA%%libdata/pkgconfig/libgcj.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
-%%JAVA%%share/libtool/libltdl/COPYING.LIB
-%%JAVA%%share/libtool/libltdl/Makefile.am
-%%JAVA%%share/libtool/libltdl/Makefile.in
-%%JAVA%%share/libtool/libltdl/README
-%%JAVA%%share/libtool/libltdl/acinclude.m4
-%%JAVA%%share/libtool/libltdl/aclocal.m4
-%%JAVA%%share/libtool/libltdl/config-h.in
-%%JAVA%%share/libtool/libltdl/config.guess
-%%JAVA%%share/libtool/libltdl/config.sub
-%%JAVA%%share/libtool/libltdl/configure
-%%JAVA%%share/libtool/libltdl/configure.ac
-%%JAVA%%share/libtool/libltdl/install-sh
-%%JAVA%%share/libtool/libltdl/ltdl.c
-%%JAVA%%share/libtool/libltdl/ltdl.h
-%%JAVA%%share/libtool/libltdl/ltmain.sh
-%%JAVA%%share/libtool/libltdl/missing
-%%JAVA%%@dirrmtry share/libtool/libltdl
-%%JAVA%%@dirrmtry share/libtool
 @comment Insert PLIST.lib here

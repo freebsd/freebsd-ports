@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20060603
+PORTREVISION=	20060610
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -101,6 +101,7 @@ PLIST_SUB+=	FORTRAN="@comment "
 .if ! defined(WITHOUT_JAVA)
 CONFLICTS=	gcc-4.1.*
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
+BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
 # some 4.x and 5.x systems, which the following works around. PR 81788.
