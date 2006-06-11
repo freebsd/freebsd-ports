@@ -4,7 +4,6 @@ MASTER_SITE_SUBDIR?=	teams/art.gnome.org/themes/metacity
 DIST_SUBDIR=	gnome2
 
 NO_BUILD=	yes
-USE_SIZE=	yes
 
 REASON=	Themes may contain artwork not done by the author. \
 	Keep FreeBSD safe if the theme author violated copyrights.

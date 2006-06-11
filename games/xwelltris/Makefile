@@ -15,7 +15,6 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	3D tetris-like game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_SIZE=	yes
 PLIST_FILES=	bin/xwelltris \
 		share/xwelltris/board2.gif \
 		share/xwelltris/font2.gif \
