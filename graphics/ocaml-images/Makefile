@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/
@@ -37,11 +37,19 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	\
 	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-	LDFLAGS="${LDFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"
+	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include --includedir=${X11BASE}/include
 USE_GMAKE=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}
+
+#the default docsdir gets expanded to ${PREFIX}/share/doc/images
+#which isn't of much help when you are searching for the package docs
+DOCSDIR=	${PREFIX}/share/doc/ocaml-images
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Announce Announce-2.2 CHANGES INSTALL LICENSE doc
+.endif
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -52,6 +60,17 @@ pre-everything::
 .endif
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} -n ">> Installing documentation..."
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${FIND} doc | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${INSTALL_DATA} ${WRKSRC}/Announce ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/Announce-2.2 ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/
+	@${ECHO_MSG} " [DONE]"
+.endif
 	@${FIND} ${PREFIX}/lib/ocaml/camlimages -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/camlimages" >> ${TMPPLIST}
