@@ -50,8 +50,10 @@ share/locale/bg/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bn/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ca/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/cs/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/cy/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/da/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/de/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/dz/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/el/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/en_CA/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/en_GB/LC_MESSAGES/gnome-doc-utils.mo
@@ -67,6 +69,7 @@ share/locale/hu/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/id/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/it/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ja/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/ka/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ko/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/lt/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/nb/LC_MESSAGES/gnome-doc-utils.mo
@@ -136,6 +139,8 @@ share/xml2po/empty.py
 share/xml2po/empty.pyc
 share/xml2po/gs.py
 share/xml2po/gs.pyc
+share/xml2po/ubuntu.py
+share/xml2po/ubuntu.pyc
 @dirrm share/xml2po
 @dirrm share/xml/gnome/xslt/xsldoc
 @dirrm share/xml/gnome/xslt/gettext
@@ -153,6 +158,8 @@ share/xml2po/gs.pyc
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/omf/gnome-doc-xslt
 @dirrm share/gnome/omf/gnome-doc-make
 @dirrm share/gnome/help/gnome-doc-xslt/C
