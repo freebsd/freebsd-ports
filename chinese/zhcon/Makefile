@@ -16,6 +16,11 @@ COMMENT=	A fast Console Chinese System which supports framebuffer device
 
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
+USE_ICONV=	yes
+# Don't bother to add ".if !defined(WITHOUT_NLS)", zhcon requires libintl
+USE_GETTEXT=	yes
+USE_GETOPT_LONG=	yes
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
