@@ -155,10 +155,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tremulous.xpm ${PREFIX}/share/pixmaps
 
 post-install:
-.if defined(WITH_SDL_AUDIO) || defined(WITH_OPENAL)
 	@${ECHO_CMD}
-	@${ECHO_CMD} "WARNING: if you have sound problems try recompiling without SDL_AUDIO and OPENAL options." | ${FMT}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
-.endif
 
 .include <bsd.port.post.mk>
