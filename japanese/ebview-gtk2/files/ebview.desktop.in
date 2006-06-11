@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Terminal=false
+Name=EBView
+Name[ja]=EBView
+Comment=EPWING Dictionary Browser
+Comment[ja]=EPWING辞書ブラウザ
+Exec=%%PREFIX%%/bin/ebview
+TryExec=%%PREFIX%%/bin/ebview
+Icon=ebview.xpm
+Type=Application
+Categories=GTK;Application;Utility;
