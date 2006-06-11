@@ -150,6 +150,7 @@
     SUBDIR += clisp-hyperspec
     SUBDIR += cmake
     SUBDIR += cmunge
+    SUBDIR += cobf
     SUBDIR += cocktail
     SUBDIR += codeblocks
     SUBDIR += codeville
