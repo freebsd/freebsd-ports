@@ -7,7 +7,7 @@
 
 PORTNAME=	XaraLX
 PORTVERSION?=	0.5r1175
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
 DISTFILES?=	${PORTNAME}Src-${PORTVERSION}.tar.bz2
