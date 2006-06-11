@@ -2,4 +2,6 @@ bin/zatacka
 %%DATADIR%%/barrier.jpg
 %%DATADIR%%/font.ttf
 %%DATADIR%%/main_screen.jpg
+%%DATADIR%%/maps/map1.jpg
+@dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%

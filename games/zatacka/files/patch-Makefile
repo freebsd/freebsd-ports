@@ -1,15 +1,15 @@
---- Makefile.orig	Fri Dec 30 17:27:36 2005
-+++ Makefile	Mon Mar 27 00:52:59 2006
-@@ -4,7 +4,7 @@
- # Copryright: GNU GPL (http://www.gnu.org/copyleft/gpl.html)
- ##----------------------------------------------------------------------------
+--- Makefile.orig	Wed Mar 29 00:08:50 2006
++++ Makefile	Sun Jun 11 15:42:44 2006
+@@ -2,7 +2,7 @@
+ #Copyright by Mage 2006
  rm=/bin/rm -f
+ ln=/bin/ln -s
 -CC= g++ 
 +CXX?= g++ 
  DEFS=  
  PROGNAME= zatacka
  INCLUDES=  -I. 
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
  
  
  DEFINES= $(INCLUDES) $(DEFS) -DSYS_UNIX=1
@@ -18,7 +18,7 @@
  
  SRCS = main.cpp fx.cpp SDL_prim.c 
  
-@@ -20,12 +20,12 @@
+@@ -21,12 +21,12 @@
  
  .c.o:
  	$(rm) $@
