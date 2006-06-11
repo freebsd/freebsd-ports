@@ -18,6 +18,7 @@
     SUBDIR += agef
     SUBDIR += ah-tty
     SUBDIR += am-utils
+    SUBDIR += amrstat
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += anteater
