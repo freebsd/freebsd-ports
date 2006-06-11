@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tetgen
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.wias-berlin.de/people/si/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
 NO_CDROM=	Tetgen is for academic or personal use only
