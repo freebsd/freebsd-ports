@@ -11,6 +11,601 @@ libexec/galaxyhack
 %%DATADIR%%/fleets/Zenennians/Solar Cruiser.dat
 %%DATADIR%%/fleets/Zenennians/Zenennians.dat
 %%DATADIR%%/fleets/Zenennians/patrolandattack.ai
+%%FLEETS%%%%DATADIR%%/fleets/Attrition/Attrition.dat
+%%FLEETS%%%%DATADIR%%/fleets/Attrition/Bait.dat
+%%FLEETS%%%%DATADIR%%/fleets/Attrition/EndGame.dat
+%%FLEETS%%%%DATADIR%%/fleets/Attrition/EndGameBackup.dat
+%%FLEETS%%%%DATADIR%%/fleets/Attrition/killem.ai
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Assault.ai
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Assault.dat
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Avarice.dat
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Bomber.dat
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Defender.dat
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Flag ship.dat
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/Interceptor.dat
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/bomber.ai
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/escort.ai
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/flagship.ai
+%%FLEETS%%%%DATADIR%%/fleets/Avarice/frigate.ai
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/Beholders.dat
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/DeadlySight.dat
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/Observer.dat
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/TheAllSeeing.dat
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/deadlysight.ai
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/observer.ai
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/theallseeing.ai
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/blue/capship/big.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/blue/frigate/med.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/blue/smallship/sm.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/green/capship/big.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/green/frigate/med.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/green/smallship/sm.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/red/capship/big.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/red/frigate/med.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/red/smallship/sm.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/yellow/capship/big.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/yellow/frigate/med.png
+%%FLEETS%%%%DATADIR%%/fleets/Beholders/unitpictures/yellow/smallship/sm.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/Carcinogeneticans.dat
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/Double-Helix.dat
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/Malignant.dat
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/Tumour.dat
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/carcfighterattack.ai
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/carcfriggeneral.ai
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/frigate/carcinfrig1.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/frigate/carcinfrig1.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/frigate/carcinfrig1.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/frigate/carcinfrig1.png
+%%FLEETS%%%%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Cowards.dat
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Cruiser Group 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Cruiser Group 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Interceptors.ai
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Interceptors.dat
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Minis.ai
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Minis.dat
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Pott.dat
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/Spziokles.ai
+%%FLEETS%%%%DATADIR%%/fleets/Cowards/cruiser1.ai
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Connator.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Defensanator.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Dhaoians.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Fraganator.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Seekanator.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Strafanator.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Terranator.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/Torpedanator.dat
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/dhaosdefense.ai
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/dhaosescort.ai
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/dhaosfrigs.ai
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/dhaoshunter.ai
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/dhaostorp.ai
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/blue/capship/dhaos-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/blue/frigate/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/blue/smallship/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/green/capship/dhaos-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/green/frigate/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/green/smallship/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/red/capship/dhaos-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/red/frigate/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/red/smallship/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/yellow/capship/dhaos-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/yellow/frigate/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Dhaoians/unitpictures/yellow/smallship/dhaos.png
+%%FLEETS%%%%DATADIR%%/fleets/Everest/Everest.dat
+%%FLEETS%%%%DATADIR%%/fleets/Everest/heavy.dat
+%%FLEETS%%%%DATADIR%%/fleets/Everest/lame.ai
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Allotrope.dat
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Amphiprotic.dat
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Anion.dat
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Cation.dat
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Crystalysed.dat
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Fereans.dat
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Pincermovement.ai
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/Sedimented.dat
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/bombercode.ai
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/defineandrecall.ai
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/hold.ai
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/patrolandattack.ai
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/recall.ai
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/blue/capship/Fereanscapital.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/blue/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/blue/smallship/ferean1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/blue/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/green/capship/Fereanscapital.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/green/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/green/smallship/ferean1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/green/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/capship/Fereanscapital.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/carcin1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/ferean1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/humanoid-ss.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/kasper-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/kasper-ss-2.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/kasper-ss-3.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/kpovieta_ft1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/ss1-hshape-j.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/red/smallship/ss2-xshape-j.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/yellow/capship/Fereanscapital.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/yellow/smallship/carcin2.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/yellow/smallship/ferean1.png
+%%FLEETS%%%%DATADIR%%/fleets/Fereans/unitpictures/yellow/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Ghost v1/Ghost v1.dat
+%%FLEETS%%%%DATADIR%%/fleets/Ghost v1/Ghost.dat
+%%FLEETS%%%%DATADIR%%/fleets/Ghost v1/Spectre.dat
+%%FLEETS%%%%DATADIR%%/fleets/Ghost v1/Wraith.dat
+%%FLEETS%%%%DATADIR%%/fleets/Ghost v1/ghost.ai
+%%FLEETS%%%%DATADIR%%/fleets/Ghost v1/spectre.ai
+%%FLEETS%%%%DATADIR%%/fleets/Ghost v1/wraith.ai
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/Haamu.dat
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/Hirvikankaalaiset.dat
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/Kalman Lehto.dat
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/Partio Vartio.dat
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/Piikki.dat
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/Reppana.dat
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/emo_eteen.ai
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/emo_piiloon.ai
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/keski_partio.ai
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/pieni_iskija.ai
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/sumun.ai
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/sumus.ai
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/capship/kasper-capital-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/capship/kasper-capital-2.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/capship/kasper-capital-3.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/capship/kpovieta_cp1.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/frigate/kasper-frigate-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/frigate/kasper-frigate-2.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/frigate/kasper-frigate-3.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/frigate/kpovieta_fr1.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship/kasper-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship/kasper-ss-2.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship/kasper-ss-3.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship/kpovieta_ft1.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship/ss1-hshape-j.png
+%%FLEETS%%%%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship/ss2-xshape-j.png
+%%FLEETS%%%%DATADIR%%/fleets/IR Evadies/Evadie.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR Evadies/Evadies.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR Evadies/IR Evadies.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR Evadies/Large Caps.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR Evadies/Small Caps.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR Evadies/carrier.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR Evadies/fleet.txt
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/IR2 Hive Swarmer.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/IR2 Lesser Hive.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/IR2 Queen.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/IR2 The Swarm.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/ir2_hive_queen.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/ir2_hive_swarmer.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/blue/capship/hive-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/blue/frigate/hive-frigate1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/blue/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/green/capship/hive-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/green/frigate/hive-frigate1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/green/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/red/capship/hive-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/red/frigate/hive-frigate1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/red/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/yellow/capship/hive-cap-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/yellow/frigate/hive-frigate1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR2 The Swarm/unitpictures/yellow/smallship/hive-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/IR3 Pincer096/IR3 Carrier.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR3 Pincer096/IR3 Carrier.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR3 Pincer096/IR3 Pincer096.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR3 Pincer096/IR3 Striker.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR3 Pincer096/IR3 Striker.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/Backup Predator.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/Bait.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/Homebase.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/Homebase.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/IR4 Fishers096.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/Predator.ai
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/Predator.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/Small Homebase.dat
+%%FLEETS%%%%DATADIR%%/fleets/IR4 Fishers096/bait.ai
+%%FLEETS%%%%DATADIR%%/fleets/Kamikaza/Airship.dat
+%%FLEETS%%%%DATADIR%%/fleets/Kamikaza/Gods wind.dat
+%%FLEETS%%%%DATADIR%%/fleets/Kamikaza/Kamikaza.dat
+%%FLEETS%%%%DATADIR%%/fleets/Kamikaza/kamikaza.ai
+%%FLEETS%%%%DATADIR%%/fleets/Kpovieta/Kpovieta.dat
+%%FLEETS%%%%DATADIR%%/fleets/Kpovieta/Kpovieta_base2.dat
+%%FLEETS%%%%DATADIR%%/fleets/Kpovieta/Kpovieta_frigate1.dat
+%%FLEETS%%%%DATADIR%%/fleets/Kpovieta/Kpovieta_ft1.dat
+%%FLEETS%%%%DATADIR%%/fleets/Kpovieta/dhaosfrigs.ai
+%%FLEETS%%%%DATADIR%%/fleets/Kpovieta/kdhaosdefense.ai
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/CapShip.ai
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/CapShip.dat
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/CapShip2.dat
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/FreeGate.dat
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/MiserableStingers.dat
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders.ai
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders.dat
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders2.ai
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders2.dat
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders3.ai
+%%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders3.dat
+%%FLEETS%%%%DATADIR%%/fleets/Morennians/movetocapship.ai
+%%FLEETS%%%%DATADIR%%/fleets/Morennians/movetoslow.ai
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/Bomber.dat
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/Carrier.dat
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/Escort.dat
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/Interceptor.dat
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/Omicron.dat
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/Vanguard.dat
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/bomber.ai
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/escort.ai
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/interceptor.ai
+%%FLEETS%%%%DATADIR%%/fleets/Omicron/vanguard.ai
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/Lesser Odin.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/OHara.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/Odin.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/Olaf.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/Orbital V2.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/Orkut.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/bomber.ai
+%%FLEETS%%%%DATADIR%%/fleets/Orbital V2/fighter.ai
+%%FLEETS%%%%DATADIR%%/fleets/Orbital/Lesser Odin.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital/Odin.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital/Ohara.ai
+%%FLEETS%%%%DATADIR%%/fleets/Orbital/Ohara.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital/Orbital.dat
+%%FLEETS%%%%DATADIR%%/fleets/Orbital/Orkut.ai
+%%FLEETS%%%%DATADIR%%/fleets/Orbital/Orkut.dat
+%%FLEETS%%%%DATADIR%%/fleets/Poseidon/Frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/Poseidon/Mutterschiff.dat
+%%FLEETS%%%%DATADIR%%/fleets/Poseidon/Poseidon.dat
+%%FLEETS%%%%DATADIR%%/fleets/Poseidon/attack.ai
+%%FLEETS%%%%DATADIR%%/fleets/Poseidon/small.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Buster.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Fighter.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Heavy Cruiser.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Interceptor.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Lancer.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Light Cruiser.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Medium Cruiser.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Quorien Alliance.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Quorien Capital.ai
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Quorien Interceptor.ai
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Quorien Strafer.ai
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Quorien buster.ai
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Quorien fighter.ai
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Quorien lancer.ai
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/Strafer.dat
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/capship/QCap.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/frigate/QFrig.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/frigate/QFrig2.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/smallship/Buster.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/smallship/Lancer.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/capship/QCap.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/frigate/QFrig.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/frigate/QFrig2.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/smallship/Buster.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/smallship/Lancer.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/capship/QCap.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/frigate/QFrig.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/frigate/QFrig2.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/smallship/Buster.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/smallship/Lancer.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/capship/QCap.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/frigate/QFrig.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/frigate/QFrig2.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship/Buster.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship/Lancer.png
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Alpha Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Blue Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Cruiser Group 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Cruiser Group 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Cruiser Group 3.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Destroyer Flotilla 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Destroyer Flotilla 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Destroyer Flotilla 3.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Gamma Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Jengiz.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Red Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/SS-Rings-2.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Sequoia.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Yamato.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/battleship-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/bomber-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/capital-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/cruiser-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/destroyer-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/fighter-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Alpha Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Blue Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Cruiser Group 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Cruiser Group 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Cruiser Group 3.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Destroyer Flotilla 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Destroyer Flotilla 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Destroyer Flotilla 3.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Gamma Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Jengiz.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Red Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/SS-Rings.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Sequoia.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/Yamato.dat
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/bomber-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/capital-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/cruiser-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/SS-Rings/fighter-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Alpha Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Blue Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Cruiser Group 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Cruiser Group 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Cruiser Group 3.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Destroyer Flotilla 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Destroyer Flotilla 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Destroyer Flotilla 3.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Gamma Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Jengiz.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Red Squadron.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Sequoia.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Space Superiority.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/Yamato.dat
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/bomb-desp.ai
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/cap.ai
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/closeaggpatrol.ai
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/cruiser.ai
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/frg-closeaggpatrol.ai
+%%FLEETS%%%%DATADIR%%/fleets/Space Superiority/orkut.ai
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/Executor.dat
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/Star Destroyers.dat
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/Star Wars.dat
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/Tie Bombers.dat
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/Tie Fighters.dat
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/Tie Interceptors.dat
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/bomber-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/capital-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/fighter-ring.ai
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/blue/capship/stardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/blue/capship/superstardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/blue/smallship/tie-bomb.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/blue/smallship/tie-int.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/blue/smallship/tie.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/green/capship/stardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/green/capship/superstardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/green/smallship/tie-bomb.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/green/smallship/tie-int.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/green/smallship/tie.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/red/capship/stardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/red/capship/superstardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/red/smallship/tie-bomb.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/red/smallship/tie-int.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/red/smallship/tie.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/yellow/capship/stardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/yellow/capship/superstardestroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/yellow/smallship/tie-bomb.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/yellow/smallship/tie-int.png
+%%FLEETS%%%%DATADIR%%/fleets/Star Wars/unitpictures/yellow/smallship/tie.png
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/Bugs.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/Killer.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/Reckers.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/Tedingtons.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/bugs.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/intercept3.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/unitpictures/blue/capship/ed1.png
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/unitpictures/green/capship/ed1.png
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/unitpictures/red/capship/ed1.png
+%%FLEETS%%%%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/capship/ed1.png
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/0'bar.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/Ilmavalvonta.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/Luonet.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/Sumuttaja.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/Tikkakoskelaiset.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/keskikoko.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/pieni.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/sumun.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/sumus.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/suuri.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/capship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/capship/kasper-capital-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/frigate/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/frigate/kasper-frigate-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/smallship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/smallship/kasper-ss-1.png
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Dajaspec.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Glaspecca.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Hoespec.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Orcus.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Sulspec.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Thurastes.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Vaas.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/Vecna.dat
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/bomb-desp.ai
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/closeaggpatrol.ai
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/frg-closeaggpatrol.ai
+%%FLEETS%%%%DATADIR%%/fleets/Vaas/kamikaza.ai
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/abd.ai
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/alfa 2.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/alfarninas.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/alpha 1.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/betae.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/bmb.ai
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/delta.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/gamma.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/kappa.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/protector.ai
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/protector.dat
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/unitpictures/blue/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/unitpictures/blue/smallship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/unitpictures/green/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/unitpictures/green/smallship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/unitpictures/red/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/unitpictures/red/smallship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/alfarninas/unitpictures/yellow/smallship/Fighter.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenyn carrier.dat
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenyn destroyer.dat
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenyn hunter.dat
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenyn observer.dat
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenyn.dat
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenynDestroyer.ai
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenynHunter.ai
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/atenynObserver.ai
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/blue/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/blue/frigate/atenyn-destroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/blue/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/blue/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/green/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/green/frigate/atenyn-destroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/green/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/green/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/red/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/red/frigate/atenyn-destroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/red/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/red/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/yellow/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/yellow/frigate/atenyn-destroyer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/yellow/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/yellow/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/capital.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive/capitals.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive/frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive/frigates.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive/hive.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive/small.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive/small.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/blue/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/blue/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/blue/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/blue/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/green/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/green/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/green/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/green/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/red/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/red/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/red/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/red/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/yellow/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/yellow/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/yellow/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive/unitpictures/yellow/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/capital.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/capitals.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/frigates.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/hive10k.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/small.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/small.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/blue/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/blue/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/blue/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/blue/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/green/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/green/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/green/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/green/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/red/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/red/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/red/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/red/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/yellow/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/yellow/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/yellow/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive10k/unitpictures/yellow/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/capital.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/capitals.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/frigates.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/hive1c.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/small.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/small.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/blue/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/blue/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/blue/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/blue/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/green/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/green/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/green/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/green/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/red/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/red/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/red/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/red/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/yellow/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/yellow/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/yellow/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive1c/unitpictures/yellow/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/capital.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/capitals.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/frigates.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/hive4k.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/small.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/small.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/blue/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/blue/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/blue/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/blue/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/green/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/green/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/green/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/green/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/red/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/red/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/red/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/red/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/yellow/capship/Gen.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/yellow/capship/Maj.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/yellow/frigate/frigate.png
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/yellow/smallship/smallship.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/humanoid destroyer.dat
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/humanoid fighter.dat
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/humanoid mothership.dat
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/humanoid_fr.ai
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/humanoid_ss.ai
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/humanoids-readme.txt
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/humanoids.dat
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/blue/frigate/humanoid-fr.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/blue/smallship/humanoid-ss.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/green/capship/humanoid-cs.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/green/frigate/humanoid-fr.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/green/smallship/humanoid-ss.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/red/capship/humanoid-cs.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/red/frigate/humanoid-fr.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/red/smallship/humanoid-ss.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/yellow/capship/humanoid-cs.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/yellow/frigate/humanoid-fr.png
+%%FLEETS%%%%DATADIR%%/fleets/humanoids/unitpictures/yellow/smallship/humanoid-ss.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/atenyn LC.dat
+%%FLEETS%%%%DATADIR%%/fleets/hunters/atenyn carrier.dat
+%%FLEETS%%%%DATADIR%%/fleets/hunters/atenyn hunter.dat
+%%FLEETS%%%%DATADIR%%/fleets/hunters/atenyn observer.dat
+%%FLEETS%%%%DATADIR%%/fleets/hunters/hunter.ai
+%%FLEETS%%%%DATADIR%%/fleets/hunters/hunterRCS.ai
+%%FLEETS%%%%DATADIR%%/fleets/hunters/hunters.dat
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/blue/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/blue/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/blue/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/green/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/green/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/green/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/red/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/red/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/red/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/yellow/capship/atenyn-carrier.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/yellow/frigate/atenyn-observer.png
+%%FLEETS%%%%DATADIR%%/fleets/hunters/unitpictures/yellow/smallship/atenyn-hunter.png
+%%FLEETS%%%%DATADIR%%/fleets/quiters/Qfrig.dat
+%%FLEETS%%%%DATADIR%%/fleets/quiters/qcap.dat
+%%FLEETS%%%%DATADIR%%/fleets/quiters/qgen.ai
+%%FLEETS%%%%DATADIR%%/fleets/quiters/qsmall.dat
+%%FLEETS%%%%DATADIR%%/fleets/quiters/quiters.dat
+%%FLEETS%%%%DATADIR%%/fleets/sitducks/hitduck.ai
+%%FLEETS%%%%DATADIR%%/fleets/sitducks/hitduck.dat
+%%FLEETS%%%%DATADIR%%/fleets/sitducks/sitduck.dat
+%%FLEETS%%%%DATADIR%%/fleets/sitducks/sitducks.dat
 %%DATADIR%%/gamedata/equip.dat
 %%DATADIR%%/graphics/boldfont.png
 %%DATADIR%%/graphics/csexplode10.png
@@ -123,5 +718,355 @@ libexec/galaxyhack
 @dirrm %%DATADIR%%/gamedata
 @dirrm %%DATADIR%%/fleets/Zenennians
 @dirrm %%DATADIR%%/fleets/Morennians
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/sitducks
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/quiters
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive4k
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive1c
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive10k
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/hive
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Vaas
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Space Superiority
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/SS-Rings-2
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/SS-Rings
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Poseidon
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Orbital V2
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Orbital
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Omicron
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Kpovieta
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Kamikaza
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR4 Fishers096
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR3 Pincer096
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/IR Evadies
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Ghost v1
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Everest
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Dhaoians
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Cowards
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Avarice
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Attrition
 @dirrm %%DATADIR%%/fleets
 @dirrm %%DATADIR%%
