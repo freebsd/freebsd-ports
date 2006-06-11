@@ -8,7 +8,7 @@ etc/c-icap.conf.default
 @unexec if cmp -s %D/etc/c-icap.magic %D/etc/c-icap.magic.default; then rm -f %D/etc/c-icap.magic; fi
 etc/c-icap.magic.default
 @exec [ -f %B/c-icap.magic ] || cp -p %%PREFIX%%/%F %B/c-icap.magic
-@unexec if [ -f /var/run/c-icap.pid ]; then %D/etc/rc.d/c_icap stop; fi
+@unexec [ ! -f /var/run/c-icap.pid ] || %D/etc/rc.d/c_icap stop
 include/c_icap/access.h
 include/c_icap/body.h
 include/c_icap/c-icap.h
@@ -37,18 +37,16 @@ include/c_icap/util.h
 lib/c_icap/srv_echo.a
 lib/c_icap/srv_echo.la
 lib/c_icap/srv_echo.so
-lib/c_icap/srv_sguard.a
-lib/c_icap/srv_sguard.la
-lib/c_icap/srv_sguard.so
 lib/c_icap/sys_logger.a
 lib/c_icap/sys_logger.la
 lib/c_icap/sys_logger.so
+lib/c_icap/srv_url_check.a
+lib/c_icap/srv_url_check.so
+lib/c_icap/srv_url_check.la
 @dirrm lib/c_icap
 lib/libicapapi.a
 lib/libicapapi.la
 lib/libicapapi.so.0
 lib/libicapapi.so
 @cwd /
-var/log/c_icap/access.log
-var/log/c_icap/server.log
-@dirrm var/log/c_icap
+@dirrmtry var/log/c_icap
