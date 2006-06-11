@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.59
-PORTREVISION=	2
+PORTVERSION=	1.0.61
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@inerd.com
 COMMENT=	Yet Another Computer Algebra System
 
 LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl
@@ -23,6 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
+
+OPTIONS=	X11	"Build with X11 features"			off \
+ 		GMP	"Use libgmp for arbitrary precision arithmetic" off
 
 .include <bsd.port.pre.mk>
 

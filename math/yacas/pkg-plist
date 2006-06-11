@@ -307,6 +307,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/io.rep/print.ys
 %%DATADIR%%/limit.rep/code.ys
 %%DATADIR%%/limit.rep/code.ys.def
+%%DATADIR%%/limit.rep/om.ys
 %%DATADIR%%/linalg.rep/code.ys
 %%DATADIR%%/linalg.rep/code.ys.def
 %%DATADIR%%/lists.rep/code.ys
@@ -337,6 +338,7 @@ lib/yacas/yacas_gsl.so
 %%DATADIR%%/numbers.rep/code.ys.def
 %%DATADIR%%/numbers.rep/nthroot.ys
 %%DATADIR%%/numbers.rep/nthroot.ys.def
+%%DATADIR%%/numbers.rep/om.ys
 %%DATADIR%%/odesolver.rep/code.ys
 %%DATADIR%%/odesolver.rep/code.ys.def
 %%DATADIR%%/openmath.rep/code.ys
