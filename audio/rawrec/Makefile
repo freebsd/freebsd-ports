@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -lm ${PTHREAD_LIBS}"
-USE_CGG=	3.3+
+USE_GCC=	3.3+
 
 MAN1=	rawrec.1
 MLINKS=	rawrec.1 rawplay.1
