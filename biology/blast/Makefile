@@ -8,7 +8,7 @@
 
 PORTNAME=	wu-blast
 PORTVERSION=	2.0
-PORTREVISION=	20060101
+PORTREVISION=	20060322	# YYYYMMDD
 CATEGORIES=	biology
 MASTER_SITES=	#
 EXTRACT_SUFX=	.tar.Z
@@ -20,8 +20,8 @@ COMMENT=	WU BLAST, a software package for sequence similarity searches
 # the author, this is not a problem.
 IGNOREFILES=	${DISTFILES}
 
-RESTRICTED=	"License does not allow redistribution of binaries. You should first register for the software, which is free for academic use."
-ONLY_FOR_ARCHS=	i386
+RESTRICTED=	License does not allow redistribution of binaries. You should first register for the software, which is free for academic use.
+ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes
 DOWNLOAD_URL=	http://blast.wustl.edu/licensing
@@ -30,7 +30,7 @@ NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	COPYRIGHT FAQ-Indexing.html HISTORY LICENSE Memory.html \
-		README.html parameters.html
+		README.html parameters.html tabular.html
 BINS=		blasta gb2fasta gt2fasta memfile nrdb pam patdb \
 		pir2fasta sp2fasta xdformat xdget
 SCRIPTS=	wu-blastall wu-formatdb
@@ -39,14 +39,26 @@ XDFORMAT_LINKS=	setdb pressdb
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64
+.if ${OSVERSION} >= 600000
+DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-x64
+.elif ${OSVERSION} >= 500001
+DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-x64
+.else
+IGNORE=		There are no WU-BLAST executables for your combination of architecture and FreeBSD version. Consider moving to one of the supported versions for your architecture
+.endif
+.else
 .if ${OSVERSION} < 500000
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-4.x-i686
+.elif ${OSVERSION} >= 50000 && ${OSVERSION} < 600000
+DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-i686
 .else
-DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-i686
+DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-i686
+.endif
 .endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"You must manually fetch ${PORTNAME}${PORTVERSION:S/.0//} for the FreeBSD platform \(${DISTNAME}${EXTRACT_SUFX}\) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again"
+IGNORE=		You must manually fetch ${PORTNAME}${PORTVERSION:S/.0//} for the FreeBSD platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 post-patch:
