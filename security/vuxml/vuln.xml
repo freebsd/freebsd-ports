@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="107e2ee5-f941-11da-b1fa-020039488e34">
+    <topic>libxine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.1_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/20369">
+	  <p>Federico L. Bossi Bonin has discovered a weakness in xine-lib,
+	    which can be exploited by malicious people to crash certain
+	    applications on a user's system.</p>
+	  <p>The weakness is cause due to a heap corruption within the
+	    "xineplug_inp_http.so" plugin when handling an overly large
+	    reply from the HTTP server. This can be exploited to crash
+	    an application that uses the plugin (e.g. gxine).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/20369</url>
+      <cvename>CVE-2006-2802</cvename>
+      <bid>18187</bid>
+    </references>
+    <dates>
+      <discovery>2006-05-31</discovery>
+      <entry>2006-06-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cf3b9a96-f7bb-11da-9156-000e0c2e438a">
     <topic>smbfs -- chroot escape</topic>
     <affects>
