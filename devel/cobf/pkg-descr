@@ -1,0 +1,5 @@
+COBF (aka C-Obfuscator) is a program which manipulates C or C++ sourcefiles
+in a way that they aren't readable by human beings; but they remain
+compilable.
+
+WWW: http://home.arcor.de/bernhard.baier/cobf/
