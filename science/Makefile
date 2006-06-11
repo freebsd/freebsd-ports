@@ -11,6 +11,7 @@
     SUBDIR += buddy
     SUBDIR += cdcl
     SUBDIR += cdf
+    SUBDIR += cdo
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep

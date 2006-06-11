@@ -1,0 +1,40 @@
+# ex:ts=8
+# New ports collection makefile for:	CDO
+# Date created:			29 May 2006
+# Whom:				Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cdo
+PORTVERSION=	0.9.13
+CATEGORIES=	science
+MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
+		http://sunpoet.net/distfiles/
+
+MAINTAINER=	sunpoet@sunpoet.net
+COMMENT=	Climate Data Operators
+
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_ENV=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+PLIST_FILES=	bin/cdo
+
+OPTIONS=	HDF5	"HDF5 support" off \
+		NETCDF	"NETCDF support" off
+
+.if defined(WITH_HDF5)
+CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}/include
+LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
+.endif
+
+.if defined(WITH_NETCDF)
+CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}/include
+LIB_DEPENDS+=		netcdf.1:${PORTSDIR}/science/netcdf
+.endif
+
+.include <bsd.port.mk>
