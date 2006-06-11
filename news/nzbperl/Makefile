@@ -24,6 +24,8 @@ PLIST_FILES=	bin/nzbperl
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
+BROKEN=	cannot fetch
+
 .if defined(WITH_SSL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 .endif
