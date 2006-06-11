@@ -1,13 +1,15 @@
 bin/glchess
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/ai.py
-%%DATADIR%%/builtin_models.py
 %%DATADIR%%/cecp.py
-%%DATADIR%%/chess_board.py
+%%DATADIR%%/chess/__init__.py
+%%DATADIR%%/chess/board.py
+%%DATADIR%%/chess/pgn.py
+%%DATADIR%%/chess/san.py
 %%DATADIR%%/game.py
 %%DATADIR%%/glchess.py
-%%DATADIR%%/pgn.py
-%%DATADIR%%/san.py
-%%DATADIR%%/scene.py
 %%DATADIR%%/gui/chess_view.glade
 %%DATADIR%%/gui/error_dialog.glade
 %%DATADIR%%/gui/glchess.glade
@@ -17,11 +19,27 @@ bin/glchess
 %%DATADIR%%/gui/new_game_simple.glade
 %%DATADIR%%/gui/save_game.glade
 %%DATADIR%%/gui/splashscreen.glade
+%%DATADIR%%/scene/__init__.py
+%%DATADIR%%/scene/builtin_models.py
+%%DATADIR%%/scene/new_models.py
+%%DATADIR%%/scene/opengl.py
+%%DATADIR%%/scene/scene.py
+%%DATADIR%%/scene/texture.py
+%%DATADIR%%/textures/black_board_texture.jpg
+%%DATADIR%%/textures/black_piece_texture.jpg
+%%DATADIR%%/textures/white_board_texture.jpg
+%%DATADIR%%/textures/white_piece_texture.jpg
+%%DATADIR%%/textures/wood_43.jpg
 %%DATADIR%%/ui/__init__.py
-%%DATADIR%%/ui/ui.py
-%%DATADIR%%/ui/gtkui/gtkui.py
 %%DATADIR%%/ui/gtkui/__init__.py
+%%DATADIR%%/ui/gtkui/dialogs.py
+%%DATADIR%%/ui/gtkui/gtkui.py
+%%DATADIR%%/ui/ui.py
 @dirrm %%DATADIR%%/ui/gtkui
 @dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/scene
 @dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%/chess
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

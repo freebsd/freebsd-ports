@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,25 +20,34 @@ USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PORTDOCS=	ChangeLog README TODO
-
 post-patch:
-.for file in glchess ui/gtkui/gtkui.py
+.for file in src/scene/builtin_models.py src/scene/new_models.py \
+	src/scene/opengl.py src/ui/gtkui/dialogs.py src/ui/gtkui/gtkui.py
 	@${REINPLACE_CMD} -e \
-		's|^python |${PYTHON_CMD} |g ; \
-		 s|/usr/share/games/glchess|${DATADIR}|g' ${WRKSRC}/${file}
+		's|/usr/share/games/glchess|${DATADIR}|g' ${WRKSRC}/${file}
 .endfor
+
+do-configure:
+	@${ECHO_CMD} -n > ${WRKSRC}/glchess
+	@${ECHO_CMD} '#!/bin/sh' >> ${WRKSRC}/glchess
+	@${ECHO_CMD} 'exec ${PYTHON_CMD} ${DATADIR}/glchess.py' >> ${WRKSRC}/glchess
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/glchess ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.py ${DATADIR}
-	@${MKDIR} ${DATADIR}/gui
-	${INSTALL_DATA} ${WRKSRC}/ui/gtkui/*.glade ${DATADIR}/gui
+	${INSTALL_DATA} ${WRKSRC}/src/*.py ${DATADIR}
+	@${MKDIR} ${DATADIR}/chess
+	${INSTALL_DATA} ${WRKSRC}/src/chess/*.py ${DATADIR}/chess
+	@${MKDIR} ${DATADIR}/scene
+	${INSTALL_DATA} ${WRKSRC}/src/scene/*.py ${DATADIR}/scene
 	@${MKDIR} ${DATADIR}/ui
-	${INSTALL_DATA} ${WRKSRC}/ui/*.py ${DATADIR}/ui
+	${INSTALL_DATA} ${WRKSRC}/src/ui/*.py ${DATADIR}/ui
 	@${MKDIR} ${DATADIR}/ui/gtkui
-	${INSTALL_DATA} ${WRKSRC}/ui/gtkui/*.py ${DATADIR}/ui/gtkui
+	${INSTALL_DATA} ${WRKSRC}/src/ui/gtkui/*.py ${DATADIR}/ui/gtkui
+	@${MKDIR} ${DATADIR}/gui
+	${INSTALL_DATA} ${WRKSRC}/src/ui/gtkui/*.glade ${DATADIR}/gui
+	@${MKDIR} ${DATADIR}/textures
+	${INSTALL_DATA} ${WRKSRC}/textures/*.* ${DATADIR}/textures
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ChangeLog README TODO
