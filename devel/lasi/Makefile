@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lasi
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel
-MASTER_SITES=	http://eyegene.ophthy.med.umich.edu/lasi/download/
+MASTER_SITES=	http://www.unifont.org/lasi/download/
 
 MAINTAINER=	giffunip@asme.org
 COMMENT=	C++ stream output interface for creating Postscript documents
