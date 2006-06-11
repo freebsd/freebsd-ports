@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	omni-bot
-PORTVERSION=	0.51
-PORTREVISION=	1
+PORTVERSION=	0.52
 CATEGORIES=	games linux
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-enemyterritory-
@@ -39,7 +38,7 @@ PLIST_SUB+=	ETPUB="@comment "
 pre-fetch:
 	@cd ${DISTDIR} && ${FETCH_CMD:S/-A/-/} -o \
 		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		'http://www.omni-bot.de/e107/request.php?175'
+		'http://www.omni-bot.de/e107/request.php?311'
 
 do-build:
 .for f in et etded
