@@ -24,37 +24,41 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+WANT_GNOME=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		xsane.1
 
+#SUB_FILES+=	pkg-message
+
+OPTIONS=	GTK2 "Enable GTK2 support (use GTK1 if turned off)" on \
+		GIMP "Enable GIMP plugin support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_GTK2)
+USE_GNOME=	gtk12
+CONFIGURE_ARGS+=	--disable-gtk2
+.else
+USE_GNOME=	gtk20
+.endif
+
 .if defined(WITH_GIMP)
+SUB_FILES+=	pkg-message
+.if defined(WITHOUT_GTK2)
 LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
-CONFIGURE_ARGS+=	--enable-gimp
+CONFIGURE_ARGS+=	--disable-gimp2
+.else
+LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp
+.endif # WITHOUT_GTK2
 .else
 CONFIGURE_ARGS+=	--disable-gimp
 .endif
 
-.if defined(WITH_GTK2)
-USE_GNOME=	gtk20
-.else
-USE_GNOME=	gtk12
-CONFIGURE_ARGS+=	--disable-gtk2
-.endif
-
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} < 500035
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:C/-O[0-9]*//g}"
-.endif
-
-pre-everything::
-.if !defined(WITH_GIMP)
-	@${ECHO_MSG} "*** Note: XSane can be built with a standalone"
-	@${ECHO_MSG} "*** X scanner interface as well as a GIMP plug-in."
-	@${ECHO_MSG} "*** If you wish to do this, hit Ctrl-C now and use"
-	@${ECHO_MSG} "*** \"WITH_GIMP=yes\""
 .endif
 
 pre-patch:
@@ -62,6 +66,8 @@ pre-patch:
 		-i "" -e 's|\$$(sbindir)||g'
 
 post-install:
-	@${SED} 's:/usr/X11R6:${PREFIX}:' ${PKGMESSAGE}
+.if defined(WITH_GIMP)
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
