@@ -1,0 +1,23 @@
+CDO is a collection of command line Operators to manipulate and analyse Climate
+model Data. Supported file formats are GRIB, netCDF, SERVICE, EXTRA and IEG.
+There are more than 250 operators available. The following table gives a short
+overview about the main categories.
+
+* File information (info, sinfo, diff, ...)
+* File operations (copy, cat, merge, split*, ...)
+* Selection (selcode, selvar, sellevel, seltimestep, ...)
+* Missing values (setctomiss, setmisstoc, setrtomiss)
+* Arithmetic (add, sub, mul, div, ...)
+* Mathematical functions (sqrt, exp, log, sin, cos, ...)
+* Comparision (eq, ne, le, lt, ge, gt, ...)
+* Conditions (ifthen, ifnotthen, ifthenc, ifnotthenc)
+* Field statistic (fldsum, fldavg, fldstd, fldmin, fldmax, ...)
+* Vertical statistic (vertsum, vertavg, vertstd, vertmin, ...)
+* Time range statistic (timavg, yearavg, monavg, dayavg, ...)
+* Ensemble statistic (enssum, ensavg, ensstd, ensmin, ...)
+* Regression (detrend)
+* Field interpolation (remapbil, remapcon, remapdis, ...)
+* Vertical interpolation (ml2pl, ml2hl)
+* Time interpolation (inttime, intyear)
+
+WWW: http://www.mpimet.mpg.de/fileadmin/software/cdo/
