@@ -381,6 +381,7 @@
     SUBDIR += pointless
     SUBDIR += porteasy
     SUBDIR += portell
+    SUBDIR += portless
     SUBDIR += posixtestsuite
     SUBDIR += projectionlib
     SUBDIR += proxyper

@@ -1,0 +1,9 @@
+portless is a small shell script which lets FreeBSD users quickly browse
+port descriptions given the port's name or a glob. Basically to view
+the descriptions of GCC (related) ports you type
+	portless gcc\*
+and portless will display the descriptions of all gcc* ports.
+There are options to display the postinstall messages or Makefiles instead.
+
+- Martin Kammerhofer
+   mkamm@gmx.net

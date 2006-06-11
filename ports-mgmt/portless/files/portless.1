@@ -1,0 +1,108 @@
+.\" Copyright (c) 2006 Martin Kammerhofer
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" @(#)portless.1,v 1.1 2006/06/08 10:10:56 martin Exp
+.\"
+.\" Note: The date here should be updated whenever a non-trivial
+.\" change is made to the manual page.
+.Dd June 8, 2006
+.Dt PORTLESS 1
+.Os
+.Sh NAME
+.Nm portless
+.Nd "quickly browse port descriptions"
+.Sh SYNOPSIS
+.Nm
+.Op Fl dfiMmp
+.Op Fl P Ar pager
+.Ar portglob...
+.Sh DESCRIPTION
+.Nm
+lets FreeBSD users quickly browse port descriptions given the port's
+name or a (shell type) glob.
+.Pp
+The options are as follows:
+.Bl -tag -width ".Fl P Ar pager"
+.It Fl d
+Display the
+.Pa pkg-descr
+file of the port. This is the default.
+.It Fl f
+Take the
+.Ar portglob
+argument literal (not as a shell glob).
+.It Fl i
+Display the
+.Pa distinfo
+file of the port.
+.It Fl M
+Display the
+.Pa Makefile
+file of the port.
+.It Fl m
+Display the
+.Pa pkg-message
+file of the port.
+.It Fl p
+Display the
+.Pa pkg-plist
+file of the port.
+.It Fl P Ar pager
+Use the
+.Ar pager
+program to display the files rather than the program specified by the
+.Ev PAGER
+environment variable or the default of
+.Dq Pa less -e
+\&.
+.El
+.Sh ENVIRONMENT
+The
+.Nm
+command uses the
+.Ev PORTSDIR
+(default:
+.Pa /usr/ports
+) and the
+.Ev PAGER
+(default:
+.Dq Pa less -e
+) environment variables.
+.Sh FILES
+.Bl -tag -width ".Pa /usr/ports/*/*/*" -compact
+.It Pa /usr/ports/*/*/*
+.El
+.Sh EXAMPLES
+The following is an example of a typical usage
+of the
+.Nm
+command:
+.Pp
+.Dl "portless gcc\e*"
+.Sh AUTHOR
+The
+.Nm
+utility and this manual page were written by
+.An Martin Kammerhofer Aq mkamm@gmx.net .
+.\" EOF
