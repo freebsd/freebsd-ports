@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ac3d
-PORTVERSION=	5.0.21
-PORTREVISION=	3
+PORTVERSION=	6.0
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://inivis.swmirror.com/
+MASTER_SITES=	http://www.ac3d.org/ac3d/download/release6/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}lx${PORTVERSION:S/.//g}
+DISTNAME=	${PORTNAME}lx${PORTVERSION:R}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ip@doom.homeunix.org
@@ -26,8 +25,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg 
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .endif
 
-RESTRICTED=	"no distribution permitted"
-NO_CDROM=	${RESTRICTED}
+RESTRICTED=	no distribution permitted
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
@@ -69,21 +67,22 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/plugins/*.tcl ${DATADIR}/plugins
 
 # docs
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENCE ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/IMPORTANT ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/manual
-	${INSTALL_DATA} ${WRKSRC}/manual/*.htm ${DOCSDIR}/manual
-	${MKDIR} ${DOCSDIR}/manual/main_files
-.for i in gif jpg png
-	${INSTALL_DATA} ${WRKSRC}/manual/main_files/*.${i} \
-		${DOCSDIR}/manual/main_files
+	${INSTALL_DATA} ${WRKSRC}/manual/*.htm[l] ${DOCSDIR}/manual
+	${MKDIR} ${DOCSDIR}/manual/man_files
+.for i in gif jpg
+	${INSTALL_DATA} ${WRKSRC}/manual/man_files/*.${i} \
+		${DOCSDIR}/manual/man_files
 .endfor
 	${MKDIR} ${DOCSDIR}/manual/top_files
-	${INSTALL_DATA} ${WRKSRC}/manual/top_files/*.png \
+	${INSTALL_DATA} ${WRKSRC}/manual/top_files/*.gif \
 		${DOCSDIR}/manual/top_files
-	${LN} -sf ${DOCSDIR}/manual ${DATADIR}/manual
+.endif
 
 # examples
 	${MKDIR} ${EXAMPLESDIR}
