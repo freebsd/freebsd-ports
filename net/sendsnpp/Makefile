@@ -7,7 +7,7 @@
 
 PORTNAME=	sendSNPP
 DISTVERSION=	v1.03
-PORTVERSION=	1
+PORTREVISON=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendSNPP/ \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
