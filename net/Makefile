@@ -565,6 +565,7 @@
     SUBDIR += pxe
     SUBDIR += py-GeoIP
     SUBDIR += py-avahi
+    SUBDIR += py-dpkt
     SUBDIR += py-google
     SUBDIR += py-impacket
     SUBDIR += py-ldap2
