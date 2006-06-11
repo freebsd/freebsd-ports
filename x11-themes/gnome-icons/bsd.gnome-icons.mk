@@ -11,7 +11,6 @@
 PKGNAMEPREFIX=	gnome-icons-
 
 NO_BUILD=	yes
-USE_SIZE=	yes
 
 REASON=		Themes may contain artwork not done by the author. \
 		Keep FreeBSD safe if theme author violated copyrights.

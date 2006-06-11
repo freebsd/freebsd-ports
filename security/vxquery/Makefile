@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VuXML Query Tool
 
 USE_BZIP2=	YES
-USE_SIZE=	YES
 GNU_CONFIGURE=	YES
 
 # FreeBSD 5.x systems have expat in the base system.
