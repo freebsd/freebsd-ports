@@ -21,8 +21,14 @@ USE_XPM=	yes
 MAN1=		wmwlmon.1
 PLIST_FILES=	bin/wmwlmon
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600100
+BROKEN=	Needs WLAN infrastructure from 6.0-RELEASE or newer
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwlmon ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmwlmon.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
