@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pecl_http
-DISTVERSION=	1.0.0RC4
+DISTVERSION=	1.0.0
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -26,7 +26,7 @@ PHP_MODNAME=	http
 CONFIGURE_ARGS=	--enable-http
 
 OPTIONS=	CURL			"Enable cURL HTTP requests"	on \
-		MAGIC_MIME		"Enable response content type guessing"	off \
+		MAGIC_MIME		"Enable response content type guessing"	on \
 		ZLIB_COMPRESSION	"Enable support for encoded message bodies"	off
 
 .include <bsd.port.pre.mk>
@@ -39,8 +39,13 @@ CONFIGURE_ARGS+=--without-http-curl-requests
 .endif
 
 .if defined(WITH_MAGIC_MIME)
+.	if ${OSVERSION} < 502128
 LIB_DEPENDS+=	magic.1:${PORTSDIR}/sysutils/file
-CONFIGURE_ARGS+=--with-http-magic-mime=${LOCALBASE}
+MAGICBASE=	${LOCALBASE}
+.	else
+MAGICBASE=	/usr
+.	endif
+CONFIGURE_ARGS+=--with-http-magic-mime=${MAGICBASE}
 .else
 CONFIGURE_ARGS+=--without-http-magic-mime
 .endif
