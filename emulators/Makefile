@@ -78,6 +78,7 @@
     SUBDIR += linux_base-suse-9.3
     SUBDIR += m2000
     SUBDIR += mastergear
+    SUBDIR += mednafen
     SUBDIR += minivmac
     SUBDIR += mtools
     SUBDIR += mupen64
