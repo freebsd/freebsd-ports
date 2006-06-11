@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	phpadsnew
 MAINTAINER=	meno.abels@adviser.com
 COMMENT=	The phpAdsNew is an open-source ad server
 
-USE_GZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	mysql pcre zlib
 

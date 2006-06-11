@@ -16,7 +16,6 @@ MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Create and display a Tkinter dialog box for editing any Python object
 
 DIST_SUBDIR=	python
-USE_GZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/EditObj-${PORTVERSION}

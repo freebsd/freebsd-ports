@@ -19,7 +19,6 @@ BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
 DIST_SUBDIR=	python
-USE_GZIP=	yes
 USE_SDL=	sdl mixer
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
