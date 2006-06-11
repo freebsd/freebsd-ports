@@ -10,7 +10,7 @@ CATEGORIES=	net games
 MASTER_SITES=	http://cubeonline.warppipe.com/download/
 DISTNAME=	WarpPipe-0.3.5-bsd
 
-MAINTAINER=	howells@kde.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online multi-player gaming for the Nintendo GameCube
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
