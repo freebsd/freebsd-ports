@@ -358,6 +358,7 @@ amphetadesk	ports/www/amphetadesk
 amphetamine	ports/games/amphetamine
 ample		ports/audio/ample
 amrcoder	ports/audio/amrcoder
+amrstat		ports/sysutils/amrstat
 amsn		ports/net-im/amsn
 amspsfnt	ports/print/amspsfnt
 amule1		ports/net-p2p/amule1
