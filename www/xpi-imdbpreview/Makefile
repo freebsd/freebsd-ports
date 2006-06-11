@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imdbpreview
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -15,7 +15,8 @@ COMMENT=	Preview movie & actor posters when hovering over their IMDb links
 
 XPI_DISTNAME=	imdb_preview
 XPI_ID=		{10187899-7ffe-4f9a-b9d2-35fdb3b49690}
-XPI_FILES=	chrome/imdb_preview.jar chrome.manifest defaults/preferences/defaults.js install.rdf
+XPI_FILES=	change_log.txt chrome/imdb_preview.jar chrome.manifest \
+		defaults/preferences/defaults.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
