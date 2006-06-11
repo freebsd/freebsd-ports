@@ -14566,6 +14566,7 @@ xorg-printserver	ports/x11-servers/xorg-printserver
 xorg-server	ports/x11-servers/xorg-server
 xorg-server-snap	ports/x11-servers/xorg-server-snap
 xorg-vfbserver	ports/x11-servers/xorg-vfbserver
+xoris		ports/graphics/xoris
 xosd		ports/misc/xosd
 xosmulti	ports/games/xosmulti
 xosview		ports/sysutils/xosview
