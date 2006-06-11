@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/
 
@@ -16,8 +15,6 @@ COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
-
-PATCH_DIST_STRIP=-p1
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	2.3+
