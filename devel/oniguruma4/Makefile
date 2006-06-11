@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 DISTNAME=	onigd${PORTVERSION:S/./_/g}
@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 #INSTALLS_SHLIB=	yes
 
