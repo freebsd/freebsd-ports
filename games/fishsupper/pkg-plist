@@ -1,4 +1,5 @@
 bin/fishsupper
+%%DATADIR%%/images/cats_whiskers.png
 %%DATADIR%%/images/font1.png
 %%DATADIR%%/images/font2.png
 %%DATADIR%%/images/fs_image_00.png
@@ -28,7 +29,12 @@ bin/fishsupper
 %%DATADIR%%/images/fs_image_24.png
 %%DATADIR%%/images/fs_image_25.png
 %%DATADIR%%/images/fs_image_26.png
+%%DATADIR%%/images/fs_image_27.png
+%%DATADIR%%/images/fs_image_28.png
+%%DATADIR%%/images/fs_image_29.png
 %%DATADIR%%/images/get_ready_bg.png
+%%DATADIR%%/images/high_scores_font.png
+%%DATADIR%%/images/high_scores_font_faint.png
 %%DATADIR%%/images/hiscores.png
 %%DATADIR%%/images/hiscores_h.png
 %%DATADIR%%/images/intro_screen.png
@@ -37,16 +43,38 @@ bin/fishsupper
 %%DATADIR%%/images/quit.png
 %%DATADIR%%/images/quit_h.png
 %%DATADIR%%/images/settings.png
+%%DATADIR%%/images/settings/background.png
+%%DATADIR%%/images/settings/image_00.png
+%%DATADIR%%/images/settings/image_01.png
+%%DATADIR%%/images/settings/image_02.png
+%%DATADIR%%/images/settings/image_03.png
+%%DATADIR%%/images/settings/image_04.png
+%%DATADIR%%/images/settings/image_05.png
+%%DATADIR%%/images/settings/image_06.png
+%%DATADIR%%/images/settings/image_07.png
+%%DATADIR%%/images/settings/image_08.png
+%%DATADIR%%/images/settings/image_09.png
+%%DATADIR%%/images/settings/image_10.png
+%%DATADIR%%/images/settings/image_11.png
 %%DATADIR%%/images/settings_h.png
+%%DATADIR%%/images/small_font.png
+%%DATADIR%%/images/small_font_faint.png
 %%DATADIR%%/levels/level_01.fsl
 %%DATADIR%%/levels/level_02.fsl
 %%DATADIR%%/levels/level_03.fsl
 %%DATADIR%%/levels/level_04.fsl
+%%DATADIR%%/levels/level_05.fsl
+%%DATADIR%%/levels/level_06.fsl
+%%DATADIR%%/levels/level_07.fsl
+%%DATADIR%%/levels/level_08.fsl
+%%DATADIR%%/levels/level_09.fsl
+%%DATADIR%%/levels/level_10.fsl
 %%DATADIR%%/sounds/miaow.wav
 %%DATADIR%%/sounds/ping.wav
 %%DATADIR%%/sounds/river.wav
 %%DATADIR%%/sounds/splash.wav
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/images/settings
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
