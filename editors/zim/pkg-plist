@@ -1,0 +1,81 @@
+bin/zim
+%%SITE_PERL%%/Gtk2/Ex/DesktopEntryMenu.pm
+%%SITE_PERL%%/Gtk2/Ex/FormManager.pm
+%%SITE_PERL%%/Gtk2/Ex/HyperTextBuffer.pm
+%%SITE_PERL%%/Gtk2/Ex/HyperTextView.pm
+%%SITE_PERL%%/Gtk2/Ex/PathBar.pm
+%%SITE_PERL%%/Zim.pm
+%%SITE_PERL%%/Zim/Components/Calendar.pm
+%%SITE_PERL%%/Zim/Components/PageView.pm
+%%SITE_PERL%%/Zim/Components/PathBar.pm
+%%SITE_PERL%%/Zim/Components/SearchDialog.pm
+%%SITE_PERL%%/Zim/Components/Spell.pm
+%%SITE_PERL%%/Zim/Components/TrayIcon.pm
+%%SITE_PERL%%/Zim/Components/TreeView.pm
+%%SITE_PERL%%/Zim/File.pm
+%%SITE_PERL%%/Zim/Formats/Html.pm
+%%SITE_PERL%%/Zim/Formats/Pod.pm
+%%SITE_PERL%%/Zim/Formats/Wiki.pm
+%%SITE_PERL%%/Zim/Formats/XML.pm
+%%SITE_PERL%%/Zim/History.pm
+%%SITE_PERL%%/Zim/Page.pm
+%%SITE_PERL%%/Zim/Page/Text.pm
+%%SITE_PERL%%/Zim/Repository.pm
+%%SITE_PERL%%/Zim/Repository/Base.pm
+%%SITE_PERL%%/Zim/Repository/DBI.pm
+%%SITE_PERL%%/Zim/Repository/Files.pm
+%%SITE_PERL%%/Zim/Repository/Man.pm
+%%SITE_PERL%%/Zim/Win32.pm
+share/applications/zim.desktop
+share/pixmaps/zim.png
+%%DATADIR%%/doc/.zim.config
+%%DATADIR%%/doc/Help.txt
+%%DATADIR%%/doc/zim.png
+%%DATADIR%%/doc/zim/about.txt
+%%DATADIR%%/doc/zim/bugs.txt
+%%DATADIR%%/doc/zim/changelog.txt
+%%DATADIR%%/doc/zim/development/class_diagram.txt
+%%DATADIR%%/doc/zim/development/database.txt
+%%DATADIR%%/doc/zim/development/formats.txt
+%%DATADIR%%/doc/zim/development/page.txt
+%%DATADIR%%/doc/zim/development/repository.txt
+%%DATADIR%%/doc/zim/development/todo.txt
+%%DATADIR%%/doc/zim/faq.txt
+%%DATADIR%%/doc/zim/features.txt
+%%DATADIR%%/doc/zim/usage.txt
+%%DATADIR%%/doc/zim/usage/autoformat.txt
+%%DATADIR%%/doc/zim/usage/commandline.txt
+%%DATADIR%%/doc/zim/usage/exporting.txt
+%%DATADIR%%/doc/zim/usage/getting_started.txt
+%%DATADIR%%/doc/zim/usage/html_entities.txt
+%%DATADIR%%/doc/zim/usage/keybindings.txt
+%%DATADIR%%/doc/zim/usage/links.txt
+%%DATADIR%%/doc/zim/usage/plugins.txt
+%%DATADIR%%/doc/zim/usage/preferences.txt
+%%DATADIR%%/doc/zim/usage/repositories.txt
+%%DATADIR%%/doc/zim/usage/searching.txt
+%%DATADIR%%/doc/zim/usage/strategies.txt
+%%DATADIR%%/doc/zim/usage/syntax.txt
+%%DATADIR%%/plugins/Calendar.pl
+%%DATADIR%%/plugins/Spell.pl
+%%DATADIR%%/plugins/TrayIcon.pl
+%%DATADIR%%/templates/Default.html
+%%DATADIR%%/templates/Slides.html
+%%DATADIR%%/urls.list
+%%DATADIR%%/zim.svg
+@dirrmtry %%SITE_PERL%%/Gtk2/Ex
+@dirrmtry %%SITE_PERL%%/Gtk2
+@dirrm %%SITE_PERL%%/Zim/Components
+@dirrm %%SITE_PERL%%/Zim/Repository
+@dirrm %%SITE_PERL%%/Zim/Formats
+@dirrm %%SITE_PERL%%/Zim/Page
+@dirrm %%SITE_PERL%%/Zim
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/doc/zim/usage
+@dirrm %%DATADIR%%/doc/zim/development
+@dirrm %%DATADIR%%/doc/zim
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/pixmaps

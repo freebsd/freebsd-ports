@@ -188,6 +188,7 @@
     SUBDIR += yudit
     SUBDIR += zed
     SUBDIR += zile
+    SUBDIR += zim
     SUBDIR += zoinks
 
 .include <bsd.port.subdir.mk>

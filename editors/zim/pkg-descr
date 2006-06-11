@@ -1,0 +1,11 @@
+Zim is a WYSIWYG text editor written in Gtk2-Perl which aims to bring the
+concept of a wiki to your desktop. Every page is saved as a text file with
+wiki markup.
+
+Pages can contain links to other pages, and are saved automatically. Creating
+a new page is as easy as linking to a non-existing page.
+
+Pages are ordered in a hierarchical structure that gives it the look and feel
+of an outliner.
+
+WWW:	http://zoidberg.student.utwente.nl/zim/
