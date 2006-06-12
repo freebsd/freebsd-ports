@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	themes
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.eyelook.org/themes/
 PKGNAMEPREFIX=	eyeOS-
@@ -27,6 +27,7 @@ THEMESDIR=	${EYEDIR}/system/themes
 OPTIONS=	Crystal_THEME "based on the Crystal Open Source icons" On
 OPTIONS+=	Executive_THEME "designed specially for Companies" On
 OPTIONS+=	Kids_THEME "designed specially for Kids and Schools" On
+OPTIONS+=	LateBloomer_THEME "based on the Crystal theme" On
 OPTIONS+=	Mac_THEME "based on OSX 2.1 Open Source icons" On
 OPTIONS+=	Mini_THEME "with mall icons based on Nuvola icon set" On
 OPTIONS+=	NuoveXT_THEME "based on 'NuoveXT' Open Source icons" On
@@ -43,7 +44,8 @@ PLIST_SUB+=	${theme:U}="@comment "
 .endif
 .endfor
 
-PLIST_SUB+=	${EYETHEMES:U:S/$/=""/} THEMESDIR=${THEMESDIR:S,^${PREFIX}/,,}
+PLIST_SUB+=	${EYETHEMES:U:S/$/=""/} THEMESDIR=${THEMESDIR:S,^${PREFIX}/,,} \
+		EYEDIR=${EYEDIR:S,^${PREFIX}/,,}
 
 do-install:
 	${CP} -Rp ${EYETHEMES:S,^,${WRKDIR}/,} ${THEMESDIR}/

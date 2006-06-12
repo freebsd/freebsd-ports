@@ -189,6 +189,81 @@
 %%KIDS%%%%THEMESDIR%%/Kids/gfxwin/min.png
 %%KIDS%%%%THEMESDIR%%/Kids/gfxwin/resize.png
 %%KIDS%%%%THEMESDIR%%/Kids/thumb.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/1.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/10.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/11.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/12.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/2.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/3.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/4.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/5.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/6.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/7.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/8.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/9.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/default.css
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/dock.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/dockmin.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/IE/resize.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/INFO
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeApps.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeApps.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeApps.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeBoard.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeBoard.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeBoard.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeCalc.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeCalc.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeCalc.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeCalendar.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeCalendar.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeCalendar.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeEdit.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeEdit.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeEdit.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeHome.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeHome.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeHome.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeInfo.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeInfo.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeInfo.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeMessages.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeMessages.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeMessages.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeNav.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeNav.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeNav.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeOptions.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeOptions.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeOptions.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyePhones.eyeapp/ico_a.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyePhones.eyeapp/ico_b.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyePhones.eyeapp/ico_c.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeTrash.eyeapp/empty.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/apps/eyeTrash.eyeapp/full.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/default.css
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/desktop/dock.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/desktop/dockmin.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/desktop/exit.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/eyeos.jpg
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/1.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/10.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/11.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/12.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/2.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/3.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/4.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/5.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/6.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/7.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/8.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/9.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/bar.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/close.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/max.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/min.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/gfxwin/resize.png
+%%LATEBLOOMER%%%%THEMESDIR%%/LateBloomer/thumb.png
 %%MAC%%%%THEMESDIR%%/Mac/IE/1.png
 %%MAC%%%%THEMESDIR%%/Mac/IE/10.png
 %%MAC%%%%THEMESDIR%%/Mac/IE/11.png
@@ -519,6 +594,23 @@
 %%KIDS%%@dirrm %%THEMESDIR%%/Kids/desktop
 %%KIDS%%@dirrm %%THEMESDIR%%/Kids/gfxwin
 %%KIDS%%@dirrm %%THEMESDIR%%/Kids
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/IE
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeApps.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeBoard.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeCalc.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeCalendar.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeEdit.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeHome.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeInfo.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeMessages.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeNav.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeOptions.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyePhones.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps/eyeTrash.eyeapp
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/apps
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/desktop
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer/gfxwin
+%%LATEBLOOMER%%@dirrm %%THEMESDIR%%/LateBloomer
 %%MAC%%@dirrm %%THEMESDIR%%/Mac/IE
 %%MAC%%@dirrm %%THEMESDIR%%/Mac/apps/eyeApps.eyeapp
 %%MAC%%@dirrm %%THEMESDIR%%/Mac/apps/eyeBoard.eyeapp
@@ -589,3 +681,5 @@
 %%WATERSIDE%%@dirrm %%THEMESDIR%%/WaterSide/desktop
 %%WATERSIDE%%@dirrm %%THEMESDIR%%/WaterSide/gfxwin
 %%WATERSIDE%%@dirrm %%THEMESDIR%%/WaterSide
+@dirrmtry %%EYEDIR%%/system/themes
+@dirrmtry %%EYEDIR%%/system
