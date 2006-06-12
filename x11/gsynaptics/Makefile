@@ -17,9 +17,7 @@ COMMENT=	GNOME Synaptics Touchpad setting tool
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${PREFIX}/lib/modules/input/synaptics_drv.o:${PORTSDIR}/x11-servers/synaptics
 
-BROKEN=		Configure fails
-
-USE_GNOME=	lthack intlhack intltool pkgconfig gtk20 libgnome libglade2
+USE_GNOME=	lthack intlhack intltool pkgconfig gtk20 libgnome libglade2 libgnomeui
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
