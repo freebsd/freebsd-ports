@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd
-PORTVERSION=	1.73
+PORTVERSION=	1.77
 CATEGORIES=	mail
 MASTER_SITES=	http://policyd.sourceforge.net/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
