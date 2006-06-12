@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	1.38.9
+DISTVERSION=	1.38.10
 #PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -348,7 +348,7 @@ post-install:
 .endif
 	@${ECHO_MSG} "*********************************************************************"
 
-.if !defined(WITH_CLIENT_ONLY)
+.if defined(WITH_DOCS)
 	${CAT} ${PKGMESSAGE}
 .endif
 
