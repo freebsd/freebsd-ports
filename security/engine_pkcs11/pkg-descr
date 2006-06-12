@@ -1,0 +1,10 @@
+Engine_pkcs11 is an implementation of an engine for OpenSSL.
+It can be loaded using code, config file or command line and
+will pass any function call by openssl to a PKCS#11 module.
+Engine_pkcs11 is meant to be used with smart cards and software
+for using smart cards in PKCS#11 format, such as OpenSC.
+
+WWW:	http://www.opensc-project.org/engine_pkcs11/
+
+- Alex Dupre
+ale@FreeBSD.org

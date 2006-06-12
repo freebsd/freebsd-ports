@@ -1,0 +1,4 @@
+lib/engines/engine_pkcs11.a
+lib/engines/engine_pkcs11.la
+lib/engines/engine_pkcs11.so
+@dirrmtry lib/engines

@@ -103,6 +103,7 @@
     SUBDIR += drweb-qmail
     SUBDIR += drweb-sendmail
     SUBDIR += dsniff
+    SUBDIR += engine_pkcs11
     SUBDIR += expiretable
     SUBDIR += f-prot
     SUBDIR += f-prot-sig
