@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logtools
-PORTVERSION=	0.13a
+PORTVERSION=	0.13c
 CATEGORIES=	www
 MASTER_SITES=	http://www.coker.com.au/logtools/
 EXTRACT_SUFX=	.tgz
