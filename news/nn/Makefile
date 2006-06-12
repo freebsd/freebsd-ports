@@ -8,8 +8,8 @@
 PORTNAME=	nn
 PORTVERSION=	6.7.2
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.nndev.org/pub/nn-6.7/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jooji@nickelkid.com
