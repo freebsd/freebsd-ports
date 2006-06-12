@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	pslib
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.2.7
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C-library for generating multi page PostScript documents
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GNOME=	gnomehack gnometarget intlhack pkgconfig
-GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_DOC_TO_MAN=""
@@ -32,6 +34,11 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.endif
+
+post-patch:
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e 's|@USE_NLS@|no|g' ${WRKSRC}/po/Makefile.in.in
 .endif
 
 .include <bsd.port.mk>
