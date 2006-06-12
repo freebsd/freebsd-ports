@@ -1,4 +1,5 @@
 bin/notify-send
+include/libnotify/notify-enum-types.h
 include/libnotify/notification.h
 include/libnotify/notify.h
 lib/libnotify.a

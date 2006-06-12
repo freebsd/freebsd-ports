@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libnotify
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/libnotify/
 
