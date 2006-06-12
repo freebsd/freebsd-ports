@@ -7497,6 +7497,7 @@ onion-fec	ports/net/onion-fec
 onis		ports/irc/onis
 onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
+oof		ports/science/oof
 oolite		ports/games/oolite
 oonsoo		ports/games/oonsoo
 ooo-build	ports/editors/ooo-build
