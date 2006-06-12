@@ -51,7 +51,7 @@ include/gammu/phone/nokia/dct4tiku/6510/6510file.h
 include/gammu/phone/nokia/dct4tiku/6510/n6510.h
 include/gammu/phone/nokia/wd2/n3650.h
 include/gammu/phone/obex/obexgen.h
-include/gammu/phone/symbian/mroutgen.h
+include/gammu/phone/symbian/gnapgen.h
 include/gammu/protocol/protocol.h
 include/gammu/protocol/alcatel/alcabus.h
 include/gammu/protocol/at/at.h
@@ -59,7 +59,7 @@ include/gammu/protocol/nokia/fbus2.h
 include/gammu/protocol/nokia/mbus2.h
 include/gammu/protocol/nokia/phonet.h
 include/gammu/protocol/obex/obex.h
-include/gammu/protocol/symbian/mrouter.h
+include/gammu/protocol/symbian/gnapbus.h
 include/gammu/service/gsmcal.h
 include/gammu/service/gsmcall.h
 include/gammu/service/gsmdata.h
