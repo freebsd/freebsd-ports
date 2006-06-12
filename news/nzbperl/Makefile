@@ -8,7 +8,8 @@
 PORTNAME=	nzbperl
 PORTVERSION=	0.6.8
 CATEGORIES=	news
-MASTER_SITES=	http://www.thepentagon.org/local_distfiles/
+MASTER_SITES=	http://www.thepentagon.org/local_distfiles/ \
+		ftp://ftp.foss.org.my/pub/FreeBSD/misc/
 DISTNAME=	nzbperl.pl
 EXTRACT_SUFX=
 
