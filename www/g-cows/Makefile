@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.g-cows.org/download/1.9/
 MAINTAINER=	as@g-cows.org
 COMMENT=	Scripting language for creation of web sites
 
-USE_FLEX=	YES
 GNU_CONFIGURE=	YES
 
 PLIST_FILES=	bin/cows \
