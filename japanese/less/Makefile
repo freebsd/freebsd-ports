@@ -40,6 +40,7 @@ post-patch:
 	 ${RM} -f COPYING; \
 	 ${GZCAT} ${DISTDIR}/regex_cs-lwp9k.shar.gz | ${SH}; \
 	 ${PATCH} < ${PATCHDIR}/regex_cs.c.patch )
+	${TOUCH} ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
