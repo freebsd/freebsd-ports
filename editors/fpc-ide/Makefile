@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Pascal integrated IDE/compiler
 
+BROKEN=		Waiting for fpc-* updated to 2.0.2
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS+=	ppc386:${PORTSDIR}/lang/fpc \
