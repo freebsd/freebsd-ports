@@ -1150,6 +1150,7 @@ chipvault	ports/cad/chipvault
 chk4mail	ports/mail/chk4mail
 chkrootkit	ports/security/chkrootkit
 chmlib		ports/misc/chmlib
+chmsee		ports/deskutils/chmsee
 chmview		ports/converters/chmview
 choparp		ports/net-mgmt/choparp
 chora		ports/devel/chora
