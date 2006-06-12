@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="23573650-f99a-11da-994e-00142a5f241c">
+    <topic>dokuwiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20060309_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple vulnerabilities have been reported within dokuwiki.
+	  dokuwiki is proven vulnerable to:</p>
+	<ul>
+	  <li>arbitrary PHP code insertion via spellcheck module,</li>
+	  <li>XSS attack via "Update your account profile,"</li>
+	  <li>bypassing of ACL controls when enabled.</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.splitbrain.org/index.php?do=details&id=820</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&id=823</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&id=825</url>
+    </references>
+    <dates>
+      <discovery>2006-05-31</discovery>
+      <entry>2006-06-11</entry>
+    </dates>
+</vuln>
+
   <vuln vid="107e2ee5-f941-11da-b1fa-020039488e34">
     <topic>libxine -- buffer overflow vulnerability</topic>
     <affects>
