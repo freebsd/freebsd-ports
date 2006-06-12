@@ -1,0 +1,12 @@
+include/libp11.h
+lib/libp11.a
+lib/libp11.la
+lib/libp11.so
+lib/libp11.so.1
+libdata/pkgconfig/libp11.pc
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/auth.c
+%%EXAMPLESDIR%%/decrypt.c
+%%EXAMPLESDIR%%/getrandom.c
+@dirrm %%EXAMPLESDIR%%
