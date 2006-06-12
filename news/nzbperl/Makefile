@@ -8,7 +8,7 @@
 PORTNAME=	nzbperl
 PORTVERSION=	0.6.8
 CATEGORIES=	news
-MASTER_SITES=	http://noisybox.net/computers/nzbperl/
+MASTER_SITES=	http://www.thepentagon.org/local_distfiles/
 DISTNAME=	nzbperl.pl
 EXTRACT_SUFX=
 
@@ -23,8 +23,6 @@ RUN_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
 PLIST_FILES=	bin/nzbperl
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-
-BROKEN=	cannot fetch
 
 .if defined(WITH_SSL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
