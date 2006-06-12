@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unicode-MapUTF8
-PORTVERSION=	1.09
+PORTVERSION=	1.11
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
@@ -23,7 +23,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Unicode::MapUTF8.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
