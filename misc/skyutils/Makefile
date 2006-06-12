@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skyutils
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	misc
 MASTER_SITES=	http://zekiller.skytech.org/fichiers/
 
@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 INSTALLS_SHLIB=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-configure:
 	@${REINPLACE_CMD} -e's/[[:cntrl:]]*$$//' ${WRKSRC}/src/skyutils.h
