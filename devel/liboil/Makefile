@@ -23,7 +23,7 @@ CFLAGS+=	-O2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
+.if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
 #USE_GCC=	3.4
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 CC:=	gcc34
