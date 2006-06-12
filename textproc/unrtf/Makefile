@@ -5,25 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	unrtf
-PORTVERSION=	0.19.3
-PORTREVISION=	1
+PORTVERSION=	0.20.1
+PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
-ALL_TARGET=	unrtf
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
 
 MAN1=		unrtf.1
 PLIST_FILES=	bin/unrtf
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|^CC|#CC| ; s|^CFLAGS|#CFLAGS| ; \
-		s|||" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s|<malloc\.h>|<stdlib.h>|" ${WRKSRC}/malloc.c
-	${REINPLACE_CMD} -e 's/printf (op->\(.*\))/printf (op->\1 == NULL ? "" : op->\1)/' ${WRKSRC}/convert.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unrtf ${PREFIX}/bin
