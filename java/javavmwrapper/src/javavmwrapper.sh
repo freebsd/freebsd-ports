@@ -44,12 +44,12 @@ _JAVAVM_MAKE=/usr/bin/make
 tryJavaCommand () {
     # If this is a test run, spit out the configuration and exit
     if [ -n "${JAVAVM_DRYRUN}" ]; then
-	echo "JAVA_HOME=${JAVA_HOME}"
-	echo "JAVAVM_CONF=${_JAVAVM_CONF}"
-	echo "JAVAVM_OPTS_CONF=${_JAVAVM_OPTS_CONF}"
-	echo "JAVAVM_PROG=${1}"
-	echo "JAVAVM_OPTS=${_JAVAVM_OPTS}"
-	echo "JAVAVM_COMMAND=${@}"
+        echo "JAVA_HOME=${JAVA_HOME}"
+        echo "JAVAVM_CONF=${_JAVAVM_CONF}"
+        echo "JAVAVM_OPTS_CONF=${_JAVAVM_OPTS_CONF}"
+        echo "JAVAVM_PROG=${1}"
+        echo "JAVAVM_OPTS=${_JAVAVM_OPTS}"
+        echo "JAVAVM_COMMAND=${@}"
         exit 0
     fi
 
@@ -61,7 +61,7 @@ tryJavaCommand () {
         exec "${@}"
     fi
 
-    echo "${_JAVAVM_PROG}: warning: couldn't run specified Java command - \"${1}\"" >&2
+    echo "${_JAVAVM_PROG}: warning: couldn't run specified Java command - \"${1}\"" 1>&2
 }
 
 #
@@ -120,7 +120,7 @@ sortConfiguration () {
 
     # Ensure the configuration file has the correct permissions
     if [ ! -w "${_JAVAVM_CONF}" -o ! -r "${_JAVAVM_CONF}" ]; then
-        echo "${_JAVAVM_PROG}: error: can't read/write ${_JAVAVM_CONF} configuration file!" >&2
+        echo "${_JAVAVM_PROG}: error: can't read/write ${_JAVAVM_CONF} configuration file!" 1>&2
         return
     fi
 
@@ -374,13 +374,13 @@ unregisterVM () {
 
     # Check for the configuration file
     if [ ! -e "${_JAVAVM_CONF}" ]; then
-       echo "${_JAVAVM_PROG}: error: can't find ${_JAVAVM_CONF} configuration file!" >&2
+       echo "${_JAVAVM_PROG}: error: can't find ${_JAVAVM_CONF} configuration file!" 1>&2
        exit 1
     fi
 
     # Ensure the configuration file has the correct permissions
     if [ ! -w "${_JAVAVM_CONF}" -o ! -r "${_JAVAVM_CONF}" ]; then
-        echo "${_JAVAVM_PROG}: error: can't read/write ${_JAVAVM_CONF} configuration file!" >&2
+        echo "${_JAVAVM_PROG}: error: can't read/write ${_JAVAVM_CONF} configuration file!" 1>&2
         exit 1
     fi
 
@@ -430,6 +430,198 @@ EOF
     exit 0
 }
 
+#
+# Show the manual page for a Java VM
+#
+manualpageVM () {
+    # Check usage
+    if [ -z "${1}" ]; then
+       echo "Usage: ${_JAVAVM_PROG} name"
+       exit 1
+    fi
+
+    # Look for an appropriate JAVA_HOME
+    _JAVAVM_SAVE_PROG=${_JAVAVM_PROG}
+    _JAVAVM_PROG="../man/man1/${1}.1"
+    setJavaHome
+    if [ $? != 0 ]; then
+        echo "${_JAVAVM_SAVE_PROG}: error: no suitable JavaVMs found" 1>&2
+        exit 1
+    fi
+
+    # Run man(1)
+    MANPATH="${JAVA_HOME}/man:${MANPATH}"
+    export MANPATH
+    setJavaOptions man "`basename ${JAVA_HOME}`"
+    exec man -S 1 ${_JAVAVM_OPTS} ${1}
+}
+
+#
+# Set up an appropriate JAVA_HOME
+#
+setJavaHome() {
+    # Use JAVA_HOME if it's set, unless its set to %%PREFIX%%
+    if [ -n "${JAVA_HOME}" -a \
+         "`realpath "${JAVA_HOME}"`" != "`realpath "${_JAVAVM_PREFIX}"`" ]; then
+        if [ -n "${JAVA_HOME}" -a -f "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+            _JAVAVM_PROG_PATH="${JAVA_HOME}/bin"
+            return 0
+        elif [ -n "${JAVA_HOME}" -a \
+               -f "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+            _JAVAVM_PROG_PATH="${JAVA_HOME}/jre/bin"
+            return 0
+        fi
+    fi
+
+    unset JAVA_HOME
+
+    # Determine location of bsd.port.mk if it exists
+    _JAVAVM_PORTSDIR=
+    if [ -r /usr/share/mk/bsd.port.mk ]; then
+        _JAVAVM_PORTSDIR=`"${_JAVAVM_MAKE}" -f /usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null`
+    fi
+
+    _JAVAVM_BSD_PORT_MK=
+    if [ -n "${_JAVAVM_PORTSDIR}" -a -r "${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk" ]; then
+        _JAVAVM_BSD_PORT_MK="${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk"
+    fi
+
+    # If bsd.port.mk was found, use that to determine the VM to use.
+    if [ -n "${_JAVAVM_BSD_PORT_MK}" ]; then
+        JAVA_HOME=`"${_JAVAVM_MAKE}" -f "${_JAVAVM_BSD_PORT_MK}" -V JAVA_HOME USE_JAVA=yes 2>/dev/null`
+        if [ -n "${JAVA_HOME}" -a -f "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+            _JAVAVM_PROG_PATH="${JAVA_HOME}/bin"
+            return 0
+        elif [ -n "${JAVA_HOME}" -a \
+               -f "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+            _JAVAVM_PROG_PATH="${JAVA_HOME}/jre/bin"
+            return 0
+        fi
+    fi
+
+    # Then try to make sure that ${_JAVAVM_CONF} exists
+    if [ ! -e "${_JAVAVM_CONF}" ]; then
+        echo "${_JAVAVM_PROG}: error: can't find ${_JAVAVM_CONF} configuration file" 1>&2
+        exit 1
+    fi
+
+    # Allow comments in the ${_JAVAVM_CONF}
+    _JAVAVM_VMS=`sed -E 's|[[:space:]]*#.*||' < "${_JAVAVM_CONF}" | uniq 2>/dev/null`
+
+    # Fix up JAVA_VERSION
+    if [ -n "${JAVA_VERSION}" ]; then
+        _JAVAVM_VERSION=
+        for version in ${JAVA_VERSION}; do
+            case "${version}" in
+                1.1+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.1 1.2 1.3 1.4 1.5"
+                    ;;
+                1.2+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.2 1.3 1.4 1.5"
+                    ;;
+                1.3+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.3 1.4 1.5"
+                    ;;
+                1.4+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.4 1.5"
+                    ;;
+                1.5+)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.5"
+                    ;;
+                *)
+                    _JAVAVM_VERSION="${_JAVAVM_VERSION} ${version}"
+                    ;;
+            esac
+        done
+        JAVA_VERSION=`echo "${_JAVAVM_VERSION}" | sort | uniq`
+    fi
+
+    # Finally try to run one of the ${_JAVAVM_VMS}
+    for _JAVAVM_JAVAVM in ${_JAVAVM_VMS}; do
+        JAVA_HOME=`dirname "${_JAVAVM_JAVAVM}"`
+        JAVA_HOME=`dirname "${JAVA_HOME}"`
+        _JAVAVM_VM=`basename "${JAVA_HOME}"`
+        # Respect JAVA_VERSION
+        if [ -n "${JAVA_VERSION}" ]; then
+            _JAVAVM_VERSION=`echo ${_JAVAVM_VM} | \
+                sed -e 's|[^0-9]*\([0-9]\)\.\([0-9]\)\.[0-9]|\1.\2|'`
+            for _JAVAVM_REQUESTED_VERSION in ${JAVA_VERSION}; do
+                if [ "${_JAVAVM_VERSION}" = "${_JAVAVM_REQUESTED_VERSION}" ]; then
+                    _JAVAVM_VERSION=
+                    break
+                fi
+            done
+            if [ -n "${_JAVAVM_VERSION}" ]; then
+                continue
+            fi
+        fi
+        # Respect JAVA_OS
+        if [ -n "${JAVA_OS}" ]; then
+            _JAVAVM_OS=
+            case "${_JAVAVM_VM}" in
+                diablo*|j*)
+                    _JAVAVM_OS=native
+                    ;;
+                linux*)
+                    _JAVAVM_OS=linux
+                    ;;
+            esac
+            for _JAVAVM_REQUESTED_OS in ${JAVA_OS}; do
+                if [ "${_JAVAVM_OS}" = "${_JAVAVM_REQUESTED_OS}" ]; then
+                    _JAVAVM_OS=
+                    break
+                fi
+            done
+            if [ -n "${_JAVAVM_OS}" ]; then
+                continue
+            fi
+        fi
+        # Respect JAVA_VENDOR
+        if [ -n "${JAVA_VENDOR}" ]; then
+            _JAVAVM_VENDOR=
+            case "${_JAVAVM_VM}" in
+                diablo*)
+                    _JAVAVM_VENDOR=bsdjava
+                    ;;
+                j*)
+                    _JAVAVM_VENDOR=freebsd
+                    ;;
+                linux-blackdown*)
+                    _JAVAVM_VENDOR=blackdown
+                    ;;
+                linux-ibm*)
+                    _JAVAVM_VENDOR=ibm
+                    ;;
+                linux-sun*)
+                    _JAVAVM_VENDOR=sun
+                    ;;
+            esac
+            for _JAVAVM_REQUESTED_VENDOR in ${JAVA_VENDOR}; do
+                if [ "${_JAVAVM_VENDOR}" = "${_JAVAVM_REQUESTED_VENDOR}" ]; then
+                    _JAVAVM_VENDOR=
+                    break
+                fi
+            done
+            if [ -n "${_JAVAVM_VENDOR}" ]; then
+                continue
+            fi
+        fi
+        # Check if the command exists
+        if [ -n "${JAVA_HOME}" -a -f "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
+            _JAVAVM_PROG_PATH="${JAVA_HOME}/bin"
+            return 0
+        elif [ -n "${JAVA_HOME}" -a \
+               -f "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
+            _JAVAVM_PROG_PATH="${JAVA_HOME}/jre/bin"
+            return 0
+        fi
+    done
+
+    unset JAVA_HOME
+
+    return 1
+}
+
 # Check for an alias and call the appropriate function.
 case "${_JAVAVM_PROG}" in
     registervm )
@@ -440,6 +632,9 @@ case "${_JAVAVM_PROG}" in
         ;;
     checkvms )
         checkVMs
+        ;;
+    manvm )
+        manualpageVM "${1}"
         ;;
 esac
 
@@ -457,169 +652,19 @@ if [ -r "${_JAVAVM_OPTS_CONF}" ]; then
 fi
 _JAVAVM_OPTS=
 
-# Ignore JAVA_HOME if it's set to %%PREFIX%%
-if [ "`realpath "${JAVA_HOME}"`" != "`realpath "${_JAVAVM_PREFIX}"`" ]; then
-    # Otherwise use JAVA_HOME if it's set
-    if [ -n "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
-        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
-        export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
-    elif [ -n "${JAVA_HOME}" -a -x "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
-        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
-        export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
-    fi
-fi
-
-unset JAVA_HOME
-
-# Determine location of bsd.port.mk if it exists
-_JAVAVM_PORTSDIR=
-if [ -r /usr/share/mk/bsd.port.mk ]; then
-    _JAVAVM_PORTSDIR=`"${_JAVAVM_MAKE}" -f /usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null`
-fi
-
-_JAVAVM_BSD_PORT_MK=
-if [ -n "${_JAVAVM_PORTSDIR}" -a -r "${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk" ]; then
-    _JAVAVM_BSD_PORT_MK="${_JAVAVM_PORTSDIR}/Mk/bsd.port.mk"
-fi
-
-# If bsd.port.mk was found, use that to determine the VM to use.
-if [ -n "${_JAVAVM_BSD_PORT_MK}" ]; then
-    JAVA_HOME=`"${_JAVAVM_MAKE}" -f "${_JAVAVM_BSD_PORT_MK}" -V JAVA_HOME USE_JAVA=yes 2>/dev/null`
-    if [ -n "${JAVA_HOME}" -a \
-         -x "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
-        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
-        export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
-    elif [ -n "${JAVA_HOME}" -a \
-           -x "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
-        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
-        export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
-    fi
-fi
-
-# Then try to make sure that ${_JAVAVM_CONF} exists
-if [ ! -e "${_JAVAVM_CONF}" ]; then
-    echo "${_JAVAVM_PROG}: error: can't find ${_JAVAVM_CONF} configuration file" >&2
+# Determine JAVA_HOME
+setJavaHome
+if [ $? != 0 ]; then
+    echo "${_JAVAVM_PROG}: error: no suitable JavaVMs found" 1>&2
     exit 1
 fi
 
-# Allow comments in the ${_JAVAVM_CONF}
-_JAVAVM_VMS=`sed -E 's|[[:space:]]*#.*||' < "${_JAVAVM_CONF}" | uniq 2>/dev/null`
-
-# Fix up JAVA_VERSION
-if [ -n "${JAVA_VERSION}" ]; then
-    _JAVAVM_VERSION=
-    for version in ${JAVA_VERSION}; do
-        case "${version}" in
-            1.1+)
-                _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.1 1.2 1.3 1.4 1.5"
-                ;;
-            1.2+)
-                _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.2 1.3 1.4 1.5"
-                ;;
-            1.3+)
-                _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.3 1.4 1.5"
-                ;;
-            1.4+)
-                _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.4 1.5"
-                ;;
-            1.5+)
-                _JAVAVM_VERSION="${_JAVAVM_VERSION} 1.5"
-                ;;
-            *)
-                _JAVAVM_VERSION="${_JAVAVM_VERSION} ${version}"
-                ;;
-        esac
-    done
-    JAVA_VERSION=`echo "${_JAVAVM_VERSION}" | sort | uniq`
+# Set up the options and run the command
+if [ -x "${_JAVAVM_PROG_PATH}/${_JAVAVM_PROG}" ]; then
+    setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
+    export JAVA_HOME
+    tryJavaCommand "${_JAVAVM_PROG_PATH}/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
 fi
 
-# Finally try to run one of the ${_JAVAVM_VMS}
-for _JAVAVM_JAVAVM in ${_JAVAVM_VMS}; do
-    JAVA_HOME=`dirname "${_JAVAVM_JAVAVM}"`
-    JAVA_HOME=`dirname "${JAVA_HOME}"`
-    _JAVAVM_VM=`basename "${JAVA_HOME}"`
-    # Respect JAVA_VERSION
-    if [ -n "${JAVA_VERSION}" ]; then
-        _JAVAVM_VERSION=`echo ${_JAVAVM_VM} | \
-            sed -e 's|[^0-9]*\([0-9]\)\.\([0-9]\)\.[0-9]|\1.\2|'`
-        for _JAVAVM_REQUESTED_VERSION in ${JAVA_VERSION}; do
-            if [ "${_JAVAVM_VERSION}" = "${_JAVAVM_REQUESTED_VERSION}" ]; then
-                _JAVAVM_VERSION=
-                break
-            fi
-        done
-        if [ -n "${_JAVAVM_VERSION}" ]; then
-            continue
-        fi
-    fi
-    # Respect JAVA_OS
-    if [ -n "${JAVA_OS}" ]; then
-        _JAVAVM_OS=
-        case "${_JAVAVM_VM}" in
-            diablo*|j*)
-                _JAVAVM_OS=native
-                ;;
-            linux*)
-                _JAVAVM_OS=linux
-                ;;
-        esac
-        for _JAVAVM_REQUESTED_OS in ${JAVA_OS}; do
-            if [ "${_JAVAVM_OS}" = "${_JAVAVM_REQUESTED_OS}" ]; then
-                _JAVAVM_OS=
-                break
-            fi
-        done
-        if [ -n "${_JAVAVM_OS}" ]; then
-            continue
-        fi
-    fi
-    # Respect JAVA_VENDOR
-    if [ -n "${JAVA_VENDOR}" ]; then
-        _JAVAVM_VENDOR=
-        case "${_JAVAVM_VM}" in
-            diablo*)
-                _JAVAVM_VENDOR=bsdjava
-                ;;
-            j*)
-                _JAVAVM_VENDOR=freebsd
-                ;;
-            linux-blackdown*)
-                _JAVAVM_VENDOR=blackdown
-                ;;
-            linux-ibm*)
-                _JAVAVM_VENDOR=ibm
-                ;;
-            linux-sun*)
-                _JAVAVM_VENDOR=sun
-                ;;
-        esac
-        for _JAVAVM_REQUESTED_VENDOR in ${JAVA_VENDOR}; do
-            if [ "${_JAVAVM_VENDOR}" = "${_JAVAVM_REQUESTED_VENDOR}" ]; then
-                _JAVAVM_VENDOR=
-                break
-            fi
-        done
-        if [ -n "${_JAVAVM_VENDOR}" ]; then
-            continue
-        fi
-    fi
-    # Check if the command exists and try to run it.
-    if [ -n "${JAVA_HOME}" -a \
-         -x "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ]; then
-        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
-        export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
-    elif [ -n "${JAVA_HOME}" -a \
-           -x "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ]; then
-        setJavaOptions "${_JAVAVM_PROG}" "`basename ${JAVA_HOME}`"
-        export JAVA_HOME
-        tryJavaCommand "${JAVA_HOME}/jre/bin/${_JAVAVM_PROG}" ${_JAVAVM_OPTS} "${@}"
-    fi
-done
-
-echo "${_JAVAVM_PROG}: error: no suitable JavaVMs found" >&2
+echo "${_JAVAVM_PROG}: error: no suitable JavaVMs found" 1>&2
 exit 1
