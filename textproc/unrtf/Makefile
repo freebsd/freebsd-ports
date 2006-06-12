@@ -22,7 +22,7 @@ MAN1=		unrtf.1
 PLIST_FILES=	bin/unrtf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unrtf ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/unrtf.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/unrtf ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/unrtf.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
