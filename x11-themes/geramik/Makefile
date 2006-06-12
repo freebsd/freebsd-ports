@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	geramik
-PORTVERSION=	0.26
-PORTREVISION=	6
+PORTVERSION=	0.27
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/content/files/ \
 		http://distfiles.towardex.com/
