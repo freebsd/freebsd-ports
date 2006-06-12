@@ -41,6 +41,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.so
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer 2> /dev/null
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install 2> /dev/null
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer 2> /dev/null
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer

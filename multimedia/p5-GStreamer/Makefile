@@ -37,7 +37,7 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Caps.3 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == "sparc64"
-BROKEN=		"Coredump during build on ${ARCH}"
+BROKEN=		Coredump during build on ${ARCH}
 .endif
 
 BROKEN=		uses strndup() which FreeBSD does not have
