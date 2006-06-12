@@ -1,0 +1,9 @@
+********************************************************
+Before using OpenCT, you should create the configuration
+file, by copying the installed sample.
+
+To enable hot-plug support for your USB reader/token,
+you need a devd enabled system. A configuration sample
+for the Aladdin eToken PRO crypto token has been put
+in the examples directory.
+********************************************************
