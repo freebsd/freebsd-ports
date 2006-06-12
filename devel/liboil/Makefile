@@ -19,8 +19,16 @@ USE_GNOME=	glib20 gnomehack
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc
+CFLAGS+=	-O2
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+#USE_GCC=	3.4
+BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+CC:=	gcc34
+CXX:=	g++34
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\\$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
