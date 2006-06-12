@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://patches.sun.com/patchroot/all_unsigned/:patch \
 		ftp://ftp.uga.edu/pub/unix/sun/patches/:patch \
 		ftp://ftp.cs.tu-berlin.de/pub/sun/sun-fixes/.../:patch
 DISTNAME=	so-7-ga-bin-linux-de.bin
-.if !defined(USE_CDROM)
+.if !defined(WITH_CDROM)
 DISTFILES=      so-7-ga-bin-linux-de.bin 116518-08.tar:patch
 .else
 DISTFILES=	116518-08.tar:patch
@@ -120,7 +120,7 @@ pre-fetch:
 	@${ECHO}
 	@${FALSE}
 .endif
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 DLTEST=116518-08.tar
 .else
 .if exists(/cdrom/linux/office7/setup)
@@ -129,7 +129,7 @@ DLTEST=116518-08.tar
 	@${ECHO} mounted on ${CD_MOUNTPT}.  If you wish to install from
 	@${ECHO} this CD-ROM, please run
 	@${ECHO}
-	@${ECHO}        make USE_CDROM=YES
+	@${ECHO}        make WITH_CDROM=YES
 	@${ECHO}
 	@${ECHO} Otherwise please unmount the CD-ROM.
 	@${ECHO}
@@ -150,7 +150,7 @@ post-extract:
 	@ ${FALSE}
 .else
 	@${MKDIR} ${WRKSRC}
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 	@ln -sf /cdrom/linux/office7/* ${WRKSRC}
 	@${MKDIR} ${TMPDIR}
 .else
