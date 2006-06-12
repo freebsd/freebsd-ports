@@ -37,6 +37,7 @@ share/apps/kbilliards/balls/whiteball.png
 share/apps/kbilliards/kbilliardsui.rc
 share/apps/kbilliards/leftarrow.png
 share/apps/kbilliards/maps/kbilliards2004.kbm
+share/apps/kbilliards/numbers.png
 share/apps/kbilliards/rightarrow.png
 share/apps/kbilliards/sound/applause.wav
 share/apps/kbilliards/sound/ballinhole.wav
@@ -49,8 +50,11 @@ share/doc/HTML/en/kbilliards/common
 share/doc/HTML/en/kbilliards/index.cache.bz2
 share/doc/HTML/en/kbilliards/index.docbook
 share/icons/hicolor/16x16/apps/kbilliards.png
+share/icons/hicolor/22x22/apps/kbilliards.png
 share/icons/hicolor/32x32/apps/kbilliards.png
 share/icons/hicolor/48x48/apps/kbilliards.png
+share/icons/hicolor/64x64/apps/kbilliards.png
+share/icons/hicolor/scalable/apps/kbilliards.svgz
 share/icons/locolor/16x16/apps/kbilliards.png
 share/icons/locolor/32x32/apps/kbilliards.png
 share/locale/cs/LC_MESSAGES/kbilliards.mo
