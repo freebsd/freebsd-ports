@@ -1,12 +1,17 @@
-libopensc is a library for accessing SmartCard devices using PC/SC
-Lite middleware package. It is also the core library of the OpenSC
-project. Basic functionality (e.g. SELECT FILE, READ BINARY) should
-work on any ISO 7816-4 compatible SmartCard. Encryption and decryption
-using private keys on the SmartCard is possible with PKCS #15
-compatible cards, such as the FINEID (Finnish Electronic IDentity)
-card. Swedish Posten eID cards have also been confirmed to work.
+OpenSC provides a set of libraries and utilities to
+access smart cards. Its main focus is on cards that
+support cryptographic operations, and facilitate their
+use in security applications such as mail encryption,
+authentication, and digital signature.
 
-WWW: http://www.opensc.org/
+OpenSC implements the PKCS#11 API so applications
+supporting this API such as Mozilla Firefox and
+Thunderbird can use it.
 
-Bruce
-bms@FreeBSD.org
+OpenSC implements the PKCS#15 standard and aims to be
+compatible with every software that does so, too.
+
+WWW:	http://www.opensc-project.org/opensc/
+
+- Alex Dupre
+ale@FreeBSD.org
