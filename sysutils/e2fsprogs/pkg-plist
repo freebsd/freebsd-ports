@@ -1,5 +1,9 @@
 bin/chattr
 bin/lsattr
+@unexec if cmp -s %D/etc/mke2fs.conf %D/etc/mke2fs.conf.dist ; then rm -f %D/etc/mke2fs.conf ; else echo "If and only if you are deleting e2fsprogs forever," ; echo "remember to delete %D/etc/mke2fs.conf." ; fi
+@unexec if test -f %D/etc/e2fsck.conf ; then echo "If and only if you are deleting e2fsprogs forever," ; echo "remember to delete %D/etc/e2fsck.conf, too." ; fi
+etc/mke2fs.conf.dist
+@exec test -f %D/etc/mke2fs.conf || cp -p %D/etc/mke2fs.conf.dist %D/etc/mke2fs.conf
 sbin/badblocks
 sbin/blkid
 sbin/debugfs

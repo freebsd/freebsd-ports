@@ -1,9 +1,0 @@
-if [ "$2" = "POST-DEINSTALL" ] ; then cat - <<_EOF
-
-If you are deinstalling the e2fsprogs port for good, rather than upgrading it,
-remember to remove the files you may have installed into /sbin, example:
-
-rm -f /sbin/fsck_ext2fs /sbin/e2fsck
-
-_EOF
-fi
