@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/bluej
 bluej/bluej
 bluej/examples/appletdemo/CaseConverter.java
@@ -354,7 +355,6 @@ bluej/lib/swedish/templates/newclass/unittest.tmpl
 bluej/lib/swedish/templates/readme.tmpl
 bluej/lib/swedish/templates/readmeexp.tmpl
 bluej/lib/userlib/README.TXT
-
 @dirrm bluej/lib/userlib
 @dirrm bluej/lib/swedish/templates/newclass
 @dirrm bluej/lib/swedish/templates
@@ -411,4 +411,3 @@ bluej/lib/userlib/README.TXT
 @dirrm bluej/examples/appletdemo
 @dirrm bluej/examples
 @dirrm bluej
-
