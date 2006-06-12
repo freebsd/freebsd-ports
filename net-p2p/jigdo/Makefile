@@ -33,6 +33,7 @@ OPTIONS=	GUI "Build the gtk2 gui" off \
 
 .if ${OSVERSION} < 500000
 NOT_FOR_ARCHS+=	alpha
+BROKEN=		Does not compile
 .endif
 
 .if defined(WITH_GUI)
