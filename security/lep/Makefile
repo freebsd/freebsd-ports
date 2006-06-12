@@ -8,7 +8,8 @@
 PORTNAME=	lep
 PORTVERSION=	0.41
 CATEGORIES=	security
-MASTER_SITES=	http://members.optusnet.com.au/setagllib/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	setagllib@optusnet.com.au
 COMMENT=	Lesser Encryption Project
