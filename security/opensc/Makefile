@@ -10,7 +10,7 @@ PORTVERSION=	0.11.1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
-MAINTAINER=	simon@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access smart cards
 
 OPTIONS=	OPENCT "Install openct for direct OpenCT backend support" on \
