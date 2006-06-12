@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvschangelogbuilder
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://cvschangelogb.sourceforge.net/files/ \
 		http://mirror.spingen.com/cvschangelogbuilder/
