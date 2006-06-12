@@ -729,4 +729,3 @@
 @dirrm %%EVENTUM%%/customer
 @dirrm %%EVENTUM%%/css
 @dirrm %%EVENTUM%%
-@dirrmtry www/data-dist
