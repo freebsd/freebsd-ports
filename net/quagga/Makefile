@@ -7,6 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.4
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
@@ -114,7 +115,12 @@ EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/ext
 CFLAGS+=	-DQUAGGA_TCP_MD5SIG
 .endif
 
-USE_RC_SUBR=	quagga.sh watchquagga.sh
+USE_RC_SUBR=	watchquagga.sh
+.if ${OSVERSION} < 500000 || ${OSVERSION} >= 600101
+USE_RC_SUBR+=	quagga.sh
+.else
+USE_RCORDER=	quagga.sh
+.endif
 
 SUB_LIST+=	LOCALSTATE_DIR=${LOCALSTATE_DIR} \
 		SYSCONF_DIR=${SYSCONF_DIR}
