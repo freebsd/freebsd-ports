@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-USE_X_LIB=	yes
+USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
