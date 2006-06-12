@@ -1,0 +1,4 @@
+A viewer for Microsoft Help "CHM" (aka Compiled HTML) files using chmlib and
+gtk2.
+
+WWW: http://chmsee.gro.clinux.org/

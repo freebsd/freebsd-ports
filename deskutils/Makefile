@@ -19,6 +19,7 @@
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += checkrdf
+    SUBDIR += chmsee
     SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deskbar-applet
