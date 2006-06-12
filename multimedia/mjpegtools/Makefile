@@ -17,7 +17,7 @@ COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-CONFLICTS=	mplex-*
+CONFLICTS=	mplex-[0-9]*
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
