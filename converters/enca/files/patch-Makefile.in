@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Nov 26 21:59:16 2003
-+++ Makefile.in	Tue Dec 16 19:09:45 2003
-@@ -138,6 +138,7 @@
+--- Makefile.in.orgi	Wed Jun  7 21:02:05 2006
++++ Makefile.in	Wed Jun  7 21:03:31 2006
+@@ -196,6 +196,7 @@
  infodir = @infodir@
  install_sh = @install_sh@
  libdir = @libdir@
@@ -8,25 +8,25 @@
  libexecdir = @libexecdir@
  localstatedir = @localstatedir@
  mandir = @mandir@
-@@ -148,10 +149,10 @@
+@@ -207,10 +208,10 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
 -@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs test
 +@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs
  
- # @(#) $Id: Makefile.am,v 1.32 2004/05/24 19:32:31 yeti Exp $
+ # @(#) $Id: Makefile.am,v 1.35 2005/11/24 10:21:32 yeti Exp $
 -@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs test
 +@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs
  man_MANS = man/enca.1
  DISTCHECK_CONFIGURE_FLAGS = --enable-maintainer-mode
  M4TESTS = \
-@@ -204,7 +205,7 @@
+@@ -241,7 +242,7 @@
+   man/enca.1 \
    $(M4TESTS)
- 
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(libdatadir)/pkgconfig
  pkgconfig_DATA = enca.pc
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
