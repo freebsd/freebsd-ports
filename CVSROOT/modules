@@ -9901,6 +9901,7 @@ pam_authsrv	ports/security/pam_authsrv
 pam_bsdbioapi	ports/security/pam_bsdbioapi
 pam_ldap	ports/security/pam_ldap
 pam_mkhomedir	ports/security/pam_mkhomedir
+pam_p11		ports/security/pam_p11
 pam_per_user	ports/security/pam_per_user
 pam_pgina	ports/security/pam_pgina
 pam_pop3	ports/security/pam_pop3
