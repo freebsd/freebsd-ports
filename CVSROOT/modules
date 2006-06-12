@@ -2155,6 +2155,7 @@ enca		ports/converters/enca
 enchant		ports/textproc/enchant
 endeavour	ports/x11-fm/endeavour
 enfle		ports/graphics/enfle
+engine_pkcs11	ports/security/engine_pkcs11
 engradient	ports/x11-themes/engradient
 enigmail	ports/mail/enigmail
 enigmail-seamonkey	ports/mail/enigmail-seamonkey
