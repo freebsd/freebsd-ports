@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	mpgtx
 # Date created:			May 15, 2001
 # Whom:				ijliao
@@ -8,7 +7,7 @@
 
 PORTNAME=	mpgtx
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,7 +30,7 @@ MLINKS=	mpgtx.1 mpgcat.1 \
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS\+=|g ; \
-		 s|\$$cflags \$$optimization_cflags|${CFLAGS}|g ; \
+		 s|="\$$cflags \$$optimization_cflags|+="${CFLAGS}|g ; \
 		 s|g++|${CXX}|g; s|-pedantic||' ${WRKSRC}/configure
 
 do-install:
