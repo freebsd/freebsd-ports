@@ -488,6 +488,7 @@
     SUBDIR += p5-SOAP-Lite
     SUBDIR += p5-Socket6
     SUBDIR += p5-Socks
+    SUBDIR += p5-Spread
     SUBDIR += p5-Spread-Session
     SUBDIR += p5-URI
     SUBDIR += p5-URI-OpenURL
