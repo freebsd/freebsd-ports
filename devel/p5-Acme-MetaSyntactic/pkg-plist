@@ -69,6 +69,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/quantum.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/robin.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/roman.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/scooby_doo.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/services.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/shadok.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/simpsons.pm
