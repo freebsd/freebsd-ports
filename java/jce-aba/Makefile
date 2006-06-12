@@ -14,15 +14,32 @@ MASTER_SITE_SUBDIR=	znerd
 MAINTAINER=	greg@greg.rim.or.jp
 COMMENT=	Clean room implementation of the Java Cryptograph Extension (JCE) API
 
-USE_JAVA=	1.1+
+USE_JAVA=	yes
 
 NO_BUILD=	yes
+
+PLIST_FILES=	%%JAVAJARDIR%%/jce.zip
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.1"
 JDKVERSION=	1.1
+PKGNAMESUFFIX=	-java11
+.else
+JDKVERSION=	1.2
+PKGNAMESUFFIX=	-java12
+.endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib-${JDKVERSION}/jce.zip ${PREFIX}/share/java/classes/
-	${MKDIR} ${PREFIX}/share/java/jce-aba
+	${INSTALL_DATA} ${WRKSRC}/lib-${JDKVERSION}/jce.zip ${JAVAJARDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs-${JDKVERSION} && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${PREFIX}/share/java/jce-aba
+	  | ${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
