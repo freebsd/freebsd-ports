@@ -11568,6 +11568,7 @@ quake3-freezetag	ports/games/quake3-freezetag
 quake3-osp	ports/games/quake3-osp
 quake3-q3base	ports/games/quake3-q3base
 quake3-ra3	ports/games/quake3-ra3
+quake3-rq3	ports/games/quake3-rq3
 quake3-ut	ports/games/quake3-ut
 quake3-wfa	ports/games/quake3-wfa
 quakeforge	ports/games/quakeforge
