@@ -440,7 +440,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 WITH_XANIM=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/RealPlayer/realplay.bin)
+.if exists(${X11BASE}/lib/RealPlayer/realplay.bin)
 WITH_REALPLAYER=	yes
 .endif
 
@@ -738,7 +738,7 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 .if defined(WITH_REALPLAYER)
 CONFIGURE_ARGS+=	--enable-real \
-			--with-reallibdir=${LOCALBASE}/lib/RealPlayer/codecs
+			--with-reallibdir=${X11BASE}/lib/RealPlayer/codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .endif
