@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libnids
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	1.21
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,14 +14,30 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Network monitoring library with TCP/IP reassembly
 
-.if defined(WITH_LIBNET_DEVEL)
-BUILD_DEPENDS=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
-.else
-BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
-.endif
+OPTIONS=	LIBNET "Include code requiring libnet" ON \
+		GLIB2 "Use GLIB2 for multiprocessing support" ON
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_LIBNET)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+RUN_DEPENDS+=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+.else
+CONFIGURE_ARGS+=	--disable-libnet
+.endif
+
+.if !defined(WITHOUT_GLIB2)
+LIB_DEPENDS+=	glib-2.0:${PORTSDIR}/devel/glib20
+.else
+CONFIGURE_ARGS+=	--disable-libglib
+.endif
 
 MAN3=		libnids.3
 
@@ -39,4 +54,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
