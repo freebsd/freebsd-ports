@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	knemo
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	net kde
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	markus
+MASTER_SITES=	http://www.eris23.de/knemo/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Network monitor for KDE
