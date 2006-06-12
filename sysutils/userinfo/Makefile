@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	userinfo
-PORTVERSION=	1.10a
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://arbornet.org/~bjk/userinfo/
 
@@ -20,6 +20,6 @@ MAN1=		ui.1
 PLIST_FILES=	bin/ui
 
 pre-build:
-	${MV} ${WRKSRC}/doc/ui.man ${WRKSRC}/doc/ui.1
+	${MV} ${WRKSRC}/doc/ui.1 ${WRKSRC}/doc/ui.1
 
 .include <bsd.port.mk>
