@@ -54,9 +54,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://bugs.splitbrain.org/index.php?do=details&id=820</url>
-      <url>http://bugs.splitbrain.org/index.php?do=details&id=823</url>
-      <url>http://bugs.splitbrain.org/index.php?do=details&id=825</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&amp;id=820</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&amp;id=823</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&amp;id=825</url>
     </references>
     <dates>
       <discovery>2006-05-31</discovery>
