@@ -7,6 +7,7 @@
 
 PORTNAME=	eventum
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	eventum
@@ -18,7 +19,7 @@ NO_BUILD=	YES
 USE_PHP=	pcre session mysql gd
 WANT_PHP_WEB=	YES
 
-EVENTUM?=	www/data-dist/eventum
+EVENTUM?=	www/eventum
 PLIST_SUB+=	EVENTUM=${EVENTUM}
 SUB_LIST+=	EVENTUM=${EVENTUM}
 SUB_FILES=	pkg-message
