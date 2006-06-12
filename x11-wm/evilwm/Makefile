@@ -10,7 +10,7 @@ PORTVERSION=	0.99.25
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lasg@lasg.dk
 COMMENT=	Minimalist window manager based on 9wm
 
 USE_X_PREFIX=	yes
