@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: openct
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable openct:
+# openct_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable OpenCT.
+#
+
+. %%RC_SUBR%%
+
+name="openct"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${openct_enable="NO"}
+
+openct_rundir="/var/run/openct"
+command="%%PREFIX%%/sbin/openct-control"
+command_args="init"
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+required_files="%%PREFIX%%/etc/openct.conf"
+
+openct_prestart()
+{
+	if [ ! -d "${openct_rundir}/." ]; then
+		/bin/mkdir ${openct_rundir}
+	fi
+}
+
+openct_stop()
+{
+        if [ -f "${openct_rundir}/status" ]; then
+		${command} shutdown > /dev/null
+                /bin/rm ${openct_rundir}/status
+        fi
+}
+
+run_rc_command "$1"
