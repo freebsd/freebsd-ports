@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sim-im-devel
-PORTVERSION=	0.9.5.432
+PORTVERSION=	0.9.5.456
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/
 
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
