@@ -42,7 +42,6 @@ USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_XLIB=	yes
 USE_FREETYPE=	yes
-USE_FFTW=	yes
 USE_TCL_BUILD=	yes
 USE_TCL=	yes
 USE_TK=		yes
