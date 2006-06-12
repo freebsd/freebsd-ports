@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=		${PORTNAME}
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A ping-like program that uses tcp and/or http
 
-LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		idn.16:${PORTSDIR}/dns/libidn \
 		ldap-2.2.7:${PORTSDIR}/net/openldap22-client
 
 USE_OPENSSL=	yes
