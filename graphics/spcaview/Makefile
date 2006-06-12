@@ -7,12 +7,13 @@
 
 PORTNAME=	spca5xx
 PORTVERSION=	20060402
+PORTREVISON=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://mxhaard.free.fr/spca50x/Download/ \
 		http://mxhaard.free.fr/spca50x/Download/oldrelease/
 
 PATCH_SITES=	http://www.medias.ne.jp/~takam/bsd/
-PATCHFILES=	spca5xx-bsd-0.6.patch.gz
+PATCHFILES=	spca5xx-bsd-0.6a.patch.gz
 PATCH_DIST_STRIP=	-p3
 
 MAINTAINER=	mistral@imasy.or.jp
