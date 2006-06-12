@@ -50,6 +50,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--with-openssl-includes=${OPENSSLINC} \
 		--with-openssl-libraries=${OPENSSLLIB}
 
+.if ${OSVERSION} < 500000 && ${OPENSSLBASE} == "/usr"
+PLIST_SUB+=	4SSL="@comment "
+.else
+PLIST_SUB+=	4SSL=""
+.endif
+
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-pic
 .endif
