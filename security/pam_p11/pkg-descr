@@ -1,0 +1,24 @@
+Pam_p11 is a plugable authentication module (pam) package
+for using crpytographic tokens such as smart cards and
+usb crypto tokens for authentication.
+
+Pam_p11 uses libp11 to access any PKCS#11 module.
+It should be compatible with any implementation, but it
+is primarely developed using OpenSC.
+
+Pam_p11 implements two authentication modules:
+ * pam_p11_openssh authenticates the user using his
+   openssh ~/.ssh/authorized_keys file.
+ * pam_p11_opensc authenticates the user using
+   certificates found in ~/.eid/authorized_certificates.
+
+Pam_p11 is very simple, it has no config file, no options
+other than the PKCS#11 module file, does not know about
+certificate chains, certificate authorities, revocation
+lists or OCSP. Perfect for the small installation with no
+frills.
+
+WWW:	http://www.opensc-project.org/pam_p11/
+
+- Alex Dupre
+ale@FreeBSD.org
