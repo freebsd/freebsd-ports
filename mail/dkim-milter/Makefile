@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Domainkeys milter for Sendmail
 
-USE_SUBR=	yes
 USE_RC_SUBR=	milter-dkim.sh
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
