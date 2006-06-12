@@ -15,12 +15,13 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	kij@imada.sdu.dk
-COMMENT=	BlueJ is an integrated Java environment designed for introductory teaching
+COMMENT=	Integrated Java environment designed for introductory teaching
 
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 
 do-install:
 	@${ECHO} Starting BlueJ graphical installer...  Please install to default path of
