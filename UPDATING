@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060612:
+  AFFECTS: users of editors/staroffice60, editors/staroffice70 and
+           german/staroffice70
+  AUTHOR: erwin@FreeBSD.org
+
+  The USE_CDROM knob was renamed to WITH_CDROM for consistency
+  within the ports tree.
+
 20060611:
   AFFECTS: users of www/c-icap
   AUTHOR: b3k@mail.ru

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.sunsite.auc.dk/disk6/sun-patches/:patch \
 		ftp://ftp.uga.edu/pub/unix/sun/patches/:patch \
 		ftp://ftp.cs.tu-berlin.de/pub/sun/sun-fixes/.../:patch
 DISTNAME=	so-6_0-ga-bin-linux-en.bin
-.if !defined(USE_CDROM)
+.if !defined(WITH_CDROM)
 DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-04.tar:patch
 .endif
 .if defined(WITH_ADABAS)
@@ -109,7 +109,7 @@ pre-fetch:
 	@${ECHO} WITH_ADABAS=YES.
 	@${ECHO}
 .endif
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 DLTEST=112887-04.tar
 .else
 .if exists(/cdrom/linux/office60/setup)
@@ -118,7 +118,7 @@ DLTEST=112887-04.tar
 	@${ECHO} mounted on ${CD_MOUNTPT}.  If you wish to install from
 	@${ECHO} this CD-ROM, please run 
 	@${ECHO}
-	@${ECHO}        make USE_CDROM=YES
+	@${ECHO}        make WITH_CDROM=YES
 	@${ECHO}
 	@${ECHO} Otherwise please unmount the CD-ROM.
 	@${ECHO}
@@ -139,7 +139,7 @@ post-extract:
 	@ ${FALSE}
 .else
 	@${MKDIR} ${WRKSRC}
-.if defined(USE_CDROM)
+.if defined(WITH_CDROM)
 	@ln -sf /cdrom/linux/office60/* ${WRKSRC}
 .else
 	@${MKDIR} ${TMPDIR}
