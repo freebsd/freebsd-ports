@@ -8,11 +8,14 @@
 PORTNAME=	sslproxy
 PORTVERSION=	20000129
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/sslproxy/
+MASTER_SITES=	http://mirror2.unixfreunde.de/	\
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	sslproxy.2000_Jan_29
 
 MAINTAINER=	alexlh@funk.org
 COMMENT=	Proxies non-SSL request over an SSL connection
+
+PORTDOCS=	README.txt dummyCert.pem
 
 USE_OPENSSL=	YES
 
