@@ -1,0 +1,6 @@
+To start ices at system boot, copy %%PREFIX%%/etc/ices.conf.dist to
+%%PREFIX%%/etc/ices.conf, modify it to suit your environment and add:
+
+ices0_enable="YES"
+
+to /etc/rc.conf.

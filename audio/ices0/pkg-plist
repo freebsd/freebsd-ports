@@ -1,4 +1,4 @@
-bin/ices
+bin/ices0
 doc/ices/icesmanual.html
 etc/ices.conf.dist
 etc/modules/ices.pm.dist
