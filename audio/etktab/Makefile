@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	etktab
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	audio tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	etktab
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} canada_multi-3.1.etk \
-			dvorak-3.1.etk uk-3.1.etk us-3.1.etk
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} canada_multi-3.2.etk \
+			dvorak-3.2.etk uk-3.2.etk us-3.2.etk
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/eTktab-${PORTVERSION}
 
 post-extract:
-.for FILE in canada_multi-3.1.etk dvorak-3.1.etk uk-3.1.etk us-3.1.etk
+.for FILE in canada_multi-3.2.etk dvorak-3.2.etk uk-3.2.etk us-3.2.etk
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${FILE} ${WRKSRC}
 .endfor
 
@@ -33,7 +33,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in CHANGES.html LICENSE.html README.html eTktab-small.xpm eTktab.xpm \
-		canada_multi-3.1.etk dvorak-3.1.etk uk-3.1.etk us-3.1.etk
+		canada_multi-3.2.etk dvorak-3.2.etk uk-3.2.etk us-3.2.etk
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
