@@ -18,8 +18,15 @@ CONFIGURE_ARGS=	--with-gtk2
 
 UIM_SLAVE=	yes
 
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gtk_Makefile.in \
+		${PATCHDIR}/extra-patch-helper_Makefile.in 
+
+do-build:
+	(cd ${WRKSRC}/gtk && ${GMAKE} LIBS="-luim")
+	(cd ${WRKSRC}/helper && ${GMAKE} LIBS="-luim -luim-custom")
+
 do-install:
 	(cd ${WRKSRC}/gtk && ${GMAKE} install)
-	(cd ${WRKSRC}/helper && ${GMAKE} install-binPROGRAMS install-exec-hook-gtk2)
+	(cd ${WRKSRC}/helper && ${GMAKE} install-binPROGRAMS)
 
 .include "${MASTERDIR}/Makefile"

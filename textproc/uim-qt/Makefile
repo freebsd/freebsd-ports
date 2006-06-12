@@ -28,8 +28,12 @@ MAKE_ENV+=	TMPDIR="${TMPDIR}"
 CONFIGURE_ENV+=	TMPDIR="${TMPDIR}" 
 .endif
 
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt_Makefile.in 
+
+do-build:
+	(cd ${WRKSRC}/qt && ${GMAKE} LIBS="-luim -luim-custom")
+
 do-install:
 	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} install)
-	(cd ${WRKSRC}/helper && ${SETENV} ${MAKE_ENV} ${GMAKE} install)
 
 .include "${MASTERDIR}/Makefile"

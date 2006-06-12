@@ -19,11 +19,16 @@ CONFIGURE_ARGS=	--with-canna
 
 UIM_SLAVE=	yes
 
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
+
+do-build:
+	(cd ${WRKSRC}/uim && ${GMAKE} libuim-canna.la)
+
 do-install:
-	cd ${WRKSRC}/uim && \
-	${GMAKE} uim_plugin_LTLIBRARIES=libuim-canna.la install-uim_pluginLTLIBRARIES
+	(cd ${WRKSRC}/uim && \
+	${GMAKE} uim_plugin_LTLIBRARIES=libuim-canna.la install-uim_pluginLTLIBRARIES)
 
 post-install:
-	uim-module-manager --register canna
+	${X11BASE}/bin/uim-module-manager --register canna
 
 .include "${MASTERDIR}/Makefile"

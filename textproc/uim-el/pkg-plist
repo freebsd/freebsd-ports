@@ -1,5 +1,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-candidate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-debug.el
+%%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-helper.el
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-key.el
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-keymap.el
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-leim.el

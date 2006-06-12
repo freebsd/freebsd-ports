@@ -1,36 +1,15 @@
---- emacs/Makefile.in.orig	Fri Dec 16 17:10:53 2005
-+++ emacs/Makefile.in	Sat Dec 24 07:54:33 2005
-@@ -391,19 +391,6 @@
- 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
- $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
- 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
--install-binPROGRAMS: $(bin_PROGRAMS)
--	@$(NORMAL_INSTALL)
--	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
--	@list='$(bin_PROGRAMS)'; for p in $$list; do \
--	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
--	  if test -f $$p \
--	     || test -f $$p1 \
--	  ; then \
--	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
--	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
--	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
--	  else :; fi; \
--	done
- 
- uninstall-binPROGRAMS:
- 	@$(NORMAL_UNINSTALL)
-@@ -419,9 +406,6 @@
- 	  echo " rm -f $$p $$f"; \
- 	  rm -f $$p $$f ; \
- 	done
--uim-el-agent$(EXEEXT): $(uim_el_agent_OBJECTS) $(uim_el_agent_DEPENDENCIES) 
--	@rm -f uim-el-agent$(EXEEXT)
--	$(LINK) $(uim_el_agent_LDFLAGS) $(uim_el_agent_OBJECTS) $(uim_el_agent_LDADD) $(LIBS)
- 
- mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
-@@ -765,7 +749,7 @@
+--- emacs/Makefile.in.orig	Fri Jun  9 10:47:01 2006
++++ emacs/Makefile.in	Mon Jun 12 01:12:29 2006
+@@ -37,8 +37,6 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@UIM_EL_TRUE@bin_PROGRAMS = uim-el-agent$(EXEEXT) \
+-@UIM_EL_TRUE@	uim-el-helper-agent$(EXEEXT)
+ subdir = emacs
+ DIST_COMMON = README $(am__dist_uimel_lisp_DATA_DIST) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in COPYING INSTALL
+@@ -874,7 +872,7 @@
  	done
  check-am: all-am
  check: check-am
