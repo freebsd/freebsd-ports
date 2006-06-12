@@ -103,6 +103,7 @@
     SUBDIR += dhcprelay
     SUBDIR += dictd
     SUBDIR += dictd-database
+    SUBDIR += dimes
     SUBDIR += diradmin
     SUBDIR += dosdetector
     SUBDIR += dtcp

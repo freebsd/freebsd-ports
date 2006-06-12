@@ -1,0 +1,83 @@
+@comment $FreeBSD$
+%%DATADIR%%/Classes/AgentLauncher$1.class
+%%DATADIR%%/Classes/AgentLauncher$2.class
+%%DATADIR%%/Classes/AgentLauncher.class
+%%DATADIR%%/Classes/Base/conf/countries-xml.txt
+%%DATADIR%%/Classes/Base/conf/logging.properties
+%%DATADIR%%/Classes/Base/conf/properties.xml
+%%DATADIR%%/Classes/Base/resources/About16.gif
+%%DATADIR%%/Classes/Base/resources/CommunicationDetector.dll
+%%DATADIR%%/Classes/Base/resources/DIMES.gif
+%%DATADIR%%/Classes/Base/resources/DIMESIcon.ico
+%%DATADIR%%/Classes/Base/resources/DIMES_Large.jpg
+%%DATADIR%%/Classes/Base/resources/Delete16.gif
+%%DATADIR%%/Classes/Base/resources/DimesSplash.jpg
+%%DATADIR%%/Classes/Base/resources/Help16.gif
+%%DATADIR%%/Classes/Base/resources/IDW.jar
+%%DATADIR%%/Classes/Base/resources/MTR.dll
+%%DATADIR%%/Classes/Base/resources/MySystray4j.jar
+%%DATADIR%%/Classes/Base/resources/Pause16.gif
+%%DATADIR%%/Classes/Base/resources/Play16.gif
+%%DATADIR%%/Classes/Base/resources/Properties16.gif
+%%DATADIR%%/Classes/Base/resources/Save16.gif
+%%DATADIR%%/Classes/Base/resources/Stop16.gif
+%%DATADIR%%/Classes/Base/resources/StopRed16.gif
+%%DATADIR%%/Classes/Base/resources/WebComponent16.gif
+%%DATADIR%%/Classes/Base/resources/WebComponent24.gif
+%%DATADIR%%/Classes/Base/resources/a1.GIF
+%%DATADIR%%/Classes/Base/resources/about.txt
+%%DATADIR%%/Classes/Base/resources/changeLog.txt
+%%DATADIR%%/Classes/Base/resources/client.keystore
+%%DATADIR%%/Classes/Base/resources/dimes.jpg
+%%DATADIR%%/Classes/Base/resources/dimesIcon.jpg
+%%DATADIR%%/Classes/Base/resources/dimesTransparent2.gif
+%%DATADIR%%/Classes/Base/resources/dom4j-full.jar
+%%DATADIR%%/Classes/Base/resources/exec.gif
+%%DATADIR%%/Classes/Base/resources/fav.gif
+%%DATADIR%%/Classes/Base/resources/folder_documents.gif
+%%DATADIR%%/Classes/Base/resources/glue.gif
+%%DATADIR%%/Classes/Base/resources/hand.gif
+%%DATADIR%%/Classes/Base/resources/handtool.gif
+%%DATADIR%%/Classes/Base/resources/helpicon.gif
+%%DATADIR%%/Classes/Base/resources/layouts.bin
+%%DATADIR%%/Classes/Base/resources/layouts.meta
+%%DATADIR%%/Classes/Base/resources/libcallmtr.so
+%%DATADIR%%/Classes/Base/resources/m1.GIF
+%%DATADIR%%/Classes/Base/resources/n1.GIF
+%%DATADIR%%/Classes/Base/resources/network.gif
+%%DATADIR%%/Classes/Base/resources/packettrain.dll
+%%DATADIR%%/Classes/Base/resources/pacman.gif
+%%DATADIR%%/Classes/Base/resources/redWebComponent.gif
+%%DATADIR%%/Classes/Base/resources/s1.GIF
+%%DATADIR%%/Classes/Base/resources/scared.gif
+%%DATADIR%%/Classes/Base/resources/server.keystore
+%%DATADIR%%/Classes/Base/resources/skinlf.jar
+%%DATADIR%%/Classes/Base/resources/snail.ico
+%%DATADIR%%/Classes/Base/resources/snail.jpg
+%%DATADIR%%/Classes/Base/resources/systray4j.dll
+%%DATADIR%%/Classes/Base/resources/toxicthemepack.zip
+%%DATADIR%%/Classes/Base/resources/winnerFace.gif
+%%DATADIR%%/Classes/JARs/10.jar
+%%DATADIR%%/Classes/JARs/dimesAgent.keystore
+%%DATADIR%%/Classes/JARs/jarsigner
+%%DATADIR%%/Licences/DIMES-license.txt
+%%DATADIR%%/Licences/dom4j-license.txt
+%%DATADIR%%/Licences/gpl.txt
+%%DATADIR%%/Licences/lgpl.txt
+%%DATADIR%%/agent.sh
+%%DATADIR%%/colors.sh
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@dirrm %%DATADIR%%/Licences
+@dirrm %%DATADIR%%/Classes/JARs
+@dirrm %%DATADIR%%/Classes/Base/resources
+@dirrm %%DATADIR%%/Classes/Base/conf
+@dirrm %%DATADIR%%/Classes/Base/Outgoing/results
+@dirrm %%DATADIR%%/Classes/Base/Outgoing/log
+@dirrm %%DATADIR%%/Classes/Base/Outgoing
+@dirrm %%DATADIR%%/Classes/Base/Incoming/Keepalive
+@dirrm %%DATADIR%%/Classes/Base/Incoming
+@dirrm %%DATADIR%%/Classes/Base/History
+@dirrm %%DATADIR%%/Classes/Base
+@dirrm %%DATADIR%%/Classes
+@dirrm %%DATADIR%%
