@@ -9,7 +9,8 @@ PORTNAME=	wmnet2
 PORTVERSION=	1.06
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://www.digitalkaos.net/linux/wmnet/download/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	wmnet-${PORTVERSION}
 
 MAINTAINER=	flag@gufi.org
