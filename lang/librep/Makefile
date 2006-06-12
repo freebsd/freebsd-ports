@@ -50,6 +50,12 @@ LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 EXTRA_PATCHES+=	${FILESDIR}/stable-patch-src_numbers.c
 .endif
 
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/test
 

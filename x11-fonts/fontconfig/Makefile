@@ -51,6 +51,12 @@ PATCHFILES+=	cjk-fontconfig-2.3.2-20051217.patch.gz
 PATCH_DIST_STRIP+=	-p1
 .endif
 
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

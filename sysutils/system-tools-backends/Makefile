@@ -32,6 +32,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+.endif
+
 .if ${PERL_LEVEL} < 500600
 post-configure:
 	@${FIND} ${WRKSRC} \( -name "*.pl" -or -name "*-conf" \) | \

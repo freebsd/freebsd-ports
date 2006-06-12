@@ -36,7 +36,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		xml2po.1
 
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-3
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+.endif
+
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PREFIX}/share/xml2po
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
