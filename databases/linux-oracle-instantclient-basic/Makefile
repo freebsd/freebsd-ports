@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		instantclient
-PORTVERSION=		10.2.0.1.${DISTDATE}
+PORTVERSION=		10.2.0.2.${DISTDATE}
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
@@ -44,10 +44,10 @@ PLIST_SUB=		PORTVERSION=${PORTVERSION}
 
 .if		${ARCH} == "i386"
 LINUXARCH=		linux32
-DISTDATE=		20050713
+DISTDATE=		20060331
 .elif		${ARCH} == "amd64"
 LINUXARCH=		linux-x86-64
-DISTDATE=		20051025
+DISTDATE=		20060228
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
