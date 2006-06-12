@@ -6,90 +6,77 @@
 #
 
 PORTNAME=	opensc
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.opensc-project.org/files/opensc/
+MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/
 
 MAINTAINER=	simon@FreeBSD.org
-COMMENT=	ISO 7816 Smartcard API
+COMMENT=	Libraries and utilities to access smart cards
 
-USE_GNOME=	pkgconfig
-INSTALLS_SHLIB=	yes
+OPTIONS=	OPENCT "Install openct for direct OpenCT backend support" on \
+		PCSC "Install pcsc-lite for PC/SC backend support" off
+
+USE_AUTOTOOLS=	libltdl:15
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack pkgconfig
+INSTALLS_SHLIB=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
+
+DOC_FILES=	README *.sh *.xsl *.css *.html api html tools
+
+PORTDOCS=	*
 
 MANCOMPRESSED=	no
-MAN1=	pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 opensc-tool.1 \
-	opensc-explorer.1 opensc-config.1 cryptoflex-tool.1 \
-	pkcs11-tool.1 cardos-info.1
-MAN3=	sc_select_file.3 sc_release_context.3 sc_read_record.3 \
-	sc_read_binary.3 sc_pkcs15_compute_signature.3 sc_lock.3 \
-	sc_list_files.3 sc_file_new.3 sc_file_free.3 sc_file.3 \
-	sc_establish_context.3 sc_disconnect_card.3 \
-	sc_detect_card_presence.3 sc_connect_card.3
-MAN5=	pkcs15-profile.5
-MAN7=	pkcs15.7 opensc.7
-
-# Compilation Options
-#
-# Define boolean switches:
-# WITHOUT_PAM WITHOUT_PCSC_LITE WITHOUT_LDAP
-# WITH_DEBUG WITH_DOCBOOK WITH_FIREFOX_PLUGIN WITH_MOZILLA_PLUGIN
-#
-# Default: WITH_PAM, WITH_PCSC_LITE, WITH_LDAP.
-#
-CONFIGURE_ARGS=		--prefix=${PREFIX} --disable-dependency-tracking
-
-.if !defined(WITHOUT_PAM)
-CONFIGURE_ARGS+=	--with-pam
-.endif
-
-.if !defined(WITHOUT_PCSC_LITE)
-LIB_DEPENDS+=		pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-CONFIGURE_ARGS+=	--with-pcsclite=${LOCALBASE}
-.endif
-
-.if !defined(WITHOUT_LDAP)
-USE_OPENLDAP=		yes
-CONFIGURE_ARGS+=	--enable-ldap			\
-			--with-ldap-lib=openldap	\
-			--with-ldap-dir=${LOCALBASE}
-PLIST_SUB+=		LDAP=""
-.else
-CONFIGURE_ARGS+=	--disable-ldap
-PLIST_SUB+=		LDAP="@comment "
-.endif
-
-.if defined(WITH_FIREFOX_PLUGIN)
-RUN_DEPENDS?=		firefox:${PORTSDIR}/www/firefox
-PLUGIN_DIR?=		lib/firefox/plugins
-CONFIGURE_ARGS+=	--with-plugin-dir="${PREFIX}/${PLUGIN_DIR}"
-.elif defined(WITH_MOZILLA_PLUGIN)
-RUN_DEPENDS?=		mozilla:${PORTSDIR}/www/mozilla
-PLUGIN_DIR?=		lib/browser_plugins
-CONFIGURE_ARGS+=	--with-plugin-dir="${PREFIX}/${PLUGIN_DIR}"
-.endif
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if !defined(WITH_DOCBOOK)
-CONFIGURE_ARGS+=	--without-docbook
-.endif
-
-.if defined(WITH_OPENCT)
-CONFIGURE_ARGS+=	--with-openct=${LOCALBASE}
-RUN_DEPENDS+=		openct-tool:${PORTSDIR}/security/openct
-BUILD_DEPENDS+=		${RUN_DEPENDS}
-.endif
+MAN1=		cardos-info.1 cryptoflex-tool.1 netkey-tool.1 \
+		opensc-config.1 opensc-explorer.1 opensc-tool.1 \
+		pkcs11-tool.1 pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1
+MAN3=		sc_app_info_t.3 sc_append_record.3 sc_asn1_decode.3 \
+		sc_asn1_encode.3 sc_asn1_entry.3 sc_asn1_find_tag.3 \
+		sc_asn1_print_tags.3 sc_asn1_put_tag.3 sc_asn1_read_tag.3 \
+		sc_asn1_skip_tag.3 sc_asn1_verify_tag.3 sc_base64_decode.3 \
+		sc_base64_encode.3 sc_card_ctl.3 sc_card_t.3 \
+		sc_card_valid.3 sc_check_sw.3 sc_connect_card.3 \
+		sc_copy_asn1_entry.3 sc_create_file.3 sc_delete_file.3 \
+		sc_delete_record.3 sc_der_clear.3 sc_der_copy.3 \
+		sc_detect_card_presence.3 sc_disconnect_card.3 \
+		sc_enum_apps.3 sc_establish_context.3 sc_file_dup.3 \
+		sc_file_free.3 sc_file_new.3 sc_file_t.3 \
+		sc_find_app_by_aid.3 sc_find_pkcs15_app.3 sc_format_apdu.3 \
+		sc_format_asn1_entry.3 sc_free_apps.3 sc_get_cache_dir.3 \
+		sc_get_challenge.3 sc_get_data.3 sc_list_files.3 \
+		sc_lock.3 sc_make_cache_dir.3 sc_put_data.3 \
+		sc_read_binary.3 sc_read_record.3 sc_release_context.3 \
+		sc_select_file.3 sc_set_card_driver.3 sc_strerror.3 \
+		sc_transmit_apdu.3 sc_unlock.3 sc_update_binary.3 \
+		sc_update_dir.3 sc_update_record.3 sc_wait_for_event.3 \
+		sc_write_binary.3 sc_write_record.3
+MAN5=		pkcs15-profile.5
 
 .include <bsd.port.pre.mk>
-#
-#
-#post-patch:
-#	${REINPLACE_CMD} -e "s,ulong,u_long," ${WRKSRC}/src/openscd/openscd.c
+
+.if !defined(WITHOUT_OPENCT) || exists(${LOCALBASE}/lib/libopenct.so)
+LIB_DEPENDS+=	openct.1:${PORTSDIR}/security/openct
+.endif
+
+.if defined(WITH_PCSC) || exists(${LOCALBASE}/lib/libpcsclite.so)
+LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+.endif
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/etc/opensc.conf ${PREFIX}/etc/opensc.conf-sample
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${CP} -R ${DOC_FILES} ${DOCSDIR})
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
