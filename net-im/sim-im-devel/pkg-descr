@@ -1,8 +1,7 @@
-This is a SIM-project's fork.
+This is a SIM-ICQ project's fork.
 
-SIM (Simple Instant Messenger) is a plugin-based instant messenger
-with support for various protocols (QT is needed, can be build for
-KDE).
+SIM-IM is a plugin-based instant messenger with support for various 
+protocols (QT is needed, can be build for KDE).
 
 All protocols support richtext-messages, file transfer, typing
 notification, server-side contact list (with postponed synchronization
