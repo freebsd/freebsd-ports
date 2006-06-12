@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	crimson
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.9
 CATEGORIES=	games
 MASTER_SITES=	http://crimson.seul.org/files/
 PKGNAMESUFFIX=	-fields
@@ -25,7 +25,7 @@ MAN6=	crimson.6
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Internal compiler error on alpha 4.x"
+BROKEN=		Internal compiler error on alpha 4.x
 .endif
 
 .include <bsd.port.post.mk>
