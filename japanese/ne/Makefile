@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ne
-PORTVERSION=	3.04
+PORTVERSION=	3.05
 CATEGORIES=	japanese editors
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA018758/archive/
 
@@ -23,7 +23,7 @@ MAKE_ENV=	LANG=${MANLANG}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
+BROKEN=		Does not compile on amd64
 .endif
 
 post-install:

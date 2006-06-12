@@ -1,18 +1,18 @@
 bin/ne
-share/doc/ne/BUGS.jp
-share/doc/ne/CHANGES.jp
-share/doc/ne/HISTORY.jp
-share/doc/ne/INSTALL.jp
-share/doc/ne/README.jp
-share/doc/ne/TODO.jp
-etc/ne/nerc
-etc/ne/nerc.ele
 etc/ne/key.eff
 etc/ne/key.ele
 etc/ne/key.system
 etc/ne/key.vz
+etc/ne/nerc
+etc/ne/nerc.ele
 etc/ne/term
 etc/ne/term.kterm
 etc/ne/term.rxvt
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.jp
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.jp
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY.jp
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.jp
+%%PORTDOCS%%%%DOCSDIR%%/README.jp
+%%PORTDOCS%%%%DOCSDIR%%/TODO.jp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/ne
-@dirrm share/doc/ne
