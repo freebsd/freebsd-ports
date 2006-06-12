@@ -1,37 +1,45 @@
 bin/crimson
+share/applications/crimson.desktop
+%%DATADIR%%/Bepa-Roman.ttf
+%%DATADIR%%/cf.dat
+%%DATADIR%%/default.tiles
+%%DATADIR%%/default.units
+%%DATADIR%%/levels/Anthill.lev
+%%DATADIR%%/levels/ArmsRace.lev
+%%DATADIR%%/levels/BeachRaid.lev
+%%DATADIR%%/levels/Foxhole.lev
+%%DATADIR%%/levels/General.lev
+%%DATADIR%%/levels/GreatBattle.lev
+%%DATADIR%%/levels/HeavyMetal.lev
+%%DATADIR%%/levels/IslandHoppers.lev
+%%DATADIR%%/levels/LankhValley.lev
+%%DATADIR%%/levels/LostFactories.lev
+%%DATADIR%%/levels/MountainDefense.lev
+%%DATADIR%%/levels/OmyarGorge.lev
+%%DATADIR%%/levels/Plowshares.lev
+%%DATADIR%%/levels/RadioSilence.lev
+%%DATADIR%%/levels/Revelation.lev
+%%DATADIR%%/levels/Tutorial1.lev
+%%DATADIR%%/levels/Tutorial2.lev
+%%DATADIR%%/levels/Tutorial3.lev
+%%DATADIR%%/levels/Uprising.lev
+%%DATADIR%%/locale/de.dat
+%%DATADIR%%/locale/en.dat
+%%DATADIR%%/locale/fr.dat
+%%DATADIR%%/locale/pl.dat
+%%DATADIR%%/locale/sk.dat
+%%DATADIR%%/music/default.mid
+%%DATADIR%%/sound/ask.wav
+%%DATADIR%%/sound/clicked.wav
+%%DATADIR%%/sound/error.wav
+%%DATADIR%%/sound/menu.wav
+%%DATADIR%%/sound/repair.wav
+%%DATADIR%%/sound/select.wav
+%%DATADIR%%/title.bmp
 share/pixmaps/crimson.png
-share/crimson/title.bmp
-share/crimson/Bepa-Roman.ttf
-share/crimson/levels/Anthill.lev
-share/crimson/levels/ArmsRace.lev
-share/crimson/levels/BeachRaid.lev
-share/crimson/levels/Foxhole.lev
-share/crimson/levels/General.lev
-share/crimson/levels/GreatBattle.lev
-share/crimson/levels/HeavyMetal.lev
-share/crimson/levels/IslandHoppers.lev
-share/crimson/levels/LankhValley.lev
-share/crimson/levels/LostFactories.lev
-share/crimson/levels/MountainDefense.lev
-share/crimson/levels/OmyarGorge.lev
-share/crimson/levels/Revelation.lev
-share/crimson/levels/Uprising.lev
-share/crimson/locale/de.dat
-share/crimson/locale/en.dat
-share/crimson/locale/fr.dat
-share/crimson/locale/pl.dat
-share/crimson/music/default.mid
-share/crimson/sound/ask.wav
-share/crimson/sound/clicked.wav
-share/crimson/sound/error.wav
-share/crimson/sound/menu.wav
-share/crimson/sound/repair.wav
-share/crimson/sound/select.wav
-share/crimson/cf.dat
-share/crimson/default.tiles
-share/crimson/default.units
-@dirrm share/crimson/levels
-@dirrm share/crimson/locale
-@dirrm share/crimson/music
-@dirrm share/crimson/sound
-@dirrm share/crimson
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
