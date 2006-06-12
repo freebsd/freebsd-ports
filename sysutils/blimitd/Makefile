@@ -9,7 +9,8 @@ PORTNAME=	blimitd
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/blimitd/
+MASTER_SITES=	http://mirror2.unixfreunde.de/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	andrew@ugh.net.au
 COMMENT=	Daemon to enforce login.conf limits
