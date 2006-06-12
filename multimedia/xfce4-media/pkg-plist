@@ -8,6 +8,8 @@ include/xfmedia/xfmedia-plugin.h
 include/xfmedia/xfmedia-remote-client.h
 include/xfmedia/xfmedia-remote-common.h
 include/xfmedia/xfmedia-settings.h
+lib/xfmedia/plugins/xfmedia-infopipe.a
+lib/xfmedia/plugins/xfmedia-infopipe.la
 lib/xfmedia/plugins/xfmedia-infopipe.so
 libdata/pkgconfig/xfmedia-plugin.pc
 share/applications/xfmedia.desktop

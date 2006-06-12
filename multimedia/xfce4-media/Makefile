@@ -20,6 +20,8 @@ LIB_DEPENDS=	xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		xine.15:${PORTSDIR}/multimedia/libxine \
 		exo-0.3.0:${PORTSDIR}/x11/libexo
 
+OPTIONS=	TAGLIB	"Enable metadata editing"	off
+
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
@@ -33,8 +35,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TAGLIB)
+LIB_DEPENDS+=	tag.5:${PORTSDIR}/audio/taglib
+CONFIGURE_ARGS=	--with-taglib
+.else
+CONFIGURE_ARGS=	--without-taglib
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g" \
 		${WRKSRC}/xfmedia/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
