@@ -9,16 +9,5 @@ asc2eb, eb2asc, eb2ascp:  ASCII/EBCDIC conversion
 packeb, unpackeb:  pack/unpack and convert an EBCDIC record
 hexdump:  dump memory in an MVS-like format
 
-Recent changes:
-
-0.16 - Rewritten to pull the packeb.c code into the XS routine.
-     - Now builds correctly under Windows.
-0.17 - Added the SMF timestamp data type.
-0.18 - Performance improvements to the XS version.
-0.19 - Fixed a bug in unpackeb.
-0.20 - Fixed memory leaks in CF_num2packed and CF_num2zoned.
-0.21 - Added '@' option to unpackeb at the request of Marc (CPAN bug 15461).
-
-Copyright 2001 Geoffrey Rommel.  This program is free software;
-you can redistribute it and/or modify it under the same terms as Perl
-itself.
+WWW: http://search.cpan.org/dist/Convert-IBM390
+Author: Geoffrey Rommel <GROMMEL@cpan.org>

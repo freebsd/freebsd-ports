@@ -1,8 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/IBM390.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/Convert/IBM390.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/IBM390.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/IBM390
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Convert
