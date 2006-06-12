@@ -52,6 +52,8 @@ share/locale/fr/LC_MESSAGES/kcm_knemo.mo
 share/locale/fr/LC_MESSAGES/knemod.mo
 share/locale/ga/LC_MESSAGES/kcm_knemo.mo
 share/locale/ga/LC_MESSAGES/knemod.mo
+share/locale/hu/LC_MESSAGES/kcm_knemo.mo
+share/locale/hu/LC_MESSAGES/knemod.mo
 share/locale/it/LC_MESSAGES/kcm_knemo.mo
 share/locale/it/LC_MESSAGES/knemod.mo
 share/locale/ka/LC_MESSAGES/kcm_knemo.mo
@@ -79,7 +81,7 @@ share/locale/sv/LC_MESSAGES/knemod.mo
 share/locale/tr/LC_MESSAGES/kcm_knemo.mo
 share/locale/tr/LC_MESSAGES/knemod.mo
 share/services/kded/knemod.desktop
-@dirrm share/services/kded
+@dirrmtry share/services/kded
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/rw/LC_MESSAGES
