@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	webadmin/:sf \
 			olgeni/:local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:up/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:local/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
