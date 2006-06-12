@@ -71,6 +71,7 @@ MAN3+=	Acme::MetaSyntactic::python.3
 MAN3+=	Acme::MetaSyntactic::quantum.3
 MAN3+=	Acme::MetaSyntactic::robin.3
 MAN3+=	Acme::MetaSyntactic::roman.3
+MAN3+=  Acme::MetaSyntactic::scooby_doo.3
 MAN3+=	Acme::MetaSyntactic::services.3
 MAN3+=	Acme::MetaSyntactic::shadok.3
 MAN3+=	Acme::MetaSyntactic::simpsons.3
