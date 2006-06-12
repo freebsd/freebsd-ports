@@ -1,0 +1,12 @@
+The Spread package provides a simple wrapper around the spread toolkit. We 
+try to provide a much higher level wrapper. By providing:
+
+    - Simple methods to send serialised Perl structures between programs
+    - Callback registration
+    - Extensible callbacks for command driven programs
+    - Lots of accesor functions
+    - Handling of incoming messages is supported via callbacks or
+    via direct polling for input. Its your choice :-)
+
+WWW: http://search.cpan.org/dist/Spread-Message
+Author: Mark Pfeiffer
