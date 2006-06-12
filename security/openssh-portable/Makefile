@@ -60,6 +60,7 @@ OPTIONS=	PAM		"Enable pam(3) support"			on \
 		SUID_SSH	"Enable suid SSH (Recommended off)"	off \
 		GSSAPI		"Enable GSSAPI support"			off \
 		OPENSSH_CHROOT	"Enable CHROOT support"			off \
+		OPENSC		"Enable OpenSC smartcard support"	off \
 		HPN		"Enable HPN-11 SSH/SCP patch"		off \
 		HPN_NONECIPHER	"Enable HPN-11 with None Cipher patch"	off \
 		OVERWRITE_BASE	"OpenSSH overwrite base"		off
@@ -120,6 +121,11 @@ CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 
 .if defined(WITH_OPENSSH_CHROOT)
 CFLAGS+=		-DCHROOT
+.endif
+
+.if defined(WITH_OPENSC)
+LIB_DEPENDS+=		opensc.2:${PORTSDIR}/security/opensc
+CONFIGURE_ARGS+=	--with-opensc=${LOCALBASE}
 .endif
 
 .if defined(WITH_HPN)
