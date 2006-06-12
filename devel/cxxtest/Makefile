@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cxxtest
-PORTVERSION=	3.9.1
+PORTVERSION=	3.10.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	Simple and powerful JUnit/CppUnit/xUnit-like framework for C++
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+USE_GMAKE=	yes
 
 DOCS=		README TODO docs/*.html docs/*.png
 EXAMPLES=	sample/*.cpp sample/*.h sample/*.tpl sample/Construct \
