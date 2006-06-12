@@ -528,6 +528,7 @@
     SUBDIR += quake3-osp
     SUBDIR += quake3-q3base
     SUBDIR += quake3-ra3
+    SUBDIR += quake3-rq3
     SUBDIR += quake3-ut
     SUBDIR += quake3-wfa
     SUBDIR += qcc
