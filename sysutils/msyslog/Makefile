@@ -18,7 +18,7 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	Flexible and easy to integrate syslog daemon
 
 OPTIONS=	MYSQL	"With MySQL Support"	off \
-		PSSQL	"With Postfres Support"	off \
+		PGSQL	"With Postgres Support"	off \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
@@ -39,7 +39,7 @@ MAN8+=	om_mysql.8
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
-.if defined(WITH_PSSQL)
+.if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 MAN8+=	om_pgsql.8
 .else
