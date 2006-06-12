@@ -9,7 +9,8 @@ PORTNAME=	pager
 PORTVERSION=	0.6
 PORTREVISION=	5
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://dapfy.bei.t-online.de/sawfish/pager/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://mirror2.unixfreunde.de/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ebert@informatik.unibw-muenchen.de
@@ -29,9 +30,6 @@ PLIST_SUB+=	SAWFISH_VERSION="${SAWFISH_VERSION}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-#	doesn't work correct with the compiled .jl file at the moment
-#	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jlc \
-#		${PREFIX}/share/sawfish/${SAWFISH_VERSION}/lisp/sawfish/wm/ext
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jl \
 		${PREFIX}/share/sawfish/${SAWFISH_VERSION}/lisp/sawfish/wm/ext
 	@${CAT} ${PKGMESSAGE}
