@@ -18,8 +18,13 @@ CONFIGURE_ARGS=	--with-gtk2 --with-gnome2 --enable-applet
 
 UIM_SLAVE=	yes
 
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-helper_Makefile.in 
+
+do-build:
+	(cd ${WRKSRC}/helper && ${GMAKE} LIBS="-luim -luim-custom")
+
 do-install:
-	cd ${WRKSRC}/helper && \
-	${GMAKE} am__EXEEXT_3= install-serverDATA install-libexecPROGRAMS install-exec-hook-applet
+	(cd ${WRKSRC}/helper && \
+	${GMAKE} am__EXEEXT_3="" install-serverDATA install-libexecPROGRAMS)
 
 .include "${MASTERDIR}/Makefile"

@@ -1,5 +1,3 @@
-bin/uim-helper-toolbar-gtk
-bin/uim-helper-toolbar-gtk-systray
 bin/uim-im-switcher-gtk
 bin/uim-input-pad-ja
 bin/uim-pref-gtk

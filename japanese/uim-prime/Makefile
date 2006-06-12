@@ -20,11 +20,16 @@ CONFIGURE_ARGS=	--with-prime
 
 UIM_SLAVE=	yes
 
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
+
+do-build:
+	(cd ${WRKSRC}/uim && ${GMAKE} libuim-prime.la)
+
 do-install:
-	cd ${WRKSRC}/uim && \
-	${GMAKE} uim_plugin_LTLIBRARIES=libuim-prime.la install-uim_pluginLTLIBRARIES
+	(cd ${WRKSRC}/uim && \
+	${GMAKE} uim_plugin_LTLIBRARIES=libuim-prime.la install-uim_pluginLTLIBRARIES)
 
 post-install:
-	uim-module-manager --register prime
+	${X11BASE}/bin/uim-module-manager --register prime
 
 .include "${MASTERDIR}/Makefile"

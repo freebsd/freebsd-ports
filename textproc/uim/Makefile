@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
@@ -19,6 +18,7 @@ INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	gnometarget glib20
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 .if !defined(UIM_SLAVE)
@@ -42,7 +42,7 @@ PLIST_SUB=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_editline.c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-uim_editline.c
 .endif
 
 .if ${PERL_LEVEL} >= 500600
@@ -52,7 +52,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/perl:${PORTSDIR}/lang/perl5
 CONFIGURE_ENV+=	INTLTOOL_PERL="${LOCALBASE}/bin/perl"
 .endif
 
-.for _x in gtk2 qt gnome2 anthy canna m17nlib prime scim
+.for _x in gtk2 qt gnome2 anthy canna m17nlib prime scim dict
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
 CONFIGURE_ARGS+=--without-${_x}
 .endif
