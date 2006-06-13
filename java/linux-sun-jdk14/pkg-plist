@@ -1184,7 +1184,9 @@
 %%T%%/jre/lib/zi/America/Indiana/Indianapolis
 %%T%%/jre/lib/zi/America/Indiana/Knox
 %%T%%/jre/lib/zi/America/Indiana/Marengo
+%%T%%/jre/lib/zi/America/Indiana/Petersburg
 %%T%%/jre/lib/zi/America/Indiana/Vevay
+%%T%%/jre/lib/zi/America/Indiana/Vincennes
 %%T%%/jre/lib/zi/America/Inuvik
 %%T%%/jre/lib/zi/America/Iqaluit
 %%T%%/jre/lib/zi/America/Jamaica
@@ -1203,6 +1205,7 @@
 %%T%%/jre/lib/zi/America/Merida
 %%T%%/jre/lib/zi/America/Mexico_City
 %%T%%/jre/lib/zi/America/Miquelon
+%%T%%/jre/lib/zi/America/Moncton
 %%T%%/jre/lib/zi/America/Monterrey
 %%T%%/jre/lib/zi/America/Montevideo
 %%T%%/jre/lib/zi/America/Montreal
@@ -1356,7 +1359,10 @@
 %%T%%/jre/lib/zi/Australia/Perth
 %%T%%/jre/lib/zi/Australia/Sydney
 %%T%%/jre/lib/zi/CET
+%%T%%/jre/lib/zi/CST6CDT
 %%T%%/jre/lib/zi/EET
+%%T%%/jre/lib/zi/EST
+%%T%%/jre/lib/zi/EST5EDT
 %%T%%/jre/lib/zi/Etc/GMT
 %%T%%/jre/lib/zi/Etc/GMT+1
 %%T%%/jre/lib/zi/Etc/GMT+10
@@ -1429,6 +1435,7 @@
 %%T%%/jre/lib/zi/Europe/Zaporozhye
 %%T%%/jre/lib/zi/Europe/Zurich
 %%T%%/jre/lib/zi/GMT
+%%T%%/jre/lib/zi/HST
 %%T%%/jre/lib/zi/Indian/Antananarivo
 %%T%%/jre/lib/zi/Indian/Chagos
 %%T%%/jre/lib/zi/Indian/Christmas
@@ -1441,6 +1448,9 @@
 %%T%%/jre/lib/zi/Indian/Mayotte
 %%T%%/jre/lib/zi/Indian/Reunion
 %%T%%/jre/lib/zi/MET
+%%T%%/jre/lib/zi/MST
+%%T%%/jre/lib/zi/MST7MDT
+%%T%%/jre/lib/zi/PST8PDT
 %%T%%/jre/lib/zi/Pacific/Apia
 %%T%%/jre/lib/zi/Pacific/Auckland
 %%T%%/jre/lib/zi/Pacific/Chatham
