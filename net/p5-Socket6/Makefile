@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Socket6
 # Date created:		24 May 2000
-# Whom:	      		Hajimu UMEMOTO <ume@FreeBSD.org>
+# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Socket6
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	Perl module to support getaddrinfo() and getnameinfo()
+COMMENT=	IPv6 related part of the C socket.h defines and structure manipulators
 
 PERL_CONFIGURE=	yes
 
