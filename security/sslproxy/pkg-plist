@@ -1,4 +1,0 @@
-bin/sslproxy
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/dummyCert.pem
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
