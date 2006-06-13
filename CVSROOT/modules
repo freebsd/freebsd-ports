@@ -9258,6 +9258,7 @@ p5-Petal-CodePerl	ports/textproc/p5-Petal-CodePerl
 p5-Petal-Mail	ports/textproc/p5-Petal-Mail
 p5-Petal-Utils	ports/textproc/p5-Petal-Utils
 p5-Pg		ports/databases/p5-Pg
+p5-Pipeline	ports/devel/p5-Pipeline
 p5-PlRPC	ports/net/p5-PlRPC
 p5-Plucene	ports/textproc/p5-Plucene
 p5-Plucene-Plugin-Analyzer-SnowballAnalyzer	ports/textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
