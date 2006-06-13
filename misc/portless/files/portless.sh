@@ -31,7 +31,7 @@ Script=`basename $0` # name of this script
 # set defaults
 opt_f=""
 PORTSDIR=${PORTSDIR:-/usr/ports}
-PAGER=${PAGER=$:-less -e}
+PAGER=${PAGER:-less -e}
 PKGDESCR="pkg-descr"
 
 # print usage message to stderr and exit
