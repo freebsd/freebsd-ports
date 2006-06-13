@@ -14,7 +14,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A middleware framework for smart card terminals
 
 OPTIONS=	USB "Install libusb for USB tokens/readers support" on \
-		PCSC "Install pcsc-lite to build the PC/SC -> openCT frontend" off
+		PCSC "Install pcsc-lite to build the PC/SC->OpenCT frontend" off
 
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
