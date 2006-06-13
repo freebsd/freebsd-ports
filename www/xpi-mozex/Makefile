@@ -1,12 +1,12 @@
-# Ports collection makefile for:  mozex-firefox
-# Date created:			  Tue Oct 28, 2003
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
+# Ports collection makefile for:	mozex-firefox
+# Date created:				Tue Oct 28, 2003
+# Whom:					Thierry Thomas (<thierry@pompo.net>)
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mozex
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
