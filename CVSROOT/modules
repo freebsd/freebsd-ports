@@ -9754,6 +9754,7 @@ p5-XML-ApacheFOP	ports/print/p5-XML-ApacheFOP
 p5-XML-Atom	ports/textproc/p5-XML-Atom
 p5-XML-Atom-Filter	ports/textproc/p5-XML-Atom-Filter
 p5-XML-Atom-SimpleFeed	ports/textproc/p5-XML-Atom-SimpleFeed
+p5-XML-Atom-Stream	ports/textproc/p5-XML-Atom-Stream
 p5-XML-Atom-Syndication	ports/textproc/p5-XML-Atom-Syndication
 p5-XML-AutoWriter	ports/textproc/p5-XML-AutoWriter
 p5-XML-Catalog	ports/textproc/p5-XML-Catalog
