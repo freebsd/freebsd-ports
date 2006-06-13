@@ -262,6 +262,7 @@ gnupg-*			security/gnupg		Crypto; export-controlled
 goemon.tgz		audio/timidity		Uses copyrighted patches
 gogo239b.tgz		audio/gogo		Condition is not clear
 goodway*_free.zip	games/linux-goodway	Redistribution prohibited
+GoogleEarthLinux.bin	astro/google-earth	Not really sure about the redistribution terms
 goPod-*			misc/*gopod		Unclear legal status in EU countries
 grande-KXL-*.tar.gz	games/grande		Possible copyright infringement
 graphviz/*		graphics/graphviz	Needs license before fetching
