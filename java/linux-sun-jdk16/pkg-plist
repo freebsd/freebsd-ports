@@ -806,6 +806,9 @@
 %%T%%/demo/management/FullThreadDump/src/Deadlock.java
 %%T%%/demo/management/FullThreadDump/src/FullThreadDump.java
 %%T%%/demo/management/FullThreadDump/src/ThreadMonitor.java
+%%T%%/demo/management/JTop/JTop.jar
+%%T%%/demo/management/JTop/README.txt
+%%T%%/demo/management/JTop/src/JTop.java
 %%T%%/demo/management/MemoryMonitor/MemoryMonitor.jar
 %%T%%/demo/management/MemoryMonitor/README.txt
 %%T%%/demo/management/MemoryMonitor/src/MemoryMonitor.java
@@ -2529,6 +2532,8 @@
 @dirrm %%T%%/demo/management/VerboseGC
 @dirrm %%T%%/demo/management/MemoryMonitor/src
 @dirrm %%T%%/demo/management/MemoryMonitor
+@dirrm %%T%%/demo/management/JTop/src
+@dirrm %%T%%/demo/management/JTop
 @dirrm %%T%%/demo/management/FullThreadDump/src
 @dirrm %%T%%/demo/management/FullThreadDump
 @dirrm %%T%%/demo/management
