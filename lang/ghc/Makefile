@@ -10,12 +10,16 @@ PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
+DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
+
 PATCH_SITES=	http://www-i2.informatik.rwth-aachen.de/~stolz/FreeBSD/
 PATCHFILES=	patch-ghc-libraries_OpenAL.diff
 
+MAINTAINER=	haskell@FreeBSD.org
+COMMENT=	A Compiler for the functional language Haskell
+
 ONLY_FOR_ARCHS=	i386
 
-SRC_DIST=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
 BOOT_DIST4=	ghc-${PORTVERSION}-i386-unknown-freebsd4-boot${EXTRACT_SUFX}:boot
 BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
@@ -25,8 +29,6 @@ USE_BZIP2=	yes
 OPTIONS=	PROFILE "Compile for profiling as well" on
 
 .include <bsd.port.pre.mk>
-
-DISTFILES=	${SRC_DIST}
 
 .if ${OSVERSION} < 500000
 DISTFILES+=	${BOOT_DIST4}
@@ -46,9 +48,6 @@ IGNORE=		requires newer version of perl
 USE_AUTOTOOLS=	autoconf:259:env
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		readline.5:${PORTSDIR}/devel/readline
-
-MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A Compiler for the functional language Haskell
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
