@@ -8057,6 +8057,7 @@ p5-Class-ParmList	ports/devel/p5-Class-ParmList
 p5-Class-Prototyped	ports/devel/p5-Class-Prototyped
 p5-Class-ReturnValue	ports/devel/p5-Class-ReturnValue
 p5-Class-Roles	ports/devel/p5-Class-Roles
+p5-Class-STL-Containers	ports/devel/p5-Class-STL-Containers
 p5-Class-Singleton	ports/devel/p5-Class-Singleton
 p5-Class-Spiffy	ports/devel/p5-Class-Spiffy
 p5-Class-StateMachine	ports/devel/p5-Class-StateMachine
