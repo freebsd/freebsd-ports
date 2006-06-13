@@ -7997,6 +7997,7 @@ p5-Class-Autouse	ports/devel/p5-Class-Autouse
 p5-Class-Base	ports/devel/p5-Class-Base
 p5-Class-BlackHole	ports/devel/p5-Class-BlackHole
 p5-Class-C3	ports/devel/p5-Class-C3
+p5-Class-CodeStyler	ports/devel/p5-Class-CodeStyler
 p5-Class-Container	ports/devel/p5-Class-Container
 p5-Class-Contract	ports/devel/p5-Class-Contract
 p5-Class-DBI	ports/databases/p5-Class-DBI
