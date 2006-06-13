@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext
-PORTVERSION=	1.09
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -23,4 +22,13 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Locale::Maketext.3 Locale::Maketext::TPJ13.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${ECHO} "Parts of this module require the utf8 pragma which is\
+		not available in your version of Perl.  This module will\
+		not be fully functional. **"
+.endif
+
+.include <bsd.port.post.mk>
