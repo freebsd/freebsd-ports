@@ -1,9 +1,9 @@
 bin/workrave
 etc/sound/events/workrave.soundlist
-libdata/bonobo/servers/Workrave-Applet.server
-libdata/bonobo/servers/Workrave-Control.server
-libexec/workrave-applet
-share/gnome/gnome-2.0/ui/GNOME_WorkraveApplet.xml
+%%GNOME%%libdata/bonobo/servers/Workrave-Applet.server
+%%GNOME%%libdata/bonobo/servers/Workrave-Control.server
+%%GNOME%%libexec/workrave-applet
+%%GNOME%%share/gnome/gnome-2.0/ui/GNOME_WorkraveApplet.xml
 share/gnome/pixmaps/workrave/workrave-icon-huge.png
 share/gnome/sounds/workrave/break-ignored.wav
 share/gnome/sounds/workrave/break-prelude.wav

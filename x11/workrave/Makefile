@@ -14,20 +14,35 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Gnome RSI prevention tool
 
-LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
-		gnet-2.0.0:${PORTSDIR}/net/gnet2
+.if !defined(WITHOUT_GNOME)
+LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+.else
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+.endif
+.if !defined(WITHOUT_NETWORK)
+LIB_DEPENDS+=	gnet-2.0.0:${PORTSDIR}/net/gnet2
+.endif
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gconf2 intltool
+USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
+.if !defined(WITHOUT_GNOME)
+USE_GNOME+=	gnomepanel
+.endif
 USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome/workrave \
-		--enable-gconf \
-		--enable-gnome \
-		--enable-exercises
+CONFIGURE_ARGS=	--enable-gconf
+.if defined(WITHOUT_GNOME)
+CONFIGURE_ARGS+=--disable-gnome
+PLIST_SUB=	GNOME="@comment "
+.else
+PLIST_SUB=	GNOME=""
+.endif
+.if defined(WITHOUT_NETWORK)
+CONFIGURE_ARGS+=--disable-distribution
+.endif
 
 .include <bsd.port.mk>
