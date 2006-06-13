@@ -5,36 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=		tea
-DISTVERSION=		13.3
-CATEGORIES=		editors
-MASTER_SITES=		http://tea.linux.kiev.ua/
+PORTNAME=	tea
+DISTVERSION=	13.3
+CATEGORIES=	editors
+MASTER_SITES=	http://tea.linux.kiev.ua/
 
-MAINTAINER=		danfe@FreeBSD.org
-COMMENT=		A simple and powerful GTK+ text editor
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	A simple and powerful GTK+ text editor
 
-USE_X_PREFIX=		yes
-USE_BZIP2=		yes
-GNU_CONFIGURE=		yes
-USE_GCC=		3.3+
-USE_GETTEXT=		yes
-USE_GNOME=		gtk20
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GCC=	3.3+
+USE_GETTEXT=	yes
+USE_GNOME=	gtk20
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=		TEA_ONLY "Build original GTK-only version" on \
-			ASPELL "Build with GNU aspell support" on
+OPTIONS=	TEA_ONLY	"Build original GTK-only version" on \
+		ASPELL		"Build with GNU aspell support" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TEA_ONLY)
 CONFIGURE_ARGS+=	--enable-legacy
 .else
-USE_GNOME+=		gtksourceview
+USE_GNOME+=	gtksourceview
 .endif
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 .endif
 
 post-patch:
