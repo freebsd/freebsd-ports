@@ -1,0 +1,25 @@
+%%SITE_PERL%%/Pipeline.pm
+%%SITE_PERL%%/Pipeline/Analyser.pm
+%%SITE_PERL%%/Pipeline/Base.pm
+%%SITE_PERL%%/Pipeline/Dispatch.pm
+%%SITE_PERL%%/Pipeline/Dumper.pm
+%%SITE_PERL%%/Pipeline/Error/Abstract.pm
+%%SITE_PERL%%/Pipeline/Error/AsyncResults.pm
+%%SITE_PERL%%/Pipeline/Error/Construction.pm
+%%SITE_PERL%%/Pipeline/Production.pm
+%%SITE_PERL%%/Pipeline/Segment.pm
+%%SITE_PERL%%/Pipeline/Segment/Async.pm
+%%SITE_PERL%%/Pipeline/Segment/Async/Fork.pm
+%%SITE_PERL%%/Pipeline/Segment/Async/Handler.pm
+%%SITE_PERL%%/Pipeline/Segment/Async/IThreads.pm
+%%SITE_PERL%%/Pipeline/Segment/Tester.pm
+%%SITE_PERL%%/Pipeline/Store.pm
+%%SITE_PERL%%/Pipeline/Store/ISA.pm
+%%SITE_PERL%%/Pipeline/Store/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pipeline/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pipeline
+@dirrm %%SITE_PERL%%/Pipeline/Store
+@dirrm %%SITE_PERL%%/Pipeline/Segment/Async
+@dirrm %%SITE_PERL%%/Pipeline/Segment
+@dirrm %%SITE_PERL%%/Pipeline/Error
+@dirrm %%SITE_PERL%%/Pipeline
