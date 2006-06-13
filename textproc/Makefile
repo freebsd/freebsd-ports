@@ -518,6 +518,7 @@
     SUBDIR += p5-XML-Atom
     SUBDIR += p5-XML-Atom-Filter
     SUBDIR += p5-XML-Atom-SimpleFeed
+    SUBDIR += p5-XML-Atom-Stream
     SUBDIR += p5-XML-Atom-Syndication
     SUBDIR += p5-XML-AutoWriter
     SUBDIR += p5-XML-Catalog
