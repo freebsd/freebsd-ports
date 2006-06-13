@@ -9,8 +9,8 @@ PORTNAME=	freeciv
 PORTVERSION=	2.0.8
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
-		ftp://ftp.netc.pt/pub/freeciv/stable/ \
-		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable/
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	infofarmer@FreeBSD.org
 COMMENT?=	A civilisation clone for X11; multiplayer
