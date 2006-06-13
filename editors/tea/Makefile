@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tea
-DISTVERSION=		12.0
+DISTVERSION=		13.3
 CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 
@@ -17,6 +17,7 @@ USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_GCC=		3.3+
+USE_GETTEXT=		yes
 USE_GNOME=		gtk20
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -26,8 +27,9 @@ OPTIONS=		TEA_ONLY "Build original GTK-only version" on \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_TEA_ONLY)
-CONFIGURE_ARGS+=	--enable-chai
+.if defined(WITH_TEA_ONLY)
+CONFIGURE_ARGS+=	--enable-legacy
+.else
 USE_GNOME+=		gtksourceview
 .endif
 
