@@ -595,6 +595,7 @@ upsmon*			sysutils/upsmon		Redistribute only with
 						original source code
 urchin*.tar.gz		www/urchin5		Commercial software, also comes
 						bundled with Apache-SSL
+unreal.tournament*.run	games/linux-ut		Redistribution limited
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 uzap.tar.gz             editors/uzap		Restrictive copyright
 vbsd440e.tar.Z		security/vscan		Commercial software
