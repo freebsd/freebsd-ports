@@ -14,7 +14,7 @@ bin/squeak
 %%PLIST_NPSQUEAK%%%%DATADIR%%/%%VMVERSION%%/npsqueak.so
 %%PLIST_NPSQUEAK%%%%DATADIR%%/%%VMVERSION%%/npsqueakrun
 %%DATADIR%%/%%VMVERSION%%/squeak
-%%PLIST_X%%/%%DATADIR%%/%%VMVERSION%%/vm-display-X11
+%%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/vm-display-X11
 %%DATADIR%%/%%VMVERSION%%/vm-display-null
 %%DATADIR%%/%%VMVERSION%%/vm-sound-OSS
 %%DATADIR%%/%%VMVERSION%%/vm-sound-null
