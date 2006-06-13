@@ -14,17 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gnome Audio Cd Buner
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
-		xmlproc_parse:${PORTSDIR}/textproc/py-xml
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
-		xmlproc_parse:${PORTSDIR}/textproc/py-xml
+BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
+RUN_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomeextras intlhack
 USE_GMAKE=	yes
-USE_GSTREAMER=	core gnomevfs
+USE_GSTREAMER=	core gnomevfs python
 USE_PYTHON=	2.4+
 
 OPTIONS=	MUINE "Cd-Burner Plugin for muine audio player (i386 only)" Off
