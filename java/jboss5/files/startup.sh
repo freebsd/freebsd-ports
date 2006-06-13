@@ -2,7 +2,7 @@
 #
 # %%APP_TITLE%% startup script.
 #
-# $FreeBSD: /tmp/pcvs/ports/java/jboss5/files/Attic/startup.sh,v 1.3 2004-12-22 20:44:23 hq Exp $
+# $FreeBSD: /tmp/pcvs/ports/java/jboss5/files/Attic/startup.sh,v 1.4 2006-06-13 17:43:14 glewis Exp $
 #
 
 # PROVIDE: %%APP_SHORTNAME%%
@@ -40,15 +40,18 @@ procname="%%JAVA%%"
 			chown %%USER%%:%%GROUP%% ${pidfile}
 		fi
 
-		%%CONTROL_SCRIPT%% -q ${%%APP_SHORTNAME%%_flags} ${%%APP_SHORTNAME%%_configflag} ${%%APP_SHORTNAME%%_config} start &&
-		echo -n " %%APP_SHORTNAME%%"
+		echo "Starting %%APP_SHORTNAME%%."
+		%%CONTROL_SCRIPT%% -q ${%%APP_SHORTNAME%%_flags} ${%%APP_SHORTNAME%%_configflag} ${%%APP_SHORTNAME%%_config} start
 	}
 }
 
 %%APP_SHORTNAME%%_restart ()
 {
 	checkyesno %%APP_SHORTNAME%%_enable &&
+	{
+		echo "Restarting %%APP_SHORTNAME%%."
 		%%CONTROL_SCRIPT%% -q ${%%APP_SHORTNAME%%_flags} ${%%APP_SHORTNAME%%_configflag} ${%%APP_SHORTNAME%%_config} restart
+	}
 }
 
 load_rc_config $name
