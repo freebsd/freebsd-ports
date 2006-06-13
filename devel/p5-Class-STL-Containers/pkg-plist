@@ -1,0 +1,20 @@
+%%SITE_PERL%%/Class/STL/Algorithms.pm
+%%SITE_PERL%%/Class/STL/ClassMembers.pm
+%%SITE_PERL%%/Class/STL/ClassMembers/Constructor.pm
+%%SITE_PERL%%/Class/STL/ClassMembers/DataMember.pm
+%%SITE_PERL%%/Class/STL/ClassMembers/Disable.pm
+%%SITE_PERL%%/Class/STL/ClassMembers/FunctionMember.pm
+%%SITE_PERL%%/Class/STL/ClassMembers/SingletonConstructor.pm
+%%SITE_PERL%%/Class/STL/Containers.pm
+%%SITE_PERL%%/Class/STL/Element.pm
+%%SITE_PERL%%/Class/STL/Iterators.pm
+%%SITE_PERL%%/Class/STL/Trace.pm
+%%SITE_PERL%%/Class/STL/Utilities.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL/Containers/.packlist
+%%SITE_PERL%%/stl.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL/Containers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/STL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/STL/ClassMembers
+@dirrmtry %%SITE_PERL%%/Class/STL
+@dirrmtry %%SITE_PERL%%/Class

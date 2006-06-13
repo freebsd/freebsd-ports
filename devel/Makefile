@@ -809,6 +809,7 @@
     SUBDIR += p5-Class-Prototyped
     SUBDIR += p5-Class-ReturnValue
     SUBDIR += p5-Class-Roles
+    SUBDIR += p5-Class-STL-Containers
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Spiffy
     SUBDIR += p5-Class-StateMachine
