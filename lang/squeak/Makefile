@@ -7,7 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.6
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
