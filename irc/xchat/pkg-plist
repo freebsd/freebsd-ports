@@ -1,5 +1,5 @@
 bin/xchat
-bin/xchat-remote
+%%DBUS%%bin/xchat-remote
 %%DBUS%%lib/xchat/plugins/dbus.la
 %%DBUS%%lib/xchat/plugins/dbus.so
 %%PERL%%lib/xchat/plugins/perl.la

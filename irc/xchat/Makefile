@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://xchat.org/files/source/2.6/
@@ -69,6 +70,12 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
+.if !defined(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+.else
+CONFIGURE_ARGS+=--disable-spell
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600 || defined(WITHOUT_PERL)
@@ -81,7 +88,7 @@ PLIST_SUB+=	PERL=""
 .endif
 
 pre-everything::
-.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS) || !defined(WITH_TCL) || !defined(WITHOUT_PERL) || !defined(WITHOUT_DBUS)
+.if !defined(WITH_PYTHON) || !defined(WITH_SOCKS) || !defined(WITH_TCL) || !defined(WITHOUT_PERL) || !defined(WITHOUT_DBUS) || !defined(WITHOUT_GTKSPELL)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} ""
 .endif
@@ -99,6 +106,9 @@ pre-everything::
 .endif
 .if !defined(WITHOUT_DBUS)
 	@${ECHO_MSG} "WITHOUT_DBUS=yes to disable dbus support"
+.endif
+.if !defined(WITHOUT_GTKSPELL)
+	@${ECHO_MSG} "WITHOUT_GTKSPELL=yes to disable spell check support"
 .endif
 
 post-patch:
