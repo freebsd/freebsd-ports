@@ -7,7 +7,7 @@
 
 PORTNAME=	linux_locale
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean emulators linux
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 CONFLICTS=	linux_base-fc*
 
-USE_LINUX=	yes
+USE_LINUX=	8
 USE_LINUX_PREFIX=yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
