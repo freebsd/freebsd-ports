@@ -1,2 +1,6 @@
+%%SITE_PERL%%/Devel/InnerPackage.pm
 %%SITE_PERL%%/Module/Pluggable.pm
+%%SITE_PERL%%/Module/Pluggable/Object.pm
+@dirrmtry %%SITE_PERL%%/Devel
+@dirrmtry %%SITE_PERL%%/Module/Pluggable
 @dirrmtry %%SITE_PERL%%/Module

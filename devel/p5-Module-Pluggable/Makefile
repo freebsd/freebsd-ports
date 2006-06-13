@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	2.97
+PORTVERSION=	3.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -20,7 +20,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
-MAN3=		Module::Pluggable.3
+MAN3=		Devel::InnerPackage.3 \
+		Module::Pluggable.3 \
+		Module::Pluggable::Object.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} <= 500503
