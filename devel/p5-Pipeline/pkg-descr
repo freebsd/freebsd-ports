@@ -1,0 +1,5 @@
+"Pipelines" are a mechanism to process data. They are designed to be
+plugged together to make fairly complex operations act in a fairly
+straightforward manner, cleanly, and simply.
+
+WWW: http://search.cpan.org/dist/Pipeline/
