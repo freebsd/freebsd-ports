@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	Data-Dump-Streamer
-PORTVERSION=	2.02
+PORTVERSION=	2.03.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/-\1/}
 
 MAINTAINER=	mat@FreeBSD.org
-COMMENT=	Stream a highly accurate breadth first data dump in perl code form to a var or file
+COMMENT=	Stream a highly accurate breadth first data dump in Perl code
 
 RUN_DEPENDS=	${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-		${SITE_PERL}/B/BUtils.pm:${PORTSDIR}/devel/p5-Module-Info
+		${SITE_PERL}/B/Utils.pm:${PORTSDIR}/devel/p5-B-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	DDS
@@ -27,11 +27,12 @@ MAN3=		DDS.3 Data::Dump::Streamer.3
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e 's,B::Utils,B::BUtils,g'
-
 .if ${PERL_LEVEL} < 500600
 IGNORE=	requires perl 5.6 or above
+.endif
+
+.if ${PERL_LEVEL} >= 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalker
 .endif
 
 .include <bsd.port.post.mk>
