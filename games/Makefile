@@ -384,6 +384,7 @@
     SUBDIR += linux-quake4
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
+    SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo
     SUBDIR += linux-ut2004-demo
     SUBDIR += linux-virtual-jay-peak
