@@ -7,7 +7,7 @@
 
 PORTNAME=		xorg-libs
 PORTVERSION=		6.8.2
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		x11 linux
 DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.${LINUX_RPM_ARCH}.rpm \
 			xorg-x11-deprecated-libs-6.8.2-31.${LINUX_RPM_ARCH}.rpm
