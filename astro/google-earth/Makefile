@@ -1,0 +1,63 @@
+# New ports collection makefile for:	google-earth
+# Date created:				Jun 13 2006
+# Whom:					Florent Thoumie <flz@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	google-earth
+PORTVERSION=	4
+CATEGORIES=	astro deskutils
+MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION}/
+DISTFILES=	GoogleEarthLinux.bin
+EXTRACT_ONLY=	# none
+
+MAINTAINER=	flz@FreeBSD.org
+COMMENT=	Explore, Search and Discover
+
+BUILD_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+
+RESTRICTED=	Not sure about redistribution rights
+
+USE_LINUX=	yes
+
+.include <bsd.port.pre.mk>
+
+UNMAKESELF=	${LOCALBASE}/bin/unmakeself
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
+.else
+RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
+.endif
+
+do-build:
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+	@cd ${WRKSRC} && ${UNMAKESELF} ${DISTFILES} && ${RM} ${DISTFILES}
+	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} googleearth-data.tar
+	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} googleearth-linux-x86.tar
+	@${REINPLACE_CMD} -i "" -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
+	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f \$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
+	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
+	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
+	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
+	@${ENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
+	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh
+	@${CHOWN} -R ${SHAREDOWN}:${SHAREDGRP} ${WRKSRC}
+
+do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml ${PREFIX}/share/mime/application/
+	${INSTALL_DATA} ${WRKSRC}/googleearth.desktop ${PREFIX}/share/applications/
+	${CP} -r ${WRKSRC}/* ${DATADIR}
+	@${RM} ${DATADIR}/googleearth-mimetypes.xml
+	@${RM} ${DATADIR}/googleearth.desktop
+	${LN} -sf ${DATADIR}/bin/googleearth ${PREFIX}/bin/
+
+.include <bsd.port.post.mk>

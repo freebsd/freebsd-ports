@@ -17,6 +17,7 @@
     SUBDIR += gkrellmoon2
     SUBDIR += gkrellsun
     SUBDIR += glunarclock
+    SUBDIR += google-earth
     SUBDIR += gpsbabel
     SUBDIR += gpsd
     SUBDIR += gpsdrive
