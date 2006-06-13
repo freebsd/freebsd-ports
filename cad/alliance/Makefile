@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
-USE_X=		yes
+USE_XLIB=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	ALLIANCE_TOP=${ALLIANCE_TOP}
@@ -28,9 +28,7 @@ CONFIGURE_ARGS+=--mandir=${PREFIX}/man \
 		--x-libraries=${X11BASE}/lib \
 		--x-includes=${X11BASE}/include \
 		--prefix=${ALLIANCE_TOP} ${CONFIGURE_TARGET}
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGMESSAGE_IN=	${FILESDIR}/pkg-message.in
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -197,7 +195,6 @@ pre-su-install:
 	${MKDIR} ${ALLIANCE_TOP}
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},' < ${PKGMESSAGE_IN} > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
