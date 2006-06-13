@@ -9,17 +9,11 @@ PORTNAME=	modplug
 PORTVERSION=	2.0.5
 PORTREVISION=	1
 CATEGORIES?=	audio
-MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
-		ftp://ftp.cb.spb.ru/.6/Linux-Distrib/Gentoo/distfiles/ \
-		ftp://ftp.neva.ru/.6/Linux-Distrib/Gentoo/distfiles/ \
-		ftp://ftp.rusnet.ru/.6/Linux-Distrib/Gentoo/distfiles/ \
-		ftp://ftp.org.kemsu.ru/gentoo/distfiles/ \
-		ftp://unix.miet.ru/pub/linux/gentoo/distfiles/ \
-		ftp://ftp.duth.gr/pub/gentoo/distfiles/ \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/ \
-		ftp://ftp.freenet.de/pub/.disk3/ftp.snt.utwente.nl/pub/os/linux/gentoo/distfiles/ \
-		ftp://ftp.nerdc.ufl.edu/pub/mirrors/gentoo/distfiles/ \
-		ftp://ftp.uni-kl.de/pub/linux/gentoo/distfiles/
+MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
+		http://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
+		ftp://ftp.dvo.ru/pub/distfiles/ \
+		ftp://ftp.citkit.ru/pub/FreeBSD/distfiles/ \
+		ftp://ftp.chg.ru/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 
