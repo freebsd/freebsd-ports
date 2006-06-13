@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT}
 .endif
 
 ALL_TARGET=	smb_auth
-SAMBA_PORT?=	net/samba
+SAMBA_PORT?=	net/samba3
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/smb_auth ${PREFIX}/bin
