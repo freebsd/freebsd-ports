@@ -13,19 +13,14 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	imgseek
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A photo manager and viewer with content-based search
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt \
 		Magick++-config:${PORTSDIR}/graphics/ImageMagick
 
-USE_CONFIGURE=	no
 USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
-
-#do-build:
-#	(cd ${WRKSRC};${PYTHON_CMD} setup.py)
-#do-install:
 
 .include <bsd.port.mk>
