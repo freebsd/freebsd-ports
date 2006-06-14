@@ -1,6 +1,6 @@
 @comment $FreeBSD$
+bin/perlpoint
 bin/pp2sdf
-bin/pp2tdo
 %%SITE_PERL%%/PerlPoint/Anchors.pm
 %%SITE_PERL%%/PerlPoint/Backend.pm
 %%SITE_PERL%%/PerlPoint/Constants.pm
@@ -16,11 +16,11 @@ bin/pp2tdo
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/.pp2sdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/perlpods.pp
+%%PORTDOCS%%%%EXAMPLESDIR%%/perlpoint
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2pp
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2ppresenter
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2sdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/pp2tdo
 %%PORTDOCS%%%%EXAMPLESDIR%%/pp2tree
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
