@@ -8,10 +8,13 @@
 PORTNAME=	libhash
 PORTVERSION=	1.0.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/libhash/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for manipulating hash tables
+
+DEPRECATED=	Download unavailable anymore
+EXPIRATION_DATE=	2006-07-14
 
 WRKSRC=		${WRKDIR}/libhash
 
