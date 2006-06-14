@@ -1,5 +1,5 @@
---- eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.1/src/org.eclipse.cdt.core.freebsd_3.0.1/library/Makefile.orig	Sat Dec  3 01:27:30 2005
-+++ eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.1/src/org.eclipse.cdt.core.freebsd_3.0.1/library/Makefile	Sat Dec  3 01:28:54 2005
+--- eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.2/src/org.eclipse.cdt.core.freebsd_3.0.2/library/Makefile.orig	Tue Mar 28 22:42:53 2006
++++ eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.0.2/src/org.eclipse.cdt.core.freebsd_3.0.2/library/Makefile	Tue Mar 28 22:51:40 2006
 @@ -5,17 +5,17 @@
  endif
  

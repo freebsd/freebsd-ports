@@ -1,5 +1,5 @@
---- eclipse/features/org.eclipse.cdt_3.0.1/feature.xml.orig	Thu Nov  3 05:32:10 2005
-+++ eclipse/features/org.eclipse.cdt_3.0.1/feature.xml	Fri Dec  2 23:19:06 2005
+--- eclipse/features/org.eclipse.cdt_3.0.2/feature.xml.orig	Tue Mar 28 22:33:44 2006
++++ eclipse/features/org.eclipse.cdt_3.0.2/feature.xml	Tue Mar 28 22:36:03 2006
 @@ -112,6 +112,14 @@
           fragment="true"/>
  
@@ -8,35 +8,35 @@
 +         os="freebsd"
 +         download-size="0"
 +         install-size="0"
-+         version="3.0.1"
++         version="3.0.2"
 +         fragment="true"/>
 +
 +   <plugin
           id="org.eclipse.cdt.core.qnx"
           os="qnx"
           download-size="0"
-@@ -198,6 +206,24 @@
+@@ -197,6 +205,24 @@
+    <plugin
           id="org.eclipse.cdt.core.linux.x86"
           os="linux"
-          arch="x86"
-+         download-size="0"
-+         install-size="0"
-+         version="3.0.1"
-+         fragment="true"/>
-+
-+   <plugin
-+         id="org.eclipse.cdt.core.freebsd.x86"
-+         os="freebsd"
 +         arch="x86"
 +         download-size="0"
 +         install-size="0"
-+         version="3.0.1"
++         version="3.0.2"
 +         fragment="true"/>
 +
 +   <plugin
 +         id="org.eclipse.cdt.core.freebsd.amd64"
 +         os="freebsd"
 +         arch="amd64"
++         download-size="0"
++         install-size="0"
++         version="3.0.2"
++         fragment="true"/>
++
++   <plugin
++         id="org.eclipse.cdt.core.freebsd.x86"
++         os="freebsd"
+          arch="x86"
           download-size="0"
           install-size="0"
-          version="3.0.1"

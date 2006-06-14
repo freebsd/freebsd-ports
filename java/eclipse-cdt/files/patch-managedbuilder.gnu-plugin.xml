@@ -1,5 +1,5 @@
---- eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_3.0.1/plugin.xml.orig	Thu Nov  3 05:32:10 2005
-+++ eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_3.0.1/plugin.xml	Fri Dec  2 23:55:19 2005
+--- eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_3.0.2/plugin.xml.orig	Thu Mar 30 20:02:27 2006
++++ eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_3.0.2/plugin.xml	Thu Mar 30 20:05:59 2006
 @@ -1334,7 +1334,7 @@
  			   errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser">
                 <toolChain

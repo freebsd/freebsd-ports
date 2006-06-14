@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdt
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/cdt/releases/eclipse3.1/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	eclipse-
@@ -31,18 +31,22 @@ ECLIPSE_OS=	freebsd
 ECLIPSE_ARCH=	amd64
 .else
 ECLIPSE_ARCH=	x86
-PLIST_FILES+=	eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/os/freebsd/x86/libpty.so \
-		eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.1/os/freebsd/x86/libspawner.so
+PLIST_FILES+=	eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.2/os/freebsd/x86/libpty.so \
+		eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_3.0.2/os/freebsd/x86/libspawner.so
 .endif
 
 MAKE_ENV+=	ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		ECLIPSE_OS=${ECLIPSE_OS} \
 		PORTVERSION=${PORTVERSION} \
 		JAVA_HOME=${JAVA_HOME}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 do-build:
 		@${RM} ${WRKSRC}/eclipse/features/org.eclipse.cdt_${PORTVERSION}/*.orig
+		@${RM} ${WRKSRC}/eclipse/features/org.eclipse.cdt.source_${PORTVERSION}/*.orig
 		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_${PORTVERSION}/*.orig
+		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_${PORTVERSION}/*.orig
+		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_${PORTVERSION}/src/org.eclipse.cdt.core.freebsd_${PORTVERSION}/library/*.orig
 		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.core.freebsd_${PORTVERSION}/*.orig
 		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.core_${PORTVERSION}/*.orig
 		@${RM} ${WRKSRC}/eclipse/plugins/org.eclipse.cdt.managedbuilder.gnu.ui_${PORTVERSION}/*.orig
