@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	vstr
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.15
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.and.org/pub/james/vstr/${PORTVERSION}/
+MASTER_SITES=	http://www.and.org/vstr/1.0.15/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	robert@rs.tarrant.tx.us
 COMMENT=	General purpose string library for C
