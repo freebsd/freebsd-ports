@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Duration.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Helpers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Infinite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/LeapSecond.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTimePP.pm
