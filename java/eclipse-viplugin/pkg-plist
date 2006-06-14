@@ -8,7 +8,7 @@ eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/viplugin_rc.xml
 eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/icons/vi.gif
 eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViImplementation.jar
 eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViPluginLicenseChecker.jar
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/commons-lang-2.0.jar
+eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/commons-lang-2.1.jar
 eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/jakarta-regexp-1.4.jar
 eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/nanoxml-lite-2.2.3.jar
 eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/plugin.xml
