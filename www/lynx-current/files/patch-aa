@@ -1,5 +1,5 @@
---- makefile.in.orig	Mon Jan 23 04:16:14 2006
-+++ makefile.in	Tue Apr 18 01:33:31 2006
+--- makefile.in.orig	Tue May 30 02:44:54 2006
++++ makefile.in	Wed Jun 14 05:12:44 2006
 @@ -360,13 +360,9 @@
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
@@ -18,7 +18,7 @@
  		-e '/^#HELPFILE:file/s!#!!' \
  		$(LIBDIR)/lynx.tmp | \
 @@ -374,9 +370,10 @@
- 	$(SHELL) -c "$(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir)" | \
+ 	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
 -		>$(LIBDIR)/lynx.cfg
@@ -34,8 +34,8 @@
  	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(LIBDIR)
--	@$(SHELL) -c '$(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg'
-+	@$(SHELL) -c '$(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default'
+-	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg
++	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default
  
  install-lss : $(LIBDIR)
  	-mv -f $(LIBDIR)/lynx.lss $(LIBDIR)/lynx.oldlss
