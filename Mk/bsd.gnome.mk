@@ -83,6 +83,7 @@ gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} $
 				 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
 				 s|[$$][(]localstatedir[)]/scrollkeeper|${SCROLLKEEPER_DIR}|g ; \
 				 s|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g ; \
+				 s|{datadir}/icons/hicolor|{prefix}/share/icons/hicolor|g ; \
 				 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g' ; \
 			${FIND} ${WRKSRC} -name "configure" -type f | ${XARGS} ${REINPLACE_CMD} -e \
 				's|-lpthread|${PTHREAD_LIBS}|g ; \
