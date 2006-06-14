@@ -37,10 +37,6 @@
 %%PHAMMDIR%%/functions/tryBind.php
 %%PHAMMDIR%%/functions/tryLogin.php
 %%PHAMMDIR%%/index.php
-%%PHAMMDIR%%/locales/CVS/Entries
-%%PHAMMDIR%%/locales/CVS/Repository
-%%PHAMMDIR%%/locales/CVS/Root
-%%PHAMMDIR%%/locales/CVS/Tag
 %%PHAMMDIR%%/locales/README.locales
 %%PHAMMDIR%%/locales/TRANSLATORS
 %%PHAMMDIR%%/locales/check_lang_files.php
@@ -50,21 +46,9 @@
 %%PHAMMDIR%%/locales/hu_HU.php
 %%PHAMMDIR%%/locales/id_ID.php
 %%PHAMMDIR%%/locales/it_IT.php
-%%PHAMMDIR%%/locales/plugins/CVS/Entries
-%%PHAMMDIR%%/locales/plugins/CVS/Repository
-%%PHAMMDIR%%/locales/plugins/CVS/Root
-%%PHAMMDIR%%/locales/plugins/CVS/Tag
-%%PHAMMDIR%%/locales/plugins/pdns/CVS/Entries
-%%PHAMMDIR%%/locales/plugins/pdns/CVS/Repository
-%%PHAMMDIR%%/locales/plugins/pdns/CVS/Root
-%%PHAMMDIR%%/locales/plugins/pdns/CVS/Tag
 %%PHAMMDIR%%/locales/plugins/pdns/de_DE.php
 %%PHAMMDIR%%/locales/plugins/pdns/id_ID.php
 %%PHAMMDIR%%/locales/plugins/pdns/it_IT.php
-%%PHAMMDIR%%/locales/plugins/radius/CVS/Entries
-%%PHAMMDIR%%/locales/plugins/radius/CVS/Repository
-%%PHAMMDIR%%/locales/plugins/radius/CVS/Root
-%%PHAMMDIR%%/locales/plugins/radius/CVS/Tag
 %%PHAMMDIR%%/locales/plugins/radius/en_GB.php
 %%PHAMMDIR%%/locales/pt_BR.php
 %%PHAMMDIR%%/locales/ru_RU.php
@@ -159,6 +143,8 @@
 %%PHAMMDIR%%/tools/save-phamm-ldap
 %%PHAMMDIR%%/tools/test.sh
 %%PHAMMDIR%%/tools/virtual.sh
+%%PHAMMDIR%%/tools/make-mail.sh
+%%PHAMMDIR%%/tools/mail-all
 %%PHAMMDIR%%/web/functions.js
 %%PHAMMDIR%%/web/pngfix.js
 %%PHAMMDIR%%/www-data/img/phamm_100.png
@@ -176,6 +162,9 @@
 %%PHAMMDIR%%/www-data/style/phamm/main.css
 %%EXAMPLESDIR%%/amavisd.conf
 %%EXAMPLESDIR%%/authldaprc
+%%EXAMPLESDIR%%/pdns.local
+%%EXAMPLESDIR%%/dovecot.conf
+%%EXAMPLESDIR%%/dovecot-ldap.conf
 %%EXAMPLESDIR%%/fork/fork.pl
 %%EXAMPLESDIR%%/gnarwl.cfg
 %%EXAMPLESDIR%%/main.cf
@@ -192,7 +181,6 @@
 %%EXAMPLESDIR%%/sample-main.ldif
 %%EXAMPLESDIR%%/sample-pdns.ldif
 %%EXAMPLESDIR%%/sample-pureftpd.ldif
-%%EXAMPLESDIR%%/sample-samba.ldif
 %%EXAMPLESDIR%%/sample-squid.ldif
 %%EXAMPLESDIR%%/sasl/main.cf
 %%EXAMPLESDIR%%/sasl/master.cf
@@ -214,6 +202,7 @@
 @dirrm %%EXAMPLESDIR%%/schema
 @dirrm %%EXAMPLESDIR%%/sasl
 @dirrm %%EXAMPLESDIR%%/fork
+@dirrm %%EXAMPLESDIR%%/sm-plugin
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%PHAMMDIR%%/www-data/style/phamm/img
 @dirrm %%PHAMMDIR%%/www-data/style/phamm
@@ -231,15 +220,23 @@
 @dirrm %%PHAMMDIR%%/plugins/pdns/templates
 @dirrm %%PHAMMDIR%%/plugins/pdns
 @dirrm %%PHAMMDIR%%/plugins/mail/functions
+@dirrm %%PHAMMDIR%%/plugins/mail/templates
 @dirrm %%PHAMMDIR%%/plugins/mail
-@dirrm %%PHAMMDIR%%/plugins
-@dirrm %%PHAMMDIR%%/locales/plugins/radius/CVS
+@dirrm %%PHAMMDIR%%/libs
+@dirrm %%PHAMMDIR%%/locales/plugins/vadmin
+@dirrm %%PHAMMDIR%%/locales/plugins/userInfo
 @dirrm %%PHAMMDIR%%/locales/plugins/radius
-@dirrm %%PHAMMDIR%%/locales/plugins/pdns/CVS
 @dirrm %%PHAMMDIR%%/locales/plugins/pdns
-@dirrm %%PHAMMDIR%%/locales/plugins/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/mail
 @dirrm %%PHAMMDIR%%/locales/plugins
-@dirrm %%PHAMMDIR%%/locales/CVS
-@dirrm %%PHAMMDIR%%/locales
+@dirrm %%PHAMMDIR%%/locales/
 @dirrm %%PHAMMDIR%%/functions
+@dirrm %%PHAMMDIR%%/style/phamm/img
+@dirrm %%PHAMMDIR%%/style/phamm/
+@dirrm %%PHAMMDIR%%/style/
+@dirrm %%PHAMMDIR%%/img
+@dirrm %%PHAMMDIR%%/DTDs
+@dirrm %%PHAMMDIR%%/templates
+@dirrm %%PHAMMDIR%%/plugins/core
+@dirrm %%PHAMMDIR%%/plugins
 @dirrmtry %%PHAMMDIR%%

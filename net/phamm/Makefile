@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phamm
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	net www
 MASTER_SITES=	http://open.rhx.it/phamm/
 
