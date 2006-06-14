@@ -10,7 +10,7 @@ PORTVERSION=	1.44
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
-MAINTAINER=	bradh@uunet.co.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulates GIF images and animations
 
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bradh@uunet.co.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv4 addresses
 
 PERL_CONFIGURE=	yes
