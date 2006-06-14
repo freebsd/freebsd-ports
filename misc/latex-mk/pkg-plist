@@ -7,6 +7,7 @@ bin/latex-mk
 %%DATADIR%%/example/ex3.tex
 %%DATADIR%%/example/ex4.bib
 %%DATADIR%%/example/ex4.tex
+%%DATADIR%%/example/ex5.tex
 %%DATADIR%%/example/example.tex
 %%DATADIR%%/example/mkfile.gmk
 %%DATADIR%%/example/mkfile.mk
