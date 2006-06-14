@@ -6,11 +6,15 @@
 #
 
 PORTNAME=	themes
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.eyelook.org/themes/
+MASTER_SITES=	http://www.eyelook.org/themes/ \
+		http://bsd1.csme.ru/myports/${DIST_SUBDIR}/ \
+		http://bsd2.csme.ru/myports/${DIST_SUBDIR}/ \
+		http://bsd3.csme.ru/myports/${DIST_SUBDIR}/
 PKGNAMEPREFIX=	eyeOS-
 DISTFILES=	${EYETHEMES:S/$/.zip/}
+DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A themes collection for eyeOS
@@ -39,13 +43,15 @@ OPTIONS+=	WaterSide_THEME "inspired in countryside of Saskatchewan" On
 .for theme in ${OPTIONS:M*_THEME:S/_THEME//}
 .ifndef WITHOUT_${theme}_THEME
 EYETHEMES+=	${theme}
+PLIST_SUB+=	${theme:U}=${THEMESDIR:S,^${PREFIX}/,,}/${theme}
+PLIST_SUB+=	D${theme:U}="@dirrm ${THEMESDIR:S,^${PREFIX}/,,}/${theme}"
 .else
 PLIST_SUB+=	${theme:U}="@comment "
+PLIST_SUB+=	D${theme:U}="@comment "
 .endif
 .endfor
 
-PLIST_SUB+=	${EYETHEMES:U:S/$/=""/} THEMESDIR=${THEMESDIR:S,^${PREFIX}/,,} \
-		EYEDIR=${EYEDIR:S,^${PREFIX}/,,}
+PLIST_SUB+=	EYEDIR=${EYEDIR:S,^${PREFIX}/,,}
 
 do-install:
 	${CP} -Rp ${EYETHEMES:S,^,${WRKDIR}/,} ${THEMESDIR}/
