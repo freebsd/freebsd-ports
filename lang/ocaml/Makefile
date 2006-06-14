@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.09.0
+PORTVERSION=	3.09.2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:R}/
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:R}/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -88,7 +90,7 @@ MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64 || ${ARCH} == ia64
-BROKEN=	"ocamlc.opt seg-faults on ${ARCH}, please try to fix"
+BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
 .endif
 PLIST_SUB+=	PROF=""
 
