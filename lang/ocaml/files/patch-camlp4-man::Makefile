@@ -1,5 +1,5 @@
---- camlp4/man/Makefile.orig	Sat Nov 22 17:30:44 2003
-+++ camlp4/man/Makefile	Sat Nov 22 04:48:25 2003
+--- ./camlp4/man/Makefile.orig	Thu Jul  3 20:14:49 2003
++++ ./camlp4/man/Makefile	Sun May 21 14:02:41 2006
 @@ -3,7 +3,6 @@
  include ../config/Makefile
  

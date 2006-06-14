@@ -1,6 +1,6 @@
---- stdlib/Makefile.bak	Fri Apr 22 05:04:24 2005
-+++ stdlib/Makefile	Fri Apr 22 05:13:40 2005
-@@ -47,8 +47,7 @@
+--- ./stdlib/Makefile.orig	Mon Nov 29 17:53:30 2004
++++ ./stdlib/Makefile	Sun May 21 14:02:41 2006
+@@ -48,8 +48,7 @@
  	rm -f std_exit.p.cmi
  
  install:

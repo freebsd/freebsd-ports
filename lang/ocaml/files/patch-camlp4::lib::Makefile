@@ -1,6 +1,6 @@
---- camlp4/lib/Makefile.orig	Fri Apr 22 05:28:15 2005
-+++ camlp4/lib/Makefile	Fri Apr 22 05:28:41 2005
-@@ -49,7 +49,8 @@
+--- ./camlp4/lib/Makefile.orig	Tue Nov 30 21:57:03 2004
++++ ./camlp4/lib/Makefile	Sun May 21 14:02:41 2006
+@@ -51,7 +51,8 @@
  
  installopt:
  	for f in $(TARGET:.cma=.cmxa) $(TARGET:.cma=.p.cmxa) *.cmx ; do \
