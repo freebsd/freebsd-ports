@@ -1,8 +1,4 @@
-@comment $FreeBSD$
-@unexec if cmp -s %D/etc/netams.cfg %D/etc/netams.cfg.sample; then rm -f %D/etc/netams.cfg; fi
 etc/netams.cfg.sample
-@exec [ -f %B/netams.cfg ] || cp %B/%f %B/netams.cfg
-etc/rc.d/netams-startup.sh.sample
 libexec/netams
 sbin/flowprobe
 sbin/ipfw2netflow
@@ -16,9 +12,12 @@ bin/netamsctl
 %%DATADIR%%/cgi-bin/netams_example.cgi
 %%DATADIR%%/cgi-bin/usertool.cgi
 %%DATADIR%%/cgi-bin/admintool.cgi
+%%DATADIR%%/cgi-bin/activate.cgi
+%%DATADIR%%/cgi-bin/activate.tmpl
 %%DATADIR%%/cgi-bin/login.cgi
 %%DATADIR%%/cgi-bin/netams_graph.cgi
 %%DATADIR%%/cgi-bin/admin/.htaccess
+%%DATADIR%%/cgi-bin/admin/cardtool.cgi
 %%DATADIR%%/cgi-bin/admin/index.cgi
 %%DATADIR%%/cgi-bin/admin/policy.cgi
 %%DATADIR%%/cgi-bin/admin/showusercard.cgi
@@ -37,8 +36,8 @@ bin/netamsctl
 %%DATADIR%%/cgi-bin/admin/russian.res
 %%DATADIR%%/cgi-bin/admin/unit.cgi
 %%DATADIR%%/cgi-bin/images/admintool-logo.gif
-%%DATADIR%%/cgi-bin/images/logo-small.gif
 %%DATADIR%%/cgi-bin/images/logo.gif
+%%DATADIR%%/cgi-bin/images/logo_sm.jpg
 %%DATADIR%%/cgi-bin/images/showtable-logo.gif
 @dirrm %%DATADIR%%/cgi-bin/images
 @dirrm %%DATADIR%%/cgi-bin/admin

@@ -1,0 +1,37 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: netams
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+# Define these netams_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/netams
+#
+# netams_enable (bool):         Set to "NO" by default.
+#                               Set it to "YES" to enable netams.
+# netams_config (str):          Custom configuration file to be passed
+#                               to netams.
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+netams_enable=${netams_enable-"NO"}
+netams_config=${netams_config-"%%PREFIX%%/etc/netams.cfg"}
+
+netams_pidfile="/var/run/netams.pid"
+
+. %%RC_SUBR%%
+
+name="netams"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/libexec/netams"
+
+load_rc_config $name
+
+pidfile="${netams_pidfile}"
+
+start_cmd="echo \"Starting ${name}.\"; ${command} -ldf ${netams_config} > /dev/null"
+
+run_rc_command "$1"
