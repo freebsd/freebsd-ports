@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	marwan.burelle@lri.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lexer generator for Unicode and OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

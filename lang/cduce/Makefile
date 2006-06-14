@@ -9,7 +9,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/
 
-MAINTAINER=	marwan.burelle@lri.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An efficient XML centric functionnal programming language
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre-utf8

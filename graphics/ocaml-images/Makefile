@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	ocaml-
 DISTNAME=	camlimages-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	marwan.burelle@lri.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Objective Caml image processing library
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
