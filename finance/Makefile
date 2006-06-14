@@ -51,6 +51,7 @@
     SUBDIR += p5-Finance-TW-TSEQuote
     SUBDIR += p5-Locale-Currency-Format
     SUBDIR += p5-Math-Financial
+    SUBDIR += p5-PFProAPI
     SUBDIR += pfpro
     SUBDIR += php4-pfpro
     SUBDIR += qhacc

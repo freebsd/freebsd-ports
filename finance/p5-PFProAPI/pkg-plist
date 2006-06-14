@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/PFProAPI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PFProAPI/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PFProAPI/PFProAPI.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PFProAPI/PFProAPI.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PFProAPI/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PFProAPI
