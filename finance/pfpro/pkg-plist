@@ -1,5 +1,5 @@
 bin/pfpro
-bin/pfpro-file
+certs/f73e89fd.0
 include/pfpro.h
 lib/libpfpro.so
-certs/f73e89fd.0
+@dirrmtry certs
