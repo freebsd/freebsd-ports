@@ -307,6 +307,7 @@
     SUBDIR += hlserver-wasteland
     SUBDIR += hlserver-wizwars
     SUBDIR += hlstats
+    SUBDIR += hlstatsx
     SUBDIR += hohlin
     SUBDIR += holotz-castle
     SUBDIR += icbm3d
