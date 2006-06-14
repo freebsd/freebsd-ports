@@ -27,6 +27,7 @@
     SUBDIR += e17-theme-detour
     SUBDIR += e17-theme-gant
     SUBDIR += e17-theme-japan2007
+    SUBDIR += e17-theme-mclaren
     SUBDIR += e17-theme-milky
     SUBDIR += e17-theme-neptun
     SUBDIR += e17-theme-simply_white
