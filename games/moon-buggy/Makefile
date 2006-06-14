@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.ac
 .endif
 
-MAINTAINER=	ralf@akk.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drive a buggy across the moons surface
 
 .if defined (WITH_ESOUND)

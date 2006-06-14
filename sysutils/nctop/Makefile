@@ -10,7 +10,7 @@ PORTVERSION=	0.23.1
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.rz.uni-karlsruhe.de/~hj28/download.php?file=/
 
-MAINTAINER=	ralf@akk.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A remote system monitor
 
 USE_AUTOTOOLS=	autoconf:259:env
