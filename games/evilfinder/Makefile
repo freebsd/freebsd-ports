@@ -12,7 +12,7 @@ MASTER_SITES=	http://lcamtuf.coredump.cx/
 DISTNAME=	ef
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Numerologically determine the evilness of things
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
