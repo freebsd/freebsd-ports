@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Class-Hook
-PORTVERSION=		0.01
+PORTVERSION=		0.02
 CATEGORIES=		devel perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN} \
 			http://cottage.quynh-and-brian.org/freebsd/ports/distfiles/
@@ -16,17 +16,18 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		brian@quynh-and-brian.org
 COMMENT=		Add hooks on methods from other classes
 
-BUILD_DEPENDS=		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 			${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=		yes
+WRKSRC=			${WRKDIR}/Class-Hook
 
 MAN3=			Class::Hook.3
 
-ARCH_PERL=		${SITE_PERL}/${PERL_ARCH}
+.include <bsd.port.pre.mk>
 
-post-patch:
-	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' \
-		${WRKSRC}/lib/Class/Hook.pm
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
