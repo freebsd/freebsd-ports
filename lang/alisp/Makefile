@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	20050425
-PORTREVISION=	1
+PORTVERSION=	20060602
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://www.t3x.org/files/
 
 MAINTAINER=	nmh@t3x.org
-COMMENT=	A tail-recursive interpreter for purely symbolic LISP
-
-BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
+COMMENT=	An interpreter for purely symbolic LISP
 
 MAN7=		alisp.7
 MANCOMPRESSED=	no
 
-MAKE_ENV+=	T3XDIR=${LOCALBASE}/t3x/r8 \
-		BINOWN=${BINOWN} \
+INSTALLS_SHLIB=	yes
+MAKE_ENV+=	BINOWN=${BINOWN} \
 		BINGRP=${BINGRP} \
 		PREFIX=${PREFIX}
 
