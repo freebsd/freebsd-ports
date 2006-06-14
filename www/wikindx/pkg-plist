@@ -11,6 +11,7 @@
 %%WIKINDX%%/core/admin/ADMIN.php
 %%WIKINDX%%/core/admin/ADMINCUSTOM.php
 %%WIKINDX%%/core/admin/ADMINGROUP.php
+%%WIKINDX%%/core/admin/ADMINKEYWORD.php
 %%WIKINDX%%/core/admin/ADMINSTYLE.php
 %%WIKINDX%%/core/admin/ADMINUSER.php
 %%WIKINDX%%/core/admin/CONFIG.php
@@ -38,6 +39,7 @@
 %%WIKINDX%%/core/file/TAG.php
 %%WIKINDX%%/core/file/export/BIBTEX.php
 %%WIKINDX%%/core/file/export/ENDNOTE.php
+%%WIKINDX%%/core/file/export/ENDNOTEXML.php
 %%WIKINDX%%/core/file/export/EXPORTCOMMON.php
 %%WIKINDX%%/core/file/export/HTMLEXPORT.php
 %%WIKINDX%%/core/file/export/RIS.php
@@ -61,6 +63,7 @@
 %%WIKINDX%%/core/html/CLOSE.php
 %%WIKINDX%%/core/html/CLOSENOMENU.php
 %%WIKINDX%%/core/html/CLOSEPOPUP.php
+%%WIKINDX%%/core/html/CLOSESUWP.php
 %%WIKINDX%%/core/html/FORM.php
 %%WIKINDX%%/core/html/FORMMISC.php
 %%WIKINDX%%/core/html/HTML.php
@@ -70,6 +73,7 @@
 %%WIKINDX%%/core/html/OPENBODY.php
 %%WIKINDX%%/core/html/TABLE.php
 %%WIKINDX%%/core/icons/LOADICONS.php
+%%WIKINDX%%/core/init/CORRECTBACKSLASH.php
 %%WIKINDX%%/core/init/INIT.php
 %%WIKINDX%%/core/init/SCRIPTTIME.php
 %%WIKINDX%%/core/init/SYSTEMCHECK.php
@@ -95,6 +99,7 @@
 %%WIKINDX%%/core/messages/LOADLANGUAGE.php
 %%WIKINDX%%/core/messages/MESSAGES.php
 %%WIKINDX%%/core/messages/SUCCESS.php
+%%WIKINDX%%/core/messages/USINGWIKINDX.php
 %%WIKINDX%%/core/messages/UTF8.php
 %%WIKINDX%%/core/modules/LOADMODULES.php
 %%WIKINDX%%/core/news/NEWS.php
@@ -171,10 +176,110 @@
 %%WIKINDX%%/core/user/LISTBIBLIOGRAPHY.php
 %%WIKINDX%%/core/user/MYWIKINDX.php
 %%WIKINDX%%/core/user/USER.php
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/ImageMap.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/InsertPageBreak.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/Left_Corner.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/PasteText.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/Pasteword.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/Ucase.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/abspos.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/anchor.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/backward.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/bold.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/borders.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/box.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/break.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/bspreview.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/bullist.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/calendar.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/cell.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/checkbox.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/cite.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/cleanup.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/colorpen.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/copy.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/cut.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/delcell.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/delcol.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/delete.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/delrow.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/document.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/dropdownbox.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/emotion.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/eximage.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/find.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/fit.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/flash.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/fontcolor.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/form.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/forward.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/hiddenfield.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/image.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/imagebutton.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/indent.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/inscell.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/inscol_l.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/inscol_r.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/insert_footnote.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/insrow_b.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/insrow_t.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/instable.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/italic.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/justify_center.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/justify_full.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/justify_left.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/justify_none.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/justify_right.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/keyboard.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/layer.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/left_to_right.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/link.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/listbox.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/media.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/metadata.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/mrgcell_b.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/mrgcell_r.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/numlist.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/optionbutton.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/outdent.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/page.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/paragraph.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/passwordfield.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/paste.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/print.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/pushbutton.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/redo.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/right_to_left.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/row.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/rule.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/save.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/saveExport.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/selectall.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/selectnone.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/specialchar.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/spell.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/spltcell_b.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/spltcell_r.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/stats.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/strike.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/submit.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/subscript.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/superscript.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/tbdown.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/text.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/textarea.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/textbox.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/timestamp.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/underline.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/undo.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/unformat.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/unlink.gif
 %%WIKINDX%%/core/wp/JsFormatBar/FORMATBAR.php
 %%WIKINDX%%/core/wp/JsFormatBar/JavaScript/JavaScript.js
 %%WIKINDX%%/core/wp/JsFormatBar/blank.htm
 %%WIKINDX%%/core/wp/JsFormatBar/calendar.php
+%%WIKINDX%%/core/wp/JsFormatBar/colors.html
+%%WIKINDX%%/core/wp/JsFormatBar/footnoteLoad.htm
 %%WIKINDX%%/core/wp/JsFormatBar/insert_link.htm
 %%WIKINDX%%/core/wp/JsFormatBar/insert_table.htm
 %%WIKINDX%%/core/wp/JsFormatBar/palette.htm
@@ -330,11 +435,14 @@
 %%WIKINDX%%/docs/templates/index.html
 %%WIKINDX%%/docs/templates/minimal/body.tpl
 %%WIKINDX%%/docs/templates/minimal/bodyPopUp.tpl
+%%WIKINDX%%/docs/templates/minimal/bodySUWP.tpl
 %%WIKINDX%%/docs/templates/minimal/content.tpl
 %%WIKINDX%%/docs/templates/minimal/footer.tpl
+%%WIKINDX%%/docs/templates/minimal/footerSUWP.tpl
 %%WIKINDX%%/docs/templates/minimal/header.tpl
 %%WIKINDX%%/docs/templates/minimal/menu.tpl
 %%WIKINDX%%/docs/templates/minimal/minimal.css
+%%WIKINDX%%/docs/templates/minimal/template.js
 %%WIKINDX%%/docs/usage/database.html
 %%WIKINDX%%/docs/usage/index.html
 %%WIKINDX%%/docs/usage/languages.html
@@ -352,27 +460,8 @@
 %%WIKINDX%%/languages/en/HELPSTYLE.php
 %%WIKINDX%%/languages/en/MESSAGES.php
 %%WIKINDX%%/languages/en/SUCCESS.php
+%%WIKINDX%%/languages/en/USINGWIKINDX.php
 %%WIKINDX%%/languages/en/description.txt
-%%WIKINDX%%/languages/pt/ABOUT.php
-%%WIKINDX%%/languages/pt/CONSTANTS.php
-%%WIKINDX%%/languages/pt/ERRORS.php
-%%WIKINDX%%/languages/pt/HELP.php
-%%WIKINDX%%/languages/pt/HELPCONFIG.php
-%%WIKINDX%%/languages/pt/HELPIMPORT.php
-%%WIKINDX%%/languages/pt/HELPSTYLE.php
-%%WIKINDX%%/languages/pt/MESSAGES.php
-%%WIKINDX%%/languages/pt/SUCCESS.php
-%%WIKINDX%%/languages/pt/description.txt
-%%WIKINDX%%/languages/ptbr/ABOUT.php
-%%WIKINDX%%/languages/ptbr/CONSTANTS.php
-%%WIKINDX%%/languages/ptbr/ERRORS.php
-%%WIKINDX%%/languages/ptbr/HELP.php
-%%WIKINDX%%/languages/ptbr/HELPCONFIG.php
-%%WIKINDX%%/languages/ptbr/HELPIMPORT.php
-%%WIKINDX%%/languages/ptbr/HELPSTYLE.php
-%%WIKINDX%%/languages/ptbr/MESSAGES.php
-%%WIKINDX%%/languages/ptbr/SUCCESS.php
-%%WIKINDX%%/languages/ptbr/description.txt
 %%WIKINDX%%/modules/MODULES
 %%WIKINDX%%/papers/PAPERS
 %%WIKINDX%%/rss.php
@@ -395,9 +484,11 @@
 %%WIKINDX%%/templates/blue/blue.css
 %%WIKINDX%%/templates/blue/body.tpl
 %%WIKINDX%%/templates/blue/bodyPopUp.tpl
+%%WIKINDX%%/templates/blue/bodySUWP.tpl
 %%WIKINDX%%/templates/blue/content.tpl
 %%WIKINDX%%/templates/blue/description.txt
 %%WIKINDX%%/templates/blue/footer.tpl
+%%WIKINDX%%/templates/blue/footerSUWP.tpl
 %%WIKINDX%%/templates/blue/header.tpl
 %%WIKINDX%%/templates/blue/icons/add.gif
 %%WIKINDX%%/templates/blue/icons/checkall.gif
@@ -416,13 +507,15 @@
 %%WIKINDX%%/templates/blue/images/formatBarBackground.png
 %%WIKINDX%%/templates/blue/images/header-bg-blue.jpg
 %%WIKINDX%%/templates/blue/menu.tpl
-%%WIKINDX%%/templates/blue/menuShim.js
+%%WIKINDX%%/templates/blue/template.js
 %%WIKINDX%%/templates/chocolate/body.tpl
 %%WIKINDX%%/templates/chocolate/bodyPopUp.tpl
+%%WIKINDX%%/templates/chocolate/bodySUWP.tpl
 %%WIKINDX%%/templates/chocolate/chocolate.css
 %%WIKINDX%%/templates/chocolate/content.tpl
 %%WIKINDX%%/templates/chocolate/description.txt
 %%WIKINDX%%/templates/chocolate/footer.tpl
+%%WIKINDX%%/templates/chocolate/footerSUWP.tpl
 %%WIKINDX%%/templates/chocolate/header.tpl
 %%WIKINDX%%/templates/chocolate/icons/add.gif
 %%WIKINDX%%/templates/chocolate/icons/checkall.gif
@@ -439,13 +532,15 @@
 %%WIKINDX%%/templates/chocolate/images/formatBarBackground.png
 %%WIKINDX%%/templates/chocolate/images/wikindx3choclogo.gif
 %%WIKINDX%%/templates/chocolate/menu.tpl
-%%WIKINDX%%/templates/chocolate/menuShim.js
+%%WIKINDX%%/templates/chocolate/template.js
 %%WIKINDX%%/templates/classic/body.tpl
 %%WIKINDX%%/templates/classic/bodyPopUp.tpl
+%%WIKINDX%%/templates/classic/bodySUWP.tpl
 %%WIKINDX%%/templates/classic/classic.css
 %%WIKINDX%%/templates/classic/content.tpl
 %%WIKINDX%%/templates/classic/description.txt
 %%WIKINDX%%/templates/classic/footer.tpl
+%%WIKINDX%%/templates/classic/footerSUWP.tpl
 %%WIKINDX%%/templates/classic/header.tpl
 %%WIKINDX%%/templates/classic/icons/add.gif
 %%WIKINDX%%/templates/classic/icons/checkall.gif
@@ -462,13 +557,15 @@
 %%WIKINDX%%/templates/classic/images/formatBarBackground.png
 %%WIKINDX%%/templates/classic/images/wikindx3logo-anim.gif
 %%WIKINDX%%/templates/classic/menu.tpl
-%%WIKINDX%%/templates/classic/menuShim.js
+%%WIKINDX%%/templates/classic/template.js
 %%WIKINDX%%/templates/default/body.tpl
 %%WIKINDX%%/templates/default/bodyPopUp.tpl
+%%WIKINDX%%/templates/default/bodySUWP.tpl
 %%WIKINDX%%/templates/default/content.tpl
 %%WIKINDX%%/templates/default/default.css
 %%WIKINDX%%/templates/default/description.txt
 %%WIKINDX%%/templates/default/footer.tpl
+%%WIKINDX%%/templates/default/footerSUWP.tpl
 %%WIKINDX%%/templates/default/header.tpl
 %%WIKINDX%%/templates/default/icons/add.gif
 %%WIKINDX%%/templates/default/icons/checkall.gif
@@ -486,12 +583,14 @@
 %%WIKINDX%%/templates/default/images/paper.jpg
 %%WIKINDX%%/templates/default/images/wikindx3logo-anim.gif
 %%WIKINDX%%/templates/default/menu.tpl
-%%WIKINDX%%/templates/default/menuShim.js
+%%WIKINDX%%/templates/default/template.js
 %%WIKINDX%%/templates/green_marble/body.tpl
 %%WIKINDX%%/templates/green_marble/bodyPopUp.tpl
+%%WIKINDX%%/templates/green_marble/bodySUWP.tpl
 %%WIKINDX%%/templates/green_marble/content.tpl
 %%WIKINDX%%/templates/green_marble/description.txt
 %%WIKINDX%%/templates/green_marble/footer.tpl
+%%WIKINDX%%/templates/green_marble/footerSUWP.tpl
 %%WIKINDX%%/templates/green_marble/green_marble.css
 %%WIKINDX%%/templates/green_marble/header.tpl
 %%WIKINDX%%/templates/green_marble/icons/add.gif
@@ -519,13 +618,15 @@
 %%WIKINDX%%/templates/green_marble/images/ru-marble.gif
 %%WIKINDX%%/templates/green_marble/images/u-marble.gif
 %%WIKINDX%%/templates/green_marble/menu.tpl
-%%WIKINDX%%/templates/green_marble/menuShim.js
 %%WIKINDX%%/templates/green_marble/readme.txt
+%%WIKINDX%%/templates/green_marble/template.js
 %%WIKINDX%%/templates/notmac/body.tpl
 %%WIKINDX%%/templates/notmac/bodyPopUp.tpl
+%%WIKINDX%%/templates/notmac/bodySUWP.tpl
 %%WIKINDX%%/templates/notmac/content.tpl
 %%WIKINDX%%/templates/notmac/description.txt
 %%WIKINDX%%/templates/notmac/footer.tpl
+%%WIKINDX%%/templates/notmac/footerSUWP.tpl
 %%WIKINDX%%/templates/notmac/header.tpl
 %%WIKINDX%%/templates/notmac/icons/add.gif
 %%WIKINDX%%/templates/notmac/icons/checkall.gif
@@ -544,14 +645,16 @@
 %%WIKINDX%%/templates/notmac/images/paper.jpg
 %%WIKINDX%%/templates/notmac/images/wikindx.png
 %%WIKINDX%%/templates/notmac/menu.tpl
-%%WIKINDX%%/templates/notmac/menuShim.js
 %%WIKINDX%%/templates/notmac/menuback.png
 %%WIKINDX%%/templates/notmac/notmac.css
+%%WIKINDX%%/templates/notmac/template.js
 %%WIKINDX%%/templates/simple/body.tpl
 %%WIKINDX%%/templates/simple/bodyPopUp.tpl
+%%WIKINDX%%/templates/simple/bodySUWP.tpl
 %%WIKINDX%%/templates/simple/content.tpl
 %%WIKINDX%%/templates/simple/description.txt
 %%WIKINDX%%/templates/simple/footer.tpl
+%%WIKINDX%%/templates/simple/footerSUWP.tpl
 %%WIKINDX%%/templates/simple/header.tpl
 %%WIKINDX%%/templates/simple/icons/add.gif
 %%WIKINDX%%/templates/simple/icons/checkall.gif
@@ -569,18 +672,20 @@
 %%WIKINDX%%/templates/simple/images/simple-bg.gif
 %%WIKINDX%%/templates/simple/images/simple-table-bg.gif
 %%WIKINDX%%/templates/simple/menu.tpl
-%%WIKINDX%%/templates/simple/menuShim.js
 %%WIKINDX%%/templates/simple/simple.css
+%%WIKINDX%%/templates/simple/template.js
 %%WIKINDX%%/templates/vert/body.tpl
 %%WIKINDX%%/templates/vert/bodyPopUp.tpl
+%%WIKINDX%%/templates/vert/bodySUWP.tpl
 %%WIKINDX%%/templates/vert/content.tpl
 %%WIKINDX%%/templates/vert/description.txt
 %%WIKINDX%%/templates/vert/footer.tpl
+%%WIKINDX%%/templates/vert/footerSUWP.tpl
 %%WIKINDX%%/templates/vert/header.tpl
 %%WIKINDX%%/templates/vert/images/formatBarBackground.gif
 %%WIKINDX%%/templates/vert/images/formatBarBackground.png
 %%WIKINDX%%/templates/vert/menu.tpl
-%%WIKINDX%%/templates/vert/menuShim.js
+%%WIKINDX%%/templates/vert/template.js
 %%WIKINDX%%/templates/vert/vert.css
 %%WIKINDX%%/update/createMySQL.txt
 %%WIKINDX%%/update/createSQL.xml
@@ -622,8 +727,6 @@
 @dirrm %%WIKINDX%%/styles
 @dirrm %%WIKINDX%%/papers
 @dirrm %%WIKINDX%%/modules
-@dirrm %%WIKINDX%%/languages/ptbr
-@dirrm %%WIKINDX%%/languages/pt
 @dirrm %%WIKINDX%%/languages/en
 @dirrm %%WIKINDX%%/languages
 @dirrm %%WIKINDX%%/files
@@ -650,6 +753,7 @@
 @dirrm %%WIKINDX%%/docs/classes
 @dirrm %%WIKINDX%%/docs
 @dirrm %%WIKINDX%%/core/wp/JsFormatBar/JavaScript
+@dirrm %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages
 @dirrm %%WIKINDX%%/core/wp/JsFormatBar
 @dirrm %%WIKINDX%%/core/wp
 @dirrm %%WIKINDX%%/core/user
@@ -694,4 +798,3 @@
 @dirrm %%WIKINDX%%/attachments
 @dirrm %%WIKINDX%%
 @dirrm %%DOCSDIR%%
-@dirrmtry www/data-dist
