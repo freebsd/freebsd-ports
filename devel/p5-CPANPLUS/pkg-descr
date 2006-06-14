@@ -3,3 +3,4 @@ collection of interactive shells, commandline programs, daemons, etc,
 that use this API.
 
 WWW: http://cpanplus.sourceforge.net/
+Author: Jos Boumans <kane@cpan.org>
