@@ -13,7 +13,7 @@ MASTER_SITES=	http://initd.org/pub/software/psycopg/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	psycopg-${PORTVERSION}
 
-MAINTAINER=	simuran@shaw.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The high performance Python adapter for PostgreSQL
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base

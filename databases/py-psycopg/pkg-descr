@@ -14,5 +14,3 @@ applications that create a servicing thread every time a client request
 arrives.
 
 WWW: http://initd.org/software/psycopg
-
-- Alex Rodioukov <simuran@shaw.ca>
