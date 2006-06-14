@@ -7,7 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 		http://dev.splitbrain.org/browse/snapshots/
@@ -26,7 +26,7 @@ WWWDOCROOT?=	www/data
 DOKUWIKI_URL?=	${PORTNAME}
 DOKUWIKI_DIR?=	www/${DOKUWIKI_URL}
 WRKSRC=		${WRKDIR}/${DIST_VER}
-PLIST=		${WRKDIR}/pkg-plist
+PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
 
 .if defined(BATCH)
 WIKI_LANG?=en
@@ -96,21 +96,11 @@ pre-patch:
 
 pre-install:
 	@${TOUCH} ${WRKSRC}/data/changes.log
-	@${CP} ${WRKSRC}/conf/acl.auth.php.dist ${WRKSRC}/conf/acl.auth.php
-	@${CP} ${WRKSRC}/conf/users.auth.php.dist ${WRKSRC}/conf/users.auth.php
-	@cd ${WRKSRC} && ${FIND} -s . -type f | \
-		${SED} -e 's|^./||;s|^|${DOKUWIKI_DIR}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${DOKUWIKI_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} "@dirrmtry ${DOKUWIKI_DIR}">> ${PLIST} \
-		&& ${ECHO_CMD} "@dirrmtry ${WWWDOCROOT}" >> ${PLIST}
 
 do-install:
 # Data files
 	-${MKDIR} ${PREFIX}/${DOKUWIKI_DIR}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${DOKUWIKI_DIR}
-	@${CHMOD} 664 ${PREFIX}/${DOKUWIKI_DIR}/conf/acl.auth.php
-	@${CHMOD} 664 ${PREFIX}/${DOKUWIKI_DIR}/conf/users.auth.php
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}
 
 post-install:
