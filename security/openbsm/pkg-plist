@@ -1,0 +1,21 @@
+include/bsm/audit.h
+include/bsm/audit_filter.h
+include/bsm/audit_internal.h
+include/bsm/audit_kevents.h
+include/bsm/audit_record.h
+include/bsm/audit_uevents.h
+include/bsm/libbsm.h
+lib/libbsm.so.0
+lib/libbsm.so
+lib/libbsm.la
+lib/libbsm.a
+lib/auditfilter_noop.so.0
+lib/auditfilter_noop.so
+lib/auditfilter_noop.la
+lib/auditfilter_noop.a
+sbin/auditfilterd
+sbin/auditreduce
+sbin/praudit
+sbin/audit
+sbin/auditd
+@dirrm include/bsm
