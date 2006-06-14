@@ -7,6 +7,7 @@
 
 PORTNAME=	cgdb
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,12 +22,9 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		it can be compiled, but cannot run
-.endif
-
 .if ${OSVERSION} < 700016
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+BUILD_DEPENDS+=	${LOCALBASE}/lib/readline.so.5:${PORTSDIR}/devel/readline
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LDFLAGS+=	-rpath ${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
