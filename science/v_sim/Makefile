@@ -45,7 +45,7 @@ BROKEN=		does not compile with gcc 2.95
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|$$datadir/doc/$$PACKAGE/examples|${EXAMPLESDIR}|'	\
-		-e 's|CFLAGS="-O2"|#CFLAGS="-O2"|'					\
+		-e 's|CFLAGS="-O2"|#CFLAGS="-O2"|;s|Werror ansi pedantic-errors||'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/src/Makefile.in
 .if defined(WITHOUT_NLS)
