@@ -1,14 +1,14 @@
---- configure.orig	Mon Feb 27 23:35:09 2006
-+++ configure	Mon Feb 27 23:35:39 2006
+--- configure.orig	Wed Jun 14 00:57:48 2006
++++ configure	Wed Jun 14 00:58:20 2006
 @@ -1057,6 +1057,7 @@ Optional Features:
    --enable-python         build python bindings
    --enable-selinux        build with SELinux support
    --enable-dnotify        build with dnotify support (linux only)
 +  --enable-kqueue         build with kqueue support (FreeBSD only)
+   --enable-console-owner-file
+                           enable console owner file
    --enable-shared[=PKGS]
-                           build shared libraries [default=yes]
-   --enable-static[=PKGS]
-@@ -4533,7 +4534,7 @@ if test "x$GCC" = "xyes"; then
+@@ -4550,7 +4551,7 @@ if test "x$GCC" = "xyes"; then
  
    case " $CFLAGS " in
    *[\ \	]-Wfloat-equal[\ \	]*) ;;
@@ -17,7 +17,7 @@
    esac
  
    case " $CFLAGS " in
-@@ -27231,6 +27232,31 @@ if test x$have_dnotify = xyes; then
+@@ -28332,6 +28333,31 @@ if test x$have_dnotify = xyes; then
  
  cat >>confdefs.h <<\_ACEOF
  #define DBUS_BUS_ENABLE_DNOTIFY_ON_LINUX 1
