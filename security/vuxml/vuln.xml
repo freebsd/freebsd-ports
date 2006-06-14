@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c611be81-fbc2-11da-9156-000e0c2e438a">
+    <topic>sendmail -- Incorrect multipart message handling</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.11</ge><lt>4.11_19</lt></range>
+	<range><ge>5.3</ge><lt>5.3_31</lt></range>
+	<range><ge>5.4</ge><lt>5.4_16</lt></range>
+	<range><ge>5.5</ge><lt>5.5_2</lt></range>
+	<range><ge>6.0</ge><lt>6.0_9</lt></range>
+	<range><ge>6.1</ge><lt>6.1_2</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>A suitably malformed multipart MIME message can cause
+	  sendmail to exceed predefined limits on its stack usage.</p>
+	<h1>Impact</h1>
+	<p>An attacker able to send mail to, or via, a server can cause
+	  queued messages on the system to not be delivered, by causing
+	  the sendmail process which handles queued messages to crash.
+	  Note that this will not stop new messages from entering the
+	  queue (either from local processes, or incoming via SMTP).</p>
+	<h1>Workaround</h1>
+	<p>No workaround is available, but systems which do not receive
+	  email from untrusted sources are not vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1173</cvename>
+      <freebsdsa>SA-06:17.sendmail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-06-14</discovery>
+      <entry>2006-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="23573650-f99a-11da-994e-00142a5f241c">
     <topic>dokuwiki -- multiple vulnerabilities</topic>
     <affects>
