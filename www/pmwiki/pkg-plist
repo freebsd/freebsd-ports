@@ -60,6 +60,7 @@
 %%PMWIKIDIR%%/scripts/httpauth.php
 %%PMWIKIDIR%%/scripts/intermap.txt
 %%PMWIKIDIR%%/scripts/mailposts.php
+%%PMWIKIDIR%%/scripts/notify.php
 %%PMWIKIDIR%%/scripts/pagelist.php
 %%PMWIKIDIR%%/scripts/pagerev.php
 %%PMWIKIDIR%%/scripts/pgcust.php
@@ -122,6 +123,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailPosts
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailingLists
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupMasterIndex
+%%PMWIKIDIR%%/wikilib.d/PmWiki.Notify
 %%PMWIKIDIR%%/wikilib.d/PmWiki.OtherVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageDirectives
 %%PMWIKIDIR%%/wikilib.d/PmWiki.PageFileFormat
@@ -197,4 +199,3 @@
 @dirrm %%PMWIKIDIR%%/docs
 @dirrm %%PMWIKIDIR%%/cookbook
 @dirrmtry %%PMWIKIDIR%%
-@dirrmtry www/data
