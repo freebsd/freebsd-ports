@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	nettle
-PORTVERSION=	1.13
-PORTREVISION=	2
+PORTVERSION=	1.14
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
