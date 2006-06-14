@@ -9166,6 +9166,7 @@ p5-PCSC-Card	ports/devel/p5-PCSC-Card
 p5-PDF-API2	ports/textproc/p5-PDF-API2
 p5-PDF-Create	ports/textproc/p5-PDF-Create
 p5-PDFLib	ports/print/p5-PDFLib
+p5-PFProAPI	ports/finance/p5-PFProAPI
 p5-PGP		ports/security/p5-PGP
 p5-PGP-Sign	ports/security/p5-PGP-Sign
 p5-PHP-Session	ports/www/p5-PHP-Session
