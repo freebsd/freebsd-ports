@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netplex-tech.com/software/downloads/nocol/
 
-MAINTAINER=	bradh@uunet.co.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network/Service monitoring software
 
 MANPREFIX=	${PREFIX}/nocol/
