@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTML-Template-JIT
-PORTVERSION=	0.04
-PORTREVISION=	2
+PORTVERSION=	0.05
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -16,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl module to compile HTML Templates with Inline::C
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
+BUILD_DEPENDS=	p5-HTML-Template>=2.8:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline
+		p5-Inline>=0.43:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
