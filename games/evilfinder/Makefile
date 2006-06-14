@@ -17,6 +17,8 @@ COMMENT=	Numerologically determine the evilness of things
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS=	WRAPPER "Build with evilfinder wrapper" on
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_WRAPPER)
