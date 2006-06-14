@@ -1,3 +1,4 @@
+bin/audio_rename
 bin/typeset_audio_dir
 bin/mp3info2
 %%SITE_PERL%%/MP3/Tag.pm
