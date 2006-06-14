@@ -1,6 +1,6 @@
 #! /bin/sh --
 # (X)Emacs: -*- mode: Shell-Script; coding: iso8859-1; -*-
-# @(#)portless.sh,v 1.3 2006/06/08 10:10:56 martin Exp
+# @(#)portless.sh,v 1.7 2006/06/14 13:02:37 martin Exp
 # Show "pkg-descr" file of matching port(s).
 #
 # Copyright (c) 2006 Martin Kammerhofer <mkamm@gmx.net>
@@ -29,10 +29,14 @@
 Script=`basename $0` # name of this script
 
 # set defaults
-opt_f=""
+for opt in d f i M m p; do
+    eval opt_$opt=""
+done
 PORTSDIR=${PORTSDIR:-/usr/ports}
 PAGER=${PAGER:-less -e}
 PKGDESCR="pkg-descr"
+filelist=""
+rc=0
 
 # print usage message to stderr and exit
 usage()
@@ -45,48 +49,76 @@ usage()
     exit 64	# EX_USAGE
 }
 
+fatal() { echo >&2 "$Script: $*"; exit 70; }	# EX_SOFTWARE
+
+# Add file $2 corresponding to option $1 to $filelist.
+# Do not add any file twice.
+addopt()
+{
+    eval "[ -n \"\$opt_$1\" ] && return; opt_$1='$1' || fatal 'addopt $*'"
+    filelist="$filelist $2"
+}
+
 # process options
-while getopts "D:dfiMmpP:" option
+while getopts "D:dfiMmpP:x" option
   do
   case "$option" in
-      (D) PORTSDIR="$OPTARG";;
-      (d) PKGDESCR="pkg-descr";;
+      (D) PORTSDIR="$OPTARG";;		# undocumented
+      (d) addopt d "$PKGDESCR";;
       (f) opt_f="f";;
-      (i) PKGDESCR="distinfo";;
-      (M) PKGDESCR="Makefile";;
-      (m) PKGDESCR="pkg-message";;
-      (p) PKGDESCR="pkg-plist";;
+      (i) addopt i "distinfo";;
+      (M) addopt M "Makefile";;
+      (m) addopt m "pkg-message";;
+      (p) addopt p "pkg-plist";;
       (P) PAGER="$OPTARG";;
+      (x) set -x;;			# undocumented
       (*) usage;;
   esac
 done
 shift $(($OPTIND - 1))
+[ -d "$PORTSDIR" ] || fatal "No such directory '$PORTSDIR'"
+[ -n "$filelist" ] || filelist="$PKGDESCR"
 
 # there must be at least one argument
 if [ $# = 0 ]; then
     usage
 fi
 
+# View $PORTSDIR$1$2/{$filelist} with $PAGER.
+# Always glob $1 but do not glob $2 when option -f was given.
+# (Slightly complicated because /bin/sh may not understand
+# csh-like {file1,file2} glob patterns.)
+page() {
+    [ $# = 2 ] || fatal "page $*"
+    dirglob=$1
+    portglob=$2
+    shift 2
+    for f in $filelist; do
+	if [ -n "$opt_f" ]; then
+	    set -- "$@" "$PORTSDIR"$dirglob"$portglob/$f"
+	else
+	    set -- "$@" "$PORTSDIR"$dirglob$portglob/"$f"
+	fi
+    done
+    $PAGER "$@" || { rc=$?; return $rc; }	# remember last error code
+}
+
 # main
 for p in "$@"; do
+    set -- $p
+    [ $# != 1 ] && usage "portglob '$p' contains whitespace!"
     case "$p" in
 	(*/*/*)
 	usage "portglob '$p' contains more than one slash!";;
 
 	(*/*)
-	if [ -n "$opt_f" ]; then
-	    $PAGER "$PORTSDIR/$p/$PKGDESCR"
-	else
-	    $PAGER "$PORTSDIR"/$p/"$PKGDESCR"
-	fi;;
+	page "/" "$p";;
 
 	(*)
-	if [ -n "$opt_f" ]; then
-	    $PAGER "$PORTSDIR"/[a-z]*/"$p/$PKGDESCR"
-	else
-	    $PAGER "$PORTSDIR"/[a-z]*/$p/"$PKGDESCR"
-	fi;;
+	page "/[a-z]*/" "$p";;
     esac
 done
+
+exit $rc
 
 #EOF#
