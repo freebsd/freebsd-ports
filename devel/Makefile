@@ -1654,6 +1654,7 @@
     SUBDIR += ruby-rbison
     SUBDIR += ruby-rbprof
     SUBDIR += ruby-rbtree
+    SUBDIR += ruby-rcov
     SUBDIR += ruby-rjudy
     SUBDIR += ruby-robjectteam
     SUBDIR += ruby-rrb
