@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.darkwing.com/idled/download/	\
 		ftp://ftp.cs.hope.edu/pub/idled/
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A daemon that logs out idle users and those users hogging resources
 
 NO_CDROM=	non-profit use and distribution only

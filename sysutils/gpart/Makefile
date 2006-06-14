@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/filesystems
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tries to recover lost partition tables and file systems
 
 USE_GMAKE=	yes

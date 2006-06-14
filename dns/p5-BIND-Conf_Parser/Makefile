@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/P/PG/PGUEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to parse BIND 8 configuration files
 
 PERL_CONFIGURE=	yes
