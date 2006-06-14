@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	Alzabo
-PORTVERSION=	0.87
+PORTVERSION=	0.88.01
 CATEGORIES=	devel databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Alzabo
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A data modelling tool and RDBMS-OO mapper
 
 BUILD_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Factory-Util \
-		${SITE_PERL}/${PERL_ARCH}//Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -106,7 +107,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Stora
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Needs perl 5.6+, install lang/perl5 or lang/perl5.8 and try again
+IGNORE=	requires perl 5.6+, install lang/perl5 or lang/perl5.8 and try again
 .endif
 .endif
 
