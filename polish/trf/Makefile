@@ -8,7 +8,7 @@
 PORTNAME=	trf
 PORTVERSION=	0.4
 CATEGORIES=	polish finance
-MASTER_SITES=	http://maciek.bbnet.pl/soft/trf/
+MASTER_SITES=	http://korzen.org/soft/trf/
 
 MAINTAINER=	mkorzen@gmail.com
 COMMENT=	Billing software for traffic counting working with most Polish ISPs
