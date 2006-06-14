@@ -144,6 +144,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Nome.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Noronha.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/Center.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota/New_Salem.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Panama.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Pangnirtung.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Paramaribo.pm
