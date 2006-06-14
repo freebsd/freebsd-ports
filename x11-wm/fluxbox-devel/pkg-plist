@@ -23,6 +23,7 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/c722.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c724.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c728.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c732.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c740.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c98.html
 %%DOCHTML:%%%%DOCSDIR%%/html/chap-bg.html
@@ -55,6 +56,7 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/x739.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x741.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x745.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x749.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x757.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x795.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x812.html
@@ -63,37 +65,61 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/x817.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x820.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x824.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x828.html
 %%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
 %%DATADIR%%/init
 %%DATADIR%%/keys
 %%DATADIR%%/menu
 %%NLS:%%%%DATADIR%%/nls/C/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/be_BY/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/bg_BG/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/cs_CZ/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/da_DK/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/de_DE/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/el_GR/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/es_ES/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/et_EE/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/fr_FR/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/it_IT/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/ja_JP/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/ko_KR/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/lv_LV/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/nb_NO/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/nl_NL/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/no_NO/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/pl_PL/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/pt_BR/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/pt_PT/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/ru_RU/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/sl_SI/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/sv_SE/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/tr_TR/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/uk_UA/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/vi_VN/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/zh_CN/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/be_BY.CP1251/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/be_BY.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/bg_BG.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/bg_BG.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/cs_CZ.ISO-8859-2/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/cs_CZ.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/da_DK.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/da_DK.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_DE.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_DE.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/el_GR.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/el_GR.utf8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/es_ES.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/es_ES.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/et_EE.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/et_EE.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fr_FR.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fr_FR.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/it_IT.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/it_IT.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ja_JP.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ja_JP.eucJP/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ko_KR.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/lv_LV.ISO-8859-13/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/lv_LV.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/nb_NO.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/nl_NL.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/nl_NL.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/no_NO.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/no_NO.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pl_PL.ISO-8859-2/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pl_PL.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_BR.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_BR.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_PT.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_PT.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ru_RU.KOI8-R/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ru_RU.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sl_SI.ISO-8859-2/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sl_SI.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sv_SE.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sv_SE.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/tr_TR.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/tr_TR.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/uk_UA.KOI8-U/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/uk_UA.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/vi_VN.UTF-8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/zh_CN.ISO-8859-1/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/zh_CN.UTF-8/fluxbox.cat
 %%DATADIR%%/styles/Artwiz
 %%DATADIR%%/styles/BlueFlux/pixmaps/button_close_active.xpm
 %%DATADIR%%/styles/BlueFlux/pixmaps/button_close_pressed.xpm
@@ -160,32 +186,55 @@ bin/startfluxbox
 @dirrm %%DATADIR%%/styles/BlueFlux/pixmaps
 @dirrm %%DATADIR%%/styles/BlueFlux
 @dirrm %%DATADIR%%/styles
-%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN
-%%NLS:%%@dirrm %%DATADIR%%/nls/vi_VN
-%%NLS:%%@dirrm %%DATADIR%%/nls/uk_UA
-%%NLS:%%@dirrm %%DATADIR%%/nls/tr_TR
-%%NLS:%%@dirrm %%DATADIR%%/nls/sv_SE
-%%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI
-%%NLS:%%@dirrm %%DATADIR%%/nls/ru_RU
-%%NLS:%%@dirrm %%DATADIR%%/nls/pt_PT
-%%NLS:%%@dirrm %%DATADIR%%/nls/pt_BR
-%%NLS:%%@dirrm %%DATADIR%%/nls/pl_PL
-%%NLS:%%@dirrm %%DATADIR%%/nls/no_NO
-%%NLS:%%@dirrm %%DATADIR%%/nls/nl_NL
-%%NLS:%%@dirrm %%DATADIR%%/nls/nb_NO
-%%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV
-%%NLS:%%@dirrm %%DATADIR%%/nls/ko_KR
-%%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP
-%%NLS:%%@dirrm %%DATADIR%%/nls/it_IT
-%%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR
-%%NLS:%%@dirrm %%DATADIR%%/nls/et_EE
-%%NLS:%%@dirrm %%DATADIR%%/nls/es_ES
-%%NLS:%%@dirrm %%DATADIR%%/nls/el_GR
-%%NLS:%%@dirrm %%DATADIR%%/nls/de_DE
-%%NLS:%%@dirrm %%DATADIR%%/nls/da_DK
-%%NLS:%%@dirrm %%DATADIR%%/nls/cs_CZ
-%%NLS:%%@dirrm %%DATADIR%%/nls/bg_BG
-%%NLS:%%@dirrm %%DATADIR%%/nls/be_BY
+%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/zh_CN.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/vi_VN.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/uk_UA.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/uk_UA.KOI8-U
+%%NLS:%%@dirrm %%DATADIR%%/nls/tr_TR.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/tr_TR.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/sv_SE.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/sv_SE.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI.ISO-8859-2
+%%NLS:%%@dirrm %%DATADIR%%/nls/ru_RU.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/ru_RU.KOI8-R
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_PT.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_PT.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_BR.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_BR.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/pl_PL.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/pl_PL.ISO-8859-2
+%%NLS:%%@dirrm %%DATADIR%%/nls/no_NO.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/no_NO.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/nl_NL.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/nl_NL.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/nb_NO.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV.ISO-8859-13
+%%NLS:%%@dirrm %%DATADIR%%/nls/ko_KR.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP.eucJP
+%%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/it_IT.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/it_IT.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/et_EE.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/et_EE.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/es_ES.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/es_ES.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/el_GR.utf8
+%%NLS:%%@dirrm %%DATADIR%%/nls/el_GR.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_DE.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_DE.ISO-8859-15
+%%NLS:%%@dirrm %%DATADIR%%/nls/da_DK.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/da_DK.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/cs_CZ.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/cs_CZ.ISO-8859-2
+%%NLS:%%@dirrm %%DATADIR%%/nls/bg_BG.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/bg_BG.ISO-8859-1
+%%NLS:%%@dirrm %%DATADIR%%/nls/be_BY.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/be_BY.CP1251
 %%NLS:%%@dirrm %%DATADIR%%/nls/C
 %%NLS:%%@dirrm %%DATADIR%%/nls
 @dirrm %%DATADIR%%
