@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in.orig	Sun Mar 19 17:12:05 2006
-+++ util/fluxbox-generate_menu.in	Sun Mar 19 17:25:03 2006
+--- util/fluxbox-generate_menu.in.orig	Tue Jun 13 20:36:08 2006
++++ util/fluxbox-generate_menu.in	Tue Jun 13 20:46:24 2006
 @@ -48,7 +48,7 @@
  
  
@@ -27,7 +27,7 @@
      -q  KDE-prefix; idem dito
  
  
-@@ -285,7 +285,9 @@
+@@ -282,7 +282,9 @@
      # echo -n "for $temp_icon"
      eval doSearchLoop $USER_ICONPATHS \
        "$FB_ICONDIR" \
@@ -38,7 +38,7 @@
        ${OTHER_ICONPATHS} \
  
  
-@@ -1209,16 +1211,16 @@
+@@ -1204,16 +1206,16 @@
  # These are prefixes; So if fluxbox is installed in @PREFIX@/bin/fluxbox
  # your prefix is: @PREFIX@
  
@@ -59,19 +59,44 @@
  
  
  # --- Boolean variables.
-@@ -1286,16 +1288,22 @@
+@@ -1281,29 +1283,31 @@
          -g) GNOMEMENU=yes; shift;;
          -in) NO_ICON=yes; shift;;
          -is) OTHER_ICONPATHS="
-+                %%LOCALBASE%%/share/icons
-+                %%LOCALBASE%%/share/pixmaps
-+                %%X11BASE%%/share/icons
-+                %%X11BASE%%/share/pixmaps
+-                /usr/share/icons,
+-                /usr/share/icons/mini,
+-                /usr/share/pixmaps,
+-                /usr/local/share/icons,
+-                /usr/local/share/icons/mini,
+-                /usr/local/share/pixmaps,
+-                /usr/share/xclass/icons,
+-                /usr/share/xclass/pixmaps,
+-                /usr/local/share/xclass/icons,
+-                /usr/local/share/xclass/pixmaps,
+-                /usr/X11R6/share/icons/default/16x16,
+-                /usr/X11R6/share/icons/kde/16x16,
+-                /usr/X11R6/share/icons/hicolor/16x16,
+-                /usr/local/X11R6/share/icons/default/16x16,
+-                /usr/local/X11R6/share/icons/kde/16x16,
+-                /usr/local/X11R6/share/icons/hicolor/16x16,
++                %%LOCALBASE%%/share/icons,
++                %%LOCALBASE%%/share/icons/mini,
++                %%LOCALBASE%%/share/pixmaps,
++                %%LOCALBASE%%/share/xclass/icons,
++                %%LOCALBASE%%/share/xclass/pixmaps,
++                %%LOCALBASE%%/share/icons/default/16x16,
++                %%LOCALBASE%%/share/icons/kde/16x16,
++                %%LOCALBASE%%/share/icons/hicolor/16x16,
++                %%X11BASE%%/share/icons,
++                %%X11BASE%%/share/icons/mini,
 +                %%X11BASE%%/share/gnome/icons
 +                %%X11BASE%%/share/gnome/pixmaps
-                 /usr{,/local}/share{,/xclass}/{icons,pixmaps}
-                 /usr{,/local}/share/icons/mini
-                 /usr{,/local}/{,X11R6/}share/icons/{default.kde,hicolor}/16x16/*
++                %%X11BASE%%/share/pixmaps,
++                %%X11BASE%%/share/xclass/icons,
++                %%X11BASE%%/share/xclass/pixmaps,
++                %%X11BASE%%/share/icons/default/16x16,
++                %%X11BASE%%/share/icons/kde/16x16,
++                %%X11BASE%%/share/icons/hicolor/16x16,
              "
              shift;;
          -ds) OTHER_DESKTOP_PATHS="
@@ -86,7 +111,7 @@
              "
              # /usr/share/apps \
              shift;;
-@@ -1370,7 +1378,7 @@
+@@ -1378,7 +1382,7 @@
  
  
  # gnome prefix
@@ -95,7 +120,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -1378,7 +1386,7 @@
+@@ -1386,7 +1390,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -104,18 +129,18 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -1466,7 +1474,7 @@
+@@ -1474,7 +1478,7 @@
  else
      [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
      #The precise order is up for debate.
--    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird opera skipstone mozilla galeon konqueror dillo netscape w3m links lynx; do
-+    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla galeon konqueror dillo netscape w3m links lynx; do
+-    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird opera skipstone mozilla galeon konqueror dillo netscape w3m amaya links lynx; do
++    for browser in firefox mozilla-firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla galeon konqueror dillo netscape w3m amaya links lynx; do
          if find_it $browser; then
              DEFAULT_BROWSER=$browser
              break
-@@ -1506,7 +1514,8 @@
+@@ -1514,7 +1518,8 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
-     firefox|firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
+     firefox|firebird|mozilla|phoenix|galeon|dillo|netscape|amaya) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
 -    opera) append "[exec] (opera) {env QT_XFT=true opera}" ;;
 +    linux-opera) append "[exec] (linux-opera) {linux-opera}" ;;
@@ -123,7 +148,7 @@
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
      MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
-@@ -1525,7 +1534,8 @@
+@@ -1533,7 +1538,8 @@
      append_submenu "${BROWSERMENU}"
          normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla dillo netscape vncviewer
          find_it links       append "[exec]   (links-graphic) {links -driver x ${HOMEPAGE}}"

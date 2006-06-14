@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.15.1
+PORTVERSION=	1.0rc
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -72,7 +72,6 @@ CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib -liconv"
 CONFIGURE_ARGS+=	--enable-nls
