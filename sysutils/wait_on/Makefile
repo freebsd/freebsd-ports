@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enable shell scripts to monitor directories for new files
 
 WRKSRC=		${WRKDIR}/wait_on

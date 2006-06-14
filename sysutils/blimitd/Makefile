@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to enforce login.conf limits
 
 WRKSRC=		${WRKDIR}/blimitd

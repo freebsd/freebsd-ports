@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cwi.nl/pub/audio/
 DISTNAME=	adpcm
 EXTRACT_SUFX=	.shar
 
-MAINTAINER=		andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Intel/DVI IMA ADPCM codec library
 
 NO_WRKSUBDIR=	true

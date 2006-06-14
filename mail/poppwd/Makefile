@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	andrew@ugh.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the Eudora (compatible) password changing protocol
 
 WRKSRC=		${WRKDIR}/poppwd
