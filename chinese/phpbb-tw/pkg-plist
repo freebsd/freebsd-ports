@@ -139,8 +139,6 @@
 %%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/lang_bbcode.php
 %%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/lang_faq.php
 %%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/lang_main.php
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/search_stopwords.txt
-%%PHPBBDIR%%/language/lang_chinese_traditional_taiwan/search_synonyms.txt
 %%PHPBBDIR%%/language/lang_english/email/admin_activate.tpl
 %%PHPBBDIR%%/language/lang_english/email/admin_send_email.tpl
 %%PHPBBDIR%%/language/lang_english/email/admin_welcome_activated.tpl
@@ -180,6 +178,7 @@
 %%PHPBBDIR%%/templates/subSilver/admin/auth_ug_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/board_config_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/category_edit_body.tpl
+%%PHPBBDIR%%/templates/subSilver/admin/confirm_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/db_utils_backup_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/db_utils_restore_body.tpl
 %%PHPBBDIR%%/templates/subSilver/admin/disallow_body.tpl
@@ -223,7 +222,6 @@
 %%PHPBBDIR%%/templates/subSilver/groupcp_info_body.tpl
 %%PHPBBDIR%%/templates/subSilver/groupcp_pending_info.tpl
 %%PHPBBDIR%%/templates/subSilver/groupcp_user_body.tpl
-%%PHPBBDIR%%/templates/subSilver/images/Thumbs.db
 %%PHPBBDIR%%/templates/subSilver/images/cellpic.gif
 %%PHPBBDIR%%/templates/subSilver/images/cellpic1.gif
 %%PHPBBDIR%%/templates/subSilver/images/cellpic2.jpg
@@ -256,7 +254,6 @@
 %%PHPBBDIR%%/templates/subSilver/images/icon_minipost_new.gif
 %%PHPBBDIR%%/templates/subSilver/images/icon_newest_reply.gif
 %%PHPBBDIR%%/templates/subSilver/images/index.htm
-%%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/Thumbs.db
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_aim.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_edit.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/icon_email.gif
@@ -273,7 +270,6 @@
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/post.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/reply-locked.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_chinese_traditional_taiwan/reply.gif
-%%PHPBBDIR%%/templates/subSilver/images/lang_english/Thumbs.db
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_aim.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_edit.gif
 %%PHPBBDIR%%/templates/subSilver/images/lang_english/icon_email.gif
@@ -378,5 +374,5 @@
 @dirrmtry %%PHPBBDIR%%/templates/subSilver/images
 @dirrmtry %%PHPBBDIR%%/templates/subSilver
 @dirrmtry %%PHPBBDIR%%/templates
-@unexec rmdir %D/%%PHPBBDIR%% 2>/dev/null || echo "Note: %D/%%PHPBBDIR%% not empty -- not deleted!"
+@dirrmtry %%PHPBBDIR%% || echo "Note: %D/%%PHPBBDIR%% not empty -- not deleted!"
 @dirrmtry www/data
