@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jaffm
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://binary.is/download/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
