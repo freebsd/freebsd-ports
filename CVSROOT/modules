@@ -3949,6 +3949,7 @@ hlserver-vs	ports/games/hlserver-vs
 hlserver-wasteland	ports/games/hlserver-wasteland
 hlserver-wizwars	ports/games/hlserver-wizwars
 hlstats		ports/games/hlstats
+hlstatsx	ports/games/hlstatsx
 hmap		ports/security/hmap
 hmmer		ports/biology/hmmer
 hnb		ports/editors/hnb
