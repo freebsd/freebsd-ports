@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	marwan.burelle@lri.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface for OCaml to the curl lib
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

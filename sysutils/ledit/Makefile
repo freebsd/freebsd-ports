@@ -11,8 +11,11 @@ PORTVERSION=	1.11
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/cristal/Daniel.de_Rauglaudre/Tools/
 
-MAINTAINER=	marwan.burelle@lri.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Line editor to be used with interactive commands
+
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=        2006-07-14
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
