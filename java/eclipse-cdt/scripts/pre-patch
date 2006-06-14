@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/java/eclipse-cdt/scripts/pre-patch,v 1.1 2006-01-03 03:28:05 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/java/eclipse-cdt/scripts/pre-patch,v 1.2 2006-06-14 16:03:54 glewis Exp $
 
 copy_dir()
 {
@@ -31,12 +31,12 @@ prepare_files()
 }
 
 COPY_LIST="
-eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.1
-eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.1/os/linux
-eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.1/os/linux/x86
-eclipse/plugins/org.eclipse.cdt.core.linux_3.0.1
-eclipse/plugins/org.eclipse.cdt.source.linux.gtk.x86_3.0.1
-eclipse/plugins/org.eclipse.cdt.source.linux.gtk.x86_3.0.1/src/org.eclipse.cdt.core.linux_3.0.1
+eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.2
+eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.2/os/linux
+eclipse/plugins/org.eclipse.cdt.core.linux.x86_3.0.2/os/linux/x86
+eclipse/plugins/org.eclipse.cdt.core.linux_3.0.2
+eclipse/plugins/org.eclipse.cdt.source.linux.gtk.x86_3.0.2
+eclipse/plugins/org.eclipse.cdt.source.linux.gtk.x86_3.0.2/src/org.eclipse.cdt.core.linux_3.0.2
 "
 
 prepare_files
