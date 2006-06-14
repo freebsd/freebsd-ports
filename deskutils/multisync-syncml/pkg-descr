@@ -1,5 +1,8 @@
 This MultiSync plugin is:
 
-Ximian Evolution synchronization, supporting calendar, ToDos and contacts.
+SyncML support (supported by e.g. SonyEricsson P800/P900 and many other phones
+and devices, for example the SyncML server Sync4j). SyncML also allows you to
+do remote connection of two MultiSync programs via an encrypted connection over
+the net.
 
 WWW: http://multisync.sourceforge.net/
