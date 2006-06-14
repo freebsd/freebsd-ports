@@ -13,8 +13,8 @@ lib/X11/skkinput3/skk-startup.el
 %%SKK10%%lib/X11/skkinput3/skk-server.el
 %%SKK10%%lib/X11/skkinput3/skk-vars.el
 @dirrm lib/X11/skkinput3
-%%PORTDOCS%%share/doc/skkinput3/ChangeLog
-%%PORTDOCS%%share/doc/skkinput3/README-lisp.jis
-%%PORTDOCS%%share/doc/skkinput3/README.jis
-%%PORTDOCS%%share/doc/skkinput3/dot.skkinput
-%%PORTDOCS%%@dirrm share/doc/skkinput3
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README-lisp.jis
+%%PORTDOCS%%%%DOCSDIR%%/README.jis
+%%PORTDOCS%%%%DOCSDIR%%/dot.skkinput
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -16,24 +16,28 @@ COMMENT=	An SKK-like Japanese input method for X11
 
 USE_IMAKE=		yes
 
+OPTIONS=	DBSKKD "Use ja-dbskkd-cdb as skkserver" off \
+		RSKKSERV "Use ja-rskkserv as skkserver" off \
+		SKK10 "Use SKK10 elisps" off
+
 NO_INSTALL_MANPAGES=	yes
 
-.if defined(USE_SKK10)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SKK10)
 PLIST_SUB=		SKK8="@comment " SKK10=""
 .else
 PLIST_SUB=		SKK8="" SKK10="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 # sanity check
 .if defined(WITH_DBSKKD) && defined(WITH_RSKKSERV)
-.error Cannot define both WITH_DBSKKD and WITH_RSKKSERV simultaneously.
+IGNORE= cannot define both WITH_DBSKKD and WITH_RSKKSERV simultaneously
 .endif
 
-.if defined(WITH_DBSKKD) || exists(${LOCALBASE}/libexec/dbskkd-cdb) && !defined(WITH_RSKKSERV)
+.if defined(WITH_DBSKKD)
 RUN_DEPENDS=	${LOCALBASE}/libexec/dbskkd-cdb:${PORTSDIR}/japanese/dbskkd-cdb
-.elif defined(WITH_RSKKSERV) || exists(${LOCALBASE}/libexec/rskkserv) && !defined(WITH_DBSKKD)
+.elif defined(WITH_RSKKSERV)
 RUN_DEPENDS=	${LOCALBASE}/libexec/rskkserv:${PORTSDIR}/japanese/rskkserv
 .else
 RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
@@ -41,7 +45,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
 
 DOCS=		*.jis dot.skkinput ChangeLog
 
-.if defined(USE_SKK10)
+.if defined(WITH_SKK10)
 post-patch:
 	${REINPLACE_CMD} -e '/\(#define.*UseSkk8\)/ s/^/XCOMM /' \
 	                 -e '/XCOMM.*#define.*UseSkk10/ s/XCOMM[[:space:]]*//' \
