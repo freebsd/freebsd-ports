@@ -1,3 +1,9 @@
+%%PYTHON_SITELIBDIR%%/fdpexpect.py
+%%PYTHON_SITELIBDIR%%/fdpexpect.pyc
+%%PYTHON_SITELIBDIR%%/fdpexpect.pyo
 %%PYTHON_SITELIBDIR%%/pexpect.py
 %%PYTHON_SITELIBDIR%%/pexpect.pyc
 %%PYTHON_SITELIBDIR%%/pexpect.pyo
+%%PYTHON_SITELIBDIR%%/pxssh.py
+%%PYTHON_SITELIBDIR%%/pxssh.pyc
+%%PYTHON_SITELIBDIR%%/pxssh.pyo
