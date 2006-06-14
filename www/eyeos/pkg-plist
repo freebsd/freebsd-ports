@@ -60,7 +60,6 @@
 %%EYEDIR%%/apps/eyeEdit.eyeapp/lang.php
 %%EYEDIR%%/apps/eyeEdit.eyeapp/listnotes.php
 %%EYEDIR%%/apps/eyeEdit.eyeapp/propietats.xml
-%%EYEDIR%%/apps/eyeEdit.eyeapp/propietats.xml~1~
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/blank.htm
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/langs/en.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/langs/readme.txt
@@ -477,6 +476,7 @@
 %%EYEDIR%%/etc/index.html
 %%EYEDIR%%/home/index.html
 %%EYEDIR%%/index.php
+%%EYEDIR%%/known-bugs.txt
 %%EYEDIR%%/login/back.png
 %%EYEDIR%%/login/block_account.png
 %%EYEDIR%%/login/block_be.png
@@ -523,7 +523,6 @@
 %%EYEDIR%%/system/themes/BlueIris/IE/1.png
 %%EYEDIR%%/system/themes/BlueIris/IE/3.png
 %%EYEDIR%%/system/themes/BlueIris/IE/5.png
-%%EYEDIR%%/system/themes/BlueIris/IE/Thumbs.db
 %%EYEDIR%%/system/themes/BlueIris/IE/close.png
 %%EYEDIR%%/system/themes/BlueIris/IE/default.css
 %%EYEDIR%%/system/themes/BlueIris/IE/exit.png
@@ -558,7 +557,6 @@
 %%EYEDIR%%/system/themes/BlueIris/apps/eyeTrash.eyeapp/empty.png
 %%EYEDIR%%/system/themes/BlueIris/apps/eyeTrash.eyeapp/full.png
 %%EYEDIR%%/system/themes/BlueIris/default.css
-%%EYEDIR%%/system/themes/BlueIris/desktop/Thumbs.db
 %%EYEDIR%%/system/themes/BlueIris/desktop/exit.png
 %%EYEDIR%%/system/themes/BlueIris/desktop/exit2.png
 %%EYEDIR%%/system/themes/BlueIris/desktop/panel.png
@@ -570,7 +568,6 @@
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/5.png
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/6.png
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/7.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/Thumbs.db
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/barc.png
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/barl.png
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/barr.png
@@ -583,57 +580,6 @@
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/close.png
 %%EYEDIR%%/system/themes/BlueIris/gfxwin/max.png
 %%EYEDIR%%/system/themes/BlueIris/thumb.png
-%%EYEDIR%%/system/themes/BlueIris.tar.gz
-%%EYEDIR%%/system/themes/animus/INFO
-%%EYEDIR%%/system/themes/animus/apps/eyeAmp.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeAmp.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeApps.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeApps.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeBoard.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeBoard.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeCalc.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeCalc.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeCalendar.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeCalendar.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeEdit.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeEdit.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeHome.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeHome.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeInfo.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeInfo.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeMessages.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeMessages.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeNav.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeNav.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeOptions.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyeOptions.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyePhones.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/animus/apps/eyePhones.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/animus/apps/eyeTrash.eyeapp/empty.png
-%%EYEDIR%%/system/themes/animus/apps/eyeTrash.eyeapp/full.png
-%%EYEDIR%%/system/themes/animus/default.css
-%%EYEDIR%%/system/themes/animus/desktop/clock.png
-%%EYEDIR%%/system/themes/animus/desktop/dock.png
-%%EYEDIR%%/system/themes/animus/desktop/dockmin.png
-%%EYEDIR%%/system/themes/animus/desktop/exit.png
-%%EYEDIR%%/system/themes/animus/eyeos.jpg
-%%EYEDIR%%/system/themes/animus/gfxwin/1.png
-%%EYEDIR%%/system/themes/animus/gfxwin/2.png
-%%EYEDIR%%/system/themes/animus/gfxwin/3.png
-%%EYEDIR%%/system/themes/animus/gfxwin/4.png
-%%EYEDIR%%/system/themes/animus/gfxwin/5.png
-%%EYEDIR%%/system/themes/animus/gfxwin/6.png
-%%EYEDIR%%/system/themes/animus/gfxwin/bar.png
-%%EYEDIR%%/system/themes/animus/gfxwin/bubbles/background.png
-%%EYEDIR%%/system/themes/animus/gfxwin/bubbles/botl.png
-%%EYEDIR%%/system/themes/animus/gfxwin/bubbles/botr.png
-%%EYEDIR%%/system/themes/animus/gfxwin/bubbles/out.png
-%%EYEDIR%%/system/themes/animus/gfxwin/bubbles/topl.png
-%%EYEDIR%%/system/themes/animus/gfxwin/bubbles/topr.png
-%%EYEDIR%%/system/themes/animus/gfxwin/close.png
-%%EYEDIR%%/system/themes/animus/gfxwin/max.png
-%%EYEDIR%%/system/themes/animus/gfxwin/resize.png
-%%EYEDIR%%/system/themes/animus/thumb.png
 %%EYEDIR%%/system/themes/default/IE/1.png
 %%EYEDIR%%/system/themes/default/IE/3.png
 %%EYEDIR%%/system/themes/default/IE/5.png
@@ -812,24 +758,6 @@
 @dirrm %%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles
 @dirrm %%EYEDIR%%/system/themes/BlueIris/gfxwin
 @dirrm %%EYEDIR%%/system/themes/BlueIris
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeAmp.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeApps.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeBoard.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeCalc.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeCalendar.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeEdit.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeHome.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeInfo.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeMessages.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeNav.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeOptions.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyePhones.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps/eyeTrash.eyeapp
-@dirrm %%EYEDIR%%/system/themes/animus/apps
-@dirrm %%EYEDIR%%/system/themes/animus/desktop
-@dirrm %%EYEDIR%%/system/themes/animus/gfxwin/bubbles
-@dirrm %%EYEDIR%%/system/themes/animus/gfxwin
-@dirrm %%EYEDIR%%/system/themes/animus
 @dirrm %%EYEDIR%%/system/themes/default/IE
 @dirrm %%EYEDIR%%/system/themes/default/desktop
 @dirrm %%EYEDIR%%/system/themes/default/gfxwin/bubbles
