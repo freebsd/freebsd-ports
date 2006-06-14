@@ -1,10 +1,10 @@
---- tumgreyspfsupp.py.orig	Thu Feb  2 18:48:25 2006
-+++ tumgreyspfsupp.py	Wed Feb 22 10:20:40 2006
-@@ -10,15 +10,15 @@
+--- tumgreyspfsupp.py.orig	Tue May 30 07:24:11 2006
++++ tumgreyspfsupp.py	Tue Jun 13 22:00:23 2006
+@@ -9,15 +9,15 @@
  
  
  #  default values
--defaultConfigFilename = '/var/local/tumgreyspf/config/tumgreyspf.conf'
+-defaultConfigFilename = '/var/local/lib/tumgreyspf/config/tumgreyspf.conf'
 +defaultConfigFilename = '%%PREFIX%%/etc/tumgreyspf.conf'
  defaultConfigData = {
  		'debugLevel' : 0,
