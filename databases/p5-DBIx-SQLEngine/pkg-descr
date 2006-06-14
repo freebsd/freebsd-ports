@@ -5,5 +5,4 @@ query execution in a single call. Dynamic subclassing based on database
 server type enables cross-platform portability.
 
 WWW: http://search.cpan.org/dist/DBIx-SQLEngine/
-
-Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
+Author: Matthew Simon Cavalletto
