@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netams
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.netams.com/files/
@@ -16,9 +16,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jura@netams.com
 COMMENT=	Network Traffic Accounting and Monitoring Software
 
-NO_PACKAGE=	"Depends on kernel"
+NO_PACKAGE=	Depends on kernel
 
 USE_SUBMAKE=	yes
+USE_RC_SUBR=	netams.sh
 MANCOMPRESSED=	no
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -30,11 +31,11 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 ADMINCGI=	.htaccess index.cgi policy.cgi showusercard.cgi user.cgi  \
 		access.cgi login.cgi quota.cgi showusercard.tmpl view.cgi \
 		account.cgi netams.cgi radius.cgi subplan.cgi config.cgi  \
-		plan.cgi russian.res unit.cgi
+		plan.cgi russian.res unit.cgi cardtool.cgi
 CGI=		.htaccess config.cgi netams_api.pl russian.res \
 		netams_example.cgi usertool.cgi admintool.cgi login.cgi \
-		netams_graph.cgi
-IMAGES=		logo.gif logo-small.gif admintool-logo.gif showtable-logo.gif
+		netams_graph.cgi activate.cgi activate.tmpl
+IMAGES=		logo.gif logo_sm.jpg admintool-logo.gif showtable-logo.gif
 MAN8=		netams.8 flowprobe.8 netamsctl.8
 
 SYSDIR?=	/sys
@@ -45,9 +46,9 @@ OPTIONS=	DEBUG	"Build with debug symbols"			off \
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${SYSDIR})
-IGNORE=		could not find the kernel sources in ${SYSDIR}. Please define SYSDIR
-.endif
+#.if !exists(${SYSDIR})
+#IGNORE=		Could not find the kernel sources in ${SYSDIR}. Please define SYSDIR
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(CC).*/\1=$$(CXX)/; s|^(INCLUDE=).*|\1 ${LOCALBASE}/include|; s|^(CFLAGS).*=|\1+=|; /^FLAGS/d' \
@@ -70,20 +71,11 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/libexec/netams
 	${INSTALL_PROGRAM} ${WRKSRC}/src/flowprobe ${PREFIX}/sbin/flowprobe
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ipfw2netflow \
-		${PREFIX}/sbin/ipfw2netflow
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ipfw2netflow ${PREFIX}/sbin/ipfw2netflow
 	${INSTALL_PROGRAM} ${WRKSRC}/src/netamsctl ${PREFIX}/bin/netamsctl
-	${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg \
-		${PREFIX}/etc/netams.cfg.sample
-.if !exists(${PREFIX}/etc/netams.cfg)
-	${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg \
-		${PREFIX}/etc/netams.cfg
-.endif
-	${INSTALL_SCRIPT} ${WRKSRC}/addon/netams-startup.sh \
-		${PREFIX}/etc/rc.d/netams-startup.sh.sample
+	${INSTALL_DATA} ${WRKSRC}/addon/netams.cfg ${PREFIX}/etc/netams.cfg.sample
 	${MKDIR} ${DATADIR}/cgi-bin/admin ${DATADIR}/cgi-bin/images
-	${INSTALL_DATA} ${WRKSRC}/addon/ru-networks.txt \
-		${DATADIR}/ru-networks.txt.sample
+	${INSTALL_DATA} ${WRKSRC}/addon/ru-networks.txt ${DATADIR}/ru-networks.txt.sample
 	${INSTALL_DATA} ${WRKSRC}/addon/.netamsctl.rc ${DATADIR}
 .for f in ${IMAGES}
 	${INSTALL_DATA} ${WRKSRC}/cgi-bin/images/${f} ${DATADIR}/cgi-bin/images
