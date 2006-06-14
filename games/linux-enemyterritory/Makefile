@@ -19,6 +19,7 @@ COMMENT=	Wolfenstein: Enemy Territory (Linux version)
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
+USE_ZIP=	yes
 NO_CDROM=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
@@ -27,9 +28,9 @@ PATCH_260B_DIR=	Enemy Territory 2.60b
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && \
-		${TAIL} +374 ${_DISTDIR}/et-linux-2.60.x86.run | ${TAR} xfz -
+		${TAIL} +374 ${_DISTDIR}et-linux-2.60.x86.run | ${TAR} xfz -
 	@cd ${WRKSRC} && \
-		${TAR} xf ${_DISTDIR}/ET-2.60b.zip
+		${UNZIP_CMD} -q ${_DISTDIR}ET-2.60b.zip
 
 post-patch:
 .for FILE in et etded
