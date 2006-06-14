@@ -1,6 +1,6 @@
-@comment $FreeBSD$
 etc/mailscanner-mrtg/mailscanner-mrtg.cfg.sample
 etc/mailscanner-mrtg/mailscanner-mrtg.conf.sample
+lib/MailScanner-MRTG/MSMRTG/Alarm.pm
 lib/MailScanner-MRTG/MSMRTG/Config.pm
 lib/MailScanner-MRTG/MSMRTG/Data.pm
 lib/MailScanner-MRTG/MSMRTG/Debug.pm
@@ -15,6 +15,7 @@ sbin/mailscanner-mrtg
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.SNMP
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+www/mailscanner-mrtg/htaccess
 www/mailscanner-mrtg/index.html
 www/mailscanner-mrtg/mailscanner-mrtg.jpg
 @dirrm www/mailscanner-mrtg
