@@ -13,7 +13,7 @@ MASTER_SITES=	http://c0re.23.nu/c0de/IPy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	IPy-${PORTVERSION}
 
-MAINTAINER=	drt@un.bewaff.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python module for handling IPv4 and IPv6 Addresses and Networks
 
 USE_PYTHON=	yes

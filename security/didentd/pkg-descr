@@ -19,4 +19,4 @@ uid owning the requested connection. This is the classic ident approach.
 didentd-static is a server which delivers a fixed reply defined by the
 administrator to every request. 
 
-WWW: http://c0re.jp/c0de/didentd/
+WWW: http://c0re.23.nu/c0de/didentd/
