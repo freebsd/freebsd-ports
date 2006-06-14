@@ -200,41 +200,40 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/print.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/toc.py
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/view_source.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/README
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/README
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/RecentChanges.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/SearchPage.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/UserOptions.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/accesskeys.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/addwikiform.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/addwikipageform.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/backlinks.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/badtemplate.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/blank_star.png
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/commentform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/content.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/contentspage.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/denied.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/diffform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/editform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/head.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/hierarchylinks.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/links.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/maintemplate.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/pageheader.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/pagemanagementform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/recentchanges.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/searchwiki.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/siteheader.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/star.png
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/stylesheet.css
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/subscribeform.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/subtopics_board.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/subtopics_outline.dtml
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/useroptions.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/wikipage.pt
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/wikipage_icon.gif
-%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard/wikipage_plone_icon.gif
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/README
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/RecentChanges.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/SearchPage.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/UserOptions.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/accesskeys.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/addwikiform.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/addwikipageform.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/backlinks.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/badtemplate.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/blank_star.png
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/commentform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/content.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/contentspage.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/denied.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/diffform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/editform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/head.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/hierarchylinks.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/links.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/maintemplate.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/pageheader.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/pagemanagementform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/recentchanges.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/searchwiki.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/siteheader.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/star.png
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/stylesheet.css
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/subscribeform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/subtopics_board.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/subtopics_outline.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/useroptions.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/wikipage.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/wikipage_icon.gif
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/wikipage_plone_icon.gif
 %%ZOPEPRODUCTDIR%%/ZWiki/testsupport.py
 %%ZOPEPRODUCTDIR%%/ZWiki/testsupport.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/tools/README
@@ -249,19 +248,17 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/ZWiki.stx
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/index_html.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/standard_error_message.dtml
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/scripts
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/i18n
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_standard
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/ftests
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/i18n
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/scripts
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tools
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/wikis
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/ftests
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tools
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki
-@dirrmtry %%ZOPEPRODUCTDIR%%
