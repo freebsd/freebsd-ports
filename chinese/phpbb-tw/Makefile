@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.20
+PORTVERSION=	2.0.21
 CATEGORIES=	chinese www
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/
 PKGNAMESUFFIX=	-tw
-DISTNAME=	phpBB-${PORTVERSION}
+DISTNAME=	phpBB-tw-${PORTVERSION}
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	The Traditional Chinese version of phpBB
@@ -19,6 +19,7 @@ COMMENT=	The Traditional Chinese version of phpBB
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
 CONFLICTS=	phpbb-[0-9]*
+USE_DOS2UNIX=	yes
 
 # Get HOSTNAME
 .if exists(/sbin/sysctl)
