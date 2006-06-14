@@ -8,20 +8,23 @@
 PORTNAME=	flamerobin
 PORTVERSION=	0.7.2
 CATEGORIES=	databases
-MASTER_SITES=	http://dindin.webkazan.ru/flamerobin/ \
+MASTER_SITES=	http://dindin.webkazan.ru/flamerobin/\
+		http://main.webkazan.ru/flamerobin/\
 		http://superb-west.dl.sourceforge.net/sourceforge/flamerobin/
 DISTNAME=	flamerobin-0.7.2-src
 
 MAINTAINER=	dindin@FreeBSD.org.ua
 COMMENT=	An GUI administration tool for firebird database
 
-WXPORT=		gtk2
+BUILD_DEPENDS=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
+LIB_DEPENDS=	wx_gtk2_stc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-contrib \
+		fbclient.1:${PORTSDIR}/databases/firebird-client
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
-BUILD_DEPENDS+=	${WX_CONFIG}:${PORTSDIR}/x11-toolkits/wxgtk26
+WXPORT=		gtk2
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.6-config
 
 SUB_FILES=	pkg-message
@@ -34,8 +37,6 @@ PLIST_SUB+=	WX_VERSION=${WX_VERSION}
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
-
-LIB_DEPENDS+=	wx_gtk2_stc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-contrib
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
