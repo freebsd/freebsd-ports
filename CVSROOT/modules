@@ -9753,6 +9753,7 @@ p5-WebService-NoPaste	ports/www/p5-WebService-NoPaste
 p5-WebService-Technorati	ports/www/p5-WebService-Technorati
 p5-WordNet-QueryData	ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity	ports/textproc/p5-WordNet-Similarity
+p5-Workflow	ports/devel/p5-Workflow
 p5-X11-GUITest	ports/x11/p5-X11-GUITest
 p5-X11-IdleTime	ports/x11/p5-X11-IdleTime
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
