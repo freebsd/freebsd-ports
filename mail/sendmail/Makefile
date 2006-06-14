@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.13.6
+PORTVERSION=	8.13.7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -450,6 +450,22 @@ howto-sasldb:
 tls-install:
 	${SETENV} DESTDIR=${DESTDIR} FILESDIR=${FILESDIR} \
 		${SH} ${FILESDIR}/tls-install.sh
+
+help:
+	@${ECHO_CMD} "# additional targets:"
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# configure ${DESTDIR}/etc/mail/maile.conf"
+	@${ECHO_CMD} "# for sendmail from ports"
+	@${ECHO_CMD} "make mailer.conf"
+	@${ECHO_CMD} "# for sendmail in the base"
+	@${ECHO_CMD} "make mailer.base"
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# show howto for configuring sasldb"
+	@${ECHO_CMD} "make howto-sasldb"
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# create a self-signed certificate"
+	@${ECHO_CMD} "make tls-install"
+	@${ECHO_CMD} "#"
 
 .include <bsd.port.pre.mk>
 
