@@ -1,5 +1,4 @@
 %%SITE_PERL%%/Class/Hook.pm
-%%SITE_PERL%%/Class/FOO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Hook/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Hook
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
