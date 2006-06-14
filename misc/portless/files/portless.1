@@ -22,7 +22,7 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.\" @(#)portless.1,v 1.1 2006/06/08 10:10:56 martin Exp
+.\" @(#)portless.1,v 1.2 2006/06/14 12:44:25 martin Exp
 .\"
 .\" Note: The date here should be updated whenever a non-trivial
 .\" change is made to the manual page.
@@ -94,12 +94,13 @@ command uses the
 .It Pa /usr/ports/*/*/*
 .El
 .Sh EXAMPLES
-The following is an example of a typical usage
-of the
+The following are examples of typical usage of the
 .Nm
 command:
 .Pp
-.Dl "portless gcc\e*"
+.Dl "portless cvsweb\e*"
+.Dl "portless lang/\e*doc"
+.Dl "portless 'www/*python*'"
 .Sh AUTHOR
 The
 .Nm
