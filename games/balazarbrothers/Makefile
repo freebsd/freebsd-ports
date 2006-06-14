@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	balazarbrothers
-PORTVERSION=	0.2
+PORTVERSION=	0.3.1
 CATEGORIES=	games python
-MASTER_SITES=	http://download.gna.org/soya/
-DISTNAME=	BalazarBrother-${PORTVERSION}
+MASTER_SITES=	http://download.gna.org/${PORTNAME:S/brothers//}/
+DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Balazar Brother is a free software 3D puzzle game
@@ -31,7 +31,7 @@ USE_TWISTED=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 
-DATADIR=	share/balazar_brother
+DATADIR=	share/balazar_brothers
 
 OPTIONS=	OPENAL	"Use openal sound system" on \
 		SDL	"Use sdl sound system" off
