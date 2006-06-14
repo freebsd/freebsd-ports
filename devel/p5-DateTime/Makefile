@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		DateTime.3 DateTime::Duration.3 \
-		DateTime::Infinite.3 DateTime::LeapSecond.3
+		DateTime::Helpers.3 DateTime::Infinite.3 DateTime::LeapSecond.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CREDITS Changes TODO
@@ -36,4 +36,14 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
