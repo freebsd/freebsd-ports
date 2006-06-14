@@ -35,33 +35,42 @@
 %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoAdvancedFeatures.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoColumnTypes.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoComplexJoins.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoJoins.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoLimit.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoPlaceholders.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoSequences.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/NoUnions.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait/PerlDBLib.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Driver/XBase.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Record/Accessors.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Record/Base.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Record/Cache.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Record/Class.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Record/Set.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Record/Trait/Accessors.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Record/Trait/Cache.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Record/Trait/Extras.pm
-%%SITE_PERL%%/DBIx/SQLEngine/Record/Trait/Hooks.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Record/Extras.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Record/Hooks.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Record/PKey.pm
+%%SITE_PERL%%/DBIx/SQLEngine/Record/Table.pm
+%%SITE_PERL%%/DBIx/SQLEngine/RecordSet/NextPrev.pm
+%%SITE_PERL%%/DBIx/SQLEngine/RecordSet/PKeySet.pm
+%%SITE_PERL%%/DBIx/SQLEngine/RecordSet/Set.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Schema/Column.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Schema/ColumnSet.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Schema/Table.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Schema/TableSet.pm
 %%SITE_PERL%%/DBIx/SQLEngine/Utility/CloneWithParams.pm
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Cache
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Criteria
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Docs
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Driver/Sybase
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Driver
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Record/Trait
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Record
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Schema
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Utility
-@dirrm %%SITE_PERL%%/DBIx/SQLEngine
-@dirrmtry %%SITE_PERL%%/DBIx
+%%SITE_PERL%%/DBIx/test_cfg.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLEngine/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SQLEngine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Utility
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Schema
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/RecordSet
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Record
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Driver/Trait
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Driver/Sybase
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Driver
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Docs
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Criteria
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine/Cache
+@dirrm %%SITE_PERL%%/DBIx/SQLEngine
+@dirrmtry %%SITE_PERL%%/DBIx
