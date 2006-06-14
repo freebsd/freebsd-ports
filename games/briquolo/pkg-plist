@@ -98,14 +98,14 @@ bin/briquolo
 %%DATADIR%%/tableau/old/016.tab
 %%DATADIR%%/tableau/old/description
 share/pixmaps/briquolo.svg
-share/locale/fr/LC_MESSAGES/briquolo.mo
-share/locale/nl/LC_MESSAGES/briquolo.mo
-share/locale/de/LC_MESSAGES/briquolo.mo
-share/locale/ru/LC_MESSAGES/briquolo.mo
-share/locale/be/LC_MESSAGES/briquolo.mo
-share/locale/pl/LC_MESSAGES/briquolo.mo
-share/locale/pt/LC_MESSAGES/briquolo.mo
-share/locale/sk/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/de/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/be/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/briquolo.mo
 @dirrm %%DATADIR%%/tableau/old
 @dirrm %%DATADIR%%/tableau/new
 @dirrm %%DATADIR%%/tableau

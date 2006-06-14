@@ -29,6 +29,14 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+#.if defined(WITHOUT_NLS)
+#CONFIGURE_ARGS+=	--disable-nls
+#PLIST_SUB+=	NLS="@comment "
+#.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+#.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -37,4 +45,10 @@ post-patch:
 pre-install:
 	${MKDIR} ${PREFIX}/share/applications
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 500000)
+BROKEN=		requires a newer libc (with wide character functions)
+.endif
+
+.include <bsd.port.post.mk>
