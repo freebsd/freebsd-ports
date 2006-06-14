@@ -14,7 +14,7 @@ MASTER_SITES=	http://pld.ouraynet.com/software/solidpop3d/ \
 		http://www.netsw.org/net/mail/transport/pop/
 DISTNAME=	solid-pop3d-${PORTVERSION}
 
-MAINTAINER=	drkangel@drkangel.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SolidPop3 POP3 daemon (fully RFC1939 compliant)
 
 GNU_CONFIGURE=	yes
