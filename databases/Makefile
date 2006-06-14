@@ -6,7 +6,6 @@
     SUBDIR += WWWdb
     SUBDIR += adodb
     SUBDIR += adstudio
-    SUBDIR += arcexplorer
     SUBDIR += bbdb
     SUBDIR += bbdb-emacs20
     SUBDIR += cdb

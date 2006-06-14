@@ -435,7 +435,6 @@ ar-khotot	ports/arabic/khotot
 ar-koffice-i18n	ports/arabic/koffice-i18n
 ar-libitl	ports/arabic/libitl
 arc		ports/archivers/arc
-arcexplorer	ports/databases/arcexplorer
 archie		ports/net/archie
 archivemail	ports/mail/archivemail
 archivers_rvm	ports/archivers/rvm
@@ -6113,7 +6112,6 @@ linux-esound	ports/audio/linux-esound
 linux-expat	ports/textproc/linux-expat
 linux-firefox	ports/www/linux-firefox
 linux-firefox-devel	ports/www/linux-firefox-devel
-linux-flashplugin6	ports/www/linux-flashplugin6
 linux-flashplugin7	ports/www/linux-flashplugin7
 linux-flock	ports/www/linux-flock
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
