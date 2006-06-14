@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	hlstats
-PORTVERSION=	1.20
+PORTVERSION=	1.32
 CATEGORIES=	games www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A real-time stats parser for Half Life & its mods
 
-RUN_DEPENDS=	\
-		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
 NO_BUILD=	yes
 USE_APACHE=	yes
 USE_PHP=	yes
 USE_PERL5_RUN=	yes
+HLSTATS?=	www/${PORTNAME}
+PLIST_SUB+=	HLSTATS=${HLSTATS}
 
 do-install:
-	@ ${MKDIR} ${PREFIX}/www/data/${PORTNAME}
-	@ ${CP} -R ${WRKSRC}/* ${PREFIX}/www/data/${PORTNAME}
+	@ ${MKDIR} ${PREFIX}/${HLSTATS}
+	@ ${CP} -R ${WRKSRC}/* ${PREFIX}/${HLSTATS}
 	@ ${ECHO_MSG} "*"
 	@ ${ECHO_MSG} "* Files have been installed in"
-	@ ${ECHO_MSG} "* ${PREFIX}/www/data/${PORTNAME}"
+	@ ${ECHO_MSG} "* ${PREFIX}/${HLSTATS}"
 	@ ${ECHO_MSG} "*"
 	@ ${ECHO_MSG} "* Visit http://docs.unitedadmins.com/HLstats/ for instructions on getting it running."
 	@ ${ECHO_MSG} "*"
