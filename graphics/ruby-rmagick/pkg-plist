@@ -380,7 +380,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/stroke_linecap.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/stroke_fill.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/stroke_dasharray.gif
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/stegano.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/spread.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/splice.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/solarize.jpg
@@ -477,8 +476,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/ellipse.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/edge.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/drop_shadow.gif
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/drawcomp2.gif
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/drawcomp1.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rm_demo_out.miff
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/cycle_colormap.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/cubic02.gif
