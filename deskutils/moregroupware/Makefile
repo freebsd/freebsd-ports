@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}-core-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-docs-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	rob@debank.tv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
 # php extensions

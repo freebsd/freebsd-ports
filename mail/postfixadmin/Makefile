@@ -13,7 +13,7 @@ MASTER_SITES=	http://high5.net/postfixadmin/ \
 		http://high5.net/postfixadmin/download.php?file=
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rob@debank.tv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP frontend to postfix and mySQL
 
 WANT_PHP_PEAR=	yes
