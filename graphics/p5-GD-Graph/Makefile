@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GD-Graph
-PORTVERSION=	1.43.07
+PORTVERSION=	1.43.08
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test/BWARFIELD
@@ -32,4 +32,10 @@ MAN3=		GD::Graph.3 \
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -print0 | ${XARGS} -0 ${RM} -f
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
