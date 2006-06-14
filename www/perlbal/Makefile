@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perlbal
-PORTVERSION=	1.38
+PORTVERSION=	1.41
 CATEGORIES=	www
 MASTER_SITES=	http://www.danga.com/dist/Perlbal/
 PKGNAMEPREFIX=	p5-
