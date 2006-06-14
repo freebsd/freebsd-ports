@@ -3,6 +3,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus/DBus.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus/DBus.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/ASyncReply.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Annotation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/RemoteObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Service.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Object.pm
@@ -19,6 +21,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Iterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Introspector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/PendingCall.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/Signal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/MethodReturn.pm

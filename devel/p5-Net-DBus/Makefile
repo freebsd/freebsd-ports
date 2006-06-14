@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-DBus
-PORTVERSION=	0.33.1
-PORTREVISION=	1
+PORTVERSION=	0.33.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -23,8 +22,9 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Grove.pm:${PORTSDIR}/textproc/p5-XML-Grove \
 USE_GNOME=	pkgconfig
 PERL_CONFIGURE=	yes
 
-MAN3=	Net::DBus::Tutorial.3 Net::DBus::RemoteObject.3 \
-	Net::DBus::Binding::Connection.3 Net::DBus::RemoteService.3 \
+MAN3=	Net::DBus::ASyncReply.3 Net::DBus::Annotation.3 Net::DBus::Tutorial.3 \
+	Net::DBus::RemoteObject.3 Net::DBus::Binding::Connection.3 \
+	Net::DBus::Binding::PendingCall.3 Net::DBus::RemoteService.3 \
 	Net::DBus::Tutorial::ExportingObjects.3 Net::DBus::Dumper.3 \
 	Net::DBus::Binding::Iterator.3 Net::DBus::Binding::Message.3 \
 	Net::DBus::Binding::Message::Signal.3 Net::DBus::Binding::Bus.3 \
