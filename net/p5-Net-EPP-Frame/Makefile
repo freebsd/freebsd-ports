@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-EPP-Frame
-PORTVERSION=	0.02
+PORTVERSION=	0.05
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -21,9 +21,12 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 MAN3=	Net::EPP::Frame.3 \
 	Net::EPP::Frame::Command.3 \
 	Net::EPP::Frame::Command::Check.3 \
+	Net::EPP::Frame::Command::Check::Domain.3 \
 	Net::EPP::Frame::Command::Create.3 \
 	Net::EPP::Frame::Command::Delete.3 \
+	Net::EPP::Frame::Command::Delete::Domain.3 \
 	Net::EPP::Frame::Command::Info.3 \
+	Net::EPP::Frame::Command::Info::Domain.3 \
 	Net::EPP::Frame::Command::Login.3 \
 	Net::EPP::Frame::Command::Logout.3 \
 	Net::EPP::Frame::Command::Poll.3 \
