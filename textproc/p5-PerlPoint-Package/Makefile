@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	PerlPoint-Package
-PORTVERSION=	0.40
+PORTVERSION=	0.43
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PerlPoint
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	PerlPoint is both a presentation and a documentation toolset
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN1=		pp2sdf.1 pp2tdo.1
+MAN1=		pp2sdf.1 perlpoint.1
 MAN3=		PerlPoint::Anchors.3 \
 		PerlPoint::Backend.3 \
 		PerlPoint::Constants.3 \
