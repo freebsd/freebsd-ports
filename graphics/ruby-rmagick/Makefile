@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://rubyforge.lauschmusik.de/rmagick/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,8 +15,6 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
-
-BUILD_DEPENDS=	wmf2eps:${PORTSDIR}/graphics/libwmf
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
@@ -28,6 +26,9 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib" \
 		RUBY="${RUBY}"
 CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}"
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--disable-htmldoc
+.endif
 
 OPTIONSFILE?=	${PORT_DBDIR}/${DIST_SUBDIR}-${PORTNAME}/options
 
