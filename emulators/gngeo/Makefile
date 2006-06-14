@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gngeo
-PORTVERSION=	0.6.11
+PORTVERSION=	0.6.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngeo/download/
 
