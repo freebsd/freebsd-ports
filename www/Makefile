@@ -1017,6 +1017,7 @@
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-imdbpreview
     SUBDIR += xpi-inline-google-definitions
+    SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
     SUBDIR += xpi-linkification
     SUBDIR += xpi-locale-switcher
