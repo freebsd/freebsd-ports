@@ -23,15 +23,15 @@
 %%SITE_PERL%%/POE/Filter/IRC/Compat.pm
 %%SITE_PERL%%/POE/Filter/IRC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
-%%EXAMPLESDIR%%/aimproxy.pl
-%%EXAMPLESDIR%%/dcctest.pl
-%%EXAMPLESDIR%%/dicebot.pl
-%%EXAMPLESDIR%%/eliza.pl
-%%EXAMPLESDIR%%/ircproxy.pl
-%%EXAMPLESDIR%%/moo.pl
-%%EXAMPLESDIR%%/simpleclient.pl
-%%EXAMPLESDIR%%/tinyurl.pl
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/aimproxy.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dcctest.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dicebot.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/eliza.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ircproxy.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/moo.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/simpleclient.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/tinyurl.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrm %%SITE_PERL%%/POE/Component/IRC/Plugin
