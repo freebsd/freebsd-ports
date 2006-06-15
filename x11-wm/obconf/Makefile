@@ -6,52 +6,42 @@
 #
 
 PORTNAME=	obconf
-PORTVERSION=	1.5
-PORTREVISION=	5
+PORTVERSION=	1.6
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://icculus.org/openbox/obconf/
+MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
-BUILD_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
+		obparser.2:${PORTSDIR}/x11-wm/openbox
 
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/openbox --prefix=${PREFIX} \
-		--sysconfdir=${PREFIX}/etc/openbox
-CONFIGURE_ENV+= LDFLAGS="${LDFLAGS} -export-dynamic"
-DOCS=		ABOUT-NLS AUTHORS COPYING README TODO
-GNU_CONFIGURE=	yes
-PLIST=		${WRKDIR}/pkg-plist
-USE_GMAKE=	yes
-USE_GNOME=	gtk20 libglade2
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehier gnometarget libglade2
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openbox
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+PORTDOCS=	ABOUT-NLS AUTHORS README TODO
+PLIST_FILES=	bin/obconf \
+		share/applications/obconf.desktop \
+		%%DATADIR%%/obconf.glade
+PLIST_DIRS=	%%DATADIR%%
+PLIST=		${WRKDIR}/pkg-plist
 
 pre-install:
-	${ECHO_CMD} bin/obconf > ${PLIST}
-	${ECHO_CMD} share/openbox/applications/obconf.desktop >> ${PLIST}
-	${ECHO_CMD} share/openbox/obconf/obconf.glade >> ${PLIST}
-.if !defined(NOPORTDOCS)
-.for ii in ${DOCS}
-	${ECHO_CMD} share/openbox/obconf/${ii} >> ${PLIST}
-.endfor
-.endif
-.for ii in share/openbox/applications share/openbox/obconf
-	${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
-.endfor
+	@${ECHO_CMD} "@dirrmtry shara/applications" > ${PLIST}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/obconf ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/openbox/applications \
-		${PREFIX}/share/openbox/obconf
+post-install:
 .if !defined(NOPORTDOCS)
-.for ii in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${ii} ${PREFIX}/share/openbox/obconf
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
-	${INSTALL_DATA} ${WRKSRC}/obconf.desktop \
-		${PREFIX}/share/openbox/applications
-	${INSTALL_DATA} ${WRKSRC}/src/obconf.glade \
-		${PREFIX}/share/openbox/obconf
 
 .include <bsd.port.mk>
