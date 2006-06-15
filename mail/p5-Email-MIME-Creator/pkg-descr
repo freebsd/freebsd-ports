@@ -1,0 +1,4 @@
+This software provides a constructor to Email::MIME for creating
+messages from scratch.
+
+WWW: http://search.cpan.org/dist/Email-MIME-Creator/
