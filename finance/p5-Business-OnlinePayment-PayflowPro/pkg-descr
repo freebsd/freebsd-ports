@@ -1,0 +1,11 @@
+This is Business::OnlinePayment::PayflowPro, an Business::OnlinePayment
+backend module for Verisign Payflow Pro.  It is only useful if you have a
+merchant account with Verisign Payment Services:
+http://www.verisign.com/products/payment.html and the "Payflow Pro SDK":
+https://manager.verisign.com/
+
+It is based on Business::OnlinePayment::AuthorizeNet written by Jason Kohles.
+This module has been updated and now implements Authorize.Net API version 3.1.
+
+Ivan Kohler <ivan-payflowpro@420.am>
+WWW: http://search.cpan.org/dist/Business-OnlinePayment-PayflowPro/
