@@ -8,7 +8,7 @@ PORTNAME=	conference
 PORTVERSION=	0.4.1
 PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	http://download.jabber.org/dists/1.4/final/old/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	jabber-
 DIST_SUBDIR=	jabber
 
