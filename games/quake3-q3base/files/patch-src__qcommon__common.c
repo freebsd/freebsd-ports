@@ -1,5 +1,5 @@
---- src/qcommon/common.c        Thu Oct  6 00:51:26 2005
-+++ src/qcommon/common.c        Sun Jan  1 22:13:57 2006
+--- ./src/qcommon/common.c.orig	Wed Oct  5 19:51:26 2005
++++ ./src/qcommon/common.c	Thu Jun 15 12:03:49 2006
 @@ -27,6 +27,7 @@
  #ifdef _WIN32
  #include <winsock.h>
@@ -7,4 +7,4 @@
 +#include <sys/types.h>
  #include <netinet/in.h>
  #endif
-
+ 
