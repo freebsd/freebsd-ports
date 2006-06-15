@@ -7,13 +7,15 @@
 
 PORTNAME=		xorg-libs
 PORTVERSION=		6.8.2
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		x11 linux
 DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.${LINUX_RPM_ARCH}.rpm \
 			xorg-x11-deprecated-libs-6.8.2-31.${LINUX_RPM_ARCH}.rpm
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
 COMMENT=		Xorg libraries, linux binaries
+
+RUN_DEPENDS=		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 CONFLICTS=		linux-XFree86-libs
 
