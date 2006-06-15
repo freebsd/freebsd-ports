@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pwcbsd
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	multimedia sysutils
 MASTER_SITES=	http://raaf.atspace.org/
 
@@ -31,6 +31,7 @@ IGNORE=		requires kernel source files
 .if !defined(WITHOUT_PROGRAMS)
 ALL_TARGET=	all pwcview
 PROGRAMS=	pwcview
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 MAN1=		pwcview.1
 USE_SDL=	sdl
 PLIST_SUB+=	PROGRAMS=""
