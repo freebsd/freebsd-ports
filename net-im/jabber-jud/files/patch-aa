@@ -1,11 +1,11 @@
---- Makefile.orig	Sun Apr 14 21:28:26 2002
-+++ Makefile	Sun Apr 14 21:53:11 2002
+--- Makefile.orig	Wed Nov 12 10:12:20 2003
++++ Makefile	Thu Jun 15 21:12:23 2006
 @@ -1,6 +1,7 @@
 -include ../platform-settings
-+INCDIR=	${PREFIX}/include/jabber
++INCDIR=        ${PREFIX}/include/jabber
 +include ${INCDIR}/platform-settings
  
--CFLAGS:=$(CFLAGS) -I../jabberd
+-CFLAGS=$(CCFLAGS) -I../jabberd
 +CFLAGS:=$(CFLAGS) -I${INCDIR}
  
  jud_OBJECTS=jud.o jud_reg.o jud_search.o
