@@ -3,6 +3,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/DEVELOPER.pod
 %%SITE_PERL%%/Perl/Critic/Utils.pm
 %%SITE_PERL%%/Perl/Critic/Policy.pm
+%%SITE_PERL%%/Perl/Critic/PolicySummary.pod
 %%SITE_PERL%%/Perl/Critic/Violation.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitLocalVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPunctuationVars.pm
@@ -38,6 +39,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitConstantPragma.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEmptyQuotes.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMixedBooleanOperators.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEscapedCharacters.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireInterpolationOfMetachars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireVersionVar.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireBarewordIncludes.pm
@@ -52,6 +54,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/RequireTrailingCommas.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitHardTabs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/RequireGlobFunction.pm
+%%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/RequireSimpleSortBlock.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/RequireBlockMap.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitLvalueSubstr.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitUniversalIsa.pm
