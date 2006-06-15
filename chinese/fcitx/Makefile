@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
-EXTRACT_SUFX=	.tar.bz2
+#EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A simple and fast GBK Chinese XIM server
@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#zh_CN.GB2312#zh_CN.eucCN#g' ${WRKSRC}/src/xim.c

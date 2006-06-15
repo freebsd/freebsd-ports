@@ -10,10 +10,12 @@ bin/txt2mb
 %%DATADIR%%/data/pyphrase.mb
 %%DATADIR%%/data/sp.dat
 %%DATADIR%%/data/tables.conf
+%%DATADIR%%/data/vk.conf
 %%DATADIR%%/data/wbx.mb
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 %%DOCSDIR%%/cjkvinput.txt
 %%DOCSDIR%%/fcitx3.pdf
+%%DOCSDIR%%/pinyin.txt
 %%DOCSDIR%%/wb_fh.htm
 @dirrm %%DOCSDIR%%

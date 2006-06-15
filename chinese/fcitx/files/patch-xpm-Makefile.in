@@ -1,11 +1,11 @@
---- xpm/Makefile.in.orig	Mon Jan 17 20:56:42 2005
-+++ xpm/Makefile.in	Wed Feb 23 12:25:47 2005
-@@ -147,7 +147,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- xpm/Makefile.in.orig	Tue Jun  6 22:17:38 2006
++++ xpm/Makefile.in	Wed Jun 14 10:47:39 2006
+@@ -90,7 +90,7 @@
+ install_sh = @install_sh@
+ mkdir_p = @mkdir_p@
+ 
 -xpmdir = $(pkgdatadir)/xpm
-+xpmdir =
++xpmdir = 
  xpm_DATA = 
  EXTRA_DIST = $(xpm_DATA)
- all: all-am
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
