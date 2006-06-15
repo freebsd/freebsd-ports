@@ -1,5 +1,13 @@
-beep is a media player based on XMMS (http://www.xmms.org). 
-The primary goals of this fork are UI enhancements with latest 
-technology (GTK2, Pango), and usability while maintaining the skinned UI.
+BMP, or Beep Media Player, is a compact media player that was originally
+forked from XMMS with the goal of porting XMMS to GTK2 and make use of
+more modern desktop standards. The original XMMS is based on GTK 1.2,
+which is now deprecated for roughly 4 years, and was deprecated at the
+time of the fork for approximately 2 years. This, and the fact that the
+developers were developing XMMS under a mostly cathedral-style model led
+M. Derezynski to fork BMP from XMMS.
 
-WWW: http://beepmp.sourceforge.net/
+BMP was discontinued in October 2005 with version 0.9.7.1 being
+the last one. There is a fork off 0.9.7.1 in multimedia/audacious
+and a completely new version of BMP in multimedia/bmpx.
+
+WWW: http://bmp.beep-media-player.org/index.php/BMP_Homepage
