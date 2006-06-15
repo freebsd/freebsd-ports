@@ -14,13 +14,14 @@ MASTER_SITE_SUBDIR=	beepmp
 DISTNAME=	bmp-${PORTVERSION}
 
 MAINTAINER=	mmendez@energyhq.be
-COMMENT=	GTK2 mp3 player
+COMMENT=	GTK2 multimedia player
 
 USE_GNOME=	gtk20 libglade2 desktopfileutils
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++" \
