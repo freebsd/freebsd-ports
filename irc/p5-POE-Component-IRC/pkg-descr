@@ -6,6 +6,7 @@ interesting IRC events when they happen.  You make the client do things
 by sending it events.
 
 WWW: http://search.cpan.org/dist/POE-Component-IRC/
+Author: Chris 'BinGOs' Williams <chris@bingosnet.co.uk>
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
