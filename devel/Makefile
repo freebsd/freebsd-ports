@@ -1353,6 +1353,7 @@
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS
     SUBDIR += p5-Want
+    SUBDIR += p5-WeakRef
     SUBDIR += p5-Workflow
     SUBDIR += p5-XSLoader
     SUBDIR += p5-Yada-Yada-Yada
