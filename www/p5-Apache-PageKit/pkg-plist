@@ -3,9 +3,9 @@
 %%SITE_PERL%%/Apache/PageKit/Model.pm
 %%SITE_PERL%%/Apache/PageKit/Param.pm
 %%SITE_PERL%%/Apache/PageKit/Session.pm
+%%SITE_PERL%%/Apache/PageKit/FAQ.pod
 %%SITE_PERL%%/Apache/PageKit/Config.pm
 %%SITE_PERL%%/Apache/PageKit/Edit.pm
-%%SITE_PERL%%/Apache/setup_eg.pl
 %%SITE_PERL%%/Apache/PageKit.pm
 %%SITE_PERL%%/Apache/ErrorReport.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/PageKit/.packlist
@@ -33,6 +33,7 @@
 %%PORTDOCS%%share/examples/Apache-PageKit/View/Default/bottom.tmpl
 %%PORTDOCS%%share/examples/Apache-PageKit/View/Default/charset.tmpl
 %%PORTDOCS%%share/examples/Apache-PageKit/View/Default/content_loop.tmpl
+%%PORTDOCS%%share/examples/Apache-PageKit/View/Default/charset_tmpl.tmpl
 %%PORTDOCS%%share/examples/Apache-PageKit/View/Default/customize.tmpl
 %%PORTDOCS%%share/examples/Apache-PageKit/View/Default/demo_desc.tmpl
 %%PORTDOCS%%share/examples/Apache-PageKit/View/Default/end_cell.tmpl

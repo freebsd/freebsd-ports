@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-PageKit
-PORTVERSION=	1.09
+PORTVERSION=	1.18
 PORTREVISION=	0
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -33,7 +33,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
@@ -41,14 +42,18 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Apache::ErrorReport.3 \
 		Apache::PageKit.3 \
+		Apache::PageKit::FAQ.3 \
 		Apache::PageKit::Model.3 \
 		Apache::PageKit::Session.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not compile"
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.x or later because of textproc/p5-Data-FormValidator. Install lang/perl5 then try again
 .endif
+
+post-build:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)
