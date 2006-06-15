@@ -9,6 +9,7 @@
     SUBDIR += TenDRA
     SUBDIR += afnix
     SUBDIR += alisp
+    SUBDIR += arena
     SUBDIR += asn1c
     SUBDIR += atlast
     SUBDIR += awka
