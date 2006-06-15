@@ -7,12 +7,13 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	030606
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 				http://bio3k.softboard.ru/uploads/arch/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	c_icap-${PORTVERSION}
+DISTNAME=	c_icap-${PORTVERSION}rc1
 
 MAINTAINER=	b3k@mail.ru
 COMMENT=	An implementation of an ICAP server

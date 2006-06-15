@@ -1,5 +1,26 @@
---- configure.bak	Sat Jun 10 17:33:25 2006
-+++ configure	Sat Jun 10 17:34:38 2006
+--- configure.bak	Mon Jun 12 22:20:15 2006
++++ configure	Thu Jun 15 15:34:49 2006
+@@ -19441,7 +19441,7 @@
+ 	  THREADS_LDADD="-lpthread"
+ 	  THREADS_LDFLAGS=""
+       ;;
+-      freebsd5.*)
++      freebsd4.*)
+ ## If I understand how all those threading models works correctly
+ ## in FreeBSD I will make an option in configure script
+ ## --with-freebsd-threads={c_r,pthreads,linuxthreads,thr}
+@@ -19454,9 +19454,9 @@
+ #	THREADS_LDADD="-llthread -lgcc_r"
+ #	THREADS_LDFLAGS="-L/usr/local/lib"
+ 
+-##    FreeBSD Standard threads
++##    FreeBSD 4.x Standard threads
+       	CFLAGS="-pthread -D_THREAD_SAFE  $CFLAGS"
+-	THREADS_LDADD="-XCClinker -lc_r"
++	THREADS_LDADD="-lc_r"
+ 	THREADS_LDFLAGS=""
+ 
+ ##   1:1 threads
 @@ -21574,7 +21574,7 @@
  fi
  
