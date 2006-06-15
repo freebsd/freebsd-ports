@@ -7,7 +7,8 @@
 PORTNAME=	aim
 PORTVERSION=	20040131.b
 CATEGORIES=	net-im
-MASTER_SITES=	http://aim-transport.jabberstudio.org/
+MASTER_SITES=	http://aim-transport.jabberstudio.org/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-stable-${PORTVERSION:R}${PORTVERSION:E}
