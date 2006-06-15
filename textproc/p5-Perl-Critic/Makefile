@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -31,12 +31,14 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
 	Perl::Critic::Policy.3 \
+	Perl::Critic::PolicySummary.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitStringyEval.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireBlockGrep.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireBlockMap.3 \
 	Perl::Critic::Policy::BuiltinFunctions::RequireGlobFunction.3 \
+	Perl::Critic::Policy::BuiltinFunctions::RequireSimpleSortBlock.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalIsa.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitUniversalCan.3 \
 	Perl::Critic::Policy::ClassHierarchies::ProhibitAutoloading.3 \
@@ -90,6 +92,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireUseWarnings.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitConstantPragma.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEscapedCharacters.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLeadingZeros.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMixedBooleanOperators.3 \
