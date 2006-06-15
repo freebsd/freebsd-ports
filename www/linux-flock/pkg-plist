@@ -18,26 +18,35 @@ lib/%%APP_NAME%%/chrome/pippki.jar
 lib/%%APP_NAME%%/chrome/pippki.manifest
 lib/%%APP_NAME%%/chrome/spellbound.jar
 lib/%%APP_NAME%%/chrome/spellbound.manifest
-lib/%%APP_NAME%%/chrome/tiny_mce.jar
-lib/%%APP_NAME%%/chrome/tiny_mce.manifest
 lib/%%APP_NAME%%/chrome/toolkit.jar
 lib/%%APP_NAME%%/chrome/toolkit.manifest
 lib/%%APP_NAME%%/components/browser.xpt
+lib/%%APP_NAME%%/components/flockBlogService.js
+lib/%%APP_NAME%%/components/flockBlogWebServiceAtom.js
+lib/%%APP_NAME%%/components/flockBlogWebServiceBlogger.js
+lib/%%APP_NAME%%/components/flockBlogWebServiceMovabletype.js
 lib/%%APP_NAME%%/components/flockCluster.js
+lib/%%APP_NAME%%/components/flockError.js
 lib/%%APP_NAME%%/components/flockFavoritesQueue.js
 lib/%%APP_NAME%%/components/flockFavoritesService.js
-lib/%%APP_NAME%%/components/flockFavoritesUtils.js
-lib/%%APP_NAME%%/components/flockFavoritesWebServiceBokee.js
 lib/%%APP_NAME%%/components/flockFavoritesWebServiceDelicious.js
 lib/%%APP_NAME%%/components/flockFavoritesWebServiceShadows.js
 lib/%%APP_NAME%%/components/flockFeedProtocol.js
 lib/%%APP_NAME%%/components/flockFeedService.js
+lib/%%APP_NAME%%/components/flockFeedUtility.js
 lib/%%APP_NAME%%/components/flockLuceneIndexer.js
 lib/%%APP_NAME%%/components/flockOpmlProtocol.js
 lib/%%APP_NAME%%/components/flockOpmlService.js
+lib/%%APP_NAME%%/components/flockPhoto.js
 lib/%%APP_NAME%%/components/flockPhotoAPIFlickr.js
+lib/%%APP_NAME%%/components/flockPhotoAPIManager.js
 lib/%%APP_NAME%%/components/flockPhotoAPIPhotoBucket.js
-lib/%%APP_NAME%%/components/flockPhotoService.js
+lib/%%APP_NAME%%/components/flockPhotoAccount.js
+lib/%%APP_NAME%%/components/flockPhotoAlbum.js
+lib/%%APP_NAME%%/components/flockPhotoPeopleService.js
+lib/%%APP_NAME%%/components/flockPhotoPerson.js
+lib/%%APP_NAME%%/components/flockPhotoUpload.js
+lib/%%APP_NAME%%/components/flockPhotoUploadService.js
 lib/%%APP_NAME%%/components/flockScrapbookService.js
 lib/%%APP_NAME%%/components/flockXPCOMTemplate.js.lib
 lib/%%APP_NAME%%/components/flockXmlRpc.js
@@ -48,12 +57,11 @@ lib/%%APP_NAME%%/components/libhtml2text.so
 lib/%%APP_NAME%%/components/libhtml2xhtml.so
 lib/%%APP_NAME%%/components/libimgscaler.so
 lib/%%APP_NAME%%/components/libjsd.so
-lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libmyspell.so
-lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libxpcomclucene.so
 lib/%%APP_NAME%%/components/libxpinstall.so
+lib/%%APP_NAME%%/components/mnChromeMessenger.js
 lib/%%APP_NAME%%/components/myspell/en-US.aff
 lib/%%APP_NAME%%/components/myspell/en-US.dic
 lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
@@ -73,6 +81,7 @@ lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
 lib/%%APP_NAME%%/components/nsSidebar.js
 lib/%%APP_NAME%%/components/nsUpdateService.js
 lib/%%APP_NAME%%/components/nsXmlRpcClient.js
+lib/%%APP_NAME%%/components/xmlrpc.js.lib
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
@@ -112,7 +121,6 @@ lib/%%APP_NAME%%/libxpcom_core.so
 lib/%%APP_NAME%%/libxpistub.so
 lib/%%APP_NAME%%/mozilla-xremote-client
 lib/%%APP_NAME%%/plugins/libnullplugin.so
-lib/%%APP_NAME%%/readme.txt
 lib/%%APP_NAME%%/res/EditorOverride.css
 lib/%%APP_NAME%%/res/arrow.gif
 lib/%%APP_NAME%%/res/arrowd.gif
@@ -187,6 +195,8 @@ lib/%%APP_NAME%%/searchplugins/eBay.gif
 lib/%%APP_NAME%%/searchplugins/eBay.src
 lib/%%APP_NAME%%/searchplugins/google.gif
 lib/%%APP_NAME%%/searchplugins/google.src
+lib/%%APP_NAME%%/searchplugins/jajah.gif
+lib/%%APP_NAME%%/searchplugins/jajah.src
 lib/%%APP_NAME%%/searchplugins/jeeves.gif
 lib/%%APP_NAME%%/searchplugins/jeeves.src
 lib/%%APP_NAME%%/searchplugins/shadows.gif
@@ -205,26 +215,26 @@ lib/%%APP_NAME%%/xpicleanup
 lib/%%APP_NAME%%/linkfarm
 @exec %%PREFIX%%/lib/%%APP_NAME%%/linkfarm
 @unexec /usr/bin/find %%PREFIX%%/lib/%%APP_NAME%%/plugins -type l -delete
-@dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
-@dirrm lib/%%APP_NAME%%/defaults/pref
-@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
-@dirrm lib/%%APP_NAME%%/defaults/profile
-@dirrm lib/%%APP_NAME%%/defaults
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
+@dirrm lib/%%APP_NAME%%/defaults/profile
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%/components/myspell
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/plugins
-@dirrm lib/%%APP_NAME%%/greprefs
-@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res
 @dirrm lib/%%APP_NAME%%/extensions/{b01bf10c-302a-11da-b67b-000d60ca027b}
 @dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/html
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
