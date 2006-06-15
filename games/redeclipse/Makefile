@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20060426
+PORTVERSION=	20060611
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sauerbraten
-DISTNAME=	${PORTNAME}_2006_04_26_occlusion_edition_linux
+DISTNAME=	${PORTNAME}_2006_06_11_sp_edition_linux
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	First person shooter based on Cube
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
@@ -48,7 +47,7 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC} && \
 		${FIND} -E ${SAUDATDIR} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} -E ${SAUDATDIR} -type f -iregex ".*\.(png|cfg|jpg|ogg|ogz|txt|md2|ms3d|qc|wav)" \
+		${FIND} -E ${SAUDATDIR} -type f -iregex ".*\.(png|cfg|cgz|jpg|ogg|ogz|txt|md2|md3|ms3d|qc|wav)" \
 			-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
