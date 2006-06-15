@@ -9,7 +9,8 @@ PORTNAME=	glbiff
 PORTVERSION=	0.3.5
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/code/projects/
+MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/code/projects/ \
+		http://freebsd.unixfreunde.de/sources/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
