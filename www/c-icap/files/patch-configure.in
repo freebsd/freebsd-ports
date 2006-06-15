@@ -1,8 +1,29 @@
---- configure.in.bak	Thu Feb  2 10:45:50 2006
-+++ configure.in	Thu Feb  2 10:46:13 2006
-@@ -198,4 +198,4 @@
+--- configure.in.bak	Mon Jun 12 22:19:56 2006
++++ configure.in	Thu Jun 15 15:35:07 2006
+@@ -51,7 +51,7 @@
+ 	  THREADS_LDADD="-lpthread"
+ 	  THREADS_LDFLAGS=""
+       ;;
+-      freebsd5.*)
++      freebsd4.*)
+ ## If I understand how all those threading models works correctly
+ ## in FreeBSD I will make an option in configure script 
+ ## --with-freebsd-threads={c_r,pthreads,linuxthreads,thr}
+@@ -64,9 +64,9 @@
+ #	THREADS_LDADD="-llthread -lgcc_r"
+ #	THREADS_LDFLAGS="-L/usr/local/lib"
+ 
+-##    FreeBSD Standard threads
++##    FreeBSD 4.x Standard threads
+       	CFLAGS="-pthread -D_THREAD_SAFE  $CFLAGS"
+-	THREADS_LDADD="-XCClinker -lc_r"
++	THREADS_LDADD="-lc_r"
+ 	THREADS_LDFLAGS=""
+ 
+ ##   1:1 threads 
+@@ -328,4 +328,4 @@
  AM_CONDITIONAL(USEPERL,[test a"$perlcore" != a])
  AM_CONDITIONAL(USECLAMAV,[test a"$clamav" != ano])
  
--AC_OUTPUT([Makefile c-icap.conf services/Makefile services/echo/Makefile services/sguard/Makefile services/clamav/Makefile modules/Makefile])
+-AC_OUTPUT([Makefile c-icap.conf services/Makefile services/echo/Makefile services/url_check/Makefile services/clamav/Makefile modules/Makefile])
 +AC_OUTPUT([Makefile c-icap.conf.default services/Makefile services/echo/Makefile services/sguard/Makefile services/clamav/Makefile modules/Makefile])
