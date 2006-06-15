@@ -1,3 +1,4 @@
+bin/echoping
 lib/echoping/dns.a
 lib/echoping/dns.la
 lib/echoping/dns.so

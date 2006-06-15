@@ -24,6 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
 		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE}
 
-MAN1=		echoping.1 echoping_dns.1 echoping_random.1 echoping_whois.1
+MAN1=		echoping.1 echoping_dns.1 echoping_random.1 echoping_whois.1 echoping_ldap.1
 
 .include <bsd.port.mk>
