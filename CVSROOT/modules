@@ -14634,6 +14634,7 @@ xpi-google-notebook	ports/www/xpi-google-notebook
 xpi-greasemonkey	ports/www/xpi-greasemonkey
 xpi-imdbpreview	ports/www/xpi-imdbpreview
 xpi-inline-google-definitions	ports/www/xpi-inline-google-definitions
+xpi-joga	ports/www/xpi-joga
 xpi-jsview	ports/www/xpi-jsview
 xpi-linkification	ports/www/xpi-linkification
 xpi-locale-switcher	ports/www/xpi-locale-switcher
