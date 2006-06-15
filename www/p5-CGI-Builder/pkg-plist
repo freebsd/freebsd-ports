@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Bundle/CGI/Builder/Complete.pm
 %%SITE_PERL%%/CGI/Builder.pm
+%%SITE_PERL%%/CGI/Builder/Conf.pm
 %%SITE_PERL%%/CGI/Builder/Const.pm
 %%SITE_PERL%%/CGI/Builder/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder/.packlist
