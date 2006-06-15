@@ -22,7 +22,6 @@ COMMENT=	"Application for putting pictures or colors onto the root window"
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_GNOME=	gtk12
-USE_GUNZIP=	yes
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
