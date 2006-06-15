@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -58,7 +59,6 @@ OPTIONS=	ALL		"Enable all options."			off \
 		SA_PLUG		"Enable SpamAssassin support."		off \
 		SSL		"Enable OpenSSL support."		on \
 		THEMES		"Install additional themes."		on
-		
 
 .include <bsd.port.pre.mk>
 
@@ -74,14 +74,13 @@ CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 .if ${HAVE_GNOME:Mgnomeprint} != "" || defined(WITH_GNOMEPRINT)
-PLIST_SUB+=     	GNOMEPRINT=""
+PLIST_SUB+=		GNOMEPRINT=""
 USE_GNOME+=		libgnomeprint libgnomeprintui
 CONFIGURE_ARGS+=	--enable-gnomeprint
 .else
-PLIST_SUB+=     	GNOMEPRINT="@comment "
+PLIST_SUB+=		GNOMEPRINT="@comment "
 CONFIGURE_ARGS+=	--disable-gnomeprint
 .endif
-
 
 .if exists(${LOCALBASE}/include/clamav.h)
 WITH_CLAMAV=		yes
