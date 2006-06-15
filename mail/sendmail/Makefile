@@ -183,9 +183,9 @@ CONFLICTS+=	sendmail*+tls*-8.*
 # Build site.config.m4
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 SITE+=	${FILESDIR}/site.config.m4
+.endif
 .if !defined(SENDMAIL_WITHOUT_IPV6)
 SITE+=	${FILESDIR}/site.config.m4.ipv6
-.endif
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 SITE+=	${FILESDIR}/site.config.m4.sasl
@@ -441,9 +441,9 @@ howto-sasldb:
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# http://www.sendmail.org/~gshapiro/"
 	@${ECHO_CMD} "# http://www.sendmail.org/~ca/email/auth.html"
-	@${ECHO_CMD} "# http://www.asp.ogi.edu/people/paja/linux/sendmail/"
-	@${ECHO_CMD} "# http://blue-labs.org/clue/sendmail.php"
-	@${ECHO_CMD} "# http://www.digitalanswers.org/sendmail/"
+	@${ECHO_CMD} "# http://www.bme.ogi.edu/~pchytil/linux/sendmail/"
+	@${ECHO_CMD} "# http://blue-labs.org/software/sm-pgsql/"
+	@${ECHO_CMD} "# http://www.falkotimme.com/howtos/sendmail_smtp_auth_tls/"
 	@${ECHO_CMD} "#"
 
 # create certificates for TLS/SSL
@@ -455,7 +455,7 @@ tls-install:
 help:
 	@${ECHO_CMD} "# additional targets:"
 	@${ECHO_CMD} "#"
-	@${ECHO_CMD} "# configure ${DESTDIR}/etc/mail/maile.conf"
+	@${ECHO_CMD} "# configure ${DESTDIR}/etc/mail/mailer.conf"
 	@${ECHO_CMD} "# for sendmail from ports"
 	@${ECHO_CMD} "make mailer.conf"
 	@${ECHO_CMD} "# for sendmail in the base"
