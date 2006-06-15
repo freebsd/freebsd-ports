@@ -9,7 +9,7 @@ PORTNAME=	driconf
 PORTVERSION=	0.2.6
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://dri.freedesktop.org/~fxkuehl/driconf/
+MASTER_SITES=	http://people.freedesktop.org/~fxkuehl/driconf/
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	Configuration program for DRI drivers
