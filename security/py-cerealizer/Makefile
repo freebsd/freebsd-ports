@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	cerealizer
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	security python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Cerealizer-${PORTVERSION}
+DIST_SUBDIR=	python
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Secure pickle-like module
