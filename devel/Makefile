@@ -1015,6 +1015,7 @@
     SUBDIR += p5-Filesys-Virtual
     SUBDIR += p5-Filesys-Virtual-Plain
     SUBDIR += p5-Filter
+    SUBDIR += p5-Filter-Template
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Geo-ShapeFile
     SUBDIR += p5-Getargs-Long
