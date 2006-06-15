@@ -2,3 +2,4 @@ RDF::Simple is for very simple manipulations of RDF/XML serialisations
 of RDF graphs. 
 
 WWW: http://search.cpan.org/dist/RDF-Simple/
+Author: Jo Walsh <jo@london.pm.org>
