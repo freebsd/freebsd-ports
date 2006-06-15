@@ -8,11 +8,11 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	0.99.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	samm@os2.kiev.ua
 COMMENT=	Desktop Organizer Software for the Palm Pilot
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
