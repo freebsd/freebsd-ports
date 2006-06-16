@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Create publication-quality 2D scientific plots
 
 BUILD_DEPENDS=	${PYNUMERIC}

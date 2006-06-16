@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.lafn.org/~av832/ \
 		http://voodoo.bawue.com/download/
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
 
 MAN1=		${PORTNAME}.1

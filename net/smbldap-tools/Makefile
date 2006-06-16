@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.idealx.com/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Useful package for managing users and groups in a LDAP directory
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
