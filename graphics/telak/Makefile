@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	telak
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://critical.ch/distfiles/ \
+MASTER_SITES=	http://julien.danjou.info/telak/ \
+		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -23,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 
 ALL_TARGET=	${PORTNAME}
-MAKE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	CC="${CC}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/telak
 MAN1=		telak.1
