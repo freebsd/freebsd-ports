@@ -2777,6 +2777,7 @@ fusefs-curlftpfs	ports/sysutils/fusefs-curlftpfs
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
+fusefs-wdfs	ports/sysutils/fusefs-wdfs
 fusenshi	ports/deskutils/fusenshi
 fuser		ports/sysutils/fuser
 fuzz		ports/security/fuzz
