@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebCalendar
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	webcalendar
@@ -16,8 +16,9 @@ MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A web-based calendar application
 
 USE_PHP=	pcre session ldap
-USE_APACHE=	yes
+WANT_PHP_WEB=	yes
 NO_BUILD=	yes
+
 WRKSRC=		${WRKDIR}/WebCalendar-${DISTVERSION}
 
 WEBWCDIR?=	www/data/WebCalendar
