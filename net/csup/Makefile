@@ -8,6 +8,7 @@
 
 PORTNAME=	csup
 PORTVERSION=	20060313
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.mu.org/~mux/ \
 		${MASTER_SITE_LOCAL}
@@ -21,5 +22,9 @@ COMMENT=	A rewrite of the CVSup file updating client in C
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/csup \
 		man/man1/csup.1.gz
+
+.if exists(/usr/bin/csup)
+IGNORE=	is already in the base system
+.endif
 
 .include <bsd.port.mk>
