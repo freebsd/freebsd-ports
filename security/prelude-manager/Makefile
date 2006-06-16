@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.4.1
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/old/
@@ -15,7 +14,7 @@ MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
 LIB_DEPENDS+=	prelude.[6-?]:${PORTSDIR}/security/libprelude \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		gnutls.15:${PORTSDIR}/security/gnutls
 
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
@@ -26,6 +25,14 @@ USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
+
+.if defined(WITHOUT_XML)
+PLIST_SUB+=	WITH_XML="@comment "
+CONFIGURE_ARGS+=	--disable-xmltest --without-xml
+.else
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+PLIST_SUB+=	WITH_XML=""
+.endif
 
 .if defined(WITHOUT_DB)
 PLIST_SUB+=	WITH_DB="@comment "
