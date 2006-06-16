@@ -195,6 +195,7 @@ share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_flags.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_force.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_gline.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_help.so
+share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_cap.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_challenge.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_change.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_hash.so
@@ -237,7 +238,7 @@ share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_set.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_spoof.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_stats.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_svinfo.so
-share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_tb.so
+share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_tburst.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_testline.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_testmask.so
 share/ircd-hybrid-%%PORTVERSION%%/modules/autoload/m_time.so

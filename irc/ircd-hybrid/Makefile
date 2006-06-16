@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	7.2.0
+PORTVERSION=	7.2.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ircd-hybrid
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLINC}
+CONFIGURE_ARGS+=	--enable-openssl=${OPENSSLBASE}
 .endif
 
 .if defined(WITH_HALFOPS)
