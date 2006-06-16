@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.7.1
+PORTVERSION=	1.2.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
-PATCHFILES=	asterisk127_codec_negotiation-20060419.diff.gz
+PATCHFILES=	asterisk129_codec_negotiation-20060615.diff.gz
 PATCH_SITES=	http://unofficial.portaone.com/~bamby/public/
 
 #		${PORTNAME}-1.2.4-${BRIVER}.patch.gz:bristuff
