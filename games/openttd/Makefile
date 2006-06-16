@@ -34,8 +34,6 @@ MAKE_ARGS+=	DEDICATED=1
 .endif
 
 post-extract:
-	@${REINPLACE_CMD} -e 's|-O2 $$(WARNING_DISPLAY)|${CFLAGS} $$(WARNING_DISPLAY)|' \
-		${WRKSRC}/Makefile
 .if defined(WITH_DEDICATED_SERVER_ONLY)
 	@${REINPLACE_CMD} -e 's|^WITH_SDL|#WITH_SDL|' ${WRKSRC}/makefiledir/Makefile.libdetection
 .endif
