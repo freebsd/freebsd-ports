@@ -7,12 +7,12 @@
 
 PORTNAME=	pfpro
 PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	#https://manager.verisign.com/
 DISTNAME=	pfpro_freebsd
 
-MAINTAINER=	durian@shadetreesoftware.com
+MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	SDK for VeriSign's PayFlow Pro
 
 ONLY_FOR_ARCHS=	i386
@@ -24,8 +24,9 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 LATEST_LINK=	verisign-pfpro
 
-CERTDIR=	${PREFIX}/certs
+CERTDIR=	${PREFIX}/etc/pfpro/certs
 FBSDDIR=	${WRKSRC}/verisign/payflowpro/freebsd
+PATCH_WRKSRC=	${WRKSRC}/verisign/payflowpro/freebsd/bin
 PFCFLAGS=	-DUSE_SSLEAY -fPIC -DFREEBSD_OS -DGENERIC_SEED  -D_REENTRANT -pthread -DPTHREADS -I. -L.
 
 # XXX nees to be the same as DISTFILES
@@ -44,6 +45,9 @@ of the SDK from the Downloads area.  You will be required to agree to\n\
 some terms and conditions.  After downing the SDK, place ${PFP_BUNDLE}\n\
 in ${DISTDIR}.\n
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${FBSDDIR}/bin/pfpro.c
 
 do-build:
 	(cd ${FBSDDIR}/lib && ${CC} ${PFCFLAGS} ${CFLAGS} -c ../bin/${PORTNAME}.c -o ${PORTNAME}.o && ${CC} ${PFCFLAGS} ${CFLAGS} -lpfpro ${PORTNAME}.o -o ${PORTNAME})
