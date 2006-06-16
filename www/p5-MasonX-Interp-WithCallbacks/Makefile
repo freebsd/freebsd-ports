@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MasonX-Interp-WithCallbacks
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MasonX/DWHEELER
@@ -23,4 +23,10 @@ PERL_MODBUILD=	yes
 
 MAN3=		MasonX::Interp::WithCallbacks.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800 # inherited from devel/p5-Exception-Class
+IGNORE=	requires at least Perl 5.8.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
