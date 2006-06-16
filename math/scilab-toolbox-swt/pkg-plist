@@ -1,0 +1,54 @@
+%%TOOLBOXDIR%%/builder.sce
+%%TOOLBOXDIR%%/data/image/woman.bmp
+%%TOOLBOXDIR%%/data/image/yang.jpg
+%%TOOLBOXDIR%%/data/signal/de.mat
+%%TOOLBOXDIR%%/data/signal/ultra.mat
+%%TOOLBOXDIR%%/lib/libswt-0.1.0-rc3.so
+%%TOOLBOXDIR%%/lib/libswt-0.1.0-rc3.so.0
+%%TOOLBOXDIR%%/lib/libswt.la
+%%TOOLBOXDIR%%/lib/libswt.so
+%%TOOLBOXDIR%%/loader.sce
+%%TOOLBOXDIR%%/man/appcoef.htm
+%%TOOLBOXDIR%%/man/appcoef2.htm
+%%TOOLBOXDIR%%/man/cat.htm
+%%TOOLBOXDIR%%/man/conv.htm
+%%TOOLBOXDIR%%/man/detcoef.htm
+%%TOOLBOXDIR%%/man/detcoef2.htm
+%%TOOLBOXDIR%%/man/down2.htm
+%%TOOLBOXDIR%%/man/dwt.htm
+%%TOOLBOXDIR%%/man/dwt2.htm
+%%TOOLBOXDIR%%/man/idwt.htm
+%%TOOLBOXDIR%%/man/idwt2.htm
+%%TOOLBOXDIR%%/man/orthfilt.htm
+%%TOOLBOXDIR%%/man/qmf.htm
+%%TOOLBOXDIR%%/man/up2.htm
+%%TOOLBOXDIR%%/man/wave.htm
+%%TOOLBOXDIR%%/man/wavedec.htm
+%%TOOLBOXDIR%%/man/wavedec2.htm
+%%TOOLBOXDIR%%/man/waverec.htm
+%%TOOLBOXDIR%%/man/waverec2.htm
+%%TOOLBOXDIR%%/man/wextend.htm
+%%TOOLBOXDIR%%/man/wextend2.htm
+%%TOOLBOXDIR%%/man/whatis.htm
+%%TOOLBOXDIR%%/man/wkeep.htm
+%%TOOLBOXDIR%%/man/wkeep2.htm
+%%TOOLBOXDIR%%/man/wmaxlev.htm
+%%TOOLBOXDIR%%/man/wrcoef.htm
+%%TOOLBOXDIR%%/man/wrcoef2.htm
+%%TOOLBOXDIR%%/man/wrev.htm
+%%TOOLBOXDIR%%/src/Makefile.am
+%%TOOLBOXDIR%%/src/Makefile.in
+%%TOOLBOXDIR%%/src/builder.sce
+%%TOOLBOXDIR%%/src/filter_int.c
+%%TOOLBOXDIR%%/src/libswt.c
+%%TOOLBOXDIR%%/src/loader.sce
+%%TOOLBOXDIR%%/src/swt.h
+%%TOOLBOXDIR%%/src/swt2d.c
+%%TOOLBOXDIR%%/src/swtdwt.c
+@dirrm %%TOOLBOXDIR%%/src
+@dirrm %%TOOLBOXDIR%%/man
+@dirrm %%TOOLBOXDIR%%/lib
+@dirrm %%TOOLBOXDIR%%/data/signal
+@dirrm %%TOOLBOXDIR%%/data/image
+@dirrm %%TOOLBOXDIR%%/data
+@dirrm %%TOOLBOXDIR%%
