@@ -23,4 +23,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		PFProAPI.3
 
+post-patch:
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/PFProAPI.pm
+
 .include <bsd.port.mk>
