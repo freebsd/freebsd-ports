@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -37,7 +37,8 @@ OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 		SDL "SDL sound driver" off \
 		ARTS "arts sound driver" off \
 		JACK "JACK sound driver" off \
-		ESD "EsounD sound driver" off
+		ESD "EsounD sound driver" off \
+		LADSPA "LADSPA support" off
 
 .include <bsd.port.pre.mk>
 
@@ -91,8 +92,11 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--without-esound
 .endif
 
-.if exists(${LOCALBASE}/include/ladspa.h)
+.if defined(WITH_LADSPA)
+BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+.else
+CONFIGURE_ENV+=	ac_cv_header_ladspa_h=no
 .endif
 
 post-patch:
