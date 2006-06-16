@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.10
-PORTREVISION=	9
+PORTVERSION=	5.4.13
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -58,7 +57,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # WITH_FILE_SYNC - enables immediate synching (may decrease performance)
 # WITHOUT_USERS_BIG_DIR - disables using big directories for users
 # WITHOUT_SEEKABLE - disables vdelivermail's attempt to make its input seekable
-# WITH_DOMAIN_QUOTAS	- enable domain quotas
 # WITH_SPAMASSASSIN	- enable SpamAssassin checks before Maildir delivery
 # WITH_SUID_VCHKPW	- set the setuid bit on the vchkpw program
 # WITH_SMTP_AUTH_PATCH	- apply an SMTP authentcation fix
@@ -284,14 +282,11 @@ CONFIGURE_ARGS+=	--disable-users-big-dir
 CONFIGURE_ARGS+=	--disable-make-seekable
 .endif
 
-.if defined(WITH_DOMAIN_QUOTAS)
-CONFIGURE_ARGS+=	--enable-domainquotas
-.endif
-
 .if defined(WITH_SPAMASSASSIN)
-BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
-			--enable-spam-threshold=${SPAM_THRESHOLD}
+#BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+#CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
+#			--enable-spam-threshold=${SPAM_THRESHOLD}
+IGNORE=		The SpamAssassin patch is not yet ready for the slightly reorganized vpopmail code
 .endif
 
 #
