@@ -20,10 +20,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast paced first person shooter game
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
 USE_GL=		yes
+USE_GCC=	3.3+
 USE_SDL=	yes
 USE_ZIP=	yes
 USE_DOS2UNIX=	linux/sys_linux.c
