@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	courierpassd
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/store/
 
@@ -29,7 +29,24 @@ CONFIGURE_ARGS+=--with-minuid=${MINUID} --with-badpassdelay=${DELAY}
 PLIST_FILES=	sbin/courierpassd
 MAN8=		courierpassd.8
 
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "###########################################################"
+	@${ECHO} ""
+	@${ECHO} "The following build options are available:"
+	@${ECHO} "
+	@${ECHO} "  MINUID=uid"
+	@${ECHO} "	Accounts with uids below this value cannot have"
+	@${ECHO} "	their passwords changed. Default value is 100."
+	@${ECHO} ""
+	@${ECHO} "  DELAY=sec"
+	@${ECHO} "	Set the delay after a password change failure."
+	@${ECHO} "	Default is 3 seconds."
+	@${ECHO} ""
+	@${ECHO} "###########################################################"
+	@${ECHO} ""
+
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${CAT}	${PKGMESSAGE}
 
 .include <bsd.port.mk>
