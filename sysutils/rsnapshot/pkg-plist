@@ -1,8 +1,4 @@
 @comment $FreeBSD$
 bin/rsnapshot
+bin/rsnapshot-diff
 etc/rsnapshot.conf.default
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsnapshot
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
@@ -21,12 +21,21 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		rsnapshot.1
-DOCS=		AUTHORS ChangeLog README TODO
+PORTDOCS=	AUTHORS ChangeLog README TODO
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/bin/pod2man,pod2man,' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -Ee 's,/(etc/rsnapshot.conf),${PREFIX}/\1,g' ${WRKSRC}/rsnapshot-program.pl
+.if ${PERL_LEVEL} < 500800
+	${REINPLACE_CMD} -e "s, -n 'rsnapshot',," ${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.post.mk>
