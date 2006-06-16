@@ -375,6 +375,9 @@
     SUBDIR += openldap23-client
     SUBDIR += openldap23-sasl-client
     SUBDIR += openldap23-server
+    SUBDIR += openldap24-client
+    SUBDIR += openldap24-sasl-client
+    SUBDIR += openldap24-server
     SUBDIR += openmcu
     SUBDIR += openmpi
     SUBDIR += openntpd
