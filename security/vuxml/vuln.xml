@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="09c92f3a-fd49-11da-995c-605724cdf281">
+    <topic>webcalendar -- information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>WebCalendar</name>
+	<range><lt>1.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/20367/">
+	  <p>socsam has discovered a vulnerability in WebCalendar,
+	    which can be exploited by malicious people to bypass
+	    certain security restrictions and disclose sensitive
+	    information.</p>
+	  <p>Input passed to the "includedir" parameter isn't properly
+	    verified, before it is used in an "fopen()" call. This can
+	    be exploited to load an arbitrary setting file from an
+	    external web site.</p>
+	  <p>This can further be exploited to disclose the content of
+	    arbitrary files by defining the "user_inc" variable in a
+	    malicious setting file.</p>
+	  <p>Successful exploitation requires that "register_globals"
+	    is enabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2762</cvename>
+      <bid>18175</bid>
+      <url>http://www.securityfocus.com/archive/1/435379</url>
+      <url>http://www.securityfocus.com/archive/1/436263</url>
+    </references>
+    <dates>
+      <discovery>2006-05-30</discovery>
+      <entry>2006-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c611be81-fbc2-11da-9156-000e0c2e438a">
     <topic>sendmail -- Incorrect multipart message handling</topic>
     <affects>
