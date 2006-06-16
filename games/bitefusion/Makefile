@@ -1,0 +1,36 @@
+# New ports collection makefile for:	bitefusion
+# Date created:		14 Jun 2006
+# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bitefusion
+PORTVERSION=	1.0.0
+CATEGORIES=	games
+MASTER_SITES=	http://www.junoplay.com/files/
+
+MAINTAINER=	amdmi3@mail.ru
+COMMENT=	A snake game with 8 levels
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_SDL=	sdl
+USE_GCC=	3.4+
+CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
+		LDFLAGS="`${SDL_CONFIG} --libs`"
+
+PLIST_FILES=	bin/bitefusion
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/*.c
+	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-freebsd|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lSDL||' ${WRKSRC}/Makefile.in
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|stdint.h|sys/inttypes.h|' ${WRKSRC}/image.c
+.endif
+
+.include <bsd.port.post.mk>
