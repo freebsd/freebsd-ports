@@ -80,7 +80,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # SQLITE_VER		- Detected sqlite version.
 
 .if defined(USE_MYSQL)
-DEFAULT_MYSQL_VER?=	41
+DEFAULT_MYSQL_VER?=	50
 # MySQL client version currently supported.
 MYSQL323_LIBVER=	10
 MYSQL40_LIBVER=		12

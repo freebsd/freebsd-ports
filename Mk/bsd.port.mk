@@ -430,7 +430,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_QT_VER	- Set to 3 to use the QT libraries.
 #				  Implies inclusion of bsd.kde.mk.
 ##
-# USE_LINUX		- Set to yes to say the port needs emulators/linux_base-8.
+# USE_LINUX		- Set to yes to say the port needs the default linux base port.
 #				  Set to value <X>, if the port needs emulators/linux_base-<X>.
 #				  If set to "7", a dependency is registered to emulators/linux_base.
 #				  Implies appropriate settings for NO_FILTER_SHLIBS,
@@ -840,7 +840,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INSTALLS_SHLIB
 #				- If set, bsd.port.mk will automatically run ldconfig commands
 #				  from post-install and also add appropriate @exec/@unexec
-#				  directives to directories listed in LDCONFIG_DIRS.
+#				  directives to directories listed in LDCONFIG_DIRS. (deprecated)
 #				  If USE_LINUX_PREFIX is defined, the Linux version of ldconfig
 #				  will be used instead of the native FreeBSD version (in such
 #				  case, LDCONFIG_DIRS is ignored).
@@ -851,6 +851,17 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  %%PREFIX%% for ${PREFIX}, %%LOCALBASE%% for
 #				  ${LOCALBASE} and %%X11BASE%% for ${X11BASE}.
 #				  Default: %%PREFIX%%/lib
+# USE_LDCONFIG  - If set to "yes", it replaces the old variable INSTALLS_SHLIB.
+# 				  Otherwise, it can be set to a list of directories to be added to
+# 				  ${PREFIX}/libdata/ldconfig/${UNIQUENAME}. Note that this
+# 				  directory is used by ldconfig startup script, it is meant to
+# 				  replace ldconfig scripts installed by some ports as (sometimes)
+# 				  000.${UNQUENAME}.sh.
+# USE_LDCONFIG32
+# 				- Same as USE_LDCONFIG but the target file is
+# 				  ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.
+# 				  Note: that should only be used on 64-bit architectures.
+#
 # DOCSDIR		- Name of the directory to install the packages docs in.
 #				  Default: ${PREFIX}/share/doc/${PORTNAME}
 # EXAMPLESDIR	- Name of the directory to install the packages examples in.
@@ -1050,7 +1061,7 @@ STRIP_CMD?=	/usr/bin/strip
 SU_CMD?=	/usr/bin/su root -c
 TAIL?=		/usr/bin/tail
 TEST?=		test				# Shell builtin
-TR?=		/usr/bin/tr
+TR?=		LANG=C /usr/bin/tr
 TRUE?=		true				# Shell builtin
 UNAME?=		/usr/bin/uname
 UNZIP_CMD?=	${LOCALBASE}/bin/unzip
@@ -1417,7 +1428,7 @@ X_WINDOW_SYSTEM ?= xfree86-3
 # Location of mounted CDROM(s) to search for files
 CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 
-WANT_OPENLDAP_VER?=	22
+WANT_OPENLDAP_VER?=	23
 
 # Owner and group of the WWW user
 WWWOWN?=	www
@@ -1526,6 +1537,8 @@ _OPENLDAP_FLAVOUR=
 LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 23
 LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
+.elif ${WANT_OPENLDAP_VER} == 24
+LIB_DEPENDS+=		ldap-2.4.1:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
 .else
 BROKEN=				unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
@@ -1596,6 +1609,23 @@ SUB_FILES+=	${USE_RCORDER}
 .endif
 .endif
 
+LDCONFIG_DIR=	libdata/ldconfig
+LDCONFIG32_DIR=	libdata/ldconfig32
+
+.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
+.if ${OSVERSION} < 504105 || \
+		(${OSVERSION} >= 700000 && ${OSVERSION} < 700012) || \
+		(${OSVERSION} >= 600000 && ${OSVERSION} < 600104)
+RUN_DEPENDS+=	${LOCALBASE}/${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
+.endif
+.if defined(USE_LDCONFIG) && ${USE_LDCONFIG:L} == "yes"
+USE_LDCONFIG=	${PREFIX}/lib
+.endif
+.if defined(USE_LDCONFIG32) && ${USE_LDCONFIG32:L} == "yes"
+IGNORE=			has USE_LDCONFIG set to yes, which is not correct
+.endif
+.endif
+
 .if defined(USE_ICONV)
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
@@ -1639,7 +1669,7 @@ LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINU
 LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .		else
 .			if ${USE_LINUX:L} == "yes"
-LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-8
+LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-fc4
 .			else
 IGNORE=	There is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT.
 .			endif
@@ -1813,6 +1843,10 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .endif
 
+.if defined(USE_JAVA)
+.include "${PORTSDIR}/Mk/bsd.java.mk"
+.endif
+
 .if defined(USE_LINUX_RPM)
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
 .endif
@@ -1848,7 +1882,7 @@ USE_SUBMAKE=	yes
 
 .if defined(USE_XLIB)
 .	if defined(USE_LINUX)
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-xorg-libs
 .	else
 LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
 .	endif
@@ -2957,12 +2991,6 @@ DEPENDS_TARGET=	install
 DEPENDS_TARGET+=	clean
 DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 .endif
-.else
-DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
-.endif
-.if defined(DEPENDS)
-# pretty much guarantees overwrite of existing installation
-.MAKEFLAGS:	FORCE_PKG_REGISTER=yes
 .endif
 
 ################################################################
@@ -3622,8 +3650,38 @@ install-mtree:
 .endif
 .endif
 
-.if !target(run-ldconfig)
-run-ldconfig:
+.if !target(install-ldconfig-file)
+install-ldconfig-file:
+.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32) || defined(INSTALLS_SHLIB)
+.if defined(USE_LDCONFIG)
+.if !defined(INSTALL_AS_USER)
+	@${ECHO_MSG} "===>   Running ldconfig"
+	${LDCONFIG} -m ${USE_LDCONFIG}
+.else
+	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
+	-${LDCONFIG} -m ${USE_LDCONFIG}
+.endif
+.if ${USE_LDCONFIG:L} != "${PREFIX}/lib"
+	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
+	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
+		> ${PREFIX}/${LDCONFIG_DIR}/${UNIQUENAME}
+	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+.endif
+.endif
+.if defined(USE_LDCONFIG32)
+.if !defined(INSTALL_AS_USER)
+	@${ECHO_MSG} "===>   Running ldconfig"
+	${LDCONFIG} -32 -m ${USE_LDCONFIG32}
+.else
+	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
+	-${LDCONFIG} -32 -m ${USE_LDCONFIG32}
+.endif
+	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
+	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
+		> ${PREFIX}/${LDCONFIG32_DIR}/${UNIQUENAME}
+	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+.endif
+# This can be removed once, all ports have been converted to USE_LDCONFIG.
 .if defined(INSTALLS_SHLIB)
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Running ldconfig"
@@ -3631,6 +3689,7 @@ run-ldconfig:
 .else
 	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
 	-${LDCONFIG_CMD}
+.endif
 .endif
 .else
 	@${DO_NADA}
@@ -3813,7 +3872,7 @@ _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script do-install install-desktop-entries \
 				post-install post-install-script add-plist-info \
 				add-plist-docs add-plist-post install-rc-script compress-man \
-				run-ldconfig fake-pkg security-check
+				install-ldconfig-file fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
@@ -5013,12 +5072,31 @@ generate-plist:
 .for dir in ${PLIST_DIRS}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | ${SED} -e 's,^,@dirrm ,' >> ${TMPPLIST}
 .endfor
+# To be removed once INSTALLS_SHLIB has been eradicated.
 .if defined(INSTALLS_SHLIB) && !defined(INSTALL_AS_USER)
 	@${ECHO_CMD} "@exec ${LDCONFIG_PLIST_EXEC_CMD}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG_PLIST_UNEXEC_CMD}" >> ${TMPPLIST}
 .elif defined(INSTALLS_SHLIB)
 	@${ECHO_CMD} "@exec ${LDCONFIG_PLIST_EXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG_PLIST_UNEXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
+.endif
+.if defined(USE_LDCONFIG)
+.if !defined(INSTALL_AS_USER)
+	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
+.else
+	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG} || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
+.endif
+.endif
+.if defined(USE_LDCONFIG32)
+.if !defined(INSTALL_AS_USER)
+	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R" >> ${TMPPLIST}
+.else
+	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
+.endif
 .endif
 .if !defined(NO_FILTER_SHLIBS)
 .if (${PORTOBJFORMAT} == "aout")
@@ -5337,8 +5415,8 @@ config-conditional:
 
 .if !target(showconfig)
 showconfig:
-.if defined(OPTIONS) && exists(${_OPTIONSFILE})
-	@${ECHO_MSG} "===> The following configuration options are set for ${PKGNAME}:"
+.if defined(OPTIONS)
+	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME}:"
 	-@if [ -e ${_OPTIONSFILE} ]; then \
 		. ${_OPTIONSFILE}; \
 	fi; \
@@ -5359,11 +5437,7 @@ showconfig:
 		${ECHO_MSG} "     $$1=$${val} \"$$2\""; \
 		shift 3; \
 	done
-.else
-	@${ECHO_MSG} "===> No configuration options are set for this port"
-.if defined(OPTIONS)
-	@${ECHO_MSG} "	Use 'make config' to set default values"
-.endif
+	@${ECHO_MSG} "===> Use 'make config' to modify these settings"
 .endif
 .endif
 
