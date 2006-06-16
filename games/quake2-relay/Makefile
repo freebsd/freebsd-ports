@@ -47,6 +47,7 @@ post-patch: .SILENT
 		${ECHO_CMD} >> $${i}; done'
 	# Reorganize #include's
 	${ECHO_MSG} -e '35t30\n36d\nwq' | ${ED} -s ${WRKSRC}/common/net.h
+	${ECHO_MSG} -e '9t7\n10d\nwq' | ${ED} -s ${WRKSRC}/common/net.c
 
 post-install:
 .if !defined(NOPORTDOCS)
