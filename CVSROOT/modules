@@ -2792,6 +2792,7 @@ fvwm95-i18n	ports/x11-wm/fvwm95-i18n
 fwanalog	ports/security/fwanalog
 fwbuilder	ports/security/fwbuilder
 fwlogwatch	ports/security/fwlogwatch
+fwp		ports/games/fwp
 fwtk		ports/security/fwtk
 fxhtml		ports/www/fxhtml
 fxscintilla	ports/x11-toolkits/fxscintilla
