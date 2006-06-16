@@ -5,14 +5,14 @@
 #
 
 PORTNAME=	boinc-einsteinathome
-PORTVERSION=	4.61
+PORTVERSION=	4.09
+PORTEPOCH=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://einstein.phys.uwm.edu/app_test/FreeBSD/
-DISTNAME=	albert_${PORTVERSION}_i386-unknown-freebsd
-EXTRACT_SUFX=	.tgz
+DISTNAME=	einstein_S5R1_${PORTVERSION}_i386-unknown-freebsd
 
-MAINTAINER=	r.c.ladan@gmail.com
-COMMENT=	Einstein@Home for BOINC
+MAINTAINER=	pav@FreeBSD.org
+COMMENT=	Search for gravitational waves, a distributed computing project
 
 .include <bsd.port.pre.mk>
 
@@ -31,6 +31,7 @@ RUN_DEPENDS+=	boinc_client:${PORTSDIR}/net/boinc-client
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+STRIP=		#
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_USER?=	boinc
