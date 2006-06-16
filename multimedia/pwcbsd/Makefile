@@ -18,6 +18,9 @@ MAN4=		pwc.4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
+OPTIONS=	PROGRAMS	"Build the programs"			on \
+		MMAP		"Enable mmap support (MAY CRASH YOUR SYSTEM)"	off
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 504000
@@ -28,8 +31,13 @@ IGNORE=		requires FreeBSD 5.4 or superior
 IGNORE=		requires kernel source files
 .endif
 
+.if defined(WITH_MMAP)
+ALL_TARGET=	mmap
+.else
+ALL_TARGET=	all
+.endif
 .if !defined(WITHOUT_PROGRAMS)
-ALL_TARGET=	all pwcview
+ALL_TARGET+=	pwcview
 PROGRAMS=	pwcview
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 MAN1=		pwcview.1
@@ -37,15 +45,6 @@ USE_SDL=	sdl
 PLIST_SUB+=	PROGRAMS=""
 .else
 PLIST_SUB+=	PROGRAMS="@comment "
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_PROGRAMS)
-	@${ECHO_MSG} "=================================================="
-	@${ECHO_MSG} "You may specify the following on the command line:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_PROGRAMS=yes	to only build the driver "
-	@${ECHO_MSG} "=================================================="
 .endif
 
 post-patch:
