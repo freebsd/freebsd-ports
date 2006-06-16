@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msn
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://mor-pah.net/code/
 PKGNAMEPREFIX=	cli-
