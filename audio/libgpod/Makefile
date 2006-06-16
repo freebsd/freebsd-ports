@@ -22,10 +22,23 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-extract:
-	@${REINPLACE_CMD} -e \
+.include <bsd.port.pre.mk>
+
+post-extract: .SILENT
+	${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} '19323,19345d' ${WRKSRC}/configure
+	${REINPLACE_CMD} '19323,19345d' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e '25s,^,#include <sys/types.h>,' \
+		${WRKSRC}/src/db-parse-context.c
+.if defined(GCCVERSION)
+.   if ${GCCVERSION} < 030000
+	${REINPLACE_CMD} -e 's,\[\],[0],' ${WRKSRC}/src/db-itunes-parser.h
+.   endif
+.else
+.   if ${OSVERSION} < 500035
+	${REINPLACE_CMD} -e 's,\[\],[0],' ${WRKSRC}/src/db-itunes-parser.h
+.   endif
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
