@@ -9,6 +9,8 @@ locale	forecastfox	en-US	jar:chrome/forecastfox.jar!/locale/en-US/forecastfox/
 
 locale	forecastfox	ca-AD	jar:chrome/forecastfox.jar!/locale/ca-AD/forecastfox/
 
+locale	forecastfox	cs-CZ	jar:chrome/forecastfox.jar!/locale/cs-CZ/forecastfox/
+
 locale	forecastfox	da-DK	jar:chrome/forecastfox.jar!/locale/da-DK/forecastfox/
 
 locale	forecastfox	de-DE	jar:chrome/forecastfox.jar!/locale/de-DE/forecastfox/
@@ -16,6 +18,8 @@ locale	forecastfox	de-DE	jar:chrome/forecastfox.jar!/locale/de-DE/forecastfox/
 locale	forecastfox	el-GR	jar:chrome/forecastfox.jar!/locale/el-GR/forecastfox/
 
 locale	forecastfox	es-ES	jar:chrome/forecastfox.jar!/locale/es-ES/forecastfox/
+
+locale	forecastfox	eu-ES	jar:chrome/forecastfox.jar!/locale/eu-ES/forecastfox/
 
 locale	forecastfox	fr-FR	jar:chrome/forecastfox.jar!/locale/fr-FR/forecastfox/
 
