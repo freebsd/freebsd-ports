@@ -10211,6 +10211,7 @@ penguin-command	ports/games/penguin-command
 penguinsap	ports/audio/penguinsap
 penguintv	ports/net/penguintv
 penguintv-devel	ports/net/penguintv-devel
+pengupop	ports/games/pengupop
 pentix		ports/games/pentix
 penv		ports/sysutils/penv
 peps		ports/graphics/peps
