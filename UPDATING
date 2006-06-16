@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060616:
+  AFFECTS users of emulation/linux_base-*
+  AUTHOR: netchild@FreeBSD.org
+
+  We now use Fedora Core 4 as the linux base port, and the corresponding
+  xorg libs for the linux X11 libs port.
+
+  To upgrade you have to run
+	portupgrade -f -o emulators/linux_base-fc4 linux_base\*
+	portupgrade -f -o x11/linux-xorg-libs linux-XFree86-libs
+
 20060612:
   AFFECTS: users of editors/staroffice60, editors/staroffice70 and
            german/staroffice70
