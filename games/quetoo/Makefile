@@ -33,6 +33,16 @@ OPTIONS=	QMASS		"Build QMass deathmatch mod"		on \
 
 .include <bsd.port.pre.mk>
 
+.if defined(GCCVERSION)
+.   if ${GCCVERSION} < 030000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fbsd4
+.   endif
+.else
+.   if ${OSVERSION} < 500035
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fbsd4
+.   endif
+.endif
+
 .if !defined(WITHOUT_QMASS)
 Q2GAMES=	baseq2 ctf qmass
 CONFIGURE_ARGS+=	--enable-qmass
@@ -58,8 +68,9 @@ CONFIGURE_ARGS+=	--disable-opt --disable-sse
 post-extract: .SILENT
 	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}",' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -E 's,-ldl,,' ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -E 's,-ldl,-rdynamic,' ${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} 's,alsa,sdl,' ${WRKSRC}/src/snd_dma.c
+	${REINPLACE_CMD} 's,mysql/mysql,mysql,' ${WRKSRC}/src/qmass/g_local.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/quetoo ${PREFIX}/bin/quetoo
