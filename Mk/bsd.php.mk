@@ -37,7 +37,7 @@ PHP_Include_MAINTAINER=	ale@FreeBSD.org
 .include "${LOCALBASE}/etc/php.conf"
 PHP_EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${LOCALBASE}/lib/php/\(.*\),\1,p'
 .else
-DEFAULT_PHP_VER?=	4
+DEFAULT_PHP_VER?=	5
 
 PHP_VER?=	${DEFAULT_PHP_VER}
 .if ${PHP_VER} == 4
