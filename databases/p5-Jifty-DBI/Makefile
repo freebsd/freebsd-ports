@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty-DBI
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Jifty
@@ -29,7 +29,7 @@ BUILD_DEPENDS=	\
 		p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-ISO8601>0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
 		p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-DBIx-DBSchema>=0.28:${PORTSDIR}/databases/p5-DBIx-DBSchema \
+		p5-DBIx-DBSchema>=0.29:${PORTSDIR}/databases/p5-DBIx-DBSchema \
 		p5-Test-Simple>=0.52:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Cache-Memcached>0:${PORTSDIR}/databases/p5-Cache-Memcached
