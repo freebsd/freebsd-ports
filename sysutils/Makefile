@@ -182,6 +182,7 @@
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-sshfs
+    SUBDIR += fusefs-wdfs
     SUBDIR += fuser
     SUBDIR += fvcool
     SUBDIR += gag
