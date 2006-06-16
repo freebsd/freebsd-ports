@@ -61,6 +61,7 @@
     SUBDIR += battleball
     SUBDIR += biloba
     SUBDIR += biorythm
+    SUBDIR += bitefusion
     SUBDIR += blackjack
     SUBDIR += blinkensisters
     SUBDIR += blobandconquer
