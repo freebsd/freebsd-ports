@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	ddclient
-PORTVERSION=	3.6.7
+PORTVERSION=	3.7.0
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	radek@raadradd.com
 COMMENT=	Update dynamic DNS entries
+
+.ifndef WITHOUT_SSL
+RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+.endif
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
@@ -23,7 +27,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_FILES=	etc/ddclient.conf.sample sbin/ddclient
 
-PORTDOCS=	COPYING COPYRIGHT Changelog README README.cisco \
+PORTDOCS=	COPYING COPYRIGHT Changelog README README.cisco README.ssl \
 		sample-etc_cron.d_ddclient sample-etc_dhclient-exit-hooks \
 		sample-etc_dhcpc_dhcpcd-eth0.exe sample-etc_ppp_ip-up.local
 
