@@ -1,9 +1,9 @@
-This port has installed fonts into %%PREFIX%%/share/fonts
+This port has installed fonts into %%PREFIX%%/share/apps/konsole/fonts
 
-You'll have to add %%PREFIX%%/share/fonts
+You may want to add %%PREFIX%%/share/apps/konsole/fonts
 to your X font path by either:
 
-$ xset fp+ %%PREFIX%%/share/fonts
+$ xset fp+ %%PREFIX%%/share/apps/konsole/fonts
 $ xset fp rehash
 
 or by adding it to your X-server configuration file (usually
@@ -13,7 +13,7 @@ restarting the X-server.
 You also have to make the new path known to fontconfig by
 adding a 
 
-<dir>%%PREFIX%%/share/fonts</dir> line to either
+<dir>%%PREFIX%%/share/apps/konsole/fonts</dir> line to either
 
 %%X11BASE%%/etc/fonts/local.conf or ~/.fonts.conf and running
 
