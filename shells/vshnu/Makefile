@@ -11,7 +11,7 @@ PORTVERSION=	1.0211
 CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/vshnu/
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	New Visual Shell
 
 BUILD_DEPENDS=	${SITE_PERL}/Term/Screen.pm:${PORTSDIR}/devel/p5-Term-Screen

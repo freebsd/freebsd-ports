@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/penguin/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
 
 GNU_CONFIGURE=	yes

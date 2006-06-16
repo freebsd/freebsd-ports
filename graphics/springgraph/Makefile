@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.chaosreigns.com/code/springgraph/dl/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pl
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Render graph described in a .dot file
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD

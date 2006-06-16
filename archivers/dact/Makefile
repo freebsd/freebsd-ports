@@ -12,7 +12,7 @@ PORTREVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rkeene.org/files/oss/dact/release/
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Dynamic Adaptive Compression Tool
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \

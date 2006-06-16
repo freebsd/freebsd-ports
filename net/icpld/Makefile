@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
 
 USE_BZIP2=	yes

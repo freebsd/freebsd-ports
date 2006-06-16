@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	freebsd@unixfreunde.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Code reference program similar to cxref that produces HTML
 
 GNU_CONFIGURE=	yes
