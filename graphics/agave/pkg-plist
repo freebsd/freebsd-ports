@@ -13,7 +13,9 @@ share/gnome/pixmaps/lighten.png
 share/gnome/pixmaps/saturate.png
 share/locale/bg/LC_MESSAGES/colorscheme.mo
 share/locale/cs/LC_MESSAGES/colorscheme.mo
+share/locale/de/LC_MESSAGES/colorscheme.mo
 share/locale/es_ES/LC_MESSAGES/colorscheme.mo
+share/locale/nl/LC_MESSAGES/colorscheme.mo
 share/locale/pt_BR/LC_MESSAGES/colorscheme.mo
 share/locale/ru/LC_MESSAGES/colorscheme.mo
 @dirrm share/gnome/colorscheme/ui
