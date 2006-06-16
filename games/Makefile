@@ -208,6 +208,7 @@
     SUBDIR += frozenbubble
     SUBDIR += ftjava
     SUBDIR += fuhquake
+    SUBDIR += fwp
     SUBDIR += fxsudoku
     SUBDIR += galaxis
     SUBDIR += galaxyhack

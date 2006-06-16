@@ -1,0 +1,48 @@
+# New ports collection makefile for:	fightwinprevail
+# Date created:		06 Mar 2006
+# Whom:			Dmitry Marakasov <amdmi3@mail.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fwp
+PORTVERSION=	0.0.7
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	fightwinprevail
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
+
+MAINTAINER=	amdmi3@mail.ru
+COMMENT=	Multiplayer first person shooter
+
+BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
+LIB_DEPENDS=	OgreMain.10:${PORTSDIR}/graphics/ogre3d
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GL=		yes
+USE_SDL=	sdl net mixer
+USE_GCC=	3.4+
+
+CONFIGURE_ARGS=	--program-suffix=
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		SDL_CONFIG="${SDL_CONFIG}"
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Warning! This is the first playable version of FWP using the new libraries."
+	@${ECHO_MSG} "It is an alpha and lacks some of the planned features, so you shouldn't"
+	@${ECHO_MSG} "expect too much of it."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You might hit Ctrl-C to abort."
+	@${ECHO_MSG}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/LDFLAGS=/ s|$$LIBS|$$LDFLAGS|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O$$enable_optimize||' ${WRKSRC}/configure
+
+.include <bsd.port.mk>
