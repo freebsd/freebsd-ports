@@ -7,6 +7,7 @@
 
 PORTNAME=	PFProAPI
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	#https://manager.verisign.com/
 PKGNAMEPREFIX=	p5-
