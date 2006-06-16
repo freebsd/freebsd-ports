@@ -22,11 +22,11 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.\" @(#)portless.1,v 1.2 2006/06/14 12:44:25 martin Exp
+.\" @(#)portless.1,v 1.4 2006/06/15 15:43:43 martin Exp
 .\"
 .\" Note: The date here should be updated whenever a non-trivial
 .\" change is made to the manual page.
-.Dd June 8, 2006
+.Dd June 15, 2006
 .Dt PORTLESS 1
 .Os
 .Sh NAME
@@ -69,26 +69,24 @@ Display the
 .Pa pkg-plist
 file of the port.
 .It Fl P Ar pager
-Use the
+Use the specified
 .Ar pager
-program to display the files rather than the program specified by the
+program to display matching files. This overrides the setting of the
 .Ev PAGER
-environment variable or the default of
-.Dq Pa less -e
-\&.
+environment variable.
 .El
 .Sh ENVIRONMENT
 The
 .Nm
-command uses the
-.Ev PORTSDIR
-(default:
+command uses the following environment variables:
+.Bl -tag -width "Ev PORTSDIR" -compact -offset indent
+.It Ev PAGER
+defaults to
+.Dq Pa less\ -e
+.It Ev PORTSDIR
+defaults to
 .Pa /usr/ports
-) and the
-.Ev PAGER
-(default:
-.Dq Pa less -e
-) environment variables.
+.El
 .Sh FILES
 .Bl -tag -width ".Pa /usr/ports/*/*/*" -compact
 .It Pa /usr/ports/*/*/*
