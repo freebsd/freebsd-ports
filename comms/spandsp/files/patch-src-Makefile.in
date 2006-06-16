@@ -1,11 +1,14 @@
---- src/Makefile.in~	Thu Apr 28 09:03:02 2005
-+++ src/Makefile.in	Thu Jun 23 15:27:14 2005
-@@ -211,7 +211,7 @@
- sysconfdir = @sysconfdir@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -197,7 +197,7 @@
  target_alias = @target_alias@
+ AM_CFLAGS = -std=c99
  MAINTAINERCLEANFILES = Makefile.in
--INCLUDES = -I$(top_buildir)
-+#INCLUDES = -I$(top_buildir)
+-INCLUDES = -I$(top_builddir)
++#INCLUDES = -I$(top_builddir)
  lib_LTLIBRARIES = libspandsp.la
  libspandsp_la_SOURCES = adsi.c \
-                         awgn.c \
+                         async.c \

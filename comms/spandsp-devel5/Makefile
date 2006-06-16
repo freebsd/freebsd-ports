@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spandsp
-DISTVERSION=	0.0.2pre20
-PORTREVISION=	1
+DISTVERSION=	0.0.2pre26
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/${PORTNAME}-${DISTVERSION}/ \
 		${MASTER_SITE_LOCAL}
