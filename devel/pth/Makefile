@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pth
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	pth
@@ -43,7 +43,7 @@ MAN3+=		pthread.3
 
 post-patch:
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e \
+	${REINPLACE_CMD} -e \
 		's|-funroll-loops -fstrength-reduce -fomit-frame-pointer -ffast-math||' \
 		${WRKSRC}/configure
 .endif
@@ -54,7 +54,7 @@ post-build:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/pth.sh ${PREFIX}/etc/rc.d/000.pth.sh
 
-test:	build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
+test: build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
 .include <bsd.port.post.mk>
