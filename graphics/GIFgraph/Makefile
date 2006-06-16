@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GIFgraph
-PORTVERSION=	1.10
-PORTREVISION=	2
+PORTVERSION=	1.20
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GIFgraph
@@ -19,11 +18,20 @@ COMMENT=	A Perl package to generate PNG charts
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
+DEPRECATED=	This module is simply a wrapper around GD::Graph and is deprecated.  One should simply use graphics/p5-GD-Graph
+EXPIRATION_DATE=	2007-01-01
+
 PERL_CONFIGURE=	YES
 
-MAN3=		GIFgraph.3 GIFgraph::colour.3
+MAN3=		GIFgraph.3
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800 # inherited from graphics/p5-GD-Graph
+IGNORE=	requires at least Perl 5.8.  Please install lang/perl.58 and try again
+.endif
+
+.include <bsd.port.post.mk>
