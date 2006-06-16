@@ -1,0 +1,134 @@
+--- src/main.c.orig	Sun Apr  9 20:11:49 2006
++++ src/main.c	Fri Jun 16 05:00:44 2006
+@@ -289,7 +289,7 @@
+ 	ret = fread(ptr, size, nitems, fp);
+ 	err = errno;
+ 	if(ret != nitems){
+-		printf("verify_fread(...,%zu,%zu,...): return value: %zu\n", size, nitems, ret);
++		printf("verify_fread(...,%u,%u,...): return value: %u\n", size, nitems, ret);
+ 		if(ret == 0 && ferror(fp)){
+ 			printf("   error: %s\n", strerror(err));
+ 			printf("   fileno=%d\n", fileno(fp));
+@@ -306,7 +306,7 @@
+ 	ret = fwrite(ptr, size, nitems, fp);
+ 	err = errno;
+ 	if(ret != nitems){
+-		printf("verify_fwrite(...,%zu,%zu,...) = %zu\n", size, nitems, ret);
++		printf("verify_fwrite(...,%u,%u,...) = %u\n", size, nitems, ret);
+ 		if(ret == 0 && ferror(fp)){
+ 			printf("   error: %s\n", strerror(err));
+ 			printf("   fileno=%d\n", fileno(fp));
+--- src/qmass/p_client.c.orig	Sat Apr  8 06:51:19 2006
++++ src/qmass/p_client.c	Fri Jun 16 05:06:09 2006
+@@ -850,6 +850,9 @@
+ 	client_persistant_t saved;
+ 	client_respawn_t resp;
+ 	
++	// deathmatch wipes most client data every spawn
++	char userinfo[MAX_INFO_STRING];
++	
+ 	// find a spawn point
+ 	// do it before setting health back up, so farthest
+ 	// ranging doesn't count this client
+@@ -857,9 +860,6 @@
+ 	
+ 	index = ent - g_edicts - 1;
+ 	client = ent->client;
+-	
+-	// deathmatch wipes most client data every spawn
+-	char userinfo[MAX_INFO_STRING];
+ 	
+ 	resp = client->resp;
+ 	memcpy(userinfo, client->pers.userinfo, sizeof(userinfo));
+--- src/qmass/p_hud.c.orig	Sat Apr  8 06:51:19 2006
++++ src/qmass/p_hud.c	Fri Jun 16 05:07:20 2006
+@@ -65,6 +65,7 @@
+ void BeginIntermission(edict_t *targ){
+ 	int i;
+ 	edict_t *ent, *client;
++	char *sound;
+ 	
+ 	if(level.intermissiontime)
+ 		return;  // already activated
+@@ -110,7 +111,7 @@
+ 		MoveClientToIntermission(client);
+ 	}
+ 	
+-	char *sound = sv_inter_sound->string;  //play intermission sound
++	sound = sv_inter_sound->string;  //play intermission sound
+ 	gi.sound(ent, CHAN_NO_PHS_ADD, gi.soundindex(sound),
+ 			 1, ATTN_NONE, 0);
+ }
+--- src/ref_glx.c.orig	Tue Apr 11 08:56:53 2006
++++ src/ref_glx.c	Fri Jun 16 04:53:40 2006
+@@ -785,6 +785,9 @@
+ 	XSizeHints *sizehints;
+ 	XWMHints *wmhints;
+ 	unsigned long mask;
++#ifdef HAVE_XF86_VIDMODE
++	int num_vidmodes = 0;
++#endif
+ 	
+ 	window_width = width;
+ 	window_height = height;
+@@ -817,8 +820,6 @@
+ 	gl_state.hwgamma = false;
+ 	
+ #ifdef HAVE_XF86_VIDMODE
+-	int num_vidmodes = 0;
+-	
+ 	XF86VidModeGetAllModeLines(dpy, screen, &num_vidmodes, &vidmodes);
+ 	
+ 	if(fullscreen){
+--- src/ref_softx.c.orig	Sat Apr 22 19:54:36 2006
++++ src/ref_softx.c	Fri Jun 16 04:50:02 2006
+@@ -846,6 +846,10 @@
+ 	XWMHints *wmhints;
+ 	unsigned long mask;
+ 	int i;
++#ifdef HAVE_XF86_VIDMODE
++	int num_vidmodes = 0;
++#endif
++	XGCValues vals;
+ 	
+ 	window_width = width;
+ 	window_height = height;
+@@ -870,8 +874,6 @@
+ 	}
+ 	
+ #ifdef HAVE_XF86_VIDMODE
+-	int num_vidmodes = 0;
+-	
+ 	XF86VidModeGetAllModeLines(dpy, screen, &num_vidmodes, &vidmodes);
+ 	
+ 	if(fullscreen){
+@@ -996,7 +998,6 @@
+ 	}
+ #endif // HAVE_XF86_VIDMODE
+ 	
+-	XGCValues vals;
+ 	vals.graphics_exposures = False;
+ 	gc = XCreateGC(dpy, win, GCGraphicsExposures, &vals);
+ 	
+--- src/tga.c.orig	Wed Apr 26 23:26:50 2006
++++ src/tga.c	Fri Jun 16 04:52:35 2006
+@@ -35,6 +35,9 @@
+ 	byte *targa_rgba;
+ 	byte tmp[2];
+ 	
++	byte red, green, blue, alpha;
++	byte packet_header, packet_size, j;
++	
+ 	*pic = NULL;
+ 	
+ 	if(!strstr(name, "env/") && !gl_loadtga->value)
+@@ -91,9 +94,6 @@
+ 	
+ 	if(targa_header.id_length != 0)  // skip header comment
+ 		buffer += targa_header.id_length;
+-	
+-	byte red, green, blue, alpha;
+-	byte packet_header, packet_size, j;
+ 	
+ 	red = green = blue = alpha = 0;
+ 	packet_header = packet_size = j = 0;
