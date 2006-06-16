@@ -7,6 +7,7 @@
 
 PORTNAME=	vultures
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/downloads/${PORTVERSION}/
 PKGNAMESUFFIX=	-eye
@@ -20,7 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_GMAKE=	yes
-USE_SDL=	sdl mixer image ttf
+USE_SDL=	sdl mixer ttf
 USE_BZIP2=	yes
 USE_GCC=	3.2+
 WRKSRC=		${WRKDIR}/${DISTNAME}/nethack
