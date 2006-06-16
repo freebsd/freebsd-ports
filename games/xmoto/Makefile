@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.16
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,9 @@ COMMENT=	Challenging 2D motocross platform game
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		lua.5:${PORTSDIR}/lang/lua50
-BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
+		jpeg.9:${PORTSDIR}/graphics/jpeg
+BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode \
+		${LOCALBASE}/include/lua.hpp:${PORTSDIR}/lang/lua
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
