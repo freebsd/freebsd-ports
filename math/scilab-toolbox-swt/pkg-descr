@@ -1,0 +1,17 @@
+Scilab Wavelet Toolbox (SWT)
+
+Wavelet is a powerful signal processing tool developed and developing
+in the last two decades. Scilab Wavelet Toolbox is a free software package
+to enable you using wavelet analysis tools freely in Scilab on most OSes
+including GNU/Linux, BSD and Windows. Scilab Wavelet Toolbox is designed
+to work with any Scilab Image Processing Toolbox like SIP or SIVP
+for displaying 2-D results.
+
+What Scilab Wavelet Toolbox supposed to do:
+Discrete Fast Wavelet Transform, daubechies wavelets
+1-D single level signal decomposition and reconstruction
+1-D multi-level signal decomposition and reconstruction
+2-D single level image decomposition and reconstruction
+2-D multi-level image decomposition and reconstruction.
+
+WWW: http://scwt.sourceforge.net
