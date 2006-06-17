@@ -15,12 +15,15 @@ include/db3/db.h
 include/db3/db_185.h
 include/db3/db_cxx.h
 lib/libdb3.a
+lib/libdb3.la
 lib/libdb3.so
 lib/libdb3.so.3
 lib/libdb3_cxx.a
+lib/libdb3_cxx.la
 lib/libdb3_cxx.so
 lib/libdb3_cxx.so.3
 %%WITHTCL%%lib/libdb_tcl-3.3.a
+%%WITHTCL%%lib/libdb_tcl-3.3.la
 %%WITHTCL%%lib/libdb_tcl-3.3.so
 %%WITHTCL%%lib/libdb_tcl-3.3.so.3
 %%WITHTCL%%lib/libdb_tcl.so

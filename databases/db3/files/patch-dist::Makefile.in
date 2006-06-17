@@ -114,7 +114,7 @@
  	$(CCLINK) -o $@ $(LDFLAGS) \
  	    db_verify@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
-@@ -401,10 +401,9 @@
+@@ -401,10 +401,8 @@
  	@cd $(libdir) && $(rm) -f \
  	    $(libso) $(libso_target) $(libso_default) $(libso_major)
  	@$(INSTALLER) $(libso_target) $(libdir)
@@ -122,19 +122,17 @@
 -	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
  	@$(LIBTOOL) --mode=finish $(libdir)
 -	@cd $(libdir) && $(chmod) $(fmode) $(libso) $(libso_target)
-+	@$(rm) -f $(libdir)/$(libso_target)
 +	@cd $(libdir) && $(chmod) $(fmode) $(libso)
  
  install_static_cxx:
  	@echo "Installing DB C++ static library: $(libdir) ..."
-@@ -421,9 +420,8 @@
+@@ -421,9 +419,7 @@
  	@cd $(libdir) && $(rm) -f \
  	    $(libxso) $(libxso_target) $(libxso_default) $(libxso_major)
  	@$(INSTALLER) $(libxso_target) $(libdir)
 -	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
 -	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
 -	@cd $(libdir) && $(chmod) $(fmode) $(libxso) $(libxso_target)
-+	@$(rm) -f $(libdir)/$(libxso_target)
 +	@cd $(libdir) && $(chmod) $(fmode) $(libxso)
  
  install_tcl:
