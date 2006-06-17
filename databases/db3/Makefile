@@ -7,7 +7,7 @@
 
 PORTNAME=	db3
 PORTVERSION=	3.3.11
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH?=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://downloads.sleepycat.com/
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--enable-tcl --with-tcl=${LOCALBASE}/lib/tcl${WITH_TCL_VER}
 LIB_DEPENDS+=	tcl${WITH_TCL_VER:S/.//}.1:${PORTSDIR}/lang/tcl${WITH_TCL_VER:S/.//}
 PLIST_SUB+=	WITHTCL=""
 .else
-IGNORE=		"WITH_TCL_VER must be 8.4 or 8.3"
+IGNORE=		WITH_TCL_VER must be 8.4 or 8.3
 .endif
 .else
 PLIST_SUB+=	WITHTCL="@comment "
@@ -64,7 +64,6 @@ post-configure:
 .endif
 
 post-install:
-	${RM} -f ${PREFIX}/lib/libdb_tcl-3.3.la
 .if !defined(NOPORTDOCS)
 	${RMDIR} ${DOCSDIR}/ref/splash
 .endif
