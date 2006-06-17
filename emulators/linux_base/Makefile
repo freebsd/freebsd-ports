@@ -8,6 +8,7 @@
 
 PORTNAME=		linux_base-rh
 PORTVERSION=		7.3
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX} ${MASTER_SITE_LOCAL:S/$/:x11/} \
 		http://download.fedoralegacy.org/redhat/7.3/updates/i386/:legacy
@@ -52,6 +53,10 @@ EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 CONFLICTS=	linux_base-7.1* linux_base-debian* \
 		linux_base-gentoo* linux_base-rh-9* linux_base-suse-9* \
 		linux-XFree86-libs*
+
+DEPRECATED=	unsupported by upstream, no security support anymore
+EXPIRATION_DATE=2006-09-01
+IGNORE=		${DEPRECATED}
 
 NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		amd64 i386

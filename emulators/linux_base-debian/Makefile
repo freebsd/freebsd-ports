@@ -6,7 +6,7 @@
 
 PORTNAME=	linux_base
 PORTVERSION=	3.0.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_DEBIAN:S/$/:base/} \
 		${MASTER_SITE_DEBIAN:S/$/:util/}
@@ -20,10 +20,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debian base set for the Linux mode
 
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-gentoo* \
-		linux_base-rh* linux_base-suse*
+		linux_base-rh* linux_base-suse* linux_base-fc*
 ONLY_FOR_ARCHS=	alpha amd64 i386
 
 BROKEN=		Does not build reliably
+
+DEPRECATED=	unmaintained and does not comply to the linux_base invariants
+EXPIRATION_DATE=2006-09-01
 
 RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
 

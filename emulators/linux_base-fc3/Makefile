@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		3
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -92,6 +92,10 @@ ALWAYS_KEEP_DISTFILES=  yes
 CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
 			linux_base-rh-9* linux_base-suse-9* linux_base-8* \
 			linux_base-fc-4* linux-libgcc* linux_locale*
+
+DEPRECATED=	superseeded by linux_base-fc4 port
+EXPIRATION_DATE=2006-07-01
+
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 PREFIX?=		${LINUXBASE}
