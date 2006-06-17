@@ -24,13 +24,11 @@ LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		glut.4:${PORTSDIR}/graphics/libglut
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		LIBS=-Wl,-rpath,${PREFIX}/lib/wine \
 		EXTRA_BINARIES="wine-kthread"
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
 USE_LDCONFIG=	${PREFIX}/lib/wine
 MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
 		winemaker.1 wineserver.1 wmc.1 wrc.1
@@ -45,7 +43,6 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if ${OSVERSION} < 503000
 IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with threading support)
