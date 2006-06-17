@@ -7,7 +7,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	http://high5.net/postfixadmin/ \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -17,6 +17,7 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 
 WANT_PHP_PEAR=	yes
+USE_PHP=	pcre session
 NO_BUILD=	yes
 USE_APACHE=	1.3+
 
@@ -30,11 +31,11 @@ OPTIONS+=	PGSQL "Use PostgresQL to store config data" off
 RUN_DEPENDS+=	postfix>=2[0-9]*:${PORTSDIR}/mail/postfix
 
 .ifndef(WITHOUT_MYSQL)
-USE_PHP=	mysql
+USE_PHP+=	mysql
 .endif
 
 .ifdef(WITH_PGSQL)
-USE_PHP=	pgsql
+USE_PHP+=	pgsql
 .endif
 
 .ifdef(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
