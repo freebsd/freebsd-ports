@@ -49,7 +49,7 @@ SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls \
+CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
@@ -59,11 +59,7 @@ CONFIGURE_ARGS=	--disable-nls \
 CONFIGURE_ENV=	RANLIB=:
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${TARGLIB}
-SUB_LIST=	TARGLIB="${TARGLIB}"
-SUB_FILES=	gcc.sh
-RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
+USE_LDCONFIG=	${TARGLIB}
 .if ${OSVERSION} < 500000 && ${ARCH} == alpha
 CXXFLAGS+=	-fPIC
 .endif
@@ -102,8 +98,6 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	-@${MKDIR} ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
