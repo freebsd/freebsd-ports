@@ -13,7 +13,7 @@ MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 
 MAINTAINER=	thomas@goodking.ca
-COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
+COMMENT=	Citrix(R) Presentation Server(TM) client
 
 RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
