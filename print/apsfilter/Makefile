@@ -7,6 +7,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.7
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -27,7 +28,7 @@ NO_X=		yes
 # XXX Hack.  If you've done something like "-DWITHOUT_X11" on the command line
 # (instead of WITHOUT_X11=true, or similar) gmake won't pick it up.  So make
 # sure that NO_X is defined *and* has a value.
-MAKE_ENV+=      NO_X=true
+MAKE_ENV+=	NO_X=true
 .endif
 
 #
@@ -44,7 +45,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 # - WITHOUT_X11		toggles not to build tools that need X11, even if
 #			APSFILTER_ALL is set
 # - PAPERSIZE		Use PAPERSIZE as in a2ps port, default to letter.
-PAPERSIZE?=     letter
+PAPERSIZE?=	letter
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
@@ -96,7 +97,7 @@ RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
 .endif
 # all possible remote printing support
 RUN_DEPENDS+=	pap:${PORTSDIR}/net/netatalk
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
 .elif defined(BATCH)
 #
 # in normal batch/portbuilding mode (without building all)
