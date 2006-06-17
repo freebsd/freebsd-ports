@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,6 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--disable-oss-sound \
 		--enable-docbook-stylesheet=${STYLESHEET}
+MAKE_ARGS=	skipmanual=YES
 
 MAN1=		lessonfile_editor.1 solfege.1
 
@@ -45,13 +46,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share", "solfege|share", "gnome", "solfege|g' \
 		${WRKSRC}/${file}
 .endfor
-.for file in default.config
 	@${REINPLACE_CMD} -e 's|type=sequencer-device|type=fake-synth|g ; \
-		 s|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/${file}
-.endfor
-.for file in po/Makefile
+		 s|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/default.config
 	@${REINPLACE_CMD} -e 's|(datadir)/locale|(prefix)/share/locale|g' \
-		${WRKSRC}/${file}
-.endfor
+		${WRKSRC}/po/Makefile
 
 .include <bsd.port.mk>

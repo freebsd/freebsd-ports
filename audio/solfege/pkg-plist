@@ -191,6 +191,7 @@ share/gnome/solfege/help/C/ly/theory-intervals-4.png
 share/gnome/solfege/help/C/melodicinterval.html
 share/gnome/solfege/help/C/melodicintervals-module.html
 share/gnome/solfege/help/C/midi-instrument-names.html
+share/gnome/solfege/help/C/music-theory.html
 share/gnome/solfege/help/C/online-resources.html
 share/gnome/solfege/help/C/preferences-window.html
 share/gnome/solfege/help/C/rhythm-module.html
@@ -245,6 +246,7 @@ share/gnome/solfege/help/fr/index.html
 share/gnome/solfege/help/fr/melodicinterval.html
 share/gnome/solfege/help/fr/melodicintervals-module.html
 share/gnome/solfege/help/fr/midi-instrument-names.html
+share/gnome/solfege/help/fr/music-theory.html
 share/gnome/solfege/help/fr/online-resources.html
 share/gnome/solfege/help/fr/preferences-window.html
 share/gnome/solfege/help/fr/rhythm-module.html
@@ -299,6 +301,7 @@ share/gnome/solfege/help/no/index.html
 share/gnome/solfege/help/no/melodicinterval.html
 share/gnome/solfege/help/no/melodicintervals-module.html
 share/gnome/solfege/help/no/midi-instrument-names.html
+share/gnome/solfege/help/no/music-theory.html
 share/gnome/solfege/help/no/online-resources.html
 share/gnome/solfege/help/no/preferences-window.html
 share/gnome/solfege/help/no/rhythm-module.html
@@ -353,6 +356,7 @@ share/gnome/solfege/help/tr/index.html
 share/gnome/solfege/help/tr/melodicinterval.html
 share/gnome/solfege/help/tr/melodicintervals-module.html
 share/gnome/solfege/help/tr/midi-instrument-names.html
+share/gnome/solfege/help/tr/music-theory.html
 share/gnome/solfege/help/tr/online-resources.html
 share/gnome/solfege/help/tr/preferences-window.html
 share/gnome/solfege/help/tr/rhythm-module.html
