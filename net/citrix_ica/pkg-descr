@@ -1,15 +1,13 @@
-Citrix(R) MetaFrame(TM) is thin-client/server system software for
-Microsoft's Windows NT Server 4.0, Terminal Server Edition.
-MetaFrame(TM) delivers a comprehensive thin-client/server solution to
-the enterprise by extending Windows Terminal Server with additional
-client and server functionality - including support for heterogeneous
-computing environments, enterprise-scale management and seamless
-desktop integration. MetaFrame(TM) transforms the way organizations
-deploy, manage and access business applications by providing improved
-application manageability, access, performance and security. Citrix(R)
-MetaFrame(TM) system software, which incorporates Citrix's Independent
-Computing Architecture (ICA)(R), provides a complete
-thin-client/server computing solution for multi-user NT 4.0
-environments.
+Citrix(R) Presentation Server(TM) runs on Microsoft(R) Windows
+Server(TM) and UNIX(R) operating systems, and extends the base
+Windows Terminal Services platform by enhancing the end-user
+experience as well as increasing manageability, compatibility,
+security and scalability to address business-critical environments.
+Presentation Server expands the range of supported applications to
+include legacy software and Web-based, UNIX and Java solutions. It
+also enables any device or operating system including Macintosh and
+Linux to access virtualized applications. Other important capabilities
+are powerful management and configuration tools and faster, more
+flexible printing.
 
-WWW: http://www.citrix.com/products/metaframe.asp
+WWW: http://www.citrix.com/English/ps2/products/product.asp?contentID=186
