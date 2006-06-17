@@ -42,7 +42,7 @@ lib/libcliimpio.so.2
 lib/libdbbase.a
 lib/libdbbase.la
 lib/libdbbase.so
-lib/libdbbase.so.7
+lib/libdbbase.so.8
 lib/libdeltas.a
 lib/libdeltas.la
 lib/libdeltas.so
@@ -62,7 +62,7 @@ lib/libextprgio.so.2
 lib/libfiledbio.a
 lib/libfiledbio.la
 lib/libfiledbio.so
-lib/libfiledbio.so.7
+lib/libfiledbio.so.8
 %%GENERATOR%%lib/libgenio.a
 %%GENERATOR%%lib/libgenio.la
 %%GENERATOR%%lib/libgenio.so
@@ -98,7 +98,7 @@ lib/libmonthlygraph.so.1
 lib/libnativedbio.a
 lib/libnativedbio.la
 lib/libnativedbio.so
-lib/libnativedbio.so.7
+lib/libnativedbio.so.8
 lib/libpayee.a
 lib/libpayee.la
 lib/libpayee.so
@@ -118,15 +118,15 @@ lib/libprofitloss.so.1
 lib/libqhacc.a
 lib/libqhacc.la
 lib/libqhacc.so
-lib/libqhacc.so.7
+lib/libqhacc.so.8
 lib/libqhaccext.a
 lib/libqhaccext.la
 lib/libqhaccext.so
-lib/libqhaccext.so.7
+lib/libqhaccext.so.8
 lib/libqhaccutils.a
 lib/libqhaccutils.la
 lib/libqhaccutils.so
-lib/libqhaccutils.so.7
+lib/libqhaccutils.so.8
 lib/libqifio.a
 lib/libqifio.la
 lib/libqifio.so
