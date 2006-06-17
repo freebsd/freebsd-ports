@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	projectx
-PORTVERSION=	0.90.3.01
+PORTVERSION=	0.90.4.00
 CATEGORIES=	multimedia java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	project-x
 DISTNAME=	ProjectX_Source_${PORTVERSION}
+DISTFILES=	ProjectX_Source_eng_${PORTVERSION}${EXTRACT_SUFX} \
+		ProjectX_LanguagePack_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	DVB (mpeg) cutting/demux tool
@@ -24,6 +26,7 @@ USE_JIKES=	no
 
 SUB_FILES=	project-x.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/\.00$//}
 EXTRACT_BEFORE_ARGS+=	-aq
 
 do-configure:

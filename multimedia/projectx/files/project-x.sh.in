@@ -7,7 +7,7 @@ case "$#" in
 	mkdir -p "${HOME}/.projectx"
 	cd "${HOME}/.projectx"
 	ln -sf %%DATADIR%%/*.txt %%DATADIR%%/htmls .
-	if ! grep '^# ProjectX 0.90.3.01' X.ini >/dev/null 2>&1; then
+	if ! grep '^# ProjectX 0.90.4.00' X.ini >/dev/null 2>&1; then
 		rm -f X.ini
 	fi
 	;;
