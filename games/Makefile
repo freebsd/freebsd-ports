@@ -583,6 +583,7 @@
     SUBDIR += scid
     SUBDIR += scorched3d
     SUBDIR += scourge
+    SUBDIR += scourge-data
     SUBDIR += scramble
     SUBDIR += scummvm
     SUBDIR += scummvm-tools
