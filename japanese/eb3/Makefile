@@ -10,7 +10,7 @@ PORTVERSION=	3.3.4
 PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
+		ftp://ftp.sra.co.jp/pub/misc/eb/old/eb-3.3/
 DISTFILES=	${EBFILES} \
 		${LISTFILES} \
 		${APPENDIXFILES}
@@ -78,7 +78,7 @@ INFO=		eb-ja ebfont-ja ebfont ebinfo-ja ebinfo ebrefile-ja \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Configure fails on ia64"
+BROKEN=		Configure fails on ia64
 .endif
 
 post-extract:
@@ -90,8 +90,8 @@ post-extract:
 .endfor
 
 post-install:
-.for file in ${LISTFILES}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${APPENDIXDIR}
+.for _file in ${LISTFILES}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${_file} ${APPENDIXDIR}
 .endfor
 	${CP} -R ${WRKDIR}/appendix/ ${APPENDIXDIR}
 
