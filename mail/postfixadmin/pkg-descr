@@ -3,8 +3,11 @@ are dealing with Postfix Style Virtual Domains and Virtual Users
 that are stored in MySQL or Postgres. It's written in PHP.
 
 Postfix Admin supports:
-	- Virtual Mailboxes / Virtual Aliases / Forwarders.
-	- Domain to Domain forwarding / Catch-All.
-	- Vacation for Virtual Mailboxes (with the additional module).
+- Virtual Mailboxes / Virtual Aliases / Forwarders.
+- Domain to Domain forwarding / Catch-All.
+- Vacation (auto-response) for Virtual Mailboxes.
+- Quota / Alias & Mailbox limits per domain.
+- Backup MX.
+- Packaged with over 25 languages.
 
 WWW:	http://high5.net/postfixadmin/
