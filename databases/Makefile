@@ -179,6 +179,7 @@
     SUBDIR += p5-Class-DBI-Plugin-AbstractCount
     SUBDIR += p5-Class-DBI-Plugin-Iterator
     SUBDIR += p5-Class-DBI-Plugin-RetrieveAll
+    SUBDIR += p5-Class-DBI-Plugin-Senna
     SUBDIR += p5-Class-DBI-Plugin-Type
     SUBDIR += p5-Class-DBI-Replication
     SUBDIR += p5-Class-DBI-SAK

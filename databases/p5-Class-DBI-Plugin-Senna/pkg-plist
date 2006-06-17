@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Class/DBI/Plugin/Senna.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Senna/.packlist
+@dirrmtry %%SITE_PERL%%/Class/DBI/Plugin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Senna
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin
