@@ -1,0 +1,2 @@
+@exec mkdir -p %D/%%DATADIR%%
+@dirrmtry %%DATADIR%%

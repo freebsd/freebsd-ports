@@ -50,6 +50,7 @@
     SUBDIR += blimitd
     SUBDIR += boxbackup
     SUBDIR += bpm
+    SUBDIR += bsd-splash-changer
     SUBDIR += bsdadminscripts
     SUBDIR += bsdsar
     SUBDIR += bubblemon-dockapp
