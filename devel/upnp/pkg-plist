@@ -1,6 +1,40 @@
-include/upnp/config.h
+include/upnp/FreeList.h
+include/upnp/LinkedList.h
+include/upnp/ThreadPool.h
+include/upnp/TimerThread.h
+include/upnp/iasnprintf.h
+include/upnp/ithread.h
+include/upnp/ixml.h
 include/upnp/upnp.h
+include/upnp/upnpconfig.h
 include/upnp/upnptools.h
+lib/libixml.a
+lib/libixml.la
+lib/libixml.so
+lib/libixml.so.2
+lib/libthreadutil.a
+lib/libthreadutil.la
+lib/libthreadutil.so
+lib/libthreadutil.so.2
+lib/libupnp.a
+lib/libupnp.la
 lib/libupnp.so
-lib/libupnp.so.1
+lib/libupnp.so.2
+libdata/pkgconfig/libupnp.pc
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPnP_Programming_Guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/examples/sample_util.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/sample_util.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/upnp_tv_ctrlpt.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/upnp_tv_ctrlpt.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/upnp_tv_ctrlpt_main.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/upnp_tv_device.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/upnp_tv_device.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/upnp_tv_device_main.c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/upnp

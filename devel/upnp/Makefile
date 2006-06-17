@@ -6,36 +6,34 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	pupnp
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
-CONFLICTS=	upnp-1.[^2].*
+CONFLICTS=	upnp-1.0.*
 
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/upnp
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-MAKEFILE=	makefile
+GNU_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 NOT_FOR_ARCHS=	sparc64
 INSTALLS_SHLIB=	yes
 
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS=	--without-docdir
+.else
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
+.endif
+
 post-patch:
-	@${FIND} ${PATCH_WRKSRC} -name "*.[ch]" | \
+	${FIND} ${WRKSRC} -type f | \
 		${XARGS} ${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,'
-	@${FIND} ${PATCH_WRKSRC} -name "[Mm]akefile" | ${XARGS} ${REINPLACE_CMD} \
-		-e 's,lpthread,pthread, ; s,/usr,,g ; s,1\.2\.1,1,g' \
-		-e 's,MAKE = make,MAKE = ${GMAKE},' \
-		-e 's,install bin,${INSTALL_PROGRAM} bin,g' \
-		-e 's,install inc,${INSTALL_DATA} inc,g'
-	@${REINPLACE_CMD} -e 's,MSG_NOSIGNAL,0,' ${PATCH_WRKSRC}/upnp/src/genlib/net/sock.c
-	@${REINPLACE_CMD} -e 's,linux/if,net/if,' ${PATCH_WRKSRC}/upnp/src/api/upnpapi.c
+	${REINPLACE_CMD} -Ee 's,^(pkgconfigexecdir = ).*,\1${PREFIX}/libdata/pkgconfig,' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
