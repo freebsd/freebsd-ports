@@ -1,5 +1,5 @@
---- cd_linux.c.orig	Sun Mar 14 12:11:16 2004
-+++ cd_linux.c	Sun Mar 14 12:24:07 2004
+--- ./cd_linux.c.orig	Sat Jun 10 12:08:13 2006
++++ ./cd_linux.c	Sat Jun 10 12:08:13 2006
 @@ -31,7 +31,7 @@
  #include <time.h>
  #include <errno.h>

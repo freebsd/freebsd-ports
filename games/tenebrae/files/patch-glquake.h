@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- glquake.h.orig
-+++ glquake.h
+--- ./glquake.h.orig	Sat Jun 10 12:08:13 2006
++++ ./glquake.h	Sat Jun 10 12:08:13 2006
 @@ -419,8 +419,8 @@
  void R_TranslatePlayerSkin (int playernum);
  void GL_Bind (int texnum);

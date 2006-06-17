@@ -1,5 +1,5 @@
---- common.h.orig	Sun Mar 14 13:19:04 2004
-+++ common.h	Sun Mar 14 13:19:50 2004
+--- ./common.h.orig	Sat Jun 10 12:08:13 2006
++++ ./common.h	Sat Jun 10 12:08:13 2006
 @@ -169,6 +169,10 @@
  
  extern	char	com_gamedir[MAX_OSPATH];

@@ -1,14 +1,15 @@
---- linux/Makefile.i386linux.orig	Sun Mar 14 15:07:08 2004
-+++ linux/Makefile.i386linux	Sun Mar 14 17:54:02 2004
-@@ -18,30 +18,30 @@
+--- ./linux/Makefile.i386linux.orig	Sat Jun 10 12:08:13 2006
++++ ./linux/Makefile.i386linux	Sat Jun 10 12:12:17 2006
+@@ -18,56 +18,60 @@
  
  MOUNT_DIR     = ../
  
 -MASTER_DIR    = /usr/local/share/games/quake
-+MASTER_DIR    = ${DATADIR}
++MASTER_DIR    = ${Q1DIR}
  
  BUILD_DEBUG_DIR = debug$(ARCH)$(GLIBC)
- BUILD_RELEASE_DIR = release$(ARCH)$(GLIBC)
+-BUILD_RELEASE_DIR = release$(ARCH)$(GLIBC)
++BUILD_RELEASE_DIR = release
  
 -LEX           = /usr/bin/flex -i -Cfr
 -CC            = /usr/bin/gcc
@@ -16,7 +17,7 @@
 +#CC            = /usr/bin/gcc
  
 -X11_LIBS      = -L/usr/X11R6/lib -lpthread -lX11 -lXext -lXxf86dga -lXxf86vm
-+X11_LIBS      = -L${X11BASE}/lib ${PTHREAD_LIBS} -lX11 -lXext -lXxf86dga -lXxf86vm
++X11_LIBS      = -L${X11BASE}/lib -lX11 -lXext -lXxf86dga -lXxf86vm
  
  # to enable OpenGL code in source 
 -OPENGL_CFLAGS = -D__glx__ -DGLQUAKE
@@ -37,11 +38,28 @@
  	-fomit-frame-pointer -fexpensive-optimizations
  DEBUG_CFLAGS  = $(BASE_CFLAGS) -g 
 -LDFLAGS       = -lm -ldl $(X11_LIBS) $(OPENGL_LIBS) $(PNG_LIBS) $(OPENAL_LIBS) 
-+LDFLAGS       = -lm $(X11_LIBS) $(OPENGL_LIBS) $(PNG_LIBS) $(OPENAL_LIBS) `${SDL_CONFIG} --libs`
++LDFLAGS       += -lm $(X11_LIBS) $(OPENGL_LIBS) $(PNG_LIBS) $(OPENAL_LIBS) `${SDL_CONFIG} --libs`
  
  DO_GL_CC      = $(CC) $(CFLAGS) -o $@ -c $<
  DO_GL_AS      = $(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
-@@ -57,15 +57,15 @@
+ DO_LEX        = $(LEX) -o$@ $< 
+ 
++ifdef USE_ASM
++BASE_CFLAGS += -DUSE_ASM
++endif
++
+ #############################################################################
+ # SETUP AND BUILD
+ #############################################################################
+ 
+-TARGETS=$(BUILDDIR)/bin/tenebrae.run
++TARGETS=$(BUILDDIR)/bin/tenebrae
++
++all: build_release
++
++targets: $(TARGETS)
+ 
+ build_debug:
  	@-mkdir -p $(BUILD_DEBUG_DIR) \
  		$(BUILD_DEBUG_DIR)/bin \
  		$(BUILD_DEBUG_DIR)/glquake
@@ -53,14 +71,15 @@
  		$(BUILD_RELEASE_DIR)/bin \
  		$(BUILD_RELEASE_DIR)/glquake
 -	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS="$(RELEASE_CFLAGS)"
+-
+-all: build_debug build_release
+-
+-targets: $(TARGETS)
 +	$(MAKE) targets BUILDDIR=$(BUILD_RELEASE_DIR) CFLAGS+="$(RELEASE_CFLAGS)"
  
--all: build_debug build_release
-+all: build_debug
- 
- targets: $(TARGETS)
- 
-@@ -143,7 +143,7 @@
+ #############################################################################
+ # GLQuake
+@@ -143,7 +147,7 @@
  	$(BUILDDIR)/glquake/snd_dma.o \
  	$(BUILDDIR)/glquake/snd_mem.o \
  	$(BUILDDIR)/glquake/snd_mix.o \
@@ -69,7 +88,16 @@
  	$(BUILDDIR)/glquake/gl_vidlinuxglx.o \
  	$(BUILDDIR)/glquake/math.o \
  	$(BUILDDIR)/glquake/worlda.o \
-@@ -361,7 +361,7 @@
+@@ -154,7 +158,7 @@
+ 	$(BUILDDIR)/glquake/te_scripts.o 
+ 
+ 
+-$(BUILDDIR)/bin/tenebrae.run : $(GLQUAKE_OBJS)
++$(BUILDDIR)/bin/tenebrae : $(GLQUAKE_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(GLQUAKE_OBJS) $(LDFLAGS)
+ 
+ $(BUILDDIR)/glquake/cl_demo.o :      $(MOUNT_DIR)/cl_demo.c
+@@ -361,7 +365,7 @@
  $(BUILDDIR)/glquake/snd_mix.o :      $(MOUNT_DIR)/snd_mix.c
  	$(DO_GL_CC)
  
