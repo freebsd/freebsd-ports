@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://darcs.net/
 
