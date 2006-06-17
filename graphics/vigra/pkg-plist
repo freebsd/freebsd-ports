@@ -21,11 +21,13 @@ include/vigra/eigensystem.hxx
 include/vigra/error.hxx
 include/vigra/fftw.hxx
 include/vigra/fftw3.hxx
+include/vigra/fixedpoint.hxx
 include/vigra/flatmorphology.hxx
 include/vigra/functorexpression.hxx
 include/vigra/functortraits.hxx
 include/vigra/gaborfilter.hxx
 include/vigra/gaussians.hxx
+include/vigra/gradient_energy_tensor.hxx
 include/vigra/imagecontainer.hxx
 include/vigra/imageinfo.hxx
 include/vigra/imageiterator.hxx
@@ -64,8 +66,10 @@ include/vigra/rfftw.hxx
 include/vigra/rgbvalue.hxx
 include/vigra/seededregiongrowing.hxx
 include/vigra/separableconvolution.hxx
+include/vigra/sized_int.hxx
 include/vigra/splineimageview.hxx
 include/vigra/splines.hxx
+include/vigra/static_assert.hxx
 include/vigra/stdconvolution.hxx
 include/vigra/stdimage.hxx
 include/vigra/stdimagefunctions.hxx
@@ -76,6 +80,7 @@ include/vigra/tinyvector.hxx
 include/vigra/transformimage.hxx
 include/vigra/tuple.hxx
 include/vigra/utilities.hxx
+include/vigra/watersheds.hxx
 lib/libvigraimpex.a
 lib/libvigraimpex.la
 lib/libvigraimpex.so
@@ -90,6 +95,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/ErrorReporting.html
 %%DOCSDIR%%/Examples.html
 %%DOCSDIR%%/FFTWComplexTraits.html
+%%DOCSDIR%%/FixedPointTraits.html
 %%DOCSDIR%%/FourierTransformFFTW2.html
 %%DOCSDIR%%/FunctorExpressions.html
 %%DOCSDIR%%/ImageAnalysis.html
@@ -103,6 +109,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/MathFunctionality.html
 %%DOCSDIR%%/MultiDimensionalArrays.html
 %%DOCSDIR%%/MultiIteratorPage.html
+%%DOCSDIR%%/NormTraits.html
 %%DOCSDIR%%/NumericPromotionTraits.html
 %%DOCSDIR%%/NumericTraits.html
 %%DOCSDIR%%/PixelTypes.html
@@ -110,6 +117,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/PromoteTraits.html
 %%DOCSDIR%%/RGBValueTraits.html
 %%DOCSDIR%%/RationalTraits.html
+%%DOCSDIR%%/SquareRootTraits.html
 %%DOCSDIR%%/TinyVectorTraits.html
 %%DOCSDIR%%/TupleTypes.html
 %%DOCSDIR%%/Utilities.html
@@ -201,6 +209,8 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1FindMinMax.html
 %%DOCSDIR%%/classvigra_1_1FindROISize-members.html
 %%DOCSDIR%%/classvigra_1_1FindROISize.html
+%%DOCSDIR%%/classvigra_1_1FixedPoint-members.html
+%%DOCSDIR%%/classvigra_1_1FixedPoint.html
 %%DOCSDIR%%/classvigra_1_1FourNeighborhood_1_1NeighborCode-members.html
 %%DOCSDIR%%/classvigra_1_1FourNeighborhood_1_1NeighborCode.html
 %%DOCSDIR%%/classvigra_1_1FunctorTraits-members.html
@@ -269,6 +279,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1NeighborOffsetCirculator.html
 %%DOCSDIR%%/classvigra_1_1NeighborhoodCirculator-members.html
 %%DOCSDIR%%/classvigra_1_1NeighborhoodCirculator.html
+%%DOCSDIR%%/classvigra_1_1NeighborhoodCirculator.png
 %%DOCSDIR%%/classvigra_1_1Point2D-members.html
 %%DOCSDIR%%/classvigra_1_1Point2D.html
 %%DOCSDIR%%/classvigra_1_1Point2D.png
@@ -320,6 +331,9 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1RedAccessor.html
 %%DOCSDIR%%/classvigra_1_1ReduceFunctor-members.html
 %%DOCSDIR%%/classvigra_1_1ReduceFunctor.html
+%%DOCSDIR%%/classvigra_1_1RestrictedNeighborhoodCirculator-members.html
+%%DOCSDIR%%/classvigra_1_1RestrictedNeighborhoodCirculator.html
+%%DOCSDIR%%/classvigra_1_1RestrictedNeighborhoodCirculator.png
 %%DOCSDIR%%/classvigra_1_1RowIterator-members.html
 %%DOCSDIR%%/classvigra_1_1RowIterator.html
 %%DOCSDIR%%/classvigra_1_1SeedRgDirectValueFunctor-members.html
@@ -332,6 +346,10 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1Size2D.png
 %%DOCSDIR%%/classvigra_1_1SplineImageView-members.html
 %%DOCSDIR%%/classvigra_1_1SplineImageView.html
+%%DOCSDIR%%/classvigra_1_1SplineImageView0-members.html
+%%DOCSDIR%%/classvigra_1_1SplineImageView0.html
+%%DOCSDIR%%/classvigra_1_1SplineImageView1-members.html
+%%DOCSDIR%%/classvigra_1_1SplineImageView1.html
 %%DOCSDIR%%/classvigra_1_1StandardAccessor-members.html
 %%DOCSDIR%%/classvigra_1_1StandardAccessor.html
 %%DOCSDIR%%/classvigra_1_1StandardConstAccessor-members.html
@@ -424,6 +442,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/fftw3_8hxx-source.html
 %%DOCSDIR%%/fftw_8hxx-source.html
 %%DOCSDIR%%/files.html
+%%DOCSDIR%%/fixedpoint_8hxx-source.html
 %%DOCSDIR%%/flatmorphology_8hxx-source.html
 %%DOCSDIR%%/form_0.png
 %%DOCSDIR%%/form_1.png
@@ -487,6 +506,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/functortraits_8hxx-source.html
 %%DOCSDIR%%/gaborfilter_8hxx-source.html
 %%DOCSDIR%%/gaussians_8hxx-source.html
+%%DOCSDIR%%/gradient__energy__tensor_8hxx-source.html
 %%DOCSDIR%%/group__CombineAlgo.html
 %%DOCSDIR%%/group__CombineFunctor.html
 %%DOCSDIR%%/group__CommonConvolutionFilters.html
@@ -497,6 +517,8 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/group__EdgeDetection.html
 %%DOCSDIR%%/group__FFTWComplexAccessors.html
 %%DOCSDIR%%/group__FFTWComplexOperators.html
+%%DOCSDIR%%/group__FixedPointOperations.html
+%%DOCSDIR%%/group__FixedSizeInt.html
 %%DOCSDIR%%/group__FourierTransform.html
 %%DOCSDIR%%/group__Functors.html
 %%DOCSDIR%%/group__GaborFilter.html
@@ -593,9 +615,11 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/rgbvalue_8hxx-source.html
 %%DOCSDIR%%/seededregiongrowing_8hxx-source.html
 %%DOCSDIR%%/separableconvolution_8hxx-source.html
+%%DOCSDIR%%/sized__int_8hxx-source.html
 %%DOCSDIR%%/smooth_8cxx-example.html
 %%DOCSDIR%%/splineimageview_8hxx-source.html
 %%DOCSDIR%%/splines_8hxx-source.html
+%%DOCSDIR%%/static__assert_8hxx-source.html
 %%DOCSDIR%%/stdconvolution_8hxx-source.html
 %%DOCSDIR%%/stdimage_8hxx-source.html
 %%DOCSDIR%%/stdimagefunctions_8hxx-source.html
@@ -613,6 +637,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/utilities_8hxx-source.html
 %%DOCSDIR%%/voronoi_8cxx-example.html
 %%DOCSDIR%%/watershed_8cxx-example.html
+%%DOCSDIR%%/watersheds_8hxx-source.html
 @dirrm %%DOCSDIR%%/documents
 @dirrm %%DOCSDIR%%
 @dirrm include/vigra
