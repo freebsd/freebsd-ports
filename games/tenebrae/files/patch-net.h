@@ -1,5 +1,5 @@
---- net.h.orig	Wed Mar 17 10:25:22 2004
-+++ net.h	Wed Mar 17 10:25:37 2004
+--- ./net.h.orig	Sat Jun 10 12:08:13 2006
++++ ./net.h	Sat Jun 10 12:08:13 2006
 @@ -239,7 +239,7 @@
  extern int hostCacheCount;
  extern hostcache_t hostcache[HOSTCACHESIZE];

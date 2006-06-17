@@ -1,5 +1,5 @@
---- sys_uxfindfirst.c.orig	Sun Mar 14 15:00:09 2004
-+++ sys_uxfindfirst.c	Sun Mar 14 15:06:52 2004
+--- ./sys_uxfindfirst.c.orig	Sat Jun 10 12:08:13 2006
++++ ./sys_uxfindfirst.c	Sat Jun 10 12:08:13 2006
 @@ -36,7 +36,7 @@
  #include "quakedef.h"
  #include <errno.h>

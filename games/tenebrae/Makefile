@@ -19,33 +19,32 @@ COMMENT=	Quake 1 source port with advanced graphics
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	yes
-ONLY_FOR_ARCHS=	i386
 
-DATADIR=	${Q1DIR}
+OPTIONS=	X86_ASM "Enable use of x86 assembly code" on
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_0
 BUILD_WRKSRC=	${WRKSRC}/linux
-MAKE_ENV=	DATADIR="${DATADIR}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		SDL_CONFIG="${SDL_CONFIG}"
+MAKEFILE=	Makefile.i386linux
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include "${.CURDIR}/../quake-data/Makefile.include"
+.include <bsd.port.pre.mk>
 
-pre-patch:
-	@${REINPLACE_CMD} -e "s|$$(${PRINTF} '\r')||g" `${FIND} ${WRKSRC} -type f`
+.if !defined(WITHOUT_X86_ASM)
+MAKE_ENV+=	USE_ASM=1
+.endif
 
 pre-build:
-	@${LN} -sf ${WRKSRC}/linux/Makefile.i386linux ${WRKSRC}/linux/Makefile
+	@cd ${BUILD_WRKSRC} && ${LN} -sf Makefile.i386linux Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/debugi386.glibc/bin/${PORTNAME}.run \
-		${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Pak0.pak ${DATADIR}/${PORTNAME}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/bin/${PORTNAME} \
+		${PREFIX}/bin
+	@${MKDIR} ${Q1DIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Pak0.pak ${Q1DIR}/${PORTNAME}
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${TR} -d '\r' <${WRKDIR}/Tenebrae_Readme.txt \
@@ -53,6 +52,10 @@ do-install:
 .endif
 
 post-install:
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include "${.CURDIR}/../quake-data/Makefile.include"
+
+.include <bsd.port.post.mk>

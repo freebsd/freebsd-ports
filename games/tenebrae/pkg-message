@@ -1,4 +1,11 @@
-*******************************************************************************
-* Tenebrae Quake requires data files (id1 directory) from original game.
-* Before running Tenebrae install them using games/quake-data port.
-*******************************************************************************
+==============================================================================
+
+Tenebrae has been installed.
+
+If you hace sound problems try running it with the parameter
+"-sndspeed <speed>", where "<speed>" could be 22050 or 44100 for example.
+
+If you have rendering problems with water try to set the variable "r_novis" to
+the value "1".
+
+==============================================================================

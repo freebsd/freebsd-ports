@@ -1,5 +1,5 @@
---- gl_common.c.orig	Sun Mar 14 12:33:12 2004
-+++ gl_common.c	Sun Mar 14 12:35:26 2004
+--- ./gl_common.c.orig	Sat Jun 10 12:08:13 2006
++++ ./gl_common.c	Sat Jun 10 12:08:13 2006
 @@ -248,11 +248,11 @@
       if (!strstr(gl_extensions, "GL_ARB_texture_env_dot3")) {
            Sys_Error ("ARB_texture_env_dot3 not found.\nProbably your 3d-card is not supported.\n");
