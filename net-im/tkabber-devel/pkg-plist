@@ -524,6 +524,7 @@ bin/tkabber
 %%DATADIR%%/plugins/unix/menu.tcl
 %%DATADIR%%/plugins/unix/menu8.4.tcl
 %%DATADIR%%/plugins/unix/systray.tcl
+%%DATADIR%%/plugins/unix/tktray.tcl
 %%DATADIR%%/plugins/unix/wmdock.tcl
 %%DATADIR%%/plugins/windows/console.tcl
 %%DATADIR%%/plugins/windows/mousewheel.tcl
