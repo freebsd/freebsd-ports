@@ -6,39 +6,25 @@
 #
 
 PORTNAME=	xdrawchem
-PORTVERSION=	1.7.8
-PORTREVISION=	1
+PORTVERSION=	1.9.9
 CATEGORIES=	biology
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdrawchem
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	Chemical drawing program
 
 LIB_DEPENDS=	openbabel.1:${PORTSDIR}/science/openbabel
 
-BROKEN=		Configure fails
-
-CFLAGS+=	-O0
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-QTCFGLIBS+=	${PTHREAD_LIBS}
-QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 
-pre-configure:
-	${MKDIR} ${WRKDIR}
-	${ECHO_CMD} \
-	"Warning:  source code for this version has not been reviewed!" \
-		> ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} 
-	@${ECHO_CMD} Waiting ten seconds--press control-C to cancel build.
-	@sleep 10
+CONFIGURE_ENV=	QTINCDIR="${X11BASE}/include" \
+	QTLIBDIR="${X11BASE}/lib"
+
+MAKE_ARGS+=	LDFLAGS+="-lqt-mt ${PTHREAD_LIBS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
