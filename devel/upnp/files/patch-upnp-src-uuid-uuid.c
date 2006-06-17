@@ -1,6 +1,6 @@
---- upnp/src/uuid/uuid.c.orig	Sun Apr  6 02:30:20 2003
-+++ upnp/src/uuid/uuid.c	Sun Apr  6 02:30:41 2003
-@@ -21,6 +21,7 @@
+--- upnp/src/uuid/uuid.c.orig	Sat Jun 17 12:16:38 2006
++++ upnp/src/uuid/uuid.c	Sat Jun 17 12:16:52 2006
+@@ -22,6 +22,7 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <time.h>
