@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/ \
 		http://olofsson.de/mirror/distfiles/
@@ -52,9 +52,12 @@ SUBST_CMD+=	-e "s,\#Log /var/log/cups,Log ${LOG_DIRECTORY},"
 .endif
 
 pre-everything::
+.if !defined(PDF_VERSION) || !defined(HOME_SUBDIR) || \
+!defined(OUTPUT_DIRECTORY) || !defined(LOG_DIRECTORY)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
+.endif
 .if !defined(PDF_VERSION)
 	@${ECHO_MSG} "PDF_VERSION=1.2|1.3|1.4|1.5   PDF-version of PDF-files produced"
 .endif
@@ -70,9 +73,6 @@ pre-everything::
 	@${ECHO_MSG} "LOG_DIRECTORY=<dir>           Place logfile into <dir>/cups-pdf_log"
 .endif
 
-post-extract:
-	@${GUNZIP_CMD} ${WRKSRC}/extra/PostscriptColor.ppd.gz
-
 post-configure:
 	@${REINPLACE_CMD} ${SUBST_CMD} ${WRKSRC}/extra/cups-pdf.conf
 	@${REINPLACE_CMD} -e \
@@ -84,16 +84,19 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cups-pdf ${LOCALBASE}/libexec/cups/backend
-	${INSTALL_DATA} ${WRKSRC}/extra/PostscriptColor.ppd ${LOCALBASE}/share/cups/model
+	${INSTALL_DATA} ${WRKSRC}/extra/PostscriptColor_rev3b.ppd.gz \
+	${LOCALBASE}/share/cups/model/PostscriptColor.ppd.gz
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf ${LOCALBASE}/etc/cups/cups-pdf.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
+	${LOCALBASE}/etc/cups/cups-pdf.conf.sample
 .endif
 
 post-install:
 	@if [ ! -f ${LOCALBASE}/etc/cups/cups-pdf.conf ]; then \
-	${CP} -p ${LOCALBASE}/etc/cups/cups-pdf.conf.sample ${LOCALBASE}/etc/cups/cups-pdf.conf ; \
+	${CP} -p ${LOCALBASE}/etc/cups/cups-pdf.conf.sample \
+	${LOCALBASE}/etc/cups/cups-pdf.conf ; \
 	fi
 
 .include <bsd.port.post.mk>
