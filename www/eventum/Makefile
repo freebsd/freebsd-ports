@@ -7,7 +7,7 @@
 
 PORTNAME=	eventum
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	eventum
@@ -43,6 +43,9 @@ pre-everything::
 	@${ECHO_MSG} "WWWOWN    " ${WWWOWN}
 	@${ECHO_MSG} "WWWGRP    " ${WWWGRP}
 	@${ECHO_MSG} ""
+
+pre-configure:
+	@${RM} ${WRKSRC}/misc/monitor.php.orig
 
 pre-install:
 	@${MV} ${WRKSRC}/setup.conf.php ${WRKSRC}/setup.conf.php-dist
