@@ -6369,6 +6369,7 @@ mafft		ports/biology/mafft
 magic		ports/cad/magic
 magiccube4d	ports/games/magiccube4d
 magicfilter	ports/print/magicfilter
+magickwand	ports/graphics/magickwand
 magicpoint	ports/misc/magicpoint
 magicrescue	ports/sysutils/magicrescue
 magictun	ports/net/magictun
