@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="09429f7c-fd6e-11da-b1cd-0050bf27ba24">
+    <topic>horde -- multiple parameter cross site scripting
+      vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><le>3.1.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>FrSIRT advisory ADV-2006-2356 reports:</p>
+	<blockquote cite="http://www.frsirt.com/english/advisories/2006/2356">
+	  <p>Multiple vulnerabilities have been identified in Horde
+	    Application Framework, which may be exploited by attackers
+	    to execute arbitrary scripting code. These flaws are due
+	    to input validation errors in the "test.php" and
+	    "templates/problem/problem.inc" scripts that do not
+	    validate the "url", "name", "email", "subject" and
+	    "message" parameters, which could be exploited by
+	    attackers to cause arbitrary scripting code to be executed
+	    by the user's browser in the security context of an
+	    affected Web site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2195</cvename>
+      <url>http://www.frsirt.com/english/advisories/2006/2356</url>
+      <url>http://cvs.horde.org/diff.php?f=horde%2Ftest.php&amp;r1=1.145&amp;r2=1.146</url>
+      <url>http://cvs.horde.org/diff.php?f=horde%2Ftemplates%2Fproblem%2Fproblem.inc&amp;r1=2.25&amp;r2=2.26</url>
+    </references>
+    <dates>
+      <discovery>2006-06-10</discovery>
+      <entry>2006-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09c92f3a-fd49-11da-995c-605724cdf281">
     <topic>webcalendar -- information disclosure vulnerability</topic>
     <affects>
