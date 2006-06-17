@@ -1,0 +1,8 @@
+This module enables PHP access to the ImageMagick MagickWand API.
+
+Very good manual at http://www.bitweaver.org/doc/magickwand/index.html
+
+WWW: http://www.magickwand.org/script/index.php
+
+- Rick van der Zwet
+rick@wzoeterwoude.net
