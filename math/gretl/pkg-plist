@@ -14,8 +14,6 @@ include/gretl/discrete.h
 include/gretl/estimate.h
 include/gretl/forecast.h
 include/gretl/generate.h
-include/gretl/genrfuncs.h
-include/gretl/genstack.h
 include/gretl/graphing.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_errors.h
@@ -32,6 +30,7 @@ include/gretl/gretl_utils.h
 include/gretl/gretl_win32.h
 include/gretl/gretl_xml.h
 include/gretl/interact.h
+include/gretl/kalman.h
 include/gretl/libgretl.h
 include/gretl/libset.h
 include/gretl/missing.h
@@ -53,6 +52,7 @@ include/gretl/system.h
 include/gretl/texprint.h
 include/gretl/transforms.h
 include/gretl/tsls.h
+include/gretl/usermat.h
 include/gretl/var.h
 include/gretl/varprint.h
 lib/gretl-gtk2/arma.so
@@ -202,6 +202,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/arma.gdt
 %%DATADIR%%/data/misc/armaloop.gdt
 %%DATADIR%%/data/misc/b-g.gdt
+%%DATADIR%%/data/misc/bjg.gdt
 %%DATADIR%%/data/misc/denmark.gdt
 %%DATADIR%%/data/misc/descriptions
 %%DATADIR%%/data/misc/djclose.gdt
@@ -286,6 +287,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/greene9_3.inp
 %%DATADIR%%/scripts/misc/arma.inp
 %%DATADIR%%/scripts/misc/armaloop.inp
+%%DATADIR%%/scripts/misc/bjg.inp
 %%DATADIR%%/scripts/misc/ects_nls.inp
 %%DATADIR%%/scripts/misc/garch.inp
 %%DATADIR%%/scripts/misc/jgm-1996.inp
