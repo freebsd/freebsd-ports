@@ -4,8 +4,8 @@
      return $snapshot
  }
  
--set version "0.9.8-alpha[get_snapshot [file join $rootdir ChangeLog]]"
-+set version "0.9.8-alpha[get_snapshot [file join $rootdir version]]"
+-set version "0.9.9-alpha[get_snapshot [file join $rootdir ChangeLog]]"
++set version "0.9.9-alpha[get_snapshot [file join $rootdir version]]"
  set toolkit_version "Tcl/Tk [info patchlevel]"
  set debug_lvls {}
  

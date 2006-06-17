@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.8.a.20060521
+PORTVERSION=	0.9.9.a.20060612
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -30,6 +30,8 @@ USE_TK=		yes
 
 SUBDIRS=	aniemoteicons emoticons-tkabber ifaceck ifacetk plugins \
 		jabberlib-tclxml pixmaps sounds textundo msgs mclistbox-1.02
+
+OPTIONS=	ZLIB "with zlib support" off
 
 do-install:
 	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
@@ -59,4 +61,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ZLIB)
+LIB_DEPENDS+=	ztcl[0-9]:${PORTSDIR}/devel/ztcl
+.endif
+
+.include <bsd.port.post.mk>
