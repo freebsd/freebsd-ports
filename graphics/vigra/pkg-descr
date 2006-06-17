@@ -5,6 +5,7 @@ the C++ Standard Template Library, you can easily adapt any VIGRA
 component to the needs of your application, without thereby giving up
 execution speed.
 
+Author: Ullrich Koethe <koethe@informatik.uni-hamburg.de>
 WWW: http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
 
 - Ported by Cartola
