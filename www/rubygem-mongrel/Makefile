@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	mongrel
-PORTVERSION=	0.3.12.4
+PORTVERSION=	0.3.13
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9700/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/11113/
 
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
@@ -16,15 +16,18 @@ BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-daemons>=0.4.4:${PORTSDIR}/devel/rubygem-daemons
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+post-install:
+	@${RM} -rf "${PREFIX}/${GEM_LIB_DIR}/ext"
+
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
 	| ${SED} -E \
 		's,.*share/nls/.+$$,,g \
-		;s,^${CACHE_DIR}(/.+)$$,%%CACHE_DIR%%\1,g \
+		;s,^${GEM_CACHE}$$,%%GEM_CACHE%%,g \
 		;s,${GEM_DOC_DIR}(/.+)?$$,%%GEM_DOC_DIR%%\1,g \
 		;s,${GEM_LIB_DIR}(/.+)?$$,%%GEM_LIB_DIR%%\1,g \
-		;s,^${SPEC_DIR}(/.+)$$,%%SPEC_DIR%%\1,g \
+		;s,^${GEM_SPEC}$$,%%GEM_SPEC%%,g \
 		;s,^${GEMS_BASE_DIR}/(.+)$$,\1,g \
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
