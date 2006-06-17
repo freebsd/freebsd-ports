@@ -1,5 +1,5 @@
---- FreeBSD/vpb.c	Mon May  3 13:49:58 2004
-+++ FreeBSD/vpb.c	Mon Mar 14 10:47:29 2005
+--- FreeBSD/vpb.c.orig	Mon May  3 05:49:58 2004
++++ FreeBSD/vpb.c	Mon Apr 10 09:35:03 2006
 @@ -52,8 +52,6 @@
  #define BLOCK_DELAY  1       /* delay (us) between adjacent blocks           */
  #define SIZE_LCR     128     /* size of 9050 local config reg space in bytes */
@@ -38,7 +38,7 @@
  #include <machine/clock.h>	
  #include <vm/vm.h>	
  #include <vm/pmap.h>	
-@@ -113,26 +115,34 @@
+@@ -113,26 +115,36 @@
  \*---------------------------------------------------------------------------*/
  
  /* Character device entry points */
@@ -71,7 +71,7 @@
 -  nopsize,
 -  D_TTY,
 -  -1
-+#if __FreeBSD_version > 503000
++#if __FreeBSD_version > 502103
 +	.d_version =	D_VERSION,
 +#endif
 +        .d_open =       vpb_open,
@@ -80,7 +80,9 @@
 +        .d_write =      vpb_write,
 +        .d_ioctl =      vpb_ioctl,
 +        .d_name =       "vpb",
++#if __FreeBSD_version < 502103
 +        .d_maj =        CDEV_MAJOR,
++#endif
  };
  
  /* number of valid PCI devices detected */
@@ -89,7 +91,7 @@
  
  /* translated base address of PLX9050 regions */
  static unsigned char  *base0[MAX_V4PCI];
-@@ -144,7 +154,7 @@
+@@ -144,7 +156,7 @@
  static short buf[SIZE_WD];
  
  /* vars */
@@ -98,7 +100,7 @@
  
  static device_method_t vpb_methods[] = {
    /* Device interface */
-@@ -154,15 +164,19 @@
+@@ -154,15 +166,19 @@
    DEVMETHOD(device_shutdown,  vpb_shutdown),
    DEVMETHOD(device_suspend,   vpb_suspend),
    DEVMETHOD(device_resume,    vpb_resume),
@@ -120,7 +122,7 @@
  };
  
  static devclass_t vpb_devclass;
-@@ -173,7 +187,7 @@
+@@ -173,7 +189,7 @@
         open/close/read/write at this point */
  
  static int
@@ -129,7 +131,7 @@
  {
    int err = 0;
  
-@@ -181,7 +195,7 @@
+@@ -181,7 +197,7 @@
  }
  
  static int
@@ -138,7 +140,7 @@
  {
    int err=0;
  
-@@ -189,7 +203,7 @@
+@@ -189,7 +205,7 @@
  }
  
  static int
@@ -147,7 +149,7 @@
  {
    int err = 0;
  
-@@ -197,7 +211,7 @@
+@@ -197,7 +213,7 @@
  }
  
  static int
@@ -156,7 +158,7 @@
  {
    int err = 0;
  
-@@ -205,7 +219,7 @@
+@@ -205,7 +221,7 @@
  }
  
  static int
@@ -165,7 +167,7 @@
  {	
    VPB_DATA *vpb_data;  /* ioctl parameters from user space */
    short    *data;      /* user space address of data       */
-@@ -318,8 +332,14 @@
+@@ -318,8 +334,14 @@
    int         subsystem;
    char        *s; 
  
@@ -180,7 +182,7 @@
      /* check that subsytem ID & Subsytem Vendor matches */
      subsystem = pci_read_config(dev, 0x2c, 4);
      s = (char*)&subsystem;
-@@ -327,7 +347,7 @@
+@@ -327,7 +349,7 @@
      if ((s[3] == 'V') && (s[2] == '4') && (s[1] == 'V') && (s[0] == 'T')) {
        
        printf("V4PCI %d found!\n", numPCI);
@@ -189,7 +191,7 @@
        return 0;
      }
    }
-@@ -341,13 +361,16 @@
+@@ -341,13 +363,16 @@
  vpb_attach(device_t dev)
  {
    vm_offset_t paddr;
@@ -208,7 +210,7 @@
  
    /* OK, V4PCI found, so map address regions..... */
    paddr = (vm_offset_t)pci_read_config(dev, PCI_BASE_ADDR0, 4) & ~0xf;
-@@ -357,7 +380,9 @@
+@@ -357,7 +382,9 @@
    base2[numPCI] = pmap_mapdev(paddr, sizeof(short)*SIZE_WD);
  
    /* set wait-states */
@@ -219,7 +221,7 @@
  
    numPCI++;
  
-@@ -369,6 +394,11 @@
+@@ -369,6 +396,11 @@
  static int
  vpb_detach(device_t dev)
  {
@@ -231,7 +233,7 @@
    return 0;
  }
  
-@@ -491,4 +521,4 @@
+@@ -491,4 +523,4 @@
          cntrl &= 1;
          return(cntrl);
  }

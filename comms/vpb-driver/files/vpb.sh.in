@@ -21,7 +21,7 @@ name=vpb_driver
 rcvar=`set_rcvar`
 
 required_dirs=
-vpb_module=%%PREFIX%%/lib/vpb.ko
+vpb_module=%%KMODDIR%%/vpb.ko
 required_files=${vpb_module}
 
 start_cmd=start_cmd
