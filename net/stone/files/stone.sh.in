@@ -14,8 +14,6 @@
 #				Default: "" (-D will be added automatically)
 # stone_conffile (str):		Stone config file
 #				Default: ""
-#				You can find an example in 
-#				%%PREFIX%%/share/examples/stone/
 #
 
 . %%RC_SUBR%%
