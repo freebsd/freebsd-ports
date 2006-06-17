@@ -1,5 +1,5 @@
---- share/Makefile.in.orig	Wed Dec 14 00:24:43 2005
-+++ share/Makefile.in	Fri Jan  6 22:59:04 2006
+--- share/Makefile.in.orig	Thu Feb  2 03:39:37 2006
++++ share/Makefile.in	Tue Jun 13 22:39:26 2006
 @@ -1,15 +1,16 @@
  topsrc = @top_srcdir@
  
@@ -19,7 +19,7 @@
  
  ifeq ($(build_docs),yes)
    AUTO_HELPFILES = \
-@@ -46,14 +47,14 @@
+@@ -46,17 +47,17 @@
  all: $(AUTO_HELPFILES)
  
  $(AUTO_HELPFILES): 
@@ -27,6 +27,10 @@
 +	$(MAKE) -C ../doc/commands help-all
  
  .PHONY :
+ 
+ help:
+-	make -C ../doc/commands help-all
++	$(MAKE) -C ../doc/commands help-all
  
  install: installdirs install_datafiles install_scripts install_help \
  	$(INSTALL_GUI_SCRIPT_HELP) $(INSTALL_HELP_FIGS)
@@ -36,7 +40,7 @@
  
  install-strip: install
  
-@@ -76,8 +77,8 @@
+@@ -79,8 +80,8 @@
  	$(INSTALL_DATA) $$f $(gretldir)/scripts/misc ; done
  
  install_man: gretl.1
