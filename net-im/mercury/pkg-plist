@@ -60,52 +60,54 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/StatusIcons/M_Scarecrow 32p.zip
 %%INSTDIR%%/resources/AppData/StatusIcons/M_jMSN.zip
 %%INSTDIR%%/resources/AppData/Themes/.keep_me
-%%INSTDIR%%/resources/AppData/Views/ColorExample_GroupView/Example.html
-%%INSTDIR%%/resources/AppData/Views/ColorExample_GroupView/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias_DP.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias_MSNName.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Alias_SI.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/D1.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/DP_SI.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/Email.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/LargeDP_Alias_PM_Song.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/LargeDP_MsnName_PM_Song.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/MSN7.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/MSN7_Full.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/MSNName.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLContact/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/Default.html
-%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/collapsed.png
-%%INSTDIR%%/resources/AppData/Views/Default_CLGroup/expanded.png
-%%INSTDIR%%/resources/AppData/Views/Default_Chat/Default.html
-%%INSTDIR%%/resources/AppData/Views/Default_Chat/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/close_button.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/dpimg_border.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/index.html
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/left_arrow.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back_bot.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back_left.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_back_right.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_left.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_left_bot.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_right.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_right_bot.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/msn_shadow.png
-%%INSTDIR%%/resources/AppData/Views/Default_ContactCard/right_arrow.png
-%%INSTDIR%%/resources/AppData/Views/Default_General/Alias.txt
-%%INSTDIR%%/resources/AppData/Views/Default_General/Alias_MSNName.txt
-%%INSTDIR%%/resources/AppData/Views/Default_General/Email.txt
-%%INSTDIR%%/resources/AppData/Views/Default_General/MSNName.txt
-%%INSTDIR%%/resources/AppData/Views/Default_General/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_IM/Colors1.html
-%%INSTDIR%%/resources/AppData/Views/Default_IM/Colors2.html
-%%INSTDIR%%/resources/AppData/Views/Default_IM/Default.html
-%%INSTDIR%%/resources/AppData/Views/Default_IM/View.xml
-%%INSTDIR%%/resources/AppData/Views/Default_MultiConvoList/Default.html
-%%INSTDIR%%/resources/AppData/Views/Default_MultiConvoList/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/ColorExample_GroupView/Example.html
+%%INSTDIR%%/resources/AppData/Views/MSN/ColorExample_GroupView/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Alias_DP.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Alias_MSNName.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Alias_SI.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/D1.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/DP_SI.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/Email.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/LargeDP_Alias_PM_Song.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/LargeDP_MsnName_PM_Song.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/MSN7.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/MSN7_Full.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/MSNName.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/collapsed.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup/expanded.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/close_button.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/dpimg_border.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/index.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/left_arrow.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back_bot.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back_left.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_back_right.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_left.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_left_bot.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_right.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_right_bot.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/msn_shadow.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard/right_arrow.png
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/Alias.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/Alias_MSNName.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/Email.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/MSNName.txt
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_General/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/Colors1.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/Colors2.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/View.xml
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList/Default.html
+%%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList/View.xml
+%%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/JID.html
+%%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/View.xml
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/Wink.cab
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/content.xml
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/crying.png
@@ -189,14 +191,15 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Window_Basic_Global.xml
 %%INSTDIR%%/resources/settings/Window_View.xml
 %%INSTDIR%%/resources/settings/Wizard_FirstTime_Account.xml
+%%INSTDIR%%/resources/text/EventLog.xsl
 %%INSTDIR%%/resources/text/JabberServers.xml
 %%INSTDIR%%/resources/text/Locations.xml
 %%INSTDIR%%/resources/text/MessageLog.xsl
 %%INSTDIR%%/resources/text/RSSFeeds.xml
 %%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
 @dirrm %%INSTDIR%%/resources/text
-@dirrm %%INSTDIR%%/resources/scripts
 @dirrm %%INSTDIR%%/resources/settings
+@dirrm %%INSTDIR%%/resources/scripts
 @dirrm %%INSTDIR%%/resources/menu
 @dirrm %%INSTDIR%%/resources/lang
 @dirrm %%INSTDIR%%/resources/UI/panels
@@ -218,14 +221,17 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Winks/NVNZQXpvRkwyR3VtL0VOMnVMc2tPaURNMGFFPQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==
 @dirrm %%INSTDIR%%/resources/AppData/Winks
-@dirrm %%INSTDIR%%/resources/AppData/Views/Default_MultiConvoList
-@dirrm %%INSTDIR%%/resources/AppData/Views/Default_IM
-@dirrm %%INSTDIR%%/resources/AppData/Views/Default_General
-@dirrm %%INSTDIR%%/resources/AppData/Views/Default_ContactCard
-@dirrm %%INSTDIR%%/resources/AppData/Views/Default_Chat
-@dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLGroup
-@dirrm %%INSTDIR%%/resources/AppData/Views/Default_CLContact
-@dirrm %%INSTDIR%%/resources/AppData/Views/ColorExample_GroupView
+@dirrm %%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact
+@dirrm %%INSTDIR%%/resources/AppData/Views/XMPP
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_IM
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_General
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_ContactCard
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_Chat
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_CLGroup
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/Default_CLContact
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN/ColorExample_GroupView
+@dirrm %%INSTDIR%%/resources/AppData/Views/MSN
 @dirrm %%INSTDIR%%/resources/AppData/Views
 @dirrm %%INSTDIR%%/resources/AppData/Themes
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons/J_ICQ
