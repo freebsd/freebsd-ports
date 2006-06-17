@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	3.4
-PORTREVISION=	2
+PORTVERSION=	3.5
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,15 +32,6 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-.endif
-
-.if defined(WITH_PGSQL)
-USE_PGSQL=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--enable-mysql
 PLIST_SUB+=	MYSQL=""
 .else
@@ -49,6 +39,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--enable-psql
 PLIST_SUB+=	PGSQL=""
 .else
@@ -56,7 +47,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+USE_SQLITE=	yes
 CONFIGURE_ARGS+=	--enable-sqlite \
 		--with-sqlite-libs="${LOCALBASE}/lib" \
 		--with-sqlite-includes="${LOCALBASE}/include"
@@ -111,4 +102,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
