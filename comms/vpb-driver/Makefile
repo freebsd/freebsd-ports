@@ -7,7 +7,7 @@
 
 PORTNAME=	vpb-driver
 PORTVERSION=	2.4.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.voicetronix.com/Downloads/
 
@@ -18,7 +18,11 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	vpb.sh
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MAKE_ENV+=	KMODDIR=${PREFIX}/lib
+KMODDIR?=	/boot/modules
+MAKE_ENV+=	KMODDIR=${KMODDIR}
+
+PLIST_SUB+=	KMODDIR=${KMODDIR}
+SUB_LIST+=	KMODDIR=${KMODDIR}
 
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -36,8 +40,8 @@ IGNORE=		requires kernel source (/usr/src/sys) to build
 BROKEN=	Does not compile on sparc64
 .endif
 
-.if ${OSVERSION} < 502000 || ${OSVERSION} >= 600000
-IGNORE=		is not for FreeBSD versions < 502000, or >= 600000
+.if ${OSVERSION} < 502000
+IGNORE=		is not for FreeBSD versions < 502000
 .endif
 
 do-configure:
