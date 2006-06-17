@@ -8,6 +8,7 @@
 
 PORTNAME=	linux_base-rh
 PORTVERSION=	9
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX} \
 		${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
@@ -54,8 +55,13 @@ COMMENT=	Base set of packages needed in Linux mode (only for i386)
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=		linux_base-7* linux_base-8* \
+CONFLICTS=		linux_base-7* linux_base-8* linux_base-fc* \
 			linux_base-debian* linux_base-gentoo* linux_base-suse*
+
+DEPRECATED=	unsupported by upstream, no security support anymore
+EXPIRATION_DATE=2006-09-01
+IGNORE=		${DEPRECATED}
+
 RESTRICTED=		"binaries under GNU GPL without accompanying source"
 ONLY_FOR_ARCHS=		amd64 i386
 DIST_SUBDIR=		rpm/i386/rh9

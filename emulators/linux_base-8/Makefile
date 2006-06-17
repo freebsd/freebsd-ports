@@ -8,7 +8,7 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		15
+PORTREVISION=		16
 CATEGORIES=		emulators linux
 MASTER_SITES=		http://download.fedoralegacy.org/redhat/%SUBDIR%/ \
 			ftp://mirror.switch.ch/mirror/ximian/mono/redhat-80-i386/:ft
@@ -93,6 +93,11 @@ ALWAYS_KEEP_DISTFILES=	yes
 
 CONFLICTS=	linux_base-7* linux_base-deb* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse* linux_base-fc-*
+
+DEPRECATED=	unsupported by upstream, no security support anymore
+EXPIRATION_DATE=2006-09-01
+IGNORE=		${DEPRECATED}
+
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm/${ARCH}/${PORTVERSION}
 PREFIX?=		${LINUXBASE}

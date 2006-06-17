@@ -9,6 +9,7 @@
 
 PORTNAME=		linux_base-suse
 PORTVERSION=		9.2
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_SUSE} ${MASTER_SITE_SUSE:S/$/:update/}
 MASTER_SITE_SUBDIR=	i386/9.2/suse/i586 i386/update/9.2/rpm/i586/:update
@@ -47,8 +48,12 @@ COMMENT=		Basic packages for Linux mode from SUSE 9.2/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=		linux_base-7* linux_base-debian* \
+CONFLICTS=		linux_base-7* linux_base-debian* linux_base-fc* \
 			linux_base-gentoo* linux_base-rh* linux_base-suse-9.1*
+
+DEPRECATED=	unmaintained and does not comply to the linux_base invariants
+EXPIRATION_DATE=2006-09-01
+IGNORE=		${DEPRECATED}
 
 RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
 ONLY_FOR_ARCHS=		amd64 i386
