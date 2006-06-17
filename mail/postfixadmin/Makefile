@@ -7,26 +7,41 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.1.0
-PORTREVISION=	1
-CATEGORIES=	mail
+PORTREVISION=	2
+CATEGORIES=	mail www
 MASTER_SITES=	http://high5.net/postfixadmin/ \
-		http://high5.net/postfixadmin/download.php?file=
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	itetcu@FreeBSD.org
-COMMENT=	PHP frontend to postfix and mySQL
+COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 
 WANT_PHP_PEAR=	yes
 NO_BUILD=	yes
+USE_APACHE=	1.3+
 
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-FETCH_CMD?=	/usr/bin/fetch -AR
+SUB_FILES+=	pkg-message
 
-.if defined (WITH_PGSQL)
-USE_PHP=	pgsql
-.else
+OPTIONS=	MYSQL "Use MySQL to store config data" on
+OPTIONS+=	PGSQL "Use PostgresQL to store config data" off
+
+.include <bsd.port.pre.mk>
+
+RUN_DEPENDS+=	postfix>=2[0-9]*:${PORTSDIR}/mail/postfix
+
+.ifndef(WITHOUT_MYSQL)
 USE_PHP=	mysql
 .endif
+
+.ifdef(WITH_PGSQL)
+USE_PHP=	pgsql
+.endif
+
+.ifdef(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
+IGNORE=	needs at least one database backend
+.endif
+
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 post-patch:
 		${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -59,6 +74,7 @@ post-install:
 		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/admin/*.php
 		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/users/*.php
 		@${CHMOD} 640 ${PREFIX}/www/postfixadmin/templates/*.tpl
-		@${CAT} ${PKGMESSAGE}
+		${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+# DO NOT DELETE

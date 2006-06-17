@@ -1,15 +1,10 @@
 Postfix Admin is a Web Based Management tool for Postfix when you
 are dealing with Postfix Style Virtual Domains and Virtual Users
-that are stored in MySQL. It's written in PHP.
+that are stored in MySQL or Postgres. It's written in PHP.
 
 Postfix Admin supports:
 	- Virtual Mailboxes / Virtual Aliases / Forwarders.
 	- Domain to Domain forwarding / Catch-All.
 	- Vacation for Virtual Mailboxes (with the additional module).
-Requirements:
-	- Postfix 2.0 or higher.
-	- Apache 1.3.27 or higher.
-	- PHP 4.1 or higher.
-	- MySQL 3.23.55 or higher.
 
-WWW:	http://www.high5.net/postfixadmin
+WWW:	http://high5.net/postfixadmin/
