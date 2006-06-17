@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	2.03
+PORTVERSION=	2.05
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +15,18 @@ DISTNAME=	Xnee-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X events recorder and player
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-doc
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --enable-cli --disable-doc
 
+MAN1=		cnee.1
 INFO=		xnee
 PLIST_FILES=	bin/cnee \
-		lib/libxnee.a \
 		share/Xnee/example1.xns \
 		share/Xnee/simple_bash.sh \
 		share/Xnee/xnee.sh
@@ -40,11 +43,13 @@ CONFIGURE_ARGS+=	--disable-gui
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/bin|!#!${LOCALBASE}/bin|g' \
-		${WRKSRC}/examples/simple_bash.sh
+	@${REINPLACE_CMD} -e \
+		's|make man|$$(MAKE) man|g' ${WRKSRC}/cnee/Makefile.in
+
+post-build:
+	cd ${WRKSRC}/doc && ${LOCALBASE}/bin/makeinfo --no-split xnee.texi
 
 post-install:
-	cd ${WRKSRC}/doc && makeinfo --no-split xnee.texi
 	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.post.mk>
