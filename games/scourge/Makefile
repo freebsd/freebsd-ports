@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	scourge
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	scourge
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+RUN_DEPENDS=	${DATADIR}/world/gui.txt:${PORTSDIR}/games/scourge-data
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer net
 USE_GMAKE=	yes
@@ -29,7 +30,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
 
+PLIST_FILES=	bin/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}
+
 OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -37,9 +43,5 @@ CONFIGURE_ARGS+=	--enable-debug
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/data && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
