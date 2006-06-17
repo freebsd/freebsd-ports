@@ -29,7 +29,7 @@ USE_GNOME=	pkgconfig
 WRKSRC=		${WRKDIR}/ACE_wrappers
 BUILD_WRKSRC=	${WRKSRC}/objdir
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-NOT_FOR_ARCH=	sparc64
+NOT_FOR_ARCHS=	sparc64
 
 MAN1=		ace-gperf.1
 
