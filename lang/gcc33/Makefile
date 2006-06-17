@@ -47,20 +47,16 @@ SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls \
+CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
 		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
-MAKE_ARGS=	MAKEINFOFLAGS="--no-split"
+MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 MAKE_ENV=	LD_LIBRARY_PATH=.:${WRKSRC}/gcc
 ALL_TARGET=	bootstrap-lean
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${TARGLIB}
-SUB_LIST=	TARGLIB="${TARGLIB}"
-SUB_FILES=	gcc.sh
-RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
+USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
@@ -96,8 +92,6 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	-@${MKDIR} ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
