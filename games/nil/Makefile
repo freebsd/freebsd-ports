@@ -6,43 +6,45 @@
 #
 
 PORTNAME=	nil
-PORTVERSION=	000928
-PORTREVISION=	2
+DISTVERSION=	20050603-1400
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sobomax
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-cvs-backup-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multiplayer game that can be described as Quake in 2D or Worms done right
+COMMENT=	A multiplayer game like Quake in 2D or Worms done right
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
-USE_SDL=	mixer sdl
+
+OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name configure -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		's|[[:<:]]make[[:>:]]|${GMAKE}|; \
+		 s|sdl-config|${SDL_CONFIG}|'
+	@${REINPLACE_CMD} -e 's|\.\./data|${DATADIR}|' \
+		${WRKSRC}/src/common/configuration/configuration.cpp
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+	@${REINPLACE_CMD} -e 's|\(--subcall\)|\1 --enable-optimize|' \
+		${WRKSRC}/configure
 .endif
 
-pre-patch:
-	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
-		${XARGS} ${REINPLACE_CMD} -e 's|"SDL/|"|g ; s|<SDL/|<|g'
-	@${FIND} ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf
-	@${REINPLACE_CMD} -e 's|iostream.h|iostream|' ${WRKSRC}/nil/systemheaders.h
-
-post-configure:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/nil/configuration.cpp
-
-post-install:
-	@${MKDIR} ${PREFIX}/share/nil
-	@cd ${WRKSRC}/..; ${TAR} cf - gfx | \
-		(cd ${PREFIX}/share/nil ; ${TAR} --unlink -xf - )
-	@${INSTALL_MAN} ${WRKSRC}/../docs/NiL-HOWTO.txt ${PREFIX}/share/nil/README
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See ${PREFIX}/share/nil/README for usage instructions."
-	@${ECHO_MSG} ""
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/data/* ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/HOWTO ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
