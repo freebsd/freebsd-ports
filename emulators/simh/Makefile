@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTVERSION=	3.6.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}hv35-2
+DISTNAME=	${PORTNAME}hv36-0
 
 MAINTAINER=	mmendez@energyhq.be
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
@@ -22,20 +21,19 @@ RESTRICTED=	Non-commercial use only
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
-SHELL=${SH}
-
 OPTIONS=	NETWORK	"Enable Sim_Ether module (and ports libpcap)"	on
 
 BIN_FILES=	altair    h316   ibm1130 nova  pdp15 pdp9 vax780 \
 		altairz80 hp2100 id16    pdp1  pdp4  s3          \
-		eclipse   i1401  id32    pdp10 pdp7  sds         \
+		i1401  id32    pdp10 pdp7  sds         \
 		gri       i1620  lgp     pdp11 pdp8  vax
 
-PORTDOCS=	0readme_35.txt simh_doc.txt simh_swre.txt \
-		0readme_ethernet.txt simh_faq.txt
+PORTDOCS=	0readme_36.txt 0readme_ethernet.txt
 
-PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin
+PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin bin/sim-eclipse
 PLIST_DIRS=	%%DATADIR%%
+
+SUB_FILES+=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +51,8 @@ do-install:
 .for file in ${BIN_FILES}
 	${INSTALL_PROGRAM} ${WRKDIR}/BIN/${file} ${PREFIX}/bin
 .endfor
+# eclipse conflicts with java/eclipse, install it as sim-eclipse
+	${INSTALL_PROGRAM} ${WRKDIR}/BIN/eclipse ${PREFIX}/bin/sim-eclipse
 
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${DATADIR}
@@ -65,6 +65,6 @@ do-install:
 .endif
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
