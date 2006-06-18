@@ -24,6 +24,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		PFProAPI.3
 
+.include <bsd.port.pre.mk>
+
 RESTRICTED=	Only for VeriSign PayFlow Pro customers
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		${RESTRICTED}. See ${PORTSDIR}/finance/pfpro for instructions
@@ -32,4 +34,4 @@ IGNORE=		${RESTRICTED}. See ${PORTSDIR}/finance/pfpro for instructions
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${LOCALBASE}|" ${WRKSRC}/PFProAPI.pm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
