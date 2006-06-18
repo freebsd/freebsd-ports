@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
@@ -21,10 +20,10 @@ USE_PHP=	mysql pcre pdf session xml xmlrpc zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
-pre-fetch:
+pre-everything::
 .if !defined(PHPMYFAQ)
 	 @${ECHO_MSG} ""
-	 @${ECHO_MSG} "Define PHPMYFAQ to override default of '${PREFIX}/${PHPMYFAQ}'."
+	 @${ECHO_MSG} "Define PHPMYFAQ to override default installation place of '${PREFIX}/${PHPMYFAQ}'."
 	 @${ECHO_MSG} ""
 .endif
 
