@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.5.0+2
+DISTVERSION=	0.5.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,8 +33,5 @@ PLIST_FILES=	bin/aria2c \
 .if ${OSVERSION} < 500000
 BROKEN=	Does not build on 4.x
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/SA_ONESHOT/SA_RESETHAND/g' ${WRKSRC}/src/main.cc
 
 .include <bsd.port.post.mk>
