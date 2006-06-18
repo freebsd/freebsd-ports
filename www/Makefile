@@ -505,6 +505,7 @@
     SUBDIR += p5-CGI-Simple
     SUBDIR += p5-CGI-SpeedyCGI
     SUBDIR += p5-CGI-Untaint
+    SUBDIR += p5-CGI-Untaint-date
     SUBDIR += p5-CGI-Untaint-email
     SUBDIR += p5-CGI-Upload
     SUBDIR += p5-CGI-XMLApplication
