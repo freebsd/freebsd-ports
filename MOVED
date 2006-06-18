@@ -2379,3 +2379,4 @@ x11-toolkits/fox|x11-toolkits/fox10|2006-06-10|Renamed
 x11-toolkits/fox-devel|x11-toolkits/fox14|2006-06-10|Renamed
 databases/arcexplorer||2006-06-14|Has expired: Download unavailable anymore
 www/linux-flashplugin6||2006-06-14|Has expired: "This port has known security flaws that are not likely to be fixed"
+lang/glibstdc++28||2006-06-18|Has expired: Use any variant of lang/gcc that is less than six years old instead
