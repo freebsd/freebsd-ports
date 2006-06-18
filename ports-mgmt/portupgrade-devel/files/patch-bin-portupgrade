@@ -1,0 +1,11 @@
+--- bin/portupgrade.orig	Sun Jun 18 22:23:44 2006
++++ bin/portupgrade	Sun Jun 18 22:24:10 2006
+@@ -774,7 +774,7 @@
+     cmdargs << 'ECHO_MSG=/usr/bin/true'
+   end
+ 
+-  cmdargs << 'config'
++  cmdargs << 'config-conditional'
+ 
+   progress_message "Run 'make config' for #{origin}"
+   if ! system "cd #{portdir} && #{shelljoin(*cmdargs)}"
