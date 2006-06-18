@@ -8495,6 +8495,7 @@ p5-File-Grep	ports/devel/p5-File-Grep
 p5-File-HomeDir	ports/devel/p5-File-HomeDir
 p5-File-Lock	ports/devel/p5-File-Lock
 p5-File-MMagic	ports/devel/p5-File-MMagic
+p5-File-MMagic-XS	ports/devel/p5-File-MMagic-XS
 p5-File-MimeInfo	ports/devel/p5-File-MimeInfo
 p5-File-Modified	ports/devel/p5-File-Modified
 p5-File-NCopy	ports/devel/p5-File-NCopy
