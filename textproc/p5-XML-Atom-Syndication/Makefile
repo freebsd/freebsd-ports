@@ -5,11 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Atom-Syndication
-PORTVERSION=	0.901
+PORTVERSION=	0.910
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.91
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple lightweight client for consuming Atom syndication feeds
@@ -34,6 +35,17 @@ MAN3=	XML::Atom::Syndication.3 \
 	XML::Atom::Syndication::Person.3 \
 	XML::Atom::Syndication::Source.3 \
 	XML::Atom::Syndication::Text.3 \
-	XML::Atom::Syndication::Writer.3 \
+	XML::Atom::Syndication::Writer.3
 
-.include <bsd.port.mk>
+post-patch:
+	@${RM} ${WRKSRC}/._*
+	@${RM} ${WRKSRC}/lib/XML/Atom/._*
+	@${RM} ${WRKSRC}/lib/XML/Atom/Syndication/._*
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600 # inherited from p5-XML-Elemental
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
