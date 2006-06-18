@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aMule
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	net-p2p
 #MASTER_SITES=	http://download.berlios.de/amule/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -27,9 +27,11 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debug \
+		--mandir=${MANPREFIX}/man \
 		--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
