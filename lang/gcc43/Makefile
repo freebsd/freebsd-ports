@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20060610
+PORTREVISION=	20060617
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -71,11 +71,7 @@ CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${TARGLIB}
-SUB_LIST=	TARGLIB="${TARGLIB}"
-SUB_FILES=	gcc.sh
-RC_D_SH=	etc/rc.d/gcc${SUFFIX}.sh
+USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET} \
 		SUFFIX=${SUFFIX}
 MAN1=		cpp${SUFFIX}.1 \
@@ -146,8 +142,7 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	-@${MKDIR} ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
+	-@${MKDIR} ${PREFIX}/libdata/ldconfig
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
