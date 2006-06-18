@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3"
+.TH stone 1 "version 2.3b"
 .
 .SH 名称
 stone \- Simple Repeater
@@ -45,7 +45,7 @@ UNIX マシンでも使うことができます。
 .
 .TP
 .B 2. 単純
-わずか 8000 行 (C 言語) ですので、セキュリティホールが生じる可能
+わずか 9000 行 (C 言語) ですので、セキュリティホールが生じる可能
 性を最小限にできます。
 .
 .TP
@@ -231,9 +231,9 @@ SSL オプションの re\fIn\fP= で指定した正規表現中、
 .IP (3)
 proxy \fIsport\fP [\fIxhost\fP...]
 .IP (4)
-\fIhost\fP:\fIport\fP/http \fIrequest\fP [\fIxhost\fP...]
+\fIhost\fP:\fIport\fP/http \fIsport\fP \fIrequest\fP [\fIxhost\fP...]
 .IP (5)
-\fIhost\fP:\fIport\fP/proxy \fIheader\fP [\fIxhost\fP...]
+\fIhost\fP:\fIport\fP/proxy \fIsport\fP \fIheader\fP [\fIxhost\fP...]
 .IP (6)
 health \fIsport\fP [\fIxhost\fP...]
 .PD
@@ -273,6 +273,20 @@ proxy の接続先を IPv6 アドレスに限定します。
 接続元の IP アドレス
 .IP \\\\A
 「接続元の IP アドレス」:「ポート番号」
+.IP \\\\d
+接続先の IP アドレス
+.IP \\\\D
+「接続先の IP アドレス」:「ポート番号」(透過プロキシ用)
+.IP \\\\u
+接続元のユーザ ID (番号)
+.IP \\\\U
+接続元のユーザ名
+.IP \\\\g
+接続元のグループ ID (番号)
+.IP \\\\G
+接続元のグループ名
+.br
+\\u \\U \\g \\G は UNIX ドメインソケットの場合のみ
 .IP \\\\0
 SSL 証明書のシリアル番号
 .IP "\\\\1 - \\\\9"
@@ -286,6 +300,8 @@ SSL オプションの re\fIn\fP= で指定した正規表現中、
 .P
 (5) は、http リクエストヘッダの先頭に \fIheader\fP を追加して中継し
 ます。(4) と同様のエスケープを使うことができます。
+\fI/proxy\fP の代わりに \fI/mproxy\fP を指定すると、
+リクエストヘッダごとに \fIheader\fP を追加します。
 .P
 (6) は、\fBstone\fP が正常に動作しているか検査するためのポートの指定で
 す。\fIsport\fP で指定したポートに接続して以下のコマンドを送信すると、
@@ -294,7 +310,19 @@ SSL オプションの re\fIn\fP= で指定した正規表現中、
 .RS 8
 .PD 0
 .IP "HELO \fI任意の文字列\fP" 24
-\fBstone\fP の状態の一覧を返す
+stone, pair, trash 等の個数
+.IP "STAT"
+スレッドの個数, mutex コンフリクト回数
+.IP "FREE"
+free リスト長
+.IP "CLOCK"
+経過秒数
+.IP "CVS_ID"
+CVS の ID
+.IP "CONFIG"
+config ファイルの内容
+.IP "STONE"
+各 \fIstone\fP の設定内容
 .IP "LIMIT \fIvar\fP \fIn\fP"
 変数 \fIvar\fP の値が \fIn\fP 未満か調べる
 .PD
@@ -360,6 +388,7 @@ MIME base64 で符号化して中継します。
 TCP を中継する代わりに、UDP を中継します。
 .IP apop
 POP を APOP へ変換して中継します。
+.br
 変換には RSA Data Security 社の MD5 Message-Digest アル
 ゴリズムを使用します。
 .IP ssl
@@ -391,22 +420,27 @@ http リクエストヘッダを取り除いて中継します。
 .TP
 \fBstone \fIouter\fB:telnet 10023\fR
 \fIouter\fP へ telnet プロトコルを中継
+.br
 \fIinner\fP で telnet fwall 10023 を実行
 .TP
 \fBstone \fIouter\fB:domain/udp domain/udp\fR
 DNS 問い合わせを \fIouter\fP へ中継
+.br
 \fIinner\fP で \fBnslookup -\fP \fIfwall\fP を実行
 .TP
 \fBstone \fIouter\fB:ntp/udp ntp/udp\fR
 \fIouter\fP へ NTP を中継
+.br
 \fIinner\fP で \fBntpdate \fIfwall\fR を実行
 .TP
 \fBstone localhost:http 443/ssl\fR
 WWW サーバを https 対応にする
+.br
 WWW ブラウザで \fBhttps://\fIfwall\fB/\fR をアクセス
 .TP
 \fBstone localhost:telnet 10023/ssl\fR
 telnet を SSL 化
+.br
 \fIinner\fP で \fBSSLtelnet -z ssl \fIfwall\fB 10023\fR を実行
 .TP
 \fBstone proxy 8080\fR
