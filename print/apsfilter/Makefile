@@ -18,6 +18,8 @@ DIST_SUBDIR=	apsfilter
 
 USE_SUBMAKE=	yes
 
+SUB_FILES+=	pkg-message
+
 # special arrangement for package building, build stuff without X11
 # to make memory footprint of apsfilter package smaller
 .if defined(BATCH) && defined(PACKAGE_BUILDING)
@@ -160,6 +162,6 @@ post-install:
 	@${ECHO} "    chmod 555 /usr/bin/grog                             "
 	@${ECHO} "--------------------------------------------------------"
 .endif
-	@${CAT} ${.CURDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
