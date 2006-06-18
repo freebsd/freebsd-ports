@@ -500,14 +500,6 @@ www/joomla/administrator/templates/joomla_admin/index.php
 www/joomla/administrator/templates/joomla_admin/login.php
 www/joomla/administrator/templates/joomla_admin/templateDetails.xml
 www/joomla/administrator/templates/joomla_admin/template_thumbnail.png
-www/joomla/administrator/templates/mambo_admin/css/index.html
-www/joomla/administrator/templates/mambo_admin/css/template_css.css
-www/joomla/administrator/templates/mambo_admin/index.html
-www/joomla/administrator/templates/mambo_admin/index.php
-www/joomla/administrator/templates/mambo_admin_blue/css/index.html
-www/joomla/administrator/templates/mambo_admin_blue/css/template_css.css
-www/joomla/administrator/templates/mambo_admin_blue/index.html
-www/joomla/administrator/templates/mambo_admin_blue/index.php
 www/joomla/cache/index.html
 www/joomla/components/com_banners/banners.class.php
 www/joomla/components/com_banners/banners.php
@@ -1009,8 +1001,10 @@ www/joomla/mambots/content/geshi.php
 www/joomla/mambots/content/geshi.xml
 www/joomla/mambots/content/geshi/geshi.php
 www/joomla/mambots/content/geshi/geshi/css.php
+www/joomla/mambots/content/geshi/geshi/ini.php
 www/joomla/mambots/content/geshi/geshi/html4strict.php
 www/joomla/mambots/content/geshi/geshi/javascript.php
+www/joomla/mambots/content/geshi/geshi/mysql.php
 www/joomla/mambots/content/geshi/geshi/php-brief.php
 www/joomla/mambots/content/geshi/geshi/php.php
 www/joomla/mambots/content/geshi/geshi/sql.php
@@ -1070,6 +1064,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/en.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/langs/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/rule.htm
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/css/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
@@ -1162,12 +1157,6 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/images/i
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/en.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs/index.html
-www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
-www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
-www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/images/Thumbs.db
-www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/images/iespell.gif
-www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/index.html
-www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs/en.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css/inlinepopup.css
@@ -1248,6 +1237,14 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/langs/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/replace.htm
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/search.htm
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/jscripts/props.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/langs/en.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/images/apply_button_bg.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/images/style_info.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/css/props.css
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/props.htm
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/cell.htm
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/css/cell.css
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/css/index.html
@@ -1280,8 +1277,16 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/langs/index.h
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/merge_cells.htm
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/row.htm
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/table/table.htm
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/langs/en.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/images/insert_layer.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/images/absolute.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/images/backward.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/images/forward.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/editor_plugin_src.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/readme.txt
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/es.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/zoom/langs/he.js
@@ -1312,6 +1317,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bold
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/browse.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/bullist.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/buttons.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/button_menu.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/cancel_button_bg.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/center.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/charmap.gif
@@ -1341,6 +1347,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/just
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/justifyright.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/left.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/link.gif
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/menu_check.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/newdocument.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/numlist.gif
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/themes/advanced/images/opacity.png
@@ -1424,6 +1431,7 @@ www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce_popup.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/tiny_mce_src.js
+www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/editable_selects.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/form_utils.js
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/index.html
 www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/utils/mctabs.js
@@ -1612,9 +1620,6 @@ www/joomla/templates/rhuk_solarflare_ii/template_thumbnail.png
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/images
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/css
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups
-@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/langs
-@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell/images
-@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/iespell
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/langs
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/images
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen
@@ -1650,9 +1655,17 @@ www/joomla/templates/rhuk_solarflare_ii/template_thumbnail.png
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/images
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr/css
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/advhr
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/jscripts
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/langs
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/images
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style/css
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/style
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/langs
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template/images
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/_template
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/langs
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer/images
+@dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins/layer
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/plugins
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce/langs
 @dirrm www/joomla/mambots/editors/tinymce/jscripts/tiny_mce
@@ -1724,10 +1737,6 @@ www/joomla/templates/rhuk_solarflare_ii/template_thumbnail.png
 @dirrm www/joomla/components/com_banners
 @dirrm www/joomla/components
 @dirrm www/joomla/cache
-@dirrm www/joomla/administrator/templates/mambo_admin_blue/css
-@dirrm www/joomla/administrator/templates/mambo_admin_blue
-@dirrm www/joomla/administrator/templates/mambo_admin/css
-@dirrm www/joomla/administrator/templates/mambo_admin
 @dirrm www/joomla/administrator/templates/joomla_admin/images
 @dirrm www/joomla/administrator/templates/joomla_admin/css
 @dirrm www/joomla/administrator/templates/joomla_admin
