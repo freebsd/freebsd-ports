@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 case "$2" in POST-INSTALL) ;; *) exit;; esac
 
@@ -6,7 +6,7 @@ TARGET_DIR=${PKG_PREFIX}/share/compat/locale
 cd ${TARGET_DIR}
 
 while read dir; do
-	${MKDIR} $dir
+	mkdir $dir
 done << EOF
 af_ZA.ISO8859-15
 af_ZA.UTF-8
@@ -49,7 +49,7 @@ pt_PT.ISO8859-15
 EOF
 
 while read src dest; do
-	${LN} -s $src $dest
+	ln -s $src $dest
 done << EOF
 ../UTF-8/LC_CTYPE af_ZA.UTF-8/LC_CTYPE
 ../UTF-8/LC_CTYPE be_BY.UTF-8/LC_CTYPE
