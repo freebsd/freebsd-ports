@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3"
+.TH stone 1 "version 2.3b"
 .
 .SH NAME
 stone \- Simple Repeater
@@ -44,7 +44,7 @@ FreeBSD, BSD/OS, SunOS, Solaris, HP-UX and so on.
 .
 .TP
 .B 2. Simple.
-\fBStone\fP's source code is only 8000 lines long (written in C
+\fBStone\fP's source code is only 9000 lines long (written in C
 language), so you can minimize the risk of security
 holes.
 .
@@ -133,7 +133,7 @@ address of the connection to the desctination.
 If the \fB-o\fP \fIn\fP or \fB-g\fP \fIn\fP flag is used, the program set
 its uid or gid to \fIn\fP respectively.  If the \fB-t\fP \fIdir\fP
 flag (\fIdir\fP is a directory) is used, the program change its
-root to the directory.  If the \fB-D\fP flas is used, \fBstone\fP runs
+root to the directory.  If the \fB-D\fP flag is used, \fBstone\fP runs
 as a daemon. The \fB-c\fP \fIdir\fP flag designates the
 directory for core dump.
 .P
@@ -240,9 +240,9 @@ designated, separated by \fB--\fP.
 .IP (3)
 proxy \fIsport\fP [\fIxhost\fP...]
 .IP (4)
-\fIhost\fP:\fIport\fP/http \fIrequest\fP [\fIxhost\fP...]
+\fIhost\fP:\fIport\fP/http \fIsport\fP \fIrequest\fP [\fIxhost\fP...]
 .IP (5)
-\fIhost\fP:\fIport\fP/proxy \fIheader\fP [\fIxhost\fP...]
+\fIhost\fP:\fIport\fP/proxy \fIsport\fP \fIheader\fP [\fIxhost\fP...]
 .IP (6)
 health \fIsport\fP [\fIxhost\fP...]
 .PD
@@ -284,6 +284,20 @@ tab      (0x09)
 the IP address of the client connecting to the \fBstone\fP.
 .IP \\\\A
 \fIIP address of the client\fP:\fIport number\fP
+.IP \\\\d
+the destination IP address
+.IP \\\\D
+\fIdst IP address\fP:\fIport number\fP (for transparent proxy)
+.IP \\\\u
+uid (number) of the client
+.IP \\\\U
+user name of the client
+.IP \\\\g
+gid (number) of the client
+.IP \\\\G
+group name of the client
+.br
+\\u \\U \\g \\G are valid in the case of unix domain socket
 .IP \\\\0
 the serial number of peer's SSL certificate.
 .IP "\\\\1 - \\\\9"
@@ -296,6 +310,8 @@ if \1 (\2 - \9 in a similar way) is not null,
 .P
 Type (5) repeats http request with \fIheader\fP in the top of
 request headers.  The above escapes can be also used.
+If \fI/mproxy\fP is designated instead of \fI/proxy\fP, \fIheader\fP is
+added to each request headers.
 .P
 Type (6) designates the port that other programs can check
 whether the \fBstone\fP runs `healthy' or not.  Following commands are
@@ -305,6 +321,18 @@ available to check the \fBstone\fP.
 .PD 0
 .IP "HELO \fIany string\fP" 24
 returns the status of the \fBstone\fP
+.IP "STAT"
+# of threads, mutex conflicts
+.IP "FREE"
+length of free lists
+.IP "CLOCK"
+seconds passed
+.IP "CVS_ID"
+CVS ID
+.IP "CONFIG"
+content of the configuration file
+.IP "STONE"
+configuration of each stones
 .IP "LIMIT \fIvar\fP \fIn\fP"
 check the value of \fIvar\fP is
 less than \fIn\fP
@@ -400,22 +428,27 @@ the firewall on which the \fBstone\fP is executed
 .TP
 \fBstone \fIouter\fB:telnet 10023\fR
 Repeats the telnet protocol to \fIouter\fP.
+.br
 Run telnet fwall 10023 on \fIinner\fR.
 .TP
 \fBstone \fIouter\fB:domain/udp domain/udp\fR
 Repeats the DNS query to \fIouter\fP.
+.br
 Run \fBnslookup -\fP \fIfwall\fP on \fIinner\fP.
 .TP
 \fBstone \fIouter\fB:ntp/udp ntp/udp\fR
 Repeats the NTP to \fIouter\fP.
+.br
 Run \fBntpdate \fIfwall\fR on \fIinner\fP.
 .TP
 \fBstone localhost:http 443/ssl\fR
 Make WWW server that supports https.
+.br
 Access \fBhttps://\fIfwall\fB/\fR using a WWW browser.
 .TP
 \fBstone localhost:telnet 10023/ssl\fR
 Make telnet server that supports SSL.
+.br
 Run \fBSSLtelnet -z ssl \fIfwall\fB 10023\fR on \fIinner\fP.
 .TP
 \fBstone proxy 8080\fR
