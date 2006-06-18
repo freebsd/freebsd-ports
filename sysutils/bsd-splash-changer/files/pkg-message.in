@@ -12,4 +12,7 @@ To use the port you need to perform the following steps:
 
    bitmap_name="/boot/splash"
 
+Also, be careful if you already have a file "/boot/splash" because it will be
+replaced when the script is executed.
+
 ==============================================================================
