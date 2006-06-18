@@ -1,0 +1,7 @@
+%%SITE_PERL%%/CGI/Untaint/date.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/date/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/date
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/CGI/Untaint
+@dirrmtry %%SITE_PERL%%/CGI
