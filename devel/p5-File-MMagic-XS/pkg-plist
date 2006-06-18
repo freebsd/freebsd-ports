@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/File/MMagic/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/MMagic/benchmark.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/File/MMagic/compat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/MMagic/magic
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MMagic/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MMagic/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MMagic/XS/XS.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MMagic/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MMagic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File/MMagic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File

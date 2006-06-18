@@ -993,6 +993,7 @@
     SUBDIR += p5-File-HomeDir
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
+    SUBDIR += p5-File-MMagic-XS
     SUBDIR += p5-File-MimeInfo
     SUBDIR += p5-File-Modified
     SUBDIR += p5-File-NCopy
