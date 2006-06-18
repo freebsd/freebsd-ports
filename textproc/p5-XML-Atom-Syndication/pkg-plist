@@ -13,9 +13,9 @@
 %%SITE_PERL%%/XML/Atom/Syndication/Util.pm
 %%SITE_PERL%%/XML/Atom/Syndication/Writer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Syndication/.packlist
-@dirrm %%SITE_PERL%%/XML/Atom/Syndication
-@dirrmtry %%SITE_PERL%%/XML/Atom
-@dirrmtry %%SITE_PERL%%/XML
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Syndication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/Syndication
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/Atom/Syndication
+@dirrmtry %%SITE_PERL%%/XML/Atom
+@dirrmtry %%SITE_PERL%%/XML
