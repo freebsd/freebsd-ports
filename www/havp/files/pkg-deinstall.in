@@ -1,0 +1,16 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+HAVP_USER=havp
+
+if pw usershow "$HAVP_USER" 2>/dev/null 1>&2; then
+	echo "=============================================================================="
+	echo "To delete $HAVP_USER user permanently, use 'pw userdel \"$HAVP_USER\"'"
+	echo "=============================================================================="
+fi
+
+exit 0
