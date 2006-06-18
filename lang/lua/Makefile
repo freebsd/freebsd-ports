@@ -7,6 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -23,6 +24,9 @@ MAN1=		lua.1 luac.1
 MAKE_ARGS=	bsd
 
 CONFLICTS=	lua-4* lua-5.0*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
