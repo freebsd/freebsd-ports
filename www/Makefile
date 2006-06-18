@@ -174,6 +174,7 @@
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += harvest
+    SUBDIR += havp
     SUBDIR += horde
     SUBDIR += horde-passwd
     SUBDIR += horde-php5

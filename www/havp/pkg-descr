@@ -1,0 +1,6 @@
+HAVP (HTTP Antivirus Proxy) is a proxy with a ClamAV anti-virus scanner. The
+main aims are continuous, non-blocking downloads and smooth scanning of
+dynamic and password protected HTTP traffic. Havp antivirus proxy has a parent
+and transparent proxy mode. It can be used with squid or standalone.
+
+WWW: http://www.server-side.de/

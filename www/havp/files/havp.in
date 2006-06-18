@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: havp
+# REQUIRE: DAEMON cleanvar
+# BEFORE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf to enable c-icap:
+#
+# havp_enable="YES"
+#
+# See '%%PREFIX%%/sbin/havp --help' for flags
+#
+
+. %%RC_SUBR%%
+
+name="havp"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/$name"
+pidfile="%%RUN_DIR%%/${name}.pid"
+required_dirs="%%TMP_DIR%%"
+required_files="%%PREFIX%%/etc/havp/blacklist %%PREFIX%%/etc/havp/havp.config %%PREFIX%%/etc/havp/whitelist"
+
+# read settings, set default values
+load_rc_config "$name"
+: ${havp_enable="NO"}
+: ${havp_flags=""}
+
+run_rc_command "$1"
