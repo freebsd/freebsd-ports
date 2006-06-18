@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.2.15
+PORTVERSION=	0.2.16
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 
@@ -15,25 +15,25 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A conversion utility that allows conversion between many units
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier pygtk2
+USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|g ; \
-		 s|gtk.mainloop|gtk.main|g' ${WRKSRC}/gonvert
+		 s|/usr/share|${PREFIX}/share|g ; \
+		 s|/\.\./pixmaps/|/pixmaps/|g' ${WRKSRC}/gonvert
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gonvert ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/gonvert.desktop \
-		${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/gonvert.png \
-		${PREFIX}/share/gnome/pixmaps
+	@${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/gonvert.desktop ${PREFIX}/share/applications
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/gonvert.glade ${DATADIR}
 	@${MKDIR} ${DATADIR}/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/gonvert_picture.png \
-		${DATADIR}/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}/pixmaps
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	${LN} -sf ${WRKSRC}/pixmaps/gonvert.png ${PREFIX}/share/pixmaps
 	@${MKDIR} ${PREFIX}/share/locale/pl/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/i18n/pl_messages.gmo \
 		${PREFIX}/share/locale/pl/LC_MESSAGES/gonvert.mo
