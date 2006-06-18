@@ -1,31 +1,37 @@
 # QLScrobbler: an Audioscrobbler client plugin for Quod Libet.
-# version 0.7
+# version 0.8
 # (C) 2005 by Joshua Kwan <joshk@triplehelix.org>,
 #             Joe Wreschnig <piman@sacredchao.net>
 # Licensed under GPLv2. See Quod Libet's COPYING for more information.
 
 import random
 import md5, urllib, urllib2, time, threading, os
-import player, config, const
+import player, config, const, widgets, parse
 import gobject, gtk
-from qltk import Message
+from qltk.msg import Message, WarningMessage
+from qltk.entry import ValidatingEntry
 from util import to
 
-class QLScrobbler(object):
+from plugins.events import EventPlugin
+
+class QLScrobbler(EventPlugin):
 	# session invariants
 	PLUGIN_NAME = "QLScrobbler"
 	PLUGIN_DESC = "Audioscrobbler client for Quod Libet"
 	PLUGIN_ICON = gtk.STOCK_CONNECT
-	PLUGIN_VERSION = "0.7"
+	PLUGIN_VERSION = "0.8.1"
 	CLIENT = "qlb"
 	PROTOCOL_VERSION = "1.1"
-	DUMP = os.path.join(const.DIR, "scrobbler_cache")
+	try: DUMP = os.path.join(const.USERDIR, "scrobbler_cache")
+	except AttributeError:
+		DUMP = os.path.join(const.DIR, "scrobbler_cache")
 
 	# things that could change
 	
 	username = ""
 	password = ""
 	pwhash = ""
+	exclude = ""
 	
 	timeout_id = -1
 	submission_tid = -1
@@ -42,7 +48,8 @@ class QLScrobbler(object):
 	already_submitted = False
 	locked = False
 	flushing = False
-	disabled = False
+	__enabled = False
+	offline = False
 
 	# we need to store this because not all events get the song
 	song = None
@@ -55,6 +62,9 @@ class QLScrobbler(object):
 			dump = open(self.DUMP, 'r')
 			self.read_dump(dump)
 		except: pass
+
+		# Read configuration
+		self.read_config()
 		
 		# Set up exit hook to dump queue
 		gtk.quit_add(0, self.dump_queue)
@@ -68,7 +78,7 @@ class QLScrobbler(object):
 			key = ""
 			value = ""
 			
-			line = line.rstrip()
+			line = line.rstrip("\n")
 			try: (key, value) = line.split(" = ", 1)
 			except:
 				if line == "-":
@@ -113,6 +123,7 @@ class QLScrobbler(object):
 		for item in self.queue:
 			for key in item:
 				dump.write("%s = %s\n" % (key, item[key]))
+			dump.write("-\n")
 
 		dump.close()
 
@@ -151,6 +162,12 @@ class QLScrobbler(object):
 		elif 'title' not in song: return
 		elif "artist" not in song:
 			if ("composer" not in song) and ("performer" not in song): return
+		
+		# Check to see if this song is not something we'd like to submit
+		#    e.g. "Hit Me Baby One More Time"
+		if self.exclude != "" and parse.Query(self.exclude).search(song):
+			print to("Not submitting: %s - %s" % (song["artist"], song["title"]))
+			return
 
 		self.song = song
 		if player.playlist.paused == False:
@@ -185,7 +202,7 @@ class QLScrobbler(object):
 		if self.timeout_id == -2: # change delta based on current progress
 			# assumption is that self.already_submitted == 0, therefore
 			# delay - progress > 0
-			progress = int(player.playlist.info.time[0] / 1000)
+			progress = int(player.playlist.get_position() / 1000)
 			delay -= progress
 
 		self.timeout_id = gobject.timeout_add(delay * 1000, self.submit_song)
@@ -197,10 +214,16 @@ class QLScrobbler(object):
 			username = config.get("plugins", "scrobbler_username")
 			password = config.get("plugins", "scrobbler_password")
 		except:
-			if self.need_config == False:
-				self.quick_info("Please visit the Preferences window to set QLScrobbler up. Until then, songs will not be submitted.")
+			if (self.need_config == False and
+			    getattr(self, 'PMEnFlag', False)):
+				self.quick_dialog("Please visit the Preferences window to set QLScrobbler up. Until then, songs will not be submitted.", gtk.MESSAGE_INFO)
 				self.need_config = True
 				return
+
+		try: self.offline = (config.get("plugins", "scrobbler_offline") == "true")
+		except: pass
+		try: self.exclude = config.get("plugins", "scrobbler_exclude")
+		except: pass
 		
 		self.username = username
 		
@@ -211,22 +234,14 @@ class QLScrobbler(object):
 
 	def __destroy_cb(self, dialog, response_id):
 		dialog.destroy()
-
-	def quick_error_helper(self, str):
-		dialog = Message(gtk.MESSAGE_ERROR, None, "QLScrobbler", str)
-		dialog.connect('response', self.__destroy_cb)
-		dialog.show()
-
-	def quick_error(self, str):
-		gobject.idle_add(self.quick_error_helper, str)
 	
-	def quick_info_helper(self, str):
-		dialog = Message(gtk.MESSAGE_INFO, widgets.widgets.main, "QLScrobbler", str).run()
+	def quick_dialog_helper(self, type, str):
+		dialog = Message(gtk.MESSAGE_INFO, widgets.main, "QLScrobbler", str)
 		dialog.connect('response', self.__destroy_cb)
 		dialog.show()
 
-	def quick_info(self, str):
-		gobject.idle_add(self.quick_info_helper, str)
+	def quick_dialog(self, str, type):
+		gobject.idle_add(self.quick_dialog_helper, type, str)
 	
 	def clear_waiting(self):
 		self.waiting = False
@@ -253,7 +268,7 @@ class QLScrobbler(object):
 			
 		if status == "UPTODATE" or status.startswith("UPDATE"):
 			if status.startswith("UPDATE"):
-				self.quick_info("A new plugin is available at %s! Please download it, or your Audioscrobbler stats may not be updated, and this message will be displayed every session." % status.split()[1])
+				self.quick_dialog("A new plugin is available at %s! Please download it, or your Audioscrobbler stats may not be updated, and this message will be displayed every session." % status.split()[1], gtk.MESSAGE_INFO)
 				self.need_update = True
 
 			# Scan for submit URL and challenge.
@@ -271,7 +286,7 @@ class QLScrobbler(object):
 			
 			self.challenge_sent = True
 		elif status == "BADUSER":
-			self.quick_error("Authentication failed: invalid username %s or bad password." % self.username)
+			self.quick_dialog("Authentication failed: invalid username %s or bad password." % self.username, gtk.MESSAGE_ERROR)
 				
 			self.broken = True
 
@@ -289,23 +304,29 @@ class QLScrobbler(object):
 		bg.setDaemon(True)
 		bg.start()
 
+	def enabled(self):
+		self.__enabled = True
+
+	def disabled(self):
+		self.__enabled = False
+
 	def submit_song_helper(self):
-		enabled = getattr(self, 'PMEnFlag', False)
-		if enabled and self.disabled:
+		if self.__enabled:
 			print "Plugin re-enabled - accepting new songs."
-			self.disabled = False
 			if self.submission_tid != -1:
 				gobject.source_remove(self.submission_tid);
 				self.submission_tid = -1
-		elif not enabled and not self.disabled: #if we've already printed
+		else:
 			print "Plugin disabled - not accepting any new songs."
-			self.disabled = True
 			if len(self.queue) > 0:
 				self.submission_tid = gobject.timeout_add(120 * 1000, self.submit_song_helper)
 				print "Attempts will continue to submit the last %d songs." % len(self.queue)
 
 		if self.already_submitted == True or self.broken == True: return
 
+		# Scope.
+		store = {}
+		
 		if self.flushing == False:
 			stamp = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
 	
@@ -327,14 +348,16 @@ class QLScrobbler(object):
 					store["artist"] = performer[:performer.rindex("(")].strip()
 				else:
 					store["artist"] = performer
-			elif "musicbrainz_trackid" in self.song:
+			if "musicbrainz_trackid" in self.song:
 				store["mbid"] = self.song["musicbrainz_trackid"]
 
 			self.queue.append(store)
 		else: self.flushing = False
-		
-		if self.locked == True:
-			# another instance running, let it deal with this
+
+		# Just note to stdout if either of these are true..
+		# locked means another instance if s_s_h is dealing with sending.
+		if self.offline or self.locked:
+			print to("Queuing: %s - %s" % (store["artist"], store["title"]))
 			return
 
 		self.locked = True
@@ -360,7 +383,7 @@ class QLScrobbler(object):
 		}
 		
 		# Flush the cache
-		for i in range(len(self.queue)):
+		for i in range(min(len(self.queue), 10)):
 			print to("Sending song: %s - %s" % (self.queue[i]['artist'], self.queue[i]['title']))
 			data["a[%d]" % i] = self.queue[i]['artist'].encode('utf-8')
 			data["t[%d]" % i] = self.queue[i]['title'].encode('utf-8')
@@ -400,16 +423,16 @@ class QLScrobbler(object):
 			self.challenge_sent = False
 			self.send_handshake()
 			if self.challenge_sent == False:
-				self.quick_error("Your Audioscrobbler login data is incorrect, so you must re-enter it before any songs will be submitted.\n\nThis message will not be shown again.")
+				self.quick_dialog("Your Audioscrobbler login data is incorrect, so you must re-enter it before any songs will be submitted.\n\nThis message will not be shown again.", gtk.MESSAGE_ERROR)
 				self.broken = True
 		elif status == "OK":
-			self.queue = []
+			self.queue = self.queue[10:]
 		elif status.startswith("FAILED"):
 			if status.startswith("FAILED Plugin bug"):
 				print "Plugin bug!? Ridiculous! Dumping queue contents."
 				for item in self.queue:
 					for key in item:
-						print "%s = %s" % (key, item[key])
+						print to("%s = %s" % (key, item[key]))
 			# possibly handle other specific cases here for debugging later
 		else:
 			print "Unknown response from server: %s" % status
@@ -424,7 +447,7 @@ class QLScrobbler(object):
 			gobject.timeout_add(interval_secs * 1000, self.clear_waiting)
 			print "Server says to wait for %d seconds." % interval_secs
 
-		if self.disabled and len(self.queue) == 0 and self.submission_tid != -1:
+		if not self.__enabled and len(self.queue) == 0 and self.submission_tid != -1:
 			print "All songs submitted, disabling retries."
 			gobject.source_remove(self.submission_tid)
 			self.submission_tid = -1
@@ -433,8 +456,16 @@ class QLScrobbler(object):
 		self.locked = False
 
 	def PluginPreferences(self, parent):
+		def toggled(widget):
+			if widget.get_active():
+				config.set("plugins", "scrobbler_offline", "true")
+				self.offline = True
+			else:
+				config.set("plugins", "scrobbler_offline", "false")
+				self.offline = False
+
 		def changed(entry, key):
-			# having two functions is unnecessary..
+			# having a function for each entry is unnecessary..
 			config.set("plugins", "scrobbler_" + key, entry.get_text())
 
 		def destroyed(*args):
@@ -448,35 +479,55 @@ class QLScrobbler(object):
 			except:
 				return
 
+			try: self.exclude = config.get("plugins", "scrobbler_exclude")
+			except: pass
+
 			if self.username != newu or self.password != newp:
 				self.broken = False
 
-		table = gtk.Table(3, 2)
+		table = gtk.Table(6, 3)
 		table.set_col_spacings(3)
-		lt = gtk.Label(_("Please enter your Audioscrobbler username and password."))
-		lt.set_size_request(260, -1)
+		lt = gtk.Label(_("Please enter your Audioscrobbler\nusername and password."))
 		lu = gtk.Label(_("Username:"))
 		lp = gtk.Label(_("Password:"))
-		for l in [lt, lu, lp]:
+		lv = gtk.Label(_("Exclude filter:"))
+		lvd = gtk.Label(_("Songs matching this filter will\nnot be sent to Audioscrobbler.\n"))
+		off = gtk.CheckButton(_("Offline mode (don't submit anything)"))
+		ve = ValidatingEntry(parse.Query.is_valid_color)
+		for l in [lt, lu, lp, lv, lvd]:
 			l.set_line_wrap(True)
 			l.set_alignment(0.0, 0.5)
-		table.attach(lt, 0, 2, 0, 1, xoptions=gtk.FILL)
-		table.attach(lu, 0, 1, 1, 2, xoptions=gtk.FILL)
-		table.attach(lp, 0, 1, 2, 3, xoptions=gtk.FILL)
+		table.attach(lt, 0, 2, 0, 1, xoptions=gtk.FILL | gtk.SHRINK)
+		table.attach(lu, 0, 1, 1, 2, xoptions=gtk.FILL | gtk.SHRINK)
+		table.attach(lp, 0, 1, 2, 3, xoptions=gtk.FILL | gtk.SHRINK)
+		table.attach(lv, 0, 1, 3, 4, xoptions=gtk.FILL | gtk.SHRINK)
+			
 		userent = gtk.Entry()
 		pwent = gtk.Entry()
 		pwent.set_visibility(False)
 		pwent.set_invisible_char('*')
 		table.set_border_width(6)
+		
+		table.attach(ve, 1, 2, 3, 4, xoptions=gtk.FILL | gtk.SHRINK)
+		table.attach(lvd, 0, 2, 4, 5, xoptions=gtk.FILL | gtk.SHRINK)
+		table.attach(off, 0, 2, 5, 7, xoptions=gtk.FILL | gtk.SHRINK)
 
 		try: userent.set_text(config.get("plugins", "scrobbler_username"))
 		except: pass
 		try: pwent.set_text(config.get("plugins", "scrobbler_password"))
 		except: pass
+		try:
+			if config.get("plugins", "scrobbler_offline") == "true":
+				off.set_active(True)
+		except: pass
+		try: ve.set_text(config.get("plugins", "scrobbler_exclude"))
+		except: pass
 
-		table.attach(userent, 1, 2, 1, 2)
-		table.attach(pwent, 1, 2, 2, 3)
+		table.attach(userent, 1, 2, 1, 2, xoptions=gtk.FILL | gtk.SHRINK)
+		table.attach(pwent, 1, 2, 2, 3, xoptions=gtk.FILL | gtk.SHRINK)
 		pwent.connect('changed', changed, 'password')
 		userent.connect('changed', changed, 'username')
+		ve.connect('changed', changed, 'exclude')
 		table.connect('destroy', destroyed)
+		off.connect('toggled', toggled)
 		return table

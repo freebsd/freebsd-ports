@@ -1,7 +1,7 @@
 bin/exfalso
 bin/quodlibet
-%%EXTENSIONS:%%lib/quodlibet/_mmkeys.so
-%%EXTENSIONS:%%lib/quodlibet/_trayicon.so
+%%EXTENSIONS%%lib/quodlibet/_mmkeys.so
+%%EXTENSIONS%%lib/quodlibet/_trayicon.so
 share/applications/exfalso.desktop
 share/applications/quodlibet.desktop
 share/locale/bg/LC_MESSAGES/quodlibet.mo
@@ -13,12 +13,17 @@ share/locale/fi/LC_MESSAGES/quodlibet.mo
 share/locale/fr/LC_MESSAGES/quodlibet.mo
 share/locale/gl/LC_MESSAGES/quodlibet.mo
 share/locale/he/LC_MESSAGES/quodlibet.mo
+share/locale/hu/LC_MESSAGES/quodlibet.mo
 share/locale/it/LC_MESSAGES/quodlibet.mo
 share/locale/ko/LC_MESSAGES/quodlibet.mo
+share/locale/lt/LC_MESSAGES/quodlibet.mo
+share/locale/nb/LC_MESSAGES/quodlibet.mo
 share/locale/nl/LC_MESSAGES/quodlibet.mo
 share/locale/pl/LC_MESSAGES/quodlibet.mo
 share/locale/pt/LC_MESSAGES/quodlibet.mo
 share/locale/ru/LC_MESSAGES/quodlibet.mo
+share/locale/sv/LC_MESSAGES/quodlibet.mo
+share/locale/zh_CN/LC_MESSAGES/quodlibet.mo
 share/pixmaps/exfalso.png
 share/pixmaps/quodlibet.png
 share/quodlibet/browsers/__init__.py
@@ -39,7 +44,6 @@ share/quodlibet/formats/__init__.py
 share/quodlibet/formats/_apev2.py
 share/quodlibet/formats/_audio.py
 share/quodlibet/formats/_vorbis.py
-share/quodlibet/formats/ape.py
 share/quodlibet/formats/flac.py
 share/quodlibet/formats/mod.py
 share/quodlibet/formats/mp3.py
@@ -47,27 +51,23 @@ share/quodlibet/formats/mp4.py
 share/quodlibet/formats/mpc.py
 share/quodlibet/formats/oggvorbis.py
 share/quodlibet/formats/remote.py
+share/quodlibet/formats/wav.py
 share/quodlibet/formats/wavpack.py
 share/quodlibet/library.py
-share/quodlibet/massagers.py
-share/quodlibet/mutagen/__init__.py
-share/quodlibet/mutagen/_constants.py
-share/quodlibet/mutagen/_vorbis.py
-share/quodlibet/mutagen/apev2.py
-share/quodlibet/mutagen/flac.py
-share/quodlibet/mutagen/id3.py
 share/quodlibet/parse/__init__.py
 share/quodlibet/parse/_match.py
 share/quodlibet/parse/_pattern.py
 share/quodlibet/parse/_query.py
 share/quodlibet/player.py
 share/quodlibet/plugins/__init__.py
-share/quodlibet/plugins/_manager.py
 share/quodlibet/plugins/editing.py
-share/quodlibet/plugins/qlscrobbler.py
+share/quodlibet/plugins/events.py
+share/quodlibet/plugins/events/qlscrobbler.py
+share/quodlibet/plugins/songsmenu.py
 share/quodlibet/qltk/__init__.py
 share/quodlibet/qltk/_editpane.py
 share/quodlibet/qltk/about.py
+share/quodlibet/qltk/bookmarks.py
 share/quodlibet/qltk/browser.py
 share/quodlibet/qltk/cbes.py
 share/quodlibet/qltk/ccb.py
@@ -96,8 +96,11 @@ share/quodlibet/qltk/queue.py
 share/quodlibet/qltk/quodlibet.py
 share/quodlibet/qltk/remote.py
 share/quodlibet/qltk/renamefiles.py
+share/quodlibet/qltk/session.py
 share/quodlibet/qltk/sliderbutton.py
 share/quodlibet/qltk/songlist.py
+share/quodlibet/qltk/songsmenu.py
+share/quodlibet/qltk/tagscombobox.py
 share/quodlibet/qltk/tagsfrompath.py
 share/quodlibet/qltk/textedit.py
 share/quodlibet/qltk/tracknumbers.py
@@ -114,9 +117,14 @@ share/quodlibet/rhythmbox-volume-medium.png
 share/quodlibet/rhythmbox-volume-min.png
 share/quodlibet/rhythmbox-volume-zero.png
 share/quodlibet/stock.py
-share/quodlibet/util.py
+share/quodlibet/util/__init__.py
+share/quodlibet/util/i18n.py
+share/quodlibet/util/massagers.py
+share/quodlibet/util/uri.py
 share/quodlibet/widgets.py
 @dirrmtry share/applications
+@exec mkdir -p %D/share/quodlibet/plugins/events
+@dirrm share/quodlibet/plugins/events
 @exec mkdir -p %D/share/quodlibet/plugins
 @dirrm share/quodlibet/plugins
 @exec mkdir -p %D/lib/quodlibet
@@ -125,11 +133,11 @@ share/quodlibet/widgets.py
 @dirrm share/quodlibet/browsers
 @exec mkdir -p %D/share/quodlibet/formats
 @dirrm share/quodlibet/formats
-@exec mkdir -p %D/share/quodlibet/mutagen
-@dirrm share/quodlibet/mutagen
 @exec mkdir -p %D/share/quodlibet/parse
 @dirrm share/quodlibet/parse
 @exec mkdir -p %D/share/quodlibet/qltk
 @dirrm share/quodlibet/qltk
+@exec mkdir -p %D/share/quodlibet/util
+@dirrm share/quodlibet/util
 @exec mkdir -p %D/share/quodlibet
 @dirrm share/quodlibet
