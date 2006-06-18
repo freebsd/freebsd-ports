@@ -8,8 +8,7 @@
 PORTNAME=	bsvc
 PORTVERSION=	2.1
 CATEGORIES=	emulators tk82
-MASTER_SITES=	ftp://ftp.redlinelabs.com/pub/bsvc/ \
-		${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
 
