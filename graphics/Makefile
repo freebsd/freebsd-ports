@@ -364,7 +364,6 @@
     SUBDIR += lodju
     SUBDIR += long-exposure-tools
     SUBDIR += lphoto
-    SUBDIR += magickwand
     SUBDIR += makehuman
     SUBDIR += mapserver
     SUBDIR += mapyrus
