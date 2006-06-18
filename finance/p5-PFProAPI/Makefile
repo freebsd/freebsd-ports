@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	pfpro_freebsd
 
 MAINTAINER=	never@nevermind.kiev.ua
-COMMENT=	PFProAPI - Perl support for Payflow Pro calls
+COMMENT=	Perl bindings for VeriSign's PayFlow Pro SDK
 
 BUILD_DEPENDS=	pfpro:${PORTSDIR}/finance/pfpro
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -25,6 +25,6 @@ PERL_CONFIGURE=	yes
 MAN3=		PFProAPI.3
 
 post-patch:
-	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/PFProAPI.pm
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${LOCALBASE}|" ${WRKSRC}/PFProAPI.pm
 
 .include <bsd.port.mk>
