@@ -3879,6 +3879,7 @@ hashish		ports/security/hashish
 haskell-mode.el	ports/lang/haskell-mode.el
 hatari		ports/emulators/hatari
 hattrickorganizer	ports/games/hattrickorganizer
+havp		ports/www/havp
 hawknl		ports/net/hawknl
 hawknl-devel	ports/net/hawknl-devel
 hawkvoice	ports/audio/hawkvoice
