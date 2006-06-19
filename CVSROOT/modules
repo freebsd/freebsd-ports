@@ -870,6 +870,7 @@ boinc-client	ports/net/boinc-client
 boinc-einsteinathome	ports/astro/boinc-einsteinathome
 boinc-setiathome	ports/astro/boinc-setiathome
 boinc-setiathome-enhanced	ports/astro/boinc-setiathome-enhanced
+boinc-simap	ports/biology/boinc-simap
 bomb		ports/games/bomb
 bomberclone	ports/games/bomberclone
 bomberinstinct	ports/games/bomberinstinct
