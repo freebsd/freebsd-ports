@@ -131,6 +131,7 @@
     SUBDIR += firefox10
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
+    SUBDIR += flock
     SUBDIR += flood
     SUBDIR += fluxcms
     SUBDIR += fnord
