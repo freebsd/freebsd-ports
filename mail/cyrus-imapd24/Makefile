@@ -117,11 +117,11 @@ BDB_NUM_VERS!=	${ECHO_CMD} ${BDB_VERS} | wc -w
 
 .if ${BDB_NUM_W} == 0
 .if ${BDB_NUM_WO} == ${BDB_NUM_VERS}
-BROKEN=		"You need to select one BDB version.  Run 'make config' again!"
+BROKEN=		You need to select one BDB version.  Run 'make config' again!
 .endif
 WITH_BDB_${USE_BDB_VER}=	true
 .elif ${BDB_NUM_W} != 1
-BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
+BROKEN=		Multiple BDB versions selected.  Run 'make config' again!
 .endif
 .if defined(WITH_BDB_3)
 USE_BDB=	3
@@ -188,7 +188,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 .if defined(WITH_SNMP_4) && defined(WITH_SNMP_5)
-BROKEN=		"Multiple net-snmp versions selected.  Run 'make config' again!"
+BROKEN=		Multiple net-snmp versions selected.  Run 'make config' again!
 .endif
 .if defined(WITH_SNMP_4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
