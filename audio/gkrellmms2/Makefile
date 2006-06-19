@@ -41,11 +41,11 @@ OPTIONS=	BEEP_MEDIA_PLAYER	"Use beep"	off \
 
 .if !defined(WITH_BEEP_MEDIA_PLAYER) && !defined(WITH_XMMS)
 .if defined(WITHOUT_BEEP_MEDIA_PLAYER) && defined(WITHOUT_XMMS)
-BROKEN=		"You need to select beep or XMMS.  Run 'make config' again!"
+BROKEN=		You need to select beep or XMMS.  Run 'make config' again!
 .endif
 WITH_XMMS=	yes
 .elif defined(WITH_BEEP_MEDIA_PLAYER) && defined(WITH_XMMS)
-BROKEN=		"beep and XMMS is mutually exclusive.  Run 'make config' again!"
+BROKEN=		beep and XMMS are mutually exclusive.  Run 'make config' again!
 .endif
 .if defined(WITH_BEEP_MEDIA_PLAYER)
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
