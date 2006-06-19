@@ -8684,6 +8684,7 @@ p5-HTTP-Server-Simple-Mason	ports/www/p5-HTTP-Server-Simple-Mason
 p5-HTTP-Server-Simple-Recorder	ports/www/p5-HTTP-Server-Simple-Recorder
 p5-HTTP-Server-Simple-Static	ports/www/p5-HTTP-Server-Simple-Static
 p5-HTTP-SimpleLinkChecker	ports/www/p5-HTTP-SimpleLinkChecker
+p5-HTTP-Size	ports/www/p5-HTTP-Size
 p5-HTTP-WebTest	ports/www/p5-HTTP-WebTest
 p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-User-Manage	ports/www/p5-HTTPD-User-Manage
