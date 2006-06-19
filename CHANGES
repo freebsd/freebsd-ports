@@ -10,9 +10,47 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20060616:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * Update default MySQL version from 4.1 to 5.0 [1]
+
+  * Update default PHP version from 4 to 5 [2]
+
+  * Update default LDAP version from 2.2 to 2.3 [3]
+
+  * Add support for LDAP version 2.4 [4]
+
+  * Update default linux_base from '8' (Redhat 8) to 'fc4' (Fedora Core 4) [5]
+
+  * Switch default Linux X implementation from XFree86 to xorg to track the
+    above [5]
+
+  * Deprecate INSTALLS_SHLIB and replace it by USE_LDCONFIG.  If set to "yes",
+    the old behavior is preserved.  Otherwise, it can be set to a list of
+    directories to be added to ${PREFIX}/libdata/ldconfig/${UNIQUENAME}.
+    Note that this directory is used by ldconfig startup script, it is meant
+    to replace ldconfig scripts installed by some ports as (sometimes
+    000.${UNQUENAME}.sh) [6]
+
+  * Adds USE_LDCONFIG32 which is like USE_LDCONFIG but the target file is
+    ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.  (Note: this should
+    only be used on 64-bit architectures) [6]
+
+  * Set the default LANG for tr to be C to avoid some build problems [7]
+
+  * Include bsd.java.mk in both pre and post sections [8]
+
+  * Get rid of remnants of FORCE_PKG_REGISTER [9]
+
+  * Always print options with make showconfig [10]
+
+  PR:	92805 [1], 92806 [2], 96793 [3], 97515 [4], 96849 [5],
+	91933 [6], 91381 [7], 97020 [8], 95841 [9], 97133 [10]
+
 20060523:
 AUTHOR: portmgr@FreeBSD.org
-
 The following functional changes were made to bsd.port.mk:
 
   * include bsd.emacs.mk only when USE_EMACS is set [5]
