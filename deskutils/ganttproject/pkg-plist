@@ -420,6 +420,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_16.gif
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_24.gif
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_32.gif
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/keyboard.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_bg.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_cz.properties
@@ -430,6 +431,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_en_GB.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_es.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_et.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_fi.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_fr.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_hu.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_it.properties
@@ -452,10 +454,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_zh.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_zh_CN.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_zh_TW.properties
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.png
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.svg
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.svg-g1576-231.png
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-01.svg-g1576-691.png
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element-02.svg
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/bee-element.svg
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/cell01.png
@@ -463,9 +462,6 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/cell03.png
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/concepts-icons.svg
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/concepts-logo.svg
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/g1576.png
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/g2418.gif
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/g2418.png
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon16.gif
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon16.ico
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/icon16.png
@@ -537,7 +533,6 @@ bin/ganttproject
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images/menu.jpg
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images/top.jpg
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape/ganttproject.xsl
-%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape/ganttproject.xsl.bak
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/ganttproject.xsl
 %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/ganttproject-msproject.jar
 %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/jakarta-poi-2.5.jar
