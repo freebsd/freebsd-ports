@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Atom-Syndication
-PORTVERSION=	0.910
+PORTVERSION=	0.92
+PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.91
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple lightweight client for consuming Atom syndication feeds
