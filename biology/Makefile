@@ -11,6 +11,7 @@
     SUBDIR += belvu
     SUBDIR += biojava
     SUBDIR += blast
+    SUBDIR += boinc-simap
     SUBDIR += clustalw
     SUBDIR += coalesce
     SUBDIR += blat
