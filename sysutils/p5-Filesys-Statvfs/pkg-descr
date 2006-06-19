@@ -1,0 +1,16 @@
+Interface for statvfs() and fstatvfs()
+
+Unless you need access to the bsize, flag, and namemax values, you should 
+probably look at using Filesys::DfPortable or Filesys::Df instead.
+
+The statvfs() and fstatvfs() functions will return a list of values, or 
+will return undef and set $! if there was an error.
+
+The values returned are described in the statvfs header or the statvfs() 
+man page.
+
+The module assumes that if you have statvfs(), fstatvfs() will also be 
+available.
+
+WWW: http://search.cpan.org/dist/Filesys-Statvfs/
+Author: Ian Guthrie <IGuthrie@aol.com>
