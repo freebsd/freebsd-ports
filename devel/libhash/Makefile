@@ -8,13 +8,11 @@
 PORTNAME=	libhash
 PORTVERSION=	1.0.3
 CATEGORIES=	devel
-MASTER_SITES=	# disappeared
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for manipulating hash tables
-
-DEPRECATED=	Download unavailable anymore
-EXPIRATION_DATE=	2006-07-14
 
 WRKSRC=		${WRKDIR}/libhash
 
@@ -38,9 +36,9 @@ MLINKS=		libhash.3 hash_initialise.3 \
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPROFILE)
-PLIST_SUB+=	BUILT_PROFILE="@comment "
+PLIST_SUB+=	PROFILE="@comment "
 .else
-PLIST_SUB+=	BUILT_PROFILE=""
+PLIST_SUB+=	PROFILE=""
 .endif
 
 .include <bsd.port.mk>
