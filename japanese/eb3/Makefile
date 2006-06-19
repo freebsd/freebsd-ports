@@ -22,6 +22,9 @@ PATCH_SITES=	${MASTER_SITES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
+DEPRECATED=	please use a never version in japanese/eb
+EXPIRATION_DATE=	2006-07-19
+
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 LISTFILES=	appendix/LIST \
