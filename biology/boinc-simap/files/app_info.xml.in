@@ -1,0 +1,17 @@
+<app_info>
+    <app>
+        <name>simap</name>
+    </app>
+    <file_info>
+        <name>%%DISTNAME%%</name>
+        <executable/>
+    </file_info>
+    <app_version>
+        <app_name>simap</app_name>
+        <version_num>%%APPVERSION%%</version_num>
+       <file_ref>
+            <file_name>%%DISTNAME%%</file_name>
+            <main_program/>
+        </file_ref>
+    </app_version>
+</app_info>

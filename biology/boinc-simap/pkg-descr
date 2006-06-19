@@ -1,0 +1,10 @@
+SIMAP (Similarity Matrix of Proteins) is a public database of pre-calculated
+protein similarities that plays a key role in many bioinformatics methods. It
+contains about all currently published protein sequences and is continuously
+updated.
+
+The computational effort for keeping SIMAP up-to-date is constantly increasing.
+Please help to update SIMAP by calculating protein similarities on your
+computer.
+
+WWW: http://boinc.bio.wzw.tum.de/boincsimap/
