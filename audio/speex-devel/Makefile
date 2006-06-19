@@ -32,7 +32,7 @@ MAN1=		speexdec.1 speexenc.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN="Does not build"
+BROKEN=	Does not build on 4.x
 .endif
 
 .if ${MACHINE_CPU:Msse}!=""
