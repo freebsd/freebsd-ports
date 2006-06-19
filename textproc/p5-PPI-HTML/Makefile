@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI-HTML
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -25,9 +25,7 @@ PERL_CONFIGURE=	yes
 MAN3=	PPI::HTML.3
 
 post-patch:
-	@${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	@${PERL} -pi -e '$$_="" if m/AutoInstall/' ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e '$$_="" if m/Test::More|auto_install/' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
