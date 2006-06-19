@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.9
+PORTVERSION=	5.1.11
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -25,8 +25,6 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \
 		--without-libedit \
-		--without-bench \
-		--without-extra-tools \
 		--with-libwrap \
 		--with-mysqlfs \
 		--with-low-memory \
@@ -44,26 +42,15 @@ CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
 .if defined(WITH_OPENSSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=--with-ssl=bundled
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .endif
-.if !defined(WITHOUT_INNODB)
-CONFIGURE_ARGS+=--with-innodb
-.endif
-.if defined(WITH_ARCHIVE)
-CONFIGURE_ARGS+=--with-archive-storage-engine
-.endif
-.if defined(WITH_FEDERATED)
-CONFIGURE_ARGS+=--with-federated-storage-engine
-.endif
-.if defined(WITH_PARTITION)
-CONFIGURE_ARGS+=--with-partition
-.endif
 .if defined(WITH_NDB)
-CONFIGURE_ARGS+=--with-ndbcluster
+CONFIGURE_ARGS+=--with-plugins=max
+.else
+CONFIGURE_ARGS+=--with-plugins=max-no-ndb
 .endif
 .if defined(WITH_COLLATION) && ${WITH_COLLATION} != ""
 CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
@@ -72,7 +59,7 @@ CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
+CONFIGURE_ARGS+=--enable-assembler
 .endif
 .if defined(WITH_LINUXTHREADS)
 CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R
@@ -146,17 +133,13 @@ pre-fetch:
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
-	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
-	@${ECHO} "	WITH_ARCHIVE=yes	Enable support for Archive Storage Engine."
-	@${ECHO} "	WITH_FEDERATED=yes	Enable support for Federated Storage Engine."
-	@${ECHO} "	WITH_PARTITION=yes	Enable support for Partition Storage Engine."
 	@${ECHO} "	WITH_NDB=yes		Enable support for NDB Cluster."
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @zlib_dir@ @sql_server_dirs@ @mysql_se_dirs@ @sql_server@ scripts @man_dirs@ support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @zlib_dir@ @sql_server_dirs@ storage @sql_server@ scripts @man_dirs@ support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@ mysql_upgrade mysql_create_system_tables|g" ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@ mysql_create_system_tables|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/extra/Makefile.in
@@ -182,10 +165,7 @@ CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.0.*
 MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 USE_LDCONFIG=	${PREFIX}/lib/mysql
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 CONFIGURE_ARGS+=--without-server
 

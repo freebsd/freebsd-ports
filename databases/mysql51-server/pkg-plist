@@ -9,7 +9,6 @@ bin/myisampack
 bin/mysql_create_system_tables
 bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
-bin/mysql_upgrade
 bin/mysql_waitpid
 bin/mysqld_safe
 %%NDB%%bin/ndb_config
@@ -63,7 +62,6 @@ bin/resolveip
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndb_cluster_connection.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndb_opt_defaults.h
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndberror.h
-lib/mysql/libcsv.a
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a
