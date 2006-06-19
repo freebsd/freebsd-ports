@@ -135,6 +135,7 @@
     SUBDIR += cl-asdf-sbcl
     SUBDIR += cl-infix
     SUBDIR += cl-infix-cmucl
+    SUBDIR += cl-infix-sbcl
     SUBDIR += cl-port
     SUBDIR += cl-port-clisp
     SUBDIR += cl-port-sbcl
