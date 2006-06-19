@@ -33,6 +33,7 @@ lib/dovecot/lib02_trash_plugin.la
 lib/dovecot/lib02_trash_plugin.so
 @dirrm lib/dovecot
 libexec/dovecot/checkpassword-reply
+libexec/dovecot/deliver
 libexec/dovecot/dict
 libexec/dovecot/dovecot-auth
 libexec/dovecot/gdbhelper
