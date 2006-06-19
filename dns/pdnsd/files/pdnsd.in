@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# PROVIDE: pdnsd
+# REQUIRE: netif
+# BEFORE: LOGIN
+
+. %%RC_SUBR%%
+
+name="pdnsd"
+rcvar=${name}_enable
+command="%%PREFIX%%/sbin/pdnsd"
+pdnsd_flags="-d"
+required_files="%%PREFIX%%/etc/pdnsd.conf"
+load_rc_config $name
+
+run_rc_command "$1"
