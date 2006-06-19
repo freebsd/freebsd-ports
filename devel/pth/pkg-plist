@@ -1,6 +1,5 @@
 bin/pth-config
 %%PTHREAD%%bin/pthread-config
-etc/rc.d/000.pth.sh
 include/pth/pth.h
 %%PTHREAD%%include/pth/pthread.h
 lib/pth/libpth.a
