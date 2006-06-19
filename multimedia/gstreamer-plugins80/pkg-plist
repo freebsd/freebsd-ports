@@ -377,7 +377,7 @@ share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
-@dirrm lib/gstreamer-%%VERSION%%
+@dirrmtry lib/gstreamer-%%VERSION%%
 @dirrm include/gstreamer-%%VERSION%%/gst/xwindowlistener
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay
 @dirrm include/gstreamer-%%VERSION%%/gst/video
