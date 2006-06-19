@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	pth
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	GNU Portable Threads
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/pth
+USE_LDCONFIG=	${PREFIX}/lib/pth
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-optimize \
@@ -50,9 +49,6 @@ post-patch:
 
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
-
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/pth.sh ${PREFIX}/etc/rc.d/000.pth.sh
 
 test: build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
