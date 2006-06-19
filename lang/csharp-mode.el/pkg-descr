@@ -1,0 +1,14 @@
+After a good number of years, we noticed that there wasn't a "non-patched"
+version of a csharp-mode for Emacs. There were a few, but most of them had
+comments that they were "in progress" or "about to merge", but then we noticed
+that those notices were there even after a couple of months.
+
+Then, we saw a request for a csharp-mode on the cc-mode Emacs site, so we
+decided to follow the rules and create one that required no patching or
+modification to the core cc-mode engine (which is a good thing). So, this is
+the C# mode.
+
+WWW: http://mfgames.com/linux/csharp-mode
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org
