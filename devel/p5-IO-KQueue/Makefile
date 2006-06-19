@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	IO-KQueue
-PORTVERSION=	0.29
-PORTREVISION=	1
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -19,6 +18,16 @@ COMMENT=	Perl interface to the BSD kqueue system call
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::KQueue.3
+
+post-patch:
+	@${RM} -f ${WRKSRC}/._* ${WRKSRC}/examples/._*
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
