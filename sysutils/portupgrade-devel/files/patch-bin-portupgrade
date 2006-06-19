@@ -1,6 +1,14 @@
 --- bin/portupgrade.orig	Sun Jun 18 19:14:02 2006
-+++ bin/portupgrade	Sun Jun 18 23:46:40 2006
-@@ -716,7 +716,7 @@
++++ bin/portupgrade	Mon Jun 19 11:49:42 2006
+@@ -513,6 +513,7 @@
+ 
+       dry_parse = false
+ 
++      $distclean = 0
+       opts.order!(argv)
+ 
+       if envopt = config_value(:PORTUPGRADE_ARGS)
+@@ -716,7 +717,7 @@
      ntasks = upgrade_tasks.size + install_tasks.size
      ctask = 0
  
@@ -9,7 +17,7 @@
        config_tasks = upgrade_tasks.dup
        config_tasks.concat(install_tasks)
  
-@@ -774,7 +774,7 @@
+@@ -774,7 +775,7 @@
      cmdargs << 'ECHO_MSG=/usr/bin/true'
    end
  
