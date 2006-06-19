@@ -41,7 +41,7 @@ OPTIONS=	LARGEFILE	"Enable 64-bit file I/O support (BROKEN!)" off \
 
 .if defined(WITH_LARGEFILE)
 CONFIGURE_ARGS+=	--enable-largefile
-BROKEN=		"no expl(), logl(), nearbyintl(), et al"
+BROKEN=		no expl(), logl(), nearbyintl(), et al
 .endif
 
 .if defined(WITH_JACK)
