@@ -7,7 +7,7 @@
 
 PORTNAME=	pdnsd
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
@@ -17,6 +17,7 @@ COMMENT=	Caching (permanently, writes to disk on exit) DNS proxy-server
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_RC_SUBR=	pdnsd
 CONFIGURE_ARGS=	--with-cachedir=${PDNSDB} \
 		--disable-src-addr-disc
 
@@ -39,12 +40,9 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/rc.d
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pdnsd.sh > ${PREFIX}/etc/rc.d/pdnsd.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/pdnsd.sh
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${DOCSRCDIR}/@} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOC_FILES:S@^@${DOCSRCDIR}/@} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

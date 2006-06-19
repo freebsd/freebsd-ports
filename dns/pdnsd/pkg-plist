@@ -1,5 +1,4 @@
 etc/pdnsd.conf.sample
-etc/rc.d/pdnsd.sh
 sbin/pdnsd
 sbin/pdnsd-ctl
 %%PORTDOCS%%%%DOCSDIR%%/dl.html
