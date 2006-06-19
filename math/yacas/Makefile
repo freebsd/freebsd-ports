@@ -11,7 +11,7 @@ PORTVERSION=	1.0.61
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
 LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl

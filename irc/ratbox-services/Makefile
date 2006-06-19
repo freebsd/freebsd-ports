@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/		\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A highly configurable services package for use with ircd-ratbox
 
 USE_RC_SUBR=	ratbox-services.sh

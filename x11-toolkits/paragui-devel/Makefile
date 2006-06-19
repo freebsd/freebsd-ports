@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library
 
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \

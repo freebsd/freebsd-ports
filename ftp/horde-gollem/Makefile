@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/gollem/				\
 		http://ftp.horde.org/pub/gollem/
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Gollem is the Horde web-based File Manager
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde

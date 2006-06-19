@@ -10,7 +10,7 @@ PORTNAME=	plan
 PORTVERSION=	1.9
 CATEGORIES=	japanese
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 
 MAKE_ENV+=	JAPANESE=yes
 

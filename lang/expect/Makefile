@@ -9,7 +9,7 @@ PORTVERSION=	5.43.0
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	http://expect.nist.gov/src/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
 .if !defined(WITHOUT_X11)

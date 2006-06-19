@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
 GNU_CONFIGURE=	yes
