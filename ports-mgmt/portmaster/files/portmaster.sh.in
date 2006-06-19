@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.77
+# Local version: 1.78
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
@@ -871,7 +871,6 @@ if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 					delete_stale_distfiles
 					rm $distfiles
 				fi
-				;;
 			echo "===>>> Deleting empty directories (if any)"
 				find $pd/distfiles -type d -empty -print -delete
 				;;
