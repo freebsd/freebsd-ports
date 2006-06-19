@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portless
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	misc
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -15,8 +14,6 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Quick display of files inside the FreeBSD ports tree
-
-RUN_DEPENDS=	less:${PORTSDIR}/sysutils/less
 
 NO_BUILD=	yes
 MAN1=		portless.1
