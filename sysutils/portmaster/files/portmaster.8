@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd May 19, 2006
+.Dd June 19, 2006
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -32,24 +32,31 @@
 .Nd manage your ports
 .Sh SYNOPSIS
 .Nm
-.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
 .Op Ar name of port directory in /var/db/pkg
-.Pp
-.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
+.Nm
+.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
 .Op Ar glob pattern from /var/db/pkg
-.Pp
-.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
+.Nm
+.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
 .Op Fl p Ar port directory in /usr/ports
-.Pp
-.Op Fl CGanv [uf|i] [D|d] m Ar arguments for make
+.Nm
+.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
 .Op Ar full path to /usr/ports/foo/bar
-.Pp
-.Op Fl CGnv [uf|i] [D|d] m Ar arguments for make
+.Nm
+.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
+.Op Fl o Ar <new port dir in /usr/ports> <installed port>
+.Nm
+.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
 .Op Fl r Ar name/glob of port in /var/db/pkg
-.Pp
-.Op Fl h
-.Pp
+.Nm
+.Op Fl a CGbgnv [uf|i] [D|d] m Ar arguments for make
+.Nm
 .Op Fl l
+.Nm
+.Op Fl s
+.Nm
+.Op Fl h
 .Pp
 .Sh DESCRIPTION
 The
@@ -85,36 +92,46 @@ or start downloading the new ones.
 The options are as follows:
 .Bl -tag -width F1
 .It Fl C
-Prevents 'make clean' being run in port directory
+prevents 'make clean' being run in port directory
 .It Fl G
-Prevents the recursive 'make config'
+prevents the recursive 'make config'
 .It Fl a
 check all ports, update as necessary
+.It Fl b
+create a backup package of the installed port (if any)
+.It Fl g
+create a package of the new port
 .It Fl n
 do not actually perform any updates
 .It Fl v
 verbose output
+.It Fl u
+unattended mode, accepts defaults for all portmaster dialogues
 .It Fl f
 always rebuild ports (overrides -i)
 .It Fl i
 interactive update mode
-.It Fl u
-unattended mode, accepts defaults for all portmaster dialogues
 .It Fl D
 prevents cleaning of distfiles
 .It Fl d
 always clean distfiles
-.It Fl p Ar port directory in /usr/ports
-Specify the full path to a port directory
 .It Fl m Ar arguments for make
 any arguments to supply to
 .Xr make 1
+.It Fl p Ar port directory in /usr/ports
+Specify the full path to a port directory
+.It Fl o Ar <new port dir in /usr/ports> <installed port>
+Replace the installed port with a port from a different origin
 .It Fl r Ar name/glob of port in /var/db/pkg
 rebuild port, and all ports that depend on it
-.It Fl h
-display help file
+.It Fl a
+check all ports, update as necessary
 .It Fl l
 list all installed ports by category
+.It Fl s
+clean out stale ports that used to be depended on
+.It Fl h
+display help file
 .El
 .Sh FILES
 .Bl -tag -width ".Pa $HOME/.portmasterrc" -compact
@@ -137,6 +154,7 @@ command:
 .Dl "portmaster -p /usr/ports/foo/fooport"
 .Dl "portmaster foo/fooport"
 .Dl "portmaster -r fooport-1.23"
+.Dl "portmaster -o emulators/linux_base-fc4 linux_base-8-8.0_15"
 .Sh SEE ALSO
 .Xr make 1
 .Xr ports 7
