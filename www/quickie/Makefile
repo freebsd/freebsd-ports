@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A small footprint, fast Wiki engine written in C++
 
 GNU_CONFIGURE=	yes

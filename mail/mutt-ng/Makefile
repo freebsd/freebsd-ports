@@ -12,7 +12,7 @@ MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/		\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	muttng-${PORTVERSION}
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A fork of the mutt with the goal to incorporate all the patches
 
 GNU_CONFIGURE=	yes

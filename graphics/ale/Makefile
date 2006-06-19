@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
 
 OPTIONS=	DOUBLE "64bit Data Precision Support" off \

@@ -20,7 +20,7 @@ PATCHFILES=	slrn-0.9.8.1-fetch.diff \
 		slrn-0.9.8.1-lastchar2.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang

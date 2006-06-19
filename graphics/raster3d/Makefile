@@ -12,7 +12,7 @@ MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	Raster3D_${DISTVERSION}
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A set of tools for generating raster images of proteins and molecules
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

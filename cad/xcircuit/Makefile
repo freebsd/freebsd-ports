@@ -13,7 +13,7 @@ MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
 BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${USE_TCL} \

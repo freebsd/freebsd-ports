@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/passwd/				\
 DISTNAME=	passwd-h3-${PORTVERSION}
 DIST_SUBDIR=	horde
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A password changing module for Horde
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde

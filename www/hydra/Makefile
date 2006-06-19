@@ -11,7 +11,7 @@ PORTVERSION=	0.1.8
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hellug.gr/pub/software/hydra/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A high performance multi-threaded web server
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls

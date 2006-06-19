@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/	\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
 
 CONFLICTS=	rcd-ratbox-devel-[0-9]*

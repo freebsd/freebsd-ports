@@ -10,7 +10,7 @@ PORTVERSION=	1.0.7
 CATEGORIES=	multimedia
 MASTER_SITES=	https://helixcommunity.org/download.php/1950/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	The Helix Community's open source media player
 
 LIB_DEPENDS=	theora.[1-9]:${PORTSDIR}/multimedia/libtheora		\

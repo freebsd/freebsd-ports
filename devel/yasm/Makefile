@@ -11,7 +11,7 @@ PORTVERSION=	0.4.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A complete rewrite of the NASM assembler
 
 USE_ICONV=	yes

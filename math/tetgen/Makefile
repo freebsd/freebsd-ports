@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.wias-berlin.de/people/si/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	shaun@inerd.com
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
 NO_CDROM=	Tetgen is for academic or personal use only
