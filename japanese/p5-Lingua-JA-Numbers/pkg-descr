@@ -1,0 +1,16 @@
+This module converts Japanese text in UTF-8 (or romaji in ascii) to 
+number, AND vice versa. Though this pod is in English and all examples are 
+in romaji to make http://search.cpan.org/ happy, this module does accept 
+Japanese in UTF-8. Try the code below to see it.
+
+  perl -MLingua::JA::Numbers \
+    -e '$y="\x{4e8c}\x{5343}\x{4e94}"; printf "(C) %d Dan Kogai\n", ja2num($y)'
+
+CAVEAT
+
+DO NOT BE CONFUSED WITH Lingua::JA::Number by Mike Schilli. This module is 
+far more comprehensive. As of 0.03, it even does its to_string() upon 
+request.
+
+WWW: http://search.cpan.org/dist/Lingua-JA-Numbers
+Author: Dan Kogai <dankogai@intra>
