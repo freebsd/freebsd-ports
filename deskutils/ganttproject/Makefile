@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ganttproject
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	deskutils java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-src.zip
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Plan projects using a Gantt chart
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-builder
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/${PORTNAME}-builder
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -32,7 +32,8 @@ SUB_FILES=	${PORTNAME}.sh
 do-install:
 	@${MKDIR} -m 0755 -p ${DATADIR}
 	(cd ${WRKSRC}/dist-bin && \
-	    ${FIND} . | ${GREP} -v './.*\.\(sh\|bat\)' | \
+	    ${CP} ${WRKSRC}/ganttproject-eclipsito-config.xml ${WRKSRC}/dist-bin && \
+	    ${FIND} . | ${GREP} -v './.*\.\(sh\|bat\|command\)' | \
 	    ${CPIO} ${CPIOARGS} ${LIBOWN}:${LIBGRP} ${DATADIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 
