@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-SNMP
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -16,6 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Event-driven SNMP interface
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -26,4 +27,10 @@ MAN3=		POE::Component::SNMP.3
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.cache
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600 # inherited from p5-Net-SNMP
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
