@@ -1,5 +1,8 @@
---- Makefile.orig	Wed Jan 11 02:19:14 2006
-+++ Makefile	Wed Apr 26 02:47:21 2006
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -27,7 +27,7 @@
  # Uncomment if you want libpri to count number of Q921/Q931 sent/received
  #LIBPRI_COUNTERS=-DLIBPRI_COUNTERS
@@ -18,15 +21,15 @@
  STATIC_OBJS=copy_string.o pri.o q921.o prisched.o q931.o pri_facility.o
  DYNAMIC_OBJS=copy_string.lo pri.lo q921.lo prisched.lo q931.lo pri_facility.lo
 -CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
--INSTALL_PREFIX?=
+-INSTALL_PREFIX=$(DESTDIR)
 -INSTALL_BASE=/usr
 -SOFLAGS = -Wl,-hlibpri.so.1.0
 +CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
-+INSTALL_PREFIX?=$(PREFIX)
++INSTALL_PREFIX=$(PREFIX)
 +INSTALL_BASE=
 +SOFLAGS = -Wl,-hlibpri.so.1
  LDCONFIG = /sbin/ldconfig
- ifeq (${OSARCH},Linux)
+ ifneq (,$(findstring $(OSARCH), Linux GNU/kFreeBSD))
  LDCONFIG_FLAGS=-n
 @@ -84,12 +84,11 @@
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
@@ -37,7 +40,7 @@
 -	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then  restorecon -v $(INSTALL_PREFIX)$(INSTALL_BASE)/lib/$(DYNAMIC_LIBRARY); fi
 -	( cd $(INSTALL_PREFIX)$(INSTALL_BASE)/lib ; ln -sf libpri.so.1.0 libpri.so ; ln -sf libpri.so.1.0 libpri.so.1 )
 -	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
--	if test $$(id -u) = 0; then $(LDCONFIG); fi
+-	if test $$(id -u) = 0; then $(LDCONFIG) $(LDCONFIG_FLAGS) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib; fi
 +	echo installing libpri.h
 +	$(BSD_INSTALL_DATA) libpri.h $(INSTALL_PREFIX)/include
 +	$(BSD_INSTALL_PROGRAM) $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)/lib
@@ -46,11 +49,14 @@
  else
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include -m 644 libpri.h
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/lib -m 755 $(DYNAMIC_LIBRARY)
-@@ -130,7 +129,6 @@
+@@ -130,10 +129,6 @@
  
  $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
  	$(CC) -shared $(SOFLAGS) -o $@ $(DYNAMIC_OBJS)
 -	$(LDCONFIG) $(LDCONFIG_FLAGS) .
- 	ln -sf libpri.so.1.0 libpri.so
- 	ln -sf libpri.so.1.0 libpri.so.1
- 	$(SOSLINK)
+-	ln -sf libpri.so.1.0 libpri.so
+-	ln -sf libpri.so.1.0 libpri.so.1
+-	$(SOSLINK)
+ 
+ clean:
+ 	rm -f *.o *.so *.lo *.so.1 *.so.1.0
