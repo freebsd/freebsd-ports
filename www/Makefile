@@ -639,6 +639,7 @@
     SUBDIR += p5-HTTP-Server-Simple-Recorder
     SUBDIR += p5-HTTP-Server-Simple-Static
     SUBDIR += p5-HTTP-SimpleLinkChecker
+    SUBDIR += p5-HTTP-Size
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-User-Manage
