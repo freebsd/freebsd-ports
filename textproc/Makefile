@@ -308,6 +308,7 @@
     SUBDIR += p5-Bloom-Filter
     SUBDIR += p5-CQL-Parser
     SUBDIR += p5-CSS-SAC
+    SUBDIR += p5-CSS-Squish
     SUBDIR += p5-CSS-Tiny
     SUBDIR += p5-Chess-PGN-Parse
     SUBDIR += p5-Data-FormValidator
