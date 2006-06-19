@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sitecopy
-PORTVERSION=	0.16.1
-PORTREVISION?=	1
+PORTVERSION=	0.16.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.lyra.org/sitecopy/
 
