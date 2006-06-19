@@ -540,6 +540,7 @@
     SUBDIR += sylpheed-claws-synce
     SUBDIR += sylpheed-claws-vcalendar
     SUBDIR += sylpheed2
+    SUBDIR += sylpheed2-devel
     SUBDIR += sympa
     SUBDIR += sympa-elixus
     SUBDIR += sympa5
