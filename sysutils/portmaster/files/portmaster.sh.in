@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.65
+# Local version: 1.77
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
@@ -8,7 +8,13 @@
 
 # %%LOCALBASE%% and %%X11BASE%% are needed in path for make
 PATH=/bin:/usr/bin:/sbin:/usr/sbin:%%LOCALBASE%%/bin:%%X11BASE%%/bin
+if [ -n "$CCACHE_PATH" ]; then
+	if [ -z "$NOCCACHE" ]; then
+		PATH="%%LOCALBASE%%/libexec/ccache:$PATH"
+	fi
+fi
 export PATH
+
 umask 022
 
 usage () {
@@ -16,28 +22,39 @@ usage () {
 	echo "portmaster version $VERSION_NUMBER"
 	echo ''
 	echo 'Usage:'
-	echo "${0##*/} [-CGanv uf|i D|d] <full name of port directory in $pdb>"
-	echo "${0##*/} [-CGanv uf|i D|d] <glob pattern of directory in $pdb>"
-	echo "${0##*/} [-CGanv uf|i D|d] -p <port directory in $pd>"
-	echo "${0##*/} [-CGanv uf|i D|d] <full path to $pd/foo/bar>"
-	echo "${0##*/} [-CGnv uf|i D|d] -r <name/glob of port directory in $pdb>"
-	echo "${0##*/} -h"
+	echo "Common flags: [-CGbgnv uf|i D|d] [-m <arguments for make>]"
+	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
+	echo "${0##*/} [Common flags] <glob pattern of directory in $pdb>"
+	echo "${0##*/} [Common flags] -p <port directory in $pd>"
+	echo "${0##*/} [Common flags] <full path to $pd/foo/bar>"
+	echo "${0##*/} [Common flags] -o <new port dir in $pd> <installed port>"
+	echo "${0##*/} [Common flags] -r <name/glob of port directory in $pdb>"
+	echo "${0##*/} -a [Common flags]"
 	echo "${0##*/} -l"
+	echo "${0##*/} -s"
+	echo "${0##*/} -h"
 	echo ''
 	echo "-C prevents 'make clean' being run in port directory"
 	echo "-G prevents recursive 'make config'"
-	echo '-a check all ports, update as necessary'
-	echo '-n do not launch child process to update dependencies'
+	echo '-b create a backup package of the installed port (if any)'
+	echo '-g create a package of the new port'
+	echo '-n do not actually make or install any ports'
 	echo '-v verbose output'
+	echo "-u unattended mode -- accept defaults for all but 'make config'"
 	echo '-f always rebuild ports (overrides -i)'
 	echo '-i interactive update mode'
 	echo '-D prevents cleaning of distfiles'
 	echo '-d always clean distfiles'
 	echo "-m <arguments for the 'make' command line>"
+	echo ''
+	echo '-o Replace the installed port with a port from a different origin'
 	echo '-r rebuild port, and all ports that depend on it'
-	echo "-u unattended mode -- accept defaults for all but 'make config'"
-	echo '-h display this help file'
+	echo '-a check all ports, update as necessary'
+	echo ''
 	echo '-l list installed ports by category'
+	echo '-s clean out stale ports that used to be depended on'
+	echo ''
+	echo '-h display this help file'
 	echo ''
 	exit 1
 }
@@ -80,9 +97,9 @@ dep_warn () {
 	echo ''
 	echo "===>>> Warning! Potential unrecorded dependencies on $new_port"
 	echo "===>>> From existing +CONTENTS files:"
-	grep "pkgdep ${short_port}-" $pdb/*/+CONTENTS |
-	    sort -u | sed "s#$pdb/##"
-	num_ports1=`grep "pkgdep ${short_port}-" $pdb/*/+CONTENTS |
+	grep -B1 DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS |
+	    sort -u | sed -e "s#$pdb/##" -e 1d
+	num_ports1=`grep DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS |
 	    sort -u | wc -l | awk '{print $1}'`
 	echo "===>>> $num_ports1 ports"
 	echo ''
@@ -161,10 +178,31 @@ check_interactive () {
 	return 0
 }
 
+iport_from_origin () {
+	local dir
+
+	dir=`grep -l "@comment ORIGIN:${1}$" $pdb/*/+CONTENTS`
+	dir="${dir%/+CONTENTS}"
+	dir="${dir#$pdb/}"
+
+	echo $dir
+}
+
+origin_from_pdb () {
+	grep '@comment ORIGIN' ${1}/+CONTENTS | cut -f2 -d':'
+}
+
 check_for_updates () {
 	local upd_port port_ver do_update
 
-	upd_port=`grep ' ORIGIN' $pdb/$1/+CONTENTS | cut -f2 -d':'`
+	upd_port=`origin_from_pdb $pdb/$1`
+	if [ -z "$upd_port" ]; then
+		if [ -n "$VERBOSE" ]; then
+			echo "===>>> No ORIGIN in $pdb/$1/+CONTENTS"
+			echo ''
+		fi
+		return 0
+	fi
 
 	if [ -d "$pd/$upd_port" ]; then
 		cd $pd/$upd_port ||
@@ -240,7 +278,7 @@ ports_by_category () {
 		# Handle regular files, such as portupgrade's pkgdb.db
 		test -d "$pkg" || continue
 
-		if [ -e "$pkg/+REQUIRED_BY" ]; then
+		if [ -s "$pkg/+REQUIRED_BY" ]; then
 			if grep '^@pkgdep ' $pkg/+CONTENTS >/dev/null; then
 				branches="$branches $pkg"
 			else
@@ -291,10 +329,8 @@ dependency_check () {
 			fi
 		fi
 
-		cur_p=`grep -l " ORIGIN:${dep_port#$pd/}$" $pdb/*/+CONTENTS`
+		cur_p=`iport_from_origin ${dep_port#$pd/}`
 		if [ -n "$cur_p" ]; then
-			cur_p=${cur_p%/+CONTENTS}
-			cur_p=${cur_p##*/}
 			upd_args=$cur_p
 		else
 			upd_args="-p $dep_port"		# Sensible default
@@ -306,10 +342,8 @@ dependency_check () {
 			op=`echo $op | sed 's/.* //'`
 
 			if [ -n "$op" ]; then
-				old_p=`grep -l " ORIGIN:${op}$" $pdb/*/+CONTENTS`
+				old_p=`iport_from_origin ${op}`
 				if [ -n "$old_p" ]; then
-					old_p=${old_p%/+CONTENTS}
-					old_p=${old_p##*/}
 					upd_args=$old_p
 				fi
 			fi
@@ -378,29 +412,34 @@ fi
 : ${pdb:=/var/db/pkg}
 
 # Save switches for potential child processes
-while getopts 'CDGadfhilm:np:r:uv' COMMAND_LINE_ARGUMENT ; do
+while getopts 'CDGabdfghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
 	case "${COMMAND_LINE_ARGUMENT}" in
 	C)	DONT_PRE_CLEAN=yes; ARGS="-C $ARGS" ;;
 	D)	DONT_SCRUB_DISTFILES=yes; ARGS="-D $ARGS" ;;
 	G)	NO_RECURSIVE_CONFIG=yes; ARGS="-G $ARGS" ;;
 	a)	UPDATE_ALL=yes ;;
+	b)	BACKUP=yes; ARGS="-b $ARGS" ;;
 	d)	ALWAYS_SCRUB_DISTFILES=yes; ARGS="-d $ARGS" ;;
 	f)	FORCE_PARENT=yes
 		FORCE=yes
 		UPDATES_DONE_LIST=`mktemp -t updates_done_list`
 		export FORCE UPDATES_DONE_LIST
 		;;
+	g)	MAKE_PACKAGE=yes; ARGS="-g $ARGS" ;;
 	h)	usage ; exit 0 ;;
 	i)	INTERACTIVE_UPDATE=yes; ARGS="-i $ARGS" ;;
 	l)	LIST=yes ;;
 	m)	MAKE_ARGS=$OPTARG; ARGS="-m $MAKE_ARGS $ARGS" ;;
 	n)	NO_ACTION=yes ;;
+	o)	REPLACE_ORIGIN=yes ;;
 	p)	portdir="${OPTARG#$pd/}" ;;
 	r)	UPDATE_REQ_BYS=yes; upg_port=$OPTARG ;;
+	s)	CLEAN_STALE=yes ;;
 	u)	UNATTENDED=yes; ARGS="-u $ARGS" ;;
 	v)	VERBOSE=yes; ARGS="-v $ARGS" ;;
 	esac
 done
+shift $(( $OPTIND - 1 ))
 
 if [ -n "$LIST" ]; then
 	ports_by_category
@@ -443,6 +482,28 @@ if [ -n "$LIST" ]; then
 	exit 0
 fi
 
+if [ -n "$CLEAN_STALE" ]; then
+	for file in `find $pdb/ -name \+REQUIRED_BY -empty` ; do
+		dir="${file%/+REQUIRED_BY}"
+		origin=`origin_from_pdb $dir`
+
+		deplist=`grep DEPORIGIN:$origin$ $pdb/*/+CONTENTS`
+		if [ -z "$deplist" ]; then
+			echo -n "===>>> ${dir#$pdb/} is no longer depended on, delete? [n] "
+			read YESNO
+
+			case "$YESNO" in
+			[yY])	pkg_delete ${dir#$pdb/} ;;
+			esac
+		else
+			echo "===>>> Warning: unrecorded dependencies on ${dir#$pdb/}:"
+			echo $deplist
+		fi
+	done
+
+	exit 0
+fi
+
 test -n "$FORCE" && unset INTERACTIVE_UPDATE
 if [ -n "$UNATTENDED" ]; then
 	unset INTERACTIVE_UPDATE
@@ -468,7 +529,7 @@ if [ -n "$UPDATE_ALL" ]; then
 	if [ -n "$CONFIG_SEEN_LIST" ]; then
 		echo "===>>> Checking ports for recursive 'make config'"
 		for pkg in $roots $trunks $branches $leaves; do
-			p=`grep ' ORIGIN' $pkg/+CONTENTS | cut -f2 -d':'`
+			p=`origin_from_pdb $pkg`
 			if [ `grep "${pd}/${p}$" $CONFIG_SEEN_LIST` ]; then
 				continue
 			else
@@ -480,6 +541,7 @@ if [ -n "$UPDATE_ALL" ]; then
 		unset_recursive_config
 		echo ''
 		echo "===>>> Starting build for ports that need updating <<<==="
+		echo ''
 	fi
 
 	for pkg in $roots $trunks $branches $leaves; do
@@ -489,7 +551,7 @@ if [ -n "$UPDATE_ALL" ]; then
 			continue
 		fi
 		if [ -n "$FORCE" ]; then
-			p=`grep ' ORIGIN' $pkg/+CONTENTS | cut -f2 -d':'`
+			p=`origin_from_pdb $pkg`
 			if [ ! `grep "${pd}/${p}$" $UPDATES_DONE_LIST` ]; then
 				echo "===>>> Forcing update for ${pkg##*/}"
 				update_port ${pkg##*/}
@@ -508,23 +570,42 @@ if [ -n "$UPDATE_ALL" ]; then
 	safe_exit
 fi
 
+if [ -n "$REPLACE_ORIGIN" ]; then
+	portdir="${1#$pd/}"
+	newportdir=$portdir
+
+	if [ -d "$pdb/$2" ]; then
+		# Handle the portmaster'ish way to specify the port
+		upg_port=$2
+	else
+		# Handle existing portupgrade syntax
+		upg_port=`grep -l " ORIGIN:[^\/]*/${2}$" $pdb/*/+CONTENTS`
+		[ -n "$upg_port" ] ||
+		    upg_port=`grep -l " ORIGIN:[^\/]*/${2}" $pdb/*/+CONTENTS`
+		[ -n "$upg_port" ] ||
+		    fail "Cannot find an installed port with ORIGIN $2"
+		upg_port="${upg_port%/+CONTENTS}"
+		upg_port="${upg_port#$pdb/}"
+	fi
+
+	oldportdir=`origin_from_pdb $pdb/$upg_port`
+fi
+
 # Exercised in the common case of not using -p option
 case "$portdir" in
-'')	eval arg=\$${OPTIND}
-	case "${arg}" in
+'')	case "$1" in
 	'')	test -z "$UPDATE_REQ_BYS" && usage ;;
-	${pd}/*)	portdir="${arg#$pd/}" ;;
-	/*)	upg_port="${arg##*/}" ;;
-	*)	upg_port=$arg ;;
+	${pd}/*)	portdir="${1#$pd/}" ;;
+	/*)	upg_port="${1##*/}" ;;
+	*)	upg_port=$1 ;;
 	esac
 esac
 
 case "$upg_port" in
 '')	test -n "$portdir" || usage
-	old_port_dir=`grep -l "@comment ORIGIN:${portdir}$" $pdb/*/+CONTENTS`
+	old_port_dir=`iport_from_origin ${portdir}`
 	if [ -n "$old_port_dir" ]; then
-		old_port_dir="${old_port_dir%/+CONTENTS}"
-		upg_port="${old_port_dir#$pdb/}"
+		upg_port="${old_port_dir}"
 	fi
 	;;
 *)	if [ ! -d "$pdb/$upg_port" ]; then
@@ -546,7 +627,11 @@ case "$upg_port" in
 		esac
 	fi
 	echo "===>>> Port to upgrade: $upg_port"
-	portdir=`grep ' ORIGIN' $pdb/$upg_port/+CONTENTS | cut -f2 -d':'`
+	if [ -z "$portdir" ]; then
+		portdir=`origin_from_pdb $pdb/$upg_port`
+		[ -n "$portdir" ] ||
+		    fail "No ORIGIN in $pdb/$upg_port/+CONTENTS"
+	fi
 	;;
 esac
 
@@ -574,7 +659,7 @@ if [ -n "$CONFIG_ONLY" ]; then
 		safe_exit
 	else
 		if [ -n "$UPDATE_REQ_BYS" -a \
-		    -r "$pdb/$upg_port/+REQUIRED_BY" ]; then
+		    -s "$pdb/$upg_port/+REQUIRED_BY" ]; then
 			echo "$pd/$portdir" >> $CONFIG_SEEN_LIST
 
 			echo ''
@@ -621,7 +706,7 @@ cd $pd/$portdir
 while [ -f "$fetchlog" ]; do
 	echo ''
 	echo "===>>> Waiting on fetch to complete for $portdir <<<==="
-	tail -10 $fetchlog | grep -v '^$'
+	tail -10 $fetchlog 2>/dev/null | grep -v '^$'
 	echo ''
 	echo "===>>> Waiting on fetch to complete for $portdir <<<==="
 	sleep 5
@@ -637,8 +722,12 @@ short_port="${prefix}${portname}${suffix}"
 
 # Check for dependencies here in case +REQUIRED_BY is not up to date or missing
 grep_deps=`mktemp -t grep-deps-${short_port}`
-grep -l "pkgdep ${upg_port%-*}-" $pdb/*/+CONTENTS | cut -f 5 -d '/' |
-    sort -u > $grep_deps
+
+if [ -n "$upg_port" ]; then
+	upg_origin=`origin_from_pdb $pdb/$upg_port`
+	grep -l DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS | cut -f 5 -d '/' |
+	    sort -u > $grep_deps
+fi
 
 if [ -s "$pdb/$upg_port/+REQUIRED_BY" ]; then
 	req_deps=`mktemp -t req-deps-${short_port}`
@@ -674,10 +763,27 @@ fi
 
 # Ignore if no old port exists
 if [ -n "$upg_port" ]; then
+	if [ -n "$BACKUP" ]; then
+		echo "===>>> Creating a backup package for $upg_port in $HOME"
+		pkg_create -b $upg_port ||
+		    fail "Backup package creation failed for $upg_port"
+		mv ${upg_port}.* $HOME/
+	fi
 	pkg_delete -f $upg_port || fail 'pkg_delete failed'
 fi
 
-make $MAKE_ARGS install clean || fail 'installation of new port failed'
+aw=install
+fw=Installation
+if [ -n "$MAKE_PACKAGE" ]; then
+	aw=package
+	fw=Packaging
+	echo "===>>> Creating a package for $new_port in $HOME"
+fi
+make $MAKE_ARGS $aw clean || fail "$fw of new port failed"
+
+if [ -n "$MAKE_PACKAGE" ]; then
+	mv ${new_port}.* $HOME/
+fi
 
 # By now, if this file exists, it should be authoritative
 if [ -s "$req_deps" ]; then
@@ -703,10 +809,17 @@ echo "===>>> Upgrade for $upg_port to $new_port succeeded"
 
 test -n "$UPDATES_DONE_LIST" && echo "$pd/$portdir" >> $UPDATES_DONE_LIST
 
-if [ -z "$DONT_SCRUB_DISTFILES" ]; then
+find_distdir () {
 	distdir=`make $MAKE_ARGS -V DISTDIR`
 	dist_subdir=`make $MAKE_ARGS -V DIST_SUBDIR`
 	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
+}
+
+delete_stale_distfiles () {
+	# distfiles is used below
+	local distfile file DELORNOT
+
+	find_distdir
 
 	distfiles=`make $MAKE_ARGS -V DISTFILES`
 	cd $distdir || fail "cd to $distdir failed!"
@@ -738,9 +851,39 @@ if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 			esac
 		done
 	done
+}
+
+if [ -z "$DONT_SCRUB_DISTFILES" ]; then
+	if [ -z "$oldportdir" ]; then
+		delete_stale_distfiles
+	else
+		if ! cd $pd/$oldportdir; then
+			echo "===>>> No $oldportdir to cd to in order to delete"
+			echo "       old distfiles, remove by hand if desired"
+		else
+		echo -n "===>>> Delete all distfiles for ${oldportdir#*/}? [n] "
+			read DELORNOT
+			case "$DELORNOT" in
+			[yY])	find_distdir
+				if [ -n "$dist_subdir" ]; then
+					cd $distdir && rm -r *
+				else
+					delete_stale_distfiles
+					rm $distfiles
+				fi
+				;;
+			echo "===>>> Deleting empty directories (if any)"
+				find $pd/distfiles -type d -empty -print -delete
+				;;
+			*)	delete_stale_distfiles ;;
+			esac
+		fi
+
+		cd $pd/$newportdir && delete_stale_distfiles
+	fi
 fi
 
-if [ -n "$UPDATE_REQ_BYS" -a -r "$pdb/$new_port/+REQUIRED_BY" ]; then
+if [ -n "$UPDATE_REQ_BYS" -a -s "$pdb/$new_port/+REQUIRED_BY" ]; then
 	echo ''
 	echo "===>>> Updating ports that depend on $new_port"
 	for req_by in `cat $pdb/$new_port/+REQUIRED_BY`; do
