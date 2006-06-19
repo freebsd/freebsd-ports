@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.1.99
+PORTVERSION=	2.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A universal digital camera picture control tool
 
 LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb \
 		exif:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	gnometarget pkgconfig ltverhack
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure libgphoto2_port/configure
-#CONFIGURE_ENV+=	LIBUSB_CFLAGS="${LIBUSB_CFLAGS}" LIBUSB_LIBS="${LIBUSB_LIBS}"
 INSTALLS_SHLIB=	yes
-PLIST_SUB=	VERSION="${PORTVERSION}"
+PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.6.1
 
 MAN3=		libgphoto2.3 libgphoto2_port.3
 
