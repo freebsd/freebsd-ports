@@ -1188,6 +1188,7 @@ cl-asdf		ports/devel/cl-asdf
 cl-asdf-clisp	ports/devel/cl-asdf-clisp
 cl-asdf-cmucl	ports/devel/cl-asdf-cmucl
 cl-asdf-sbcl	ports/devel/cl-asdf-sbcl
+cl-infix	ports/devel/cl-infix
 cl-lml		ports/www/cl-lml
 cl-lml-clisp	ports/www/cl-lml-clisp
 cl-lml-cmucl	ports/www/cl-lml-cmucl
