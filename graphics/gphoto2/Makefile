@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.1.99
+PORTVERSION=	2.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A command-line frontend to libgphoto2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \

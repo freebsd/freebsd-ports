@@ -17,6 +17,7 @@ bin/gphoto2
 %%NLS%%share/locale/nb/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/gphoto2.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gphoto2.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gphoto2.mo
