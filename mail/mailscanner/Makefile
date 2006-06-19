@@ -7,7 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.54.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -37,7 +37,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
-	${SITE_PERL}/${PERL_ARCH}/Filesys/Df.pm:${PORTSDIR}/devel/p5-Filesys-Statvfs_Df \
+	${SITE_PERL}/${PERL_ARCH}/Filesys/Df.pm:${PORTSDIR}/sysutils/p5-Filesys-Df \
 	${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
