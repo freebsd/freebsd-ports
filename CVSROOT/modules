@@ -8527,7 +8527,6 @@ p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
 p5-Filesys-DiskUsage	ports/sysutils/p5-Filesys-DiskUsage
 p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filesys-Statvfs	ports/sysutils/p5-Filesys-Statvfs
-p5-Filesys-Statvfs_Df	ports/devel/p5-Filesys-Statvfs_Df
 p5-Filesys-Virtual	ports/devel/p5-Filesys-Virtual
 p5-Filesys-Virtual-DAAP	ports/audio/p5-Filesys-Virtual-DAAP
 p5-Filesys-Virtual-Plain	ports/devel/p5-Filesys-Virtual-Plain
