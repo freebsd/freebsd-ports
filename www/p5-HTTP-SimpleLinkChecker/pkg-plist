@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTTP/SimpleLinkChecker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/SimpleLinkChecker/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/SimpleLinkChecker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP
