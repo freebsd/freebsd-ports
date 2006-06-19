@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Plugin-AbstractCount
-PORTVERSION=	0.06
-PORTREVISION=	1
+PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -27,6 +26,6 @@ MAN3=	Class::DBI::Plugin::AbstractCount.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6 or newer. Install lang/perl5 or lang/perl5.8, and try again.
+IGNORE=	requires Perl 5.6 or newer. Install lang/perl5 or lang/perl5.8, and try again
 .endif
 .include <bsd.port.post.mk>
