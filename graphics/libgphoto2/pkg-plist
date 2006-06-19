@@ -36,6 +36,9 @@ lib/libgphoto2/%%VERSION%%/canon.so
 lib/libgphoto2/%%VERSION%%/casio_qv.a
 lib/libgphoto2/%%VERSION%%/casio_qv.la
 lib/libgphoto2/%%VERSION%%/casio_qv.so
+lib/libgphoto2/%%VERSION%%/clicksmart310.a
+lib/libgphoto2/%%VERSION%%/clicksmart310.la
+lib/libgphoto2/%%VERSION%%/clicksmart310.so
 lib/libgphoto2/%%VERSION%%/digita.a
 lib/libgphoto2/%%VERSION%%/digita.la
 lib/libgphoto2/%%VERSION%%/digita.so
@@ -189,15 +192,18 @@ lib/libgphoto2/%%VERSION%%/sx330z.so
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.a
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.la
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.so
-lib/libgphoto2_port/0.5.2/disk.a
-lib/libgphoto2_port/0.5.2/disk.la
-lib/libgphoto2_port/0.5.2/disk.so
-lib/libgphoto2_port/0.5.2/serial.a
-lib/libgphoto2_port/0.5.2/serial.la
-lib/libgphoto2_port/0.5.2/serial.so
-lib/libgphoto2_port/0.5.2/usb.a
-lib/libgphoto2_port/0.5.2/usb.la
-lib/libgphoto2_port/0.5.2/usb.so
+lib/libgphoto2_port/%%VERSION_PORT%%/disk.a
+lib/libgphoto2_port/%%VERSION_PORT%%/disk.la
+lib/libgphoto2_port/%%VERSION_PORT%%/disk.so
+lib/libgphoto2_port/%%VERSION_PORT%%/ptpip.a
+lib/libgphoto2_port/%%VERSION_PORT%%/ptpip.la
+lib/libgphoto2_port/%%VERSION_PORT%%/ptpip.so
+lib/libgphoto2_port/%%VERSION_PORT%%/serial.a
+lib/libgphoto2_port/%%VERSION_PORT%%/serial.la
+lib/libgphoto2_port/%%VERSION_PORT%%/serial.so
+lib/libgphoto2_port/%%VERSION_PORT%%/usb.a
+lib/libgphoto2_port/%%VERSION_PORT%%/usb.la
+lib/libgphoto2_port/%%VERSION_PORT%%/usb.so
 lib/libgphoto2.a
 lib/libgphoto2.la
 lib/libgphoto2.so
@@ -205,7 +211,7 @@ lib/libgphoto2.so.2
 lib/libgphoto2_port.a
 lib/libgphoto2_port.la
 lib/libgphoto2_port.so
-lib/libgphoto2_port.so.5
+lib/libgphoto2_port.so.0
 libdata/pkgconfig/libgphoto2.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -237,6 +243,8 @@ libdata/pkgconfig/libgphoto2.pc
 %%NLS%%share/locale/ja/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libgphoto2_port-0.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libgphoto2-2.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2_port-0.mo
@@ -255,7 +263,7 @@ libdata/pkgconfig/libgphoto2.pc
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm share/doc/libgphoto2_port
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/libgphoto2_port/0.5.2
+@dirrm lib/libgphoto2_port/%%VERSION_PORT%%
 @dirrm lib/libgphoto2_port
 @dirrm lib/libgphoto2/%%VERSION%%
 @dirrm lib/libgphoto2
