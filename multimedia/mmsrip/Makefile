@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmsrip
-PORTVERSION=	0.6.5
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://nbenoit.tuxfamily.org/projects/mmsrip/ \
 		http://pmy.lv/mirror/MMSRipper/ \
@@ -21,4 +21,11 @@ MAN1=		mmsrip.1
 
 PLIST_FILES=	bin/mmsrip
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+post-patch:
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's/stdint.h/inttypes.h/g'
+.endif
+
+.include <bsd.port.post.mk>
