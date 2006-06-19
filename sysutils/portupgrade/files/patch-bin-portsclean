@@ -1,0 +1,12 @@
+--- bin/portsclean.orig	Mon Jun 19 11:21:30 2006
++++ bin/portsclean	Mon Jun 19 11:27:10 2006
+@@ -218,6 +218,9 @@
+ 
+ def distclean(level)
+   return if level <= 0
++  
++  level = 1 if level == 2
++  level = 2 if level > 2
+ 
+   puts "Detecting unreferenced distfiles..."
+ 
