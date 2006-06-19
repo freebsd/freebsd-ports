@@ -1,12 +1,11 @@
---- bin/portsclean.orig	Mon Jun 19 11:21:30 2006
-+++ bin/portsclean	Mon Jun 19 11:27:10 2006
-@@ -218,6 +218,9 @@
+--- bin/portsclean.orig	Sun Jun 18 20:02:01 2006
++++ bin/portsclean	Mon Jun 19 11:50:54 2006
+@@ -141,6 +141,8 @@
  
- def distclean(level)
-   return if level <= 0
-+  
-+  level = 1 if level == 2
-+  level = 2 if level > 2
+       dry_parse = false
  
-   puts "Detecting unreferenced distfiles..."
++      $distclean = 0
++      $pkgclean = 0
+       opts.order!(argv)
  
+       if !$workclean && $distclean.zero? && $pkgclean.zero? && !$libclean
