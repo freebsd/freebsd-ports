@@ -29,6 +29,7 @@
     SUBDIR += cmucl-extra
     SUBDIR += cocor
     SUBDIR += compaq-cc
+    SUBDIR += csharp-mode.el
     SUBDIR += cu-prolog
     SUBDIR += cyclone
     SUBDIR += dice
