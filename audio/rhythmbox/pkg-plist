@@ -1,18 +1,37 @@
 bin/rhythmbox
-lib/bonobo/librb-nautilus-context-menu.a
-lib/bonobo/librb-nautilus-context-menu.la
-lib/bonobo/librb-nautilus-context-menu.so
+bin/rhythmbox-client
+%%PYTHON%%lib/rhythmbox/plugins/Loader.py
+%%PYTHON%%lib/rhythmbox/plugins/Loader.pyc
+%%PYTHON%%lib/rhythmbox/plugins/Loader.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay.rb-plugin
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/Loader.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/Loader.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/Loader.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.pyo
 lib/rhythmbox/plugins/audioscrobbler.rb-plugin
+lib/rhythmbox/plugins/generic-player.rb-plugin
 lib/rhythmbox/plugins/libaudioscrobbler.a
 lib/rhythmbox/plugins/libaudioscrobbler.la
 lib/rhythmbox/plugins/libaudioscrobbler.so
+lib/rhythmbox/plugins/libgeneric-player.a
+lib/rhythmbox/plugins/libgeneric-player.la
+lib/rhythmbox/plugins/libgeneric-player.so
+%%PYTHON%%lib/rhythmbox/plugins/lyrics.py
+%%PYTHON%%lib/rhythmbox/plugins/lyrics.pyc
+%%PYTHON%%lib/rhythmbox/plugins/lyrics.pyo
+%%PYTHON%%lib/rhythmbox/plugins/lyrics.rb-plugin
 %%PYTHON%%lib/rhythmbox/plugins/pythonconsole.py
 %%PYTHON%%lib/rhythmbox/plugins/pythonconsole.pyc
 %%PYTHON%%lib/rhythmbox/plugins/pythonconsole.pyo
 %%PYTHON%%lib/rhythmbox/plugins/pythonconsole.rb-plugin
-libdata/bonobo/servers/GNOME_Rhythmbox.server
-libdata/bonobo/servers/Rhythmbox_Nautilus_Context_Menu.server
-libdata/pkgconfig/rhythmbox.pc
 libexec/rhythmbox-metadata
 share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/ch01.html
@@ -151,13 +170,41 @@ share/gnome/help/rhythmbox/ru/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/ru/figures/rb-window-small.png
 share/gnome/help/rhythmbox/ru/figures/rb-window.png
 share/gnome/help/rhythmbox/ru/rhythmbox.xml
-share/gnome/idl/Rhythmbox.idl
+share/gnome/help/rhythmbox/sv/figures/rb-iradio-main.png
+share/gnome/help/rhythmbox/sv/figures/rb-notification-area-menu.png
+share/gnome/help/rhythmbox/sv/figures/rb-notification-window.png
+share/gnome/help/rhythmbox/sv/figures/rb-notification-zone.png
+share/gnome/help/rhythmbox/sv/figures/rb-podcast-main.png
+share/gnome/help/rhythmbox/sv/figures/rb-statusbar.png
+share/gnome/help/rhythmbox/sv/figures/rb-toolbar-prevplaynext.png
+share/gnome/help/rhythmbox/sv/figures/rb-toolbar-repeat.png
+share/gnome/help/rhythmbox/sv/figures/rb-toolbar-shuffle.png
+share/gnome/help/rhythmbox/sv/figures/rb-toolbar.png
+share/gnome/help/rhythmbox/sv/figures/rb-volume-changer.png
+share/gnome/help/rhythmbox/sv/figures/rb-window-small.png
+share/gnome/help/rhythmbox/sv/figures/rb-window.png
+share/gnome/help/rhythmbox/sv/rhythmbox.xml
+share/gnome/help/rhythmbox/zh_CN/figures/rb-iradio-main.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-notification-area-menu.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-notification-window.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-notification-zone.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-podcast-main.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-statusbar.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-toolbar-prevplaynext.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-toolbar-repeat.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-toolbar-shuffle.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-toolbar.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-volume-changer.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-window-small.png
+share/gnome/help/rhythmbox/zh_CN/figures/rb-window.png
+share/gnome/help/rhythmbox/zh_CN/rhythmbox.xml
 share/gnome/mime-info/rhythmbox.keys
 share/gnome/omf/rhythmbox/rhythmbox-C.omf
 share/gnome/omf/rhythmbox/rhythmbox-es.omf
 share/gnome/omf/rhythmbox/rhythmbox-fr.omf
 share/gnome/omf/rhythmbox/rhythmbox-ru.omf
-share/gnome/pixmaps/rhythmbox.png
+share/gnome/omf/rhythmbox/rhythmbox-sv.omf
+share/gnome/omf/rhythmbox/rhythmbox-zh_CN.omf
 share/gnome/rhythmbox/art/about-logo.png
 share/gnome/rhythmbox/art/media-eject.png
 share/gnome/rhythmbox/art/rhythmbox-no-star.png
@@ -165,13 +212,15 @@ share/gnome/rhythmbox/art/rhythmbox-podcast.png
 share/gnome/rhythmbox/art/rhythmbox-set-star.png
 share/gnome/rhythmbox/art/rhythmbox-tray-icon.png
 share/gnome/rhythmbox/art/rhythmbox-unset-star.png
+share/gnome/rhythmbox/daap-ui.xml
+share/gnome/rhythmbox/generic-player-ui.xml
 share/gnome/rhythmbox/glade/audioscrobbler-prefs.glade
 share/gnome/rhythmbox/glade/create-playlist.glade
 share/gnome/rhythmbox/glade/daap-prefs.glade
 share/gnome/rhythmbox/glade/druid.glade
 share/gnome/rhythmbox/glade/general-prefs.glade
 share/gnome/rhythmbox/glade/library-prefs.glade
-share/gnome/rhythmbox/glade/load-failure.glade
+share/gnome/rhythmbox/glade/playlist-save.glade
 share/gnome/rhythmbox/glade/plugins.glade
 share/gnome/rhythmbox/glade/podcast-feed-properties.glade
 share/gnome/rhythmbox/glade/podcast-new.glade
@@ -183,9 +232,11 @@ share/gnome/rhythmbox/glade/song-info.glade
 share/gnome/rhythmbox/glade/station-new.glade
 share/gnome/rhythmbox/glade/station-properties.glade
 share/gnome/rhythmbox/glade/uri.glade
+share/gnome/rhythmbox/ipod-ui.xml
 share/gnome/rhythmbox/iradio-initial.pls
 share/gnome/rhythmbox/playlists.xml
 share/gnome/rhythmbox/rhythmbox-ui.xml
+share/icons/hicolor/48x48/apps/rhythmbox.png
 share/locale/am/LC_MESSAGES/rhythmbox.mo
 share/locale/ar/LC_MESSAGES/rhythmbox.mo
 share/locale/az/LC_MESSAGES/rhythmbox.mo
@@ -223,7 +274,6 @@ share/locale/ms/LC_MESSAGES/rhythmbox.mo
 share/locale/nb/LC_MESSAGES/rhythmbox.mo
 share/locale/ne/LC_MESSAGES/rhythmbox.mo
 share/locale/nl/LC_MESSAGES/rhythmbox.mo
-share/locale/no/LC_MESSAGES/rhythmbox.mo
 share/locale/pa/LC_MESSAGES/rhythmbox.mo
 share/locale/pl/LC_MESSAGES/rhythmbox.mo
 share/locale/pt/LC_MESSAGES/rhythmbox.mo
@@ -248,6 +298,10 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm share/gnome/rhythmbox/art
 @dirrm share/gnome/rhythmbox
 @dirrm share/gnome/omf/rhythmbox
+@dirrm share/gnome/help/rhythmbox/zh_CN/figures
+@dirrm share/gnome/help/rhythmbox/zh_CN
+@dirrm share/gnome/help/rhythmbox/sv/figures
+@dirrm share/gnome/help/rhythmbox/sv
 @dirrm share/gnome/help/rhythmbox/ru/figures
 @dirrm share/gnome/help/rhythmbox/ru
 @dirrm share/gnome/help/rhythmbox/fr/figures
@@ -258,5 +312,6 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm share/gnome/help/rhythmbox/C
 @dirrm share/gnome/help/rhythmbox
 @dirrm %%DOCSDIR%%
+@dirrm lib/rhythmbox/plugins/artdisplay
 @dirrm lib/rhythmbox/plugins
 @dirrm lib/rhythmbox
