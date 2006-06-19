@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/f/ \
-		ftp://ftp.ru.openwall.com/pub/projects/john/${PORTVERSION}/
+		ftp://ftp.ru.openwall.com/pub/projects/john/${PORTVERSION}/ \
+		ftp://ftp.se.openwall.com/pub/projects/john/${PORTVERSION}/ \
+		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${PORTVERSION}/
 
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Featureful Unix password cracker
@@ -59,7 +61,6 @@ ALL_TARGET=	generic
 post-patch:
 	@${REINPLACE_CMD} -e 's|= gcc|= ${CC}|g' \
 		-e 's|CFLAGS =.*|CFLAGS = -c ${CFLAGS}|g' \
-		-e 's|openbsd-x86-64|${OSNAME}-x86-64|g' \
 		${WRKSRC}/Makefile
 
 pre-build:
