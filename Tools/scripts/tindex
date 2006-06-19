@@ -19,7 +19,9 @@ REPORT_ADDRESS=root@localhost
 ERROR_ADDRESS=root@localhost
 
 # Where to scp the resulting indexes after build
-SCP_DEST=root@localhost:/usr/local/www/ports
+SCP_DEST_HOST=root@localhost
+SCP_DEST_TMP=/tmp
+SCP_DEST_DIR=/usr/local/www/ports
 
 # Location of ports tree and source trees
 export BASEDIR=/local0/tmp/kris/tindex
@@ -109,6 +111,15 @@ checkfixed() {
   fi
 }
 
+createtmpdir() {
+    TMPDIR=`ssh ${SCP_DEST_HOST} "mktemp -qd /tmp/tindex.XXXXXX"`
+    if [ $? -ne 0 ]; then
+	echo "$0: Can't create temp file, exiting..."
+	exit 1
+    fi
+}
+    
+
 # Sanitize the environment so that the indexes aren't customized by the
 # local machine settinge
 export __MAKE_CONF=/dev/null
@@ -154,9 +165,10 @@ if [ -s index.err ]; then
 fi
 checkfixed ${BRANCH}
 
+createtmpdir
 bzip2 -kf ${PORTSDIR}/INDEX
-scp ${SSHKEY} ${PORTSDIR}/INDEX ${PORTSDIR}/INDEX.bz2 ${SCP_DEST} || mail -s "Cannot copy INDEX" ${ERROR_ADDRESS} < /dev/null
-
+scp -q ${SSHKEY} ${PORTSDIR}/INDEX ${PORTSDIR}/INDEX.bz2 ${SCP_DEST_HOST}:${TMPDIR} || mail -s "Cannot copy INDEX to temp dir" ${ERROR_ADDRESS}
+ssh ${SCP_DEST_HOST} "/bin/mv ${TMPDIR}/INDEX ${SCP_DEST_DIR}; /bin/mv ${TMPDIR}/INDEX.bz2 ${SCP_DEST_DIR}; rmdir ${TMPDIR}" || mail -s "Cannot move INDEX to final dir" ${ERROR_ADDRESS}
 BRANCH=5.x
 export OSVERSION=${OSVERSION5}
 echo "Building INDEX for ${BRANCH} with OSVERSION=${OSVERSION}"
@@ -167,8 +179,10 @@ if [ -s index.err ]; then
 fi
 checkfixed ${BRANCH}
 
+createtmpdir
 bzip2 -kf ${PORTSDIR}/INDEX-5
-scp ${SSHKEY} ${PORTSDIR}/INDEX-5 ${PORTSDIR}/INDEX-5.bz2 ${SCP_DEST} || mail -s "Cannot copy INDEX-5" ${ERROR_ADDRESS} < /dev/null
+scp -q ${SSHKEY} ${PORTSDIR}/INDEX-5 ${PORTSDIR}/INDEX-5.bz2 ${SCP_DEST_HOST}:${TMPDIR} || mail -s "Cannot copy INDEX-5 to temp dir" ${ERROR_ADDRESS}
+ssh ${SCP_DEST_HOST} "/bin/mv ${TMPDIR}/INDEX-5 ${SCP_DEST_DIR}; /bin/mv ${TMPDIR}/INDEX-5.bz2 ${SCP_DEST_DIR}; rmdir ${TMPDIR}" || mail -s "Cannot move INDEX-5 to final dir" ${ERROR_ADDRESS}
 
 BRANCH=6.x
 export OSVERSION=${OSVERSION6}
@@ -180,8 +194,10 @@ if [ -s index.err ]; then
 fi
 checkfixed ${BRANCH}
 
+createtmpdir
 bzip2 -kf ${PORTSDIR}/INDEX-6
-scp ${SSHKEY} ${PORTSDIR}/INDEX-6 ${PORTSDIR}/INDEX-6.bz2 ${SCP_DEST} || mail -s "Cannot copy INDEX-6" ${ERROR_ADDRESS} < /dev/null
+scp -q ${SSHKEY} ${PORTSDIR}/INDEX-6 ${PORTSDIR}/INDEX-6.bz2 ${SCP_DEST_HOST}:${TMPDIR} || mail -s "Cannot copy INDEX-6 to temp dir" ${ERROR_ADDRESS}
+ssh ${SCP_DEST_HOST} "/bin/mv ${TMPDIR}/INDEX-6 ${SCP_DEST_DIR}; /bin/mv ${TMPDIR}/INDEX-6.bz2 ${SCP_DEST_DIR}; rmdir ${TMPDIR}" || mail -s "Cannot move INDEX-6 to final dir" ${ERROR_ADDRESS}
 
 BRANCH=7.x
 export OSVERSION=${OSVERSION7}
@@ -193,8 +209,10 @@ if [ -s index.err ]; then
 fi
 checkfixed ${BRANCH}
 
+createtmpdir
 bzip2 -kf ${PORTSDIR}/INDEX-7
-scp ${SSHKEY} ${PORTSDIR}/INDEX-7 ${PORTSDIR}/INDEX-7.bz2 ${SCP_DEST} || mail -s "Cannot copy INDEX-7" ${ERROR_ADDRESS} < /dev/null
+scp -q ${SSHKEY} ${PORTSDIR}/INDEX-7 ${PORTSDIR}/INDEX-7.bz2 ${SCP_DEST_HOST}:${TMPDIR} || mail -s "Cannot copy INDEX-7 to temp dir" ${ERROR_ADDRESS}
+ssh ${SCP_DEST_HOST} "/bin/mv ${TMPDIR}/INDEX-7 ${SCP_DEST_DIR}; /bin/mv ${TMPDIR}/INDEX-7.bz2 ${SCP_DEST_DIR}; rmdir ${TMPDIR}" || mail -s "Cannot move INDEX-7 to final dir" ${ERROR_ADDRESS}
 
 # All indexes built successfully, clear the hook
 rm -f ${PORTSDIR}/hook
