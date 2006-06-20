@@ -17,8 +17,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Willows Toolkit for migrating and developing Windows applications
 
-BROKEN=		Coredump during build
-
 ONLY_FOR_ARCHS=	i386 alpha powerpc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -26,9 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
-.if ${MACHINE_ARCH} == "alpha"
-CONFIGURE_ARGS+=--disable-intp
-.endif
 USE_GMAKE=	yes
 
 ALL_TARGET=	depend world
@@ -38,7 +33,9 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-FMT?=	/usr/bin/fmt
+.if ${ARCH} == "alpha"
+CONFIGURE_ARGS+=	--disable-intp
+.endif
 
 LIBRARIES=	libadvapi32.so libcomctl32.so libcomm.so \
 	libcommdlg.so libddeml.so libkeyboard.so \
@@ -62,6 +59,6 @@ post-install:
 .for lib in ${LIBRARIES}
 	@${LN} -sf ${lib} ${PREFIX}/lib/${lib}.${LIBVER}
 .endfor
-	@${FMT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
