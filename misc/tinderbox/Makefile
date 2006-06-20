@@ -6,10 +6,11 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
@@ -49,8 +50,10 @@ USE_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 .endif
 
-.if defined(WITH_CSUP)
+.if !defined(WITHOUT_CSUP)
+.if ! exists(/usr/bin/csup)
 RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
+.endif
 .endif
 
 .if defined(WITH_CVSUP)
