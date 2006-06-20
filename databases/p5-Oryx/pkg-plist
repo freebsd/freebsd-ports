@@ -33,6 +33,9 @@
 %%SITE_PERL%%/Oryx/MetaClass.pm
 %%SITE_PERL%%/Oryx/Parent.pm
 %%SITE_PERL%%/Oryx/Schema.pm
+%%SITE_PERL%%/Oryx/Schema/Stub.pm
+%%SITE_PERL%%/Oryx/Schema/Generator.pm
+%%SITE_PERL%%/Oryx/Schema/XSD.pm
 %%SITE_PERL%%/Oryx/Value.pm
 %%SITE_PERL%%/Oryx/Value/Binary.pm
 %%SITE_PERL%%/Oryx/Value/Boolean.pm
@@ -50,6 +53,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Oryx
 @dirrm %%SITE_PERL%%/Oryx/DBI/Util
 @dirrm %%SITE_PERL%%/Oryx/Manual
+@dirrm %%SITE_PERL%%/Oryx/Schema
 @dirrm %%SITE_PERL%%/Oryx/Value
 @dirrm %%SITE_PERL%%/Oryx/DBI
 @dirrm %%SITE_PERL%%/Oryx/DBM
