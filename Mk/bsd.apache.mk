@@ -294,7 +294,7 @@ APXS_PREFIX!=	${APXS} -q prefix 2> /dev/null || echo NULL
 IGNORE=	: Your apache does not support DSO modules
 .   endif
 .   if defined(AP_GENPLIST) && ${APXS_PREFIX} != ${PREFIX}
-IGNORE?=	PREFIX must be egal to APXS_PREFIX.
+IGNORE?=	PREFIX must be equal to APXS_PREFIX.
 .   endif
 .endif
 
