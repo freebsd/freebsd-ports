@@ -12,7 +12,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.13.0
+lib/libestraier.so.8.14.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
@@ -33,6 +33,7 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/javanativeapi/estraier/Cmd.html
 %%DATADIR%%/doc/javanativeapi/estraier/Condition.html
 %%DATADIR%%/doc/javanativeapi/estraier/Database.html
+%%DATADIR%%/doc/javanativeapi/estraier/DatabaseInformer.html
 %%DATADIR%%/doc/javanativeapi/estraier/Document.html
 %%DATADIR%%/doc/javanativeapi/estraier/Result.html
 %%DATADIR%%/doc/javanativeapi/estraier/package-frame.html
@@ -45,6 +46,7 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/javanativeapi/package-list
 %%DATADIR%%/doc/javanativeapi/packages.html
 %%DATADIR%%/doc/javanativeapi/resources/inherit.gif
+%%DATADIR%%/doc/javanativeapi/serialized-form.html
 %%DATADIR%%/doc/javanativeapi/stylesheet.css
 %%DATADIR%%/doc/javapureapi/allclasses-frame.html
 %%DATADIR%%/doc/javapureapi/allclasses-noframe.html
@@ -71,11 +73,11 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/nguide-en.html
 %%DATADIR%%/doc/nguide-ja.html
 %%DATADIR%%/doc/nodeframe.png
+%%DATADIR%%/doc/perlnativeapi/index.html
 %%DATADIR%%/doc/pguide-en.html
 %%DATADIR%%/doc/pguide-ja.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000032.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000033.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000034.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000035.html
@@ -84,6 +86,7 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000038.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000039.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000040.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Condition.src/M000041.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000001.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000002.html
@@ -109,8 +112,8 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000022.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000023.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000024.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Database.src/M000025.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000041.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000042.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000043.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000044.html
@@ -123,14 +126,15 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000051.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000052.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000053.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Document.src/M000054.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.html
-%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000025.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000026.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000027.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000028.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000029.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000030.html
 %%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000031.html
+%%DATADIR%%/doc/rubynativeapi/classes/Estraier/Result.src/M000032.html
 %%DATADIR%%/doc/rubynativeapi/created.rid
 %%DATADIR%%/doc/rubynativeapi/files/estraier-doc_rb.html
 %%DATADIR%%/doc/rubynativeapi/fr_class_index.html
@@ -253,6 +257,7 @@ libexec/estseek.cgi
 @dirrm %%DATADIR%%/doc/rubynativeapi/classes/Estraier
 @dirrm %%DATADIR%%/doc/rubynativeapi/classes
 @dirrm %%DATADIR%%/doc/rubynativeapi
+@dirrm %%DATADIR%%/doc/perlnativeapi
 @dirrm %%DATADIR%%/doc/javapureapi/resources
 @dirrm %%DATADIR%%/doc/javapureapi/estraier/pure
 @dirrm %%DATADIR%%/doc/javapureapi/estraier
