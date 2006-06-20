@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	raine
-PORTVERSION=	0.43.2
+PORTVERSION=	0.43.3
 CATEGORIES=	emulators games
 MASTER_SITES=	http://www.rainemu.com/html/archive/
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \
 		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GCC=	3.2+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
