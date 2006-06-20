@@ -7,6 +7,7 @@
 
 PORTNAME=	${REALNAME:L}
 PORTVERSION=	1.3
+PORTVERSION=	1
 CATEGORIES=	science math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foam
@@ -112,7 +113,7 @@ BROKEN=	Does not compile with gcc-2.95
 .endif
 
 .if ${OSVERSION} <= 504103
-EXTRACT_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/bsdtar
+EXTRACT_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/libarchive
 TAR=		${LOCALBASE}/bin/bsdtar
 .endif
 
