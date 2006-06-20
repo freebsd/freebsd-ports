@@ -11340,6 +11340,7 @@ py-simpleparse	ports/devel/py-simpleparse
 py-simpy	ports/devel/py-simpy
 py-sip		ports/devel/py-sip
 py-ski		ports/games/py-ski
+py-slimmer	ports/www/py-slimmer
 py-smb		ports/net/py-smb
 py-smbpasswd	ports/net/py-smbpasswd
 py-snmp		ports/net-mgmt/py-snmp
