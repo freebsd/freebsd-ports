@@ -7,6 +7,7 @@
 
 PORTNAME=	quickie
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://${PORTNAME}.sourceforge.net/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/

@@ -12,12 +12,18 @@
  #include <careful.h>
  #include <cgi.h>
  #include <configuration.h>
-@@ -386,7 +391,7 @@
+@@ -384,11 +389,8 @@
+ 	return;
+     }
      output_stdout op;
-     op << "Content-Type: text/html\n"
-           "Content-Length: "
+-    op << "Content-Type: text/html\n"
+-          "Content-Length: "
 -       << st.st_size
-+       << (char)st.st_size
-        << "\n"
-           "\n";
+-       << "\n"
+-          "\n";
++    op << "Content-Type: text/html\n";
++    op.printf("Content-Length: %llu\n\n", st.st_size);
      for (;;)
+     {
+ 	char buffer[1 << 14];
+
