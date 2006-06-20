@@ -7,6 +7,7 @@
 
 PORTNAME=	csharp-mode.el
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://mfgames.com/linux/releases/
 DISTNAME=	${PORTNAME:S|.el$||}-${PORTVERSION}
@@ -19,10 +20,9 @@ NO_WRKSUBDIR=	yes
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs22
-CSHARP_MODE_DIR=	${EMACS_LIBDIR_WITH_VER}/lisp
 
-PLIST_FILES=	${CSHARP_MODE_DIR}/csharp-mode.el \
-		${CSHARP_MODE_DIR}/csharp-mode.elc
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/csharp-mode.el \
+		${EMACS_SITE_LISPDIR}/csharp-mode.elc
 
 post-patch:
 	@${MV} ${WRKSRC}/csharp-mode-${PORTVERSION}.el ${WRKSRC}/csharp-mode.el
@@ -31,8 +31,7 @@ do-build:
 	cd ${WRKSRC} && ${EMACS_CMD} -batch -q -f batch-byte-compile csharp-mode.el
 
 do-install:
-	${MKDIR} ${PREFIX}/${CSHARP_MODE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/csharp-mode.* ${PREFIX}/${CSHARP_MODE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/csharp-mode.* ${PREFIX}/${EMACS_SITE_LISPDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
