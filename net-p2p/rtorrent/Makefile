@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	rtorrent
-PORTVERSION?=	0.4.5
+PORTVERSION?=	0.5.3
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 MAINTAINER?=	flz@FreeBSD.org
 COMMENT?=	BitTorrent Client written in C++
 
-LIB_DEPENDS?=	torrent.6:${PORTSDIR}/net-p2p/libtorrent
+LIB_DEPENDS?=	torrent.7:${PORTSDIR}/net-p2p/libtorrent
 LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	rtorrent-devel-[0-9]*
