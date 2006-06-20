@@ -7,13 +7,12 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	shaun@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -26,7 +25,7 @@ CONFLICTS=	fox-1.0.*
 LATEST_LINK=	fox14
 
 MAJORVER=	1.4
-SHVER=		7
+SHVER=		32
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GL=		yes
