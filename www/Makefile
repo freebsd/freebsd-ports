@@ -831,6 +831,7 @@
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
     SUBDIR += py-scgi
+    SUBDIR += py-slimmer
     SUBDIR += py-turbogears
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
