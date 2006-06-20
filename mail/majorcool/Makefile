@@ -13,7 +13,9 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Web Interface to Majordomo
 
-BROKEN=		Missing dependency
+
+BUILD_DEPENDS=	${LOCALBASE}/majordomo/majordomo.pl:${PORTSDIR}/mail/majordomo
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
