@@ -3,6 +3,8 @@ time to one or more hosts in a bar graph.
 
 Link Monitor Applet features include:
 
+	* Round-trip time plot graphs
+	* Country flags and names
 	* Full ICMP and ICMPv6 support
 	* Configurable scale and delays
 	* HIG 2.0 compliance
