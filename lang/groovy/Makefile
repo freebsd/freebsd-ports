@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	groovy
-DISTVERSION=	1.0-jsr-04
+DISTVERSION=	1.0-jsr-05
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.codehaus.org/groovy/distributions/
 
