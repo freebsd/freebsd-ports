@@ -35,8 +35,8 @@ FLEETS_FILE=	gh_fleets_170406.zip
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && ${OSVERSION} < 500000
-IGNORE=		does not compile on FreeBSD < 5.X (needs isspace() function)
+.if ${OSVERSION} < 500000
+IGNORE=		needs isspace() function in libc (FreeBSD >= 5.X)
 .endif
 
 .if defined(WITH_FLEETS)
