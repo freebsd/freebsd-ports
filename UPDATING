@@ -14,6 +14,15 @@ upgrades.
   The new default location is LOCALBASE/etc/pfpro/certs.
 
 20060616:
+  AFFECTS: users of net/openldap22{,-sasl}-client
+  AUTHOR: linimon@FreeBSD.org
+
+  OpenLDAP version 2.3 is now the default. To upgrade all ports do
+    portupgrade -rfo net/openldap23-client openldap-client
+  (or a similar command for the SASL variant). If you do not want to
+  upgrade, add the line `WANT_OPENLDAP_VER?=22' to /etc/make.conf.
+
+20060616:
   AFFECTS users of emulation/linux_base-*
   AUTHOR: netchild@FreeBSD.org
 
