@@ -29,9 +29,7 @@ MAN3=		Image::Info.3 Image::Info::BMP.3 Image::Info::SVG.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/5.005-Info.pm.tmpl ${PATCHDIR}/5.005-lib::Image::Info::PPM.pm
-post-patch:
-	@${RM} -f ${WRKSRC}/lib/Image/Info/PPM.pm.orig
+IGNORE=		needs perl 5.6.0 or higher, install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
