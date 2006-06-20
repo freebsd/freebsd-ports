@@ -7,7 +7,7 @@
 
 PORTNAME=	newt
 PORTVERSION=	0.51.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		# ftp://ftp.redhat.com/pub/redhat/linux/rawhide/SRPMS/SRPMS/
