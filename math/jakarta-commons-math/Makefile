@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-math
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	math java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
@@ -16,20 +16,19 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java library of self-contained mathematics and statistics components
 
-BUILD_DEPENDS=	${JAR_DEPENDS}
-RUN_DEPENDS=	${JAR_DEPENDS}
-
-JAR_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+BUILD_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
+		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
+RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVAJARDIR}/commons-discovery.jar:${PORTSDIR}/java/jakarta-commons-discovery
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 USE_ANT=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 ALL_TARGET=	jar
-MAKE_ARGS=	-Dlibdir=${JAVAJARDIR} -Dnoget=yes
+MAKE_ARGS=	-Dlibdir=${WRKDIR} -Dnoget=true \
+		-Dcommons-logging.jar="file://${JAVAJARDIR}/commons-logging.jar" \
+		-Dcommons-discovery.jar="file://${JAVAJARDIR}/commons-discovery.jar"
 COMMONS_LOGGING_API=	${LOCALBASE}/share/doc/commons-logging/api
 .if exists(${COMMONS_LOGGING_API})
 MAKE_ARGS+=	-Dcommons-logging.api=${COMMONS_LOGGING_API}
