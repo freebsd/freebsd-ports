@@ -7,7 +7,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	2.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail www
 MASTER_SITES=	http://high5.net/postfixadmin/ \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -22,13 +22,13 @@ SUB_FILES+=	pkg-message
 
 OPTIONS=	MYSQL "Use MySQL to store config data" on
 OPTIONS+=	PGSQL "Use PostgresQL to store config data" off
+OPTIONS+=	POSTFIX_LOCAL "RUN_DEPEND on postfix" off
 
 .include <bsd.port.pre.mk>
 
 USE_APACHE=	1.3+
 WANT_PHP_PEAR=	yes
 USE_PHP=	pcre session
-RUN_DEPENDS+=	postfix>=2[0-9]*:${PORTSDIR}/mail/postfix
 
 .ifndef(WITHOUT_MYSQL)
 USE_PHP+=	mysql
@@ -40,6 +40,10 @@ USE_PHP+=	pgsql
 
 .ifdef(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
 IGNORE=	needs at least one database backend
+.endif
+
+.ifdef(WITH_POSTFIX_LOCAL)
+RUN_DEPENDS+=	postfix>=2[0-9]*:${PORTSDIR}/mail/postfix
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
