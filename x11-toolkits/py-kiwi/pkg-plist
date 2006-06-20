@@ -1,0 +1,275 @@
+@comment $FreeBSD$
+bin/kiwi-i18n
+bin/kiwi-ui-test
+%%PYTHON_SITELIBDIR%%/gazpacho/widgets/kiwiwidgets.py
+%%PYTHON_SITELIBDIR%%/kiwi/__init__.py
+%%PYTHON_SITELIBDIR%%/kiwi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/__installed__.py
+%%PYTHON_SITELIBDIR%%/kiwi/__installed__.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/__installed__.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/__version__.py
+%%PYTHON_SITELIBDIR%%/kiwi/__version__.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/__version__.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/accessor.py
+%%PYTHON_SITELIBDIR%%/kiwi/accessor.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/accessor.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/argcheck.py
+%%PYTHON_SITELIBDIR%%/kiwi/argcheck.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/argcheck.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/component.py
+%%PYTHON_SITELIBDIR%%/kiwi/component.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/component.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/controllers.py
+%%PYTHON_SITELIBDIR%%/kiwi/controllers.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/controllers.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/datatypes.py
+%%PYTHON_SITELIBDIR%%/kiwi/datatypes.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/datatypes.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/decorators.py
+%%PYTHON_SITELIBDIR%%/kiwi/decorators.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/decorators.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/desktopparser.py
+%%PYTHON_SITELIBDIR%%/kiwi/desktopparser.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/desktopparser.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/dist.py
+%%PYTHON_SITELIBDIR%%/kiwi/dist.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/dist.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/environ.py
+%%PYTHON_SITELIBDIR%%/kiwi/environ.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/environ.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/__init__.py
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/__init__.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/__init__.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/i18n.py
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/i18n.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/i18n.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/msgfmt.py
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/i18n/msgfmt.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/interfaces.py
+%%PYTHON_SITELIBDIR%%/kiwi/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/log.py
+%%PYTHON_SITELIBDIR%%/kiwi/log.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/log.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/model.py
+%%PYTHON_SITELIBDIR%%/kiwi/model.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/model.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/python.py
+%%PYTHON_SITELIBDIR%%/kiwi/python.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/python.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/tasklet.py
+%%PYTHON_SITELIBDIR%%/kiwi/tasklet.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/tasklet.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/comboboxentry.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/comboboxentry.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/comboboxentry.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/comboentry.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/comboentry.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/comboentry.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/combomixin.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/combomixin.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/combomixin.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/dateentry.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/dateentry.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/dateentry.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/delegates.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/delegates.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/delegates.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/dialogs.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/dialogs.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/dialogs.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/entry.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/entry.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/entry.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/gadgets.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/gadgets.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/gadgets.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/gazpacholoader.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/gazpacholoader.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/gazpacholoader.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/hyperlink.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/hyperlink.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/hyperlink.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/icon.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/icon.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/icon.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/libgladeloader.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/libgladeloader.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/libgladeloader.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/objectlist.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/objectlist.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/objectlist.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/proxy.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/proxy.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/proxy.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/proxywidget.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/proxywidget.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/proxywidget.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/selectablebox.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/selectablebox.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/selectablebox.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/__init__.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/common.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/common.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/common.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/listener.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/listener.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/listener.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/main.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/main.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/main.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/player.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/player.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/test/player.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/tooltip.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/tooltip.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/tooltip.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/views.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/views.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/views.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/__init__.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/__init__.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/checkbutton.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/checkbutton.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/checkbutton.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/colorbutton.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/colorbutton.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/colorbutton.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/combo.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/combo.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/combo.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/combobox.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/combobox.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/combobox.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/entry.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/entry.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/entry.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/filechooser.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/filechooser.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/filechooser.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/fontbutton.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/fontbutton.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/fontbutton.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/label.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/label.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/label.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/list.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/list.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/list.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/radiobutton.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/radiobutton.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/radiobutton.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/spinbutton.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/spinbutton.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/spinbutton.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/textview.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/textview.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/widgets/textview.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/ui/wizard.py
+%%PYTHON_SITELIBDIR%%/kiwi/ui/wizard.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/ui/wizard.pyo
+%%PYTHON_SITELIBDIR%%/kiwi/utils.py
+%%PYTHON_SITELIBDIR%%/kiwi/utils.pyc
+%%PYTHON_SITELIBDIR%%/kiwi/utils.pyo
+%%PORTDOCS%%%%EXAMPLESDIR%%/comboentry.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/completion.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/color/color.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/color/color2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/diary/diary.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/diary/diary.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/diary/diary2.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/diary/diary2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/faren/faren.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/faren/faren.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/faren/faren2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/faren/faren3.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/gender/gender.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/gender/genderselection.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/hey/hey.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/hey/hey.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/hey/heyglade.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/hey/heyglade2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/hey/heyglade3.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/news/news.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/news/news2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/news/news3.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/news/news4.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/news/news_list.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/news/news_shell.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/newsform/newsform.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/newsform/newsform.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/sizegroup/shell.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/sizegroup/slave_view.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/sizegroup/slave_view2.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/framework/sizegroup/slaves.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/hyperlink/hyperlink_demo.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/list/editable.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/list/kitchensink.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/list/radio.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/list/searchbar.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/list/simple.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/list/sortable.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/list/stockicon.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tasklet/simple.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tasklet/test-tasklet.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tasklet/test-tasklet2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/validation/datatypes.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/validation/lang.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/validation/personalinformation.glade
+%%PORTDOCS%%%%EXAMPLESDIR%%/validation/personalinformation.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/validation/slaves.py
+share/gazpacho/catalogs/kiwiwidgets.xml
+share/gazpacho/resources/kiwiwidgets/hyperlink.png
+share/gazpacho/resources/kiwiwidgets/kiwicheckbutton.png
+share/gazpacho/resources/kiwiwidgets/kiwicombobox.png
+share/gazpacho/resources/kiwiwidgets/kiwicomboboxentry.png
+share/gazpacho/resources/kiwiwidgets/kiwicomboentry.png
+share/gazpacho/resources/kiwiwidgets/kiwidateentry.png
+share/gazpacho/resources/kiwiwidgets/kiwientry.png
+share/gazpacho/resources/kiwiwidgets/kiwilabel.png
+share/gazpacho/resources/kiwiwidgets/kiwiradiobutton.png
+share/gazpacho/resources/kiwiwidgets/kiwispinbutton.png
+share/gazpacho/resources/kiwiwidgets/kiwitextview.png
+share/gazpacho/resources/kiwiwidgets/objectlist.png
+%%DATADIR%%/glade/PluggableWizard.glade
+%%DATADIR%%/pixmaps/validation-error-16.png
+share/locale/pt_BR/LC_MESSAGES/kiwi.mo
+share/locale/sv/LC_MESSAGES/kiwi.mo
+@dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho/widgets
+@dirrmtry %%PYTHON_SITELIBDIR%%/gazpacho
+@dirrm %%PYTHON_SITELIBDIR%%/kiwi/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/kiwi/ui/test
+@dirrm %%PYTHON_SITELIBDIR%%/kiwi/ui/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/kiwi/ui
+@dirrm %%PYTHON_SITELIBDIR%%/kiwi
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/color
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/diary
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/faren
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/gender
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/hey
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/news
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/newsform
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework/sizegroup
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/framework
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/hyperlink
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/list
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tasklet
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/validation
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry share/gazpacho/catalogs
+@dirrmtry share/gazpacho/resources/kiwiwidgets
+@dirrmtry share/gazpacho/resources
+@dirrm share/gazpacho
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%

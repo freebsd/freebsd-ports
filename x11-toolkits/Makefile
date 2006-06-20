@@ -167,6 +167,7 @@
     SUBDIR += py-gtkscintilla
     SUBDIR += py-gui
     SUBDIR += py-kde
+    SUBDIR += py-kiwi
     SUBDIR += py-qt
     SUBDIR += py-tkinter
     SUBDIR += py-wax
