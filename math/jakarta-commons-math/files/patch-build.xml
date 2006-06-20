@@ -1,11 +1,11 @@
 $FreeBSD$
 
---- build.xml.orig	Mon Jan 31 02:07:27 2005
-+++ build.xml	Mon Jan 31 02:28:01 2005
-@@ -145,6 +145,9 @@
-     <property name="title" value="Math 1.0 API">
+--- build.xml.orig	Sun Dec 18 20:37:46 2005
++++ build.xml	Tue Jun 20 11:16:15 2006
+@@ -179,6 +179,9 @@
+     <property name="title" value="Math 1.1 API">
      </property>
-     <javadoc use="true" private="true" destdir="${javadocdir}" author="true" version="true" sourcepath="src/java" packagenames="org.apache.commons.math.*">
+     <javadoc use="true" private="true" destdir="${javadocdir}" author="true" version="true" sourcepath="${basedir}/src/java" packagenames="org.apache.commons.math.*">
 +      <link offline="true" packagelistLoc="${commons-discovery.api}" href="${commons-discovery.api}"/>
 +      <link offline="true" packagelistLoc="${commons-discovery.api}" href="${commons-discovery.api}"/>
 +      <link offline="true" packagelistLoc="${jdk.api}" href="${jdk.api}"/>
