@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -58,6 +58,7 @@ CONFIGURE_ARGS=	--with-x11 \
 		--with-mule \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
+		--with-site-lisp \
 		--site-libraries='${SITE_LIBRARIES}' \
 		--site-includes='${SITE_INCLUDES}' \
 		--with-xface \
