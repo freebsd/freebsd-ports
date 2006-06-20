@@ -9,8 +9,9 @@ PORTNAME=	nzbperl
 PORTVERSION=	0.6.8
 CATEGORIES=	news
 MASTER_SITES=	http://www.thepentagon.org/local_distfiles/ \
+		http://noisybox.net/computers/nzbperl/ \
 		ftp://ftp.foss.org.my/pub/FreeBSD/misc/
-DISTNAME=	nzbperl.pl
+DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
 EXTRACT_SUFX=
 
 MAINTAINER=	ports@thepentagon.org
@@ -34,7 +35,7 @@ do-extract:
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
 	@${REINPLACE_CMD} -e \
 		"s,#!/usr/bin/perl -w,#!/usr/local/bin/perl -w," \
-		${WRKDIR}/nzbperl.pl
+		${WRKDIR}/${DISTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
