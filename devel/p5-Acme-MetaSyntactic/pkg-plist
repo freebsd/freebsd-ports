@@ -20,6 +20,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/chess.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/colors.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/colours.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/colors.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/constellations.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/contrade.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/counting_rhyme.pm
@@ -44,6 +45,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/jamesbond.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/jerkcity.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/loremipsum.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/lotr.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/magic8ball.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/magicroundabout.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/monty_spam.pm
