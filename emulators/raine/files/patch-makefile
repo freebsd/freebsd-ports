@@ -1,39 +1,17 @@
 --- makefile.orig	Tue Sep 20 09:24:09 2005
-+++ makefile	Thu Nov 17 13:02:40 2005
-@@ -32,6 +32,10 @@
- OSTYPE=linux-gnu
- endif
- 
-+ifeq ("$(shell uname)","FreeBSD")
-+OSTYPE=linux-gnu
-+endif
-+
- ifeq ("$(OSTYPE)","msys")
- MINGDIR=1
- OSTYPE=mingw32
-@@ -181,11 +185,11 @@
- 
- #	SDL = 1
- 
--   prefix = $(DESTDIR)
--   bindir = $(prefix)/usr/games
--   sharedir = $(prefix)/usr/share
--   mandir = $(sharedir)/man/man6
--   rainedata = $(sharedir)/games/raine
-+   prefix = $(PREFIX)
-+   bindir = $(prefix)/bin
-+   sharedir = $(prefix)/share
-+   mandir = $(prefix)/man/man6
-+   rainedata = $(sharedir)/raine
-    langdir = $(rainedata)/languages
-    romdir = $(rainedata)/roms
-    artdir = $(rainedata)/artwork
-@@ -205,7 +209,7 @@
- 
++++ makefile	Thu Nov 17 13:02:40 2005	
+@@ -215,1 +215,1 @@
     AFLAGS = -f elf
- 
--   INCDIR += ` allegro-config --cflags` `libpng-config --cflags`
+
+-   PNG_CFLAGS = "$(shell libpng-config --cflags)"
+-ifndef SDL
+-   ALLEGRO_CFLAGS = "$(shell allegro-config --cflags)"
+-endif
+   SDL_CFLAGS = "$(shell sdl-config --cflags)"
+
+-   INCDIR += $(PNG_CFLAGS) $(ALLEGRO_CFLAGS) $(SDL_CFLAGS) -I$(X11BASE)/include -I$(LOCALBASE)/include 
 +   INCDIR += ` allegro-config --cflags` `libpng-config --cflags` -I$(X11BASE)/include -I$(LOCALBASE)/include
+
  
     DEFINE = -D__RAINE__ \
  	   -DRAINE_UNIX \
