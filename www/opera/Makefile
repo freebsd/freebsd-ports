@@ -8,29 +8,31 @@
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		http://www.mehok.uni-miskolc.hu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		ftp://ftp.heanet.ie/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		http://opera.nsc.no/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		http://ftp.task.gda.pl/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		ftp://ftp.idilis.ro/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		http://www.fastmirrors.org/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		http://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		ftp://mirror.switch.ch/mirror/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		http://ftp.ankara.edu.tr/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/&,} \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/
-DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
+MASTER_SITES=	ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://ftp.ucr.ac.cr/WWW/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://www.microrpm.ca/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://www.opera.mirroarrr.de/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://opera.eurenet.net/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		ftp://opera.ftp.fu-berlin.de/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://ftp.ntua.gr/pub/www/Opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		ftp://ftp.wayne.edu/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://mirrors.dedipower.com/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.opera.com/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://opera.nedmirror.nl/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/&,} \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/
+DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.${OPERA_TYPE}-${OPERA_LIB}-qt.i386.freebsd-en-${OPERA_BUILD}
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	8.54
-OPERA_MINVER=	#
+OPERA_VER=	9.0
+OPERA_MINVER=	0
 OPERA_REL=	final
-OPERA_DATE=	20060330
+OPERA_DATE=	20060616
+OPERA_BUILD=	344
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
@@ -40,23 +42,47 @@ WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
+MAN1=		opera.1
+
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
-OPTIONS=	ASPELL	"Support spelling checker"	off
+OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on \
+		SHARED	"Use a shared Qt library (instead of static)"	${QT_PRESENT}
+
+.if exists(${X11BASE}/lib/libqt-mt.prl)
+QT_PRESENT=	on
+.else
+QT_PRESENT=	off
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
-.endif
-
 .if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x
+OPERA_TYPE=	4
+.elif ${OSVERSION} >= 500000
+OPERA_TYPE=	3
+.else
+OPERA_TYPE=	1
 .endif
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+.endif
+
+.if defined(WITH_SHARED) && ${OPERA_TYPE} > 1
+OPERA_LIB=	shared
+LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
+.else
+OPERA_LIB=	static
+OPERA_TYPE=	1
+.endif
+
+.if ${OPERA_TYPE} == 1 && ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x
+.endif
 .endif
 
 .if ${HAVE_GNOME:Mgnomehier}!=""
@@ -76,14 +102,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
 			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
-			${WRKSRC}/ini/spellcheck.ini ${WRKSRC}/config/opera6rc
+			${WRKSRC}/config/opera6rc
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
 	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
 
+.if defined(WITHOUT_SHARED) && ${OSVERSION} >= 500000
 post-install:
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
