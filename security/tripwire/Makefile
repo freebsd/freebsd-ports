@@ -24,7 +24,6 @@ BUILD_WRKSRC=	${WRKSRC}/src
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
 MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd
 IS_INTERACTIVE=	yes
 M4=		/usr/bin/m4
