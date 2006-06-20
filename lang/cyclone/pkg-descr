@@ -11,6 +11,6 @@ Cyclone is to give programmers the same low-level control and
 performance of C without sacrificing safety, and to make it easy
 to port or interface with legacy C code.
 
-WWW: http://www.cs.cornell.edu/projects/cyclone/ 
+WWW: http://cyclone.thelanguage.org/
 
 -- AlanE <ports@geeksrus.net>
