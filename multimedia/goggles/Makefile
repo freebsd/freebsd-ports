@@ -7,6 +7,7 @@
 
 PORTNAME=	goggles
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 
@@ -14,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
-LIB_DEPENDS=	FOX-1.4.7:${PORTSDIR}/x11-toolkits/fox14
+LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_BZIP2=	yes
