@@ -7610,7 +7610,6 @@ openwebmail	ports/mail/openwebmail
 openxmldir	ports/www/openxmldir
 openzz		ports/devel/openzz
 opera		ports/www/opera
-opera-devel	ports/www/opera-devel
 ophoto		ports/graphics/ophoto
 opieprint	ports/security/opieprint
 opmixer		ports/audio/opmixer
