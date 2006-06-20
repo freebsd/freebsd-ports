@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Oryx
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML/RHUNDT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER= 	hideo@lastamericanempire.com
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Meta-Model Driven Object Persistance with Multiple Inheritance
 
 BUILD_DEPENDS=	${SITE_PERL}/SQL/Abstract.pm:${PORTSDIR}/databases/p5-SQL-Abstract \
@@ -29,7 +29,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=   Oryx.3 Oryx::Association.3 Oryx::Association::Array.3 Oryx::Attribute.3 \
+MAN3=	Oryx.3 Oryx::Association.3 Oryx::Association::Array.3 Oryx::Attribute.3 \
 	Oryx::Class.3 Oryx::DBI.3 Oryx::DBI::Util.3 Oryx::DBM.3 Oryx::Manual::Guts.3 \
 	Oryx::MetaClass.3 Oryx::Parent.3 Oryx::Schema.3 Oryx::Value.3 \
 	Oryx::DBI::Association::Hash.3 Oryx::Value::String.3 \
