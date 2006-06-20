@@ -9,7 +9,7 @@
 name="pdnsd"
 rcvar=${name}_enable
 command="%%PREFIX%%/sbin/pdnsd"
-pdnsd_flags="-d"
+command_args="-d"
 required_files="%%PREFIX%%/etc/pdnsd.conf"
 load_rc_config $name
 

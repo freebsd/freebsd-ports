@@ -7,7 +7,7 @@
 
 PORTNAME=	pdnsd
 PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
