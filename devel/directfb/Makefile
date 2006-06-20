@@ -46,7 +46,7 @@ MAN5=		directfbrc.5
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on alpha 5.x"
+BROKEN=		Does not compile on alpha 5.x
 .endif
 
 post-patch:
