@@ -30,6 +30,7 @@ post-patch:
 	cd ${WRKSRC}; echo "JAVA_HOME=${JAVA_HOME}" >> ${WRKSRC}/colors.sh;
 
 do-install:
+	cd ${WRKSRC}; ${SH} ./fix_permissions.sh; ./configure ${JAVASHAREDIR}
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/Classes
 	@${MKDIR} ${DATADIR}/Classes/Base
@@ -77,6 +78,5 @@ do-install:
 	  -exec ${INSTALL_MAN} {} ${DATADIR}/Licences/{} \;
 	@${INSTALL_SCRIPT} -m 4755 ${WRKSRC}/agent.sh ${DATADIR}/agent.sh
 	@${INSTALL_SCRIPT} ${WRKSRC}/colors.sh ${DATADIR}/colors.sh
-	cd ${WRKSRC}; ${SH} ./fix_permissions.sh; ./configure ${JAVASHAREDIR}
 
 .include <bsd.port.mk>
