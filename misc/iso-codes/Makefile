@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iso-codes
-PORTVERSION=	0.51
+DISTVERSION=	0.51-1.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Lists of the country, language and currency iso names
