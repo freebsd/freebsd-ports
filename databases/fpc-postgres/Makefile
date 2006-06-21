@@ -5,67 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgres
-PORTVERSION=	1.0.10
-PORTREVISION=	1
-CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freepascal
-PKGNAMEPREFIX=	fpc-
-DISTNAME=	fpc-${PORTVERSION}.ELF
-EXTRACT_SUFX=	.tar
+CATEGORIES=	databases lang
+PKGNAMESUFFIX=	-postgres
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Free Pascal interface to PostGreSQL
 
-.include <bsd.port.pre.mk>
+RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 
 USE_PGSQL=	yes
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
-.if ${OSVERSION} < 470000
-EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
-TAR=			${LOCALBASE}/bin/gtar
-.endif
-USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+MASTERDIR=	${.CURDIR}/../../lang/fpc
 
-MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH \
-		FPC=${LOCALBASE}/bin/ppc386 \
-		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
-		INSTALL_BINDIR=${PREFIX}/bin \
-		GCCLIBDIR=/usr/lib \
-		RELEASE=1
-
-do-extract:
-# unpack distribution
-	@${MKDIR} ${WRKSRC}
-	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar --directory ${WRKSRC}
-# unpack sources distribution
-	@${MKDIR} ${WRKSRC}/sources
-	@${TAR} xf ${WRKSRC}/sources.tar --directory ${WRKSRC}/sources
-# further extract base sources
-#
-# postgres sources
-	@${TAR} zxf ${WRKSRC}/sources/unitspostgressrc.tar.gz \
-		--directory ${WRKSRC}
-
-post-patch:
-# change to alter amount of optimization
-	@${FIND} ${WRKSRC}/share/src/fpc-${PORTVERSION} -name \
-		"Makefile*" | ${XARGS} ${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
-
-do-build:
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/postgres && \
-		${GMAKE} ${MAKE_ENV} all
-
-do-install:
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/postgres && \
-		${GMAKE} ${MAKE_ENV} install
-
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"

@@ -1,0 +1,21 @@
+###############################################################################
+
+1) You can to install additional units from:
+
+   * lang/fpc-units
+
+2) If you want see all documentation about FreePascal, you can to install
+
+   * lang/fpc-docs
+
+3) Also you can to install all examples that you can test with FreePascal
+
+   * lang/fpc-demo
+
+4) Optionally, you can to install textmode IDE with delphi support 
+
+   * editors/fpc-ide
+
+5) Enjoy it ;)
+
+###############################################################################

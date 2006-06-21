@@ -1,0 +1,65 @@
+UNITPREFIX?=    		units-
+UNITEXTRACT_SUFX=	.tar.gz
+UNITNAME=		${UNITPREFIX}${PKGNAMESUFFIX:S/-//}${BUILDNAME:S/^/./}${UNITEXTRACT_SUFX}
+UNITDIR=		${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
+
+EXAMPLESDIR=	share/examples/${PORTNAME}${PORTVERSION:S/^/-/}
+EXTRACT_CMD=	${CAT}
+EXTRACT_BEFORE_ARGS=	# none
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - binary${BUILDNAME:S/^/./}.tar && ${CAT} \
+				binary${BUILDNAME:S/^/./}.tar| ${TAR} -xf - \
+				${UNITNAME} && ${CAT} ${UNITNAME} | ${GUNZIP_CMD} \
+				-dc | ${TAR} -xf -			
+do-install:
+.for DIRE in bin lib
+	@if [ -d ${WRKDIR}/${DIRE} ]; \
+	then \
+		cd ${WRKDIR}/${DIRE} && \
+	      		${FIND} * -type d -exec ${MKDIR} "{}" "${PREFIX}/${DIRE}/{}" \; && \
+		      		${FIND} * -type f -exec ${INSTALL_SCRIPT} "{}" "${PREFIX}/${DIRE}/{}" \; ; \
+	fi
+.endfor
+.if !defined(NOPORTDOCS)
+.	for DIRE in share/examples share/doc
+		@if [ -d ${WRKDIR}/${DIRE} ]; \
+		then \
+			cd ${WRKDIR}/${DIRE} && \
+				${FIND} * -type d -exec ${MKDIR} "{}" "${PREFIX}/${DIRE}/{}" \; && \
+					${FIND} * -type f -exec ${INSTALL_SCRIPT} "{}" "${PREFIX}/${DIRE}/{}" \; ; \
+		fi
+.	endfor
+.endif
+
+add-plist-info: add-plist-fpcunits
+add-plist-fpcunits:
+.for DIRE in bin lib
+	@if [ -d ${WRKDIR}/${DIRE} ]; \
+	then \
+		cd ${WRKDIR}/${DIRE} && \
+			${FIND} * -type f | ${SORT} | ${SED} -e 's|^|${DIRE}/|' >> ${TMPPLIST}.FILES && \
+				${FIND} -d * -type d | ${SED} -e 's|^|@unexec rmdir %D/${DIRE}/|' -e 's@$$@ 2>/dev/null || true@' >> ${TMPPLIST}.DIRS; \
+	fi
+.endfor
+.if !defined(NOPORTDOCS)
+.	for DIRE in share/examples share/doc
+		@if [ -d ${WRKDIR}/${DIRE} ]; \
+		then \
+			cd ${WRKDIR}/${DIRE} && \
+				${FIND} * -type f | ${SORT} | ${SED} -e 's|^|${DIRE}/|' >> ${TMPPLIST}.FILES && \
+					${FIND} -d * -type d | ${SED} -e 's|^|@unexec rmdir %D/${DIRE}/|' -e 's@$$@ 2>/dev/null || true@' >> ${TMPPLIST}.DIRS; \
+		fi
+.	endfor
+.endif
+	@${CAT} ${TMPPLIST}.FILES > ${TMPPLIST} && ${CAT} ${TMPPLIST}.DIRS >> ${TMPPLIST}
+
+security-check: fpc-check-install
+
+fpc-check-install:
+check-makevars::
+	@${ECHO_CMD} "*****************************************************************"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " The following freepascal unit will be installed in your system: "
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " * ${UNITPREFIX}${PKGNAMESUFFIX:S/-//}"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "*****************************************************************"
