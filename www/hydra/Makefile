@@ -9,7 +9,8 @@
 PORTNAME=	hydra
 PORTVERSION=	0.1.8
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.hellug.gr/pub/software/hydra/
+MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
+		ftp://ftp.hellug.gr/pub/software/hydra/
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A high performance multi-threaded web server
