@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xpp3
-PORTVERSION=	1.1.3.4.M
+DISTVERSION=	1.1.3_8
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.extreme.indiana.edu/dist/java-repository/xpp3/distributions/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_src
+DISTNAME=	${PORTNAME}-${DISTVERSION}_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hq@FreeBSD.org
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/xmlpull.jar:${PORTSDIR}/textproc/xmlpull
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 USE_ANT=	yes
 ALL_TARGET=	jar
@@ -31,7 +31,7 @@ MAKE_ARGS=	-Djavadoc_packages=org.xmlpull.mxp1
 ALL_TARGET+=	javadoc
 PORTDOCS=	api_impl ABOUT.txt THANKS.txt TODO.html build.txt changes.html faq.html
 .endif
-JARFILE=	${PORTNAME}-${PORTVERSION}.jar
+JARFILE=	${PORTNAME}-${DISTVERSION}.jar
 DESTJARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
 
