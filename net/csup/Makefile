@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	csup
-PORTVERSION=	20060313
-PORTREVISION=	1
+PORTVERSION=	20060318
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.mu.org/~mux/ \
 		${MASTER_SITE_LOCAL}
@@ -23,8 +22,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/csup \
 		man/man1/csup.1.gz
 
-.if exists(/usr/bin/csup)
-IGNORE=	is already in the base system
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700014 || ( ${OSVERSION} >= 601100 && ${OSVERSION} < 700000 )
+IGNORE=		is already in the base system
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
