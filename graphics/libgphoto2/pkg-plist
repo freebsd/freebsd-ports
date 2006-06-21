@@ -192,6 +192,7 @@ lib/libgphoto2/%%VERSION%%/sx330z.so
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.a
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.la
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.so
+lib/libgphoto2/print-camera-list
 lib/libgphoto2_port/%%VERSION_PORT%%/disk.a
 lib/libgphoto2_port/%%VERSION_PORT%%/disk.la
 lib/libgphoto2_port/%%VERSION_PORT%%/disk.so

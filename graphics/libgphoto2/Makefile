@@ -7,6 +7,7 @@
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -46,8 +47,11 @@ post-patch:
 		 s|-g ||g' ${WRKSRC}/${file}
 .endfor
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|po packaging doc|po doc|g ; \
-		 s|: install-docDATA|:|g'
+		's|: install-docDATA|:|g'
+	@${REINPLACE_CMD} -e 's|linux-hotplug ||' ${WRKSRC}/packaging/Makefile.in
+
+pre-build:
+	@cd ${WRKSRC} && ${GMAKE} all-local
 
 post-install:
 .if !defined(NOPORTDOCS)
