@@ -8,7 +8,8 @@
 PORTNAME=	thcrut
 PORTVERSION=	1.2.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.thc.org/releases/
+MASTER_SITES=	http://thc.org.segfault.net/releases/ \
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Local network discovery tool
