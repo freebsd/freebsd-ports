@@ -8,7 +8,7 @@ PORTNAME=	mboxcheck-applet
 PORTVERSION=	0.3
 PORTREVISION=	4
 CATEGORIES=	mail
-MASTER_SITES=	http://perso.wanadoo.fr/seb128/fichiers/
+MASTER_SITES=	http://perso.orange.fr/seb128/fichiers/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Mailbox checking applet for GNOME 2
