@@ -46,7 +46,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on FreeBSD < 5.x"
+BROKEN=	Doesn't build on FreeBSD < 5.x
 .endif
 
 .include <bsd.port.post.mk>
