@@ -26,7 +26,7 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}"
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 post-patch:
