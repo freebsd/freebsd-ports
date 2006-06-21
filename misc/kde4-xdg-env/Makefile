@@ -7,6 +7,7 @@
 
 PORTNAME=	xdg
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
@@ -20,6 +21,9 @@ COMMENT=	Script which hooks into startkde and helps KDE pick up XDG apps/menus
 
 .if defined(KDE_PREFIX)
 PREFIX=		${KDE_PREFIX}
+SUB_LIST+=	KDE_PREFIX=${KDE_PREFIX}
+.else
+SUB_LIST+=	KDE_PREFIX=${LOCALBASE}
 .endif
 
 NO_BUILD=	yes
