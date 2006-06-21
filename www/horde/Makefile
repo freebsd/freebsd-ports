@@ -7,7 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.planetmirror.com/pub/horde/horde/		\
@@ -17,10 +17,14 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/horde/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/	\
-		http://ftp.horde.org/pub/horde/
+		http://ftp.horde.org/pub/horde/				\
+		http://cvs.horde.org/co.php?r=1.146\&p=1\&f=horde/:patch1	\
+		http://cvs.horde.org/co.php?r=2.26\&p=1\&f=horde/templates/problem/:patch2
 .if defined(WITH_PHP5)
 PKGNAMESUFFIX=	-php5
 .endif
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} test.php:patch1 problem.inc:patch2
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A common code-base used by Horde applications, written in PHP
@@ -234,7 +238,14 @@ APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PEARDIR?=	${LOCALBASE}/share/pear
 LOG_FILE?=	/var/log/horde.log
 
-.if defined(WITH_PHP5)
+PATCHES2RM=	po/translation.php config/conf.xml scripts/sql/README	\
+		config/mime_drivers.php.dist config/registry.php.dist
+SEDIN2RM=	lib/Horde/Auth/mcal.php config/conf.xml docs/INSTALL	\
+		config/mime_drivers.php.dist
+
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} == 5
 USE_PHP+=	dom
 .else
 USE_PHP+=	domxml
@@ -243,12 +254,7 @@ USE_PHP+=	mcal
 . endif
 .endif
 
-PATCHES2RM=	po/translation.php config/conf.xml scripts/sql/README	\
-		config/mime_drivers.php.dist config/registry.php.dist
-SEDIN2RM=	lib/Horde/Auth/mcal.php config/conf.xml docs/INSTALL	\
-		config/mime_drivers.php.dist
-
-.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 .if ${APACHE_VERSION} >= 20
 APACHE_CNFDIR=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}
@@ -263,6 +269,9 @@ PLIST_SUB+=	RMDIRINC=""
 .endif
 
 pre-configure:
+	@${CP} -p ${DISTDIR}/test.php ${WRKSRC}
+	@${CP} -p ${DISTDIR}/problem.inc ${WRKSRC}/templates/problem/
+
 	@${RM} ${PATCHES2RM:S|^|${WRKSRC}/|:S|$|.orig|}
 	@${SED} -e "s:/home/httpd/html/horde:${HORDEDIR}:"				\
 		-e "s:php_value auto_prepend_file:# php_value auto_prepend_file:"	\
@@ -315,7 +324,7 @@ pre-configure:
 		${FIND} . -name "*.beforeHorde" -delete)
 
 pre-install:
-.if !defined(WITHOUT_SUPPORTED_DB)
+.if !defined(WITHOUT_SUPPORTED_DB) && exists(${LOCALBASE}/bin/php)
 	@if ! php -m | ${GREP} -q -e "mysql" ; then \
 	 if ! php -m | ${GREP} -q -e "pgsql" ; then \
 	  if ! php -m | ${GREP} -q -e "sybase" ; then \
@@ -338,7 +347,7 @@ pre-install:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
-	# Copy RCSID tag from conf.xml into conf.php to stop Horde complaining
+#	Copy RCSID tag from conf.xml into conf.php to stop Horde complaining
 	@if ! ${GREP} -q -e "$$Horde.*conf\.xml" ${WRKSRC}/config/conf.php.dist; then \
 	  ${GREP} -h "$$Horde.*conf\.xml" ${WRKSRC} ${WRKSRC}/config/conf.xml \
 	    | ${SED} -e 's#^ *<!--#//#' -e 's# *--> *$$##g' \
