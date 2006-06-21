@@ -9,8 +9,8 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.6.20060521
-PORTREVISION=	1
+DISTVERSION=	0.8.6.20060621
+PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
