@@ -8,9 +8,8 @@ PORTNAME=	kslide
 PORTVERSION=	1.0
 PORTREVISION=	4
 CATEGORIES=	games kde
-MASTER_SITES=	http://www.web-xs.de/~ecoquelle/taquin/ \
-		http://david.bieder.free.fr/eric/taquin/ \
-		http://perso.wanadoo.fr/coquelle/taquin/
+MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
+		http://perso.orange.fr/coquelle/taquin/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE puzzle game
