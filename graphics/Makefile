@@ -124,6 +124,7 @@
     SUBDIR += fly
     SUBDIR += fnlib
     SUBDIR += fpc-fpgtk
+    SUBDIR += fpc-ggi
     SUBDIR += fracplanet
     SUBDIR += fractorama
     SUBDIR += fraqtive
