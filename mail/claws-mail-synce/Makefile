@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	synce
-PORTVERSION=	0.6
+PORTVERSION=	0.6.3
 CATEGORIES=	mail
-MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
+MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
 DISTNAME=	synce_plugin-${PORTVERSION}
 
