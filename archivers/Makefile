@@ -22,6 +22,7 @@
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += fpc-paszlib
+    SUBDIR += fpc-unzip
     SUBDIR += freeze
     SUBDIR += gtar
     SUBDIR += gzip
