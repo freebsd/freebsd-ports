@@ -115,6 +115,7 @@
 %%PFX%%/include/finclude/petscdef.h.html
 %%PFX%%/include/finclude/petscdraw.h
 %%PFX%%/include/finclude/petscdraw.h.html
+%%PFX%%/include/finclude/petscerror.h
 %%PFX%%/include/finclude/petscis.h
 %%PFX%%/include/finclude/petscis.h.html
 %%PFX%%/include/finclude/petscis.h90
