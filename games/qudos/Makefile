@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qudos
-PORTVERSION=	0.40
+PORTVERSION=	0.40.1
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		QuDos-${PORTVERSION}-data.tar
+		QuDos.pk3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -33,17 +33,18 @@ OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" on \
 		IPV6 "Enable IPv6 support" off \
 		JABOT "Build JABot modification (bots)" off \
 		JOYSTICK "Enable joystick support" off \
+		OSS "Enable Open Sound System sound support" on \
 		QMAX "Enable fancier OpenGL graphics" on \
 		REDBLUE "Enable red-blue 3d glasses renderer" off \
 		RETEXTURE "Enable support for retextured graphics" off \
 		ROGUE "Build Ground Zero (Rogue) mission pack" off \
-		SDLCLIENT "Build SDL client" on \
+		SDL "Enable SDL sound support" on \
 		SDLGL "Build SDL OpenGL renderer" on \
 		X86_ASM "Enable x86 assembly support" on \
 		XATRIX "Build The Reckoning (Xatrix) mission pack" off \
 		ZAERO "Build Zaero modification" off
 
-MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES \
+MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES WITH_XMMS=NO\
 		DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
@@ -70,17 +71,22 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 .endif
 
-.if !defined(WITHOUT_SDLCLIENT) || !defined(WITHOUT_SDLGL)
+.if !defined(WITHOUT_SDL) || !defined(WITHOUT_SDLGL)
 USE_SDL=	sdl
 .endif
 
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDLCLIENT)
+.if !defined(WITHOUT_CLIENT)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-MAKE_ENV+=	WITH_ARTS=YES
+MAKE_ENV+=	BUILD_ARTS_SND=YES
+PLIST_SUB+=	ARTS=""
+Q2SND+=		arts
+.else
+MAKE_ENV+=	BUILD_ARTS_SND=NO
+PLIST_SUB+=	ARTS="@comment "
 .endif
 
 .if !defined(WITHOUT_CLIENT)
@@ -138,6 +144,15 @@ MAKE_ENV+=	WITH_JOYSTICK=YES
 MAKE_ENV+=	WITH_JOYSTICK=NO
 .endif
 
+.if !defined(WITHOUT_OSS)
+MAKE_ENV+=	BUILD_OSS_SND=YES
+PLIST_SUB+=	OSS=""
+Q2SND+=		oss
+.else
+MAKE_ENV+=	BUILD_OSS_SND=NO
+PLIST_SUB+=	OSS="@comment "
+.endif
+
 .if !defined(WITHOUT_QMAX)
 MAKE_ENV+=	WITH_QMAX=YES
 .else
@@ -156,13 +171,13 @@ MAKE_ENV+=	WITH_RETEXTURE=YES
 MAKE_ENV+=	WITH_RETEXTURE=NO
 .endif
 
-.if !defined(WITHOUT_SDLCLIENT)
-MAKE_ENV+=	BUILD_SDLQUAKE2=YES
-PLIST_SUB+=	SDLCLIENT=""
-Q2BIN+=		${PORTNAME}-sdl
+.if !defined(WITHOUT_SDL)
+MAKE_ENV+=	BUILD_SDL_SND=YES
+PLIST_SUB+=	SDL=""
+Q2SND+=		sdl
 .else
-MAKE_ENV+=	BUILD_SDLQUAKE2=NO
-PLIST_SUB+=	SDLCLIENT="@comment "
+MAKE_ENV+=	BUILD_SDL_SND=NO
+PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if !defined(WITHOUT_X86_ASM)
@@ -184,6 +199,9 @@ do-install:
 .for ref in ${Q2REF}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ref_q2${ref}.so ${LIBDIR}
 .endfor
+.for snd in ${Q2SND}
+	${INSTALL_PROGRAM} ${WRKSRC}/quake2/snd_${snd}.so ${LIBDIR}
+.endfor
 .if !defined(WITHOUT_GAME)
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
 .endif
@@ -193,7 +211,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${mod}/game.so ${LIBDIR}/${mod}
 .endif
 .endfor
-	${TAR} xf ${DISTDIR}/QuDos-${PORTVERSION}-data.tar -C ${LIBDIR}/baseq2
+	${INSTALL_DATA} ${_DISTDIR}/QuDos.pk3 ${LIBDIR}/baseq2
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/QuDos.txt ${WRKSRC}/docs/Ogg_readme.txt \
