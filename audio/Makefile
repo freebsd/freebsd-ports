@@ -480,7 +480,6 @@
     SUBDIR += ruby-ogginfo
     SUBDIR += ruby-shout
     SUBDIR += ruby-smf
-    SUBDIR += ruby-snett
     SUBDIR += ruby-vorbisfile
     SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2
@@ -504,6 +503,7 @@
     SUBDIR += slimserver-lastfm
     SUBDIR += slimserver-slimscrobbler
     SUBDIR += snack
+    SUBDIR += snett
     SUBDIR += snd
     SUBDIR += snowstar
     SUBDIR += solfege
