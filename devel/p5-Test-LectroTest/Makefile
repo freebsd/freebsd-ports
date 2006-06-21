@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-LectroTest
-PORTVERSION=	0.3400
+PORTVERSION=	0.3500
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -17,14 +17,19 @@ COMMENT=	Easy, automatic, specification-based tests
 
 PERL_MODBUILD=	yes
 
-MAN3=		Test::LectroTest.3 Test::LectroTest::Generator.3 \
-		Test::LectroTest::Property.3 Test::LectroTest::TestRunner.3 \
-		Test::LectroTest::Tutorial.3 Test::LectroTest::Compat.3
+MAN3=		Test::LectroTest.3 \
+		Test::LectroTest::Compat.3 \
+		Test::LectroTest::FailureRecorder.3 \
+		Test::LectroTest::Generator.3 \
+		Test::LectroTest::Property.3 \
+		Test::LectroTest::RegressionTesting.3 \
+		Test::LectroTest::TestRunner.3 \
+		Test::LectroTest::Tutorial.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5 then try again
 .endif
 
 .if ${PERL_LEVEL} < 500602
