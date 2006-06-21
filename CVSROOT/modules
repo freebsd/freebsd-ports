@@ -12171,7 +12171,6 @@ ruby-setup.rb	ports/devel/ruby-setup.rb
 ruby-shout	ports/audio/ruby-shout
 ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
-ruby-snett	ports/audio/ruby-snett
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
 ruby-sqlite	ports/databases/ruby-sqlite
@@ -12682,6 +12681,7 @@ snarf		ports/www/snarf
 snd-port	ports/audio/snd
 snes9express	ports/emulators/snes9express
 snes9x		ports/emulators/snes9x
+snett		ports/audio/snett
 sng		ports/graphics/sng
 sniff		ports/security/sniff
 sniffit		ports/net/sniffit
