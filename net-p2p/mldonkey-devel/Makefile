@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.7.5
-PORTREVISION=	3
+PORTVERSION=	2.7.7
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -182,8 +181,8 @@ do-install:
 .endif
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/distrib/${file} ${DOCSDIR}
+.for _file in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/distrib/${_file} ${DOCSDIR}
 .endfor
 .endif
 
