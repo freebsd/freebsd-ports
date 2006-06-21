@@ -23,7 +23,7 @@ PLIST_FILES=	bin/mpmf20
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 && ${OSVERSION} > 500000 && ${OSVERSION} < 502108
-BROKEN=		"ffs() clash, see i386/41930"
+BROKEN=		ffs() clash, see i386/41930
 .endif
 
 do-install:
