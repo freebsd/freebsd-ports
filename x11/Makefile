@@ -51,6 +51,7 @@
     SUBDIR += fireflies
     SUBDIR += fixesext
     SUBDIR += fluxbg
+    SUBDIR += fpc-x11
     SUBDIR += gcb
     SUBDIR += gcursor
     SUBDIR += gdesklets-tasklist
