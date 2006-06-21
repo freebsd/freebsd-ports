@@ -6,61 +6,51 @@
 #
 
 PORTNAME=	demo
-PORTVERSION=	1.0.10
+PORTVERSION=	2.0.2
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://planetmirror.com/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://freepascal.stack.nl/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepascal
 PKGNAMEPREFIX=	fpc-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}.ELF
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}.${BUILDNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Free Pascal compiler examples
 
-EXAMPLESDIR=	${PREFIX}/share/examples/fpc
+DEMODIR=	share/doc/${PKGNAMEPREFIX}${PORTVERSION}/${PORTNAME}
 NO_BUILD=	yes
 
-SRCDOCDIR=	${WRKSRC}/share/doc/fpc-${PORTVERSION}/demo
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 470000
-EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-TAR=			${LOCALBASE}/bin/gtar
-.endif
+BUILDNAME=	i386-freebsd
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		DEMODIR=${DEMODIR}
+SUB_LIST+=	DEMODIR=${DEMODIR}
+SUB_FILES=	pkg-message
 
 do-extract:
 # unpack distribution
 	@${MKDIR} ${WRKSRC}
-	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar --directory ${WRKSRC}
-# unpack docs distribution
-	@${TAR} zxf ${WRKSRC}/demo.tar.gz --directory ${WRKSRC}
+	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar \
+		--directory ${WRKSRC}
+	@${TAR} xf ${WRKSRC}/binary.${BUILDNAME}.tar \
+		--directory ${WRKSRC}
+
+# unpack binary and demo distribution
+	@${MKDIR} ${WRKSRC}/${PORTNAME}
+	@${TAR} zxf ${WRKSRC}/demo.tar.gz \
+		--directory ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${SRCDOCDIR}/ && \
-		${INSTALL_DATA} Makefile Makefile.fpc fpcdemos.txt \
-		${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/graph
-	@${INSTALL_DATA} `${LS} ${SRCDOCDIR}/graph/*` \
-		${EXAMPLESDIR}/graph
-	@${MKDIR} ${EXAMPLESDIR}/linux
-	@${INSTALL_DATA} `${LS} ${SRCDOCDIR}/linux/*` \
-		${EXAMPLESDIR}/linux
-	@${MKDIR} ${EXAMPLESDIR}/modex
-	@${INSTALL_DATA} `${LS} ${SRCDOCDIR}/modex/*` \
-		${EXAMPLESDIR}/modex
-	@${MKDIR} ${EXAMPLESDIR}/os2
-	@${INSTALL_DATA} `${LS} ${SRCDOCDIR}/os2/*` \
-		${EXAMPLESDIR}/os2
-	@${MKDIR} ${EXAMPLESDIR}/palmos
-	@${INSTALL_DATA} `${LS} ${SRCDOCDIR}/palmos/*` \
-		${EXAMPLESDIR}/palmos
-	@${MKDIR} ${EXAMPLESDIR}/text
-	@${INSTALL_DATA} `${LS} ${SRCDOCDIR}/text/*` \
-		${EXAMPLESDIR}/text
-	@${MKDIR} ${EXAMPLESDIR}/win32
-	@${INSTALL_DATA} `${LS} ${SRCDOCDIR}/win32/*` \
-		${EXAMPLESDIR}/win32
+	@cd ${WRKSRC}/${PORTNAME}/share && \
+		${FIND} * -type d -exec ${MKDIR} "{}" "${PREFIX}/share/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/share/{}" \;
 
-.include <bsd.port.post.mk>
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

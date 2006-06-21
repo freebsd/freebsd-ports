@@ -5,66 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ibase
-PORTVERSION=	1.0.10
 CATEGORIES=	databases lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freepascal
-PKGNAMEPREFIX=	fpc-
-DISTNAME=	fpc-${PORTVERSION}.ELF
-EXTRACT_SUFX=	.tar
+PKGNAMESUFFIX=	-ibase
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Free Pascal interface to interbase
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+LIB_DEPENDS=	fbembed.1:${PORTSDIR}/databases/firebird-client
 
-.include <bsd.port.pre.mk>
+MASTERDIR=	${.CURDIR}/../../lang/fpc
 
-.if ${OSVERSION} < 470000
-EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-TAR=			${LOCALBASE}/bin/gtar
-.endif
-USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
-
-PLIST_SUB+=	INSTDIR=lib/fpc/${PORTVERSION}/units/freebsd/ibase \
-		PORTVERSION=${PORTVERSION}
-
-MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH \
-		FPC=${LOCALBASE}/bin/ppc386 \
-		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
-		INSTALL_BINDIR=${PREFIX}/bin \
-		GCCLIBDIR=/usr/lib \
-		RELEASE=1
-
-do-extract:
-# unpack distribution
-	@${MKDIR} ${WRKSRC}
-	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar --directory ${WRKSRC}
-# unpack sources distribution
-	@${MKDIR} ${WRKSRC}/sources
-	@${TAR} xf ${WRKSRC}/sources.tar --directory ${WRKSRC}/sources
-# further extract base sources
-#
-# interbase sources
-	@${TAR} zxf ${WRKSRC}/sources/unitsibasesrc.tar.gz \
-		--directory ${WRKSRC}
-
-post-patch:
-# change to alter amount of optimization
-	@${FIND} ${WRKSRC}/share/src/fpc-${PORTVERSION} -name \
-		"Makefile*" | ${XARGS} ${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
-
-do-build:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/ibase \
-		all
-
-do-install:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/ibase \
-		install
-
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"

@@ -5,34 +5,40 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fpc-base
-PORTVERSION=	1.0.10
-CATEGORIES=	lang devel
+PORTNAME=	base
+PORTVERSION=	2.0.2
+CATEGORIES=	lang
 MASTER_SITES=	# empty
+PKGNAMEPREFIX=	fpc-
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Meta package to install all of the Free Pascal base
 
-RUN_DEPENDS=	fp:${PORTSDIR}/editors/fpc-ide \
-		${PAKGDIR}/ibase/ibase60.ppu:${PORTSDIR}/databases/fpc-ibase \
-		${PAKGDIR}/mysql/mysql.ppu:${PORTSDIR}/databases/fpc-mysql \
-		${PAKGDIR}/odbc/odbcsql.ppu:${PORTSDIR}/databases/fpc-odbc \
-		${PAKGDIR}/postgres/postgres.ppu:${PORTSDIR}/databases/fpc-postgres \
-		${PAKGDIR}/oracle/oraoci.ppu:${PORTSDIR}/databases/fpc-oracle \
-		${PAKGDIR}/regexpr/regexpr.ppu:${PORTSDIR}/devel/fpc-regexpr \
-		${PAKGDIR}/inet/inet.ppu:${PORTSDIR}/net/fpc-inet \
-		${PAKGDIR}/md5/md5.ppu:${PORTSDIR}/security/fpc-md5 \
-		${PAKGDIR}/paszlib/paszlib.ppu:${PORTSDIR}/archivers/fpc-paszlib
+RUN_DEPENDS=	${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
+		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
+		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
+		${UNITSDIR}/md5/Package.fpc:${PORTSDIR}/security/fpc-md5 \
+		${UNITSDIR}/mysql/Package.fpc:${PORTSDIR}/databases/fpc-mysql \
+		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
+		${UNITSDIR}/odbc/Package.fpc:${PORTSDIR}/databases/fpc-odbc \
+		${UNITSDIR}/oracle/Package.fpc:${PORTSDIR}/databases/fpc-oracle \
+		${UNITSDIR}/pasjpeg/Package.fpc:${PORTSDIR}/graphics/fpc-pasjpeg \
+		${UNITSDIR}/paszlib/Package.fpc:${PORTSDIR}/archivers/fpc-paszlib \
+		${UNITSDIR}/pthreads/Package.fpc:${PORTSDIR}/devel/fpc-pthreads \
+		${UNITSDIR}/postgres/Package.fpc:${PORTSDIR}/databases/fpc-postgres \
+		${UNITSDIR}/regexpr/Package.fpc:${PORTSDIR}/devel/fpc-regexpr \
+		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite
 
-PAKGDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/freebsd
-DOCSDIR=	${LOCALBASE}/share/doc/fpc
-EXAMPLESDIR=	${LOCALBASE}/share/examples/fpc
+UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
+DOCSDIR=	${LOCALBASE}/share/doc/fpc-${PORTVERSION}
+EXAMPLESDIR=	${LOCALBASE}/share/examples/fpc-${PORTVERSION}
+BUILDNAME=	i386-freebsd
 
 .if !defined(NOPORTDOCS)
-RUN_DEPENDS+=	${DOCSDIR}/user.pdf:${PORTSDIR}/lang/fpc-docs \
-		${EXAMPLESDIR}/Makefile.fpc:${PORTSDIR}/lang/fpc-demo
+RUN_DEPENDS+=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs \
+		${LOCALBASE}/share/doc/fpc-${PORTVERSION}/demo/Makefile.fpc:${PORTSDIR}/lang/fpc-demo
 .endif
 
 NO_BUILD=	yes

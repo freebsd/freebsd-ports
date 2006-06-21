@@ -5,67 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gdbint
-PORTVERSION=	1.0.10
-PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	freepascal
-PKGNAMEPREFIX=	fpc-
-DISTNAME=	fpc-${PORTVERSION}.ELF
-EXTRACT_SUFX=	.tar
+PKGNAMESUFFIX=	-gdbint
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Free Pascal unit providing interface to gdb
 
-.include <bsd.port.pre.mk>
+RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 
-BUILD_DEPENDS+=	ppc386:${PORTSDIR}/lang/fpc \
-		gdbfpc:${PORTSDIR}/devel/fpc-gdb
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-.if ${OSVERSION} < 470000
-EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-TAR=			${LOCALBASE}/bin/gtar
-.endif
-USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
+MASTERDIR=	${.CURDIR}/../../lang/fpc
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-MAKE_ENV+=	PATH=${LOCALBASE}/bin:$$PATH \
-		FPC=${LOCALBASE}/bin/ppc386 \
-		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
-		INSTALL_BINDIR=${PREFIX}/bin \
-		GCCLIBDIR=/usr/lib \
-		GDBLIBDIR=${LOCALBASE}/lib/fpc/${PORTVERSION}/units/freebsd/gdbint/libgdb \
-		RELEASE=1
-
-do-extract:
-# unpack distribution
-	@${MKDIR} ${WRKSRC}
-	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar --directory ${WRKSRC}
-# unpack sources distribution
-	@${MKDIR} ${WRKSRC}/sources
-	@${TAR} xf ${WRKSRC}/sources.tar --directory ${WRKSRC}/sources
-# further extract base sources
-#
-# gdbint sources
-	@${TAR} zxf ${WRKSRC}/sources/unitsgdbintsrc.tar.gz \
-		--directory ${WRKSRC}
-
-post-patch:
-# change to alter amount of optimization
-	@${FIND} ${WRKSRC}/share/src/fpc-${PORTVERSION} -name \
-		"Makefile*" | ${XARGS} ${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
-
-do-build:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/gdbint \
-		all
-
-do-install:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/gdbint \
-		install
-
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"

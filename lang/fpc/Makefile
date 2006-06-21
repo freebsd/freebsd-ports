@@ -6,74 +6,64 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	1.0.10
-PORTREVISION=	3
-CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTVERSION=	2.0.2
+CATEGORIES?=	lang
+MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://planetmirror.com/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://freepascal.stack.nl/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/i386-freebsd-${PORTVERSION}/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepascal
-DISTNAME=	${PORTNAME}-${PORTVERSION}.ELF
+DISTNAME=	${PORTNAME}-${PORTVERSION}.${BUILDNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Free Pascal compiler with Turbo, Delphi and other extensions
+MAINTAINER?=	acardenas@bsd.org.pe
+COMMENT?=	Free Pascal compiler with Turbo and Delphi
+
+BUILDNAME=	i386-freebsd
+ONLY_FOR_ARCHS=	i386
+NO_BUILD=	yes
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
+		BUILDNAME=${BUILDNAME}
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird-client
-.if ${OSVERSION} < 470000
-EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-TAR=			${LOCALBASE}/bin/gtar
-.endif
-USE_MYSQL=	yes
-USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
-PKGDEINSTALL=	${PKGINSTALL}
-
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-MAN1=	delp.1 fpc.1 fpcmake.1 fpdoc.1 h2pas.1 plex.1 ppc386.1 ppdep.1 \
-	ppudump.1 ppufiles.1 ppumove.1 ptop.1 pyacc.1 rstconv.1
+.if !defined(PKGNAMESUFFIX)
+MAN1=	bin2obj.1 \
+	data2inc.1 \
+	delp.1 \
+	fd2pascal.1 \
+	fpc.1 \
+	fpcmake.1 \
+	fpdoc.1 \
+	fprcp.1 \
+	h2pas.1 \
+	h2paspp.1 \
+	makeskel.1 \
+	plex.1 \
+	postw32.1 \
+	ppc386.1 \
+	ppcarm.1 \
+	ppcppc.1 \
+	ppcsparc.1 \
+	ppcx64.1 \
+	ppdep.1 \
+	ppudump.1 \
+	ppufiles.1 \
+	ppumove.1 \
+	ptop.1 \
+	pyacc.1 \
+	rstconv.1 \
+	unitdiff.1
 MAN5=	fpc.cfg.5 fpcmake.5 ptop.cfg.5
 
-NO_LATEST_LINK=	yes
-
-# FreePascal is not self-bootstrapping.  Hence, the need for a working
-# pppc386.  Check for ppc386 in a manner similar to lang/gnat.
-#
-# Look in PREFIX
-.ifdef PREFIX
-have_boot!=	if [ -x ${PREFIX}/bin/ppc386 ]; then \
-			${ECHO_CMD} "${PREFIX}/bin"; \
-		else \
-			${ECHO_CMD} ""; \
-		fi
-.else
-have_boot=
-.endif
-
-# Then look in LOCALBASE
-.if empty(have_boot)
-have_boot!=	if [ -x ${LOCALBASE}/bin/ppc386 ]; then \
-			${ECHO_CMD} "${LOCALBASE}/bin"; \
-		else \
-			${ECHO_CMD} ""; \
-		fi
-.endif
-
-.if empty(have_boot)
-have_boot=	${WRKSRC}/boot/bin
 # only need misc/compat4x if using the pre-built ppc386
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
-.endif
-
-MAKE_ENV+=	PATH=${have_boot}:$$PATH \
-		FPC=${have_boot}/ppc386 \
-		INSTALL_BASEDIR=${PREFIX}/lib/fpc/${PORTVERSION} \
-		INSTALL_BINDIR=${PREFIX}/bin \
-		GCCLIBDIR=/usr/lib \
-		RELEASE=1
 
 do-extract:
 # unpack distribution
@@ -81,95 +71,34 @@ do-extract:
 	@${TAR} xf ${DISTDIR}/${DISTNAME}.tar --directory ${WRKSRC}
 # unpack pre-compiled binaries distribution
 	@${MKDIR} ${WRKSRC}/binary
-	@${TAR} xf ${WRKSRC}/binary.tar --directory ${WRKSRC}/binary
-# unpack sources distribution
-	@${MKDIR} ${WRKSRC}/sources
-	@${TAR} xf ${WRKSRC}/sources.tar --directory ${WRKSRC}/sources
+	@${TAR} xf ${WRKSRC}/binary.${BUILDNAME}.tar --directory ${WRKSRC}/binary
 # create a local binary ppc386
 	@${MKDIR} ${WRKSRC}/boot
-	@${TAR} zxf ${WRKSRC}/binary/basefreebsd.tar.gz \
+	@${TAR} zxf ${WRKSRC}/binary/base.${BUILDNAME}.tar.gz \
 		--directory ${WRKSRC}/boot
-	@${TAR} zxf ${WRKSRC}/binary/utilfreebsd.tar.gz \
+	@${TAR} zxf ${WRKSRC}/binary/utils.${BUILDNAME}.tar.gz \
 		--directory ${WRKSRC}/boot
-	@${LN} -sf ${WRKSRC}/boot/lib/fpc/${PORTVERSION}/ppc386 \
-		${WRKSRC}/boot/bin/ppc386
-# further extract base sources
-#
-# mandatory sources
-	@${TAR} zxf ${WRKSRC}/sources/basesrc.tar.gz \
-		--directory ${WRKSRC}
-	@${TAR} zxf ${WRKSRC}/sources/compilersrc.tar.gz \
-		--directory ${WRKSRC}
-	@${TAR} zxf ${WRKSRC}/sources/rtlsrc.tar.gz \
-		--directory ${WRKSRC}
-# dependencies of FCL
-	@${TAR} zxf ${WRKSRC}/sources/unitspaszlibsrc.tar.gz \
-		--directory ${WRKSRC}
-	@${TAR} zxf ${WRKSRC}/sources/unitsnetdbsrc.tar.gz \
-		--directory ${WRKSRC}
-	@${TAR} zxf ${WRKSRC}/sources/unitslibasyncsrc.tar.gz \
-		--directory ${WRKSRC}
-	@${TAR} zxf ${WRKSRC}/sources/unitsmysqlsrc.tar.gz \
-		--directory ${WRKSRC}
-	@${TAR} zxf ${WRKSRC}/sources/unitsibasesrc.tar.gz \
-		--directory ${WRKSRC}
-# FCL is required for some of the compiler utilities
-	@${TAR} zxf ${WRKSRC}/sources/fclsrc.tar.gz \
-		--directory ${WRKSRC}
-# compiler utilities
-	@${TAR} zxf ${WRKSRC}/sources/utilssrc.tar.gz \
-		--directory ${WRKSRC}
-
-post-patch:
-# change to alter amount of optimization
-	@${FIND} ${WRKSRC}/share/src/fpc-${PORTVERSION} -name \
-		"Makefile*" | ${XARGS} ${REINPLACE_CMD} 's|-OG2p3|-OG2p1|g'
-
-do-build:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl \
-		all
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler \
-		all
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync \
-		all
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl \
-		all
-# kludge so that bin2obj finds ZSTREAM and builds
-	cd ${WRKSRC}/share/src/fpc-${PORTVERSION} && \
-		${CP} fcl/inc/zstream.pp utils
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/utils \
-		all
 
 do-install:
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/rtl \
-		install
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/compiler \
-		install
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/packages/base/libasync \
-		install
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/fcl \
-		install
-	@${SETENV} ${MAKE_ENV} ${GMAKE} -C \
-		${WRKSRC}/share/src/fpc-${PORTVERSION}/utils \
-		install
-	@${MKDIR} ${PREFIX}/man/man1
-	cd ${WRKSRC}/boot/man/man1 && ${INSTALL_MAN} ${MAN1} \
-		${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/man/man5
-	cd ${WRKSRC}/boot/man/man5 && ${INSTALL_MAN} ${MAN5} \
-		${PREFIX}/man/man5
+	# Installing binaries
+	${INSTALL_SCRIPT} ${WRKSRC}/boot/bin/* ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/boot/share/doc/fpc-${PORTVERSION}/* ${DOCSDIR}
+.endif
+	# Installing fpc libs
+	${CP} -r ${WRKSRC}/boot/lib/* ${PREFIX}/lib
+	# Installing manpages
+	${INSTALL_DATA} ${WRKSRC}/boot/man/man1/* ${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/boot/man/man5/* ${MAN1PREFIX}/man/man5
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	if [ -e "${PREFIX}/bin/ppc386" ]; then ${RM} -f "${PREFIX}/bin/ppc386"; fi
+	${LN} -s "${PREFIX}/lib/fpc/${PORTVERSION}/ppc386" "${PREFIX}/bin"
+	${SH} "${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${PREFIX}/lib/fpc/${PORTVERSION}" "${PREFIX}/etc"
+	@${CAT} ${PKGMESSAGE}
 
+.else
+.include "${MASTERDIR}/Makefile.units"
+.endif
 .include <bsd.port.post.mk>
