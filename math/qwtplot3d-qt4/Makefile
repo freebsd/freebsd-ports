@@ -13,15 +13,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	A 3D plotting widget for scientific data and mathematical expressions
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-USE_QT_VER=     3
+USE_QT_VER=	3
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV=       QTDIR=${X11BASE} \
+MAKE_ENV=	QTDIR=${X11BASE} \
 		MOC=${MOC}
 INSTALLS_SHLIB=	yes
 
