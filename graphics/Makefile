@@ -125,6 +125,7 @@
     SUBDIR += fnlib
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-ggi
+    SUBDIR += fpc-gtk
     SUBDIR += fracplanet
     SUBDIR += fractorama
     SUBDIR += fraqtive
