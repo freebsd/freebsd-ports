@@ -54,7 +54,7 @@ lib/libparagui.so
 lib/libparagui.so.%%SHLIB_VER%%
 libdata/pkgconfig/paragui.pc
 share/aclocal/paragui.m4
-share/paragui/default.zip
-share/paragui/simple.zip
-@dirrm share/paragui
+%%DATADIR%%/default.zip
+%%DATADIR%%/simple.zip
+@dirrm %%DATADIR%%
 @dirrm include/paragui

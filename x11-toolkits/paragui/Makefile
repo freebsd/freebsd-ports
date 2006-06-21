@@ -32,10 +32,6 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		does not build on ${ARCH}
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/src/physfs/platform.c
 
