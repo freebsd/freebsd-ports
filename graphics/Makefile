@@ -128,6 +128,7 @@
     SUBDIR += fpc-gtk
     SUBDIR += fpc-gtk2
     SUBDIR += fpc-imlib
+    SUBDIR += fpc-libgd
     SUBDIR += fracplanet
     SUBDIR += fractorama
     SUBDIR += fraqtive
