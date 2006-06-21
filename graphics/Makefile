@@ -123,6 +123,7 @@
     SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fnlib
+    SUBDIR += fpc-fpgtk
     SUBDIR += fracplanet
     SUBDIR += fractorama
     SUBDIR += fraqtive
