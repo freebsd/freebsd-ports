@@ -1,0 +1,35 @@
+# New ports collection makefile for:	gphotofs
+# Date created:				21 June 2006
+# Whom:					Pav Lucistnik <pav@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gphotofs
+PORTVERSION=	0.2
+CATEGORIES=	graphics sysutils
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gphoto
+PKGNAMEPREFIX=	fusefs-
+
+MAINTAINER=	pav@FreeBSD.org
+COMMENT=	Mount PTP camera as a file system
+
+LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
+		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+
+USE_BZIP2=	yes
+USE_GNOME=	glib20
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		depends on kernel module that requires FreeBSD 6 or later
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|USE_VERSION=22|USE_VERSION=25|' ${WRKSRC}/Makefile.in
+
+.include <bsd.port.post.mk>
