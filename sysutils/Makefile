@@ -169,6 +169,7 @@
     SUBDIR += foremost
     SUBDIR += fortunelock
     SUBDIR += fpc-syslog
+    SUBDIR += fpc-utmp
     SUBDIR += fpkg
     SUBDIR += freebsd-sha1
     SUBDIR += freebsd-sha256
