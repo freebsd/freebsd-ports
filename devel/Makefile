@@ -288,6 +288,7 @@
     SUBDIR += fpc-fv
     SUBDIR += fpc-gdb
     SUBDIR += fpc-gdbint
+    SUBDIR += fpc-pthreads
     SUBDIR += fpc-regexpr
     SUBDIR += fpp
     SUBDIR += freebase
