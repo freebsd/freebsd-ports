@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TclTk
-PORTVERSION=	b2
+PORTVERSION=	0.75
 CATEGORIES=	x11-toolkits lang perl5 tk82
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tcl
@@ -16,15 +16,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to access to Tk via the Tcl extension
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 PERL_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		Tcl::Tk.3
 
-post-patch:
-	@${PERL} -pi -e 's,%LOCALBASE%,${LOCALBASE},g; \
-		s,%X11BASE%,${X11BASE},g' ${WRKSRC}/Makefile.PL
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500601 # lang/p5-Tcl does
+IGNORE=         requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
