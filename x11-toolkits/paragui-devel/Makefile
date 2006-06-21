@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	paragui
 # Date Created:			Mar 28, 2001
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
@@ -7,22 +6,27 @@
 #
 
 PORTNAME=	paragui
-PORTVERSION=	1.0.4
-PORTREVISION=	5
+PORTVERSION=	1.1.8
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	Cross-platform high-level application framework and GUI library
+MAINTAINER=	acardenas@bsd.org.pe
+COMMENT=	Cross-platform high-level application framework and GUI library(devel)
 
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
+
+CONFLICTS=	paragui-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image ttf
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
@@ -30,10 +34,12 @@ INSTALLS_SHLIB=	yes
 SHLIB_VER=	4
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
+OPTIONS=	DEBUG	"Debug information"	off
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		does not build on ${ARCH}
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-extract:
