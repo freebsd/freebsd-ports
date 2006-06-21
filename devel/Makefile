@@ -290,6 +290,7 @@
     SUBDIR += fpc-gdbint
     SUBDIR += fpc-pthreads
     SUBDIR += fpc-regexpr
+    SUBDIR += fpc-zlib
     SUBDIR += fpp
     SUBDIR += freebase
     SUBDIR += freelibiberty
