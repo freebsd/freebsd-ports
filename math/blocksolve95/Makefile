@@ -17,14 +17,14 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sofware for the efficient solution of large, sparse linear systems
 
-LIB_DEPENDS=	f77blas.1:${PORTSDIR}/math/atlas
 BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich
 RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_ARGS=	GMAKE=${GMAKE} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}
+MAKE_ARGS=	GMAKE=${GMAKE} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
+		BLAS_LIB=${BLAS_LIB} LAPACK_LIB=${LAPACK_LIB}
 
 MPIDIR=		${LOCALBASE}/mpich
 PETSC_ARCH=	freebsd
@@ -36,6 +36,19 @@ INCLUDES=	BMmsg.h BSdepend.h BSlog.h BSmy_blas.h BSprivate.h BSsparse.h
 PORTDOCS=	manual.ps
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
+BLAS_LIB=	"-lf77blas -lcblas -latlas -lg2c -lm"
+LAPACK_LIB=	"-L${LOCALBASE}/lib -lalapack"
+.else
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+BLAS_LIB=	"-lblas -lm"
+LAPACK_LIB=	"-L${LOCALBASE}/lib -llapack"
+.endif
 
 do-install:
 	${INSTALL_DATA}	${WRKSRC}/lib/lib${BOPT}/${PETSC_ARCH}/libBS95.a	\
@@ -51,7 +64,7 @@ do-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-test:	build
+regression-test:	build
 	@(cd ${BUILD_WRKSRC}/examples;	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bsrunexamples clean)
 .endif
