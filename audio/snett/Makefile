@@ -8,7 +8,6 @@ PORTNAME=	snett
 PORTVERSION=	0.0.2
 CATEGORIES=	audio ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/snett/
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	A simple XMMS2 client inspired by strange-quark
@@ -28,6 +27,6 @@ BROKEN=		Does not compile on FreeBSD 4.x
 .endif
 
 do-install:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ install
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ ${INSTALL_TARGET}
 
 .include <bsd.port.post.mk>
