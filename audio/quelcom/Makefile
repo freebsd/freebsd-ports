@@ -28,11 +28,11 @@ LDFLAGS=	-L../lib -L${LOCALBASE}/lib -lintl
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Linker error on alpha 4.x"
+BROKEN=		Linker error on alpha 4.x
 .endif
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Linker error on ia64"
+BROKEN=		Linker error on ia64
 .endif
 
 post-patch:
@@ -44,12 +44,12 @@ post-patch:
 		 s|-L./../lib -lqextra|$$(LDFLAGS) -lqextra|g'
 
 do-install:
-.for file in qmp3check qmp3cut qmp3info qmp3join qmp3report qwavcut qwavfade \
+.for f in qmp3check qmp3cut qmp3info qmp3join qmp3report qwavcut qwavfade \
 	qwavheaderdump qwavinfo qwavjoin qwavsilence
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
-.for file in libqextra.so libqmp3.so libqwav.so
-	${INSTALL_DATA} ${WRKSRC}/lib/${file} ${PREFIX}/lib
+.for f in libqextra.so libqmp3.so libqwav.so
+	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib
 .endfor
 .for lang in ca es
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
