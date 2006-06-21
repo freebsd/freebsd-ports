@@ -2619,7 +2619,6 @@ fpc-fcl		devel/fpc-fcl
 fpc-forms	x11-toolkits/fpc-forms
 fpc-fpgtk	graphics/fpc-fpgtk
 fpc-fv		ports/devel/fpc-fv
-fpc-gdb		ports/devel/fpc-gdb
 fpc-gdbint	ports/devel/fpc-gdbint
 fpc-gdbm	databases/fpc-gdbm
 fpc-ggi		graphics/fpc-ggi
@@ -2628,7 +2627,6 @@ fpc-gtk2	x11-toolkits/fpc-gtk2
 fpc-ibase	ports/databases/fpc-ibase
 fpc-ide		ports/editors/fpc-ide
 fpc-imlib	graphics/fpc-imlib
-fpc-inet	ports/net/fpc-inet
 fpc-libasync	net/fpc-libasync
 fpc-libgd	graphics/fpc-libgd
 fpc-libpng	graphics/fpc-libpng
