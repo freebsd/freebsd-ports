@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	applications kterm/:wp_jp shige/kterm/:wp_local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		README.wallpaper.ja:wp_local,wp_jp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	An xterm that speaks Japanese
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
