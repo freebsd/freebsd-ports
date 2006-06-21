@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}0/final/en/i
 		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/${OPERA_VER:S/.//}0/final/en/i386/static/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/${OPERA_VER:S/.//}0/final/en/i386/static/&,}
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386-en-344
+DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386-en
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
@@ -27,6 +27,7 @@ COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 RUN_DEPENDS=	\
 		${LINUXBASE}/usr/lib/libaspell.so.15:${PORTSDIR}/textproc/linux-aspell
 
+WRKSRC=		${WRKDIR}/${DISTNAME}-${OPERA_BUILD}
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_LINUX=	yes
@@ -37,6 +38,7 @@ NO_BUILD=	yes
 
 OPERA_VER=	9.0
 OPERA_DATE=	20060616
+OPERA_BUILD=	344
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
