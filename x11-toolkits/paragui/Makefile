@@ -20,6 +20,8 @@ COMMENT=	Cross-platform high-level application framework and GUI library
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \
 		expat.6:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	paragui-devel-[0-9]*
+
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image ttf
