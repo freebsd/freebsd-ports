@@ -1,6 +1,6 @@
---- ./src/unix/gl_glx.c.orig	Wed Mar 29 07:23:22 2006
-+++ ./src/unix/gl_glx.c	Tue May 30 17:23:31 2006
-@@ -1271,7 +1271,7 @@
+--- ./src/unix/gl_glx.c.orig	Mon Jun  5 19:35:46 2006
++++ ./src/unix/gl_glx.c	Sun Jun 11 14:56:13 2006
+@@ -1239,7 +1239,7 @@
  #endif
  		}
  #ifdef __FreeBSD__
