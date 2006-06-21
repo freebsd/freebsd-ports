@@ -132,6 +132,7 @@
     SUBDIR += fpc-libpng
     SUBDIR += fpc-ncurses
     SUBDIR += fpc-opengl
+    SUBDIR += fpc-pasjpeg
     SUBDIR += fracplanet
     SUBDIR += fractorama
     SUBDIR += fraqtive
