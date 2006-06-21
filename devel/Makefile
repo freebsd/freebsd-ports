@@ -284,6 +284,7 @@
     SUBDIR += fnorb
     SUBDIR += fortran-utils
     SUBDIR += fpc-bfd
+    SUBDIR += fpc-fcl
     SUBDIR += fpc-fv
     SUBDIR += fpc-gdb
     SUBDIR += fpc-gdbint
