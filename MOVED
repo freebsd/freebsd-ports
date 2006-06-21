@@ -2387,4 +2387,5 @@ archivers/bsdtar|archivers/libarchive|2006-06-20|Merged into the libarchive port
 lang/fpc2||2006-06-21|Removed because lang/fpc will be updated to 2.x
 devel/fpc-gdb||2006-06-21|Obsoleted after lang/fpc was updated to 2.0.2
 net/fpc-inet||2006-06-21|Obsoleted after lang/fpc was updated to 2.0.2
-audio/ruby-snett|audio/snett|2006-22|Because it's a application, not a library.
+audio/ruby-snett|audio/snett|2006-06|Because it's a application, not a library
+audio/py-shellac|audio/shellac|2006-06|Because it's a application, not a library

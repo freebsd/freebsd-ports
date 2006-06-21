@@ -11359,7 +11359,6 @@ py-setuptools	ports/devel/py-setuptools
 py-sgflib	ports/games/py-sgflib
 py-sgfsummary	ports/games/py-sgfsummary
 py-sgrep	ports/textproc/py-sgrep
-py-shellac	ports/audio/py-shellac
 py-simplejson	ports/devel/py-simplejson
 py-simpleparse	ports/devel/py-simpleparse
 py-simpy	ports/devel/py-simpy
@@ -12499,6 +12498,7 @@ sharpconstruct	ports/graphics/sharpconstruct
 sharutils	ports/archivers/sharutils
 shc		ports/misc/shc
 sheerdns	ports/dns/sheerdns
+shellac		ports/audio/shellac
 shftool		ports/converters/shftool
 shishi		ports/security/shishi
 shlock		ports/sysutils/shlock
