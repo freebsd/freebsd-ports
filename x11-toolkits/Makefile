@@ -152,6 +152,7 @@
     SUBDIR += pango-reference
     SUBDIR += pangoxsl
     SUBDIR += paragui
+    SUBDIR += paragui-devel
     SUBDIR += php-gtk
     SUBDIR += plib
     SUBDIR += pmw
