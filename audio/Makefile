@@ -447,7 +447,6 @@
     SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-sdl_mixer
-    SUBDIR += py-shellac
     SUBDIR += py-taglib
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
@@ -491,6 +490,7 @@
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
     SUBDIR += sfront
+    SUBDIR += shellac
     SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
