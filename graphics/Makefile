@@ -130,6 +130,7 @@
     SUBDIR += fpc-imlib
     SUBDIR += fpc-libgd
     SUBDIR += fpc-libpng
+    SUBDIR += fpc-ncurses
     SUBDIR += fracplanet
     SUBDIR += fractorama
     SUBDIR += fraqtive
