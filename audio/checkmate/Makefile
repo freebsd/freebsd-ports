@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpck
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.linuxonly.nl/ \
 		http://critical.ch/distfiles/ \
