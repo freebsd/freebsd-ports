@@ -11914,6 +11914,7 @@ rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader
 rtfx		ports/textproc/rtfx
 rtg		ports/net/rtg
+rth		ports/devel/rth
 rtorrent-devel	ports/net-p2p/rtorrent-devel
 rtplib		ports/devel/rtplib
 rtpmon		ports/mbone/rtpmon
