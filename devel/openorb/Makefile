@@ -13,13 +13,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${APP_NAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java implementation of the OMG CORBA 2.4.2 specification
 
 RUN_DEPENDS=	${JAVALIBDIR}/excalibur-configuration.jar:${PORTSDIR}/devel/excalibur-configuration \
 		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
 		${JAVALIBDIR}/logkit.jar:${PORTSDIR}/java/avalon-logkit \
 		${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
+
+DEPRECATED=	not really maintained anymore (last beta version is 2 years old)
+EXPIRATION_DATE=2006-08-01
 
 APP_NAME=	OpenORB
 
