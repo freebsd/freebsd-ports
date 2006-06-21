@@ -20,19 +20,27 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of routines for performing sparse factorization
 
+.ifdef WITH_ATLAS
 LIB_DEPENDS=    atlas:${PORTSDIR}/math/atlas
+.else
+LIB_DEPENDS= 	blas.1:${PORTSDIR}/math/blas
+.endif
 
 P_VERSION=	3.0
 WRKSRC=		${WRKDIR}/SuperLU_${P_VERSION}
 ALL_TARGET=	superlulib
 
-BLAS_LIBS=	${LOCALBASE}/lib/libf77blas.a ${LOCALBASE}/lib/libatlas.a
+.ifdef WITH_ATLAS
+BLAS_LIBS=	-lf77blas -latlas
+.else
+BLAS_LIBS?=	-lblas
+.endif
 
 ARCH2FIX=	SRC/Makefile TESTING/MATGEN/Makefile CBLAS/Makefile make.inc	\
 		MAKE_INC/make.alpha MAKE_INC/make.inc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+${BLAS_LIBS}+' \
+	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+-L${LOCALBASE}/lib ${BLAS_LIBS}+' \
 	${WRKSRC}/make.inc
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+' \
 	${WRKSRC}/make.inc
@@ -59,4 +67,10 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/superlu_ug.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
+
+.include <bsd.port.post.mk>
