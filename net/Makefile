@@ -122,6 +122,7 @@
     SUBDIR += flowgrep
     SUBDIR += forg
     SUBDIR += fpc-inet
+    SUBDIR += fpc-libasync
     SUBDIR += fping
     SUBDIR += freebsd-uucp
     SUBDIR += freedbd
