@@ -928,7 +928,6 @@ bsdiff		ports/misc/bsdiff
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
 bsdsfv		ports/security/bsdsfv
-bsdtar		ports/archivers/bsdtar
 bsdtris		ports/games/bsdtris
 bsfilter	ports/mail/bsfilter
 bsflite		ports/net-im/bsflite
