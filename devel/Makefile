@@ -1623,6 +1623,7 @@
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpm-spec-mode.el
+    SUBDIR += rth
     SUBDIR += rtplib
     SUBDIR += ruby-amstd
     SUBDIR += ruby-aspectr
