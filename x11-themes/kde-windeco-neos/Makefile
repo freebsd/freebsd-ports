@@ -9,7 +9,7 @@ PORTNAME=	neos
 PORTVERSION=	0.2b
 PORTREVISION=	3
 CATEGORIES=	x11-themes kde
-MASTER_SITES=	http://perso.wanadoo.fr/chamayou/
+MASTER_SITES=	http://perso.orange.fr/chamayou/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	kwin-${PORTNAME}-${PORTVERSION}
 
