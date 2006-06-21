@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 CFLAGS+=	${PTHREAD_CFLAGS:S/"//g}
 LDFLAGS+=	${PTHREAD_LIBS:S/"//g}
@@ -33,7 +33,7 @@ MAN1=		ecawave.1
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Configure fails on alpha 5.x"
+BROKEN=		Configure fails on alpha 5.x
 .endif
 
 post-patch:
