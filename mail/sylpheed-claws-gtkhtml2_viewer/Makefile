@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gtkhtml2_viewer
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	mail
-MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
+MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
 
 MAINTAINER=	c0rn@o2.pl
@@ -32,6 +32,7 @@ PLIST_FILES=	lib/sylpheed-claws/plugins/gtkhtml2_viewer.a \
 	lib/sylpheed-claws/plugins/gtkhtml2_viewer.la \
 	lib/sylpheed-claws/plugins/gtkhtml2_viewer.so \
 	share/locale/es/LC_MESSAGES/gtkhtml2_viewer.mo \
+	share/locale/fr/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/pl/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo
 
