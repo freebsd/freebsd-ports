@@ -9,10 +9,10 @@ PORTNAME=	superlu_mt
 DISTVERSION=	1.0.20050524
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
-		http://crd.lbl.gov/~xiaoye/
+		http://crd.lbl.gov/~xiaoye/:doc
 DISTNAME=	${PORTNAME}_1.0
 .ifndef NOPORTDOCS
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} simax97.ps.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} simax97.ps.gz:doc
 .endif
 DIST_SUBDIR=	superlu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,18 +20,26 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/blas
+.ifdef WITH_ATLAS
+LIB_DEPENDS=    atlas:${PORTSDIR}/math/atlas
+.else
+LIB_DEPENDS=    blas.1:${PORTSDIR}/math/blas
+.endif
 
 WRKSRC=		${WRKDIR}/SuperLU_MT
 ALL_TARGET=	superlulib
 
-BLAS_LIBS=	${LOCALBASE}/lib/libblas.a
+.ifdef WITH_ATLAS
+BLAS_LIBS=      -lf77blas -latlas
+.else
+BLAS_LIBS?=     -lblas
+.endif
 
 ARCH2FIX=	CBLAS/Makefile make.alpha make.exemplar TESTING/MATGEN/Makefile	\
 		make.origin make.inc make.pthreads SRC/Makefile
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
+	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+-L${LOCALBASE}/lib ${BLAS_LIBS}+ ; \
 	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
 	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
 		${WRKSRC}/make.inc
