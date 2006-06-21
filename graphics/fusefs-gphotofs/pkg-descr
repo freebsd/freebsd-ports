@@ -1,0 +1,5 @@
+gphotofs is a FUSE filesystem module to mount your camera as a filesystem.
+This allow using your camera with any tool able to read from a mounted
+filesystem.
+
+WWW: http://gphoto.sourceforge.net/proj/gphotofs/
