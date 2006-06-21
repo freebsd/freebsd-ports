@@ -28,13 +28,17 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 
-UNZIP=			unzip
+.include <bsd.port.pre.mk>
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${UNZIP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	cd ${WRKSRC} && ${UNZIP_CMD} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+
+.if ${OSVERSION} >= 600000
+IGNORE_POST_INSTALL=   I
+.endif
 
 do-install:
-	${PKG_ADD} -R ${WRKSRC}/${PKGNAME}_${PORTREVISION}.tgz
+	${PKG_ADD} -R${IGNORE_POST_INSTALL} ${WRKSRC}/${PKGNAME}_${PORTREVISION}.tgz
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
