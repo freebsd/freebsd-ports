@@ -7,6 +7,7 @@
 
 PORTNAME=	petsc
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-p${PATCHLEVEL}
@@ -16,7 +17,7 @@ COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
 RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
 
-PATCHLEVEL=	7
+PATCHLEVEL=	14
 
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
@@ -45,12 +46,6 @@ FFLAGS?=	-O2
 PFX=		${PORTNAME}
 TARGET=		${OPSYS:L}
 PLIST_SUB=	PFX=${PFX} TARGET=${TARGET}
-
-.if !defined(WITHOUT_BLASLAPACK)
-LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
-LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -lcblas -latlas -lg2c -lm"
-CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
-.endif
 
 .if !defined(WITHOUT_UMFPACK)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack
@@ -96,6 +91,19 @@ WITHOUT_PARMETIS=	yes
 WITHOUT_SPOOLES=	yes
 WITHOUT_SUPERLU=	yes
 PLIST_SUB+=		MPIUNI=""
+.endif
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
+LIBBLASLAPACK=	"-L${LOCALBASE}/lib -lalapack -lf77blas -lcblas -latlas -lg2c -lm"
+CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
+.else
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack
+LIBBLASLAPACK=	"-L${LOCALBASE}/lib -llapack -lblas -lm"
+CONFIGURE_ARGS+=	--with-blas-lapack-lib=${LIBBLASLAPACK}
 .endif
 
 .if !defined(WITHOUT_SUPERLU) && !defined(WITHOUT_BLASLAPACK)
@@ -196,8 +204,8 @@ pre-everything::
 .if !defined (WITHOUT_X11)
 	@${ECHO_MSG} "Define WITHOUT_X11 to remove X11 support."
 .endif
-.if !defined (WITHOUT_BLASLAPACK)
-	@${ECHO_MSG} "Define WITHOUT_BLASLAPACK to remove Blas / Lapack support."
+.if !defined (WITH_ATLAS)
+	@${ECHO_MSG} "Define WITH_ATLAS to replace Blas / Lapack support by Atlas."
 .endif
 .if !defined (WITHOUT_BS95)
 	@${ECHO_MSG} "Define WITHOUT_BS95 to remove BlockSolve95 support."
@@ -239,7 +247,7 @@ post-install:
 	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
-test:	build
+regression-test:	build
 	@(cd ${BUILD_WRKSRC};	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 .endif
