@@ -63,10 +63,6 @@ JAVA_VENDOR=	bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-.if ${OSVERSION} >= 600105
-BROKEN=		Does not compile on FreeBSD >= 6.1
-.endif
-
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 L10NHELP?=     helpcontent_01_unix.tgz
