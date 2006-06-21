@@ -64,6 +64,7 @@
     SUBDIR += fpc-demo
     SUBDIR += fpc-devel
     SUBDIR += fpc-docs
+    SUBDIR += fpc-tcl
     SUBDIR += freetxl
     SUBDIR += gambas
     SUBDIR += gauche
