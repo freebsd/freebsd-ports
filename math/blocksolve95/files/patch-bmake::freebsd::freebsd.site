@@ -1,13 +1,13 @@
---- ./bmake/freebsd/freebsd.site.orig	Thu Feb 15 22:53:34 1996
-+++ ./bmake/freebsd/freebsd.site	Sun Oct  3 20:40:47 2004
+--- bmake/freebsd/freebsd.site.orig	Thu Feb 15 22:53:34 1996
++++ bmake/freebsd/freebsd.site	Wed Jun 21 23:11:51 2006
 @@ -15,24 +15,24 @@
  # Location of BLAS and LAPACK.  These libraries are available via Netlib,
  # or see $(BS_DIR)/readme for information on retrieving a subset.
  #
 -BLAS_LIB       = /home/bsmith/lapack/blas_freebsd.a $(FC_LIB)
 -LAPACK_LIB     = /home/bsmith/lapack/lapack_freebsd.a
-+BLAS_LIB       = -lf77blas -lcblas -latlas -lg2c -lm
-+LAPACK_LIB     = -L$(LOCALBASE)/lib -lalapack
++#BLAS_LIB       = -lf77blas -lcblas -latlas -lg2c -lm
++#LAPACK_LIB     = -L$(LOCALBASE)/lib -lalapack
  #
  # Location of X-windows software
  #
