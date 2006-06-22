@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+SCOREDIR="%%SCOREDIR%%"
+SCORECAT="%%SCORECAT%%"
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+if [ ! -d "${SCOREDIR}" ]; then
+	mkdir -p ${SCOREDIR}
+	chown root:games ${SCOREDIR}
+fi
+
+typespeed --makescore
+	
+for cat in $SCORECAT; do
+	file="${SCOREDIR}/high.words.$cat"
+	if [ -f "$file" ]; then
+		cmp -s "$file" "$file.default" && install -o root -g games -m 464 "$file.default" "$file"
+	else
+		install -o root -g games -m 464 "$file.default" "$file"
+	fi
+done

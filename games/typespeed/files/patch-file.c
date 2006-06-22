@@ -1,13 +1,11 @@
---- file.c.orig	Mon Apr  3 15:44:40 2006
-+++ file.c	Mon Apr  3 15:47:21 2006
-@@ -492,8 +492,8 @@
- 	char tmp[10];
- 	char *userhome;
+--- file.c.orig	Thu Jun 22 12:15:04 2006
++++ file.c	Thu Jun 22 12:18:11 2006
+@@ -393,7 +393,7 @@
+ 	entry[8] = newentry(  0, 0, 0  , 0  ,  0, "None");
+ 	entry[9] = newentry(  0, 0, 0  , 0  ,  0, "None");
  
--	userhome = malloc(1+strlen(getenv("HOME"))+strlen(LOCALCONF)*sizeof(char));
--	sprintf(userhome,getenv("HOME"));
-+	userhome = malloc((2+strlen(getenv("HOME"))+strlen(LOCALCONF))*sizeof(char));
-+	strcpy(userhome,getenv("HOME"));
- 	strcat(userhome,"/");
- 	strcat(userhome,LOCALCONF);
- 	hakemisto = malloc(1026 * sizeof(char));
+-	n = snprintf(filetys, sizeof(filetys), "%s/high.%s", highdir, sanafile);
++	n = snprintf(filetys, sizeof(filetys), "%s/high.%s.default", highdir, sanafile);
+ 	if (n < 6 || (size_t)n > sizeof(filetys) - 1)
+ 		return 1;
+ 
