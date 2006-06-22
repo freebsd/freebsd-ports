@@ -1,0 +1,50 @@
+#!/bin/sh
+PATH=/bin:/usr/sbin
+
+REPLACES_BINARIES="/usr/bin/lpr
+					/usr/bin/lp
+					/usr/bin/lpq
+					/usr/bin/lprm
+					/usr/bin/lpstat
+					/usr/sbin/lpc"
+
+case $2 in
+POST-INSTALL)
+	# Unshade binaries
+	if [ -n "${3}" ]; then
+		for FILE in ${REPLACES_BINARIES}; do
+			[ -e "${FILE}" ] && chmod 0 "${FILE}"
+		done
+	fi
+
+	# Create user
+	USER=cups
+	GROUP=${USER}
+	UID=193
+	GID=${UID}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d /nonexistent -s /sbin/nologin -c "CUPS Owner"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+	;;
+esac
