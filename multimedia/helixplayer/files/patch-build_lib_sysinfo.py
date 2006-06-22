@@ -14,3 +14,13 @@
      id = 'openbsd-3.3-i586',
      platform = 'openbsd33',
      arch = 'i386',
+@@ -1237,6 +1244,9 @@
+ 
+     elif sys.platform == 'freebsd6':
+         set_platform('freebsd-6.0-i586')
++
++    elif sys.platform == 'freebsd7':
++        set_platform('freebsd-7.0-i586')
+ 
+     elif sys.platform == 'hp-uxB':
+         set_platform('hpux-11.0-parisc')
