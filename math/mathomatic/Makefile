@@ -1,4 +1,3 @@
-# ex: ts=8 sts=0 noet
 # New ports collection makefile for:	Mathomatic
 # Date created:			Tue Mar 22 10:05:25 CET 2005
 # Whom:				Roman Neuhauser <neuhauser@sigpipe.cz>
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	12.5.17
+PORTVERSION=	12.5.18
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		http://critical.ch/distfiles/ \
