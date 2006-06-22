@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.16
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://ibiblio.org/pub/linux/system/emulators/wine/ \
@@ -51,7 +51,8 @@ IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with t
 pre-build:
 	cd ${WRKSRC} && make depend
 
-post-install: install-ldconfig-file
+post-install:
+	-@${MKDIR} ${PREFIX}/libdata/ldconfig
 	${RM} ${PREFIX}/man/man1/wineg++.1
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
