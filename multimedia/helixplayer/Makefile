@@ -27,7 +27,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 CF2FIX=		gcc.cf freebsd.cf freebsd-5.0-i586.cf freebsd-4.0-i386.cf	\
-		freebsd-4.0-i586.cf freebsd-6.0-i586.cf
+		freebsd-4.0-i586.cf freebsd-6.0-i586.cf freebsd-7.0-i586.cf
 
 pre-patch:
 	${CP} ${WRKSRC}/build/umakecf/freebsd-6.0-i586.cf			\
