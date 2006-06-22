@@ -43,7 +43,6 @@
     SUBDIR += cpp2latex
     SUBDIR += cups
     SUBDIR += cups-base
-    SUBDIR += cups-lpr
     SUBDIR += cups-magicolor
     SUBDIR += cups-pdf
     SUBDIR += cups-pstoraster
