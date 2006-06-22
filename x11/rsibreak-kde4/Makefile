@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rsibreak
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	x11 kde
-MASTER_SITES=	http://www.rsibreak.org/images/1/1b/
+MASTER_SITES=	http://www.rsibreak.org/images/e/e2/
 DISTFILES=	Rsibreak-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
