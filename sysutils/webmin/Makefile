@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.280
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
