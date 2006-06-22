@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
@@ -19,7 +19,7 @@ MAINTAINER=	johans@stack.nl
 COMMENT=	A multi-threaded functional programming language
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	cnf/bin/afnix-setup
 CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --compiler freebsd
