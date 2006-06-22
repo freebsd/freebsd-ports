@@ -285,6 +285,7 @@ include/wine/windows/oleidl.idl
 include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
 include/wine/windows/powrprof.h
+include/wine/windows/profinfo.h
 include/wine/windows/propidl.h
 include/wine/windows/propidl.idl
 include/wine/windows/prsht.h
@@ -405,6 +406,7 @@ include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/cfgmgr32.h
+include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddser.h
 include/wine/windows/ddk/ntddtape.h
@@ -434,6 +436,7 @@ lib/wine/comdlg32.dll.so
 lib/wine/comm.drv16
 lib/wine/commdlg.dll16
 lib/wine/compobj.dll16
+lib/wine/compstui.dll.so
 lib/wine/control.exe.so
 lib/wine/crtdll.dll.so
 lib/wine/crypt32.dll.so
@@ -493,6 +496,7 @@ lib/wine/imaadp32.acm.so
 lib/wine/imagehlp.dll.so
 lib/wine/imm.dll16
 lib/wine/imm32.dll.so
+lib/wine/inseng.dll.so
 lib/wine/iphlpapi.dll.so
 lib/wine/itss.dll.so
 lib/wine/joystick.drv.so
@@ -511,6 +515,7 @@ lib/wine/libcards.def
 lib/wine/libcfgmgr32.def
 lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
+lib/wine/libcompstui.def
 lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
 lib/wine/libcryptdll.def
@@ -681,6 +686,7 @@ lib/wine/oledlg.dll.so
 lib/wine/olepro32.dll.so
 lib/wine/olesvr.dll16
 lib/wine/olesvr32.dll.so
+lib/wine/oleview.exe.so
 lib/wine/opengl32.dll.so
 lib/wine/powrprof.dll.so
 lib/wine/progman.exe.so
