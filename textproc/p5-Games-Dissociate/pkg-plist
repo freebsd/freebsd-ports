@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Games/Dissociate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Dissociate/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Dissociate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
+@dirrmtry %%SITE_PERL%%/Games
