@@ -24,7 +24,7 @@ PLIST_FILES=	bin/csup \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700014 || ( ${OSVERSION} >= 601100 && ${OSVERSION} < 700000 )
+.if ${OSVERSION} > 700014 || ( ${OSVERSION} >= 601101 && ${OSVERSION} < 700000 )
 IGNORE=		is already in the base system
 .endif
 
