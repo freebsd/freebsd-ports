@@ -1,19 +1,18 @@
 bin/typespeed
-etc/typespeedrc
-lib/typespeed/high.words.dos.default
-lib/typespeed/high.words.dut.default
-lib/typespeed/high.words.eng.default
-lib/typespeed/high.words.fin.default
-lib/typespeed/high.words.portuguese.default
-lib/typespeed/high.words.prog.default
-lib/typespeed/high.words.spanish.default
-lib/typespeed/high.words.unix.default
-lib/typespeed/words.dos
-lib/typespeed/words.dut
-lib/typespeed/words.eng
-lib/typespeed/words.fin
-lib/typespeed/words.portuguese
-lib/typespeed/words.prog
-lib/typespeed/words.spanish
-lib/typespeed/words.unix
-@dirrmtry lib/typespeed
+bin/typespeed-hs-conv
+@unexec if cmp -s %D/etc/typespeedrc %D/etc/typespeedrc.dist; then rm -f %D/etc/typespeedrc; fi
+etc/typespeedrc.dist
+@exec [ -f %B/typespeedrc ] || cp %B/%f %B/typespeedrc
+%%DATADIR%%/words.dos
+%%DATADIR%%/words.dut
+%%DATADIR%%/words.eng
+%%DATADIR%%/words.fin
+%%DATADIR%%/words.fra
+%%DATADIR%%/words.ger
+%%DATADIR%%/words.ita
+%%DATADIR%%/words.portuguese
+%%DATADIR%%/words.prog
+%%DATADIR%%/words.spanish
+%%DATADIR%%/words.thai
+%%DATADIR%%/words.unix
+@dirrm  %%DATADIR%%

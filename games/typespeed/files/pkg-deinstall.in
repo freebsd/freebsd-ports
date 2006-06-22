@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+SCOREDIR="%%SCOREDIR%%"
+SCORECAT="%%SCORECAT%%"
+
+[ "$2" != "DEINSTALL" ] && exit 0
+
+for cat in $SCORECAT; do
+	file="$SCOREDIR/high.words.$cat"
+	cmp -s "$file" "$file.default" && rm -f "$file"
+	rm -f "$file.default"
+done
+
+rmdir "$SCOREDIR" > /dev/null 2>&1 || true
