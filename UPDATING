@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060622:
+  AFFECTS: users of databases/mysql-client
+  AUTHOR: ale@FreeBSD.org
+
+  MySQL version 5.0 is now the default. If you have only the client
+  port, you can upgrade all ports with:
+    portupgrade -rfo databases/mysql50-client mysql-client
+
 20060616
   AFFECTS users of all pfpro ports
   AUTHOR: aaron@FreeBSD.org
