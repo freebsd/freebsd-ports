@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmap
-PORTVERSION=	20040420
+PORTVERSION=	20060622
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/
 
@@ -23,17 +23,17 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-BROKEN=		"Currently does not support -CURRENT"
+.if ${OSVERSION} >= 700000
+BROKEN=		Currently does not support -CURRENT
 .endif
 
-.if ${OSVERSION} <  450000
-IGNORE=		Not supported on systems prior to 4.5
+.if ${OSVERSION} <  600000
+IGNORE=		not supported on systems prior to 6.0
 .endif
 
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		This port requires kernel sources
+IGNORE=		requires kernel sources
 .endif
 
 post-install:
