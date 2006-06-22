@@ -7,7 +7,7 @@
 
 PORTNAME=		ncurses
 PORTVERSION=		5.5
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,9 @@ NO_FILTER_SHLIBS=	no
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
-		--disable-termcap --includedir=${PREFIX}/include/ncurses \
+		--enable-termcap --disable-database --enable-getcap \
+		--enable-colorfgbg --enable-bsdpad --disable-home-terminfo \
+		--includedir=${PREFIX}/include/ncurses \
 		--with-profile --with-shared --without-debug \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-safe-sprintf --disable-root-environ \
