@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.directfb.org/downloads/Old/
 DISTNAME=	DirectFB-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Graphic development lightweight API
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
