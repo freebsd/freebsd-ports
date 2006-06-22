@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	morla
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www2.autistici.org/bakunin/morla/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -22,6 +22,7 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I/${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_GETTEXT=	yes
 USE_GNOME=	libgtkhtml libxslt
 
