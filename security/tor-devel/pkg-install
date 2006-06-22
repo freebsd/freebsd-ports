@@ -10,12 +10,14 @@ TOR_GROUP=${TOR_GROUP:-_tor}
 case $2 in
 PRE-INSTALL)
 	USER=${TOR_USER}
+	UID="256"
 	GROUP=${TOR_GROUP}
+	GID="256"
 
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
 	else
-		if pw groupadd ${GROUP} ; then
+		if pw groupadd ${GROUP} -g ${GID}; then
 			echo "Added group \"${GROUP}\"."
 		else
 			echo "Adding group \"${GROUP}\" failed..."
@@ -26,7 +28,7 @@ PRE-INSTALL)
 	if pw user show "${USER}" 2>/dev/null; then
 		echo "You already have a user \"${USER}\", so I will use it."
 	else
-		if pw useradd ${USER} -g ${GROUP} -h - \
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
 			-d /var/db/tor -c "Tor Daemon" -s /bin/sh
 		then
 			echo "Added user \"${USER}\"."
