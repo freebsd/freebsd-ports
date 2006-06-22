@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	log4sh
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +18,10 @@ COMMENT=	A common logging library for Bourne shell scripts
 PLIST_FILES=	lib/log4sh
 PORTDOCS=	log4sh.html
 
+ALL_TARGET=	build
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/log4sh ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/src/shell/log4sh ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/log4sh.html ${DOCSDIR}
