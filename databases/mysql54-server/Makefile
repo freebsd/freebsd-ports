@@ -188,8 +188,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
 .endif
 
-post-install: install-ldconfig-file
-
 .else
 # MySQL-Scripts part
 USE_MYSQL=	yes
