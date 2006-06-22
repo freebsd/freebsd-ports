@@ -153,10 +153,7 @@ CONFLICTS=	mysql-client-4.* mysql-client-5.*
 
 MAN1=		mysql.1 mysqladmin.1 mysqldump.1 mysqlshow.1
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 USE_LDCONFIG=	${PREFIX}/lib/mysql
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 CONFIGURE_ARGS+=--without-server
 
@@ -165,8 +162,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
-
-post-install: install-ldconfig-file
 
 .else
 # MySQL-Scripts part

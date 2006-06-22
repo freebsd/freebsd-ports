@@ -168,10 +168,7 @@ CONFLICTS=	mysql-client-3.* mysql-client-4.[02-9].* mysql-client-5.*
 MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 USE_LDCONFIG=	${PREFIX}/lib/mysql
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 CONFIGURE_ARGS+=--without-server
 
@@ -186,8 +183,6 @@ post-patch:
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/tools/mysqlmanager.c
 .endif
-
-post-install: install-ldconfig-file
 
 .else
 # MySQL-Scripts part
