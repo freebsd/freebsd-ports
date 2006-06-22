@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ldapdiff
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.ale.org/pub/mirrors/openpkg/sources/DST/ldapdiff/ \
 		http://webtomware.rhoen.de/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A utility for patching LDAP directories using LDIF files
 
 USE_ICONV=	yes
@@ -20,13 +20,17 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-ldap-dir=${PREFIX} \
 		--with-iconv-dir=${PREFIX}
+SAMPLES=	addentry webtomware_without_jpeg.user.ldif \
+		webtomware.init.ldif webtomware.user.ldif
+MAN1=		ldapdiff.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/ldapdiff.conf \
 		${PREFIX}/etc/ldapdiff.conf.sample
 	@${MKDIR} ${DATADIR}/samples
-.for i in addentry webtomware.init.ldif webtomware.user.ldif
+.for i in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${DATADIR}/samples
 .endfor
 .if !defined(NOPORTDOCS)
