@@ -25,6 +25,9 @@
 # environment to get slang function properly.
 # The default version for slang is 1.x. Define WITH_MUTT_SLANG2 if you want
 # to use the slang version 2.x
+# The default version for ncurses is that which comes with the operating
+# system. If you want to use the ncurses supplied by the ports-system define
+# WITH_MUTT_NCURSES_PORT.
 #
 # If you want to install the mutt documentation in html and ps format define:
 #  WITH_MUTT_HTML
@@ -279,7 +282,12 @@ USE_ICONV=	yes
 .if defined(NOPORTDOCS)
 XML_USED=	no
 .endif
-.if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
+.if defined(MUTT_USES_NCURSES)
+.if ${OSVERSION} < 400000 || defined(WITH_MUTT_NCURSES_PORT)
+MUTT_USES_NCURSES_PORT=	yes
+.endif
+.endif
+.if defined(MUTT_USES_NCURSES_PORT)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
 .elif defined(MUTT_USES_SLANG1)
@@ -348,7 +356,7 @@ CONFIGURE_ARGS+=	--enable-flock
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
-.if defined(MUTT_USES_NCURSES) && ${OSVERSION} < 400000
+.if defined(MUTT_USES_NCURSES_PORT)
 CONFIGURE_ARGS+=	--with-curses=${LOCALBASE}
 .elif defined(MUTT_USES_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
