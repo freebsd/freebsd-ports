@@ -14,3 +14,9 @@ MANUAL INSTALLATION
     cd /var/db/boinc
     boinc_cmd --project_attach boinc.bio.wzw.tum.de/boincsimap <account key>
 *****************************************************************************
+%%AMD64%%  IMPORTANT NOTICE FOR AMD64 USERS:
+%%AMD64%%
+%%AMD64%% You have to have this line in /etc/libmap32.conf:
+%%AMD64%%   libpthread.so.2	libc_r.so.6
+%%AMD64%% before you attach the project.  Otherwise it will not work.
+%%AMD64%%*****************************************************************************
