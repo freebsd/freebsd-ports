@@ -20,16 +20,13 @@ COMMENT=	A DocBook SGML DTD into nroff/troff -man macros converter
 #
 
 # There are two ports that satisfy the nsgmls requirement.
-# Jade is preferred, but it currently doesn't compile on 2.1.x
-# system, so use sp in that case.
+# Jade is preferred.
 
 .if ${MACHINE_ARCH} == "alpha"
 WITH_OPENJADE=	yes
 .endif
 
-.if ${OSVERSION} < 220000
-RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/sp
-.elif defined(WITH_OPENJADE)
+.if defined(WITH_OPENJADE)
 RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
