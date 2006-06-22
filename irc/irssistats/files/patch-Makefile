@@ -1,7 +1,6 @@
---- Makefile.orig	Sun Feb  6 04:54:00 2005
-+++ Makefile	Thu Apr 21 14:12:23 2005
-@@ -1,12 +1,13 @@
- VER = 0.70
+--- Makefile.orig	Mon Feb  7 16:57:05 2005
++++ Makefile	Thu Jun 22 11:36:11 2006
+@@ -1,23 +1,31 @@
 -PRE = /usr/local
 -BIN = $(PRE)/bin
 -DAT = $(PRE)/share/irssistats/data
@@ -14,28 +13,30 @@
 +DOC = $(DOCSDIR)
 +MAN = $(PREFIX)/man/man1
  
--irssistats:irssistats.c
+ irssistats:irssistats.c
 -	gcc -O2 -o irssistats irssistats.c
-+all:irssistats.c
 +	${CC} ${CFLAGS} -o irssistats irssistats.c
  
  clean:
- 	rm -f irssistats irssistats.exe
-@@ -14,10 +15,15 @@
- 	rm -rf debian/irssistats rpm/BUILD rpm/SPECS rpm/SOURCES rpm/SRPMS rpm/RPMS
+ 	rm -f irssistats
  
  install:irssistats
 -	mkdir -p $(BIN) $(DAT) $(DOC) $(MAN)
 +	mkdir -p $(BIN) $(DAT) $(MAN) $(SMP)
++
  	cp -f irssistats $(BIN)
-+	cp -f sample.nickfile sample.configfile $(SMP)
  	cp -f data/* $(DAT)
 -	cp -f COPYING README sample.nickfile sample.configfile irssistats.sgml $(DOC)
++	cp -f sample.nickfile sample.configfile $(SMP)
 +.ifndef NOPORTDOCS
 +	mkdir -p $(DOC)
 +	cp -f COPYING README $(DOC)
 +.endif
-+
  	cp -f irssistats.1 $(MAN)
  
  uninstall:
+ 	rm -f $(BIN)/irssistats
+ 	rm -rf $(DAT) $(DOC)
+ 	rm -f $(MAN)/irssistats.1
++
++all: install
