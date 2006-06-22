@@ -8,9 +8,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	${CUPS_PORTVER}
-PORTREVISION=	${CUPS_PORTREV}
-PORTEPOCH=	${CUPS_PORTEPOCH}
+PORTVERSION=	1.2.0
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,23 +17,17 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	asa@agava.com
 COMMENT=	The Common UNIX Printing System: Metaport to install complete system
 
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
-RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster \
-		${LOCALBASE}/sbin/cupsaddsmb:${PORTSDIR}/print/cups-lpr
-
 .if make(package)
 DEPENDS_TARGET="package"
 .endif # make(package)
 
-USE_PERL5=	yes
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
+
 NO_BUILD=	true
 
-do-patch:
-	${DO_NADA}
+do-build:
 
 do-install:
-	${DO_NADA}
 
-.include "${.CURDIR}/../../print/cups/Makefile.common"
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,26 +1,4 @@
 ======================================================================
-
-CUPS is now installed.
-
-Please read the documentation in PREFIX/share/doc/cups/ for information
-on how to set up your printer to use CUPS. Basic template configuration files
-have been installed in PREFIX/etc/cups/
-
-To install the BSD and System V compatibility binaries look to the port
-print/cups-lpr. These are no longer installed as part of the base cups port
-because they have conflicting names with the native print binaries, and with
-other ports such as lprNG.
-
-NOTE: IF YOU USE A NON-POSTSCRIPT PRINTER:
-
-You will need to install the cups-pstoraster port in order to print to
-your printer. If you installed via the "cups" port, it will be installed
-automatically. Otherwise, you will need to install the port or the package
-yourself.
-
-======================================================================
-
-**********************************************************************
 PLEASE NOTE:
 ============
 
@@ -28,15 +6,4 @@ To enable printing under Gimp do the following:
 1) Uncomment application/octet-stream line in mime.types
 2) Uncomment application/octet-stream line in mime.convs
 3) Restart cupsd
-
-**********************************************************************
-
-The cups-base port now uses a new style rc.d startup
-script.  Please remove any old cups.sh* scripts you
-might have in /usr/local/etc/rc.d, or your local
-PREFIX.  You should also put the following line in
-/etc/rc.conf.local, or /etc/rc.conf to start cupsd
-automatically at boot time:
-
-cupsd_enable="yes"
-**********************************************************************
+======================================================================
