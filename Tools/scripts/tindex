@@ -112,7 +112,7 @@ checkfixed() {
 }
 
 createtmpdir() {
-    TMPDIR=`ssh ${SCP_DEST_HOST} "mktemp -qd /tmp/tindex.XXXXXX"`
+    TMPDIR=`ssh ${SCP_DEST_HOST} "mktemp -qd ${SCP_DEST_TMP}/tindex.XXXXXX"`
     if [ $? -ne 0 ]; then
 	echo "$0: Can't create temp file, exiting..."
 	exit 1
