@@ -32,12 +32,18 @@ SIMAP_BINARY=	${DISTNAME}
 PLIST_SUB=	SIMAP_BINARY=${SIMAP_BINARY} SIMAP_SITE=${SIMAP_SITE} \
 		BOINC_HOME=${BOINC_HOME}
 
-SUB_FILES=	app_info.xml
-SUB_LIST=	DISTNAME=${DISTNAME} APPVERSION=${PORTVERSION:S/.//}
+ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64
+.if ${ARCH} == amd64
+AMD64=		""
+.else
+AMD64=		"@comment "
+.endif
+
+SUB_FILES=	app_info.xml pkg-message
+SUB_LIST=	DISTNAME=${DISTNAME} APPVERSION=${PORTVERSION:S/.//} AMD64=${AMD64}
 
 .if ${OSVERSION} < 600000
 IGNORE=		only supports FreeBSD 6.X and newer
