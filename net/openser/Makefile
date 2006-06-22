@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openser
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://openser.org/pub/openser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tls_src
@@ -21,11 +21,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-tls
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 MAKE_ENV=	CC="${CC}" \
+		CC_EXTRA_OPTS="${CFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 PLIST_FILES=	sbin/openser sbin/openser_gen_ha1 sbin/openser_mysql.sh \
-		sbin/openserctl sbin/openserunix
+		sbin/openserctl sbin/openserunix sbin/openser_postgresql.sh
 PLIST_DIRS=	lib/openser/modules lib/openser
 
 MODULES=	acc alias_db auth auth_db auth_diameter avpops cpl-c dbtext \
@@ -55,10 +56,6 @@ OPTIONS=	MYSQL "MySQL support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"the postgres module does not build on non-i386"
-.endif
-
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 MODULES+=	mysql
@@ -75,7 +72,6 @@ MAKE_ENV+=	POSTGRESQL=postgres
 
 .if defined(WITH_TLS)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-PLIST_FILES+=	etc/openser/tls/README
 TLS_RC_FILES=	tls/rootCA/cacert.pem \
 		tls/rootCA/certs/01.pem \
 		tls/rootCA/index.txt \
@@ -104,6 +100,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|install-doc install-man|install-man|' \
 		${WRKSRC}/Makefile
 .endif
+	@${REINPLACE_CMD} -e 's|-g -O9 ||' -e 's|-O9 ||' ${WRKSRC}/Makefile.defs
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/ser|${PREFIX}/etc/openser|' \
 		${WRKSRC}/scripts/sc.dbtext \
 		${WRKSRC}/modules/dispatcher/README
