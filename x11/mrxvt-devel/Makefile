@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mrxvt-devel
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	materm
@@ -25,6 +24,8 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		mrxvt.1
+
+SUB_FILES+=	pkg-message
 
 OPTIONS=	XFT "Enable Xft support for fonts" Off \
 		JAPANESE "Enable support for Japanese language" Off \
@@ -83,11 +84,6 @@ post-install:
 	${CP} ${WRKSRC}/doc/*.bz2 ${DOCSDIR}
 	${BZIP2_CMD} -d ${DOCSDIR}/*.bz2
 .endif
-	@${ECHO_MSG} "======================================================================="
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " Sample configuration files have been installed to ${PREFIX}/etc/mrxvt"
-	@${ECHO_MSG} " Useful scripts have been installed to ${EXAMPLESDIR}/scripts"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "======================================================================="
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
