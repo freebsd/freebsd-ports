@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tenshi
-PORTVERSION=		0.4
+PORTVERSION=		0.5.1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.gentoo.org/~lcars/%SUBDIR%/
 MASTER_SITE_SUBDIR=	tenshi
@@ -24,6 +24,7 @@ USE_RC_SUBR=		tenshi.sh
 SUB_LIST=		PERL=${PERL}
 
 PLIST_FILES=		bin/tenshi etc/tenshi.conf.sample
+MAN8=			tenshi.8
 
 PORTDOCS=		README Changelog
 
