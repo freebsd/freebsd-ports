@@ -34,6 +34,8 @@ abills/Abills/modules/Dv/templates/dv_user_info.tpl
 abills/Abills/modules/Dv/templates/dv_users_warning_messages.tpl
 abills/Abills/modules/Dv/webinterface
 abills/Abills/modules/Ipn/config
+abills/Abills/modules/Ipn/templates/ipn_comps.tpl
+abills/Abills/modules/Ipn/templates/ipn_form_user_add.tpl
 abills/Abills/modules/Ipn/trafdstats
 abills/Abills/modules/Ipn/traffic2sql
 abills/Abills/modules/Ipn/webinterface
@@ -50,6 +52,8 @@ abills/Abills/modules/Mdelivery/webinterface
 abills/Abills/modules/Sqlcmd/config
 abills/Abills/modules/Sqlcmd/templates/sqlcmd.tpl
 abills/Abills/modules/Sqlcmd/webinterface
+abills/Abills/modules/Squid/config
+abills/Abills/modules/Squid/webinterface
 abills/Abills/modules/Voip/config
 abills/Abills/modules/Voip/lng_english.pl
 abills/Abills/modules/Voip/templates/voip_route.tpl
@@ -95,6 +99,25 @@ abills/abills.sql
 abills/cgi-bin/admin/help.cgi
 abills/cgi-bin/admin/index.cgi
 abills/cgi-bin/admin/tpls/user_info
+abills/cgi-bin/charts.swf
+abills/cgi-bin/charts_library/arno.swf
+abills/cgi-bin/charts_library/arst.swf
+abills/cgi-bin/charts_library/brfl.swf
+abills/cgi-bin/charts_library/brno.swf
+abills/cgi-bin/charts_library/brst.swf
+abills/cgi-bin/charts_library/cl3d.swf
+abills/cgi-bin/charts_library/clfl.swf
+abills/cgi-bin/charts_library/clno.swf
+abills/cgi-bin/charts_library/clp3.swf
+abills/cgi-bin/charts_library/cls3.swf
+abills/cgi-bin/charts_library/clst.swf
+abills/cgi-bin/charts_library/cnno.swf
+abills/cgi-bin/charts_library/lnno.swf
+abills/cgi-bin/charts_library/mxno.swf
+abills/cgi-bin/charts_library/pi3d.swf
+abills/cgi-bin/charts_library/pino.swf
+abills/cgi-bin/charts_library/pono.swf
+abills/cgi-bin/charts_library/scno.swf
 abills/cgi-bin/functions.js
 abills/cgi-bin/img/down_pointer.png
 abills/cgi-bin/img/email-g.gif
@@ -117,6 +140,8 @@ abills/cgi-bin/index.cgi
 abills/convert_02_to_03.pl
 abills/db/Cards.sql
 abills/db/Dunes.sql
+abills/db/Ipn.sql
+abills/db/Mdelivery.sql
 abills/docs/img/inpayments.gif
 abills/docs/img/nas_servers.gif
 abills/docs/img/online.gif
@@ -151,6 +176,7 @@ abills/miniserv/mime.types
 abills/miniserv/miniserv.conf
 abills/miniserv/miniserv.pem
 abills/miniserv/miniserv.pl
+abills/misc/pppd_hangup.pl
 abills/misc/usr-trafic
 abills/soft/exppp_asm-0.2.4.tar.gz
 abills/soft/expppd-0.2.1.tar.gz
@@ -167,6 +193,7 @@ abills/soft/radpppd.tar.gz
 @dirrm abills/docs
 @dirrm abills/db
 @dirrm abills/cgi-bin/img
+@dirrm abills/cgi-bin/charts_library
 @dirrm abills/cgi-bin/admin/tpls
 @dirrm abills/cgi-bin/admin
 @dirrm abills/cgi-bin
@@ -174,12 +201,14 @@ abills/soft/radpppd.tar.gz
 @dirrm abills/Abills/mysql
 @dirrm abills/Abills/modules/Voip/templates
 @dirrm abills/Abills/modules/Voip
+@dirrm abills/Abills/modules/Squid
 @dirrm abills/Abills/modules/Sqlcmd/templates
 @dirrm abills/Abills/modules/Sqlcmd
 @dirrm abills/Abills/modules/Mdelivery/templates
 @dirrm abills/Abills/modules/Mdelivery
 @dirrm abills/Abills/modules/Mail/templates
 @dirrm abills/Abills/modules/Mail
+@dirrm abills/Abills/modules/Ipn/templates
 @dirrm abills/Abills/modules/Ipn
 @dirrm abills/Abills/modules/Dv/templates
 @dirrm abills/Abills/modules/Dv

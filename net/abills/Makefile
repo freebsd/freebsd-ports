@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abills
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,6 +41,7 @@ pre-everything::
 post-patch:
 	@ ${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 	@ ${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' -e 's,/usr/abills,${PREFIX}/abills,g' {} \;
+	@ ${FIND} ${WRKSRC} -type f -name '*.DS*' -exec ${RM} {} \;
 
 do-install:
 	@ ${CP} -R ${WRKSRC} ${PREFIX}
