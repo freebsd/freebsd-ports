@@ -387,6 +387,7 @@
     SUBDIR += py-oops
     SUBDIR += py-psycopg
     SUBDIR += py-pyPgSQL
+    SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlrelay
     SUBDIR += py-sybase
