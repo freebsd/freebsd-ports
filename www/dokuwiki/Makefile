@@ -7,7 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 		http://dev.splitbrain.org/browse/snapshots/
@@ -18,18 +18,16 @@ MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A simple and easy to use wiki, no database required
 
 DIST_VER=	${PORTNAME}-2006-03-09
-USE_PHP=	gd pcre session xml zlib
+USE_PHP=	gd mbstring pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
-WWWDOCROOT?=	www/data
-DOKUWIKI_URL?=	${PORTNAME}
-DOKUWIKI_DIR?=	www/${DOKUWIKI_URL}
+DOKUWIKI_DIR?=	www/${PORTNAME}
 WRKSRC=		${WRKDIR}/${DIST_VER}
 PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
 
 .if defined(BATCH)
-WIKI_LANG?=en
+WIKI_LANG?=	en
 .endif
 
 .include <bsd.port.pre.mk>
@@ -79,14 +77,6 @@ pre-everything::
 	@${ECHO_MSG} '*******************************************************'
 .endif
 
-pre-fetch:
-.if ${DOKUWIKI_DIR} == ${WWWDOCROOT}/${DOKUWIKI_URL}
-	 @${ECHO_MSG} ""
-	 @${ECHO_MSG} "You can define DOKUWIKI_DIR to override default '${DOKUWIKI_DIR}'"
-	 @${ECHO_MSG} "installed under ${PREFIX}"
-	 @${ECHO_MSG} ""
-.endif
-
 pre-patch:
 .if defined(WIKI_LANG)
 	@${REINPLACE_CMD} -e 's|lang\(.*\)'en'|lang\1'${WIKI_LANG}'|g' \
@@ -104,7 +94,7 @@ do-install:
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DOKUWIKI_DIR}
 
 post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%PORTNAME%%|${PORTNAME}|' \
 		-e 's|%%DOKUWIKI_DIR%%|${DOKUWIKI_DIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

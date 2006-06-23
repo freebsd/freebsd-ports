@@ -1,6 +1,12 @@
 =================================================================
           	**** NOTE ****
-  Remember to edit the following file:
+1) Please add the following to your apache config, and restart.
+    [1;32m#
+    # Directives to allow use of dokuwki
+    #
+    Alias /%%PORTNAME%% "%%PREFIX%%/%%DOKUWIKI_DIR%%/"[m
+
+2) Remember to edit the following file:
     [1;36m%%PREFIX%%/%%DOKUWIKI_DIR%%/conf/local.php[m
 
   For FULL configuration instructions see

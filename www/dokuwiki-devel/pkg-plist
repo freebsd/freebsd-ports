@@ -19,6 +19,7 @@
 %%DOKUWIKI_DIR%%/conf/wordblock.conf
 %%DOKUWIKI_DIR%%/conf/words.aspell.dist
 %%DOKUWIKI_DIR%%/data/.htaccess
+%%DOKUWIKI_DIR%%/data/changes.log
 %%DOKUWIKI_DIR%%/data/attic/_dummy
 %%DOKUWIKI_DIR%%/data/cache/_dummy
 %%DOKUWIKI_DIR%%/data/locks/_dummy
