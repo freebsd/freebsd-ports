@@ -699,6 +699,7 @@
     SUBDIR += socketbind
     SUBDIR += socketpipe
     SUBDIR += socks5
+    SUBDIR += splatd
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
