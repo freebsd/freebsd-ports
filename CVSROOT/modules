@@ -1989,6 +1989,7 @@ dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
 e16utils	ports/x11-wm/e16utils
+e17-module-weather	ports/x11/e17-module-weather
 e17-theme-blokkie	ports/x11-themes/e17-theme-blokkie
 e17-theme-blue_default	ports/x11-themes/e17-theme-blue_default
 e17-theme-blue_eyed	ports/x11-themes/e17-theme-blue_eyed
