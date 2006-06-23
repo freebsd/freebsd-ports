@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060622
+  AFFECTS: users of www/dokuwiki
+  AUTHOR: miwi@freebsd.org
+  
+  The default install location has changed from 
+  ${PREFIX}/www/data/dokuwiki to ${PREFIX}/www/dokuwiki.  
+
 20060622:
   AFFECTS: users of databases/mysql-client
   AUTHOR: ale@FreeBSD.org
