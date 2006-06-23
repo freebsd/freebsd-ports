@@ -40,6 +40,9 @@ DISTFILES+=	${BOOT_DIST}
 DISTFILES+=	${BOOT_DIST5}
 .endif
 .endif
+.if ${OSVERSION} >= 700000
+IGNORE=		unsupported at the moment
+.endif
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires newer version of perl
