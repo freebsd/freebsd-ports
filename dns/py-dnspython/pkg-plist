@@ -4,6 +4,9 @@
 %%PYTHON_SITELIBDIR%%/dns/dnssec.py
 %%PYTHON_SITELIBDIR%%/dns/dnssec.pyc
 %%PYTHON_SITELIBDIR%%/dns/dnssec.pyo
+%%PYTHON_SITELIBDIR%%/dns/e164.py
+%%PYTHON_SITELIBDIR%%/dns/e164.pyc
+%%PYTHON_SITELIBDIR%%/dns/e164.pyo
 %%PYTHON_SITELIBDIR%%/dns/exception.py
 %%PYTHON_SITELIBDIR%%/dns/exception.pyc
 %%PYTHON_SITELIBDIR%%/dns/exception.pyo
@@ -181,6 +184,9 @@
 %%PYTHON_SITELIBDIR%%/dns/resolver.py
 %%PYTHON_SITELIBDIR%%/dns/resolver.pyc
 %%PYTHON_SITELIBDIR%%/dns/resolver.pyo
+%%PYTHON_SITELIBDIR%%/dns/reversename.py
+%%PYTHON_SITELIBDIR%%/dns/reversename.pyc
+%%PYTHON_SITELIBDIR%%/dns/reversename.pyo
 %%PYTHON_SITELIBDIR%%/dns/rrset.py
 %%PYTHON_SITELIBDIR%%/dns/rrset.pyc
 %%PYTHON_SITELIBDIR%%/dns/rrset.pyo
@@ -218,5 +224,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/dns/rdtypes
 @dirrm %%PYTHON_SITELIBDIR%%/dns
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || true
-@unexec rmdir %%PYTHON_LIBDIR%% 2>/dev/null || true
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

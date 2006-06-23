@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnspython
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	dns python
 MASTER_SITES=	http://www.dnspython.org/kits/stable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
