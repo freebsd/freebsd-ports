@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gtkglext
-PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,14 +17,10 @@ COMMENT=	An OpenGL extension to GTK
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GL=		yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|pango gmodule-2.0|pango pangox gmodule-2.0|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
