@@ -139,9 +139,7 @@ bin/iReport
 %%JAVAJARDIR%%/asm.jar
 %%JAVAJARDIR%%/barbecue-1.1.jar
 %%JAVAJARDIR%%/cglib-2.1.jar
-%%JAVAJARDIR%%/commons-dbcp-1.2.1.jar
 %%JAVAJARDIR%%/commons-javaflow-20060411.jar
-%%JAVAJARDIR%%/commons-pool-1.3.jar
 %%JAVAJARDIR%%/ehcache-1.1.jar
 %%JAVAJARDIR%%/eigenbase-properties.jar
 %%JAVAJARDIR%%/eigenbase-resgen.jar
