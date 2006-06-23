@@ -7407,6 +7407,7 @@ ntl		ports/math/ntl
 ntop		ports/net/ntop
 ntraceroute	ports/net/ntraceroute
 nttcp		ports/benchmarks/nttcp
+nuclearchess	ports/games/nuclearchess
 nucleus		ports/x11-fonts/nucleus
 nulib		ports/archivers/nulib
 nullmailer	ports/mail/nullmailer
