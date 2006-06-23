@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcoral
-PORTVERSION=	3.44
+PORTVERSION=	3.45
 CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
@@ -28,8 +28,8 @@ GNU_REGEX_H=    gnuregex.h
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's| regex\.c | |g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's| regex\.c | |g ; \
+		 s| -g | |g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|"regex\.h"|<${GNU_REGEX_H}>|g' ${WRKSRC}/bm_search.c
 
