@@ -7830,6 +7830,7 @@ p5-Authen-Htpasswd	ports/security/p5-Authen-Htpasswd
 p5-Authen-Krb5	ports/security/p5-Authen-Krb5
 p5-Authen-Libwrap	ports/security/p5-Authen-Libwrap
 p5-Authen-NTLM	ports/security/p5-Authen-NTLM
+p5-Authen-PAAS	ports/security/p5-Authen-PAAS
 p5-Authen-PAM	ports/security/p5-Authen-PAM
 p5-Authen-Radius	ports/security/p5-Authen-Radius
 p5-Authen-SASL	ports/security/p5-Authen-SASL
