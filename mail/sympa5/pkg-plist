@@ -2,10 +2,12 @@ bin/arc2webarc.pl
 bin/bouncequeue
 bin/create_db.Oracle
 bin/create_db.Pg
+bin/create_db.SQLite
 bin/create_db.Sybase
 bin/create_db.mysql
 bin/crypt_passwd.pl
 bin/init_comment.pl
+bin/ldap_alias_manager.pl
 bin/load_subscribers.pl
 bin/mod2html.pl
 bin/p12topem.pl
@@ -15,6 +17,7 @@ bin/testldap.pl
 bin/testlogs.pl
 bin/tpl2tt2.pl
 etc/rc.d/sympa.sh
+etc/sympa/README
 etc/sympa/sympa.conf
 etc/sympa/wwsympa.conf
 lib/sympa/Archive.pm
@@ -35,13 +38,14 @@ lib/sympa/Message.pm
 lib/sympa/PlainDigest.pm
 lib/sympa/SharedDocument.pm
 lib/sympa/SympaTransport.pm
+lib/sympa/Task.pm
 lib/sympa/Version.pm
 lib/sympa/admin.pm
 lib/sympa/bounce-lib.pl
 lib/sympa/cookielib.pm
 lib/sympa/mail.pm
 lib/sympa/parser.pl
-lib/sympa/smtp.pm
+lib/sympa/report.pm
 lib/sympa/sympasoap.pm
 lib/sympa/time_utils.pl
 lib/sympa/tools.pl
@@ -78,6 +82,7 @@ sbin/task_manager.pl
 %%NLS%%share/locale/hu/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sympa.mo
@@ -120,8 +125,11 @@ sbin/task_manager.pl
 %%DATADIR%%/list_task_models/remind.monthly.task
 %%DATADIR%%/list_task_models/remind.yearly.task
 %%DATADIR%%/list_task_models/sync_include.ttl.task
+%%DATADIR%%/mail_tt2/archive.tt2
+%%DATADIR%%/mail_tt2/authorization_reject.tt2
 %%DATADIR%%/mail_tt2/bye.tt2
 %%DATADIR%%/mail_tt2/certif_warning.tt2
+%%DATADIR%%/mail_tt2/command_report.tt2
 %%DATADIR%%/mail_tt2/d_install_shared.tt2
 %%DATADIR%%/mail_tt2/d_reject_shared.tt2
 %%DATADIR%%/mail_tt2/digest.tt2
@@ -129,8 +137,10 @@ sbin/task_manager.pl
 %%DATADIR%%/mail_tt2/expire_deletion.tt2
 %%DATADIR%%/mail_tt2/expire_warning1.tt2
 %%DATADIR%%/mail_tt2/expire_warning2.tt2
+%%DATADIR%%/mail_tt2/get_archive.tt2
 %%DATADIR%%/mail_tt2/global_remind.tt2
 %%DATADIR%%/mail_tt2/helpfile.tt2
+%%DATADIR%%/mail_tt2/index_archive.tt2
 %%DATADIR%%/mail_tt2/info_report.tt2
 %%DATADIR%%/mail_tt2/invite.tt2
 %%DATADIR%%/mail_tt2/list_created.tt2
@@ -140,22 +150,28 @@ sbin/task_manager.pl
 %%DATADIR%%/mail_tt2/listmaster_notification.tt2
 %%DATADIR%%/mail_tt2/listowner_notification.tt2
 %%DATADIR%%/mail_tt2/lists.tt2
+%%DATADIR%%/mail_tt2/message_report.tt2
 %%DATADIR%%/mail_tt2/moderate.tt2
 %%DATADIR%%/mail_tt2/modindex.tt2
 %%DATADIR%%/mail_tt2/reject.tt2
 %%DATADIR%%/mail_tt2/remind.tt2
 %%DATADIR%%/mail_tt2/removed.tt2
+%%DATADIR%%/mail_tt2/request_auth.tt2
 %%DATADIR%%/mail_tt2/review.tt2
+%%DATADIR%%/mail_tt2/send_auth.tt2
 %%DATADIR%%/mail_tt2/sendpasswd.tt2
+%%DATADIR%%/mail_tt2/sendssopasswd.tt2
 %%DATADIR%%/mail_tt2/stats_report.tt2
-%%DATADIR%%/mail_tt2/subscriber_notification.tt2
 %%DATADIR%%/mail_tt2/summary.tt2
 %%DATADIR%%/mail_tt2/urlized_part.tt2
+%%DATADIR%%/mail_tt2/user_notification.tt2
 %%DATADIR%%/mail_tt2/welcome.tt2
+%%DATADIR%%/mail_tt2/which.tt2
 %%DATADIR%%/mail_tt2/x509-user-cert-missing.tt2
 %%DATADIR%%/mail_tt2/your_infected_msg.tt2
 %%DATADIR%%/mhonarc-ressources.tt2
 %%DATADIR%%/mime.types
+%%DATADIR%%/nrcpt_by_domain.conf
 %%DATADIR%%/scenari/access_web_archive.closed
 %%DATADIR%%/scenari/access_web_archive.intranet
 %%DATADIR%%/scenari/access_web_archive.listmaster
@@ -267,6 +283,7 @@ sbin/task_manager.pl
 %%DATADIR%%/web_tt2/arc_protect.tt2
 %%DATADIR%%/web_tt2/arcsearch.tt2
 %%DATADIR%%/web_tt2/arcsearch_form.tt2
+%%DATADIR%%/web_tt2/authorization_reject.tt2
 %%DATADIR%%/web_tt2/button_footer.tt2
 %%DATADIR%%/web_tt2/button_header.tt2
 %%DATADIR%%/web_tt2/change_email.tt2
@@ -318,6 +335,7 @@ sbin/task_manager.pl
 %%DATADIR%%/web_tt2/loginrequest.tt2
 %%DATADIR%%/web_tt2/ls_templates.tt2
 %%DATADIR%%/web_tt2/main.tt2
+%%DATADIR%%/web_tt2/maintenance.tt2
 %%DATADIR%%/web_tt2/menu.tt2
 %%DATADIR%%/web_tt2/modindex.tt2
 %%DATADIR%%/web_tt2/notice.tt2
@@ -325,6 +343,7 @@ sbin/task_manager.pl
 %%DATADIR%%/web_tt2/remindpasswd.tt2
 %%DATADIR%%/web_tt2/remove_arc.tt2
 %%DATADIR%%/web_tt2/rename_list_request.tt2
+%%DATADIR%%/web_tt2/request_topic.tt2
 %%DATADIR%%/web_tt2/review.tt2
 %%DATADIR%%/web_tt2/review_family.tt2
 %%DATADIR%%/web_tt2/reviewbouncing.tt2
@@ -340,6 +359,7 @@ sbin/task_manager.pl
 %%DATADIR%%/web_tt2/show_cert.tt2
 %%DATADIR%%/web_tt2/sigrequest.tt2
 %%DATADIR%%/web_tt2/skinsedit.tt2
+%%DATADIR%%/web_tt2/sso_login.tt2
 %%DATADIR%%/web_tt2/stats.tt2
 %%DATADIR%%/web_tt2/subindex.tt2
 %%DATADIR%%/web_tt2/suboptions.tt2
@@ -352,8 +372,9 @@ sbin/task_manager.pl
 %%DATADIR%%/web_tt2/which.tt2
 %%DATADIR%%/web_tt2/your_lists.tt2
 sympa/cgi-bin/sympa_soap_server.fcgi
-sympa/cgi-bin/wwsympa.fcgi
 sympa/cgi-bin/wwsympa-wrapper
+sympa/cgi-bin/wwsympa.fcgi
+sympa/cgi-bin/wwsympa_sudo_wrapper.pl
 sympa/icons/back.png
 sympa/icons/begin.png
 sympa/icons/binary.png
@@ -372,26 +393,6 @@ sympa/icons/right.png
 sympa/icons/sound1.png
 sympa/icons/text.png
 sympa/icons/unknown.png
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/el
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_TW
 @dirrm sympa/spool/tmp
 @dirrm sympa/spool/task
 @dirrm sympa/spool/outgoing
@@ -404,8 +405,8 @@ sympa/icons/unknown.png
 @dirrm sympa/icons
 @dirrm sympa/expl
 @dirrm sympa/cgi-bin
-@dirrm sympa/arc
 @dirrm sympa/bounce
+@dirrm sympa/arc
 @dirrm sympa
 @dirrm %%DATADIR%%/web_tt2
 @dirrm %%DATADIR%%/scenari
@@ -421,6 +422,28 @@ sympa/icons/unknown.png
 @dirrm %%DATADIR%%/create_list_templates/discussion_list
 @dirrm %%DATADIR%%/create_list_templates
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
 @dirrm %%EXAMPLESDIR%%/sample-list
 @dirrm %%EXAMPLESDIR%%
 @dirrm libexec/sympa
