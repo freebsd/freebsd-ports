@@ -29,22 +29,15 @@ include/gtkglext-1.0/gtk/gtkgldefs.h
 include/gtkglext-1.0/gtk/gtkglinit.h
 include/gtkglext-1.0/gtk/gtkglversion.h
 include/gtkglext-1.0/gtk/gtkglwidget.h
-@dirrm include/gtkglext-1.0/gtk
-@dirrm include/gtkglext-1.0/gdk/x11
-@dirrm include/gtkglext-1.0/gdk/glext
-@dirrm include/gtkglext-1.0/gdk
-@dirrm include/gtkglext-1.0
 lib/gtkglext-1.0/include/gdkglext-config.h
 lib/libgdkglext-x11-1.0.a
 lib/libgdkglext-x11-1.0.la
 lib/libgdkglext-x11-1.0.so
-lib/libgdkglext-x11-1.0.so.2
+lib/libgdkglext-x11-1.0.so.0
 lib/libgtkglext-x11-1.0.a
 lib/libgtkglext-x11-1.0.la
 lib/libgtkglext-x11-1.0.so
-lib/libgtkglext-x11-1.0.so.2
-@dirrm lib/gtkglext-1.0/include
-@dirrm lib/gtkglext-1.0
+lib/libgtkglext-x11-1.0.so.0
 libdata/pkgconfig/gdkglext-1.0.pc
 libdata/pkgconfig/gdkglext-x11-1.0.pc
 libdata/pkgconfig/gtkglext-1.0.pc
@@ -76,5 +69,13 @@ share/aclocal/gtkglext-1.0.m4
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
 @dirrm %%DOCSDIR%%
+@dirrm include/gtkglext-1.0/gtk
+@dirrm include/gtkglext-1.0/gdk/x11
+@dirrm include/gtkglext-1.0/gdk/glext
+@dirrm include/gtkglext-1.0/gdk
+@dirrm include/gtkglext-1.0
+@dirrm lib/gtkglext-1.0/include
+@dirrm lib/gtkglext-1.0
