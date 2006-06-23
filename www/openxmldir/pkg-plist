@@ -1,4 +1,5 @@
 %%OPENXMLDIR%%/PhoneUI/index.php
+%%OPENXMLDIR%%/PhoneUI/lib/headers.php
 %%OPENXMLDIR%%/PhoneUI/lib/sec_breach.php
 %%OPENXMLDIR%%/PhoneUI/lib/security.php
 %%OPENXMLDIR%%/PhoneUI/lib/urlbase.php
@@ -19,7 +20,6 @@
 %%OPENXMLDIR%%/PhoneUI/templates/img_menu.php
 %%OPENXMLDIR%%/PhoneUI/templates/img_no_res.php
 %%OPENXMLDIR%%/PhoneUI/templates/img_sec_breach.php
-%%OPENXMLDIR%%/PhoneUI/templates/index.xml
 %%OPENXMLDIR%%/PhoneUI/templates/listcontacts_sep.xml
 %%OPENXMLDIR%%/PhoneUI/templates/listcontacts_tog.xml
 %%OPENXMLDIR%%/PhoneUI/templates/listobjects.xml
