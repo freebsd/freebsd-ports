@@ -13269,6 +13269,7 @@ tifmerge	ports/graphics/tifmerge
 tigcc		ports/devel/tigcc
 tightvnc	ports/net/tightvnc
 tik		ports/net-im/tik
+tikiwiki	ports/www/tikiwiki
 tilda		ports/x11/tilda
 tileworld	ports/games/tileworld
 tilp		ports/comms/tilp
