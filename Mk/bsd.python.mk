@@ -288,7 +288,7 @@ PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix' \
 						2> /dev/null || ${ECHO_CMD} ${LOCALBASE}) | ${TAIL} -1
 DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 _PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
-							print string.split(sys.version)[0]' 2> /dev/null || ${ECHO_CMD} ${_PYTHON_PORTBRANCH}) | ${TAIL} -1
+							print string.split(sys.version)[0].replace("b",".b")' 2> /dev/null) | ${TAIL} -1
 .if !defined(PYTHON_NO_DEPENDS) && !empty(_PYTHON_PORTVERSION)
 PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 .endif
