@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	x2vnc
-PORTVERSION=	1.71
+PORTVERSION=	1.72
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://fredrik.hubbe.net/x2vnc/
-DISTNAME=	${PORTNAME}-1.7.1
+DISTNAME=	${PORTNAME}-1.7.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to link multiple X and VNC servers together
