@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	jmp
-PORTVERSION=	0.51.p1
+PORTVERSION=	0.51
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
-DISTNAME=	${PORTNAME}-0.51
-EXTRACT_SUFX=	-pre1.tar.gz
 
 MAINTAINER=	ronald@cs.vu.nl
 COMMENT=	Java Memory Profiler
