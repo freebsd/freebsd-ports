@@ -1,0 +1,4 @@
+%%RUBY_SITEARCHLIBDIR%%/evas.so
+%%RUBY_SITEARCHLIBDIR%%/evas/rb_evas_object.h
+%%RUBY_SITEARCHLIBDIR%%/evas/rb_evas.h
+@dirrm %%RUBY_SITEARCHLIBDIR%%/evas

@@ -1,0 +1,5 @@
+ruby-evas is a set of Ruby language bindings for Enlightenment's Canvas
+library, Evas.
+
+Author:	Tilman Sauerbeck <tilman@code-monkey.de>
+WWW:	http://code-monkey.de/ruby-efl/
