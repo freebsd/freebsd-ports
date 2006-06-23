@@ -1638,6 +1638,7 @@
     SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
+    SUBDIR += ruby-ecore
     SUBDIR += ruby-eet
     SUBDIR += ruby-fam
     SUBDIR += ruby-filelock
