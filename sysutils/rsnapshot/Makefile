@@ -7,6 +7,7 @@
 
 PORTNAME=	rsnapshot
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
@@ -33,7 +34,6 @@ post-install:
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/pod2man,pod2man,' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -Ee 's,/(etc/rsnapshot.conf),${PREFIX}/\1,g' ${WRKSRC}/rsnapshot-program.pl
 .if ${PERL_LEVEL} < 500800
 	${REINPLACE_CMD} -e "s, -n 'rsnapshot',," ${WRKSRC}/Makefile.in
 .endif
