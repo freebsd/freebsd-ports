@@ -1,0 +1,9 @@
+An e17 module displaying the current weather conditions and forecast.
+Features are:
+- choose between simple and detailed view
+- specify poll time
+- display degree in Celsius or Fahrenheit
+- choose the weather station from a menu or via ICAO Code.
+
+Author:	Matthew Mullins
+WWW:	http://www.enlightenment.org
