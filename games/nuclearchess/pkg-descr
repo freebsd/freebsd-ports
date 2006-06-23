@@ -1,0 +1,5 @@
+NuclearChess is a chess variant. Whenever a piece is captured, both
+pieces and all pieces on neighbour fields die. Games are short and fun
+even for people who usually don't play chess.
+
+WWW: http://user.cs.tu-berlin.de/~karlb/nuclearchess/
