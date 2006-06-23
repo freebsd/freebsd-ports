@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0a4cd819-0291-11db-bbf7-000c6ec775d9">
+    <topic>opera -- JPEG processing integer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera-devel</name>
+	<name>opera</name>
+	<range><lt>9.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A VigilantMinds Advisory reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=115100029717146">
+	  <p>If excessively large height and width values are
+            specified in certain fields of a JPEG file, an integer
+            overflow may cause Opera to allocate insufficient memory
+            for the image.  This will lead to a buffer overflow when
+            the image is loaded into memory, which can be exploited to
+            execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>18594</bid>
+      <mlist msgid="45AD37756BF9B841B3149BB3E21465CB0417CF@iron.vigilantminds.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=115100029717146</mlist>
+      <url>http://secunia.com/advisories/20787/</url>
+    </references>
+    <dates>
+      <discovery>2006-06-22</discovery>
+      <entry>2006-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09429f7c-fd6e-11da-b1cd-0050bf27ba24">
     <topic>horde -- multiple parameter cross site scripting
       vulnerabilities</topic>
