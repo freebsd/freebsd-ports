@@ -11382,6 +11382,7 @@ py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
 py-spf		ports/mail/py-spf
 py-spreadmodule	ports/net/py-spreadmodule
+py-sqlite3	ports/databases/py-sqlite3
 py-sqlobject	ports/databases/py-sqlobject
 py-sqlrelay	ports/databases/py-sqlrelay
 py-statgrab	ports/devel/py-statgrab
