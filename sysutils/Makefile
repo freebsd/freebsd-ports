@@ -478,6 +478,7 @@
     SUBDIR += raincoat
     SUBDIR += rc_subr
     SUBDIR += rclean
+    SUBDIR += rcsedit
     SUBDIR += rdate
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
