@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.5.a0.20060326
+PORTVERSION=	2.5.b1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -32,7 +32,8 @@ PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
-PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
+PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
+		PYVER_WITHPAT=${PORTVERSION:S/.b/b/}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
@@ -133,6 +134,15 @@ pre-patch:
 		's|^	\(..ASDLGEN.*\)$$|	${TRUE}|g' \
 		${PATCH_WRKSRC}/Makefile.pre.in
 
+	${REINPLACE_CMD} -e \
+		's|*\(..INSTALL_SCRIPT.*\)python-config$$|#port \1|' \
+		${PATCH_WRKSRC}/Makefile.pre.in
+
+	${SED} -e 's|^#!.*|#!${PREFIX}/bin/${PYTHON_VERSION}|' \
+		${PATCH_WRKSRC}/Misc/python-config.in > ${WRKDIR}/${PYTHON_VERSION}-config
+	${SED} -e 's|^#!.*|#!${PREFIX}/bin/${PYTHON_VERSION:S/thon/thon-shared/}|' \
+		${PATCH_WRKSRC}/Misc/python-config.in > ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config
+
 post-configure:
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${SHARED_WRKSRC} -xf -
 	${LN} -sf ${PYTHON_WRKSRC}/Lib ${WRKSRC}/Lib
@@ -165,6 +175,10 @@ pre-install:
 	${PLIST_TEMPLATE} > ${PLIST}
 
 post-install:
+	@# install config providers
+	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION}-config ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config ${PREFIX}/bin
+
 	@# shared version of executable and library
 	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}.so.1 \
 		${PREFIX}/lib

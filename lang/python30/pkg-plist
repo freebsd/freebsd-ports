@@ -1,7 +1,9 @@
 bin/idle%%PYVER%%
 bin/pydoc%%PYVER%%
 bin/python%%PYVER%%
+bin/python%%PYVER%%-config
 bin/python-shared%%PYVER%%
+bin/python-shared%%PYVER%%-config
 bin/smtpd%%PYVER%%.py
 %%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/Python.h
@@ -133,6 +135,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/bsddb/test/test_basics.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_compare.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_compat.py
+%%PYTHON_LIBDIR%%/bsddb/test/test_cursor_pget_bug.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_dbobj.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_dbshelve.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_dbtables.py
@@ -141,8 +144,10 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/bsddb/test/test_join.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_lock.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_misc.py
+%%PYTHON_LIBDIR%%/bsddb/test/test_pickle.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_queue.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_recno.py
+%%PYTHON_LIBDIR%%/bsddb/test/test_sequence.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_thread.py
 %%PYTHON_LIBDIR%%/cProfile.py
 %%PYTHON_LIBDIR%%/calendar.py
@@ -185,7 +190,61 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/csv.py
 %%PYTHON_LIBDIR%%/ctypes/__init__.py
 %%PYTHON_LIBDIR%%/ctypes/_endian.py
-%%PYTHON_LIBDIR%%/ctypes/_loader.py
+%%PYTHON_LIBDIR%%/ctypes/macholib/README.ctypes
+%%PYTHON_LIBDIR%%/ctypes/macholib/__init__.py
+%%PYTHON_LIBDIR%%/ctypes/macholib/dyld.py
+%%PYTHON_LIBDIR%%/ctypes/macholib/dylib.py
+%%PYTHON_LIBDIR%%/ctypes/macholib/fetch_macholib
+%%PYTHON_LIBDIR%%/ctypes/macholib/fetch_macholib.bat
+%%PYTHON_LIBDIR%%/ctypes/macholib/framework.py
+%%PYTHON_LIBDIR%%/ctypes/test/__init__.py
+%%PYTHON_LIBDIR%%/ctypes/test/runtests.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_anon.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_array_in_pointer.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_arrays.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_bitfields.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_buffers.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_byteswap.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_callbacks.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_cast.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_cfuncs.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_checkretval.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_errcheck.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_find.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_funcptr.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_functions.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_incomplete.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_init.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_integers.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_internals.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_keeprefs.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_libc.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_loading.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_macholib.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_memfunctions.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_numbers.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_objects.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_parameters.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_pointers.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_prototypes.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_python_api.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_random_things.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_refcounts.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_repr.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_returnfuncptrs.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_simplesubclasses.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_sizes.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_slicing.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_stringptr.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_strings.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_struct_fields.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_structures.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_unaligned_structures.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_unicode.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_values.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_varsize_struct.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_win32.py
+%%PYTHON_LIBDIR%%/ctypes/util.py
 %%PYTHON_LIBDIR%%/ctypes/wintypes.py
 %%PYTHON_LIBDIR%%/curses/__init__.py
 %%PYTHON_LIBDIR%%/curses/ascii.py
@@ -220,6 +279,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/distutils/command/config.py
 %%PYTHON_LIBDIR%%/distutils/command/install.py
 %%PYTHON_LIBDIR%%/distutils/command/install_data.py
+%%PYTHON_LIBDIR%%/distutils/command/install_egg_info.py
 %%PYTHON_LIBDIR%%/distutils/command/install_headers.py
 %%PYTHON_LIBDIR%%/distutils/command/install_lib.py
 %%PYTHON_LIBDIR%%/distutils/command/install_scripts.py
@@ -459,6 +519,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/formatter.py
 %%PYTHON_LIBDIR%%/fpformat.py
 %%PYTHON_LIBDIR%%/ftplib.py
+%%PYTHON_LIBDIR%%/functools.py
 %%PYTHON_LIBDIR%%/getopt.py
 %%PYTHON_LIBDIR%%/getpass.py
 %%PYTHON_LIBDIR%%/gettext.py
@@ -532,7 +593,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/idlelib/ZoomHeight.py
 %%PYTHON_LIBDIR%%/idlelib/__init__.py
 %%PYTHON_LIBDIR%%/idlelib/aboutDialog.py
-%%PYTHON_LIBDIR%%/idlelib/buildapp.py
 %%PYTHON_LIBDIR%%/idlelib/config-extensions.def
 %%PYTHON_LIBDIR%%/idlelib/config-highlight.def
 %%PYTHON_LIBDIR%%/idlelib/config-keys.def
@@ -549,6 +609,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/idlelib/idle.pyw
 %%PYTHON_LIBDIR%%/idlelib/idlever.py
 %%PYTHON_LIBDIR%%/idlelib/keybindingDialog.py
+%%PYTHON_LIBDIR%%/idlelib/macosxSupport.py
 %%PYTHON_LIBDIR%%/idlelib/rpc.py
 %%PYTHON_LIBDIR%%/idlelib/run.py
 %%PYTHON_LIBDIR%%/idlelib/tabpage.py
@@ -560,6 +621,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/imputil.py
 %%PYTHON_LIBDIR%%/inspect.py
 %%PYTHON_LIBDIR%%/keyword.py
+%%PYTHON_LIBDIR%%/lib-dynload/Python-%%PYVER_WITHPAT%%-py%%PYVER%%.egg-info
 %%PYTHON_LIBDIR%%/lib-dynload/_bisect.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_cn.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_hk.so
@@ -572,6 +634,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/_ctypes_test.so
 %%PYTHON_LIBDIR%%/lib-dynload/_curses.so
 %%PYTHON_LIBDIR%%/lib-dynload/_curses_panel.so
+%%PYTHON_LIBDIR%%/lib-dynload/_elementtree.so
+%%PYTHON_LIBDIR%%/lib-dynload/_functools.so
 %%PYTHON_LIBDIR%%/lib-dynload/_hashlib.so
 %%PYTHON_LIBDIR%%/lib-dynload/_heapq.so
 %%PYTHON_LIBDIR%%/lib-dynload/_hotshot.so
@@ -583,6 +647,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/_sha512.so
 %%PYTHON_LIBDIR%%/lib-dynload/_socket.so
 %%PYTHON_LIBDIR%%/lib-dynload/_ssl.so
+%%PYTHON_LIBDIR%%/lib-dynload/_struct.so
 %%PYTHON_LIBDIR%%/lib-dynload/_testcapi.so
 %%PYTHON_LIBDIR%%/lib-dynload/_weakref.so
 %%PYTHON_LIBDIR%%/lib-dynload/array.so
@@ -599,7 +664,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/dbm.so
 %%32BIT_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/dl.so
 %%PYTHON_LIBDIR%%/lib-dynload/fcntl.so
-%%PYTHON_LIBDIR%%/lib-dynload/functional.so
 %%PYTHON_LIBDIR%%/lib-dynload/grp.so
 %%X86_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/imageop.so
 %%PYTHON_LIBDIR%%/lib-dynload/itertools.so
@@ -615,7 +679,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%X86_ONLY%%%%PYTHON_LIBDIR%%/lib-dynload/rgbimg.so
 %%PYTHON_LIBDIR%%/lib-dynload/select.so
 %%PYTHON_LIBDIR%%/lib-dynload/strop.so
-%%PYTHON_LIBDIR%%/lib-dynload/struct.so
 %%PYTHON_LIBDIR%%/lib-dynload/syslog.so
 %%PYTHON_LIBDIR%%/lib-dynload/termios.so
 %%PYTHON_LIBDIR%%/lib-dynload/time.so
@@ -713,6 +776,16 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/smtplib.py
 %%PYTHON_LIBDIR%%/sndhdr.py
 %%PYTHON_LIBDIR%%/socket.py
+%%PYTHON_LIBDIR%%/sqlite3/__init__.py
+%%PYTHON_LIBDIR%%/sqlite3/dbapi2.py
+%%PYTHON_LIBDIR%%/sqlite3/test/__init__.py
+%%PYTHON_LIBDIR%%/sqlite3/test/dbapi.py
+%%PYTHON_LIBDIR%%/sqlite3/test/factory.py
+%%PYTHON_LIBDIR%%/sqlite3/test/hooks.py
+%%PYTHON_LIBDIR%%/sqlite3/test/regression.py
+%%PYTHON_LIBDIR%%/sqlite3/test/transactions.py
+%%PYTHON_LIBDIR%%/sqlite3/test/types.py
+%%PYTHON_LIBDIR%%/sqlite3/test/userfunctions.py
 %%PYTHON_LIBDIR%%/sre.py
 %%PYTHON_LIBDIR%%/sre_compile.py
 %%PYTHON_LIBDIR%%/sre_constants.py
@@ -722,6 +795,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/string.py
 %%PYTHON_LIBDIR%%/stringold.py
 %%PYTHON_LIBDIR%%/stringprep.py
+%%PYTHON_LIBDIR%%/struct.py
 %%PYTHON_LIBDIR%%/subprocess.py
 %%PYTHON_LIBDIR%%/sunau.py
 %%PYTHON_LIBDIR%%/sunaudio.py
@@ -781,6 +855,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/decimaltestdata/tointegral.decTest
 %%PYTHON_LIBDIR%%/test/doctest_aliases.py
 %%PYTHON_LIBDIR%%/test/double_const.py
+%%PYTHON_LIBDIR%%/test/empty.vbs
 %%PYTHON_LIBDIR%%/test/exception_hierarchy.txt
 %%PYTHON_LIBDIR%%/test/fork_wait.py
 %%PYTHON_LIBDIR%%/test/greyrgb.uue
@@ -789,14 +864,10 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/list_tests.py
 %%PYTHON_LIBDIR%%/test/mapping_tests.py
 %%PYTHON_LIBDIR%%/test/output/test_MimeWriter
-%%PYTHON_LIBDIR%%/test/output/test_augassign
 %%PYTHON_LIBDIR%%/test/output/test_cProfile
 %%PYTHON_LIBDIR%%/test/output/test_cgi
 %%PYTHON_LIBDIR%%/test/output/test_class
-%%PYTHON_LIBDIR%%/test/output/test_coercion
-%%PYTHON_LIBDIR%%/test/output/test_compare
 %%PYTHON_LIBDIR%%/test/output/test_cookie
-%%PYTHON_LIBDIR%%/test/output/test_exceptions
 %%PYTHON_LIBDIR%%/test/output/test_extcall
 %%PYTHON_LIBDIR%%/test/output/test_frozen
 %%PYTHON_LIBDIR%%/test/output/test_global
@@ -864,6 +935,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_augassign.py
 %%PYTHON_LIBDIR%%/test/test_base64.py
 %%PYTHON_LIBDIR%%/test/test_bastion.py
+%%PYTHON_LIBDIR%%/test/test_bigmem.py
 %%PYTHON_LIBDIR%%/test/test_binascii.py
 %%PYTHON_LIBDIR%%/test/test_binhex.py
 %%PYTHON_LIBDIR%%/test/test_binop.py
@@ -940,6 +1012,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_doctest2.py
 %%PYTHON_LIBDIR%%/test/test_doctest2.txt
 %%PYTHON_LIBDIR%%/test/test_doctest3.txt
+%%PYTHON_LIBDIR%%/test/test_doctest4.txt
 %%PYTHON_LIBDIR%%/test/test_dumbdbm.py
 %%PYTHON_LIBDIR%%/test/test_dummy_thread.py
 %%PYTHON_LIBDIR%%/test/test_dummy_threading.py
@@ -963,7 +1036,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_fpformat.py
 %%PYTHON_LIBDIR%%/test/test_frozen.py
 %%PYTHON_LIBDIR%%/test/test_funcattrs.py
-%%PYTHON_LIBDIR%%/test/test_functional.py
+%%PYTHON_LIBDIR%%/test/test_functools.py
 %%PYTHON_LIBDIR%%/test/test_future.py
 %%PYTHON_LIBDIR%%/test/test_future1.py
 %%PYTHON_LIBDIR%%/test/test_future2.py
@@ -1034,6 +1107,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_nis.py
 %%PYTHON_LIBDIR%%/test/test_normalization.py
 %%PYTHON_LIBDIR%%/test/test_ntpath.py
+%%PYTHON_LIBDIR%%/test/test_old_mailbox.py
 %%PYTHON_LIBDIR%%/test/test_opcodes.py
 %%PYTHON_LIBDIR%%/test/test_openpty.py
 %%PYTHON_LIBDIR%%/test/test_operations.py
@@ -1097,6 +1171,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_socketserver.py
 %%PYTHON_LIBDIR%%/test/test_softspace.py
 %%PYTHON_LIBDIR%%/test/test_sort.py
+%%PYTHON_LIBDIR%%/test/test_sqlite.py
+%%PYTHON_LIBDIR%%/test/test_startfile.py
 %%PYTHON_LIBDIR%%/test/test_str.py
 %%PYTHON_LIBDIR%%/test/test_strftime.py
 %%PYTHON_LIBDIR%%/test/test_string.py
@@ -1147,6 +1223,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_userlist.py
 %%PYTHON_LIBDIR%%/test/test_userstring.py
 %%PYTHON_LIBDIR%%/test/test_uu.py
+%%PYTHON_LIBDIR%%/test/test_uuid.py
 %%PYTHON_LIBDIR%%/test/test_wait3.py
 %%PYTHON_LIBDIR%%/test/test_wait4.py
 %%PYTHON_LIBDIR%%/test/test_warnings.py
@@ -1156,6 +1233,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_winreg.py
 %%PYTHON_LIBDIR%%/test/test_winsound.py
 %%PYTHON_LIBDIR%%/test/test_with.py
+%%PYTHON_LIBDIR%%/test/test_wsgiref.py
 %%PYTHON_LIBDIR%%/test/test_xdrlib.py
 %%PYTHON_LIBDIR%%/test/test_xml_etree.py
 %%PYTHON_LIBDIR%%/test/test_xml_etree_c.py
@@ -1164,6 +1242,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_xpickle.py
 %%PYTHON_LIBDIR%%/test/test_xrange.py
 %%PYTHON_LIBDIR%%/test/test_zipfile.py
+%%PYTHON_LIBDIR%%/test/test_zipfile64.py
 %%PYTHON_LIBDIR%%/test/test_zipimport.py
 %%PYTHON_LIBDIR%%/test/test_zlib.py
 %%PYTHON_LIBDIR%%/test/testall.py
@@ -1173,6 +1252,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/testrgb.uue
 %%PYTHON_LIBDIR%%/test/testtar.tar
 %%PYTHON_LIBDIR%%/test/tf_inherit_check.py
+%%PYTHON_LIBDIR%%/test/threaded_import_hangers.py
 %%PYTHON_LIBDIR%%/test/time_hashlib.py
 %%PYTHON_LIBDIR%%/test/tokenize_tests.txt
 %%PYTHON_LIBDIR%%/test/xmltests.py
@@ -1193,6 +1273,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/urlparse.py
 %%PYTHON_LIBDIR%%/user.py
 %%PYTHON_LIBDIR%%/uu.py
+%%PYTHON_LIBDIR%%/uuid.py
 %%PYTHON_LIBDIR%%/warnings.py
 %%PYTHON_LIBDIR%%/wave.py
 %%PYTHON_LIBDIR%%/weakref.py
@@ -1386,6 +1467,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/tix/bitmaps/select.xpm
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/tix/bitmaps/tix.gif
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/tix/bitmaps/underline.xbm
+%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/tix/grid.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/tix/samples/Balloon.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/tix/samples/BtnBox.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/tix/samples/CmpImg.py
@@ -1466,8 +1548,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/xml/elem_count.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/xml/roundtrip.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/xml/rss2html.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/xmlrpc/xmlrpc_handler.py
-%%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/xmlrpc/xmlrpcserver.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/zlib/minigzip.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/zlib/zlibdemo.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/README
@@ -1488,9 +1568,13 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/bgen/bgen/bgenVariable.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/bgen/bgen/macsupport.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/bgen/bgen/scantools.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/Makefile
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/build.bat
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/clean.bat
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/external.bat
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/kill_python.bat
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/kill_python.c
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/kill_python.mak
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/buildbot/test.bat
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/compiler/ACKS
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/compiler/README
@@ -1572,6 +1656,30 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/schema.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/sequence.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/uisample.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/msi/uuids.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Arithmetic.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Calls.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/CommandLine.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Constructs.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Dict.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Exceptions.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Imports.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Instances.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/LICENSE
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Lists.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Lookups.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/NewInstances.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Numbers.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/README
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Setup.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Strings.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Tuples.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/Unicode.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/clockres.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/package/__init__.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/package/submodule.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/pybench.py
+%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pybench/systimes.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/ChipViewer.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/ColorDB.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/pynche/DetailsViewer.py
@@ -1687,6 +1795,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/scripts
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche/X
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche
+%%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pybench/package
+%%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pybench
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/msi
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator/Templates
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator
@@ -1703,7 +1813,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%@unexec /bin/rm -fr %D/share/%%PYTHON_VERSION%%/Tools || true
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/zlib
-%%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/xmlrpc
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/xml
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/tkinter/matt
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/tkinter/guido
@@ -1736,6 +1845,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 @dirrm %%PYTHON_LIBDIR%%/test/output
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
 @dirrm %%PYTHON_LIBDIR%%/test
+@dirrm %%PYTHON_LIBDIR%%/sqlite3/test
+@dirrm %%PYTHON_LIBDIR%%/sqlite3
 @dirrm %%PYTHON_LIBDIR%%/site-packages
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd7
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd6
@@ -1757,6 +1868,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 @dirrm %%PYTHON_LIBDIR%%/distutils/command
 @dirrm %%PYTHON_LIBDIR%%/distutils
 @dirrm %%PYTHON_LIBDIR%%/curses
+@dirrm %%PYTHON_LIBDIR%%/ctypes/test
+@dirrm %%PYTHON_LIBDIR%%/ctypes/macholib
 @dirrm %%PYTHON_LIBDIR%%/ctypes
 @dirrm %%PYTHON_LIBDIR%%/config
 @dirrm %%PYTHON_LIBDIR%%/compiler
