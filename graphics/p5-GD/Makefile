@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GD
-PORTVERSION=	2.32
+PORTVERSION=	2.34
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -29,8 +29,8 @@ MAN3=		GD.3 GD::Polyline.3 GD::Simple.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
