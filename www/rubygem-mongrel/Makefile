@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	mongrel
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.13.1
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/11113/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/11186/
 
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
