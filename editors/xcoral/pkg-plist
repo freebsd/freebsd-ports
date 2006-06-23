@@ -1,5 +1,7 @@
 bin/xcoral
+%%PORTDOCS%%%%DOCSDIR%%/xcoral-%%VERSION%%.pdf
 %%PORTDOCS%%%%DOCSDIR%%/xcoral-%%VERSION%%.ps
+%%PORTDOCS%%%%DOCSDIR%%/xcoral-card.pdf
 %%PORTDOCS%%%%DOCSDIR%%/xcoral-card.ps
 %%DATADIR%%/DEPEND
 %%DATADIR%%/README
