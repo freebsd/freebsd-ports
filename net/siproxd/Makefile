@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	siproxd
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.13
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	siproxd
@@ -16,6 +16,7 @@ COMMENT=	A proxy/masquerading daemon for the SIP protocol
 
 LIB_DEPENDS=	osip2.3:${PORTSDIR}/net/libosip2
 
+USE_GCC=	3.2+
 USE_GETOPT_LONG=yes
 USE_RC_SUBR=	siproxd.sh
 GNU_CONFIGURE=	yes

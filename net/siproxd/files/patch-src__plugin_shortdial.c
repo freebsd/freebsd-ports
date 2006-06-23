@@ -1,11 +1,10 @@
---- src/plugin_shortdial.c.orig	Sun Jan  1 21:31:31 2006
-+++ src/plugin_shortdial.c	Mon May 15 11:50:12 2006
-@@ -24,7 +24,7 @@
- //#include <errno.h>
+--- src/plugin_shortdial.c.orig	Sat May 20 13:48:30 2006
++++ src/plugin_shortdial.c	Wed Jun 21 09:08:19 2006
+@@ -22,6 +22,7 @@
+ 
+ #include <stdio.h>
  #include <string.h>
- //#include <stdlib.h>
--//#include <unistd.h>
 +#include <unistd.h>
- //#include <signal.h>
  #include <netinet/in.h>
- //#include <arpa/inet.h>
+ 
+ #include <osipparser2/osip_parser.h>
