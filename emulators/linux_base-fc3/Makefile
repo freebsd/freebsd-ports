@@ -172,6 +172,11 @@ do-build:
 #
 	@${MV} ${WRKSRC}/etc/nsswitch.conf ${WRKSRC}/etc/nsswitch.conf.dist
 
+	@${FIND} ${WRKSRC}/bin ${WRKSRC}/sbin/ ${WRKSRC}/usr/bin \
+		${WRKSRC}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
+		| ${GREP} ELF | ${CUT} -d : -f 1 \
+		| ${XARGS} ${BRANDELF} -t Linux
+
 do-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
@@ -184,10 +189,6 @@ do-install:
 	@cd ${WRKSRC} && ${FIND} * ! -type d \
 		| ${CPIO} -pm -R root:wheel ${PREFIX}
 
-	@${FIND} ${PREFIX}/bin ${PREFIX}/sbin/ ${PREFIX}/usr/bin \
-		${PREFIX}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
-		| ${GREP} ELF | ${CUT} -d : -f 1 \
-		| ${XARGS} ${BRANDELF} -t Linux
 	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
