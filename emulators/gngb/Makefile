@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gngb
-PORTVERSION=	20040115
-PORTREVISION=	2
+PORTVERSION=	20060204
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngb/download/
 
@@ -15,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GameBoy(tm) emulator
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget
 USE_SDL=	sdl
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
