@@ -1,0 +1,6 @@
+rcsedit is a simple wrapper for RCS written in Perl. It takes care of calling
+the underlying RCS commands in order to maintain a file under RCS control,
+including initial check-in. It also goes beyond what RCS normally does by
+ensuring ownership, group, and permissions of the file are preserved.
+
+WWW: http://www.lava.net/rcsedit
