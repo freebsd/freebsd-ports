@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +24,9 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper					\
 		${JAVALIBDIR}/bcel.jar:${PORTSDIR}/java/jakarta-bcel			\
 		${JAVALIBDIR}/jcmdline.jar:${PORTSDIR}/devel/jcmdline			\
 		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j		\
-		${JAVALIBDIR}/jasperreports.jar:${PORTSDIR}/databases/jasperreports
-#		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp (commons-pool BROKEN)
-#		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool (BROKEN)
+		${JAVALIBDIR}/jasperreports.jar:${PORTSDIR}/databases/jasperreports	\
+		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp	\
+		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -41,8 +41,7 @@ JARFILES=	LICENSE.asm-attr.txt LICENSE.asm.txt LICENSE.barbecue-1.1.txt	\
 		groovy-all-1.0-beta-10.jar hibernate3.jar iReport.jar		\
 		javacup.jar jdt-compiler-3.1.1.jar jpa.jar jr-bsh-compiler.jar	\
 		jsmoothgen-ant-0.9.7.jar jta.jar jxl.jar mondrian-2.0.1.jar	\
-		nsisant-1.1.jar png-encoder-1.5.jar servlet.jar toniclf.jar	\
-		commons-pool-1.3.jar commons-dbcp-1.2.1.jar
+		nsisant-1.1.jar png-encoder-1.5.jar servlet.jar toniclf.jar
 BASEFILES=	Changelog.txt notice.txt relnotes${PORTVERSION}.html
 SUBDIRS=	fonts plugins templates
 
@@ -56,8 +55,7 @@ CLSSPTH=	antlr asm-attrs asm barbecue-1.1 bsh cglib-2.1 commons-beanutils\
 		jdt-compiler-3.1.1 jfreechart jpa jr-bsh-compiler		\
 		jsmoothgen-ant-0.9.7 jta jxl log4j looks mondrian-2.0.1		\
 		mysql-connector-java nsisant-1.1 png-encoder-1.5 poi postgresql	\
-		servlet tinylaf toniclf xalan xercesImpl xml-apis ${CLSSHSQLDB}	\
-		commons-pool-1.3 commons-dbcp-1.2.1
+		servlet tinylaf toniclf xalan xercesImpl xml-apis ${CLSSHSQLDB}
 
 .if !defined(NOPORTDOCS)
 SUBDIRS+=	docs
