@@ -18,11 +18,6 @@ COMMENT=	A telnet-like application which uses a secure SSL channel
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} <= 300000
-BROKEN=		does not build
-.endif
-
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -32,4 +27,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slush ${PREFIX}/bin/slush
 	${INSTALL_PROGRAM} ${WRKSRC}/slushd ${PREFIX}/sbin/slushd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

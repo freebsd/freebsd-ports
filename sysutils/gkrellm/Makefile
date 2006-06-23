@@ -42,11 +42,7 @@ PORTDOCS=	COPYRIGHT README Themes.html
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 300000
-ALL_TARGET=	freebsd2
-.else
 ALL_TARGET=	freebsd
-.endif
 
 BINGRP=		kmem
 .if defined(WITH_SENSOR)
