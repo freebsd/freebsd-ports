@@ -47,6 +47,7 @@ editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
 modules		CVSROOT modules
+rcsedit		ports/sysutils/rcsedit
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
 taginfo		CVSROOT taginfo
