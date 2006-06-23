@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mt-daapd
 
-MAINTAINER=	Meno.Abels@Adviser.com
+MAINTAINER=	alex@foxybanana.com
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
