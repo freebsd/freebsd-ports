@@ -12,6 +12,7 @@
 %%HLSTATS%%/gamesupport_czero.sql
 %%HLSTATS%%/gamesupport_dmc.sql
 %%HLSTATS%%/gamesupport_dod.sql
+%%HLSTATS%%/gamesupport_dods.sql
 %%HLSTATS%%/gamesupport_gearbox_ctf.sql
 %%HLSTATS%%/gamesupport_gearbox_dm.sql
 %%HLSTATS%%/gamesupport_hl2mp.sql
@@ -19,6 +20,7 @@
 %%HLSTATS%%/gamesupport_ricochet.sql
 %%HLSTATS%%/gamesupport_tfc.sql
 %%HLSTATS%%/gamesupport_valve.sql
+%%HLSTATS%%/gamesupport_vs.sql
 %%HLSTATS%%/hlstats-awards.pl
 %%HLSTATS%%/hlstats-resolve.pl
 %%HLSTATS%%/hlstats.conf
@@ -39,6 +41,7 @@
 %%HLSTATS%%/hlstatsimg/game-czero.gif
 %%HLSTATS%%/hlstatsimg/game-dmc.gif
 %%HLSTATS%%/hlstatsimg/game-dod.gif
+%%HLSTATS%%/hlstatsimg/game-dods.gif
 %%HLSTATS%%/hlstatsimg/game-gearbox.gif
 %%HLSTATS%%/hlstatsimg/game-hl2mp.gif
 %%HLSTATS%%/hlstatsimg/game-ns.gif
@@ -155,6 +158,10 @@
 %%HLSTATS%%/hlstatsimg/maps/dod/dod_merderet.jpg
 %%HLSTATS%%/hlstatsimg/maps/dod/dod_vicenza.jpg
 %%HLSTATS%%/hlstatsimg/maps/dod/dod_zalec.jpg
+%%HLSTATS%%/hlstatsimg/maps/dods/dod_anzio.jpg
+%%HLSTATS%%/hlstatsimg/maps/dods/dod_avalanche.jpg
+%%HLSTATS%%/hlstatsimg/maps/dods/dod_donner.jpg
+%%HLSTATS%%/hlstatsimg/maps/dods/dod_flash.jpg
 %%HLSTATS%%/hlstatsimg/maps/gearbox/op4_bootcamp.jpg
 %%HLSTATS%%/hlstatsimg/maps/gearbox/op4_datacore.jpg
 %%HLSTATS%%/hlstatsimg/maps/gearbox/op4_demise.jpg
@@ -170,7 +177,10 @@
 %%HLSTATS%%/hlstatsimg/maps/gearbox/op4_xendance.jpg
 %%HLSTATS%%/hlstatsimg/maps/hl2mp/dm_lockdown.jpg
 %%HLSTATS%%/hlstatsimg/maps/hl2mp/dm_overwatch.jpg
+%%HLSTATS%%/hlstatsimg/maps/hl2mp/dm_powerhouse.jpg
+%%HLSTATS%%/hlstatsimg/maps/hl2mp/dm_resistance.jpg
 %%HLSTATS%%/hlstatsimg/maps/hl2mp/dm_steamlab.jpg
+%%HLSTATS%%/hlstatsimg/maps/hl2mp/dm_underpass.jpg
 %%HLSTATS%%/hlstatsimg/maps/ns/co_angst.jpg
 %%HLSTATS%%/hlstatsimg/maps/ns/co_core.jpg
 %%HLSTATS%%/hlstatsimg/maps/ns/co_daimos.jpg
@@ -345,6 +355,29 @@
 %%HLSTATS%%/hlstatsimg/weapons/dod/sten.gif
 %%HLSTATS%%/hlstatsimg/weapons/dod/thompson.gif
 %%HLSTATS%%/hlstatsimg/weapons/dod/webley.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/30cal.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/amerknife.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/bar.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/bazooka.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/c96.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/colt.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/frag_ger.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/frag_us.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/garand.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/k98.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/k98_scoped.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/m1carbine.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/mg42.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/mp40.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/mp44.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/p38.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/pschreck.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/punch.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/riflegren_ger.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/riflegren_us.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/spade.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/spring.gif
+%%HLSTATS%%/hlstatsimg/weapons/dods/thompson.gif
 %%HLSTATS%%/hlstatsimg/weapons/gearbox/357.gif
 %%HLSTATS%%/hlstatsimg/weapons/gearbox/9mmar.gif
 %%HLSTATS%%/hlstatsimg/weapons/gearbox/9mmhandgun.gif
@@ -512,8 +545,11 @@
 %%HLSTATS%%/hlstatsinc/search.inc
 %%HLSTATS%%/hlstatsinc/weaponinfo.inc
 %%HLSTATS%%/hlstatsinc/weapons.inc
+%%HLSTATS%%/tools/hlstats.sh
+%%HLSTATS%%/tools/import-logs.sh
 %%HLSTATS%%/upgrade_from_1.20.sql
 %%HLSTATS%%/upgrade_from_1.31.sql
+@dirrm %%HLSTATS%%/tools
 @dirrm %%HLSTATS%%/hlstatsinc/admintasks
 @dirrm %%HLSTATS%%/hlstatsinc
 @dirrm %%HLSTATS%%/hlstatsimg/weapons/valve
@@ -522,6 +558,7 @@
 @dirrm %%HLSTATS%%/hlstatsimg/weapons/ns
 @dirrm %%HLSTATS%%/hlstatsimg/weapons/hl2mp
 @dirrm %%HLSTATS%%/hlstatsimg/weapons/gearbox
+@dirrm %%HLSTATS%%/hlstatsimg/weapons/dods
 @dirrm %%HLSTATS%%/hlstatsimg/weapons/dod
 @dirrm %%HLSTATS%%/hlstatsimg/weapons/dmc
 @dirrm %%HLSTATS%%/hlstatsimg/weapons/cstrike
@@ -533,6 +570,7 @@
 @dirrm %%HLSTATS%%/hlstatsimg/maps/ns
 @dirrm %%HLSTATS%%/hlstatsimg/maps/hl2mp
 @dirrm %%HLSTATS%%/hlstatsimg/maps/gearbox
+@dirrm %%HLSTATS%%/hlstatsimg/maps/dods
 @dirrm %%HLSTATS%%/hlstatsimg/maps/dod
 @dirrm %%HLSTATS%%/hlstatsimg/maps/dmc
 @dirrm %%HLSTATS%%/hlstatsimg/maps/czero
