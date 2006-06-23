@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	B-Deobfuscate
-PORTVERSION=	0.10
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	B
@@ -25,13 +25,8 @@ MAN3=		B::Deobfuscate.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our (\$$VERSION)/use vars qw($$1); $$1/;' \
-		     -e '$$_ = "" if /use warnings/;' \
-		     -e 's/\[:digit:\]/0-9/g; s/\[:lower:\]/a-z/g;' \
-		     -e 's/, \$$dict_file/. \$$dict_file/;' \
-		 ${WRKSRC}/lib/B/Deobfuscate.pm
+.if ${PERL_LEVEL} < 500601 # textproc/p5-YAML
+IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
