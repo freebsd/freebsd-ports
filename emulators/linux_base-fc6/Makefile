@@ -98,9 +98,8 @@ CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
 			linux_base-fc3 linux-libgcc* linux_locale*
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
-PREFIX?=		${LINUXBASE}
+USE_LINUX_PREFIX=	yes
 NO_FILTER_SHLIBS=	yes
-NO_MTREE=		yes
 NO_WRKSUBDIR=		yes
 MD5_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.3.6"
