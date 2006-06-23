@@ -26,7 +26,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
 .if defined(WITH_CUPS)
-RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-lpr \
+RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-base \
 		espgs:${PORTSDIR}/print/cups-pstoraster
 .endif
 
