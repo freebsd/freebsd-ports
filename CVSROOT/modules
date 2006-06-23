@@ -12794,6 +12794,7 @@ spiralsynthmodular	ports/audio/spiralsynthmodular
 spl		ports/lang/spl
 splashsetter	ports/deskutils/splashsetter
 splat		ports/comms/splat
+splatd		ports/net/splatd
 splay		ports/audio/splay
 splaytk		ports/audio/splaytk
 splint		ports/devel/splint
