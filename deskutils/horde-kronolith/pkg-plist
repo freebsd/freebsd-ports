@@ -127,6 +127,7 @@
 %%KRONOLITHDIR%%/scripts/sql/kronolith.oci8.sql
 %%KRONOLITHDIR%%/scripts/sql/kronolith.pgsql.sql
 %%KRONOLITHDIR%%/scripts/sql/kronolith.sql
+%%KRONOLITHDIR%%/scripts/sql/kronolith.xml
 %%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
 %%KRONOLITHDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
