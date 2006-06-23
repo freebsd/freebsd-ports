@@ -7,6 +7,7 @@
 
 PORTNAME=	ptmalloc
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.malloc.de/malloc/
 DISTNAME=	ptmalloc
@@ -14,7 +15,13 @@ DISTNAME=	ptmalloc
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	Alternative malloc, performs better with threaded applications
 
+INCDIR=	include/${PORTNAME}
+
+PLIST_SUB=	INCDIR=${INCDIR}
+
 do-install:	all
+	${MKDIR} ${PREFIX}/${INCDIR}
+	${INSTALL_DATA} ${WRKSRC}/ptmalloc.h ${PREFIX}/${INCDIR}/malloc.h
 	${INSTALL_PROGRAM} ${WRKSRC}/ptmalloc.so ${PREFIX}/lib/libptmalloc.so.1
 	${INSTALL_PROGRAM} ${WRKSRC}/ptmalloc.so ${PREFIX}/lib/libptmalloc.so
 	${INSTALL_PROGRAM} ${WRKSRC}/libptmalloc.a ${PREFIX}/lib/libptmalloc.a
@@ -22,7 +29,7 @@ do-install:	all
 post-install:
 	@${ECHO_CMD}
 	@${ECHO_CMD} Not much documentation is available.
-	@${ECHO_CMD} Read work/ptmalloc/README for what there is.
+	@${ECHO_CMD} Read ${WRKSRC:S|^${WRKDIRPREFIX}${.CURDIR}/||}/README for what there is.
 	@${ECHO_CMD} See also pkg_descr
 	@${ECHO_CMD}
 
