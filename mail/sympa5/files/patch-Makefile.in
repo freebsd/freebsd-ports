@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Aug 16 14:25:23 2005
-+++ Makefile.in	Mon Sep 26 13:00:29 2005
-@@ -218,6 +218,8 @@
+--- Makefile.in.orig	Wed Apr 12 11:01:38 2006
++++ Makefile.in	Wed Apr 12 16:10:58 2006
+@@ -220,6 +220,8 @@
  PERL_VERSION = `$(PERL) -e ' print $$]'`
  SYMPA_VERSION = @VERSION@
  DIR = ${prefix}
@@ -9,7 +9,7 @@
  EXPL_DIR = @EXPLDIR@
  MAILERPROGDIR = @BINDIR@
  RPMTOPDIR = `rpm --eval %_topdir`
-@@ -508,7 +510,7 @@
+@@ -510,7 +512,7 @@
  	@CVS2CL@
  #endif
  
@@ -18,25 +18,43 @@
  
  rpm: build_rh_rpm build_mdk_rpm
  
-@@ -593,7 +595,7 @@
+@@ -604,7 +606,7 @@
  	$(MAKE) PERL='${PERL}' clean) || exit 1; \
  	done;
  
--install: importantchanges installsrc installwws installwebtt2 installmailtt2 installlocale installman installscript installsample installdir installconfig installdoc installsoap
-+install: installsrc installwws installwebtt2 installmailtt2 installlocale installman installscript installsample installdir installconfig installdoc installsoap
+-install: importantchanges installdir installsrc installwws installwebtt2 installmailtt2 installlocale installman installscript installsample installconfig installdoc installsoap nextstep
++install: installdir installsrc installwws installwebtt2 installmailtt2 installlocale installman installscript installsample installconfig installdoc installsoap nextstep
  
- importantchanges:
- 	@( 	PERL=$(PERL); export PERL; \
-@@ -719,7 +720,7 @@
+ nextstep: 
+ 	@echo ""
+@@ -740,7 +742,7 @@
  
  installdir:
  	@echo "Creating required directories"
--	@for dir in $(DIR) $(EXPL_DIR) $(CONFDIR) $(SAMPLEDIR) ; do \
-+	@for dir in $(DIR) $(EXPL_DIR) $(ARC_DIR) $(BOUNCE_DIR) $(CONFDIR) $(SAMPLEDIR) ; do \
+-	@for dir in $(DIR) $(EXPL_DIR) $(CONFDIR) $(SAMPLEDIR) $(ETCDIR) $(BINDIR) $(LOCALEDIR) $(DOCDIR) ; do \
++	@for dir in $(DIR) $(EXPL_DIR) $(ARC_DIR) $(BOUNCE_DIR) $(CONFDIR) $(SAMPLEDIR) $(ETCDIR) $(BINDIR) $(LOCALEDIR) $(DOCDIR) ; do \
  		if [ ! -d $(DESTDIR)$$dir ] ; then \
  			echo "Creating $(DESTDIR)$$dir"; \
  			mkdir -p $(DESTDIR)$$dir; \
-@@ -769,14 +770,7 @@
+@@ -786,17 +788,6 @@
+ 		fi \
+ 	done \
+ 	fi
+-	@if [ ! -f $(DESTDIR)$(CONFDIR)/sympa.conf ] ; then \
+-	echo "First installation : creating archives and bounce directories..."; \
+-	for dir in bounce arc ; do \
+-		if [ ! -d $(DESTDIR)$(DIR)/$$dir ] ; then \
+-			echo "Creating $(DESTDIR)$(DIR)/$$dir"; \
+-			mkdir -p $(DESTDIR)$(DIR)/$$dir; \
+-			chown $(USER) $(DESTDIR)$(DIR)/$$dir; \
+-			chgrp $(GROUP) $(DESTDIR)$(DIR)/$$dir; \
+-		fi \
+-	done \
+-	fi
+ 
+ installconfig:
+ 	mkdir -p $(DESTDIR)$(CONFDIR)
+@@ -812,14 +803,7 @@
  	INITCONF='1'; \
  	fi \
  	fi \
