@@ -937,6 +937,7 @@
     SUBDIR += tidy
     SUBDIR += tidy-devel
     SUBDIR += tidy-lib
+    SUBDIR += tikiwiki
     SUBDIR += tinyproxy
     SUBDIR += trac
     SUBDIR += trac-accountmanager
