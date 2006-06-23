@@ -1,19 +1,17 @@
 bin/gxine
 bin/gxine_client
-share/gxine/logo.mpv
-share/gxine/pixmaps/gxine-logo.png
-share/gxine/pixmaps/gxine-icon.xpm
-share/gxine/pixmaps/wizards.png
-share/gxine/pixmaps/splash.png
-share/gxine/mediamarks
+%%DATADIR%%/logo.mpv
+%%DATADIR%%/pixmaps/gxine-logo.png
+%%DATADIR%%/pixmaps/gxine-icon.xpm
+%%DATADIR%%/pixmaps/wizards.png
+%%DATADIR%%/pixmaps/splash.png
+%%DATADIR%%/mediamarks
 share/gnome/apps/Multimedia/gxine.desktop
 lib/gxine/gxineplugin.a
 lib/gxine/gxineplugin.la
 lib/gxine/gxineplugin.so
-lib/browser_plugins/gxineplugin.a
-lib/browser_plugins/gxineplugin.la
-lib/browser_plugins/gxineplugin.so
-@dirrm share/gxine/pixmaps
-@dirrm share/gxine
+%%MOZILLA_PLUGIN%%lib/browser_plugins/gxineplugin.so
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
 @dirrm lib/gxine
-@dirrm lib/browser_plugins
+%%MOZILLA_PLUGIN%%@dirrmtry lib/browser_plugins
