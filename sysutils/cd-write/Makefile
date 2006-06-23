@@ -19,12 +19,6 @@ USE_PERL5_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/cd-write
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 300000
-IGNORE=		"FreeBSD 3.X or greater is required to support this port"
-.endif
-
 PLIST_FILES=	bin/cd-write
 
 pre-build:
@@ -39,4 +33,4 @@ pre-build:
 post-install:
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

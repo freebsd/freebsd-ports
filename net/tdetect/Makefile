@@ -13,13 +13,9 @@ MASTER_SITES=	# disappeared
 MAINTAINER=	shipley@dis.org
 COMMENT=	Utility for detecting traceroutes and reporting them via syslog
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	${REINPLACE_CMD} -e 's/trdetect/tdetect/g' ${WRKSRC}/config.h
-.if ${OSVERSION} > 330002
 	${REINPLACE_CMD} -e 's/LOG_AUTHPRIV/LOG_SECURITY/g' ${WRKSRC}/config.h
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tdetect ${PREFIX}/sbin/tdetect
@@ -31,4 +27,4 @@ post-install:
 		${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

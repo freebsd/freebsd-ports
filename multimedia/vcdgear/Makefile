@@ -16,9 +16,6 @@ COMMENT=	A tool to convert VCDs from cue/bin format to mpeg
 ONLY_FOR_ARCHS=	alpha i386 amd64
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 300004
-IGNORE=	"Only an ELF binary is distributed; requires FreeBSD 3.1 or later"
-.endif
 
 .if ${ARCH} == i386 || ${ARCH} == amd64
 DISTNAME=	${PORTNAME}16d_i386_freebsd42

@@ -31,17 +31,8 @@ IGNORE=		"is included in the base system"
 DISTNAME=	${PORTNAME}-current-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-current
 .else
-. if ${OSVERSION} <= 300000
-MAKE_ENV+=	NEED_KMEM=1
-. endif
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-stable
-.endif
-
-post-install:
-.if ${OSVERSION} <= 300000
-	@${CHGRP} kmem ${PREFIX}/bin/pkill 
-	@${CHMOD} 2555 ${PREFIX}/bin/pkill
 .endif
 
 .include <bsd.port.post.mk>

@@ -18,12 +18,6 @@ COMMENT=	Determine the remote OS using simple tcp packets
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 300004
-LIB_DEPENDS=	pcap.2:${PORTSDIR}/net/libpcap
-.endif
-
 post-install:
 	#${INSTALL_PROGRAM} ${WRKSRC}/queso ${PREFIX}/sbin
 	#${INSTALL_DATA} ${WRKSRC}/queso.conf ${PREFIX}/etc
@@ -32,4 +26,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${PREFIX}/share/doc/queso
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

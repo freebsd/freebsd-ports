@@ -81,11 +81,7 @@ MAN1PREFIX=	${X11BASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 300000
-ALL_TARGET=	freebsd2
-.else
 ALL_TARGET=	freebsd
-.endif
 INSTALL_TARGET=	install_freebsd
 
 MAKE_ENV+=	INSTALLROOT=${X11BASE} INSTALLDIR=${X11BASE}/bin \

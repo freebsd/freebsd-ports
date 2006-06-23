@@ -56,10 +56,6 @@ VERSION=	2.9011.496
 VERSION=	2.9012.497
 .endif
 
-.if ${OSVERSION} < 300000
-IGNORE=		requires FreeBSD 3.X or greater
-.endif
-
 do-configure:
 	@if [ ! -f ${PREFIX}/dnetc.ini ]; then \
 		${INSTALL} -c -m 644 ${FILESDIR}/dnetc.ini ${WRKSRC}; \
