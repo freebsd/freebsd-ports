@@ -24,7 +24,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		smbspool:${PORTSDIR}/net/samba
 RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base \
-		${LOCALBASE}/sbin/cupsaddsmb:${PORTSDIR}/print/cups-lpr \
 		espgs:${PORTSDIR}/print/cups-pstoraster
 
 NO_BUILD=	yes
