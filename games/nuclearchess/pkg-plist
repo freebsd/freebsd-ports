@@ -1,0 +1,37 @@
+bin/nuclearchess
+%%DATADIR%%/gfx/SmallStone.png
+%%DATADIR%%/gfx/anim3.png
+%%DATADIR%%/gfx/bauer.png
+%%DATADIR%%/gfx/dame.png
+%%DATADIR%%/gfx/anim1.png
+%%DATADIR%%/gfx/anim4.png
+%%DATADIR%%/gfx/turm.png
+%%DATADIR%%/gfx/StoneFont.png
+%%DATADIR%%/gfx/anim10.png
+%%DATADIR%%/gfx/anim5.png
+%%DATADIR%%/gfx/black.png
+%%DATADIR%%/gfx/koenig.png
+%%DATADIR%%/gfx/anim11.png
+%%DATADIR%%/gfx/anim6.png
+%%DATADIR%%/gfx/white.png
+%%DATADIR%%/gfx/anim12.png
+%%DATADIR%%/gfx/anim7.png
+%%DATADIR%%/gfx/board.png
+%%DATADIR%%/gfx/laeufer.png
+%%DATADIR%%/gfx/wood.png
+%%DATADIR%%/gfx/anim13.png
+%%DATADIR%%/gfx/anim8.png
+%%DATADIR%%/gfx/bomb.png
+%%DATADIR%%/gfx/anim14.png
+%%DATADIR%%/gfx/anim9.png
+%%DATADIR%%/gfx/bombe.png
+%%DATADIR%%/gfx/anim15.png
+%%DATADIR%%/gfx/atom-rot.png
+%%DATADIR%%/gfx/button-light.png
+%%DATADIR%%/gfx/select.png
+%%DATADIR%%/gfx/anim2.png
+%%DATADIR%%/gfx/atom.png
+%%DATADIR%%/gfx/button.png
+%%DATADIR%%/gfx/springer.png
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%

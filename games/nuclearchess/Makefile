@@ -1,0 +1,25 @@
+# New ports collection makefile for:	nuclearchess
+# Date Created:				2006-05-26
+# Whom:					Shaun Amott <shaun@inerd.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	nuclearchess
+PORTVERSION=	0.9.2
+CATEGORIES=	games
+MASTER_SITES=	http://user.cs.tu-berlin.de/~karlb/${PORTNAME}/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+
+MAINTAINER=	shaun@inerd.com
+COMMENT=	A chess variant designed to be short and fun for all players
+
+GNU_CONFIGURE=	yes
+
+USE_SDL=	sdl image
+
+CONFIGURE_ARGS=	--prefix=${PREFIX}		\
+		--localstatedir=${DATADIR}	\
+		--program-prefix=
+
+.include <bsd.port.mk>

@@ -461,6 +461,7 @@
     SUBDIR += noegnud-nethack-deet
     SUBDIR += noegnud-slashem
     SUBDIR += nonsense
+    SUBDIR += nuclearchess
     SUBDIR += nwndata
     SUBDIR += nwnusers
     SUBDIR += oilwar
