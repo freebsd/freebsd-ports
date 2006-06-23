@@ -16,14 +16,19 @@ DISTNAME=	${PORTNAME}_feb11_2001
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free explicit/implicit Finite Element Program
 
+.ifdef WITH_ATLAS
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
+.else
+LIB_DEPENDS=	blas:${PORTSDIR}/math/blas
+.endif
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
 .ifdef WITH_THREADS
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu_mt.a:${PORTSDIR}/math/superlu_mt
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 .endif
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
+USE_GETOPT_LONG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 
@@ -35,31 +40,34 @@ GIDDIR?=	share/${PORTNAME}
 PLIST_SUB+=	GIDDIR=${GIDDIR}
 GID_PTYPES=	${PREFIX}/${GIDDIR}/problemtypes
 
+.ifdef WITH_ATLAS
 .ifdef WITH_THREADS
-BLAS_LIBS?=	-L${LOCALBASE}/lib -lptf77blas -latlas_r
+BLAS_LIBS=	-lptf77blas -latlas_r
+.else
+BLAS_LIBS=	-lf77blas -latlas
+.endif
+.else	#BLAS
+BLAS_LIBS?=	-lblas
+.endif
+
+.ifdef WITH_THREADS
 SUPERLU=	superlu_mt
 ALL_TARGET=	freebsd_parallel
 .else
-BLAS_LIBS?=	-L${LOCALBASE}/lib -lf77blas -latlas
 SUPERLU=	superlu
 ALL_TARGET=	freebsd_old
-.endif
-
-.ifndef WITH_THREADS
-pre-everything::
-	@${ECHO_MSG} "make WITH_THREADS=yes for threaded version"
 .endif
 
 pre-build:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; \
 	s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g ; \
 	s,%%SUPERLU%%,${SUPERLU},g ; \
-	s,%%BLAS_LIBS%%,${BLAS_LIBS},g' \
+	s,%%BLAS_LIBS%%,-L${LOCALBASE}/lib ${BLAS_LIBS},g' \
 	${WRKSRC}/makefile
 .ifdef WITH_THREADS
 	@${REINPLACE_CMD} -e 's,SUPERLU_MT_USE 0,SUPERLU_MT_USE 1,' \
 	${WRKSRC}/tnsuplu.h
-.else
+.else	# Serial
 	@${REINPLACE_CMD} -e 's,SUPERLU_USE 0,SUPERLU_USE 1,' \
 	${WRKSRC}/tnsuplu.h
 .endif
