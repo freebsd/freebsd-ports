@@ -270,8 +270,6 @@ lib/tix8.1/WinFile.tcl
 lib/tix8.1/pkgIndex.tcl
 lib/tix8.1/tclIndex
 lib/tixConfig.sh
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm include/tix/generic
 @dirrm include/tix/unix
 @dirrm include/tix
