@@ -189,6 +189,7 @@
     SUBDIR += htpdate
     SUBDIR += http_ping
     SUBDIR += httping
+    SUBDIR += iaxmodem
     SUBDIR += icmpinfo
     SUBDIR += icpld
     SUBDIR += ifdepd
