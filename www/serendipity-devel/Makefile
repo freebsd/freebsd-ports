@@ -8,26 +8,25 @@
 PORTNAME=	serendipity-devel
 PORTVERSION=	1.0.${SNAPSHOT}
 CATEGORIES=	www
-MASTER_SITES=	http://www.s9y.org/snapshots/ \
-		http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
+MASTER_SITES=	http://www.s9y.org/snapshots/
 DISTNAME=	s9y_${SNAPSHOT}
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	PHP based weblog software
 
-SNAPSHOT=	200606131537
-
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
+SNAPSHOT=	200606211537
 WRKSRC=		${WRKDIR}/serendipity-nightly
 NO_BUILD=	YES
-SERENDIPITY?=	www/${PORTNAME}
+SERENDIPITY?=	www/serendipity
 PLIST_SUB+=	SERENDIPITY=${SERENDIPITY}
 USE_PHP=	session pcre gd openssl mbstring iconv zlib xml
 SUB_LIST+=	SERENDIPITY=${SERENDIPITY}
 SUB_FILES=	pkg-message
+
+CONFLICTS=	serendipity-1.*
+LATEST_LINK=	serendipity-devel
 
 LOCALBASE?=	/usr/local
 

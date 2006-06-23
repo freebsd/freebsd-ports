@@ -296,6 +296,7 @@
 %%SERENDIPITY%%/bundled-libs/docs/index.php
 %%SERENDIPITY%%/bundled-libs/docs/stylesheet.css
 %%SERENDIPITY%%/bundled-libs/dragdrop.js
+%%SERENDIPITY%%/bundled-libs/imgedit.js
 %%SERENDIPITY%%/bundled-libs/tests/README
 %%SERENDIPITY%%/comment.php
 %%SERENDIPITY%%/deployment/archives/.ignore
@@ -548,6 +549,7 @@
 %%SERENDIPITY%%/include/plugin_api.inc.php
 %%SERENDIPITY%%/include/plugin_api_extension.inc.php
 %%SERENDIPITY%%/include/plugin_internal.inc.php
+%%SERENDIPITY%%/include/template_api.inc.php
 %%SERENDIPITY%%/include/tpl/config_local.inc.php
 %%SERENDIPITY%%/include/tpl/config_personal.inc.php
 %%SERENDIPITY%%/include/tpl/htaccess_cgi_errordocs.tpl
@@ -1478,6 +1480,29 @@
 %%SERENDIPITY%%/templates/contest/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/contest/preview.png
 %%SERENDIPITY%%/templates/contest/style.css
+%%SERENDIPITY%%/templates/default-php/IMPORTANT-TODO
+%%SERENDIPITY%%/templates/default-php/commentform.tpl
+%%SERENDIPITY%%/templates/default-php/commentpopup.tpl
+%%SERENDIPITY%%/templates/default-php/comments.tpl
+%%SERENDIPITY%%/templates/default-php/content.tpl
+%%SERENDIPITY%%/templates/default-php/entries.tpl
+%%SERENDIPITY%%/templates/default-php/entries_archives.tpl
+%%SERENDIPITY%%/templates/default-php/entries_summary.tpl
+%%SERENDIPITY%%/templates/default-php/feed_0.91.tpl
+%%SERENDIPITY%%/templates/default-php/feed_1.0.tpl
+%%SERENDIPITY%%/templates/default-php/feed_2.0.tpl
+%%SERENDIPITY%%/templates/default-php/feed_atom0.3.tpl
+%%SERENDIPITY%%/templates/default-php/feed_atom1.0.tpl
+%%SERENDIPITY%%/templates/default-php/feed_opml1.0.tpl
+%%SERENDIPITY%%/templates/default-php/index.tpl
+%%SERENDIPITY%%/templates/default-php/info.txt
+%%SERENDIPITY%%/templates/default-php/plugin_calendar.tpl
+%%SERENDIPITY%%/templates/default-php/plugin_categories.tpl
+%%SERENDIPITY%%/templates/default-php/preview.png
+%%SERENDIPITY%%/templates/default-php/preview_iframe.tpl
+%%SERENDIPITY%%/templates/default-php/sidebar.tpl
+%%SERENDIPITY%%/templates/default-php/template.inc.php
+%%SERENDIPITY%%/templates/default-php/trackbacks.tpl
 %%SERENDIPITY%%/templates/default-rtl/admin/img/background.jpg
 %%SERENDIPITY%%/templates/default-rtl/admin/img/banner_background.png
 %%SERENDIPITY%%/templates/default-rtl/admin/img/button_background.png
@@ -1493,6 +1518,10 @@
 %%SERENDIPITY%%/templates/default-rtl/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/default-rtl/preview.png
 %%SERENDIPITY%%/templates/default-rtl/style.css
+%%SERENDIPITY%%/templates/default-xml/index.tpl
+%%SERENDIPITY%%/templates/default-xml/info.txt
+%%SERENDIPITY%%/templates/default-xml/preview.png
+%%SERENDIPITY%%/templates/default-xml/template.inc.php
 %%SERENDIPITY%%/templates/default/admin/img/accept.png
 %%SERENDIPITY%%/templates/default/admin/img/background.jpg
 %%SERENDIPITY%%/templates/default/admin/img/banner_background.png
@@ -1512,6 +1541,10 @@
 %%SERENDIPITY%%/templates/default/admin/img/folder.png
 %%SERENDIPITY%%/templates/default/admin/img/grablet.gif
 %%SERENDIPITY%%/templates/default/admin/img/grablet_over.gif
+%%SERENDIPITY%%/templates/default/admin/img/imgedit_area.gif
+%%SERENDIPITY%%/templates/default/admin/img/imgedit_orientation.gif
+%%SERENDIPITY%%/templates/default/admin/img/imgedit_slider.gif
+%%SERENDIPITY%%/templates/default/admin/img/imgedit_varea.gif
 %%SERENDIPITY%%/templates/default/admin/img/infobar_background.png
 %%SERENDIPITY%%/templates/default/admin/img/install.png
 %%SERENDIPITY%%/templates/default/admin/img/install_now.png
@@ -1532,7 +1565,10 @@
 %%SERENDIPITY%%/templates/default/admin/img/user_chief.png
 %%SERENDIPITY%%/templates/default/admin/img/user_editor.png
 %%SERENDIPITY%%/templates/default/admin/img/zoom.png
+%%SERENDIPITY%%/templates/default/admin/imgedit.css
 %%SERENDIPITY%%/templates/default/admin/media_choose.tpl
+%%SERENDIPITY%%/templates/default/admin/media_imgedit.tpl
+%%SERENDIPITY%%/templates/default/admin/media_imgedit_done.tpl
 %%SERENDIPITY%%/templates/default/admin/media_items.tpl
 %%SERENDIPITY%%/templates/default/admin/media_pane.tpl
 %%SERENDIPITY%%/templates/default/admin/media_properties.tpl
@@ -1754,10 +1790,12 @@
 @dirrm %%SERENDIPITY%%/templates/default/img
 @dirrm %%SERENDIPITY%%/templates/default/admin/img
 @dirrm %%SERENDIPITY%%/templates/default/admin
+@dirrm %%SERENDIPITY%%/templates/default-xml
 @dirrm %%SERENDIPITY%%/templates/default-rtl/img
 @dirrm %%SERENDIPITY%%/templates/default-rtl/admin/img
 @dirrm %%SERENDIPITY%%/templates/default-rtl/admin
 @dirrm %%SERENDIPITY%%/templates/default-rtl
+@dirrm %%SERENDIPITY%%/templates/default-php
 @dirrm %%SERENDIPITY%%/templates/default
 @dirrm %%SERENDIPITY%%/templates/contest/img
 @dirrm %%SERENDIPITY%%/templates/contest/admin/img
