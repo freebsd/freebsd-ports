@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME:S/gtk2/gtk/}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	A command line tool for switching GTK themes
 
+DEPRECATED=		nothing new in over 2 years, use x11/gtkchtheme
+EXPIRATION_DATE=	2006-08-01
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
