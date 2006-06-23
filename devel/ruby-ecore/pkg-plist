@@ -1,0 +1,8 @@
+%%RUBY_SITEARCHLIBDIR%%/ecore.so
+%%RUBY_SITEARCHLIBDIR%%/ecore_con.so
+%%RUBY_SITEARCHLIBDIR%%/ecore_evas.so
+%%RUBY_SITEARCHLIBDIR%%/ecore_job.so
+%%RUBY_SITEARCHLIBDIR%%/ecore_x.so
+%%RUBY_SITEARCHLIBDIR%%/ecore/rb_ecore_evas.h
+%%RUBY_SITEARCHLIBDIR%%/ecore/rb_window.h
+@dirrm %%RUBY_SITEARCHLIBDIR%%/ecore
