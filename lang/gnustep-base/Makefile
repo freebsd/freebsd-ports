@@ -59,13 +59,6 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
 
-.if defined(GNUSTEP_WITH_BASE_GCC)
-LDCONFIG_GCC=
-.else
-GCCSH!=		(cd ${PORTSDIR}/${GNUSTEP_GCC_PORT} && make -V RC_D_SH)
-LDCONFIG_GCC=	${LOCALBASE}/${GCCSH}
-.endif
-
 post-build:
 .for i in ${MAKE_APPS}
 	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
