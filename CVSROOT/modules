@@ -13924,6 +13924,7 @@ webfwlog	ports/security/webfwlog
 webglimpse	ports/www/webglimpse
 webjob		ports/sysutils/webjob
 weblint		ports/www/weblint
+weblint++	ports/www/weblint++
 webmin		ports/sysutils/webmin
 webredirect	ports/www/webredirect
 webreport	ports/www/webreport
