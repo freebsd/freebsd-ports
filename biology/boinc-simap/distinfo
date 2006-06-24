@@ -1,3 +1,6 @@
 MD5 (simap_5.08_i386-pc-freebsd_dyn) = cfc33759f7132680fc3f1f6e8c03fe1a
 SHA256 (simap_5.08_i386-pc-freebsd_dyn) = 3b7bb8d150b9f41e2ff84c02b6f54008bc90448f19831cd9110e4c2981a36db2
 SIZE (simap_5.08_i386-pc-freebsd_dyn) = 950606
+MD5 (simap_5.08_i686-pc-freebsd_dyn) = cf940ef49a7bbea3e75a2b752ba1d909
+SHA256 (simap_5.08_i686-pc-freebsd_dyn) = d8da5e2b994ff3ba38374b76c9e4a96c6f46038673cc3b08f54a5e3773491dff
+SIZE (simap_5.08_i686-pc-freebsd_dyn) = 405308
