@@ -64,13 +64,9 @@ CONFIGURE_ARGS+=	--with-system-zlib --includedir=${TARGLIB}/include/Java
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
-INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
 EXTRA_SHLIB=	libgcc_s
-SUB_LIST=	TARGLIB="${TARGLIB}"
-SUB_FILES=	gcc.sh
-RC_D_SH=	etc/rc.d/gcc32.sh
-PLIST_FILES+=	${RC_D_SH}
+USE_LDCONFIG=	${TARGLIB}
 .else
 CONFIGURE_ARGS+=	--disable-shared
 .endif
@@ -99,6 +95,7 @@ pre-install:
 .endif
 
 post-install:
+	-@${MKDIR} ${PREFIX}/libdata/ldconfig
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
 	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
