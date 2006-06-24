@@ -72,6 +72,7 @@
     SUBDIR += cdparanoia
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
+    SUBDIR += checkmate
     SUBDIR += cheesetracker
     SUBDIR += chordpack
     SUBDIR += cmp3
@@ -363,7 +364,6 @@
     SUBDIR += mp3stat
     SUBDIR += mp3wrap
     SUBDIR += mpc
-    SUBDIR += mpck
     SUBDIR += mpegaudio
     SUBDIR += mpeglib_artsplug
     SUBDIR += mpg123
