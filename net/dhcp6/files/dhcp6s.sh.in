@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dhcp6s
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to
+# /etc/rc.conf.d/dhcp6s /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dhcp6s_enable (bool):			Set to NO by default.
+#		Set it to YES to enable dhcp6s.
+# dhcp6s_config (path):			Set to %%PREFIX%%/etc/dhcp6s.conf
+#		by default.
+# dhcp6s_interface (NIC):		Not defined by default.
+#		Set it to the network interface where dhcp6s should work on.
+# dhcp6s_flags (additional arguments):	Not defined by default.
+#
+
+. %%RC_SUBR%%
+
+name="dhcp6s"
+rcvar=${name}_enable
+
+prefix=%%PREFIX%%
+command=${prefix}/sbin/${name}
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${dhcp6s_enable="NO"}
+: ${dhcp6s_config="${prefix}/etc/${name}.conf"}
+
+required_files=${dhcp6s_config}
+command_args="-c ${dhcp6s_config} ${dhcp6s_flags} ${dhcp6s_interface}"
+
+dhcp6s_precmd()
+{
+	if [ -z ${dhcp6s_interface} ]; then
+		warn "dhcp6s_interface is not set."
+		return 1
+	fi
+}
+
+run_rc_command "$1"

@@ -6,33 +6,24 @@
 #
 
 PORTNAME=	dhcp6
-PORTVERSION=	20060114
-PORTREVISION=	0
+PORTVERSION=	20060322
+#PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wide-dhcpv6
-DISTNAME= wide-dhcpv6-${PORTVERSION}
+DISTNAME=	wide-dhcpv6-${PORTVERSION}
 
 MAINTAINER=	suz@FreeBSD.org
 COMMENT=	KAME DHCP6 client, server, and relay
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${LOCALBASE}/etc --with-localdbdir=/var/db
 
 MAN5=		dhcp6c.conf.5 dhcp6s.conf.5
 MAN8=		dhcp6c.8 dhcp6s.8 dhcp6relay.8 dhcp6ctl.8
 
-RC_SCRIPTS=	dhcp6c.sh dhcp6relay.sh dhcp6s.sh
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
-
-post-patch:
-.for f in ${RC_SCRIPTS}
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${f} > ${WRKDIR}/${f}
-.endfor
+USE_RC_SUBR=	dhcp6c.sh dhcp6relay.sh dhcp6s.sh
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -41,8 +32,5 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/dhcp6c.conf.sample ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/dhcp6s.conf.sample ${PREFIX}/etc
-.for f in ${RC_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/etc/rc.d/${f}
-.endfor
 
 .include <bsd.port.mk>

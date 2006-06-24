@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dhcp6c
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to
+# /etc/rc.conf.d/dhcp6c /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dhcp6c_enable (bool):			Set to NO by default.
+#		Set it to YES to enable dhcp6c.
+# dhcp6c_config (path):			Set to %%PREFIX%%/etc/dhcp6c.conf
+#		by default.
+# dhcp6c_pidfile (path):		Set to /var/run/dhcp6c.pid
+#		by default.
+# dhcp6c_interfaces (NIC list):		Not defined by default.
+#		Set it to the network interface(s) where dhcp6c should work on.
+# dhcp6c_flags (additional arguments):	Not defined by default.
+#
+
+. %%RC_SUBR%%
+
+name="dhcp6c"
+rcvar=${name}_enable
+
+prefix="%%PREFIX%%"
+command="${prefix}/sbin/${name}"
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${dhcp6c_enable="NO"}
+: ${dhcp6c_config="${prefix}/etc/${name}.conf"}
+: ${dhcp6c_pidfile="/var/run/${name}.pid"}
+
+required_files="${dhcp6c_config}"
+pidfile="${dhcp6c_pidfile}"
+command_args="-c ${dhcp6c_config} -p ${dhcp6c_pidfile} ${dhcp6c_flags} ${dhcp6c_interfaces}"
+
+dhcp6c_precmd()
+{
+	if [ -z ${dhcp6c_interfaces} ]; then
+		warn "dhcp6c_interfaces is not set."
+		return 1
+	fi
+}
+
+run_rc_command "$1"
