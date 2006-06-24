@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nbd-server
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nbd
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	glib20
 USE_GETOPT_LONG=yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --enable-lfs --enable-syslog
 
 PLIST_FILES=	bin/nbd-server
 MAN1=		nbd-server.1
