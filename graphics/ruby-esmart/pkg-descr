@@ -1,0 +1,5 @@
+ruby-esmart is a set of Ruby language bindings for Enlightenment's Evas objects
+library, Esmart.
+
+Author:	Tilman Sauerbeck <tilman@code-monkey.de>
+WWW:	http://code-monkey.de/ruby-efl/
