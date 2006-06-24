@@ -31,10 +31,12 @@ sbin=		uscheduled
 PLIST_FILES=	${bin:S,^,bin/,}
 PLIST_FILES+=	${sbin:S,^,sbin/,}
 
-do-build:
-	${ECHO_CMD} ${CC} > ${WRKSRC}/src/conf-cc
-	${ECHO_CMD} ${CFLAGS} > ${WRKSRC}/src/conf-cflags
-	cd ${WRKSRC} && package/build
+pre-build:
+	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-cc
+	${ECHO_CMD} "${CFLAGS}" > ${WRKSRC}/src/conf-cflags
+
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} check
 
 do-install:
 .if !defined(NOPORTDOCS)
