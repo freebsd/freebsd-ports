@@ -10,7 +10,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTNAME=	netdump-${PORTVERSION}
 
-MAINTAINER=	stas@core.310.ru
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	RedHat server part of netdump/netconsole package for linux
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
