@@ -60,6 +60,9 @@ IGNORE= Use SMX_WITH_BERKELEYDB to select Berkeley DB.
 BERKELEYDB_SUFFIX=	-intbdb
 PLIST_SUB+=	WITH_BDBINT=""
 .else
+.if defined(SMX_WITH_BDB_VER)
+SMX_WITH_BERKELEYDB=yes
+.endif
 .if !defined(SMX_WITH_BERKELEYDB)
 SMX_WITH_BERKELEYDB=yes
 WITH_BDB_VER=	43
@@ -125,6 +128,8 @@ post-configure:
 test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+
+regression-test:	test
 
 pre-install:
 	if ! pw groupshow smxm; then pw groupadd smxs -g 260; fi
