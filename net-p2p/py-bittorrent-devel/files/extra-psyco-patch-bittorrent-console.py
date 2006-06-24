@@ -1,5 +1,5 @@
---- bittorrent-console.py	Wed Oct 12 01:08:15 2005
-+++ bittorrent-console.py	Wed Oct 12 07:57:46 2005
+--- bittorrent-console.py.orig	Tue Jun  6 20:43:25 2006
++++ bittorrent-console.py	Thu Jun 15 14:44:32 2006
 @@ -14,6 +14,13 @@
  
  from __future__ import division
@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- from BitTorrent.platform import install_translation
- install_translation()
+ from BitTorrent.translation import _
  
+ import pdb

@@ -1,5 +1,5 @@
---- bittorrent-curses.py	Wed Oct 12 01:08:15 2005
-+++ bittorrent-curses.py	Wed Oct 12 07:57:28 2005
+--- bittorrent-curses.py.orig	Tue Jun  6 20:43:25 2006
++++ bittorrent-curses.py	Thu Jun 15 14:45:05 2006
 @@ -15,6 +15,13 @@
  
  from __future__ import division
@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- from BitTorrent.platform import install_translation
- install_translation()
+ from BitTorrent.translation import _
  
+ SPEW_SCROLL_RATE = 1
