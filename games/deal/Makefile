@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deal
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/deal/
 
