@@ -1,5 +1,5 @@
---- launchmany-curses.py	Wed Oct 12 01:08:27 2005
-+++ launchmany-curses.py	Wed Oct 12 07:58:27 2005
+--- launchmany-curses.py.orig	Tue Jun  6 20:43:42 2006
++++ launchmany-curses.py	Thu Jun 15 14:46:16 2006
 @@ -14,6 +14,13 @@
  
  from __future__ import division
@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- from BitTorrent.platform import install_translation
- install_translation()
+ from BitTorrent.translation import _
  
+ DOWNLOAD_SCROLL_RATE = 1

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.4.0
-PORTREVISION=	4
+PORTVERSION=	4.20.0
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://download.bittorrent.com/dl/
@@ -24,6 +23,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
 USE_TWISTED_RUN=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
@@ -32,12 +32,12 @@ NO_LATEST_LINK=	yes
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	\
+		INSTALL.unix.txt \
 		LICENSE.txt \
 		README.txt \
 		TRACKERLESS.txt \
 		credits.txt \
-		credits-l10n.txt \
-		redirdonate.html
+		credits-l10n.txt
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
 .endif
@@ -56,40 +56,110 @@ PLIST_FILES+=	\
 		bin/bittorrent \
 		bin/maketorrent \
 		share/pixmaps/BitTorrent/bittorrent.ico \
-		share/pixmaps/BitTorrent/icons/default/abort.png \
-		share/pixmaps/BitTorrent/icons/default/broken.png \
-		share/pixmaps/BitTorrent/icons/default/finished.png \
-		share/pixmaps/BitTorrent/icons/default/info.png \
-		share/pixmaps/BitTorrent/icons/default/pause.png \
-		share/pixmaps/BitTorrent/icons/default/paused.png \
-		share/pixmaps/BitTorrent/icons/default/play.png \
-		share/pixmaps/BitTorrent/icons/default/queued.png \
-		share/pixmaps/BitTorrent/icons/default/remove.png \
-		share/pixmaps/BitTorrent/icons/default/running.png \
-		share/pixmaps/BitTorrent/icons/default/status-broken.png \
-		share/pixmaps/BitTorrent/icons/default/status-natted.png \
-		share/pixmaps/BitTorrent/icons/default/status-pre-natted.png \
-		share/pixmaps/BitTorrent/icons/default/status-running.png \
-		share/pixmaps/BitTorrent/icons/default/status-starting.png \
-		share/pixmaps/BitTorrent/icons/default/status-stopped.png \
-		share/pixmaps/BitTorrent/icons/default/trashcan.png \
-		share/pixmaps/BitTorrent/icons/old/broken.png \
-		share/pixmaps/BitTorrent/icons/old/finished.png \
-		share/pixmaps/BitTorrent/icons/old/info.png \
-		share/pixmaps/BitTorrent/icons/old/pause.png \
-		share/pixmaps/BitTorrent/icons/old/paused.png \
-		share/pixmaps/BitTorrent/icons/old/play.png \
-		share/pixmaps/BitTorrent/icons/old/queued.png \
-		share/pixmaps/BitTorrent/icons/old/remove.png \
-		share/pixmaps/BitTorrent/icons/old/running.png \
-		share/pixmaps/BitTorrent/icons/old/status-broken.png \
-		share/pixmaps/BitTorrent/icons/old/status-natted.png \
-		share/pixmaps/BitTorrent/icons/old/status-pre-natted.png \
-		share/pixmaps/BitTorrent/icons/old/status-running.png \
-		share/pixmaps/BitTorrent/icons/old/status-starting.png \
-		share/pixmaps/BitTorrent/icons/old/status-stopped.png \
-		share/pixmaps/BitTorrent/logo/bittorrent_32.png \
-		share/pixmaps/BitTorrent/logo/bittorrent_96.png
+		share/pixmaps/BitTorrent/flags/AE.png \
+		share/pixmaps/BitTorrent/flags/AR.png \
+		share/pixmaps/BitTorrent/flags/AT.png \
+		share/pixmaps/BitTorrent/flags/AU.png \
+		share/pixmaps/BitTorrent/flags/BE.png \
+		share/pixmaps/BitTorrent/flags/BG.png \
+		share/pixmaps/BitTorrent/flags/BR.png \
+		share/pixmaps/BitTorrent/flags/CA.png \
+		share/pixmaps/BitTorrent/flags/CH.png \
+		share/pixmaps/BitTorrent/flags/CL.png \
+		share/pixmaps/BitTorrent/flags/CN.png \
+		share/pixmaps/BitTorrent/flags/CO.png \
+		share/pixmaps/BitTorrent/flags/CY.png \
+		share/pixmaps/BitTorrent/flags/CZ.png \
+		share/pixmaps/BitTorrent/flags/DE.png \
+		share/pixmaps/BitTorrent/flags/DK.png \
+		share/pixmaps/BitTorrent/flags/ES.png \
+		share/pixmaps/BitTorrent/flags/EU.png \
+		share/pixmaps/BitTorrent/flags/FI.png \
+		share/pixmaps/BitTorrent/flags/FR.png \
+		share/pixmaps/BitTorrent/flags/GB.png \
+		share/pixmaps/BitTorrent/flags/GR.png \
+		share/pixmaps/BitTorrent/flags/GT.png \
+		share/pixmaps/BitTorrent/flags/HK.png \
+		share/pixmaps/BitTorrent/flags/HU.png \
+		share/pixmaps/BitTorrent/flags/IT.png \
+		share/pixmaps/BitTorrent/flags/JP.png \
+		share/pixmaps/BitTorrent/flags/KR.png \
+		share/pixmaps/BitTorrent/flags/KW.png \
+		share/pixmaps/BitTorrent/flags/LT.png \
+		share/pixmaps/BitTorrent/flags/LV.png \
+		share/pixmaps/BitTorrent/flags/MX.png \
+		share/pixmaps/BitTorrent/flags/NA.png \
+		share/pixmaps/BitTorrent/flags/NL.png \
+		share/pixmaps/BitTorrent/flags/NO.png \
+		share/pixmaps/BitTorrent/flags/PR.png \
+		share/pixmaps/BitTorrent/flags/PT.png \
+		share/pixmaps/BitTorrent/flags/RU.png \
+		share/pixmaps/BitTorrent/flags/SE.png \
+		share/pixmaps/BitTorrent/flags/SG.png \
+		share/pixmaps/BitTorrent/flags/SI.png \
+		share/pixmaps/BitTorrent/flags/TW.png \
+		share/pixmaps/BitTorrent/flags/US.png \
+		share/pixmaps/BitTorrent/flags/YU.png \
+		share/pixmaps/BitTorrent/flags/ZA.png \
+		share/pixmaps/BitTorrent/flags/noimage.png \
+		share/pixmaps/BitTorrent/flags/unknown.png \
+		share/pixmaps/BitTorrent/logo/banner.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_icon.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_icon_16.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_icon_24.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_icon_32.png \
+		share/pixmaps/BitTorrent/logo/bittorrent_icon_48.png \
+		share/pixmaps/BitTorrent/themes/default/add_16.png \
+		share/pixmaps/BitTorrent/themes/default/add_24.png \
+		share/pixmaps/BitTorrent/themes/default/add_32.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/first_16.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/first_24.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/first_32.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/never_16.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/never_24.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/never_32.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/normal_16.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/normal_24.png \
+		share/pixmaps/BitTorrent/themes/default/fileops/normal_32.png \
+		share/pixmaps/BitTorrent/themes/default/progressbar.png \
+		share/pixmaps/BitTorrent/themes/default/search_16.png \
+		share/pixmaps/BitTorrent/themes/default/search_24.png \
+		share/pixmaps/BitTorrent/themes/default/search_32.png \
+		share/pixmaps/BitTorrent/themes/default/settings_16.png \
+		share/pixmaps/BitTorrent/themes/default/settings_24.png \
+		share/pixmaps/BitTorrent/themes/default/settings_32.png \
+		share/pixmaps/BitTorrent/themes/default/statuslight/broken.png \
+		share/pixmaps/BitTorrent/themes/default/statuslight/natted.png \
+		share/pixmaps/BitTorrent/themes/default/statuslight/pre-natted.png \
+		share/pixmaps/BitTorrent/themes/default/statuslight/running.png \
+		share/pixmaps/BitTorrent/themes/default/statuslight/starting.png \
+		share/pixmaps/BitTorrent/themes/default/statuslight/stopped.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/info_16.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/info_24.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/info_32.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/launch_16.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/launch_24.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/launch_32.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/remove_16.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/remove_24.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/remove_32.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/resume_16.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/resume_24.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/resume_32.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/stop_16.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/stop_24.png \
+		share/pixmaps/BitTorrent/themes/default/torrentops/stop_32.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/complete.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/created.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/downloading.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/error.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/finishing.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/force-seed.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/paused.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/seeding.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/starting.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/stopped.png \
+		share/pixmaps/BitTorrent/themes/default/torrentstate/unknown.png
 
 PLIST_SUB+=	\
 		GUI=""
@@ -116,6 +186,12 @@ EXTRA_PATCHES+=	\
 		${FILESDIR}/extra-psyco-patch-torrentinfo-console.py
 .endif
 
+# public.key
+PLIST_DIRS+=	\
+		%%DATADIR%%
+PLIST_FILES+=	\
+		%%DATADIR%%/public.key
+
 pre-everything::
 .ifndef(WITHOUT_GUI)
 	@${ECHO_MSG} '===> Define WITHOUT_GUI to disable GUI installation'
@@ -139,9 +215,9 @@ post-patch:
 post-install:
 # set proper permissions
 	@${CHMOD} -R ${SHAREMODE} \
-		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
-	@${CHMOD} ${SHAREMODE} ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
-	@${CHMOD} a+x ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
+		${PYTHONPREFIX_SITELIBDIR}/BitTorrent
+	@${CHMOD} ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/BitTorrent
+	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/BitTorrent
 .ifndef(WITHOUT_GUI)
 # pixmaps
 	@${CHMOD} -R ${SHAREMODE} \
@@ -153,6 +229,8 @@ post-install:
 # docs
 	@${CHMOD} -R ${SHAREMODE} \
 		${DOCSDIR}/*
+# install missing doc
+	@${INSTALL_DATA} ${WRKSRC}/TRACKERLESS.txt ${DOCSDIR}
 .endif
 # public.key
 	@${MKDIR} ${DATADIR}

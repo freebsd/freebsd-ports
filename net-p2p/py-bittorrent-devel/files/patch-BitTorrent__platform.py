@@ -1,7 +1,7 @@
---- BitTorrent/platform.py.orig	Mon Aug 15 20:06:05 2005
-+++ BitTorrent/platform.py	Wed Aug 24 00:12:59 2005
-@@ -41,7 +41,7 @@
-     del wh, wv
+--- ./BitTorrent/platform.py.orig	Mon Jun 12 22:46:01 2006
++++ ./BitTorrent/platform.py	Wed Jun 21 23:57:08 2006
+@@ -131,7 +131,7 @@
+ 
  
  def calc_unix_dirs():
 -    appdir = '%s-%s'%(app_name, version)

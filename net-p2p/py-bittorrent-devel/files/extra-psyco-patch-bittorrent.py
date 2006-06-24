@@ -1,5 +1,5 @@
---- bittorrent.py	Wed Oct 12 01:08:18 2005
-+++ bittorrent.py	Wed Oct 12 07:58:12 2005
+--- bittorrent.py.orig	Tue May 16 20:59:49 2006
++++ bittorrent.py	Thu May 18 23:04:01 2006
 @@ -14,6 +14,13 @@
  
  from __future__ import division
@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- from BitTorrent.platform import install_translation
- install_translation()
- 
+ import os
+ import sys
+ try:
