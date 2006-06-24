@@ -1,5 +1,5 @@
---- install.sh.orig	Tue Jun 20 14:02:51 2006
-+++ install.sh	Tue Jun 20 14:24:28 2006
+--- install.sh.orig	Fri Jun 16 06:18:52 2006
++++ install.sh	Sat Jun 24 16:50:01 2006
 @@ -805,10 +805,9 @@
      case "${machine}:${os}" in
  	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD)
@@ -137,7 +137,21 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1098,7 +1045,7 @@
+@@ -1063,13 +1010,6 @@
+ done"
+ 
+ case "${os}" in
+-	AnyBSD|OpenBSD)
+-wrapper_contain="${wrapper_contain}
+-
+-# Make sure the compat libraries are found
+-test -d /usr/local/lib/compat/ && LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:/usr/local/lib/compat/\"
+-"
+-	;;
+     SunOS)
+ wrapper_contain="${wrapper_contain}
+ 
+@@ -1098,7 +1038,7 @@
  };
  
  // Opera package classes get all permissions
@@ -146,7 +160,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1167,7 +1114,7 @@
+@@ -1167,7 +1107,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -155,7 +169,7 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1198,7 +1145,7 @@
+@@ -1198,7 +1138,7 @@
  
      #cp $cpv $cpf wrapper.sh $wrapper_dir/opera
      generate_wrapper
@@ -164,7 +178,7 @@
  
      # Manual page
      debug_msg 1 "Manual page"
-@@ -1207,7 +1154,7 @@
+@@ -1207,7 +1147,7 @@
      chmod $chmodv 755 ${man_dir}
      mkdir $mkdirv $mkdirp ${man_dir}/man1
      chmod $chmodv 755 ${man_dir}/man1
@@ -173,7 +187,7 @@
  
      # Documentation
      debug_msg 1 "Documentation"
-@@ -1239,9 +1186,6 @@
+@@ -1239,9 +1179,6 @@
  	mkdir $mkdirv $mkdirp $share_dir/ini/
  	chmod $chmodv 755 $share_dir/ini
  	cp $cpv $cpf $cpR ini/* $share_dir/ini/
@@ -183,7 +197,7 @@
      fi
  
      mkdir $mkdirv $mkdirp $share_dir/locale/
-@@ -1328,43 +1272,13 @@
+@@ -1328,43 +1265,13 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -230,7 +244,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1416,19 +1330,19 @@
+@@ -1416,19 +1323,19 @@
      # arg1 = location
      # arg2 = type
  
@@ -253,7 +267,7 @@
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1452,7 +1366,7 @@
+@@ -1452,7 +1359,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -262,7 +276,7 @@
  Terminal=false"
  
  # Application is not a category, according to
-@@ -1467,25 +1381,26 @@
+@@ -1467,25 +1374,26 @@
  	if test "${2}" = "xdg"; then
  	    desktop_contain="${desktop_contain}
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -295,7 +309,7 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1573,88 +1488,26 @@
+@@ -1573,88 +1481,26 @@
      # This function searches for common gnome icon paths.
      debug_msg 1 "in gnome()"
  
@@ -403,7 +417,7 @@
  }
  
  kde()
-@@ -1662,58 +1515,46 @@
+@@ -1662,58 +1508,46 @@
      # This function searches for common kde2 and kde 3 icon paths.
      debug_msg 1 "in kde()"
  
