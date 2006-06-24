@@ -7,7 +7,6 @@ GNUSTEP_SYSTEM_ROOT="${PREFIX}/GNUstep/System"
 
 case "$1" in
 start)
-	%%LDCONFIG_GCC%%
 	if [ -e ${GNUSTEP_SYSTEM_ROOT}/Library/Makefiles/GNUstep.sh ]; then
 		. ${GNUSTEP_SYSTEM_ROOT}/Library/Makefiles/GNUstep.sh
 		rm -f ${PIDFILE}
