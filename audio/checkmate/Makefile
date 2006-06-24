@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mpck
+PORTNAME=	checkmate
 PORTVERSION=	0.14
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.linuxonly.nl/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
-DISTNAME=	checkmate-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for checking mp3 files for errors
@@ -21,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		mpck.1
+MLINKS=		mpck.1 checkmate.1
 PLIST_FILES=	bin/mpck
 
 .include <bsd.port.mk>
