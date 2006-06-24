@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bind9
-PORTVERSION=	9.3.1
+PORTVERSION=	9.3.2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -23,7 +23,7 @@ USE_OPENLDAP=	yes
 CONFLICTS=	bind-8.* bind84-8.* bind9-9.* bind9-dlz-* host-* skalibs-*
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
-ISCVERSION=	9.3.1
+ISCVERSION=	9.3.2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --with-openssl \
