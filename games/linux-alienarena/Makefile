@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	alienarena
-DISTVERSION=	2006.ge
+DISTVERSION=	2006.ue
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/
+MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/ \
+		http://cor.planetquake.gamespy.com/codered/files/ \
+		http://www.forsakenweb.com/gamepage/loaders/games/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}-i386
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}-x86
+EXTRACT_SUFX=	.run
 
 MAINTAINER=	acardenas@bsd.org.pe
 COMMENT=	Alien Arena 2006 (Linux version)
@@ -20,19 +23,14 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1.3:${PORTSDIR}/graphics/linux
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
-.if defined(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.endif
-
-ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	linux-alienarena linux-alienarena-ded
-SUB_LIST=	LIBDIR=${LIBDIR}
-PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
+SUB_LIST=	LIBDIR="${LIBDIR}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 
@@ -45,16 +43,36 @@ DESKTOP_ENTRIES="Alien Arena 2006 (Linux version)" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not extract (gzip error)
+.endif
+
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.endif
+
+.if ${ARCH} == "i386"
+ENGINE_ARCH=	x86
+.elif ${ARCH} == "amd64"
+ENGINE_ARCH=	x86_64
+.endif
+
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} && \
+		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
+		${TAR} zxf -
+
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
-	cd ${WRKSRC} && \
+	cd ${WRKSRC}/engine/${ENGINE_ARCH} && \
 		${INSTALL_PROGRAM} arena/gamei386.so ${LIBDIR}/arena && \
 		${INSTALL_PROGRAM} data1/gamei386.so ${LIBDIR}/data1
 	${LN} -sf ${DATADIR}/arena/* ${LIBDIR}/arena
 	${LN} -sf ${DATADIR}/botinfo ${LIBDIR}
 	${LN} -sf ${DATADIR}/data1/* ${LIBDIR}/data1
 .for f in crx.sdl crded
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/engine/${ENGINE_ARCH}/${f} ${LIBDIR}
 .endfor
 .for f in linux-alienarena linux-alienarena-ded
 	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
