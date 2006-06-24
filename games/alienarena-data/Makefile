@@ -6,33 +6,39 @@
 #
 
 PORTNAME=	alienarena
-DISTVERSION=	2006.ge
+DISTVERSION=	2006.ue
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/:data \
-		ftp://ftp.alepulver.com.ar/distfiles/:patch
+MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/ \
+		http://cor.planetquake.gamespy.com/codered/files/ \
+		http://www.forsakenweb.com/gamepage/loaders/games/
 PKGNAMESUFFIX=	-data
-DISTFILES=	${PORTNAME}-2006ge-x86.run:data \
-		aa2k6updateGE501c-x86.zip:patch
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}-x86
+EXTRACT_SUFX=	.run
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+NO_PACKAGE=	Package will be 163MB, set FORCE_PACKAGE if you want it
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not extract (gzip error)
+.endif
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && \
-		${TAIL} -c +8814 ${DISTDIR}/${PORTNAME}-2006ge-x86.run | \
+		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
-	@${TAR} jxf ${WRKDIR}/alienarena-2006ge-data.tar.bz2 -C ${WRKDIR}
-	@${UNZIP_CMD} -qod ${WRKDIR} ${DISTDIR}/aa2k6updateGE501c-x86.zip
+	@${TAR} zxf ${WRKDIR}/${PORTNAME}-${DISTVERSION:S/.//}-data.tar.bz2 \
+		-C ${WRKDIR}
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} arena/game* data1/game*
+	@cd ${WRKSRC}/data1/levelshots && \
+		${MV} ctf-strongholdl.txt ctf-stronghold.txt
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -43,4 +49,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

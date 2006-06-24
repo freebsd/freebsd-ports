@@ -53,6 +53,8 @@
 %%DATADIR%%/botinfo/nav/aoa2.nod
 %%DATADIR%%/botinfo/nav/ctf-blood.nod
 %%DATADIR%%/botinfo/nav/ctf-frost.nod
+%%DATADIR%%/botinfo/nav/ctf-stronghold.nod
+%%DATADIR%%/botinfo/nav/ctf-terminal.nod
 %%DATADIR%%/botinfo/nav/ctf0.nod
 %%DATADIR%%/botinfo/nav/ctf1.nod
 %%DATADIR%%/botinfo/nav/ctf2.nod
@@ -130,6 +132,7 @@
 %%DATADIR%%/data1/gfx/caustics.tga
 %%DATADIR%%/data1/gfx/cellfx.tga
 %%DATADIR%%/data1/gfx/chrome.tga
+%%DATADIR%%/data1/gfx/citymask.tga
 %%DATADIR%%/data1/gfx/disruptorbase.tga
 %%DATADIR%%/data1/gfx/disruptormask.tga
 %%DATADIR%%/data1/gfx/electrics.tga
@@ -182,6 +185,10 @@
 %%DATADIR%%/data1/levelshots/ctf-blood.txt
 %%DATADIR%%/data1/levelshots/ctf-frost.tga
 %%DATADIR%%/data1/levelshots/ctf-frost.txt
+%%DATADIR%%/data1/levelshots/ctf-stronghold.tga
+%%DATADIR%%/data1/levelshots/ctf-stronghold.txt
+%%DATADIR%%/data1/levelshots/ctf-terminal.tga
+%%DATADIR%%/data1/levelshots/ctf-terminal.txt
 %%DATADIR%%/data1/levelshots/ctf0.tga
 %%DATADIR%%/data1/levelshots/ctf0.txt
 %%DATADIR%%/data1/levelshots/ctf1.tga
@@ -239,6 +246,8 @@
 %%DATADIR%%/data1/maps/aoa2.bsp
 %%DATADIR%%/data1/maps/ctf-blood.bsp
 %%DATADIR%%/data1/maps/ctf-frost.bsp
+%%DATADIR%%/data1/maps/ctf-stronghold.bsp
+%%DATADIR%%/data1/maps/ctf-terminal.bsp
 %%DATADIR%%/data1/maps/ctf0.bsp
 %%DATADIR%%/data1/maps/ctf1.bsp
 %%DATADIR%%/data1/maps/ctf2.bsp
@@ -1058,6 +1067,7 @@
 %%DATADIR%%/data1/sound/music/aat2.wav
 %%DATADIR%%/data1/sound/music/aat3.wav
 %%DATADIR%%/data1/sound/music/aoa-frost.wav
+%%DATADIR%%/data1/sound/music/ctf-terminal.wav
 %%DATADIR%%/data1/sound/music/dm-beyond.wav
 %%DATADIR%%/data1/sound/music/dm-bootcamp.wav
 %%DATADIR%%/data1/sound/music/dm-egyptian.wav
@@ -1107,6 +1117,10 @@
 %%DATADIR%%/data1/sound/player/step2.wav
 %%DATADIR%%/data1/sound/player/step3.wav
 %%DATADIR%%/data1/sound/player/step4.wav
+%%DATADIR%%/data1/sound/player/step_metal1.wav
+%%DATADIR%%/data1/sound/player/step_metal2.wav
+%%DATADIR%%/data1/sound/player/step_metal3.wav
+%%DATADIR%%/data1/sound/player/step_metal4.wav
 %%DATADIR%%/data1/sound/player/wade1.wav
 %%DATADIR%%/data1/sound/player/wade2.wav
 %%DATADIR%%/data1/sound/player/wade3.wav
@@ -1481,6 +1495,14 @@
 %%DATADIR%%/data1/textures/arena6/alienarena.wal
 %%DATADIR%%/data1/textures/arena6/bricks1.tga
 %%DATADIR%%/data1/textures/arena6/bricks1.wal
+%%DATADIR%%/data1/textures/arena6/city20.tga
+%%DATADIR%%/data1/textures/arena6/city20.wal
+%%DATADIR%%/data1/textures/arena6/ctfwinblue.tga
+%%DATADIR%%/data1/textures/arena6/ctfwinblue.wal
+%%DATADIR%%/data1/textures/arena6/ctfwinred.tga
+%%DATADIR%%/data1/textures/arena6/ctfwinred.wal
+%%DATADIR%%/data1/textures/arena6/fodblue.tga
+%%DATADIR%%/data1/textures/arena6/fodblue.wal
 %%DATADIR%%/data1/textures/arena6/girder1.tga
 %%DATADIR%%/data1/textures/arena6/girder1.wal
 %%DATADIR%%/data1/textures/arena6/girder2.tga
@@ -1503,6 +1525,8 @@
 %%DATADIR%%/data1/textures/arena6/plate5.wal
 %%DATADIR%%/data1/textures/arena6/rimlight.tga
 %%DATADIR%%/data1/textures/arena6/rimlight.wal
+%%DATADIR%%/data1/textures/arena6/rimlight2.tga
+%%DATADIR%%/data1/textures/arena6/rimlight2.wal
 %%DATADIR%%/data1/textures/arena6/rings.tga
 %%DATADIR%%/data1/textures/arena6/rings.wal
 %%DATADIR%%/data1/textures/arena6/skull.tga
