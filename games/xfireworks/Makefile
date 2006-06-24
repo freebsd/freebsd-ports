@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfireworks
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
 		http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
