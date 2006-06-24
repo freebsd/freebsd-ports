@@ -91,11 +91,10 @@ pre-configure:
 pre-install:
 	${MKDIR} ${PREFIX}/info
 .if defined(WANT_SHAREDLIBS)
-	${INSTALL_SCRIPT} ${WRKDIR}/gcc.sh ${PREFIX}/${RC_D_SH}
+	-@${MKDIR} ${PREFIX}/libdata/ldconfig
 .endif
 
 post-install:
-	-@${MKDIR} ${PREFIX}/libdata/ldconfig
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
 	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
