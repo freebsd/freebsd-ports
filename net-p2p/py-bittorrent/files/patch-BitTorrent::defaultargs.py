@@ -1,11 +1,11 @@
---- BitTorrent/defaultargs.py.orig	Wed Jan 11 19:16:54 2006
-+++ BitTorrent/defaultargs.py	Wed Jan 11 19:17:16 2006
-@@ -33,6 +33,8 @@
+--- BitTorrent/defaultargs.py.orig	Sat Jun 24 15:17:24 2006
++++ BitTorrent/defaultargs.py	Sat Jun 24 15:17:33 2006
+@@ -20,6 +20,8 @@
  if os.name == 'posix':
      if os.uname()[0] in ['Darwin']:
-         BAD_LIBC_WORKAROUND_DEFAULT = MYTRUE
+         BAD_LIBC_WORKAROUND_DEFAULT = True
 +    if os.uname()[0] in ['FreeBSD']:
-+        BAD_LIBC_WORKAROUND_DEFAULT = MYTRUE
++        BAD_LIBC_WORKAROUND_DEFAULT = True
  
- MIN_INCOMPLETE = 100
- if os.name == 'nt':
+ MAX_INCOMPLETE = 100
+ MAX_FILES_OPEN = 50
