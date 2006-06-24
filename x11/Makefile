@@ -38,6 +38,7 @@
     SUBDIR += docker
     SUBDIR += dxpc
     SUBDIR += dynamag
+    SUBDIR += e17-module-calendar
     SUBDIR += e17-module-weather
     SUBDIR += ebuttons
     SUBDIR += ecore
