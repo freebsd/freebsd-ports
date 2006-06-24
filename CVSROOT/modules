@@ -1130,6 +1130,7 @@ chbg		ports/graphics/chbg
 check_snmp_pkgvuln	ports/net-mgmt/check_snmp_pkgvuln
 checkbot	ports/www/checkbot
 checkdns	ports/dns/checkdns
+checkmate	ports/audio/checkmate
 checkpassword	ports/security/checkpassword
 checkpassword-pam	ports/security/checkpassword-pam
 checkrdf	ports/deskutils/checkrdf
@@ -6944,7 +6945,6 @@ mpage		ports/print/mpage
 mpatrol		ports/devel/mpatrol
 mpb		ports/science/mpb
 mpc		ports/audio/mpc
-mpck		ports/audio/mpck
 mpd		ports/net/mpd
 mpd4		ports/net/mpd4
 mpeg		ports/multimedia/mpeg
