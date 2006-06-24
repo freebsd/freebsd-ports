@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	ttyrec
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	misc
-MASTER_SITES=	http://namazu.org/~satoru/ttyrec/
+MASTER_SITES=	http://0xcc.net/ttyrec/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tty recorder
