@@ -1,4 +1,4 @@
-ruby-evas is a set of Ruby language bindings for Enlightenment's Core
+ruby-ecore is a set of Ruby language bindings for Enlightenment's Core
 library, Ecore.
 
 Author:	Tilman Sauerbeck <tilman@code-monkey.de>
