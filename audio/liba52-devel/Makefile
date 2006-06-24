@@ -56,6 +56,9 @@ post-install:
 ###
 ## specific ARCH information
 ###
+.if ${ARCH} == "ia64"
+BROKEN=	does not build on ia64
+.endif
 .if ${ARCH} == "i386" || ${ARCH} == "ia64"
 CFLAGS+=	-DARCH_X86
 . if ${ARCH} == "ia64" || ${ARCH} == "amd64"
