@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://almy.us/files/
 DISTNAME=	tecoclinux${PORTVERSION}
 
-MAINTAINER=	stas@core.310.ru
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Powerful and compact editor with nongrafical user interface
 
 MAKEFILE=	makefile
