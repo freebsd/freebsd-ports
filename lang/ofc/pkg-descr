@@ -1,0 +1,9 @@
+The Objective-C Foundation Classes (OFC) library
+
+The Objective-c foundation classes library is a general purpose library. The
+classes in the library are grouped in five clusters: data types, collections,
+c-wrappers, network and compound classes. At the moment the library is still
+under development. The OFC library and the test and example programs are
+licensed under the GNU GPL.
+
+WWW: http://ofc.dvoudheusden.net

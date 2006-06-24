@@ -1,0 +1,15 @@
+--- bin/ofc-config.in.orig	Wed Jun 21 22:40:05 2006
++++ bin/ofc-config.in	Wed Jun 21 22:40:44 2006
+@@ -39,10 +39,10 @@
+       echo @ofc_VERSION@
+       ;;
+     --cflags)
+-      echo @OFC_CFLAGS@
++      echo @OFC_CFLAGS@ -I$prefix/include
+       ;;
+     --libs)
+-      libdirs="-L/usr/lib "
++      libdirs="-L$prefix/lib "
+       echo $libdirs @OFC_LIB@ @SHARED_LIBS@
+       ;;
+     --static-libs)
