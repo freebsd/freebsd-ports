@@ -64,34 +64,16 @@ elif grep -qE '(configure: error:|Script.*configure.*failed unexpectedly|script.
   else
     reason="configure_error"; tag="configure"
   fi
-elif grep -qE '(bison:.*(No such file|not found)|multiple definition of `yy)' $1; then
-  reason="bison"; tag="bison"
 elif grep -q "Couldn't fetch it - please try" $1; then
   reason="fetch"; tag="fetch"
 elif grep -q "out of .* hunks .*--saving rejects to" $1; then
   reason="patch"; tag="patch"
 elif grep -q 'Error: category .* not in list of valid categories' $1; then
   reason="CATEGORIES"; tag="categories"
-elif grep -q 'make: don.t know how to make .*\.man. Stop' $1; then
-  reason="X_manpage"; tag="xfree4man"
-elif grep -q 'Xm/Xm\.h: No such file' $1; then
-  reason="MOTIF"; tag="motif"
-elif grep -q 'undefined reference to `Xp' $1; then
-  reason="MOTIFLIB"; tag="motiflib"
 elif grep -qi 'read-only file system' $1; then
   reason="WRKDIR"; tag="wrkdir"
-elif grep -q 'makeinfo: .* use --force' $1; then
-  reason="texinfo"; tag="texinfo"
-elif grep -q 'means that you did not run the h2ph script' $1; then
-  reason="perl5"; tag="perl5"
 elif grep -q "Error: shared library \".*\" does not exist" $1; then
   reason="LIB_DEPENDS"; tag="libdepends"
-elif grep -qE "(crt0|c\+\+rt0)\.o: No such file" $1; then
-  reason="ELF"; tag="elf"
-elif grep -q "machine/soundcard.h: No such file or directory" $1; then
-  reason="soundcard.h"; tag="soundcard.h"
-elif grep -q "values.h: No such file or directory" $1; then
-  reason="values.h"; tag="values.h"
 elif grep -q ".*\.h: No such file" $1; then
   if grep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
 	if grep -q "XFree86-.*\.tgz" $1; then
@@ -110,11 +92,11 @@ elif grep -q "pnohang: killing make package" $1; then
   reason="runaway_process"; tag="runaway"
 elif grep -qE "pkg_add: (can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
   reason="disk_full"; tag="df"
-elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized)' $1; then
+elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)' $1; then
   reason="compiler_error"; tag="cc"
-elif grep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class)' $1; then
+elif grep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)' $1; then
   reason="new_compiler_error"; tag="newgcc"
-elif grep -qE '(syntax error before|ISO C\+\+ forbids|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not)' $1; then
+elif grep -qE '(syntax error before|ISO C\+\+ forbids|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support)' $1; then
   reason="bad_C++_code"; tag="badc++"
 elif grep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
   reason="linker_error"; tag="ld"
@@ -132,20 +114,18 @@ elif grep -q "/usr/.*/man/.*: No such file or directory" $1; then
   reason="manpage"; tag="manpage"
 elif grep -qE "(Can't|unable to) open display" $1; then
   reason="DISPLAY"; tag="display"
+elif grep -q "conflicts with installed package" $1; then
+  reason="depend_object"; tag="dependobj"
 elif grep -q " is already installed - perhaps an older version" $1; then
   reason="depend_object"; tag="dependobj"
 elif grep -q "You may wish to ..make deinstall.. and install this port again" $1; then
   reason="depend_object"; tag="dependobj"
 elif grep -q "error in dependency .*, exiting" $1; then
   reason="depend_package"; tag="dependpkg"
-elif grep -q "#error \"<malloc.h> has been replaced by <stdlib.h>\"" $1; then
-  reason="malloc.h"; tag="malloc.h"
 elif grep -q "core dumped" $1; then
   reason="coredump"; tag="coredump"
 elif grep -q "Segmentation fault" $1; then
   reason="segfault"; tag="segfault"
-elif egrep -q "storage size of.*isn't known" $1; then
-  reason="union_wait"; tag="wait"
 elif grep -q "initializer element is not constant" $1; then
   reason="stdio"; tag="stdio"
 elif grep -q "structure has no member named" $1; then
@@ -182,6 +162,8 @@ elif grep -q "impossible register constraint" $1; then
   reason="arch"; tag="arch"
 elif grep -qE "inconsistent operand constraints in an .asm" $1;  then
   reason="arch"; tag="arch"
+elif grep -qE "Invalid configuration.*unknown.*machine.*unknown not recognized" $1; then
+  reason="arch"; tag="arch"
 elif grep -q "invalid lvalue in asm statement" $1;  then
   reason="arch"; tag="arch"
 elif grep -qE "is only for.*, and you are running" $1;  then
@@ -191,6 +173,8 @@ elif grep -q "not a valid 64 bit base/index expression" $1;  then
 elif grep -qE "relocation R_X86_64_32.*can not be used when making a shared object" $1;  then
   reason="arch"; tag="arch"
 elif grep -q "relocation truncated to fit: " $1;  then
+  reason="arch"; tag="arch"
+elif grep -q "shminit failed: Function not implemented" $1;  then
   reason="arch"; tag="arch"
 elif grep -qE "The target cpu, .*, is not currently supported." $1;  then
   reason="arch"; tag="arch"
@@ -214,14 +198,6 @@ elif grep -q "autoheader: not found" $1; then
   reason="autoheader"; tag="autoheader"
 elif grep -qE "automake(.*): not found" $1; then
   reason="automake"; tag="automake"
-elif grep -q "awk: empty regular expression" $1; then
-  reason="awk"; tag="awk"
-elif grep -qE "(mv:|mv: rename|cannot open) y.tab.c(.*): No such file or directory" $1; then
-  reason="bison"; tag="bison"
-elif grep -q "sorry, cannot determine the header file bison generates" $1; then
-  reason="bison"; tag="bison"
-elif grep -q "usage: yacc" $1; then
-  reason="bison"; tag="bison"
 elif grep -q "/usr/local/www/cgi-bin does not exist" $1; then
   reason="cgi-bin"; tag="cgi-bin"
 elif grep -q "Cannot open /dev/tty for read" $1; then
@@ -230,46 +206,40 @@ elif grep -q "RuntimeError: cannot open display" $1; then
   reason="DISPLAY"; tag="display"
 elif grep -q "You must run this program under the X-Window System" $1; then
   reason="DISPLAY"; tag="display"
-elif grep -q "ld: unrecognised emulation mode: elf_i386" $1; then
-  reason="ELF"; tag="elf"
 elif grep -qE "Member name contains .\.\." $1; then
   reason="fetch"; tag="fetch"
 elif grep -q "fetch: transfer timed out" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
 elif grep -q "fetch: transfer timed out" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
-elif grep -q "strings.h:.* previous declaration of .int ffs" $1; then
-  reason="ffs_conflict"; tag="ffs_conflict"
-elif grep -q "is forbidden: FreeBSD-SA-" $1; then
-  reason="forbidden"; tag="forbidden"
-elif grep -q "/usr/bin/ld: cannot find -lgnugetopt" $1; then
-  reason="getopt"; tag="getopt"
-elif grep -qE "previous declaration.*int getopt" $1; then
-  reason="getopt.h"; tag="getopt.h"
-elif grep -q "imake: Exit code 1" $1; then
-  reason="imake"; tag="imake"
 elif grep -q 'Run-time system build failed for some reason' $1; then
   reason="install_error"; tag="install"
-elif grep -q "/usr/bin/ld: cannot find -lc_r" $1; then
-  reason="lc_r"; tag="lc_r"
+elif grep -q 'tar: Error opening archive: Failed to open.*No such file or directory' $1; then
+  reason="install_error"; tag="install"
 elif grep -q "cc: .*libintl.*: No such file or directory" $1; then
   reason="linker_error"; tag="ld"
 elif grep -qE "cc: ndbm\.so: No such file or directory" $1; then
   reason="linker_error"; tag="ld"
 elif grep -q "error: The X11 shared library could not be loaded" $1; then
   reason="linker_error"; tag="ld"
+elif grep -q "libtool: link: cannot find the library" $1; then
+  reason="linker_error"; tag="ld"
 elif grep -q "relocation against dynamic symbol" $1; then
   reason="linker_error"; tag="ld"
-elif grep -qE "make.*(don.t know how to make|fatal errors encountered|No rule to make target|built-in)" $1; then
+elif grep -q "Shared object.*not found, required by" $1; then
+  reason="linker_error"; tag="ld"
+elif grep -q "Could not create Makefile" $1; then
   reason="makefile"; tag="makefile"
-elif grep -qE "Error: mtree file ./etc/mtree/BSD.local.dist. is missing" $1; then
+elif grep -v "regression-test.continuing" $1 | grep -qE "make.*(cannot open [Mm]akefile|don.t know how to make|fatal errors encountered|No rule to make target|built-in)"; then
+  reason="makefile"; tag="makefile"
+elif grep -qE "(Error: mtree file ./etc/mtree/BSD.local.dist. is missing|error in pkg_delete|filesystem was touched prior to .make install|list of files present before this port was installed|list of filesystem changes from before and after)" $1; then
   reason="mtree"; tag="mtree"
 elif grep -qE "cp:.*site_perl: No such file or directory" $1; then
   reason="perl"; tag="perl"
 elif grep -q "Perl .* required--this is only version" $1; then
   reason="perl"; tag="perl"
-elif grep -q "pod2man: not found" $1; then
-  reason="pod2man"; tag="pod2man"
+elif grep -q 'BEGIN failed--compilation aborted at ..Makefile.PL line' $1; then
+  reason="perl5"; tag="perl5"
 elif grep -q "Syntax error: .(. unexpected (expecting .fi.)" $1; then
   reason="portcomment"; tag="portcomment"
 elif grep -q "Abort trap" $1; then
@@ -280,12 +250,6 @@ elif grep -q "Signal 11" $1; then
   reason="process_failed"; tag="process"
 elif grep -q "python: not found" $1; then
   reason="python"; tag="python"
-elif grep -qE "sed: illegal option" $1; then
-  reason="sed"; tag="sed"
-elif grep -qE "sed: [0-9]*:.*(RE error:|not defined in the RE|bad flag in substitute command|unescaped newline inside substitute pattern|invalid command code)" $1; then
-  reason="sed"; tag="sed"
-elif grep -q "Your STL string implementation is unusable" $1; then
-  reason="stl"; tag="stl"
 elif grep -q ': The -pthread option is deprecated' $1; then
   reason="threads"; tag="threads"
 elif grep -q "Error: pthreads are required to build this package" $1; then
@@ -306,6 +270,8 @@ elif grep -q "<varargs.h> is obsolete with this version of GCC" $1; then
 # types of errors, and thus need to be evaluated after all the specific
 # cases.
 
+elif grep -qE '(gmake:.*Error [12]|tar: Error exit delayed from previous errors)' $1; then
+    reason="install_error"; tag="install"
 elif grep -q "Cannot stat: " $1; then
   reason="configure_error"; tag="configure"
 elif grep -q "cd: can't cd to" $1; then
