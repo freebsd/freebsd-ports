@@ -12021,6 +12021,7 @@ ruby-div	ports/www/ruby-div
 ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-ecore	ports/devel/ruby-ecore
 ruby-eet	ports/devel/ruby-eet
+ruby-esmart	ports/graphics/ruby-esmart
 ruby-esound	ports/audio/ruby-esound
 ruby-evas	ports/graphics/ruby-evas
 ruby-exmars	ports/games/ruby-exmars
