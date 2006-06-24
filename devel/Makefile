@@ -434,6 +434,7 @@
     SUBDIR += jep
     SUBDIR += jrtplib
     SUBDIR += jsap
+    SUBDIR += json-c
     SUBDIR += jude-community
     SUBDIR += judy
     SUBDIR += kaptain

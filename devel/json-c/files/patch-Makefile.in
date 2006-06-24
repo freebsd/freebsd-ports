@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Sat Jun 24 18:00:48 2006
++++ Makefile.in	Sat Jun 24 18:01:16 2006
+@@ -85,11 +85,11 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-CFLAGS = -Wall -std=gnu99 -D_GNU_SOURCE -D_REENTRANT
++CFLAGS = -Wall -D_GNU_SOURCE -D_REENTRANT
+ 
+ lib_LTLIBRARIES = libjson.la
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = json.pc
+ 
+ libjsonincludedir = $(includedir)/json

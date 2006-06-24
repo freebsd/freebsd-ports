@@ -1,0 +1,5 @@
+This is a port of json-c, an implementation of json in C. Json, JavaScript
+Object Notation is a lightweight data exchange format and a subset of the
+JavaScript programming language. 
+
+WWW: http://oss.metaparadigm.com/json-c/
