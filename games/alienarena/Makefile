@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	alienarena
-DISTVERSION=	2006.ge
+DISTVERSION=	2006.ue
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/:data \
-		ftp://ftp.alepulver.com.ar/distfiles/:patch
-DISTFILES=	${PORTNAME}-2006ge-x86.run:data \
-		aa2k6updateGE501c-x86.zip:patch
+MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/ \
+		http://cor.planetquake.gamespy.com/codered/files/ \
+		http://www.forsakenweb.com/gamepage/loaders/games/
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}-x86
+EXTRACT_SUFX=	.run
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (native version)
@@ -19,8 +20,6 @@ COMMENT=	Alien Arena 2006 (native version)
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
-USE_X_PREFIX=	yes
-USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GCC=	3.2+
 USE_GL=		yes
@@ -40,6 +39,10 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not extract (gzip error)
+.endif
 
 EXE_TARGETS=	crx crded
 SCRIPTS=	alienarena alienarena-ded
@@ -67,10 +70,10 @@ post-patch:
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && \
-		${TAIL} -c +8814 ${DISTDIR}/${PORTNAME}-2006ge-x86.run | \
+		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
-	@${TAR} zxf ${WRKDIR}/alienarena-2006ge-src.tar.gz -C ${WRKDIR}
-	@${UNZIP_CMD} -qod ${WRKDIR} ${DISTDIR}/aa2k6updateGE501c-x86.zip
+	@${TAR} zxf ${WRKDIR}/${PORTNAME}-${DISTVERSION:S/.//}-src.tar.gz \
+		-C ${WRKDIR}
 
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
