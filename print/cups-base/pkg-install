@@ -11,9 +11,9 @@ REPLACES_BINARIES="/usr/bin/lpr
 case $2 in
 POST-INSTALL)
 	# Unshade binaries
-	if [ -n "${3}" ]; then
+	if [ "${3}" = "overwrite" ]; then
 		for FILE in ${REPLACES_BINARIES}; do
-			[ -e "${FILE}" ] && chmod 0 "${FILE}"
+			[ -e "${FILE}" ] && chmod -h 0 "${FILE}"
 		done
 	fi
 
