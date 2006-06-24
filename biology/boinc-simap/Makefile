@@ -8,7 +8,7 @@ PORTNAME=	boinc-simap
 PORTVERSION=	5.08
 CATEGORIES=	biology
 MASTER_SITES=	http://boinc.bio.wzw.tum.de/boincsimap/download/
-DISTNAME=	simap_${PORTVERSION}_i386-pc-freebsd_dyn
+DISTNAME=	simap_${PORTVERSION}_${MACH}-pc-freebsd_dyn
 EXTRACT_SUFX=	#
 
 MAINTAINER=	pav@FreeBSD.org
@@ -34,7 +34,15 @@ PLIST_SUB=	SIMAP_BINARY=${SIMAP_BINARY} SIMAP_SITE=${SIMAP_SITE} \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+OPTIONS=	SSE "SSE optimized app (warning! your CPU must support SSE)" off
+
 .include <bsd.port.pre.mk>
+
+.ifdef WITH_SSE
+MACH=		i686
+.else
+MACH=		i386
+.endif
 
 .if ${ARCH} == amd64
 AMD64=		""
