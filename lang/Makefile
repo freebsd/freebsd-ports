@@ -164,6 +164,7 @@
     SUBDIR += ocaml-doc
     SUBDIR += ocaml-mode.el
     SUBDIR += ocaml-nox11
+    SUBDIR += ofc
     SUBDIR += ohugs
     SUBDIR += onyx
     SUBDIR += oo2c
