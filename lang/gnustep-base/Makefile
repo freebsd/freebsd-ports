@@ -93,4 +93,6 @@ post-install:
 test:
 	@(cd ${WRKSRC}/Testing && . ${SYSTEMDIR}/Makefiles/GNUstep.sh; ${GMAKE})
 
+regression-test:	test
+
 .include <bsd.port.post.mk>

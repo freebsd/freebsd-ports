@@ -995,4 +995,6 @@ post-install:
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
+regression-test:	test
+
 .include <bsd.port.post.mk>
