@@ -1,0 +1,5 @@
+ruby-edje is a set of Ruby language bindings for Enlightenment's Layout
+library, Edje.
+
+Author:	Tilman Sauerbeck <tilman@code-monkey.de>
+WWW:	http://code-monkey.de/ruby-efl/

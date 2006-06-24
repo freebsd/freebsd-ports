@@ -547,6 +547,7 @@
     SUBDIR += renderpark
     SUBDIR += robot
     SUBDIR += ruby-cairo
+    SUBDIR += ruby-edje
     SUBDIR += ruby-esmart
     SUBDIR += ruby-evas
     SUBDIR += ruby-gd
