@@ -1992,6 +1992,7 @@ e-uae		ports/emulators/e-uae
 e16utils	ports/x11-wm/e16utils
 e17-module-calendar	ports/x11/e17-module-calendar
 e17-module-devian	ports/sysutils/e17-module-devian
+e17-module-mem	ports/x11/e17-module-mem
 e17-module-weather	ports/x11/e17-module-weather
 e17-theme-blokkie	ports/x11-themes/e17-theme-blokkie
 e17-theme-blue_default	ports/x11-themes/e17-theme-blue_default
