@@ -9,7 +9,7 @@
 
 PORTNAME=	cups-base
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PORTVERSION}/ \
 		ftp://ftp.ntua.gr/pub/gnu/cups/${PORTVERSION}/ \
@@ -72,6 +72,8 @@ LIB_DEPENDS+=		gnutls-openssl.15:${PORTSDIR}/security/gnutls
 .if defined(WITH_PHP)
 CONFIGURE_ARGS+=	--with-php
 RUN_DEPENDS+=		php:${PORTSDIR}/lang/php4
+.else
+CONFIGURE_ARGS+=	--without-php
 .endif
 
 .if defined(WITH_PYTHON)
@@ -147,10 +149,11 @@ pre-install:
 
 post-install:
 	${MKDIR} ${CUPS_ETCDIR}
-.ifdef CUPS_OVERWRITE_BASE
+.if defined(CUPS_OVERWRITE_BASE)
 	${SH} ${PKGINSTALL} placeholder POST-INSTALL overwrite
-.endif
+.else
 	${SH} ${PKGINSTALL} placeholder POST-INSTALL
+.endif
 .for f in cupsd.conf mime.convs mime.types
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
 	cd ${CUPS_ETCDIR}; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
