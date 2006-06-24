@@ -977,6 +977,7 @@
     SUBDIR += webfs
     SUBDIR += webglimpse
     SUBDIR += weblint
+    SUBDIR += weblint++
     SUBDIR += webredirect
     SUBDIR += webreport
     SUBDIR += webresolve
