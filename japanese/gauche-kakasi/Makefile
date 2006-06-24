@@ -21,6 +21,12 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==amd64
+BROKEN=does not compile on amd64
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kakasi=${PREFIX}
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
@@ -32,13 +38,10 @@ post-patch:
 	${REINPLACE_CMD} -e "s/\(@LDFLAGS@\) \(@KAKASI_LIBDIR@\)/\2 \1/" \
 		${WRKSRC}/Makefile.in
 
-post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-
-.include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}gauche-
 
