@@ -64,16 +64,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${FILE}.sh ${PREFIX}/bin/${FILE}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 ${PREFIX}/${Q4DIR}
 .endfor
-
 .if !defined(WITHOUT_SMP)
 	${INSTALL_SCRIPT} ${WRKSRC}/quake4smp.sh ${PREFIX}/bin/quake4smp
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/quake4smp.x86 ${PREFIX}/${Q4DIR}
 .endif
-	# Libraries
-.for FILE in libSDL-1.2.id.so.0 libstdc++.so.6
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE} ${PREFIX}/${Q4DIR}
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/libgcc_s.so.1  ${PREFIX}/${Q4DIR}
 
 	# Punkbuster
 	@${MKDIR} ${PREFIX}/${Q4DIR}/pb/htm

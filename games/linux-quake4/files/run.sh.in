@@ -1,10 +1,4 @@
 #!/bin/sh
 
-if [ -n "$LD_LIBRARY_PATH" ]; then
-    export LD_LIBRARY_PATH="@Q4DIR@:$LD_LIBRARY_PATH"
-else
-    export LD_LIBRARY_PATH="@Q4DIR@"
-fi
-
 cd @Q4DIR@ || exit 1
 exec @Q4DIR@/@APP@ "$@"
