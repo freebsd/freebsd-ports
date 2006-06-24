@@ -962,8 +962,6 @@
 %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/translator.rb
 %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/value.rb
 %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/version.rb
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver/native
 @dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver/dl
 @dirrm %%INSTIKIDIR%%vendor/sqlite3-ruby/sqlite3/driver
