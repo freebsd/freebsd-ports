@@ -11,7 +11,8 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
 
-PATCH_SITES=	http://qudos.quakedev.com/linux/quake2/engines/R1Q2/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	alepulver
 PATCHFILES=	r1q2_diff.gz
 PATCH_DIST_STRIP=	-p1
 
