@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable15/
 EXTRACT_SUFX=	.tgz
@@ -25,10 +25,17 @@ USE_PHP+=	mysql
 USE_PHP+=	pgsql
 .endif
 
+.if defined(WITH_LDAP)
+USE_PHP+=	ldap
+.endif
+
 .include <bsd.port.pre.mk>
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
+SUB_FILES=	pkg-message
+SUB_LIST=	MOODLEDIR=${MOODLEDIR} \
+		MOODLEDATADIR=${MOODLEDATADIR}
 
 MOODLEDIR?=	www/moodle
 MOODLEDATADIR?=	www/moodledata
@@ -38,11 +45,8 @@ pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "o WITH_MYSQL - Use a MySQL database"
 	@${ECHO_CMD} "o WITH_PGSQL - Use a pgSQL database"
+	@${ECHO_CMD} "o WITH_LDAP  - Ensure your PHP has ldap extension"
 	@${ECHO_CMD} ""
-
-post-patch:
-####This is an old patched file.
-	@${RM} -f ${WRKSRC}/lang/es_es/moodle.php.orig
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >${PLIST}
