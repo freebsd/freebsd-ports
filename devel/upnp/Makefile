@@ -18,6 +18,12 @@ COMMENT=	Universal Plug and Play Software Development Kit
 
 CONFLICTS=	upnp-1.0.*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==amd64
+BROKEN=does not compile on amd64
+.endif
+
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
@@ -36,4 +42,4 @@ post-patch:
 	${REINPLACE_CMD} -Ee 's,^(pkgconfigexecdir = ).*,\1${PREFIX}/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
