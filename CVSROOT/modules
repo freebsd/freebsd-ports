@@ -7503,6 +7503,7 @@ ode-devel	ports/devel/ode-devel
 ods2		ports/sysutils/ods2
 ods2reader	ports/emulators/ods2reader
 odsclient	ports/dns/odsclient
+ofc		ports/lang/ofc
 offix-clipboard	ports/x11/offix-clipboard
 offix-editor	ports/editors/offix-editor
 offix-execute	ports/x11/offix-execute
