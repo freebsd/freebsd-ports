@@ -28,6 +28,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH}==amd64
+BROKEN=needs to have -fPIC added for amd64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/Makefile.in
