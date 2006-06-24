@@ -12025,6 +12025,7 @@ ruby-diff	ports/textproc/ruby-diff
 ruby-div	ports/www/ruby-div
 ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-ecore	ports/devel/ruby-ecore
+ruby-edje	ports/graphics/ruby-edje
 ruby-eet	ports/devel/ruby-eet
 ruby-esmart	ports/graphics/ruby-esmart
 ruby-esound	ports/audio/ruby-esound
