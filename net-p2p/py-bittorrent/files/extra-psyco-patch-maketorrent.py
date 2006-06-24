@@ -1,5 +1,5 @@
---- maketorrent.py	Wed Oct 12 01:08:27 2005
-+++ maketorrent.py	Wed Oct 12 07:58:35 2005
+--- maketorrent.py.orig	Tue Jun  6 20:43:43 2006
++++ maketorrent.py	Thu Jun 15 14:46:45 2006
 @@ -14,6 +14,13 @@
  
  from __future__ import division
@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- from BitTorrent.platform import install_translation
- install_translation()
+ from BitTorrent.translation import _
  
+ import os

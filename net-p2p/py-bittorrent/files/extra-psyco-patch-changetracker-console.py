@@ -1,5 +1,5 @@
---- changetracker-console.py	Wed Oct 12 01:08:18 2005
-+++ changetracker-console.py	Wed Oct 12 07:58:18 2005
+--- changetracker-console.py.orig	Tue Jun  6 20:43:34 2006
++++ changetracker-console.py	Thu Jun 15 14:45:47 2006
 @@ -12,6 +12,13 @@
  
  # Written by Henry 'Pi' James and Bram Cohen
@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- from BitTorrent.platform import install_translation
- install_translation()
+ from BitTorrent.translation import _
  
+ from os.path import basename
