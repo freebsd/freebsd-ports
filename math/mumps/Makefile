@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mumps
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.enseeiht.fr/apo/MUMPS/	\
 		http://graal.ens-lyon.fr/MUMPS/
@@ -44,12 +44,14 @@ WITH_FORTRAN=	yes
 FC=	${LOCALBASE}/bin/gfortran41
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=	-O3 -ffast-math -funroll-loops
+FFLAGS+=	-O3 -ffast-math
 .endif
 
 .ifndef WITH_GFC_BLAS	# g77 compatibility
-FFLAGS+=	-ff2c
 MAKE_ENV+=	CDEFS=-DAdd__
+FCFLAGS=	-ff2c ${FFLAGS}
+.else
+FCFLAGS?=	${FFLAGS}
 .endif
 
 .ifdef WITH_ATLAS
@@ -83,7 +85,7 @@ post-patch:
 pre-build:
 	@${REINPLACE_CMD} -e 's+@CC@+${CC}+g ; s+@FC@+${FC}+g ; \
 	s+@CFLAGS@+${CFLAGS}+g; \
-	s+@FCFLAGS@+${FFLAGS}+g; \
+	s+@FCFLAGS@+${FCFLAGS}+g; \
 	s+@PTHREAD_LIBS@+${PTHREAD_LIBS}+g; \
 	s+@BLAS_LIBS@+${BLAS_LIBS}+ ; \
 	s+@LOCALBASE@+${LOCALBASE}+g;' \
