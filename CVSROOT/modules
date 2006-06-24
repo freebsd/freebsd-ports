@@ -14721,6 +14721,7 @@ xpi-resurrectpages	ports/www/xpi-resurrectpages
 xpi-savegenpage	ports/www/xpi-savegenpage
 xpi-searchstatus	ports/www/xpi-searchstatus
 xpi-server_switcher	ports/www/xpi-server_switcher
+xpi-sessionmanager	ports/www/xpi-sessionmanager
 xpi-stumbleupon	ports/www/xpi-stumbleupon
 xpi-tablesort	ports/www/xpi-tablesort
 xpi-tabmixplus	ports/www/xpi-tabmixplus
