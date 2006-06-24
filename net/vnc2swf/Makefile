@@ -8,9 +8,10 @@
 PORTNAME=	vnc2swf
 PORTVERSION=	0.5.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/
+MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/ \
+		ftp://ftp.rewt.org.uk/pub/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	VNC Session Recorder to SWF Flash (Movie) format
 
 USE_X_PREFIX=	yes
