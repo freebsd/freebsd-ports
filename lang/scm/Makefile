@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5e1
+PORTVERSION=	5e2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
-DISTFILES=	scm5e1.zip slib3a2.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	scm5e1.zip slib3a2.zip
+DISTFILES=	${PORTNAME}${PORTVERSION}.zip slib3a2.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.zip slib3a2.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter
@@ -36,7 +36,7 @@ SCM_MODULES=	byte.so crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-extract:
