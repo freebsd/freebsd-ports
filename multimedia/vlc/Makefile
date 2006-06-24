@@ -68,6 +68,10 @@ CPPFLAGS+=	-I${X11BASE}/include/wx-2.6/
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500035
+BROKEN= does not build on FreeBSD 4.x
+.endif
+
 .if ${PERL_LEVEL} < 500800
 BROKEN=	does not compile with perl ${PERL_VERSION}
 .endif
