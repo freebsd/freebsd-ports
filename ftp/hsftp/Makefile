@@ -8,9 +8,10 @@
 PORTNAME=	hsftp
 PORTVERSION=	1.15
 CATEGORIES=	ftp
-MASTER_SITES=	http://la-samhna.de/hsftp/
+MASTER_SITES=	http://la-samhna.de/hsftp/ \
+		http://www.alaskaparadise.com/freebsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	FTP emulator that uses ssh to transport commands/data
 
 GNU_CONFIGURE=	yes
