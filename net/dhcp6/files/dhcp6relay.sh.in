@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dhcp6relay
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to
+# /etc/rc.conf.d/dhcp6relay /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dhcp6relay_enable (bool):			Set to NO by default.
+#		Set it to YES to enable dhcp6relay.
+# dhcp6relay_interfaces (NIC list):		Not defined by default.
+#		Set it to the network interface(s) where dhcp6relay should work
+#		on.
+# dhcp6relay_flags (additional arguments):	Not defined by default.
+#
+
+. %%RC_SUBR%%
+
+name="dhcp6relay"
+rcvar=${name}_enable
+
+prefix=%%PREFIX%%
+command=${prefix}/sbin/${name}
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${dhcp6relay_enable="NO"}
+
+command_args="${dhcp6relay_flags} ${dhcp6relay_interfaces}"
+
+dhcp6relay_precmd()
+{
+	if [ -z ${dhcp6relay_interfaces} ]; then
+		warn "dhcp6relay_interfaces is not set."
+		return 1
+	fi
+}
+
+run_rc_command "$1"
