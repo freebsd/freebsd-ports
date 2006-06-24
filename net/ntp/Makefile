@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
@@ -36,6 +35,8 @@ CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 PLIST_SUB+=		SSL=""
 .endif
+
+MAN1=		sntp.1
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
