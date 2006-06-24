@@ -1,0 +1,3 @@
+bin/weblint++
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/weblint++/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/weblint++
