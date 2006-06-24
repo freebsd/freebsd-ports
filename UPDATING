@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060624:
+  AFFECTS: users of net/py-bittorrent-devel and net/py-bittorrent-core-devel
+  AUTHOR: lioux@FreeBSD.org
+
+  This version has been specially patched to enable
+  launchmany-{console,curses}. This is experimental.
+
+20060624:
+  AFFECTS: users of net/py-bittorrent and net/py-bittorrent-core
+  AUTHOR: lioux@FreeBSD.org
+
+  launchmany-{console,curses} do not work under this version.
+
 20060622:
   AFFECTS: users of www/dokuwiki
   AUTHOR: miwi@freebsd.org
