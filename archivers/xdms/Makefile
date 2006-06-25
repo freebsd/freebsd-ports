@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	xdms
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	archivers
-MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/xdms/
+MASTER_SITES=	http://zakalwe.fi/~shd/foss/xdms/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Amiga DMS archiver unpacker
 
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	xdms
@@ -20,7 +21,7 @@ ALL_TARGET=	xdms
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} "s@-O3 -Wall@-Wall@g" ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} "s@-O2 -Wall@$${CFLAGS} -Wall@g" ${WRKSRC}/src/Makefile.in
 .if ( ${OSVERSION} < 500000 )
 	${REINPLACE_CMD} 's/stdint.h/inttypes.h/' ${WRKSRC}/src/cdata.h
 .endif
