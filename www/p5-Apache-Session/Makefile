@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	Apache-Session
-PORTVERSION=	1.60
+PORTVERSION=	1.81
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/0//}
 
-MAINTAINER=	frank@exit.com
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	A persistence framework for session data
-
-BUILD_DEPENDS=
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -56,10 +52,7 @@ MAN3=		Apache::Session.3 \
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .if ${PERL_LEVEL} < 500600
-EXTRA_PATCH=	${PATCHDIR}/5.005-Session::Generate::ModUniqueId.pm
-
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
 .endif
 .endif
 
