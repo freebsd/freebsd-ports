@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	yersinia
-PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= ${PORTNAME}
+MASTER_SITES=	http://www.yersinia.net/download/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
-
-USE_GETOPT_LONG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -31,7 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 NOT_FOR_ARCHS=	ia64 sparc64
 MAN8=		yersinia.8
-CFLAGS+=	-DNEED_GETOPT_H
 PLIST_FILES=	sbin/yersinia
 
 do-install:
