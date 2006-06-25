@@ -19,6 +19,7 @@
     SUBDIR += dynamite
     SUBDIR += dzip
     SUBDIR += ecm
+    SUBDIR += epkg
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += fpc-paszlib

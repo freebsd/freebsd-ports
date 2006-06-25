@@ -1,0 +1,12 @@
+@unexec cmp %D/etc/mkencap_environment.sample %D/etc/mkencap_environment && rm %D/etc/mkencap_environment
+bin/epkg
+bin/mkencap
+etc/mkencap_environment.sample
+include/encap.h
+include/encap_listhash.h
+lib/libencap.a
+share/doc/encap/encap2.0-specification.txt
+share/doc/encap/encap2.1-specification.txt
+share/doc/encap/encap_profile.dtd
+share/mkencap.m4
+@dirrmtry share/doc/encap

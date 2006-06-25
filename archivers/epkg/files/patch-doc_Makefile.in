@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Thu Nov 21 11:56:12 2002
++++ doc/Makefile.in	Sun May 14 10:49:48 2006
+@@ -6,7 +6,7 @@
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ mandir		= @mandir@
+-docdir		= @prefix@/doc
++docdir		= @datadir@/doc
+ 
+ PACKAGE_NAME	= @PACKAGE_NAME@
+ PACKAGE_VERSION	= @PACKAGE_VERSION@

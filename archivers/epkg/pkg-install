@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PKG_PREFIX=${PKG_PREFIX:-/usr/local}
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+     POST-INSTALL)
+
+		if [ ! -d "${PKG_PREFIX}/etc" ]; then
+			echo "creating directory: ${PKG_PREFIX}/etc";
+			mkdir -p "${PKG_PREFIX}/etc";
+		fi
+
+		if [ ! -f "${PKG_PREFIX}/etc/mkencap_environment" ]; then
+			echo "installing: ${PKG_PREFIX}/etc/mkencap_environment";
+			cp "${PKG_PREFIX}/etc/mkencap_environment.sample" "${PKG_PREFIX}/etc/mkencap_environment";
+		fi
+		;;
+esac
+
+exit 0
