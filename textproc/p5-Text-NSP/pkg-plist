@@ -1,83 +1,90 @@
-bin/statistic.pl
-bin/split-data.pl
 bin/combig-script.sh
-bin/huge-count.pl
-bin/rank-script.sh
-bin/kocos.pl
-bin/huge-combine.pl
-bin/count.pl
-bin/rank.pl
-bin/kocos-script.sh
 bin/combig.pl
+bin/count.pl
+bin/huge-combine.pl
+bin/huge-count.pl
+bin/kocos-script.sh
+bin/kocos.pl
+bin/rank-script.sh
+bin/rank.pl
 bin/sort-bigrams.pl
+bin/split-data.pl
+bin/statistic.pl
 %%SITE_PERL%%/Text/NSP.pm
 %%SITE_PERL%%/Text/NSP/Measures.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D.pm
-%%SITE_PERL%%/Text/NSP/Measures/3D.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/odds.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/dice.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D/CHI.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/MI.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/phi.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/tscore.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/x2.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Dice.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Dice/dice.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Dice/jaccard.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/left.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/right.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/twotailed.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2/left.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2/right.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2/twotailed.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/right.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/left.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/Fisher/twotailed.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/MI/pmi.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/MI.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D/MI/ll.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/MI/pmi.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/MI/ps.pm
 %%SITE_PERL%%/Text/NSP/Measures/2D/MI/tmi.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/tscore.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/phi.pm
-%%SITE_PERL%%/Text/NSP/Measures/2D/CHI/x2.pm
+%%SITE_PERL%%/Text/NSP/Measures/2D/odds.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D.pm
 %%SITE_PERL%%/Text/NSP/Measures/3D/MI.pm
-%%SITE_PERL%%/Text/NSP/Measures/3D/MI/tmi.pm
 %%SITE_PERL%%/Text/NSP/Measures/3D/MI/ll.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D/MI/pmi.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D/MI/ps.pm
+%%SITE_PERL%%/Text/NSP/Measures/3D/MI/tmi.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
-%%PORTDOCS%%%%DOCSDIR%%/html/dice.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ll.html
-%%PORTDOCS%%%%DOCSDIR%%/html/odds.html
-%%PORTDOCS%%%%DOCSDIR%%/html/phi.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tmi.html
-%%PORTDOCS%%%%DOCSDIR%%/html/pmi.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tscore.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/measure2d.html
-%%PORTDOCS%%%%DOCSDIR%%/html/count.html
-%%PORTDOCS%%%%DOCSDIR%%/html/statistic.html
-%%PORTDOCS%%%%DOCSDIR%%/html/rank.html
-%%PORTDOCS%%%%DOCSDIR%%/html/kocos.html
-%%PORTDOCS%%%%DOCSDIR%%/html/combig.html
-%%PORTDOCS%%%%DOCSDIR%%/html/huge-count.html
-%%PORTDOCS%%%%DOCSDIR%%/html/huge-combine.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sort-bigrams.html
-%%PORTDOCS%%%%DOCSDIR%%/html/split-data.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/html/NewStats.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Measures.html
+%%PORTDOCS%%%%DOCSDIR%%/html/NewStats.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Todo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/combig.html
+%%PORTDOCS%%%%DOCSDIR%%/html/count.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dice.html
+%%PORTDOCS%%%%DOCSDIR%%/html/huge-combine.html
+%%PORTDOCS%%%%DOCSDIR%%/html/huge-count.html
+%%PORTDOCS%%%%DOCSDIR%%/html/jaccard.html
+%%PORTDOCS%%%%DOCSDIR%%/html/kocos.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ll.html
+%%PORTDOCS%%%%DOCSDIR%%/html/measure2d.html
+%%PORTDOCS%%%%DOCSDIR%%/html/odds.html
+%%PORTDOCS%%%%DOCSDIR%%/html/phi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/pmi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rank.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sort-bigrams.html
+%%PORTDOCS%%%%DOCSDIR%%/html/split-data.html
+%%PORTDOCS%%%%DOCSDIR%%/html/statistic.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tmi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tscore.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x2.html
 %%PORTDOCS%%%%DOCSDIR%%/pod/FAQ.pod
-%%PORTDOCS%%%%DOCSDIR%%/pod/NewStats.pod
 %%PORTDOCS%%%%DOCSDIR%%/pod/Measures.pod
+%%PORTDOCS%%%%DOCSDIR%%/pod/NewStats.pod
 %%PORTDOCS%%%%DOCSDIR%%/pod/README.pod
 %%PORTDOCS%%%%DOCSDIR%%/pod/Todo.pod
 %%PORTDOCS%%%%DOCSDIR%%/pod/Usage.pod
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/3D/MI
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/3D
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/MI
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher2
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Fisher
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/Dice
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/CHI
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/2D
 @dirrm %%SITE_PERL%%/Text/NSP/Measures
 @dirrm %%SITE_PERL%%/Text/NSP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text
