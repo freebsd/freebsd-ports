@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	4.0.8
+PORTVERSION=	4.0.9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		http://core.ring.gr.jp/archives/net/mail/qpopper/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bc979@lafn.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 USE_AUTOTOOLS=	autoconf:259
+USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="-lcrypt -lmd -lutil -L${LOCALBASE}/lib" \
 		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
@@ -46,7 +47,6 @@ OPTIONS=	APOP_ONLY	"build with APOP authentication only" off \
 		APOP		"build with APOP" on \
 		DOCUMENTATION	"install pdf documentation" off \
 		DRAC		"build with Dynamic Relay Authorization" off \
-		IPV6		"build with IPv6 support" on \
 		FULL_POPD_DEBUG	"build with more verbose debugging" off \
 		PAM		"build with PAM authentication" off \
 		POPPASSD	"build the poppassd daemon" off \
@@ -63,11 +63,11 @@ OPTIONS=	APOP_ONLY	"build with APOP authentication only" off \
 WITHOUT_IPV6=	yes
 .endif
 
-.if !defined(WITHOUT_IPV6)
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	qpopper4.0.8-ipv6-20050515.diff.gz
-PATCH_DIST_STRIP=	-p1
-.endif
+# .if !defined(WITHOUT_IPV6)
+# PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
+# PATCHFILES=	qpopper4.0.8-ipv6-20050515.diff.gz
+# PATCH_DIST_STRIP=	-p1
+# .endif
 
 .if defined(WITHOUT_APOP)
 QPOPAUTH=	"@comment "
