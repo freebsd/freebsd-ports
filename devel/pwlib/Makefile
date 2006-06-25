@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pwlib
-PORTVERSION=	1.10.0
-PORTREVISION=	1
+PORTVERSION=	1.10.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -19,7 +18,7 @@ COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
+WRKSRC=		${WRKDIR}/pwlib_Phobos_release2/
 
 USE_BISON=	yes
 USE_GMAKE=	yes
