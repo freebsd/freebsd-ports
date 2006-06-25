@@ -14,13 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	Java project management and project comprehension tool
 
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUBSTITUTIONS=	-e 's,%%DATADIR%%,${DATADIR},g'
+SUBSTITUTIONS=	-e 's,%%DATADIR%%,${DATADIR},g' \
+		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		-e 's,%%GREP%%,${GREP},g' \
+		-e 's,%%CUT%%,${CUT},g'
 REINPLACE_FILES=	${WRKSRC}/bin/maven
 
 post-configure:
