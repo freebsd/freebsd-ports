@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/distrib/source/ \
 		ftp://mirror.cybercomm.nl/pub/proftpd/distrib/source/
 
-MAINTAINER?=	beech@mangohealth.org
+MAINTAINER?=	beech@alaskaparadise.com
 COMMENT?=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
