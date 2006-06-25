@@ -35,6 +35,15 @@ bin/glchess
 %%DATADIR%%/ui/gtkui/dialogs.py
 %%DATADIR%%/ui/gtkui/gtkui.py
 %%DATADIR%%/ui/ui.py
+share/locale/de/LC_MESSAGES/glchess.mo
+share/locale/en/LC_MESSAGES/glchess.mo
+share/locale/en_AU/LC_MESSAGES/glchess.mo
+share/locale/en_NZ/LC_MESSAGES/glchess.mo
+share/locale/en_US/LC_MESSAGES/glchess.mo
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
+@dirrmtry share/locale/en_NZ/LC_MESSAGES
+@dirrmtry share/locale/en_NZ
 @dirrm %%DATADIR%%/ui/gtkui
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/textures
