@@ -1,0 +1,23 @@
+--- ./src/doc/Makefile.in.orig	Fri Aug 12 13:26:42 2005
++++ ./src/doc/Makefile.in	Sat Jun 24 22:59:42 2006
+@@ -51,10 +51,6 @@
+ 	    $(INSTALL_INFO) --info-dir=$(DESTDIR)$(infodir) $$k; \
+ 	  fi; \
+ 	done
+-	$(mkinstalldirs) $(DESTDIR)$(docdir)
+-	for i in Copyright LGPL; do \
+-	  $(INSTALL_DATA) $(top_srcdir)/../$$i $(DESTDIR)$(docdir); \
+-	done
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)/man$(manext)
+ 	$(INSTALL_DATA) ecl.man $(DESTDIR)$(mandir)/man$(manext)/ecl.$(manext)
+ flatinstall: all $(HTML_FILES)
+@@ -72,9 +68,6 @@
+ 	  $(mkinstalldirs) $(DESTDIR)$(docdir)/ecldev; \
+ 	  for i in ecldev/*; do $(INSTALL_DATA) $$i $(DESTDIR)$(docdir)/ecldev/; done; \
+ 	fi
+-	for i in Copyright LGPL; do \
+-	  $(INSTALL_DATA) $(top_srcdir)/../$$i $(DESTDIR)$(docdir); \
+-	done
+ 	for i in *.html; do $(INSTALL_DATA) $$i $(DESTDIR)$(docdir)/; done
+ 
+ uninstall:
