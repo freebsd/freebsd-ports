@@ -7,6 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060624:
+  AFFECTS: users of audio/mt-daapd
+  AUTHOR: alex@foxybanana.com
+
+  The default database directory has been changed to /var/db/mt-daapd. The
+  default mp3 dir has been changed to ${PREFIX}/share/mt-daapd. Old 
+  configuration files will be maintained, if present, so no updating should 
+  be required.
+
+20060624:
   AFFECTS: users of net/py-bittorrent-devel and net/py-bittorrent-core-devel
   AUTHOR: lioux@FreeBSD.org
 
