@@ -33,6 +33,8 @@ DEPRECATED=	PyUI does not work with well with current versions of\
 		years. Python game development should be done with\
 		devel/py-game instead
 
+EXPIRATION_DATE=	2006-08-24
+
 DOCSDIR=	${LOCALBASE}/share/doc/py-ui
 
 post-install:
