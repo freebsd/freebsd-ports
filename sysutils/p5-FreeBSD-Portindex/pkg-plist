@@ -6,6 +6,7 @@ bin/portindex
 etc/portindex.cfg.sample
 @exec [ ! -f %B/portindex.cfg ] && cp -p %B/%f %B/portindex.cfg || true
 %%SITE_PERL%%/FreeBSD/Portindex/Config.pm
+%%SITE_PERL%%/FreeBSD/Portindex/Category.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Port.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Tree.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex/.packlist
