@@ -6259,6 +6259,7 @@ linux_base-suse-9.2	ports/emulators/linux_base-suse-9.2
 linux_base-suse-9.3	ports/emulators/linux_base-suse-9.3
 linux_devtools	ports/devel/linux_devtools
 linux_dist-gentoo-stage1	ports/emulators/linux_dist-gentoo-stage1
+linux_dist-gentoo-stage2	ports/emulators/linux_dist-gentoo-stage2
 linux_dri	ports/graphics/linux_dri
 linux_glide	ports/graphics/linux_glide
 linux_glx	ports/graphics/linux_glx
