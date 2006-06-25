@@ -29,6 +29,5 @@ MAN3=		Sledge.3 \
 		Sledge::Doc::Install.3 \
 		Sledge::Doc::Overview.3 \
 		Sledge::Doc::FAQ.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl interface for longitudinal redundancy check generation
 
 PERL_CONFIGURE=	yes
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		String::LRC.3
 

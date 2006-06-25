@@ -17,7 +17,6 @@ COMMENT=	Perl extension for the AOL Instant Messenger TOC protocol
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Net::AIM.3 Net::AIM::Connection.3 Net::AIM::Event.3
 
 .include <bsd.port.mk>

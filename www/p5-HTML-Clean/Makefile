@@ -19,6 +19,5 @@ PERL_CONFIGURE=	yes
 
 MAN1=		htmlclean.1
 MAN3=		HTML::Clean.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ COMMENT=	A module for converting Perl structures to strings and back
 
 PERL_CONFIGURE=	YES
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		FreezeThaw.3
 
 .include <bsd.port.mk>

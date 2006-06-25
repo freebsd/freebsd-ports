@@ -25,6 +25,5 @@ PM_DEPENDS+=	${SITE_PERL}/HTTP/MobileAgent.pm:${PORTSDIR}/www/p5-HTTP-MobileAgen
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::Plugin::HTML2HDML.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

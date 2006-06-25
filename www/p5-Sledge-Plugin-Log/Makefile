@@ -24,6 +24,5 @@ PM_DEPENDS+=	${SITE_PERL}/Log/Dispatch/Config.pm:${PORTSDIR}/devel/p5-Log-Dispat
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::Plugin::Log.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
