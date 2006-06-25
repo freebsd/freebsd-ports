@@ -7,7 +7,6 @@
 
 PORTNAME?=	nmap
 PORTVERSION=	${DISTVERSION:L:C/([a-z])[a-z]+/\1/g:C/[^a-z0-9+]+/./g}
-PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
@@ -18,7 +17,7 @@ DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 MAINTAINER=	daniel@roe.ch
 COMMENT?=	Port scanning utility for large networks
 
-DISTVERSION=	4.01
+DISTVERSION=	4.10
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
