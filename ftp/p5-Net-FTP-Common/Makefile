@@ -21,7 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::FTP::Common.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${RM} ${WRKSRC}/lib/Net/FTP/Common.pm.orig

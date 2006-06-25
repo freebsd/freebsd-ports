@@ -16,7 +16,6 @@ COMMENT=	Tk::FileDialog - A file selector dialog for perl/Tk
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 
 PERL_CONFIGURE=	yes
-MAN3PREFIX=	${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Tk::FileDialog.3
 
 PLIST_SUB=	PERL_VERSION=${PERL_VERSION}

@@ -18,6 +18,5 @@ PERL_CONFIGURE=	yes
 
 MAN1=		map.1 mkmapfile.1
 MAN3=		Unicode::Map.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

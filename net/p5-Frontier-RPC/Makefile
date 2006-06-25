@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Frontier::Client.3 Frontier::Daemon.3 Frontier::RPC2.3
 
 .include <bsd.port.mk>

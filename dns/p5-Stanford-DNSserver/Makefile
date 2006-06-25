@@ -16,7 +16,6 @@ COMMENT=	A DNS name server framework with a Perl backend
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Stanford::DNS.3 Stanford::DNSserver.3
 
 .include <bsd.port.pre.mk>

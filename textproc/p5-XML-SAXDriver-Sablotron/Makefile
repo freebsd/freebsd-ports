@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::SAXDriver::Sablotron.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e 's!^use warnings;!!;' ${WRKSRC}/Sablotron.pm

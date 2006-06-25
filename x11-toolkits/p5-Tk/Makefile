@@ -139,8 +139,6 @@ MAN3=		Tie::Watch.3 \
 		Tk::demos::widget_lib::slide.3 \
 		Tk::demos::widget_lib::trace2.3
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800

@@ -17,7 +17,6 @@ COMMENT=	A perlish implementation of Java like inner classes
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Inner.3
 
 .include <bsd.port.mk>

@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::Summary.3 Text::Sentence.3 Lingua::JA::Jtruncate.3
 
 .include <bsd.port.mk>

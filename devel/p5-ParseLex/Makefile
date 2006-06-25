@@ -17,7 +17,6 @@ COMMENT= 	Object-oriented generator of lexical analyzers
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Parse::Lex.3 Parse::Token.3 Parse::YYLex.3 Parse::LexEvent.3 \
 		Parse::CLex.3 Parse::Template.3
 

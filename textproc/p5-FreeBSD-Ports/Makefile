@@ -18,7 +18,6 @@ COMMENT=	Perl modules for parsing FreeBSD's Ports INDEX file
 USE_BZIP2=	yes
 
 PERL_CONFIGURE=	yes
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		FreeBSD::Ports::Port.3 \
 		FreeBSD::Ports.3
 .include <bsd.port.mk>

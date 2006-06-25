@@ -19,6 +19,5 @@ PERL_CONFIGURE=	YES
 
 MAN1=		puuencode.1 puudecode.1
 MAN3=		Convert::UU.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

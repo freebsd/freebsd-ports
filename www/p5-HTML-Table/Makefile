@@ -18,7 +18,6 @@ COMMENT=	Generate HTML tables for CGI scripts
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Table.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

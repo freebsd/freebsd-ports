@@ -17,7 +17,6 @@ COMMENT=	Perl extension for manipulating IPv4 addresses
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		ipv4calc.1
 MAN3=		Net::IPv4Addr.3
 

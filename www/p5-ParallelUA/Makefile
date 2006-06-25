@@ -23,7 +23,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Bundle::ParallelUA.3 \
 		LWP::Parallel.3 \
 		LWP::Parallel::Protocol.3 \

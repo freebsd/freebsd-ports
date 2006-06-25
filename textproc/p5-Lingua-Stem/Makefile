@@ -32,6 +32,5 @@ MAN3=			Lingua::Stem.3 Lingua::Stem::AutoLoader.3 \
 			Lingua::Stem::EnBroken.3 Lingua::Stem::Gl.3 \
 			Lingua::Stem::No.3 Lingua::Stem::De.3 \
 			Lingua::Stem::Sv.3 Lingua::Stem::Da.3
-MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

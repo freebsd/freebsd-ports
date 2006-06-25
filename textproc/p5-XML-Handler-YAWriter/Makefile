@@ -23,6 +23,5 @@ PERL_CONFIGURE=	yes
 MAN1=		xmlpretty.1
 MAN1PREFIX=	${PREFIX}
 MAN3=		XML::Handler::YAWriter.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

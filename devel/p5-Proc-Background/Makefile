@@ -17,7 +17,6 @@ COMMENT=	Perl interface to running background processes
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		timed-process.1
 MAN3=		Proc::Background.3 \
 		Proc::Background::Win32.3 \

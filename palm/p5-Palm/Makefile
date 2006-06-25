@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/p5-Palm-1.003_000
 # Just so that the .packlist conforms to reality
 NOMANCOMPRESS=	yes
 MAN1=		pdbdump.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Palm::Address.3 \
 		Palm::Datebook.3 \
 		Palm::Mail.3 \

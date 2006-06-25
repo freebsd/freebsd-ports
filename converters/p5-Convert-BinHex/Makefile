@@ -18,6 +18,5 @@ COMMENT=	Perl module to extract data from Macintosh BinHex files
 PERL_CONFIGURE=	yes
 
 MAN3=		Convert::BinHex.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

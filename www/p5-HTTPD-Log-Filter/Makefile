@@ -21,6 +21,5 @@ RUN_DEPENDS=	${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib
 PERL_CONFIGURE=	yes
 MAN1=		exclude_robots.1
 MAN3=		HTTPD::Log::Filter.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

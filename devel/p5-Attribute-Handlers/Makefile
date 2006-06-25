@@ -17,7 +17,6 @@ COMMENT=	Attribute::Handlers - Simpler definition of attribute handlers
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Attribute::Handlers.3
 
 .include <bsd.port.pre.mk>

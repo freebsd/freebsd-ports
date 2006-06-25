@@ -20,7 +20,6 @@ RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
 
 PERL_CONFIGURE=	YES
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Convert::Recode.3
 
 post-patch:

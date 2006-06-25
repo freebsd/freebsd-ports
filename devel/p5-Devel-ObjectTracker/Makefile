@@ -17,7 +17,6 @@ COMMENT=	Track object life to detect memory leaks
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::ObjectTracker.3
 
 .include <bsd.port.mk>
