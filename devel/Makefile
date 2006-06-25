@@ -1170,6 +1170,7 @@
     SUBDIR += p5-POE-XS-Queue-Array
     SUBDIR += p5-PPerl
     SUBDIR += p5-PV
+    SUBDIR += p5-Package-Constants
     SUBDIR += p5-PadWalker
     SUBDIR += p5-Parallel-ForkManager
     SUBDIR += p5-Params-CallbackRequest

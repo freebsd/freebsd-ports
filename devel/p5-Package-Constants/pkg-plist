@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Package/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Constants/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/Constants
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
+@dirrmtry %%SITE_PERL%%/Package
