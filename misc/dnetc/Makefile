@@ -7,7 +7,7 @@
 
 PORTNAME=	dnetc
 PORTVERSION=	${VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
@@ -54,6 +54,16 @@ VERSION=	2.9003.481
 VERSION=	2.9011.496
 .else
 VERSION=	2.9012.497
+.endif
+
+.if ${ARCH} == i386 && ${OSVERSION} >= 503000
+MASTER_SITE_SUBDIR=	prerelease/rc
+.if ${OSVERSION} >= 600034
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+.else
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
+.endif
 .endif
 
 do-configure:
