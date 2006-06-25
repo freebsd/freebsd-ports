@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://jabberstudio.rediris.es/jabberd2/ \
 		http://jabberstudio.2nw.net/jabberd2/
@@ -68,10 +69,12 @@ CONFIGURE_ARGS+=--disable-mysql
 .endif
 
 .if defined(WITH_BDB)
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+USE_BDB=	yes
+WANT_BDB_VER=	43
 CONFIGURE_ARGS+=--enable-db
 CONFIGURE_ARGS+=--oldincludedir=/nonexistant
-EIP+=:${LOCALBASE}/include/db41
+EIP+=:${BDB_INCLUDE_DIR}
+ELP+=:${BDB_LIB_DIR}
 .else
 CONFIGURE_ARGS+=--disable-db
 .endif
