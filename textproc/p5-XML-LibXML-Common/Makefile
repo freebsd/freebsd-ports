@@ -21,7 +21,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2'
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		XML::LibXML::Common.3
 
 .include <bsd.port.mk>

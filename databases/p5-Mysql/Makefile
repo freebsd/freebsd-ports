@@ -33,7 +33,6 @@ MAN1=		dbimon.1
 MAN3=		Bundle::DBD::mysql.3 \
 		DBD::mysql.3 \
 		Mysql.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 		@${PERL} -p -i -e 's| -lgz||' ${WRKSRC}/lib/DBD/mysql/Install.pm

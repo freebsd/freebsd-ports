@@ -26,6 +26,5 @@ PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::SessionManager::CookieStore.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

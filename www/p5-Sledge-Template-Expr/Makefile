@@ -24,6 +24,5 @@ PM_DEPENDS+=	${SITE_PERL}/HTML/Template/Expr.pm:${PORTSDIR}/www/p5-HTML-Template
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::Template::Expr.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

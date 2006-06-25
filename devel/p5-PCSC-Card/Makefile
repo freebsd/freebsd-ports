@@ -27,7 +27,6 @@ PERL_CONFIGURE=	yes
 MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
 
 MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-I/usr/local/pcsc/include,${LOCALBASE}/include/PCSC," \

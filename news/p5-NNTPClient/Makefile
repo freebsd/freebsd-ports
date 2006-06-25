@@ -17,7 +17,6 @@ COMMENT=	Client interface to NNTP (RFC977)
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		News::NNTPClient.3
 
 .include <bsd.port.mk>

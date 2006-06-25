@@ -20,7 +20,6 @@ LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Imlib2.3
 
 .include <bsd.port.mk>

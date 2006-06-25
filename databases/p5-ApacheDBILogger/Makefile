@@ -21,6 +21,5 @@ BUILD_DEPENDS=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::DBILogger.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

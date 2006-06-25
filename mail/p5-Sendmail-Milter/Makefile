@@ -18,7 +18,6 @@ COMMENT=	A module to write mail filters in Perl using sendmail's mail filter API
 IGNORE=		"Requires perl compiled manually with threads."
 
 PERL_CONFIGURE=	yes
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Sendmail::Milter.3
 

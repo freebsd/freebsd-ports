@@ -25,6 +25,5 @@ PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XM
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::Plugin::XSLT.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

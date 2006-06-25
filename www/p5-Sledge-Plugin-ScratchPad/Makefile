@@ -23,6 +23,5 @@ PM_DEPENDS=	${SITE_PERL}/Sledge.pm:${PORTSDIR}/www/p5-Sledge
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::Plugin::ScratchPad.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
