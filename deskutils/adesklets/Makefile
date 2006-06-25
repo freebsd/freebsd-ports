@@ -7,6 +7,7 @@
 
 PORTNAME=	adesklets
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +16,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An interactive Imlib2 console for the X Window system
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
@@ -57,6 +59,9 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_PERL=yes to disable perl support"
 	@${ECHO_MSG} "WITHOUT_HISTORY=yes to disable history support in interactive mode"
 	@${ECHO_MSG} ""
+
+post-extract:
+	@${REINPLACE_CMD} -e 's| sed | gsed |g' ${WRKSRC}/utils/adesklets_frontend.sh.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
