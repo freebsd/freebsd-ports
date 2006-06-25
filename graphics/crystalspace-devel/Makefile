@@ -23,7 +23,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -32,7 +31,8 @@ USE_GL=		yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
+MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" \
+		CPPFLAGS="${CPPFLAGS} "LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-cpu-specific-optimizations=no
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/CS
@@ -56,7 +56,7 @@ OPTIONS=	DEBUG	"Build with debugging information"	on \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 .if ${ARCH} != "i386"
@@ -157,7 +157,7 @@ CONFIGURE_ARGS+=	--without-bfd
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's,sdl-config,sdl11-config,g; \
+	@${REINPLACE_CMD} -e 's,sdl-config,${SDL_CONFIG:T},g; \
 		s,86\*),86\*|amd64|ia64),' ${WRKSRC}/configure
 
 post-configure:
