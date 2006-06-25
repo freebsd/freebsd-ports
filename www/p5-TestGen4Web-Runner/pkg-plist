@@ -1,0 +1,5 @@
+%%SITE_PERL%%/TestGen4Web/Runner.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TestGen4Web/Runner/.packlist
+@dirrmtry %%SITE_PERL%%/TestGen4Web
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TestGen4Web/Runner
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TestGen4Web

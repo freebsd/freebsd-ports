@@ -1,0 +1,10 @@
+TestGen4Web::Runner is a PERL module to replay files recorded with
+SpikeSource's TestGen4Web Recorder.
+
+From http://developer.spikesource.com/projects/testgen4web :
+
+"TestGen4Web is written to ease the pain of writing tests for web applications.
+This is a 2 part tool. Firefox extension, which records user input to a xml
+file. Translator script: to generate automated test scripts."
+
+WWW: http://search.cpan.org/dist/TestGen4Web-Runner/
