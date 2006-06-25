@@ -5,29 +5,43 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux_base-gentoo-stage1
+PORTNAME=	gentoo-stage1
 PORTVERSION=	2006.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
+DISTNAME=	stage1-x86-${PORTVERSION}
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
 
-CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
-		linux_base-rh* linux_base-suse* linux_base-fc* \
-		linux_base-gentoo-stage[23]-*
-
+USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
 NO_FILTER_SHLIBS=	YES
 NO_MTREE=		YES
-ONLY_FOR_ARCHS=		alpha amd64 i386
-PLIST=			${WRKDIR}/pkg-plist
-PREFIX=			${LINUXBASE}
-USE_BZIP2=		YES
+ONLY_FOR_ARCHS=		amd64 i386
+SUB_FILES+=		pkg-message pkg-install pkg-deinstall
+SUB_LIST+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
+PLIST_SUB+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
+PKGMESSAGE=		${WRKDIR}/pkg-message
+PKGINSTALL=		${WRKDIR}/pkg-install
+PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
+
+.if defined(WITH_LINUXBASE)
+PKGNAMEPREFIX=  linux_base-
+CONFLICTS=      linux_base-7* linux_base-8* linux_base-debian* \
+		linux_base-rh* linux_base-suse* linux_base-fc* \
+		linux_base-gentoo-stage[23]-*
+PREFIX?=	${LINUXBASE}
+PREFIX_SUBDIR=
+.else
+PKGNAMEPREFIX=  linux_dist-
+PREFIX_SUBDIR=  ${PORTNAME}/
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -35,34 +49,37 @@ USE_BZIP2=		YES
 LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
 .endif
 
-.if (${ARCH} == "alpha")
-MASTER_SITE_SUBDIR=	releases/alpha/${PORTVERSION}/stages
-DISTNAME=		stage1-alpha-${PORTVERSION}
-MD5_FILE=       	${MASTERDIR}/distinfo.alpha
+pre-fetch:
+.if defined(WITH_LINUXBASE)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Note that this port doesn't completely suit our ports"
+	@${ECHO_MSG} "infrastructure.  It's very good for a standalone Linux"
+	@${ECHO_MSG} "distribution on a FreeBSD system you can use for"
+	@${ECHO_MSG} "cross-developing and cross-building, etc., but using it as a"
+	@${ECHO_MSG} "linux_base port is not quite adequate."
+	@${ECHO_MSG} "If you experience troubles with it, please use the"
+	@${ECHO_MSG} "default linux_base port."
+	@${ECHO_MSG} ""
 .else
-MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
-DISTNAME=		stage1-x86-${PORTVERSION}
-MD5_FILE=       	${MASTERDIR}/distinfo.i386
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "This port is a complete Linux distribution you can use"
+	@${ECHO_MSG} "on a FreeBSD system.  The use of this port as a linux_base"
+	@${ECHO_MSG} "port is very discouraged but you can enforce it to install"
+	@${ECHO_MSG} "as a linux_base if you set WITH_LINUXBASE."
+	@${ECHO_MSG} ""
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${TAR} --exclude=./dev --exclude=./proc -xpy -C ${WRKSRC} \
-		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
-	@${ECHO_CMD} etc/resolv.conf > ${PLIST}
-	@cd ${WRKSRC} && ${FIND} * -type f -o -type l >> ${PLIST} \
-		&& ${FIND} * -type d | ${SORT} -r | ${SED} -e 's:^:@dirrm :' \
-		>> ${PLIST}
-	@${RM} -fr ${WRKSRC}
-
 do-install:
-	- ${MKDIR} ${PREFIX}
+	@${MKDIR} ${PREFIX}/${PREFIX_SUBDIR}
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${TAR} --exclude=./dev -xpy --exclude=./proc -C ${PREFIX} \
+	@${TAR} --exclude=./dev -xpy --exclude=./proc -C ${PREFIX}/${PREFIX_SUBDIR} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
-	${FIND} ${PREFIX} \! -path "/compat/linux/proc*" -type d -exec ${CHMOD} 755 \{\} \;
-	@${CP} -p /etc/resolv.conf ${PREFIX}/etc/
-	@${BRANDELF} -t Linux ${PREFIX}/sbin/ldconfig ${PREFIX}/sbin/sln
+	@${CP} -p /etc/resolv.conf ${PREFIX}/${PREFIX_SUBDIR}/etc/
+	@${FIND} ${PREFIX}/${PREFIX_SUBDIR}bin ${PREFIX}/${PREFIX_SUBDIR}sbin/ \
+		${PREFIX}/${PREFIX_SUBDIR}usr/bin ${PREFIX}/${PREFIX_SUBDIR}/usr/sbin \
+		-type f -print0 | ${XARGS} -0 ${FILE} \
+		| ${GREP} ELF | ${CUT} -d : -f 1 \
+		| ${XARGS} ${BRANDELF} -t Linux
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
