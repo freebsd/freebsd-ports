@@ -34,6 +34,8 @@ CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
 GCONF_SCHEMAS=	ekiga.schemas
 MAN1=		ekiga.1
 
+IGNORE=		requires update for new pwlib
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
