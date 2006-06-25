@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimeforest
-PORTVERSION=	0.55
+PORTVERSION=	0.58
 CATEGORIES=	japanese games linux
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
 		http://lrnj.com/

@@ -39,6 +39,7 @@ bin/slimeforest-win
 %%DATADIR%%/jquest/images/floortile.png
 %%DATADIR%%/jquest/images/forestbg.jpg
 %%DATADIR%%/jquest/images/ghostking.png
+%%DATADIR%%/jquest/images/giantslime.png
 %%DATADIR%%/jquest/images/grassbg.jpg
 %%DATADIR%%/jquest/images/grasstile.png
 %%DATADIR%%/jquest/images/greenblop.png
@@ -73,7 +74,7 @@ bin/slimeforest-win
 %%DATADIR%%/jquest/images/rkframe.png
 %%DATADIR%%/jquest/images/roadtile.png
 %%DATADIR%%/jquest/images/rooftile.png
-%%DATADIR%%/jquest/images/sfatitle.jpg
+%%DATADIR%%/jquest/images/sfatitle.png
 %%DATADIR%%/jquest/images/ship.png
 %%DATADIR%%/jquest/images/shiphero.png
 %%DATADIR%%/jquest/images/shipknight.png
