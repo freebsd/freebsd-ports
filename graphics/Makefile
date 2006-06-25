@@ -369,6 +369,7 @@
     SUBDIR += linux-tiff
     SUBDIR += linux-ungif
     SUBDIR += linux_dri
+    SUBDIR += linux_dri-devel
     SUBDIR += linux_glide
     SUBDIR += linux_glx
     SUBDIR += lodju
