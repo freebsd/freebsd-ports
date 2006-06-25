@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	6.2.20050719
+PORTVERSION=	6.5.20060624
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~anholt/dri/
 MASTER_SITE_SUBDIR=	anholt
-DISTFILES=	Mesa-20050719.tar.bz2	\
-		drm-20050719.tar.bz2	\
-		r300-20050719.tar.bz2
-
-PATCH_SITES=	http://people.freebsd.org/~anholt/dri/
-PATCHFILES=	patch-r300_drm.bz2
+DISTFILES=	Mesa-20060624.tar.bz2	\
+		drm-20060624.tar.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	DRI OpenGL drivers snapshot
@@ -28,7 +24,7 @@ EXTRA_DISTFILES= \
 		Mesa-20050719.tar.bz2	\
 		drm-20050719.tar.bz2
 
-CONFLICTS=	xfree86-dri-[0-9]* dri-6.2_*
+CONFLICTS=	xfree86-dri-[0-9]* dri-6.2_* dri-6.4_*
 
 WRKSRC=		${WRKDIR}/Mesa
 USE_X_PREFIX=	yes
@@ -49,20 +45,25 @@ DRIMODDIR=	${PREFIX}/lib/modules/dri
 USE_GCC=        3.4
 .endif
 
-post-extract:
-	(cd ${WRKSRC}/src/mesa/drivers/dri && \
-		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/r300-20050719.tar.bz2 ${EXTRACT_AFTER_ARGS} )
-
 .if ${X_WINDOW_SYSTEM:L} != xorg
 IGNORE=	requires libGL from X.Org.
 .endif
+
+pre-patch:
+	${REINPLACE_CMD} \
+		-e 's|/usr/X11R6|${X11BASE}|g' \
+		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|gcc|${CC}|g' \
+		-e 's|g++|${CXX}|g' \
+		-e 's|CFLAGS = |CFLAGS = ${CFLAGS}|g' \
+		-e 's|OPT_FLAGS = .*|OPT_FLAGS = ${CFLAGS}|g' \
+		-e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configs/freebsd-dri
 
 do-install:
 	${MKDIR} ${DRIMODDIR}
 .if ${ARCH} == i386
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/i830_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/unichrome_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/tdfx_dri.so ${DRIMODDIR}
@@ -85,7 +86,7 @@ ALL_TARGET=	freebsd-dri-x86
 .elif ${ARCH} == amd64
 PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	I386_AMD64=""
-ALL_TARGET=	freebsd-dri
+ALL_TARGET=	freebsd-dri-amd64
 .else
 PLIST_SUB+=	I386="@comment "
 PLIST_SUB+=	I386_AMD64="@comment "
