@@ -19,13 +19,12 @@ COMMENT=	CEL is a layer that sits on top of Crystal Space 3D Engine
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
 		cs-config:${PORTSDIR}/graphics/crystalspace
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-CONFIGURE_ARGS+=	--with-cs-prefix=${X11BASE}
+CONFIGURE_ARGS+=	--with-cs-prefix=${LOCALBASE}
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 DOCSDIR?=	share/doc/cel-${PORTVERSION}
 DATADIR?=	share/cel
