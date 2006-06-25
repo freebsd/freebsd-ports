@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export CRYSTAL=%%X11BASE%%/lib/planeshift
+export CEL=%%X11BASE%%/lib/cel
+export CSCONFPATH=%%X11BASE%%/etc/crystalspace
+
+cd %%PREFIX%%/lib/planeshift
+exec ./psserver $1
