@@ -502,6 +502,7 @@
     SUBDIR += pioneers
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
+    SUBDIR += planeshift
     SUBDIR += plonx
     SUBDIR += pmars
     SUBDIR += pmars-sdl

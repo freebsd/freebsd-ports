@@ -1,0 +1,120 @@
+#################################################################################
+
+CLIENT ONLY
+-----------
+
+1) Need to download all necessary files for planeshift (art and data directory).
+   
+   # updater --auto
+
+   This download 200M aprox.
+
+2) After to update data and art directory, you need to make some changes in
+   files into data directory. I don't know about the problem with <?Include and 
+   <?Template tag defined. The solution is changing these tag to lowercase.
+
+   # find data -type f -exec sed -i '' -e 's|<?Template|<?template|g' -e \
+	's|<?Endtemplate|<?endtemplate|g' -e 's|<?Include|<?include|g' "{}" \;
+
+3) Also, I had problem with cg-base file into data/shader/snippets directory. I
+   solved it modifying some lines.
+
+    <?template _List_$LIST$ ?><?endtemplate?>
+   
+    <?template _List_$LIST$ ?>
+      <?_List_$LIST$?>
+      <?$ITEM$?>
+    <?endtemplate?>
+   
+    <?_List_$LIST$?>
+
+   to
+
+    <?!template _List_$LIST$ ?><?!endtemplate?>
+    
+    <?!template _List_$LIST$ ?>
+      <?!_List_$LIST$?>
+      <?!$ITEM$?>
+    <?!endtemplate?>
+
+    <?!_List_$LIST$?>
+
+4) Modify psclient.cfg and change line:
+
+    Planeshift.GUI.Skin.Ingame = /this/art/skins/cvs.zip
+
+    to
+
+    Planeshift.GUI.Skin.Ingame = /this/art/skins/default.zip
+
+5) For play online, you need create an account
+
+   http://laanx.fragnetics.com/register/
+
+6) Edit planeshift.cfg file and modify these lines:
+
+   ; Change values if you want.
+   Video.ScreenWidth = 800
+   Video.ScreenHeight = 600
+   ; Performs better in 32 bit display mode
+   Video.ScreenDepth = 32
+   Video.FullScreen = true
+   Planeshift.Connection.User = PlaneshiftAccount
+
+7) Start planeshift using root account once.
+8) Finally you can start planeshift using simple user account
+9) Enjoy it ;)
+
+SERVER ONLY
+-----------
+
+1) Start MySQL server
+
+   # sh /usr/local/etc/rc.d/mysql-server start
+
+2) Login MySQL console
+
+   # mysql -u username -ppassword
+
+   default username is root with no password
+
+3) Create database and user account
+
+   mysql>create database planeshift;
+   mysql>GRANT ALL PRIVILEGES ON *.* TO planeshift@localhost IDENTIFIED BY \
+		'planeshift' WITH GRANT OPTION;
+   mysql>quit
+
+   # cd %%EXAMPLESDIR%%
+
+   # mysql -u planeshift -pplaneshift
+
+   mysql> use planeshift;
+   mysql> source create_all.sql;
+   mysql> quit
+
+4) Copy worldnet's dict directory to planeshift's data directory
+
+   # cd /usr/local/share/WordNet
+   # mkdir /usr/X11R6/lib/planeshift/data/dict
+   # cp * /usr/X11R6/lib/planeshift/data/dict
+
+5) Start planeshift server
+	
+   # psserver
+
+   Type the following in "PS Server" prompt:
+
+   loadmap npcroom
+   spawn
+   ready
+
+6) Planeshift client can use these accounts for login
+
+   Vengeance/keith
+   acraig/andrew
+   guest/guest
+
+7) Enjoy it ;)
+
+#################################################################################
