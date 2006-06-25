@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	gui
-PORTVERSION=	1.7
+PORTVERSION=	1.7.2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python_gui/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyGUI-${PORTVERSION}
+DISTNAME=	PyGUI-${PORTVERSION}-1
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	alex@foxybanana.com
 COMMENT=	A cross-platform pythonic GUI API
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
@@ -22,6 +22,16 @@ USE_GNOME=	pygtk2
 
 DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
+WRKSRC=		${WRKDIR}/PyGUI-${PORTVERSION}
+
+OPTIONS=	GL "Enable GL support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GL)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
+.endif
 
 post-extract:
 	${RM} -rf ${WRKSRC}/GUI/Cocoa
@@ -36,8 +46,10 @@ post-install:
 	${MKDIR} ${PREFIX}/${DOCSDIR}
 	${TAR} -C ${WRKSRC}/Doc -cf - . | ${TAR} -C ${PREFIX}/${DOCSDIR} -xf -
 	${MKDIR} ${PREFIX}/${EXAMPLESDIR}
+	${RM} -f ${WRKSRC}/Demos/BlobEdit/.gdb_history \
+		 ${WRKSRC}/Demos/BlobEdit/Makefile
 	${TAR} -C ${WRKSRC}/Demos -cf - . | \
 		${TAR} -C ${PREFIX}/${EXAMPLESDIR} -xf -
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

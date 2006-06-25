@@ -1,3 +1,17 @@
+%%PYTHON_SITELIBDIR%%/GUI/Resources/arrow.hot
+%%PYTHON_SITELIBDIR%%/GUI/Resources/arrow.tiff
+%%PYTHON_SITELIBDIR%%/GUI/Resources/crosshair.hot
+%%PYTHON_SITELIBDIR%%/GUI/Resources/crosshair.tiff
+%%PYTHON_SITELIBDIR%%/GUI/Resources/finger.hot
+%%PYTHON_SITELIBDIR%%/GUI/Resources/finger.tiff
+%%PYTHON_SITELIBDIR%%/GUI/Resources/fist.hot
+%%PYTHON_SITELIBDIR%%/GUI/Resources/fist.tiff
+%%PYTHON_SITELIBDIR%%/GUI/Resources/hand.hot
+%%PYTHON_SITELIBDIR%%/GUI/Resources/hand.tiff
+%%PYTHON_SITELIBDIR%%/GUI/Resources/ibeam.hot
+%%PYTHON_SITELIBDIR%%/GUI/Resources/ibeam.tiff
+%%PYTHON_SITELIBDIR%%/GUI/Resources/poof.hot
+%%PYTHON_SITELIBDIR%%/GUI/Resources/poof.tiff
 %%PYTHON_SITELIBDIR%%/GUI/Generic/Actions.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/Actions.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/Actions.pyo
@@ -16,6 +30,9 @@
 %%PYTHON_SITELIBDIR%%/GUI/Generic/Exceptions.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/Exceptions.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/Exceptions.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Generic/FileDialogs.py
+%%PYTHON_SITELIBDIR%%/GUI/Generic/FileDialogs.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Generic/FileDialogs.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GAlerts.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GAlerts.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GAlerts.pyo
@@ -127,6 +144,9 @@
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GScrollableViews.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GScrollableViews.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GScrollableViews.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GSliders.py
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GSliders.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GSliders.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GTasks.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GTasks.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GTasks.pyo
@@ -181,6 +201,9 @@
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/BaseAlerts.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/BaseAlerts.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/BaseAlerts.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/BaseFileDialogs.py
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/BaseFileDialogs.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/BaseFileDialogs.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Buttons.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Buttons.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Buttons.pyo
@@ -214,9 +237,6 @@
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Events.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Events.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Events.pyo
-%%PYTHON_SITELIBDIR%%/GUI/Gtk/FileDialogs.py
-%%PYTHON_SITELIBDIR%%/GUI/Gtk/FileDialogs.pyc
-%%PYTHON_SITELIBDIR%%/GUI/Gtk/FileDialogs.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Files.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Files.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Files.pyo
@@ -265,6 +285,9 @@
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/ScrollableViews.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/ScrollableViews.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/ScrollableViews.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/Sliders.py
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/Sliders.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/Sliders.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/StdCursors.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/StdCursors.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/StdCursors.pyo
@@ -315,6 +338,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/DisplayList.html
 %%PORTDOCS%%%%DOCSDIR%%/Document.html
 %%PORTDOCS%%%%DOCSDIR%%/Event.html
+%%PORTDOCS%%%%DOCSDIR%%/Exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/FileRef.html
 %%PORTDOCS%%%%DOCSDIR%%/FileType.html
 %%PORTDOCS%%%%DOCSDIR%%/Font.html
@@ -339,6 +363,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/Resources.html
 %%PORTDOCS%%%%DOCSDIR%%/ScrollableView.html
 %%PORTDOCS%%%%DOCSDIR%%/ShareGroup.html
+%%PORTDOCS%%%%DOCSDIR%%/Slider.html
 %%PORTDOCS%%%%DOCSDIR%%/StdColors.html
 %%PORTDOCS%%%%DOCSDIR%%/StdCursors.html
 %%PORTDOCS%%%%DOCSDIR%%/StdFonts.html
@@ -372,17 +397,22 @@
 %%PORTDOCS%%%%DOCSDIR%%/using_the_view_class.html
 %%PORTDOCS%%%%DOCSDIR%%/view-model.cwk
 %%PORTDOCS%%%%DOCSDIR%%/view-model.jpg
-%%PORTDOCS%%%%EXAMPLESDIR%%/blobedit.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/frown.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/gt
-%%PORTDOCS%%%%EXAMPLESDIR%%/line.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/mt
-%%PORTDOCS%%%%EXAMPLESDIR%%/smile.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/test.blob
-%%PORTDOCS%%%%EXAMPLESDIR%%/zsx.blob
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/blobedit.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob.tiff
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob_app.icns
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Resources/blob_file.icns
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/asdf.blob
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/frown.blob
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/line.blob
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/Samples/smile.blob
+%%PORTDOCS%%%%EXAMPLESDIR%%/BlobEdit/setup.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BlobEdit/Resources
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BlobEdit/Samples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BlobEdit
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ToDo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/GUI/Resources
 @dirrm %%PYTHON_SITELIBDIR%%/GUI/Gtk
 @dirrm %%PYTHON_SITELIBDIR%%/GUI/Generic
 @dirrm %%PYTHON_SITELIBDIR%%/GUI
