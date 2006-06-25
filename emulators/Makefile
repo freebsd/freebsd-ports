@@ -64,6 +64,9 @@
     SUBDIR += linux-vmware-toolbox4
     SUBDIR += linux-vmware-toolbox5
     SUBDIR += linux-winetools
+    SUBDIR += linux_dist-gentoo-stage1
+    SUBDIR += linux_dist-gentoo-stage2
+    SUBDIR += linux_dist-gentoo-stage3
     SUBDIR += linux_base
     SUBDIR += linux_base-8
     SUBDIR += linux_base-debian
