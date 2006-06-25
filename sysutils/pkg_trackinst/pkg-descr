@@ -6,5 +6,8 @@ This package provides two commands:
      package for the installed package.
 
   * pkg_genplist:
-     Generates `pkg-plist' of a port in current directory automatically
-     by a test installation.
+     Tests a port installation and generates `pkg-plist' of a port
+     in current directory.
+
+  * pkg_checkplist:
+     Tests a port installation and checks `pkg-plist' errors.

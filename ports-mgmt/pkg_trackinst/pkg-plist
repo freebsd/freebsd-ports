@@ -1,3 +1,4 @@
+bin/pkg_checkplist
 bin/pkg_genplist
 bin/pkg_trackinst
 lib/insthook.so
@@ -22,6 +23,9 @@ lib/insthook.so
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/__init__.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/PkgTrackInst/checkplist_main.py
+%%PYTHON_SITELIBDIR%%/PkgTrackInst/checkplist_main.pyc
+%%PYTHON_SITELIBDIR%%/PkgTrackInst/checkplist_main.pyo
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/cmd_support.py
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/cmd_support.pyc
 %%PYTHON_SITELIBDIR%%/PkgTrackInst/cmd_support.pyo
