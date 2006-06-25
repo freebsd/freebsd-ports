@@ -23,6 +23,7 @@
 %%LISPDIR%%/auctex/toolbar-x.el
 %%LISPDIR%%/auctex/auto/.nosearch
 %%LISPDIR%%/auctex/style/.nosearch
+%%LISPDIR%%/auctex/style/pdfsync.el
 %%LISPDIR%%/auctex/style/prosper.el
 %%LISPDIR%%/auctex/style/babel.el
 %%LISPDIR%%/auctex/style/slides.el
@@ -98,6 +99,7 @@
 %%LISPDIR%%/auctex/style/url.el
 %%LISPDIR%%/auctex/style/jsarticle.el
 %%LISPDIR%%/auctex/style/jsbook.el
+%%LISPDIR%%/auctex/style/pdfsync.elc
 %%LISPDIR%%/auctex/style/prosper.elc
 %%LISPDIR%%/auctex/style/babel.elc
 %%LISPDIR%%/auctex/style/slides.elc
@@ -268,5 +270,5 @@
 %%TEXMFDIR%%/tex/latex/preview/prtracingall.def
 %%TEXMFDIR%%/doc/latex/styles/preview.dvi
 @dirrm %%TEXMFDIR%%/doc/latex/styles
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%

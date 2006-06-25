@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		auctex
-PORTVERSION=		11.82
+PORTVERSION=		11.83
 PORTREVISION=		0
 CATEGORIES=		print elisp
 MASTER_SITES=		${MASTER_SITE_GNU}
@@ -39,6 +39,7 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 NOT_FOR_ARCHS=	ia64
 
 post-install:
+	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
