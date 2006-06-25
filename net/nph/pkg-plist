@@ -1,0 +1,7 @@
+@unexec cmp %D/etc/nphrc.sample %D/etc/nphrc && rm %D/etc/nphrc
+@unexec cmp %D/etc/ph_server.sample %D/etc/ph_server && rm %D/etc/ph_server
+bin/nph
+etc/nphrc.sample
+etc/ph_server.sample
+include/phclient.h
+lib/libphclient.a
