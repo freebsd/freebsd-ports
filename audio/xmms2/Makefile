@@ -65,6 +65,9 @@ PLIST_SUB+=	SID="@comment "
 EXCLUDE+=	ruby java
 .elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "ruby"
 EXCLUDE+=	python java
+.elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "ruby-ecore"
+EXCLUDE+=	python java
+WITH_ECORE=	yes
 .elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "java"
 EXCLUDE+=	ruby python
 .elif !defined(XMMS2_SLAVE)
@@ -72,7 +75,7 @@ EXCLUDE+=	python ruby java
 .endif
 
 .if defined(WITH_ECORE)
-LIB_DEPENDS+=	lecore.1:${PORTSDIR}/x11/ecore
+LIB_DEPENDS+=	ecore.1:${PORTSDIR}/x11/ecore
 PLIST_SUB+=	ECORE=""
 .else
 EXCLUDE+=	xmmsclient-ecore
