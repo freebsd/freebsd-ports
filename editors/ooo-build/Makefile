@@ -5,8 +5,8 @@
 
 PORTNAME=	ooo-build
 PORTVERSION=	${OOOBUILD_VERSION}
-MASTER_SITES+=	http://ooo.ximian.com/packages/OOB680/ \
-		http://ooo.ximian.com/packages/SRC680/ \
+MASTER_SITES+=	http://www.go-ooo.org/packages/OOB680/ \
+		http://www.go-ooo.org/packages/SRC680/ \
 		http://www.openclipart.org/downloads/0.18/:openclipart
 DISTFILES+=	${OOOBUILD_SOURCE} \
 	${OOO_EXTRA_ARTWORK} ${OOO_CRYSTAL_IMAGES} \
@@ -30,7 +30,7 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOOBUILD_VERSION=2.0.2.9
+OOOBUILD_VERSION=2.0.2.15
 OOOBUILD_TAG=oob680-m5
 OOOBUILD=	ooo-build-${OOOBUILD_VERSION}
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
@@ -39,6 +39,8 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .endif
+
+BROKEN=		"Incompatible with master port(2.0.3) and oooi-build(2.0.2)"
 
 MD5_FILE=      ${.CURDIR}/distinfo
 USE_AUTOTOOLS=  autoconf:259
