@@ -23,6 +23,10 @@ USE_GNOME=	pygtk2
 DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
+# A workaround for the problem that "make config" doesn't work
+# because _OPTIONSFILE is defined before bsd.python.mk is included.
+LATEST_LINK=	py-${PORTNAME}
+
 WRKSRC=		${WRKDIR}/PyGUI-${PORTVERSION}
 
 OPTIONS=	GL "Enable GL support" off
