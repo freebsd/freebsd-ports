@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.14.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -81,11 +81,11 @@ do-install:	# empty
 .if ${ARCH} == "i386" || ${OSVERSION} > 500035
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 .endif
-.if ${.CURDIR:T}!="gnome2-lite"
-.if ${ARCH}!="sparc64" || ${OSVERSION} >= 700003
-RUN_DEPENDS+=	ekiga:${PORTSDIR}/net/ekiga
-.endif
-.endif
+#.if ${.CURDIR:T}!="gnome2-lite"
+#.if ${ARCH}!="sparc64" || ${OSVERSION} >= 700003
+#RUN_DEPENDS+=	ekiga:${PORTSDIR}/net/ekiga
+#.endif
+#.endif
 .endif
 
 .if ${.CURDIR}==${MASTERDIR} || ${.CURDIR:T}=="gnome2-lite"
