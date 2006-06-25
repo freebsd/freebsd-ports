@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Build-Convert
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -29,4 +29,10 @@ PERL_MODBUILD=	yes
 MAN3=		Module::Build::Convert.3
 MAN1=		make2build.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
