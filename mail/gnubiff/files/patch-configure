@@ -1,6 +1,6 @@
---- ./configure.orig	Sun Apr 16 18:58:03 2006
-+++ ./configure	Sun Apr 16 18:58:06 2006
-@@ -4207,7 +4207,7 @@
+--- ./configure.orig	Sat Apr 22 14:41:45 2006
++++ ./configure	Sun Jun 25 12:37:49 2006
+@@ -4117,7 +4117,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
