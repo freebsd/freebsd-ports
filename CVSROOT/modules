@@ -10644,6 +10644,7 @@ pl-trf		ports/polish/trf
 pl-webalizer2	ports/polish/webalizer2
 plan		ports/deskutils/plan
 plan9port	ports/devel/plan9port
+planeshift	ports/games/planeshift
 planet		ports/www/planet
 planets		ports/astro/planets
 planner		ports/deskutils/planner
