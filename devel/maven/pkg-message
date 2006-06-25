@@ -1,9 +1,5 @@
 
-To work with Maven you need to set the following environment variable:
-  * JAVA_HOME
-    Set it to the base directory of your java installation.
-
-Then, you should initialize your repository with:
+You may initialize your repository with:
   %%DATADIR%%/bin/install_repo.sh ~/.maven/repository
 
 If you are behind a proxy, create a ~/.mavenrc file with something like:
