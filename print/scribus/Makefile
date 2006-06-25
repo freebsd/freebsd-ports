@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.3.3.1
+PORTVERSION=	1.3.3.2
 CATEGORIES=	print editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.net/downloads/${PORTVERSION}/
