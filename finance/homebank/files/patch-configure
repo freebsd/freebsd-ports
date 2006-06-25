@@ -1,0 +1,28 @@
+--- configure.orig	Sat Jun 10 08:43:43 2006
++++ configure	Sat Jun 24 18:41:41 2006
+@@ -1311,7 +1311,7 @@
+ 
+ 
+ PACKAGE=homebank
+-VERSION=3.2 alpha
++VERSION=3.2.a1
+ 
+ am__api_version="1.4"
+ ac_aux_dir=
+@@ -4878,7 +4878,7 @@
+ _ACEOF
+ 
+ 
+-                                                  ac_config_files="$ac_config_files Makefile data/Makefile src/Makefile images/Makefile po/Makefile.in"
++                                                  ac_config_files="$ac_config_files Makefile src/Makefile images/Makefile po/Makefile.in"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -5416,7 +5416,6 @@
+   case "$ac_config_target" in
+   # Handling of arguments.
+   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+-  "data/Makefile" ) CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
+   "src/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+   "images/Makefile" ) CONFIG_FILES="$CONFIG_FILES images/Makefile" ;;
+   "po/Makefile.in" ) CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
