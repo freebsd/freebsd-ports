@@ -26,7 +26,7 @@ GENTOO_OPTIMIZED?=	x86
 SUB_FILES+=		pkg-message pkg-install pkg-deinstall
 SUB_LIST+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
 PLIST_SUB+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
-PLIST=			pkg-plist.${GENTOO_OPTIMIZED}
+PLIST=			${PKGDIR}/pkg-plist.${GENTOO_OPTIMIZED}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
