@@ -17,23 +17,73 @@ COMMENT=	An ANSI Common Lisp implementation
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
+USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-system-gmp --with-cmuformat=yes --enable-boehm=included
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
-# It should build and run on 64-bit architectures,
-# but it is completely untested.
-ONLY_FOR_ARCHS=	i386
+OPTIONS=	ASDF "Enable ASDF building facility" on \
+		CLOS_STREAMS "Enable user defined stream objects" on \
+		CLX "Enable X11 interface" off \
+		SOCKETS "Enable socket interface" on \
+		THREADS "Enable threading support" off
 
 MAN1=		ecl.1
 INFO=		ecl ecldev
 
-USE_GMAKE=	YES
-USE_PERL5_BUILD=yes
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-asdf --with-tcp --with-system-gmp --enable-boehm=included
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
 
-# We need to tell ECL where to find the GMP includes
-# and libraries.
-CONFIGURE_ENV=	LDFLAGS=-L${PREFIX}/lib CFLAGS=-I${PREFIX}/include
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if !defined(WITHOUT_ASDF)
+CONFIGURE_ARGS+=--with-asdf=yes
+PLIST_SUB+=	ASDF=""
+.else
+CONFIGURE_ARGS+=--with-asdf=no
+PLIST_SUB+=	ASDF="@comment "
+.endif
+
+.if !defined(WITHOUT_CLOS_STREAMS)
+CONFIGURE_ARGS+=--with-clos-streams=yes
+PLIST_SUB+=	CLOS_STREAMS=""
+.else
+CONFIGURE_ARGS+=--with-clos-streams=no
+PLIST_SUB+=	CLOS_STREAMS="@comment "
+.endif
+
+.if defined(WITH_CLX)
+USE_XLIB=	yes
+CONFIGURE_ARGS+=--with-clx=yes
+INFO+=		clx
+PLIST_SUB+=	CLX=""
+.else
+CONFIGURE_ARGS+=--with-clx=no
+PLIST_SUB+=	CLX="@comment "
+.endif
+
+.if !defined(WITHOUT_SOCKETS)
+CONFIGURE_ARGS+=--with-tcp=yes
+PLIST_SUB+=	SOCKETS=""
+.else
+CONFIGURE_ARGS+=--with-tcp=no
+PLIST_SUB+=	SOCKETS="@comment "
+.endif
+
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=--enable-threads=yes
+LDFLAGS+=	${PTHREAD_LIBS}
+.else
+CONFIGURE_ARGS+=--enable-threads=no
+.endif
+
+.if defined(WITH_THREADS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|_NP[[:>:]]||' \
+		${WRKSRC}/src/c/package.d ${WRKSRC}/src/c/threads.d
+.endif
+
+.include <bsd.port.post.mk>
