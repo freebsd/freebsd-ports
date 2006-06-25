@@ -28,10 +28,6 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600031
-BROKEN=			"Does not compile on FreeBSD >= 6.0"
-.endif
-
 pre-configure:
 	@${RM} ${WRKSRC}/config.cache
 
