@@ -21,6 +21,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		SNMP::MIB::Compiler.3 \
 		Bundle::SNMP::MIB::Compiler.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

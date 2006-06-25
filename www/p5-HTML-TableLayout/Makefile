@@ -18,6 +18,5 @@ COMMENT=	Layout manager for CGI-based web applications
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::TableLayout.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

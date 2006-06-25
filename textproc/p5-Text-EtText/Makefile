@@ -17,7 +17,6 @@ COMMENT=	A simple plain-text to HTML converter
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Text::EtText.3 Text::EtText::DefaultGlossary.3 \
 		Text::EtText::LinkGlossary.3 Text::EtText::EtText2HTML.3 \
 		Text::EtText::HTML2EtText.3

@@ -27,7 +27,6 @@ post-patch:
 	@${PERL} -pi -e '$$_="" if /no warnings/;' \
 		${WRKSRC}/Google.pm
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		WWW::Search::Google.3
 
 .include <bsd.port.mk>

@@ -18,6 +18,5 @@ COMMENT=	Basic screen + input class
 PERL_CONFIGURE=	yes
 
 MAN3=		Term::Screen.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

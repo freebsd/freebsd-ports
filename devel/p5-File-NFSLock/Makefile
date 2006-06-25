@@ -18,6 +18,5 @@ COMMENT=	File::NFSLock - perl module to do NFS (or not) locking
 PERL_CONFIGURE=	yes
 
 MAN3=	File::NFSLock.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

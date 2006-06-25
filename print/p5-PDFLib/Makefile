@@ -23,7 +23,6 @@ USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 NO_BUILD=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	PDFLib.3
 
 .include <bsd.port.pre.mk>

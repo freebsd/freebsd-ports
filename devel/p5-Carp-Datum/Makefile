@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 PM_BASE=	${SITE_PERL}
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		datum_strip.1
 MAN3=		Carp::Datum::Assert.3 \
 		Carp::Datum.3 \

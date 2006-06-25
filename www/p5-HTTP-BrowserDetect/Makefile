@@ -17,7 +17,6 @@ COMMENT=	Determine the Web browser, version, OS from an HTTP user agent string
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTTP::BrowserDetect.3
 
 .include <bsd.port.mk>

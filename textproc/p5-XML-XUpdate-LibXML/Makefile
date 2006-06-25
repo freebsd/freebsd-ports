@@ -22,7 +22,6 @@ PERL_CONFIGURE=	yes
 
 MAN1=		xupdate.1
 MAN3=		XML::Normalize::LibXML.3 XML::XUpdate::LibXML.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	@${PERL} -pi -e 's/xupdate/NAME/ if $$.==56' ${WRKSRC}/xupdate

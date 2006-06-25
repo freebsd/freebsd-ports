@@ -19,6 +19,5 @@ PERL_CONFIGURE=	yes
 
 MAN1=		pwhich.1
 MAN3=		File::Which.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

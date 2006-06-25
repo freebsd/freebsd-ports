@@ -25,7 +25,6 @@ MAN3=		XML::SAX.3 XML::SAX::Base.3 XML::SAX::DocumentLocator.3 \
 		XML::SAX::Exception.3 XML::SAX::Intro.3 \
 		XML::SAX::ParserFactory.3 XML::SAX::PurePerl.3 \
 		XML::SAX::PurePerl::Reader.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-configure:
 # dirty hack to deceive irritable pod2man

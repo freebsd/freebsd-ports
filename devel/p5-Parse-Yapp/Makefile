@@ -19,6 +19,5 @@ PERL_CONFIGURE=	yes
 
 MAN1=		yapp.1
 MAN3=		Parse::Yapp.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

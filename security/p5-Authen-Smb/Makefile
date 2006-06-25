@@ -18,7 +18,6 @@ COMMENT=	Perl extension to authenticate against an SMB server
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Authen::Smb.3
 
 post-patch:

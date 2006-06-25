@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::AntiSpam.3 \
 		Apache::AntiSpam::HTMLEncode.3 \
 		Apache::AntiSpam::NoSpam.3 \

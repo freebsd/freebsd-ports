@@ -24,7 +24,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		webmake.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::WebMake.3 HTML::WebMake::PerlCodeLibrary.3 \
 		HTML::WebMake::Content.3 HTML::WebMake::Main.3
 

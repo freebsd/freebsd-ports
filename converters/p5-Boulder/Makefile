@@ -37,6 +37,5 @@ MAN3=		Boulder.3 \
 		Stone.3 \
 		Stone::Cursor.3 \
 		Stone::GB_Sequence.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

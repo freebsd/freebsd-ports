@@ -17,7 +17,6 @@ COMMENT=	Apache::ConfigFile - Parse Apache style httpd.conf configuration files
 
 PERL_CONFIGURE=	yes
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::ConfigFile.3
 
 .include <bsd.port.mk>

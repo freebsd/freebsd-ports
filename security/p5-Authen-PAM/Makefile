@@ -19,7 +19,6 @@ COMMENT=	A Perl interface to the PAM library
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	-DPAM_STRERROR_NEEDS_PAMH
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Authen::PAM.3 \
 		Authen::PAM::FAQ.3
 
