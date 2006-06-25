@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.43
-PORTREVISION=	1
+PORTVERSION=	0.44
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -53,6 +52,10 @@ CONFIGURE_ARGS+=	--with-gnome-vfs
 .else
 CONFIGURE_ARGS+=	--without-gnome-vfs
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|ieefp.h|ieeefp.h|' \
+		${WRKSRC}/src/display/bezier-utils.cpp
 
 post-install:
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/inkscape.1
