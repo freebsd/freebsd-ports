@@ -1,6 +1,6 @@
 @comment $FreeBSD$
+@unexec if cmp -s %D/etc/mt-daapd.conf.sample %D/etc/mt-daapd.conf; then rm -f %D/etc/mt-daapd.conf; fi
 etc/mt-daapd.conf.sample
-etc/rc.d/mt-daapd.sh
 sbin/mt-daapd
 %%DATADIR%%/admin-root/aspl-license.html
 %%DATADIR%%/admin-root/aspl-license.txt
@@ -19,11 +19,9 @@ sbin/mt-daapd
 %%DATADIR%%/admin-root/required.gif
 %%DATADIR%%/admin-root/status.html
 %%DATADIR%%/admin-root/thanks.html
-@dirrm var/mt-daapd/db
-@dirrm var/mt-daapd
-@dirrm %%DATADIR%%/mp3
+@dirrmtry %%DATADIR%%/mp3
 @dirrm %%DATADIR%%/admin-root
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -33,3 +31,6 @@ sbin/mt-daapd
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+@dirrmtry %%DAAPD_DBDIR%%/db
+@dirrmtry %%DAAPD_DBDIR%%

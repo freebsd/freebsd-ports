@@ -34,7 +34,7 @@ admin_pw	mt-daapd
 # This is where mt-daapd stores its database of song information.
 #
 
-db_dir		%%PREFIX%%/var/mt-daapd/db
+db_dir		%%DAAPD_DBDIR%%
 
 #
 # mp3_dir (required)
@@ -42,7 +42,7 @@ db_dir		%%PREFIX%%/var/mt-daapd/db
 # Location of the mp3 files to share
 #
 
-mp3_dir		%%PREFIX%%/share/mt-daapd/mp3
+mp3_dir		%%DATADIR%%
 
 #
 # servername (required)

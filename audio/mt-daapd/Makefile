@@ -9,7 +9,7 @@ PORTNAME=	mt-daapd
 PORTVERSION=	0.2.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mt-daapd
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
@@ -18,23 +18,31 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	AUTOCONF=autoconf259 AUTOHEADER=autoheader259 CC="${CC} -pthread"
-CONFIGURE_ARGS=	--with-id3tag=${PREFIX}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
 
 USE_AUTOTOOLS=	autoheader:259 autoconf:259:env
 
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
+DAAPD_DBDIR?=	/var/db/${PORTNAME}
+USE_RC_SUBR=	mt-daapd.sh
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
+SUB_LIST+=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} DAAPD_DBDIR=${DAAPD_DBDIR}
+SUB_FILES+=	pkg-install pkg-deinstall mt-daapd.conf
 
-FILES_SUB=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} \
-		PREFIX=${PREFIX} LOGDIR=${LOGDIR} DOCSDIR=${DOCSDIR} \
-		LOCALBASE=${LOCALBASE}
+pre-everything::
+	@${ECHO_CMD} "Define vars bellow if you need:"
+	@${ECHO_CMD} "DAAPD_USER=${DAAPD_USER} (default: daapd)"
+	@${ECHO_CMD} "DAAPD_GROUP=${DAAPD_GROUP} (default: daapd)"
+	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: /var/db/${PORTNAME})"
+
 pre-install:
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-install > ${PKGINSTALL}
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
@@ -42,23 +50,18 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in README AUTHORS COPYING CREDITS \
 	ChangeLog INSTALL NEWS TODO
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/mt-daapd.sh > ${WRKDIR}/mt-daapd.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/mt-daapd.sh ${PREFIX}/etc/rc.d/mt-daapd.sh
-	${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/mt-daapd.conf > ${WRKDIR}/mt-daapd.conf
-	${INSTALL_DATA} ${WRKDIR}/mt-daapd.conf ${PREFIX}/etc/mt-daapd.conf.sample
-	@${MKDIR} ${PREFIX}/var/mt-daapd/db
-	@${MKDIR} ${PREFIX}/share/mt-daapd/mp3
-	${CHMOD} 0755 ${PREFIX}/var/mt-daapd/db
-	${CHMOD} 0755 ${PREFIX}/share/mt-daapd/mp3
-	${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${PREFIX}/var/mt-daapd/db
-	${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${PREFIX}/share/mt-daapd/mp3
-	${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@[ -f ${PREFIX}/etc/mt-daapd.conf ] || \
+		${INSTALL_DATA} ${WRKDIR}/mt-daapd.conf \
+			${PREFIX}/etc/mt-daapd.conf
+	@${INSTALL_DATA} ${WRKDIR}/mt-daapd.conf ${PREFIX}/etc/mt-daapd.conf.sample
+	@${MKDIR} ${DAAPD_DBDIR}
+	@${MKDIR} ${DATADIR}
+	@${CHMOD} 0755 ${DAAPD_DBDIR}
+	@${CHMOD} 0755 ${DATADIR}
+	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DAAPD_DBDIR}
+	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DATADIR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $FreeBSD$
+# formerly $ FreeBSD: ports/audio/mt-daapd/files/mt-daapd.sh,v 1.1 2004/07/19 09:18:51 edwin Exp $
+
+# PROVIDE: mt-daapd
+# REQUIRE: LOGIN
+
+. %%RC_SUBR%%
+
+name="mtdaapd"
+rcvar="mt_daapd_enable"
+
+command="%%PREFIX%%/sbin/mt-daapd"
+command_args="-c %%PREFIX%%/etc/mt-daapd.conf"
+pidfile="/var/run/mt-daapd.pid"
+required_dirs="%%DAAPD_DBDIR%%"
+required_files="%%PREFIX%%/etc/mt-daapd.conf.sample"
+
+load_rc_config "$name"
+run_rc_command "$1"
