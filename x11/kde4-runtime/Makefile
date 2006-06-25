@@ -17,7 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-RUN_DEPENDS=	${LOCALBASE}/env/xdg-env.sh:${PORTSDIR}/misc/kde-xdg-env
+RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde-xdg-env
 BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
 		xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
