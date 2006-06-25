@@ -12,6 +12,7 @@
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += grisbi
+    SUBDIR += homebank
     SUBDIR += kexchange
     SUBDIR += khacc
     SUBDIR += kmymoney2
