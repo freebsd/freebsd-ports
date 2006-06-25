@@ -23,20 +23,9 @@ POST-INSTALL)
 			echo '+++ Please mount linprocfs manually! +++'
 		fi
 	fi
-	if [ ! -f ${PKG_PREFIX}/etc/nsswitch.conf ]; then
-		cp ${PKG_PREFIX}/etc/nsswitch.conf.dist \
-			${PKG_PREFIX}/etc/nsswitch.conf
-	fi
-	if [ ! -f ${PKG_PREFIX}/etc/yp.conf ]; then
-		cp ${PKG_PREFIX}/etc/yp.conf.sample ${PKG_PREFIX}/etc/yp.conf
-	fi
-#
-# This is needed for updating to ensure that
-# already installed libraries get to ${PKG_PREFIX}/etc/ld.so.cache
-#
 	echo ''
 	echo 'Running linux ldconfig...'
-	${PKG_PREFIX}/sbin/ldconfig -r ${PKG_PREFIX}
+	%%PREFIX%%/%%PREFIX_SUBDIR%%sbin/ldconfig -r %%PREFIX%%/%%PREFIX_SUBDIR%%
 	;;
 esac
 
