@@ -8,13 +8,8 @@
 * You may wish to enable emulation of the Linux proc filesystem.  See the
 * linprocfs(5) man page.
 *
-* Note that this port is not the default linux_base port.  We do a big effort
-* to make all linux_base ports work properly with the ports infrastructure,
-* but we can't guarantee that all of them will work in every cases.  If
-* you experience problems, please use the default linux_base port.
-*
-* To download Portage, do "chroot /compat/linux emerge sync" as root.  Then you
-* may want to do "chroot /compat/linux /usr/portage/scripts/bootstrap.sh" to
+* To download Portage, do "chroot %%PREFIX%%/%%PREFIX_SUBDIR%% emerge sync" as root.  Then you
+* may want to do "chroot %%PREFIX%%/%%PREFIX_SUBDIR%% /usr/portage/scripts/bootstrap.sh" to
 * rebuild binutils, gcc, gettext, and glibc.  See
 * <URL:http://www.gentoo.org/doc/en/gentoo-alpha-install.xml> or
 * <URL:http://www.gentoo.org/doc/en/gentoo-x86-install.xml> for more complete 
