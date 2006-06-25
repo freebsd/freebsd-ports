@@ -11,18 +11,18 @@ PKGNAMESUFFIX=	-gtk2
 COMMENT=	A free BitTorrent client written from scratch in C with GTK+2
 
 MASTERDIR=	${.CURDIR}/../transmission
+PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	gtk20
-SLAVE_PORT=	yes
+SLAVE_TRANS=	yes
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--gettext-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
-PLIST_FILES=	bin/transmission-gtk
-
-do-install: docsfiles
-	${INSTALL_PROGRAM} ${WRKSRC}/gtk/transmission-gtk ${PREFIX}/bin/
+post-patch: general-patch
+	@${REINPLACE_CMD} -e 's|TARGETS = .cli|#TARGETS = .cli|g' \
+		${WRKSRC}/mk/default.mk
 
 .include "${MASTERDIR}/Makefile"

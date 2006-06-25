@@ -1,0 +1,7 @@
+bin/transmission-gtk
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/it/LC_MESSAGES/transmission-gtk.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
