@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/ \
@@ -17,26 +17,32 @@ DISTNAME=	Transmission-${PORTVERSION}
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT?=	A free BitTorrent client written from scratch in C
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-
-CFLAGS+=	-Wall -W ${CPPFLAGS}
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 CONFIGURE_ARGS?=--prefix=${PREFIX} \
 		--disable-gtk
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
 			--exclude macosx \
-			--exclude packageOSX.sh
+			--exclude packageOSX.sh \
+			--exclude Sparkle.framework \
+			--exclude Transmission.xcodeproj
 
-PLIST_FILES?=	bin/transmissioncli
-PORTDOCS=	AUTHORS LICENSE NEWS README
+DOCS=		AUTHORS LICENSE NEWS README
+
+.if defined(SLAVE_TRANS)
+EXTRACT_AFTER_ARGS+=--exclude cli
+.else
+CFLAGS+=	${CPPFLAGS}
+USE_GETOPT_LONG=yes
+EXTRACT_AFTER_ARGS+=--exclude gtk
+MAN1=		transmissioncli.1
+.endif
 
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=--disable-openssl
 .else
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--openssl-prefix=${OPENSSLBASE}
 .endif
 
 pre-everything::
@@ -48,27 +54,20 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_OPENSSL=yes to disable OpenSSL support, using built-in SHA1 implementation. Warning, it is a bit slower if you use this option." | ${FMT} 75 75
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		s|$$LINKLIBS ;|${LDFLAGS} $$LINKLIBS ;|g ; \
-		s|/usr/local/|${LOCALBASE}/|g ; s|/usr/X11R6/|${X11BASE}/|g' \
+general-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g ; \
+		s|/usr/X11R6/|${X11BASE}/|g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-O3||g' \
-		${WRKSRC}/Jamrules
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
+		s|-g -Wall -W -O3 -funroll-loops|-Wall -W|g' \
+			${WRKSRC}/mk/common.mk
 
-# jam -dx, it will giving a verbose of build.
-do-build:
-	@(cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} jam -dx)
+post-patch: general-patch
 
-.if !defined(SLAVE_PORT)
-do-install: docsfiles
-	${INSTALL_PROGRAM} ${WRKSRC}/transmissioncli ${PREFIX}/bin/
-.endif
-
-docsfiles:
 .ifndef (NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
+.for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
