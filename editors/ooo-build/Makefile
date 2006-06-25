@@ -40,7 +40,7 @@ OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .endif
 
-BROKEN=		"Incompatible with master port(2.0.3) and oooi-build(2.0.2)"
+BROKEN=		"Incompatible with master port(2.0.3) and ooo-build(2.0.2)"
 
 MD5_FILE=      ${.CURDIR}/distinfo
 USE_AUTOTOOLS=  autoconf:259
