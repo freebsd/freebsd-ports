@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.netleader.com.au/projects/dnscheck/download/
 MAINTAINER=	jarrod@netleader.com.au
 COMMENT=	DNS zone sanity checker
 
-USE_PERL=	yes
+USE_PERL5=	yes
 
 PLIST_FILES=	bin/dnscheck
 
