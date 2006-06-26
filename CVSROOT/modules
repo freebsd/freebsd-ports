@@ -2660,6 +2660,7 @@ fpc-unzip	ports/archivers/fpc-unzip
 fpc-utmp	ports/sysutils/fpc-utmp
 fpc-x11		ports/x11/fpc-x11
 fpc-zlib	ports/devel/fpc-zlib
+fpc-zvt		ports/x11-toolkits/fpc-zvt
 fpdf		ports/print/fpdf
 fpdns		ports/dns/fpdns
 fping		ports/net/fping
