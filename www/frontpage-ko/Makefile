@@ -9,7 +9,6 @@ PORTNAME=	frontpage
 PKGNAMEPREFIX=	ko-
 CATEGORIES=	www korean
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Korean Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo

@@ -9,7 +9,6 @@ PORTNAME=	frontpage
 CATEGORIES=	www german
 PKGNAMEPREFIX=	de-
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage German Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo

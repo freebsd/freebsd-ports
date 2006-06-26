@@ -9,7 +9,6 @@ PORTNAME=	frontpage
 CATEGORIES=	www hebrew
 PKGNAMEPREFIX=	he-
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Hebrew Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo

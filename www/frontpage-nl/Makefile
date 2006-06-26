@@ -8,7 +8,6 @@
 PORTNAME=	frontpage
 PKGNAMEPREFIX=	nl-
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Dutch Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
