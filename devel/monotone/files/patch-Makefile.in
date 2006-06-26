@@ -1,11 +1,15 @@
---- Makefile.in.orig	Sun Apr  9 04:46:33 2006
-+++ Makefile.in	Tue Apr 11 15:12:05 2006
-@@ -1824,10 +1824,10 @@
+--- Makefile.in.orig	Sat Jun 17 22:50:36 2006
++++ Makefile.in	Sun Jun 25 23:30:15 2006
+@@ -1909,13 +1909,13 @@
  	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
  mtn$(EXEEXT): $(mtn_OBJECTS) $(mtn_DEPENDENCIES) 
  	@rm -f mtn$(EXEEXT)
 -	$(CXXLINK) $(mtn_LDFLAGS) $(mtn_OBJECTS) $(mtn_LDADD) $(LIBS)
 +	$(CXXLINK) $(mtn_LDFLAGS) $(mtn_OBJECTS) $(mtn_LDADD) $(LIBS) $(LIBINTL) $(LIBICONV)
+ tester$(EXEEXT): $(tester_OBJECTS) $(tester_DEPENDENCIES) 
+ 	@rm -f tester$(EXEEXT)
+-	$(CXXLINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS)
++	$(CXXLINK) $(tester_LDFLAGS) $(tester_OBJECTS) $(tester_LDADD) $(LIBS) $(LIBINTL) $(LIBICONV)
  unit_tests$(EXEEXT): $(unit_tests_OBJECTS) $(unit_tests_DEPENDENCIES) 
  	@rm -f unit_tests$(EXEEXT)
 -	$(CXXLINK) $(unit_tests_LDFLAGS) $(unit_tests_OBJECTS) $(unit_tests_LDADD) $(LIBS)
@@ -13,3 +17,12 @@
  contrib/$(am__dirstamp):
  	@$(mkdir_p) contrib
  	@: > contrib/$(am__dirstamp)
+@@ -1926,7 +1926,7 @@
+ 	contrib/$(DEPDIR)/$(am__dirstamp)
+ usher$(EXEEXT): $(usher_OBJECTS) $(usher_DEPENDENCIES) 
+ 	@rm -f usher$(EXEEXT)
+-	$(CXXLINK) $(usher_LDFLAGS) $(usher_OBJECTS) $(usher_LDADD) $(LIBS)
++	$(CXXLINK) $(usher_LDFLAGS) $(usher_OBJECTS) $(usher_LDADD) $(LIBS) $(LIBINTL) $(LIBICONV)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
