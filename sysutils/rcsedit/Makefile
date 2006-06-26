@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://lava.net/rcsedit/ \
 		http://www.ipv6.lava.net/rcsedit/
 
-MAINTAINER=	system@lava.net
+MAINTAINER=	rcsedit@lava.net
 COMMENT=	A simple wrapper for RCS written in Perl
 
 PLIST_FILES=	bin/rcsedit
