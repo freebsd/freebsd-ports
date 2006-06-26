@@ -1,0 +1,49 @@
+--- src/Makefile.am.orig	Fri Jul 23 20:22:10 2004
++++ src/Makefile.am	Sat Jun 24 03:43:15 2006
+@@ -181,12 +181,12 @@
+ 
+ pkgIndex.tcl: pkgIndex.tcl.in
+ 	rm -f $@
+-	sed -e 's;%LIB_DIR%;$(TCL_PKG_PATH);g' $< | \
++	sed -e 's;%LIB_DIR%;$(libdir);g' $< | \
+ 	sed -e 's;%VERSION%;$(TCLSPICE_VERSION);g' > $@
+ 
+ spicepp.pl: spicepp.pl.in
+ 	rm -f $@
+-	sed -e 's;%LIB_DIR%;$(TCL_PKG_PATH);g' $< | \
++	sed -e 's;%LIB_DIR%;$(libdir);g' $< | \
+ 	sed -e 's;%VERSION%;$(TCLSPICE_VERSION);g' > $@
+ 
+ install-tcl: install-tcl-recursive install-tclspice install-data-am
+@@ -199,17 +199,17 @@
+ 	done; 
+ 
+ install-tclspice: $(TCL_FILES)
+-	$(mkinstalldirs) $(DESTDIR)$(TCL_PKG_PATH)
+-	$(INSTALL_DATA) libspice.so $(DESTDIR)$(TCL_PKG_PATH)
+-	$(mkinstalldirs) $(DESTDIR)$(TCL_PKG_PATH)/spice
+-	$(INSTALL_PROGRAM) spicepp.pl $(DESTDIR)$(TCL_PKG_PATH)/spice
+-	$(INSTALL_PROGRAM) measure_spice.pl $(DESTDIR)$(TCL_PKG_PATH)/spice
++	$(mkinstalldirs) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) libspice.so $(DESTDIR)$(libdir)
++	$(mkinstalldirs) $(DESTDIR)$(libdir)/tclspice
++	$(INSTALL_SCRIPT) spicepp.pl $(DESTDIR)$(libdir)/tclspice
++	$(INSTALL_SCRIPT) measure_spice.pl $(DESTDIR)$(libdir)/tclspice
+ 	@for f in $(TCL_SOURCE) ; do \
+-	echo $(INSTALL_DATA) $$f $(DESTDIR)$(TCL_PKG_PATH)/spice; \
+-	$(INSTALL_DATA) $$f $(DESTDIR)$(TCL_PKG_PATH)/spice; \
++	echo $(INSTALL_DATA) $$f $(DESTDIR)$(libdir)/tclspice; \
++	$(INSTALL_DATA) $$f $(DESTDIR)$(libdir)/tclspice; \
+ 	done
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+-	$(INSTALL_PROGRAM) spicewish $(DESTDIR)$(bindir)
++	$(INSTALL_SCRIPT) spicewish $(DESTDIR)$(bindir)
+ 
+ tclspice.o: tclspice.c
+ 	$(COMPILE) -c -fpic tclspice.c -DTCLSPICE_version="\"$(TCLSPICE_VERSION)\""
+@@ -229,4 +229,4 @@
+ 	(cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) all) \
+ 	|| case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+ 	done;	
+-	make $(TCL_FILES)
++	gmake $(TCL_FILES)

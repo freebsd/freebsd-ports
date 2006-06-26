@@ -1,0 +1,11 @@
+--- src/spicewish.orig	Sat Jun 24 04:21:41 2006
++++ src/spicewish	Sat Jun 24 04:21:59 2006
+@@ -2,7 +2,7 @@
+ # 22/6/04 -ad
+ 
+ # the next line starts SpiceWish interactively with the given file name  \
+-exec wish "$0" "$@"
++exec %%WISH%% "$0" "$@"
+ 
+ package require spice
+ package require tclreadline

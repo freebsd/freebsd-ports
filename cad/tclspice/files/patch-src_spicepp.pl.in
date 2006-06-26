@@ -1,0 +1,11 @@
+--- src/spicepp.pl.in.orig	Sat Jun 24 03:44:04 2006
++++ src/spicepp.pl.in	Sat Jun 24 03:44:16 2006
+@@ -307,7 +307,7 @@
+       push(@xtra, ".control");
+       push(@xtra, "print time $trig $targ > meas.data");
+       push(@xtra, "echo $_ > meas.ctl");
+-      push(@xtra, "shell %LIB_DIR%/spice/measure_spice.pl $name");
++      push(@xtra, "shell %LIB_DIR%/tclspice/measure_spice.pl $name");
+       push(@xtra, ".endc");
+       splice(@deck,$i,1,@xtra);
+       @xtra=();

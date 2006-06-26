@@ -1,0 +1,19 @@
+TclSpice is an improved version of Berkeley Spice designed to be used with
+the Tcl/Tk scripting language. The project is open-source (BSD license)
+and based upon the NG-Spice source code base with many improvements
+
+Features and Improvements
+ - Fully Tcl scriptable - installs with 'package require spice' statement
+ - Hspice syntax (SpicePP).
+ - GUI interfaces, various (Tk).
+ - SpiceWish (BLT graph widget)
+ - BLT (tcl compatible) vectors for storage, manipulation and arithmetic
+	upon Spice waveforms.
+ - Xspice additions (Georgia Tech).
+ - Trigger upon waveform events.
+ - Spice 'simulator state' save and restore for rapid 'what-if' simulations
+	(no longer need to re-simulate from the beginning each time a
+	device value is changed).
+
+Author:	Stefan Jones <stefan.jones@multigig.com>
+WWW:	http://tclspice.sourceforge.net/
