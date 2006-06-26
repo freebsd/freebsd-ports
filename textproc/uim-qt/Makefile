@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	-qt
 
 COMMENT=	QT modules of uim input method
 
-RUN_DEPENDS=	uim-module-manager:${PORTSDIR}/textproc/uim
-LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
+LIB_DEPENDS=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt33 \
+		uim.2:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
