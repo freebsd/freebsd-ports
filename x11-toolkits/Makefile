@@ -29,6 +29,7 @@
     SUBDIR += fpc-gnome
     SUBDIR += fpc-gtk
     SUBDIR += fpc-gtk2
+    SUBDIR += fpc-zvt
     SUBDIR += fxscintilla
     SUBDIR += fxscintilla-fox10
     SUBDIR += fxscintilla-fox12
