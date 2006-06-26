@@ -30,8 +30,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^CC=,CC\?=,' \
 	    ${WRKSRC}/src/Makefile
 
-do-build:
-	cd ${WRKSRC} && ./package/build
+regression-test: build
+	cd ${WRKSRC} && ./package/check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/usendmail ${PREFIX}/sbin/
