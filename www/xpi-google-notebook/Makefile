@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	google-notebook
-PORTVERSION=	0.0.1
+PORTVERSION=	1.0.0.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_CSME}
+# The unversioned dist is at http://dl.google.com/firefox/google-notebook.xpi
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	An extension to allow notetaking while browsing
