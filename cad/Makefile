@@ -20,6 +20,7 @@
     SUBDIR += fandango
     SUBDIR += feappv
     SUBDIR += geda
+    SUBDIR += geda-gattrib
     SUBDIR += geda-symbols
     SUBDIR += geda-symcheck
     SUBDIR += geda-utils
