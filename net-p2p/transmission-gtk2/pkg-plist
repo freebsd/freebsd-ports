@@ -3,5 +3,6 @@ bin/transmission-gtk
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/fr/LC_MESSAGES/transmission-gtk.mo
 share/locale/it/LC_MESSAGES/transmission-gtk.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
