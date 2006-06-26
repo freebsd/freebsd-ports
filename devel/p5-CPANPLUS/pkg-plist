@@ -5,7 +5,6 @@ bin/cpanp-boxed
 %%SITE_PERL%%/CPANPLUS/Backend.pm
 %%SITE_PERL%%/CPANPLUS/Backend/RV.pm
 %%SITE_PERL%%/CPANPLUS/Config.pm
-%%SITE_PERL%%/CPANPLUS/Config.pm-orig
 %%SITE_PERL%%/CPANPLUS/Configure.pm
 %%SITE_PERL%%/CPANPLUS/Configure/Setup.pm
 %%SITE_PERL%%/CPANPLUS/Dist.pm
@@ -37,10 +36,8 @@ bin/cpanp-boxed
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Remote.pm
 %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins/Source.pm
 %%SITE_PERL%%/CPANPLUS/inc.pm
-%%SITE_PERL%%/CPANPLUS/inc/.inc
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
-@dirrm %%SITE_PERL%%/CPANPLUS/inc
 @dirrm %%SITE_PERL%%/CPANPLUS/Shell/Default/Plugins
 @dirrm %%SITE_PERL%%/CPANPLUS/Shell/Default
 @dirrm %%SITE_PERL%%/CPANPLUS/Shell
