@@ -2269,6 +2269,7 @@ etunnel		ports/net/etunnel
 euchre		ports/games/euchre
 eukleides	ports/math/eukleides
 euler		ports/science/euler
+euphoria	ports/audio/euphoria
 eva		ports/net-im/eva
 eval		ports/math/eval
 evangeline	ports/irc/evangeline
