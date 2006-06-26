@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	cvs2svn
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/25036/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	ftp://ftp.rewt.org.uk/pub/distfiles/ \
+		http://mirror.crystal-vps.co.uk/distfiles/
 
 MAINTAINER=	joe@joeholden.co.uk
 COMMENT=	CVS to Subversion Repository Converter
