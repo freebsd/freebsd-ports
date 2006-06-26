@@ -9,8 +9,8 @@ PKGNAMESUFFIX=	-m17nlib
 
 COMMENT=	Uim plugin using m17n library input method
 
-RUN_DEPENDS=	uim-module-manager:${PORTSDIR}/textproc/uim
-LIB_DEPENDS=	m17n.1:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS=	m17n.1:${PORTSDIR}/devel/m17n-lib \
+		uim.2:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

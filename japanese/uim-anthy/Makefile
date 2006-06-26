@@ -12,8 +12,8 @@ COMMENT=	Uim plugin using Anthy input method
 
 USE_GNOME=	gtk20
 
-RUN_DEPENDS=	uim-module-manager:${PORTSDIR}/textproc/uim
-LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
+		uim.2:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
