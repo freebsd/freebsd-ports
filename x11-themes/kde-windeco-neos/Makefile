@@ -16,7 +16,7 @@ DISTNAME=	kwin-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	decept0@gmail.com
 COMMENT=	KDE window decoration
 
-USE_BZIP2=      yes
+USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/kwin-${PORTNAME}-${PORTVERSION}
