@@ -7,50 +7,22 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTVERSION=	1.2.10
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		ftp://ftp.icm.edu.pl/vol/rzm9/linux-pld/pool/s/SDL/
-PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1.${MACHINE_ARCH}
-EXTRACT_SUFX=	.rpm
-EXTRACT_ONLY=
+DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API (linux version)
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-
-USE_LINUX=	yes
-USE_LINUX_PREFIX=	yes
+USE_LINUX_RPM=	yes
 USE_XLIB=	yes
-LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
+INSTALL_SHLIB=	yes
 
-ONLY_FOR_ARCHS=	i386 alpha amd64
+ONLY_FOR_ARCHS=	i386 amd64
 DIST_SUBDIR=	rpm
-NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
-PLIST=		${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=		${MASTERDIR}/pkg-plist.${LINUX_RPM_ARCH}
+PLIST_SUB+=	SDLVER=${PORTVERSION}
 
-DBPATH=		/var/lib/rpm
-RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
-		--nodeps --replacepkgs
-RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-MACHINE_ARCH=	i386
-.endif
-
-.if ${ARCH} == "alpha"
-BROKEN=		"Unfetchable"
-.endif
-
-do-install:
-	@${LOCALBASE}/bin/rpm -U ${RPMFLAGS} ${RPMDIR}/${DISTFILES}
-	@${LDCONFIG_LINUX}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
