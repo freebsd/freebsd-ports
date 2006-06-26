@@ -2991,6 +2991,12 @@ DEPENDS_TARGET=	install
 DEPENDS_TARGET+=	clean
 DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 .endif
+.else
+DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
+.endif
+.if defined(DEPENDS)
+# pretty much guarantees overwrite of existing installation
+.MAKEFLAGS:	FORCE_PKG_REGISTER=yes
 .endif
 
 ################################################################
