@@ -1,0 +1,5 @@
+Euphoria is an audio player which is based on Ecore, Evas and Edje.
+It acts as a frontend to XMMS2.
+
+Author:	Tilman Sauerbeck <tilman@code-monkey.de>
+WWW:	http://www.enlightenment.org/
