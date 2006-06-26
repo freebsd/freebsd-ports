@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
-
-LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost
 
 SUB_FILES=	pkg-message
 USE_GCC=	3.4+
@@ -22,6 +20,7 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--infodir=${PREFIX}/${INFO_PATH} --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
@@ -34,7 +33,9 @@ PORTDOCS=	NEWS UPGRADE monotone.html
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		wcswidth() not present in libc on FreeBSD < 5.0
+LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost-gcc3
+.else
+LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost
 .endif
 
 .if defined(WITHOUT_NLS)
