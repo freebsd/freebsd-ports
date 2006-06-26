@@ -7,6 +7,7 @@
 
 PORTNAME=	homebank
 DISTVERSION=	3.2alpha1
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -32,5 +33,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+
+post-patch:
+	${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/images/|(datadir)/pixmaps/|g'
 
 .include <bsd.port.mk>
