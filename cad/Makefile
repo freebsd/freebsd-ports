@@ -57,6 +57,7 @@
     SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += systemc
+    SUBDIR += tclspice
     SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += transcalc

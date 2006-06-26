@@ -1,0 +1,28 @@
+bin/spicewish
+lib/libspice.so
+lib/tclspice/controls.tcl
+lib/tclspice/engUnits.tcl
+lib/tclspice/gnuplot.tcl
+lib/tclspice/measure.tcl
+lib/tclspice/measure_spice.pl
+lib/tclspice/nodeDialog.tcl
+lib/tclspice/pkgIndex.tcl
+lib/tclspice/readline.tcl
+lib/tclspice/spicepp.pl
+lib/tclspice/spicepp.tcl
+lib/tclspice/spicewish.tcl
+lib/tclspice/viewer.tcl
+%%DATADIR%%/helpdir/ngspice.idx
+%%DATADIR%%/helpdir/ngspice.txt
+%%DATADIR%%/scripts/setplot
+%%DATADIR%%/scripts/spectrum
+%%DATADIR%%/scripts/spinit
+%%EXAMPLES%%share/examples/tclspice/README
+%%EXAMPLES%%share/examples/tclspice/example.cir
+%%EXAMPLES%%share/examples/tclspice/plot.tcl
+%%EXAMPLES%%share/examples/tclspice/vector_test.tcl
+%%EXAMPLES%%@dirrm share/examples/tclspice
+@dirrm lib/tclspice
+@dirrm %%DATADIR%%/helpdir
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%
