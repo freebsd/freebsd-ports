@@ -5,8 +5,13 @@
 # $FreeBSD$
 #
 
+DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
+
+ONLY_FOR_ARCH=	i386 amd64 alpha sparc64 ia64
+
 FP_VER=		${PORTVERSION:C|^([0-9]+)\.([0-9]+).*|\1.\2|}
 PLIST_SUB+=	FP_VER=${FP_VER}
+FP_DIR=		frontpage/version${FP_VER}
 
 .if defined(ALL_FP)
 FRONTPAGE=	fp${FP_VER:S/.//}.alpha${EXTRACT_SUFX} \
@@ -24,7 +29,14 @@ FRONTPAGE=	fp${FP_VER:S/.//}.bsdi${EXTRACT_SUFX}
 FRONTPAGE=	fp${FP_VER:S/.//}.freebsd${EXTRACT_SUFX}
 .endif
 
-.elif ${ARCH}== ia64 || ${ARCH} == amd64
+.elif ${ARCH} == amd64
+.if ${OSVERSION} < 500000
+IGNORE=	"The Frontpage extensions require FreeBSD-${ARCH} 5.0 or better"
+.endif
+FRONTPAGE=	fp${FP_VER:S/.//}.freebsd${EXTRACT_SUFX}
+LDCONFIG=	/sbin/ldconfig -32
+
+.elif ${ARCH} == ia64 || ${ARCH} == amd64
 .if ${OSVERSION} < 500000
 IGNORE=	"The Frontpage Extensions require FreeBSD-${ARCH} 5.0 or better"
 .endif
@@ -38,8 +50,8 @@ FRONTPAGE=	fp${FP_VER:S/.//}.alpha${EXTRACT_SUFX}
 FRONTPAGE=	fp${FP_VER:S/.//}.solaris${EXTRACT_SUFX}
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64
-IGNORE=	"The Frontpage Extensions haven't been tested on this ${ARCH}.  If the Frontpage Extensions work on your ${ARCH}, please submit a pr to remove this warning from ${PORTSDIR}/www/frontpage/Makefile.fp.common for your ${ARCH}"
+.if ${ARCH} == ia64 || ${ARCH} == sparc64
+IGNORE=	"The Frontpage Extensions haven't been tested on this ${ARCH}.  If the Frontpage Extensions work on your ${ARCH}, please submit a PR to remove this warning from ${PORTSDIR}/www/frontpage/Makefile.fp.common for your ${ARCH}"
 .endif
 
 .for fpdist in ${FRONTPAGE}
@@ -50,3 +62,18 @@ IGNORE="You must manualy fetch ${fpdist} from http://www.rtr.com.  Place the fil
 
 NO_CDROM=	"Redistribution is not permitted"
 RESTRICTED=	${NO_CDROM}
+
+TODAY!= /bin/date -u "+%Y%m%d"
+
+.if ${TODAY} < 20060701
+
+pre-everything::
+	@${ECHO_CMD} "Microsoft Frontpage Extenions will reach their End-of-Life on June 30, 2006."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "You should use alternative methods with Microsoft Frontpage (FTP, WebDAV, ...) to edit websites."
+	@${ECHO_CMD}
+	@sleep 5
+
+.else
+DEPRECATED=	Microsoft Frontpage Extensions have reached their End-of-Life
+.endif

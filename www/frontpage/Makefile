@@ -6,20 +6,13 @@
 #
 
 PORTNAME=	frontpage
-PORTVERSION=	5.0.2.2635
-PORTREVISION=	2
+PORTVERSION=	5.0.2.4803
 CATEGORIES=	www
 MASTER_SITES=	# Needs to be manually fetched from http://www.rtr.com
-
 DISTFILES=	${FRONTPAGE}
-DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft Frontpage 2002 Extensions
-
-FORBIDDEN=	http://vuxml.FreeBSD.org/c0171f59-ea8a-11da-be02-000c6ec775d9.html
-
-ONLY_FOR_ARCHS=	i386 ia64 amd64 alpha sparc
 
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
@@ -31,15 +24,21 @@ USE_PERL5_RUN=	yes
 USE_RC_SUBR=	yes
 RC_SCRIPTS=	frontpage:0010
 RC_SCRIPT_PREFIX=	${RC_SCRIPTS:S/${RC_SCRIPTS:C/:[^:]+$//}//:S/://}
-RC_SCRIPT=	${RC_SCRIPTS:C/:[^:]+$//}.sh
+RC_SCRIPT=	${RC_SCRIPTS:C/:[^:]+$//}
 
-SUB_FILES=	${RC_SCRIPT}
+SUB_FILES=	${RC_SCRIPT}.sh
 SUB_LIST+=	RC_SUBR=${RC_SUBR} PERL5=${PERL} FP_VER=${FP_VER}
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.fp.common"
 
-FP_DIR=		frontpage/version${FP_VER}
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
+RCD_SCRIPT=	${RC_SCRIPT}
+.else
+RCD_SCRIPT=	${RC_SCRIPT_PREFIX}.${RC_SCRIPT}.sh
+.endif
+PLIST_SUB+=	RCD_SCRIPT=${RCD_SCRIPT}
+
 FP_INSTALL=	${FP_DIR}/fp_install.sh
 FP_SETPERM=	${FP_DIR}/set_default_perms.sh
 FP_DOCS=	readme.htm readme_apache_dso.txt LICENSE.TXT
@@ -47,15 +46,24 @@ FP_DOCS=	readme.htm readme_apache_dso.txt LICENSE.TXT
 EXTRACT_FILES=	${FP_INSTALL} ${FP_SETPERM}
 
 .if ${ARCH} == alpha
-EXTRA_PATCHES=	fp_install.alpha
+FP_MACHINE=	alpha
 .elif ${ARCH} == sparc64
-EXTRA_PATCHES=	fp_install.sparc
+FP_MACHINE=	solaris
 .elif defined(WANT_BSDI_EXTENSIONS)
-EXTRA_PATCHES=	fp_install.bsdi
+FP_MACHINE=	bsdi
 .elif ${ARCH} == i386
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+FP_MACHINE=	freebsd
 .endif
+.elif ${ARCH} == amd64
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	crypt.2:${PORTSDIR}/misc/compat5x
+.endif
+FP_MACHINE=	freebsd
 .endif
 
 do-extract:
@@ -69,7 +77,8 @@ do-extract:
 
 post-patch:
 .if !defined(PATCH_DEBUG)
-	@${REINPLACE_CMD} -e 's:PREFIX:${PREFIX}:g' \
+	@${REINPLACE_CMD} -E -e 's:PREFIX:${PREFIX}:g' \
+			  -e 's:(machine=\")freebsd\":\1${FP_MACHINE}\":g' \
 			  -e 's:DOCSDIR:${DOCSDIR}:g' ${WRKDIR}/${FP_INSTALL}
 .endif
 
@@ -91,8 +100,8 @@ do-install:
 .endfor
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${RC_SCRIPT} \
-		${PREFIX}/etc/rc.d/${RC_SCRIPT_PREFIX}.${RC_SCRIPT}
+	${INSTALL_SCRIPT} ${WRKDIR}/${RC_SCRIPT}.sh \
+		${PREFIX}/etc/rc.d/${RCD_SCRIPT}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
