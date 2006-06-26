@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgperl
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PGPLOT
@@ -16,7 +16,10 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A perl5 extension which makes available the pgplot library
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
+BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
+
+MAN3=	PGPLOT.3
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 USE_PERL5=	yes
 SCRIPTS_ENV=	PERL=${PERL}
@@ -24,12 +27,11 @@ INSTALL_TARGET=	pure_install
 
 .include <bsd.port.pre.mk>
 
-MAN3=	PGPLOT.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
+.ifndef(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/pgperl
+	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}; ${INSTALL_DATA} LICENSE test* \
-		${PREFIX}/share/doc/pgperl)
+		${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.post.mk>
