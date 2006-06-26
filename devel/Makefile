@@ -286,6 +286,7 @@
     SUBDIR += fpc-bfd
     SUBDIR += fpc-fcl
     SUBDIR += fpc-fv
+    SUBDIR += fpc-gconf
     SUBDIR += fpc-gdbint
     SUBDIR += fpc-pthreads
     SUBDIR += fpc-regexpr
