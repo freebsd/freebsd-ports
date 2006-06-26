@@ -9,7 +9,6 @@ PORTNAME=	frontpage
 PKGNAMEPREFIX=	ja-
 CATEGORIES=	www japanese
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Japanese Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo

@@ -8,7 +8,6 @@
 PORTNAME=	frontpage
 PKGNAMEPREFIX=	sv-
 
-MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Swedish Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
