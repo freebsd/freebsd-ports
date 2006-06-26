@@ -6,27 +6,34 @@
 #
 
 PORTNAME=	CPANPLUS
-PORTVERSION=	0.0610
+PORTVERSION=	0.0720
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/K/KA/KANE
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.061
+DISTNAME=	${PORTNAME}-0.072
 
-MAINTAINER=	kappa@freebsd.org.ua
+MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
 
-BUILD_DEPENDS=	${SITE_PERL}/IPC/Cmd.pm:${PORTSDIR}/devel/p5-IPC-Cmd \
-		${SITE_PERL}/Object/Accessor.pm:${PORTSDIR}/devel/p5-Object-Accessor \
-		${SITE_PERL}/Module/CoreList.pm:${PORTSDIR}/devel/p5-Module-CoreList \
-		${SITE_PERL}/Archive/Extract.pm:${PORTSDIR}/archivers/p5-Archive-Extract \
-		${SITE_PERL}/File/Fetch.pm:${PORTSDIR}/ftp/p5-File-Fetch \
-		${SITE_PERL}/Log/Message.pm:${PORTSDIR}/devel/p5-Log-Message \
-		${SITE_PERL}/Module/Loaded.pm:${PORTSDIR}/devel/p5-Module-Loaded \
-		${SITE_PERL}/Term/UI.pm:${PORTSDIR}/devel/p5-Term-UI \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib \
-		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable
+BUILD_DEPENDS=	p5-File-Fetch>=0.07:${PORTSDIR}/ftp/p5-File-Fetch \
+		p5-IPC-Cmd>=0.82:${PORTSDIR}/devel/p5-IPC-Cmd \
+		p5-Locale-Maketext-Simple>0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Log-Message>0:${PORTSDIR}/devel/p5-Log-Message \
+		p5-Module-Load>=0.10:${PORTSDIR}/devel/p5-Module-Load \
+		p5-Module-Load-Conditional>=0.07:${PORTSDIR}/devel/p5-Module-Load-Conditional \
+		p5-Params-Check>=0.22:${PORTSDIR}/devel/p5-Params-Check \
+		p5-Package-Constants>0:${PORTSDIR}/devel/p5-Package-Constants \
+		p5-Term-UI>=0.05:${PORTSDIR}/devel/p5-Term-UI \
+		p5-Test-Harness>=2.62:${PORTSDIR}/devel/p5-Test-Harness \
+		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Archive-Extract>=0.07:${PORTSDIR}/archivers/p5-Archive-Extract \
+		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
+		p5-Object-Accessor>=0.03:${PORTSDIR}/devel/p5-Object-Accessor \
+		p5-Module-CoreList>=1.97:${PORTSDIR}/devel/p5-Module-CoreList \
+		p5-Module-Pluggable>=2.4:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-Module-Loaded>0:${PORTSDIR}/devel/p5-Module-Loaded
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -56,7 +63,6 @@ MAN1=	cpanp.1 cpan2dist.1
 MAN3=	CPANPLUS.3 \
 	CPANPLUS::Backend.3 \
 	CPANPLUS::Backend::RV.3 \
-	CPANPLUS::Config.3 \
 	CPANPLUS::Configure.3 \
 	CPANPLUS::Dist.3 \
 	CPANPLUS::Dist::MM.3 \
