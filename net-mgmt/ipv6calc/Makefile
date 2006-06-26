@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipv6calc
-PORTVERSION=	0.51
+PORTVERSION=	0.60.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
@@ -17,8 +17,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ipv6calc/ipv6calc ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/ipv6logconv/ipv6logconv ${PREFIX}/bin
+MAN8=		ipv6calc.8 ipv6logconv.8 ipv6logstats.8
 
 .include <bsd.port.mk>
