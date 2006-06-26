@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxcms
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://bitflux.org/download/ \
 		http://www.chruetertee.ch/files/download/
@@ -20,16 +20,21 @@ FLUXCMSDIR=	www/fluxcms
 INSTALLDIR=	${PREFIX}/${FLUXCMSDIR}
 
 PLIST_SUB=	INSTALLDIR=${FLUXCMSDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+SUB_FILES=	pkg-deinstall pkg-message
+SUB_LIST=	INSTALLDIR=${FLUXCMSDIR}
 
 OPTIONS=	GD "Use GD support instead of ImageMagick" on \
 		TIDY "Configure with tidy support" off
 
 USE_PHP=	dom xml simplexml iconv mysql xsl session pcre
 
-BROKEN_WITH_PHP=	4
 DEFAULT_PHP_VER=	5
 
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
 .include <bsd.port.pre.mk>
+
+BROKEN_WITH_PHP=	4
 
 .if !defined(WITHOUT_GD)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
@@ -47,6 +52,6 @@ do-install:
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${INSTALLDIR}
 
 post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
