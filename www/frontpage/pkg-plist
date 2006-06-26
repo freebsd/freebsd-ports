@@ -1,5 +1,5 @@
-@unexec %D/etc/rc.d/0010.frontpage.sh forcestop 2>/dev/null || true
-etc/rc.d/0010.frontpage.sh
+@unexec %D/etc/rc.d/%%RCD_SCRIPT%% forcestop 2>/dev/null || true
+etc/rc.d/%%RCD_SCRIPT%%
 frontpage/version%%FP_VER%%/admin/1033/addacct.htm
 frontpage/version%%FP_VER%%/admin/1033/addrole.htm
 frontpage/version%%FP_VER%%/admin/1033/adduser.htm
