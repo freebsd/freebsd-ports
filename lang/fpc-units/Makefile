@@ -7,6 +7,7 @@
 
 PORTNAME=	units
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	fpc-
@@ -26,8 +27,10 @@ OPTIONS=	BFD	"Interface to GNU Binary Format description"	on \
 		FORMS	"Interface to X-Forms"	on \
 		FPGTK	"Interface to create programs with gtk"	on \
 		FV	"Free Pascal unit for Delphi support" on \
+		GCONF	"Interface to GConf" on \
 		GDBM	"Interface to the GNU database system"	on \
 		GGI	"Interface to libggi library"	on \
+		GNOME	"Free Pascal unit to create programs for GNOME" on \
 		GTK	"Interface to gtk libraries"	on \
 		GTK2	"Interface to gtk2 libraries"	on \
 		IMLIB	"Interface to imlib library"	on \
@@ -41,22 +44,25 @@ OPTIONS=	BFD	"Interface to GNU Binary Format description"	on \
 		UNZIP	"Routines for unzipping zip files"	on \
 		UTMP	"Interface to gather information from the utmp file"	on \
 		X11	"Interface to X windows server"	on \
-		ZLIB	"Interface to the zlib compression library"	on
+		ZLIB	"Interface to the zlib compression library"	on \
+		ZVT	"Interface to Zed's Virtual Terminal"	on
 
 .include <bsd.port.pre.mk>
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
-ALL_OPTIONS=	BFD FCL FORMS FPGTK FV GDBM GGI GTK GTK2 \
+ALL_OPTIONS=	BFD FCL FORMS FPGTK FV GCONF GDBM GGI GNOME GTK GTK2 \
 		IMLIB LIBGD LIBPNG NCURSES OPENGL SVGALIB \
-		SYSLOG TCL UNZIP UTMP X11 ZLIB
+		SYSLOG TCL UNZIP UTMP X11 ZLIB ZVT
 
 BFD_UNIT=	devel/fpc-bfd
 FCL_UNIT=	devel/fpc-fcl
 FORMS_UNIT=	x11-toolkits/fpc-forms
 FPGTK_UNIT=	graphics/fpc-fpgtk
 FV_UNIT=	devel/fpc-fv
+GCONF_UNIT=	devel/fpc-gconf
 GDBM_UNIT=	databases/fpc-gdbm
 GGI_UNIT=	graphics/fpc-ggi
+GNOME_UNIT=	x11-toolkits/fpc-gnome
 GTK_UNIT=	x11-toolkits/fpc-gtk
 GTK2_UNIT=	x11-toolkits/fpc-gtk2
 IMLIB_UNIT=	graphics/fpc-imlib
@@ -71,6 +77,7 @@ UNZIP_UNIT=	archivers/fpc-unzip
 UTMP_UNIT=	sysutils/fpc-utmp
 X11_UNIT=	x11/fpc-x11
 ZLIB_UNIT=	devel/fpc-zlib
+ZVT_UNIT=	x11-toolkits/fpc-zvt
 
 .for OPT in ${ALL_OPTIONS}
 .	if defined(WITH_${OPT})  && !defined(WITHOUT_${OPT})
