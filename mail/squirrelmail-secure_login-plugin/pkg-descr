@@ -1,0 +1,9 @@
+This is a simple plugin to automatically turn on SSL security during
+login if it hasn't already been requested by the referring hyperlink
+or bookmark.
+
+Primarily this utility is intended to prevent plain text passwords
+and email contents being transmitted over the internet after people
+manually enter their server URL without including https://...
+
+WWW:    http://www.squirrelmail.org/plugin_view.php?id=61
