@@ -3006,6 +3006,7 @@ geany		ports/devel/geany
 gecko-sharp10	ports/www/gecko-sharp10
 gecko-sharp20	ports/www/gecko-sharp20
 geda		ports/cad/geda
+geda-gattrib	ports/cad/geda-gattrib
 geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
