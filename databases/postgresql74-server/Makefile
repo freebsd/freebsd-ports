@@ -8,7 +8,7 @@
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
 PORTVERSION?=	7.4.13
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -242,7 +242,7 @@ do-install:
 	@ ${SED} -e "s|%%PREFIX%%|${PREFIX}|g; s|%%RC_SUBR%%|${RC_SUBR}|g" \
 		< ${FILESDIR}/pgsql.sh.tmpl \
 		> ${RCSCRIPT} ;\
-	${CHMOD} 554 ${RCSCRIPT} ;\
+	${CHMOD} 555 ${RCSCRIPT} ;\
 	${CHOWN} root:pgsql ${RCSCRIPT} ;\
 	${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
