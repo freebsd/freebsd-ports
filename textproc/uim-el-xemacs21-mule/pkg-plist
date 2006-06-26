@@ -1,5 +1,6 @@
 %%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-candidate.el
 %%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-debug.el
+%%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-helper.el
 %%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-key.el
 %%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-keymap.el
 %%EMACS_PACKAGESDIR%%/lisp/uim-el/uim-leim.el
