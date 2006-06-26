@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	driconf
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freedesktop.org/~fxkuehl/driconf/
 
@@ -19,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
+USE_GETTEXT=	yes
 
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
