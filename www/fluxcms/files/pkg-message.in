@@ -16,3 +16,14 @@ Go through that. If everything works ok, Flux CMS is set up.
 Open your newly installed Flux CMS with http://fluxcms.yourdomain.org/
 The admin can be reached with http://fluxcms/admin/ (the trailing slash is
 important right now). You can log in with the data provided in the installer. 
+
+If you are upgrading from an older version of fluxcms, please remove the 
+content of the tmp directory in your fluxcms installation:
+	
+	rm -rf %%PREFIX%%/www/fluxcms/tmp/*
+
+After that please login in your admin interface of your installation and 
+provide a database update:
+
+	http://fluxcms.yourdomain.org/admin/
+	http://fluxcms.yourdomain.org/admin/webinc/update/
