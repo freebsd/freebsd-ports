@@ -7,6 +7,7 @@
 
 PORTNAME=	xslide.el
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	textproc elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xslide
@@ -19,19 +20,22 @@ NO_BUILD=	yes
 PORTDOCS=	README.TXT TODO NEWS ChangeLog
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-install:
-	@${MKDIR} ${ELISPDIR}
+	@${MKDIR} ${ELISPDIR} ${XELISPDIR}
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && \
-		${INSTALL_DATA} \
-			xslide.el \
-			xslide-abbrev.el \
-			xslide-data.el \
-			xslide-font.el \
-			xslide-initial.xsl \
-			xslide-process.el \
-			${ELISPDIR} && \
+		for f in xslide.el \
+			 xslide-abbrev.el \
+			 xslide-data.el \
+			 xslide-font.el \
+			 xslide-initial.xsl \
+			 xslide-process.el; \
+		do \
+		    ${INSTALL_DATA} $$f ${ELISPDIR}; \
+		    ${LN} -sf ${ELISPDIR}/$$f ${XELISPDIR}; \
+		done; \
 		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR} \
 		)
 
