@@ -2626,6 +2626,7 @@ fpc-fcl		ports/devel/fpc-fcl
 fpc-forms	ports/x11-toolkits/fpc-forms
 fpc-fpgtk	ports/graphics/fpc-fpgtk
 fpc-fv		ports/devel/fpc-fv
+fpc-gconf	ports/devel/fpc-gconf
 fpc-gdbint	ports/devel/fpc-gdbint
 fpc-gdbm	ports/databases/fpc-gdbm
 fpc-ggi		ports/graphics/fpc-ggi
