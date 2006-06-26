@@ -1,5 +1,5 @@
---- frontpage/version5.0/apache2/mod_frontpage.c-orig	Tue Dec  2 20:18:45 2003
-+++ frontpage/version5.0/apache2/mod_frontpage.c	Tue Jan 17 18:01:02 2006
+--- frontpage/version5.0/apache2/mod_frontpage.c.orig	Tue Dec  2 20:18:45 2003
++++ frontpage/version5.0/apache2/mod_frontpage.c	Tue Jun 20 08:58:54 2006
 @@ -62,7 +62,6 @@
  #include <dirent.h>  
  #include <errno.h>
@@ -8,10 +8,12 @@
  #include "apr_strings.h" 
  #include "http_log.h"
  
-@@ -590,6 +589,32 @@
+@@ -589,7 +588,33 @@
+     /*
       * Thanks to Scot Hetzel (hetzels@westbend.net)
       */
-     ap_add_version_component(p, "FrontPage/5.0.2.2635");
+-    ap_add_version_component(p, "FrontPage/5.0.2.2635");
++    ap_add_version_component(p, "FrontPage/5.0.2.4803");
 +
 +    while (s != NULL) {
 +	cgid_server_conf* c = ap_get_module_config(s->module_config, &frontpage_module);

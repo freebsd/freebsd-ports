@@ -38,7 +38,7 @@ FrontPageAdmin On/Off	# Allows/Disallows Administration of web site
 			  with FrontPage Extensions
 
 By default FrontPage Extentions and Administration are enabled.  If
-the module has been compiled with WITH_DISABLED, then you need to
+the module has been compiled with WITH_MODFP_DISABLED, then you need to
 add one of the above directives.
 
 If the module has been compiled with WITH_MODFP_COMPAT, then the
