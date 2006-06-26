@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geda-symbols
-PORTVERSION=	20050313
+PORTVERSION=	20060123
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
