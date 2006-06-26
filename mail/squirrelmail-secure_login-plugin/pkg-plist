@@ -1,0 +1,10 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin newuser_wiz; fi
+%%SQUIRRELDIR%%/plugins/secure_login/functions.php
+%%SQUIRRELDIR%%/plugins/secure_login/README
+%%SQUIRRELDIR%%/plugins/secure_login/setup.php
+%%SQUIRRELDIR%%/plugins/secure_login/index.php
+%%SQUIRRELDIR%%/plugins/secure_login/version
+%%SQUIRRELDIR%%/plugins/secure_login/INSTALL
+%%SQUIRRELDIR%%/plugins/secure_login/config.php.sample
+@dirrm %%SQUIRRELDIR%%/plugins/secure_login
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin newuser_wiz; fi
