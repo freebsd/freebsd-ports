@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_frontpage
-PORTVERSION=	5.0.2.2635
-PORTREVISION=	2
+PORTVERSION=	5.0.2.4803
 CATEGORIES=	www
 MASTER_SITES=	# Requries manual fetch of files from http://www.rtr.com/
 PKGNAMESUFFIX=	${AP_VERSION:S/+//}
@@ -16,24 +15,16 @@ DISTFILES=	${FRONTPAGE}
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft mod_frontpage (by RTR) for Apache ${FP_AP_VER}
 
-FORBIDDEN=	http://vuxml.FreeBSD.org/c0171f59-ea8a-11da-be02-000c6ec775d9.html
-
 RUN_DEPENDS=	${LOCALBASE}/${FP_SETPERM}:${PORTSDIR}/www/frontpage
-
-DIST_SUBDIR=	fp${PORTVERSION:S/.//g}
-
-ONLY_FOR_ARCHS=	i386 ia64 amd64 alpha sparc64
 
 PATCH_WRKSRC=	${WRKDIR}
 
-FPDIR=		frontpage/version${FP_VER}
-
-EXTRACT_FILES=	${FPDIR}/apache-fp/mod_frontpage.c \
-		${FPDIR}/apache2/mod_fpcgid.c \
-		${FPDIR}/apache2/mod_fpcgid.h \
-		${FPDIR}/apache2/mod_frontpage.c \
-		${FPDIR}/apache2/mod_frontpage.h \
-		${FPDIR}/apache2/mod_suexec.h
+EXTRACT_FILES=	${FP_DIR}/apache-fp/mod_frontpage.c \
+		${FP_DIR}/apache2/mod_fpcgid.c \
+		${FP_DIR}/apache2/mod_fpcgid.h \
+		${FP_DIR}/apache2/mod_frontpage.c \
+		${FP_DIR}/apache2/mod_frontpage.h \
+		${FP_DIR}/apache2/mod_suexec.h
 
 USE_APACHE?=	20+
 AP_FAST_BUILD=	yes
@@ -41,12 +32,12 @@ AP_GENPLIST=	yes
 
 AP_EXTRAS=	-Wc,-DFREEBSD
 
-FP_SETPERM=	${FPDIR}/set_default_perms.sh
+FP_SETPERM=	${FP_DIR}/set_default_perms.sh
 
 .ifdef WITH_MODFP_COMPAT
 AP_EXTRAS+=	-DIMPROVED_MODFP_COMPAT
 .endif
-.ifdef WITH_DISABLED
+.ifdef WITH_MODFP_DISABLED
 AP_EXTRAS+=	-DDEFAULT_TO_OFF
 .endif
 
@@ -55,11 +46,11 @@ AP_EXTRAS+=	-DDEFAULT_TO_OFF
 
 .if ${APACHE_VERSION} >= 20
 FP_AP_VER=	2.0
-WRKSRC=		${WRKDIR}/${FPDIR}/apache2
+WRKSRC=		${WRKDIR}/${FP_DIR}/apache2
 SRC_FILE=	mod_frontpage.c mod_fpcgid.c
 .else
 FP_AP_VER=	1.3
-WRKSRC=		${WRKDIR}/${FPDIR}/apache-fp
+WRKSRC=		${WRKDIR}/${FP_DIR}/apache-fp
 PKGMESSAGE=	${MASTERDIR}/pkg-message13
 .endif
 

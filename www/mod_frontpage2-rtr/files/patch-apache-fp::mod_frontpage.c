@@ -1,5 +1,5 @@
 --- frontpage/version5.0/apache-fp/mod_frontpage.c.orig	Tue Dec  2 20:18:45 2003
-+++ frontpage/version5.0/apache-fp/mod_frontpage.c	Mon Jan 31 00:43:54 2005
++++ frontpage/version5.0/apache-fp/mod_frontpage.c	Tue Jun 20 08:51:30 2006
 @@ -52,10 +52,13 @@
  #include "httpd.h"
  #include "http_config.h"
@@ -26,10 +26,12 @@
  static char gszKeyVal[KEYLEN+1];    /* SUID key value used by this module */
  static int  gfdKeyPipe[2];          /* Pipe to fpexe stub CGI */
  static int  gbKeyPipeActive;        /* Pipe to fpexe stub CGI is active */
-@@ -584,6 +592,31 @@
+@@ -583,7 +591,32 @@
+     /*
       * Thanks to Scot Hetzel (hetzels@westbend.net)
       */
-     ap_add_version_component("FrontPage/5.0.2.2635");
+-    ap_add_version_component("FrontPage/5.0.2.2635");
++    ap_add_version_component("FrontPage/5.0.2.4803");
 +
 +    while (s != NULL) {
 +        FrontPage_conf* c = ap_get_module_config (s->module_config, &frontpage_module);
