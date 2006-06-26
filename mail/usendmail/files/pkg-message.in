@@ -7,8 +7,8 @@ If you are using mailwrapper(8), do the following:
 
 in /etc/mail/mailer.conf replace the lines
 
-sendmail	%%QMAIL_DIR%%/bin/sendmail
-send-mail	%%QMAIL_DIR%%/bin/sendmail
+sendmail	%%QMAIL_PREFIX%%/bin/sendmail
+send-mail	%%QMAIL_PREFIX%%/bin/sendmail
 
 with
 
@@ -16,5 +16,5 @@ sendmail	%%PREFIX%%/sbin/usendmail
 send-mail	%%PREFIX%%/sbin/usendmail
 
 Otherwise replace the link from /usr/sbin/sendmail to
-%%QMAIL_DIR%%/bin/sendmail with one to %%PREFIX%%/sbin/usendmail.
+%%QMAIL_PREFIX%%/bin/sendmail with one to %%PREFIX%%/sbin/usendmail.
 
