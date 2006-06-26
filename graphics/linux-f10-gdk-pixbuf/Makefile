@@ -6,39 +6,20 @@
 #
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	0.22.0.12.fc2
-PORTREVISION=	1
+PORTVERSION=	0.22.0.18.fc4.2
 CATEGORIES=	graphics linux
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
-MASTER_SITE_SUBDIR=updates/${BASEVERSION}/${MACHINE_ARCH}
-PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+)\./\1-/}.${MACHINE_ARCH}
-EXTRACT_SUFX=	.rpm
-EXTRACT_ONLY=
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+)\./\1-/}
 
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Linux version of the graphic library for GTK+
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-
 CONFLICTS=	linux-gtk2*
 
-USE_LINUX_PREFIX=yes
-USE_LINUX=	yes
-ONLY_FOR_ARCHS=	i386
-DIST_SUBDIR=	rpm
-NO_BUILD=	yes
+USE_LINUX_RPM=	yes
+LINUX_DIST_VER=	4
+ONLY_FOR_ARCHS=	i386 amd64
+INSTALLS_SHLIB=	yes
 PLIST_SUB=	VERSION=${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+).+/\1/}
-
-# Set the version of Fedora Core
-BASEVERSION?=	2
-RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath /var/lib/rpm\
-		--nodeps --replacepkgs
-
-do-install:
-	@for rpm in ${DISTFILES}; do\
-		${ECHO_MSG} $$rpm;\
-		rpm -U ${RPMFLAGS} ${DISTDIR}/${DIST_SUBDIR}/$$rpm || true;\
-	done
+MD5_FILE?=	${PKGDIR}/distinfo
 
 .include <bsd.port.mk>
