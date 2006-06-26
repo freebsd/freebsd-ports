@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	joga
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_CSME}
+# The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Joga.com Companion
