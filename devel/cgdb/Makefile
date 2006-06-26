@@ -7,7 +7,7 @@
 
 PORTNAME=	cgdb
 PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,8 +22,10 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
+# at this time we can not use LIB_DEPENDS please read ports/99327
 .if ${OSVERSION} < 700016
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LDFLAGS+=	-rpath ${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-readline=${LOCALBASE}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
