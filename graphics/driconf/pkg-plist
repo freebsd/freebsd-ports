@@ -1,12 +1,21 @@
 bin/driconf
-%%PYTHON_SITELIBDIR%%/dri.py
-%%PYTHON_SITELIBDIR%%/dri.pyc
-%%PYTHON_SITELIBDIR%%/driconf.py
-%%PYTHON_SITELIBDIR%%/driconf.pyc
-share/locale/de/LC_MESSAGES/driconf.mo
-share/locale/es/LC_MESSAGES/driconf.mo
+lib/driconf/dri.py
+lib/driconf/dri.pyc
+lib/driconf/driconf.py
+lib/driconf/driconf.pyc
+lib/driconf/driconf_commonui.py
+lib/driconf/driconf_commonui.pyc
+lib/driconf/driconf_complexui.py
+lib/driconf/driconf_complexui.pyc
+lib/driconf/driconf_simpleui.py
+lib/driconf/driconf_simpleui.pyc
 %%DATADIR%%/card.png
+%%DATADIR%%/drilogo.jpg
 %%DATADIR%%/screen.png
 %%DATADIR%%/screencard.png
-%%DATADIR%%/drilogo.jpg
+share/locale/de/LC_MESSAGES/driconf.mo
+share/locale/es/LC_MESSAGES/driconf.mo
+share/locale/it/LC_MESSAGES/driconf.mo
+share/locale/ru/LC_MESSAGES/driconf.mo
 @dirrm %%DATADIR%%
+@dirrm lib/driconf
