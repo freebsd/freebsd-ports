@@ -2,15 +2,15 @@ include/libgeda/colors.h
 include/libgeda/defines.h
 include/libgeda/funcs.h
 include/libgeda/globals.h
+include/libgeda/i_vars.h
+include/libgeda/libgeda.h
 include/libgeda/o_types.h
+include/libgeda/papersizes.h
 include/libgeda/prototype.h
 include/libgeda/struct.h
-include/libgeda/libgeda.h
-include/libgeda/i_vars.h
-include/libgeda/papersizes.h
 lib/libgeda.a
 lib/libgeda.la
 lib/libgeda.so
-lib/libgeda.so.23
+lib/libgeda.so.25
 libdata/pkgconfig/libgeda.pc
 @dirrm include/libgeda

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgeda
-PORTVERSION=	20050313
-PORTREVISION=	2
+PORTVERSION=	20060123
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
