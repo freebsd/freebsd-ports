@@ -12865,6 +12865,7 @@ squirrelmail-newuser_wiz-plugin	ports/mail/squirrelmail-newuser_wiz-plugin
 squirrelmail-notes-plugin	ports/mail/squirrelmail-notes-plugin
 squirrelmail-notify-plugin	ports/mail/squirrelmail-notify-plugin
 squirrelmail-quota_usage-plugin	ports/mail/squirrelmail-quota_usage-plugin
+squirrelmail-secure_login-plugin	ports/mail/squirrelmail-secure_login-plugin
 squirrelmail-vlogin-plugin	ports/mail/squirrelmail-vlogin-plugin
 squirrelmail-wetteronline-plugin	ports/mail/squirrelmail-wetteronline-plugin
 squishdot	ports/www/squishdot
