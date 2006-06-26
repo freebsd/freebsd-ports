@@ -23,6 +23,10 @@ USE_GCC?=	3.4
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/build/generic
 
+OPTIONS=	OPTIMIZED_CFLAGS "Use XviD's default optimizations" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS=		# let xvid's build system decide about those
 .endif
@@ -30,4 +34,4 @@ CFLAGS=		# let xvid's build system decide about those
 post-install:
 	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.4 ${PREFIX}/lib/libxvidcore.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
