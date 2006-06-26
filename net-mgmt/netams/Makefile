@@ -7,6 +7,7 @@
 
 PORTNAME=	netams
 PORTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.netams.com/files/
@@ -19,7 +20,7 @@ COMMENT=	Network Traffic Accounting and Monitoring Software
 NO_PACKAGE=	Depends on kernel
 
 USE_SUBMAKE=	yes
-USE_RC_SUBR=	netams.sh
+USE_RC_SUBR=	netams
 MANCOMPRESSED=	no
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
