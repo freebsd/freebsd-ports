@@ -26,6 +26,7 @@
     SUBDIR += fox14
     SUBDIR += fox16
     SUBDIR += fpc-forms
+    SUBDIR += fpc-gnome
     SUBDIR += fpc-gtk
     SUBDIR += fpc-gtk2
     SUBDIR += fxscintilla
