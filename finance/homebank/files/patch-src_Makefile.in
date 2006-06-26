@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Sat Jun 24 20:51:02 2006
-+++ src/Makefile.in	Sat Jun 24 20:51:12 2006
+--- src/Makefile.in.orig	Mon Jun 26 13:01:57 2006
++++ src/Makefile.in	Mon Jun 26 13:02:15 2006
 @@ -91,8 +91,6 @@
  
  homebank_LDADD = $(DEPS_LIBS)
  
 -homebank_LDFLAGS = "-lpng12"
 -
- AM_CPPFLAGS = $(DEPS_CFLAGS) 	      -DLOCALE_DIR=\""$(datadir)/locale"\" 	      -DPIXMAPS_DIR=\""$(datadir)/images/homebank"\" 
+ homebank_CFLAGS = "-Wall"
  
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ AM_CPPFLAGS = $(DEPS_CFLAGS) 	      -DLOCALE_DIR=\""$(datadir)/locale"\" 	      -DPIXMAPS_DIR=\""$(datadir)/images/homebank"\" 
