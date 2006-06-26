@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	9
-PORTVERSION=	6.4.${PATCHLEVEL}
+PATCHLEVEL=	35
+PORTVERSION=	7.0.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
@@ -18,9 +18,9 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	000 001
+BADPATCHES=	005 027 028 032
 .for p in ${BADPATCHES}
-PATCHFILES:=	${PATCHFILES:N6.4.${p}}
+PATCHFILES:=	${PATCHFILES:N7.0.${p}}
 .endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
@@ -52,6 +52,8 @@ MLINKS=		vim.1 rvim.1	vim.1 rview.1
 MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 		vim.1 rgvim.1	vim.1 rgview.1	evim.1 eview.1
 .endif
+MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
+		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
 
 WANT_GNOME=	yes
 
@@ -184,7 +186,7 @@ cklatest:
 
 find-bad-patches:
 	cd ${DISTDIR} ; egrep -l \
-		'(src/os_win32|src/os_mswin|src/if_ole|src/proto/gui_w32|src/gui_w48|src/gui_mac|src/os_(riscos|cyg|vms))'\
+		'(src/os_win32|src/os_mswin|src/if_ole|src/proto/gui_w32|src/gui_w48|src/gui_mac|src/os_(riscos|cyg|os2|vms))'\
 		vim/${PORTVERSION:C/\.[0-9a-z]*$//}*
 
 .include <bsd.port.post.mk>
