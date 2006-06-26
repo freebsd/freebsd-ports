@@ -67,7 +67,6 @@ share/icons/hicolor/128x128/actions/kdesvninfo.png
 share/icons/hicolor/128x128/actions/kdesvnlock.png
 share/icons/hicolor/128x128/actions/kdesvnlog.png
 share/icons/hicolor/128x128/actions/kdesvnmerge.png
-share/icons/hicolor/128x128/filesystems/kdesvnneedlock.png
 share/icons/hicolor/128x128/actions/kdesvnrelocate.png
 share/icons/hicolor/128x128/actions/kdesvnswitch.png
 share/icons/hicolor/128x128/actions/kdesvnunlock.png
@@ -78,6 +77,7 @@ share/icons/hicolor/128x128/filesystems/kdesvnconflicted.png
 share/icons/hicolor/128x128/filesystems/kdesvndeleted.png
 share/icons/hicolor/128x128/filesystems/kdesvnlocked.png
 share/icons/hicolor/128x128/filesystems/kdesvnmodified.png
+share/icons/hicolor/128x128/filesystems/kdesvnneedlock.png
 share/icons/hicolor/128x128/filesystems/kdesvnupdates.png
 share/icons/hicolor/16x16/actions/kdesvnadd.png
 share/icons/hicolor/16x16/actions/kdesvnaddrecursive.png
@@ -95,7 +95,6 @@ share/icons/hicolor/16x16/actions/kdesvninfo.png
 share/icons/hicolor/16x16/actions/kdesvnlock.png
 share/icons/hicolor/16x16/actions/kdesvnlog.png
 share/icons/hicolor/16x16/actions/kdesvnmerge.png
-share/icons/hicolor/16x16/filesystems/kdesvnneedlock.png
 share/icons/hicolor/16x16/actions/kdesvnrelocate.png
 share/icons/hicolor/16x16/actions/kdesvnswitch.png
 share/icons/hicolor/16x16/actions/kdesvnunlock.png
@@ -106,6 +105,7 @@ share/icons/hicolor/16x16/filesystems/kdesvnconflicted.png
 share/icons/hicolor/16x16/filesystems/kdesvndeleted.png
 share/icons/hicolor/16x16/filesystems/kdesvnlocked.png
 share/icons/hicolor/16x16/filesystems/kdesvnmodified.png
+share/icons/hicolor/16x16/filesystems/kdesvnneedlock.png
 share/icons/hicolor/16x16/filesystems/kdesvnupdates.png
 share/icons/hicolor/22x22/actions/kdesvnadd.png
 share/icons/hicolor/22x22/actions/kdesvnaddrecursive.png
@@ -123,7 +123,6 @@ share/icons/hicolor/22x22/actions/kdesvninfo.png
 share/icons/hicolor/22x22/actions/kdesvnlock.png
 share/icons/hicolor/22x22/actions/kdesvnlog.png
 share/icons/hicolor/22x22/actions/kdesvnmerge.png
-share/icons/hicolor/22x22/filesystems/kdesvnneedlock.png
 share/icons/hicolor/22x22/actions/kdesvnrelocate.png
 share/icons/hicolor/22x22/actions/kdesvnswitch.png
 share/icons/hicolor/22x22/actions/kdesvnunlock.png
@@ -134,6 +133,7 @@ share/icons/hicolor/22x22/filesystems/kdesvnconflicted.png
 share/icons/hicolor/22x22/filesystems/kdesvndeleted.png
 share/icons/hicolor/22x22/filesystems/kdesvnlocked.png
 share/icons/hicolor/22x22/filesystems/kdesvnmodified.png
+share/icons/hicolor/22x22/filesystems/kdesvnneedlock.png
 share/icons/hicolor/22x22/filesystems/kdesvnupdates.png
 share/icons/hicolor/32x32/actions/kdesvnadd.png
 share/icons/hicolor/32x32/actions/kdesvnaddrecursive.png
@@ -151,7 +151,6 @@ share/icons/hicolor/32x32/actions/kdesvninfo.png
 share/icons/hicolor/32x32/actions/kdesvnlock.png
 share/icons/hicolor/32x32/actions/kdesvnlog.png
 share/icons/hicolor/32x32/actions/kdesvnmerge.png
-share/icons/hicolor/32x32/filesystems/kdesvnneedlock.png
 share/icons/hicolor/32x32/actions/kdesvnrelocate.png
 share/icons/hicolor/32x32/actions/kdesvnswitch.png
 share/icons/hicolor/32x32/actions/kdesvnunlock.png
@@ -162,6 +161,7 @@ share/icons/hicolor/32x32/filesystems/kdesvnconflicted.png
 share/icons/hicolor/32x32/filesystems/kdesvndeleted.png
 share/icons/hicolor/32x32/filesystems/kdesvnlocked.png
 share/icons/hicolor/32x32/filesystems/kdesvnmodified.png
+share/icons/hicolor/32x32/filesystems/kdesvnneedlock.png
 share/icons/hicolor/32x32/filesystems/kdesvnupdates.png
 share/icons/hicolor/48x48/actions/kdesvnadd.png
 share/icons/hicolor/48x48/actions/kdesvnaddrecursive.png
@@ -179,7 +179,6 @@ share/icons/hicolor/48x48/actions/kdesvninfo.png
 share/icons/hicolor/48x48/actions/kdesvnlock.png
 share/icons/hicolor/48x48/actions/kdesvnlog.png
 share/icons/hicolor/48x48/actions/kdesvnmerge.png
-share/icons/hicolor/48x48/filesystems/kdesvnneedlock.png
 share/icons/hicolor/48x48/actions/kdesvnrelocate.png
 share/icons/hicolor/48x48/actions/kdesvnswitch.png
 share/icons/hicolor/48x48/actions/kdesvnunlock.png
@@ -190,6 +189,7 @@ share/icons/hicolor/48x48/filesystems/kdesvnconflicted.png
 share/icons/hicolor/48x48/filesystems/kdesvndeleted.png
 share/icons/hicolor/48x48/filesystems/kdesvnlocked.png
 share/icons/hicolor/48x48/filesystems/kdesvnmodified.png
+share/icons/hicolor/48x48/filesystems/kdesvnneedlock.png
 share/icons/hicolor/48x48/filesystems/kdesvnupdates.png
 share/icons/hicolor/64x64/actions/kdesvnadd.png
 share/icons/hicolor/64x64/actions/kdesvnaddrecursive.png
@@ -207,7 +207,6 @@ share/icons/hicolor/64x64/actions/kdesvninfo.png
 share/icons/hicolor/64x64/actions/kdesvnlock.png
 share/icons/hicolor/64x64/actions/kdesvnlog.png
 share/icons/hicolor/64x64/actions/kdesvnmerge.png
-share/icons/hicolor/64x64/filesystems/kdesvnneedlock.png
 share/icons/hicolor/64x64/actions/kdesvnrelocate.png
 share/icons/hicolor/64x64/actions/kdesvnswitch.png
 share/icons/hicolor/64x64/actions/kdesvnunlock.png
@@ -218,6 +217,7 @@ share/icons/hicolor/64x64/filesystems/kdesvnconflicted.png
 share/icons/hicolor/64x64/filesystems/kdesvndeleted.png
 share/icons/hicolor/64x64/filesystems/kdesvnlocked.png
 share/icons/hicolor/64x64/filesystems/kdesvnmodified.png
+share/icons/hicolor/64x64/filesystems/kdesvnneedlock.png
 share/icons/hicolor/64x64/filesystems/kdesvnupdates.png
 share/icons/hicolor/scalable/actions/kdesvnadd.svgz
 share/icons/hicolor/scalable/actions/kdesvnaddrecursive.svgz
@@ -235,7 +235,6 @@ share/icons/hicolor/scalable/actions/kdesvninfo.svgz
 share/icons/hicolor/scalable/actions/kdesvnlock.svgz
 share/icons/hicolor/scalable/actions/kdesvnlog.svgz
 share/icons/hicolor/scalable/actions/kdesvnmerge.svgz
-share/icons/hicolor/scalable/filesystems/kdesvnneedlock.svgz
 share/icons/hicolor/scalable/actions/kdesvnrelocate.svgz
 share/icons/hicolor/scalable/actions/kdesvnswitch.svgz
 share/icons/hicolor/scalable/actions/kdesvnunlock.svgz
@@ -246,11 +245,14 @@ share/icons/hicolor/scalable/filesystems/kdesvnconflicted.svgz
 share/icons/hicolor/scalable/filesystems/kdesvndeleted.svgz
 share/icons/hicolor/scalable/filesystems/kdesvnlocked.svgz
 share/icons/hicolor/scalable/filesystems/kdesvnmodified.svgz
+share/icons/hicolor/scalable/filesystems/kdesvnneedlock.svgz
 share/icons/hicolor/scalable/filesystems/kdesvnupdates.svgz
+share/locale/ca/LC_MESSAGES/kdesvn.mo
 share/locale/de/LC_MESSAGES/kdesvn.mo
 share/locale/es/LC_MESSAGES/kdesvn.mo
 share/locale/it/LC_MESSAGES/kdesvn.mo
 share/locale/nl/LC_MESSAGES/kdesvn.mo
+share/locale/pa/LC_MESSAGES/kdesvn.mo
 share/locale/sv/LC_MESSAGES/kdesvn.mo
 share/services/kded/kdesvnd.desktop
 share/services/ksvn+file.protocol
