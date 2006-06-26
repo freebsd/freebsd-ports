@@ -38,7 +38,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2
+USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 INSTALLS_SHLIB=	yes
@@ -57,6 +57,7 @@ MAN5=	gimprc.5 gimprc-2.2.5
 
 OPTIONS=	DEBUG "debugging" off \
 		PYTHON "Python-Fu support" off \
+		RSVG "SVG format support" on \
 		PRINT "GIMP printing" on \
 		HTML_HELP_BROWSER "GIMP help browser" on \
 		MP "multiple processor support" off
@@ -78,6 +79,14 @@ PLIST_SUB+=		PYTHON:=""
 .else
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=		PYTHON:="@comment "
+.endif
+
+.if defined(WITHOUT_RSVG)
+CONFIGURE_ARGS+=	--without-librsvg
+PLIST_SUB+=		SVG="@comment "
+.else
+USE_GNOME+=		librsvg2
+PLIST_SUB+=		SVG=""
 .endif
 
 .if defined(WITHOUT_PRINT)
