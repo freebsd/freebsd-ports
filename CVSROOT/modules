@@ -2629,6 +2629,7 @@ fpc-fv		ports/devel/fpc-fv
 fpc-gdbint	ports/devel/fpc-gdbint
 fpc-gdbm	ports/databases/fpc-gdbm
 fpc-ggi		ports/graphics/fpc-ggi
+fpc-gnome	ports/x11-toolkits/fpc-gnome
 fpc-gtk		ports/x11-toolkits/fpc-gtk
 fpc-gtk2	ports/x11-toolkits/fpc-gtk2
 fpc-ibase	ports/databases/fpc-ibase
