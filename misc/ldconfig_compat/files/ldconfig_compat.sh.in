@@ -20,6 +20,8 @@ load_rc_config $name
 
 ldconfig_start()
 {
+	local _files
+
 	_ins=
 	ldconfig=${ldconfig_command}
 	checkyesno ldconfig_insecure && _ins="-i"
@@ -27,7 +29,10 @@ ldconfig_start()
 		ldconfig_paths=""
 		for i in ${ldconfig_local_dirs}; do
 			if [ -d "${i}" ]; then
-				ldconfig_paths="${ldconfig_paths} `find ${i} -type f`"
+				_files=`find ${i} -type f`
+				if [ -n "${_files}" ]; then
+					ldconfig_paths="${ldconfig_paths} `cat ${_files} | sort -u`"
+				fi
 			fi
 		done
 		echo 'Local ldconfig path:' ${ldconfig_paths}
@@ -38,7 +43,10 @@ ldconfig_start()
 			ldconfig32_paths=""
 			for i in ${ldconfig_local32_dirs}; do
 				if [ -d "${i}" ]; then
-					ldconfig32_paths="${ldconfig32_paths} `find ${i} -type f`"
+					_files=`find ${i} -type f`
+					if [ -n "${_files}" ]; then
+						ldconfig32_paths="${ldconfig32_paths} `cat ${_files} | sort -u`"
+					fi
 				fi
 			done
 			echo 'Local 32-bits ldconfig path:' ${ldconfig32_paths}

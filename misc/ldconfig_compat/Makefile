@@ -7,7 +7,7 @@
 
 PORTNAME=	ldconfig_compat
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -61,6 +61,7 @@ do-install:
 .for prefix in ${LOCAL_PREFIXES}
 	@${ECHO_CMD} "@cwd ${prefix}" >> ${TMPPLIST}
 .for dir in ${LOCAL_DIRS}
+	echo creating  ${prefix}/${dir}
 	@${MKDIR} -p ${prefix}/${dir}
 	@${ECHO_CMD} "@exec mkdir -p %D/${dir}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${dir} 2>/dev/null || true" >> ${TMPPLIST}
