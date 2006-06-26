@@ -172,3 +172,6 @@ SIZE (ircservices/ircservices-5.0.56.diff.gz) = 5907
 MD5 (ircservices/ircservices-5.0.57.diff.gz) = 669ceedc6996438ccf7f9fb079f2d9b1
 SHA256 (ircservices/ircservices-5.0.57.diff.gz) = f6c0d6379fe500004a1948491e368d75798a5893285b996338c28616ab382d7e
 SIZE (ircservices/ircservices-5.0.57.diff.gz) = 15023
+MD5 (ircservices/ircservices-5.0.58.diff.gz) = 7447b41d55027fea2f9e898699f99231
+SHA256 (ircservices/ircservices-5.0.58.diff.gz) = d39a429fa92ff622a5615892847b78e7cab5ea86b1be5980d5d59a8dd8a4fbc2
+SIZE (ircservices/ircservices-5.0.58.diff.gz) = 6890
