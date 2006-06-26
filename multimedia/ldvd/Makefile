@@ -26,7 +26,7 @@ RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 USE_BZIP2=	yes
-USE_PERL=	yes
+USE_PERL5=	yes
 DATA=		de.lang en.lang
 PORTDOCS=	AUTHORS HISTORY README.de README.en
 PLIST_FILES=    bin/ldvd bin/ldvd-ls etc/ldvd.conf.sample \
