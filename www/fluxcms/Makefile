@@ -21,7 +21,7 @@ INSTALLDIR=	${PREFIX}/${FLUXCMSDIR}
 
 PLIST_SUB=	INSTALLDIR=${FLUXCMSDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 SUB_FILES=	pkg-deinstall pkg-message
-SUB_LIST=	INSTALLDIR=${FLUXCMSDIR}
+SUB_LIST=	INSTALLDIR=${INSTALLDIR}
 
 OPTIONS=	GD "Use GD support instead of ImageMagick" on \
 		TIDY "Configure with tidy support" off
