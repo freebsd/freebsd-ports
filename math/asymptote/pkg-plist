@@ -5,6 +5,7 @@ bin/xasy
 %%DATADIR%%/animate.asy
 %%DATADIR%%/arcs.asy
 %%DATADIR%%/arrows.asy
+%%DATADIR%%/asy-init.el
 %%DATADIR%%/asy-mode.el
 %%DATADIR%%/asy.vim
 %%DATADIR%%/asymptote.py
@@ -39,6 +40,7 @@ bin/xasy
 %%DATADIR%%/shipout.asy
 %%DATADIR%%/simplex.asy
 %%DATADIR%%/slide.asy
+%%DATADIR%%/slopefield.asy
 %%DATADIR%%/solids.asy
 %%DATADIR%%/stats.asy
 %%DATADIR%%/strings.asy
@@ -69,11 +71,13 @@ bin/xasy
 %%EXAMPLESDIR%%/colors.asy
 %%EXAMPLESDIR%%/cones.asy
 %%EXAMPLESDIR%%/conicurv.asy
+%%EXAMPLESDIR%%/contour1.asy
+%%EXAMPLESDIR%%/contour2.asy
+%%EXAMPLESDIR%%/contour3.asy
 %%EXAMPLESDIR%%/cos2theta.asy
 %%EXAMPLESDIR%%/cosaddition.asy
 %%EXAMPLESDIR%%/cube.asy
 %%EXAMPLESDIR%%/cylinder.asy
-%%EXAMPLESDIR%%/cylinderoutline.asy
 %%EXAMPLESDIR%%/cylinderskeleton.asy
 %%EXAMPLESDIR%%/datagraph.asy
 %%EXAMPLESDIR%%/delu.asy
@@ -105,6 +109,7 @@ bin/xasy
 %%EXAMPLESDIR%%/hyperboloid.asy
 %%EXAMPLESDIR%%/icon.asy
 %%EXAMPLESDIR%%/image.asy
+%%EXAMPLESDIR%%/imagecontour.asy
 %%EXAMPLESDIR%%/integraltest.asy
 %%EXAMPLESDIR%%/join.asy
 %%EXAMPLESDIR%%/join3.asy
@@ -123,8 +128,10 @@ bin/xasy
 %%EXAMPLESDIR%%/lines.asy
 %%EXAMPLESDIR%%/linetype.asy
 %%EXAMPLESDIR%%/log.asy
+%%EXAMPLESDIR%%/log2graph.asy
 %%EXAMPLESDIR%%/loggraph.asy
 %%EXAMPLESDIR%%/loggrid.asy
+%%EXAMPLESDIR%%/logimage.asy
 %%EXAMPLESDIR%%/logo.asy
 %%EXAMPLESDIR%%/logticks.asy
 %%EXAMPLESDIR%%/lowint.asy
@@ -170,11 +177,13 @@ bin/xasy
 %%EXAMPLESDIR%%/superpath.asy
 %%EXAMPLESDIR%%/surface.asy
 %%EXAMPLESDIR%%/tanh.asy
+%%EXAMPLESDIR%%/thermodynamics.asy
 %%EXAMPLESDIR%%/tile.asy
 %%EXAMPLESDIR%%/torus.asy
 %%EXAMPLESDIR%%/treetest.asy
 %%EXAMPLESDIR%%/triads.asy
 %%EXAMPLESDIR%%/triangle.asy
+%%EXAMPLESDIR%%/triangulate.asy
 %%EXAMPLESDIR%%/unitcircle.asy
 %%EXAMPLESDIR%%/unitcircle3.asy
 %%EXAMPLESDIR%%/upint.asy
@@ -187,7 +196,7 @@ bin/xasy
 %%EXAMPLESDIR%%/xxsq01.asy
 %%EXAMPLESDIR%%/yingyang.asy
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%/animations
 @dirrm %%EXAMPLESDIR%%
 share/texmf-local/tex/latex/asymptote/asycolors.sty
