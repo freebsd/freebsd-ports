@@ -112,6 +112,7 @@
     SUBDIR += esound
     SUBDIR += espeak
     SUBDIR += etktab
+    SUBDIR += euphoria
     SUBDIR += extace
     SUBDIR += ezstream
     SUBDIR += faac

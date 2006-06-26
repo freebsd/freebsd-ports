@@ -1,0 +1,41 @@
+# New ports collection makefile for:	euphoria
+# Date created:		22 June 2006
+# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	euphoria
+PORTVERSION=	20062006
+CATEGORIES=	audio
+MASTER_SITES=	http://mbsd.msk.ru/dist/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	ssedov@mbsd.msk.ru
+COMMENT=	XMMS2 GUI frontend written with Enlightenment e17 libraries
+
+SADIR=		${RUBY_SITEARCHLIBDIR}
+
+BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
+		edje_cc:${PORTSDIR}/graphics/edje
+RUN_DEPENDS=	${SADIR}/edje.so:${PORTSDIR}/graphics/ruby-edje \
+		${SADIR}/esmart.so:${PORTSDIR}/graphics/ruby-esmart \
+		${SADIR}/evas.so:${PORTSDIR}/graphics/ruby-evas \
+		${SADIR}/ecore.so:${PORTSDIR}/devel/ruby-ecore \
+		${SADIR}/xmmsclient_ecore.so:${PORTSDIR}/audio/ruby-xmms2-ecore
+
+USE_BZIP2=	yes
+USE_RUBY=	yes
+
+.include <bsd.port.pre.mk>
+
+do-build:
+	@(cd ${WRKSRC}; ${LOCALBASE}/bin/rake)
+
+do-install:
+	@(cd ${WRKSRC}; ${LOCALBASE}/bin/rake install)
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

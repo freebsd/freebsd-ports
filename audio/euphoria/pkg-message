@@ -1,0 +1,19 @@
+============================================================================
+
+Currently you need to manage your play list using the CLI client.
+An example session would be:
+
+1) Launch xmms2 daemon using xmms2-launcher command. You can analyze
+	debugging output later in /tmp/xmms2.log.
+
+2) Use the following commands to control xmms2:
+	$ xmms2 add /path/to/some/files
+	$ xmms2 add http://205.188.234.65:8022
+	$ xmms2 list
+	(now the playlist has stuff in it)
+
+3) Start Euphoria with no options.
+
+See http://wiki.xmms2.xmms.se and xmms2(1) for further instructions.
+
+============================================================================
