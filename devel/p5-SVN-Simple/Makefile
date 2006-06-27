@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Simple interface to SVN::Delta::Editor
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl

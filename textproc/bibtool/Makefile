@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	biblio/bibtex/utils/${PORTNAME}
 DISTNAME=	BibTool-${PORTVERSION}
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Command line manipulation of BibTeX files
 
 BUILD_DEPENDS=	${LOCALBASE}/include/kpathsea/tex-file.h:${PORTSDIR}/print/teTeX-base

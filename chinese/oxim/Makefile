@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/
 		ftp://ftp4.tnc.edu.tw/pub3/opendesktop-tw/odp/ \
 		ftp://140.111.128.66/odp/OXIM/Source/
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Open X Input Method server
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft

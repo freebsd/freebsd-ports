@@ -13,7 +13,7 @@ CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
 		http://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A library for Support Vector Machines
 
 USE_ZIP=	yes

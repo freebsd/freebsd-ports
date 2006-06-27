@@ -14,7 +14,7 @@ MASTER_SITES=	http://cjk.ffii.org/ \
 DISTNAME=	cjk-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \

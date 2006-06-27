@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/J/JP/JPIERCE
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Select a pager, optionally pipe it output if destination is a TTY
 
 PERL_CONFIGURE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.codento.com/people/mtr/genscript/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTNAME=	enscript-${PORTVERSION}
 
-MAINTAINER?=	rafan@infor.org
+MAINTAINER?=	rafan@FreeBSD.org
 COMMENT=	ASCII to PostScript filter
 
 GNU_CONFIGURE=	yes

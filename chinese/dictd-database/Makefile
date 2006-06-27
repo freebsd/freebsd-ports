@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://freebsd.csie.ntu.edu.tw/users/rafan/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/dictd-database/
 DISTNAME=	dict-zh-${PORTVERSION}
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A Chinese <-> English dictd words database
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd

@@ -12,7 +12,7 @@ CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		rafan@infor.org
+MAINTAINER=		rafan@FreeBSD.org
 COMMENT=		Library for terminal-independent, full-screen output
 
 NO_FILTER_SHLIBS=	no
