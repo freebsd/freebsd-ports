@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2be7c122-0614-11db-9156-000e0c2e438a">
+    <topic>hashcash -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>hashcash</name>
+	<range><lt>1.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Andreas Seltenreich reports that hashcash is prone to a heap
+       	  overflow vulnerability.  This vulnerability is caused by
+	  improper checking of memory allocations within the
+	  "array_push()" function.  An attacker could trigger this
+	  vulnerability by passing a lot of "-r" or "-j" flags from
+	  the command line, this only applies when the application is
+	  configured to allow command line options, or by passing a lot
+	  of resource names when the application was started with the
+	  "-m" flag set.  This could lead to a Denial or Service or
+	  could allow remote access to the targeted system.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/20800/</url>
+      <url>http://www.hashcash.org/source/CHANGELOG</url>
+    </references>
+    <dates>
+      <discovery>2006-06-27</discovery>
+      <entry>2006-06-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f900bda8-0472-11db-bbf7-000c6ec775d9">
     <topic>gnupg -- user id integer overflow vulnerability</topic>
     <affects>
