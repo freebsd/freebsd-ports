@@ -29,8 +29,8 @@ NO_WRKSUBDIR=	yes
 
 do-build:
 	@${RM} ${WRKSRC}/tfm/dummy.tfm  ${WRKSRC}/mf/cmex9.mf
-	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: export TEXINPUT; tex --ini unpack.ins)
-	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS TEXINPUT; \
+	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: export TEXINPUTS; tex --ini unpack.ins)
+	@(cd ${WRKSRC}/base; TEXINPUTS=${WRKSRC}/base: TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS TEXINPUTS; \
 		tex --ini latex.ltx </dev/null)
 	@(cd ${WRKSRC}/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
