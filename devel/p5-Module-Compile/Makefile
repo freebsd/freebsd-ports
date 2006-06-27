@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Module-Compile
-PORTVERSION=	0.15
-PORTREVISION=	3
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -27,8 +26,8 @@ MAN3=		Module::Compile.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or above
+.if ${PERL_LEVEL} < 500800 # inherited from dependency upon Filter/Util/Call.pm
+IGNORE=		requires perl 5.8 or above
 .endif
 
 .include <bsd.port.post.mk>
