@@ -7,4 +7,4 @@ specify the data type, thus for example European styled date could
 be sorted correctly. One could also set a few options, including
 setting European date as the default auto-detected time stamp, etc.
 
-WWW: http://www.mingyi.org/other/tablesort.html
+WWW: http://www.mingyi.org/other/tabletools.html
