@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tuareg-mode
-PORTVERSION=	1.41.5
+PORTVERSION=	1.46.0
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://www-rocq.inria.fr/~acohen/tuareg/mode/
 
@@ -15,6 +15,7 @@ COMMENT=	Emacs major mode for editing Caml code
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
+USE_BZIP2=	yes
 
 DOC_FILES=	README HISTORY append-tuareg.el custom-tuareg.el
 DOC_DIR=	share/doc/tuareg-mode
