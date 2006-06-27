@@ -461,7 +461,6 @@
     SUBDIR += rlytest
     SUBDIR += rmime
     SUBDIR += roundcube
-    SUBDIR += rssyl
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += ruby-tmail
@@ -538,6 +537,7 @@
     SUBDIR += sylpheed-claws-newmail
     SUBDIR += sylpheed-claws-notification
     SUBDIR += sylpheed-claws-perl
+    SUBDIR += sylpheed-claws-rssyl
     SUBDIR += sylpheed-claws-smime
     SUBDIR += sylpheed-claws-synce
     SUBDIR += sylpheed-claws-vcalendar

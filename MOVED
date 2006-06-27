@@ -2392,3 +2392,4 @@ audio/py-shellac|audio/shellac|2006-06|Because it's a application, not a library
 print/cups-lpr|print/cups-base|2006-06|Merged cups-lpr into cups-base
 audio/mpck|audio/checkmate|2006-06-24|project was renamed
 www/xpi-tablesort|www/xpi-tabletools|2006-06-27|Extension renamed
+mail/rssyl|mail/sylpheed-claws-rssyl|2006-06-27|Moved to follow the rest of sypheed-claws nameing scheme

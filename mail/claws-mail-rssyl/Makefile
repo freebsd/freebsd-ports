@@ -7,9 +7,10 @@
 
 PORTNAME=	rssyl
 DISTVERSION=	0.4cvs6
+PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
-MASTER_SITE_SUBDIR=	distfiles
+PKGNAMEPREFIX=	sylpheed-claws-
 
 MAINTAINER=	v.velox@vvelox.net
 COMMENT=	A RSS/Atom plugin for sylheed-claws
