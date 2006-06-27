@@ -32,6 +32,17 @@
 # USE_XPI		- If set, the port installs one or more xpi extensions.
 #				  If this is set to a list of apps (wildcards possible) the
 #				  extensions will be installed for them only.
+# WITH_XPI		- A user-tunable variable, determines which apps should
+#				  extension be made available for. Can be set to a list of
+#				  apps, same as USE_XPI, and/or to "ext:app[,app,app,...]" tuples.
+#				  ext should be a portname. If ext starts and ends with a slash
+#				  (`/'), it is treated as an extended regular expression (see
+#				  re_format(7)). Right of the colon should be a list of apps in
+#				  the same format as USE_XPI, but comma- instead of whitespace-
+#				  delimited. If no matching tuples for an extension are found,
+#				  WITH_XPI is scanned for non tuple-records which are then treated
+#				  as a USE_XPI list. If several tuples match, the last non-regexp
+#				  one takes precedence, then the last regexp one.
 #
 # This Makefile is an alpha-version of the new xpi infrastructure. It currently
 # supports Gecko 1.8+ (Firefox 1.5+). Support for Gecko 1.7x (and Seamonkey 1.0)
@@ -74,21 +85,61 @@ USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 XPI_DISTNAME?=	${PORTNAME}
-XPI_APPS_ALL=	*firefox* *thunderbird* *flock*
-WITH_XPI_APPS?=	${XPI_APPS_ALL}
+XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock*
+XPI_APPS_ALL=	firefox firefox-devel linux-firefox linux-firefox-devel \
+				thunderbird linux-thunderbird flock linux-flock
 
-.if defined(USE_XPI) && ( ${USE_XPI:U} == "YES" || ${USE_XPI} == "*" )
+# === Let's process WITH_XPI into WITH_XPI_APPS
+WITH_XPI_TUPLES=	${WITH_XPI:M*?\:?*}
+WITH_XPI_NTUPLES=	${WITH_XPI:N*\:*}
+WITH_XPI_TUPLES_RX=	${WITH_XPI_TUPLES:M/*?*/\:?*}
+WITH_XPI_TUPLES_WC=	${WITH_XPI_TUPLES:N/*?*/\:?*}
+WITH_XPI_MATCH?=	${PORTNAME}
+WITH_XPI_MATCHSTRING?=	_=~match~=_
+
+.for tuple_rx in ${WITH_XPI_TUPLES_RX}
+_rx=	${tuple_rx:C!/(.*)/\:.*!\1!}
+_apps=	${tuple_rx:C!/.*/\:(.*)!\1!}
+_testrx=${WITH_XPI_MATCH:C!.*${_rx}.*!${WITH_XPI_MATCHSTRING}!}
+.if ${_testrx} == ${WITH_XPI_MATCHSTRING}
+WITH_XPI_APPS:=	${_apps:S/,/ /g}
+.endif
+.endfor
+
+.for tuple_wc in ${WITH_XPI_TUPLES_WC}
+_wc=	${tuple_wc:C!(.*)\:.*!\1!}
+_apps=	${tuple_wc:C!.*\:(.*)!\1!}
+.if ${_wc} == ${WITH_XPI_MATCH}
+WITH_XPI_APPS:=	${_apps:S/,/ /g}
+.endif
+.endfor
+
+.if ${WITH_XPI_NTUPLES}
+WITH_XPI_APPS?=	${WITH_XPI_NTUPLES}
+.endif
+# === WITH_XPI has been processed
+
+.ifdef WITH_XPI_APPS
 USE_XPI=	${WITH_XPI_APPS}
-.else
-USE_XPI?=	${WITH_XPI_APPS}
+.endif
+
+.if !defined(USE_XPI) || (defined(USE_XPI) && ( ${USE_XPI:U} == "YES" || ${USE_XPI} == "*" ))
+USE_XPI=	${XPI_APPS_ALL_WC}
 .endif
 
 XPI_APPS?=	${USE_XPI:S.^.${X11BASE}/lib/.:S.$./extensions.}
+XPI_SLDIRS_ALL=	${XPI_APPS_ALL:S.^.${XPI_SLDIR}/.}
+XPI_SLDIRS=		${USE_XPI:S.^.${XPI_SLDIR}/.}
+XPI_LINKFARMS=	${XPI_APPS} ${XPI_SLDIRS}
 
 XPI_LIBDIR?=	${PREFIX}/lib/xpi
+XPI_SLDIR?=		${XPI_LIBDIR}/symlinks
 .ifndef XPI_DISTNAMES
 XPI_XPIDIR?=	${XPI_LIBDIR}/${XPI_ID}
 .endif
+XPI_DIRS_TRY=	${XPI_SLDIRS_ALL:S,^${PREFIX}/,,} \
+				${XPI_SLDIR:S,^${PREFIX}/,,} \
+				${XPI_LIBDIR:S,^${PREFIX}/,,}
 
 PLIST_SUB+=		XPI_LIBDIR="${XPI_LIBDIR:S,^${PREFIX}/,,}" \
 				XPI_XPIDIR="${XPI_XPIDIR:S,^${PREFIX}/,,}"
@@ -109,16 +160,17 @@ PLIST_DIRS+=	${XPI_DIRS_${dist}:S!^!${_TD_${dist}}/!} ${_TD_${dist}}
 
 .if !target(do-install)
 do-install:
-	@${INSTALL} -d ${_TD_FULL}
+	@${INSTALL} -d ${_TD_FULL} ${XPI_SLDIRS_ALL}
 	@${CP} -Rp ${WRKSRC}/ ${_TD_FULL}/
 	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
 		then ${CP} -p ${FILESDIR}/chrome.manifest ${_TD_FULL}/ ; fi
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${_TD_FULL}/
 	@${CHMOD} -R a+rX,go-w ${_TD_FULL}/
-	@for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q} ; }
-	@${ECHO_CMD} '@exec for _app in ${XPI_APPS} ; { ${LN} -sf ${_TD_FULL} $$_app ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _app in ${XPI_APPS} ; { ${RM} -f $$_app/${XPI_ID} ; }' ${_A}
-	@${ECHO_CMD} '@unexec rmdir ${XPI_LIBDIR:S,^${PREFIX},%D,} ${_Q}' ${_A}
+	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir ${_Q} ; }
+	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
+	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir ${_Q}; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${XPI_ID} ; }' ${_A}
+	@${ECHO_CMD} '@unexec rmdir ${XPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
 .endif
 
 .if !target(relink)
