@@ -41,39 +41,16 @@ bin/statistic.pl
 %%SITE_PERL%%/Text/NSP/Measures/3D/MI/ps.pm
 %%SITE_PERL%%/Text/NSP/Measures/3D/MI/tmi.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
-%%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Measures.html
-%%PORTDOCS%%%%DOCSDIR%%/html/NewStats.html
-%%PORTDOCS%%%%DOCSDIR%%/html/README.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Todo.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Usage.html
-%%PORTDOCS%%%%DOCSDIR%%/html/combig.html
-%%PORTDOCS%%%%DOCSDIR%%/html/count.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dice.html
-%%PORTDOCS%%%%DOCSDIR%%/html/huge-combine.html
-%%PORTDOCS%%%%DOCSDIR%%/html/huge-count.html
-%%PORTDOCS%%%%DOCSDIR%%/html/jaccard.html
-%%PORTDOCS%%%%DOCSDIR%%/html/kocos.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ll.html
-%%PORTDOCS%%%%DOCSDIR%%/html/measure2d.html
-%%PORTDOCS%%%%DOCSDIR%%/html/odds.html
-%%PORTDOCS%%%%DOCSDIR%%/html/phi.html
-%%PORTDOCS%%%%DOCSDIR%%/html/pmi.html
-%%PORTDOCS%%%%DOCSDIR%%/html/rank.html
-%%PORTDOCS%%%%DOCSDIR%%/html/sort-bigrams.html
-%%PORTDOCS%%%%DOCSDIR%%/html/split-data.html
-%%PORTDOCS%%%%DOCSDIR%%/html/statistic.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tmi.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tscore.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x2.html
-%%PORTDOCS%%%%DOCSDIR%%/pod/FAQ.pod
-%%PORTDOCS%%%%DOCSDIR%%/pod/Measures.pod
-%%PORTDOCS%%%%DOCSDIR%%/pod/NewStats.pod
-%%PORTDOCS%%%%DOCSDIR%%/pod/README.pod
-%%PORTDOCS%%%%DOCSDIR%%/pod/Todo.pod
-%%PORTDOCS%%%%DOCSDIR%%/pod/Usage.pod
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pod
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.pod
+%%PORTDOCS%%%%DOCSDIR%%/NSP-Class-diagram.pdf
+%%PORTDOCS%%%%DOCSDIR%%/NSP-Class-diagram.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.pod
+%%PORTDOCS%%%%DOCSDIR%%/Todo.pod
+%%PORTDOCS%%%%DOCSDIR%%/Usage.pod
+%%PORTDOCS%%%%DOCSDIR%%/cicling2003.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cicling2003.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
