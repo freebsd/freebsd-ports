@@ -1044,7 +1044,7 @@
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
     SUBDIR += xpi-stumbleupon
-    SUBDIR += xpi-tablesort
+    SUBDIR += xpi-tabletools
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-togglewordwrap
     SUBDIR += xpi-unplug
