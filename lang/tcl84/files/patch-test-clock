@@ -1,0 +1,30 @@
+--- ../tests/clock.test	Wed Sep  8 14:32:20 2004
++++ ../tests/clock.test	Tue Jun 27 13:42:45 2006
+@@ -64,5 +64,5 @@
+     clock format $clockval -format {%a %b %d %I:%M:%S %p %Y} -gmt true
+ } {Sun Nov 04 03:02:46 AM 1990}
+-test clock-3.2 {clock format tests} {
++test clock-3.2 {clock format tests} -body {
+     # TCL_USE_TIMEZONE_VAR
+ 
+@@ -74,5 +74,5 @@
+     catch {unset env(TZ); set env(TZ) $oldtz}
+     set x
+-} {GMTPST}
++} -match regexp -result {(GMT|UTC)PST}
+ test clock-3.3 {clock format tests} {
+     # tzset() under Borland doesn't seem to set up tzname[] for local 
+@@ -83,5 +83,5 @@
+     set x {}
+ } {}
+-test clock-3.4 {clock format tests} {
++test clock-3.4 {clock format tests} -body {
+     # tzset() under Borland doesn't seem to set up tzname[] for gmt timezone.
+     # tzset() under MSVC has the following weird observed behavior:
+@@ -94,5 +94,5 @@
+     append x [clock format 863800000 -format %Z -gmt 1]
+     append x [clock format 863800000 -format %Z -gmt 1]
+-} {GMTGMT}
++} -match regexp -result {GMTGMT|UTCUTC}
+ test clock-3.5 {clock format tests} {
+     list [catch {clock format} msg] $msg

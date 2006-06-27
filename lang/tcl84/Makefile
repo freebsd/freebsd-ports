@@ -7,6 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,16 +20,18 @@ COMMENT=	Tool Command Language
 
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
+ALL_TARGET=	all test
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
-MAKE_ENV=	SHORT_TCL_VER=84
+MAKE_ENV=	SHORT_TCL_VER=84 LANG=C	# LANG=C is required for some of UTF-using tests
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.4
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=84
+EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
 THREADS_SUFFIX=		-threads
@@ -613,6 +616,9 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TCLBASE}|' \
 		${WRKSRC}/tclConfig.sh
+	${REINPLACE_CMD} \
+		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
+		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
 .if defined(WITHOUT_TCL84_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile

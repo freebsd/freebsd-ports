@@ -132,7 +132,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 @dirrm lib/tcl%%TCL_VER%%/http2.5
 @dirrm lib/tcl%%TCL_VER%%/http1.0
 @dirrm lib/tcl%%TCL_VER%%/encoding
-@dirrm lib/tcl%%TCL_VER%%
+@dirrmtry lib/tcl%%TCL_VER%%
 @dirrm include/tcl%%TCL_VER%%/unix
 @dirrm include/tcl%%TCL_VER%%/generic
 @dirrm include/tcl%%TCL_VER%%
