@@ -13,6 +13,7 @@ bin/rdfquery.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/NTriples.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/SiRPAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles/RDFStore/Model.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Parser/Styles/RDFStore/Statement.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/RDFNode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/Resource.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/RDFStore/SchemaModel.pm
