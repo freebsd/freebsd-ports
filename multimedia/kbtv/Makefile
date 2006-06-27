@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kbtv
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	multimedia python kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/
 EXTRACT_SUFX=	.tbz
@@ -18,7 +17,7 @@ COMMENT=	KDE TV viewer for FreeBSD
 RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 BUILD_DEPENDS=	${RUN_DEPENDS} swig1.3:${PORTSDIR}/devel/swig13
 
-USE_BZIP2=	YES
+USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_PYTHON=	yes
 USE_SDL=	sdl
@@ -112,5 +111,6 @@ post-install:
 	@cd ${WRKSRC} && ${MKDIR} ${DOCSDIR} && \
 	    ${INSTALL_DATA} README NEWS ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
