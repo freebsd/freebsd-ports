@@ -7,7 +7,7 @@
 
 CATEGORIES=	chinese
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	XEmacs text editor version 21, with XIM support and Big5 settings
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule

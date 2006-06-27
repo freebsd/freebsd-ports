@@ -7,7 +7,7 @@
 
 PKGNAMESUFFIX=	-python
 
-MAINTAINER=	rafan@infor.org
+MAINTAINER=	rafan@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../science/libsvm
 
