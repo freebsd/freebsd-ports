@@ -20,7 +20,6 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/chess.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/colors.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/colours.pm
-%%SITE_PERL%%/Acme/MetaSyntactic/colors.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/constellations.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/contrade.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/counting_rhyme.pm
@@ -56,6 +55,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/pantagruel.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/pasta.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/peanuts.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/pgpfone.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/phonetic.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/planets.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/pm_groups.pm
