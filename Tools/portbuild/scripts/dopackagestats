@@ -1,0 +1,123 @@
+#!/bin/sh
+# $FreeBSD#
+#
+# create HTML showing numbers of packages vs errors.  Run this in a directory
+# accessible to the web server.
+#
+
+# alpha is obsolete
+SUPPORTED_ARCHS="amd64 i386 ia64 sparc64"
+ROOT_DIRECTORY=/var/portbuild
+
+OUTFILE=packagestats.html
+TMPFILE=.${OUTFILE}
+
+echo "<html>" > ${TMPFILE}
+echo "<head>" >> ${TMPFILE}
+echo "<title>FreeBSD package building statistics</title>" >> ${TMPFILE}
+echo "</head>" >> ${TMPFILE}
+
+echo "<body>" >> ${TMPFILE}
+echo "<h1>FreeBSD package building statistics</h1>" >> ${TMPFILE}
+echo "<p>as of `date`</p>" >> ${TMPFILE}
+
+for arch in ${SUPPORTED_ARCHS}; do
+
+  # begin table
+  echo "<table border='1' cellpadding='4' bgcolor='#F2F2F2'>" >> ${TMPFILE}
+  echo "<tr>" >> ${TMPFILE}
+  echo "<td align='left' width='80'>&nbsp;</td>" >> ${TMPFILE}
+  echo "<th align='left'>INDEX</th>" >> ${TMPFILE}
+  echo "<th align='left'>packages</th>" >> ${TMPFILE}
+  echo "<th align='left'>errors</th>" >> ${TMPFILE}
+  echo "<th align='left'>skipped</th>" >> ${TMPFILE}
+  echo "<th align='left'>missing</th>" >> ${TMPFILE}
+  echo "<th align='left'>done?</th>" >> ${TMPFILE}
+  echo "</tr>" >> ${TMPFILE}
+
+  # begin row
+  branches=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]$' | sort`
+  for branch in ${branches}; do
+
+    directory=${ROOT_DIRECTORY}/${arch}/${branch}
+    if [ "$branch" = "4" ]; then
+      indexfile=$directory/ports/INDEX
+    else
+      indexfile=$directory/ports/INDEX-$branch
+    fi
+
+    echo "<tr>" >> ${TMPFILE}
+
+    # column: ARCH
+    echo "<th align='left'>$arch-$branch</th>" >> ${TMPFILE}
+
+    # column: INDEX count
+    n_index=0
+    if [ -f $indexfile ]; then
+      n_index=`cat $indexfile | wc -l`
+    fi
+    echo "<td align='right'>$n_index</td>" >> ${TMPFILE}
+
+    # column: package count
+    n_packages=0
+    if [ -d $directory/packages/All ]; then
+      n_packages=`find $directory/packages/All -name \*.tbz -o -name \*.tgz |wc -l`
+    fi
+    echo "<td align='right'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest-logs'>" >> ${TMPFILE}
+    echo "$n_packages</a></td>" >> ${TMPFILE}
+
+    # column: error count
+    n_errors=0
+    if [ -d $directory/errors ]; then
+      # XXX MCL why doesn't this work???
+      #n_errors=`find $directory/errors -name \*.log -o -name \*.log.bz2 |wc -l`
+      n_errors=`ls $directory/errors | grep '.log' | wc -l`
+    fi
+    echo "<td align='right'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest'>" >> ${TMPFILE}
+    echo "$n_errors</a></td>" >> ${TMPFILE}
+
+    # column: duds count
+    n_duds=0
+    if [ -f $directory/duds ]; then
+      n_duds=`cat $directory/duds | wc -l`
+    fi
+    echo "<td align='right'>$n_duds</td>" >> ${TMPFILE}
+
+    # column: missing count
+    n_missing=`expr $n_index - $n_packages - $n_errors - $n_duds`
+    echo "<td align='right'>$n_missing</td>" >> ${TMPFILE}
+
+    # column: done flag
+    done_flag="N"
+    if [ -f $directory/build.log ]; then
+      if [ ! -z "`grep 'all done at ' $directory/build.log`" ]; then
+        done_flag="Y"
+      fi
+    fi
+    echo "<td align='right'>$done_flag</td>" >> ${TMPFILE}
+
+    echo "</tr>" >> ${TMPFILE}
+
+  done
+
+  echo "</table>" >> ${TMPFILE}
+  echo "<br>" >> ${TMPFILE}
+
+done
+
+echo "<p>explanation of columns:</p>" >> ${TMPFILE}
+echo "<ul>" >> ${TMPFILE}
+echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
+echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
+echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
+echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
+echo "<li><b>missing</b> is the INDEX column minus anothers.  These are packages that have not been built for one reason or the other.</li>" >> ${TMPFILE}
+echo "<li><b>done</b> is whether that run terminated normally or not.</li>" >> ${TMPFILE}
+echo "</ul>" >> ${TMPFILE}
+
+echo "</body>" >> ${TMPFILE}
+echo "</html>" >> ${TMPFILE}
+
+mv -f ${TMPFILE} ${OUTFILE}
