@@ -20,7 +20,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/tab_l.gif
@@ -33,7 +32,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/author/html/class_windows_n_t.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/author/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/examples/author/html/doxygen.png
-%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/author/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/author/html/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/author/html/tab_b.gif
@@ -60,7 +58,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_type.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/tab_l.gif
@@ -74,7 +71,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/class/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/examples/class/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/class/html/files.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/class/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/class/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/class/html/tab_l.gif
@@ -162,7 +158,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/docstring/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/docstring/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/docstring/html/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/docstring/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/docstring/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/docstring/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/docstring/html/tab_l.gif
@@ -180,7 +175,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/functions_enum.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/functions_eval.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/tab_l.gif
@@ -198,7 +192,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/example/html/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/example/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/example/html/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/example/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/example/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/example/html/tab_l.gif
@@ -230,7 +223,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/func/html/func_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/func/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/func/html/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/func/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/func/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/func/html/tab_l.gif
@@ -255,7 +247,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group3.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group4.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group5.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/group/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/group/html/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/group/html/namespace_n1.html
@@ -274,7 +265,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/include/html/example.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/include/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/include/html/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/include/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/include/html/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/include/html/tab_b.gif
@@ -293,7 +283,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/tab_l.gif
@@ -312,7 +301,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/globals.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/globals_defs.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/globals_func.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/memgrp_8cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/tab_b.gif
@@ -328,7 +316,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/tab_l.gif
@@ -352,7 +339,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/par/html/class_test.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/par/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/examples/par/html/doxygen.png
-%%PORTDOCS%%%%DOCSDIR%%/examples/par/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/par/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/par/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/par/html/tab_l.gif
@@ -368,7 +354,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/pyexample/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/pyexample/html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/pyexample/html/functions_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/pyexample/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/pyexample/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/pyexample/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/pyexample/html/tab_l.gif
@@ -386,7 +371,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions_vars.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/tab_l.gif
@@ -402,7 +386,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/functions_rela.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/tab_l.gif
@@ -419,7 +402,6 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/globals.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/globals_func.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/globals_type.html
-%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/hierarchy.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/restypedef_8cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/struct_coord_struct-members.html

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -14,8 +14,15 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	portmaint@melvyn.homeunix.org
 COMMENT=	A documentation system for C and C++
 
+BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+
 ALL_TARGET=	all
 
+EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude '*/libmd5'	\
+	--exclude '*/libpng' --exclude '*/tmake'
+
+CONFIGURE_ENV+=	CXX="${CXX}"
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	docs
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python # XXX: Replace with USE_PYTHON_BUILD
@@ -64,23 +71,11 @@ CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s:gcc:${CC}:g;	\
-		s:g\+\+:${CXX}:g;		\
-		s:%%LIBQT%%:-l${QTNAME}:g;	\
-		s:%%MOC%%:${MOC}:g;		\
-		s:%%QT_INC%%:${QT_INC}:g;	\
-		s:%%QT_LIB%%:${X11BASE}/lib:g;	\
-		s:%%QT_OPENGL%%:${QT_OPENGL}:g;	\
-		s:%%THREADLIBS%%:${THREADLIBS}:g;\
-		s:%%CFLAGS%%:${CFLAGS}:g;	\
-		s:%%CXXFLAGS%%:${CXXFLAGS}:g"	\
-	    ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
-		${WRKSRC}/libpng/pngconf.h \
-		${WRKSRC}/libpng/zutil.h ${WRKSRC}/src/pngenc.cpp
+post-configure:
+	@${REINPLACE_CMD} -e 's|TMAKE *=.*|TMAKE=/opt/bin/tmake|' \
+		-e 's|TMAKEPATH *=.*|TMAKEPATH=/opt/share/tmake/freebsd-g++|' \
+			${WRKSRC}/Makefile ${WRKSRC}/*/Makefile \
+			${WRKSRC}/addon/doxywizard/Makefile
 
 post-build:
 	cd ${BUILD_WRKSRC}/examples; \
