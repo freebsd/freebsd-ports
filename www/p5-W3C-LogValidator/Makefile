@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	W3C-LogValidator
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	W3C
@@ -28,30 +28,26 @@ PERL_CONFIGURE=	yes
 
 MAN3=	W3C::LogValidator.3 \
 	W3C::LogValidator::Basic.3 \
-	W3C::LogValidator::Config.3 \
 	W3C::LogValidator::CSSValidator.3 \
+	W3C::LogValidator::Config.3 \
 	W3C::LogValidator::HTMLValidator.3 \
-	W3C::LogValidator::SurveyEngine.3 \
 	W3C::LogValidator::Output::HTML.3 \
 	W3C::LogValidator::Output::Mail.3 \
-	W3C::LogValidator::Output::Raw.3
+	W3C::LogValidator::Output::Raw.3 \
+	W3C::LogValidator::SurveyEngine.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.if ${PERL_LEVEL} < 500802 # inherited from www/p5-webservice-validator-css-w3c
+IGNORE=	requires at least Perl 5.8.2.  Please install lang/perl5.8 and try again
 .endif
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.pm" | \
-		${XARGS} ${PERL5} -pi -e 's/^our ([^;=]+)/use vars qw(\1); \1/;'
-.endif
-
+.ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/NewModule.pm ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/NewOutputModule.pm ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/logprocess.conf ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>

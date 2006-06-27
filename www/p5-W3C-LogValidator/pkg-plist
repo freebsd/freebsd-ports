@@ -5,15 +5,16 @@ bin/logprocess.pl
 %%SITE_PERL%%/W3C/LogValidator/Config.pm
 %%SITE_PERL%%/W3C/LogValidator/HTMLValidator.pm
 %%SITE_PERL%%/W3C/LogValidator/LinkChecker.pm
+%%SITE_PERL%%/W3C/LogValidator/LinkReferer.pm
 %%SITE_PERL%%/W3C/LogValidator/Output/HTML.pm
 %%SITE_PERL%%/W3C/LogValidator/Output/Mail.pm
 %%SITE_PERL%%/W3C/LogValidator/Output/Raw.pm
 %%SITE_PERL%%/W3C/LogValidator/SurveyEngine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator/.packlist
-%%EXAMPLESDIR%%/NewModule.pm
-%%EXAMPLESDIR%%/NewOutputModule.pm
-%%EXAMPLESDIR%%/logprocess.conf
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/NewModule.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/NewOutputModule.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/logprocess.conf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C/LogValidator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/W3C
 @dirrm %%SITE_PERL%%/W3C/LogValidator/Output
