@@ -1025,6 +1025,7 @@
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-imdbpreview
+    SUBDIR += xpi-imglikeopera
     SUBDIR += xpi-inline-google-definitions
     SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
