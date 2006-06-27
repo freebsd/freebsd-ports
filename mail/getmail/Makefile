@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.6.2
+PORTVERSION=	4.6.3
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/ \
 		http://mirrors.closedsrc.org/getmail/
@@ -22,6 +22,7 @@ MAN1=		getmail.1 getmail_fetch.1 getmail_maildir.1 getmail_mbox.1
 DOCS=		../README BUGS CHANGELOG THANKS TODO *.txt *.html *.css
 
 post-install:
+	@${CHMOD} -R 644 ${PYTHON_SITELIBDIR}/getmailcore/*
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/getmailrc-examples ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
