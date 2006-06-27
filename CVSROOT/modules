@@ -11927,7 +11927,6 @@ rsibreak	ports/x11/rsibreak
 rsnapshot	ports/sysutils/rsnapshot
 rssh		ports/shells/rssh
 rssowl		ports/www/rssowl
-rssyl		ports/mail/rssyl
 rsync		ports/net/rsync
 rsyncmanager	ports/sysutils/rsyncmanager
 rsynth		ports/audio/rsynth
@@ -13066,6 +13065,7 @@ sylpheed-claws-mailmbox	ports/mail/sylpheed-claws-mailmbox
 sylpheed-claws-newmail	ports/mail/sylpheed-claws-newmail
 sylpheed-claws-notification	ports/mail/sylpheed-claws-notification
 sylpheed-claws-perl	ports/mail/sylpheed-claws-perl
+sylpheed-claws-rssyl	ports/mail/sylpheed-claws-rssyl
 sylpheed-claws-smime	ports/mail/sylpheed-claws-smime
 sylpheed-claws-synce	ports/mail/sylpheed-claws-synce
 sylpheed-claws-vcalendar	ports/mail/sylpheed-claws-vcalendar
