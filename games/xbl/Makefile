@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xbl
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www710.univ-lyon1.fr/~exco/XBL/ \
 		${MASTER_SITE_GENTOO}
@@ -20,11 +20,5 @@ BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xbl.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
 
 .include <bsd.port.post.mk>
