@@ -1,11 +1,11 @@
-# New ports collection makefile for:	rwhois
+# New ports collection makefile for:	rwhoisd
 # Date created:				May 9th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	rwhois
+PORTNAME=	rwhoisd
 PORTVERSION=	1.5.9.6
 PORTREVISION=	1
 CATEGORIES=	net ipv6

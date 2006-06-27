@@ -651,7 +651,7 @@
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rude
-    SUBDIR += rwhois
+    SUBDIR += rwhoisd
     SUBDIR += samba
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup

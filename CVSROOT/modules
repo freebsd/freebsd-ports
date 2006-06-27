@@ -12285,7 +12285,7 @@ runwhen		ports/sysutils/runwhen
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
 rw-aspell	ports/textproc/rw-aspell
-rwhois		ports/net/rwhois
+rwhoisd		ports/net/rwhoisd
 rxp		ports/textproc/rxp
 rxtx		ports/comms/rxtx
 rxvt		ports/x11/rxvt
