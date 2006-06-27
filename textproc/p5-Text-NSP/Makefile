@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-NSP
-PORTVERSION=	0.95
+PORTVERSION=	1.01
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -16,13 +16,11 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 modules for Ngram Statistics Package
 
 PERL_CONFIGURE=	yes
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 MAN1=	combig.pl.1 count.pl.1 \
 	huge-combine.pl.1 huge-count.pl.1 \
 	kocos.pl.1 rank.pl.1 \
 	sort-bigrams.pl.1 split-data.pl.1 statistic.pl.1
-
 MAN3=	Text::NSP.3 \
 	Text::NSP::Measures.3 \
 	Text::NSP::Measures::2D.3 \
@@ -54,24 +52,19 @@ MAN3=	Text::NSP.3 \
 	Text::NSP::Measures::3D::MI::ps.3 \
 	Text::NSP::Measures::3D::MI::tmi.3
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-	's,$(SITEPREFIX)/doc,$(SITEPREFIX)/share/doc/${PKGNAMEPREFIX}${PORTNAME},' \
-	${WRKSRC}/Makefile.PL
-	@${FIND} ${WRKSRC} -name "*.pl" |${XARGS} \
-	${REINPLACE_CMD} -e 's|/usr/local/bin/perl|/usr/bin/env perl|'
-	@${FIND} ${WRKSRC} -name "*.p[lm]" |${XARGS} \
-	${REINPLACE_CMD} -e 's|split.*(/:/, $$ENV{PATH})|@INC|'
-	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
+DOCS=	CHANGES README Docs/FAQ.pod Docs/NSP-Class-diagram.pdf \
+	Docs/NSP-Class-diagram.png Docs/README.pod Docs/Todo.pod \
+	Docs/Usage.pod Docs/cicling2003.pdf Docs/cicling2003.ps
 
+.ifndef (NOPORTDOCS)
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%DOCSDIR%%:${DOCSDIR}:g"
-
-.if defined(NOPORTDOCS)
-pre-patch:
-	@${REINPLACE_CMD} -e \
-	"s,'html',''," ${WRKSRC}/Makefile.PL
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
+	@${ECHO_MSG} "===>   Installing documentation in ${DOCSDIR}"
 .endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
