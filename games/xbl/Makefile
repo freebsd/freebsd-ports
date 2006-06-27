@@ -21,4 +21,4 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xbl.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
