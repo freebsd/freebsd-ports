@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Simple, fast, sh-based filters to integrate Pine with gnupg, or pgp6
 
+RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
+
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
