@@ -72,8 +72,8 @@ CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|TMAKE *=.*|TMAKE=/opt/bin/tmake|' \
-		-e 's|TMAKEPATH *=.*|TMAKEPATH=/opt/share/tmake/freebsd-g++|' \
+	@${REINPLACE_CMD} -e 's|TMAKE *=.*|TMAKE=${LOCALBASE}/bin/tmake|' \
+		-e 's|TMAKEPATH *=.*|TMAKEPATH=${LOCALBASE}/share/tmake/freebsd-g++|' \
 			${WRKSRC}/Makefile ${WRKSRC}/*/Makefile \
 			${WRKSRC}/addon/doxywizard/Makefile
 
