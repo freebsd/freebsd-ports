@@ -34,6 +34,7 @@ lib/%%APP_NAME%%/components/flockFavoritesWebServiceShadows.js
 lib/%%APP_NAME%%/components/flockFeedProtocol.js
 lib/%%APP_NAME%%/components/flockFeedService.js
 lib/%%APP_NAME%%/components/flockFeedUtility.js
+lib/%%APP_NAME%%/components/flockLogger.js
 lib/%%APP_NAME%%/components/flockLuceneIndexer.js
 lib/%%APP_NAME%%/components/flockOpmlProtocol.js
 lib/%%APP_NAME%%/components/flockOpmlService.js
