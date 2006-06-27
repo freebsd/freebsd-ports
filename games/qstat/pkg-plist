@@ -26,5 +26,3 @@ etc/qstat.cfg.default
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/template
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/info
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec unlink %D/share/nls/POSIX
-@unexec unlink %D/share/nls/en_US.US-ASCII
