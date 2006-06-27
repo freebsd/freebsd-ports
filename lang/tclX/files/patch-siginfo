@@ -1,0 +1,14 @@
+Add BSD-specific signal SIGINFO to the list.
+
+	-mi
+
+--- generic/tclXsignal.c	Thu Feb  3 20:34:01 2005
++++ generic/tclXsignal.c	Mon Jun 26 20:46:11 2006
+@@ -172,4 +172,7 @@
+     {"XFSZ",    SIGXFSZ},
+ #endif
++#ifdef SIGINFO
++    {"INFO",	SIGINFO},
++#endif
+     {NULL,         -1}};
+ 

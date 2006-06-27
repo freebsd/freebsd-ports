@@ -7,7 +7,7 @@
 
 PORTNAME=	neotcl
 PORTVERSION=	8.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nws
@@ -16,8 +16,10 @@ DISTNAME=	neowebscript-3.3
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The NeoTCL part of NeoWebScript -- an Apache TCL mod
 
-LIB_DEPENDS=	tclx83:${PORTSDIR}/lang/tclX \
-		db2:${PORTSDIR}/databases/db2
+LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
+
+BUILD_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # Not yet -- openldap used db3, neo used db2 :(
 #		ldap.2:${PORTSDIR}/net/openldap20-client
