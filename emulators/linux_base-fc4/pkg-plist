@@ -8899,6 +8899,7 @@ var/mail
 @exec /bin/mkdir -p %D/usr/share/man/man6
 @exec /bin/mkdir -p %D/usr/share/man/man4
 @exec /bin/mkdir -p %D/usr/share/man/man2
+@exec /bin/mkdir -p %D/usr/share/locale/zh_CN.GB2312/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/games
 @exec /bin/mkdir -p %D/usr/share/empty
 @exec /bin/mkdir -p %D/usr/share/dict
@@ -8956,6 +8957,8 @@ var/mail
 @dirrmtry usr/share/man/man6
 @dirrmtry usr/share/man/man4
 @dirrmtry usr/share/man/man2
+@dirrmtry usr/share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrmtry usr/share/locale/zh_CN.GB2312
 @dirrmtry usr/share/games
 @dirrmtry usr/share/empty
 @dirrmtry usr/share/dict
