@@ -2002,19 +2002,23 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 # Set the default for the installation of Postscript(TM)-
 # compatible functionality.
-.if !defined(GHOSTSCRIPT_PORT)
-.if defined(WITH_GHOSTSCRIPT_AFPL)
-GHOSTSCRIPT_PORT=	print/ghostscript-afpl
-.elif defined(WITH_GHOSTSCRIPT_GPL)
-GHOSTSCRIPT_PORT=	print/ghostscript-gpl
-.else
-GHOSTSCRIPT_PORT=	print/ghostscript-gnu
-.endif
-
 .if !defined(WITHOUT_X11)
-GHOSTSCRIPT_PORT:=	${GHOSTSCRIPT_PORT}-nox11
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-afpl
+.elif defined(WITH_GHOSTSCRIPT_GPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-gpl
+.else
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
 .endif
-.endif #!defined GHOSTSCRIPT_PORT
+.else
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-afpl-nox11
+.elif defined(WITH_GHOSTSCRIPT_GPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-gpl-nox11
+.else
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
+.endif
+.endif
 
 # Set up the ghostscript dependencies.
 .if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_BUILD)
@@ -3099,6 +3103,12 @@ DEPENDS_TARGET=	install
 DEPENDS_TARGET+=	clean
 DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 .endif
+.else
+DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
+.endif
+.if defined(DEPENDS)
+# pretty much guarantees overwrite of existing installation
+.MAKEFLAGS:	FORCE_PKG_REGISTER=yes
 .endif
 
 ################################################################
