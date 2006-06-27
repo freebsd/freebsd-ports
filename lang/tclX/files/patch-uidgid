@@ -1,5 +1,5 @@
---- ../tcl/unix/tclXunixId.c	Thu Dec  2 22:02:08 1999
-+++ ../tcl/unix/tclXunixId.c	Fri Jan 10 17:36:50 2003
+--- unix/tclXunixId.c	Thu Dec  2 22:02:08 1999
++++ unix/tclXunixId.c	Fri Jan 10 17:36:50 2003
 @@ -41,3 +41,3 @@
  UseridToUsernameResult _ANSI_ARGS_((Tcl_Interp *interp,
 -                                    int         userId));
