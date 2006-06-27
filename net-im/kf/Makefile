@@ -27,12 +27,17 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+OPTIONS=GTKSPELL "Spell checking support" on \
+	NLS "Native Language Support" on
+
+.include <bsd.port.pre.mk>
+
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=	--enable-gtkspell
 .endif
 
-.if !defined(WITHOUT_NLS)
+.ifndef(WITHOUT_NLS)
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB=		NLS=""
@@ -41,4 +46,4 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=		NLS="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
