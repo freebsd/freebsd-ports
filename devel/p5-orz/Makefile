@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	orz
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CPAN/INGY
@@ -24,8 +24,8 @@ MAN3=		orz.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or above
+.if ${PERL_LEVEL} < 500800 # inherited from p5-Module-Compile
+IGNORE=		requires perl 5.8 or above
 .endif
 
 .include <bsd.port.post.mk>
