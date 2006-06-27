@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scintilla
-PORTVERSION=	1.62
-PORTREVISION=	2
+PORTVERSION=	1.70
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/

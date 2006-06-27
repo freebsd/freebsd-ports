@@ -1,5 +1,5 @@
---- makefile.orig	Fri Aug 20 09:21:00 2004
-+++ makefile	Thu Feb  3 19:14:13 2005
+--- makefile.bak	Mon Feb 13 07:27:08 2006
++++ makefile		Sat Jun 24 09:06:54 2006
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -34,7 +34,7 @@
  #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings
 -INCLUDEDIRS=-I ../../scintilla/include -I ../src
 +INCLUDEDIRS=-I $(X11BASE)/include/scintilla -I ../src
- CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
+ CXXBASEFLAGS=-W -Wall -pedantic -Os -DGTK -DSCI_LEXER -DPIXMAP_PATH=\"$(pixmapdir)\" -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" $(INCLUDEDIRS)
  
  ifdef DEBUG
 -CXXTFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
@@ -45,15 +45,16 @@
  endif
  
  ifndef NO_LUA
-@@ -102,8 +102,9 @@
+@@ -102,9 +102,9 @@
  
- $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
+ $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
  MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
 -	$(COMPLIB) $(LUA_OBJS)
 -	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ `$(CONFIGLIB)`
+-
 +	$(LUA_OBJS)
 +	$(CC) `$(CONFIGLIB)` -lscintilla -lscintilla_lexers \
 +	`$(CONFIGTHREADS)` -DGTK $^ -o $@
- 
  # Automatically generate header dependencies with "make deps"
  include deps.mak
+ 

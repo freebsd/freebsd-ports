@@ -1,4 +1,4 @@
-# New ports collection makefile for:	skite
+# New ports collection makefile for:	scite
 # Date created:				27 November 2000
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.62
-PORTREVISION=	2
+PORTVERSION=	1.70
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
