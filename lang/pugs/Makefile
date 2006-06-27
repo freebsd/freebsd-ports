@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pugs
-PORTVERSION=	6.2.11
+PORTVERSION=	6.2.12
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
+MASTER_SITE_SUBDIR=	Perl6
 DISTNAME=	Perl6-Pugs-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -24,7 +24,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Perl6::Pugs.3 \
 		Inline::Pugs.3 \
-		pugs::hack.3 pugs::run.3
+		Pugs::Doc::Run.3 Pugs::Doc::Hack.3
 
 .include <bsd.port.pre.mk>
 

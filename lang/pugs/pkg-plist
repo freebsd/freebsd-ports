@@ -3,11 +3,12 @@ bin/pugscc
 %%SITE_PERL%%/Inline/Pugs.pm
 %%SITE_PERL%%/Perl6/MakeMaker.pm
 %%SITE_PERL%%/Perl6/Pugs.pm
-%%SITE_PERL%%/pugs/hack.pod
-%%SITE_PERL%%/pugs/run.pod
+%%SITE_PERL%%/Pugs/Doc/Hack.pod
+%%SITE_PERL%%/Pugs/Doc/Run.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Pugs/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6/Pugs
 @dirrmtry %%SITE_PERL%%/Inline
-@dirrmtry %%SITE_PERL%%/pugs
+@dirrmtry %%SITE_PERL%%/Pugs/Doc
+@dirrmtry %%SITE_PERL%%/Pugs
 @dirrmtry %%SITE_PERL%%/Perl6
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
