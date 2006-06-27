@@ -1393,6 +1393,7 @@
     SUBDIR += pear-Console_Getargs
     SUBDIR += pear-Console_Table
     SUBDIR += pear-Date
+    SUBDIR += pear-Date_Holidays
     SUBDIR += pear-Event_Dispatcher
     SUBDIR += pear-FSM
     SUBDIR += pear-HTML_BBCodeParser
