@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cutemenus-crystalsvg
-PORTVERSION=	0.9.9.74
-DISTVERSIONSUFFIX=	-fx+fl+tb
+PORTVERSION=	1.1
+DISTVERSIONSUFFIX=	-fx+fl+ns+nv+sb+tb
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
