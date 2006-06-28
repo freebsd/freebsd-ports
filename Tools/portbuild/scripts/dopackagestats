@@ -86,7 +86,11 @@ for arch in ${SUPPORTED_ARCHS}; do
     echo "<td align='right'>$n_duds</td>" >> ${TMPFILE}
 
     # column: missing count
-    n_missing=`expr $n_index - $n_packages - $n_errors - $n_duds`
+    if [ $n_index -ne 0 ]; then
+      n_missing=`expr $n_index - $n_packages - $n_errors - $n_duds`
+    else  # index currently being rebuilt
+      n_missing=0
+    fi
     echo "<td align='right'>$n_missing</td>" >> ${TMPFILE}
 
     # column: done flag
