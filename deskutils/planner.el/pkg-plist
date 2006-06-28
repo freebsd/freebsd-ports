@@ -49,6 +49,8 @@ info/planner-el
 %%EMACS_SITE_LISPDIR%%/planner/planner-publish.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-rank.el
 %%EMACS_SITE_LISPDIR%%/planner/planner-rank.elc
+%%EMACS_SITE_LISPDIR%%/planner/planner-registry.el
+%%EMACS_SITE_LISPDIR%%/planner/planner-registry.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-rdf.el
 %%EMACS_SITE_LISPDIR%%/planner/planner-rdf.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-report.el
@@ -79,6 +81,8 @@ info/planner-el
 %%HAS_WL%%%%EMACS_SITE_LISPDIR%%/planner/planner-wl.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-xtla.el
 %%HAS_XTLA%%%%EMACS_SITE_LISPDIR%%/planner/planner-xtla.elc
+%%EMACS_SITE_LISPDIR%%/planner/planner-zoom.el
+%%EMACS_SITE_LISPDIR%%/planner/planner-zoom.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner.el
 %%EMACS_SITE_LISPDIR%%/planner/planner.elc
 %%EMACS_SITE_LISPDIR%%/planner/schedule.el

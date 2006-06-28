@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	planner.el
-PORTVERSION=	3.40
+PORTVERSION=	3.41
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://download.gna.org/planner-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -98,7 +98,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/planner
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS ChangeLog.2004 ChangeLog.2005 ChangeLog.2006 \
+PORTDOCS=	AUTHORS ChangeLog.2004 ChangeLog.2005 ChangeLog \
 		COMMENTARY NEWS README
 .endif
 
