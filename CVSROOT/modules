@@ -9959,6 +9959,7 @@ p5-libwww	ports/www/p5-libwww
 p5-libxml	ports/textproc/p5-libxml
 p5-ming		ports/graphics/p5-ming
 p5-mixin	ports/devel/p5-mixin
+p5-openxpki	ports/security/p5-openxpki
 p5-orz		ports/devel/p5-orz
 p5-pdonkey	ports/net-p2p/p5-pdonkey
 p5-perl-ldap	ports/net/p5-perl-ldap
