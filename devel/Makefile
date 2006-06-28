@@ -1227,6 +1227,7 @@
     SUBDIR += p5-SPOPS
     SUBDIR += p5-SSN-Validate
     SUBDIR += p5-SVN-ACL
+    SUBDIR += p5-SVN-Log
     SUBDIR += p5-SVN-Mirror
     SUBDIR += p5-SVN-Notify
     SUBDIR += p5-SVN-Simple
