@@ -113,7 +113,7 @@ echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the lates
 echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
 echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
 echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
-echo "<li><b>missing</b> is the INDEX column minus anothers.  These are packages that have not been built for one reason or the other.</li>" >> ${TMPFILE}
+echo "<li><b>missing</b> is the INDEX column minus the others.  These are packages that have not been built for one reason or another.</li>" >> ${TMPFILE}
 echo "<li><b>done</b> is whether that run terminated normally or not.</li>" >> ${TMPFILE}
 echo "</ul>" >> ${TMPFILE}
 
