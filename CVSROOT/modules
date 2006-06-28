@@ -9170,6 +9170,7 @@ p5-Net-SCP	ports/net/p5-Net-SCP
 p5-Net-SCP-Expect	ports/net/p5-Net-SCP-Expect
 p5-Net-SDP	ports/net/p5-Net-SDP
 p5-Net-SFTP	ports/net/p5-Net-SFTP
+p5-Net-SFTP-Foreign	ports/net/p5-Net-SFTP-Foreign
 p5-Net-SMPP	ports/net/p5-Net-SMPP
 p5-Net-SMTP-Server	ports/mail/p5-Net-SMTP-Server
 p5-Net-SNMP	ports/net-mgmt/p5-Net-SNMP
