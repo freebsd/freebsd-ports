@@ -16,8 +16,8 @@ COMMENT=		Java-based Scheme implementation
 
 BUILD_DEPENDS=		gsed:${PORTSDIR}/textproc/gsed
 
-NEED_JAVAC=		yes
-USE_JAVA=		1.2+
+USE_JAVA=		yes
+JAVA_VERSION=		1.2+
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-kawa-frontend --program-prefix=''
 
