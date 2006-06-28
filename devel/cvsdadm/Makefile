@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	cvsdadm
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
+MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
+    		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	Tool for CVSd pserver user administration
