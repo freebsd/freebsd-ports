@@ -1692,9 +1692,9 @@ SUB_FILES+=	${USE_RCORDER}
 .endif
 
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
-.if ${OSVERSION} < 504105 || \
-		( ${ OSVERSION} >= 700000 && ${OSVERSION} < 700012 ) || \
-		( ${ OSVERSION} >= 600000 && ${OSVERSION} < 600104 )
+.if ( ${OSVERSION} < 504105 ) || \
+		( ${OSVERSION} >= 700000 && ${OSVERSION} < 700012 ) || \
+		( ${OSVERSION} >= 600000 && ${OSVERSION} < 600104 )
 RUN_DEPENDS+=	${LOCALBASE}/${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
 NO_LDCONFIG_MTREE=	yes
 .endif
