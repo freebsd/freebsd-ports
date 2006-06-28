@@ -622,6 +622,7 @@
     SUBDIR += p5-HTML-Widget
     SUBDIR += p5-HTML-Widgets-SelectLayers
     SUBDIR += p5-HTML-WikiConverter
+    SUBDIR += p5-HTML-WikiConverter-Kwiki
     SUBDIR += p5-HTTP-Body
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-Cache-Transparent
