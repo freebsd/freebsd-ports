@@ -6,45 +6,31 @@
 #
 
 PORTNAME=	wmii
-DISTVERSION=	2
-PORTREVISION=	1
+DISTVERSION=	3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmii.de/download/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	The next generation of WMI window manager
+COMMENT=	A dynamic, minimalist window manager for X11
 
 USE_X_PREFIX=	yes
 
-MAKE_ARGS=	PREFIX="${PREFIX}" X11DIR="${X11BASE}" CC="${CC}" \
-		MANPREFIX="${PREFIX}/man"
+MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${X11BASE}/lib" \
+		X11INC="${X11BASE}/include" CC="${CC}" \
+		MANPREFIX="${MANPREFIX}/man"
 
-OPTIONS=	CAIRO	"Enable Cairo rendering backend"	off \
-		STRL	"Use strlcpy()/strlcat() functions"	off
-
-MAN1=		wmibar.1 wmifs.1 wmii.1 wmikeys.1 wmimenu.1 wmir.1
-MAN5=		wmii.rc.5
-
-.include <bsd.port.pre.mk>
-
-# The cairo backend is not recommended in production use, because the cairo
-# library is still very buggy and causes crashes often.
-.if defined(WITH_CAIRO)
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
-MAKE_ARGS+=	DRAW=cairo
-.endif
-
-.if defined(WITH_STRL)
-MAKE_ARGS+=	STRLCPY="strlcpy" STRLCAT="strlcat"
-.endif
+MAN1=		wmii.1 wmiimenu.1 wmiir.1 wmiiwm.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
-		-e 's|/usr/lib|${LOCALBASE}/lib|' \
-		-e 's|-O0 -g -Wall -pedantic|${CFLAGS}|; s|-g||' \
+	@${REINPLACE_CMD} -E 's|-O3|${CFLAGS}|; \
+		s|(-[LI])\$${PREFIX}|\1${LOCALBASE}|' \
 		${WRKSRC}/config.mk
-.if defined(WITH_CAIRO)
-	@${REINPLACE_CMD} -e 's,^#CAIRO,CAIRO,' ${WRKSRC}/config.mk
-.endif
+	@${REINPLACE_CMD} -e 's|cp -f $${M|${INSTALL_MAN} $${M|' \
+		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+pre-install:
+.for b in wm/wmiiwm wmiimenu wmiipsel wmiir wmiisetsid wmiiwarp
+	@${STRIP_CMD} ${WRKSRC}/cmd/${b}
+.endfor
+
+.include <bsd.port.mk>

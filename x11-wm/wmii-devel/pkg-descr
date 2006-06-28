@@ -1,14 +1,9 @@
-Window Manager Improved 2 is the next generation of the WMI project.  Due
-to a complete rewrite it is highly modularized and uses a new configuration
-and inter-process communication interface which is based on the 9p protocol
-from the Plan 9 operating system.  It achieves following goals:
+WMII is a dynamic window manager for X11.  It supports classic and dynamic
+window management with extended keyboard, mouse, and filesystem based remote
+control.  It replaces the workspace paradigm with a new tagging approach.
 
-  * Reduction of compile time
-  * Reduction of memory usage
-  * Reduction of lines of code
-  * Performance improvements
-  * Improved rendering capabilities (optional Cairo)
-  * Improved configuration and IPC interface (Libixp)
-  * Modularized components
+Its minimalist philosophy attempts to not exceed 10.000 lines of code
+(including all shipped utilities and libraries), to enforce simplicity and
+clarity.
 
 WWW: http://wmii.de/
