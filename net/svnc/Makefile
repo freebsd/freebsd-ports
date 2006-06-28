@@ -17,6 +17,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:svnc \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VNC viewer for SVGAlib
 
+DEPRECATED=	mastersite gone, depends on unfetchable, antique version of vnc
+EXPIRATION_DATE=	2006-07-28
+
 BUILD_DEPENDS=	${X11BASE}/include/X11/keysym.h:${PORTSDIR}/x11/XFree86
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
