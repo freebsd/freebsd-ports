@@ -1,5 +1,5 @@
---- sources/a68k/A68kdef.h.orig	Wed Feb  2 00:00:10 2005
-+++ sources/a68k/A68kdef.h	Tue Mar 21 14:16:27 2006
+--- tigcc/sources/a68k/A68kdef.h.orig	Wed Feb  2 00:00:10 2005
++++ tigcc/sources/a68k/A68kdef.h	Tue Mar 21 14:16:27 2006
 @@ -38,11 +38,11 @@
  extern int  /*open(), creat(),*/ read(), write(), close(), unlink();
  /* (2.71.F3u) open, creat should be declared in fcntl.h and cause a conflict
