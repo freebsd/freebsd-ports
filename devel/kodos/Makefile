@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	kodos
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.9
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
