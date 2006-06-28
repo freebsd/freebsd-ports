@@ -7,9 +7,9 @@
 
 PORTNAME=		xorg-libs
 PORTVERSION=		6.8.2
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		x11 linux
-DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.${LINUX_RPM_ARCH}.rpm \
+DISTFILES=		xorg-x11-libs-${PORTVERSION}-37.FC4.49.2.1.${LINUX_RPM_ARCH}.rpm \
 			xorg-x11-deprecated-libs-6.8.2-31.${LINUX_RPM_ARCH}.rpm
 
 MAINTAINER=		freebsd-emulation@FreeBSD.org
@@ -23,6 +23,6 @@ USE_LINUX_RPM=		yes
 LINUX_DIST_VER=		4
 INSTALLS_SHLIB=		yes
 
-SRC_DISTFILES=		xorg-x11-6.8.2-37.FC4.49.2.src.rpm
+SRC_DISTFILES=		xorg-x11-6.8.2-37.FC4.49.2.1.src.rpm
 
 .include <bsd.port.mk>
