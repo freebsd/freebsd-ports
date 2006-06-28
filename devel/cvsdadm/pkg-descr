@@ -1,10 +1,9 @@
-An interface to a local CVSd repository using pserver for authentication.
-This script can add, delete, suspend, or enable non-system users for read
-and write access to a CVS repository.
-
-This program is a fork of cvspadm.
+cvsdadm is a tool to assist CVSd administrators in the user admin
+of the CVSROOT/passwd, CVSROOT/readers, CVSROOT/writers files when
+pserver authentication is being used for the repository. cvsdadm
+is a fork of cvspadm.
 
 - Serge Gagnon
 serge.gagnon@b2b2c.ca
 
-WWW: http://quenix2.dyndns.org:8080/Unix-soft/cvsdadm-news.html
+WWW: http://quenix2.dyndns.org:8080/Unix-soft/cvsdadm.html
