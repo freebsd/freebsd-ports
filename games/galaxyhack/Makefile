@@ -23,8 +23,7 @@ USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_SDL=	gfx image mixer sdl
-WRKSRC=		${WRKDIR}/${PORTNAME}
-BUILD_WRKSRC=	${WRKSRC}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 OPTIONS=	FLEETS "Install additional fleets" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
@@ -53,11 +52,11 @@ MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/settings.dat ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../settings.dat ${DATADIR}
 .for d in fleets gamedata graphics music standardpictures
-	${CP} -R ${WRKSRC}/${d} ${DATADIR}
+	${CP} -R ${WRKSRC}/../${d} ${DATADIR}
 .endfor
 .if defined(WITH_FLEETS)
 	@${UNZIP_CMD} -o ${_DISTDIR}/${FLEETS_FILE} -d ${DATADIR}/fleets

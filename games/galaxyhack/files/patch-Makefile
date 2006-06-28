@@ -1,5 +1,5 @@
---- ./src/Makefile.orig	Mon Apr 17 16:33:33 2006
-+++ ./src/Makefile	Sat Jun 10 17:00:12 2006
+--- ./Makefile.orig	Mon Apr 17 16:33:33 2006
++++ ./Makefile	Sat Jun 10 17:00:12 2006
 @@ -9,10 +9,13 @@
  INSTALL_DIR=/usr/local/share
  INSTALL_BIN_DIR=/usr/local/bin
