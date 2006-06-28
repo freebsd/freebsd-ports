@@ -1,0 +1,10 @@
+--- ./modules/berkeley-db/configure.orig	Sun Jan 22 23:10:23 2006
++++ ./modules/berkeley-db/configure	Mon Jun 26 17:32:36 2006
+@@ -3937,6 +3937,7 @@
+ 
+ fi
+ 
++ac_cv_search_db_env_create="yes"
+ if test "$ac_cv_search_db_env_create" = "no"; then
+   { { echo "$as_me:$LINENO: error: cannot find Berkeley-DB library" >&5
+ echo "$as_me: error: cannot find Berkeley-DB library" >&2;}

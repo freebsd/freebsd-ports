@@ -1,0 +1,20 @@
+--- ./modules/postgresql/config.h.in.orig	Thu Jan 12 14:56:07 2006
++++ ./modules/postgresql/config.h.in	Mon Jun 26 17:59:45 2006
+@@ -174,17 +174,11 @@
+ /* Define to 1 if you have the `PQgetResult' function. */
+ #undef HAVE_PQGETRESULT
+ 
+-/* Define to 1 if you have the `PQgetssl' function. */
+-#undef HAVE_PQGETSSL
+-
+ /* Define to 1 if you have the `PQgetvalue' function. */
+ #undef HAVE_PQGETVALUE
+ 
+ /* Define to 1 if you have the `PQhost' function. */
+ #undef HAVE_PQHOST
+-
+-/* Define to 1 if you have the `PQinitSSL' function. */
+-#undef HAVE_PQINITSSL
+ 
+ /* Define to 1 if you have the `PQisBusy' function. */
+ #undef HAVE_PQISBUSY
