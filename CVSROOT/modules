@@ -8725,6 +8725,7 @@ p5-HTML-Widgets-SelectLayers	ports/www/p5-HTML-Widgets-SelectLayers
 p5-HTML-WikiConverter	ports/www/p5-HTML-WikiConverter
 p5-HTML-WikiConverter-Kwiki	ports/www/p5-HTML-WikiConverter-Kwiki
 p5-HTML-WikiConverter-Markdown	ports/www/p5-HTML-WikiConverter-Markdown
+p5-HTML-WikiConverter-MediaWiki	ports/www/p5-HTML-WikiConverter-MediaWiki
 p5-HTML-WikiConverter-MoinMoin	ports/www/p5-HTML-WikiConverter-MoinMoin
 p5-HTTP-Body	ports/www/p5-HTTP-Body
 p5-HTTP-BrowserDetect	ports/www/p5-HTTP-BrowserDetect
