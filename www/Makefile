@@ -624,6 +624,7 @@
     SUBDIR += p5-HTML-WikiConverter
     SUBDIR += p5-HTML-WikiConverter-Kwiki
     SUBDIR += p5-HTML-WikiConverter-Markdown
+    SUBDIR += p5-HTML-WikiConverter-MediaWiki
     SUBDIR += p5-HTML-WikiConverter-MoinMoin
     SUBDIR += p5-HTTP-Body
     SUBDIR += p5-HTTP-BrowserDetect
