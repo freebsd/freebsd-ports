@@ -1,3 +1,4 @@
+bin/event_rpcgen.py
 include/event.h
 lib/libevent-%%PORTVERSION%%.so
 lib/libevent-%%PORTVERSION%%.so.1
