@@ -2,7 +2,6 @@ tigcc/bin/a68k
 tigcc/bin/ar-tigcc
 tigcc/bin/as
 tigcc/bin/cc1
-tigcc/bin/envreg
 tigcc/bin/gcc
 tigcc/bin/ld-tigcc
 tigcc/bin/patcher
@@ -3074,7 +3073,7 @@ tigcc/doc/patcher/ChangeLog
 tigcc/doc/patcher/README
 tigcc/doc/tigcc/AUTHORS
 tigcc/doc/tigcc/COPYING
-tigcc/doc/tigcc/ChangeLog
+tigcc/doc/tigcc/CHANGELOG
 tigcc/doc/tigcc/README
 tigcc/doc/tigcclib
 tigcc/doc/tools/history.txt
@@ -3283,7 +3282,6 @@ tigcc/include/c/wingraph.h
 tigcc/include/s/os.h
 tigcc/lib/pstarter.o
 tigcc/lib/tigcc.a
-@dirrm tigcc/projects
 @dirrm tigcc/lib
 @dirrm tigcc/include/s
 @dirrm tigcc/include/c
