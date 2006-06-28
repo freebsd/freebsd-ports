@@ -22,8 +22,8 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-:${netams_enable="NO"}
-:${netams_config="/usr/local/etc/netams.cfg"}
+: ${netams_enable="NO"}
+: ${netams_config="/usr/local/etc/netams.cfg"}
 
 pidfile="/var/run/netams.pid"
 command="/usr/local/libexec/netams"
