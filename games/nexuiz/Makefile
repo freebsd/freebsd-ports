@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	"Package will be 159MB, set FORCE_PACKAGE if you really want to build it"
+NO_PACKAGE=	Package will be 180MB, set FORCE_PACKAGE if you really want to build it
 
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
-MAKEFILE=	makefile.bsd
+MAKEFILE=	BSDmakefile
 MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -ffast-math -funroll-loops"
 ALL_TARGET=	#
 
 PLIST_FILES=	%%CLIENT%%bin/${PORTNAME}-glx %%SDL_CLIENT%%bin/${PORTNAME}-sdl \
-		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/data20050905-full.pk3
+		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/common-spog.pk3 \
+		%%DATADIR%%/data/data20060614.pk3
 PLIST_DIRS=	%%DATADIR%%/data %%DATADIR%%
 
 OPTIONS=	CLIENT		"Build GLX client"		on \
@@ -64,14 +65,15 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 pre-patch:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/${PORTNAME}enginesource20050911.zip \
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20060614.zip \
 		-d ${WRKDIR}/Nexuiz/sources
-	@${REINPLACE_CMD} -E 's,sdl-config,sdl11-config,g; 161,165d; \
-		s,^#(LDFLAGS_UNIXCL),\1,' ${WRKSRC}/makefile.inc
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 74,$$d' \
+	@${REINPLACE_CMD} -E 's,sdl-config,${SDL_CONFIG},g' \
+		${WRKSRC}/makefile.inc
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 81,$$d' \
 		${WRKSRC}/${MAKEFILE}
-	@${ECHO_CMD} 'LDFLAGS_SDL=$$(LDFLAGS_BSDSDL)' >> ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -E 's,"\.","${DATADIR}",' ${WRKSRC}/fs.c
+	@${REINPLACE_CMD} -E 's,(fs_basedir\, )"",\1"${DATADIR}",' ${WRKSRC}/fs.c
+	@${REINPLACE_CMD} -e 's,libpng12\.so\.0,libpng\.so,' ${WRKSRC}/image_png.c
+	@${REINPLACE_CMD} -e 's,RTLD_LAZY,& | RTLD_GLOBAL,' ${WRKSRC}/vid_glx.c
 
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
@@ -81,6 +83,6 @@ do-install:
 	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vp]" | while read f ; \
 		do ${INSTALL_PROGRAM} $${f} ${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
 	@${MKDIR} ${DATADIR}/data
-	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/data20050905-full.pk3 ${DATADIR}/data
+	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/*.pk3 ${DATADIR}/data
 
 .include <bsd.port.post.mk>
