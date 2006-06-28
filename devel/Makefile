@@ -1097,6 +1097,7 @@
     SUBDIR += p5-Locale-libintl
     SUBDIR += p5-LockFile-Simple
     SUBDIR += p5-Log-Accounting-SVK
+    SUBDIR += p5-Log-Accounting-SVN
     SUBDIR += p5-Log-Agent
     SUBDIR += p5-Log-Agent-Logger
     SUBDIR += p5-Log-Dispatch
