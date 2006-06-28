@@ -4,7 +4,7 @@ RCS file: /cvsroot/sbcl/sbcl/src/code/float-trap.lisp,v
 retrieving revision 1.19
 diff -u -r1.19 float-trap.lisp
 --- src/code/float-trap.lisp	6 Oct 2005 19:43:00 -0000	1.19
-+++ src/code/float-trap.lisp	26 Jan 2006 20:43:33 -0000
++++ src/code/float-trap.lisp	28 Jun 2006 10:34:15 -0000
 @@ -153,10 +153,28 @@
    `(not (zerop (logand ,(dpb (float-trap-mask traps) float-traps-byte 0)
                         (floating-point-modes)))))
@@ -38,11 +38,11 @@ diff -u -r1.19 float-trap.lisp
 Index: src/code/target-signal.lisp
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/code/target-signal.lisp,v
-retrieving revision 1.33
-diff -u -r1.33 target-signal.lisp
---- src/code/target-signal.lisp	17 Oct 2005 09:18:47 -0000	1.33
-+++ src/code/target-signal.lisp	26 Jan 2006 20:43:33 -0000
-@@ -164,6 +164,10 @@
+retrieving revision 1.34
+diff -u -r1.34 target-signal.lisp
+--- src/code/target-signal.lisp	10 Apr 2006 16:08:45 -0000	1.34
++++ src/code/target-signal.lisp	28 Jun 2006 10:34:15 -0000
+@@ -163,6 +163,10 @@
  
  ;;;; etc.
  
@@ -56,47 +56,11 @@ diff -u -r1.33 target-signal.lisp
 Index: src/runtime/interrupt.c
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/src/runtime/interrupt.c,v
-retrieving revision 1.109
-diff -u -r1.109 interrupt.c
---- src/runtime/interrupt.c	5 Jan 2006 14:13:14 -0000	1.109
-+++ src/runtime/interrupt.c	26 Jan 2006 20:43:33 -0000
-@@ -454,7 +454,7 @@
-         check_interrupts_enabled_or_lose(context);
- #endif
- 
--#ifdef LISP_FEATURE_LINUX
-+#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
-     /* Under Linux on some architectures, we appear to have to restore
-        the FPU control word from the context, as after the signal is
-        delivered we appear to have a null FPU control word. */
-@@ -644,7 +644,7 @@
-     os_context_t *context = arch_os_get_context(&void_context);
-     struct thread *thread=arch_os_get_current_thread();
-     struct interrupt_data *data=thread->interrupt_data;
--#ifdef LISP_FEATURE_LINUX
-+#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
-     os_restore_fp_control(context);
- #endif
-     if(maybe_defer_handler(interrupt_handle_now,data,signal,info,context))
-@@ -661,7 +661,7 @@
- {
-     os_context_t *context = (os_context_t*)void_context;
- 
--#ifdef LISP_FEATURE_LINUX
-+#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
-     os_restore_fp_control(context);
- #endif
-     check_blockables_blocked_or_lose();
-@@ -679,7 +679,7 @@
-     os_context_t *context = arch_os_get_context(&void_context);
-     struct thread *thread=arch_os_get_current_thread();
-     struct interrupt_data *data=thread->interrupt_data;
--#ifdef LISP_FEATURE_LINUX
-+#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
-     os_restore_fp_control(context);
- #endif
-     if(maybe_defer_handler(low_level_interrupt_handle_now,data,
-@@ -1276,3 +1276,9 @@
+retrieving revision 1.113
+diff -u -r1.113 interrupt.c
+--- src/runtime/interrupt.c	7 Jun 2006 16:25:10 -0000	1.113
++++ src/runtime/interrupt.c	28 Jun 2006 10:34:15 -0000
+@@ -1376,3 +1376,9 @@
      SHOW("returning from interrupt_init()");
  #endif
  }
@@ -106,90 +70,14 @@ diff -u -r1.109 interrupt.c
 +{
 +    return info->si_code;
 +}
-Index: src/runtime/x86-arch.c
-===================================================================
-RCS file: /cvsroot/sbcl/sbcl/src/runtime/x86-arch.c,v
-retrieving revision 1.36
-diff -u -r1.36 x86-arch.c
---- src/runtime/x86-arch.c	3 Jan 2006 09:52:38 -0000	1.36
-+++ src/runtime/x86-arch.c	26 Jan 2006 20:43:33 -0000
-@@ -248,7 +248,7 @@
-        single-stepping (as far as I can tell) this is somewhat moot,
-        but it might be worth either moving this code up or deleting
-        the single-stepping code entirely.  -- CSR, 2002-07-15 */
--#ifdef LISP_FEATURE_LINUX
-+#if defined(LISP_FEATURE_LINUX) || defined(__FreeBSD__)
-     os_restore_fp_control(context);
- #endif
- 
-Index: src/runtime/x86-bsd-os.c
-===================================================================
-RCS file: /cvsroot/sbcl/sbcl/src/runtime/x86-bsd-os.c,v
-retrieving revision 1.7
-diff -u -r1.7 x86-bsd-os.c
---- src/runtime/x86-bsd-os.c	14 Jul 2005 15:41:21 -0000	1.7
-+++ src/runtime/x86-bsd-os.c	26 Jan 2006 20:43:33 -0000
-@@ -85,6 +85,52 @@
- #endif  /* __NetBSD__ */
- 
- 
-+#ifdef __FreeBSD__
-+#if __FreeBSD_version >= 500000
-+/*
-+ * FreeBSD 5.0 or later initializes FPU control word for signal
-+ * handler.
-+ */
-+#include <machine/npx.h>
-+
-+static __inline__ void
-+fldcw(unsigned short cw)
-+{
-+    __asm__ __volatile__ ("fldcw %0" : : "m" (cw));
-+}
-+
-+void
-+os_restore_fp_control(os_context_t *context)
-+{
-+    union savefpu *addr;
-+
-+    addr = (union savefpu *)context->uc_mcontext.mc_fpstate;
-+    switch (context->uc_mcontext.mc_fpformat) {
-+    case _MC_FPFMT_387:
-+        /* FPU state is saved by fnsave */
-+        fldcw((unsigned short)addr->sv_87.sv_env.en_cw);
-+        break;
-+    case _MC_FPFMT_XMM:
-+        /* FPU/SSE state is saved by fxsave */
-+        fldcw(addr->sv_xmm.sv_env.en_cw);
-+        break;
-+    default:
-+        /* No FPU state is saved. */
-+        break;
-+    }
-+}
-+#else /* __FreeBSD_version < 500000 */
-+/*
-+ * FreeBSD befoer 5.0 does not touch FPU control word for signal
-+ * handler.
-+ */
-+void
-+os_restore_fp_control(os_context_t *context)
-+{
-+    /* DO NOTHING */
-+}
-+#endif /* __FreeBSD_version */
-+#endif /* __FreeBSD__ */
- 
- /* FIXME: If this can be a no-op on BSD/x86, then it
-  * deserves a more precise name.
 Index: tools-for-build/grovel-headers.c
 ===================================================================
 RCS file: /cvsroot/sbcl/sbcl/tools-for-build/grovel-headers.c,v
-retrieving revision 1.12
-diff -u -r1.12 grovel-headers.c
---- tools-for-build/grovel-headers.c	16 Jan 2006 15:39:58 -0000	1.12
-+++ tools-for-build/grovel-headers.c	26 Jan 2006 20:43:33 -0000
-@@ -234,6 +234,16 @@
+retrieving revision 1.15
+diff -u -r1.15 grovel-headers.c
+--- tools-for-build/grovel-headers.c	18 Jun 2006 23:47:58 -0000	1.15
++++ tools-for-build/grovel-headers.c	28 Jun 2006 10:34:15 -0000
+@@ -338,6 +338,16 @@
      defsignal("sigxcpu", SIGXCPU);
      defsignal("sigxfsz", SIGXFSZ);
  #endif

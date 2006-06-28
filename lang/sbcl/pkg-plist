@@ -407,6 +407,7 @@ lib/sbcl/sb-bsd-sockets/test-passed
 lib/sbcl/sb-bsd-sockets/tests.fasl
 lib/sbcl/sb-bsd-sockets/tests.lisp
 lib/sbcl/sb-bsd-sockets/win32-constants.lisp
+lib/sbcl/sb-bsd-sockets/win32-lib.lisp
 lib/sbcl/sb-bsd-sockets/win32-sockets.lisp
 lib/sbcl/sb-cltl2/.cvsignore
 lib/sbcl/sb-cltl2/Makefile
