@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Excel-Template
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Excel
@@ -16,11 +16,11 @@ MAINTAINER=	espen@tagestad.no
 COMMENT=	Perl module for templating Excel files
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Excel::Template.3 \
 		Excel::Template::Base.3 \
@@ -45,6 +45,8 @@ MAN3=		Excel::Template.3 \
 		Excel::Template::Element::Backref.3 \
 		Excel::Template::Element::Cell.3 \
 		Excel::Template::Element::Formula.3 \
+		Excel::Template::Element::FreezePanes.3 \
+		Excel::Template::Element::Image.3 \
 		Excel::Template::Element::Range.3 \
 		Excel::Template::Element::Var.3 \
 		Excel::Template::Factory.3 \
@@ -54,8 +56,11 @@ MAN3=		Excel::Template.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500806
-IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
+.if ${PERL_LEVEL} < 500600 # as required by vendor
+IGNORE=		requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.elif ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
+CONFIGURE_ARGS+=	USE_UNICODE=1
 .endif
 
 .include <bsd.port.post.mk>

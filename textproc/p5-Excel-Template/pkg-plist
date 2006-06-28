@@ -21,16 +21,15 @@
 %%SITE_PERL%%/Excel/Template/Element/Backref.pm
 %%SITE_PERL%%/Excel/Template/Element/Cell.pm
 %%SITE_PERL%%/Excel/Template/Element/Formula.pm
+%%SITE_PERL%%/Excel/Template/Element/FreezePanes.pm
+%%SITE_PERL%%/Excel/Template/Element/Image.pm
 %%SITE_PERL%%/Excel/Template/Element/Range.pm
 %%SITE_PERL%%/Excel/Template/Element/Var.pm
 %%SITE_PERL%%/Excel/Template/Factory.pm
 %%SITE_PERL%%/Excel/Template/Format.pm
 %%SITE_PERL%%/Excel/Template/Iterator.pm
 %%SITE_PERL%%/Excel/Template/TextObject.pm
-%%SITE_PERL%%/mach/auto/Excel/Template/.packlist
-@dirrm %%SITE_PERL%%/mach/auto/Excel/Template
-@dirrm %%SITE_PERL%%/mach/auto/Excel
 @dirrm %%SITE_PERL%%/Excel/Template/Element
 @dirrm %%SITE_PERL%%/Excel/Template/Container
 @dirrm %%SITE_PERL%%/Excel/Template
-@dirrm %%SITE_PERL%%/Excel
+@dirrmtry %%SITE_PERL%%/Excel
