@@ -1,25 +1,16 @@
---- ./src/hbuf.c.orig	Fri Apr 14 19:19:10 2006
-+++ ./src/hbuf.c	Sat May  6 20:05:46 2006
-@@ -252,6 +252,9 @@
+--- ./src/hbuf.c.orig	Thu Jun 22 10:30:34 2006
++++ ./src/hbuf.c	Thu Jun 22 10:31:06 2006
+@@ -253,6 +253,7 @@
    hbuf_block *blk;
    guchar last_persist_prefixflags = 0;
    GList *last_persist;  // last persistent flags
 +  int maxlen;
-+  hbb_line **array;
-+  hbb_line **array_elt;
+   hbb_line **array, **array_elt;
  
    // To be able to correctly highlight multi-line messages,
-   // we need to look at the last non-null prefix, which should be the first
-@@ -266,12 +269,11 @@
-     last_persist = g_list_previous(last_persist);
-   }
+@@ -273,7 +274,6 @@
  
--  hbb_line **array = g_new0(hbb_line*, n);
--  hbb_line **array_elt = array;
-+  array = g_new0(hbb_line*, n);
-+  array_elt = array;
- 
-   for (i=0 ; i < n ; i++) {
+   for (i = 0 ; i < n ; i++) {
      if (hbuf) {
 -      int maxlen;
        blk = (hbuf_block*)(hbuf->data);

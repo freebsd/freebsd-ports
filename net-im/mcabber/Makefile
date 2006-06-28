@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.8
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ \
 		http://bsd1.csme.ru/myports/ \
@@ -18,6 +18,7 @@ COMMENT=	Small Jabber console client
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
 USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
@@ -27,8 +28,10 @@ USE_GETOPT_LONG=	yes
 LDFLAGS+=	-lcrypto
 
 MAN1=		mcabber.1
-PLIST_FILES=	bin/mcabber %%EXAMPLESDIR%%/mcabberrc
-PLIST_DIRS=	%%EXAMPLESDIR%%
+
+post-patch:
+	${REINPLACE_CMD} -e 's#$$"$${datadir}"#"$${datadir}"#' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
