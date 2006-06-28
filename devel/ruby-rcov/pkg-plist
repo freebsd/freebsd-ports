@@ -3,6 +3,7 @@ bin/rcov
 %%RUBY_SITELIBDIR%%/rcov/lowlevel.rb
 %%RUBY_SITELIBDIR%%/rcov/rant.rb
 %%RUBY_SITELIBDIR%%/rcov/rcovtask.rb
+%%RUBY_SITELIBDIR%%/rcov/report.rb
 %%RUBY_SITELIBDIR%%/rcov/version.rb
 %%RUBY_SITEARCHLIBDIR%%/rcovrt.so
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Rantfile

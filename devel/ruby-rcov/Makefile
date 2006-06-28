@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rcov
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://eigenclass.org/static/rcov/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,14 +22,19 @@ DOC_FILES=	BLURB CHANGES LEGAL LICENSE README.API \
 		README.en README.rake README.rant THANKS
 EXAMPLE_FILES=	Rakefile Rantfile
 
+# make sure setup.rb honours $PREFIX
+post-configure:
+	@${REINPLACE_CMD} -E 's,^([^r].+=)${LOCALBASE}(.*)$$,\1${PREFIX}\2,g' ${WRKSRC}/.config
+
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${RUBY_MODEXAMPLESDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${RUBY_MODEXAMPLESDIR:S,^${LOCALBASE},${PREFIX},}
+	${MKDIR} ${RUBY_MODDOCDIR:S,^${LOCALBASE},${PREFIX},}
 .for f in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR:S,^${LOCALBASE},${PREFIX},}
 .endfor
 .for f in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR:S,^${LOCALBASE},${PREFIX},}
 .endfor
 .endif
 
