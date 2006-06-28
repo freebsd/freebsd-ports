@@ -7,6 +7,7 @@
 
 PORTNAME=	cvsdadm
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
     		${MASTER_SITE_SAVANNAH}
