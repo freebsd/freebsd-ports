@@ -7,6 +7,7 @@
 
 PORTNAME=	cups-pdf
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/ \
 		http://olofsson.de/mirror/distfiles/
@@ -83,7 +84,7 @@ do-build:
 	cd ${WRKSRC}/src; ${CC} ${CFLAGS} -o cups-pdf cups-pdf.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/cups-pdf ${LOCALBASE}/libexec/cups/backend
+	${INSTALL} -o root -g wheel -m 0700 ${WRKSRC}/src/cups-pdf ${LOCALBASE}/libexec/cups/backend
 	${INSTALL_DATA} ${WRKSRC}/extra/PostscriptColor_rev3b.ppd.gz \
 	${LOCALBASE}/share/cups/model/PostscriptColor.ppd.gz
 .if !defined(NOPORTDOCS)
