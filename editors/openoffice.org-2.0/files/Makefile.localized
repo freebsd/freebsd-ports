@@ -153,7 +153,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .if ${LOCALIZED_LANG} == "ja"
 CATEGORIES+=	japanese
 LANG_PKGNAME=	${LOCALIZED_LANG}
-RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
+RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/ipam.ttf:${PORTSDIR}/japanese/ipa-ttfonts
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "km"
