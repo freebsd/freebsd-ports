@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	bruno@tinkerbox.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	The "meta-port" for gEDA
 
 RUN_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols \

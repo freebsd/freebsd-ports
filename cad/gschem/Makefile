@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bruno@tinkerbox.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	gEDA electronic schematic capture tools
 
 RUN_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols

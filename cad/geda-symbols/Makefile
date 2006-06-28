@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 
-MAINTAINER=	bruno@tinkerbox.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	gEDA symbols
 
 GNU_CONFIGURE=	yes
