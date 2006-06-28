@@ -131,6 +131,7 @@
     SUBDIR += defendguin
     SUBDIR += demonquake
     SUBDIR += deng
+    SUBDIR += diameter
     SUBDIR += digger-vgl
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
