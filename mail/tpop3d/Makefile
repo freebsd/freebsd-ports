@@ -7,7 +7,7 @@
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
@@ -35,10 +35,9 @@ OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 # MySQL authentication
 .if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
 .if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
-IGNORE=	MySQL and PgSQL authentication can not be build together
+BROKEN=	MySQL and PgSQL authentication can not be build together
 .endif
 USE_MYSQL=		yes
-DEFAULT_MYSQL_VER=	41
 CONFIGURE_ARGS+=	--enable-auth-mysql \
 			--with-mysql-lib-dir=${LOCALBASE}/lib/mysql \
 			--with-mysql-include-dir=${LOCALBASE}/include/mysql
@@ -53,7 +52,7 @@ CONFIGURE_ARGS+=	--enable-auth-pgsql \
 .endif
 
 .if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
-LIB_DEPENDS+=		ldap-2.2:${PORTSDIR}/net/openldap22-client
+USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 .endif
 
