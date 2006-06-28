@@ -26,6 +26,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache20 \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake
 
+BROKEN=		Will be replaced by a fixed version with migration instructions.
+EXPIRATION_DATE=2006-06-15
+
 USE_PGSQL=	yes
 
 #BEGINSET1
