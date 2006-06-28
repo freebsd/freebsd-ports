@@ -1,0 +1,4 @@
+%%SITE_PERL%%/HTML/WikiConverter/TikiWiki.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/TikiWiki/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/TikiWiki
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
