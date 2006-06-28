@@ -12,48 +12,139 @@ CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Common Lisp implementation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
 		dvipdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
+LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+BUILD_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-MAN1=	clisp.1
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+MAKE_ENV=	${CONFIGURE_ENV}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKEMAKE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man \
+		--srcdir=${WRKSRC}/src --with-dynamic-ffi
 
-# Build subdirectory
-BUILD_DIRNAME=${CONFIGURE_TARGET}
+OPTIONS=	BDB "Build Berkeley Database module" off \
+		CLX_MIT "Build X11 module (original MIT version)" off \
+		CLX_NEW "Build X11 module (new faster version)" off \
+		FASTCGI "Build FastCGI module" off \
+		ORACLE "Build Oracle database module" off \
+		PARI "Build PARI (math and calculator lib) module" off \
+		PCRE "Build PCRE (Perl Compatible Regexp) module" off \
+		PGSQL "Build PostgreSQL database module" off \
+		RAWSOCK "Build Raw Socket Access module" on \
+		WILDCARD "Build wildcard matching module" on \
+		ZLIB "Build ZLib interface module " off
 
-# Check ./configure --list-modules in the distribution to see all modules
-MAKEMAKE_ARGS=--prefix=${PREFIX} --mandir=${PREFIX}/man --with-dynamic-ffi \
-	--with-module=rawsock --with-module=wildcard --srcdir=${WRKSRC}/src
+MAN1=		clisp.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == ia64
-CONFIGURE_ARGS+=	--disable-mmap
-BROKEN=		Does not compile on ${ARCH}
+MODULES=	BDB CLX_MIT CLX_NEW FASTCGI ORACLE PARI PCRE PGSQL RAWSOCK \
+		WILDCARD ZLIB
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Coredump during build on 4.x
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CONFIGURE_ARGS+=--disable-mmap
+MAKEMAKE_ARGS+=	--disable-mmap
 .endif
 
-# The source doesn't include a top-level Makefile, so we'll fake one.
-post-extract:
-	@cd ${WRKSRC} && \
-	${PRINTF} "all install:\n\t@cd ${WRKSRC}/${BUILD_DIRNAME} && \$${MAKE} \$${MAKEFLAGS} \$$@\n" > ${WRKSRC}/Makefile
+.for mod in ${MODULES}
+.   if defined(WITH_${mod})
+PLIST_SUB+=	${mod}=""
+.   else
+PLIST_SUB+=	${mod}="@comment "
+.   endif
+.endfor
 
-# The 'configure' script stops short of doing this for us.
+.if defined(WITH_BDB)
+USE_BDB=	42+
+MAKEMAKE_ARGS+=	--with-module=berkeley-db
+CPPFLAGS+=	-I${LOCALBASE}/include/db${BDB_VER}
+LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER}
+.endif
+
+.if defined(WITH_CLX_MIT) && defined(WITH_CLX_NEW)
+IGNORE=		selected different implementations of the same X11 module
+.endif
+.if defined(WITH_CLX_MIT) || defined(WITH_CLX_NEW)
+LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
+.endif
+.if defined(WITH_CLX_MIT)
+MAKEMAKE_ARGS+=	--with-module=clx/mit-clx
+.endif
+.if defined(WITH_CLX_NEW)
+MAKEMAKE_ARGS+=	--with-module=clx/new-clx
+.endif
+
+.if defined(WITH_FASTCGI)
+LIB_DEPENDS+=	fcgi.0:${PORTSDIR}/www/fcgi
+MAKEMAKE_ARGS+=	--with-module=fastcgi
+.endif
+
+.if defined(WITH_ORACLE)
+BUILD_DEPENDS+=	${ORACLE_HOME}:${PORTSDIR}/databases/oracle8-client
+MAKEMAKE_ARGS+=	--with-module=oracle
+CPPFLAGS+=	-I${ORACLE_HOME}/rdbms/demo -I${ORACLE_HOME}/rdbms/public
+LDFLAGS+=	-L${ORACLE_HOME}/lib
+ORACLE_HOME=	${LOCALBASE}/oracle8-client
+.endif
+
+.if defined(WITH_PARI)
+LIB_DEPENDS+=	pari.2:${PORTSDIR}/math/pari
+MAKEMAKE_ARGS+=	--with-module=pari
+BROKEN=		Lisp stack overflow during build
+.endif
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+MAKEMAKE_ARGS+=--with-module=pcre
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+MAKEMAKE_ARGS+=	--with-module=postgresql
+.endif
+
+.if defined(WITH_RAWSOCK)
+MAKEMAKE_ARGS+=	--with-module=rawsock
+.endif
+
+.if defined(WITH_WILDCARD)
+MAKEMAKE_ARGS+=	--with-module=wildcard
+.endif
+
+.if defined(WITH_ZLIB)
+MAKEMAKE_ARGS+=	--with-module=zlib
+.endif
+
+post-patch:
+.if ${ARCH} == "amd64"
+	@${REINPLACE_CMD} -Ee \
+		"s|^(subdir_configure_args=')|\1--build=${CONFIGURE_TARGET}|; \
+		 s|^(module_configure_flags=')|\1--build=${CONFIGURE_TARGET}|" \
+		${WRKSRC}/configure ${WRKSRC}/src/makemake.in
+.endif
+.if defined(WITH_ORACLE)
+	@${REINPLACE_CMD} -e 's|-ldl||; s|-lpthread|-lcompat ${PTHREAD_LIBS}|' \
+		${WRKSRC}/modules/oracle/link.sh
+.endif
+
 post-configure:
-	cd ${WRKSRC}/${BUILD_DIRNAME} && \
-	./makemake ${MAKEMAKE_ARGS} > Makefile && \
-	${MAKE} config.lisp
-	${REINPLACE_CMD} -e 's#^CFLAGS =#CFLAGS = -I${LOCALBASE}/include#' \
-		${WRKSRC}/${BUILD_DIRNAME}/Makefile
+	cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ./makemake ${MAKEMAKE_ARGS} > Makefile && \
+		${MAKE} config.lisp
 
 .include <bsd.port.post.mk>
