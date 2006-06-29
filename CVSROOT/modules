@@ -9561,6 +9561,7 @@ p5-Syntax-Highlight-HTML	ports/www/p5-Syntax-Highlight-HTML
 p5-Syntax-Highlight-Perl-Improved	ports/textproc/p5-Syntax-Highlight-Perl-Improved
 p5-Syntax-Highlight-Shell	ports/www/p5-Syntax-Highlight-Shell
 p5-Sys-CpuLoad	ports/sysutils/p5-Sys-CpuLoad
+p5-Sys-Filesystem	ports/sysutils/p5-Sys-Filesystem
 p5-Sys-Hostname-Long	ports/sysutils/p5-Sys-Hostname-Long
 p5-Sys-Mmap	ports/devel/p5-Sys-Mmap
 p5-Sys-Utmp	ports/sysutils/p5-Sys-Utmp
