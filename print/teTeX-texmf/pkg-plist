@@ -3867,6 +3867,8 @@
 %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter/bchbi8a.afm
 %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter/bchr8a.afm
 %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter/bchri8a.afm
+%%TEXMFDISTDIR%%/fonts/afm/bluesky/cm
+%%TEXMFDISTDIR%%/fonts/afm/bluesky/ams
 %%TEXMFDISTDIR%%/fonts/afm/public/antp/antpb.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/antp/antpbi.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/antp/antpr.afm
@@ -9010,134 +9012,8 @@
 %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter/bchbi8a.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter/bchr8a.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter/bchri8a.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmb10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbsy10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbx10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbx12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbx5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbx6.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbx7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbx8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbx9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbxsl10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmbxti10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmcsc10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmdunh10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmex10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmff10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmfi10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmfib8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cminch.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmitt10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmi10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmi12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmi5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmi6.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmi7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmi8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmi9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmmib10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr17.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr6.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmr9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsl10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsl12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsl8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsl9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsltt10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmss10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmss12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmss17.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmss8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmss9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssbx10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssdc10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssi10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssi12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssi17.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssi8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssi9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssq8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmssqi8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsy10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsy5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsy6.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsy7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsy8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmsy9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtcsc10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtex10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtex8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtex9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmti10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmti12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmti7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmti8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmti9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtt10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtt12.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtt8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmtt9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmu10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm/cmvtt10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cmextra/cmbsy5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cmextra/cmbsy7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cmextra/cmmib5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cmextra/cmmib7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cyrillic/wncyb10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cyrillic/wncyi10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cyrillic/wncyr10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cyrillic/wncysc10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cyrillic/wncyss10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/euex10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eufb10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eufb5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eufb7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eufm10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eufm5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eufm7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eurb10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eurb5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eurb7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eurm10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eurm5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eurm7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eusb10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eusb5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eusb7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eusm10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eusm5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/euler/eusm7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lasy10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lasy5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lasy6.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lasy7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lasy8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lasy9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lasyb10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lcircle1.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lcirclew.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lcmss8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lcmssb8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lcmssi8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/line10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/linew10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logo10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logo8.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logo9.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logobf10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logosl10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msam10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msam5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msam7.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msbm10.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msbm5.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msbm7.pfb
+%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm
+%%TEXMFDISTDIR%%/fonts/type1/bluesky/ams
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/context/contnav.pfb
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/mflogo/logo10.pfb
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/mflogo/logo8.pfb
@@ -14248,12 +14124,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/hoekwater/mflogo
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/hoekwater/context
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/hoekwater
-@dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols
-@dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky/latex
-@dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky/euler
-@dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky/cyrillic
-@dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky/cmextra
-@dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky/cm
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/bitstrea
@@ -14499,6 +14369,7 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/antt
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/antp
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public
+@dirrm %%TEXMFDISTDIR%%/fonts/afm/bluesky
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/bitstrea
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/adobe/zapfding
