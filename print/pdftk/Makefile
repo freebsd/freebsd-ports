@@ -7,6 +7,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdfhacks.com/pdftk/ \
 		http://www.accesspdf.com/pdftk/
@@ -22,7 +23,7 @@ NOT_FOR_ARCHS=	amd64 ia64 sparc64
 CSUFF=		${USE_GCC:S/.//}
 
 # needs gcj
-BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
+LIB_DEPENDS=	gcj.7:${PORTSDIR}/lang/gcc${CSUFF}
 
 USE_GCC=	4.1
 USE_GMAKE=	yes
