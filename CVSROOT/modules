@@ -13152,6 +13152,7 @@ tapidbus	ports/net/tapidbus
 tardy		ports/archivers/tardy
 tas		ports/net-mgmt/tas
 taskjuggler	ports/deskutils/taskjuggler
+taskstep	ports/deskutils/taskstep
 taucs		ports/math/taucs
 tavrasm		ports/devel/tavrasm
 taxipilot	ports/games/taxipilot
