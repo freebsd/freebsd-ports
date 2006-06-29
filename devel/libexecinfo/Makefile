@@ -16,7 +16,7 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	A library for inspecting program's backtrace
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_FLAGS=	LIBDIR=${PREFIX}/lib \
 		INCLUDEDIR=${PREFIX}/include
 
