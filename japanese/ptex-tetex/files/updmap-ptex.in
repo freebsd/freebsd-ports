@@ -1,16 +1,17 @@
 #!/bin/sh
 # $FreeBSD$
 
-SETENV=/usr/bin/env
-PATH=${PATH}:%%PREFIX%%/bin
+WEB2C="\$TEXMF/web2c{/ptex,}"; export WEB2C
+TEXPSHEADERS="\$TEXMF/{dvips{/ptex,},fonts/{enc,type1,type3}}//"; export TEXPSHEADERS
+TEXCONFIG="\$TEXMF/dvips{/ptex,}//"; export TEXCONFIG
+TEXFONTMAPS="\$TEXMF/fonts/map{/ptex,}//"; export TEXFONTMAPS
+TEXCONFIGINPUTS="\$TEXMF/texconfig{/ptex,}"; export TEXCONFIGINPUTS
 
-${SETENV} \
-	WEB2C='$TEXMF/web2c{/ptex,}' \
-	TEXPSHEADERS='$TEXMF/{dvips{/ptex,},fonts/{enc,type1,type3}}//' \
-	TEXCONFIG='$TEXMF/dvips{/ptex,}//' \
-	TEXFONTMAPS='$TEXMF/fonts/map{/ptex,}//' \
-	%%PREFIX%%/bin/updmap \
-		--dvipsoutputdir %%PREFIX%%/%%FONTSMAPVARDIR%%/dvips/updmap \
-		--dvipdfmoutputdir %%PREFIX%%/%%FONTSMAPVARDIR%%/dvipdfm/updmap \
-		--pdftexoutputdir %%PREFIX%%/%%FONTSMAPVARDIR%%/pdftex/updmap \
-		$@
+FONTSMAPVARDIR=%%PREFIX%%/%%FONTSMAPVARDIR%%
+: ${UPDMAP_DIST:=%%PREFIX%%/%%UPDMAPDIR%%/updmap.dist}
+
+/bin/sh ${UPDMAP_DIST} \
+	--dvipsoutputdir ${FONTSMAPVARDIR}/dvips/updmap \
+	--dvipdfmoutputdir ${FONTSMAPVARDIR}/dvipdfm/updmap \
+	--pdftexoutputdir ${FONTSMAPVARDIR}/pdftex/updmap \
+	"$@"

@@ -9,4 +9,8 @@
  - Japanized versions of "pltotf" and "tftopl" are installed
    as "pltotf-ptex" and "tftopl-ptex".
 
+ - updmap(1) and updmap-sys(1) supports --progname=ptex option.
+   When this option specified, pTeX specific font maps
+   will be generated/processed.
+
  - pLaTeX2e is now based on LaTeX2e as of 2003/12/01.
