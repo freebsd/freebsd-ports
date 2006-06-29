@@ -7,6 +7,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.6.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -52,7 +53,6 @@ post-install:
 		| ${SED} -ne 's,^${WRKSRC},${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${FIND} -d ${WRKSRC}/${file} -type d \
 		| ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/www/ 2>/dev/null || true" >> ${TMPPLIST}
 	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
