@@ -29,6 +29,7 @@ MAN7=	\
 	maildropfilter.7 \
 	maildropgdbm.7
 MAN8=	\
+	aliaslookup.8 \
 	courier.8 \
 	courierfilter.8 \
 	courierldapaliasd.8 \
