@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		lwp
-PORTVERSION=		12.4
+PORTVERSION=		12.5.1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
 			http://mirror1.liquidweather.net/ \
@@ -38,7 +38,7 @@ PLIST_SUB=		LWPVER=${DISTFILES}
 post-extract:
 	@cd ${WRKSRC} && ${RM} -f *~ locale/*/LC_MESSAGES/*.po*
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
-		create_po.py debug.py test_gui.py
+		test_gui.py
 
 pre-install:
 	@cd ${WRKSRC} && zip -qr ${DISTFILES} *
