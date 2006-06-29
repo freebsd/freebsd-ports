@@ -1,0 +1,12 @@
+PDF::Template is a layout system that creates Adobe PDF files from the same
+data structure used by HTML::Template.
+
+Currently, the only renderer support is pdflib_pl, which is from PDFLib
+(www.pdflib.com). There is a free version (PDFLib Lite), but that does not
+handle Unicode. If you need CJK fonts, you will need to purchase the full
+version of PDFLib from them.
+
+WWW: http://search.cpan.org/dist/PDF-Template-0.22/
+
+- Yuichiro AIZAWA
+yaizawa@mdbl.sfc.keio.ac.jp
