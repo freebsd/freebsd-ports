@@ -146,5 +146,7 @@ post-configure:
 	cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ./makemake ${MAKEMAKE_ARGS} > Makefile && \
 		${MAKE} config.lisp
+	@${REINPLACE_CMD} -Ee 's|^(CFLAGS =)|\1 ${CPPFLAGS} ${CFLAGS}|' \
+		${BUILD_WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.post.mk>
