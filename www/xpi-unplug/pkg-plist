@@ -1,3 +1,6 @@
+%%XPI_XPIDIR%%/chrome/content/changes.txt
+%%XPI_XPIDIR%%/chrome/content/flashunblock.css
+%%XPI_XPIDIR%%/chrome/content/flashunblock.xml
 %%XPI_XPIDIR%%/chrome/content/notfound.xul
 %%XPI_XPIDIR%%/chrome/content/overlay.xul
 %%XPI_XPIDIR%%/chrome/content/settings.xul
@@ -29,6 +32,94 @@
 %%XPI_XPIDIR%%/chrome/locale/unplug/en-US/streamsave.dtd
 %%XPI_XPIDIR%%/chrome/locale/unplug/en-US/unplug.properties
 %%XPI_XPIDIR%%/chrome/locale/unplug/en-US/zuul.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_extern.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_flash.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_flv.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_notfound.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_playlist.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_playtext.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_programs.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_ram.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_rm.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_skim.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_stop.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/help_streamsave.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/notfound.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/pro_ftp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/pro_mms.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/pro_other.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/pro_rtsp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/settings.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/streamsave.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/unplug.properties
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-AR/zuul.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_extern.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_flash.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_flv.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_notfound.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_playlist.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_playtext.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_programs.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_ram.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_rm.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_skim.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_stop.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/help_streamsave.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/notfound.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/pro_ftp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/pro_mms.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/pro_other.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/pro_rtsp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/settings.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/streamsave.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/unplug.properties
+%%XPI_XPIDIR%%/chrome/locale/unplug/es-ES/zuul.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_extern.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_flash.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_flv.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_notfound.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_playlist.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_playtext.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_programs.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_ram.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_rm.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_skim.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_stop.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/help_streamsave.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/notfound.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/pro_ftp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/pro_mms.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/pro_other.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/pro_rtsp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/settings.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/streamsave.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/unplug.properties
+%%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR/zuul.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_extern.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_flash.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_flv.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_notfound.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_playlist.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_playtext.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_programs.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_ram.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_rm.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_skim.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_stop.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/help_streamsave.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/notfound.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/overlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/pro_ftp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/pro_mms.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/pro_other.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/pro_rtsp.html
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/settings.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/streamsave.dtd
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/unplug.properties
+%%XPI_XPIDIR%%/chrome/locale/unplug/it-IT/zuul.html
 %%XPI_XPIDIR%%/chrome/skin/config.png
 %%XPI_XPIDIR%%/chrome/skin/ftp.png
 %%XPI_XPIDIR%%/chrome/skin/help.png
@@ -68,6 +159,10 @@
 %%XPI_XPIDIR%%/install.rdf
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/es-AR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/unplug/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/locale/unplug
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin
