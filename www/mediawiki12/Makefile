@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -19,7 +19,7 @@ CONFLICTS=	mediawiki-1.[0-57-9].*
 NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib readline
 WANT_PHP_WEB=	yes
-MEDIAWIKIDIR?=	www/data-dist/mediawiki
+MEDIAWIKIDIR?=	www/mediawiki
 
 OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL (not funtional)" off \
 		LDAP "Use LDAP authentication" off
@@ -52,7 +52,7 @@ post-install:
 		| ${SED} -ne 's,^${WRKSRC},${MEDIAWIKIDIR},p' >> ${TMPPLIST}
 	@${FIND} -d ${WRKSRC}/${file} -type d \
 		| ${SED} -ne 's,^${WRKSRC},@dirrm ${MEDIAWIKIDIR},p' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/www/data-dist 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/www/ 2>/dev/null || true" >> ${TMPPLIST}
 	@${SED} -e 's|%%MEDIAWIKIDIR%%|${PREFIX}/${MEDIAWIKIDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
