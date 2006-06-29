@@ -1,0 +1,37 @@
+%%SITE_PERL%%/PDF/Template.pm
+%%SITE_PERL%%/PDF/Template/Base.pm
+%%SITE_PERL%%/PDF/Template/Constants.pm
+%%SITE_PERL%%/PDF/Template/Container.pm
+%%SITE_PERL%%/PDF/Template/Container/Always.pm
+%%SITE_PERL%%/PDF/Template/Container/Conditional.pm
+%%SITE_PERL%%/PDF/Template/Container/Font.pm
+%%SITE_PERL%%/PDF/Template/Container/Footer.pm
+%%SITE_PERL%%/PDF/Template/Container/Header.pm
+%%SITE_PERL%%/PDF/Template/Container/Loop.pm
+%%SITE_PERL%%/PDF/Template/Container/Margin.pm
+%%SITE_PERL%%/PDF/Template/Container/PageDef.pm
+%%SITE_PERL%%/PDF/Template/Container/PdfTemplate.pm
+%%SITE_PERL%%/PDF/Template/Container/Row.pm
+%%SITE_PERL%%/PDF/Template/Container/Scope.pm
+%%SITE_PERL%%/PDF/Template/Container/Section.pm
+%%SITE_PERL%%/PDF/Template/Context.pm
+%%SITE_PERL%%/PDF/Template/Element.pm
+%%SITE_PERL%%/PDF/Template/Element/Bookmark.pm
+%%SITE_PERL%%/PDF/Template/Element/Circle.pm
+%%SITE_PERL%%/PDF/Template/Element/HorizontalRule.pm
+%%SITE_PERL%%/PDF/Template/Element/Image.pm
+%%SITE_PERL%%/PDF/Template/Element/Line.pm
+%%SITE_PERL%%/PDF/Template/Element/PageBreak.pm
+%%SITE_PERL%%/PDF/Template/Element/TextBox.pm
+%%SITE_PERL%%/PDF/Template/Element/Var.pm
+%%SITE_PERL%%/PDF/Template/Element/Weblink.pm
+%%SITE_PERL%%/PDF/Template/Factory.pm
+%%SITE_PERL%%/PDF/Template/Iterator.pm
+%%SITE_PERL%%/PDF/Template/TextObject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Template/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
+@dirrm %%SITE_PERL%%/PDF/Template/Element
+@dirrm %%SITE_PERL%%/PDF/Template/Container
+@dirrm %%SITE_PERL%%/PDF/Template
+@dirrmtry %%SITE_PERL%%/PDF
