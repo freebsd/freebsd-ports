@@ -117,6 +117,7 @@
     SUBDIR += ezstream
     SUBDIR += faac
     SUBDIR += faad
+    SUBDIR += fapg
     SUBDIR += fcplay
     SUBDIR += festalon
     SUBDIR += festdoc
