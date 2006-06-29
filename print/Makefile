@@ -39,6 +39,7 @@
     SUBDIR += cdlabelgen
     SUBDIR += cjk-lyx
     SUBDIR += clibpdf
+    SUBDIR += cm-super
     SUBDIR += cmpsfont
     SUBDIR += cpp2latex
     SUBDIR += cups
