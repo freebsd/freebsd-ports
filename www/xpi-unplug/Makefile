@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	unplug
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_CSME}
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	An extension to convert embedded plug-ins to html links
