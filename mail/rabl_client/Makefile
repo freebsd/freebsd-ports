@@ -11,11 +11,11 @@ CATEGORIES=	mail dns
 MASTER_SITES=	http://www.nuclearelephant.com/projects/rabl/sources/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Reactive Autonomous Blackhole List client
 
 GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
