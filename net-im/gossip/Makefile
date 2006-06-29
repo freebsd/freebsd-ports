@@ -7,6 +7,7 @@
 
 PORTNAME=	gossip
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
@@ -44,7 +45,7 @@ BROKEN=	does not build on 4.X
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.2:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=	--enable-libnotify=no
 .endif
