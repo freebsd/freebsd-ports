@@ -9,9 +9,10 @@
 PORTNAME=	fortune-mod-culmea-culmilor
 PORTVERSION=	2005.12.15
 CATEGORIES=	misc 	# should / will (also) be romanian
-MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
+		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Romanian "Culmea culmilor" jokes (in romanian)
 
 .include "${.CURDIR}/../../misc/fortune-mod-culmea-culmilor/Makefile.fortune"
