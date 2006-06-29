@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Calc-Units
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -22,7 +22,9 @@ MAN3=		Math::Calc::Units.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+post-patch:
+	${PERL} -pi -e 's/ our / my /' ${WRKSRC}/Units/Convert/Base.pm
 .endif
 
 .include <bsd.port.post.mk>
