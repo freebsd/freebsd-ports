@@ -9,7 +9,7 @@ PORTNAME=	rabl_client
 PORTVERSION=	1.0.0
 CATEGORIES=	mail dns
 MASTER_SITES=	http://www.nuclearelephant.com/projects/rabl/sources/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Reactive Autonomous Blackhole List client
