@@ -2364,6 +2364,7 @@ fam		ports/devel/fam
 fampp		ports/devel/fampp
 fandango	ports/cad/fandango
 fanout		ports/sysutils/fanout
+fapg		ports/audio/fapg
 farblazer	ports/games/farblazer
 fargoal		ports/games/fargoal
 farsifonts	ports/x11-fonts/farsifonts
