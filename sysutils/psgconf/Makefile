@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	psgconf
-PORTVERSION=	3.1.12
+PORTVERSION=	3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 
 MAINTAINER=	pirzyk@freebsd.org
 COMMENT=	Controls system configuration
 
-BUILD_DEPENDS= ${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Objective \
+BUILD_DEPENDS=	${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Objective \
+ 	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
  	${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable/Process.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod \
-	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
+	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
 
 PERL_CONFIGURE=	YES
 
@@ -30,6 +32,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action::Crontab.3 \
 		PSGConf::Action::File.3 \
 		PSGConf::Action::GenerateFile.3 \
+		PSGConf::Action::GenerateFile::AppConfig.3 \
 		PSGConf::Action::GenerateFile::BSD_exports.3 \
 		PSGConf::Action::GenerateFile::EnvFile.3 \
 		PSGConf::Action::GenerateFile::Literal.3 \
@@ -91,6 +94,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action::PackageManager::FreeBSD::Ports.3 \
 		PSGConf::Action::PackageManager::RedHat::RHN.3 \
 		PSGConf::Action::PackageManager::RedHat::RPMS.3 \
+		PSGConf::Action::PackageManager::RedHat::Yum.3 \
 		PSGConf::Action::PackageManager::Solaris.3 \
 		PSGConf::Action::Remove.3 \
 		PSGConf::Action::RemoveCrontab.3 \
@@ -100,6 +104,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action::Symlink.3 \
 		PSGConf::Action::TouchFile.3 \
 		PSGConf::Action::UntarFile.3 \
+		PSGConf::Action::svcs::addpg.3 \
 		PSGConf::Action::svcs::import.3 \
 		PSGConf::Action::svcs::setprop.3 \
 		PSGConf::Control.3 \
@@ -113,9 +118,6 @@ MAN3=		PSGConf.3 \
 		PSGConf::Control::FreeBSD.3 \
 		PSGConf::Control::InitScripts.3 \
 		PSGConf::Control::Inittab.3 \
-		PSGConf::Control::Library::crle.3 \
-		PSGConf::Control::Library::ld_so_conf.3 \
-		PSGConf::Control::Library::ldconfig.3 \
 		PSGConf::Control::NFS_Client.3 \
 		PSGConf::Control::NFS_Server.3 \
 		PSGConf::Control::NTP.3 \
@@ -125,10 +127,12 @@ MAN3=		PSGConf.3 \
 		PSGConf::Control::Packages.3 \
 		PSGConf::Control::PostgreSQL.3 \
 		PSGConf::Control::Printers.3 \
-		PSGConf::Control::RHN.3 \
+		PSGConf::Control::RedHat.3 \
 		PSGConf::Control::RPC.3 \
+		PSGConf::Control::RPC::rstatd.3 \
 		PSGConf::Control::Resolver.3 \
 		PSGConf::Control::SASL.3 \
+		PSGConf::Control::SharedLibrary.3 \
 		PSGConf::Control::ShellStartupFiles.3 \
 		PSGConf::Control::Shells.3 \
 		PSGConf::Control::Solaris.3 \
@@ -146,6 +150,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Control::sendmail.3 \
 		PSGConf::Control::sshd.3 \
 		PSGConf::Control::sudo.3 \
+		PSGConf::Control::swatch.3 \
 		PSGConf::Control::syslog.3 \
 		PSGConf::Data.3 \
 		PSGConf::Data::Boolean.3 \
@@ -156,15 +161,26 @@ MAN3=		PSGConf.3 \
 		PSGConf::Data::List.3 \
 		PSGConf::Data::String.3 \
 		PSGConf::Data::Table.3 \
+		PSGConf::DataStore.3 \
+		PSGConf::DataStore::AppConfig.3 \
 		PSGConf::DataStore::ConfigFile.3 \
+		PSGConf::DataStore::Storable.3 \
+		PSGConf::Import::Data::Hash.3 \
+		PSGConf::Import::Data::List.3 \
+		PSGConf::Import::Data::Table.3 \
+		PSGConf::Import::inittab.3 \
+		PSGConf::Import::pkg_default_versions.3 \
+		PSGConf::Import::ports.3 \
+		PSGConf::Import::shells.3 \
+		PSGConf::Util.3 \
 		psgconf-intro.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 .endif
-RUN_DEPENDS=   ${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires perl 5.6 or newer
@@ -173,10 +189,17 @@ IGNORE=		requires perl 5.6 or newer
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
+post-build:
+	cd ${WRKSRC} && ${MAKE} test
+	${CP} ${WRKSRC}/postinstall ${PKGINSTALL}
+
 post-install:
 	-@${MKDIR} ${PREFIX}/etc
 	@${CP} ${WRKSRC}/etc/psg.conf ${PREFIX}/etc/psg.conf.sample
 	@${CP} ${WRKSRC}/etc/psgconf_modules ${PREFIX}/etc/psgconf_modules.sample
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	PKG_PREFIX=${PREFIX} PKG_MGR=FreeBSD::Ports ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+post-clean:
+	@${RM} -f ${PKGINSTALL}
 
 .include <bsd.port.post.mk>
