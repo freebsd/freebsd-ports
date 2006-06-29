@@ -6,7 +6,7 @@
 
 PORTNAME=	ptex-tetex
 PORTVERSION=	3.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -49,7 +49,8 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		TEXMFVARDIR=${TEXMFVARDIR} \
 		TEXMFDIR=${TEXMFDIR} \
-		UPDMAP_SYS_PTEX=${UPDMAP_SYS_PTEX} \
+		UPDMAP_SYS=${UPDMAP_SYS} \
+		UPDMAPDIR=${UPDMAPDIR} \
 		MAPDIR=${MAPDIR} \
 		VFDIR=${VFDIR} \
 		TFMDIR=${TFMDIR}
@@ -80,15 +81,17 @@ LIBT1_PREFIX?=	${LOCALBASE}
 FONTSMAPDIR=	${TEXMFDIR}/fonts/map/ptex
 FONTSMAPVARDIR=	${TEXMFVARDIR}/fonts/map/ptex
 
-UPDMAP_SYS_PTEX=${PREFIX}/bin/updmap-sys-ptex
+UPDMAP_SYS=	${PREFIX}/bin/updmap-sys --progname=ptex
+UPDMAPDIR=	${TEXMFDIR}/updmap
 
-SUB_FILES=	updmap-ptex updmap-sys-ptex
+SUB_FILES=	updmap-ptex
 SUB_LIST=	PREFIX=${PREFIX} \
 		TEXMFDIR=${TEXMFDIR} \
 		DVIPSDIR=${DVIPSDIR} \
 		TEXMFVARDIR=${TEXMFVARDIR} \
 		FONTSMAPDIR=${FONTSMAPDIR} \
-		FONTSMAPVARDIR=${FONTSMAPVARDIR}
+		FONTSMAPVARDIR=${FONTSMAPVARDIR} \
+		UPDMAPDIR=${UPDMAPDIR}
 
 INSTDIRS=	doc fonts jbibtex ptex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
@@ -133,9 +136,9 @@ post-install:
 	cd ${WRKDIR} && \
 		${INSTALL_DATA} ${DOC_FILES} ${PREFIX}/${TEXMFDIR}/doc/ptex
 	${AWK} '/@comment INSTALL_DATA/{printf "${MKDIR} ${PREFIX}/%s && ${INSTALL_DATA} ${WRKDIR}/%s ${PREFIX}/%s\n",$$4,$$3,$$4}' < ${TMPPLIST} | ${SH}
-	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
+	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig/ptex
 	${INSTALL_DATA} ${FILESDIR}/tcfmgr.map \
-		${PREFIX}/${TEXMFCONFIGDIR}/texconfig
+		${PREFIX}/${TEXMFCONFIGDIR}/texconfig/ptex/tcfmgr.map
 	${INSTALL_DATA} ${LOCALBASE}/${TEXMFDISTDIR}/web2c/updmap.cfg \
 		${PREFIX}/${TEXMFDIR}/web2c/ptex/updmap.cfg
 	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/web2c/ptex
@@ -146,10 +149,9 @@ post-install:
 	${MKDIR} ${PREFIX}/${FONTSMAPDIR}/${F}/updmap
 	${MKDIR} ${PREFIX}/${FONTSMAPVARDIR}/${F}/updmap
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/bin/updmap-ptex
-	${INSTALL_SCRIPT} ${WRKDIR}/updmap-sys-ptex ${PREFIX}/bin/updmap-sys-ptex
+	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/${UPDMAPDIR}/updmap.ptex
 	${MKTEXLSR}
-	${SH} ${UPDMAP_SYS_PTEX}
+	${SH} ${UPDMAP_SYS}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
