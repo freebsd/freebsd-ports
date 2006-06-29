@@ -6476,6 +6476,7 @@ mangband	ports/games/mangband
 mango		ports/misc/mango
 manipulate_data	ports/security/manipulate_data
 mantis		ports/databases/mantis
+manu-gothica	ports/x11-fonts/manu-gothica
 manued.el	ports/textproc/manued.el
 mapagi		ports/print/mapagi
 mapchan		ports/sysutils/mapchan
