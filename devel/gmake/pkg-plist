@@ -22,3 +22,5 @@ bin/gmake
 %%NLS%%share/locale/uk/LC_MESSAGES/make.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/make.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/make.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
