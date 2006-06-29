@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ftjava
-PORTVERSION=	0.19
+PORTVERSION=	1.0
 CATEGORIES=	games java
 MASTER_SITES=	http://www.warpfish.com/davisje/:file1 \
 		http://home.nycap.rr.com/davisje/ftjava/:doc1
