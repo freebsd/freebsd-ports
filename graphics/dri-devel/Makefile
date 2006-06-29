@@ -12,17 +12,13 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~anholt/dri/
 MASTER_SITE_SUBDIR=	anholt
-DISTFILES=	Mesa-20060624.tar.bz2	\
-		drm-20060624.tar.bz2
+DISTFILES=	Mesa-20060624.tar.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	DRI OpenGL drivers snapshot
 
 BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
-
-EXTRA_DISTFILES= \
-		Mesa-20050719.tar.bz2	\
-		drm-20050719.tar.bz2
+LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
 
 CONFLICTS=	xfree86-dri-[0-9]* dri-6.2_* dri-6.4_*
 
