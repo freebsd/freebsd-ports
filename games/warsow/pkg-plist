@@ -1,8 +1,8 @@
-bin/warsow
-bin/wsw_server
-%%DATADIR%%/basewsw/cgame.so
+%%CLIENT%%bin/warsow
+%%SERVER%%bin/wsw_server
+%%CLIENT%%%%DATADIR%%/basewsw/cgame.so
 %%DATADIR%%/basewsw/game.so
-%%DATADIR%%/basewsw/ui.so
+%%CLIENT%%%%DATADIR%%/basewsw/ui.so
 %%DATADIR%%/basewsw/data0.pk3
 %%DATADIR%%/basewsw/data0fix1.pk3
 %%DATADIR%%/basewsw/data0fix2.pk3
