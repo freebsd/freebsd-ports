@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	sancp
 
 PATCH_SITES=	http://sancp.sourceforge.net/
 PATCHFILES=	sancp-1.6.1.fix200511.a.patch \
-		sancp-1.6.1.fix200511.b.patch
+		sancp-1.6.1.fix200606.bd.patch \
+		sancp-1.6.1.fix200601.c.patch
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	pauls@utdallas.edu
