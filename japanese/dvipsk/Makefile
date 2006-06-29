@@ -7,7 +7,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.95b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,hrs/teTeX,:S,$,:udvipspatch,}
@@ -45,10 +45,10 @@ INSTALL_WRKSRC=	${WRKDIR}/${TETEX_SRC}/texk/dvipsk
 PLIST_SUB=	DVIPSDIR=${DVIPSDIR} \
 		DVIPSCONFIGDIR=${DVIPSCONFIGDIR} \
 		DVIPSCONFIGDIR_DIST=${DVIPSCONFIGDIR_DIST} \
-		MKTEXLSR=${MKTEXLSR} \
+		MKTEXLSR="${MKTEXLSR}" \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		FONTSMAPDIR=${FONTSMAPDIR} \
-		UPDMAP_SYS_PTEX=${UPDMAP_SYS_PTEX}
+		UPDMAP_SYS="${UPDMAP_SYS}"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-multiplatform \
@@ -72,7 +72,9 @@ INFO=		dvips
 
 TETEX_SRC=	tetex-src-3.0
 
-MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
+MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr \
+			${LOCALBASE}/${TEXMFDIR} \
+			${LOCALBASE}/${TEXMFCONFIGDIR}
 TEXMFDIR=	share/texmf
 TEXMFDISTDIR=	share/texmf-dist
 TEXMFLOCALDIR=	share/texmf-local
@@ -86,7 +88,7 @@ LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 
-UPDMAP_SYS_PTEX=${LOCALBASE}/bin/updmap-sys-ptex
+UPDMAP_SYS=	${LOCALBASE}/bin/updmap-sys --progname=ptex
 TEXCONFIGBIN=	${LOCALBASE}/bin/texconfig-sys
 
 post-configure:
@@ -117,7 +119,7 @@ do-install:
 	${RM} -f ${PREFIX}/${FONTSMAPDIR}/../dvips/ptex/psfonts_jp.map
 	${RMDIR} ${PREFIX}/${FONTSMAPDIR}/../dvips/ptex
 	${MKTEXLSR}
-	${SH} ${UPDMAP_SYS_PTEX} --enable Map=psfonts_jp.map
+	${SH} ${UPDMAP_SYS} --enable Map=psfonts_jp.map
 
 post-install:
 	${TEXCONFIGBIN} dvips printcmd -
