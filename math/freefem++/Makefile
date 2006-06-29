@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	2.8
+DISTVERSION=	2.8-1
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=		--disable-download					\
 CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
-LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
+LIBBLAS=	-lf2c -lf77blas -latlas_r -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
 DOC_TARGET=	freefem++doc.pdf
@@ -61,20 +61,21 @@ MAKE_ARGS+=	"PIC=-fPIC"
 CONFIGURE_ARGS+=	--disable-optim
 .endif
 
-.if exists(${LOCALBASE}/mpich/bin/mpiCC)
-WITH_MPI=	yes
+.if exists(${LOCALBASE}/mpich/mpich/include/mpicxx.h) && !defined(WITHOUT_MPI)
+WITH_MPI=	yes	# MPICH-2 is required
 .endif
-.if defined(WITH_MPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
-RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
-MPICFLAGS=	-I${LOCALBASE}/mpich/include
-MPILDFLAGS=	-L${LOCALBASE}/mpich/lib
-CONFIGURE_ENV+=	PATH="$$PATH:${LOCALBASE}/mpich/bin"
-CONFIGURE_ARGS+=	--with-mpi=yes
-PLIST_SUB+=	MPI=""
-.else
+#.if defined(WITH_MPI)
+#BUILD_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
+#RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
+#MPICFLAGS=	-I${LOCALBASE}/mpich/include
+#MPILDFLAGS=	-L${LOCALBASE}/mpich/lib
+#CONFIGURE_ENV+=	PATH="$$PATH:${LOCALBASE}/mpich/bin"
+#CONFIGURE_ARGS+=	--with-mpi=yes
+#PLIST_SUB+=	MPI=""
+#.else
 PLIST_SUB+=	MPI="@comment "
-.endif
+CONFIGURE_ARGS+=	--without-mpi
+#.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"		\
