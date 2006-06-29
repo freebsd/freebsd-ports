@@ -1767,6 +1767,7 @@
     SUBDIR += swigruby
     SUBDIR += sysconftool
     SUBDIR += t1lib
+    SUBDIR += tailor
     SUBDIR += tavrasm
     SUBDIR += tcl-memchan
     SUBDIR += tcl-neo
