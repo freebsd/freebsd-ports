@@ -1,0 +1,12 @@
+
+===========================================================
+
+To set up TASKSTEP:
+
+ 1- edit %%PREFIX%%/%%TASKSTEP%%/install/config.php and
+    setup your mysql login
+ 2- create taskstep database in your mysql server
+ 3- point your browser to:
+    http://YOUR_SERVER/TASKSTEP_PATH/install/install.php
+
+===========================================================

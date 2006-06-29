@@ -142,6 +142,7 @@
     SUBDIR += superkaramba-lwp
     SUBDIR += superswitcher
     SUBDIR += taskjuggler
+    SUBDIR += taskstep
     SUBDIR += teapot
     SUBDIR += timer-applet
     SUBDIR += tomboy
