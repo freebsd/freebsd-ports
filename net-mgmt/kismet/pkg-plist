@@ -2,6 +2,7 @@ bin/kismet
 bin/kismet_client
 bin/kismet_drone
 bin/kismet_server
+bin/manuf_update.sh
 %%GPS%%bin/gpsmap
 %%GPS%%bin/gpsmap-helper-earthamaps
 etc/ap_manuf
@@ -12,17 +13,17 @@ etc/kismet.conf.sample
 etc/kismet_drone.conf.sample
 @unexec if cmp -s %D/etc/kismet_ui.conf %D/etc/kismet_ui.conf.sample; then rm -f %D/etc/kismet_ui.conf; fi
 etc/kismet_ui.conf.sample
-share/kismet/wav/alert.wav
-share/kismet/wav/junk_traffic.wav
-share/kismet/wav/new_network.wav
-share/kismet/wav/traffic.wav
-%%GMAP%%share/kismet/gpsmap-gmap/README.txt
-%%GMAP%%share/kismet/gpsmap-gmap/index.html
-%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/open.png
-%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/shadow.png
-%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/wep.png
-%%GMAP%%share/kismet/gpsmap-gmap/mapfiles/wpa.png
-%%GMAP%%@dirrm share/kismet/gpsmap-gmap/mapfiles
-%%GMAP%%@dirrm share/kismet/gpsmap-gmap
-@dirrm share/kismet/wav
-@dirrm share/kismet
+%%DATADIR%%/wav/alert.wav
+%%DATADIR%%/wav/junk_traffic.wav
+%%DATADIR%%/wav/new_network.wav
+%%DATADIR%%/wav/traffic.wav
+%%GMAP%%%%DATADIR%%/gpsmap-gmap/README.txt
+%%GMAP%%%%DATADIR%%/gpsmap-gmap/index.html
+%%GMAP%%%%DATADIR%%/gpsmap-gmap/mapfiles/open.png
+%%GMAP%%%%DATADIR%%/gpsmap-gmap/mapfiles/shadow.png
+%%GMAP%%%%DATADIR%%/gpsmap-gmap/mapfiles/wep.png
+%%GMAP%%%%DATADIR%%/gpsmap-gmap/mapfiles/wpa.png
+%%GMAP%%@dirrm %%DATADIR%%/gpsmap-gmap/mapfiles
+%%GMAP%%@dirrm %%DATADIR%%/gpsmap-gmap
+@dirrm %%DATADIR%%/wav
+@dirrm %%DATADIR%%
