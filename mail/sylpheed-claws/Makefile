@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -21,8 +22,8 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
 		${LOCALBASE}/bin/metamail:${PORTSDIR}/mail/metamail
 
-THEMEVERSION=	20040929
-THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
+THEMEVERSION=	20060615
+THEMEFILE=	sylpheed-claws-themes-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -190,8 +191,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed-claws.desktop ${PREFIX}/share/applications/
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
-	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -print | \
-		${GREP} -vE '(xvpics|.directory)' | \
+	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -mindepth 2 -print | \
+		${GREP} -vE '(Makefile.*|INSTALL)' | \
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes/
 	@${CHMOD} -R a+r ${DATADIR}/themes
 	@${FIND} ${DATADIR}/themes -type d -print0 | ${XARGS} -0 ${CHMOD} a+x
