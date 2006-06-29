@@ -51,7 +51,7 @@ pre-patch:
 		-e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|gcc|${CC}|g' \
 		-e 's|g++|${CXX}|g' \
-		-e 's|CFLAGS = |CFLAGS = ${CFLAGS}|g' \
+		-e 's|CFLAGS = |CFLAGS = ${CFLAGS} |g' \
 		-e 's|OPT_FLAGS = .*|OPT_FLAGS = ${CFLAGS}|g' \
 		-e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configs/freebsd-dri
