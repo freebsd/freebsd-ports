@@ -35,6 +35,9 @@ COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
+DEPRECATED=	the dependcy is deprecated, please use a linux_dist port instead
+EXPIRATION_DATE=2006-09-01
+
 USE_LINUX=		8
 USE_LINUX_PREFIX=	yes
 ONLY_FOR_ARCHS=		i386 amd64
