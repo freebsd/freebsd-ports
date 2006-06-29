@@ -66,8 +66,6 @@
 %%DATADIR%%/Licences/lgpl.txt
 %%DATADIR%%/agent.sh
 %%DATADIR%%/colors.sh
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%DATADIR%%/Licences
 @dirrm %%DATADIR%%/Classes/JARs
 @dirrm %%DATADIR%%/Classes/Base/resources
