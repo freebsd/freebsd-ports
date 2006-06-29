@@ -1261,6 +1261,7 @@ clpbar		ports/misc/clpbar
 clustalw	ports/biology/clustalw
 clusterit	ports/net/clusterit
 clusterssh	ports/security/clusterssh
+cm-super	ports/print/cm-super
 cmail		ports/mail/cmail
 cmake		ports/devel/cmake
 cmatrix		ports/misc/cmatrix
