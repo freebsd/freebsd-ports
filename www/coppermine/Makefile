@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	coppermine
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	cpg${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A web picture gallery script
 
 USE_PHP=	mysql pcre
