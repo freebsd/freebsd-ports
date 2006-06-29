@@ -3,29 +3,24 @@
 %%SITE_PERL%%/POE/Component/Jabber/Client/J2.pm
 %%SITE_PERL%%/POE/Component/Jabber/Client/Legacy.pm
 %%SITE_PERL%%/POE/Component/Jabber/Client/XMPP.pm
-%%SITE_PERL%%/POE/Component/Jabber/Client/XMPP/TLS.pm
 %%SITE_PERL%%/POE/Component/Jabber/Error.pm
+%%SITE_PERL%%/POE/Component/Jabber/Server.pm
 %%SITE_PERL%%/POE/Component/Jabber/Server/InputHandler.pm
+%%SITE_PERL%%/POE/Component/Jabber/Server/PresenceManager.pm
+%%SITE_PERL%%/POE/Component/Jabber/Server/RosterTable.pm
 %%SITE_PERL%%/POE/Component/Jabber/Server/RouteProcessor.pm
 %%SITE_PERL%%/POE/Component/Jabber/Server/RouteTable.pm
 %%SITE_PERL%%/POE/Component/Jabber/Server/SelfRouter.pm
 %%SITE_PERL%%/POE/Component/Jabber/Server/Socket.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/Socket/CTLS.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/Socket/STLS.pm
 %%SITE_PERL%%/POE/Component/Jabber/Server/SocketServer.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Jabber/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/COMPTester.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/J2Tester.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/LEGACYTester.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/SERVERTester.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/XMPPSimpleTester.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/XMPPTester.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Jabber
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrm %%SITE_PERL%%/POE/Component/Jabber/Server/Socket
 @dirrm %%SITE_PERL%%/POE/Component/Jabber/Server
-@dirrm %%SITE_PERL%%/POE/Component/Jabber/Client/XMPP
 @dirrm %%SITE_PERL%%/POE/Component/Jabber/Client
 @dirrm %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component
