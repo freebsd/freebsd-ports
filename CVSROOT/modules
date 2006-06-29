@@ -8727,6 +8727,7 @@ p5-HTML-WikiConverter-Kwiki	ports/www/p5-HTML-WikiConverter-Kwiki
 p5-HTML-WikiConverter-Markdown	ports/www/p5-HTML-WikiConverter-Markdown
 p5-HTML-WikiConverter-MediaWiki	ports/www/p5-HTML-WikiConverter-MediaWiki
 p5-HTML-WikiConverter-MoinMoin	ports/www/p5-HTML-WikiConverter-MoinMoin
+p5-HTML-WikiConverter-PbWiki	ports/www/p5-HTML-WikiConverter-PbWiki
 p5-HTML-WikiConverter-TikiWiki	ports/www/p5-HTML-WikiConverter-TikiWiki
 p5-HTML-WikiConverter-UseMod	ports/www/p5-HTML-WikiConverter-UseMod
 p5-HTML-WikiConverter-WakkaWiki	ports/www/p5-HTML-WikiConverter-WakkaWiki
