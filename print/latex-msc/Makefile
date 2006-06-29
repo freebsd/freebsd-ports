@@ -6,6 +6,7 @@
 
 PORTNAME=	latex-msc
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -16,20 +17,17 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX macro package for drawing Message Sequence Charts
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
 NO_SIZE=	yes # Most mirrors don't provide size-data
 
 NO_BUILD=	yes
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR}
+PLIST_SUB=	MKTEXLSR="${MKTEXLSR}" CLASSDIR=${CLASSDIR}
 
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
-MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
+TEXMFDIR=	share/texmf
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr ${PREFIX}/${TEXMFDIR}
+CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME:S/^latex-//}
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASS_FILES=	msc.sty
