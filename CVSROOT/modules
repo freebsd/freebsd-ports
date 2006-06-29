@@ -13140,6 +13140,7 @@ tacshell	ports/net/tacshell
 tads		ports/games/tads
 taglib		ports/audio/taglib
 tagtool		ports/audio/tagtool
+tailor		ports/devel/tailor
 taipan		ports/games/taipan
 talkfilters	ports/misc/talkfilters
 tamago		ports/editors/tamago
