@@ -632,6 +632,7 @@
     SUBDIR += p5-HTML-WikiConverter-TikiWiki
     SUBDIR += p5-HTML-WikiConverter-UseMod
     SUBDIR += p5-HTML-WikiConverter-WakkaWiki
+    SUBDIR += p5-HTML-WikiConverter-WikkaWiki
     SUBDIR += p5-HTTP-Body
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-Cache-Transparent
