@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX
 PORTVERSION=	3.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,6 +19,7 @@ COMMENT=	A meta port for teTeX suite
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		latex:${PORTSDIR}/print/teTeX-base \
+		${LOCALBASE}/share/fonts/cm-super/README:${PORTSDIR}/print/cm-super \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		xdvi:${PORTSDIR}/print/xdvik
 
