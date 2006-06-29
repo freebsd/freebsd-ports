@@ -169,6 +169,7 @@ libexec/filters/perlfilter
 @dirrm libexec/courier/webmail
 @dirrm libexec/courier
 @dirrm libexec/filters
+sbin/aliaslookup
 sbin/courier
 sbin/courieresmtpd
 sbin/courierfilter
@@ -533,6 +534,7 @@ share/courier/sqwebmail/html/en-us/keyimport.html
 share/courier/sqwebmail/html/en-us/ldaplist.html
 share/courier/sqwebmail/html/en-us/ldapsearch.html
 share/courier/sqwebmail/html/en-us/login.html
+share/courier/sqwebmail/html/en-us/loginform.inc.html
 share/courier/sqwebmail/html/en-us/navbar.inc.html
 share/courier/sqwebmail/html/en-us/navbar2.inc.html
 share/courier/sqwebmail/html/en-us/navbar3.inc.html
@@ -545,6 +547,7 @@ share/courier/sqwebmail/html/en-us/printredirect.html
 share/courier/sqwebmail/html/en-us/quickadd.html
 share/courier/sqwebmail/html/en-us/readmsg.html
 share/courier/sqwebmail/html/en-us/redirect.html
+share/courier/sqwebmail/html/en-us/refreshfr.html
 share/courier/sqwebmail/html/en-us/smileys.txt
 share/courier/sqwebmail/html/en-us/spellchk.html
 share/courier/sqwebmail/html/en
@@ -635,6 +638,7 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/README.sharedfolders.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SECURITY.webmail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/aliases.html
+%%PORTDOCS%%%%DOCSDIR%%/html/aliaslookup.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/cancelmsg.html
 %%PORTDOCS%%%%DOCSDIR%%/html/changelog.html
