@@ -95,7 +95,7 @@ ALWAYS_KEEP_DISTFILES=	yes
 
 CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
 			linux_base-rh-9* linux_base-suse-9* linux_base-8* \
-			linux_base-fc3 linux-libgcc* linux_locale*
+			linux_base-fc3 linux_locale*
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes
