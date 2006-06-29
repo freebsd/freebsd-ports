@@ -22,6 +22,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 CONFLICTS=	linux_base-fc*
 
+DEPRECATED=	the dependency is scheduled for removal and a recent glib does not need this
+EXPIRATION_DATE=2006-09-01
+
 USE_LINUX=	8
 USE_LINUX_PREFIX=yes
 NO_BUILD=	yes
