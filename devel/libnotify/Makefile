@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnotify
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/libnotify/
 
@@ -20,6 +20,7 @@ USE_GNOME=	gnomehack gnometarget intlhack glib20 gtk20
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --without-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
