@@ -12,11 +12,11 @@ CATEGORIES=	devel mail
 MASTER_SITES=	http://dspam.nuclearelephant.com/sources/extras/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/libbnr/sources/
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	GPL implementation of the Bayesian Noise Reduction algorithm
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/${PORTNAME}
 
 .ifdef(WITH_DEBUG)
