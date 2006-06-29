@@ -17,6 +17,7 @@ COMMENT=	Theora video codec for the Ogg multimedia streaming system
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
+USE_GCC=	3.4+
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
