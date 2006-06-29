@@ -20,12 +20,16 @@ CONFLICTS?=	libtorrent-devel-[0-9]*
 
 USE_GCC=	3.4
 USE_GNOME=	pkgconfig gnomehack
+USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	--disable-debug --with-openssl=${OPENSSLBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
