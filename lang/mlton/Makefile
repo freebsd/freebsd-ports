@@ -12,13 +12,16 @@
 
 PORTNAME=	mlton
 PORTVERSION=	20051202
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/
+
 DISTFILES=	${BOOT_DIST} ${SRC_DIST}
 EXTRACT_ONLY=	${SRC_DIST}
 
+# Other maintainers are Geoffrey Mainland (mainland@apeiron.net)
+#  and Jesper Louis Andersen (jlouis@mongers.org)
 MAINTAINER=	sweeks@sweeks.com
 COMMENT=	An optimizing Standard ML compiler
 
@@ -31,10 +34,8 @@ BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-BROKEN=		Prebuilt binary depends on old version of libgmp
-
 SRC_DIST=	${DISTNAME}-1.freebsd.src.tgz
-BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1.${MACHINE_ARCH}-freebsd.${BOOT_SUF}
+BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1-1.${MACHINE_ARCH}-freebsd.${BOOT_SUF}
 
 ONLY_FOR_ARCHS=	i386
 
@@ -106,6 +107,7 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 RELEASE ?=	1
+PORTSLEVEL ?=   1
 
 PKGORIGIN=${PKGCATEGORY}/${PORTNAME}
 
@@ -118,15 +120,15 @@ build-package:
 	${MAKE} install
 	${MAKE} package
 	${MAKE} deinstall
-	pkg_add ${PORTNAME}-${PORTVERSION}.tbz
+	pkg_add ${PORTNAME}-${PORTVERSION}_1.tbz
 	${MAKE} deinstall
 	${MAKE} reinstall
 	${MAKE} package
-	${CP} ${PORTNAME}-${PORTVERSION}.tbz	\
-		${DISTDIR}/${PORTNAME}-${PORTVERSION}-${RELEASE}.i386-freebsd.tbz
-	${TAR} -cpf - Makefile distinfo pkg-descr pkg-plist | \
-		( ${MKDIR} ${PORTDIR} && cd ${PORTDIR} && ${TAR} -xpf - )
-	shar `find ${PORTDIR}` >/tmp/mlton-${PORTVERSION}-portdir.shar
+	${CP} ${PORTNAME}-${PORTVERSION}_1.tbz	\
+		${DISTDIR}/${PORTNAME}-${PORTVERSION}-${RELEASE}-${PORTSLEVEL}.i386-freebsd.tbz
+#	${TAR} -cpf - Makefile distinfo pkg-descr pkg-plist | \
+#		( ${MKDIR} ${PORTDIR} && cd ${PORTDIR} && ${TAR} -xpf - )
+#	shar `find ${PORTDIR}` >/tmp/mlton-${PORTVERSION}-portdir.shar
 
 TMP_PLIST=	tmp-pkg-plist
 PLIST=		${.CURDIR}/pkg-plist
