@@ -584,6 +584,7 @@
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
+    SUBDIR += lion
     SUBDIR += llvm
     SUBDIR += log4c
     SUBDIR += log4cplus
