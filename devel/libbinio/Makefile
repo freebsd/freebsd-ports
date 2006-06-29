@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Binary I/O stream class library
 
-INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 USE_GCC=	3.4+
 
 CPPFLAGS+=	-I${LOCALBASE}/include

@@ -18,7 +18,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cycle-based SID emulator engine
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-shared
