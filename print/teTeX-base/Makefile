@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -130,6 +130,7 @@ TEXMFVARDIR=	share/texmf-var
 MKTEXLSR=	${PREFIX}/bin/mktexlsr
 FMTUTIL_SYS=	${PREFIX}/bin/fmtutil-sys
 UPDMAP_SYS=	${PREFIX}/bin/updmap-sys
+UPDMAPDIR=	${TEXMFDIR}/updmap
 
 PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
@@ -138,10 +139,12 @@ PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		FMTUTIL_SYS=${FMTUTIL_SYS} \
 		UPDMAP_SYS=${UPDMAP_SYS} \
+		UPDMAPDIR=${UPDMAPDIR} \
 		SETENV=${SETENV}
-SUB_FILES=	pkg-message texdoctk.wrapper
+SUB_FILES=	pkg-message texdoctk.wrapper updmap.wrapper
 SUB_LIST=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
+		UPDMAPDIR=${UPDMAPDIR} \
 		PREFIX=${PREFIX}
 OLDCONFIG=	web2c/texmf.cnf web2c/mktex.cnf web2c/fmtutil.cnf \
 		web2c/updmap.cfg \
@@ -169,10 +172,18 @@ pre-su-install:
 		${PREFIX}/${TEXMFCONFIGDIR}/web2c/updmap.cfg
 
 post-install:
+	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
+	${INSTALL_DATA} ${PREFIX}/${TEXMFDIR}/texconfig/tcfmgr.map \
+		${PREFIX}/${TEXMFCONFIGDIR}/texconfig/tcfmgr.map
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2pdf ${PREFIX}/bin
 	${MV} -f ${PREFIX}/bin/texdoctk ${PREFIX}/bin/texdoctk.real
 	${INSTALL_SCRIPT} ${WRKDIR}/texdoctk.wrapper ${PREFIX}/bin/texdoctk
+	${MKDIR} ${PREFIX}/${UPDMAPDIR}
+	${MV} -f ${PREFIX}/bin/updmap-sys ${PREFIX}/${UPDMAPDIR}/updmap-sys.dist
+	${MV} -f ${PREFIX}/bin/updmap ${PREFIX}/${UPDMAPDIR}/updmap.dist
+	${INSTALL_SCRIPT} ${WRKDIR}/updmap.wrapper ${PREFIX}/bin/updmap-sys
+	${INSTALL_SCRIPT} ${WRKDIR}/updmap.wrapper ${PREFIX}/bin/updmap
 	${MKTEXLSR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}

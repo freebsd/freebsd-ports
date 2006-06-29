@@ -1,0 +1,39 @@
+#!/bin/sh
+# $FreeBSD$
+EXECBASE=${0##*/}
+EXECPREFIX=%%PREFIX%%/%%UPDMAPDIR%%/updmap
+EXECSUFFIX=dist
+OPTS=""
+
+case ${EXECBASE} in
+*-sys)	v=`%%PREFIX%%/bin/kpsewhich -var-value TEXMFSYSVAR`
+	c=`%%PREFIX%%/bin/kpsewhich -var-value TEXMFSYSCONFIG`
+	TEXMFVAR="$v"; export TEXMFVAR
+	TEXMFCONFIG="$c"; export TEXMFCONFIG
+	;;
+esac
+
+for F in "$@"; do
+	case $F in
+	--help)		exec ${EXECPREFIX}.${EXECSUFFIX} --help ;;
+	--progname=*)	EXECSUFFIX=${F#--progname=} ;;
+	--*)		OPTS="${OPTS} ${F}" ;;
+	*)		OPTS="${OPTS} \"${F}\"" ;;
+	esac
+done
+
+WEB2C='$TEXMF/web2c'; export WEB2C
+UPDMAP_DIST=${EXECPREFIX}.dist; export UPDMAP_DIST
+
+case ${EXECSUFFIX} in
+all)
+	for E in ${EXECPREFIX}.*
+	do
+		if [ -f "${E}" ]; then eval "${E} ${OPTS}"; fi
+	done
+	;;
+*)
+	E=${EXECPREFIX}.${EXECSUFFIX}
+	if [ -f "${E}" ]; then eval "exec ${E} ${OPTS}"; fi
+	;;
+esac
