@@ -1,0 +1,2 @@
+@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
+%%FONTSDIR%%/manugot19.ttf
