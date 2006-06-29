@@ -1,0 +1,37 @@
+# New ports collection makefile for:   p5-Sys-Filesystem
+# Date created:                        Thu May 25 21:12:53 CDT 2006
+# Whom:                                        Jim Pirzyk pirzyk@freebsd.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=		Sys-Filesystem
+PORTVERSION=	1.21
+CATEGORIES=	sysutils perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Sys
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	pirzyk@FreeBSD.org
+COMMENT=		Perl module to Retrieve list of filesystems and their properties
+
+PERL_MODBUILD=	yes
+
+MAN3=		Sys::Filesystem::Mswin32.3 \
+			Sys::Filesystem.3 \
+			Sys::Filesystem::Linux.3 \
+			Sys::Filesystem::Darwin.3 \
+			Sys::Filesystem::Cygwin.3 \
+			Sys::Filesystem::Aix.3 \
+			Sys::Filesystem::Unix.3 \
+			Sys::Filesystem::Dummy.3 \
+			Sys::Filesystem::Freebsd.3 \
+			Sys::Filesystem::Solaris.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>

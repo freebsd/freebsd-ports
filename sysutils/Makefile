@@ -391,6 +391,7 @@
     SUBDIR += p5-Schedule-Match
     SUBDIR += p5-Stat-lsMode
     SUBDIR += p5-Sys-CpuLoad
+    SUBDIR += p5-Sys-Filesystem
     SUBDIR += p5-Sys-Hostname-Long
     SUBDIR += p5-Sys-Utmp
     SUBDIR += p5-SyslogScan
