@@ -1,0 +1,17 @@
+include/lion/base64.h
+include/lion/connections.h
+include/lion/io.h
+include/lion/lfnmatch.h
+include/lion/lgroup.h
+include/lion/lion.h
+include/lion/lion_rcsid.h
+include/lion/lion_types.h
+include/lion/misc.h
+include/lion/pipe.h
+include/lion/sockets.h
+include/lion/timers.h
+include/lion/tls.h
+include/lion/udp.h
+include/lion/zlib.h
+@dirrm include/lion
+lib/liblion.a
