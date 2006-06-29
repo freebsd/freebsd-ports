@@ -33,6 +33,7 @@
     SUBDIR += rus-ispell
     SUBDIR += rux
     SUBDIR += tac+ia
+    SUBDIR += tidyup-mail
     SUBDIR += unzip
     SUBDIR += wmcyrx
     SUBDIR += xcode
