@@ -91,7 +91,7 @@ ALWAYS_KEEP_DISTFILES=  yes
 
 CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
 			linux_base-rh-9* linux_base-suse-9* linux_base-8* \
-			linux_base-fc-4* linux-libgcc* linux_locale*
+			linux_base-fc-4* linux_locale*
 
 DEPRECATED=	superseeded by linux_base-fc4 port
 EXPIRATION_DATE=2006-07-01
