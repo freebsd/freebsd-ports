@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2006-04-24
+DISTVERSION=		2006-06-26
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
@@ -26,7 +26,7 @@ LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}.tgz:dat
-DOCVERSION=	2006-04-24
+DOCVERSION=	2006-06-26
 .endif
 
 WRKSRC=		${WRKDIR}/kicad-dev
@@ -44,6 +44,7 @@ WX_CONFIG=	wxgtk2-2.6-config
 INSTDIR=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR} OPSYS=${OPSYS}
 
+DOS2CNV=	makefile.gtk makefile.include
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 
 .include <bsd.port.pre.mk>
@@ -59,10 +60,12 @@ BROKEN=	Does not compile on ${OSVERSION}
 .endif
 
 post-extract:
-	for f in `${FIND} ${WRKSRC} -name ${MAKEFILE}`; do		\
+.for df in ${DOS2CNV}
+	for f in `${FIND} ${WRKSRC} -name ${df}`; do		\
 		${CP} $$f $$f.dos &&					\
 		${TR} -d '\r' < $$f.dos > $$f ;				\
 	done
+.endfor
 	${CP} ${WRKSRC}/libs.linux ${WRKSRC}/libs.${OPSYS}
 	${REINPLACE_CMD} -e 's|kicad/linux|${INSTDIR}/${OPSYS}|'	\
 		${WRKSRC}/libs.${OPSYS}

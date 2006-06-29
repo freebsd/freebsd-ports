@@ -83,7 +83,6 @@
 %%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_12_DE.sxw
 %%INSTDIR%%/help/en/contents.hhc
 %%INSTDIR%%/help/en/cvpcb/cvpcb-en.html
-%%INSTDIR%%/help/en/cvpcb/cvpcb-en.pdf
 %%INSTDIR%%/help/en/cvpcb/cvpcb-en_html_10907a97.png
 %%INSTDIR%%/help/en/cvpcb/cvpcb-en_html_10ca5232.png
 %%INSTDIR%%/help/en/cvpcb/cvpcb-en_html_15f50cc9.png
@@ -238,7 +237,6 @@
 %%INSTDIR%%/help/es/docs_src/pcbnew/cap9.sxw
 %%INSTDIR%%/help/es/docs_src/pcbnew/pcbnew-es.html
 %%INSTDIR%%/help/es/docs_src/pcbnew/pcbnew.sxg
-%%INSTDIR%%/help/es/eeschema/Eeschema_Chapter1_ES.html
 %%INSTDIR%%/help/es/eeschema/doc_eeschema-es.zip
 %%INSTDIR%%/help/es/eeschema/eeschema-es.html
 %%INSTDIR%%/help/es/file_formats/file_formats-es.html
@@ -309,7 +307,9 @@
 %%INSTDIR%%/help/fr/docs_src/eeschema/eeschema.html
 %%INSTDIR%%/help/fr/docs_src/eeschema/eeschema.sxg
 %%INSTDIR%%/help/fr/docs_src/eeschema/eeschema_covers_FR.sxw
+%%INSTDIR%%/help/fr/docs_src/file_formats/board_file_format.odt
 %%INSTDIR%%/help/fr/docs_src/file_formats/board_file_format.sxw
+%%INSTDIR%%/help/fr/docs_src/file_formats/file_formats.html
 %%INSTDIR%%/help/fr/docs_src/file_formats/library_file_format.sxw
 %%INSTDIR%%/help/fr/docs_src/file_formats/schematic_file_format.sxw
 %%INSTDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/conn_DBxx.ps
@@ -374,31 +374,30 @@
 %%INSTDIR%%/help/fr/pcbnew/pcbnew.html
 %%INSTDIR%%/help/pt/contents.hhc
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt.html
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_1918808a.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_22c3c896.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_2f1d3378.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_11370164.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_30f04152.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_3b802d32.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_3e393164.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_37fab2f2.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_41084b87.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_535e1801.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_53814bf1.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_54965dbb.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_5470c784.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_55ad0c61.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_618c7091.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_653a1d44.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_66d42369.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_674e844.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_6c43823e.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_88d72ec.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_d4c3c28.gif
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_eecbfff.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m13b5b7a1.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m21e00917.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m28ba58c.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m30efa244.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m47bb838d.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m48305158.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m49c35e7f.png
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m4eda1ccc.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m56bbc47c.png
-%%INSTDIR%%/help/pt/cvpcb/cvpcb.pdf
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m50b52a88.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m6575c7c8.gif
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_m78416bcd.png
+%%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_mfaa4758.png
 %%INSTDIR%%/help/pt/docs_src/cvpcb/cvpcb-pt.sxg
 %%INSTDIR%%/help/pt/docs_src/cvpcb/cvpcb-pt.sxw
 %%INSTDIR%%/help/pt/docs_src/cvpcb/cvpcb_capa_pt_br.sxw
@@ -451,31 +450,55 @@
 %%INSTDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap9_pt_BR.sxw
 %%INSTDIR%%/help/pt/eeschema/doc_eeschema-pt.zip
 %%INSTDIR%%/help/pt/eeschema/eeschema-pt.html
-%%INSTDIR%%/help/pt/eeschema/eeschema.pdf
 %%INSTDIR%%/help/pt/file_formats/file_formats.html
 %%INSTDIR%%/help/pt/file_formats/file_formats.zip
 %%INSTDIR%%/help/pt/gerbview/doc_gerbview.zip
 %%INSTDIR%%/help/pt/gerbview/gerbview.html
 %%INSTDIR%%/help/pt/kicad.hhp
 %%INSTDIR%%/help/pt/kicad/kicad-pt.html
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_1f2b2ef9.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_21af0dc0.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_3d3a3f29.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_450a70e8.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_4e2d3537.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_5c707ff7.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m121af765.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m1b04bf.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m1d9ca2c7.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m20d2b210.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m260932da.gif
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m341a8791.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m662f19ea.png
-%%INSTDIR%%/help/pt/kicad/kicad-pt_html_m7b8f8a74.png
-%%INSTDIR%%/help/pt/kicad/kicad.pdf
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR.html
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_1f2b2ef9.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_21af0dc0.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_240131a9.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_3d3a3f29.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_450a70e8.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_5c707ff7.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m121af765.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m1b04bf.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m1d9ca2c7.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m20d2b210.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m260932da.gif
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m3262df08.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m341a8791.png
+%%INSTDIR%%/help/pt/kicad/kicad_pt_BR_html_m662f19ea.png
 %%INSTDIR%%/help/pt/pcbnew/doc_pcbnew.zip
 %%INSTDIR%%/help/pt/pcbnew/pcbnew.html
-%%INSTDIR%%/help/pt/pcbnew/pcbnew.pdf
+%%INSTDIR%%/help/ru/contents.hhc
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter10_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter11_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter12_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter1_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter2_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter3_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter4_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter5_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter6_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter7_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter8_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter9_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/eeschema/eeschema_ru.html
+%%INSTDIR%%/help/ru/docs_src/kicad/kicad_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap1_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap2_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap3_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap4_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap5_RU.sxw
+%%INSTDIR%%/help/ru/docs_src/pcbnew/pcbnew_ru.html
+%%INSTDIR%%/help/ru/eeschema/doc_eeschema.zip
+%%INSTDIR%%/help/ru/eeschema/eeschema_ru.html
+%%INSTDIR%%/help/ru/kicad.hhp
+%%INSTDIR%%/help/ru/pcbnew/doc_pcbnew.zip
+%%INSTDIR%%/help/ru/pcbnew/pcbnew_ru.html
 %%INSTDIR%%/how-to-build-kicad.txt
 %%INSTDIR%%/how-to-build-kicad.txt~
 %%INSTDIR%%/install.txt
@@ -488,6 +511,8 @@
 %%INSTDIR%%/internat/hu/kicad.po
 %%INSTDIR%%/internat/it/kicad.mo
 %%INSTDIR%%/internat/it/kicad.po
+%%INSTDIR%%/internat/ko/kicad.mo
+%%INSTDIR%%/internat/ko/kicad.po
 %%INSTDIR%%/internat/pl/kicad.mo
 %%INSTDIR%%/internat/pl/kicad.po
 %%INSTDIR%%/internat/pt/kicad.mo
@@ -522,6 +547,7 @@
 %%INSTDIR%%/library/digital-audio.lib
 %%INSTDIR%%/library/display.dcm
 %%INSTDIR%%/library/display.lib
+%%INSTDIR%%/library/doc/microchip/PIC16F819.pdf
 %%INSTDIR%%/library/dsp.dcm
 %%INSTDIR%%/library/dsp.lib
 %%INSTDIR%%/library/elec-unifil.dcm
@@ -595,6 +621,7 @@
 %%INSTDIR%%/modules/docpackages/so24.pdf
 %%INSTDIR%%/modules/iut.mdc
 %%INSTDIR%%/modules/iut.mod
+%%INSTDIR%%/modules/libcms.bak
 %%INSTDIR%%/modules/libcms.brd
 %%INSTDIR%%/modules/libcms.mdc
 %%INSTDIR%%/modules/libcms.mod
@@ -706,6 +733,7 @@
 %%INSTDIR%%/modules/packages3d/dil/dil_8.wrl
 %%INSTDIR%%/modules/packages3d/dil/textool_40.wings
 %%INSTDIR%%/modules/packages3d/dil/textool_40.wrl
+%%INSTDIR%%/modules/packages3d/discret/#push_butt_shape1_blue.wings#
 %%INSTDIR%%/modules/packages3d/discret/adjustable_rx2.wings
 %%INSTDIR%%/modules/packages3d/discret/adjustable_rx2.wrl
 %%INSTDIR%%/modules/packages3d/discret/adjustable_rx2v4.wings
@@ -741,6 +769,13 @@
 %%INSTDIR%%/modules/packages3d/discret/led3_vertical.wings
 %%INSTDIR%%/modules/packages3d/discret/led5_vertical.wings
 %%INSTDIR%%/modules/packages3d/discret/led5_vertical.wrl
+%%INSTDIR%%/modules/packages3d/discret/push_butt_shape1.wings~
+%%INSTDIR%%/modules/packages3d/discret/push_butt_shape1_blue.wings
+%%INSTDIR%%/modules/packages3d/discret/push_butt_shape1_blue.wrl
+%%INSTDIR%%/modules/packages3d/discret/push_butt_shape1_green.wings
+%%INSTDIR%%/modules/packages3d/discret/push_butt_shape1_green.wrl
+%%INSTDIR%%/modules/packages3d/discret/push_butt_shape1_red.wings
+%%INSTDIR%%/modules/packages3d/discret/push_butt_shape1_red.wrl
 %%INSTDIR%%/modules/packages3d/discret/r_pack8.wings
 %%INSTDIR%%/modules/packages3d/discret/r_pack8.wrl
 %%INSTDIR%%/modules/packages3d/discret/r_pack9.wings
@@ -1124,11 +1159,19 @@
 @dirrm %%INSTDIR%%/internat/sl
 @dirrm %%INSTDIR%%/internat/pt
 @dirrm %%INSTDIR%%/internat/pl
+@dirrm %%INSTDIR%%/internat/ko
 @dirrm %%INSTDIR%%/internat/it
 @dirrm %%INSTDIR%%/internat/hu
 @dirrm %%INSTDIR%%/internat/fr
 @dirrm %%INSTDIR%%/internat/es
 @dirrm %%INSTDIR%%/internat
+@dirrm %%INSTDIR%%/help/ru/pcbnew
+@dirrm %%INSTDIR%%/help/ru/eeschema
+@dirrm %%INSTDIR%%/help/ru/docs_src/pcbnew
+@dirrm %%INSTDIR%%/help/ru/docs_src/kicad
+@dirrm %%INSTDIR%%/help/ru/docs_src/eeschema
+@dirrm %%INSTDIR%%/help/ru/docs_src
+@dirrm %%INSTDIR%%/help/ru
 @dirrm %%INSTDIR%%/help/pt/pcbnew
 @dirrm %%INSTDIR%%/help/pt/kicad
 @dirrm %%INSTDIR%%/help/pt/gerbview
