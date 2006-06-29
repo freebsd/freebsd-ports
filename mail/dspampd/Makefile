@@ -13,8 +13,11 @@ MASTER_SITES=	http://caspian.dotconf.net/menu/Software/DspamPD/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspampd/sources/
 DISTNAME=	dspampd-v2.00-rc2-with-patches-kurt-pinboard
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Transparent smtp proxy - scans mail through DSPAM and/or ClamAV
+
+DEPRECATED=	Buggy with recent perl versions, not developed anymore, use mail/dspam[-devel] in --daemon mode instead
+EXPIRATION_DATE=	2006-07-30
 
 WRKSRC=		${WRKDIR}/dspampd-v2.00-rc2
 
