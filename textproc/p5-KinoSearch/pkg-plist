@@ -9,6 +9,7 @@ bin/dump_index
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Analysis/PolyAnalyzer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Analysis/Stemmer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Analysis/Stopalizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Analysis/Token.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Analysis/TokenBatch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Analysis/Tokenizer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Docs/DevGuide.pod
@@ -16,7 +17,11 @@ bin/dump_index
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Docs/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Document/Doc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Document/Field.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Highlight/Encoder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Highlight/Formatter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Highlight/Highlighter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Highlight/SimpleHTMLEncoder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Highlight/SimpleHTMLFormatter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Index/CompoundFileReader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Index/CompoundFileWriter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Index/DelDocs.pm
@@ -46,8 +51,8 @@ bin/dump_index
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/BooleanClause.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/BooleanQuery.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/BooleanScorer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/Hit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/HitCollector.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/HitDoc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/HitQueue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/Hits.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch/Search/PhraseQuery.pm

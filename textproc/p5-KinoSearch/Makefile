@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	KinoSearch
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.rectangular.com/downloads/
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	A Perl search engine library
 
-BUILD_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWords \
+MODULE_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWords \
 		p5-Lingua-Stem-Snowball>=0.94:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball \
 		p5-Clone>=0.18:${PORTSDIR}/devel/p5-Clone \
 		p5-Compress-Zlib>=0.0:${PORTSDIR}/archivers/p5-Compress-Zlib
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${MODULE_DEPENDS}
+BUILD_DEPENDS+=	${MODULE_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -29,6 +30,7 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Analysis::PolyAnalyzer.3 \
 	KinoSearch::Analysis::Stemmer.3 \
 	KinoSearch::Analysis::Stopalizer.3 \
+	KinoSearch::Analysis::Token.3 \
 	KinoSearch::Analysis::TokenBatch.3 \
 	KinoSearch::Analysis::Tokenizer.3 \
 	KinoSearch::Docs::DevGuide.3 \
@@ -36,7 +38,11 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Docs::Tutorial.3 \
 	KinoSearch::Document::Doc.3 \
 	KinoSearch::Document::Field.3 \
+	KinoSearch::Highlight::Encoder.3 \
+	KinoSearch::Highlight::Formatter.3 \
 	KinoSearch::Highlight::Highlighter.3 \
+	KinoSearch::Highlight::SimpleHTMLEncoder.3 \
+	KinoSearch::Highlight::SimpleHTMLFormatter.3 \
 	KinoSearch::Index::CompoundFileReader.3 \
 	KinoSearch::Index::CompoundFileWriter.3 \
 	KinoSearch::Index::DelDocs.3 \
@@ -67,8 +73,8 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Search::BooleanClause.3 \
 	KinoSearch::Search::BooleanQuery.3 \
 	KinoSearch::Search::BooleanScorer.3 \
+	KinoSearch::Search::Hit.3 \
 	KinoSearch::Search::HitCollector.3 \
-	KinoSearch::Search::HitDoc.3 \
 	KinoSearch::Search::HitQueue.3 \
 	KinoSearch::Search::Hits.3 \
 	KinoSearch::Search::PhraseQuery.3 \
@@ -104,6 +110,7 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Util::ToStringUtils.3 \
 	KinoSearch::Util::ToolSet.3 \
 	KinoSearch::Util::VerifyArgs.3
+
 
 .include <bsd.port.pre.mk>
 
