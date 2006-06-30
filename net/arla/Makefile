@@ -10,7 +10,7 @@ PORTVERSION=	0.40
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
-MAINTAINER=	arc@tarc.po.cs.msu.su
+MAINTAINER=	tarc@tarc.po.cs.msu.su
 COMMENT=	A free AFS client implementation
 
 USE_XLIB=	yes
