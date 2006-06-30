@@ -1,6 +1,6 @@
---- man/Makefile.in.bak	Tue May 31 02:08:30 2005
-+++ man/Makefile.in	Sat Nov 12 01:53:11 2005
-@@ -329,12 +329,7 @@
+--- man/Makefile.in.orig	Mon Jun  5 20:33:45 2006
++++ man/Makefile.in	Sun Jun 11 05:09:22 2006
+@@ -332,12 +332,7 @@
  	@true
  
  install:
@@ -10,7 +10,7 @@
 -			${INSTALL_DATA} -D "${srcdir}/graveman.$$lang.man" "${DESTDIR}${mandir}/$$lang/${mansubdir}/graveman.1"; \
 -		done \
 -	fi
-+	${INSTALL_DATA} graveman.man ${DESTDIR}${mandir}/${mansubdir}/graveman.1 
++	${BSD_INSTALL_MAN} graveman.man ${DESTDIR}${mandir}/${mansubdir}/graveman.1 ; \
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
