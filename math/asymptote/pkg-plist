@@ -144,6 +144,7 @@ bin/xasy
 %%EXAMPLESDIR%%/near_earth.asy
 %%EXAMPLESDIR%%/orthocenter.asy
 %%EXAMPLESDIR%%/parametricgraph.asy
+%%EXAMPLESDIR%%/parametricsurface.asy
 %%EXAMPLESDIR%%/phase.asy
 %%EXAMPLESDIR%%/piicon.eps
 %%EXAMPLESDIR%%/planes.asy
