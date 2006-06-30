@@ -58,6 +58,8 @@ do-install:
 		${TAR} -xf - -C${PINSTDIR})
 
 post-install:
+	rmdir ${PREFIX}/share/xsl/docbook/extensions/build
+	rmdir ${PREFIX}/share/xsl/docbook/extensions/build2
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
