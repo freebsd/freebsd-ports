@@ -16,7 +16,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		event-1.1a.1:${PORTSDIR}/devel/libevent
+		event-1.2.1:${PORTSDIR}/devel/libevent
 
 USE_GMAKE=	yes
 

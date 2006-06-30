@@ -16,7 +16,7 @@ MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
-LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

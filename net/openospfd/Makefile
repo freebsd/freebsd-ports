@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
-LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2.1:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	zebra-0* quagga-0*
 

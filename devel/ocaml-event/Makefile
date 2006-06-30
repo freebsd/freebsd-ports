@@ -29,7 +29,7 @@ PORTDOCS=	*
 .endif
 
 # libevent library
-LIB_EVENT=	event-1.1a.1
+LIB_EVENT=	event-1.2.1
 
 EXAMPLE_FILES=	\
 		Makefile \
