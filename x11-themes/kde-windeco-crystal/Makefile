@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crystal
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 PKGNAMEPREFIX=	kde-windeco-
@@ -20,5 +20,8 @@ USE_GMAKE=	yes
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
