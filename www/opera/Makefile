@@ -67,7 +67,7 @@ OPERA_TYPE=	3
 OPERA_TYPE=	1
 .endif
 
-.if defined(WITH_ASPELL)
+.if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
 
