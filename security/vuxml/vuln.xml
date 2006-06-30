@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1f935f61-075d-11db-822b-728b50d539a3">
+    <topic>Joomla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla</name>
+	<range><lt>1.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joomla Site reports:</p>
+	<blockquote cite="http://www.joomla.org/content/view/1510/74/">
+	  <ul>
+	    <li>Secured "Remember Me" functionality against SQL injection
+	      attacks</li>
+	    <li>Secured "Related Items" module against SQL injection
+	      attacks</li>
+	    <li>Secured "Weblinks" submission against SQL injection
+	      attacks</li>
+	    <li>Secured SEF from XSS vulnerability</li>
+	    <li>Hardened frontend submission forms against spoofing</li>
+	    <li>Secured mosmsg from misuse</li>
+	    <li>Hardened mosgetparam by setting variable type to integer if
+	      default value is detected as numeric</li>
+	    <li>Secured com_messages from XSS vulnerability</li>
+	    <li>Secured getUserStateFromRequest() from XSS vulnerability</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/20746/</url>
+      <url>http://www.joomla.org/content/view/1510/74/</url>
+    </references>
+    <dates>
+      <discovery>2006-06-26</discovery>
+      <entry>2006-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2be7c122-0614-11db-9156-000e0c2e438a">
     <topic>hashcash -- heap overflow vulnerability</topic>
     <affects>
