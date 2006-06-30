@@ -29,6 +29,11 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 CONFIGURE_ARGS+=	--enable-ssl
+
+OPTIONS=	IPV6 "Enable IPv6 support" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
@@ -51,4 +56,4 @@ post-configure:
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
