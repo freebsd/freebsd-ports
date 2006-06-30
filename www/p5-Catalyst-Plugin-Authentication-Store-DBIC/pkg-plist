@@ -1,6 +1,8 @@
+%%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC/User/CDBI.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC/User.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC/Backend.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC/User
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/DBIC
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication

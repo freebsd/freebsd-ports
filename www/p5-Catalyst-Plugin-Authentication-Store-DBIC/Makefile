@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Authentication-Store-DBIC
-PORTVERSION=	0.06000
+PORTVERSION=	0.07000
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Catalyst>=5.49:${PORTSDIR}/www/p5-Catalyst \
 		p5-Catalyst-Plugin-Authentication>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
 		p5-Catalyst-Plugin-Authorization-Roles>=0.03:${PORTSDIR}/www/p5-Catalyst-Plugin-Authorization-Roles \
 		p5-Set-Object>=1.14:${PORTSDIR}/devel/p5-Set-Object \
-		p5-Catalyst-Plugin-Session>=0.02:${PORTSDIR}/www/p5-Catalyst-Plugin-Session
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
