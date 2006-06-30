@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	denyhosts
-DISTVERSION=	2.4b
+PORTVERSION=	2.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	DenyHosts-${DISTVERSION}
+DISTNAME=	DenyHosts-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Script to thwart ssh attacks
@@ -20,7 +20,7 @@ USE_PYDISTUTILS=	yes
 
 USE_RC_SUBR=	denyhosts
 
-DOC_FILES=	CHANGELOG.txt LICENSE.txt README.txt
+PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
@@ -29,11 +29,14 @@ pre-configure:
 		${WRKSRC}/setup.py
 
 post-install:
-.ifndef(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc
+	[ -f ${PREFIX}/etc/denyhosts.cfg ] || \
+		${INSTALL_DATA} ${WRKSRC}/denyhosts.cfg-dist ${PREFIX}/etc/denyhosts.cfg
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+. for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+. endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 

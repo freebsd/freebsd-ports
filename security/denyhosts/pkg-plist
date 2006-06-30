@@ -1,7 +1,10 @@
 bin/denyhosts.py
+@unexec if cmp -s %D/etc/denyhosts.cfg %D/etc/denyhosts.cfg-dist; then rm -f %D/etc/denyhosts.cfg; fi
+etc/denyhosts.cfg-dist
+@exec [ -f %B/denyhosts.cfg ] || cp -f %B/%f %B/denyhosts.cfg
+%%DATADIR%%/daemon-control-dist
 %%DATADIR%%/denyhosts.cfg-dist
 %%DATADIR%%/setup.py
-%%DATADIR%%/daemon-control-dist
 %%DATADIR%%/scripts/restricted_from_invalid.py
 %%DATADIR%%/scripts/restricted_from_passwd.py
 %%DATADIR%%/plugins/README.contrib
@@ -71,10 +74,6 @@ bin/denyhosts.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/restricted.py
 %%PYTHON_SITELIBDIR%%/DenyHosts/restricted.pyc
 %%PYTHON_SITELIBDIR%%/DenyHosts/restricted.pyo
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/DenyHosts
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/plugins
