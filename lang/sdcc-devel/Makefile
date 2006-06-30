@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.5.4.2005.11.15
+PORTVERSION=	2.5.6.2006.06.29
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://www.kalimero.be/mirror/
-DISTNAME=	${PORTNAME}-src-20051115
+DISTNAME=	${PORTNAME}-src-20060629-4251
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -29,10 +29,19 @@ OPTIONS=	MCS51   "Intel mcs51 port" on \
 		PIC16   "PIC16 port" on \
 		XA51    "XA51 port" on \
 		HC08    "HC08 port" on \
+		DEVLIB  "Device libraries" on \
 		UCSIM   "The ucSim simulator" on \
 		PACKIHX "A tool to pack (compress) Intel hex files" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
+CONFIGURE_ARGS+=	--disable-51
+PLIST_SUB+=		MCS51DS390="@comment "
+.else
+USE_AUTOTOOLS+=		autoconf:259
+PLIST_SUB+=		MCS51DS390=""
+.endif
 
 .if defined(WITHOUT_MCS51)
 CONFIGURE_ARGS+=	--disable-mcs51-port
@@ -42,14 +51,17 @@ PLIST_SUB+=		MCS51=""
 .endif
 
 .if defined(WITHOUT_Z80)
-CONFIGURE_ARGS+=	--disable-gbz80-port --disable-z80-port
+CONFIGURE_ARGS+=	--disable-gbz80-port --disable-z80-port --disable-z80
 PLIST_SUB+=		Z80="@comment "
 .else
 PLIST_SUB+=		Z80=""
 .endif
 
 .if defined(WITHOUT_AVR)
-CONFIGURE_ARGS+=	--disable-avr-port
+CONFIGURE_ARGS+=	--disable-avr-port --disable-avr
+PLIST_SUB+=		AVR="@comment "
+.else
+PLIST_SUB+=		AVR=""
 .endif
 
 .if defined(WITHOUT_DS390)
@@ -63,6 +75,7 @@ PLIST_SUB+=		DS390=""
 CONFIGURE_ARGS+=	--disable-pic-port
 PLIST_SUB+=		PIC="@comment "
 .else
+BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
 PLIST_SUB+=		PIC=""
 .endif
 
@@ -79,18 +92,25 @@ CONFIGURE_ARGS+=	--disable-xa51-port
 .endif
 
 .if defined(WITHOUT_HC08)
-CONFIGURE_ARGS+=	--disable-hc08-port
+CONFIGURE_ARGS+=	--disable-hc08-port --disable-hc08
 PLIST_SUB+=		HC08="@comment "
 .else
 PLIST_SUB+=		HC08=""
+.endif
+
+.if defined(WITHOUT_DEVLIB)
+CONFIGURE_ARGS+=	--disable-device-lib
+PLIST_SUB+=		DEVLIB="@comment "
+.else
+PLIST_SUB+=		DEVLIB=""
 .endif
 
 .if defined(WITHOUT_UCSIM)
 CONFIGURE_ARGS+=	--disable-ucsim
 PLIST_SUB+=		UCSIM="@comment "
 .else
-USE_AUTOTOOLS=		libtool:15
-LIBTOOLFILES=		sim/ucsim/aclocal.m4
+USE_AUTOTOOLS+=		libtool:15
+LIBTOOLFILES=		sim/ucsim/configure
 PLIST_SUB+=		UCSIM=""
 .endif
 
