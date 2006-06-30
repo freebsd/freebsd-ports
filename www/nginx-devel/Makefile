@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.3.51
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -85,7 +86,9 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/nginx ${NGINX_TMPDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/conf/koi-win ${PREFIX}/etc/nginx
+.for i in koi-win koi-utf win-utf fastcgi_params
+	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx
+.endfor
 .for i in mime.types nginx.conf
 	[ -f ${PREFIX}/etc/nginx/${i} ] || \
 		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/etc/nginx
@@ -93,7 +96,9 @@ do-install:
 .endfor
 .if !defined(WITHOUT_WWW)
 	${MKDIR} ${PREFIX}/www/nginx-dist
-	${INSTALL_DATA} ${WRKSRC}/html/index.html ${PREFIX}/www/nginx-dist
+.for i in index.html 50x.html
+	${INSTALL_DATA} ${WRKSRC}/html/${i} ${PREFIX}/www/nginx-dist
+.endfor
 	${ECHO_CMD} "" >>${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	[ -e ${PREFIX}/www/nginx ] || \
 		${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
