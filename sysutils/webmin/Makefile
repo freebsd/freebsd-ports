@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.280
-PORTREVISION=	2
+PORTVERSION=	1.290
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -28,9 +27,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=    webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
-WEBMIN_MODULES=	mailboxes-1.280-1.wbm.gz \
-		status-1.280-1.wbm.gz \
-		time-1.280-1.wbm.gz
+WEBMIN_MODULES=
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
