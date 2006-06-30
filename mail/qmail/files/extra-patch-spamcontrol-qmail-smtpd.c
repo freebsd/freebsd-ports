@@ -1,5 +1,5 @@
---- qmail-smtpd.c.orig	Sun Jun  4 18:50:11 2006
-+++ qmail-smtpd.c	Sun Jun  4 18:54:15 2006
+--- qmail-smtpd.c.orig	Fri Jun 30 15:41:00 2006
++++ qmail-smtpd.c	Fri Jun 30 15:44:49 2006
 @@ -129,6 +129,18 @@
    logs(s1,s2,s3,s4,s5,s6,s7);
    return;
@@ -38,7 +38,7 @@
  #ifdef RELAYMAILFROM
    if (!relayclient) {
      relaymailfromok = control_readfile(&relaymailfrom,"control/relaymailfrom",0);
-@@ -910,6 +927,10 @@
+@@ -876,6 +893,10 @@
        flagerrcpts++;
        return; 
      } 
@@ -46,6 +46,6 @@
 +      err_rbl("Reject::RBL::RBL_Listed:",protocol.s,remoteip,remotehost,helohost.s,mailfrom.s,addr.s);
 +      return;
 +    }
-     if (tarpitcount && flagerrcpts >= tarpitcount) { 
+     if (tarpitcount && flagerrcpts >= tarpitcount) { 	/* Tarpitting et al. */
        err_rcpts("Reject::RCPT::Toomany_Rcptto:",protocol.s,remoteip,remotehost,helohost.s,mailfrom.s,addr.s); 
        return; 
