@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3.1
 PORTEPOCH=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
@@ -17,7 +17,8 @@ DISTNAME=	pkgtools-${DISTVERSION}
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
-OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend. (Use BDB 1.85 if off)" off
+OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
+		BDB1 "Use Berkeley DB 1.85 as backend" off
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
@@ -55,10 +56,30 @@ INSTALL_TARGET+=	install-doc
 .include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(WITH_BDB4)
-# For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
+# For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-.else
+.endif
+.if defined(WITH_BDB1) && !defined(WITH_BDB4)
+# For PKG_DBDRIVER={bdb1_btree,bdb1_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
+.endif
+
+pre-extract:
+.if !defined(WITH_BDB4) && !defined(WITH_BDB1)
+	@${ECHO_MSG} "================================================================="
+	@${ECHO_MSG} "Neither WITH_DBD4 nor WITH_BDB1 are defined. Will use DBD driver."
+	@${ECHO_MSG} "================================================================="
+.endif
+.if defined(WITH_BDB4) && defined(WITH_BDB1)
+	@${ECHO_MSG} "================================================================="
+	@${ECHO_MSG} "Both WITH_DBD4 and WITH_BDB1 are defined. Will use BDB4 driver."
+	@${ECHO_MSG} "================================================================="
+.elif defined(WITH_BDB1) && exists(${RUBY_SITEARCHLIBDIR}/bdb.so)
+	@${ECHO_MSG} "================================================================="
+	@${ECHO_MSG} "WITH_BDB1 is defined but ruby-bdb port installed."
+	@${ECHO_MSG} "Remove ruby-bdb or redefine options."
+	@${ECHO_MSG} "================================================================="
+	@exit 1
 .endif
 
 post-install: install-ldconfig-file
