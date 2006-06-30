@@ -1,32 +1,32 @@
---- device/lib/pic/Makefile.common.in.orig	Tue Nov 15 18:34:37 2005
-+++ device/lib/pic/Makefile.common.in	Tue Nov 15 18:35:07 2005
+--- device/lib/pic/Makefile.common.in.orig	Mon May  1 22:47:12 2006
++++ device/lib/pic/Makefile.common.in	Wed Jun 28 17:27:29 2006
 @@ -12,7 +12,6 @@
- ### $Id: Makefile.common.in,v 1.1 2005/09/23 21:59:29 tecodev Exp $
+ ### $Id: Makefile.common.in 4148 2006-05-01 20:47:12Z tecodev $
  ###
  
 -SHELL = bash
  
  #################################################
  ### verboseness
-@@ -23,10 +22,10 @@
- 
+@@ -24,10 +23,10 @@
  #################################################
  ### compiler switches
--ARCH   ?= 877		# might be overwritten in libio
-+PICARCH   ?= 877		# might be overwritten in libio
+ # ARCH might be overwritten in libio
+-ARCH   ?= 877
++PICARCH   ?= 877
  
  CFLAGS ?=
 -CFLAGS += -mpic14 -p16f$(ARCH)
 +CFLAGS += -mpic14 -p16f$(PICARCH)
  CFLAGS += --std-c99
- CFLAGS += -I. -I$(topsrcdir)/../../include/pic
+ CFLAGS += -I. -I$(top_srcdir)/../../include/pic
  
-@@ -53,7 +52,7 @@
+@@ -54,7 +53,7 @@
  #################################################
  ### assembler switches
  ASFLAGS ?=
 -ASFLAGS += -pp16f$(ARCH)
 +ASFLAGS += -pp16f$(PICARCH)
- ASFLAGS += -I$(topsrcdir)/../../include/pic
+ ASFLAGS += -I$(top_srcdir)/../../include/pic
+ ASFLAGS += -I. -I$(srcdir)
  
- #################################################
