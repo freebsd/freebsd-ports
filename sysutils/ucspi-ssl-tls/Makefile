@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-tls
 
@@ -16,7 +16,7 @@ CONFLICTS=	ucspi-ssl-[0-9]*
 
 PATCH_SITES+=		${MASTER_SITE_LOCAL:S/$/:tls/}
 PATCH_SITE_SUBDIR+=	garga/ucspi-ssl/:tls
-PATCHFILES+=		ucspi-ssl-0.70_ucspitls-0.3.patch:tls
+PATCHFILES+=		ucspi-ssl-0.70_ucspitls-0.4.patch:tls
 PATCH_WRKSRC=		${WRKSRC}/src
 
 MASTERDIR=	${.CURDIR}/../ucspi-ssl
