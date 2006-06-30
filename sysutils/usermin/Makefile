@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.210
+PORTVERSION=	1.220
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
