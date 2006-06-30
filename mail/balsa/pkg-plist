@@ -104,6 +104,7 @@ share/locale/he/LC_MESSAGES/balsa.mo
 share/locale/hi/LC_MESSAGES/balsa.mo
 share/locale/hr/LC_MESSAGES/balsa.mo
 share/locale/hu/LC_MESSAGES/balsa.mo
+share/locale/id/LC_MESSAGES/balsa.mo
 share/locale/it/LC_MESSAGES/balsa.mo
 share/locale/ja/LC_MESSAGES/balsa.mo
 share/locale/ko/LC_MESSAGES/balsa.mo
@@ -115,7 +116,6 @@ share/locale/nb/LC_MESSAGES/balsa.mo
 share/locale/ne/LC_MESSAGES/balsa.mo
 share/locale/nl/LC_MESSAGES/balsa.mo
 share/locale/nn/LC_MESSAGES/balsa.mo
-share/locale/no/LC_MESSAGES/balsa.mo
 share/locale/pa/LC_MESSAGES/balsa.mo
 share/locale/pl/LC_MESSAGES/balsa.mo
 share/locale/pt/LC_MESSAGES/balsa.mo
