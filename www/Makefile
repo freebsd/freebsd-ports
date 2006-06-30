@@ -566,6 +566,7 @@
     SUBDIR += p5-Catalyst-View-TT
     SUBDIR += p5-Catalyst-View-TT-ControllerLocal
     SUBDIR += p5-Class-DBI-FromForm
+    SUBDIR += p5-ClearSilver
     SUBDIR += p5-Compress-LeadingBlankSpaces
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
     SUBDIR += p5-FAQ-OMatic
