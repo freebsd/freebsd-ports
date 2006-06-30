@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	graveman
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.12.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://graveman.tuxfamily.org/sources/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-4
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}
 
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Another GTK2 frontend for cdrecord, mkisofs, readcd and sox
@@ -19,6 +19,7 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2 intlhack gnomehack gnomeprefix
