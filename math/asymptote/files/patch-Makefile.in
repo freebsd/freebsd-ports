@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- Makefile.in	Mon Jun 19 05:36:26 2006
-+++ Makefile.in.port	Tue Jun 20 16:54:08 2006
+--- Makefile.in	Wed Jun 28 08:04:21 2006
++++ Makefile.in.port	Fri Jun 30 06:59:03 2006
 @@ -20,8 +20,8 @@
  CLEAN = camp.output
  NAME = asy
@@ -16,7 +14,7 @@ $FreeBSD$
 @@ -42,7 +42,7 @@
  datadir = $(DESTDIR)@datadir@
  asydir = $(datadir)/asymptote
- docdir = $(DESTDIR)@Docdir@
+ docdir = $(DESTDIR)@docdir@
 -exampledir = $(docdir)/examples
 +exampledir = $(datadir)/examples/asymptote
  animationsdir = $(exampledir)/animations
@@ -36,7 +34,7 @@ $FreeBSD$
  	-${INSTALL} -d $(latexdir)
  	${INSTALL} -p -m 755 $(NAME) $(EXTRABIN) $(bindir)
 -	${INSTALL} -p -m 644 base/*.asy base/{$(EXTRA)} $(asydir)
-+	${INSTALL} -p -m 644 base/*.asy ${EXTRA} $(asydir)
++	${INSTALL} -p -m 644 base/*.asy $(EXTRA) $(asydir)
  	${INSTALL} -p -m 644 examples/*.asy examples/piicon.eps \
  		doc/*.asy doc/*.csv doc/*.dat doc/latexusage.tex $(exampledir)
  	${INSTALL} -p -m 644 examples/animations/*.asy $(animationsdir)
