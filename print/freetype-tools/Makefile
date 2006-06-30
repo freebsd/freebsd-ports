@@ -7,7 +7,7 @@
 
 PORTNAME=	freetype-tools
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -21,6 +21,7 @@ DISTNAME=	freetype-${PORTVERSION}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Tools for FreeType 1
 
+LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
