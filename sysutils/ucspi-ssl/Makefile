@@ -8,7 +8,10 @@
 PORTNAME=	ucspi-ssl
 PORTVERSION?=	0.70
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.superscript.com/ucspi-ssl/
+MASTER_SITES=	http://www.superscript.com/ucspi-ssl/ \
+		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER?=	lx@redundancy.redundancy.org
 COMMENT?=	UCSPI tools for building SSL client-server applications
@@ -47,7 +50,7 @@ do-configure:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		"requires Perl 5.6.0 or greater. Please install lang/perl5 and retry"
+IGNORE=		requires Perl 5.6.0 or greater. Please install lang/perl5 and retry
 .endif
 
 do-build:
