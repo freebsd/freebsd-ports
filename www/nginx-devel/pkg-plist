@@ -1,5 +1,8 @@
 @comment $FreeBSD$
+etc/nginx/fastcgi_params
+etc/nginx/koi-utf
 etc/nginx/koi-win
+etc/nginx/win-utf
 @unexec if cmp -s %D/etc/nginx/mime.types %D/etc/nginx/mime.types-dist; then rm -f %D/etc/nginx/mime.types; fi
 etc/nginx/mime.types-dist
 @exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
@@ -12,6 +15,7 @@ etc/nginx/nginx.conf-dist
 %%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 %%WWWDATA%%@exec [ -d %D/www/nginx/ ] || ln -fs %B %D/www/nginx
 %%WWWDATA%%www/nginx-dist/index.html
+%%WWWDATA%%www/nginx-dist/50x.html
 %%WWWDATA%%@exec chmod a-w www/nginx-dist
 %%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
 %%WWWDATA%%@dirrm www/nginx-dist
