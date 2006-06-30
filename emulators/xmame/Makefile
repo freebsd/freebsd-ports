@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.104
+PORTVERSION?=	0.106
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.franksworld.org/dist/xmame/:xmame \
 		http://x.mame.net/download/:xmame \
@@ -259,7 +259,7 @@ do-configure:
 
 # png.h conflicts with libpng.
 .for f in mess/artworkx.c mess/artworkx.h src/artwork.c \
-	src/common.c src/png.c src/unix/video-drivers/glexport.c
+	src/romload.c src/video.c src/png.c src/unix/video-drivers/glexport.c
 
 	${REINPLACE_CMD} -e "s@\"png.h\"@\"mame_png.h\"@g" ${WRKSRC}/${f}
 
