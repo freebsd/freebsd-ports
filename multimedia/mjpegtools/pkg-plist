@@ -1,5 +1,5 @@
 bin/anytovcd.sh
-%%GTK%%bin/glav
+%%GTK2:%%bin/glav
 bin/jpeg2yuv
 bin/lav2avi.sh
 bin/lav2mpeg
@@ -8,7 +8,7 @@ bin/lav2yuv
 bin/lavaddwav
 bin/lavinfo
 bin/lavpipe
-bin/lavplay
+%%SDL:%%bin/lavplay
 bin/lavtrans
 bin/matteblend.flt
 bin/mjpeg_simd_helper
@@ -18,7 +18,7 @@ bin/mpegtranscode
 bin/mplex
 bin/multiblend.flt
 bin/pgmtoy4m
-bin/png2yuv
+%%PNG:%%bin/png2yuv
 bin/pnmtoy4m
 bin/ppmtoy4m
 bin/transist.flt
@@ -45,7 +45,7 @@ bin/yuvfps
 bin/yuvinactive
 bin/yuvkineco
 bin/yuvmedianfilter
-bin/yuvplay
+%%SDL:%%bin/yuvplay
 bin/yuvscaler
 bin/yuvycsnoise
 bin/yuyvtoy4m
@@ -106,11 +106,11 @@ lib/liblavjpeg-1.8.so.0
 lib/liblavjpeg.a
 lib/liblavjpeg.la
 lib/liblavjpeg.so
-lib/liblavplay-1.8.so
-lib/liblavplay-1.8.so.0
-lib/liblavplay.a
-lib/liblavplay.la
-lib/liblavplay.so
+%%SDL:%%lib/liblavplay-1.8.so
+%%SDL:%%lib/liblavplay-1.8.so.0
+%%SDL:%%lib/liblavplay.a
+%%SDL:%%lib/liblavplay.la
+%%SDL:%%lib/liblavplay.so
 lib/libmjpegutils-1.8.so
 lib/libmjpegutils-1.8.so.0
 lib/libmjpegutils.a
@@ -127,6 +127,23 @@ lib/libmplex2.a
 lib/libmplex2.la
 lib/libmplex2.so
 libdata/pkgconfig/mjpegtools.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/HINTS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PLANS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.AltiVec
+%%PORTDOCS%%%%DOCSDIR%%/README.DV
+%%PORTDOCS%%%%DOCSDIR%%/README.avilib
+%%PORTDOCS%%%%DOCSDIR%%/README.glav
+%%PORTDOCS%%%%DOCSDIR%%/README.lavpipe
+%%PORTDOCS%%%%DOCSDIR%%/README.transist
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/mjpegtools/mplex
 @dirrm include/mjpegtools/mpeg2enc
 @dirrm include/mjpegtools
