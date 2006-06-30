@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pangopdf
 
-MAINTAINER=	chero7@telus.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements Pango library with a PDF backend for PDF output
 
 USE_X_PREFIX=	yes
