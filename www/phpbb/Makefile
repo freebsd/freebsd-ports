@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.20
-PORTREVISION=	1
+PORTVERSION=	2.0.21
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,7 @@ USE_BZIP2=	yes
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
 #
-WWWDOCROOT?=	www/data
+WWWDOCROOT?=	www
 PHPBBURL?=	phpBB2
 WWWOWN?=	www
 WWWGRP?=	www

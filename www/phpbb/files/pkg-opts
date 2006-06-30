@@ -1,5 +1,5 @@
 
-* WWWDOCROOT [www/data]
+* WWWDOCROOT [www]
   The DocumentRoot of your webserver under ${PREFIX}
 
 * PHPBBURL [phpBB2]
