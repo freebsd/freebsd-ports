@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sullrich@gmail.com
 COMMENT=	Much enhanced ftp proxy for pf that supports most ftp protocols
 
-LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2:${PORTSDIR}/devel/libevent
 
 MAN8=		pftpx.8
 

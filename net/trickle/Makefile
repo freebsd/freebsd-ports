@@ -14,7 +14,7 @@ MASTER_SITES=	http://monkey.org/~marius/trickle/
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
 
-LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2.1:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

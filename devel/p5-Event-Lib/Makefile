@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Makes libevent(3) accessible with Perl
 
-LIB_DEPENDS=	event-1.1a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2:${PORTSDIR}/devel/libevent
 
 PERL_CONFIGURE=	yes
 

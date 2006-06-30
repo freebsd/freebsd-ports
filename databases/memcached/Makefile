@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
-LIB_DEPENDS=	event-1.1a.1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.2.1:${PORTSDIR}/devel/libevent
 
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
