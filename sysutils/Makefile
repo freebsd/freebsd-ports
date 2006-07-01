@@ -456,6 +456,7 @@
     SUBDIR += portsman
     SUBDIR += portsnap
     SUBDIR += portupgrade
+    SUBDIR += portupgrade-devel
     SUBDIR += powerman
     SUBDIR += prips
     SUBDIR += procmap
