@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-FTP-Common
-PORTVERSION=	4.0
+PORTVERSION=	5.31
 CATEGORIES=	ftp perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TB/TBONE
@@ -22,7 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::FTP::Common.3
 
-post-patch:
-	${RM} ${WRKSRC}/lib/Net/FTP/Common.pm.orig
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500600 # inherited from security/p5-Authen-SASL
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
