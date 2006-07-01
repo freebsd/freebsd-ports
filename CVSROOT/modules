@@ -10919,6 +10919,7 @@ portsman	ports/sysutils/portsman
 portsnap	ports/sysutils/portsnap
 porttools	ports/devel/porttools
 portupgrade	ports/sysutils/portupgrade
+portupgrade-devel	ports/sysutils/portupgrade-devel
 posadis		ports/dns/posadis
 pose		ports/palm/pose
 poseidon	ports/java/poseidon
