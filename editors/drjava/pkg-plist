@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/drjava
+%%JAVASHAREDIR%%/drjava/drjava-stable-20060127-2145.jar
+@dirrm %%JAVASHAREDIR%%/drjava
