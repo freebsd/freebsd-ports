@@ -12084,6 +12084,7 @@ ruby-formvalidator	ports/textproc/ruby-formvalidator
 ruby-fox	ports/x11-toolkits/ruby-fox
 ruby-fox-devel	ports/x11-toolkits/ruby-fox-devel
 ruby-freedb	ports/audio/ruby-freedb
+ruby-game	ports/devel/ruby-game
 ruby-gconf2	ports/devel/ruby-gconf2
 ruby-gd		ports/graphics/ruby-gd
 ruby-gdbm	ports/databases/ruby-gdbm
