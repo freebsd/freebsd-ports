@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	tcllib
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of utility modules for Tcl
 
-BUILD_DEPENDS=	tclsh:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
+BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 
 TCL_VER?=	8.4
 USE_BZIP2=	yes
