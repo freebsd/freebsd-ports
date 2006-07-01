@@ -1335,6 +1335,7 @@
     SUBDIR += p5-Tie-Restore
     SUBDIR += p5-Tie-ShareLite
     SUBDIR += p5-Tie-iCal
+    SUBDIR += p5-Time-Clock
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-HiRes
     SUBDIR += p5-Time-Local
