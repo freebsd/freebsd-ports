@@ -19,6 +19,7 @@ INFO=		cgdb
 MAN1=		cgdb.1
 
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=	yes
 
 .include <bsd.port.pre.mk>
 
