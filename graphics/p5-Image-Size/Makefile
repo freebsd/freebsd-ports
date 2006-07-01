@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Size
-PORTVERSION=	2.992
+PORTVERSION=	3.0
 CATEGORIES=	graphics www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
@@ -15,9 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tolid@plab.ku.dk
 COMMENT=	Perl5 module to determine the size of images in several common formats
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	YES
 
 MAN1=		imgsize.1
 MAN3=		Image::Size.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
