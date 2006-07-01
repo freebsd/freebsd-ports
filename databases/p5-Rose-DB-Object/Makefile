@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	Rose-DB-Object
-PORTVERSION=	0.731
+PORTVERSION=	0.740
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Rose
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Extensible, high performance RDBMS-OO mapper
 
-BUILD_DEPENDS=	${SITE_PERL}/Rose/DB.pm:${PORTSDIR}/databases/p5-Rose-DB \
+BUILD_DEPENDS=	p5-Rose-DB>=0.72,1:${PORTSDIR}/databases/p5-Rose-DB \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -77,6 +78,7 @@ MAN3=	Rose::DB::Object.3 \
 	Rose::DB::Object::Metadata::Column::Serial.3 \
 	Rose::DB::Object::Metadata::Column::Set.3 \
 	Rose::DB::Object::Metadata::Column::Text.3 \
+	Rose::DB::Object::Metadata::Column::Time.3 \
 	Rose::DB::Object::Metadata::Column::Timestamp.3 \
 	Rose::DB::Object::Metadata::Column::Varchar.3 \
 	Rose::DB::Object::Metadata::ForeignKey.3 \
