@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Rose/DateTime/Util.pm:${PORTSDIR}/devel/p5-Rose-Date
 		${SITE_PERL}/${PERL_ARCH}/Bit/Vector/Overload.pm:${PORTSDIR}/math/p5-Bit-Vector \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/DateTime/Format/MySQL.pm:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
-		${SITE_PERL}/DateTime/Format/Pg.pm:${PORTSDIR}/devel/p5-DateTime-Format-Pg
+		${SITE_PERL}/DateTime/Format/Pg.pm:${PORTSDIR}/devel/p5-DateTime-Format-Pg \
+    		${SITE_PERL}/Time/Clock.pm:${PORTSDIR}/devel/p5-Time-Clock
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
