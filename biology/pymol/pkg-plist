@@ -1,4 +1,133 @@
 bin/pymol
+share/pymol/data/chempy/fragments/ace.pkl
+share/pymol/data/chempy/fragments/acetylene.pkl
+share/pymol/data/chempy/fragments/ala.pkl
+share/pymol/data/chempy/fragments/arg.pkl
+share/pymol/data/chempy/fragments/asn.pkl
+share/pymol/data/chempy/fragments/asp.pkl
+share/pymol/data/chempy/fragments/benzene.pkl
+share/pymol/data/chempy/fragments/butane.pkl
+share/pymol/data/chempy/fragments/ct_ala.pkl
+share/pymol/data/chempy/fragments/ct_arg.pkl
+share/pymol/data/chempy/fragments/ct_asn.pkl
+share/pymol/data/chempy/fragments/ct_asp.pkl
+share/pymol/data/chempy/fragments/ct_cys.pkl
+share/pymol/data/chempy/fragments/ct_gln.pkl
+share/pymol/data/chempy/fragments/ct_glu.pkl
+share/pymol/data/chempy/fragments/ct_gly.pkl
+share/pymol/data/chempy/fragments/ct_hid.pkl
+share/pymol/data/chempy/fragments/ct_hie.pkl
+share/pymol/data/chempy/fragments/ct_hip.pkl
+share/pymol/data/chempy/fragments/ct_his.pkl
+share/pymol/data/chempy/fragments/ct_ile.pkl
+share/pymol/data/chempy/fragments/ct_leu.pkl
+share/pymol/data/chempy/fragments/ct_lys.pkl
+share/pymol/data/chempy/fragments/ct_met.pkl
+share/pymol/data/chempy/fragments/ct_phe.pkl
+share/pymol/data/chempy/fragments/ct_pro.pkl
+share/pymol/data/chempy/fragments/ct_ser.pkl
+share/pymol/data/chempy/fragments/ct_thr.pkl
+share/pymol/data/chempy/fragments/ct_trp.pkl
+share/pymol/data/chempy/fragments/ct_tyr.pkl
+share/pymol/data/chempy/fragments/ct_val.pkl
+share/pymol/data/chempy/fragments/cyclobutane.pkl
+share/pymol/data/chempy/fragments/cycloheptane.pkl
+share/pymol/data/chempy/fragments/cyclohexane.pkl
+share/pymol/data/chempy/fragments/cyclopentadiene.pkl
+share/pymol/data/chempy/fragments/cyclopentane.pkl
+share/pymol/data/chempy/fragments/cys.pkl
+share/pymol/data/chempy/fragments/ethylene.pkl
+share/pymol/data/chempy/fragments/formaldehyde.pkl
+share/pymol/data/chempy/fragments/formamide.pkl
+share/pymol/data/chempy/fragments/gln.pkl
+share/pymol/data/chempy/fragments/glu.pkl
+share/pymol/data/chempy/fragments/gly.pkl
+share/pymol/data/chempy/fragments/hid.pkl
+share/pymol/data/chempy/fragments/hie.pkl
+share/pymol/data/chempy/fragments/hip.pkl
+share/pymol/data/chempy/fragments/his.pkl
+share/pymol/data/chempy/fragments/ile.pkl
+share/pymol/data/chempy/fragments/leu.pkl
+share/pymol/data/chempy/fragments/lys.pkl
+share/pymol/data/chempy/fragments/met.pkl
+share/pymol/data/chempy/fragments/methane.pkl
+share/pymol/data/chempy/fragments/nme.pkl
+share/pymol/data/chempy/fragments/nt_ala.pkl
+share/pymol/data/chempy/fragments/nt_arg.pkl
+share/pymol/data/chempy/fragments/nt_asn.pkl
+share/pymol/data/chempy/fragments/nt_asp.pkl
+share/pymol/data/chempy/fragments/nt_cys.pkl
+share/pymol/data/chempy/fragments/nt_gln.pkl
+share/pymol/data/chempy/fragments/nt_glu.pkl
+share/pymol/data/chempy/fragments/nt_gly.pkl
+share/pymol/data/chempy/fragments/nt_hid.pkl
+share/pymol/data/chempy/fragments/nt_hie.pkl
+share/pymol/data/chempy/fragments/nt_hip.pkl
+share/pymol/data/chempy/fragments/nt_his.pkl
+share/pymol/data/chempy/fragments/nt_ile.pkl
+share/pymol/data/chempy/fragments/nt_leu.pkl
+share/pymol/data/chempy/fragments/nt_lys.pkl
+share/pymol/data/chempy/fragments/nt_met.pkl
+share/pymol/data/chempy/fragments/nt_phe.pkl
+share/pymol/data/chempy/fragments/nt_pro.pkl
+share/pymol/data/chempy/fragments/nt_ser.pkl
+share/pymol/data/chempy/fragments/nt_thr.pkl
+share/pymol/data/chempy/fragments/nt_trp.pkl
+share/pymol/data/chempy/fragments/nt_tyr.pkl
+share/pymol/data/chempy/fragments/nt_val.pkl
+share/pymol/data/chempy/fragments/peptide.pkl
+share/pymol/data/chempy/fragments/phe.pkl
+share/pymol/data/chempy/fragments/pro.pkl
+share/pymol/data/chempy/fragments/realtime.pkl
+share/pymol/data/chempy/fragments/ser.pkl
+share/pymol/data/chempy/fragments/sulfone.pkl
+share/pymol/data/chempy/fragments/thr.pkl
+share/pymol/data/chempy/fragments/trp.pkl
+share/pymol/data/chempy/fragments/tyr.pkl
+share/pymol/data/chempy/fragments/val.pkl
+share/pymol/data/chempy/sidechains/generate1.py
+share/pymol/data/chempy/sidechains/generate2.py
+share/pymol/data/chempy/sidechains/sc_bb_dep.pkl
+share/pymol/data/chempy/sidechains/sc_bb_dep.py
+share/pymol/data/chempy/sidechains/sc_bb_ind.pkl
+share/pymol/data/chempy/sidechains/sc_bb_ind.py
+share/pymol/data/chempy/sidechains/sc_library.pkl
+share/pymol/data/chempy/tinker/Makefile
+share/pymol/data/chempy/tinker/chempy.prm
+share/pymol/data/chempy/tinker/make99_simple.py
+share/pymol/data/chempy/tinker/make_simple.py
+share/pymol/data/chempy/tinker/parm94.dat
+share/pymol/data/chempy/tinker/parm94_rsm.dat
+share/pymol/data/chempy/tinker/parm96.dat
+share/pymol/data/chempy/tinker/parm96_rsm.dat
+share/pymol/data/chempy/tinker/parm99.dat
+share/pymol/data/chempy/tinker/parm99_simple.dat
+share/pymol/data/chempy/tinker/parm99_wld.dat
+share/pymol/data/chempy/tinker/parm_simple.dat
+share/pymol/data/chempy/tinker/parm_simple.inp
+share/pymol/data/chempy/water.pdb
+share/pymol/data/demo/1hpv.r3d
+share/pymol/data/demo/1tii.pdb
+share/pymol/data/demo/cgo03.py
+share/pymol/data/demo/il2.pdb
+share/pymol/data/demo/pept.pdb
+share/pymol/data/demo/pept.pkl
+share/pymol/data/pmg_tk/bitmaps/builder/aro5.gif
+share/pymol/data/pmg_tk/bitmaps/builder/aro5.xbm
+share/pymol/data/pmg_tk/bitmaps/builder/aro6.gif
+share/pymol/data/pmg_tk/bitmaps/builder/aro6.xbm
+share/pymol/data/pmg_tk/bitmaps/builder/cyc4.gif
+share/pymol/data/pmg_tk/bitmaps/builder/cyc4.xbm
+share/pymol/data/pmg_tk/bitmaps/builder/cyc5.gif
+share/pymol/data/pmg_tk/bitmaps/builder/cyc5.xbm
+share/pymol/data/pmg_tk/bitmaps/builder/cyc6.gif
+share/pymol/data/pmg_tk/bitmaps/builder/cyc6.xbm
+share/pymol/data/pmg_tk/bitmaps/builder/cyc7.gif
+share/pymol/data/pmg_tk/bitmaps/builder/cyc7.xbm
+share/pymol/data/pymol/cmyk.png
+share/pymol/data/pymol/matrices/BLOSUM62
+share/pymol/data/pymol/splash.png
+share/pymol/data/tut/1hpv.pdb
 share/pymol/modules/chempy/__init__.py
 share/pymol/modules/chempy/__init__.pyc
 share/pymol/modules/chempy/__init__.pyo
@@ -356,6 +485,9 @@ share/pymol/modules/pymol/wizard/appearance.pyo
 share/pymol/modules/pymol/wizard/benchmark.py
 share/pymol/modules/pymol/wizard/benchmark.pyc
 share/pymol/modules/pymol/wizard/benchmark.pyo
+share/pymol/modules/pymol/wizard/box.py
+share/pymol/modules/pymol/wizard/box.pyc
+share/pymol/modules/pymol/wizard/box.pyo
 share/pymol/modules/pymol/wizard/charge.py
 share/pymol/modules/pymol/wizard/charge.pyc
 share/pymol/modules/pymol/wizard/charge.pyo
@@ -371,6 +503,9 @@ share/pymol/modules/pymol/wizard/density.pyo
 share/pymol/modules/pymol/wizard/distance.py
 share/pymol/modules/pymol/wizard/distance.pyc
 share/pymol/modules/pymol/wizard/distance.pyo
+share/pymol/modules/pymol/wizard/dragging.py
+share/pymol/modules/pymol/wizard/dragging.pyc
+share/pymol/modules/pymol/wizard/dragging.pyo
 share/pymol/modules/pymol/wizard/fedora.py
 share/pymol/modules/pymol/wizard/fedora.pyc
 share/pymol/modules/pymol/wizard/fedora.pyo
@@ -401,6 +536,12 @@ share/pymol/modules/pymol/wizard/sculpting.pyo
 share/pymol/modules/pymol/wizard/security.py
 share/pymol/modules/pymol/wizard/security.pyc
 share/pymol/modules/pymol/wizard/security.pyo
+share/pymol/modules/pymol/wizard/stereodemo.py
+share/pymol/modules/pymol/wizard/stereodemo.pyc
+share/pymol/modules/pymol/wizard/stereodemo.pyo
+share/pymol/modules/pymol/wizard/toggle.py
+share/pymol/modules/pymol/wizard/toggle.pyc
+share/pymol/modules/pymol/wizard/toggle.pyo
 share/pymol/modules/pymol/wizarding.py
 share/pymol/modules/pymol/wizarding.pyc
 share/pymol/modules/pymol/wizarding.pyo
@@ -429,6 +570,7 @@ share/pymol/test/dat/il2.pdb
 share/pymol/test/dat/ligs3d.sdf
 share/pymol/test/dat/names.pdb
 share/pymol/test/dat/odd01.pdb
+share/pymol/test/dat/odd02.pdb
 share/pymol/test/dat/pept.pdb
 share/pymol/test/dat/pept.pkl
 share/pymol/test/dat/pept.r3d
@@ -444,6 +586,10 @@ share/pymol/test/inp/B04.py
 share/pymol/test/inp/B05.py
 share/pymol/test/inp/B06.py
 share/pymol/test/inp/B07.py
+share/pymol/test/inp/B08.py
+share/pymol/test/inp/B09.py
+share/pymol/test/inp/B10.py
+share/pymol/test/inp/B11.py
 share/pymol/test/inp/C0001quit.pml
 share/pymol/test/inp/C0010hello.pml
 share/pymol/test/inp/C0020pdb.pml
@@ -472,6 +618,7 @@ share/pymol/test/inp/C0300session.pml
 share/pymol/test/inp/C0500misc.pml
 share/pymol/test/inp/C0600util.pml
 share/pymol/test/inp/C0700odd.pml
+share/pymol/test/inp/C0740multipdb.pml
 share/pymol/test/inp/C0800matrices.pml
 share/pymol/test/inp/C1000viewing.pml
 share/pymol/test/inp/C1010helping.pml
@@ -486,6 +633,8 @@ share/pymol/test/inp/C1080isomore.pml
 share/pymol/test/inp/C1090coulomb.pml
 share/pymol/test/inp/C1095slice.pml
 share/pymol/test/inp/C1100do.py
+share/pymol/test/inp/C1200matrix_maps.pml
+share/pymol/test/inp/C2000returns.py
 share/pymol/test/inp/L0010ccp4read.pml
 share/pymol/test/inp/L0020xplorread.pml
 share/pymol/test/inp/L0030isomesh.pml
@@ -529,6 +678,8 @@ share/pymol/test/ref/C0202help_python.log
 share/pymol/test/ref/C0300session.log
 share/pymol/test/ref/C0500misc.log
 share/pymol/test/ref/C0600util.log
+share/pymol/test/ref/C0700.odd.G.pdb
+share/pymol/test/ref/C0700.odd.H.pdb
 share/pymol/test/ref/C0700odd.1.pdb
 share/pymol/test/ref/C0700odd.2.pdb
 share/pymol/test/ref/C0700odd.3.pdb
@@ -543,7 +694,9 @@ share/pymol/test/ref/C0700odd.B.pdb
 share/pymol/test/ref/C0700odd.C.pdb
 share/pymol/test/ref/C0700odd.D.pdb
 share/pymol/test/ref/C0700odd.E.pdb
+share/pymol/test/ref/C0700odd.F.pdb
 share/pymol/test/ref/C0700odd.log
+share/pymol/test/ref/C0740multipdb.log
 share/pymol/test/ref/C0800matrices.log
 share/pymol/test/ref/C1000viewing.log
 share/pymol/test/ref/C1010helping.log
@@ -558,6 +711,8 @@ share/pymol/test/ref/C1080isomore.log
 share/pymol/test/ref/C1090coulomb.log
 share/pymol/test/ref/C1095slice.log
 share/pymol/test/ref/C1100do.log
+share/pymol/test/ref/C1200matrix_maps.log
+share/pymol/test/ref/C2000returns.log
 share/pymol/test/ref/L0010ccp4read.log
 share/pymol/test/ref/L0020xplorread.log
 share/pymol/test/ref/L0030isomesh.log
@@ -596,17 +751,31 @@ share/pymol/test/win.py
 @dirrm share/pymol/modules/chempy/bmin
 @dirrm share/pymol/modules/chempy
 @dirrm share/pymol/modules
+@dirrm share/pymol/data/tut
+@dirrm share/pymol/data/pymol/matrices
+@dirrm share/pymol/data/pymol
+@dirrm share/pymol/data/pmg_tk/bitmaps/builder
+@dirrm share/pymol/data/pmg_tk/bitmaps
+@dirrm share/pymol/data/pmg_tk
+@dirrm share/pymol/data/demo
+@dirrm share/pymol/data/chempy/tinker
+@dirrm share/pymol/data/chempy/sidechains
+@dirrm share/pymol/data/chempy/fragments
+@dirrm share/pymol/data/chempy
+@dirrm share/pymol/data
 @dirrm share/pymol
 %%PORTDOCS%%%%EXAMPLESDIR%%/chempy/generate_amber.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/chempy/generate_mmff.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/build_peptide.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/contact.pml
+%%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/dali.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/density.pml
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/groel_es.pml
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/packing.pml
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/packsurf.pml
 %%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/ribosome.pml
+%%PORTDOCS%%%%EXAMPLESDIR%%/cookbook/scenes2movie.pml
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/brick01.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/cgo01.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/cgo02.py
@@ -621,8 +790,11 @@ share/pymol/test/win.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/gl01.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/gl02.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/gl03.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/devel/importing.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/devel/membrane.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/mutate01.pml
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/mutate02.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/devel/my_ext_gui.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/pick_wiz.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/povray01.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/devel/sd_annotate.pml

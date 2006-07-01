@@ -1,18 +1,27 @@
---- setup/pymol.com.linux-rh7x.orig	Thu Jul 11 08:33:42 2002
-+++ setup/pymol.com.linux-rh7x	Thu Jul 11 08:34:37 2002
+--- setup/pymol.com.linux-rh7x	Sun Nov 20 02:46:39 2005
++++ setup/pymol.com.linux-rh7x	Sat Jul  1 13:28:49 2006
 @@ -5,7 +5,7 @@
  # ==============================================================
  # Set PYMOL_PATH to point at the correct location on your system
  #
--setenv PYMOL_PATH /usr/local/pymol
-+setenv PYMOL_PATH @PREFIX@/share/pymol
+-PYMOL_PATH=/usr/local/pymol
++PYMOL_PATH=@LOCALBASE@/share/pymol
+ export PYMOL_PATH
  #
  # ==============================================================
- # (no changes usually required below here)
-@@ -21,5 +21,5 @@
+@@ -13,13 +13,13 @@
  #
- #dbx /usr/bin/python 
- #gdb /usr/bin/python 
--/usr/bin/python $PYMOL_PATH/modules/launch_pymol.py $*
-+@LOCALBASE@/bin/python $PYMOL_PATH/modules/launch_pymol.py $*
+ # python modules
+ #
+-if [ "$PYTHONPATH" == "" ]; then
++if [ "$PYTHONPATH" = "" ]; then
+ PYTHONPATH=${PYMOL_PATH}/modules
+ else
+ PYTHONPATH=${PYMOL_PATH}/modules:${PYTHONPATH}
+ fi
+ export PYTHONPATH
+ #
+-/usr/bin/python $PYMOL_PATH/modules/pymol/__init__.py "$@"
++@LOCALBASE@/bin/python $PYMOL_PATH/modules/pymol/__init__.py "$@"
+ 
  

@@ -1,5 +1,5 @@
---- Rules.make.orig	Wed Mar 23 10:53:37 2005
-+++ Rules.make	Wed Mar 23 10:54:06 2005
+--- Rules.make.org	Sat Jul  1 12:28:37 2006
++++ Rules.make	Sat Jul  1 12:30:55 2006
 @@ -4,27 +4,27 @@
  #
  #- Building ----------------------------------------------------------
@@ -68,13 +68,4 @@
 +CC = @CC@
  
  LIB_DIRS = $(EXT_LIB_DIR) $(PYTHON_LIB_DIR) $(XLIB_DIR)
- 
-@@ -79,7 +79,7 @@
-    -I../layer3 -I../layer4 -I../layer5 
- 
- C_FLAGS = $(CCOPT1) $(CCOPT2) $(EXT_INC_DIR) $(PYTHON_INC_DIR) \
--   $(XINC_DIR) $(PNG) $(DEFS) $(BUGS)
-+   $(XINC_DIR) $(PNG) $(DEFS) $(BUGS) @PICFLAG@
- 
- CFLAGS = $(C_FLAGS)
  
