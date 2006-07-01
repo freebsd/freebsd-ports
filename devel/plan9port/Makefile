@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20060511
+PORTVERSION=	20060629
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -43,7 +43,7 @@ MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
 		web.1 wintext.1 ndb.1 passwd.1 secstored.1 tar.1 pem.1 \
 		readcons.1 rsa.1 ssh-agent.1 netfiles.1 sftpcache.1 \
 		hist.1 venti.1 yesterday.1 hget.1 snarfer.1 htmlroff.1 \
-		resample.1
+		resample.1 devdraw.1
 
 MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		runestrcat.3 thread.3 9p.3 matrix.3 arith3.3 ctime.3 \
@@ -67,7 +67,8 @@ MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		window.3 searchpath.3 auth.3 authsrv.3 encrypt.3 ndb.3 \
 		readcons.3 venti-cache.3 venti-client.3 venti-conn.3 \
 		venti-fcall.3 venti-file.3 venti-log.3 venti-mem.3 \
-		venti-packet.3 venti-server.3 venti-zero.3 venti.3
+		venti-packet.3 venti-server.3 venti-zero.3 venti.3 \
+		acme.3 drawfcall.3
 
 MAN4=		0intro.4 9pserve.4 acme.4 import.4 plumber.4 ramfs.4 \
 		vacfs.4 factotum.4 srv.4
@@ -118,7 +119,7 @@ post-install:
 		${SH} lib/moveplan9.sh ${WRKSRC}
 	${CHGRP} kmem ${PLAN9}/bin/auxstats
 	${CHMOD} +s ${PLAN9}/bin/auxstats
-	${CHMOD} 4777 ${PLAN9}/news
+	${CHMOD} 01777 ${PLAN9}/news
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
 
