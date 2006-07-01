@@ -1,0 +1,17 @@
+Index: xmloff/source/style/impastp4.cxx
+===================================================================
+RCS file: /cvs/xml/xmloff/source/style/impastp4.cxx,v
+retrieving revision 1.17
+retrieving revision 1.17.8.1
+diff -u -r1.17 -r1.17.8.1
+--- xmloff/source/style/impastp4.cxx	19 Jun 2006 18:33:22 -0000	1.17
++++ xmloff/source/style/impastp4.cxx	27 Jun 2006 13:15:34 -0000	1.17.8.1
+@@ -276,7 +276,7 @@
+ {
+ 	OUString sName;
+ 
+-	sal_uInt32 nPos;
++	ULONG nPos;
+ 	XMLFamilyData_Impl aTemporary( nFamily );
+ 	XMLFamilyData_Impl *pFamily = 0;
+ 	if( maFamilyList.Seek_Entry( &aTemporary, &nPos ) )
