@@ -1,57 +1,77 @@
---- Makefile.in.orig	Tue May 18 09:43:30 2004
-+++ Makefile.in	Sat Nov 12 11:41:30 2005
-@@ -1,11 +1,14 @@
-+INCLUDE=	%%LOCALBASE%%/include
-+LIBS=		%%LOCALBASE%%/lib
-+
- 
- .c.o:
--#	gcc -I/usr/local/include -c -o $*.o $<
--	gcc -O -W -Wimplicit -Wreturn-type -Wformat \
+--- Makefile.in.orig	Sat May 27 07:48:22 2006
++++ Makefile.in	Mon Jun 19 21:40:59 2006
+@@ -4,17 +4,14 @@
+ # Name the output files *.ol instead of *.o 
+ # so we definitely know it is for Linux. 
+ # (*.o files can be present by mistake) 
+-LCC	= gcc
++LCC	= ${CC}
+ # Use the mingw cross compiler for Windows
+ # Name the output files *.ow instead of *.o 
+ # so we definitely know it is for Windows.
+ # (*.o files can be present by mistake) 
+ WCC	= /usr/bin/i586-mingw32msvc-gcc
+ # Always use the same flags.
+-CFL	= -g -O -DOSNUM=1 -W -Wimplicit -Wreturn-type -Wformat \
 --Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
---Wparentheses -Wstrict-prototypes -Werror -ffast-math -fforce-mem \
---fomit-frame-pointer -c -o $*.o \
--$< 
-+	${CC} -I${INCLUDE} -c -o $*.o $< 
-+#	gcc -O -W -Wimplicit -Wreturn-type -Wformat \
-+#-Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
-+#-Wparentheses -Wstrict-prototypes -Werror -ffast-math -fforce-mem \
-+#-fomit-frame-pointer -c -o $*.o \
-+#$< 
+--Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+--fomit-frame-pointer -c -o
++CFL	= ${CFLAGS} -I%%LOCALBASE%%/include -I%%X11BASE%%/include -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib -DOSNUM=1 -ffast-math -fomit-frame-pointer -c -o 
+ CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
+ -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
+ -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
+@@ -360,7 +357,8 @@
  
- .s.o:
- 	nasm -w-orphan-labels -felf -s $<
-@@ -23,7 +26,7 @@
- tune.o txtest.o network.o mouse.o freq_control.o vgatest mousetest morse.o \
- cwspeed.o coh_osc.o cw_carrier.o
  
--	gcc -olinrad -lvgagl -lvga -lm \
-+	${CC} -I${INCLUDE} -L${LIBS} -olinrad -lvgagl -lvga -lm \
- -Wl,-s,-Map,linrad.map,-warn-common,--cref\
- 	main.o ui.o setvga.o setad.o fft1.o buf.o mouse.o wide_graph.o \
- getiq.o fft0.o rxtest.o hires_graph.o fftasm.o baseb_graph.o mix2.o \
-@@ -37,10 +40,10 @@
- cw_carrier.o fft3.o 
+ # ---------------------- Linux console specific things ------------------
+-linrad: Makefile lmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
++all: xlinrad
++linrad: lmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
+ wide_graph.ol getiq.ol fft0.ol fft1.ol adtest.ol screenvar.ol sigvar.ol \
+ baseb_graph.ol afc_graph.ol hires_graph.ol fftasm.ol palette.ol gifsave.ol \
+ calibrate.ol calsub.ol calsub2.ol llsqvar.ol caliq.ol hwaredriver.ol \
+@@ -374,7 +372,7 @@
+ menu.ol screen.ol sdrvar.ol lsys.ol sdr14.ol keyboard_var.ol linvar.ol \
+ fonts.ol screensub.ol membeg.ol lxsys.ol memend.ol
  
- vgatest: vgatest.o
--	gcc -ovgatest -lvgagl -lvga -lm -Wl -s vgatest.o
-+	${CC} -I${INCLUDE} -ovgatest -L${LIBS} -lvgagl -lvga -lm -Wl -s vgatest.o
+-	gcc -olinrad -lvgagl -lvga -lpthread -lm \
++	${CC} -olinrad -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -I%%X11BASE%%/include -L%%X11BASE%%/lib -lvgagl -lvga -lpthread -lm \
+ -Wl,-Map,linrad.lmap,-warn-common,--cref \
+ 	membeg.ol lmain.ol linvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
+ mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
+@@ -403,7 +401,7 @@
+ 	$(LCC) lmain.c $(CFL) lmain.ol
  
- mousetest: mousetest.o
--	gcc -omousetest -lvgagl -lvga -lm -Wl -s mousetest.o
-+	${CC} -I${INCLUDE} -omousetest -L${LIBS} -lvgagl -lvga -lm -Wl -s mousetest.o
+ # ---------------------- Linux X11 specific things ------------------
+-xlinrad: Makefile xmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
++xlinrad: xmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
+ wide_graph.ol getiq.ol fft0.ol fft1.ol adtest.ol screenvar.ol sigvar.ol \
+ baseb_graph.ol afc_graph.ol hires_graph.ol fftasm.ol palette.ol gifsave.ol \
+ calibrate.ol calsub.ol calsub2.ol llsqvar.ol caliq.ol hwaredriver.ol \
+@@ -420,7 +418,7 @@
  
- afc_graph.o : globdef.h uidef.h fft1def.h fft2def.h screendef.h vernr.h \
- 	seldef.h llsqdef.h sigdef.h
-@@ -126,3 +129,11 @@
- configure : Makefile.in conf.h.in configure.in
- 	rm -f configure        
- 	autoconf
-+
-+all:	vgatest mousetest linrad
-+
-+clean:
-+	rm -f vgatest mousetest linrad *.o
-+
-+install:
-+	install -oroot -m04566 linrad ${PREFIX}/bin/linrad	
+ 
+ 
+-	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
++	${CC} -oxlinrad -L%%X11BASE%%/lib -lX11 -lpthread -lm \
+ -Wl,-Map,linrad.xmap,-warn-common,--cref \
+ membeg.ol xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
+ mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
+@@ -636,13 +634,13 @@
+ 
+ # ------------------      Tools for Linux      -----------------------
+ vgatest: vgatest.ol
+-	gcc -ovgatest -lvgagl -lvga -lm -Wl -s vgatest.ol
++	${CC} -ovgatest -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -lvgagl -lvga -lm -Wl -s vgatest.ol
+ vgatest.ol: vgatest.c
+-	gcc vgatest.c -c -o vgatest.ol
++	${CC} vgatest.c -I%%LOCALBASE%%/include -c -o vgatest.ol
+ mousetest: mousetest.ol
+-	gcc -omousetest -lvgagl -lvga -lm -Wl -s mousetest.ol
++	${CC} -omousetest -L%%LOCALBASE%%/lib -lvgagl -lvga -lm -Wl -s mousetest.ol
+ mousetest.ol: mousetest.c
+-	gcc mousetest.c -c -o mousetest.ol
++	${CC} mousetest.c -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -c -o mousetest.ol
+ thrdef.h: rusage.h
+ 	rm -f x.x
+ 	cp thrdef.h x.x
