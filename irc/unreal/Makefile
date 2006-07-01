@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2.4
+PORTVERSION=	3.2.5
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ilmarinen.us/unreal/ \
 		http://unrealircd.alert-net.com/ \
