@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymol
-PORTVERSION=	0.98
-PORTREVISION=	1
+PORTVERSION=	0.99rc1
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymol
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
-WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
+WRKSRC=		${WRKDIR}/pymol-0.99
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
@@ -35,18 +34,11 @@ PICFLAG?=	-fpic
 .endif
 
 pre-patch:
-	@${INSTALL_DATA} ${WRKSRC}/setup/Rules.linux ${WRKSRC}/Rules.make
-.if ${PYTHON_REL} >= 230
-	@${REINPLACE_CMD} -e 's,@DEFS@,,g' ${WRKSRC}/contrib/modules/Makefile.pre.in.src
-.endif
+	@${CP} ${WRKSRC}/setup/Rules.linux ${WRKSRC}/Rules.make
 
 post-patch:
-	@${INSTALL_DATA} ${WRKSRC}/setup/pymol.com.linux-rh7x ${WRKSRC}/setup/pymol.com
-	@${REINPLACE_CMD} -e 's,@PREFIX@,${PREFIX},g' -e 's,@LOCALBASE@,${LOCALBASE},g' ${WRKSRC}/setup/pymol.com
-	@${REINPLACE_CMD} -e 's,@PREFIX@,${PREFIX},g' \
-		-e 's,examples\(/devel/cgo03.py\),${EXAMPLESDIR}\1,' \
-		${WRKSRC}/modules/pmg_tk/Demo.py
-	@${RM} -f ${WRKSRC}/modules/pmg_tk/Demo.py.*
+	@${CP} ${WRKSRC}/setup/pymol.com.linux-rh7x ${WRKSRC}/pymol
+	@${REINPLACE_CMD} -e 's,@PREFIX@,${PREFIX},g' -e 's,@LOCALBASE@,${LOCALBASE},g' ${WRKSRC}/pymol
 	${REINPLACE_CMD} -e 's,@PYTHON_VERSION@,${PYTHON_VERSION},g' \
 		-e 's,@LOCALBASE@,${LOCALBASE},g' \
 		-e 's,@X11BASE@,${X11BASE},g' \
@@ -55,9 +47,9 @@ post-patch:
 		-e 's,@PICFLAG@,${PICFLAG},g' ${WRKSRC}/Rules.make
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/setup/pymol.com ${PREFIX}/bin/pymol
+	@${INSTALL_SCRIPT} ${WRKSRC}/pymol ${PREFIX}/bin/pymol
 	@${MKDIR} ${PREFIX}/share/pymol
-	@${TAR} -C ${WRKSRC} -chf - modules test | \
+	@${TAR} -C ${WRKSRC} -chf - data modules test | \
 		${TAR} -xf - -C ${PREFIX}/share/pymol
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
