@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Server
-PORTVERSION=	0.12.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -19,7 +19,11 @@ USE_PHP=	sockets pcntl
 CATEGORY=	Net
 FILES=		Server.php \
 		Server/Driver.php Server/Handler.php \
-		Server/Driver/Fork.php Server/Driver/Sequential.php
+		Server/Driver/Fork.php Server/Driver/Sequential.php \
+		Server/Driver/Multiprocess.php \
+		Server/Driver/Multiprocess/MPM-prefork.php \
+		Server/Driver/Multiprocess/Processor.php \
+		Server/Driver/Multiprocess/remoteConsole.php
 DOCS=		todo.txt
 EXAMPLES=	talkback.php
 
