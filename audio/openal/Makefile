@@ -72,6 +72,9 @@ CONFIGURE_ARGS+=--enable-smpeg
 CONFIGURE_ARGS+=--disable-smpeg
 .endif
 
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON_ia64=	does not compile
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/; \
 		s/x86_64\*/amd64\* | \*ia64\*/g; \
