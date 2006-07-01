@@ -7,12 +7,13 @@
 #
 
 PORTNAME=	Frontier-RPC
-PORTVERSION=	0.06
+PORTVERSION=	0.07.b4
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://bitsko.slc.ut.us/~ken/xml-rpc/
 MASTER_SITE_SUBDIR=	Frontier
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.07b4
 
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Frontier::RPC implements UserLand Software's XML RPC
@@ -22,6 +23,16 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Frontier::Client.3 Frontier::Daemon.3 Frontier::RPC2.3
+MAN3=	Apache::XMLRPC.3 \
+	Frontier::Client.3 \
+	Frontier::Daemon.3 \
+	Frontier::RPC2.3 \
+	Frontier::Responder.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600 # inherited from www/p5-libwww
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
