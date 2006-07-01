@@ -16,6 +16,8 @@ libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grinit__.
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grishold__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grnewset__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__grsetgraph__.oct
+libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__imagemagick__.oct
+libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__magick_read__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/__voronoi__.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/_errcore.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/_gfweight.oct
@@ -114,6 +116,7 @@ libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/matrix.h
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/medfilt1.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/mex.h
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/mex.o
+libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/mfilename.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/newtonstep.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/nnz.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/numgradient.oct
@@ -143,10 +146,38 @@ libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/spinv.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/splu.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/spreal.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/syndtable.oct
+libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/textread.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/trisolve.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/tsearch.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/waitbar.oct
 libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/octave-forge/xmlread.oct
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/bicubic.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/miscellaneous/units.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/example_netcdf.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/example_opendap.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/ncbyte.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/ncchar.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/ncdouble.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/ncdump.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/ncfloat.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/ncint.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/nclong.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/ncshort.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/nctest.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf/netcdf_setup.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/signal/qp_kaiser.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/signal/residued.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/signal/residuez.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/statistics/mvnpdf.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/statistics/mvnrnd.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/statistics/regress.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/vrml/test_moving_surf.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/vrml/vrml_DirectionalLight.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/vrml/vrml_ROUTE.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/vrml/vrml_TimeSensor.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/vrml/vrml_anim.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/vrml/vrml_interp.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/vrml/vrml_newname.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/FIXES/grid.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/FIXES/hankel.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/FIXES/lin2mu.m
@@ -256,27 +287,22 @@ share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/fixed/float.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/fixed/fsort.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/fixed/lookup_table.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/blkdiag.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/char.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/complex.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/cplxpair.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/ctranspose.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/cumtrapz.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/deal.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/del2.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/dos.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/double.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/fcnchk.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/gradient.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/ifftshift.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/interp1.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/interp2.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/interpft.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/isa.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/isdir.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/isequal.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/isunix.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/lookup.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/ndims.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/nthroot.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/polyarea.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/general/quadl.m
@@ -404,7 +430,6 @@ share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/io/csvread.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/io/csvwrite.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/io/dlmread.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/io/dlmwrite.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/io/textread.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/io/xlsread.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/irsa/irsa_act.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/irsa/irsa_actcore.m
@@ -690,25 +715,19 @@ share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/statistics/tabulate.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/statistics/trimmean.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/statistics/zscore.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/base64encode.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/cellstr.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/mat2str.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/str2double.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strcmpi.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strfind.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strmatch.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strncmp.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strncmpi.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strsort.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strtok.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/strings/strvcat.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/fieldnames.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/getfield.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/getfields.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/isfield.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/rmfield.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/setfield.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/setfields.m
-share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/struct.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/tar.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/struct/test_struct.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/symband/BandToFull.m
@@ -745,6 +764,7 @@ share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/ac2rc.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/acorf.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/acovf.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/adim.m
+share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/amarma.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/ar2poly.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/ar2rc.m
 share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/tsa/ar_spa.m
@@ -888,6 +908,7 @@ share/octave/%%OCTAVE_VERSION%%/site/octave-forge-alternatives/m/graceplot/ylabe
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/path
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/optim
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/ode
+@dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/octcdf
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/miscellaneous
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/mex
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m/octave-forge/mapping
