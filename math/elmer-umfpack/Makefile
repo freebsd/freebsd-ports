@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UMFPACK library used by ELMER FEM package
 
 BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran

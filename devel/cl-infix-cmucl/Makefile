@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-cmucl
 DISTFILES=	# use installed sources from CL_LIBDIR
 EXTRACT_ONLY=	# use installed sources from CL_LIBDIR
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lisp macro for reading math expressions in infix form
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/infix/infix.asd:${PORTSDIR}/devel/cl-infix \

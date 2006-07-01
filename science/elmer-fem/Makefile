@@ -11,7 +11,7 @@ CATEGORIES=	science tk84
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FEM solver for use in the ELMER FEM package
 
 BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran	\

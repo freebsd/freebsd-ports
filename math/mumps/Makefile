@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.enseeiht.fr/apo/MUMPS/	\
 		http://graal.ens-lyon.fr/MUMPS/
 DISTNAME=	MUMPS_${PORTVERSION}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 
 BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran
