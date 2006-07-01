@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.1.3.1
+PORTVERSION=	2.1.3.2
 PORTEPOCH=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://sunner.elcomnet.ru/~sem/
-MASTER_SITE_SUBDIR=	sem
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
@@ -19,6 +19,8 @@ COMMENT=	FreeBSD ports/packages administration and management tool suite
 
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
 		BDB1 "Use Berkeley DB 1.85 as backend" off
+
+CONFLICTS=	portupgrade-devel-*
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
