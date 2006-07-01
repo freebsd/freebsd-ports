@@ -34,6 +34,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d2a43243-087b-11db-bc36-0008743bf21a">
+    <topic>mutt -- Remote Buffer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+        <name>mutt</name>
+        <name>mutt-lite</name>
+        <range><le>1.4.2.1_2</le></range>
+      </package>
+      <package>
+        <name>mutt-devel</name>
+        <name>mutt-devel-lite</name>
+        <range><le>1.5.11_2</le></range>
+      </package>
+      <package>
+        <name>ja-mutt</name>
+        <range><le>1.4.2.1.j1</le></range>
+      </package>
+      <package>
+        <name>zh-mutt-devel</name>
+        <range><le>1.5.11_20040617</le></range>
+      </package>
+      <package>
+        <name>ja-mutt-devel</name>
+        <range><le>1.5.6.j1_2</le></range>
+      </package>
+      <package>
+        <name>mutt-ng</name>
+        <range><le>20060501</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>SecurityFocus reports:</p>
+        <blockquote cite="http://http://www.securityfocus.com/bid/18642">
+          <p>
+            Mutt is prone to a remote buffer-overflow vulnerability.
+            This issue is due to the application's failure to properly
+            bounds-check user-supplied input before copying it to an
+            insufficiently sized memory buffer.
+
+            This issue may allow remote attackers to execute arbitrary
+            machine code in the context of the affected application.
+            Failed exploit attempts will likely crash the application,
+            denying further service to legitimate users.
+          </p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>18642</bid>
+      <url>http://dev.mutt.org/cgi-bin/gitweb.cgi?p=mutt/.git;a=commit;h=dc0272b749f0e2b102973b7ac43dbd3908507540</url>
+    </references>
+    <dates>
+      <discovery>2006-06-26</discovery>
+      <entry>2006-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1f935f61-075d-11db-822b-728b50d539a3">
     <topic>Joomla -- multiple vulnerabilities</topic>
     <affects>
