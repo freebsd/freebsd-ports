@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jrtplib
-PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTVERSION=	3.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://research.edm.luc.ac.be/jori/jrtplib/
 

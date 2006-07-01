@@ -27,6 +27,8 @@ include/jrtplib3/rtpipv6address.h
 include/jrtplib3/rtpipv6destination.h
 include/jrtplib3/rtpkeyhashtable.h
 include/jrtplib3/rtplibraryversion.h
+include/jrtplib3/rtpmemorymanager.h
+include/jrtplib3/rtpmemoryobject.h
 include/jrtplib3/rtppacket.h
 include/jrtplib3/rtppacketbuilder.h
 include/jrtplib3/rtppollthread.h
@@ -45,7 +47,7 @@ include/jrtplib3/rtptypes_unix.h
 include/jrtplib3/rtptypes_win.h
 include/jrtplib3/rtpudpv4transmitter.h
 include/jrtplib3/rtpudpv6transmitter.h
-lib/libjrtp-3.5.2.so
+lib/libjrtp-3.6.0.so
 lib/libjrtp.a
 lib/libjrtp.la
 lib/libjrtp.so
