@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Mesh Generation Utility for use with the ELMER FEM package
 
 USE_GCC=	4.1+

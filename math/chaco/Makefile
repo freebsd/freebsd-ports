@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.cs.sandia.gov/downloads/papers/bahendr/	\
 		http://bsd3.csme.ru/myports/
 DISTNAME=	Chaco-${PORTVERSION}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for Partitioning Graphs
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/code

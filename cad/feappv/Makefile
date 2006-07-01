@@ -17,7 +17,7 @@ DISTFILES+=	manual.pdf
 DIST_SUBDIR=	feap
 EXTRACT_ONLY=	${PORTNAME}20${EXTRACT_SUFX}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite Element Analysis Program "personal version"
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical User Interface for the ELMER FEM package
 
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\

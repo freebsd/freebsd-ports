@@ -10,7 +10,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.unifont.org/lasi/download/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ stream output interface for creating Postscript documents
 
 USE_GCC=	3.2+

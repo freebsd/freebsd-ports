@@ -10,7 +10,7 @@ PORTVERSION=	5.0.2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Mesh Manipulation Utility for use with the ELMER FEM package
 
 USE_GCC=	4.1+

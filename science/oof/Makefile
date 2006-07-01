@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.ctcms.nist.gov/~langer/OOFdownload/SRC/
 DISTNAME=	${PORTNAME}-dist${PORTVERSION}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite Element Analysis of Real Material Microstructures
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
