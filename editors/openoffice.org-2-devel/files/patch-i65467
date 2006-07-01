@@ -2068,9 +2068,9 @@
 +void fillUnoException(
 +    __cxa_exception * header, uno_Any *, uno_Mapping * pCpp2Uno );
 +}
---- /dev/null	Wed Dec 31 19:00:00 1969
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	Wed Mar  8 03:51:19 2006
-@@ -0,0 +1,645 @@
+--- /dev/null	Fri Jun 30 17:04:00 2006
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	Fri Jun 30 17:04:03 2006
+@@ -0,0 +1,649 @@
 +/*************************************************************************
 + *
 + *  OpenOffice.org - a multi-platform office productivity suite
@@ -2587,9 +2587,11 @@
 +
 +
 +//==================================================================================================
-+void bridges::cpp_uno::shared::UnoInterfaceProxy::dispatch(
++namespace bridges { namespace cpp_uno { namespace shared {
++
++void unoInterfaceProxyDispatch(
 +	uno_Interface * pUnoI, const typelib_TypeDescription * pMemberDescr,
-+	void * pReturn, void * pArgs[], uno_Any ** ppException ) SAL_THROW(())
++	void * pReturn, void * pArgs[], uno_Any ** ppException )
 +{
 +	// is my surrogate
 +	bridges::cpp_uno::shared::UnoInterfaceProxy * pThis
@@ -2716,3 +2718,5 @@
 +	}
 +	}
 +}
++
++} } }
