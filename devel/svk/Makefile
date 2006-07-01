@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -23,13 +23,14 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Data-Hierarchy>=0.21:${PORTSDIR}/devel/p5-Data-Hierarchy \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/File/Type.pm:${PORTSDIR}/devel/p5-File-Type \
 		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${SITE_PERL}/IO/Digest.pm:${PORTSDIR}/devel/p5-IO-Digest \
 		${SITE_PERL}/IO/Pager.pm:${PORTSDIR}/devel/p5-IO-Pager \
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-PathTools>=3.18:${PORTSDIR}/devel/p5-PathTools \
 		p5-PerlIO-eol>=0.13:${PORTSDIR}/devel/p5-PerlIO-eol \
 		p5-PerlIO-via-dynamic>=0.11:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
 		p5-PerlIO-via-symlink>=0.02:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
