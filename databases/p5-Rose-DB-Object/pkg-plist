@@ -51,6 +51,7 @@
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Serial.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Set.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Text.pm
+%%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Time.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Timestamp.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Varchar.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/ColumnList.pm
