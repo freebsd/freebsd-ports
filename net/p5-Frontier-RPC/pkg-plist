@@ -1,7 +1,10 @@
+%%SITE_PERL%%/Apache/XMLRPC.pm
 %%SITE_PERL%%/Frontier/Client.pm
 %%SITE_PERL%%/Frontier/Daemon.pm
 %%SITE_PERL%%/Frontier/RPC2.pm
-@dirrm %%SITE_PERL%%/Frontier
+%%SITE_PERL%%/Frontier/Responder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier
+@dirrm %%SITE_PERL%%/Frontier
+@dirrmtry %%SITE_PERL%%/Apache
