@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Radius
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -22,6 +22,12 @@ post-extract:
 	${FIND} ${WRKDIR} -type f | ${XARGS} ${PERL5} -pi -e "s:\r::g"
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if /use warnings/;' \
+		${WRKSRC}/Radius/Dictionary.pm
+.endif
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
