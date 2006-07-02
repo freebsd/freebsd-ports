@@ -10,7 +10,7 @@ PORTVERSION=	2.1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://sunner.elcomnet.ru/~sem/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	portupgrade
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
