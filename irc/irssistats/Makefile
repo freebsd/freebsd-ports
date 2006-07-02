@@ -7,6 +7,7 @@
 
 PORTNAME=	irssistats
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://royale.zerezo.com/irssistats/
 
@@ -17,6 +18,8 @@ MAKE_ARGS+=	DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}" EXAMPLESDIR="${EXAMPLESDIR
 		CC="${CC}" CFLAGS="${CFLAGS}"
 
 MAN1=	irssistats.1
+ALL_TARGET=	irssistats
+INSTALL_TARGET=	install
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/irssistats.conf|${PREFIX}/etc/irssistats.conf|g' ${WRKSRC}/irssistats.c
