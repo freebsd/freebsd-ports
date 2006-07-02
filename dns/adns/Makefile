@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	adns
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.chiark.greenend.org.uk/users/ian/adns/ \
 		http://www.chiark.greenend.org.uk/~ian/adns/ftp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Easy to use, asynchronous-capable DNS client library and utilities
 
 GNU_CONFIGURE=	yes
