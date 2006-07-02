@@ -14,10 +14,6 @@ DISTNAME=	ngs${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
-BROKEN=		does not compile on 6-STABLE
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-09-02
-
 LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 
 USE_GCC=	3.3+
@@ -39,6 +35,12 @@ DIRTCL=		demoapp ngsolve ngtcltk
 
 .if ${ARCH} == "sparc64"
 BROKEN=		internal gcc error (Bug 23159)
+.endif
+
+.if ${OSVERSION} > 600000
+BROKEN=		does not compile on 6-STABLE
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-09-02
 .endif
 
 TK_VER?=	8.4
