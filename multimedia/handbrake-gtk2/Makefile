@@ -9,7 +9,10 @@ PORTNAME=	handbrake
 PORTVERSION=	0.6.2
 PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.m0k.org/${PORTNAME}/
+MASTER_SITES=	http://download.m0k.org/${PORTNAME}/ \
+		http://www.mirrors.ausmac.net/ftp/AudioVisual-SW/HandBrake/ \
+		http://apple.doit.wisc.edu/mirrors/ausmac/Audio-SW/HandBrake/
+PKGNAMESUFFIX=	-gtk2
 DISTNAME=	HandBrake-${PORTVERSION}-src
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -30,7 +33,7 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xvidcore.4:${PORTSDIR}/multimedia/xvid
 
-PLIST_FILES=	bin/handbrake
+PLIST_FILES=	bin/handbrake-gtk2
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 
 USE_GNOME=	gtk20
@@ -64,13 +67,6 @@ WITH_DVD_DEVICE?=	acd0c
 WITH_DVD_DEVICE?=	acd0
 .endif
 
-# jam -dx, it will giving a verbose of build.
-do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam -dx)
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtk2HB ${PREFIX}/bin/handbrake
-
 post-patch:
 	@${REINPLACE_CMD} -e 's:%%PREFIX%%:${LOCALBASE}:g' \
 		-e 's:%%PTHREAD_LIBS%%:${PTHREAD_LIBS}:g' \
@@ -83,5 +79,12 @@ post-patch:
 # sysctl
 	@${REINPLACE_CMD} -e 's|/usr/sbin/sysctl|${SYSCTL_CMD}|' \
 		${BUILD_WRKSRC}/core/HandBrake.c
+
+# jam -dx, it will giving a verbose of build.
+do-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam -dx)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/gtk2HB ${PREFIX}/bin/handbrake-gtk2
 
 .include <bsd.port.post.mk>
