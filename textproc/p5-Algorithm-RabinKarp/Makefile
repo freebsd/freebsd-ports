@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-RabinKarp
-PORTVERSION=	0.37
+PORTVERSION=	0.39
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -15,9 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Rabin-Karp streaming hash
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-
-MAN3=	Algorithm::RabinKarp.3
+MAN3=	Algorithm::RabinKarp.3 Algorithm::RabinKarp::Util.3
 
 PERL_CONFIGURE=	yes
 
