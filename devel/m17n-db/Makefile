@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
