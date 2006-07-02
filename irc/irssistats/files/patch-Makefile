@@ -1,6 +1,6 @@
 --- Makefile.orig	Mon Feb  7 16:57:05 2005
-+++ Makefile	Thu Jun 22 11:36:11 2006
-@@ -1,23 +1,31 @@
++++ Makefile	Mon Jul  3 00:01:52 2006
+@@ -1,20 +1,26 @@
 -PRE = /usr/local
 -BIN = $(PRE)/bin
 -DAT = $(PRE)/share/irssistats/data
@@ -35,8 +35,3 @@
  	cp -f irssistats.1 $(MAN)
  
  uninstall:
- 	rm -f $(BIN)/irssistats
- 	rm -rf $(DAT) $(DOC)
- 	rm -f $(MAN)/irssistats.1
-+
-+all: install
