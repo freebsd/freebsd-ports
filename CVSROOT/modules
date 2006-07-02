@@ -5869,6 +5869,7 @@ libjit		ports/lang/libjit
 libkexif	ports/graphics/libkexif
 libkipi		ports/graphics/libkipi
 libksba		ports/security/libksba
+libleaftag	ports/devel/libleaftag
 liblingoteach	ports/textproc/liblingoteach
 liblrdf		ports/textproc/liblrdf
 libltdl15	ports/devel/libltdl15
