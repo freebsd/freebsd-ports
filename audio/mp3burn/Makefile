@@ -13,6 +13,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool for making audio CDs from mp3s
 
+BROKEN=		does not install due to dependency problem
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-09-02
+
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		${SITE_PERL}/MPEG/MP3Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
