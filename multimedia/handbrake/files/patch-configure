@@ -1,0 +1,24 @@
+--- configure.orig	Thu Feb 23 18:29:33 2006
++++ configure	Sun Jun 25 23:37:46 2006
+@@ -1,9 +1,9 @@
+ #! /bin/sh
+ 
+-CC="gcc"
+-CXX="g++"
+-CCFLAGS="$CCFLAGS -Wall -g"
+-OPTIM="$OPTIM -O3 -funroll-loops"
++CC="${CC-gcc}"
++CXX="${CXX-g++}"
++CCFLAGS="${CFLAGS--Wall -g}"
++OPTIM=""
+ 
+ # System-specific flags
+ SYSTEM=`uname -s`
+@@ -36,6 +36,7 @@
+     ;;
+ 
+   FreeBSD)
++    CCFLAGS="$CCFLAGS -Wall"
+     DEFINES="$DEFINES SYS_FREEBSD"
+     LINKLIBS="$LINKLIBS -pthread"
+     ;;

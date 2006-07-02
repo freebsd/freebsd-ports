@@ -1,0 +1,9 @@
+--- libhb/Jamfile.orig	Sun Jun 25 23:12:27 2006
++++ libhb/Jamfile	Sun Jun 25 23:13:58 2006
+@@ -14,5 +14,5 @@
+ 
+ Library libhb : $(LIBHB_SRC) ;
+ 
+-ObjectCcFlags $(LIBHB_SRC) : -I$(TOP)/contrib/include ;
++ObjectHdrs $(LIBHB_SRC) : %%LOCALBASE%%/include ;
+ ObjectDefines $(LIBHB_SRC) : __LIBHB__ ;

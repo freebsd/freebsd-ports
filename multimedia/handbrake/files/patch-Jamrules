@@ -1,29 +1,12 @@
---- Jamrules.orig	Tue May 25 13:51:32 2004
-+++ Jamrules	Mon Nov 22 12:57:16 2004
-@@ -8,11 +8,11 @@
- LANGUAGES  = fr de it pl ru nl es pt ja ;
- 
- # Compilers & flags
--CC      = gcc ;
--C++     = g++ ;
-+CC      = %%CC%% ;
-+C++     = %%CXX%% ;
- AS      = nasm ;
--LINK    = g++ ;
--OPTIM   = -O3 -funroll-loops ;
-+LINK    = %%CXX%% ;
-+OPTIM   = %%CFLAGS%% ;
- DEFINES = HB_$(OS) HB_VERSION=\\\"$(HB_VERSION)\\\" ;
- 
- if $(OS) = BEOS
-@@ -32,6 +32,10 @@
- if $(OS) = LINUX
- {
-     ASFLAGS   = -f elf ;
-+}
-+if $(OS) = FREEBSD
-+{
-+    OPTIM     = %%CFLAGS%% ;
+--- Jamrules.orig	Sun May  7 21:21:57 2006
++++ Jamrules	Sun May  7 21:22:12 2006
+@@ -80,3 +80,9 @@
+       zip -9 -r $(<) "HandBrake $(HB_VERSION)" && \
+       rm -rf "HandBrake $(HB_VERSION)"
  }
- if $(OS) = CYGWIN
- {
++
++rule SystemLibraries
++{
++    LINKLIBS on [ FAppendSuffix $(<) : $(SUFEXE) ] +=  $(>) ;
++}
++
