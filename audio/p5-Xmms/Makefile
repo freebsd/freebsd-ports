@@ -16,6 +16,10 @@ DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive remote control shell for xmms
 
+BROKEN=		does not install due to dependency problem
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-09-02
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		${site_perl}/MPEG/MP3Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${site_perl}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
