@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	syck
-PORTVERSION=	0.45
+PORTVERSION=	0.55
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1371/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/4492/
 
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Syck is an extension for reading and writing YAML swiftly
