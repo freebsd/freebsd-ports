@@ -18,12 +18,10 @@ CONFIGURE_ARGS=	--with-m17nlib
 
 UIM_SLAVE=	yes
 
-IGNORE=		requires m17n-lib-1.3.1 or later
-
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
 
 do-build:
-	(cd ${WRKSRC}/uim && ${GMAKE} libuim-m17nlib.la)
+	(cd ${WRKSRC}/uim && ${GMAKE} LIBS="-luim" libuim-m17nlib.la)
 
 do-install:
 	(cd ${WRKSRC}/uim && \
