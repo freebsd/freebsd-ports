@@ -362,7 +362,7 @@ CONFIGURE_ARGS+=	--with-curses=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL2)
-CONFIGURE_ARGS+=	--with-sasl2=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
