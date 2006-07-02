@@ -27,7 +27,7 @@ EXTRACT_ONLY=	OOo_${OOOVERSION}_src.tar.gz
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-OOOVERSION=	2.0.3rc7
+OOOVERSION=	2.0.3
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_VERSION=	1.7.5
