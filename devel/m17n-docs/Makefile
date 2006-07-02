@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-docs
-PORTVERSION=	1.0
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/
 
@@ -15,9 +15,10 @@ COMMENT=	The m17n library documentation
 
 GNU_CONFIGURE=	yes
 
-MAN1=		m17n-config.1 mconv.1 mdate.1 mdump.1 medit.1 \
-		mimx-anthy.1 mimx-ispell.1 mview.1
-MAN3=		m17nCharacter.3m17n \
+MAN1=		m17n-config.1 m17n-db.1
+MAN3=		_usr_local_work_m17n-lib_.3m17n \
+		_usr_local_work_m17n-lib_src_.3m17n \
+		m17nCharacter.3m17n \
 		m17nCharset.3m17n \
 		m17nChartable.3m17n \
 		m17nConv.3m17n \
@@ -45,11 +46,13 @@ MAN3=		m17nCharacter.3m17n \
 		m17n_object.3m17n \
 		m17n_object_ref.3m17n \
 		m17n_object_unref.3m17n \
+		m17n_status.3m17n \
 		mchar_decode.3m17n \
 		mchar_define_charset.3m17n \
 		mchar_define_property.3m17n \
 		mchar_encode.3m17n \
 		mchar_get_prop.3m17n \
+		mchar_get_prop_table.3m17n \
 		mchar_list_charset.3m17n \
 		mchar_map_charset.3m17n \
 		mchar_put_prop.3m17n \
@@ -99,6 +102,7 @@ MAN3=		m17nCharacter.3m17n \
 		mdraw_coordinates_position.3m17n \
 		mdraw_default_line_break.3m17n \
 		mdraw_glyph_info.3m17n \
+		mdraw_glyph_list.3m17n \
 		mdraw_image_text.3m17n \
 		mdraw_per_char_extents.3m17n \
 		mdraw_text.3m17n \
@@ -108,41 +112,56 @@ MAN3=		m17nCharacter.3m17n \
 		mdraw_text_with_control.3m17n \
 		mface.3m17n \
 		mface_copy.3m17n \
+		mface_equal.3m17n \
 		mface_from_font.3m17n \
 		mface_get_prop.3m17n \
 		mface_merge.3m17n \
 		mface_put_prop.3m17n \
 		mface_update.3m17n \
 		mfont.3m17n \
+		mfont_check.3m17n \
 		mfont_copy.3m17n \
 		mfont_find.3m17n \
 		mfont_from_name.3m17n \
 		mfont_get_prop.3m17n \
+		mfont_list.3m17n \
 		mfont_name.3m17n \
+		mfont_parse_name.3m17n \
 		mfont_put_prop.3m17n \
+		mfont_resize_ratio.3m17n \
 		mfont_selection_priority.3m17n \
 		mfont_set_encoding.3m17n \
 		mfont_set_selection_priority.3m17n \
+		mfont_unparse_name.3m17n \
 		mfontset.3m17n \
 		mfontset_copy.3m17n \
+		mfontset_lookup.3m17n \
 		mfontset_modify_entry.3m17n \
 		mfontset_name.3m17n \
 		mframe.3m17n \
 		mframe_get_prop.3m17n \
+		minput_assign_command_keys.3m17n \
 		minput_close_im.3m17n \
 		minput_create_ic.3m17n \
 		minput_destroy_ic.3m17n \
 		minput_event_to_key.3m17n \
 		minput_filter.3m17n \
+		minput_get_commands.3m17n \
+		minput_get_description.3m17n \
+		minput_get_title_icon.3m17n \
+		minput_get_variables.3m17n \
 		minput_lookup.3m17n \
 		minput_open_im.3m17n \
+		minput_reset_ic.3m17n \
 		minput_set_spot.3m17n \
+		minput_set_variable.3m17n \
 		minput_toggle.3m17n \
 		mlocale_get_prop.3m17n \
 		mlocale_set.3m17n \
 		mplist.3m17n \
 		mplist_add.3m17n \
 		mplist_copy.3m17n \
+		mplist_deserialize.3m17n \
 		mplist_find_by_key.3m17n \
 		mplist_find_by_value.3m17n \
 		mplist_get.3m17n \
@@ -158,6 +177,7 @@ MAN3=		m17nCharacter.3m17n \
 		msymbol_as_managing_key.3m17n \
 		msymbol_exist.3m17n \
 		msymbol_get.3m17n \
+		msymbol_is_managing_key.3m17n \
 		msymbol_name.3m17n \
 		msymbol_put.3m17n \
 		mtext.3m17n \
@@ -174,6 +194,7 @@ MAN3=		m17nCharacter.3m17n \
 		mtext_copy.3m17n \
 		mtext_cpy.3m17n \
 		mtext_cspn.3m17n \
+		mtext_data.3m17n \
 		mtext_del.3m17n \
 		mtext_deserialize.3m17n \
 		mtext_detach_property.3m17n \
@@ -189,7 +210,10 @@ MAN3=		m17nCharacter.3m17n \
 		mtext_getenv.3m17n \
 		mtext_ins.3m17n \
 		mtext_ins_char.3m17n \
+		mtext_insert.3m17n \
 		mtext_len.3m17n \
+		mtext_line_break.3m17n \
+		mtext_lowercase.3m17n \
 		mtext_ncasecmp.3m17n \
 		mtext_ncat.3m17n \
 		mtext_ncmp.3m17n \
@@ -210,12 +234,15 @@ MAN3=		m17nCharacter.3m17n \
 		mtext_putenv.3m17n \
 		mtext_rchr.3m17n \
 		mtext_ref_char.3m17n \
+		mtext_replace.3m17n \
 		mtext_search.3m17n \
 		mtext_serialize.3m17n \
 		mtext_set_char.3m17n \
 		mtext_spn.3m17n \
 		mtext_text.3m17n \
-		mtext_tok.3m17n
+		mtext_titlecase.3m17n \
+		mtext_tok.3m17n \
+		mtext_uppercase.3m17n
 MAN5=		mdbCharsetList.5 mdbCodingList.5 mdbDir.5 \
 		mdbFLT.5 mdbFontEncoding.5 mdbFontSize.5 mdbFontset.5 \
 		mdbGeneral.5 mdbIM.5
