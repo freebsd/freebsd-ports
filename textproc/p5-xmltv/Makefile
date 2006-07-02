@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.43
+PORTVERSION=	0.5.44
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -73,8 +73,8 @@ RUN_DEPENDS+=	\
 .endif
 
 MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 \
-	tv_grab_br.1 tv_grab_br_net.1 tv_grab_ch.1 tv_grab_ee.1 \
-	tv_grab_be.1 tv_grab_de_tvtoday.1 tv_grab_dk.1 tv_grab_es.1 \
+	tv_grab_br.1 tv_grab_br_net.1 tv_grab_ee.1 \
+	tv_grab_be.1 tv_grab_de_tvtoday.1 tv_grab_dk.1 tv_grab_es.1 tv_grab_es_laguiatv.1\
 	tv_grab_fi.1 tv_grab_fr.1 tv_grab_huro.1 tv_grab_il.1 tv_grab_is.1 \
 	tv_grab_it.1 tv_find_grabbers.1 tv_grab_jp.1 tv_grab_na_dd.1 \
 	tv_grab_na_icons.1 \

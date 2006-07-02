@@ -5,11 +5,11 @@ bin/tv_find_grabbers
 bin/tv_grab_be
 bin/tv_grab_br
 bin/tv_grab_br_net
-bin/tv_grab_ch
 bin/tv_grab_de_tvtoday
 bin/tv_grab_dk
 bin/tv_grab_ee
 bin/tv_grab_es
+bin/tv_grab_es_laguiatv
 bin/tv_grab_fi
 bin/tv_grab_fr
 bin/tv_grab_huro
@@ -72,7 +72,6 @@ bin/tv_validate_grabber
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 %%DATADIR%%/tv_grab_be/channel_ids_fr
 %%DATADIR%%/tv_grab_be/channel_ids_nl
-%%DATADIR%%/tv_grab_ch/channel_ids
 %%DATADIR%%/tv_grab_de_tvtoday/channel_ids
 %%DATADIR%%/tv_grab_huro/catmap.hu
 %%DATADIR%%/tv_grab_huro/catmap.ro
@@ -87,7 +86,6 @@ bin/tv_validate_grabber
 @dirrm %%DATADIR%%/tv_grab_it
 @dirrm %%DATADIR%%/tv_grab_huro
 @dirrm %%DATADIR%%/tv_grab_de_tvtoday
-@dirrm %%DATADIR%%/tv_grab_ch
 @dirrm %%DATADIR%%/tv_grab_be
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/mach/auto/XMLTV
