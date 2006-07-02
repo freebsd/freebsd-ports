@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="227475c2-09cb-11db-9156-000e0c2e438a">
+    <topic>webmin, usermin -- arbitrary file disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>webmin</name>
+	<range><lt>1.290</lt></range>
+      </package>
+      <package>
+	<name>usermin</name>
+	<range><lt>1.220</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The webmin development team reports:</p>
+	<blockquote cite="http://www.webmin.com/security.html">
+	  <p>An attacker without a login to Webmin can read the
+	    contents of any file on the server using a specially
+	    crafted URL.  All users should upgrade to version
+	    1.290 as soon as possible, or setup IP access control
+	    in Webmin.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>18744</bid>
+      <url>http://www.webmin.com/security.html</url>
+    </references>
+    <dates>
+      <discovery>2006-06-30</discovery>
+      <entry>2006-07-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2a43243-087b-11db-bc36-0008743bf21a">
     <topic>mutt -- Remote Buffer Overflow Vulnerability</topic>
     <affects>
