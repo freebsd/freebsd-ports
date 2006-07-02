@@ -438,7 +438,6 @@ MASTER_SITE_GNU+=	\
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= 	\
-	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	http://ftp.sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
 	http://ftp.linux.it/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/ \
@@ -450,7 +449,8 @@ MASTER_SITE_GNUPG+= 	\
 	ftp://sunsite.cnlab-switch.ch/mirror/gcrypt/%SUBDIR%/ \
 	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,} \
-	ftp://igloo.linux.gr/pub/crypto/gnupg/%SUBDIR%/
+	ftp://igloo.linux.gr/pub/crypto/gnupg/%SUBDIR%/ \
+	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
