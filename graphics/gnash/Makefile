@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--disable-plugin
 PLIST_SUB+=	PLUGIN="@comment "
 .else
 USE_GNOME+=	atk pango gtk20
-LIB_DEPENDS+=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 PLIST_SUB+=	PLUGIN=""
 .endif
 
