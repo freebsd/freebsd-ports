@@ -4318,6 +4318,7 @@ ipa		ports/sysutils/ipa
 ipa_ip6fw	ports/net/ipa_ip6fw
 ipa_ipfw	ports/net/ipa_ipfw
 ipa_sdb		ports/databases/ipa_sdb
+ipacco		ports/net-mgmt/ipacco
 ipacctd		ports/net-mgmt/ipacctd
 ipager		ports/x11/ipager
 ipaudit		ports/net-mgmt/ipaudit
