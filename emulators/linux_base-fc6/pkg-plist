@@ -8907,6 +8907,7 @@ var/mail
 @exec /bin/mkdir -p %D/usr/lib/gcc-lib
 @exec /bin/mkdir -p %D/usr/lib/games
 @exec /bin/mkdir -p %D/usr/games
+@exec /bin/mkdir -p %D/usr/doc
 @exec /bin/mkdir -p %D/usr/etc
 @exec /bin/mkdir -p %D/usr/X11R6/share
 @exec /bin/mkdir -p %D/usr/X11R6/man
@@ -8967,6 +8968,7 @@ var/mail
 @dirrmtry usr/lib/games
 @dirrmtry usr/games
 @dirrmtry usr/etc
+@dirrmtry usr/doc
 @dirrmtry usr/X11R6/share
 @dirrmtry usr/X11R6/man
 @dirrmtry usr/X11R6/lib/tls

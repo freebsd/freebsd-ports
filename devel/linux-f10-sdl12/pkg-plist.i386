@@ -6,4 +6,3 @@ usr/lib/libSDL-1.1.so.0
 usr/lib/libSDL-1.2.so.0
 usr/lib/libSDL-1.2.so.0.7.3
 @dirrm usr/share/doc/SDL-%%SDLVER%%
-@dirrmtry usr/doc

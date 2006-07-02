@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -41,7 +41,7 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		glibc-2.3.6-3.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.3.6-3.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1-48.2.${LINUX_RPM_ARCH}.rpm \
-		info-4.8-8.fc4.1.${LINUX_RPM_ARCH}.rpm \
+		info-4.8-8.fc4.2.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.32-1.FC4.2.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.24-1.FC4.1.${LINUX_RPM_ARCH}.rpm \
 		libgcc-4.0.2-8.fc4.${LINUX_RPM_ARCH}.rpm \
