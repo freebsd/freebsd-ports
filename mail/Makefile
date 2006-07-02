@@ -204,6 +204,7 @@
     SUBDIR += mboxgrep
     SUBDIR += mboxstats
     SUBDIR += mbx2mbox
+    SUBDIR += mdpop3d
     SUBDIR += mess822
     SUBDIR += messagewall
     SUBDIR += metamail
