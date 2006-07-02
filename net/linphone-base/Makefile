@@ -17,6 +17,8 @@ PKGNAMESUFFIX=	-base
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
+BROKEN=		broken by latest update to libosip2
+
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
