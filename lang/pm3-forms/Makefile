@@ -13,9 +13,9 @@ DISTFILES=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level GUI libraries and tools for the PM3 Modula-3 distribution
 
-BUILD_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-gui
+BUILD_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-gui \
+		${NONEXISTENT}:${PORTSDIR}/lang/pm3-base:build
 RUN_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-gui
-DEPENDS=	${PORTSDIR}/lang/pm3-base:build
 
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
