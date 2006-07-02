@@ -1,8 +1,8 @@
---- Makefile.orig	Mon Mar 27 21:46:57 2006
-+++ Makefile	Sat May  6 22:40:48 2006
+--- Makefile.orig	Mon Jun 19 23:04:35 2006
++++ Makefile	Sun Jul  2 21:44:28 2006
 @@ -1,17 +1,27 @@
 -CC = cc
--CFLAGS = -O -Wall
+-CFLAGS = -O
 +PREFIX?= /usr/local
 +CC?= cc
 +CFLAGS?= -O -Wall
@@ -14,9 +14,9 @@
 +PERL?= perl
 +RM?= rm -rf
 +INSTALL?= /usr/bin/install
-+BSD_INSTALL_PROGRAM?=	${INSTALL} -s -o root -g wheel -m 555
-+BSD_INSTALL_MAN?=	${INSTALL}    -o root -g wheel -m 444
- VERSION = 206
++BSD_INSTALL_PROGRAM?= ${INSTALL} -s -o root -g wheel -m 555
++BSD_INSTALL_MAN?= ${INSTALL}    -o root -g wheel -m 444
+ VERSION = 207
  
  nkf : nkf.c config.h utf8tbl.o
  	$(CC) $(CFLAGS) -o nkf nkf.c utf8tbl.o
