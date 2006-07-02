@@ -3912,6 +3912,7 @@ hamfax		ports/comms/hamfax
 hamlib		ports/comms/hamlib
 hammerhead	ports/sysutils/hammerhead
 handbrake	ports/multimedia/handbrake
+handbrake-gtk2	ports/multimedia/handbrake-gtk2
 hangman		ports/games/hangman
 happydoc	ports/devel/happydoc
 happystats	ports/net/happystats
