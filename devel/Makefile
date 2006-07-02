@@ -519,6 +519,7 @@
     SUBDIR += libhoard
     SUBDIR += libical
     SUBDIR += libisc
+    SUBDIR += libleaftag
     SUBDIR += libltdl15
     SUBDIR += libmatheval
     SUBDIR += libmba
