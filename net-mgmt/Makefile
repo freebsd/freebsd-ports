@@ -63,6 +63,7 @@
     SUBDIR += ifgraph
     SUBDIR += iftop
     SUBDIR += iog
+    SUBDIR += ipacco
     SUBDIR += ipacctd
     SUBDIR += ipaudit
     SUBDIR += ipcad
