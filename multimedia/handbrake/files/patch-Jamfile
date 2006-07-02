@@ -1,24 +1,43 @@
---- Jamfile.orig	Wed May 26 05:51:32 2004
-+++ Jamfile	Sun Dec 19 11:14:57 2004
-@@ -54,6 +54,21 @@
-     ObjectCcFlags   $(GTK2_SRC) : `pkg-config gtk+-2.0 --cflags` ;
-     Main            $(GTK2_BIN) : $(GTK2_SRC) ;
+--- Jamfile.orig	Thu Feb 23 18:29:33 2006
++++ Jamfile	Mon Jun 26 00:03:33 2006
+@@ -6,16 +6,8 @@
+ 
+ SubDir TOP ;
+ 
+-# libhb + contrib libraries
+-HB_LIBS = libhb.a
+-          contrib/lib/liba52.a        contrib/lib/libavcodec.a
+-          contrib/lib/libavutil.a     contrib/lib/libdvdread.a
+-          contrib/lib/libdvdcss.a     contrib/lib/libfaac.a
+-          contrib/lib/libmp3lame.a    contrib/lib/libmp4v2.a
+-          contrib/lib/libmpeg2.a      contrib/lib/libvorbis.a
+-          contrib/lib/libvorbisenc.a  contrib/lib/libogg.a
+-          contrib/lib/libsamplerate.a contrib/lib/libx264.a
+-          contrib/lib/libxvidcore.a ;
++# libhb
++HB_LIBS = libhb.a ;
+ 
+ # Interfaces
+ TEST_BIN = HBTest ;
+@@ -63,6 +55,14 @@
+     #ObjectC++Flags  $(WX_SRC) : `wx-config --cflags` ;
+     #Main            $(WX_BIN) : $(WX_SRC) ;
  }
 +if $(OS) = FREEBSD
 +{
-+    HB_LIBS = libhb.a libx264.a ;
-+    SystemLibraries $(TEST_BIN) : -L%%PREFIX%%/lib %%PTHREAD_LIBS%% -la52
-+    		-lavcodec -ldvdcss -ldvdread -lfaac -lmp3lame -lmp4v2 -lmpeg2
-+		-logg -lsamplerate -lvorbis -lvorbisenc -lxvidcore
-+		$(EXTRA_LIBS) ;
-+    SystemLibraries $(GTK2_BIN) : -L%%PREFIX%%/lib %%PTHREAD_LIBS%% 
-+    		$(EXTRA_LIBS) `pkg-config gtk+-2.0 --libs` -la52 -lavcodec
-+    		-ldvdcss -ldvdread -lfaac -lmp3lame -lmp4v2 -lmpeg2 -logg
-+		-lsamplerate -lvorbis -lvorbisenc -lxvidcore ;
-+    ObjectCcFlags   $(TEST_SRC) : -I%%PREFIX%%/include ;
-+    ObjectCcFlags   $(GTK2_SRC) : `pkg-config gtk+-2.0 --cflags` ;
-+    Main            $(GTK2_BIN) : $(GTK2_SRC) ;
++    SystemLibraries $(TEST_BIN) : -L%%LOCALBASE%%/lib %%PTHREAD_LIBS%% -la52
++	    -lavcodec -ldvdcss -ldvdread -lfaac -lmp3lame -lmp4v2 -lmpeg2
++	    -logg -lsamplerate -lvorbis -lvorbisenc -lxvidcore -lx264
++	    $(EXTRA_LIBS) ;
++    ObjectCcFlags   $(TEST_SRC) : -I%%LOCALBASE%%/include ;
 +}
- if $(OS) = CYGWIN
- {
-     SystemLibraries $(TEST_BIN) : -lws2_32 ;
+ 
+ ObjectHdrs     $(UI_SRC) : $(TOP)/libhb ;
+ LinkLibraries  $(UI_BIN) : $(HB_LIBS) ;
+@@ -71,6 +71,4 @@
+ NotFile package ;
+ Depends package : $(HB_PACKAGES) ;
+ 
+-SubInclude TOP contrib ;
+ SubInclude TOP libhb ;
+-

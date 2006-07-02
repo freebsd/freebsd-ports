@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	handbrake
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.m0k.org/${PORTNAME}/
-DISTNAME=	HandBrake-${PORTVERSION}-src
+MASTER_SITES=	http://download.m0k.org/${PORTNAME}/ \
+		http://www.mirrors.ausmac.net/ftp/AudioVisual-SW/HandBrake/ \
+		http://apple.doit.wisc.edu/mirrors/ausmac/Audio-SW/HandBrake/
+DISTNAME=	HandBrake-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
-		nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
 		faac.0:${PORTSDIR}/audio/faac \
@@ -28,33 +27,29 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		xvidcore.4:${PORTSDIR}/multimedia/xvid
+		xvidcore.4:${PORTSDIR}/multimedia/xvid \
+		x264.47:${PORTSDIR}/multimedia/x264
 
-PLIST_FILES=	bin/handbrake
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
+HAS_CONFIGURE=	yes
+PLIST_FILES=	bin/handbrake
 
-USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
-
+JAM?=		${LOCALBASE}/bin/jam
 SYSCTL_CMD?=	/sbin/sysctl
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
+			--exclude contrib \
+			--exclude gtk2 \
 			--exclude macosx \
-			--exclude packageOSX.sh \
-			--exclude contrib/liba52 \
-			--exclude contrib/libavcodec \
-			--exclude contrib/libdvdcss \
-			--exclude contrib/libdvdread \
-			--exclude contrib/libfaac \
-			--exclude contrib/libmp3lame \
-			--exclude contrib/libmp4v2 \
-			--exclude contrib/libmpeg2 \
-			--exclude contrib/libogg \
-			--exclude contrib/libsamplerate \
-			--exclude contrib/libvorbis \
-			--exclude contrib/libxvidcore
+			--exclude wx
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libavformat.a) && !exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc)
+BROKEN=	ffmpeg exists, handbrake needs ffmpeg-devel so uninstall ffmpeg if you still want handbrake
+.else
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+.endif
 
 .if ${OSVERSION} < 500000
 USE_GETOPT_LONG=	yes
@@ -64,24 +59,21 @@ WITH_DVD_DEVICE?=	acd0c
 WITH_DVD_DEVICE?=	acd0
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; s|HBTest|${PORTNAME}|g' \
+			${WRKSRC}/configure ${WRKSRC}/Jamfile \
+			${WRKSRC}/libhb/Jamfile ${WRKSRC}/test/test.c
+	@${REINPLACE_CMD} -e 's|/usr/sbin/sysctl|${SYSCTL_CMD}|g' \
+		${WRKSRC}/libhb/ports.c
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
+		${WRKSRC}/libhb/fifo.c
+
 # jam -dx, it will giving a verbose of build.
 do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam -dx)
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${JAM} -dx)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gtk2HB ${PREFIX}/bin/handbrake
-
-post-patch:
-	@${REINPLACE_CMD} -e 's:%%PREFIX%%:${LOCALBASE}:g' \
-		-e 's:%%PTHREAD_LIBS%%:${PTHREAD_LIBS}:g' \
-		-e 's:%%CC%%:${CC}:g' -e 's:%%CXX%%:${CXX}:g' \
-		-e 's:-g ::g' -e 's:%%CFLAGS%%:${CFLAGS}:g' \
-		${BUILD_WRKSRC}/Jamfile ${BUILD_WRKSRC}/core/Jamfile \
-		${BUILD_WRKSRC}/Jamrules
-	@${REINPLACE_CMD} -e 's:%%DVD_DEVICE%%:${WITH_DVD_DEVICE}:g' \
-		${BUILD_WRKSRC}/gtk2/main.c
-# sysctl
-	@${REINPLACE_CMD} -e 's|/usr/sbin/sysctl|${SYSCTL_CMD}|' \
-		${BUILD_WRKSRC}/core/HandBrake.c
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
