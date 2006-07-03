@@ -11,7 +11,6 @@ PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.rwhois.net/ftp/ \
 		http://www.rwhois.net/ftp/older_releases/
-DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	The Internic referral whois server
