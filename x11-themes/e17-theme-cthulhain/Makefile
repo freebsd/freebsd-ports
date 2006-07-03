@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cthulhain
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
 		http://mbsd.msk.ru/dist/
 PKGNAMEPREFIX=	e17-theme-
-DISTNAME=	cthulhain-0.2.1
+DISTNAME=	cthulhain-0.3pre2
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	ssedov@mbsd.msk.ru
