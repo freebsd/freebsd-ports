@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="229577a8-0936-11db-bf72-00046151137e">
+    <topic>phpmyadmin -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.8.2</lt></range>
+	</package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyadmin Site reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-4">
+	  <p>It was possible to craft a request that contains XSS by attacking the
+	    "table" parameter.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-4</url>
+    <url>http://securitynews.ir/advisories/phpmyadmin281.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-06-30</discovery>
+      <entry>2006-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="227475c2-09cb-11db-9156-000e0c2e438a">
     <topic>webmin, usermin -- arbitrary file disclosure vulnerability</topic>
     <affects>
