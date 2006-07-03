@@ -35,7 +35,7 @@ WRKSRC=	${WRKDIR}/spiralmodular-0.2.2
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64"
+BROKEN=		Does not compile on amd64 or ia64
 .endif
 
 pre-everything::
