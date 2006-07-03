@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lapack++
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.9
 CATEGORIES=	math
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} \
 		http://math.nist.gov/lapack++/:doc
