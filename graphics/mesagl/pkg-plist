@@ -13,15 +13,15 @@ include/GL/osmesa.h
 include/GL/xmesa.h
 include/GL/xmesa_x.h
 include/GL/xmesa_xf86.h
-lib/libGL.a
+lib/libGL.la
 lib/libGL.so
 lib/libGL.so.14
-lib/libGLU.a
+lib/libGLU.la
 lib/libGLU.so
 lib/libGLU.so.14
 lib/libMesaGL.so
 lib/libMesaGLU.so
-lib/libOSMesa.a
+lib/libOSMesa.la
 lib/libOSMesa.so
 lib/libOSMesa.so.4
 @dirrm include/GL
