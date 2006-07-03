@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyicq
-PORTVERSION=	0.7a
-PORTREVISION=	2
+PORTVERSION=	0.7b
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
 PKGNAMEPREFIX=	jabber-
