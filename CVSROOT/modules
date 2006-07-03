@@ -5467,6 +5467,7 @@ kpicframer	ports/games/kpicframer
 kpictorial	ports/games/kpictorial
 kplayer		ports/multimedia/kplayer
 kpopup		ports/net-im/kpopup
+kports		ports/sysutils/kports
 kprof		ports/devel/kprof
 kpsk		ports/comms/kpsk
 kpum		ports/ftp/kpum
