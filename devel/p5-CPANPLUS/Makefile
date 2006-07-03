@@ -17,7 +17,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
 
 BUILD_DEPENDS=	p5-File-Fetch>=0.07:${PORTSDIR}/ftp/p5-File-Fetch \
-		p5-IPC-Cmd>=0.82:${PORTSDIR}/devel/p5-IPC-Cmd \
+		p5-IPC-Cmd>=0.24:${PORTSDIR}/devel/p5-IPC-Cmd \
 		p5-Locale-Maketext-Simple>0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		p5-Log-Message>0:${PORTSDIR}/devel/p5-Log-Message \
 		p5-Module-Load>=0.10:${PORTSDIR}/devel/p5-Module-Load \
