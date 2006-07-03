@@ -6,29 +6,19 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	3.0.524
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/ \
-		http://yallara.cs.rmit.edu.au/~emikulic/_/
+MASTER_SITES=	http://dmr.ath.cx/net/darkstat/
 
-MAINTAINER=	emikulic@cs.rmit.edu.au
-COMMENT=	Network statistics gatherer, similar to ntop
+MAINTAINER=	emil@cs.rmit.edu.au
+COMMENT=	Network statistics gatherer and reporter
 
-USE_GETTEXT=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.else
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-PLIST_SUB=	NLS=""
-.endif
-
 MAN1=	darkstat.1
-DOCS=	AUTHORS ChangeLog INSTALL ISSUES README
+DOCS=	AUTHORS INSTALL README THANKS
 
 .if !defined(NOPORTDOCS)
 post-install:

@@ -4,6 +4,6 @@ Web page reports of statistics such as data transferred by host, port, and
 protocol. It also has a neat bandwidth usage graph.
 
 WWW:	http://purl.org/net/darkstat
-Author:	Emil Mikulic <emikulic@optushome.com.au>
+Author:	Emil Mikulic <emil@cs.rmit.edu.au>
 
 -- Anders Nordby <anders@FreeBSD.org>
