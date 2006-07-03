@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	soundgrab
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/editors
@@ -32,7 +31,8 @@ MAN1=	soundgrab.1
 PLIST_FILES=	bin/soundgrab
 
 do-install:
+	@pod2man ${WRKSRC}/src/soundgrab ${WRKSRC}/src/soundgrab.1
 	${INSTALL_SCRIPT} ${WRKSRC}/src/soundgrab ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/docs/soundgrab.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/soundgrab.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
