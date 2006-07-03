@@ -8,7 +8,7 @@
 PORTNAME=	postnuke
 PORTVERSION=	0.762
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.postnuke.com/sf/postnuke/
+MASTER_SITES=	http://noc.postnuke.com/frs/download.php/987/
 DISTNAME=	PostNuke-0.762
 
 MAINTAINER=	ports@FreeBSD.org
