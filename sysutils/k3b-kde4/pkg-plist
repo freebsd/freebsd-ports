@@ -104,6 +104,12 @@ include/kcutlabel.h
 lib/kde3/libk3bartsoutputplugin.a
 lib/kde3/libk3bartsoutputplugin.la
 lib/kde3/libk3bartsoutputplugin.so
+lib/kde3/libk3baudiometainforenamerplugin.a
+lib/kde3/libk3baudiometainforenamerplugin.la
+lib/kde3/libk3baudiometainforenamerplugin.so
+lib/kde3/libk3baudioprojectcddbplugin.a
+lib/kde3/libk3baudioprojectcddbplugin.la
+lib/kde3/libk3baudioprojectcddbplugin.so
 lib/kde3/libk3bexternalencoder.a
 lib/kde3/libk3bexternalencoder.la
 lib/kde3/libk3bexternalencoder.so
@@ -141,12 +147,6 @@ lib/libk3b.a
 lib/libk3b.la
 lib/libk3b.so
 lib/libk3b.so.2
-lib/libk3baudiometainforenamerplugin.a
-lib/libk3baudiometainforenamerplugin.la
-lib/libk3baudiometainforenamerplugin.so
-lib/libk3baudioprojectcddbplugin.a
-lib/libk3baudioprojectcddbplugin.la
-lib/libk3baudioprojectcddbplugin.so
 lib/libk3bdevice.a
 lib/libk3bdevice.la
 lib/libk3bdevice.so
