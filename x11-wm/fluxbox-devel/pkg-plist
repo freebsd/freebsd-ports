@@ -93,6 +93,7 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/it_IT.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/ja_JP.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/ja_JP.eucJP/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ko_KR.EUC-KR/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/ko_KR.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/lv_LV.ISO-8859-13/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/lv_LV.UTF-8/fluxbox.cat
@@ -213,6 +214,7 @@ bin/startfluxbox
 %%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV.ISO-8859-13
 %%NLS:%%@dirrm %%DATADIR%%/nls/ko_KR.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/ko_KR.EUC-KR
 %%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP.eucJP
 %%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/it_IT.UTF-8
