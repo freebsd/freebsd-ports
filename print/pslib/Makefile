@@ -28,6 +28,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_prog_DOC_TO_MAN=""
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==sparc64
+BROKEN=		does not compile on ${ARCH}
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
 PLIST_SUB+=	NLS="@comment "
@@ -41,4 +47,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@USE_NLS@|no|g' ${WRKSRC}/po/Makefile.in.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
