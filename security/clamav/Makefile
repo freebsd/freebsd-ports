@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.88.2
-PORTREVISION=	4
+PORTVERSION=	0.88.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -41,6 +40,7 @@ PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
+		--mandir=${MANPREFIX}/man \
 		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
