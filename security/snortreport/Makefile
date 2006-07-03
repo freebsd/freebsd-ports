@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	security www
 MASTER_SITES=	http://www.circuitsmaximus.com/snortreport/
 
-MAINTAINER=	a.ventu@flashnet.it
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on module for snort to generate real-time web reports
 
 .if !defined(WITHOUT_JPGRAPH)
@@ -22,6 +22,8 @@ WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
+
+BROKEN=		does not package; depends on multiple versions of PHP
 
 pre-everything::
 	@${ECHO} ""
