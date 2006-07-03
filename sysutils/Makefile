@@ -274,6 +274,7 @@
     SUBDIR += kmilo
     SUBDIR += knutclient
     SUBDIR += komparator
+    SUBDIR += kports
     SUBDIR += krename
     SUBDIR += kshutdown
     SUBDIR += ksynaptics
