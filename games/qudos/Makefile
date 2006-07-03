@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		QuDos.pk3
+		QuDos-${PORTVERSION}.pk3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -46,7 +46,7 @@ OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" on \
 
 MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES WITH_XMMS=NO\
 		DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}"
-PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" VER="${PORTVERSION}"
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 MOD_LIST=	3ZB2 CTF JABOT ROGUE XATRIX ZAERO
@@ -211,7 +211,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/${mod}/game.so ${LIBDIR}/${mod}
 .endif
 .endfor
-	${INSTALL_DATA} ${_DISTDIR}/QuDos.pk3 ${LIBDIR}/baseq2
+	${INSTALL_DATA} ${_DISTDIR}/QuDos-${PORTVERSION}.pk3 ${LIBDIR}/baseq2
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/QuDos.txt ${WRKSRC}/docs/Ogg_readme.txt \
