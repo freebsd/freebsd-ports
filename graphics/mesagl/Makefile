@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mesa
-PORTVERSION=	5.0.1
-PORTREVISION=	3
+PORTVERSION=	5.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -18,7 +17,7 @@ DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphics library similar to SGI's OpenGL
 
-CONFLICTS=	XFree86-libraries-[0-9]* xorg-libraries-[0-9]*
+CONFLICTS=	XFree86-libraries-[4-9]* xorg-libraries-[6-9]*
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -40,7 +39,7 @@ MAKE_ENV+=	SUB_GL="${SUB_GL}"		\
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(PACKAGE_BUILDING) && ${X_WINDOW_SYSTEM:L} != xfree86-3
 IGNORE=		is unnecessary because libGL and libGLU come with XFree86 4.0 and higher
 .endif
 
