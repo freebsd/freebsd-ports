@@ -15,6 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
+BROKEN=		checksum mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-09-03
+
 RESTRICTED=	"free for non-commercial use."
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
