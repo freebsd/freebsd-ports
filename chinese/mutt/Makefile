@@ -9,7 +9,7 @@
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
-REVISEDATE=	20040617
+REVISEDATE=	20060703
 PORTREVISION=	${REVISEDATE}
 
 # XXX: Currently PORTREVISION assignment is not perfect. It needs to
