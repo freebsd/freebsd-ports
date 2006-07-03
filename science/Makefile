@@ -50,6 +50,7 @@
     SUBDIR += kst
     SUBDIR += lamprop
     SUBDIR += libctl
+    SUBDIR += libghemical
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += mayavi
