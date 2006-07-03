@@ -14,11 +14,14 @@ info/gcc%%SUFFIX%%/dir
 %%FORTRAN%%bin/gfortran%%SUFFIX%%
 %%FORTRAN%%bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 %%JAVA%%bin/addr2name.awk%%SUFFIX%%
+%%JAVA%%bin/gappletviewer%%SUFFIX%%
 %%JAVA%%bin/gcj%%SUFFIX%%
 %%JAVA%%bin/gcj-dbtool%%SUFFIX%%
 %%JAVA%%bin/gcjh%%SUFFIX%%
 %%JAVA%%bin/gij%%SUFFIX%%
+%%JAVA%%bin/gjarsigner%%SUFFIX%%
 %%JAVA%%bin/gjnih%%SUFFIX%%
+%%JAVA%%bin/gkeytool%%SUFFIX%%
 %%JAVA%%bin/grmic%%SUFFIX%%
 %%JAVA%%bin/grmiregistry%%SUFFIX%%
 %%JAVA%%bin/jar%%SUFFIX%%
@@ -33,4 +36,5 @@ info/gcc%%SUFFIX%%/dir
 %%JAVA%%@dirrm lib/security
 %%JAVA%%libdata/pkgconfig/libgcj.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
+%%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
 @comment Insert PLIST.lib here
