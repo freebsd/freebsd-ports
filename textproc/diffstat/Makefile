@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	diffstat
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://dickey.his.com/diffstat/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
