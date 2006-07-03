@@ -15,13 +15,14 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose programming language
 
-CONFLICTS=	diablo-jdk-1.5.0*
-
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+# Java 1.5 JDKs install ${PREFIX}/bin/jconsole
+CONFLICTS=	diablo-jdk-1.5.0* jdk-1.5.0* linux-sun-jdk-1.5.0*
 
 USE_LINUX=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.3 1.4
 
 ONLY_FOR_ARCHS=	i386
 
