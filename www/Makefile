@@ -99,6 +99,7 @@
     SUBDIR += dillo-i18n
     SUBDIR += dokeos
     SUBDIR += dokuwiki
+    SUBDIR += dokuwiki-devel
     SUBDIR += dotproject
     SUBDIR += dpsearch
     SUBDIR += drupal
