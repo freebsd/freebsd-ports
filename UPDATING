@@ -6,6 +6,32 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060703:
+  AFFECTS: users of sysutils/portupgrade
+  AUTHOR: sem@FreeBSD.org
+
+  Because of portupgrade had a bug with detecting of Berkley DB version 2+,
+  and a default database now set to use this version you can get portupgrade
+  don't work with old databases. A quick fix is removing the databases:
+  `rm /var/pkg/pkgdb.db /usr/ports/INDEX*.db'. portupgrade will recreate
+  them automaticaly. It's absolutely no harm.
+
+  If you don't want remove the databases you should detect what database
+  type do you use, and set port options accordly. Follow the instructions:
+
+  - run `pkgdb -fu' *before* upgrading and take a look on the output.
+    You can see database format there as: format:XXX, where XXX is your
+    current database format.
+  - Go to portupgrade port directory and configure the port with 
+    `make config' command. If you have bdb_* format then turn on BDB4 option,
+    if you have bdb1_* format then turn off BDB4 and turn on BDB1 option.
+    If you have dbd_hash format then turn off all option.
+  - Upgrade portupgrade.
+  
+  Note: if you change database format with changing port options,
+  you should remove ruby-bdb* port that you don't need anymore or to hard
+  code database format in your pkgtools.conf.
+
 20060702:
   AFFECTS: users of multimedia/handbrake
   AUTHOR: multimedia@FreeBSD.org
