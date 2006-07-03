@@ -10,7 +10,7 @@ PORTVERSION=	0.35
 CATEGORIES=	audio
 MASTER_SITES=	http://royale.zerezo.com/${PORTNAME}/
 
-MAINTAINER=	chinsan.tw@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Fast Audio Playlist Generator
 
 MAKE_ARGS+=	CC=${CC}
