@@ -1,0 +1,13 @@
+==========================================================
+       WARNING:
+
+       Portupgrade has an unfixed bug that prevents
+       KPorts from processing output correctly.
+       Until the issue is solved, please go to
+
+       http://kports.sf.net
+
+       and download patched portupgrade files.
+
+       Sorry for the inconvenience
+=========================================================
