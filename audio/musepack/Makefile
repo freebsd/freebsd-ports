@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/sv7
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == alpha
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 .if ${ARCH} == i386
