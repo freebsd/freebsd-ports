@@ -12318,6 +12318,7 @@ rvi		ports/devel/rvi
 rvm		ports/devel/rvm
 rw-aspell	ports/textproc/rw-aspell
 rwhoisd		ports/net/rwhoisd
+rx		ports/devel/rx
 rxp		ports/textproc/rxp
 rxtx		ports/comms/rxtx
 rxvt		ports/x11/rxvt
