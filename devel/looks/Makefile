@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}-${DISTDATE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JGoodies Looks improve the appearance of your Java applications
 
+BROKEN=		fails to install
+
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 DISTDATE=	20060502
