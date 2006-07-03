@@ -30,10 +30,16 @@ CONFIGURE_ENV=	QTINCDIR="${X11BASE}/include" \
 
 MAKE_ARGS+=	LDFLAGS+="-lqt-mt ${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==sparc64
+BROKEN=		does not compile on ${ARCH}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g' ${WRKSRC}/xdrawchem/application_ob.cpp
 	@${REINPLACE_CMD} -e \
 		's|lround|(long int)rint|g' ${WRKSRC}/xdrawchem/*.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
