@@ -7,6 +7,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	4
+PORTREVISION=	1
 CATEGORIES=	astro deskutils
 MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION}/
 DISTFILES=	GoogleEarthLinux.bin
@@ -21,6 +22,7 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RESTRICTED=	Not sure about redistribution rights
 
 USE_LINUX=	yes
+USE_GNOME=	desktopfileutils
 
 .include <bsd.port.pre.mk>
 
@@ -39,9 +41,9 @@ RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
 do-build:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
-	@cd ${WRKSRC} && ${UNMAKESELF} ${DISTFILES} && ${RM} ${DISTFILES}
-	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} googleearth-data.tar
-	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} googleearth-linux-x86.tar
+	@cd ${WRKSRC} && ${UNMAKESELF} ${DISTFILES} && ${RM} -f ${DISTFILES}
+	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} -f googleearth-data.tar
+	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
 	@${REINPLACE_CMD} -i "" -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f \$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
@@ -53,11 +55,13 @@ do-build:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml ${PREFIX}/share/mime/application/
+	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml ${PREFIX}/share/mime/packages/
 	${INSTALL_DATA} ${WRKSRC}/googleearth.desktop ${PREFIX}/share/applications/
 	${CP} -r ${WRKSRC}/* ${DATADIR}
-	@${RM} ${DATADIR}/googleearth-mimetypes.xml
-	@${RM} ${DATADIR}/googleearth.desktop
+	@${RM} -f ${DATADIR}/googleearth-mimetypes.xml
+	@${RM} -f ${DATADIR}/googleearth.desktop
 	${LN} -sf ${DATADIR}/bin/googleearth ${PREFIX}/bin/
+	-@update-mime-database ${PREFIX}/share/mime
+	-@update-desktop-database
 
 .include <bsd.port.post.mk>

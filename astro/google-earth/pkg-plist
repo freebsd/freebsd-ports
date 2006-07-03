@@ -1,6 +1,6 @@
 bin/googleearth
 share/applications/googleearth.desktop
-share/mime/application/googleearth-mimetypes.xml
+share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/bin/googleearth
 %%DATADIR%%/res/palette-5.png
 %%DATADIR%%/res/dot.png
@@ -745,3 +745,5 @@ share/mime/application/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
+@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
