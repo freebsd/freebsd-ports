@@ -31,6 +31,8 @@ SUB_FILES=	sauer_client sauer_server pkg-message
 
 .if ${OSVERSION} < 500000
 BROKEN=		Does not build on 4.x
+.elif ${OSVERSION} > 700016
+BROKEN=		Does not build on CURRENT
 .endif
 
 post-extract:
