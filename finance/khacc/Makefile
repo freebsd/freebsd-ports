@@ -14,12 +14,8 @@ MASTER_SITE_SUBDIR=	qhacc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple KDE-based financial manager
 
-LIB_DEPENDS=	qhacc.7:${PORTSDIR}/finance/qhacc
+LIB_DEPENDS=	qhacc.8:${PORTSDIR}/finance/qhacc
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
-BROKEN=		does not install due to dependency problem
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-09-03
 
 USE_KDELIBS_VER=3
 USE_PERL5_BUILD=yes
