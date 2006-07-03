@@ -16,6 +16,4 @@ lib/auditfilter_noop.a
 sbin/auditfilterd
 sbin/auditreduce
 sbin/praudit
-sbin/audit
-sbin/auditd
 @dirrm include/bsm

@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	openbsm
-DISTVERSION=	1.0-alpha6
+DISTVERSION=	1.0-alpha7
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/
 DISTFILES=	openbsm-${DISTVERSION}.tgz
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -43,8 +42,18 @@ MAN5=		audit.log.5		\
 		audit_event.5		\
 		audit_user.5		\
 		audit_warn.5
-MAN8=		audit.8			\
-		auditd.8		\
-		auditfilterd.8
+MAN8=		auditfilterd.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ( ( ${OSVERSION} < 500000 && ${OSVERSION} > 491101 ) || \
+	( ${OSVERSION} < 600000 && ${OSVERSION} > 503100 ) || \
+	${OSVERSION} >= 600000 )
+MAN8+=		audit.8			\
+		auditd.8
+
+PLIST_FILES+=	sbin/audit		\
+		sbin/auditd
+.endif
+
+.include <bsd.port.post.mk>
