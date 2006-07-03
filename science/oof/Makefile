@@ -47,6 +47,12 @@ ALL_TARGET+=	oof2abaqus
 PLIST_FILES+=	bin/oof2abaqus
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==sparc64
+BROKEN=		does not compile on ${ARCH}
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/XOOF/oof ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/XPPM2OOF/ppm2oof ${PREFIX}/bin
@@ -54,4 +60,4 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/OOF2ABAQUS/oof2abaqus ${PREFIX}/bin
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
