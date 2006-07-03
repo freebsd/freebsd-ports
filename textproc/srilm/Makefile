@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 MAKE_ENV+=	SRILM=${WRKSRC}
 ALL_TARGET=	World
 ONLY_FOR_ARCHS=	i386
-NO_PACKAGE=	"not yet"
+NO_PACKAGE=	not yet
 
 PROGRAMS=	ngram ngram-count ngram-merge ngram-class disambig anti-ngram \
 		nbest-lattice nbest-mix  nbest-optimize  nbest-pron-score \
@@ -65,8 +65,8 @@ MAN5=		ngram-format.5 nbest-format.5 classes-format.5 \
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\
-Because of license document, we suggest you fetch the source distribution\n\
+IGNORE=	because of license document, we suggest you fetch the source \
+distribution\n\
 manually.  Please access ${DOWNLOAD_URL}\n\
 , follow the download instructions, download the source\n\
 into ${DISTDIR}/, and then run make again.\n
