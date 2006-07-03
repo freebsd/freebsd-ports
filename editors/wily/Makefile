@@ -45,7 +45,9 @@ post-patch:
 # Run the configure script in the tools directory.
 post-configure:
 	@${RM} ${WRKSRC}/tools/win/config.cache
-	cd ${WRKSRC}/tools/win;  ./configure --prefix=${PREFIX}
+	cd ${WRKSRC}/tools/win && \
+		${SETENV} CC=${CC} "CFLAGS=${CFLAGS}" \
+		${SH} ./configure --prefix=${PREFIX}
 
 # The default Wily makefile does not install any documentation.  Rectify.
 post-install:
