@@ -1,13 +1,9 @@
 include/lapackpp/arch.h
 include/lapackpp/bfd.h
-include/lapackpp/blas++.h
-include/lapackpp/blas1++.h
 include/lapackpp/blas1.h
 include/lapackpp/blas1pp.h
-include/lapackpp/blas2++.h
 include/lapackpp/blas2.h
 include/lapackpp/blas2pp.h
-include/lapackpp/blas3++.h
 include/lapackpp/blas3.h
 include/lapackpp/blas3pp.h
 include/lapackpp/blaspp.h
@@ -28,7 +24,6 @@ include/lapackpp/lacvd.h
 include/lapackpp/laexcp.h
 include/lapackpp/lafnames.h
 include/lapackpp/laindex.h
-include/lapackpp/lapack++.h
 include/lapackpp/lapack.h
 include/lapackpp/lapackc.h
 include/lapackpp/lapackd.h
@@ -37,9 +32,11 @@ include/lapackpp/laprefs.h
 include/lapackpp/larvd.h
 include/lapackpp/laslv.h
 include/lapackpp/lasvd.h
+include/lapackpp/latmpl.h
 include/lapackpp/lautil.h
 include/lapackpp/lavc.h
 include/lapackpp/lavd.h
+include/lapackpp/laversion.h
 include/lapackpp/lavi.h
 include/lapackpp/lavli.h
 include/lapackpp/ltgmd.h
@@ -64,12 +61,10 @@ include/lapackpp/vi.h
 include/lapackpp/vli.h
 lib/liblapackpp.la
 lib/liblapackpp.so
-lib/liblapackpp.so.9
+lib/liblapackpp.so.14
 lib/pkgconfig/lapackpp.pc
 share/aclocal/acx_lapackpp.m4
 @dirrm include/lapackpp
-@dirrm lib/pkgconfig
-@dirrm share/aclocal
 %%PORTDOCS%%share/doc/lapack++/lapack++.ps.gz
 %%PORTDOCS%%share/doc/lapack++/lapack++_install.ps.gz
 %%PORTDOCS%%share/doc/lapack++/lapackpp1_1.ps.gz
