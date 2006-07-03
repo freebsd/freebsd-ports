@@ -24,4 +24,10 @@ CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
 
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==amd64
+BROKEN=		does not compile on ${ARCH}
+.endif
+
+.include <bsd.port.post.mk>
