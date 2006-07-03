@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SDP
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -23,4 +23,10 @@ PERL_MODBUILD=	yes
 MAN1=		sdp2rat.1
 MAN3=		Net::SDP.3 Net::SDP::Media.3 Net::SDP::Time.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600 # inherited from p5-libwww
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
