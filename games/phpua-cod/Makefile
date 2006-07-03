@@ -16,6 +16,10 @@ COMMENT=	A Call of Duty plugin for phpUA
 
 RUN_DEPENDS=	${LOCALBASE}/${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine
 
+BROKEN=		does not install due to dependency problem in games/phpua-engine
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-09-03
+
 # Some variables you can change
 PHPUA?=		www/data/phpua
 PHPUA_USER?=	${WWWOWN}
