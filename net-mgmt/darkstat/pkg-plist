@@ -1,26 +1,7 @@
 @comment $FreeBSD$
 sbin/darkstat
-%%NLS%%share/locale/bg/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/da/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/es/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/ga/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/id/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/darkstat.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/darkstat.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/ISSUES
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
