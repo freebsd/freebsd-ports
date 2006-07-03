@@ -5460,6 +5460,7 @@ kooka		ports/graphics/kooka
 kopete		ports/net-im/kopete
 koth		ports/games/koth
 kover		ports/print/kover
+kovpn		ports/security/kovpn
 kp		ports/misc/kp
 kpdftool	ports/print/kpdftool
 kphone		ports/net/kphone
