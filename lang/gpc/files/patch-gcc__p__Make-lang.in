@@ -1,0 +1,11 @@
+--- ./gcc/p/Make-lang.in.orig	Thu Mar 31 15:21:55 2005
++++ ./gcc/p/Make-lang.in	Thu Jun 29 20:30:11 2006
+@@ -928,7 +928,7 @@
+ 	  chmod a+x $(DESTDIR)$(bindir)/$(GPC_INSTALL_NAME)$(exeext); \
+ 	fi
+ 	rm -f $(DESTDIR)$(bindir)/gpc-run
+-	$(INSTALL_PROGRAM) gpc-run $(DESTDIR)$(bindir)/gpc-run
++	$(INSTALL_SCRIPT) gpc-run $(DESTDIR)$(bindir)/gpc-run
+ 	chmod a+x $(DESTDIR)$(bindir)/gpc-run
+ 
+ pascal.install-utils: pascal.utils

@@ -1,0 +1,17 @@
+==============================================================================
+
+The GNU Pascal Compiler has been installed.
+
+In order to use some units you need additional libraries:
+
+CRT	devel/ncurses (in the base system) or devel/pdcurses (for X11)
+GMP	math/libgmp4
+GRAPH	graphics/grx
+GRX	graphics/grx
+INTL	devel/libintl
+REGEX	devel/rx
+
+The documentation also recommends ElectricFence (devel/ElectricFence) to be a
+useful library (not GPC unit) for debugging memory allocation bugs.
+
+==============================================================================
