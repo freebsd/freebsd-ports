@@ -18,6 +18,7 @@ share/apps/kile/complete/tex/color.cwl
 share/apps/kile/complete/tex/enumerate.cwl
 share/apps/kile/complete/tex/fancybox.cwl
 share/apps/kile/complete/tex/fancyhdr.cwl
+share/apps/kile/complete/tex/import.cwl
 share/apps/kile/complete/tex/latex-209.cwl
 share/apps/kile/complete/tex/latex-dev.cwl
 share/apps/kile/complete/tex/latex-document.cwl
@@ -51,6 +52,7 @@ share/apps/kile/complete/tex/subfig.cwl
 share/apps/kile/complete/tex/supertabular.cwl
 share/apps/kile/complete/tex/tabularx.cwl
 share/apps/kile/complete/tex/tex.cwl
+share/apps/kile/complete/tex/textcomp.cwl
 share/apps/kile/complete/tex/varioref.cwl
 share/apps/kile/complete/tex/xtab.cwl
 share/apps/kile/docpartui.rc
