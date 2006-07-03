@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.9
 CATEGORIES=	irc
 MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
 		http://weechat.flashtux.org/download/
@@ -15,52 +15,66 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurse based IRC client
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
+USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
-CFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL
+CONFIGURE_ARGS=	--disable-lua
 
-MAN1=		weechat-curses.1
+MAN1=	weechat-curses.1
 
-PLIST_FILES=	bin/weechat-curses
-PLIST_DIRS=	lib/weechat/plugins lib/weechat
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debug=2
+.else
+CONFIGURE_ARGS+=	--with-debug=0
+.endif
 
-.for lang in cs fr es
-PLIST_FILES+=	%%NLS%%share/locale/${lang}/LC_MESSAGES/weechat.mo
-.endfor
-
-PLIST_FILES+=	%%DOCSDIR%%/html/en/weechat-doc.css %%DOCSDIR%%/html/fr/weechat-doc.css
-PLIST_DIRS+=	%%DOCSDIR%%/html/en %%DOCSDIR%%/html/fr %%DOCSDIR%%/html %%DOCSDIR%%
-
-.if !defined(WITHOUT_NLS)
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-.else
-BROKEN=		"Does not compile without gettext"
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
+
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+=	--enable-python
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if defined(WITH_RUBY)
+CONFIGURE_ARGS+=	--enable-ruby
+USE_RUBY=	yes
+PLIST_SUB+=	RUBY=""
+.else
+CONFIGURE_ARGS+=	--disable-ruby
+PLIST_SUB+=	RUBY="@comment "
+.endif
+
+.if defined(WITH_GNUTLS)
+CONFIGURE_ARGS+=	--enable-gnutls
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	--disable-gnu-tls
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_PERL)
 .if ${PERL_LEVEL} < 500600
 IGNORE=	this port requires perl 5.6.0 or later, Install lang/perl5 then try again
 .else
-CONFIGURE_ARGS+=--enable-perl
-USE_PERL5=	yes
-PLIST_FILES+=	lib/weechat/plugins/libperl.a lib/weechat/plugins/libperl.la \
-		lib/weechat/plugins/libperl.so lib/weechat/plugins/libperl.so.0
+CONFIGURE_ARGS+=	--enable-perl
+USE_PERL=	yes
+PLIST_SUB+=	PERL=""
 .endif
-.endif
-
-.if defined(WITH_PYTHON)
-CONFIGURE_ARGS+=--enable-python
-USE_PYTHON=	yes
-PLIST_FILES+=	lib/weechat/plugins/libpython.a lib/weechat/plugins/libpython.la \
-		lib/weechat/plugins/libpython.so lib/weechat/plugins/libpython.so.0
+.else
+CONFIGURE_ARGS+=	--disable-perl
+PLIST_SUB+=	PERL="@comment "
 .endif
 
-pre-configure:
-	@${CP} ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
