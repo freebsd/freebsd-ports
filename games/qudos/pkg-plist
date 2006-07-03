@@ -1,7 +1,7 @@
 %%CLIENT%%bin/qudos
 %%DEDICATED%%bin/qudos-ded
 %%3ZB2%%%%LIBDIR%%/3zb2/game.so
-%%LIBDIR%%/baseq2/QuDos.pk3
+%%LIBDIR%%/baseq2/QuDos-%%VER%%.pk3
 %%GAME%%%%LIBDIR%%/baseq2/game.so
 %%CTF%%%%LIBDIR%%/ctf/game.so
 %%JABOT%%%%LIBDIR%%/jabot/game.so
