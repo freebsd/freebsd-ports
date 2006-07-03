@@ -34,7 +34,6 @@ USE_SQLITE=	yes
 
 USE_APACHE=	yes
 
-WANT_PHP_PEAR=	yes
 USE_PHP=	yes
 
 USE_TCL=	yes

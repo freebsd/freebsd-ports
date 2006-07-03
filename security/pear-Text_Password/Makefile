@@ -13,7 +13,6 @@ MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	PEAR random password creator
 
 USE_PHP=	yes
-WANT_PHP_PEAR=	yes
 
 CATEGORY=	Text
 FILES=		Password.php

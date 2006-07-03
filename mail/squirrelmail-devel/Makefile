@@ -24,7 +24,6 @@ WANT_PHP_WEB=	yes
 USE_BZIP2=	yes
 
 .ifdef WITH_DATABASE
-WANT_PHP_PEAR=	yes
 RUN_DEPENDS+=	${PREFIX}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 

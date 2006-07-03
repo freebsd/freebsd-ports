@@ -18,7 +18,6 @@ COMMENT=	Project build system based on Apache Ant
 USE_PHP=	yes
 DEFAULT_PHP_VER=5
 WANT_PHP_CLI=	yes
-WANT_PHP_PEAR=	yes
 NO_BUILD=	yes
 
 do-install:
