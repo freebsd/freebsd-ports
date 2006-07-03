@@ -3599,6 +3599,7 @@ gruftistats	ports/irc/gruftistats
 gruler		ports/deskutils/gruler
 grun		ports/misc/grun
 grustibus	ports/emulators/grustibus
+grx		ports/graphics/grx
 gsasl		ports/security/gsasl
 gschem		ports/cad/gschem
 gscmxx		ports/comms/gscmxx
