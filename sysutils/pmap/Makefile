@@ -19,7 +19,7 @@ PLIST_SUB=	KMODDIR=${KMODDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN8=		pmap.8
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	maybe
 
 .include <bsd.port.pre.mk>
 
