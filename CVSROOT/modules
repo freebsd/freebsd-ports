@@ -1857,6 +1857,7 @@ documancer	ports/misc/documancer
 dodgindiamond2	ports/games/dodgindiamond2
 dokeos		ports/www/dokeos
 dokuwiki	ports/www/dokuwiki
+dokuwiki-devel	ports/www/dokuwiki-devel
 dolly		ports/sysutils/dolly
 dolly+		ports/sysutils/dolly+
 dom4j		ports/textproc/dom4j
