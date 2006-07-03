@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	polyester
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	x11-themes kde
-MASTER_SITES=	http://www.notmart.org/files/
+MASTER_SITES=	http://www.notmart.org/files/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	markus
 PKGNAMEPREFIX=	kde-style-
 
 MAINTAINER=	markus@FreeBSD.org
