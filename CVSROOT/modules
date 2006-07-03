@@ -3509,6 +3509,7 @@ gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
 gpasman		ports/security/gpasman
 gpc		ports/devel/gpc
+lang_gpc	ports/lang/gpc
 gpctool		ports/x11/gpctool
 gpdf		ports/graphics/gpdf
 gperiodic	ports/biology/gperiodic
