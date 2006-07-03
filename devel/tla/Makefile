@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tla
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://regexps.srparish.net/src/${PORTNAME}/ \
@@ -28,7 +28,7 @@ ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
 PATCH_WRKSRC=	${ORIGWRKSRC}/..
 WRKSRC=		${ORIGWRKSRC}/=build
 PLIST=		${WRKDIR}/plist
-PLIST_FILES=	bin/tla bin/tla-gpg-check bin/awiki
+PLIST_FILES=	bin/tla bin/tla-gpg-check
 
 pre-patch:
 	${MKDIR} ${WRKSRC}
@@ -54,7 +54,6 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${ORIGWRKSRC}/=build/tla/tla/tla ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${ORIGWRKSRC}/=build/awiki/awiki/awiki ${PREFIX}/bin
 	${SED} 's,^#!.*$$,#!${AWK} -f,' ${ORIGWRKSRC}/tla/=gpg-check.awk \
 		> ${WRKDIR}/tla-gpg-check
 	${INSTALL_SCRIPT} ${WRKDIR}/tla-gpg-check ${PREFIX}/bin
