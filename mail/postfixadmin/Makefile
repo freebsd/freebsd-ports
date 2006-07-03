@@ -27,7 +27,6 @@ OPTIONS+=	POSTFIX_LOCAL "RUN_DEPEND on postfix" off
 .include <bsd.port.pre.mk>
 
 USE_APACHE=	1.3+
-WANT_PHP_PEAR=	yes
 USE_PHP=	pcre session
 
 .ifndef(WITHOUT_MYSQL)

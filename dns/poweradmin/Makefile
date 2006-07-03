@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 USE_PHP=	mysql
 WANT_PHP_WEB=	yes
-WANT_PHP_PEAR=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	INSTALLDIR=${INSTALLDIR}
