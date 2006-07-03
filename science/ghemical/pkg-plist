@@ -1,143 +1,138 @@
 bin/ghemical
-share/ghemical/1.01/aromatic.txt
-share/ghemical/1.01/atomtyp.txt
-share/ghemical/1.01/element.txt
-share/ghemical/1.01/extable.txt
-share/ghemical/1.01/glade/file_export_dialog.glade
-share/ghemical/1.01/glade/file_import_dialog.glade
-share/ghemical/1.01/glade/geomopt_dialog.glade
-share/ghemical/1.01/glade/moldyn_dialog.glade
-share/ghemical/1.01/glade/setup_mm1_dialog.glade
-share/ghemical/1.01/glade/setup_qm1_dialog.glade
-share/ghemical/1.01/glade/trajview_dialog.glade
-share/ghemical/1.01/parameters/builder/amino.txt
-share/ghemical/1.01/parameters/builder/nucleic.txt
-share/ghemical/1.01/parameters/mm1param/stable/atomtypes.txt
-share/ghemical/1.01/parameters/mm1param/stable/parameters1.txt
-share/ghemical/1.01/parameters/mm1param/stable/parameters2.txt
-share/ghemical/1.01/parameters/mm1param/stable/parameters3.txt
-share/ghemical/1.01/parameters/mm1param/stable/parameters4.txt
-share/ghemical/1.01/parameters/mm1param/stable/parameters5.txt
-share/ghemical/1.01/parameters/mm1param/unstable/atomtypes.txt
-share/ghemical/1.01/parameters/mm1param/unstable/parameters1.txt
-share/ghemical/1.01/parameters/mm1param/unstable/parameters2.txt
-share/ghemical/1.01/parameters/mm1param/unstable/parameters3.txt
-share/ghemical/1.01/parameters/mm1param/unstable/parameters4.txt
-share/ghemical/1.01/parameters/mm1param/unstable/parameters5.txt
-share/ghemical/1.01/parameters/mm2param/loopdip.txt
-share/ghemical/1.01/parameters/mm2param/looptor.txt
-share/ghemical/1.01/parameters/mm2param/nonbonded.txt
-share/ghemical/1.01/phmodel.txt
-share/ghemical/1.01/resdata.txt
-share/ghemical/1.01/types.txt
-share/ghemical/examples/1gar.mm2gp
-share/ghemical/examples/1hcl.mm2gp
-share/ghemical/examples/2-chlorobutane.gpr
-share/ghemical/examples/2-chlorobutane.mm1gp
-share/ghemical/examples/3-phenylpropanal.gpr
-share/ghemical/examples/3-phenylpropanal.mm1gp
-share/ghemical/examples/4rhn.mm2gp
-share/ghemical/examples/PeriodicTable.gpr
-share/ghemical/examples/PeriodicTable.mm1gp
-share/ghemical/examples/acetylsalicylic_acid.gpr
-share/ghemical/examples/acetylsalicylic_acid.mm1gp
-share/ghemical/examples/alpha-pinene.gpr
-share/ghemical/examples/alpha-pinene.mm1gp
-share/ghemical/examples/bromobenzene.gpr
-share/ghemical/examples/bromobenzene.mm1gp
-share/ghemical/examples/camphor.gpr
-share/ghemical/examples/camphor.mm1gp
-share/ghemical/examples/cinnamaldehyde.gpr
-share/ghemical/examples/cinnamaldehyde.mm1gp
-share/ghemical/examples/cis-2-pentene.gpr
-share/ghemical/examples/cis-2-pentene.mm1gp
-share/ghemical/examples/cyclohexane.gpr
-share/ghemical/examples/cyclohexane.mm1gp
-share/ghemical/examples/naphtalene.gpr
-share/ghemical/examples/naphtalene.mm1gp
-share/gnome/help/ghemical/C/MD.html
-share/gnome/help/ghemical/C/MD_viewer.html
-share/gnome/help/ghemical/C/aa_table.html
-share/gnome/help/ghemical/C/add_hydrogens.html
-share/gnome/help/ghemical/C/conf_search_tools.html
-share/gnome/help/ghemical/C/energy_vs_torsion.html
-share/gnome/help/ghemical/C/filetypes.html
-share/gnome/help/ghemical/C/formula.html
-share/gnome/help/ghemical/C/geometry_optimization.html
-share/gnome/help/ghemical/C/images/2atoms_bond.png
-share/gnome/help/ghemical/C/images/2atoms_unbonded.png
-share/gnome/help/ghemical/C/images/aa_builder_ci.png
-share/gnome/help/ghemical/C/images/aa_builder_menu.png
-share/gnome/help/ghemical/C/images/aa_builder_note.png
-share/gnome/help/ghemical/C/images/aa_builder_w_h.png
-share/gnome/help/ghemical/C/images/aa_builder_wo_h.png
-share/gnome/help/ghemical/C/images/add_hydrogens.png
-share/gnome/help/ghemical/C/images/add_hydrogens_select.png
-share/gnome/help/ghemical/C/images/change_bond_dialog.png
-share/gnome/help/ghemical/C/images/change_bond_select.png
-share/gnome/help/ghemical/C/images/ci_plane.png
-share/gnome/help/ghemical/C/images/cyclohexane1.png
-share/gnome/help/ghemical/C/images/cyclohexane2.png
-share/gnome/help/ghemical/C/images/cyclohexane_optimized.png
-share/gnome/help/ghemical/C/images/cyclohexane_unoptimized.png
-share/gnome/help/ghemical/C/images/draw_button.png
-share/gnome/help/ghemical/C/images/draw_hydrogens.png
-share/gnome/help/ghemical/C/images/energy_vs_torsion1.png
-share/gnome/help/ghemical/C/images/energy_vs_torsion2.png
-share/gnome/help/ghemical/C/images/energy_vs_torsion3.png
-share/gnome/help/ghemical/C/images/energy_vs_torsion4.png
-share/gnome/help/ghemical/C/images/enlevdiag.png
-share/gnome/help/ghemical/C/images/esp-plane_mm.png
-share/gnome/help/ghemical/C/images/esp-plane_qm.png
-share/gnome/help/ghemical/C/images/esp-plane_select.png
-share/gnome/help/ghemical/C/images/esp-plane_select_obj.png
-share/gnome/help/ghemical/C/images/first_atom.png
-share/gnome/help/ghemical/C/images/formula.png
-share/gnome/help/ghemical/C/images/formula_select.png
-share/gnome/help/ghemical/C/images/geometry_op_dialog.png
-share/gnome/help/ghemical/C/images/geometry_optimization_select.png
-share/gnome/help/ghemical/C/images/labels_menu.png
-share/gnome/help/ghemical/C/images/mainmenu.png
-share/gnome/help/ghemical/C/images/maintools.png
-share/gnome/help/ghemical/C/images/md_dialog.png
-share/gnome/help/ghemical/C/images/modal.png
-share/gnome/help/ghemical/C/images/new_mm.png
-share/gnome/help/ghemical/C/images/notebook.png
-share/gnome/help/ghemical/C/images/optimized_ethane.png
-share/gnome/help/ghemical/C/images/periodic_button.png
-share/gnome/help/ghemical/C/images/periodic_table.png
-share/gnome/help/ghemical/C/images/remove_hydrogens.png
-share/gnome/help/ghemical/C/images/ribbon.png
-share/gnome/help/ghemical/C/images/sequence_builder.png
-share/gnome/help/ghemical/C/images/toplevel.png
-share/gnome/help/ghemical/C/images/traj_dialog.png
-share/gnome/help/ghemical/C/images/window.png
-share/gnome/help/ghemical/C/import_types.html
-share/gnome/help/ghemical/C/index.html
-share/gnome/help/ghemical/C/introduction.html
-share/gnome/help/ghemical/C/labels.html
-share/gnome/help/ghemical/C/mdi_mode.html
-share/gnome/help/ghemical/C/measure.html
-share/gnome/help/ghemical/C/perspective.html
-share/gnome/help/ghemical/C/references.html
-share/gnome/help/ghemical/C/ribbon.html
-share/gnome/help/ghemical/C/sequence_builder.html
-share/gnome/help/ghemical/C/using_mm.html
-share/gnome/help/ghemical/C/using_qm.html
-share/gnome/help/ghemical/C/using_sf.html
-share/gnome/help/ghemical/C/visualization.html
-@dirrm share/gnome/help/ghemical/C/images
-@dirrm share/gnome/help/ghemical/C
-@dirrm share/gnome/help/ghemical
-@dirrm share/gnome/help
-@dirrm share/gnome
-@dirrm share/ghemical/examples
-@dirrm share/ghemical/1.01/parameters/mm2param
-@dirrm share/ghemical/1.01/parameters/mm1param/unstable
-@dirrm share/ghemical/1.01/parameters/mm1param/stable
-@dirrm share/ghemical/1.01/parameters/mm1param
-@dirrm share/ghemical/1.01/parameters/builder
-@dirrm share/ghemical/1.01/parameters
-@dirrm share/ghemical/1.01/glade
-@dirrm share/ghemical/1.01
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/2atoms_unbonded.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/aa_builder_ci.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/aa_builder_menu.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/aa_builder_note.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/aa_builder_w_h.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/aa_builder_wo_h.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/add_hydrogens.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/add_hydrogens_select.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/change_bond_dialog.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/ci_plane.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/clipping1.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/clipping2.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/cyclohexane1.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/cyclohexane2.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/cyclohexane_optimized.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/cyclohexane_unoptimized.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/enlevdiag.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/energy_vs_torsion1.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/energy_vs_torsion2.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/energy_vs_torsion3.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/energy_vs_torsion4.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/esp-plane_mm.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/esp-plane_qm.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/esp-plane_select.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/esp-plane_select_obj.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/formula.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/formula_select.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/geometry_op_dialog.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/geometry_optimization_select.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/labels_menu.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/mainmenu.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/maintools.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/md_dialog.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/modal.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/ribbon.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/notebook.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/optimized_ethane.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/remove_hydrogens.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/sequence_builder.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/setup1.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/setup2.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/setup_select.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/toplevel.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/traj_dialog.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_01.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_02.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_03.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_04.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_05.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_06.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_07.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_08.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_09.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_10.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/using_mm_11.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images/window.png
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/documentation.css
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/MD.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/MD_viewer.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/aa_table.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/add_hydrogens.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/conf_search_tools.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/energy_vs_torsion.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/filetypes.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/formula.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/geometry_optimization.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/import_types.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/index.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/introduction.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/labels.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/measure.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/perspective.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/references.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/ribbon.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/sequence_builder.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/setup_dialog.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/using_mm.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/using_qm.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/using_sf.html
+share/ghemical/%%GHEMICAL_VERSION%%/user-docs/visualization.html
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_hydride_shift/products.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_hydride_shift/reactants.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_hydride_shift/ts.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_methide_shift/products.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_methide_shift/reactants.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_methide_shift/ts.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/cycloaddition_Diels-Alder/products.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/cycloaddition_Diels-Alder/reactants.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/cycloaddition_Diels-Alder/ts.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/E2-reaction/products.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/E2-reaction/reactants.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/E2-reaction/ts.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/sigmatropic_rearrangement_Cope/products.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/sigmatropic_rearrangement_Cope/reactants.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/sigmatropic_rearrangement_Cope/ts.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/SN2-reaction/products.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/SN2-reaction/reactants.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/SN2-reaction/ts.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/tautomeric_shift_keto_enol/products.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/tautomeric_shift_keto_enol/reactants.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/tautomeric_shift_keto_enol/ts.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/2-chlorobutane.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/3-phenylpropanal.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/PeriodicTable.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/acetylsalicylic_acid.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/alpha-pinene.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/bromobenzene.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/camphor.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/cinnamaldehyde.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/cis-2-pentene.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/cyclohexane.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/dna_AGTC.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/naphtalene.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/examples/rna_aguc.gpr
+share/ghemical/%%GHEMICAL_VERSION%%/glade/file_export_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/file_import_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/geomopt_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/moldyn_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/progress_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/gamess_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/constraint_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/setup_dialog.glade
+share/ghemical/%%GHEMICAL_VERSION%%/glade/trajview_dialog.glade
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/user-docs/images
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/user-docs
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/glade
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/tautomeric_shift_keto_enol
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/sigmatropic_rearrangement_Cope
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/cycloaddition_Diels-Alder
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_methide_shift
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/carbocation_rearrangement_hydride_shift
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/SN2-reaction
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search/E2-reaction
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples/transition_state_search
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%/examples
+@dirrm share/ghemical/%%GHEMICAL_VERSION%%
 @dirrm share/ghemical

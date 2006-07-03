@@ -5,43 +5,28 @@
 # $FreeBSD$
 
 PORTNAME=	ghemical
-PORTVERSION=	1.01
-PORTREVISION=	2
+PORTVERSION=	2.01
 CATEGORIES=	science
-MASTER_SITES=	http://bioinformatics.org/ghemical/download/archive/ \
-		http://www.uku.fi/~thassine/projects/download/
+MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/ \
+		http://bioinformatics.org/ghemical/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Ghemical is a computational chemistry software package
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmpqc.a:${PORTSDIR}/science/mpqc \
-		f2c:${PORTSDIR}/lang/f2c
+		f2c:${PORTSDIR}/lang/f2c \
+		openbabel:${PORTSDIR}/science/openbabel
 LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \
 		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea \
-		glade-gnome:${PORTSDIR}/devel/libglade
+		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	glib20 gtk20 libglade2 pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mpqc
+CONFIGURE_ARGS=	--enable-mopac7 --enable-mpqc --enable-openbabel
+PLIST_SUB=      GHEMICAL_VERSION="${PORTVERSION}"
 
-USE_AUTOTOOLS=	autoconf:253
+MAKE_ENV=       PKG_CONFIG=${LOCALBASE}/pkg-config
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@cd ${WRKDIR}/${DISTNAME} ; ${AUTOCONF}
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g;' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g; s|-lgtk|-lgtk-12|g;' \
-			${WRKSRC}/Makefile.in
-pre-build:
-	@${REINPLACE_CMD} -e 's|MAXHEV=60, MAXLIT=60|MAXHEV=90, MAXLIT=90|g;' \
-		${WRKSRC}/miniMOPAC/fortran/SIZES
-	(cd ${WRKSRC}/miniMOPAC ; ${SH} ${FILESDIR}/ghemical-f2c.sh)
-	@${REINPLACE_CMD} -e 's|f2c.h|g2c.h|g;' ${WRKSRC}/miniMOPAC/*.c
-	@${REINPLACE_CMD} -e 's|f2c.h|g2c.h|g;' ${WRKSRC}/src/common/qm1e_mopac.cpp
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
