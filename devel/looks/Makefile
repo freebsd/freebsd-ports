@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	looks
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://looks.dev.java.net/files/documents/31/${DISTREP}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}-${DISTDATE}
@@ -16,12 +16,8 @@ COMMENT=	The JGoodies Looks improve the appearance of your Java applications
 
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-BROKEN=		fails to install
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-09-03
-
-DISTDATE=	20060502
-DISTREP=	31518
+DISTDATE=	20060626
+DISTREP=	36434
 
 FETCH_CMD=	${LOCALBASE}/bin/wget
 FETCH_BEFORE_ARGS=	--no-check-certificate
@@ -38,7 +34,7 @@ JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}	\
 		%%JAVAJARDIR%%/LICENSE.${PORTNAME}.txt
 DOCFILES=	README.html RELEASE-NOTES.txt
-EXAMPLES=	demo.jar lib/forms-1.0.6.jar tiny.jar
+EXAMPLES=	demo.jar lib/forms-1.0.7.jar tiny.jar
 PORTDOCS=	*
 
 .if !defined(NOPORTDOCS)
@@ -59,7 +55,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/demo/|:S|lib|../lib|} ${EXAMPLESDIR}
-	@${MV} ${EXAMPLESDIR}/forms-1.0.6.jar ${EXAMPLESDIR}/lib
+	@${MV} ${EXAMPLESDIR}/forms-1.0.7.jar ${EXAMPLESDIR}/lib
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
