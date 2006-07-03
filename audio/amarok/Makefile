@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.3.9
-PORTREVISION=	2
+PORTVERSION=	1.4.0a
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +14,19 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		tunepimp:${PORTSDIR}/audio/libtunepimp
+		tunepimp:${PORTSDIR}/audio/libtunepimp \
+		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
+USE_RUBY=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 
-OPTIONS=	ARTS "aRts playback engine" on \
-		GSTREAMER "GStreamer playback engine (includes aRts-output)" off \
-		XINE "Xine playback engine" off \
+OPTIONS=	XINE "Xine playback engine" on \
+		GPOD "iPod support" on \
 		XMMS "XMMS visualizations" off \
 		LIBVISUAL "libvisual support" off \
 		OPENGL "OpenGL support" on \
@@ -35,21 +36,9 @@ OPTIONS=	ARTS "aRts playback engine" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_ARTS)
-CONFIGURE_ARGS+=--without-arts
-PLIST_SUB+=	ARTS="@comment "
-.else
-LIB_DEPENDS+=	artsgui:${PORTSDIR}/multimedia/kdemultimedia3
-PLIST_SUB+=	ARTS=""
-.endif
-
-.if !defined(WITH_GSTREAMER)
-CONFIGURE_ARGS+=--without-gstreamer
-PLIST_SUB+=	GSTREAMER="@comment "
-.else
-USE_GSTREAMER80+=	mad vorbis flac musepack artsd
-PLIST_SUB+=	GSTREAMER=""
-.endif
+CONFIGURE_ARGS+=--without-exscalibar \
+		--with-mp4v2 \
+		--with-mp4v2-dir=${PREFIX}
 
 .if !defined(WITH_XINE)
 CONFIGURE_ARGS+=--without-xine
@@ -59,8 +48,17 @@ LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	XINE=""
 .endif
 
+.if !defined(WITH_GPOD)
+PLIST_SUB+=	GPOD="@comment"
+.else
+LIB_DEPENDS+=	gpod.302:${PORTSDIR}/audio/libgpod
+CONFIGURE_ARGS+=--with-libgpod
+PLIST_SUB+=	GPOD=""
+.endif
+
 .if !defined(WITH_XMMS)
 PLIST_SUB+=	XMMS="@comment "
+CONFIGURE_ARGS+=--without-xmms
 .else
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
@@ -69,6 +67,7 @@ PLIST_SUB+=	XMMS=""
 
 .if !defined(WITH_LIBVISUAL)
 PLIST_SUB+=	LIBVISUAL="@comment "
+CONFIGURE_ARGS+=--without-libvisual
 .else
 LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
 PLIST_SUB+=	LIBVISUAL=""
@@ -79,7 +78,7 @@ CONFIGURE_ARGS+=--without-opengl
 .endif
 
 .if defined(WITHOUT_AMAZON)
-CONFIGURE_ARGS+=--without-amazon
+CONFIGURE_ARGS+=--disable-amazon
 .endif
 
 .if defined(WITH_MYSQL)
@@ -98,16 +97,6 @@ post-patch:
 	${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
-
-post-configure:
-.if !defined(WITH_XMMS)
-	@${REINPLACE_CMD} -e '/XMMS /d' ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e 's/xmmswrapper//g' ${WRKSRC}/amarok/src/vis/Makefile
-.endif
-.if !defined(WITH_LIBVISUAL)
-	@${REINPLACE_CMD} -e '/LIBVISUAL /d' ${WRKSRC}/config.h
-	@${REINPLACE_CMD} -e 's/libvisual//g' ${WRKSRC}/amarok/src/vis/Makefile
-.endif
 
 post-install:
 .if defined(WITH_LIBVISUAL)
