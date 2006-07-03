@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amule
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The all-platform eMule p2p client
 
 LIB_DEPENDS=	wx_gtk2u_core-2.6:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
