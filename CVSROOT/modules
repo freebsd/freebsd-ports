@@ -5799,6 +5799,7 @@ libggigcp	ports/graphics/libggigcp
 libggimisc	ports/graphics/libggimisc
 libggiwmh	ports/graphics/libggiwmh
 libggz		ports/games/libggz
+libghemical	ports/science/libghemical
 libghthash	ports/devel/libghthash
 libghttp	ports/www/libghttp
 libgii		ports/devel/libgii
