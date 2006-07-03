@@ -1,36 +1,36 @@
 bin/amarok
 bin/amarokapp
+bin/amarokcollectionscanner
+lib/libamarok.so
+lib/libamarok.so.0
+lib/libamarok.a
+lib/libamarok.la
 %%LIBVISUAL%%bin/amarok_libvisual
 %%XMMS%%bin/amarok_xmmswrapper2
 lib/kde3/konqsidebar_universalamarok.a
 lib/kde3/konqsidebar_universalamarok.la
 lib/kde3/konqsidebar_universalamarok.so
-%%ARTS%%lib/kde3/libamarok_artsengine_plugin.a
-%%ARTS%%lib/kde3/libamarok_artsengine_plugin.la
-%%ARTS%%lib/kde3/libamarok_artsengine_plugin.so
-%%GSTREAMER%%lib/kde3/libamarok_gstengine_plugin.a
-%%GSTREAMER%%lib/kde3/libamarok_gstengine_plugin.la
-%%GSTREAMER%%lib/kde3/libamarok_gstengine_plugin.so
+%%GPOD%%lib/kde3/libamarok_ipod-mediadevice.so
+%%GPOD%%lib/kde3/libamarok_ipod-mediadevice.la
+%%GPOD%%lib/kde3/libamarok_ipod-mediadevice.a
+lib/kde3/libamarok_generic-mediadevice.so
+lib/kde3/libamarok_generic-mediadevice.la
+lib/kde3/libamarok_generic-mediadevice.a
 %%XINE%%lib/kde3/libamarok_xine-engine.a
 %%XINE%%lib/kde3/libamarok_xine-engine.la
 %%XINE%%lib/kde3/libamarok_xine-engine.so
 lib/kde3/libamarok_void-engine_plugin.a
 lib/kde3/libamarok_void-engine_plugin.la
 lib/kde3/libamarok_void-engine_plugin.so
-%%ARTS%%lib/libamarokarts.a
-%%ARTS%%lib/libamarokarts.la
-%%ARTS%%lib/libamarokarts.so
-%%ARTS%%lib/mcop/Amarok/RawScope.mcopclass
-%%ARTS%%lib/mcop/Amarok/Synth_STEREO_XFADE.mcopclass
-%%ARTS%%lib/mcop/amarokarts.mcopclass
-%%ARTS%%lib/mcop/amarokarts.mcoptype
 share/applications/kde/amarok.desktop
 share/apps/amarok/amarokui.rc
 share/apps/amarok/amarokui_xmms.rc
 share/apps/amarok/data/Cool-Streams.xml
+share/apps/amarok/data/amaroK_1.4_welcome.ogg
 share/apps/amarok/data/ball.png
 share/apps/amarok/data/dot.png
 share/apps/amarok/data/equalizer_presets.xml
+share/apps/amarok/data/firstrun.m3u
 share/apps/amarok/data/grid.png
 share/apps/amarok/data/wirl1.png
 share/apps/amarok/data/wirl2.png
@@ -53,11 +53,116 @@ share/apps/amarok/icons/crystalsvg/64x64/actions/random.png
 share/apps/amarok/icons/crystalsvg/64x64/actions/repeat_playlist.png
 share/apps/amarok/icons/crystalsvg/scalable/actions/dynamic.svg
 share/apps/amarok/icons/crystalsvg/scalable/actions/player_playlist_2.svg
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_back.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_clock.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_collection.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_device.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_fastforward.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_info.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_next.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_pause.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_play.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_playlist.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_playlist_clear.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_playlist_refresh.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_podcast.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_podcast2.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_random.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_redo.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_refresh.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_rescan.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_rewind.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_stop.png
+share/apps/amarok/icons/hicolor/16x16/actions/amarok_undo.png
 share/apps/amarok/icons/hicolor/16x16/actions/collection.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_back.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_clock.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_collection.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_device.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_fastforward.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_info.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_next.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_pause.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_play.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_playlist.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_playlist_clear.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_playlist_refresh.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_podcast.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_podcast2.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_random.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_redo.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_refresh.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_rescan.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_rewind.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_stop.png
+share/apps/amarok/icons/hicolor/22x22/actions/amarok_undo.png
 share/apps/amarok/icons/hicolor/22x22/actions/collection.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_back.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_clock.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_collection.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_device.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_fastforward.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_info.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_next.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_pause.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_play.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_playlist.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_playlist_clear.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_playlist_refresh.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_podcast.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_podcast2.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_random.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_redo.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_refresh.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_rescan.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_rewind.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_stop.png
+share/apps/amarok/icons/hicolor/32x32/actions/amarok_undo.png
 share/apps/amarok/icons/hicolor/32x32/actions/collection.png
 share/apps/amarok/icons/hicolor/32x32/actions/audioscrobbler.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_back.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_clock.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_collection.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_device.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_fastforward.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_info.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_next.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_pause.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_play.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_playlist.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_playlist_clear.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_playlist_refresh.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_podcast.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_podcast2.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_random.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_redo.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_refresh.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_rescan.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_rewind.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_stop.png
+share/apps/amarok/icons/hicolor/48x48/actions/amarok_undo.png
 share/apps/amarok/icons/hicolor/48x48/actions/collection.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_back.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_clock.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_collection.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_device.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_fastforward.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_info.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_next.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_pause.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_play.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_playlist.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_playlist_clear.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_playlist_refresh.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_podcast.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_podcast2.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_random.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_redo.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_refresh.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_rescan.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_rewind.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_stop.png
+share/apps/amarok/icons/hicolor/64x64/actions/amarok_undo.png
 share/apps/amarok/icons/hicolor/64x64/actions/collection.png
 share/apps/amarok/images/amarok_cut.png
 share/apps/amarok/images/amarok_rocks.jpg
@@ -68,6 +173,9 @@ share/apps/amarok/images/b_prev.png
 share/apps/amarok/images/b_stop.png
 share/apps/amarok/images/babelfish.png
 share/apps/amarok/images/back_stars_grey.png
+share/apps/amarok/images/currenttrack_bar_left.png
+share/apps/amarok/images/currenttrack_bar_mid.png
+share/apps/amarok/images/currenttrack_bar_right.png
 share/apps/amarok/images/currenttrack_pause.png
 share/apps/amarok/images/currenttrack_play.png
 share/apps/amarok/images/currenttrack_repeat.png
@@ -81,13 +189,16 @@ share/apps/amarok/images/loading1.png
 share/apps/amarok/images/loading2.png
 share/apps/amarok/images/logo_web.png
 share/apps/amarok/images/menu_sidepixmap.png
+share/apps/amarok/images/more_albums.png
 share/apps/amarok/images/musicbrainz.png
 share/apps/amarok/images/nocover.png
 share/apps/amarok/images/pl_active2.png
 share/apps/amarok/images/pl_inactive2.png
 share/apps/amarok/images/sbinner_stars.png
 share/apps/amarok/images/shadow_albumcover.png
-share/apps/amarok/images/splash_screen.png
+share/apps/amarok/images/smallstar.png
+share/apps/amarok/images/splash_screen.jpg
+share/apps/amarok/images/star.png
 share/apps/amarok/images/time_minus.png
 share/apps/amarok/images/time_plus.png
 share/apps/amarok/images/vol_speaker.png
@@ -98,21 +209,25 @@ share/apps/amarok/images/volumeslider-handle_glow.png
 share/apps/amarok/images/wizard_compact.png
 share/apps/amarok/images/wizard_xmms.png
 share/apps/amarok/images/xine_logo.png
-share/apps/amarok/scripts/alarm/COPYING
-share/apps/amarok/scripts/alarm/README
-share/apps/amarok/scripts/alarm/alarm.py
 share/apps/amarok/scripts/amarok_live/README
 share/apps/amarok/scripts/amarok_live/amarok.live.remaster.part1.sh
 share/apps/amarok/scripts/amarok_live/amarok.live.remaster.part2.sh
 share/apps/amarok/scripts/amarok_live/amarok_live.py
 share/apps/amarok/scripts/common/Publisher.py
 share/apps/amarok/scripts/common/Zeroconf.py
-share/apps/amarok/scripts/graphequalizer/README
-share/apps/amarok/scripts/graphequalizer/graphequalizer
+share/apps/amarok/scripts/lyrics_astraweb/COPYING
+share/apps/amarok/scripts/lyrics_astraweb/README
+share/apps/amarok/scripts/lyrics_astraweb/lyrics_astraweb.rb
+share/apps/amarok/scripts/lyrics_astraweb/lyrics_astraweb.spec
+share/apps/amarok/scripts/lyrics_lyrc/COPYING
+share/apps/amarok/scripts/lyrics_lyrc/README
+share/apps/amarok/scripts/lyrics_lyrc/lyrics_lyrc.rb
+share/apps/amarok/scripts/lyrics_lyrc/lyrics_lyrc.spec
 share/apps/amarok/scripts/playlist2html/Playlist.py
 share/apps/amarok/scripts/playlist2html/PlaylistServer.py
 share/apps/amarok/scripts/playlist2html/README
 share/apps/amarok/scripts/playlist2html/playlist2html.py
+share/apps/amarok/scripts/ruby_debug/debug.rb
 share/apps/amarok/scripts/templates/amarok.rb
 share/apps/amarok/scripts/templates/python_qt_template.py
 share/apps/amarok/scripts/templates/ruby_qt_template.rb
@@ -121,6 +236,7 @@ share/apps/amarok/scripts/webcontrol/Playlist.py
 share/apps/amarok/scripts/webcontrol/README
 share/apps/amarok/scripts/webcontrol/RequestHandler.py
 share/apps/amarok/scripts/webcontrol/WebControl.py
+share/apps/amarok/scripts/webcontrol/WebControl.spec
 share/apps/amarok/scripts/webcontrol/WebPublisher.py
 share/apps/amarok/scripts/webcontrol/amarok_cut.png
 share/apps/amarok/scripts/webcontrol/controlbackground.png
@@ -132,6 +248,8 @@ share/apps/amarok/scripts/webcontrol/player_play.png
 share/apps/amarok/scripts/webcontrol/player_start.png
 share/apps/amarok/scripts/webcontrol/player_stop.png
 share/apps/amarok/scripts/webcontrol/template.thtml
+share/apps/amarok/scripts/webcontrol/smallstar.png
+share/apps/amarok/scripts/webcontrol/star.png
 share/apps/amarok/scripts/webcontrol/vol_speaker.png
 share/apps/amarok/themes/example/stylesheet.css
 share/apps/amarok/themes/reinhardt/images/background.png
@@ -143,7 +261,7 @@ share/apps/konqsidebartng/kicker_entries/amarok.desktop
 share/apps/konqueror/servicemenus/amarok_append.desktop
 share/apps/profiles/amarok.profile.xml
 share/config.kcfg/amarok.kcfg
-%%GSTREAMER%%share/config.kcfg/gstconfig.kcfg
+%%XINE%%share/config.kcfg/xinecfg.kcfg
 share/config/amarokrc
 share/doc/HTML/da/amarok/advanced.docbook
 share/doc/HTML/da/amarok/common
@@ -154,6 +272,8 @@ share/doc/HTML/da/amarok/index.docbook
 share/doc/HTML/da/amarok/quick.docbook
 share/doc/HTML/da/amarok/requirements.docbook
 share/doc/HTML/da/amarok/using.docbook
+share/doc/HTML/de/amarok/add_dynamic.png
+share/doc/HTML/de/amarok/amarok_playlist.png
 share/doc/HTML/de/amarok/advanced.docbook
 share/doc/HTML/de/amarok/analyzer.png
 share/doc/HTML/de/amarok/buttons.png
@@ -170,8 +290,8 @@ share/doc/HTML/de/amarok/config_scrobbler.png
 share/doc/HTML/de/amarok/context.png
 share/doc/HTML/de/amarok/coverman.png
 share/doc/HTML/de/amarok/develop.docbook
-share/doc/HTML/de/amarok/dynamic_mode1.png
-share/doc/HTML/de/amarok/dynamic_mode2.png
+share/doc/HTML/de/amarok/dynamic_bar.png
+share/doc/HTML/de/amarok/dynamic_settings.png
 share/doc/HTML/de/amarok/equalizer.png
 share/doc/HTML/de/amarok/faq.docbook
 share/doc/HTML/de/amarok/file_browser.png
@@ -186,6 +306,7 @@ share/doc/HTML/de/amarok/pl_browser.png
 share/doc/HTML/de/amarok/pl_tip1.png
 share/doc/HTML/de/amarok/play_list.png
 share/doc/HTML/de/amarok/player_window.png
+share/doc/HTML/de/amarok/playlist_browser.png
 share/doc/HTML/de/amarok/playlist_window.png
 share/doc/HTML/de/amarok/queue_manager.png
 share/doc/HTML/de/amarok/quick.docbook
@@ -195,6 +316,8 @@ share/doc/HTML/de/amarok/script_manager.png
 share/doc/HTML/de/amarok/status_bar.png
 share/doc/HTML/de/amarok/using.docbook
 share/doc/HTML/de/amarok/vis_window.png
+share/doc/HTML/en/amarok/add_dynamic.png
+share/doc/HTML/en/amarok/amarok_playlist.png
 share/doc/HTML/en/amarok/advanced.docbook
 share/doc/HTML/en/amarok/analyzer.png
 share/doc/HTML/en/amarok/buttons.png
@@ -208,10 +331,9 @@ share/doc/HTML/en/amarok/config_general.png
 share/doc/HTML/en/amarok/config_osd.png
 share/doc/HTML/en/amarok/config_playback.png
 share/doc/HTML/en/amarok/config_scrobbler.png
-share/doc/HTML/en/amarok/context.png
 share/doc/HTML/en/amarok/coverman.png
-share/doc/HTML/en/amarok/dynamic_mode1.png
-share/doc/HTML/en/amarok/dynamic_mode2.png
+share/doc/HTML/en/amarok/dynamic_bar.png
+share/doc/HTML/en/amarok/dynamic_settings.png
 share/doc/HTML/en/amarok/equalizer.png
 share/doc/HTML/en/amarok/faq.docbook
 share/doc/HTML/en/amarok/file_browser.png
@@ -221,10 +343,10 @@ share/doc/HTML/en/amarok/logo.png
 share/doc/HTML/en/amarok/media_device.png
 share/doc/HTML/en/amarok/menubar.png
 share/doc/HTML/en/amarok/musicbrainz.png
-share/doc/HTML/en/amarok/pl_browser.png
 share/doc/HTML/en/amarok/pl_tip1.png
 share/doc/HTML/en/amarok/play_list.png
 share/doc/HTML/en/amarok/player_window.png
+share/doc/HTML/en/amarok/playlist_browser.png
 share/doc/HTML/en/amarok/playlist_window.png
 share/doc/HTML/en/amarok/queue_manager.png
 share/doc/HTML/en/amarok/quick.docbook
@@ -232,6 +354,9 @@ share/doc/HTML/en/amarok/requirements.docbook
 share/doc/HTML/en/amarok/rmb_menu.png
 share/doc/HTML/en/amarok/script_manager.png
 share/doc/HTML/en/amarok/status_bar.png
+share/doc/HTML/en/amarok/tab_lyrics.png
+share/doc/HTML/en/amarok/tab_music.png
+share/doc/HTML/en/amarok/tab_wiki.png
 share/doc/HTML/en/amarok/using.docbook
 share/doc/HTML/en/amarok/vis_window.png
 share/doc/HTML/es/amarok/media_device.png
@@ -253,6 +378,7 @@ share/doc/HTML/es/amarok/config_osd.png
 share/doc/HTML/es/amarok/config_playback.png
 share/doc/HTML/es/amarok/pl_browser.png
 share/doc/HTML/es/amarok/queue_manager.png
+share/doc/HTML/es/amarok/quick.docbook
 share/doc/HTML/es/amarok/player_window.png
 share/doc/HTML/es/amarok/file_browser.png
 share/doc/HTML/es/amarok/musicbrainz.png
@@ -289,18 +415,49 @@ share/doc/HTML/fr/amarok/quick.docbook
 share/doc/HTML/fr/amarok/requirements.docbook
 share/doc/HTML/fr/amarok/using.docbook
 share/doc/HTML/it/amarok/advanced.docbook
+share/doc/HTML/it/amarok/add_dynamic.png
+share/doc/HTML/it/amarok/amarok_playlist.png
+share/doc/HTML/it/amarok/analyzer.png
+share/doc/HTML/it/amarok/buttons.png
+share/doc/HTML/it/amarok/collection.png
 share/doc/HTML/it/amarok/common
+share/doc/HTML/it/amarok/completo.png
 share/doc/HTML/it/amarok/config.docbook
+share/doc/HTML/it/amarok/config_appearance.png
+share/doc/HTML/it/amarok/config_collection.png
+share/doc/HTML/it/amarok/config_engine.png
+share/doc/HTML/it/amarok/config_general.png
+share/doc/HTML/it/amarok/config_osd.png
+share/doc/HTML/it/amarok/config_playback.png
+share/doc/HTML/it/amarok/config_scrobbler.png
+share/doc/HTML/it/amarok/context.png
+share/doc/HTML/it/amarok/coverman.png
 share/doc/HTML/it/amarok/develop.docbook
+share/doc/HTML/it/amarok/dynamic_bar.png
+share/doc/HTML/it/amarok/dynamic_settings.png
+share/doc/HTML/it/amarok/equalizer.png
 share/doc/HTML/it/amarok/faq.docbook
 share/doc/HTML/it/amarok/feature_guide.docbook
+share/doc/HTML/it/amarok/file_browser.png
 share/doc/HTML/it/amarok/hidden.docbook
 share/doc/HTML/it/amarok/index.cache.bz2
 share/doc/HTML/it/amarok/index.docbook
+share/doc/HTML/it/amarok/media_device.png
+share/doc/HTML/it/amarok/menubar.png
+share/doc/HTML/it/amarok/pl_browser.png
+share/doc/HTML/it/amarok/pl_tip1.png
+share/doc/HTML/it/amarok/play_list.png
+share/doc/HTML/it/amarok/player_window.png
+share/doc/HTML/it/amarok/playlist_browser.png
 share/doc/HTML/it/amarok/plugin.docbook
+share/doc/HTML/it/amarok/queue_manager.png
 share/doc/HTML/it/amarok/quick.docbook
 share/doc/HTML/it/amarok/requirements.docbook
+share/doc/HTML/it/amarok/rmb_menu.png
+share/doc/HTML/it/amarok/script_manager.png
+share/doc/HTML/it/amarok/status_bar.png
 share/doc/HTML/it/amarok/using.docbook
+share/doc/HTML/it/amarok/vis_window.png
 share/doc/HTML/nl/amarok/advanced.docbook
 share/doc/HTML/nl/amarok/analyzer.png
 share/doc/HTML/nl/amarok/buttons.png
@@ -341,6 +498,15 @@ share/doc/HTML/nl/amarok/search.png
 share/doc/HTML/nl/amarok/status_bar.png
 share/doc/HTML/nl/amarok/using.docbook
 share/doc/HTML/nl/amarok/vis_window.png
+share/doc/HTML/pl/amarok/advanced.docbook
+share/doc/HTML/pl/amarok/common
+share/doc/HTML/pl/amarok/config.docbook
+share/doc/HTML/pl/amarok/faq.docbook
+share/doc/HTML/pl/amarok/index.docbook
+share/doc/HTML/pl/amarok/index.cache.bz2
+share/doc/HTML/pl/amarok/quick.docbook
+share/doc/HTML/pl/amarok/requirements.docbook
+share/doc/HTML/pl/amarok/using.docbook
 share/doc/HTML/pt/amarok/advanced.docbook
 share/doc/HTML/pt/amarok/common
 share/doc/HTML/pt/amarok/config.docbook
@@ -377,6 +543,7 @@ share/doc/HTML/ru/amarok/config_playback.png
 share/doc/HTML/ru/amarok/config_scrobbler.png
 share/doc/HTML/ru/amarok/context.png
 share/doc/HTML/ru/amarok/coverman.png
+share/doc/HTML/ru/amarok/dynamic_mode1.png
 share/doc/HTML/ru/amarok/equalizer.png
 share/doc/HTML/ru/amarok/faq.docbook
 share/doc/HTML/ru/amarok/feature_guide.docbook
@@ -388,17 +555,23 @@ share/doc/HTML/ru/amarok/pl_browser.png
 share/doc/HTML/ru/amarok/pl_tip1.png
 share/doc/HTML/ru/amarok/play_list.png
 share/doc/HTML/ru/amarok/playlist_window.png
+share/doc/HTML/ru/amarok/queue_manager.png
 share/doc/HTML/ru/amarok/quick.docbook
 share/doc/HTML/ru/amarok/requirements.docbook
 share/doc/HTML/ru/amarok/rmb_menu.png
 share/doc/HTML/ru/amarok/status_bar.png
 share/doc/HTML/ru/amarok/using.docbook
+share/doc/HTML/sv/amarok/add_dynamic.png
 share/doc/HTML/sv/amarok/advanced.docbook
+share/doc/HTML/sv/amarok/amarok_playlist.png
+share/doc/HTML/sv/amarok/analyzer.png
+share/doc/HTML/sv/amarok/browser_choice.png
 share/doc/HTML/sv/amarok/buttons.png
 share/doc/HTML/sv/amarok/collection.png
 share/doc/HTML/sv/amarok/common
 share/doc/HTML/sv/amarok/config.docbook
 share/doc/HTML/sv/amarok/config_appearance.png
+share/doc/HTML/sv/amarok/config_collection.png
 share/doc/HTML/sv/amarok/config_colors.png
 share/doc/HTML/sv/amarok/config_engine.png
 share/doc/HTML/sv/amarok/config_fonts.png
@@ -410,6 +583,8 @@ share/doc/HTML/sv/amarok/config_scrobbler.png
 share/doc/HTML/sv/amarok/context.png
 share/doc/HTML/sv/amarok/coverman.png
 share/doc/HTML/sv/amarok/develop.docbook
+share/doc/HTML/sv/amarok/dynamic_bar.png
+share/doc/HTML/sv/amarok/dynamic_settings.png
 share/doc/HTML/sv/amarok/equalizer.png
 share/doc/HTML/sv/amarok/faq.docbook
 share/doc/HTML/sv/amarok/feature_guide.docbook
@@ -423,11 +598,14 @@ share/doc/HTML/sv/amarok/pl_browser.png
 share/doc/HTML/sv/amarok/pl_tip1.png
 share/doc/HTML/sv/amarok/play_list.png
 share/doc/HTML/sv/amarok/player_window.png
+share/doc/HTML/sv/amarok/playlist_browser.png
 share/doc/HTML/sv/amarok/playlist_window.png
 share/doc/HTML/sv/amarok/plugin.docbook
+share/doc/HTML/sv/amarok/queue_manager.png
 share/doc/HTML/sv/amarok/quick.docbook
 share/doc/HTML/sv/amarok/requirements.docbook
 share/doc/HTML/sv/amarok/rmb_menu.png
+share/doc/HTML/sv/amarok/script_manager.png
 share/doc/HTML/sv/amarok/scripts_window.png
 share/doc/HTML/sv/amarok/search.png
 share/doc/HTML/sv/amarok/status_bar.png
@@ -441,11 +619,8 @@ share/icons/hicolor/22x22/apps/amarok.png
 share/icons/hicolor/32x32/apps/amarok.png
 share/icons/hicolor/48x48/apps/amarok.png
 share/icons/hicolor/64x64/apps/amarok.png
-share/locale/af/LC_MESSAGES/amarok.mo
 share/locale/az/LC_MESSAGES/amarok.mo
-share/locale/be/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok.mo
-share/locale/bn/LC_MESSAGES/amarok.mo
 share/locale/br/LC_MESSAGES/amarok.mo
 share/locale/ca/LC_MESSAGES/amarok.mo
 share/locale/cs/LC_MESSAGES/amarok.mo
@@ -454,29 +629,22 @@ share/locale/da/LC_MESSAGES/amarok.mo
 share/locale/de/LC_MESSAGES/amarok.mo
 share/locale/el/LC_MESSAGES/amarok.mo
 share/locale/en_GB/LC_MESSAGES/amarok.mo
-share/locale/eo/LC_MESSAGES/amarok.mo
 share/locale/es/LC_MESSAGES/amarok.mo
 share/locale/et/LC_MESSAGES/amarok.mo
-share/locale/eu/LC_MESSAGES/amarok.mo
 share/locale/fi/LC_MESSAGES/amarok.mo
 share/locale/fr/LC_MESSAGES/amarok.mo
 share/locale/ga/LC_MESSAGES/amarok.mo
 share/locale/gl/LC_MESSAGES/amarok.mo
 share/locale/he/LC_MESSAGES/amarok.mo
 share/locale/hi/LC_MESSAGES/amarok.mo
-share/locale/hr/LC_MESSAGES/amarok.mo
 share/locale/hu/LC_MESSAGES/amarok.mo
-share/locale/id/LC_MESSAGES/amarok.mo
 share/locale/is/LC_MESSAGES/amarok.mo
 share/locale/it/LC_MESSAGES/amarok.mo
 share/locale/ja/LC_MESSAGES/amarok.mo
 share/locale/km/LC_MESSAGES/amarok.mo
 share/locale/ko/LC_MESSAGES/amarok.mo
-share/locale/ku/LC_MESSAGES/amarok.mo
-share/locale/lo/LC_MESSAGES/amarok.mo
 share/locale/lt/LC_MESSAGES/amarok.mo
 share/locale/nb/LC_MESSAGES/amarok.mo
-share/locale/nds/LC_MESSAGES/amarok.mo
 share/locale/nl/LC_MESSAGES/amarok.mo
 share/locale/nn/LC_MESSAGES/amarok.mo
 share/locale/pa/LC_MESSAGES/amarok.mo
@@ -485,12 +653,10 @@ share/locale/pt/LC_MESSAGES/amarok.mo
 share/locale/pt_BR/LC_MESSAGES/amarok.mo
 share/locale/ro/LC_MESSAGES/amarok.mo
 share/locale/ru/LC_MESSAGES/amarok.mo
-share/locale/se/LC_MESSAGES/amarok.mo
+share/locale/rw/LC_MESSAGES/amarok.mo
 share/locale/sl/LC_MESSAGES/amarok.mo
-share/locale/sq/LC_MESSAGES/amarok.mo
 share/locale/sr/LC_MESSAGES/amarok.mo
 share/locale/sr@Latn/LC_MESSAGES/amarok.mo
-share/locale/ss/LC_MESSAGES/amarok.mo
 share/locale/sv/LC_MESSAGES/amarok.mo
 share/locale/ta/LC_MESSAGES/amarok.mo
 share/locale/tg/LC_MESSAGES/amarok.mo
@@ -500,29 +666,20 @@ share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
 share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
-%%ARTS%%share/services/amarok_artsengine_plugin.desktop
-%%GSTREAMER%%share/services/amarok_gstengine_plugin.desktop
+%%GPOD%%share/services/amarok_ipod-mediadevice.desktop
+share/services/amarok_generic-mediadevice.desktop
 %%XINE%%share/services/amarok_xine-engine.desktop
 share/services/amarok_void-engine_plugin.desktop
 share/servicetypes/amarok_plugin.desktop
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/lo/LC_MESSAGES
-@dirrmtry share/locale/lo
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-@dirrmtry share/locale/ss/LC_MESSAGES
-@dirrmtry share/locale/ss
 @dirrmtry share/locale/uz/LC_MESSAGES
 @dirrmtry share/locale/uz
 @dirrm share/doc/HTML/sv/amarok
 @dirrm share/doc/HTML/ru/amarok
 @dirrm share/doc/HTML/pt_BR/amarok
 @dirrm share/doc/HTML/pt/amarok
+@dirrm share/doc/HTML/pl/amarok
 @dirrm share/doc/HTML/nl/amarok
 @dirrm share/doc/HTML/it/amarok
 @dirrm share/doc/HTML/fr/amarok
@@ -537,10 +694,11 @@ share/servicetypes/amarok_plugin.desktop
 @dirrm share/apps/amarok/themes
 @dirrm share/apps/amarok/scripts/webcontrol
 @dirrm share/apps/amarok/scripts/templates
+@dirrm share/apps/amarok/scripts/ruby_debug
 @dirrm share/apps/amarok/scripts/playlist2html
-@dirrm share/apps/amarok/scripts/graphequalizer
+@dirrm share/apps/amarok/scripts/lyrics_lyrc
+@dirrm share/apps/amarok/scripts/lyrics_astraweb
 @dirrm share/apps/amarok/scripts/common
-@dirrm share/apps/amarok/scripts/alarm
 @dirrm share/apps/amarok/scripts/amarok_live
 @dirrm share/apps/amarok/scripts
 @dirrm share/apps/amarok/images
@@ -567,4 +725,3 @@ share/servicetypes/amarok_plugin.desktop
 @dirrm share/apps/amarok/icons
 @dirrm share/apps/amarok/data
 @dirrm share/apps/amarok
-%%ARTS%%@dirrm lib/mcop/Amarok
