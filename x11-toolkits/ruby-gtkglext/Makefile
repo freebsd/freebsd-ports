@@ -8,7 +8,6 @@
 
 PORTNAME=	gtkglext
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -19,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for GtkGLExt
 
-LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/opengl.so:${PORTSDIR}/graphics/ruby-opengl
 

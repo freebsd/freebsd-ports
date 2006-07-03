@@ -18,6 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for librsvg2
 
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/cairo.so:${PORTSDIR}/graphics/ruby-cairo
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes

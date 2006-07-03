@@ -21,7 +21,7 @@ COMMENT=	Ruby binding for GtkMozEmbed a widget embedding a Gecko renderer
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
-USE_GECKO=	mozilla
+USE_GECKO=	firefox mozilla xulrunner
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
@@ -35,8 +35,9 @@ DOCS=		COPYING.LIB ChangeLog README
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|g' \
-		${WRKSRC}/extconf.rb
+	@${REINPLACE_CMD} -e 's|xulrunner-|${GECKO}-|g ; \
+		s|%%GECKO_PATH%%|${X11BASE}/lib/${GECKO}|g' \
+			${WRKSRC}/extconf.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
