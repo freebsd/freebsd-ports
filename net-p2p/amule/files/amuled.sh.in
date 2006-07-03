@@ -2,7 +2,6 @@
 #
 # aMule RCng startup script
 # Ogirinal work from Gabriele Cecchetti (amule.org forum)
-# Modified by Ganaël LAPLANCHE (ganael.laplanche@martymac.com)
 # 
 
 # PROVIDE: amuled
