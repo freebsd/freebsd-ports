@@ -17,6 +17,8 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		tunepimp:${PORTSDIR}/audio/libtunepimp \
 		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
+MIN_OPTIONS_VER=	${PORTNAME}-1.4.0a
+
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
@@ -91,6 +93,8 @@ USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-postgresql
 .endif
 
+pre-extract:	check-options-version
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g' \
@@ -101,6 +105,16 @@ post-patch:
 post-install:
 .if defined(WITH_LIBVISUAL)
 	@${CAT} ${PKGMESSAGE}
+.endif
+
+check-options-version:
+.ifdef(_OPTIONS_READ)
+	@(if ${PKG_VERSION} -t ${_OPTIONS_READ} ${MIN_OPTIONS_VER} | ${GREP} -q '<'; \
+	 then	${ECHO_CMD} ""; \
+		${ECHO_CMD} "===> You have unsupported (old) OPTIONS, please do a 'make rmconfig; make'"; \
+		${ECHO_CMD} ""; \
+		exit 1; \
+	fi)
 .endif
 
 .include <bsd.port.post.mk>
