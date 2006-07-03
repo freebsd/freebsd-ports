@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20060525
-PORTREVISION=	1
+PORTVERSION=	20060703
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
-		http://www.galle.com.br/~garga/clamav-devel/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	garga/clamav-devel
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -43,6 +43,7 @@ PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
+		--mandir=${MANPREFIX}/man \
 		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
