@@ -5,7 +5,7 @@
 
 PORTNAME=	ooo-build
 PORTVERSION=	${OOOBUILD_VERSION}
-MASTER_SITES+=	http://www.go-ooo.org/packages/OOB680/ \
+MASTER_SITES+=	http://www.go-ooo.org/packages/OOC680/ \
 		http://www.go-ooo.org/packages/SRC680/ \
 		http://www.openclipart.org/downloads/0.18/:openclipart
 DISTFILES+=	${OOOBUILD_SOURCE} \
@@ -30,17 +30,15 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOOBUILD_VERSION=2.0.2.15
-OOOBUILD_TAG=oob680-m5
-OOOBUILD=	ooo-build-${OOOBUILD_VERSION}
+OOOBUILD_VERSION=2.0.3
+OOOBUILD_TAG=ooc680-m7
+OOOBUILD=	ooo-build-${OOOBUILD_TAG}
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
 OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .endif
-
-BROKEN=		"Incompatible with master port(2.0.3) and ooo-build(2.0.2)"
 
 MD5_FILE=      ${.CURDIR}/distinfo
 USE_AUTOTOOLS=  autoconf:259
@@ -59,7 +57,6 @@ pre-configure:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${OOOBUILD_SOURCE} | ${TAR} xfz -
 .if !defined(DEVELOPER_VER)
 	@cd ${WRKDIR}/${OOOBUILD} ; ${PATCH} < ${.CURDIR}/files/ooo-build-patch
-	#@${REINPLACE_CMD} -e 's|== "|= "|g'	${WRKDIR}/${OOOBUILD}/patches/src680/disable-access.diff
 .else
 	@cd ${WRKDIR}/${OOOBUILD} ; ${PATCH} < ${.CURDIR}/files/ooo-build-patch-devel
 .endif
