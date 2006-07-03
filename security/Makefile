@@ -196,6 +196,7 @@
     SUBDIR += kgpg
     SUBDIR += klamav
     SUBDIR += knocker
+    SUBDIR += kovpn
     SUBDIR += krb4
     SUBDIR += krb5
     SUBDIR += kripp
