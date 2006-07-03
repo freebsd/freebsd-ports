@@ -123,8 +123,9 @@ share/pixmaps/penguintvicon.png
 %%WITH_MOZILLA%%@dirrm %%PYTHON_SITELIBDIR%%/penguintv/democracy_moz
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
 
-@cwd %%X11BASE%%
-etc/gconf/gconf.xml.defaults/schemas/apps/penguintv/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/penguintv/%gconf.xml
+@comment @cwd %%X11BASE%%
+@comment etc/gconf/gconf.xml.defaults/schemas/apps/penguintv/%gconf.xml
+@comment etc/gconf/gconf.xml.defaults/apps/penguintv/%gconf.xml
+
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/penguintv/
 @dirrm etc/gconf/gconf.xml.defaults/apps/penguintv
