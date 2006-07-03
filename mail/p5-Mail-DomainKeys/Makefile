@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DomainKeys
-PORTVERSION=	0.80
+PORTVERSION=	0.82
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -17,7 +17,7 @@ COMMENT=	Perl implementation of DomainKeys
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
