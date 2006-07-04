@@ -1,14 +1,14 @@
 bin/newsx
 bin/newsq
-%%PORTDOCS%%share/doc/newsx/AUTHORS
-%%PORTDOCS%%share/doc/newsx/COPYING
-%%PORTDOCS%%share/doc/newsx/ChangeLog
-%%PORTDOCS%%share/doc/newsx/FAQ
-%%PORTDOCS%%share/doc/newsx/INSTALL
-%%PORTDOCS%%share/doc/newsx/NEWS
-%%PORTDOCS%%share/doc/newsx/README
-%%PORTDOCS%%share/doc/newsx/TODO
-%%PORTDOCS%%@dirrm share/doc/newsx
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm news/spool/inhosts
 @dirrmtry news/spool
 @dirrmtry news

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A program to fetch news from and post news to a remote NNTP server
 
 .if defined(WITH_CNEWS)
@@ -20,12 +20,18 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
+GNU_CONFIGURE=	yes
+
 CONFLICTS=	leafnode-1.9.*
 
 .if !defined(WITH_CNEWS)
 .if !defined(WITHOUT_INN_2-X)
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/news/include"
 .endif
+.endif
+
+.if defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--without-history
 .endif
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
