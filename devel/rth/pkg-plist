@@ -31,6 +31,7 @@ www/rth/api/testset_api.php
 www/rth/api/timer_api.php
 www/rth/api/user_api.php
 www/rth/api/admin_api.php
+www/rth/api/.#error_api.php.1.1.1.1
 www/rth/lang/strings_english.txt
 www/rth/jpgraph-1.8/src/utils/misc/adjimg.php
 www/rth/jpgraph-1.8/src/utils/misc/gencolorchart.php
