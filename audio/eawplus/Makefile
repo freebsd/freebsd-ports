@@ -8,7 +8,8 @@
 PORTNAME=	eawplus
 PORTVERSION=	12.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.linet.gr.jp/~tamuki/timidity/eawplus/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nork
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	E.A.W.+Izumo+Tamuki collection of Gravis Ultrasound MIDI patches
