@@ -51,7 +51,7 @@ PLIST_SUB+=	XINE=""
 .endif
 
 .if !defined(WITH_GPOD)
-PLIST_SUB+=	GPOD="@comment"
+PLIST_SUB+=	GPOD="@comment "
 .else
 LIB_DEPENDS+=	gpod.302:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-libgpod
