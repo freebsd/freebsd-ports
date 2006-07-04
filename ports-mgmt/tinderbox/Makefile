@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 CATEGORIES=	misc
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 
@@ -50,8 +49,8 @@ USE_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 .endif
 
+.if ! (${OSVERSION} > 700014 || ( ${OSVERSION} >= 601101 && ${OSVERSION} < 700000 ))
 .if !defined(WITHOUT_CSUP)
-.if ! exists(/usr/bin/csup)
 RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 .endif
 .endif
