@@ -8,7 +8,9 @@
 PORTNAME=	sitecopy
 PORTVERSION=	0.16.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.lyra.org/sitecopy/
+MASTER_SITES=	http://www.lyra.org/${PORTNAME}/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up with local copy
