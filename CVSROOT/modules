@@ -769,6 +769,7 @@ bioapitool	ports/security/bioapitool
 biojava		ports/biology/biojava
 biology-blast	ports/biology/blast
 biorythm	ports/games/biorythm
+biosfont	ports/sysutils/biosfont
 bird		ports/net/bird
 birda		ports/comms/birda
 birthday	ports/misc/birthday
