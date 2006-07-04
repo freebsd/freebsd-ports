@@ -1,0 +1,20 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin pupdate; fi
+%%SQUIRRELDIR%%/plugins/pupdate/docs/index.php
+%%SQUIRRELDIR%%/plugins/pupdate/docs/INSTALL
+%%SQUIRRELDIR%%/plugins/pupdate/docs/README
+%%SQUIRRELDIR%%/plugins/pupdate/udata/core.dat
+%%SQUIRRELDIR%%/plugins/pupdate/udata/defaultdirs.dat
+%%SQUIRRELDIR%%/plugins/pupdate/udata/pluginlist.dat
+%%SQUIRRELDIR%%/plugins/pupdate/udata/index.php
+%%SQUIRRELDIR%%/plugins/pupdate/udata/pluginlist2.dat
+%%SQUIRRELDIR%%/plugins/pupdate/udata/defaultdirs2.dat
+%%SQUIRRELDIR%%/plugins/pupdate/update.php
+%%SQUIRRELDIR%%/plugins/pupdate/version
+%%SQUIRRELDIR%%/plugins/pupdate/optblock.php
+%%SQUIRRELDIR%%/plugins/pupdate/index.php
+%%SQUIRRELDIR%%/plugins/pupdate/config.php.sample
+%%SQUIRRELDIR%%/plugins/pupdate/setup.php
+@dirrm %%SQUIRRELDIR%%/plugins/pupdate/docs
+@dirrm %%SQUIRRELDIR%%/plugins/pupdate/udata
+@dirrm %%SQUIRRELDIR%%/plugins/pupdate
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin pupdate; fi

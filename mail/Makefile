@@ -518,6 +518,7 @@
     SUBDIR += squirrelmail-newuser_wiz-plugin
     SUBDIR += squirrelmail-notes-plugin
     SUBDIR += squirrelmail-notify-plugin
+    SUBDIR += squirrelmail-pupdate-plugin
     SUBDIR += squirrelmail-quota_usage-plugin
     SUBDIR += squirrelmail-secure_login-plugin
     SUBDIR += squirrelmail-vlogin-plugin
