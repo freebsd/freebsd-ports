@@ -267,6 +267,7 @@ foreach my $thisdir (@dirs) {
 		while(<MAKEFILE>) {
 			chomp;
 			($orig) = (m/^# Whom:\s+(\w.*)$/) if (/^# Whom:/);
+			$orig =~ s/\@/ at /;
 			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
