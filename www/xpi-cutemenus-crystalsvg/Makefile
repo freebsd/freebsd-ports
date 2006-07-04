@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cutemenus-crystalsvg
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 DISTVERSIONSUFFIX=	-fx+fl+ns+nv+sb+tb
 CATEGORIES=	www
 
