@@ -7,7 +7,7 @@
 
 PORTNAME=	ices
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio net
 MASTER_SITES=	http://svn.xiph.org/releases/ices/
 
@@ -43,14 +43,14 @@ MAN1=		ices0.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_FLAC)
-CONFIGURE_ARGS+=--without-flac --without-lame
+CONFIGURE_ARGS+=--without-flac
 .else
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac \
 		mp3lame:${PORTSDIR}/audio/lame
 .endif
 
 .if !defined(WITH_FAAD)
-CONFIGURE_ARGS+=--without-faad --without-lame
+CONFIGURE_ARGS+=--without-faad
 .else
 LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad \
 		mp3lame:${PORTSDIR}/audio/lame
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=--without-python
 .endif
 
 .if !defined(WITH_VORBIS)
-CONFIGURE_ARGS+=--without-vorbis --without-lame
+CONFIGURE_ARGS+=--without-vorbis
 .else
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis \
 		mp3lame:${PORTSDIR}/audio/lame
