@@ -7,7 +7,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.39
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,7 +41,7 @@ MAN5=	e2fsck.conf.5 mke2fs.conf.5
 MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
 	mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
 	fsck.ext2.8 fsck.ext3.8 mkfs.ext2.8 mkfs.ext3.8 \
-	findfs.8 blkid.8 logsave.8
+	findfs.8 blkid.8 logsave.8 fsck_ext2fs.8
 
 pre-build:
 	@${ECHO_CMD} "-------------------------------------------------------------"
@@ -89,6 +89,7 @@ post-install:
 	${RM} ${PREFIX}/man/man8/filefrag.8
 	${RM} ${PREFIX}/info/libext2fs.info.gz
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
+	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${PREFIX}/man/man8/
 	[ -f ${PREFIX}/etc/mke2fs.conf ] || \
 		${CP} -p ${PREFIX}/etc/mke2fs.conf.dist ${PREFIX}/etc/mke2fs.conf
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
