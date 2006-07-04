@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
 		http://mirror.mcs.anl.gov/openssh/portable/%SUBDIR%/
 MASTER_SITE_SUBDIR=	# empty
-PKGNAMESUFFIX?=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}
+PKGNAMESUFFIX=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}
 DISTNAME=	# empty
 
 MAINTAINER=	mnag@FreeBSD.org
@@ -62,7 +62,6 @@ OPTIONS=	PAM		"Enable pam(3) support"			on \
 		OPENSSH_CHROOT	"Enable CHROOT support"			off \
 		OPENSC		"Enable OpenSC smartcard support"	off \
 		HPN		"Enable HPN-11 SSH/SCP patch"		off \
-		HPN_NONECIPHER	"Enable HPN-11 with None Cipher patch"	off \
 		OVERWRITE_BASE	"OpenSSH overwrite base"		off
 
 .include <bsd.port.pre.mk>
@@ -129,21 +128,9 @@ CONFIGURE_ARGS+=	--with-opensc=${LOCALBASE}
 .endif
 
 .if defined(WITH_HPN)
-.if defined(WITH_HPN_NONECIPHER)
-IGNORE=			please, select only one HPN patch. Rerun 'make config'
-.endif
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.3p1-hpn11.diff
-.endif
-
-.if defined(WITH_HPN_NONECIPHER)
-.if defined(WITH_HPN)
-IGNORE=			please, select only one HPN patch. Rerun 'make config'
-.endif
-PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.3p1-hpn11-none.diff
+PATCHFILES+=		openssh-4.3p2-hpn12.diff.gz
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
