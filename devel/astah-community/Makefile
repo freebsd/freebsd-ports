@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	2.5.1
+PORTVERSION=	3.0
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -23,17 +23,25 @@ JAVA_VERSION=	1.4+
 JAVA_OS=	native
 NO_BUILD=	yes
 
-RESTRICTED=	"See http://jude.change-vision.com/jude-web/notes/ProductLicenseAgreement.html"
+RESTRICTED=	See http://jude.change-vision.com/jude-web/notes/ProductLicenseAgreement.html
 NO_CDROM=	${RESTRICTED}
-
-PLIST_SUB+=	PORTNAME=${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S!-!_!}
 
 DOWNLOAD_URL=	http://jude.change-vision.com/jude-web/download/index.html
 
+PLIST_FILES=	bin/jude share/${PORTNAME}/mozilla
+DATA_FILES=	${PORTNAME}.jar jude-api.jar JudeDefaultModel.jude \
+		jude.ico jude-doc.ico Welcome.jude
+.for file in ${DATA_FILES}
+PLIST_FILES+=	share/${PORTNAME}/${file}
+.endfor
+PLIST_FILES+=	share/${PORTNAME}/tools.jar
+PLIST_DIRS=	share/${PORTNAME}
+
 .if !defined(NOPORTDOCS)
-PORTDOCS=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html
+PORTDOCS+=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html \
+		ProductInformation.txt
 .endif
 
 .include <bsd.port.pre.mk>
@@ -47,22 +55,32 @@ IGNORE=		needs you to fetch manually the distribution file\
 post-patch:
 	${REINPLACE_CMD} -e "s!%%JAVA_HOME%%!${JAVA_HOME}!; \
 	                     s!%%DATADIR%%!${DATADIR}!" ${WRKSRC}/jude
+.if !defined(NOPORTDOCS)
+	${REINPLACE_CMD} 's/png\\/png\//' ${WRKSRC}/api/*/doc/index.html
+.endif
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/jude ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/mozilla ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/JudeDefaultModel.jude ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/jude.ico ${DATADIR}
+.for datafile in ${DATA_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${datafile} ${DATADIR}
+.endfor
 	# ExportHTML needs lib/tools.jar to be copied
 	${LN} -s ${JAVA_HOME}/lib/tools.jar ${DATADIR}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for docfile in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
+	@ ${MKDIR} ${DOCSDIR}/api
+	@ cd ${WRKSRC}/api && ${FIND} . | \
+		${CPIO} --quiet -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/api
+	@ cd ${PREFIX} && ${FIND} share/doc/${PORTNAME}/api -type f -print | \
+		${SORT} -r >> ${TMPPLIST}
+	@ cd ${PREFIX} && ${FIND} share/doc/${PORTNAME}/api -type d -print | \
+		${SORT} -r |  ${SED} -e 's#^#@dirrm #' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>
