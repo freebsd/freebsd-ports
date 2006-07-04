@@ -29,8 +29,6 @@ lib/%%APP_NAME%%/components/libmyspell.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libxpinstall.so
-lib/%%APP_NAME%%/components/myspell/en-US.aff
-lib/%%APP_NAME%%/components/myspell/en-US.dic
 lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
 lib/%%APP_NAME%%/components/nsBrowserGlue.js
 lib/%%APP_NAME%%/components/nsCloseAllWindows.js
@@ -44,6 +42,8 @@ lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
 lib/%%APP_NAME%%/components/nsSafebrowsingApplication.js
 lib/%%APP_NAME%%/components/nsSearchService.js
 lib/%%APP_NAME%%/components/nsSearchSuggestions.js
+lib/%%APP_NAME%%/components/nsSessionStartup.js
+lib/%%APP_NAME%%/components/nsSessionStore.js
 lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
 lib/%%APP_NAME%%/components/nsSidebar.js
 lib/%%APP_NAME%%/components/nsUpdateService.js
@@ -65,6 +65,8 @@ lib/%%APP_NAME%%/defaults/profile/localstore.rdf
 lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
 lib/%%APP_NAME%%/defaults/profile/prefs.js
 lib/%%APP_NAME%%/defaults/profile/search.rdf
+lib/%%APP_NAME%%/dictionaries/en-US.aff
+lib/%%APP_NAME%%/dictionaries/en-US.dic
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
@@ -194,7 +196,7 @@ lib/%%APP_NAME%%/linkfarm
 @dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults
 @dirrm lib/%%APP_NAME%%/searchplugins
-@dirrm lib/%%APP_NAME%%/components/myspell
+@dirrm lib/%%APP_NAME%%/dictionaries
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/res/fonts
@@ -202,6 +204,7 @@ lib/%%APP_NAME%%/linkfarm
 @dirrm lib/%%APP_NAME%%/res/html
 @dirrm lib/%%APP_NAME%%/res/entityTables
 @dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/icons
 @dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome
@@ -212,7 +215,6 @@ lib/%%APP_NAME%%/linkfarm
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org
 @dirrm lib/%%APP_NAME%%/extensions
-@dirrm lib/%%APP_NAME%%/icons
 @dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
