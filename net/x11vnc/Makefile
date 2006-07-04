@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	x11vnc
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=libvncserver
 
-MAINTAINER=	lorenl@alzatex.com
+MAINTAINER=	lorenl@north-winds.org
 COMMENT=	VNC server for use with real X displays
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

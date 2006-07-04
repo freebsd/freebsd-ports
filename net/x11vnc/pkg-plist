@@ -1,4 +1,12 @@
 bin/x11vnc
+%%DATADIR%%/classes/ssl/VncViewer.jar
+%%DATADIR%%/classes/ssl/index.vnc
+%%DATADIR%%/classes/ssl/SignedVncViewer.jar
+%%DATADIR%%/classes/ssl/proxy.vnc
+%%DATADIR%%/classes/ssl/ssl_vncviewer
+%%DATADIR%%/classes/ssl/README
+%%DATADIR%%/classes/VncViewer.jar
+%%DATADIR%%/classes/index.vnc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -6,8 +14,7 @@ bin/x11vnc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.LibVNCServer
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%DATADIR%%/classes/VncViewer.jar
-%%DATADIR%%/classes/index.vnc
+@dirrm %%DATADIR%%/classes/ssl
 @dirrm %%DATADIR%%/classes
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
