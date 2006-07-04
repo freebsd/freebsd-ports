@@ -42,6 +42,10 @@ PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
 .endif
 
+.if ${ARCH}==sparc64
+BROKEN=		does not compile on ${ARCH} due to internal compiler error
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
 
