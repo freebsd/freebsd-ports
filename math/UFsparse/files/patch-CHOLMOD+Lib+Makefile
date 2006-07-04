@@ -1,0 +1,11 @@
+--- CHOLMOD/Lib/Makefile~	Tue May  2 09:12:16 2006
++++ CHOLMOD/Lib/Makefile	Tue Jul  4 11:52:37 2006
+@@ -116,7 +116,7 @@
+ $(OBJ): $(INC)
+ 
+ I = -I../../AMD/Include -I../../AMD/Source -I../../COLAMD \
+-	-I$(METIS_PATH)/Lib -I../../CCOLAMD -I../../CAMD/Include -I../Include \
++	-I$(METIS_PATH) -I../../CCOLAMD -I../../CAMD/Include -I../Include \
+ 	-I../../UFconfig
+ 
+ 
