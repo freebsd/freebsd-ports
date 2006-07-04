@@ -1,0 +1,22 @@
+# New ports collection makefile for:	sysutils/p5-Dir-Purge
+# Date created:				4 July 2006
+# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Dir-Purge
+PORTVERSION=	1.01
+CATEGORIES=	sysutils perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Dir
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	Purge directories to a given number of files
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Dir::Purge.3
+
+.include <bsd.port.mk>
