@@ -3012,6 +3012,7 @@ gecko-sharp10	ports/www/gecko-sharp10
 gecko-sharp20	ports/www/gecko-sharp20
 geda		ports/cad/geda
 geda-docs	ports/cad/geda-docs
+geda-examples	ports/cad/geda-examples
 geda-gattrib	ports/cad/geda-gattrib
 geda-projectmanager	ports/cad/geda-projectmanager
 geda-symbols	ports/cad/geda-symbols
