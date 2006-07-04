@@ -22,7 +22,7 @@ upgrades.
   Because of portupgrade had a bug with detecting of Berkley DB version 2+,
   and a default database now set to use this version you can get portupgrade
   don't work with old databases. A quick fix is removing the databases:
-  `rm /var/pkg/pkgdb.db /usr/ports/INDEX*.db'. portupgrade will recreate
+  `rm /var/db/pkg/pkgdb.db /usr/ports/INDEX*.db'. portupgrade will recreate
   them automaticaly. It's absolutely no harm.
 
   If you don't want remove the databases you should detect what database
