@@ -25,6 +25,7 @@
     SUBDIR += bibletime
     SUBDIR += biblical-curse
     SUBDIR += bidwatcher
+    SUBDIR += biosfont-demos
     SUBDIR += birthday
     SUBDIR += bogosort
     SUBDIR += bottlerocket
