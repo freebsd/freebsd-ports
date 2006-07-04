@@ -11,4 +11,7 @@ MASTERDIR=	${.CURDIR}/../libdnet
 
 BUILD_PYTHON_MODULE=	yes
 
+NOT_FOR_ARCHS=			ia64
+NOT_FOR_ARCHS_REASON_ia64=	fails to build with internal compiler error
+
 .include "${MASTERDIR}/Makefile"
