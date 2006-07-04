@@ -21,6 +21,7 @@
     SUBDIR += feappv
     SUBDIR += geda
     SUBDIR += geda-docs
+    SUBDIR += geda-examples
     SUBDIR += geda-gattrib
     SUBDIR += geda-projectmanager
     SUBDIR += geda-symbols

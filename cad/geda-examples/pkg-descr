@@ -1,0 +1,8 @@
+Various examples for gEDA suite. This includes:
+
+  1) gTAG - USB to JTAG interface
+  2) lightning_detector - a lightning detector
+  3) RF_Amp - schematics and associated materials for a SPICE model
+  4) TwoStageAmp - a two stage amplifier SPICE playpen
+
+WWW: http://www.geda.seul.org
