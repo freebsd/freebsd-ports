@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	rth
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rth
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jsi@jules.de
-COMMENT=	Web-based tool to manage requirements and tests
+COMMENT=	Web-based requirement, test and bugtracking system
 
 NO_BUILD=	yes
 USE_PHP=	mysql gd
