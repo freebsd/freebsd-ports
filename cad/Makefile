@@ -20,6 +20,7 @@
     SUBDIR += fandango
     SUBDIR += feappv
     SUBDIR += geda
+    SUBDIR += geda-docs
     SUBDIR += geda-gattrib
     SUBDIR += geda-projectmanager
     SUBDIR += geda-symbols
