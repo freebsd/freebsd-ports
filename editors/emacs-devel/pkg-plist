@@ -2640,6 +2640,7 @@ var/games/emacs/tetris-scores
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/url
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp
 @dirrmtry %%DATADIR%%/site-lisp
+@dirrmtry %%DATADIR%%/%%EMACS_VER%%/site-lisp
 @dirrmtry %%DATADIR%%/%%EMACS_VER%%
 @dirrmtry %%DATADIR%%
 @dirrmtry var/games/emacs

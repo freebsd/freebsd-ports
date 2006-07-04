@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	keramida
@@ -74,7 +75,26 @@ LATEST_LINK=	emacs22
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-texinfo
 .endif
 
+pre-everything::
+.if !defined(WITHOUT_X11) && !defined(WITHOUT_GTK)
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> To disable GTK+ interface support, define WITHOUT_X11 or WITHOUT_GTK"
+	@${ECHO_MSG} "====>"
+.endif
+.if !defined(WITHOUT_X11) && !defined(WITHOUT_XIM)
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> To disable X11 Input Method support, define WITHOUT_XIM"
+	@${ECHO_MSG} "====>"
+.endif
+
 pre-build:
-	(cd ${WRKSRC} ; make bootstrap)
+	(cd ${WRKSRC} ; ${MAKE} bootstrap)
+
+post-build:
+	(cd ${WRKSRC}/lisp ; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
+	${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.[0-9]* ; \
+	cd ${WRKSRC}/src ; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 .include <bsd.port.post.mk>
