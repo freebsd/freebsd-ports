@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gramps
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
@@ -24,12 +24,13 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 desktopfileutils
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 
 MAN1=		gramps.1
 GCONF_SCHEMAS=	gramps.schemas
 
 post-patch:
-.for l in C fr
+.for l in C fr sk
 	@${REINPLACE_CMD} -e 's|/@PACKAGE@/gnome||' \
 		${WRKSRC}/doc/gramps-manual/${l}/Makefile.in
 .endfor
