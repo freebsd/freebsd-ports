@@ -1,0 +1,10 @@
+--- dynamic/Makefile.in.orig	Tue Jul  4 11:34:55 2006
++++ dynamic/Makefile.in	Tue Jul  4 11:35:05 2006
+@@ -32,7 +32,6 @@
+ install:
+ 		mkdir -p $(libdir)
+ 		$(INSTALL_PROGRAM) $(SHLIBFILE) $(libdir)/$(SHLIBFILE)
+-		ln -sf $(SHLIBFILE) $(libdir)/$(SHLIBSONAME)
+ 		ln -sf $(SHLIBSONAME) $(libdir)/$(SHLIBFORLINK)
+ 
+ uninstall:
