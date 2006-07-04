@@ -400,6 +400,7 @@
     SUBDIR += p5-Audio
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-Audio-Scrobbler
+    SUBDIR += p5-Audio-TagLib
     SUBDIR += p5-Audio-WMA
     SUBDIR += p5-Audio-Wav
     SUBDIR += p5-CDDB
