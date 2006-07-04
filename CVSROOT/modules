@@ -7860,6 +7860,7 @@ p5-Attribute-Persistent	ports/devel/p5-Attribute-Persistent
 p5-Audio	ports/audio/p5-Audio
 p5-Audio-CD	ports/audio/p5-Audio-CD
 p5-Audio-Scrobbler	ports/audio/p5-Audio-Scrobbler
+p5-Audio-TagLib	ports/audio/p5-Audio-TagLib
 p5-Audio-WMA	ports/audio/p5-Audio-WMA
 p5-Audio-Wav	ports/audio/p5-Audio-Wav
 p5-Authen-Captcha	ports/security/p5-Authen-Captcha
