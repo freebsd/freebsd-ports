@@ -78,6 +78,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/smtp.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/sql.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/stars.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/swords.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/teletubbies.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/tld.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/tmnt.pm

@@ -80,6 +80,7 @@ MAN3+=	Acme::MetaSyntactic::simpsons.3
 MAN3+=	Acme::MetaSyntactic::smtp.3
 MAN3+=	Acme::MetaSyntactic::sql.3
 MAN3+=	Acme::MetaSyntactic::stars.3
+MAN3+=	Acme::MetaSyntactic::swords.3
 MAN3+=	Acme::MetaSyntactic::teletubbies.3
 MAN3+=	Acme::MetaSyntactic::tld.3
 MAN3+=	Acme::MetaSyntactic::tmnt.3
