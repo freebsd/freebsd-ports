@@ -25,6 +25,9 @@ USE_PYDISTUTILS=	yes
 
 CONFLICTS=	py*-4Suite-1* py*-xml-0.7*
 
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	fails self-tests on 64-bit platforms
+
 .include <bsd.port.pre.mk>
 
 BINDIR=		bin
