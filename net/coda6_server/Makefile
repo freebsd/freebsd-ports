@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
 PKGNAMESUFFIX=	-${CODA_SUITE}
 DISTNAME=	coda-${PORTVERSION}
 
-MAINTAINER?=	tim@robbins.dropbear.id.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
@@ -49,5 +49,12 @@ IGNORE=		lacks kernel support on this version of FreeBSD
 IGNORE=		makes a kernel panic on this version of FreeBSD
 .endif
 .endif
+
+.if ${OSVERSION} > 505000
+BROKEN=		does not compile
+.endif
+
+DEPRECATED=	compiles neither on 5-STABLE nor 6-STABLE; current version is quite old
+EXPIRATION_DATE=	2006-10-04
 
 .include <bsd.port.post.mk>

@@ -32,4 +32,13 @@ CONFIGURE_ARGS?=	--sysconfdir=${PREFIX}/etc/rc.d
 CODA_SUITE?=	server
 CODA_VERSION?=	5.3.20
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 505000
+BROKEN=		does not compile
+.endif
+
+DEPRECATED=	no longer available from mastersite
+EXPIRATION_DATE=	2006-10-04
+
+.include <bsd.port.post.mk>
