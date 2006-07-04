@@ -1,19 +1,18 @@
 # Ports collection makefile for:	Solid-IRCd
 # Date created:				26 May 2005
-# Whom:					mj <freebsd@nsacenter.com>
+# Whom:					mj <systemoperator@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	solid-ircd
-PORTVERSION=	3.4.7a
-PORTREVISION=	1
+PORTVERSION=	3.4.8
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=solidircd
-DISTNAME=	solid3.4.7stablea
+DISTNAME=	solidircd-stable3.4.8
 
-MAINTAINER=	freebsd@nsacenter.com
+MAINTAINER=	systemoperator@gmail.com
 COMMENT=	Solid Internet Relay Chat Daemon based on bahamut IRCd
 
 WRKSRC=		${WRKDIR}/solidircd-stable
