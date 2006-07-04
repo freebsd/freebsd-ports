@@ -232,6 +232,8 @@ share/gnome/gramps/dates/Date_nl.py
 share/gnome/gramps/dates/Date_nl.pyo
 share/gnome/gramps/dates/Date_ru.py
 share/gnome/gramps/dates/Date_ru.pyo
+share/gnome/gramps/dates/Date_sk.py
+share/gnome/gramps/dates/Date_sk.pyo
 share/gnome/gramps/dates/Date_sv.py
 share/gnome/gramps/dates/Date_sv.pyo
 share/gnome/gramps/docgen/AbiWord2Doc.py
@@ -572,10 +574,78 @@ share/gnome/help/gramps/fr/legal.xml
 share/gnome/help/gramps/fr/mainwin.xml
 share/gnome/help/gramps/fr/preface.xml
 share/gnome/help/gramps/fr/usage.xml
+share/gnome/help/gramps/sk/authors.xml
+share/gnome/help/gramps/sk/bugs.xml
+share/gnome/help/gramps/sk/cmdline.xml
+share/gnome/help/gramps/sk/cmdplug.xml
+share/gnome/help/gramps/sk/custom.xml
+share/gnome/help/gramps/sk/faq.xml
+share/gnome/help/gramps/sk/figures
+share/gnome/help/gramps/sk/figures/bookreport.png
+share/gnome/help/gramps/sk/figures/cfe-ar.png
+share/gnome/help/gramps/sk/figures/cfe-df.png
+share/gnome/help/gramps/sk/figures/column-editor.png
+share/gnome/help/gramps/sk/figures/comp-people.png
+share/gnome/help/gramps/sk/figures/date-selection.png
+share/gnome/help/gramps/sk/figures/edit-ad.png
+share/gnome/help/gramps/sk/figures/edit-an.png
+share/gnome/help/gramps/sk/figures/edit-at.png
+share/gnome/help/gramps/sk/figures/edit-bm.png
+share/gnome/help/gramps/sk/figures/edit-ev.png
+share/gnome/help/gramps/sk/figures/edit-media.png
+share/gnome/help/gramps/sk/figures/edit-person-addresses.png
+share/gnome/help/gramps/sk/figures/edit-person-attributes.png
+share/gnome/help/gramps/sk/figures/edit-person-events.png
+share/gnome/help/gramps/sk/figures/edit-person-gallery.png
+share/gnome/help/gramps/sk/figures/edit-person-internet.png
+share/gnome/help/gramps/sk/figures/edit-person-lds.png
+share/gnome/help/gramps/sk/figures/edit-person-names.png
+share/gnome/help/gramps/sk/figures/edit-person-notes.png
+share/gnome/help/gramps/sk/figures/edit-person-sources.png
+share/gnome/help/gramps/sk/figures/edit-person.png
+share/gnome/help/gramps/sk/figures/edit-plc.png
+share/gnome/help/gramps/sk/figures/edit-rel.png
+share/gnome/help/gramps/sk/figures/edit-si.png
+share/gnome/help/gramps/sk/figures/edit-src.png
+share/gnome/help/gramps/sk/figures/edit-wi.png
+share/gnome/help/gramps/sk/figures/export-druid.png
+share/gnome/help/gramps/sk/figures/family-alt.png
+share/gnome/help/gramps/sk/figures/family.png
+share/gnome/help/gramps/sk/figures/find-people.png
+share/gnome/help/gramps/sk/figures/first-open.png
+share/gnome/help/gramps/sk/figures/gedcom-export-progress.png
+share/gnome/help/gramps/sk/figures/gedcom-export.png
+share/gnome/help/gramps/sk/figures/gedcom-import.png
+share/gnome/help/gramps/sk/figures/mainwin.png
+share/gnome/help/gramps/sk/figures/media.png
+share/gnome/help/gramps/sk/figures/merge-people.png
+share/gnome/help/gramps/sk/figures/merge-plc.png
+share/gnome/help/gramps/sk/figures/merge-src.png
+share/gnome/help/gramps/sk/figures/missing-media.png
+share/gnome/help/gramps/sk/figures/noside-nofilt.png
+share/gnome/help/gramps/sk/figures/pedigree-anchor.png
+share/gnome/help/gramps/sk/figures/pedigree-child-cut.png
+share/gnome/help/gramps/sk/figures/pedigree-siblings-cut.png
+share/gnome/help/gramps/sk/figures/pedigree.png
+share/gnome/help/gramps/sk/figures/places.png
+share/gnome/help/gramps/sk/figures/prefs.png
+share/gnome/help/gramps/sk/figures/researcher.png
+share/gnome/help/gramps/sk/figures/scratch-pad.png
+share/gnome/help/gramps/sk/figures/side-filt.png
+share/gnome/help/gramps/sk/figures/sources.png
+share/gnome/help/gramps/sk/filtref.xml
+share/gnome/help/gramps/sk/getstart.xml
+share/gnome/help/gramps/sk/gramps-manual.xml
+share/gnome/help/gramps/sk/keybind.xml
+share/gnome/help/gramps/sk/legal.xml
+share/gnome/help/gramps/sk/mainwin.xml
+share/gnome/help/gramps/sk/preface.xml
+share/gnome/help/gramps/sk/usage.xml
 share/gnome/mime-info/gramps.keys
 share/gnome/mime-info/gramps.mime
 share/gnome/omf/gramps/gramps-manual-C.omf
 share/gnome/omf/gramps/gramps-manual-fr.omf
+share/gnome/omf/gramps/gramps-manual-sk.omf
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gedcom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-geneweb.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gramps-package.png
@@ -598,6 +668,7 @@ share/locale/pl/LC_MESSAGES/gramps.mo
 share/locale/pt_BR/LC_MESSAGES/gramps.mo
 share/locale/ro/LC_MESSAGES/gramps.mo
 share/locale/ru/LC_MESSAGES/gramps.mo
+share/locale/sk/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
 share/mime/application/x-gedcom.xml
@@ -617,6 +688,8 @@ share/mime/packages/gramps.xml
 @dirrm share/gnome/help/gramps/C
 @dirrm share/gnome/help/gramps/fr/figures
 @dirrm share/gnome/help/gramps/fr
+@dirrm share/gnome/help/gramps/sk/figures
+@dirrm share/gnome/help/gramps/sk
 @dirrm share/gnome/help/gramps
 @dirrm share/gnome/omf/gramps
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
