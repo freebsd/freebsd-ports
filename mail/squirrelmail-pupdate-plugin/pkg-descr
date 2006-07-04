@@ -1,0 +1,8 @@
+Checks for updates to your currently running plugins by parsing the
+SM site, and gives a description of any recent changes that have
+been made to the plugin.
+
+Also displays the current stable version of SM and lets you know
+what version of SM you are running.
+
+WWW:    http://www.squirrelmail.org/plugin_view.php?id=68
