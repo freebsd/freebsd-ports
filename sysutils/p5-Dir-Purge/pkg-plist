@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Purge/.packlist
+%%SITE_PERL%%/Dir/Purge.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Purge
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir
+@dirrmtry %%SITE_PERL%%/Dir
