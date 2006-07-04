@@ -106,11 +106,13 @@ etc/cyphesis/werewolf.xml
 %%DATADIR%%/rulesets/mason/world/objects/undead/__init__.py
 %%DATADIR%%/rulesets/mason/world/statistics/Statistics.py
 %%DATADIR%%/rulesets/mason/world/statistics/__init__.py
+%%DATADIR%%/rulesets/mason/world/tasks/Bisect.py
 %%DATADIR%%/rulesets/mason/world/tasks/Combat.py
 %%DATADIR%%/rulesets/mason/world/tasks/Ram.py
 %%DATADIR%%/rulesets/mason/world/tasks/Logging.py
 %%DATADIR%%/rulesets/mason/world/tasks/Raise.py
 %%DATADIR%%/rulesets/mason/world/tasks/Sharpen.py
+%%DATADIR%%/rulesets/mason/world/tasks/Slice.py
 %%DATADIR%%/rulesets/mason/world/tasks/__init__.py
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
