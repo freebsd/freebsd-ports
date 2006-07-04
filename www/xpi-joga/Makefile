@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	joga
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_CSME}
 # The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
+# The update RDF is at http://tools.google.com/firefox/joga/update.rdf
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Joga.com Companion
