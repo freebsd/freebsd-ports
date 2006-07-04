@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_PERL5_RUN=	yes
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
