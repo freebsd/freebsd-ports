@@ -70,7 +70,6 @@
     SUBDIR += linux_base
     SUBDIR += linux_base-8
     SUBDIR += linux_base-debian
-    SUBDIR += linux_base-fc3
     SUBDIR += linux_base-fc4
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-gentoo-stage2

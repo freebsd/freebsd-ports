@@ -259,7 +259,6 @@ aescrypt	ports/security/aescrypt
 aestats		ports/games/aestats
 aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
-aewm++		ports/x11-wm/aewm++
 af-aspell	ports/textproc/af-aspell
 afbackup	ports/misc/afbackup
 afbackup-client	ports/misc/afbackup-client
@@ -6211,7 +6210,6 @@ linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
 linux-nx-client	ports/net/linux-nx-client
 linux-openal	ports/audio/linux-openal
-linux-opengroupware	ports/misc/linux-opengroupware
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-oracle-instantclient-basic	ports/databases/linux-oracle-instantclient-basic
@@ -6268,7 +6266,6 @@ linux-ymessenger	ports/net-im/linux-ymessenger
 linux_base	ports/emulators/linux_base
 linux_base-8	ports/emulators/linux_base-8
 linux_base-debian	ports/emulators/linux_base-debian
-linux_base-fc3	ports/emulators/linux_base-fc3
 linux_base-fc4	ports/emulators/linux_base-fc4
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
 linux_base-gentoo-stage2	ports/emulators/linux_base-gentoo-stage2
@@ -7608,7 +7605,6 @@ opendx		ports/graphics/opendx
 opendx-samples	ports/graphics/opendx-samples
 openfoam	ports/science/openfoam
 openfts		ports/textproc/openfts
-opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
 openglad	ports/games/openglad
 openh323	ports/net/openh323
@@ -8226,7 +8222,6 @@ p5-Crypt-MySQL	ports/security/p5-Crypt-MySQL
 p5-Crypt-NULL	ports/security/p5-Crypt-NULL
 p5-Crypt-OFB	ports/security/p5-Crypt-OFB
 p5-Crypt-OTP	ports/security/p5-Crypt-OTP
-p5-Crypt-OpenPGP	ports/security/p5-Crypt-OpenPGP
 p5-Crypt-OpenSSL-Bignum	ports/security/p5-Crypt-OpenSSL-Bignum
 p5-Crypt-OpenSSL-DSA	ports/security/p5-Crypt-OpenSSL-DSA
 p5-Crypt-OpenSSL-RSA	ports/security/p5-Crypt-OpenSSL-RSA
@@ -12495,7 +12490,6 @@ sectar		ports/archivers/sectar
 sectok		ports/security/sectok
 secure_delete	ports/security/secure_delete
 security_hydra	ports/security/hydra
-sed_inplace	ports/textproc/sed_inplace
 seda		ports/net/seda
 sedsed		ports/devel/sedsed
 see		ports/lang/see
@@ -14568,7 +14562,6 @@ xml-lite.el	ports/textproc/xml-lite.el
 xml-parse.el	ports/textproc/xml-parse.el
 xml2rfc		ports/textproc/xml2rfc
 xml2rfc-xxe	ports/editors/xml2rfc-xxe
-xml4j		ports/textproc/xml4j
 xmlada		ports/textproc/xmlada
 xmlcatmgr	ports/textproc/xmlcatmgr
 xmlcharent	ports/textproc/xmlcharent

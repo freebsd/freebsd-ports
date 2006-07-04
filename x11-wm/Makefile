@@ -5,7 +5,6 @@
 
     SUBDIR += 9wm
     SUBDIR += aewm
-    SUBDIR += aewm++
     SUBDIR += afterstep
     SUBDIR += afterstep-i18n
     SUBDIR += afterstep-stable

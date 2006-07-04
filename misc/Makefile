@@ -301,7 +301,6 @@
     SUBDIR += lile
     SUBDIR += lingoteach
     SUBDIR += linm
-    SUBDIR += linux-opengroupware
     SUBDIR += localedata
     SUBDIR += logsurfer
     SUBDIR += loop

@@ -767,7 +767,6 @@
     SUBDIR += scrollkeeper
     SUBDIR += sdf
     SUBDIR += sdocbook-xml
-    SUBDIR += sed_inplace
     SUBDIR += senna
     SUBDIR += sgmlformat
     SUBDIR += sgmls
@@ -862,7 +861,6 @@
     SUBDIR += xml-lite.el
     SUBDIR += xml-parse.el
     SUBDIR += xml2rfc
-    SUBDIR += xml4j
     SUBDIR += xmlada
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
