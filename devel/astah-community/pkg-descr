@@ -1,18 +1,21 @@
-Jude/Community is a new tool which supports your object-oriented software 
-designing in Java(TM) and UML1.4(Unified Modeling Language). 
+JUDE/Community is the free edition with basic features.
+It is rich in functionality, offering features, such as editing and printing
+UML1.4 diagrams, import/export of Java source code, graphics output, and
+auto layout. (A restriction is that the JUDE logo always appears in the header
+of printed documents.)
 
-Basic Functions
-- Support of UML1.4
-- Class Diagram
-  (Object, Package, Subsystem and Robustness Diagrams are included.)
-- Usecase Diagram
-- Sequence Diagram
-- Collaboration Diagram
-- Statechart Diagram
-- Activity Diagram
-- Deployment Diagram
-- Component Diagram
-- Generate Java source code from model.
-- Import Java source files to create model.
+Basic Features
+JUDE supports the following basic UML 1.4 diagrams:
+- Class (Object, Package, Robustness)
+- Usecase
+- Sequence
+- Collaboration
+- Statechart
+- Activity
+- Component
+- Deployment
+- Template Generation of Java Source Files
+- Import of Java Source Files
+- Automatic Generation of Class Diagrams with Model Information
 
 WWW: http://jude.change-vision.com/jude-web/index.html
