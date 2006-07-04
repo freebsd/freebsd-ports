@@ -45,6 +45,7 @@
     SUBDIR += bchunk
     SUBDIR += be_agent
     SUBDIR += binup
+    SUBDIR += biosfont
     SUBDIR += bkpupsd
     SUBDIR += bksh
     SUBDIR += blimitd
