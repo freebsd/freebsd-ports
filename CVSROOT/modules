@@ -6203,6 +6203,7 @@ linux-jigdo	ports/net-p2p/linux-jigdo
 linux-jpeg	ports/graphics/linux-jpeg
 linux-js	ports/devel/linux-js
 linux-libaudiofile	ports/audio/linux-libaudiofile
+linux-libg2c	ports/lang/linux-libg2c
 linux-libglade	ports/devel/linux-libglade
 linux-libmng	ports/graphics/linux-libmng
 linux-libogg	ports/audio/linux-libogg
