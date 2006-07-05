@@ -7483,6 +7483,7 @@ nylon		ports/net/nylon
 nzbget		ports/news/nzbget
 nzbperl		ports/news/nzbperl
 o2em		ports/emulators/o2em
+o2sms		ports/comms/o2sms
 oaf		ports/devel/oaf
 oak		ports/sysutils/oak
 oases		ports/science/oases
