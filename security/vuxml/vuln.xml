@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e94cb43d-0c4a-11db-9016-0050bf27ba24">
+    <topic>horde -- various problems in dereferrer</topic>
+    <affects>
+      <package>
+	<name>horde</name>
+	<name>horde-php5</name>
+	<range><lt>3.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Horde 3.1.2 release announcement:</p>
+	<blockquote cite="http://lists.horde.org/archives/announce/2006/000288.html">
+	  <p>Security Fixes:</p>
+	  <ul>
+	    <li>Closed XSS problems in dereferrer (IE only), help viewer
+	      and problem reporting screen.</li>
+	    <li>Removed unused image proxy code from dereferrer.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.horde.org/archives/announce/2006/000288.html</url>
+    </references>
+    <dates>
+      <discovery>2006-06-28</discovery>
+      <entry>2006-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f70d09cb-0c46-11db-aac7-000c6ec775d9">
     <topic>mambo -- SQL injection vulnerabilities</topic>
     <affects>
