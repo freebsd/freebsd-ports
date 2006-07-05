@@ -39,7 +39,6 @@ BARRIER_QMTPC_PATCH=		yes
 BARRIER_DISCBOUNCES_PATCH=	yes
 BARRIER_SENDMAIL_F_PATCH=	yes
 BARRIER_BIG_TODO_PATCH=		yes
-BARRIER_LOCALTIME_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -50,13 +49,14 @@ BARRIER_RFC2821_PATCH=		yes
 BARRIER_TARPIT_PATCH=		yes
 .endif
 
+PATCH_DIST_STRIP+=	-p1
+
 .if !defined(BARRIER_DNS_PATCH)
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
 # groundzero. qmail being RFC compliant need to be "fixed" to work with those
 PATCH_SITES+=	http://www.ckdhr.com/ckd/:dns
 PATCHFILES+=	qmail-103.patch:dns
-PATCH_DIST_STRIP+=	-p1
 .endif
 
 .if !defined(BARRIER_SENDMAIL_F_PATCH)
@@ -78,14 +78,12 @@ PATCHFILES+=	patch-qmail-1.03-rfc2821.diff:rfc2821
 .if defined(SLAVE_LDAP)
 PATCH_SITES+=	http://www.nrg4u.com/qmail/:ldap
 PATCHFILES+=	qmail-ldap-1.03-${LDAP_PATCH_DATE}.patch.gz:ldap
-PATCH_DIST_STRIP+=	-p1
 .elif defined(SLAVE_MYSQL)
 PATCH_SITES+=	http://iain.cx/unix/qmail/download/:mysql
 PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 .elif defined(SLAVE_TLS)
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
 PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch:tls
-PATCH_DIST_STRIP+=	-p1
 .endif
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
