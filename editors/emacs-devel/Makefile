@@ -89,7 +89,7 @@ pre-everything::
 pre-build:
 	(cd ${WRKSRC} ; ${MAKE} bootstrap)
 
-post-build:
+pre-install:
 	(cd ${WRKSRC}/lisp ; \
 	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
 	 ${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.[0-9]* ; \
