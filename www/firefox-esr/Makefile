@@ -44,9 +44,13 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035 || ${ARCH}=="sparc64"
+.if ${ARCH}=="alpha" && ${OSVERSION} < 500035
 IGNORE=	core dumps on ${ARCH}
 .endif
+
+.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
+IGNORE=	core dumps on ${ARCH}, kern.osreldate>=601101 needed
+.endif 
 
 .if ${OSVERSION} >= 600000
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
