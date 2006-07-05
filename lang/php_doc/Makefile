@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	20060209
+PORTVERSION=	20060706
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -100,6 +100,17 @@ makesum:
 	${SHA256} $${f} >> ${MD5_FILE}; \
 	${ECHO_CMD} "SIZE ($${f}) = "`${LS} -ALln $${f} | ${AWK} '{print $$5}'` >> ${MD5_FILE}
 .endfor
+
+fetchdist:
+.for l in ${PHP_LANGS:S/br/pt_BR/}
+	wget -c ftp://ftp.planetmirror.com/pub/php/distributions/manual/php_manual_${l}.tar.gz
+	if [ "${l}" = "pt_BR" ]; then \
+		${MV} php_manual_${l}.tar.gz ${DISTDIR}/php_manual_br-${PORTVERSION}.tar.gz; \
+	else \
+		${MV} php_manual_${l}.tar.gz ${DISTDIR}/php_manual_${l}-${PORTVERSION}.tar.gz; \
+	fi
+.endfor
+
 
 
 .include <bsd.port.mk>
