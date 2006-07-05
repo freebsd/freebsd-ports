@@ -48,5 +48,3 @@
 # detail and should not be relied upon.
 #
 
-# This is required on SMP machines for Diablo JDK 1.5.0_06 build 0
-JAVAVM_OPTS_diablo_jdk1_5_0_java=-XX:+UseMembar
