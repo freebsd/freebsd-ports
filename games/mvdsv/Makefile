@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mvdsv
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 PORTEPOCH=	2
 CATEGORIES?=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -25,15 +25,23 @@ ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 WRKSRC=		${WRKDIR}/mvdsv_${PORTVERSION}/source
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
+MAKE_ARGS+=	BYTE_ORDER=__LITTLE_ENDIAN__
+.else
+MAKE_ARGS+=	BYTE_ORDER=__BIG_ENDIAN__
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable extra optimization options"
 .endif
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 	@${ECHO_MSG} "Define WITHOUT_X86_ASM to disable x86 assembly code"
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
