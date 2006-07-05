@@ -61,10 +61,10 @@ MAN1=		ctags.1 emacs.1 emacsclient.1 etags.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
-		efaq eintr elisp emacs emacs-mime emacs-xtra eshell eudc \
+		efaq eintr elisp emacs emacs-mime erc eshell eudc \
 		flymake forms gnus idlwave info message mh-e newsticker \
-		org pcl-cvs pgg reftex sc ses sieve smtpmail speedbar tramp \
-		url vip viper widget woman rcirc erc
+		org pcl-cvs pgg rcirc reftex sc ses sieve smtpmail speedbar \
+		tramp url vip viper widget woman
 
 LATEST_LINK=	emacs22
 
