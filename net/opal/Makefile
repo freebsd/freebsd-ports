@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opal
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
@@ -18,7 +17,7 @@ COMMENT=	VoIP abstraction library
 
 LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
+WRKSRC=		${WRKDIR}/${PORTNAME}_Phobos_release2
 
 # In opal's Makefile the default make's target is optshared
 ALL_TARGET=	optshared
@@ -30,6 +29,7 @@ NO_FILTER_SHLIBS=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -37,8 +37,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${WRKSRC}/include
 BROKEN=		Does not build on FreeBSD 4.x, if you manage to make it work, please send a patch to the maintainer: ${MAINTAINER}
 .endif
 
-# Avoid build error on amd64: relocation R_X86_64_32 can not be used when making a shared object; recompile with -fPIC
-.if (${ARCH} == "amd64")
+# Avoid build error on 64-bit architectures
+.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
 .endif
 
