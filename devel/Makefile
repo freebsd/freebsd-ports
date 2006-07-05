@@ -493,6 +493,7 @@
     SUBDIR += libdwarf
     SUBDIR += libedit
     SUBDIR += libelf
+    SUBDIR += libepp-nicbr
     SUBDIR += libevent
     SUBDIR += libexecinfo
     SUBDIR += libffi
