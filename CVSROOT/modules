@@ -4873,6 +4873,7 @@ jabber-aim	ports/net-im/jabber-aim
 jabber-conference	ports/net-im/jabber-conference
 jabber-jud	ports/net-im/jabber-jud
 jabber-msn	ports/net-im/jabber-msn
+jabber-pyaim	ports/net-im/jabber-pyaim
 jabber-pyicq	ports/net-im/jabber-pyicq
 jabber-pymsn	ports/net-im/jabber-pymsn
 jabber-users-agent	ports/net-im/jabber-users-agent
