@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ekiga
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.0.2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -33,8 +32,6 @@ CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
 
 GCONF_SCHEMAS=	ekiga.schemas
 MAN1=		ekiga.1
-
-IGNORE=		requires update for new pwlib
 
 .include <bsd.port.pre.mk>
 
