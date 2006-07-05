@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/gtksourceview-sharp-2.0/
 DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 
-MAINTAINER=	tmclaugh@sdf.lonestar.org
+MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	gtksourview bindings for Mono
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
