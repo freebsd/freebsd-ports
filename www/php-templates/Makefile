@@ -24,7 +24,7 @@ USE_DOS2UNIX=	yes
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
-BROKEN_WITH_PHP=5
+IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-templates=shared
 

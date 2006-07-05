@@ -17,7 +17,7 @@ MAINTAINER=	sergey@network-asp.biz
 COMMENT=	ODBC driver for MySQL${MYSQL_VER} / ${DRIVER_MANAGER}
 
 USE_MYSQL=		yes
-BROKEN_WITH_MYSQL=	323
+IGNORE_WITH_MYSQL=	323
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15 libltdl:15

@@ -17,7 +17,7 @@ COMMENT=	An easy to use API for creating PDF files dynamically
 USE_PHP=	yes
 WANT_PHP_MOD=	yes
 
-BROKEN_WITH_PHP=5
+IGNORE_WITH_PHP=5
 
 WRKSRC=		${WRKDIR}/phppdflib
 USE_BZIP2=	yes

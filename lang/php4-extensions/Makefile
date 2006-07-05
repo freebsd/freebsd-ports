@@ -17,7 +17,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A "meta-port" to install PHP extensions
 
 DEFAULT_PHP_VER=4
-BROKEN_WITH_PHP=5
+IGNORE_WITH_PHP=5
 USE_PHP_BUILD=	yes
 
 NO_BUILD=	yes

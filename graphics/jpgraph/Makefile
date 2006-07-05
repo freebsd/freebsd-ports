@@ -18,7 +18,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 USE_PHP=	gd
 DEFAULT_PHP_VER=4
-BROKEN_WITH_PHP=5
+IGNORE_WITH_PHP=5
 
 NO_CDROM=	The free version cannot be used in a commercial context
 

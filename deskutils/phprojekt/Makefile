@@ -16,7 +16,7 @@ COMMENT=	An open source groupware suite
 
 USE_PHP=	yes
 DEFAULT_PHP_VER=4
-BROKEN_WITH_PHP=5
+IGNORE_WITH_PHP=5
 WANT_PHP_MOD=	yes
 
 NO_BUILD=	yes

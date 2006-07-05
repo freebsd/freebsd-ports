@@ -20,7 +20,7 @@ DEFAULT_PGSQL_VER=	81
 # 74 is not strictly true, but requires extracting the appropriate
 # postgresql-contrib tarball, and associated heavy lifting.
 # In order to keep this port simple, we assume >= 8.0
-BROKEN_WITH_PGSQL=	73 74
+IGNORE_WITH_PGSQL=	73 74
 
 MAKE_ARGS=	USE_PGXS=1
 

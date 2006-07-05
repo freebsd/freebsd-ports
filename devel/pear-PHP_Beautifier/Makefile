@@ -20,7 +20,7 @@ USE_PHP=	tokenizer
 NO_PACKAGE=     Conflicting dependences between PHP4 and PHP5
 
 DEFAULT_PHP_VER=5
-BROKEN_WITH_PHP=4
+IGNORE_WITH_PHP=4
 
 CATEGORY=	PHP
 FILES=		Beautifier.php Beautifier/Filter.php Beautifier/Decorator.php \
