@@ -49,6 +49,13 @@ log()
 	echo "==> $*" >&2
 }
 
+escape()
+{
+	# escape characters that may appear in ports' names and
+	# break regular expressions
+	echo "${1}" |sed -E 's/(\+|\.)/\\\1/g'
+}
+
 pkgname()
 {
 	make -C ${PORTSDIR}/${1} -V PKGNAME
@@ -193,7 +200,9 @@ edit_modules()
 
 	log "${cat}/${port}: removing from CVSROOT/modules"
 
-	${SED} -e "/^(ports_)?(..-)?${port}[[:space:]]+ports\/${cat}\/${port}\$/d" \
+	portesc=`escape ${port}`
+
+	${SED} -e "/^(ports_)?(..-)?${portesc}[[:space:]]+ports\/${cat}\/${portesc}\$/d" \
 		CVSROOT/modules
 }
 
@@ -219,7 +228,9 @@ edit_Makefile()
 
 	log "${cat}/${port}: removing from ${cat}/Makefile"
 
-	${SED} -e "/^[[:space:]]*SUBDIR[[:space:]]*\+=[[:space:]]*${port}([[:space:]]+#.*)?$/d" \
+	portesc=`escape ${port}`
+
+	${SED} -e "/^[[:space:]]*SUBDIR[[:space:]]*\+=[[:space:]]*${portesc}([[:space:]]+#.*)?$/d" \
 		ports/${cat}/Makefile
 }
 
