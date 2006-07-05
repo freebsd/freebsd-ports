@@ -10,7 +10,7 @@ PORTVERSION=	${JRE_VERSION}.${RELEASE_VERSION}.${BUILD_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	diablo-
-DISTNAME=	${PKGNAMEPREFIX}latte-freebsd${JRE_OSREL}-${JRE_VERSION}_${RELEASE_VERSION}-b${BUILD_VERSION}
+DISTNAME=	${PKGNAMEPREFIX}latte-${JRE_OSREL}-${ARCH}-${JRE_VERSION}_${RELEASE_VERSION}-b${BUILD_VERSION}
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	glewis@FreeBSD.org
@@ -22,11 +22,12 @@ RESTRICTED=	"License doesn't allow distribution with fee"
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 JRE_VERSION=	1.5.0
-RELEASE_VERSION=06
+RELEASE_VERSION=07
 BUILD_VERSION=	00
 PLIST_SUB+=	JRE_VERSION=${JRE_VERSION}
+PLIST_SUB+=	ARCH=${ARCH}
 DOWNLOAD_URL=	http://www.FreeBSDFoundation.org/cgi-bin/download?download=${DISTNAME}${EXTRACT_SUFX}
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}15
 
@@ -42,11 +43,19 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 600000
-JRE_OSREL=6
+JRE_OSREL=freebsd6
 .elif ${OSVERSION} >= 500000
-JRE_OSREL=5
+JRE_OSREL=freebsd5
 .else
 IGNORE=		Only available for FreeBSD 5.x and later
+.endif
+
+.if ${ARCH} == "i386"
+PLIST_SUB+=	WEB=""
+PLIST_SUB+=	CLIENTVM=""
+.else
+PLIST_SUB+=	WEB="@comment "
+PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
@@ -71,9 +80,6 @@ post-install:
 	# Register the VM
 	"${LOCALBASE}/bin/registervm" \
 	  "${INSTALL_DIR}/bin/java # DiabloLatte${JRE_VERSION}"
-	# Install cacerts
-	${INSTALL_DATA} "${FILESDIR}/cacerts" \
-	  "${INSTALL_DIR}/lib/security/cacerts"
 	# Install the plugin
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 

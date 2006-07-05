@@ -5,10 +5,10 @@ diablo-jre%%JRE_VERSION%%/LICENSE
 diablo-jre%%JRE_VERSION%%/README
 diablo-jre%%JRE_VERSION%%/THIRDPARTYLICENSEREADME.txt
 diablo-jre%%JRE_VERSION%%/Welcome.html
-diablo-jre%%JRE_VERSION%%/bin/ControlPanel
+%%WEB%%diablo-jre%%JRE_VERSION%%/bin/ControlPanel
 diablo-jre%%JRE_VERSION%%/bin/java
-diablo-jre%%JRE_VERSION%%/bin/java_vm
-diablo-jre%%JRE_VERSION%%/bin/javaws
+%%WEB%%diablo-jre%%JRE_VERSION%%/bin/java_vm
+%%WEB%%diablo-jre%%JRE_VERSION%%/bin/javaws
 diablo-jre%%JRE_VERSION%%/bin/keytool
 diablo-jre%%JRE_VERSION%%/bin/kinit
 diablo-jre%%JRE_VERSION%%/bin/klist
@@ -21,7 +21,7 @@ diablo-jre%%JRE_VERSION%%/bin/rmiregistry
 diablo-jre%%JRE_VERSION%%/bin/servertool
 diablo-jre%%JRE_VERSION%%/bin/tnameserv
 diablo-jre%%JRE_VERSION%%/bin/unpack200
-diablo-jre%%JRE_VERSION%%/javaws/javaws
+%%WEB%%diablo-jre%%JRE_VERSION%%/javaws/javaws
 diablo-jre%%JRE_VERSION%%/lib/audio/soundbank.gm
 diablo-jre%%JRE_VERSION%%/lib/charsets.jar
 diablo-jre%%JRE_VERSION%%/lib/classlist
@@ -31,7 +31,7 @@ diablo-jre%%JRE_VERSION%%/lib/cmm/LINEAR_RGB.pf
 diablo-jre%%JRE_VERSION%%/lib/cmm/PYCC.pf
 diablo-jre%%JRE_VERSION%%/lib/cmm/sRGB.pf
 diablo-jre%%JRE_VERSION%%/lib/content-types.properties
-diablo-jre%%JRE_VERSION%%/lib/deploy.jar
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/deploy.jar
 diablo-jre%%JRE_VERSION%%/lib/ext/dnsns.jar
 diablo-jre%%JRE_VERSION%%/lib/ext/localedata.jar
 diablo-jre%%JRE_VERSION%%/lib/ext/sunjce_provider.jar
@@ -47,48 +47,48 @@ diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaSansRegular.ttf
 diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaTypewriterBold.ttf
 diablo-jre%%JRE_VERSION%%/lib/fonts/LucidaTypewriterRegular.ttf
 diablo-jre%%JRE_VERSION%%/lib/fonts/fonts.dir
-diablo-jre%%JRE_VERSION%%/lib/i386/awt_robot
-diablo-jre%%JRE_VERSION%%/lib/i386/client/Xusage.txt
-diablo-jre%%JRE_VERSION%%/lib/i386/client/libjsig.so
-diablo-jre%%JRE_VERSION%%/lib/i386/client/libjvm.so
-diablo-jre%%JRE_VERSION%%/lib/i386/gtkhelper
-diablo-jre%%JRE_VERSION%%/lib/i386/headless/libmawt.so
-diablo-jre%%JRE_VERSION%%/lib/i386/jvm.cfg
-diablo-jre%%JRE_VERSION%%/lib/i386/libJdbcOdbc.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libawt.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libcmm.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libdcpr.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libdeploy.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libdt_socket.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libfontmanager.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libhprof.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libinstrument.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libioser12.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjaas_unix.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjava.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjava_crw_demo.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjavaplugin_jni.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjavaplugin_nscp.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjawt.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjdwp.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjpeg.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjsig.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libjsound.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libmanagement.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libmlib_image.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libnative_chmod.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libnet.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libnio.so
-diablo-jre%%JRE_VERSION%%/lib/i386/librmi.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libunpack.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libverify.so
-diablo-jre%%JRE_VERSION%%/lib/i386/libzip.so
-diablo-jre%%JRE_VERSION%%/lib/i386/motif21/libmawt.so
-diablo-jre%%JRE_VERSION%%/lib/i386/native_threads/libhpi.so
-diablo-jre%%JRE_VERSION%%/lib/i386/server/Xusage.txt
-diablo-jre%%JRE_VERSION%%/lib/i386/server/libjsig.so
-diablo-jre%%JRE_VERSION%%/lib/i386/server/libjvm.so
-diablo-jre%%JRE_VERSION%%/lib/i386/xawt/libmawt.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/awt_robot
+%%CLIENTVM%%diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/client/Xusage.txt
+%%CLIENTVM%%diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/client/libjsig.so
+%%CLIENTVM%%diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/client/libjvm.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/gtkhelper
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/headless/libmawt.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/jvm.cfg
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libJdbcOdbc.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libawt.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libcmm.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libdcpr.so
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libdeploy.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libdt_socket.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libfontmanager.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libhprof.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libinstrument.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libioser12.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjaas_unix.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjava.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjava_crw_demo.so
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjavaplugin_jni.so
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjavaplugin_nscp.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjawt.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjdwp.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjpeg.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjsig.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libjsound.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libmanagement.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libmlib_image.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libnative_chmod.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libnet.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libnio.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/librmi.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libunpack.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libverify.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/libzip.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/motif21/libmawt.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/native_threads/libhpi.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/server/Xusage.txt
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/server/libjsig.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/server/libjvm.so
+diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/xawt/libmawt.so
 diablo-jre%%JRE_VERSION%%/lib/im/indicim.jar
 diablo-jre%%JRE_VERSION%%/lib/im/thaiim.jar
 diablo-jre%%JRE_VERSION%%/lib/images/cursors/cursors.properties
@@ -99,40 +99,40 @@ diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_LinkDrop32x32.gif
 diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_LinkNoDrop32x32.gif
 diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_MoveDrop32x32.gif
 diablo-jre%%JRE_VERSION%%/lib/images/cursors/motif_MoveNoDrop32x32.gif
-diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java.png
-diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_HighContrast.png
-diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_HighContrastInverse.png
-diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_LowContrast.png
-diablo-jre%%JRE_VERSION%%/lib/javaws.jar
-diablo-jre%%JRE_VERSION%%/lib/javaws/Java1.5.ico
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_de.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_es.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_fr.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_it.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_ja.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_ko.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_sv.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_CN.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_HK.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_TW.properties
-diablo-jre%%JRE_VERSION%%/lib/javaws/miniSplash.jpg
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java.png
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_HighContrast.png
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_HighContrastInverse.png
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/images/icons/sun-java_LowContrast.png
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws.jar
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/Java1.5.ico
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_de.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_es.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_fr.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_it.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_ja.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_ko.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_sv.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_CN.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_HK.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/messages_zh_TW.properties
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/javaws/miniSplash.jpg
 diablo-jre%%JRE_VERSION%%/lib/jce.jar
 diablo-jre%%JRE_VERSION%%/lib/jsse.jar
 diablo-jre%%JRE_VERSION%%/lib/jvm.hprof.txt
-diablo-jre%%JRE_VERSION%%/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
-diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 diablo-jre%%JRE_VERSION%%/lib/logging.properties
 diablo-jre%%JRE_VERSION%%/lib/management/jmxremote.access
 diablo-jre%%JRE_VERSION%%/lib/management/jmxremote.password.template
@@ -144,7 +144,7 @@ diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/LucidaSansOblique.ttf
 diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/LucidaTypewriterBoldOblique.ttf
 diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/LucidaTypewriterOblique.ttf
 diablo-jre%%JRE_VERSION%%/lib/oblique-fonts/fonts.dir
-diablo-jre%%JRE_VERSION%%/lib/plugin.jar
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/plugin.jar
 diablo-jre%%JRE_VERSION%%/lib/psfont.properties.ja
 diablo-jre%%JRE_VERSION%%/lib/psfontj2d.properties
 diablo-jre%%JRE_VERSION%%/lib/rt.jar
@@ -152,7 +152,7 @@ diablo-jre%%JRE_VERSION%%/lib/security/US_export_policy.jar
 diablo-jre%%JRE_VERSION%%/lib/security/cacerts
 diablo-jre%%JRE_VERSION%%/lib/security/java.policy
 diablo-jre%%JRE_VERSION%%/lib/security/java.security
-diablo-jre%%JRE_VERSION%%/lib/security/javaws.policy
+%%WEB%%diablo-jre%%JRE_VERSION%%/lib/security/javaws.policy
 diablo-jre%%JRE_VERSION%%/lib/security/local_policy.jar
 diablo-jre%%JRE_VERSION%%/lib/sound.properties
 diablo-jre%%JRE_VERSION%%/lib/zi/Africa/Abidjan
@@ -566,7 +566,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/WET
 diablo-jre%%JRE_VERSION%%/lib/zi/ZoneInfoMappings
 diablo-jre%%JRE_VERSION%%/man/ja
 diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/java.1
-diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/javaws.1
+%%WEB%%diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/javaws.1
 diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/keytool.1
 diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/kinit.1
 diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/klist.1
@@ -580,7 +580,7 @@ diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/servertool.1
 diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/tnameserv.1
 diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1/unpack200.1
 diablo-jre%%JRE_VERSION%%/man/man1/java.1
-diablo-jre%%JRE_VERSION%%/man/man1/javaws.1
+%%WEB%%diablo-jre%%JRE_VERSION%%/man/man1/javaws.1
 diablo-jre%%JRE_VERSION%%/man/man1/keytool.1
 diablo-jre%%JRE_VERSION%%/man/man1/kinit.1
 diablo-jre%%JRE_VERSION%%/man/man1/klist.1
@@ -593,14 +593,14 @@ diablo-jre%%JRE_VERSION%%/man/man1/rmiregistry.1
 diablo-jre%%JRE_VERSION%%/man/man1/servertool.1
 diablo-jre%%JRE_VERSION%%/man/man1/tnameserv.1
 diablo-jre%%JRE_VERSION%%/man/man1/unpack200.1
-diablo-jre%%JRE_VERSION%%/plugin/desktop/sun_java.desktop
-diablo-jre%%JRE_VERSION%%/plugin/desktop/sun_java.png
-diablo-jre%%JRE_VERSION%%/plugin/i386/ns7/libjavaplugin_oji.so
+%%WEB%%diablo-jre%%JRE_VERSION%%/plugin/desktop/sun_java.desktop
+%%WEB%%diablo-jre%%JRE_VERSION%%/plugin/desktop/sun_java.png
+%%WEB%%diablo-jre%%JRE_VERSION%%/plugin/%%ARCH%%/ns7/libjavaplugin_oji.so
 @exec %%LOCALBASE%%/bin/registervm "%D/diablo-jre%%JRE_VERSION%%/bin/java # DiabloLatte${JRE_VERSION}"
-@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386/ns7
-@dirrm diablo-jre%%JRE_VERSION%%/plugin/i386
-@dirrm diablo-jre%%JRE_VERSION%%/plugin/desktop
-@dirrm diablo-jre%%JRE_VERSION%%/plugin
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/%%ARCH%%/ns7
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/%%ARCH%%
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/plugin/desktop
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/plugin
 @dirrm diablo-jre%%JRE_VERSION%%/man/man1
 @dirrm diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1
 @dirrm diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP
@@ -623,51 +623,51 @@ diablo-jre%%JRE_VERSION%%/plugin/i386/ns7/libjavaplugin_oji.so
 @dirrm diablo-jre%%JRE_VERSION%%/lib/security
 @dirrm diablo-jre%%JRE_VERSION%%/lib/oblique-fonts
 @dirrm diablo-jre%%JRE_VERSION%%/lib/management
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/sv/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/sv
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ja/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ja
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/it/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/it
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/fr/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/fr
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/es/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/es
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/de/LC_MESSAGES
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/de
-@dirrm diablo-jre%%JRE_VERSION%%/lib/locale
-@dirrm diablo-jre%%JRE_VERSION%%/lib/javaws
-@dirrm diablo-jre%%JRE_VERSION%%/lib/images/icons
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW.BIG5
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_TW
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh_HK.BIG5HK
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh.GBK
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/zh
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/sv/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/sv
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko.UTF-8
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ko
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ja/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/ja
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/it/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/it
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/fr/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/fr
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/es/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/es
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/de/LC_MESSAGES
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale/de
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/locale
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/javaws
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/lib/images/icons
 @dirrm diablo-jre%%JRE_VERSION%%/lib/images/cursors
 @dirrm diablo-jre%%JRE_VERSION%%/lib/images
 @dirrm diablo-jre%%JRE_VERSION%%/lib/im
-@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/xawt
-@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/server
-@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/native_threads
-@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/motif21
-@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/headless
-@dirrm diablo-jre%%JRE_VERSION%%/lib/i386/client
-@dirrm diablo-jre%%JRE_VERSION%%/lib/i386
+@dirrm diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/xawt
+@dirrm diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/server
+@dirrm diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/native_threads
+@dirrm diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/motif21
+@dirrm diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/headless
+%%CLIENTVM%%@dirrm diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%/client
+@dirrm diablo-jre%%JRE_VERSION%%/lib/%%ARCH%%
 @dirrm diablo-jre%%JRE_VERSION%%/lib/fonts
 @dirrm diablo-jre%%JRE_VERSION%%/lib/ext
 @dirrm diablo-jre%%JRE_VERSION%%/lib/cmm
 @dirrm diablo-jre%%JRE_VERSION%%/lib/audio
 @dirrmtry diablo-jre%%JRE_VERSION%%/lib/applet
 @dirrm diablo-jre%%JRE_VERSION%%/lib
-@dirrm diablo-jre%%JRE_VERSION%%/javaws
+%%WEB%%@dirrm diablo-jre%%JRE_VERSION%%/javaws
 @dirrm diablo-jre%%JRE_VERSION%%/bin
 @dirrm diablo-jre%%JRE_VERSION%%
