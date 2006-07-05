@@ -16,7 +16,7 @@ COMMENT=	PostgreSQL database design and management system
 
 USE_GETTEXT=	yes
 USE_PGSQL=	yes
-BROKEN_WITH_PGSQL=	73
+IGNORE_WITH_PGSQL=	73
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx=${X11BASE} --with-wx-config=${WX_CONFIG}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -32,7 +32,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		requires wchar_t
+IGNORE=		cannot install: requires wchar_t
 .endif
 
 .include <bsd.port.post.mk>

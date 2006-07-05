@@ -36,7 +36,7 @@ USE_ICONV=	yes
 USE_GNOME=	libglade2 gnomehack gtkhtml3 intltool
 USE_MYSQL=	yes
 DEFAULT_MYSQL_VER=	50
-BROKEN_WITH_MYSQL=	323
+IGNORE_WITH_MYSQL=	323
 GNU_CONFIGURE=	yes
 
 GUI_CONFIG_COOKIE=	${WRKDIR}/.gui_configure_done

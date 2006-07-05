@@ -22,7 +22,7 @@ USE_PHP=	pgsql
 .else
 USE_PHP=	mysql
 .endif
-BROKEN_WITH_PHP=	5
+IGNORE_WITH_PHP=	5
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0.0-rc3
 

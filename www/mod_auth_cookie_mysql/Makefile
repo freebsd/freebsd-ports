@@ -18,7 +18,7 @@ COMMENT=	Allows authentication against a MySQL database via a secure cookie
 USE_MYSQL=	YES
 
 # If someone can test it with MySQL 4.1 ;-)
-BROKEN_WITH_MYSQL=	41
+IGNORE_WITH_MYSQL=	41
 
 USE_APACHE=	13
 

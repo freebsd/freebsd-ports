@@ -23,7 +23,7 @@ NO_PACKAGE=		dependencies need manual installation, see ${FILESDIR}/install.txt.
 USE_PHP=		pcre session sqlite
 WANT_PHP_WEB=		yes
 DEFAULT_PHP_VER?=	5
-BROKEN_WITH_PHP=	4
+IGNORE_WITH_PHP=	4
 USE_PYTHON_RUN=		yes
 
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-*

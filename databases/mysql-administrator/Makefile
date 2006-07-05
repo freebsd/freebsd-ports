@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/share/gnome
 USE_ICONV=	yes
 USE_GNOME=	libglade2 gnomehack
 USE_MYSQL=	yes
-BROKEN_WITH_MYSQL=	323
+IGNORE_WITH_MYSQL=	323
 GNU_CONFIGURE=	yes
 
 GUI_CONFIG_COOKIE=	${WRKDIR}/.gui_configure_done

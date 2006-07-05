@@ -17,7 +17,7 @@ COMMENT=	PHP 4.x script that makes a table that lists the files in a directory
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-BROKEN_WITH_PHP=	5
+IGNORE_WITH_PHP=	5
 USE_PHP=	session
 CONFLICTS=	AutoIndex-2*
 NO_BUILD=	yes

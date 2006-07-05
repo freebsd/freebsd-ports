@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/bware_cache-${PORTVERSION}
 USE_PHP=	yes
 USE_PHPIZE=	yes
 WITH_PHP_MOD=	yes
-BROKEN_WITH_PHP=5
+IGNORE_WITH_PHP=5
 DEFAULT_PHP_VER=4
 
 CONFIGURE_ARGS+=--enable-bware_cache=shared

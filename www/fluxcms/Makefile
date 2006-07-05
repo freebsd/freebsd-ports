@@ -28,6 +28,7 @@ OPTIONS=	GD "Use GD support instead of ImageMagick" on \
 
 USE_PHP=	dom xml simplexml iconv mysql xsl session pcre
 
+IGNORE_WITH_PHP=	4
 DEFAULT_PHP_VER=	5
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

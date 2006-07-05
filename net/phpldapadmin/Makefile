@@ -19,7 +19,7 @@ COMMENT=	A set of PHP-scripts to administer LDAP over the web
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session xml
 PHP_VER=	5
-BROKEN_WITH_PHP=	4
+IGNORE_WITH_PHP=	4
 
 .if defined(WITH_SUPHP)
 

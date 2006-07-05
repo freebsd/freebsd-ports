@@ -20,7 +20,7 @@ COMMENT=	PHP extension that provides operator overloading for PHP objects
 USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=	5
-BROKEN_WITH_PHP=	4
+IGNORE_WITH_PHP=	4
 PHP_MODNAME=	${PORTNAME}
 
 post-extract::
