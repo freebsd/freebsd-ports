@@ -78,7 +78,7 @@ NOT_FOR_ARCHS_REASON_ia64=	does not compile
 post-patch:
 	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/; \
 		s/x86_64\*/amd64\* | \*ia64\*/g; \
-		/CPPFLAGS=/ d' ${WRKSRC}/configure
+		/CPPFLAGS=/ d; s/ \*linux\*)/ \*bsd\*)/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/#include/ s|SDL/||' \
 		${WRKSRC}/src/extensions/al_ext_mp3.c
 	@${REINPLACE_CMD} -e 's|"mixaudio16_mmx_prk.h"|"arch/i386/mixaudio16_mmx_prk.h"|' \
