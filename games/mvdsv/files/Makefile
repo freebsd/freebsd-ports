@@ -12,14 +12,15 @@
 #
 
 DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -Dstricmp=strcasecmp \
-		-DSERVERONLY -DUSE_PR2
+		-DSERVERONLY -DUSE_PR2 -D${BYTE_ORDER}Q__
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-DO_CFLAGS +=	-O9 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
+DO_CFLAGS +=	-O9 -pipe -s -fno-strict-aliasing -ffast-math -funroll-loops \
+		-fomit-frame-pointer -fexpensive-optimizations
 .endif
 
 ########################################################################
@@ -42,6 +43,7 @@ SV_OBJS = \
 		sv_init.o \
 		sv_login.o \
 		sv_main.o \
+		sv_master.o \
 		sv_mod_frags.o \
 		sv_model.o \
 		sv_move.o \
@@ -51,14 +53,16 @@ SV_OBJS = \
 		sv_sys_unix.o \
 		sv_user.o \
 \
+		bothtools.o \
 		cmd.o \
 		common.o \
 		crc.o \
 		cvar.o \
+		fs.o \
 		mathlib.o \
 		mdfour.o \
 		net_chan.o \
-		net_udp.o \
+		net.o \
 		pmove.o \
 		pmovetst.o \
 		sha1.o \
@@ -66,11 +70,10 @@ SV_OBJS = \
 		world.o \
 		zone.o \
 \
-		pcre/chartables.o \
 		pcre/get.o \
 		pcre/pcre.o
 
-.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
+.if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 SV_AS_OBJS = \
 		math.o \
 		worlda.o
@@ -83,6 +86,7 @@ SV_LIBS = -lm
 ########################################################################
 
 QWDTOOLS_OBJS = \
+		bothtools.o \
 		qwdtools/dem_parse.o \
 		qwdtools/dem_send.o \
 		qwdtools/ini.o \
