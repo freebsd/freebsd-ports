@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f70d09cb-0c46-11db-aac7-000c6ec775d9">
+    <topic>mambo -- SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mambo</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Team Mambo reports that two SQL injection
+	  vulnerabilities have been found in Mambo.  The
+	  vulnerabilities exists due to missing sanitation of the
+	  <code>title</code> and <code>catid</code> parameters in the
+	  <code>weblinks.php</code> page and can lead to execution of
+	  arbitrary SQL code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3262</cvename>
+      <cvename>CVE-2006-3263</cvename>
+      <mlist msgid="20060617123242.1684.qmail@securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=115056811230529</mlist>
+      <url>http://secunia.com/advisories/20745/</url>
+      <url>http://www.mamboserver.com/?option=com_content&amp;task=view&amp;id=207</url>
+    </references>
+    <dates>
+      <discovery>2006-06-19</discovery>
+      <entry>2006-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="229577a8-0936-11db-bf72-00046151137e">
     <topic>phpmyadmin -- cross site scripting vulnerability</topic>
     <affects>
