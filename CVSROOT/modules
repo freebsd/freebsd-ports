@@ -12466,6 +12466,7 @@ scx		ports/x11-toolkits/scx
 sdb		ports/games/sdb
 sdcc		ports/lang/sdcc
 sdcc-devel	ports/lang/sdcc-devel
+sdcv		ports/textproc/sdcv
 sdd		ports/sysutils/sdd
 sdf		ports/textproc/sdf
 sdig		ports/net-mgmt/sdig
