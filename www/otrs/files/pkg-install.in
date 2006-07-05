@@ -1,0 +1,48 @@
+#!/bin/sh
+# vi:ts=8:sw=8:noexpandtab: 
+
+otrsuser=%%OTRSUSER%%
+otrsuid=%%OTRSUID%%
+wwwuser=%%WWWUSER%%
+wwwgroup=%%WWWGROUP%%
+otrshome=%%OTRSHOME%%
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+if ! pw user show -n $wwwuser >/dev/null; then 
+	echo "User $wwwuser does not exist. Please create it and try again."
+	exit 1
+fi
+
+if ! pw group show -n $wwwgroup >/dev/null; then
+	echo "Group $wwwgroup does not exist. Please create it and try again."
+	exit 1
+fi
+
+if pw user show -n $otrsuser >/dev/null; then
+	if [ `pw user show -n $otrsuser | cut -f9 -d:` != $otrshome ]; then
+		echo "User $otrsuser exists, but its home directory is not $otrshome."
+		echo "Please change $otrsuser's home directory and try again."
+		exit 1
+	else
+		echo "User $otrsuser already exists. Using existing account."
+		$otrshome/bin/SetPermissions.sh $otrshome $otrsuser $wwwuser $otrsgroup $wwwgroup
+	fi
+else
+	if pw user show -u $otrsuid >/dev/null; then
+		echo "UID $otrsuid is already in use, but not for user $otrsuser."
+		echo "Please free this UID, or set \$OTRSUID to an available UID and rebuild the port."
+	else
+		if pw useradd $otrsuser -u $otrsuid -g $wwwgroup -h - \
+			-d $otrshome -s /sbin/nologin -c "OTRS User" 
+		then
+			echo "Added user $otrsuser."
+			$otrshome/bin/SetPermissions.sh $otrshome $otrsuser $wwwuser $otrsgroup $wwwgroup
+		else
+			echo "Error adding $otrsuser. Please create the account then try again."
+		fi
+	fi
+fi
+

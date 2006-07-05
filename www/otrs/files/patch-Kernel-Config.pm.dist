@@ -1,0 +1,11 @@
+--- Kernel/Config.pm.dist.orig	Tue Jul  4 16:20:46 2006
++++ Kernel/Config.pm.dist	Tue Jul  4 16:25:15 2006
+@@ -58,7 +58,7 @@
+     # ---------------------------------------------------- #
+     # fs root directory
+     # ---------------------------------------------------- #
+-    $Self->{Home} = '/opt/otrs';
++    $Self->{Home} = '/usr/local/www/otrs';
+ 
+     # **************************************************** #
+     # insert your own config settings "here"               #

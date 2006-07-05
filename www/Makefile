@@ -423,6 +423,7 @@
     SUBDIR += osb-nrcit
     SUBDIR += osb-nrcore
     SUBDIR += oscommerce
+    SUBDIR += otrs
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Acme-Monta
     SUBDIR += p5-Apache-ASP
