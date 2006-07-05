@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,13 +26,13 @@ USE_X_PREFIX=	yes
 INSTALLS_ICONS=	yes
 
 DOCS=		COPYING ChangeLog README
-MAN1=		comix.1 comicthumb.1
+MAN1=		comix.1
 
 .include <bsd.port.pre.mk>
 
 .if (${HAVE_GNOME:Mnautilus2}!="" || defined(WITH_THUMBNAILS)) && !defined(WITHOUT_THUMBNAILS)
 USE_GNOME+=	gconf2
-#MAN1+=		comicthumb.1
+MAN1+=		comicthumb.1
 GCONF_SCHEMAS=	comicbook.schemas
 PLIST_SUB+=	THUMBNAILS:=""
 THUMBNAILS_ENABLED=yes
