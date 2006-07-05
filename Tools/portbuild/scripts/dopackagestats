@@ -40,17 +40,14 @@ for arch in ${SUPPORTED_ARCHS}; do
   branches=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]$' | sort`
   for branch in ${branches}; do
 
+    # first, gather data
+
     directory=${ROOT_DIRECTORY}/${arch}/${branch}
     if [ "$branch" = "4" ]; then
       indexfile=$directory/ports/INDEX
     else
       indexfile=$directory/ports/INDEX-$branch
     fi
-
-    echo "<tr>" >> ${TMPFILE}
-
-    # column: ARCH
-    echo "<th align='left'>$arch-$branch</th>" >> ${TMPFILE}
 
     # column: datestamp of latest log
     latest="&nbsp;"
@@ -63,23 +60,18 @@ for arch in ${SUPPORTED_ARCHS}; do
         latest="&nbsp;"
       fi
     fi
-    echo "<td align='left'>$latest</td>" >> ${TMPFILE}
 
     # column: INDEX count
     n_index=0
     if [ -f $indexfile ]; then
       n_index=`cat $indexfile | wc -l`
     fi
-    echo "<td align='right'>$n_index</td>" >> ${TMPFILE}
 
     # column: package count
     n_packages=0
     if [ -d $directory/packages/All ]; then
       n_packages=`find $directory/packages/All -name \*.tbz -o -name \*.tgz |wc -l`
     fi
-    echo "<td align='right'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest-logs'>" >> ${TMPFILE}
-    echo "$n_packages</a></td>" >> ${TMPFILE}
 
     # column: error count
     n_errors=0
@@ -88,16 +80,12 @@ for arch in ${SUPPORTED_ARCHS}; do
       #n_errors=`find $directory/errors -name \*.log -o -name \*.log.bz2 |wc -l`
       n_errors=`ls $directory/errors | grep '.log' | wc -l`
     fi
-    echo "<td align='right'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest'>" >> ${TMPFILE}
-    echo "$n_errors</a></td>" >> ${TMPFILE}
 
     # column: duds count
     n_duds=0
     if [ -f $directory/duds ]; then
       n_duds=`cat $directory/duds | wc -l`
     fi
-    echo "<td align='right'>$n_duds</td>" >> ${TMPFILE}
 
     # column: missing count
     if [ $n_index -ne 0 ]; then
@@ -105,7 +93,6 @@ for arch in ${SUPPORTED_ARCHS}; do
     else  # index currently being rebuilt
       n_missing=0
     fi
-    echo "<td align='right'>$n_missing</td>" >> ${TMPFILE}
 
     # column: done flag
     done_flag="N"
@@ -114,8 +101,21 @@ for arch in ${SUPPORTED_ARCHS}; do
         done_flag="Y"
       fi
     fi
-    echo "<td align='center'>$done_flag</td>" >> ${TMPFILE}
 
+    # now write the row
+    echo "<tr>" >> ${TMPFILE}
+    echo "<th align='left'>$arch-$branch</th>" >> ${TMPFILE}
+    echo "<td align='left'>$latest</td>" >> ${TMPFILE}
+    echo "<td align='right'>$n_index</td>" >> ${TMPFILE}
+    echo "<td align='right'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest-logs'>" >> ${TMPFILE}
+    echo "$n_packages</a></td>" >> ${TMPFILE}
+    echo "<td align='right'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest'>" >> ${TMPFILE}
+    echo "$n_errors</a></td>" >> ${TMPFILE}
+    echo "<td align='right'>$n_duds</td>" >> ${TMPFILE}
+    echo "<td align='right'>$n_missing</td>" >> ${TMPFILE}
+    echo "<td align='center'>$done_flag</td>" >> ${TMPFILE}
     echo "</tr>" >> ${TMPFILE}
 
   done
