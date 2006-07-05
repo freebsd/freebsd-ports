@@ -52,6 +52,7 @@ GTK2			Adds Gtk+2 support
 IMAGEMAGICK		ImageMagick graphics support
 IMAP			Adds support for IMAP mail protocol
 IPV6			IPv6 internet support
+ISPELL			Use textproc/ispell for spell checking
 JAVA			Adds support for Java
 KDE			Adds KDE support
 LAME			LAME MP3 audio encoder support
