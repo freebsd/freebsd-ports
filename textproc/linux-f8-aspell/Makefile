@@ -18,7 +18,7 @@ PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME}-${PORTVERSION}-0.ximian.5.1.i386.rpm # needed for slave ports / options
 EXTRACT_ONLY=
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spelling checker with better logic than ispell (linux version)
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
