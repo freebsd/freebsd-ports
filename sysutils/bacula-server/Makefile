@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	1.38.11
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -93,7 +93,7 @@ MAN8=		bacula.8
 
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 .if defined(WITH_DOCS)
-DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}.tar.gz
+DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}-1.tar.gz
 .endif
 
 .if defined(WITH_DOCS)
@@ -259,12 +259,12 @@ post-install:
 .if defined(WITH_DOCS)
 	for na in manual bacula-web; do \
 		${MKDIR} ${DOCSDIR}/$$na ;\
-		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${FIND} $$na | \
+		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}-1 && ${FIND} $$na | \
 			${CPIO} -pdm -L -R root:wheel ${DOCSDIR}; \
 	done
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ReleaseNotes ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/manual/bacula.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/developers/developers.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}-1/manual/bacula.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}-1/developers/developers.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/kernstodo ${DOCSDIR}
 .endif
 
