@@ -1,16 +1,15 @@
+%%EXAMPLESDIR%%/money.h
+%%EXAMPLESDIR%%/money.c
+%%EXAMPLESDIR%%/check_money.c
+%%EXAMPLESDIR%%/configure.in.money
+%%EXAMPLESDIR%%/Makefile.am.money
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.sgml
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLogOld
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/aclocal/check.m4
 include/check.h
 lib/libcheck.a
-share/aclocal/check.m4
-share/doc/check-%%CHECK_VERSION%%/COPYING
-share/doc/check-%%CHECK_VERSION%%/ChangeLog
-share/doc/check-%%CHECK_VERSION%%/ChangeLogOld
-share/doc/check-%%CHECK_VERSION%%/NEWS
-share/doc/check-%%CHECK_VERSION%%/README
-share/doc/check-%%CHECK_VERSION%%/examples/Makefile.am.money
-share/doc/check-%%CHECK_VERSION%%/examples/check_money.c
-share/doc/check-%%CHECK_VERSION%%/examples/configure.in.money
-share/doc/check-%%CHECK_VERSION%%/examples/money.c
-share/doc/check-%%CHECK_VERSION%%/examples/money.h
-share/doc/check-%%CHECK_VERSION%%/tutorial.sgml
-@dirrm share/doc/check-%%CHECK_VERSION%%/examples
-@dirrm share/doc/check-%%CHECK_VERSION%%
+@dirrm %%EXAMPLESDIR%%

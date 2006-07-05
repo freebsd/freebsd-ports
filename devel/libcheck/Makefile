@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libcheck
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	check
@@ -17,5 +17,9 @@ COMMENT=	A unit test framework for C
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	CHECK_VERSION=${PORTVERSION}
+USE_GMAKE=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/check-${PORTVERSION}
+EXAMPLESDIR=	${PREFIX}/share/examples/check-${PORTVERSION}
 
 .include <bsd.port.mk>
