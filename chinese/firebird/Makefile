@@ -29,7 +29,7 @@ post-install:
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/bbs.sh.example ${PREFIX}/etc/rc.d/bbs.sh.example; \
 	fi
 	@${ECHO} "======================================================================="
-	@${ECHO} "Installnation Complete."
+	@${ECHO} "Installation Complete."
 	@${ECHO} "======================================================================="
 	@${ECHO} "please review ${PREFIX}/etc/rc.d/bbs.sh.example change bbsd port you want"
 	@${ECHO} "then rename to ${PREFIX}/etc/rc.d/bbs.sh then:"
