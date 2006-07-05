@@ -1,0 +1,16 @@
+This is the LIBEPP-NICBR C++ library that partially implements the Extensible
+Provisioning Protocol (EPP), as described in the Internet Drafts RFC3730bis to
+RFC3734bis and RFC3735.
+
+RFC3731bis - EPP Domain Name Mapping - was implemented with hosts as attributes
+of the Domain Object.
+
+In order to conform to the .BR model, extensions to the EPP Domain Name and
+Contact Mapping were made (draft-neves-epp-brdomain and draft-neves-epp-brorg),
+supported since version 0.2. The documentation for these extensions is
+available at EPP References [1].
+
+[1]
+http://registro.br/epp/rfc-EN.html
+
+WWW:	http://registro.br/epp/
