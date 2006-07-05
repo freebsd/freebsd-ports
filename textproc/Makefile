@@ -765,6 +765,7 @@
     SUBDIR += scim-table-imengine
     SUBDIR += scr2txt
     SUBDIR += scrollkeeper
+    SUBDIR += sdcv
     SUBDIR += sdf
     SUBDIR += sdocbook-xml
     SUBDIR += senna
