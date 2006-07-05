@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	groovy
-DISTVERSION=	1.0-jsr-05
+DISTVERSION=	1.0-jsr-06
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.codehaus.org/groovy/distributions/
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Agile dynamic language for the JVM
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	LICENSE.txt conf ${PORTNAME}-${DISTVERSION}.jar lib
+DATAFILES=	LICENSE.txt conf ${PORTNAME}-${DISTVERSION:U}.jar lib
 SCRIPTFILES=	grok groovy groovyConsole groovyc groovysh startGroovy
 
 .if !defined(NOPORTDOCS)
@@ -34,7 +36,7 @@ SUB_FILES=	set-groovy_home.sed
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/embeddable/${PORTNAME}-all-${DISTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/embeddable/${PORTNAME}-all-${DISTVERSION:U}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing data files in ${DATADIR}..."
 	@cd ${WRKSRC} \
