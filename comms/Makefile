@@ -63,6 +63,7 @@
     SUBDIR += ncid
     SUBDIR += nec2c
     SUBDIR += nokryptia
+    SUBDIR += o2sms
     SUBDIR += obexapp
     SUBDIR += openobex
     SUBDIR += p5-Device-Gsm
