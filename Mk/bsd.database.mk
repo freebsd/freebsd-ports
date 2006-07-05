@@ -25,7 +25,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				  Default: 50.
 # WANT_MYSQL_VER
 #				- Maintainer can set an arbitrary version of MySQL by using it.
-# BROKEN_WITH_MYSQL
+# IGNORE_WITH_MYSQL
 #				- This variable can be defined if the ports doesn't support
 #				  one or more version of MySQL.
 # WITH_MYSQL_VER
@@ -44,7 +44,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # WANT_PGSQL_VER
 #				- Maintainer can set an arbitrary version of PostgreSQL by
 #				  using it.
-# BROKEN_WITH_PGSQL
+# IGNORE_WITH_PGSQL
 #				- This variable can be defined if the ports doesn't support
 #				  one or more versions of PostgreSQL.
 # PGSQL_VER
@@ -116,13 +116,17 @@ IGNORE=	cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is in
 
 # And now we are checking if we can use it
 .if defined(MYSQL${MYSQL_VER}_LIBVER)
+# compatability shim
 .if defined(BROKEN_WITH_MYSQL)
-.	for VER in ${BROKEN_WITH_MYSQL}
+IGNORE_WITH_MYSQL=${BROKEN_WITH_MYSQL}
+.endif
+.if defined(IGNORE_WITH_MYSQL)
+.	for VER in ${IGNORE_WITH_MYSQL}
 .		if (${MYSQL_VER} == "${VER}")
-IGNORE=		cannot install: doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})
+IGNORE=		cannot install: doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${IGNORE_WITH_MYSQL})
 .		endif
 .	endfor
-.endif # BROKEN_WITH_MYSQL
+.endif # IGNORE_WITH_MYSQL
 LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
 .else
 IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
@@ -155,13 +159,17 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 
 # And now we are checking if we can use it
 .if defined(PGSQL${PGSQL_VER}_LIBVER)
+# compatability shim
 .if defined(BROKEN_WITH_PGSQL)
-.	for VER in ${BROKEN_WITH_PGSQL}
+IGNORE_WITH_PGSQL=${BROKEN_WITH_PGSQL}
+.endif
+.if defined(IGNORE_WITH_PGSQL)
+.	for VER in ${IGNORE_WITH_PGSQL}
 .		if (${PGSQL_VER} == "${VER}")
-IGNORE=		cannot install: does not work with postgresql${PGSQL_VER}-client PostgresSQL (${BROKEN_WITH_PGSQL} not supported)
+IGNORE=		cannot install: does not work with postgresql${PGSQL_VER}-client PostgresSQL (${IGNORE_WITH_PGSQL} not supported)
 .		endif
 .	endfor
-.endif # BROKEN_WITH_PGSQL
+.endif # IGNORE_WITH_PGSQL
 LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 .else
 IGNORE=		cannot install: unknown PostgreSQL version: ${PGSQL_VER}
@@ -220,7 +228,7 @@ _WANT_BDB_VER=	41+
 
 # Detect bdb version
 _BDB_VER=	no
-_BDB_BROKEN=	no
+_BDB_IGNORE=	no
 
 # Override the user defined WITH_BDB_VER with the WANT_BDB_VER
 .if defined(WANT_BDB_VER)
@@ -242,7 +250,7 @@ _BDB_VER=	${bdb}
 .  for dbx in ${_DB_${_MATCHED_DB_VER}P}
 .   if exists(${db${dbx}_FIND})
 _BRKDB=	no
-# Skip versions we are broken with
+# Skip versions we are incompatible with
 .    if defined(INVALID_BDB_VER)
 _CHK_BDB:=	${dbx}
 .     for BRKDB in ${INVALID_BDB_VER}
@@ -282,20 +290,20 @@ _CHK_PLUS:=	${VER:S/+//}
 # INVALID_BDB_VER is specified as VER+
 .   if ${_CHK_PLUS}  != "${VER}"
 .    if ${_BDB_VER} == "${_CHK_PLUS}
-_BDB_BROKEN=	yes
+_BDB_IGNORE=	yes
 .    else
 .     for VER_P in ${_DB_${_CHK_PLUS}P}
 .      if ${_BDB_VER} == "${VER_P}"
-_BDB_BROKEN=	yes
+_BDB_IGNORE=	yes
 .      endif
 .     endfor
 .    endif
 .   elif ${_BDB_VER} == "${VER}"
-_BDB_BROKEN=	yes
+_BDB_IGNORE=	yes
 .   endif
 .  endfor
 . endif
-. if ${_BDB_BROKEN} == "yes"
+. if ${_BDB_IGNORE} == "yes"
 IGNORE= cannot install: does not work with bdb version: ${_BDB_VER} (${INVALID_BDB_VER} not supported)
 . else
 # Now add the dependancy on Berkeley DB ${_BDB_VER) version

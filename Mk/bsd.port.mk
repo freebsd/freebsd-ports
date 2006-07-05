@@ -291,7 +291,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  compression.
 # USE_ZIP		- If set, this port distfile uses zip, not tar w/[bg]zip
 #				  for compression.
-# USE_DOS2UNIX  - If set to "YES", remove the ^M from all files
+# USE_DOS2UNIX	- If set to "YES", remove the ^M from all files
 #				  under ${WRKSRC}. If set to a string, remove in all
 #				  files under ${WRKSRC} with one of these names the ^Ms.
 # USE_GCC		- If set, this port requires this version of gcc, either in
@@ -393,12 +393,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_FAM		- If set, this port uses the File Alteration Monitor.
 #
 # WANT_FAM_SYSTEM
-# 				- Legal values are: gamin (default),fam
-# 				  If set to an unknown value, the port is marked BROKEN.
+#				- Legal values are: gamin (default),fam
+#				  If set to an unknown value, the port is marked IGNORE.
 ##
 # USE_AUTOTOOLS	- If set, this port uses various GNU autotools
 #				  (libtool, autoconf, autoheader, automake et al.)
 #				  See bsd.autotools.mk for more details.
+##
+# USE_SCONS - If set, this port uses the Python-based SCons build system
+#				  See bsd.scons.mk for more details.
 ##
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
@@ -462,15 +465,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
 #				  It honors USE_LINUX=foo and OVERRIDE_LINUX_BASE_PORT.
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
-# 				  routines found in etc/rc.subr and may need to
-# 				  depend on the sysutils/rc_subr port.
-# 				  If this is set to a list of files, these files will be
-# 				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
-# 				  automatically be expanded, they will be installed in
-# 				  ${PREFIX}/etc/rc.d and added to the packing list.
+#				  routines found in etc/rc.subr and may need to
+#				  depend on the sysutils/rc_subr port.
+#				  If this is set to a list of files, these files will be
+#				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
+#				  automatically be expanded, they will be installed in
+#				  ${PREFIX}/etc/rc.d and added to the packing list.
 # USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
-# 				  process. This acts exactly like USE_RC_SUBR except that
-# 				  scripts are installed in /etc/rc.d.
+#				  process. This acts exactly like USE_RC_SUBR except that
+#				  scripts are installed in /etc/rc.d.
 # RC_SUBR		- Set to path of rc.subr.
 #				  Default: ${LOCALBASE}/etc/rc.subr.
 ##
@@ -952,7 +955,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Different checksum algorithms to check for verifying the
 #				  integrity of the distfiles. The absence of the algorithm
 #				  in distinfo doesn't make it fail. 
-#				  Default: md5
+#				  Default: md5 sha256
 # NO_CHECKSUM	- Don't verify the checksum.  Typically used when
 #				  when you noticed the distfile you just fetched has
 #				  a different checksum and you intend to verify if
@@ -1150,6 +1153,9 @@ USE_SUBMAKE=	yes
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
 
+LDCONFIG_DIR=	libdata/ldconfig
+LDCONFIG32_DIR=	libdata/ldconfig32
+
 .if defined(LATEST_LINK)
 UNIQUENAME?=	${LATEST_LINK}
 .else
@@ -1204,7 +1210,7 @@ check-makefile::
 
 .if defined(PORTVERSION)
 .if ${PORTVERSION:M*[-_,]*}x != x
-BROKEN=			PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','
+IGNORE=			PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','
 .endif
 DISTVERSION?=	${PORTVERSION:S/:/::/g}
 .elif defined(DISTVERSION)
@@ -1404,16 +1410,20 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 .endif
 
+.if defined(WANT_WX) || defined(USE_WX) || defined(USE_WX_NOT)
+.include "${PORTSDIR}/Mk/bsd.wx.mk"
+.endif
+
 .if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER) || defined(USE_GSTREAMER80)
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .endif
 
-.if defined(USE_SDL) || defined(WANT_SDL)
-.include "${PORTSDIR}/Mk/bsd.sdl.mk"
-.endif
-
 .if defined(USE_QMAIL) || defined(USE_QMAIL_RUN) || defined(USE_QMAIL_BUILD) || defined(WANT_QMAIL)
 .include "${PORTSDIR}/Mk/bsd.mail.mk"
+.endif
+
+.if defined(USE_SDL) || defined(WANT_SDL)
+.include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
 .if ${OSVERSION} >= 502123
@@ -1540,7 +1550,7 @@ LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 24
 LIB_DEPENDS+=		ldap-2.4.1:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
 .else
-BROKEN=				unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
+IGNORE=				unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 .endif
 
@@ -1558,7 +1568,7 @@ _HAVE_FAM_SYSTEM=	fam
 
 .if defined(WANT_FAM_SYSTEM)
 .if defined(WITH_FAM_SYSTEM) && ${WITH_FAM_SYSTEM}!=${WANT_FAM_SYSTEM}
-BROKEN=	The port wants to use ${WANT_FAM_SYSTEM} as its FAM system and you wish to use ${WITH_FAM_SYSTEM}
+IGNORE=	The port wants to use ${WANT_FAM_SYSTEM} as its FAM system and you wish to use ${WITH_FAM_SYSTEM}
 .endif
 FAM_SYSTEM=	${WANT_FAM_SYSTEM}
 .elif defined(WITH_FAM_SYSTEM)
@@ -1580,7 +1590,7 @@ BROKEN=	FAM system mismatch: ${_HAVE_FAM_SYSTEM} is installed and desired FAM sy
 .if defined(FAM_SYSTEM_${FAM_SYSTEM:U})
 LIB_DEPENDS+=	${FAM_SYSTEM_${FAM_SYSTEM:U}}
 .else
-BROKEN=			unknown FAM system: ${FAM_SYSTEM}
+IGNORE=			unknown FAM system: ${FAM_SYSTEM}
 .endif
 .endif # USE_FAM
 
@@ -1609,14 +1619,12 @@ SUB_FILES+=	${USE_RCORDER}
 .endif
 .endif
 
-LDCONFIG_DIR=	libdata/ldconfig
-LDCONFIG32_DIR=	libdata/ldconfig32
-
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
-.if ${OSVERSION} < 504105 || \
-		(${OSVERSION} >= 700000 && ${OSVERSION} < 700012) || \
-		(${OSVERSION} >= 600000 && ${OSVERSION} < 600104)
+.if ( ${OSVERSION} < 504105 ) || \
+		( ${OSVERSION} >= 700000 && ${OSVERSION} < 700012 ) || \
+		( ${OSVERSION} >= 600000 && ${OSVERSION} < 600104 )
 RUN_DEPENDS+=	${LOCALBASE}/${LDCONFIG_DIR}:${PORTSDIR}/misc/ldconfig_compat
+NO_LDCONFIG_MTREE=	yes
 .endif
 .if defined(USE_LDCONFIG) && ${USE_LDCONFIG:L} == "yes"
 USE_LDCONFIG=	${PREFIX}/lib
@@ -1661,6 +1669,9 @@ NO_FILTER_SHLIBS=	yes
 USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 .		endif
 .	endif
+
+# NOTE: when you update the default linux_base version (case "yes"),
+# don't forget to update the Handbook!
 
 .	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
 LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
@@ -1851,6 +1862,10 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
 .endif
 
+.if defined(USE_SCONS)
+.include "${PORTSDIR}/Mk/bsd.scons.mk"
+.endif
+
 .if defined(USE_SDL) || defined(WANT_SDL)
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
@@ -1861,6 +1876,10 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 
 .if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
+
+.if defined(USE_WX) || defined(USE_WX_NOT)
+.include "${PORTSDIR}/Mk/bsd.wx.mk"
 .endif
 
 .if defined(USE_APACHE) || defined(APACHE_COMPAT)
@@ -1874,6 +1893,7 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 .endif
+
 
 .if exists(${PORTSDIR}/../Makefile.inc)
 .include "${PORTSDIR}/../Makefile.inc"
@@ -3669,9 +3689,15 @@ install-ldconfig-file:
 .endif
 .if ${USE_LDCONFIG:L} != "${PREFIX}/lib"
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
+.if defined(NO_LDCONFIG_MTREE)
+	@${MKDIR} ${LDCONFIG_DIR}
+.endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+.if defined(NO_LDCONFIG_MTREE)
+	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG_DIR} >/dev/null 2>&1" >> ${TMPPLIST}
+.endif
 .endif
 .endif
 .if defined(USE_LDCONFIG32)
@@ -3683,9 +3709,15 @@ install-ldconfig-file:
 	-${LDCONFIG} -32 -m ${USE_LDCONFIG32}
 .endif
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
+.if defined(NO_LDCONFIG_MTREE)
+	@${MKDIR} ${LDCONFIG_32DIR}
+.endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG32_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} ${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
+.if defined(NO_LDCONFIG_MTREE)
+	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG32_DIR} >/dev/null 2>&1" >> ${TMPPLIST}
+.endif
 .endif
 # This can be removed once, all ports have been converted to USE_LDCONFIG.
 .if defined(INSTALLS_SHLIB)
@@ -4864,6 +4896,16 @@ package-recursive: package
 		(cd $$dir; ${MAKE} package-noinstall); \
 	done
 
+# Show missing dependiencies
+missing:
+	@for dir in $$(${ALL-DEPENDS-LIST}); do \
+		THISORIGIN=$$(${ECHO_CMD} $$dir | ${SED} 's,${PORTSDIR}/,,'); \
+		installed=$$(${PKG_INFO} -qO $${THISORIGIN}); \
+		if [ -z $$installed ]; then \
+			${ECHO_CMD} $$THISORIGIN; \
+		fi \
+	done
+
 ################################################################
 # Everything after here are internal targets and really
 # shouldn't be touched by anybody but the release engineers.
@@ -5560,7 +5602,7 @@ VALID_DESKTOP_CATEGORIES+= Application Core Development Building Debugger IDE \
 check-desktop-entries:
 .if defined(DESKTOP_ENTRIES)
 	@set ${DESKTOP_ENTRIES} XXX; \
-	if [ $$((($$# - 1) % 6)) -ne 0 ]; then \
+	if [ `${EXPR} \( $$# - 1 \) % 6` -ne 0 ]; then \
 		${ECHO_CMD} "${PKGNAME}: Makefile error: the DESKTOP_ENTRIES list must contain one or more groups of 6 elements"; \
 		exit 1; \
 	fi; \
@@ -5606,7 +5648,7 @@ check-desktop-entries:
 			exit 1; \
 		fi; \
 		shift 6; \
-		num=$$((num + 1)); \
+		num=`${EXPR} $$num + 1`; \
 	done
 .else
 	@${DO_NADA}
