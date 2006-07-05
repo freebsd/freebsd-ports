@@ -1,8 +1,6 @@
-Index: configure.in
-===================================================================
---- configure.in	(.../branches/gnu/emacs)	(revision 15)
-+++ configure.in	(.../trunk/emacs)	(revision 15)
-@@ -237,6 +237,9 @@
+--- configure.in.orig	Tue Jul 04 16:55:30 2006 +0300
++++ configure.in	Tue Jul 04 16:58:01 2006 +0300
+@@ -237,6 +237,9 @@ case "${canonical}" in
      opsys=freebsd
      case "${canonical}" in
        alpha*-*-freebsd*)	machine=alpha ;;

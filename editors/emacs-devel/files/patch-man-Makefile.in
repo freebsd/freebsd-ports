@@ -1,11 +1,11 @@
---- man/Makefile.in.orig	Wed May  3 03:47:47 2006
-+++ man/Makefile.in	Wed May  3 03:48:25 2006
-@@ -32,7 +32,7 @@
+--- man/Makefile.in.orig	Tue Jul 04 16:55:30 2006 +0300
++++ man/Makefile.in	Tue Jul 04 16:58:01 2006 +0300
+@@ -32,7 +32,7 @@ VPATH=@srcdir@
  
  # The makeinfo program is part of the Texinfo distribution.
  # Use --force so that it generates output even if there are errors.
 -MAKEINFO = makeinfo --force
 +MAKEINFO = makeinfo --force --no-split
- INFO_TARGETS = ../info/emacs ../info/emacs-xtra ../info/ccmode ../info/cl \
+ INFO_TARGETS = ../info/emacs ../info/ccmode ../info/cl \
  	        ../info/dired-x ../info/ediff ../info/forms ../info/gnus \
  		../info/message ../info/sieve ../info/pgg ../info/emacs-mime \

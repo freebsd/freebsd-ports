@@ -1,6 +1,6 @@
---- lispintro/Makefile.in.orig	Thu Apr 20 23:29:18 2006
-+++ lispintro/Makefile.in	Wed May  3 04:48:53 2006
-@@ -33,7 +33,7 @@
+--- lispintro/Makefile.in.orig	Tue Jul 04 16:55:30 2006 +0300
++++ lispintro/Makefile.in	Tue Jul 04 16:58:01 2006 +0300
+@@ -33,7 +33,7 @@ INFO_TARGETS = ${infodir}/eintr
  INFO_TARGETS = ${infodir}/eintr
  DVI_TARGETS = emacs-lisp-intro.dvi
  
