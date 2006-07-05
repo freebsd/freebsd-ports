@@ -612,6 +612,9 @@ pre-configure:
 
 .endif
 
+# Where the below command fails, there is no need for concern:
+BLACKHOLE!=	sysctl -n net.inet.tcp.blackhole
+
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TCLBASE}|' \
@@ -626,6 +629,14 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
 . endfor
+.endif
+.if ${BLACKHOLE} != '' && ${BLACKHOLE} != 0
+	# ====================================================
+	# net.inet.tcp.blackhole is non-zero. Some http-tests
+	# will appear to hang and then fail. Do not be alarmed.
+	# The socket.test would hang, so it is disabled:
+	${MV} ${WRKSRC:H}/tests/socket.test ${WRKSRC:H}/tests/socket.test.dis;
+	# ====================================================
 .endif
 
 post-install:
