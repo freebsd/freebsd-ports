@@ -27,12 +27,13 @@ for arch in ${SUPPORTED_ARCHS}; do
   echo "<table border='1' cellpadding='4' bgcolor='#F2F2F2'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
   echo "<td align='left' width='80'>&nbsp;</td>" >> ${TMPFILE}
-  echo "<th align='left'>INDEX</th>" >> ${TMPFILE}
-  echo "<th align='left'>packages</th>" >> ${TMPFILE}
-  echo "<th align='left'>errors</th>" >> ${TMPFILE}
-  echo "<th align='left'>skipped</th>" >> ${TMPFILE}
-  echo "<th align='left'>missing</th>" >> ${TMPFILE}
-  echo "<th align='left'>done?</th>" >> ${TMPFILE}
+  echo "<th width='60'>as of</th>" >> ${TMPFILE}
+  echo "<th>INDEX</th>" >> ${TMPFILE}
+  echo "<th>packages</th>" >> ${TMPFILE}
+  echo "<th>errors</th>" >> ${TMPFILE}
+  echo "<th>skipped</th>" >> ${TMPFILE}
+  echo "<th>missing</th>" >> ${TMPFILE}
+  echo "<th>done?</th>" >> ${TMPFILE}
   echo "</tr>" >> ${TMPFILE}
 
   # begin row
@@ -50,6 +51,19 @@ for arch in ${SUPPORTED_ARCHS}; do
 
     # column: ARCH
     echo "<th align='left'>$arch-$branch</th>" >> ${TMPFILE}
+
+    # column: datestamp of latest log
+    latest="&nbsp;"
+    if [ -d $directory/logs ]; then
+      #latest="$(cd $directory/logs; ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}')"
+      latest="$(cd $directory/logs; ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s %s\n",$6,$7)}')"
+      if [ "$latest" ]; then
+        #latest="$latest `date '+%Z'`"
+      else
+        latest="&nbsp;"
+      fi
+    fi
+    echo "<td align='left'>$latest</td>" >> ${TMPFILE}
 
     # column: INDEX count
     n_index=0
@@ -100,7 +114,7 @@ for arch in ${SUPPORTED_ARCHS}; do
         done_flag="Y"
       fi
     fi
-    echo "<td align='right'>$done_flag</td>" >> ${TMPFILE}
+    echo "<td align='center'>$done_flag</td>" >> ${TMPFILE}
 
     echo "</tr>" >> ${TMPFILE}
 
@@ -113,6 +127,7 @@ done
 
 echo "<p>explanation of columns:</p>" >> ${TMPFILE}
 echo "<ul>" >> ${TMPFILE}
+echo "<li><b>as of</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
 echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
 echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
 echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
