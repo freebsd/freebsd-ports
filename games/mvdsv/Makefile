@@ -34,6 +34,9 @@ MAKE_ARGS+=	BYTE_ORDER=__BIG_ENDIAN__
 .endif
 
 pre-everything::
+.if !defined(WITHOUT_KQUEUE)
+	@${ECHO_MSG} "Define WITHOUT_KQUEUE to disable Kqueue support"
+.endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable extra optimization options"
 .endif

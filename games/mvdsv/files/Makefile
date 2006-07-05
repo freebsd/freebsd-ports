@@ -14,6 +14,10 @@
 DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -Dstricmp=strcasecmp \
 		-DSERVERONLY -DUSE_PR2 -D${BYTE_ORDER}Q__
 
+.if !defined(WITHOUT_KQUEUE)
+DO_CFLAGS+=	-DKQUEUE
+.endif
+
 .if ${ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
 .endif
