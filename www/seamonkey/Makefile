@@ -53,13 +53,17 @@ MOZ_OPTIONS+=	--enable-glitz
 LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
 .endif
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035 || ${ARCH}=="sparc64"
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
+.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
+IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
+.endif
+
 .if ${OSVERSION} < 500000
-USE_GCC=        3.4
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-security_manager_Makefile.in
+USE_GCC=	3.4
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-security_manager_Makefile.in
 .endif
 
 .if defined(WITHOUT_MAILNEWS)
