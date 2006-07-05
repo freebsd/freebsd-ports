@@ -77,7 +77,7 @@ AUTOTOOL_${item:C/^([^:]+).*/\1/}${item:M*\:*\:*:C/^[^:]+:[^:]+:([^:]+)/_\1/}= $
 # XXX: temporary to highlight any missed ports in the conversion
 #
 .if defined(AUTOTOOL_libtool_inc)
-BROKEN+=libtool:${AUTOTOOL_libtool_inc}:inc construct no longer available
+IGNORE+= error: libtool:${AUTOTOOL_libtool_inc}:inc construct no longer available
 .endif
 
 #---------------------------------------------------------------------------
@@ -100,7 +100,7 @@ AUTOMAKE_VERSION=	${AUTOTOOL_automake_env}
 # Make sure we specified a legal version of automake
 #
 . if !exists(${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}/Makefile)
-BROKEN+=	Unknown AUTOMAKE version: ${AUTOMAKE_VERSION}
+IGNORE+=	cannot install: unknown AUTOMAKE version: ${AUTOMAKE_VERSION}
 . endif
 
 # Set up the automake environment
@@ -146,7 +146,7 @@ AUTOCONF_VERSION=	${AUTOTOOL_autoconf_env}
 # Make sure we specified a legal version of autoconf
 #
 . if !exists(${PORTSDIR}/devel/autoconf${AUTOCONF_VERSION}/Makefile)
-BROKEN+=	Unknown AUTOCONF version: ${AUTOCONF_VERSION}
+IGNORE+=	cannot install: unknown AUTOCONF version: ${AUTOCONF_VERSION}
 . endif
 
 # Set up the autoconf/autoheader environment
@@ -189,7 +189,7 @@ LIBTOOL_VERSION=		${AUTOTOOL_libtool_env}
 # Make sure we specified a legal version of libtool
 #
 . if !exists(${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}/Makefile)
-BROKEN+=	Unknown LIBTOOL version: ${LIBTOOL_VERSION}
+IGNORE+=	cannot install: unknown LIBTOOL version: ${LIBTOOL_VERSION}
 . endif
 
 # Set up the libtool environment

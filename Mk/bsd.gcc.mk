@@ -78,7 +78,7 @@ _GCCVERSION_OKAY=	true;
 .endfor
 
 .if !defined(_GCCVERSION_OKAY)
-BROKEN=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
+IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .endif
 
 #
@@ -94,7 +94,7 @@ _GCC_FOUND${v}:=	base
 . endif
 .endfor
 .if !defined(_GCCVERSION)
-BROKEN=		Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})
+IGNORE=		Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})
 .endif
 
 #

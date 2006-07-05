@@ -18,7 +18,7 @@
 # The port can set these options in its Makefile before bsd.ports.pre.mk:
 #
 # DEFAULT_PHP_VER=N - Use PHP version N if PHP is not yet installed.
-# BROKEN_WITH_PHP=N - The port doesn't work with PHP version N.
+# IGNORE_WITH_PHP=N - The port doesn't work with PHP version N.
 # USE_PHPIZE=yes    - Use to build a PHP extension.
 # USE_PHPEXT=yes    - Use to build, install and register a PHP extension.
 # USE_PHP_BUILD=yes - Set PHP also as a build dependency.
@@ -70,10 +70,14 @@ PHP_SAPI?=	""
 .endif
 PHP_EXT_INC?=	""
 
+# compatability shim
 .if defined(BROKEN_WITH_PHP)
-.	for VER in ${BROKEN_WITH_PHP}
+IGNORE_WITH_PHP=${BROKEN_WITH_PHP}
+.endif
+.if defined(IGNORE_WITH_PHP)
+.	for VER in ${IGNORE_WITH_PHP}
 .		if ${PHP_VER} == "${VER}"
-BROKEN=		Doesn't work with PHP version : ${PHP_VER} (Doesn't support PHP ${BROKEN_WITH_PHP})
+IGNORE=		cannot install: doesn't work with PHP version : ${PHP_VER} (Doesn't support PHP ${IGNORE_WITH_PHP})
 .		endif
 .	endfor
 .endif
