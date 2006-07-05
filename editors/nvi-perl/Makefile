@@ -29,7 +29,17 @@ CFLAGS+=	-DPERL_POLLUTE
 MAN1=		pnvi.1
 MLINKS=		pnvi.1 pnex.1  pnvi.1 pnview.1
 
+.include <bsd.port.pre.mk>
+
+post-depends:
+.if exists(${PERL})
+PERL_THREADED!=	${PERL} -V | ${GREP} -- -Dusethreads=y || ${TRUE}
+.  if ${PERL_THREADED} != ""
+IGNORE=		must be built with a NON-threaded Perl
+.  endif
+.endif
+
 post-patch:
 	${LN} -s /usr/include/sys/queue.h ${WRKSRC}/../include/sys/queue_dist.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
