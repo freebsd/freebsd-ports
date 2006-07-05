@@ -157,6 +157,7 @@
     SUBDIR += qinx
     SUBDIR += qnxstyle
     SUBDIR += qt-bluecurve-theme
+    SUBDIR += rezlooks
     SUBDIR += sapphire-themes
     SUBDIR += sawfish-themes
     SUBDIR += thinice
