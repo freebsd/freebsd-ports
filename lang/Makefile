@@ -133,6 +133,7 @@
     SUBDIR += librep
     SUBDIR += libutils
     SUBDIR += linux-j
+    SUBDIR += linux-libg2c
     SUBDIR += linux-libperl5.8
     SUBDIR += logo
     SUBDIR += lua

@@ -1,0 +1,6 @@
+MD5 (rpm/i386/fedora/4/compat-libf2c-32-3.2.3-47.fc4.i386.rpm) = 04a639becc657a94895e146c41acfd27
+SHA256 (rpm/i386/fedora/4/compat-libf2c-32-3.2.3-47.fc4.i386.rpm) = 97157b9b5b16dbb6ff77bac2836ebd7e46e3b06f244ed1e0ca21b94bae5247b0
+SIZE (rpm/i386/fedora/4/compat-libf2c-32-3.2.3-47.fc4.i386.rpm) = 51433
+MD5 (rpm/i386/fedora/4/compat-gcc-32-3.2.3-47.fc4.src.rpm) = 002407341966155b019178b83a7e58bb
+SHA256 (rpm/i386/fedora/4/compat-gcc-32-3.2.3-47.fc4.src.rpm) = b8e1aea61d51e0a8270a88929a480a7914e34e8b9598c3bbb15a4efbf2cf8285
+SIZE (rpm/i386/fedora/4/compat-gcc-32-3.2.3-47.fc4.src.rpm) = 21586568
