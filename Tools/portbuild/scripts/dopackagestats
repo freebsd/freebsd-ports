@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD#
+# $FreeBSD$
 #
 # create HTML showing numbers of packages vs errors.  Run this in a directory
 # accessible to the web server.
