@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sun Jul  2 20:15:13 2006
++++ Makefile.in	Sun Jul  2 20:15:30 2006
+@@ -77,7 +77,7 @@
+ @PLAIN_DOCDIR_FALSE@DOCROOTDIR = $(prefix)/share/doc/${PACKAGE}-${VERSION}
+ docdir = $(DOCROOTDIR)
+ 
+-doc_DATA = ChangeLog ChangeLogOld NEWS README COPYING
++doc_DATA = ChangeLog ChangeLogOld NEWS README
+ 
+ SUBDIRS = src tests doc rpm debian
+ 
+@@ -94,7 +94,7 @@
+ CONFIG_CLEAN_FILES = 
+ DATA =  $(doc_DATA) $(m4data_DATA)
+ 
+-DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING ChangeLog INSTALL \
++DIST_COMMON =  README ./stamp-h.in AUTHORS ChangeLog INSTALL \
+ Makefile.am Makefile.in NEWS acinclude.m4 aclocal.m4 config.guess \
+ config.h.in config.sub configure configure.in install-sh missing \
+ mkinstalldirs
