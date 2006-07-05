@@ -7,11 +7,10 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	keramida
-DISTNAME=	${PORTNAME}-cvs-snapshot-2006.05.02.05.51.52
+DISTNAME=	${PORTNAME}-cvs-snapshot-2006.07.03.10.57.35
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -31,7 +30,7 @@ CONFLICTS=	emacs-19.* emacs-21.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
 EMACS_VER=	22.0.50
-SNAPSHOT=	20060502
+SNAPSHOT=	20060703
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259
 .if !defined(WITHOUT_X11)
@@ -92,9 +91,9 @@ pre-build:
 
 post-build:
 	(cd ${WRKSRC}/lisp ; \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
-	${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.[0-9]* ; \
-	cd ${WRKSRC}/src ; \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
+	 ${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.[0-9]* ; \
+	 cd ${WRKSRC}/src ; \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 .include <bsd.port.post.mk>
