@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Filesys-Df
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filesys
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pirzyk@freebsd.org
+MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl extension for filesystem space
 
 PERL_CONFIGURE=	yes
