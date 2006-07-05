@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evas
-PORTVERSION=	0.9.9.027
+PORTVERSION=	0.9.9.029
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
@@ -26,10 +26,4 @@ USE_GNOME=	gnomehack pkgconfig gnometarget
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MMX) && (${ARCH} == "i386")
-CONFIGURE_ARGS+=        --enable-mmx
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
