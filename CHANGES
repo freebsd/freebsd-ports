@@ -10,6 +10,28 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070705:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * Change all bogus uses of BROKEN to IGNORE.  (Note: the BROKEN_WITH_*
+    forms are retained for compatibility but deprecated.)  Internally,
+    these variables all had already set IGNORE, not BROKEN, so they
+    were really misnomers.
+
+  * Fix USE_LDCONFIG with non-default PREFIX.
+
+  * Fix DESKTOP_ENTRIES processing on 4.x.
+
+  * Add 'make missing' to show missing dependencies.
+
+  * Add bsd.scons.mk and bsd.wx.mk.
+
+20060616:
+AUTHOR: portmgr@FreeBSD.org
+  The patch in ports/95841 to get rid of remnants of FORCE_PKG_REGISTER
+  was backed out because it broke kdelibs3*.
+
 20060616:
 AUTHOR: portmgr@FreeBSD.org
 The following functional changes were made to bsd.port.mk:
