@@ -6,7 +6,7 @@
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
@@ -95,6 +95,10 @@ PLIST_SUB+=	DEF="@comment "
 PLIST_SUB+=	FFTW3_SUFX="${FFTW3_SUFX}"
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|@infodir@|${PREFIX}/info|; \
+		s|@mandir@|${PREFIX}/man|' \
+		${WRKSRC}/doc/Makefile.in \
+		${WRKSRC}/tools/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/etc/fftw|${PREFIX}/etc/fftw|' \
 		${WRKSRC}/Makefile.in \
