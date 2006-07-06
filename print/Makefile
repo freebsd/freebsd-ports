@@ -59,6 +59,7 @@
     SUBDIR += dvipsk-tetex
     SUBDIR += dviselect
     SUBDIR += dvisvg
+    SUBDIR += easylatex
     SUBDIR += ec-fonts-mftraced
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter
