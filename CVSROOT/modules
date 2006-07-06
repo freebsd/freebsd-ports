@@ -5000,6 +5000,7 @@ jdk14-doc	ports/java/jdk14-doc
 jdk15		ports/java/jdk15
 jdk15-doc	ports/java/jdk15-doc
 jdom		ports/java/jdom
+jdraw		ports/graphics/jdraw
 jdresolve	ports/www/jdresolve
 jed		ports/editors/jed
 jedit		ports/editors/jedit
