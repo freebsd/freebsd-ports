@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Compile
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -22,7 +22,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Module::Compile.3 \
 		Module::Install::Admin::PMC.3 \
-		Module::Install::PMC.3
+		Module::Install::PMC.3\
+		Module::Optimize.3
 
 .include <bsd.port.pre.mk>
 
