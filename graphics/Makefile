@@ -272,6 +272,7 @@
     SUBDIR += jalbum
     SUBDIR += jasper
     SUBDIR += jbigkit
+    SUBDIR += jdraw
     SUBDIR += jgraph
     SUBDIR += jgv
     SUBDIR += jhead

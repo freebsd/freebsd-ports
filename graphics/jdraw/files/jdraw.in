@@ -1,0 +1,9 @@
+#!/bin/sh
+# $FreeBSD$
+if [ -z "$1" ]; then
+	LOOK_AND_FEEL="%%PLASTIC3D%%"
+else
+	LOOK_AND_FEEL="$1"
+fi
+
+%%JAVA%% -cp %%JAVAJARDIR%% ${LOOK_AND_FEEL} -jar %%JDRAWJAR%%
