@@ -19,6 +19,9 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/abbr.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/abbr.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/abbr.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/atom.py
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/atom.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/atom.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/chars.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/chars.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/chars.pyo
@@ -28,6 +31,9 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/cond.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/cond.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/cond.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/detox.py
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/detox.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/detox.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/doc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/doc.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/doc.pyo
@@ -67,6 +73,12 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/rng.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/rng.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/rng.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rss091.py
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rss091.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rss091.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rss20.py
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rss20.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/ns/rss20.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/ruby.py
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/ruby.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/ns/ruby.pyo
@@ -112,6 +124,18 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.py
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/publishers.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/doc2txt.py
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/doc2txt.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/doc2txt.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/dtd2xsc.py
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/dtd2xsc.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/dtd2xsc.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/tld2xsc.py
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/tld2xsc.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/tld2xsc.pyo
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/xml2xsc.py
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/xml2xsc.pyc
+%%PYTHON_SITELIBDIR%%/ll/xist/scripts/xml2xsc.pyo
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.py
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/sims.pyo
@@ -127,5 +151,6 @@ bin/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/xsc.py
 %%PYTHON_SITELIBDIR%%/ll/xist/xsc.pyc
 %%PYTHON_SITELIBDIR%%/ll/xist/xsc.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/ll/xist/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/ll/xist/ns
 @dirrm %%PYTHON_SITELIBDIR%%/ll/xist
