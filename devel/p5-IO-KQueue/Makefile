@@ -19,8 +19,13 @@ PERL_CONFIGURE=	yes
 
 MAN3=		IO::KQueue.3
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${RM} -f ${WRKSRC}/._* ${WRKSRC}/examples/._*
+.if ${PERL_LEVEL} < 500800
+	${REINPLACE_CMD} -e 's/const //' ${WRKSRC}/KQueue.xs
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -29,16 +34,9 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
 # dXSTARG is not defined in perl 5.00503
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires Perl 5.6 or better
-.endif
-
-.if ${PERL_LEVEL} < 500800
-post-patch:
-	${REINPLACE_CMD} -e 's/const //' ${WRKSRC}/KQueue.xs
 .endif
 
 .include <bsd.port.post.mk>
