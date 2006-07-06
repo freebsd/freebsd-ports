@@ -7,6 +7,7 @@
 
 PORTNAME=	liboil
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/ \
 		${MASTER_SITE_LOCAL}
@@ -26,6 +27,7 @@ CFLAGS+=	-O2
 .if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
 #USE_GCC=	3.4
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+RUN_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
 CC:=	gcc34
 CXX:=	g++34
 .endif
