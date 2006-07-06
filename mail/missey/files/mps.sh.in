@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mps
+# REQUIRE: LOGIN
+
+#
+# Add the following line to /etc/rc.conf to enable mps:
+# mps_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable Missey POP3 Server.
+#
+
+. %%RC_SUBR%%
+
+name="mps"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${mps_enable="NO"}
+
+command="%%PREFIX%%/sbin/mps"
+
+run_rc_command "$1"
