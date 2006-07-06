@@ -2023,6 +2023,7 @@ eaccelerator	ports/www/eaccelerator
 earthview	ports/misc/earthview
 easydiff	ports/textproc/easydiff
 easygtk		ports/x11-toolkits/easygtk
+easylatex	ports/print/easylatex
 easysoap	ports/net/easysoap
 easysok		ports/games/easysok
 easytag		ports/audio/easytag
