@@ -7,6 +7,7 @@
 
 PORTNAME=	devian
 PORTVERSION=	23062006
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 PKGNAMEPREFIX=	e17-module-
