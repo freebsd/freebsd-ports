@@ -2,10 +2,10 @@ bin/quetoo
 %%LIBDIR%%/baseq2/game.so
 %%LIBDIR%%/ctf/game.so
 %%QMASS%%%%LIBDIR%%/qmass/game.so
-%%LIBDIR%%/ref_glsdl.so
-%%LIBDIR%%/ref_glx.so
-%%LIBDIR%%/ref_softsdl.so
-%%LIBDIR%%/ref_softx.so
+%%LIBDIR%%/vid_glsdl.so
+%%LIBDIR%%/vid_glx.so
+%%LIBDIR%%/vid_softsdl.so
+%%LIBDIR%%/vid_softx.so
 %%LIBDIR%%/snd_sdl.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%QMASS%%%%PORTDOCS%%%%DOCSDIR%%/qmass-README

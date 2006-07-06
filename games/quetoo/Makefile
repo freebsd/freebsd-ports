@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	quetoo
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, stable, compatible, and secure Quake II client
 
-USE_AUTOTOOLS=	autoconf:259
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GL=		yes
@@ -66,11 +65,10 @@ CONFIGURE_ARGS+=	--disable-opt --disable-sse
 .endif
 
 post-extract: .SILENT
-	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}",' \
-		${WRKSRC}/configure
-	${REINPLACE_CMD} -E 's,-ldl,-rdynamic,' ${WRKSRC}/src/Makefile.in
-	${REINPLACE_CMD} 's,alsa,sdl,' ${WRKSRC}/src/snd_dma.c
-	${REINPLACE_CMD} 's,mysql/mysql,mysql,' ${WRKSRC}/src/qmass/g_local.h
+	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}",; \
+		s,sdl-config,${SDL_CONFIG},' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,-ldl,,' ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's,alsa,sdl,' ${WRKSRC}/src/snd_ref.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/quetoo ${PREFIX}/bin/quetoo
