@@ -12,6 +12,12 @@ ROOT_DIRECTORY=/var/portbuild
 OUTFILE=packagestats.html
 TMPFILE=.${OUTFILE}
 
+# stylesheet seems like overkill for something this simple
+TABLEBGCOLOR="#F0F0F0"
+THCOLOR="#E0E0FF"
+TDCOLOR_DONE="lightgreen"
+TDCOLOR_NOT_DONE="lightyellow"
+
 echo "<html>" > ${TMPFILE}
 echo "<head>" >> ${TMPFILE}
 echo "<title>FreeBSD package building statistics</title>" >> ${TMPFILE}
@@ -24,16 +30,16 @@ echo "<p>as of `date`</p>" >> ${TMPFILE}
 for arch in ${SUPPORTED_ARCHS}; do
 
   # begin table
-  echo "<table border='1' cellpadding='4' bgcolor='#F2F2F2'>" >> ${TMPFILE}
+  echo "<table border='1' cellpadding='4' cellspacing='1' bgcolor='$TABLEBGCOLOR'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
-  echo "<td align='left' width='80'>&nbsp;</td>" >> ${TMPFILE}
-  echo "<th width='60'>as of</th>" >> ${TMPFILE}
-  echo "<th>INDEX</th>" >> ${TMPFILE}
-  echo "<th>packages</th>" >> ${TMPFILE}
-  echo "<th>errors</th>" >> ${TMPFILE}
-  echo "<th>skipped</th>" >> ${TMPFILE}
-  echo "<th>missing</th>" >> ${TMPFILE}
-  echo "<th>done?</th>" >> ${TMPFILE}
+  echo "<td align='left' width='80' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
+  echo "<th width='60' bgcolor='$THCOLOR'>as of</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>INDEX</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>packages</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>errors</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>skipped</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>missing</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>done?</th>" >> ${TMPFILE}
   echo "</tr>" >> ${TMPFILE}
 
   # begin row
@@ -102,20 +108,27 @@ for arch in ${SUPPORTED_ARCHS}; do
       fi
     fi
 
+    # decorate the row to make everything less "gray"
+    if [ "$done_flag" = "Y" ]; then
+      cellcolor=$TDCOLOR_DONE
+    else
+      cellcolor=$TDCOLOR_NOT_DONE
+    fi
+
     # now write the row
     echo "<tr>" >> ${TMPFILE}
-    echo "<th align='left'>$arch-$branch</th>" >> ${TMPFILE}
-    echo "<td align='left'>$latest</td>" >> ${TMPFILE}
-    echo "<td align='right'>$n_index</td>" >> ${TMPFILE}
-    echo "<td align='right'>" >> ${TMPFILE}
+    echo "<th align='left' bgcolor='$THCOLOR'>$arch-$branch</th>" >> ${TMPFILE}
+    echo "<td align='left' bgcolor='$cellcolor'>$latest</td>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>$n_index</td>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest-logs'>" >> ${TMPFILE}
     echo "$n_packages</a></td>" >> ${TMPFILE}
-    echo "<td align='right'>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest'>" >> ${TMPFILE}
     echo "$n_errors</a></td>" >> ${TMPFILE}
-    echo "<td align='right'>$n_duds</td>" >> ${TMPFILE}
-    echo "<td align='right'>$n_missing</td>" >> ${TMPFILE}
-    echo "<td align='center'>$done_flag</td>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>$n_duds</td>" >> ${TMPFILE}
+    echo "<td align='right' bgcolor='$cellcolor'>$n_missing</td>" >> ${TMPFILE}
+    echo "<td align='center' bgcolor='$cellcolor'>$done_flag</td>" >> ${TMPFILE}
     echo "</tr>" >> ${TMPFILE}
 
   done
