@@ -2,8 +2,7 @@ Wyrd is a text-based front-end to Remind, a sophisticated calendar and alarm
 program. Remind's power lies in its programmability, and Wyrd does not hide
 this capability behind flashy GUI dialogs. Rather, Wyrd is designed to make you
 more efficient at editing your reminder files directly. It also offers a
-scrollable timetable suitable for visualizing your schedule at a glance. Here
-is a screenshot.
+scrollable timetable suitable for visualizing your schedule at a glance.
 
 Unlike most of the calendar applications available today, Wyrd is designed to
 be both lightweight and fast. Startup time is negligible, UI navigation is
