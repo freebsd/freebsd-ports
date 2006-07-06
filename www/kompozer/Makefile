@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
 USE_X_PREFIX=	yes
