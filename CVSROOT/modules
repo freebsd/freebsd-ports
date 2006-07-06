@@ -14239,6 +14239,7 @@ wxgtk26-unicode-contrib	ports/x11-toolkits/wxgtk26-unicode-contrib
 wxmozilla	ports/x11-toolkits/wxmozilla
 wxsvg		ports/graphics/wxsvg
 wy60		ports/comms/wy60
+wyrd		ports/deskutils/wyrd
 wyvern		ports/www/wyvern
 wzdftpd		ports/ftp/wzdftpd
 wzip		ports/archivers/wzip
