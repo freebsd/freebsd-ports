@@ -95,6 +95,7 @@
     SUBDIR += enfle
     SUBDIR += entice
     SUBDIR += eog
+    SUBDIR += epdfview
     SUBDIR += epeg
     SUBDIR += epix
     SUBDIR += eps2png
