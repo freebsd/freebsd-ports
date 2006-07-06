@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libofa
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicdns.org/themes/musicdns_org/downloads/
 
