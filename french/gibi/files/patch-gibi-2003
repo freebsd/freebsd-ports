@@ -1,0 +1,10 @@
+--- gibi2003.orig	Mon Mar 14 16:51:57 2005
++++ gibi2003	Mon Jul  3 23:48:46 2006
+@@ -5,6 +5,7 @@
+ # variable(s) a mettre a jour pour la version a creer
+ castemscript='gibi2003'
+ castX='gibiPCLinuxK2.4_2003'
++export CASTEM='/usr/local/apps/gibi'
+ DIR=$CASTEM
+ 
+ if [[ $DIR = "" ]] ; then
