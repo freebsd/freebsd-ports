@@ -36,7 +36,7 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=	Does not compile on sparc64: "undefined reference to `_mcount'"
+BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 .endif
 
 USE_GETTEXT=	yes
