@@ -1,6 +1,5 @@
-@unexec rm -f %%LOCALBASE%%/bin/mged
 @unexec rm -f %%LOCALBASE%%/bin/mged.sh
-@exec ln -s %D/%F %%LOCALBASE%%/bin/mged
+@exec ln -s %%PREFIX%%/bin/mged.sh %%LOCALBASE%%/bin/mged.sh
 bin/a-d
 bin/alias-pix
 bin/all_sf
@@ -155,6 +154,7 @@ bin/g-off
 bin/g-shell.rect
 bin/g-stl
 bin/g-tankill
+bin/g-var
 bin/g-vrml
 bin/g-x3d
 bin/g2asc
@@ -185,6 +185,7 @@ bin/lgt
 bin/loop
 bin/mac-pix
 bin/mged
+bin/mged.sh
 bin/mk_bolt
 bin/mk_gastank
 bin/mk_handle
@@ -1027,6 +1028,7 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/db/tank_car.g
 %%DATADIR%%/%%PORTVERSION%%/db/terra.g
 %%DATADIR%%/%%PORTVERSION%%/db/truck.g
+%%DATADIR%%/%%PORTVERSION%%/db/toyjeep.g
 %%DATADIR%%/%%PORTVERSION%%/db/wave.g
 %%DATADIR%%/%%PORTVERSION%%/db/woodsman.g
 %%DATADIR%%/%%PORTVERSION%%/db/world.g
@@ -1415,6 +1417,7 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/bug.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/closeall.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/combination.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/command.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/configure.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_copy.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_cut.png
@@ -1425,9 +1428,13 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_translate.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/file_new.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/file_text_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/file_text_small_disabled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/find.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_closed_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_closed_small_disabled.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_open.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_open_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_open_small_disabled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/open.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/option_text.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/option_tree.png
@@ -1469,6 +1476,7 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/bug.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/closeall.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/combination.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/command.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/configure.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_copy.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_cut.png
@@ -1479,9 +1487,12 @@ lib/tkimg.so.0
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/edit_translate.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/file_new.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/file_text_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/file_text_small_disabled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/find.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/folder_closed_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/folder_closed_small_disabled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/folder_open_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/folder_open_small_disabled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/open.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/option_text.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal_Large/option_tree.png
