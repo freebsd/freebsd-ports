@@ -1,0 +1,21 @@
+bin/epdfview
+%%NLS%%share/locale/ca/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/de/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/es/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/epdfview.mo
+share/applications/epdfview.desktop
+%%DATADIR%%/pixmaps/icon_epdfview-24.png
+%%DATADIR%%/pixmaps/icon_epdfview-32.png
+%%DATADIR%%/pixmaps/icon_epdfview-48.png
+%%DATADIR%%/pixmaps/stock_find_next_24.png
+%%DATADIR%%/pixmaps/stock_find_previous_24.png
+%%DATADIR%%/pixmaps/stock_rotate-90.png
+%%DATADIR%%/pixmaps/stock_rotate-270.png
+%%DATADIR%%/pixmaps/stock_zoom-page-width.png
+%%DATADIR%%/ui/epdfview-ui-print.xml
+%%DATADIR%%/ui/epdfview-ui.xml
+@dirrmtry share/applications
+@dirrmtry %%DATADIR%%/pixmaps
+@dirrmtry %%DATADIR%%/ui
+@dirrmtry %%DATADIR%%

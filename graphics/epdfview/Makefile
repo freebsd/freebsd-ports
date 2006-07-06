@@ -1,0 +1,45 @@
+# New ports collection makefile for:	epdfview
+# Date created:				2006/06/01
+# Whom:					chinsan <chinsan.tw@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	epdfview
+PORTVERSION=	0.1.5
+CATEGORIES=	graphics print gnome
+MASTER_SITES=	http://www.emma-soft.com/projects/epdfview/chrome/site/releases/
+
+MAINTAINER=	chinsan.tw@gmail.com
+COMMENT=	A lightweight PDF document viewer
+
+LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \
+		poppler-glib.1:${PORTSDIR}/graphics/poppler-gtk
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+USE_ICONV=	yes
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gtk20 intlhack
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-install:
+	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/data/${PORTNAME}.desktop ${PREFIX}/share/applications/
+	@-update-desktop-database
+
+.include <bsd.port.mk>
