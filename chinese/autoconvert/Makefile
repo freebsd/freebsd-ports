@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autoconvert
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.14
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/
 
