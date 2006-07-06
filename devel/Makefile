@@ -710,7 +710,6 @@
     SUBDIR += ossp-val
     SUBDIR += ossp-var
     SUBDIR += ossp-xds
-    SUBDIR += otrs
     SUBDIR += p4.el
     SUBDIR += p4api
     SUBDIR += p4db
