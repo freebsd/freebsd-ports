@@ -91,6 +91,8 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/srfi-48.stk
 %%DATADIR%%/%%VERSION%%/srfi-60.ostk
 %%DATADIR%%/%%VERSION%%/srfi-60.stk
+%%DATADIR%%/%%VERSION%%/srfi-66.ostk
+%%DATADIR%%/%%VERSION%%/srfi-66.stk
 %%DATADIR%%/%%VERSION%%/srfi-7.ostk
 %%DATADIR%%/%%VERSION%%/srfi-7.stk
 %%DATADIR%%/%%VERSION%%/srfi-70.ostk
