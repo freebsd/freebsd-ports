@@ -52,10 +52,14 @@ OPTIONS=	SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500035 || ${ARCH}=="sparc64"
+.if ${ARCH}=="alpha" || ${ARCH}=="ia64"
 IGNORE=	core dumps on ${ARCH}
 .endif
 
+.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
+IGNORE=	core dumps on ${ARCH}, need kern.osrelverdate>=601101
+.endif
+ 
 .if ${OSVERSION} >= 600000
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 .endif
