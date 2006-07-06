@@ -5,14 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	django
-PORTVERSION=	0.91
+PORTNAME?=	django
+PORTVERSION?=	0.91
+PORTREVISION?=	0
 CATEGORIES=	www python
-MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/
+MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER?=	acardenas@bsd.org.pe
 COMMENT=	High-level Python Web framework
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
@@ -22,7 +23,7 @@ USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-django
-DJANGOVER=	${PORTVERSION}
+DJANGOVER?=	${PORTVERSION}
 PLIST_SUB=	DJANGOVER=${DJANGOVER}
 
 OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
