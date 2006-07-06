@@ -57,7 +57,7 @@ IGNORE=	core dumps on ${ARCH}
 .endif
 
 .if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
-IGNORE=	core dumps on ${ARCH}, need kern.osrelverdate>=601101
+IGNORE=	core dumps on ${ARCH}, need kern.osreldate>=601101
 .endif
  
 .if ${OSVERSION} >= 600000
