@@ -7,6 +7,7 @@
 
 PORTNAME=	aria2
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
 
-LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}

@@ -7,13 +7,14 @@
 
 PORTNAME=	iksemel
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://jabberstudio.2nw.net/iksemel/
 
 MAINTAINER=	trasz@pin.if.uz.zgora.pl
 COMMENT=	XML parser library mainly designed for Jabber applications
 
-LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes

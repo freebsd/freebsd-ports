@@ -7,7 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.99.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ethereal.com/pub/ethereal/all-versions/
@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--with-adns=no
 .endif
 
 .if exists(${LOCALBASE}/lib/libgnutls.so) || defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE}
 .endif
 
