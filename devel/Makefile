@@ -687,6 +687,7 @@
     SUBDIR += ocaml-extlib
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-magic
+    SUBDIR += ocaml-ounit
     SUBDIR += ocaml-pcre
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem

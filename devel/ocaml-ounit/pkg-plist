@@ -1,0 +1,8 @@
+lib/ocaml/site-lib/oUnit/oUnit.a
+lib/ocaml/site-lib/oUnit/oUnit.cmxa
+lib/ocaml/site-lib/oUnit/oUnit.cma
+lib/ocaml/site-lib/oUnit/oUnit.cmi
+lib/ocaml/site-lib/oUnit/oUnit.mli
+lib/ocaml/site-lib/oUnit/META
+@dirrm lib/ocaml/site-lib/oUnit
+@unexec ocamlfind remove oUnit 2> /dev/null || true
