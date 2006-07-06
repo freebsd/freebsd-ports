@@ -153,6 +153,7 @@
     SUBDIR += vym
     SUBDIR += when
     SUBDIR += wmpinboard
+    SUBDIR += wyrd
     SUBDIR += xcalendar
     SUBDIR += xchm
     SUBDIR += xfce4-calendar
