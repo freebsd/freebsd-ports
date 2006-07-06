@@ -1,0 +1,8 @@
+cdcat is a powerful QT based tool for creating fully searcheable offline
+catalogs of the contents of any arbitrary media. Primarily it is most
+useful for cataloging CDs, DVDs, and other such removeable media. The
+catalogs can be quickly searched (including across multiple catalogs)
+with regular expressions, exported as CSV or HTML files, sorted, and
+statistical information gathered.
+
+WWW: http://cdcat.sourceforge.net/
