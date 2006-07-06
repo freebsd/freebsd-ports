@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-DISTVERSION=	1.3.0-1
+DISTVERSION=	1.3.3-1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -74,10 +74,10 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	8.2.0
+ASTER_VER=	8.3.0
 vaster=		STA${ASTER_VER:R}
 
-GIBI=		gibi2000
+GIBI=		gibi2003
 
 .if defined(WITH_ZSH)
 SHIA=		zsh
@@ -143,8 +143,7 @@ post-patch:
 .if !defined(CLIENT_SEUL)
 	@${RM} ${WRKSRC}/conf/config.orig ${WRKSRC}/bin/as_exec.orig		\
 		${WRKSRC}/bin/as_serv.orig ${WRKSRC}/lib/as_config.py.orig	\
-		${WRKSRC}/lib/as_exec.py.orig ${WRKSRC}/lib/as_system.py.orig	\
-		${WRKSRC}/conf/aster_profile.sh.orig
+		${WRKSRC}/lib/as_exec.py.orig ${WRKSRC}/conf/aster_profile.sh.orig
 .else
 	@${RM} ${WRKSRC}/lib/ASTK/init.tcl.orig	${WRKSRC}/lib/ASTK/astkrc/outils.orig	\
 		${WRKSRC}/share/tkselecteur.tcl.orig
