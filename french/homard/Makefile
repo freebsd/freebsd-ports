@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	homard
-PORTVERSION=	7.7
+DISTVERSION=	8.2-1
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
+DISTNAME=	${PORTNAME}-${DISTVERSION}.${ARCH}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A refinement and de-refinement mesh tool
@@ -17,11 +17,11 @@ COMMENT=	A refinement and de-refinement mesh tool
 BUILD_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
 RUN_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
 
-RESTRICTED=	"Toute personne chargeant le logiciel HOMARD s'engage à ne\
+RESTRICTED=	Toute personne chargeant le logiciel HOMARD s'engage à ne\
 		l'utiliser qu'en couplage avec le logiciel Code_Aster. Pour\
 		tout autre usage, un droit de licence est nécessaire.\
 		Contacter les administrateurs de HOMARD à l'adresse :\
-		<homard@edf.fr>."
+		<homard@edf.fr>.
 
 ONLY_FOR_ARCHS=	i386
 
@@ -33,7 +33,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 LHOMARDDIR?=	apps/${PORTNAME}
-ASTER_VER=	8.2
+ASTER_VER=	8.3
 vaster=		STA${ASTER_VER}
 ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
@@ -42,8 +42,8 @@ AHPY5=		aster_homard_v5x_py
 AHPY6=		aster_homard_v6x_py
 HOMARDSCRIPT=	${WRKSRC}/${PORTNAME}_base
 # This name is requested to run aster's make test
-HOMARDPG=	${PORTNAME:U}_V${PORTVERSION}.out
-HOMARDWDIR=	${PORTNAME:U}_V${PORTVERSION}.Linux
+HOMARDPG=	${PORTNAME:U}_V${PORTVERSION:R}.out
+HOMARDWDIR=	${PORTNAME:U}_V${PORTVERSION:R}.Linux
 
 DOCS=		A_Lire.txt Readme.txt
 
@@ -55,7 +55,6 @@ PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY}			\
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s#/logiciels/HOMARD/HOMARD_PUBLIC#${PREFIX}/bin#"		\
-		-e "s#/local/edf-python-2.1.1/bin/python#${PYTHON_CMD}#"		\
 		${HOMARDSCRIPT}
 
 do-install:
@@ -72,11 +71,14 @@ do-install:
 	@${LN} -fs ${HOMARDDIR}/homard ${ASTER_TOOLS}/
 	@${LN} -fs ${HOMARDDIR}/aster_homard_py ${ASTER_TOOLS}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 .for doc in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
+	@${CP} -R ${WRKSRC}/Intranet ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/CAS_TESTS/* ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
 post-install:
