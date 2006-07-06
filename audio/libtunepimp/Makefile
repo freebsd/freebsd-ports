@@ -7,7 +7,7 @@
 
 PORTNAME=	libtunepimp
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 INSTALLS_SHLIB=	yes
 
 post-patch:
