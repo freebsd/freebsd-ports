@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aster
-DISTVERSION=	8.2.0-4
-PORTREVISION=	2
+DISTVERSION=	8.3.0-1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
@@ -54,7 +53,7 @@ USE_BISON=	yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-full-src-${PORTVERSION:R}
 PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/${vaster}/outils
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(WITHOUT_ASTK_CLI)
@@ -125,11 +124,17 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
 WITH_MUMPS=	yes
 .endif
 .if defined(WITH_MUMPS)
+WITH_MPI=	yes	# For the FETI solver
 F90=		gfortran41
 FC=		${LOCALBASE}/bin/${F90}
 DLIBF90!=	${DIRNAME} `${LDCONFIG} -r | ${GREP} gfortran | ${AWK} '{print $$3}'`
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/mumps	\
 		${FC}:${PORTSDIR}/lang/gfortran
+.endif
+
+.if defined(WITH_MPI)
+BUILD_DEPENDS+=	${HOME_MPI}/include/mpif.h:${PORTSDIR}/net/mpich
+HOME_MPI=	${LOCALBASE}/mpich
 .endif
 
 .if !${OSVERSION} < 500039
@@ -221,6 +226,8 @@ pre-configure:
 	@${ECHO_CMD} "_install_Numeric = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_gmsh = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_gibi = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "_install_grace = False"			>> ${WRKSRC}/setup.cfg
+	@${ECHO_CMD} "XMGRACE = 'xmgrace'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_homard = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_eficas = False"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "_install_astk = False"			>> ${WRKSRC}/setup.cfg
@@ -240,6 +247,11 @@ pre-configure:
 	@${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
 		>> ${WRKSRC}/setup.cfg
 .endif
+.if defined(WITH_MPI)
+	@${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
+.else
+	@${ECHO_CMD} "HOME_MPI = ''"				>> ${WRKSRC}/setup.cfg
+.endif
 	@${ECHO_CMD} "HOME_ZMAT = ''"				>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
@@ -255,13 +267,13 @@ pre-configure:
 	@${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "FFLAGS_DBG='-c -g -O -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c -D${FLAGARCH}'"		\
+	@${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c -D${FLAGARCH}'"		\
+	@${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -D${FLAGARCH}'"	\
+	@${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH}'"	\
+	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 
 do-configure:
@@ -341,6 +353,7 @@ regression-test:	install
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run forma01a.export)
 	@${ECHO_CMD} Note: homard must be installed to run some steps succesfully.
 	(cd ${inst_dir};	\
+	HDF5_DISABLE_VERSION_CHECK=1	\
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export)
 	@${ECHO_CMD} Check ${inst_dir}/astest/*.erre
 .endif

@@ -1,6 +1,6 @@
---- products.py.orig	Wed Jan 25 13:06:09 2006
-+++ products.py	Wed May 31 22:34:26 2006
-@@ -822,16 +822,18 @@
+--- products.py.orig	Wed Jun 28 15:53:05 2006
++++ products.py	Sat Jul  1 19:53:16 2006
+@@ -966,16 +966,18 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB', 'PYMODULES_PREFIX',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI',
             'HOME_MED', 'HOME_HDF', 'HOME_CRPCRS',
@@ -25,7 +25,7 @@
             'NOBUILD', ],
     )
     cfg['OTHERLIB'] = cfg.get('OTHERLIB', '')
-@@ -871,6 +873,18 @@
+@@ -1015,6 +1017,18 @@
        cxxlibs.extend(['stdc++', 'supc++'])
        zmat_platform='Linux4'
        mpilibs.extend(['mpich'])
@@ -41,10 +41,10 @@
 +      cxxlibs.extend(['stdc++', 'supc++'])
 +      zmat_platform=''
 +      mpilibs.extend(['mpich'])
-    elif cfg['IFDEF']=='x86_64':
+    elif cfg['IFDEF'] == 'LINUX64':
        opt['MATH_LIST']  = ['lapack', 'blas', 'g2c']
        opt['SYSLIB']     = '-Wl,--allow-multiple-definition -Wl,--export-dynamic -lieee -ldl -lpthread -lutil -lm'
-@@ -922,8 +936,8 @@
+@@ -1066,8 +1080,8 @@
        opt['FINCLUDE']   = ''
  
     # ----- F90
@@ -55,12 +55,12 @@
     opt['F90INCLUDE']=''
  
     # ----- check for MED and HDF5 libraries, and HDF5 includes
-@@ -1011,7 +1025,7 @@
-       for lib in ('common', 'scotch', 'scotcherr', 'scotcherrcom'):
+@@ -1160,7 +1174,7 @@
           ftools.findlib_and_set(cfg, 'SCOTCHLIB', lib,
              kargs['libdirs'], cfg['HOME_SCOTCH'],
--            typ='lib', err=True, append=True, check_home=('HOME_SCOTCH', 'bin'))
-+            typ='lib', err=True, append=True, check_home=('HOME_SCOTCH', 'lib'))
+             err=True, append=True)
+-         ftools.CheckFromLastFound(cfg, 'HOME_SCOTCH', 'bin')
++         ftools.CheckFromLastFound(cfg, 'HOME_SCOTCH', 'lib')
        ftools.find_and_set(cfg, 'CINCLUDE', 'scotchf.h',
           kargs['incdirs'], cfg['HOME_SCOTCH'],
           typ='inc', err=True, append=True)
