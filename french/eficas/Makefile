@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eficas
-DISTVERSION=	1.9.2-1
+DISTVERSION=	1.10.0-1
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 
