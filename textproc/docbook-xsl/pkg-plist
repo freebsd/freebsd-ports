@@ -1883,6 +1883,7 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/extensions
 @dirrm share/xsl/docbook/common
 @dirrm share/xsl/docbook
+@dirrmtry share/xsl
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/wordml
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/website
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/template
