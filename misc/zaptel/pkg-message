@@ -14,13 +14,13 @@ To unload it:
 
 It'll also load the driver automatically when the system is started.
 
-Report problems to Alexander Timoshenko <gonzo@portaone.com>. Please note that
+Report problems to Alexander Timoshenko <gonzo@pbxpress.com>. Please note that
 it is still "work in progress" so that your bug reports are welcome and will
 help to improve quality of the drivers.
 
 Great thanks to all companies and individuals who made this driver happen,
 including but not limited to, John Todd, Chris Coleman, Alexander Timoshenko,
-Porta Software Ltd, Max Khon, LF.net, Luigi Rizzo and others contributors.
+PBXpress, Inc, Max Khon, LF.net, Luigi Rizzo and others contributors.
 
 Thanks and enjoy!
 

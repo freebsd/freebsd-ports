@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	0.11
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.pbxpress.com/~gonzo/
-DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
+DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A FreeBSD Driver for FXO, FXS, BRI and PRI Telephony Cards
