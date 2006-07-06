@@ -8,8 +8,8 @@
 PORTNAME=	enigma
 PORTVERSION=	0.92
 CATEGORIES=	games
-MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	enigma
 DISTNAME=	enigma-${PORTVERSION}
 
 MAINTAINER=	anholt@FreeBSD.org
