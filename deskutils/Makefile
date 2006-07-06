@@ -18,6 +18,7 @@
     SUBDIR += buoh
     SUBDIR += cal
     SUBDIR += calcurse
+    SUBDIR += cdcat
     SUBDIR += checkrdf
     SUBDIR += chmsee
     SUBDIR += cycle
