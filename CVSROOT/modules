@@ -2205,6 +2205,7 @@ env4801		ports/sysutils/env4801
 envelope	ports/print/envelope
 eo-aspell	ports/textproc/eo-aspell
 eog		ports/graphics/eog
+epdfview	ports/graphics/epdfview
 epeg		ports/graphics/epeg
 eperl		ports/lang/eperl
 ephem		ports/astro/ephem
