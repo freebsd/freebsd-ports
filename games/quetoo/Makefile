@@ -8,7 +8,8 @@
 PORTNAME=	quetoo
 PORTVERSION=	0.4.0
 CATEGORIES=	games
-MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/
+MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/ \
+		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, stable, compatible, and secure Quake II client
