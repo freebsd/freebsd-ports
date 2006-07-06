@@ -1,11 +1,13 @@
 bin/evas-config
 bin/evas_buffer_test
+%%WITH_GL%%bin/evas_gl_x11_test
 bin/evas_software_x11_perf_load
 bin/evas_software_x11_perf_test
 bin/evas_software_x11_test
 bin/evas_xrender_x11_test
 include/Evas.h
 include/Evas_Engine_Buffer.h
+%%WITH_GL%%include/Evas_Engine_GL_X11.h
 include/Evas_Engine_Software_X11.h
 include/Evas_Engine_XRender_X11.h
 lib/libevas.a
@@ -15,6 +17,9 @@ lib/libevas.so.1
 lib/evas/modules/engines/buffer/module.a
 lib/evas/modules/engines/buffer/module.la
 lib/evas/modules/engines/buffer/module.so
+%%WITH_GL%%lib/evas/modules/engines/gl_x11/module.a
+%%WITH_GL%%lib/evas/modules/engines/gl_x11/module.la
+%%WITH_GL%%lib/evas/modules/engines/gl_x11/module.so
 lib/evas/modules/engines/software_generic/module.a
 lib/evas/modules/engines/software_generic/module.la
 lib/evas/modules/engines/software_generic/module.so
@@ -96,6 +101,7 @@ libdata/pkgconfig/evas.pc
 @dirrm lib/evas/modules/engines/xrender_x11
 @dirrm lib/evas/modules/engines/software_x11
 @dirrm lib/evas/modules/engines/software_generic
+%%WITH_GL%%@dirrm lib/evas/modules/engines/gl_x11
 @dirrm lib/evas/modules/engines/buffer
 @dirrm lib/evas/modules/engines
 @dirrm lib/evas/modules
