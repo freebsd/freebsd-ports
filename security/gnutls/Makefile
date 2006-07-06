@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.2.11
+PORTVERSION=	1.4.0
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -25,7 +25,6 @@ CONFLICTS=	gnutls-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -39,15 +38,23 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
-LIB_DEPENDS+=   opencdk.8:${PORTSDIR}/security/opencdk
+LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
 .endif
 
 .if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
-LIB_DEPENDS+=   tasn1.3:${PORTSDIR}/security/libtasn1
+LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
 .endif
 
 .if ${OSVERSION} < 600000
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
 .endif
 
 .if !defined(NOPORTDOCS)

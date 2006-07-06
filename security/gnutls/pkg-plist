@@ -5,6 +5,7 @@ bin/gnutls-cli-debug
 bin/gnutls-serv
 bin/libgnutls-config
 bin/libgnutls-extra-config
+bin/psktool
 bin/srptool
 include/gnutls/compat.h
 include/gnutls/extra.h
@@ -16,15 +17,15 @@ include/gnutls/x509.h
 lib/libgnutls-extra.a
 lib/libgnutls-extra.la
 lib/libgnutls-extra.so
-lib/libgnutls-extra.so.15
+lib/libgnutls-extra.so.13
 lib/libgnutls-openssl.a
 lib/libgnutls-openssl.la
 lib/libgnutls-openssl.so
-lib/libgnutls-openssl.so.15
+lib/libgnutls-openssl.so.13
 lib/libgnutls.a
 lib/libgnutls.la
 lib/libgnutls.so
-lib/libgnutls.so.15
+lib/libgnutls.so.13
 libdata/pkgconfig/gnutls-extra.pc
 libdata/pkgconfig/gnutls.pc
 share/aclocal/libgnutls-extra.m4
@@ -33,6 +34,7 @@ share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-cert-select.c
 %%EXAMPLESDIR%%/ex-client-resume.c
 %%EXAMPLESDIR%%/ex-client-srp.c
+%%EXAMPLESDIR%%/ex-client-tlsia.c
 %%EXAMPLESDIR%%/ex-client1.c
 %%EXAMPLESDIR%%/ex-client2.c
 %%EXAMPLESDIR%%/ex-crq.c
@@ -47,5 +49,8 @@ share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-verify.c
 %%EXAMPLESDIR%%/ex-x509-info.c
 %%EXAMPLESDIR%%/tcp.c
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gnutls.mo
 @dirrm %%EXAMPLESDIR%%
 @dirrm include/gnutls
