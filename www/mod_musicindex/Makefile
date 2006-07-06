@@ -37,6 +37,9 @@ MAKE_ENV+=	APXS=${APXS} CPPFLAGS="${CPPFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if "${AP_VER}"=="2"
 MAKE_ENV+=	APACHE_VERSION=2 APRCONFIG=${LOCALBASE}/lib/apache2/apr-config
+.if "ARCH" = "amd64"
+CFLAGS+=	-fPIC
+.endif
 .endif
 
 post-install:
