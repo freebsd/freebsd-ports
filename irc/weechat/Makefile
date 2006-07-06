@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.1.9
+PORTREVISION=	1	
 CATEGORIES=	irc
 MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
 		http://weechat.flashtux.org/download/
@@ -18,7 +19,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-lua
 
 MAN1=	weechat-curses.1
@@ -57,7 +58,7 @@ PLIST_SUB+=	RUBY="@comment "
 
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--enable-gnutls
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnu-tls
 .endif

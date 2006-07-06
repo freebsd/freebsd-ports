@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 
 .if !defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
-LIB_DEPENDS+=		gnutls-openssl.15:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls-openssl.13:${PORTSDIR}/security/gnutls
 .endif
 
 .if defined(WITH_PHP)
