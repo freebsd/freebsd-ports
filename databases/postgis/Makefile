@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	postgis
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/download/
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
+BUILD_DEPENDS=	bison2:${PORTSDIR}/devel/bison2
 LIB_DEPENDS=	proj.5:${PORTSDIR}/graphics/proj
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
+USE_GCC=	3.2+
 USE_PGSQL=	yes
 USE_GMAKE=	yes
-USE_BISON=	yes
 USE_PERL5_BUILD=	yes
 
 INSTALL_TARGET=	install
@@ -34,14 +35,6 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgis \
 		--with-proj
 
 .include <bsd.port.pre.mk>
-
-#Setting/finding PostgreSQL version we want.
-.if exists(${LOCALBASE}/bin/pg_config)
-PGSQL_VER!=     ${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
-.else
-PGSQL_VER=      ${DEFAULT_PGSQL_VER}
-.endif
-
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
