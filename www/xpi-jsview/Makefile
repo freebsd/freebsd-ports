@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	jsview
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
+MASTER_SITES=	${MASTER_SITE_CSME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Easily view embedded/external JS and CSS
