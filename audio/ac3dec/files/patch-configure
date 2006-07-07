@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jul  6 20:33:54 2006
++++ configure	Thu Jul  6 20:34:05 2006
+@@ -1269,7 +1269,7 @@
+ #define __alpha__ 1
+ EOF
+ ;;
+-sparc-*) cat >> confdefs.h <<\EOF
++sparc*) cat >> confdefs.h <<\EOF
+ #define __sparc__ 1
+ EOF
+ ;;
