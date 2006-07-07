@@ -51,7 +51,7 @@ FREEBSD_SYS?=	/usr/src/sys
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \
-	defined(WITH_LIBNOTIFY)
+	defined(WITH_NOTIFY)
 LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .endif
 
