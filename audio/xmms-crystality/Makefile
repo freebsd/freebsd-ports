@@ -9,7 +9,9 @@ PORTNAME=	crystality
 PORTVERSION=	0.92
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://fanthom.math.put.poznan.pl/~gyver/crystality/
+MASTER_SITES=	${MASTER_SITE_GENTOO} \
+		http://jkp-se.lunar-linux.org/lunar/cache/
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 
