@@ -8,7 +8,8 @@
 PORTNAME=	pathneck
 PORTVERSION=	1.3
 CATEGORIES=	net
-MASTER_SITES=	http://gs274.sp.cs.cmu.edu/www/pathneck/ \
+MASTER_SITES=	http://www.cs.cmu.edu/~hnn/pathneck/ \
+		http://gs274.sp.cs.cmu.edu/www/pathneck/ \
 		http://www.unixified.net/distfiles/
 EXTRACT_SUFX=	.tgz
 
