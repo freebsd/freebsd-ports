@@ -24,6 +24,10 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes
 
+OPTIONS=	NLS "Native Language Support" on
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
@@ -40,4 +44,4 @@ post-extract:
 		-e 's#\([@(]\)GAIM_DATADIR\([@)]\)#\1datadir\2#'
 	@${REINPLACE_CMD} -e 's|-g3||' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
