@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	winter
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
 		http://mbsd.msk.ru/dist/
