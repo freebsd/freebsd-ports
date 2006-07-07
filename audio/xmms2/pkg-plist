@@ -5,8 +5,6 @@ bin/xmms2-launcher
 %%MDNS%%bin/xmms2-mdns-avahi
 bin/xmms2d
 include/xmms2/xmms/xmms_config.h
-include/xmms2/xmms/xmms_decoder.h
-include/xmms2/xmms/xmms_decoderplugin.h
 include/xmms2/xmms/xmms_defs.h
 include/xmms2/xmms/xmms_effect.h
 include/xmms2/xmms/xmms_effectplugin.h
@@ -15,13 +13,12 @@ include/xmms2/xmms/xmms_ipc.h
 include/xmms2/xmms/xmms_log.h
 include/xmms2/xmms/xmms_medialib.h
 include/xmms2/xmms/xmms_object.h
-include/xmms2/xmms/xmms_output.h
 include/xmms2/xmms/xmms_outputplugin.h
 include/xmms2/xmms/xmms_plsplugins.h
 include/xmms2/xmms/xmms_plugin.h
 include/xmms2/xmms/xmms_sample.h
-include/xmms2/xmms/xmms_transport.h
-include/xmms2/xmms/xmms_transportplugin.h
+include/xmms2/xmms/xmms_streamtype.h
+include/xmms2/xmms/xmms_xformplugin.h
 include/xmms2/xmmsc/xmmsc_asyncns.h
 include/xmms2/xmmsc/xmmsc_errorcodes.h
 include/xmms2/xmmsc/xmmsc_idnumbers.h
@@ -34,39 +31,56 @@ include/xmms2/xmmsc/xmmsc_stdint.h
 include/xmms2/xmmsc/xmmsc_stringport.h
 include/xmms2/xmmsc/xmmsc_unistd.h
 include/xmms2/xmmsc/xmmsc_util.h
+include/xmms2/xmmsclient/xmmsclient++/client.h
+include/xmms2/xmmsclient/xmmsclient++/config.h
+include/xmms2/xmmsclient/xmmsclient++/dict.h
+include/xmms2/xmmsclient/xmmsclient++/exceptions.h
+include/xmms2/xmmsclient/xmmsclient++/helpers.h
+include/xmms2/xmmsclient/xmmsclient++/list.h
+include/xmms2/xmmsclient/xmmsclient++/listener.h
+include/xmms2/xmmsclient/xmmsclient++/mainloop.h
+include/xmms2/xmmsclient/xmmsclient++/medialib.h
+include/xmms2/xmmsclient/xmmsclient++/playback.h
+include/xmms2/xmmsclient/xmmsclient++/playlist.h
+include/xmms2/xmmsclient/xmmsclient++/signal.h
+include/xmms2/xmmsclient/xmmsclient++/stats.h
+include/xmms2/xmmsclient/xmmsclient++/typedefs.h
+include/xmms2/xmmsclient/xmmsclient++-glib.h
+include/xmms2/xmmsclient/xmmsclient++.h
 include/xmms2/xmmsclient/xmmsclient-cf.h
 include/xmms2/xmmsclient/xmmsclient-ecore.h
 include/xmms2/xmmsclient/xmmsclient-glib.h
 include/xmms2/xmmsclient/xmmsclient-qt.h
 include/xmms2/xmmsclient/xmmsclient.h
-%%ECORE%%lib/libxmmsclient-ecore.a
-%%ECORE%%lib/libxmmsclient-ecore.so
 lib/libxmmsclient-glib.a
 lib/libxmmsclient-glib.so
 lib/libxmmsclient.a
 lib/libxmmsclient.so
 %%CURL%%lib/xmms2/libxmms_curl_http.so
 lib/xmms2/libxmms_diskwrite.so
-lib/xmms2/libxmms_eq.so
+lib/xmms2/libxmms_equalizer.so
 %%FAAD%%lib/xmms2/libxmms_faad.so
 %%FLAC%%lib/xmms2/libxmms_flac.so
 lib/xmms2/libxmms_file.so
 %%GNOMEVFS%%lib/xmms2/libxmms_gnomevfs.so
-lib/xmms2/libxmms_html.so
+lib/xmms2/libxmms_icymetaint.so
+lib/xmms2/libxmms_id3v2.so
 %%JACK%%lib/xmms2/libxmms_jack.so
-lib/xmms2/libxmms_m3u.so
 lib/xmms2/libxmms_mad.so
+%%MMS%%lib/xmms2/libxmms_mms.so
 %%MODPLUG%%lib/xmms2/libxmms_modplug.so
 %%MUSEPACK%%lib/xmms2/libxmms_musepack.so
 lib/xmms2/libxmms_null.so
+lib/xmms2/libxmms_nulstripper.so
 lib/xmms2/libxmms_oss.so
-lib/xmms2/libxmms_pls.so
 lib/xmms2/libxmms_replaygain.so
 %%SAMBA%%lib/xmms2/libxmms_samba.so
 %%SID%%lib/xmms2/libxmms_sid.so
 lib/xmms2/libxmms_vorbisfile.so
 lib/xmms2/libxmms_wave.so
+%%WMA%%lib/xmms2/libxmms_wma.so
 libdata/pkgconfig/xmms2-client-cpp.pc
+libdata/pkgconfig/xmms2-client-cpp-glib.pc
 libdata/pkgconfig/xmms2-client-ecore.pc
 libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client.pc
@@ -78,6 +92,7 @@ libdata/pkgconfig/xmms2-plugin.pc
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
 @dirrm lib/xmms2
+@dirrm include/xmms2/xmmsclient/xmmsclient++
 @dirrm include/xmms2/xmmsclient
 @dirrm include/xmms2/xmmsc
 @dirrm include/xmms2/xmms

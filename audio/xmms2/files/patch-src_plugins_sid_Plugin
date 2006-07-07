@@ -1,0 +1,9 @@
+--- src/plugins/sid/Plugin.orig	Thu Jul  6 22:25:16 2006
++++ src/plugins/sid/Plugin	Thu Jul  6 22:27:29 2006
+@@ -6,4 +6,5 @@
+     builder_path = env.run("pkg-config libsidplay2 --variable=builders").strip()
+     if builder_path:
+         env.Append(LIBPATH=["-L%s" % builder_path])
+-    env.checklib("resid-builder", "resid_version_string")
++	env.Append(LINKFLAGS=['-rpath=%s' % builder_path])
++	env.Append(LIBS=["resid-builder"])
