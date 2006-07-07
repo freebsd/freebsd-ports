@@ -1,18 +1,18 @@
---- configure.orig	Thu Jun 15 01:37:53 2000
-+++ configure	Tue Sep  5 02:57:33 2000
-@@ -649,7 +649,7 @@
-   :
- fi
+--- configure.orig	Wed Jun 21 16:32:38 2006
++++ configure	Fri Jul  7 09:57:50 2006
+@@ -1419,7 +1419,7 @@
+   withval="$with_gcc"
  
+ fi;
 -    V_CCOPT="-O"
 +#    V_CCOPT="-O"
      V_INCLS=""
      if test "${srcdir}" != "." ; then
  	    V_INCLS="-I\$\(srcdir\)"
-@@ -2599,7 +2599,7 @@
+@@ -5299,7 +5299,7 @@
  		    fi
  		    V_CCOPT="$V_CCOPT -Wall"
- 		    if test $ac_cv_lbl_gcc_vers -gt 1 ; then
+ 		    if test "$ac_cv_lbl_gcc_vers" -gt 1 ; then
 -			    V_CCOPT="$V_CCOPT -Wmissing-prototypes -Wstrict-prototypes"
 +#			    V_CCOPT="$V_CCOPT -Wmissing-prototypes -Wstrict-prototypes"
  		    fi
