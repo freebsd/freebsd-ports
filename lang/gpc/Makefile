@@ -9,7 +9,7 @@ PORTNAME=	gpc
 PORTVERSION=	20050331
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gnu-pascal.de/alpha/:gpc \
-		${MASTER_SITE_GCC}
+		${MASTER_SITE_GCC:S|$|releases/gcc-${GCC_VERSION}/|}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gpc \
 		gcc-core-${GCC_VERSION}${EXTRACT_SUFX}
 
