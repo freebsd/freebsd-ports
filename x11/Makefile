@@ -298,6 +298,7 @@
     SUBDIR += xwit
     SUBDIR += xxkb
     SUBDIR += xzoom
+    SUBDIR += yakuake
     SUBDIR += yalias
     SUBDIR += yelp
     SUBDIR += zenity
