@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parano
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://bsd1.csme.ru/myports/ \
