@@ -33,10 +33,15 @@ share/apps/yakuake/default/title/quit_up.png
 share/apps/yakuake/default/title/right.png
 share/icons/hicolor/16x16/apps/yakuake.png
 share/icons/hicolor/32x32/apps/yakuake.png
+share/locale/da/LC_MESSAGES/yakuake.mo
 share/locale/de/LC_MESSAGES/yakuake.mo
-share/locale/ga/LC_MESSAGES/yakuake.mo
+share/locale/it/LC_MESSAGES/yakuake.mo
+share/locale/nl/LC_MESSAGES/yakuake.mo
 share/locale/pt/LC_MESSAGES/yakuake.mo
+share/locale/pt_BR/LC_MESSAGES/yakuake.mo
+share/locale/ru/LC_MESSAGES/yakuake.mo
 share/locale/sv/LC_MESSAGES/yakuake.mo
+share/locale/tr/LC_MESSAGES/yakuake.mo
 @dirrm share/apps/yakuake/default/title
 @dirrm share/apps/yakuake/default/tabs
 @dirrm share/apps/yakuake/default

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yakuake
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 CATEGORIES=	x11 kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	29153-${PORTNAME}-${PORTVERSION}
