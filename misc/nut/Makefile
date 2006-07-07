@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	11.4
+PORTVERSION=	11.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ \
 		http://bsd1.csme.ru/myports/ \
