@@ -9,7 +9,8 @@ PORTNAME=	rpm
 PORTVERSION=	3.0.6
 PORTREVISION=	13
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
+MASTER_SITES=	http://ftp.tpnet.pl/vol/d4/ftp.rpm.org/rpm/dist/rpm-3.0.x/ \
+		http://www.stttelkom.ac.id/staf/TBH/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
