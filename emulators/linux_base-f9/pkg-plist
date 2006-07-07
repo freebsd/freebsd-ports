@@ -8900,6 +8900,10 @@ var/mail
 @exec /bin/mkdir -p %D/usr/share/man/man4
 @exec /bin/mkdir -p %D/usr/share/man/man2
 @exec /bin/mkdir -p %D/usr/share/locale/zh_CN.GB2312/LC_MESSAGES
+@exec /bin/mkdir -p %D/usr/share/locale/xh/LC_MESSAGES
+@exec /bin/mkdir -p %D/usr/share/locale/tl/LC_MESSAGES
+@exec /bin/mkdir -p %D/usr/share/locale/te/LC_MESSAGES
+@exec /bin/mkdir -p %D/usr/share/locale/hy/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/games
 @exec /bin/mkdir -p %D/usr/share/empty
 @exec /bin/mkdir -p %D/usr/share/dict
@@ -8960,6 +8964,14 @@ var/mail
 @dirrmtry usr/share/man/man2
 @dirrmtry usr/share/locale/zh_CN.GB2312/LC_MESSAGES
 @dirrmtry usr/share/locale/zh_CN.GB2312
+@dirrmtry usr/share/locale/xh/LC_MESSAGES
+@dirrmtry usr/share/locale/xh
+@dirrmtry usr/share/locale/tl/LC_MESSAGES
+@dirrmtry usr/share/locale/tl
+@dirrmtry usr/share/locale/te/LC_MESSAGES
+@dirrmtry usr/share/locale/te
+@dirrmtry usr/share/locale/hy/LC_MESSAGES
+@dirrmtry usr/share/locale/hy
 @dirrmtry usr/share/games
 @dirrmtry usr/share/empty
 @dirrmtry usr/share/dict
