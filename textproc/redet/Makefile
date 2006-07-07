@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.11
+PORTVERSION=	8.12
 CATEGORIES=	textproc tk84
 MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		http://bsd2.csme.ru/myports/ \
