@@ -1,5 +1,4 @@
 # New ports collection makefile for:    zip
-# ftp://ftp.info-zip.org/pub/infozip/Info-ZIP.html
 # Date created:		22 Dec 1994
 # Whom:			ache
 #
@@ -7,11 +6,11 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	2.31
+PORTVERSION=	2.32
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
-DISTFILES=	zip231${EXTRACT_SUFX}
+DISTFILES=	zip232${EXTRACT_SUFX}
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Create/update ZIP files compatible with pkzip
