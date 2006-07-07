@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -70,6 +71,11 @@ WITH_DBUS=	yes
 
 .if exists(${X11BASE}/lib/libgstreamer-0.8.so)
 WITH_GSTREAMER=	yes
+.endif
+
+.if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \
+	defined(WITH_NOTIFY)
+LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
 .endif
 
 .if defined(WITH_PILOT)
