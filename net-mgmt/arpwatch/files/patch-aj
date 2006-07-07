@@ -1,5 +1,5 @@
---- arpwatch.8.orig	Sun Oct  8 21:31:28 2000
-+++ arpwatch.8	Thu Feb 22 22:47:29 2001
+--- arpwatch.8.orig	Sun Oct  8 16:31:28 2000
++++ arpwatch.8	Fri Jul  7 10:03:53 2006
 @@ -38,6 +38,9 @@
  .br
  .ti +8
@@ -10,16 +10,25 @@
  .B -n
  .IR net [/ width
  ]] [
-@@ -69,6 +72,12 @@
- The
- .B -i
+@@ -71,6 +74,12 @@
  flag is used to override the default interface.
-+.LP
-+The
+ .LP
+ The
 +.B -m
 +flag specifies the address that will receive the emails.
 +The default is
 +.IR root .
- .LP
- The
++.LP
++The
  .B -n
+ flag specifies additional local networks. This can be useful to
+ avoid "bogon" warnings when there is more than one network running
+@@ -152,7 +161,7 @@
+ .na
+ .nh
+ .nf
+-/usr/operator/arpwatch - default directory
++/usr/local/arpwatch - default directory
+ arp.dat - ethernet/ip address database
+ ethercodes.dat - vendor ethernet block list
+ .ad

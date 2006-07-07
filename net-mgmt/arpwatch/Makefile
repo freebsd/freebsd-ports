@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1.a13
-PORTREVISION=	2
+PORTVERSION=	2.1.a14
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
-DISTNAME=	arpwatch-2.1a13
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tabthorpe@goodking.ca
 COMMENT=	Monitor arp & rarp requests
 
 CONFLICTS=	arpwatch-devel-2.*
@@ -36,8 +35,8 @@ post-install:
 	fi
 	${TOUCH} ${PREFIX}/arpwatch/arp.dat
 	${CHMOD} 644 ${PREFIX}/arpwatch/arp.dat
-	for file in ethercodes.dat d.awk e.awk p.awk; do		\
-		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/arpwatch;	\
+	for files in ethercodes.dat d.awk e.awk p.awk; do		\
+		${INSTALL_DATA} ${WRKSRC}/$$files ${PREFIX}/arpwatch;	\
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch
 
