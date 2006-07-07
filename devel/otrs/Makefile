@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.otrs.org/pub/otrs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-01
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	snb@threerings.net
 COMMENT=	Open Ticket Request System
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \

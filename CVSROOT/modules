@@ -7728,7 +7728,7 @@ ossp-var	ports/devel/ossp-var
 ossp-xds	ports/devel/ossp-xds
 otcl		ports/lang/otcl
 otk		ports/x11-toolkits/otk
-otrs		ports/www/otrs
+otrs		ports/devel/otrs
 otter		ports/misc/otter
 ourmon		ports/net-mgmt/ourmon
 outguess	ports/security/outguess
