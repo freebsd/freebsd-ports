@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-packages
 PORTVERSION=	14.1
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
@@ -135,6 +136,8 @@ WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}
 XEMACSDIR=	${PREFIX}/lib/xemacs
 PACKAGES_SUBDIR=	xemacs-packages
 
+FIXME=	gnus/binhex.elc gnus/uudecode.elc
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
@@ -143,6 +146,7 @@ do-extract:
 .endfor
 
 post-patch:
+	cd ${WRKSRC}/lisp; ${RM} ${FIXME}
 	${FIND} ${WRKSRC} -name \*.orig -exec ${RM} -f \{} \;
 
 do-install:
