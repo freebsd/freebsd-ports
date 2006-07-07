@@ -15,12 +15,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Graphical Boot Manager
 
+ONLY_FOR_ARCHS=	i386
+USE_ZIP=	yes
+NO_BUILD=	yes
+
 # security/gag
 CONFLICTS=	gag-2*
 NO_LATEST_LINK=	yes
-
-USE_ZIP=	yes
-NO_BUILD=	yes
 
 do-install:
 # Data
