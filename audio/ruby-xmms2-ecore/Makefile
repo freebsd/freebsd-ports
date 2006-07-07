@@ -14,6 +14,7 @@ COMMENT=	Ruby ecore mainloop bindings for XMMS2
 
 BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2
+LIB_DEPENDS+=	ecore.1:${PORTSDIR}/x11/ecore
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
@@ -33,6 +34,9 @@ do-install:
 	${RUBY_SITEARCHLIBDIR}/xmmsclient_ecore.so
 	@cd ${WRKSRC} && ${INSTALL_PROGRAM} \
 	src/clients/lib/xmmsclient-ecore/libxmmsclient-ecore.so \
-	${LOCALBASE}/lib/libxmmsclient-ecore.so
+	${PREFIX}/lib/libxmmsclient-ecore.so
+	@cd ${WRKSRC} && ${INSTALL_PROGRAM} \
+	src/clients/lib/xmmsclient-ecore/libxmmsclient-ecore.a \
+	${PREFIX}/lib/libxmmsclient-ecore.a
 
 .include "${MASTERDIR}/Makefile"
