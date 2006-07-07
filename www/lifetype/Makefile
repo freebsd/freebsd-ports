@@ -25,7 +25,7 @@ USE_ZIP=	YES
 USE_PHP=	ctype mysql pcre session xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-WWWDOCROOT?=	www/data
+WWWDOCROOT?=	www
 PLOGURL?=	lifetype
 WWWOWN?=	www
 WWWGRP?=	www
@@ -71,8 +71,7 @@ pre-install:
 		&& ${ECHO_CMD} "@unexec ${RM} -fr %D/${PLOGDIR}/tmp/* 2>/dev/null || ${TRUE}" >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${PLOGDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${PLOGDIR} >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry ${WWWDOCROOT} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${PLOGDIR} >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PLOGDIR}
