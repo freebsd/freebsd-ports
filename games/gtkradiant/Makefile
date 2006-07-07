@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|source/:id|} \
 		http://www.bsd-geek.de/FreeBSD/distfiles/:fb
@@ -19,7 +20,7 @@ COMMENT=	Level design program developed by id Software and Loki Software
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subversion-python \
 		scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext \
+LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		mhash.2:${PORTSDIR}/security/mhash \
 		png.5:${PORTSDIR}/graphics/png
 
