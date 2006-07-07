@@ -10,10 +10,10 @@ PORTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Software for research in digital audio coding/decoding
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 GNU_CONFIGURE=	yes
 
