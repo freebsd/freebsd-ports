@@ -3,4 +3,4 @@ network path.
 It only needs single end control, and has relatively small probing overhead
 (33.6KB for one probing in the default setting).
 
-WWW: http://gs274.sp.cs.cmu.edu/www/pathneck/
+WWW: http://www.cs.cmu.edu/~hnn/pathneck/
