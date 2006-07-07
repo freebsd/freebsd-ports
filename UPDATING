@@ -29,27 +29,29 @@ upgrades.
   AFFECTS: users of sysutils/portupgrade
   AUTHOR: sem@FreeBSD.org
 
-  Because of portupgrade had a bug with detecting of Berkley DB version 2+,
-  and a default database now set to use this version you can get portupgrade
-  don't work with old databases. A quick fix is removing the databases:
-  `rm /var/db/pkg/pkgdb.db /usr/ports/INDEX*.db'. portupgrade will recreate
-  them automaticaly. It's absolutely no harm.
+  Because portupgrade had a problem with detecting Berkley DB version 2
+  or newer, and the default database format is now set to use these
+  versions, you can end up with a portupgrade that does not work with
+  older databases. A quick fix is to remove the databases, type:
+  'rm /var/db/pkg/pkgdb.db /usr/ports/INDEX*.db'.
+  portupgrade will recreate them automaticaly. It does absolutely no harm.
 
-  If you don't want remove the databases you should detect what database
-  type do you use, and set port options accordly. Follow the instructions:
+  If you do not want remove the databases, you should detect what database
+  type do you use, and set the port options for portupgrade accordingly.
+  Follow these instructions:
 
-  - run `pkgdb -fu' *before* upgrading and take a look on the output.
+  - run 'pkgdb -fu' *before* upgrading and take a look on the output.
     You can see database format there as: format:XXX, where XXX is your
     current database format.
   - Go to portupgrade port directory and configure the port with 
-    `make config' command. If you have bdb_* format then turn on BDB4 option,
-    if you have bdb1_* format then turn off BDB4 and turn on BDB1 option.
-    If you have dbd_hash format then turn off all option.
+    `make config' command. If you have bdb_* format, then turn on the BDB4
+    option.  If you have bdb1_* format, then turn off BDB4 and turn on
+    the BDB1 option.  If you have dbd_hash format, then turn off all options.
   - Upgrade portupgrade.
   
   Note: if you change database format with changing port options,
-  you should remove ruby-bdb* port that you don't need anymore or to hard
-  code database format in your pkgtools.conf.
+  you should remove the ruby-bdb* port that you don't need anymore.
+  Alternatively, you can hard code database format in your pkgtools.conf.
 
 20060702:
   AFFECTS: users of multimedia/handbrake
