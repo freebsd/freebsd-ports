@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -86,6 +86,7 @@ MAN1=		git-add.1 \
 		git-mktree.1 \
 		git-mv.1 \
 		git-name-rev.1 \
+		git-p4import.1 \
 		git-pack-objects.1 \
 		git-pack-redundant.1 \
 		git-parse-remote.1 \
@@ -95,6 +96,7 @@ MAN1=		git-add.1 \
 		git-prune.1 \
 		git-pull.1 \
 		git-push.1 \
+		git-quiltimport.1 \
 		git-read-tree.1 \
 		git-rebase.1 \
 		git-receive-pack.1 \
@@ -131,6 +133,7 @@ MAN1=		git-add.1 \
 		git-update-ref.1 \
 		git-update-server-info.1 \
 		git-upload-pack.1 \
+		git-upload-tar.1 \
 		git-var.1 \
 		git-verify-pack.1 \
 		git-verify-tag.1 \
