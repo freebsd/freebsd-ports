@@ -613,7 +613,7 @@ pre-configure:
 .endif
 
 # Where the below command fails, there is no need for concern:
-BLACKHOLE!=	sysctl -n net.inet.tcp.blackhole || ${TRUE}
+BLACKHOLE!=	/sbin/sysctl -n net.inet.tcp.blackhole || ${TRUE}
 
 post-configure:
 	${REINPLACE_CMD} \
