@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Moose/Cookbook/Recipe6.pod
 %%SITE_PERL%%/Moose/Meta/Attribute.pm
 %%SITE_PERL%%/Moose/Meta/Class.pm
+%%SITE_PERL%%/Moose/Meta/Instance.pm
 %%SITE_PERL%%/Moose/Meta/Role.pm
 %%SITE_PERL%%/Moose/Meta/TypeCoercion.pm
 %%SITE_PERL%%/Moose/Meta/TypeConstraint.pm

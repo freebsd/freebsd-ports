@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.05
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -16,14 +16,16 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	"Moose, it's the new Camel"
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-	p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
-	p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
+	p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \
+	p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
+	p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
 RUN_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.18:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-	p5-Class-MOP>=0.26:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.30:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
 	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-	p5-Sub-Exporter>=0.93:${PORTSDIR}/devel/p5-Sub-Exporter
+	p5-Sub-Exporter>=0.954:${PORTSDIR}/devel/p5-Sub-Exporter \
+	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install
 
 PERL_MODBUILD=	yes
 
@@ -37,6 +39,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Recipe6.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
+	Moose::Meta::Instance.3 \
 	Moose::Meta::Role.3 \
 	Moose::Meta::TypeCoercion.3 \
 	Moose::Meta::TypeConstraint.3 \
