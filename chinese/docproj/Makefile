@@ -22,8 +22,7 @@ MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Supportive tools for Chinese docproj build
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
-RUN_DEPENDS=	gbklatex:${PORTSDIR}/chinese/CJK \
-		html2text:${PORTSDIR}/textproc/html2text
+RUN_DEPENDS=	gbklatex:${PORTSDIR}/chinese/CJK
 
 WRKSRC=		${WRKDIR}/src
 
