@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -56,6 +56,10 @@ RUN_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex
 .if !defined(WITHOUT_CJK)
 RUN_DEPENDS+=	cjktexsty:${PORTSDIR}/chinese/docproj
 .endif
+.endif
+
+.if !defined(WITHOUT_CJK)
+RUN_DEPENDS+=	html2text:${PORTSDIR}/textproc/html2text
 .endif
 
 .if ${PERL_LEVEL} < 500804
