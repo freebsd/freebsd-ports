@@ -179,18 +179,23 @@ SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .endif
 
-.ifndef(WITHOUT_CLAMAV) && !defined(WITHOUT_CLAMAV_LOCAL)
+.ifndef(WITHOUT_CLAMAV)
 CONFIGURE_ARGS+=	--enable-clamav
+.	ifndef(WITHOUT_CLAMAV_LOCAL)
 RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
 SUB_LIST+=	CLAMD=clamd
+.	else
+SUB_LIST+=	CLAMD=
+.	endif
 .endif
-.ifdef(WITH_CLAMAV_DEVEL)  && !defined(WITHOUT_CLAMAV_LOCAL)
+.ifdef(WITH_CLAMAV_DEVEL)
 CONFIGURE_ARGS+=	--enable-clamav
+.	ifndef(WITHOUT_CLAMAV_LOCAL)
 RUN_DEPENDS+=	clamav-devel>=0:${PORTSDIR}/security/clamav-devel
 SUB_LIST+=	CLAMD=clamd
-.endif
-.ifdef(WITHOUT_CLAMAV_LOCAL)
+.	else
 SUB_LIST+=	CLAMD=
+.	endif
 .endif
 
 # we need to know if we are building statically or dynamicaly for the plist
