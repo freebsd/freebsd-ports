@@ -82,6 +82,7 @@
     SUBDIR += cowbell
     SUBDIR += cpige
     SUBDIR += cplay
+    SUBDIR += cpp-xmms2
     SUBDIR += crip
     SUBDIR += csound
     SUBDIR += csound-manual
