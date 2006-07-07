@@ -14981,6 +14981,7 @@ yafic		ports/security/yafic
 yafray		ports/graphics/yafray
 yagiuda		ports/comms/yagiuda
 yahtzee		ports/games/yahtzee
+yakuake		ports/x11/yakuake
 yale-tftpd	ports/ftp/yale-tftpd
 yalias		ports/x11/yalias
 yammi		ports/audio/yammi
