@@ -33,7 +33,6 @@ include/parrot/hash.h
 include/parrot/headers.h
 include/parrot/hll.h
 include/parrot/inter_call.h
-include/parrot/interp_guts.h
 include/parrot/interpreter.h
 include/parrot/intlist.h
 include/parrot/io.h
