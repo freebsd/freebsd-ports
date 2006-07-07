@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	pkgconfig gnometarget gnomehack
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 MAN1=		jackd.1 jackstart.1
 
