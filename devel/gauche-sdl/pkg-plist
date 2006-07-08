@@ -1,6 +1,3 @@
-lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl-image.so
-lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl-mixer.so
-lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl-ttf.so
 lib/gauche/%%GAUCHE_VERSION%%/%%TARGET%%/gauche-sdl.so
 share/gauche/%%GAUCHE_VERSION%%/lib/sdl.scm
 share/gauche/%%GAUCHE_VERSION%%/lib/sdl/color.scm
