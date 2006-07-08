@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	amule
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The all-platform eMule p2p client
 
+DEPRECATED=	use net-p2p/amule2 if you are running OSVERSION > 500000
+
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
 		curl.3:${PORTSDIR}/ftp/curl
 
