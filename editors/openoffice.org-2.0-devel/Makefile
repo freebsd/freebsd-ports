@@ -73,9 +73,9 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		173
+MILESTONE?=		175
 OOOTAG?=		SRC680_m${MILESTONE}
-SNAPDATE=		20060626
+SNAPDATE=		20060707
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -158,9 +158,8 @@ NUMOFPROCESSES?=	1
 CONFIGURE_ENV+=      PATH="${WRKDIR}/gnugcj/bin:${PATH}"
 .endif
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --enable-crashdump=yes --enable-symbols=SMALL
 #workarounds
-CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
