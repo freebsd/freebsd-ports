@@ -8735,6 +8735,7 @@ p5-HTML-TableTiler	ports/www/p5-HTML-TableTiler
 p5-HTML-TagCloud	ports/www/p5-HTML-TagCloud
 p5-HTML-TagCloud-Extended	ports/www/p5-HTML-TagCloud-Extended
 p5-HTML-TagFilter	ports/textproc/p5-HTML-TagFilter
+p5-HTML-TagParser	ports/www/p5-HTML-TagParser
 p5-HTML-Tagset	ports/www/p5-HTML-Tagset
 p5-HTML-Template	ports/www/p5-HTML-Template
 p5-HTML-Template-Associate	ports/www/p5-HTML-Template-Associate
