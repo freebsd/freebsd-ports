@@ -24,6 +24,8 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+PLIST_FILES=	share/enlightenment/data/themes/Carbon-14.edj
+
 do-install:
 	${MKDIR} ${PREFIX}/share/enlightenment/data/themes
 	${INSTALL_DATA} ${WRKSRC}/carbon_themes_pack/e17/Carbon-14.edj \
