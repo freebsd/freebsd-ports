@@ -49,8 +49,9 @@ write_row () {
     # first, gather data
 
     arch=$1
-    branch=$2
-    directory=${ROOT_DIRECTORY}/${arch}/${branch}
+    build=$2
+    directory=${ROOT_DIRECTORY}/${arch}/${build}
+    branch=`echo $build | sed -e "s/-exp//"`
     if [ "$branch" = "4" ]; then
       indexfile=$directory/ports/INDEX
     else
@@ -119,14 +120,14 @@ write_row () {
 
     # now write the row
     echo "<tr>" >> ${TMPFILE}
-    echo "<th align='left' bgcolor='$THCOLOR'>$arch-$branch</th>" >> ${TMPFILE}
+    echo "<th align='left' bgcolor='$THCOLOR'>$arch-$build</th>" >> ${TMPFILE}
     echo "<td align='left' bgcolor='$cellcolor'>$latest</td>" >> ${TMPFILE}
     echo "<td align='right' bgcolor='$cellcolor'>$n_index</td>" >> ${TMPFILE}
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest-logs'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
     echo "$n_packages</a></td>" >> ${TMPFILE}
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$branch-latest'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest'>" >> ${TMPFILE}
     echo "$n_errors</a></td>" >> ${TMPFILE}
     echo "<td align='right' bgcolor='$cellcolor'>$n_duds</td>" >> ${TMPFILE}
     echo "<td align='right' bgcolor='$cellcolor'>$n_missing</td>" >> ${TMPFILE}
@@ -159,15 +160,35 @@ write_footer () {
 
 write_header
 
+# display all the mainstream builds first
 for arch in ${SUPPORTED_ARCHS}; do
-  write_table_begin
 
-  branches=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]$' | sort`
-    for branch in ${branches}; do
-      write_row ${arch} ${branch}
-    done
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]$' | sort`
+  if [ ! -z "$builds" ]; then
+    write_table_begin
 
-  write_table_end
+      for build in ${builds}; do
+        write_row ${arch} ${build}
+      done
+
+    write_table_end
+  fi
+done
+
+# then display all -exp builds (probably only of interest to portmgr;
+#   would break up the logical flow of the above)
+for arch in ${SUPPORTED_ARCHS}; do
+
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]-exp$' | sort`
+  if [ ! -z "$builds" ]; then
+    write_table_begin
+
+      for build in ${builds}; do
+        write_row ${arch} ${build}
+      done
+
+    write_table_end
+  fi
 done
 
 write_footer
