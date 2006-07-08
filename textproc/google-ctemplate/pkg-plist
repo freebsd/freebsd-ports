@@ -1,6 +1,7 @@
 bin/make_tpl_varnames_h
 bin/template-converter
 include/google/ctemplate/hash_map.h
+include/google/ctemplate/hash_set.h
 include/google/template.h
 include/google/template_enums.h
 include/google/template_dictionary.h
@@ -12,3 +13,6 @@ include/google/hash_map.h
 lib/libctemplate.a
 lib/libctemplate.so
 lib/libctemplate.so.0
+lib/libctemplate_nothreads.a
+lib/libctemplate_nothreads.so
+lib/libctemplate_nothreads.so.0
