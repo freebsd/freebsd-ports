@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 
