@@ -201,9 +201,9 @@ include/sylpheed-claws/wizard.h
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.a
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.la
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
-lib/sylpheed-claws/plugins/dillo_viewer.a
-lib/sylpheed-claws/plugins/dillo_viewer.la
-lib/sylpheed-claws/plugins/dillo_viewer.so
+%%DILLO%%lib/sylpheed-claws/plugins/dillo_viewer.a
+%%DILLO%%lib/sylpheed-claws/plugins/dillo_viewer.la
+%%DILLO%%lib/sylpheed-claws/plugins/dillo_viewer.so
 %%GPGME%%lib/sylpheed-claws/plugins/pgpcore.a
 %%GPGME%%lib/sylpheed-claws/plugins/pgpcore.la
 %%GPGME%%lib/sylpheed-claws/plugins/pgpcore.so
