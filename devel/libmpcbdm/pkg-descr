@@ -1,0 +1,13 @@
+Standalone library to control various widely available Freescale's mpc8xx
+based boards. This code was derived from mpcbdm patch by Frank Przybylski.
+
+This allows using this code separately from gdb, for example, to load
+firmware to the board, or retrive information about it.
+
+The package includes example "mpc8xx" program, that displays information
+about connected board using libmpcbdm library.
+
+The schematic of adapter itself can be found at project homepage.
+
+Author:	Erwin Rol <erwin@muffin.org>
+WWW:	http://libmpc8xx.sourceforge.net/

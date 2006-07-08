@@ -1,0 +1,15 @@
+bin/mpc8xx
+include/mpc8xx.h
+include/mpc8xx/lptbdm.h
+include/mpc8xx/mpc8xxbdm.h
+include/mpc8xx/mpc8xxflash.h
+include/mpc8xx/mpc8xxmem.h
+include/mpc8xx/mpc8xxmisc.h
+include/mpc8xx/mpc8xxspr.h
+include/mpc8xx/mpc8xxtarget.h
+lib/libmpc8xx.la
+lib/libmpc8xx.so
+lib/libmpc8xx.so.0
+%%DATADIR%%/Flash.dev
+@dirrm %%DATADIR%%
+@dirrm include/mpc8xx
