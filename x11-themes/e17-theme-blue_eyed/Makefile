@@ -23,6 +23,8 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+PLIST_FILES=	share/enlightenment/data/themes/blue_eyed_0.6.5.g_c.edj
+
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
