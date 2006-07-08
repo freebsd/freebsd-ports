@@ -23,6 +23,7 @@ JAVA_VERSION=	1.4+
 INSTALLS_SHLIB=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
+SCONS_BUILDENV=	JAVA_HOME=${JAVA_HOME}
 SCONS_TARGET=	src/clients/lib/java/libxmms2java.so src/clients/lib/java/xmms2java.jar
 
 XMMS2_SLAVE=	java
