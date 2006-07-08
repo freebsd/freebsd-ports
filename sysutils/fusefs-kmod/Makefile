@@ -24,7 +24,7 @@ MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 SRC_BASE?=	/usr/src
 KMODDIR=	${PREFIX}/modules
 MAKE_ARGS=	KMODDIR=${KMODDIR}
-MODULE_PATH=	`sysctl -n kern.module_path`;${KMODDIR}
+MODULE_PATH=	`/sbin/sysctl -n kern.module_path`;${KMODDIR}
 USE_RC_SUBR=	fusefs
 SETUP=		setup.sh
 
