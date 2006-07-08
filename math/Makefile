@@ -319,6 +319,7 @@
     SUBDIR += topaz
     SUBDIR += triangle
     SUBDIR += tvmet
+    SUBDIR += ufsparse
     SUBDIR += umatrix
     SUBDIR += umfpack
     SUBDIR += ump
