@@ -5783,6 +5783,7 @@ libexo		ports/x11/libexo
 libexosip2	ports/net/libexosip2
 libextractor	ports/textproc/libextractor
 libfame		ports/multimedia/libfame
+libfec		ports/comms/libfec
 libffi		ports/devel/libffi
 libflash	ports/graphics/libflash
 libformat	ports/devel/libformat
