@@ -13664,6 +13664,7 @@ uf-view		ports/misc/uf-view
 ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
 ufraw		ports/graphics/ufraw
 ufs_copy	ports/sysutils/ufs_copy
+ufsparse	ports/math/ufsparse
 uhexen		ports/games/uhexen
 uim		ports/textproc/uim
 uim-el		ports/textproc/uim-el
