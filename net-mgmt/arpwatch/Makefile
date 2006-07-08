@@ -8,10 +8,11 @@
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a14
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
+		http://www.goodking.ca/pub/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 
-MAINTAINER=	tabthorpe@goodking.ca
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Monitor arp & rarp requests
 
 CONFLICTS=	arpwatch-devel-2.*
