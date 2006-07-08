@@ -2405,3 +2405,4 @@ textproc/xml4j||2006-07-04|Has expired: it has been replaced by textproc/xerces-
 www/sitemapgen|www/google-sitemapgen|2006-07-05|Duplicate port
 security/gnutls-devel||2006-07-06|Development version is not active so far
 www/otrs|devel/otrs|2006-07-07|Duplicate port
+math/UFsparse|math/ufsparse|2006-07-09|port name should not have capital letters
