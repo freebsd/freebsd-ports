@@ -18,9 +18,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-CFLAGS+=	-fpic -DPIC
-
-ONLY_FOR_ARCHS=	i386 amd64
+CFLAGS+=	-fPIC -DPIC
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 PLIST_FILES=	lib/xmms/Input/libwma.so
 
@@ -28,6 +27,8 @@ PLIST_FILES=	lib/xmms/Input/libwma.so
 CFLAGS+=	-DUSE_ICONV
 USE_ICONV=	yes
 .endif
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 .if !defined(WITH_ICONV)
@@ -41,5 +42,9 @@ post-extract:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile.inc
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/ffmpeg-strip-wma/config.mak
 	@${REINPLACE_CMD} -e 's|CFLAGS :=|CFLAGS := ${CFLAGS}|g' ${WRKSRC}/Makefile.inc
+.if ${ARCH}=="sparc64"
+	@${REINPLACE_CMD} -e 's|X86|SPARC64|' ${WRKSRC}/ffmpeg-strip-wma/config.mak
+	@${REINPLACE_CMD} -e 's|#define ARCH_X86 1|#define ARCH_SPARC64 1|' ${WRKSRC}/ffmpeg-strip-wma/config.h
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
