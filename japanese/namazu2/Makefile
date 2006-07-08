@@ -7,7 +7,7 @@
 
 PORTNAME=	namazu
 PORTVERSION=	2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese databases www textproc
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	2
@@ -23,12 +23,12 @@ RUN_DEPENDS=	${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
 PM_BASE=	${SITE_PERL}
 PLIST=		"@comment this plist is intentionally left empty"
 
-.if defined(WITH_MECAB)
-RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
-.elif defined(WITH_CHASEN)
+.if defined(WITH_CHASEN)
 RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/Text/ChaSen.pm:${PORTSDIR}/japanese/p5-Text-ChaSen
-.else
+.elif defined(WITH_KAKASI)
 RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
+.else
+RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
 NO_BUILD=	yes
