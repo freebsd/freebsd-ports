@@ -42,7 +42,7 @@
  
  #endif  /* __sparc__ */
 +
-+#if defined(__amd64__) || defined(__ia64__) || defined(__sparc64__)
++#if defined(__amd64__) || defined(__ia64__)
 +#define CONTEXT_FULL 1
 +typedef struct _CONTEXT CONTEXT;
 +#endif
