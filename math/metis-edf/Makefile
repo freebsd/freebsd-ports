@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	metis-edf
-DISTVERSION=	4.0-2
+DISTVERSION=	4.0-3
 CATEGORIES=	math
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-src-${DISTVERSION}.noarch
+DISTNAME=	${PORTNAME}-${DISTVERSION}.noarch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meshes partionning tool used by Code_Aster
@@ -29,7 +29,7 @@ PROGS=		kmetis onmetis.exe pmetis
 
 MACHINEARCH=	${ARCH}
 
-post-patch:
+pre-configure:
 .if ${MACHINEARCH} != "i386"
 	@${FIND} ${WRKSRC} -type f -name "*.c" -o -name "*.h" | ${XARGS}	\
 		${REINPLACE_CMD} -e "s|long int|int|g"				\
