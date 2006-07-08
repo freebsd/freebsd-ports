@@ -30,10 +30,6 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH}==sparc64
-BROKEN=		does not compile on ${ARCH}
-.endif
-
 .if defined(WITHOUT_NLS)
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
 PLIST_SUB+=	NLS="@comment "
