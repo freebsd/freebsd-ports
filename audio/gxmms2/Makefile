@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxmms2
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	audio
 MASTER_SITES=	http://wejp.k.vu/projects/xmms2/
 
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/gxmms2
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		does not build on FreeBSD 4.x
+#BROKEN=		does not build on FreeBSD 4.x
 .endif
 
 do-install:
