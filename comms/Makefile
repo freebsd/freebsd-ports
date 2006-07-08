@@ -45,6 +45,7 @@
     SUBDIR += kermit
     SUBDIR += klog
     SUBDIR += kpsk
+    SUBDIR += libfec
     SUBDIR += libirman
     SUBDIR += libticables
     SUBDIR += linpsk
