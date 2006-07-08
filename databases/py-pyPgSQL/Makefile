@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	pyPgSQL
-PORTVERSION=	2.4
-PORTREVISION=	2
+PORTVERSION=	2.5.1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pypgsql
 PKGNAMEPREFIX=	py-
-DISTNAME=	pyPgSQL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python DB-API 2 compliant library for using PostgreSQL databases
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 
-WRKSRC=		${WRKDIR}/pypgsql
-
 USE_PGSQL=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-DOCS=		README README.html
+DOCS=		Announce ChangeLog README README.html
 EXAMPLES=	examples/*.py
 
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py

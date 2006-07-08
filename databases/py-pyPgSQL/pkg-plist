@@ -10,6 +10,8 @@
 %%PYTHON_SITELIBDIR%%/pyPgSQL/libpq/libpqmodule.so
 @dirrm %%PYTHON_SITELIBDIR%%/pyPgSQL/libpq
 @dirrm %%PYTHON_SITELIBDIR%%/pyPgSQL
+%%PORTDOCS%%share/doc/py-pyPgSQL/Announce
+%%PORTDOCS%%share/doc/py-pyPgSQL/ChangeLog
 %%PORTDOCS%%share/doc/py-pyPgSQL/README
 %%PORTDOCS%%share/doc/py-pyPgSQL/README.html
 %%PORTDOCS%%@dirrm share/doc/py-pyPgSQL
