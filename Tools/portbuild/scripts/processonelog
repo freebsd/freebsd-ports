@@ -240,8 +240,6 @@ elif grep -q "Perl .* required--this is only version" $1; then
   reason="perl"; tag="perl"
 elif grep -q 'BEGIN failed--compilation aborted at ..Makefile.PL line' $1; then
   reason="perl5"; tag="perl5"
-elif grep -q "Syntax error: .(. unexpected (expecting .fi.)" $1; then
-  reason="portcomment"; tag="portcomment"
 elif grep -q "Abort trap" $1; then
   reason="process_failed"; tag="process"
 elif grep -q "Bus error" $1; then
