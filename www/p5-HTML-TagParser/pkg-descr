@@ -1,0 +1,15 @@
+HTML::TagParser is a pure Perl implementaion for parsing HTML files.
+This module provides some methods like DOM. This module is not strict
+about XHTML format because many of HTML pages are not strict. You know,
+many pages use <br> elemtents instead of <br/> and have <p> elements
+which are not closed.
+
+This module natively understands a character set of document by reading
+its meta element.
+
+ <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+
+The parsed document's encoding is converted as this class's fixed
+internal encoding "UTF-8".
+
+WWW: http://search.cpan.org/dist/HTML-TagParser/
