@@ -526,6 +526,7 @@
     SUBDIR += libmba
     SUBDIR += libmcve
     SUBDIR += libmimedir
+    SUBDIR += libmpcbdm
     SUBDIR += libmtrie
     SUBDIR += libnaji
     SUBDIR += libnotify
