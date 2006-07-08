@@ -42,8 +42,8 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 BROKEN=	does not build
 .endif
 
-.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
-IGNORE=	 core dumps on ${ARCH}, need kern.osreldate>=601101
+.if ${ARCH}=="sparc64"
+IGNORE=	 does not build
 .endif
 
 .if ${PERL_LEVEL} < 500600
