@@ -18,6 +18,9 @@ THCOLOR="#E0E0FF"
 TDCOLOR_DONE="lightgreen"
 TDCOLOR_NOT_DONE="lightyellow"
 
+# subroutines
+
+write_header () {
 echo "<html>" > ${TMPFILE}
 echo "<head>" >> ${TMPFILE}
 echo "<title>FreeBSD package building statistics</title>" >> ${TMPFILE}
@@ -26,10 +29,9 @@ echo "</head>" >> ${TMPFILE}
 echo "<body>" >> ${TMPFILE}
 echo "<h1>FreeBSD package building statistics</h1>" >> ${TMPFILE}
 echo "<p>as of `date`</p>" >> ${TMPFILE}
+}
 
-for arch in ${SUPPORTED_ARCHS}; do
-
-  # begin table
+write_table_begin () {
   echo "<table border='1' cellpadding='4' cellspacing='1' bgcolor='$TABLEBGCOLOR'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
   echo "<td align='left' width='80' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
@@ -41,13 +43,13 @@ for arch in ${SUPPORTED_ARCHS}; do
   echo "<th bgcolor='$THCOLOR'>missing</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>done?</th>" >> ${TMPFILE}
   echo "</tr>" >> ${TMPFILE}
+}
 
-  # begin row
-  branches=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]$' | sort`
-  for branch in ${branches}; do
-
+write_row () {
     # first, gather data
 
+    arch=$1
+    branch=$2
     directory=${ROOT_DIRECTORY}/${arch}/${branch}
     if [ "$branch" = "4" ]; then
       indexfile=$directory/ports/INDEX
@@ -130,14 +132,14 @@ for arch in ${SUPPORTED_ARCHS}; do
     echo "<td align='right' bgcolor='$cellcolor'>$n_missing</td>" >> ${TMPFILE}
     echo "<td align='center' bgcolor='$cellcolor'>$done_flag</td>" >> ${TMPFILE}
     echo "</tr>" >> ${TMPFILE}
+}
 
-  done
-
+write_table_end () {
   echo "</table>" >> ${TMPFILE}
   echo "<br>" >> ${TMPFILE}
+}
 
-done
-
+write_footer () {
 echo "<p>explanation of columns:</p>" >> ${TMPFILE}
 echo "<ul>" >> ${TMPFILE}
 echo "<li><b>as of</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
@@ -151,5 +153,23 @@ echo "</ul>" >> ${TMPFILE}
 
 echo "</body>" >> ${TMPFILE}
 echo "</html>" >> ${TMPFILE}
+}
+
+# main
+
+write_header
+
+for arch in ${SUPPORTED_ARCHS}; do
+  write_table_begin
+
+  branches=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[1-9]$' | sort`
+    for branch in ${branches}; do
+      write_row ${arch} ${branch}
+    done
+
+  write_table_end
+done
+
+write_footer
 
 mv -f ${TMPFILE} ${OUTFILE}
