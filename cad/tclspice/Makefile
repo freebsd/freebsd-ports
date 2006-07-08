@@ -29,7 +29,7 @@ INSTALLS_SHLIB=	yes
 SUB_FILES=	pkg-message
 
 OPTIONS=	EXPERIMENTAL "Enable experimental features" on \
-		EXAMPLES "Install sample scrips" on
+		EXAMPLES "Install sample scripts" on
 
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS} -fPIC" \
