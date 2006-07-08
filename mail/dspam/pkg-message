@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
  Reporting problems, asking questions:
- - FreeBSD specific port-related problems/questions/paches: maintainer
-(and ports@ if you fell the need); send-pr only if you get no timely reply
- - dspam specific questions: dspam/dspam-dev mailling list (maintainer cc'ed)
- - dspam specific patches: dspam/dspam-dev mailling list (maintainer cc'ed if)
+ - FreeBSD specific port-related problems/questions/patches: maintainer
+(and ports@ if you feel the need); send-pr only if you get no timely reply
+ - dspam specific questions: dspam/dspam-dev mailing list (maintainer cc'ed)
+ - dspam specific patches: dspam/dspam-dev mailing list (maintainer cc'ed)
  Please be sure to include in your email/pr relevant information such as:
  uname -a, dspam --version, %%_VAR_DIR%%/db/ports/%%PORTNAME%%/options, MTA setup.
 
 Asking about updates or telling me there is one: not only I am active on the
 mailing lists and IRC but I also track dspam CVS so I already know; either there
 is a problem with the new version or I didn't have enough time to patch the port
-and _test_ the new version; please report your succes/failure if you run the
+and _test_ the new version; please report your success/failure if you run the
 new version or the cvs version.
 
 %%CGI%% The CGI files had been installed in
