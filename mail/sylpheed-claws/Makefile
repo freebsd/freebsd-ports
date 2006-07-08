@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -52,6 +52,7 @@ OPTIONS=	ALL		"Enable all options."			off \
 		CLAMAV		"Enable virus-checking support."	off \
 		COMPFACE	"Enable X-Face support."		on \
 		DEBUG		"Enable debug support."			off \
+		DILLO		"Enable Dillo HTML viewer."		off \
 		GNOMEPRINT	"Enable extended print support (GNOME)."	off \
 		GPGME		"Enable PGP/GnuPG support using GPGME."	off \
 		JPILOT		"Enable JPilot support."		off \
@@ -145,6 +146,14 @@ PLIST_SUB+=	THEMES=""
 .endif
 .if defined(WITH_DEBUG) || defined(WITH_ALL)
 CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-crash-dialog
+STRIP=
+.endif
+.if defined(WITH_DILLO) || defined(WITH_ALL)
+PLIST_SUB+=	DILLO=""
+RUN_DEPENDS+=	dillo:${PORTSDIR}/www/dillo
+.else
+PLIST_SUB+=	DILLO="@comment "
+CONFIGURE_ARGS+=	--disable-dillo-viewer-plugin
 .endif
 
 post-extract:
