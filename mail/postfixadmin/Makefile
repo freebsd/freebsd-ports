@@ -13,7 +13,7 @@ MASTER_SITES=	http://high5.net/postfixadmin/ \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	darren.pilgrim@bitfreak.org
 COMMENT=	PHP web-based management tool for Postfix virtual domains and users
 
 NO_BUILD=	yes
