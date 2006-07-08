@@ -6,7 +6,6 @@
     SUBDIR += GiNaC
     SUBDIR += PDL
     SUBDIR += R
-    SUBDIR += UFsparse
     SUBDIR += aamath
     SUBDIR += abakus
     SUBDIR += abs

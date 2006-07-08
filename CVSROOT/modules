@@ -132,7 +132,6 @@ Tee		ports/sysutils/Tee
 TenDRA		ports/lang/TenDRA
 Terminal	ports/x11/Terminal
 TkTopNetFlows	ports/net-mgmt/TkTopNetFlows
-UFsparse	ports/math/UFsparse
 WWWdb		ports/databases/WWWdb
 WebMagick	ports/www/WebMagick
 XFree86		ports/x11/XFree86
