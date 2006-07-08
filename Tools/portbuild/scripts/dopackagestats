@@ -21,14 +21,14 @@ TDCOLOR_NOT_DONE="lightyellow"
 # subroutines
 
 write_header () {
-echo "<html>" > ${TMPFILE}
-echo "<head>" >> ${TMPFILE}
-echo "<title>FreeBSD package building statistics</title>" >> ${TMPFILE}
-echo "</head>" >> ${TMPFILE}
+  echo "<html>" > ${TMPFILE}
+  echo "<head>" >> ${TMPFILE}
+  echo "<title>FreeBSD package building statistics</title>" >> ${TMPFILE}
+  echo "</head>" >> ${TMPFILE}
 
-echo "<body>" >> ${TMPFILE}
-echo "<h1>FreeBSD package building statistics</h1>" >> ${TMPFILE}
-echo "<p>as of `date`</p>" >> ${TMPFILE}
+  echo "<body>" >> ${TMPFILE}
+  echo "<h1>FreeBSD package building statistics</h1>" >> ${TMPFILE}
+  echo "<p>as of `date`</p>" >> ${TMPFILE}
 }
 
 write_table_begin () {
@@ -140,19 +140,19 @@ write_table_end () {
 }
 
 write_footer () {
-echo "<p>explanation of columns:</p>" >> ${TMPFILE}
-echo "<ul>" >> ${TMPFILE}
-echo "<li><b>as of</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
-echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
-echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
-echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
-echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
-echo "<li><b>missing</b> is the INDEX column minus the others.  These are packages that have not been built for one reason or another.</li>" >> ${TMPFILE}
-echo "<li><b>done</b> is whether that run terminated normally or not.</li>" >> ${TMPFILE}
-echo "</ul>" >> ${TMPFILE}
+  echo "<p>explanation of columns:</p>" >> ${TMPFILE}
+  echo "<ul>" >> ${TMPFILE}
+  echo "<li><b>as of</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
+  echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
+  echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
+  echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
+  echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
+  echo "<li><b>missing</b> is the INDEX column minus the others.  These are packages that have not been built for one reason or another.</li>" >> ${TMPFILE}
+  echo "<li><b>done</b> is whether that run terminated normally or not.</li>" >> ${TMPFILE}
+  echo "</ul>" >> ${TMPFILE}
 
-echo "</body>" >> ${TMPFILE}
-echo "</html>" >> ${TMPFILE}
+  echo "</body>" >> ${TMPFILE}
+  echo "</html>" >> ${TMPFILE}
 }
 
 # main
