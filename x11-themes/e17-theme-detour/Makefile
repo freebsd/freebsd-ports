@@ -23,6 +23,8 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+PLIST_FILES=	share/enlightenment/data/themes/detour-pre4.2.edj
+
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
