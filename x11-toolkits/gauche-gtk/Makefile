@@ -7,7 +7,7 @@
 
 PORTNAME=	gauche
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gauche
@@ -27,6 +27,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}/gtk
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/gtk
 PLIST_SUB=	VERSION="`gauche-config -V`" \
 		TARGET="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
+CFLAGS+=	-fPIC
 
 .if defined(WITH_GTKGLEXT)
 LIB_DEPENDS+=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
