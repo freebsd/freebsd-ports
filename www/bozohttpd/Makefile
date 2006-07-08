@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bozohttpd
-PORTVERSION=	20050410
+PORTVERSION=	20060517
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/ \
 		${MASTER_SITE_NETBSD}
