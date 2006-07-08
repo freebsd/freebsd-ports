@@ -13,6 +13,7 @@ bin/xasy
 %%DATADIR%%/boxes.asy
 %%DATADIR%%/constants.asy
 %%DATADIR%%/contour.asy
+%%DATADIR%%/debugger.asy
 %%DATADIR%%/drawtree.asy
 %%DATADIR%%/embed.asy
 %%DATADIR%%/featpost3D.asy
@@ -58,6 +59,7 @@ bin/xasy
 %%EXAMPLESDIR%%/Sierpinski.asy
 %%EXAMPLESDIR%%/advection.asy
 %%EXAMPLESDIR%%/animations/cube.asy
+%%EXAMPLESDIR%%/animations/embeddedmovie.asy
 %%EXAMPLESDIR%%/animations/wheel.asy
 %%EXAMPLESDIR%%/axis3.asy
 %%EXAMPLESDIR%%/bezier.asy
