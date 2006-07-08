@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/QUICK INSTALL MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/QUICK UPGRADE MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY MANUAL
@@ -509,7 +510,9 @@
 %%EYEDIR%%/system/gfx/btn/sortUp.png
 %%EYEDIR%%/system/gfx/btn/upload.png
 %%EYEDIR%%/system/gfx/btn/view.png
+%%EYEDIR%%/system/gfx/icon.gif
 %%EYEDIR%%/system/gfx/logo.png
+%%EYEDIR%%/system/gfx/support.png
 %%EYEDIR%%/system/ilang.php
 %%EYEDIR%%/system/install.php
 %%EYEDIR%%/system/lang.php
@@ -734,6 +737,8 @@
 @dirrm %%EYEDIR%%/apps/eyeRSS.eyeapp
 @dirrm %%EYEDIR%%/apps/eyeTrash.eyeapp
 @dirrm %%EYEDIR%%/apps
+@dirrmtry %%EYEDIR%%/etc
+@dirrmtry %%EYEDIR%%/home
 @dirrm %%EYEDIR%%/login
 @dirrm %%EYEDIR%%/system/css
 @dirrm %%EYEDIR%%/system/gfx/btn
@@ -765,7 +770,5 @@
 @dirrm %%EYEDIR%%/system/themes/default
 @dirrmtry %%EYEDIR%%/system/themes
 @dirrmtry %%EYEDIR%%/system
-@dirrmtry %%EYEDIR%%/etc
-@dirrmtry %%EYEDIR%%/home
 @dirrmtry %%EYEDIR%%/usr
 @dirrmtry %%EYEDIR%%
