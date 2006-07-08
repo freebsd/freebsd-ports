@@ -169,7 +169,7 @@ fix-permissions:
 # part of the POSIX 1003.1 specification.  XXX revisit for 1003.1-2001
 # as this is now mandatory.
 patch-setgid:
-	@if [ "$$(sysctl -n kern.saved_ids)" -eq 0 ]; then \
+	@if [ "$$(/sbin/sysctl -n kern.saved_ids)" -eq 0 ]; then \
 	    ${REINPLACE_CMD} -e 's|setgid|setegid|' \
 		${WRKSRC}/lib/localmbx.c \
 		${WRKSRC}/src/init.c ${WRKSRC}/src/lock.c; \
