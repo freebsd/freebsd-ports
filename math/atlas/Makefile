@@ -35,7 +35,7 @@ USE_GCC=3.4
 
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
+FFLAGS+=	-mtune=${CPUTYPE} -pipe -O2 -ffast-math -fomit-frame-pointer
 .endif
 
 post-patch:
