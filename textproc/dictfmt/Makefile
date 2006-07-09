@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dictfmt
-PORTVERSION=	1.10.5
+PORTVERSION=	1.10.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dict
 DISTNAME=	dictd-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
 USE_GETOPT_LONG=	yes
