@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.57
-CATEGORIES=	dns net perl5
+PORTVERSION=	0.58
+CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
@@ -42,7 +42,13 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::Unknown.3 Net::DNS::Resolver::Recurse.3 \
 		Net::DNS::Resolver::Cygwin.3 Net::DNS::RR::SPF.3
 
+OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_IPV6)
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
+.endif
 
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
@@ -51,9 +57,6 @@ post-patch:
 .endif
 
 .if ${PERL_LEVEL} < 500800
-.if defined(WITH_IPv6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
-.endif
 PLIST_SUB+=	BYTES_INSTALL=""
 .else
 PLIST_SUB+=	BYTES_INSTALL="@comment "
