@@ -28,15 +28,12 @@ FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 FLIM_LISPDIR=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 FLIM_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
-.if (${PORTCLASS} == "master")
+PORTCLASS?=	master
 USE_EMACS=	yes
-EMACS_PORT_NAME=	emacs21
-DEPPORT_SUFFIX=	
-.else
-DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
-.endif
+EMACS_PORT_NAME?=	emacs21
 
 EMACS_MASTERDIR_PKGFILES=YES
+DESCR=		${PKGDIR}/pkg-descr
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -49,6 +46,14 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
+.if ${EMACS_PORT_NAME} == "emacs21"
+DEPPORT_SUFFIX=
+.else
+DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
+.endif
+.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
+PLIST=		${PKGDIR}/pkg-plist.emacs21
+.endif
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/apel/emu.el:${PORTSDIR}/editors/xemacs-packages
