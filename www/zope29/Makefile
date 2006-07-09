@@ -7,11 +7,16 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.9.3
+PORTREVISION=	1
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
+		http://www.zope.org/Products/Zope/Hotfix-2006-07-05/Hotfix-20060705/:hotfix_20060705
 DISTNAME=	Zope-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		Hotfix_20060705.tar.gz:hotfix_20060705
 DIST_SUBDIR=	zope
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
@@ -73,6 +78,7 @@ post-install:
 	${MKDIR} ${ZOPEBASEDIR}/Products
 	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
+	${TAR} xzf ${DISTDIR}/${DIST_SUBDIR}/Hotfix_20060705.tar.gz -C ${ZOPEBASEDIR}/Products/
 
 	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w
 

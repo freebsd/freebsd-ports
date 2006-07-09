@@ -1,4 +1,7 @@
 %%ZOPEBASEDIR%%/Products/00readme-freebsd.txt
+%%ZOPEBASEDIR%%/Products/Hotfix_20060705/README.txt
+%%ZOPEBASEDIR%%/Products/Hotfix_20060705/__init__.py
+%%ZOPEBASEDIR%%/Products/Hotfix_20060705/version.txt
 %%ZOPEBASEDIR%%/bin/analyze.py
 %%ZOPEBASEDIR%%/bin/check_catalog.py
 %%ZOPEBASEDIR%%/bin/checkbtrees.py
@@ -12782,5 +12785,6 @@
 @dirrm %%ZOPEBASEDIR%%/include/python
 @dirrm %%ZOPEBASEDIR%%/include
 @dirrm %%ZOPEBASEDIR%%/bin
+@dirrm %%ZOPEBASEDIR%%/Products/Hotfix_20060705
 @dirrmtry %%ZOPEBASEDIR%%/Products
 @dirrmtry %%ZOPEBASEDIR%%
