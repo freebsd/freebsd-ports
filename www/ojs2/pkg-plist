@@ -1,0 +1,1599 @@
+www/ojs2/cache/fc-locale-list.php
+www/ojs2/cache/t_compile/%%00^002^0025FB04%%groupForm.tpl.php
+www/ojs2/cache/t_compile/%%00^006^006265F5%%copyedit.tpl.php
+www/ojs2/cache/t_compile/%%02^029^029F1BCC%%authorIndex.tpl.php
+www/ojs2/cache/t_compile/%%04^047^047D7122%%sectionForm.tpl.php
+www/ojs2/cache/t_compile/%%04^04C^04C3D1BA%%step1.tpl.php
+www/ojs2/cache/t_compile/%%04^04F^04F6FBD0%%editorialTeamBoard.tpl.php
+www/ojs2/cache/t_compile/%%05^054^054EE7AF%%view.tpl.php
+www/ojs2/cache/t_compile/%%07^079^0793B7DD%%index.tpl.php
+www/ojs2/cache/t_compile/%%08^084^0849D27C%%index.tpl.php
+www/ojs2/cache/t_compile/%%08^08A^08AF99E3%%metadata.tpl.php
+www/ojs2/cache/t_compile/%%09^097^09706EC3%%selectSectionEditor.tpl.php
+www/ojs2/cache/t_compile/%%0A^0A3^0A3E53F8%%footer.tpl.php
+www/ojs2/cache/t_compile/%%0B^0B3^0B3AA59B%%enrollment.tpl.php
+www/ojs2/cache/t_compile/%%0C^0C4^0C47B79C%%layout.tpl.php
+www/ojs2/cache/t_compile/%%0D^0D5^0D56FD2D%%metadata.tpl.php
+www/ojs2/cache/t_compile/%%0F^0F6^0F6D24D0%%suppFileView.tpl.php
+www/ojs2/cache/t_compile/%%0F^0FA^0FA2D17F%%citeEndNote.tpl.php
+www/ojs2/cache/t_compile/%%10^106^10682937%%context.tpl.php
+www/ojs2/cache/t_compile/%%10^10D^10D19D04%%email.tpl.php
+www/ojs2/cache/t_compile/%%10^10E^10EBC047%%submitSidebar.tpl.php
+www/ojs2/cache/t_compile/%%12^122^122DF3AC%%layout.tpl.php
+www/ojs2/cache/t_compile/%%12^124^124234EB%%selectReviewer.tpl.php
+www/ojs2/cache/t_compile/%%12^12B^12BC9318%%createIssue.tpl.php
+www/ojs2/cache/t_compile/%%14^142^14235B5A%%setDueDate.tpl.php
+www/ojs2/cache/t_compile/%%14^14F^14FADAF1%%settings.tpl.php
+www/ojs2/cache/t_compile/%%16^16D^16D2EB6F%%submissionNotes.tpl.php
+www/ojs2/cache/t_compile/%%17^17F^17F04482%%viewPage.tpl.php
+www/ojs2/cache/t_compile/%%18^183^183067D8%%submission.tpl.php
+www/ojs2/cache/t_compile/%%19^19D^19DCFE45%%aboutThisPublishingSystem.tpl.php
+www/ojs2/cache/t_compile/%%19^19E^19EDCFBF%%changePassword.tpl.php
+www/ojs2/cache/t_compile/%%1A^1AB^1AB7EFA8%%footer.tpl.php
+www/ojs2/cache/t_compile/%%1B^1B2^1B258F23%%rt.tpl.php
+www/ojs2/cache/t_compile/%%1B^1B3^1B300B73%%sections.tpl.php
+www/ojs2/cache/t_compile/%%1B^1B5^1B515AF7%%submissionEditing.tpl.php
+www/ojs2/cache/t_compile/%%20^202^202C2883%%loginChangePassword.tpl.php
+www/ojs2/cache/t_compile/%%20^205^205B9C0F%%navsidebar.tpl.php
+www/ojs2/cache/t_compile/%%21^216^216C6813%%installComplete.tpl.php
+www/ojs2/cache/t_compile/%%21^217^2172EFD1%%index.tpl.php
+www/ojs2/cache/t_compile/%%23^233^233F8E5A%%searchUsers.tpl.php
+www/ojs2/cache/t_compile/%%23^236^236E0F2D%%submissionEventLog.tpl.php
+www/ojs2/cache/t_compile/%%23^237^2379D0D1%%summary.tpl.php
+www/ojs2/cache/t_compile/%%24^244^244D71F5%%information.tpl.php
+www/ojs2/cache/t_compile/%%24^246^246E5A53%%completed.tpl.php
+www/ojs2/cache/t_compile/%%25^250^25085D26%%selectTemplate.tpl.php
+www/ojs2/cache/t_compile/%%26^26D^26D6B7FC%%journals.tpl.php
+www/ojs2/cache/t_compile/%%28^281^281FB91C%%toc.tpl.php
+www/ojs2/cache/t_compile/%%29^291^29193AD4%%searchResults.tpl.php
+www/ojs2/cache/t_compile/%%29^29C^29C2266D%%submissionEventLogEntry.tpl.php
+www/ojs2/cache/t_compile/%%2C^2C1^2C1F000D%%issue.tpl.php
+www/ojs2/cache/t_compile/%%2C^2C8^2C84B445%%metadata.tpl.php
+www/ojs2/cache/t_compile/%%2E^2ED^2EDF65E3%%submissionReview.tpl.php
+www/ojs2/cache/t_compile/%%30^309^309A5EF8%%site.tpl.php
+www/ojs2/cache/t_compile/%%32^329^32915119%%submissionsUnassigned.tpl.php
+www/ojs2/cache/t_compile/%%32^32D^32D13D85%%header.tpl.php
+www/ojs2/cache/t_compile/%%34^346^346F0F59%%registerSite.tpl.php
+www/ojs2/cache/t_compile/%%36^360^36085188%%navsidebar.tpl.php
+www/ojs2/cache/t_compile/%%36^364^364A6690%%upgrade.tpl.php
+www/ojs2/cache/t_compile/%%37^37F^37F26BBC%%profile.tpl.php
+www/ojs2/cache/t_compile/%%38^38C^38C51E22%%email.tpl.php
+www/ojs2/cache/t_compile/%%38^38D^38D7420B%%article.tpl.php
+www/ojs2/cache/t_compile/%%40^409^40906566%%userProfile.tpl.php
+www/ojs2/cache/t_compile/%%40^40A^40A38FC9%%subscriptionTypeForm.tpl.php
+www/ojs2/cache/t_compile/%%42^426^4268BFBC%%emails.tpl.php
+www/ojs2/cache/t_compile/%%42^42F^42FD737A%%editorialTeam.tpl.php
+www/ojs2/cache/t_compile/%%43^434^43405ECF%%message.tpl.php
+www/ojs2/cache/t_compile/%%43^436^4363AB6A%%step2.tpl.php
+www/ojs2/cache/t_compile/%%43^43E^43E5BED6%%submitHeader.tpl.php
+www/ojs2/cache/t_compile/%%44^441^4412547D%%status.tpl.php
+www/ojs2/cache/t_compile/%%45^459^4590D0E6%%interstitial.tpl.php
+www/ojs2/cache/t_compile/%%45^45C^45C40DE5%%summary.tpl.php
+www/ojs2/cache/t_compile/%%47^47B^47BE6831%%navsidebar.tpl.php
+www/ojs2/cache/t_compile/%%48^481^4812090A%%peerReview.tpl.php
+www/ojs2/cache/t_compile/%%48^487^48773FDD%%memberships.tpl.php
+www/ojs2/cache/t_compile/%%49^493^4931D6FD%%systemConfigUpdated.tpl.php
+www/ojs2/cache/t_compile/%%49^49A^49A9D247%%subscriptions.tpl.php
+www/ojs2/cache/t_compile/%%4A^4A0^4A0EB5AC%%step5.tpl.php
+www/ojs2/cache/t_compile/%%4A^4AE^4AE1127F%%journalSettings.tpl.php
+www/ojs2/cache/t_compile/%%4E^4E2^4E246DB0%%issueData.tpl.php
+www/ojs2/cache/t_compile/%%4E^4EA^4EA3FA32%%emailTemplateForm.tpl.php
+www/ojs2/cache/t_compile/%%4F^4FA^4FA4FFF7%%navsidebar.tpl.php
+www/ojs2/cache/t_compile/%%50^50A^50AAA4F9%%index.tpl.php
+www/ojs2/cache/t_compile/%%50^50B^50B828D9%%systemConfig.tpl.php
+www/ojs2/cache/t_compile/%%54^546^546AF219%%citeReferenceManager.tpl.php
+www/ojs2/cache/t_compile/%%56^563^5637D8B1%%index.tpl.php
+www/ojs2/cache/t_compile/%%57^577^5778BFEB%%footer.tpl.php
+www/ojs2/cache/t_compile/%%58^58F^58F971B1%%metadataEdit.tpl.php
+www/ojs2/cache/t_compile/%%59^597^59704308%%comments.tpl.php
+www/ojs2/cache/t_compile/%%59^59A^59AE3651%%index.tpl.php
+www/ojs2/cache/t_compile/%%5A^5A5^5A5A0067%%index.tpl.php
+www/ojs2/cache/t_compile/%%5A^5AA^5AA9AD09%%management.tpl.php
+www/ojs2/cache/t_compile/%%5B^5B5^5B53CC71%%active.tpl.php
+www/ojs2/cache/t_compile/%%5B^5BF^5BFCA184%%current.tpl.php
+www/ojs2/cache/t_compile/%%5B^5BF^5BFFD773%%languages.tpl.php
+www/ojs2/cache/t_compile/%%5C^5C2^5C21797E%%site.tpl.php
+www/ojs2/cache/t_compile/%%5D^5DD^5DDD4904%%view.tpl.php
+www/ojs2/cache/t_compile/%%5D^5DF^5DF64E8B%%subscriptionTypes.tpl.php
+www/ojs2/cache/t_compile/%%5F^5F5^5F5AA392%%settings.tpl.php
+www/ojs2/cache/t_compile/%%5F^5FB^5FB5FC5A%%galleyForm.tpl.php
+www/ojs2/cache/t_compile/%%61^61E^61E0D8FF%%lostPassword.tpl.php
+www/ojs2/cache/t_compile/%%62^628^6281BA49%%editorDecisionComment.tpl.php
+www/ojs2/cache/t_compile/%%62^629^6295B20B%%completed.tpl.php
+www/ojs2/cache/t_compile/%%63^630^6303570D%%summary.tpl.php
+www/ojs2/cache/t_compile/%%64^648^6487B017%%email.tpl.php
+www/ojs2/cache/t_compile/%%66^666^666DCE67%%upgradeComplete.tpl.php
+www/ojs2/cache/t_compile/%%68^683^683843E0%%proofread.tpl.php
+www/ojs2/cache/t_compile/%%69^696^696396EF%%contact.tpl.php
+www/ojs2/cache/t_compile/%%6B^6BE^6BED0318%%submissionsInReview.tpl.php
+www/ojs2/cache/t_compile/%%6B^6BF^6BF9BE7F%%version.tpl.php
+www/ojs2/cache/t_compile/%%6C^6C6^6C6DAB8F%%submissionEmailLog.tpl.php
+www/ojs2/cache/t_compile/%%6D^6D3^6D3D2F1D%%layout.tpl.php
+www/ojs2/cache/t_compile/%%6E^6E3^6E387A31%%pdfInterstitial.tpl.php
+www/ojs2/cache/t_compile/%%6E^6E8^6E8A3102%%complete.tpl.php
+www/ojs2/cache/t_compile/%%70^703^703BB0EC%%settingsSaved.tpl.php
+www/ojs2/cache/t_compile/%%70^70D^70D99612%%index.tpl.php
+www/ojs2/cache/t_compile/%%72^720^720ACFDF%%journal.tpl.php
+www/ojs2/cache/t_compile/%%72^72A^72A158C2%%issueToc.tpl.php
+www/ojs2/cache/t_compile/%%74^745^745467F1%%exportXml.tpl.php
+www/ojs2/cache/t_compile/%%74^745^745D454B%%galleyView.tpl.php
+www/ojs2/cache/t_compile/%%77^776^776E9C1C%%step4.tpl.php
+www/ojs2/cache/t_compile/%%77^777^7771F032%%submission.tpl.php
+www/ojs2/cache/t_compile/%%78^78F^78F700AE%%systemInfo.tpl.php
+www/ojs2/cache/t_compile/%%79^790^7909A37A%%editorialTeamBio.tpl.php
+www/ojs2/cache/t_compile/%%79^791^7916D042%%instructions.tpl.php
+www/ojs2/cache/t_compile/%%7C^7C5^7C509DA7%%index.tpl.php
+www/ojs2/cache/t_compile/%%7D^7DC^7DC17B21%%install.tpl.php
+www/ojs2/cache/t_compile/%%7D^7DC^7DC645F6%%submission.tpl.php
+www/ojs2/cache/t_compile/%%7E^7E0^7E0382DA%%step3.tpl.php
+www/ojs2/cache/t_compile/%%7E^7E1^7E1EBAAB%%editorialPolicies.tpl.php
+www/ojs2/cache/t_compile/%%7E^7EF^7EFE44DB%%submissionsArchives.tpl.php
+www/ojs2/cache/t_compile/%%81^815^815391BC%%futureIssues.tpl.php
+www/ojs2/cache/t_compile/%%81^818^8187AA06%%proofread.tpl.php
+www/ojs2/cache/t_compile/%%81^818^818BA855%%proofGalley.tpl.php
+www/ojs2/cache/t_compile/%%83^835^8357E339%%active.tpl.php
+www/ojs2/cache/t_compile/%%87^870^87070182%%setupHeader.tpl.php
+www/ojs2/cache/t_compile/%%87^878^878FC2A8%%index.tpl.php
+www/ojs2/cache/t_compile/%%89^89C^89C12C7F%%editors.tpl.php
+www/ojs2/cache/t_compile/%%89^89D^89D0B816%%formErrors.tpl.php
+www/ojs2/cache/t_compile/%%8A^8A9^8A9DBDDF%%submissionsInEditing.tpl.php
+www/ojs2/cache/t_compile/%%8B^8B9^8B904A63%%active.tpl.php
+www/ojs2/cache/t_compile/%%8D^8D7^8D7E485F%%submissionRegrets.tpl.php
+www/ojs2/cache/t_compile/%%8E^8E6^8E6E19C0%%advancedSearch.tpl.php
+www/ojs2/cache/t_compile/%%8E^8EE^8EE58914%%commentEmail.tpl.php
+www/ojs2/cache/t_compile/%%8F^8F0^8F08B0A0%%submission.tpl.php
+www/ojs2/cache/t_compile/%%90^900^900639B1%%proofGalleyHTML.tpl.php
+www/ojs2/cache/t_compile/%%91^91A^91A91A9E%%captureCite.tpl.php
+www/ojs2/cache/t_compile/%%91^91E^91E1102A%%copyedit.tpl.php
+www/ojs2/cache/t_compile/%%92^923^9234112C%%selectUser.tpl.php
+www/ojs2/cache/t_compile/%%94^948^948B895A%%submissionEmailLogEntry.tpl.php
+www/ojs2/cache/t_compile/%%97^971^971166A6%%citeProCite.tpl.php
+www/ojs2/cache/t_compile/%%99^99A^99A58582%%createReviewerForm.tpl.php
+www/ojs2/cache/t_compile/%%9C^9C9^9C9E4DCF%%proofread.tpl.php
+www/ojs2/cache/t_compile/%%9C^9CF^9CFA75A4%%login.tpl.php
+www/ojs2/cache/t_compile/%%9F^9FF^9FF641B6%%reviewerRecommendation.tpl.php
+www/ojs2/cache/t_compile/%%A0^A01^A0170739%%suppFileView.tpl.php
+www/ojs2/cache/t_compile/%%A0^A04^A04E3075%%suppFiles.tpl.php
+www/ojs2/cache/t_compile/%%A0^A0B^A0B7A42D%%submissionEditing.tpl.php
+www/ojs2/cache/t_compile/%%A1^A13^A13086F0%%navsidebar.tpl.php
+www/ojs2/cache/t_compile/%%A1^A15^A1552003%%proofGalleyTop.tpl.php
+www/ojs2/cache/t_compile/%%A2^A2D^A2DD45AB%%summary.tpl.php
+www/ojs2/cache/t_compile/%%A3^A33^A33E7632%%settings.tpl.php
+www/ojs2/cache/t_compile/%%A4^A41^A419E91B%%suppFile.tpl.php
+www/ojs2/cache/t_compile/%%A7^A73^A7374CC1%%searchUsers.tpl.php
+www/ojs2/cache/t_compile/%%A7^A74^A745F379%%submissionsArchives.tpl.php
+www/ojs2/cache/t_compile/%%A9^A99^A99D266D%%importOJS1.tpl.php
+www/ojs2/cache/t_compile/%%AB^AB9^AB9A4DFB%%searchResults.tpl.php
+www/ojs2/cache/t_compile/%%AB^ABE^ABE61EE5%%contexts.tpl.php
+www/ojs2/cache/t_compile/%%AD^AD2^AD22FE92%%layout.tpl.php
+www/ojs2/cache/t_compile/%%AE^AE7^AE7BCDED%%searches.tpl.php
+www/ojs2/cache/t_compile/%%AE^AEC^AECB8B3A%%header.tpl.php
+www/ojs2/cache/t_compile/%%AF^AFD^AFD65FDE%%backIssues.tpl.php
+www/ojs2/cache/t_compile/%%B0^B03^B0335942%%copyedit.tpl.php
+www/ojs2/cache/t_compile/%%B2^B25^B256B4BA%%submissionsInReview.tpl.php
+www/ojs2/cache/t_compile/%%B2^B29^B29CC4AC%%submissionsInEditing.tpl.php
+www/ojs2/cache/t_compile/%%B3^B34^B34D88B1%%index.tpl.php
+www/ojs2/cache/t_compile/%%B6^B60^B6069844%%search.tpl.php
+www/ojs2/cache/t_compile/%%B6^B6D^B6D83DD5%%submissions.tpl.php
+www/ojs2/cache/t_compile/%%B7^B7A^B7A14946%%layout.tpl.php
+www/ojs2/cache/t_compile/%%B9^B94^B94F614A%%editComment.tpl.php
+www/ojs2/cache/t_compile/%%BC^BC0^BC08DEF5%%suppFile.tpl.php
+www/ojs2/cache/t_compile/%%BD^BD4^BD41D2F1%%editorDecisionEmail.tpl.php
+www/ojs2/cache/t_compile/%%BE^BE3^BE3F36E7%%sourceSettings.tpl.php
+www/ojs2/cache/t_compile/%%BE^BE7^BE767151%%completed.tpl.php
+www/ojs2/cache/t_compile/%%BF^BF8^BF8E136C%%step1.tpl.php
+www/ojs2/cache/t_compile/%%C1^C11^C11E9029%%titleIndex.tpl.php
+www/ojs2/cache/t_compile/%%C2^C22^C2292C5D%%archive.tpl.php
+www/ojs2/cache/t_compile/%%C2^C2B^C2BFEBBD%%userProfileForm.tpl.php
+www/ojs2/cache/t_compile/%%C2^C2C^C2CF9125%%proofread.tpl.php
+www/ojs2/cache/t_compile/%%C3^C36^C366BC56%%submissionReview.tpl.php
+www/ojs2/cache/t_compile/%%C4^C49^C498A7FD%%userProfile.tpl.php
+www/ojs2/cache/t_compile/%%C4^C4C^C4C6A4DE%%navsidebar.tpl.php
+www/ojs2/cache/t_compile/%%C4^C4C^C4CD118C%%statistics.tpl.php
+www/ojs2/cache/t_compile/%%C5^C54^C54E400C%%step3.tpl.php
+www/ojs2/cache/t_compile/%%C6^C6D^C6D958A8%%active.tpl.php
+www/ojs2/cache/t_compile/%%C7^C77^C77CA73F%%groups.tpl.php
+www/ojs2/cache/t_compile/%%CB^CB2^CB2DF350%%lockss.tpl.php
+www/ojs2/cache/t_compile/%%CB^CB5^CB5B9D9E%%submissions.tpl.php
+www/ojs2/cache/t_compile/%%CB^CB6^CB620954%%footer.tpl.php
+www/ojs2/cache/t_compile/%%CB^CBE^CBEEB271%%notifyUsersEmail.tpl.php
+www/ojs2/cache/t_compile/%%CC^CC2^CC235ECA%%step4.tpl.php
+www/ojs2/cache/t_compile/%%CC^CCB^CCB17036%%bio.tpl.php
+www/ojs2/cache/t_compile/%%CD^CD7^CD76305A%%rounds.tpl.php
+www/ojs2/cache/t_compile/%%CD^CD9^CD9F133B%%peerReviewComment.tpl.php
+www/ojs2/cache/t_compile/%%CE^CE6^CE60AA58%%completed.tpl.php
+www/ojs2/cache/t_compile/%%CE^CE7^CE71111A%%navsidebar.tpl.php
+www/ojs2/cache/t_compile/%%D0^D01^D01ECFAE%%subscriptions.tpl.php
+www/ojs2/cache/t_compile/%%D1^D16^D164455C%%topic.tpl.php
+www/ojs2/cache/t_compile/%%D2^D2F^D2F0A35E%%sent.tpl.php
+www/ojs2/cache/t_compile/%%D3^D39^D39A46D0%%versions.tpl.php
+www/ojs2/cache/t_compile/%%D4^D43^D4330A8C%%selectUser.tpl.php
+www/ojs2/cache/t_compile/%%D4^D49^D49510BE%%plugins.tpl.php
+www/ojs2/cache/t_compile/%%D4^D4C^D4C18A96%%submissionHistory.tpl.php
+www/ojs2/cache/t_compile/%%D4^D4C^D4C88564%%authorDetails.tpl.php
+www/ojs2/cache/t_compile/%%D5^D58^D58E5185%%completed.tpl.php
+www/ojs2/cache/t_compile/%%D5^D5B^D5B0D0C9%%context.tpl.php
+www/ojs2/cache/t_compile/%%D7^D7A^D7AC4ABB%%active.tpl.php
+www/ojs2/cache/t_compile/%%DA^DAB^DAB2625C%%journals.tpl.php
+www/ojs2/cache/t_compile/%%DB^DB4^DB4875A0%%printerFriendly.tpl.php
+www/ojs2/cache/t_compile/%%DE^DE1^DE14894A%%index.tpl.php
+www/ojs2/cache/t_compile/%%DE^DE7^DE746713%%reportGenerator.tpl.php
+www/ojs2/cache/t_compile/%%DE^DE8^DE8BD81D%%journalSponsorship.tpl.php
+www/ojs2/cache/t_compile/%%DE^DEA^DEA520B8%%comment.tpl.php
+www/ojs2/cache/t_compile/%%DF^DF1^DF1AC4CB%%summary.tpl.php
+www/ojs2/cache/t_compile/%%DF^DF9^DF9D97C4%%view.tpl.php
+www/ojs2/cache/t_compile/%%E2^E27^E273EE27%%helpToc.tpl.php
+www/ojs2/cache/t_compile/%%E2^E2F^E2F8F48A%%sidebar.tpl.php
+www/ojs2/cache/t_compile/%%E3^E30^E304DB79%%header.tpl.php
+www/ojs2/cache/t_compile/%%E3^E32^E32C5AF0%%users.tpl.php
+www/ojs2/cache/t_compile/%%E4^E43^E4358A64%%comment.tpl.php
+www/ojs2/cache/t_compile/%%E5^E51^E51D61B5%%validate.tpl.php
+www/ojs2/cache/t_compile/%%E5^E5F^E5FB5B72%%notifyUsers.tpl.php
+www/ojs2/cache/t_compile/%%E9^E9C^E9C359FC%%enrollSync.tpl.php
+www/ojs2/cache/t_compile/%%EA^EA3^EA363043%%peerReview.tpl.php
+www/ojs2/cache/t_compile/%%EE^EE6^EE6F4E36%%sources.tpl.php
+www/ojs2/cache/t_compile/%%F1^F14^F143777A%%step5.tpl.php
+www/ojs2/cache/t_compile/%%F2^F21^F219C807%%register.tpl.php
+www/ojs2/cache/t_compile/%%F3^F32^F3218F1A%%siteMap.tpl.php
+www/ojs2/cache/t_compile/%%F3^F33^F33A411C%%index.tpl.php
+www/ojs2/cache/t_compile/%%F3^F38^F382F964%%languageSettings.tpl.php
+www/ojs2/cache/t_compile/%%F3^F38^F38D6729%%header.tpl.php
+www/ojs2/cache/t_compile/%%F6^F6A^F6A41EDF%%submission.tpl.php
+www/ojs2/cache/t_compile/%%F8^F82^F82E69BC%%step2.tpl.php
+www/ojs2/cache/t_compile/%%F8^F88^F88D9440%%management.tpl.php
+www/ojs2/cache/t_compile/%%F9^F98^F986CA6C%%index.tpl.php
+www/ojs2/cache/t_compile/%%FB^FB5^FB554436%%plugins.tpl.php
+www/ojs2/cache/t_compile/%%FB^FB6^FB62556C%%editorDecision.tpl.php
+www/ojs2/cache/t_compile/%%FB^FB7^FB789C12%%metadataView.tpl.php
+www/ojs2/cache/t_compile/%%FC^FC4^FC4FCA07%%schedulingQueue.tpl.php
+www/ojs2/cache/t_compile/%%FE^FE3^FE36698A%%subscriptionForm.tpl.php
+www/ojs2/cache/t_compile/%%FE^FEB^FEBE8919%%submission.tpl.php
+www/ojs2/cache/t_compile/%%FF^FFA^FFA67636%%error.tpl.php
+www/ojs2/cache/t_compile/%%FF^FFB^FFB95317%%index.tpl.php
+www/ojs2/cache/t_compile/%%FF^FFF^FFF4AAA7%%status.tpl.php
+www/ojs2/cache/t_compile/%%FF^FFF^FFF4BFA6%%editorDecision.tpl.php
+www/ojs2/classes/admin/form/ImportOJS1Form.inc.php
+www/ojs2/classes/admin/form/JournalSiteSettingsForm.inc.php
+www/ojs2/classes/admin/form/SiteSettingsForm.inc.php
+www/ojs2/classes/article/Article.inc.php
+www/ojs2/classes/article/ArticleComment.inc.php
+www/ojs2/classes/article/ArticleCommentDAO.inc.php
+www/ojs2/classes/article/ArticleDAO.inc.php
+www/ojs2/classes/article/ArticleFile.inc.php
+www/ojs2/classes/article/ArticleFileDAO.inc.php
+www/ojs2/classes/article/ArticleGalley.inc.php
+www/ojs2/classes/article/ArticleGalleyDAO.inc.php
+www/ojs2/classes/article/ArticleHTMLGalley.inc.php
+www/ojs2/classes/article/ArticleNote.inc.php
+www/ojs2/classes/article/ArticleNoteDAO.inc.php
+www/ojs2/classes/article/Author.inc.php
+www/ojs2/classes/article/AuthorDAO.inc.php
+www/ojs2/classes/article/PublishedArticle.inc.php
+www/ojs2/classes/article/PublishedArticleDAO.inc.php
+www/ojs2/classes/article/SuppFile.inc.php
+www/ojs2/classes/article/SuppFileDAO.inc.php
+www/ojs2/classes/article/log/ArticleEmailLogDAO.inc.php
+www/ojs2/classes/article/log/ArticleEmailLogEntry.inc.php
+www/ojs2/classes/article/log/ArticleEventLogDAO.inc.php
+www/ojs2/classes/article/log/ArticleEventLogEntry.inc.php
+www/ojs2/classes/article/log/ArticleLog.inc.php
+www/ojs2/classes/author/form/submit/AuthorSubmitForm.inc.php
+www/ojs2/classes/author/form/submit/AuthorSubmitStep1Form.inc.php
+www/ojs2/classes/author/form/submit/AuthorSubmitStep2Form.inc.php
+www/ojs2/classes/author/form/submit/AuthorSubmitStep3Form.inc.php
+www/ojs2/classes/author/form/submit/AuthorSubmitStep4Form.inc.php
+www/ojs2/classes/author/form/submit/AuthorSubmitStep5Form.inc.php
+www/ojs2/classes/author/form/submit/AuthorSubmitSuppFileForm.inc.php
+www/ojs2/classes/cache/CacheManager.inc.php
+www/ojs2/classes/cache/FileCache.inc.php
+www/ojs2/classes/cache/GenericCache.inc.php
+www/ojs2/classes/cache/MemcacheCache.inc.php
+www/ojs2/classes/comment/Comment.inc.php
+www/ojs2/classes/comment/CommentDAO.inc.php
+www/ojs2/classes/comment/form/CommentForm.inc.php
+www/ojs2/classes/config/Config.inc.php
+www/ojs2/classes/config/ConfigParser.inc.php
+www/ojs2/classes/core/ArrayItemIterator.inc.php
+www/ojs2/classes/core/Core.inc.php
+www/ojs2/classes/core/DataObject.inc.php
+www/ojs2/classes/core/Handler.inc.php
+www/ojs2/classes/core/ItemIterator.inc.php
+www/ojs2/classes/core/Registry.inc.php
+www/ojs2/classes/core/Request.inc.php
+www/ojs2/classes/core/String.inc.php
+www/ojs2/classes/core/Transcoder.inc.php
+www/ojs2/classes/core/VirtualArrayIterator.inc.php
+www/ojs2/classes/db/DAO.inc.php
+www/ojs2/classes/db/DAORegistry.inc.php
+www/ojs2/classes/db/DAOResultFactory.inc.php
+www/ojs2/classes/db/DBConnection.inc.php
+www/ojs2/classes/db/DBDataXMLParser.inc.php
+www/ojs2/classes/db/DBResultRange.inc.php
+www/ojs2/classes/db/DBRowIterator.inc.php
+www/ojs2/classes/db/SQLParser.inc.php
+www/ojs2/classes/db/XMLDAO.inc.php
+www/ojs2/classes/file/ArticleFileManager.inc.php
+www/ojs2/classes/file/FileManager.inc.php
+www/ojs2/classes/file/FileWrapper.inc.php
+www/ojs2/classes/file/PublicFileManager.inc.php
+www/ojs2/classes/file/TemporaryFile.inc.php
+www/ojs2/classes/file/TemporaryFileDAO.inc.php
+www/ojs2/classes/file/TemporaryFileManager.inc.php
+www/ojs2/classes/form/Form.inc.php
+www/ojs2/classes/form/FormError.inc.php
+www/ojs2/classes/form/validation/FormValidator.inc.php
+www/ojs2/classes/form/validation/FormValidatorAlphaNum.inc.php
+www/ojs2/classes/form/validation/FormValidatorArray.inc.php
+www/ojs2/classes/form/validation/FormValidatorCustom.inc.php
+www/ojs2/classes/form/validation/FormValidatorEmail.inc.php
+www/ojs2/classes/form/validation/FormValidatorInSet.inc.php
+www/ojs2/classes/form/validation/FormValidatorLength.inc.php
+www/ojs2/classes/form/validation/FormValidatorRegExp.inc.php
+www/ojs2/classes/group/Group.inc.php
+www/ojs2/classes/group/GroupDAO.inc.php
+www/ojs2/classes/group/GroupMembership.inc.php
+www/ojs2/classes/group/GroupMembershipDAO.inc.php
+www/ojs2/classes/help/Help.inc.php
+www/ojs2/classes/help/HelpToc.inc.php
+www/ojs2/classes/help/HelpTocDAO.inc.php
+www/ojs2/classes/help/HelpTopic.inc.php
+www/ojs2/classes/help/HelpTopicDAO.inc.php
+www/ojs2/classes/help/HelpTopicSection.inc.php
+www/ojs2/classes/i18n/Locale.inc.php
+www/ojs2/classes/install/Install.inc.php
+www/ojs2/classes/install/Installer.inc.php
+www/ojs2/classes/install/Upgrade.inc.php
+www/ojs2/classes/install/form/InstallForm.inc.php
+www/ojs2/classes/install/form/UpgradeForm.inc.php
+www/ojs2/classes/issue/Issue.inc.php
+www/ojs2/classes/issue/IssueAction.inc.php
+www/ojs2/classes/issue/IssueDAO.inc.php
+www/ojs2/classes/issue/form/IssueForm.inc.php
+www/ojs2/classes/journal/Journal.inc.php
+www/ojs2/classes/journal/JournalDAO.inc.php
+www/ojs2/classes/journal/JournalReportIterator.inc.php
+www/ojs2/classes/journal/JournalSettingsDAO.inc.php
+www/ojs2/classes/journal/JournalStatisticsDAO.inc.php
+www/ojs2/classes/journal/NotificationStatusDAO.inc.php
+www/ojs2/classes/journal/Section.inc.php
+www/ojs2/classes/journal/SectionDAO.inc.php
+www/ojs2/classes/journal/SectionEditorsDAO.inc.php
+www/ojs2/classes/mail/ArticleMailTemplate.inc.php
+www/ojs2/classes/mail/EmailTemplate.inc.php
+www/ojs2/classes/mail/EmailTemplateDAO.inc.php
+www/ojs2/classes/mail/Mail.inc.php
+www/ojs2/classes/mail/MailTemplate.inc.php
+www/ojs2/classes/mail/SMTPMailer.inc.php
+www/ojs2/classes/manager/form/EmailTemplateForm.inc.php
+www/ojs2/classes/manager/form/GroupForm.inc.php
+www/ojs2/classes/manager/form/LanguageSettingsForm.inc.php
+www/ojs2/classes/manager/form/SectionForm.inc.php
+www/ojs2/classes/manager/form/UserManagementForm.inc.php
+www/ojs2/classes/manager/form/setup/JournalSetupForm.inc.php
+www/ojs2/classes/manager/form/setup/JournalSetupStep1Form.inc.php
+www/ojs2/classes/manager/form/setup/JournalSetupStep2Form.inc.php
+www/ojs2/classes/manager/form/setup/JournalSetupStep3Form.inc.php
+www/ojs2/classes/manager/form/setup/JournalSetupStep4Form.inc.php
+www/ojs2/classes/manager/form/setup/JournalSetupStep5Form.inc.php
+www/ojs2/classes/oai/OAI.inc.php
+www/ojs2/classes/oai/OAIStruct.inc.php
+www/ojs2/classes/oai/format/OAIMetadataFormat_DC.inc.php
+www/ojs2/classes/oai/format/OAIMetadataFormat_MARC.inc.php
+www/ojs2/classes/oai/format/OAIMetadataFormat_MARC21.inc.php
+www/ojs2/classes/oai/format/OAIMetadataFormat_RFC1807.inc.php
+www/ojs2/classes/oai/ojs/JournalOAI.inc.php
+www/ojs2/classes/oai/ojs/OAIDAO.inc.php
+www/ojs2/classes/plugins/AuthPlugin.inc.php
+www/ojs2/classes/plugins/GatewayPlugin.inc.php
+www/ojs2/classes/plugins/GenericPlugin.inc.php
+www/ojs2/classes/plugins/HookRegistry.inc.php
+www/ojs2/classes/plugins/ImportExportPlugin.inc.php
+www/ojs2/classes/plugins/Plugin.inc.php
+www/ojs2/classes/plugins/PluginRegistry.inc.php
+www/ojs2/classes/plugins/PluginSettingsDAO.inc.php
+www/ojs2/classes/rt/RT.inc.php
+www/ojs2/classes/rt/RTAdmin.inc.php
+www/ojs2/classes/rt/RTStruct.inc.php
+www/ojs2/classes/rt/RTXMLParser.inc.php
+www/ojs2/classes/rt/ojs/JournalRT.inc.php
+www/ojs2/classes/rt/ojs/JournalRTAdmin.inc.php
+www/ojs2/classes/rt/ojs/RTDAO.inc.php
+www/ojs2/classes/rt/ojs/form/ContextForm.inc.php
+www/ojs2/classes/rt/ojs/form/SearchForm.inc.php
+www/ojs2/classes/rt/ojs/form/VersionForm.inc.php
+www/ojs2/classes/scheduledTask/ScheduledTask.inc.php
+www/ojs2/classes/scheduledTask/ScheduledTaskDAO.inc.php
+www/ojs2/classes/search/ArticleSearch.inc.php
+www/ojs2/classes/search/ArticleSearchDAO.inc.php
+www/ojs2/classes/search/ArticleSearchIndex.inc.php
+www/ojs2/classes/search/SearchFileParser.inc.php
+www/ojs2/classes/search/SearchHTMLParser.inc.php
+www/ojs2/classes/search/SearchHelperParser.inc.php
+www/ojs2/classes/sectionEditor/form/CreateReviewerForm.inc.php
+www/ojs2/classes/security/AccessKey.inc.php
+www/ojs2/classes/security/AccessKeyDAO.inc.php
+www/ojs2/classes/security/AccessKeyManager.inc.php
+www/ojs2/classes/security/AuthSource.inc.php
+www/ojs2/classes/security/AuthSourceDAO.inc.php
+www/ojs2/classes/security/Role.inc.php
+www/ojs2/classes/security/RoleDAO.inc.php
+www/ojs2/classes/security/Validation.inc.php
+www/ojs2/classes/security/form/AuthSourceSettingsForm.inc.php
+www/ojs2/classes/session/Session.inc.php
+www/ojs2/classes/session/SessionDAO.inc.php
+www/ojs2/classes/session/SessionManager.inc.php
+www/ojs2/classes/site/ImportOJS1.inc.php
+www/ojs2/classes/site/Site.inc.php
+www/ojs2/classes/site/SiteDAO.inc.php
+www/ojs2/classes/site/Version.inc.php
+www/ojs2/classes/site/VersionCheck.inc.php
+www/ojs2/classes/site/VersionDAO.inc.php
+www/ojs2/classes/submission/author/AuthorAction.inc.php
+www/ojs2/classes/submission/author/AuthorSubmission.inc.php
+www/ojs2/classes/submission/author/AuthorSubmissionDAO.inc.php
+www/ojs2/classes/submission/common/Action.inc.php
+www/ojs2/classes/submission/copyAssignment/CopyAssignment.inc.php
+www/ojs2/classes/submission/copyAssignment/CopyAssignmentDAO.inc.php
+www/ojs2/classes/submission/copyeditor/CopyeditorAction.inc.php
+www/ojs2/classes/submission/copyeditor/CopyeditorSubmission.inc.php
+www/ojs2/classes/submission/copyeditor/CopyeditorSubmissionDAO.inc.php
+www/ojs2/classes/submission/editAssignment/EditAssignment.inc.php
+www/ojs2/classes/submission/editAssignment/EditAssignmentDAO.inc.php
+www/ojs2/classes/submission/editor/EditorAction.inc.php
+www/ojs2/classes/submission/editor/EditorSubmission.inc.php
+www/ojs2/classes/submission/editor/EditorSubmissionDAO.inc.php
+www/ojs2/classes/submission/form/ArticleGalleyForm.inc.php
+www/ojs2/classes/submission/form/MetadataForm.inc.php
+www/ojs2/classes/submission/form/SuppFileForm.inc.php
+www/ojs2/classes/submission/form/comment/CommentForm.inc.php
+www/ojs2/classes/submission/form/comment/CopyeditCommentForm.inc.php
+www/ojs2/classes/submission/form/comment/EditCommentForm.inc.php
+www/ojs2/classes/submission/form/comment/EditorDecisionCommentForm.inc.php
+www/ojs2/classes/submission/form/comment/LayoutCommentForm.inc.php
+www/ojs2/classes/submission/form/comment/PeerReviewCommentForm.inc.php
+www/ojs2/classes/submission/form/comment/ProofreadCommentForm.inc.php
+www/ojs2/classes/submission/layoutAssignment/LayoutAssignment.inc.php
+www/ojs2/classes/submission/layoutAssignment/LayoutAssignmentDAO.inc.php
+www/ojs2/classes/submission/layoutEditor/LayoutEditorAction.inc.php
+www/ojs2/classes/submission/layoutEditor/LayoutEditorSubmission.inc.php
+www/ojs2/classes/submission/layoutEditor/LayoutEditorSubmissionDAO.inc.php
+www/ojs2/classes/submission/proofAssignment/ProofAssignment.inc.php
+www/ojs2/classes/submission/proofAssignment/ProofAssignmentDAO.inc.php
+www/ojs2/classes/submission/proofreader/ProofreaderAction.inc.php
+www/ojs2/classes/submission/proofreader/ProofreaderSubmission.inc.php
+www/ojs2/classes/submission/proofreader/ProofreaderSubmissionDAO.inc.php
+www/ojs2/classes/submission/reviewAssignment/ReviewAssignment.inc.php
+www/ojs2/classes/submission/reviewAssignment/ReviewAssignmentDAO.inc.php
+www/ojs2/classes/submission/reviewer/ReviewerAction.inc.php
+www/ojs2/classes/submission/reviewer/ReviewerSubmission.inc.php
+www/ojs2/classes/submission/reviewer/ReviewerSubmissionDAO.inc.php
+www/ojs2/classes/submission/sectionEditor/SectionEditorAction.inc.php
+www/ojs2/classes/submission/sectionEditor/SectionEditorSubmission.inc.php
+www/ojs2/classes/submission/sectionEditor/SectionEditorSubmissionDAO.inc.php
+www/ojs2/classes/subscription/Currency.inc.php
+www/ojs2/classes/subscription/CurrencyDAO.inc.php
+www/ojs2/classes/subscription/Subscription.inc.php
+www/ojs2/classes/subscription/SubscriptionDAO.inc.php
+www/ojs2/classes/subscription/SubscriptionType.inc.php
+www/ojs2/classes/subscription/SubscriptionTypeDAO.inc.php
+www/ojs2/classes/subscription/form/SubscriptionForm.inc.php
+www/ojs2/classes/subscription/form/SubscriptionTypeForm.inc.php
+www/ojs2/classes/tasks/ReviewReminder.inc.php
+www/ojs2/classes/template/TemplateManager.inc.php
+www/ojs2/classes/user/CountryDAO.inc.php
+www/ojs2/classes/user/User.inc.php
+www/ojs2/classes/user/UserDAO.inc.php
+www/ojs2/classes/user/form/ChangePasswordForm.inc.php
+www/ojs2/classes/user/form/LoginChangePasswordForm.inc.php
+www/ojs2/classes/user/form/ProfileForm.inc.php
+www/ojs2/classes/user/form/RegistrationForm.inc.php
+www/ojs2/classes/xml/XMLCustomWriter.inc.php
+www/ojs2/classes/xml/XMLNode.inc.php
+www/ojs2/classes/xml/XMLParser.inc.php
+www/ojs2/classes/xml/XMLParserDOMHandler.inc.php
+www/ojs2/config.TEMPLATE.inc.php
+www/ojs2/config.inc.php
+www/ojs2/dbscripts/xml/data/currencies.xml
+www/ojs2/dbscripts/xml/data/email_templates.xml
+www/ojs2/dbscripts/xml/data/locale/en_US/email_templates_data.xml
+www/ojs2/dbscripts/xml/data/locale/es_ES/email_templates_data.xml
+www/ojs2/dbscripts/xml/data/locale/pt_BR/email_templates_data.xml
+www/ojs2/dbscripts/xml/dtd/install.dtd
+www/ojs2/dbscripts/xml/dtd/xmldata.dtd
+www/ojs2/dbscripts/xml/dtd/xmlschema.dtd
+www/ojs2/dbscripts/xml/install.xml
+www/ojs2/dbscripts/xml/ojs_schema.xml
+www/ojs2/dbscripts/xml/upgrade.xml
+www/ojs2/dbscripts/xml/upgrade/2.0.1_update.xml
+www/ojs2/dbscripts/xml/upgrade/2.0.2_preupdate.xml
+www/ojs2/dbscripts/xml/upgrade/2.0.2_update.xml
+www/ojs2/dbscripts/xml/upgrade/2.1.0_update.xml
+www/ojs2/dbscripts/xml/version.xml
+www/ojs2/docs/COPYING
+www/ojs2/docs/ChangeLog
+www/ojs2/docs/FAQ
+www/ojs2/docs/IMPORTEXPORT
+www/ojs2/docs/INSTALL
+www/ojs2/docs/LICENSE
+www/ojs2/docs/README
+www/ojs2/docs/README-CVS
+www/ojs2/docs/README-DEV
+www/ojs2/docs/RELEASE
+www/ojs2/docs/REPORTING-BUGS
+www/ojs2/docs/UPGRADE
+www/ojs2/docs/release-notes/ChangeLog-2.0.1
+www/ojs2/docs/release-notes/ChangeLog-2.0.2
+www/ojs2/docs/release-notes/ChangeLog-2.1
+www/ojs2/docs/release-notes/README-2.0.1
+www/ojs2/docs/release-notes/README-2.0.2
+www/ojs2/docs/release-notes/README-2.1.0
+www/ojs2/help/en_US/editorial/toc/000000.xml
+www/ojs2/help/en_US/editorial/toc/000001.xml
+www/ojs2/help/en_US/editorial/toc/000002.xml
+www/ojs2/help/en_US/editorial/toc/000003.xml
+www/ojs2/help/en_US/editorial/toc/000004.xml
+www/ojs2/help/en_US/editorial/toc/000005.xml
+www/ojs2/help/en_US/editorial/toc/000006.xml
+www/ojs2/help/en_US/editorial/toc/000007.xml
+www/ojs2/help/en_US/editorial/toc/000008.xml
+www/ojs2/help/en_US/editorial/toc/000009.xml
+www/ojs2/help/en_US/editorial/toc/000010.xml
+www/ojs2/help/en_US/editorial/toc/000011.xml
+www/ojs2/help/en_US/editorial/toc/000012.xml
+www/ojs2/help/en_US/editorial/toc/000013.xml
+www/ojs2/help/en_US/editorial/toc/000014.xml
+www/ojs2/help/en_US/editorial/topic/000000.xml
+www/ojs2/help/en_US/editorial/topic/000001.xml
+www/ojs2/help/en_US/editorial/topic/000002.xml
+www/ojs2/help/en_US/editorial/topic/000003.xml
+www/ojs2/help/en_US/editorial/topic/000004.xml
+www/ojs2/help/en_US/editorial/topic/000005.xml
+www/ojs2/help/en_US/editorial/topic/000006.xml
+www/ojs2/help/en_US/editorial/topic/000007.xml
+www/ojs2/help/en_US/editorial/topic/000008.xml
+www/ojs2/help/en_US/editorial/topic/000009.xml
+www/ojs2/help/en_US/editorial/topic/000010.xml
+www/ojs2/help/en_US/editorial/topic/000011.xml
+www/ojs2/help/en_US/editorial/topic/000012.xml
+www/ojs2/help/en_US/editorial/topic/000013.xml
+www/ojs2/help/en_US/editorial/topic/000014.xml
+www/ojs2/help/en_US/editorial/topic/000015.xml
+www/ojs2/help/en_US/editorial/topic/000016.xml
+www/ojs2/help/en_US/editorial/topic/000017.xml
+www/ojs2/help/en_US/editorial/topic/000018.xml
+www/ojs2/help/en_US/editorial/topic/000019.xml
+www/ojs2/help/en_US/editorial/topic/000020.xml
+www/ojs2/help/en_US/editorial/topic/000021.xml
+www/ojs2/help/en_US/editorial/topic/000022.xml
+www/ojs2/help/en_US/editorial/topic/000023.xml
+www/ojs2/help/en_US/editorial/topic/000024.xml
+www/ojs2/help/en_US/editorial/topic/000025.xml
+www/ojs2/help/en_US/editorial/topic/000026.xml
+www/ojs2/help/en_US/editorial/topic/000027.xml
+www/ojs2/help/en_US/editorial/topic/000028.xml
+www/ojs2/help/en_US/editorial/topic/000029.xml
+www/ojs2/help/en_US/editorial/topic/000030.xml
+www/ojs2/help/en_US/editorial/topic/000031.xml
+www/ojs2/help/en_US/editorial/topic/000032.xml
+www/ojs2/help/en_US/editorial/topic/000033.xml
+www/ojs2/help/en_US/editorial/topic/000034.xml
+www/ojs2/help/en_US/editorial/topic/000035.xml
+www/ojs2/help/en_US/editorial/topic/000036.xml
+www/ojs2/help/en_US/editorial/topic/000037.xml
+www/ojs2/help/en_US/editorial/topic/000038.xml
+www/ojs2/help/en_US/editorial/topic/000039.xml
+www/ojs2/help/en_US/editorial/topic/000040.xml
+www/ojs2/help/en_US/editorial/topic/000041.xml
+www/ojs2/help/en_US/editorial/topic/000042.xml
+www/ojs2/help/en_US/editorial/topic/000043.xml
+www/ojs2/help/en_US/index/toc/000000.xml
+www/ojs2/help/en_US/index/topic/000000.xml
+www/ojs2/help/en_US/intro/toc/000000.xml
+www/ojs2/help/en_US/intro/topic/000000.xml
+www/ojs2/help/en_US/intro/topic/000001.xml
+www/ojs2/help/en_US/journal/toc/000000.xml
+www/ojs2/help/en_US/journal/toc/000001.xml
+www/ojs2/help/en_US/journal/toc/000002.xml
+www/ojs2/help/en_US/journal/toc/000003.xml
+www/ojs2/help/en_US/journal/toc/000005.xml
+www/ojs2/help/en_US/journal/topic/000000.xml
+www/ojs2/help/en_US/journal/topic/000001.xml
+www/ojs2/help/en_US/journal/topic/000002.xml
+www/ojs2/help/en_US/journal/topic/000003.xml
+www/ojs2/help/en_US/journal/topic/000004.xml
+www/ojs2/help/en_US/journal/topic/000005.xml
+www/ojs2/help/en_US/journal/topic/000006.xml
+www/ojs2/help/en_US/journal/topic/000007.xml
+www/ojs2/help/en_US/journal/topic/000008.xml
+www/ojs2/help/en_US/journal/topic/000009.xml
+www/ojs2/help/en_US/journal/topic/000010.xml
+www/ojs2/help/en_US/journal/topic/000011.xml
+www/ojs2/help/en_US/journal/topic/000012.xml
+www/ojs2/help/en_US/journal/topic/000013.xml
+www/ojs2/help/en_US/journal/topic/000014.xml
+www/ojs2/help/en_US/journal/topic/000015.xml
+www/ojs2/help/en_US/journal/topic/000016.xml
+www/ojs2/help/en_US/journal/topic/000017.xml
+www/ojs2/help/en_US/journal/topic/000018.xml
+www/ojs2/help/en_US/journal/topic/000019.xml
+www/ojs2/help/en_US/journal/topic/000020.xml
+www/ojs2/help/en_US/journal/topic/000021.xml
+www/ojs2/help/en_US/journal/topic/000022.xml
+www/ojs2/help/en_US/journal/topic/000023.xml
+www/ojs2/help/en_US/journal/topic/000025.xml
+www/ojs2/help/en_US/journal/topic/000026.xml
+www/ojs2/help/en_US/journal/topic/000027.xml
+www/ojs2/help/en_US/journal/topic/000028.xml
+www/ojs2/help/en_US/journal/topic/000029.xml
+www/ojs2/help/en_US/journal/topic/000030.xml
+www/ojs2/help/en_US/journal/topic/000031.xml
+www/ojs2/help/en_US/journal/topic/000032.xml
+www/ojs2/help/en_US/publishing/toc/000000.xml
+www/ojs2/help/en_US/publishing/topic/000000.xml
+www/ojs2/help/en_US/publishing/topic/000001.xml
+www/ojs2/help/en_US/publishing/topic/000002.xml
+www/ojs2/help/en_US/publishing/topic/000003.xml
+www/ojs2/help/en_US/publishing/topic/000004.xml
+www/ojs2/help/en_US/site/toc/000000.xml
+www/ojs2/help/en_US/site/topic/000000.xml
+www/ojs2/help/en_US/site/topic/000001.xml
+www/ojs2/help/en_US/site/topic/000002.xml
+www/ojs2/help/en_US/site/topic/000003.xml
+www/ojs2/help/en_US/submission/toc/000000.xml
+www/ojs2/help/en_US/submission/topic/000000.xml
+www/ojs2/help/en_US/submission/topic/000001.xml
+www/ojs2/help/en_US/submission/topic/000002.xml
+www/ojs2/help/en_US/submission/topic/000003.xml
+www/ojs2/help/en_US/submission/topic/000004.xml
+www/ojs2/help/en_US/user/toc/000000.xml
+www/ojs2/help/en_US/user/topic/000000.xml
+www/ojs2/help/en_US/user/topic/000001.xml
+www/ojs2/help/en_US/user/topic/000002.xml
+www/ojs2/help/en_US/user/topic/000003.xml
+www/ojs2/help/en_US/user/topic/000004.xml
+www/ojs2/help/en_US/user/topic/000005.xml
+www/ojs2/help/en_US/user/topic/000006.xml
+www/ojs2/help/en_US/user/topic/000007.xml
+www/ojs2/help/help.dtd
+www/ojs2/help/help.xml
+www/ojs2/help/toc.dtd
+www/ojs2/help/topic.dtd
+www/ojs2/includes/driver.inc.php
+www/ojs2/includes/functions.inc.php
+www/ojs2/index.php
+www/ojs2/js/general.js
+www/ojs2/lib/adodb/adodb-csvlib.inc.php
+www/ojs2/lib/adodb/adodb-datadict.inc.php
+www/ojs2/lib/adodb/adodb-error.inc.php
+www/ojs2/lib/adodb/adodb-errorhandler.inc.php
+www/ojs2/lib/adodb/adodb-errorpear.inc.php
+www/ojs2/lib/adodb/adodb-exceptions.inc.php
+www/ojs2/lib/adodb/adodb-iterator.inc.php
+www/ojs2/lib/adodb/adodb-lib.inc.php
+www/ojs2/lib/adodb/adodb-pager.inc.php
+www/ojs2/lib/adodb/adodb-pear.inc.php
+www/ojs2/lib/adodb/adodb-perf.inc.php
+www/ojs2/lib/adodb/adodb-php4.inc.php
+www/ojs2/lib/adodb/adodb-time.inc.php
+www/ojs2/lib/adodb/adodb-xmlschema.inc.php
+www/ojs2/lib/adodb/adodb.inc.php
+www/ojs2/lib/adodb/datadict/datadict-access.inc.php
+www/ojs2/lib/adodb/datadict/datadict-db2.inc.php
+www/ojs2/lib/adodb/datadict/datadict-firebird.inc.php
+www/ojs2/lib/adodb/datadict/datadict-generic.inc.php
+www/ojs2/lib/adodb/datadict/datadict-ibase.inc.php
+www/ojs2/lib/adodb/datadict/datadict-informix.inc.php
+www/ojs2/lib/adodb/datadict/datadict-mssql.inc.php
+www/ojs2/lib/adodb/datadict/datadict-mysql.inc.php
+www/ojs2/lib/adodb/datadict/datadict-oci8.inc.php
+www/ojs2/lib/adodb/datadict/datadict-postgres.inc.php
+www/ojs2/lib/adodb/datadict/datadict-sapdb.inc.php
+www/ojs2/lib/adodb/datadict/datadict-sybase.inc.php
+www/ojs2/lib/adodb/drivers/adodb-access.inc.php
+www/ojs2/lib/adodb/drivers/adodb-ado.inc.php
+www/ojs2/lib/adodb/drivers/adodb-ado5.inc.php
+www/ojs2/lib/adodb/drivers/adodb-ado_access.inc.php
+www/ojs2/lib/adodb/drivers/adodb-ado_mssql.inc.php
+www/ojs2/lib/adodb/drivers/adodb-borland_ibase.inc.php
+www/ojs2/lib/adodb/drivers/adodb-csv.inc.php
+www/ojs2/lib/adodb/drivers/adodb-db2.inc.php
+www/ojs2/lib/adodb/drivers/adodb-fbsql.inc.php
+www/ojs2/lib/adodb/drivers/adodb-firebird.inc.php
+www/ojs2/lib/adodb/drivers/adodb-ibase.inc.php
+www/ojs2/lib/adodb/drivers/adodb-informix.inc.php
+www/ojs2/lib/adodb/drivers/adodb-informix72.inc.php
+www/ojs2/lib/adodb/drivers/adodb-ldap.inc.php
+www/ojs2/lib/adodb/drivers/adodb-mssql.inc.php
+www/ojs2/lib/adodb/drivers/adodb-mssqlpo.inc.php
+www/ojs2/lib/adodb/drivers/adodb-mysql.inc.php
+www/ojs2/lib/adodb/drivers/adodb-mysqli.inc.php
+www/ojs2/lib/adodb/drivers/adodb-mysqlt.inc.php
+www/ojs2/lib/adodb/drivers/adodb-netezza.inc.php
+www/ojs2/lib/adodb/drivers/adodb-oci8.inc.php
+www/ojs2/lib/adodb/drivers/adodb-oci805.inc.php
+www/ojs2/lib/adodb/drivers/adodb-oci8po.inc.php
+www/ojs2/lib/adodb/drivers/adodb-odbc.inc.php
+www/ojs2/lib/adodb/drivers/adodb-odbc_mssql.inc.php
+www/ojs2/lib/adodb/drivers/adodb-odbc_oracle.inc.php
+www/ojs2/lib/adodb/drivers/adodb-odbtp.inc.php
+www/ojs2/lib/adodb/drivers/adodb-odbtp_unicode.inc.php
+www/ojs2/lib/adodb/drivers/adodb-oracle.inc.php
+www/ojs2/lib/adodb/drivers/adodb-pdo.inc.php
+www/ojs2/lib/adodb/drivers/adodb-pdo_mysql.inc.php
+www/ojs2/lib/adodb/drivers/adodb-pdo_oci.inc.php
+www/ojs2/lib/adodb/drivers/adodb-pdo_pgsql.inc.php
+www/ojs2/lib/adodb/drivers/adodb-postgres.inc.php
+www/ojs2/lib/adodb/drivers/adodb-postgres64.inc.php
+www/ojs2/lib/adodb/drivers/adodb-postgres7.inc.php
+www/ojs2/lib/adodb/drivers/adodb-postgres8.inc.php
+www/ojs2/lib/adodb/drivers/adodb-proxy.inc.php
+www/ojs2/lib/adodb/drivers/adodb-sapdb.inc.php
+www/ojs2/lib/adodb/drivers/adodb-sqlanywhere.inc.php
+www/ojs2/lib/adodb/drivers/adodb-sqlite.inc.php
+www/ojs2/lib/adodb/drivers/adodb-sqlitepo.inc.php
+www/ojs2/lib/adodb/drivers/adodb-sybase.inc.php
+www/ojs2/lib/adodb/drivers/adodb-sybase_ase.inc.php
+www/ojs2/lib/adodb/drivers/adodb-vfp.inc.php
+www/ojs2/lib/adodb/lang/adodb-ar.inc.php
+www/ojs2/lib/adodb/lang/adodb-bg.inc.php
+www/ojs2/lib/adodb/lang/adodb-bgutf8.inc.php
+www/ojs2/lib/adodb/lang/adodb-ca.inc.php
+www/ojs2/lib/adodb/lang/adodb-cn.inc.php
+www/ojs2/lib/adodb/lang/adodb-cz.inc.php
+www/ojs2/lib/adodb/lang/adodb-da.inc.php
+www/ojs2/lib/adodb/lang/adodb-de.inc.php
+www/ojs2/lib/adodb/lang/adodb-en.inc.php
+www/ojs2/lib/adodb/lang/adodb-es.inc.php
+www/ojs2/lib/adodb/lang/adodb-esperanto.inc.php
+www/ojs2/lib/adodb/lang/adodb-fr.inc.php
+www/ojs2/lib/adodb/lang/adodb-hu.inc.php
+www/ojs2/lib/adodb/lang/adodb-it.inc.php
+www/ojs2/lib/adodb/lang/adodb-nl.inc.php
+www/ojs2/lib/adodb/lang/adodb-pl.inc.php
+www/ojs2/lib/adodb/lang/adodb-pt-br.inc.php
+www/ojs2/lib/adodb/lang/adodb-ro.inc.php
+www/ojs2/lib/adodb/lang/adodb-ru1251.inc.php
+www/ojs2/lib/adodb/lang/adodb-sv.inc.php
+www/ojs2/lib/adodb/lang/adodb-uk1251.inc.php
+www/ojs2/lib/adodb/license.txt
+www/ojs2/lib/adodb/perf/perf-db2.inc.php
+www/ojs2/lib/adodb/perf/perf-informix.inc.php
+www/ojs2/lib/adodb/perf/perf-mssql.inc.php
+www/ojs2/lib/adodb/perf/perf-mysql.inc.php
+www/ojs2/lib/adodb/perf/perf-oci8.inc.php
+www/ojs2/lib/adodb/perf/perf-postgres.inc.php
+www/ojs2/lib/adodb/pivottable.inc.php
+www/ojs2/lib/adodb/readme.txt
+www/ojs2/lib/adodb/rsfilter.inc.php
+www/ojs2/lib/adodb/toexport.inc.php
+www/ojs2/lib/adodb/tohtml.inc.php
+www/ojs2/lib/adodb/xmlschema.dtd
+www/ojs2/lib/libraries.txt
+www/ojs2/lib/smarty/COPYING.lib
+www/ojs2/lib/smarty/Config_File.class.php
+www/ojs2/lib/smarty/Smarty.class.php
+www/ojs2/lib/smarty/Smarty_Compiler.class.php
+www/ojs2/lib/smarty/debug.tpl
+www/ojs2/lib/smarty/internals/core.assemble_plugin_filepath.php
+www/ojs2/lib/smarty/internals/core.assign_smarty_interface.php
+www/ojs2/lib/smarty/internals/core.create_dir_structure.php
+www/ojs2/lib/smarty/internals/core.display_debug_console.php
+www/ojs2/lib/smarty/internals/core.get_include_path.php
+www/ojs2/lib/smarty/internals/core.get_microtime.php
+www/ojs2/lib/smarty/internals/core.get_php_resource.php
+www/ojs2/lib/smarty/internals/core.is_secure.php
+www/ojs2/lib/smarty/internals/core.is_trusted.php
+www/ojs2/lib/smarty/internals/core.load_plugins.php
+www/ojs2/lib/smarty/internals/core.load_resource_plugin.php
+www/ojs2/lib/smarty/internals/core.process_cached_inserts.php
+www/ojs2/lib/smarty/internals/core.process_compiled_include.php
+www/ojs2/lib/smarty/internals/core.read_cache_file.php
+www/ojs2/lib/smarty/internals/core.rm_auto.php
+www/ojs2/lib/smarty/internals/core.rmdir.php
+www/ojs2/lib/smarty/internals/core.run_insert_handler.php
+www/ojs2/lib/smarty/internals/core.smarty_include_php.php
+www/ojs2/lib/smarty/internals/core.write_cache_file.php
+www/ojs2/lib/smarty/internals/core.write_compiled_include.php
+www/ojs2/lib/smarty/internals/core.write_compiled_resource.php
+www/ojs2/lib/smarty/internals/core.write_file.php
+www/ojs2/lib/smarty/plugins/block.textformat.php
+www/ojs2/lib/smarty/plugins/compiler.assign.php
+www/ojs2/lib/smarty/plugins/function.assign_debug_info.php
+www/ojs2/lib/smarty/plugins/function.config_load.php
+www/ojs2/lib/smarty/plugins/function.counter.php
+www/ojs2/lib/smarty/plugins/function.cycle.php
+www/ojs2/lib/smarty/plugins/function.debug.php
+www/ojs2/lib/smarty/plugins/function.eval.php
+www/ojs2/lib/smarty/plugins/function.fetch.php
+www/ojs2/lib/smarty/plugins/function.html_checkboxes.php
+www/ojs2/lib/smarty/plugins/function.html_image.php
+www/ojs2/lib/smarty/plugins/function.html_options.php
+www/ojs2/lib/smarty/plugins/function.html_radios.php
+www/ojs2/lib/smarty/plugins/function.html_select_date.php
+www/ojs2/lib/smarty/plugins/function.html_select_time.php
+www/ojs2/lib/smarty/plugins/function.html_table.php
+www/ojs2/lib/smarty/plugins/function.mailto.php
+www/ojs2/lib/smarty/plugins/function.math.php
+www/ojs2/lib/smarty/plugins/function.popup.php
+www/ojs2/lib/smarty/plugins/function.popup_init.php
+www/ojs2/lib/smarty/plugins/modifier.capitalize.php
+www/ojs2/lib/smarty/plugins/modifier.cat.php
+www/ojs2/lib/smarty/plugins/modifier.count_characters.php
+www/ojs2/lib/smarty/plugins/modifier.count_paragraphs.php
+www/ojs2/lib/smarty/plugins/modifier.count_sentences.php
+www/ojs2/lib/smarty/plugins/modifier.count_words.php
+www/ojs2/lib/smarty/plugins/modifier.date_format.php
+www/ojs2/lib/smarty/plugins/modifier.debug_print_var.php
+www/ojs2/lib/smarty/plugins/modifier.default.php
+www/ojs2/lib/smarty/plugins/modifier.escape.php
+www/ojs2/lib/smarty/plugins/modifier.indent.php
+www/ojs2/lib/smarty/plugins/modifier.lower.php
+www/ojs2/lib/smarty/plugins/modifier.nl2br.php
+www/ojs2/lib/smarty/plugins/modifier.regex_replace.php
+www/ojs2/lib/smarty/plugins/modifier.replace.php
+www/ojs2/lib/smarty/plugins/modifier.spacify.php
+www/ojs2/lib/smarty/plugins/modifier.string_format.php
+www/ojs2/lib/smarty/plugins/modifier.strip.php
+www/ojs2/lib/smarty/plugins/modifier.strip_tags.php
+www/ojs2/lib/smarty/plugins/modifier.truncate.php
+www/ojs2/lib/smarty/plugins/modifier.upper.php
+www/ojs2/lib/smarty/plugins/modifier.wordwrap.php
+www/ojs2/lib/smarty/plugins/outputfilter.trimwhitespace.php
+www/ojs2/lib/smarty/plugins/shared.escape_special_chars.php
+www/ojs2/lib/smarty/plugins/shared.make_timestamp.php
+www/ojs2/locale/en_US/locale.xml
+www/ojs2/locale/es_ES/locale.xml
+www/ojs2/locale/locale.dtd
+www/ojs2/locale/pt_BR/locale.xml
+www/ojs2/pages/about/AboutHandler.inc.php
+www/ojs2/pages/about/index.php
+www/ojs2/pages/admin/AdminFunctionsHandler.inc.php
+www/ojs2/pages/admin/AdminHandler.inc.php
+www/ojs2/pages/admin/AdminJournalHandler.inc.php
+www/ojs2/pages/admin/AdminLanguagesHandler.inc.php
+www/ojs2/pages/admin/AdminSettingsHandler.inc.php
+www/ojs2/pages/admin/AuthSourcesHandler.inc.php
+www/ojs2/pages/admin/index.php
+www/ojs2/pages/article/ArticleHandler.inc.php
+www/ojs2/pages/article/index.php
+www/ojs2/pages/author/AuthorHandler.inc.php
+www/ojs2/pages/author/SubmissionCommentsHandler.inc.php
+www/ojs2/pages/author/SubmitHandler.inc.php
+www/ojs2/pages/author/TrackSubmissionHandler.inc.php
+www/ojs2/pages/author/index.php
+www/ojs2/pages/comment/CommentHandler.inc.php
+www/ojs2/pages/comment/index.php
+www/ojs2/pages/copyeditor/CopyeditorHandler.inc.php
+www/ojs2/pages/copyeditor/SubmissionCommentsHandler.inc.php
+www/ojs2/pages/copyeditor/SubmissionCopyeditHandler.inc.php
+www/ojs2/pages/copyeditor/index.php
+www/ojs2/pages/editor/EditorHandler.inc.php
+www/ojs2/pages/editor/IssueManagementHandler.inc.php
+www/ojs2/pages/editor/index.php
+www/ojs2/pages/gateway/GatewayHandler.inc.php
+www/ojs2/pages/gateway/index.php
+www/ojs2/pages/help/HelpHandler.inc.php
+www/ojs2/pages/help/index.php
+www/ojs2/pages/index/IndexHandler.inc.php
+www/ojs2/pages/index/index.php
+www/ojs2/pages/information/InformationHandler.inc.php
+www/ojs2/pages/information/index.php
+www/ojs2/pages/install/InstallHandler.inc.php
+www/ojs2/pages/install/index.php
+www/ojs2/pages/issue/IssueHandler.inc.php
+www/ojs2/pages/issue/index.php
+www/ojs2/pages/layoutEditor/LayoutEditorHandler.inc.php
+www/ojs2/pages/layoutEditor/SubmissionCommentsHandler.inc.php
+www/ojs2/pages/layoutEditor/SubmissionLayoutHandler.inc.php
+www/ojs2/pages/layoutEditor/index.php
+www/ojs2/pages/login/LoginHandler.inc.php
+www/ojs2/pages/login/index.php
+www/ojs2/pages/manager/EmailHandler.inc.php
+www/ojs2/pages/manager/FilesHandler.inc.php
+www/ojs2/pages/manager/GroupHandler.inc.php
+www/ojs2/pages/manager/ImportExportHandler.inc.php
+www/ojs2/pages/manager/JournalLanguagesHandler.inc.php
+www/ojs2/pages/manager/ManagerHandler.inc.php
+www/ojs2/pages/manager/PeopleHandler.inc.php
+www/ojs2/pages/manager/PluginHandler.inc.php
+www/ojs2/pages/manager/SectionHandler.inc.php
+www/ojs2/pages/manager/SetupHandler.inc.php
+www/ojs2/pages/manager/StatisticsHandler.inc.php
+www/ojs2/pages/manager/SubscriptionHandler.inc.php
+www/ojs2/pages/manager/index.php
+www/ojs2/pages/oai/OAIHandler.inc.php
+www/ojs2/pages/oai/index.php
+www/ojs2/pages/proofreader/ProofreaderHandler.inc.php
+www/ojs2/pages/proofreader/SubmissionCommentsHandler.inc.php
+www/ojs2/pages/proofreader/SubmissionProofreadHandler.inc.php
+www/ojs2/pages/proofreader/index.php
+www/ojs2/pages/reviewer/ReviewerHandler.inc.php
+www/ojs2/pages/reviewer/SubmissionCommentsHandler.inc.php
+www/ojs2/pages/reviewer/SubmissionReviewHandler.inc.php
+www/ojs2/pages/reviewer/index.php
+www/ojs2/pages/rt/RTHandler.inc.php
+www/ojs2/pages/rt/index.php
+www/ojs2/pages/rtadmin/RTAdminHandler.inc.php
+www/ojs2/pages/rtadmin/RTContextHandler.inc.php
+www/ojs2/pages/rtadmin/RTSearchHandler.inc.php
+www/ojs2/pages/rtadmin/RTSetupHandler.inc.php
+www/ojs2/pages/rtadmin/RTVersionHandler.inc.php
+www/ojs2/pages/rtadmin/index.php
+www/ojs2/pages/search/SearchHandler.inc.php
+www/ojs2/pages/search/index.php
+www/ojs2/pages/sectionEditor/SectionEditorHandler.inc.php
+www/ojs2/pages/sectionEditor/SubmissionCommentsHandler.inc.php
+www/ojs2/pages/sectionEditor/SubmissionEditHandler.inc.php
+www/ojs2/pages/sectionEditor/index.php
+www/ojs2/pages/subscriptionManager/SubscriptionManagerHandler.inc.php
+www/ojs2/pages/subscriptionManager/index.php
+www/ojs2/pages/user/EmailHandler.inc.php
+www/ojs2/pages/user/ProfileHandler.inc.php
+www/ojs2/pages/user/RegistrationHandler.inc.php
+www/ojs2/pages/user/UserHandler.inc.php
+www/ojs2/pages/user/index.php
+www/ojs2/plugins/auth/ldap/LDAPAuthPlugin.inc.php
+www/ojs2/plugins/auth/ldap/index.php
+www/ojs2/plugins/auth/ldap/locale/en_US/locale.xml
+www/ojs2/plugins/auth/ldap/locale/es_ES/locale.xml
+www/ojs2/plugins/auth/ldap/locale/pt_BR/locale.xml
+www/ojs2/plugins/auth/ldap/settings.tpl
+www/ojs2/plugins/gateways/googleScholar/GoogleScholarPlugin.inc.php
+www/ojs2/plugins/gateways/googleScholar/GoogleScholarSettingsForm.inc.php
+www/ojs2/plugins/gateways/googleScholar/errors.tpl
+www/ojs2/plugins/gateways/googleScholar/index.php
+www/ojs2/plugins/gateways/googleScholar/locale/en_US/locale.xml
+www/ojs2/plugins/gateways/googleScholar/locale/es_ES/locale.xml
+www/ojs2/plugins/gateways/googleScholar/locale/pt_BR/locale.xml
+www/ojs2/plugins/gateways/googleScholar/settingsForm.tpl
+www/ojs2/plugins/importexport/erudit/EruditExportDom.inc.php
+www/ojs2/plugins/importexport/erudit/EruditExportPlugin.inc.php
+www/ojs2/plugins/importexport/erudit/index.php
+www/ojs2/plugins/importexport/erudit/index.tpl
+www/ojs2/plugins/importexport/erudit/locale/en_US/locale.xml
+www/ojs2/plugins/importexport/erudit/locale/es_ES/locale.xml
+www/ojs2/plugins/importexport/erudit/locale/pt_BR/locale.xml
+www/ojs2/plugins/importexport/native/NativeExportDom.inc.php
+www/ojs2/plugins/importexport/native/NativeImportDom.inc.php
+www/ojs2/plugins/importexport/native/NativeImportExportPlugin.inc.php
+www/ojs2/plugins/importexport/native/README
+www/ojs2/plugins/importexport/native/articleContext.tpl
+www/ojs2/plugins/importexport/native/articles.tpl
+www/ojs2/plugins/importexport/native/importError.tpl
+www/ojs2/plugins/importexport/native/importSuccess.tpl
+www/ojs2/plugins/importexport/native/index.php
+www/ojs2/plugins/importexport/native/index.tpl
+www/ojs2/plugins/importexport/native/issues.tpl
+www/ojs2/plugins/importexport/native/locale/en_US/locale.xml
+www/ojs2/plugins/importexport/native/locale/es_ES/locale.xml
+www/ojs2/plugins/importexport/native/locale/pt_BR/locale.xml
+www/ojs2/plugins/importexport/native/native.dtd
+www/ojs2/plugins/importexport/native/sample.xml
+www/ojs2/plugins/importexport/sample/SampleImportExportPlugin.inc.php
+www/ojs2/plugins/importexport/sample/index.php
+www/ojs2/plugins/importexport/sample/issues.tpl
+www/ojs2/plugins/importexport/sample/locale/en_US/locale.xml
+www/ojs2/plugins/importexport/sample/locale/es_ES/locale.xml
+www/ojs2/plugins/importexport/users/README
+www/ojs2/plugins/importexport/users/UserExportDom.inc.php
+www/ojs2/plugins/importexport/users/UserImportExportPlugin.inc.php
+www/ojs2/plugins/importexport/users/UserXMLParser.inc.php
+www/ojs2/plugins/importexport/users/importUsersConfirm.tpl
+www/ojs2/plugins/importexport/users/importUsersResults.tpl
+www/ojs2/plugins/importexport/users/index.php
+www/ojs2/plugins/importexport/users/index.tpl
+www/ojs2/plugins/importexport/users/locale/en_US/locale.xml
+www/ojs2/plugins/importexport/users/locale/es_ES/locale.xml
+www/ojs2/plugins/importexport/users/locale/pt_BR/locale.xml
+www/ojs2/plugins/importexport/users/sample.xml
+www/ojs2/plugins/importexport/users/users.dtd
+www/ojs2/public/index.html
+www/ojs2/registry/inlineTypes.txt
+www/ojs2/registry/journalSettings.xml
+www/ojs2/registry/locale/en_US/countries.xml
+www/ojs2/registry/locale/es_ES/countries.xml
+www/ojs2/registry/locale/pt_BR/countries.xml
+www/ojs2/registry/locales.xml
+www/ojs2/registry/scheduledTasks.xml
+www/ojs2/registry/stopwords.txt
+www/ojs2/rt/en_US/Agriculture.xml
+www/ojs2/rt/en_US/Art_Architecture.xml
+www/ojs2/rt/en_US/Astrophysics.xml
+www/ojs2/rt/en_US/Biology.xml
+www/ojs2/rt/en_US/Business.xml
+www/ojs2/rt/en_US/Chemistry.xml
+www/ojs2/rt/en_US/Cognitive_Science.xml
+www/ojs2/rt/en_US/Computer_Science.xml
+www/ojs2/rt/en_US/Economics.xml
+www/ojs2/rt/en_US/Education.xml
+www/ojs2/rt/en_US/Environment.xml
+www/ojs2/rt/en_US/General_Science.xml
+www/ojs2/rt/en_US/Generic.xml
+www/ojs2/rt/en_US/Humanities.xml
+www/ojs2/rt/en_US/Life_Sciences.xml
+www/ojs2/rt/en_US/Mathematics.xml
+www/ojs2/rt/en_US/Music.xml
+www/ojs2/rt/en_US/Physics.xml
+www/ojs2/rt/en_US/Social_Sciences.xml
+www/ojs2/rt/es_ES/Agriculture.xml
+www/ojs2/rt/es_ES/Art_Architecture.xml
+www/ojs2/rt/es_ES/Astrophysics.xml
+www/ojs2/rt/es_ES/Biology.xml
+www/ojs2/rt/es_ES/Business.xml
+www/ojs2/rt/es_ES/Chemistry.xml
+www/ojs2/rt/es_ES/Cognitive_Science.xml
+www/ojs2/rt/es_ES/Computer_Science.xml
+www/ojs2/rt/es_ES/Economics.xml
+www/ojs2/rt/es_ES/Education.xml
+www/ojs2/rt/es_ES/Environment.xml
+www/ojs2/rt/es_ES/General_Science.xml
+www/ojs2/rt/es_ES/Generic.xml
+www/ojs2/rt/es_ES/Humanities.xml
+www/ojs2/rt/es_ES/Life_Sciences.xml
+www/ojs2/rt/es_ES/Mathematics.xml
+www/ojs2/rt/es_ES/Music.xml
+www/ojs2/rt/es_ES/Physics.xml
+www/ojs2/rt/es_ES/Social_Sciences.xml
+www/ojs2/rt/pt_BR/Agriculture.xml
+www/ojs2/rt/pt_BR/Art_Architecture.xml
+www/ojs2/rt/pt_BR/Astrophysics.xml
+www/ojs2/rt/pt_BR/Biology.xml
+www/ojs2/rt/pt_BR/Business.xml
+www/ojs2/rt/pt_BR/Chemistry.xml
+www/ojs2/rt/pt_BR/Cognitive_Science.xml
+www/ojs2/rt/pt_BR/Computer_Science.xml
+www/ojs2/rt/pt_BR/Economics.xml
+www/ojs2/rt/pt_BR/Education.xml
+www/ojs2/rt/pt_BR/Environment.xml
+www/ojs2/rt/pt_BR/General_Science.xml
+www/ojs2/rt/pt_BR/Generic.xml
+www/ojs2/rt/pt_BR/Humanities.xml
+www/ojs2/rt/pt_BR/Life_Sciences.xml
+www/ojs2/rt/pt_BR/Mathematics.xml
+www/ojs2/rt/pt_BR/Music.xml
+www/ojs2/rt/pt_BR/Physics.xml
+www/ojs2/rt/pt_BR/Social_Sciences.xml
+www/ojs2/rt/rt-version.dtd
+www/ojs2/styles/articleView.css
+www/ojs2/styles/comments.css
+www/ojs2/styles/common.css
+www/ojs2/styles/help.css
+www/ojs2/styles/rt.css
+www/ojs2/templates/about/aboutThisPublishingSystem.tpl
+www/ojs2/templates/about/contact.tpl
+www/ojs2/templates/about/editorialPolicies.tpl
+www/ojs2/templates/about/editorialTeam.tpl
+www/ojs2/templates/about/editorialTeamBio.tpl
+www/ojs2/templates/about/editorialTeamBoard.tpl
+www/ojs2/templates/about/index.tpl
+www/ojs2/templates/about/journalSponsorship.tpl
+www/ojs2/templates/about/site.tpl
+www/ojs2/templates/about/siteMap.tpl
+www/ojs2/templates/about/submissions.tpl
+www/ojs2/templates/about/subscriptions.tpl
+www/ojs2/templates/admin/auth/sourceSettings.tpl
+www/ojs2/templates/admin/auth/sources.tpl
+www/ojs2/templates/admin/importOJS1.tpl
+www/ojs2/templates/admin/index.tpl
+www/ojs2/templates/admin/journalSettings.tpl
+www/ojs2/templates/admin/journals.tpl
+www/ojs2/templates/admin/languages.tpl
+www/ojs2/templates/admin/settings.tpl
+www/ojs2/templates/admin/systemConfig.tpl
+www/ojs2/templates/admin/systemConfigUpdated.tpl
+www/ojs2/templates/admin/systemInfo.tpl
+www/ojs2/templates/article/article.tpl
+www/ojs2/templates/article/interstitial.tpl
+www/ojs2/templates/article/pdfInterstitial.tpl
+www/ojs2/templates/article/view.tpl
+www/ojs2/templates/author/active.tpl
+www/ojs2/templates/author/completed.tpl
+www/ojs2/templates/author/index.tpl
+www/ojs2/templates/author/navsidebar.tpl
+www/ojs2/templates/author/submission.tpl
+www/ojs2/templates/author/submission/copyedit.tpl
+www/ojs2/templates/author/submission/editorDecision.tpl
+www/ojs2/templates/author/submission/layout.tpl
+www/ojs2/templates/author/submission/management.tpl
+www/ojs2/templates/author/submission/metadata.tpl
+www/ojs2/templates/author/submission/peerReview.tpl
+www/ojs2/templates/author/submission/proofread.tpl
+www/ojs2/templates/author/submission/status.tpl
+www/ojs2/templates/author/submission/summary.tpl
+www/ojs2/templates/author/submissionEditing.tpl
+www/ojs2/templates/author/submissionReview.tpl
+www/ojs2/templates/author/submit/complete.tpl
+www/ojs2/templates/author/submit/step1.tpl
+www/ojs2/templates/author/submit/step2.tpl
+www/ojs2/templates/author/submit/step3.tpl
+www/ojs2/templates/author/submit/step4.tpl
+www/ojs2/templates/author/submit/step5.tpl
+www/ojs2/templates/author/submit/submitHeader.tpl
+www/ojs2/templates/author/submit/submitSidebar.tpl
+www/ojs2/templates/author/submit/suppFile.tpl
+www/ojs2/templates/comment/comment.tpl
+www/ojs2/templates/comment/comments.tpl
+www/ojs2/templates/common/error.tpl
+www/ojs2/templates/common/footer.tpl
+www/ojs2/templates/common/formErrors.tpl
+www/ojs2/templates/common/header.tpl
+www/ojs2/templates/common/message.tpl
+www/ojs2/templates/common/sidebar.tpl
+www/ojs2/templates/copyeditor/active.tpl
+www/ojs2/templates/copyeditor/completed.tpl
+www/ojs2/templates/copyeditor/index.tpl
+www/ojs2/templates/copyeditor/navsidebar.tpl
+www/ojs2/templates/copyeditor/submission.tpl
+www/ojs2/templates/copyeditor/submission/copyedit.tpl
+www/ojs2/templates/copyeditor/submission/layout.tpl
+www/ojs2/templates/copyeditor/submission/summary.tpl
+www/ojs2/templates/editor/index.tpl
+www/ojs2/templates/editor/issues/backIssues.tpl
+www/ojs2/templates/editor/issues/createIssue.tpl
+www/ojs2/templates/editor/issues/futureIssues.tpl
+www/ojs2/templates/editor/issues/issueData.tpl
+www/ojs2/templates/editor/issues/issueToc.tpl
+www/ojs2/templates/editor/navsidebar.tpl
+www/ojs2/templates/editor/notifyUsers.tpl
+www/ojs2/templates/editor/notifyUsersEmail.tpl
+www/ojs2/templates/editor/schedulingQueue.tpl
+www/ojs2/templates/editor/selectSectionEditor.tpl
+www/ojs2/templates/editor/submissions.tpl
+www/ojs2/templates/editor/submissionsArchives.tpl
+www/ojs2/templates/editor/submissionsInEditing.tpl
+www/ojs2/templates/editor/submissionsInReview.tpl
+www/ojs2/templates/editor/submissionsUnassigned.tpl
+www/ojs2/templates/email/email.tpl
+www/ojs2/templates/gateway/lockss.tpl
+www/ojs2/templates/help/footer.tpl
+www/ojs2/templates/help/header.tpl
+www/ojs2/templates/help/helpToc.tpl
+www/ojs2/templates/help/searchResults.tpl
+www/ojs2/templates/help/toc.tpl
+www/ojs2/templates/help/topic.tpl
+www/ojs2/templates/help/view.tpl
+www/ojs2/templates/images/edprocess.png
+www/ojs2/templates/images/edprocesslarge.png
+www/ojs2/templates/images/help.gif
+www/ojs2/templates/images/icons/checked.gif
+www/ojs2/templates/images/icons/comment.gif
+www/ojs2/templates/images/icons/comment_disabled.gif
+www/ojs2/templates/images/icons/delete.gif
+www/ojs2/templates/images/icons/delete_disabled.gif
+www/ojs2/templates/images/icons/edit.gif
+www/ojs2/templates/images/icons/edit_disabled.gif
+www/ojs2/templates/images/icons/folder.gif
+www/ojs2/templates/images/icons/letter.gif
+www/ojs2/templates/images/icons/mail.gif
+www/ojs2/templates/images/icons/mail_disabled.gif
+www/ojs2/templates/images/icons/unchecked.gif
+www/ojs2/templates/images/icons/view.gif
+www/ojs2/templates/images/info.gif
+www/ojs2/templates/images/letter.gif
+www/ojs2/templates/images/lockss.gif
+www/ojs2/templates/images/mail.gif
+www/ojs2/templates/images/menulist.gif
+www/ojs2/templates/images/pkp.gif
+www/ojs2/templates/index/journal.tpl
+www/ojs2/templates/index/site.tpl
+www/ojs2/templates/information/information.tpl
+www/ojs2/templates/install/install.tpl
+www/ojs2/templates/install/installComplete.tpl
+www/ojs2/templates/install/upgrade.tpl
+www/ojs2/templates/install/upgradeComplete.tpl
+www/ojs2/templates/issue/archive.tpl
+www/ojs2/templates/issue/current.tpl
+www/ojs2/templates/issue/issue.tpl
+www/ojs2/templates/issue/view.tpl
+www/ojs2/templates/issue/viewPage.tpl
+www/ojs2/templates/layoutEditor/active.tpl
+www/ojs2/templates/layoutEditor/completed.tpl
+www/ojs2/templates/layoutEditor/index.tpl
+www/ojs2/templates/layoutEditor/navsidebar.tpl
+www/ojs2/templates/layoutEditor/submission.tpl
+www/ojs2/templates/layoutEditor/submission/layout.tpl
+www/ojs2/templates/layoutEditor/submission/proofread.tpl
+www/ojs2/templates/layoutEditor/submission/summary.tpl
+www/ojs2/templates/manager/emails/emailTemplateForm.tpl
+www/ojs2/templates/manager/emails/emails.tpl
+www/ojs2/templates/manager/files/index.tpl
+www/ojs2/templates/manager/groups/groupForm.tpl
+www/ojs2/templates/manager/groups/groups.tpl
+www/ojs2/templates/manager/groups/memberships.tpl
+www/ojs2/templates/manager/groups/selectUser.tpl
+www/ojs2/templates/manager/importexport/plugins.tpl
+www/ojs2/templates/manager/index.tpl
+www/ojs2/templates/manager/languageSettings.tpl
+www/ojs2/templates/manager/people/email.tpl
+www/ojs2/templates/manager/people/enrollSync.tpl
+www/ojs2/templates/manager/people/enrollment.tpl
+www/ojs2/templates/manager/people/searchUsers.tpl
+www/ojs2/templates/manager/people/selectTemplate.tpl
+www/ojs2/templates/manager/people/userProfile.tpl
+www/ojs2/templates/manager/people/userProfileForm.tpl
+www/ojs2/templates/manager/plugins/plugins.tpl
+www/ojs2/templates/manager/sections/sectionForm.tpl
+www/ojs2/templates/manager/sections/sections.tpl
+www/ojs2/templates/manager/setup/index.tpl
+www/ojs2/templates/manager/setup/settingsSaved.tpl
+www/ojs2/templates/manager/setup/setupHeader.tpl
+www/ojs2/templates/manager/setup/step1.tpl
+www/ojs2/templates/manager/setup/step2.tpl
+www/ojs2/templates/manager/setup/step3.tpl
+www/ojs2/templates/manager/setup/step4.tpl
+www/ojs2/templates/manager/setup/step5.tpl
+www/ojs2/templates/manager/statistics/index.tpl
+www/ojs2/templates/manager/statistics/reportGenerator.tpl
+www/ojs2/templates/manager/statistics/statistics.tpl
+www/ojs2/templates/proofreader/active.tpl
+www/ojs2/templates/proofreader/completed.tpl
+www/ojs2/templates/proofreader/index.tpl
+www/ojs2/templates/proofreader/navsidebar.tpl
+www/ojs2/templates/proofreader/submission.tpl
+www/ojs2/templates/proofreader/submission/layout.tpl
+www/ojs2/templates/proofreader/submission/proofread.tpl
+www/ojs2/templates/proofreader/submission/summary.tpl
+www/ojs2/templates/reviewer/active.tpl
+www/ojs2/templates/reviewer/completed.tpl
+www/ojs2/templates/reviewer/index.tpl
+www/ojs2/templates/reviewer/navsidebar.tpl
+www/ojs2/templates/reviewer/submission.tpl
+www/ojs2/templates/rt/bio.tpl
+www/ojs2/templates/rt/captureCite.tpl
+www/ojs2/templates/rt/citeEndNote.tpl
+www/ojs2/templates/rt/citeProCite.tpl
+www/ojs2/templates/rt/citeReferenceManager.tpl
+www/ojs2/templates/rt/context.tpl
+www/ojs2/templates/rt/email.tpl
+www/ojs2/templates/rt/footer.tpl
+www/ojs2/templates/rt/header.tpl
+www/ojs2/templates/rt/index.html
+www/ojs2/templates/rt/metadata.tpl
+www/ojs2/templates/rt/printerFriendly.tpl
+www/ojs2/templates/rt/rt.tpl
+www/ojs2/templates/rt/sent.tpl
+www/ojs2/templates/rt/suppFileView.tpl
+www/ojs2/templates/rt/suppFiles.tpl
+www/ojs2/templates/rtadmin/context.tpl
+www/ojs2/templates/rtadmin/contexts.tpl
+www/ojs2/templates/rtadmin/exportXml.tpl
+www/ojs2/templates/rtadmin/index.tpl
+www/ojs2/templates/rtadmin/journals.tpl
+www/ojs2/templates/rtadmin/search.tpl
+www/ojs2/templates/rtadmin/searches.tpl
+www/ojs2/templates/rtadmin/settings.tpl
+www/ojs2/templates/rtadmin/validate.tpl
+www/ojs2/templates/rtadmin/version.tpl
+www/ojs2/templates/rtadmin/versions.tpl
+www/ojs2/templates/search/advancedSearch.tpl
+www/ojs2/templates/search/authorDetails.tpl
+www/ojs2/templates/search/authorIndex.tpl
+www/ojs2/templates/search/searchResults.tpl
+www/ojs2/templates/search/titleIndex.tpl
+www/ojs2/templates/sectionEditor/createReviewerForm.tpl
+www/ojs2/templates/sectionEditor/index.tpl
+www/ojs2/templates/sectionEditor/navsidebar.tpl
+www/ojs2/templates/sectionEditor/reviewerRecommendation.tpl
+www/ojs2/templates/sectionEditor/searchUsers.tpl
+www/ojs2/templates/sectionEditor/selectReviewer.tpl
+www/ojs2/templates/sectionEditor/selectUser.tpl
+www/ojs2/templates/sectionEditor/setDueDate.tpl
+www/ojs2/templates/sectionEditor/submission.tpl
+www/ojs2/templates/sectionEditor/submission/copyedit.tpl
+www/ojs2/templates/sectionEditor/submission/editorDecision.tpl
+www/ojs2/templates/sectionEditor/submission/editors.tpl
+www/ojs2/templates/sectionEditor/submission/layout.tpl
+www/ojs2/templates/sectionEditor/submission/management.tpl
+www/ojs2/templates/sectionEditor/submission/metadata.tpl
+www/ojs2/templates/sectionEditor/submission/peerReview.tpl
+www/ojs2/templates/sectionEditor/submission/proofread.tpl
+www/ojs2/templates/sectionEditor/submission/rounds.tpl
+www/ojs2/templates/sectionEditor/submission/status.tpl
+www/ojs2/templates/sectionEditor/submission/summary.tpl
+www/ojs2/templates/sectionEditor/submissionEditing.tpl
+www/ojs2/templates/sectionEditor/submissionEmailLog.tpl
+www/ojs2/templates/sectionEditor/submissionEmailLogEntry.tpl
+www/ojs2/templates/sectionEditor/submissionEventLog.tpl
+www/ojs2/templates/sectionEditor/submissionEventLogEntry.tpl
+www/ojs2/templates/sectionEditor/submissionHistory.tpl
+www/ojs2/templates/sectionEditor/submissionNotes.tpl
+www/ojs2/templates/sectionEditor/submissionRegrets.tpl
+www/ojs2/templates/sectionEditor/submissionReview.tpl
+www/ojs2/templates/sectionEditor/submissionsArchives.tpl
+www/ojs2/templates/sectionEditor/submissionsInEditing.tpl
+www/ojs2/templates/sectionEditor/submissionsInReview.tpl
+www/ojs2/templates/sectionEditor/userProfile.tpl
+www/ojs2/templates/submission/comment/comment.tpl
+www/ojs2/templates/submission/comment/commentEmail.tpl
+www/ojs2/templates/submission/comment/editComment.tpl
+www/ojs2/templates/submission/comment/editorDecisionComment.tpl
+www/ojs2/templates/submission/comment/editorDecisionEmail.tpl
+www/ojs2/templates/submission/comment/footer.tpl
+www/ojs2/templates/submission/comment/header.tpl
+www/ojs2/templates/submission/comment/peerReviewComment.tpl
+www/ojs2/templates/submission/instructions.tpl
+www/ojs2/templates/submission/layout/galleyForm.tpl
+www/ojs2/templates/submission/layout/galleyView.tpl
+www/ojs2/templates/submission/layout/proofGalley.tpl
+www/ojs2/templates/submission/layout/proofGalleyHTML.tpl
+www/ojs2/templates/submission/layout/proofGalleyTop.tpl
+www/ojs2/templates/submission/metadata/metadataEdit.tpl
+www/ojs2/templates/submission/metadata/metadataView.tpl
+www/ojs2/templates/submission/suppFile/suppFile.tpl
+www/ojs2/templates/submission/suppFile/suppFileView.tpl
+www/ojs2/templates/subscription/subscriptionForm.tpl
+www/ojs2/templates/subscription/subscriptionTypeForm.tpl
+www/ojs2/templates/subscription/subscriptionTypes.tpl
+www/ojs2/templates/subscription/subscriptions.tpl
+www/ojs2/templates/subscription/users.tpl
+www/ojs2/templates/user/changePassword.tpl
+www/ojs2/templates/user/index.tpl
+www/ojs2/templates/user/login.tpl
+www/ojs2/templates/user/loginChangePassword.tpl
+www/ojs2/templates/user/lostPassword.tpl
+www/ojs2/templates/user/profile.tpl
+www/ojs2/templates/user/register.tpl
+www/ojs2/templates/user/registerSite.tpl
+www/ojs2/tools/dbXMLtoSQL.php
+www/ojs2/tools/importExport.php
+www/ojs2/tools/includes/cliTool.inc.php
+www/ojs2/tools/install.php
+www/ojs2/tools/migrate.php
+www/ojs2/tools/preCompile.php
+www/ojs2/tools/rebuildSearchIndex.php
+www/ojs2/tools/runScheduledTasks.php
+www/ojs2/tools/upgrade.php
+@dirrm www/ojs2/tools/includes
+@dirrm www/ojs2/tools
+@dirrm www/ojs2/templates/user
+@dirrm www/ojs2/templates/subscription
+@dirrm www/ojs2/templates/submission/suppFile
+@dirrm www/ojs2/templates/submission/metadata
+@dirrm www/ojs2/templates/submission/layout
+@dirrm www/ojs2/templates/submission/comment
+@dirrm www/ojs2/templates/submission
+@dirrm www/ojs2/templates/sectionEditor/submission
+@dirrm www/ojs2/templates/sectionEditor
+@dirrm www/ojs2/templates/search
+@dirrm www/ojs2/templates/rtadmin
+@dirrm www/ojs2/templates/rt
+@dirrm www/ojs2/templates/reviewer
+@dirrm www/ojs2/templates/proofreader/submission
+@dirrm www/ojs2/templates/proofreader
+@dirrm www/ojs2/templates/manager/statistics
+@dirrm www/ojs2/templates/manager/setup
+@dirrm www/ojs2/templates/manager/sections
+@dirrm www/ojs2/templates/manager/plugins
+@dirrm www/ojs2/templates/manager/people
+@dirrm www/ojs2/templates/manager/importexport
+@dirrm www/ojs2/templates/manager/groups
+@dirrm www/ojs2/templates/manager/files
+@dirrm www/ojs2/templates/manager/emails
+@dirrm www/ojs2/templates/manager
+@dirrm www/ojs2/templates/layoutEditor/submission
+@dirrm www/ojs2/templates/layoutEditor
+@dirrm www/ojs2/templates/issue
+@dirrm www/ojs2/templates/install
+@dirrm www/ojs2/templates/information
+@dirrm www/ojs2/templates/index
+@dirrm www/ojs2/templates/images/icons
+@dirrm www/ojs2/templates/images
+@dirrm www/ojs2/templates/help
+@dirrm www/ojs2/templates/gateway
+@dirrm www/ojs2/templates/email
+@dirrm www/ojs2/templates/editor/issues
+@dirrm www/ojs2/templates/editor
+@dirrm www/ojs2/templates/copyeditor/submission
+@dirrm www/ojs2/templates/copyeditor
+@dirrm www/ojs2/templates/common
+@dirrm www/ojs2/templates/comment
+@dirrm www/ojs2/templates/author/submit
+@dirrm www/ojs2/templates/author/submission
+@dirrm www/ojs2/templates/author
+@dirrm www/ojs2/templates/article
+@dirrm www/ojs2/templates/admin/auth
+@dirrm www/ojs2/templates/admin
+@dirrm www/ojs2/templates/about
+@dirrm www/ojs2/templates
+@dirrm www/ojs2/styles
+@dirrm www/ojs2/rt/pt_BR
+@dirrm www/ojs2/rt/es_ES
+@dirrm www/ojs2/rt/en_US
+@dirrm www/ojs2/rt
+@dirrm www/ojs2/registry/locale/pt_BR
+@dirrm www/ojs2/registry/locale/es_ES
+@dirrm www/ojs2/registry/locale/en_US
+@dirrm www/ojs2/registry/locale
+@dirrm www/ojs2/registry
+@dirrm www/ojs2/public
+@dirrm www/ojs2/plugins/importexport/users/locale/pt_BR
+@dirrm www/ojs2/plugins/importexport/users/locale/es_ES
+@dirrm www/ojs2/plugins/importexport/users/locale/en_US
+@dirrm www/ojs2/plugins/importexport/users/locale
+@dirrm www/ojs2/plugins/importexport/users
+@dirrm www/ojs2/plugins/importexport/sample/locale/es_ES
+@dirrm www/ojs2/plugins/importexport/sample/locale/en_US
+@dirrm www/ojs2/plugins/importexport/sample/locale
+@dirrm www/ojs2/plugins/importexport/sample
+@dirrm www/ojs2/plugins/importexport/native/locale/pt_BR
+@dirrm www/ojs2/plugins/importexport/native/locale/es_ES
+@dirrm www/ojs2/plugins/importexport/native/locale/en_US
+@dirrm www/ojs2/plugins/importexport/native/locale
+@dirrm www/ojs2/plugins/importexport/native
+@dirrm www/ojs2/plugins/importexport/erudit/locale/pt_BR
+@dirrm www/ojs2/plugins/importexport/erudit/locale/es_ES
+@dirrm www/ojs2/plugins/importexport/erudit/locale/en_US
+@dirrm www/ojs2/plugins/importexport/erudit/locale
+@dirrm www/ojs2/plugins/importexport/erudit
+@dirrm www/ojs2/plugins/importexport
+@exec mkdir -p %D/www/ojs2/plugins/generic
+@dirrm www/ojs2/plugins/generic
+@dirrm www/ojs2/plugins/gateways/googleScholar/locale/pt_BR
+@dirrm www/ojs2/plugins/gateways/googleScholar/locale/es_ES
+@dirrm www/ojs2/plugins/gateways/googleScholar/locale/en_US
+@dirrm www/ojs2/plugins/gateways/googleScholar/locale
+@dirrm www/ojs2/plugins/gateways/googleScholar
+@dirrm www/ojs2/plugins/gateways
+@dirrm www/ojs2/plugins/auth/ldap/locale/pt_BR
+@dirrm www/ojs2/plugins/auth/ldap/locale/es_ES
+@dirrm www/ojs2/plugins/auth/ldap/locale/en_US
+@dirrm www/ojs2/plugins/auth/ldap/locale
+@dirrm www/ojs2/plugins/auth/ldap
+@dirrm www/ojs2/plugins/auth
+@dirrm www/ojs2/plugins
+@dirrm www/ojs2/pages/user
+@dirrm www/ojs2/pages/subscriptionManager
+@dirrm www/ojs2/pages/sectionEditor
+@dirrm www/ojs2/pages/search
+@dirrm www/ojs2/pages/rtadmin
+@dirrm www/ojs2/pages/rt
+@dirrm www/ojs2/pages/reviewer
+@dirrm www/ojs2/pages/proofreader
+@dirrm www/ojs2/pages/oai
+@dirrm www/ojs2/pages/manager
+@dirrm www/ojs2/pages/login
+@dirrm www/ojs2/pages/layoutEditor
+@dirrm www/ojs2/pages/issue
+@dirrm www/ojs2/pages/install
+@dirrm www/ojs2/pages/information
+@dirrm www/ojs2/pages/index
+@dirrm www/ojs2/pages/help
+@dirrm www/ojs2/pages/gateway
+@dirrm www/ojs2/pages/editor
+@dirrm www/ojs2/pages/copyeditor
+@dirrm www/ojs2/pages/comment
+@dirrm www/ojs2/pages/author
+@dirrm www/ojs2/pages/article
+@dirrm www/ojs2/pages/admin
+@dirrm www/ojs2/pages/about
+@dirrm www/ojs2/pages
+@dirrm www/ojs2/locale/pt_BR
+@dirrm www/ojs2/locale/es_ES
+@exec mkdir -p %D/www/ojs2/locale/en_US/images
+@dirrm www/ojs2/locale/en_US/images
+@dirrm www/ojs2/locale/en_US
+@dirrm www/ojs2/locale
+@dirrm www/ojs2/lib/smarty/plugins
+@dirrm www/ojs2/lib/smarty/internals
+@dirrm www/ojs2/lib/smarty
+@dirrm www/ojs2/lib/adodb/perf
+@dirrm www/ojs2/lib/adodb/lang
+@dirrm www/ojs2/lib/adodb/drivers
+@dirrm www/ojs2/lib/adodb/datadict
+@dirrm www/ojs2/lib/adodb
+@dirrm www/ojs2/lib
+@dirrm www/ojs2/js
+@dirrm www/ojs2/includes
+@dirrm www/ojs2/help/en_US/user/topic
+@dirrm www/ojs2/help/en_US/user/toc
+@dirrm www/ojs2/help/en_US/user
+@dirrm www/ojs2/help/en_US/submission/topic
+@dirrm www/ojs2/help/en_US/submission/toc
+@dirrm www/ojs2/help/en_US/submission
+@dirrm www/ojs2/help/en_US/site/topic
+@dirrm www/ojs2/help/en_US/site/toc
+@dirrm www/ojs2/help/en_US/site
+@dirrm www/ojs2/help/en_US/publishing/topic
+@dirrm www/ojs2/help/en_US/publishing/toc
+@dirrm www/ojs2/help/en_US/publishing
+@dirrm www/ojs2/help/en_US/journal/topic
+@dirrm www/ojs2/help/en_US/journal/toc
+@dirrm www/ojs2/help/en_US/journal
+@dirrm www/ojs2/help/en_US/intro/topic
+@dirrm www/ojs2/help/en_US/intro/toc
+@dirrm www/ojs2/help/en_US/intro
+@dirrm www/ojs2/help/en_US/index/topic
+@dirrm www/ojs2/help/en_US/index/toc
+@dirrm www/ojs2/help/en_US/index
+@dirrm www/ojs2/help/en_US/editorial/topic
+@dirrm www/ojs2/help/en_US/editorial/toc
+@dirrm www/ojs2/help/en_US/editorial
+@dirrm www/ojs2/help/en_US
+@dirrm www/ojs2/help
+@dirrm www/ojs2/docs/release-notes
+@dirrm www/ojs2/docs
+@dirrm www/ojs2/dbscripts/xml/upgrade
+@dirrm www/ojs2/dbscripts/xml/dtd
+@dirrm www/ojs2/dbscripts/xml/data/locale/pt_BR
+@dirrm www/ojs2/dbscripts/xml/data/locale/es_ES
+@dirrm www/ojs2/dbscripts/xml/data/locale/en_US
+@dirrm www/ojs2/dbscripts/xml/data/locale
+@dirrm www/ojs2/dbscripts/xml/data
+@dirrm www/ojs2/dbscripts/xml
+@dirrm www/ojs2/dbscripts
+@dirrm www/ojs2/classes/xml
+@dirrm www/ojs2/classes/user/form
+@dirrm www/ojs2/classes/user
+@dirrm www/ojs2/classes/template
+@dirrm www/ojs2/classes/tasks
+@dirrm www/ojs2/classes/subscription/form
+@dirrm www/ojs2/classes/subscription
+@dirrm www/ojs2/classes/submission/sectionEditor
+@dirrm www/ojs2/classes/submission/reviewer
+@dirrm www/ojs2/classes/submission/reviewAssignment
+@dirrm www/ojs2/classes/submission/proofreader
+@dirrm www/ojs2/classes/submission/proofAssignment
+@dirrm www/ojs2/classes/submission/layoutEditor
+@dirrm www/ojs2/classes/submission/layoutAssignment
+@dirrm www/ojs2/classes/submission/form/comment
+@dirrm www/ojs2/classes/submission/form
+@dirrm www/ojs2/classes/submission/editor
+@dirrm www/ojs2/classes/submission/editAssignment
+@dirrm www/ojs2/classes/submission/copyeditor
+@dirrm www/ojs2/classes/submission/copyAssignment
+@dirrm www/ojs2/classes/submission/common
+@dirrm www/ojs2/classes/submission/author
+@dirrm www/ojs2/classes/submission
+@dirrm www/ojs2/classes/site
+@dirrm www/ojs2/classes/session
+@dirrm www/ojs2/classes/security/form
+@dirrm www/ojs2/classes/security
+@dirrm www/ojs2/classes/sectionEditor/form
+@dirrm www/ojs2/classes/sectionEditor
+@dirrm www/ojs2/classes/search
+@dirrm www/ojs2/classes/scheduledTask
+@dirrm www/ojs2/classes/rt/ojs/form
+@dirrm www/ojs2/classes/rt/ojs
+@dirrm www/ojs2/classes/rt
+@dirrm www/ojs2/classes/plugins
+@dirrm www/ojs2/classes/oai/ojs
+@dirrm www/ojs2/classes/oai/format
+@dirrm www/ojs2/classes/oai
+@dirrm www/ojs2/classes/manager/form/setup
+@dirrm www/ojs2/classes/manager/form
+@dirrm www/ojs2/classes/manager
+@dirrm www/ojs2/classes/mail
+@dirrm www/ojs2/classes/journal
+@dirrm www/ojs2/classes/issue/form
+@dirrm www/ojs2/classes/issue
+@dirrm www/ojs2/classes/install/form
+@dirrm www/ojs2/classes/install
+@dirrm www/ojs2/classes/i18n
+@dirrm www/ojs2/classes/help
+@dirrm www/ojs2/classes/group
+@dirrm www/ojs2/classes/form/validation
+@dirrm www/ojs2/classes/form
+@dirrm www/ojs2/classes/file
+@dirrm www/ojs2/classes/db
+@dirrm www/ojs2/classes/core
+@dirrm www/ojs2/classes/config
+@dirrm www/ojs2/classes/comment/form
+@dirrm www/ojs2/classes/comment
+@dirrm www/ojs2/classes/cache
+@dirrm www/ojs2/classes/author/form/submit
+@dirrm www/ojs2/classes/author/form
+@dirrm www/ojs2/classes/author
+@dirrm www/ojs2/classes/article/log
+@dirrm www/ojs2/classes/article
+@dirrm www/ojs2/classes/admin/form
+@dirrm www/ojs2/classes/admin
+@dirrm www/ojs2/classes
+@exec mkdir -p %D/www/ojs2/cache/t_config
+@dirrm www/ojs2/cache/t_config
+@dirrm www/ojs2/cache/t_compile
+@exec mkdir -p %D/www/ojs2/cache/t_cache
+@dirrm www/ojs2/cache/t_cache
+@exec mkdir -p %D/www/ojs2/cache/_db
+@dirrm www/ojs2/cache/_db
+@dirrm www/ojs2/cache
+@dirrm www/ojs2
