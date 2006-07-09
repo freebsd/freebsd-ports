@@ -30,8 +30,19 @@ share/gnome/gossip/protocols/gossip-protocol.dtd
 share/gnome/gossip/protocols/icq.protocol
 share/gnome/gossip/protocols/msn.protocol
 share/gnome/gossip/protocols/yahoo.protocol
+share/gnome/help/gossip/C/figures/gossip-available.png
+share/gnome/help/gossip/C/figures/gossip-away.png
+share/gnome/help/gossip/C/figures/gossip-busy.png
+share/gnome/help/gossip/C/figures/gossip-extended-away.png
+share/gnome/help/gossip/C/figures/gossip-group-message.png
+share/gnome/help/gossip/C/figures/gossip-message.png
+share/gnome/help/gossip/C/figures/gossip-offline.png
+share/gnome/help/gossip/C/figures/gossip-typing.png
 share/gnome/help/gossip/C/figures/gossip_first_start_window.png
+share/gnome/help/gossip/C/figures/gossip_new_chat_room.png
+share/gnome/help/gossip/C/figures/gossip_personal_details.png
 share/gnome/help/gossip/C/figures/gossip_roster.png
+share/gnome/help/gossip/C/figures/gossip_status_message.png
 share/gnome/help/gossip/C/gossip.xml
 share/gnome/help/gossip/C/legal.xml
 share/gnome/omf/gossip/gossip-C.omf
@@ -55,6 +66,7 @@ share/locale/en_GB/LC_MESSAGES/gossip.mo
 share/locale/eo/LC_MESSAGES/gossip.mo
 share/locale/es/LC_MESSAGES/gossip.mo
 share/locale/eu/LC_MESSAGES/gossip.mo
+share/locale/fi/LC_MESSAGES/gossip.mo
 share/locale/fr/LC_MESSAGES/gossip.mo
 share/locale/ga/LC_MESSAGES/gossip.mo
 share/locale/hr/LC_MESSAGES/gossip.mo
