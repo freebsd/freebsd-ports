@@ -1,13 +1,12 @@
-# New ports collection makefile for:	lineak_defaultplugin
+# New ports collection makefile for:	lineak-defaultplugin
 # Date created:		2004-12-29
 # Whom:			Kay Lehmann <kay_lehmann@web.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	lineak_defaultplugin
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTNAME=	lineak-defaultplugin
+PORTVERSION=	0.9
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lineak
@@ -25,10 +24,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS+=	--program-prefix=''
 
 MAN1=		lineak_defaultplugin.1
+MAN_COMPRESSED=	yes
 PLIST_FILES=	lib/lineakd/plugins/defaultplugin.la \
 		lib/lineakd/plugins/defaultplugin.so \
 		lib/lineakd/plugins/mediadetectplugin.la \
-		lib/lineakd/plugins/mediadetectplugin.so
+		lib/lineakd/plugins/mediadetectplugin.so \
+		etc/media-detect.conf
 
 .include <bsd.port.pre.mk>
 
