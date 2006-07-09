@@ -10,8 +10,7 @@ PORTVERSION=	2.14.0
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
-		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.gohome.org/wl/stable/ \
-		http://www.jpl.org/elips/wl/stable/
+		http://www.jpl.org/elips/wl/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	wl-${PORTVERSION}
 
