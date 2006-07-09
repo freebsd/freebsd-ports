@@ -306,6 +306,7 @@ etc/apsfilter/basedir
 %%DATADIR%%/setup/printer-pcl3
 %%DATADIR%%/setup/printer-ppa
 %%DATADIR%%/setup/printer-stp
+%%DATADIR%%/setup/sound
 %%DATADIR%%/setup/test.ps
 %%DATADIR%%/template/README
 %%DATADIR%%/template/apsfilterrc

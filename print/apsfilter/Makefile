@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apsfilter
-PORTVERSION=	7.2.7
-PORTREVISION=	2
+PORTVERSION=	7.2.8
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -93,6 +92,10 @@ RUN_DEPENDS+=	wmf2eps:${PORTSDIR}/graphics/libwmf
 RUN_DEPENDS+=	sk2ps:${PORTSDIR}/graphics/skencil
 RUN_DEPENDS+=	tgif:${PORTSDIR}/graphics/tgif-nls
 RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
+# filter utilities for playing audio files via line printer scheduler
+RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
+RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS+=	wavplay:${PORTSDIR}/audio/wavplay
 .else
 # "xxx to ps" filter utilities that don't require X
 # XXX needs more work
