@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.2
-PORTREVISION=	20060630
+PORTREVISION=	20060707
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -56,7 +56,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
+TARGLIB=	${PREFIX}/lib/gcc-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-nls \
 		--with-system-zlib \
@@ -65,7 +65,6 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
-CONFIGURE_ENV=	RANLIB=:
 .if defined(WITH_JAVA_AWT)
 CONFIGURE_ARGS+=	--enable-java-awt=xlib,gtk
 .endif
@@ -162,15 +161,13 @@ post-install:
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${TARGLIB:S/^${PREFIX}\///:S/lib/libexec/} include/gcj include/gnu include/java include/javax
+.for d in ${TARGLIB:S/^${PREFIX}\///} libexec/gcc/${CONFIGURE_TARGET}/${PORTVERSION} include/gcj include/gnu include/java include/javax
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
 	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
 	fi
 .endfor
-	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
-	${ECHO_CMD} "@unexec ${RMDIR} %D/lib/gcc 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc/${CONFIGURE_TARGET} 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "@unexec ${RMDIR} %D/libexec/gcc 2>&1 || true" >> ${WRKDIR}/PLIST.lib
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
