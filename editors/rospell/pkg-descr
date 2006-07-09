@@ -1,19 +1,29 @@
 Rospell is gedit-like QT-based spell checker / editor for the Romanian language
-which runs on Linux and FreebSD.
+which runs on Linux and FreebSD. (http://rospell.sourceforge.net/english.html)
 
-Rospell este un speller/corector UTF-8 simplu pentru limba romana, pentru Linux
-si FreeBSD:
-- Dependinte simple - Biblioteca QT a firmei Trolltech (si Xorg/XFree86)
-- Suport UTF-8, ISO8859-2/16 si CP1250 (Windows) - Practic toate formatele
-majore pentru editare de text in limba romana sunt suportate.
+- Dependinte simple - Biblioteca QT a firmei Trolltech (www.trolltech.com) 
+- Suport UTF-8, ISO8859-2/16 si CP1250 (Windows) - Practic toate seturile
+majore de caractere pentru limba român? sunt suportate. 
 - Suport XML - Toate formatele bazate pe XML, precum OpenOffice, AbiWord,
 Scribus si HTML, sunt suportate. Tag-urile XML sunt recunoscute si nu sunt
-incluse in corectare.
-- Dictionar larg - Aprox. 280.000 cuvinte romanesti in momentul de fata.
-- Editor - Similar cu gedit, simplu si rapid.
-- Diacritice - Pentru acele cazuri rare cand nu reusiti sa va setati tastatura
-in mod corect, caracterele diacritice sunt suportate direct de catre editor.
-- Web Loading - Suport pentru incarcare de pagini web cu detectie automata a
-formatului (UTF8/ISO/CP1250).
+incluse în corectare. 
+- Spelling pentru limba româna - rospell contine un dictionar de peste 750.000
+cuvinte românesti. 
+- Spelling pentru limba englez? - Similar cu OpenOffice. 
+- Diacritice - Pentru acele cazuri rare când nu reusiti sa va setati tastatura
+în mod corect, caracterele diacritice sunt suportate direct de catre editor. 
+- Web Loading - Suport pentru încarcare de pagini web cu detectie automata a
+formatului (UTF8/ISO/CP1250). 
+- dexonline.ro - Suport pentru cautarea de definitii în dictionarul dexonline.ro
+- Syntax Highlighting - Colorare de sintaxa pentru o serie de tipuri de fiaiere
+uzuale de programare: xml, http, C/C++/Java/C#, Javascript, PHP, Perl, Python,
+Bash, qmake, etc. 
+- Suport Multi-buffer - Suport pentru deschiderea si editarea a mai multor
+fisiere în acelasi timp. 
+- Suport ctags - Borwsing live de cod sursa C/C++ folosind programul
+exuberant-ctags. 
+- grep & diff - Suport integrat pentru grep si diff. 
+- Keyboard record/playback/aliases 
+- ... si o serie întreaga de facilitati de editare moderne.
 
 WWW: http://rospell.sourceforge.net

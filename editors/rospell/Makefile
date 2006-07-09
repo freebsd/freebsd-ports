@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	rospell
-PORTVERSION=	2006.00
+PORTVERSION=	2006.01
 CATEGORIES=	editors textproc # this should/will be romanian ;)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
