@@ -291,7 +291,6 @@
     SUBDIR += pejv-fpw
     SUBDIR += perl5
     SUBDIR += php_doc
-    SUBDIR += phpgroupware
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-jsclasses
