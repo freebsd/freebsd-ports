@@ -7614,6 +7614,7 @@ openclipart	ports/graphics/openclipart
 openct		ports/security/openct
 opencv		ports/graphics/opencv
 opencyc		ports/misc/opencyc
+opendbx		ports/databases/opendbx
 opendchub	ports/net-p2p/opendchub
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
