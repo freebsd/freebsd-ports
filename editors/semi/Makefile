@@ -30,15 +30,11 @@ SEMI_COOKIE=	semi-${EMACS_PORT_NAME}-${SEMI_TRUNK}.FreeBSD-packages
 SEMI_LISPDIR=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 SEMI_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
-.if (${PORTCLASS} == "master")
 USE_EMACS=	yes
-EMACS_PORT_NAME=	emacs21
-DEPPORT_SUFFIX=		
-.else
-DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
-.endif
+EMACS_PORT_NAME?=	emacs21
 
 EMACS_MASTERDIR_PKGFILES=YES
+DESCR=		${PKGDIR}/pkg-descr
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -51,6 +47,14 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
+.if ${EMACS_PORT_NAME} == "emacs21"
+DEPPORT_SUFFIX=
+.else
+DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
+.endif
+.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
+PLIST=		${PKGDIR}/pkg-plist.emacs20
+.endif
 # depends on flim
 BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX}
