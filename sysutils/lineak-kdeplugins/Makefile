@@ -1,13 +1,12 @@
-# New ports collection makefile for:	lineak_kdeplugins
+# New ports collection makefile for:	lineak-kdeplugins
 # Date created:		2004-12-29
 # Whom:			Kay Lehmann <kay_lehmann@web.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	lineak_kdeplugins
-PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTNAME=	lineak-kdeplugins
+PORTVERSION=	0.9
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lineak
@@ -26,11 +25,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS+=	--program-prefix=''
 
 MAN1=		lineak_kdeplugins.1
+#MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		"Needs KDE to be compiled with gcc 3.4"
+IGNORE=		needs KDE to be compiled with gcc 3.4
 .endif
 
 post-patch:
