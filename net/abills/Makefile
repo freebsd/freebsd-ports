@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abills
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,16 +27,14 @@ USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+
+OPTIONS=	GRAPHICS "Traffic graphs (experimental)" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_GRAPHICS)
 RUN_DEPENDS+=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool
 .endif
-
-pre-everything::
-	@ ${ECHO} ""
-	@ ${ECHO} "	Define WITH_GRAPHICS if you want traffic graphs (experimental)"
-	@ ${ECHO} ""
 
 post-patch:
 	@ ${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
@@ -50,4 +48,4 @@ do-install:
 post-install:
 	@ ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

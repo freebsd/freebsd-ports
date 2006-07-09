@@ -142,20 +142,6 @@ abills/db/Cards.sql
 abills/db/Dunes.sql
 abills/db/Ipn.sql
 abills/db/Mdelivery.sql
-abills/docs/img/inpayments.gif
-abills/docs/img/nas_servers.gif
-abills/docs/img/online.gif
-abills/docs/img/payments.gif
-abills/docs/img/user_fees.gif
-abills/docs/img/user_interface.gif
-abills/docs/img/user_manag.gif
-abills/docs/img/user_stats.gif
-abills/docs/img/users_list.gif
-abills/docs/index.htm
-abills/docs/mail.htm
-abills/docs/misc.htm
-abills/docs/mpd.htm
-abills/docs/nas.htm
 abills/language/bulgarian.pl
 abills/language/english.pl
 abills/language/russian-koi8-r.pl
@@ -182,6 +168,24 @@ abills/soft/exppp_asm-0.2.4.tar.gz
 abills/soft/expppd-0.2.1.tar.gz
 abills/soft/kha0s-mpd.tar.gz
 abills/soft/radpppd.tar.gz
+abills/libexec/rlm_perl.pl
+abills/cgi-bin/print.css
+abills/docs/img/users_list.gif
+abills/docs/img/nas_servers.gif
+abills/docs/img/online.gif
+abills/docs/img/payments.gif
+abills/docs/img/user_fees.gif
+abills/docs/img/user_interface.gif
+abills/docs/img/user_manag.gif
+abills/docs/img/user_stats.gif
+abills/docs/img/inpayments.gif
+abills/docs/index.htm
+abills/docs/mail.htm
+abills/docs/misc.htm
+abills/docs/mpd.htm
+abills/docs/nas.htm
+@dirrm abills/var/log
+@dirrm abills/var
 @dirrm abills/soft
 @dirrm abills/misc
 @dirrm abills/miniserv/etc
