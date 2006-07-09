@@ -12592,6 +12592,7 @@ sharutils	ports/archivers/sharutils
 shc		ports/misc/shc
 sheerdns	ports/dns/sheerdns
 shellac		ports/audio/shellac
+shelldap	ports/net/shelldap
 shftool		ports/converters/shftool
 shishi		ports/security/shishi
 shlock		ports/sysutils/shlock
