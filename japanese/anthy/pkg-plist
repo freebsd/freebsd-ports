@@ -1,5 +1,6 @@
 bin/anthy-agent
 bin/anthy-dic-tool
+bin/anthy-morphological-analyzer
 etc/anthy-conf
 include/anthy/anthy.h
 include/anthy/dicutil.h
@@ -17,10 +18,8 @@ lib/libanthyinput.la
 lib/libanthyinput.so
 lib/libanthyinput.so.0
 libdata/pkgconfig/anthy.pc
-share/anthy/anthy.dep
 share/anthy/anthy.dic
 share/anthy/dic-tool-usage.txt
-share/anthy/matrix
 share/anthy/typetab
 share/anthy/zipcode.t
 %%PORTDOCS%%%%DOCSDIR%%/ELISP
