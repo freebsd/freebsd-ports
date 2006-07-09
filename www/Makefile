@@ -413,6 +413,7 @@
     SUBDIR += nvu
     SUBDIR += ocaml-net
     SUBDIR += ocaml-wdialog
+    SUBDIR += ojs2
     SUBDIR += oops
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
