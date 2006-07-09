@@ -1,13 +1,12 @@
-# New ports collection makefile for:	lineak_xosdplugin
+# New ports collection makefile for:	lineak-xosdplugin
 # Date created:		2004-12-29
 # Whom:			Kay Lehmann <kay_lehmann@web.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	lineak_xosdplugin
-PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTNAME=	lineak-xosdplugin
+PORTVERSION=	0.9
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=lineak
@@ -27,6 +26,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		lineak_xosdplugin.1
+MAN_COMPRESSED=	yes
 PLIST_FILES=	lib/lineakd/plugins/xosdplugin.la \
 		lib/lineakd/plugins/xosdplugin.so
 
