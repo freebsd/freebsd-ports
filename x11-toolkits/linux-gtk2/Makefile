@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtk2
-PORTVERSION=	2.4.14
-PORTREVISION=	4
+PORTVERSION=	2.6.10
 CATEGORIES=	x11-toolkits linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-4.fc3.3
+DISTFILES=	${PORTNAME}-${PORTVERSION}-2.fc4.4.${LINUX_RPM_ARCH}.rpm \
+		${PORTNAME}-engines-2.6.3-2.${LINUX_RPM_ARCH}.rpm
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	GTK+ library, version 2.X, Linux binary
@@ -26,10 +26,12 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XLIB=	yes
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	3
+LINUX_DIST_VER=	4
 INSTALLS_SHLIB=	yes
 BRANDELF_DIRS=	usr/bin
-PLIST_SUB=	LIBVERSION="400.14" PORTVERSION="${PORTVERSION}"
+PLIST_SUB=	LIBVERSION="600.10" PORTVERSION="${PORTVERSION}"
+SRC_DISTFILES=	${PORTNAME}-${PORTVERSION}-2.fc4.4.src.rpm \
+		${PORTNAME}-engines-2.6.3-2.src.rpm
 
 post-install:
 	@chroot ${PREFIX} /usr/bin/gtk-query-immodules-2.0-32 > ${PREFIX}/etc/gtk-2.0/i386-redhat-linux-gnu/gtk.immodules

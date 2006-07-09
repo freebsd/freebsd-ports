@@ -7,9 +7,9 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
-DISTNAME=	libpng-${PORTVERSION}-1.fc3
+DISTNAME=	libpng-${PORTVERSION}-2
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	RPM of the PNG lib
@@ -17,7 +17,7 @@ COMMENT=	RPM of the PNG lib
 # no alpha rpm is available
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	3
+LINUX_DIST_VER=	4
 INSTALLS_SHLIB=	yes
 
 PLIST_FILES=	\

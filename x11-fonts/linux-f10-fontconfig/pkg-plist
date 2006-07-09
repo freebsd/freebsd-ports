@@ -5,15 +5,15 @@ usr/bin/fc-cache
 usr/bin/fc-list
 usr/lib/libfontconfig.so.1
 usr/lib/libfontconfig.so.1.0.4
-usr/share/doc/fontconfig-2.2.3/AUTHORS
-usr/share/doc/fontconfig-2.2.3/COPYING
-usr/share/doc/fontconfig-2.2.3/README
-usr/share/doc/fontconfig-2.2.3/fontconfig-user.html
-usr/share/doc/fontconfig-2.2.3/fontconfig-user.txt
+usr/share/doc/fontconfig-%%PORTVERSION%%/AUTHORS
+usr/share/doc/fontconfig-%%PORTVERSION%%/COPYING
+usr/share/doc/fontconfig-%%PORTVERSION%%/README
+usr/share/doc/fontconfig-%%PORTVERSION%%/fontconfig-user.html
+usr/share/doc/fontconfig-%%PORTVERSION%%/fontconfig-user.txt
 usr/share/man/man1/fc-cache.1.gz
 usr/share/man/man1/fc-list.1.gz
 usr/share/man/man5/fonts-conf.5.gz
 @dirrm etc/fonts
-@dirrm usr/share/doc/fontconfig-2.2.3
+@dirrm usr/share/doc/fontconfig-%%PORTVERSION%%
 @exec /bin/mkdir -p %D/usr/share/fonts
 @dirrm usr/share/fonts

@@ -21,8 +21,12 @@ usr/lib/pango/1.4.0/modules/pango-hebrew-fc.la
 usr/lib/pango/1.4.0/modules/pango-hebrew-fc.so
 usr/lib/pango/1.4.0/modules/pango-indic-fc.la
 usr/lib/pango/1.4.0/modules/pango-indic-fc.so
+usr/lib/pango/1.4.0/modules/pango-syriac-fc.la
+usr/lib/pango/1.4.0/modules/pango-syriac-fc.so
 usr/lib/pango/1.4.0/modules/pango-thai-fc.la
 usr/lib/pango/1.4.0/modules/pango-thai-fc.so
+usr/lib/pango/1.4.0/modules/pango-tibetan-fc.la
+usr/lib/pango/1.4.0/modules/pango-tibetan-fc.so
 usr/share/doc/pango-%%PORTVERSION%%/AUTHORS
 usr/share/doc/pango-%%PORTVERSION%%/COPYING
 usr/share/doc/pango-%%PORTVERSION%%/ChangeLog
