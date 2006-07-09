@@ -7566,6 +7566,7 @@ ohugs		ports/lang/ohugs
 oidentd		ports/security/oidentd
 oilwar		ports/games/oilwar
 oinkmaster	ports/security/oinkmaster
+ojs2		ports/www/ojs2
 okle		ports/multimedia/okle
 oleo		ports/math/oleo
 olirc		ports/irc/olirc
