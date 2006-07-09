@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	chinese
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/
