@@ -7,13 +7,19 @@ English Instructions:
  For future adduser
 	# adduser -k /usr/local/share/skel/zh_TW.Big5
 
+ Finally, tuning your /etc/make.conf.  Please SEE ALSO following file.
+ ==> %%PREFIX%%/share/skel/zh_TW.Big5/make.conf
+
 **************************************************************************
 
-¤¤¤åÁcÅé»¡©ú:
+¤¤¤åÁcÅé(BIG5)»¡©ú:
  ½Ð§iª¾±zªº¨Ï¥ÎªÌ¤ñ¹ï¥L­ÌªºÂÂ³]©w¸ò·s³]©w¡A©ñ¦b
  %%PREFIX%%/share/skel/zh_TW.Big5/dot.*
 
  ­Y¤§«á·s¼W¨Ï¥ÎªÌªº¸Ü¡A½Ð¥Î¤U­±Ãþ¦ü¤è¦¡¡G
 	# adduser -k /usr/local/share/skel/zh_TW.Big5
+ 
+ ³Ì«á¡A½Ð°Ñ¦Ò¤U­±³oÀÉ®×¨Ó­×§ïO /etc/make.conf ¥H°µ§ó¦nªº³]©w¡G 
+ ==> %%PREFIX%%/share/skel/zh_TW.Big5/make.conf
 
 ************************************************************************** 
