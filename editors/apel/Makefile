@@ -48,6 +48,9 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 .include <bsd.port.pre.mk>
 
 .if defined(EMACS_PORT_NAME)
+.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
+PLIST=		${PKGDIR}/pkg-plist.emacs20
+.endif
 # depends on custom: emacs-19.34 or mule-19.34
 .if (${EMACS_VER} == "19.34")
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_NAME}
