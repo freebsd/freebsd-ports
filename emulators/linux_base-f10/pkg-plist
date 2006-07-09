@@ -8875,134 +8875,28 @@ var/lib/rpm/providesindex.rpm
 var/lib/rpm/requiredby.rpm
 var/lib/rpm/triggerindex.rpm
 var/mail
-@comment empty directory listing
-@exec /bin/mkdir -p %D/var/yp
-@exec /bin/mkdir -p %D/var/spool/repackage
-@exec /bin/mkdir -p %D/var/spool/mail
-@exec /bin/mkdir -p %D/var/spool/lpd
-@exec /bin/mkdir -p %D/var/preserve
-@exec /bin/mkdir -p %D/var/opt
-@exec /bin/mkdir -p %D/var/nis
-@exec /bin/mkdir -p %D/var/lock/subsys
-@exec /bin/mkdir -p %D/var/local
-@exec /bin/mkdir -p %D/var/lib/misc
-@exec /bin/mkdir -p %D/var/lib/games
-@exec /bin/mkdir -p %D/var/empty
-@exec /bin/mkdir -p %D/var/db
-@exec /bin/mkdir -p %D/var/cache
-@exec /bin/mkdir -p %D/usr/src
-@exec /bin/mkdir -p %D/usr/share/xsessions
-@exec /bin/mkdir -p %D/usr/share/pixmaps
-@exec /bin/mkdir -p %D/usr/share/misc
-@exec /bin/mkdir -p %D/usr/share/man/mann
-@exec /bin/mkdir -p %D/usr/share/man/man9
-@exec /bin/mkdir -p %D/usr/share/man/man6
-@exec /bin/mkdir -p %D/usr/share/man/man4
-@exec /bin/mkdir -p %D/usr/share/man/man2
-@exec /bin/mkdir -p %D/usr/share/locale/zh_CN.GB2312/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/locale/xh/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/locale/tl/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/locale/te/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/locale/hy/LC_MESSAGES
-@exec /bin/mkdir -p %D/usr/share/games
-@exec /bin/mkdir -p %D/usr/share/empty
-@exec /bin/mkdir -p %D/usr/share/dict
-@exec /bin/mkdir -p %D/usr/share/applications
-@exec /bin/mkdir -p %D/usr/lib/gcc-lib
-@exec /bin/mkdir -p %D/usr/lib/games
-@exec /bin/mkdir -p %D/usr/games
-@exec /bin/mkdir -p %D/usr/doc
-@exec /bin/mkdir -p %D/usr/etc
-@exec /bin/mkdir -p %D/usr/X11R6/share
-@exec /bin/mkdir -p %D/usr/X11R6/man
-@exec /bin/mkdir -p %D/usr/X11R6/lib/tls
-@exec /bin/mkdir -p %D/usr/X11R6/include
-@exec /bin/mkdir -p %D/usr/X11R6/bin
-@exec /bin/mkdir -p %D/sys
-@exec /bin/mkdir -p %D/srv
-@exec /bin/mkdir -p %D/selinux
-@exec /bin/mkdir -p %D/proc
-@exec /bin/mkdir -p %D/opt
-@exec /bin/mkdir -p %D/mnt
-@exec /bin/mkdir -p %D/media
-@exec /bin/mkdir -p %D/lib/modules
-@exec /bin/mkdir -p %D/etc/xinetd.d
-@exec /bin/mkdir -p %D/etc/rpm
-@exec /bin/mkdir -p %D/etc/opt
-@exec /bin/mkdir -p %D/etc/ld.so.conf.d
-@exec /bin/mkdir -p %D/etc/X11/sysconfig
-@exec /bin/mkdir -p %D/etc/X11/starthere
-@exec /bin/mkdir -p %D/etc/X11/serverconfig
-@exec /bin/mkdir -p %D/etc/X11/applnk
-@dirrmtry var/yp
-@dirrmtry var/spool/repackage
-@dirrmtry var/spool/mail
-@dirrmtry var/spool/lpd
-@dirrmtry var/spool
-@dirrmtry var/preserve
-@dirrmtry var/opt
-@dirrmtry var/nis
-@dirrmtry var/lock/subsys
-@dirrmtry var/lock
-@dirrmtry var/local
-@dirrmtry var/lib/rpm
-@dirrmtry var/lib/misc
-@dirrmtry var/lib/games
-@dirrmtry var/lib
-@dirrmtry var/empty
-@dirrmtry var/db
-@dirrmtry var/cache
-@dirrmtry var
-@dirrmtry usr/src
-@dirrmtry usr/share/xsessions
-@dirrmtry usr/share/pixmaps
-@dirrmtry usr/share/misc
-@dirrmtry usr/share/man/mann
-@dirrmtry usr/share/man/man9
-@dirrmtry usr/share/man/man6
-@dirrmtry usr/share/man/man4
-@dirrmtry usr/share/man/man2
-@dirrmtry usr/share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrmtry usr/share/locale/zh_CN.GB2312
-@dirrmtry usr/share/locale/xh/LC_MESSAGES
-@dirrmtry usr/share/locale/xh
-@dirrmtry usr/share/locale/tl/LC_MESSAGES
-@dirrmtry usr/share/locale/tl
-@dirrmtry usr/share/locale/te/LC_MESSAGES
-@dirrmtry usr/share/locale/te
-@dirrmtry usr/share/locale/hy/LC_MESSAGES
-@dirrmtry usr/share/locale/hy
-@dirrmtry usr/share/games
-@dirrmtry usr/share/empty
-@dirrmtry usr/share/dict
-@dirrmtry usr/share/applications
-@dirrmtry usr/lib/gcc-lib
-@dirrmtry usr/lib/games
-@dirrmtry usr/games
-@dirrmtry usr/etc
-@dirrmtry usr/doc
-@dirrmtry usr/X11R6/share
-@dirrmtry usr/X11R6/man
-@dirrmtry usr/X11R6/lib/tls
-@dirrmtry usr/X11R6/include
-@dirrmtry usr/X11R6/bin
-@dirrmtry sys
-@dirrmtry srv
-@dirrmtry selinux
-@dirrmtry proc
-@dirrmtry opt
-@dirrmtry mnt
-@dirrmtry media
-@dirrmtry lib/modules
-@dirrmtry etc/xinetd.d
-@dirrmtry etc/rpm
-@dirrmtry etc/opt
-@dirrmtry etc/ld.so.conf.d
-@dirrmtry etc/X11/sysconfig
-@dirrmtry etc/X11/starthere
-@dirrmtry etc/X11/serverconfig
-@dirrmtry etc/X11/applnk
-@comment non-empty directory listing in revers order
+@comment directory listing in revers order
+@dirrm var/yp
+@dirrm var/spool/repackage
+@dirrm var/spool/mail
+@dirrm var/spool/lpd
+@dirrm var/spool
+@dirrm var/preserve
+@dirrm var/opt
+@dirrm var/nis
+@dirrm var/lock/subsys
+@dirrm var/lock
+@dirrm var/local
+@dirrm var/lib/rpm
+@dirrm var/lib/misc
+@dirrm var/lib/games
+@dirrm var/lib
+@dirrm var/empty
+@dirrm var/db
+@dirrm var/cache
+@dirrm var
+@dirrm usr/src
+@dirrm usr/share/xsessions
 @dirrm usr/share/terminfo/z
 @dirrm usr/share/terminfo/x
 @dirrm usr/share/terminfo/w
@@ -9047,6 +8941,8 @@ var/mail
 @dirrm usr/share/terminfo/1
 @dirrm usr/share/terminfo
 @dirrm usr/share/tabset
+@dirrm usr/share/pixmaps
+@dirrm usr/share/misc
 @dirrm usr/share/man/sk/man8
 @dirrm usr/share/man/sk
 @dirrm usr/share/man/ru/man8
@@ -9054,10 +8950,15 @@ var/mail
 @dirrm usr/share/man/pl/man8
 @dirrm usr/share/man/pl/man1
 @dirrm usr/share/man/pl
+@dirrm usr/share/man/mann
+@dirrm usr/share/man/man9
 @dirrm usr/share/man/man8
 @dirrm usr/share/man/man7
+@dirrm usr/share/man/man6
 @dirrm usr/share/man/man5
+@dirrm usr/share/man/man4
 @dirrm usr/share/man/man3
+@dirrm usr/share/man/man2
 @dirrm usr/share/man/man1
 @dirrm usr/share/man/ja/man8
 @dirrm usr/share/man/ja
@@ -9067,21 +8968,49 @@ var/mail
 @dirrm usr/share/locale/zh_TW
 @dirrm usr/share/locale/zh_CN/LC_TIME
 @dirrm usr/share/locale/zh_CN/LC_MESSAGES
+@dirrm usr/share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm usr/share/locale/zh_CN.GB2312
 @dirrm usr/share/locale/zh_CN
 @dirrm usr/share/locale/zh/LC_MESSAGES
 @dirrm usr/share/locale/zh
+@dirrm usr/share/locale/yi/LC_MESSAGES
+@dirrm usr/share/locale/yi
+@dirrm usr/share/locale/xh/LC_MESSAGES
+@dirrm usr/share/locale/xh
 @dirrm usr/share/locale/wa/LC_MESSAGES
 @dirrm usr/share/locale/wa
+@dirrm usr/share/locale/vi/LC_MESSAGES
+@dirrm usr/share/locale/vi
+@dirrm usr/share/locale/uz@Latn/LC_MESSAGES
+@dirrm usr/share/locale/uz@Latn
+@dirrm usr/share/locale/uz/LC_MESSAGES
+@dirrm usr/share/locale/uz
 @dirrm usr/share/locale/uk/LC_MESSAGES
 @dirrm usr/share/locale/uk
 @dirrm usr/share/locale/tr/LC_TIME
 @dirrm usr/share/locale/tr/LC_MESSAGES
 @dirrm usr/share/locale/tr
+@dirrm usr/share/locale/tl/LC_MESSAGES
+@dirrm usr/share/locale/tl
+@dirrm usr/share/locale/tk/LC_MESSAGES
+@dirrm usr/share/locale/tk
+@dirrm usr/share/locale/th/LC_MESSAGES
+@dirrm usr/share/locale/th
+@dirrm usr/share/locale/te/LC_MESSAGES
+@dirrm usr/share/locale/te
+@dirrm usr/share/locale/ta/LC_MESSAGES
+@dirrm usr/share/locale/ta
 @dirrm usr/share/locale/sv/LC_TIME
 @dirrm usr/share/locale/sv/LC_MESSAGES
 @dirrm usr/share/locale/sv
+@dirrm usr/share/locale/sr@ije/LC_MESSAGES
+@dirrm usr/share/locale/sr@ije
+@dirrm usr/share/locale/sr@Latn/LC_MESSAGES
+@dirrm usr/share/locale/sr@Latn
 @dirrm usr/share/locale/sr/LC_MESSAGES
 @dirrm usr/share/locale/sr
+@dirrm usr/share/locale/sq/LC_MESSAGES
+@dirrm usr/share/locale/sq
 @dirrm usr/share/locale/sl/LC_TIME
 @dirrm usr/share/locale/sl/LC_MESSAGES
 @dirrm usr/share/locale/sl
@@ -9104,24 +9033,52 @@ var/mail
 @dirrm usr/share/locale/pl/LC_TIME
 @dirrm usr/share/locale/pl/LC_MESSAGES
 @dirrm usr/share/locale/pl
+@dirrm usr/share/locale/pa/LC_MESSAGES
+@dirrm usr/share/locale/pa
+@dirrm usr/share/locale/or/LC_MESSAGES
+@dirrm usr/share/locale/or
+@dirrm usr/share/locale/nso/LC_MESSAGES
+@dirrm usr/share/locale/nso
 @dirrm usr/share/locale/no/LC_TIME
 @dirrm usr/share/locale/no/LC_MESSAGES
 @dirrm usr/share/locale/no
+@dirrm usr/share/locale/nn/LC_MESSAGES
+@dirrm usr/share/locale/nn
 @dirrm usr/share/locale/nl/LC_TIME
 @dirrm usr/share/locale/nl/LC_MESSAGES
 @dirrm usr/share/locale/nl
+@dirrm usr/share/locale/ne/LC_MESSAGES
+@dirrm usr/share/locale/ne
 @dirrm usr/share/locale/nb/LC_TIME
 @dirrm usr/share/locale/nb/LC_MESSAGES
 @dirrm usr/share/locale/nb
 @dirrm usr/share/locale/ms/LC_TIME
 @dirrm usr/share/locale/ms/LC_MESSAGES
 @dirrm usr/share/locale/ms
+@dirrm usr/share/locale/mr/LC_MESSAGES
+@dirrm usr/share/locale/mr
+@dirrm usr/share/locale/mn/LC_MESSAGES
+@dirrm usr/share/locale/mn
+@dirrm usr/share/locale/ml/LC_MESSAGES
+@dirrm usr/share/locale/ml
+@dirrm usr/share/locale/mk/LC_MESSAGES
+@dirrm usr/share/locale/mk
+@dirrm usr/share/locale/mi/LC_MESSAGES
+@dirrm usr/share/locale/mi
+@dirrm usr/share/locale/lv/LC_MESSAGES
+@dirrm usr/share/locale/lv
+@dirrm usr/share/locale/lt/LC_MESSAGES
+@dirrm usr/share/locale/lt
+@dirrm usr/share/locale/li/LC_MESSAGES
+@dirrm usr/share/locale/li
 @dirrm usr/share/locale/lg/LC_TIME
 @dirrm usr/share/locale/lg/LC_MESSAGES
 @dirrm usr/share/locale/lg
 @dirrm usr/share/locale/ko/LC_TIME
 @dirrm usr/share/locale/ko/LC_MESSAGES
 @dirrm usr/share/locale/ko
+@dirrm usr/share/locale/kn/LC_MESSAGES
+@dirrm usr/share/locale/kn
 @dirrm usr/share/locale/ja/LC_TIME
 @dirrm usr/share/locale/ja/LC_MESSAGES
 @dirrm usr/share/locale/ja
@@ -9132,11 +9089,21 @@ var/mail
 @dirrm usr/share/locale/is
 @dirrm usr/share/locale/id/LC_MESSAGES
 @dirrm usr/share/locale/id
+@dirrm usr/share/locale/ia/LC_MESSAGES
+@dirrm usr/share/locale/ia
+@dirrm usr/share/locale/hy/LC_MESSAGES
+@dirrm usr/share/locale/hy
 @dirrm usr/share/locale/hu/LC_TIME
 @dirrm usr/share/locale/hu/LC_MESSAGES
 @dirrm usr/share/locale/hu
 @dirrm usr/share/locale/hr/LC_MESSAGES
 @dirrm usr/share/locale/hr
+@dirrm usr/share/locale/hi/LC_MESSAGES
+@dirrm usr/share/locale/hi
+@dirrm usr/share/locale/he/LC_MESSAGES
+@dirrm usr/share/locale/he
+@dirrm usr/share/locale/gu/LC_MESSAGES
+@dirrm usr/share/locale/gu
 @dirrm usr/share/locale/gl/LC_TIME
 @dirrm usr/share/locale/gl/LC_MESSAGES
 @dirrm usr/share/locale/gl
@@ -9149,8 +9116,12 @@ var/mail
 @dirrm usr/share/locale/fi/LC_TIME
 @dirrm usr/share/locale/fi/LC_MESSAGES
 @dirrm usr/share/locale/fi
+@dirrm usr/share/locale/fa/LC_MESSAGES
+@dirrm usr/share/locale/fa
 @dirrm usr/share/locale/eu_ES/LC_MESSAGES
 @dirrm usr/share/locale/eu_ES
+@dirrm usr/share/locale/eu/LC_MESSAGES
+@dirrm usr/share/locale/eu
 @dirrm usr/share/locale/et/LC_TIME
 @dirrm usr/share/locale/et/LC_MESSAGES
 @dirrm usr/share/locale/et
@@ -9161,10 +9132,14 @@ var/mail
 @dirrm usr/share/locale/eo
 @dirrm usr/share/locale/en_GB/LC_MESSAGES
 @dirrm usr/share/locale/en_GB
+@dirrm usr/share/locale/en_CA/LC_MESSAGES
+@dirrm usr/share/locale/en_CA
 @dirrm usr/share/locale/en@quot/LC_MESSAGES
 @dirrm usr/share/locale/en@quot
 @dirrm usr/share/locale/en@boldquot/LC_MESSAGES
 @dirrm usr/share/locale/en@boldquot
+@dirrm usr/share/locale/en/LC_MESSAGES
+@dirrm usr/share/locale/en
 @dirrm usr/share/locale/el/LC_TIME
 @dirrm usr/share/locale/el/LC_MESSAGES
 @dirrm usr/share/locale/el
@@ -9174,15 +9149,35 @@ var/mail
 @dirrm usr/share/locale/da/LC_TIME
 @dirrm usr/share/locale/da/LC_MESSAGES
 @dirrm usr/share/locale/da
+@dirrm usr/share/locale/cy/LC_MESSAGES
+@dirrm usr/share/locale/cy
 @dirrm usr/share/locale/cs/LC_TIME
 @dirrm usr/share/locale/cs/LC_MESSAGES
 @dirrm usr/share/locale/cs
 @dirrm usr/share/locale/ca/LC_TIME
 @dirrm usr/share/locale/ca/LC_MESSAGES
 @dirrm usr/share/locale/ca
+@dirrm usr/share/locale/bs/LC_MESSAGES
+@dirrm usr/share/locale/bs
+@dirrm usr/share/locale/br/LC_MESSAGES
+@dirrm usr/share/locale/br
+@dirrm usr/share/locale/bn/LC_MESSAGES
+@dirrm usr/share/locale/bn
+@dirrm usr/share/locale/bg/LC_MESSAGES
+@dirrm usr/share/locale/bg
 @dirrm usr/share/locale/be/LC_TIME
 @dirrm usr/share/locale/be/LC_MESSAGES
 @dirrm usr/share/locale/be
+@dirrm usr/share/locale/az_IR/LC_MESSAGES
+@dirrm usr/share/locale/az_IR
+@dirrm usr/share/locale/az/LC_MESSAGES
+@dirrm usr/share/locale/az
+@dirrm usr/share/locale/as/LC_MESSAGES
+@dirrm usr/share/locale/as
+@dirrm usr/share/locale/ar/LC_MESSAGES
+@dirrm usr/share/locale/ar
+@dirrm usr/share/locale/am/LC_MESSAGES
+@dirrm usr/share/locale/am
 @dirrm usr/share/locale/af/LC_TIME
 @dirrm usr/share/locale/af/LC_MESSAGES
 @dirrm usr/share/locale/af
@@ -9191,9 +9186,11 @@ var/mail
 @dirrm usr/share/i18n/locales
 @dirrm usr/share/i18n/charmaps
 @dirrm usr/share/i18n
+@dirrm usr/share/games
 @dirrm usr/share/firstboot/modules
 @dirrm usr/share/firstboot
 @dirrm usr/share/eula
+@dirrm usr/share/empty
 @dirrm usr/share/doc/zlib-1.2.2.2
 @dirrm usr/share/doc/setup-2.5.44
 @dirrm usr/share/doc/setserial-2.17
@@ -9244,7 +9241,9 @@ var/mail
 @dirrm usr/share/doc/HTML/css
 @dirrm usr/share/doc/HTML
 @dirrm usr/share/doc
-@dirrmtry usr/share
+@dirrm usr/share/dict
+@dirrm usr/share/applications
+@dirrm usr/share
 @dirrm usr/sbin
 @dirrm usr/libexec/getconf
 @dirrm usr/libexec
@@ -9983,31 +9982,57 @@ var/mail
 @dirrm usr/lib/locale/aa_DJ
 @dirrm usr/lib/locale
 @dirrm usr/lib/gconv
+@dirrm usr/lib/gcc-lib
+@dirrm usr/lib/games
 @dirrm usr/lib
 @dirrm usr/include
+@dirrm usr/games
+@dirrm usr/etc
+@dirrm usr/doc
 @dirrm usr/bin
+@dirrm usr/X11R6/share
+@dirrm usr/X11R6/man
+@dirrm usr/X11R6/lib/tls
 @dirrm usr/X11R6/lib
+@dirrm usr/X11R6/include
+@dirrm usr/X11R6/bin
 @dirrm usr/X11R6
-@dirrmtry usr
+@dirrm usr
+@dirrm sys
+@dirrm srv
+@dirrm selinux
 @dirrm sbin
+@dirrmtry proc
+@dirrm opt
+@dirrm mnt
+@dirrm media
 @dirrm lib/tls/i686
 @dirrm lib/tls/i586
 @dirrm lib/tls/i486
 @dirrm lib/tls
 @dirrm lib/obsolete/linuxthreads
 @dirrm lib/obsolete
+@dirrm lib/modules
 @dirrm lib
 @dirrm etc/yum.repos.d
+@dirrm etc/xinetd.d
 @dirrm etc/sysconfig/rhn
 @dirrm etc/sysconfig
 @dirrm etc/skel
+@dirrm etc/rpm
 @dirrm etc/profile.d
 @dirrm etc/pki/rpm-gpg
 @dirrm etc/pki
 @dirrm etc/pam.d
+@dirrm etc/opt
 @dirrm etc/logrotate.d
+@dirrm etc/ld.so.conf.d
 @dirrm etc/default
 @dirrm etc/cron.daily
+@dirrm etc/X11/sysconfig
+@dirrm etc/X11/starthere
+@dirrm etc/X11/serverconfig
+@dirrm etc/X11/applnk
 @dirrm etc/X11
 @dirrm etc
 @dirrm bin
