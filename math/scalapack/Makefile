@@ -35,6 +35,7 @@ F77?=	f77
 
 ARCH2FIX=	PBLAS/SRC PBLAS/SRC/PBBLAS PBLAS/SRC/PTOOLS PBLAS/SRC/PTZBLAS \
 		REDIST/SRC SRC TOOLS TOOLS/LAPACK
+BLAS=		-lf77blas -latlas
 
 DATADIR=	${PREFIX}/share/${PORTNAME:U}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:U}
@@ -57,7 +58,7 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .endif
 .endif
 post-patch:
-	${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@PREFIX@,${PREFIX},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
+	${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC},g ; s,@PREFIX@,${PREFIX},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
 .for mkf in ${ARCH2FIX}
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${mkf}/Makefile
 .endfor

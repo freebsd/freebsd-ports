@@ -56,7 +56,7 @@
  #
  SCALAPACKLIB  = $(home)/libscalapack.a
 -BLASLIB       = /usr/local/lib/libf77blas.a /usr/local/lib/libatlas.a
-+BLASLIB       = -L@PREFIX@/lib -lf77blas -latlas
++BLASLIB       = -L@PREFIX@/lib @BLAS%
  #
  PBLIBS        = $(SCALAPACKLIB) $(FBLACSLIB) $(BLASLIB) $(SMPLIB)
  PRLIBS        = $(SCALAPACKLIB) $(CBLACSLIB) $(SMPLIB)
