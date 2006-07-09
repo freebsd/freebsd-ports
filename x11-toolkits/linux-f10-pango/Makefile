@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 CATEGORIES=	x11-toolkits linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-7
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux pango binary
@@ -22,10 +21,10 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2
 USE_XLIB=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	3
+LINUX_DIST_VER=	4
 INSTALLS_SHLIB=	yes
 BRANDELF_DIRS=	usr/bin
-PLIST_SUB+=	LIBVERSION="600.0" PORTVERSION="${PORTVERSION}"
+PLIST_SUB+=	LIBVERSION="800.1" PORTVERSION="${PORTVERSION}"
 
 post-install:
 	@${PREFIX}/usr/bin/pango-querymodules-32 > ${PREFIX}/etc/pango/i386-redhat-linux-gnu/pango.modules

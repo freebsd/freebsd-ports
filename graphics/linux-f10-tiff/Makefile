@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.6.1
-PORTREVISION=	6
+PORTVERSION=	3.7.1
 CATEGORIES=	graphics linux
-DISTNAME=	libtiff-${PORTVERSION}-10.fc3
+DISTNAME=	libtiff-${PORTVERSION}-6.fc4.2
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	TIFF library, Linux/i386 binary
@@ -18,9 +17,10 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	3
+LINUX_DIST_VER=	4
 INSTALLS_SHLIB=	yes
 BRANDELF_DIRS=	usr/bin
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 .include <bsd.port.mk>
