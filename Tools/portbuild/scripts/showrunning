@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# show currently running builds in terse format
+#
+ps axww | \
+  grep "/var/portbuild/scripts/pdispatch" | \
+  grep -v "grep /var/portbuild/scripts/pdispatch" | \
+  sed -e "s@.*pdispatch @@;s@/var/portbuild/scripts/portbuild .*/usr/ports/@@;s/ /-/" | \
+  sort
