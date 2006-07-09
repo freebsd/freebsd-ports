@@ -33,7 +33,7 @@ RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 
 CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 
-SKKDIC_FILE=	SKK-JISYO.L-20051120
+SKKDIC_FILE=	SKK-JISYO.L-20060709
 
 .include <bsd.port.pre.mk>
 
