@@ -675,6 +675,7 @@
     SUBDIR += service-discovery-applet
     SUBDIR += sflowtool
     SUBDIR += sharity-light
+    SUBDIR += shelldap
     SUBDIR += shmux
     SUBDIR += silc-client
     SUBDIR += silc-server

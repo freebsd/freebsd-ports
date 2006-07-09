@@ -1,0 +1,15 @@
+This is shelldap, a handy shell-like interface for browsing
+LDAP servers and editing their content.
+
+Among its features:
+
+	- history
+	- sane autocompletes
+	- credential caching
+	- site-wide and individual config
+	- it's in perl
+	- it's fun to say!  shelldap! shelldap! shelldap!
+
+For more info, 'perldoc' the script.
+
+Author:	Mahlon E. Smith <mahlon@martini.nu>
