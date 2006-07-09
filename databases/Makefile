@@ -152,6 +152,7 @@
     SUBDIR += mysqltcl
     SUBDIR += mytop
     SUBDIR += namazu2
+    SUBDIR += opendbx
     SUBDIR += oracle7-client
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
