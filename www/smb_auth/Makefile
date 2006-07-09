@@ -9,7 +9,8 @@ PORTNAME=	smb_auth
 PORTVERSION=	0.05
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.hacom.nl/~richard/software/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A proxy authentication module against an SMB server
