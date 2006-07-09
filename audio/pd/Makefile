@@ -33,7 +33,7 @@ WRKSRC=		${WRKDIR}/pd-0.37-1test1/src
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 pre-patch:
