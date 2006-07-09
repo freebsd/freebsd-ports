@@ -56,7 +56,9 @@ CONFIGURE_ARGS+=	--disable-readline
 .endif
 
 post-install:
+	${MV} ${PREFIX}/bin/octave-${OCTAVE_VERSION} ${PREFIX}/libexec/octave/${OCTAVE_VERSION}
 	${INSTALL_SCRIPT} ${WRKDIR}/octave ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/octave ${PREFIX}/bin/octave-${OCTAVE_VERSION}
 	${INSTALL_DATA} ${WRKSRC}/doc/liboctave/liboctave.info ${PREFIX}/info
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
