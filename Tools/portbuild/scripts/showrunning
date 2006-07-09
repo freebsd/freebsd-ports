@@ -7,5 +7,5 @@
 ps axww | \
   grep "/var/portbuild/scripts/pdispatch" | \
   grep -v "grep /var/portbuild/scripts/pdispatch" | \
-  sed -e "s@.*pdispatch @@;s@/var/portbuild/scripts/portbuild .*/usr/ports/@@;s/ /-/" | \
+  sed -e "s@.*pdispatch @@;s@/var/portbuild/scripts/portbuild .*/usr/ports/@@;s@^ @@g;s@ @-@" | \
   sort
