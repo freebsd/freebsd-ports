@@ -9,7 +9,7 @@ PORTNAME=	ufsparse
 PORTVERSION=	2.0.0.b
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/UFsparse/v2.0.0beta/
-DISTNAME=	${PORTNAME}
+DISTNAME=	UFsparse
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	UFspace is a set of packages for sparse matrices calculation
