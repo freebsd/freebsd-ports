@@ -6129,9 +6129,9 @@ lincity		ports/games/lincity
 lincity-ng	ports/games/lincity-ng
 lincvs		ports/devel/lincvs
 lindele		ports/audio/lindele
-lineak_defaultplugin	ports/sysutils/lineak_defaultplugin
-lineak_kdeplugins	ports/sysutils/lineak_kdeplugins
-lineak_xosdplugin	ports/sysutils/lineak_xosdplugin
+lineak-defaultplugin	ports/sysutils/lineak-defaultplugin
+lineak-kdeplugins	ports/sysutils/lineak-kdeplugins
+lineak-xosdplugin	ports/sysutils/lineak-xosdplugin
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
 link-grammar	ports/textproc/link-grammar
