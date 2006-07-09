@@ -1,7 +1,7 @@
 smb_auth is a proxy authentication module.  With smb_auth you can authenticate
 proxy users against an SMB server like Windows NT or Samba.
 
-WWW: http://www.hacom.nl/~richard/software/smb_auth.html
+WWW: http://web.archive.org/web/20050320094310/http://www.hacom.nl/~richard/software/smb_auth.html
 
 - Maxim Sobolev
 sobomax@FreeBSD.org
