@@ -23,8 +23,6 @@ DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
 MAINTAINER=	ko@irfu.se
 COMMENT?=	The Visualization Toolkit shared libs
 
-BROKEN=		Does not build
-
 LIBVER=		1
 VTKSRCDIR=	${WRKDIR}/VTK
 TESTINGDIR=	${EXAMPLESDIR}/Testing
@@ -155,6 +153,8 @@ patch-common:
 #
 #       -TARGET_LINK_LIBRARIES(vtk${KIT} ${KIT_LIBS})
 #
+#       -INSTALL_TARGETS(/lib/vtk vtk${KIT})
+#
 # ${VTKSRCDIR}/[Common Filtering IO ...]/Tests/CMakeLists.txt :
 #       -SUBDIRS(Cxx)
 #
@@ -163,7 +163,7 @@ patch-common:
 
 	@for dir in ${VTK_KITS} ; do \
 		${ECHO_MSG} "Patching ${WRKDIR}/${VTKSRCDIR}/$$dir/CMakeLists.txt ..." ; \
-		${REINPLACE_CMD} -E 's|ADD_LIBRARY *\(vtk\$$\{KIT\} .*$$|FIND_LIBRARY\('$$dir'_LIB NAMES vtk\$$\{KIT\} PATHS ${PREFIX}/lib\)|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\}${WRAP} vtk\$$\{KIT\}|TARGET_LINK_LIBRARIES\(vtk\$$\{KIT\}${WRAP} \$$\{'$$dir'_LIB\}|g ; s|^[ \t]*vtk\$$\{KIT\}[ \t]*$$| \$$\{'$$dir'_LIB\}|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\} .*$$||g' \
+		${REINPLACE_CMD} -E 's|ADD_LIBRARY *\(vtk\$$\{KIT\} .*$$|FIND_LIBRARY\('$$dir'_LIB NAMES vtk\$$\{KIT\} PATHS ${PREFIX}/lib\)|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\}${WRAP} vtk\$$\{KIT\}|TARGET_LINK_LIBRARIES\(vtk\$$\{KIT\}${WRAP} \$$\{'$$dir'_LIB\}|g ; s|^[ \t]*vtk\$$\{KIT\}[ \t]*$$| \$$\{'$$dir'_LIB\}|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\} .*$$||g ; s|INSTALL_TARGETS *\(.* vtk\$$\{KIT\}\)||g' \
 			${VTKSRCDIR}/$$dir/CMakeLists.txt ; \
 	done
 
