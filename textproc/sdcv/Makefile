@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	glib20
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+SUB_FILES=	pkg-message
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -61,5 +62,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, getopt.h,,g; s,@USE_NLS@,yes,g' \
 		${WRKSRC}/src/Makefile.in
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
