@@ -64,7 +64,7 @@ IGNORE=		systems prior to FreeBSD 480102 currently out of support
 IGNORE=		linprocfs is required, please build the module and/or add it to your kernel
 .endif
 
-.if !exists(${SRC_BASE}/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		kernel source files required
 .endif
 
