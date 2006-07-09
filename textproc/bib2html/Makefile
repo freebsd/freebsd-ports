@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	bib2html
-DISTVERSION=	4.2-1
+DISTVERSION=	4.3-1
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.arakhne.org/IMG/gz/ \
 		http://fresh.t-systems-sfr.com/fresh/unix/src/privat2/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The BibTeX to HTML Translator
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-4.2/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-4.3/src
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
