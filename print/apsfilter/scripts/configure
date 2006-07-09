@@ -29,6 +29,9 @@ ATALK		"remote printing on AppleTalk remote printer"	OFF	\
 SAMBA		"remote printing on Windows remote printer"	OFF	\
 BZIP2		"print bunzip2 compressed documents"		OFF	\
 FREEZE		"print freeze compressed documents"		OFF	\
+MP3		"play MP3 audio files on local or remote queue"	OFF	\
+OGG		"play Ogg audio files on local or remote queue"	OFF	\
+WAV		"play wav audio files on local or remote queue"	OFF	\
 2> /tmp/apsfilter-checklist.$$
 
 retval=$?
@@ -139,6 +142,15 @@ while [ "$1" ]; do
 		;;
 	\"FREEZE\")
 		echo RUN_DEPENDS+=melt:${PORTSDIR}/archivers/freeze
+		;;
+	\"MP3\")
+		echo RUN_DEPENDS+=mpg321:${PORTSDIR}/audio/mpg321
+		;;
+	\"OGG\")
+		echo RUN_DEPENDS+=ogg123:${PORTSDIR}/audio/vorbis-tools
+		;;
+	\"WAV\")
+		echo RUN_DEPENDS+=wavplay:${PORTSDIR}/audio/wavplay
 		;;
     esac
     shift
