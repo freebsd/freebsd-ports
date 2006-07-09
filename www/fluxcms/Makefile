@@ -35,7 +35,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
-BROKEN_WITH_PHP=	4
+IGNORE_WITH_PHP=	4
 
 .if !defined(WITHOUT_GD)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/gd.so:${PORTSDIR}/${gd_DEPENDS}
