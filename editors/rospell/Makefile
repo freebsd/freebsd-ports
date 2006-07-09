@@ -7,12 +7,16 @@
 
 PORTNAME=	rospell
 PORTVERSION=	2006.01
+PORTREVISION=	1
 CATEGORIES=	editors textproc # this should/will be romanian ;)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	QT-based editor with support for romanian charsets and spell checking
+
+BUILD_DEPENDS+=	${LOCALBASE}/include/readtags.h:${PORTSDIR}/devel/ctags
+RUN_DEPENDS+=	${LOCALBASE}/lib/readtags.o:${PORTSDIR}/devel/ctags
 
 USE_XLIB=	yes
 USE_QT_VER=	3
