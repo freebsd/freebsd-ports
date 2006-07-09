@@ -109,6 +109,7 @@
     SUBDIR += dtdinst
     SUBDIR += dtdparse
     SUBDIR += easydiff
+    SUBDIR += ecromedos
     SUBDIR += el-aspell
     SUBDIR += emacs-wiki
     SUBDIR += enchant
