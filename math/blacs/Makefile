@@ -22,8 +22,6 @@ EXTRACT_ONLY=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The BLACS (Basic Linear Algebra Communication Subprograms)
 
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
-		atlas:${PORTSDIR}/math/atlas
 BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
