@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Proc-ProcessTable
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the unix process table
 
 PERL_CONFIGURE=	YES
