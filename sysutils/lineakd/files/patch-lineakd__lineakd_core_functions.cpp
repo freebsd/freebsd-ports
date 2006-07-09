@@ -1,14 +1,6 @@
---- lineakd/lineakd_core_functions.cpp.orig	Wed Mar  2 13:15:38 2005
-+++ lineakd/lineakd_core_functions.cpp	Sat Apr  2 18:13:06 2005
-@@ -46,6 +46,7 @@
- #include <sys/wait.h>
- }
- 
-+#include <lineak/lineak_core_functions.h>
- #include <lineak/definitions.h>
- #include <lineak/configdirectives.h>
- #include <lineak/saver.h>
-@@ -256,7 +257,7 @@
+--- lineakd/lineakd_core_functions.cpp.orig	Fri May 26 14:49:04 2006
++++ lineakd/lineakd_core_functions.cpp	Fri May 26 14:51:07 2006
+@@ -261,7 +261,7 @@
    	sigprocmask(SIG_SETMASK, &mask_set, &old_set);
  
     	/* now do some cleaning... */
@@ -17,7 +9,7 @@
     	/* Clean up X */
          if (X != 0) {
    		X->cleanup(myKbd);
-@@ -270,12 +271,12 @@
+@@ -275,12 +275,12 @@
          if (!plugincleanup) {
             plugincleanup = true;
             if ( plugins != NULL) {
@@ -33,7 +25,7 @@
             }
          }
  
-@@ -283,13 +284,13 @@
+@@ -288,13 +288,13 @@
    	//sigprocmask(SIG_SETMASK, &old_set, NULL);
  
          /* Remove the message queue */
@@ -49,7 +41,7 @@
          lockCtrl lock("lineakd");
          lock.unlock();
  //      exit(true);
-@@ -321,16 +322,16 @@
+@@ -326,16 +326,16 @@
    		sigprocmask(SIG_SETMASK, &mask_set, &old_set);
     		//bool verbose = cmdprefs.getVerbose();
  
@@ -70,7 +62,7 @@
                  /** Load the plugins */
                  plugins->loadPlugins(pluginlist);
                  /** Define the list of macros we support */
-@@ -370,34 +371,34 @@
+@@ -375,37 +375,37 @@
                  cmdprefs.setDefaults(dnd);
  
    		/* reload .conf and .def file */
@@ -109,6 +101,10 @@
  
 -  		msg("*** Restarting On Screen Display...");
 +  		lineak_core_functions::msg("*** Restarting On Screen Display...");
-   		myDisplay->init(myConfig);
+ 		myDisplay = plugins->getDisplay(myConfig);
+   		//myDisplay->init(myConfig);
+-		msg("*** InitializePluginsDisplay...");
++		lineak_core_functions::msg("*** InitializePluginsDisplay...");
                  plugins->initializePluginsDisplay(*myDisplay);
  
+     	donehup=false;

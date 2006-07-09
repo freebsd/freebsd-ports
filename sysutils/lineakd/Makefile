@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lineakd
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=lineak
@@ -28,7 +27,7 @@ CONFIGURE_ARGS+=--program-prefix=''
 PORTDOCS=	README TODO AUTHORS
 
 MAN1=		lineakd.1
-MANCOMPRESSED=	yes
+#MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -38,8 +37,10 @@ USE_GCC=	3.4
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/lineakd/Makefile.in
-	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/lineakd/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lpthread||' \
+		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ldl||' \
+		${WRKSRC}/lineak/Makefile.in ${WRKSRC}/lineakd/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
 post-install:

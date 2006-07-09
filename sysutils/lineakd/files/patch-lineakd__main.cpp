@@ -1,6 +1,6 @@
---- lineakd/main.cpp.orig	Mon Feb 21 20:26:38 2005
-+++ lineakd/main.cpp	Sat Apr  2 18:20:50 2005
-@@ -134,19 +134,19 @@
+--- lineakd/main.cpp.orig	Fri May 26 14:51:44 2006
++++ lineakd/main.cpp	Fri May 26 14:53:46 2006
+@@ -136,19 +136,19 @@
    /** Load the plugins */
    plugins->loadPlugins(pluginlist);
    if (verbose) {
@@ -26,7 +26,7 @@
    plugins->defineDirectivesLists();
    //if (verbose) plugins->listPlugins();
     /** Get a list of macros we support so that we can inform other classes */
-@@ -307,7 +307,7 @@
+@@ -318,7 +318,7 @@
    watch_messages();
  
    /* init X/Xkb with our EAK keycodes/keysyms */
@@ -35,7 +35,7 @@
  
    if (!X->initialize(myKbd)) {
       cerr << "Could not initialize all keys. Retrying.\n";
-@@ -329,7 +329,7 @@
+@@ -340,7 +340,7 @@
          myDisplay = new displayCtrl(myConfig);
          myDisplay->init();
    }
@@ -44,7 +44,7 @@
    plugins->initializePluginsDisplay(*myDisplay);
  
    /* alright, we're going to loop forever now. only signals can interrupt us. */
-@@ -362,23 +362,23 @@
+@@ -375,23 +375,23 @@
       // like VMWare.
       if (xev.type == MappingNotify) {
  //       if (!X->xkbRemapped()) {
@@ -73,8 +73,8 @@
 +	   lineak_core_functions::msg("Restarting the OSD.");
  	   myDisplay = plugins->getDisplay(myConfig);
  	   if (myDisplay != NULL) {
- 	       if (very_verbose) cout << "Reiniting plugin provided On Screen Display" << endl;
-@@ -390,7 +390,7 @@
+ 	       //if (very_verbose) cout << "Reiniting plugin provided On Screen Display" << endl;
+@@ -405,7 +405,7 @@
  	       myDisplay->init();
  	   }
  	   // Initialize the plugin displays again.
@@ -83,38 +83,21 @@
  	   plugins->initializePluginsDisplay(*myDisplay);
  	   // set exec.setDisplayCtrl(myDisplay) again.
  	   exec.setDisplayCtrl(myDisplay);
-@@ -414,7 +414,7 @@
- 		 } 
+@@ -433,7 +433,7 @@
  
  	         if (obj != NULL) {
--		    msg("Got an object!");
-+		    lineak_core_functions::msg("Got an object!");
+ 		    vmsg("Got an object!");
+-                    msg("Looking for SYM and PRESS");
++                    lineak_core_functions::msg("Looking for SYM and PRESS");
  	            if (obj->getType() == SYM && obj->getEventType() == PRESS) {
- 		      cout << "xev.xkey.keycode = " << xev.xkey.keycode << endl;
- 		      cout << "obj->getKeyCode() = " << obj->getKeyCode() << endl;
-@@ -435,21 +435,21 @@
+ 		      if (verbose) {
+ 		         cout << "xev.xkey.keycode = " << xev.xkey.keycode << endl;
+@@ -451,7 +451,7 @@
  		       }
  	            }
  	            else {
--		        msg("Looking for CODE and PRESS");
-+		        lineak_core_functions::msg("Looking for CODE and PRESS");
- 			
+-		       msg("Looking for CODE and PRESS");
++		       lineak_core_functions::msg("Looking for CODE and PRESS");
  	               if (obj->getType() == CODE && obj->getEventType() == PRESS)
  	               {
- 		          if (verbose) cout << xev.xkey.keycode << " = " << obj->getKeyCode() << endl;
- 			  
- 			  if (obj->hasModifier(xev.xkey.state))
--			     msg("true");
-+			     lineak_core_functions::msg("true");
- 			  else
--			     msg("false");
-+			     lineak_core_functions::msg("false");
- 			  
- 		          if ((int)xev.xkey.keycode == obj->getKeyCode()
- 		              && obj->hasModifier((int)xev.xkey.state))
- 		          {
--			     msg("getting to the right place!");
-+			     lineak_core_functions::msg("getting to the right place!");
- 			     execute = plugins->exec(obj,xev);
- 	                     if (execute != NULL)
-                                 execute(obj,xev);
+ 		          if (very_verbose) cout << xev.xkey.keycode << " = " << obj->getKeyCode() << endl;

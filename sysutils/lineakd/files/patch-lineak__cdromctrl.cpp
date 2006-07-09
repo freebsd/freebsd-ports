@@ -1,19 +1,23 @@
---- lineak/cdromctrl.cpp.orig	Thu Oct 28 17:04:06 2004
-+++ lineak/cdromctrl.cpp	Sat Jan 15 11:28:04 2005
-@@ -26,6 +26,12 @@
+--- lineak/cdromctrl.cpp.orig	Fri May 26 14:34:03 2006
++++ lineak/cdromctrl.cpp	Fri May 26 14:39:48 2006
+@@ -21,7 +21,7 @@
+ extern "C" {
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+-#if defined (__FreeBSD_kernel__) || defined(__FreeBSD_kernel__)
++#if defined (__FreeBSD__) || defined(__FreeBSD__)
+ # include <sys/cdio.h>
  # define CDROMEJECT CDIOCEJECT /*_IO('c', 107)*/
  # define CDROMCLOSETRAY CDIOCCLOSE
- #else
+@@ -37,6 +37,7 @@
+ #  include <scsi/scsi.h>
+ #  include <scsi/sg.h>
+ #  include <scsi/scsi_ioctl.h>
 +#  include <sys/mount.h>
-+
-+#  include <scsi/scsi.h>
-+#  include <scsi/sg.h>
-+#  include <scsi/scsi_ioctl.h>
-+
- #  include <linux/version.h>
- #  if LINUX_VERSION_CODE >= KERNEL_VERSION(2,5,70)
-      typedef unsigned char u8;
-@@ -37,16 +43,11 @@
+ #endif
+ #if defined (__CYGWIN__)
+ #  include <windows.h>
+@@ -47,7 +48,6 @@
  
  #include <sys/stat.h>
  #include <sys/types.h>
@@ -21,30 +25,3 @@
  
  #include <stdio.h>
  #include <errno.h>
- #include <unistd.h>
- 
--#include <scsi/scsi.h>
--#include <scsi/sg.h>
--#include <scsi/scsi_ioctl.h>
--
- }
- #include <iostream>
- 
-@@ -141,6 +142,9 @@
- }
- /** OPen the tray for a scsi device */
- void cdromCtrl::openTrayScsi(){
-+  #if defined (__FreeBSD__)
-+  cdromCtrl::openTray();
-+  #else
-    /* do we have a CD-ROM device configured?  (extra check, not really nescessary) */
-    if ( cdromdev != snull && initialized) {
-         lineak_core_functions::msg("... ejecting the SCSI CD-ROM tray");
-@@ -196,6 +200,7 @@
-         status = ioctl(fp, BLKRRPART);
-  //       return (status == 0);
-    }
-+#endif
- }
- /** Set or disable the auto-eject mode. If auto-eject mode is enabled, the cdrom device
-     will eject when we issue a close(fp); */
