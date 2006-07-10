@@ -6,7 +6,7 @@
 # PROVIDE: ices0
 # REQUIRE: DAEMON
 # BEFORE:  login
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable `ices0':
 #

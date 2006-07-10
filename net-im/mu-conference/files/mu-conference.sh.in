@@ -5,7 +5,7 @@
 
 # PROVIDE: mu_conference
 # REQUIRE: DAEMON jabberd
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
 # Define these mu_conference_* variables in one of these files:
 #       /etc/rc.conf
