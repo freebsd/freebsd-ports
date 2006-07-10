@@ -317,6 +317,7 @@
     SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += triangle
+    SUBDIR += truthtable
     SUBDIR += tvmet
     SUBDIR += ufsparse
     SUBDIR += umatrix

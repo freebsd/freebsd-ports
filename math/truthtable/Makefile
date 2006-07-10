@@ -1,0 +1,35 @@
+# New ports collection makefile for:	truthtable
+# Date created:		2006-07-10
+# Whom:			Nicola Vitale <nivit@email.it>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	truthtable
+PORTVERSION=	1.2.2
+CATEGORIES=	math java
+MASTER_SITES=	http://www.kinostudios.com/java/ \
+		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	TruthTable
+EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
+
+MAINTAINER=	nivit@email.it
+COMMENT=	A Truth Tables generator (written in Java)
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+NO_BUILD=	yes
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+SUB_FILES=	${PORTNAME}
+SUB_LIST=	JAVA=${JAVA}  JAVAJARDIR=${JAVAJARDIR} TRUTHTABLEJAR=${TRUTHTABLEJAR}
+
+TRUTHTABLEJAR=	${DATADIR}/${DISTNAME}${EXTRACT_SUFX}
+
+do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
