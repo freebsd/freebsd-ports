@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xfsprogs
-PORTVERSION=	2.7.11
-PORTREVISION=	2
+PORTVERSION=	2.8.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.src.tar.gz
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	rodrigc@FreeBSD.ORG
 COMMENT=	A set of utilities and library to manipulate an xfs filesystem
@@ -38,6 +37,10 @@ MAN8=	fsck.xfs.8 mkfs.xfs.8 xfs_admin.8 xfs_bmap.8 xfs_check.8 \
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
 .endif
+
+post-extract:
+	echo "Blah"
+	${LN} -sf ${WRKDIR}/${PORTNAME}-${PORTVERSION} ${WRKSRC}
 
 pre-configure:
 	${RM} -f ${WRKSRC}/configure
