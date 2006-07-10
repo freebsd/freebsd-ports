@@ -598,6 +598,7 @@
     SUBDIR += p5-HTML-PrettyPrinter
     SUBDIR += p5-HTML-Prototype
     SUBDIR += p5-HTML-QuickCheck
+    SUBDIR += p5-HTML-ResolveLink
     SUBDIR += p5-HTML-Scrubber
     SUBDIR += p5-HTML-SimpleLinkExtor
     SUBDIR += p5-HTML-SimpleParse
