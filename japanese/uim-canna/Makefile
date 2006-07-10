@@ -6,7 +6,11 @@
 #
 
 CATEGORIES=	japanese
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-canna-nox11
+.else
 PKGNAMESUFFIX=	-canna
+.endif
 
 COMMENT=	Uim plugin using Canna input method
 
@@ -29,6 +33,10 @@ do-install:
 	${GMAKE} uim_plugin_LTLIBRARIES=libuim-canna.la install-uim_pluginLTLIBRARIES)
 
 post-install:
-	${X11BASE}/bin/uim-module-manager --register canna
+.if defined(WITHOUT_X11)
+	${LOCALBASE}/bin/uim-module-manager --register anthy
+.else
+	${X11BASE}/bin/uim-module-manager --register anthy
+.endif
 
 .include "${MASTERDIR}/Makefile"

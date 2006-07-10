@@ -9,34 +9,51 @@ PORTNAME=	uim
 PORTVERSION=	1.1.1
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
+.if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+.endif
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
 
-USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	gnometarget glib20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-.if !defined(UIM_SLAVE)
-USE_GNOME+=	gtk20
-.endif
 
+.if !defined(WITHOUT_X11)
+USE_X_PREFIX=	yes
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+CONFIGURE_ARGS+=	--with-x --with-xft
+.endif
 
 .if !defined(UIM_SLAVE)
-CONFIGURE_ARGS=	--enable-emacs --with-gtk2
+.if !defined(WITHOUT_X11)
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--with-gtk2
 .endif
+CONFIGURE_ARGS+=	--enable-emacs
+.endif
+
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
 
 .if !defined(UIM_SLAVE)
+.if !defined(WITHOUT_X11)
 MAN1=		uim-xim.1
+.endif
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
 PLIST_SUB=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
+.endif
+
+.if defined(WITHOUT_X11)
+PLIST_SUB+=	X11="@comment "
+.else
+PLIST_SUB+=	X11=""
 .endif
 
 .include <bsd.port.pre.mk>
@@ -52,7 +69,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/perl:${PORTSDIR}/lang/perl5
 CONFIGURE_ENV+=	INTLTOOL_PERL="${LOCALBASE}/bin/perl"
 .endif
 
-.for _x in gtk2 qt gnome2 anthy canna m17nlib prime scim dict
+.for _x in x xft gtk2 qt gnome2 anthy canna m17nlib prime scim dict
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
 CONFIGURE_ARGS+=--without-${_x}
 .endif
