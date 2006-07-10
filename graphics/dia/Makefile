@@ -16,6 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
@@ -37,7 +38,6 @@ USE_GNOME+=	pygtk2
 CONFIGURE_ARGS=	--with-python
 PLIST_SUB=	PYTHON:=""
 .else
-USE_PYTHON_BUILD=yes
 PLIST_SUB=	PYTHON:="@comment "
 .endif
 
@@ -55,6 +55,10 @@ post-patch:
 		's,\(^GTK_LIBS.*\),\1 ${PTHREAD_LIBS}, ; \
 		 s,\(^GTK_CFLAGS = \),\1 ${PTHREAD_CFLAGS} ,'
 .endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl|${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dia.xpm ${PREFIX}/share/gnome/dia/
