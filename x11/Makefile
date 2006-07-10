@@ -40,6 +40,7 @@
     SUBDIR += dynamag
     SUBDIR += e17-module-calendar
     SUBDIR += e17-module-deskshow
+    SUBDIR += e17-module-eveil
     SUBDIR += e17-module-flame
     SUBDIR += e17-module-mem
     SUBDIR += e17-module-moon
