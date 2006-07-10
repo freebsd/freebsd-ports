@@ -1,0 +1,6 @@
+This e17 module allows users to check their POP3, IMAP, maildir and mbox
+mailboxes in efficient way (like xbiff). The module is fully configurable
+and handy.
+
+Author:	devilhorns (Christopher Michael) <devilhorns@comcast.net>
+WWW:	http://www.enlightenment.org/

@@ -42,6 +42,7 @@
     SUBDIR += e17-module-deskshow
     SUBDIR += e17-module-eveil
     SUBDIR += e17-module-flame
+    SUBDIR += e17-module-mail
     SUBDIR += e17-module-mem
     SUBDIR += e17-module-moon
     SUBDIR += e17-module-slideshow

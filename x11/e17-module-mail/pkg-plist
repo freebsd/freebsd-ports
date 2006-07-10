@@ -1,0 +1,8 @@
+lib/enlightenment/modules/mail/mail.edj
+lib/enlightenment/modules/mail/module.a
+lib/enlightenment/modules/mail/module.eap
+lib/enlightenment/modules/mail/module.la
+lib/enlightenment/modules/mail/module.so
+lib/enlightenment/modules/mail/module_icon.png
+lib/enlightenment/modules/mail/newmail.png
+@dirrm lib/enlightenment/modules/mail
