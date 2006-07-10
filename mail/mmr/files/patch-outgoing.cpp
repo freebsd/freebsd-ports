@@ -1,7 +1,7 @@
---- outgoing.cpp.orig	Thu Apr 22 23:24:59 1999
-+++ outgoing.cpp	Fri Mar 31 03:22:18 2000
-@@ -14,7 +14,9 @@
- #include "rcfile.h"
+--- outgoing.cpp.orig	Mon Jan 23 17:55:34 2006
++++ outgoing.cpp	Mon Jul 10 01:14:23 2006
+@@ -16,7 +16,9 @@
+ #include "tempfile.h"
  #include "outgoing.h"
  
 +#ifndef MAILER

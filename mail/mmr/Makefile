@@ -6,19 +6,29 @@
 #
 
 PORTNAME=	mmr
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/mmr/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based MIME Mail Reader
 
-ALL_TARGET=	# empty
-USE_GCC=	2.95
+USE_ICONV=	yes
+MAKE_ARGS=	LIBS='${LDFLAGS}' CXX='${CXX}' CXXFLAGS='${CXXFLAGS}'
+ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	BUGS CHANGES Features README TODO
-PLIST_FILES=	bin/mmr ${EXAMPLESDIR:S,${PREFIX}/,,}/dot.mmrc.sample
-PLIST_DIRS=	${EXAMPLESDIR:S,${PREFIX}/,,}
+PLIST_FILES=	bin/mmr %%EXAMPLESDIR%%/dot.mmrc.sample
+PLIST_DIRS=	%%EXAMPLESDIR%%
+
+CXXFLAGS+=	-DTHREADMAIL \
+		-DMAILPATH=\"/var/mail\" \
+		-DMAILER=\"/usr/sbin/sendmail\ -t\" \
+		-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -liconv -lcurses -lmd
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|md5/libmd5.a||g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmr ${PREFIX}/bin
