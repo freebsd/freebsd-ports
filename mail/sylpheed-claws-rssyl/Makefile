@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rssyl
-DISTVERSION=	0.4cvs6
+PORTVERSION=	0.5
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
@@ -21,6 +21,11 @@ RUN_DEPENDS=	sylpheed-claws:${PORTSDIR}/mail/sylpheed-claws
 
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	autoconf:259
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+	--with-libintl-prefix=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/100\.93/100/' ${WRKSRC}/configure.ac
