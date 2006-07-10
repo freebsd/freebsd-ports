@@ -42,6 +42,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>ja-samba</name>
 	<range><ge>3.0.1,1</ge><lt>3.0.23,1</lt></range>
       </package>
+    </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Samba Team reports:</p>
