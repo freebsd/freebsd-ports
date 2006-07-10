@@ -4,6 +4,7 @@ bin/ut
 %%DATADIR%%/Help/BonusPackReadme.txt
 %%DATADIR%%/Help/Logo.bmp
 %%DATADIR%%/Help/ReadMe.htm
+%%DATADIR%%/Help/ReleaseNotes.htm
 %%DATADIR%%/Help/UnrealTournamentLogo.bmp
 %%DATADIR%%/Help/UnrealTournamentSetupLogo.bmp
 %%DATADIR%%/Help/demutators-readme.txt
@@ -307,6 +308,7 @@ bin/ut
 %%DATADIR%%/System/MultiMesh.int
 %%DATADIR%%/System/MultiMesh.u
 %%DATADIR%%/System/NullDrv.so
+%%DATADIR%%/System/NullNetDriver.so
 %%DATADIR%%/System/NullRender.so
 %%DATADIR%%/System/OpenGLDrv.so
 %%DATADIR%%/System/OpenGlDrv.ini
@@ -347,6 +349,7 @@ bin/ut
 %%DATADIR%%/System/UWeb.u
 %%DATADIR%%/System/UWindow.u
 %%DATADIR%%/System/Unreal.int
+%%DATADIR%%/System/UnrealEd.ini
 %%DATADIR%%/System/UnrealEd.int
 %%DATADIR%%/System/UnrealI.int
 %%DATADIR%%/System/UnrealI.u
@@ -361,6 +364,41 @@ bin/ut
 %%DATADIR%%/System/de-logo.bmp
 %%DATADIR%%/System/de.int
 %%DATADIR%%/System/de.u
+%%DATADIR%%/System/editorres/AddMover.bmp
+%%DATADIR%%/System/editorres/AddSpecial.bmp
+%%DATADIR%%/System/editorres/BBCone.bmp
+%%DATADIR%%/System/editorres/BBCube.bmp
+%%DATADIR%%/System/editorres/BBCurvedStair.bmp
+%%DATADIR%%/System/editorres/BBCylinder.bmp
+%%DATADIR%%/System/editorres/BBGeneric.bmp
+%%DATADIR%%/System/editorres/BBLinearStair.bmp
+%%DATADIR%%/System/editorres/BBSheet.bmp
+%%DATADIR%%/System/editorres/BBSphere.bmp
+%%DATADIR%%/System/editorres/BBSpiralStair.bmp
+%%DATADIR%%/System/editorres/BBTerrain.bmp
+%%DATADIR%%/System/editorres/BBVolumetric.bmp
+%%DATADIR%%/System/editorres/BrushClip.bmp
+%%DATADIR%%/System/editorres/BrushClipDelete.bmp
+%%DATADIR%%/System/editorres/BrushClipFlip.bmp
+%%DATADIR%%/System/editorres/BrushClipSplit.bmp
+%%DATADIR%%/System/editorres/HideSelected.bmp
+%%DATADIR%%/System/editorres/InvertSelections.bmp
+%%DATADIR%%/System/editorres/ModeAdd.bmp
+%%DATADIR%%/System/editorres/ModeBrushClip.bmp
+%%DATADIR%%/System/editorres/ModeCamera.bmp
+%%DATADIR%%/System/editorres/ModeDeintersect.bmp
+%%DATADIR%%/System/editorres/ModeFaceDrag.bmp
+%%DATADIR%%/System/editorres/ModeIntersect.bmp
+%%DATADIR%%/System/editorres/ModeRotate.bmp
+%%DATADIR%%/System/editorres/ModeScale.bmp
+%%DATADIR%%/System/editorres/ModeSubtract.bmp
+%%DATADIR%%/System/editorres/ModeVertex.bmp
+%%DATADIR%%/System/editorres/ShowAll.bmp
+%%DATADIR%%/System/editorres/ShowSelected.bmp
+%%DATADIR%%/System/editorres/TexturePan.bmp
+%%DATADIR%%/System/editorres/TextureRotate.bmp
+%%DATADIR%%/System/editorres/vssver.scc
+%%DATADIR%%/System/edsplash.bmp
 %%DATADIR%%/System/libSDL-1.1.so.0
 %%DATADIR%%/System/libmikmod.so.2
 %%DATADIR%%/System/libopenal-0.0.so
@@ -520,6 +558,14 @@ bin/ut
 %%DATADIR%%/Web/images/m3-1.gif
 %%DATADIR%%/Web/images/m3-2.gif
 %%DATADIR%%/Web/images/right.gif
+%%DATADIR%%/Web/inc/content_footer_tables.inc
+%%DATADIR%%/Web/inc/content_header_tables.inc
+%%DATADIR%%/Web/inc/footer.inc
+%%DATADIR%%/Web/inc/header.inc
+%%DATADIR%%/Web/inc/menu_footer.inc
+%%DATADIR%%/Web/inc/menu_header.inc
+%%DATADIR%%/Web/inc/top_begin.inc
+%%DATADIR%%/Web/inc/top_end.inc
 %%DATADIR%%/Web/menu.uhtm
 %%DATADIR%%/Web/message.uhtm
 %%DATADIR%%/Web/plaintext/current.uhtm
@@ -540,6 +586,9 @@ bin/ut
 %%DATADIR%%/Web/plaintext/defaults_rules.uhtm
 %%DATADIR%%/Web/plaintext/defaults_server.uhtm
 %%DATADIR%%/Web/plaintext/defaults_settings.uhtm
+%%DATADIR%%/Web/plaintext/inc/footer.inc
+%%DATADIR%%/Web/plaintext/inc/header.inc
+%%DATADIR%%/Web/plaintext/inc/whiteheader.inc
 %%DATADIR%%/Web/plaintext/menu.uhtm
 %%DATADIR%%/Web/plaintext/message.uhtm
 %%DATADIR%%/Web/plaintext/root.uhtm
@@ -566,9 +615,12 @@ bin/ut
 @dirrm %%DATADIR%%/NetGamesUSA.com/ngWorldStats
 @dirrm %%DATADIR%%/NetGamesUSA.com
 @dirrm %%DATADIR%%/Sounds
+@dirrm %%DATADIR%%/System/editorres
 @dirrm %%DATADIR%%/System
 @dirrm %%DATADIR%%/Textures
 @dirrm %%DATADIR%%/Web/images
+@dirrm %%DATADIR%%/Web/inc
+@dirrm %%DATADIR%%/Web/plaintext/inc
 @dirrm %%DATADIR%%/Web/plaintext
 @dirrm %%DATADIR%%/Web
 @dirrm %%DATADIR%%
