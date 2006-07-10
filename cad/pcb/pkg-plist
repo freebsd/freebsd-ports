@@ -1,4 +1,8 @@
 @comment $FreeBSD$
+bin/MergePCBPS
+bin/Merge_dimPCBPS
+bin/pcb
+bin/pcb-bin
 %%DATADIR%%/CreateLibrary.sh
 %%DATADIR%%/CreateLibraryContents.sh
 %%DATADIR%%/ListLibraryContents.sh
@@ -38,9 +42,6 @@
 %%DATADIR%%/m4/geda.m4
 %%DATADIR%%/m4/generic.list
 %%DATADIR%%/m4/generic.m4
-%%DATADIR%%/m4/genericsmt.inc
-%%DATADIR%%/m4/genericsmt.list
-%%DATADIR%%/m4/genericsmt.m4
 %%DATADIR%%/m4/gtag.list
 %%DATADIR%%/m4/gtag.m4
 %%DATADIR%%/m4/jerry.list
@@ -144,11 +145,24 @@
 %%DATADIR%%/newlib/tests/TO99fromLED
 %%DATADIR%%/newlib/tests/UART
 %%DATADIR%%/newlib/tests/monoblock_small
+%%PORTDOCS%%%%DATADIR%%/pad.eps
+%%PORTDOCS%%%%DATADIR%%/pad.gif
+%%PORTDOCS%%%%DATADIR%%/pad.pdf
+%%PORTDOCS%%%%DATADIR%%/pad.png
 %%DATADIR%%/pcb-menu.res
+%%PORTDOCS%%%%DATADIR%%/pcb.html
+%%PORTDOCS%%%%DATADIR%%/pcb.pdf
+%%PORTDOCS%%%%DATADIR%%/pcb.ps
 %%DATADIR%%/pcblib
 %%DATADIR%%/pcblib.contents
 %%DATADIR%%/qfp-ui
 %%DATADIR%%/qfp.dat
+%%PORTDOCS%%%%DATADIR%%/refcard.pdf
+%%PORTDOCS%%%%DATADIR%%/refcard.ps
+%%PORTDOCS%%%%DATADIR%%/thermal.eps
+%%PORTDOCS%%%%DATADIR%%/thermal.gif
+%%PORTDOCS%%%%DATADIR%%/thermal.pdf
+%%PORTDOCS%%%%DATADIR%%/thermal.png
 %%DATADIR%%/tools/MergePCBPS
 %%DATADIR%%/tools/Merge_dimPCBPS
 %%DATADIR%%/tools/PCB2HPGL
@@ -157,10 +171,6 @@
 %%DATADIR%%/tools/pcb2ncap.tgz
 %%DATADIR%%/tools/tgo2pcb.tcl
 %%DATADIR%%/tutorial/tut1.pcb
-bin/MergePCBPS
-bin/Merge_dimPCBPS
-bin/pcb
-bin/pcb-bin
 @exec /bin/mkdir -p %D/%%DATADIR%%/newlib/toko
 @exec /bin/mkdir -p %D/%%DATADIR%%/newlib/sockets
 @exec /bin/mkdir -p %D/%%DATADIR%%/newlib/cypress

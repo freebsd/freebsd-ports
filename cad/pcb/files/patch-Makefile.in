@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jul  8 23:14:41 2006
++++ Makefile.in	Sat Jul  8 23:14:48 2006
+@@ -209,7 +209,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-DIRS = win32 src lib newlib example tools tutorial README_FILES
++DIRS = src lib newlib example tools tutorial README_FILES
+ SUBDIRS = ${DIRS} @DOC@
+ DIST_SUBDIRS = ${DIRS} doc
+ EXTRA_DIST = autogen.sh globalconst.h README.cvs README.win32
