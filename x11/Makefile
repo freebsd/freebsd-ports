@@ -39,6 +39,7 @@
     SUBDIR += dxpc
     SUBDIR += dynamag
     SUBDIR += e17-module-calendar
+    SUBDIR += e17-module-cpu
     SUBDIR += e17-module-deskshow
     SUBDIR += e17-module-eveil
     SUBDIR += e17-module-flame
