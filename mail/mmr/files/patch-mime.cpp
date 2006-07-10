@@ -1,20 +1,11 @@
---- mime.cpp.orig	Fri Oct 25 13:55:40 2002
-+++ mime.cpp	Fri Oct 25 13:56:15 2002
-@@ -102,7 +102,7 @@
+--- mime.cpp.orig	Tue Jan 24 16:58:33 2006
++++ mime.cpp	Sun Jul  9 23:46:48 2006
+@@ -110,7 +110,7 @@
+ 	}
+ 	size_t available = obytesleft;
+ 	while ( ibytesleft > 0 ) {
+-		iconv(iconv_ctx, &ibuf, &ibytesleft, &obuf, &obytesleft);
++		iconv(iconv_ctx, (const char **)&ibuf, &ibytesleft, &obuf, &obytesleft);
  
- /* The MIME_body class constructor */
- MIME_body:: MIME_body(IObottle *RawFile, char *endings[],
--						MIME_body *lineage = NULL)
-+						MIME_body *lineage)
- {
- 	MD5_CTX md5_ctx;
- 	int i;
-@@ -652,7 +652,7 @@
-    length) to a new IO stream with SaveRaw(), or these changes will be lost.
-  */
- int
--MIME_body:: AddPart(const char *file, int is_mime = 0)
-+MIME_body:: AddPart(const char *file, int is_mime)
- {
- 	MD5_CTX md5_ctx;
- 	int (*EncodeFile)(FILE *, IObottle *);
+ 		if ( ibytesleft > 0 ) {
+ 			if ( errno == EILSEQ ) {
