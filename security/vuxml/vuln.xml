@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b168ddea-105a-11db-ac96-000c6ec775d9">
+    <topic>samba -- memory exhaustion DoS in smbd</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<name>ja-samba</name>
+	<range><ge>3.0.1,1</ge><lt>3.0.23,1</lt></range>
+      </package>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CAN-2006-3403.html">
+	  <p>The smbd daemon maintains internal data structures used
+	    track active connections to file and printer shares.  In
+	    certain circumstances an attacker may be able to
+	    continually increase the memory usage of an smbd process
+	    by issuing a large number of share connection requests.
+	    This defect affects all Samba configurations.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3403</cvename>
+      <url>http://www.samba.org/samba/security/CAN-2006-3403.html</url>
+    </references>
+    <dates>
+      <discovery>2006-07-10</discovery>
+      <entry>2006-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a876df84-0fef-11db-ac96-000c6ec775d9">
     <topic>twiki -- multiple file extensions file upload vulnerability</topic>
     <affects>
