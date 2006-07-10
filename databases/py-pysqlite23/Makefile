@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pysqlite
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/pysqlite/releases/${PORTVERSION:C/\.[0-9]$//}/${PORTVERSION}/ \
 		${MASTER_SITE_GENTOO}
@@ -18,7 +18,7 @@ COMMENT=	A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-CONFLICTS=	py*-pysqlite-2.0*
+CONFLICTS=	py*-pysqlite-2.[0-24-9].*
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
@@ -29,7 +29,7 @@ DOCSDIR=	${PREFIX}/${DOCSBASE}
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|" ${WRKSRC}/setup.cfg
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e "s|pysqlite2-doc|${DOCSBASE}|" \
 		-e "s/.*(cmdclass|extras_require) =.*//" \
