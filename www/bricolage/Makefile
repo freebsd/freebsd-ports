@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.10.1
+PORTVERSION=	1.10.2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -64,7 +64,7 @@ MAKE_ENV+=	USE_DEFAULTS=freebsd
 # in the same order as found within inst/versions.txt
 #
 # Skip 1.8.5
-PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8 1.8.9 1.9.0 1.9.1 1.10.0 1.10.1
+PREVIOUS_VERSIONS=	1.8.0 1.8.1 1.8.2 1.8.3 1.8.4 1.8.6 1.8.7 1.8.8 1.8.9 1.9.0 1.9.1 1.10.0 1.10.1 1.10.2
 
 PERL_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -220,6 +220,7 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Util::Job::Pub.3 Bric::Util::Language.3 Bric::Util::Language::bo.3 \
 		Bric::Util::Language::de_de.3 Bric::Util::Language::en_us.3 \
 		Bric::Util::Language::it_it.3 Bric::Util::Language::km.3 \
+		Bric::Util::Language::ja.3 \
 		Bric::Util::Language::ko_ko.3 Bric::Util::Language::lo.3 \
 		Bric::Util::Language::my.3 Bric::Util::Language::pt_pt.3 \
 		Bric::Util::Language::ru_ru.3 \

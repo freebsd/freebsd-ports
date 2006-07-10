@@ -94,6 +94,10 @@ bricolage/upgrade/1.10.0/update_publish_status_check.pl
 bricolage/upgrade/1.10.1/fix_media_related_story_fk.pl
 bricolage/upgrade/1.10.1/fix_reverted_docs.pl
 bricolage/upgrade/1.10.1/textify_field_type.pl
+bricolage/upgrade/1.10.2/add_asset_counts.pl
+bricolage/upgrade/1.10.2/add_ja.pl
+bricolage/upgrade/1.10.2/deleted_moved_js.pl
+bricolage/upgrade/1.10.2/fix_reverted_docs.pl
 bricolage/comp/admin/alerts/dhandler
 bricolage/comp/admin/alerts/recip
 bricolage/comp/admin/control/publish/category.html
@@ -377,6 +381,80 @@ bricolage/comp/help/it_it/workflow/profile/story/desks.html
 bricolage/comp/help/it_it/workflow/profile/story/new.html
 bricolage/comp/help/it_it/workflow/profile/workspace.html
 bricolage/comp/help/it_it/workflow/trail/dhandler
+bricolage/comp/help/ja/about.html
+bricolage/comp/help/ja/admin/control/change_user.html
+bricolage/comp/help/ja/admin/control/publish.html
+bricolage/comp/help/ja/admin/events/dhandler
+bricolage/comp/help/ja/admin/manager/alert_type.html
+bricolage/comp/help/ja/admin/manager/category.html
+bricolage/comp/help/ja/admin/manager/contrib.html
+bricolage/comp/help/ja/admin/manager/contrib_type.html
+bricolage/comp/help/ja/admin/manager/dest.html
+bricolage/comp/help/ja/admin/manager/element_type.html
+bricolage/comp/help/ja/admin/manager/grp.html
+bricolage/comp/help/ja/admin/manager/job.html
+bricolage/comp/help/ja/admin/manager/keyword.html
+bricolage/comp/help/ja/admin/manager/media_type.html
+bricolage/comp/help/ja/admin/manager/output_channel.html
+bricolage/comp/help/ja/admin/manager/pref.html
+bricolage/comp/help/ja/admin/manager/site.html
+bricolage/comp/help/ja/admin/manager/source.html
+bricolage/comp/help/ja/admin/manager/user.html
+bricolage/comp/help/ja/admin/manager/workflow.html
+bricolage/comp/help/ja/admin/profile/action.html
+bricolage/comp/help/ja/admin/profile/alert_type.html
+bricolage/comp/help/ja/admin/profile/alert_type/recip.html
+bricolage/comp/help/ja/admin/profile/category.html
+bricolage/comp/help/ja/admin/profile/contrib.html
+bricolage/comp/help/ja/admin/profile/contrib/edit.html
+bricolage/comp/help/ja/admin/profile/contrib/extend.html
+bricolage/comp/help/ja/admin/profile/desk.html
+bricolage/comp/help/ja/admin/profile/dest.html
+bricolage/comp/help/ja/admin/profile/element_type.html
+bricolage/comp/help/ja/admin/profile/field_type.html
+bricolage/comp/help/ja/admin/profile/grp.html
+bricolage/comp/help/ja/admin/profile/grp/perm.html
+bricolage/comp/help/ja/admin/profile/keyword.html
+bricolage/comp/help/ja/admin/profile/media_type.html
+bricolage/comp/help/ja/admin/profile/output_channel.html
+bricolage/comp/help/ja/admin/profile/pref.html
+bricolage/comp/help/ja/admin/profile/server.html
+bricolage/comp/help/ja/admin/profile/site.html
+bricolage/comp/help/ja/admin/profile/source.html
+bricolage/comp/help/ja/admin/profile/user.html
+bricolage/comp/help/ja/admin/profile/workflow.html
+bricolage/comp/help/ja/workflow/active/media.html
+bricolage/comp/help/ja/workflow/active/story.html
+bricolage/comp/help/ja/workflow/active/template.html
+bricolage/comp/help/ja/workflow/events/dhandler
+bricolage/comp/help/ja/workflow/manager/media.html
+bricolage/comp/help/ja/workflow/manager/story.html
+bricolage/comp/help/ja/workflow/manager/template.html
+bricolage/comp/help/ja/workflow/profile/alerts.html
+bricolage/comp/help/ja/workflow/profile/alias/media.html
+bricolage/comp/help/ja/workflow/profile/alias/story.html
+bricolage/comp/help/ja/workflow/profile/container/edit.html
+bricolage/comp/help/ja/workflow/profile/container/edit_bulk.html
+bricolage/comp/help/ja/workflow/profile/desk.html
+bricolage/comp/help/ja/workflow/profile/media.html
+bricolage/comp/help/ja/workflow/profile/media/category.html
+bricolage/comp/help/ja/workflow/profile/media/contributor_role.html
+bricolage/comp/help/ja/workflow/profile/media/contributors.html
+bricolage/comp/help/ja/workflow/profile/media/keywords.html
+bricolage/comp/help/ja/workflow/profile/media/new.html
+bricolage/comp/help/ja/workflow/profile/publish.html
+bricolage/comp/help/ja/workflow/profile/story.html
+bricolage/comp/help/ja/workflow/profile/story/actions.html
+bricolage/comp/help/ja/workflow/profile/story/category.html
+bricolage/comp/help/ja/workflow/profile/story/contributor_role.html
+bricolage/comp/help/ja/workflow/profile/story/contributors.html
+bricolage/comp/help/ja/workflow/profile/story/desks.html
+bricolage/comp/help/ja/workflow/profile/story/keywords.html
+bricolage/comp/help/ja/workflow/profile/story/new.html
+bricolage/comp/help/ja/workflow/profile/template/new.html
+bricolage/comp/help/ja/workflow/profile/template.html
+bricolage/comp/help/ja/workflow/profile/workspace.html
+bricolage/comp/help/ja/workflow/trail/dhandler
 bricolage/comp/help/km/about.html
 bricolage/comp/help/km/admin/control/change_user.html
 bricolage/comp/help/km/admin/events/dhandler
@@ -1030,22 +1108,24 @@ bricolage/comp/lib/util/sortArrayOfHashes.mc
 bricolage/comp/lib/util/status_msg.mc
 bricolage/comp/login/dhandler
 bricolage/comp/login/welcome.html
-bricolage/comp/media/css/bo.css
-bricolage/comp/media/css/de_de.css
-bricolage/comp/media/css/en_us.css
-bricolage/comp/media/css/it_it.css
-bricolage/comp/media/css/km.css
-bricolage/comp/media/css/ko_ko.css
-bricolage/comp/media/css/lo.css
-bricolage/comp/media/css/my.css
-bricolage/comp/media/css/pt_pt.css
+bricolage/comp/media/css/i18n/bo.css
+bricolage/comp/media/css/i18n/de_de.css
+bricolage/comp/media/css/i18n/en_us.css
+bricolage/comp/media/css/i18n/it_it.css
+bricolage/comp/media/css/i18n/ja.css
+bricolage/comp/media/css/i18n/km.css
+bricolage/comp/media/css/i18n/ko_ko.css
+bricolage/comp/media/css/i18n/lo.css
+bricolage/comp/media/css/i18n/my.css
+bricolage/comp/media/css/i18n/pt_pt.css
+bricolage/comp/media/css/i18n/ug.css
+bricolage/comp/media/css/i18n/vi_vn.css
+bricolage/comp/media/css/i18n/zh_cn.css
+bricolage/comp/media/css/i18n/zh_hk.css
+bricolage/comp/media/css/i18n/zh_tw.css
 bricolage/comp/media/css/style.css
 bricolage/comp/media/css/style-nav.css
-bricolage/comp/media/css/ug.css
-bricolage/comp/media/css/vi_vn.css
-bricolage/comp/media/css/zh_cn.css
-bricolage/comp/media/css/zh_hk.css
-bricolage/comp/media/css/zh_tw.css
+bricolage/comp/media/images/link.png
 bricolage/comp/media/images/bang_red.gif
 bricolage/comp/media/images/bo/acknowledge_all_red.gif
 bricolage/comp/media/images/bo/acknowledge_checked_red.gif
@@ -1343,6 +1423,79 @@ bricolage/comp/media/images/it_it/view_trail_dgreen.gif
 bricolage/comp/media/images/it_it/view_trail_teal.gif
 bricolage/comp/media/images/it_it/workflow_admin.gif
 bricolage/comp/media/images/it_it/workflow_workflow.gif
+bricolage/comp/media/images/ja/acknowledge_all_red.gif
+bricolage/comp/media/images/ja/acknowledge_checked_red.gif
+bricolage/comp/media/images/ja/add_category_lgreen.gif
+bricolage/comp/media/images/ja/add_component_lgreen.gif
+bricolage/comp/media/images/ja/add_element_lgreen.gif
+bricolage/comp/media/images/ja/add_elements_lgreen.gif
+bricolage/comp/media/images/ja/add_more_lgreen.gif
+bricolage/comp/media/images/ja/add_notes_lgreen.gif
+bricolage/comp/media/images/ja/add_sub_element_lgreen.gif
+bricolage/comp/media/images/ja/add_sub_elements_lgreen.gif
+bricolage/comp/media/images/ja/add_template_code_lgreen.gif
+bricolage/comp/media/images/ja/add_to_form_lgreen.gif
+bricolage/comp/media/images/ja/add_to_list_lgreen.gif
+bricolage/comp/media/images/ja/bulk_edit_lgreen.gif
+bricolage/comp/media/images/ja/cancel_check_out_lgreen.gif
+bricolage/comp/media/images/ja/cancel_checked_red.gif
+bricolage/comp/media/images/ja/cancel_lgreen.gif
+bricolage/comp/media/images/ja/cancel_red.gif
+bricolage/comp/media/images/ja/change_red.gif
+bricolage/comp/media/images/ja/check_in_dgreen.gif
+bricolage/comp/media/images/ja/checkin_assets_red.gif
+bricolage/comp/media/images/ja/checkout_red.gif
+bricolage/comp/media/images/ja/clear_all_red.gif
+bricolage/comp/media/images/ja/clear_values_lgreen.gif
+bricolage/comp/media/images/ja/close.gif
+bricolage/comp/media/images/ja/contributors_dgreen.gif
+bricolage/comp/media/images/ja/create_red.gif
+bricolage/comp/media/images/ja/delete_categories_red.gif
+bricolage/comp/media/images/ja/delete_checked_red.gif
+bricolage/comp/media/images/ja/delete_red.gif
+bricolage/comp/media/images/ja/deploy_checked_red.gif
+bricolage/comp/media/images/ja/edit_lgreen.gif
+bricolage/comp/media/images/ja/edit_notes_lgreen.gif
+bricolage/comp/media/images/ja/edit_template_code_lgreen.gif
+bricolage/comp/media/images/ja/help.gif
+bricolage/comp/media/images/ja/keywords_dgreen.gif
+bricolage/comp/media/images/ja/login.gif
+bricolage/comp/media/images/ja/logout.gif
+bricolage/comp/media/images/ja/media_dgreen.gif
+bricolage/comp/media/images/ja/move_assets_lgreen.gif
+bricolage/comp/media/images/ja/my_alerts_orange.gif
+bricolage/comp/media/images/ja/my_workspace_off.gif
+bricolage/comp/media/images/ja/my_workspace_on.gif
+bricolage/comp/media/images/ja/new_desk_red.gif
+bricolage/comp/media/images/ja/new_organization_lgreen.gif
+bricolage/comp/media/images/ja/next_dkgreen.gif
+bricolage/comp/media/images/ja/permissions_dgreen.gif
+bricolage/comp/media/images/ja/preview_lgreen.gif
+bricolage/comp/media/images/ja/publish_assets_red.gif
+bricolage/comp/media/images/ja/publish_checked_red.gif
+bricolage/comp/media/images/ja/related_stories_dgreen.gif
+bricolage/comp/media/images/ja/remove_from_list_red.gif
+bricolage/comp/media/images/ja/reorder_lgreen.gif
+bricolage/comp/media/images/ja/resize_lgreen.gif
+bricolage/comp/media/images/ja/return_dgreen.gif
+bricolage/comp/media/images/ja/revert_dgreen.gif
+bricolage/comp/media/images/ja/save_and_stay_lgreen.gif
+bricolage/comp/media/images/ja/save_lgreen.gif
+bricolage/comp/media/images/ja/save_red.gif
+bricolage/comp/media/images/ja/search_green.gif
+bricolage/comp/media/images/ja/search_lgreen.gif
+bricolage/comp/media/images/ja/search_red.gif
+bricolage/comp/media/images/ja/select_all_lgreen.gif
+bricolage/comp/media/images/ja/stories_dgreen.gif
+bricolage/comp/media/images/ja/templates_dgreen.gif
+bricolage/comp/media/images/ja/upload_red.gif
+bricolage/comp/media/images/ja/use_this_role_lgreen.gif
+bricolage/comp/media/images/ja/view_dgreen.gif
+bricolage/comp/media/images/ja/view_diff.gif
+bricolage/comp/media/images/ja/view_trail_dgreen.gif
+bricolage/comp/media/images/ja/view_trail_teal.gif
+bricolage/comp/media/images/ja/workflow_admin.gif
+bricolage/comp/media/images/ja/workflow_workflow.gif
 bricolage/comp/media/images/km/acknowledge_all_red.gif
 bricolage/comp/media/images/km/acknowledge_checked_red.gif
 bricolage/comp/media/images/km/add_category_lgreen.gif
@@ -2157,22 +2310,23 @@ bricolage/comp/media/images/zh_tw/view_trail_dgreen.gif
 bricolage/comp/media/images/zh_tw/view_trail_teal.gif
 bricolage/comp/media/images/zh_tw/workflow_admin.gif
 bricolage/comp/media/images/zh_tw/workflow_workflow.gif
-bricolage/comp/media/js/bo_messages.js
-bricolage/comp/media/js/de_de_messages.js
-bricolage/comp/media/js/en_us_messages.js
-bricolage/comp/media/js/it_it_messages.js
-bricolage/comp/media/js/km_messages.js
-bricolage/comp/media/js/ko_ko_messages.js
+bricolage/comp/media/js/i18n/bo_messages.js
+bricolage/comp/media/js/i18n/de_de_messages.js
+bricolage/comp/media/js/i18n/en_us_messages.js
+bricolage/comp/media/js/i18n/it_it_messages.js
+bricolage/comp/media/js/i18n/ja_messages.js
+bricolage/comp/media/js/i18n/km_messages.js
+bricolage/comp/media/js/i18n/ko_ko_messages.js
+bricolage/comp/media/js/i18n/lo_messages.js
+bricolage/comp/media/js/i18n/my_messages.js
+bricolage/comp/media/js/i18n/pt_pt_messages.js
+bricolage/comp/media/js/i18n/ru_ru_messages.js
+bricolage/comp/media/js/i18n/ug_messages.js
+bricolage/comp/media/js/i18n/vi_vn_messages.js
+bricolage/comp/media/js/i18n/zh_cn_messages.js
+bricolage/comp/media/js/i18n/zh_hk_messages.js
+bricolage/comp/media/js/i18n/zh_tw_messages.js
 bricolage/comp/media/js/lib.js
-bricolage/comp/media/js/lo_messages.js
-bricolage/comp/media/js/my_messages.js
-bricolage/comp/media/js/pt_pt_messages.js
-bricolage/comp/media/js/ru_ru_messages.js
-bricolage/comp/media/js/ug_messages.js
-bricolage/comp/media/js/vi_vn_messages.js
-bricolage/comp/media/js/zh_cn_messages.js
-bricolage/comp/media/js/zh_hk_messages.js
-bricolage/comp/media/js/zh_tw_messages.js
 bricolage/comp/media/mime/none.png
 bricolage/comp/widgets/add_more/add_more.mc
 bricolage/comp/widgets/add_more/index.html
@@ -2728,6 +2882,7 @@ bricolage/data/burn/comp/oc_1/story.mc
 %%SITE_PERL%%/Bric/Util/Language/km.pm
 %%SITE_PERL%%/Bric/Util/Language/ko_ko.pm
 %%SITE_PERL%%/Bric/Util/Language/lo.pm
+%%SITE_PERL%%/Bric/Util/Language/ja.pm
 %%SITE_PERL%%/Bric/Util/Language/my.pm
 %%SITE_PERL%%/Bric/Util/Language/pt_pt.pm
 %%SITE_PERL%%/Bric/Util/Language/ru_ru.pm
@@ -2801,6 +2956,7 @@ share/bricolage/Pg.sql
 @dirrm %%SITE_PERL%%/Bric
 @dirrm %%SITE_PERL%%/mach/auto/Bric
 @dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm bricolage/upgrade/1.10.2
 @dirrm bricolage/upgrade/1.10.1
 @dirrm bricolage/upgrade/1.10.0
 @dirrm bricolage/upgrade/1.9.1
@@ -2888,6 +3044,7 @@ share/bricolage/Pg.sql
 @exec [ -d %D/bricolage/comp/media/wysiwyg ] || (mkdir -p %D/bricolage/comp/media/wysiwyg && chown www:www %D/bricolage/comp/media/wysiwyg)
 @dirrm bricolage/comp/media/wysiwyg
 @dirrm bricolage/comp/media/mime
+@dirrm bricolage/comp/media/js/i18n
 @dirrm bricolage/comp/media/js
 @dirrm bricolage/comp/media/images/zh_tw
 @dirrm bricolage/comp/media/images/zh_hk
@@ -2900,11 +3057,13 @@ share/bricolage/Pg.sql
 @dirrm bricolage/comp/media/images/lo
 @dirrm bricolage/comp/media/images/ko_ko
 @dirrm bricolage/comp/media/images/km
+@dirrm bricolage/comp/media/images/ja
 @dirrm bricolage/comp/media/images/it_it
 @dirrm bricolage/comp/media/images/en_us
 @dirrm bricolage/comp/media/images/de_de
 @dirrm bricolage/comp/media/images/bo
 @dirrm bricolage/comp/media/images
+@dirrm bricolage/comp/media/css/i18n
 @dirrm bricolage/comp/media/css
 @dirrm bricolage/comp/media
 @dirrm bricolage/comp/login
@@ -3118,6 +3277,26 @@ share/bricolage/Pg.sql
 @dirrm bricolage/comp/help/km/admin/control
 @dirrm bricolage/comp/help/km/admin
 @dirrm bricolage/comp/help/km
+@dirrm bricolage/comp/help/ja/workflow/trail
+@dirrm bricolage/comp/help/ja/workflow/profile/template
+@dirrm bricolage/comp/help/ja/workflow/profile/story
+@dirrm bricolage/comp/help/ja/workflow/profile/media
+@dirrm bricolage/comp/help/ja/workflow/profile/container
+@dirrm bricolage/comp/help/ja/workflow/profile/alias
+@dirrm bricolage/comp/help/ja/workflow/profile
+@dirrm bricolage/comp/help/ja/workflow/manager
+@dirrm bricolage/comp/help/ja/workflow/events
+@dirrm bricolage/comp/help/ja/workflow/active
+@dirrm bricolage/comp/help/ja/workflow
+@dirrm bricolage/comp/help/ja/admin/profile/grp
+@dirrm bricolage/comp/help/ja/admin/profile/contrib
+@dirrm bricolage/comp/help/ja/admin/profile/alert_type
+@dirrm bricolage/comp/help/ja/admin/profile
+@dirrm bricolage/comp/help/ja/admin/manager
+@dirrm bricolage/comp/help/ja/admin/events
+@dirrm bricolage/comp/help/ja/admin/control
+@dirrm bricolage/comp/help/ja/admin
+@dirrm bricolage/comp/help/ja
 @dirrm bricolage/comp/help/it_it/workflow/trail
 @dirrm bricolage/comp/help/it_it/workflow/profile/template
 @dirrm bricolage/comp/help/it_it/workflow/profile/story
