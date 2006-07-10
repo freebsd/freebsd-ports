@@ -6,7 +6,7 @@
 # PROVIDE: mbmon
 # REQUIRE: LOGIN
 # BEFORE:  securelevel
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable the mbmon daemon:
 #

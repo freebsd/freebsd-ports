@@ -6,7 +6,6 @@
 # PROVIDE: bigsister
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN
-# KEYWORD: FreeBSD
 #
 # Add the following to /etc/rc.conf to enable this service
 #
