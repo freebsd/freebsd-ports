@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	rbtree
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/R/RBTree/
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/r/rbtree/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A fast tree with ordered data and expanded iterator support
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
