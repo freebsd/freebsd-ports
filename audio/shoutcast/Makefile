@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	shoutcast
-PORTVERSION=	1.9.5
-PORTREVISION=	3
+PORTVERSION=	1.9.7
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-5/
+MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-7/
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Nullsoft's streaming audio server (binary port)
@@ -21,16 +20,17 @@ CONFLICTS=	linux-shoutcast-[0-9]*
 
 USE_RC_SUBR=	shoutcast.sh
 PORTDOCS=	README.TXT
+WRKSRC=		${WRKDIR}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-DISTNAME=	${PORTNAME}-1-9-5-freebsd5-elf
+DISTNAME=	${PORTNAME}-1-9-7-freebsd5-elf
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 .elif ${OSVERSION} >= 400000
-DISTNAME=	${PORTNAME}-1-9-5-freebsd4-elf
+DISTNAME=	${PORTNAME}-1-9-7-freebsd4-elf
 .else
 BROKEN=		unsupported FreeBSD version
 .endif
