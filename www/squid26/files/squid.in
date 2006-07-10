@@ -15,6 +15,7 @@
 #
 
 squid_stop() {
+	echo "Stopping ${name}."
 	${command} -k shutdown
 	run_rc_command poll
 }
