@@ -22,11 +22,11 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.\" @(#)portless.1,v 1.4 2006/06/15 15:43:43 martin Exp
+.\" @(#)portless.1,v 1.6 2006/07/06 10:41:39 martin Exp
 .\"
 .\" Note: The date here should be updated whenever a non-trivial
 .\" change is made to the manual page.
-.Dd June 15, 2006
+.Dd July 6, 2006
 .Dt PORTLESS 1
 .Os
 .Sh NAME
@@ -36,6 +36,9 @@
 .Nm
 .Op Fl dfiMmp
 .Op Fl P Ar pager
+.Ar portglob...
+.Nm
+.Op Fl w
 .Ar portglob...
 .Sh DESCRIPTION
 .Nm
@@ -74,6 +77,12 @@ Use the specified
 program to display matching files. This overrides the setting of the
 .Ev PAGER
 environment variable.
+.It Fl w
+Rather than browsing files inside the ports tree just echo the names
+of directories matching
+.Ar portglob
+to stdout.
+This option is incompatible with all other options.
 .El
 .Sh ENVIRONMENT
 The
@@ -99,9 +108,18 @@ command:
 .Dl "portless cvsweb\e*"
 .Dl "portless lang/\e*doc"
 .Dl "portless 'www/*python*'"
+.Sh SEE ALSO
+.Xr ports_glob 1
+from the
+.Pa sysutils/portupgrade
+port
 .Sh AUTHOR
 The
 .Nm
 utility and this manual page were written by
 .An Martin Kammerhofer Aq mkamm@gmx.net .
+.Sh BUGS
+The
+.Fl w
+option is a retrofitted hack.
 .\" EOF

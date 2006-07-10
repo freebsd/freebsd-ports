@@ -1,6 +1,6 @@
 #! /bin/sh --
 # (X)Emacs: -*- mode: Shell-Script; coding: iso8859-1; -*-
-# @(#)portless.sh,v 1.7 2006/06/14 13:02:37 martin Exp
+# @(#)portless.sh,v 1.8 2006/07/06 10:32:01 martin Exp
 # Show "pkg-descr" file of matching port(s).
 #
 # Copyright (c) 2006 Martin Kammerhofer <mkamm@gmx.net>
@@ -29,7 +29,7 @@
 Script=`basename $0` # name of this script
 
 # set defaults
-for opt in d f i M m p; do
+for opt in d f i M m p w; do
     eval opt_$opt=""
 done
 PORTSDIR=${PORTSDIR:-/usr/ports}
@@ -60,7 +60,7 @@ addopt()
 }
 
 # process options
-while getopts "D:dfiMmpP:x" option
+while getopts "D:dfiMmpP:wx" option
   do
   case "$option" in
       (D) PORTSDIR="$OPTARG";;		# undocumented
@@ -71,13 +71,20 @@ while getopts "D:dfiMmpP:x" option
       (m) addopt m "pkg-message";;
       (p) addopt p "pkg-plist";;
       (P) PAGER="$OPTARG";;
+      (w) opt_w="w";;
       (x) set -x;;			# undocumented
       (*) usage;;
   esac
 done
 shift $(($OPTIND - 1))
 [ -d "$PORTSDIR" ] || fatal "No such directory '$PORTSDIR'"
-[ -n "$filelist" ] || filelist="$PKGDESCR"
+if [ -n "$opt_w" ]; then
+    [ -n "$filelist" ] && usage "option -w not compatible with other options"
+    PAGER="/bin/ls -1d"			# just echo directory name(s)
+    filelist="."
+else
+    [ -n "$filelist" ] || filelist="$PKGDESCR"
+fi
 
 # there must be at least one argument
 if [ $# = 0 ]; then
