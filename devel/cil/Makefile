@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cil
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://manju.cs.berkeley.edu/cil/distrib/
