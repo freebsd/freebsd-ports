@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gtkmathview
-PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTVERSION=	0.7.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://helm.cs.unibo.it/mml-widget/sources/
 
@@ -18,7 +17,9 @@ COMMENT=	A GTK Widget to Render MathML Documents
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		t1:${PORTSDIR}/devel/t1lib \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom
+		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom \
+		popt.0:${PORTSDIR}/devel/popt \
+		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes
@@ -30,11 +31,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-MAN1=	mathmlviewer.1 mathml2ps.1
+MAN1=	mathmlviewer.1
 
-post-patch:
-.for file in src/stringAux.cc src/PS_T1_FontManager.cc
-	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/${file}
-.endfor
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 600000
+IGNORE= is unsupported on versions prior to FreeBSD 6.0
+.endif
+
+.include <bsd.port.post.mk>
