@@ -2005,6 +2005,7 @@ e17-module-flame	ports/x11/e17-module-flame
 e17-module-mail	ports/x11/e17-module-mail
 e17-module-mem	ports/x11/e17-module-mem
 e17-module-moon	ports/x11/e17-module-moon
+e17-module-rain	ports/x11/e17-module-rain
 e17-module-slideshow	ports/x11/e17-module-slideshow
 e17-module-uptime	ports/x11/e17-module-uptime
 e17-module-weather	ports/x11/e17-module-weather
