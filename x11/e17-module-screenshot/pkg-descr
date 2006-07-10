@@ -1,0 +1,6 @@
+This e17 module allows users to take screenshots. It provides customized
+delays, directory and file names, image dithering, thumbnails preparing
+and various effects via external programs.
+
+Author:	Christopher Michael <devilhorns@comcast.net>
+WWW:	http://www.enlightenment.org
