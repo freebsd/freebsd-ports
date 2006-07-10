@@ -6,25 +6,19 @@
 #
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.13.1
+PORTVERSION=	0.16
 CATEGORIES=	security python
-MASTER_SITES=	http://sandbox.rulemaker.net/ngps/Dist/
+MASTER_SITES=	http://wiki.osafoundation.org/pub/Projects/MeTooCrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$//}
-
-PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
-PATCHFILES+=	0.13p1.patch
-
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
-USE_ZIP=	yes
 USE_OPENSSL=	yes
 
 post-patch:
