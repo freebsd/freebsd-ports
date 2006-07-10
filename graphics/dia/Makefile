@@ -37,6 +37,7 @@ USE_GNOME+=	pygtk2
 CONFIGURE_ARGS=	--with-python
 PLIST_SUB=	PYTHON:=""
 .else
+USE_PYTHON_BUILD=yes
 PLIST_SUB=	PYTHON:="@comment "
 .endif
 
