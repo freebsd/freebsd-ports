@@ -1,0 +1,16 @@
+lib/enlightenment/modules/snow/flake-l.png
+lib/enlightenment/modules/snow/flake-m.png
+lib/enlightenment/modules/snow/flake-s.png
+lib/enlightenment/modules/snow/module.a
+lib/enlightenment/modules/snow/module.eap
+lib/enlightenment/modules/snow/module.la
+lib/enlightenment/modules/snow/module.so
+lib/enlightenment/modules/snow/module_icon.png
+lib/enlightenment/modules/snow/tree.png
+%%NLS%%share/locale/eo/LC_MESSAGES/snow.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/snow.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/snow.mo
+%%NLS%%share/locale/it/LC_MESSAGES/snow.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/snow.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/snow.mo
+@dirrm lib/enlightenment/modules/snow
