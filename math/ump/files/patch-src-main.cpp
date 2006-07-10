@@ -1,7 +1,7 @@
---- src/main.cpp	Sat Apr 22 01:10:27 2006
-+++ src/main.cpp.port	Wed May  3 15:13:45 2006
-@@ -692,7 +692,7 @@
- 		
+--- src/main.cpp	Sun Jun 25 12:48:31 2006
++++ src/main.cpp.port	Mon Jul 10 14:08:33 2006
+@@ -682,7 +682,7 @@
+ 
  		setup_file.replace_escape_sequences = true;
  
 -		try{  setup_file.read( DATA_DIR "/ump.conf" );  }
