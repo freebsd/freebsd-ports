@@ -9,7 +9,7 @@ PORTNAME=	google-earth
 PORTVERSION=	4.0.1660
 CATEGORIES=	astro deskutils
 MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
-DISTFILES=	GoogleEarthLinux.bin
+DISTFILES=	${TARGET_DISTFILE}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	flz@FreeBSD.org
@@ -25,6 +25,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 USE_LINUX=	yes
 USE_GNOME=	desktopfileutils
 
+REAL_DISTFILE=		GoogleEarthLinux.bin
+TARGET_DISTFILE=	GoogleEarthLinux-${PORTVERSION}.bin
+
+FETCH_CMD=	/usr/bin/fetch -ARm
+FETCH_BEFORE_ARGS=	-o ${TARGET_DISTFILE}
+
 .include <bsd.port.pre.mk>
 
 UNMAKESELF=	${LOCALBASE}/bin/unmakeself
@@ -38,6 +44,10 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_d
 .else
 RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
 .endif
+
+do-fetch:
+	@cd ${DISTDIR}; \
+		${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${REAL_DISTFILE}|g} ${FETCH_AFTER_ARGS}
 
 do-build:
 	@${MKDIR} ${WRKSRC}
