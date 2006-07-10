@@ -129,6 +129,10 @@ share/locale/bg/LC_MESSAGES/k3b.mo
 share/locale/bg/LC_MESSAGES/k3bsetup.mo
 share/locale/bg/LC_MESSAGES/libk3b.mo
 share/locale/bg/LC_MESSAGES/libk3bdevice.mo
+share/locale/bn/LC_MESSAGES/k3b.mo
+share/locale/bn/LC_MESSAGES/k3bsetup.mo
+share/locale/bn/LC_MESSAGES/libk3b.mo
+share/locale/bn/LC_MESSAGES/libk3bdevice.mo
 share/locale/br/LC_MESSAGES/k3b.mo
 share/locale/br/LC_MESSAGES/k3bsetup.mo
 share/locale/br/LC_MESSAGES/libk3b.mo
@@ -209,6 +213,10 @@ share/locale/ja/LC_MESSAGES/k3b.mo
 share/locale/ja/LC_MESSAGES/k3bsetup.mo
 share/locale/ja/LC_MESSAGES/libk3b.mo
 share/locale/ja/LC_MESSAGES/libk3bdevice.mo
+share/locale/km/LC_MESSAGES/k3b.mo
+share/locale/km/LC_MESSAGES/k3bsetup.mo
+share/locale/km/LC_MESSAGES/libk3b.mo
+share/locale/km/LC_MESSAGES/libk3bdevice.mo
 share/locale/lt/LC_MESSAGES/k3b.mo
 share/locale/lt/LC_MESSAGES/k3bsetup.mo
 share/locale/lt/LC_MESSAGES/libk3b.mo
@@ -217,10 +225,18 @@ share/locale/mk/LC_MESSAGES/k3b.mo
 share/locale/mk/LC_MESSAGES/k3bsetup.mo
 share/locale/mk/LC_MESSAGES/libk3b.mo
 share/locale/mk/LC_MESSAGES/libk3bdevice.mo
+share/locale/ms/LC_MESSAGES/k3b.mo
+share/locale/ms/LC_MESSAGES/k3bsetup.mo
+share/locale/ms/LC_MESSAGES/libk3b.mo
+share/locale/ms/LC_MESSAGES/libk3bdevice.mo
 share/locale/nb/LC_MESSAGES/k3b.mo
 share/locale/nb/LC_MESSAGES/k3bsetup.mo
 share/locale/nb/LC_MESSAGES/libk3b.mo
 share/locale/nb/LC_MESSAGES/libk3bdevice.mo
+share/locale/nds/LC_MESSAGES/k3b.mo
+share/locale/nds/LC_MESSAGES/k3bsetup.mo
+share/locale/nds/LC_MESSAGES/libk3b.mo
+share/locale/nds/LC_MESSAGES/libk3bdevice.mo
 share/locale/nl/LC_MESSAGES/k3b.mo
 share/locale/nl/LC_MESSAGES/k3bsetup.mo
 share/locale/nl/LC_MESSAGES/libk3b.mo
@@ -307,6 +323,10 @@ share/locale/zh_CN/LC_MESSAGES/libk3bdevice.mo
 @dirrmtry share/locale/pl
 @dirrmtry share/locale/nn/LC_MESSAGES
 @dirrmtry share/locale/nn
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
 @dirrmtry share/locale/cs/LC_MESSAGES
