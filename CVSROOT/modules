@@ -13581,6 +13581,7 @@ trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
 py-trustedpickle	ports/security/py-trustedpickle
 trustedqsl	ports/comms/trustedqsl
+truthtable	ports/math/truthtable
 tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
 tsito		ports/games/tsito
