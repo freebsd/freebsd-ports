@@ -49,7 +49,7 @@ WITHOUT_OCTET_VIEWER=	yes
 SHIMBUN=	""
 .endif
 
-.if (${EMACS_PORT_NAME} == "emacs21")
+.if (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
 MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
@@ -76,8 +76,11 @@ RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 .if !defined(WITHOUT_OCTET_VIEWER)
 RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
 		wvHtml:${PORTSDIR}/textproc/wv \
-		xlhtml:${PORTSDIR}/textproc/xlhtml \
-		${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
+		xlhtml:${PORTSDIR}/textproc/xlhtml
+
+.if ${EMACS_PORT_NAME} != "emacs22"
+RUN_DEPENDS+=	${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
+.endif
 .endif
 
 pre-everything::
