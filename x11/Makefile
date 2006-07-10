@@ -47,6 +47,7 @@
     SUBDIR += e17-module-mem
     SUBDIR += e17-module-moon
     SUBDIR += e17-module-rain
+    SUBDIR += e17-module-screenshot
     SUBDIR += e17-module-slideshow
     SUBDIR += e17-module-snow
     SUBDIR += e17-module-uptime
