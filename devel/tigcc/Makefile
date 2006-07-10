@@ -22,6 +22,7 @@ COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_BISON=	yes
 NO_WRKSUBDIR=	yes
 
 do-extract:
@@ -118,4 +119,10 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Doesn't compile
+.endif
+
+.include <bsd.port.post.mk>
