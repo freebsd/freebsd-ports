@@ -7,7 +7,7 @@
 
 PORTNAME=	libwww
 PORTVERSION=	5.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
 DISTNAME=	w3c-${PORTNAME}-${PORTVERSION}

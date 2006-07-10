@@ -1,0 +1,12 @@
+--- libwww-config.in.orig       Thu Jul  6 18:48:21 2006
++++ libwww-config.in    Thu Jul  6 18:49:01 2006
+@@ -48,7 +48,7 @@
+       echo -I@includedir@ -I@includedir@/@PACKAGE@ @DEFS@
+       ;;
+     --libs)
+-      echo -L@libdir@ @LWWWXML@ @LWWWZIP@ @LWWWWAIS@ @LWWWSQL@ -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils @LWWWMD5@ @LIBS@
++      echo -L@libdir@ @LWWWXML@ @LWWWZIP@ @LWWWWAIS@ @LWWWSQL@ @LWWWSSL@ -lwwwinit -lwwwapp -lwwwhtml -lwwwtelnet -lwwwnews -lwwwhttp -lwwwmime -lwwwgopher -lwwwftp -lwwwfile -lwwwdir -lwwwcache -lwwwstream -lwwwmux -lwwwtrans -lwwwcore -lwwwutils @LWWWMD5@ @LIBS@
+       ;;
+     *)
+       echo "${usage}" 1>&2
+
