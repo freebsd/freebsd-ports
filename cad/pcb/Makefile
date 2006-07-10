@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pcb
-PORTVERSION=	20050609
-PORTREVISION=	1
+PORTVERSION=	20060414
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +14,26 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
 
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
+.if defined(WITH_MOTIF_GUI)
+USE_MOTIF=	yes
+CONFIGURE_ARGS+=	--with-gui=lesstif
+.else
 USE_GNOME=	gtk20
+.endif
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-rpath
-
-INFO=		pcb
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .if !defined(NOPORTDOCS)
-pre-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/pcb.info ${PREFIX}/info
+INFO=		pcb
+MAN1=		pcb.1
+.else
+CONFIGURE_ARGS+=	--disable-doc
 .endif
 
 .include <bsd.port.mk>
