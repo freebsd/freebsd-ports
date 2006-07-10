@@ -67,6 +67,7 @@ share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/fr-FR.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ga-IE.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/gl-ES.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/he-IL.strings
+share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/hr-HR.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/hu-HU.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/id-ID.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/it-IT.strings
@@ -80,6 +81,7 @@ share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/mh-MH.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/mk-MK.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ms-MY.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/nb-NO.strings
+share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ne-NP.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/nl-NL.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/nn-NO.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/pl-PL.strings
