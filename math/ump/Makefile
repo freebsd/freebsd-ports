@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ump
-PORTVERSION=	0.8.3.2
+PORTVERSION=	0.8.4
 CATEGORIES=	math
 MASTER_SITES=	http://home.swipnet.se/${PORTNAME}/downloads/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -34,8 +34,8 @@ FIND_DIRS=	-type d
 FIND_DATA=	-type f
 
 .if !defined(NOPORTDOCS)
-DOCSDIST=	${PORTNAME}-${PORTVERSION:C/\.[0-9]$//}-doc
-DISTFILES+=	${DOCSDIST}${EXTRACT_SUFX}
+DOCSDIST=	${PORTNAME}-${PORTVERSION}-doc
+DISTFILES+=	${PORTNAME}-documentation${EXTRACT_SUFX}
 .endif
 
 .include <bsd.port.pre.mk>

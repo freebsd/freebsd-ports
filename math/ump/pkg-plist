@@ -16,7 +16,10 @@ etc/ump.conf.dist
 %%PORTDOCS%%%%DOCSDIR%%/degree.html
 %%PORTDOCS%%%%DOCSDIR%%/delete.html
 %%PORTDOCS%%%%DOCSDIR%%/e.html
+%%PORTDOCS%%%%DOCSDIR%%/equal.html
 %%PORTDOCS%%%%DOCSDIR%%/exit.html
+%%PORTDOCS%%%%DOCSDIR%%/factorize.html
+%%PORTDOCS%%%%DOCSDIR%%/fibonacci.html
 %%PORTDOCS%%%%DOCSDIR%%/frac.html
 %%PORTDOCS%%%%DOCSDIR%%/function_list.html
 %%PORTDOCS%%%%DOCSDIR%%/gcd.html
@@ -40,6 +43,7 @@ etc/ump.conf.dist
 %%PORTDOCS%%%%DOCSDIR%%/matrix_editor_result.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/matrix_editor_right_side.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/not.html
+%%PORTDOCS%%%%DOCSDIR%%/not_equal.html
 %%PORTDOCS%%%%DOCSDIR%%/or.html
 %%PORTDOCS%%%%DOCSDIR%%/pi.html
 %%PORTDOCS%%%%DOCSDIR%%/picture.html
@@ -69,6 +73,7 @@ etc/ump.conf.dist
 %%DATADIR%%/ump-files/White.ump
 %%DATADIR%%/ump-files/Yellow.ump
 %%DATADIR%%/ump-files/factorize.ump
+%%DATADIR%%/ump-files/fibonacci.ump
 %%DATADIR%%/ump-files/gcd.ump
 %%DATADIR%%/ump-files/identity.ump
 %%DATADIR%%/ump-files/isMersenne.ump
