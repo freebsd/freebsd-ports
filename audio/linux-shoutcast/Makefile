@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	shoutcast
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.7
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-5/
+MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-7/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	shoutcast-1-9-5-linux-glibc6
+DISTNAME=	shoutcast-1-9-7-linux-glibc6
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Nullsoft's streaming audio server (Linux binary port)
@@ -23,6 +23,7 @@ RESTRICTED=	Redistribution of the software is not allowed
 
 USE_RC_SUBR=	shoutcast.sh
 PORTDOCS=	README.TXT
+WRKSRC=		${WRKDIR}
 
 post-patch:
 	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
