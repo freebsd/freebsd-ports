@@ -28,6 +28,10 @@ CONFIGURE_ARGS=	--enable-zlib \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
+.if !defined(SLAVEPORT)
+OPTIONS=	CAIRO "Enable cairo output backend" on
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
@@ -55,6 +59,9 @@ MAN1=	pdffonts.1 pdfimages.1 pdfinfo.1 \
 .else
 CONFIGURE_ARGS+=--disable-poppler-glib --disable-poppler-qt \
 		--disable-poppler-qt4 --disable-utils
+.if defined(WITHOUT_CAIRO)
+CONFIGURE_ARGS+=	--disable-cairo-output
+.endif
 .endif
 
 post-patch:
