@@ -7,6 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.44
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,8 @@ COMMENT=	A program seeks to become a full featured open source SVG editor
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gc.1:${PORTSDIR}/devel/boehm-gc \
-		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
+		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes
