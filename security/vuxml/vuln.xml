@@ -35,7 +35,8 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="b0d61f73-0e11-11db-a47b-000c2957fdf1">
-    <topic>trac -- reStructuredText breach of privacy and denial of service vulnerability </topic>
+    <topic>trac -- reStructuredText breach of privacy and denial of
+      service vulnerability</topic>
     <affects>
       <package>
 	<name>trac</name>
@@ -47,7 +48,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>ChangeLog reports:</p>
 	<blockquote cite="http://trac.edgewall.org/wiki/ChangeLog">
-	  <p>Version 0.9.6 fixes reStructuredText breach of privacy and denial of service vulnerability found by Felix Wiemann.</p>
+	  <p>Version 0.9.6 fixes reStructuredText breach of privacy
+	    and denial of service vulnerability found by Felix
+	    Wiemann.</p>
 	</blockquote>
       </body>
     </description>
