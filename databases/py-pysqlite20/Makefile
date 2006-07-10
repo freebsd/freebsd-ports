@@ -19,7 +19,7 @@ COMMENT=	A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-CONFLICTS=	py*-pysqlite-2.1*
+CONFLICTS=	py*-pysqlite-2.[1-9].*
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}20${PKGNAMESUFFIX}
 

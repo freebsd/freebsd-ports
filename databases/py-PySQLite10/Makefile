@@ -20,7 +20,7 @@ LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
 NO_LATEST_LINK=	yes
 
-CONFLICTS=	py*-PySQLite-1.1*
+CONFLICTS=	py*-PySQLite-1.1.*
 
 WRKSRC=		${WRKDIR}/pysqlite
 USE_PYTHON=	yes
