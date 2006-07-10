@@ -608,7 +608,6 @@ share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/resources/browser-side.png
 %%DATADIR%%/resources/search-dis.png
 %%DATADIR%%/resources/american_state_border_fade_out_mask.png
-%%DATADIR%%/resources/collada_building_mask.png
 %%DATADIR%%/resources/dc_benchmark_mask.png
 %%DATADIR%%/resources/draw_big_placemark_mask.png
 %%DATADIR%%/resources/draw_building_mask.png
@@ -646,6 +645,7 @@ share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/linux/README-mailto.txt
 %%DATADIR%%/lang/qt_it.qm
 %%DATADIR%%/lang/es.qm
+%%DATADIR%%/lang/en.qm
 %%DATADIR%%/lang/fr.qm
 %%DATADIR%%/lang/it.qm
 %%DATADIR%%/lang/qt_de.qm
@@ -664,6 +664,7 @@ share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/xml/measure.module.xml
 %%DATADIR%%/xml/navigate.module.xml
 %%DATADIR%%/xml/app.module.xml
+%%DATADIR%%/xml/3dconnexion.plugin.xml
 %%DATADIR%%/libtiff.so.3
 %%DATADIR%%/libstdc++.so.6
 %%DATADIR%%/libssl.so.0.9.8
@@ -707,6 +708,7 @@ share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/libIGCore.so
 %%DATADIR%%/libIGCollision.so
 %%DATADIR%%/libIGAttrs.so
+%%DATADIR%%/lib3dconnexion.so
 %%DATADIR%%/googleearth.xpm
 %%DATADIR%%/googleearth-icon.png
 %%DATADIR%%/googleearth-bin
