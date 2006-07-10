@@ -10,3 +10,12 @@
  else
       { echo "$as_me:$LINENO: WARNING: Ouch!! Only gcc is supported..." >&5
  echo "$as_me: WARNING: Ouch!! Only gcc is supported..." >&2;}
+@@ -3817,7 +3818,7 @@
+           echo  $pcap_dir
+           echo  $dir
+           echo; echo please wipe out all unused pcap installations
+-          exit
++#          exit
+        else
+           pcap_dir="$dir"
+        fi
