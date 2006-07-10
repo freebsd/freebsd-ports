@@ -1,0 +1,10 @@
+Xango is a framework for writing web crawlers. As such, it doesn't do
+a whole lot by itself - you need to create custom handlers to do the
+grunt work. See the documentation for Xango::Manual::Intro for more
+details on how to write your own crawler.
+
+Please note that Xango is still in beta. Some behavior may change as
+we keep on developing it.
+
+Author:	Daisuke Maki <dmaki@cpan.org>
+WWW:	http://search.cpan.org/dist/Xango/

@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Xango.pm
+%%SITE_PERL%%/Xango/Broker.pm
+%%SITE_PERL%%/Xango/Broker/Base.pm
+%%SITE_PERL%%/Xango/Broker/Pull.pm
+%%SITE_PERL%%/Xango/Broker/Push.pm
+%%SITE_PERL%%/Xango/Config.pm
+%%SITE_PERL%%/Xango/Job.pm
+%%SITE_PERL%%/Xango/Manual/Intro.pod
+@dirrmtry %%SITE_PERL%%/Xango/Broker
+@dirrmtry %%SITE_PERL%%/Xango/Manual
+@dirrmtry %%SITE_PERL%%/Xango
