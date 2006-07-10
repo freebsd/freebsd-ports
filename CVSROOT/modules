@@ -8530,6 +8530,7 @@ p5-Email-Simple-Creator	ports/mail/p5-Email-Simple-Creator
 p5-Email-Valid	ports/mail/p5-Email-Valid
 p5-Email-Valid-Loose	ports/mail/p5-Email-Valid-Loose
 p5-Encode	ports/converters/p5-Encode
+p5-Encode-Detect	ports/converters/p5-Encode-Detect
 p5-Encode-JIS2K	ports/converters/p5-Encode-JIS2K
 p5-Encode-compat	ports/converters/p5-Encode-compat
 p5-Env-PS1	ports/devel/p5-Env-PS1
