@@ -9738,6 +9738,7 @@ p5-Text-Striphigh	ports/textproc/p5-Text-Striphigh
 p5-Text-Table		ports/textproc/p5-Text-Table
 p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
 p5-Text-TabularDisplay	ports/textproc/p5-Text-TabularDisplay
+p5-Text-Tags	ports/textproc/p5-Text-Tags
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Textile	ports/textproc/p5-Text-Textile
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
