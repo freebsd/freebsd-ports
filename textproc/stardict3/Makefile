@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stardict
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,7 @@ USE_GCC=	3.4
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_GETTEXT=	yes
 
 GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes

@@ -49,17 +49,21 @@ share/gnome/stardict/pixmaps/docklet_normal.png
 share/gnome/stardict/pixmaps/docklet_scan.png
 share/gnome/stardict/pixmaps/docklet_stop.png
 share/gnome/stardict/pixmaps/index_appendix.png
+share/gnome/stardict/pixmaps/index_dictlist.png
 share/gnome/stardict/pixmaps/index_wazard.png
 share/gnome/stardict/pixmaps/splash.png
 share/gnome/stardict/sounds/buttonactive.wav
 share/gnome/stardict/sounds/menushow.wav
 share/locale/cs/LC_MESSAGES/stardict.mo
 share/locale/de/LC_MESSAGES/stardict.mo
+share/locale/el/LC_MESSAGES/stardict.mo
+share/locale/fr/LC_MESSAGES/stardict.mo
 share/locale/hr/LC_MESSAGES/stardict.mo
 share/locale/hu/LC_MESSAGES/stardict.mo
 share/locale/ku/LC_MESSAGES/stardict.mo
 share/locale/mk/LC_MESSAGES/stardict.mo
 share/locale/nl/LC_MESSAGES/stardict.mo
+share/locale/pt_BR/LC_MESSAGES/stardict.mo
 share/locale/ru/LC_MESSAGES/stardict.mo
 share/locale/sk/LC_MESSAGES/stardict.mo
 share/locale/tt/LC_MESSAGES/stardict.mo
@@ -71,7 +75,7 @@ share/locale/zh_TW/LC_MESSAGES/stardict.mo
 @dirrmtry share/locale/tt
 @dirrm share/gnome/stardict/sounds
 @dirrm share/gnome/stardict/pixmaps
-@dirrm share/gnome/stardict
+@dirrmtry share/gnome/stardict
 @dirrm share/gnome/omf/stardict
 @dirrm share/gnome/help/stardict/zh_TW/figures
 @dirrm share/gnome/help/stardict/zh_TW
