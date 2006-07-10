@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
@@ -26,7 +26,7 @@ EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
 MORE_EXAMPLES=	README.Automatic_documentation checkoutlist commit_action.sh \
 		commitinfo cvswrappers tag_action.sh taginfo
 PLIST=		${WRKDIR}/pkg-plist
-SUB_FILES=      pkg-message
+SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include \
 		--with-gd-lib=${LOCALBASE}/lib
