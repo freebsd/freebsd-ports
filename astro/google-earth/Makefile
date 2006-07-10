@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4
-PORTREVISION=	1
+PORTVERSION=	4.0.1660
 CATEGORIES=	astro deskutils
-MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION}/
+MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
 DISTFILES=	GoogleEarthLinux.bin
 EXTRACT_ONLY=	# none
 
@@ -20,6 +19,8 @@ BUILD_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 RESTRICTED=	Not sure about redistribution rights
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
 USE_LINUX=	yes
 USE_GNOME=	desktopfileutils
