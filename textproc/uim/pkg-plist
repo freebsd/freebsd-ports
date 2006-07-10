@@ -4,7 +4,7 @@ bin/uim-fep
 bin/uim-fep-tick
 bin/uim-module-manager
 bin/uim-sh
-bin/uim-xim
+%%X11%%bin/uim-xim
 include/uim/plugin.h
 include/uim/uim-compat-scm.h
 include/uim/uim-custom.h
@@ -28,7 +28,7 @@ lib/uim/plugin/libuim-skk.a
 lib/uim/plugin/libuim-skk.la
 lib/uim/plugin/libuim-skk.so
 libdata/pkgconfig/uim.pc
-libexec/uim-candwin-gtk
+%%X11%%libexec/uim-candwin-gtk
 libexec/uim-helper-server
 share/applications/uim.desktop
 share/locale/fr/LC_MESSAGES/uim.mo

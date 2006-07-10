@@ -20,6 +20,10 @@ UIM_SLAVE=	yes
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-helper_Makefile.in 
 
+.if defined(WITHOUT_X11)
+IGNORE=		requires X11
+.endif
+
 do-build:
 	(cd ${WRKSRC}/helper && ${GMAKE} LIBS="-luim -luim-custom")
 

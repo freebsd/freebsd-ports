@@ -30,6 +30,10 @@ CONFIGURE_ENV+=	TMPDIR="${TMPDIR}"
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt_Makefile.in 
 
+.if defined(WITHOUT_X11)
+IGNORE=		requires X11
+.endif
+
 do-build:
 	(cd ${WRKSRC}/qt && ${GMAKE} LIBS="-luim -luim-custom")
 

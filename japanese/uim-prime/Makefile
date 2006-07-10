@@ -6,7 +6,11 @@
 #
 
 CATEGORIES=	japanese
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-prime-nox11
+.else
 PKGNAMESUFFIX=	-prime
+.endif
 
 COMMENT=	Uim plugin using PRIME input method
 
@@ -30,6 +34,10 @@ do-install:
 	${GMAKE} uim_plugin_LTLIBRARIES=libuim-prime.la install-uim_pluginLTLIBRARIES)
 
 post-install:
-	${X11BASE}/bin/uim-module-manager --register prime
+.if defined(WITHOUT_X11)
+	${LOCALBASE}/bin/uim-module-manager --register anthy
+.else
+	${X11BASE}/bin/uim-module-manager --register anthy
+.endif
 
 .include "${MASTERDIR}/Makefile"

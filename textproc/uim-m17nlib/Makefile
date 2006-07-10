@@ -5,7 +5,11 @@
 # $FreeBSD$
 #
 
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-m17nlib-nox11
+.else
 PKGNAMESUFFIX=	-m17nlib
+.endif
 
 COMMENT=	Uim plugin using m17n library input method
 
@@ -28,6 +32,10 @@ do-install:
 	${GMAKE} uim_plugin_LTLIBRARIES=libuim-m17nlib.la install-uim_pluginLTLIBRARIES)
 
 post-install:
-	${X11BASE}/bin/uim-module-manager --register m17nlib
+.if defined(WITHOUT_X11)
+	${LOCALBASE}/bin/uim-module-manager --register anthy
+.else
+	${X11BASE}/bin/uim-module-manager --register anthy
+.endif
 
 .include "${MASTERDIR}/Makefile"
