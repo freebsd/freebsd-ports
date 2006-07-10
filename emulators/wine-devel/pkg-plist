@@ -179,6 +179,8 @@ include/wine/windows/guiddef.h
 include/wine/windows/hlguids.h
 include/wine/windows/hlink.h
 include/wine/windows/hlink.idl
+include/wine/windows/htiframe.h
+include/wine/windows/htiframe.idl
 include/wine/windows/htmlhelp.h
 include/wine/windows/iads.h
 include/wine/windows/iads.idl
@@ -187,6 +189,8 @@ include/wine/windows/icmpapi.h
 include/wine/windows/idispids.h
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
+include/wine/windows/indexsvr.h
+include/wine/windows/indexsvr.idl
 include/wine/windows/initguid.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -262,6 +266,7 @@ include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
 include/wine/windows/ntdsapi.h
+include/wine/windows/ntquery.h
 include/wine/windows/ntsecapi.h
 include/wine/windows/ntstatus.h
 include/wine/windows/oaidl.h
@@ -282,6 +287,8 @@ include/wine/windows/olectl.h
 include/wine/windows/oledlg.h
 include/wine/windows/oleidl.h
 include/wine/windows/oleidl.idl
+include/wine/windows/optary.h
+include/wine/windows/optary.idl
 include/wine/windows/pktdef.h
 include/wine/windows/poppack.h
 include/wine/windows/powrprof.h
@@ -441,6 +448,7 @@ lib/wine/control.exe.so
 lib/wine/crtdll.dll.so
 lib/wine/crypt32.dll.so
 lib/wine/cryptdll.dll.so
+lib/wine/cryptnet.dll.so
 lib/wine/ctl3d.dll16
 lib/wine/ctl3d32.dll.so
 lib/wine/ctl3dv2.dll16
@@ -693,6 +701,7 @@ lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
 lib/wine/qcap.dll.so
 lib/wine/quartz.dll.so
+lib/wine/query.dll.so
 lib/wine/rasapi16.dll16
 lib/wine/rasapi32.dll.so
 lib/wine/regedit.exe.so
