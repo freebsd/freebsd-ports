@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bidiv
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.ivrix.org.il/pub/ivrix/src/cmdline/
 EXTRACT_SUFX=	.tgz
