@@ -9,6 +9,4 @@ M2Crypto is a crypto and SSL toolkit for Python featuring the following:
 * ZServerSSL: A HTTPS server for Zope.
 * ZSmime: An S/MIME messenger for Zope.
 
-WWW: http://sandbox.rulemaker.net/ngps/m2/
-
-Marcus Alves Grando <mnag@FreeBSD.org>
+WWW:	http://wiki.osafoundation.org/bin/view/Projects/MeTooCrypto
