@@ -1,11 +1,12 @@
 --- configure~	Sun Jun 18 17:24:36 2006
-+++ configure	Sun Jun 25 11:52:30 2006
-@@ -2971,7 +2971,7 @@
++++ configure	Mon Jul 10 17:43:09 2006
+@@ -2971,7 +2971,8 @@
  
  
  if test -n "$GCC"; then
 -     CFLAGS="-O3 -Wall -g"
 +#     CFLAGS="-O3 -Wall -g"
++:
  else
       { echo "$as_me:$LINENO: WARNING: Ouch!! Only gcc is supported..." >&5
  echo "$as_me: WARNING: Ouch!! Only gcc is supported..." >&2;}
