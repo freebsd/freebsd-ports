@@ -86,20 +86,26 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>ChangeLog reports:</p>
-	<blockquote cite="http://trac.edgewall.org/wiki/ChangeLog">
-	  <p>Version 0.9.6 fixes reStructuredText breach of privacy
-	    and denial of service vulnerability found by Felix
-	    Wiemann.</p>
+	<p>The Trac 0.9.6 Release Notes reports:</p>
+	<blockquote cite="http://lists.edgewall.com/archive/trac-announce/2006-July/000013.html">
+	  <p>Fixed reStructuredText breach of privacy and denial of
+	    service vulnerability found by Felix Wiemann.</p>
+	  <p>The discovered vulnerability requires docutils to be
+	    installed and enabled. Systems that do not have docutils
+	    installed or enabled are not vulnerable. As of this
+	    version version 0.3.9 or greater of docutils is required
+	    for using reStructuredText markup in Trac.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <url>http://projects.edgewall.com/trac/wiki/ChangeLog</url>
+      <mlist>http://lists.edgewall.com/archive/trac-announce/2006-July/000013.html</mlist>
     </references>
     <dates>
       <discovery>2006-07-06</discovery>
       <entry>2006-07-07</entry>
+      <modified>2006-06-10</modified>
     </dates>
   </vuln>
 
