@@ -8728,6 +8728,7 @@ p5-HTML-Parser	ports/www/p5-HTML-Parser
 p5-HTML-PrettyPrinter	ports/www/p5-HTML-PrettyPrinter
 p5-HTML-Prototype	ports/www/p5-HTML-Prototype
 p5-HTML-QuickCheck	ports/www/p5-HTML-QuickCheck
+p5-HTML-ResolveLink	ports/www/p5-HTML-ResolveLink
 p5-HTML-Scrubber	ports/www/p5-HTML-Scrubber
 p5-HTML-SimpleLinkExtor	ports/www/p5-HTML-SimpleLinkExtor
 p5-HTML-SimpleParse	ports/www/p5-HTML-SimpleParse
