@@ -18,6 +18,7 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for the m17n library
 
+USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
