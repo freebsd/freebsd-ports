@@ -10,22 +10,27 @@ PORTVERSION=	7.${MOPAC_SUBVERSION}
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=     mopac7
+MASTER_SITE_SUBDIR=	mopac7
 DISTNAME=	mopac7-${MOPAC_SUBVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
-BUILD_DEPENDS=  f2c:${PORTSDIR}/lang/f2c
-LIB_DEPENDS=    f2c:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
+LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
 
 MOPAC_SUBVERSION=	1.10
 WRKSRC=		${WRKDIR}/mopac7-${MOPAC_SUBVERSION}
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV+=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"s,pkgconfigdir = .*,pkgconfigdir = $$\{exec_prefix\}/libdata/pkgconfig," \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run_mopac7  ${PREFIX}/bin/mopac7
