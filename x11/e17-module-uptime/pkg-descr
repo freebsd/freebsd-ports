@@ -1,0 +1,5 @@
+An e17 module indicating the system's current uptime, load averages and number
+of active users in a configurable interval.
+
+Author:	Matthew Mullins
+WWW:	http://www.enlightenment.org
