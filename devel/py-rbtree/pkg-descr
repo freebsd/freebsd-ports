@@ -16,4 +16,4 @@ In common usage its nearly as fast as the Python dict impl but has a
 slightly more expensive usage of the compare function as the keys are
 ordered and not hashed.
 
-WWW:	http://www.python.org/pypi/RBTree/
+WWW:	http://cheeseshop.python.org/pypi/rbtree/
