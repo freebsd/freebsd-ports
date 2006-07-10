@@ -1,0 +1,14 @@
+lib/enlightenment/modules/cpu/cpu.edj
+lib/enlightenment/modules/cpu/module.a
+lib/enlightenment/modules/cpu/module.eap
+lib/enlightenment/modules/cpu/module.la
+lib/enlightenment/modules/cpu/module.so
+lib/enlightenment/modules/cpu/module_icon.png
+%%NLS%%share/locale/bg/LC_MESSAGES/cpu.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/cpu.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/cpu.mo
+%%NLS%%share/locale/it/LC_MESSAGES/cpu.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/cpu.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/cpu.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/cpu.mo
+@dirrm lib/enlightenment/modules/cpu
