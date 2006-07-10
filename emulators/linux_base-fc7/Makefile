@@ -172,10 +172,16 @@ do-build:
 #
 	@${MV} ${WRKSRC}/etc/nsswitch.conf ${WRKSRC}/etc/nsswitch.conf.dist
 
+# Fix usr/bin/*db4* permissions to allow "portupgrade -s"
+	@${CHMOD} u+w ${WRKSRC}/usr/bin/*db4*
+
 	@${FIND} ${WRKSRC}/bin ${WRKSRC}/sbin/ ${WRKSRC}/usr/bin \
 		${WRKSRC}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
 		| ${XARGS} ${BRANDELF} -t Linux
+
+# Restore the status quo for usr/bin/*db4* files
+	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
 
 do-install:
 #
