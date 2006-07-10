@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a876df84-0fef-11db-ac96-000c6ec775d9">
+    <topic>twiki -- multiple file extensions file upload vulnerability</topic>
+    <affects>
+      <package>
+	<name>twiki</name>
+	<range><lt>4.0.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A TWiki Security Alert reports:</p>
+	<blockquote cite="http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads">
+	  <p>The TWiki upload filter already prevents executable
+	    scripts such as .php, .php1, .phps, .pl from potentially
+	    getting executed by appending a .txt suffix to the
+	    uploaded filename. However, PHP and some other types
+	    allows additional file suffixes, such as .php.en, .php.1,
+	    and .php.2. TWiki does not check for these suffixes,
+	    e.g. it is possible to upload php scripts with such
+	    suffixes without the .txt filename padding.</p>
+	</blockquote>
+	<p>This issue can also be worked around with a restrictive web
+	  server configuration.	 See the <a
+	    href="http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads"
+	    >TWiki Security Alert</a> for more information about how to
+	  do this.</p>
+      </body>
+    </description>
+    <references>
+      <bid>18854</bid>
+      <cvename>CVE-2006-3336</cvename>
+      <url>http://secunia.com/advisories/20992/</url>
+      <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads</url>
+    </references>
+    <dates>
+      <discovery>2006-07-05</discovery>
+      <entry>2006-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0d61f73-0e11-11db-a47b-000c2957fdf1">
     <topic>trac -- reStructuredText breach of privacy and denial of
       service vulnerability</topic>
