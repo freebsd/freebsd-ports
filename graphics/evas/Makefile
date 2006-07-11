@@ -7,7 +7,7 @@
 
 PORTNAME=	evas
 PORTVERSION=	0.9.9.029
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -23,14 +23,16 @@ GNU_CONFIGURE=	yes
 USE_FREETYPE2=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 OPTIONS=	GL "Enable GL support" off
 
+PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GL)                                                           
+.if defined(WITH_GL)
 CONFIGURE_ARGS+=	--enable-gl-x11
 PLIST_SUB+=	WITH_GL=""
 USE_GL=		yes
