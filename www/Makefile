@@ -560,6 +560,7 @@
     SUBDIR += p5-Catalyst-Plugin-Textile
     SUBDIR += p5-Catalyst-Plugin-Unicode
     SUBDIR += p5-Catalyst-Plugin-XMLRPC
+    SUBDIR += p5-Catalyst-Runtime
     SUBDIR += p5-Catalyst-View-GraphViz
     SUBDIR += p5-Catalyst-View-HTML-Template
     SUBDIR += p5-Catalyst-View-HTML-Template-Compiled
