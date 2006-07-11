@@ -8,7 +8,8 @@
 PORTNAME=	omni-bot
 PORTVERSION=	0.52
 CATEGORIES=	games linux
-MASTER_SITES=	#
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	linux-enemyterritory-
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -34,11 +35,6 @@ PLIST_SUB+=	ETPUB=""
 .else
 PLIST_SUB+=	ETPUB="@comment "
 .endif
-
-pre-fetch:
-	@cd ${DISTDIR} && ${FETCH_CMD:S/-A/-/} -o \
-		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		'http://www.omni-bot.de/e107/request.php?311'
 
 do-build:
 .for f in et etded
