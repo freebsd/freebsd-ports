@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.8.2
+PORTVERSION=	5.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		gctags.1 global.1 gozilla.1 gtags.1 htags.1
+MAN1=		global.1 gozilla.1 gtags.1 gtags-cscope.1 gtags-parser.1 htags.1
 INFO=		global
 
 post-patch:
