@@ -5087,6 +5087,7 @@ jslice		ports/graphics/jslice
 jsmath		ports/math/jsmath
 jsmath-fonts	ports/math/jsmath-fonts
 json-c		ports/devel/json-c
+jspice3		ports/cad/jspice3
 jtans		ports/games/jtans
 jtop		ports/sysutils/jtop
 jude-community	ports/devel/jude-community
