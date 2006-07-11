@@ -2,4 +2,4 @@
 
 cd %%DATADIR%% || exit 1
 
-exec ./radiant.x86 "$@"
+exec ./radiant.cpu "$@"
