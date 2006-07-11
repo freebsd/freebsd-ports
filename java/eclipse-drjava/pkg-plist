@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+eclipse/plugins/edu.rice.cs.drjava_0.9.5/drjava-eclipse.jar
+eclipse/plugins/edu.rice.cs.drjava_0.9.5/icons/drjava16.gif
+eclipse/plugins/edu.rice.cs.drjava_0.9.5/icons/drjava16.png
+eclipse/plugins/edu.rice.cs.drjava_0.9.5/plugin.xml
+@dirrm eclipse/plugins/edu.rice.cs.drjava_0.9.5/icons
+@dirrm eclipse/plugins/edu.rice.cs.drjava_0.9.5

@@ -22,6 +22,7 @@
     SUBDIR += eclipse-checkstyle
     SUBDIR += eclipse-clay-core
     SUBDIR += eclipse-devel
+    SUBDIR += eclipse-drjava
     SUBDIR += eclipse-emf
     SUBDIR += eclipse-examples
     SUBDIR += eclipse-gef
