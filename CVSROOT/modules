@@ -10527,6 +10527,7 @@ php5-mssql	ports/databases/php5-mssql
 php5-mysql	ports/databases/php5-mysql
 php5-mysqli	ports/databases/php5-mysqli
 php5-ncurses	ports/devel/php5-ncurses
+php5-oci8	ports/databases/php5-oci8
 php5-odbc	ports/databases/php5-odbc
 php5-openssl	ports/security/php5-openssl
 php5-pcntl	ports/devel/php5-pcntl
