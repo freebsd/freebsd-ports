@@ -50,6 +50,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/monty_spam.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/norse_mythology.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/octothorpe.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/olympics.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/opcodes.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/oulipo.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/pantagruel.pm
