@@ -482,6 +482,7 @@
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Text_Password
+    SUBDIR += pecl-crack
     SUBDIR += pecl-filter
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-hash
