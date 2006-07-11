@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.03003
+PORTVERSION=	0.03004
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -28,6 +28,7 @@ RUN_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Accessor>=0.02:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-Class-C3>=0.11:${PORTSDIR}/devel/p5-Class-C3 \
+		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBIx-Class>=0.06003:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 
