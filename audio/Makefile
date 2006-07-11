@@ -399,6 +399,7 @@
     SUBDIR += orpheus
     SUBDIR += osalp
     SUBDIR += p5-Audio
+    SUBDIR += p5-Audio-Beep
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-Audio-Scrobbler
     SUBDIR += p5-Audio-TagLib
