@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	0.9.13
+PORTVERSION=	1.0.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 		http://sunpoet.net/distfiles/
@@ -28,12 +28,12 @@ OPTIONS=	HDF5	"HDF5 support" off \
 		NETCDF	"NETCDF support" off
 
 .if defined(WITH_HDF5)
-CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
 .endif
 
 .if defined(WITH_NETCDF)
-CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
 LIB_DEPENDS+=		netcdf.1:${PORTSDIR}/science/netcdf
 .endif
 
