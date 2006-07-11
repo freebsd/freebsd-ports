@@ -7,7 +7,7 @@
 
 PORTNAME=	ccmalloc
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.ethz.ch/personal/biere/projects/ccmalloc/
 
@@ -21,6 +21,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 SUB_FILES=	pkg-message
 PLIST_SUB=	CXX="${CXX}"
+
+#PR: 99070
+CFLAGS+=	-O0
 
 .include <bsd.port.pre.mk>
 
