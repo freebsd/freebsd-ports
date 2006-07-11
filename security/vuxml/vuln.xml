@@ -177,7 +177,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mambo</name>
-	<range><gt>0</gt></range>
+	<range><lt>4.5.4</lt></range>
       </package>
     </affects>
     <description>
