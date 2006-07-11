@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -16,7 +16,8 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Load config files of various types
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Data-Visitor>=0.02:${PORTSDIR}/devel/p5-Data-Visitor
+		p5-Data-Visitor>=0.02:${PORTSDIR}/devel/p5-Data-Visitor \
+		p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
