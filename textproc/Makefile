@@ -576,6 +576,7 @@
     SUBDIR += p5-XML-RSS
     SUBDIR += p5-XML-RSS-JavaScript
     SUBDIR += p5-XML-RSS-LibXML
+    SUBDIR += p5-XML-RSS-Liberal
     SUBDIR += p5-XML-RSS-Parser
     SUBDIR += p5-XML-RSS-SimpleGen
     SUBDIR += p5-XML-RegExp
