@@ -8765,6 +8765,7 @@ p5-HTML-Template-Pluggable	ports/www/p5-HTML-Template-Pluggable
 p5-HTML-Tidy	ports/textproc/p5-HTML-Tidy
 p5-HTML-TokeParser-Simple	ports/www/p5-HTML-TokeParser-Simple
 p5-HTML-Tree	ports/www/p5-HTML-Tree
+p5-HTML-TreeBuilder-XPath	ports/www/p5-HTML-TreeBuilder-XPath
 p5-HTML-Truncate	ports/textproc/p5-HTML-Truncate
 p5-HTML-Webmake	ports/www/p5-HTML-Webmake
 p5-HTML-Widget	ports/www/p5-HTML-Widget
