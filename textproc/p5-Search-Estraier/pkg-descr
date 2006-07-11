@@ -1,0 +1,12 @@
+This module is implementation of node API of Hyper Estraier. Since
+it's perl-only module with dependencies only on standard perl modules,
+it will run on all platforms on which perl runs. It doesn't require
+compilation or Hyper Estraier development files on target machine.
+
+It is implemented as multiple packages which closly resamble Ruby
+implementation. It also includes methods to manage nodes.
+
+There are few examples in scripts directory of this distribution.
+
+Author:	Dobrica Pavlinusic, <dpavlin@rot13.org>
+WWW:	http://search.cpan.org/dist/Search-Estraier/
