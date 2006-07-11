@@ -522,6 +522,7 @@
     SUBDIR += squirrelmail-pupdate-plugin
     SUBDIR += squirrelmail-quota_usage-plugin
     SUBDIR += squirrelmail-secure_login-plugin
+    SUBDIR += squirrelmail-timeout_user-plugin
     SUBDIR += squirrelmail-vlogin-plugin
     SUBDIR += squirrelmail-wetteronline-plugin
     SUBDIR += sqwebmail
