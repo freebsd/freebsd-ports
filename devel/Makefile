@@ -655,6 +655,7 @@
     SUBDIR += mono-tools
     SUBDIR += monodoc
     SUBDIR += monotone
+    SUBDIR += monotone-viz
     SUBDIR += motor
     SUBDIR += mpatrol
     SUBDIR += mph

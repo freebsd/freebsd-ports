@@ -1,0 +1,12 @@
+--- configure.orig	Sun Jul  2 23:13:24 2006
++++ configure	Sun Jul  2 23:13:39 2006
+@@ -2199,9 +2199,6 @@
+ option." >&2;}
+    { (exit 1); exit 1; }; }
+   fi
+-  if test "${MONOTONE_DIR:0:1}" != "/" ; then
+-    MONOTONE_DIR="$(pwd)/$MONOTONE_DIR"
+-  fi
+ fi
+ 
+ 
