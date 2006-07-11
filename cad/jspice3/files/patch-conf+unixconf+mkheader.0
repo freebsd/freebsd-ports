@@ -1,0 +1,11 @@
+--- conf/unixconf/mkheader.0.orig	Tue Feb 28 16:30:32 2006
++++ conf/unixconf/mkheader.0	Tue Feb 28 16:36:32 2006
+@@ -18,7 +18,7 @@
+ BUG_ADDR = stevew@srware.com
+ 
+ # name of host for remote spice runs
+-SPICE_HOST =
++SPICE_HOST = localhost
+ 
+ # spice daemon log file
+ SPICED_LOG = /tmp/spiced.log
