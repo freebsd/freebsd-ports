@@ -1,9 +1,14 @@
 #!/bin/sh
 # $FreeBSD$
-if [ -z "$1" ]; then
-	LOOK_AND_FEEL="%%PLASTIC3D%%"
-else
-	LOOK_AND_FEEL="$1"
+if [ -z "${JAVA_VERSION}" ]; then
+	JAVA_VERSION="%%JAVA_VERSION%%"
 fi
 
-%%JAVA%% -cp %%JAVAJARDIR%% ${LOOK_AND_FEEL} -jar %%JDRAWJAR%%
+if [ "${JAVA_VERSION}" \> "1.4" ]; then
+	LOOK_AND_FEEL="%%PLASTIC3D%%"
+else
+	LOOK_AND_FEEL=
+fi
+
+exec "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%" ${LOOK_AND_FEEL} -jar "%%JDRAWJAR%%" "$@"
+
