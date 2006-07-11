@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unicode-RecursiveDowngrade
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TA/TANIGUCHI
@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to turn off UTF-8 flags inside of comprex variable
+
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 MAN3=		Unicode::RecursiveDowngrade.3
