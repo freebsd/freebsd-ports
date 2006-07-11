@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	snack
-PORTVERSION=	2.2.9
+PORTVERSION=	2.2.10
 CATEGORIES=	audio tcl84 tk84
 MASTER_SITES=	http://www.speech.kth.se/snack/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon@olofsson.de
 COMMENT=	A sound toolkit for scripting languages
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
