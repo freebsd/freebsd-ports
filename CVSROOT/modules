@@ -8191,6 +8191,7 @@ p5-Compress-Zlib	ports/archivers/p5-Compress-Zlib
 p5-Config-Auto	ports/devel/p5-Config-Auto
 p5-Config-Fast	ports/devel/p5-Config-Fast
 p5-Config-General	ports/devel/p5-Config-General
+p5-Config-INI-Simple	ports/devel/p5-Config-INI-Simple
 p5-Config-IniFiles	ports/devel/p5-Config-IniFiles
 p5-Config-Objective	ports/devel/p5-Config-Objective
 p5-Config-Record	ports/devel/p5-Config-Record
