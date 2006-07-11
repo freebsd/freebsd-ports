@@ -9299,6 +9299,7 @@ p5-PAR-Dist	ports/devel/p5-PAR-Dist
 p5-PCSC-Card	ports/devel/p5-PCSC-Card
 p5-PDF-API2	ports/textproc/p5-PDF-API2
 p5-PDF-Create	ports/textproc/p5-PDF-Create
+p5-PDF-FromHTML	ports/textproc/p5-PDF-FromHTML
 p5-PDF-Template	ports/print/p5-PDF-Template
 p5-PDF-Writer	ports/textproc/p5-PDF-Writer
 p5-PDFLib	ports/print/p5-PDFLib
