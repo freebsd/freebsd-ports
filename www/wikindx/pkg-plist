@@ -18,6 +18,7 @@
 %%WIKINDX%%/core/admin/DELETERESOURCE.php
 %%WIKINDX%%/core/attachments/ATTACHMENTS.php
 %%WIKINDX%%/core/authorize/AUTHORIZE.php
+%%WIKINDX%%/core/basket/BASKET.php
 %%WIKINDX%%/core/browse/BROWSECATEGORY.php
 %%WIKINDX%%/core/browse/BROWSECOLLECTION.php
 %%WIKINDX%%/core/browse/BROWSECOMMON.php
@@ -181,7 +182,6 @@
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/Left_Corner.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/PasteText.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/Pasteword.gif
-%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/Ucase.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/abspos.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/anchor.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/backward.gif
@@ -208,6 +208,7 @@
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/emotion.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/eximage.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/find.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/findagain.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/fit.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/flash.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/fontcolor.gif
@@ -232,6 +233,7 @@
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/justify_right.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/keyboard.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/layer.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/lcase.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/left_to_right.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/link.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/listbox.gif
@@ -249,6 +251,7 @@
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/print.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/pushbutton.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/redo.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/replace.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/right_to_left.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/row.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/rule.gif
@@ -270,6 +273,7 @@
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/textarea.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/textbox.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/timestamp.gif
+%%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/ucase.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/underline.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/undo.gif
 %%WIKINDX%%/core/wp/JsFormatBar/ButtonImages/unformat.gif
@@ -279,6 +283,8 @@
 %%WIKINDX%%/core/wp/JsFormatBar/blank.htm
 %%WIKINDX%%/core/wp/JsFormatBar/calendar.php
 %%WIKINDX%%/core/wp/JsFormatBar/colors.html
+%%WIKINDX%%/core/wp/JsFormatBar/find.htm
+%%WIKINDX%%/core/wp/JsFormatBar/findReplace.htm
 %%WIKINDX%%/core/wp/JsFormatBar/footnoteLoad.htm
 %%WIKINDX%%/core/wp/JsFormatBar/insert_link.htm
 %%WIKINDX%%/core/wp/JsFormatBar/insert_table.htm
@@ -442,6 +448,8 @@
 %%WIKINDX%%/docs/templates/minimal/header.tpl
 %%WIKINDX%%/docs/templates/minimal/menu.tpl
 %%WIKINDX%%/docs/templates/minimal/minimal.css
+%%WIKINDX%%/docs/templates/minimal/pluginbottom.tpl
+%%WIKINDX%%/docs/templates/minimal/plugintop.tpl
 %%WIKINDX%%/docs/templates/minimal/template.js
 %%WIKINDX%%/docs/usage/database.html
 %%WIKINDX%%/docs/usage/index.html
@@ -507,6 +515,8 @@
 %%WIKINDX%%/templates/blue/images/formatBarBackground.png
 %%WIKINDX%%/templates/blue/images/header-bg-blue.jpg
 %%WIKINDX%%/templates/blue/menu.tpl
+%%WIKINDX%%/templates/blue/pluginbottom.tpl
+%%WIKINDX%%/templates/blue/plugintop.tpl
 %%WIKINDX%%/templates/blue/template.js
 %%WIKINDX%%/templates/chocolate/body.tpl
 %%WIKINDX%%/templates/chocolate/bodyPopUp.tpl
@@ -532,6 +542,8 @@
 %%WIKINDX%%/templates/chocolate/images/formatBarBackground.png
 %%WIKINDX%%/templates/chocolate/images/wikindx3choclogo.gif
 %%WIKINDX%%/templates/chocolate/menu.tpl
+%%WIKINDX%%/templates/chocolate/pluginbottom.tpl
+%%WIKINDX%%/templates/chocolate/plugintop.tpl
 %%WIKINDX%%/templates/chocolate/template.js
 %%WIKINDX%%/templates/classic/body.tpl
 %%WIKINDX%%/templates/classic/bodyPopUp.tpl
@@ -557,6 +569,8 @@
 %%WIKINDX%%/templates/classic/images/formatBarBackground.png
 %%WIKINDX%%/templates/classic/images/wikindx3logo-anim.gif
 %%WIKINDX%%/templates/classic/menu.tpl
+%%WIKINDX%%/templates/classic/pluginbottom.tpl
+%%WIKINDX%%/templates/classic/plugintop.tpl
 %%WIKINDX%%/templates/classic/template.js
 %%WIKINDX%%/templates/default/body.tpl
 %%WIKINDX%%/templates/default/bodyPopUp.tpl
@@ -583,6 +597,8 @@
 %%WIKINDX%%/templates/default/images/paper.jpg
 %%WIKINDX%%/templates/default/images/wikindx3logo-anim.gif
 %%WIKINDX%%/templates/default/menu.tpl
+%%WIKINDX%%/templates/default/pluginbottom.tpl
+%%WIKINDX%%/templates/default/plugintop.tpl
 %%WIKINDX%%/templates/default/template.js
 %%WIKINDX%%/templates/green_marble/body.tpl
 %%WIKINDX%%/templates/green_marble/bodyPopUp.tpl
@@ -618,6 +634,8 @@
 %%WIKINDX%%/templates/green_marble/images/ru-marble.gif
 %%WIKINDX%%/templates/green_marble/images/u-marble.gif
 %%WIKINDX%%/templates/green_marble/menu.tpl
+%%WIKINDX%%/templates/green_marble/pluginbottom.tpl
+%%WIKINDX%%/templates/green_marble/plugintop.tpl
 %%WIKINDX%%/templates/green_marble/readme.txt
 %%WIKINDX%%/templates/green_marble/template.js
 %%WIKINDX%%/templates/notmac/body.tpl
@@ -647,6 +665,8 @@
 %%WIKINDX%%/templates/notmac/menu.tpl
 %%WIKINDX%%/templates/notmac/menuback.png
 %%WIKINDX%%/templates/notmac/notmac.css
+%%WIKINDX%%/templates/notmac/pluginbottom.tpl
+%%WIKINDX%%/templates/notmac/plugintop.tpl
 %%WIKINDX%%/templates/notmac/template.js
 %%WIKINDX%%/templates/simple/body.tpl
 %%WIKINDX%%/templates/simple/bodyPopUp.tpl
@@ -672,6 +692,8 @@
 %%WIKINDX%%/templates/simple/images/simple-bg.gif
 %%WIKINDX%%/templates/simple/images/simple-table-bg.gif
 %%WIKINDX%%/templates/simple/menu.tpl
+%%WIKINDX%%/templates/simple/pluginbottom.tpl
+%%WIKINDX%%/templates/simple/plugintop.tpl
 %%WIKINDX%%/templates/simple/simple.css
 %%WIKINDX%%/templates/simple/template.js
 %%WIKINDX%%/templates/vert/body.tpl
@@ -685,6 +707,8 @@
 %%WIKINDX%%/templates/vert/images/formatBarBackground.gif
 %%WIKINDX%%/templates/vert/images/formatBarBackground.png
 %%WIKINDX%%/templates/vert/menu.tpl
+%%WIKINDX%%/templates/vert/pluginbottom.tpl
+%%WIKINDX%%/templates/vert/plugintop.tpl
 %%WIKINDX%%/templates/vert/template.js
 %%WIKINDX%%/templates/vert/vert.css
 %%WIKINDX%%/update/createMySQL.txt
@@ -791,6 +815,7 @@
 @dirrm %%WIKINDX%%/core/collection
 @dirrm %%WIKINDX%%/core/cite
 @dirrm %%WIKINDX%%/core/browse
+@dirrm %%WIKINDX%%/core/basket
 @dirrm %%WIKINDX%%/core/authorize
 @dirrm %%WIKINDX%%/core/attachments
 @dirrm %%WIKINDX%%/core/admin
