@@ -1,19 +1,20 @@
-# New ports collection makefile for:	planet
-# Date created:				26 September 2005
-# Whom:					Alan Snelson <alan@wave2.co.uk>
+# New ports collection makefile for:    planet
+# Date created:                         26 September 2005
+# Whom:                                 Alan Snelson <alan@wave2.co.uk>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	planet
-PORTVERSION=	0.0p22
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.wave2.co.uk/freebsd/planet/
 
 MAINTAINER=	alan@wave2.co.uk
 COMMENT=	Planet is a flexible feed aggregator - and more!
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:${PORTSDIR}/devel/py-mx-experimental
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/Tidy/Tidy.py:${PORTSDIR}/devel/py-mx-experimental \
+		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
