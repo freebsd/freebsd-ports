@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bin/html2pdf.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML/.packlist
+%%SITE_PERL%%/PDF/FromHTML.pm
+%%SITE_PERL%%/PDF/FromHTML/Twig.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
+@dirrmtry %%SITE_PERL%%/PDF/FromHTML
+@dirrmtry %%SITE_PERL%%/PDF
