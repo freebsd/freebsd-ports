@@ -1,0 +1,48 @@
+--- libiberty/Makefile.in.orig	Tue Mar  8 00:20:07 2005
++++ libiberty/Makefile.in	Thu Jun 30 22:37:45 2005
+@@ -270,7 +270,8 @@
+ @MAINT@	echo stamp > stamp-functions
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++#install: install_to_$(INSTALL_DEST) install-subdir
++install:
+ 
+ install_to_libdir: all
+ 	${mkinstalldirs} $(DESTDIR)$(libdir)$(MULTISUBDIR)
+--- bfd/Makefile.in.orig	Mon May  2 21:45:46 2005
++++ bfd/Makefile.in	Thu Jun 30 22:39:28 2005
+@@ -1137,7 +1137,8 @@
+ 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+-install: install-recursive
++#install: install-recursive
++install:
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+ uninstall: uninstall-recursive
+--- opcodes/Makefile.in.orig	Mon Feb 21 12:48:33 2005
++++ opcodes/Makefile.in	Thu Jun 30 22:39:18 2005
+@@ -781,7 +781,8 @@
+ 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+-install: install-recursive
++#install: install-recursive
++install:
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+ uninstall: uninstall-recursive
+--- etc/Makefile.in.orig	Thu Jan  2 21:51:02 2003
++++ etc/Makefile.in	Thu Jun 30 22:37:45 2005
+@@ -54,7 +54,8 @@
+ all:
+ 
+ # We want install to imply install-info as per GNU standards.
+-install: install-info
++#install: install-info
++install:
+ 
+ uninstall:
+ 

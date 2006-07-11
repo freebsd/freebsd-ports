@@ -1507,6 +1507,7 @@
     SUBDIR += portmk
     SUBDIR += porttools
     SUBDIR += poslib
+    SUBDIR += powerpc-binutils
     SUBDIR += powerpc-rtems-binutils
     SUBDIR += powerpc-rtems-g77
     SUBDIR += powerpc-rtems-gcc
