@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kiki@bsdro.org
 COMMENT=	HTML::Template view class for Catalyst
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

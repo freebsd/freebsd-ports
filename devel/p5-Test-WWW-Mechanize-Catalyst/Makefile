@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Test::WWW::Mechanize for Catalyst
 
-RUN_DEPENDS=	p5-Catalyst>=5.00:${PORTSDIR}/www/p5-Catalyst \
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Test-WWW-Mechanize>=1.04:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple

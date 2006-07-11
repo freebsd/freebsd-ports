@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Catalyst helper for Scaffolding
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		${SITE_PERL}/Catalyst/Plugin/FormValidator.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
 		${SITE_PERL}/Catalyst/View/TT.pm:${PORTSDIR}/www/p5-Catalyst-View-TT \
 		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \

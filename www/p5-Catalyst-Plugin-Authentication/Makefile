@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Infrastructure plugin for the Catalyst authentication framework
 
-BUILD_DEPENDS=	p5-Catalyst>=5.49:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

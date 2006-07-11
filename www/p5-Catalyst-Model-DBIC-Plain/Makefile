@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	DBIx::Class model class for Catalyst, without loader
 
-BUILD_DEPENDS=	p5-Catalyst>=5.00:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		p5-DBIx-Class>=0.01:${PORTSDIR}/databases/p5-DBIx-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Role based authorization for Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=5.49:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Authentication>=0.03:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
 		p5-Set-Object>=1.14:${PORTSDIR}/devel/p5-Set-Object \
 		p5-Test-MockObject>=1.01:${PORTSDIR}/devel/p5-Test-MockObject \

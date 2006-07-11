@@ -16,7 +16,8 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	CDBI model class for Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-DBI-Loader \
-		${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst \
+		${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

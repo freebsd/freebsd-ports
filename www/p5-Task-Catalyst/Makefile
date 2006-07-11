@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	All you need to start with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=5.65:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Catalyst-Log-Log4perl>=0.1:${PORTSDIR}/www/p5-Catalyst-Log-Log4perl \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Generic Catalyst Session plugin
 
-BUILD_DEPENDS=	p5-Catalyst>=5.50:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Test-MockObject>=1.01:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Digest>=0:${PORTSDIR}/security/p5-Digest \
 		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \

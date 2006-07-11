@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Display a stack trace on the debug screen
 
-BUILD_DEPENDS=	p5-Catalyst>=5.61:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
