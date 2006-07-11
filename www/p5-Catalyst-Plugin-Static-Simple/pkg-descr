@@ -1,0 +1,11 @@
+The Static::Simple plugin is designed to make serving static content in
+your application during development quick and easy, without requiring a
+single line of code from you.
+
+This plugin detects static files by looking at the file extension in
+URL (such as .css or .png or .js). The plugin uses the lightweight
+MIME::Types module to map file extensions to IANA-registered MIME
+types, and will serve your static files with the correct MIME type
+directly to the browser, without being processed through Catalyst.
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Static-Simple/
