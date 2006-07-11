@@ -10,7 +10,6 @@ share/apps/kdbg/icons/hicolor/16x16/actions/pgmstep.png
 share/apps/kdbg/icons/hicolor/16x16/actions/pgmstepi.png
 share/apps/kdbg/icons/hicolor/22x22/actions/brkpt.png
 share/apps/kdbg/icons/hicolor/22x22/actions/execopen.png
-share/apps/kdbg/icons/hicolor/22x22/actions/hi22/action-pulse.pngseq
 share/apps/kdbg/icons/hicolor/22x22/actions/pgmfinish.png
 share/apps/kdbg/icons/hicolor/22x22/actions/pgmnext.png
 share/apps/kdbg/icons/hicolor/22x22/actions/pgmnexti.png
@@ -125,7 +124,6 @@ share/locale/tr/LC_MESSAGES/kdbg.mo
 @dirrmtry share/doc/HTML
 @dirrm share/apps/kdbg/types
 @dirrm share/apps/kdbg/pics
-@dirrm share/apps/kdbg/icons/hicolor/22x22/actions/hi22
 @dirrm share/apps/kdbg/icons/hicolor/22x22/actions
 @dirrm share/apps/kdbg/icons/hicolor/22x22
 @dirrm share/apps/kdbg/icons/hicolor/16x16/actions
