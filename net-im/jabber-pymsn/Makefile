@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	pymsn
-PORTVERSION=	0.11a
-PORTREVISION=	1
+PORTVERSION=	0.11.1
+PORTEPOCH=	1
 CATEGORIES=	net-im
-MASTER_SITES=	http://msn-transport.jabberstudio.org/tarballs/ \
+MASTER_SITES=	http://delx.cjb.net/pymsnt/tarballs/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	jabber-
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-op
 		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-WRKSRC=		${WRKDIR}/${PORTNAME}t-0.11
+WRKSRC=		${WRKDIR}/${PORTNAME}t-${PORTVERSION}
 
 OPTIONS=	EJABBERD "Use transport with ejabberd" off
 
@@ -36,7 +36,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
-PORTDOCS=	COPYING README TODO
+PORTDOCS=	COPYING README
 
 .include <bsd.port.pre.mk>
 

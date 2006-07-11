@@ -22,6 +22,7 @@ lib/jabber/pymsn/src/main.py
 lib/jabber/pymsn/src/misciq.py
 lib/jabber/pymsn/src/register.py
 lib/jabber/pymsn/src/session.py
+lib/jabber/pymsn/src/svninfo.py
 lib/jabber/pymsn/src/tlib/__init__.py
 lib/jabber/pymsn/src/tlib/domish.py
 lib/jabber/pymsn/src/tlib/jabber/__init__.py
