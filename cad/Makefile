@@ -38,6 +38,7 @@
     SUBDIR += impact
     SUBDIR += irsim
     SUBDIR += iverilog
+    SUBDIR += jspice3
     SUBDIR += kicad
     SUBDIR += leocad
     SUBDIR += libgeda

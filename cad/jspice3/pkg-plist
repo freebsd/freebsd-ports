@@ -1,0 +1,69 @@
+bin/jspice3
+bin/help
+bin/nutmeg
+bin/proc2mod
+bin/multidec
+bin/spiced
+bin/xeditor
+lib/jspice3/mfbcap
+lib/jspice3/news
+lib/jspice3/helpdir/spicehlp.txt
+lib/jspice3/sced/device.lib
+lib/jspice3/sced/model.lib
+lib/jspice3/sced/sced.rc
+lib/jspice3/scripts/margins
+lib/jspice3/scripts/merit
+lib/jspice3/scripts/optimize
+lib/jspice3/scripts/setplot
+lib/jspice3/scripts/spinit
+@dirrm lib/jspice3/helpdir
+@dirrm lib/jspice3/sced
+@dirrm lib/jspice3/scripts
+@dirrm lib/jspice3
+%%PORTDOCS%%%%EXAMPLESDIR%%/bjtnoise.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/bsim1tst.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/bsim2tst.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/diffpair.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/diodisto.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_1.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_2.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/ltra_3.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mixdisto.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mos6inv.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mosamp2.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/mosmem.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/process.mod
+%%PORTDOCS%%%%EXAMPLESDIR%%/process.pro
+%%PORTDOCS%%%%EXAMPLESDIR%%/pz2.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/pzt.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/rc.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/rca3040.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/resnoise.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/rtlinv.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/schmitt.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/simplepz.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/testc.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/cryo_model.lib
+%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/nmos_test.sp
+%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/pmos_test.sp
+%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/ringosc_meas.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/ringosc_test.out
+%%PORTDOCS%%%%EXAMPLESDIR%%/cryocmos/ringosc_test.sp
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/ex8.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/exjjintr.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/exjjiv.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/intr
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jjcntr.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jjoprng
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jtl
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/jtl1
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/mvtltest
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/shutop
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/shuttle.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/shuttlea.cir
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/strange
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/thcntr
+%%PORTDOCS%%%%EXAMPLESDIR%%/josephson/theta
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cryocmos
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/josephson
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
