@@ -9993,6 +9993,7 @@ p5-XML-WBXML	ports/converters/p5-XML-WBXML
 p5-XML-Writer	ports/textproc/p5-XML-Writer
 p5-XML-XBEL	ports/textproc/p5-XML-XBEL
 p5-XML-XPath	ports/textproc/p5-XML-XPath
+p5-XML-XPathEngine	ports/textproc/p5-XML-XPathEngine
 p5-XML-XQL	ports/textproc/p5-XML-XQL
 p5-XML-XSH	ports/textproc/p5-XML-XSH
 p5-XML-XSLT	ports/textproc/p5-XML-XSLT
