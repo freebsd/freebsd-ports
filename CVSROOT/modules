@@ -8035,6 +8035,7 @@ p5-Carp-Assert-More	ports/devel/p5-Carp-Assert-More
 p5-Carp-Clan	ports/devel/p5-Carp-Clan
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Catalyst	ports/www/p5-Catalyst
+p5-Catalyst-Action-RenderView	ports/www/p5-Catalyst-Action-RenderView
 p5-Catalyst-Engine-Apache	ports/www/p5-Catalyst-Engine-Apache
 p5-Catalyst-Enzyme	ports/www/p5-Catalyst-Enzyme
 p5-Catalyst-Example-InstantCRUD	ports/www/p5-Catalyst-Example-InstantCRUD
