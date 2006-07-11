@@ -6937,6 +6937,7 @@ mono-tools	ports/devel/mono-tools
 monodoc		ports/devel/monodoc
 monopd		ports/games/monopd
 monotone	ports/devel/monotone
+monotone-viz	ports/devel/monotone-viz
 monster-masher	ports/games/monster-masher
 monsterz	ports/games/monsterz
 moodle		ports/www/moodle
