@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smake
-PORTVERSION=	1.2.a.34
+PORTVERSION=	1.2.a.36
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/alpha/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
@@ -26,7 +26,7 @@ MAN5=		makefiles.5 makerules.5
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 .include <bsd.port.post.mk>
