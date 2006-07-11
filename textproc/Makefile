@@ -608,6 +608,7 @@
     SUBDIR += p5-XML-Writer
     SUBDIR += p5-XML-XBEL
     SUBDIR += p5-XML-XPath
+    SUBDIR += p5-XML-XPathEngine
     SUBDIR += p5-XML-XQL
     SUBDIR += p5-XML-XSH
     SUBDIR += p5-XML-XSLT
