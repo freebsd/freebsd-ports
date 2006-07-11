@@ -1,0 +1,66 @@
+bin/catalyst.pl
+%%SITE_PERL%%/Catalyst.pm
+%%SITE_PERL%%/Catalyst/Action.pm
+%%SITE_PERL%%/Catalyst/ActionChain.pm
+%%SITE_PERL%%/Catalyst/ActionContainer.pm
+%%SITE_PERL%%/Catalyst/AttrContainer.pm
+%%SITE_PERL%%/Catalyst/Base.pm
+%%SITE_PERL%%/Catalyst/Build.pm
+%%SITE_PERL%%/Catalyst/Component.pm
+%%SITE_PERL%%/Catalyst/Controller.pm
+%%SITE_PERL%%/Catalyst/DispatchType.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Chained.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Default.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Index.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Path.pm
+%%SITE_PERL%%/Catalyst/DispatchType/Regex.pm
+%%SITE_PERL%%/Catalyst/Dispatcher.pm
+%%SITE_PERL%%/Catalyst/Engine.pm
+%%SITE_PERL%%/Catalyst/Engine/CGI.pm
+%%SITE_PERL%%/Catalyst/Engine/FastCGI.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter/Watcher.pm
+%%SITE_PERL%%/Catalyst/Exception.pm
+%%SITE_PERL%%/Catalyst/Log.pm
+%%SITE_PERL%%/Catalyst/Manual.pod
+%%SITE_PERL%%/Catalyst/Manual/About.pod
+%%SITE_PERL%%/Catalyst/Manual/Actions.pod
+%%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
+%%SITE_PERL%%/Catalyst/Manual/DevelopmentProcess.pod
+%%SITE_PERL%%/Catalyst/Manual/Installation.pod
+%%SITE_PERL%%/Catalyst/Manual/Installation/CentOS4.pod
+%%SITE_PERL%%/Catalyst/Manual/Internals.pod
+%%SITE_PERL%%/Catalyst/Manual/Intro.pod
+%%SITE_PERL%%/Catalyst/Manual/Plugins.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/Appendices.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/Authentication.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/Authorization.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/BasicCRUD.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/CatalystBasics.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/Debugging.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/Intro.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/Testing.pod
+%%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
+%%SITE_PERL%%/Catalyst/Model.pm
+%%SITE_PERL%%/Catalyst/Request.pm
+%%SITE_PERL%%/Catalyst/Request/Upload.pm
+%%SITE_PERL%%/Catalyst/Response.pm
+%%SITE_PERL%%/Catalyst/Runtime.pm
+%%SITE_PERL%%/Catalyst/Test.pm
+%%SITE_PERL%%/Catalyst/Utils.pm
+%%SITE_PERL%%/Catalyst/View.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Runtime/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Runtime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Request
+@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial
+@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Installation
+@dirrmtry %%SITE_PERL%%/Catalyst/Manual
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP/Restarter
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine
+@dirrmtry %%SITE_PERL%%/Catalyst/DispatchType
+@dirrmtry %%SITE_PERL%%/Catalyst

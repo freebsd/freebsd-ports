@@ -1,0 +1,8 @@
+Catalyst is a web application framework. This means that you use it to
+help build applications that run on the web, or that run using proto-
+cols used for the web. Catalyst is designed to make it easy to manage
+the various tasks you need to do to run an application on the web,
+either by doing them itself, or by letting you "plug in" existing Perl
+modules that do what you need.
+
+WWW: http://search.cpan.org/dist/Catalyst-Runtime/
