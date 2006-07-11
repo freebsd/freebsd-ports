@@ -18,6 +18,7 @@ share/htmllint/rule/html40-transitional.rul
 share/htmllint/rule/html401-frameset.rul
 share/htmllint/rule/html401-strict.rul
 share/htmllint/rule/html401-transitional.rul
+share/htmllint/rule/htmlplus.rul
 share/htmllint/rule/i18n.rul
 share/htmllint/rule/ie30.rul
 share/htmllint/rule/ie30b.rul
@@ -30,6 +31,7 @@ share/htmllint/rule/imode.rul
 share/htmllint/rule/imode20.rul
 share/htmllint/rule/imode30.rul
 share/htmllint/rule/imode40.rul
+share/htmllint/rule/imode50.rul
 share/htmllint/rule/jpo.rul
 share/htmllint/rule/jskystation.rul
 share/htmllint/rule/jskyweb.rul
