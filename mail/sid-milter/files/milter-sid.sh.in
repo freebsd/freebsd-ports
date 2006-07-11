@@ -13,7 +13,7 @@
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/miltersid
 #
-# DO NOT CHdANGE THESE DEFAULT VALUES HERE
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 miltersid_enable=${miltersid_enable:-"NO"}
 miltersid_socket=${miltersid_socket:-"local:/var/run/sid-filter"}
