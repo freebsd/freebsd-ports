@@ -52,6 +52,7 @@ MAN3+=	Acme::MetaSyntactic::magicroundabout.3
 MAN3+=	Acme::MetaSyntactic::monty_spam.3
 MAN3+=	Acme::MetaSyntactic::norse_mythology.3
 MAN3+=	Acme::MetaSyntactic::octothorpe.3
+MAN3+=	Acme::MetaSyntactic::olympics.3
 MAN3+=	Acme::MetaSyntactic::opcodes.3
 MAN3+=	Acme::MetaSyntactic::oulipo.3
 MAN3+=	Acme::MetaSyntactic::pantagruel.3
