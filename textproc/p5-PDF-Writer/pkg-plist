@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/PDF/Writer.pm
+%%SITE_PERL%%/PDF/Writer/mock.pm
+%%SITE_PERL%%/PDF/Writer/pdfapi2.pm
+%%SITE_PERL%%/PDF/Writer/pdflib.pm
+@dirrmtry %%SITE_PERL%%/PDF/Writer
+@dirrmtry %%SITE_PERL%%/PDF
