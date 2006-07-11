@@ -9467,6 +9467,7 @@ p5-Regex-PreSuf	ports/textproc/p5-Regex-PreSuf
 p5-Regexp-Assemble	ports/devel/p5-Regexp-Assemble
 p5-Regexp-Bind	ports/devel/p5-Regexp-Bind
 p5-Regexp-Common	ports/textproc/p5-Regexp-Common
+p5-Regexp-Common-profanity_us	ports/textproc/p5-Regexp-Common-profanity_us
 p5-Regexp-Log	ports/textproc/p5-Regexp-Log
 p5-Regexp-Log-Common	ports/textproc/p5-Regexp-Log-Common
 p5-Regexp-Shellish	ports/devel/p5-Regexp-Shellish
