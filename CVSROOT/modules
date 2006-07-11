@@ -9701,6 +9701,7 @@ p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
 p5-Text-Bind	ports/textproc/p5-Text-Bind
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV-Simple	ports/textproc/p5-Text-CSV-Simple
+p5-Text-CSV_PP	ports/textproc/p5-Text-CSV_PP
 p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
 p5-Text-Capitalize	ports/textproc/p5-Text-Capitalize
 p5-Text-Chomp	ports/textproc/p5-Text-Chomp
