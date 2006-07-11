@@ -1,38 +1,45 @@
 %%DATADIR%%/AUTHORS
-%%DATADIR%%/ChangeLog
 %%DATADIR%%/INSTALL
-%%DATADIR%%/Makefile
+%%DATADIR%%/LICENCE
+%%DATADIR%%/NEWS
+%%DATADIR%%/PKG-INFO
 %%DATADIR%%/README
 %%DATADIR%%/THANKS
-%%DATADIR%%/TODO
-%%DATADIR%%/compat_logging/__init__.py
-%%DATADIR%%/compat_logging/config.py
-%%DATADIR%%/compat_logging/handlers.py
-%%DATADIR%%/examples/config.ini
+%%DATADIR%%/examples/atom.xml.tmpl
+%%DATADIR%%/examples/basic/config.ini
+%%DATADIR%%/examples/basic/index.html.tmpl
+%%DATADIR%%/examples/cache/.empty
+%%DATADIR%%/examples/fancy/config.ini
+%%DATADIR%%/examples/fancy/index.html.tmpl
 %%DATADIR%%/examples/foafroll.xml.tmpl
-%%DATADIR%%/examples/index.html.tmpl
+%%DATADIR%%/examples/output/images/edd.png
+%%DATADIR%%/examples/output/images/evolution.png
+%%DATADIR%%/examples/output/images/jdub.png
+%%DATADIR%%/examples/output/images/keybuk.png
+%%DATADIR%%/examples/output/images/logo.png
+%%DATADIR%%/examples/output/images/planet.png
+%%DATADIR%%/examples/output/images/thom.png
+%%DATADIR%%/examples/output/planet.css
 %%DATADIR%%/examples/opml.xml.tmpl
 %%DATADIR%%/examples/rss10.xml.tmpl
 %%DATADIR%%/examples/rss20.xml.tmpl
-%%DATADIR%%/fancy-examples/config.ini
-%%DATADIR%%/fancy-examples/index.html.tmpl
-%%DATADIR%%/feedparser.py
-%%DATADIR%%/htmltmpl.py
-%%DATADIR%%/htmltmpl.py.orig
-%%DATADIR%%/output/images/edd.png
-%%DATADIR%%/output/images/evolution.png
-%%DATADIR%%/output/images/jdub.png
-%%DATADIR%%/output/images/keybuk.png
-%%DATADIR%%/output/images/logo.png
-%%DATADIR%%/output/images/planet.png
-%%DATADIR%%/output/images/thom.png
-%%DATADIR%%/output/planet.css
+%%DATADIR%%/planet/__init__.py
+%%DATADIR%%/planet/cache.py
+%%DATADIR%%/planet/compat_logging/__init__.py
+%%DATADIR%%/planet/compat_logging/config.py
+%%DATADIR%%/planet/compat_logging/handlers.py
+%%DATADIR%%/planet/feedparser.py
+%%DATADIR%%/planet/htmltmpl.py
+%%DATADIR%%/planet/timeoutsocket.py
+%%DATADIR%%/planet-cache.py
 %%DATADIR%%/planet.py
-%%DATADIR%%/planetlib.py
-%%DATADIR%%/timeoutsocket.py
-@dirrm %%DATADIR%%/compat_logging
+%%DATADIR%%/setup.py
+@dirrm %%DATADIR%%/examples/basic
+@dirrm %%DATADIR%%/examples/cache
+@dirrm %%DATADIR%%/examples/fancy
+@dirrm %%DATADIR%%/examples/output/images
+@dirrm %%DATADIR%%/examples/output
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/fancy-examples
-@dirrm %%DATADIR%%/output/images
-@dirrm %%DATADIR%%/output
+@dirrm %%DATADIR%%/planet/compat_logging
+@dirrm %%DATADIR%%/planet
 @dirrm %%DATADIR%%
