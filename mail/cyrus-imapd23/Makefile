@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.7
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -99,7 +99,6 @@ OPTIONS+=	NNTP		"Enable NNTP support"			off
 OPTIONS+=	REPLICATION	"Enable replication"			off
 OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
-OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 
 BDB_VERS=	3 4 41 42 43 44
 
@@ -207,10 +206,6 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 PLIST_SUB+=	LDAP_PTLOADER=""
 .else
 PLIST_SUB+=	LDAP_PTLOADER="@comment "
-.endif
-
-.if defined(WITH_PASS8BITHACK)
-EXTRA_PATCHES+=	${FILESDIR}/pass8bit.diff
 .endif
 
 .if (!defined(MAKE_KERBEROS5) && ${OSVERSION} <= 500105) || \
