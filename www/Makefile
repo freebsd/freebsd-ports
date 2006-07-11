@@ -623,6 +623,7 @@
     SUBDIR += p5-HTML-Template-Pluggable
     SUBDIR += p5-HTML-TokeParser-Simple
     SUBDIR += p5-HTML-Tree
+    SUBDIR += p5-HTML-TreeBuilder-XPath
     SUBDIR += p5-HTML-Webmake
     SUBDIR += p5-HTML-Widget
     SUBDIR += p5-HTML-Widgets-SelectLayers
