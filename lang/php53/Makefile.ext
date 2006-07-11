@@ -204,6 +204,14 @@ BROKEN_WITH_MYSQL=	323 40
 CONFIGURE_ARGS+=--with-ncurses=/usr
 .endif
 
+.if ${PHP_MODNAME} == "oci8"
+BUILD_DEPENDS+=	${LOCALBASE}/oracle8-client/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
+
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+
+CONFIGURE_ARGS+=--with-oci8=${LOCALBASE}/oracle8-client
+.endif
+
 .if ${PHP_MODNAME} == "odbc"
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 
@@ -457,6 +465,19 @@ post-extract:
 .if ${PHP_MODNAME} == "pcre"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
+.endif
+
+.if ${PHP_MODNAME} == "oci8"
+. if ${OSVERSION} < 500000
+BROKEN=	Doesn't work on FreeBSD 4.x
+. endif
+
+pre-configure:
+	@cd ${WRKSRC}; \
+	for lib in ${LOCALBASE}/oracle8-client/lib/libclntsh /usr/lib/libpthread; do \
+		/usr/bin/ar x $${lib}.a; \
+	done; \
+	/usr/bin/ar rcs liboci8.a *.o
 .endif
 
 .if ${PHP_MODNAME} == "snmp"

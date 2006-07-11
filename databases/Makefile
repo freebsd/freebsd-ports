@@ -333,6 +333,7 @@
     SUBDIR += php5-mssql
     SUBDIR += php5-mysql
     SUBDIR += php5-mysqli
+    SUBDIR += php5-oci8
     SUBDIR += php5-odbc
     SUBDIR += php5-pgsql
     SUBDIR += php5-propel
