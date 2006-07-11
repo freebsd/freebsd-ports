@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pnews
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 PORTEPOCH=	1
 CATEGORIES=	www news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -26,10 +26,5 @@ PNEWSDIR?=	${PREFIX}/www/data/pnews
 do-install:
 	@${MKDIR} ${PNEWSDIR}
 	@${CP} -R ${WRKSRC}/* ${PNEWSDIR}
-	@${FIND} ${PNEWSDIR} -type f | \
-		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${PNEWSDIR} -type d | ${SORT} -r | \
-		${SED} -e "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/www/data 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
