@@ -10,7 +10,7 @@ PORTVERSION=	2.1.5
 CATEGORIES=	mail tk84
 MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sjr@comcast.net
 COMMENT=	A mail user agent for X with a Tcl/Tk user interface
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
@@ -33,7 +33,7 @@ MAN1=		tkrat.1
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Build fails on sparc64"
+BROKEN=		Build fails on sparc64
 .endif
 
 post-install:
