@@ -7,7 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.999.029
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -26,10 +26,13 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
 USE_GETTEXT=	yes
+INSTALLS_SHLIB=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
 
 .include <bsd.port.pre.mk>
 

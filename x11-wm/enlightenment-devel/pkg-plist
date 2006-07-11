@@ -147,43 +147,43 @@ include/enlightenment/e_win.h
 include/enlightenment/e_winlist.h
 include/enlightenment/e_xinerama.h
 include/enlightenment/e_zone.h
-lib/enlightenment/modules/battery/module.a
+lib/enlightenment/modules/battery/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/battery/module.eap
-lib/enlightenment/modules/battery/module.la
-lib/enlightenment/modules/battery/module.so
-lib/enlightenment/modules/clock/module.a
+lib/enlightenment/modules/battery/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/battery/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/clock/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/clock/module.eap
-lib/enlightenment/modules/clock/module.la
-lib/enlightenment/modules/clock/module.so
-lib/enlightenment/modules/cpufreq/freqset
-lib/enlightenment/modules/cpufreq/module.a
+lib/enlightenment/modules/clock/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/clock/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/freqset
+lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/cpufreq/module.eap
-lib/enlightenment/modules/cpufreq/module.la
-lib/enlightenment/modules/cpufreq/module.so
-lib/enlightenment/modules/dropshadow/module.a
+lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/dropshadow/module.eap
-lib/enlightenment/modules/dropshadow/module.la
-lib/enlightenment/modules/dropshadow/module.so
-lib/enlightenment/modules/ibar/module.a
+lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/ibar/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/ibar/module.eap
-lib/enlightenment/modules/ibar/module.la
-lib/enlightenment/modules/ibar/module.so
-lib/enlightenment/modules/ibox/module.a
+lib/enlightenment/modules/ibar/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/ibar/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/ibox/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/ibox/module.eap
-lib/enlightenment/modules/ibox/module.la
-lib/enlightenment/modules/ibox/module.so
-lib/enlightenment/modules/pager/module.a
+lib/enlightenment/modules/ibox/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/ibox/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/pager/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/pager/module.eap
-lib/enlightenment/modules/pager/module.la
-lib/enlightenment/modules/pager/module.so
-lib/enlightenment/modules/start/module.a
+lib/enlightenment/modules/pager/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/pager/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/start/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/start/module.eap
-lib/enlightenment/modules/start/module.la
-lib/enlightenment/modules/start/module.so
-lib/enlightenment/modules/temperature/module.a
+lib/enlightenment/modules/start/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/start/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/temperature/module.eap
-lib/enlightenment/modules/temperature/module.la
-lib/enlightenment/modules/temperature/module.so
+lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.so
 lib/enlightenment/preload/e_hack.a
 lib/enlightenment/preload/e_hack.la
 lib/enlightenment/preload/e_hack.so
@@ -254,16 +254,25 @@ share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%/data/fonts
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm share/xsessions
+@dirrmtry share/xsessions
 @dirrm lib/enlightenment/preload
+@dirrm lib/enlightenment/modules/temperature/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/temperature
+@dirrm lib/enlightenment/modules/start/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/start
+@dirrm lib/enlightenment/modules/pager/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/pager
+@dirrm lib/enlightenment/modules/ibox/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/ibox
+@dirrm lib/enlightenment/modules/ibar/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/ibar
+@dirrm lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/dropshadow
+@dirrm lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/cpufreq
+@dirrm lib/enlightenment/modules/clock/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/clock
+@dirrm lib/enlightenment/modules/battery/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/battery
 @dirrm lib/enlightenment/modules
 @dirrm lib/enlightenment
