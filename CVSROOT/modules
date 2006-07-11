@@ -11044,6 +11044,7 @@ powerdns	ports/dns/powerdns
 powerman	ports/sysutils/powerman
 powermanga	ports/games/powermanga
 powerpc-binutils	ports/devel/powerpc-binutils
+powerpc-gcc	ports/devel/powerpc-gcc
 powerpc-rtems-binutils	ports/devel/powerpc-rtems-binutils
 powerpc-rtems-g77	ports/devel/powerpc-rtems-g77
 powerpc-rtems-gcc	ports/devel/powerpc-rtems-gcc
