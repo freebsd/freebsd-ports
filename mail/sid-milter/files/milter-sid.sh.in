@@ -13,23 +13,24 @@
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/miltersid
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-miltersid_enable=${miltersid_enable:-"NO"}
-miltersid_socket=${miltersid_socket:-"local:/var/run/sid-filter"}
-miltersid_pid=${miltersid_pid:-"/var/run/sid-filter.pid"}
-miltersid_flags=${miltersid_flags:-"-r 0 -t"}
 
 . %%RC_SUBR%%
 
 name="miltersid"
-pidfile=${miltersid_pid}
 rcvar=`set_rcvar`
+load_rc_config $name
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${miltersid_enable="NO"}
+: ${miltersid_socket="local:/var/run/sid-filter"}
+: ${miltersid_pid="/var/run/sid-filter.pid"}
+: ${miltersid_flags="-r 0 -t"}
+
+pidfile=${miltersid_pid}
 command="%%PREFIX%%/libexec/sid-filter"
 command_args="-l -p ${miltersid_socket} -P ${miltersid_pid}"
 stop_postcmd="sid_postcmd"
-
-load_rc_config $name
 
 sid_postcmd ()
 {
