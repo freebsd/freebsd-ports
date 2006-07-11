@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.2.1
+PORTVERSION=	3.4.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,7 +31,8 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
-CONFIGURE_ARGS=	--disable-oss-sound \
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--disable-oss-sound \
 		--enable-docbook-stylesheet=${STYLESHEET}
 MAKE_ARGS=	skipmanual=YES
 
