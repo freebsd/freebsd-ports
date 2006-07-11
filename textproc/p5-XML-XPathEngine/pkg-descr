@@ -1,0 +1,17 @@
+This module provides an XPath engine, that can be re-used by other
+module/classes that implement trees.
+
+In order to use the XPath engine, nodes in the user module need to
+mimick DOM nodes. The degree of similitude between the user tree and a
+DOM dictates how much of the XPath features can be used. A module
+implementing all of the DOM should be able to use this module very
+easily (you might need to add the cmp method on nodes in order to get
+ordered result sets).
+
+This code is a more or less direct copy of the XML::XPath module by
+Matt Sergeant. I only removed the XML processing part to remove the
+dependency on XML::Parser, applied a couple of patches, renamed a
+whole lot of methods to make Pod::Coverage happy, and changed the docs.
+
+Author:	Michel Rodriguez, <mirod@cpan.org>
+WWW:	http://search.cpan.org/dist/XML-XPathEngine/

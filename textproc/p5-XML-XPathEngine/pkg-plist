@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPathEngine/.packlist
+%%SITE_PERL%%/XML/XPathEngine.pm
+%%SITE_PERL%%/XML/XPathEngine/Boolean.pm
+%%SITE_PERL%%/XML/XPathEngine/Expr.pm
+%%SITE_PERL%%/XML/XPathEngine/Function.pm
+%%SITE_PERL%%/XML/XPathEngine/Literal.pm
+%%SITE_PERL%%/XML/XPathEngine/LocationPath.pm
+%%SITE_PERL%%/XML/XPathEngine/NodeSet.pm
+%%SITE_PERL%%/XML/XPathEngine/Number.pm
+%%SITE_PERL%%/XML/XPathEngine/Root.pm
+%%SITE_PERL%%/XML/XPathEngine/Step.pm
+%%SITE_PERL%%/XML/XPathEngine/Variable.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XPathEngine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/XPathEngine
+@dirrmtry %%SITE_PERL%%/XML
