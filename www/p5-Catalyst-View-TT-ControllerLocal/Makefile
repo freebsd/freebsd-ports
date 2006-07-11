@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Catalyst TT View with template names relative to the Controller
 
-BUILD_DEPENDS=	p5-Catalyst>=0:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		p5-Catalyst-View-TT>=0:${PORTSDIR}/www/p5-Catalyst-View-TT \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}

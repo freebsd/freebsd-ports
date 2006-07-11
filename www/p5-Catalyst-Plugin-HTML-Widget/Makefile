@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	HTML Widget And Validation Framework
 
-BUILD_DEPENDS=	p5-Catalyst>=5.5:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-HTML-Widget>=0:${PORTSDIR}/www/p5-HTML-Widget
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

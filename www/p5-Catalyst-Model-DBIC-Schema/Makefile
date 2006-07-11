@@ -16,7 +16,8 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	DBIx::Class::Schema Model Class
 
 BUILD_DEPENDS=	\
-	p5-Catalyst>=5.64:${PORTSDIR}/www/p5-Catalyst \
+	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+	p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 	p5-Class-Data-Accessor>=0.02:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 	p5-DBIx-Class>=0.06000:${PORTSDIR}/databases/p5-DBIx-Class \

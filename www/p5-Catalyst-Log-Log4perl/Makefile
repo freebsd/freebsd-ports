@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Log::Log4perl logging for Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=5.60:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}

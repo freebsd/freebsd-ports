@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Mmap cache for Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst>=0:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

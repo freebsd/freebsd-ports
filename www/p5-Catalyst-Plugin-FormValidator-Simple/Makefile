@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Validator for Catalyst with FormValidator::Simple
 
-BUILD_DEPENDS=	p5-Catalyst>=5.30:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \
 		p5-FormValidator-Simple>=0.13:${PORTSDIR}/textproc/p5-FormValidator-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}

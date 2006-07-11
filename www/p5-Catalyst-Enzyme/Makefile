@@ -16,7 +16,8 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	CRUD framework for Catalyst
 
 BUILD_DEPENDS=	\
-	p5-Catalyst>=0:${PORTSDIR}/www/p5-Catalyst \
+	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+	p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 	p5-Catalyst-Model-CDBI>=0.1:${PORTSDIR}/www/p5-Catalyst-Model-CDBI \
 	p5-Catalyst-Plugin-DefaultEnd>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-DefaultEnd \
 	p5-Catalyst-Plugin-FormValidator>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-FormValidator \

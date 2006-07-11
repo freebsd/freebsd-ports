@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Serve static files with Catalyst
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst \
+BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS=	${BUILD_DEPENDS}
