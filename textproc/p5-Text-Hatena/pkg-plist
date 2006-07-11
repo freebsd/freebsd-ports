@@ -1,0 +1,53 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Hatena/.packlist
+%%SITE_PERL%%/Text/Hatena.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/ASIN.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/Amazon.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/EAN.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/FTP.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/Google.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HTTP.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaAntenna.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaBookmark.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaDiary.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaFotolife.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaGraph.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaGroup.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaID.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaIdea.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaMap.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaQuestion.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaRSS.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/HatenaSearch.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/Mailto.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/Rakuten.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/Scheme.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/Tex.pm
+%%SITE_PERL%%/Text/Hatena/AutoLink/Unbracket.pm
+%%SITE_PERL%%/Text/Hatena/BlockquoteNode.pm
+%%SITE_PERL%%/Text/Hatena/BodyNode.pm
+%%SITE_PERL%%/Text/Hatena/BrNode.pm
+%%SITE_PERL%%/Text/Hatena/CDataNode.pm
+%%SITE_PERL%%/Text/Hatena/Context.pm
+%%SITE_PERL%%/Text/Hatena/DlNode.pm
+%%SITE_PERL%%/Text/Hatena/FootnoteNode.pm
+%%SITE_PERL%%/Text/Hatena/H3Node.pm
+%%SITE_PERL%%/Text/Hatena/H4Node.pm
+%%SITE_PERL%%/Text/Hatena/H5Node.pm
+%%SITE_PERL%%/Text/Hatena/HTMLFilter.pm
+%%SITE_PERL%%/Text/Hatena/ListNode.pm
+%%SITE_PERL%%/Text/Hatena/Node.pm
+%%SITE_PERL%%/Text/Hatena/PNode.pm
+%%SITE_PERL%%/Text/Hatena/PreNode.pm
+%%SITE_PERL%%/Text/Hatena/SectionNode.pm
+%%SITE_PERL%%/Text/Hatena/SuperpreNode.pm
+%%SITE_PERL%%/Text/Hatena/TableNode.pm
+%%SITE_PERL%%/Text/Hatena/TagNode.pm
+%%SITE_PERL%%/Text/Hatena/TaglineNode.pm
+%%SITE_PERL%%/Text/Hatena/Text.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Hatena
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text/Hatena/AutoLink
+@dirrmtry %%SITE_PERL%%/Text/Hatena
+@dirrmtry %%SITE_PERL%%/Text
