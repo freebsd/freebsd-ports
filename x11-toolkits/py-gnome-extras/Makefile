@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -28,7 +28,7 @@ USE_GECKO=	firefox mozilla seamonkey
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack libgtkhtml pygnome2
+USE_GNOME=	gnomehack libgtkhtml pygnome2 libgda2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtkmozembed=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -43,7 +43,7 @@ DOCSDIR=	${WRKSRC}/share/doc/py-gnome-extras
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 post-patch:
 	@${FIND} ${WRKSRC}/docs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
