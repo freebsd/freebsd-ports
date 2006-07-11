@@ -8077,6 +8077,7 @@ p5-Catalyst-Plugin-Session-Store-Memcached	ports/www/p5-Catalyst-Plugin-Session-
 p5-Catalyst-Plugin-Singleton	ports/www/p5-Catalyst-Plugin-Singleton
 p5-Catalyst-Plugin-StackTrace	ports/www/p5-Catalyst-Plugin-StackTrace
 p5-Catalyst-Plugin-Static	ports/www/p5-Catalyst-Plugin-Static
+p5-Catalyst-Plugin-Static-Simple	ports/www/p5-Catalyst-Plugin-Static-Simple
 p5-Catalyst-Plugin-SubRequest	ports/www/p5-Catalyst-Plugin-SubRequest
 p5-Catalyst-Plugin-Textile	ports/www/p5-Catalyst-Plugin-Textile
 p5-Catalyst-Plugin-Unicode	ports/www/p5-Catalyst-Plugin-Unicode
