@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="67dbe99f-0f09-11db-94f8-00e029485e38">
+    <topic>shoutcast -- cross-site scripting, information exposure</topic>
+    <affects>
+      <package>
+	<name>shoutcast</name>
+	<name>linux-shoutcast</name>
+	<range><lt>1.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Goober's advisory reports reports that shoutcast is vulnerable to an
+	  arbitrary file reading vulnerability:</p>
+	<blockquote cite="http://people.ksp.sk/~goober/advisory/001-shoutcast.html">
+	<p>Impact of the vulnerability depends on the way the product was installed.
+	  In general, the vulnerability allows the attacker to read any file which
+	  can be read by the Shoutcast server process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3007</cvename>
+      <url>http://secunia.com/advisories/20524/</url>
+      <url>http://people.ksp.sk/~goober/advisory/001-shoutcast.html</url>
+    </references>
+    <dates>
+      <discovery>2006-06-09</discovery>
+      <entry>2006-07-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b168ddea-105a-11db-ac96-000c6ec775d9">
     <topic>samba -- memory exhaustion DoS in smbd</topic>
     <affects>
