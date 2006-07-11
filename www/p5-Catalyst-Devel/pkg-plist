@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Catalyst/Helper.pm
+%%SITE_PERL%%/Catalyst/Devel.pm
+%%SITE_PERL%%/Module/Install/Catalyst.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Devel/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/Module/Install
+@dirrmtry %%SITE_PERL%%/Module

@@ -1,0 +1,11 @@
+The "Catalyst::Devel" package includes a variety of modules useful for
+the development of Catalyst applications, but not required to run them.
+This is intended to make it easier to deploy Catalyst apps. The runtime
+parts of Catalyst are now known as "Catalyst::Runtime".
+
+"Catalyst::Devel" includes the Catalyst::Helper system, which autogenerates
+scripts and tests; Module::Install::Catalyst, a Module::Install extension
+for Catalyst; and requirements for a variety of development-related modules.
+The documentation remains with Catalyst::Runtime.
+
+WWW: http://search.cpan.org/dist/Catalyst-Devel/

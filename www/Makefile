@@ -516,6 +516,7 @@
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-Catalyst
     SUBDIR += p5-Catalyst-Action-RenderView
+    SUBDIR += p5-Catalyst-Devel
     SUBDIR += p5-Catalyst-Engine-Apache
     SUBDIR += p5-Catalyst-Enzyme
     SUBDIR += p5-Catalyst-Example-InstantCRUD
