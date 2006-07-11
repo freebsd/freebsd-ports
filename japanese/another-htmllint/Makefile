@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	another-htmllint
-PORTVERSION=	20040725
+PORTVERSION=	20060601
 CATEGORIES=	japanese www
 MASTER_SITES=	http://dist.bsdlab.org/
 
