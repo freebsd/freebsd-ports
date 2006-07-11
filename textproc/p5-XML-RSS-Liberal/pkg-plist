@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/XML/RSS/Liberal.pm
+%%SITE_PERL%%/XML/RSS/Liberal/Parser.pm
+@dirrmtry %%SITE_PERL%%/XML/RSS/Liberal
