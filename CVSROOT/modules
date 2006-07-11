@@ -9230,6 +9230,7 @@ p5-Net-SFTP	ports/net/p5-Net-SFTP
 p5-Net-SFTP-Foreign	ports/net/p5-Net-SFTP-Foreign
 p5-Net-SMPP	ports/net/p5-Net-SMPP
 p5-Net-SMTP-Server	ports/mail/p5-Net-SMTP-Server
+p5-Net-SMTP-TLS	ports/mail/p5-Net-SMTP-TLS
 p5-Net-SNMP	ports/net-mgmt/p5-Net-SNMP
 p5-Net-SNMP3	ports/net-mgmt/p5-Net-SNMP3
 p5-Net-SNPP	ports/net/p5-Net-SNPP
