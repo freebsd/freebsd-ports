@@ -26,5 +26,6 @@ PNEWSDIR?=	${PREFIX}/www/data/pnews
 do-install:
 	@${MKDIR} ${PNEWSDIR}
 	@${CP} -R ${WRKSRC}/* ${PNEWSDIR}
+	@${CP} -R ${WRKSRC}/.htaccess ${WRKSRC}/* ${PNEWSDIR}
 
 .include <bsd.port.mk>

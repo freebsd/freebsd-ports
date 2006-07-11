@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+www/data/pnews/.htaccess
 www/data/pnews/auth.php
 www/data/pnews/auth/ftp.inc.php
 www/data/pnews/auth/ftps.inc.php
