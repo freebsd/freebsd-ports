@@ -7,6 +7,7 @@
 
 PORTNAME=	taskjuggler
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.taskjuggler.org/download/
 
@@ -34,9 +35,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_DOCS)
-# do nada
-.else
+.if defined(WITHOUT_DOCS)
 NOPORTDOCS=	true
 .endif
 
@@ -47,7 +46,8 @@ CONFIGURE_ARGS+=--disable-docs
 .endif
 
 .if !defined(WITHOUT_KDE)
-LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3
+LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3 \
+		kcal.2:${PORTSDIR}/deskutils/kdepim3
 PLIST_SUB+=	WITH_KDE=""
 .else
 CONFIGURE_ARGS+=--with-kde-support=no
