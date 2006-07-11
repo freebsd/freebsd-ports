@@ -1,0 +1,21 @@
+Instead of a dry technical overview, I am going to explain the
+structure of this module based on its history. I consult at a company
+that generates customer leads primarily by having websites that
+attract people (e.g. lowering loan values, selling cars, buying real
+estate, etc.). For some reason we get more than our fair share of
+profane leads. For this reason I was told to write a profanity checker.
+
+For the data that I was dealing with, the profanity was most often in
+the email address or in the first or last name, so I naively started
+filtering profanity with a set of regexps for that sort of data. Note
+that both names and email addresses are unlike what you are reading
+now: they are not whitespace-separated text, but are instead labels.
+
+Therefore full support for profanity checking should work in 2
+entirely different contexts: labels (email, names) and text (what you
+are reading). Because open-source is driven by demand and I have no
+need for detecting profanity in text, only label is implemented at the
+moment. And you know the next sentence: "patches welcome" :)
+
+Author:	T. M. Brannon, tbone@cpan.org
+WWW:	http://search.cpan.org/dist/Regexp-Common-profanity_us/
