@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libeXosip2
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	exosip
@@ -20,6 +20,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-tools
 INSTALLS_SHLIB=	yes
 
+OPTIONS=	UCL "Use uclmmbase IP multicast library " off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_UCL)
 LIB_DEPENDS+=		uclmmbase:${PORTSDIR}/devel/uclmmbase
 CONFIGURE_ARGS+=	--enable-ucl
@@ -30,4 +34,4 @@ CONFIGURE_ARGS+=	--disable-josua
 PLIST_SUB+=		JOSUA="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
