@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/JavaScript/.packlist
+%%SITE_PERL%%/Template/Plugin/JavaScript.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/JavaScript
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
