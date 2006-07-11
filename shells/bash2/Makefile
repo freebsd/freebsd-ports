@@ -8,7 +8,7 @@
 
 PORTNAME=	bash
 PORTVERSION=	2.05b.007
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -28,6 +28,8 @@ PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004 \
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell
+
+CONFLICTS=	bash-3*
 
 .include <bsd.port.pre.mk>
 
