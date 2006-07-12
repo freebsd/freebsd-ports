@@ -3,8 +3,7 @@ From the README:
 calctool  -  README  -  November 1989.
 
 This is V2.4 of a simple desktop calculator.
-This version works under SunView, XView, X11, NeWS, MGR and for
-dumb tty terminals.
+This version works under X11 and dumb tty terminals.
 
 It is almost visually identical to V2.1 which was released in August
 1988, but internally most of the code has been reworked to include a
@@ -20,4 +19,4 @@ notation. You can also have a .calctoolrc file in your home directory,
 which can define upto ten new values for constants, and ten function
 definitions which are used in conjunction with the FUN key.
 
-(port maintained by nsayer@quack.kfu.com)
+(port maintained by ssedov@mbsd.msk.ru)

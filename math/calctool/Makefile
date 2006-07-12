@@ -7,17 +7,60 @@
 
 PORTNAME=	calctool
 PORTVERSION=	2.4.13
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTNAME=	calctool-2.4pl13
 MASTER_SITE_SUBDIR=	nsayer
+DISTNAME=	calctool-2.4pl13
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multi-GUI (text, X, xview, NeWS, sunview) calculator program
+MAINTAINER=	ssedov@mbsd.msk.ru
+COMMENT=	A multi-GUI (terminal, X) calculator program
 
-USE_X_PREFIX=	yes
+USE_LDCONFIG=	yes
+
+OPTIONS=	X11 "Build X11 version of calctool" on \
+		TTY "Build tty version of calctool" on
+
 MAN1=		calctool.1
 
-ALL_TARGET=	x11
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+BINARIES+=	xcalctool
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
+.endif
+
+.if !defined(WITHOUT_TTY)
+BINARIES+=	tty_calctool
+PLIST_SUB+=	TTY=""
+.else
+PLIST_SUB+=	TTY="@comment "
+.endif
+
+.if ${ARCH} == "sparc64"
+FPIC=	-fPIC
+.else
+FPIC=	-fpic
+.endif
+
+post-patch:
+	@${REINPLACE_CMD}	-e "s#%%FPIC%%#${FPIC}#g" \
+				-e "s#%%X11BASE%%#${X11BASE}#g" \
+				-e "s#%%BINARIES%%#${BINARIES}#g" \
+				-e "s#%%DATADIR%%#${DATADIR}#g" \
+				${WRKSRC}/Makefile
+
+do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libcalctool.so.1 ${PREFIX}/lib
+	@(cd ${PREFIX}/lib; ${LN} -sf libcalctool.so.1 libcalctool.so)
+.for BIN in ${BINARIES}
+	${INSTALL_PROGRAM} ${WRKSRC}/${BIN} ${PREFIX}/bin
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/calctool.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/calctool.help ${DATADIR}
+
+.include <bsd.port.post.mk>
