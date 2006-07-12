@@ -7,14 +7,14 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.290
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
+		${MASTER_SITE_LOCAL:S/$/:up/}
 MASTER_SITE_SUBDIR=	webadmin/:sf \
-			olgeni/:local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:local/}
+			olgeni/:up
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${WEBMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -28,7 +28,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=    webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
-WEBMIN_MODULES= mysql-1.290-1.wbm.gz
+WEBMIN_MODULES=	mysql-1.290-2.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
