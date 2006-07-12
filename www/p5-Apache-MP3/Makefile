@@ -17,7 +17,7 @@ COMMENT=	MP3 browsing and streaming under mod_perl and Apache
 
 BUILD_DEPENDS=	${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav \
 		${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
-		${SITE_PERL}/MPEG/MP3Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
+		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${SITE_PERL}/${PERL_ARCH}/Ogg/Vorbis/Header.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header \
 		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
