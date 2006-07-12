@@ -21,10 +21,19 @@
 # milterdk_domain (str):    Domainpart of From: in mails to sign.
 # milterdk_key (str):       Path to the private key file to sign with.
 # milterdk_flags (str):     Flags passed to start command.
+# milterdk_selector (str):  Selector from which the receiving side should
+#			    obtain the public key.
 #
 # milterdk_${profile}_* :   Variables per profile.
 #                             Sockets must be different from each other.
 #
+
+. %%RC_SUBR%%
+
+name="milterdk"
+rcvar=`set_rcvar`
+load_rc_config $name
+
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 milterdk_enable=${milterdk_enable:-"NO"}
@@ -32,22 +41,15 @@ milterdk_profiles=${milterdk_profiles:-}
 milterdk_socket=${milterdk_socket:-"local:/var/run/dk-filter"}
 milterdk_domain=${milterdk_domain:-"example.com"}
 milterdk_key=${milterdk_key:-"/var/db/domainkeys/default.key.pem"}
-## milterdk_flags expands escaped variables later.
-milterdk_flags=${milterdk_flags:-"-d \${milterdk_domain\} -c nofws -H -m MSA \
--s \${milterdk_key\} -S default"}
-
-. %%RC_SUBR%%
-
-name="milterdk"
-rcvar=`set_rcvar`
+milterdk_selector=${milterdk_selector:-"default"}
+milterdk_flags=${milterdk_flags:-"-d ${milterdk_domain} -c nofws -H -m MSA \
+-s ${milterdk_key} -S ${milterdk_selector}"}
 
 start_precmd="dk_prepcmd"
 stop_postcmd="dk_prepcmd"
 command="%%PREFIX%%/libexec/dk-filter"
 _pidprefix="/var/run/dk-filter"
 pidfile="${_pidprefix}.pid"
-
-load_rc_config $name
 
 if [ -n "$2" ]; then
     profile="$2"
@@ -71,7 +73,7 @@ else
 	if [ "x$1" != "xrestart" ]; then
 	    for profile in ${milterdk_profiles}; do
 		echo "===> milterdk profile: ${profile}"
-		%%PREFIX%%/etc/rc.d/milter-dk.sh $1 ${profile}
+		$0 $1 ${profile}
 		retcode="$?"
 		if [ "0${retcode}" -ne 0 ]; then
 		    failed="${profile} (${retcode}) ${failed:-}"
