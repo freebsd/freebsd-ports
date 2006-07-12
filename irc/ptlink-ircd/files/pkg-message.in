@@ -6,6 +6,6 @@ Edit the configuration files in %%PREFIX%%/etc/ptlink-ircd to suit
 your needs.
 
 Add ircd_enable="YES" to rc.conf and start ircd by running:
-%%PREFIX%%/ptlink-ircd.sh start
+%%PREFIX%%/etc/rc.d/ptlink-ircd start
 
 ======================================================================

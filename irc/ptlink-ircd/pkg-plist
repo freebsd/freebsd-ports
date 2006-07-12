@@ -16,6 +16,7 @@ etc/ptlink-ircd/codepage/translit.cp
 etc/ptlink-ircd/help.admin
 etc/ptlink-ircd/help.oper
 etc/ptlink-ircd/help.user
+etc/ptlink-ircd/hvc.font
 etc/ptlink-ircd/ircd.conf
 etc/ptlink-ircd/ircd.motd
 etc/ptlink-ircd/kline.conf
