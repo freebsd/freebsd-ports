@@ -3,14 +3,14 @@
 # Whom:					Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/devel/libglade2/Makefile,v 1.20 2006/07/12 17:23:04 ahze Exp $
 
 PORTNAME=	libglade2
-PORTVERSION=	2.5.1
-PORTREVISION?=	5
+PORTVERSION=	2.6.0
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.5
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/..$//}
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
