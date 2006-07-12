@@ -1921,12 +1921,12 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm %%DOCSDIR%%/libgimpbase
 @dirrm %%DOCSDIR%%/libgimp
 @dirrm %%DOCSDIR%%
-@dirrm libexec/gimp/2.2/plug-ins
-%%PYTHON:%%@dirrm libexec/gimp/2.2/python
-@dirrm libexec/gimp/2.2/modules
-@dirrm libexec/gimp/2.2/environ
-@dirrm libexec/gimp/2.2
-@dirrm libexec/gimp
+@dirrmtry libexec/gimp/2.2/plug-ins
+%%PYTHON:%%@dirrmtry libexec/gimp/2.2/python
+@dirrmtry libexec/gimp/2.2/modules
+@dirrmtry libexec/gimp/2.2/environ
+@dirrmtry libexec/gimp/2.2
+@dirrmtry libexec/gimp
 @dirrm include/gimp-2.0/libgimpwidgets
 @dirrm include/gimp-2.0/libgimpthumb
 @dirrm include/gimp-2.0/libgimpmodule
@@ -1935,6 +1935,6 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm include/gimp-2.0/libgimpbase
 @dirrm include/gimp-2.0/libgimp
 @dirrm include/gimp-2.0
-@dirrm etc/gimp/2.2
-@dirrm etc/gimp
+@dirrmtry etc/gimp/2.2
+@dirrmtry etc/gimp
 %%GNOMEPANEL:%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

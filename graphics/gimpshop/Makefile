@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	gimpshop
-PORTVERSION=	2.2.10
-PORTREVISION=	2
+PORTVERSION=	2.2.11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	marcus
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+		http://freebsd.powered.net/distfiles/
 
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	GIMP fork resembling Adobe Photoshop
 
-LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
-		aa.1:${PORTSDIR}/graphics/aalib \
-		exif.12:${PORTSDIR}/graphics/libexif \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	wmf:${PORTSDIR}/graphics/libwmf \
+		aa:${PORTSDIR}/graphics/aalib \
+		exif:${PORTSDIR}/graphics/libexif \
+		mng:${PORTSDIR}/graphics/libmng \
+		png:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff
 
 CONFLICTS=	gimp-1.* gimp-2.* gimp-gnome-2.*
 
@@ -34,11 +31,10 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${DOCSDIR} \
@@ -93,7 +89,6 @@ CONFIGURE_ARGS+=	--enable-mp
 USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
-# PKGNAMESUFFIX:=	-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes
 .else
