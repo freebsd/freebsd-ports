@@ -1,4 +1,5 @@
 %%SITE_PERL%%/XML/Atom.pm
+%%SITE_PERL%%/XML/Atom/Base.pm
 %%SITE_PERL%%/XML/Atom/Client.pm
 %%SITE_PERL%%/XML/Atom/Content.pm
 %%SITE_PERL%%/XML/Atom/Entry.pm
