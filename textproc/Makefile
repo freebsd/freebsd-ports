@@ -60,6 +60,7 @@
     SUBDIR += csb-aspell
     SUBDIR += csv2latex
     SUBDIR += csv2xml
+    SUBDIR += csvdiff
     SUBDIR += ctpp
     SUBDIR += cwtext
     SUBDIR += cy-aspell
