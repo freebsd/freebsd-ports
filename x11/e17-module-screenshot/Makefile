@@ -7,6 +7,7 @@
 
 PORTNAME=	screenshot
 PORTVERSION=	20060707
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 PKGNAMEPREFIX=	e17-module-
@@ -24,6 +25,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
 
 OPTIONS=	IMAGIC "Use ImageMagick" on \
 		SCROT "Use Scrot" off
