@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mednafen
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	emulators games
 MASTER_SITES=	http://mednafen.com/releases/
 
@@ -44,6 +44,10 @@ FLAG_NLS=	true
 
 .if ${ARCH}==sparc64
 BROKEN=		does not compile on ${ARCH} due to internal compiler error
+.endif
+
+.if ${OSVERSION} < 503000
+IGNORE=		needs round(3), which appears in 5.3 or later
 .endif
 
 pre-configure:
