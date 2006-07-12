@@ -1,0 +1,12 @@
+--- bin/portupgrade.orig	Wed Jul 12 20:09:27 2006
++++ bin/portupgrade	Wed Jul 12 20:09:59 2006
+@@ -900,8 +900,7 @@
+ def get_make_env(origin, is_new = false)
+   $make_env_table ||= compile_config_table(config_value(:MAKE_ENV))
+ 
+-  envset = lookup_config_table($make_env_table, origin, nil) or
+-    return Array.new
++  envset = (lookup_config_table($make_env_table, origin, nil) or Array.new)
+ 
+   make_env = $make_env.dup
+   if make_env.empty?
