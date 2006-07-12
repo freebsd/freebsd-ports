@@ -7,6 +7,7 @@
 
 PORTNAME=	mathlibs
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
