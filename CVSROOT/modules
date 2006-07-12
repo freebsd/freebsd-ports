@@ -5357,6 +5357,7 @@ knemo		ports/net/knemo
 knews		ports/news/knews
 knewsticker-scripts	ports/misc/knewsticker-scripts
 knights		ports/games/knights
+knock		ports/security/knock
 knocker		ports/security/knocker
 knoda		ports/databases/knoda
 knowit		ports/deskutils/knowit
