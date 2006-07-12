@@ -34,9 +34,13 @@ CFLAGS+=	-D_KERNEL
 
 NO_PACKAGE=	"this is a modified version of a restricted firmware"
 
+MIN6OSVERSION?=	999999
+MIN7OSVERSION?=	999999
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700014
+.if !( ${OSVERSION} > ${MIN7OSVERSION} || \
+	( ${OSVERSION} < 700000 && ${OSVERSION} >= ${MIN6OSVERSION} ) )
 IGNORE=		needs fresh ${DRIVERNAME}(4), install net/${DRIVERNAME}-firmware instead
 .endif
 

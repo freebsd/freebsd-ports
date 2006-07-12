@@ -24,4 +24,7 @@ FIRMWARES=	${FWNAME}/ipw2200-bss.fw:${DRIVERNAME}_bss \
 		${FWNAME}/ipw2200-ibss.fw:${DRIVERNAME}_ibss \
 		${FWNAME}/ipw2200-sniffer.fw:${DRIVERNAME}_monitor \
 
+MIN6OSVERSION=	601102
+MIN7OSVERSION=	700014
+
 .include "${MASTERDIR}/Makefile"
