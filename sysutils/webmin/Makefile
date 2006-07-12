@@ -28,7 +28,8 @@ USE_PERL5=	yes
 USE_RC_SUBR=    webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
-WEBMIN_MODULES=	mysql-1.290-2.wbm.gz
+WEBMIN_MODULES=	mailboxes-1.290-3.wbm.gz \
+		mysql-1.290-2.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
