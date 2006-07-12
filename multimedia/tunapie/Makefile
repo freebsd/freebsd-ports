@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.r2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S|.r2|_rc2|}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	Tuner for streaming internet radio and TV
@@ -18,7 +18,7 @@ COMMENT=	Tuner for streaming internet radio and TV
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 		${PYTHON_SITELIBDIR}/${WX_PYTHON_DIR}/wxPython/_wx.py:${PORTSDIR}/x11-toolkits/py-wxPython26 \
 		streamripper:${PORTSDIR}/audio/streamripper \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
+		xine:${PORTSDIR}/multimedia/xine \
 		xmms:${PORTSDIR}/multimedia/xmms
 
 NO_BUILD=	yes

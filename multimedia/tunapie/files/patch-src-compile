@@ -1,0 +1,17 @@
+$FreeBSD$
+--- src/compile	Sun Jul  2 10:49:31 2006
++++ src/compile.port	Tue Jul 11 21:30:59 2006
+@@ -1 +1,12 @@
+-import Tunapie
++import os, os.path, re
++from compiler import compileFile
++
++def compile_tunapie(arg, dir, files):
++    for file in files:
++	path = os.path.join(dir, file)
++	path = os.path.normcase(path)
++	if re.search(r".*\.py$", path):
++	    print "  ==> Generating bytecode for " + path
++	    compileFile(path)
++
++os.path.walk('.', compile_tunapie, 0)
