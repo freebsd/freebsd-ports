@@ -40,6 +40,8 @@ post-patch:
 		${XARGS} -n 10 -x \
 		${REINPLACE_CMD} -E \
 		-e 's|/usr/bin/env python|${PYTHONBASE}/bin/${PYTHON_VERSION}|'
+	@${FIND} ${WRKSRC}/utilities ${WRKSRC}/contrib \
+		-type f -name *.bak | ${XARGS} ${RM}
 
 post-install:
 .ifndef(NOPORTDOCS)
