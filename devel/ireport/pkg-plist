@@ -135,6 +135,7 @@ bin/iReport
 %%JAVAJARDIR%%/LICENSE.asm.txt
 %%JAVAJARDIR%%/LICENSE.barbecue-1.1.txt
 %%JAVAJARDIR%%/LICENSE.jta.txt
+%%JAVAJARDIR%%/LICENSE.microba.txt
 %%JAVAJARDIR%%/asm-attrs.jar
 %%JAVAJARDIR%%/asm.jar
 %%JAVAJARDIR%%/barbecue-1.1.jar
@@ -153,11 +154,15 @@ bin/iReport
 %%JAVAJARDIR%%/jr-bsh-compiler.jar
 %%JAVAJARDIR%%/jsmoothgen-ant-0.9.7.jar
 %%JAVAJARDIR%%/jta.jar
-%%JAVAJARDIR%%/jxl.jar
+%%JAVAJARDIR%%/jxl-2.6.jar
+%%JAVAJARDIR%%/microba-0.4.1-bin.jar
 %%JAVAJARDIR%%/mondrian-2.0.1.jar
 %%JAVAJARDIR%%/nsisant-1.1.jar
 %%JAVAJARDIR%%/png-encoder-1.5.jar
 %%JAVAJARDIR%%/servlet.jar
+%%JAVAJARDIR%%/spring-2.0-m2.jar
+%%JAVAJARDIR%%/spring-context-2.0-m2.jar
+%%JAVAJARDIR%%/spring-hibernate3-2.0-m2.jar
 %%JAVAJARDIR%%/toniclf.jar
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins
