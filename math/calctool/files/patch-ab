@@ -1,17 +1,52 @@
---- Makefile.orig	Sat May 29 09:35:43 1993
-+++ Makefile	Fri Mar  9 10:17:33 2001
-@@ -116,8 +116,8 @@
+--- Makefile.orig	Sat May 29 20:35:43 1993
++++ Makefile	Thu Jul 13 01:33:02 2006
+@@ -28,7 +28,7 @@
+ #  It can also be specified here by uncommenting the following
+ #  macro definition and setting appropriately.
+ #
+-HELPNAME        = -DHELPNAME=\"$(LIBDIR)/calctool.help\"
++HELPNAME        = -DHELPNAME=\"%%DATADIR%%/calctool.help\"
+ #-----------------------------------------------------------------------
+ #  An attempt is now made at using a portable math library. You should
+ #  carefully setup the following three definitions.
+@@ -85,13 +85,13 @@
+ #  uncomment the other three definitions below, commented out the initial
+ #  two.
+ #
+-LIBNAME         = libcalctool.a
+-CALCLIB	        = $(LIBNAME)
++#LIBNAME         = libcalctool.a
++#CALCLIB	        = $(LIBNAME)
+ #
+ # Shared library definitions. Uncomment if required.
+-#LIBNAME         = libcalctool.so.1.1
+-#CALCLIB         = -L. -lcalctool
+-#SHLIB           = -pic
++LIBNAME         = libcalctool.so.1
++CALCLIB         = -L . -lcalctool
++SHLIB           = %%FPIC%%
+ #-----------------------------------------------------------------------
+ #  If you are not running under a BSD4.3 derived system, then the
+ #  second parameter to a select call is a pointer to an integer function,
+@@ -116,38 +116,37 @@
  #  library files are not in a standard place, then the following
  #  two lines should be uncommented, and set appropriately.
  #
 -#X11INCDIR         = -I$(OPENWINHOME)/include
 -#X11LIBDIR         = -L$(OPENWINHOME)/lib
-+X11INCDIR         = -I${X11BASE}/include
-+X11LIBDIR         = -L${X11BASE}/lib
++X11INCDIR         = -I%%X11BASE%%/include
++X11LIBDIR         = -L%%X11BASE%%/lib
  #-------------------------------------------------------------------------
  #  If you are compiling the XView version, then the following two lines
  #  should be uncommented.
-@@ -130,14 +130,14 @@
+ #
+-XVIEWINCDIR      = -I$(OPENWINHOME)/include
+-XVIEWLIBDIR      = -L$(OPENWINHOME)/lib
++#XVIEWINCDIR      = -I$(OPENWINHOME)/include
++#XVIEWLIBDIR      = -L$(OPENWINHOME)/lib
+ #
+ #=========================================================================
+ #
  #  Default locations where calctool files will be installed.
  #  You might wish to alter these values.
  #
@@ -19,34 +54,53 @@
 -LIBDIR          = /usr/local/lib
 -MANDIR          = /usr/man/man$(MANSECT)
 -MANSECT         = l
-+BINDIR          = ${PREFIX}/bin
-+LIBDIR          = ${PREFIX}/lib/X11
-+MANDIR          = ${PREFIX}/man/man$(MANSECT)
++BINDIR          = $(PREFIX)/bin
++LIBDIR          = $(PREFIX)/lib
++MANDIR          = $(PREFIX)/man/man$(MANSECT)
 +MANSECT         = 1
  #
  #  Compilation flags and standard macro definitions.
  #
 -CFLAGS		= -g $(HELPNAME) $(NEWSFILE) $(STUPID_FPE) $(NOIEEE) \
-+CFLAGS		+= $(HELPNAME) $(NEWSFILE) $(STUPID_FPE) $(NOIEEE) \
++CFLAGS		+=   $(HELPNAME) $(NEWSFILE) $(STUPID_FPE) $(NOIEEE) \
  		     $(NOINDEX) $(RCNAME) $(SELTYPE) $(SHLIB) $(SIGRET) \
  		     $(SUN4_KEYBOARD) $(TTEXT) $(MGRPARAM) $(MGRINCDIR) \
  		     $(X11INCDIR) $(XVIEWINCDIR)
-@@ -147,7 +147,7 @@
- BINARIES        = mgr_calctool ps_calctool sv_calctool \
- 		  tty_calctool xcalctool xv_calctool
+ #
+ #=========================================================================
+ 
+-BINARIES        = mgr_calctool ps_calctool sv_calctool \
+-		  tty_calctool xcalctool xv_calctool
++BINARIES        = %%BINARIES%%
  
 -CC		= cc
 +#CC		= cc
  
  LIBSRCS         = graphics.c display.c functions.c get.c
  LIBOBJS         = graphics.o display.o functions.o get.o
-@@ -233,8 +233,7 @@
- 			ld -o libcalctool.so.1.1 -assert pure-text $?
+@@ -208,11 +207,10 @@
+ 		$(CC) -o sv_calctool $(CFLAGS) $(STDOBJS) sunview.o $(SVIEWLIBS)
+ 		-cp sv_calctool calctool
+ 
+-tty:            $(OBJS) tty.o
++tty_calctool:   $(OBJS) tty.o
+ 		$(CC) -o tty_calctool $(CFLAGS) $(STDOBJS) tty.o $(TTYLIBS)
+-		-cp tty_calctool calctool
+ 
+-x11:            $(OBJS) x11.o
++xcalctool:      $(OBJS) x11.o
+ 		$(CC) -o xcalctool $(X11LIBDIR) $(CFLAGS) $(STDOBJS) x11.o \
+ 				$(X11LIBS)
+ 		-cp xcalctool calctool
+@@ -229,8 +227,9 @@
+ #  These are the library creation rules for making the shared calctool
+ #  library (available with SunOS v4.x).
+  
+-libcalctool.so.1.1:     $(LIBOBJS)
+-			ld -o libcalctool.so.1.1 -assert pure-text $?
++libcalctool.so.1:	$(LIBOBJS)
++			$(CC) -shared -o ${LIBNAME} $?
++			ln -sf ${LIBNAME} libcalctool.so
  
  install:
--		install -c -m 644 $(LIBNAME) $(LIBDIR)
--		install -s -m 751 calctool $(BINDIR)
-+		install -c -s -m 751 calctool $(BINDIR)
- 		install -c -m 644 calctool.help $(LIBDIR)
- 		install -c -m 644 calctool.ps $(LIBDIR)
- 		install -c -m 644 calctool.1 $(MANDIR)/calctool.$(MANSECT)
+ 		install -c -m 644 $(LIBNAME) $(LIBDIR)

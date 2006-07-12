@@ -1,3 +1,6 @@
-bin/calctool
-lib/X11/calctool.help
-lib/X11/calctool.ps
+%%TTY%%bin/tty_calctool
+%%X11%%bin/xcalctool
+lib/libcalctool.so
+lib/libcalctool.so.1
+%%DATADIR%%/calctool.help
+@dirrm %%DATADIR%%
