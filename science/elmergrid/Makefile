@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elmergrid
-PORTVERSION=	5.0.2
+PORTVERSION=	5.2.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 
@@ -17,6 +17,11 @@ USE_GCC=	4.1+
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
-PLIST_FILES=	bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerGrid
+PLIST_FILES=	bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerGrid	\
+		bin/ElmerGrid
+
+post-install:
+		${LN} -sf ${PREFIX}/bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerGrid \
+			${PREFIX}/bin/ElmerGrid
 
 .include <bsd.port.mk>
