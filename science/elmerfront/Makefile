@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	front
-PORTVERSION=	4.0.6
+PORTVERSION=	5.2.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer

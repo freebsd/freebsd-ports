@@ -13,7 +13,6 @@ bin/%%ARCH%%-portbld-freebsd%%OSREL%%-ElmerFront
 %%DATADIR%%/lib/procedure.stub.txt
 %%DATADIR%%/lib/rgb.txt
 @dirrm %%DATADIR%%/lib
-%%DATADIR%%/tcl/A
 %%DATADIR%%/tcl/ecif_tcl_mainScript.tcl
 %%DATADIR%%/tcl/ecif_tcl_mainScript.tcl.in
 %%DATADIR%%/tcl/ecif_tcl_namespaces.tcl
