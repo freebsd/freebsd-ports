@@ -1,32 +1,32 @@
---- configure.orig	Wed Apr 13 13:46:35 2005
-+++ configure	Wed Nov  9 19:52:06 2005
-@@ -29,9 +29,9 @@
+--- configure.orig	Sun Jun 11 20:35:47 2006
++++ configure	Tue Jul 11 23:56:05 2006
+@@ -61,9 +61,9 @@
    echo >> "$TMPLOG"
-   cat "$TMPC" >> "$TMPLOG"
+   cat "$1" >> "$TMPLOG"
    echo >> "$TMPLOG"
--  echo "$_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra $TMPC -o $TMPO $@" >> "$TMPLOG"
-+  echo "$_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra $TMPC -o $TMPO $@" >> "$TMPLOG"
+-  echo "$_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra -o $TMPO $@" >> "$TMPLOG"
++  echo "$_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra -o $TMPO $@" >> "$TMPLOG"
    rm -f "$TMPO"
--  ( $_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra "$TMPC" -o "$TMPO" "$@" ) >> "$TMPLOG" 2>&1
-+  ( $_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra "$TMPC" -o "$TMPO" "$@" ) >> "$TMPLOG" 2>&1
+-  $_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra -o "$TMPO" "$@" >> "$TMPLOG" 2>&1
++  $_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra -o "$TMPO" "$@" >> "$TMPLOG" 2>&1
    TMP="$?"
    echo >> "$TMPLOG"
    echo "ldd $TMPO" >> "$TMPLOG"
-@@ -369,7 +369,7 @@
- 
- 
- # 1st pass checking for vital options
+@@ -453,7 +453,7 @@
+ _sse=auto
+ _sse2=auto
+ _mtrr=auto
 -_install=install
 +_install=@${BSD_INSTALL_PROGRAM}
  _ranlib=ranlib
  _cc=cc
  test "$CC" && _cc="$CC"
-@@ -471,14 +471,7 @@
-       case "`( uname -m ) 2>&1`" in
+@@ -574,14 +574,7 @@
+       case "`uname -m 2>&1`" in
        i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686|BePC) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
 -      x86_64|amd64)
--        if [ "`$_cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
+-        if [ -n "`$_cc -dumpmachine | sed -n '/^x86_64-/p;/^amd64-/p'`" -a \
 -             -z "`echo $CFLAGS | grep -- -m32`"  ]; then
 -          host_arch=x86_64
 -        else
@@ -34,10 +34,10 @@
 -        fi
 -      ;;
 +      x86_64|amd64) host_arch=x86_64 ;;
-       macppc|ppc) host_arch=ppc ;;
+       macppc|ppc|ppc64) host_arch=ppc ;;
        alpha) host_arch=alpha ;;
        sparc) host_arch=sparc ;;
-@@ -691,22 +684,10 @@
+@@ -806,25 +799,10 @@
  _cpuinfo="echo"
  # Cygwin has /proc/cpuinfo, but only supports Intel CPUs
  # FIXME: Remove the cygwin check once AMD CPUs are supported
@@ -48,9 +48,12 @@
 -  # FreeBSD with Linux emulation /proc mounted,
 -  # extract CPU information from it
 -  _cpuinfo="cat /compat/linux/proc/cpuinfo"
--elif darwin ; then
+-elif darwin && not x86 ; then
 -  # use hostinfo on Darwin
 -  _cpuinfo="hostinfo"
+-elif aix; then
+-  # use 'lsattr' on AIX
+-  _cpuinfo="lsattr -E -l proc0 -a type"
 -elif x86; then
    # all other OSes try to extract CPU information from a small helper
    # program TOOLS/cpuinfo instead
@@ -58,29 +61,28 @@
    _cpuinfo="TOOLS/cpuinfo"
 -fi
  
- x86_exts_check()
- {
-@@ -1878,8 +1859,8 @@
+ if x86 || x86_64 ; then
+   # gather more CPU information
+@@ -1526,7 +1504,7 @@
+   fi
+   _stripbinaries=no
+ elif test -z "$CFLAGS" ; then
+-    CFLAGS="-O4 $_march $_mcpu $_pipe -ffast-math -fomit-frame-pointer"
++    CFLAGS="-O $_pipe"
+ else
+   _warn_CFLAGS=yes
+ fi
+@@ -2177,8 +2155,7 @@
      ;;
  
    *)
 -    echo "Unknown parameter: $ac_option"
 -    exit 1
-+    echo -n "Unknown parameter: $ac_option"
-+    echo " (ignoring)."
++    echo "Unknown parameter: $ac_option (ignoring)..."
      ;;
  
    esac
-@@ -1889,7 +1870,7 @@
- test -z "$_bindir" && _bindir="$_prefix/bin"
- test -z "$_datadir" && _datadir="$_prefix/share/mplayer"
- test -z "$_mandir" && _mandir="$_prefix/man"
--test -z "$_confdir" && _confdir="$_prefix/etc/mplayer"
-+test -z "$_confdir" && _confdir="$_prefix/share/mplayer"
- test -z "$_libdir" && _libdir="$_prefix/lib"
- test -z "$_mlibdir" && _mlibdir="$MLIBHOME"
- 
-@@ -2591,13 +2572,7 @@
+@@ -2826,13 +2803,7 @@
  
  
  echocheck "memalign()"
@@ -94,80 +96,40 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -2699,47 +2674,11 @@
+@@ -2931,20 +2902,8 @@
  _def_threads='#undef HAVE_THREADS'
  
  echocheck "pthread"
+-if test "$_pthreads" != no ; then
 -cat > $TMPC << EOF
 -#include <pthread.h>
 -void* func(void *arg) { return arg; }
 -int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
 -EOF
--if mingw32 ; then
--  _ld_pthread=''
--elif hpux ; then
--  _ld_pthread=''
--elif ( cc_check && $TMPO ) ; then              # QNX
--  _ld_pthread=' ' # _ld_pthread='' would disable pthreads, but the test worked
--elif ( cc_check -lpthread && $TMPO ) ; then
--  _ld_pthread='-lpthread'
--elif ( cc_check -pthread && $TMPO ) ; then
--  _ld_pthread='-pthread'
--else
--  if test "$_ld_static" ; then
+-_pthreads=no
+-if not hpux ; then
+-  for _ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
 -    # for crosscompilation, we cannot execute the program, be happy if we can link statically
--    if ( cc_check -lpthread ) ; then
--      _ld_pthread='-lpthread'
--    elif ( cc_check -pthread ) ; then
--     _ld_pthread='-pthread'
--    else
--      echores "no static pthread found (v4l, vo_gl, ao_alsa, ao_nas, ao_macosx, Win32 loader disabled)"
--      _ld_pthread='' ; _nas=no ; _tv_v4l=no ; _macosx=no ; _win32=no
--    fi
--  else
--    echores "no (v4l, vo_gl, ao_alsa, ao_nas, ao_macosx, win32 loader disabled)"
--    _ld_pthread='' ; _nas=no ; _tv_v4l=no ; _macosx=no ; _win32=no
--  fi
+-    cc_check $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
+-  done
 -fi
--if test "$_ld_pthread" != '' ; then
+-fi
++_pthreads=yes
 +_ld_pthread="${PTHREAD_LIBS}"
-   echores "yes (using $_ld_pthread)"
-   _pthreads='yes'
+ if test "$_pthreads" = yes ; then
+   _res_comment="using $_ld_pthread"
    _def_pthreads='#define HAVE_PTHREADS 1'
-   _def_threads='#define HAVE_THREADS 1'
--else
--  echores "no"
--  _pthreads=''
--  _def_pthreads='#undef HAVE_PTHREADS'
--fi
- 
- 
- echocheck "sys/soundcard.h"
-@@ -5323,7 +5262,7 @@
- if test "$_faad_internal" = auto ; then
-   # the faad check needs a config.h file
-   if not test -f "config.h" ; then
--    > config.h
-+    echo "$_def_lrintf" > config.h
-   fi
-   # internal faad: check if our dear gcc is able to compile it...
-   cp "`pwd`/libfaad2/cfft.c" $TMPC
-@@ -5935,12 +5878,12 @@
- cat > $TMPC << EOF
- #include <inttypes.h>
- #include <x264.h>
--#if X264_BUILD < 22
-+#if X264_BUILD < 29
- #error We do not support old versions of x264. Get the latest from SVN.
+@@ -6529,7 +6488,8 @@
  #endif
  int main(void) { x264_encoder_open((void*)0); return 0; }
  EOF
--_ld_x264="$_ld_x264 -lx264 $_ld_lm"
-+_ld_x264="$_ld_x264 `pkg-config --libs x264` $_ld_lm"
- if test "$_x264" != no && cc_check $_inc_x264 $_ld_x264 ; then
-   _x264=yes
-   _def_x264='#define HAVE_X264 1'
-@@ -6115,8 +6054,11 @@
+-_ld_x264="$_ld_x264 -lx264 $_ld_pthread"
++_ld_x264pc=`pkg-config x264 --libs 2>/dev/null`
++_ld_x264="$_ld_x264 $_ld_x264pc $_ld_pthread"
+ if test "$_x264" != no ; then 
+   _x264=no
+   if cc_check $_inc_x264 $_ld_x264 $_ld_lm ; then 
+@@ -6723,8 +6683,11 @@
   if test "$_tv" = yes ; then
      cat > $TMPC <<EOF
  #include <sys/types.h>
@@ -179,26 +141,7 @@
  #else
  #include <machine/ioctl_bt848.h>
  #endif
-@@ -6477,7 +6419,7 @@
-   fi
-   _stripbinaries=no
- elif test -z "$CFLAGS" ; then
--    CFLAGS="-O4 $_march $_mcpu $_pipe -ffast-math -fomit-frame-pointer"
-+    CFLAGS="-O $_pipe"
-   # always compile with '-g' if .developer:
-   if test -f ".developer" ; then
-     CFLAGS="-g $CFLAGS"
-@@ -6487,6 +6429,9 @@
-     _stripbinaries=no
-   fi
- else
-+  if test "$_runtime_cpudetection" = no ; then
-+    CFLAGS="$CFLAGS $_march $_mcpu"
-+  fi
-   cat <<EOF
- 
- MPlayer compilation will use the CFLAGS set by you, but:
-@@ -6526,7 +6471,7 @@
+@@ -7166,7 +7129,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
@@ -207,7 +150,7 @@
  fi
  # 64 bit file offsets?
  if test "$_largefiles" = yes || freebsd ; then
-@@ -6640,13 +6585,11 @@
+@@ -7318,13 +7281,11 @@
  echocheck "lirc"
  if test "$_lirc" = auto ; then
    _lirc=no
