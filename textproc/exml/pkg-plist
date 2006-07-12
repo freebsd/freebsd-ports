@@ -1,0 +1,7 @@
+bin/exml-config
+include/EXML.h
+lib/libexml.a
+lib/libexml.la
+lib/libexml.so
+lib/libexml.so.1
+libdata/pkgconfig/exml.pc

@@ -1,0 +1,8 @@
+EXML is an abstracted, generalized interface to an xml parser/writer, using
+ecore data structures and making things generally easy to get around in.
+
+The functions detailed in EXML.h are fairly self explanatory, and the io
+interfaces are also generalized and independent (open from a socket, write
+to in memory xml image).
+
+WWW: http://www.enlightenment.org/

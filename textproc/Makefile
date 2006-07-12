@@ -119,6 +119,7 @@
     SUBDIR += es-aspell
     SUBDIR += estraier
     SUBDIR += et-aspell
+    SUBDIR += exml
     SUBDIR += expat2
     SUBDIR += exslt
     SUBDIR += ezxml
