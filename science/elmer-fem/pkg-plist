@@ -56,8 +56,8 @@ lib/libelmersolver.so
 %%DATADIR%%/include/timeintegrate.mod
 %%DATADIR%%/include/types.mod
 %%DATADIR%%/include/viewfactorglobals.mod
-@dirrm %%DATADIR%%/include
 %%DATADIR%%/lib/AdvectionDiffusion.so
+%%DATADIR%%/lib/ArteryOutlet.so
 %%DATADIR%%/lib/ArtificialCompressibility.so
 %%DATADIR%%/lib/DCRComplexSolve.so
 %%DATADIR%%/lib/ElasticSolve.so
@@ -74,7 +74,9 @@ lib/libelmersolver.so
 %%DATADIR%%/lib/HelmholtzBEM.so
 %%DATADIR%%/lib/HelmholtzSolve.so
 %%DATADIR%%/lib/KESolver.so
+%%DATADIR%%/lib/LevelSet.so
 %%DATADIR%%/lib/MagneticSolve.so
+%%DATADIR%%/lib/MovingElstatSolver.so
 %%DATADIR%%/lib/PoissonBEM.so
 %%DATADIR%%/lib/PoissonBoltzmannSolve.so
 %%DATADIR%%/lib/RateOfChange.so
@@ -86,6 +88,7 @@ lib/libelmersolver.so
 %%DATADIR%%/lib/Smitc.so
 %%DATADIR%%/lib/StatCurrentSolve.so
 %%DATADIR%%/lib/StatElecSolve.so
+%%DATADIR%%/lib/StatMagSolve.so
 %%DATADIR%%/lib/Stokes.so
 %%DATADIR%%/lib/StreamSolver.so
 %%DATADIR%%/lib/StressSolve.so
@@ -93,4 +96,5 @@ lib/libelmersolver.so
 %%DATADIR%%/lib/elements.def
 %%DATADIR%%/lib/libelmersolver.so
 @dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%

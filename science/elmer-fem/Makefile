@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fem
-PORTVERSION=	5.0.2
+PORTVERSION=	5.2.0
 CATEGORIES=	science tk84
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
@@ -21,8 +21,8 @@ BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran	\
 		${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/elmer-umfpack	\
 		${LOCALBASE}/lib/libeiof.a:${PORTSDIR}/science/elmer-eio	\
 		${LOCALBASE}/lib/libhuti.a:${PORTSDIR}/science/elmer-hutiter
-RUN_DEPENDS=	${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerGrid:${PORTSDIR}/science/elmergrid \
-		${MACHINE_ARCH}-portbld-freebsd${OSREL}-Mesh2D:${PORTSDIR}/science/elmer-meshgen2d
+RUN_DEPENDS=	ElmerGrid:${PORTSDIR}/science/elmergrid		\
+		Mesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
 USE_GCC=	4.1+
 WITH_FORTRAN=	yes
@@ -30,7 +30,7 @@ FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 
 .ifdef WITH_OPTIMIZED_FLAGS
-FCFLAGS+=        -O3 -ffast-math -funroll-loops
+FCFLAGS+=	-O3 -ffast-math -funroll-loops
 .endif
 
 USE_AUTOTOOLS=	autoconf:259
@@ -39,6 +39,7 @@ CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS="${FCFLAGS}"
 USE_GMAKE=	yes
 ALL_TARGET=
 INSTALLS_SHLIB=	yes
+TEST_ENV=	ELMER_HOME=${PREFIX}
 
 DATADIR=	${PREFIX}/share/elmersolver
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
@@ -48,6 +49,14 @@ PLIST_SUB=	ARCH=${MACHINE_ARCH}
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 FCFLAGS+=	-fPIC
+.endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/tests/runtests.in
+
+.if defined(MAINTAINER_MODE)
+regression-test:	install
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${TEST_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 .endif
 
 .include <bsd.port.post.mk>
