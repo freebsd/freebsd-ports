@@ -1499,6 +1499,7 @@
     SUBDIR += plan9port
     SUBDIR += ply
     SUBDIR += pmake
+    SUBDIR += pmd
     SUBDIR += pmk
     SUBDIR += popt
     SUBDIR += portcheckout

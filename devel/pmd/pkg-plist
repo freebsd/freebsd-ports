@@ -1,0 +1,11 @@
+bin/bgastviewer
+bin/cpd
+bin/pmd
+bin/pmd_designer
+%%DATADIR%%/jakarta-oro-2.0.8.jar
+%%DATADIR%%/jaxen-1.1-beta-7.jar
+%%DATADIR%%/pmd-3.7.jar
+%%DATADIR%%/pmd-src-3.7.jar
+%%DATADIR%%/xercesImpl-2.6.2.jar
+%%DATADIR%%/xmlParserAPIs-2.6.2.jar
+@dirrm %%DATADIR%%
