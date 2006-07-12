@@ -75,7 +75,7 @@ SCRIPTS_ENV=	PREFIX=${PREFIX} PKG_PREFIX=${PREFIX} \
 		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
 		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
 
-.if defined(WITH_ISISD) && !defined(WITHOUT_ISISD)
+.if defined(WITH_ISISD)
 CONFIGURE_ARGS+=--enable-isisd
 PLIST_SUB+=	ISISD=""
 .else
@@ -83,31 +83,31 @@ PLIST_SUB+=	ISISD="@comment "
 .endif
 MAN8+=		isisd.8
 
-.if defined(WITH_PAM) && !defined(WITHOUT_PAM)
+.if defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-libpam
 .endif
 
-.if defined(WITH_OSPFNSSA) && !defined(WITHOUT_OSPF_NSSA)
+.if defined(WITH_OSPFNSSA)
 CONFIGURE_ARGS+=--enable-nssa
 .endif
 
-.if defined(WITH_OSPF_OPAQUE_LSA) && !defined(WITHOUT_OSPF_OPAQUE_LSA)
+.if defined(WITH_OSPF_OPAQUE_LSA)
 CONFIGURE_ARGS+=--enable-opaque-lsa
 PLIST_SUB+=	OSPFAPI=""
 .else
 PLIST_SUB+=	OSPFAPI="@comment "
 .endif
 
-.if defined(WITH_RTADV) && !defined(WITHOUT_RTADV)
+.if defined(WITH_RTADV)
 CONFIGURE_ARGS+=--enable-rtadv
 .endif
 
-.if defined(WITH_SNMP) && !defined(WITHOUT_SNMP)
+.if defined(WITH_SNMP)
 CONFIGURE_ARGS+=--enable-snmp
 LIB_DEPENDS+=netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
-.if defined(WITH_TCPMD5) && !defined(WITHOUT_TCPMD5)
+.if defined(WITH_TCPMD5)
 .if ${OSVERSION} < 491000
 BROKEN=		This version of FreeBSD does not have TCP MD5 signature support
 .endif
