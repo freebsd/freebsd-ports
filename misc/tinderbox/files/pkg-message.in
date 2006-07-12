@@ -5,6 +5,8 @@ The following walkthrough is for PostgreSQL databases:
 - First, run the setup program:
     %%PREFIX%%/tinderbox/scripts/setup.sh
 
+  Enter database driver (mysql pgsql): pgsql
+
   If the database is running on the same server as you're on now,
   and you have administrator access to it, answer this question
   with yes:
@@ -18,9 +20,25 @@ The following walkthrough is for PostgreSQL databases:
 
   The other questions should just be entered through.
 
+The following walkthrough is for MySQL databases:
+
+- First, run the setup program:
+    %%PREFIX%%/tinderbox/scripts/setup.sh
+
+  Enter database driver (mysql pgsql): mysql
+
+  If the database is running on the same server as you're on now,
+  and you have administrator access to it, answer this question
+  with yes:
+	"Does this host have access to connect to the Tinderbox database as a database administrator?"
+
+  Enter the desired username for the Tinderbox database : tinderbox
+
+  The other questions should just be entered through.
+
 The following walkthrough is the tinderbox environment setup:
 
-- Edit the file %%PREFIX%%/scripts/tinderbox.ph (copy from
+- Edit the file %%PREFIX%%/tinderbox/scripts/tinderbox.ph (copy from
   tinderbox.ph.dist)
   
   - $BUILD_ROOT should be "%%PREFIX%%/tinderbox"
@@ -34,14 +52,14 @@ The following walkthrough is the tinderbox environment setup:
   - Comment out the lines after "for www", and uncomment the lines "for www-exp".
 
 - Edit the file %%PREFIX%%/tinderbox/scripts/www-exp/inc_ds.php
-  (copy from inc_ds.php.dist)
+  (copy from inc_ds.php-dist)
 
   - $DB_HOST should be localhost
   - $DB_DRIVER should be pgsql
   - $DB_USER should be tinderbox
 
 - Edit the file %%PREFIX%%/tinderbox/scripts/www-exp/inc_tinderbox.php
-  (copy from inc_tinderbox.php.dist)
+  (copy from inc_tinderbox.php-dist)
 
   - $rootdir should be %%PREFIX%%/tinderbox
   - $wwwrooturi should be /tb
