@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tftp-hpa
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.kernel.org/pub/software/network/tftp/
 
@@ -23,5 +23,13 @@ PLIST_FILES=	bin/tftp \
 MAN1=		tftp.1
 MAN8=		in.tftpd.8
 MLINKS=		in.tftpd.8 tftpd.8
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,SBINDIR,LIBEXECDIR,; s,sbindir,libexecdir,' \
+	    ${WRKSRC}/MCONFIG.in
+	@${REINPLACE_CMD} -e 's,SBINDIR,LIBEXECDIR,g' \
+	    ${WRKSRC}/tftpd/Makefile
+	@${REINPLACE_CMD} -e 's,LOG_DAEMON,LOG_FTP,g' \
+	    ${WRKSRC}/tftpd/tftpd.c
 
 .include <bsd.port.mk>
