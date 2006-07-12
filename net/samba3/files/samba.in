@@ -5,8 +5,8 @@
 
 # PROVIDE: nmbd smbd
 %%WINBIND%%# PROVIDE: winbindd
-# REQUIRE: NETWORKING SERVERS named ldconfig %%CUPS%%
-# BEFORE: DAEMON
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv %%CUPSD%%
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 
 #
@@ -29,7 +29,7 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 # Set defaults
-samba_config=${samba_config:-"%%SAMBA_CONFIG%%"}
+samba_config=${samba_config="%%SAMBA_CONFIG%%"}
 # Config file is required
 if [ ! -r ${samba_config} ]; then
     warn "${samba_config} is not readable."
@@ -39,27 +39,14 @@ if [ ! -r ${samba_config} ]; then
     esac
 fi
 
-if test -n ${samba_enable:-""} && checkyesno samba_enable; then
-    nmbd_enable=${nmbd_enable:-"YES"}
-    smbd_enable=${smbd_enable:-"YES"}
+if test -n ${samba_enable=""} && checkyesno samba_enable; then
+    nmbd_enable=${nmbd_enable="YES"}
+    smbd_enable=${smbd_enable="YES"}
 %%WINBIND%%    # Check that winbind is actually configured
 %%WINBIND%%    if [ "`egrep -i '(idmap.*uid|winbind.*uid)' ${samba_config} 2>/dev/null | egrep -v [\#\;]`" ]; then
 %%WINBIND%%	winbindd_enable="YES"
 %%WINBIND%%    fi
 fi
-
-# Hack until run_rc_command() get rid of exit()
-samba_stop() {
-    pid=$(check_pidfile ${pidfile} ${command})
-    if [ -z ${pid} ]; then
-	echo "${name} not running? (check ${pidfile})."
-	return 1
-    fi
-    echo "Stopping ${command}."
-    kill -${sig_stop:-TERM} ${pid}
-    [ $? -ne 0 ] && [ -z "$rc_force" ] && return 1
-    wait_for_pids ${pid}
-}
 
 nmbd_precmd() {
     # XXX: Never delete winbindd_idmap, winbindd_cache and group_mapping
@@ -80,10 +67,9 @@ command="%%PREFIX%%/sbin/${name}"
 required_dirs="%%SAMBA_LOCKDIR%%"
 pidfile=%%SAMBA_RUNDIR%%/${name}.pid
 start_precmd="nmbd_precmd"
-stop_cmd="samba_stop"
 # Defaults
-nmbd_enable=${nmbd_enable:-"NO"}
-nmbd_flags=${nmbd_flags:-"-D"}
+nmbd_enable=${nmbd_enable="NO"}
+nmbd_flags=${nmbd_flags="-D"}
 command_args="-s ${samba_config}"
 
 load_rc_config $name
@@ -96,10 +82,9 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/${name}"
 pidfile=%%SAMBA_RUNDIR%%/${name}.pid
 start_precmd=":"
-stop_cmd="samba_stop"
 # Defaults
-smbd_enable=${smbd_enable:-"NO"}
-smbd_flags=${smbd_flags:-"-D"}
+smbd_enable=${smbd_enable="NO"}
+smbd_flags=${smbd_flags="-D"}
 command_args="-s ${samba_config}"
 
 load_rc_config $name
@@ -113,10 +98,9 @@ run_rc_command "$1"
 %%WINBIND%%required_dirs="%%SAMBA_LOCKDIR%%"
 %%WINBIND%%pidfile=%%SAMBA_RUNDIR%%/${name}.pid
 %%WINBIND%%start_precmd=":"
-%%WINBIND%%stop_cmd="samba_stop"
 %%WINBIND%%# Defaults
-%%WINBIND%%winbindd_enable=${winbindd_enable:-"NO"}
-%%WINBIND%%winbindd_flags=${winbindd_flags:-""}
+%%WINBIND%%winbindd_enable=${winbindd_enable="NO"}
+%%WINBIND%%winbindd_flags=${winbindd_flags=""}
 %%WINBIND%%command_args="-s ${samba_config}"
 %%WINBIND%%
 %%WINBIND%%load_rc_config $name

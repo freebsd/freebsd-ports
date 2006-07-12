@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Feb 20 21:33:23 2006
-+++ Makefile.in	Sat Feb 25 05:30:42 2006
-@@ -1390,7 +1390,7 @@
+--- Makefile.in.orig	Thu Apr 20 04:29:46 2006
++++ Makefile.in	Tue Apr 25 01:05:05 2006
+@@ -1410,7 +1410,7 @@
+ 	@echo Linking $@
+ 	@$(CC) $(FLAGS) @PIE_LDFLAGS@ -o $@ $(DYNEXP) script/tests/timelimit.o
  
- bin/t_snprintf@EXEEXT@: lib/snprintf.c
- 	$(CC) $(FLAGS) @PIE_LDFLAGS@ -o $@ $(DYNEXP) -DTEST_SNPRINTF lib/snprintf.c -lm
--install: installbin installman installscripts installdat installswat installmodules @INSTALL_LIBSMBCLIENT@ @INSTALL_LIBMSRPC@
-+install: installbin installscripts installdat installswat installmodules
+-install: installservers installbin @INSTALL_CIFSMOUNT@ installman installscripts installdat installswat installmodules @INSTALL_LIBSMBCLIENT@ @INSTALL_LIBMSRPC@ @INSTALL_PAM_MODULES@
++install: installservers installbin installscripts installdat installswat installmodules
  
  install-everything: install installmodules
  

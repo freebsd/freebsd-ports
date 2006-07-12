@@ -1,36 +1,20 @@
---- nsswitch/pam_winbind.c.orig	Thu Sep 29 23:52:42 2005
-+++ nsswitch/pam_winbind.c	Mon Jan  2 03:40:23 2006
-@@ -86,7 +86,7 @@
- 	struct pam_response *resp;
- 	
- 	pmsg[0] = &msg[0];
--	msg[0].msg = text;
-+	msg[0].msg = CONST_DISCARD(char *, text);
- 	msg[0].msg_style = type;
- 	
- 	resp = NULL;
-@@ -359,7 +359,7 @@
- 		if (comment != NULL) {
- 			pmsg[0] = &msg[0];
- 			msg[0].msg_style = PAM_TEXT_INFO;
--			msg[0].msg = comment;
-+			msg[0].msg = CONST_DISCARD(char *, comment);
- 			i = 1;
- 		} else {
- 			i = 0;
-@@ -367,13 +367,13 @@
- 
- 		pmsg[i] = &msg[i];
- 		msg[i].msg_style = PAM_PROMPT_ECHO_OFF;
--		msg[i++].msg = prompt1;
-+		msg[i++].msg = CONST_DISCARD(char *, prompt1);
- 		replies = 1;
- 
- 		if (prompt2 != NULL) {
- 			pmsg[i] = &msg[i];
- 			msg[i].msg_style = PAM_PROMPT_ECHO_OFF;
--			msg[i++].msg = prompt2;
-+			msg[i++].msg = CONST_DISCARD(char *, prompt2);
- 			++replies;
+--- nsswitch/pam_winbind.c.orig	Sun May 28 02:21:10 2006
++++ nsswitch/pam_winbind.c	Sun May 28 02:22:16 2006
+@@ -997,7 +997,7 @@
  		}
- 		/* so call the conversation expecting i responses */
+ 		return PAM_USER_UNKNOWN;
+ 	case 0:
+-		pam_get_data( pamh, PAM_WINBIND_NEW_AUTHTOK_REQD, (const void **)&tmp);
++		pam_get_data( pamh, PAM_WINBIND_NEW_AUTHTOK_REQD, (void **)&tmp);
+ 		if (tmp != NULL) {
+ 			retval = atoi(tmp);
+ 			switch (retval) {
+@@ -1300,7 +1300,7 @@
+ 		 * By reaching here we have approved the passwords and must now
+ 		 * rebuild the password database file.
+ 		 */
+-		pam_get_data( pamh, PAM_WINBIND_PWD_LAST_SET, (const void **)&pwdlastset_update);
++		pam_get_data( pamh, PAM_WINBIND_PWD_LAST_SET, (void **)&pwdlastset_update);
+ 
+ 		retval = winbind_chauthtok_request(pamh, ctrl, user, pass_old, pass_new, pwdlastset_update);
+ 		if (retval) {

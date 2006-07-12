@@ -1,12 +1,12 @@
---- script/installswat.sh.orig	Thu Jul 28 19:44:16 2005
-+++ script/installswat.sh	Wed Aug  3 02:33:04 2005
-@@ -8,8 +8,7 @@
- echo Installing SWAT in $SWATDIR
- echo Installing the Samba Web Administration Tool
+--- script/installswat.sh.orig	Thu Apr 20 04:29:42 2006
++++ script/installswat.sh	Tue Apr 25 02:12:10 2006
+@@ -21,8 +21,7 @@
+ 		;;
+ esac
  
 -LANGS=". `cd $SRCDIR../swat/; /bin/echo lang/??`"
--echo Installing langs are `cd $SRCDIR../swat/lang/; /bin/echo ??`
+-echo "langs are `cd $SRCDIR../swat/lang/; /bin/echo ??` "
 +LANGS="."
  
- for ln in $LANGS; do 
-  SWATLANGDIR=$SWATDIR/$ln
+ if test "$mode" = 'install'; then
+  for ln in $LANGS; do 
