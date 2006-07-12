@@ -18,7 +18,7 @@ ircd_user=${ircd_user-"ircd"}
 
 name="ircd"
 rcvar=`set_rcvar`
-pidfile="%%PREFIX%%/etc/ptlink-ircd/ircd.pid"
+pidfile="/var/run/ircd.pid"
 command="%%PREFIX%%/bin/ircd"
 
 load_rc_config "$name"
