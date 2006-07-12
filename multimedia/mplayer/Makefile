@@ -4,12 +4,9 @@
 #			with lots of help from Vladimir Kushnir
 # $FreeBSD$
 #
-# There are many knobs to tune mplayer towards your specific wishes
-# and preferences.
-# You can activate a knob by typing something like
-# "make -DKNOB" or "make KNOB=yes" instead of just "make"
 #
-# A description of the several possibilities is available here:
+# Some of the knobs are not tunable by the OPTIONS framework. These are
+# explained here in detail.
 #
 # Core funcionality:
 #
@@ -19,75 +16,13 @@
 # preferences.
 # If you want to build a generic package with certain fixed options,
 # suitable for any CPU within ${ARCH}, define this knob.
-# Note: The following knobs will have no effect in this case!
-#
-# WITH_OPTIMIZED_CFLAGS
-# default: undefined
-# define if you want to enable -O3 -ffast-math -fomit-frame-pointer
-# on gcc build commands. This will improve speed on most machines.
-#
-# WITHOUT_RUNTIME_CPUDETECTION
-# default: undefined
-# by default, mplayer is built with support for changing the used cpu
-# instruction set while playing. This is necessary for package building.
-# If you want to compile a specific version of mplayer working faster
-# but only on your cpu type, then define this knob.
-# If you define this, there are several additional knobs to explicitly
-# disable some possible CPU features. See below.
-#
-# WITH_NVIDIA
-# default: disabled
-# Enable nvidia XVMC support for nvidia video cards
-# Note: This is highly experimental at the moment and works only for
-#       MPEG1/2 using -vo xvmc -vc ffmpeg12mc on FreeBSD-5
-#
-# WITHOUT_MENCODER
-# default: undefined
-# the default is to build mplayer with mencoder. If you're sure that you
-# don't want to encode or recode any media file, then define this.
-#
-# WITHOUT_X11
-# default: undefined
-# the default is to build mplayer with X11 support because of its capabilities
-# as a video player. If you don't want to install any X11 environment and use
-# mplayer as a multi-format audio-only player, this one is for you.
-#
-# WITH_GTK1|WITH_GTK2
-# default: autodetect GTK1
-# if you want mplayer to have gui abilities, you can use this knob to define
-# which graphical toolkit set mplayer is built with.
-# It defaults to detect and use GTK1 if it finds a working installation on the
-# system. This can be overridden by choosing WITH_GTK2 or disable graphical
-# user interface by defining WITHOUT_GUI
-# Note: If you define WITH_GTK* *and* WITHOUT_GUI, mplayer will be built without
-#       gui capabilities.
-#       The GTK2 patches are not official ones, so they should be considered
-#       as experimental.
-#
-# WITHOUT_GUI
-# default: undefined
-# normally mplayer comes with gmplayer if gtk is installed on the system.
-# If you want to force mplayer to disable the graphical user interface and
-# build without gui ability, define this.
-#
-# WITHOUT_SKINS
-# default: undefined
-# removes the run dependency on the mplayer-skins port, _even if_ built with
-# GUI. This is useful e.g. if you don't want the skins installed system-wide.
-# Please note that 'gmplayer' *must* have at least one default skin to run.
-#
-# WITHOUT_FREETYPE
-# default: undefined
-# since freetype is installed on almost any system people might want
-# to run mplayer on, this port now defaults to freetype unless not
-# defined otherwise
-#
+# Note: Other knobs and especially OPTIONS
 #
 # CPU features:
 #
-# The following is only of interest if you have enabled
-# WITHOUT_RUNTIME_CPUDETECTION
-# Further, the correct instruction set of your processor is normally
+# The following is only of interest if you haven't enabled
+# RTCPU in your OPTIONS selection.
+# The correct instruction set of your processor is normally
 # auto-detected, so there is probably no necessity to change them.
 #
 # WITHOUT_MMX
@@ -106,19 +41,13 @@
 # default: autodetected
 # disables all mmx2 and sse/sse2 code
 # CAUTION: There are some Athlon CPUs which claim to be sse-able but
-# they aren't. If you have strange problems on this subject, try
+# aren't. If you encounter strange problems on such a CPU, try
 # to build mplayer with this knob and report the problem
 # NOTE: SSE is available only if "options CPU_ENABLE_SSE" in your
-# kernel config. This is standard for 5.x systems on I686_CPU and above.
-# 4.x users will have to define this explicitly.
+# kernel config. This is standard for 5.x and newer systems on I686_CPU
+# and later. 4.x users will have to define this explicitly.
 #
-# WITH_RTC
-# default: undefined
-# This option enables support for real time clock timing instead of
-# defaulting to usleep() timing. This can improve cpu load as well
-# as run-time accuracy.
-#
-# WITH_KERN_HZ
+# WITH_KERN_HZ=<frequency>
 # default: 1024
 # This option allows you to control the default kern.hz when using RTC support.
 # If you have a older/slower processor you may want to lower the default level.
@@ -126,12 +55,8 @@
 # CAUTION: lower than 512 may produce jerky video.
 #
 # Feature options:
-# These options influence, which libraries mplayer is linked to.
-# Note: The libraries are needed to play the particular files under
-# particular circumstances.
-# ("autodetect" in this sections means: If the ports system finds
-# the libary on your system, it is used, otherwise not.
-# If you define it, it will be built and installed as dependency.)
+# These options influence some general behaviour of mplayer. Most of the featues,
+# for example all the codecs, are selected via the OPTIONS framework.
 #
 # WITH_DVD_DEVICE=/path/to/desired/device
 # default 5.x: /dev/acd0
@@ -144,121 +69,9 @@
 # default 4.x: /dev/acd0c
 # This option changes the default cdrom device, maybe useful for VCDs
 #
-# WITH_LIBDVDNAV
-# default: autodetect
-# NOTE: This is disabled in the development tree at the moment
-#       because it simply doesn't work, so defining it has no
-#       effect until it works again.
-#
-# WITH_LIBUNGIF
-# default: autodetect
-#
-# WITH_ARTS
-# default: autodetect
-# Note: arts audio output cannot work together with mplayer's gtk1-gui
-# 	because of conflicting glib versions, so it it is disabled if
-# 	mplayer is built with gtk1 graphical user interface
-#
-# WITHOUT_ARTS
-# default: undefined
-# By setting this option you can explicitly override WITH_ARTS or
-# autodetection if arts is found. Some configurations experienced
-# problems with arts, so this knob is provided to manually exclude
-# it from build.
-#
-# WITH_FRIBIDI
-# default: autodetect
-#
-# WITH_CDPARANOIA
-# default: autodetect
-#
-# WITH_LIBCACA
-# default: autodetect
-#
-# WITH_LIBDV
-# default: autodetect
-#
-# WITH_LIRC
-# default: autodetect
-#
-# WITH_MAD
-# default: autodetect
-#
-# WITH_SVGALIB
-# default: autodetect
-#
-# WITH_AALIB
-# default: autodetect
-#
-# WITH_THEORA
-# default: autodetect
-#
-# WITH_X264
-# default: autodetect
-#
-# WITH_TREMOR
-# default: autodetect
-# By setting this option mplayer will use libtremor (integer only vorbis
-# decoding lib) instead of libvorbis even if libvorbis is installed.
-# Note: This is disabled at the moment due to unresolved build problems
-#
-# WITH_SDL
-# default: autodetect
-# (implies WITH_AALIB)
-#
-# WITH_ESOUND
-# default: autodetect
-#
-# WITHOUT_ESOUND
-# default: undefined
-# By setting this option you can explicitly override WITH_ESOUND or
-# autodetection if esound is found. Some configurations experienced
-# problems with esound, so this knob is provided to manually exclude
-# it from build.
-#
-# WITH_VORBIS
-# default: autodetect
-# If vorbis libs are not available on the system, mplayer includes
-# an internal vorbis codec based on tremor. If the libs are present
-# or this knob is defined, mplayer links to the shared system-wide
-# installation of ogg/vorbis.
-#
-# WITH_XANIM
-# default: autodetect
-#
-# WITH_REALPLAYER
-# default: autodetect
-#
-# WITH_LIVEMEDIA
-# default: autodetect
-#
-# WITH_MATROSKA
-# default: autodetect
-#
-# WITH_XVID
-# default: autodetect
-#
-# WITH_LZO
-# default: autodetect
-#
-# WITH_XMMS
-# default: autodetect
-#
-# WITH_DTS
-# default: autodetect
-#
-# WITH_LANG
+# WITH_LANG=<your choice>
 # default: en
 # Enables language support bg, cz, de, dk, en, es, fr, gr, hu, it, ko, nl, no, pl, pt_BR, ro, ru, sk, tr, uk, zh
-#
-# WITHOUT_WIN32_CODECS
-# default: undefined
-# By default, mplayer depends on and uses the win32-codecs collection.
-# Of course, thanks to Microsoft's very cool hyper-super-multi-platform
-# support, this is only available on x86 architecture.
-# If you're working on x86 and want to disable using of the windows codecs,
-# define this knob.
-#
 #
 # Additional knobs:
 #
@@ -268,13 +81,9 @@
 # documentation. If you define this, only the manpage is going
 # to be installed.
 #
-# WITHOUT_IPV6
-# default: undefined
-# This knob disables mplayer's ipv6 protocol family capabilities.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.99.7
-PORTREVISION=	15
+PORTVERSION=	0.99.8
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -286,14 +95,10 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-1.0pre7try2
+DISTNAME=	MPlayer-1.0pre8
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	tmclaugh
-PATCH_DIST_STRIP=	-p1
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
@@ -312,9 +117,98 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--enable-menu \
 		--disable-libfame \
 		--disable-external-faad \
-		--disable-tv-v4l
+		--disable-tv-v4l \
+		--disable-liblzo \
+		--disable-libcdio
 
+OPTIONS=	DEBUG "Include debug symbols in mplayer's binary files" off
+
+#Collect OPTIONS menu
 .if !defined(MPLAYER_GENERIC_BUILD)
+OPTIONS+=	RTCPU "Let mplayer dynamically check for CPU features" on
+OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
+OPTIONS+=	MENCODER "Support encoding of multimedia files" on
+OPTIONS+=	IPV6 "Include inet6 network support" on
+OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
+OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
+OPTIONS+=	SDL "Enable SDL video output" off
+OPTIONS+=	NVIDIA "Enable experimental nvidia xvmc driver" off
+OPTIONS+=	SKINS "Force dependency on mplayer-skins" on
+OPTIONS+=	FREETYPE "Use freetype for OSD fonts (TrueType!)" on
+OPTIONS+=	RTC "Add support for kernel real time clock timing" off
+OPTIONS+=	ARTS "Enable KDE sound system support" off
+OPTIONS+=	ESOUND "Enable GNOME esound support" off
+OPTIONS+=	LIBUNGIF "Enable gif support" on
+OPTIONS+=	AALIB "Enable aalib support" off
+OPTIONS+=	LIBCACA "Enable libcaca support" off
+OPTIONS+=	SVGALIB "Enable svgalib support" off
+OPTIONS+=	LIBDV "Enable libdv support" off
+OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
+OPTIONS+=	DTS "Enable DTS audio codec support" on
+OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
+OPTIONS+=	XMMS "Enable XMMS plugin support" off
+OPTIONS+=	THEORA "Enable ogg theora video support" off
+OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
+OPTIONS+=	X264 "Enable x264 (H.264) video codec support" off
+OPTIONS+=	XANIM "Enable xanim DLL support" off
+OPTIONS+=	XVID "Enable XVID video codec support" on
+OPTIONS+=	REALPLAYER "Enable real player plugin" off
+OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
+OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
+OPTIONS+=	LIRC "Enable lirc support" off
+OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
+.endif
+
+WANT_GNOME=	yes
+WANT_SDL=	yes
+MAN1=		mplayer.1
+MANCOMPRESSED=	no
+
+SUB_FILES=	pkg-message
+
+CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
+TOOLFILES=	calcbpp.pl countquant.pl dvd2divxscript.pl \
+		menc2pass mencvcd mp.pl subedit.pl subsearch.sh \
+		sws-test w32codec_dl.pl wma2ogg.pl x2mpsub.sh
+
+.include <bsd.port.pre.mk>
+
+#Building of vidix dependent shared libs is only possible
+#on i386 at the moment.
+.if ${ARCH} == "i386"
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mplayer/vidix
+PLIST_SUB+=	VIDIX=""
+.else
+CONFIGURE_ARGS+=--disable-vidix
+PLIST_SUB+=	VIDIX="@comment "
+.endif
+
+# Esablish de-facto dependencies for either building generic mplayer
+# binary-suitable package or custom build
+
+.if defined(MPLAYER_GENERIC_BUILD)
+#Compiler flags
+CFLAGS=		#let mplayer decide the flags
+
+.for module in ARTS FRIBIDI CDPARANOIA LIBCACA LIBUNGIF LIBDV MAD THEORA X264 FRIBIDI LIVEMEDIA ESOUND OCFLAGS RTC MENCODER NVIDIA LIRC XMMS
+WITHOUT_${module}=yes
+.undef(WITH_${module})
+.endfor
+
+.for module in IPV6 GUI SVGALIB AALIB SDL XVID FREETYPE XANIM RTCPU WIN32 X11
+WITH_${module}=yes
+.undef(WITHOUT_${module})
+.endfor
+
+.undef(WITH_DVD_DEVICE)
+.undef(WITH_CDROM_DEVICE)
+.undef(WITH_LANG)
+
+#Kernel granularity
+DEFAULT_KERN_HZ=1024
+CFLAGS+=	-fno-force-addr
+.endif 	#MPLAYER_GENERIC_BUILD
+
 .if defined(WITHOUT_X11)
 WITHOUT_GUI=	yes
 BUILD_DEPENDS+=	imake:${X_IMAKE_PORT}
@@ -328,232 +222,8 @@ CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=--language=${WITH_LANG}
 .endif
-.else
-USE_XLIB=	yes
-CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
-		--with-x11incdir=${X11BASE}/include
-.endif #MPLAYER_GENERIC_BUILD
 
-WANT_GNOME=	yes
-WANT_SDL=	yes
-MAN1=		mplayer.1
-MANCOMPRESSED=	no
-
-CONFFILES=	example.conf input.conf menu.conf
-TOOLFILES=	calcbpp.pl countquant.pl \
-		dvd2divxscript.pl menc2pass \
-		mencvcd mp.pl sws-test w32codec_dl.pl \
-		x2mpsub.sh
-
-.include <bsd.port.pre.mk>
-
-# Can't run mplayer/nvidia-driver WITH_NVIDIA on FreeBSD 4.X now
-.if ${OSVERSION} < 500000 && defined(WITH_NVIDIA)
-IGNORE=	does not run on 4.x when WITH_NVIDIA is defined
-.endif
-
-#Building of vidix dependent shared libs is only possible
-#on i386 at the moment.
-.if ${ARCH} == "i386"
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/mplayer/vidix
-PLIST_SUB+=	VIDIX=""
-.else
-CONFIGURE_ARGS+=--disable-vidix
-PLIST_SUB+=	VIDIX="@comment "
-.endif
-
-#.if exists(${LOCALBASE}/modules/rtc.ko)
-#WITH_RTC=	yes
-#.endif
-
-#.if exists(${X11BASE}/lib/libXvMCNVIDIA.so.1)
-#WITH_NVIDIA=	yes
-#.endif
-
-.if exists(${LOCALBASE}/lib/libfribidi.so.0)
-WITH_FRIBIDI=	yes
-.endif
-
-.if !defined(WITHOUT_ARTS) && exists(${LOCALBASE}/lib/libartsc.so.0)
-WITH_ARTS=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libcdda_paranoia.so)
-WITH_CDPARANOIA=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libcaca.a)
-WITH_LIBCACA=		yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libdv.so.4)
-WITH_LIBDV=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libungif.so.5)
-WITH_LIBUNGIF=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/liblirc_client.so.0)
-WITH_LIRC=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libmad.so.2)
-WITH_MAD=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libvga.so.1)
-WITH_SVGALIB=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libtheora.so.2)
-WITH_THEORA=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libx264.so.47)
-WITH_X264=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libaa.so.1)
-WITH_AALIB=	yes
-.endif
-
-.if ${HAVE_SDL:Msdl}!=""
-WITH_SDL=	yes
-WITH_AALIB=	yes
-.endif
-
-.if !defined(WITHOUT_ESOUND) && ${HAVE_GNOME:Mesound}!=""
-WITH_ESOUND=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libvorbis.so.3)
-WITH_VORBIS=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libjpeg.so.9)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
-.endif
-
-.if exists(${X11BASE}/bin/xanim)
-WITH_XANIM=	yes
-.endif
-
-.if exists(${X11BASE}/lib/RealPlayer/realplay.bin)
-WITH_REALPLAYER=	yes
-.endif
-
-.if exists(${LOCALBASE}/live/liveMedia/libliveMedia.a)
-WITH_LIVEMEDIA=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libxvidcore.so)
-WITH_XVID=	yes
-.endif
-
-.if exists(${X11BASE}/lib/libxmms.so)
-WITH_XMMS=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libdts.a)
-WITH_DTS=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/liblzo.so)
-WITH_LZO=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libfreetype.so.9) && !defined(WITHOUT_FREETYPE)
-WITH_FREETYPE=	yes
-.endif
-
-# Esablish de-facto dependencies for either building generic mplayer
-# binary-suitable package or custom build
-
-.if defined(MPLAYER_GENERIC_BUILD)
-#Generic build includes ipv6 on FreeBSD
-CATEGORIES+=	ipv6
-#Compiler flags
-CFLAGS=		#let mplayer decide on this
-CONFIGURE_ARGS+=--enable-runtime-cpudetection
-#GUI
-USE_GNOME+=	gtk12
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
-.else
-PKGNAMESUFFIX=	-gtk
-.endif
-CONFIGURE_ARGS+=	--enable-gui
-PLIST_SUB+=	GMPLAYER=""
-RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
-#RTC
-CONFIGURE_ARGS+=	--disable-rtc
-#lame for mencoder
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-#mencoder
-MLINKS+=	mplayer.1 mencoder.1
-PLIST_SUB+=	MENCODER=""
-#ARTS
-CONFIGURE_ARGS+=	--disable-arts
-#Fribidi
-CONFIGURE_ARGS+=	--disable-fribidi
-#Cdparanoia
-CONFIGURE_ARGS+=	--disable-cdparanoia
-#Caca
-CONFIGURE_ARGS+=	--disable-caca
-#Libungif
-CONFIGURE_ARGS+=	--disable-gif
-#Libdv
-CONFIGURE_ARGS+=	--disable-libdv
-#Mad
-CONFIGURE_ARGS+=	--disable-mad
-#Theora
-CONFIGURE_ARGS+=	--disable-theora
-#x264
-CONFIGURE_ARGS+=	--disable-x264
-#Svgalib
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-#Aalib
-LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
-#SDL
-USE_SDL=	sdl
-#Esound
-CONFIGURE_ARGS+=	--disable-esd
-#Vorbis
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-#Live media
-CONFIGURE_ARGS+=	--disable-live
-#XviD
-CONFIGURE_ARGS+=	--enable-xvid
-LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
-#LZO
-CONFIGURE_ARGS+=	--disable-liblzo
-#Freetype
-CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
-			--enable-freetype
-LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
-#XAnim codecs
-BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
-CONFIGURE_ARGS+=	--enable-xanim \
-			--with-xanimlibdir=${X11BASE}/lib/X11/xanim
-#Optical drive descriptors
-.if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
-DEFAULT_CDROM_DEVICE=/dev/acd0c
-.else
-DEFAULT_DVD_DEVICE=/dev/acd0
-DEFAULT_CDROM_DEVICE=/dev/acd0
-.endif
-#Kernel granularity
-DEFAULT_KERN_HZ=1024
-.else #MPLAYER_GENERIC_BUILD
-CFLAGS+=	-fno-force-addr
-.if defined(DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if !defined(WITHOUT_OCFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
@@ -563,51 +233,34 @@ CONFIGURE_ARGS+=	--disable-inet6
 CATEGORIES+=	ipv6
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-WITH_GTK1=	yes
-.endif
-
 .if !defined(WITHOUT_GUI)
 PLIST_SUB+=	GMPLAYER=""
 .if !defined(WITHOUT_SKINS)
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
 .endif
-.else
-PLIST_SUB+=	GMPLAYER="@comment "
-.endif
 
-.if defined(WITH_GTK2) && !defined(WITH_GTK1) && !defined(WITHOUT_GUI)
 .if ( ${OSVERSION} < 500000 )
 USE_GCC=	3.4
 .endif
+
 USE_GNOME+=	gtk20
-PATCHFILES+=	MPlayer-1.0pre7try2-gtk2.patch
+CONFIGURE_ARGS+=	--enable-gui
+
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
 .else
 PKGNAMESUFFIX=	-gtk2
 .endif
-CONFIGURE_ARGS+=	--enable-gui --enable-gtk2
+
 .if defined(WITH_LANG)
 WITH_LANG=	""
 .endif
-.endif
 
-.if defined(WITH_GTK1) && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-USE_GNOME+=	gtk12
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
 .else
-PKGNAMESUFFIX=	-gtk
-.endif
-CONFIGURE_ARGS+=	--enable-gui
-.endif
+PLIST_SUB+=	GMPLAYER="@comment "
+.endif #WITHOUT_GUI
 
-.if defined(WITHOUT_GUI)
-CONFIGURE_ARGS+=	--disable-gui
-.endif
-
-.if defined(WITH_RTC)
+.if !defined(WITHOUT_RTC)
 BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 CONFIGURE_ARGS+=	--enable-rtc
@@ -625,47 +278,46 @@ CONFIGURE_ARGS+=	--disable-mencoder
 PLIST_SUB+=	MENCODER="@comment "
 .endif
 
-.if defined(WITH_NVIDIA)
+.if !defined(WITHOUT_NVIDIA)
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 CONFIGURE_ARGS+=	--enable-xvmc \
 			--enable-xvmclib=XvMCNVIDIA
 .endif
 
-.if defined(WITH_ARTS) && !defined(WITHOUT_ARTS) && !defined(WITH_GTK1)
+.if !defined(WITHOUT_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-
 CONFIGURE_ARGS+=	--enable-arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
-.if defined(WITH_FRIBIDI)
+.if !defined(WITHOUT_FRIBIDI)
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--enable-fribidi
 .else
 CONFIGURE_ARGS+=	--disable-fribidi
 .endif
 
-.if defined(WITH_CDPARANOIA)
+.if !defined(WITHOUT_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 .else
 CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
-.if defined(WITH_LIBCACA)
+.if !defined(WITHOUT_LIBCACA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
 .endif
 
-.if defined(WITH_LIBUNGIF)
+.if !defined(WITHOUT_LIBUNGIF)
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 #CONFIGURE_ARGS+=	--enable-gif
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
-.if defined(WITH_LIBDV)
+.if !defined(WITHOUT_LIBDV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--enable-libdv
@@ -673,14 +325,14 @@ CONFIGURE_ARGS+=	--enable-libdv
 CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
-.if defined(WITH_LIRC)
+.if !defined(WITHOUT_LIRC)
 LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--enable-lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
-.if defined(WITH_MAD)
+.if !defined(WITHOUT_MAD)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 
 CONFIGURE_ARGS+=	--enable-mad \
@@ -689,38 +341,41 @@ CONFIGURE_ARGS+=	--enable-mad \
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
-.if defined(WITH_SVGALIB)
+.if !defined(WITHOUT_SDL)
+USE_SDL=	sdl
+WITH_AALIB=	yes
+.undef(WITHOUT_AALIB)
+WITH_SVGALIB=	yes
+.undef(WITHOUT_SVGALIB)
+.else
+CONFIGURE_ARGS+=	--disable-sdl
+.endif
+
+.if !defined(WITHOUT_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+.else
+CONFIGURE_ARGS+=	--disable-svga
 .endif
 
-.if defined(WITH_AALIB)
+.if !defined(WITHOUT_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+.else
+CONFIGURE_ARGS+=	--disable-aa
 .endif
 
-.if defined(WITH_THEORA)
+.if !defined(WITHOUT_THEORA)
 LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
-.if defined(WITH_X264)
+.if !defined(WITHOUT_X264)
 LIB_DEPENDS+=	x264.47:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
 
-#.if defined(WITH_TREMOR)
-#LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
-#CONFIGURE_ARGS+=	--enable-tremor
-#.else
-#CONFIGURE_ARGS+=	--disable-tremor
-#.endif
-
-.if defined(WITH_SDL)
-USE_SDL=	sdl
-.endif
-
-.if defined(WITH_ESOUND) && !defined(WITHOUT_ESOUND)
+.if !defined(WITHOUT_ESOUND)
 USE_GNOME+=	esound
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
@@ -731,19 +386,21 @@ PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
-.if defined(WITH_VORBIS)
+.if defined(WITHOUT_TREMOR)
 CONFIGURE_ARGS+=	--disable-internal-tremor
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if defined(WITH_REALPLAYER)
+.if !defined(WITHOUT_REALPLAYER)
 CONFIGURE_ARGS+=	--enable-real \
 			--with-reallibdir=${X11BASE}/lib/RealPlayer/codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+.else
+CONFIGURE_ARGS+=	--disable-real
 .endif
 
-.if defined(WITH_LIVEMEDIA)
+.if !defined(WITHOUT_LIVEMEDIA)
 CONFIGURE_ARGS+=	--enable-live \
 			--with-livelibdir=${LOCALBASE}/live
 RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
@@ -752,28 +409,28 @@ BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/live
 CONFIGURE_ARGS+=	--disable-live
 .endif
 
-.if defined(WITH_XVID)
+.if !defined(WITHOUT_XVID)
 CONFIGURE_ARGS+=	--enable-xvid
 LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
-.endif
-
-.if defined(WITH_LZO)
-LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 .else
-CONFIGURE_ARGS+=	--disable-liblzo
+CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
-.if defined(WITH_XMMS)
+.if !defined(WITHOUT_XMMS)
 CONFIGURE_ARGS+=	--enable-xmms
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.else
+CONFIGURE_ARGS+=	--disable-xmms
 .endif
 
-.if defined(WITH_DTS)
+.if !defined(WITHOUT_DTS)
 CONFIGURE_ARGS+=	--enable-libdts
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
+.else
+CONFIGURE_ARGS+=	--disable-libdts
 .endif
 
-.if defined(WITH_FREETYPE)
+.if !defined(WITHOUT_FREETYPE)
 CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
 			--enable-freetype
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
@@ -782,7 +439,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fo
 CONFIGURE_ARGS+=	--disable-freetype
 .endif
 
-.if defined(WITH_XANIM)
+.if !defined(WITHOUT_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
 CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
 .else
@@ -817,9 +474,9 @@ DEFAULT_KERN_HZ=1024
 
 # "enable" build for other archs
 .if ${ARCH} == "i386"
-.if !defined(WITHOUT_RUNTIME_CPUDETECTION)
+.if !defined(WITHOUT_RTCPU)
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
-.else #WITHOUT_RUNTIME_CPUDETECTION
+.else #WITH_RTCPU
 .if defined(WITHOUT_MMX)
 CONFIGURE_ARGS+=--disable-mmx
 .endif
@@ -830,26 +487,12 @@ CONFIGURE_ARGS+=--disable-3dnow
 CONFIGURE_ARGS+=--disable-3dnowex
 .endif
 .if defined(WITHOUT_SSE)
-CONFIGURE_ARGS+=--disable-mmx2 --disable-sse
+CONFIGURE_ARGS+=--disable-mmx2 --disable-sse --disable-sse2
 .endif
-.endif #WITHOUT_RUNTIME_CPUDETECTION
-.if !defined(WITH_SVGALIB)
-CONFIGURE_ARGS+=--disable-svga
-.endif
-.if !defined(WITH_AALIB)
-CONFIGURE_ARGS+=--disable-aa
-.endif
-.if !defined(WITH_SDL)
-CONFIGURE_ARGS+=--disable-sdl
-.endif
-.if !defined(WITH_VORBIS)
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
-.if !defined(WITHOUT_WIN32_CODECS)
+.endif #WITH_RTCPU
+.if !defined(WITHOUT_WIN32)
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
-
 CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
-
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .else
@@ -857,16 +500,13 @@ CONFIGURE_ARGS+=	--disable-win32 \
 			--disable-qtx-codecs
 .endif
 .endif # ARCH == i386
-.endif #MPLAYER_GENERIC_BUILD
 
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take a careful look into the Makefile in order"
-	@${ECHO_MSG} "to learn how to tune mplayer towards you personal preferences!"
-	@${ECHO_MSG} "For example,"
-	@${ECHO_MSG} "make WITH_GTK1"
-	@${ECHO_MSG} "builds MPlayer with GTK1-GUI support."
+	@${ECHO_MSG} "There are some knobs which *can* *not* be selected via the"
+	@${ECHO_MSG} "OPTIONS framework. You might want to check the Makefile in"
+	@${ECHO_MSG} "order to learn more about them."
 
 .if !defined(WITHOUT_GUI)
 	@${ECHO_MSG} "If you want to use the GUI, you can either install"
@@ -874,14 +514,6 @@ pre-everything::
 	@${ECHO_MSG} "or download official skin collections from"
 	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
 .endif
-
-#.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-#	@${ECHO_MSG} "=====================> <Caution> <======================"
-#	@${ECHO_MSG} "GTK2 and UTF8 language options cannot peacefully coexist"
-#	@${ECHO_MSG} "If you have defined WITH_LANG=<something> and WITH_GTK2"
-#	@${ECHO_MSG} "your language options are ignored."
-#	@${ECHO_MSG} "====================> </Caution> <======================"
-#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -908,9 +540,13 @@ post-patch:
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
 .endif
-.if defined(MPLAYER_GENERIC_BUILD)
+.if defined(MPLAYER_GENERIC_BUILD) && defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e \
-		's|1.0pre7|1.0pre7-FreeBSD-generic|' \
+		's|1.0pre8|1.0pre8-FreeBSD-generic-debug|' \
+		${WRKSRC}/version.sh
+.elif defined(MPLAYER_GENERIC_BUILD)
+	@${REINPLACE_CMD} -e \
+		's|1.0pre8|1.0pre8-FreeBSD-generic|' \
 		${WRKSRC}/version.sh
 .endif
 
@@ -937,7 +573,7 @@ post-install:
 .if !defined(WITHOUT_GUI)
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
 .endif
-	@${CAT} ${.CURDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 install-user:
 	@${PERL} ${FILESDIR}/install-user

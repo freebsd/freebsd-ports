@@ -1,5 +1,5 @@
---- bswap.h.orig	Thu Oct 21 08:54:57 2004
-+++ bswap.h	Mon May  9 20:57:34 2005
+--- bswap.h.orig	Sun Jun 11 20:35:47 2006
++++ bswap.h	Thu Jun 15 10:31:42 2006
 @@ -1,8 +1,17 @@
  #ifndef __BSWAP_H__
  #define __BSWAP_H__
