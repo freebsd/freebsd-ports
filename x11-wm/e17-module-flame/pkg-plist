@@ -1,10 +1,11 @@
-lib/enlightenment/modules/flame/module.a
+lib/enlightenment/modules/flame/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/flame/module.eap
-lib/enlightenment/modules/flame/module.la
-lib/enlightenment/modules/flame/module.so
+lib/enlightenment/modules/flame/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/flame/%%MODULE_ARCH%%/module.so
 lib/enlightenment/modules/flame/module_icon.png
 %%NLS%%share/locale/eo/LC_MESSAGES/flame.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/flame.mo
 %%NLS%%share/locale/it/LC_MESSAGES/flame.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/flame.mo
+@dirrm lib/enlightenment/modules/flame/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/flame
