@@ -2228,7 +2228,6 @@ mail/prom-mew||2006-04-07|Has expired: mastersite disappeared, no longer maintai
 mail/rmoldmail||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
 mail/ruby-mime-types||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
 devel/wftk||2006-04-07|master site disappeared
-textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-04-07|The textproc/p5-YAML-Syck port now includes JSON functionality
 www/linux-flashplugin||2006-04-08|Removed due to license problem
 net/nic||2006-04-08|Deprecated for a long time
 www/flashpluginwrapper||2006-04-08|Removed as it depends on linux-flashplugin
@@ -2411,3 +2410,4 @@ sysutils/lineak_kdeplugins|sysutils/lineak-kdeplugins|2006-07-09|port name chang
 sysutils/lineak_xosdplugin|sysutils/lineak-xosdplugin|2006-07-09|port name changed to match upstream
 japanese/phpgroupware||2006-04-10|removed at mainter request (because broken and vulnerabilities)
 www/p5-Catalyst|www/p5-Catalyst-Runtime|2006-07-10|follow CPAN split of package
+textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-07-12|The textproc/p5-YAML-Syck port now includes JSON functionality
