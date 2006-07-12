@@ -4,6 +4,7 @@ bin/%%MAMEMESS%%
 %%MAMEONLY%%bin/romcmp
 %%MESSONLY%%bin/imgtool
 %%MESSONLY%%bin/dat2html
+%%MAMEONLY%%bin/jedutil
 etc/%%MAMEMESS%%rc.sample
 %%DATADIR%%/%%MAMEMESS%%rc
 %%PORTDOCS%%%%DOCSDIR%%/changes.unix
