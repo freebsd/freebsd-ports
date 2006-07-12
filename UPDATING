@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060711:
+  AFFECTS: users of net/samba3
+  AUTHOR: timur@gnu.org
+
+  Starting from version 3.0.23 Samba no longer supports experimental
+  SQL and XML passdb backends. If you need this functionality, please
+  visit http://pdbsql.sourceforge.net/ (port is coming soon).
+
+  The default mapping entries for groups such as "Domain Admins" are
+  no longer created when using an smbpasswd file or a tdbsam passdb
+  backend. Use 'net groupmap add' rather than 'net groupmap modify' 
+  to set these entries.
+
+  A substring matching rule has been added to the sambaSID attribute
+  definition. For OpenLDAP servers, this will require the addition
+  of 'index sambaSID sub' to the slapd.conf configuration file. It
+  will be necessary to run slapindex after making this change. There
+  has been no change to actual data storage schema.
+
 20060707:
   AFFECTS: users of www/lifetype
   AUTHOR: clsung@FreeBSD.org

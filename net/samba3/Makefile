@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.22
+PORTVERSION?=		3.0.23
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -46,6 +46,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--localstatedir=${VARDIR} \
 		        --with-configdir=${SAMBA_CONFDIR} \
+			--with-pammodulesdir=${SAMBA_LIBDIR} \
 	    		--with-libdir=${SAMBA_LIBDIR}/samba \
 			--with-swatdir=${SAMBA_SWATDIR} \
 			--with-piddir=${SAMBA_RUNDIR} \
@@ -67,12 +68,8 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		QUOTAS		"With Quota support" off \
 		UTMP		"With UTMP support" on \
 		MSDFS		"With MSDFS support" off \
-		SAM_XML		"With XML smbpasswd backend" off \
-		SAM_MYSQL	"With MYSQL smbpasswd backend" off \
-		SAM_PGSQL	"With PostgreSQL smbpasswd backend" off \
-		SAM_OLD_LDAP	"With Samba2.x LDAP legacy smbpasswd backend" off \
 		SMBSH		"With SMBSH wrapper for UNIX commands" off \
-		PAM_SMBPASS	"With SMB PAM module" off \
+		PAM_SMBPASS	"With PAM authentication against passdb backends" off \
 		EXP_MODULES	"With experimental module(s)" off \
 		POPT		"With system-wide POPT library" on
 .endif
@@ -93,19 +90,21 @@ CONFIGURE_ARGS+=	--disable-cups --without-winbind --without-syslog \
 
 .else
 # Samba server itself
-USE_RC_SUBR=		yes
+USE_RC_SUBR=		samba
+SUB_FILES=		smb.conf.sample
 
 CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 			--without-libsmbclient --without-libmsrpc \
-			--without-libsmbsharemodes --without-python
+			--without-libsmbsharemodes --without-python \
+			--with-included-iniparser
 
 .if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--enable-cups
-CUPS=			cups
+CUPSD=			cupsd
 .else
 CONFIGURE_ARGS+=	--disable-cups
-CUPS=			""
+CUPSD=			""
 .endif
 
 .if defined(WITH_SYSLOG)
@@ -131,12 +130,14 @@ CONFIGURE_ARGS+=	--with-msdfs
 .if !defined(WITHOUT_WINBIND)
 CONFIGURE_ARGS+=	--with-winbind
 PLIST_SUB+=		WINBIND=""
+SUB_LIST+=		WINBIND=""
 .if ${OSVERSION} >= 500112
 WITH_WINBIND_NSS=	yes
 .endif
 .else
 CONFIGURE_ARGS+=	--without-winbind
 PLIST_SUB+=		WINBIND="@comment "
+SUB_LIST+=		WINBIND="@comment "
 .endif
 
 .if defined(WITH_WINBIND_NSS)
@@ -148,46 +149,7 @@ PLIST_SUB+=		WINBIND_NSS="@comment "
 .if !defined(WITHOUT_LDAP)
 WANT_LDAP=		yes
 .endif
-# SAM
-.if defined(WITH_SAM_XML)
-LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=	--with-xml-prefix=${LOCALBASE}
-WANT_EXPSAM_MODULES+=	xml
-PLIST_SUB+=		SAMXML=""
-.else
-PLIST_SUB+=		SAMXML="@comment "
-.endif
 
-.if defined(WITH_SAM_MYSQL)
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--with-mysql-prefix=${LOCALBASE}
-WANT_EXPSAM_MODULES+=	mysql
-PLIST_SUB+=		SAMMYSQL=""
-.else
-PLIST_SUB+=		SAMMYSQL="@comment "
-.endif
-
-.if defined(WITH_SAM_PGSQL)
-USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--with-pgsql-prefix=${LOCALBASE}
-WANT_EXPSAM_MODULES+=	pgsql
-PLIST_SUB+=		SAMPGSQL=""
-.else
-PLIST_SUB+=		SAMPGSQL="@comment "
-.endif
-
-.if defined(WITH_SAM_OLD_LDAP)
-WANT_LDAP=		yes
-CONFIGURE_ARGS+=	--with-ldapsam
-.else
-CONFIGURE_ARGS+=	--without-ldapsam
-.endif
-
-.if defined(WANT_EXPSAM_MODULES) && !empty(WANT_EXPSAM_MODULES)
-WANT_EXPSAM_MODULES!=	${ECHO_CMD} ${WANT_EXPSAM_MODULES} | ${SED} -E 's/ +/,/g'
-CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
-.endif
-# SAM
 .if defined(WITH_EXP_MODULES)
 .if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=	rpc_echo idmap_ad idmap_rid charset_weird
@@ -222,7 +184,7 @@ PLIST_SUB+=		SMBSH="@comment "
 
 .if defined(WITH_AIO_SUPPORT)
 IGNORE=			broken kernel API until now (7-CURRENT)
-CONFIGURE_ARGS+=	--without-aio-support
+CONFIGURE_ARGS+=	--with-aio-support
 .endif
 
 .if !defined(WITHOUT_POPT)
@@ -293,20 +255,13 @@ MAN7+=		pam_winbind.7
 MAN8+=		winbindd.8
 .endif
 
-.if !defined(WITHOUT_WINBIND)
-WINBIND_FILTER=		${SED} -e 's|%%WINBIND%%||g'
-.else
-WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
-.endif
 
 PLIST_SUB+=		RC_DIR=${RC_DIR} \
 			SAMBA_LOGDIR=${SAMBA_LOGDIR} \
 			SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
 			SAMBA_CONFIG=${SAMBA_CONFIG}
 
-RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
-			CUPS=${CUPS} \
-			RC_SUBR=${RC_SUBR} \
+SUB_LIST+=		CUPSD=${CUPSD} \
 			SAMBA_CONFDIR=${SAMBA_CONFDIR} \
 			SAMBA_CONFIG=${SAMBA_CONFIG} \
 			SAMBA_LOGDIR=${SAMBA_LOGDIR} \
@@ -314,6 +269,7 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 			SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
 			SAMBA_SPOOL=${SAMBA_SPOOL}
 
+PLIST_SUB+=		SMBSH="@comment "
 pre-fetch:
 	@${ECHO_MSG} "===>  -------------------------------------------"
 	@${ECHO_MSG} "===>  Run 'make config' to (re)configure the port"
@@ -345,26 +301,24 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/pam_smbpass
 	@${CP} -Rp ${WRKSRC}/pam_smbpass/samples/* ${EXAMPLESDIR}/pam_smbpass
 .endif
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}	\
-	    ${FILESDIR}/samba.sh.sample | ${WINBIND_FILTER} > ${WRKDIR}/samba.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/samba.sh ${RC_DIR}/samba.sh
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} 	\
-		${FILESDIR}/smb.conf.default > ${WRKDIR}/smb.conf.default
-	${INSTALL_DATA} ${WRKDIR}/smb.conf.default ${SAMBA_CONFIG}.default
+	${INSTALL_DATA} ${WRKDIR}/smb.conf.sample ${SAMBA_CONFDIR}
+	@if [ ! -f ${SAMBA_CONFIG} ]; then \
+		${INSTALL_DATA} ${WRKDIR}/smb.conf.sample ${SAMBA_CONFIG} ; \
+	fi
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
 .if !defined(WITHOUT_WINBIND)
 .if defined(WITH_WINBIND_NSS)
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_wins.so ${SAMBA_LIBDIR}/nss_wins.so.1
-	${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
-	${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
+	@${ECHO_CMD} "${SAMBA_LIB}/nss_winbind.so.1" >> ${TMPPLIST};
+	@${ECHO_CMD} "${SAMBA_LIB}/nss_wins.so.1" >> ${TMPPLIST};
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/pam_winbind.so ${SAMBA_LIBDIR}
-	${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_winbind.so ${SAMBA_LIBDIR}
+	@${ECHO_CMD} "${SAMBA_LIB}/pam_winbind.so" >> ${TMPPLIST};
 .endif
 .if defined(WITH_PAM_SMBPASS)
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
-	${ECHO_CMD} "${SAMBA_LIB}/pam_smbpass.so" >> ${TMPPLIST};
+	@${ECHO_CMD} "${SAMBA_LIB}/pam_smbpass.so" >> ${TMPPLIST};
 .endif
 # smbwrapper.so
 .if defined(WITH_SMBSH)

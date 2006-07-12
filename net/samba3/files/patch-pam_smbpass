@@ -1,19 +1,6 @@
---- pam_smbpass/general.h.orig	Fri Feb 25 18:59:30 2005
-+++ pam_smbpass/general.h	Mon Jan  2 03:47:49 2006
-@@ -50,10 +50,6 @@
- #define set(x,ctrl)   (ctrl = ((ctrl)&smb_args[x].mask)|smb_args[x].flag)
- #define unset(x,ctrl) (ctrl &= ~(smb_args[x].flag))
- 
--#ifndef __linux__
--#define strncasecmp(s1,s2,n) StrnCaseCmp(s1,s2,n)
--#endif
--
- /* the generic mask */
- #define _ALL_ON_  (~0U)
- 
---- pam_smbpass/pam_smb_auth.c.orig	Tue Oct 18 04:44:59 2005
-+++ pam_smbpass/pam_smb_auth.c	Mon Jan  2 03:47:49 2006
-@@ -163,7 +163,7 @@
+--- pam_smbpass/pam_smb_auth.c.orig	Thu Apr 20 04:29:22 2006
++++ pam_smbpass/pam_smb_auth.c	Sat May 27 01:57:31 2006
+@@ -164,7 +164,7 @@
  
      retval = PAM_SUCCESS;
  
@@ -22,9 +9,9 @@
      if(pretval) {
  	retval = *pretval;
  	SAFE_FREE(pretval);
---- pam_smbpass/pam_smb_passwd.c.orig	Thu Jul 28 15:19:44 2005
-+++ pam_smbpass/pam_smb_passwd.c	Mon Jan  2 03:47:49 2006
-@@ -224,7 +224,7 @@
+--- pam_smbpass/pam_smb_passwd.c.orig	Thu Apr 20 04:29:22 2006
++++ pam_smbpass/pam_smb_passwd.c	Sat May 27 01:57:31 2006
+@@ -226,7 +226,7 @@
                                     (const void **)&pass_old );
          } else {
              retval = pam_get_data( pamh, _SMB_OLD_AUTHTOK,
@@ -33,17 +20,8 @@
              if (retval == PAM_NO_MODULE_DATA) {
  		pass_old = NULL;
                  retval = PAM_SUCCESS;
---- pam_smbpass/support.c.orig	Thu Jul 28 15:19:44 2005
-+++ pam_smbpass/support.c	Mon Jan  2 03:47:49 2006
-@@ -114,7 +114,7 @@
- 			struct pam_response *resp;
- 
- 			pmsg[0] = &msg[0];
--			msg[0].msg = text;
-+			msg[0].msg = CONST_DISCARD(char *, text);
- 			msg[0].msg_style = type;
- 			resp = NULL;
- 
+--- pam_smbpass/support.c.orig	Sun May 28 02:23:20 2006
++++ pam_smbpass/support.c	Sun May 28 02:24:07 2006
 @@ -384,7 +384,7 @@
              if (newauth != NULL) {
  
@@ -53,30 +31,6 @@
  
                  if (old != NULL) {
                      newauth->count = old->count + 1;
-@@ -515,7 +515,7 @@
-     if (comment != NULL && off(SMB__QUIET, ctrl)) {
-         pmsg[0] = &msg[0];
-         msg[0].msg_style = PAM_TEXT_INFO;
--        msg[0].msg = comment;
-+        msg[0].msg = CONST_DISCARD(char *, comment);
-         i = 1;
-     } else {
-         i = 0;
-@@ -523,12 +523,12 @@
- 
-     pmsg[i] = &msg[i];
-     msg[i].msg_style = PAM_PROMPT_ECHO_OFF;
--    msg[i++].msg = prompt1;
-+    msg[i++].msg = CONST_DISCARD(char *, prompt1);
- 
-     if (prompt2 != NULL) {
-         pmsg[i] = &msg[i];
-         msg[i].msg_style = PAM_PROMPT_ECHO_OFF;
--        msg[i++].msg = prompt2;
-+        msg[i++].msg = CONST_DISCARD(char *, prompt2);
-         expect = 2;
-     } else
-         expect = 1;
 @@ -594,7 +594,7 @@
  
          retval = pam_set_data( pamh, data_name, (void *) token, _cleanup );

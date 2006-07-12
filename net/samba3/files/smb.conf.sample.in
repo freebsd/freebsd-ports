@@ -96,7 +96,7 @@
 # and the manual pages for details.
 # You may want to add the following on a Linux system:
 #         SO_RCVBUF=8192 SO_SNDBUF=8192
-   socket options = TCP_NODELAY
+;   socket options = TCP_NODELAY
 
 # Configure Samba to use multiple interfaces
 # If you have multiple network interfaces then you must list them
