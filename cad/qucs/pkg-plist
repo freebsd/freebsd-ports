@@ -10,6 +10,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/ac.png
 %%DATADIR%%/bitmaps/ac_current.png
 %%DATADIR%%/bitmaps/ac_voltage.png
+%%DATADIR%%/bitmaps/am_mod.png
 %%DATADIR%%/bitmaps/amplifier.png
 %%DATADIR%%/bitmaps/and.png
 %%DATADIR%%/bitmaps/arrow.png
@@ -24,6 +25,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/ccvs.png
 %%DATADIR%%/bitmaps/circulator.png
 %%DATADIR%%/bitmaps/coax.png
+%%DATADIR%%/bitmaps/coaxial.png
 %%DATADIR%%/bitmaps/coplanar.png
 %%DATADIR%%/bitmaps/coupler.png
 %%DATADIR%%/bitmaps/cpwgap.png
@@ -103,6 +105,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/opamp.png
 %%DATADIR%%/bitmaps/or.png
 %%DATADIR%%/bitmaps/pfet.png
+%%DATADIR%%/bitmaps/pm_mod.png
 %%DATADIR%%/bitmaps/pmosfet.png
 %%DATADIR%%/bitmaps/pmosfet_sub.png
 %%DATADIR%%/bitmaps/pnp.png
@@ -118,6 +121,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/rectangle.png
 %%DATADIR%%/bitmaps/rectwaveguide.png
 %%DATADIR%%/bitmaps/redo.png
+%%DATADIR%%/bitmaps/relais.png
 %%DATADIR%%/bitmaps/resistor.png
 %%DATADIR%%/bitmaps/resistor_us.png
 %%DATADIR%%/bitmaps/rotate_ccw.png
@@ -129,16 +133,16 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/spfile1.png
 %%DATADIR%%/bitmaps/spfile2.png
 %%DATADIR%%/bitmaps/spfile3.png
-%%DATADIR%%/bitmaps/spfile4.png
-%%DATADIR%%/bitmaps/spfile5.png
-%%DATADIR%%/bitmaps/spfile6.png
 %%DATADIR%%/bitmaps/spicefile.png
+%%DATADIR%%/bitmaps/subcircuit.png
 %%DATADIR%%/bitmaps/subport.png
 %%DATADIR%%/bitmaps/substrate.png
 %%DATADIR%%/bitmaps/sweep.png
+%%DATADIR%%/bitmaps/switch.png
 %%DATADIR%%/bitmaps/symtrans.png
 %%DATADIR%%/bitmaps/tabular.png
 %%DATADIR%%/bitmaps/text.png
+%%DATADIR%%/bitmaps/textnew.png
 %%DATADIR%%/bitmaps/timing.png
 %%DATADIR%%/bitmaps/tiny.button.qucs.xpm
 %%DATADIR%%/bitmaps/tiny.qucs.xpm
@@ -150,10 +154,12 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/undo.png
 %%DATADIR%%/bitmaps/vccs.png
 %%DATADIR%%/bitmaps/vcvs.png
+%%DATADIR%%/bitmaps/vhdlfile.png
 %%DATADIR%%/bitmaps/viewmag+.png
 %%DATADIR%%/bitmaps/viewmag-.png
 %%DATADIR%%/bitmaps/viewmag1.png
 %%DATADIR%%/bitmaps/viewmagfit.png
+%%DATADIR%%/bitmaps/vprobe.png
 %%DATADIR%%/bitmaps/vpulse.png
 %%DATADIR%%/bitmaps/vrect.png
 %%DATADIR%%/bitmaps/wire.png
@@ -217,6 +223,23 @@ bin/qucstrans
 %%DATADIR%%/docs/fr/subcircuit.html
 %%DATADIR%%/docs/fr/subcircuit.png
 %%DATADIR%%/docs/fr/wire.png
+%%DATADIR%%/docs/ru/characters.html
+%%DATADIR%%/docs/ru/contab.png
+%%DATADIR%%/docs/ru/index.html
+%%DATADIR%%/docs/ru/internal.html
+%%DATADIR%%/docs/ru/matching.html
+%%DATADIR%%/docs/ru/mathfunc.html
+%%DATADIR%%/docs/ru/paste.png
+%%DATADIR%%/docs/ru/programs.html
+%%DATADIR%%/docs/ru/qucsdigi.png
+%%DATADIR%%/docs/ru/qucsmain.png
+%%DATADIR%%/docs/ru/select.png
+%%DATADIR%%/docs/ru/short.html
+%%DATADIR%%/docs/ru/start.html
+%%DATADIR%%/docs/ru/start_digi.html
+%%DATADIR%%/docs/ru/subcircuit.html
+%%DATADIR%%/docs/ru/subcircuit.png
+%%DATADIR%%/docs/ru/wire.png
 %%DATADIR%%/lang/qucs_de.qm
 %%DATADIR%%/lang/qucs_es.qm
 %%DATADIR%%/lang/qucs_fr.qm
@@ -227,8 +250,10 @@ bin/qucstrans
 %%DATADIR%%/lang/qucs_pl.qm
 %%DATADIR%%/lang/qucs_pt.qm
 %%DATADIR%%/lang/qucs_ro.qm
+%%DATADIR%%/lang/qucs_ru.qm
 %%DATADIR%%/lang/qucs_sv.qm
 %%DATADIR%%/lang/qucs_tr.qm
+%%DATADIR%%/lang/qucs_uk.qm
 %%DATADIR%%/library/Bridges.lib
 %%DATADIR%%/library/Diodes.lib
 %%DATADIR%%/library/JFETs.lib
@@ -246,6 +271,7 @@ bin/qucstrans
 @dirrm %%DATADIR%%/tline
 @dirrm %%DATADIR%%/library
 @dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/docs/ru
 @dirrm %%DATADIR%%/docs/fr
 @dirrm %%DATADIR%%/docs/es
 @dirrm %%DATADIR%%/docs/en
