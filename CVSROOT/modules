@@ -2341,6 +2341,7 @@ exipick		ports/mail/exipick
 exiv2		ports/graphics/exiv2
 exmars		ports/games/exmars
 exmh2		ports/mail/exmh2
+exml		ports/textproc/exml
 expat2		ports/textproc/expat2
 expect		ports/lang/expect
 expiretable	ports/security/expiretable
