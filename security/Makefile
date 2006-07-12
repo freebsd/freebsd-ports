@@ -194,6 +194,7 @@
     SUBDIR += keyprint
     SUBDIR += kgpg
     SUBDIR += klamav
+    SUBDIR += knock
     SUBDIR += knocker
     SUBDIR += kovpn
     SUBDIR += krb4

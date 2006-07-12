@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: knockd
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+
+. %%RC_SUBR%%
+
+name="knockd"
+rcvar=`set_rcvar`
+load_rc_config $name
+
+knockd_enable=${knockd_enable:-"NO"}
+knockd_flags=${knockd_flags:-"-d"}
+
+command="%%PREFIX%%/bin/knockd"
+pidfile="%%RUNDIR%%/knockd.pid"
+required_files="%%PREFIX%%/etc/knockd.conf"
+
+run_rc_command "$1"
