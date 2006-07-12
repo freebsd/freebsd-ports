@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSP
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	security perl5
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/leifj/ \
 		http://cold.darkambient.net/
