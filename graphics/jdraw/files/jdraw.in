@@ -1,13 +1,13 @@
 #!/bin/sh
 # $FreeBSD$
+
 if [ -z "${JAVA_VERSION}" ]; then
 	JAVA_VERSION="%%JAVA_VERSION%%"
 fi
 
 if [ "${JAVA_VERSION}" \> "1.4" ]; then
->>>>>>> 1.2
-	LOOK_AND_FEEL="%%PLASTIC3D%%"
-else
+ 	LOOK_AND_FEEL="%%PLASTIC3D%%"
+ else
 	LOOK_AND_FEEL=
 fi
 
