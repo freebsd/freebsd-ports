@@ -1,4 +1,11 @@
 #!/bin/sh
 # $FreeBSD$
+if [ "$1" != "Obfuscator" -a "$1" != "WeightWatch" -a "$1" != "BuildUtils" ]; then
+    echo "Usage:"
+    echo "obfuscatejs Obfuscator {src} {dest} {prefix}"
+    echo "obfuscatejs WeightWatch {src}"
+    echo "obfuscatejs BuildUtils {srcRootDir} {destDir} {docDir} {headerFile}"
+else    
 JAVA_VERSION="%%JAVA_VERSION%%" \
-	exec "%%LOCALBASE%%/bin/java" -jar "%%OBFUSCATEJSJAR%%" Obfuscator "$@"
+	exec "%%LOCALBASE%%/bin/java" -jar "%%OBFUSCATEJSJAR%%" "$@"
+fi
