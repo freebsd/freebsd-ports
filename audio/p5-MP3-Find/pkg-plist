@@ -1,0 +1,13 @@
+bin/mp3db
+bin/mp3find
+%%SITE_PERL%%/MP3/Find.pm
+%%SITE_PERL%%/MP3/Find/Base.pm
+%%SITE_PERL%%/MP3/Find/DB.pm
+%%SITE_PERL%%/MP3/Find/Filesystem.pm
+%%SITE_PERL%%/MP3/Find/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Find/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Find
+@dirrm %%SITE_PERL%%/MP3/Find
+@dirrm %%SITE_PERL%%/MP3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
+@dirrmtry %%SITE_PERL%%/MP3
