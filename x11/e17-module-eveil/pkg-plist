@@ -1,10 +1,11 @@
 lib/enlightenment/modules/eveil/eveil.edc
 lib/enlightenment/modules/eveil/eveil.edj
-lib/enlightenment/modules/eveil/module.a
+lib/enlightenment/modules/eveil/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/eveil/module.eap
-lib/enlightenment/modules/eveil/module.la
-lib/enlightenment/modules/eveil/module.so
+lib/enlightenment/modules/eveil/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/eveil/%%MODULE_ARCH%%/module.so
 lib/enlightenment/modules/eveil/vera.ttf
 %%NLS%%share/locale/it/LC_MESSAGES/eveil.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/eveil.mo
+@dirrm lib/enlightenment/modules/eveil/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/eveil
