@@ -7,8 +7,10 @@
 
 PORTNAME=	mumps
 PORTVERSION=	4.6.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.enseeiht.fr/apo/MUMPS/	\
+		http://www.enseeiht.fr/irit/apo/MUMPS/	\
 		http://graal.ens-lyon.fr/MUMPS/
 DISTNAME=	MUMPS_${PORTVERSION}
 
