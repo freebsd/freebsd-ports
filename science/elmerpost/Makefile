@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elmerpost
-PORTVERSION=	5.0.3
+PORTVERSION=	5.2.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 
