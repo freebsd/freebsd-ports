@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qucs
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.9
 CATEGORIES=	cad science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,4 +22,10 @@ GNU_CONFIGURE=	yes
 MAN1=		qucs.1 qucsator.1 qucsconv.1 qucsdigi.1 qucsedit.1 \
 		qucsfilter.1 qucshelp.1 qucslib.1 qucstrans.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#qucsdigi\.bat##g' \
+	                  ${WRKSRC}/qucs/Makefile*
+
+.include <bsd.port.post.mk>
