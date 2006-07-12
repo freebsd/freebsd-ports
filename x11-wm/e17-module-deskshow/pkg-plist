@@ -5,9 +5,10 @@ lib/enlightenment/modules/deskshow/e17_titlebar_glint2.png
 lib/enlightenment/modules/deskshow/e17_titlebar_glint3.png
 lib/enlightenment/modules/deskshow/e17_titlebar_shadow1.png
 lib/enlightenment/modules/deskshow/e17_titlebar_shadow2.png
-lib/enlightenment/modules/deskshow/module.a
+lib/enlightenment/modules/deskshow/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/deskshow/module.eap
-lib/enlightenment/modules/deskshow/module.la
-lib/enlightenment/modules/deskshow/module.so
+lib/enlightenment/modules/deskshow/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/deskshow/%%MODULE_ARCH%%/module.so
 lib/enlightenment/modules/deskshow/module_icon.png
+@dirrm lib/enlightenment/modules/deskshow/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/deskshow
