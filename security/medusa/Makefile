@@ -33,7 +33,9 @@ BROKEN=		Does not build on amd64
 .endif
 
 .if ${OSVERSION} < 500000
-IGNORE=		needs lpthread
+LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth
+CFLAGS+=	-L${LOCALBASE}/lib/pth
+USE_GCC=	3.2+
 .endif
 
 .if defined(WITH_SVN)
