@@ -1,10 +1,10 @@
 lib/enlightenment/modules/mem/DejaVuSansMono.ttf
 lib/enlightenment/modules/mem/mem.edc
 lib/enlightenment/modules/mem/mem.edj
-lib/enlightenment/modules/mem/module.a
+lib/enlightenment/modules/mem/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/mem/module.eap
-lib/enlightenment/modules/mem/module.la
-lib/enlightenment/modules/mem/module.so
+lib/enlightenment/modules/mem/%%MODULE_ARCH%%/module.la
+lib/enlightenment/modules/mem/%%MODULE_ARCH%%/module.so
 lib/enlightenment/modules/mem/module_icon.png
 lib/enlightenment/modules/mem/real_00.png
 lib/enlightenment/modules/mem/real_01.png
@@ -34,4 +34,5 @@ lib/enlightenment/modules/mem/swap_10.png
 %%NLS%%share/locale/ja/LC_MESSAGES/mem.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/mem.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mem.mo
+@dirrm lib/enlightenment/modules/mem/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/mem
