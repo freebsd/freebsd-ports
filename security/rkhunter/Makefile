@@ -7,14 +7,17 @@
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
 MAINTAINER=	vaidab@safe-mail.net
 COMMENT=	Rootkit detection tool
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+OPTIONS=	LSOF "Use LSOF" on \
+		NMAP "Use NMAP" off
+
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -27,6 +30,14 @@ MANCOMPRESSED=	no
 PORTDOCS=	CHANGELOG README WISHLIST
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_LSOF)
+RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
+.endif
+
+.if defined(WITH_NMAP)
+RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
