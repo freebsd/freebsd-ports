@@ -33,8 +33,8 @@ OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 .include <bsd.port.pre.mk>
 
 # MySQL authentication
-.if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
-.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+.if defined(WITH_MYSQL)
+.if defined(WITH_PGSQL)
 BROKEN=	MySQL and PgSQL authentication can not be build together
 .endif
 USE_MYSQL=		yes
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--enable-auth-mysql \
 			--with-mysql-include-dir=${LOCALBASE}/include/mysql
 .endif
 
-.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+.if defined(WITH_PGSQL)
 USE_PGSQL=		yes
 DEFAULT_PGSQL_VER=	80
 CONFIGURE_ARGS+=	--enable-auth-pgsql \
@@ -51,26 +51,26 @@ CONFIGURE_ARGS+=	--enable-auth-pgsql \
 			--with-pgsql-include-dir=${LOCALBASE}/include
 .endif
 
-.if defined(WITH_LDAP) && !defined(WITHOUT_LDAP)
+.if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 .endif
 
 # Perl authentication
-.if defined(WITH_PERLAUTH) && !defined(WITHOUT_PERLAUTH)
+.if defined(WITH_PERLAUTH)
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--enable-auth-perl
 .endif
 
-.if defined(WITH_FLATAUTH) && !defined(WITHOUT_FLATAUTH)
+.if defined(WITH_FLATAUTH)
 CONFIGURE_ARGS+=	--enable-auth-flatfile
 .endif
 
-.if defined(WITH_MAILDIR) && !defined(WITHOUT_MAILDIR)
+.if !defined(WITHOUT_MAILDIR)
 CONFIGURE_ARGS+=	--enable-mbox-maildir
 .endif
 
-.if defined(WITH_DRAC) && !defined(WITHOUT_DRAC)
+.if defined(WITH_DRAC)
 CONFIGURE_ARGS+=	--enable-drac
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 LDFLAGS+=		-L${LOCALBASE}/lib
