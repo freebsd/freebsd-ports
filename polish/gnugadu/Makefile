@@ -16,26 +16,38 @@ DISTNAME=	gg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GaduGadu client for X11/GTK
 
-BROKEN=		Needs to be converted to OPTIONS
+DEPRECIATED=	Not developed anymore, unmaintained, etc.
+EXPIRE_DATE=	2006-07-15
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
+OPTIONS=	ESD "Esound support" on \
+		GNOME "Gnome support" off \
+		PANEL "Gnome applet support" off
+
+.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_ESD)
+USE_GNOME+=	esound
+CONFIGURE_ARGS+=	--enable-esd
+.else
+CONFIGURE_ARGS+=	--disable-esd
 .endif
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}" \
-		CAT="${CAT}" \
-		GNUGADU_OPTIONS="${GNUGADU_OPTIONS}" \
-		REALCURDIR="${.CURDIR}"
+.if defined(WITH_GNOME)
+USE_GNOME+=	gnomelibs
+CONFIGURE_ARGS+=	--enable-gnome
+.else
+CONFIGURE_ARGS+=	--disable-esd
+.endif
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.gg
+.if defined(WITH_PANEL)
+USE_GNOME+=	gnomepanel
+CONFIGURE_ARGS+=	--enable-panel
+.else
+CONFIGURE_ARGS+=	--disable-panel
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,GTK_ CFLAGS,GTK_CFLAGS,' \
@@ -52,8 +64,4 @@ post-install:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
