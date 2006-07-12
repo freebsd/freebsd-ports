@@ -7,6 +7,7 @@
 
 PORTNAME=	meshgen2d
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
@@ -19,6 +20,13 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=
 
 PLIST_FILES=	bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerMesh2D \
-		bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-Mesh2D
+		bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-Mesh2D	\
+		bin/ElmerMesh2D bin/Mesh2D
+
+post-install:
+		${LN} -sf ${PREFIX}/bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerMesh2D \
+			${PREFIX}/bin/ElmerMesh2D
+		${LN} -sf ${PREFIX}/bin/${MACHINE_ARCH}-portbld-freebsd${OSREL}-Mesh2D \
+			${PREFIX}/bin/Mesh2D
 
 .include <bsd.port.mk>
