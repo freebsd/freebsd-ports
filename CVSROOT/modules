@@ -9957,6 +9957,7 @@ p5-XML-Generator-DBI	ports/textproc/p5-XML-Generator-DBI
 p5-XML-Generator-PerlData	ports/textproc/p5-XML-Generator-PerlData
 p5-XML-Grove	ports/textproc/p5-XML-Grove
 p5-XML-Hadler-HTMLWriter	ports/textproc/p5-XML-Hadler-HTMLWriter
+p5-XML-Handler-Dtd2DocBook	ports/textproc/p5-XML-Handler-Dtd2DocBook
 p5-XML-Handler-Dtd2Html	ports/textproc/p5-XML-Handler-Dtd2Html
 p5-XML-Handler-Trees	ports/textproc/p5-XML-Handler-Trees
 p5-XML-Handler-YAWriter	ports/textproc/p5-XML-Handler-YAWriter
