@@ -7,6 +7,7 @@ bin/tunapie
 %%DATADIR%%/RecordTime.py
 %%DATADIR%%/RecordTime.pyc
 %%DATADIR%%/Splash.py
+%%DATADIR%%/Splash.pyc
 %%DATADIR%%/Tunapie.py
 %%DATADIR%%/Tunapie.pyc
 %%DATADIR%%/TunerFrame1.py
@@ -19,5 +20,7 @@ bin/tunapie
 %%DATADIR%%/tuner.py
 %%DATADIR%%/tuner.pyc
 %%DATADIR%%/tuneradult.py
+%%DATADIR%%/tuneradult.pyc
 %%DATADIR%%/tunersafe.py
+%%DATADIR%%/tunersafe.pyc
 @dirrm %%DATADIR%%
