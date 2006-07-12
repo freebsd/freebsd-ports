@@ -9131,6 +9131,7 @@ p5-Module-Build-Convert	ports/devel/p5-Module-Build-Convert
 p5-Module-Build-Kwalitee	ports/devel/p5-Module-Build-Kwalitee
 p5-Module-Compile	ports/devel/p5-Module-Compile
 p5-Module-CoreList	ports/devel/p5-Module-CoreList
+p5-Module-Dependency	ports/devel/p5-Module-Dependency
 p5-Module-Find	ports/devel/p5-Module-Find
 p5-Module-Info	ports/devel/p5-Module-Info
 p5-Module-Info-File	ports/devel/p5-Module-Info-File
