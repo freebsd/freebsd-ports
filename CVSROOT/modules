@@ -10793,6 +10793,7 @@ pmake		ports/devel/pmake
 pmap		ports/sysutils/pmap
 pmars		ports/games/pmars
 pmars-sdl	ports/games/pmars-sdl
+pmd		ports/devel/pmd
 pmf		ports/net/pmf
 pmk		ports/devel/pmk
 pmw		ports/x11-toolkits/pmw
