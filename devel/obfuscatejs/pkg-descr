@@ -2,8 +2,11 @@ ObfuscateJS compress your Javascript files.
 The obfuscator currently removes whitespace and comments.
 It renames variable names with a local scope to a shorter version,
 and as an advanced option it renames all variables with a certain
-prefix to a shorter name
+prefix to a shorter name.
 
-usage: obfuscatejs {src} {dst} {prefix}
+Usage:
+    obfuscatejs Obfuscator {src} {dest} {prefix}
+    obfuscatejs WeightWatch {src}
+    obfuscatejs BuildUtils {srcRootDir} {destDir} {docDir} {headerFile}
 
 WWW:	http://tools.2vi.nl/

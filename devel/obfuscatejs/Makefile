@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obfuscatejs
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel java
 MASTER_SITES=	http://tools.2vi.nl/ \
 		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
