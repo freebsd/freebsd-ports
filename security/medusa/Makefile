@@ -14,11 +14,35 @@ MASTER_SITES=	http://www.foofus.net/jmk/tools/ \
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A speedy, massively parallel, modular, login brute-forcer
 
-LIB_DEPENDS=	ssh2:${PORTSDIR}/security/libssh2
+OPTIONS=	SVN "Enable Subversion module" off \
+		POSTGRESQL "Enable PostgreSQL module" off
+
+LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	"--program-transform="
+CONFIGURE_ARGS+=	--enable-untested --program-transform=
 
 MAN1=		medusa.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		Does not build on ia64
+.elif ${ARCH} == "amd64"
+BROKEN=		Does not build on amd64
+.endif
+
+.if ${OSVERSION} < 500000
+IGNORE=		needs lpthread
+.endif
+
+.if defined(WITH_SVN)
+LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
+CFLAGS+=	-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1
+.endif
+
+.if defined(WITH_POSTGRESQL)
+USE_PGSQL=	yes
+.endif
+
+.include <bsd.port.post.mk>
