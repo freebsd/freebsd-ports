@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.3-RC9
+DISTVERSION=	2.4-20060711
 PORTEPOCH=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -20,7 +20,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.2.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-3].* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 NO_LATEST_LINK=	yes
