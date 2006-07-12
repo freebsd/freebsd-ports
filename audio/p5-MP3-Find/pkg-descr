@@ -1,0 +1,7 @@
+This module allows you to search for MP3 files by their ID3 tags.
+You can ask for the results to be sorted by one or more of those tags,
+and return either the list of filenames (the deault), a printf-style
+formatted string for each file using its ID3 tags, or the actual Perl
+data structure representing the results.
+
+WWW: http://search.cpan.org/dist/MP3-Find/
