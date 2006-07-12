@@ -1,0 +1,13 @@
+bin/pmd_indexer.plx
+bin/pmd_grapher.plx
+bin/pmd_dump.pl
+%%SITE_PERL%%/Module/pmd_dump.pl
+%%SITE_PERL%%/Module/Dependency.pod
+%%SITE_PERL%%/Module/Dependency/Info.pm
+%%SITE_PERL%%/Module/Dependency/Grapher.pm
+%%SITE_PERL%%/Module/Dependency/Indexer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Dependency/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Dependency
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrm %%SITE_PERL%%/Module/Dependency
+@dirrmtry %%SITE_PERL%%/Module
