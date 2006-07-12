@@ -1,3 +1,2 @@
 bin/xconv
-etc/rc.d/xinetd.sh
 sbin/xinetd
