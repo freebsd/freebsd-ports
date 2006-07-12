@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent-devel
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 PORTREVISION=	0
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
@@ -19,5 +19,7 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${MASTERDIR}/pkg-descr
 
 CONFLICTS=	libtorrent-[0-9]*
+
+EXTRA_PATCHES=	${.CURDIR}/files/devel-*
 
 .include "${MASTERDIR}/Makefile"

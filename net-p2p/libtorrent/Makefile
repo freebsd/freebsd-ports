@@ -25,6 +25,8 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
+EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	--disable-debug --with-openssl=${OPENSSLBASE}
