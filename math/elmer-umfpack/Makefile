@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	umfpack
-PORTVERSION=	4.4a
+PORTVERSION=	4.4
+PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 PKGNAMEPREFIX=	elmer-
