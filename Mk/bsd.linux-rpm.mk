@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.7 2006-06-07 18:47:40 netchild Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.8 2006-07-13 12:35:12 bsam Exp $
 #
 
 # Variables:
@@ -105,14 +105,14 @@ BRANDELF_FILES?=
 
 .  if defined(AUTOMATIC_PLIST)
 
-.    if ${USE_LINUX} == "8" || ${USE_LINUX:L} == "yes"
-_LINUX_BASE_SUFFIX=		8
+.    if ${USE_LINUX} == "fc4" || ${USE_LINUX:L} == "yes"
+_LINUX_BASE_SUFFIX=		fc4
 .    elif ${USE_LINUX} == "debian"
 _LINUX_BASE_SUFFIX=		debian
 .    elif ${USE_LINUX} == "fc3"
 _LINUX_BASE_SUFFIX=		fc3
-.    elif ${USE_LINUX} == "fc4"
-_LINUX_BASE_SUFFIX=		fc4
+.    elif ${USE_LINUX} == "8"
+_LINUX_BASE_SUFFIX=		8
 .    else
 # other linux_base ports do not provide a pkg-plist file
 IGNORE=					uses AUTOMATIC_PLIST with an unsupported USE_LINUX, \"${USE_LINUX}\". Supported values are \"yes\", \"8\", \"debian\", \"fc3\" and \"fc4\"
