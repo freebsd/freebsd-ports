@@ -22,7 +22,6 @@ LIB_DEPENDS=	shhopt.1:${PORTSDIR}/devel/libshhopt \
 CONFLICTS=	gnome-games-*
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 MAN6=		sol.6
