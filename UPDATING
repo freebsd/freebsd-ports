@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060713:
+  AFFECTS: users of x11-fonts/terminus-font
+  AUTHOR: garga@FreeBSD.org
+
+  Since version 4.20, terminus-font changed place to install fonts to
+  ${PREFIX}/lib/X11/fonts/terminus-font, please, add this new path to your
+  font paths.
+
 20060711:
   AFFECTS: users of net/samba3
   AUTHOR: timur@gnu.org
