@@ -9637,6 +9637,7 @@ p5-Sys-Utmp	ports/sysutils/p5-Sys-Utmp
 p5-SyslogScan	ports/sysutils/p5-SyslogScan
 p5-System2	ports/devel/p5-System2
 p5-T2		ports/databases/p5-T2
+p5-Taint-Runtime	ports/devel/p5-Taint-Runtime
 p5-Tangram	ports/databases/p5-Tangram
 p5-Task-Catalyst	ports/www/p5-Task-Catalyst
 p5-Tcl		ports/lang/p5-Tcl
