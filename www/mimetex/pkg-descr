@@ -7,5 +7,5 @@ your site's cgi-bin/ directory, with no other dependencies.
 It's easy to use. Just place an html <img> tag in your document
 wherever you want to see the corresponding LaTeX expression.
 
-Author:	John Forkosh <john@forkosh.com>
+Author:	John Forkosh
 WWW:	http://www.forkosh.com/mimetex.html
