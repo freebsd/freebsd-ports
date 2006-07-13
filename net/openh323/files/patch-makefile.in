@@ -1,7 +1,26 @@
---- Makefile.in.orig	Thu Feb  2 13:29:46 2006
-+++ Makefile.in	Thu Feb  2 13:33:57 2006
-@@ -351,8 +351,8 @@
- 		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE) \
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -337,22 +337,14 @@
+ install:
+ 	mkdir -p $(DESTDIR)$(LIBDIR)
+ 	rm -f $(DESTDIR)$(LIBDIR)/libh323_*_r.so*
+-	$(INSTALL) -m 444 lib/$(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ ; \
+-		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(OH323_FILE).@MAJOR_VERSION@ ; \
+-		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE).@MAJOR_VERSION@ \
+-	)
++	$(INSTALL) -m 444 lib/$(OH323_FILE).@MAJOR_VERSION@ $(DESTDIR)$(LIBDIR)
+ 	(cd $(DESTDIR)$(LIBDIR) ; \
+ 		rm -f  $(OH323_FILE) ; \
+-		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE) \
++		ln -sf $(OH323_FILE).@MAJOR_VERSION@ $(OH323_FILE) \
  	)
  	(cd $(DESTDIR)$(LIBDIR); \
 -		rm -f  libopenh323.@SHAREDLIBEXT@ ; \
