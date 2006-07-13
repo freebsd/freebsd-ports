@@ -1,0 +1,47 @@
+@comment $FreeBSD$
+bin/appendpdf.pl
+bin/asciify
+bin/changepagestring.pl
+bin/changepdfstring.pl
+bin/changerefkeys.pl
+bin/crunchjpgs.pl
+bin/deillustrate.pl
+bin/deletepdfpage.pl
+bin/extractallimages.pl
+bin/extractjpgs.pl
+bin/fillpdffields.pl
+bin/getpdffontobject.pl
+bin/getpdfpage.pl
+bin/getpdfpageobject.pl
+bin/getpdftext.pl
+bin/listfonts.pl
+bin/listimages.pl
+bin/listpdffields.pl
+bin/pdfinfo.pl
+bin/readpdf.pl
+bin/renderpdf.pl
+bin/replacepdfobj.pl
+bin/revertpdf.pl
+bin/rewritepdf.pl
+bin/setpdfbackground.pl
+bin/setpdfpage.pl
+bin/stamppdf.pl
+bin/uninlinepdfimages.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF/.packlist
+%%SITE_PERL%%/CAM/PDF.pm
+%%SITE_PERL%%/CAM/PDF/Content.pm
+%%SITE_PERL%%/CAM/PDF/Decrypt.pm
+%%SITE_PERL%%/CAM/PDF/GS.pm
+%%SITE_PERL%%/CAM/PDF/GS/NoText.pm
+%%SITE_PERL%%/CAM/PDF/Node.pm
+%%SITE_PERL%%/CAM/PDF/PageText.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Dump.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Images.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/Text.pm
+%%SITE_PERL%%/CAM/PDF/Renderer/TextFB.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM/PDF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CAM
+@dirrmtry %%SITE_PERL%%/CAM/PDF/GS
+@dirrmtry %%SITE_PERL%%/CAM/PDF/Renderer
+@dirrmtry %%SITE_PERL%%/CAM/PDF
+@dirrmtry %%SITE_PERL%%/CAM
