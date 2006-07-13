@@ -196,6 +196,7 @@
     SUBDIR += perl5.8
     SUBDIR += pexts
     SUBDIR += pfe-devel
+    SUBDIR += phc
     SUBDIR += php-mode.el
     SUBDIR += php4
     SUBDIR += php4-extensions
