@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	WWW-Curl
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	3.02
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://curl.haxx.se/libcurl/perl/
@@ -22,7 +21,10 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl:install
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Curl.3 \
-		WWW::Curl::easy.3 \
-		Curl::easy.3
+		WWW::Curl::Easy.3 \
+		WWW::Curl::Multi.3
+
+post-patch:
+		${FIND} ${WRKSRC} -type f -name \*.orig -delete
 
 .include <bsd.port.mk>

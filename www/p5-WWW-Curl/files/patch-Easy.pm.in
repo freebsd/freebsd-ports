@@ -1,0 +1,11 @@
+--- Easy.pm.in.orig	Thu Jul 13 14:57:28 2006
++++ Easy.pm.in	Thu Jul 13 14:57:33 2006
+@@ -4,7 +4,7 @@
+ use Carp;
+ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK $AUTOLOAD);
+ 
+-$VERSION = '3.01';
++$VERSION = '3.02';
+ 
+ require WWW::Curl;
+ require Exporter;
