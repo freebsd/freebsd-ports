@@ -21,4 +21,10 @@ MAN3=		XML::XPathEngine.3 XML::XPathEngine::Boolean.3 \
 		XML::XPathEngine::Literal.3 XML::XPathEngine::NodeSet.3 \
 		XML::XPathEngine::Number.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
