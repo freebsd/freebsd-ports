@@ -25,6 +25,7 @@ include/gsk-1.0/gsk/gskhttp.h
 include/gsk-1.0/gsk/gskinit.h
 include/gsk-1.0/gsk/gskio.h
 include/gsk-1.0/gsk/gskipv4.h
+include/gsk-1.0/gsk/gsklistmacros.h
 include/gsk-1.0/gsk/gsklog.h
 include/gsk-1.0/gsk/gsklogringbuffer.h
 include/gsk-1.0/gsk/gskmacros.h
@@ -32,12 +33,16 @@ include/gsk-1.0/gsk/gskmain.h
 include/gsk-1.0/gsk/gskmainloop.h
 include/gsk-1.0/gsk/gskmemory.h
 include/gsk-1.0/gsk/gskmempool.h
+include/gsk-1.0/gsk/gskmodule.h
 include/gsk-1.0/gsk/gsknameresolver.h
 include/gsk-1.0/gsk/gsknetworkinterface.h
 include/gsk-1.0/gsk/gskpacket.h
 include/gsk-1.0/gsk/gskpacketqueue.h
 include/gsk-1.0/gsk/gskpacketqueuefd.h
 include/gsk-1.0/gsk/gskpersistentconnection.h
+include/gsk-1.0/gsk/gskprocessinfo.h
+include/gsk-1.0/gsk/gskqsortmacro.h
+include/gsk-1.0/gsk/gskrbtreemacros.h
 include/gsk-1.0/gsk/gskrequest.h
 include/gsk-1.0/gsk/gskshutdown.h
 include/gsk-1.0/gsk/gsksimplefilter.h
@@ -84,9 +89,17 @@ include/gsk-1.0/gsk/store/gskxmlvaluereader.h
 include/gsk-1.0/gsk/store/gskxmlvaluewriter.h
 include/gsk-1.0/gsk/url/gskurl.h
 include/gsk-1.0/gsk/url/gskurltransfer.h
+include/gsk-1.0/gsk/url/gskurltransferfile.h
 include/gsk-1.0/gsk/url/gskurltransferhttp.h
+include/gsk-1.0/gsk/xml/gskxml.h
+include/gsk-1.0/gsk/xml/gskxmlbuilder.h
+include/gsk-1.0/gsk/xml/gskxmlcontext.h
+include/gsk-1.0/gsk/xml/gskxmlnode.h
+include/gsk-1.0/gsk/xml/gskxmlparser.h
+include/gsk-1.0/gsk/xml/gskxmlstring.h
 include/gsk-1.0/gsk/xmlrpc/gskxmlrpc.h
 include/gsk-1.0/gsk/xmlrpc/gskxmlrpcstream.h
+include/gsk-1.0/gsk/zlib/gskzlib.h
 include/gsk-1.0/gsk/zlib/gskzlibdeflator.h
 include/gsk-1.0/gsk/zlib/gskzlibinflator.h
 lib/libgsk-1.0.a
@@ -96,6 +109,7 @@ lib/libgsk-1.0.so.0
 libdata/pkgconfig/gsk-1.0.pc
 @dirrm include/gsk-1.0/gsk/zlib
 @dirrm include/gsk-1.0/gsk/xmlrpc
+@dirrm include/gsk-1.0/gsk/xml
 @dirrm include/gsk-1.0/gsk/url
 @dirrm include/gsk-1.0/gsk/store
 %%OPENSSL%%@dirrm include/gsk-1.0/gsk/ssl
