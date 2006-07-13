@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/pod2xhtml
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Xhtml/.packlist
+%%SITE_PERL%%/Pod/Xhtml.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Xhtml
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod
