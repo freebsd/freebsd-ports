@@ -1,0 +1,11 @@
+bin/perl.prov
+bin/perl.req
+%%SITE_PERL%%/fake.pm
+%%SITE_PERL%%/B/PerlReq.pm
+%%SITE_PERL%%/PerlReq/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/rpm-build-perl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlReq
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/rpm-build-perl
+@dirrm %%SITE_PERL%%/B
+@dirrm %%SITE_PERL%%/PerlReq
