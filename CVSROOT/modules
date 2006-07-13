@@ -8460,6 +8460,7 @@ p5-DateTime-TimeZone-LMT	ports/devel/p5-DateTime-TimeZone-LMT
 p5-Decision-ACL	ports/devel/p5-Decision-ACL
 p5-DelimMatch	ports/textproc/p5-DelimMatch
 p5-Devel-Arena	ports/devel/p5-Devel-Arena
+p5-Devel-Caller	ports/devel/p5-Devel-Caller
 p5-Devel-Constants	ports/devel/p5-Devel-Constants
 p5-Devel-CoreStack	ports/devel/p5-Devel-CoreStack
 p5-Devel-Cover	ports/devel/p5-Devel-Cover
