@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- Makefile.in
++++ Makefile.in
+@@ -257,18 +254,10 @@
+                      $(DESTDIR)$(PREFIX)/share/pwlib/make ; \
+ 		do mkdir -p $$dir ; chmod 755 $$dir ; \
+ 	done )
+-	$(INSTALL) -m 444 lib/$(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ ; \
+-		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(PTLIB_FILE).@MAJOR_VERSION@ ; \
+-		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(PTLIB_FILE).@MAJOR_VERSION@ \
+-	)
++	$(INSTALL) -m 444 lib/$(PTLIB_FILE).@MAJOR_VERSION@ $(DESTDIR)$(LIBDIR)
+ 	(cd $(DESTDIR)$(LIBDIR) ; \
+ 		rm -f  $(PTLIB_FILE) ; \
+-		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(PTLIB_FILE) \
++		ln -sf $(PTLIB_FILE).@MAJOR_VERSION@ $(PTLIB_FILE) \
+ 	)
+ 	(cd $(DESTDIR)$(LIBDIR); \
+ 		rm -f  libpt.@SHAREDLIBEXT@ ; \
