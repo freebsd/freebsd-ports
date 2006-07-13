@@ -29,6 +29,7 @@ share/mime/application/pgp.xml
 share/mime/application/pkcs7-mime.xml
 share/mime/application/pkcs7-signature.xml
 share/mime/application/postscript.xml
+share/mime/application/rss+xml.xml
 share/mime/application/rtf.xml
 share/mime/application/smil.xml
 share/mime/application/stuffit.xml
@@ -245,6 +246,7 @@ share/mime/application/x-zoo.xml
 share/mime/application/xhtml+xml.xml
 share/mime/application/xml.xml
 share/mime/application/xslt+xml.xml
+share/mime/application/xspf+xml.xml
 share/mime/application/zip.xml
 share/mime/audio/ac3.xml
 share/mime/audio/basic.xml
@@ -266,6 +268,7 @@ share/mime/audio/x-mp3-playlist.xml
 share/mime/audio/x-mpeg.xml
 share/mime/audio/x-mpegurl.xml
 share/mime/audio/x-ms-asx.xml
+share/mime/audio/x-ms-wma.xml
 share/mime/audio/x-riff.xml
 share/mime/audio/x-s3m.xml
 share/mime/audio/x-scpls.xml
@@ -368,7 +371,6 @@ share/mime/text/plain.xml
 share/mime/text/rdf.xml
 share/mime/text/rfc822-headers.xml
 share/mime/text/richtext.xml
-share/mime/text/rss.xml
 share/mime/text/sgml.xml
 share/mime/text/spreadsheet.xml
 share/mime/text/tab-separated-values.xml
