@@ -7,19 +7,20 @@
 
 PORTNAME=	calctool
 PORTVERSION=	2.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nsayer
 DISTNAME=	calctool-2.4pl13
 
 MAINTAINER=	ssedov@mbsd.msk.ru
-COMMENT=	A multi-GUI (terminal, X) calculator program
+COMMENT=	A multi-GUI (terminal, X, XView) calculator program
 
 USE_LDCONFIG=	yes
 
-OPTIONS=	X11 "Build X11 version of calctool" on \
-		TTY "Build tty version of calctool" on
+OPTIONS=	X11	"Build X11 version of calctool" on \
+		TTY	"Build tty version of calctool" on \
+		XVIEW	"Build tty version of calctool" off
 
 MAN1=		calctool.1
 
@@ -38,6 +39,14 @@ BINARIES+=	tty_calctool
 PLIST_SUB+=	TTY=""
 .else
 PLIST_SUB+=	TTY="@comment "
+.endif
+
+.if defined(WITH_XVIEW)
+BINARIES+=	xv_calctool
+LIB_DEPENDS+=	xview.3:${PORTSDIR}/x11-toolkits/xview
+PLIST_SUB+=	XVIEW=""
+.else
+PLIST_SUB+=	XVIEW="@comment "
 .endif
 
 .if ${ARCH} == "sparc64"

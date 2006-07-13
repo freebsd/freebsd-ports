@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat May 29 20:35:43 1993
-+++ Makefile	Thu Jul 13 01:33:02 2006
++++ Makefile	Thu Jul 13 12:05:36 2006
 @@ -28,7 +28,7 @@
  #  It can also be specified here by uncommenting the following
  #  macro definition and setting appropriately.
@@ -42,8 +42,8 @@
  #
 -XVIEWINCDIR      = -I$(OPENWINHOME)/include
 -XVIEWLIBDIR      = -L$(OPENWINHOME)/lib
-+#XVIEWINCDIR      = -I$(OPENWINHOME)/include
-+#XVIEWLIBDIR      = -L$(OPENWINHOME)/lib
++XVIEWINCDIR      = -I%%X11BASE%%/include
++XVIEWLIBDIR      = -L%%X11BASE%%/lib
  #
  #=========================================================================
  #
@@ -78,7 +78,7 @@
  
  LIBSRCS         = graphics.c display.c functions.c get.c
  LIBOBJS         = graphics.o display.o functions.o get.o
-@@ -208,11 +207,10 @@
+@@ -208,19 +207,16 @@
  		$(CC) -o sv_calctool $(CFLAGS) $(STDOBJS) sunview.o $(SVIEWLIBS)
  		-cp sv_calctool calctool
  
@@ -91,8 +91,17 @@
 +xcalctool:      $(OBJS) x11.o
  		$(CC) -o xcalctool $(X11LIBDIR) $(CFLAGS) $(STDOBJS) x11.o \
  				$(X11LIBS)
- 		-cp xcalctool calctool
-@@ -229,8 +227,9 @@
+-		-cp xcalctool calctool
+ 
+-xview:          $(OBJS) xview.o
++xv_calctool:    $(OBJS) xview.o
+ 		$(CC) -o xv_calctool $(XVIEWLIBDIR) $(CFLAGS) $(STDOBJS) \
+ 				xview.o $(XVIEWLIBS)
+-		-cp xv_calctool calctool
+ 
+ libcalctool.a:  $(LIBOBJS)
+ 		ar rv $@ $?
+@@ -229,8 +225,9 @@
  #  These are the library creation rules for making the shared calctool
  #  library (available with SunOS v4.x).
   
