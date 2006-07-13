@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libvorbis
-DISTVERSION=	1.1.0-1
-PORTREVISION=	2
+DISTVERSION=	1.1.0-2
 CATEGORIES=	audio linux
 
 MAINTAINER=	jylefort@FreeBSD.org
@@ -17,7 +16,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libogg.so.0:${PORTSDIR}/audio/linux-libogg
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-LINUX_DIST_VER=	3
+LINUX_DIST_VER=	4
 INSTALLS_SHLIB=	yes
 AUTOMATIC_PLIST=yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
