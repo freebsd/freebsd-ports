@@ -15,7 +15,8 @@ COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		tunepimp:${PORTSDIR}/audio/libtunepimp \
-		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
+		xine.15:${PORTSDIR}/multimedia/libxine
 
 MIN_OPTIONS_VER=	${PORTNAME}-1.4.0a
 
@@ -27,8 +28,7 @@ USE_SDL=	sdl
 USE_RUBY=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 
-OPTIONS=	XINE "Xine playback engine" on \
-		GPOD "iPod support" on \
+OPTIONS=	GPOD "iPod support" on \
 		XMMS "XMMS visualizations" off \
 		LIBVISUAL "libvisual support" off \
 		OPENGL "OpenGL support" on \
@@ -41,14 +41,6 @@ OPTIONS=	XINE "Xine playback engine" on \
 CONFIGURE_ARGS+=--without-exscalibar \
 		--with-mp4v2 \
 		--with-mp4v2-dir=${PREFIX}
-
-.if !defined(WITH_XINE)
-CONFIGURE_ARGS+=--without-xine
-PLIST_SUB+=	XINE="@comment "
-.else
-LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
-PLIST_SUB+=	XINE=""
-.endif
 
 .if !defined(WITH_GPOD)
 PLIST_SUB+=	GPOD="@comment "
