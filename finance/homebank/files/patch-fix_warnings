@@ -1,0 +1,22 @@
+--- src/rep_budget.c.orig	Mon Jun 26 13:12:20 2006
++++ src/rep_budget.c	Mon Jun 26 13:13:25 2006
+@@ -989,7 +989,7 @@
+ 	data->GR_detail = widget;
+ 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (widget), GTK_SHADOW_ETCHED_IN);
+ 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (widget), GTK_POLICY_NEVER, GTK_POLICY_ALWAYS);
+-	treeview = create_list_operation();
++	treeview = (GtkWidget *)create_list_operation();
+ 	data->LV_detail = treeview;
+ 	gtk_container_add (GTK_CONTAINER(widget), treeview);
+ 
+--- src/rep_stats.c.orig	Mon Jun 26 13:12:33 2006
++++ src/rep_stats.c	Mon Jun 26 13:13:43 2006
+@@ -1289,7 +1289,7 @@
+ 	//gtk_scrolled_window_set_placement(GTK_SCROLLED_WINDOW (widget), GTK_CORNER_TOP_RIGHT);
+ 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (widget), GTK_SHADOW_ETCHED_IN);
+ 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (widget), GTK_POLICY_NEVER, GTK_POLICY_ALWAYS);
+-	treeview = create_list_operation();
++	treeview = (GtkWidget *)create_list_operation();
+ 	data->LV_detail = treeview;
+ 	gtk_container_add (GTK_CONTAINER(widget), treeview);
+ 

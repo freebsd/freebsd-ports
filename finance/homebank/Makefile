@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homebank
-DISTVERSION=	3.2alpha1
-PORTREVISION=	1
+DISTVERSION=	3.2alpha2
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -26,6 +25,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 DOCS=		AUTHORS COPYING ChangeLog LICENSE NEWS README
 
+post-extract:
+	@${RM} -rf ${WRKSRC}/autom4te.cache ${WRKSRC}/po/*.gmo
+
 .ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
@@ -33,9 +35,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
-post-patch:
-	${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/images/|(datadir)/pixmaps/|g'
 
 .include <bsd.port.mk>
