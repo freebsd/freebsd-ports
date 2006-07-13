@@ -18,7 +18,6 @@ COMMENT=	2D horizontal scroll shooting game
 BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/devel/kxl
 RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/devel/kxl
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
