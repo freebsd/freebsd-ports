@@ -1,52 +1,3 @@
-Index: work/config_office/configure.in
-===================================================================
-RCS file: /cvs/tools/config_office/configure.in,v
-retrieving revision 1.168
-diff -u -r1.168 configure.in
---- config_office/configure.in	5 Jul 2006 22:32:27 -0000	1.168
-+++ config_office/configure.in	8 Jul 2006 05:14:53 -0000
-@@ -1059,14 +1059,14 @@
- dnl ===================================================================
- dnl Check whether the chosen shell can be used.
- dnl ===================================================================
--if test "$with_use_shell" == "tcsh"; then
-+if test "$with_use_shell" = "tcsh"; then
-    AC_PATH_PROG(SHELLPATH, tcsh)
-    if test -z "$SHELLPATH"; then
-       AC_MSG_ERROR([tcsh not found in \$PATH])
-    else
-       SHELLPATH=`echo $SHELLPATH | $SED -n "s/\/tcsh//p"`
-    fi
--elif test "$with_use_shell" == "bash"; then
-+elif test "$with_use_shell" = "bash"; then
-    AC_PATH_PROG(SHELLPATH, bash)
-    if test -z "$SHELLPATH"; then
-       AC_MSG_ERROR([bash not found in \$PATH])
-Index: work/config_office/configure
-===================================================================
-RCS file: /cvs/tools/config_office/configure,v
-retrieving revision 1.153
-diff -u -r1.153 configure
---- config_office/configure	6 Jul 2006 08:51:06 -0000	1.153
-+++ config_office/configure	8 Jul 2006 05:15:35 -0000
-@@ -3150,7 +3183,7 @@
- 
- 
- 
--if test "$with_use_shell" == "tcsh"; then
-+if test "$with_use_shell" = "tcsh"; then
-    # Extract the first word of "tcsh", so it can be a program name with args.
- set dummy tcsh; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
-@@ -3197,7 +3230,7 @@
-    else
-       SHELLPATH=`echo $SHELLPATH | $SED -n "s/\/tcsh//p"`
-    fi
--elif test "$with_use_shell" == "bash"; then
-+elif test "$with_use_shell" = "bash"; then
-    # Extract the first word of "bash", so it can be a program name with args.
- set dummy bash; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
 Index: config_office/set_soenv.in
 ===================================================================
 RCS file: /cvs/tools/config_office/set_soenv.in,v
@@ -63,3 +14,52 @@ diff -u -r1.107 set_soenv.in
  close( OUT ) || print "Can't close $bootfile: $!";
  system(`cat bootstrap.1 >> bootstrap`);
  system(`chmod +x bootstrap`);
+Index: config_office/configure
+===================================================================
+RCS file: /cvs/tools/config_office/configure,v
+retrieving revision 1.154
+diff -u -r1.154 configure
+--- config_office/configure	10 Jul 2006 19:05:10 -0000	1.154
++++ config_office/configure	13 Jul 2006 11:32:02 -0000
+@@ -3183,7 +3183,7 @@
+ 
+ 
+ 
+-if test "$with_use_shell" == "tcsh"; then
++if test "$with_use_shell" = "tcsh"; then
+    # Extract the first word of "tcsh", so it can be a program name with args.
+ set dummy tcsh; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -3230,7 +3230,7 @@
+    else
+       SHELLPATH=`echo $SHELLPATH | $SED -n "s/\/tcsh$//p"`
+    fi
+-elif test "$with_use_shell" == "bash"; then
++elif test "$with_use_shell" = "bash"; then
+    # Extract the first word of "bash", so it can be a program name with args.
+ set dummy bash; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+Index: config_office/configure.in
+===================================================================
+RCS file: /cvs/tools/config_office/configure.in,v
+retrieving revision 1.169
+diff -u -r1.169 configure.in
+--- config_office/configure.in	10 Jul 2006 19:00:12 -0000	1.169
++++ config_office/configure.in	13 Jul 2006 11:32:04 -0000
+@@ -1059,14 +1059,14 @@
+ dnl ===================================================================
+ dnl Check whether the chosen shell can be used.
+ dnl ===================================================================
+-if test "$with_use_shell" == "tcsh"; then
++if test "$with_use_shell" = "tcsh"; then
+    AC_PATH_PROG(SHELLPATH, tcsh)
+    if test -z "$SHELLPATH"; then
+       AC_MSG_ERROR([tcsh not found in \$PATH])
+    else
+       SHELLPATH=`echo $SHELLPATH | $SED -n "s/\/tcsh$//p"`
+    fi
+-elif test "$with_use_shell" == "bash"; then
++elif test "$with_use_shell" = "bash"; then
+    AC_PATH_PROG(SHELLPATH, bash)
+    if test -z "$SHELLPATH"; then
+       AC_MSG_ERROR([bash not found in \$PATH])
