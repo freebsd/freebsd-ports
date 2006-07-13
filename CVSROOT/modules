@@ -13575,6 +13575,7 @@ tr-ircd		ports/irc/tr-ircd
 tr2latex	ports/print/tr2latex
 trac		ports/www/trac
 trac-accountmanager	ports/www/trac-accountmanager
+trac-gantt	ports/www/trac-gantt
 trac-webadmin	ports/www/trac-webadmin
 trackballs	ports/games/trackballs
 tracker		ports/audio/tracker
