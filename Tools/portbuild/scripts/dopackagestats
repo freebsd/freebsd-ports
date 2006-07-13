@@ -9,7 +9,7 @@
 SUPPORTED_ARCHS="amd64 i386 ia64 sparc64"
 ROOT_DIRECTORY=/var/portbuild
 
-OUTFILE=packagestats.html
+OUTFILE=`basename $0 | sed -e "s/^do//"`".html"
 TMPFILE=.${OUTFILE}
 
 # stylesheet seems like overkill for something this simple
@@ -35,7 +35,8 @@ write_table_begin () {
   echo "<table border='1' cellpadding='4' cellspacing='1' bgcolor='$TABLEBGCOLOR'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
   echo "<td align='left' width='80' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
-  echo "<th width='60' bgcolor='$THCOLOR'>as of</th>" >> ${TMPFILE}
+  echo "<th width='60' bgcolor='$THCOLOR'>cvs date</th>" >> ${TMPFILE}
+  echo "<th width='60' bgcolor='$THCOLOR'>latest log</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>INDEX</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>packages</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>errors</th>" >> ${TMPFILE}
@@ -56,6 +57,15 @@ write_row () {
       indexfile=$directory/ports/INDEX
     else
       indexfile=$directory/ports/INDEX-$branch
+    fi
+
+    # column: date of CVS checkout
+    cvsdone="&nbsp;"
+    if [ -f $directory/cvsdone ]; then
+      cvsdone="$(cat $directory/cvsdone | awk '{printf("%s %s\n",$2,$3)}')"
+      if [ -z "$cvsdone" ]; then
+        cvsdone="&nbsp;"
+      fi
     fi
 
     # column: datestamp of latest log
@@ -121,6 +131,7 @@ write_row () {
     # now write the row
     echo "<tr>" >> ${TMPFILE}
     echo "<th align='left' bgcolor='$THCOLOR'>$arch-$build</th>" >> ${TMPFILE}
+    echo "<td align='left' bgcolor='$cellcolor'>$cvsdone</td>" >> ${TMPFILE}
     echo "<td align='left' bgcolor='$cellcolor'>$latest</td>" >> ${TMPFILE}
     echo "<td align='right' bgcolor='$cellcolor'>$n_index</td>" >> ${TMPFILE}
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
@@ -143,13 +154,19 @@ write_table_end () {
 write_footer () {
   echo "<p>explanation of columns:</p>" >> ${TMPFILE}
   echo "<ul>" >> ${TMPFILE}
-  echo "<li><b>as of</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
+  echo "<li><b>latest log</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
+  echo "<li><b>cvs date</b> is the date of the latest CVS checkout done by the script.  It may be inaccurate if a manual checkout was done later.</li>" >> ${TMPFILE}
   echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
   echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
   echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
   echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
   echo "<li><b>missing</b> is the INDEX column minus the others.  These are packages that have not been built for one reason or another.</li>" >> ${TMPFILE}
   echo "<li><b>done</b> is whether that run terminated normally or not.</li>" >> ${TMPFILE}
+  echo "</ul>" >> ${TMPFILE}
+
+  echo "<p>notes:</p>" >> ${TMPFILE}
+  echo "<ul>" >> ${TMPFILE}
+  echo "<li>on the -exp builds, editors/openoffice.org* are skipped to save time.</li>" >> ${TMPFILE}
   echo "</ul>" >> ${TMPFILE}
 
   echo "</body>" >> ${TMPFILE}
