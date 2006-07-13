@@ -60,6 +60,29 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/functions_eval.html
 %%DOCSDIR%%/reference/html/functions_func.html
 %%DOCSDIR%%/reference/html/functions_vars.html
+%%DOCSDIR%%/reference/html/functions_vars_0x61.html
+%%DOCSDIR%%/reference/html/functions_vars_0x62.html
+%%DOCSDIR%%/reference/html/functions_vars_0x63.html
+%%DOCSDIR%%/reference/html/functions_vars_0x64.html
+%%DOCSDIR%%/reference/html/functions_vars_0x65.html
+%%DOCSDIR%%/reference/html/functions_vars_0x66.html
+%%DOCSDIR%%/reference/html/functions_vars_0x67.html
+%%DOCSDIR%%/reference/html/functions_vars_0x68.html
+%%DOCSDIR%%/reference/html/functions_vars_0x69.html
+%%DOCSDIR%%/reference/html/functions_vars_0x6c.html
+%%DOCSDIR%%/reference/html/functions_vars_0x6d.html
+%%DOCSDIR%%/reference/html/functions_vars_0x6e.html
+%%DOCSDIR%%/reference/html/functions_vars_0x70.html
+%%DOCSDIR%%/reference/html/functions_vars_0x71.html
+%%DOCSDIR%%/reference/html/functions_vars_0x72.html
+%%DOCSDIR%%/reference/html/functions_vars_0x73.html
+%%DOCSDIR%%/reference/html/functions_vars_0x74.html
+%%DOCSDIR%%/reference/html/functions_vars_0x75.html
+%%DOCSDIR%%/reference/html/functions_vars_0x76.html
+%%DOCSDIR%%/reference/html/functions_vars_0x77.html
+%%DOCSDIR%%/reference/html/functions_vars_0x78.html
+%%DOCSDIR%%/reference/html/functions_vars_0x79.html
+%%DOCSDIR%%/reference/html/functions_vars_0x7a.html
 %%DOCSDIR%%/reference/html/globals.html
 %%DOCSDIR%%/reference/html/globals_0x61.html
 %%DOCSDIR%%/reference/html/globals_0x62.html
@@ -194,6 +217,7 @@ share/locale/az/LC_MESSAGES/gnome-mag.mo
 share/locale/be/LC_MESSAGES/gnome-mag.mo
 share/locale/bg/LC_MESSAGES/gnome-mag.mo
 share/locale/bn/LC_MESSAGES/gnome-mag.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-mag.mo
 share/locale/br/LC_MESSAGES/gnome-mag.mo
 share/locale/bs/LC_MESSAGES/gnome-mag.mo
 share/locale/ca/LC_MESSAGES/gnome-mag.mo
@@ -205,6 +229,7 @@ share/locale/dz/LC_MESSAGES/gnome-mag.mo
 share/locale/el/LC_MESSAGES/gnome-mag.mo
 share/locale/en_CA/LC_MESSAGES/gnome-mag.mo
 share/locale/en_GB/LC_MESSAGES/gnome-mag.mo
+share/locale/eo/LC_MESSAGES/gnome-mag.mo
 share/locale/es/LC_MESSAGES/gnome-mag.mo
 share/locale/et/LC_MESSAGES/gnome-mag.mo
 share/locale/eu/LC_MESSAGES/gnome-mag.mo
@@ -230,6 +255,7 @@ share/locale/lt/LC_MESSAGES/gnome-mag.mo
 share/locale/lv/LC_MESSAGES/gnome-mag.mo
 share/locale/mi/LC_MESSAGES/gnome-mag.mo
 share/locale/mn/LC_MESSAGES/gnome-mag.mo
+share/locale/mr/LC_MESSAGES/gnome-mag.mo
 share/locale/ms/LC_MESSAGES/gnome-mag.mo
 share/locale/nb/LC_MESSAGES/gnome-mag.mo
 share/locale/ne/LC_MESSAGES/gnome-mag.mo
@@ -257,7 +283,10 @@ share/locale/ug/LC_MESSAGES/gnome-mag.mo
 share/locale/uk/LC_MESSAGES/gnome-mag.mo
 share/locale/vi/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mag.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/ky/LC_MESSAGES
@@ -266,6 +295,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
 @dirrm share/gnome/idl/gnome-mag-1.0
