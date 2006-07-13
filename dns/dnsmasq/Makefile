@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.26
-PORTREVISION=	1
+PORTVERSION=	2.32
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
 
 MAN8=		dnsmasq.8
 
-docs=		FAQ DBus-interface UPGRADING_to_2.0 doc.html setup.html
+docs=		CHANGELOG FAQ UPGRADING_to_2.0 doc.html setup.html
 PORTDOCS=	${docs:T}
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
@@ -36,7 +35,7 @@ CFLAGS+=	-DNO_IPV6
 
 .if defined(WITH_DBUS)
 LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
-CFLAGS+=	-DWITH_DBUS
+CFLAGS+=	-DHAVE_DBUS
 .endif
 
 .if ${OSVERSION} < 500037
