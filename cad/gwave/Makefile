@@ -6,30 +6,63 @@
 #
 
 PORTNAME=	gwave
-PORTVERSION=	20030804
-PORTREVISION=	3
+PORTVERSION=	20051222
 CATEGORIES=	cad
 MASTER_SITES=	http://www.cs.unc.edu/~tell/dist/ \
 		http://geda.seul.org/dist/
 
-MAINTAINER=	dmlb@dmlb.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Waveform viewer for analogue electronic simulation tools
 
-RUN_DEPENDS=	graph:${PORTSDIR}/graphics/plotutils
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
-USE_AUTOTOOLS=	autoconf:253
 USE_GNOME=	gtk12
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+OPTIONS=	PLOTUTILS "Use GNU plotutils for plotting" off \
+		GNUPLOT "Use gnuplot for plotting" on \
+		EXAMPLES "Install example spice files" off
+
+DOCFILES=	Guile.notes \
+		gwave-concepts.txt \
+		gwave-hooks.txt \
+		gwave-procedures.txt \
+		gwave-variables.txt \
+		hspice-output.txt \
+		hspice.txt \
+		spice3.txt
 
 MAN1=		sp2sp.1
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.if defined(WITH_PLOTUTILS)
+RUN_DEPENDS+=	graph:${PORTSDIR}/graphics/plotutils
+.endif
+
+.if !defined(WITHOUT_GNUPLOT)
+RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+.endfor
+.endif
+
+.if defined(WITH_EXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+PLIST_SUB+=	EXAMPLES=""
+.else
+PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
 .include <bsd.port.post.mk>
