@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.6.6
+PORTVERSION=	4.6.8
 PORTREVISION=	2006031700
 CATEGORIES=	www
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=   http://ftp.osuosl.org/pub/drupal/files/projects/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=     brooks
 DIST_SUBDIR=    drupal
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CMS that supports pgsql and mysql
-
-FORBIDDEN=	SQL injection and remote execution vulnerabilities
 
 DRUPAL_PORT=	yes
 
