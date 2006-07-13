@@ -10072,6 +10072,7 @@ p5-postgresql-plperl	ports/databases/p5-postgresql-plperl
 p5-prefork	ports/devel/p5-prefork
 p5-qdbm		ports/databases/p5-qdbm
 p5-qt		ports/x11-toolkits/p5-qt
+p5-rpm-build-perl	ports/devel/p5-rpm-build-perl
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-tagged	ports/audio/p5-tagged
 p5-type1inst	ports/x11-fonts/p5-type1inst
