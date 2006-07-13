@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scal
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	DEFINE="-DHAS_GETCWD"
 
 MAN3=		Cwd.3 File::Spec.3 File::Spec::Cygwin.3 File::Spec::Epoc.3 \
 		File::Spec::Functions.3 File::Spec::Mac.3 File::Spec::OS2.3 \
