@@ -100,7 +100,9 @@
 %%NAGDIR%%/scripts/sql/nag.mssql.sql
 %%NAGDIR%%/scripts/sql/nag.oci8.sql
 %%NAGDIR%%/scripts/sql/nag.sql
+%%NAGDIR%%/scripts/sql/nag.xml
 %%NAGDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
+%%NAGDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
 %%NAGDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
 %%NAGDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
 %%NAGDIR%%/search.php
