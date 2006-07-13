@@ -12059,6 +12059,7 @@ rt3		ports/www/rt3
 rt3-elixus	ports/www/rt3-elixus
 rt32		ports/www/rt32
 rt34		ports/www/rt34
+rt36		ports/www/rt36
 rtb		ports/games/rtb
 rtc		ports/emulators/rtc
 rtcw		ports/games/rtcw

@@ -115,21 +115,23 @@
 %%RTPLIST%%/lib/RT/Interface/REST.pm
 %%RTPLIST%%/lib/RT/Interface/Web.pm
 %%RTPLIST%%/lib/RT/Interface/Web/Handler.pm
-%%RTPLIST%%/lib/RT/Interface/Web/Standalone.pm
+%%RTPLIST%%/lib/RT/Interface/Web/Menu.pm
+%%RTPLIST%%/lib/RT/Interface/Web/Menu/Item.pm
 %%RTPLIST%%/lib/RT/Interface/Web/QueryBuilder.pm
 %%RTPLIST%%/lib/RT/Interface/Web/QueryBuilder/Tree.pm
+%%RTPLIST%%/lib/RT/Interface/Web/Standalone.pm
 %%RTPLIST%%/lib/RT/Link.pm
 %%RTPLIST%%/lib/RT/Link_Overlay.pm
 %%RTPLIST%%/lib/RT/Links.pm
 %%RTPLIST%%/lib/RT/Links_Overlay.pm
+%%RTPLIST%%/lib/RT/ObjectCustomField.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValue.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValue_Overlay.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValues.pm
+%%RTPLIST%%/lib/RT/ObjectCustomFieldValues_Overlay.pm
+%%RTPLIST%%/lib/RT/ObjectCustomField_Overlay.pm
 %%RTPLIST%%/lib/RT/ObjectCustomFields.pm
 %%RTPLIST%%/lib/RT/ObjectCustomFields_Overlay.pm
-%%RTPLIST%%/lib/RT/ObjectCustomField.pm
-%%RTPLIST%%/lib/RT/ObjectCustomFieldValues.pm
-%%RTPLIST%%/lib/RT/ObjectCustomFieldValue.pm
-%%RTPLIST%%/lib/RT/ObjectCustomField_Overlay.pm
-%%RTPLIST%%/lib/RT/ObjectCustomFieldValues_Overlay.pm
-%%RTPLIST%%/lib/RT/ObjectCustomFieldValue_Overlay.pm
 %%RTPLIST%%/lib/RT/Principal.pm
 %%RTPLIST%%/lib/RT/Principal_Overlay.pm
 %%RTPLIST%%/lib/RT/Principals.pm
@@ -139,6 +141,9 @@
 %%RTPLIST%%/lib/RT/Queues.pm
 %%RTPLIST%%/lib/RT/Queues_Overlay.pm
 %%RTPLIST%%/lib/RT/Record.pm
+%%RTPLIST%%/lib/RT/Reminders.pm
+%%RTPLIST%%/lib/RT/Report/Tickets.pm
+%%RTPLIST%%/lib/RT/Report/Tickets/Entry.pm
 %%RTPLIST%%/lib/RT/SavedSearch.pm
 %%RTPLIST%%/lib/RT/SavedSearches.pm
 %%RTPLIST%%/lib/RT/Scrip.pm
@@ -156,6 +161,7 @@
 %%RTPLIST%%/lib/RT/Search/ActiveTicketsInQueue.pm
 %%RTPLIST%%/lib/RT/Search/FromSQL.pm
 %%RTPLIST%%/lib/RT/Search/Generic.pm
+%%RTPLIST%%/lib/RT/Search/Googleish.pm
 %%RTPLIST%%/lib/RT/SearchBuilder.pm
 %%RTPLIST%%/lib/RT/StyleGuide.pod
 %%RTPLIST%%/lib/RT/System.pm
@@ -181,6 +187,7 @@
 %%RTPLIST%%/lib/RT/Users.pm
 %%RTPLIST%%/lib/RT/Users_Overlay.pm
 %%RTPLIST%%/lib/t/00smoke.t
+%%RTPLIST%%/lib/t/create_data.pl
 %%RTPLIST%%/lib/t/data/8859-15-message-series/dir
 %%RTPLIST%%/lib/t/data/8859-15-message-series/msg1
 %%RTPLIST%%/lib/t/data/8859-15-message-series/msg2
@@ -217,22 +224,37 @@
 %%RTPLIST%%/lib/t/regression/13-attribute-tests.t
 %%RTPLIST%%/lib/t/regression/14linking.t
 %%RTPLIST%%/lib/t/regression/14merge.t
+%%RTPLIST%%/lib/t/regression/15cf_combo_cascade.t
+%%RTPLIST%%/lib/t/regression/15cf_pattern.t
 %%RTPLIST%%/lib/t/regression/15cf_single_values_are_single.t
 %%RTPLIST%%/lib/t/regression/16-transaction_cf_tests.t
+%%RTPLIST%%/lib/t/regression/17custom_search.t
 %%RTPLIST%%/lib/t/regression/17multiple_deleg_revocation.t
+%%RTPLIST%%/lib/t/regression/18custom_frontpage.t
 %%RTPLIST%%/lib/t/regression/18stale_delegations_cleanup.t
 %%RTPLIST%%/lib/t/regression/19-rtname.t
+%%RTPLIST%%/lib/t/regression/19quicksearch.t
+%%RTPLIST%%/lib/t/regression/20-sort-by-requestor.t
 %%RTPLIST%%/lib/t/regression/20savedsearch.t
 %%RTPLIST%%/lib/t/regression/21query-builder.t
 %%RTPLIST%%/lib/t/regression/22search_tix_by_txn.t
 %%RTPLIST%%/lib/t/regression/22search_tix_by_watcher.t
+%%RTPLIST%%/lib/t/regression/23-batch-upload-csv.t
+%%RTPLIST%%/lib/t/regression/23cfsort.t
+%%RTPLIST%%/lib/t/regression/24pawsort.t
+%%RTPLIST%%/lib/t/regression/25scrip_order.t
+%%RTPLIST%%/lib/t/regression/26command_line.t
 %%RTPLIST%%/lib/t/regression/mime_tests
 %%RTPLIST%%/lib/t/setup_regression.t
-%%RTPLIST%%/lib/t/create_data.pl
+%%RTPLIST%%/sbin/rt-dump-database
 %%RTPLIST%%/sbin/rt-setup-database
 %%RTPLIST%%/sbin/rt-test-dependencies
-%%RTPLIST%%/sbin/rt-dump-database
 %%RTPLIST%%/share/doc/README
+%%RTPLIST%%/share/html/Admin/CustomFields/GroupRights.html
+%%RTPLIST%%/share/html/Admin/CustomFields/Modify.html
+%%RTPLIST%%/share/html/Admin/CustomFields/Objects.html
+%%RTPLIST%%/share/html/Admin/CustomFields/UserRights.html
+%%RTPLIST%%/share/html/Admin/CustomFields/index.html
 %%RTPLIST%%/share/html/Admin/Elements/AddCustomFieldValue
 %%RTPLIST%%/share/html/Admin/Elements/CreateUserCalled
 %%RTPLIST%%/share/html/Admin/Elements/CustomFieldTabs
@@ -251,8 +273,8 @@
 %%RTPLIST%%/share/html/Admin/Elements/ListGlobalScrips
 %%RTPLIST%%/share/html/Admin/Elements/ModifyTemplate
 %%RTPLIST%%/share/html/Admin/Elements/ObjectCustomFields
-%%RTPLIST%%/share/html/Admin/Elements/PickObjects
 %%RTPLIST%%/share/html/Admin/Elements/PickCustomFields
+%%RTPLIST%%/share/html/Admin/Elements/PickObjects
 %%RTPLIST%%/share/html/Admin/Elements/QueueRightsForUser
 %%RTPLIST%%/share/html/Admin/Elements/QueueTabs
 %%RTPLIST%%/share/html/Admin/Elements/SelectCustomFieldLookupType
@@ -274,6 +296,11 @@
 %%RTPLIST%%/share/html/Admin/Elements/Tabs
 %%RTPLIST%%/share/html/Admin/Elements/ToolTabs
 %%RTPLIST%%/share/html/Admin/Elements/UserTabs
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Groups.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Queue-Tickets.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Queue-Transactions.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/Users.html
+%%RTPLIST%%/share/html/Admin/Global/CustomFields/index.html
 %%RTPLIST%%/share/html/Admin/Global/GroupRights.html
 %%RTPLIST%%/share/html/Admin/Global/Scrip.html
 %%RTPLIST%%/share/html/Admin/Global/Scrips.html
@@ -281,16 +308,6 @@
 %%RTPLIST%%/share/html/Admin/Global/Templates.html
 %%RTPLIST%%/share/html/Admin/Global/UserRights.html
 %%RTPLIST%%/share/html/Admin/Global/index.html
-%%RTPLIST%%/share/html/Admin/Global/CustomFields/Groups.html
-%%RTPLIST%%/share/html/Admin/Global/CustomFields/Users.html
-%%RTPLIST%%/share/html/Admin/Global/CustomFields/index.html
-%%RTPLIST%%/share/html/Admin/Global/CustomFields/Queue-Transactions.html
-%%RTPLIST%%/share/html/Admin/Global/CustomFields/Queue-Tickets.html
-%%RTPLIST%%/share/html/Admin/CustomFields/GroupRights.html
-%%RTPLIST%%/share/html/Admin/CustomFields/UserRights.html
-%%RTPLIST%%/share/html/Admin/CustomFields/Modify.html
-%%RTPLIST%%/share/html/Admin/CustomFields/index.html
-%%RTPLIST%%/share/html/Admin/CustomFields/Objects.html
 %%RTPLIST%%/share/html/Admin/Groups/CustomFields.html
 %%RTPLIST%%/share/html/Admin/Groups/GroupRights.html
 %%RTPLIST%%/share/html/Admin/Groups/History.html
@@ -298,11 +315,6 @@
 %%RTPLIST%%/share/html/Admin/Groups/Modify.html
 %%RTPLIST%%/share/html/Admin/Groups/UserRights.html
 %%RTPLIST%%/share/html/Admin/Groups/index.html
-%%RTPLIST%%/share/html/Admin/Users/CustomFields.html
-%%RTPLIST%%/share/html/Admin/Users/Memberships.html
-%%RTPLIST%%/share/html/Admin/Users/Modify.html
-%%RTPLIST%%/share/html/Admin/Users/History.html
-%%RTPLIST%%/share/html/Admin/Users/index.html
 %%RTPLIST%%/share/html/Admin/Queues/CustomField.html
 %%RTPLIST%%/share/html/Admin/Queues/CustomFields.html
 %%RTPLIST%%/share/html/Admin/Queues/GroupRights.html
@@ -316,6 +328,11 @@
 %%RTPLIST%%/share/html/Admin/Queues/index.html
 %%RTPLIST%%/share/html/Admin/Tools/Configuration.html
 %%RTPLIST%%/share/html/Admin/Tools/index.html
+%%RTPLIST%%/share/html/Admin/Users/CustomFields.html
+%%RTPLIST%%/share/html/Admin/Users/History.html
+%%RTPLIST%%/share/html/Admin/Users/Memberships.html
+%%RTPLIST%%/share/html/Admin/Users/Modify.html
+%%RTPLIST%%/share/html/Admin/Users/index.html
 %%RTPLIST%%/share/html/Admin/autohandler
 %%RTPLIST%%/share/html/Admin/index.html
 %%RTPLIST%%/share/html/Approvals/Display.html
@@ -324,40 +341,48 @@
 %%RTPLIST%%/share/html/Approvals/Elements/ShowDependency
 %%RTPLIST%%/share/html/Approvals/Elements/Tabs
 %%RTPLIST%%/share/html/Approvals/index.html
-%%RTPLIST%%/share/html/Download/Tabular/dhandler
 %%RTPLIST%%/share/html/Download/CustomFieldValue/dhandler
+%%RTPLIST%%/share/html/Download/Tabular/dhandler
 %%RTPLIST%%/share/html/Elements/BevelBoxRaisedEnd
 %%RTPLIST%%/share/html/Elements/BevelBoxRaisedStart
 %%RTPLIST%%/share/html/Elements/Callback
 %%RTPLIST%%/share/html/Elements/Checkbox
+%%RTPLIST%%/share/html/Elements/CollectionAsTable/Header
 %%RTPLIST%%/share/html/Elements/CollectionAsTable/ParseFormat
 %%RTPLIST%%/share/html/Elements/CollectionAsTable/Row
-%%RTPLIST%%/share/html/Elements/CollectionAsTable/Header
 %%RTPLIST%%/share/html/Elements/CreateTicket
-%%RTPLIST%%/share/html/Elements/EditLinks
 %%RTPLIST%%/share/html/Elements/EditCustomField
+%%RTPLIST%%/share/html/Elements/EditCustomFieldBinary
+%%RTPLIST%%/share/html/Elements/EditCustomFieldCombobox
+%%RTPLIST%%/share/html/Elements/EditCustomFieldFreeform
 %%RTPLIST%%/share/html/Elements/EditCustomFieldImage
 %%RTPLIST%%/share/html/Elements/EditCustomFieldSelect
-%%RTPLIST%%/share/html/Elements/EditCustomFieldBinary
-%%RTPLIST%%/share/html/Elements/EditCustomFieldFreeform
 %%RTPLIST%%/share/html/Elements/EditCustomFieldText
 %%RTPLIST%%/share/html/Elements/EditCustomFieldWikitext
+%%RTPLIST%%/share/html/Elements/EditLinks
 %%RTPLIST%%/share/html/Elements/Error
 %%RTPLIST%%/share/html/Elements/Footer
 %%RTPLIST%%/share/html/Elements/GotoTicket
 %%RTPLIST%%/share/html/Elements/Header
 %%RTPLIST%%/share/html/Elements/ListActions
 %%RTPLIST%%/share/html/Elements/Login
+%%RTPLIST%%/share/html/Elements/Logo
 %%RTPLIST%%/share/html/Elements/Menu
 %%RTPLIST%%/share/html/Elements/MessageBox
+%%RTPLIST%%/share/html/Elements/MyAdminQueues
+%%RTPLIST%%/share/html/Elements/MyRT
+%%RTPLIST%%/share/html/Elements/MyReminders
 %%RTPLIST%%/share/html/Elements/MyRequests
+%%RTPLIST%%/share/html/Elements/MySupportQueues
 %%RTPLIST%%/share/html/Elements/MyTickets
 %%RTPLIST%%/share/html/Elements/PageLayout
 %%RTPLIST%%/share/html/Elements/QueryString
+%%RTPLIST%%/share/html/Elements/QueueSummary
 %%RTPLIST%%/share/html/Elements/QuickCreate
 %%RTPLIST%%/share/html/Elements/Quicksearch
 %%RTPLIST%%/share/html/Elements/RT__Ticket/ColumnMap
 %%RTPLIST%%/share/html/Elements/Refresh
+%%RTPLIST%%/share/html/Elements/RefreshHomepage
 %%RTPLIST%%/share/html/Elements/ScrubHTML
 %%RTPLIST%%/share/html/Elements/Section
 %%RTPLIST%%/share/html/Elements/SelectAttachmentField
@@ -380,16 +405,18 @@
 %%RTPLIST%%/share/html/Elements/SelectStatus
 %%RTPLIST%%/share/html/Elements/SelectTicketSortBy
 %%RTPLIST%%/share/html/Elements/SelectTicketTypes
+%%RTPLIST%%/share/html/Elements/SelectTimeUnits
 %%RTPLIST%%/share/html/Elements/SelectUsers
 %%RTPLIST%%/share/html/Elements/SelectWatcherType
 %%RTPLIST%%/share/html/Elements/SetupSessionCookie
-%%RTPLIST%%/share/html/Elements/ShowCustomFields
 %%RTPLIST%%/share/html/Elements/ShowCustomFieldBinary
 %%RTPLIST%%/share/html/Elements/ShowCustomFieldImage
 %%RTPLIST%%/share/html/Elements/ShowCustomFieldWikitext
+%%RTPLIST%%/share/html/Elements/ShowCustomFields
 %%RTPLIST%%/share/html/Elements/ShowLink
 %%RTPLIST%%/share/html/Elements/ShowLinks
 %%RTPLIST%%/share/html/Elements/ShowMemberships
+%%RTPLIST%%/share/html/Elements/ShowSearch
 %%RTPLIST%%/share/html/Elements/SimpleSearch
 %%RTPLIST%%/share/html/Elements/Submit
 %%RTPLIST%%/share/html/Elements/Tabs
@@ -397,20 +424,85 @@
 %%RTPLIST%%/share/html/Elements/TitleBox
 %%RTPLIST%%/share/html/Elements/TitleBoxEnd
 %%RTPLIST%%/share/html/Elements/TitleBoxStart
+%%RTPLIST%%/share/html/Elements/ValidateCustomFields
+%%RTPLIST%%/share/html/Helpers/CalPopup.html
 %%RTPLIST%%/share/html/NoAuth/Logout.html
 %%RTPLIST%%/share/html/NoAuth/Reminder.html
+%%RTPLIST%%/share/html/NoAuth/ahah.js
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/body.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/footer.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/forms.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/header.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/login.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/main.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/misc.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/nav.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/quickbar.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/ticket.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/titlebox.css
+%%RTPLIST%%/share/html/NoAuth/css/3.4-compat/transactions.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/approvals.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/body.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/footer.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/forms.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/header.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/login.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/logo.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/main.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/misc.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/nav.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/quickbar.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/ticket.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/titlebox.css
+%%RTPLIST%%/share/html/NoAuth/css/3.5-default/transactions.css
+%%RTPLIST%%/share/html/NoAuth/css/autohandler
+%%RTPLIST%%/share/html/NoAuth/css/print.css
 %%RTPLIST%%/share/html/NoAuth/images/autohandler
 %%RTPLIST%%/share/html/NoAuth/images/bplogo.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/cb-light.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/cb.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/cbr-b2g.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/cbr-b2lb.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/cbr-gray.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/cbr-trans.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/cbr.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/ct-light.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/ct.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/ctr-b2g.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/ctr-b2lb.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/ctr-gray.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/ctr-trans.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/ctr.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/dark-arrow-up.png
+%%RTPLIST%%/share/html/NoAuth/images/css/dark-arrow.png
+%%RTPLIST%%/share/html/NoAuth/images/css/light-arrow-up.png
+%%RTPLIST%%/share/html/NoAuth/images/css/light-arrow.png
+%%RTPLIST%%/share/html/NoAuth/images/css/rolldown-arrow.gif
+%%RTPLIST%%/share/html/NoAuth/images/css/rolldown-arrow.png
+%%RTPLIST%%/share/html/NoAuth/images/css/rollup-arrow.gif
 %%RTPLIST%%/share/html/NoAuth/images/favicon.png
-%%RTPLIST%%/share/html/NoAuth/images/space.gif
-%%RTPLIST%%/share/html/NoAuth/printrt.css
-%%RTPLIST%%/share/html/NoAuth/webrt.css
+%%RTPLIST%%/share/html/NoAuth/js/ahah.js
+%%RTPLIST%%/share/html/NoAuth/js/autohandler
+%%RTPLIST%%/share/html/NoAuth/js/cascaded.js
+%%RTPLIST%%/share/html/NoAuth/js/class.js
+%%RTPLIST%%/share/html/NoAuth/js/combobox.js
+%%RTPLIST%%/share/html/NoAuth/js/list.js
+%%RTPLIST%%/share/html/NoAuth/js/titlebox-state.js
+%%RTPLIST%%/share/html/NoAuth/js/util.js
+%%RTPLIST%%/share/html/Prefs/Elements/Tabs
+%%RTPLIST%%/share/html/Prefs/MyRT.html
+%%RTPLIST%%/share/html/Prefs/Quicksearch.html
+%%RTPLIST%%/share/html/Prefs/Search.html
+%%RTPLIST%%/share/html/Prefs/SearchOptions.html
 %%RTPLIST%%/share/html/REST/1.0/Forms/queue/default
 %%RTPLIST%%/share/html/REST/1.0/Forms/queue/ns
 %%RTPLIST%%/share/html/REST/1.0/Forms/ticket/attachments
+%%RTPLIST%%/share/html/REST/1.0/Forms/ticket/comment
 %%RTPLIST%%/share/html/REST/1.0/Forms/ticket/default
 %%RTPLIST%%/share/html/REST/1.0/Forms/ticket/history
 %%RTPLIST%%/share/html/REST/1.0/Forms/ticket/links
+%%RTPLIST%%/share/html/REST/1.0/Forms/ticket/merge
+%%RTPLIST%%/share/html/REST/1.0/Forms/ticket/take
 %%RTPLIST%%/share/html/REST/1.0/Forms/user/default
 %%RTPLIST%%/share/html/REST/1.0/Forms/user/ns
 %%RTPLIST%%/share/html/REST/1.0/NoAuth/mail-gateway
@@ -424,8 +516,11 @@
 %%RTPLIST%%/share/html/REST/1.0/ticket/merge
 %%RTPLIST%%/share/html/Search/Build.html
 %%RTPLIST%%/share/html/Search/Bulk.html
+%%RTPLIST%%/share/html/Search/Chart
+%%RTPLIST%%/share/html/Search/Chart.html
 %%RTPLIST%%/share/html/Search/Edit.html
 %%RTPLIST%%/share/html/Search/Elements/BuildFormatString
+%%RTPLIST%%/share/html/Search/Elements/Chart
 %%RTPLIST%%/share/html/Search/Elements/DisplayOptions
 %%RTPLIST%%/share/html/Search/Elements/EditFormat
 %%RTPLIST%%/share/html/Search/Elements/EditQuery
@@ -435,8 +530,11 @@
 %%RTPLIST%%/share/html/Search/Elements/PickCFs
 %%RTPLIST%%/share/html/Search/Elements/PickCriteria
 %%RTPLIST%%/share/html/Search/Elements/SearchPrivacy
+%%RTPLIST%%/share/html/Search/Elements/SearchesForObject
 %%RTPLIST%%/share/html/Search/Elements/SelectAndOr
+%%RTPLIST%%/share/html/Search/Elements/SelectChartType
 %%RTPLIST%%/share/html/Search/Elements/SelectGroup
+%%RTPLIST%%/share/html/Search/Elements/SelectGroupBy
 %%RTPLIST%%/share/html/Search/Elements/SelectLinks
 %%RTPLIST%%/share/html/Search/Elements/SelectPersonType
 %%RTPLIST%%/share/html/Search/Elements/SelectSearchObject
@@ -444,6 +542,7 @@
 %%RTPLIST%%/share/html/Search/Results.html
 %%RTPLIST%%/share/html/Search/Results.rdf
 %%RTPLIST%%/share/html/Search/Results.tsv
+%%RTPLIST%%/share/html/Search/Simple.html
 %%RTPLIST%%/share/html/SelfService/Attachment/dhandler
 %%RTPLIST%%/share/html/SelfService/Closed.html
 %%RTPLIST%%/share/html/SelfService/Create.html
@@ -471,6 +570,7 @@
 %%RTPLIST%%/share/html/Ticket/Elements/FindAttachments
 %%RTPLIST%%/share/html/Ticket/Elements/LoadTextAttachments
 %%RTPLIST%%/share/html/Ticket/Elements/PreviewScrips
+%%RTPLIST%%/share/html/Ticket/Elements/Reminders
 %%RTPLIST%%/share/html/Ticket/Elements/ShowAttachments
 %%RTPLIST%%/share/html/Ticket/Elements/ShowBasics
 %%RTPLIST%%/share/html/Ticket/Elements/ShowCustomFields
@@ -478,14 +578,13 @@
 %%RTPLIST%%/share/html/Ticket/Elements/ShowDependencies
 %%RTPLIST%%/share/html/Ticket/Elements/ShowGroupMembers
 %%RTPLIST%%/share/html/Ticket/Elements/ShowHistory
-%%RTPLIST%%/share/html/Ticket/Elements/ShowMemberOf
 %%RTPLIST%%/share/html/Ticket/Elements/ShowMembers
 %%RTPLIST%%/share/html/Ticket/Elements/ShowMessageHeaders
 %%RTPLIST%%/share/html/Ticket/Elements/ShowMessageStanza
 %%RTPLIST%%/share/html/Ticket/Elements/ShowPeople
-%%RTPLIST%%/share/html/Ticket/Elements/ShowReferences
 %%RTPLIST%%/share/html/Ticket/Elements/ShowRequestor
 %%RTPLIST%%/share/html/Ticket/Elements/ShowSummary
+%%RTPLIST%%/share/html/Ticket/Elements/ShowTime
 %%RTPLIST%%/share/html/Ticket/Elements/ShowTransaction
 %%RTPLIST%%/share/html/Ticket/Elements/ShowTransactionAttachments
 %%RTPLIST%%/share/html/Ticket/Elements/ShowUserEntry
@@ -496,11 +595,18 @@
 %%RTPLIST%%/share/html/Ticket/ModifyDates.html
 %%RTPLIST%%/share/html/Ticket/ModifyLinks.html
 %%RTPLIST%%/share/html/Ticket/ModifyPeople.html
+%%RTPLIST%%/share/html/Ticket/Reminders.html
 %%RTPLIST%%/share/html/Ticket/ShowEmailRecord.html
 %%RTPLIST%%/share/html/Ticket/Update.html
 %%RTPLIST%%/share/html/Tools/Elements/Tabs
 %%RTPLIST%%/share/html/Tools/MyDay.html
 %%RTPLIST%%/share/html/Tools/Offline.html
+%%RTPLIST%%/share/html/Tools/Reports/CreatedByDates.html
+%%RTPLIST%%/share/html/Tools/Reports/Elements/Tabs
+%%RTPLIST%%/share/html/Tools/Reports/ResolvedByDates.html
+%%RTPLIST%%/share/html/Tools/Reports/ResolvedByOwner.html
+%%RTPLIST%%/share/html/Tools/Reports/index.html
+%%RTPLIST%%/share/html/Tools/index.html
 %%RTPLIST%%/share/html/User/Delegation.html
 %%RTPLIST%%/share/html/User/Elements/DelegateRights
 %%RTPLIST%%/share/html/User/Elements/GroupTabs
@@ -509,13 +615,22 @@
 %%RTPLIST%%/share/html/User/Groups/Modify.html
 %%RTPLIST%%/share/html/User/Groups/index.html
 %%RTPLIST%%/share/html/User/Prefs.html
+%%RTPLIST%%/share/html/Widgets/ComboBox
+%%RTPLIST%%/share/html/Widgets/SelectionBox
+%%RTPLIST%%/share/html/Widgets/TitleBox
+%%RTPLIST%%/share/html/Widgets/TitleBoxEnd
+%%RTPLIST%%/share/html/Widgets/TitleBoxStart
 %%RTPLIST%%/share/html/autohandler
 %%RTPLIST%%/share/html/index.html
 %%RTPLIST%%/share/html/l
 @unexec rm -R %%RT_PATH%%/var 2> /dev/null || true
+
+@dirrm %%RTPLIST%%/share/html/Widgets
 @dirrm %%RTPLIST%%/share/html/User/Groups
 @dirrm %%RTPLIST%%/share/html/User/Elements
 @dirrm %%RTPLIST%%/share/html/User
+@dirrm %%RTPLIST%%/share/html/Tools/Reports/Elements
+@dirrm %%RTPLIST%%/share/html/Tools/Reports
 @dirrm %%RTPLIST%%/share/html/Tools/Elements
 @dirrm %%RTPLIST%%/share/html/Tools
 @dirrm %%RTPLIST%%/share/html/Ticket/Elements
@@ -535,8 +650,16 @@
 @dirrm %%RTPLIST%%/share/html/REST/1.0/Forms
 @dirrm %%RTPLIST%%/share/html/REST/1.0
 @dirrm %%RTPLIST%%/share/html/REST
+@dirrm %%RTPLIST%%/share/html/Prefs/Elements
+@dirrm %%RTPLIST%%/share/html/Prefs
+@dirrm %%RTPLIST%%/share/html/NoAuth/js
+@dirrm %%RTPLIST%%/share/html/NoAuth/images/css
 @dirrm %%RTPLIST%%/share/html/NoAuth/images
+@dirrm %%RTPLIST%%/share/html/NoAuth/css/3.5-default
+@dirrm %%RTPLIST%%/share/html/NoAuth/css/3.4-compat
+@dirrm %%RTPLIST%%/share/html/NoAuth/css
 @dirrm %%RTPLIST%%/share/html/NoAuth
+@dirrm %%RTPLIST%%/share/html/Helpers
 @dirrm %%RTPLIST%%/share/html/Elements/RT__Ticket
 @dirrm %%RTPLIST%%/share/html/Elements/CollectionAsTable
 @dirrm %%RTPLIST%%/share/html/Elements
@@ -551,8 +674,8 @@
 @dirrm %%RTPLIST%%/share/html/Admin/Groups
 @dirrm %%RTPLIST%%/share/html/Admin/Global/CustomFields
 @dirrm %%RTPLIST%%/share/html/Admin/Global
-@dirrm %%RTPLIST%%/share/html/Admin/CustomFields
 @dirrm %%RTPLIST%%/share/html/Admin/Elements
+@dirrm %%RTPLIST%%/share/html/Admin/CustomFields
 @dirrm %%RTPLIST%%/share/html/Admin
 @dirrm %%RTPLIST%%/share/html
 @dirrm %%RTPLIST%%/share/doc
@@ -569,7 +692,10 @@
 @dirrm %%RTPLIST%%/lib/t
 @dirrm %%RTPLIST%%/lib/RT/URI
 @dirrm %%RTPLIST%%/lib/RT/Search
+@dirrm %%RTPLIST%%/lib/RT/Report/Tickets
+@dirrm %%RTPLIST%%/lib/RT/Report
 @dirrm %%RTPLIST%%/lib/RT/Interface/Web/QueryBuilder
+@dirrm %%RTPLIST%%/lib/RT/Interface/Web/Menu
 @dirrm %%RTPLIST%%/lib/RT/Interface/Web
 @dirrm %%RTPLIST%%/lib/RT/Interface/Email/Filter
 @dirrm %%RTPLIST%%/lib/RT/Interface/Email/Auth
