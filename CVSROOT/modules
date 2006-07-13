@@ -9437,6 +9437,7 @@ p5-Pod-Simple	ports/textproc/p5-Pod-Simple
 p5-Pod-Stripper	ports/textproc/p5-Pod-Stripper
 p5-Pod-Tests	ports/devel/p5-Pod-Tests
 p5-Pod-Tree	ports/textproc/p5-Pod-Tree
+p5-Pod-Xhtml	ports/textproc/p5-Pod-Xhtml
 p5-PodToHTML	ports/www/p5-PodToHTML
 p5-PostScript-Simple	ports/print/p5-PostScript-Simple
 p5-Prima	ports/x11-toolkits/p5-Prima
