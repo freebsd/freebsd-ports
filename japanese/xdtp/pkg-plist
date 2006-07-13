@@ -5,16 +5,13 @@ bin/banbun2xhtml
 bin/glsd-doc2html
 bin/glsd-doc2text
 lib/libxdtp.so
-lib/libxdtp.so.1
+lib/libxdtp.so.2
 lib/libxdtp.a
 libdata/pkgconfig/libxdtp.pc
 %%DOCSDIR%%/banbun-0001.html
 %%DOCSDIR%%/banbun-0002.html
 %%DOCSDIR%%/banbun-0003.html
 %%DOCSDIR%%/banbun-0004.html
-%%DOCSDIR%%/images/glsd-base-classdiagram.gif
-%%DOCSDIR%%/images/glsd-classdiagram.gif
-@dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
 %%DATADIR%%/emacs/hanbun.el
 %%DATADIR%%/toHTML/BanBun.xsl
@@ -57,12 +54,14 @@ libdata/pkgconfig/libxdtp.pc
 %%XDTP_INC%%include/xdtp/modules/GLSDModuleChecker.h
 %%XDTP_INC%%include/xdtp/modules/XDTPChecker.h
 %%XDTP_INC%%include/xdtp/modules/XDTPModule.h
+%%XDTP_INC%%include/xdtp/modules/XDTPModuleAdapter.h
 %%XDTP_INC%%include/xdtp/modules/XDTPModuleLoader.h
 %%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModule.h
 %%XDTP_INC%%include/xdtp/modules/imports/GLSDImportModuleAdapter.h
 %%XDTP_INC%%include/xdtp/modules/imports/ImportImage.h
 %%XDTP_INC%%include/xdtp/modules/imports/ImportTextCSV.h
 %%XDTP_INC%%include/xdtp/modules/imports/ImportTextCommandPrompt.h
+%%XDTP_INC%%include/xdtp/modules/imports/ImportTextGLSD.h
 %%XDTP_INC%%include/xdtp/modules/imports/ImportTextPlain.h
 %%XDTP_INC%%include/xdtp/modules/imports/ImportTextSourcecode.h
 %%XDTP_INC%%include/xdtp/modules/imports/ImportTextXML.h
