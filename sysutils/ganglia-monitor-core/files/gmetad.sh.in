@@ -1,48 +1,11 @@
 #!/bin/sh
 # $FreeBSD$
 
-# PROVIDE: ganglia
-# REQUIRE: DAEMON
+# PROVIDE: gmetad
+# REQUIRE: gmond
 # KEYWORD: shutdown
 
-# XXX: This should really be two seperate scripts with rcorder
-# dependencies, but we can't do that at the moment and gmetad doesn't
-# work without a running gmond.
-
-gmond_enable="${gmond_enable-NO}"
-gmond_conf="%%PREFIX%%/etc/gmond.conf"
-
-gmetad_enable="${gmetad_enable-NO}"
-gmetad_conf="%%PREFIX%%/etc/gmetad.conf"
-gmetasnap_enable="${gmetasnap_enable-NO}"
-gmetasnap_rrddir="/var/db/ganglia/rrds"
-gmetasnap_snapdir="/var/db/ganglia/snaps"
-gmetasnap_snapname="snap"
-gmetasnap_flags=""
-gmetasnap_command="%%PREFIX%%/sbin/gmetasnap"
-
-### gmond ###
-
 . %%RC_SUBR%%
-
-name=gmond
-rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/${name}"
-
-load_rc_config ganglia
-
-load_rc_config $name
-command_args="-c ${gmond_conf}"
-required_files=${gmond_conf}
-
-run_rc_command $*
-
-### gmetad ###
-
-# Don't continue if we didn't run gmond
-if ! checkyesno ${rcvar}; then
-	return 0
-fi
 
 name=gmetad
 rcvar=`set_rcvar`
@@ -78,7 +41,19 @@ gmetad_poststop()
 	fi
 }
 
+load_rc_config ganglia
+
 load_rc_config $name
+
+gmetad_enable=${gmetad_enable-NO}
+gmetad_conf=${gmetad_conf-%%PREFIX%%/etc/gmetad.conf}
+
+gmetasnap_enable=${gmetasnap_enable-NO}
+gmetasnap_rrddir=${gmetasnap_rrddir-/var/db/ganglia/rrds}
+gmetasnap_snapdir=${gmetasnap_snapdir-/var/db/ganglia/snaps}
+gmetasnap_snapname=${gmetasnap_snapname-snap}
+gmetasnap_command=${gmetasnap_command-%%PREFIX%%/sbin/gmetasnap}
+
 command_args="-c ${gmetad_conf}"
 required_files=${gmetad_conf}
 

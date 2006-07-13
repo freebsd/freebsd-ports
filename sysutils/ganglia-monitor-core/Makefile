@@ -6,14 +6,9 @@
 #
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.0.1
-PORTREVISION=	3
+PORTVERSION=	3.0.3
 CATEGORIES=	sysutils net parallel
-.if !defined(PORTDEV)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-.else
-MASTER_SITES=	http://matt-massie.com/%SUBDIR%/
-.endif
 MASTER_SITE_SUBDIR=	ganglia
 PKGNAMEPREFIX=	ganglia-
 .if defined(CLUSTER)
@@ -34,9 +29,6 @@ CONFIGURE_ENV=	CFLAGS="${_CFLAGS}" LDFLAGS="${_LDFLAGS}"
 _CFLAGS=	${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 _LDFLAGS=	${LDFLAGS} -L${LOCALBASE}/lib
 
-USE_BZIP2=	yes
-USE_RC_SUBR=	ganglia.sh
-
 SUB_FILES=	pkg-install
 
 .if defined (GMETAD_CONF)
@@ -56,6 +48,19 @@ GMOND_CONF=	${WRKDIR}/gmond.conf
 .endif
 
 .include <bsd.port.pre.mk>
+
+# The daemons should use seperate scripts, but prior to 6.1 they won't
+# run in the right order.  In those cases we use the old monolythic
+# script.
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
+USE_RC_SUBR=	gmond.sh
+.if defined (WITH_GMETAD)
+USE_RC_SUBR+=	gmetad.sh
+.endif
+.else
+USE_RC_SUBR=	ganglia.sh
+.endif
+
 
 .if defined (WITH_GMETAD)
 LIB_DEPENDS=	rrd.2:${PORTSDIR}/net/rrdtool
@@ -95,12 +100,22 @@ FIX_CONF_FILES=	ganglia.pod \
 FIX_DB_FILES=	ganglia.pod \
 		gmetad/conf.c \
 		gmetad/gmetad.conf
+FIX_USER_FILES=	ganglia.pod \
+		gmetad/conf.c \
+		gmetad/gmetad.conf \
+		gmond/conf.pod \
+		gmond/gmond.conf.5 \
+		gmond/gmond.conf.html \
+		gmond/g25_config.c \
+		lib/libgmond.c
 
 post-patch:
 	${REINPLACE_CMD} -e "s|/etc/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
 	    ${FIX_CONF_FILES:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|/var/lib/ganglia|/var/db/ganglia|g" \
 	    ${FIX_DB_FILES:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
+	    ${FIX_USER_FILES:S|^|${WRKSRC}/|}
 
 post-build:
 	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
