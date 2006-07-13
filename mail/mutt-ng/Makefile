@@ -142,8 +142,9 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .if !defined (NOPORTDOCS)
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
-.else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nodoc
 .endif
 
 MAN1=	muttng.1 muttngbug.1 muttng_dotlock.1 fleang.1 muttng-flea.1

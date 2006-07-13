@@ -1,21 +1,39 @@
---- doc/Makefile.in.orig2	Tue Jun 14 21:05:43 2005
-+++ doc/Makefile.in	Tue Jun 14 21:07:01 2005
-@@ -83,18 +83,6 @@
- 		$(DESTDIR)$(mandir)/man1/muttng_dotlock.1
- 	./instdoc muttrc.man $(DESTDIR)$(mandir)/man5/muttngrc.5
- 	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/muttng-mbox.5
--	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
--	for f in $(srcdir_DOCFILES) ; do \
--		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
--	done
--	for f in $(topsrcdir_DOCFILES) ; do \
--		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
--	done
--	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
+--- doc/Makefile.in.orig	Tue Mar 14 10:36:31 2006
++++ doc/Makefile.in	Thu Jul 13 16:51:53 2006
+@@ -89,11 +89,6 @@
+ 		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
--	for file in manual*.html ; do	\
+-	-cd html; for file in *.html ; do \
 -		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
 -	done
+-	-$(INSTALL) -m 644 muttng.css $(DESTDIR)$(docdir)/html || true
  
  uninstall:
- 	-rm -f $(DESTDIR)$(mandir)/man1/muttng.1
+ 	for f in muttng.1 mutt_dotlock.1 fleang.1 muttng-flea.1 muttngbug.1 ; do \
+@@ -113,12 +108,6 @@
+ 	@HTMLCLEAN_CMD@ $@ || true
+ 
+ manual-chunked stamp-doc-chunked: $(srcdir)/chunk.xsl manual.xml
+-	test -d html || mkdir html
+-	-xsltproc --nonet --stringparam html.stylesheet muttng.css -o html/ $^
+-	touch stamp-doc-chunked
+-	cd html; for file in *.html ; do \
+-	  @HTMLCLEAN_CMD@ $$file || true ; \
+-	done
+ 	
+ manual.pdf: stamp-doc-tex
+ 	-if test -f manual.tex; then pdfjadetex manual.tex; fi
+@@ -181,11 +170,6 @@
+ 	for file in $(BUILT_DISTFILES) ; do \
+ 	  ln $$file $(distdir) 2> /dev/null \
+ 	  || cp -p $$file $(distdir) ; \
+-	done
+-	mkdir $(distdir)/html
+-	cd html; for file in *.html ; do \
+-	  ln $$file ../$(distdir)/html 2> /dev/null \
+-	  || cp -p $$file ../$(distdir)/html ; \
+ 	done
+ 
+ ../makedoc$(EXEEXT): $(top_srcdir)/makedoc.c

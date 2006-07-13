@@ -1,23 +1,26 @@
 --- doc/Makefile.in.orig	Tue Mar 14 10:36:31 2006
-+++ doc/Makefile.in	Tue May  2 15:43:59 2006
-@@ -89,11 +89,11 @@
- 		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
- 	done
- 	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
++++ doc/Makefile.in	Thu Jul 13 16:54:23 2006
+@@ -81,19 +81,6 @@
+ 		$(DESTDIR)$(mandir)/man1/muttng_dotlock.1
+ 	./instdoc muttrc.man $(DESTDIR)$(mandir)/man5/muttngrc.5
+ 	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/muttng-mbox.5
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
+-	for f in $(topsrcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	for f in $(srcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
 -	-cd html; for file in *.html ; do \
 -		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
 -	done
 -	-$(INSTALL) -m 644 muttng.css $(DESTDIR)$(docdir)/html || true
-+#	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
-+#	-cd html; for file in *.html ; do \
-+#		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
-+#	done
-+#	-$(INSTALL) -m 644 muttng.css $(DESTDIR)$(docdir)/html || true
  
  uninstall:
  	for f in muttng.1 mutt_dotlock.1 fleang.1 muttng-flea.1 muttngbug.1 ; do \
-@@ -113,12 +113,12 @@
+@@ -113,12 +100,6 @@
  	@HTMLCLEAN_CMD@ $@ || true
  
  manual-chunked stamp-doc-chunked: $(srcdir)/chunk.xsl manual.xml
@@ -27,29 +30,18 @@
 -	cd html; for file in *.html ; do \
 -	  @HTMLCLEAN_CMD@ $$file || true ; \
 -	done
-+#	test -d html || mkdir html
-+#	-xsltproc --nonet --stringparam html.stylesheet muttng.css -o html/ $^
-+#	touch stamp-doc-chunked
-+#	cd html; for file in *.html ; do \
-+#	  @HTMLCLEAN_CMD@ $$file || true ; \
-+#	done
  	
  manual.pdf: stamp-doc-tex
  	-if test -f manual.tex; then pdfjadetex manual.tex; fi
-@@ -182,11 +182,11 @@
+@@ -181,11 +162,6 @@
+ 	for file in $(BUILT_DISTFILES) ; do \
  	  ln $$file $(distdir) 2> /dev/null \
  	  || cp -p $$file $(distdir) ; \
- 	done
+-	done
 -	mkdir $(distdir)/html
 -	cd html; for file in *.html ; do \
 -	  ln $$file ../$(distdir)/html 2> /dev/null \
 -	  || cp -p $$file ../$(distdir)/html ; \
--	done
-+#	mkdir $(distdir)/html
-+#	cd html; for file in *.html ; do \
-+#	  ln $$file ../$(distdir)/html 2> /dev/null \
-+#	  || cp -p $$file ../$(distdir)/html ; \
-+#	done
+ 	done
  
  ../makedoc$(EXEEXT): $(top_srcdir)/makedoc.c
- 	(cd .. && $(MAKE) makedoc$(EXEEXT))
