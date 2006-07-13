@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	sword
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
-	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-# 1.5.7a version fixes some build problems. Since there was no FreeBSD
-# version of 1.5.7 it's really no problem to put the a here. WRKSRC is also
-# just work/sword-1.5.7
-DISTFILES=	${DISTNAME}a${EXTRACT_SUFX}
+    		http://www.goodking.ca/pub/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	A project framework for manipulating Bible texts
 
 USE_GNOME=	pkgconfig
@@ -45,7 +40,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	@${MKDIR} -p ${PREFIX}/share/sword/mods.d
+	@${MKDIR} ${PREFIX}/share/sword/mods.d
 .if !exists(${PREFIX}/etc/sword.conf)
 	@(cd ${WRKSRC} && make install_config)
 .else
