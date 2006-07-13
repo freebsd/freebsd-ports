@@ -155,8 +155,6 @@ include/ptlib/videoio1394dc.h
 lib/libpt.so
 lib/libpt_r.so
 lib/libpt_r.so.1
-lib/libpt_r.so.1.10
-lib/libpt_r.so.1.10.1
 lib/pwlib/devices/sound/oss_pwplugin.so
 %%ESD%%lib/pwlib/devices/sound/esd_pwplugin.so
 %%AVC1394%%lib/pwlib/devices/videoinput/avc_pwplugin.so
