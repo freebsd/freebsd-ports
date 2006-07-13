@@ -1,0 +1,18 @@
+This package reads and writes any document that conforms to the PDF
+specification generously provided by Adobe at
+http://partners.adobe.com/public/developer/pdf/index_reference.html
+
+The file format is well-supported, with the exception of the
+"linearized" or "optimized" output format, which this module can read
+but not write.  Many specific aspects of the document model are not
+manipulable with this package (like fonts), but if the input document
+is correctly written, then this module will preserve the model
+integrity.
+
+This library grants you some power over the PDF security model. Note
+that applications editing PDF documents via this library MUST respect
+the security preferences of the document. Any violation of this
+respect is contrary to Adobe's intellectual property position, as
+stated in the reference manual at the above URL.
+
+WWW:	http://search.cpan.org/dist/CAM-PDF/

@@ -1,0 +1,48 @@
+# New ports collection makefile for:	p5-CAM-PDF
+# Date created:		2006-07-13
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	CAM-PDF
+PORTVERSION=	1.07
+CATEGORIES=	textproc perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLOTHO
+PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	PDF manipulation library
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/Crypt/RC4.pm:${PORTSDIR}/security/p5-Crypt-RC4 \
+		${SITE_PERL}/Text/PDF/File.pm:${PORTSDIR}/print/p5-Text-PDF
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN1=		appendpdf.pl.1 changepagestring.pl.1 changepdfstring.pl.1 \
+		changerefkeys.pl.1 crunchjpgs.pl.1 deillustrate.pl.1 \
+		deletepdfpage.pl.1 extractallimages.pl.1 extractjpgs.pl.1 \
+		fillpdffields.pl.1 getpdffontobject.pl.1 getpdfpage.pl.1 \
+		getpdfpageobject.pl.1 getpdftext.pl.1 listfonts.pl.1 \
+		listimages.pl.1 listpdffields.pl.1 pdfinfo.pl.1 readpdf.pl.1 \
+		renderpdf.pl.1 replacepdfobj.pl.1 revertpdf.pl.1 \
+		rewritepdf.pl.1 setpdfbackground.pl.1 setpdfpage.pl.1 \
+		stamppdf.pl.1 uninlinepdfimages.pl.1
+
+MAN3=		CAM::PDF.3 CAM::PDF::Content.3 CAM::PDF::Decrypt.3 \
+		CAM::PDF::GS.3 CAM::PDF::GS::NoText.3 CAM::PDF::Node.3 \
+	       	CAM::PDF::PageText.3 CAM::PDF::Renderer::Dump.3 \
+		CAM::PDF::Renderer::Images.3 CAM::PDF::Renderer::Text.3 \
+		CAM::PDF::Renderer::TextFB.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
