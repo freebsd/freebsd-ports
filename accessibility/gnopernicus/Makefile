@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnopernicus
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -30,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ENV=	SED="${SED}"
 
 GCONF_SCHEMAS=	brlmonitor.schemas gnopernicus.schemas remote.schemas
-SHLIB_VERSION=	5
+SHLIB_VERSION=	6
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 
 post-patch:
