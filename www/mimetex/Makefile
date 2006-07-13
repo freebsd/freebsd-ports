@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mimetex
-PORTVERSION=	1.60
-PORTREVISION=	1
+PORTVERSION=	20060710.1.60
 CATEGORIES=	www math
 MASTER_SITES=	http://www.forkosh.com/ \
 		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
@@ -32,10 +31,19 @@ WWW_DIR=	${PREFIX}/www/data/mimetex/
 .if defined(WITH_STATIC)
 STATIC_MIMETEX=	-static
 .endif
+# anti-aliasing no/yes
+.if defined(WITHOUT_ANTIALIASING)
+IMAGES_TYPE=	-DGIF
+.else
+IMAGES_TYPE=	-DAA
+.endif
+# other options (see mimetex.c)
+# example: make install USER_OPTIONS='-DCACHEPATH=\"/tmp\" -DDISPLAYSIZE=10'
+USER_OPTIONS?=
 
 do-build:
 	cd ${WRKDIR};\
-	${CC} ${CFLAGS} ${STATIC_MIMETEX} -DAA mimetex.c gifsave.c -lm -o ${CGI_PRG}
+	${CC} ${CFLAGS} ${STATIC_MIMETEX} ${IMAGES_TYPE} ${USER_OPTIONS} mimetex.c gifsave.c -lm -o ${CGI_PRG}
 
 do-install:
 	${MKDIR} ${CGI_BIN}
