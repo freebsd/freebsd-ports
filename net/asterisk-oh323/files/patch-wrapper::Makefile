@@ -1,5 +1,8 @@
---- wrapper/Makefile.orig	Wed Jan 18 11:00:26 2006
-+++ wrapper/Makefile	Wed Jan 18 11:56:39 2006
+
+$FreeBSD$
+
+--- wrapper/Makefile.orig
++++ wrapper/Makefile
 @@ -62,7 +62,7 @@
  ifdef	OH323_SUPPRESS_H235
  STDCCFLAGS  += -DOH323_SUPPRESS_H235
@@ -9,7 +12,16 @@
  		--no-print-directory -s \
  		PWLIBDIR=$(PWLIBDIR) OPENH323DIR=$(OPENH323DIR) oh323ccflags)
  CPPFLAGS += $(OPENH323FLAGS)
-@@ -110,12 +110,12 @@
+@@ -103,22 +103,22 @@
+ ifeq ($(OH323STAT),1)
+ 	$(AR) rc liboh323wrap_s.a $(WRAPOBJECTS)
+ else
+-	$(CC) -shared -Wl,-soname,liboh323wrap.so -o liboh323wrap.so $(WRAPOBJECTS)
++	$(CC) -shared -Wl,-soname,liboh323wrap.so.1 -o liboh323wrap.so.1 $(WRAPOBJECTS)
++	ln -sfh liboh323wrap.so.1 liboh323wrap.so
+ endif
+ 
+ strip:
  
  install:
  	if [ ! -d $(DESTDIR)$(OH323WRAPLIBDIR) ]; then \
@@ -21,7 +33,12 @@
 +	$(BSD_INSTALL_PROGRAM) liboh323wrap_s.a $(DESTDIR)$(OH323WRAPLIBDIR)
  else
 -	$(INSTALL) liboh323wrap.so $(DESTDIR)$(OH323WRAPLIBDIR)
-+	$(BSD_INSTALL_PROGRAM) liboh323wrap.so $(DESTDIR)$(OH323WRAPLIBDIR)
- 	cd $(DESTDIR)$(OH323WRAPLIBDIR); rm -f ./liboh323wrap.so.1; rm -f ./liboh323wrap.so.1.1
- 	cd $(DESTDIR)$(OH323WRAPLIBDIR); ln -s liboh323wrap.so liboh323wrap.so.1
- 	cd $(DESTDIR)$(OH323WRAPLIBDIR); ln -s liboh323wrap.so liboh323wrap.so.1.1
+-	cd $(DESTDIR)$(OH323WRAPLIBDIR); rm -f ./liboh323wrap.so.1; rm -f ./liboh323wrap.so.1.1
+-	cd $(DESTDIR)$(OH323WRAPLIBDIR); ln -s liboh323wrap.so liboh323wrap.so.1
+-	cd $(DESTDIR)$(OH323WRAPLIBDIR); ln -s liboh323wrap.so liboh323wrap.so.1.1
++	$(BSD_INSTALL_PROGRAM) liboh323wrap.so.1 $(DESTDIR)$(OH323WRAPLIBDIR)
++	cd $(DESTDIR)$(OH323WRAPLIBDIR); rm -f ./liboh323wrap.so
++	cd $(DESTDIR)$(OH323WRAPLIBDIR); ln -s liboh323wrap.so.1 liboh323wrap.so
+ endif
+ 
+ clean:

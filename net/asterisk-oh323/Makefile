@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-oh323
 PORTVERSION=	0.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.inaccessnetworks.com/projects/asterisk-oh323/download/
 
