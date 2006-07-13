@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
-COMMENT=	"Moose, it's the new Camel"
+COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 	p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \
