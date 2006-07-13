@@ -61,6 +61,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpget.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpgetresp.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/ftpupload.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/ftpuploadresume.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinfo.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/getinmemory.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/htmltidy.c
@@ -79,6 +80,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/examples/persistant.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/post-callback.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/postit2.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/sampleconv.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/sepheaders.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/simple.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/simplepost.c
@@ -94,6 +96,9 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_duphandle.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_duphandle.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_duphandle.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_escape.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_escape.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_escape.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_getinfo.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_getinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_getinfo.pdf
@@ -112,6 +117,9 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_strerror.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_strerror.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_strerror.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_unescape.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_unescape.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_easy_unescape.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_escape.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_escape.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_escape.pdf
@@ -163,9 +171,18 @@ libdata/pkgconfig/libcurl.pc
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_remove_handle.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_remove_handle.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_remove_handle.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_setopt.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_setopt.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_setopt.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_socket.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_socket.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_socket.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_strerror.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_timeout.3
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_timeout.html
+%%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_multi_timeout.pdf
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.3
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.html
 %%PORTDOCS%%%%DOCSDIR%%/libcurl/curl_share_cleanup.pdf
