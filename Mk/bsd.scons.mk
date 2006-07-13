@@ -30,13 +30,15 @@ SCONS_PORT=	${PORTSDIR}/devel/scons
 # Some scons projects may honor PKGCONFIGDIR, which tells them where to
 # look for, and install, pkgconfig files.
 #
+# LIBPATH is the search path for libraries. Bring in some safe defaults.
+#
+# CPPPATH is the search path for includes, Again, bring in some safe defaults.
+#
 CCFLAGS?=	${CFLAGS}
 LINKFLAGS?=	${LDFLAGS}
 PKGCONFIGDIR?=	${LOCALBASE}/libdata/pkgconfig
-
-CCFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include
-LINKFLAGS+=	-L${LOCALBASE}/lib
+LIBPATH=	${LOCALBASE}/lib ${X11BASE}/lib
+CPPPATH=	${LOCALBASE}/include ${X11BASE}/include
 
 #
 # SCONS_ENV is where we pass all the stuff that should be the
@@ -53,8 +55,9 @@ LINKFLAGS+=	-L${LOCALBASE}/lib
 # argument to scons.
 #
 SCONS_ENV?=	CCFLAGS="${CCFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		LINKFLAGS="${LINKFLAGS}" PKGCONFIGDIR="${PKGCONFIGDIR}" \
-		PREFIX="${PREFIX}" CC="${CC}" CXX="${CXX}"
+		LINKFLAGS="${LINKFLAGS}" PKGCONFIGDIR="${PKGCONFIGDIR}"  \
+		CPPPATH="${CPPPATH}" LIBPATH="${LIBPATH}" PREFIX="${PREFIX}" \
+		CC="${CC}" CXX="${CXX}"
 SCONS_ARGS?=
 SCONS_BUILDENV?=
 SCONS_TARGET?=
