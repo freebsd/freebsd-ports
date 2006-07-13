@@ -1,0 +1,20 @@
+Description from the homepage:
+
+Devel::LexAlias provides the ability to alias a lexical variable in a
+subroutines scope to one of your choosing.
+
+If you don't know why you'd want to do this, I'd suggest that you skip
+this module. If you think you have a use for it, I'd insist on it.
+
+Still here?
+
+lexalias( $where, $name, $variable )
+
+    $where refers to the subroutine in which to alias the lexical, it
+     can be a coderef or a call level such that you'd give to caller
+
+    $name is the name of the lexical within that subroutine
+
+    $variable is a reference to the variable to install at that location
+
+WWW: http://search.cpan.org/dist/Devel-LexAlias/
