@@ -1,0 +1,27 @@
+# Ports collection makefile for:	p5-Pod-XML
+# Date created:			2006/07/11
+# Whom:				chinsan <chinsan.tw@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Pod-XML
+PORTVERSION=	0.96
+CATEGORIES=	textproc devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Pod
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	chinsan.tw@gmail.com
+COMMENT=	Module to convert POD to XML
+
+BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Pod-Parser>=0:${PORTSDIR}/textproc/p5-Pod-Parser
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN1=		pod2xml.1
+MAN3=		Pod::XML.3
+
+.include <bsd.port.mk>
