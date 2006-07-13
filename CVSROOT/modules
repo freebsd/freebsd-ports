@@ -8470,6 +8470,7 @@ p5-Devel-DProfPP	ports/devel/p5-Devel-DProfPP
 p5-Devel-Diagram	ports/devel/p5-Devel-Diagram
 p5-Devel-Leak	ports/devel/p5-Devel-Leak
 p5-Devel-LeakTrace	ports/devel/p5-Devel-LeakTrace
+p5-Devel-LexAlias	ports/devel/p5-Devel-LexAlias
 p5-Devel-Modlist	ports/devel/p5-Devel-Modlist
 p5-Devel-ObjectTracker	ports/devel/p5-Devel-ObjectTracker
 p5-Devel-PPPort	ports/devel/p5-Devel-PPPort
