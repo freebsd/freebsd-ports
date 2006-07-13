@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SABnzbd
-PORTVERSION=	0.1.8.1
+PORTVERSION=	0.2.2
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sabnzbd
@@ -27,12 +27,17 @@ PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_FILES=	pkg-message
 
 OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
-		UNRAR "Often required for unpacking many downloads." on
+		UNRAR "Often required for unpacking many downloads." on \
+		FEEDPARSER "rss-feed support." on
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PAR2CMDLINE)
 RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline
+.endif
+
+.if !defined(WITHOUT_FEEDPARSER)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
 .endif
 
 .if !defined(WITHOUT_UNRAR)
