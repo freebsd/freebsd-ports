@@ -18,6 +18,7 @@ share/icons/locolor/22x22/actions/blackplayer.png
 share/icons/locolor/22x22/actions/swap.png
 share/icons/locolor/22x22/actions/whiteplayer.png
 share/icons/locolor/32x32/apps/six.png
+share/locale/it/LC_MESSAGES/six.mo
 share/mimelnk/application/vnd.kde.six.desktop
 @dirrm share/doc/HTML/en/six
 @dirrm share/apps/six
