@@ -1,0 +1,15 @@
+--- sql/pg_init.orig	Sat Apr  8 23:07:02 2006
++++ sql/pg_init	Sat Apr  8 23:06:21 2006
+@@ -5,10 +5,10 @@
+ 
+ # Change these to match your setup
+ # Linux Default 
+-SYSDBUSER=postgres
++# SYSDBUSER=postgres
+ 
+ # BSD Default
+-# SYSDBUSER=pgsql
++SYSDBUSER=pgsql
+ 
+ DB=netdisco
+ 

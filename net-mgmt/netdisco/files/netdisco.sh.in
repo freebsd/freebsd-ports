@@ -1,0 +1,42 @@
+#!/bin/sh
+# 
+# PROVIDE: netdisco
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+
+. %%RC_SUBR%%
+
+name="netdisco"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${netdisco_enable="NO"}
+: ${netdisco_user="netdisco"}
+: ${netdisco_group="netdisco"}
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+restart_cmd=${name}_restart
+status_cmd=${name}_status
+
+command="%%PREFIX%%/bin/netdisco"
+required_files="%%PREFIX%%/etc/netdisco.conf"
+
+netdisco_start() {
+	%%PREFIX%%/bin/netdisco -p start
+}
+
+netdisco_stop() {
+	%%PREFIX%%/bin/netdisco -p stop
+}
+
+netdisco_restart() {
+	%%PREFIX%%/bin/netdisco -p restart
+}
+
+netdisco_status() {
+	%%PREFIX%%/bin/netdisco -p status
+}
+
+run_rc_command "$1"

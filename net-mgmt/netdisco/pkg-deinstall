@@ -1,0 +1,61 @@
+#!/bin/sh
+
+if [ x"$2" != x"POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=netdisco
+GROUP=${USER}
+
+echo ""
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete the netdisco user permanently, use 'pw userdel ${USER}'."
+fi
+
+if pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	echo "To delete the netdisco group permanently, use 'pw groupdel ${GROUP}'."
+fi
+
+TMPDIR=${TMPDIR:=/tmp}
+PKG_TMPDIR=${PKG_TMPDIR:=${TMPDIR}}
+
+apxscmd=${PKG_PREFIX}/sbin/apxs
+tmpdir=${PKG_TMPDIR}/deinst_netdisco.$$
+
+if [ ! -x ${apxscmd} ]; then
+        echo Can\'t find the apxs program: ${apxscmd}.
+        exit 1
+fi
+
+confdir=`${apxscmd} -q SYSCONFDIR`
+
+if [ ! -d ${confdir} ]; then
+        echo Can\'t find Apache conf dir: ${confdir}
+        exit 1
+fi
+
+if [ -f ${confdir}/httpd.conf ]; then
+        conffile=httpd.conf
+fi
+
+if [ -z "${conffile}" ]; then
+        echo Can\'t find ${confdir}/httpd.conf
+        exit 1
+fi
+
+if ! mkdir ${tmpdir}; then
+        echo Can\'t create temporary directory: ${tmpdir}
+        exit 1
+fi
+
+for i in ${conffile}; do
+        awk '{if (!/^# Netdisco include file[s]/ && !/^Include.*netdisco_apache.*\.conf/) \
+            print $0}' < ${confdir}/$i > ${tmpdir}/$i
+        echo Updating $i in config dir: ${confdir}
+        cat ${tmpdir}/$i > ${confdir}/$i
+done
+
+rm -Rf ${tmpdir}
+
+exit 0

@@ -98,6 +98,7 @@
     SUBDIR += net-snmp-tkmib
     SUBDIR += net-snmp4
     SUBDIR += netams
+    SUBDIR += netdisco
     SUBDIR += netleak
     SUBDIR += netmask
     SUBDIR += netmond
