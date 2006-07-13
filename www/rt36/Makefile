@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.4.5
+PORTVERSION?=	3.6.0
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -43,6 +43,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
+		${SITE_PERL}/Test/Expect.pm:${PORTSDIR}/devel/p5-Test-Expect \
 		${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		${SITE_PERL}/Text/Quoted.pm:${PORTSDIR}/textproc/p5-Text-Quoted \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
@@ -52,14 +53,19 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
+		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
+	        ${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+	        ${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
+	        ${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
+	        ${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple
+
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LATEST_LINK=	rt34
+LATEST_LINK=	rt36
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
-APACHE_COMPAT=	yes
+USE_APACHE=	1.3+
 
 CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \
@@ -76,7 +82,7 @@ CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 
 .if defined(WITH_FASTCGI)
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 .endif
@@ -85,7 +91,7 @@ DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
 .else
@@ -93,9 +99,6 @@ DEPENDS_ARGS+=	WITH_MODPERL2=yes
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
 .endif
-.endif
-.if defined(MULTIPLE_INSTANCES)
-EXTRA_PATCHES+=	${FILESDIR}/multiple*
 .endif
 
 DB_TYPE?=	mysql
@@ -137,6 +140,10 @@ UPGRADES=	3.1.0 3.1.15 3.1.17
 .if defined(UPGRADE_RT30) || defined(UPGRADE_RT32)
 UPGRADES+=	3.3.0 3.3.11
 .endif
+.if defined(UPGRADE_RT34)
+UPGRADES+=	3.5.1
+.endif
+
 
 .include <bsd.port.pre.mk>
 
@@ -150,6 +157,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "      UPGRADE_RT30                    Upgrading from a RT 3.0 installation"
 	@${ECHO} "      UPGRADE_RT32                    Upgrading from a RT 3.2 installation"
+	@${ECHO} "      UPGRADE_RT34                    Upgrading from a RT 3.4 installation"
 	@${ECHO} "      INITIAL_INSTALL                 Do initialize DB (for initial install only)"
 	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
 	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
@@ -196,6 +204,9 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} "If you are upgrading from RT 3.2, please enter this now:"
 	@${ECHO} "    make post-install -DUPGRADE_RT32"
+	@${ECHO} ""
+	@${ECHO} "If you are upgrading from RT 3.4, please enter this now:"
+	@${ECHO} "    make post-install -DUPGRADE_RT34"
 	@${ECHO} ""
 	@${ECHO} "If you are initializing a new installation, please do this:"
 	@${ECHO} "    make post-install -DINITIAL_INSTALL"
