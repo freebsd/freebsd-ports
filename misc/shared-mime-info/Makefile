@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://people.freedesktop.org/~hadess/
@@ -26,6 +25,7 @@ MIMEDIRS=	${X11BASE}/share/gnome/mime \
 		${LOCALBASE}/share/gnome/mime \
 		${X11BASE}/share/mime \
 		${LOCALBASE}/share/mime \
+		${PREFIX}/share/mime \
 		/usr/share/mime
 MIMESUBDIRS=	application audio image inode message model multipart \
 		packages text video
