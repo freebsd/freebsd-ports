@@ -1,0 +1,46 @@
+--- README.orig	Thu Jul 13 14:57:57 2006
++++ README	Thu Jul 13 14:59:47 2006
+@@ -3,7 +3,7 @@
+ The perl module WWW::Curl provides an interface to the cURL library "libcurl".
+ See http://curl.haxx.se/ for more information on cURL and libcurl.
+ 
+-This module requires libcurl and the corresponding headerfiles to be
++This module requires libcurl and the corresponding header files to be
+ installed. You then may install this module via the usual way:
+ 
+     perl Makefile.PL
+@@ -18,7 +18,8 @@
+ 
+     perl Makefile.PL /home/foo/curl/include
+ 
+-The maintainer has never tried to run this on windows, so all feedback welcome.
++The maintainer has never tried to run this on windows, so all feedback is
++welcome.
+ 
+ Testing:
+  
+@@ -31,7 +32,7 @@
+ Test 08ssl.t will only work well if you have a list of "well-known"
+ CA certificates in the file 'ca-bundle.crt' in the current directory.
+ This file can be obtained from most distributions of mod_ssl (www.modssl.org) -
+-it isn't supplied here, as its currently >250Kbytes.
++it isn't supplied here, as it's currently >250Kbytes.
+ 
+ The module provides the same functionality as libcurl provides to C programs,
+ please refer to the documentation of libcurl. A number of examples may be
+@@ -41,12 +42,12 @@
+ express or implied. Send praise, patches, money, beer and pizza to the author.
+ Send complaints to /dev/null. ;-)
+ 
+-The author of the original relase of this software is Georg Horn <horn at koblenz-net.de>
++The author of the original release of this software is Georg Horn <horn at koblenz-net.de>
+ 
+-Parts of the callback support were added Forrest Cahoon
++Parts of the callback support were added by Forrest Cahoon
+ <forrest.cahoon at merrillcorp.com>
+ 
+-More callback support, many tests additional documentation and Makefile
++More callback support, many tests, additional documentation, and Makefile
+ features have been added by Cris Bailiff <c.bailiff+curl at devsecure.com>
+ 
+ Curl multi support has been added by Sebastian Riedel <sri at oook.de>
