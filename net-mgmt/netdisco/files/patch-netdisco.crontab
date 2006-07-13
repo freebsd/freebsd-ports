@@ -1,0 +1,46 @@
+--- netdisco.crontab.orig	Sun Dec  5 02:14:26 2004
++++ netdisco.crontab	Sat Apr  8 23:11:20 2006
+@@ -4,34 +4,34 @@
+ # $Id: netdisco.crontab,v 1.7 2004/12/05 02:14:26 maxbaker Exp $
+ 
+ #MAILTO=max
+-PATH=/bin:/usr/bin:/usr/local/bin
++PATH=/bin:/usr/bin:%%PREFIX%%/bin
+ 
+ # -- Weekly --
+ 
+ # Walk network for new devices once a week (Wed @ 14:00)
+-0 14 * * 3      /usr/local/netdisco/netdisco -b -r center_network_device
++0 14 * * 3      %%PREFIX%%/bin/netdisco -b -r center_network_device
+ 
+ # -- Daily --
+ 
+ # Backup at 1am every day
+-0 1 * * *       /usr/local/netdisco/netdisco -b -B 
++0 1 * * *       %%PREFIX%%/bin/netdisco -b -B 
+ 
+ # Restart admin panel daemon nightly
+-0 2 * * *       /usr/local/netdisco/netdisco -p restart
++0 2 * * *       %%PREFIX%%/bin/netdisco -p restart
+ 
+ # Refresh Graph every day
+-0 3 * * *       /usr/local/netdisco/netdisco -b -g 2>&1 
++0 3 * * *       %%PREFIX%%/bin/netdisco -b -g 2>&1 
+ 
+ # Refresh Devices at 9:00 every day
+-0 9 * * *      /usr/local/netdisco/netdisco -b -R 
++0 9 * * *      %%PREFIX%%/bin/netdisco -b -R 
+ 
+ # -- Hourly --
+ 
+ # Arp Nip every hour on the half hour
+-30 * * * *  /usr/local/netdisco/netdisco -b -a 
++30 * * * *  %%PREFIX%%/bin/netdisco -b -a 
+ 
+ # Mac Suck every 2 hours
+-0 */2 * * * /usr/local/netdisco/netdisco -b -m 
++0 */2 * * * %%PREFIX%%/bin/netdisco -b -m 
+ 
+ # Grab NetBios Info from Nodes three times a day
+-0 8,13,21 * * * /usr/local/netdisco/netdisco -b -w
++0 8,13,21 * * * %%PREFIX%%/bin/netdisco -b -w

@@ -1,0 +1,35 @@
+--- netdisco.orig	Mon Dec  6 23:45:47 2004
++++ netdisco	Sun Apr  9 23:45:16 2006
+@@ -114,7 +114,7 @@
+ &header if (grep(/^([aABdeEFgIikKmMOprRTu]|expire-nodes-subnet)$/,keys %args) and !$BatchMode);
+ 
+ # Parse Config File - Check for -C, then in current dir, then in default dir.
+-foreach my $c ($args{C},"$FindBin::Bin/netdisco.conf",'/usr/local/netdisco/netdisco.conf') {
++foreach my $c ($args{C},"$FindBin::Bin/netdisco.conf",'%%PREFIX%%/etc/netdisco/netdisco.conf') {
+     if (defined $c and -r $c){
+         $configfile = $c;
+         print "Using Config File : $configfile\n" if $DEBUG;
+@@ -600,9 +600,9 @@
+ 
+     my ($file_name,$want_time,$no_header) = @_;
+ 
+-    my $file_path = $CONFIG{datadir} || 'data';
+-    my $home      = $CONFIG{home} || '/usr/local/netdisco';
+-    $file_path    = "$home/$file_path";
++    my $file_path = $CONFIG{datadir} || '%%DBDIR%%/netdisco';
++    my $home      = $CONFIG{home} || '%%DATADIR%%';
++#    $file_path    = "$home/$file_path";
+ 
+     my $extension = defined $CONFIG{logextension} ? $CONFIG{logextension} : 'log';
+     
+@@ -3328,8 +3328,8 @@
+ =cut
+ sub admin_daemon_pid {
+     my $pid = shift;
+-    my $pid_file = $CONFIG{daemon_pid} || 'netdisco_daemon.pid';
+-    $pid_file = "$CONFIG{home}/$pid_file";
++    my $pid_file = $CONFIG{daemon_pid} || '%%RUNDIR%%/netdisco_daemon.pid';
++#    $pid_file = "$CONFIG{home}/$pid_file";
+ 
+     if (defined $pid) {
+         print "Writing pid:$pid to $pid_file\n" if $DEBUG;

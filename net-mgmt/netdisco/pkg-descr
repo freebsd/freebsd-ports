@@ -1,0 +1,24 @@
+Netdisco is an Open Source web-based network management tool.
+
+Designed for moderate to large networks, configuration information and
+connection data for network devices are retrieved and set by SNMP. With
+Netdisco you can locate the switch port of an end-user system by IP or
+MAC address. Data is stored using a SQL database for scalability and
+speed.
+
+Cisco Discovery Protocol (CDP), Foundry Discovery Protocol (FDP), and
+SynOptics Network Management Protocol (SONMP) optionally provide
+automatic discovery of the network topology.
+
+The network is inventoried by both device model and operating system
+(like IOS). Netdisco uses router ARP tables and L2 switch MAC forwarding
+tables to locate nodes on physical ports and track them by their IP
+addresses.
+
+For each node, a time stamped history of the ports it has visited and
+the IP addresses it has used is maintained. Netdisco gets all its data,
+including topology information, with SNMP polls and DNS queries. It does
+not use CLI access and has no need for privilege passwords. Security
+features include a wire-side Wireless Access Point (AP) locator.
+
+WWW: http://www.netdisco.org/

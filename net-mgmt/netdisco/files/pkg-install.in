@@ -1,0 +1,38 @@
+#!/bin/sh
+
+if [ x"$2" != x"POST-INSTALL" ]; then
+    exit 0
+fi
+
+USER=netdisco
+GROUP=${USER}
+UID=840
+GID=${UID}
+USERS_HOME="/nonexistent"
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/bin/sh" -d ${USERS_HOME} -c "netdisco user"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+chown -R ${USER}:${GROUP} ${PKG_PREFIX}/etc/netdisco
+chmod 660 ${PKG_PREFIX}/etc/netdisco/*
+
+chown ${USER}:${GROUP} %%DBDIR%%/netdisco
+
+exit 0

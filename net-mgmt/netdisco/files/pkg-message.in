@@ -1,0 +1,29 @@
+------------------------------------------------------------------------
+Netdisco has been installed.
+
+In order to get up and running, there are a few more steps to complete:
+
+    1) Run the following to create and initialise the netdisco database:
+
+	sh %%DATADIR%%/sql/pg_init
+	sh %%DATADIR%%/sql/pg_run
+	sh %%DATADIR%%/sql/pg_all
+
+    2) Examine all the configuration files in %%PREFIX%%/etc/netdisco,
+       and modify them to suit your needs.
+
+    3) Add an initial admin user by running 'netdisco -u'
+
+    4) Import the OUI database: netdisco -o
+
+    5) Edit %%PREFIX%%/etc/netdisco/netdisco.crontab and change
+       center_network_device to one of your core routers/switches. Then
+       install the crontab:
+
+         crontab -u netdisco %%PREFIX%%/etc/netdisco/netdisco.crontab
+
+    6) Add netdisco_enable="YES" to /etc/rc.conf, and then run
+       %%PREFIX%%/etc/rc.d/netdisco to start the admin daemon.
+
+    7) Apache must be stopped/started (a graceful restart won't work)
+------------------------------------------------------------------------
