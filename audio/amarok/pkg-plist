@@ -16,9 +16,9 @@ lib/kde3/konqsidebar_universalamarok.so
 lib/kde3/libamarok_generic-mediadevice.so
 lib/kde3/libamarok_generic-mediadevice.la
 lib/kde3/libamarok_generic-mediadevice.a
-%%XINE%%lib/kde3/libamarok_xine-engine.a
-%%XINE%%lib/kde3/libamarok_xine-engine.la
-%%XINE%%lib/kde3/libamarok_xine-engine.so
+lib/kde3/libamarok_xine-engine.a
+lib/kde3/libamarok_xine-engine.la
+lib/kde3/libamarok_xine-engine.so
 lib/kde3/libamarok_void-engine_plugin.a
 lib/kde3/libamarok_void-engine_plugin.la
 lib/kde3/libamarok_void-engine_plugin.so
@@ -261,7 +261,7 @@ share/apps/konqsidebartng/kicker_entries/amarok.desktop
 share/apps/konqueror/servicemenus/amarok_append.desktop
 share/apps/profiles/amarok.profile.xml
 share/config.kcfg/amarok.kcfg
-%%XINE%%share/config.kcfg/xinecfg.kcfg
+share/config.kcfg/xinecfg.kcfg
 share/config/amarokrc
 share/doc/HTML/da/amarok/advanced.docbook
 share/doc/HTML/da/amarok/common
@@ -668,7 +668,7 @@ share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
 %%GPOD%%share/services/amarok_ipod-mediadevice.desktop
 share/services/amarok_generic-mediadevice.desktop
-%%XINE%%share/services/amarok_xine-engine.desktop
+share/services/amarok_xine-engine.desktop
 share/services/amarok_void-engine_plugin.desktop
 share/servicetypes/amarok_plugin.desktop
 @dirrmtry share/locale/km/LC_MESSAGES
