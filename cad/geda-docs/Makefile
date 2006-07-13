@@ -7,6 +7,7 @@
 
 PORTNAME=	docs
 PORTVERSION=	20060123
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/
@@ -16,7 +17,6 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	The gEDA's documentation
 
-PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/geda
 
 GNU_CONFIGURE=	yes
