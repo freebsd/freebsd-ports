@@ -7283,6 +7283,7 @@ netbeans4	ports/java/netbeans4
 netcat		ports/net/netcat
 netcdf		ports/science/netcdf
 netcomponents	ports/java/netcomponents
+netdisco	ports/net-mgmt/netdisco
 netdude		ports/net/netdude
 netdump-server	ports/sysutils/netdump-server
 netgen		ports/cad/netgen
