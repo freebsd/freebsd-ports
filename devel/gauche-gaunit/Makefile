@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gaunit
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.2
 CATEGORIES=	devel scheme
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 PKGNAMEPREFIX=	gauche-
