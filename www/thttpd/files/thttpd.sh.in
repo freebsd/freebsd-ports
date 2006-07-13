@@ -4,8 +4,7 @@
 #
 
 # PROVIDE: thttpd
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 
 #
