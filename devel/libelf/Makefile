@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libelf
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mr511.de/software/ \
 		${MASTER_SITE_SUNSITE}
@@ -18,7 +18,8 @@ COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_ARGS+=	--enable-shared --disable-compat
+CONFIGURE_ARGS+=	--enable-shared --disable-compat \
+			--enable-extended-format
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	LIBVER=${PORTVERSION:R}
 USE_GETTEXT=	yes
