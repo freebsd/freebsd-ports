@@ -1,5 +1,6 @@
 %%TTY%%bin/tty_calctool
 %%X11%%bin/xcalctool
+%%XVIEW%%bin/xv_calctool
 lib/libcalctool.so
 lib/libcalctool.so.1
 %%DATADIR%%/calctool.help
