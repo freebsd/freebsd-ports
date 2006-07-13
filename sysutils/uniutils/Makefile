@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	unidesc
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Unicode Description Utilities
 
 RUN_DEPENDS=	ascii2binary:${PORTSDIR}/converters/ascii2binary
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
