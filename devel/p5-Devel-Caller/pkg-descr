@@ -1,0 +1,13 @@
+Devel::Caller - meatier versions of caller
+
+SYNOPSIS
+
+ use Devel::Caller qw(caller_cv);
+ $foo = sub { print "huzzah\n" if $foo == caller_cv(0) };
+ $foo->();  # prints huzzah
+
+ use Devel::Caller qw(called_with);
+ sub foo { print called_with(0,1); }
+ foo( my @foo ); # should print '@foo'
+
+WWW: http://search.cpan.org/dist/Devel-Caller/

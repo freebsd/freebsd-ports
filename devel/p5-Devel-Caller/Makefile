@@ -1,0 +1,32 @@
+# ex:ts=8
+# Ports collection makefile for:	Devel-Caller
+# Date created:			Jul. 11, 2006
+# Whom:				Ying-Chieh Chen
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Devel-Caller
+PORTVERSION=	0.11
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Devel
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
+COMMENT=	A perl module which is meatier versions of caller
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalker
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_MODBUILD=	yes
+
+MAN3=		Devel::Caller.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
