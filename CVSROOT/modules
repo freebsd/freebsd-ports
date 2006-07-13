@@ -9234,6 +9234,7 @@ p5-Net-PcapUtils	ports/net/p5-Net-PcapUtils
 p5-Net-Ping-External	ports/net/p5-Net-Ping-External
 p5-Net-Printer	ports/print/p5-Net-Printer
 p5-Net-QMTP	ports/mail/p5-Net-QMTP
+p5-Net-RBLClient	ports/dns/p5-Net-RBLClient
 p5-Net-Radius	ports/net/p5-Net-Radius
 p5-Net-Random	ports/net/p5-Net-Random
 p5-Net-RawIP	ports/net/p5-Net-RawIP
