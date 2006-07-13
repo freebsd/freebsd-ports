@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	six
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	games kde
 MASTER_SITES=	http://six.retes.hu/download/
 
@@ -15,6 +14,8 @@ COMMENT=	KDE HEX clone
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,,g ; \
