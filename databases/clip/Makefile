@@ -6,10 +6,14 @@
 #
 
 PORTNAME=	clip
-DISTVERSION=	1.1.15-1
+DISTVERSION=	1.1.16-1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
-		ftp://ftp.itk.ru/pub/clip/
+		ftp://www.cis.by/pub/clip/pub/clip/	\
+		http://clip.cis.by/mirror/pub/clip/	\
+		ftp://ftp.itk.ru/pub/clip/		\
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	x-clip
 DISTNAME=	${PORTNAME}-prg-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	clip
@@ -25,11 +29,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		freetype.9:${PORTSDIR}/print/freetype2		\
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
 		gd.4:${PORTSDIR}/graphics/gd			\
+		expat.6:${PORTSDIR}/textproc/expat2		\
+		glade-2.0:${PORTSDIR}/devel/libglade2		\
 		fcgi.0:${PORTSDIR}/www/fcgi
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget
-
-BROKEN=		Installs files prior to 'make install'
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${DISTVERSION}
 USE_GETTEXT=	yes
@@ -143,6 +147,11 @@ pre-configure:
 	-e "s|#!/bin/sh|#!${LOCALBASE}/bin/bash|"				\
 	-e "s|/usr/local|${LOCALBASE}|g"					\
 	-e "s|/usr/X11R6|${X11BASE}|g"
+	${REINPLACE_CMD} "s|-I/usr/include|-I${LOCALBASE}/include -L${LOCALBASE}/lib|"	\
+		${WRKSRC}/cliplibs/clip-xml/configure
+	${REINPLACE_CMD} -e "s|-I/usr/include|-I${LOCALBASE}/include|"		\
+		-e "s|-lexpat|-L${LOCALBASE}/lib -lexpat|"			\
+		${WRKSRC}/cliplibs/clip-xml/Makefile.in
 
 post-build: # don't include emppty directories
 	${RMDIR} ${DIR2PRUNE:S|^|${WRKDIR}/cliproot/|}
@@ -150,7 +159,7 @@ post-build: # don't include emppty directories
 do-install:
 	@${MKDIR} ${PREFIX}/clip
 	@${CP} -R ${WRKDIR}/cliproot/* ${PREFIX}/clip
-.for FILE in ${BIN2STRIP}G
+.for FILE in ${BIN2STRIP}
 	@${STRIP_CMD} ${PREFIX}/clip/bin/${FILE}
 .endfor
 	@for f in `${LS} ${PREFIX}/clip/lib/*.so` ;				\

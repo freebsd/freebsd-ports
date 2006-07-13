@@ -430,6 +430,15 @@ clip/doc/example/clip-ui/icons/reference_partner.xpm
 clip/doc/example/clip-ui/icons/tick.xpm
 clip/doc/example/clip-ui/testWindow.xfl
 clip/doc/example/clip-ui/test_ui.prg
+clip/doc/example/clip-xml/Makefile
+clip/doc/example/clip-xml/XPath_tests.tar.gz
+clip/doc/example/clip-xml/c.xml
+clip/doc/example/clip-xml/component.dtd
+clip/doc/example/clip-xml/component.xml
+clip/doc/example/clip-xml/currency.xml
+clip/doc/example/clip-xml/test-koi8-r.xml
+clip/doc/example/clip-xml/test.prg
+clip/doc/example/clip-xml/test_xml.prg
 clip/doc/example/hello.prg
 clip/doc/example/inkey.prg
 clip/doc/example/mouse.prg
@@ -505,6 +514,8 @@ clip/include/box.ch
 clip/include/browsys.ch
 clip/include/btree.h
 clip/include/button.ch
+clip/include/clip-expat.ch
+clip/include/clip-expat.h
 clip/include/clip-gtk.ch
 clip/include/clip-gtk.h
 clip/include/clip-gtk2.ch
@@ -666,6 +677,7 @@ clip/include/reserved.ch
 clip/include/richtext.ch
 clip/include/rp_dot.ch
 clip/include/rp_run.ch
+clip/include/screen/charset.h
 clip/include/set.ch
 clip/include/setcurs.ch
 clip/include/setnames.ch
@@ -756,6 +768,10 @@ clip/lib/libclip-gd.a
 clip/lib/libclip-gd.ex
 clip/lib/libclip-gd.nm
 clip/lib/libclip-gd.so
+clip/lib/libclip-glade2.a
+clip/lib/libclip-glade2.ex
+clip/lib/libclip-glade2.nm
+clip/lib/libclip-glade2.so
 clip/lib/libclip-gtk.a
 clip/lib/libclip-gtk.ex
 clip/lib/libclip-gtk.nm
@@ -791,6 +807,10 @@ clip/lib/libclip-rtf.so
 clip/lib/libclip-ui.ex
 clip/lib/libclip-ui.nm
 clip/lib/libclip-ui.so
+clip/lib/libclip-xml.a
+clip/lib/libclip-xml.ex
+clip/lib/libclip-xml.nm
+clip/lib/libclip-xml.so
 clip/lib/libclip.a
 clip/lib/libclip.ex
 clip/lib/libclip.nm
@@ -930,6 +950,7 @@ clip/locale.pot/clip-r2d2/_.pot
 clip/locale.pot/clip-r2d2/acc_log.pot
 clip/locale.pot/clip-r2d2/balance.pot
 clip/locale.pot/clip-r2d2/balance2.pot
+clip/locale.pot/clip-r2d2/cgi_funcs.pot
 clip/locale.pot/cobra_clnt/_.pot
 clip/locale.pot/cobra_clnt/objbrowse.pot
 clip/locale.pot/cobra_serv/_.pot
@@ -976,6 +997,7 @@ clip/locale.pot/sys/foxsel.pot
 clip/locale.pot/sys/ftools.pot
 clip/locale.pot/sys/get_obj.pot
 clip/locale.pot/sys/hbrowse.pot
+clip/locale.pot/sys/hparser.pot
 clip/locale.pot/sys/http_service.pot
 clip/locale.pot/sys/inifile.pot
 clip/locale.pot/sys/memoedit.pot
@@ -1062,6 +1084,7 @@ clip/term/pcansi
 @dirrm clip/kamache/mod-ini
 @dirrm clip/kamache/mod-clip
 @dirrm clip/kamache
+@dirrm clip/include/screen
 @dirrm clip/include/netto
 @dirrm clip/include/nanfor
 @dirrm clip/include/fwin
@@ -1079,6 +1102,7 @@ clip/term/pcansi
 @dirrm clip/etc/terminfo/a
 @dirrm clip/etc/terminfo
 @dirrm clip/etc
+@dirrm clip/doc/example/clip-xml
 @dirrm clip/doc/example/clip-ui/icons
 @dirrm clip/doc/example/clip-ui
 @dirrm clip/doc/example/clip-rtf

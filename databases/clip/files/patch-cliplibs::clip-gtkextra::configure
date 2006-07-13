@@ -1,5 +1,5 @@
---- cliplibs/clip-gtkextra/configure.orig	Mon Oct 25 19:56:51 2004
-+++ cliplibs/clip-gtkextra/configure	Fri Apr 15 21:24:57 2005
+--- cliplibs/clip-gtkextra/configure.orig	Mon Dec 19 16:26:28 2005
++++ cliplibs/clip-gtkextra/configure	Thu Jul 13 15:18:16 2006
 @@ -3,6 +3,10 @@
  uname=`uname -s`
  uver=`uname -r`
@@ -61,12 +61,12 @@
  	echo "****************************************************************************"
  	USE_GTK_EXTRA=no
  else
--	gtkextraincpath=`find $gtkextraprefix/include -name 'gtkextra.h' -printf '%h'`
-+ 	gtkextraincpath=`find $gtkprefix/include -name 'gtk.h' -exec dirname {} \;`
- 	cd $gtkextraincpath/..
- 	gtkextraincpath=`pwd`
- 	cd $oldpwd
-@@ -173,7 +182,7 @@
+-	gtkextraincpath=`find $gtkextraprefix/include -name 'gtkextra.h' -printf ' %h'`
++	gtkextraincpath=`find $gtkextraprefix/include -name 'gtkextra.h' -exec dirname {} \;`
+ 	trt=$gtkextraincpath
+ 	gtkextraincpath=
+ 	for ii in $trt
+@@ -186,7 +195,7 @@
  echo "COMPILER='$CC'" >&3
  echo "DLLSUFF='$DLLSUFF'" >&3
  echo "DLLREALSUFF='$DLLREALSUFF'" >&3

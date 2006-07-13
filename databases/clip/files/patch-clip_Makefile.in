@@ -1,0 +1,15 @@
+--- clip/Makefile.in.orig	Tue Jan  3 14:33:54 2006
++++ clip/Makefile.in	Thu Jul 13 23:57:42 2006
+@@ -381,9 +381,9 @@
+ inst_std_lib:
+ 	mkdir -p $(DESTDIR)$(STD_LIBDIR)
+ 	ls $(DESTDIR)$(CLIPROOT)/lib/*$(DLLSUFF)
+-	for i in $(DESTDIR)$(CLIPROOT)/lib/*$(DLLSUFF); do ln -s $$i $(DESTDIR)$(STD_LIBDIR) 2>/dev/null || true; done
+-	for i in $(DESTDIR)$(CLIPROOT)/lib/*$(DLLREALSUFF); do ln -s $$i $(DESTDIR)$(STD_LIBDIR) 2>/dev/null || true; done
+-	for i in $(DESTDIR)$(CLIPROOT)/lib/*.a; do ln -s $$i $(DESTDIR)$(STD_LIBDIR) 2>/dev/null || true; done
++#	for i in $(DESTDIR)$(CLIPROOT)/lib/*$(DLLSUFF); do ln -s $$i $(DESTDIR)$(STD_LIBDIR) 2>/dev/null || true; done
++#	for i in $(DESTDIR)$(CLIPROOT)/lib/*$(DLLREALSUFF); do ln -s $$i $(DESTDIR)$(STD_LIBDIR) 2>/dev/null || true; done
++#	for i in $(DESTDIR)$(CLIPROOT)/lib/*.a; do ln -s $$i $(DESTDIR)$(STD_LIBDIR) 2>/dev/null || true; done
+ 
+ inst_screen:
+ 	cd screen/install \
