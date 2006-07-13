@@ -10457,6 +10457,7 @@ phantom		ports/sysutils/phantom
 pharmacy	ports/devel/pharmacy
 phase		ports/x11-themes/phase
 phatbeat	ports/audio/phatbeat
+phc		ports/lang/phc
 phex		ports/net-p2p/phex
 phluid		ports/x11-wm/phluid
 pho		ports/graphics/pho
