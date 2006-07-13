@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -18,8 +18,8 @@ COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
 RUN_DEPENDS=	${SITE_PERL}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		${SITE_PERL}/Feed/Find.pm:${PORTSDIR}/www/p5-Feed-Find \
 		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch \
-		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
-		${SITE_PERL}/XML/Atom.pm:${PORTSDIR}/textproc/p5-XML-Atom \
+		${SITE_PERL}/XML/RSS.pm>=1.01:${PORTSDIR}/textproc/p5-XML-RSS \
+		${SITE_PERL}/XML/Atom.pm>=0.08:${PORTSDIR}/textproc/p5-XML-Atom \
 		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Format/Mail.pm:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
 		${SITE_PERL}/DateTime/Format/W3CDTF.pm:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
@@ -42,7 +42,7 @@ post-patch:
 
 # p5-XML-Atom needs 5.8.5
 .if ${PERL_LEVEL} < 500805
-IGNORE=		requires perl 5.8.5 or later. Install lang/perl5. then try again
+IGNORE=		requires perl 5.8.5 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
