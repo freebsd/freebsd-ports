@@ -1,6 +1,6 @@
---- configure.orig	Fri Sep  2 20:22:43 2005
-+++ configure	Fri Sep  2 20:37:36 2005
-@@ -24917,8 +24917,10 @@
+--- configure.orig	Thu Jun  8 09:12:53 2006
++++ configure	Wed Jul 12 16:44:43 2006
+@@ -26690,8 +26690,10 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
      LIB_OPENSSL="$PREFIX_OPENSSL/lib$libsuff"
@@ -11,12 +11,12 @@
      ;;
    esac
  
-@@ -32576,7 +32578,7 @@
+@@ -35638,7 +35640,7 @@
  main ()
  {
  #ifndef basename
 -  char *p = (char *) basename;
 +  char *(*p)(const char *) = basename;
+   return !p;
  #endif
  
-   ;
