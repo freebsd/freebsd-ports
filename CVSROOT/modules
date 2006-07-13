@@ -2005,6 +2005,7 @@ e17-module-deskshow	ports/x11/e17-module-deskshow
 e17-module-devian	ports/sysutils/e17-module-devian
 e17-module-eveil	ports/x11/e17-module-eveil
 e17-module-flame	ports/x11/e17-module-flame
+e17-module-language	ports/x11/e17-module-language
 e17-module-mail	ports/x11/e17-module-mail
 e17-module-mem	ports/x11/e17-module-mem
 e17-module-moon	ports/x11/e17-module-moon
