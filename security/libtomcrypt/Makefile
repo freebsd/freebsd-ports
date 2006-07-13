@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.com/files/
 DISTNAME=	crypt-${PORTVERSION}
@@ -32,7 +32,7 @@ OPTIONS=	DOCS "build documentation (depends on teTeX)" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_LIBTOMMATH) && !defined(WITH_TOMSFASTMATH) && !defined(WITH_GMP)
-IGNORE=	you must choose at least LibTomMath, TomsFastMath, or GMP (or all three)
+IGNORE=	requires LibTomMath, TomsFastMath, or GMP (or all three)
 .endif
 
 .if !defined(WITHOUT_LIBTOMMATH)
