@@ -1,0 +1,35 @@
+--- configure.orig	Sun Jul  9 23:28:34 2006
++++ configure	Sun Jul  9 23:29:18 2006
+@@ -21503,7 +21503,7 @@
+ #AM_GNU_GETTEXT([external])
+ #AM_GNU_GETTEXT_VERSION(0.14)
+ 
+-MODULE_ARCH="$host_os-$host_cpu"
++MODULE_ARCH=""
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -22091,6 +22091,11 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <X11/Xlib.h>
++#include <X11/Xos.h>
++#include <X11/XKBlib.h>
++#include <X11/extensions/XKBfile.h>
++#include <X11/extensions/XKBconfig.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -22135,6 +22140,11 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <X11/Xlib.h>
++#include <X11/Xos.h>
++#include <X11/XKBlib.h>
++#include <X11/extensions/XKBfile.h>
++#include <X11/extensions/XKBconfig.h>
+ #include <$ac_header>
+ _ACEOF
+ if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
