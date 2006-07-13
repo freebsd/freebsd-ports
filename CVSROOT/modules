@@ -9180,6 +9180,7 @@ p5-Net-CIDR-Lite	ports/net/p5-Net-CIDR-Lite
 p5-Net-DAAP-Client	ports/audio/p5-Net-DAAP-Client
 p5-Net-DAAP-DMAP	ports/audio/p5-Net-DAAP-DMAP
 p5-Net-DBus	ports/devel/p5-Net-DBus
+p5-Net-DHCP	ports/net/p5-Net-DHCP
 p5-Net-DHCPClient	ports/net/p5-Net-DHCPClient
 p5-Net-DLookup	ports/net/p5-Net-DLookup
 p5-Net-DNS	ports/dns/p5-Net-DNS
