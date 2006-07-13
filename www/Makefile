@@ -968,6 +968,7 @@
     SUBDIR += tinyproxy
     SUBDIR += trac
     SUBDIR += trac-accountmanager
+    SUBDIR += trac-gantt
     SUBDIR += trac-webadmin
     SUBDIR += transproxy
     SUBDIR += twhttpd
