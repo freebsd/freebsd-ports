@@ -1,14 +1,5 @@
 --- configure.orig	Tue Jul 11 11:39:00 2006
 +++ configure	Tue Jul 11 11:43:03 2006
-@@ -19275,7 +19275,7 @@ echo "${ECHO_T}$PYGTK_DEFSDIR" >&6
- 
- echo "$as_me:$LINENO: checking for gnome-python defs" >&5
- echo $ECHO_N "checking for gnome-python defs... $ECHO_C" >&6
--PYGTK_DEFSDIR=`$PKG_CONFIG --variable=defsdir gnome-python-2.0`
-+GNOME_PYTHON_DEFSDIR=`$PKG_CONFIG --variable=defsdir gnome-python-2.0`
- 
- echo "$as_me:$LINENO: result: $GNOME_PYTHON_DEFSDIR" >&5
- echo "${ECHO_T}$GNOME_PYTHON_DEFSDIR" >&6
 @@ -20762,6 +20762,7 @@ case $mozpackage in
       xulrunner) mozpackage_required_version=1.8 ;;
       firefox) mozpackage_required_version=1.0 ;;
