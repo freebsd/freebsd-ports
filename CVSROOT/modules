@@ -5645,7 +5645,6 @@ leafpak		ports/graphics/leafpak
 leaktracer	ports/devel/leaktracer
 led		ports/editors/led
 ledger		ports/finance/ledger
-ledit		ports/sysutils/ledit
 leim20		ports/editors/leim20
 leim21		ports/editors/leim21
 lemmatizer	ports/textproc/lemmatizer
@@ -12627,7 +12626,6 @@ session2	ports/www/session2
 setcdboot	ports/sysutils/setcdboot
 setedit		ports/editors/setedit
 setquota	ports/sysutils/setquota
-settitle	ports/x11/settitle
 sex		ports/games/sex
 seyon		ports/comms/seyon
 sfbol		ports/games/sfbol
