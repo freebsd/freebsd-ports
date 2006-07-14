@@ -1,22 +1,22 @@
 @comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled/.packlist
 %%SITE_PERL%%/HTML/Template/Compiled.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Filter.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Parser.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Classic.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Lazy.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Expression.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression/Conditional.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression/Expressions.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression/Function.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Expression.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Filter.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Lazy.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Parser.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Reference.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
+%%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrm %%SITE_PERL%%/HTML/Template/Compiled/Expression
-@dirrm %%SITE_PERL%%/HTML/Template/Compiled/Plugin
-@dirrm %%SITE_PERL%%/HTML/Template/Compiled
+@dirrmtry %%SITE_PERL%%/HTML/Template/Compiled/Expression
+@dirrmtry %%SITE_PERL%%/HTML/Template/Compiled/Plugin
+@dirrmtry %%SITE_PERL%%/HTML/Template/Compiled
 @dirrmtry %%SITE_PERL%%/HTML/Template
 @dirrmtry %%SITE_PERL%%/HTML

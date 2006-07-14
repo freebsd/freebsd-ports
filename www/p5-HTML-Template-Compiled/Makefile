@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Template-Compiled
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -15,29 +15,29 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Templating system that compiles HTML::Template files to Perl code
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Data/TreeDumper/Renderer/DHTML.pm:${PORTSDIR}/www/p5-Data-TreeDumper-Renderer-DHTML \
+		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::Template::Compiled.3 \
-		HTML::Template::Compiled::Filter.3 \
-		HTML::Template::Compiled::Utils.3 \
 		HTML::Template::Compiled::Expression.3 \
-		HTML::Template::Compiled::Reference.3 \
+		HTML::Template::Compiled::Filter.3 \
 		HTML::Template::Compiled::Parser.3 \
-		HTML::Template::Compiled::Classic.3 \
-		HTML::Template::Compiled::Lazy.3
+	       	HTML::Template::Compiled::Classic.3 \
+	       	HTML::Template::Compiled::Lazy.3 \
+	       	HTML::Template::Compiled::Reference.3 \
+	       	HTML::Template::Compiled::Utils.3
 
 .include <bsd.port.pre.mk>
 
+# Inherited from www/p5-HTML-Parser and www/p5-Data-TreeDumper-Renderer-DHTML
 .if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.1 or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
