@@ -2,7 +2,7 @@
 bin/uvscan
 bin/uvscan_secure
 sbin/update_dat
-lib/libbsdfv.so.4
+lib%%UVSCAN_LIB32%%/libbsdfv.so.4
 libexec/uvscan/contact.txt
 libexec/uvscan/license.dat
 libexec/uvscan/license.txt
