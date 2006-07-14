@@ -6,9 +6,10 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.lauschmusik.de/${MASTERPORTNAME}/
+MASTER_SITES=	http://rubyforge.rubyuser.de/${MASTERPORTNAME}/ \
+				http://files.rubyforge.vm.bytemark.co.uk/${MASTERPORTNAME}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
