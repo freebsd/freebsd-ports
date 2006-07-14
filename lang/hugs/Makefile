@@ -34,6 +34,10 @@ CONFIGURE_ARGS+=	--with-pthreads
 BROKEN=		missing data type declarations
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		dumps core during build on ${ARCH}
+.endif
+
 .if !defined(WITHOUT_X11)
 USE_GL=	yes
 LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
