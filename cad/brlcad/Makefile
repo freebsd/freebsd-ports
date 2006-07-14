@@ -29,7 +29,7 @@ INSTALLS_SHLIB=	yes	# Not really useful, but pet portlint
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--with-libs="-lpng" --program-transform-name="" \
+CONFIGURE_ARGS+=--with-libs="-lpng ${EXTRA_LIBS}" --program-transform-name="" \
 		--disable-jove-build
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -158,16 +158,20 @@ OPTIONS=	OPTIMIZATION "Try building with optimizations" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == sparc64
+EXTRA_LIBS=	${PTHREAD_LIBS}
+.endif
+
 # we only run on i386 and amd64 release 5+
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile on FreeBSD-${OSREL}
-.elif !(${ARCH} == i386 || ${ARCH} == amd64)
+.elif !(${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == sparc64)
 IGNORE=		dumps core on ${ARCH}
 .endif
 
 .ifdef WITH_OPTIMIZATION
 CONFIGURE_ARGS+=	--disable-debug
-.if (${ARCH} == i386 || ${ARCH} == amd64)
+.if (${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == sparc64)
 CONFIGURE_ARGS+=	--enable-optimized
 .endif
 .endif
