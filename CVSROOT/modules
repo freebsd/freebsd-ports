@@ -6598,6 +6598,7 @@ mediawiki	ports/www/mediawiki
 mediawiki13	ports/www/mediawiki13
 mediawiki14	ports/www/mediawiki14
 mediawiki15	ports/www/mediawiki15
+mediawiki16	ports/www/mediawiki16
 mednafen	ports/emulators/mednafen
 medusa		ports/security/medusa
 megapov		ports/graphics/megapov
