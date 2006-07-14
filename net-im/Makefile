@@ -108,8 +108,8 @@
     SUBDIR += py-xmpppy-irc
     SUBDIR += ruby-xmpp4r
     SUBDIR += sendxmpp
+    SUBDIR += sim-im
     SUBDIR += sim-im-devel
-    SUBDIR += simicq
     SUBDIR += sulci
     SUBDIR += tik
     SUBDIR += tkabber

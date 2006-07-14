@@ -2413,3 +2413,4 @@ www/p5-Catalyst|www/p5-Catalyst-Runtime|2006-07-10|follow CPAN split of package
 textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-07-12|The textproc/p5-YAML-Syck port now includes JSON functionality
 sysutils/ledit||2006-07-14|Has expired: Does not build
 x11/settitle||2006-07-14|Has expired: Download unavailable anymore
+net-im/simicq|net-im/sim-im|2006-07-15|renamed
