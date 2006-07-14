@@ -8285,6 +8285,7 @@ p5-Crypt-Rabbit	ports/security/p5-Crypt-Rabbit
 p5-Crypt-RandPasswd	ports/security/p5-Crypt-RandPasswd
 p5-Crypt-Random	ports/security/p5-Crypt-Random
 p5-Crypt-Rijndael	ports/security/p5-Crypt-Rijndael
+p5-Crypt-Rijndael_PP	ports/security/p5-Crypt-Rijndael_PP
 p5-Crypt-SKey	ports/security/p5-Crypt-SKey
 p5-Crypt-SSLeay	ports/security/p5-Crypt-SSLeay
 p5-Crypt-Salt	ports/security/p5-Crypt-Salt
