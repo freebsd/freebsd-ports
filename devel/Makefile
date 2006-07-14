@@ -1303,6 +1303,7 @@
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Term-UI
     SUBDIR += p5-Test-Base
+    SUBDIR += p5-Test-Benchmark
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-ClassAPI
     SUBDIR += p5-Test-Cmd
