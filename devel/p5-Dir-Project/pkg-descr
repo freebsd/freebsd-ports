@@ -1,0 +1,8 @@
+Dir::Project provides a way to locate a source-controlled directory
+(CVS, Subversion, Perforce, etc) using only the current working
+directory (cd). This prevents users from having to set other
+environment variables when they switch between areas, and allows
+scripts and such inside the directory to be executed without changing
+the user's PATH.
+
+WWW:	http://search.cpan.org/dist/Dir-Project/
