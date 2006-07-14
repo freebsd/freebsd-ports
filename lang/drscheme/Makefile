@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	301
+PORTVERSION=	350
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -22,42 +22,40 @@ EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PLTHOME} --enable-shared	\
-		--x-includes=${X11BASE}/include 	\
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 
-OPTIONS=	CAIRO "use Cairo graphics" off
+WRKSRC=		${WRKDIR}/plt/src
+USE_LDCONFIG=	yes
+USE_XLIB=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15:env
+
+MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
+
+OPTIONS=	CAIRO "use Cairo graphics" off \
+		MMM "use 3m garbage collection" off
+
+ONLY_FOR_ARCHS=	i386
+
+PLTPATCHES=	# none yet for this version
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CAIRO)
-CONFIGURE_ARGS+= --enable-cairo
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+CONFIGURE_ARGS+=	--enable-cairo --enable-pthread
+LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 .else
-CONFIGURE_ARGS+= --disable-cairo
+CONFIGURE_ARGS+=	--disable-cairo
 .endif
 
-WRKSRC=		${WRKDIR}/plt/src
-USE_XLIB=	yes
-USE_GMAKE=	yes
-
-PLTHOME=	${PREFIX}/drscheme
-PLTPATCHES=	# none yet for this version
-DRS_B=		drscheme gmzc help-desk mred mzc mzscheme planet tex2page
-MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
-
-ONLY_FOR_ARCHS=	i386
-
-post-install:
-.for f in ${PLTPATCHES}
-	cd ${PLTHOME} && bin/setup-plt ${_DISTDIR}/${f:S/:PLT//}
-.endfor
-.for f in ${DRS_B}
-	${LN} -s ${PLTHOME}/bin/$f ${PREFIX}/bin/$f
-.endfor
-.for f in ${MAN1}
-	${INSTALL_MAN} ${PLTHOME}/man/man1/$f ${PREFIX}/man/man1/
-.endfor
+.if defined(WITH_MMM)
+ALL_TARGET=		3m
+INSTALL_TARGET+=	install-3m
+PLIST_SUB+=		MMM=""
+.else
+PLIST_SUB+=		MMM="@comment "
+.endif
 
 .include <bsd.port.post.mk>
