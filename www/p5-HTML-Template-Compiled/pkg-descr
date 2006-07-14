@@ -1,4 +1,4 @@
-Fast templating system using the same syntax as HTML::Template
-but which compiles templates to perl code. 
+Fast templating system using the same syntax as HTML::Template but
+which compiles templates to perl code. 
 
 WWW: http://www.tinita.de/projects/perl/
