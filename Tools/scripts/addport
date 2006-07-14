@@ -57,12 +57,13 @@ sub addmodule($);
 
 my %opts;
 
-getopts('ac:d:fgh:il:L:M:mns:tu:', \%opts);
+getopts('abc:d:fgh:il:L:M:mns:tu:', \%opts);
 
 my $autofill_l = $opts{'l'};
 my $autofill_L = $opts{'L'};
 my $autofill = ($autofill_l ? $autofill_l : $autofill_L);
 my $c = $opts{'c'} if ($opts{'c'} ne "");
+my $binfiles = $opts{'b'};
 my $nomodules = $opts{'g'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
 my $dir = $opts{'d'};
@@ -321,7 +322,23 @@ foreach my $thisdir (@dirs) {
 	chdir $category or err(1,"$category");
 	system("$cp -PRp $thisdir .");
 	system("$cvs $n add `find $portname -type d | grep -v CVS`") && errx(1, "cvs add for dirs failed, aborting.");
-	system("$cvs $n add `find $portname -type f | grep -v CVS`") && errx(1, "cvs add for files failed, aborting.");
+
+	my $gotfiles = 0;
+	if ($binfiles) {
+		if (-d "$portname/files") {
+			my (@pf, $fd);
+			opendir($fd, "$portname/files") and
+				@pf = grep { /^.*patch-.*$/ } readdir($fd);
+			$gotfiles = ++$#pf;
+		}
+	}
+
+	if ($binfiles && $gotfiles > 0) {
+		system("$cvs $n add `find $portname -type f | grep -v CVS | grep -v '^$portname/files/.*patch-.*'`") && errx(1, "cvs add for files failed, aborting.");
+		system("$cvs $n add -ko `find $portname -type f | grep -v CVS | grep '^$portname/files/.*patch-.*'`") && errx(1, "cvs add for files failed, aborting.");
+	} else {
+		system("$cvs $n add `find $portname -type f | grep -v CVS`") && errx(1, "cvs add for files failed, aborting.");
+	}
 
 	# figure out where the port name belongs in category Makefile
 	my @ports = &lsports;
@@ -417,7 +434,7 @@ authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
 	$0 [-c commitfile] [-h host] [-l PR number] [-s distdir] [-u user]
-	   [-afgimnt] -d directory
+	   [-abfgimnt] -d directory
 
 	Where "directory" contains the comma-delimited list
 	of root directories of new ports that you wish to
@@ -427,6 +444,8 @@ SYNOPSIS
 OPTIONS
 	-a		Perform checks on the port to make sure
 			there are no problems.  Recommended.
+	-b		Add all patch-* files in \${FILESDIR} as binary
+			files (i.e. don't expand CVS tags)
 	-c file		Use file in place of normal log message.
 	-f		Do not fetch the distfile.
 	-g		Do not commit to CVSROOT/modules.
