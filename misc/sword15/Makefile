@@ -9,7 +9,8 @@ PORTNAME=	sword
 PORTVERSION=	1.5.8
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
-    		http://www.goodking.ca/pub/files/
+    		http://www.goodking.ca/pub/files/ \
+		ftp://stjames.stthomasanglican.org/pub/files/
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	A project framework for manipulating Bible texts
@@ -22,6 +23,12 @@ CONFIGURE_ARGS+=	--without-conf
 INSTALLS_SHLIB=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Fails to compile under FreeBSD 4.X
+.endif
 
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--without-curl
@@ -53,4 +60,4 @@ post-install:
 register:
 	@(cd ${WRKSRC} && make register)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
