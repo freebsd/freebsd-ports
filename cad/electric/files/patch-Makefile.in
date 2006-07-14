@@ -1,0 +1,90 @@
+--- Makefile.in.orig	Fri Jul 16 05:59:50 2004
++++ Makefile.in	Fri Jul 14 13:19:06 2006
+@@ -1,14 +1,14 @@
+ ########################################################## USING QT
+ ##### If using Qt, uncomment these five lines
+-# GRAPH_FLAGS = -DUSEQT -DQT_THREAD_SUPPORT -I$(QTDIR)/include $(QUI_CFLAGS)
+-# GRAPH_LIBS = -L$(QTDIR)/lib $(QUI_LIBS) $(QT_LIB_EXTRAS)
+-# GRAPH_OBJS = $(GRAPH_OBJS_QT)
+-# GRAPH_SRC = $(GRAPH_SRC_QT)
+-# CCOMPILER = @CXX@
++#%%QT%% GRAPH_FLAGS = -DUSEQT `pkg-config --cflags qt-mt` $(QUI_CFLAGS)
++#%%QT%% GRAPH_LIBS = -L$(QTDIR)/lib $(QUI_LIBS) $(QT_LIB_EXTRAS)
++#%%QT%% GRAPH_OBJS = $(GRAPH_OBJS_QT)
++#%%QT%% GRAPH_SRC = $(GRAPH_SRC_QT)
++#%%QT%% CCOMPILER = @CXX@
+ 
+ ##### Qt on UNIX/Linux: uncomment the next two lines:
+ ELECTRIC_TARGET = electric-target-unix
+-QT_LIB_EXTRAS = -lqt-mt -lX11
++QT_LIB_EXTRAS = `pkg-config --libs qt-mt`
+ 
+ ##### Qt on Macintosh: uncomment the next two lines (for Qt Evaluation, change "-lqt" to "-lqt-mt"):
+ # ELECTRIC_TARGET = electric-target-mac
+@@ -20,11 +20,11 @@
+ 
+ ########################################################### USING MOTIF
+ ##### If using Motif (or OpenMotif/Lesstif), uncomment these five lines
+-GRAPH_FLAGS = @X_CFLAGS@
+-GRAPH_LIBS = -lXm @XMULIB@ -lXt @XPLIB@ @XEXTLIB@ -lX11
+-GRAPH_OBJS = $(GRAPH_OBJS_XT)
+-GRAPH_SRC = $(GRAPH_SRC_XT)
+-CCOMPILER = @PTHREAD_CC@
++#%%MOTIF%% GRAPH_FLAGS = @X_CFLAGS@
++#%%MOTIF%% GRAPH_LIBS = -lXm @XMULIB@ -lXt @XPLIB@ @XEXTLIB@ -lX11
++#%%MOTIF%% GRAPH_OBJS = $(GRAPH_OBJS_XT)
++#%%MOTIF%% GRAPH_SRC = $(GRAPH_SRC_XT)
++#%%MOTIF%% CCOMPILER = @PTHREAD_CC@
+ 
+ ##### For the general-purpose X facility, uncomment this line
+ XPOWER = -DANYDEPTH
+@@ -32,8 +32,8 @@
+ # XPOWER =
+ 
+ ##### For the T1lib TrueType, uncomment these two lines and set them to the proper location
+-# TRUETYPE_LIBS = /usr/local/lib/libt1.a
+-# TRUETYPECFLAGS = -DTRUETYPE -I/usr/local/include
++#%%T1LIB%% TRUETYPE_LIBS = -L%%LOCALBASE%%/lib -lt1
++#%%T1LIB%% TRUETYPECFLAGS = -DTRUETYPE -I%%LOCALBASE%%/include
+ ###########################################################
+ 
+ 
+@@ -61,8 +61,8 @@
+ 
+ ########################################################### TCL INTERPRETER
+ ##### If building with a TCL interpreter, uncomment these two lines
+-# LANGTCLCFLAGS =  -DFORCETCL=1
+-# LANGTCLLIBS = -ltcl
++#%%TCL%% LANGTCLCFLAGS =  -DFORCETCL=1
++#%%TCL%% LANGTCLLIBS = -ltcl
+ ###########################################################
+ 
+ 
+@@ -164,7 +164,8 @@
+ 
+ ########################################################### MISCELLANEOUS EXTRAS
+ ##### If building with Internationalization, uncomment this line
+-# INTERNATIONALCFLAGS = -DINTERNATIONAL
++#%%INT%% INTERNATIONALCFLAGS = -DINTERNATIONAL -I%%LOCALBASE%%/include
++#%%INT%% INTERNATIONALLIBS = -L%%LOCALBASE%%/lib -lintl
+ 
+ ##### If building with Unicode text, uncomment this line
+ # UNICODECFLAGS = -D_UNICODE
+@@ -179,7 +180,7 @@
+ # FORTECFLAGS = -compat
+ 
+ ##### If optimizing, uncomment this line (modify optimizations to taste)
+-# OPTIMIZE = -O3
++#%%OPT%% OPTIMIZE = -O3 -ffast-math -fomit-frame-pointer
+ 
+ ##### If debugging, uncomment this line (modify debug options to taste)
+ # DEBUG = -g3
+@@ -801,7 +802,7 @@
+     $(CADENCECFLAGS) $(SUNCFLAGS) $(INTERNATIONALCFLAGS) $(UNICODECFLAGS) @PTHREAD_CFLAGS@
+ XCFLAGS = $(CFLAGS) $(XPOWER) $(TRUETYPECFLAGS) $(QT_CFLAGS)
+ LIBS = @X_PRE_LIBS@ @X_LIBS@ $(TRUETYPE_LIBS) $(FSDB_LIBS) $(GRAPH_LIBS) -lm @X_EXTRA_LIBS@ \
+-    $(LANGTCLLIBS) $(LANGJAVALIBS) @PTHREAD_CFLAGS@ @PTHREAD_LIBS@
++    $(LANGTCLLIBS) $(LANGJAVALIBS) $(INTERNATIONALLIBS) @PTHREAD_CFLAGS@ @PTHREAD_LIBS@
+ FIND = find
+ INSTALL = install
+ DESTDIR =
