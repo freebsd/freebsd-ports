@@ -1,0 +1,21 @@
+Essentially, this module is a very optimized version of Clone::More.
+By taking advantage of one of Clone::More's 'OPTIMIZATION_HACKS' as
+well as removing all the Pure Perl from the More.pm, I was able to
+gain a lot of speed out of the module. Essentially, though, the core
+of the module is exactly as that of Clone::More.
+
+You will see that by useing Benchmark::cmpthese, I ran a simple
+comparison between Storable::dclone, Clone::More::clone, and
+Clone::Fast::clone. You will (should) begin to see the reason why I
+loaded this module along side of Clone::More.
+
+		   Rate    Storable Clone::More Clone::Fast
+    Storable     7552/s          --        -39%        -59%
+    Clone::More 12400/s         64%          --        -33%
+    Clone::Fast 18442/s        144%         49%          --
+
+For more information relative to the DESCRIPTION of this module, I
+recommend peeking into the POD written for Clone::More (I took more
+time with it ;) )
+
+WWW:	http://search.cpan.org/dist/Clone-Fast/
