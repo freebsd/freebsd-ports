@@ -8,7 +8,7 @@
 
 PORTNAME=	gai
 PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	General Applet Interface Library
 
-LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
 USE_GL=		yes
