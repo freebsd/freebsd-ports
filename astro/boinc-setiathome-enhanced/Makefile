@@ -51,11 +51,15 @@ PLIST_SUB=	SETI_BINARY="${SETI_BINARY}" SETI_SITE=${SETI_SITE} \
 
 do-install:
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
-	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects/${SETI_SITE}
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/${SETI_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}
-.for file in app_info.xml AUTHORS CHANGES COPYING COPYRIGHT README
-	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/${file} ${BOINC_HOME}/projects/${SETI_SITE}
+	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects/${SETI_SITE}$
+	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/${SETI_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
+	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/app_info.xml ${BOINC_HOME}/projects/${SETI_SITE}/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS CHANGES COPYING COPYRIGHT README
+	${INSTALL_DATA} ${WRKDIR}/${file} ${DOCSDIR}/${file}
 .endfor
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
