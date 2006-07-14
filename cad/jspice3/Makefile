@@ -7,6 +7,7 @@
 
 PORTNAME=	jspice3
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/	\
 		ftp://ftp.srware.com/pub/
