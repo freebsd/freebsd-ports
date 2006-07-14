@@ -8856,6 +8856,7 @@ p5-IO-Socket-SSL	ports/security/p5-IO-Socket-SSL
 p5-IO-String	ports/devel/p5-IO-String
 p5-IO-Stty	ports/devel/p5-IO-Stty
 p5-IO-Tee	ports/devel/p5-IO-Tee
+p5-IO-Toolkit	ports/devel/p5-IO-Toolkit
 p5-IO-Tty	ports/devel/p5-IO-Tty
 p5-IO-Util	ports/devel/p5-IO-Util
 p5-IO-Zlib	ports/archivers/p5-IO-Zlib
