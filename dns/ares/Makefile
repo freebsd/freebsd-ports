@@ -14,6 +14,8 @@ MASTER_SITES=	http://curl.haxx.se/dev/ \
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
 
+CONFLICTS=	c-ares-1.*
+
 GNU_CONFIGURE=	yes
 
 MAN3=		ares_destroy.3 ares_expand_name.3 ares_fds.3 \

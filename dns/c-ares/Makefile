@@ -13,6 +13,9 @@ MASTER_SITES=	http://daniel.haxx.se/projects/c-ares/
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
 
+CONFLICTS=	ares-1.*
+
+GNU_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
