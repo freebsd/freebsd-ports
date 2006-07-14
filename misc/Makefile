@@ -30,6 +30,7 @@
     SUBDIR += bogosort
     SUBDIR += bottlerocket
     SUBDIR += boxes
+    SUBDIR += boxquote.el
     SUBDIR += brs
     SUBDIR += bsdiff
     SUBDIR += buffer
