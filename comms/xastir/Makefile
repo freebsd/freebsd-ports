@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xastir
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.8.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xastir
@@ -104,19 +103,23 @@ CONFIGURE_ARGS+=	--with-errorpopups
 .endif
 
 .if defined(WITH_DB40)
-CONFIGURE_ARGS+=	--with-bdb-incdir=${LOCALBASE}/include/db4
+USE_BDB=	40
 .endif
 
 .if defined(WITH_DB41)
-CONFIGURE_ARGS+=	--with-bdb-incdir=${LOCALBASE}/include/db41
+USE_BDB=	41
 .endif
 
 .if defined(WITH_DB42)
-CONFIGURE_ARGS+=	--with-bdb-incdir=${LOCALBASE}/include/db42
+USE_BDB=	42
 .endif
 
 .if defined(WITH_DB43)
-CONFIGURE_ARGS+=	--with-bdb-incdir=${LOCALBASE}/include/db43
+USE_BDB=	43
+.endif
+
+.if defined(WITH_DB40) || defined(WITH_DB41) || defined(WITH_DB42) || defined(WITH_DB43)
+CONFIGURE_ARGS+=        --with-bdb-incdir=${BDB_INCLUDE_DIR}
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
