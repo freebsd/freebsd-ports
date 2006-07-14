@@ -423,6 +423,7 @@
     SUBDIR += p5-Regexp-Common-profanity_us
     SUBDIR += p5-Regexp-Log
     SUBDIR += p5-Regexp-Log-Common
+    SUBDIR += p5-SGML-DTDParse
     SUBDIR += p5-SGMLSpm
     SUBDIR += p5-SVG
     SUBDIR += p5-Search-Estraier
