@@ -7,7 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	4.40e
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v4.40/
 DISTNAME=	vbsd440e
