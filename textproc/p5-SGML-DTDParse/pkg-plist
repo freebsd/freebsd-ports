@@ -1,0 +1,20 @@
+bin/dtddiff2html
+bin/dtdformat
+bin/dtddiff
+bin/dtdparse
+bin/dtdflatten
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse/.packlist
+%%SITE_PERL%%/SGML/DTDParse.pm
+%%SITE_PERL%%/SGML/DTDParse/Tokenizer.pm
+%%SITE_PERL%%/SGML/DTDParse/DTD.pm
+%%SITE_PERL%%/SGML/DTDParse/Util.pm
+%%SITE_PERL%%/SGML/DTDParse/ContentModel.pm
+%%SITE_PERL%%/SGML/DTDParse/Catalog.pm
+%%SITE_PERL%%/SGML/DTDParse/Format/plain.pl
+%%SITE_PERL%%/SGML/DTDParse/Format/refentry.pl
+%%SITE_PERL%%/SGML/DTDParse/Format/html.pl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML/DTDParse
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SGML
+@dirrmtry %%SITE_PERL%%/SGML/DTDParse/Format
+@dirrmtry %%SITE_PERL%%/SGML/DTDParse
+@dirrmtry %%SITE_PERL%%/SGML
