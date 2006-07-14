@@ -1,38 +1,35 @@
-# New Ports Collection Makefile for:	sim-icq
+# New Ports Collection Makefile for:	sim-im
 # Date created:				4 Nov 2002
 # Whom:					Josef El-Rayes <j.el-rayes@daemon.li>
 #
 # $FreeBSD$
 
-PORTNAME=	simicq
-PORTVERSION=	0.9.3
-PORTREVISION=	5
+PORTNAME=	sim-im
+PORTVERSION=	0.9.4
 CATEGORIES=	net-im kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
-DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}-2
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME:S/-im//}-${PORTVERSION}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Plugin-based instant messenger
 
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
+CONFLICTS=	simicq-[0-9]* sim-im-devel-[0-9]*
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool:15
+USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-PLIST_SUB+=	SSL=""
-.else
-CONFIGURE_ARGS+=--disable-openssl
-PLIST_SUB+=	SSL="@comment "
-.endif
 
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=--disable-kde --enable-mt
@@ -46,20 +43,14 @@ PLIST_SUB+=	KDE="" \
 .endif
 
 pre-everything::
-.if !defined(WITHOUT_SSL)
-	@${ECHO_MSG} "You can disable SSL support by defining WITHOUT_SSL."
-.endif
 .if !defined(WITHOUT_KDE)
 	@${ECHO_MSG} "You can disable KDE support by defining WITHOUT_KDE."
 .endif
 
 post-patch:
+.if defined(WITHOUT_KDE)
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 		${CONFIGURE_WRKSRC}/configure
-
-post-configure:
-.if defined(WITHOUT_SSL)
-	@${REINPLACE_CMD} -e 's|plugins/yahoo||g' ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.mk>
