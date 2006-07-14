@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -33,7 +33,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="${LOCALBASE}/bin/makeinfo"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-included-lzo --with-included-libtasn1
+CONFIGURE_ARGS+=	--with-included-lzo \
+			--infodir="${PREFIX}/info" --mandir="${PREFIX}/man/"
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
