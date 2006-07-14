@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-p${PATCHLEVEL}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
+BROKEN=		fails to configure
+
 RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
 
 PATCHLEVEL=	14
