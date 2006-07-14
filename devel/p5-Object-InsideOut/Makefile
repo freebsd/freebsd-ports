@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	1.42
+PORTVERSION=	1.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Object
@@ -16,7 +16,7 @@ MAINTAINER=	geraud@gcu.info
 COMMENT=	Object::InsideOut - Comprehensive inside-out object support module
 
 BUILD_DEPENDS=	p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Test-Simple>=0.50:${PORTSDIR}/devel/p5-Test-Simple
+		p5-Scalar-List-Utils>=1.10:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -25,8 +25,8 @@ MAN3=	Object::InsideOut.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500800 # inherited from p5-Exception-Class
+IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
