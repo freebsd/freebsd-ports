@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5f2a0c40-1322-11db-bd23-000475abc56f">
+    <topic>zope -- information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>zope</name>
+	<range><ge>2.7.0</ge><lt>2.7.9</lt></range>
+	<range><ge>2.8.0</ge><lt>2.8.7</lt></range>
+	<range><ge>2.9.0</ge><lt>2.9.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zope team reports:</p>
+	<blockquote cite="http://www.zope.org/Products/Zope/Hotfix-2006-07-05/Hotfix-2006-07-05/view">
+	  <p>Unspecified vulnerability in (Zope2) allows local users
+	    to obtain sensitive information via unknown attack vectors
+	    related to the docutils module and "restructured text".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3458</cvename>
+      <url>http://www.zope.org/Products/Zope/Hotfix-2006-07-05/Hotfix-2006-07-05/view</url>
+    </references>
+    <dates>
+      <discovery>2006-07-05</discovery>
+      <entry>2006-07-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6da7344b-128a-11db-b25f-00e00c69a70d">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
