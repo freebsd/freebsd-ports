@@ -9694,6 +9694,7 @@ p5-Term-Shell	ports/devel/p5-Term-Shell
 p5-Term-Size	ports/devel/p5-Term-Size
 p5-Term-UI	ports/devel/p5-Term-UI
 p5-Test-Base	ports/devel/p5-Test-Base
+p5-Test-Benchmark	ports/devel/p5-Test-Benchmark
 p5-Test-Class	ports/devel/p5-Test-Class
 p5-Test-ClassAPI	ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd	ports/devel/p5-Test-Cmd
