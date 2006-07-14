@@ -1,0 +1,12 @@
+Sometimes you want to make sure that your "faster" algorithm really is
+faster than the old way. This lets you check. It might also be useful
+to check that your super whizzo XS or Inline::C version is actually
+faster.
+
+This module is based on the standard Benchmark module. If you have
+lots of timings to compare and you don't want to keep running the same
+benchmarks all the time, you can pass in a result object from
+Benchmark::timethis() instead of sub routine reference.
+
+Author:	Fergal Daly <fergal@esatclear.ie>
+WWW:	http://search.cpan.org/dist/Test-Benchmark/
