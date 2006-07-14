@@ -1,0 +1,9 @@
+diff -urN -x .svn ../Net-Akismet-0.02/README ./README
+--- README.orig	Fri Jul 14 13:44:12 2006
++++ README	Fri Jul 14 13:46:57 2006
+@@ -1,4 +1,4 @@
+-Net-Akismet version 0.01
++Net-Akismet version 0.02
+ ========================
+ 
+ Net::Akismet is meant to provide perl interface to the Akismet web service.

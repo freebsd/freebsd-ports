@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Akismet
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -27,11 +27,8 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Akismet.3
 
 post-patch:
-		${CP} ${FILESDIR}/Net-Akismet-podcheck.t \
-			${FILESDIR}/Net-Akismet-coverage.t \
-			${WRKSRC}/t/
 		# Grrrr, this really shouldn't be needed!
-		${RM} ${WRKSRC}/lib/Net/Akismet.pm.orig
+		${FIND} ${WRKSRC} -type f -name \*.orig -delete
 
 test:		build
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
