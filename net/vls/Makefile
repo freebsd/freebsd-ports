@@ -14,6 +14,8 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/vls/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Broadcasts MPEG(1/2/4, PS/TS) video streams
 
+BROKEN=		fails to install
+
 LIB_DEPENDS=	dvbpsi.4:${PORTSDIR}/multimedia/libdvbpsi
 .if !defined(WITHOUT_DVD)
 LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
