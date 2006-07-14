@@ -5,13 +5,17 @@ lib/xastir/Coordinate.pm
 lib/xastir/Xastir_tigerpoly.py
 lib/xastir/coord-convert.pl
 lib/xastir/fcc-get
+lib/xastir/get-NWSdata
 lib/xastir/get-gnis
+lib/xastir/get-maptools.sh
 lib/xastir/get_shapelib.sh
+lib/xastir/gpx2shape
 lib/xastir/icontable.pl
 lib/xastir/inf2geo.pl
 lib/xastir/kiss-off.pl
 lib/xastir/mapblast2geo.pl
 lib/xastir/mapfgd.pl
+lib/xastir/object2shp.pl
 lib/xastir/overlay.pl
 lib/xastir/ozi2geo.pl
 lib/xastir/permutations.pl
@@ -25,107 +29,107 @@ lib/xastir/update_langfile.pl
 lib/xastir/waypoint-get.pl
 lib/xastir/xastir-fixcfg.sh
 lib/xastir/xastir-migrate.sh
-share/xastir/Counties/placeholder
-share/xastir/GNIS/placeholder
-share/xastir/config/24kgrid.dbfawk
-share/xastir/config/gps_wpt.dbfawk
-share/xastir/config/language-Dutch.sys
-share/xastir/config/language-English.sys
-share/xastir/config/language-French.sys
-share/xastir/config/language-German.sys
-share/xastir/config/language-Italian.sys
-share/xastir/config/language-Portuguese.sys
-share/xastir/config/language-Spanish.sys
-share/xastir/config/nwsc_ddmmyy.dbfawk
-share/xastir/config/nwsmzddmmyy.dbfawk
-share/xastir/config/nwsmzoddmmyy.dbfawk
-share/xastir/config/nwsozddmmyy.dbfawk
-share/xastir/config/nwsw_ddmmyy.dbfawk
-share/xastir/config/nwsz_ddmmyy.dbfawk
-share/xastir/config/nwszoddmmyy.dbfawk
-share/xastir/config/predefined_EVENT.sys
-share/xastir/config/predefined_SAR.sys
-share/xastir/config/tgr2shp.dbfawk
-share/xastir/config/tgr2shppoly.dbfawk
-share/xastir/config/tgrcty.dbfawk
-share/xastir/config/tgrkgl.dbfawk
-share/xastir/config/tgrlk.dbfawk
-share/xastir/config/tgrlpt.dbfawk
-share/xastir/config/tgrlpy.dbfawk
-share/xastir/config/tgrplc00.dbfawk
-share/xastir/config/tgrwat.dbfawk
-share/xastir/config/tnc-startup.aea
-share/xastir/config/tnc-startup.d700
-share/xastir/config/tnc-startup.kam
-share/xastir/config/tnc-startup.kpc2
-share/xastir/config/tnc-startup.kpc3
-share/xastir/config/tnc-startup.null
-share/xastir/config/tnc-startup.paccomm
-share/xastir/config/tnc-startup.pico
-share/xastir/config/tnc-startup.sys
-share/xastir/config/tnc-startup.thd7
-share/xastir/config/tnc-startup.tnc2
-share/xastir/config/tnc-startup.tnc2-ui
-share/xastir/config/tnc-stop.d700
-share/xastir/config/tnc-stop.sys
-share/xastir/config/tnc-stop.thd7
-share/xastir/config/tnc-stop.tnc2-ui
-share/xastir/config/xastir.rgb
-share/xastir/doc/AUTHORS
-share/xastir/doc/COPYING
-share/xastir/doc/ChangeLog
-share/xastir/doc/FAQ
-share/xastir/doc/INSTALL
-share/xastir/doc/LICENSE
-share/xastir/doc/README
-share/xastir/doc/README.CVS
-share/xastir/doc/README.Contributing
-share/xastir/doc/README.Getting-Started
-share/xastir/doc/README.MAPS
-share/xastir/doc/README.win32
-share/xastir/doc/UPGRADE
-share/xastir/fcc/placeholder
-share/xastir/help/help-Dutch.dat
-share/xastir/help/help-English.dat
-share/xastir/help/help-French.dat
-share/xastir/help/help-German.dat
-share/xastir/help/help-Italian.dat
-share/xastir/help/help-Portuguese.dat
-share/xastir/help/help-Spanish.dat
-share/xastir/maps/GPS/placeholder
-share/xastir/maps/Online/CanadaTopo250k.geo
-share/xastir/maps/Online/CanadaTopo50k.geo
-share/xastir/maps/Online/TXRadar.geo
-share/xastir/maps/Online/USRadar.geo
-share/xastir/maps/Online/WMSRadar.geo
-share/xastir/maps/Online/terraserver-reflectivity.geo
-share/xastir/maps/Online/terraserver-topo.geo
-share/xastir/maps/Online/terraserver-urban.geo
-share/xastir/maps/Online/terraserver.geo
-share/xastir/maps/Online/tigermap.geo
-share/xastir/sounds/placeholder
-share/xastir/symbols/13pct.xbm
-share/xastir/symbols/25pct.xbm
-share/xastir/symbols/2x2.xbm
-share/xastir/symbols/alert.xbm
-share/xastir/symbols/flood.xbm
-share/xastir/symbols/red_flag.xbm
-share/xastir/symbols/snow.xbm
-share/xastir/symbols/symbols.dat
-share/xastir/symbols/tornado.xbm
-share/xastir/symbols/wind.xbm
-share/xastir/symbols/winter_wx.xbm
-share/xastir/symbols/wntr_strm.xbm
-@dirrm share/xastir/symbols
-@dirrm share/xastir/sounds
-@dirrm share/xastir/maps/Online
-@dirrm share/xastir/maps/GPS
-@dirrm share/xastir/maps
-@dirrm share/xastir/help
-@dirrm share/xastir/fcc
-@dirrm share/xastir/doc
-@dirrm share/xastir/config
-@dirrm share/xastir/GNIS
-@dirrm share/xastir/Counties
-@dirrm share/xastir
+%%DATADIR%%/Counties/placeholder
+%%DATADIR%%/GNIS/placeholder
+%%DATADIR%%/config/24kgrid.dbfawk
+%%DATADIR%%/config/gps_wpt.dbfawk
+%%DATADIR%%/config/language-Dutch.sys
+%%DATADIR%%/config/language-English.sys
+%%DATADIR%%/config/language-French.sys
+%%DATADIR%%/config/language-German.sys
+%%DATADIR%%/config/language-Italian.sys
+%%DATADIR%%/config/language-Portuguese.sys
+%%DATADIR%%/config/language-Spanish.sys
+%%DATADIR%%/config/nwsc_ddmmyy.dbfawk
+%%DATADIR%%/config/nwsmzddmmyy.dbfawk
+%%DATADIR%%/config/nwsmzoddmmyy.dbfawk
+%%DATADIR%%/config/nwsozddmmyy.dbfawk
+%%DATADIR%%/config/nwsw_ddmmyy.dbfawk
+%%DATADIR%%/config/nwsz_ddmmyy.dbfawk
+%%DATADIR%%/config/nwszoddmmyy.dbfawk
+%%DATADIR%%/config/predefined_EVENT.sys
+%%DATADIR%%/config/predefined_SAR.sys
+%%DATADIR%%/config/tgr2shp.dbfawk
+%%DATADIR%%/config/tgr2shppoly.dbfawk
+%%DATADIR%%/config/tgrcty.dbfawk
+%%DATADIR%%/config/tgrkgl.dbfawk
+%%DATADIR%%/config/tgrlk.dbfawk
+%%DATADIR%%/config/tgrlpt.dbfawk
+%%DATADIR%%/config/tgrlpy.dbfawk
+%%DATADIR%%/config/tgrplc00.dbfawk
+%%DATADIR%%/config/tgrwat.dbfawk
+%%DATADIR%%/config/tnc-startup.aea
+%%DATADIR%%/config/tnc-startup.d700
+%%DATADIR%%/config/tnc-startup.kam
+%%DATADIR%%/config/tnc-startup.kpc2
+%%DATADIR%%/config/tnc-startup.kpc3
+%%DATADIR%%/config/tnc-startup.null
+%%DATADIR%%/config/tnc-startup.paccomm
+%%DATADIR%%/config/tnc-startup.pico
+%%DATADIR%%/config/tnc-startup.sys
+%%DATADIR%%/config/tnc-startup.thd7
+%%DATADIR%%/config/tnc-startup.tnc2
+%%DATADIR%%/config/tnc-startup.tnc2-ui
+%%DATADIR%%/config/tnc-stop.d700
+%%DATADIR%%/config/tnc-stop.sys
+%%DATADIR%%/config/tnc-stop.thd7
+%%DATADIR%%/config/tnc-stop.tnc2-ui
+%%DATADIR%%/config/xastir.rgb
+%%DATADIR%%/doc/AUTHORS
+%%DATADIR%%/doc/COPYING
+%%DATADIR%%/doc/ChangeLog
+%%DATADIR%%/doc/FAQ
+%%DATADIR%%/doc/INSTALL
+%%DATADIR%%/doc/LICENSE
+%%DATADIR%%/doc/README
+%%DATADIR%%/doc/README.CVS
+%%DATADIR%%/doc/README.Contributing
+%%DATADIR%%/doc/README.Getting-Started
+%%DATADIR%%/doc/README.MAPS
+%%DATADIR%%/doc/README.win32
+%%DATADIR%%/doc/UPGRADE
+%%DATADIR%%/fcc/placeholder
+%%DATADIR%%/help/help-Dutch.dat
+%%DATADIR%%/help/help-English.dat
+%%DATADIR%%/help/help-French.dat
+%%DATADIR%%/help/help-German.dat
+%%DATADIR%%/help/help-Italian.dat
+%%DATADIR%%/help/help-Portuguese.dat
+%%DATADIR%%/help/help-Spanish.dat
+%%DATADIR%%/maps/GPS/placeholder
+%%DATADIR%%/maps/Online/CanadaTopo250k.geo
+%%DATADIR%%/maps/Online/CanadaTopo50k.geo
+%%DATADIR%%/maps/Online/TXRadar.geo
+%%DATADIR%%/maps/Online/USRadar.geo
+%%DATADIR%%/maps/Online/WMSRadar.geo
+%%DATADIR%%/maps/Online/terraserver-reflectivity.geo
+%%DATADIR%%/maps/Online/terraserver-topo.geo
+%%DATADIR%%/maps/Online/terraserver-urban.geo
+%%DATADIR%%/maps/Online/terraserver.geo
+%%DATADIR%%/maps/Online/tigermap.geo
+%%DATADIR%%/sounds/placeholder
+%%DATADIR%%/symbols/13pct.xbm
+%%DATADIR%%/symbols/25pct.xbm
+%%DATADIR%%/symbols/2x2.xbm
+%%DATADIR%%/symbols/alert.xbm
+%%DATADIR%%/symbols/flood.xbm
+%%DATADIR%%/symbols/red_flag.xbm
+%%DATADIR%%/symbols/snow.xbm
+%%DATADIR%%/symbols/symbols.dat
+%%DATADIR%%/symbols/tornado.xbm
+%%DATADIR%%/symbols/wind.xbm
+%%DATADIR%%/symbols/winter_wx.xbm
+%%DATADIR%%/symbols/wntr_strm.xbm
+@dirrm %%DATADIR%%/symbols
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/maps/Online
+@dirrm %%DATADIR%%/maps/GPS
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/fcc
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/GNIS
+@dirrm %%DATADIR%%/Counties
+@dirrm %%DATADIR%%
 @dirrm lib/xastir
