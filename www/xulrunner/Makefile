@@ -6,8 +6,8 @@
 #    $MCom: ports/www/xulrunner/Makefile,v 1.6 2006/02/26 16:58:29 ahze Exp $
 
 PORTNAME=	xulrunner
-PORTVERSION=	1.8.0.1
-PORTREVISION?=	2
+PORTVERSION=	1.8.0.4
+PORTREVISION?=	0
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	xulrunner/releases/${PORTVERSION}/source/
