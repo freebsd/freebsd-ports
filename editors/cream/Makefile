@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cream
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ NO_BUILD=	YES
 PLIST_FILES=	bin/cream
 
 # needs updating for each major vim update.
-VIMRUNTIMEDIR=	share/vim/vim64
+VIMRUNTIMEDIR=	share/vim/vim70
 
 CREAM_FILES=	EasyHtml.vim EnhancedCommentify.vim Rndm.vim calendar.vim \
 		cream-abbr-eng.vim cream-abbr-fre.vim cream-abbr.vim \
@@ -47,7 +47,7 @@ CREAM_FILES=	EasyHtml.vim EnhancedCommentify.vim Rndm.vim calendar.vim \
 		cream-replace.vim cream-replacemulti.vim cream-server.vim \
 		cream-settings.vim cream-showinvisibles.vim cream-spell.vim \
 		cream-statusline.vim cream-templates.vim \
-		cream-window-buffer.vim cream.vim creamrc genutils.vim \
+		cream.vim creamrc genutils.vim \
 		multvals.vim opsplorer.vim taglist.vim
 
 CREAM_ADDONS=	cream-colorinvert.vim cream-convert-hex.vim \
@@ -76,18 +76,16 @@ CREAM_DOCS=	CHANGELOG.txt COPYING.txt DEVELOPER.txt \
 		KEYBOARD.txt PressRelease.txt README.txt RELEASE.txt \
 		TODO.txt WINDOWS.txt
 
-CREAM_HTML=	contribute.html cream.png \
-		faq.html favicon.png features.html \
-		index.html installation.html \
-		keyboardshortcuts.html license.html links.html \
-		maillists.html main.css \
-		screenshot-popup.png screenshot1-thumb.png screenshot1.png \
-		screenshot2-thumb.png screenshot2.png screenshot3-thumb.png \
-		screenshot3.png screenshot4-thumb.png screenshot4.png \
-		screenshots.html \
-		screenshots1-closeup.html screenshots2-closeup.html \
-		screenshots3-closeup.html screenshots4-closeup.html \
-		spellcheck.html statusline-closeup.html statusline-thumb.png \
+CREAM_HTML=	PHPClientSniffer.php about.html \
+		contributors.html css.php download.html external.gif \
+		faq.html favicon.ico featurelist.html features.html \
+		home.html index.html installation.html \
+		keyboardshortcuts.html \
+		screenshot1-thumb.png screenshot1.png \
+		screenshot2-thumb.png screenshot2.png \
+		screenshot3-thumb.png screenshot3.png \
+		screenshot1.html screenshot2.html screenshot3.html \
+		statusline.html statusline-thumb.png \
 		statusline.png vim.html
 
 CREAM_FTYPES=	c.vim html.vim lisp.vim txt.vim vim.vim
