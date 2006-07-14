@@ -20,4 +20,10 @@ USE_ZIP=	yes
 
 MAN3=		Config::INI::Simple.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500807
+IGNORE=		requires perl 5.8.7 or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
