@@ -41,6 +41,10 @@ MAN1=	fvwm95.1 xpmroot.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 SAMPLEDIR=	${PREFIX}/share/examples/fvwm95
 KITDIR=		${WRKDIR}/${PKGNAME}-portKit
 
+OPTIONS=	APM "Build APM support (i386 only)" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_APM)
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	apm.h is only in i386 system
@@ -52,21 +56,6 @@ post-extract:
 		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	${CP} ${WRKDIR}/apmpatch/freebsd-menu.xpm ${WRKSRC}/mini-icons
 
-pre-patch:
-.if !defined(BATCH) && !defined(FOR_CDROM) && !defined(WITH_APM)
-	@${ECHO} -n "Are you going to use APM handling? (y/n) ==> "
-	@(read ans; \
-	  case x"$$ans" in \
-	    xy*|xY*) \
-		${ECHO} "Okay, please rerun make like as \"make WITH_APM=yes\"."; \
-		${ECHO} "(Don't worry about the following \"*** Error code 1\"s)"; \
-		return 1; \
-		;; \
-	    *) \
-		return 0; \
-		;; \
-	  esac)
-.endif
 post-patch:
 .if defined(WITH_APM)
 	@${CAT} ${WRKDIR}/apmpatch/fvwm95-2.0.43a-Autoconf.I18N.apmpatch \
@@ -84,4 +73,4 @@ post-install:
 		${PREFIX}/lib/X11/fvwm95/ja_JP.EUC/system.fvwm95rc
 	@${INSTALL_SCRIPT} ${KITDIR}/fvwm95.find ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
