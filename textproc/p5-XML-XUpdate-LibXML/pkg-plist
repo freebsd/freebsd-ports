@@ -1,7 +1,7 @@
 bin/xupdate
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate/LibXML/.packlist
-%%SITE_PERL%%/XML/XUpdate/LibXML.pm
 %%SITE_PERL%%/XML/Normalize/LibXML.pm
+%%SITE_PERL%%/XML/XUpdate/LibXML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate/LibXML/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate/LibXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/XUpdate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
