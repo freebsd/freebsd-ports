@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of programs to manipulate audio files
 
+BROKEN=		fails to install with latest gmake (needs whitespace at EOL)
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtsp.a:${PORTSDIR}/audio/afsp
 
 USE_GMAKE=	yes
