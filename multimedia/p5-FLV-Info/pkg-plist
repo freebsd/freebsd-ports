@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+bin/flvinfo
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV/Info/.packlist
+%%SITE_PERL%%/FLV/AMFReader.pm
+%%SITE_PERL%%/FLV/AMFWriter.pm
+%%SITE_PERL%%/FLV/AudioTag.pm
+%%SITE_PERL%%/FLV/Base.pm
+%%SITE_PERL%%/FLV/Body.pm
+%%SITE_PERL%%/FLV/Constants.pm
+%%SITE_PERL%%/FLV/File.pm
+%%SITE_PERL%%/FLV/Header.pm
+%%SITE_PERL%%/FLV/Info.pm
+%%SITE_PERL%%/FLV/MetaTag.pm
+%%SITE_PERL%%/FLV/Tag.pm
+%%SITE_PERL%%/FLV/VideoTag.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV
+@dirrmtry %%SITE_PERL%%/FLV
