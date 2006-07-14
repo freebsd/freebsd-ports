@@ -16,6 +16,7 @@ COMMENT=	Easy virtual domain and authentication package for use with qmail
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
+
 USE_QMAIL=	yes
 
 CONFLICTS=	vpopmail-devel-5.*
@@ -221,7 +222,7 @@ CONFIGURE_ARGS+=	--disable-md5-passwords
 .endif
 
 .if defined(WITH_APOP)
-BROKEN=		"The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP will just work"
+BROKEN=		The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP will just work
 .endif
 
 .if defined(WITH_VALIAS)
@@ -286,7 +287,7 @@ CONFIGURE_ARGS+=	--disable-make-seekable
 #BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 #CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
 #			--enable-spam-threshold=${SPAM_THRESHOLD}
-IGNORE=		The SpamAssassin patch is not yet ready for the slightly reorganized vpopmail code
+IGNORE=		has been slightly reorganized and the SpamAssassin patch is not ready yet
 .endif
 
 #
@@ -372,5 +373,6 @@ post-install:
 .if defined(WITH_SUID_VCHKPW)
 	${CHMOD} ug+s ${PREFIX}/vpopmail/bin/vchkpw
 .endif
+	@${TOUCH} ${QMAIL_PREFIX}/control/locals
 
 .include <bsd.port.post.mk>
