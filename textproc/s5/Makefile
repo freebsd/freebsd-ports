@@ -7,6 +7,7 @@
 
 PORTNAME=	s5
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.meyerweb.com/eric/tools/s5/v/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -16,13 +17,15 @@ COMMENT=	A simple HTML-based presentation system
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
+NO_BUILD=	yes
 
 S5_DIR=		${PREFIX}/share/${PORTNAME}
 S5_SUBDIRS=	pix primer s5-blank ui
 
-do-build:
+post-extract:
 		cd ${WRKSRC} && ${UNZIP_CMD} s5-blank.zip
 		${SED} -e "s,/usr/local,${PREFIX}," ${FILESDIR}/s5-blank.sh > ${WRKDIR}/s5-blank.sh
 		${FIND} ${WRKDIR} -type f -name .DS_Store -delete
