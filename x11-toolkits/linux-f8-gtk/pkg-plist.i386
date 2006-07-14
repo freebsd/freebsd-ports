@@ -107,21 +107,15 @@ usr/share/themes/Default/gtk/gtkrc
 @dirrmtry usr/share/themes/Default/gtk
 @dirrmtry usr/share/themes/Default
 @dirrmtry usr/share/themes
+@comment
+@comment those usr/share/locale dirs are candidates to go to linux_base port
+@comment -- bsam
 @dirrmtry usr/share/locale/zh_TW.Big5/LC_MESSAGES
 @dirrmtry usr/share/locale/zh_TW.Big5
-@dirrmtry usr/share/locale/vi/LC_MESSAGES
-@dirrmtry usr/share/locale/vi
 @dirrmtry usr/share/locale/sp/LC_MESSAGES
 @dirrmtry usr/share/locale/sp
-@dirrmtry usr/share/locale/nn/LC_MESSAGES
-@dirrmtry usr/share/locale/nn
-@dirrmtry usr/share/locale/lt/LC_MESSAGES
-@dirrmtry usr/share/locale/lt
 @dirrmtry usr/share/locale/ga/LC_MESSAGES
 @dirrmtry usr/share/locale/ga
-@dirrmtry usr/share/locale/eu/LC_MESSAGES
-@dirrmtry usr/share/locale/eu
-@dirrmtry usr/share/locale/az/LC_MESSAGES
-@dirrmtry usr/share/locale/az
+@comment
 @dirrm usr/share/doc/gtk+-1.2.10
 @dirrm etc/gtk
