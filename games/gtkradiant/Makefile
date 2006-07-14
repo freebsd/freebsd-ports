@@ -18,8 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:id \
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Level design program developed by id Software and Loki Software
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subversion-python \
-		scons:${PORTSDIR}/devel/scons
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subversion-python
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		mhash.2:${PORTSDIR}/security/mhash \
 		png.5:${PORTSDIR}/graphics/png
@@ -30,9 +29,8 @@ USE_ZIP=	yes
 USE_GCC=	3.4+
 USE_GNOME=	gtk20 libxml2
 USE_PYTHON_BUILD=	yes
-
-MAKE_ENV+=	CC="${CC}" CXX="${CXX}" CCFLAGS="${CFLAGS}" BUILD=release \
-		LINKFLAGS="${LDFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
+USE_SCONS=	yes
+SCONS_ARGS=	${MAKE_ENV} BUILD=release PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 SUB_FILES=	${PORTNAME}
 DATADIR=	${PREFIX}/lib/${PORTNAME}
@@ -50,8 +48,8 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e \
 		's/\(defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)\)/\1 || defined (__FreeBSD__)/'
 
-do-build:
-	cd ${WRKSRC} && scons ${MAKE_ENV} && ${PYTHON_CMD} install.py
+post-build:
+	cd ${WRKSRC} && ${PYTHON_CMD} install.py
 	${CP} -R ${WRKDIR}/${PORTNAME}_gamepacks/* ${WRKSRC}/install
 
 do-install:
