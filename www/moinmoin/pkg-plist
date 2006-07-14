@@ -29,6 +29,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.pyo
@@ -134,6 +137,12 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sitemap.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sitemap.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/sitemap.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/titleindex.pyo
@@ -284,6 +293,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/he.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/he.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/he.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hr.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hr.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hr.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hu.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hu.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hu.pyo
@@ -395,6 +407,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditedSystemPages.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditedSystemPages.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/EditedSystemPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EmbedObject.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EmbedObject.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/EmbedObject.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/FootNote.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/FootNote.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/FootNote.pyo
@@ -419,9 +434,6 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MissingPageHint.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MissingPageHint.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/macro/MissingPageHint.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyo
@@ -590,6 +602,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050301.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -731,6 +746,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/copy.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/copy.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/copy.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/lupy/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/lupy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/lupy/__init__.pyo
@@ -872,6 +890,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/sessionParser.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/sessionParser.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/sessionParser.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/thread_monitor.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/thread_monitor.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/thread_monitor.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/timefuncs.pyo
@@ -964,6 +985,7 @@ share/moin/data/cache/README
 share/moin/data/dict/dummy_dict
 share/moin/data/edit-log
 share/moin/data/intermap.txt
+share/moin/data/meta
 share/moin/data/pages/BadContent/current
 share/moin/data/pages/BadContent/revisions/00000001
 share/moin/data/plugin/__init__.py
@@ -1692,7 +1714,6 @@ share/moin/htdocs/applets/moinFCKplugins/selection/fckplugin.js
 share/moin/htdocs/applets/moinfckconfig.js
 share/moin/htdocs/applets/moinfckstyles.xml
 share/moin/htdocs/classic/css/common.css
-share/moin/htdocs/classic/css/common.css.orig
 share/moin/htdocs/classic/css/print.css
 share/moin/htdocs/classic/css/projection.css
 share/moin/htdocs/classic/css/screen.css
@@ -1848,7 +1869,6 @@ share/moin/htdocs/modern/img/thumbs-up.png
 share/moin/htdocs/modern/img/tired.png
 share/moin/htdocs/modern/img/tongue.png
 share/moin/htdocs/rightsidebar/css/common.css
-share/moin/htdocs/rightsidebar/css/common.css.orig
 share/moin/htdocs/rightsidebar/css/print.css
 share/moin/htdocs/rightsidebar/css/projection.css
 share/moin/htdocs/rightsidebar/css/screen.css
