@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+bin/nnmirror
+bin/nnsync
+bin/overview
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NNML/.packlist
+%%SITE_PERL%%/NNML/Active.pm
+%%SITE_PERL%%/NNML/Auth.pm
+%%SITE_PERL%%/NNML/Config.pm
+%%SITE_PERL%%/NNML/Connection.pm
+%%SITE_PERL%%/NNML/Group.pm
+%%SITE_PERL%%/NNML/Handle.pm
+%%SITE_PERL%%/NNML/Server.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NNML
+@dirrmtry %%SITE_PERL%%/NNML
