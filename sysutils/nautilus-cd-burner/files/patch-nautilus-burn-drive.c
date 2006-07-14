@@ -1,6 +1,6 @@
---- nautilus-burn-drive.c.orig	Tue Aug 23 11:55:56 2005
-+++ nautilus-burn-drive.c	Sat Sep 10 20:32:26 2005
-@@ -471,7 +471,6 @@ get_disc_type (const char *dev_path)
+--- nautilus-burn-drive.c.orig	Wed Mar 22 11:08:38 2006
++++ nautilus-burn-drive.c	Thu Jul 13 22:15:30 2006
+@@ -687,7 +687,6 @@
  	struct cd_toc_entry              entry;
  	int                              i;
  #endif
@@ -8,7 +8,7 @@
  #ifndef CDROM_DATA_TRACK
  #define CDROM_DATA_TRACK 4
  #endif
-@@ -483,6 +482,10 @@ get_disc_type (const char *dev_path)
+@@ -699,6 +698,10 @@
  
  	if (ioctl (fd, CDIOREADTOCHEADER, &header) < 0) {
  		close (fd);
@@ -19,7 +19,7 @@
  	    	return -1;
  	}
  
-@@ -649,7 +652,7 @@ nautilus_burn_drive_get_media_type_from_
+@@ -862,7 +865,7 @@
  		*is_blank = mmc_profile & 0x10000;
  
  	disc_type = get_disc_type (device);
@@ -28,3 +28,15 @@
  
  	switch (mmc_profile & 0xFFFF) {
  	case -1:
+@@ -1767,7 +1770,11 @@
+ #ifdef USE_GNOME_MOUNT
+ 	cmd = g_strdup_printf ("gnome-mount --eject --no-ui --device=%s", drive->device);
+ #else
++#ifdef __FreeBSD__
++	cmd = g_strdup_printf ("cdcontrol -f %s eject", drive->device);
++#else
+ 	cmd = g_strdup_printf ("eject %s", drive->device);
++#endif
+ #endif
+ 
+ 	res = g_spawn_command_line_sync (cmd, NULL, NULL, NULL, NULL);
