@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://planetmirror.com/pub/lyx/stable/ \
@@ -26,6 +25,7 @@ CONFLICTS=	cjk-lyx-*
 OPTIONS=	QT	"Use Qt (instead of XForms)"	${QT_PRESENT}	\
 		ASPELL	"Utilize ASPELL library"	on	\
 		ISPELL	"Depend on ISPELL as well"	off
+ALL_TARGET=	all check
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget lthack
 USE_PERL5=	yes
@@ -41,10 +41,6 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 
-#post-extract:
-#	# Removing mention of the bundled boost
-#	${REINPLACE_CMD} -e '/boost\/.*Makefile/d' ${WRKSRC}/configure.ac
-
 post-patch:
 	# Removing mention of the bundled boost
 	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
@@ -53,6 +49,8 @@ post-patch:
 	    ${WRKSRC}/src/support/debugstream.h
 	${REINPLACE_CMD} -e 's,boost/regex\.hpp,boost/cregex.hpp,' \
 	    ${WRKSRC}/src/support/filetools.C
+	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,'	\
+	    ${WRKSRC}/src/support/tests/test_*
 
 post-configure:
 	# Removing explicit linking with -lc

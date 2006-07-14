@@ -38,13 +38,12 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/bind/xemacs.bind
 %%DATADIR%%/chkconfig.ltx
 %%DATADIR%%/clipart/platypus.eps
-%%DATADIR%%/configure
+%%DATADIR%%/configure.py
 %%DATADIR%%/doc/Customization.lyx
 %%DATADIR%%/doc/DocStyle.lyx
 %%DATADIR%%/doc/Extended.lyx
 %%DATADIR%%/doc/FAQ.lyx
 %%DATADIR%%/doc/Intro.lyx
-%%DATADIR%%/doc/LaTeXConfig.lyx
 %%DATADIR%%/doc/LaTeXConfig.lyx.in
 %%DATADIR%%/doc/Reference.lyx
 %%DATADIR%%/doc/TOC.lyx
@@ -556,6 +555,7 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/images/math/overleftrightarrow.xpm
 %%DATADIR%%/images/math/overline.xpm
 %%DATADIR%%/images/math/overrightarrow.xpm
+%%DATADIR%%/images/math/overset.xpm
 %%DATADIR%%/images/math/parallel.xpm
 %%DATADIR%%/images/math/partial.xpm
 %%DATADIR%%/images/math/perp.xpm
@@ -671,6 +671,7 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/images/math/underline.xpm
 %%DATADIR%%/images/math/underrightarrow.xpm
 %%DATADIR%%/images/math/underscore.xpm
+%%DATADIR%%/images/math/underset.xpm
 %%DATADIR%%/images/math/uparrow.xpm
 %%DATADIR%%/images/math/uparrow2.xpm
 %%DATADIR%%/images/math/updownarrow.xpm
@@ -858,6 +859,7 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/layouts/heb-article.layout
 %%DATADIR%%/layouts/heb-letter.layout
 %%DATADIR%%/layouts/hollywood.layout
+%%DATADIR%%/layouts/ijmpc.layout
 %%DATADIR%%/layouts/ijmpd.layout
 %%DATADIR%%/layouts/jgrga.layout
 %%DATADIR%%/layouts/kluwer.layout
@@ -947,10 +949,9 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/lyx2lyx/profiling.py
 %%DATADIR%%/lyx2lyx/profiling.pyc
 %%DATADIR%%/lyx2lyx/profiling.pyo
-%%DATADIR%%/lyxrc.defaults
 %%DATADIR%%/lyxrc.example
-%%DATADIR%%/packages.lst
-%%DATADIR%%/scripts/TeXFiles.sh
+%%DATADIR%%/scripts/TeXFiles.py
+%%DATADIR%%/scripts/clean_dvi.py
 %%DATADIR%%/scripts/convertDefault.sh
 %%DATADIR%%/scripts/fen2ascii.py
 %%DATADIR%%/scripts/fig2pdftex.sh
@@ -975,6 +976,7 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/templates/g-brief-de.lyx
 %%DATADIR%%/templates/g-brief-en.lyx
 %%DATADIR%%/templates/hollywood.lyx
+%%DATADIR%%/templates/ijmpc.lyx
 %%DATADIR%%/templates/ijmpd.lyx
 %%DATADIR%%/templates/kluwer.lyx
 %%DATADIR%%/templates/koma-letter2.lyx
@@ -990,7 +992,6 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/tex/lyxchess.sty
 %%DATADIR%%/tex/lyxskak.sty
 %%DATADIR%%/tex/revtex.cls
-%%DATADIR%%/textclass.lst
 %%DATADIR%%/ui/classic.ui
 %%DATADIR%%/ui/default.ui
 %%DATADIR%%/ui/stdmenus.ui
