@@ -43,8 +43,8 @@ DEMODAT=	grph1/scpack/t810630.dat grph1/scpack/t811231.dat \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=	Does not build on amd64 (Needs to link against shared libraries)
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=	Does not build on ${ARCH} (Needs to link against shared libraries)
 .endif
 
 post-install:
