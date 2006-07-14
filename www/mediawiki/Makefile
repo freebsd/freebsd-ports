@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.6.7
-PORTREVISION=	2
+PORTVERSION=	1.7.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -15,26 +14,19 @@ MASTER_SITE_SUBDIR=	wikipedia
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.[0-57-9].*
+CONFLICTS=	mediawiki-1.[0-68-9].*
 
 NO_BUILD=	yes
-USE_PHP=	iconv mbstring pcre session xml zlib readline
+USE_MYSQL=	yes
+IGNORE_WITH_MYSQL=	323
+USE_PHP=	iconv mbstring pcre session xml zlib readline mysql
+IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
-OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL (not funtional)" off \
-		LDAP "Use LDAP authentication" off
+OPTIONS=	LDAP "Use LDAP authentication" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_PGSQL)
-USE_PHP+=	pgsql
-IGNORE=		the table definitions for PostgreSQL install are out of date.\
-		PostgreSQL support may return in later releases, pending appropriate patches.\
-		Use www/mediawiki15 for while
-.else
-USE_PHP+=	mysql
-.endif
 
 .if defined(WITH_LDAP)
 USE_PHP+=	ldap
