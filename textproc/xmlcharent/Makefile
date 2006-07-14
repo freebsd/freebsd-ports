@@ -6,11 +6,11 @@
 
 PORTNAME=	xmlcharent
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML character entities
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
@@ -28,13 +28,10 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
-post-patch:
-	${SED} -e 's#@@XMLDIR@@#${XMLDIR}#' < ${FILESDIR}/catalog.xml > ${WRKSRC}/catalog.xml
-
 do-install:
 	${MKDIR} ${XMLDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ent\
-		${FILESDIR}/catalog ${WRKSRC}/catalog.xml ${XMLDIR}
+		${FILESDIR}/catalog ${FILESDIR}/catalog.xml ${XMLDIR}
 	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${XMLDIR}/catalog
 	${XMLCATMGR} -c ${CATALOG_PORTS_XML} add nextCatalog ${XMLDIR}/catalog.xml
 
