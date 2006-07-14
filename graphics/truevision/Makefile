@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNOME 3D modeler
 
+BROKEN=		needs to have gtkglext dependency updated
+
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
