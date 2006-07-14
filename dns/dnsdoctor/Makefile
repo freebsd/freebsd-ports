@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	dnsdoctor
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	dns ipv6 ruby
 MASTER_SITES=	http://www.dnsdoctor.org/download/src/
-MASTER_SITE_SUBDIR=	${PORTNAME}/src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	janos.mohacsi@bsd.hu
