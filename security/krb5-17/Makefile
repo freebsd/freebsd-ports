@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.4.3
+PORTVERSION=		1.5
 CATEGORIES=		security
-MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$/&/:C/\.[0-9]*$//}/
+MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 
@@ -25,8 +25,8 @@ USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=		yes
 USE_AUTOTOOLS=		libtool:15
-CONFIGURE_ARGS?=	--enable-shared --enable-static
-CONFIGURE_ARGS+=	--disable-thread-support
+CONFIGURE_ARGS?=	--enable-shared
+# CONFIGURE_ARGS+=	--disable-thread-support
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
@@ -49,7 +49,7 @@ MAN1=			krb5-send-pr.1 krb5-config.1 kpasswd.1 klist.1 \
 			kinit.1 kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 \
 			rlogin.1 ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
 .if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
-MAN1+=			v4rcp.1
+MAN1+=			krb524init.1 v4rcp.1
 .endif
 MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
 MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
