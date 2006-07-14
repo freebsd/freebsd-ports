@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.112
+PORTVERSION=	1.115
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -106,11 +106,6 @@ MAN3=	PPI.3 \
 	PPI::Token::_QuoteEngine::Simple.3 \
 	PPI::Tokenizer.3 \
 	PPI::Transform.3
-
-post-patch:
-	@${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	@${PERL} -pi -e '$$_="" if m/AutoInstall/' ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e '$$_="" if m/Test::More|auto_install/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
