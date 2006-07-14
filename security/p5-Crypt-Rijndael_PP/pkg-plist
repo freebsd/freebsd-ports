@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rijndael_PP/.packlist
+%%SITE_PERL%%/Crypt/Rijndael_PP.pm
+%%SITE_PERL%%/Crypt/comp.pl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Rijndael_PP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/Crypt

@@ -368,6 +368,7 @@
     SUBDIR += p5-Crypt-RandPasswd
     SUBDIR += p5-Crypt-Random
     SUBDIR += p5-Crypt-Rijndael
+    SUBDIR += p5-Crypt-Rijndael_PP
     SUBDIR += p5-Crypt-SKey
     SUBDIR += p5-Crypt-SSLeay
     SUBDIR += p5-Crypt-Salt
