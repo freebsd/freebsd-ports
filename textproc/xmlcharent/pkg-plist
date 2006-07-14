@@ -1,8 +1,8 @@
 @comment $FreeBSD$
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%XMLDIR%%/catalog
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%XMLDIR%%/catalog
 share/xml/xmlcharent/catalog
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%XMLDIR%%/catalog
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%XMLDIR%%/catalog.xml
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove nextCatalog %%XMLDIR%%/catalog.xml
 share/xml/xmlcharent/catalog.xml
 @exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%XMLDIR%%/catalog.xml
 share/xml/xmlcharent/iso-amsa.ent
