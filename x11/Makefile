@@ -193,7 +193,6 @@
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += rxvt-unicode
-    SUBDIR += settitle
     SUBDIR += silo
     SUBDIR += sisctrl
     SUBDIR += slim
