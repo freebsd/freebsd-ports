@@ -45,20 +45,6 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Drupal team reports:</p>
-	<blockquote cite="http://drupal.org/node/65357">
-	  <p>Vulnerability: SQL injection vulnerability.</p>
-	  <p>A security vulnerability in the database layer allowed
-	    certain queries to be submitted to the database without
-	    going through Drupal's query sanitizer.</p>
-	</blockquote>
-	<blockquote cite="http://drupal.org/node/65409">
-	  <p>Vulnerability: Execution of arbitrary files in certain
-	    Apache configurations</p>
-	  <p>Certain -- alas, typical -- configurations of Apache allows
-	    execution of carefully named arbitrary scripts in the files
-	    directory.  Drupal now will attempt to automatically create
-	    a .htaccess file in your "files" directory to protect you.</p>
-	</blockquote>
 	<blockquote cite="http://drupal.org/node/66767">
 	  <p>Vulnerability: XSS Vulnerability in taxonomy module</p>
 	  <p>It is possible for a malicious user to insert and execute
@@ -69,10 +55,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2006-2833</cvename>
+      <url>http://drupal.org/node/66767</url>
     </references>
     <dates>
       <discovery>2006-05-18</discovery>
       <entry>2006-07-13</entry>
+      <modified>2006-07-14</modified>
     </dates>
   </vuln>
 
