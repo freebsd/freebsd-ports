@@ -12714,6 +12714,7 @@ silkymail	ports/mail/silkymail
 silo		ports/x11/silo
 silvercity	ports/textproc/silvercity
 sim		ports/emulators/sim
+sim-im		ports/net-im/sim-im
 sim-im-devel	ports/net-im/sim-im-devel
 sim4		ports/biology/sim4
 sim6811		ports/emulators/sim6811
@@ -12721,7 +12722,6 @@ simage		ports/graphics/simage
 simd-viterbi	ports/math/simd-viterbi
 simgear		ports/devel/simgear
 simian		ports/devel/simian
-simicq		ports/net-im/simicq
 simlib		ports/science/simlib
 simplemod	ports/audio/simplemod
 simpletest	ports/devel/simpletest
