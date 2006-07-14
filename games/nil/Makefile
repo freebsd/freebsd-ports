@@ -26,6 +26,13 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		does not link on ${ARCH}
+.endif
+.if ${ARCH} == "i386" && ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name configure -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \
