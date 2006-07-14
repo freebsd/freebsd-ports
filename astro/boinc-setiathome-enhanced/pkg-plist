@@ -1,9 +1,10 @@
-@cwd %%BOINC_HOME%%
-projects/%%SETI_SITE%%/app_info.xml
-projects/%%SETI_SITE%%/AUTHORS
-projects/%%SETI_SITE%%/CHANGES
-projects/%%SETI_SITE%%/COPYING
-projects/%%SETI_SITE%%/COPYRIGHT
-projects/%%SETI_SITE%%/README
-projects/%%SETI_SITE%%/%%SETI_BINARY%%
-@dirrmtry %D/projects/%%SETI_SITE%% 2>/dev/null
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd %%BOINC_HOME%%/projects
+%%SETI_SITE%%/app_info.xml
+%%SETI_SITE%%/%%SETI_BINARY%%
+@dirrmtry %%SETI_SITE%%
