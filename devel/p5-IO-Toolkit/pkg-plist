@@ -1,0 +1,5 @@
+%%SITE_PERL%%/IO/Toolkit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Toolkit/.packlist
+@dirrmtry %%SITE_PERL%%/IO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Toolkit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
