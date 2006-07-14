@@ -15,6 +15,8 @@ DISTNAME=	moin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python clone of WikiWiki
 
+BROKEN=		fails to install
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
