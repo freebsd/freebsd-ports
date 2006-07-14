@@ -1,5 +1,5 @@
---- util/pty/getpty.c.orig	Wed Jan  9 14:28:37 2002
-+++ util/pty/getpty.c	Thu Jan 10 21:30:40 2002
+--- appl/libpty/getpty.c.orig	Wed Jan  9 14:28:37 2002
++++ appl/libpty/getpty.c	Thu Jan 10 21:30:40 2002
 @@ -24,13 +24,26 @@
  #include "libpty.h"
  #include "pty-int.h"

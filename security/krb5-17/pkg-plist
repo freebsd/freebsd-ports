@@ -21,6 +21,7 @@ include/com_err.h
 include/gssapi/gssapi.h
 include/gssapi/gssapi_generic.h
 include/gssapi/gssapi_krb5.h
+include/gssapi/mechglue.h
 include/gssrpc/auth.h
 include/gssrpc/auth_gss.h
 include/gssrpc/auth_gssapi.h
@@ -43,40 +44,32 @@ include/gssrpc/xdr.h
 %%KRB4%%include/kerberosIV/krb_err.h
 %%KRB4%%include/kerberosIV/mit-copyright.h
 include/krb5.h
+include/krb5/krb5.h
+include/krb5/locate_plugin.h
 include/profile.h
-lib/libcom_err.a
 lib/libcom_err.so
 lib/libcom_err.so.3
-lib/libdes425.a
 lib/libdes425.so
 lib/libdes425.so.3
-lib/libgssapi_krb5.a
 lib/libgssapi_krb5.so
 lib/libgssapi_krb5.so.2
-lib/libgssrpc.a
 lib/libgssrpc.so
 lib/libgssrpc.so.4
-lib/libk5crypto.a
 lib/libk5crypto.so
 lib/libk5crypto.so.3
-lib/libkadm5clnt.a
 lib/libkadm5clnt.so
 lib/libkadm5clnt.so.5
-lib/libkadm5srv.a
 lib/libkadm5srv.so
 lib/libkadm5srv.so.5
-lib/libkdb5.a
 lib/libkdb5.so
 lib/libkdb5.so.4
-%%KRB4%%lib/libkrb4.a
 %%KRB4%%lib/libkrb4.so
 %%KRB4%%lib/libkrb4.so.2
-lib/libkrb5.a
 lib/libkrb5.so
 lib/libkrb5.so.3
-lib/libkrb5support.a
 lib/libkrb5support.so
 lib/libkrb5support.so.0
+lib/krb5/plugins/kdb/db2.so
 sbin/ftpd
 sbin/gss-server
 sbin/k5srvutil
@@ -104,9 +97,14 @@ share/examples/krb5/kdc.conf
 share/examples/krb5/krb5.conf
 share/examples/krb5/services.append
 share/gnats/mit
+@dirrm lib/krb5/plugins/libkrb5
+@dirrm lib/krb5/plugins/kdb
+@dirrm lib/krb5/plugins
+@dirrm lib/krb5
 @dirrm include/gssapi
 @dirrm include/gssrpc
 @dirrm include/kerberosIV
+@dirrm include/krb5
 @dirrm share/et
 @dirrm share/gnats
 @dirrm share/examples/krb5
