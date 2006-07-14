@@ -49,8 +49,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
-OPTIONS=	CURL_DEBUG "Enable curl diagnostic output" off \
+OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
+		CURL_DEBUG "Enable curl diagnostic output" off \
 		GNUTLS "Use GNU TLS if WITHOUT_SSL is specified" off \
+		IPV6 "IPv6 support" on \
 		KERBEROS4 "Kerberos 4 authentication" off \
 		LIBIDN "Internationalized Domain Names via libidn" off \
 		NTLM "NTLM authentication" off
@@ -69,10 +71,21 @@ IGNORE=		may only use GNU TLS if WITHOUT_SSL is defined
 IGNORE=		only supports NTLM with OpenSSL
 .endif
 
+.if defined(WITH_CARES) && defined(WITH_IPV6)
+IGNORE=		does not support both c-ares and IPv6 - disable one of them
+.endif
+
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--without-ssl
+.endif
+
+.if defined(WITH_CARES)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcares.a:${PORTSDIR}/dns/c-ares
+CONFIGURE_ARGS+=	--enable-ares=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-ares
 .endif
 
 .if defined(WITH_GNUTLS)
@@ -86,6 +99,12 @@ CONFIGURE_ARGS+=--without-gnutls
 PLIST_SUB+=	SSL=""
 .else
 PLIST_SUB+=	SSL="@comment "
+.endif
+
+.if defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
