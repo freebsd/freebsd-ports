@@ -46,7 +46,10 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on ${OPSYS}-${OSREL}"
+BROKEN=		Does not compile on ${OPSYS}-${OSREL}
+.endif
+.if ${ARCH} == "sparc64"
+BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
 
 .if exists(${LOCALBASE}/include/boost/python.hpp)
