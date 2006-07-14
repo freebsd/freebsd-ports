@@ -1,0 +1,2 @@
+To use boxquote in Emacs/XEmacs, add the (require 'boxquote) to your ~/.emacs
+or init.el
