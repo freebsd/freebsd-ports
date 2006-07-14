@@ -68,6 +68,7 @@
     SUBDIR += nzbget
     SUBDIR += nzbperl
     SUBDIR += p5-Gateway
+    SUBDIR += p5-NNML
     SUBDIR += p5-NNTPClient
     SUBDIR += p5-News-Article
     SUBDIR += p5-News-Article-NoCeM
