@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Format+NWrap/.packlist
+%%SITE_PERL%%/Text/Format.pm
+%%SITE_PERL%%/Text/NWrap.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Format+NWrap
+@dirrmtry %%SITE_PERL%%/Text
