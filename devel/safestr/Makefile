@@ -10,7 +10,7 @@ PORTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zork.org/software/
 
-MAINTAINER=	robert@rs.tarrant.tx.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A string handling library for C
 
 LIB_DEPENDS=	xxl.1:${PORTSDIR}/devel/xxl:install
