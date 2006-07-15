@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzip
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
@@ -23,7 +23,7 @@ PLIST_FILES=	bin/zipcmp \
 		lib/libzip.a \
 		lib/libzip.la \
 		lib/libzip.so \
-		lib/libzip.so.0 \
+		lib/libzip.so.1 \
 		libdata/pkgconfig/libzip.pc
 
 MAN1=		zipcmp.1 \
@@ -43,12 +43,16 @@ MAN3=		libzip.3 \
 		zip_fopen.3 \
 		zip_fopen_index.3 \
 		zip_fread.3 \
+		zip_get_archive_comment.3 \
+		zip_get_file_comment.3 \
 		zip_get_name.3 \
 		zip_get_num_files.3 \
 		zip_name_locate.3 \
 		zip_open.3 \
 		zip_rename.3 \
 		zip_replace.3 \
+		zip_set_archive_comment.3 \
+		zip_set_file_comment.3 \
 		zip_source_buffer.3 \
 		zip_source_file.3 \
 		zip_source_filep.3 \
@@ -59,6 +63,7 @@ MAN3=		libzip.3 \
 		zip_stat_index.3 \
 		zip_strerror.3 \
 		zip_unchange.3 \
-		zip_unchange_all.3
+		zip_unchange_all.3 \
+		zip_unchange_archive.3
 
 .include <bsd.port.mk>
