@@ -9,6 +9,7 @@ CATEGORIES=	textproc python
 
 MAINTAINER=	j.haarman@synantics.com
 COMMENT=	Python language bindings for the Redland package
+PKGNAMESUFFIX=	-python
 
 MASTERDIR=	${.CURDIR}/../redland-bindings
 
