@@ -11930,6 +11930,7 @@ redet		ports/textproc/redet
 redir		ports/net/redir
 redland		ports/textproc/redland
 redland-bindings	ports/textproc/redland-bindings
+redland-bindings-python	ports/textproc/redland-bindings-python
 ree		ports/misc/ree
 reed		ports/sysutils/reed
 reed-solomon	ports/math/reed-solomon
