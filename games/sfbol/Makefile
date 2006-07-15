@@ -15,6 +15,8 @@ EXTRACT_ONLY=
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Star Fleet Battles Online
 
+BROKEN=		fails to install
+
 IGNOREFILES=	install40.jar
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
