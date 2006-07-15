@@ -11,8 +11,10 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.and.org/vstr/1.0.15/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	robert@rs.tarrant.tx.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose string library for C
+
+BROKEN=		fails to patch
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
