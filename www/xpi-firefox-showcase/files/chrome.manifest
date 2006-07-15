@@ -6,28 +6,30 @@ content	showcase	jar:chrome/showcase.jar!/content/
 skin	showcase	classic/1.0	jar:chrome/showcase.jar!/skin/classic/showcase/
 style	chrome://global/content/customizeToolbar.xul	chrome://showcase/skin/toolbar.css
 
-locale	showcase	en-US	jar:chrome/showcase.jar!/locale/en-US/showcase/
+locale	showcase	ca-AD	jar:chrome/showcase.jar!/locale/ca-AD/showcase/
 
-locale	showcase	fr-FR	jar:chrome/showcase.jar!/locale/fr-FR/showcase/
-
-locale	showcase	es-ES	jar:chrome/showcase.jar!/locale/es-ES/showcase/
-
-locale	showcase	it-IT	jar:chrome/showcase.jar!/locale/it-IT/showcase/
-
-locale	showcase	sk-SK	jar:chrome/showcase.jar!/locale/sk-SK/showcase/
-
-locale	showcase	pt-BR	jar:chrome/showcase.jar!/locale/pt-BR/showcase/
+locale	showcase	da-DK	jar:chrome/showcase.jar!/locale/da-DK/showcase/
 
 locale	showcase	de-DE	jar:chrome/showcase.jar!/locale/de-DE/showcase/
 
-locale	showcase	zh-CN	jar:chrome/showcase.jar!/locale/zh-CN/showcase/
-
 locale	showcase	el-GR	jar:chrome/showcase.jar!/locale/el-GR/showcase/
 
-locale	showcase	pl-PL	jar:chrome/showcase.jar!/locale/pl-PL/showcase/
+locale	showcase	en-US	jar:chrome/showcase.jar!/locale/en-US/showcase/
 
-locale	showcase	ru-RU	jar:chrome/showcase.jar!/locale/ru-RU/showcase/
+locale	showcase	es-ES	jar:chrome/showcase.jar!/locale/es-ES/showcase/
+
+locale	showcase	fr-FR	jar:chrome/showcase.jar!/locale/fr-FR/showcase/
+
+locale	showcase	it-IT	jar:chrome/showcase.jar!/locale/it-IT/showcase/
 
 locale	showcase	ja-JP	jar:chrome/showcase.jar!/locale/ja-JP/showcase/
 
-locale	showcase	ca-AD	jar:chrome/showcase.jar!/locale/ca-AD/showcase/
+locale	showcase	pl-PL	jar:chrome/showcase.jar!/locale/pl-PL/showcase/
+
+locale	showcase	pt-BR	jar:chrome/showcase.jar!/locale/pt-BR/showcase/
+
+locale	showcase	ru-RU	jar:chrome/showcase.jar!/locale/ru-RU/showcase/
+
+locale	showcase	sk-SK	jar:chrome/showcase.jar!/locale/sk-SK/showcase/
+
+locale	showcase	zh-CN	jar:chrome/showcase.jar!/locale/zh-CN/showcase/
