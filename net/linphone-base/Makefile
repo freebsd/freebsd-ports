@@ -48,6 +48,10 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include "Makefile.common"
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+LIB_DEPENDS+=	readline.[5-9]:${PORTSDIR}/devel/readline
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|docs||g' ${WRKSRC}/oRTP/Makefile.in
 
