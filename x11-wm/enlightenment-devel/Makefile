@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.999.029
-PORTREVISION=	1
+PORTVERSION=	0.16.999.030
+PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -26,7 +26,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

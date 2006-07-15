@@ -5,7 +5,7 @@ bin/enlightenment_eapp_cache_gen
 bin/enlightenment_imc
 bin/enlightenment_remote
 bin/enlightenment_start
-include/E_Lib.h
+bin/enlightenment_thumb
 include/enlightenment/e.h
 include/enlightenment/e_about.h
 include/enlightenment/e_actions.h
@@ -44,6 +44,7 @@ include/enlightenment/e_fileman_file.h
 include/enlightenment/e_fileman_icon.h
 include/enlightenment/e_fileman_mime.h
 include/enlightenment/e_fileman_smart.h
+include/enlightenment/e_fm.h
 include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
 include/enlightenment/e_gadcon.h
@@ -184,13 +185,6 @@ lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.a
 lib/enlightenment/modules/temperature/module.eap
 lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.la
 lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.so
-lib/enlightenment/preload/e_hack.a
-lib/enlightenment/preload/e_hack.la
-lib/enlightenment/preload/e_hack.so
-lib/libe.a
-lib/libe.la
-lib/libe.so
-lib/libe.so.0
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/data/fonts/Vera.COPYING
@@ -255,7 +249,6 @@ share/xsessions/enlightenment.desktop
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrmtry share/xsessions
-@dirrm lib/enlightenment/preload
 @dirrm lib/enlightenment/modules/temperature/%%MODULE_ARCH%%
 @dirrm lib/enlightenment/modules/temperature
 @dirrm lib/enlightenment/modules/start/%%MODULE_ARCH%%
