@@ -1,5 +1,6 @@
-%%SITE_PERL%%/Exception/Class.pm
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class/.packlist
-@dirrm %%SITE_PERL%%/Exception
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception
+%%SITE_PERL%%/Exception/Class.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception
+@dirrmtry %%SITE_PERL%%/Exception

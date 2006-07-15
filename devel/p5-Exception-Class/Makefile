@@ -8,6 +8,7 @@
 
 PORTNAME=	Exception-Class
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Exception
@@ -22,12 +23,12 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Exception::Class.3
+MAN3=		Exception::Class.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		requires perl 5.8.0 or higher. Please install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500702
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
 .include <bsd.port.post.mk>
