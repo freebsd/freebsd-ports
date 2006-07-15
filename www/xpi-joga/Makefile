@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	joga
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_CSME}
 # The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
