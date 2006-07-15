@@ -483,6 +483,7 @@
     SUBDIR += p5-Text-FixedLength-Extra
     SUBDIR += p5-Text-Flowchart
     SUBDIR += p5-Text-Format
+    SUBDIR += p5-Text-Format+NWrap
     SUBDIR += p5-Text-FormatTable
     SUBDIR += p5-Text-German
     SUBDIR += p5-Text-Glob
