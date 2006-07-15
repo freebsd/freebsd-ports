@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Add Instant Fulltext Search Capability With Senna to Class::DBI
 
+BROKEN=		fails to install with coredump
+
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 	${SITE_PERL}/${PERL_ARCH}/Senna.pm:${PORTSDIR}/textproc/p5-Senna
 
