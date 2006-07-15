@@ -15,6 +15,8 @@ DISTNAME=	lam-${PORTVERSION}
 MAINTAINER=	jan.lentfer@web.de
 COMMENT=	Local Area Multicomputer MPI implementation
 
+BROKEN=		fails to configure
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
