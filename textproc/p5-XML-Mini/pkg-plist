@@ -1,0 +1,16 @@
+%%SITE_PERL%%/XML/Mini.pm
+%%SITE_PERL%%/XML/Mini/Document.pm
+%%SITE_PERL%%/XML/Mini/Element.pm
+%%SITE_PERL%%/XML/Mini/Element/CData.pm
+%%SITE_PERL%%/XML/Mini/Element/Comment.pm
+%%SITE_PERL%%/XML/Mini/Element/DocType.pm
+%%SITE_PERL%%/XML/Mini/Element/Entity.pm
+%%SITE_PERL%%/XML/Mini/Element/Header.pm
+%%SITE_PERL%%/XML/Mini/Node.pm
+%%SITE_PERL%%/XML/Mini/TreeComponent.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Mini/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Mini
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrm %%SITE_PERL%%/XML/Mini/Element
+@dirrm %%SITE_PERL%%/XML/Mini
+@dirrmtry %%SITE_PERL%%/XML

@@ -580,6 +580,7 @@
     SUBDIR += p5-XML-LibXML-XPathContext
     SUBDIR += p5-XML-LibXSLT
     SUBDIR += p5-XML-Liberal
+    SUBDIR += p5-XML-Mini
     SUBDIR += p5-XML-NamespaceSupport
     SUBDIR += p5-XML-Node
     SUBDIR += p5-XML-NodeFilter
