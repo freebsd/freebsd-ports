@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeville
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.16
 PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://codeville.org/download/

@@ -75,6 +75,9 @@ bin/cdvupgrade
 %%PYTHON_SITELIBDIR%%/Codeville/passwd.py
 %%PYTHON_SITELIBDIR%%/Codeville/passwd.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/passwd.pyo
+%%PYTHON_SITELIBDIR%%/Codeville/path.py
+%%PYTHON_SITELIBDIR%%/Codeville/path.pyc
+%%PYTHON_SITELIBDIR%%/Codeville/path.pyo
 %%PYTHON_SITELIBDIR%%/Codeville/selectpoll.py
 %%PYTHON_SITELIBDIR%%/Codeville/selectpoll.pyc
 %%PYTHON_SITELIBDIR%%/Codeville/selectpoll.pyo
