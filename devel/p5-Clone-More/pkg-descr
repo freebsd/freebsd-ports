@@ -1,0 +1,6 @@
+This is intended to act as a utility in order to natively clone data
+structures via a simple Perl interface. Will ensure that all
+references will be separated from the parent data strure, yet kept
+relative to the new structure (if need be).
+
+WWW:	http://search.cpan.org/dist/Clone-More/
