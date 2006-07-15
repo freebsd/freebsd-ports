@@ -133,6 +133,86 @@ share/gnome/sounds/ekiga/dialtone.wav
 share/gnome/sounds/ekiga/newmessage.wav
 share/gnome/sounds/ekiga/ring.wav
 share/gnome/sounds/ekiga/voicemail.wav
+share/locale/am/LC_MESSAGES/ekiga.mo
+share/locale/ar/LC_MESSAGES/ekiga.mo
+share/locale/az/LC_MESSAGES/ekiga.mo
+share/locale/be/LC_MESSAGES/ekiga.mo
+share/locale/bg/LC_MESSAGES/ekiga.mo
+share/locale/bn/LC_MESSAGES/ekiga.mo
+share/locale/bs/LC_MESSAGES/ekiga.mo
+share/locale/ca/LC_MESSAGES/ekiga.mo
+share/locale/cs/LC_MESSAGES/ekiga.mo
+share/locale/cy/LC_MESSAGES/ekiga.mo
+share/locale/da/LC_MESSAGES/ekiga.mo
+share/locale/de/LC_MESSAGES/ekiga.mo
+share/locale/dz/LC_MESSAGES/ekiga.mo
+share/locale/el/LC_MESSAGES/ekiga.mo
+share/locale/en_CA/LC_MESSAGES/ekiga.mo
+share/locale/en_GB/LC_MESSAGES/ekiga.mo
+share/locale/es/LC_MESSAGES/ekiga.mo
+share/locale/et/LC_MESSAGES/ekiga.mo
+share/locale/eu/LC_MESSAGES/ekiga.mo
+share/locale/fa/LC_MESSAGES/ekiga.mo
+share/locale/fi/LC_MESSAGES/ekiga.mo
+share/locale/fr/LC_MESSAGES/ekiga.mo
+share/locale/ga/LC_MESSAGES/ekiga.mo
+share/locale/gl/LC_MESSAGES/ekiga.mo
+share/locale/gu/LC_MESSAGES/ekiga.mo
+share/locale/he/LC_MESSAGES/ekiga.mo
+share/locale/hi/LC_MESSAGES/ekiga.mo
+share/locale/hr/LC_MESSAGES/ekiga.mo
+share/locale/hu/LC_MESSAGES/ekiga.mo
+share/locale/id/LC_MESSAGES/ekiga.mo
+share/locale/is/LC_MESSAGES/ekiga.mo
+share/locale/it/LC_MESSAGES/ekiga.mo
+share/locale/ja/LC_MESSAGES/ekiga.mo
+share/locale/ka/LC_MESSAGES/ekiga.mo
+share/locale/ko/LC_MESSAGES/ekiga.mo
+share/locale/ku/LC_MESSAGES/ekiga.mo
+share/locale/lt/LC_MESSAGES/ekiga.mo
+share/locale/lv/LC_MESSAGES/ekiga.mo
+share/locale/mk/LC_MESSAGES/ekiga.mo
+share/locale/ml/LC_MESSAGES/ekiga.mo
+share/locale/mn/LC_MESSAGES/ekiga.mo
+share/locale/mr/LC_MESSAGES/ekiga.mo
+share/locale/ms/LC_MESSAGES/ekiga.mo
+share/locale/nb/LC_MESSAGES/ekiga.mo
+share/locale/ne/LC_MESSAGES/ekiga.mo
+share/locale/nl/LC_MESSAGES/ekiga.mo
+share/locale/pa/LC_MESSAGES/ekiga.mo
+share/locale/pl/LC_MESSAGES/ekiga.mo
+share/locale/pt/LC_MESSAGES/ekiga.mo
+share/locale/pt_BR/LC_MESSAGES/ekiga.mo
+share/locale/ro/LC_MESSAGES/ekiga.mo
+share/locale/ru/LC_MESSAGES/ekiga.mo
+share/locale/rw/LC_MESSAGES/ekiga.mo
+share/locale/sk/LC_MESSAGES/ekiga.mo
+share/locale/sq/LC_MESSAGES/ekiga.mo
+share/locale/sr/LC_MESSAGES/ekiga.mo
+share/locale/sr@Latn/LC_MESSAGES/ekiga.mo
+share/locale/sv/LC_MESSAGES/ekiga.mo
+share/locale/ta/LC_MESSAGES/ekiga.mo
+share/locale/th/LC_MESSAGES/ekiga.mo
+share/locale/tr/LC_MESSAGES/ekiga.mo
+share/locale/uk/LC_MESSAGES/ekiga.mo
+share/locale/vi/LC_MESSAGES/ekiga.mo
+share/locale/wa/LC_MESSAGES/ekiga.mo
+share/locale/xh/LC_MESSAGES/ekiga.mo
+share/locale/zh_CN/LC_MESSAGES/ekiga.mo
+share/locale/zh_HK/LC_MESSAGES/ekiga.mo
+share/locale/zh_TW/LC_MESSAGES/ekiga.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/gnome/sounds/ekiga
 @dirrm share/gnome/pixmaps/ekiga
 @dirrm share/gnome/omf/ekiga
