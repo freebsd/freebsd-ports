@@ -9332,6 +9332,7 @@ p5-OpenCA-PKCS7	ports/security/p5-OpenCA-PKCS7
 p5-OpenCA-REQ	ports/security/p5-OpenCA-REQ
 p5-OpenGL	ports/graphics/p5-OpenGL
 p5-Oryx		ports/databases/p5-Oryx
+p5-OurNet-BBSAgent	ports/net/p5-OurNet-BBSAgent
 p5-P4		ports/devel/p5-P4
 p5-P4-Client	ports/devel/p5-P4-Client
 p5-PAR		ports/devel/p5-PAR
