@@ -26,10 +26,14 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 MAKEFILE=	makefile
+
 MAN1=		snd.1
+
 OPTIONS=	ESD		"output through enlightened sound daemon" on \
 		GUILE		"use Guile" on \
-		RUBY		"use Ruby as the extension language" on
+		RUBY		"use Ruby as the extension language" on \
+		NLS             "Native Language Support"       on
+
 PLIST=		${WRKDIR}/plist
 PLIST_FILES=	share/examples/snd/DotEmacs
 PLIST_DIRS=	share/examples/snd
@@ -41,32 +45,6 @@ PLIST_FILES+=	share/doc/snd/tutorial/files/.snd \
 		share/doc/snd/tutorial/files/misc.scm.txt~ \
 		share/doc/snd/tutorial/README \
 		share/doc/snd/tutorial/1_intro_and_build_snd.html~
-.endif
-
-.if defined(WITH_ESD)
-CONFIGURE_ARGS+=	--with-esd
-RUN_DEPENDS+=		esd:${PORTSDIR}/audio/esound
-.endif
-
-.if defined(WITH_RUBY)
-CONFIGURE_ARGS+=	--with-ruby
-RUN_DEPENDS+=		ruby:${PORTSDIR}/lang/ruby16
-.endif
-
-.if defined(WITH_GUILE)
-LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
-.if !defined(WITHOUT_X11)
-LIB_DEPENDS+=		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
-.endif
-.else
-CONFIGURE_ARGS+=	--without-guile
-.endif
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_FILES+=	share/locale/de/LC_MESSAGES/snd.mo
-.else
-CONFIGURE_ARGS+=--disable-nls
 .endif
 
 .if defined(WITHOUT_X11)
@@ -81,6 +59,32 @@ USE_XLIB=	yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_ESD)
+CONFIGURE_ARGS+=	--with-esd
+RUN_DEPENDS+=		esd:${PORTSDIR}/audio/esound
+.endif
+
+.if !defined(WITHOUT_RUBY)
+CONFIGURE_ARGS+=	--with-ruby
+RUN_DEPENDS+=		ruby:${PORTSDIR}/lang/ruby18
+.endif
+
+.if !defined(WITHOUT_GUILE)
+LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
+.if !defined(WITHOUT_X11)
+LIB_DEPENDS+=		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
+.endif
+.else
+CONFIGURE_ARGS+=	--without-guile
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_FILES+=	share/locale/de/LC_MESSAGES/snd.mo
+.else
+CONFIGURE_ARGS+=--disable-nls
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64
@@ -116,7 +120,7 @@ pre-install:
 	${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
 .endfor
 .endif
-.if defined(WITH_GUILE)
+.if !defined(WITHOUT_GUILE)
 	${FIND} ${WRKSRC} -name '*.scm' | \
 		${SED} -e "s:^${WRKSRC}/:share/snd/:g" >> ${PLIST}
 	${ECHO_CMD} "share/snd/dlp/README" >> ${PLIST}
@@ -156,7 +160,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.png ${DOCSDIR}
 	cd ${WRKSRC} && ${PAX} -r -w tutorial ${DOCSDIR}
 .endif
-.if defined(WITH_GUILE)
+.if !defined(WITHOUT_GUILE)
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/dlp
 	@${MKDIR} ${DATADIR}/tools
