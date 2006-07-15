@@ -3,4 +3,4 @@ right-click menus of folders. Locking a folder encrypts its contents
 and converts it into a '.locked' format archive. This archive can then
 be decrypted by right-clicking it and selecting 'Unlock folder'.
 
-WWW: http://www.ids.org.au/~jam6/locked-folders/
+WWW: http://www.gnome.org/projects/nautilus-locked-folders/
