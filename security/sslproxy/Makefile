@@ -17,7 +17,7 @@ COMMENT=	Proxies non-SSL request over an SSL connection
 
 PORTDOCS=	README.txt dummyCert.pem
 
-PLIST=		bin/sslproxy
+PLIST_FILES=	bin/sslproxy
 
 USE_OPENSSL=	YES
 
