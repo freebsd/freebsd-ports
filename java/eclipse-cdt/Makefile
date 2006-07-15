@@ -16,6 +16,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	C/C++ IDE for Eclipse
 
+BROKEN=		fails to fetch
+
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
 
 NO_WRKSUBDIR=	yes
