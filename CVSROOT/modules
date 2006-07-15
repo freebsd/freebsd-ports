@@ -8877,6 +8877,7 @@ p5-IPC-DirQueue	ports/devel/p5-IPC-DirQueue
 p5-IPC-Locker	ports/devel/p5-IPC-Locker
 p5-IPC-MM	ports/devel/p5-IPC-MM
 p5-IPC-Mmap	ports/devel/p5-IPC-Mmap
+p5-IPC-Mmap-SimpleShare	ports/devel/p5-IPC-Mmap-SimpleShare
 p5-IPC-Run	ports/devel/p5-IPC-Run
 p5-IPC-Run3	ports/devel/p5-IPC-Run3
 p5-IPC-ShareLite	ports/devel/p5-IPC-ShareLite
