@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eet
-PORTVERSION=	0.9.10.029
+PORTVERSION=	0.9.10.030
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
@@ -17,10 +17,15 @@ COMMENT=	Enlightenment Data Handling Library
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4
 USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502126
+IGNORE=		freebsd 3.*, 4.*, 5.0, 5.1 are not support
+.endif
+
+.include <bsd.port.post.mk>
