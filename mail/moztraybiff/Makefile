@@ -15,6 +15,8 @@ DISTNAME=	mozTrayBiff-${PORTVERSION}
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	New mail tray icon for Thunderbird
 
+BROKEN=		fails to install
+
 BUILD_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird \
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
