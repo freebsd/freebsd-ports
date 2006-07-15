@@ -7325,6 +7325,7 @@ netsaint-plugins	ports/net-mgmt/netsaint-plugins
 netscape-java40	ports/devel/netscape-java40
 netscript	ports/net/netscript
 netsed		ports/net/netsed
+netselect	ports/net/netselect
 netshow		ports/multimedia/netshow
 netspades	ports/games/netspades
 netspeed_applet	ports/net/netspeed_applet
