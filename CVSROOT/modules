@@ -2155,6 +2155,7 @@ elmergrid	ports/science/elmergrid
 elmerpost	ports/science/elmerpost
 elmo		ports/mail/elmo
 elmo-devel	ports/mail/elmo-devel
+elog		ports/www/elog
 elscreen	ports/misc/elscreen
 elvis		ports/editors/elvis
 em		ports/editors/em
