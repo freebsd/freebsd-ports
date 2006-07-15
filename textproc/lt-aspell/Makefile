@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lt-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-lt-1.1+cvs20060103-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Lithuanian dictionary
+COMMENT=	Aspell Lithuanian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	lt
 
-ASPELL_LT=	taip
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

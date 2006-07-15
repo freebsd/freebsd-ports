@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	or-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-or-0.03-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Oriya dictionary
+COMMENT=	Aspell Oriya dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	or
 
-ASPELL_OR=	a
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

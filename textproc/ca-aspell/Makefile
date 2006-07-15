@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ca-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-ca-20040130-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Catalan dictionary
+COMMENT=	Aspell Catalan dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	ca
 
-ASPELL_CA=	sí
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

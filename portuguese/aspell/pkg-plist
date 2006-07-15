@@ -1,0 +1,10 @@
+lib/aspell-%%VER%%/pt.dat
+share/aspell/brazilian.alias
+share/aspell/português.alias
+share/aspell/portuguese.alias
+share/aspell/pt-only.rws
+share/aspell/pt.multi
+share/aspell/pt_BR-only.rws
+share/aspell/pt_BR.multi
+share/aspell/pt_PT-only.rws
+share/aspell/pt_PT.multi

@@ -9,6 +9,7 @@ bin/pspell-config
 bin/run-with-aspell
 %%SCRIPTS%%bin/spell
 bin/word-list-compress
+etc/aspell.ver
 include/aspell.h
 include/pspell/pspell.h
 lib/aspell-%%VER%%/cp1250.cmap

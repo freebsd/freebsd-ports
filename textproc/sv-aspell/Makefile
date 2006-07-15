@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sv-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-sv-0.51-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Swedish dictionary
+COMMENT=	Aspell Swedish dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	sv
 
-ASPELL_SV=	ja
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

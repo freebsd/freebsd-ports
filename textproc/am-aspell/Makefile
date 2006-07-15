@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	am-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-am-0.03-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Amharic dictionary
+COMMENT=	Aspell Amharic dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	am
 
-ASPELL_AM=	ow
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

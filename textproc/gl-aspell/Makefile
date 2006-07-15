@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gl-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-gl-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Galician dictionary
+COMMENT=	Aspell Galician dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	gl
 
-ASPELL_GL=	si
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

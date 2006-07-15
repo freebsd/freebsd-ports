@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ta-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-ta-20040424-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Tamil dictionary
+COMMENT=	Aspell Tamil dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	ta
 
-ASPELL_TA=	aam
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

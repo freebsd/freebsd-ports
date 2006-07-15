@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ro-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-ro-0.50-2
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Romanian dictionary
+COMMENT=	Aspell Romanian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	ro
 
-ASPELL_RO=	da
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

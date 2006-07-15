@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sl-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-sl-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Slovenian dictionary
+COMMENT=	Aspell Slovenian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	sl
 
-ASPELL_SL=	da
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

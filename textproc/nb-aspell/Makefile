@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nb-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-nb-0.50.1-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Norwegian Bokmal dictionary
+COMMENT=	Aspell Norwegian Bokmal dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	nb
 
-ASPELL_NB=	ja
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

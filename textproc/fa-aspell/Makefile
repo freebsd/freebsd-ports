@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fa-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-fa-0.02-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Persian (Farsi) dictionary
+COMMENT=	Aspell Persian (Farsi) dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	fa
 
-ASPELL_FA=	bale
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

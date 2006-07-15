@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	el-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-el-0.50-3
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Greek dictionary
+COMMENT=	Aspell Greek dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	el
 
-ASPELL_EL=	ne
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

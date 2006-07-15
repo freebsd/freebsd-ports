@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sc-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-sc-1.0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Sardinian dictionary
+COMMENT=	Aspell Sardinian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	sc
 
-ASPELL_SC=	eja
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

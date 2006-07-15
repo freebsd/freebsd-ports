@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tet-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-tet-0.1.1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Tetum dictionary
+COMMENT=	Aspell Tetum dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	tet
 
-ASPELL_TET=	sin
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

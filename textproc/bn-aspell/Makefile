@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bn-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-bn-0.01.1-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Bengali dictionary
+COMMENT=	Aspell Bengali dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	bn
 
-ASPELL_BN=	ha
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	hungarian
+DISTVERSION=	6-hu-0.99.4.2-0
+CATEGORIES=	hungarian textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Hungarian dictionaries
+COMMENT=	Aspell Hungarian dictionaries
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	hu
 
-ASPELL_HU=	igen
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

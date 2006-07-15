@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	is-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-is-0.51.1-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Icelandic dictionary
+COMMENT=	Aspell Icelandic dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	is
 
-ASPELL_IS=	já
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

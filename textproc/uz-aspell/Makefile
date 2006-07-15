@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	uz-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-uz-0.5-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Uzbek dictionary
+COMMENT=	Aspell Uzbek dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	uz
 
-ASPELL_UZ=	kha
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

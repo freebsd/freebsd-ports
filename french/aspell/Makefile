@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	french
+DISTVERSION=	-fr-0.50-3
+PORTEPOCH=	1
+CATEGORIES=	french textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with French dictionaries
+COMMENT=	Aspell French dictionaries
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	fr
 
-ASPELL_FR=	oui
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

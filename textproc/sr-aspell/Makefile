@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sr-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-sr-0.02
+CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	Aspell with Serbian dictionary
+COMMENT=	Aspell Serbian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	sr
 
-ASPELL_SR=	da
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

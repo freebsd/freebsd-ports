@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	csb-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-csb-0.02-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Kashubian dictionary
+COMMENT=	Aspell Kashubian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	csb
 
-ASPELL_CSB=	yo
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

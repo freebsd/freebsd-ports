@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qu-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-qu-0.02-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Quechua dictionary
+COMMENT=	Aspell Quechua dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	qu
 
-ASPELL_QU=	ari
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

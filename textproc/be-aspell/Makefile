@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	be-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-be-0.01
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Belarusian dictionary
+COMMENT=	Aspell Belarusian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	be
 
-ASPELL_BE=	tak
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>
