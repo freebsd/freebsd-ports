@@ -8610,6 +8610,7 @@ p5-File-DesktopEntry	ports/devel/p5-File-DesktopEntry
 p5-File-DirSync	ports/devel/p5-File-DirSync
 p5-File-FTS	ports/devel/p5-File-FTS
 p5-File-Fetch	ports/ftp/p5-File-Fetch
+p5-File-Find-Object	ports/devel/p5-File-Find-Object
 p5-File-Find-Rule	ports/devel/p5-File-Find-Rule
 p5-File-Flat	ports/devel/p5-File-Flat
 p5-File-Flock	ports/devel/p5-File-Flock
