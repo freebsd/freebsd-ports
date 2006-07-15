@@ -7,6 +7,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -25,7 +26,8 @@ USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
 CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
-		--with-db-lib=${BDB_LIB_DIR}
+		--with-db-lib=${BDB_LIB_DIR} \
+		--with-db-lib=${BDB_LIB_NAME:S/^db//}
 INSTALL_TARGET=	site-install
 
 DOCS=		Changes \
