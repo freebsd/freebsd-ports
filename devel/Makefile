@@ -1009,6 +1009,7 @@
     SUBDIR += p5-File-DesktopEntry
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-FTS
+    SUBDIR += p5-File-Find-Object
     SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Flat
     SUBDIR += p5-File-Flock
