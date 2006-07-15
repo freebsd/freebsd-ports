@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp/Tree/.packlist
+%%SITE_PERL%%/File/Slurp/Tree.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp/Tree
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File/Slurp
+@dirrmtry %%SITE_PERL%%/File

@@ -1,0 +1,14 @@
+File::Slurp::Tree provides functions for slurping and emitting trees
+of files and directories.
+
+ # an example of use in a test suite
+ use Test::More tests => 1;
+ use File::Slurp::Tree;
+ is_deeply( slurp_tree( "t/some_path" ), { foo => {}, bar => "sample\n" },
+            "some_path contains a directory called foo, and a file bar" );
+
+The tree datastructure is a hash of hashes. The keys of each hash are
+names of directories or files. Directories have hash references as
+their value, files have a scalar which holds the contents of the file.
+
+WWW:	http://search.cpan.org/dist/File-Slurp-Tree/
