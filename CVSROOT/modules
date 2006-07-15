@@ -9963,6 +9963,7 @@ p5-XML-Clean	ports/textproc/p5-XML-Clean
 p5-XML-DBMS	ports/textproc/p5-XML-DBMS
 p5-XML-DOM	ports/textproc/p5-XML-DOM
 p5-XML-DOM-XPath	ports/textproc/p5-XML-DOM-XPath
+p5-XML-DOM2	ports/textproc/p5-XML-DOM2
 p5-XML-DT	ports/textproc/p5-XML-DT
 p5-XML-DTDParser	ports/textproc/p5-XML-DTDParser
 p5-XML-DifferenceMarkup	ports/textproc/p5-XML-DifferenceMarkup
