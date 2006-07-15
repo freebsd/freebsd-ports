@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/flvinfo
+bin/swf2flv
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FLV/Info/.packlist
 %%SITE_PERL%%/FLV/AMFReader.pm
 %%SITE_PERL%%/FLV/AMFWriter.pm
@@ -8,6 +9,7 @@ bin/flvinfo
 %%SITE_PERL%%/FLV/Body.pm
 %%SITE_PERL%%/FLV/Constants.pm
 %%SITE_PERL%%/FLV/File.pm
+%%SITE_PERL%%/FLV/FromSWF.pm
 %%SITE_PERL%%/FLV/Header.pm
 %%SITE_PERL%%/FLV/Info.pm
 %%SITE_PERL%%/FLV/MetaTag.pm
