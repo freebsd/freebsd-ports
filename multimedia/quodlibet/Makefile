@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 MAINTAINER=	changbom.yoon@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
+BROKEN=		fails to install/deinstall cleanly
+
 INITIAL_DEP=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 BUILD_DEPENDS=	${INITIAL_DEP}
