@@ -30,6 +30,10 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
+.endif
+
 pre-configure:
 	${TOUCH} ${WRKSRC}/doc/fidogate.info
 	${RM} -f ${WRKSRC}/doc/fidogate.info-?
