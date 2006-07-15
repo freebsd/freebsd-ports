@@ -9531,6 +9531,7 @@ p5-SQLite-Work	ports/databases/p5-SQLite-Work
 p5-SRU		ports/www/p5-SRU
 p5-SSN-Validate	ports/devel/p5-SSN-Validate
 p5-SVG	ports/textproc/p5-SVG
+p5-SVG-DOM2	ports/graphics/p5-SVG-DOM2
 p5-SVG-Graph	ports/graphics/p5-SVG-Graph
 p5-SVG-Metadata	ports/graphics/p5-SVG-Metadata
 p5-SVN-ACL	ports/devel/p5-SVN-ACL
