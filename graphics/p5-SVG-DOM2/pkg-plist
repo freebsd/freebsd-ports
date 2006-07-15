@@ -1,0 +1,35 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/DOM2/.packlist
+%%SITE_PERL%%/SVG/DOM2.pm
+%%SITE_PERL%%/SVG/DOM2/Attribute/Colour.pm
+%%SITE_PERL%%/SVG/DOM2/Attribute/Metric.pm
+%%SITE_PERL%%/SVG/DOM2/Attribute/Opacity.pm
+%%SITE_PERL%%/SVG/DOM2/Attribute/Path.pm
+%%SITE_PERL%%/SVG/DOM2/Attribute/Style.pm
+%%SITE_PERL%%/SVG/DOM2/Attribute/Transform.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Definition.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Definition/linearGradient.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Definition/linearGradient/Stop.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Definition/radialGradient.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Document.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Group.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Line.pm
+%%SITE_PERL%%/SVG/DOM2/Element/MetaData.pm
+%%SITE_PERL%%/SVG/DOM2/Element/MetaData/RDF.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Path.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Rect.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Shape.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Shape/Fill.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Shape/Font.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Shape/Stroke.pm
+%%SITE_PERL%%/SVG/DOM2/Element/Text.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/DOM2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
+@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/Definition/linearGradient
+@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/Definition
+@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/MetaData
+@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element/Shape
+@dirrmtry %%SITE_PERL%%/SVG/DOM2/Attribute
+@dirrmtry %%SITE_PERL%%/SVG/DOM2/Element
+@dirrmtry %%SITE_PERL%%/SVG/DOM2
+@dirrmtry %%SITE_PERL%%/SVG

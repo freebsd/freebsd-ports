@@ -447,6 +447,7 @@
     SUBDIR += p5-Imager-Plot
     SUBDIR += p5-Imlib2
     SUBDIR += p5-OpenGL
+    SUBDIR += p5-SVG-DOM2
     SUBDIR += p5-SVG-Graph
     SUBDIR += p5-SVG-Metadata
     SUBDIR += p5-SWF-Builder
