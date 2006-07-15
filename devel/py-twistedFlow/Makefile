@@ -7,7 +7,7 @@
 
 PORTNAME=	twistedFlow
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Flow/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Flow/0.1/
@@ -27,5 +27,10 @@ USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+
+post-extract:
+	# temporal hack to work with Twisted 2.4
+	${ECHO_CMD} "from twisted.python import versions" > ${WRKSRC}/twisted/flow/_version.py
+	${ECHO_CMD} "version = versions.Version(__name__[:__name__.rfind('.')], 0, 1, 0)" >> ${WRKSRC}/twisted/flow/_version.py
 
 .include <bsd.port.mk>

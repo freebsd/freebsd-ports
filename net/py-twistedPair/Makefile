@@ -7,7 +7,7 @@
 
 PORTNAME=	twistedPair
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Pair/0.1/ \
 		http://tmrc.mit.edu/mirror/twisted/Pair/0.1/
@@ -27,5 +27,10 @@ USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+
+post-extract:
+	# temporal hack to work with Twisted 2.4
+	${ECHO_CMD} "from twisted.python import versions" > ${WRKSRC}/twisted/pair/_version.py
+	${ECHO_CMD} "version = versions.Version(__name__[:__name__.rfind('.')], 0, 1, 0)" >> ${WRKSRC}/twisted/pair/_version.py
 
 .include <bsd.port.mk>

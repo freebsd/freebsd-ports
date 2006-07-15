@@ -6,6 +6,7 @@
 
 PORTNAME=	twistedWeb2
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://twistedmatrix.com/downloads/Web2/ \
 		http://tmrc.mit.edu/mirror/twisted/Web2/
@@ -23,5 +24,10 @@ WRKSRC=		${WRKDIR}/TwistedWeb2-${PORTVERSION}
 USE_BZIP2=	yes
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
+
+post-extract:
+	# temporal hack to work with Twisted 2.4
+	${ECHO_CMD} "from twisted.python import versions" > ${WRKSRC}/twisted/web2/_version.py
+	${ECHO_CMD} "version = versions.Version(__name__[:__name__.rfind('.')], 0, 1, 0)" >> ${WRKSRC}/twisted/web2/_version.py
 
 .include <bsd.port.mk>

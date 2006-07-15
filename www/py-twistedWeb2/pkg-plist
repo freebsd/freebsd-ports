@@ -2,6 +2,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/web2/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/web2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web2/_version.py
+%%PYTHON_SITELIBDIR%%/twisted/web2/_version.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web2/_version.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web2/cgichannel.py
 %%PYTHON_SITELIBDIR%%/twisted/web2/cgichannel.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web2/cgichannel.pyo

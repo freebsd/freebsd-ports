@@ -1,6 +1,9 @@
 %%S%%/twisted/pair/__init__.py
 %%S%%/twisted/pair/__init__.pyc
 %%S%%/twisted/pair/__init__.pyo
+%%S%%/twisted/pair/_version.py
+%%S%%/twisted/pair/_version.pyc
+%%S%%/twisted/pair/_version.pyo
 %%S%%/twisted/pair/ethernet.py
 %%S%%/twisted/pair/ethernet.pyc
 %%S%%/twisted/pair/ethernet.pyo
