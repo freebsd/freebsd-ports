@@ -20,6 +20,8 @@ EXTRACT_ONLY=	${INSTALLER}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Grid computing toolkit
 
+BROKEN=		fails to install
+
 CONFLICTS=	globus-2*
 
 EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
