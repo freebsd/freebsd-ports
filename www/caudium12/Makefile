@@ -53,4 +53,11 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/caudium.sh ${PREFIX}/etc/rc.d/caudium.sh.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# is this really only true for sparc64?
+.if ${ARCH} == sparc64
+BROKEN=		does not install due to dependency error
+.endif
+
+.include <bsd.port.post.mk>
