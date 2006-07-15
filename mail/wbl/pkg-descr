@@ -1,0 +1,11 @@
+wbl is a really simple tool that can be used in a .qmail file for managing
+a white/black list of email addresses.  It only does one thing--it
+checks for entries in ~/.wbl that it uses as a regex against the From:
+field of an incoming email.  If it matches a line with a +, it forwards
+the email to the white list, if it matches a line with a - it forwards
+the email to the blacklist.
+
+Questions, feedback, comments may be sent to the author.
+
+Author:	Caskey Dickson <caskey@technocage.com>
+WWW:	http://www.technocage.com/~caskey/wbl/
