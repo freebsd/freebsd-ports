@@ -25,6 +25,7 @@ bin/config_data
 %%SITE_PERL%%/Module/Build/Platform/darwin.pm
 %%SITE_PERL%%/Module/Build/Platform/os2.pm
 %%SITE_PERL%%/Module/Build/PodParser.pm
+%%SITE_PERL%%/Module/Build/Version.pm
 %%SITE_PERL%%/Module/Build/YAML.pm
 @dirrm %%SITE_PERL%%/Module/Build/Platform
 @dirrm %%SITE_PERL%%/Module/Build
