@@ -13,6 +13,8 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/10558/
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	Daylight-savings aware timezone support for Ruby
 
+BROKEN=		fails to fetch
+
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
