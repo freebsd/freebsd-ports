@@ -23,4 +23,10 @@ USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}==ia64
+BROKEN=		does not install on ${ARCH}
+.endif
+
+.include <bsd.port.post.mk>
