@@ -16,6 +16,8 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
+BROKEN=		fails to install due to directory problem
+
 LIB_DEPENDS=	eb.10:${PORTSDIR}/japanese/eb
 
 CONFLICTS=	ja-ebview-0*
