@@ -10002,6 +10002,7 @@ p5-XML-LibXML-Iterator	ports/textproc/p5-XML-LibXML-Iterator
 p5-XML-LibXML-XPathContext	ports/textproc/p5-XML-LibXML-XPathContext
 p5-XML-LibXSLT	ports/textproc/p5-XML-LibXSLT
 p5-XML-Liberal	ports/textproc/p5-XML-Liberal
+p5-XML-Mini	ports/textproc/p5-XML-Mini
 p5-XML-NamespaceSupport	ports/textproc/p5-XML-NamespaceSupport
 p5-XML-Node	ports/textproc/p5-XML-Node
 p5-XML-NodeFilter	ports/textproc/p5-XML-NodeFilter
