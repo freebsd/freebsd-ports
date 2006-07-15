@@ -1,0 +1,7 @@
+The IPC::Mmap::SimpleShare was born out of the need to share
+structures among processes that come from the same ancestor. It tries
+to do so in a very simple and straightforward manner. Just create an
+IPC::Mmap::SimpleShare object, and use set to store your data and get
+to get it back.
+
+WWW:	http://search.cpan.org/dist/IPC-Mmap-SimpleShare/
