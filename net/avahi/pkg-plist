@@ -105,6 +105,7 @@ sbin/avahi-dnsconfd
 @dirrm %%DATADIR%%/introspection
 %%GTK%%@dirrm %%DATADIR%%/interfaces
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm include/avahi-glib
 @dirrm include/avahi-core
 %%LIBDNS%%@dirrm include/avahi-compat-libdns_sd
