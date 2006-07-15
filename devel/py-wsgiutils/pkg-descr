@@ -1,0 +1,13 @@
+WSGIUtils is a package of standalone utility libraries that ease the development
+of simple WSGI programs.
+
+The package is divided into two main components which can be used individualy or
+in combination.
+
+wsgiServer is a multi-threaded WSGI web server based on SimpleHTTPServer.
+
+wsgiAdaptor is a simple WSGI application that provides basic authentication,
+signed cookies and persistent sessions.
+
+
+WWW: http://www.owlfish.com/software/wsgiutils/

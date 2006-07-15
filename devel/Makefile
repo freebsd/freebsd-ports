@@ -1627,6 +1627,7 @@
     SUBDIR += py-urwid
     SUBDIR += py-utils
     SUBDIR += py-vmaps
+    SUBDIR += py-wsgiutils
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml

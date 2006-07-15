@@ -1,0 +1,16 @@
+%%PYTHON_SITELIBDIR%%/wsgiutils/SessionClient.py
+%%PYTHON_SITELIBDIR%%/wsgiutils/SessionClient.pyc
+%%PYTHON_SITELIBDIR%%/wsgiutils/SessionClient.pyo
+%%PYTHON_SITELIBDIR%%/wsgiutils/SessionServer.py
+%%PYTHON_SITELIBDIR%%/wsgiutils/SessionServer.pyc
+%%PYTHON_SITELIBDIR%%/wsgiutils/SessionServer.pyo
+%%PYTHON_SITELIBDIR%%/wsgiutils/__init__.py
+%%PYTHON_SITELIBDIR%%/wsgiutils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wsgiutils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wsgiutils/wsgiAdaptor.py
+%%PYTHON_SITELIBDIR%%/wsgiutils/wsgiAdaptor.pyc
+%%PYTHON_SITELIBDIR%%/wsgiutils/wsgiAdaptor.pyo
+%%PYTHON_SITELIBDIR%%/wsgiutils/wsgiServer.py
+%%PYTHON_SITELIBDIR%%/wsgiutils/wsgiServer.pyc
+%%PYTHON_SITELIBDIR%%/wsgiutils/wsgiServer.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/wsgiutils/
