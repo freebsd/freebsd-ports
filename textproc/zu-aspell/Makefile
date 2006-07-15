@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zu-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-zu-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Zulu dictionary
+COMMENT=	Aspell Zulu dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	zu
 
-ASPELL_ZU=	yebo
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

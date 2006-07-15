@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ms-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-ms-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Malay dictionary
+COMMENT=	Aspell Malay dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	ms
 
-ASPELL_MS=	ya
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

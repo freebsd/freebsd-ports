@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	da-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-da-1.4.42-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Danish dictionary
+COMMENT=	Aspell Danish dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	da
 
-ASPELL_DA=	ja
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

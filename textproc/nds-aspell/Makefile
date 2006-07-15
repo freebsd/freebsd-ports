@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nds-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-nds-0.01-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Low Saxon dictionary
+COMMENT=	Aspell Low Saxon dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	nds
 
-ASPELL_NDS=	jau
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

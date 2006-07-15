@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cy-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-cy-0.50-3
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Welsh dictionary
+COMMENT=	Aspell Welsh dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	cy
 
-ASPELL_CY=	ie
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

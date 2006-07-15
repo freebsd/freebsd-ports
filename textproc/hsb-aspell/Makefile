@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	hsb-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-hsb-0.01-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Upper Sorbian dictionary
+COMMENT=	Aspell Upper Sorbian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	hsb
 
-ASPELL_HSB=	haj
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

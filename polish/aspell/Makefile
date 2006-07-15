@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	polish
+DISTVERSION=	-pl-0.51-0
+PORTEPOCH=	1
+CATEGORIES=	polish textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Polish dictionary
+COMMENT=	Aspell Polish dictionary
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	pl
 
-ASPELL_PL=	tak
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

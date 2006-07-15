@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sw-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-sw-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Swahili dictionary
+COMMENT=	Aspell Swahili dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	sw
 
-ASPELL_SW=	sawa
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

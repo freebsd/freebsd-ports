@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	yi-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-yi-0.01.1-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Yiddish dictionary
+COMMENT=	Aspell Yiddish dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	yi
 
-ASPELL_YI=	yo
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

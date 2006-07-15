@@ -5,6 +5,7 @@
 
     SUBDIR += BBBike
     SUBDIR += acroread
+    SUBDIR += alt-aspell
     SUBDIR += aspell
     SUBDIR += bsdforen-firefox-searchplugin
     SUBDIR += citrix_ica

@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ia-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-ia-0.50-1
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Interlingua dictionary
+COMMENT=	Aspell Interlingua dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	ia
 
-ASPELL_IA=	si
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

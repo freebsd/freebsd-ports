@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mk-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-mk-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Macedonian dictionary
+COMMENT=	Aspell Macedonian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	mk
 
-ASPELL_MK=	da
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

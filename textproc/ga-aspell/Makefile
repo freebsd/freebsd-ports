@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ga-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-ga-3.6-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Irish (Gaelic) dictionary
+COMMENT=	Aspell Irish (Gaelic) dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	ga
 
-ASPELL_GA=	yes
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

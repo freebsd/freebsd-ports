@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mi-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-mi-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Maori dictionary
+COMMENT=	Aspell Maori dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	mi
 
-ASPELL_MI=	ae
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

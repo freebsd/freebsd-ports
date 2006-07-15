@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wa-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-wa-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Walloon dictionary
+COMMENT=	Aspell Walloon dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	wa
 
-ASPELL_WA=	oyi
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

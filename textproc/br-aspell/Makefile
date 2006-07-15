@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	br-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-br-0.50-1
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Breton dictionary
+COMMENT=	Aspell Breton dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	br
 
-ASPELL_BR=	ya
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

@@ -20,6 +20,7 @@
     SUBDIR += asciidoc
     SUBDIR += asm2html
     SUBDIR += aspell
+    SUBDIR += aspell-without-dicten
     SUBDIR += az-aspell
     SUBDIR += bar
     SUBDIR += be-aspell
@@ -113,6 +114,7 @@
     SUBDIR += ecromedos
     SUBDIR += el-aspell
     SUBDIR += emacs-wiki
+    SUBDIR += en-aspell
     SUBDIR += enchant
     SUBDIR += eo-aspell
     SUBDIR += eruby

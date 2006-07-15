@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	hebrew
+DISTVERSION=	6-he-0.9-0
+CATEGORIES=	hebrew textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Hebrew dictionaries
+COMMENT=	Aspell Hebrew dictionaries
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	he
 
-ASPELL_HE=	ken
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

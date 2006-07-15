@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gv-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-gv-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Manx Gaelic dictionary
+COMMENT=	Aspell Manx Gaelic dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	gv
 
-ASPELL_GV=	seadh
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

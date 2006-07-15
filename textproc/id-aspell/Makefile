@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	id-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-id-1.2-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Indonesian dictionary
+COMMENT=	Aspell Indonesian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	id
 
-ASPELL_ID=	ya
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

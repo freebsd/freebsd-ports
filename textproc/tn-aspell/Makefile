@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tn-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-tn-1.0.1-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Tswana dictionary
+COMMENT=	Aspell Tswana dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	tn
 
-ASPELL_TN=	ee
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

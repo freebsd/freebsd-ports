@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	german
+DISTVERSION=	6-de-20030222-1
+CATEGORIES=	german textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with German dictionary
+COMMENT=	Aspell German dictionary
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	de
 
-ASPELL_DE=	ja
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

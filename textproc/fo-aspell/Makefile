@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fo-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-fo-0.2.16-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Faroese dictionary
+COMMENT=	Aspell Faroese dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	fo
 
-ASPELL_FO=	yes
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

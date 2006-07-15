@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	hil-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-hil-0.11-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Hiligaynon dictionary
+COMMENT=	Aspell Hiligaynon dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	hil
 
-ASPELL_HIL=	hu-o
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

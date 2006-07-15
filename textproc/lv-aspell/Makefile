@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lv-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-lv-0.5.5-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Latvian dictionary
+COMMENT=	Aspell Latvian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	lv
 
-ASPELL_LV=	ja
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

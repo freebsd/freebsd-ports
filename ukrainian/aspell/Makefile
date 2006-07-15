@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	ukrainian
+DISTVERSION=	6-uk-1.1-0
+CATEGORIES=	ukrainian textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Ukrainian dictionaries
+COMMENT=	Aspell Ukrainian dictionaries
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	uk
 
-ASPELL_UK=	tak
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	vietnamese
+DISTVERSION=	6-vi-0.01.1-1
+CATEGORIES=	vietnamese textproc
 
 MAINTAINER=	obrien@FreeBSD.org
-COMMENT=	Aspell with Vietnamese dictionaries
+COMMENT=	Aspell Vietnamese dictionaries
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	vi
 
-ASPELL_VI=	vâng
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

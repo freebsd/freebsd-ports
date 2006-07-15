@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tr-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-tr-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Turkish dictionary
+COMMENT=	Aspell Turkish dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	tr
 
-ASPELL_TR=	evet
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

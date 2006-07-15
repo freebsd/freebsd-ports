@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gu-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-gu-0.02-0
+CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	Aspell with Gujarati dictionary
+COMMENT=	Aspell Gujarati dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	gu
 
-ASPELL_GU=	au
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

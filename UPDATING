@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060715:
+  AFFECTS: users of Aspell or its versions bundled with dictionaries
+  AUTHOR: thierry@FreeBSD.org
+
+  Since aspell-0.60.4_4, all dictionaries can be installed separately:
+
+  - by default, textproc/aspell installs the English dictionaries (no
+    change);
+  - thereafter you can install any foreign dictionary;
+  - when you install a foreign dictionary, i.e. french/aspell or
+    textproc/da-aspell, it installs only the dictionaries, and depends
+    upon textproc/aspell for the programs;
+  - if you don't need the English dictionaries, you can define
+    WITHOUT_DICTEN or install textproc/aspell-without-dicten.
+
 20060714:
   AFFECTS: users of security/krb5
   AUTHOR: cy@FreeBSD.org

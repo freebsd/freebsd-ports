@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nl-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-nl-0.50-2
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Dutch dictionary
+COMMENT=	Aspell Dutch dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	nl
 
-ASPELL_NL=	ja
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

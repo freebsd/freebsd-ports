@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bg-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-bg-4.0-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Bulgarian dictionary
+COMMENT=	Aspell Bulgarian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	bg
 
-ASPELL_BG=	da
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ny-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-ny-0.01-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Nyanja dictionary
+COMMENT=	Aspell Nyanja dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	ny
 
-ASPELL_NY=	inde
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

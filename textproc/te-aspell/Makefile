@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	te-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-te-0.01-2
+CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT=	Aspell with Telugu dictionary
+COMMENT=	Aspell Telugu dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	te
 
-ASPELL_TE=	avunu
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

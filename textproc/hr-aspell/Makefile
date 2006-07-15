@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	hr-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-hr-0.51-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Croatian dictionary
+COMMENT=	Aspell Croatian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	hr
 
-ASPELL_HR=	da
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

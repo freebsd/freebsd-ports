@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	rw-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-rw-0.50-0
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Kinyarwanda dictionary
+COMMENT=	Aspell Kinyarwanda dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	rw
 
-ASPELL_RW=	yego
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

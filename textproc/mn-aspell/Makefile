@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mn-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-mn-0.01-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Mongolian dictionary
+COMMENT=	Aspell Mongolian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	mn
 
-ASPELL_MN=	tiim
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

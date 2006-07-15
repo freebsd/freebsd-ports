@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	eo-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-eo-0.50-2
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Esperanto dictionary
+COMMENT=	Aspell Esperanto dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	eo
 
-ASPELL_EO=	jes
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

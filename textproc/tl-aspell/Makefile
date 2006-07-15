@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tl-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	5-tl-0.02-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Tagalog dictionary
+COMMENT=	Aspell Tagalog dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	tl
 
-ASPELL_TL=	opo
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

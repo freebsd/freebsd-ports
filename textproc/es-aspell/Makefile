@@ -5,13 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	es-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	-es-0.50-2
+PORTEPOCH=	1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Spanish dictionary
+COMMENT=	Aspell Spanish dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	es
 
-ASPELL_ES=	sí
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

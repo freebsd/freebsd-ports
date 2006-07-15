@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	fi-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-fi-0.7-0
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Finnish dictionary
+COMMENT=	Aspell Finnish dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	fi
 
-ASPELL_FI=	kyllä
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

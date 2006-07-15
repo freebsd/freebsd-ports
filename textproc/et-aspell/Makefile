@@ -5,13 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	et-aspell
+PORTNAME=	${DICT}-aspell
+DISTVERSION=	6-et-0.1.21-1
+CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Estonian dictionary
+COMMENT=	Aspell Estonian dictionary
 
-MASTERDIR=	${.CURDIR}/../aspell
+DICT=	 	et
 
-ASPELL_ET=	jah
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>

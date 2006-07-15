@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aspell
-CATEGORIES=	russian
+DISTVERSION=	6-ru-0.99f7-1
+CATEGORIES=	russian textproc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Russian dictionary
+COMMENT=	Aspell Russian dictionary
 
-MASTERDIR=	${.CURDIR}/../../textproc/aspell
+DICT=	 	ru
 
-ASPELL_RU=	da
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
+.include <bsd.port.post.mk>
