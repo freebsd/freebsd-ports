@@ -1,24 +1,24 @@
---- bibletime/frontend/btinstallmgr.cpp.orig	Mon Aug 23 09:45:16 2004
-+++ bibletime/frontend/btinstallmgr.cpp	Mon Aug 23 09:44:10 2004
-@@ -104,7 +104,7 @@
-     }
-     else {
- //      conf["Install"][!setDataPath ? "DataPath" : "AugmentPath"] = t.local8Bit();
--	    conf["Install"].insert( std::make_pair(!setDataPath ? "DataPath" : "AugmentPath", t.local8Bit()) );
-+	    conf["Install"].insert( std::make_pair((const char*)(!setDataPath ? "DataPath" : "AugmentPath"), t.local8Bit()) );
+--- bibletime/frontend/btinstallmgr.cpp.orig	Sat Oct  1 08:18:03 2005
++++ bibletime/frontend/btinstallmgr.cpp	Tue Jul 11 11:07:41 2006
+@@ -97,7 +97,7 @@
+ 				continue;
+ 			}
+ 			else {
+-				conf["Install"].insert( std::make_pair(!setDataPath ? SWBuf("DataPath") : SWBuf("AugmentPath"), t.local8Bit()) );
++				conf["Install"].insert( std::make_pair((const char*)(!setDataPath ? "DataPath" : "AugmentPath"), t.local8Bit()) );
  
-       setDataPath = true;
-     }
-@@ -176,10 +176,10 @@
- 			is->directory--; //make one char shorter
+ 				setDataPath = true;
+ 			}
+@@ -167,10 +167,10 @@
+ 				is->directory--; //make one char shorter
+ 			}
+ 
+-			config["Sources"].insert( std::make_pair(SWBuf("FTPSource"), is->getConfEnt()) );
++			config["Sources"].insert( std::make_pair((const char*)"FTPSource", is->getConfEnt()) );
  		}
- 
--    config["Sources"].insert( std::make_pair("FTPSource", is->getConfEnt()) );
-+    config["Sources"].insert( std::make_pair((const char*)"FTPSource", is->getConfEnt()) );
-   }
-   else if (!strcmp(is->type, "DIR")) {
--    config["Sources"].insert( std::make_pair("DIRSource", is->getConfEnt()) );
-+    config["Sources"].insert( std::make_pair((const char*)"DIRSource", is->getConfEnt()) );
-   }
-   config.Save();
- }
+ 		else if (!strcmp(is->type, "DIR")) {
+-			config["Sources"].insert( std::make_pair(SWBuf("DIRSource"), is->getConfEnt()) );
++			config["Sources"].insert( std::make_pair((const char*)"DIRSource", is->getConfEnt()) );
+ 		}
+ 		config.Save();
+ 	}

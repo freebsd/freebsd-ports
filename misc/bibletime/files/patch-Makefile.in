@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Aug 19 21:50:07 2004
-+++ Makefile.in	Thu Aug 19 21:50:29 2004
-@@ -762,7 +762,7 @@
+--- Makefile.in.orig	Sun Nov 13 15:24:02 2005
++++ Makefile.in	Tue Jul 11 15:13:07 2006
+@@ -772,7 +772,7 @@
  	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.files
  
  install-data-local:
