@@ -518,6 +518,7 @@ asn1c		ports/lang/asn1c
 asp2php		ports/www/asp2php
 aspathtree	ports/net-mgmt/aspathtree
 aspell		ports/textproc/aspell
+aspell-without-dicten	ports/textproc/aspell-without-dicten
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
 asr-manpages	ports/misc/asr-manpages
@@ -1643,6 +1644,7 @@ ddclient	ports/dns/ddclient
 ddd		ports/devel/ddd
 ddos_scan	ports/security/ddos_scan
 de-BBBike	ports/german/BBBike
+de-alt-aspell	ports/german/alt-aspell
 de-aspell	ports/german/aspell
 de-bsdforen-firefox-searchplugin	ports/german/bsdforen-firefox-searchplugin
 de-citrix_ica	ports/german/citrix_ica
@@ -2188,9 +2190,10 @@ emms		ports/audio/emms
 emovix		ports/multimedia/emovix
 emp		ports/www/emp
 empire		ports/games/empire
-empty		ports/net/empty
+nmpty		ports/net/empty
 emu		ports/x11/emu
 emu10kx		ports/audio/emu10kx
+en-aspell	ports/textproc/en-aspell
 enblend		ports/graphics/enblend
 enca		ports/converters/enca
 enchant		ports/textproc/enchant
