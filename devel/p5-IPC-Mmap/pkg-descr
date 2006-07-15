@@ -1,0 +1,19 @@
+Provides an object-oriented interface to either the POSIX mmap() or
+Win32 equivalent APIs to memory map a file into a process's address
+space for general memory access. IPC::Mmap provides only a minimal
+interface without the additional overhead of tie'd variables or
+locking enforced in other modules (e.g., Sys::Mmap, Win32::MMF); hence,
+the application is responsible for performing read()'s and write()'s
+on the IPC::Mmap object, and calling any needed lock() and unlock()
+methods, as required by concurrent processes.
+
+Memory mapped files provide an alternate shared memory mechanism for
+multiple processes. The technique maps the OS's file system buffers
+for a given file into each mmap()'ing process's virtual memory space,
+thereby permitting each process to essentially share the same physical
+memory. Refer to the excellent "Advanced Programming in the UNIX
+Environment", Stevens et al., Addison-Wesley Publisher for a detailed
+reference on the POSIX implementation. IPC::Mmap provides OS-agnostic
+wrappers for both the POSIX and Win32 memory mapped file capabilities.
+
+WWW:	http://search.cpan.org/dist/IPC-Mmap/
