@@ -11598,6 +11598,7 @@ py-webware	ports/www/py-webware
 py-webware-component	ports/www/py-webware-component
 py-wmgeneral	ports/x11-toolkits/py-wmgeneral
 py-wordnet	ports/textproc/py-wordnet
+py-wsgiutils	ports/devel/py-wsgiutils
 py-wxPython24	ports/x11-toolkits/py-wxPython24
 py-wxPython26	ports/x11-toolkits/py-wxPython26
 py-wxPython26-common	ports/x11-toolkits/py-wxPython26-common
