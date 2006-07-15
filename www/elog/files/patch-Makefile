@@ -1,0 +1,66 @@
+--- Makefile.orig	Sun Jul  9 16:26:32 2006
++++ Makefile	Tue Jul 11 20:03:40 2006
+@@ -16,10 +16,11 @@
+ MANDIR     = $(ROOT)$(PREFIX)/man
+ endif
+ 
+-ELOGDIR    = $(ROOT)$(PREFIX)/elog
++#LOGBOOKDIR is set by the Ports Makefile
++ELOGDIR    = $(ROOT)$(PREFIX)/share/elog
+ DESTDIR    = $(ROOT)$(PREFIX)/bin
+ SDESTDIR   = $(ROOT)$(PREFIX)/sbin
+-RCDIR      = $(ROOT)/etc/rc.d/init.d
++RCDIR	   = $(ROOT)$(PREFIX)/etc
+ 
+ #############################################################
+ 
+@@ -80,8 +81,9 @@
+ strlcpy.o: $(MXMLDIR)/strlcpy.c $(MXMLDIR)/strlcpy.h
+ 	$(CC) $(CFLAGS) -c -o strlcpy.o $(MXMLDIR)/strlcpy.c
+ 
++#FIXME: Dont know why it dosent work with CFLAGS(gcc hangs up)
+ elogd: src/elogd.c regex.o mxml.o strlcpy.o
+-	$(CC) $(CFLAGS) -I$(MXMLDIR) -o elogd src/elogd.c regex.o mxml.o strlcpy.o $(LIBS)
++	$(CC) -I$(MXMLDIR) -o elogd src/elogd.c regex.o mxml.o strlcpy.o $(LIBS)
+ 
+ debug: src/elogd.c regex.o mxml.o strlcpy.o
+ 	$(CC) -g -I$(MXMLDIR) -o elogd src/elogd.c regex.o mxml.o strlcpy.o $(LIBS)
+@@ -106,7 +108,6 @@
+ install: $(EXECS)
+ 	@$(INSTALL) -m 0755 -d $(DESTDIR) $(SDESTDIR) $(MANDIR)/man1/ $(MANDIR)/man8/
+ 	@$(INSTALL) -m 0755 -d $(ELOGDIR)/scripts/ $(ELOGDIR)/resources/ $(ELOGDIR)/themes/default/icons 
+-	@$(INSTALL) -m 0755 -d $(ELOGDIR)/logbooks/demo
+ 	@$(INSTALL) -v -m 0755 -o ${BINOWNER} -g ${BINGROUP} elog elconv $(DESTDIR)
+ 	@$(INSTALL) -v -m 0755 -o ${BINOWNER} -g ${BINGROUP} elogd $(SDESTDIR)
+ 	@$(INSTALL) -v -m 0644 man/elog.1 man/elconv.1 $(MANDIR)/man1/
+@@ -121,23 +122,20 @@
+ 	@$(INSTALL) -m 0644 themes/default/icons/* $(ELOGDIR)/themes/default/icons/
+ 	@for file in `find themes/default -type f | grep -v .svn` ; \
+           do \
+-          $(INSTALL) -D -m 0644 $$file $(ELOGDIR)/themes/default/`basename $$file` ;\
++          $(INSTALL)  -C -m 0644 $$file $(ELOGDIR)/themes/default/`basename $$file` ;\
+           done
+ 
+-	@echo "Installing example logbook to $(ELOGDIR)/logbooks/demo"	
+-	@if [ ! -f $(ELOGDIR)/logbooks/demo ]; then  \
+-	  $(INSTALL) -v -m 0644 logbooks/demo/* $(ELOGDIR)/logbooks/demo ; \
++	@echo "Installing example logbook to $(LOGBOOKDIR)/demo"
++	@if [ ! -f ${PREFIX}/$(LOGBOOKDIR)/demo ]; then \
++		$(INSTALL) -v -d -m 0644 ${PREFIX}/$(LOGBOOKDIR)/demo ; \
++		$(INSTALL) -v -m 0644 logbooks/demo/* ${PREFIX}/$(LOGBOOKDIR)/demo ; \
+ 	fi
+ 
+-	@sed "s#\@PREFIX\@#$(PREFIX)#g" elogd.init_template > elogd.init
+-	@$(INSTALL) -v -D -m 0755 elogd.init $(RCDIR)/elogd
+ 
+-	@if [ ! -f $(ELOGDIR)/elogd.cfg ]; then  \
+-	  $(INSTALL) -v -m 644 elogd.cfg $(ELOGDIR)/elogd.cfg ; \
++	@if [ ! -f $(RCDIR)/elogd.cfg.sample ]; then  \
++	  $(INSTALL) -v -m 644 elogd.cfg $(RCDIR)/elogd.cfg.sample ; \
+ 	fi
+ 
+-restart:
+-	$(RCDIR)/elogd restart
+ clean:
+ 	-$(RM) *~ $(EXECS) regex.o mxml.o strlcpy.o locext
+ 
