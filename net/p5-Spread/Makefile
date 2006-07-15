@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-3.17.3-1.07
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perl extension for the Spread group communication system
 
+BROKEN=		fails to deinstall cleanly
+
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 
 MAN3=	Spread.3
