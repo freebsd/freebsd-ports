@@ -110,6 +110,7 @@
     SUBDIR += eaccelerator
     SUBDIR += eldav.el
     SUBDIR += elinks
+    SUBDIR += elog
     SUBDIR += emacs-w3m
     SUBDIR += emacs-w3m-emacs20
     SUBDIR += emacs-w3m-xemacs21-mule
