@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM2/.packlist
+%%SITE_PERL%%/XML/DOM2.pm
+%%SITE_PERL%%/XML/DOM2/Attribute.pm
+%%SITE_PERL%%/XML/DOM2/Attribute/Namespace.pm
+%%SITE_PERL%%/XML/DOM2/DOM/Attribute.pm
+%%SITE_PERL%%/XML/DOM2/DOM/Document.pm
+%%SITE_PERL%%/XML/DOM2/DOM/Element.pm
+%%SITE_PERL%%/XML/DOM2/DOM/NameSpace.pm
+%%SITE_PERL%%/XML/DOM2/Element.pm
+%%SITE_PERL%%/XML/DOM2/Element/CDATA.pm
+%%SITE_PERL%%/XML/DOM2/Element/Comment.pm
+%%SITE_PERL%%/XML/DOM2/Element/Document.pm
+%%SITE_PERL%%/XML/DOM2/Element/DocumentType.pm
+%%SITE_PERL%%/XML/DOM2/Parser.pm
+%%SITE_PERL%%/XML/DOM2/XPath.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM2
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/XML/DOM2/Attribute
+@dirrmtry %%SITE_PERL%%/XML/DOM2/DOM
+@dirrmtry %%SITE_PERL%%/XML/DOM2/Element
+@dirrmtry %%SITE_PERL%%/XML/DOM2
+@dirrmtry %%SITE_PERL%%/XML

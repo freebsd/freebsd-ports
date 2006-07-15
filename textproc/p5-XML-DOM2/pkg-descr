@@ -1,0 +1,16 @@
+XML::DOM2 is yet _another_ perl XML module.
+
+* DOM Level2 Compilence in both document, elements and attributes
+* NameSpace control for elements and attributes
+* XPath (it's just one small method once you have a good DOM)
+* Extendability:
+  * Document, Element or Attribute classes can be used as base class
+    for other kinds of document, element or attribute.
+  * Element and Attribute Handler allows element specific child
+    elements and attribute objects.
+  * Element and Attribute serialisation overiding.
+* Parsing with SAX (use XML::SAX::PurePerl for low dependancy installs)
+* Internal serialisation
+
+Author:	Martin Owens, doctormo@cpan.org
+WWW:	http://search.cpan.org/dist/XML-DOM2/
