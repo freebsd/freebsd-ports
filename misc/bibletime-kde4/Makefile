@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTVERSION=	1.5.3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	A powerful Bible study application for KDE3
 
-LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword.so:${PORTSDIR}/misc/sword
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+INSTALLS_ICONS=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/configure
