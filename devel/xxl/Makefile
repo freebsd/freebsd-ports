@@ -10,7 +10,7 @@ PORTVERSION=		1.0.0
 CATEGORIES=		devel
 MASTER_SITES=		http://www.zork.org/software/
 
-MAINTAINER=		robert@rs.tarrant.tx.us
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		C and C++ that provides exception handling and asset management
 
 GNU_CONFIGURE=		yes
