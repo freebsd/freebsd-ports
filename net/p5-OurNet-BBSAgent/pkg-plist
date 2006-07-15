@@ -1,0 +1,66 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBSAgent/.packlist
+%%SITE_PERL%%/OurNet/BBSAgent.pm
+%%SITE_PERL%%/OurNet/BBSAgent/aquaphoto.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/bahamut.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/bandplaza.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/birdnest.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/cvic.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/elixus.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/firebird.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/firebird2/base.inc
+%%SITE_PERL%%/OurNet/BBSAgent/firebird2/board.inc
+%%SITE_PERL%%/OurNet/BBSAgent/firebird3/base.inc
+%%SITE_PERL%%/OurNet/BBSAgent/firebird3/board.inc
+%%SITE_PERL%%/OurNet/BBSAgent/fpg.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/gugod.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/home.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/hsnu.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/hua.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/kimo.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/kkcity.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/kuas.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/m543.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/maple2/base.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maple2/board.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maple2/session.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maple2/user.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maple3/base.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maple3/board.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maple3/session.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maple3/user.inc
+%%SITE_PERL%%/OurNet/BBSAgent/maxwell.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/melix.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/melix/base.inc
+%%SITE_PERL%%/OurNet/BBSAgent/melix/board.inc
+%%SITE_PERL%%/OurNet/BBSAgent/melix/session.inc
+%%SITE_PERL%%/OurNet/BBSAgent/melix/user.inc
+%%SITE_PERL%%/OurNet/BBSAgent/miou.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/neto.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/ntu.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/ofo.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/openbazaar.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/paradise.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/pku.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/ptt.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/ptt2.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/saloon.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/sayya.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/summer.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/terry.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/tfg.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/tiger2.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/tkucs.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/twserv.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/ufo.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/wretch.bbs
+%%SITE_PERL%%/OurNet/BBSAgent/zoo.bbs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBSAgent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet
+@dirrmtry %%SITE_PERL%%/OurNet/BBSAgent/firebird2
+@dirrmtry %%SITE_PERL%%/OurNet/BBSAgent/firebird3
+@dirrmtry %%SITE_PERL%%/OurNet/BBSAgent/maple2
+@dirrmtry %%SITE_PERL%%/OurNet/BBSAgent/maple3
+@dirrmtry %%SITE_PERL%%/OurNet/BBSAgent/melix
+@dirrmtry %%SITE_PERL%%/OurNet/BBSAgent
+@dirrmtry %%SITE_PERL%%/OurNet
