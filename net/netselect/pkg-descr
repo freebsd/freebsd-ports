@@ -1,0 +1,14 @@
+netselect is an ultrafast intelligent parallelizing binary-search
+implementation of "ping."
+
+netselect determines several facts about all of the hosts given on the command
+line, much faster than you would if you tried to use ping and traceroute.
+For example, if I type:
+
+  netselect -v ftp.fceia.unr.edu.ar \
+      ftp.kulnet.kuleuven.ac.be \
+      ftp.cdrom.com ftp.debian.org \
+      ftp.de.debian.org
+
+It tells me statistics about each of the hostnames I provided,
+in much less time than doing a whole bunch of traceroutes.

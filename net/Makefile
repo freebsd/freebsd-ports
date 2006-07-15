@@ -329,6 +329,7 @@
     SUBDIR += netpipes
     SUBDIR += netscript
     SUBDIR += netsed
+    SUBDIR += netselect
     SUBDIR += netspeed_applet
     SUBDIR += netstrain
     SUBDIR += nettest
