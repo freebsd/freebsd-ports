@@ -14091,6 +14091,7 @@ wavplay		ports/audio/wavplay
 wb		ports/mbone/wb
 wb0		ports/www/wb0
 wbd		ports/mbone/wbd
+wbl		ports/mail/wbl
 wbxml2		ports/textproc/wbxml2
 wcol		ports/www/wcol
 wdiff		ports/textproc/wdiff
