@@ -335,7 +335,9 @@ share/doc/HTML/zh_TW
 @comment share/icons/crystalsvg/64x64/apps
 @comment share/icons/locolor/16x16/apps
 @comment share/icons/locolor/32x32/apps
-@comment share/locale/en_US
+@comment Kdebase puts a locale desktop entry here and pointyhat recently
+@comment started to complain about it.
+share/locale/en_US
 @comment share/locale/l10n
 @comment share/locale/l10n/C
 @comment share/locale/l10n/ae

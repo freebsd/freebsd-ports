@@ -246,6 +246,7 @@ share/icons/locolor/64x64/apps/.keep_me
 share/icons/locolor/64x64/devices/.keep_me
 share/icons/locolor/64x64/filesystems/.keep_me
 share/icons/locolor/64x64/mimetypes/.keep_me
+share/locale/en_US/.keep_me
 share/mimelnk/.keep_me
 share/mimelnk/all/.keep_me
 share/mimelnk/application/.keep_me
@@ -284,6 +285,7 @@ share/wallpapers/.keep_me
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk/all
 @dirrm share/mimelnk
+@dirrm share/locale/en_US
 @dirrm share/icons/locolor/64x64/mimetypes
 @dirrm share/icons/locolor/64x64/filesystems
 @dirrm share/icons/locolor/64x64/devices
