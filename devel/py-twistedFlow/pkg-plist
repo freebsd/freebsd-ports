@@ -1,6 +1,9 @@
 %%S%%/twisted/flow/__init__.py
 %%S%%/twisted/flow/__init__.pyc
 %%S%%/twisted/flow/__init__.pyo
+%%S%%/twisted/flow/_version.py
+%%S%%/twisted/flow/_version.pyc
+%%S%%/twisted/flow/_version.pyo
 %%S%%/twisted/flow/base.py
 %%S%%/twisted/flow/base.pyc
 %%S%%/twisted/flow/base.pyo
