@@ -11533,6 +11533,7 @@ py-sgfsummary	ports/games/py-sgfsummary
 py-sgrep	ports/textproc/py-sgrep
 py-simplejson	ports/devel/py-simplejson
 py-simpleparse	ports/devel/py-simpleparse
+py-simpletal	ports/devel/py-simpletal
 py-simpy	ports/devel/py-simpy
 py-sip		ports/devel/py-sip
 py-ski		ports/games/py-ski
