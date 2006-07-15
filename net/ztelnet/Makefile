@@ -22,6 +22,7 @@ DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz \
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Telnet program with zmodem transfer
 
+BROKEN=		fails to fetch
 RESTRICTED=	"zmodem code has restrictive copyright"
 
 NO_WRKSUBDIR=	yes
