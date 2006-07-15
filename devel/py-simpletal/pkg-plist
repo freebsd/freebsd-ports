@@ -1,0 +1,25 @@
+%%PYTHON_SITELIBDIR%%/simpletal/DummyLogger.py
+%%PYTHON_SITELIBDIR%%/simpletal/DummyLogger.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/DummyLogger.pyo
+%%PYTHON_SITELIBDIR%%/simpletal/FixedHTMLParser.py
+%%PYTHON_SITELIBDIR%%/simpletal/FixedHTMLParser.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/FixedHTMLParser.pyo
+%%PYTHON_SITELIBDIR%%/simpletal/__init__.py
+%%PYTHON_SITELIBDIR%%/simpletal/__init__.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/__init__.pyo
+%%PYTHON_SITELIBDIR%%/simpletal/sgmlentitynames.py
+%%PYTHON_SITELIBDIR%%/simpletal/sgmlentitynames.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/sgmlentitynames.pyo
+%%PYTHON_SITELIBDIR%%/simpletal/simpleElementTree.py
+%%PYTHON_SITELIBDIR%%/simpletal/simpleElementTree.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/simpleElementTree.pyo
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTAL.py
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTAL.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTAL.pyo
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTALES.py
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTALES.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTALES.pyo
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTALUtils.py
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTALUtils.pyc
+%%PYTHON_SITELIBDIR%%/simpletal/simpleTALUtils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/simpletal/
