@@ -9938,6 +9938,7 @@ p5-WWW-Scraper-ISBN-Record	ports/www/p5-WWW-Scraper-ISBN-Record
 p5-WWW-Search	ports/www/p5-WWW-Search
 p5-WWW-Search-AltaVista	ports/www/p5-WWW-Search-AltaVista
 p5-WWW-Search-Google	ports/www/p5-WWW-Search-Google
+p5-WWW-Search-MSN	ports/www/p5-WWW-Search-MSN
 p5-WWW-Shorten	ports/www/p5-WWW-Shorten
 p5-WWW-SourceForge	ports/www/p5-WWW-SourceForge
 p5-WWW-Wikipedia	ports/www/p5-WWW-Wikipedia
