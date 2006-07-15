@@ -1,5 +1,5 @@
 --- lib/Mail/DomainKeys/Signature.pm.orig	Wed Jun 22 00:43:53 2005
-+++ lib/Mail/DomainKeys/Signature.pm	Sat Nov 12 01:49:56 2005
++++ lib/Mail/DomainKeys/Signature.pm	Sat Jul 15 23:40:22 2006
 @@ -78,14 +78,15 @@
  	$self->algorithm and
  		$text .= "a=" . $self->algorithm . "; ";
