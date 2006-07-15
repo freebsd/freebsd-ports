@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/ \
-		http://edt1023.sayya.org/misc/
-.if defined(WITH_BOSHIAMY)
-DISTFILES=	${GCINFILE} ${BOSHIAMYFILE}
-EXTRACT_ONLY=	${GCINFILE}
-.endif
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
+		http://edt1023.sayya.org/misc/:boshiamy
+DISTFILES=	gcin-1.2.1.tar.bz2:main \
+		noseeing.tar.gz:boshiamy
+EXTRACT_ONLY=	gcin-1.2.1.tar.bz2
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A traditional chinese input utility in X
@@ -23,7 +22,11 @@ USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
-INSTALLS_SHLIB=	yes
+USE_GCC=	3.4+
+INSTALLS_ICONS=	YES
+INSTALLS_SHLIB=	YES
+OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	off
+IGNOREFILES=	noseeing.tar.gz
 
 CONFIGURE_ENV+=	"--new_gtk_im=Y"
 
@@ -31,24 +34,9 @@ MAN1=		gcin.1 gcin2tab.1
 
 .include <bsd.port.pre.mk>
 
-pre-extract:
-	@${ECHO_MSG} ''
-	@${ECHO_MSG} 'gcin has the following tunable option:'
-	@${ECHO_MSG} '    WITH_BOSHIAMY  - enable Boshiamy support'
-	@${ECHO_MSG} ''
-	@${ECHO_MSG} 'Example:  "make WITH_BOSHIAMY=yes install clean" '
-	@${ECHO_MSG} ''
-
-.if ${OSVERSION} <= 500034
-USE_GCC=	3.4
-.endif
-
 .if defined(WITH_BOSHIAMY)
-IGNOREFILES=	${BOSHIAMYFILE}
-GCINFILE=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-BOSHIAMYFILE=	noseeing.tar.gz
 post-extract:
-	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/${BOSHIAMYFILE} \
+	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/noseeing.tar.gz \
 		noseeing.cin
 	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
 		${WRKSRC}/data/Makefile
