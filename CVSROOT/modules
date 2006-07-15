@@ -8198,6 +8198,7 @@ p5-ClearSilver	ports/www/p5-ClearSilver
 p5-Clipboard	ports/x11/p5-Clipboard
 p5-Clone	ports/devel/p5-Clone
 p5-Clone-Fast	ports/devel/p5-Clone-Fast
+p5-Clone-More	ports/devel/p5-Clone-More
 p5-Code-Perl	ports/devel/p5-Code-Perl
 p5-Color-Rgb	ports/graphics/p5-Color-Rgb
 p5-Commands-Guarded	ports/devel/p5-Commands-Guarded
