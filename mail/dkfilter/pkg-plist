@@ -9,7 +9,9 @@ lib/Mail/DomainKeys/Policy.pm
 lib/Mail/DomainKeys/Signature.pm
 lib/Mail/DomainKeys.pm
 lib/DKMessage.pm
-bin/auto_responder.pl
+lib/MySmtpProxyServer.pm
+lib/MySmtpServer.pm
+bin/dk_responder.pl
 bin/dkverify.pl
 bin/dkfilter.in
 bin/dkfilter.out
