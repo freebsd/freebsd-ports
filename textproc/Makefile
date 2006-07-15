@@ -715,6 +715,7 @@
     SUBDIR += redet
     SUBDIR += redland
     SUBDIR += redland-bindings
+    SUBDIR += redland-bindings-python
     SUBDIR += refdb
     SUBDIR += referrercop
     SUBDIR += replaceit
