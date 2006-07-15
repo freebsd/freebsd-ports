@@ -15,10 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
+BROKEN=		fails to install
+
 BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
 
 USE_GMAKE=	yes
-USE_GCC=	3.2
+USE_GCC=	3.2+
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Pari.3 Math::libPARI.3 \
