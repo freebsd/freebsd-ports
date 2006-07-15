@@ -543,6 +543,7 @@
     SUBDIR += p5-XML-DBMS
     SUBDIR += p5-XML-DOM
     SUBDIR += p5-XML-DOM-XPath
+    SUBDIR += p5-XML-DOM2
     SUBDIR += p5-XML-DT
     SUBDIR += p5-XML-DTDParser
     SUBDIR += p5-XML-DifferenceMarkup
