@@ -14,6 +14,8 @@ MASTER_SITES=	http://zekiller.skytech.org/fichiers/smssend/
 MAINTAINER=	mico@bsd.hu
 COMMENT=	A tool to send a SMS to any GSM
 
+BROKEN=		fails to compile
+
 LIB_DEPENDS=	skyutils-2.9.9:${PORTSDIR}/misc/skyutils
 
 MAN1=	smssend.1 smssend.scripting.1 email2smssend.1
