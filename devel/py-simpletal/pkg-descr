@@ -1,0 +1,6 @@
+SimpleTAL is a stand alone Python implementation of the TAL, TALES and METAL
+specifications used in Zope to power HTML and XML templates. SimpleTAL is an
+idependent implementation of TAL; there are no dependencies on Zope nor is any
+of the Zope work re-used.
+
+WWW: http://www.owlfish.com/software/simpleTAL/

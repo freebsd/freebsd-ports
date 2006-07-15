@@ -1610,6 +1610,7 @@
     SUBDIR += py-setuptools
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
+    SUBDIR += py-simpletal
     SUBDIR += py-simpy
     SUBDIR += py-sip
     SUBDIR += py-spark
