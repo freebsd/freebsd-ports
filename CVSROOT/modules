@@ -9769,6 +9769,7 @@ p5-Text-FixedLength	ports/textproc/p5-Text-FixedLength
 p5-Text-FixedLength-Extra	ports/textproc/p5-Text-FixedLength-Extra
 p5-Text-Flowchart	ports/textproc/p5-Text-Flowchart
 p5-Text-Format	ports/textproc/p5-Text-Format
+p5-Text-Format+NWrap	ports/textproc/p5-Text-Format+NWrap
 p5-Text-FormatTable	ports/textproc/p5-Text-FormatTable
 p5-Text-German	ports/textproc/p5-Text-German
 p5-Text-Glob	ports/textproc/p5-Text-Glob
