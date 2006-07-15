@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bfilter
-PORTVERSION=	0.10.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,16 +24,29 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_RC_SUBR=	bfilter.sh
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
+CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if defined(WITH_GUI)
-USE_GNOME=	gtk20 pkgconfig
-LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
-CONFIGURE_ARGS+=	--with-gui
-PLIST_SUB+=	WITH_GUI=""
+LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+CONFIGURE_ARGS+=--with-gui
+PLIST_SUB+=	GUI=""
 .else
-PLIST_SUB+=	WITH_GUI="@comment "
+PLIST_SUB+=	GUI="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+
+post-install:
+.if defined(WITH_GUI)
+	@${MKDIR} ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/bfilter.desktop \
+		${PREFIX}/share/applications/
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/bfilter.png \
+		${PREFIX}/share/pixmaps/
 .endif
 
 .include <bsd.port.mk>

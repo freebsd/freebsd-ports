@@ -1,10 +1,13 @@
 bin/bfilter
-etc/bfilter/config.default
-etc/bfilter/urls
-etc/bfilter/filters/PopUp filter
-etc/bfilter/filters/Common annoyances filter
+%%GUI%%bin/bfilter-gui
 etc/bfilter/config
+etc/bfilter/config.default
+etc/bfilter/filters/Common annoyances filter
+etc/bfilter/filters/PopUp filter
+etc/bfilter/urls
 etc/bfilter/urls.local
-%%WITH_GUI%%bin/bfilter-gui
+%%GUI%%share/applications/bfilter.desktop
+%%GUI%%share/pixmaps/bfilter.png
+%%GUI%%@dirrmtry share/applications
 @dirrm etc/bfilter/filters
 @dirrm etc/bfilter
