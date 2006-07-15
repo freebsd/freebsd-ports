@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.14.4
-PORTREVISION=	1
+PORTVERSION=	0.20.2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	beepmp
+MASTER_SITES=	http://files.beep-media-player.org/releases/${PORTVERSION:C/\.[0-9]*$//}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Media player geared towards usability, technical efficiency and looks
@@ -18,7 +16,12 @@ COMMENT=	Media player geared towards usability, technical efficiency and looks
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		neon.25:${PORTSDIR}/www/neon
+		neon.25:${PORTSDIR}/www/neon \
+		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
+		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		notify.2:${PORTSDIR}/devel/libnotify \
+		boost_date_time.3:${PORTSDIR}/devel/boost \
+		dbus-1.2:${PORTSDIR}/devel/dbus
 
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -28,41 +31,17 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
 LIBTOOLFILES=	configure libhrel/configure \
 		libchroma/configure libskinned/configure
-USE_GSTREAMER=	bad good ugly mad ogg
+USE_GSTREAMER=	good mad ogg
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
+			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -D__BSD_VISIBLE"
 
 MAN1=		beep-media-player-2.1
-
-.if !defined(WITHOUT_AMAZON)
-CONFIGURE_ARGS+=	--enable-amazon
-.endif
-
-.if defined(WITHOUT_DBUS)
-CONFIGURE_ARGS+=	--disable-dbus
-PLIST_SUB+=	DBUS="@comment "
-.else
-CONFIGURE_ARGS+=	--with-dbus-services-dir="${PREFIX}/share/dbus-1/services"
-LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
-PLIST_SUB+=	DBUS=""
-.endif
-
-.if defined(WITH_GCONF)
-USE_GNOME+=	gconf2
-CONFIGURE_ARGS+=	--enable-gconf
-GCONF_SCHEMAS=	bmp-2.0.schema
-.endif
-
-.if defined(WITHOUT_PERL)
-CONFIGURE_ARGS+=	--disable-perl
-.else
-USE_PERL5_BUILD=	yes
-.endif
 
 .if defined(WITHOUT_STARTUP_NOTIFICATION)
 CONFIGURE_ARGS+=	--disable-sn
@@ -79,6 +58,10 @@ PLIST_SUB+=		NLS=""
 .endif
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|am__append_1 = -D_XOPEN_SOURCE=600||' \
+		${WRKSRC}/src/Makefile.in
 
 .if ${OSVERSION} < 500000
 post-patch:
