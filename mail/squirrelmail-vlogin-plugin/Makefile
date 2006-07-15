@@ -14,6 +14,8 @@ DIST_SUBDIR=		squirrelmail
 MAINTAINER=		matt@gsicomp.on.ca
 COMMENT=		Adds multi-site-hosting capabilities to SquirrelMail
 
+BROKEN=			leaves files behind on deinstall
+
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
 SQUIRREL_PLUGIN_NAME=	vlogin
