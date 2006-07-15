@@ -80,4 +80,12 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+BROKEN=		fails to install
+
+.if ${ARCH}==ia64
+BROKEN=		does not compile on ${ARCH} due to coredump
+.endif
+
+.include <bsd.port.post.mk>
