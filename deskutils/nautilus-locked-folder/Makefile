@@ -10,7 +10,8 @@ PORTNAME=	nautilus-locked-folder
 PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	deskutils security
-MASTER_SITES=	http://www.ids.org.au/~jam6/locked-folders/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus plugin that allows you to encrypt the contents of a folder
