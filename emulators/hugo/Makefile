@@ -61,4 +61,8 @@ post-patch:
 LIB_DEPENDS+=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		fails to install
+.endif
+
 .include <bsd.port.post.mk>
