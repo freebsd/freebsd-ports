@@ -1,6 +1,6 @@
 bin/gsymcheck
-share/doc/geda-doc/man/gsymcheck.html
-share/gEDA/system-gsymcheckrc
-@dirrmtry share/gEDA
-@dirrmtry share/doc/geda-doc/man
-@dirrmtry share/doc/geda-doc
+%%DOCSDIR%%/man/gsymcheck.html
+%%DATADIR%%/system-gsymcheckrc
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%/man
+@dirrmtry %%DOCSDIR%%
