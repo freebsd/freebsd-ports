@@ -564,6 +564,7 @@ aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
 audacious	ports/multimedia/audacious
+audacious-crossfade	ports/audio/audacious-crossfade
 audacity	ports/audio/audacity
 audit		ports/security/audit
 august		ports/www/august
