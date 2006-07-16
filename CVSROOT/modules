@@ -9726,6 +9726,7 @@ p5-Test-File	ports/devel/p5-Test-File
 p5-Test-File-Contents	ports/devel/p5-Test-File-Contents
 p5-Test-HTTP-Server-Simple	ports/www/p5-Test-HTTP-Server-Simple
 p5-Test-Harness	ports/devel/p5-Test-Harness
+p5-Test-HasVersion	ports/devel/p5-Test-HasVersion
 p5-Test-Inline	ports/devel/p5-Test-Inline
 p5-Test-LectroTest	ports/devel/p5-Test-LectroTest
 p5-Test-LongString	ports/devel/p5-Test-LongString
