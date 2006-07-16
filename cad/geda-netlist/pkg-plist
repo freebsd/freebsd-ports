@@ -2,53 +2,53 @@ bin/gnetlist
 bin/mk_verilog_syms
 bin/sch2eaglepos.sh
 bin/sw2asc
-share/doc/geda-doc/man/gnetlist.html
-share/doc/geda-doc/readmes/README.bom
-share/doc/geda-doc/readmes/README.eagle
-share/doc/geda-doc/readmes/README.pcb
-share/doc/geda-doc/readmes/README.switcap
-share/doc/geda-doc/readmes/README.sysc
-share/doc/geda-doc/readmes/README.verilog
-share/doc/geda-doc/readmes/README.vhdl
-share/doc/geda-doc/readmes/syntax_architecture.txt
-share/doc/geda-doc/readmes/syntax_entity.txt
-share/doc/geda-doc/readmes/vams_mode.txt
-share/gEDA/scheme/gnet-PCB.scm
-share/gEDA/scheme/gnet-PCBboard.scm
-share/gEDA/scheme/gnet-allegro.scm
-share/gEDA/scheme/gnet-bae.scm
-share/gEDA/scheme/gnet-bom.scm
-share/gEDA/scheme/gnet-bom2.scm
-share/gEDA/scheme/gnet-cascade.scm
-share/gEDA/scheme/gnet-drc.scm
-share/gEDA/scheme/gnet-drc2.scm
-share/gEDA/scheme/gnet-eagle.scm
-share/gEDA/scheme/gnet-futurenet2.scm
-share/gEDA/scheme/gnet-geda.scm
-share/gEDA/scheme/gnet-gossip.scm
-share/gEDA/scheme/gnet-gsch2pcb.scm
-share/gEDA/scheme/gnet-maxascii.scm
-share/gEDA/scheme/gnet-pads.scm
-share/gEDA/scheme/gnet-partslist-common.scm
-share/gEDA/scheme/gnet-partslist1.scm
-share/gEDA/scheme/gnet-partslist2.scm
-share/gEDA/scheme/gnet-partslist3.scm
-share/gEDA/scheme/gnet-pcbpins.scm
-share/gEDA/scheme/gnet-protelII.scm
-share/gEDA/scheme/gnet-redac.scm
-share/gEDA/scheme/gnet-spice-sdb.scm
-share/gEDA/scheme/gnet-spice.scm
-share/gEDA/scheme/gnet-switcap.scm
-share/gEDA/scheme/gnet-systemc.scm
-share/gEDA/scheme/gnet-tango.scm
-share/gEDA/scheme/gnet-vams.scm
-share/gEDA/scheme/gnet-verilog.scm
-share/gEDA/scheme/gnet-vhdl.scm
-share/gEDA/scheme/gnet-vipec.scm
-share/gEDA/scheme/gnetlist.scm
-share/gEDA/system-gnetlistrc
-@dirrmtry share/gEDA/scheme
-@dirrmtry share/gEDA
-@dirrmtry share/doc/geda-doc/readmes
-@dirrmtry share/doc/geda-doc/man
-@dirrmtry share/doc/geda-doc
+%%DOCSDIR%%/man/gnetlist.html
+%%DOCSDIR%%/readmes/README.bom
+%%DOCSDIR%%/readmes/README.eagle
+%%DOCSDIR%%/readmes/README.pcb
+%%DOCSDIR%%/readmes/README.switcap
+%%DOCSDIR%%/readmes/README.sysc
+%%DOCSDIR%%/readmes/README.verilog
+%%DOCSDIR%%/readmes/README.vhdl
+%%DOCSDIR%%/readmes/syntax_architecture.txt
+%%DOCSDIR%%/readmes/syntax_entity.txt
+%%DOCSDIR%%/readmes/vams_mode.txt
+%%DATADIR%%/scheme/gnet-PCB.scm
+%%DATADIR%%/scheme/gnet-PCBboard.scm
+%%DATADIR%%/scheme/gnet-allegro.scm
+%%DATADIR%%/scheme/gnet-bae.scm
+%%DATADIR%%/scheme/gnet-bom.scm
+%%DATADIR%%/scheme/gnet-bom2.scm
+%%DATADIR%%/scheme/gnet-cascade.scm
+%%DATADIR%%/scheme/gnet-drc.scm
+%%DATADIR%%/scheme/gnet-drc2.scm
+%%DATADIR%%/scheme/gnet-eagle.scm
+%%DATADIR%%/scheme/gnet-futurenet2.scm
+%%DATADIR%%/scheme/gnet-geda.scm
+%%DATADIR%%/scheme/gnet-gossip.scm
+%%DATADIR%%/scheme/gnet-gsch2pcb.scm
+%%DATADIR%%/scheme/gnet-maxascii.scm
+%%DATADIR%%/scheme/gnet-pads.scm
+%%DATADIR%%/scheme/gnet-partslist-common.scm
+%%DATADIR%%/scheme/gnet-partslist1.scm
+%%DATADIR%%/scheme/gnet-partslist2.scm
+%%DATADIR%%/scheme/gnet-partslist3.scm
+%%DATADIR%%/scheme/gnet-pcbpins.scm
+%%DATADIR%%/scheme/gnet-protelII.scm
+%%DATADIR%%/scheme/gnet-redac.scm
+%%DATADIR%%/scheme/gnet-spice-sdb.scm
+%%DATADIR%%/scheme/gnet-spice.scm
+%%DATADIR%%/scheme/gnet-switcap.scm
+%%DATADIR%%/scheme/gnet-systemc.scm
+%%DATADIR%%/scheme/gnet-tango.scm
+%%DATADIR%%/scheme/gnet-vams.scm
+%%DATADIR%%/scheme/gnet-verilog.scm
+%%DATADIR%%/scheme/gnet-vhdl.scm
+%%DATADIR%%/scheme/gnet-vipec.scm
+%%DATADIR%%/scheme/gnetlist.scm
+%%DATADIR%%/system-gnetlistrc
+@dirrmtry %%DATADIR%%/scheme
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%/readmes
+@dirrmtry %%DOCSDIR%%/man
+@dirrmtry %%DOCSDIR%%
