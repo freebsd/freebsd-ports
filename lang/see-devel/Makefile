@@ -19,6 +19,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-20050609-gerry
 MAINTAINER=	sime@logos.hr
 COMMENT=	Simple ECMAScript Engine (SEE)
 
+BROKEN=		fails to install
+
 OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off
 
