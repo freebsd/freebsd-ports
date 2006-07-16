@@ -7,6 +7,15 @@
 %%SITE_PERL%%/Class/MOP/Module.pm
 %%SITE_PERL%%/Class/MOP/Package.pm
 %%SITE_PERL%%/metaclass.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/ArrayBasedStorage.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/AttributesWithHistory.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/C3MethodDispatchOrder.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/ClassEncapsulatedAttributes.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/InsideOutClass.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/InstanceCountingClass.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/LazyClass.pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/Perl6Attribute.pod
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/Class/MOP/Class
 @dirrmtry %%SITE_PERL%%/Class/MOP
 @dirrmtry %%SITE_PERL%%/Class
