@@ -7,7 +7,7 @@
 
 PORTNAME=	ebview
 PORTVERSION=	0.3.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,6 @@ PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
-
-BROKEN=		fails to install due to directory problem
 
 LIB_DEPENDS=	eb.10:${PORTSDIR}/japanese/eb
 
@@ -37,6 +35,7 @@ post-patch:
 		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
 
 post-install:
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/ebview.xpm ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${PREFIX}/share/applications/
 .if !defined(NOPORTDOCS)
