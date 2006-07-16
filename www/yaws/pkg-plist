@@ -1,5 +1,8 @@
 bin/yaws
 etc/yaws.conf.sample
+lib/erlang/lib/yaws-%%VERSION%%/ebin/haxe.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/json.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/jsonrpc.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_type_c.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/mime_types.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws.app
@@ -15,16 +18,19 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_dav.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_debug.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_generated.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_html.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_jsonrpc.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log_file_h.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ls.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_pam.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rpc.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rss.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_server.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_session_server.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_sup.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ticker.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_xmlrpc.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws.hrl
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws_api.hrl
@@ -32,6 +38,9 @@ lib/erlang/lib/yaws-%%VERSION%%/include/yaws_dav.hrl
 lib/erlang/lib/yaws-%%VERSION%%/priv/epam
 lib/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 lib/erlang/lib/yaws-%%VERSION%%/priv/setuid_drv.so
+lib/erlang/lib/yaws-%%VERSION%%/src/haxe.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/json.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/jsonrpc.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/mime_type_c.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/mime_types.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws.erl
@@ -48,16 +57,19 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.hrl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_generated.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_html.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_jsonrpc.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log_file_h.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ls.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_pam.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_revproxy.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_rpc.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_rss.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_server.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_session_server.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 %%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
 www/yaws/END
@@ -84,6 +96,9 @@ www/yaws/embed.yaws
 www/yaws/examples.yaws
 www/yaws/favicon.ico
 www/yaws/form.yaws
+www/yaws/haxe_intro.yaws
+www/yaws/haxe_sample.html
+www/yaws/haxe_sample.yaws
 www/yaws/history.yaws
 www/yaws/icons/PythonPowered.png
 www/yaws/icons/README
@@ -208,6 +223,12 @@ www/yaws/icons/yaws_pb.gif
 www/yaws/icons/yaws_y.gif
 www/yaws/index.yaws
 www/yaws/internals.yaws
+www/yaws/jsolait/jsolait.js
+www/yaws/jsolait/lib/jsonrpc.js
+www/yaws/jsolait/lib/urllib.js
+www/yaws/json_intro.yaws
+www/yaws/json_sample.html
+www/yaws/json_sample.yaws
 www/yaws/man.yaws
 www/yaws/motivation.yaws
 www/yaws/news
@@ -263,6 +284,8 @@ www/yaws/ybed.erl
 www/yaws/yman.yaws
 @dirrm www/yaws/ssi
 @dirrm www/yaws/shopingcart
+@dirrm www/yaws/jsolait/lib
+@dirrm www/yaws/jsolait
 @dirrm www/yaws/icons/small
 @dirrm www/yaws/icons
 @dirrm www/yaws/code
