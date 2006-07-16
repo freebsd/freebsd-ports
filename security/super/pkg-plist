@@ -1,9 +1,9 @@
 bin/super
 bin/setuid
 @unexec if cmp -s %D/etc/super.tab %D/%%PORTDOCS%%/share/examples/super/barebones.tab; then rm -f %D/etc/super.tab; fi
-%%PORTDOCS%%share/examples/super/sample.tab
-%%PORTDOCS%%share/examples/super/barebones.tab
-%%PORTDOCS%%share/examples/super/sample.cdmount
-%%PORTDOCS%%share/doc/super/README
-%%PORTDOCS%%@dirrm share/examples/super
-%%PORTDOCS%%@dirrm share/doc/super
+%%PORTDOCS%%%%EXAMPLESDIR%%/sample.tab
+%%PORTDOCS%%%%EXAMPLESDIR%%/barebones.tab
+%%PORTDOCS%%%%EXAMPLESDIR%%/sample.cdmount
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

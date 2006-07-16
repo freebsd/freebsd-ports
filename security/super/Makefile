@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	super
-PORTVERSION=	3.26.0
+PORTVERSION=	3.26.1
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Allow others to run commands as root
 
 GNU_CONFIGURE=	yes
