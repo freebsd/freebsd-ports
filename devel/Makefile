@@ -1323,6 +1323,7 @@
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
     SUBDIR += p5-Test-Harness
+    SUBDIR += p5-Test-HasVersion
     SUBDIR += p5-Test-Inline
     SUBDIR += p5-Test-LectroTest
     SUBDIR += p5-Test-LongString
