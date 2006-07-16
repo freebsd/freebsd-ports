@@ -6,40 +6,22 @@
 #
 
 PORTNAME=	lam7
-PORTVERSION=	7.1.1
+PORTVERSION=	7.1.2
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.lam-mpi.org/download/files/ \
 		http://www.thinkingnerds.com/lam/download/files/
 DISTNAME=	lam-${PORTVERSION}
 
-MAINTAINER=	jan.lentfer@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local Area Multicomputer MPI implementation
-
-BROKEN=		fails to configure
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-rsh=ssh
+CONFIGURE_ARGS=	--with-rsh=ssh
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFLICTS=	lam-6.*
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -E -e 's|/usr/bin/env perl|${PERL} -w| ; \
-		s|use warnings;||' ${WRKSRC}/tools/mpiexec/mpiexec
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.if ${ARCH} == "i386"
-PLIST_FILES=	lib/lam/liblam_totalview.la	\
-		lib/lam/liblam_totalview.so.0	\
-		lib/lam/liblam_totalview.so
-.endif
 
 MAN1=	hboot.1 \
 	hcc.1 \
@@ -52,7 +34,9 @@ MAN1=	hboot.1 \
 	lamd.1 \
 	lamexec.1 \
 	lamgrow.1 \
+	lamhalt.1 \
 	laminfo.1 \
+	lamnodes.1 \
 	lamrestart.1 \
 	lamshrink.1 \
 	lamtrace.1 \
@@ -388,5 +372,28 @@ MAN7=	LAM.7 \
 	lamssi_rpi.7 \
 	libmpi.7 \
 	mpi.7
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.if ${ARCH} == "i386"
+PLIST_SUB=	I386=""
+.else
+PLIST_SUB=	I386="@comment "
+.endif
+
+pre-configure:
+	@${REINPLACE_CMD} -E -e 's|/usr/bin/env perl|${PERL} -w| ; \
+		s|use warnings;||' ${WRKSRC}/tools/mpiexec/mpiexec
+
+.if defined(MAINTAINER_MODE)
+regression-test:	install
+	(cd ${BUILD_WRKSRC}/examples;	\
+	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.endif
 
 .include <bsd.port.post.mk>
