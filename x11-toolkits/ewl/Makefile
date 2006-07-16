@@ -28,4 +28,10 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == ia64
+BROKEN=		does not compile on ${ARCH}
+.endif
+
+.include <bsd.port.post.mk>
