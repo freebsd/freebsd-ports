@@ -14,6 +14,8 @@ DISTNAME=	SmartEiffel-${DISTVERSION}
 MAINTAINER=	berend@pobox.com
 COMMENT=	SmartEiffel, the GNU compiler for the object-oriented language Eiffel
 
+BROKEN=		fails to fetch
+
 WRKSRC=		${WRKDIR}/SmartEiffel12
 
 # We install in this directory
