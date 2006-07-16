@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qpxtool
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,16 +20,21 @@ USE_QT_VER=	3
 MAKE_ENV+=	QTDIR="${QT_PREFIX}"
 MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
 
-PLIST_FILES=	bin/qpxtool
+PLIST_FILES=	bin/qpxtool bin/pxcontrol
 PORTDOCS=	README ChangeLog
 
+do-build:
+	cd ${WRKSRC}/qpxtool && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+	cd ${WRKSRC}/pxcontrol && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qpxtool ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/qpxtool/qpxtool ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pxcontrol/pxcontrol ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/qpxtool/${f} ${DOCSDIR}
 .endfor
 .endif
 
