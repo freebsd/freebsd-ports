@@ -1,11 +1,11 @@
 bin/geda
 bin/graphman
 bin/raw2gw
-share/locale/de_DE/LC_MESSAGES/geda.mo
-share/locale/fr_FR/LC_MESSAGES/geda.mo
-share/locale/it/LC_MESSAGES/geda.mo
-share/locale/pt_BR/LC_MESSAGES/geda.mo
-share/locale/ru/LC_MESSAGES/geda.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/geda.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/geda.mo
+%%NLS%%share/locale/it/LC_MESSAGES/geda.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/geda.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/geda.mo
 @dirrmtry share/locale/fr_FR/LC_MESSAGES
 @dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/de_DE/LC_MESSAGES

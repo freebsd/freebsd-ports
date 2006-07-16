@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jul 13 20:45:48 2006
++++ configure	Thu Jul 13 20:46:06 2006
+@@ -7600,7 +7600,7 @@
+  dprefix=$prefix
+ fi
+ 
+-DATADIR=gEDA
++DATADIR=geda
+ GEDADATADIR=$datadir/$DATADIR
+ 
+ gedatopdir=$dprefix/share/$DATADIR
