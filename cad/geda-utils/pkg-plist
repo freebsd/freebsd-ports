@@ -1,6 +1,6 @@
-bin/gmk_sym
 bin/convert_sym
 bin/garchive
+bin/gmk_sym
 bin/grenum
 bin/gsch2pcb
 bin/gschemdoc
@@ -15,11 +15,11 @@ bin/sarlacc_schem
 bin/sarlacc_sym
 bin/smash_megafile
 bin/tragesym
-share/doc/geda-doc/readmes/README.grenum
-share/doc/geda-doc/readmes/README.gsch2pcb
-share/doc/geda-doc/readmes/README.olib
-share/doc/geda-doc/readmes/README.tragesym
-share/gEDA/system-gschlasrc
-@dirrmtry share/gEDA
-@dirrmtry share/doc/geda-doc/readmes
-@dirrmtry share/doc/geda-doc
+%%DOCSDIR%%/readmes/README.grenum
+%%DOCSDIR%%/readmes/README.gsch2pcb
+%%DOCSDIR%%/readmes/README.olib
+%%DOCSDIR%%/readmes/README.tragesym
+%%DATADIR%%/system-gschlasrc
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%/readmes
+@dirrmtry %%DOCSDIR%%
