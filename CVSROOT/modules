@@ -9071,6 +9071,7 @@ p5-Mail-RBL	ports/mail/p5-Mail-RBL
 p5-Mail-RFC822-Address	ports/mail/p5-Mail-RFC822-Address
 p5-Mail-SPF-Query	ports/mail/p5-Mail-SPF-Query
 p5-Mail-SRS	ports/mail/p5-Mail-SRS
+p5-Mail-SendEasy	ports/mail/p5-Mail-SendEasy
 p5-Mail-Sender	ports/mail/p5-Mail-Sender
 p5-Mail-Sendmail	ports/mail/p5-Mail-Sendmail
 p5-Mail-SpamAssassin	ports/mail/p5-Mail-SpamAssassin
