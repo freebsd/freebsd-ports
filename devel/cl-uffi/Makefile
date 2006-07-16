@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	cl-
 MAINTAINER=	xenophon+fbsdports@irtnog.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp
 
+BROKEN=		fails to fetch
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 
