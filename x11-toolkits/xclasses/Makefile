@@ -15,6 +15,8 @@ DISTNAME=	Xclasses-public-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ layout library for X
 
+BROKEN=		fails to install
+
 INSTALLS_SHLIB=	yes
 NOT_FOR_ARCHS=	alpha amd64 ia64 sparc64
 PLIST=		${WRKDIR}/pkg-plist
