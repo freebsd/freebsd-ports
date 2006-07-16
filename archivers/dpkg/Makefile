@@ -15,6 +15,8 @@ DISTNAME=	dpkg_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Package maintenance system for Debian
 
+BROKEN=		fails to install
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
