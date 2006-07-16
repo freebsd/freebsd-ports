@@ -2414,3 +2414,5 @@ textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-07-12|The textproc/p5-YAML-Syck
 sysutils/ledit||2006-07-14|Has expired: Does not build
 x11/settitle||2006-07-14|Has expired: Download unavailable anymore
 net-im/simicq|net-im/sim-im|2006-07-15|renamed
+cad/gschem|cad/geda-gschem|2006-07-16|renamed
+cad/gnetlist|cad/geda-netlist|2006-07-16|renamed

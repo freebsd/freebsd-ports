@@ -3040,6 +3040,8 @@ geda		ports/cad/geda
 geda-docs	ports/cad/geda-docs
 geda-examples	ports/cad/geda-examples
 geda-gattrib	ports/cad/geda-gattrib
+geda-gschem	ports/cad/geda-gschem
+geda-netlist	ports/cad/geda-netlist
 geda-projectmanager	ports/cad/geda-projectmanager
 geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
@@ -3308,7 +3310,6 @@ gnet		ports/net/gnet
 gnet-glib2	ports/net/gnet-glib2
 gnet2		ports/net/gnet2
 gnetcat		ports/net/gnetcat
-gnetlist	ports/cad/gnetlist
 gnewtellium	ports/net-p2p/gnewtellium
 gngb		ports/emulators/gngb
 gngeo		ports/emulators/gngeo
@@ -3629,7 +3630,6 @@ grun		ports/misc/grun
 grustibus	ports/emulators/grustibus
 grx		ports/graphics/grx
 gsasl		ports/security/gsasl
-gschem		ports/cad/gschem
 gscmxx		ports/comms/gscmxx
 gscommander	ports/shells/gscommander
 gsculpt		ports/graphics/gsculpt
