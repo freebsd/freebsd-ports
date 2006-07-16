@@ -149,6 +149,7 @@
     SUBDIR += xbraitenberg
     SUBDIR += xgngeo
     SUBDIR += xgs
+    SUBDIR += xhomer
     SUBDIR += xmame
     SUBDIR += xmess
     SUBDIR += xsystem35
