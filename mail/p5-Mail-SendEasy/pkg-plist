@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SendEasy/.packlist
+%%SITE_PERL%%/Mail/SendEasy.pm
+%%SITE_PERL%%/Mail/SendEasy/AUTH.pm
+%%SITE_PERL%%/Mail/SendEasy/Base64.pm
+%%SITE_PERL%%/Mail/SendEasy/IOScalar.pm
+%%SITE_PERL%%/Mail/SendEasy/SMTP.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SendEasy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/SendEasy
+@dirrmtry %%SITE_PERL%%/Mail
