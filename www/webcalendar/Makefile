@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A web-based calendar application
 
+BROKEN=		fails to deinstall cleanly
+
 USE_PHP=	pcre session ldap
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
