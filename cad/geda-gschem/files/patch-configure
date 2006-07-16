@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jul 13 14:11:39 2006
++++ configure	Thu Jul 13 14:11:52 2006
+@@ -7923,7 +7923,7 @@
+ # gEDA/gaf specific setup start
+ #
+ 
+-DATADIR=gEDA
++DATADIR=geda
+ GEDADATADIR=$datadir/$DATADIR
+ 
+ if eval "test x$opt_rcdir = x"; then

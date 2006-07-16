@@ -1,39 +1,39 @@
 bin/gschem
-share/doc/geda-doc/man/gschem.html
-share/gEDA/bitmap/gschem-bus.xpm
-share/gEDA/bitmap/gschem-comp.xpm
-share/gEDA/bitmap/gschem-copy.xpm
-share/gEDA/bitmap/gschem-delete.xpm
-share/gEDA/bitmap/gschem-edit.xpm
-share/gEDA/bitmap/gschem-mirror.xpm
-share/gEDA/bitmap/gschem-move.xpm
-share/gEDA/bitmap/gschem-net.xpm
-share/gEDA/bitmap/gschem-new.xpm
-share/gEDA/bitmap/gschem-open.xpm
-share/gEDA/bitmap/gschem-redo.xpm
-share/gEDA/bitmap/gschem-rotate.xpm
-share/gEDA/bitmap/gschem-save.xpm
-share/gEDA/bitmap/gschem-select.xpm
-share/gEDA/bitmap/gschem-text.xpm
-share/gEDA/bitmap/gschem-undo.xpm
-share/gEDA/bitmap/gschem-warning.png
-share/gEDA/gschem-darkbg
-share/gEDA/gschem-gtkrc
-share/gEDA/gschem-lightbg
-share/gEDA/scheme/auto-uref.scm
-share/gEDA/scheme/generate_netlist.scm
-share/gEDA/scheme/gschem.scm
-share/gEDA/scheme/list-keys.scm
-share/gEDA/scheme/print-NB-attribs.scm
-share/gEDA/system-gschemrc
-share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
-share/locale/es_ES/LC_MESSAGES/geda-gschem.mo
-share/locale/fr_FR/LC_MESSAGES/geda-gschem.mo
-share/locale/it_IT/LC_MESSAGES/geda-gschem.mo
-share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
-share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
-share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
-share/locale/ru/LC_MESSAGES/geda-gschem.mo
+%%DOCSDIR%%/man/gschem.html
+%%DATADIR%%/bitmap/gschem-bus.xpm
+%%DATADIR%%/bitmap/gschem-comp.xpm
+%%DATADIR%%/bitmap/gschem-copy.xpm
+%%DATADIR%%/bitmap/gschem-delete.xpm
+%%DATADIR%%/bitmap/gschem-edit.xpm
+%%DATADIR%%/bitmap/gschem-mirror.xpm
+%%DATADIR%%/bitmap/gschem-move.xpm
+%%DATADIR%%/bitmap/gschem-net.xpm
+%%DATADIR%%/bitmap/gschem-new.xpm
+%%DATADIR%%/bitmap/gschem-open.xpm
+%%DATADIR%%/bitmap/gschem-redo.xpm
+%%DATADIR%%/bitmap/gschem-rotate.xpm
+%%DATADIR%%/bitmap/gschem-save.xpm
+%%DATADIR%%/bitmap/gschem-select.xpm
+%%DATADIR%%/bitmap/gschem-text.xpm
+%%DATADIR%%/bitmap/gschem-undo.xpm
+%%DATADIR%%/bitmap/gschem-warning.png
+%%DATADIR%%/gschem-darkbg
+%%DATADIR%%/gschem-gtkrc
+%%DATADIR%%/gschem-lightbg
+%%DATADIR%%/scheme/auto-uref.scm
+%%DATADIR%%/scheme/generate_netlist.scm
+%%DATADIR%%/scheme/gschem.scm
+%%DATADIR%%/scheme/list-keys.scm
+%%DATADIR%%/scheme/print-NB-attribs.scm
+%%DATADIR%%/system-gschemrc
+%%NLS%%share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/geda-gschem.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/geda-gschem.mo
+%%NLS%%share/locale/it_IT/LC_MESSAGES/geda-gschem.mo
+%%NLS%%share/locale/ja_JP/LC_MESSAGES/geda-gschem.mo
+%%NLS%%share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/geda-gschem.mo
 @dirrmtry share/locale/nl_NL/LC_MESSAGES
 @dirrmtry share/locale/nl_NL
 @dirrmtry share/locale/ja_JP/LC_MESSAGES
@@ -44,8 +44,8 @@ share/locale/ru/LC_MESSAGES/geda-gschem.mo
 @dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
-@dirrmtry share/gEDA/scheme
-@dirrmtry share/gEDA/bitmap
-@dirrmtry share/gEDA
-@dirrmtry share/doc/geda-doc/man
-@dirrmtry share/doc/geda-doc
+@dirrmtry %%DATADIR%%/scheme
+@dirrmtry %%DATADIR%%/bitmap
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%/man
+@dirrmtry %%DOCSDIR%%
