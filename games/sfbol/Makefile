@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sfbol
-PORTVERSION=	4.18
+PORTVERSION=	4.24
 CATEGORIES=	games java
 MASTER_SITES=	http://www.sfbonline.com/install4/InstData/Java/
 DISTNAME=	install40
@@ -14,8 +14,6 @@ EXTRACT_ONLY=
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Star Fleet Battles Online
-
-BROKEN=		fails to install
 
 IGNOREFILES=	install40.jar
 USE_JAVA=	yes
@@ -40,9 +38,11 @@ DESKTOP_ENTRIES=	"SFBOL" "Star Fleet Battles Online" \
 
 RESTRICTED=	Commerical software.  Licenses does not allow redistribution.
 
+FUDGE=		Users/paulfranz/sfbonline/SFBOL-Install/dist/core.jar
+
 post-extract:
-	@cd ${WRKDIR} && ${JAR} -xf ${DISTDIR}/${DISTFILES} D_/SFBOL/dist/core.jar 2>/dev/null | ${TRUE}
-	@cd ${WRKDIR} && ${JAR} -xf D_/SFBOL/dist/core.jar sfbicon.ico
+	@cd ${WRKDIR} && ${JAR} -xf ${DISTDIR}/${DISTFILES} ${FUDGE} 2>/dev/null | ${TRUE}
+	@cd ${WRKDIR} && ${JAR} -xf ${FUDGE} sfbicon.ico
 
 do-install:
 	@${MKDIR} ${DATADIR}
