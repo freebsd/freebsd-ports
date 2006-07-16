@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://dockapps.org/files/22/29/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	A clock dockapp that shows the date, time, and internet time
 
 WRKSRC=		${WRKDIR}/wmitime/wmitime
