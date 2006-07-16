@@ -13,6 +13,8 @@ MASTER_SITES=	http://rubyforge.org/frs/download.php/4492/
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Syck is an extension for reading and writing YAML swiftly
 
+BROKEN=		fails to fetch
+
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
 CFLAGS+=	-fPIC
