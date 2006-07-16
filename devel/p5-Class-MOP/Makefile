@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -33,6 +33,11 @@ MAN3=	Class::MOP.3 \
 	Class::MOP::Module.3 \
 	Class::MOP::Package.3 \
 	metaclass.3
+
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500800
