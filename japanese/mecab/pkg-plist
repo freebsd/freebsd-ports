@@ -5,14 +5,12 @@ lib/libmecab.a
 bin/mecab
 bin/mecab-config
 include/mecab.h
-libexec/mecab/Util.pm
 libexec/mecab/mecab-cost-train
 libexec/mecab/mecab-dict-gen
 libexec/mecab/mecab-dict-index
 libexec/mecab/mecab-dict-info
 libexec/mecab/mecab-system-eval
 libexec/mecab/mecab-test-gen
-libexec/mecab/mecab-tool
 @dirrm libexec/mecab
 etc/mecabrc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -26,6 +24,7 @@ etc/mecabrc
 %%PORTDOCS%%%%DOCSDIR%%/learn.html
 %%PORTDOCS%%%%DOCSDIR%%/libmecab.html
 %%PORTDOCS%%%%DOCSDIR%%/mecab.html
+%%PORTDOCS%%%%DOCSDIR%%/posid.html
 %%PORTDOCS%%%%DOCSDIR%%/soft.html
 %%PORTDOCS%%%%DOCSDIR%%/unk.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
