@@ -186,6 +186,12 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 IGNORE=		requires perl 5.6 or newer
 .endif
 
+.if ${OSVERSION} <= 600000
+BROKEN=		does not compile on 4.X/5.X
+.else
+BROKEN=		attempts to modify file under /usr/ports, which could be an RO file system
+.endif
+
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
