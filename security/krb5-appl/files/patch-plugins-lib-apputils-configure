@@ -1,0 +1,28 @@
+--- lib/apputils/configure.orig	Fri Jun 30 22:08:53 2006
++++ lib/apputils/configure	Sun Jul 16 08:35:35 2006
+@@ -5266,13 +5266,13 @@
+ CFLAGS="$old_CFLAGS"
+ 
+ 
+-echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -5331,7 +5331,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  DL_LIB=-ldl
++  DL_LIB=""
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define USE_DLOPEN 1
