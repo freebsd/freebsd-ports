@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Image/Info.pm
 %%SITE_PERL%%/Image/Info/BMP.pm
 %%SITE_PERL%%/Image/Info/GIF.pm
@@ -10,7 +11,7 @@
 %%SITE_PERL%%/Image/Info/XPM.pm
 %%SITE_PERL%%/Image/TIFF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info
-@dirrm %%SITE_PERL%%/Image/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info
+@dirrmtry %%SITE_PERL%%/Image/Info
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrmtry %%SITE_PERL%%/Image
