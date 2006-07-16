@@ -14599,6 +14599,7 @@ xgs		ports/emulators/xgs
 xhexagons	ports/games/xhexagons
 xhime		ports/games/xhime
 xhippo		ports/audio/xhippo
+xhomer		ports/emulators/xhomer
 xhtml		ports/textproc/xhtml
 xhtml-11	ports/textproc/xhtml-11
 xhtml-basic	ports/textproc/xhtml-basic
