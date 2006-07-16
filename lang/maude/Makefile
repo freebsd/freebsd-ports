@@ -27,4 +27,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/src/Mixfix/main.cc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		does not compile on 4.X or 5.X
+.endif
+
+.include <bsd.port.post.mk>
