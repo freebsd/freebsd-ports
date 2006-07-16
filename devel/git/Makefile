@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -40,7 +40,6 @@ MAN1=		git-add.1 \
 		git-cherry-pick.1 \
 		git-cherry.1 \
 		git-clean.1 \
-		git-clone-pack.1 \
 		git-clone.1 \
 		git-commit-tree.1 \
 		git-commit.1 \
