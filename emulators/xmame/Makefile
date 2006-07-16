@@ -67,7 +67,7 @@ PLIST_SUB+=	MAMEONLY="" MESSONLY="@comment "
 .if ${MAMEMESS} == "mess"
 PLIST_SUB+=	MAMEONLY="@comment " MESSONLY=""
 .else
-.error MAMEMESS must be set to one of "mame" or "mess".
+IGNORE=		cannot install: MAMEMESS must be set to one of "mame" or "mess".
 .endif
 .endif
 
@@ -119,11 +119,9 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 #
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} < 500000
-#BROKEN=	Doesn't build on FreeBSD < 5.x
-#.elif (${OSVERSION} < 600000 && ${MAMEMESS} == "mess")
-#BROKEN=	Doesn't build on FreeBSD < 6.x
-#.endif
+.if (${OSVERSION} < 600000 && ${MAMEMESS} == "mess")
+BROKEN=		internal gcc error on FreeBSD < 6.x
+.endif
 
 .if (${MAMEMESS} == "mess" && ${OSVERSION} >= 500000)
 USE_GCC=	3.4+
