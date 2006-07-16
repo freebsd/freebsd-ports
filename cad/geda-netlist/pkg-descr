@@ -1,3 +1,65 @@
-gnetlist is a tool create netlist from a gschem electronic circuits schematic.
+gnetlist is the netlist extraction/generation program which is part
+of gEDA (GPL Electronic Design Automation) toolset. This program takes a
+schematic for its input and outputs a netlist. gnetlist uses scheme to define
+the output format.
+
+Currently it supports the following backends:
+
+	1) Allegro netlist format (-g allegro)
+
+	2) BAE netlist format (-g bae)
+
+	3) BOM / BOM2 - Bill of Materials (-g bom and -g bom2)
+
+	4) Partslist1,2,3 - More Bill of Materials (-g partslist[1-3])
+
+	5) DRC - Start of a design rule checker (-g drc)
+
+	6) DRC2 - A second design rule checker (-g drc2)
+
+	7) gEDA - native format, mainly used for testing (-g geda)
+
+	8) Gossip netlist format (-g gossip)
+
+	9) PADS netlist format (-g pads)
+
+	10) PCB / PCBboard (-g PCB and -g PCBboard)
+
+	11) gsch2pcb backend (-g gsch2pcb)
+
+	12) ProtelII netlist format (-g protelII)
+
+	13) Spice compatible netlist format (-g spice)
+
+	14) Enhanced spice compatible netlist format (-g spice-sdb)
+
+	15) Switcap netlist format (-g switcap)
+
+	16) Tango netlist format (-g tango)
+
+	17) Verilog code (-g verilog)
+
+	18) VHDL code (-g vhdl)
+
+	19) VIPEC netlist format (-g vipec)
+
+	20) Bartels Autoengineer netlist format (-g bae)
+
+	21) GOSSIP system simulation system netlist format (-g gossip)
+
+	22) MAXASCII netlist format (-g maxascii)
+
+	23) VHDL-AMS netlist format (-g vams)
+
+	24) Futurenet2 netlist format (-g futurenet2 )
+
+	25) SWITCAP switched capacitor simulator netlist format (-g switcap )
+
+	26) RF Cascade netlist format (-g cascade )
+
+	27) RACAL-REDAC netlist format (-g redac )
+
+	28) PCB actions file for forward annotating pin/pad names from
+	schematic to layout (-g pcbpins)
 
 WWW: http://www.geda.seul.org
