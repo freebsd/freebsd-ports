@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.ttf
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	Old german blackletter handwriting (suetterlin)
 
+BROKEN=		fails to deinstall cleanly
+
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
