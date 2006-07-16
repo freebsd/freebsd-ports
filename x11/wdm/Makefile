@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wdm \
 DIST_SUBDIR=	wdm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	WINGs Display Manager; an xdm replacement
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
