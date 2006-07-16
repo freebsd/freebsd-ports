@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A set of IRC services for IRC networks
 
+BROKEN=		fails to install
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes

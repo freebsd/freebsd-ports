@@ -14,6 +14,8 @@ DISTNAME=	OSG_OP_OT-${PORTVERSION}-2
 MAINTAINER=	rrghphar@bigpond.net.au
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
+BROKEN=		fails to install
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
 		${X11BASE}/lib/libProducer.so:${PORTSDIR}/graphics/openproducer
 RUN_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
