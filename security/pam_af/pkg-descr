@@ -2,4 +2,4 @@ Anti-bruteforce PAM module for authentification services. It can be used to
 prevent brute-force attacks on services like SSH or Telnet. It's highly
 configurable and very fast.
 
-WWW: http://mbsd.msk.ru/pam_af.html
+WWW: http://mbsd.msk.ru/stas/pam_af.html
