@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
+BROKEN=		fails to compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
