@@ -89,6 +89,9 @@ include/mpicxx.h
 include/mpif.h
 include/mpio.h
 include/mpiof.h
+%%I386%%lib/lam/liblam_totalview.la
+%%I386%%lib/lam/liblam_totalview.so
+%%I386%%lib/lam/liblam_totalview.so.0
 lib/liblam.a
 lib/liblam.la
 lib/liblamf77mpi.a
@@ -107,6 +110,6 @@ share/lam/doc/ptmalloc2-COPYRIGHT
 share/lam/doc/romio-users-guide.ps.gz
 share/lam/mpi.share
 @dirrm include/mpi2cxx
-@dirrm lib/lam
+%%I386%%@dirrm lib/lam
 @dirrm share/lam/doc
 @dirrm share/lam
