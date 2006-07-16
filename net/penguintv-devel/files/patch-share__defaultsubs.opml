@@ -1,14 +1,19 @@
---- share/defaultsubs.opml.orig	Thu Mar 16 19:37:10 2006
-+++ share/defaultsubs.opml	Thu Mar 16 19:36:34 2006
-@@ -1,6 +1,11 @@
+--- share/defaultsubs.opml.orig	Sun Jul 16 01:36:04 2006
++++ share/defaultsubs.opml	Mon Jul 17 08:36:35 2006
+@@ -1,6 +1,16 @@
  <opml version="1.1">
  <head><title>All</title></head>
  <body>
 +	<outline xmlUrl="http://feeds.feedburner.com/Bsdtalk"
 +		text="bsdtalk"
-+		description="Talking about the BSD family of free operating systems."
++		description="Technical talks about the BSD family of free operating systems."
 +		title="bsdtalk">
 +	</outline>
- 	<outline xmlUrl="http://feeds.feedburner.com/Headsoff" 
- 	         text="headsoff" 
- 	         description="This blog is about our exploration of our city, and our society.  Serra is a graduate student studying video and new media at Emerson College, and Mike is a programmer who is inquisitive, motivated and sociable.  Together, this is what you get.  Heads off." 
++	<outline xmlUrl="http://feeds.blastpodcast.com/freebsdforall/index.xml"
++		text="FreeBSD For All"
++		description="User oriented talks about FreeBSD."
++		title="FreeBSD For All">
++	</outline>
+ 	<outline xmlUrl="http://lugradio.org/episodes.ogg.rss" 
+ 	         text="LugRadio episodes (ogg)" 
+ 	         description="The world's premiere Linux and Free Software radio show" 
