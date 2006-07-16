@@ -35,6 +35,7 @@
     SUBDIR += asmix
     SUBDIR += asmixer
     SUBDIR += aube
+    SUBDIR += audacious-crossfade
     SUBDIR += audacity
     SUBDIR += aumix
     SUBDIR += aureal-kmod
