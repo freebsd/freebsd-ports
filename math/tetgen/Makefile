@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
+BROKEN=		distfile size mismatch
 NO_CDROM=	Tetgen is for academic or personal use only
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
