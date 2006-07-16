@@ -5,6 +5,7 @@ bin/stellarium
 %%DATADIR%%/data/constellations_boundaries.dat
 %%DATADIR%%/data/default_config.ini
 %%DATADIR%%/data/double_txt.dat
+%%DATADIR%%/data/fontmap.dat
 %%DATADIR%%/data/hipparcos.fab
 %%DATADIR%%/data/icon.bmp
 %%DATADIR%%/data/landscapes.ini
@@ -21,6 +22,13 @@ bin/stellarium
 %%DATADIR%%/data/sky_cultures/egyptian/constellation_names.eng.fab
 %%DATADIR%%/data/sky_cultures/egyptian/constellationship.fab
 %%DATADIR%%/data/sky_cultures/egyptian/info.ini
+%%DATADIR%%/data/sky_cultures/korean/constellation_names.eng.fab
+%%DATADIR%%/data/sky_cultures/korean/constellation_names.exp.fab
+%%DATADIR%%/data/sky_cultures/korean/constellationsart.fab
+%%DATADIR%%/data/sky_cultures/korean/constellationship.fab
+%%DATADIR%%/data/sky_cultures/korean/info.ini
+%%DATADIR%%/data/sky_cultures/korean/on_korea_constellations.txt
+%%DATADIR%%/data/sky_cultures/korean/star_names.fab
 %%DATADIR%%/data/sky_cultures/polynesian/constellation_names.eng.fab
 %%DATADIR%%/data/sky_cultures/polynesian/constellationsart.fab
 %%DATADIR%%/data/sky_cultures/polynesian/constellationship.fab
@@ -40,6 +48,7 @@ bin/stellarium
 %%DATADIR%%/textures/backmenu_flip.png
 %%DATADIR%%/textures/bt_alert.png
 %%DATADIR%%/textures/bt_atmosphere.png
+%%DATADIR%%/textures/bt_azgrid.png
 %%DATADIR%%/textures/bt_blank.png
 %%DATADIR%%/textures/bt_cardinal.png
 %%DATADIR%%/textures/bt_chart.png
@@ -47,10 +56,12 @@ bin/stellarium
 %%DATADIR%%/textures/bt_const_names.png
 %%DATADIR%%/textures/bt_constart.png
 %%DATADIR%%/textures/bt_constellations.png
+%%DATADIR%%/textures/bt_eqgrid.png
+%%DATADIR%%/textures/bt_flip_horz.png
+%%DATADIR%%/textures/bt_flip_vert.png
 %%DATADIR%%/textures/bt_follow.png
 %%DATADIR%%/textures/bt_fwd.png
 %%DATADIR%%/textures/bt_goto.png
-%%DATADIR%%/textures/bt_grid.png
 %%DATADIR%%/textures/bt_ground.png
 %%DATADIR%%/textures/bt_help.png
 %%DATADIR%%/textures/bt_nebula.png
@@ -319,10 +330,11 @@ bin/stellarium
 %%DATADIR%%/textures/pointeur5.png
 %%DATADIR%%/textures/rhea.png
 %%DATADIR%%/textures/saturn.png
-%%DATADIR%%/textures/saturn_rings.png
+%%DATADIR%%/textures/saturn_rings_radial.png
 %%DATADIR%%/textures/star16x16.png
 %%DATADIR%%/textures/starc64x64.png
 %%DATADIR%%/textures/sun.png
+%%DATADIR%%/textures/telescope.png
 %%DATADIR%%/textures/tethys.png
 %%DATADIR%%/textures/titan.png
 %%DATADIR%%/textures/titania.png
@@ -331,33 +343,44 @@ bin/stellarium
 %%DATADIR%%/textures/uranus.png
 %%DATADIR%%/textures/venus.png
 %%DATADIR%%/textures/zenith.png
+share/locale/az/LC_MESSAGES/stellarium.mo
+share/locale/ca/LC_MESSAGES/stellarium.mo
 share/locale/cs/LC_MESSAGES/stellarium.mo
 share/locale/da/LC_MESSAGES/stellarium.mo
 share/locale/de/LC_MESSAGES/stellarium.mo
+share/locale/el/LC_MESSAGES/stellarium.mo
 share/locale/en/LC_MESSAGES/stellarium.mo
 share/locale/en_GB/LC_MESSAGES/stellarium.mo
 share/locale/es/LC_MESSAGES/stellarium.mo
 share/locale/fa/LC_MESSAGES/stellarium.mo
 share/locale/fi/LC_MESSAGES/stellarium.mo
 share/locale/fr/LC_MESSAGES/stellarium.mo
+share/locale/ga/LC_MESSAGES/stellarium.mo
 share/locale/hu/LC_MESSAGES/stellarium.mo
+share/locale/id/LC_MESSAGES/stellarium.mo
 share/locale/it/LC_MESSAGES/stellarium.mo
 share/locale/ja/LC_MESSAGES/stellarium.mo
 share/locale/ko/LC_MESSAGES/stellarium.mo
 share/locale/lv/LC_MESSAGES/stellarium.mo
 share/locale/nb/LC_MESSAGES/stellarium.mo
 share/locale/nl/LC_MESSAGES/stellarium.mo
+share/locale/nn/LC_MESSAGES/stellarium.mo
 share/locale/pl/LC_MESSAGES/stellarium.mo
+share/locale/pt/LC_MESSAGES/stellarium.mo
 share/locale/pt_BR/LC_MESSAGES/stellarium.mo
 share/locale/ro/LC_MESSAGES/stellarium.mo
 share/locale/ru/LC_MESSAGES/stellarium.mo
+share/locale/sk/LC_MESSAGES/stellarium.mo
+share/locale/sv/LC_MESSAGES/stellarium.mo
 share/locale/tr/LC_MESSAGES/stellarium.mo
+share/locale/uk/LC_MESSAGES/stellarium.mo
 share/locale/zh_CN/LC_MESSAGES/stellarium.mo
 share/locale/zh_HK/LC_MESSAGES/stellarium.mo
 share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 @dirrm %%DATADIR%%/data/scripts
 @dirrm %%DATADIR%%/data/sky_cultures/chinese
 @dirrm %%DATADIR%%/data/sky_cultures/egyptian
+@dirrm %%DATADIR%%/data/sky_cultures/korean
 @dirrm %%DATADIR%%/data/sky_cultures/polynesian
 @dirrm %%DATADIR%%/data/sky_cultures/western
 @dirrm %%DATADIR%%/data/sky_cultures
