@@ -40,6 +40,8 @@ MAKE_ARGS=	GCC_SRC="${GCC_DIR}" GCC_VERSION="${GCC_VER}" \
 
 .if ${ARCH} != "i386"
 BROKEN=		Configure fails on !i386
+.else
+BROKEN=		fails to install
 .endif
 
 post-extract: .SILENT
