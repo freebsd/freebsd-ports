@@ -9956,6 +9956,7 @@ p5-Weather-Underground	ports/astro/p5-Weather-Underground
 p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
 p5-WebService-NoPaste	ports/www/p5-WebService-NoPaste
 p5-WebService-Technorati	ports/www/p5-WebService-Technorati
+p5-What		ports/net/p5-What
 p5-WordNet-QueryData	ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity	ports/textproc/p5-WordNet-Similarity
 p5-Workflow	ports/devel/p5-Workflow
