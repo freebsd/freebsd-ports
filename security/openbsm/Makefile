@@ -46,6 +46,14 @@ MAN8=		auditfilterd.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile on 4.X
+.else
+.if ${OSVERSION} < 600000
+BROKEN=		does not package on 5.X
+.endif
+.endif
+
 .if ( ( ${OSVERSION} < 500000 && ${OSVERSION} > 491101 ) || \
 	( ${OSVERSION} < 600000 && ${OSVERSION} > 503100 ) || \
 	${OSVERSION} >= 600000 )
