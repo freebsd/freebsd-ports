@@ -1,0 +1,34 @@
+--- Makefile.orig	Tue Dec  9 18:36:07 2003
++++ Makefile	Wed May 24 19:59:13 2006
+@@ -115,17 +115,17 @@
+ # C-Compiler configuration
+ 
+ # All the rest of the flags in this section assume gcc
+-CC=gcc -Wall
++#CC=gcc -Wall
+ # -Wchar-subscripts -W -Wshadow -Wconversion
+ # -Wtraditional -Wstrict-prototypes
+ 
+ # This prevents "undesirable excess precision" on some machines, says gcc
+-CC += -ffloat-store
++#CC += -ffloat-store
+ 
+ # The 1st choice runs about 15% slower than the 2nd (-O3 -fomit-frame-pointer).
+ # but it (re)compiles faster and unlike the second choice, it is debuggable.
+ # CC += -g -O -fno-inline
+-CC += -O3 -Winline -fomit-frame-pointer
++#CC += -O3 -Winline -fomit-frame-pointer
+ 
+ # Some older gcc's need this on i386 to work around a bug.  As long as
+ # omit-frame-pointer is also set, it doesn't seem to hurt performance, so
+@@ -184,8 +184,8 @@
+ 
+   # Try this as the default place for X11 stuff and ncurses
+ 
+-  CCINCS = -I$(X11DIR)/include -I/usr/X11/include -I$(NCURSESINC)
+-  CCLIBS = -L$(X11DIR)/lib     -L/usr/X11/lib     -L$(NCURSESLIB)
++  CCINCS = -I$(X11DIR)/include
++  CCLIBS = -L$(X11DIR)/lib -L$(NCURSESLIB)
+ 
+   # But some vendors put things in non-standard places
+ 

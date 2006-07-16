@@ -1,0 +1,6 @@
+Xhomer is a machine emulator for the Digital Equipment Corporation
+(DEC) Pro 350 computer, a PDP-11-based machine that was sold in the
+early to mid-'80's.  Xhomer is based on the PDP-11 CPU core from
+the SIMH simulator, and is written entirely in C.
+
+WWW: http://xhomer.isani.org/
