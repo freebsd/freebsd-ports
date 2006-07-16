@@ -272,6 +272,7 @@
     SUBDIR += kkbswitch
     SUBDIR += kkeyled
     SUBDIR += klaptopdaemon
+    SUBDIR += kldfind
     SUBDIR += kmilo
     SUBDIR += knutclient
     SUBDIR += komparator
