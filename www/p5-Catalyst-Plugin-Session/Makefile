@@ -16,14 +16,10 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Generic Catalyst Session plugin
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Test-MockObject>=1.01:${PORTSDIR}/devel/p5-Test-MockObject \
 		p5-Digest>=0:${PORTSDIR}/security/p5-Digest \
 		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \
 		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \
-		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
@@ -33,6 +29,9 @@ MAN3=	Catalyst::Plugin::Session.3 \
 	Catalyst::Plugin::Session::Store.3 \
 	Catalyst::Plugin::Session::Store::Dummy.3 \
 	Catalyst::Plugin::Session::Test::Store.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Build.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
