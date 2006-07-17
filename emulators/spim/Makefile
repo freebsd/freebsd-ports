@@ -8,6 +8,7 @@
 
 PORTNAME=	spim
 PORTVERSION=	7.2.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 
@@ -36,15 +37,21 @@ MAN1+=		xspim.1
 do-configure:
 
 do-build:
-	cd ${WRKSRC}/spim && ${MAKE}
+	cd ${WRKSRC}/spim && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
 .if defined(WITH_GUI)
-	cd ${WRKSRC}/xspim && ${XMKMF} && ${MAKE}
+	cd ${WRKSRC}/xspim && ${XMKMF} && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
 .endif
 
 do-install:
-	cd ${WRKSRC}/spim && ${MAKE} ${INSTALL_TARGET}
+	cd ${WRKSRC}/spim && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+		${INSTALL_TARGET}
 .if defined(WITH_GUI)
-	cd ${WRKSRC}/xspim && ${MAKE} ${INSTALL_TARGET}
+	cd ${WRKSRC}/xspim && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+		${INSTALL_TARGET}
 	${INSTALL_MAN} ${WRKSRC}/Documentation/xspim.man ${PREFIX}/man/man1/xspim.1
 .endif
 
