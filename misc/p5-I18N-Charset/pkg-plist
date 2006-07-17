@@ -1,5 +1,6 @@
 %%SITE_PERL%%/I18N/Charset.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/Charset/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/I18N/Charset/character-sets
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/Charset
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N
 @dirrmtry %%SITE_PERL%%/I18N

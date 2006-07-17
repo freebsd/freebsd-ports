@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Module which maps CharSet names to the names registered with IANA
 
-BROKEN=		fails to deinstall cleanly
-
 BUILD_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		${SITE_PERL}/Unicode/MapUTF8.pm:${PORTSDIR}/converters/p5-Unicode-MapUTF8 \
 		${SITE_PERL}/App/Info/Lib/Iconv.pm:${PORTSDIR}/devel/p5-App-Info
