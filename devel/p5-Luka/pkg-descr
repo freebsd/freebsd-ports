@@ -1,0 +1,22 @@
+Luka is an exception handling and reporting framework. It's useful to
+look at it as an event handling framework.
+
+It comes from operational understanding of networks.
+
+Scenario that Luka is addressing is following: on a network with
+multiple hosts running multiple applications, it is very difficult to
+track operational status of all the functionality that those
+applications and hosts are meant to deliver. In order to make it
+easier, we decided to specify the error handling and reporting data
+model that each component delivering functionality has to conform to.
+What is a component? In most cases, it is a script, often run from
+cronjob, in some cases it is a class in an application. In all cases,
+a component has to successfully complete a task on which functionality
+of an application, or entire network, relies on.
+
+It is common practice that programmers choose their way of handling
+errors and reporting. Luka is an attempt to standardize that process.
+Its primary goal is to make it easier for smaller number of people to
+keep larger number of applications and networks running.
+
+WWW:	http://port.home.page/

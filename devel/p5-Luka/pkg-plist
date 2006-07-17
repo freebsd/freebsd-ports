@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Luka/.packlist
+%%SITE_PERL%%/Luka.pm
+%%SITE_PERL%%/Luka/Conf.pm
+%%SITE_PERL%%/Luka/Error.pm
+%%SITE_PERL%%/Luka/ExceptionBase.pm
+%%SITE_PERL%%/Luka/Exceptions.pm
+%%SITE_PERL%%/Luka/Mailer.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Luka
+@dirrmtry %%SITE_PERL%%/Luka
