@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lsh
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.0.3
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
@@ -15,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4 \
