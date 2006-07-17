@@ -1,15 +1,30 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Bin.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Buffer.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Bus.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Caps.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Caps/Any.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Caps/Empty.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Caps/Full.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Caps/Simple.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/ChildProxy.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Clock.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/ClockID.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Data.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Element.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/ElementFactory.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Error.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/BufferSize.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/Custom.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/EOS.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/FlushStart.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/FlushStop.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/Navigation.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/NewSegment.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/QOS.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/Seek.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event/Tag.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Format.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/GhostPad.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Index.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/IndexEntry.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/IndexFactory.pod
@@ -20,27 +35,53 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst2perl-version.h
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst2perl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install/gst2perl.typemap
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Library.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Iterator.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Iterator/Tie.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Application.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/ClockLost.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/ClockProvide.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Custom.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Duration.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/EOS.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Element.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Error.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/NewClock.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/SegmentDone.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/SegmentStart.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/StateChanged.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/StateDirty.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Tag.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Warning.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/MiniObject.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Object.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Pad.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/PadTemplate.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Parse.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Pipeline.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Plugin.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/PluginFeature.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query/Application.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query/Convert.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query/Duration.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query/Position.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query/Segment.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/QueryType.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Registry.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/RegistryPool.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Scheduler.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/SchedulerFactory.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Structure.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/SystemClock.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Tag.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/TagSetter.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Thread.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/TypeFindFactory.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/index.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer/GStreamer.so
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GStreamer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Query
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Iterator
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Event
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Caps
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer
