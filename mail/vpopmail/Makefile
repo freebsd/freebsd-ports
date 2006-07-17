@@ -284,10 +284,9 @@ CONFIGURE_ARGS+=	--disable-make-seekable
 .endif
 
 .if defined(WITH_SPAMASSASSIN)
-#BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-#CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
-#			--enable-spam-threshold=${SPAM_THRESHOLD}
-IGNORE=		has been slightly reorganized and the SpamAssassin patch is not ready yet
+BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
+			--enable-spam-threshold=${SPAM_THRESHOLD}
 .endif
 
 #
