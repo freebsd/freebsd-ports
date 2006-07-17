@@ -18,14 +18,15 @@ COMMENT=	Role based authorization for Catalyst
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Plugin-Authentication>=0.03:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
 		p5-Set-Object>=1.14:${PORTSDIR}/devel/p5-Set-Object \
-		p5-Test-MockObject>=1.01:${PORTSDIR}/devel/p5-Test-MockObject \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-UNIVERSAL-isa>=0.05:${PORTSDIR}/devel/p5-UNIVERSAL-isa
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
 MAN3=	Catalyst::Plugin::Authorization::Roles.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Build.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
