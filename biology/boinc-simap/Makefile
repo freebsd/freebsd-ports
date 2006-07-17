@@ -5,10 +5,10 @@
 #
 
 PORTNAME=	boinc-simap
-PORTVERSION=	5.08
+PORTVERSION=	5.10
 CATEGORIES=	biology
 MASTER_SITES=	http://boinc.bio.wzw.tum.de/boincsimap/download/
-DISTNAME=	simap_${PORTVERSION}_${MACH}-pc-freebsd_dyn
+DISTNAME=	simap_${PORTVERSION}_${MACH}-pc-freebsd
 EXTRACT_SUFX=	#
 
 MAINTAINER=	pav@FreeBSD.org
