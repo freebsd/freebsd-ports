@@ -1,0 +1,11 @@
+** If you are unfamiliar with testing read Test::Tutorial first! **
+
+This is asimple, basic module for checking whether a class is a
+Singleton. A Singleton describes an object class that can have only
+one instance in any system. An example of a Singleton might be a print
+spooler or system registry, or any kind of central dispatcher.
+
+For a description and discussion of the Singleton class, see "Design
+Patterns", Gamma et al, Addison-Wesley, 1995, ISBN 0-201-63361-2.
+
+WWW:	http://search.cpan.org/dist/Test-Singleton/
