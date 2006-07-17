@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 
 MAINTAINER=	jkoshy@FreeBSD.org
-COMMENT=	MIPS R2000 Simulator
+COMMENT=	MIPS32 Simulator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
