@@ -1,0 +1,5 @@
+%%SITE_PERL%%/YAML/Tiny.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Tiny/.packlist
+@dirrmtry %%SITE_PERL%%/YAML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Tiny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML

@@ -631,6 +631,7 @@
     SUBDIR += p5-XML-Xerces
     SUBDIR += p5-YAML
     SUBDIR += p5-YAML-Syck
+    SUBDIR += p5-YAML-Tiny
     SUBDIR += p5-YAPE-HTML
     SUBDIR += p5-YAPE-Regex
     SUBDIR += p5-YAPE-Regex-Explain
