@@ -1055,6 +1055,7 @@
     SUBDIR += xpi-gbrain
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
+    SUBDIR += xpi-hit-a-hint
     SUBDIR += xpi-imdbpreview
     SUBDIR += xpi-imglikeopera
     SUBDIR += xpi-inline-google-definitions
