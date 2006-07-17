@@ -2,9 +2,7 @@
 #
 
 # PROVIDE: quagga
-# REQUIRE: netif routing mountcritlocal
-# BEFORE:  NETWORKING
-# KEYWORD: shutdown
+# REQUIRE: NETWORKING
 
 #
 # Add the following line to /etc/rc.conf to enable quagga:
@@ -13,6 +11,10 @@
 # You may also wish to use the following variables to fine-tune startup:
 #quagga_flags="-d"
 #quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"
+# Per daemon tuning may be done with daemon_name_flags
+#zebra_flags="-dP 0"
+#bgpd_flags="-dnrP 0" and so on
+#
 #
 # If the quagga daemons require additional shared libraries to start,
 # use the following variable to run ldconfig(8) in advance:
@@ -34,11 +36,12 @@ stop_postcmd()
 
 # set defaults
 
-quagga_enable=${quagga_enable:-"NO"}
-quagga_flags=${quagga_flags:-"-d"}
-quagga_daemons=${quagga_daemons:-"zebra ripd ripngd ospfd ospf6d bgpd isisd"}
-quagga_extralibs_path=${quagga_extralibs_path:-""}
 load_rc_config $name
+
+: ${quagga_enable="NO"}
+: ${quagga_flags="-d"}
+: ${quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
+: ${quagga_extralibs_path=""}
 
 quagga_cmd=$1
 
@@ -72,5 +75,6 @@ for daemon in ${quagga_daemons}; do
     if [ ${quagga_cmd} = "stop" -a -z $(check_process ${command}) ]; then
 		continue
     fi
+    eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
     run_rc_command "$1"
 done

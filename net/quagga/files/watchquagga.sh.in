@@ -2,9 +2,7 @@
 #
 
 # PROVIDE: watchquagga
-# REQUIRE: netif routing mountcritlocal quagga
-# BEFORE:  NETWORKING
-# KEYWORD: shutdown
+# REQUIRE: NETWORKING quagga
 
 #
 # Add the following line to /etc/rc.conf to enable quagga:
@@ -30,9 +28,10 @@ stop_postcmd()
 
 # set defaults
 
-watchquagga_enable=${watchquagga_enable:-"NO"}
-watchquagga_flags=${watchquagga_flags:-""}
 load_rc_config $name
+
+: ${watchquagga_enable="NO"}
+: ${watchquagga_flags=""}
 
 command=%%PREFIX%%/sbin/watchquagga
 pidfile=%%LOCALSTATE_DIR%%/watchquagga.pid
