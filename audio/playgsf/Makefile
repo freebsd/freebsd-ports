@@ -36,12 +36,6 @@ PLIST_FILES=	bin/playgsf
 # contains x86 assembler
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		Does not configure on FreeBSD 7.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|\(@LDFLAGS@\)|\1 ${LDFLAGS}|' \
@@ -59,4 +53,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
