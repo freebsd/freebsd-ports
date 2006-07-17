@@ -6552,7 +6552,6 @@ mathml-xsd	ports/textproc/mathml-xsd
 mathomatic	ports/math/mathomatic
 mathopd		ports/www/mathopd
 matrix		ports/math/matrix
-matrix-kmod	ports/misc/matrix-kmod
 matrixssl	ports/security/matrixssl
 maude		ports/lang/maude
 mavbiff		ports/mail/mavbiff
