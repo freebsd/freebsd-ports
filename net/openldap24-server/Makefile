@@ -454,7 +454,7 @@ test: build
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 .endif
 
-pre-install:
+pre-su-install:
 	@if [ -f ${PKGINSTALL} ]; then \
 		${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
 	fi
