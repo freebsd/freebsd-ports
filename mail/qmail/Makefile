@@ -31,10 +31,13 @@ BARRIER_SMTP_AUTH_PATCH=	yes
 BARRIER_SPF_PATCH=		yes
 .endif
 
+.if defined(SLAVE_LDAP)
+BARRIER_BIG_CONCURRENCY_PATCH=	yes
+.endif
+
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_SPAMCONTROL)
 BARRIER_DNS_PATCH=		yes
-BARRIER_BIG_CONCURRENCY_PATCH=	yes
 BARRIER_QMTPC_PATCH=		yes
 BARRIER_DISCBOUNCES_PATCH=	yes
 BARRIER_SENDMAIL_F_PATCH=	yes
@@ -163,7 +166,7 @@ LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		REQBRACKETS	"Require brackets in <addresses>" on \
 		VERP		"VERP addresses for recipients" on \
-		MOREIPME	"Additional control files moreipme & notipme" off \
+		MOREIPME	"Add control files (more|not)ipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off
 .endif
 .if !defined(SLAVE_LDAP)
