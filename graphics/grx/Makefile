@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A 2D graphics library
 
-BROKEN=		fails to compile
-
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -67,7 +65,7 @@ CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
 .if defined(WITH_PNG)
-LIB_DEPENDS+=	png.5${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--enable-png
 .else
 CONFIGURE_ARGS+=--disable-png
