@@ -11,7 +11,7 @@ CATEGORIES=	shells security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	A Restricted Secure SHell only for sftp or/and scp
 
 GNU_CONFIGURE=	yes
