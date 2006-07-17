@@ -2850,6 +2850,7 @@ fusefs-gphotofs	ports/graphics/fusefs-gphotofs
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
+fusefs-unionfs	ports/sysutils/fusefs-unionfs
 fusefs-wdfs	ports/sysutils/fusefs-wdfs
 fusenshi	ports/deskutils/fusenshi
 fuser		ports/sysutils/fuser
