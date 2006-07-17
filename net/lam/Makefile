@@ -19,6 +19,9 @@ CONFIGURE_ARGS+=	--with-rsh=ssh
 
 CONFLICTS=	lam-7.*
 
+DEPRECATED=	to be replaced by net/lam7, please use this port instead
+EXPIRATION_DATE=2006-08-18
+
 .include "files/manpages"
 
 .include <bsd.port.mk>
