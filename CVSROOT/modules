@@ -1898,6 +1898,7 @@ dotproject	ports/www/dotproject
 dotter		ports/biology/dotter
 dovecot		ports/mail/dovecot
 downloader	ports/ftp/downloader
+downtime	ports/sysutils/downtime
 doxygen		ports/devel/doxygen
 doxymacs	ports/editors/doxymacs
 dparser		ports/devel/dparser
