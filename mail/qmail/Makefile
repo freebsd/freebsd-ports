@@ -22,9 +22,13 @@ DIST_SUBDIR=	qmail
 CONFLICTS=	qmail-vida-[0-9]*
 
 .if defined(SLAVE_LDAP) || \
-    defined(SLAVE_SPAMCONTROL) || \
     defined(SLAVE_MYSQL)
 BARRIER_MAILDIRQUOTA_PATCH=	yes
+.endif
+
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_SPAMCONTROL) || \
+    defined(SLAVE_MYSQL)
 BARRIER_BLOCKEXEC_PATCH=	yes
 BARRIER_QMAILQUEUE_PATCH=	yes
 BARRIER_SMTP_AUTH_PATCH=	yes
