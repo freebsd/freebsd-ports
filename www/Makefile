@@ -1077,6 +1077,7 @@
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
     SUBDIR += xpi-stumbleupon
+    SUBDIR += xpi-surfkeys
     SUBDIR += xpi-tabletools
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-togglewordwrap
