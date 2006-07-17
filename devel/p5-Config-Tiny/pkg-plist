@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Tiny/.packlist
 %%SITE_PERL%%/Config/Tiny.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Tiny
-@dirrmtry %%SITE_PERL%%/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Tiny
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
+@dirrmtry %%SITE_PERL%%/Config
