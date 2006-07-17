@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcheck
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://hald.dnsalias.net/projects/memcheck/
 
