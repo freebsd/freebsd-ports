@@ -1,0 +1,12 @@
+--- ./src/perl/kuake.orig	Fri Jul  7 01:46:51 2006
++++ ./src/perl/kuake	Mon Jul 17 22:35:22 2006
+@@ -11,7 +11,8 @@
+    $self->{keycode} = $self->XKeysymToKeycode ($self->{keysym})
+       or urxvt::fatal "cannot convert requested kuake wake-up key '$self->{key}' to keycode, unable to continue.\n";
+ 
+-   $self->XGrabKey ($self->{keycode}, urxvt::AnyModifier, $self->DefaultRootWindow);
++   $self->XGrabKey ($self->{keycode}, urxvt::AnyModifier, $self->DefaultRootWindow)
++      or urxvt::fatal "cannot grab requested kuake wake-up key '$self->{keycode}' (attempt to access private resource denied), unable to continue.\n";
+ 
+    $self->XUnmapWindow ($self->parent);
+ 
