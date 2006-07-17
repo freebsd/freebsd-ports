@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-ASCIITable
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -32,4 +32,10 @@ post-install:
 	@${ECHO_MSG} "===> Example installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
+.endif
+
+.include <bsd.port.post.mk>
