@@ -1,11 +1,11 @@
---- pskgen/Makefile.in~	Thu Jul 14 17:30:23 2005
-+++ pskgen/Makefile.in	Tue Nov  1 21:46:08 2005
-@@ -16,7 +16,7 @@
+--- pskgen/Makefile.in.orig	Tue Nov  8 05:53:51 2005
++++ pskgen/Makefile.in	Sat Jul 15 17:48:57 2006
+@@ -18,7 +18,7 @@
  
  install: all
  	$(INSTALL) -d $(sbindir)
--	$(INSTALL) -m 555 $(PROG) $(sbindir)
-+	$(INSTALL_SCRIPT) -m 555 $(PROG) $(sbindir)
- 	$(INSTALL) -m 444 $(PROG).8 $(mandir)/man8
+-	$(INSTALL_PROGRAM) $(PROG) $(sbindir)
++	$(INSTALL_SCRIPT) $(PROG) $(sbindir)
+ 	$(INSTALL_DATA) $(PROG).8 $(mandir)/man8
  
  depend:
