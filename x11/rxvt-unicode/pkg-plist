@@ -5,6 +5,7 @@ bin/urxvtd
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
 %%PERL%%lib/urxvt/perl/digital-clock
 %%PERL%%lib/urxvt/perl/example-refresh-hooks
+%%PERL%%lib/urxvt/perl/kuake
 %%PERL%%lib/urxvt/perl/mark-urls
 %%PERL%%lib/urxvt/perl/option-popup
 %%PERL%%lib/urxvt/perl/readline
