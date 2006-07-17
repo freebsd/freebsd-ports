@@ -12,7 +12,7 @@ CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER?=	holger@e-gitt.net
+MAINTAINER?=	benlutz@datacomm.ch
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
