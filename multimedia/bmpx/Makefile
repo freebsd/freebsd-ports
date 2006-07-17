@@ -7,6 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.20.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/${PORTVERSION:C/\.[0-9]*$//}/
 
@@ -19,7 +20,6 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		neon.25:${PORTSDIR}/www/neon \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		notify.2:${PORTSDIR}/devel/libnotify \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
 		dbus-1.2:${PORTSDIR}/devel/dbus
 
@@ -55,6 +55,14 @@ PLIST_SUB+=		NLS="@comment "
 .else
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
+.endif
+
+.if !defined(WITHOUT_LIBNOTIFY)
+CONFIGURE_ARGS+=	--enable-libnotify
+LIB_DEPENDS+=	notify.2:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS+=	${X11BASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
+.else
+CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
 .include <bsd.port.pre.mk>
