@@ -7,6 +7,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	2.4.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +23,22 @@ USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_GNOME=	gnomehack gnomeprefix
 USE_GETTEXT=	yes
 
+OPTIONS=	GNOMEUI "GNOME support" On
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_GNOMEUI)
+USE_GNOME+=	libgnomeui
 GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes
+PLIST_SUB=	GNOME=""
+.else
+CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install
+PLIST_SUB=	GNOME="@comment not installed: "
+.endif
 
 MAN1=		stardict.1
 
@@ -39,4 +51,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
