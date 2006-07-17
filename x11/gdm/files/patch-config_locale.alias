@@ -155,6 +155,6 @@
 +Slovak                 sk_SK.UTF-8,sk_SK.ISO8859-2
 +Slovenian              sl_SI.UTF-8,sl_SI.ISO8859-2
 +Spanish                es_ES.UTF-8,es_ES.ISO8859-15,es_ES.ISO8859-1
-+Swedish                sv_SV.UTF-8,sv_SE.ISO8859-1
++Swedish                sv_SE.UTF-8,sv_SE.ISO8859-1
 +Turkish                tr_TR.UTF-8,tr_TR.ISO8859-9
 +Ukrainian              uk_UA.UTF-8,uk_UA.ISO8859-5
