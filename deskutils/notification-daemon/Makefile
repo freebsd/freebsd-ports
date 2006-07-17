@@ -7,6 +7,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
 
