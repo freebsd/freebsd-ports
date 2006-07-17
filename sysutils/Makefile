@@ -123,6 +123,7 @@
     SUBDIR += dmidecode
     SUBDIR += dolly
     SUBDIR += dolly+
+    SUBDIR += downtime
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += du2ps
