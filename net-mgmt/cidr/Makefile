@@ -11,7 +11,7 @@ MASTER_SITES=	http://critical.ch/distfiles/
 MASTER_SITE_SUBDIR=	nork
 DISTNAME=	cidr-current
 
-MAINTAINER=	midom@dammit.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 1878 subnet calculator / helper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
