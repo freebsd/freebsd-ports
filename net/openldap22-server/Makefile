@@ -31,6 +31,8 @@ UNIQUENAME?=		${PKGNAMEPREFIX}openldap22
 LATEST_LINK?=		${UNIQUENAME}${PKGNAMESUFFIX}
 USE_OPENSSL=		yes
 
+DEPRECATED=		OpenLDAP 2.2.x series are no longer maintained by developers.  Use 2.3.x instead.
+
 WANT_OPENLDAP_VER?=	22
 .if ${WANT_OPENLDAP_VER} != 22
 BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
