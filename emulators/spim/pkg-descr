@@ -1,6 +1,6 @@
-MIPS R2000 Simulator -- "1/25th the performance at none of the cost"
+MIPS32 Simulator -- "1/25th the performance at none of the cost"
 
-Spim/Xspim simulates MIPS R2000 assembly code, providing a gdb and xgdb
+Spim/Xspim simulates MIPS32 assembly code, providing a gdb and xgdb
 like interface to the classical MIPS RISC CPU.  The virtual machine
 it provides can be either the one presented by the MIPS assembler or the
 one of the bare hardware.  The simulator can also be built to simulate the
