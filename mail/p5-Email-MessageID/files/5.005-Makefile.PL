@@ -4,7 +4,7 @@
                 NAME          => 'Email::MessageID',
                 PREREQ_PM     => {
                                   'Email::Address' => '1.80',
--                                 'Sys::Hostname' => '1.11',
+-                                 'Sys::Hostname' => '1.1',
 -                                 'Test::More' => '0.47',
 +                                 'Sys::Hostname' => 0,
                                  },
