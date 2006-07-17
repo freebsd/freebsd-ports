@@ -1,0 +1,6 @@
+This is my effort to create a unionfs filesystem implementation which
+is probably slower but way more flexible than the current in-kernel
+unionfs solution. Currently it's almost fully usable, the only problem
+is new file/directory creation which I will fix soon...
+
+WWW:	http://podgorny.cz/moin/UnionFsFuse
