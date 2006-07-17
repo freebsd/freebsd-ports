@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/HTML/Entities/Numbered.pm:${PORTSDIR}/textproc/p5-HTML-Entities-Numbered \
 		${SITE_PERL}/Module/Pluggable/Fast.pm:${PORTSDIR}/devel/p5-Module-Pluggable-Fast
-BUILD_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
