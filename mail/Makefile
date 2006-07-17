@@ -301,6 +301,7 @@
     SUBDIR += p5-Mail-CClient
     SUBDIR += p5-Mail-CheckUser
     SUBDIR += p5-Mail-ClamAV
+    SUBDIR += p5-Mail-DKIM
     SUBDIR += p5-Mail-DeliveryStatus-BounceParser
     SUBDIR += p5-Mail-DomainKeys
     SUBDIR += p5-Mail-Ezmlm
