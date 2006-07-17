@@ -27,6 +27,7 @@ bin/qbiff
 %%SPAMCONTROL%%bin/qmail-badmimetypes
 %%LDAP%%bin/qmail-cdb
 bin/qmail-clean
+%%DK%%bin/qmail-dk
 %%LDAP%%bin/qmail-forward
 bin/qmail-getpw
 %%LDAP%%bin/qmail-group
