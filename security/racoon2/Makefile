@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	racoon2
-PORTVERSION=	20051102a
-PORTREVISION=	3
+PORTVERSION=	20060712a
 CATEGORIES=	security net ipv6
-MASTER_SITES=	ftp://ftp.kame.net/pub/racoon2/
+MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sumikawa@FreeBSD.org
@@ -45,11 +44,11 @@ PLIST_SUB+=	KINK="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS+=	INSTALL USAGE USAGE.iked USAGE.spmd config-usage.ja.txt
-PORTDOCS+=	config-usage.txt iked-memo.ja.txt libracoon.ja.txt
-PORTDOCS+=	specification.ja.txt spmif.txt style.txt system-message.ja.txt
+PORTDOCS+=	INSTALL USAGE config-usage.ja.txt config-usage.txt
+PORTDOCS+=	iked-memo.ja.txt libracoon.ja.txt specification.ja.txt
+PORTDOCS+=	spmif.txt style.txt system-message.ja.txt
 .if defined (WITH_KINK)
-PORTDOCS+=	USAGE.kinkd kinkd-data-struct.obj kinkd-impl.ja.txt
+PORTDOCS+=	kinkd-data-struct.obj kinkd-impl.ja.txt
 PORTDOCS+=	kinkd-install.ja.txt kinkd-state-txn.obj
 .endif
 .endif
