@@ -1,6 +1,6 @@
 # New ports collection makefile for:    untar
 # Date created:         14 Jul 2002
-# Whom:                 KIMURA Shigekazu <zau50357@lion.zero.ad.jp>
+# Whom:                 KIMURA<LEE> Shigekazu <spbz6f99@utopia.ocn.ne.jp>
 #
 # $FreeBSD$
 #
