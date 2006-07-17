@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MeCab
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${SUB_DIR}
@@ -18,11 +18,14 @@ COMMENT=	MeCab library module for Perl5
 LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
 
 PERL_CONFIGURE=	yes
-SUB_DIR=	20029
+SUB_DIR=	20919
 
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
+post-patch:
+	${RM} ${WRKSRC}/test2.pl
 
 post-install:
 .if !defined(NOPORTDOCS)
