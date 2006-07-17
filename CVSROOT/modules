@@ -9740,6 +9740,7 @@ p5-Test-Pod-Coverage	ports/devel/p5-Test-Pod-Coverage
 p5-Test-RandomResults	ports/devel/p5-Test-RandomResults
 p5-Test-Reporter	ports/devel/p5-Test-Reporter
 p5-Test-Simple	ports/devel/p5-Test-Simple
+p5-Test-Singleton	ports/devel/p5-Test-Singleton
 p5-Test-Strict	ports/devel/p5-Test-Strict
 p5-Test-SubCalls	ports/devel/p5-Test-SubCalls
 p5-Test-Tester	ports/devel/p5-Test-Tester
