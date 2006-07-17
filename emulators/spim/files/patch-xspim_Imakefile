@@ -1,0 +1,32 @@
+--- xspim/Imakefile.orig	Mon Aug 29 02:28:15 2005
++++ xspim/Imakefile	Mon Jul 17 14:24:25 2006
+@@ -33,15 +33,15 @@
+ #
+ 
+ # Full path for the directory that will hold the executable files:
+-BIN_DIR = /usr/local/bin
++BIN_DIR = ${PREFIX}/bin
+ 
+ # Full path for the directory that will hold the man files:
+-MAN_DIR = /usr/local/share/man1
++MAN_DIR = ${PREFIX}/share/man1
+ 
+ # Full path for the exception handler file:
+-#EXCEPTION_PATH = /usr/local/lib/exceptions.s
++EXCEPTION_PATH = ${PREFIX}/share/spim/exceptions.s
+ # Use this path for testing:
+-EXCEPTION_PATH = $(CPU_DIR)/exceptions.s
++#EXCEPTION_PATH = $(CPU_DIR)/exceptions.s
+ 
+ # If you have flex, use it instead of lex.  If you use flex, define this
+ # variable and set LEXFLAGS.
+@@ -119,9 +119,6 @@
+ NormalProgramTarget(xspim_sub,$(XOBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+ 
+ InstallProgram(xspim,$(BIN_DIR))
+-InstallManPage(xspim,$(MAN_DIR))
+-InstallNonExec($(EXCEPTION_DIR)/exceptions.s,$(EXCEPTION_PATH))
+-
+ 
+ y.tab.h: y.tab.c
+ 

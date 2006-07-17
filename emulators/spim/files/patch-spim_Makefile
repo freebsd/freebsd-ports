@@ -1,0 +1,73 @@
+--- spim/Makefile.orig	Mon Aug 29 02:28:14 2005
++++ spim/Makefile	Mon Jul 17 14:46:59 2006
+@@ -46,16 +46,16 @@
+ VPATH = src:$(CPU_DIR)
+ 
+ # Full path for directory that will hold the exception handler file:
+-EXCEPTION_DIR = ../CPU
++EXCEPTION_DIR = ${PREFIX}/share/spim
+ 
+ # Path of directory that contains SPIM tests:
+ TEST_DIR = ../Tests
+ 
+ # Full path for the directory that will hold the executable files:
+-BIN_DIR = /usr/unsup/bin
++BIN_DIR = ${PREFIX}/bin
+ 
+ # Full path for the directory that will hold the man files:
+-MAN_DIR = /usr/unsup/man
++MAN_DIR = ${PREFIX}/man/man1
+ 
+ 
+ # Full path for the exception handler file:
+@@ -90,12 +90,12 @@
+ 
+ DEFINES = $(ENDIAN) $(MEM_SIZES) -DDEFAULT_EXCEPTION_HANDLER=$(EXCEPTION_PATH) -DSPIM_VERSION="\"`cat ../VERSION`\""
+ 
+-CC = gcc
+-CFLAGS = -I. -I$(CPU_DIR) $(DEFINES) -g -Wall
+-YFLAGS = -d --file-prefix=y
++CC? = gcc
++CFLAGS += -I. -I$(CPU_DIR) $(DEFINES) -Wall
++YFLAGS = -d
+ YCFLAGS =
+ LDFLAGS = -lm
+-CSH = bash
++CSH = csh
+ 
+ # lex.yy.c is usually compiled with -O to speed it up.
+ 
+@@ -108,10 +108,10 @@
+ 
+ 
+ spim:   force
+-	make -f Makefile spim2
++	$(MAKE) -f Makefile spim2
+ 
+ spim2:	$(OBJS) spim.o
+-	$(CC) -g $(OBJS) spim.o $(LDFLAGS) -o spim -lm
++	$(CC) $(OBJS) spim.o $(LDFLAGS) -o spim -lm
+ 
+ 
+ force:	configuration
+@@ -176,8 +176,9 @@
+ 
+ install: spim
+ 	install -c -s  spim $(BIN_DIR)
+-	install -c -m 0444 exceptions.s $(EXCEPTION_DIR)
+-	install -c -m 0444 spim.man $(MAN_DIR)
++	mkdir -p $(EXCEPTION_DIR)
++	install -c -m 0444 $(CPU_DIR)/exceptions.s $(EXCEPTION_DIR)
++	install -c -m 0444 ../Documentation/spim.man $(MAN_DIR)/spim.1
+ 
+ very-clean: clean
+ 	rm -f configuration
+@@ -195,7 +196,7 @@
+ y.tab.h: y.tab.c
+ 
+ y.tab.c: $(CPU_DIR)/parser.y
+-	bison $(YFLAGS) $(CPU_DIR)/parser.y
++	yacc $(YFLAGS) $(CPU_DIR)/parser.y
+ 
+ y.tab.o: y.tab.c
+ 	$(CC) $(CFLAGS) $(YCFLAGS) -c y.tab.c
