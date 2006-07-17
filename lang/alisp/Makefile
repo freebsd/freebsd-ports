@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	20060602
+PORTVERSION=	20060717
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://www.t3x.org/files/
 
@@ -20,5 +20,10 @@ INSTALLS_SHLIB=	yes
 MAKE_ENV+=	BINOWN=${BINOWN} \
 		BINGRP=${BINGRP} \
 		PREFIX=${PREFIX}
+
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/alisp.h
 
 .include <bsd.port.mk>
