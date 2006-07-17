@@ -12,12 +12,14 @@ bin/lsh-upgrade-key
 bin/lsh-writekey
 bin/lshg
 bin/nettle-lfib-stream
+bin/pkcs1-conv
 bin/sexp-conv
 bin/srp-gen
 bin/ssh-conv
 include/nettle/aes.h
 include/nettle/arcfour.h
 include/nettle/arctwo.h
+include/nettle/asn1.h
 include/nettle/base16.h
 include/nettle/base64.h
 include/nettle/bignum.h
@@ -25,6 +27,7 @@ include/nettle/blowfish.h
 include/nettle/buffer.h
 include/nettle/cast128.h
 include/nettle/cbc.h
+include/nettle/ctr.h
 include/nettle/des-compat.h
 include/nettle/des.h
 include/nettle/dsa.h
@@ -37,21 +40,21 @@ include/nettle/md5-compat.h
 include/nettle/md5.h
 include/nettle/memxor.h
 include/nettle/nettle-meta.h
+include/nettle/nettle-stdint.h
 include/nettle/nettle-types.h
 include/nettle/pgp.h
 include/nettle/pkcs1.h
 include/nettle/realloc.h
-include/nettle/rsa.h
 include/nettle/rsa-compat.h
+include/nettle/rsa.h
 include/nettle/serpent.h
 include/nettle/sexp.h
 include/nettle/sha.h
 include/nettle/twofish.h
 include/nettle/yarrow.h
-@dirrm include/nettle
 lib/libnettle.a
 sbin/lsh-execuv
-%%KRB%%sbin/lsh-krb-checkpw
 sbin/lsh-pam-checkpw
 sbin/lshd
 sbin/sftp-server
+@dirrm include/nettle
