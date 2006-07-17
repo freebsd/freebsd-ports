@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ja-xvi-euc
 # Date created:		07 Aug 2002
-# Whom:			KIMURA Shigekazu <zau50357@lion.zero.ad.jp>
+# Whom:			KIMURA<LEE> Shigekazu <spbz6f99@utopia.ocn.ne.jp>
 #
 # $FreeBSD$
 #
