@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		japanese net
 PKGNAMEPREFIX=		ja-
 
 PATCH_SITES=		http://dist.bsdlab.org/
-PATCHFILES=		samba-3.0.23-i18n-20060712.bz2
+PATCHFILES=		samba-3.0.23-i18n-20060718.bz2
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=		kuriyama@FreeBSD.org
@@ -24,5 +24,9 @@ SAMBA_PORT=		samba3
 MASTERDIR=		${.CURDIR}/../../net/${SAMBA_PORT}
 MD5_FILE=		${.CURDIR}/distinfo
 DESCR=			${.CURDIR}/pkg-descr
+
+# Maintainer's note:
+#   Don't forget to test with WITH_ADS, WITH_CUPS, WITH_QUOTAS,
+#   WITH_MSDFS, WITH_PAM_SMBPASS for such users.
 
 .include "${MASTERDIR}/Makefile"
