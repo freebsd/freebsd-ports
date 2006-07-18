@@ -15,7 +15,7 @@ MASTER_SITES=	http://automagically.de/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D file viewer for GTK+
 
-LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GNOME=	gnometarget gtk20
 USE_GL=		yes

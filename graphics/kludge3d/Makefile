@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple 3d editor
 
 LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds \
-		gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_PYTHON=	yes
 USE_GL=		yes
