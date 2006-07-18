@@ -13,18 +13,18 @@
  	status.c system.c thread.c charset.c history.c lib.c \
  	muttlib.c editmsg.c utf8.c mbyte.c wcwidth.c \
  	url.c ascii.c mutt_idna.c crypt-mod.c crypt-mod.h
---- mutt-1.5.11/Makefile.in.orig	Thu Sep 15 16:22:50 2005
-+++ mutt-1.5.11/Makefile.in	Sat Mar 11 21:50:27 2006
-@@ -89,7 +89,7 @@
- 	recvattach.$(OBJEXT) recvcmd.$(OBJEXT) rfc822.$(OBJEXT) \
- 	rfc1524.$(OBJEXT) rfc2047.$(OBJEXT) rfc2231.$(OBJEXT) \
- 	score.$(OBJEXT) send.$(OBJEXT) sendlib.$(OBJEXT) \
--	signal.$(OBJEXT) sort.$(OBJEXT) status.$(OBJEXT) \
-+	signal.$(OBJEXT) signature.${OBJEXT} sort.$(OBJEXT) status.$(OBJEXT) \
- 	system.$(OBJEXT) thread.$(OBJEXT) charset.$(OBJEXT) \
- 	history.$(OBJEXT) lib.$(OBJEXT) muttlib.$(OBJEXT) \
- 	editmsg.$(OBJEXT) utf8.$(OBJEXT) mbyte.$(OBJEXT) \
-@@ -307,7 +307,7 @@
+--- mutt-1.5.12/Makefile.in.orig	Mon Jul 17 16:29:15 2006
++++ mutt-1.5.12/Makefile.in	Mon Jul 17 16:30:26 2006
+@@ -90,7 +90,7 @@
+ 	query.$(OBJEXT) recvattach.$(OBJEXT) recvcmd.$(OBJEXT) \
+ 	rfc822.$(OBJEXT) rfc1524.$(OBJEXT) rfc2047.$(OBJEXT) \
+ 	rfc2231.$(OBJEXT) score.$(OBJEXT) send.$(OBJEXT) \
+-	sendlib.$(OBJEXT) signal.$(OBJEXT) sort.$(OBJEXT) \
++	sendlib.$(OBJEXT) signal.$(OBJEXT) signature.$(OBJEXT) sort.$(OBJEXT) \
+ 	status.$(OBJEXT) system.$(OBJEXT) thread.$(OBJEXT) \
+ 	charset.$(OBJEXT) history.$(OBJEXT) lib.$(OBJEXT) \
+ 	muttlib.$(OBJEXT) editmsg.$(OBJEXT) utf8.$(OBJEXT) \
+@@ -309,7 +309,7 @@
  	main.c mbox.c menu.c mh.c mx.c pager.c parse.c pattern.c \
  	postpone.c query.c recvattach.c recvcmd.c \
  	rfc822.c rfc1524.c rfc2047.c rfc2231.c \
@@ -87,16 +87,16 @@
        case OP_PIPE:
        case OP_FILTER:
          CHECK_COUNT;
---- mutt-1.5.11/doc/manual.xml.head.orig	Tue Sep  6 18:46:44 2005
-+++ mutt-1.5.11/doc/manual.xml.head	Sat Mar 11 21:48:05 2006
-@@ -908,6 +908,7 @@
- c       edit-cc                 edit the Cc field
- b       edit-bcc                edit the Bcc field
- y       send-message            send the message
-+ESC s	signature-menu		select a signature and append it to your mail
- s       edit-subject            edit the Subject
- S       smime-menu              select S/MIME options
- f       edit-fcc                specify an ``Fcc'' mailbox
+--- mutt-1.5.12/doc/manual.xml.head.orig	Mon Jul 17 16:21:01 2006
++++ mutt-1.5.12/doc/manual.xml.head	Mon Jul 17 16:24:46 2006
+@@ -999,6 +999,7 @@
+ <row><entry>c</entry><entry>edit-cc</entry><entry>edit the Cc field</entry></row>
+ <row><entry>b</entry><entry>edit-bcc</entry><entry>edit the Bcc field</entry></row>
+ <row><entry>y</entry><entry>send-message</entry><entry>send the message</entry></row>
++<row><entry>ESC s</entry><entry>signature-menu</entry><entry>select a signature and append it to your mail</entry></row>
+ <row><entry>s</entry><entry>edit-subject</entry><entry>edit the Subject</entry></row>
+ <row><entry>S</entry><entry>smime-menu</entry><entry>select S/MIME options</entry></row>
+ <row><entry>f</entry><entry>edit-fcc</entry><entry>specify an ``Fcc'' mailbox</entry></row>
 --- mutt-1.5.11/functions.h.orig	Sun Jul 24 18:56:42 2005
 +++ mutt-1.5.11/functions.h	Sat Mar 11 21:48:05 2006
 @@ -311,6 +311,7 @@
