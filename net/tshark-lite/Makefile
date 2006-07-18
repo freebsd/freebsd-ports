@@ -8,7 +8,7 @@
 LITE=		yes
 PKGNAMESUFFIX=	-lite
 
-MASTERDIR=	${.CURDIR}/../tethereal
+MASTERDIR=	${.CURDIR}/../tshark
 COMMENT=        A powerful network analyzer/capture tool (lite package)
 
 .include "${MASTERDIR}/Makefile"

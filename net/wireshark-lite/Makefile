@@ -6,10 +6,10 @@
 #
 
 LITE=		yes
-PORTREVISION?=	3
+PORTREVISION?=	0
 PKGNAMESUFFIX=	-lite
 
-MASTERDIR=	${.CURDIR}/../ethereal
+MASTERDIR=	${.CURDIR}/../wireshark
 COMMENT=        A powerful network analyzer/capture tool (lite package)
 
 .include "${MASTERDIR}/Makefile"

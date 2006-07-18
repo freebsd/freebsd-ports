@@ -116,8 +116,6 @@
     SUBDIR += entitymib
     SUBDIR += erlang_xmlrpc
     SUBDIR += etherboot
-    SUBDIR += ethereal
-    SUBDIR += ethereal-lite
     SUBDIR += etunnel
     SUBDIR += findmtu
     SUBDIR += flowgrep
@@ -746,8 +744,6 @@
     SUBDIR += tdetect
     SUBDIR += telnetx
     SUBDIR += telserv
-    SUBDIR += tethereal
-    SUBDIR += tethereal-lite
     SUBDIR += thcrut
     SUBDIR += throttled
     SUBDIR += tightvnc
@@ -767,6 +763,8 @@
     SUBDIR += trickle
     SUBDIR += tridiavnc
     SUBDIR += tsclient
+    SUBDIR += tshark
+    SUBDIR += tshark-lite
     SUBDIR += tsocks
     SUBDIR += tspc2
     SUBDIR += ttlscan
@@ -800,6 +798,8 @@
     SUBDIR += warppipe
     SUBDIR += whois
     SUBDIR += widentd
+    SUBDIR += wireshark
+    SUBDIR += wireshark-lite
     SUBDIR += wistumbler2
     SUBDIR += wmlj
     SUBDIR += wmnd
