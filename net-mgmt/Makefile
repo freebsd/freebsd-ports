@@ -171,6 +171,7 @@
     SUBDIR += rotorouter
     SUBDIR += rubygem-snmp
     SUBDIR += satellite
+    SUBDIR += scamper
     SUBDIR += scdp
     SUBDIR += scli
     SUBDIR += scotty3

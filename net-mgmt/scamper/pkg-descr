@@ -1,0 +1,11 @@
+scamper is a program that conducts traceroute to large numbers of IPv4
+and IPv6 addresses in parallel to fill a specified packets-per-second rate.
+
+scamper can do ICMP based Path MTU discovery. scamper starts with the
+outgoing interface's MTU and discovers the location of PMTU bottlenecks.
+Recent revision of scamper do a PMTU search when an ICMP fragmentation
+required message is not returned to establish the PMTU to the next point
+in the network, followed by a TTL limited search to infer the hop
+where failure appears to occur.
+
+- Janos Mohacsi
