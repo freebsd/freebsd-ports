@@ -8,7 +8,8 @@
 PORTNAME=	ppracer
 DISTVERSION=	0.5alpha
 CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/ppracer/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	3D Downhill racing game... kindof like TuxRacer Improved
@@ -23,4 +24,12 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
+	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.c" -or -name "*.h" \
+		           -type f -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
+
+.include <bsd.port.post.mk>
