@@ -15,7 +15,7 @@ MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
@@ -55,6 +55,7 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	Please install www/rt36 which is the lastest recommended release
 LATEST_LINK=	rt34
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
