@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	jsview
-PORTVERSION=	1.1.4
-DISTVERSIONSUFFIX=	-fx
+PORTVERSION=	1.1.5
+DISTVERSIONSUFFIX=	-fx+zm
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_CSME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Easily view embedded/external JS and CSS
 
 XPI_ID=		{cf15270e-cf08-4def-b4ea-6a5ac23f3bca}
-XPI_FILES=	chrome/jsview.jar chrome.manifest install.js install.rdf
-XPI_DIRS=	chrome
+XPI_FILES=	chrome/jsview.jar chrome.manifest defaults/preferences/jsview.js install.js install.rdf 
+XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
