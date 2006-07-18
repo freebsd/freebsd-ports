@@ -9,44 +9,30 @@ PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
 PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.sun.com/software/communitysource/j2se/java2/download.xml
+MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
-SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
-SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
-PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
+#		 http://java.sun.com/javase/downloads/index.jsp
 DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
+EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.5.0
 
-EXTRACT_DEPENDS=zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
+OPTIONS=	DEBUG	"Enable debugging support" off \
+		IPV6	"Enable IPv6 support" off
 .if ${MACHINE_ARCH} == "amd64"
 WITHOUT_WEB=	yes
-.endif
-
-.if defined(WITHOUT_WEB)
-MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
 .else
-.if defined(WITH_MOZILLA) && ${WITH_MOZILLA} == "firefox"
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
-MAKE_ENV+=	BROWSER=firefox \
-		ALT_NSPR_HEADERS_PATH="${LOCALBASE}/include/nspr"
-.else
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/mozilla
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/mozilla
-MAKE_ENV+=	BROWSER=mozilla
+OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start" on
 .endif
-USE_GNOME=	desktopfileutils
-MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${X11BASE}/include"
-.endif
+OPTIONS+=	POLICY	"Install the Unlimited Strength Policy Files" off
 
+WANT_GNOME=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES+=	pkg-install \
@@ -56,11 +42,18 @@ SUB_LIST+=	JRE_HOME=${PREFIX}/jdk${JDK_VERSION}/jre \
 
 WRKSRC=		${WRKDIR}/control/make
 
+USE_ZIP=	YES
+
+SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
+SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
+PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
+POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
+
 JDK_VERSION=	1.5.0
 JDK_PATCHSET_VERSION=	3
 LATEST_LINK=	jdk15
 
-SUN_LINUX_JDK_VERSION=  1.4.2
+SUN_LINUX_JDK_VERSION=	1.4.2
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
 .if ${MACHINE_ARCH} == "i386"
@@ -73,6 +66,11 @@ NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/jdk1.5.0 \
 LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_POLICY)
+DISTFILES+=	${POLICYFILE}
+EXTRACT_ONLY+=	${POLICYFILE}
+.endif
 
 # do we have valid native jdk installed?
 .if !defined(WITH_LINUX_BOOTSTRAP)
@@ -100,9 +98,15 @@ JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 
 BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 
-# workaround to handle both 'zip' and 'tar.bz2' distfiles
-USE_ZIP=	YES
-EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
+.if defined(WITHOUT_WEB)
+MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
+.else
+USE_GECKO=	mozilla # firefox and seamonkey do not work
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+MAKE_ENV+=	BROWSER=${GECKO}
+USE_GNOME=	desktopfileutils
+MAKE_ENV+=	ALT_MOZILLA_HEADERS_PATH="${X11BASE}/include"
+.endif
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	YES
@@ -159,9 +163,9 @@ PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 LD_LIBRARY_PATH_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
 
 # Check for JDK sources and patch file
-.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
+IGNORE=	:\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE})#{
 IGNORE += Please open http://www.sun.com/software/java2/download.html\n\
@@ -179,11 +183,19 @@ IGNORE += and the\n
 IGNORE += SCSL Binaries file, ${SCSL_BINFILE}
 .endif#}
 IGNORE += .\n\n
+.if !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#{
+IGNORE += In addition, please
+.endif#}
+.elif !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#}{
+IGNORE += Please
+.endif#}
+.if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
+IGNORE += open http://java.sun.com/javase/downloads/index.jsp\n\
+in a web browser and follow the \"Download\" link for\n\
+\"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
 IGNORE += In addition, please
 .endif#}
-.elif !exists(${DISTDIR}/${PATCHSETFILE})
-IGNORE += Please
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
 IGNORE += download the patchset, ${PATCHSETFILE}, from\n\
@@ -204,16 +216,6 @@ pre-fetch:
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
 .endif
-	@${ECHO_MSG} "Following port compile time options are available:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "    WITH_DEBUG  - install JDK binaries and libraries"
-	@${ECHO_MSG} "                  with debuging support"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "    WITH_IPV6   - enable JDK IPv6 support"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "    WITHOUT_WEB - don't build the browser plugin"
-	@${ECHO_MSG} "                  or Java Web Start"
-	@${ECHO_MSG}
 
 pre-everything::
 	@${ECHO_MSG}
@@ -288,14 +290,6 @@ post-build:
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja_JP.eucJP
 
-pre-install:
-.if !defined(WITH_DEBUG)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Please use \`make -DWITH_DEBUG' if you want to install libraries and binaries"
-	@${ECHO_MSG} "with debugging support."
-	@${ECHO_MSG}
-.endif
-
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
@@ -318,6 +312,9 @@ do-install:
 .endif
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 	  ${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
+.if defined(WITH_POLICY)
+	${INSTALL_DATA} ${WRKDIR}/jce/*.jar ${PREFIX}/jdk${JDK_VERSION}/jre/lib/security
+.endif
 	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
 	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${TMPPLIST}
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${TMPPLIST}
