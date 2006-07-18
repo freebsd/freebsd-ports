@@ -6,14 +6,11 @@
 %%SITE_PERL%%/Mail/Audit/MimeEntity.pm
 %%SITE_PERL%%/Mail/Audit/PGP.pm
 %%SITE_PERL%%/Mail/Audit/Razor.pm
+%%SITE_PERL%%/Mail/Audit/Vacation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
-%%PORTDOCS%%share/doc/p5-Mail-Audit/Changes
-%%PORTDOCS%%share/doc/p5-Mail-Audit/FAQ
-%%PORTDOCS%%share/doc/p5-Mail-Audit/README
-share/examples/p5-Mail-Audit/popread
-share/examples/p5-Mail-Audit/proc2ma
-@dirrm share/examples/p5-Mail-Audit
-%%PORTDOCS%%@dirrm share/doc/p5-Mail-Audit
+%%EXAMPLESDIR%%/popread
+%%EXAMPLESDIR%%/proc2ma
+@dirrm %%EXAMPLESDIR%%/
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrm %%SITE_PERL%%/Mail/Audit

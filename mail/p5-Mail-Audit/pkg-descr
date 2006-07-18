@@ -1,7 +1,10 @@
-Mail::Audit is a Perl module for writing custom mail filters. It's
-aim is to be a tool to help replace procmail.
+Mail::Audit was inspired by Tom Christiansen's audit_mail
+and deliverlib programs. It allows a piece of email to be logged,
+examined, accepted into a mailbox, filtered, resent elsewhere,
+rejected, replied to, and so on. It's designed to allow you to
+easily create filter programs to stick in a .forward file or similar.
+
+Mail::Audit groks MIME; when appropriate, it subclasses MIME::Entity.
+Read the MIME::Tools man page for details.
 
 WWW: http://search.cpan.org/dist/Mail-Audit/
-
-- Pete
-petef@databits.net
