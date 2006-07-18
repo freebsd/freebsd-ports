@@ -7,7 +7,6 @@
 
 PORTNAME=	apache+mod_perl
 PORTVERSION=	${VERSION_APACHE}
-PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S/$/:apache/} \
 		${MASTER_SITE_PERL_CPAN:S/$/Apache\/:modperl/}
@@ -18,6 +17,7 @@ DISTFILES=	apache_${VERSION_APACHE}${EXTRACT_SUFX}:apache \
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with a statically embedded perl interpreter
 
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -42,19 +42,12 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=		1.3.34
+VERSION_APACHE=		1.3.36
 VERSION_MODPERL=	1.29
 
 WRKSRC_MODPERL=	${WRKDIR}/mod_perl-${VERSION_MODPERL}
 
-.if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
-EXPAT_CONF+=	--disable-rule=EXPAT
-.else
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
-EXPAT_CONF+=	--enable-rule=EXPAT
-.endif
-
-.if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
+.if defined(WITH_APACHE_SUEXEC)
 
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
 APACHE_SUEXEC_USERDIR?=public_html
@@ -97,7 +90,6 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--enable-shared=max \
 		--activate-module=src/modules/perl/libperl.a \
 		--enable-module=perl \
-		${EXPAT_CONF} \
 		${SUEXEC_CONF}
 
 CFLAGS+=-DDOCUMENT_LOCATION=\\\\\"${DOCUMENT_ROOT}\\\\\" \
@@ -109,13 +101,13 @@ CFLAGS+=-DDOCUMENT_LOCATION=\\\\\"${DOCUMENT_ROOT}\\\\\" \
 .if defined(APACHE_HARD_SERVER_LIMIT)
 CFLAGS+=-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
 .else
-CFLAGS+=-DHARD_SERVER_LIMIT=512
+CFLAGS+=-DHARD_SERVER_LIMIT=2048
 .endif
 
 #
 # Set WITH_APACHE_PERF_TUNING env. variable to yes to get maximum performance
 #
-.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
+.if defined(WITH_APACHE_PERF_TUNING)
 CFLAGS+=	-DBUFFERED_LOGS
 CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
@@ -124,11 +116,10 @@ CFLAGS+=	-O6 -fomit-frame-pointer
 OPTIM+=		-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 .endif
 
-# For expat.
-CFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/libs
+CFLAGS=		-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV=	OPTIM='${OPTIM}' LIBS='${LIBS}'
+CONFIGURE_ENV=	OPTIM='${OPTIM}' LIBS='${LIBS}' \
 
 MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
 
