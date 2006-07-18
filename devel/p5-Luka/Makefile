@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Luka
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TP/TPG
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Exception handling and reporting framework
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Std.pm:${PORTSDIR}/devel/p5-Class-Std \
+RUN_DEPENDS=	${SITE_PERL}/Class/Std.pm:${PORTSDIR}/devel/p5-Class-Std \
 		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Std.pm:${PORTSDIR}/devel/p5-Class-Std \
 		${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/What/MTA.pm:${PORTSDIR}/net/p5-What
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
