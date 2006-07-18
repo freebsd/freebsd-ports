@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sharp3d
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	3D modeller for organic shapes
 
-LIB_DEPENDS=	gtkglextmm-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglextmm \
+LIB_DEPENDS=	gtkglextmm-x11-1.2.0:${PORTSDIR}/x11-toolkits/gtkglextmm \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24
 
 USE_BZIP2=	yes
@@ -35,7 +35,6 @@ BROKEN=		Does not compile on FreeBSD 4.x (lack of *round* functions)
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gtkglextmm-1\.2|gtkglextmm-1.0|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/Align.hh
 	@${REINPLACE_CMD} -e 's|"/sharpconstruct|"|' ${WRKSRC}/src/MainWindow.cc
 	@${REINPLACE_CMD} -e 's|/usr/share/sharpconstruct|${DATADIR}|' ${WRKSRC}/src/MainWindow.cc
