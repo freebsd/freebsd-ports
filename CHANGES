@@ -10,6 +10,18 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070717:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * Introduces IA32_BINARY_PORT for certain cases where a given port fetches
+    and installs compiled i386 binaries.
+
+  * Adds some infrastructure for support of 32-bit i386 apps on amd64.
+
+  * Again fix USE_LDCONFIG logic to make it work with non-default PREFIX to
+    fix bug introduced in previous revision.
+
 20070705:
 AUTHOR: portmgr@FreeBSD.org
 The following functional changes were made to bsd.port.mk:
