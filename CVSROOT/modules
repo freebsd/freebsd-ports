@@ -2291,8 +2291,6 @@ eterm		ports/x11/eterm
 eterm-bg	ports/graphics/eterm-bg
 etherape	ports/net-mgmt/etherape
 etherboot	ports/net/etherboot
-ethereal	ports/net/ethereal
-ethereal-lite	ports/net/ethereal-lite
 etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 etox		ports/x11-toolkits/etox
@@ -13418,8 +13416,6 @@ testdisk	ports/sysutils/testdisk
 tet		ports/misc/tet
 tet-aspell	ports/textproc/tet-aspell
 tetgen		ports/math/tetgen
-tethereal	ports/net/tethereal
-tethereal-lite	ports/net/tethereal-lite
 tetradraw	ports/editors/tetradraw
 tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x
@@ -13679,6 +13675,8 @@ trustedqsl	ports/comms/trustedqsl
 truthtable	ports/math/truthtable
 tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
+tshark		ports/net/tshark
+tshark-lite	ports/net/tshark-lite
 tsito		ports/games/tsito
 tsocks		ports/net/tsocks
 tspc2		ports/net/tspc2
@@ -14177,6 +14175,8 @@ wingz3		ports/math/wingz3
 winhelpcgi	ports/www/winhelpcgi
 wininfo		ports/devel/wininfo
 wipe		ports/security/wipe
+wireshark	ports/net/wireshark
+wireshark-lite	ports/net/wireshark-lite
 wise		ports/biology/wise
 wistumbler2	ports/net/wistumbler2
 wm2		ports/x11-wm/wm2
