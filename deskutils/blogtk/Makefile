@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	blogtk
 # Date created:			Jul 30, 2004
 # Whom:				ijliao
@@ -8,12 +7,13 @@
 
 PORTNAME=	blogtk
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jbq@caraldi.com
 COMMENT=	A client for Blogger, Movable Type, and other blogging systems
 
 WRKSRC=		${WRKDIR}/BloGTK-${PORTVERSION}
