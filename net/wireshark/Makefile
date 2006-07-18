@@ -81,10 +81,6 @@ CONFIGURE_ARGS+=	--enable-ipv6=yes
 CONFIGURE_ARGS+=	--enable-ipv6=no
 .endif
 
-.if ${OSVERSION} < 504103
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-capture_loop.h
-.endif
-
 # XXX - untested
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
