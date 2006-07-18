@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.orig
++++ src/Makefile
+@@ -3,7 +3,7 @@
+ ifeq ($(TYPE),debug)
+ DEBUG_FLAGS = -Ddebug +debug_info
+ else
+-DEBUG_FLAGS =
++DEBUG_FLAGS = +debug_info
+ endif
+ 
+ include ../vsn.mk
