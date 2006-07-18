@@ -215,6 +215,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # NOT_FOR_ARCHS_REASON
 # NOT_FOR_ARCHS_REASON_${ARCH}
 #				- Reason why it's not for ${NOT_FOR_ARCHS}s
+# IA32_BINARY_PORT	- Set this instead of ONLY_FOR_ARCHS if the given port
+#				  fetches and installs compiled i386 binaries.
 #
 # Dependency checking.  Use these if your port requires another port
 # not in the list below.  (Default: empty.)
@@ -1062,6 +1064,7 @@ SH?=		/bin/sh
 SORT?=		/usr/bin/sort
 STRIP_CMD?=	/usr/bin/strip
 SU_CMD?=	/usr/bin/su root -c
+SYSCTL?=	/sbin/sysctl
 TAIL?=		/usr/bin/tail
 TEST?=		test				# Shell builtin
 TR?=		LANG=C /usr/bin/tr
@@ -1103,7 +1106,7 @@ OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
 
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
-OSVERSION!=	/sbin/sysctl -n kern.osreldate
+OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 
 # Get the object format.
@@ -1119,6 +1122,29 @@ MASTER_PORT?=${MASTERDIR:C/[^\/]+\/\.\.\///:C/[^\/]+\/\.\.\///:C/^.*\/([^\/]+\/[
 .else
 SLAVE_PORT?=	no
 MASTER_PORT?=
+.endif
+
+# Check the compatibility layer for amd64/ia64
+
+.if ${ARCH} == "amd64" || ${ARCH} =="ia64"
+.if exists(/usr/lib32)
+HAVE_COMPAT_IA32_LIBS?=  YES
+.endif
+.if !defined(HAVE_COMPAT_IA32_KERN)
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -a compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
+.endif
+.endif
+
+.if defined(IA32_BINARY_PORT) && ${ARCH} != "i386"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if !defined(HAVE_COMPAT_IA32_KERN)
+IGNORE= you need a kernel with compiled-in IA32 compatibility to use this port.
+.elif !defined(HAVE_COMPAT_IA32_LIBS)
+IGNORE= you need the 32-bit libraries installed under /usr/lib32 to use this port.
+.endif
+.else
+IGNORE= you have to use i386 (or compatible) platform to use this port.
+.endif
 .endif
 
 # If they exist, include Makefile.inc, then architecture/operating
@@ -2705,7 +2731,7 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 .if defined(GNU_CONFIGURE)
 # Maximum command line length
 .if !defined(CONFIGURE_MAX_CMD_LEN)
-CONFIGURE_MAX_CMD_LEN!=	/sbin/sysctl -n kern.argmax
+CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
 CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
 CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
@@ -3690,7 +3716,7 @@ install-ldconfig-file:
 .if ${USE_LDCONFIG:L} != "${PREFIX}/lib"
 	@${ECHO_MSG} "===>   Installing ldconfig configuration file"
 .if defined(NO_LDCONFIG_MTREE)
-	@${MKDIR} ${LDCONFIG_DIR}
+	@${MKDIR} ${PREFIX}/${LDCONFIG_DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG_DIR}/${UNIQUENAME}
@@ -3710,7 +3736,7 @@ install-ldconfig-file:
 .endif
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
 .if defined(NO_LDCONFIG_MTREE)
-	@${MKDIR} ${LDCONFIG_32DIR}
+	@${MKDIR} ${PREFIX}/${LDCONFIG_32DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG32_DIR}/${UNIQUENAME}
