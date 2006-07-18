@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- contrib/libcext_lgpl/Makefile
++++ contrib/libcext_lgpl/Makefile
+@@ -12,7 +12,7 @@
+ # Darwin
+ 
+ AR=libtool -static -o
+-OBJS = poll.o pthread_adds.o gethostby_r.o getnetby_r.o getprotoby_r.o getpw_r.o getservby_r.o
++OBJS = getpw_r.o
+ 
+ HEADERS = poll.h pthread_adds.h
+ else
