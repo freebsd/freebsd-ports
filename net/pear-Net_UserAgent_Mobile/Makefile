@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_UserAgent_Mobile
-PORTVERSION=	0.26.0
+PORTVERSION=	0.27.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	smatsui@karashi.org
