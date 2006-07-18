@@ -6,13 +6,14 @@
 
 PORTNAME=	shoutcast
 PORTVERSION=	1.9.7
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-7/
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Nullsoft's streaming audio server (binary port)
 
-ONLY_FOR_ARCHS=	i386 amd64 ia64
+IA32_BINARY_PORT=	YES
 NO_BUILD=	YES
 RESTRICTED=	Redistribution of the software is not allowed
 
