@@ -106,8 +106,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.11
-PORTREVISION?=	3
+PORTVERSION=	1.5.12
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -194,6 +194,7 @@ AC_PATCH_VERSION=	${PORTVERSION}
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
+IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH does not work at the moment
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
@@ -315,10 +316,6 @@ LIB_DEPENDS+=	gpgme:${PORTSDIR}/security/gpgme
 post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
-.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
-post-patch::
-	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-header-cache
-.endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 XML_NEEDED=	yes
 post-patch::
@@ -402,7 +399,7 @@ XML_NEEDED=	yes
 pre-patch::
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.gz > ${WRKDIR}/patch-nntp
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
-		 ${WRKDIR}/patch-nntp
+		${WRKDIR}/patch-nntp
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-nntp
 .endif
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
@@ -414,10 +411,10 @@ XML_NEEDED=	yes
 DISTFILES+=	patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1:cd
 #XML_NEEDED=	yes
 pre-patch::
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1 > ${WRKDIR}/patch-ifdef
-	${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.sgml.head$$/,/^diff/d' \
+	@${CAT} ${DISTDIR}/${DIST_SUBDIR}/patch-${CD_IFDEF_PATCH_VERSION}.cd.ifdef.1 > ${WRKDIR}/patch-ifdef
+	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.sgml.head$$/,/^diff/d' \
 		 ${WRKDIR}/patch-ifdef
-	${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-ifdef
+	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-ifdef
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
