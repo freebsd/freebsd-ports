@@ -4,7 +4,7 @@ assp \- Anti-Spam SMTP Proxy
 .SH SYNOPSIS
 assp [ base_dir [ admin_port ] ]
 .PP
-%%PREFIX%%/etc/rc.d/assp.sh start|stop|restart|status
+%%RC_SCRIPT%% start|stop|restart|status
 .SH DESCRIPTION
 .I "Anti-Spam SMTP Proxy"
 is a spam filter that sits on port 25 in front
@@ -42,6 +42,8 @@ HELO checking
 SPF (Sender Policy Framework) checking
 .IP -
 DNSBL (DNS Block List) checking using many block list services
+.IP -
+delaying of messages from unknown senders
 .IP -
 Virus detection
 .RE
@@ -197,6 +199,7 @@ in detail.
 .IR ASSP 's
 other filtering options (local user validation, RFC822
 conformance, client HELO validation, SPF validation,
+the Delay List,
 the use of DNSBLs and the ClamAV virus checker)
 can be enabled by examining and adjusting their
 configuration options as needed and then unchecking the
@@ -227,7 +230,7 @@ see the
 website and documentation.
 .SH "STARTING ASSP AT BOOT TIME"
 The
-.I /usr/local/etc/rc.d/assp.sh
+.I %%RC_SCRIPT%%
 script is run automatically at system boot time.
 Several variables can be set in
 .I /etc/rc.conf

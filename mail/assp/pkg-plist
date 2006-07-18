@@ -3,23 +3,48 @@ etc/periodic/daily/510.assp
 @dirrmtry etc/periodic
 lib/assp/addservice.pl
 lib/assp/assp.pl
+lib/assp/images/assp.css
+lib/assp/images/dropShadow.gif
+lib/assp/images/editor.css
+lib/assp/images/favicon.ico
+lib/assp/images/logo.jpg
+lib/assp/images/minusIcon.png
+lib/assp/images/noIcon.png
+lib/assp/images/plusIcon.png
+lib/assp/images/shutdown.css
+lib/assp/images/sourceforge-logo.gif
+lib/assp/images/valid-xhtml10.gif
+lib/assp/images/village.gif
+lib/assp/images/xml-pill.gif
 lib/assp/move2num.pl
+lib/assp/nodelay.txt
 lib/assp/notspamreport.txt
 lib/assp/rebuildspamdb.pl
+lib/assp/redremovereport.txt
+lib/assp/redre.txt
+lib/assp/redreport.txt
 lib/assp/repair.pl
 lib/assp/spamreport.txt
 lib/assp/stat.pl
 lib/assp/stats.sh
+lib/assp/whiteremovereport.txt
 lib/assp/whitereport.txt
 %%ASSP_CLAMAV%%lib/assp/freshclam.sh
+@dirrm lib/assp/images
 @dirrm lib/assp
 sbin/assp
 sbin/assplog
 %%PORTDOCS%%%%DOCSDIR%%/ASSP Documentation.htm
 %%PORTDOCS%%%%DOCSDIR%%/Regular Expression Tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rm -f %%ASSP_HOME%%/images 2>/dev/null || true
+@unexec rm -f %%ASSP_HOME%%/nodelay.txt 2>/dev/null || true
 @unexec rm -f %%ASSP_HOME%%/notspamreport.txt 2>/dev/null || true
+@unexec rm -f %%ASSP_HOME%%/redremovereport.txt 2>/dev/null || true
+@unexec rm -f %%ASSP_HOME%%/redre.txt 2>/dev/null || true
+@unexec rm -f %%ASSP_HOME%%/redreport.txt 2>/dev/null || true
 @unexec rm -f %%ASSP_HOME%%/spamreport.txt 2>/dev/null || true
+@unexec rm -f %%ASSP_HOME%%/whiteremovereport.txt 2>/dev/null || true
 @unexec rm -f %%ASSP_HOME%%/whitereport.txt 2>/dev/null || true
 @unexec rmdir %%ASSP_HOME%% 2>/dev/null || true
 @unexec if [ -d %%ASSP_HOME%% ]; then echo "If you are deinstalling ASSP completely, remove the %%ASSP_HOME%% directory."; fi

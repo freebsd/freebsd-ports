@@ -57,6 +57,9 @@ DNSBL check failed
 BS
 Bayesian spam check failed
 .TP
+DL
+Message from unknown sender delayed, sender requested to retry later
+.TP
 HL
 Bad HELO greeting
 .TP
@@ -90,8 +93,9 @@ Whitelist addition of address CC'd in whitelisted email
 SR
 assp-spam@ report submission
 .SH BUGS
+Note that
 .I assplog
-does not display all log messages; for a complete view of
+does not display anywhere near all the log messages; for a complete view of
 the log, use
 .B "tail -f"
 directly on the log file.

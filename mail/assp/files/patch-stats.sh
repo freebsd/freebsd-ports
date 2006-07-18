@@ -1,5 +1,5 @@
---- stats.sh.orig	Fri Aug  6 20:26:26 2004
-+++ stats.sh	Thu May 26 22:24:20 2005
+--- stats.sh.orig	Thu Jul 13 11:50:02 2006
++++ stats.sh	Thu Jul 13 11:55:05 2006
 @@ -4,12 +4,12 @@
  # copy of your standard Unix shell, the 'tail' utility and a working 'awk'
  # interpreter.
@@ -30,7 +30,7 @@
  # BA (in Cyan) .. Bad ATTACHEMENT rejected
  # SR (in Cyan) .. spam@ report submission
  # NS (in Cyan) .. notspam@ report submission
-@@ -46,32 +49,32 @@
+@@ -46,91 +49,144 @@
  # Some fields are truncated (with a hard-coded length value, usually 40)
  #   to keep each line more or less intact on your screen as things scroll by
  # Colors are coded with ANSI Color coding, your mileage may vary ...
@@ -44,133 +44,198 @@
 -tail -300 -f /usr/local/assp/maillog.log | \
 +tail -300 -f /var/db/assp/maillog.txt | \
   awk  ' \
-   /whitelisted/ { \
+-  /whitelisted/ { \
 -  printf("%s %s \033[1;32m%-15s L\033[0mW  %s \033[1;32m->\033[0m %s\n", \
-+  printf("%s %s \033[1;32m%-15s\033[0m \033[1;37mLW  %s\033[0m \033[1;32m->\033[0m \033[1;37m%s\033[0m\n", \
-         substr($1,1,length($1)), \
-         substr($2,1,length($2)), \
-         substr($3,1,length($3)), \
-         substr($4,1,40), \
-         substr($6,1,length($6)) )\
-         } \
--  /email/ && /whitelist addition/ { \
--  printf("%s %s \033[1;32m%-15s W\033[0mA+ %s \033[1;32m->\033[0m %s\n", \
-+  /whitelist addition/ && /email new/ { \
-+  printf("%s %s \033[1;36m%-15s WA+ %s\033[0m \033[1;37m%s\033[0m\n", \
-         substr($1,1,length($1)), \
-         substr($2,1,length($2)), \
-         "+email address+", \
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        substr($3,1,length($3)), \
 -        substr($4,1,40), \
 -        substr($6,1,length($6)) )\
+-        } \
+-  /email/ && /whitelist addition/ { \
+-  printf("%s %s \033[1;32m%-15s W\033[0mA+ %s \033[1;32m->\033[0m %s\n", \
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        "+email address+", \
++  /local or whitelisted/ { \
++  printf("%s %s \033[1;32m%-15s\033[0m \033[1;37mLW  %s\033[0m \033[1;32m->\033[0m \033[1;37m%s\033[0m\n", \
++        $1, \
++        $2, \
++        $3, \
+         substr($4,1,40), \
+-        substr($6,1,length($6)) )\
++        $6 )\
++        } \
++  /Email whitelist addition/ { \
++  printf("%s %s \033[1;36m%-15s WA+ %s\033[0m \033[1;37m%s\033[0m\n", \
++        $1, \
++        $2, \
++        "+email address+", \
 +        "-adds-", \
-+        substr($7,1,length($7)) )\
++        $6 )\
          } \
-   /whitelist addition/ && !/email/ { \
+-  /whitelist addition/ && !/email/ { \
 -  printf("%s %s \033[1;32m%-15s W\033[0mL+ %s \033[1;32m %s %s\033[0m\n", \
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        substr($3,1,length($3)), \
++  /whitelist addition:/ && !/[Ee]mail/ { \
 +  printf("%s %s \033[1;32m%-15s\033[0m \033[1;37mWL+ %s\033[0m \033[1;32m%s\033[0m \033[1;37m%s\033[0m\n", \
-         substr($1,1,length($1)), \
-         substr($2,1,length($2)), \
-         substr($3,1,length($3)), \
-@@ -79,12 +82,12 @@
++        $1, \
++        $2, \
++        $3, \
+         substr($4,1,40), \
          "-adds-", \
-         substr($9,1,length($9)) )\
+-        substr($9,1,length($9)) )\
++        $9 )\
          } \
 -  /Bayesian spam/ { \
-+  /Bayesian Spam/ { \
++  /Bayesian [Ss]pam/ { \
    printf("%s %s \033[1;31m%-15s BS  %s -> %s\033[0m\n", \
 -          substr($1,1,length($1)), \
 -          substr($2,1,length($2)), \
 -          substr($3,1,length($3)), \
 -          substr($4,1,40), \
-+        substr($1,1,length($1)), \
-+        substr($2,1,length($2)), \
-+        substr($3,1,length($3)), \
+-        substr($6,1,length($6)) )\
++        $1, \
++        $2, \
++        $3, \
 +        substr($4,1,40), \
-         substr($6,1,length($6)) )\
++        $6 )\
          } \
    /message ok/ { \
-@@ -95,7 +98,7 @@
+   printf("%s %s \033[1;32m%-15s Ok  %s -> %s\033[0m\n", \
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
          substr($4,1,40), \
-         substr($6,1,length($6)) )\
+-        substr($6,1,length($6)) )\
++        $6 )\
          } \
 -  /bad attachment/ { \
 +  /bad attachment/ && !/no bad/ { \
          printf("%s %s \033[1;35m%-15s BA  %s -> %s\033[0m\n", \
-         substr($1,1,length($1)), \
-         substr($2,1,length($2)), \
-@@ -104,29 +107,66 @@
-         substr($6,1,length($6)) )\
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
+         substr($4,1,40), \
+-        substr($6,1,length($6)) )\
++        $6 )\
          } \
    /relay attempt blocked/ { \
 -        printf("%s %s \033[1;35m%-15s RB  %s -> %s %s %s %s %s\033[0m\n", \
-+        printf("%s %s \033[1;35m%-15s RB  %s -> %s\033[0m\n", \
-         substr($1,1,length($1)), \
-         substr($2,1,length($2)), \
-         substr($3,1,length($3)), \
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        substr($3,1,length($3)), \
 -        substr($4,1,length($4)), \
 -        substr($5,1,length($5)), \
 -        substr($6,1,length($6)), \
 -        substr($7,1,length($7)), \
 -        substr($8,1,length($8)), \
+-        substr($9,1,length($9)) )\
+-        } \
+-  /Admin update:/ { \
+-  printf("\033[1;33m%s %s %s %s %s %s \033[0m\n", $1, $2, $3, $4, $5, $6) \
+-        } \
+-  /Email spamreport/ { \
+-  printf("%s %s\033[0;36m %-15s SR  %s Email SPAM Submission\033[0m\n", \
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        substr($3,1,length($3)), \
+-        substr($4,1,length($4)) ) \
+-        } \
+-  /Email hamreport/ { \
+-  printf("%s %s\033[0;36m %-15s NS  %s Email NOTSPAM Submission\033[0m\n", \
+-        substr($1,1,length($1)), \
+-        substr($2,1,length($2)), \
+-        substr($3,1,length($3)), \
+-        substr($4,1,length($4)) ) \
++        printf("%s %s \033[1;35m%-15s RB  %s -> %s\033[0m\n", \
++        $1, \
++        $2, \
++        $3, \
 +        substr($4,1,40), \
-         substr($9,1,length($9)) )\
-         } \
-+  /Invalid address rejected/ { \
++        ($9 ~ /^(.*):$/) ? $10 : $9 )\
++        } \
++  /[Ii]nvalid address rejected/ { \
 +  printf("%s %s \033[1;34m%-15s IR  %s -> %s\033[0m\n", \
-+        substr($1,1,length($1)), \
-+        substr($2,1,length($2)), \
-+        substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
 +        substr($4,1,40), \
-+        substr($NF,1,length($NF)) )\
++        $NF )\
 +        } \
 +  /malformed address/ { \
 +  printf("%s %s \033[1;35m%-15s MA  %s -> %s\033[0m\n", \
-+        substr($1,1,length($1)), \
-+        substr($2,1,length($2)), \
-+        substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
 +        substr($4,1,40), \
-+        substr($7,1,length($7)) )\
++        $7 )\
 +        } \
-+  /failed RBL checks/ { \
++  /failed RBL checks|Received-RBL: fail/ { \
 +  printf("%s %s \033[1;35m%-15s BL  %s -> %s\033[0m\n", \
-+        substr($1,1,length($1)), \
-+        substr($2,1,length($2)), \
-+        substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
 +        substr($4,1,40), \
-+        substr($6,1,length($6)) )\
++        $6 )\
 +        } \
-+  /failed SPF checks/ { \
++  /failed SPF checks|Received-SPF: fail/ { \
 +  printf("%s %s \033[1;35m%-15s SP  %s -> %s\033[0m\n", \
-+        substr($1,1,length($1)), \
-+        substr($2,1,length($2)), \
-+        substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
 +        substr($4,1,40), \
-+        substr($6,1,length($6)) )\
++        $6 )\
 +        } \
 +  /has spam helo/ { \
 +  printf("%s %s \033[1;35m%-15s HL  %s -> %s %s\033[0m\n", \
-+        substr($1,1,length($1)), \
-+        substr($2,1,length($2)), \
-+        substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
 +        substr($4,1,40), \
-+        substr($6,1,length($6)), \
-+        substr($10,1,length($10)) )\
++        $6, \
++        $10 )\
 +        } \
-   /Admin update:/ { \
--  printf("\033[1;33m%s %s %s %s %s %s \033[0m\n", $1, $2, $3, $4, $5, $6) \
++  /Sender Validation:blocked:/ { \
++  printf("%s %s \033[1;35m%-15s HL  %s %s\033[0m\n", \
++        $1, \
++        $2, \
++        $3, \
++        substr($4,1,40), \
++        $9 )\
++        } \
++  /recipient delayed/ { \
++  printf("%s %s \033[1;35m%-15s DL  %s -> %s\033[0m\n", \
++        $1, \
++        $2, \
++        $3, \
++        substr($4,1,40), \
++        $7 ) \
++        } \
++  /Admin (update:|connection from )/ { \
 +  printf("\033[1;33m%s\033[0m\n", $0) \
-         } \
-   /Email spamreport/ { \
--  printf("%s %s\033[0;36m %-15s SR  %s Email SPAM Submission\033[0m\n", \
++        } \
++  /[Ee]mail spamreport/ { \
 +  printf("%s %s\033[1;36m %-15s SR  %s\033[0m\n", \
-         substr($1,1,length($1)), \
-         substr($2,1,length($2)), \
-         substr($3,1,length($3)), \
-         substr($4,1,length($4)) ) \
-         } \
-   /Email hamreport/ { \
--  printf("%s %s\033[0;36m %-15s NS  %s Email NOTSPAM Submission\033[0m\n", \
++        $1, \
++        $2, \
++        $3, \
++        $4 ) \
++        } \
++  /[Ee]mail hamreport/ { \
 +  printf("%s %s\033[1;36m %-15s NS  %s\033[0m\n", \
-         substr($1,1,length($1)), \
-         substr($2,1,length($2)), \
-         substr($3,1,length($3)), \
++        $1, \
++        $2, \
++        $3, \
++        $4 ) \
+  }'
+ # end of script
+ 
