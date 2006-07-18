@@ -425,6 +425,7 @@
     SUBDIR += qmail-autoresponder
     SUBDIR += qmail-conf
     SUBDIR += qmail-contrib
+    SUBDIR += qmail-dk
     SUBDIR += qmail-ldap
     SUBDIR += qmail-mysql
     SUBDIR += qmail-notify
