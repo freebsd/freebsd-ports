@@ -9,6 +9,4 @@ sed -e "/${XFLDNAME}/d" fonts.dir > fonts.dir.tmp
 numfonts=$(echo $(cat fonts.dir.tmp | wc -l) - 1 | bc)
 echo ${numfonts} > fonts.dir
 sed -e 1d fonts.dir.tmp >> fonts.dir
-sed -e "/^${XFLDNAME}/d" fonts.alias > fonts.alias.tmp
-mv -f fonts.alias.tmp fonts.alias
 rm -f fonts.dir.tmp

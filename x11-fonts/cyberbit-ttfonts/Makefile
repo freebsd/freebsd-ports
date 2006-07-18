@@ -39,7 +39,6 @@ do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/*.ttf \
-			${FILESDIR}/fonts.alias.cyberbit \
 			${FILESDIR}/fonts.dir.cyberbit \
 			${PREFIX}/${FONTSDIR}
 .if !defined(NOPORTDOCS)
