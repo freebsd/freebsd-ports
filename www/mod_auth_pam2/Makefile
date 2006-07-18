@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/
 DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
