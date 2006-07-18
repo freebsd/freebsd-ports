@@ -20,18 +20,21 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		latex:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/share/fonts/cm-super/README:${PORTSDIR}/print/cm-super \
-		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		xdvi:${PORTSDIR}/print/xdvik
+		dvips:${PORTSDIR}/print/dvipsk-tetex
+
+OPTIONS=	LETTERSIZE "Use letter size by default" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS+=	xdvi:${PORTSDIR}/print/xdvik
+.endif
 
 # XXX: We always build in batch mode to disable OPTIONS
 #      in print/teTeX-base.
 DEPENDS_ARGS+=	BATCH=yes
 
-OPTIONS=	LETTERSIZE "Use letter size by default" off
-
 CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_LETTERSIZE)
 FLAVOR+=	letter

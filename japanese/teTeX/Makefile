@@ -20,9 +20,11 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		tex:${PORTSDIR}/print/teTeX-base \
 		ptex:${PORTSDIR}/japanese/ptex-tetex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
-		xdvi:${PORTSDIR}/japanese/xdvik \
 		jtex:${PORTSDIR}/japanese/texfamily \
 		${JTEXVF}:${PORTSDIR}/japanese/texfamily-vfn2a
+.if !defined(WITHOUT_X11)
+RUN_DEPENDS+=	xdvi:${PORTSDIR}/japanese/xdvik
+.endif
 
 JTEXVF=		${LOCALBASE}/share/texmf-local/fonts/vf/n2a/dmjsy5.vf
 TEXMFLOCAL_LSR=	${LOCALBASE}/share/texmf-local/ls-R
