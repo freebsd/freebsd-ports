@@ -2,5 +2,9 @@
 
 if [ "$2" = "POST-INSTALL" ]; then
     install -d -m 0700 -o %%ASSP_USER%% -g %%ASSP_GROUP%% %%ASSP_HOME%%
-    ln -s $PKG_PREFIX/lib/assp/*.txt %%ASSP_HOME%%
+    [ ! -f %%ASSP_HOME%%/denysmtp.txt ] && touch %%ASSP_HOME%%/denysmtp.txt && chown %%ASSP_USER%%:%%ASSP_GROUP%% %%ASSP_HOME%%/denysmtp.txt
+    ln -s $PKG_PREFIX/lib/assp/*report.txt %%ASSP_HOME%%
+    ln -s $PKG_PREFIX/lib/assp/nodelay.txt %%ASSP_HOME%%
+    ln -s $PKG_PREFIX/lib/assp/redre.txt %%ASSP_HOME%%
+    ln -s $PKG_PREFIX/lib/assp/images %%ASSP_HOME%%
 fi
