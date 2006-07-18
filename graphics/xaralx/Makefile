@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	XaraLX
-PORTVERSION?=	0.5r1175
-PORTREVISION?=	3
+PORTVERSION?=	0.6r1441
+PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
 DISTFILES?=	${PORTNAME}Src-${PORTVERSION}.tar.bz2
@@ -33,14 +33,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-wx-config=wxgtk2u-2.6-config \
 		--program-suffix=${PKGNAMESUFFIX}
-CONFIGURE_ENV+=	CPPFLAGS_APPEND="-I${LOCALBASE}/include/atk-1.0/atk \
-		-I${X11BASE}/include/gtk-2.0/gtk"
 # we're using dlmalloc because the stock libc does not have malloc_usable_size()
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
 
 USE_GMAKE=	yes
-# add wxOil with -I- appended to it before any other -I stuff, see below
-MAKE_ENV?=	INCLUDES="-I../wxOil -I- -I${LOCALBASE}/include/dlmalloc"
+MAKE_ENV?=	INCLUDES="-I${LOCALBASE}/include/dlmalloc"
 
 USE_GCC=	3.4+
 
@@ -71,19 +68,6 @@ PLIST_SUB+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 .endif
 
-.if !defined(PKGNAMESUFFIX)
-# we need to strip wxOil from the include path because it contains file
-# named strings.h which when included by /usr/include/string.h results
-# in a complete mess
-post-patch:
-	${REINPLACE_CMD} -E -e 's|-I[^[:space:]]*/wxOil[[:space:]]||g' \
-		${WRKSRC}/Makefile.am
-	${REINPLACE_CMD} -E -e 's/^CHECKSUM = md5sum$$/CHECKSUM = md5/' \
-		${WRKSRC}/wxOil/Makefile.am
-	${REINPLACE_CMD} -E \
-		-e 's/^Name=Xara LX$$/Name=Xara LX ${PORTVERSION}/' \
-		${WRKSRC}/xaralx.desktop
-.else
 post-patch:
 	${REINPLACE_CMD} -E \
 		-e 's/^Name=Xara LX$$/Name=Xara LX ${PORTVERSION}/' \
@@ -92,7 +76,6 @@ post-patch:
 		-e 's/^Exec=xaralx %F$$/Exec=xaralx${PKGNAMESUFFIX} %F/' \
 		-e 's/^TryExec=xaralx$$/TryExec=xaralx${PKGNAMESUFFIX}/' \
 		${WRKSRC}/xaralx.desktop
-.endif
 
 pre-configure:
 	cd ${WRKSRC} && \

@@ -1,22 +1,11 @@
---- configure.in.orig	Mon Jun  5 15:06:26 2006
-+++ configure.in	Mon Jun  5 15:07:19 2006
-@@ -139,7 +139,7 @@
- 	WX_CPPFLAGS="`$WXCONFIG --static=$StaticEnable --debug=$DebugEnable --unicode=yes --cppflags`"
- 	WX_CXXFLAGS="`$WXCONFIG --static=$StaticEnable --debug=$DebugEnable --unicode=yes --cxxflags | sed -e 's/-fno-exceptions//'`"
- 	WX_LIBS="`$WXCONFIG --static=$StaticEnable --debug=$DebugEnable --unicode=yes --libs`"
--	WXRC="`$WXCONFIG --utility=wxrc`"
-+	WXRC="`$WXCONFIG --utility=wxrc-gtk2u`"
+--- configure.in.orig	Tue Jun  6 15:00:31 2006
++++ configure.in	Tue Jun  6 16:43:23 2006
+@@ -173,7 +173,7 @@
+ 
+ 	if test "$InternationalEnable" = "yes"; then
+ 		AC_MSG_CHECKING([wxWidgets wxrc utility])
+-		WXRC="`$WXCONFIG --utility=wxrc`"
++		WXRC="`$WXCONFIG --utility=wxrc-gtk2u`"
  	
- 	# See if we are running on GTK
- 	WX_GTK="no"
-@@ -252,8 +252,8 @@
- fi
- 
- # pass the Pango, FreeType and GTK flags (required for wxGTK font rendering)
--CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS"
--CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS"
-+CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS $CPPFLAGS_APPEND"
-+CXXFLAGS="$CXXFLAGS $WX_CPPFLAGS $PANGO_CFLAGS $FT_CFLAGS $GTK_CFLAGS $LIBXML2_CFLAGS $CPPFLAGS_APPEND"
- 
- AC_MSG_CHECKING([Linker])
- case $host in
+ 		if test "$WXRC" = "" ; then
+ 			AC_MSG_RESULT([not found, disabling international build])
