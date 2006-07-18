@@ -7,7 +7,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.95b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,hrs/teTeX,:S,$,:udvipspatch,}
@@ -89,7 +89,8 @@ LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 
 UPDMAP_SYS=	${LOCALBASE}/bin/updmap-sys --progname=ptex
-TEXCONFIGBIN=	${LOCALBASE}/bin/texconfig-sys
+TEXCONFIGBIN=	${SETENV} TEXCONFIGINPUTS=\$$TEXMF/texconfig/ptex/ \
+			${LOCALBASE}/bin/texconfig-sys
 
 post-configure:
 	cd ${PATCH_WRKSRC} && \
