@@ -11749,6 +11749,7 @@ qmail-activedir	ports/mail/qmail-activedir
 qmail-autoresponder	ports/mail/qmail-autoresponder
 qmail-conf	ports/mail/qmail-conf
 qmail-contrib	ports/mail/qmail-contrib
+qmail-dk	ports/mail/qmail-dk
 qmail-ldap	ports/mail/qmail-ldap
 qmail-mysql	ports/mail/qmail-mysql
 qmail-notify	ports/mail/qmail-notify
