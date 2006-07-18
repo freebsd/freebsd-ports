@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Inti binding for GtkGLExt, the Open-GL extension to GTK+
 
 LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti \
-		gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_X_PREFIX=	yes
 USE_GL=		yes

@@ -17,7 +17,7 @@ EXTRACT_SUFX=	-source.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display and manipulation of isolated molecules and periodic systems
 
-LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
 USE_GNOME=	gtk20
