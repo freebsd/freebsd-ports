@@ -7,6 +7,7 @@
 
 PORTNAME=	rar
 PORTVERSION=	3.51
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files.rarlab.com/rar/ \
@@ -16,7 +17,7 @@ DISTNAME=	rarbsd-3.5.1
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	File archiver (binary port)
 
-ONLY_FOR_ARCHS=	i386 amd64 ia64
+IA32_BINARY_PORT=	YES
 NO_PACKAGE=	Only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
