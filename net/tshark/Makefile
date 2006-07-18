@@ -8,10 +8,10 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	t
+PORTNAME=	tshark
 CATEGORIES=	net ipv6
 
-MASTERDIR=	${.CURDIR}/../ethereal
+MASTERDIR=	${.CURDIR}/../wireshark
 
 WITHOUT_X11=	yes
 

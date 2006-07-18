@@ -5,13 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ethereal
-PORTVERSION=	0.99.0
-PORTREVISION?=	3
+PORTNAME?=	wireshark
+PORTVERSION=	0.99.2
+PORTREVISION?=	0
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.ethereal.com/pub/ethereal/all-versions/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.wireshark.org/download/src/
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
@@ -30,7 +28,7 @@ CONFIGURE_ARGS+=	--program-transform-name="" \
 MAKE_ENV=	MIBDIRS="/dev/null"
 INSTALLS_SHLIB=	yes
 
-.for x in capinfos editcap idl2eth mergecap text2pcap
+.for x in capinfos editcap idl2wrs mergecap text2pcap
 .if defined(LITE)
 PLIST_SUB+=		${x:U}="@comment $x not installed"
 CONFIGURE_ARGS+=	--enable-$x=no
@@ -50,14 +48,14 @@ PLIST_SUB+=	${x:U}=bin/$x
 .endfor
 
 .if !defined(WITHOUT_X11)
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-MAN1+=		ethereal.1
-PLIST_SUB+=	ETHEREAL=bin/ethereal
+MAN1+=		wireshark.1
+PLIST_SUB+=	WIRESHARK=bin/wireshark
 .if defined(WITHOUT_GTK2)
 USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--disable-gtk2
@@ -65,9 +63,9 @@ CONFIGURE_ARGS+=	--disable-gtk2
 USE_GNOME+=	gtk20
 .endif
 .else
-PLIST_SUB+=	ETHEREAL="@comment ethereal not built"
+PLIST_SUB+=	WIRESHARK="@comment wireshark not built"
 USE_GNOME+=	glib12
-CONFIGURE_ARGS+=	--enable-ethereal=no \
+CONFIGURE_ARGS+=	--enable-wireshark=no \
 			--disable-gtktest \
 			--with-gtk-prefix=/nonexistent \
 			--disable-gtk2
@@ -115,10 +113,10 @@ CONFIGURE_ARGS+=	--with-adns=no
 
 .if exists(${LOCALBASE}/lib/libgnutls.so) || defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=--with-libgnutls-prefix=${LOCALBASE}
 .endif
 
-MAN1+=	dumpcap.1 tethereal.1
-MAN4+=	ethereal-filter.4
+MAN1+=	dumpcap.1 tshark.1
+MAN4+=	wireshark-filter.4
 
 .include <bsd.port.post.mk>
