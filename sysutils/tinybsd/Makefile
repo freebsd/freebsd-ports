@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinybsd
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tinybsd.org/download/ \
 		${MASTER_SITE_LOCAL}
