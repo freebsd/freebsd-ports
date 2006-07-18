@@ -97,6 +97,8 @@ share/TeXmacs/doc/about/changes/changes-12.en.ptm
 share/TeXmacs/doc/about/changes/changes-12.en.tm
 share/TeXmacs/doc/about/changes/changes-13.en.ptm
 share/TeXmacs/doc/about/changes/changes-13.en.tm
+share/TeXmacs/doc/about/changes/changes-14.en.ptm
+share/TeXmacs/doc/about/changes/changes-14.en.tm
 share/TeXmacs/doc/about/changes/changes-2.de.tm
 share/TeXmacs/doc/about/changes/changes-2.en.ptm
 share/TeXmacs/doc/about/changes/changes-2.en.tm
@@ -1810,6 +1812,7 @@ share/TeXmacs/misc/pixmaps/tm_unequal.xpm
 share/TeXmacs/misc/pixmaps/tm_vect.xpm
 share/TeXmacs/misc/pixmaps/tm_verbatim.xpm
 share/TeXmacs/misc/pixmaps/unknown.ps
+share/TeXmacs/misc/sounds/phone.wav
 share/TeXmacs/packages/customize/number-europe.ts
 share/TeXmacs/packages/customize/number-long-article.ts
 share/TeXmacs/packages/customize/number-us.ts
@@ -1962,24 +1965,6 @@ share/TeXmacs/plugins/octave/progs/init-octave.scm
 share/TeXmacs/plugins/pari/packages/session/pari.ts
 share/TeXmacs/plugins/pari/progs/init-pari.scm
 share/TeXmacs/plugins/pari/progs/pari-menus.scm
-share/TeXmacs/plugins/proclus/TODO
-share/TeXmacs/plugins/proclus/langs/natural/dic/proclus-english-french.scm
-share/TeXmacs/plugins/proclus/packages/proclus/proclus-common.ts
-share/TeXmacs/plugins/proclus/packages/proclus/proclus-links.ts
-share/TeXmacs/plugins/proclus/packages/proclus/proclus.ts
-share/TeXmacs/plugins/proclus/progs/init-proclus.scm
-share/TeXmacs/plugins/proclus/progs/proclus-absname-editor.scm
-share/TeXmacs/plugins/proclus/progs/proclus-absname.scm
-share/TeXmacs/plugins/proclus/progs/proclus-distill.scm
-share/TeXmacs/plugins/proclus/progs/proclus-kbd.scm
-share/TeXmacs/plugins/proclus/progs/proclus-lib.scm
-share/TeXmacs/plugins/proclus/progs/proclus-list.scm
-share/TeXmacs/plugins/proclus/progs/proclus-locus.scm
-share/TeXmacs/plugins/proclus/progs/proclus-menu.scm
-share/TeXmacs/plugins/proclus/progs/proclus-source.scm
-share/TeXmacs/plugins/proclus/progs/proclus-types.scm
-share/TeXmacs/plugins/proclus/progs/proclus.scm
-share/TeXmacs/plugins/proclus/progs/search-in-tree.scm
 share/TeXmacs/plugins/python/progs/init-python.scm
 share/TeXmacs/plugins/qcl/progs/init-qcl.scm
 share/TeXmacs/plugins/qcl/progs/qcl-input.scm
@@ -2074,8 +2059,6 @@ share/TeXmacs/progs/doc/help-funcs.scm
 share/TeXmacs/progs/doc/help-menu.scm
 share/TeXmacs/progs/doc/tmdoc.scm
 share/TeXmacs/progs/doc/tmweb.scm
-share/TeXmacs/progs/dynamic/chat-edit.scm
-share/TeXmacs/progs/dynamic/chat-menu.scm
 share/TeXmacs/progs/dynamic/dynamic-drd.scm
 share/TeXmacs/progs/dynamic/fold-edit.scm
 share/TeXmacs/progs/dynamic/fold-kbd.scm
@@ -2137,10 +2120,22 @@ share/TeXmacs/progs/kernel/texmacs/tm-overload.scm
 share/TeXmacs/progs/kernel/texmacs/tm-plugins.scm
 share/TeXmacs/progs/kernel/texmacs/tm-preferences.scm
 share/TeXmacs/progs/kernel/texmacs/tm-secure.scm
+share/TeXmacs/progs/link/link-edit.scm
+share/TeXmacs/progs/link/link-extern.scm
+share/TeXmacs/progs/link/link-extract.scm
+share/TeXmacs/progs/link/link-kbd.scm
+share/TeXmacs/progs/link/link-menu.scm
+share/TeXmacs/progs/link/link-navigate.scm
+share/TeXmacs/progs/link/locus-edit.scm
 share/TeXmacs/progs/math/format-math-menu.scm
 share/TeXmacs/progs/math/math-edit.scm
 share/TeXmacs/progs/math/math-kbd.scm
 share/TeXmacs/progs/math/math-menu.scm
+share/TeXmacs/progs/remote/chat-edit.scm
+share/TeXmacs/progs/remote/chat-menu.scm
+share/TeXmacs/progs/remote/client.scm
+share/TeXmacs/progs/remote/crypt.scm
+share/TeXmacs/progs/remote/remote-menu.scm
 share/TeXmacs/progs/source/source-edit.scm
 share/TeXmacs/progs/source/source-kbd.scm
 share/TeXmacs/progs/source/source-menu.scm
@@ -2190,9 +2185,6 @@ share/TeXmacs/progs/utils/library/tree.scm
 share/TeXmacs/progs/utils/misc/markup-funcs.scm
 share/TeXmacs/progs/utils/plugins/plugin-cmd.scm
 share/TeXmacs/progs/utils/plugins/plugin-convert.scm
-share/TeXmacs/progs/utils/remote/client.scm
-share/TeXmacs/progs/utils/remote/crypt.scm
-share/TeXmacs/progs/utils/remote/remote-menu.scm
 share/TeXmacs/styles/article.ts
 share/TeXmacs/styles/book.ts
 share/TeXmacs/styles/documentation/browser.ts
@@ -2221,6 +2213,8 @@ share/TeXmacs/texts/test/fonts-2.tm
 share/TeXmacs/texts/test/fonts-3.tm
 share/TeXmacs/texts/test/fonts.tm
 share/TeXmacs/texts/test/overview.tm
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 @dirrm share/TeXmacs/texts/test
 @dirrm share/TeXmacs/texts
 @dirrm share/TeXmacs/styles/test
@@ -2230,7 +2224,6 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/styles/elsevier
 @dirrm share/TeXmacs/styles/documentation
 @dirrm share/TeXmacs/styles
-@dirrm share/TeXmacs/progs/utils/remote
 @dirrm share/TeXmacs/progs/utils/plugins
 @dirrm share/TeXmacs/progs/utils/misc
 @dirrm share/TeXmacs/progs/utils/library
@@ -2246,7 +2239,9 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/progs/texmacs
 @dirrm share/TeXmacs/progs/table
 @dirrm share/TeXmacs/progs/source
+@dirrm share/TeXmacs/progs/remote
 @dirrm share/TeXmacs/progs/math
+@dirrm share/TeXmacs/progs/link
 @dirrm share/TeXmacs/progs/kernel/texmacs
 @dirrm share/TeXmacs/progs/kernel/regexp
 @dirrm share/TeXmacs/progs/kernel/library
@@ -2295,13 +2290,6 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/plugins/qcl
 @dirrm share/TeXmacs/plugins/python/progs
 @dirrm share/TeXmacs/plugins/python
-@dirrm share/TeXmacs/plugins/proclus/progs
-@dirrm share/TeXmacs/plugins/proclus/packages/proclus
-@dirrm share/TeXmacs/plugins/proclus/packages
-@dirrm share/TeXmacs/plugins/proclus/langs/natural/dic
-@dirrm share/TeXmacs/plugins/proclus/langs/natural
-@dirrm share/TeXmacs/plugins/proclus/langs
-@dirrm share/TeXmacs/plugins/proclus
 @dirrm share/TeXmacs/plugins/pari/progs
 @dirrm share/TeXmacs/plugins/pari/packages/session
 @dirrm share/TeXmacs/plugins/pari/packages
@@ -2389,6 +2377,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/packages/documentation
 @dirrm share/TeXmacs/packages/customize
 @dirrm share/TeXmacs/packages
+@dirrm share/TeXmacs/misc/sounds
 @dirrm share/TeXmacs/misc/pixmaps
 @dirrm share/TeXmacs/misc/mime
 @dirrm share/TeXmacs/misc/latex
