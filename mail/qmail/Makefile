@@ -21,6 +21,20 @@ DIST_SUBDIR=	qmail
 
 CONFLICTS=	qmail-vida-[0-9]*
 
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_MYSQL)
+BARRIER_MAILDIRQUOTA_PATCH=	yes
+.endif
+
+.if defined(SLAVE_LDAP) || \
+    defined(SLAVE_SPAMCONTROL) || \
+    defined(SLAVE_MYSQL)
+BARRIER_BLOCKEXEC_PATCH=	yes
+BARRIER_QMAILQUEUE_PATCH=	yes
+BARRIER_SMTP_AUTH_PATCH=	yes
+BARRIER_SPF_PATCH=		yes
+.endif
+
 .if defined(SLAVE_LDAP)
 BARRIER_BIG_CONCURRENCY_PATCH=	yes
 BARRIER_DNS_PATCH=		yes
@@ -32,31 +46,6 @@ BARRIER_QMTPC_PATCH=		yes
 BARRIER_DISCBOUNCES_PATCH=	yes
 BARRIER_SENDMAIL_F_PATCH=	yes
 BARRIER_BIG_TODO_PATCH=		yes
-.endif
-
-.if defined(SLAVE_LDAP) || \
-    defined(SLAVE_MYSQL)
-BARRIER_MAILDIRQUOTA_PATCH=	yes
-.endif
-
-.if defined(SLAVE_LDAP) || \
-    defined(SLAVE_TLS) || \
-    (  \
-      !defined(SLAVE_LDAP) && \
-      !defined(SLAVE_MYSQL) && \
-      !defined(SLAVE_SPAMCONTROL) && \
-      !defined(SLAVE_TLS) \
-    )
-BARRIER_DK_PATCH=		yes
-.endif
-
-.if defined(SLAVE_LDAP) || \
-    defined(SLAVE_SPAMCONTROL) || \
-    defined(SLAVE_MYSQL)
-BARRIER_BLOCKEXEC_PATCH=	yes
-BARRIER_QMAILQUEUE_PATCH=	yes
-BARRIER_SMTP_AUTH_PATCH=	yes
-BARRIER_SPF_PATCH=		yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -150,9 +139,6 @@ OPTIONS+=	SPF_PATCH "Implement SPF checker" off
 .endif
 .if !defined(BARRIER_TARPIT_PATCH)
 OPTIONS+=	TARPIT_PATCH "Implement TARPIT functions" off
-.endif
-.if !defined(BARRIER_DK_PATCH)
-OPTIONS+=	DK_PATCH "Implement DomainKeys" off
 .endif
 .if defined(SLAVE_TLS)
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
@@ -306,16 +292,6 @@ NO_MTREE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DK_PATCH) && !defined(BARRIER_DK_PATCH)
-ALL_TARGET+=	qmail-dk.8
-MAN8+=		qmail-dk.8
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB+=	DK=""
-.else
-PLIST_SUB+=	DK="@comment "
-.endif
-
 .if defined(SLAVE_TLS)
 CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
 . if defined(WITH_TLS_DEBUG)
@@ -389,15 +365,8 @@ PATCHFILES+=	qmail-spf-rc5.patch:spf
 	||(defined(WITH_BIG_TODO_PATCH)       && !defined(BARRIER_BIG_TODO_PATCH)) \
 	||(defined(WITH_BIG_CONCURRENCY_PATCH)&& !defined(BARRIER_BIG_CONCURRENCY_PATCH)) \
 	||(defined(WITH_OUTGOINGIP_PATCH)     && !defined(BARRIER_OUTGOINGIP_PATCH)) \
-	||(defined(WITH_QMTPC_PATCH)          && !defined(BARRIER_QMTPC_PATCH)) \
-	||(defined(WITH_DK_PATCH)             && !defined(BARRIER_DK_PATCH))
+	||(defined(WITH_QMTPC_PATCH)          && !defined(BARRIER_QMTPC_PATCH))
 PATCH_SITES+=	${MASTER_SITE_QMAIL}
-.endif
-
-.if !defined(SLAVE_LDAP) && !defined(SLAVE_MYSQL) && !defined(SLAVE_SPAMCONTROL) && \
-    (!defined(WITH_QMAILQUEUE_PATCH) || defined(BARRIER_QMAILQUEUE_PATCH)) && \
-    (defined(WITH_DK_PATCH) && !defined(BARRIER_DK_PATCH))
-BROKEN=	DomainKeys patch depends QMAILQUEUE
 .endif
 
 .if defined(WITH_QMAILQUEUE_PATCH) && !defined(BARRIER_QMAILQUEUE_PATCH)
@@ -416,10 +385,6 @@ PATCHFILES+=	qmail-1.03-qmtpc_outgoingip.patch:qmtpc_outgoingip
 PATCHFILES+=	outgoingip.patch
 .elif defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
 PATCHFILES+=	qmail-1.03-qmtpc.patch
-.endif
-.if defined(WITH_DK_PATCH) && !defined(BARRIER_DK_PATCH)
-PATCHFILES+=	qmail-1.03-dk-0.54.patch
-LIB_DEPENDS+=	domainkeys.3:${PORTSDIR}/mail/libdomainkeys
 .endif
 
 .if defined(WITH_LOCALTIME_PATCH) && !defined(BARRIER_LOCALTIME_PATCH)
@@ -509,14 +474,6 @@ post-extract:
 .endif
 
 post-patch:
-.if defined(WITH_DK_PATCH)
-	@${REINPLACE_CMD} -e 's,"../domainkeys.h",<domainkeys.h>,' \
-		${WRKSRC}/qmail-dk.c
-	@${REINPLACE_CMD} -e 's,../libdomainkeys.a,${LOCALBASE}/lib/libdomainkeys.a,g' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -E 's|( *c\(auto.*")qmail-smtpd(".*)$$|\1qmail-smtpd\2\1qmail-dk\2|' \
-		${WRKSRC}/hier.c
-.endif
 .if defined(WITH_SMTP_AUTH_PATCH)
 	@${CP} ${SMTP_AUTH_DIR}/base64.[ch] ${WRKSRC}
 . if defined(SLAVE_TLS)
