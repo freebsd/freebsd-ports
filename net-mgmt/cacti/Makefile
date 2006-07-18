@@ -7,7 +7,7 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.6h
-PORTREVISION=	42
+PORTREVISION=	43
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 
@@ -23,11 +23,10 @@ PATCHFILES=	fix_search_session_clear_issue.patch \
 
 PATCH_DIST_STRIP=-p1
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
-		net-snmp-config:${PORTSDIR}/net-mgmt/net-snmp
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool
 
 USE_MYSQL=	yes
-USE_PHP=	mysql pcre session xml
+USE_PHP=	mysql pcre session snmp xml
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
