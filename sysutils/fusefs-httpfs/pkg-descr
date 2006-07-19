@@ -1,0 +1,6 @@
+httpfs depends on FUSE. It uses HTTP/1.1 extensions to read arbitrary
+bytes from a file on a web-server. This is particular interesting for
+an iso, since it can be investigated (loop device) without actually
+downloading the whole iso.
+
+WWW:	http://httpfs.sourceforge.net/

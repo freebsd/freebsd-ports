@@ -187,6 +187,7 @@
     SUBDIR += ftrace
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-funionfs
+    SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-sshfs
