@@ -1,15 +1,68 @@
 bin/glchess
+%%PYTHON_SITELIBDIR%%/glchess/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ai.py
+%%PYTHON_SITELIBDIR%%/glchess/ai.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ai.pyo
+%%PYTHON_SITELIBDIR%%/glchess/cecp.py
+%%PYTHON_SITELIBDIR%%/glchess/cecp.pyc
+%%PYTHON_SITELIBDIR%%/glchess/cecp.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.pyo
+%%PYTHON_SITELIBDIR%%/glchess/game.py
+%%PYTHON_SITELIBDIR%%/glchess/game.pyc
+%%PYTHON_SITELIBDIR%%/glchess/game.pyo
+%%PYTHON_SITELIBDIR%%/glchess/glchess.py
+%%PYTHON_SITELIBDIR%%/glchess/glchess.pyc
+%%PYTHON_SITELIBDIR%%/glchess/glchess.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/builtin_models.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/builtin_models.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/builtin_models.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/new_models.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/new_models.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/new_models.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/scene.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/scene.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/scene.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/texture.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/texture.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/texture.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.py
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyo
+share/applications/glchess.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%DATADIR%%/ai.py
-%%DATADIR%%/cecp.py
-%%DATADIR%%/chess/__init__.py
-%%DATADIR%%/chess/board.py
-%%DATADIR%%/chess/pgn.py
-%%DATADIR%%/chess/san.py
-%%DATADIR%%/game.py
-%%DATADIR%%/glchess.py
 %%DATADIR%%/gui/chess_view.glade
 %%DATADIR%%/gui/error_dialog.glade
 %%DATADIR%%/gui/glchess.glade
@@ -19,22 +72,11 @@ bin/glchess
 %%DATADIR%%/gui/new_game_simple.glade
 %%DATADIR%%/gui/save_game.glade
 %%DATADIR%%/gui/splashscreen.glade
-%%DATADIR%%/scene/__init__.py
-%%DATADIR%%/scene/builtin_models.py
-%%DATADIR%%/scene/new_models.py
-%%DATADIR%%/scene/opengl.py
-%%DATADIR%%/scene/scene.py
-%%DATADIR%%/scene/texture.py
 %%DATADIR%%/textures/black_board_texture.jpg
 %%DATADIR%%/textures/black_piece_texture.jpg
 %%DATADIR%%/textures/white_board_texture.jpg
 %%DATADIR%%/textures/white_piece_texture.jpg
 %%DATADIR%%/textures/wood_43.jpg
-%%DATADIR%%/ui/__init__.py
-%%DATADIR%%/ui/gtkui/__init__.py
-%%DATADIR%%/ui/gtkui/dialogs.py
-%%DATADIR%%/ui/gtkui/gtkui.py
-%%DATADIR%%/ui/ui.py
 share/locale/de/LC_MESSAGES/glchess.mo
 share/locale/en/LC_MESSAGES/glchess.mo
 share/locale/en_AU/LC_MESSAGES/glchess.mo
@@ -44,11 +86,15 @@ share/locale/en_US/LC_MESSAGES/glchess.mo
 @dirrmtry share/locale/en_US
 @dirrmtry share/locale/en_NZ/LC_MESSAGES
 @dirrmtry share/locale/en_NZ
-@dirrm %%DATADIR%%/ui/gtkui
-@dirrm %%DATADIR%%/ui
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
 @dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/scene
 @dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%/chess
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
+@dirrm %%PYTHON_SITELIBDIR%%/glchess
