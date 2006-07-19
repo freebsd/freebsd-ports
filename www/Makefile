@@ -781,6 +781,7 @@
     SUBDIR += p5-WWW-Search-MSN
     SUBDIR += p5-WWW-Shorten
     SUBDIR += p5-WWW-Shorten-0rz
+    SUBDIR += p5-WWW-Shorten-KUSO
     SUBDIR += p5-WWW-SourceForge
     SUBDIR += p5-WWW-Wikipedia
     SUBDIR += p5-WebService-Bloglines

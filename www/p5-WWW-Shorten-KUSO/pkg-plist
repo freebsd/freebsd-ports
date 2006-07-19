@@ -1,0 +1,9 @@
+%%SITE_PERL%%/WWW/Shorten/KUSO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/KUSO/.packlist
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/KUSO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Shorten
+@dirrmtry %%SITE_PERL%%/WWW
