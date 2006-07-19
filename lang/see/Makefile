@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/see/
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
 
-BROKEN=		fails to install
-
 CONFLICTS=	see-devel-[0-9]*
 
 OPTIONS=	GC "Use Boehm-Weiser garbage collection pkg" on \
