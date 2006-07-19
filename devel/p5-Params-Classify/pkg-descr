@@ -1,0 +1,12 @@
+This module provides various type-testing functions. These are
+intended for functions that, unlike most Perl code, care what type of
+data they are operating on. For example, some functions wish to behave
+differently depending on the type of their arguments (like overloaded
+functions in C++).
+
+These functions only provide type classification; they do not enforce
+type restrictions. Type enforcement may, of course, be built using
+these classification functions, but the reader's attention is drawn
+to Params::Validate.
+
+WWW:	http://search.cpan.org/dist/Params-Classify/

@@ -1203,6 +1203,7 @@
     SUBDIR += p5-Parallel-ForkManager
     SUBDIR += p5-Params-CallbackRequest
     SUBDIR += p5-Params-Check
+    SUBDIR += p5-Params-Classify
     SUBDIR += p5-Params-Util
     SUBDIR += p5-Params-Validate
     SUBDIR += p5-Parse-CPAN-Packages
