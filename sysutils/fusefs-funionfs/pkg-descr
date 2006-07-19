@@ -1,0 +1,6 @@
+FunionFS means an Union filesystem for the FUSE driver.
+
+This program works only with the Fuse driver which is natively
+included since the 2.6.14 Linux kernel.
+
+WWW:	http://funionfs.apiou.org/
