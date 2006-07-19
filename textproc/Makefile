@@ -607,6 +607,7 @@
     SUBDIR += p5-XML-SAX-Machines
     SUBDIR += p5-XML-SAX-Simple
     SUBDIR += p5-XML-SAX-Writer
+    SUBDIR += p5-XML-SAXDriver-CSV
     SUBDIR += p5-XML-SAXDriver-Sablotron
     SUBDIR += p5-XML-STX
     SUBDIR += p5-XML-Sablotron
