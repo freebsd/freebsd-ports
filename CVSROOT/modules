@@ -9826,6 +9826,7 @@ p5-Text-Tags	ports/textproc/p5-Text-Tags
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Textile	ports/textproc/p5-Text-Textile
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
+p5-Text-Trac	ports/textproc/p5-Text-Trac
 p5-Text-Unaccent	ports/textproc/p5-Text-Unaccent
 p5-Text-Unidecode	ports/converters/p5-Text-Unidecode
 p5-Text-VimColor	ports/textproc/p5-Text-VimColor
