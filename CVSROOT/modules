@@ -9424,6 +9424,7 @@ p5-Parallel-Pvm	ports/net/p5-Parallel-Pvm
 p5-ParallelUA	ports/www/p5-ParallelUA
 p5-Params-CallbackRequest	ports/devel/p5-Params-CallbackRequest
 p5-Params-Check	ports/devel/p5-Params-Check
+p5-Params-Classify	ports/devel/p5-Params-Classify
 p5-Params-Util	ports/devel/p5-Params-Util
 p5-Params-Validate	ports/devel/p5-Params-Validate
 p5-Parse-CPAN-Packages	ports/devel/p5-Parse-CPAN-Packages
