@@ -86,5 +86,6 @@
     SUBDIR += x11iraf
     SUBDIR += xloops-ginac
     SUBDIR += xmakemol
+    SUBDIR += xmds
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,7 @@
+include/getopt_xmds.h
+lib/libxmds.a
+bin/loadxsil.m
+bin/xmds
+include/xmdscomplex.h
+include/xmdsconfig.h
+bin/xsil2graphics
