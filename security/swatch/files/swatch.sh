@@ -23,7 +23,6 @@ name=swatch
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/swatch
-sig_stop=SIGTERM
 
 load_rc_config ${name}
 

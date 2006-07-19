@@ -24,7 +24,5 @@ required_files=%%PREFIX%%/etc/rsyncmanager.xml
 
 load_rc_config $name
 
-sig_stop=-TERM
-
 extra_commands="reload"
 run_rc_command "$1"
