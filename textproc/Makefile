@@ -912,6 +912,7 @@
     SUBDIR += xpp3
     SUBDIR += xslide.el
     SUBDIR += xslint
+    SUBDIR += xstream
     SUBDIR += xt
     SUBDIR += xxdiff
     SUBDIR += y2l
