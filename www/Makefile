@@ -756,6 +756,7 @@
     SUBDIR += p5-W3C-LinkChecker
     SUBDIR += p5-W3C-LogValidator
     SUBDIR += p5-WWW-Babelfish
+    SUBDIR += p5-WWW-Comic
     SUBDIR += p5-WWW-Curl
     SUBDIR += p5-WWW-Dilbert
     SUBDIR += p5-WWW-Google-News
