@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	stumbleupon
-PORTVERSION=	2.78
-DISTVERSIONSUFFIX=	-fx+fl+mz+ns
+PORTVERSION=	2.82
+DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
