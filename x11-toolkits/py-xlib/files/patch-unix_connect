@@ -1,0 +1,14 @@
+--- Xlib/support/unix_connect.py-orig	Tue Jul 18 15:34:34 2006
++++ Xlib/support/unix_connect.py	Tue Jul 18 15:35:10 2006
+@@ -23,7 +23,10 @@
+ import os
+ import socket
+ import fcntl
+-import FCNTL
++try:
++    import FCNTL
++except ImportError:
++    FCNTL = fcntl
+ 
+ from Xlib import error
+ 
