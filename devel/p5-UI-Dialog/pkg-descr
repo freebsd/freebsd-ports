@@ -1,0 +1,13 @@
+UI::Dialog is a OOPerl wrapper for the various dialog applications. These
+dialog backends are currently supported: Zenity, XDialog, GDialog, KDialog,
+CDialog, and Whiptail. There is also an ASCII backend provided as a last resort
+interface for the console based dialog variants. UI::Dialog is a class that
+provides a strict interface to these various backend modules. By using
+UI::Dialog (with it's imposed limitations on the widgets) you can ensure that
+your Perl program will function with any available interfaces.
+
+WWW: http://search.cpan.org/dist/UI-Dialog
+
+---
+
+Dmitry Karasik <dmitry@karasik.eu.org>

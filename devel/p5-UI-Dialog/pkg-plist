@@ -1,0 +1,36 @@
+%%SITE_PERL%%/UI/Dialog.pm
+%%SITE_PERL%%/UI/Dialog.pod
+%%SITE_PERL%%/UI/Dialog/Backend/XDialog.pod
+%%SITE_PERL%%/UI/Dialog/Backend/KDialog.pod
+%%SITE_PERL%%/UI/Dialog/Backend/GDialog.pod
+%%SITE_PERL%%/UI/Dialog/Backend/Nautilus.pod
+%%SITE_PERL%%/UI/Dialog/Backend/ASCII.pod
+%%SITE_PERL%%/UI/Dialog/Backend/Zenity.pod
+%%SITE_PERL%%/UI/Dialog/Backend/XOSD.pod
+%%SITE_PERL%%/UI/Dialog/Backend/CDialog.pod
+%%SITE_PERL%%/UI/Dialog/Backend/Whiptail.pod
+%%SITE_PERL%%/UI/Dialog/Backend/XDialog.pm
+%%SITE_PERL%%/UI/Dialog/Backend/KDialog.pm
+%%SITE_PERL%%/UI/Dialog/Backend/GDialog.pm
+%%SITE_PERL%%/UI/Dialog/Backend/CDialog.pm
+%%SITE_PERL%%/UI/Dialog/Backend/Nautilus.pm
+%%SITE_PERL%%/UI/Dialog/Backend/ASCII.pm
+%%SITE_PERL%%/UI/Dialog/Backend/Zenity.pm
+%%SITE_PERL%%/UI/Dialog/Backend/XOSD.pm
+%%SITE_PERL%%/UI/Dialog/Backend/Whiptail.pm
+%%SITE_PERL%%/UI/Dialog/Backend.pm
+%%SITE_PERL%%/UI/Dialog/KDE.pm
+%%SITE_PERL%%/UI/Dialog/Console.pm
+%%SITE_PERL%%/UI/Dialog/GNOME.pm
+%%SITE_PERL%%/UI/Dialog/Gauged.pm
+%%SITE_PERL%%/UI/Dialog/Backend.pod
+%%SITE_PERL%%/UI/Dialog/KDE.pod
+%%SITE_PERL%%/UI/Dialog/Console.pod
+%%SITE_PERL%%/UI/Dialog/GNOME.pod
+%%SITE_PERL%%/UI/Dialog/Gauged.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/UI/Dialog/.packlist
+@dirrm %%SITE_PERL%%/UI/Dialog/Backend
+@dirrm %%SITE_PERL%%/UI/Dialog
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UI/Dialog
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UI
+@dirrmtry %%SITE_PERL%%/UI
