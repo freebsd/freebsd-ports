@@ -9329,6 +9329,7 @@ p5-OLE-Storage_Lite	ports/devel/p5-OLE-Storage_Lite
 p5-OOTools	ports/devel/p5-OOTools
 p5-ORBit	ports/devel/p5-ORBit
 p5-Object-Accessor	ports/devel/p5-Object-Accessor
+p5-Object-Declare	ports/devel/p5-Object-Declare
 p5-Object-Enum	ports/devel/p5-Object-Enum
 p5-Object-InsideOut	ports/devel/p5-Object-InsideOut
 p5-Object-MultiType	ports/devel/p5-Object-MultiType
