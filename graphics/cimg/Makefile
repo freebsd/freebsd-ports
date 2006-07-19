@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cimg
-DISTVERSION=	1-14
-PORTREVISION=	1
+DISTVERSION=	1-15
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -70,6 +69,7 @@ do-install:
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@(cd ${EXAMPLESDIR} && ${MAKE} clean)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} ${EXAMPLESDIR}
+	${FIND} ${DOCSDIR} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
 
 .include <bsd.port.mk>

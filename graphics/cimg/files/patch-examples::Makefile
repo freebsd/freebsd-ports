@@ -1,18 +1,18 @@
---- examples/Makefile.orig	Thu May 18 15:11:56 2006
-+++ examples/Makefile	Thu May 18 21:04:55 2006
+--- examples/Makefile.orig	Wed Jul 19 09:41:26 2006
++++ examples/Makefile	Wed Jul 19 14:31:27 2006
 @@ -7,10 +7,10 @@
  # -----------------------------------------------------------------------------------
  
  # Set correct variables and paths
 -CC      = g++
 -X11PATH = /usr/X11R6
--CFLAGS  = -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
+-CFLAGS  = -Wall -W -ansi -pedantic -ffast-math -I$(X11PATH)/include
 -LDFLAGS = -lm
 +CC      = $(CXX)
 +#X11PATH = /usr/X11R6
-+#CFLAGS  = -Wall -ansi -pedantic -ffast-math -I$(X11PATH)/include
++#CFLAGS  = -Wall -W -ansi -pedantic -ffast-math -I$(X11PATH)/include
 +#LDFLAGS = -lm
- CIMGVER = 1.14
+ CIMGVER = 1.15
  
  CIMGFILES = CImg_demo \
 @@ -38,7 +38,7 @@
