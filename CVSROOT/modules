@@ -9851,6 +9851,7 @@ p5-Tie-Syslog	ports/sysutils/p5-Tie-Syslog
 p5-Tie-iCal	ports/devel/p5-Tie-iCal
 p5-Time-Clock	ports/devel/p5-Time-Clock
 p5-Time-Duration	ports/devel/p5-Time-Duration
+p5-Time-Duration-Parse	ports/devel/p5-Time-Duration-Parse
 p5-Time-HiRes	ports/devel/p5-Time-HiRes
 p5-Time-Human	ports/textproc/p5-Time-Human
 p5-Time-Local	ports/devel/p5-Time-Local
