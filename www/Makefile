@@ -783,6 +783,7 @@
     SUBDIR += p5-WWW-Shorten-0rz
     SUBDIR += p5-WWW-Shorten-KUSO
     SUBDIR += p5-WWW-SourceForge
+    SUBDIR += p5-WWW-VenusEnvy
     SUBDIR += p5-WWW-Wikipedia
     SUBDIR += p5-WebService-Bloglines
     SUBDIR += p5-WebService-NoPaste
