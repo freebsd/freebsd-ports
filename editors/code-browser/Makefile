@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +30,7 @@ PLIST_DIRS=	%%DATADIR%%
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386; signal 11 errors during build"
+BROKEN=		does not build on !i386; signal 11 errors during build
 .endif
 
 post-patch:
