@@ -147,6 +147,7 @@
     SUBDIR += taskstep
     SUBDIR += teapot
     SUBDIR += timer-applet
+    SUBDIR += todo
     SUBDIR += tomboy
     SUBDIR += tpb
     SUBDIR += treeline
