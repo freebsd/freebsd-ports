@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buici-clock
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.5
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.buici.com/pub/buici-clock/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,5 +22,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=	buici-clock.1
+PLIST_FILES=	bin/buici-clock
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,_=,+=,' ${WRKSRC}/xo/Makefile.in
 
 .include <bsd.port.mk>

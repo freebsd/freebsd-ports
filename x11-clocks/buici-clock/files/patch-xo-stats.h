@@ -1,5 +1,5 @@
---- xo/stats.h.orig	Thu Dec  9 10:02:22 2004
-+++ xo/stats.h	Thu Dec  9 10:03:35 2004
+--- xo/stats.h.orig	Wed Jul 12 02:06:02 2006
++++ xo/stats.h	Wed Jul 12 02:06:18 2006
 @@ -39,6 +39,8 @@
    /* ----- Includes */
  
