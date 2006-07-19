@@ -10,18 +10,17 @@
 # bfilter_enable="YES"
 #
 
-bfilter_enable=${bfilter_enable-"NO"}
-bfilter_flags=${bfilter_flags-"-c %%PREFIX%%/etc/bfilter"}
-
 . %%RC_SUBR%%
-
-load_rc_config bfilter
 
 name=bfilter
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/${name}
-sig_stop=-KILL
+sig_stop=KILL
 
 load_rc_config ${name}
+
+bfilter_enable=${bfilter_enable-"NO"}
+bfilter_flags=${bfilter_flags-"-c %%PREFIX%%/etc/bfilter"}
+
 run_rc_command "$1"
