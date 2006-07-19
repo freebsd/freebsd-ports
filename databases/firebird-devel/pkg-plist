@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-@unexec rm -f %%LOCALBASE%%/etc/rc.d/000.firebird.sh
 firebird/README
 firebird/UDF/fbudf.so
 firebird/UDF/fbudf.sql
