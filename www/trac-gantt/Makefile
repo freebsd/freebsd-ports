@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TracGantt
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ideas.water-powered.com/gantt/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
