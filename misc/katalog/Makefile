@@ -9,7 +9,7 @@ PORTNAME=	katalog
 PORTVERSION=	0.3
 PORTREVISION=	3
 CATEGORIES=	misc kde
-MASTER_SITES=	http://salvaste.altervista.org/
+MASTER_SITES=	http://salvaste.altervista.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD organizer for KDE
