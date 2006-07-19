@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pawm
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pleyades.net/pawm/files/
 
