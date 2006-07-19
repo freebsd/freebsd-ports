@@ -6,27 +6,31 @@
 #
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.30
+PORTVERSION=	1.33
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/ \
 		http://bouncycastle.gva.es/download/
 DISTNAME=	crypto-${DISTVERSION}
 
-MAINTAINER=	glewis@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.2+
 NO_BUILD=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JDKMVERSION=	${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1\2/}
 DISTVERSION=	${PORTVERSION:S/.//}
 
+JARS=		bcprov bcmail bctsp bcpg bctest
+
+PORTDOCS=	*
+
 do-install:
-	cd ${WRKSRC}/jars && \
-	  for jar in *.jar; do \
-	    ${INSTALL_DATA} $${jar} \
-	      ${JAVAJARDIR}/`echo $${jar} | sed -e "s/-${DISTVERSION}//"`; \
-	  done
+.for jar in ${JARS}
+	${INSTALL_DATA} ${WRKSRC}/jars/${jar}-jdk${JDKMVERSION}-${DISTVERSION}.jar \
+	      ${JAVAJARDIR}/${jar}.jar
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
