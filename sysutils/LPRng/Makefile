@@ -7,6 +7,7 @@
 
 PORTNAME=	LPRng
 PORTVERSION=	3.8.28
+PORTREVISION=	1
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
@@ -35,8 +36,8 @@ CONFIGURE_ARGS=	\
 		--with-sbindir=${PREFIX}/sbin \
 		--with-filterdir=${PREFIX}/libexec/filters \
 		--with-filter_path="${PREFIX}/bin:/bin:/usr/bin:${PREFIX}/sbin:/sbin:/usr/sbin" \
-		--with-lpd_conf_path=${PREFIX}/etc/lpd.conf \
-		--with-lpd_perms_path=${PREFIX}/etc/lpd.perms \
+		--with-lpd_conf_path=${SYSCONFDIR}/lpd.conf \
+		--with-lpd_perms_path=${SYSCONFDIR}/lpd.perms \
 		--with-printcap_path=/etc/printcap \
 		--with-ld_library_path="${PREFIX}/lib:/lib:/usr/lib:/${LOCALBASE}/lib" \
 		--enable-gdbm=${LOCALBASE}
@@ -90,8 +91,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lpd.conf ${SYSCONFDIR}/lpd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/lpd.perms ${SYSCONFDIR}/lpd.perms.sample
 	@${INSTALL_DATA} ${WRKSRC}/printcap ${SYSCONFDIR}/printcap.sample
-	@${MKDIR} ${PREFIX}/etc/rc.d
-	@${INSTALL_DATA} ${WRKSRC}/init.freebsd ${PREFIX}/etc/rc.d/lprng.sh
+	@${MKDIR} ${LOCALBASE}/etc/rc.d
+	@${INSTALL_DATA} ${WRKSRC}/init.freebsd ${LOCALBASE}/etc/rc.d/lprng.sh
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}/Reference
