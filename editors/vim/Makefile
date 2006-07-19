@@ -69,6 +69,10 @@ MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} <= 500000
+BROKEN=		does not compile on 4.X; use editors/vim6 instead
+.endif
+
 .if !defined(LITE)
 MAKE_ARGS+=	CONF_OPT_FEAT="--with-features=big"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
