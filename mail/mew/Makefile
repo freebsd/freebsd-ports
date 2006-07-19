@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mew
-PORTVERSION=	4.2
+PORTVERSION=	5.1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.Mew.org/Release/ \
 		${MASTER_SITE_PORTS_JP}
@@ -39,7 +39,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCSDIR}
 	(cd ${WRKSRC} ; \
-		${INSTALL_DATA} 00* ${PREFIX}/${DOCSDIR}/ ; \
+		${INSTALL_DATA} 00* mew.dot.* ${PREFIX}/${DOCSDIR}/ ; \
 		for dir in contrib; do \
 			${CP} -R $${dir} ${PREFIX}/${DOCSDIR}/ ; \
 		done)

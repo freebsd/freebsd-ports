@@ -1,37 +1,42 @@
---- bin/Makefile.in.orig	Thu Mar  6 19:42:22 2003
-+++ bin/Makefile.in	Wed Feb  1 12:34:41 2006
-@@ -26,6 +26,8 @@
+--- bin/Makefile.in.orig	Tue Mar 15 16:51:31 2005
++++ bin/Makefile.in	Tue Jul 11 19:41:47 2006
+@@ -25,7 +25,8 @@
+ COFLAG = -o $@ 
  LIBS = @LIBS@
  
- INSTALL = @INSTALL@
+-INSTALL = @INSTALL@
 +INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_DATA = @INSTALL_DATA@
  LN = ln
  RM = rm -f
  MKDIR = mkdir -p
-@@ -95,19 +97,19 @@
- 	-@if [ ! -d $(bindir) ]; then \
- 		$(MKDIR) $(bindir); \
+@@ -97,23 +98,23 @@
+ 	-@if [ ! -d $(DESTDIR)$(bindir) ]; then \
+ 		$(MKDIR) $(DESTDIR)$(bindir); \
  	fi
--	$(INSTALL) -m 555 $(PRG1) $(bindir)
-+	${INSTALL_PROGRAM} $(PRG1) $(bindir)
+-	$(INSTALL) -m 555 $(PRG1) $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} $(PRG1) $(DESTDIR)$(bindir)
  	for f in $(ALT); do \
- 	  $(RM) $(bindir)/$${f}; $(LN) $(bindir)/$(PRG1) $(bindir)/$${f}; done
--	$(INSTALL) -m 555 $(PRG2) $(bindir)
--	$(INSTALL) -m 555 $(PRG3) $(bindir)
-+	${INSTALL_PROGRAM} $(PRG2) $(bindir)
-+	${INSTALL_PROGRAM} $(PRG3) $(bindir)
- 	-@if [ ! -d $(mandir) ]; then \
- 		$(MKDIR) $(mandir); \
+ 		$(RM) $(DESTDIR)$(bindir)/$${f}; \
+ 		$(LN) $(DESTDIR)$(bindir)/$(PRG1) $(DESTDIR)$(bindir)/$${f}; \
+ 	done
+-	$(INSTALL) -m 555 $(PRG2) $(DESTDIR)$(bindir)
+-	$(INSTALL) -m 555 $(PRG3) $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} $(PRG2) $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} $(PRG3) $(DESTDIR)$(bindir)
+ 	-@if [ ! -d $(DESTDIR)$(mandir) ]; then \
+ 		$(MKDIR) $(DESTDIR)$(mandir); \
  	fi
--	$(INSTALL) -m 444 $(MAN1) $(mandir)
-+	${INSTALL_DATA} $(MAN1) $(mandir)
+-	$(INSTALL) -m 444 $(MAN1) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN1) $(DESTDIR)$(mandir)
  	for f in $(MALT); do \
- 	  $(RM) $(mandir)/$${f}; $(LN) $(mandir)/$(MAN1) $(mandir)/$${f}; done
--	$(INSTALL) -m 444 $(MAN2) $(mandir)
--	$(INSTALL) -m 444 $(MAN3) $(mandir)
-+	${INSTALL_DATA} $(MAN2) $(mandir)
-+	${INSTALL_DATA} $(MAN3) $(mandir)
+ 		$(RM) $(DESTDIR)$(mandir)/$${f}; \
+ 		$(LN) $(DESTDIR)$(mandir)/$(MAN1) $(DESTDIR)$(mandir)/$${f}; \
+ 	done
+-	$(INSTALL) -m 444 $(MAN2) $(DESTDIR)$(mandir)
+-	$(INSTALL) -m 444 $(MAN3) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN2) $(DESTDIR)$(mandir)
++	${INSTALL_DATA} $(MAN3) $(DESTDIR)$(mandir)
  
  ##
  ## End of Makefile
