@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cduce
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/
 
@@ -19,27 +19,26 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		${LOCALBASE}/lib/ocaml/site-lib/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
 
-BROKEN=		Does not compile
-
 # Support for url via ftp/ocaml-ocurl
-.if !defined(WITHOUT_OCURL)
+.if defined(WITH_OCURL)
+BROKEN=		error while linking curl.cma - please do not enable Curl support until fixed.
 BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/curl/curl.cmi:${PORTSDIR}/ftp/ocaml-ocurl
 .endif
 
 # Support for the PXP XML parser
 .if defined(WITH_OCAML_EXPAT)
-BUILD_DEPENDS+=${LOCALBASE}/lib/ocaml/site-lib/expat/expat.cmi:${PORTSDIR}/textproc/ocaml-expat
+BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/expat/expat.cmi:${PORTSDIR}/textproc/ocaml-expat
 .else
-BUILD_DEPENDS+=${LOCALBASE}/lib/ocaml/site-lib/pxp-engine/pxp_engine.cma:${PORTSDIR}/textproc/ocaml-pxp
+BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/pxp-engine/pxp_engine.cma:${PORTSDIR}/textproc/ocaml-pxp
 .endif
 
 # Configure : use ocamlopt and don't look for netclient or pxp_wlex
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ocamlopt --without-netclient --without-pxp_wlex
 
-# Be sure to not build ocurl support if WITHOUT_OCURL is defined,
+# Be sure to not build ocurl support if WITH_OCURL is not defined,
 # even if ocurl is present.
-.if defined(WITHOUT_OCURL)
+.if !defined(WITH_OCURL)
 CONFIGURE_ARGS+=	--without-curl
 .endif
 
@@ -52,7 +51,8 @@ CONFIGURE_ARGS+=	--without-expat --with-pxp
 
 # Support for OCaml/CDuce interface
 .if !defined(WITHOUT_MLIFACE)
-CONFIGURE_ARGS+=	--mliface=${LOCALBASE}/lib/ocaml/compiler-lib
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/lang/ocaml:patch
+CONFIGURE_ARGS+=	--mliface=`cd ${PORTSDIR}/lang/ocaml; ${MAKE} -V WRKSRC`
 .endif
 
 USE_GMAKE=	yes
@@ -70,15 +70,15 @@ INSTALL_TARGET+=	install_doc
 PORTDOCS=		*
 .endif
 
-MAN1=		cduce.1 cdo2ml.1 cduce_mktop.1
+MAN1=		cduce.1 cduce_mktop.1 dtd2cduce.1
 
 PKGDEINSTALL=	${PKGINSTALL}
 FINDLIB_PKGNAME=${PORTNAME}
 
-PLIST_FILES=	bin/cduce
+PLIST_FILES=	bin/cduce bin/dtd2cduce
 
 .if !defined(WITHOUT_MLIFACE)
-PLIST_FILES+=	bin/cdo2ml bin/mlcduce_wrapper bin/cduce_mktop
+PLIST_FILES+=	bin/cduce_mktop
 .endif
 
 post-install:
@@ -98,7 +98,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may define the following build options:"
 	@${ECHO} ""
-	@${ECHO} "	WITHOUT_CURL		Disable url support via ftp/ocaml-ocurl (=> no url support)"
+	@${ECHO} "	WITH_CURL		Enable url support via ftp/ocaml-ocurl (=> no url support by default)"
 	@${ECHO} "	WITH_OCAML_EXPAT	Enable support for the Expat XML parser."
 	@${ECHO} "	WITHOUT_MLIFACE		Disable building OCaml/CDuce interface."
 	@${ECHO} ""
