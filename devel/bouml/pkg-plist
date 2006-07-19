@@ -252,6 +252,7 @@ bin/bouml
 %%DATADIR%%/empty/131968.bodies
 %%DATADIR%%/empty/132224.bodies
 %%DATADIR%%/empty/132480.bodies
+%%DATADIR%%/empty/132736.bodies
 %%DATADIR%%/empty/1408.bodies
 %%DATADIR%%/empty/1536.bodies
 %%DATADIR%%/empty/1664.bodies
@@ -401,6 +402,8 @@ bin/bouml
 %%DATADIR%%/html/132482.bodies
 %%DATADIR%%/html/132608.bodies
 %%DATADIR%%/html/132738.bodies
+%%DATADIR%%/html/132864.bodies
+%%DATADIR%%/html/132994.bodies
 %%DATADIR%%/html/1408.bodies
 %%DATADIR%%/html/1536.bodies
 %%DATADIR%%/html/1664.bodies
