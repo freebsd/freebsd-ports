@@ -8,6 +8,7 @@
 
 PORTNAME=	Lingua-ZH-TaBE
 PORTVERSION=	0.07
+PORTREVISION=	1
 CATEGORIES=	chinese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -16,7 +17,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Chinese processing via libtabe
 
-LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
+LIB_DEPENDS=	tabe.3:${PORTSDIR}/chinese/libtabe
 
 PERL_CONFIGURE=	yes
 
@@ -27,11 +28,18 @@ CONFIGURE_ARGS=	DB="${BDB_LIB_NAME}"
 
 MAN3=		Lingua::ZH::TaBE.3
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may specify db version to use:"
-	@${ECHO} ""
-	@${ECHO} "	WITH_DB_VER=version	(Default 41)"
-	@${ECHO} ""
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You may specify db version to use:"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "	WITH_BDB_VER=version	(Default 41)"
+.if defined(WITH_BDB_VER)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "WARNING:"
+	@${ECHO_CMD} "	You have defined WITH_BDB_VER. Make sure you use the same"
+	@${ECHO_CMD} "	db version that libtabe uses. Otherwise, this port may"
+	@${ECHO_CMD} "	not work correctly."
+.endif
+	@${ECHO_CMD} ""
 
 .include <bsd.port.mk>
