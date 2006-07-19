@@ -351,6 +351,7 @@
     SUBDIR += p5-File-CounterFile
     SUBDIR += p5-File-Sort
     SUBDIR += p5-Geo-Cache
+    SUBDIR += p5-Geo-Postcodes
     SUBDIR += p5-Geo-Weather
     SUBDIR += p5-Geography-Countries
     SUBDIR += p5-I18N-Charset
