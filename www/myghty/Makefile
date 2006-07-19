@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	myghty
-PORTVERSION=	0.98c
+PORTVERSION=	1.0.1
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Myghty-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Myghty is a Python based templating framework
+COMMENT=	A Python based templating framework
+
+BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=yes
+NO_BUILD=	yes
+PLIST_SUB=	VERSION="${PORTVERSION}" PYVER="${PYTHON_VERSION:S/python//}"
+
+do-install:
+	cd ${BUILD_WRKSRC} \
+		&& ${PYTHON_CMD} setup.py install --old-and-unmanageable
 
 .include <bsd.port.mk>
