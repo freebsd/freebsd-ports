@@ -1,6 +1,6 @@
---- src/preferences_dialog.cc.orig	Tue Dec 28 16:22:48 2004
-+++ src/preferences_dialog.cc	Thu Jul 14 00:42:56 2005
-@@ -32,8 +32,10 @@
+--- src/preferences_dialog.cc.orig	Mon May 22 00:44:30 2006
++++ src/preferences_dialog.cc	Tue Jul 18 23:06:23 2006
+@@ -34,8 +34,10 @@
  #include "support.h"
  #include "commands.h"
  #include "message.h"
@@ -11,7 +11,7 @@
  
  	/* Declare callbacks for the jogshuttle handling */
  	static void
-@@ -65,9 +67,13 @@
+@@ -67,9 +69,13 @@
  		GtkWidget* glade_menuitem;
  		GtkWidget* widget;
  		int currentNode, itemCount = 0, currentItem = 0;
@@ -25,34 +25,28 @@
  
  		media_ctrl_key *mkeys;
  		
-@@ -321,6 +327,7 @@
+@@ -309,6 +315,7 @@
  
  		widget = lookup_widget( dialog, "optionmenu_avc_phyid" );
  
 +#if 0
- #ifdef LIBRAW1394_OLD
- 
- 		if ( ( handle = raw1394_get_handle() ) )
-@@ -383,6 +390,7 @@
- 				handle = NULL;
+ 		if ( ( handle = raw1394_new_handle() ) )
+ 		{
+ 			raw1394_portinfo ports[MAX_1394_PORTS];
+@@ -370,6 +377,7 @@
+ 				}
  			}
  		}
 +#endif
  
  		gtk_option_menu_set_menu ( GTK_OPTION_MENU ( widget ), glade_menu );
  		gtk_option_menu_set_history( GTK_OPTION_MENU( widget ), currentItem );
-@@ -422,6 +430,7 @@
+@@ -406,7 +414,9 @@
  	void
  	on_avc_phyid_activate( GtkMenuItem * menu_item, gpointer user_data )
  	{
 +#if 0
- 		nodeid_t currentNode = ( nodeid_t )( long )user_data;
- 		static raw1394handle_t handle;
- #ifdef LIBRAW1394_OLD
-@@ -441,6 +450,7 @@
- 		}
- 		raw1394_destroy_handle( handle );
- 		handle = NULL;
+ 		strncpy( Preferences::getInstance().avcGUID, (char *) user_data, 64 );
 +#endif
  	}
  

@@ -1,6 +1,6 @@
---- src/Makefile.in.bak	Fri Nov 25 20:27:49 2005
-+++ src/Makefile.in	Mon Nov 28 21:44:34 2005
-@@ -200,8 +200,6 @@
+--- src/Makefile.in.orig	Tue Jul 18 23:15:15 2006
++++ src/Makefile.in	Tue Jul 18 23:16:30 2006
+@@ -203,8 +203,6 @@
  LIBOBJS = @LIBOBJS@
  LIBQUICKTIME_CFLAGS = @LIBQUICKTIME_CFLAGS@
  LIBQUICKTIME_LIBS = @LIBQUICKTIME_LIBS@
@@ -9,21 +9,21 @@
  LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
  LIBXML2_CFLAGS = @LIBXML2_CFLAGS@
-@@ -348,8 +346,6 @@
+@@ -352,8 +350,6 @@
  EXTRA_kino_SOURCES = cmd_ref.c
  kino_LDADD = \
  	$(LIBDV_LIBS) \
 -	$(LIBRAW1394_LIBS) \
 -	$(LIBAVC1394_LIBS) \
+ 	$(LIBIEC61883_LIBS) \
  	$(LIBQUICKTIME_LIBS) \
  	$(ALSA_LIBS) \
- 	$(LIBXML2_LIBS) \
-@@ -361,8 +357,6 @@
+@@ -366,8 +362,6 @@
  kino_LDFLAGS = -export-dynamic
  INCLUDES = -Wall \
  	$(LIBDV_CFLAGS) \
 -	$(LIBRAW1394_CFLAGS) \
 -	$(LIBAVC1394_CFLAGS) \
+ 	$(LIBIEC61883_CFLAGS) \
  	$(LIBQUICKTIME_CFLAGS) \
  	$(ALSA_CFLAGS) \
- 	$(LIBXML2_CFLAGS) \

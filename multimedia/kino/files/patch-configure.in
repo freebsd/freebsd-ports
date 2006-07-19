@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Nov 21 00:01:31 2005
-+++ configure.in	Mon Nov 28 21:39:59 2005
-@@ -40,29 +40,29 @@
+--- configure.in.orig	Tue Apr 25 20:18:28 2006
++++ configure.in	Tue Jul 18 23:14:58 2006
+@@ -40,32 +40,32 @@
  AC_SUBST(LIBDV_CFLAGS)
  AC_SUBST(LIBDV_LIBS)
  
@@ -10,44 +10,47 @@
 +#PKG_CHECK_MODULES(LIBRAW1394, libraw1394 >= 1.0.0, AC_DEFINE(HAVE_LIBRAW1394, 1, [libraw1394 present]))
 +#AC_SUBST(LIBRAW1394_CFLAGS)
 +#AC_SUBST(LIBRAW1394_LIBS)
+ LIBS="$LIBS $LIBRAW1394_LIBS -lm"
+ CFLAGS="$CFLAGS $LIBRAW1394_CFLAGS"
  
+ # LIBAVC1394 and LIBROM1394
 -AC_CHECK_HEADER([libavc1394/avc1394.h], ,
 -	[AC_MSG_ERROR([avc1394.h not found, install libavc1394-devel])
 -])
 -AC_CHECK_LIB(avc1394, avc1394_vcr_record, ,
--	[AC_MSG_ERROR([Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer])],
--	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS])
+-	[AC_MSG_ERROR([Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer])]
+-)
 -AC_CHECK_HEADER([libavc1394/rom1394.h], ,
 -	[AC_MSG_ERROR([rom1394.h not found, install libavc1394-devel])
 -])
 -AC_CHECK_LIB(rom1394, rom1394_get_node_type, ,
--	[AC_MSG_ERROR([Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer])],
--	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS -lm])
+-	[AC_MSG_ERROR([Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer])]
+-)
 +#AC_CHECK_HEADER([libavc1394/avc1394.h], ,
 +#	[AC_MSG_ERROR([avc1394.h not found, install libavc1394-devel])
 +#])
 +#AC_CHECK_LIB(avc1394, avc1394_vcr_record, ,
-+#	[AC_MSG_ERROR([Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer])],
-+#	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS])
++#	[AC_MSG_ERROR([Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer])]
++#)
 +#AC_CHECK_HEADER([libavc1394/rom1394.h], ,
 +#	[AC_MSG_ERROR([rom1394.h not found, install libavc1394-devel])
 +#])
 +#AC_CHECK_LIB(rom1394, rom1394_get_node_type, ,
-+#	[AC_MSG_ERROR([Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer])],
-+#	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS -lm])
++#	[AC_MSG_ERROR([Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer])]
++#)
  
 -AC_CHECK_LIB(pthread, pthread_create, ,
--	[AC_MSG_ERROR([You need the pthread library to compile kino])],
--	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS -lm])
+-	[AC_MSG_ERROR([You need the pthread library to compile kino])]
+-)
 -AC_CHECK_LIB(dl, dlopen, ,
--	[AC_MSG_ERROR([You need libdl to compile kino])],
--	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS -lm])
+-	[AC_MSG_ERROR([You need libdl to compile kino])]
+-)
 +#AC_CHECK_LIB(pthread, pthread_create, ,
-+#	[AC_MSG_ERROR([You need the pthread library to compile kino])],
-+#	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS -lm])
++#	[AC_MSG_ERROR([You need the pthread library to compile kino])]
++#)
 +#AC_CHECK_LIB(dl, dlopen, ,
-+#	[AC_MSG_ERROR([You need libdl to compile kino])],
-+#	[$LIBRAW1394_CFLAGS $LIBRAW1394_LIBS -lm])
++#	[AC_MSG_ERROR([You need libdl to compile kino])]
++#)
  
  # ######################################################################
- # checks for optional ALSA packages
+ # checks for optional packages

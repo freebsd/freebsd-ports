@@ -71,6 +71,11 @@ share/gnome/kino/help/time.html
 share/gnome/kino/help/trim.html
 share/gnome/kino/help/ui.html
 share/gnome/kino/scripts/help.sh
+share/gnome/kino/scripts/dvdauthor/dvdauthor-k3b.sh
+share/gnome/kino/scripts/dvdauthor/dvdauthor.sh
+share/gnome/kino/scripts/dvdauthor/growisofs.sh
+share/gnome/kino/scripts/dvdauthor/none.sh
+share/gnome/kino/scripts/dvdauthor/qdvdauthor.sh
 share/gnome/kino/scripts/exports/extract_chapters
 share/gnome/kino/scripts/exports/ffmpeg2theora.sh
 share/gnome/kino/scripts/exports/ffmpeg_3gp.sh
@@ -84,8 +89,10 @@ share/gnome/kino/scripts/exports/ffmpeg_h264_dual.sh
 share/gnome/kino/scripts/exports/ffmpeg_mp3.sh
 share/gnome/kino/scripts/exports/ffmpeg_mp4.sh
 share/gnome/kino/scripts/exports/ffmpeg_mp4_dual.sh
+share/gnome/kino/scripts/exports/ffmpeg_utils.sh
 share/gnome/kino/scripts/exports/ffmpeg_vcd.sh
 share/gnome/kino/scripts/exports/mencoder.sh
+share/gnome/kino/scripts/exports/mencoder_dual.sh
 share/gnome/kino/scripts/exports/rawplay.sh
 share/gnome/kino/scripts/import/media.sh
 share/gnome/kino/scripts/publish/frame.sh
@@ -127,18 +134,22 @@ share/gnome/kino/lumas/symmetric_clock.png
 share/gnome/pixmaps/kino.png
 share/locale/cs/LC_MESSAGES/kino.mo
 share/locale/da/LC_MESSAGES/kino.mo
+share/locale/de/LC_MESSAGES/kino.mo
 share/locale/es/LC_MESSAGES/kino.mo
-share/locale/fr/LC_MESSAGES/kino.mo
-share/locale/it/LC_MESSAGES/kino.mo
-share/locale/no/LC_MESSAGES/kino.mo
-share/locale/sv/LC_MESSAGES/kino.mo
-share/locale/nb/LC_MESSAGES/kino.mo
 share/locale/eu/LC_MESSAGES/kino.mo
+share/locale/fr/LC_MESSAGES/kino.mo
+share/locale/hu/LC_MESSAGES/kino.mo
+share/locale/it/LC_MESSAGES/kino.mo
+share/locale/nb/LC_MESSAGES/kino.mo
+share/locale/no/LC_MESSAGES/kino.mo
+share/locale/ru/LC_MESSAGES/kino.mo
+share/locale/sv/LC_MESSAGES/kino.mo
 share/mime/packages/kino.xml
 @dirrm include/kino
 @dirrm lib/kino-gtk2
 @dirrm share/gnome/kino/help
 @dirrm share/gnome/kino/lumas
+@dirrm share/gnome/kino/scripts/dvdauthor
 @dirrm share/gnome/kino/scripts/exports
 @dirrm share/gnome/kino/scripts/import
 @dirrm share/gnome/kino/scripts/publish
