@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- contrib/libcext_lgpl/Makefile
 +++ contrib/libcext_lgpl/Makefile
-@@ -12,7 +12,7 @@
- # Darwin
+@@ -19,7 +19,7 @@
  
- AR=libtool -static -o
--OBJS = poll.o pthread_adds.o gethostby_r.o getnetby_r.o getprotoby_r.o getpw_r.o getservby_r.o
+ # FreeBSD
+ AR=ar r
+-OBJS = gethostby_r.o getnetby_r.o getprotoby_r.o getpw_r.o getservby_r.o
 +OBJS = getpw_r.o
+ endif
  
- HEADERS = poll.h pthread_adds.h
- else
+ libcext_lgpl.a:  $(OBJS)
