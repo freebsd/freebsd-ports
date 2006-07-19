@@ -9204,6 +9204,7 @@ p5-Net-BitTorrent-File	ports/net-p2p/p5-Net-BitTorrent-File
 p5-Net-Blogger	ports/net/p5-Net-Blogger
 p5-Net-CIDR	ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite	ports/net/p5-Net-CIDR-Lite
+p5-Net-CSTA	ports/net/p5-Net-CSTA
 p5-Net-DAAP-Client	ports/audio/p5-Net-DAAP-Client
 p5-Net-DAAP-DMAP	ports/audio/p5-Net-DAAP-DMAP
 p5-Net-DBus	ports/devel/p5-Net-DBus
