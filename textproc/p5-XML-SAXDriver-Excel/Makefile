@@ -1,0 +1,28 @@
+# New ports collection makefile for:	XML-SAXDriver-Excel
+# Date created:	   30 May 2002
+# Whom:		   chinsan <chinsan.tw@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	XML-SAXDriver-Excel
+PORTVERSION=	0.06
+CATEGORIES=	textproc perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	XML
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	chinsan.tw@gmail.com
+COMMENT=	Perl SAX driver for converting Excel files to XML
+
+BUILD_DEPENDS=	\
+	p5-Spreadsheet-ParseExcel>=0.2603:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
+	p5-XML-SAX>=0.14:${PORTSDIR}/textproc/p5-XML-SAX
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
+
+MAN3=		XML::SAXDriver::Excel.3
+
+.include <bsd.port.mk>
