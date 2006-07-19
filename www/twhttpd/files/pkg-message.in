@@ -1,5 +1,5 @@
 ***************************************************************************
-twhttpd is installed in /usr/local/sbin/
-Now copy /usr/local/etc/twhttpd.cfg.sample to twhttpd.cfg, 
+twhttpd is installed in %%PREFIX%%/sbin/
+Now copy %%PREFIX%%/etc/twhttpd.cfg.sample to twhttpd.cfg, 
 and edit it.
 ***************************************************************************

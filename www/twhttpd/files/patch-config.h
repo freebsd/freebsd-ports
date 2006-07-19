@@ -5,7 +5,7 @@
  #define DEFAULT_CACHE_DIR     ".cache"
  #define DEFAULT_COOKIE_DIR    ".cookie"
 -#define DEFAULT_CONFIG_FILE   "/etc/twhttpd.cfg"
-+#define DEFAULT_CONFIG_FILE   "/usr/local/etc/twhttpd.cfg"
++#define DEFAULT_CONFIG_FILE   "%%PREFIX%%/etc/twhttpd.cfg"
  
  #define SOCKET_TIMEOUT    45      /* socket timeout value */
  #define CONNECT_TIMEOUT   15      /* connect timeout value */
