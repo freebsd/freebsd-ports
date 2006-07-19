@@ -19,7 +19,7 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
-sig_stop=-KILL
+sig_stop=KILL
 
 load_rc_config ${name}
 run_rc_command "$1"

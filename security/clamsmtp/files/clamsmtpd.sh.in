@@ -29,6 +29,6 @@ command=%%PREFIX%%/sbin/${name}
 command_args="-f ${clamsmtpd_conf} -p ${clamsmtpd_pid}"
 required_files=${clamsmtpd_conf}
 pidfile=${clamsmtpd_pid}
-sig_stop=-KILL
+sig_stop=KILL
 
 run_rc_command "$1"
