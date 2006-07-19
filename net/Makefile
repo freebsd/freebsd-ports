@@ -414,6 +414,7 @@
     SUBDIR += p5-Net-BGP
     SUBDIR += p5-Net-Blogger
     SUBDIR += p5-Net-CIDR-Lite
+    SUBDIR += p5-Net-CSTA
     SUBDIR += p5-Net-DHCP
     SUBDIR += p5-Net-DHCPClient
     SUBDIR += p5-Net-DLookup
