@@ -1,0 +1,11 @@
+Test::Output provides a simple interface for testing output sent to
+STDOUT or STDERR. A number of different utilies are included to try
+and be as flexible as possible to the tester.
+
+Originally this module was designed not to have external requirements,
+however, the features provided by Sub::Exporter over what Exporter
+provides is just to great to pass up.
+
+Test::Output ties STDOUT and STDERR using Test::Output::Tie.
+
+WWW:	http://search.cpan.org/dist/Test-Output/
