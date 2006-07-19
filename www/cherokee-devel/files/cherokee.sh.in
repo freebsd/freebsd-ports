@@ -11,7 +11,7 @@
 # cherokee_enable (bool):	Set it to "YES" to enable cherokee
 #				Default is "NO".
 # cherokee_conf (path):		Set full path to config file.
-#				Default is "%%PREFIX%%/etc/cherokee.conf".
+#				Default is "%%PREFIX%%/etc/cherokee/cherokee.conf".
 #
 
 . %%RC_SUBR%%
