@@ -10055,6 +10055,7 @@ p5-XML-SAX-ExpatXS	ports/textproc/p5-XML-SAX-ExpatXS
 p5-XML-SAX-Machines	ports/textproc/p5-XML-SAX-Machines
 p5-XML-SAX-Simple	ports/textproc/p5-XML-SAX-Simple
 p5-XML-SAX-Writer	ports/textproc/p5-XML-SAX-Writer
+p5-XML-SAXDriver-CSV	ports/textproc/p5-XML-SAXDriver-CSV
 p5-XML-SAXDriver-Sablotron	ports/textproc/p5-XML-SAXDriver-Sablotron
 p5-XML-STX	ports/textproc/p5-XML-STX
 p5-XML-Sablotron	ports/textproc/p5-XML-Sablotron
