@@ -78,6 +78,19 @@ upgrades.
   will be necessary to run slapindex after making this change. There
   has been no change to actual data storage schema.
 
+20060711:
+  AFFECTS: users of games/linux-ut
+  AUTHOR: netchild@FreeBSD.org, sean-freebsd@farley.org
+
+  Some fixes for network play were done in UnrealTournament.ini
+  There are two ways to fix it:
+  1. The easy way is to remove the ${HOME}/.loki/ut directory, yet all
+     local settings will be lost.
+  2. The hard way:  in ${HOME}/.loki/ut/UnrealTrounament.ini, under the
+     [Core.System] section, SavePath, CachePath and multiple Paths
+     variables should be replaced with the ones in (and in the same order
+     as) ${PREFIX}/share/linux-ut/System/UnrealTournament.ini.
+
 20060707:
   AFFECTS: users of www/lifetype
   AUTHOR: clsung@FreeBSD.org
@@ -218,6 +231,18 @@ upgrades.
   To upgrade you have to run
 	portupgrade -f -o emulators/linux_base-fc4 linux_base\*
 	portupgrade -f -o x11/linux-xorg-libs linux-XFree86-libs
+
+  In case "printenv | grep LD_" prints something, e.g., LD_LIBRARY_PATH
+  or LD_PRELOAD, you have to make sure it is not set when starting
+  linux programs, else FreeBSD libraries will be picked up and the
+  programs do not start.
+
+  After this start a linux program to test, e.g., acrorread. If you get
+  errors when starting linux programs about problems with libraries, and
+  you made sure no LD_* variable is set as described above, you are one of
+  those unlucky people where we do not have a better solution as to tell
+  you to deinstall every linux port, remove /compat/linux completely to
+  make sure no cruft is left and reinstall everything you need.
 
 20060612:
   AFFECTS: users of editors/staroffice60, editors/staroffice70 and
