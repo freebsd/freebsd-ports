@@ -5,6 +5,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/ASyncReply.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Annotation.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Error.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/RemoteObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Service.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Object.pm
@@ -29,6 +30,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Binding/Message/Error.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Test/MockConnection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Test/MockObject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Test/MockIterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Test/MockMessage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial/UsingObjects.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DBus/Tutorial/ExportingObjects.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DBus

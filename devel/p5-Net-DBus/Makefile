@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DBus
-PORTVERSION=	0.33.2
+PORTVERSION=	0.33.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -36,7 +36,9 @@ MAN3=	Net::DBus::ASyncReply.3 Net::DBus::Annotation.3 Net::DBus::Tutorial.3 \
 	Net::DBus::Binding::Introspector.3 Net::DBus::Callback.3 \
 	Net::DBus::Binding::Message::MethodReturn.3 \
 	Net::DBus::Binding::Message::MethodCall.3 \
-	Net::DBus::Binding::Message::Error.3
+	Net::DBus::Binding::Message::Error.3 \
+	Net::DBus::Error.3 Net::DBus::Test::MockIterator.3 \
+	Net::DBus::Test::MockMessage.3
 
 .include <bsd.port.pre.mk>
 
