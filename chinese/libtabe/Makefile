@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	libtabe
-PORTVERSION=	0.2.5
-PORTREVISION=	3
+PORTVERSION=	0.2.6
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/libtabe/devel/
+MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Unified library for Chinese text processing
 
-WRKSRC=		${WRKDIR}/libtabe
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BDB=	yes
 OBSOLETE_BDB_VAR=	USE_DB2
-NOT_FOR_ARCHS=	amd64
 DATADIR=	${PREFIX}/share/tabe
 DOCSDIR=	${PREFIX}/share/doc/tabe
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -31,6 +28,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-db-bin=${LOCALBASE}/bin \
 		--enable-shared
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11=""
@@ -39,16 +38,15 @@ CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 pre-everything::
 .if defined(WITH_BDB_VER)
-	@${ECHO} ""
-	@${ECHO} "WARNING:"
-	@${ECHO} "	You have defined WITH_BDB_VER. Make sure you use the same"
-	@${ECHO} "	db version for all ports that use libtabe, such as xcin."
-	@${ECHO} "	Otherwise, ports that use libtabe may not work correctly."
-	@${ECHO} ""
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "WARNING:"
+	@${ECHO_CMD} "	You have defined WITH_BDB_VER. Make sure you use the same"
+	@${ECHO_CMD} "	db version for all ports that use libtabe, such as xcin."
+	@${ECHO_CMD} "	Otherwise, ports that use libtabe may not work correctly."
+	@${ECHO_CMD} ""
 .endif
 
 post-patch:
@@ -68,7 +66,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${DOCSDIR}
 .endfor
 .endif
-	${MKDIR} ${DATADIR}
-	${TOUCH} ${DATADIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.post.mk>

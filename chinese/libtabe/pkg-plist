@@ -1,18 +1,17 @@
 bin/tsiadd
 bin/tsidel
 bin/tsidump
+bin/tsiguess
 bin/tsiyincheck
 bin/tsiyindump
 %%X11%%include/tabe/bims.h
 include/tabe/tabe.h
 %%X11%%lib/libbims.a
-%%X11%%lib/libbims.la
 %%X11%%lib/libbims.so
-%%X11%%lib/libbims.so.2
+%%X11%%lib/libbims.so.3
 lib/libtabe.a
-lib/libtabe.la
 lib/libtabe.so
-lib/libtabe.so.2
+lib/libtabe.so.3
 lib/tabe/tsi.db
 lib/tabe/yin.db
 %%PORTDOCS%%%%DOCSDIR%%/BoPoMoFo.shtml
@@ -24,8 +23,6 @@ lib/tabe/yin.db
 %%PORTDOCS%%%%DOCSDIR%%/ZuYinCode.txt
 %%PORTDOCS%%%%DOCSDIR%%/et26.txt
 %%PORTDOCS%%%%DOCSDIR%%/libtabe.sgml
-%%DATADIR%%/libtabe-0.2.5
 @dirrm include/tabe
 @dirrm lib/tabe
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

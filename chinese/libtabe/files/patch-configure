@@ -1,69 +1,46 @@
---- configure.orig	Sat Oct 20 07:03:29 2001
-+++ configure	Mon May  1 10:53:24 2006
-@@ -22,6 +22,8 @@
- ac_help="$ac_help
-   --with-db-bin=PATH      set the binary dir of Berkeley DB2/3."
- ac_help="$ac_help
-+  --with-db-name=NAME     set the library name of Berkeley DB."
-+ac_help="$ac_help
-   --enable-shared[=PKGS]  build shared libraries [default=yes]"
- ac_help="$ac_help
-   --enable-static[=PKGS]  build static libraries [default=yes]"
-@@ -790,6 +792,14 @@
-   :
- fi
- 
-+# Check whether --with-db_name or --without-db_name was given.
-+if test "${with_db_name+set}" = set; then
-+  withval="$with_db_name"
-+    test x$withval != x && with_db_name="$withval"
-+else
-+    with_db_name='db'
-+fi;
-+
- 
- if test "$program_prefix" != NONE; then
-     program_prefix="$program_prefix/"
-@@ -5315,18 +5325,22 @@
-   cat conftest.$ac_ext >&5
- fi
- rm -f conftest*
--test "$ac_cv_search_db_create" = "no" && for i in db db3; do
-+test "$ac_cv_search_db_create" = "no" && for i in $with_db_name; do
- LIBS="-l$i  $ac_func_search_save_LIBS"
+--- configure.orig	Mon Sep 20 01:16:48 2004
++++ configure	Sat Apr 22 01:18:43 2006
+@@ -18984,6 +18984,10 @@
+ else
+   ac_check_lib_save_LIBS=$LIBS
+ LIBS="-l$dbname  $LIBS"
 +__db_create="db_create"
-+if [ "$i" = "db-4.2" ]; then
++if [ "$dbname" = "db-4.2" ]; then
 +  __db_create="db_create_4002"
 +fi
- cat > conftest.$ac_ext <<EOF
- #line 5322 "configure"
- #include "confdefs.h"
- /* Override any gcc2 internal prototype to avoid an error.  */
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -18997,11 +19001,11 @@
+ #endif
  /* We use char because int might match the return type of a gcc2
-     builtin and then its argument prototype would still apply.  */
--char db_create();
-+char $__db_create();
+    builtin and then its argument prototype would still apply.  */
+-char db_create ();
++char $__db_create ();
+ int
+ main ()
+ {
+-db_create ();
++$__db_create ();
+   ;
+   return 0;
+ }
+@@ -19253,7 +19257,9 @@
+ #endif
+ if(errno) return errno;
  
- int main() {
--db_create()
-+$__db_create()
- ; return 0; }
- EOF
- if { (eval echo configure:5333: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -5385,7 +5399,7 @@
-   cat conftest.$ac_ext >&5
- fi
- rm -f conftest*
--test "$ac_cv_search_db_open" = "no" && for i in db db2; do
-+test "$ac_cv_search_db_open" = "no" && for i in $with_db_name; do
- LIBS="-l$i  $ac_func_search_save_LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 5392 "configure"
-@@ -6219,6 +6233,7 @@
- s%@with_db_inc@%$with_db_inc%g
- s%@with_db_lib@%$with_db_lib%g
- s%@with_db_bin@%$with_db_bin%g
-+s%@with_db_name@%$with_db_name%g
- s%@USE_DB@%$USE_DB%g
- s%@x_includes@%$x_includes%g
- s%@x_libraries@%$x_libraries%g
+-#if DB_VERSION >= 303011
++#if DB_VERSION >= 403000
++errno = dbp->stat(dbp, NULL, &sp, 0);
++#elif DB_VERSION >= 303011
+ errno = dbp->stat(dbp, &sp, 0);
+ #else
+ errno = dbp->stat(dbp, &sp, NULL, 0);
+@@ -20833,6 +20839,7 @@
+ s,@with_db_inc@,$with_db_inc,;t t
+ s,@with_db_lib@,$with_db_lib,;t t
+ s,@with_db_bin@,$with_db_bin,;t t
++s,@with_db_name@,$with_db_name,;t t
+ s,@x_includes@,$x_includes,;t t
+ s,@x_libraries@,$x_libraries,;t t
+ s,@build_supports@,$build_supports,;t t
