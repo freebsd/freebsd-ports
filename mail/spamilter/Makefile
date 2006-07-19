@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--with-popauth
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-.if ${OSVERSION} >= 700015
+.if ${OSVERSION} >= 700015 || (${OSVERSION} < 700000 && ${OSVERSION} >= 601103)
 CONFIGURE_ARGS+=	--have-resn
 .endif
 
