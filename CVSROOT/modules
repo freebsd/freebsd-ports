@@ -8714,6 +8714,7 @@ p5-Geo-Distance	ports/math/p5-Geo-Distance
 p5-Geo-IP	ports/net/p5-Geo-IP
 p5-Geo-IPfree	ports/net/p5-Geo-IPfree
 p5-Geo-METAR	ports/astro/p5-Geo-METAR
+p5-Geo-Postcodes	ports/misc/p5-Geo-Postcodes
 p5-Geo-Proj4	ports/graphics/p5-Geo-Proj4
 p5-Geo-ShapeFile	ports/devel/p5-Geo-ShapeFile
 p5-Geo-Weather	ports/misc/p5-Geo-Weather
