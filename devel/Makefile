@@ -1165,6 +1165,7 @@
     SUBDIR += p5-OOTools
     SUBDIR += p5-ORBit
     SUBDIR += p5-Object-Accessor
+    SUBDIR += p5-Object-Declare
     SUBDIR += p5-Object-Enum
     SUBDIR += p5-Object-InsideOut
     SUBDIR += p5-Object-MultiType
