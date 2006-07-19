@@ -13579,6 +13579,7 @@ tnftp		ports/ftp/tnftp
 tnftpd		ports/ftp/tnftpd
 tnt		ports/devel/tnt
 tochnog		ports/cad/tochnog
+todo		ports/deskutils/todo
 togl		ports/graphics/togl
 tolkien-ttf	ports/x11-fonts/tolkien-ttf
 tolua		ports/lang/tolua
