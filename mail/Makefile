@@ -399,6 +399,7 @@
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix1
     SUBDIR += postfix21
+    SUBDIR += postfix22
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postilion

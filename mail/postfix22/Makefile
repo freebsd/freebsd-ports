@@ -29,12 +29,12 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-# blanket approval for version updates: mnag@FreeBSD.org
 MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* postfix-2.3.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-13-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+
 USE_SUBMAKE=	yes
 USE_RC_SUBR=	postfix.sh
 
@@ -71,7 +71,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
 		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
 
-# Default requirement for postfix rcNG
+# Default requirement for postfix rc script
 _REQUIRE=	DAEMON
 
 pre-fetch:

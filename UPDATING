@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060719:
+  AFFECTS: users of mail/postfix
+  AUTHOR: mnag@FreeBSD.org
+
+  mail/postfix are updated to 2.3.0, and now doesn't support POSTFIX_OPTIONS,
+  consider using "make config" to set your OPTIONS. Patch SPF are removed too,
+  this patch doesn't apply cleanly and have problems when use pipe(8). Consider
+  using mail/postfix-policyd-spf instead of patch SPF.
+
+  If you need of Postfix 2.2 version you can found in mail/postfix22.
+
 20060715:
   AFFECTS: users of Aspell or its versions bundled with dictionaries
   AUTHOR: thierry@FreeBSD.org
