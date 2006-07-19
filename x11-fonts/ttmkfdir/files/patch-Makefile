@@ -1,23 +1,41 @@
---- Makefile.orig	Thu Mar 14 14:03:49 2002
-+++ Makefile	Sun Jan 22 20:15:17 2006
-@@ -1,10 +1,7 @@
--FREETYPE_BASE=/usr/include/freetype2
--FREETYPE_INCL=-I$(FREETYPE_BASE)/.
--FREETYPE_LIB=/usr/lib/libfreetype.so
--
+--- Makefile.orig	Mon Dec  9 19:07:14 2002
++++ Makefile	Wed Jul 19 11:35:12 2006
+@@ -16,7 +16,6 @@
+ RELEASE=$(shell rpm -q --qf "%{release}\n" --specfile $(NAME).spec | head -1)
+ 
+ CVSTAG = r$(subst .,_,$(VERSION))
+-CVSROOT = $(shell cat CVS/Root)
+ 
+ # Autodetec the proper command used to build RPM packages
+ RPMBUILD=$(shell [ -x /usr/bin/rpmbuild ] && echo rpmbuild || echo rpm)
+@@ -24,11 +23,8 @@
+ FREETYPE_INCL=$(shell freetype-config --cflags)
+ FREETYPE_LIB=$(shell freetype-config --libs)
+ 
+-OPTFLAGS=
 -DEBUG=-ggdb
 -CXX=g++
--CXXFLAGS=-Wall -pedantic $(FREETYPE_INCL) $(DEBUG)
-+FREETYPE_INCL=`freetype-config --cflags`
-+FREETYPE_LIB=`freetype-config --libs`
- 
+-CXXFLAGS=-Wall -pedantic $(FREETYPE_INCL) $(DEBUG) $(OPTFLAGS)
 -LDFLAGS=$(FREETYPE_LIB) $(DEBUG)
-+CXXFLAGS+=$(FREETYPE_INCL)
-+
-+LDFLAGS+=$(FREETYPE_LIB)
++CXXFLAGS+=-Wall $(FREETYPE_INCL)
++LDFLAGS+=$(FREETYPE_LIB) -lz
  
-@@ -21,3 +18,3 @@
+ DESTDIR=
+ PREFIX=/usr
+@@ -39,13 +35,13 @@
+ all: ttmkfdir
+ 
+ .cpp.o:
+-	libtool --mode=compile $(CXX) $(CXXFLAGS) -o $@ -c $^
++	$(CXX) $(CXXFLAGS) -o $@ -c $^
+ 
+ ttmkfdir: ttmkfdir.o directory.o commandline.o ttf.o encoding.o parser.o builtin.o
+-	libtool --mode=link $(CXX) -o $@ $^ $(LDFLAGS)
++	$(CXX) -o $@ $^ $(LDFLAGS)
+ 
  parser.cpp: encoding.l
 -	    flex -i -8 -o$@ $<
 +	    lex -i -8 -o$@ $<
  
+ install:
+ 	mkdir -p $(DESTDIR)$(BINDIR)
