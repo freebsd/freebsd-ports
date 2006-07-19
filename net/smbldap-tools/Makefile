@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.2a
 CATEGORIES=	net
-MASTER_SITES=	http://www.idealx.com/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,8 +18,11 @@ COMMENT=	Useful package for managing users and groups in a LDAP directory
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Crypt/SmbHash.pm:${PORTSDIR}/security/p5-Crypt-SmbHash \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/${PERL_ARCH}/Unicode/Map8.pm:${PORTSDIR}/converters/p5-Unicode-MapUTF8
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/a//}
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -32,6 +36,7 @@ DOC_HTML_LIST =	contents_motif.gif index.html next_motif.gif \
 		smbldap-tools010.html
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure.pl
 	@${PERL} -pi -e 's#/etc/samba#${PREFIX}/etc#' ${WRKSRC}/configure.pl \
 							${WRKSRC}/smb.conf \
 							${WRKSRC}/smbldap_tools.pm
