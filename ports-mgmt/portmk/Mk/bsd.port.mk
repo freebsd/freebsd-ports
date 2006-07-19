@@ -1147,6 +1147,29 @@ IGNORE= you have to use i386 (or compatible) platform to use this port.
 .endif
 .endif
 
+# Check the compatibility layer for amd64/ia64
+
+.if ${ARCH} == "amd64" || ${ARCH} =="ia64"
+.if exists(/usr/lib32)
+HAVE_COMPAT_IA32_LIBS?=  YES
+.endif
+.if !defined(HAVE_COMPAT_IA32_KERN)
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -a compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
+.endif
+.endif
+
+.if defined(IA32_BINARY_PORT) && ${ARCH} != "i386"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if !defined(HAVE_COMPAT_IA32_KERN)
+IGNORE= you need a kernel with compiled-in IA32 compatibility to use this port.
+.elif !defined(HAVE_COMPAT_IA32_LIBS)
+IGNORE= you need the 32-bit libraries installed under /usr/lib32 to use this port.
+.endif
+.else
+IGNORE= you have to use i386 (or compatible) platform to use this port.
+.endif
+.endif
+
 # If they exist, include Makefile.inc, then architecture/operating
 # system specific Makefiles, then local Makefile.local.
 
@@ -3863,7 +3886,7 @@ install-ldconfig-file:
 .endif
 	@${ECHO_MSG} "===>   Installing 32-bit ldconfig configuration file"
 .if defined(NO_LDCONFIG_MTREE)
-	@${MKDIR} ${LDCONFIG_32DIR}
+	@${MKDIR} ${PREFIX}/${LDCONFIG_32DIR}
 .endif
 	@${ECHO_CMD} ${USE_LDCONFIG32} | ${TR} ' ' '\n' \
 		> ${PREFIX}/${LDCONFIG32_DIR}/${UNIQUENAME}
