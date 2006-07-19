@@ -1,0 +1,34 @@
+--- Makefile.orig	Wed Jul 19 21:27:48 2006
++++ Makefile	Wed Jul 19 21:43:08 2006
+@@ -2,14 +2,19 @@
+ 
+ PROG=	linux_kdump
+ SRCS=	kdump.c linux_ioctl.c subr.c syscallnames.c
++.if exists(${SRCDIR}/usr.bin/kdump/kdump_subr.h)
++SRCS+=	kdump_subr.c
++CLEANFILES+=kdump_subr.c
++.endif
+ CLEANFILES+=linux_ioctl.c syscallnames.c
+ 
+ BINDIR=	/bin
+ DESTDIR=${PREFIX}
+ MANDIR=	/man/man
+ SRCDIR?=/usr/src
++LINUXBASE?=/compat/linux
+ 
+-CFLAGS+=-I${SRCDIR}/usr.bin/ktrace -I${SRCDIR}
++CFLAGS+=-I${SRCDIR}/usr.bin/ktrace -I${SRCDIR}/usr.bin/kdump -I${SRCDIR}
+ .PATH:	${SRCDIR}/usr.bin/ktrace
+ 
+ default:	depend all
+@@ -22,5 +27,10 @@
+ 
+ linux_ioctl.c: mkioctls.linux
+ 	/bin/sh ${.CURDIR}/mkioctls.linux
++
++.if exists(${SRCDIR}/usr.bin/kdump/kdump_subr.h)
++kdump_subr.c: ${SRCDIR}/usr.bin/kdump/mksubr
++	/bin/sh ${SRCDIR}/usr.bin/kdump/mksubr ${LINUXBASE}/usr/include > ${.TARGET}
++.endif
+ 
+ .include <bsd.prog.mk>
