@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	ttmkfdir
-PORTVERSION=	20021109
-PORTREVISION=	1
+PORTVERSION=	3.0.9
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts x11
-MASTER_SITES=	http://people.redhat.com/yshao/
-DISTNAME=	${PORTNAME}2
+MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Create fonts.scale file for use with TrueType font server
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-USE_AUTOTOOLS=	libtool:15:env
 PLIST_FILES=	bin/ttmkfdir
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 
-MAKE_ENV=	LDFLAGS="${LDFLAGS}" CXX="${CXX}"
+MAKE_ENV=	LDFLAGS="${LDFLAGS}" CXXFLAGS="${CFLAGS}" CXX="${CXX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttmkfdir ${PREFIX}/bin

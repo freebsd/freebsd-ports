@@ -1,6 +1,6 @@
---- ttf.h.orig	Wed Mar 13 19:16:38 2002
-+++ ttf.h	Sun Mar 21 22:30:16 2004
-@@ -3,15 +3,18 @@
+--- ttf.h.orig	Wed Jul 19 11:36:47 2006
++++ ttf.h	Wed Jul 19 11:36:50 2006
+@@ -3,16 +3,19 @@
  #define TTF_H__
  
  #include <string>
@@ -20,8 +20,18 @@
  
  #include "util.h"
  #include "encoding.h"
-+
-+using namespace std;
  
++using namespace std;
++
  namespace ttf {
+ 
+     class Face {
+@@ -49,7 +52,7 @@
+ 	TT_Postscript	    *post;
+ 	std::string	    FileName;
+     };
+-};
++}
+ 
+ #endif /* TTF_H__ */
  
