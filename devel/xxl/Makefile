@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xxl
-PORTVERSION=		1.0.0
+PORTVERSION=		1.0.1
 CATEGORIES=		devel
 MASTER_SITES=		http://www.zork.org/software/
 
@@ -16,5 +16,6 @@ COMMENT=		C and C++ that provides exception handling and asset management
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--without-threads
 INSTALLS_SHLIB=		yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
