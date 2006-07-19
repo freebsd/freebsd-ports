@@ -1,3 +1,4 @@
+%%DIG_TOOLS%%bin/ftimes-crv2raw.pl
 %%DIG_TOOLS%%bin/ftimes-dig2ctx.pl
 %%DIG_TOOLS%%bin/hipdig.pl
 %%HASHDIG_TOOLS%%bin/hashdig-bash.pl
