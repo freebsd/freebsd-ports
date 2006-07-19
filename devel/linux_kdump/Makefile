@@ -7,7 +7,7 @@
 
 PORTNAME=	linux_kdump
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcel
@@ -15,10 +15,11 @@ MASTER_SITE_SUBDIR=	marcel
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux-compatability ktrace.out processor
 
-BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
+BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/emulators/linux_base-gentoo-stage3
 
-ONLY_FOR_ARCHS=	i386
-MAN1=		linux_kdump.1
+ONLY_FOR_ARCHS=	i386 amd64
+MAN1=		linux_kdump.1.gz
+NOMANCOMPRESS=	true
 PLIST_FILES=	bin/linux_kdump
 
 .include <bsd.port.pre.mk>
@@ -35,10 +36,13 @@ pre-everything::
 .endif
 
 .if !exists(${SRCDIR}/sys/i386/linux/syscalls.master)
-IGNORE=		"requires kernel source present in ${SRCDIR}/sys"
+IGNORE=	requires kernel source present in ${SRCDIR}/sys
 .endif
 .if !exists(${SRCDIR}/usr.bin/ktrace/subr.c)
-IGNORE=		"requires ktrace source present in ${SRCDIR}/usr.bin/ktrace"
+IGNORE=	requires ktrace source present in ${SRCDIR}/usr.bin/ktrace
+.endif
+.if exists(${LINUXBASE}/etc/fedora-release)
+IGNORE=	does not build with the default linux base, use the package instead
 .endif
 
 .include <bsd.port.post.mk>
