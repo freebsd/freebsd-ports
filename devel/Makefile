@@ -1127,6 +1127,7 @@
     SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-Message
     SUBDIR += p5-Log-Message-Simple
+    SUBDIR += p5-Log-Simple
     SUBDIR += p5-Log-TraceMessages
     SUBDIR += p5-Luka
     SUBDIR += p5-Mac-FileSpec-Unixish
