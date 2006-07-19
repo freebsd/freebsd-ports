@@ -15035,6 +15035,7 @@ xspringies	ports/games/xspringies
 xspy		ports/security/xspy
 xstarroll	ports/x11/xstarroll
 xstow		ports/sysutils/xstow
+xstream		ports/textproc/xstream
 xstroke		ports/x11/xstroke
 xsu		ports/sysutils/xsu
 xsvg		ports/graphics/xsvg
