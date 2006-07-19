@@ -25,7 +25,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	An alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+CONFLICTS=	courier-0.* postfix-2.* postfix-current-2.* sendmail-8.* \
+		sendmail-*-8.* smail-3.* zmailer-2.*
 
 LATEST_LINK=	${PORTNAME}1
 USE_SUBMAKE=	yes

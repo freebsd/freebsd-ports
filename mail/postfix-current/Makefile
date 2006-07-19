@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 DISTVERSION=	2.4-20060711
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -14,20 +15,21 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
 		http://mirrors.rootservices.net/postfix/experimental/ \
 		ftp://ftp.samurai.com/pub/postfix/experimental/
+PKGNAMESUFFIX=	-current
 DISTNAME=	postfix-${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-3].* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
-NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	postfix.sh
 
+OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
 		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)"		off \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		off \
@@ -74,12 +76,11 @@ MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}" \
-		POSTFIX_OPTIONS="${POSTFIX_OPTIONS}"
+		MKDIR="${MKDIR}"
 
 .include <bsd.port.pre.mk>
 
-# Default requirement for postfix rcNG
+# Default requirement for postfix rc script
 _REQUIRE=	DAEMON
 
 .if defined(WITH_PCRE)
@@ -113,7 +114,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 BROKEN=			Select only one SASL authentication method
 .endif
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SASL_SERVER=\"dovecot\"
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\"dovecot\"
 .endif
 
 .if defined(WITH_SASLKRB)
@@ -151,23 +152,23 @@ POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .endif
 
 .if defined(WITH_MYSQL)
-USE_MYSQL=YES
+USE_MYSQL=		yes
 POSTFIX_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lz -lcrypt -lm
 _REQUIRE+=		mysql
 .endif
 
 .if defined(WITH_PGSQL)
-USE_PGSQL=YES
+USE_PGSQL=		yes
 POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include -I${LOCALBASE}/pgsql/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
 _REQUIRE+=		postgresql
 .endif
 
 .if defined(WITH_OPENLDAP)
-USE_OPENLDAP=YES
+USE_OPENLDAP=		yes
 .if defined(WITH_OPENLDAP_VER)
-WANT_OPENLDAP_VER=${WITH_OPENLDAP_VER}
+WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
@@ -181,7 +182,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lcdb
 .endif
 
 .if defined(WITH_NIS)
-POSTFIX_CCARGS+=	 -DHAS_NIS
+POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
@@ -203,20 +204,6 @@ READMEDIR=${PREFIX}/share/doc/postfix
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
-.if defined(POSTFIX_OPTIONS)
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG} "***** ALERT *****"
-	@${ECHO_MSG} "POSTFIX_OPTIONS don't work anymore, now"
-	@${ECHO_MSG} "${PORTNAME} use OPTIONS, consider use:"
-	@${ECHO_MSG} "# make config"
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@${ECHO_MSG}
-	@sleep 10
-.endif
-
 .if defined(WITH_SASL) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl.a)
 	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl.a | ${GREP} -wq "mysql_init"; then \
 		${ECHO_MSG}; \
