@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	tzinfo
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/10558/
+MASTER_SITES=	http://rubyforge.rubyuser.de/tzinfo/ \
+		http://rubyforge.iasi.roedu.net/files/tzinfo/ \
+		http://rubyforge.halostatue.info/tzinfo/ \
+		http://files.rubyforge.vm.bytemark.co.uk/tzinfo/
 
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	Daylight-savings aware timezone support for Ruby
-
-BROKEN=		fails to fetch
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
