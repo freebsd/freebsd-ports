@@ -8623,6 +8623,7 @@ p5-File-FTS	ports/devel/p5-File-FTS
 p5-File-Fetch	ports/ftp/p5-File-Fetch
 p5-File-Find-Object	ports/devel/p5-File-Find-Object
 p5-File-Find-Rule	ports/devel/p5-File-Find-Rule
+p5-File-Find-Rule-Filesys-Virtual	ports/devel/p5-File-Find-Rule-Filesys-Virtual
 p5-File-Flat	ports/devel/p5-File-Flat
 p5-File-Flock	ports/devel/p5-File-Flock
 p5-File-FnMatch	ports/devel/p5-File-FnMatch
