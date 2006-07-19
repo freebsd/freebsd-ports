@@ -2846,6 +2846,7 @@ funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
 fuse		ports/emulators/fuse
 fusefs-curlftpfs	ports/sysutils/fusefs-curlftpfs
+fusefs-funionfs	ports/sysutils/fusefs-funionfs
 fusefs-gphotofs	ports/graphics/fusefs-gphotofs
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
