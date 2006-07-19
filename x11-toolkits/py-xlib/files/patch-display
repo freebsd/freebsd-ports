@@ -1,0 +1,18 @@
+--- Xlib/protocol/display.py-orig	Tue Jul 18 15:28:31 2006
++++ Xlib/protocol/display.py	Tue Jul 18 15:29:31 2006
+@@ -1,5 +1,5 @@
+ # $Id: display.py,v 1.17 2002/02/25 11:09:23 petli Exp $
+-#
++# -*- coding: latin-1 -*-
+ # Xlib.protocol.display -- core display communication
+ #
+ #    Copyright (C) 2000-2002 Peter Liljenberg <petli@ctrl-c.liu.se>
+@@ -527,7 +527,7 @@
+ 		# We're the recieving thread, parse the data
+ 		if recieving:
+ 		    try:
+-			recv = self.socket.recv(2048)
++			recv = self.socket.recv(4096)
+ 		    except socket.error, err:
+ 			self.close_internal('server: %s' % err[1])
+ 			raise self.socket_error
