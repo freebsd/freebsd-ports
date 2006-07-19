@@ -114,7 +114,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 BROKEN=			Select only one SASL authentication method
 .endif
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\"dovecot\"
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 .endif
 
 .if defined(WITH_SASLKRB)

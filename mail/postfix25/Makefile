@@ -126,7 +126,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 BROKEN=			Select only one SASL authentication method
 .endif
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\"dovecot\"
+POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 .endif
 
 .if defined(WITH_SASLKRB)
@@ -227,8 +227,8 @@ pre-patch:
 	@${ECHO_MSG}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "***** ALERT *****"
-	@${ECHO_MSG} "POSTFIX_OPTIONS is doesn't supported anymore"
-	@${ECHO_MSG} "${PORTNAME} uses OPTIONS, consider running:"
+	@${ECHO_MSG} "POSTFIX_OPTIONS is no longer supported,"
+	@${ECHO_MSG} "${PORTNAME} uses options, consider running"
 	@${ECHO_MSG} "# make config"
 	@${ECHO_MSG}
 	@${ECHO_MSG}
