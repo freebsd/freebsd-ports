@@ -7,7 +7,7 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.3.p2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/xcin/ \
 		ftp://ftp.linux.org.tw/pub/xcin/xcin/devel/ \
@@ -18,8 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Chinese input method server under X
 
-LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
-
+LIB_DEPENDS=	tabe.3:${PORTSDIR}/chinese/libtabe
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 WRKSRC=		${WRKDIR}/xcin
@@ -51,9 +50,9 @@ pre-everything::
 .if defined(WITH_BDB_VER)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "WARNING:"
-	@${ECHO_CMD} "      You have defined WITH_BDB_VER. Make sure you use the same"
-	@${ECHO_CMD} "      db version that libtabe uses. Otherwise, this port may"
-	@${ECHO_CMD} "      not work correctly."
+	@${ECHO_CMD} "	You have defined WITH_BDB_VER. Make sure you use the same"
+	@${ECHO_CMD} "	db version that libtabe uses. Otherwise, this port may"
+	@${ECHO_CMD} "	not work correctly."
 	@${ECHO_CMD} ""
 .endif
 
