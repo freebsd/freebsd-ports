@@ -14703,6 +14703,7 @@ xmbibtex	ports/print/xmbibtex
 xmbmon		ports/sysutils/xmbmon
 xmcd		ports/audio/xmcd
 xmdiary		ports/deskutils/xmdiary
+xmds		ports/science/xmds
 xmedcon		ports/graphics/xmedcon
 xmemory		ports/games/xmemory
 xmess		ports/emulators/xmess
