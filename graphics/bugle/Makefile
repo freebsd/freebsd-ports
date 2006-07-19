@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=--without-lavc
 .endif
 
 .if defined(WITH_GUI)
-LIB_DEPENDS+=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 CONFIGURE_ARGS+=--with-gtk --with-gtkglext
 .else
 CONFIGURE_ARGS+=--without-gtk --without-gtkglext
