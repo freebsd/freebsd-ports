@@ -7,6 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	2.0.a3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.ramenzoni.com.br/~garga/firebird/ \
 		http://www.galle.com.br/~garga/firebird/ \
@@ -29,8 +30,7 @@ DOCSDIR=	${PREFIX}/firebird/doc
 CONFLICTS=	firebird-client-1.*
 
 WRKSRC=		${WRKDIR}/firebird2
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
+USE_LDCONFIG=	${PREFIX}/firebird/lib
 SUB_FILES=	pkg-message pkg-install
 
 ONLY_FOR_ARCHS=	i386
@@ -38,7 +38,7 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Does not build on FreeBSD-4.x"
+BROKEN=	Does not build on FreeBSD-4.x
 .endif
 
 pre-everything::
