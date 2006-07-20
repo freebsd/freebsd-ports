@@ -3366,6 +3366,7 @@ lib/libboost_date_time.so.3
 lib/libboost_filesystem.a
 lib/libboost_filesystem.so
 lib/libboost_filesystem.so.3
+lib/libbgl-viz.a
 lib/libboost_prg_exec_monitor.a
 lib/libboost_prg_exec_monitor.so
 lib/libboost_prg_exec_monitor.so.3
@@ -3378,6 +3379,7 @@ lib/libboost_program_options.so.3
 lib/libboost_iostreams.a
 lib/libboost_iostreams.so
 lib/libboost_iostreams.so.3
+lib/libboost_random.a
 lib/libboost_regex.a
 lib/libboost_regex.so
 lib/libboost_regex.so.3

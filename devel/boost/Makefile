@@ -7,6 +7,7 @@
 
 PORTNAME=	boost
 PORTVERSION=	1.33.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:boost_site,spirit_site/}
 MASTER_SITE_SUBDIR=boost/:boost_site
@@ -281,6 +282,17 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
 		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
 		${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
+
+# build bgl-viz library
+	cd ${WRKSRC}/libs/graph/build && \
+		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
+                "-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
+                ${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
+
+# build random device code
+	cd ${WRKSRC}/libs/random && \
+	${CXX} ${CXXCFLAGS} ${CFLAGS} -c -I${WRKSRC} random_device.cpp && \
+	${AR} rc ${WRKSRC}/bin/boost/libs/libboost_random.a random_device.o
 
 # Build pyste, the Boost.Python code generator
 .if defined(WITH_PYSTE)
