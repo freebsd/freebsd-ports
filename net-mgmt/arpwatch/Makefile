@@ -7,6 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a14
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		http://www.goodking.ca/pub/files/
