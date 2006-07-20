@@ -10238,6 +10238,7 @@ pcre		ports/devel/pcre
 pcre++		ports/devel/pcre++
 pcre-utf8	ports/devel/pcre-utf8
 pcrs		ports/textproc/pcrs
+pcs		ports/net/pcs
 pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
 pdbar		ports/palm/pdbar
