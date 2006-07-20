@@ -1,0 +1,88 @@
+# Please keep this file sorted by UID!
+bind:*:53:53:Bind Sandbox:/:/sbin/nologin
+majordom:*:54:54:Majordomo Pseudo User:/usr/local/majordomo:/nonexistent
+rdfdb:*:55:55:rdfDB Daemon:/var/db/rdfdb:/bin/sh
+spamd:*:58:58:SpamAssassin user:/var/spool/spamd:/sbin/nologin
+cyrus:*:60:60:the cyrus mail server:/nonexistent:/nonexistent
+gnats:*:61:1:GNATS database owner:/usr/local/share/gnats/gnats-db:/bin/sh
+proxy:*:62:62:Packet Filter pseudo-user:/nonexistent:/nonexistent
+uucp:*:66:66:UUCP pseudo-user:/var/spool/uucppublic:/usr/libexec/uucp/uucico
+xten:*:67:67:X-10 daemon:/usr/local/xten:/nonexistent
+pop:*:68:6:Post Office Owner (popper):/nonexistent:/sbin/nologin
+wnn:*:69:7:Wnn:/nonexistent:/nonexistent
+pgsql:*:70:70:PostgreSQL pseudo-user:/usr/local/pgsql:/bin/sh
+oracle:*:71:71::0:0:Oracle:/usr/local/oracle7:/sbin/nologin
+ircd:*:72:72:IRC daemon:/nonexistent:/nonexistent
+ircservices:*:73:73:IRC services:/nonexistent:/nonexistent
+simscan:*:74:74:Simscan User:/nonexistent:/sbin/nologin
+ifmail:*:75:66:Ifmail user:/nonexistent:/nonexistent
+www:*:80:80:World Wide Web Owner:/nonexistent:/sbin/nologin
+alias:*:81:81:QMail user:/var/qmail/alias:/nonexistent
+qmaild:*:82:81:QMail user:/var/qmail:/nonexistent
+qmaill:*:83:81:QMail user:/var/qmail:/nonexistent
+qmailp:*:84:81:QMail user:/var/qmail:/nonexistent
+qmailq:*:85:82:QMail user:/var/qmail:/nonexistent
+qmailr:*:86:82:QMail user:/var/qmail:/nonexistent
+qmails:*:87:82:QMail user:/var/qmail:/nonexistent
+mysql:*:88:88:MySQL Daemon:/var/db/mysql:/sbin/nologin
+vpopmail:*:89:89:VPop Mail User:/usr/local/vpopmail:/nonexistent
+firebird:*:90:90:Firebird Database Administrator:/usr/local/firebird:/bin/sh
+mailman:*:91:91:Mailman User:/usr/local/mailman:/sbin/nologin
+gdm:*:92:92:GDM Sandbox:/:/sbin/nologin
+jabber:*:93:93:Jabber Daemon:/nonexistent:/nonexistent
+p4admin:*:94:94:Perforce admin:/usr/local/perforce:/sbin/nologin
+interch:*:95:95:Interchange user:/usr/local/interchange:/sbin/nologin
+squeuer:*:96:96:SQueuer Owner:/nonexistent:/bin/sh
+mud:*:97:97:MUD Owner:/nonexistent:/bin/sh
+msql:*:98:98:mSQL-2 pseudo-user:/var/db/msqldb:/bin/sh
+rscsi:*:99:99:Remote SCSI:/usr/local/rscsi:/usr/local/sbin/rscsi
+squid:*:100:100:squid caching-proxy pseudo user:/usr/local/squid:/sbin/nologin
+quagga:*:101:101:Quagga route daemon pseudo user:/usr/local/etc/quagga:/sbin/nologin
+ganglia:*:102:102:Ganglia User:/nonexistent:/sbin/nologin
+sgeadmin:*:103:103:Sun Grid Engine Admin:/nonexistent:/sbin/nologin
+slimserv:*:104:104:Slim Devices SlimServer pseudo-user:/nonexistent:/sbin/nologin
+dnetc:*:105:105:distributed.net client and proxy pseudo-user:/nonexistent:/sbin/nologin
+clamav:*:106:106:Clamav Antivirus:/nonexistent:/sbin/nologin
+cacti:*:107:107:Cacti Sandbox:/nonexistent:/sbin/nologin
+webkit:*:108:108:WebKit Default User:/usr/local/www/webkit:/bin/sh
+quickml:*:109:109:quickml Server:/nonexistent:/sbin/nologin
+vscan:*:110:110:Scanning Virus Account:/var/amavis:/bin/sh
+fido:*:111:111:Fido System:/usr/local/fido:/bin/sh
+dcc:*:112:112:Distributed Checksum Clearinghouse:/nonexistent:/sbin/nologin
+amavis:*:113:113:Amavis-stats Account:/nonexistent:/sbin/nologin
+dhis:*:114:114:DHIS Daemon:/nonexistent:/sbin/nologin
+_symon:*:115:115:Symon Account:/var/empty:/sbin/nologin
+hplip:*:116:116:HPLIP Server:/nonexistent:/sbin/nologin
+postfix:*:125:125:Postfix Mail System:/var/spool/postfix:/sbin/nologin
+_bgpd:*:130:130:BGP Daemon:/var/empty:/sbin/nologin
+_ospfd:*:131:131:OSPF Daemon:/var/empty:/sbin/nologin
+rbldns:*:153:153:rbldnsd pseudo-user:/nonexistent:/sbin/nologin
+sfs:*:171:171:Self-Certifying File System:/nonexistent:/sbin/nologin
+agk:*:172:172:AquaGateKeeper:/nonexistent:/nonexistent
+polipo:*:173:173:polipo web cache:/nonexistent:/sbin/nologin
+bogomilter:*:174:174:milter-bogom:/nonexistent:/sbin/nologin
+moinmoin:*:192:192:MoinMoin User:/nonexistent:/sbin/nologin
+sympa:*:200:200:Sympa Owner:/nonexistent:/sbin/nologin
+privoxy:*:201:201:Privoxy proxy user:/nonexistent:/sbin/nologin
+dspam:*:202:202:Dspam:/nonexistent:/sbin/nologin
+shoutcast:*:210:210:Shoutcast sandbox:/nonexistent:/bin/sh
+_tor:*:256:256:Tor anonymising router:/var/db/tor:/bin/sh
+smxs:*:260:260:Sendmail X SMTPS:/nonexistent:/sbin/nologin
+smxq:*:261:261:Sendmail X QMGR:/nonexistent:/sbin/nologin
+smxc:*:262:262:Sendmail X SMTPC:/nonexistent:/sbin/nologin
+smxm:*:263:263:Sendmail X misc:/nonexistent:/sbin/nologin
+smx:*:264:264:Sendmail X other:/nonexistent:/sbin/nologin
+mrtg:*:279:279:MRTG daemon:/nonexistent:/sbin/nologin
+ldap:*:389:389:OpenLDAP Server:/nonexistent:/sbin/nologin
+drweb:*:426:426:Dr.Web Mail Scanner:/nonexistent:/sbin/nologin
+courier:*:465:465:Courier Mail Server:/nonexistent:/sbin/nologin
+_bbstored:*:505:505::0:0:BoxBackup Store Daemon:/nonexistent:/bin/sh
+ejabberd:*:544:544::0:0:ejabberd pseudo user:/var/spool/ejabberd:/bin/sh
+qtss:*:554:554:Darwin Streaming Server:/nonexistent:/sbin/nologin
+ircdru:*:555:555:Russian hybrid IRC server:/nonexistent:/bin/sh
+messagebus:*:556:556:D-BUS Daemon User:/nonexistent:/sbin/nologin
+avahi:*:558:558:Avahi Daemon User:/nonexistent:/sbin/nologin
+bnetd:*:700:700:Bnetd user:/nonexistent:/sbin/nologin
+bopm:*:717:717:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
+openxpki:*:777:777:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
+bacula:*:910:910:Bacula Daemon:/var/db/bacula:/sbin/nologin
