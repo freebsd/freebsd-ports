@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lemon
-PORTVERSION=	1.33
+PORTVERSION=	1.39
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/${PORTNAME}/
 
