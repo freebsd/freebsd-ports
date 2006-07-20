@@ -3,9 +3,12 @@ $FreeBSD$
 
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -197,7 +197,7 @@
+@@ -195,9 +195,9 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
- AM_CFLAGS = -std=c99
+-AM_CFLAGS = -std=c99
++#AM_CFLAGS = -std=c99
  MAINTAINERCLEANFILES = Makefile.in
 -INCLUDES = -I$(top_builddir)
 +#INCLUDES = -I$(top_builddir)

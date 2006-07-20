@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- apps/app_rxfax.c.orig
 +++ apps/app_rxfax.c
-@@ -0,0 +1,391 @@
+@@ -0,0 +1,393 @@
 +/*
 + * Asterisk -- A telephony toolkit for Linux.
 + *
@@ -27,7 +27,9 @@ $FreeBSD$
 +#endif
 +#include <pthread.h>
 +#include <errno.h>
++#if !defined(__FreeBSD__) || __FreeBSD_version >= 503000
 +#include <tgmath.h>
++#endif
 +#include <tiffio.h>
 +
 +#include <spandsp.h>
