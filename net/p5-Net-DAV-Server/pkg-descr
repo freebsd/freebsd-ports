@@ -1,0 +1,16 @@
+This module provides a WebDAV server. WebDAV stands for "Web-based
+Distributed Authoring and Versioning". It is a set of extensions to
+the HTTP protocol which allows users to collaboratively edit and
+manage files on remote web servers.
+
+Net::DAV::Server provides a WebDAV server and exports a filesystem for
+you using the Filesys::Virtual suite of modules. If you simply want to
+export a local filesystem, use Filesys::Virtual::Plain as above.
+
+This module doesn't currently provide a full WebDAV implementation.
+However, I am working through the WebDAV server protocol compliance
+test suite (litmus, see http://www.webdav.org/neon/litmus/) and will
+provide more compliance in future. The important thing is that it
+supports cadaver and the Mac OS X Finder as clients.
+
+WWW:	http://search.cpan.org/dist/Net-DAV-Server/

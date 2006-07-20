@@ -1,0 +1,47 @@
+# New ports collection makefile for:	p5-Net-DAV-Server
+# Date created:		2006-07-19
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-DAV-Server
+PORTVERSION=	1.29
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Provide a DAV Server
+
+RUN_DEPENDS=	${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/File/Find/Rule/Filesys/Virtual.pm:${PORTSDIR}/devel/p5-File-Find-Rule-Filesys-Virtual \
+		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
+		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/devel/p5-DateTime-Format-HTTP \
+		${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Net::DAV::Server.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600	# Inherited from www/p5-libwww
+IGNORE=		requires Perl 5.6.0 or newer. Please install lang/perl5.8 and try again
+.endif
+
+.if ${PERL_LEVEL} < 500602 || ${PERL_LEVEL} == 500701
+RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.if ${PERL_LEVEL} < 500701
+RUN_DEPENDS+=	${SITE_PERL}/Encode.pm:${PORTSDIR}/devel/p5-Encode
+.endif
+
+.include <bsd.port.post.mk>
