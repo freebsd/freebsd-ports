@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Akismet
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -16,7 +17,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A Perl interface to the Akismet comment and trackback spam blocker
 
 BUILD_DEPENDS+=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 .if !defined(WITHOUT_TEST_POD_COVERAGE)
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
