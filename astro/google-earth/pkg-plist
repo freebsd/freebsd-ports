@@ -52,24 +52,26 @@ share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/res/palette-3.png
 %%DATADIR%%/res/palette-4.png
 %%DATADIR%%/res/arrow.png
+%%DATADIR%%/resources/en.locale/default_myplaces.kml
+%%DATADIR%%/resources/en.locale/license.txt
 %%DATADIR%%/resources/en_US.locale/default_myplaces.kml
 %%DATADIR%%/resources/en_US.locale/license.txt
 %%DATADIR%%/resources/en_CA.locale/default_myplaces.kml
 %%DATADIR%%/resources/en_CA.locale/license.txt
 %%DATADIR%%/resources/en_NZ.locale/default_myplaces.kml
 %%DATADIR%%/resources/en_NZ.locale/license.txt
-%%DATADIR%%/resources/en_UK.locale/default_myplaces.kml
-%%DATADIR%%/resources/en_UK.locale/license.txt
+%%DATADIR%%/resources/en_GB.locale/default_myplaces.kml
+%%DATADIR%%/resources/en_GB.locale/license.txt
 %%DATADIR%%/resources/en_AU.locale/default_myplaces.kml
 %%DATADIR%%/resources/en_AU.locale/license.txt
-%%DATADIR%%/resources/es_ES.locale/default_myplaces.kml
-%%DATADIR%%/resources/es_ES.locale/license.txt
-%%DATADIR%%/resources/fr_FR.locale/default_myplaces.kml
-%%DATADIR%%/resources/fr_FR.locale/license.txt
-%%DATADIR%%/resources/it_IT.locale/default_myplaces.kml
-%%DATADIR%%/resources/it_IT.locale/license.txt
-%%DATADIR%%/resources/de_DE.locale/default_myplaces.kml
-%%DATADIR%%/resources/de_DE.locale/license.txt
+%%DATADIR%%/resources/es.locale/default_myplaces.kml
+%%DATADIR%%/resources/es.locale/license.txt
+%%DATADIR%%/resources/fr.locale/default_myplaces.kml
+%%DATADIR%%/resources/fr.locale/license.txt
+%%DATADIR%%/resources/it.locale/default_myplaces.kml
+%%DATADIR%%/resources/it.locale/license.txt
+%%DATADIR%%/resources/de.locale/default_myplaces.kml
+%%DATADIR%%/resources/de.locale/license.txt
 %%DATADIR%%/resources/streamed_layer.png
 %%DATADIR%%/resources/circle-gr.png
 %%DATADIR%%/resources/circle-md.png
@@ -652,6 +654,8 @@ share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/lang/qt_en.qm
 %%DATADIR%%/lang/qt_es.qm
 %%DATADIR%%/lang/qt_fr.qm
+%%DATADIR%%/lang/qt_ja.qm
+%%DATADIR%%/lang/qt_pt-br.qm
 %%DATADIR%%/lang/de.qm
 %%DATADIR%%/kvw/default_lt.kvw
 %%DATADIR%%/xml/render.module.xml
@@ -728,15 +732,16 @@ share/mime/packages/googleearth-mimetypes.xml
 %%DATADIR%%/libtweak.so
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/res
+@dirrm %%DATADIR%%/resources/en.locale
 @dirrm %%DATADIR%%/resources/en_US.locale
 @dirrm %%DATADIR%%/resources/en_CA.locale
 @dirrm %%DATADIR%%/resources/en_NZ.locale
-@dirrm %%DATADIR%%/resources/en_UK.locale
+@dirrm %%DATADIR%%/resources/en_GB.locale
 @dirrm %%DATADIR%%/resources/en_AU.locale
-@dirrm %%DATADIR%%/resources/es_ES.locale
-@dirrm %%DATADIR%%/resources/fr_FR.locale
-@dirrm %%DATADIR%%/resources/it_IT.locale
-@dirrm %%DATADIR%%/resources/de_DE.locale
+@dirrm %%DATADIR%%/resources/es.locale
+@dirrm %%DATADIR%%/resources/fr.locale
+@dirrm %%DATADIR%%/resources/it.locale
+@dirrm %%DATADIR%%/resources/de.locale
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/linux/xdg
 @dirrm %%DATADIR%%/linux/mailto-scripts
