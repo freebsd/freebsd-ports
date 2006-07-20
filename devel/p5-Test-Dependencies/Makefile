@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Dependencies
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -15,11 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Ensure that your Makefile.PL specifies all module dependencies
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
+BUILD_DEPENDS=	${SITE_PERL}/B/PerlReq.pm:${PORTSDIR}/devel/p5-rpm-build-perl \
+		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
 		${SITE_PERL}/Module/CoreList.pm:${PORTSDIR}/devel/p5-Module-CoreList \
 		${SITE_PERL}/B/PerlReq.pm:${PORTSDIR}/devel/p5-rpm-build-perl \
 		${SITE_PERL}/PerlReq/Utils.pm:${PORTSDIR}/devel/p5-rpm-build-perl \
-		${SITE_PERL}/Test/Builder/Module.pm:${PORTSDIR}/devel/p5-Test-Simple
+		p5-Test-Simple>=0.64:${PORTSDIR}/devel/p5-Test-Simple \
+    		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
