@@ -11366,6 +11366,7 @@ py-dbutils	ports/databases/py-dbutils
 py-dialog	ports/devel/py-dialog
 py-distutils	ports/misc/py-distutils
 py-django	ports/www/py-django
+py-django-devel	ports/www/py-django-devel
 py-dns		ports/dns/py-dns
 py-dnspython	ports/dns/py-dnspython
 py-docutils	ports/textproc/py-docutils
