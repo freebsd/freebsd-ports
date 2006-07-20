@@ -39,6 +39,7 @@
     SUBDIR += xcode
     SUBDIR += xcyrBGR
     SUBDIR += xmms
+    SUBDIR += xpi-imagezoom
     SUBDIR += xruskb
 
 .include <bsd.port.subdir.mk>
