@@ -855,6 +855,7 @@
     SUBDIR += py-clientform
     SUBDIR += py-cssutils
     SUBDIR += py-django
+    SUBDIR += py-django-devel
     SUBDIR += py-fcgi
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
