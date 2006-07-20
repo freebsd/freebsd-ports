@@ -69,6 +69,7 @@ bin/sfront
 %%EXAMPLESDIR%%/rtime/ascii/ascii.saol
 %%EXAMPLESDIR%%/rtime/ascii/ascii.sasl
 %%EXAMPLESDIR%%/rtime/linain/Makefile
+%%EXAMPLESDIR%%/rtime/linain/Makefile.linux
 %%EXAMPLESDIR%%/rtime/linain/Makefile.osx
 %%EXAMPLESDIR%%/rtime/linain/README
 %%EXAMPLESDIR%%/rtime/linain/linain.saol
@@ -86,11 +87,13 @@ bin/sfront
 %%EXAMPLESDIR%%/rtime/linmidi/linmidi.saol
 %%EXAMPLESDIR%%/rtime/linmidi/linmidi.sasl
 %%EXAMPLESDIR%%/rtime/linvoc/Makefile
+%%EXAMPLESDIR%%/rtime/linvoc/Makefile.linux
 %%EXAMPLESDIR%%/rtime/linvoc/Makefile.osx
 %%EXAMPLESDIR%%/rtime/linvoc/README
 %%EXAMPLESDIR%%/rtime/linvoc/linvoc.saol
 %%EXAMPLESDIR%%/rtime/linvoc/linvoc.sasl
 %%EXAMPLESDIR%%/rtime/mirror/Makefile
+%%EXAMPLESDIR%%/rtime/mirror/Makefile.linux
 %%EXAMPLESDIR%%/rtime/mirror/Makefile.osx
 %%EXAMPLESDIR%%/rtime/mirror/README
 %%EXAMPLESDIR%%/rtime/mirror/mirror.saol
@@ -106,6 +109,7 @@ bin/sfront
 %%EXAMPLESDIR%%/rtime/nmp_null/silence.saol
 %%EXAMPLESDIR%%/rtime/nmp_null/silence.sasl
 %%EXAMPLESDIR%%/rtime/nmp_stream/Makefile
+%%EXAMPLESDIR%%/rtime/nmp_stream/Makefile.linux
 %%EXAMPLESDIR%%/rtime/nmp_stream/Makefile.osx
 %%EXAMPLESDIR%%/rtime/nmp_stream/README
 %%EXAMPLESDIR%%/rtime/nmp_stream/bach.mid
