@@ -6,15 +6,21 @@
 #
 
 PORTNAME=	cweb
-PORTVERSION=	3.64
+PORTVERSION=	3.64a.a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	web/c_cpp/cweb
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([a-z])$/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Literate programming tools for the C language
 
 NO_WRKSUBDIR=	yes
+
+MAKE_ARGS=	CWEBINPUTS="${DATADIR}" \
+		CFLAGS="${CFLAGS}" \
+		LINKFLAGS="" \
+		CC="${CC}"
 
 MAN1=		cweb.1
 
