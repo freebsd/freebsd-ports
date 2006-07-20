@@ -65,6 +65,7 @@ include/net-snmp/agent/table_container.h
 include/net-snmp/agent/table_data.h
 include/net-snmp/agent/table_dataset.h
 include/net-snmp/agent/table_iterator.h
+include/net-snmp/agent/util_funcs.h
 include/net-snmp/agent/var_struct.h
 include/net-snmp/agent/watcher.h
 include/net-snmp/config_api.h
