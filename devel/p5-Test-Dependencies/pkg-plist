@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dependencies/.packlist
 %%SITE_PERL%%/Test/Dependencies.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dependencies
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dependencies
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test
