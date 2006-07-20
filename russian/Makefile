@@ -40,6 +40,7 @@
     SUBDIR += xcyrBGR
     SUBDIR += xmms
     SUBDIR += xpi-imagezoom
+    SUBDIR += xpi-tabextensions
     SUBDIR += xruskb
 
 .include <bsd.port.subdir.mk>
