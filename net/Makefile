@@ -479,6 +479,7 @@
     SUBDIR += p5-NetAddr-IP-Count
     SUBDIR += p5-NetPacket
     SUBDIR += p5-OAI-Harvester
+    SUBDIR += p5-OurNet-BBS
     SUBDIR += p5-OurNet-BBSAgent
     SUBDIR += p5-POE-Component-Client-Ident
     SUBDIR += p5-POE-Component-Client-Keepalive
