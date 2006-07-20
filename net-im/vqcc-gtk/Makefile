@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	vqcc-gtk
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,12 +16,18 @@ COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomeprefix
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
-		PTHREAD_LIB="${PTHREAD_LIBS}"
+PLIST_FILES=	bin/vqcc-gtk \
+		share/gnome/applications/vqcc-gtk.desktop \
+		share/gnome/pixmaps/vqcc-gtk.png \
+		share/locale/lt/LC_MESSAGES/vqcc-gtk.mo \
+		share/locale/ru/LC_MESSAGES/vqcc-gtk.mo
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.mk>
