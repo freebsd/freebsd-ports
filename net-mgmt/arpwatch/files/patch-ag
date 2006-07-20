@@ -1,5 +1,5 @@
---- arpwatch.c.orig	Thu Feb 22 22:47:29 2001
-+++ arpwatch.c	Thu Feb 22 22:47:29 2001
+--- arpwatch.c.orig	Thu Jan 22 17:18:20 2004
++++ arpwatch.c	Thu Jul 20 12:30:08 2006
 @@ -107,6 +107,8 @@
  
  char *prog;
@@ -29,7 +29,15 @@
  		default:
  			usage();
  		}
-@@ -751,6 +757,6 @@
+@@ -321,7 +327,6 @@
+ 
+ 	(void)setsignal(SIGINT, die);
+ 	(void)setsignal(SIGTERM, die);
+-	(void)setsignal(SIGHUP, die);
+ 	if (rfilename == NULL) {
+ 		(void)setsignal(SIGQUIT, checkpoint);
+ 		(void)setsignal(SIGALRM, checkpoint);
+@@ -751,6 +756,6 @@
  
  	(void)fprintf(stderr, "Version %s\n", version);
  	(void)fprintf(stderr, "usage: %s [-dN] [-f datafile] [-i interface]"
