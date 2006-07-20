@@ -591,6 +591,7 @@
     SUBDIR += py-mp-random
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
+    SUBDIR += py-pypcap
     SUBDIR += py-radix
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
