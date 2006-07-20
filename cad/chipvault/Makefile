@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	chipvault
-PORTVERSION=	200211
+PORTVERSION=	200607
 CATEGORIES=	cad
 MASTER_SITES=	http://chipvault.sourceforge.net/
 DISTNAME=	cv.pl
