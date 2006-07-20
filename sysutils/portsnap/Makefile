@@ -31,15 +31,12 @@ PLIST_FILES=	etc/portsnap.conf.sample sbin/portsnap		\
 		libexec/phttpget				\
 		libexec/make_index portsnap/.package.this.directory
 PLIST_DIRS=	portsnap
-
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-post-extract:
-	${SED} -e "s#PREFIX=/usr/local#PREFIX=${PREFIX}#g" \
-		${WRKSRC}/portsnap > ${WRKSRC}/portsnap.new
-	${MV} ${WRKSRC}/portsnap.new ${WRKSRC}/portsnap
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${PKGDIR}/pkg-message \
-		> ${PKGMESSAGE}
+post-patch:
+	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
+		${WRKSRC}/portsnap ${WRKSRC}/portsnap.8
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portsnap ${PREFIX}/sbin

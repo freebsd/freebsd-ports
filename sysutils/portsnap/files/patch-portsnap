@@ -1,0 +1,11 @@
+--- portsnap.orig	Thu Jul 20 09:00:57 2006
++++ portsnap	Thu Jul 20 09:01:14 2006
+@@ -81,7 +81,7 @@
+ 	NDEBUG=""
+ 	DDSTATS=""
+ 	INDEXONLY=""
+-	PREFIX="/usr/local"
++	PREFIX="%%PREFIX%%"
+ 	SERVERNAME=""
+ 	REFUSE=""
+ 	LOCALDESC=""
