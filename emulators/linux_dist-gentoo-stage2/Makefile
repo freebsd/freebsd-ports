@@ -20,7 +20,6 @@ USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
 NO_FILTER_SHLIBS=	YES
-NO_MTREE=		YES
 ONLY_FOR_ARCHS=		i386 amd64
 GENTOO_OPTIMIZED?=	x86
 SUB_FILES+=		pkg-message pkg-install pkg-deinstall
@@ -32,13 +31,14 @@ PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 
 .if defined(WITH_LINUXBASE)
-PKGNAMEPREFIX=  linux_base-
+PKGNAMEPREFIX=	linux_base-
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
 		linux_base-rh* linux_base-suse* linux_base-fc* \
 		linux_base-gentoo-stage[13]-*
-PREFIX?=	${LINUXBASE}
+USE_LINUX_PREFIX=	YES
 PREFIX_SUBDIR=
 .else
+NO_MTREE=	YES
 PKGNAMEPREFIX=	linux_dist-
 PREFIX_SUBDIR=	${PORTNAME}/
 .endif
