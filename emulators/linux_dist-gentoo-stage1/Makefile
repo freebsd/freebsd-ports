@@ -22,7 +22,6 @@ USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
 NO_BUILD=		YES
 NO_FILTER_SHLIBS=	YES
-NO_MTREE=		YES
 ONLY_FOR_ARCHS=		amd64 i386
 SUB_FILES+=		pkg-message pkg-install pkg-deinstall
 SUB_LIST+=		PREFIX_SUBDIR="${PREFIX_SUBDIR}"
@@ -32,15 +31,16 @@ PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 
 .if defined(WITH_LINUXBASE)
-PKGNAMEPREFIX=  linux_base-
-CONFLICTS=      linux_base-7* linux_base-8* linux_base-debian* \
+PKGNAMEPREFIX=	linux_base-
+CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
 		linux_base-rh* linux_base-suse* linux_base-fc* \
 		linux_base-gentoo-stage[23]-*
-PREFIX?=	${LINUXBASE}
+USE_LINUX_PREFIX=	YES
 PREFIX_SUBDIR=
 .else
-PKGNAMEPREFIX=  linux_dist-
-PREFIX_SUBDIR=  ${PORTNAME}/
+NO_MTREE=	YES
+PKGNAMEPREFIX=	linux_dist-
+PREFIX_SUBDIR=	${PORTNAME}/
 .endif
 
 .include <bsd.port.pre.mk>
