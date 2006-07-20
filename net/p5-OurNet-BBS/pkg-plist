@@ -1,0 +1,136 @@
+@comment $FreeBSD$
+bin/bbsboard
+bin/bbscomd
+bin/bbsmail
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBS/.packlist
+%%SITE_PERL%%/OurNet/BBS.pm
+%%SITE_PERL%%/OurNet/BBS.pod
+%%SITE_PERL%%/OurNet/BBS/Authen.pm
+%%SITE_PERL%%/OurNet/BBS/BBSAgent/Article.pm
+%%SITE_PERL%%/OurNet/BBS/BBSAgent/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/BBSAgent/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/BBSAgent/Board.pm
+%%SITE_PERL%%/OurNet/BBS/BBSAgent/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Base.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/Article.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/Board.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/FileGroup.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/Group.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/GroupGroup.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/Session.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/SessionGroup.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/User.pm
+%%SITE_PERL%%/OurNet/BBS/CVIC/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Client.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/Article.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/Board.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/FileGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/User.pm
+%%SITE_PERL%%/OurNet/BBS/Cola/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/External/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/External/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/External/Board.pm
+%%SITE_PERL%%/OurNet/BBS/External/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/Article.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/Board.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/FileGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/User.pm
+%%SITE_PERL%%/OurNet/BBS/Firebird3/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/Article.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/Board.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/FileGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/GroupGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/Session.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/SessionGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/User.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE2/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/Article.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/Board.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/FileGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/GroupGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/SessionGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/User.pm
+%%SITE_PERL%%/OurNet/BBS/MAPLE3/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/Article.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/Board.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/FileGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/Group.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/GroupGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/Session.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/SessionGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/User.pm
+%%SITE_PERL%%/OurNet/BBS/MELIX/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MailBox/Article.pm
+%%SITE_PERL%%/OurNet/BBS/MailBox/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/MailBox/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/MailBox/Board.pm
+%%SITE_PERL%%/OurNet/BBS/MailBox/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/NNTP/Article.pm
+%%SITE_PERL%%/OurNet/BBS/NNTP/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/NNTP/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/NNTP/Board.pm
+%%SITE_PERL%%/OurNet/BBS/NNTP/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/OurNet/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/Article.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/Board.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/FileGroup.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/SessionGroup.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/User.pm
+%%SITE_PERL%%/OurNet/BBS/PTT/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/Article.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/ArticleGroup.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/BBS.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/Board.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/BoardGroup.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/Group.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/GroupGroup.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/Session.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/SessionGroup.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/User.pm
+%%SITE_PERL%%/OurNet/BBS/RAM/UserGroup.pm
+%%SITE_PERL%%/OurNet/BBS/Roadmap.pod
+%%SITE_PERL%%/OurNet/BBS/ScalarFile.pm
+%%SITE_PERL%%/OurNet/BBS/Server.pm
+%%SITE_PERL%%/OurNet/BBS/ShmArray.pm
+%%SITE_PERL%%/OurNet/BBS/ShmScalar.pm
+%%SITE_PERL%%/OurNet/BBS/SocketScalar.pm
+%%SITE_PERL%%/OurNet/BBS/Tutorial.pod
+%%SITE_PERL%%/OurNet/BBS/Utils.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/BBSAgent
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/CVIC
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/Cola
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/External
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/Firebird3
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/MAPLE2
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/MAPLE3
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/MELIX
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/MailBox
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/NNTP
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/OurNet
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/PTT
+@dirrmtry %%SITE_PERL%%/OurNet/BBS/RAM
+@dirrmtry %%SITE_PERL%%/OurNet/BBS
+@dirrmtry %%SITE_PERL%%/OurNet

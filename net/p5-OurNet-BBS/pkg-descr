@@ -1,0 +1,19 @@
+OurNet-BBS is a cross-protocol distributed network, built as an
+abstraction layer over telnet BBS-based systems used in Hong Kong,
+China and Taiwan. It implements a flexible object model for different
+BBS backends, along with an asymmetric authentication and remote
+procedure call protocol.
+
+This project aims to become a protocol agnostic middle-ware solution
+for identity-based information storage & retrieval, much like the
+Project Jabber's goal toward instant messaging, or Project JXTA's aim
+toward distributed services.
+
+If you are new to the telnet-bbs platform, please download a copy of
+Melix BBS software (in English, Traditional Chinese and Simplified
+Chinese) at http://melix.elixus.org/.
+
+For some of its practical uses, search for OurNet::BBSApp on CPAN, and
+the sample scripts in the eg/ directory in this module's distribution.
+
+WWW:	http://search.cpan.org/dist/OurNet-BBS/
