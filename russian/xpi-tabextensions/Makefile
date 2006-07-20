@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-ru
 DISTNAME=	${PORTNAME}_${PORTVERSION}-${DISTVERSIONSUFFIX}
 
 MAINTAINER=	triosoft@triosoft.com.ua
-COMMENT=	Russian version of Tabbrowser Extensions that improves tabbed browsing
+COMMENT=	Improves tabbed browsing
 
 CONFLICTS=	xpi-tabextensions-[0-9]*
 
