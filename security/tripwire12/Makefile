@@ -8,8 +8,7 @@
 PORTNAME=	tripwire
 PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/security/tripwire/old/
-EXTRACT_SUFX=	.tar.gz
+MASTER_SITES=	http://www.mirrors.wiretapped.net/security/host-intrusion-detection/tripwire/old/
 
 MAINTAINER=	jgreco@ns.sol.net
 COMMENT=	File system security and verification program
@@ -17,8 +16,8 @@ COMMENT=	File system security and verification program
 LATEST_LINK=	tripwire12
 MAN5=		tw.config.5
 MAN8=		siggen.8 tripwire.8
-NO_CDROM=	"cannot be redistributed for more than the cost of duplication"
-NO_PACKAGE=	"requires local database to be built"
+NO_CDROM=	cannot be redistributed for more than the cost of duplication
+NO_PACKAGE=	requires local database to be built
 USE_PERL5_BUILD=yes
 
 TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
