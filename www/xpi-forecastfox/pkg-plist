@@ -39,6 +39,7 @@
 %%XPI_XPIDIR%%/defaults/transforms/profiles-0.8.2.xsl
 %%XPI_XPIDIR%%/defaults/transforms/profiles-0.8.5.xsl
 %%XPI_XPIDIR%%/defaults/transforms/profiles-0.8.xsl
+%%XPI_XPIDIR%%/defaults/transforms/profiles-0.9.2.xsl
 %%XPI_XPIDIR%%/defaults/transforms/profiles-0.9.xsl
 %%XPI_XPIDIR%%/install.js
 %%XPI_XPIDIR%%/install.rdf
