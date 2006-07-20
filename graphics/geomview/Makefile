@@ -17,8 +17,6 @@ COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-BROKEN=		Incomplete pkg-plist (needs to use INFO_* macros)
-
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 
@@ -33,6 +31,9 @@ MAN1=		geomview.1 togeomview.1 bdy.1 oogl2rib.1 anytooff.1 \
 		math2oogl.1 oogl2vrml.1 anytoucd.1 ucdtooff.1
 MAN3=		lisp.3
 MAN5=		oogl.5 geomview.5
+
+INFO=		geomview-7 geomview-6 geomview-5 geomview-4 geomview-3 \
+		geomview-2 geomview-1 geomview
 
 MAN_FILES=	oogl.5 geomview.5
 DOC_FILES=	gvplot.txt oogltour OOGL.m.txt README
@@ -69,6 +70,9 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/figs/*.ps ${DOCSDIR}/figs
 	${INSTALL_MAN} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
 	${INSTALL_MAN} ${WRKSRC}/doc/html/pix/*.gif ${DOCSDIR}/html/pix
+.for i in ${INFO}
+	${MV} ${PREFIX}/info/${i} ${PREFIX}/info/${i}.info
+.endfor
 .endif
 
 .include <bsd.port.mk>
