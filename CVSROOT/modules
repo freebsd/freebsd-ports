@@ -11536,6 +11536,7 @@ py-pybmp	ports/multimedia/py-pybmp
 py-pycrypto	ports/security/py-pycrypto
 py-pydasm	ports/devel/py-pydasm
 py-pydot	ports/graphics/py-pydot
+py-pypcap	ports/net/py-pypcap
 py-pyscript	ports/print/py-pyscript
 py-pysqlite20	ports/databases/py-pysqlite20
 py-pysqlite21	ports/databases/py-pysqlite21
