@@ -49,6 +49,7 @@
 %%HORDEDIR%%/js/enter_key_trap.js
 %%HORDEDIR%%/js/form_assign.js
 %%HORDEDIR%%/js/form_helpers.js
+%%HORDEDIR%%/js/form_sections.js
 %%HORDEDIR%%/js/hideable.js
 %%HORDEDIR%%/js/horde.ie.js
 %%HORDEDIR%%/js/horde.js
@@ -283,18 +284,6 @@
 %%HORDEDIR%%/lib/Horde/Prefs/ldap.php
 %%HORDEDIR%%/lib/Horde/Prefs/session.php
 %%HORDEDIR%%/lib/Horde/Prefs/sql.php
-%%HORDEDIR%%/lib/Horde/RDO.php
-%%HORDEDIR%%/lib/Horde/RDO/Criteria.php
-%%HORDEDIR%%/lib/Horde/RDO/Exception.php
-%%HORDEDIR%%/lib/Horde/RDO/Mapper.php
-%%HORDEDIR%%/lib/Horde/RDO/MetaData.php
-%%HORDEDIR%%/lib/Horde/RDO/Results.php
-%%HORDEDIR%%/lib/Horde/RDO/Storage.php
-%%HORDEDIR%%/lib/Horde/RDO/Storage/mysql.php
-%%HORDEDIR%%/lib/Horde/RDO/Storage/peardb.php
-%%HORDEDIR%%/lib/Horde/RDO/Storage/pgsql.php
-%%HORDEDIR%%/lib/Horde/RDO/Storage/sql.php
-%%HORDEDIR%%/lib/Horde/RDO/Storage/sqlite.php
 %%HORDEDIR%%/lib/Horde/RPC.php
 %%HORDEDIR%%/lib/Horde/RPC/rest.php
 %%HORDEDIR%%/lib/Horde/RPC/soap.php
@@ -302,7 +291,6 @@
 %%HORDEDIR%%/lib/Horde/RPC/syncml_wbxml.php
 %%HORDEDIR%%/lib/Horde/RPC/webdav.php
 %%HORDEDIR%%/lib/Horde/RPC/xmlrpc.php
-%%HORDEDIR%%/lib/Horde/Rampage.php
 %%HORDEDIR%%/lib/Horde/Registry.php
 %%HORDEDIR%%/lib/Horde/SQL.php
 %%HORDEDIR%%/lib/Horde/SQL/Attributes.php
@@ -314,7 +302,7 @@
 %%HORDEDIR%%/lib/Horde/SessionHandler.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/dbm.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/ldap.php
-%%HORDEDIR%%/lib/Horde/SessionHandler/memcached.php
+%%HORDEDIR%%/lib/Horde/SessionHandler/memcache.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/mysql.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/none.php
 %%HORDEDIR%%/lib/Horde/SessionHandler/oci8.php
@@ -585,11 +573,13 @@
 %%HORDEDIR%%/scripts/setup.php
 %%HORDEDIR%%/scripts/sql/README
 %%HORDEDIR%%/scripts/sql/README.OCI8
+%%HORDEDIR%%/scripts/sql/create.sql
 %%HORDEDIR%%/scripts/sql/create.msde.sql
 %%HORDEDIR%%/scripts/sql/create.mysql.sql
 %%HORDEDIR%%/scripts/sql/create.oci8.sql
 %%HORDEDIR%%/scripts/sql/create.pgsql.sql
 %%HORDEDIR%%/scripts/sql/create.sybase.sql
+%%HORDEDIR%%/scripts/sql/create.xml
 %%HORDEDIR%%/scripts/sql/horde_datatree.mssql.sql
 %%HORDEDIR%%/scripts/sql/horde_datatree.mysql.sql
 %%HORDEDIR%%/scripts/sql/horde_datatree.sql
@@ -616,10 +606,14 @@
 %%HORDEDIR%%/scripts/sql/script.initial_horde_user.sql
 %%HORDEDIR%%/scripts/temp-cleanup.cron
 %%HORDEDIR%%/scripts/themes_check.php
+%%HORDEDIR%%/scripts/upgrades/2006-06-29_horde_prefs_indexes.sql
 %%HORDEDIR%%/scripts/upgrades/2.2_to_3.0.mysql.sql
+%%HORDEDIR%%/scripts/upgrades/2.2_to_3.0.oci8.sql
 %%HORDEDIR%%/scripts/upgrades/2.2_to_3.0.pgsql.sql
 %%HORDEDIR%%/scripts/upgrades/2005-09-22_horde_prefs_varchar2.oci8.sql
+%%HORDEDIR%%/scripts/upgrades/3.0_to_3.1.sql
 %%HORDEDIR%%/scripts/upgrades/3.0_to_3.1.mysql.sql
+%%HORDEDIR%%/scripts/upgrades/3.0_to_3.1.oci8.sql
 %%HORDEDIR%%/scripts/upgrades/move_history_out_of_datatree.php
 %%HORDEDIR%%/services/cacheview.php
 %%HORDEDIR%%/services/changepassword.php
@@ -726,7 +720,6 @@
 %%HORDEDIR%%/services/problem.php
 %%HORDEDIR%%/services/resetpassword.php
 %%HORDEDIR%%/services/shares/edit.php
-%%HORDEDIR%%/services/toggle_js.php
 %%HORDEDIR%%/signup.php
 %%HORDEDIR%%/templates/.htaccess
 %%HORDEDIR%%/templates/admin/common-header.inc
@@ -759,7 +752,6 @@
 %%HORDEDIR%%/templates/help/index.inc
 %%HORDEDIR%%/templates/help/menu.inc
 %%HORDEDIR%%/templates/index/frames_index.inc
-%%HORDEDIR%%/templates/javascript/form_sections.js
 %%HORDEDIR%%/templates/javascript/htmlarea.js
 %%HORDEDIR%%/templates/javascript/htmlarea_anselimage_lang.js
 %%HORDEDIR%%/templates/javascript/htmlarea_context_lang.js
@@ -772,7 +764,6 @@
 %%HORDEDIR%%/templates/javascript/open_html_helper.js
 %%HORDEDIR%%/templates/javascript/print.js
 %%HORDEDIR%%/templates/javascript/quoteBlocks.js
-%%HORDEDIR%%/templates/javascript/test_javascript.js
 %%HORDEDIR%%/templates/javascript/tree.js
 %%HORDEDIR%%/templates/login/login.inc
 %%HORDEDIR%%/templates/login/mobile.inc
@@ -1687,8 +1678,6 @@
 @dirrm %%HORDEDIR%%/lib/Horde/Scheduler
 @dirrm %%HORDEDIR%%/lib/Horde/SQL
 @dirrm %%HORDEDIR%%/lib/Horde/RPC
-@dirrm %%HORDEDIR%%/lib/Horde/RDO/Storage
-@dirrm %%HORDEDIR%%/lib/Horde/RDO
 @dirrm %%HORDEDIR%%/lib/Horde/Prefs
 @dirrm %%HORDEDIR%%/lib/Horde/Perms
 @dirrm %%HORDEDIR%%/lib/Horde/Notification/Listener

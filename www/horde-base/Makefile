@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTVERSION=	3.1.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.planetmirror.com/pub/horde/horde/		\
@@ -17,14 +16,10 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/horde/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/	\
-		http://ftp.horde.org/pub/horde/				\
-		http://cvs.horde.org/co.php?r=1.146\&p=1\&f=horde/:patch1	\
-		http://cvs.horde.org/co.php?r=2.26\&p=1\&f=horde/templates/problem/:patch2
+		http://ftp.horde.org/pub/horde/
 .if defined(WITH_PHP5)
 PKGNAMESUFFIX=	-php5
 .endif
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} test.php:patch1 problem.inc:patch2
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A common code-base used by Horde applications, written in PHP
@@ -269,9 +264,6 @@ PLIST_SUB+=	RMDIRINC=""
 .endif
 
 pre-configure:
-	@${CP} -p ${DISTDIR}/test.php ${WRKSRC}
-	@${CP} -p ${DISTDIR}/problem.inc ${WRKSRC}/templates/problem/
-
 	@${RM} ${PATCHES2RM:S|^|${WRKSRC}/|:S|$|.orig|}
 	@${SED} -e "s:/home/httpd/html/horde:${HORDEDIR}:"				\
 		-e "s:php_value auto_prepend_file:# php_value auto_prepend_file:"	\
