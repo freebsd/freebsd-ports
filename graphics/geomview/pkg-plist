@@ -1,135 +1,135 @@
-share/geomview/data/geom/ztent.mesh
-share/geomview/data/geom/xyz.vect
-share/geomview/data/geom/xyz.grp
-share/geomview/data/geom/xwyezed.vect
-share/geomview/data/geom/wraptent.mesh
-share/geomview/data/geom/warp.inst
-share/geomview/data/geom/vertcube.off
-share/geomview/data/geom/unitcube.off
-share/geomview/data/geom/unit.sphere
-share/geomview/data/geom/twosidedsquare.quad
-share/geomview/data/geom/triangle
-share/geomview/data/geom/tri.vect
-share/geomview/data/geom/tri.4d.vect
-share/geomview/data/geom/tref.off
-share/geomview/data/geom/tref.mesh
-share/geomview/data/geom/trapezoid.4d.off
-share/geomview/data/geom/torus8.oogl
-share/geomview/data/geom/torus3.oogl
-share/geomview/data/geom/torus.bez
-share/geomview/data/geom/textured/themi.bez
-share/geomview/data/geom/textured/square.off
-share/geomview/data/geom/textured/rabbits.ppm.gz
-share/geomview/data/geom/textured/rabbitball
-share/geomview/data/geom/textured/lunar-t.oogl
-share/geomview/data/geom/textured/dodec.off
-share/geomview/data/geom/textured/GCGball
-share/geomview/data/geom/textured/Antenna.geom
-@dirrm share/geomview/data/geom/textured
-share/geomview/data/geom/tetra.off
-share/geomview/data/geom/tetra
-share/geomview/data/geom/tent.mesh
-share/geomview/data/geom/teapot.bez
-share/geomview/data/geom/square.quad
-share/geomview/data/geom/spherical/twosided.flattorus
-share/geomview/data/geom/spherical/tetraplex.off
-share/geomview/data/geom/spherical/simplex.off
-share/geomview/data/geom/spherical/ruledtorus.mesh
-share/geomview/data/geom/spherical/orthoplex.off
-share/geomview/data/geom/spherical/octaplex.off
-share/geomview/data/geom/spherical/hypercube.off
-share/geomview/data/geom/spherical/flattorus.mesh
-share/geomview/data/geom/spherical/dodecaplex.off
-@dirrm share/geomview/data/geom/spherical
-share/geomview/data/geom/sphere.mesh
-share/geomview/data/geom/sph12.mesh
-share/geomview/data/geom/sample.mesh
-share/geomview/data/geom/ref2.list
-share/geomview/data/geom/ref1.grp
-share/geomview/data/geom/ref.list
-share/geomview/data/geom/ref.inst
-share/geomview/data/geom/polyhedra/truncated_tetrahedron
-share/geomview/data/geom/polyhedra/truncated_octahedron
-share/geomview/data/geom/polyhedra/truncated_icosahedron
-share/geomview/data/geom/polyhedra/truncated_dodecahedron
-share/geomview/data/geom/polyhedra/truncated_cube
-share/geomview/data/geom/polyhedra/tetrahedron
-share/geomview/data/geom/polyhedra/snub_dodecahedron
-share/geomview/data/geom/polyhedra/snub_cube
-share/geomview/data/geom/polyhedra/rhombitruncated_icosidodecahedron
-share/geomview/data/geom/polyhedra/rhombitruncated_cubeoctahedron
-share/geomview/data/geom/polyhedra/rhombicuboctahedron
-share/geomview/data/geom/polyhedra/rhombicosidodecahedron
-share/geomview/data/geom/polyhedra/octahedron
-share/geomview/data/geom/polyhedra/icosidodecahedron
-share/geomview/data/geom/polyhedra/icosahedron
-share/geomview/data/geom/polyhedra/dodecahedron
-share/geomview/data/geom/polyhedra/cuboctahedron
-share/geomview/data/geom/polyhedra/cube
-@dirrm share/geomview/data/geom/polyhedra
-share/geomview/data/geom/pieces/linkB.bez
-share/geomview/data/geom/pieces/linkA.bez
-share/geomview/data/geom/pieces/cube1.off
-@dirrm share/geomview/data/geom/pieces
-share/geomview/data/geom/office.oogl
-share/geomview/data/geom/octant.bez
-share/geomview/data/geom/octa.off
-share/geomview/data/geom/nsquare.quad
-share/geomview/data/geom/mushroom.off
-share/geomview/data/geom/moebius.4d.mesh
-share/geomview/data/geom/link8.grp
-share/geomview/data/geom/link2.grp
-share/geomview/data/geom/klein8
-share/geomview/data/geom/jungle.list
-share/geomview/data/geom/icosa.quad
-share/geomview/data/geom/icosa.off
-share/geomview/data/geom/ico.grp
-share/geomview/data/geom/hypercube.off
-share/geomview/data/geom/helicoid
-share/geomview/data/geom/hdodec.off
-share/geomview/data/geom/flythrough_diagram.gv
-share/geomview/data/geom/facecube.off
-share/geomview/data/geom/dodec2.off
-share/geomview/data/geom/dodec.vect
-share/geomview/data/geom/dodec.quad
-share/geomview/data/geom/dodec.off
-share/geomview/data/geom/dodec
-share/geomview/data/geom/diamond
-share/geomview/data/geom/cube.off
-share/geomview/data/geom/cube
-share/geomview/data/geom/csquare.quad
-share/geomview/data/geom/cone.off
-share/geomview/data/geom/catenoid
-share/geomview/data/geom/camera-frustum
-share/geomview/data/geom/cam.off
-share/geomview/data/geom/br4fd.list
-share/geomview/data/geom/br4fd.grp
-share/geomview/data/geom/br4.2
-share/geomview/data/geom/br2.off
-share/geomview/data/geom/br2.grp
-share/geomview/data/geom/axes.list
-share/geomview/data/geom/antoine3.oogl
-share/geomview/data/geom/antoine2.oogl
-share/geomview/data/geom/antoine1.oogl
-share/geomview/data/geom/antoine0.oogl
-share/geomview/data/geom/alphabet.vect
-share/geomview/data/geom/abstr.off
-share/geomview/data/geom/HingeTriangle
-share/geomview/data/geom/HingeTetra
-share/geomview/data/geom/HingeLongcube
-share/geomview/data/geom/HingeDodec
-share/geomview/data/geom/HingeDiamond
-share/geomview/data/geom/HingeCube
-@dirrm share/geomview/data/geom
-share/geomview/data/cmap.fmap
-share/geomview/data/.geomview
-@dirrm share/geomview/data
-@dirrm share/geomview
-share/examples/geomview/example4.tcl
-share/examples/geomview/example3.c
-share/examples/geomview/example2.c
-share/examples/geomview/example1.c
-@dirrm share/examples/geomview
+%%DATADIR%%/data/geom/ztent.mesh
+%%DATADIR%%/data/geom/xyz.vect
+%%DATADIR%%/data/geom/xyz.grp
+%%DATADIR%%/data/geom/xwyezed.vect
+%%DATADIR%%/data/geom/wraptent.mesh
+%%DATADIR%%/data/geom/warp.inst
+%%DATADIR%%/data/geom/vertcube.off
+%%DATADIR%%/data/geom/unitcube.off
+%%DATADIR%%/data/geom/unit.sphere
+%%DATADIR%%/data/geom/twosidedsquare.quad
+%%DATADIR%%/data/geom/triangle
+%%DATADIR%%/data/geom/tri.vect
+%%DATADIR%%/data/geom/tri.4d.vect
+%%DATADIR%%/data/geom/tref.off
+%%DATADIR%%/data/geom/tref.mesh
+%%DATADIR%%/data/geom/trapezoid.4d.off
+%%DATADIR%%/data/geom/torus8.oogl
+%%DATADIR%%/data/geom/torus3.oogl
+%%DATADIR%%/data/geom/torus.bez
+%%DATADIR%%/data/geom/textured/themi.bez
+%%DATADIR%%/data/geom/textured/square.off
+%%DATADIR%%/data/geom/textured/rabbits.ppm.gz
+%%DATADIR%%/data/geom/textured/rabbitball
+%%DATADIR%%/data/geom/textured/lunar-t.oogl
+%%DATADIR%%/data/geom/textured/dodec.off
+%%DATADIR%%/data/geom/textured/GCGball
+%%DATADIR%%/data/geom/textured/Antenna.geom
+@dirrm %%DATADIR%%/data/geom/textured
+%%DATADIR%%/data/geom/tetra.off
+%%DATADIR%%/data/geom/tetra
+%%DATADIR%%/data/geom/tent.mesh
+%%DATADIR%%/data/geom/teapot.bez
+%%DATADIR%%/data/geom/square.quad
+%%DATADIR%%/data/geom/spherical/twosided.flattorus
+%%DATADIR%%/data/geom/spherical/tetraplex.off
+%%DATADIR%%/data/geom/spherical/simplex.off
+%%DATADIR%%/data/geom/spherical/ruledtorus.mesh
+%%DATADIR%%/data/geom/spherical/orthoplex.off
+%%DATADIR%%/data/geom/spherical/octaplex.off
+%%DATADIR%%/data/geom/spherical/hypercube.off
+%%DATADIR%%/data/geom/spherical/flattorus.mesh
+%%DATADIR%%/data/geom/spherical/dodecaplex.off
+@dirrm %%DATADIR%%/data/geom/spherical
+%%DATADIR%%/data/geom/sphere.mesh
+%%DATADIR%%/data/geom/sph12.mesh
+%%DATADIR%%/data/geom/sample.mesh
+%%DATADIR%%/data/geom/ref2.list
+%%DATADIR%%/data/geom/ref1.grp
+%%DATADIR%%/data/geom/ref.list
+%%DATADIR%%/data/geom/ref.inst
+%%DATADIR%%/data/geom/polyhedra/truncated_tetrahedron
+%%DATADIR%%/data/geom/polyhedra/truncated_octahedron
+%%DATADIR%%/data/geom/polyhedra/truncated_icosahedron
+%%DATADIR%%/data/geom/polyhedra/truncated_dodecahedron
+%%DATADIR%%/data/geom/polyhedra/truncated_cube
+%%DATADIR%%/data/geom/polyhedra/tetrahedron
+%%DATADIR%%/data/geom/polyhedra/snub_dodecahedron
+%%DATADIR%%/data/geom/polyhedra/snub_cube
+%%DATADIR%%/data/geom/polyhedra/rhombitruncated_icosidodecahedron
+%%DATADIR%%/data/geom/polyhedra/rhombitruncated_cubeoctahedron
+%%DATADIR%%/data/geom/polyhedra/rhombicuboctahedron
+%%DATADIR%%/data/geom/polyhedra/rhombicosidodecahedron
+%%DATADIR%%/data/geom/polyhedra/octahedron
+%%DATADIR%%/data/geom/polyhedra/icosidodecahedron
+%%DATADIR%%/data/geom/polyhedra/icosahedron
+%%DATADIR%%/data/geom/polyhedra/dodecahedron
+%%DATADIR%%/data/geom/polyhedra/cuboctahedron
+%%DATADIR%%/data/geom/polyhedra/cube
+@dirrm %%DATADIR%%/data/geom/polyhedra
+%%DATADIR%%/data/geom/pieces/linkB.bez
+%%DATADIR%%/data/geom/pieces/linkA.bez
+%%DATADIR%%/data/geom/pieces/cube1.off
+@dirrm %%DATADIR%%/data/geom/pieces
+%%DATADIR%%/data/geom/office.oogl
+%%DATADIR%%/data/geom/octant.bez
+%%DATADIR%%/data/geom/octa.off
+%%DATADIR%%/data/geom/nsquare.quad
+%%DATADIR%%/data/geom/mushroom.off
+%%DATADIR%%/data/geom/moebius.4d.mesh
+%%DATADIR%%/data/geom/link8.grp
+%%DATADIR%%/data/geom/link2.grp
+%%DATADIR%%/data/geom/klein8
+%%DATADIR%%/data/geom/jungle.list
+%%DATADIR%%/data/geom/icosa.quad
+%%DATADIR%%/data/geom/icosa.off
+%%DATADIR%%/data/geom/ico.grp
+%%DATADIR%%/data/geom/hypercube.off
+%%DATADIR%%/data/geom/helicoid
+%%DATADIR%%/data/geom/hdodec.off
+%%DATADIR%%/data/geom/flythrough_diagram.gv
+%%DATADIR%%/data/geom/facecube.off
+%%DATADIR%%/data/geom/dodec2.off
+%%DATADIR%%/data/geom/dodec.vect
+%%DATADIR%%/data/geom/dodec.quad
+%%DATADIR%%/data/geom/dodec.off
+%%DATADIR%%/data/geom/dodec
+%%DATADIR%%/data/geom/diamond
+%%DATADIR%%/data/geom/cube.off
+%%DATADIR%%/data/geom/cube
+%%DATADIR%%/data/geom/csquare.quad
+%%DATADIR%%/data/geom/cone.off
+%%DATADIR%%/data/geom/catenoid
+%%DATADIR%%/data/geom/camera-frustum
+%%DATADIR%%/data/geom/cam.off
+%%DATADIR%%/data/geom/br4fd.list
+%%DATADIR%%/data/geom/br4fd.grp
+%%DATADIR%%/data/geom/br4.2
+%%DATADIR%%/data/geom/br2.off
+%%DATADIR%%/data/geom/br2.grp
+%%DATADIR%%/data/geom/axes.list
+%%DATADIR%%/data/geom/antoine3.oogl
+%%DATADIR%%/data/geom/antoine2.oogl
+%%DATADIR%%/data/geom/antoine1.oogl
+%%DATADIR%%/data/geom/antoine0.oogl
+%%DATADIR%%/data/geom/alphabet.vect
+%%DATADIR%%/data/geom/abstr.off
+%%DATADIR%%/data/geom/HingeTriangle
+%%DATADIR%%/data/geom/HingeTetra
+%%DATADIR%%/data/geom/HingeLongcube
+%%DATADIR%%/data/geom/HingeDodec
+%%DATADIR%%/data/geom/HingeDiamond
+%%DATADIR%%/data/geom/HingeCube
+@dirrm %%DATADIR%%/data/geom
+%%DATADIR%%/data/cmap.fmap
+%%DATADIR%%/data/.geomview
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+%%EXAMPLESDIR%%/example4.tcl
+%%EXAMPLESDIR%%/example3.c
+%%EXAMPLESDIR%%/example2.c
+%%EXAMPLESDIR%%/example1.c
+@dirrm %%EXAMPLESDIR%%
 libexec/geomview/modules/gvx
 libexec/geomview/modules/drawbdy
 libexec/geomview/modules/animate
@@ -137,14 +137,6 @@ libexec/geomview/modules/.geomview-drawbdy
 libexec/geomview/modules/.geomview-animate
 @dirrm libexec/geomview/modules
 @dirrm libexec/geomview
-info/geomview-7
-info/geomview-6
-info/geomview-5
-info/geomview-4
-info/geomview-3
-info/geomview-2
-info/geomview-1
-info/geomview
 bin/vrml2oogl
 bin/ucdtooff
 bin/togeomview
@@ -176,7 +168,7 @@ bin/anytooff
 %%PORTDOCS%%%%DOCSDIR%%/html/pix/color.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pix/cam.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pix/ap.gif
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html/pix
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pix
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/geomview_toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/geomview_9.html
@@ -265,7 +257,7 @@ bin/anytooff
 %%PORTDOCS%%%%DOCSDIR%%/html/geomview_11.html
 %%PORTDOCS%%%%DOCSDIR%%/html/geomview_10.html
 %%PORTDOCS%%%%DOCSDIR%%/html/geomview_1.html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%%%DOCSDIR%%/gvplot.txt
 %%PORTDOCS%%%%DOCSDIR%%/figs/trefdodecinter.ps
 %%PORTDOCS%%%%DOCSDIR%%/figs/tools.ps
@@ -282,7 +274,7 @@ bin/anytooff
 %%PORTDOCS%%%%DOCSDIR%%/figs/color.ps
 %%PORTDOCS%%%%DOCSDIR%%/figs/cam.ps
 %%PORTDOCS%%%%DOCSDIR%%/figs/ap.ps
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/figs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/figs
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/OOGL.m.txt
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
