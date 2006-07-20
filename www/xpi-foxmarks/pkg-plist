@@ -1,0 +1,89 @@
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-bookmarkconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-bookmarkset.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-conflicts.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-dialog.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-dialog.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-folderconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-log.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-manageroverlay.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-manageroverlay.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-merge.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-orderconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-overlay.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-overlay.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-parentconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-progress.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-progress.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-rdfserializer.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-remote.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-separatorconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-settings.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-setup.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-setup.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-sync.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-tree.css
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/header.gif
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/logo.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/foxmarks-service.idl
+%%XPI_XPIDIR%%/components/foxmarks-service.js
+%%XPI_XPIDIR%%/components/foxmarks-service.xpt
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/skin
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
