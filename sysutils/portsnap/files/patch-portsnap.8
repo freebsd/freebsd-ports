@@ -1,0 +1,41 @@
+--- portsnap.8.orig	Sat May 27 09:21:29 2006
++++ portsnap.8	Thu Jul 20 09:06:29 2006
+@@ -57,13 +57,13 @@
+ Store working files (e.g. downloaded updates) in
+ .Ar workdir .
+ (default:
+-.Pa $PREFIX/portsnap ,
++.Pa %%PREFIX%%/portsnap ,
+ or as given in the configuration file.)
+ .It Fl f Ar conffile
+ Read the configuration from from
+ .Ar conffile .
+ (default:
+-.Pa $PREFIX/etc/portsnap.conf )
++.Pa %%PREFIX%%/etc/portsnap.conf )
+ .It Fl I
+ For the
+ .Cm update
+@@ -157,7 +157,7 @@
+ .It
+ If your clock is set to local time, adding the line
+ .Pp
+-.Dl 0 3 * * * root /usr/local/sbin/portsnap cron
++.Dl 0 3 * * * root /foo/sbin/portsnap cron
+ .Pp
+ to /etc/crontab is a good way to make sure you always have
+ an up-to-date snapshot of the ports tree available which
+@@ -218,10 +218,10 @@
+ may be published, but only in aggregate and after anonymizing the
+ individual systems.
+ .Sh FILES
+-.Bl -tag -width "$PREFIX/etc/portsnap.conf"
+-.It $PREFIX/etc/portsnap.conf
++.Bl -tag -width "%%PREFIX%%/etc/portsnap.conf"
++.It %%PREFIX%%/etc/portsnap.conf
+ Default location of the portsnap configuration file.
+-.It $PREFIX/portsnap
++.It %%PREFIX%%/portsnap
+ Default location where compressed snapshots are stored.
+ .It /usr/ports
+ Default location where the ports tree is extracted.
