@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.8.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -23,6 +23,14 @@ LDCONFIG_DIRS=		%%PREFIX%%/lib \
 			%%PREFIX%%/lib/libpreludedb/plugins/formats
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+OPTIONS=		PERL "Include Perl bindings" off \
+			PYTHON "Include Python bindings" off \
+			MYSQL "Use MySQL backend" on \
+			PGSQL "Use PostgreSQL backend" off \
+			SQLITE "Use SQLite backend" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_PERL)
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl
@@ -34,6 +42,7 @@ PLIST_SUB+=		WITH_PERL="@comment "
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=		yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
 PLIST_SUB+=		WITH_PYTHON=""
 .else
@@ -41,7 +50,7 @@ CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.if !defined(WITHOUT_MYSQL)
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 PLIST_SUB+=		WITH_MYSQL=""
@@ -80,4 +89,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
