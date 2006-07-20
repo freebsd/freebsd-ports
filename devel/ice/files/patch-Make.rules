@@ -1,51 +1,15 @@
---- config/Make.rules.orig	Wed May 26 01:09:19 2004
-+++ config/Make.rules	Sat May 29 16:02:37 2004
-@@ -12,7 +12,7 @@
- # if it does not exist.
- #
+--- config/Make.rules.orig	Sat Jul 15 10:05:05 2006
++++ config/Make.rules	Sat Jul 15 10:05:50 2006
+@@ -166,9 +166,9 @@
+ BZIP2_LIBS              = $(if $(BZIP2_HOME),-L$(BZIP2_HOME)/$(libsubdir)) -lbz2
+ BZIP2_RPATH_LINK        = $(if $(BZIP2_HOME),$(call rpathlink,$(BZIP2_HOME)/$(libsubdir)))
  
--prefix			= /opt/Ice-$(VERSION)
-+prefix			= $(PREFIX)/Ice-$(VERSION)
+-DB_FLAGS                = $(if $(DB_HOME),-I$(DB_HOME)/include)
+-DB_LIBS                 = $(if $(DB_HOME),-L$(DB_HOME)/$(libsubdir)) -ldb_cxx
+-DB_RPATH_LINK           = $(if $(DB_HOME),$(call rpathlink,$(DB_HOME)/$(libsubdir)))
++DB_FLAGS                = $(if $(DB_HOME),-I$(DB_HOME)/include/$(DB_VERSION))
++DB_LIBS                 = $(if $(DB_HOME),-L$(DB_HOME)/$(libsubdir)/$(DB_VERSION)) -ldb_cxx
++DB_RPATH_LINK           = $(if $(DB_HOME),$(call rpathlink,$(DB_HOME)/$(libsubdir)/$(DB_VERSION)))
  
- #
- # Define OPTIMIZE as yes if you want to build with
-@@ -91,7 +91,7 @@
- # directory.
- #
- 
--#DB_HOME		?= /opt/db
-+DB_HOME		?= $(LOCALBASE)
- 
- #
- # If OpenSSL is not installed in a standard location where the
-@@ -114,7 +114,7 @@
- # installation directory.
- #
- 
--#EXPAT_HOME		?= /opt/expat
-+EXPAT_HOME		?= $(LOCALBASE)
- 
- 
- #
-@@ -152,8 +152,8 @@
- install_schemadir	= $(prefix)/schema
- install_docdir		= $(prefix)/doc
- 
--INSTALL			= cp -fp
--INSTALL_PROGRAM		= ${INSTALL}
-+INSTALL			= %%INSTALL_DATA%%
-+INSTALL_PROGRAM		= %%INSTALL_PROGRAM%%
- INSTALL_LIBRARY		= ${INSTALL}
- INSTALL_DATA		= ${INSTALL}
- 
-@@ -203,8 +203,8 @@
- endif
- 
- ifneq ($(DB_HOME),)
--    DB_FLAGS		= -I$(DB_HOME)/include
--    DB_LIBS		= -L$(DB_HOME)/$(libsubdir) -ldb_cxx
-+    DB_FLAGS		= -I$(DB_HOME)/include/db42
-+    DB_LIBS		= -L$(DB_HOME)/$(libsubdir) -ldb_cxx-4.2
- else
-     DB_FLAGS		=
-     DB_LIBS		= -ldb_cxx
+ EXPAT_FLAGS             = $(if $(EXPAT_HOME),-I$(EXPAT_HOME)/include)
+ EXPAT_LIBS              = $(if $(EXPAT_HOME),-L$(EXPAT_HOME)/$(libsubdir)) -lexpat
