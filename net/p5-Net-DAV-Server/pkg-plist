@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DAV/Server/.packlist
+%%SITE_PERL%%/Net/DAV/Server.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DAV/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DAV
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/DAV
+@dirrmtry %%SITE_PERL%%/Net
