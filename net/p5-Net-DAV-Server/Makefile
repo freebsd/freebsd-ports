@@ -41,7 +41,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .if ${PERL_LEVEL} < 500701
-RUN_DEPENDS+=	${SITE_PERL}/Encode.pm:${PORTSDIR}/devel/p5-Encode
+RUN_DEPENDS+=	${SITE_PERL}/Encode.pm:${PORTSDIR}/converters/p5-Encode
 .endif
 
 .include <bsd.port.post.mk>
