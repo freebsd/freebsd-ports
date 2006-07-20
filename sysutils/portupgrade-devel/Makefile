@@ -68,12 +68,12 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 pre-extract:
 .if !defined(WITH_BDB4) && !defined(WITH_BDB1)
 	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG} "Neither WITH_DBD4 nor WITH_BDB1 are defined. Will use DBD driver."
+	@${ECHO_MSG} "Neither WITH_BDB4 nor WITH_BDB1 are defined. Will use DBD driver."
 	@${ECHO_MSG} "================================================================="
 .endif
 .if defined(WITH_BDB4) && defined(WITH_BDB1)
 	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG} "Both WITH_DBD4 and WITH_BDB1 are defined. Will use BDB4 driver."
+	@${ECHO_MSG} "Both WITH_BDB4 and WITH_BDB1 are defined. Will use BDB4 driver."
 	@${ECHO_MSG} "================================================================="
 .elif defined(WITH_BDB1) && exists(${RUBY_SITEARCHLIBDIR}/bdb.so)
 	@${ECHO_MSG} "================================================================="
