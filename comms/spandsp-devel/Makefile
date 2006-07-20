@@ -31,8 +31,8 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name *.c | ${XARGS} ${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|'
-.if ${OSVERSION} < 503000                                                      
-	${TOUCH} ${WRKSRC}/src/tgmath.h                                         
-.endif                                                                         
+.if ${OSVERSION} < 503000
+	${ECHO} '#define lrintf(x) ((int16_t)rintf(x))' > ${WRKSRC}/src/tgmath.h
+.endif
 
 .include <bsd.port.post.mk>
