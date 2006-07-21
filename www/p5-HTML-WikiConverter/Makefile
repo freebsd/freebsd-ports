@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-WikiConverter
-PORTVERSION=	0.55
+PORTVERSION=	0.60
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -26,8 +26,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		html2wiki.1
-MAN3=		HTML::WikiConverter.3 \
-		HTML::WikiConverter::Dialects.3
+MAN3=		HTML::WikiConverter.3 HTML::WikiConverter::Dialects.3 \
+		HTML::WikiConverter::Normalizer.3
 
 .include <bsd.port.pre.mk>
 
