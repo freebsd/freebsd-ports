@@ -6,9 +6,9 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Client/API.pm
 %%SITE_PERL%%/OpenXPKI/Client/CLI.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason.pm
-%%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Config.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Javascript.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Menu.pm
+%%SITE_PERL%%/OpenXPKI/Client/SCEP.pm
 %%SITE_PERL%%/OpenXPKI/Client/SOAP/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/API.pm
@@ -36,6 +36,7 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_get_chain.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_sign.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/pkcs7_verify.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Command/symmetric_cipher.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend/OpenSSL/Engine/GOST.pm
@@ -56,6 +57,7 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/CRL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Profile/Certificate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/TokenManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/VolatileVault.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/X509.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/DN.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/DateTime.pm
@@ -88,6 +90,7 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/Appender/DBI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session/Mock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Certificate/Issue.pm
@@ -100,6 +103,10 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools/DetermineIssuingCA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI/SequenceId.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertProfile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubject.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/CertSubjectAltName.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator/SPKAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command.pm
@@ -114,9 +121,12 @@ bin/openxpkictl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/CLI/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SCEP/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP/Lite/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.so
+share/locale/de_DE/LC_MESSAGES/openxpki.mo
+share/locale/en_GB/LC_MESSAGES/openxpki.mo
 %%DATADIR%%/templates/default/acl.xml
 %%DATADIR%%/templates/default/auth.xml
 %%DATADIR%%/templates/default/config.xml
@@ -127,16 +137,19 @@ bin/openxpkictl
 %%DATADIR%%/templates/default/token.xml
 %%DATADIR%%/templates/default/workflow.xml
 %%DATADIR%%/templates/default/workflow_activity.xml
-%%DATADIR%%/templates/default/workflow_persister.xml
+%%DATADIR%%/templates/default/workflow_activity_certificate_signing_request.xml
+%%DATADIR%%/templates/default/workflow_activity_null.xml
+%%DATADIR%%/templates/default/workflow_def_certificate_signing_request.xml
 %%DATADIR%%/templates/default/workflow_request_dataonly.xml
-@dirrm var/openxpki/session
-@dirrm var/openxpki
-@dirrmtry var
+%%DATADIR%%/templates/default/workflow_validator_certificate_signing_request.xml
 @dirrm %%DATADIR%%/templates/default
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP/Lite
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SCEP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/CLI
@@ -147,6 +160,7 @@ bin/openxpkictl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default/Command
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/Default
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Validator
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister/DBI
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Persister
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Tools
@@ -160,6 +174,7 @@ bin/openxpkictl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity/Certificate
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow/Activity
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Workflow
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Session
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log/Appender
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/Log
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Server/DBI/Driver
@@ -182,5 +197,3 @@ bin/openxpkictl
 @dirrm %%SITE_PERL%%/OpenXPKI/Client
 @dirrm %%SITE_PERL%%/OpenXPKI
 @dirrmtry etc/openxpki
-%%PORTDOCS%%%%DOCSDIR%%/OpenXPKI-Architecture-Overview.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
