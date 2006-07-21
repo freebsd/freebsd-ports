@@ -432,6 +432,7 @@
     SUBDIR += p5-Xmms
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
+    SUBDIR += pacpl
     SUBDIR += paman
     SUBDIR += pd
     SUBDIR += penguinsap
