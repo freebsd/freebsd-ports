@@ -995,7 +995,6 @@ MASTER_SITE_SOURCEWARE+= \
 MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/Linux/%SUBDIR%/ \
-	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.physics.auth.gr/pub/mirrors/ibiblio/Linux/%SUBDIR%/ \
 	ftp://ftp.edisontel.com/pub/Sunsite_Mirror/%SUBDIR%/ \
