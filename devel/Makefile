@@ -811,6 +811,7 @@
     SUBDIR += p5-Class-Hook
     SUBDIR += p5-Class-ISA
     SUBDIR += p5-Class-Inner
+    SUBDIR += p5-Class-InsideOut
     SUBDIR += p5-Class-Inspector
     SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MOP
