@@ -16,6 +16,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	File storage backend for session data
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build \
 		p5-Cache-Cache>=1.02:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Catalyst-Plugin-Session>=0.01:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
