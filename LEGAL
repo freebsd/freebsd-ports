@@ -453,6 +453,8 @@ onion-fec		net/onion-fec		Some uses of FEC
 openssl-*		security/openssl	Crypto; export/import-controlled
 opera-*			www/linux-opera		No redistribution, commercial
 						software
+optimfrog-*		audio/optimfrog		No commercial use, no distribution
+						of a modified package
 oracle/*		databases/jdbc-oracle*	This software is under license
 						and export controls
 otojiro*.txt		japanese/otojiro-fpw	The original dictionary is not free
