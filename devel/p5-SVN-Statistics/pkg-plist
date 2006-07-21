@@ -1,0 +1,5 @@
+%%SITE_PERL%%/SVN/Statistics.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Statistics/.packlist
+@dirrmtry %%SITE_PERL%%/SVN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Statistics
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
