@@ -8,10 +8,11 @@
 
 PORTNAME=	dprog
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.daimi.au.dk/~mailund/dprog/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	A language for specifying dynamic programming algorithms
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
@@ -20,6 +21,20 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	bin/dprog include/cxx_dprog.hh lib/libcxx_dprog.a
+OPTIONS=	EMACS "Install emacs syntax files" on
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_EMACS)
+PLIST_SUB+=	EMACS=""
+.else
+PLIST_SUB+=	EMACS="@comment "
+.endif
+
+post-install:
+.if !defined(WITHOUT_EMACS)
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/elisp/*.el ${DATADIR}
+.endif
+
+.include <bsd.port.post.mk>
