@@ -1,0 +1,8 @@
+Unlike the tie-based Data::Lazy, this module operates on values, not
+variables. Therefore, assigning into $dv and $lv above will simply
+replace the value, instead of triggering a STORE method call.
+
+Also, thanks to the overload-based implementation, this module is
+about 2x faster than Data::Lazy.
+
+WWW:	http://search.cpan.org/dist/Scalar-Defer/
