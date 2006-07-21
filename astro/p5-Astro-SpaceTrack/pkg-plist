@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+bin/SpaceTrack
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SpaceTrack/.packlist
+%%SITE_PERL%%/Astro/SpaceTrack.pm
+%%SITE_PERL%%/Astro/SpaceTrack/Parser.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/SpaceTrack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
+@dirrmtry %%SITE_PERL%%/Astro/SpaceTrack
+@dirrmtry %%SITE_PERL%%/Astro

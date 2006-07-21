@@ -38,6 +38,7 @@
     SUBDIR += p5-Astro-FITS-Header
     SUBDIR += p5-Astro-MoonPhase
     SUBDIR += p5-Astro-SIMBAD
+    SUBDIR += p5-Astro-SpaceTrack
     SUBDIR += p5-Astro-SunTime
     SUBDIR += p5-Astro-Sunrise
     SUBDIR += p5-GPS
