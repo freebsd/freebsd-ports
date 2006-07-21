@@ -1,9 +1,10 @@
+@comment $FreeBSD$
 bin/flickr_upload
-%%SITE_PERL%%/Flickr/Upload.pm
-@dirrmtry %%SITE_PERL%%/Flickr
-%%SITE_PERL%%/auto/Flickr/Upload/autosplit.ix
-@dirrm %%SITE_PERL%%/auto/Flickr/Upload
-@dirrmtry %%SITE_PERL%%/auto/Flickr
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload
+%%SITE_PERL%%/Flickr/Upload.pm
+%%SITE_PERL%%/auto/Flickr/Upload/autosplit.ix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr
+@dirrmtry %%SITE_PERL%%/Flickr
+@dirrmtry %%SITE_PERL%%/auto/Flickr/Upload
+@dirrmtry %%SITE_PERL%%/auto/Flickr
