@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Expect
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Expect
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module inspired by the Tcl version of Expect
 
 BUILD_DEPENDS=	p5-IO-Tty>=1.03:${PORTSDIR}/devel/p5-IO-Tty \
