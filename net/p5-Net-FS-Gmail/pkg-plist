@@ -1,0 +1,11 @@
+bin/gmailfs
+%%SITE_PERL%%/Net/FS/Gmail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FS/Gmail/.packlist
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FS/Gmail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+@dirrmtry %%SITE_PERL%%/Net/FS
+@dirrmtry %%SITE_PERL%%/Net

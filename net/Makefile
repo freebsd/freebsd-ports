@@ -426,6 +426,7 @@
     SUBDIR += p5-Net-EPP-Client
     SUBDIR += p5-Net-EPP-Frame
     SUBDIR += p5-Net-EPP-Proxy
+    SUBDIR += p5-Net-FS-Gmail
     SUBDIR += p5-Net-FTP-File
     SUBDIR += p5-Net-Finger
     SUBDIR += p5-Net-Gnats
