@@ -1,0 +1,17 @@
+This is a simple, safe and streamlined toolkit for building inside-out
+objects. Unlike most other inside-out object building modules already
+on CPAN, this module aims for minimalism and robustness:
+
+    * Does not require derived classes to subclass it
+    * Uses no source filters, attributes or CHECK blocks
+    * Supports any underlying object type including foreign inheritance
+    * Does not leak memory on object destruction
+    * Overloading-safe
+    * Thread-safe for Perl 5.8 or better
+    * mod_perl compatible
+    * Makes no assumption about inheritance or initializer needs
+
+It provides the minimal support necessary for creating safe inside-out
+objects and generating flexible accessors.
+
+WWW:	http://search.cpan.org/dist/Class-InsideOut/
