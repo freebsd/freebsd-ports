@@ -1,0 +1,15 @@
+This module returns a hash containing basic information about a FLAC file,
+a representation of the embedded cue sheet if one exists, as well as tag
+information contained in the FLAC file's Vorbis tags. There is no complete
+list of tag keys for Vorbis tags, as they can be defined by the user; the
+basic set of tags used for FLAC files include:
+
+* ALBUM
+* ARTIST
+* TITLE
+* DATE
+* GENRE
+* TRACKNUMBER
+* COMMENT
+
+WWW: http://search.cpan.org/dist/Audio-FLAC-Header/
