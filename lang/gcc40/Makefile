@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.4
-PORTREVISION=	20060713
+PORTREVISION=	20060720
 CATEGORIES=	lang
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -88,7 +88,6 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	-@${MKDIR} ${PREFIX}/libdata/ldconfig
 	# man pages can only be generated if Perl >= 5.6 is installed;
 	# fake them otherwise.
 	for mp in ${_MANPAGES}; do \
