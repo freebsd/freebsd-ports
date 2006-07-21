@@ -1,0 +1,5 @@
+Make::Cache provides packages and the objcache program to cache the
+results of compiler runs, so that later identical source code can be
+recompiled instantaneously.
+
+WWW:	http://search.cpan.org/dist/Make-Cache/

@@ -1136,6 +1136,7 @@
     SUBDIR += p5-Luka
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Make
+    SUBDIR += p5-Make-Cache
     SUBDIR += p5-Memoize
     SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Mknod
