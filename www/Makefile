@@ -634,6 +634,7 @@
     SUBDIR += p5-HTML-Widget
     SUBDIR += p5-HTML-Widgets-SelectLayers
     SUBDIR += p5-HTML-WikiConverter
+    SUBDIR += p5-HTML-WikiConverter-DokuWiki
     SUBDIR += p5-HTML-WikiConverter-Kwiki
     SUBDIR += p5-HTML-WikiConverter-Markdown
     SUBDIR += p5-HTML-WikiConverter-MediaWiki
