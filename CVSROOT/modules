@@ -8177,6 +8177,7 @@ p5-Class-Handle	ports/devel/p5-Class-Handle
 p5-Class-Hook	ports/devel/p5-Class-Hook
 p5-Class-ISA	ports/devel/p5-Class-ISA
 p5-Class-Inner	ports/devel/p5-Class-Inner
+p5-Class-InsideOut	ports/devel/p5-Class-InsideOut
 p5-Class-Inspector	ports/devel/p5-Class-Inspector
 p5-Class-Loader	ports/devel/p5-Class-Loader
 p5-Class-MOP	ports/devel/p5-Class-MOP
