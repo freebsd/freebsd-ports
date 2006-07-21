@@ -15,17 +15,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of programs to manipulate audio files
 
-BROKEN=		fails to install with latest gmake (needs whitespace at EOL)
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtsp.a:${PORTSDIR}/audio/afsp
 
 USE_GMAKE=	yes
 MAKE_ENV=	AFSP_INCLUDE_PATH="${LOCALBASE}/include" \
 		AFSP_LIBRARY_PATH="${LOCALBASE}/lib"
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e 's|^CFLAGS = -O3|CFLAGS +=|g ; \
-		s|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
+		s|/usr/local|${PREFIX}| ; s|\\$$| \\|' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
