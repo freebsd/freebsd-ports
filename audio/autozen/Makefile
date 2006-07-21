@@ -9,7 +9,8 @@ PORTNAME=	autozen
 PORTVERSION=	1.3.1
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.linuxlabs.com/software/download/
+MASTER_SITES=	http://freebsd.biz.net.id/distfiles/ \
+		http://ftp.dyu.edu.tw/pub/FreeBSD/
 DISTNAME=	AutoZen-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
