@@ -5,17 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ruby-reference
+PORTNAME=	reference
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	lang ruby
 MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ruby/ \
-		ftp://ftp.iDaemons.org/pub/distfiles/ruby/
+		ftp://ftp.iDaemons.org/pub/distfiles/ruby/ \
+		http://mbsd.msk.ru/dist/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rubyref_html_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Ruby Class and Module Reference, in HTML format
 
 USE_RUBY=	yes
