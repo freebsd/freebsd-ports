@@ -338,7 +338,6 @@ MASTER_SITE_GENTOO+=	\
 	http://distro.ibiblio.org/pub/linux/distributions/gentoo/%SUBDIR%/ \
 	http://csociety-ftp.ecn.purdue.edu/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.mirrors.pair.com/%SUBDIR%/ \
-	http://gentoo.seren.com/gentoo/%SUBDIR%/ \
 	http://gentoo.chem.wisc.edu/gentoo/%SUBDIR%/ \
 	http://adelie.polymtl.ca/%SUBDIR%/ \
 	http://mirrors.tds.net/gentoo/%SUBDIR%/ \
@@ -349,7 +348,6 @@ MASTER_SITE_GENTOO+=	\
 	http://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
 	http://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
 	http://ds.thn.htu.se/linux/gentoo/%SUBDIR%/ \
-	http://mirror.pudas.net/gentoo/%SUBDIR%/ \
 	http://sunsite.cnlab-switch.ch/ftp/mirror/gentoo/%SUBDIR%/ \
 	http://linux.rz.ruhr-uni-bochum.de/download/gentoo-mirror/%SUBDIR%/ \
 	http://mirrors.sec.informatik.tu-darmstadt.de/gentoo/%SUBDIR%/ \
@@ -376,7 +374,6 @@ MASTER_SITE_GENTOO+=	\
 	ftp://ftp.easynet.nl/mirror/gentoo/%SUBDIR%/ \
 	ftp://ftp.snt.utwente.nl/pub/os/linux/gentoo/%SUBDIR%/ \
 	ftp://trumpetti.atm.tut.fi/gentoo/%SUBDIR%/ \
-	ftp://mirror.pudas.net/gentoo/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/gentoo/%SUBDIR%/ \
 	ftp://ftp.join.uni-muenster.de/pub/linux/distributions/gentoo/%SUBDIR%/\
 	ftp://ftp6.uni-muenster.de/pub/linux/distributions/gentoo/%SUBDIR%/ \
