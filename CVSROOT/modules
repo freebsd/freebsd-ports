@@ -7720,6 +7720,7 @@ ophoto		ports/graphics/ophoto
 opieprint	ports/security/opieprint
 opmixer		ports/audio/opmixer
 oproute		ports/net-mgmt/oproute
+optimfrog	ports/audio/optimfrog
 optipng		ports/graphics/optipng
 oqtencoder	ports/multimedia/oqtencoder
 oqtplayer	ports/multimedia/oqtplayer
