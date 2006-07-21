@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Audio/APETags.pm
+%%SITE_PERL%%/Audio/Musepack.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Musepack/.packlist
+@dirrmtry %%SITE_PERL%%/Audio
+@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Musepack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
