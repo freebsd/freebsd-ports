@@ -1,0 +1,4 @@
+This's a Perl interface for store and retrieve files on Gmail.
+
+Author:	Simon Wistow <simon@thegestalt.org>
+WWW:	http://search.cpan.org/dist/Net-FS-Gmail/
