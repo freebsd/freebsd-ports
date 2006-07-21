@@ -10171,6 +10171,7 @@ p7zip		ports/archivers/p7zip
 pa-aspell	ports/textproc/pa-aspell
 pachi		ports/games/pachi
 packit		ports/net-mgmt/packit
+pacpl		ports/audio/pacpl
 pad		ports/security/pad
 padkey		ports/x11/padkey
 pads		ports/net-mgmt/pads
