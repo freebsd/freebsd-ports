@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer/Makefile,v 1.45 2006/04/28 11:44:33 ahze Exp $
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.8
+PORTVERSION=	0.10.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_GNOME}
