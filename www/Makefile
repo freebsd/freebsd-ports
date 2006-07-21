@@ -498,6 +498,7 @@
     SUBDIR += p5-CGI-Builder
     SUBDIR += p5-CGI-Builder-TT2
     SUBDIR += p5-CGI-Cache
+    SUBDIR += p5-CGI-Ex
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-Framework
     SUBDIR += p5-CGI-Kwiki
