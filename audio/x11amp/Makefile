@@ -10,7 +10,7 @@ PORTVERSION=	0.9.b1.1
 PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/misc/x11amp/0.9/ \
-		ftp://ftp.sci-nnov.ru/pub/FreeBSD/ports/distfiles/
+		ftp://ftp.bsdfr.org/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
 MAINTAINER=	ports@FreeBSD.org
