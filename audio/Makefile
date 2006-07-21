@@ -400,6 +400,7 @@
     SUBDIR += openal
     SUBDIR += openspc
     SUBDIR += opmixer
+    SUBDIR += optimfrog
     SUBDIR += orpheus
     SUBDIR += osalp
     SUBDIR += p5-Audio
