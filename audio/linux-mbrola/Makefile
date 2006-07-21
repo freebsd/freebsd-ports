@@ -6,10 +6,8 @@
 #
 
 CATEGORIES=	audio accessibility linux
-MASTER_SITES=	http://mambo.ucsc.edu/psl/mbrola/bin/pclinux/ \
-		http://www.festvox.org/mbrola/bin/pclinux/ \
-		ftp://ftp.loria.fr/pub/pc/mbrpsola/bin/pclinux/ \
-		ftp://tcts.fpms.ac.be/pub/mbrola/bin/pclinux/
+MASTER_SITES=	http://tcts.fpms.ac.be/synthesis/mbrola/bin/pclinux/ \
+		http://www.festvox.org/mbrola/bin/pclinux/
 PKGNAMEPREFIX=	linux-
 
 COMMENT=	MBROLA speech synthesizer for Linux
