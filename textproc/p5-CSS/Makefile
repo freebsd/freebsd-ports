@@ -1,0 +1,32 @@
+# New ports collection makefile for:	p5-CSS
+# Date created:				2006/07/21
+# Whom:					chinsan <chinsan.tw@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	CSS
+PORTVERSION=	1.07
+CATEGORIES=	textproc www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	CSS
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	chinsan.tw@gmail.com
+COMMENT=	Object oriented access to Cascading Style Sheets (CSS)
+
+BUILD_DEPENDS=	p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent
+
+MAN3=	CSS.3 CSS::Value.3 CSS::Parse::Compiled.3 CSS::Property.3 CSS::Parse::Heavy.3 \
+	CSS::Parse::PRDGrammar.3 CSS::Style.3 CSS::Parse::Lite.3 CSS::Selector.3 \
+	CSS::Adaptor::Debug.3 CSS::Adaptor::Pretty.3 CSS::Parse.3 CSS::Adaptor.3
+
+PERL_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
