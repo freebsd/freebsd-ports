@@ -27,8 +27,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA
 .endif
 
 .if ${PERL_LEVEL} < 500702
-RUN_DEPENDS+=	${SITE_PERL}/Config.pm:${PORTSDIR}/devel/p5-Config \
-		${SITE_PERL}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	${SITE_PERL}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
 .include <bsd.port.post.mk>
