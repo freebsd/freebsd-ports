@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-WikiConverter-PmWiki
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Convert HTML to PmWiki markup
 
-BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.54:${PORTSDIR}/www/p5-HTML-WikiConverter \
+BUILD_DEPENDS=	p5-HTML-WikiConverter>=0.60:${PORTSDIR}/www/p5-HTML-WikiConverter \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
