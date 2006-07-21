@@ -9965,6 +9965,7 @@ p5-WWW-Babelfish	ports/www/p5-WWW-Babelfish
 p5-WWW-Comic	ports/www/p5-WWW-Comic
 p5-WWW-Curl	ports/www/p5-WWW-Curl
 p5-WWW-Dilbert	ports/www/p5-WWW-Dilbert
+p5-WWW-GMail	ports/mail/p5-WWW-GMail
 p5-WWW-Google-News	ports/www/p5-WWW-Google-News
 p5-WWW-Google-News-TW	ports/www/p5-WWW-Google-News-TW
 p5-WWW-Google-PageRank	ports/www/p5-WWW-Google-PageRank
