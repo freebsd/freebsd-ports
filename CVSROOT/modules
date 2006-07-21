@@ -7895,6 +7895,7 @@ p5-Astro-DSS	ports/astro/p5-Astro-DSS
 p5-Astro-FITS-Header	ports/astro/p5-Astro-FITS-Header
 p5-Astro-MoonPhase	ports/astro/p5-Astro-MoonPhase
 p5-Astro-SIMBAD	ports/astro/p5-Astro-SIMBAD
+p5-Astro-SpaceTrack	ports/astro/p5-Astro-SpaceTrack
 p5-Astro-SunTime	ports/astro/p5-Astro-SunTime
 p5-Astro-Sunrise	ports/astro/p5-Astro-Sunrise
 p5-AtExit	ports/devel/p5-AtExit
