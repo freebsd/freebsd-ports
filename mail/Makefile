@@ -348,6 +348,7 @@
     SUBDIR += p5-Sendmail-Milter
     SUBDIR += p5-URI-imap
     SUBDIR += p5-URI-imaps
+    SUBDIR += p5-WWW-GMail
     SUBDIR += p5-vpopmail
     SUBDIR += pantomime
     SUBDIR += pantomime-ssl
