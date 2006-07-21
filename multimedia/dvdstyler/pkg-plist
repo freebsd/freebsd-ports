@@ -37,6 +37,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/text-shadow.xml
 %%DATADIR%%/buttons/text.xml
 %%DATADIR%%/data/silence.mp2
+%%DATADIR%%/data/empty.mpg
 %%DATADIR%%/objects/ellipse.xml
 %%DATADIR%%/objects/frame.xml
 %%DATADIR%%/objects/image.xml

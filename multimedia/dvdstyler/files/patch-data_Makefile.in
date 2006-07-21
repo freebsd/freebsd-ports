@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	Mon Jul 17 10:32:01 2006
++++ data/Makefile.in	Mon Jul 17 10:35:23 2006
+@@ -145,7 +145,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-pkgdata_DATA = silence.mp2
++pkgdata_DATA = silence.mp2 empty.mpg
+ subdir = data
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
