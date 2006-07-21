@@ -327,6 +327,7 @@
     SUBDIR += listener
     SUBDIR += liteamp
     SUBDIR += lopster
+    SUBDIR += lpac
     SUBDIR += lplayer
     SUBDIR += mac
     SUBDIR += mad
