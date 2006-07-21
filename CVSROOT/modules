@@ -9582,6 +9582,7 @@ p5-SWF-Builder	ports/graphics/p5-SWF-Builder
 p5-SWF-Chart	ports/www/p5-SWF-Chart
 p5-SWF-File	ports/graphics/p5-SWF-File
 p5-Safe-Hole	ports/security/p5-Safe-Hole
+p5-Scalar-Defer	ports/devel/p5-Scalar-Defer
 p5-Scalar-List-Utils	ports/lang/p5-Scalar-List-Utils
 p5-Scalar-Util-Clone	ports/devel/p5-Scalar-Util-Clone
 p5-Schedule-At	ports/sysutils/p5-Schedule-At
