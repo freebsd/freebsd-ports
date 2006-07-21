@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-Store-File
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/E/ES/ESSKAR
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=	Catalyst::Plugin::Session::Store::File.3
 
