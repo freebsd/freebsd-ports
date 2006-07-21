@@ -1162,7 +1162,8 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://sunsite.tus.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://sunsite.org.uk/sites/ftp.x.org/contrib/%SUBDIR%/
+	ftp://sunsite.org.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/X11/x.org/contrib/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XEMACS)
