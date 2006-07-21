@@ -1,14 +1,13 @@
-@comment $FreeBSD$
 bin/ELFDump
 include/ELFI.h
 include/ELFIO.h
 include/ELFO.h
 include/ELFTypes.h
 lib/libELFIO.a
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/elf11g.zip
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.docbook
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLES%%%%EXAMPLESDIR%%/ELFDump.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/RelocationTable.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/Write.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/WriteObj.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/WriteObj2.cpp
+%%EXAMPLES%%%%EXAMPLESDIR%%/tutorial.cpp
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

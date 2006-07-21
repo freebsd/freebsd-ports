@@ -6,17 +6,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ELFIO
+PORTNAME=	elfio
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	C++ library for reading and generating files in the ELF binary format
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
+
+OPTIONS=	EXAMPLES "Install sample programms" on
+
+PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_EXAMPLES)
+PLIST_SUB+=	EXAMPLES=""
+.else
+PLIST_SUB+=	EXAMPLES="@comment "
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -28,5 +42,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
+.if !defined(WITHOUT_EXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${FIND} ${WRKSRC}/Examples/ -name "*.cpp" -exec ${INSTALL_DATA} {} \
+		${EXAMPLESDIR}/ \;
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
