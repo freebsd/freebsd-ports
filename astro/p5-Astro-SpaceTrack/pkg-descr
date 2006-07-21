@@ -1,0 +1,22 @@
+This package accesses the Space-Track web site,
+http://www.space-track.org, and retrieves orbital data from this site.
+You must register and get a username and password before you can make
+use of this package, and you must abide by the site's restrictions,
+which include not making the data available to a third party.
+
+In addition, the celestrak method queries http://celestrak.com/ for a
+named data set, and then queries http://www.space-track.org/ for the
+orbital elements of the objects in the data set.
+
+Beginning with version 0.017, there is provision for retrieval of
+historical data.
+
+Nothing is exported by default, but the shell method/subroutine can be
+exported if you so desire.
+
+Most methods return an HTTP::Response object. See the individual
+method document for details. Methods which return orbital data on
+success add a 'Pragma: spacetrack-type = orbit' header to the
+HTTP::Response object if the request succeeds.
+
+WWW:	http://search.cpan.org/dist/Astro-SpaceTrack/
