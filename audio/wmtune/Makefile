@@ -9,15 +9,16 @@ PORTNAME=	wmtune
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/:diff \
-		http://www.rostock.igd.fhg.de/private/runge/radio/:wmtune \
-		http://www.soren.org/linux/wmtune/dl/:wmtune
+MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/:diff
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wmtune \
 		${WMTUNE_DIFF}:diff
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockable radio program for the BT848/878 and RadioTrack cards
+
+DEPRECATED=	mastersite disappeared, no longer maintained by author
+EXPIRATION_DATE=	2006-09-21
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -30,7 +31,7 @@ ONLY_FOR_ARCHS=	i386 alpha
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-IGNORE=		"cannot be build on alpha 4.x, which does not have bktr hardware support"
+IGNORE=		cannot be build on alpha 4.x, which does not have bktr hardware support
 .endif
 
 .if !defined(WITH_RADIOTRACK)
