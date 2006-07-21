@@ -6390,6 +6390,7 @@ lostirc		ports/irc/lostirc
 loudmouth	ports/net-im/loudmouth
 lout		ports/print/lout
 lp_solve	ports/math/lp_solve
+lpac		ports/audio/lpac
 lpe		ports/editors/lpe
 lphoto		ports/graphics/lphoto
 lplayer		ports/audio/lplayer
