@@ -9962,6 +9962,7 @@ p5-WWW-Dilbert	ports/www/p5-WWW-Dilbert
 p5-WWW-Google-News	ports/www/p5-WWW-Google-News
 p5-WWW-Google-News-TW	ports/www/p5-WWW-Google-News-TW
 p5-WWW-Google-SiteMap	ports/textproc/p5-WWW-Google-SiteMap
+p5-WWW-Google-Video	ports/www/p5-WWW-Google-Video
 p5-WWW-IMDb	ports/www/p5-WWW-IMDb
 p5-WWW-Link	ports/www/p5-WWW-Link
 p5-WWW-Mechanize	ports/www/p5-WWW-Mechanize
