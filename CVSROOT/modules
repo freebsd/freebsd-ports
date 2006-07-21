@@ -5308,6 +5308,7 @@ kenny		ports/misc/kenny
 kermit		ports/comms/kermit
 kexchange	ports/finance/kexchange
 keximdb		ports/databases/keximdb
+kexis		ports/audio/kexis
 keychain	ports/security/keychain
 keylaunch	ports/x11/keylaunch
 keynote		ports/security/keynote
