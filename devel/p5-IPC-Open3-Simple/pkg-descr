@@ -1,0 +1,16 @@
+IPC::Open3::Simple aims at making it very easy to start a shell
+command, eventually feed its stdin with some data, then retrieve its
+stdout and stderr separately.
+
+When you want to run a shell command and parse its stdout/stderr or
+feed its stdin, you often end up using IPC::Run, IPC::Cmd or
+IPC::Open3 with your own parsing code, and end up writing more code
+than you intended. IPC::Open3::Simple is about removing this overhead
+and making IPC::Open3 easier to use.
+
+IPC::Open3::Simple calls IPC::Open3 and redirects stdin, stdout and
+stderr to some function references passed in argument to the
+constructor. It does a select on the input/output filehandles returned
+by IPC::Open3 and dispatches their content to and from those functions.
+
+WWW:	http://search.cpan.org/dist/IPC-Open3-Simple/

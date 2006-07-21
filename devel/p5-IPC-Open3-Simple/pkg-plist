@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Open3/Simple/.packlist
+%%SITE_PERL%%/IPC/Open3/Simple.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Open3/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Open3
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
+@dirrmtry %%SITE_PERL%%/IPC/Open3
+@dirrmtry %%SITE_PERL%%/IPC
