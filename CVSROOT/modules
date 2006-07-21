@@ -9961,6 +9961,7 @@ p5-WWW-Curl	ports/www/p5-WWW-Curl
 p5-WWW-Dilbert	ports/www/p5-WWW-Dilbert
 p5-WWW-Google-News	ports/www/p5-WWW-Google-News
 p5-WWW-Google-News-TW	ports/www/p5-WWW-Google-News-TW
+p5-WWW-Google-PageRank	ports/www/p5-WWW-Google-PageRank
 p5-WWW-Google-SiteMap	ports/textproc/p5-WWW-Google-SiteMap
 p5-WWW-Google-Video	ports/www/p5-WWW-Google-Video
 p5-WWW-IMDb	ports/www/p5-WWW-IMDb
