@@ -96,7 +96,7 @@ PLIST_SUB+=	FORTRAN="@comment "
 .if ! defined(WITHOUT_JAVA)
 CONFLICTS=	gcc-4.2.*
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
-EXTRA_PATCHES=	${FILESDIR}/java-patch-hier
+EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
 # some 4.x and 5.x systems, which the following works around. PR 81788.
 CONFIGURE_ARGS+=--disable-rpath
