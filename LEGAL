@@ -386,6 +386,7 @@ l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so
 						binaries should not be
 						distributed.  Contains crypto
 						from OpenSSL
+lpac-*			audio/lpac		No commercial use
 lsh*			security/lsh		Crypto; export-controlled
 l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
 l_cc_p*_*.*.*.tar	lang/icc7		No redistribution allowed
