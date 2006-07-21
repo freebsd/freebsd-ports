@@ -9,7 +9,8 @@ PORTNAME=	libmpcdec
 PORTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://files2.musepack.net/source/ \
-		http://www.saunalahti.fi/grimmel/musepack.net-files/source/
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High quality audio compression format
