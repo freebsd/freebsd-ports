@@ -8810,6 +8810,7 @@ p5-HTML-Webmake	ports/www/p5-HTML-Webmake
 p5-HTML-Widget	ports/www/p5-HTML-Widget
 p5-HTML-Widgets-SelectLayers	ports/www/p5-HTML-Widgets-SelectLayers
 p5-HTML-WikiConverter	ports/www/p5-HTML-WikiConverter
+p5-HTML-WikiConverter-DokuWiki	ports/www/p5-HTML-WikiConverter-DokuWiki
 p5-HTML-WikiConverter-Kwiki	ports/www/p5-HTML-WikiConverter-Kwiki
 p5-HTML-WikiConverter-Markdown	ports/www/p5-HTML-WikiConverter-Markdown
 p5-HTML-WikiConverter-MediaWiki	ports/www/p5-HTML-WikiConverter-MediaWiki
