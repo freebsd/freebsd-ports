@@ -8,12 +8,12 @@
 
 PKGNAMESUFFIX=	-withgcjawt
 
-MASTERDIR=	${.CURDIR}/../../lang/gcc41
-
-.include "${MASTERDIR}/Makefile"
-
 MAINTAINER=	maho@FreeBSD.org
+
+MASTERDIR=	${.CURDIR}/../../lang/gcc41
 
 DESCR=	${.CURDIR}/pkg-descr
 
 WITH_JAVA_AWT=	yes
+
+.include "${MASTERDIR}/Makefile"
