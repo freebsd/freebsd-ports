@@ -9569,6 +9569,7 @@ p5-SVN-Log	ports/devel/p5-SVN-Log
 p5-SVN-Mirror	ports/devel/p5-SVN-Mirror
 p5-SVN-Notif	ports/devel/p5-SVN-Notify
 p5-SVN-Simple	ports/devel/p5-SVN-Simple
+p5-SVN-Statistics	ports/devel/p5-SVN-Statistics
 p5-SVN-Web	ports/devel/p5-SVN-Web
 p5-SWF-Builder	ports/graphics/p5-SWF-Builder
 p5-SWF-Chart	ports/www/p5-SWF-Chart
