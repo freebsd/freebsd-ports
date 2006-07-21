@@ -1019,6 +1019,7 @@
     SUBDIR += p5-File-Flock
     SUBDIR += p5-File-FnMatch
     SUBDIR += p5-File-Grep
+    SUBDIR += p5-File-HStore
     SUBDIR += p5-File-HomeDir
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
