@@ -1,0 +1,13 @@
+CGI::Ex provides a suite of utilities to make writing CGI scripts more
+enjoyable. Although they can all be used separately, the main
+functionality of each of the modules is best represented in the
+CGI::Ex::App module. CGI::Ex::App takes CGI application building to
+the next step. CGI::Ex::App is not quite a framework (which normally
+includes pre-built html) instead CGI::Ex::App is an extended
+application flow that dramatically reduces CGI build time in most
+cases. It does so using as little magic as possible. See CGI::Ex::App.
+
+The main functionality is provided by several other modules that may
+be used separately, or together through the CGI::Ex interface.
+
+WWW:	http://search.cpan.org/dist/CGI-Ex/
