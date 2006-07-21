@@ -1,0 +1,10 @@
+Tired of entering the postal location all the time? This is not
+necessary, as it is uniquely defined from the postcode. Request the
+postcode only, and use this library to get the postal name.
+
+The library can also tell you in which borough by name or number and
+county by name the postcode is located. The borough number can be
+handy, as it is used when reporting wages and tax to the Norwegian Tax
+Administration.
+
+WWW:	http://search.cpan.org/dist/Geo-Postcodes-NO/
