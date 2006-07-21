@@ -764,6 +764,7 @@
     SUBDIR += p5-WWW-Dilbert
     SUBDIR += p5-WWW-Google-News
     SUBDIR += p5-WWW-Google-News-TW
+    SUBDIR += p5-WWW-Google-Video
     SUBDIR += p5-WWW-IMDb
     SUBDIR += p5-WWW-Link
     SUBDIR += p5-WWW-Mechanize
