@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HStore/.packlist
+%%SITE_PERL%%/File/HStore.pm
+%%SITE_PERL%%/auto/File/HStore/autosplit.ix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/HStore
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/auto/File/HStore
+@dirrmtry %%SITE_PERL%%/auto/File
+@dirrmtry %%SITE_PERL%%/File
