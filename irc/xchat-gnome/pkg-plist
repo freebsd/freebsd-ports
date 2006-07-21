@@ -38,8 +38,10 @@ share/icons/hicolor/48x48/apps/xchat-gnome.png
 share/locale/am/LC_MESSAGES/xchat-gnome.mo
 share/locale/az/LC_MESSAGES/xchat-gnome.mo
 share/locale/bg/LC_MESSAGES/xchat-gnome.mo
+share/locale/bn/LC_MESSAGES/xchat-gnome.mo
 share/locale/ca/LC_MESSAGES/xchat-gnome.mo
 share/locale/cs/LC_MESSAGES/xchat-gnome.mo
+share/locale/da/LC_MESSAGES/xchat-gnome.mo
 share/locale/de/LC_MESSAGES/xchat-gnome.mo
 share/locale/el/LC_MESSAGES/xchat-gnome.mo
 share/locale/en_GB/LC_MESSAGES/xchat-gnome.mo
@@ -50,11 +52,14 @@ share/locale/fi/LC_MESSAGES/xchat-gnome.mo
 share/locale/fr/LC_MESSAGES/xchat-gnome.mo
 share/locale/gl/LC_MESSAGES/xchat-gnome.mo
 share/locale/hi/LC_MESSAGES/xchat-gnome.mo
+share/locale/hr/LC_MESSAGES/xchat-gnome.mo
 share/locale/hu/LC_MESSAGES/xchat-gnome.mo
 share/locale/it/LC_MESSAGES/xchat-gnome.mo
 share/locale/ja/LC_MESSAGES/xchat-gnome.mo
+share/locale/jbo/LC_MESSAGES/xchat-gnome.mo
 share/locale/ka/LC_MESSAGES/xchat-gnome.mo
 share/locale/ko/LC_MESSAGES/xchat-gnome.mo
+share/locale/ku/LC_MESSAGES/xchat-gnome.mo
 share/locale/lt/LC_MESSAGES/xchat-gnome.mo
 share/locale/lv/LC_MESSAGES/xchat-gnome.mo
 share/locale/mk/LC_MESSAGES/xchat-gnome.mo
@@ -71,10 +76,13 @@ share/locale/sl/LC_MESSAGES/xchat-gnome.mo
 share/locale/sq/LC_MESSAGES/xchat-gnome.mo
 share/locale/sr/LC_MESSAGES/xchat-gnome.mo
 share/locale/sv/LC_MESSAGES/xchat-gnome.mo
+share/locale/tl/LC_MESSAGES/xchat-gnome.mo
+share/locale/tr/LC_MESSAGES/xchat-gnome.mo
 share/locale/uk/LC_MESSAGES/xchat-gnome.mo
 share/locale/vi/LC_MESSAGES/xchat-gnome.mo
 share/locale/wa/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/xchat-gnome.mo
+share/locale/zh_HK/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
 share/omf/xchat-gnome/xchat-gnome-C.omf
 share/xchat-gnome/channel-list.glade
@@ -118,9 +126,17 @@ share/xchat-gnome/xchat-gnome.png
 @dirrm share/gnome/help/xchat-gnome/C/figures
 @dirrm share/gnome/help/xchat-gnome/C
 @dirrm share/gnome/help/xchat-gnome
-@dirrm lib/xchat-gnome/plugins
-@dirrm lib/xchat-gnome
 @dirrmtry share/applications
+@dirrmtry lib/xchat-gnome/plugins
+@dirrmtry lib/xchat-gnome
 @dirrmtry share/omf
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/jbo/LC_MESSAGES
+@dirrmtry share/locale/jbo
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
