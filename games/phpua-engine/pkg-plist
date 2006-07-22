@@ -1,15 +1,10 @@
-%%PHPUADIR%%/index.php
-%%PHPUADIR%%/install.php
-%%PHPUADIR%%/phpua.cfg.php
-%%PHPUADIR%%/phpua.log.php
-%%PHPUADIR%%/rss.php
 %%PHPUADIR%%/doc/CHANGELOG.txt
 %%PHPUADIR%%/doc/COPYING.txt
-%%PHPUADIR%%/doc/index.html
 %%PHPUADIR%%/doc/INSTALL.txt
 %%PHPUADIR%%/doc/ISO-3166.txt
 %%PHPUADIR%%/doc/ISO-639.txt
 %%PHPUADIR%%/doc/RFC-1766.txt
+%%PHPUADIR%%/doc/index.html
 %%PHPUADIR%%/images/templates/default/header.gif
 %%PHPUADIR%%/images/templates/default/header_tile.gif
 %%PHPUADIR%%/images/templates/default/offline.png
@@ -34,11 +29,19 @@
 %%PHPUADIR%%/includes/engine/plugins.inc
 %%PHPUADIR%%/includes/engine/smarty.inc
 %%PHPUADIR%%/includes/smarty/BUGS
-%%PHPUADIR%%/includes/smarty/cache/empty.txt
-%%PHPUADIR%%/includes/smarty/ChangeLog
-%%PHPUADIR%%/includes/smarty/configs/empty.txt
-%%PHPUADIR%%/includes/smarty/Config_File.class.php
 %%PHPUADIR%%/includes/smarty/COPYING.lib
+%%PHPUADIR%%/includes/smarty/ChangeLog
+%%PHPUADIR%%/includes/smarty/Config_File.class.php
+%%PHPUADIR%%/includes/smarty/FAQ
+%%PHPUADIR%%/includes/smarty/INSTALL
+%%PHPUADIR%%/includes/smarty/NEWS
+%%PHPUADIR%%/includes/smarty/README
+%%PHPUADIR%%/includes/smarty/RELEASE_NOTES
+%%PHPUADIR%%/includes/smarty/Smarty.class.php
+%%PHPUADIR%%/includes/smarty/Smarty_Compiler.class.php
+%%PHPUADIR%%/includes/smarty/TODO
+%%PHPUADIR%%/includes/smarty/cache/empty.txt
+%%PHPUADIR%%/includes/smarty/configs/empty.txt
 %%PHPUADIR%%/includes/smarty/core/core.assemble_plugin_filepath.php
 %%PHPUADIR%%/includes/smarty/core/core.assign_smarty_interface.php
 %%PHPUADIR%%/includes/smarty/core/core.create_dir_structure.php
@@ -53,8 +56,8 @@
 %%PHPUADIR%%/includes/smarty/core/core.process_cached_inserts.php
 %%PHPUADIR%%/includes/smarty/core/core.process_compiled_include.php
 %%PHPUADIR%%/includes/smarty/core/core.read_cache_file.php
-%%PHPUADIR%%/includes/smarty/core/core.rmdir.php
 %%PHPUADIR%%/includes/smarty/core/core.rm_auto.php
+%%PHPUADIR%%/includes/smarty/core/core.rmdir.php
 %%PHPUADIR%%/includes/smarty/core/core.run_insert_handler.php
 %%PHPUADIR%%/includes/smarty/core/core.smarty_include_php.php
 %%PHPUADIR%%/includes/smarty/core/core.write_cache_file.php
@@ -62,9 +65,6 @@
 %%PHPUADIR%%/includes/smarty/core/core.write_compiled_resource.php
 %%PHPUADIR%%/includes/smarty/core/core.write_file.php
 %%PHPUADIR%%/includes/smarty/debug.tpl
-%%PHPUADIR%%/includes/smarty/FAQ
-%%PHPUADIR%%/includes/smarty/INSTALL
-%%PHPUADIR%%/includes/smarty/NEWS
 %%PHPUADIR%%/includes/smarty/plugins/block.textformat.php
 %%PHPUADIR%%/includes/smarty/plugins/compiler.assign.php
 %%PHPUADIR%%/includes/smarty/plugins/function.assign_debug_info.php
@@ -110,15 +110,15 @@
 %%PHPUADIR%%/includes/smarty/plugins/outputfilter.trimwhitespace.php
 %%PHPUADIR%%/includes/smarty/plugins/shared.escape_special_chars.php
 %%PHPUADIR%%/includes/smarty/plugins/shared.make_timestamp.php
-%%PHPUADIR%%/includes/smarty/README
-%%PHPUADIR%%/includes/smarty/RELEASE_NOTES
-%%PHPUADIR%%/includes/smarty/Smarty.class.php
-%%PHPUADIR%%/includes/smarty/Smarty_Compiler.class.php
 %%PHPUADIR%%/includes/smarty/templates_c/empty.txt
-%%PHPUADIR%%/includes/smarty/TODO
+%%PHPUADIR%%/index.php
+%%PHPUADIR%%/install.php
 %%PHPUADIR%%/languages/lang_en-us.inc
+%%PHPUADIR%%/phpua.cfg.php
+%%PHPUADIR%%/phpua.log.php
 %%PHPUADIR%%/plugins/shared/plugin_gs_query.inc
 %%PHPUADIR%%/plugins/shared/plugin_q3_query.inc
+%%PHPUADIR%%/rss.php
 %%PHPUADIR%%/templates/default/admin/log.tpl
 %%PHPUADIR%%/templates/default/admin/manageadmin.tpl
 %%PHPUADIR%%/templates/default/admin/manageplugins.tpl
@@ -164,30 +164,27 @@
 %%PHPUADIR%%/templates/wap/index_offline.tpl
 %%PHPUADIR%%/templates/wap/index_online.tpl
 %%PHPUADIR%%/wap/index.php
-@exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUADIR%%
-
-@dirrm %%PHPUADIR%%/doc
+@dirrm %%PHPUADIR%%/wap
+@dirrm %%PHPUADIR%%/templates/wap
+@dirrm %%PHPUADIR%%/templates/rss
+@dirrm %%PHPUADIR%%/templates/javascript
+@dirrm %%PHPUADIR%%/templates/default/admin
+@dirrm %%PHPUADIR%%/templates/default
+@dirrm %%PHPUADIR%%/templates
+@dirrm %%PHPUADIR%%/plugins/shared
+@dirrm %%PHPUADIR%%/plugins
+@dirrm %%PHPUADIR%%/languages
+@dirrm %%PHPUADIR%%/includes/smarty/templates_c
+@dirrm %%PHPUADIR%%/includes/smarty/plugins
+@dirrm %%PHPUADIR%%/includes/smarty/core
+@dirrm %%PHPUADIR%%/includes/smarty/configs
+@dirrm %%PHPUADIR%%/includes/smarty/cache
+@dirrm %%PHPUADIR%%/includes/smarty
+@dirrm %%PHPUADIR%%/includes/engine
+@dirrm %%PHPUADIR%%/includes/content
+@dirrm %%PHPUADIR%%/includes
 @dirrm %%PHPUADIR%%/images/templates/default
 @dirrm %%PHPUADIR%%/images/templates
 @dirrm %%PHPUADIR%%/images
-@dirrm %%PHPUADIR%%/includes/content
-@dirrm %%PHPUADIR%%/includes/engine
-@dirrm %%PHPUADIR%%/includes/smarty/cache
-@dirrm %%PHPUADIR%%/includes/smarty/configs
-@dirrm %%PHPUADIR%%/includes/smarty/core
-@dirrm %%PHPUADIR%%/includes/smarty/plugins
-@dirrm %%PHPUADIR%%/includes/smarty/templates_c
-@dirrm %%PHPUADIR%%/includes/smarty
-@dirrm %%PHPUADIR%%/includes
-@dirrm %%PHPUADIR%%/languages
-@dirrm %%PHPUADIR%%/plugins/shared
-@dirrm %%PHPUADIR%%/plugins
-@dirrm %%PHPUADIR%%/templates/default/admin
-@dirrm %%PHPUADIR%%/templates/default
-@dirrm %%PHPUADIR%%/templates/javascript
-@dirrm %%PHPUADIR%%/templates/rss
-@dirrm %%PHPUADIR%%/templates/wap
-@dirrm %%PHPUADIR%%/templates
-@dirrm %%PHPUADIR%%/wap
+@dirrm %%PHPUADIR%%/doc
 @dirrm %%PHPUADIR%%
-@dirrmtry www/data
