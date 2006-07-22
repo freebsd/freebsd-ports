@@ -7,21 +7,19 @@
 
 PORTNAME=	phpua-plugin_bf
 PORTVERSION=	1.1.0b
+PORTREVISION=	1
 CATEGORIES=	games www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpua
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A Battlefield 1942 plugin for phpUA
 
-RUN_DEPENDS=	${LOCALBASE}/${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine
-
-BROKEN=		does not install due to dependency problem in games/phpua-engine
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-09-03
+BUILD_DEPENDS=	${LOCALBASE}/${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # Some variables you can change
-PHPUA?=		www/data/phpua
+PHPUA?=		www/phpua
 PHPUA_USER?=	${WWWOWN}
 PHPUA_GROUP?=	${WWWGRP}
 
@@ -44,10 +42,13 @@ pre-everything::
 	${ECHO_MSG} '-------------------------------------------------------------------------')
 .endif
 
+do-extract:
+	@ ${MKDIR} ${WRKSRC}
+	@ cd ${WRKSRC} && ${EXTRACT_CMD}  ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
+
 do-install:
-	@ ${CP} -R ${WRKDIR}/plugins ${PREFIX}/${PHPUA}/
-	@ ${CP} -R ${WRKDIR}/templates ${PREFIX}/${PHPUA}/
-	@ ${CHOWN} -R ${PHPUA_USER}:${PHPUA_GROUP} ${PREFIX}/${PHPUA}
+	@ ${CHOWN} -R ${PHPUA_USER}:${PHPUA_GROUP} ${WRKSRC}
+	@ ${CP} -R ${WRKSRC}/ ${PREFIX}/${PHPUA}/
 	@ ${ECHO_MSG} ""
 	@ ${ECHO_MSG} "* Files have been installed in"
 	@ ${ECHO_MSG} "* ${PREFIX}/${PHPUA}"

@@ -11,6 +11,11 @@
 %%PHPUA%%/templates/wap/plugin_bf/info.tpl
 @exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUA%%
 @dirrm %%PHPUA%%/templates/wap/plugin_bf
+@dirrmtry %%PHPUA%%/templates/wap
 @dirrm %%PHPUA%%/templates/javascript/plugin_bf
+@dirrmtry %%PHPUA%%/templates/javascript
 @dirrm %%PHPUA%%/templates/default/plugin_bf
+@dirrmtry %%PHPUA%%/templates/default
+@dirrmtry %%PHPUA%%/templates
 @dirrm %%PHPUA%%/plugins/plugin_bf
+@dirrmtry %%PHPUA%%/plugins
