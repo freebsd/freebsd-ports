@@ -11434,6 +11434,7 @@ py-fpconst	ports/math/py-fpconst
 py-freebsd	ports/devel/py-freebsd
 py-freeimagepy	ports/graphics/py-freeimagepy
 py-freetype	ports/print/py-freetype
+py-fusefs	ports/devel/py-fusefs
 py-game		ports/devel/py-game
 py-gamin	ports/devel/py-gamin
 py-gato		ports/math/py-gato
