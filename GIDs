@@ -1,3 +1,4 @@
+$FreeBSD$
 # Please keep this file sorted by GID!
 bind:*:53:
 rdfdb:*:55:
