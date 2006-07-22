@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.12
+PORTVERSION=	8.13
 CATEGORIES=	textproc tk84
 MASTER_SITES=	http://bsd1.csme.ru/myports/ \
 		http://bsd2.csme.ru/myports/ \
 		http://bsd3.csme.ru/myports/
-MASTER_SITE_SUBDIR=	vsevolod
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	Visual regexp constructors with many regexp types support
+COMMENT=	Visual regexp development and execution
 
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 
