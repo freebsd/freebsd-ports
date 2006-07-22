@@ -4,10 +4,10 @@ dialects include:
 
   DokuWiki    Kwiki
   MediaWiki   MoinMoin
-  Oddmuse     PhpWiki
-  PmWiki      SnipSnap
-  TikiWiki    UseMod
-  WakkaWiki
+  Oddmuse     PbWiki
+  PhpWiki     PmWiki
+  SlipSlap    TikiWiki
+  UseMod      WakkaWiki
+  WikkaWiki
 
 WWW: http://search.cpan.org/dist/HTML-WikiConverter/
-Author:	David J. Iberri <diberri@yahoo.com>
