@@ -13865,6 +13865,7 @@ unadf		ports/archivers/unadf
 unalz		ports/archivers/unalz
 unarj		ports/archivers/unarj
 unclutter	ports/misc/unclutter
+uncrustify	ports/textproc/uncrustify
 undernet-ircu	ports/irc/undernet-ircu
 undms		ports/archivers/undms
 unfs3		ports/net/unfs3
