@@ -93,6 +93,7 @@
     SUBDIR += distcache
     SUBDIR += distcache-devel
     SUBDIR += dmitry
+    SUBDIR += dns-proxy-tor
     SUBDIR += donkey
     SUBDIR += doorman
     SUBDIR += doscan
