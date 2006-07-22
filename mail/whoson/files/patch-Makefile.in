@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Tue Aug 19 11:22:30 2003
++++ Makefile.in	Sun Jul 23 01:07:15 2006
+@@ -898,11 +898,7 @@
+ 
+ 
+ install-data-hook:
+-	if test -f $(DEFAULT_CONFIG); then \
+-		$(ECHO) "$(DEFAULT_CONFIG) exists, not overwritten"; \
+-	else \
+-		$(INSTALL_DATA) $(srcdir)/whoson.conf $(DEFAULT_CONFIG); \
+-	fi; \
++	$(INSTALL_DATA) $(srcdir)/whoson.conf $(DEFAULT_CONFIG).sample
+ 	for f in $(MAN3XTRA); do \
+ 		rm -f $(DESTDIR)$(man3dir)/$$f; \
+ 		$(LN) $(DESTDIR)$(man3dir)/whoson.3 $(DESTDIR)$(man3dir)/$$f; \
