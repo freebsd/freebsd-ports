@@ -6779,6 +6779,7 @@ mkmf		ports/devel/mkmf
 mknbi		ports/net/mknbi
 mknmz-wwwoffle	ports/www/mknmz-wwwoffle
 mkptools	ports/Tools/scripts/mkptools
+mksh		ports/shells/mksh
 mksunbootcd	ports/sysutils/mksunbootcd
 mktool		ports/sysutils/mktool
 mkvtoolnix	ports/multimedia/mkvtoolnix
