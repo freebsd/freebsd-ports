@@ -275,6 +275,7 @@
     SUBDIR += ffcall
     SUBDIR += fhist
     SUBDIR += fib
+    SUBDIR += fistgen
     SUBDIR += flatzebra
     SUBDIR += flick
     SUBDIR += florist

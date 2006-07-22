@@ -1,0 +1,6 @@
+FiST (File System Translator) is a language for describing stackable file
+systems. Fistgen is the FiST language code translator. This package includes
+sources for fistgen and stackable templates for several operating systems.
+
+Author:	Erez Zadok <ezk@cs.sunysb.edu>
+WWW:	http://www.filesystems.org/
