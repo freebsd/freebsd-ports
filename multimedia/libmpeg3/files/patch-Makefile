@@ -1,26 +1,39 @@
---- Makefile.orig	Wed Oct 29 10:53:02 2003
-+++ Makefile	Tue Feb  8 23:57:49 2005
-@@ -1,7 +1,7 @@
+--- ./Makefile.orig	Wed Feb 15 08:09:31 2006
++++ ./Makefile	Sat Jul 22 18:10:38 2006
+@@ -1,13 +1,6 @@
 -CC = gcc
 -NASM = nasm
-+#CC = gcc
-+#NASM = nasm
  USE_MMX = 0
 -USE_CSS = 1
+-A52DIR := $(shell expr a52dec* )
+-
 +USE_CSS = 0
- A52DIR := $(shell expr a52dec* )
  
+-ifeq ("$(PREFIX)", "")
+-PREFIX=/usr
+-endif
  
-@@ -13,7 +13,7 @@
+ ifeq ($(origin CFLAGS), environment)
+ HAVE_CFLAGS := y
+@@ -16,7 +9,7 @@
  endif
  
  
 -OBJDIR := $(shell uname --machine)
-+OBJDIR := $(shell uname -p)
++OBJDIR := $(ARCH)
  
  
  
-@@ -33,7 +33,7 @@
+@@ -28,7 +21,7 @@
+   endif
+ endif
+ 
+-ifeq ($(OBJDIR), i686)
++ifeq ($(OBJDIR), i386)
+   USE_MMX = 1
+   ifneq ($(HAVE_CFLAGS), y)
+     CFLAGS := -O2 -fomit-frame-pointer -falign-loops=2 -falign-jumps=2 -falign-functions=2 -I/usr/local/include
+@@ -36,13 +29,11 @@
    CFLAGS += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
  endif
  
@@ -29,12 +42,94 @@
    ifneq ($(HAVE_CFLAGS), y)
      CFLAGS := -O2 -fomit-frame-pointer -I/usr/local/include
    endif
-@@ -138,7 +138,7 @@
+   CFLAGS += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+-
+-
+ endif
+ 
+ 
+@@ -64,22 +55,10 @@
+ 
+ CFLAGS += \
+ 	-I. \
+-	-I$(A52DIR)/include \
+-	-I$(A52DIR)/liba52
+-
+-
++	-I$(LOCALBASE)/include/a52dec
+ 
+ CFLAGS += -g
+ 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+ OBJS = \
+ 	$(OBJDIR)/audio/ac3.o \
+ 	$(OBJDIR)/audio/dct.o \
+@@ -136,30 +115,30 @@
+ 	$(OBJDIR)/audio \
+ 	$(OBJDIR)/video
+ 
+-include Makefile.a52
+-
+-DIRS += $(A52DIRS)
+-
+-
+ OUTPUT = $(OBJDIR)/libmpeg3.a
+ UTILS = $(OBJDIR)/mpeg3dump $(OBJDIR)/mpeg3peek $(OBJDIR)/mpeg3toc  $(OBJDIR)/mpeg3cat
+ 
  #$(OBJDIR)/mpeg3split
  
  
 -LIBS = -lm -lpthread
-+LIBS = -lm %%PTHREAD_LIBS%%
++LIBS = -lm -la52 $(PTHREAD_LIBS) -L${LOCALBASE}/lib
  
- $(shell if ! test -d $(OBJDIR) \; then mkdir -p $(OBJDIR) \; fi )
+-$(shell if ! test -d $(OBJDIR) \; then mkdir -p $(OBJDIR) \; fi )
++#$(shell if ! test -d $(OBJDIR) ; then mkdir -p $(OBJDIR) ; fi )
  
+-$(shell echo $(CFLAGS) > $(OBJDIR)/c_flags)
+-$(shell echo $(A52CFLAGS) > $(OBJDIR)/a52_flags)
+-$(shell echo $(OBJS) $(ASMOBJS) $(A52OBJS) $(NASMOBJS) > $(OBJDIR)/objs)
+-$(shell mkdir -p $(DIRS) )
++#$(shell echo $(CFLAGS) > $(OBJDIR)/c_flags)
++#$(shell echo $(OBJS) $(ASMOBJS) $(NASMOBJS) > $(OBJDIR)/objs)
++#$(shell mkdir -p $(DIRS) )
+ 
+-all: $(OUTPUT) $(UTILS)
++all: SHELL $(OUTPUT) $(UTILS)
++
++SHELL:
++	$(INSTALL) -d $(OBJDIR)
++	echo $(CFLAGS) > $(OBJDIR)/c_flags
++	echo $(OBJS) $(ASMOBJS) $(NASMOBJS) > $(OBJDIR)/objs
++	$(INSTALL) -d $(DIRS)
+ 
+ 
+-$(OUTPUT): $(OBJS) $(ASMOBJS) $(NASMOBJS) $(A52OBJS)
++$(OUTPUT): $(OBJS) $(ASMOBJS) $(NASMOBJS)
+ 	ar rcs $(OUTPUT) `cat $(OBJDIR)/objs`
+ 
+ 
+@@ -211,8 +190,6 @@
+ 	$(CC) -c `cat $(OBJDIR)/c_flags` $(subst $(OBJDIR)/,, $*.S) -o $*.o
+ $(NASMOBJS): 
+ 	$(NASM) -f elf $(subst $(OBJDIR)/,, $*.s) -o $*.o
+-$(A52OBJS):
+-	$(CC) -c `cat $(OBJDIR)/a52_flags` $(subst $(OBJDIR)/,, $*.c) -o $*.o
+ 
+ $(OBJDIR)/libmpeg3.o: 				    libmpeg3.c
+ $(OBJDIR)/mpeg3atrack.o: 			    mpeg3atrack.c
+@@ -256,7 +233,3 @@
+ $(OBJDIR)/video/subtitle.o:                         video/subtitle.c
+ $(OBJDIR)/video/vlc.o:  			    video/vlc.c
+ $(OBJDIR)/workarounds.o:  			    workarounds.c
+-
+-
+-
+-include depend.a52

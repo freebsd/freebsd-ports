@@ -1,4 +1,4 @@
-# New ports collection makefile for: libmpeg3
+# New ports collection makefile for:	libmpeg3
 # Date created:		06 Feb 2005
 # Whom:			Igor Pokrovsky <ip@doom.homeunix.org>
 #
@@ -6,41 +6,41 @@
 #
 
 PORTNAME=	libmpeg3
-PORTVERSION=	1.5.4
+PORTVERSION=	1.7
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	heroines
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
-BROKEN=		fails to compile
+BUILD_DEPENSD=	nasm:${PORTSDIR}/devel/nasm
+LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
+		a52.0:${PORTSDIR}/audio/liba52
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+NASM?=		${LOCALBASE}/bin/nasm
+MAKE_ENV=	NASM=${NASM} INSTALL=${INSTALL} ARCH=${ARCH} PTHREAD_LIBS=${PTHREAD_LIBS}
+
+PORTDOCS=	index.html
+MPEG3_UTILS=	mpeg3cat mpeg3dump mpeg3peek mpeg3toc
+PLIST_FILES=	${MPEG3_UTILS:S,^,bin/,} include/libmpeg3.h include/mpeg3private.h lib/libmpeg3.a
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
-		${WRKSRC}/Makefile
-	@(${FIND} ${WRKSRC} -name '*.[ch]' \
-		| ${XARGS} ${REINPLACE_CMD} -i '' -e 's|stdint\.h|sys\/types\.h|g')
-	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
-		${WRKSRC}/a52dec-0.7.3/libao/audio_out_oss.c
+	@${FIND} ${WRKSRC} -name '*.[ch]' -print0 \
+		| ${XARGS} -0 ${REINPLACE_CMD} -e 's|stdint\.h|sys/types.h|g'
 
 do-install:
-.for i in mpeg3cat mpeg3dump mpeg3toc
-	${INSTALL_PROGRAM} ${WRKSRC}/${MACHINE_ARCH}/${i} ${PREFIX}/bin
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/${MACHINE_ARCH}/libmpeg3.a ${PREFIX}/lib
-.for i in libmpeg3.h mpeg3private.h
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include
-.endfor
+	${INSTALL_PROGRAM} ${MPEG3_UTILS:S,^,${WRKSRC}/${ARCH}/,} ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/${ARCH}/libmpeg3.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libmpeg3.h ${WRKSRC}/mpeg3private.h ${PREFIX}/include/
 .ifndef (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/index.html ${DOCSDIR}
+	${INSTALL} -d ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/index.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
