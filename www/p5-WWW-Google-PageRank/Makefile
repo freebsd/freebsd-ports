@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
-COMMENT=	This's a Perl interface for querying google pagerank
+COMMENT=	Perl interface for querying Google pagerank
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	WWW/KENWU
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
-COMMENT=	This's a interface for fetch the Google Video Information
+COMMENT=	An interface to fetch the Google Video Information
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
