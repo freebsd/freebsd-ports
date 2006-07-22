@@ -69,6 +69,7 @@ dspam:*:202:202:Dspam:/nonexistent:/sbin/nologin
 shoutcast:*:210:210:Shoutcast sandbox:/nonexistent:/bin/sh
 _tor:*:256:256:Tor anonymising router:/var/db/tor:/bin/sh
 _dns-proxy-tor:*:257:257:dns-proxy-tor user:/nonexistent:/sbin/nologin
+_trans-proxy-tor:*:258:258:dns-proxy-tor user:/nonexistent:/sbin/nologin
 smxs:*:260:260:Sendmail X SMTPS:/nonexistent:/sbin/nologin
 smxq:*:261:261:Sendmail X QMGR:/nonexistent:/sbin/nologin
 smxc:*:262:262:Sendmail X SMTPC:/nonexistent:/sbin/nologin
