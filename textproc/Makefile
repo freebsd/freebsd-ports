@@ -861,6 +861,7 @@
     SUBDIR += uim-gtk
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt
+    SUBDIR += uncrustify
     SUBDIR += uni2ascii
     SUBDIR += unroff
     SUBDIR += unrtf
