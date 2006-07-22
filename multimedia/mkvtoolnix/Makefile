@@ -73,10 +73,6 @@ MAN1+=		mmg.1
 PLIST_FILES+=	bin/mmg
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on FreeBSD 4.x"
 CFLAGS+= -DNO_WSTRING
