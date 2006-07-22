@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.4-20060711
-PORTREVISION=	1
+DISTVERSION=	2.4-20060722
 PORTEPOCH=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
