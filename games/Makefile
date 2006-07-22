@@ -531,11 +531,11 @@
     SUBDIR += pysycache-themes
     SUBDIR += pythonchess
     SUBDIR += q15
+    SUBDIR += q3base
     SUBDIR += linux-quake3
     SUBDIR += quake3-excessive
     SUBDIR += quake3-freezetag
     SUBDIR += quake3-osp
-    SUBDIR += quake3-q3base
     SUBDIR += quake3-ra3
     SUBDIR += quake3-rq3
     SUBDIR += quake3-ut
