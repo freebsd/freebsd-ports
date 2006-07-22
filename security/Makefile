@@ -650,6 +650,7 @@
     SUBDIR += tlswrap
     SUBDIR += tor
     SUBDIR += tor-devel
+    SUBDIR += trans-proxy-tor
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
