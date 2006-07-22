@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Scenes${EXTRACT_SUFX}
 .endif
 DIST_SUBDIR=	${DISTNAME}
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for physically based photo-realistic image synthesis
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

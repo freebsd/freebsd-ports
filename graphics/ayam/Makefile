@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D modeling environment for the RenderMan interface
 
 LIB_DEPENDS=	aqsis.0:${PORTSDIR}/graphics/aqsis \

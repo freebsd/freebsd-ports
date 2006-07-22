@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL based space-ship "shoot-em-up" game
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \

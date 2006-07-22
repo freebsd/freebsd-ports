@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gephex.org/download/src/
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software-based interactive video-effect system
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

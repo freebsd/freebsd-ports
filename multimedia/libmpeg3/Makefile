@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	heroines
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
 BROKEN=		fails to compile

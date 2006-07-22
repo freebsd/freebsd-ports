@@ -13,7 +13,7 @@ MASTER_SITES=	http://tenebrae.sourceforge.net/downloads/
 DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
 		${PORTNAME}data${EXTRACT_SUFX}
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake 1 source port with advanced graphics
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

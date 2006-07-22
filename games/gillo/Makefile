@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Players are cars throwing a magnetic fuzzy ball into a goal
 
 BUILD_DEPENDS=	${JAM}:${PORTSDIR}/devel/jam \

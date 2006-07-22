@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}lx${PORTVERSION:R}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \

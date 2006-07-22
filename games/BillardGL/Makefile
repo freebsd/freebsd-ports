@@ -12,7 +12,7 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	billardgl
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL billiard simulator
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

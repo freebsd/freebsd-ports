@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType fonts rendering using OpenGL
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

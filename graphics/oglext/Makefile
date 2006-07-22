@@ -11,7 +11,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.julius.caesar.de/oglext/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for easier access to OpenGL extensions
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake
