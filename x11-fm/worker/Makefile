@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	worker
-PORTVERSION=	2.13.0
+PORTVERSION=	2.13.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/
 
@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_BZIP2=	yes
 
+MANLANG=	"" fr
 MAN1=		worker.1
 
 CFLAGS+=	${PTHREAD_CFLAGS}
