@@ -11759,6 +11759,7 @@ q		ports/lang/q
 q-audio		ports/audio/q-audio
 q-graph		ports/graphics/q-graph
 q15		ports/games/q15
+q3base		ports/games/q3base
 qadsl		ports/net/qadsl
 qalculate	ports/math/qalculate
 qbrew		ports/misc/qbrew
@@ -11876,7 +11877,6 @@ quake3-data	ports/games/quake3-data
 quake3-excessive	ports/games/quake3-excessive
 quake3-freezetag	ports/games/quake3-freezetag
 quake3-osp	ports/games/quake3-osp
-quake3-q3base	ports/games/quake3-q3base
 quake3-ra3	ports/games/quake3-ra3
 quake3-rq3	ports/games/quake3-rq3
 quake3-ut	ports/games/quake3-ut
