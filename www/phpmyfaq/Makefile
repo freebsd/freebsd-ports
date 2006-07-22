@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
-DISTNAME=	${PORTNAME}.${PORTVERSION}.full
+DISTNAME=	${PORTNAME}-${PORTVERSION}.full
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A multilingual, completely database-driven FAQ-system
 
-WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_PHP=	mysql pcre pdf session xml xmlrpc zlib
 NO_BUILD=	YES
