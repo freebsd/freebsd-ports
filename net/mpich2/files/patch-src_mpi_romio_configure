@@ -1,0 +1,22 @@
+--- src/mpi/romio/configure.orig	Wed Nov 23 19:41:55 2005
++++ src/mpi/romio/configure	Mon Jul 17 01:05:21 2006
+@@ -7482,8 +7482,8 @@
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+ if test "$ac_cv_search_pthread_create" = no; then
+-  for ac_lib in pthread; do
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++  for ac_lib in $PTHREAD_LIBS; do
++    LIBS="$ac_lib  $ac_func_search_save_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -7527,7 +7527,7 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_search_pthread_create="-l$ac_lib"
++  ac_cv_search_pthread_create="$ac_lib"
+ break
+ else
+   echo "$as_me: failed program was:" >&5

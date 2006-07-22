@@ -299,6 +299,7 @@
     SUBDIR += mpd
     SUBDIR += mpd4
     SUBDIR += mpich
+    SUBDIR += mpich2
     SUBDIR += mping
     SUBDIR += mrt
     SUBDIR += mrtg-ping-probe
