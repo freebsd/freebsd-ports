@@ -9,9 +9,9 @@
 PORTNAME=	sunclock
 PORTVERSION=	3.54.1
 CATEGORIES=	astro x11-clocks
-MASTER_SITES=	http://frmas.free.fr/files/
+MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

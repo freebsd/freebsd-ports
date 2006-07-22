@@ -1,22 +1,22 @@
 bin/sunclock
 bin/emx
-share/sunclock/Sunclockrc
-share/sunclock/earthmaps/vmf/landwater.vmf
-share/sunclock/earthmaps/vmf/timezones.vmf
-share/sunclock/i18n/Sunclock.de
-share/sunclock/i18n/Sunclock.en
-share/sunclock/i18n/Sunclock.es
-share/sunclock/i18n/Sunclock.fr
-share/sunclock/i18n/Sunclock.it
-share/sunclock/i18n/Sunclock.nl
-share/sunclock/i18n/Sunclock.no
-share/sunclock/i18n/Sunclock.pl
-share/sunclock/i18n/Sunclock.se
+%%DATADIR%%/Sunclockrc
+%%DATADIR%%/earthmaps/vmf/landwater.vmf
+%%DATADIR%%/earthmaps/vmf/timezones.vmf
+%%DATADIR%%/i18n/Sunclock.de
+%%DATADIR%%/i18n/Sunclock.en
+%%DATADIR%%/i18n/Sunclock.es
+%%DATADIR%%/i18n/Sunclock.fr
+%%DATADIR%%/i18n/Sunclock.it
+%%DATADIR%%/i18n/Sunclock.nl
+%%DATADIR%%/i18n/Sunclock.no
+%%DATADIR%%/i18n/Sunclock.pl
+%%DATADIR%%/i18n/Sunclock.se
 share/editkit/rc.common
 share/editkit/emxrc
 share/editkit/README
-@dirrm share/sunclock/i18n
-@dirrm share/sunclock/earthmaps/vmf
-@dirrm share/sunclock/earthmaps
-@dirrm share/sunclock
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%/earthmaps/vmf
+@dirrm %%DATADIR%%/earthmaps
+@dirrm %%DATADIR%%
 @dirrm share/editkit
