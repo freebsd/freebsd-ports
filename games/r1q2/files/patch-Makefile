@@ -1,6 +1,12 @@
---- ./Makefile.orig	Wed May 17 22:21:33 2006
-+++ ./Makefile	Wed May 17 22:47:04 2006
-@@ -21,25 +21,25 @@
+--- Makefile.orig	Sat Jul 22 13:50:12 2006
++++ Makefile	Sat Jul 22 14:08:33 2006
+@@ -16,30 +16,30 @@
+ #===============================#
+ # Game Library                  #
+ #===============================#
+-BUILD_GAME=YES
++#BUILD_GAME=YES
+ 
  #===============================#
  # Quake 2 dedicated server only #
  #===============================#
@@ -81,16 +87,28 @@
  SDLGLCFLAGS=$(SDLCFLAGS) -DOPENGL
  SDLGLLDFLAGS=$(SDLLDFLAGS)
  
-@@ -122,7 +125,7 @@
- 	$(BINDIR)/ref_r1gl.$(SHLIBEXT)  
- 	
+@@ -118,11 +121,16 @@
+ # SETUP AND BUILD
+ #############################################################################
+ 
+-TARGETS=$(BINDIR)/r1q2 \
+-	$(BINDIR)/ref_r1gl.$(SHLIBEXT)  
+-	
++ifeq ($(strip $(BUILD_CLIENT)),YES)
++TARGETS+=$(BINDIR)/r1q2
++endif
++
++ifeq ($(strip $(BUILD_GLX)),YES)
++TARGETS+=$(BINDIR)/ref_r1gl.$(SHLIBEXT)
++endif
++
  ifeq ($(strip $(BUILD_GAME)),YES)
 -  TARGETS+=$(BINDIR)/baseq2/game$(ARCH).$(SHLIBEXT)
-+  TARGETS+=$(BINDIR)/baseq2/game.$(SHLIBEXT)
++TARGETS+=$(BINDIR)/baseq2/game.$(SHLIBEXT)
  endif
  
  ifeq ($(strip $(BUILD_DEDICATED)),YES)
-@@ -618,7 +621,7 @@
+@@ -618,7 +626,7 @@
  	$(BUILDDIR)/objects/game/p_weapon.o \
  	$(BUILDDIR)/objects/game/m_flash.o
  
