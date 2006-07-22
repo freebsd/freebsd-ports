@@ -1,0 +1,21 @@
+============================================================================
+
+Templates were installed in %%DATADIR%%.
+Examples were installed in %%EXAMPLESDIR%%.
+
+To generate example filesystem you should copy
+%%DATADIR%%/templates
+into your working directory and specify path to description of
+filesystem you want to build, e.g.:
+	cd /work
+	mkdir myfs
+	cp -rf %%DATADIR%%/templates myfs/
+	cd myfs
+	fistgen %%EXAMPLESDIR%%/tests/aclfs.fist
+
+Then you can chdir to out/OS-VER/FSNAME and type 'make'.
+
+See %%DOCSDIR%%/README, %%DOCSDIR%%/INSTALL
+and http://www.filesystems.org for further instructions.
+
+============================================================================
