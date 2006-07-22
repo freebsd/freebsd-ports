@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tcpslice
-PORTVERSION=	2005.07.04
+PORTVERSION=	2006.04.17
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/weekly/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	A tool for extracting portions of pcap files
 
 MAN1=		tcpslice.1
