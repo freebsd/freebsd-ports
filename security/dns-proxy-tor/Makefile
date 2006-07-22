@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dns-proxy-tor
-PORTVERSION=	0.0.9
+PORTVERSION=	0.1.0
 CATEGORIES=	security dns
 MASTER_SITES=	http://p56soo2ibjkx23xo.onion/ \
 		http://www.fabiankeil.de/sourcecode/freebsd/
