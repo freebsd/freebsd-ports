@@ -1,8 +1,8 @@
-MPICH is a portable implementation of the MPI (Message Passing
-Interface) standard. The goal of MPI, simply stated, is to develop a
-widely used standard for writing message-passing programs. As such the
-interface should establish a practical, portable, efficient, and
-flexible standard for message passing. Included are a full set of
-documents and parallel programming examples.
+MPICH2 is an implementation of the Message-Passing Interface (MPI).
+
+The goals of MPICH2 are to provide an MPI implementation for important
+platforms, including clusters, SMPs, and massively parallel processors.
+It also provides a vehicle for MPI implementation research and for developing
+new and better parallel programming environments
 
 WWW: http://www.mcs.anl.gov/mpi/mpich/

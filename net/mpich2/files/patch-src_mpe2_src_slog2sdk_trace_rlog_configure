@@ -1,0 +1,10 @@
+--- src/mpe2/src/slog2sdk/trace_rlog/configure.orig	Wed Nov 23 19:43:07 2005
++++ src/mpe2/src/slog2sdk/trace_rlog/configure	Mon Jul 17 20:22:48 2006
+@@ -22562,6 +22562,7 @@
+     /usr/java/j2sdk* \
+     /usr/local \
+     /usr/local/java* \
++    /usr/local/diablo-jdk* \
+     /usr/local/jdk* \
+     /usr/local/j2sdk* \
+     /usr/share \
