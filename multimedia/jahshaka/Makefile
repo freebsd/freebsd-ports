@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}fx
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video and film composing, editing and special fx system
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

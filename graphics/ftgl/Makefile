@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://opengl.geek.nz/ftgl/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/([[:digit:]])$/.\1/}
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL FreeType fonts rendering library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen

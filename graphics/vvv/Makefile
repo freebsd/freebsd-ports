@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	pav
 DISTNAME=	${PORTNAME}_unix
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tutorial tool for understanding viewing and projection in OpenGL
 
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui

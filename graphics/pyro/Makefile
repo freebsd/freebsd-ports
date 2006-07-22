@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://nostatic.org/pyro/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple OpenGL-based firework simulator
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

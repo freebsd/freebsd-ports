@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	alleggl-${PORTVERSION}
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL inteface for Allegro library
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro

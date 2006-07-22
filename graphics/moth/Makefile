@@ -12,7 +12,7 @@ MASTER_SITES=	http://moth.titanothere.com/moth/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX} \
 		lib${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple to use 3D mesh editor
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff

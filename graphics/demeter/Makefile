@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		DemeterSampleData-${SAMPLE_DATA_VER}-2${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ip@doom.homeunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library to render 3D terrains using OpenGL
 
 USE_GMAKE=	yes
