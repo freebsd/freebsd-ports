@@ -1,0 +1,17 @@
+"Named entities" is the NLP jargon for proper nouns which
+represent people, places, organisations, and so on.
+
+This module provides a very simple way of extracting these from a text.
+If we run the "extract_entities" routine on a piece of news coverage of
+recent UK political events, we should expect to see it return a list of
+hash references looking like this:
+
+{ entity => 'Mr Howard', class => 'person', scores => { ... }, },
+{ entity => 'Ministry of Defence', class => 'organisation', ... },
+{ entity => 'Oxfordshire', class => 'place', ... },
+
+The additional "scores" hash reference in there breaks down the various
+possible classes for this entity in an open-ended scale.
+
+
+WWW: http://search.cpan.org/dist/Lingua-EN-NamedEntity/
