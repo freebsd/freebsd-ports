@@ -11536,6 +11536,7 @@ py-oops		ports/databases/py-oops
 py-openal	ports/audio/py-openal
 py-opengl	ports/graphics/py-opengl
 py-openssl	ports/security/py-openssl
+py-openssl-proxy	ports/www/py-openssl-proxy
 py-optik	ports/devel/py-optik
 py-orbit	ports/devel/py-orbit
 py-osd		ports/misc/py-osd
