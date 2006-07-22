@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.20.2
-PORTREVISION=	1
+PORTVERSION=	0.20.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/${PORTVERSION:C/\.[0-9]*$//}/
 
@@ -39,7 +38,7 @@ CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -D__BSD_VISIBLE"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		beep-media-player-2.1
 
@@ -65,16 +64,4 @@ RUN_DEPENDS+=	${X11BASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notif
 CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
-.include <bsd.port.pre.mk>
-
-post-extract:
-	@${REINPLACE_CMD} -e 's|am__append_1 = -D_XOPEN_SOURCE=600||' \
-		${WRKSRC}/src/Makefile.in
-
-.if ${OSVERSION} < 500000
-post-patch:
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
-		${WRKSRC}/src/metadata.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
