@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,27 +17,27 @@ COMMENT=	A small collection of administration scripts
 NO_BUILD=	yes
 MANCOMPRESSED=	no
 
-MAN8=		bsdadminscripts.8
+MAN1=		bsdadminscripts.1
 
 RC_SCRIPTS=	start stop restart status onestart onestop onerestart onestatus
 PORT_SCRIPTS=	config build clean fetch package
-BUILDFLAGS_FILES=	buildflags.mk buildflags.sh buildflags.conf
+BUILDFLAGS_FILES=	buildflags.mk buildflags.awk buildflags.conf
 
 .if !defined(WITHOUT_RCSTART)
 PLIST_FILES+=	${RC_SCRIPTS:S,^,sbin/rc,}
-MAN8+=		rcstart.8
+MAN1+=		rcstart.1
 .endif
 
 .if !defined(WITHOUT_PORTCONFIG)
 RUN_DEPENDS+=	portupgrade:${PORTSDIR}/sysutils/portupgrade
 PLIST_FILES+=	${PORT_SCRIPTS:S,^,sbin/port,}
-MAN8+=		portconfig.8
+MAN1+=		portconfig.1
 .endif
 
 .if !defined(WITHOUT_BUILDFLAGS)
 PLIST_FILES+=	${BUILDFLAGS_FILES:S,^,share/$(PORTNAME)/,}
 PLIST_DIRS+=	share/${PORTNAME}
-MAN8+=		buildflags.mk.8 buildflags.conf.8
+MAN1+=		buildflags.mk.1 buildflags.conf.1 buildflags.awk.1
 .endif
 
 do-install:
@@ -58,13 +58,16 @@ do-install:
 .if !defined(WITHOUT_BUILDFLAGS)
 	@${ECHO_MSG} "===>  Installing buildflags."
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	@${INSTALL} ${WRKSRC}/buildflags.mk ${PREFIX}/share/${PORTNAME}/
-	@${INSTALL} ${WRKSRC}/buildflags.conf ${PREFIX}/share/${PORTNAME}/
-	@${INSTALL} ${WRKSRC}/buildflags.sh ${PREFIX}/share/${PORTNAME}/
+.for _file in ${BUILDFLAGS_FILES}
+	@${INSTALL} ${WRKSRC}/${_file} ${PREFIX}/share/${PORTNAME}/
+.endfor
 .endif
 	@${ECHO_MSG} "===>  Installing man pages."
-.for _manpage in ${MAN8}
-	@${INSTALL} ${WRKSRC}/${_manpage} ${PREFIX}/man/man8/
+.for _manpage in ${MAN1}
+	@${INSTALL} ${WRKSRC}/${_manpage} ${PREFIX}/man/man1/
 .endfor
+
+post-install:
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>

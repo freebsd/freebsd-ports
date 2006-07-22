@@ -1,6 +1,7 @@
 This is a collection of administration scripts. At the moment it
-consists of a script to control rc.d scripts at runtime and a
-script that adds functionality to portupgrade.
+consists of a script to control rc.d scripts at runtime, a
+script that adds functionality to portupgrade. And scripts to set variables
+for make jobs (like portconf, but with more possibilities).
 
 WWW: http://sourceforge.net/projects/bsdadminscripts/
 

@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+The documentation of the scripts has moved into man pages, please run:
+
+	man 1 bsdadminscripts
+
+to get an overview of the available documentation.
+-------------------------------------------------------------------------------
