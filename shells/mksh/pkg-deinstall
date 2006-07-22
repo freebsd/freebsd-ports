@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+MKSH="${PKG_PREFIX-/usr/local}/bin/mksh"
+SHELLS="${PKG_DESTDIR-}/etc/shells"
+
+case $2 in
+DEINSTALL)
+  if grep -qs "^$MKSH\$" "$SHELLS"; then
+    if [ `id -u` -eq 0 ]; then
+      TMPSHELLS=`mktemp -t shells`
+      grep -v "^$MKSH\$" "$SHELLS" > "$TMPSHELLS"
+      cat "$TMPSHELLS" > "$SHELLS"
+      rm "$TMPSHELLS"
+    else
+      echo "Not root, please remove $MKSH from $SHELLS manually"
+    fi
+  fi
+  ;;
+esac
