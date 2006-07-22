@@ -8985,6 +8985,7 @@ p5-Lingua-EN-Inflect-Number	ports/textproc/p5-Lingua-EN-Inflect-Number
 p5-Lingua-EN-MatchNames	ports/textproc/p5-Lingua-EN-MatchNames
 p5-Lingua-EN-NameCase	ports/textproc/p5-Lingua-EN-NameCase
 p5-Lingua-EN-NameParse	ports/textproc/p5-Lingua-EN-NameParse
+p5-Lingua-EN-NamedEntity	ports/textproc/p5-Lingua-EN-NamedEntity
 p5-Lingua-EN-Nickname	ports/textproc/p5-Lingua-EN-Nickname
 p5-Lingua-EN-Numbers	ports/textproc/p5-Lingua-EN-Numbers
 p5-Lingua-EN-Numbers-Easy	ports/textproc/p5-Lingua-EN-Numbers-Easy
