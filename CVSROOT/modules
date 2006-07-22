@@ -2537,6 +2537,7 @@ firewalk	ports/security/firewalk
 fisg		ports/irc/fisg
 fishsupper	ports/games/fishsupper
 fist		ports/textproc/fist
+fistgen		ports/devel/fistgen
 fityk		ports/math/fityk
 fix-mime-charset	ports/converters/fix-mime-charset
 fixesext	ports/x11/fixesext
