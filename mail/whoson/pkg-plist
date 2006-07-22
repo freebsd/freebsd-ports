@@ -1,4 +1,4 @@
-etc/whoson.conf
+etc/whoson.conf.sample
 include/whoson.h
 lib/libwhoson.a
 lib/libwhoson.la
