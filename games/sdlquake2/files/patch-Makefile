@@ -1,6 +1,6 @@
---- ./Makefile.orig	Thu May 19 17:56:13 2005
-+++ ./Makefile	Sun Feb 26 11:24:53 2006
-@@ -1,5 +1,18 @@
+--- Makefile.orig	Thu May 19 17:56:13 2005
++++ Makefile	Sat Jul 22 16:05:33 2006
+@@ -1,9 +1,34 @@
 -CC:=gcc
 -CFLAGS:=-O3 -ffast-math -march=athlon-xp -g -Wall $(shell sdl-config --cflags)
 +CC?=gcc
@@ -21,7 +21,24 @@
  
  GAMES:=baseq2
  
-@@ -43,15 +56,14 @@
+-TARGETS:=quake2 q2ded ref_sdlgl.so $(foreach game, $(GAMES), $(game)/game.so)
++TARGETS:=
++
++ifeq ($(strip $(BUILD_CLIENT)),YES)
++TARGETS+=quake2 ref_sdlgl.so
++endif
++
++ifeq ($(strip $(BUILD_DEDICATED)),YES)
++TARGETS+=q2ded
++endif
++
++ifeq ($(strip $(BUILD_GAME)),YES)
++TARGETS+=$(foreach game, $(GAMES), $(game)/game.so)
++endif
+ 
+ .PHONY: default all clean distclean
+ 
+@@ -43,15 +68,14 @@
  	@sed "s@^\(.*\)\.o:@$(dir $*)\1.o:@" < .depends/$*.d > .depends/$*.d.new
  	@mv .depends/$*.d.new .depends/$*.d
  
