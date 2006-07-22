@@ -57,6 +57,7 @@ sympa:*:200:
 dspam:*:202:
 _tor:*:256:
 _dns-proxy-tor:*:257:
+_trans-proxy-tor:*:258:
 smxs:*:260:
 smxq:*:261:
 smxc:*:262:
