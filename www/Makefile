@@ -871,6 +871,7 @@
     SUBDIR += py-meld
     SUBDIR += py-mt
     SUBDIR += py-nevow
+    SUBDIR += py-openssl-proxy
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
     SUBDIR += py-scgi
