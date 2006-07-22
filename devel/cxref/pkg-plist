@@ -1,0 +1,17 @@
+bin/cxref
+bin/cxref-cc
+bin/cxref-query
+%%DATADIR%%/README
+%%DATADIR%%/README.xrgr
+%%DATADIR%%/cflow.el
+%%DATADIR%%/cxref.el
+%%DATADIR%%/cxref_includes.pl
+%%DATADIR%%/daVinvi_function.pl
+%%DATADIR%%/daVinvi_include.pl
+%%DATADIR%%/fixheader.pl
+%%DATADIR%%/includes2cxref.pl
+%%DATADIR%%/knr2ansi.pl
+%%DATADIR%%/make_depend.pl
+%%DATADIR%%/tree.pl
+%%DATADIR%%/xrgr.pl
+@dirrm %%DATADIR%%
