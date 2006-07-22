@@ -33,10 +33,6 @@ CFLAGS+=	-O3 -ffast-math
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
