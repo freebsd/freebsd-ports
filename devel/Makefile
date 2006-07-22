@@ -1587,6 +1587,7 @@
     SUBDIR += py-flakes
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
+    SUBDIR += py-fusefs
     SUBDIR += py-game
     SUBDIR += py-gamin
     SUBDIR += py-getargs
