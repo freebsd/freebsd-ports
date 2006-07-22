@@ -7038,6 +7038,7 @@ mpg321		ports/audio/mpg321
 mpgtx		ports/multimedia/mpgtx
 mph		ports/devel/mph
 mpich		ports/net/mpich
+mpich2		ports/net/mpich2
 mping		ports/net/mping
 mpiosh		ports/audio/mpiosh
 mplayer		ports/multimedia/mplayer
