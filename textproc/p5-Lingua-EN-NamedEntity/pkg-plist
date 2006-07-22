@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Lingua/EN/NamedEntity.pm
+%%SITE_PERL%%/Lingua/EN/NamedEntity/forename
+%%SITE_PERL%%/Lingua/EN/NamedEntity/wordlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/NamedEntity/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/NamedEntity
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/EN/NamedEntity
+@dirrmtry %%SITE_PERL%%/Lingua/EN
+@dirrmtry %%SITE_PERL%%/Lingua
