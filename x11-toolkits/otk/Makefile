@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	otk
-PORTVERSION=	0.45
+PORTVERSION=	0.53
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_lib_v${PORTVERSION}
+DISTNAME=	${PORTNAME}_lib_${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An OpenGL based GUI widget library
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Widget library based on OpenGL
+
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_GL=		yes
 USE_X_PREFIX=	yes
