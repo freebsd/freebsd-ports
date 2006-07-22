@@ -13689,6 +13689,7 @@ traindirector	ports/games/traindirector
 tramp		ports/net/tramp
 trang		ports/textproc/trang
 trans		ports/converters/trans
+trans-proxy-tor	ports/security/trans-proxy-tor
 transcalc	ports/cad/transcalc
 transcode	ports/multimedia/transcode
 transfig	ports/print/transfig
