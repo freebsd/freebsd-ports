@@ -1,5 +1,5 @@
---- mpeg3ifo.c.orig
-+++ mpeg3ifo.c
+--- ./mpeg3ifo.c.orig	Sun Feb 19 01:19:23 2006
++++ ./mpeg3ifo.c	Sat Jul 22 18:02:04 2006
 @@ -1,4 +1,4 @@
 -#include <byteswap.h>
 +//#include <byteswap.h>

@@ -1,14 +1,16 @@
---- mpeg3io.c.orig
-+++ mpeg3io.c
-@@ -1,7 +1,7 @@
+--- ./mpeg3io.c.orig	Sun May  1 09:57:56 2005
++++ ./mpeg3io.c	Sat Jul 22 18:02:04 2006
+@@ -1,8 +1,8 @@
  #include "mpeg3private.h"
  #include "mpeg3protos.h"
  
 -#include <mntent.h>
+-#include <stdint.h>
 +#include <fstab.h>
- #include <stdint.h>
++#include <sys/types.h>
  #include <stdlib.h>
  #include <string.h>
+ #include <sys/stat.h>
 @@ -35,8 +35,8 @@
  
  int64_t mpeg3io_get_total_bytes(mpeg3_fs_t *fs)
@@ -40,25 +42,25 @@
  	{
  		perror("mpeg3io_open_file");
  		return 1;
-@@ -157,7 +157,7 @@
- 		if(remainder)
- 			memmove(fs->buffer + remainder_start, fs->buffer, remainder);
+@@ -161,7 +161,7 @@
+ 
+ 
  
 -		fseeko64(fs->fd, new_buffer_position, SEEK_SET);
 +		fseek(fs->fd, new_buffer_position, SEEK_SET);
  		fread(fs->buffer, 1, remainder_start, fs->fd);
  
  
-@@ -172,7 +172,7 @@
+@@ -176,7 +176,7 @@
  		fs->buffer_position = fs->current_byte;
  		fs->buffer_offset = 0;
  
 -		result = fseeko64(fs->fd, fs->buffer_position, SEEK_SET);
 +		result = fseek(fs->fd, fs->buffer_position, SEEK_SET);
+ //printf("mpeg3io_read_buffer 2 %llx %llx\n", fs->buffer_position, ftell(fs->fd));
  		fs->buffer_size = fread(fs->buffer, 1, MPEG3_IO_SIZE, fs->fd);
  
- 
-@@ -210,27 +210,27 @@
+@@ -215,27 +215,27 @@
  
  int mpeg3io_device(char *path, char *device)
  {
