@@ -13,21 +13,19 @@
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Anna.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Cryss.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Freylis.jpg
-%%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.gromida.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Indina.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Ivana.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Jayce.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Kyla.jpg
-%%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.maime.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Malise.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Mariana.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Nikita.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Portia.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.Tanya.jpg
+%%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.gromida.jpg
+%%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.maime.jpg
 %%PHPUA%%/images/plugin_ut/faces/FCommandoSkins.visse.jpg
 %%PHPUA%%/images/plugin_ut/faces/None.jpg
-%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.annaka.jpg
-%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.aryss.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Athena.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Azure.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Cathode.jpg
@@ -36,9 +34,7 @@
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Isis.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Lauren.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Lilith.jpg
-%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.olga.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Risa.jpg
-%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.ryanna.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Rylisa.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Sara.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Sarena.jpg
@@ -47,6 +43,10 @@
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Tasha.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Vixen.jpg
 %%PHPUA%%/images/plugin_ut/faces/SGirlSkins.Zanna.jpg
+%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.annaka.jpg
+%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.aryss.jpg
+%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.olga.jpg
+%%PHPUA%%/images/plugin_ut/faces/SGirlSkins.ryanna.jpg
 %%PHPUA%%/images/plugin_ut/faces/SoldierSkins.Arkon.jpg
 %%PHPUA%%/images/plugin_ut/faces/SoldierSkins.Brock.jpg
 %%PHPUA%%/images/plugin_ut/faces/SoldierSkins.Bruce.jpg
@@ -87,10 +87,15 @@
 %%PHPUA%%/templates/default/plugin_ut/x.js
 %%PHPUA%%/templates/javascript/plugin_ut/info.tpl
 %%PHPUA%%/templates/wap/plugin_ut/info.tpl
-@exec chown -R %%PHPUA_USER%%:%%PHPUA_GROUP%% %D/%%PHPUA%%
 @dirrm %%PHPUA%%/templates/wap/plugin_ut
+@dirrmtry %%PHPUA%%/templates/wap
 @dirrm %%PHPUA%%/templates/javascript/plugin_ut
+@dirrmtry %%PHPUA%%/templates/javascript
 @dirrm %%PHPUA%%/templates/default/plugin_ut
+@dirrmtry %%PHPUA%%/templates/default
+@dirrmtry %%PHPUA%%/templates
 @dirrm %%PHPUA%%/plugins/plugin_ut
+@dirrmtry %%PHPUA%%/plugins
 @dirrm %%PHPUA%%/images/plugin_ut/faces
 @dirrm %%PHPUA%%/images/plugin_ut
+@dirrmtry %%PHPUA%%/images
