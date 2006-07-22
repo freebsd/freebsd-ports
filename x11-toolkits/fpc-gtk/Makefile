@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	graphics lang
+CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	acardenas@bsd.org.pe
