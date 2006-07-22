@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060722:
+  AFFECTS: users of games/phpua-*
+  AUTHOR: miwi@FreeBSD.org
+
+  The default install location has changed from
+  ${PREFIX}/www/data/phpua-* to ${PREFIX}/www/phpua-*.
+
 20060719:
   AFFECTS: users of mail/postfix
   AUTHOR: mnag@FreeBSD.org
