@@ -17,6 +17,9 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.pyc
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.pyo
+%%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/rss.pyc
+%%PYTHON_SITELIBDIR%%/sabnzbd/rss.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.pyc
 %%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.pyo
