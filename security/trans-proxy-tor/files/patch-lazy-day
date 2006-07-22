@@ -1,0 +1,38 @@
+--- trans-proxy-tor.orig	Sun Jun 11 04:33:35 2006
++++ trans-proxy-tor	Sun Jun 11 16:48:35 2006
+@@ -119,9 +119,20 @@
+ 
+   BEGIN {
+     if ($^O =~ /^(?:open|free)bsd\z/) {
+-      require 'sys/ioctl.ph';
+-      require 'netinet/in.ph';
+-      require 'net/pfvar.ph';
++
++# These perl headers can be created on FreeBSD as well,
++# but it leads to headaches if the user compiled world
++# and kernel without IPv6 support or has incomplete headers
++# installed.
++#
++# As the port maintainer was too lazy anyway, the values
++# for PF_OUT and IPPROTO_TCP are now hard coded instead.
++# The information how to do that came from tun,
++# the creator of trans-proxy-tor.
++#
++#      require 'sys/ioctl.ph';
++#      require 'netinet/in.ph';
++#      require 'net/pfvar.ph';
+       *_get_original_destination = \&_get_original_destination_pf;
+       if ($^O eq 'openbsd') {
+         sysopen $Pf, '/dev/pf', O_RDONLY
+@@ -159,9 +170,9 @@
+     my %pnl;
+     $pnl{$_} = 0 for @pfioc_natlook;
+ 
+-    $pnl{direction} = PF_OUT();
++    $pnl{direction} = 2; #PF_OUT();
+     $pnl{af}        = AF_INET;
+-    $pnl{proto}     = IPPROTO_TCP();
++    $pnl{proto}     = 6; #IPPROTO_TCP();
+ 
+     @pnl{qw/sport saddr/} = sockaddr_in $self->{client}{sockaddr};
+     @pnl{qw/dport daddr/} = sockaddr_in getsockname $self->{client}{handle};
