@@ -7,7 +7,7 @@
 
 PORTNAME=	spooles
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.netlib.org/linalg/spooles/
 .ifdef WITH_MPI
@@ -27,7 +27,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SParse Object Oriented Linear Equations Solver
 
 .if defined(WITH_MPI)
-BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
+BUILD_DEPENDS=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
 .endif
 
 USE_GMAKE=	yes	#BSD make gives problems here
