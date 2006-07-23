@@ -96,17 +96,16 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
 .if defined(WITH_GNUGCJ)
-#this wired part must be rewritten
-GCCVER=4.1.2
-BUILD_DEPENDS+= ${PREFIX}/lib/gcc/${GCC_TARGET}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
+GCCVER=41
+BUILD_DEPENDS+=	${PREFIX}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
 BUILD_DEPENDS+= gjdoc:${PORTSDIR}/java/gjdoc
-RUN_DEPENDS+=   ${PREFIX}/lib/gcc/${GCC_TARGET}/${GCCVER}/lib-gnu-java-awt-peer-gtk.so:${PORTSDIR}/lang/gcc41-withgcjawt
+RUN_DEPENDS+=	${PREFIX}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
 .else
 .if ${ARCH} == amd64
-GCCVER=4.1.2
+GCCVER=41
 BUILD_DEPENDS+= gcc41:${PORTSDIR}/lang/gcc41
 .else
-GCCVER=3.4.1
+GCCVER=34
 BUILD_DEPENDS+= gcc-ooo:${PORTSDIR}/lang/gcc-ooo
 .endif
 .endif
@@ -117,11 +116,11 @@ CCACHE_PREFIX=	ccache
 .else
 CCACHE_PREFIX=
 .endif
-.if (${GCCVER} == 4.1.2)
+.if (${GCCVER} == 41)
 CC=     gcc41
 CXX=    g++41
 .endif
-.if (${GCCVER} == 3.4.1)
+.if (${GCCVER} == 34)
 CC=     gcc-ooo
 CXX=    g++-ooo
 .endif
@@ -164,7 +163,7 @@ CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
 .endif
-.if (${GCCVER} == 4.1.2)
+.if (${GCCVER} == 41)
 LIB_DEPENDS=   boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=       --with-system-boost=yes #i58343#
 .endif
