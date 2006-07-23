@@ -1,5 +1,5 @@
 --- r_part.c.orig	Wed Jan  7 00:39:44 2004
-+++ r_part.c	Mon Jul 19 11:54:15 2004
++++ r_part.c	Sun Jan 22 22:07:23 2006
 @@ -58,7 +58,7 @@
  
  vec3_t				r_pright, r_pup, r_ppn;

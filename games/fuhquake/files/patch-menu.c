@@ -1,6 +1,6 @@
---- menu.c.orig	Thu Feb  5 00:33:07 2004
-+++ menu.c	Thu Feb  5 00:34:32 2004
-@@ -411,9 +436,11 @@
+--- menu.c.orig	Wed Jan  7 01:02:12 2004
++++ menu.c	Tue Jan 31 13:49:29 2006
+@@ -411,9 +411,11 @@
  		Cvar_SetValue (&cl_hudswap, !cl_hudswap.value);
  		break;
  
@@ -12,7 +12,7 @@
  	}
  }
  
-@@ -873,24 +900,24 @@
+@@ -873,24 +875,24 @@
  	M_Print (16, 96, "        Pickup flashes");
  	M_DrawCheckbox (ALIGN_FPS_OPTIONS, 96, v_bonusflash.value);
  
@@ -43,3 +43,48 @@
  
  // cursor
  	M_DrawCharacter (196, 32 + fps_cursor * 8, 12 + ((int) (curtime * 4) & 1));
+@@ -1225,8 +1227,6 @@
+ 
+ 	
+ 	progs = (dprograms_t *) FS_LoadHunkFile ("spprogs.dat");
+-	if (progs && !file_from_gamedir)	
+-		Cbuf_AddText ("gamedir qw\n");
+ 	Cbuf_AddText ("map start\n");
+ }
+ 
+@@ -1385,7 +1385,7 @@
+ 		return;
+ 
+ 	M_EnterMenu (m_load);
+-	M_ScanSaves (!file_from_gamedir ? "qw" : com_gamedir);
++	M_ScanSaves (com_gamedir);
+ }
+ 
+ void M_Menu_Save_f (void) {
+@@ -1443,7 +1443,7 @@
+ 
+ 		// issue the load command
+ 		if (FS_LoadHunkFile ("spprogs.dat") && !file_from_gamedir)
+-			Cbuf_AddText("disconnect; gamedir qw\n");
++			Cbuf_AddText("disconnect\n");
+ 		Cbuf_AddText (va ("load s%i\n", load_cursor) );
+ 		return;
+ 
+@@ -2209,7 +2209,7 @@
+ 		return;
+ 	}
+ #else
+-	if (!(d = opendir(va("%s%s", com_basedir, demo_currentdir)))) {
++	if (!(d = opendir(va("%s/%s", com_gamedir, demo_currentdir)))) {
+ 		demolist_data[demolist_count].name = strdup ("Error reading directory");
+ 		demolist_data[demolist_count].type = dt_msg;
+ 		demolist_count++;
+@@ -2315,7 +2315,7 @@
+ 					*s = 0;
+ 			}
+ 		} else {
+-			strcpy(demo_currentdir, "/qw");	
++			strcpy(demo_currentdir, com_gamedir);
+ 		}
+ 	}
+ 	

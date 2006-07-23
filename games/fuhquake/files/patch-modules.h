@@ -1,5 +1,5 @@
---- modules.h.orig	Wed Feb  4 21:13:04 2004
-+++ modules.h	Wed Feb  4 21:13:36 2004
+--- modules.h.orig	Wed Jan  7 00:43:26 2004
++++ modules.h	Sun Jan 22 22:07:23 2006
 @@ -24,7 +24,7 @@
  
  #include "security.h"

@@ -7,42 +7,41 @@
 
 PORTNAME=	fuhquake
 PORTVERSION=	0.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.fuhquake.net/files/releases/v${PORTVERSION}/:q \
-		http://www.fuhquake.net/files/extras/:s \
-		ftp://gibbage.mine.nu/clients/fuhquake/releases/v${PORTVERSION}/:q \
-		http://gamefiles.blueyonder.co.uk/blueyondergames/quake/quakeworld/clients/fuhquake/source/:q \
-		http://gamefiles.blueyonder.co.uk/blueyondergames/quake/quakeworld/clients/fuhquake/addons/:s
+MASTER_SITES=	http://www.fuhquake.net/files/releases/v${PORTVERSION}/ \
+		ftp://gibbage.mine.nu/clients/fuhquake/releases/v${PORTVERSION}/ \
+		http://gamefiles.blueyonder.co.uk/blueyondergames/quake/quakeworld/clients/fuhquake/source/ \
+		http://www.fuhquake.net/files/misc/:misc
 DISTNAME=	${PORTNAME}-source-v${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:q \
-		${PORTNAME}-linux-v${PORTVERSION}${EXTRACT_SUFX}:q
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-linux-v${PORTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An excellent QuakeWorld client
 
+USE_ZIP=	yes
+MAKEFILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIR}/source
 
-USE_ZIP=	yes
-
-MAKEFILE=	${FILESDIR}/Makefile
-
 OPTIONS=	GLX "Build GLX client" on \
-		LITS "Enable coloured lighting" off \
+		HUD "High quality HUD images" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SKYBOXES "Install skyboxes pak" off \
 		X11 "Build X11 client" on \
 		X86_ASM "Enable x86 assembly code" on \
 		XMMS "Enable MP3 Player feature" off
 
 DATADIR=	${Q1DIR}
+MAKE_ENV=	DATADIR="${DATADIR}"
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_GLX) && !defined(WITH_X11)
+IGNORE=		needs at least one client (GLX or X11)
+.endif
 
 .if defined(WITH_GLX)
 USE_GL=		yes
@@ -54,12 +53,11 @@ CLIENTS+=	glx
 PLIST_SUB+=	GLX="@comment "
 .endif
 
-.if defined(WITH_LITS)
-DISTFILES+=	${PORTNAME}-lits.rar:s
-BUILD_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
-PLIST_SUB+=	LITS=""
+.if defined(WITH_HUD)
+DISTFILES+=	fuh-hud${EXTRACT_SUFX}:misc
+PLIST_SUB+=	HUD=""
 .else
-PLIST_SUB+=	LITS="@comment "
+PLIST_SUB+=	HUD="@comment "
 .endif
 
 .for f in OPTIMIZED_CFLAGS X86_ASM
@@ -69,14 +67,6 @@ MAKE_ARGS+=	-DWITH_${f}
 MAKE_ARGS+=	-DWITHOUT_${f}
 .   endif
 .endfor
-
-.if defined(WITH_SKYBOXES)
-DISTFILES+=	${PORTNAME}-skyboxes${EXTRACT_SUFX}:s
-EXTRACT_ONLY+=	${PORTNAME}-skyboxes${EXTRACT_SUFX}
-PLIST_SUB+=	SKYBOXES=""
-.else
-PLIST_SUB+=	SKYBOXES="@comment "
-.endif
 
 .if defined(WITH_X11)
 USE_XLIB=	yes
@@ -94,16 +84,7 @@ MAKE_ARGS+=	-DWITH_XMMS \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 .endif
 
-.if defined(WITH_LITS)
-post-extract:
-	@${MKDIR} ${WRKDIR}/lits
-	@unrar x -inul ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-lits.rar \
-		${WRKDIR}/lits
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%BASEDIR%%|${DATADIR}|' ${WRKSRC}/common.c
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' ${WRKSRC}/mp3_player.c
 	@${CP} ${FILESDIR}/*.c ${WRKSRC}
 
 do-build:
@@ -120,11 +101,11 @@ do-install:
 	${MKDIR} ${DATADIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/qw/*.dat ${DATADIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/pak0.pak ${DATADIR}/${PORTNAME}
-.if defined(WITH_LITS)
-	${CP} -R ${WRKDIR}/lits ${DATADIR}/${PORTNAME}
-.endif
-.if defined(WITH_SKYBOXES)
-	${INSTALL_DATA} ${WRKDIR}/pakX.pak ${DATADIR}/${PORTNAME}/pak1.pak
+.if defined(WITH_HUD)
+	${MKDIR} ${DATADIR}/${PORTNAME}/textures/wad
+	${INSTALL_DATA} ${WRKDIR}/qw/charset.png ${DATADIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/qw/textures/wad/* \
+		${DATADIR}/${PORTNAME}/textures/wad
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

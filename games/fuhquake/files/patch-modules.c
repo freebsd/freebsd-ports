@@ -1,5 +1,5 @@
---- modules.c.orig	Wed Feb  4 21:05:56 2004
-+++ modules.c	Wed Feb  4 21:14:23 2004
+--- modules.c.orig	Wed Jan  7 03:51:30 2004
++++ modules.c	Sun Jan 22 22:07:23 2006
 @@ -31,10 +31,6 @@
  char _temp_modulename[MAX_OSPATH];
  static registeredModule_t registeredModules[qlib_nummodules];

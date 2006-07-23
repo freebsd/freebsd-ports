@@ -1,7 +1,7 @@
---- version.h.orig	Wed Sep 24 20:56:57 2003
-+++ version.h	Wed Sep 24 20:58:44 2003
+--- version.h.orig	Wed Jan  7 00:58:18 2004
++++ version.h	Sun Jan 22 22:07:23 2006
 @@ -4,10 +4,12 @@
- #define FUH_VERSION		"0.30"
+ #define FUH_VERSION		"0.31"
  #define LINUX_VERSION	0.98
  
 -#ifdef _WIN32
