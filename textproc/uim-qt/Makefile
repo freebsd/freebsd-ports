@@ -16,8 +16,10 @@ MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 CONFIGURE_ARGS=	--with-qt
 CONFIGURE_ENV=	QTDIR=${X11BASE}/lib QTINCDIR=${X11BASE}/include \
-		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include" LIBS="${LIBS} ${PTHREAD_LIBS} -L${X11BASE}/lib"
-
+		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+		LIBS="${LIBS} ${PTHREAD_LIBS} -L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
 UIM_SLAVE=	yes
 
 # This is normally handled by defining USE_QT_VER ...
