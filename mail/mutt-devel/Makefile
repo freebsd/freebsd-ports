@@ -123,7 +123,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www.spinnaker.de/mutt/compressed/:rr \
 		http://cedricduval.free.fr/mutt/patches/download/:cd \
-		http://thomer.com/mutt/:thomer
+		http://lunar-linux.org/~tchan/mutt/:tchan
 DISTNAME=	mutt-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -194,7 +194,6 @@ AC_PATCH_VERSION=	${PORTVERSION}
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH does not work at the moment
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
@@ -420,8 +419,8 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.11.sidebar.20060225.txt
-DISTFILES+=	${SIDEBAR_PATCH}:thomer
+SIDEBAR_PATCH=	patch-1.5.12.sidebar.20060720.txt
+DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${SIDEBAR_PATCH} > ${WRKDIR}/patch-sidebar
