@@ -1,21 +1,10 @@
 %%MICO_SERVICE%%bin/ccmload
 %%MICO_SERVICE%%bin/componentserver
-%%MICO_SERVICE%%bin/containmentd
 %%MICO_SERVICE%%bin/eventd
-%%MICO_SERVICE%%bin/extcontainmentd
-%%MICO_SERVICE%%bin/extcriteriad
-%%MICO_SERVICE%%bin/extnoded
-%%MICO_SERVICE%%bin/extreferenced
-%%MICO_SERVICE%%bin/factoryfinderd
-%%MICO_SERVICE%%bin/genericfactory
 bin/idl
 bin/imr
 bin/iordump
 bin/ird
-%%MICO_SERVICE%%bin/lifecontainmentd
-%%MICO_SERVICE%%bin/lifecriteriad
-%%MICO_SERVICE%%bin/lifenoded
-%%MICO_SERVICE%%bin/lifereferenced
 bin/mico-ar
 bin/mico-c++
 %%MICO_SERVICE%%bin/mico-ccm
@@ -27,62 +16,39 @@ bin/mico-shc++
 bin/mico-shld
 bin/micod
 bin/mkdepend
-%%MICO_SERVICE%%bin/noded
 %%MICO_SERVICE%%bin/nsadmin
 %%MICO_SERVICE%%bin/nsd
-%%MICO_SERVICE%%bin/operationd
 %%MICO_SERVICE%%bin/propertyd
-%%MICO_SERVICE%%bin/proxyd
-%%MICO_SERVICE%%bin/randomd
-%%MICO_SERVICE%%bin/referenced
-%%MICO_SERVICE%%bin/streamd
 %%MICO_SERVICE%%bin/timed
-%%MICO_SERVICE%%bin/traderd
-%%MICO_SERVICE%%bin/traversald
 %%FLEX%%include/FlexLexer.h
 include/CORBA-SMALL.h
 include/CORBA.h
 include/coss/CompoundExternalization_impl.h
-%%MICO_SERVICE%%include/coss/CosCompoundLifeCycle.h
 include/coss/CosCompoundLifeCycle.idl
-%%MICO_SERVICE%%include/coss/CosContainment.h
 include/coss/CosContainment.idl
 include/coss/CosContainment_impl.h
 %%MICO_SERVICE%%include/coss/CosEventChannelAdmin.h
 include/coss/CosEventChannelAdmin.idl
 %%MICO_SERVICE%%include/coss/CosEventComm.h
 include/coss/CosEventComm.idl
-%%MICO_SERVICE%%include/coss/CosExternalization.h
 include/coss/CosExternalization.idl
-%%MICO_SERVICE%%include/coss/CosExternalizationContainment.h
 include/coss/CosExternalizationContainment.idl
-%%MICO_SERVICE%%include/coss/CosExternalizationReference.h
 include/coss/CosExternalizationReference.idl
-%%MICO_SERVICE%%include/coss/CosGraphs.h
 include/coss/CosGraphs.idl
-%%MICO_SERVICE%%include/coss/CosGraphsExtension.h
 include/coss/CosGraphsExtension.idl
-%%MICO_SERVICE%%include/coss/CosLifeCycle.h
 include/coss/CosLifeCycle.idl
-%%MICO_SERVICE%%include/coss/CosLifeCycleContainment.h
 include/coss/CosLifeCycleContainment.idl
-%%MICO_SERVICE%%include/coss/CosLifeCycleReference.h
 include/coss/CosLifeCycleReference.idl
 %%MICO_SERVICE%%include/coss/CosNaming.h
 include/coss/CosNaming.idl
-%%MICO_SERVICE%%include/coss/CosObjectIdentity.h
 include/coss/CosObjectIdentity.idl
-%%MICO_SERVICE%%include/coss/CosReference.h
 include/coss/CosReference.idl
 include/coss/CosReference_impl.h
-%%MICO_SERVICE%%include/coss/CosRelationships.h
 include/coss/CosRelationships.idl
 include/coss/CosStream_impl.h
 %%MICO_SERVICE%%include/coss/CosTime.h
 include/coss/CosTime.idl
-%%MICO_SERVICE%%include/coss/CosTrading.h
 include/coss/CosTrading.idl
-%%MICO_SERVICE%%include/coss/CosTradingRepos.h
 include/coss/CosTradingRepos.idl
 include/coss/EdgeIterator_impl.h
 include/coss/ExternalizationContainment_impl.h
@@ -91,6 +57,7 @@ include/coss/ExternalizationReference_impl.h
 include/coss/ExternalizationTraversalCriteria_impl.h
 include/coss/Externalization_impl.h
 include/coss/FactoryFinder_impl.h
+include/coss/GTP.idl
 include/coss/GenericCriteriaFactory_impl.h
 include/coss/GenericFactory_impl.h
 include/coss/GraphsRole_impl.h
@@ -107,12 +74,13 @@ include/coss/NamedRoleTypesHelper.h
 include/coss/NodeFactory_impl.h
 include/coss/NodeStreamableFactory_impl.h
 include/coss/Node_impl.h
+include/coss/MobileTerminal.idl
+include/coss/MobileTerminalNotification.idl
 include/coss/OperationsFactory_impl.h
 include/coss/Operations_impl.h
 %%MICO_SERVICE%%include/coss/PropertyService.h
 include/coss/PropertyService.idl
 include/coss/PropertyService_impl.h
-%%MICO_SERVICE%%include/coss/RandomGenerator.h
 include/coss/RandomGenerator.idl
 include/coss/RandomGenerator_impl.h
 include/coss/RegisterHelper.h
@@ -124,9 +92,7 @@ include/coss/Role_impl.h
 include/coss/TraversalCriteria_impl.h
 include/coss/TraversalFactory_impl.h
 include/coss/Traversal_impl.h
-%%MICO_SERVICE%%include/coss/random.h
 include/coss/random.idl
-%%MICO_SERVICE%%include/coss/stream.h
 include/coss/stream.idl
 include/coss/stream_impl.h
 include/mico/CCM.h
@@ -140,8 +106,6 @@ include/mico/assert.h
 include/mico/basic.h
 include/mico/basic_seq.h
 include/mico/basic_seq.idl
-include/mico/boa.h
-include/mico/boa_impl.h
 include/mico/buffer.h
 include/mico/code_set_registry.h
 include/mico/codec.h
@@ -158,7 +122,6 @@ include/mico/conv_frame.idl
 include/mico/current.h
 include/mico/current.idl
 include/mico/dii.h
-include/mico/dispatch.h
 include/mico/dsi.h
 include/mico/dynany.h
 include/mico/dynany.idl
@@ -186,6 +149,7 @@ include/mico/ir_base.h
 include/mico/ir_base.idl
 include/mico/ir_creator.h
 include/mico/lmath.h
+include/mico/ltp.h
 include/mico/magic.h
 include/mico/memtrace.h
 include/mico/message.h
@@ -225,10 +189,14 @@ include/mico/policy.idl
 include/mico/policy2.h
 include/mico/policy2.idl
 include/mico/policy_impl.h
+include/mico/poll_dispatcher.h
 include/mico/process.h
 include/mico/process_impl.h
 include/mico/qtmico.h
+include/mico/reflection.h
+include/mico/reflection.idl
 include/mico/rtti.h
+include/mico/watm.h
 include/mico/security/AccessConfig.h
 include/mico/security/AuditConfig.h
 include/mico/security/AuditIntercept.h
@@ -304,33 +272,33 @@ include/mico/valuetype.idl
 include/mico/valuetype_impl.h
 include/mico/version.h
 include/mico/x11.h
-lib/libmico2.3.11.a
-lib/libmico2.3.11.so
-lib/libmico2.3.11.so.1
-lib/libmicoaux2.3.11.a
-lib/libmicoaux2.3.11.so
-lib/libmicoaux2.3.11.so.1
-%%MICO_SERVICE%%lib/libmicoccm2.3.11.a
-%%MICO_SERVICE%%lib/libmicoccm2.3.11.so
-%%MICO_SERVICE%%lib/libmicoccm2.3.11.so.1
-%%MICO_SERVICE%%lib/libmicocoss2.3.11.a
-%%MICO_SERVICE%%lib/libmicocoss2.3.11.so
-%%MICO_SERVICE%%lib/libmicocoss2.3.11.so.1
-%%MICO_GTK%%lib/libmicogtk2.3.11.a
-%%MICO_GTK%%lib/libmicogtk2.3.11.so
-%%MICO_GTK%%lib/libmicogtk2.3.11.so.1
-lib/libmicoir2.3.11.a
-lib/libmicoir2.3.11.so
-lib/libmicoir2.3.11.so.1
-%%MICO_QT%%lib/libmicoqt2.3.11.a
-%%MICO_QT%%lib/libmicoqt2.3.11.so
-%%MICO_QT%%lib/libmicoqt2.3.11.so.1
-%%MICO_TCL%%lib/libmicotcl2.3.11.a
-%%MICO_TCL%%lib/libmicotcl2.3.11.so
-%%MICO_TCL%%lib/libmicotcl2.3.11.so.1
-%%MICO_X11%%lib/libmicox2.3.11.a
-%%MICO_X11%%lib/libmicox2.3.11.so
-%%MICO_X11%%lib/libmicox2.3.11.so.1
+lib/libmico2.3.12.a
+lib/libmico2.3.12.so
+lib/libmico2.3.12.so.1
+lib/libmicoaux2.3.12.a
+lib/libmicoaux2.3.12.so
+lib/libmicoaux2.3.12.so.1
+%%MICO_SERVICE%%lib/libmicoccm2.3.12.a
+%%MICO_SERVICE%%lib/libmicoccm2.3.12.so
+%%MICO_SERVICE%%lib/libmicoccm2.3.12.so.1
+%%MICO_SERVICE%%lib/libmicocoss2.3.12.a
+%%MICO_SERVICE%%lib/libmicocoss2.3.12.so
+%%MICO_SERVICE%%lib/libmicocoss2.3.12.so.1
+%%MICO_GTK%%lib/libmicogtk2.3.12.a
+%%MICO_GTK%%lib/libmicogtk2.3.12.so
+%%MICO_GTK%%lib/libmicogtk2.3.12.so.1
+lib/libmicoir2.3.12.a
+lib/libmicoir2.3.12.so
+lib/libmicoir2.3.12.so.1
+%%MICO_QT%%lib/libmicoqt2.3.12.a
+%%MICO_QT%%lib/libmicoqt2.3.12.so
+%%MICO_QT%%lib/libmicoqt2.3.12.so.1
+%%MICO_TCL%%lib/libmicotcl2.3.12.a
+%%MICO_TCL%%lib/libmicotcl2.3.12.so
+%%MICO_TCL%%lib/libmicotcl2.3.12.so.1
+%%MICO_X11%%lib/libmicox2.3.12.a
+%%MICO_X11%%lib/libmicox2.3.12.so
+%%MICO_X11%%lib/libmicox2.3.12.so.1
 lib/mico-setup.csh
 lib/mico-setup.sh
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps
@@ -466,11 +434,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/dynany/dynany.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/dynany/dynanytest.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/dynany/test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/hello.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/runit
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/externalization/server.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/generic/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/generic/client.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/generic/run_test
@@ -590,11 +553,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/account
 %%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/main.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/interop/visibroker/run_applet
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/hello.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/runit
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/lifecycle/server.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/mcast/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/mcast/client.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/mcast/hello.idl
@@ -706,42 +664,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/random/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/random/client.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/random/random.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/calc.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-1/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/calc.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-2/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/calc.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-3/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/calc.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Calc-4/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-1/tty.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-2/tty.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/tty.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-3/ttyplus.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/tty.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Hello-4/ttyplus.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/redlich/README
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/Makefile
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/README
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/security/acl-aware/Makefile
@@ -907,40 +829,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/server.cc
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/server2.cc
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/events/server3.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Documents.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/DocumentsServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Documents_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Documents_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/README
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/TestServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Test_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/Test_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/daemons-start
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/daemons-stop
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/rundemo
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/servers-start
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/simple-test.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/stop-servers
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/externalize/test
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Documents.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/DocumentsServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Documents_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Documents_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/README
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/TestServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Test_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/Test_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/daemons-start
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/daemons-stop
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/rundemo
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/servers-start
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/simple-test.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/stop-servers
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/lifecycle/test
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Client.cc
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Makefile
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/naming-lb/Printer.idl
@@ -959,77 +847,15 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/get_properties.cc
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/set_properties.cc
 %%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/property-daemon/start_demo
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Documents.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/DocumentsServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Documents_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Documents_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/README
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Test.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/TestServer.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Test_impl.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/Test_impl.h
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/daemons-start
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/daemons-stop
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/rundemo
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/servers-start
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/simple-test.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/stop-servers
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/relship/test
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/bench
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/req.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/req_client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/req_server.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/stream_client.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/stream-bench/stream_server.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/client.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/server.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/services/stream-sound/sound.h
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/Makefile
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/demo.idl
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/main.cc
-%%PORTDOCS%%%%MICO_SERVICE%%%%EXAMPLESDIR%%/services/trader/run
 %%PORTDOCS%%%%EXAMPLESDIR%%/shlib/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/shlib/client.cc
 %%PORTDOCS%%%%EXAMPLESDIR%%/shlib/hello
 %%PORTDOCS%%%%EXAMPLESDIR%%/shlib/hello.idl
 %%PORTDOCS%%%%EXAMPLESDIR%%/shlib/server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotData.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotData.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotImpl.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/DepotImpl.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/TreeNode.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/depot.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/central/depot_server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/Central.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/POS.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/idl/Store.idl
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/InputMediaImpl.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/InputMediaImpl.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/OutputMediaImpl.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/OutputMediaImpl.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POSTerminalImpl.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POSTerminalImpl.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POS_Client.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/pos/POS_Server.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/primer_utils/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/primer_utils/NsPublisher.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/primer_utils/NsPublisher.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreAccessImpl.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreAccessImpl.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreImpl.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/StoreImpl.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/TaxImpl.cc
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/TaxImpl.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/siegel/store/store_server.cc
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/Makefile
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/c_cert.pem
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/c_key.pem
@@ -1040,22 +866,11 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/server.cc
 %%PORTDOCS%%%%MICO_SSL%%%%EXAMPLESDIR%%/ssl/ssl
 %%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/ssl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/store
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/primer_utils
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/pos
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/idl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel/central
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/siegel
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/shlib
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/trader
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/services/stream-sound
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/stream-bench
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/relship
+%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/stream-sound
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/property-daemon
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/naming-lb
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/naming
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/lifecycle
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/externalize
 %%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/services/events
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/services
 %%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/tutorial
@@ -1068,15 +883,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/acl-unaware
 %%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security/acl-aware
 %%PORTDOCS%%%%MICO_SSL%%@dirrm %%EXAMPLESDIR%%/security
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-4
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-3
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-2
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Hello-1
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-4
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-3
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-2
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich/Calc-1
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/redlich
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/random
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/inherit
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/poa/hello-2
@@ -1100,7 +906,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mt/callback
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mt
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mcast
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/lifecycle
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/visibroker
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/orbix
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interop/jdk
@@ -1135,7 +940,6 @@ lib/mico-setup.sh
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/interceptor
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/henning
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/generic
-%%PORTDOCS%%%%MICO_SERVICE%%@dirrm %%EXAMPLESDIR%%/externalization
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dynany
 %%PORTDOCS%%%%MICO_X11%%@dirrm %%EXAMPLESDIR%%/dispatcher/x11
 %%PORTDOCS%%%%MICO_QT%%@dirrm %%EXAMPLESDIR%%/dispatcher/qtmico

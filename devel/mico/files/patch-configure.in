@@ -1,0 +1,20 @@
+--- configure.in.orig	Sat Jul 22 15:43:10 2006
++++ configure.in	Sat Jul 22 15:43:37 2006
+@@ -605,7 +605,7 @@
+ # System dependencies.
+ #
+ 
+-CONF_OPT_FLAGS=-O2
++CONF_OPT_FLAGS="-O2"
+ CONF_DEBUG_FLAGS=-g
+ CONF_LIBNSL=yes
+ CONF_EXCEPT_FLAGS=
+@@ -630,7 +630,7 @@
+   CFLAGS="-Wall $CFLAGS"
+ 
+   if test X"$use_speed_tune" = Xyes; then
+-    CONF_OPT_FLAGS=-O2
++    CONF_OPT_FLAGS="-O2"
+   fi
+ 
+   CONF_SHARED_CC="$CXX -shared"

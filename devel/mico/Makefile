@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	mico
-PORTVERSION=	2.3.11
-PORTREVISION=	3
+PORTVERSION=	2.3.12
 CATEGORIES=	devel
-MASTER_SITES=	http://www.mico.org/:src \
+MASTER_SITES=	http://www.mico.org/
+
+PATCH_SITES=	http://mico.org/errata/
+PATCHFILES=	mico-2.3.12-secfix1.diff
 
 MAINTAINER=	sem@FreeBSD.org
-COMMENT=	Fully compliant implementation of CORBA2.4 with some CORBA3 features
+COMMENT=	Secure, reliable, production-quality, standards-based CORBA middleware
 
+PATCH_DIST_STRIP=-p1
 WRKSRC=			${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
@@ -23,15 +26,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 #CONFIGURE_ENV+=		CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} \
 #			CXXFLAGS="${CXXFLAGS}" CPP=${CPP}
 
-OPTIONS=	SERVICES "Build with all services, not only ORB" on \
+OPTIONS=	NOSERVICES "Without services, plain ORB" off \
 		SSL "Build with SSL" on \
 		X11 "Build with X11 support" off \
 		QT "Build with QT support" off \
 		GTK "Build with GTK support" off \
-		SYSTEM_GCC "Build with system gcc. (Only for 4.x)" off \
 		DEBUG "Build debug version" off
 
-# stolen from bsd.port.mk (for OPTIONS works)
+# need for OPTIONS work
 PORT_DBDIR?=	/var/db/ports
 
 OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
@@ -43,17 +45,15 @@ OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 .endif
 # ================
 
-.if !defined(WITH_SYSTEM_GCC)
 USE_GCC=		3.4
-.endif
 
 CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-.if !defined(WITHOUT_SERVICES)
-CONFIGURE_ARGS+=	--enable-ccm --enable-life --enable-externalize
+.if !defined(WITH_NOSERVICES)
+CONFIGURE_ARGS+=	--enable-ccm
 .else
 CONFIGURE_ARGS+=	--disable-coss
 MICO_SERVICE=		"@comment "
@@ -90,7 +90,7 @@ CONFIGURE_ENV+=		CPPFLAGS=${CPPFLAGS}
 MICO_TCL=		"@comment "
 .endif
 
-.if defined(WITHOUT_SSL) || defined(WITHOUT_SERVICES)
+.if defined(WITHOUT_SSL) || defined(WITH_NOSERVICES)
 MICO_SSL=		"@comment "
 .else
 USE_OPENSSL=		yes
