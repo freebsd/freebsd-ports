@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Compare/.packlist
+%%SITE_PERL%%/Image/Compare.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Compare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image
