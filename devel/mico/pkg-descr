@@ -19,6 +19,6 @@ Here is some of MICO features:
     * CORBA Services: 
        o Interoperable Naming service, o Trading service, o Event service, 
        o Relationship service, o Property service, o Time service, 
-       o Security service, o Lifecycle service, o Externalization service
+       o Security service
 
 WWW: http://www.mico.org
