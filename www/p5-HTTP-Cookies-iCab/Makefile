@@ -1,0 +1,35 @@
+# New ports collection makefile for:	p5-HTTP-Cookies-iCab
+# Date created:		2006-07-21
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	HTTP-Cookies-iCab
+PORTVERSION=	1.07
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	HTTP
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Cookie storage and management for iCab
+
+RUN_DEPENDS=	${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
+
+PERL_CONFIGURE=	yes
+
+MAN3=		HTTP::Cookies::iCab.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600	# Inherited from www/p5-libwww
+IGNORE=		requires Perl 5.6.0 or later.  Please install lang/perl5.8 and try again
+.endif
+
+.if ${PERL_LEVEL} < 500602 || ${PERL_LEVEL} == 500700 || ${PERL_LEVEL} == 500701
+RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
