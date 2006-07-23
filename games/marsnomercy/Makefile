@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mars
 DISTNAME=	mars-${PORTVERSION}-src
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A turn-based strategy game setting on Mars
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons

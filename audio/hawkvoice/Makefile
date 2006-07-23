@@ -11,7 +11,7 @@ CATEGORIES=	audio devel
 MASTER_SITES=	http://www.hawksoft.com/download/files/
 DISTNAME=	HawkVoiceDI091src
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable sound and speech compression library
 
 USE_ZIP=	yes

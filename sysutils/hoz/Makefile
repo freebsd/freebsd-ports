@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://hoz.sourceforge.net/download/
 DISTNAME=	hoz-165
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	File splitter, GTK and CLI versions
 
 USE_GNOME=	#

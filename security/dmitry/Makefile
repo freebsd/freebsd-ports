@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mor-pah.net/code/ \
 		http://www.deepmagic.org.uk/
 DISTNAME=	DMitry-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Deepmagic Information Gathering Tool
 
 HAS_CONFIGURE=	yes

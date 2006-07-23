@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://foo2zjs.rkkda.com/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base

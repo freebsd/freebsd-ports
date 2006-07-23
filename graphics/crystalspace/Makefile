@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
 DISTNAME=	cs-pseudo-stable-2006-01-27
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free and portable 3D Game Development Kit
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

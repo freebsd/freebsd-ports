@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}-x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena 2006 (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1.3:${PORTSDIR}/graphics/linux_dri \

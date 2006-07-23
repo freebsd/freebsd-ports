@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.gna.org/pyopenal/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyOpenAL-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	PyOpenAL is a binding of OpenAL for Python
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \

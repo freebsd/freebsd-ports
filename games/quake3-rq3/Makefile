@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.rq3.com/
 PKGNAMEPREFIX=	${Q3PKGNAMEPREFIX}
 DISTNAME=	ReactionQuake3-v${PORTVERSION}-Full
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Quake III Arena Mod: Reaction Quake 3
 
 USE_ZIP=	yes

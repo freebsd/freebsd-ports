@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.gna.org/pysdlmixer/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysdl_mixer-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Pysdl_mixer is a python interface to SDL's sdl_mixer
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex

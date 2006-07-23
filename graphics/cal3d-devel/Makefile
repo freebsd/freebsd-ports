@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Skeletal based 3d character animation library written in C++ (devel)
 
 CAL3DVER=	0.11.0

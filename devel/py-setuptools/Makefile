@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/setuptools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Download, build, install, upgrade, and uninstall Python packages
 
 USE_ZIP=	yes

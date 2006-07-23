@@ -10,7 +10,7 @@ PORTVERSION=	0.12
 CATEGORIES=	audio devel
 MASTER_SITES=	http://gige.xdv.org/soft/libjackasyn/download/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Allow use any sound program for the OSS system as a JACK client
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

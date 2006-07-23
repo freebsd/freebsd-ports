@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.gna.org/slune/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Py2Play-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Peer-to-peer network game engine
 
 DIST_SUBDIR=	python

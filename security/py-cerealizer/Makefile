@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Cerealizer-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Secure pickle-like module
 
 USE_BZIP2=	yes

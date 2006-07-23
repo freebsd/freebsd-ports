@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.gna.org/songwrite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	EditObj-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Create and display a Tkinter dialog box for editing any Python object
 
 DIST_SUBDIR=	python

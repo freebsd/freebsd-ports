@@ -12,7 +12,7 @@ MASTER_SITES=	http://zoidberg.student.utwente.nl/downloads/Zim/ \
 		ftp://zoidberg.student.utwente.nl/Zim/
 DISTNAME=	Zim-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	WYSIWYG text editor written in Gtk2-Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

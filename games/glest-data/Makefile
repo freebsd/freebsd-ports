@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	glest-
 DISTNAME=	glest_${PORTNAME}_2.0rc5
 DIST_SUBDIR=	glest
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Glest data files
 
 USE_X_PREFIX=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gltext
 DISTNAME=	gltext-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable font rendering library for C++
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

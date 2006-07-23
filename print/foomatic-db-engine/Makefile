@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	foomatic-db-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Foomatic database engine
 
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl

@@ -10,7 +10,7 @@ PORTVERSION=	0.15
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/chanta/descargas/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free 2D jump and run game
 
 USE_X_PREFIX=	yes

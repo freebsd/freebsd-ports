@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njh/primateplunge/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Primate Plunge is an arcade game
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity

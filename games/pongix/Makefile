@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/pongix/descargas/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free pong-like game
 
 USE_X_PREFIX=	yes

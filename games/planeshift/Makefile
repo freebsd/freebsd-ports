@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	#
 NO_CHECKSUM=	${DISTFILES}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First 3D MMORPG to be free for players
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \

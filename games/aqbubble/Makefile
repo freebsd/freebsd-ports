@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/aqbubble/descargas/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to snow bros
 
 USE_X_PREFIX=	yes
