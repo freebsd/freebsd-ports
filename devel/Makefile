@@ -986,6 +986,7 @@
     SUBDIR += p5-Dialog
     SUBDIR += p5-Dir-Project
     SUBDIR += p5-Env-PS1
+    SUBDIR += p5-Env-Path
     SUBDIR += p5-Errno
     SUBDIR += p5-Event
     SUBDIR += p5-Event-Lib
