@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libtunepimp
-PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
@@ -23,7 +22,8 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
-		vorbis:${PORTSDIR}/audio/libvorbis
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		ofa:${PORTSDIR}/audio/libofa
 
 CONFLICTS=	trm-0*
 USE_GMAKE=	yes
@@ -42,5 +42,7 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e 's|\(^LDFLAGS =.*\)|\1 ${PTHREAD_LIBS} -liconv|g' \
 		${WRKSRC}/examples/Makefile
+	@${REINPLACE_CMD} -e 's|plugins/wv|plugins/tta|' \
+		${WRKSRC}/plugins/tta/Makefile
 
 .include <bsd.port.mk>
