@@ -11,7 +11,7 @@
 # $FreeBSD$
 #
 
-DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -I${X11BASE}/include
+DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -I${X11BASE}/include -DDATADIR='"${DATADIR}"' -DX11BASE='"${X11BASE}"'
 
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
@@ -22,7 +22,7 @@ DO_CFLAGS +=	-DWITH_ZLIB -DWITH_PNG -DWITH_JPEG -DGLQUAKE -DWITH_DGA -DWITH_VMOD
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-DO_CFLAGS +=	-O3 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
+DO_CFLAGS +=	-O -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
 .endif
 
 .if defined(WITH_XMMS)
