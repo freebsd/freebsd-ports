@@ -1,0 +1,20 @@
+--- configure.orig	Sat Jul 22 12:08:15 2006
++++ configure	Sat Jul 22 12:08:43 2006
+@@ -20549,7 +20549,7 @@
+ 		py_version=`$PYTHON -c "from distutils.sysconfig import *; \
+ 			from string import join; \
+ 			print join(get_config_vars('VERSION'))"`
+-		if test "$py_version" == "None"; then
++		if test "$py_version" = "None"; then
+ 			if test -n "$PYTHON_VERSION"; then
+ 				py_version=$PYTHON_VERSION
+ 			else
+@@ -20815,7 +20815,7 @@
+ fi
+ 
+ if test "x$with_fontconfig_libdir" != "x"; then
+- FONTCONFIGLIBDIR=$with_fontconifg_libdir
++ FONTCONFIGLIBDIR=$with_fontconfig_libdir
+ fi
+ 
+ ac_save_LIBS="$LIBS"
