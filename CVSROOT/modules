@@ -8644,6 +8644,7 @@ p5-File-Find-Rule-Filesys-Virtual	ports/devel/p5-File-Find-Rule-Filesys-Virtual
 p5-File-Flat	ports/devel/p5-File-Flat
 p5-File-Flock	ports/devel/p5-File-Flock
 p5-File-FnMatch	ports/devel/p5-File-FnMatch
+p5-File-Format-RIFF	ports/multimedia/p5-File-Format-RIFF
 p5-File-Grep	ports/devel/p5-File-Grep
 p5-File-HStore	ports/devel/p5-File-HStore
 p5-File-HomeDir	ports/devel/p5-File-HomeDir
