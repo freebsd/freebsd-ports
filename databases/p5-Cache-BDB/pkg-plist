@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/BDB/.packlist
+%%SITE_PERL%%/Cache/BDB.pm
+%%SITE_PERL%%/Cache/BDB.pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/BDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
+@dirrmtry %%SITE_PERL%%/Cache
