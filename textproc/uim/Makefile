@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--with-gtk2
 CONFIGURE_ARGS+=	--enable-emacs
 .endif
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+CONFIGURE_ENV?=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
 
 .if !defined(UIM_SLAVE)
