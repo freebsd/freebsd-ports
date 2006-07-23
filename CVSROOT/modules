@@ -8054,6 +8054,7 @@ p5-CSS-SAC	ports/textproc/p5-CSS-SAC
 p5-CSS-Squish	ports/textproc/p5-CSS-Squish
 p5-CSS-Tiny	ports/textproc/p5-CSS-Tiny
 p5-Cache	ports/devel/p5-Cache
+p5-Cache-BDB	ports/databases/p5-Cache-BDB
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Cache-FastMmap	ports/devel/p5-Cache-FastMmap
 p5-Cache-Memcached	ports/databases/p5-Cache-Memcached
