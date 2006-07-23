@@ -1,8 +1,8 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/version/vxs/vxs.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/version/vxs/vxs.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/version/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/version.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/version.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/version/vxs.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/version/vxs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/version
