@@ -34,7 +34,7 @@ BEFOREPORTMK=	yes
 .undef BEFOREPORTMK
 
 .if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+BROKEN=		"Does not compile on FreeBSD 5.X and above"
 .endif
 
 .include <bsd.port.post.mk>

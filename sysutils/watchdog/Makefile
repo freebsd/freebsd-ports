@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.webweaving.org/watchdog/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	dirkx@webweaving.org
-COMMENT=	"Watchdog daemon for the AMD Elan sc520 system-on-chip."
+COMMENT=	Watchdog daemon for the AMD Elan sc520 system-on-chip
 
 MAN8=		watchdogd.8
 MANCOMPRESSED=	yes
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/watchdogd
 # We need revision 1.12 of /sys/i386/i386/elan-mmrc.c and
 # 1.1 of /sys/sys/watchdog.h.  The first tag is RELENG_5_1.
 #
-IGNORE=		'This port only works on 5.1 and above /  ${OSVERSION}
+IGNORE=		cannot install: this port only works on FreeBSD 5.1 and above
 .endif
 
 .include <bsd.port.post.mk>
