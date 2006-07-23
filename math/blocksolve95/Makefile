@@ -7,6 +7,7 @@
 
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/BlockSolve95/	\
 		ftp://ftp.irisa.fr/pub/mirrors/BlockSolve95/
@@ -17,8 +18,9 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sofware for the efficient solution of large, sparse linear systems
 
-BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich
-RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich
+BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
+RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -26,7 +28,7 @@ MAKEFILE=	makefile
 MAKE_ARGS=	GMAKE=${GMAKE} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\
 		BLAS_LIB=${BLAS_LIB} LAPACK_LIB=${LAPACK_LIB}
 
-MPIDIR=		${LOCALBASE}/mpich
+MPIDIR=		${LOCALBASE}/mpich2
 PETSC_ARCH=	freebsd
 BOPT?=		O
 
@@ -65,8 +67,15 @@ do-install:
 
 .if defined(MAINTAINER_MODE)
 regression-test:	build
+. if !exists(${HOME}/.mpd.conf)
+	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
+	${CHMOD} go-r ${HOME}/.mpd.conf
+	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
+. endif
+	${LOCALBASE}/mpich2/bin/mpd &
 	@(cd ${BUILD_WRKSRC}/examples;	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} bsrunexamples clean)
+	${LOCALBASE}/mpich2/bin/mpdallexit
 .endif
 
 .include "${FILESDIR}/BSman3.inc"
