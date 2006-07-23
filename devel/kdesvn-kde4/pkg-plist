@@ -16,9 +16,13 @@ include/svnqt/lock_entry.hpp
 include/svnqt/log_entry.hpp
 include/svnqt/path.hpp
 include/svnqt/pool.hpp
+include/svnqt/repository.hpp
+include/svnqt/repositorylistener.hpp
 include/svnqt/revision.hpp
 include/svnqt/status.hpp
-include/svnqt/svncpp_defines.hpp
+include/svnqt/svnfilestream.hpp
+include/svnqt/svnqt_defines.hpp
+include/svnqt/svnstream.hpp
 include/svnqt/targets.hpp
 include/svnqt/url.hpp
 include/svnqt/version_check.hpp
@@ -35,12 +39,11 @@ lib/kde3/libkdesvnpart.so
 lib/libsvnqt.a
 lib/libsvnqt.la
 lib/libsvnqt.so
-lib/libsvnqt.so.2
+lib/libsvnqt.so.4
 share/applications/kde/kdesvn.desktop
 share/apps/kdesvn/kdesvnui.rc
 share/apps/kdesvnpart/kdesvn_part.rc
 share/apps/konqueror/servicemenus/kdesvn_subversion.desktop
-share/apps/konqueror/servicemenus/kdesvn_subversion_toplevel.desktop
 share/config.kcfg/kdesvn_part.kcfg
 share/doc/HTML/en/kdesvn/common
 share/doc/HTML/en/kdesvn/hi128-filesys-kdesvnadded.png
@@ -250,6 +253,7 @@ share/icons/hicolor/scalable/filesystems/kdesvnupdates.svgz
 share/locale/ca/LC_MESSAGES/kdesvn.mo
 share/locale/de/LC_MESSAGES/kdesvn.mo
 share/locale/es/LC_MESSAGES/kdesvn.mo
+share/locale/fr/LC_MESSAGES/kdesvn.mo
 share/locale/it/LC_MESSAGES/kdesvn.mo
 share/locale/nl/LC_MESSAGES/kdesvn.mo
 share/locale/pa/LC_MESSAGES/kdesvn.mo
