@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.compressconsult.com/szip/
 DISTNAME=	sz${PORTVERSION:S/.//}_src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A fast compression utility
 
 USE_GMAKE=	yes
@@ -20,7 +20,11 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/${PORTNAME}
-PORTDOCS=	history.txt readme.txt techinfo.txt
+PORTDOCS=	*.txt
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,more logfile,cat logfile,' \
+		${WRKSRC}/makefile
 
 do-build:
 	${GMAKE} -C ${WRKDIR}
