@@ -1,0 +1,11 @@
+%%SITE_PERL%%/File/Format/RIFF.pm
+%%SITE_PERL%%/File/Format/RIFF/Chunk.pm
+%%SITE_PERL%%/File/Format/RIFF/Container.pm
+%%SITE_PERL%%/File/Format/RIFF/List.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Format/RIFF/.packlist
+@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Format/RIFF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Format
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrm    %%SITE_PERL%%/File/Format/RIFF
+@dirrmtry %%SITE_PERL%%/File/Format
+@dirrmtry %%SITE_PERL%%/File
