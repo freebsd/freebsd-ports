@@ -46,6 +46,7 @@
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Integer.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Interval.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Numeric.pm
+%%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Pg/Bytea.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Pg/Chkpass.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Scalar.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Serial.pm
