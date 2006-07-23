@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qmhandle
 DISTNAME=	qmhandle-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
 
 USE_QMAIL_RUN=	yes
@@ -22,10 +22,13 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_PERL5=	yes
 
+PLIST_FILES=	bin/qmHandle
+PORTDOCS=	HISTORY README
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=         requires perl 5.6.1 or later. Install lang/perl5 then try again
+IGNORE=	requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
 
 post-patch:
@@ -36,7 +39,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qmHandle ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in HISTORY README
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
