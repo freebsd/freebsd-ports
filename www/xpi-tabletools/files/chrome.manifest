@@ -14,3 +14,7 @@ locale	tabletools	es-AR	jar:chrome/tabletools.jar!/locale/tabletools/es-AR/
 locale	tabletools	fr-FR	jar:chrome/tabletools.jar!/locale/tabletools/fr-FR/
 
 locale	tabletools	de-DE	jar:chrome/tabletools.jar!/locale/tabletools/de-DE/
+
+locale	tabletools	hr-HR	jar:chrome/tabletools.jar!/locale/tabletools/hr-HR/
+
+locale	tabletools	es-ES	jar:chrome/tabletools.jar!/locale/tabletools/es-ES/
