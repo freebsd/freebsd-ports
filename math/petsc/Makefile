@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	petsc
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+DISTVERSION=	2.3.1-p16
+PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-p${PATCHLEVEL}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
-BROKEN=		fails to configure
-
 RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
-
-PATCHLEVEL=	14
 
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
@@ -64,7 +59,7 @@ PORTDOCS=	*
 
 LIBSCALAPACK=	${LOCALBASE}/lib/libscalapack.a
 LIBBLACS=	${LOCALBASE}/lib/libblacs.a
-MPIDIR=		${LOCALBASE}/mpich
+MPIDIR=		${LOCALBASE}/mpich2
 
 .include <bsd.port.pre.mk>
 
@@ -72,7 +67,7 @@ MPIDIR=		${LOCALBASE}/mpich
 WITHOUT_SUPERLU=	yes
 .endif
 
-.if exists(${MPIDIR}/bin/mpiCC) && !defined(WITHOUT_MPI)
+.if exists(${MPIDIR}/bin/mpicc) && !defined(WITHOUT_MPI)
 WITH_MPI=	yes
 .endif
 .if defined(WITH_MPI)
@@ -80,9 +75,9 @@ WITH_MPI=	yes
 BROKEN=		Cannot build with mpich when lam7 is installed - set WITHOUT_MPI or deinstall lam7
 . endif
 PKGNAMESUFFIX+=		-mpich
-BUILD_DEPENDS+=		${MPIDIR}/bin/mpiCC:${PORTSDIR}/net/mpich
-RUN_DEPENDS+=		${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich
-CONFIGURE_ARGS+=	--with-mpi-dir=${LOCALBASE}/mpich
+BUILD_DEPENDS+=		${MPIDIR}/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=		${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
+CONFIGURE_ARGS+=	--with-mpi-dir=${LOCALBASE}/mpich2
 CONFLICTS=		petsc-2*
 PLIST_SUB+=		MPIUNI="@comment "
 .else
@@ -249,9 +244,20 @@ post-install:
 	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
-regression-test:	build
+regression-test:
+. if defined (WITH_MPI)
+.  if !exists(${HOME}/.mpd.conf)
+	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
+	${CHMOD} go-r ${HOME}/.mpd.conf
+	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
+.  endif
+	${LOCALBASE}/mpich2/bin/mpd &
+. endif
 	@(cd ${BUILD_WRKSRC};	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
+. if defined (WITH_MPI)
+	${LOCALBASE}/mpich2/bin/mpdallexit
+. endif
 .endif
 
 .include <bsd.port.post.mk>
