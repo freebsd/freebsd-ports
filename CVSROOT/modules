@@ -8594,6 +8594,7 @@ p5-Encode-Detect	ports/converters/p5-Encode-Detect
 p5-Encode-JIS2K	ports/converters/p5-Encode-JIS2K
 p5-Encode-compat	ports/converters/p5-Encode-compat
 p5-Env-PS1	ports/devel/p5-Env-PS1
+p5-Env-Path	ports/devel/p5-Env-Path
 p5-Errno	ports/devel/p5-Errno
 p5-Error	ports/lang/p5-Error
 p5-Event	ports/devel/p5-Event
