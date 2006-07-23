@@ -11,7 +11,7 @@ CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/${PORTNAME:S/brothers//}/
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Balazar Brother is a free software 3D puzzle game
 
 LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d \

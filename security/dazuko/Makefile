@@ -9,7 +9,7 @@ PORTVERSION=	2.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://dazuko.org/files/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A common interface for 3rd party file access control
 
 HAS_CONFIGURE=	yes

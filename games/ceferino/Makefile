@@ -10,7 +10,7 @@ PORTVERSION=	0.97.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/ceferino/descargas/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to Super Pang
 
 USE_X_PREFIX=	yes

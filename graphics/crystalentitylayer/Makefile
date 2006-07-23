@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cel
 DISTNAME=	cel-pseudo-stable-2006-01-27
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	CEL is a layer that sits on top of Crystal Space 3D Engine
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \

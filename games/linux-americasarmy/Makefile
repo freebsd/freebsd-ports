@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	armyops250-linux
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	America's Army (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64

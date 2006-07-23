@@ -13,7 +13,7 @@ MASTER_SITES=	http://mirrors-av.club-internet.fr/pub/games/nofrag/warsow/ \
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}_0.072alpha_linux
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free multiplayer first person shooter with cartoon design
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \

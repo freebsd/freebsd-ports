@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sauerbraten
 DISTNAME=	${PORTNAME}_2006_06_11_sp_edition_linux
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
 
 USE_GL=		yes

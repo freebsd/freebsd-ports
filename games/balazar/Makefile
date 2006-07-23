@@ -11,7 +11,7 @@ CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D adventure and roleplaying game
 
 LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d \

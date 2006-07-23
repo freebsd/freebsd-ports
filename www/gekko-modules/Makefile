@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gekkoware
 DISTFILES=	#
 DIST_SUBDIR=	gekkoware
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Gekko's modules
 
 RUN_DEPENDS=	${LOCALBASE}/www/gekko/conf.php:${PORTSDIR}/www/gekko

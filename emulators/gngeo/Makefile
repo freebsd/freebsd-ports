@@ -10,7 +10,7 @@ PORTVERSION=	0.6.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngeo/download/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
 
 USE_X_PREFIX=	yes

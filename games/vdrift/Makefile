@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-2006-02-21-src
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open source driving simulation
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons

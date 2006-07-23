@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.hawksoft.com/download/files/
 DISTNAME=	HawkNL168src
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable networking library
 
 USE_DOS2UNIX=	yes

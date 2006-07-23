@@ -12,7 +12,7 @@ MASTER_SITES=	http://mor-pah.net/code/
 PKGNAMEPREFIX=	cli-
 DISTNAME=	CLI-MSN-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Command line msn messenger
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl

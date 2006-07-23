@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	vdrift-
 DISTNAME=	${PKGNAMEPREFIX}2006-02-21-${PORTNAME}
 DIST_SUBDIR=	vdrift
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Vdrift driving simulation data files
 
 USE_ZIP=	yes

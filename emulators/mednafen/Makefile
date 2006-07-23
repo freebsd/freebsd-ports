@@ -10,7 +10,7 @@ PORTVERSION=	0.6.2
 CATEGORIES=	emulators games
 MASTER_SITES=	http://mednafen.com/releases/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
 
 LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \

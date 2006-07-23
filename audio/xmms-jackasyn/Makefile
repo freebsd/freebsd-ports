@@ -12,7 +12,7 @@ MASTER_SITES=	http://gige.xdv.org/libjackasyn/download/
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	XMMS plugin for jack using libjackasyn
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \

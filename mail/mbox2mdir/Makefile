@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://sageshome.net/downloads/oss/
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A mbox to qmail's Maildir converter written in C++
 
 USE_BZIP2=	yes
