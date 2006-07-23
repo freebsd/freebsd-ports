@@ -1,5 +1,5 @@
---- code/unix/unix_main.c.orig	Mon Mar 20 18:39:10 2006
-+++ code/unix/unix_main.c	Mon Mar 20 20:24:22 2006
+--- ./code/unix/unix_main.c.orig	Wed May 31 20:52:08 2006
++++ ./code/unix/unix_main.c	Wed May 31 20:52:09 2006
 @@ -722,17 +722,7 @@
    assert( name );
  
@@ -25,7 +25,7 @@
        {
 +        Com_Printf( "Sys_LoadDll(%s) failed:\n\"%s\"\n", fn, dlerror() );
 +        // FreeBSD package installation path
-+        fn = FS_BuildOSPath( "%%PREFIX%%/lib/cleanq3", gamedir, fname );
++        fn = FS_BuildOSPath( LIBDIR , gamedir, fname );
 +        Com_Printf( "Sys_LoadDll(%s)... \n", fn );
 +        libHandle = dlopen( fn, Q_RTLD );
 +

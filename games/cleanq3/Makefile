@@ -7,6 +7,7 @@
 
 PORTNAME=	cleanq3
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://tremor.quakedev.com/
 DISTNAME=	CleanQ3_v${PORTVERSION}-srcbin
@@ -14,72 +15,104 @@ DISTNAME=	CleanQ3_v${PORTVERSION}-srcbin
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cleaned up copy of the original Quake III Arena source code
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
 USE_ZIP=	yes
-USE_PERL5_BUILD=yes
 USE_DOS2UNIX=	yes
+USE_GMAKE=	yes
 USE_GCC=	3.2+
-USE_GL=		yes
-
 WRKSRC=		${WRKDIR}/CleanQ3
-INSTDIR=	${WRKSRC}/code/install
+BUILD_WRKSRC=	${WRKSRC}/code/unix
 
-PLIST_FILES=	bin/cleanq3 bin/cleanq3ded \
-		lib/cleanq3/baseq3/cgame.so \
-		lib/cleanq3/baseq3/qagame.so \
-		lib/cleanq3/baseq3/ui.so \
-		lib/cleanq3/missionpack/cgame.so \
-		lib/cleanq3/missionpack/qagame.so \
-		lib/cleanq3/missionpack/ui.so
-PLIST_DIRS=	lib/cleanq3/baseq3 lib/cleanq3/missionpack lib/cleanq3
+OPTIONS=	CLIENT "Build client" on \
+		DEDICATED "Build dedicated server" on \
+		GAMELIBS "Build game libraries (when not mandatory)" off \
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
+		SMP "Build SMP (threaded) client" on
 
-OPTIONS=	OPTIMIZED_CFLAGS "Build with extra optimization options" on
+MAKE_ENV=	LIBDIR="${LIBDIR}"
+PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
+
+LIBDIR=		${PREFIX}/lib/${PORTNAME}
+VM_ARCHS=	i386 powerpc
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on ${ARCH}
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
+    defined(WITHOUT_SMP)
+IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
+.if ${ARCH} == "i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS=		-O6 -fomit-frame-pointer -ffast-math -falign-loops=2 -falign-jumps=2 \
-		-falign-functions=2 -fno-strict-aliasing -fstrength-reduce
-.endif
-
-post-patch: .SILENT
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%X11BASE%%|${X11BASE}|g ; s|%%CFLAGS%%|${CFLAGS}|' \
-		${WRKSRC}/code/Construct ${WRKSRC}/code/unix/Conscript-client
-	${REINPLACE_CMD} -e 's|-ldl || ; s|i386\.so|\.so|' \
-		${WRKSRC}/code/cgame/Conscript \
-		${WRKSRC}/code/game/Conscript ${WRKSRC}/code/q3_ui/Conscript \
-		${WRKSRC}/code/unix/Conscript-dedicated \
-		${WRKSRC}/code/ui/Conscript
-	${REINPLACE_CMD} -e 's|%%Q3DIR%%|"${Q3DIR}"|' \
-		${WRKSRC}/code/unix/unix_shared.c
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/code/unix/unix_main.c
-	${REINPLACE_CMD} -e 's|botlib.log|/dev/null|' \
-		${WRKSRC}/code/botlib/be_interface.c
-
-do-build:
-	cd ${WRKSRC}/code && ${MAKE_ENV} ${PERL} unix/cons
-
-do-install:
-	${INSTALL_PROGRAM} ${INSTDIR}/linuxquake3 ${PREFIX}/bin/cleanq3
-	${INSTALL_PROGRAM} ${INSTDIR}/linuxq3ded ${PREFIX}/bin/cleanq3ded
-.for d in baseq3 missionpack
-	@${MKDIR} ${PREFIX}/lib/cleanq3/${d}
-	${INSTALL_PROGRAM} ${INSTDIR}/${d}/cgame.so ${PREFIX}/lib/cleanq3/${d}
-	${INSTALL_PROGRAM} ${INSTDIR}/${d}/qagame.so ${PREFIX}/lib/cleanq3/${d}
-	${INSTALL_PROGRAM} ${INSTDIR}/${d}/ui.so ${PREFIX}/lib/cleanq3/${d}
+.for i in ${ARCH}
+.   if ${VM_ARCHS:M${i}} != ""
+HAVE_VM_COMPILED=	yes
+.   endif
 .endfor
 
-.include "${.CURDIR}/../quake3-data/Makefile.include"
+.if !defined(HAVE_VM_COMPILED)
+MAKE_ENV+=	DLL_ONLY=true
+.endif
 
+.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
+USE_GL=		yes
+.endif
+
+.if !defined(WITHOUT_CLIENT)
+MAKE_ENV+=	CLIENT=YES
+PLIST_SUB+=	CLIENT=""
+Q3BIN+=		cleanq3
+.else
+PLIST_SUB+=	CLIENT="@comment "
+.endif
+
+.if !defined(WITHOUT_DEDICATED)
+MAKE_ENV+=	DEDICATED=YES
+PLIST_SUB+=	DEDICATED=""
+Q3BIN+=		cleanq3ded
+.else
+PLIST_SUB+=	DEDICATED="@comment "
+.endif
+
+.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+MAKE_ENV+=	GAMELIBS=YES
+PLIST_SUB+=	GAMELIBS=""
+.else
+PLIST_SUB+=	GAMELIBS="@comment "
+.endif
+
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
+.endif
+
+.if !defined(WITHOUT_SMP)
+MAKE_ENV+=	SMP=YES \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
+PLIST_SUB+=	SMP=""
+Q3BIN+=		cleanq3-smp
+.else
+PLIST_SUB+=	SMP="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|botlib\.log|/dev/null|' \
+		${WRKSRC}/code/botlib/be_interface.c
+	@${REINPLACE_CMD} -e \
+		's|//[[:blank:]]*\(Swap_Init[[:blank:]]*();\)|\1|' \
+		${WRKSRC}/code/botlib/be_interface.c \
+		${WRKSRC}/code/renderer/tr_init.c
+
+do-install:
+.for bin in ${Q3BIN}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
+.endfor
+.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
+.for dir in baseq3 missionpack
+	${MKDIR} ${LIBDIR}/${dir}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${dir}/*.so ${LIBDIR}/${dir}
+.endfor
+.endif
+
+.include "${.CURDIR}/../quake3-data/Makefile.include"
 .include <bsd.port.post.mk>
