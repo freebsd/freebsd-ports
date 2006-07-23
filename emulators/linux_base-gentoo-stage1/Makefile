@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../linux_dist-gentoo-stage1/
+MASTERDIR=	${.CURDIR}/../linux_dist-gentoo-stage1
 WITH_LINUXBASE=	yes
 
 .include "${MASTERDIR}/Makefile"
