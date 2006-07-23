@@ -8845,6 +8845,7 @@ p5-HTTP-Body	ports/www/p5-HTTP-Body
 p5-HTTP-BrowserDetect	ports/www/p5-HTTP-BrowserDetect
 p5-HTTP-Cache-Transparent	ports/www/p5-HTTP-Cache-Transparent
 p5-HTTP-Cookies-Mozilla	ports/www/p5-HTTP-Cookies-Mozilla
+p5-HTTP-Cookies-iCab	ports/www/p5-HTTP-Cookies-iCab
 p5-HTTP-DAV	ports/www/p5-HTTP-DAV
 p5-HTTP-GHTTP	ports/www/p5-HTTP-GHTTP
 p5-HTTP-Lite	ports/www/p5-HTTP-Lite
