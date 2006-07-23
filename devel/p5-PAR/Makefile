@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PAR
-PORTVERSION=	0.94.1
+PORTVERSION=	0.94.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PAR
@@ -19,9 +19,9 @@ COMMENT=	Perl Archive Toolkit
 BUILD_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Compress-Zlib>=1.30:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Getopt-ArgvFile>=1.07:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
-		p5-Module-ScanDeps>=0.60:${PORTSDIR}/devel/p5-Module-ScanDeps \
+		p5-Module-ScanDeps>=0.62:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature \
-		p5-PAR-Dist>=0.08:${PORTSDIR}/devel/p5-PAR-Dist \
+		p5-PAR-Dist>=0.13:${PORTSDIR}/devel/p5-PAR-Dist \
 		${SITE_PERL}/B/Deobfuscate.pm:${PORTSDIR}/devel/p5-B-Deobfuscate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
