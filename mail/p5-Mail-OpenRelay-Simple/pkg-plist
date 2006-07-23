@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Mail/OpenRelay/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/OpenRelay/Simple/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/OpenRelay/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/OpenRelay
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail/OpenRelay
+@dirrmtry %%SITE_PERL%%/Mail

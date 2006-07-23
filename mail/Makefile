@@ -317,6 +317,7 @@
     SUBDIR += p5-Mail-MailStats
     SUBDIR += p5-Mail-Mbox-MessageParser
     SUBDIR += p5-Mail-MboxParser
+    SUBDIR += p5-Mail-OpenRelay-Simple
     SUBDIR += p5-Mail-POP3Client
     SUBDIR += p5-Mail-Procmail
     SUBDIR += p5-Mail-Procmailrc
