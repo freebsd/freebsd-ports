@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.3.2
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.acc.umu.se/mirror/%SUBDIR%/ \
 		http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
 		http://ftp.osuosl.org/pub/%SUBDIR%/ \
 		http://www.gtlib.gatech.edu/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/0.7.3
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The free web browser that makes it easier to share with your friends

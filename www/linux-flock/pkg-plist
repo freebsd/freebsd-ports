@@ -86,6 +86,7 @@ lib/%%APP_NAME%%/components/xmlrpc.js.lib
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
+lib/%%APP_NAME%%/defaults/pref/fbranding-prefs.js
 lib/%%APP_NAME%%/defaults/pref/firefox-l10n.js
 lib/%%APP_NAME%%/defaults/pref/flock.js
 lib/%%APP_NAME%%/defaults/profile/bookmarks.html
