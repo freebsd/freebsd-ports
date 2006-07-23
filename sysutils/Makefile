@@ -590,6 +590,7 @@
     SUBDIR += udfclient
     SUBDIR += ufs_copy
     SUBDIR += unidesc
+    SUBDIR += unieject
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
