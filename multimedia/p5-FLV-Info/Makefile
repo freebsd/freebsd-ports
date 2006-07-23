@@ -7,6 +7,7 @@
 
 PORTNAME=	FLV-Info
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLOTHO
@@ -17,6 +18,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Extract metadata from Flash Video files
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly \
 		${SITE_PERL}/AMF/Perl.pm:${PORTSDIR}/www/p5-AMF-Perl \
 		${SITE_PERL}/SWF/File.pm:${PORTSDIR}/graphics/p5-SWF-File
 
@@ -27,6 +29,9 @@ MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
 		FLV::Base.3 FLV::Body.3 FLV::Constants.3 FLV::File.3 \
 		FLV::FromSWF.3 FLV::Header.3 FLV::Info.3 FLV::MetaTag.3 \
 	       	FLV::Tag.3 FLV::ToMP3.3 FLV::ToSwf.3 FLV::VideoTag.3
+
+post-patch:
+	${PERL} -pi -e 's/ToSWF/ToSwf/g' ${WRKSRC}/bin/flv2swf
 
 .include <bsd.port.pre.mk>
 
