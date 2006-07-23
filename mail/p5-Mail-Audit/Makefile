@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Audit
-PORTVERSION=	2.2.01
+PORTVERSION=	2.2.02
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -29,9 +29,9 @@ PERL_CONFIGURE=	yes
 MAN3=		Mail::Audit.3 \
 		Mail::Audit::KillDups.3 \
 		Mail::Audit::List.3 \
+		Mail::Audit::MAPS.3 \
 		Mail::Audit::MailInternet.3 \
 		Mail::Audit::MimeEntity.3 \
-		Mail::Audit::MAPS.3 \
 		Mail::Audit::PGP.3 \
 		Mail::Audit::Razor.3 \
 		Mail::Audit::Vacation.3
