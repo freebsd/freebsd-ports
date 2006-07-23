@@ -63,3 +63,22 @@ never be upstreamed. correct solution might be upgrading libtool(?)
    ;;
  esac
 
+--- libjava/configure~	Sun Jul 23 11:01:24 2006
++++ libjava/configure	Sun Jul 23 11:04:35 2006
+@@ -6118,11 +6118,11 @@
+ objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+ deplibs_check_method="$deplibs_check_method" \
+ file_magic_cmd="$file_magic_cmd" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig -o libtool $libtool_flags \
+---build="$build" --add-tag=CXX $ac_aux_dir/ltcf-cxx.sh $host \
+-|| { { echo "$as_me:$LINENO: error: libtool tag configuration failed" >&5
+-echo "$as_me: error: libtool tag configuration failed" >&2;}
+-   { (exit 1); exit 1; }; }
++#${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig -o libtool $libtool_flags \
++#--build="$build" --add-tag=CXX $ac_aux_dir/ltcf-cxx.sh $host \
++#|| { { echo "$as_me:$LINENO: error: libtool tag configuration failed" >&5
++#echo "$as_me: error: libtool tag configuration failed" >&2;}
++#   { (exit 1); exit 1; }; }
+ CC="$lt_save_CC"
+ CFLAGS="$lt_save_CFLAGS"
+ 
