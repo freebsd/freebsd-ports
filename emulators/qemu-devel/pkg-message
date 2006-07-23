@@ -15,8 +15,8 @@ for example time sleep 1 takes 49 seconds and booting sleeps for
 minutes at the acd0 probe with a FreeSBIE 1.0 guest, thats because
 its kernel is built with HZ=5000, and FreeBSD's default is 100...
 (no longer a problem with FreeSBIE 1.1.)  The linux 2.6 kernel uses
-1000 by default btw.  Enabling /dev/rtc doesn't seem to help either
-(not included since it needs a patch to emulators/rtc.)
+1000 by default btw (changed to 250 recently).  Enabling /dev/rtc doesn't
+seem to help either (not included since it needs a patch to emulators/rtc.)
 - using physical media doesn't work on 4.x hosts (missing DIOCGMEDIASIZE
 ioctl.)
 - the -smb option (smb-export local dir to guest) needs the net/samba
