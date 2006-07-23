@@ -410,6 +410,7 @@
     SUBDIR += p5-IP-Country
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Net
+    SUBDIR += p5-Net-Address-Ethernet
     SUBDIR += p5-Net-Address-IPv4-Local
     SUBDIR += p5-Net-Amazon
     SUBDIR += p5-Net-BGP
