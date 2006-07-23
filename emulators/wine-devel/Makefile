@@ -52,7 +52,6 @@ pre-build:
 	cd ${WRKSRC} && make depend
 
 post-install:
-	-@${MKDIR} ${PREFIX}/libdata/ldconfig
 	${RM} ${PREFIX}/man/man1/wineg++.1
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
