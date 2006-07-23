@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parano
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://bsd1.csme.ru/myports/ \
@@ -25,11 +25,11 @@ USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	${REINPLACE_CMD} -e 's/$$</$$>/' ${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} -e 's,#!.*python,#!${PYTHON_CMD},' ${WRKSRC}/src/parano.py
 
 .include <bsd.port.mk>
