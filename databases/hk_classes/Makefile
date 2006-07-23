@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hk_classes
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hk-classes
@@ -15,17 +14,22 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	C++ Library for rapid development of database applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pkgconfig
+USE_GETTEXT=	yes
 CXXFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -largp -lintl
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV+=	LIBPYTHON="-l${PYTHON_VERSION} ${PTHREAD_LIBS}"
+CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S/python//} LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=--with-pythondir=${PYTHONBASE}
+CONFIGURE_ARGS+=--with-python-libdir=${PYTHON_LIBDIR} \
+		--with-python-incdir=${PYTHON_INCLUDEDIR} \
+		--with-fontconfig-incdir=${X11BASE}/include/fontconfig \
+		--with-fontconfig-libdir=${X11BASE}/lib
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	${PREFIX}/lib/hk_classes/
 
@@ -45,6 +49,10 @@ MAN1=		hk_report.1man hk_actionquery.1man hk_exportxml.1man \
 		hk_dbcopy.1man
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		there is no wchar support
+.endif
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes

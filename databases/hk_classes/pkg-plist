@@ -40,6 +40,7 @@ include/hk_classes/hk_importcsv.h
 include/hk_classes/hk_interpreter.h
 include/hk_classes/hk_key.h
 include/hk_classes/hk_label.h
+include/hk_classes/hk_mimetype.h
 include/hk_classes/hk_presentation.h
 include/hk_classes/hk_qbe.h
 include/hk_classes/hk_referentialintegrity.h
@@ -89,7 +90,7 @@ include/hk_classes/hk_visible.h
 lib/hk_classes/libhk_classes.a
 lib/hk_classes/libhk_classes.la
 lib/hk_classes/libhk_classes.so
-lib/hk_classes/libhk_classes.so.9
+lib/hk_classes/libhk_classes.so.13
 @dirrm lib/hk_classes/drivers
 @dirrm lib/hk_classes
 @dirrm include/hk_classes

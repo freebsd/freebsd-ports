@@ -1,33 +1,33 @@
---- utilities/Makefile.in.orig	Sun Oct 23 18:56:09 2005
-+++ utilities/Makefile.in	Sat Dec 10 20:00:12 2005
-@@ -238,22 +238,22 @@
- sysconfdir = @sysconfdir@
+--- utilities/Makefile.in.orig	Sat Jul 22 12:09:44 2006
++++ utilities/Makefile.in	Sat Jul 22 12:11:59 2006
+@@ -237,22 +237,22 @@
  target_alias = @target_alias@
  INCLUDES = -I../hk_classes
--hk_report_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_report_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
+ AM_CXXFLAGS = -Wall   -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings
+-hk_report_LDADD = ../hk_classes/libhk_classes.la -ldl
++hk_report_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  hk_report_SOURCES = hk_reportutility.cpp
  
--#hk_webform_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+#hk_webform_LDFLAGS = -lhk_classes -L../hk_classes
+-#hk_webform_LDADD = ../hk_classes/libhk_classes.la -ldl
++#hk_webform_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  #hk_webform_SOURCES = hk_webformutility.cpp
--hk_actionquery_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_actionquery_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
+-hk_actionquery_LDADD = ../hk_classes/libhk_classes.la -ldl
++hk_actionquery_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  hk_actionquery_SOURCES = hk_actionqueryutility.cpp
--hk_exportxml_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_exportxml_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
+-hk_exportxml_LDADD = ../hk_classes/libhk_classes.la -ldl
++hk_exportxml_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  hk_exportxml_SOURCES = hk_exportxmlutility.cpp
--hk_exportcsv_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_exportcsv_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
+-hk_exportcsv_LDADD = ../hk_classes/libhk_classes.la -ldl
++hk_exportcsv_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  hk_exportcsv_SOURCES = hk_exportcsvutility.cpp
--hk_exporthtml_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_exporthtml_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
+-hk_exporthtml_LDADD = ../hk_classes/libhk_classes.la -ldl
++hk_exporthtml_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  hk_exporthtml_SOURCES = hk_exporthtmlutility.cpp
--hk_importcsv_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_importcsv_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
+-hk_importcsv_LDADD = ../hk_classes/libhk_classes.la -ldl
++hk_importcsv_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  hk_importcsv_SOURCES = hk_importcsvutility.cpp
 -hk_dbcopy_LDFLAGS = -lhk_classes -ldl -L../hk_classes
-+hk_dbcopy_LDFLAGS = -lhk_classes -L../hk_classes -largp ${LIBPTHREAD}
++hk_dbcopy_LDFLAGS = -lhk_classes -largp ${LIBPTHREAD} -L../hk_classes
  hk_dbcopy_SOURCES = hk_dbcopyutility.cpp
  man_MANS = hk_report.1man hk_actionquery.1man hk_dbcopy.1man hk_exportxml.1man \
  	hk_exporthtml.1man hk_exportcsv.1man hk_importcsv.1man

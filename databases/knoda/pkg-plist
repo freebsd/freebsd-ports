@@ -133,6 +133,7 @@ share/apps/hk_kdeclasses/pics/gridadd22x22.png
 share/apps/hk_kdeclasses/pics/gridcursor.png
 share/apps/hk_kdeclasses/pics/gridfilter.png
 share/apps/hk_kdeclasses/pics/image.png
+share/apps/hk_kdeclasses/pics/key.png
 share/apps/hk_kdeclasses/pics/label.png
 share/apps/hk_kdeclasses/pics/last.png
 share/apps/hk_kdeclasses/pics/multiline.png
@@ -223,6 +224,7 @@ share/locale/de/LC_MESSAGES/knoda.mo
 share/locale/es/LC_MESSAGES/knoda.mo
 share/locale/fr/LC_MESSAGES/knoda.mo
 share/locale/hu/LC_MESSAGES/knoda.mo
+share/locale/ru/LC_MESSAGES/knoda.mo
 share/mimelnk/application/x-hk_classes-sqlite2.desktop
 share/mimelnk/application/x-hk_classes-sqlite3.desktop
 share/mimelnk/application/x-hk_connection.desktop
