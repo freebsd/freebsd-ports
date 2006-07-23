@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/envpath
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path/.packlist
+%%SITE_PERL%%/Env/Path.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Env
+@dirrmtry %%SITE_PERL%%/Env
