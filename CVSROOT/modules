@@ -8920,6 +8920,7 @@ p5-IPC-Shareable	ports/devel/p5-IPC-Shareable
 p5-IPC-SharedCache	ports/devel/p5-IPC-SharedCache
 p5-IRC		ports/irc/p5-IRC
 p5-Ima-DBI	ports/databases/p5-Ima-DBI
+p5-Image-Compare	ports/graphics/p5-Image-Compare
 p5-Image-ExifTool	ports/graphics/p5-Image-ExifTool
 p5-Image-Grab	ports/graphics/p5-Image-Grab
 p5-Image-Imlib2	ports/graphics/p5-Image-Imlib2
