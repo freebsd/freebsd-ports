@@ -653,6 +653,7 @@
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-Cache-Transparent
     SUBDIR += p5-HTTP-Cookies-Mozilla
+    SUBDIR += p5-HTTP-Cookies-iCab
     SUBDIR += p5-HTTP-DAV
     SUBDIR += p5-HTTP-GHTTP
     SUBDIR += p5-HTTP-Lite
