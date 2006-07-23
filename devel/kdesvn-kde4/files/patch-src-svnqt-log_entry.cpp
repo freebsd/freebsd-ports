@@ -4,10 +4,10 @@
      }
  
      revision = revision_;
--    author = author_ == 0 ? "" : QString::fromUtf8(author_);
--    message = message_ == 0 ? "" : QString::fromUtf8(message_);
-+    author = author_ == 0 ? QString::fromLatin1("") : QString::fromUtf8(author_);
-+    message = message_ == 0 ? QString::fromLatin1("") : QString::fromUtf8(message_);
+-    author = author_ == 0 ? "" : QString::FROMUTF8(author_);
+-    message = message_ == 0 ? "" : QString::FROMUTF8(message_);
++    author = author_ == 0 ? QString::fromLatin1("") : QString::FROMUTF8(author_);
++    message = message_ == 0 ? QString::fromLatin1("") : QString::FROMUTF8(message_);
    }
  }
  
