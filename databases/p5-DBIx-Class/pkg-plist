@@ -1,3 +1,4 @@
+bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class.pm
 %%SITE_PERL%%/DBIx/Class/AccessorGroup.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat.pm
@@ -29,14 +30,17 @@
 %%SITE_PERL%%/DBIx/Class/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/DB.pm
 %%SITE_PERL%%/DBIx/Class/InflateColumn.pm
+%%SITE_PERL%%/DBIx/Class/InflateColumn/DateTime.pm
 %%SITE_PERL%%/DBIx/Class/Manual.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Component.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Cookbook.pod
 %%SITE_PERL%%/DBIx/Class/Manual/DocMap.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Example.pod
+%%SITE_PERL%%/DBIx/Class/Manual/FAQ.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Glossary.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Intro.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Troubleshooting.pod
+%%SITE_PERL%%/DBIx/Class/Ordered.pm
 %%SITE_PERL%%/DBIx/Class/PK.pm
 %%SITE_PERL%%/DBIx/Class/PK/Auto.pm
 %%SITE_PERL%%/DBIx/Class/PK/Auto/DB2.pm
@@ -56,6 +60,7 @@
 %%SITE_PERL%%/DBIx/Class/Relationship/ManyToMany.pm
 %%SITE_PERL%%/DBIx/Class/Relationship/ProxyMethods.pm
 %%SITE_PERL%%/DBIx/Class/ResultSet.pm
+%%SITE_PERL%%/DBIx/Class/ResultSetColumn.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetManager.pm
 %%SITE_PERL%%/DBIx/Class/ResultSetProxy.pm
 %%SITE_PERL%%/DBIx/Class/ResultSource.pm
@@ -71,21 +76,18 @@
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/MultiDistinctEmulation.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/NoBindVars.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC/DB2_400_SQL.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Pg.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/SQLite.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
 %%SITE_PERL%%/DBIx/Class/Test/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
-%%SITE_PERL%%/DBIx/Class/UUIDColumns.pm
-%%SITE_PERL%%/DBIx/Class/UUIDMaker.pm
-%%SITE_PERL%%/DBIx/Class/UUIDMaker/APR/UUID.pm
-%%SITE_PERL%%/DBIx/Class/UUIDMaker/Data/UUID.pm
-%%SITE_PERL%%/DBIx/Class/UUIDMaker/Data/Uniqid.pm
-%%SITE_PERL%%/DBIx/Class/UUIDMaker/UUID.pm
-%%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32/Guidgen.pm
-%%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32API/GUID.pm
-%%SITE_PERL%%/DBIx/Class/Validation.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
 %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class/File.pm
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Producer/DBIx/Class
@@ -95,12 +97,9 @@
 @dirrmtry %%SITE_PERL%%/SQL/Translator/Parser
 @dirrmtry %%SITE_PERL%%/SQL/Translator
 @dirrmtry %%SITE_PERL%%/SQL
-@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32API
-@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/Win32
-@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/Data
-@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker/APR
-@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDMaker
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Test
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Storage
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Serialize
@@ -110,6 +109,7 @@
 @dirrmtry %%SITE_PERL%%/DBIx/Class/PK/Auto
 @dirrmtry %%SITE_PERL%%/DBIx/Class/PK
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Manual
+@dirrmtry %%SITE_PERL%%/DBIx/Class/InflateColumn
 @dirrmtry %%SITE_PERL%%/DBIx/Class/ClassResolver
 @dirrmtry %%SITE_PERL%%/DBIx/Class/CDBICompat
 @dirrmtry %%SITE_PERL%%/DBIx/Class
