@@ -113,6 +113,11 @@ LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-libgnutls-prefix=${LOCALBASE}
 .endif
 
+.if exists(${LOCALBASE}/lib/libgcrypt.so) || defined(WITH_LIBGCRYPT)
+LIB_DEPENDS+=	gcrypt.13:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
+.endif
+
 MAN1+=	dumpcap.1 tshark.1
 MAN4+=	wireshark-filter.4
 
