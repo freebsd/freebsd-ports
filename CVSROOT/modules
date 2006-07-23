@@ -13882,6 +13882,7 @@ unfs3		ports/net/unfs3
 uni2ascii	ports/textproc/uni2ascii
 unicornscan	ports/security/unicornscan
 unidesc		ports/sysutils/unidesc
+unieject	ports/sysutils/unieject
 unison		ports/net/unison
 unix2dos	ports/converters/unix2dos
 unix2tcp	ports/net/unix2tcp
