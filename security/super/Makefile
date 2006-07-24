@@ -9,7 +9,8 @@
 PORTNAME=	super
 PORTVERSION=	3.26.1
 CATEGORIES=	security sysutils
-MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/
+MASTER_SITES=	ftp://ftp.ucolick.org/pub/users/will/ \
+		http://www.ucolick.org/~will/RUE/super/
 EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	babak@farrokhi.net
