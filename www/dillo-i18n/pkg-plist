@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/bm-update
 bin/dillo
 bin/dillocfg
 bin/dpid
