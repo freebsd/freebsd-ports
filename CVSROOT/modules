@@ -7571,6 +7571,7 @@ ocaml-pcre	ports/devel/ocaml-pcre
 ocaml-pxp	ports/textproc/ocaml-pxp
 ocaml-sdl	ports/devel/ocaml-sdl
 ocaml-sem	ports/devel/ocaml-sem
+ocaml-sqlite3	ports/databases/ocaml-sqlite3
 ocaml-ulex	ports/devel/ocaml-ulex
 ocaml-wdialog	ports/www/ocaml-wdialog
 ocaml-yaxi	ports/textproc/ocaml-yaxi
