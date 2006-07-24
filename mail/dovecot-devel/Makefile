@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.beta9
+DISTVERSION=	1.0.rc2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -22,8 +22,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-shadow --localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-SUB_FILES=	pkg-message
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	USE-WIKI-INSTEAD \
@@ -41,13 +39,14 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
 		MYSQL		"MySQL support"		off \
-		SQLITE		"SQLite support"	off
+		SQLITE		"SQLite support"	off \
+		IPV6		"IPv6 support"		on
 
 .include <bsd.port.pre.mk>
 
 ## kqueue(2) support
 #
-.if defined(WITH_KQUEUE)
+.if !defined(WITHOUT_KQUEUE)
 CONFIGURE_ARGS+=	--with-ioloop=kqueue --with-notify=kqueue
 .endif
 
@@ -102,6 +101,12 @@ CONFIGURE_ARGS+=	--with-mysql
 .if defined(WITH_SQLITE)
 USE_SQLITE=		3
 CONFIGURE_ARGS+=	--with-sqlite
+.endif
+
+## IPv6 support
+#
+.if defined(WITHOUT_IPV6) || $(OSVERSION) <= 400014
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-build:
