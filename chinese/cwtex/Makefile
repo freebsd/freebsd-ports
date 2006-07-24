@@ -8,8 +8,8 @@
 PORTNAME=	cwtex
 PORTVERSION=	16.6
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://192.192.110.1/cwtex/cwTeX_linux/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/cwtex/
+MASTER_SITES=	http://ftp.ussg.iu.edu/FreeBSD/distfiles/ \
+		http://ftp.nara.wide.ad.jp/pub/FreeBSD/distfiles/
 DISTFILES=	cwtexmain.tgz cwtexbin-${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,7 +35,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		"Does not install on ia64 or sparc64"
+BROKEN=		Does not install on ia64 or sparc64
 .endif
 
 .include <bsd.port.post.mk>
