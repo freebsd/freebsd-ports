@@ -9,9 +9,7 @@ PORTNAME=	moefonts-cid
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	chinese print
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/moefonts-cid/ \
-		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/ \
-		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/
+MASTER_SITES=	ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/
 DISTFILES=	MOEKai-Regular MOESung-Regular
 EXTRACT_ONLY=	# empty
 
@@ -26,7 +24,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-ADOBECMAPDIR=   ${LOCALBASE}/share/fonts/adobe-cmaps
+ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
