@@ -10,8 +10,7 @@ PORTNAME=	gnucap
 PORTVERSION=	2005.01.27
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
-		http://www.geda.seul.org/dist/ \
-		http://www.kettering.edu/~adavis/gnucap/
+		http://www.geda.seul.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
