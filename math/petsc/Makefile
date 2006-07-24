@@ -7,6 +7,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.1-p16
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -24,7 +25,8 @@ CONFIGURE_ENV=		PETSC_ARCH=${TARGET}	\
 			PETSC_DIR=${WRKSRC}
 CONFIGURE_ARGS=		--prefix=${PREFIX}/${PFX} --COPTFLAGS="${CFLAGS}"	\
 			--CXXOPTFLAGS="${CXXFLAGS}" --FOPTFLAGS="${FFLAGS}"	\
-			--with-shared=1
+			--with-shared=1 --with-cc=${CC} --with-fc=${F77}	\
+			--CPPFLAGS="-I${LOCALBASE}/include"
 ALL_TARGET=		all
 MAKEFILE=		makefile
 MAKE_ENV=		PETSC_DIR=${WRKSRC}
@@ -65,6 +67,10 @@ MPIDIR=		${LOCALBASE}/mpich2
 
 .if ${ARCH} == "amd64"
 WITHOUT_SUPERLU=	yes
+.endif
+
+.if !${OSVERSION} < 500039
+F77?=		f77
 .endif
 
 .if exists(${MPIDIR}/bin/mpicc) && !defined(WITHOUT_MPI)
@@ -113,7 +119,7 @@ CONFIGURE_ARGS+=	--with-superlu-include=${LOCALBASE}/include/superlu	\
 CONFIGURE_ARGS+=	--with-blocksolve95=0
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libBS95.a:${PORTSDIR}/math/blocksolve95
-CONFIGURE_ARGS+=	--with-blocksolve95-include=${LOCALBASE}/include	\
+CONFIGURE_ARGS+=	--with-blocksolve95-include=${LOCALBASE}/mpich2/include	\
 			--with-blocksolve95-lib=${LOCALBASE}/lib/libBS95.a
 .endif
 
@@ -129,17 +135,18 @@ CONFIGURE_ARGS+=	--with-parmetis=1					\
 .if exists(${LIBBLACS})
 WITH_BLACS=	yes
 .endif
-.if defined(WITH_BLACS) && !defined(WITH_MPI)
+.if defined(WITH_BLACS) && defined(WITH_MPI)
 BUILD_DEPENDS+=	${LIBBLACS}:${PORTSDIR}/math/blacs
-CONFIGURE_ARGS+=	--with_mumps=0	\
+CONFIGURE_ARGS+=	--with_blacs=1	\
 			--with-blacs-include=${LOCALBASE}/include	\
-			--with-blacs-lib=[${LOCALBASE}/lib/libblacs.a,${LOCALBASE}/lib/libblacsc.a,${LOCALBASE}/lib/libblacsf77.a]
-. if exists(${LIBSCALAPACK})
+			--with-blacs-lib=[${LOCALBASE}/lib/libblacsc.a,${LOCALBASE}/lib/libblacsf77.a,${LOCALBASE}/lib/libblacs.a]
+. if exists(${LIBSCALAPACK}) && defined(WITH_MPI)
 WITH_SCALAPACK=	yes
 . endif
 . if defined(WITH_SCALAPACK)
 BUILD_DEPENDS+=	${LIBSCALAPACK}:${PORTSDIR}/math/scalapack
-CONFIGURE_ARGS+=	--with-scalapack-dir=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-scalapack=1	\
+			--with-scalapack-dir=${LOCALBASE}
 . endif
 .endif
 
