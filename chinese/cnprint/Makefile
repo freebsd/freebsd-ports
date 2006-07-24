@@ -8,9 +8,9 @@
 PORTNAME=		cnprint
 PORTVERSION=		3.30b
 CATEGORIES=		chinese print
-MASTER_SITES=		ftp://freebsd.sinica.edu.tw/pub/statue/cnprint/ \
-			ftp://ftp.csc.cuhk.edu.hk/pub/chinese/ifcss/software/fonts/misc/ \
-			http://www.ibiblio.org/pub/packages/ccic/software/fonts/big5/hbf/
+MASTER_SITES=		http://ftp.wustl.edu/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
+			http://ftp.yz.yamagata-u.ac.jp/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/ \
+			http://ftp.osuosl.org/pub/FreeBSD/distfiles/${PORTNAME}-${PORTVERSION}/
 DISTFILES=		cnprint330b.c \
 			cnprint330b.readme \
 			ttfb330b.c \
