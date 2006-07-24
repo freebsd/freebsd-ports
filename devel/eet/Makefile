@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eet
-PORTVERSION=	0.9.10.030
+PORTVERSION=	0.9.10.032
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
