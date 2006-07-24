@@ -6,14 +6,14 @@
 #
 # Tunables:
 # WITH_DILLO_SSL:		enable experimental SSL support
-# WITH_DILLO_META-REFRESH:	make dillo accept the meta-refresh tag
+# WITH_DILLO_META-REFRESH:	make Dillo accept the meta-refresh tag
 # WITHOUT_DILLO_TABS:		disable support for tabbed browsing
 # WITHOUT_DILLO_ANTIALIAS:	disable support for antialiased display
 # WITH_DILLO_DLGUI:		enable experimental FLTK2 based gui for file
 # 				downloads
 #
 # TODO:
-# SSL support is currently partly broken in this version of the i18n dillo:
+# SSL support is currently partly broken in this version of the i18n Dillo:
 # On FreeBSD 4 with OpenSSL 0.9.7d, the configure script uses checks that are
 # too strict. On FreeBSD 5 and 6 it seems to work OK.
 
@@ -32,11 +32,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 DILLOVERSION=	0.8.6
-I18NVERSION=	20060625
+I18NVERSION=	20060709
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk12
 USE_GMAKE=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -108,7 +109,7 @@ pre-configure:
 .if !defined(WITH_DILLO_META-REFRESH)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "   Set WITH_DILLO_META-REFRESH=yes in your make environment or on the"
-	@${ECHO_CMD} "   commandline to make dillo respect the meta-refresh tag."
+	@${ECHO_CMD} "   commandline to make Dillo respect the meta-refresh tag."
 .endif
 .if !defined(WITHOUT_DILLO_TABS)
 	@${ECHO_CMD} ""
