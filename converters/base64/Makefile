@@ -8,8 +8,7 @@
 PORTNAME=	base64
 PORTVERSION=	1.4
 CATEGORIES=	converters
-MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/ \
-		http://dl.droso.net/ports/
+MASTER_SITES=	http://www.fourmilab.ch/webtools/base64/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program to convert binary files to base64
