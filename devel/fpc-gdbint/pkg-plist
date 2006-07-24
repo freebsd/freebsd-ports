@@ -1,0 +1,15 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbint.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbcon.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbint.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/gdbcon.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint/libpgdbcon.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gdbint/symify.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gdbint/testgdb.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbint
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gdbint
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/md5/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/md5/md5.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/md5/md5.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/md5/libpmd5.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/md5/md5test.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/md5
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%/md5
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

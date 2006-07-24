@@ -1,57 +1,31 @@
-UNITPREFIX?=    		units-
+PLIST=	${.CURDIR}/pkg-plist
+PATCHDIR=	${.CURDIR}/files
+WRKSRC=	${WRKDIR}/${PORTNAME}
+
+UNITPREFIX=    		unit-
 UNITEXTRACT_SUFX=	.tar.gz
 UNITNAME=		${UNITPREFIX}${PKGNAMESUFFIX:S/-//}${BUILDNAME:S/^/./}${UNITEXTRACT_SUFX}
-UNITDIR=		${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
+UNITDIR=		lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 
-EXAMPLESDIR=	share/examples/${PORTNAME}${PORTVERSION:S/^/-/}
-EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=	# none
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - binary${BUILDNAME:S/^/./}.tar && ${CAT} \
-				binary${BUILDNAME:S/^/./}.tar| ${TAR} -xf - \
-				${UNITNAME} && ${CAT} ${UNITNAME} | ${GUNZIP_CMD} \
-				-dc | ${TAR} -xf -			
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXTRACTUNITDIR}
+
+.if !exists(${LOCALBASE}/bin/fpcmake)
+EXTRACTUNITDIR+=	fpc-bin
+DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
+MAKE_ENV+=	FPCMAKE=${WRKDIR}/${PORTNAME:S/$/-bin/}/bin/fpcmake
+.endif
+
+do-build:
+	@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} all ${MAKE_ENV}
+
 do-install:
-.for DIRE in bin lib
-	@if [ -d ${WRKDIR}/${DIRE} ]; \
-	then \
-		cd ${WRKDIR}/${DIRE} && \
-	      		${FIND} * -type d -exec ${MKDIR} "{}" "${PREFIX}/${DIRE}/{}" \; && \
-		      		${FIND} * -type f -exec ${INSTALL_SCRIPT} "{}" "${PREFIX}/${DIRE}/{}" \; ; \
-	fi
-.endfor
-.if !defined(NOPORTDOCS)
-.	for DIRE in share/examples share/doc
-		@if [ -d ${WRKDIR}/${DIRE} ]; \
-		then \
-			cd ${WRKDIR}/${DIRE} && \
-				${FIND} * -type d -exec ${MKDIR} "{}" "${PREFIX}/${DIRE}/{}" \; && \
-					${FIND} * -type f -exec ${INSTALL_SCRIPT} "{}" "${PREFIX}/${DIRE}/{}" \; ; \
-		fi
-.	endfor
-.endif
-
-add-plist-info: add-plist-fpcunits
-add-plist-fpcunits:
-.for DIRE in bin lib
-	@if [ -d ${WRKDIR}/${DIRE} ]; \
-	then \
-		cd ${WRKDIR}/${DIRE} && \
-			${FIND} * -type f | ${SORT} | ${SED} -e 's|^|${DIRE}/|' >> ${TMPPLIST}.FILES && \
-				${FIND} -d * -type d | ${SED} -e 's|^|@unexec rmdir %D/${DIRE}/|' -e 's@$$@ 2>/dev/null || true@' >> ${TMPPLIST}.DIRS; \
-	fi
-.endfor
-.if !defined(NOPORTDOCS)
-.	for DIRE in share/examples share/doc
-		@if [ -d ${WRKDIR}/${DIRE} ]; \
-		then \
-			cd ${WRKDIR}/${DIRE} && \
-				${FIND} * -type f | ${SORT} | ${SED} -e 's|^|${DIRE}/|' >> ${TMPPLIST}.FILES && \
-					${FIND} -d * -type d | ${SED} -e 's|^|@unexec rmdir %D/${DIRE}/|' -e 's@$$@ 2>/dev/null || true@' >> ${TMPPLIST}.DIRS; \
-		fi
-.	endfor
-.endif
-	@${CAT} ${TMPPLIST}.FILES > ${TMPPLIST} && ${CAT} ${TMPPLIST}.DIRS >> ${TMPPLIST}
-
+	@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} install ${MAKE_ENV}
+.	if !defined(NOPORTSDOCS)
+.		if defined(HAVE_EXAMPLES)
+			@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} fpc_exampleinstall
+.		endif
+.	endif
+	
 security-check: fpc-check-install
 
 fpc-check-install:

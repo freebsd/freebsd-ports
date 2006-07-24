@@ -8,12 +8,15 @@
 CATEGORIES=	archivers lang
 PKGNAMESUFFIX=	-unzip
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal routines for unzipping zip files
 
-RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
-		unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		fpcmake:${PORTSDIR}/lang/fpc-utils
+RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/extra/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 .include "${MASTERDIR}/Makefile"

@@ -8,13 +8,16 @@
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-mysql
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to MySQL
 
-RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 
 USE_MYSQL=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/base/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
+HAVE_EXAMPLES=	true
 
 .include "${MASTERDIR}/Makefile"

@@ -1,0 +1,29 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ncurses.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/panel.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ncrt.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ocrt.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/menu.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ncurses.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/panel.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ncrt.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/ocrt.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/menu.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libpncurses.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libppanel.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libpncrt.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libpocrt.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses/libpmenu.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/ncurses/screen_demo.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/ncurses/db_demo.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/ncurses/edit_demo.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/ncurses/ocrt_demo.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/ncurses/testn.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/ncurses/firework.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ncurses
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/ncurses
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

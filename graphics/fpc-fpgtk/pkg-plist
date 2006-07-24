@@ -1,0 +1,15 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/fpglib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/fpgtk.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/fpgtkext.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/fpglib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/fpgtk.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/fpgtkext.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/libpfpglib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/libpfpgtk.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk/libpfpgtkext.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpgtk
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

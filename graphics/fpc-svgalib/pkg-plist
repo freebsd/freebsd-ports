@@ -1,0 +1,16 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/svgalib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/vgamouse.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/svgalib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/vgamouse.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/libpsvgalib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib/libpvgamouse.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/svgalib/vgatest.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/svgalib/testvga.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/svgalib
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%/svgalib
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

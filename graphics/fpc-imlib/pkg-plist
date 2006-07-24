@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib/gdk_imlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib/imlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib/gdk_imlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib/imlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib/libpgdk_imlib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib/libpimlib.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/imlib
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

@@ -8,11 +8,15 @@
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-ncurses
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the ncurses library
 
-RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		fpcmake:${PORTSDIR}/lang/fpc-utils
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/extra/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
+HAVE_EXAMPLES=	true
 
 .include "${MASTERDIR}/Makefile"

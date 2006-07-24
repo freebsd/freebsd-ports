@@ -8,11 +8,14 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-zlib
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the zlib compression library
 
-RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		fpcmake:${PORTSDIR}/lang/fpc-utils
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/extra/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 .include "${MASTERDIR}/Makefile"

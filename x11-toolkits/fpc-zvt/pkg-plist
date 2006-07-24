@@ -1,0 +1,14 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/zvt/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/zvt/libzvt.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/zvt/libzvt.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/zvt/libplibzvt.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/zvt/testzvt.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/zvt/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/zvt/Makefile
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/zvt
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/zvt
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

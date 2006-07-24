@@ -14,13 +14,13 @@ PKGNAMEPREFIX=	fpc-
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A meta port to install Free Pascal units
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
-BUILDNAME=	i386-freebsd
+BUILDNAME=	${ARCH}-freebsd
 
 OPTIONS=	BFD	"Interface to GNU Binary Format description"	on \
 		FCL	"Free Pascal Component Library"	on \

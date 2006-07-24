@@ -1,0 +1,15 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libart.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libgnome.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libgnomeui.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libart.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libgnome.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libgnomeui.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libplibart.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libplibgnome.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome/libplibgnomeui.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnome
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

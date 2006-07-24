@@ -8,10 +8,11 @@
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
-RUN_DEPENDS=	${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
 		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
 		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
 		${UNITSDIR}/md5/Package.fpc:${PORTSDIR}/security/fpc-md5 \
@@ -28,5 +29,13 @@ RUN_DEPENDS=	${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR} ${PORTNAME}/rtl ${PORTNAME}/packages/base
+OPT=-CX -Fi../ -Fu${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/units/${BUILDNAME}/*
+HAVE_EXAMPLES=	true
+
+post-extract:
+	@cd ${WRKDIR}/${PORTNAME} && \
+		${FIND} * -type d -name .svn | ${XARGS} ${RM} -rf
 
 .include "${MASTERDIR}/Makefile"

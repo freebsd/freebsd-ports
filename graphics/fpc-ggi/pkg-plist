@@ -1,0 +1,18 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/gii.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/ggi.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/ggi2d.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/gii.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/ggi.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/ggi2d.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/libpgii.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/libpggi.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi/libpggi2d.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/ggi/ggi1.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ggi
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%/ggi
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

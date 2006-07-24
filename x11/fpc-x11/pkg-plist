@@ -1,0 +1,51 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/x.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xutil.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xresource.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xcms.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xshm.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xrender.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/keysym.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xi.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xkb.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xkblib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xatom.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xinerama.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xv.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xvlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/x.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xutil.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xresource.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xcms.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xshm.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xrender.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/keysym.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xi.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xkb.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xkblib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xatom.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xinerama.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xv.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/xvlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpx.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxlib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxutil.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxresource.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxcms.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxshm.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxrender.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpkeysym.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxi.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxkb.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxkblib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxatom.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxinerama.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxv.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11/libpxvlib.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/x11
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

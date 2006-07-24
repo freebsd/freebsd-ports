@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	fpc-
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
 
 RUN_DEPENDS=	${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
@@ -32,13 +32,10 @@ RUN_DEPENDS=	${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
 		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
-DOCSDIR=	${LOCALBASE}/share/doc/fpc-${PORTVERSION}
-EXAMPLESDIR=	${LOCALBASE}/share/examples/fpc-${PORTVERSION}
-BUILDNAME=	i386-freebsd
+BUILDNAME=	${ARCH}-freebsd
 
 .if !defined(NOPORTDOCS)
-RUN_DEPENDS+=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs \
-		${LOCALBASE}/share/doc/fpc-${PORTVERSION}/demo/Makefile.fpc:${PORTSDIR}/lang/fpc-demo
+RUN_DEPENDS+=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
 .endif
 
 NO_BUILD=	yes

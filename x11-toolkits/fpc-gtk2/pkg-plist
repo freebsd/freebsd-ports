@@ -1,0 +1,192 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/glib2.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/pango.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2pixbuf.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtk2.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libglade2.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtkglext.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdkglext.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/glib2.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/atk.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/pango.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2pixbuf.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdk2.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtk2.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libglade2.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gtkglext.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/gdkglext.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpglib2.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpatk.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libppango.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdk2pixbuf.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdk2.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtk2.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libplibglade2.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgtkglext.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2/libpgdkglext.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-calendar.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gtk-logo-rgb.gif
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-gimp.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-gsame.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/floppybuddy.gif
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnu-keys.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/alphatest.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-gmush.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/apple-red.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-foot.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/background.jpg
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/gnome-applets.png
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/appwindow.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/tree_store.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/textview.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/pixbufs.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/colorsel.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/button_box.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/drawingarea.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/item_factory.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/list_store.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/menus.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/editable_cells.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/sizegroup.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/dialog.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/init.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/gtk_demo.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/images.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/panes.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/stock_browser.inc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/plugin.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/main.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/helloworld2.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/helloworld.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/gears.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/scribble_simple.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/gettingstarted.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/beipiel.glade
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/simple.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/glade.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/gtk2/Makefile
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk2
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/scribble_simple
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/plugins
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld2
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/helloworld
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtkglext
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/data
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gtk_demo
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/gettingstarted
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2/filechooser
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/gtk2
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

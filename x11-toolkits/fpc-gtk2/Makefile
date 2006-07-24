@@ -8,13 +8,17 @@
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk2
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the GTK2 libraries
 
-RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		fpcmake:${PORTSDIR}/lang/fpc-utils
 
 USE_GNOME=	gtk20
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/extra/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
+HAVE_EXAMPLES=	true
 
 .include "${MASTERDIR}/Makefile"
