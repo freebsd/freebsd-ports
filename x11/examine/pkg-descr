@@ -1,0 +1,8 @@
+Examine is an interface for configuring applications that use ecore_config
+from the Enlightenment Foundation Libraries (EFL).
+In the Examine package are two applications, examine (still very basic) and
+exsh. These applications connect to the configuration library and allow the
+user to alter configurations.
+
+Author:	Andrew Elcock <andy@elcock.org> & Azundris <evidence@azundris.com>
+WWW:	http://www.enlightenment.org/
