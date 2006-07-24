@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dpmod
-PORTVERSION=	20050818
+PORTVERSION=	20060606
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
@@ -32,7 +32,8 @@ post-extract:
 	@${CHMOD} go-w ${WRKDIR}/dpmod/progs.dat
 
 do-install:
-	${CP} -R ${WRKSRC}/dpmod ${DATADIR}
+	${MKDIR} ${DATADIR}
+	${CP} -R ${WRKSRC}/dpmod/* ${DATADIR}
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
