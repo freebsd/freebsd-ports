@@ -9,7 +9,7 @@ PORTNAME=	cyrus-imspd
 PORTVERSION=	1.7b
 CATEGORIES=	databases mail
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
+		http://ftp.kfki.hu/packages/mail/cyrus/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
