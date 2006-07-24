@@ -7,8 +7,10 @@ cvs2p4/bin/dolabels
 cvs2p4/bin/genchanges
 cvs2p4/bin/genmetadata
 cvs2p4/bin/revmap
+cvs2p4/bin/srcdiff
 cvs2p4/lib/util.pl
 cvs2p4/test/Attic/datefile,v
+cvs2p4/test/at@file,v
 cvs2p4/test/changes.good
 cvs2p4/test/config
 cvs2p4/test/datefile_readd,v
@@ -22,9 +24,12 @@ cvs2p4/test/p4_describe-new.good
 cvs2p4/test/p4_describe.good
 cvs2p4/test/p4_filesat.good
 cvs2p4/test/p4_labels.good
+cvs2p4/test/percent_%file,v
 cvs2p4/test/phone.gif,v
+cvs2p4/test/pound#file,v
 cvs2p4/test/runtest
 cvs2p4/test/space file,v
+cvs2p4/test/star*file,v
 @dirrm cvs2p4/test/Attic
 @dirrm cvs2p4/test
 @dirrm cvs2p4/lib
