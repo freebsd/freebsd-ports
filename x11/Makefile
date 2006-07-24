@@ -57,6 +57,7 @@
     SUBDIR += ebuttons
     SUBDIR += ecore
     SUBDIR += electricsheep
+    SUBDIR += elicit
     SUBDIR += emu
     SUBDIR += erun
     SUBDIR += eterm
