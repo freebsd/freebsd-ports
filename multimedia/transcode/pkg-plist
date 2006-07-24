@@ -415,8 +415,6 @@ lib/transcode/import_yuv.so
 lib/transcode/import_yuv4mpeg.a
 lib/transcode/import_yuv4mpeg.la
 lib/transcode/import_yuv4mpeg.so
-%%WITH_XVID%%lib/transcode/libxvidcore.a
-%%WITH_XVID%%lib/transcode/libxvidcore.la
 %%WITH_XVID%%lib/transcode/libxvidcore.so
 %%WITH_XVID%%lib/transcode/libxvidcore.so.4
 lib/transcode/xvid2.cfg
