@@ -41,6 +41,7 @@
     SUBDIR += e17-module-calendar
     SUBDIR += e17-module-cpu
     SUBDIR += e17-module-deskshow
+    SUBDIR += e17-module-engage
     SUBDIR += e17-module-eveil
     SUBDIR += e17-module-flame
     SUBDIR += e17-module-language
