@@ -2067,6 +2067,7 @@ echolinux	ports/comms/echolinux
 echolot		ports/net-mgmt/echolot
 echoping	ports/net/echoping
 ecl		ports/lang/ecl
+eclair		ports/multimedia/eclair
 eclipse		ports/java/eclipse
 eclipse-EPIC	ports/java/eclipse-EPIC
 eclipse-cdt	ports/java/eclipse-cdt
