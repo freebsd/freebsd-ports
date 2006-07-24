@@ -2,68 +2,68 @@ bin/%%TOOLPREFIX%%-c++
 bin/%%TOOLPREFIX%%-cpp
 bin/%%TOOLPREFIX%%-g++
 bin/%%TOOLPREFIX%%-gcc
-bin/%%TOOLPREFIX%%-gcc-4.1.0
+bin/%%TOOLPREFIX%%-gcc-4.1.1
 bin/%%TOOLPREFIX%%-gccbug
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/README
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/float.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/iso646.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/stdarg.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/stdbool.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/stddef.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/varargs.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/ppc-asm.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/altivec.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/spe.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/limits.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include/unwind.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/gsyslimits.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/macro_list
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/mkheaders.conf
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/syslimits.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/float.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/iso646.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/stdarg.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/stdbool.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/stddef.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/varargs.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/ppc-asm.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/altivec.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/spe.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/limits.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/unwind.h
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include/README
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/libgcc.a
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/libgcov.a
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/crtbegin.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/crtend.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/crtbeginS.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/crtendS.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/crtbeginT.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/ecrti.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/ecrtn.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/ncrti.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/ncrtn.o
-lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/crtsavres.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/README
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/float.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/iso646.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/stdarg.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/stdbool.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/stddef.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/varargs.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/ppc-asm.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/altivec.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/spe.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/limits.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include/unwind.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/gsyslimits.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/macro_list
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/mkheaders.conf
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/syslimits.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/float.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/iso646.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/stdarg.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/stdbool.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/stddef.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/varargs.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/ppc-asm.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/altivec.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/spe.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/limits.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/unwind.h
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include/README
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/libgcc.a
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/libgcov.a
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/crtbegin.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/crtend.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/crtbeginS.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/crtendS.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/crtbeginT.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/ecrti.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/ecrtn.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/ncrti.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/ncrtn.o
+lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/crtsavres.o
 lib/gcc/%%TOOLPREFIX%%/libiberty.a
-libexec/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/fixinc.sh
-libexec/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/fixincl
-libexec/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/mkheaders
-libexec/gcc/%%TOOLPREFIX%%/4.1.0/cc1
-libexec/gcc/%%TOOLPREFIX%%/4.1.0/cc1plus
-libexec/gcc/%%TOOLPREFIX%%/4.1.0/cc1obj
-libexec/gcc/%%TOOLPREFIX%%/4.1.0/collect2
+libexec/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/fixinc.sh
+libexec/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/fixincl
+libexec/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/mkheaders
+libexec/gcc/%%TOOLPREFIX%%/4.1.1/cc1
+libexec/gcc/%%TOOLPREFIX%%/4.1.1/cc1plus
+libexec/gcc/%%TOOLPREFIX%%/4.1.1/cc1obj
+libexec/gcc/%%TOOLPREFIX%%/4.1.1/collect2
 @dirrm include
-@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools/include
-@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/install-tools
-@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0/include
-@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.0
+@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools/include
+@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/install-tools
+@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1/include
+@dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%/4.1.1
 @dirrm lib/gcc/%%TOOLPREFIX%%/gcc/%%TOOLPREFIX%%
 @dirrm lib/gcc/%%TOOLPREFIX%%/gcc
 @dirrm lib/gcc/%%TOOLPREFIX%%
 @dirrm lib/gcc
 @dirrm lib
-@dirrm libexec/gcc/%%TOOLPREFIX%%/4.1.0/install-tools
-@dirrm libexec/gcc/%%TOOLPREFIX%%/4.1.0
+@dirrm libexec/gcc/%%TOOLPREFIX%%/4.1.1/install-tools
+@dirrm libexec/gcc/%%TOOLPREFIX%%/4.1.1
 @dirrm libexec/gcc/%%TOOLPREFIX%%
 @dirrm libexec/gcc
 @dirrm libexec
