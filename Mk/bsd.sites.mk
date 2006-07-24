@@ -47,7 +47,7 @@ MASTER_SITE_PORTS_JP+=	\
 .if !defined(IGNORE_MASTER_SITE_AFTERSTEP)
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/window_manager/AfterStep/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/%SUBDIR%/
 .endif
