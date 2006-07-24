@@ -9,7 +9,6 @@ PORTNAME=	xmysqladmin
 PORTVERSION=	1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.gwdg.de/pub/misc/mysql/Downloads/Contrib/ \
-		http://ftp.rtfm.no/pub/mysql/Downloads/Contrib/ \
 		ftp://mysql.secsup.org/pub/software/mysql/Downloads/Contrib/
 
 MAINTAINER=	ports@FreeBSD.org
