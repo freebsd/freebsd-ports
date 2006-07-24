@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/${DISTNAME}
 
 MAINTAINER=	ssedov@mbsd.msk.ru
-COMMENT=	GNU gcc 4.1.0 for PowerPC/RS6000 cross-development
+COMMENT=	GNU gcc 4.1.1 for PowerPC/RS6000 cross-development
 
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 
@@ -36,8 +36,7 @@ PREFIX?=	${LOCALBASE}/${OUR_TARGET}
 
 BUILD_DEPENDS=	${PREFIX}/bin/${PKGNAMEPREFIX}as:${PORTSDIR}/devel/powerpc-binutils \
 		${PREFIX}/bin/${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/powerpc-binutils
-RUN_DEPENDS=	${PREFIX}/bin/${PKGNAMEPREFIX}as:${PORTSDIR}/devel/powerpc-binutils \
-		${PREFIX}/bin/${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/powerpc-binutils
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 #override user-defined settings in make.conf
 WITHOUT_CPU_CFLAGS=	yes
