@@ -5,14 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ruby-usersguide
+PORTNAME=	usersguide
 PORTVERSION=	20051121
 CATEGORIES=	lang ruby
-MASTER_SITES=	http://www.rubyist.net/~slagell/ruby/
-DISTNAME=	${PORTNAME:S/usersguide/uguide/}-${PORTVERSION}
+MASTER_SITES=	http://www.rubyist.net/~slagell/ruby/ \
+		http://mbsd.msk.ru/dist/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-uguide-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Ruby users guide, in HTML format
 
 USE_RUBY=	yes
@@ -21,6 +23,8 @@ RUBY_NO_RUN_DEPENDS=	yes
 
 WRKSRC=		${WRKDIR}/rg
 NO_BUILD=	yes
+DOCSDIR=	${RUBY_MODDOCDIR}
+PORTDOCS=	*
 
 do-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
