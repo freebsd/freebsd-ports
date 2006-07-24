@@ -26,9 +26,10 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r5170
+SNAPSHOT=	r5256
 
-OPTIONS=	FLTK_THREADS "Install with threads support" on
+OPTIONS=	FLTK_THREADS "Install with threads support" on \
+		FLTK_CAIRO "Use cairo as graphics backend" off
 
 LATEST_LINK=	fltk2
 
@@ -63,6 +64,17 @@ LDFLAGS+=	"${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
+.if defined(WITH_FLTK_CAIRO)
+CONFIGURE_ARGS+=	--enable-cairo
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+# XXX:
+# FLTK2's configure check currently depends on pkg-config being available...
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+.else
+CONFIGURE_ARGS+=	--disable-cairo
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-test-Makefile
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's:%%CXX%%:${CXX}:g' \
 	    ${WRKSRC}/fltk2-config.in \
@@ -72,6 +84,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/documentation && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README_fltk1_to_fltk2.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
