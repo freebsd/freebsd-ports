@@ -191,6 +191,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Window_Basic_Global.xml
 %%INSTDIR%%/resources/settings/Window_View.xml
 %%INSTDIR%%/resources/settings/Wizard_FirstTime_Account.xml
+%%INSTDIR%%/resources/text/EventExampleLog.xml
 %%INSTDIR%%/resources/text/EventLog.xsl
 %%INSTDIR%%/resources/text/JabberServers.xml
 %%INSTDIR%%/resources/text/Locations.xml
