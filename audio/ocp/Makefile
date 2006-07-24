@@ -9,7 +9,7 @@ PORTNAME=	ocp
 PORTVERSION=	0.1.9
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://labs.nixia.no/ \
+MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 
