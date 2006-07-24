@@ -17,7 +17,7 @@
  #
  BLACSDBGLVL   = 0
 -BLACSdir      = /usr/local/lib
-+BLACSdir      = @PREFIX@/lib
++BLACSdir      = @LOCALBASE@/lib
  #
  #  MPI setup; tailor to your system if using MPIBLACS
  #  Will need to comment out these 6 lines if using PVM
@@ -27,7 +27,7 @@
 -BLACSFINIT    = $(BLACSdir)/libmpiblacsF77init-p4.a
 -BLACSCINIT    = $(BLACSdir)/libmpiblacsCinit-p4.a
 -BLACSLIB      = $(BLACSdir)/libmpiblacs-p4.a
-+SMPLIB        = @PREFIX@/mpich/lib/libmpich.a @PREFIX@/mpich/lib/libpmpich.a
++SMPLIB        = @LOCALBASE@/mpich2/lib/libmpich.a
 +BLACSFINIT    = $(BLACSdir)/libblacsf77.a
 +BLACSCINIT    = $(BLACSdir)/libblacsc.a
 +BLACSLIB      = $(BLACSdir)/libblacs.a
@@ -56,7 +56,7 @@
  #
  SCALAPACKLIB  = $(home)/libscalapack.a
 -BLASLIB       = /usr/local/lib/libf77blas.a /usr/local/lib/libatlas.a
-+BLASLIB       = -L@PREFIX@/lib @BLAS%
++BLASLIB       = -L@LOCALBASE@/lib @BLAS@
  #
  PBLIBS        = $(SCALAPACKLIB) $(FBLACSLIB) $(BLASLIB) $(SMPLIB)
  PRLIBS        = $(SCALAPACKLIB) $(CBLACSLIB) $(SMPLIB)

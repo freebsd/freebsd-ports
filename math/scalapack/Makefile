@@ -7,7 +7,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
 DISTNAME=	SCALAPACK
@@ -23,7 +23,7 @@ EXTRACT_ONLY=	scalapack.tgz manpages.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The ScaLAPACK Scalable LAPACK library
 
-BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich \
+BUILD_DEPENDS=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
@@ -40,6 +40,7 @@ BLAS=		-lf77blas -latlas
 DATADIR=	${PREFIX}/share/${PORTNAME:U}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:U}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 .include "files/manpages"
 
@@ -57,8 +58,9 @@ FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -Wno-multichar
 .endif
 .endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC},g ; s,@PREFIX@,${PREFIX},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
+	${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
 .for mkf in ${ARCH2FIX}
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${mkf}/Makefile
 .endfor
@@ -98,8 +100,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's,/usr/local,${PREFIX},g' ${FILESDIR}/pkg-message.in \
-		> ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
