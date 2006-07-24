@@ -1,0 +1,70 @@
+bin/fd2pascal
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/forms/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/forms/xforms.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/forms/xforms.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/forms/libpxforms.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/Makefile
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/xyplotover.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/touchbutton.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/srs.xbm
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/sliderall.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/secretinput.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/pushme.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/pushbutton.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/pup.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/positioner.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/porsche.xpm
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/objreturn.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/objpos.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/objinactive.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/nomail.xbm
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/newbutton.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/ndial.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/multilabel.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/minput.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/menu.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/longlabel.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/ll.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/ldial.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/lalign.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/invslider.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/inputall.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/iconify.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/group.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/goodies.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/free1.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/fonts.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/flclock.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/fdial.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/fbrowse1.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/fbrowse.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/doc2p
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/cursor.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/crab45.xpm
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/crab.xpm
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/counter.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/colsel1.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/colsel.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/colbrowser.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/choice.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/chartstrip.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/chartall.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/canvas.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/butttypes.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/buttonall.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/browserop.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/browserall.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/boxtype.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/borderwidth.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/bm2.xbm
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/bm1.xbm
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/arrowbutton.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/forms/yesno.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/forms
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/forms
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

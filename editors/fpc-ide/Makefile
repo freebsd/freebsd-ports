@@ -8,13 +8,32 @@
 CATEGORIES=	editors lang
 PKGNAMESUFFIX=	-ide
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal integrated IDE/compiler
 
-RUN_DEPENDS=	${UNITSDIR}/fv/Package.fpc:${PORTSDIR}/devel/fpc-fv
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		fpcmake:${PORTSDIR}/lang/fpc-utils \
+		${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
+		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
+		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
+		${UNITSDIR}/md5/Package.fpc:${PORTSDIR}/security/fpc-md5 \
+		${UNITSDIR}/mysql/Package.fpc:${PORTSDIR}/databases/fpc-mysql \
+		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
+		${UNITSDIR}/odbc/Package.fpc:${PORTSDIR}/databases/fpc-odbc \
+		${UNITSDIR}/oracle/Package.fpc:${PORTSDIR}/databases/fpc-oracle \
+		${UNITSDIR}/pasjpeg/Package.fpc:${PORTSDIR}/graphics/fpc-pasjpeg \
+		${UNITSDIR}/paszlib/Package.fpc:${PORTSDIR}/archivers/fpc-paszlib \
+		${UNITSDIR}/pthreads/Package.fpc:${PORTSDIR}/devel/fpc-pthreads \
+		${UNITSDIR}/postgres/Package.fpc:${PORTSDIR}/databases/fpc-postgres \
+		${UNITSDIR}/regexpr/Package.fpc:${PORTSDIR}/devel/fpc-regexpr \
+		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite \
+		${UNITSDIR}/fcl/Package.fpc:${PORTSDIR}/devel/fpc-fcl \
+		${UNITSDIR}/fv/Package.fpc:${PORTSDIR}/devel/fpc-fv
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 UNITPREFIX=	# none
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR} ${PORTNAME}/compiler ${PORTNAME}/rtl ${PORTNAME}/fv
 
 .include "${MASTERDIR}/Makefile"

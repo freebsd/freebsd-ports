@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/libpsqlite.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/libpsqlite3.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

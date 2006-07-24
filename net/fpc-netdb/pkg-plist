@@ -1,0 +1,19 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb/uriparser.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb/netdb.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb/uriparser.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb/netdb.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb/libpuriparser.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb/libpnetdb.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/netdb/testnet.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/netdb/testsvc.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/netdb/testhst.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/netdb/testdns.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/netdb/testuri.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/netdb
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/netdb
+%%PORTDOCS%%@dirrmtry share/examples/fpc-2.0.2

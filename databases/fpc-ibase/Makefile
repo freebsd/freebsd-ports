@@ -8,12 +8,15 @@
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-ibase
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to interbase
 
-RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 LIB_DEPENDS=	fbembed.1:${PORTSDIR}/databases/firebird-client
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/base/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
+HAVE_EXAMPLES=	true
 
 .include "${MASTERDIR}/Makefile"

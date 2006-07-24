@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp/utmp.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp/utmp.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp/libputmp.a
+%%PORTDOCS%%share/examples/fpc-2.0.2/utmp/testutmp.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/utmp
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/utmp
+%%PORTDOCS%%@dirrmtry share/examples/fpc-2.0.2

@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/ziptypes.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/unzip.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/ziptypes.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/unzip.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/libpziptypes.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip/libpunzip.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/unzip
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

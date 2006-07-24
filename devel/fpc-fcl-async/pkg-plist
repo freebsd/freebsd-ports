@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/libasync.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/libasync.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync/libplibasync.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libasync
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

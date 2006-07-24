@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libgd/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libgd/gd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libgd/gd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libgd/libpgd.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/libgd/gdtest.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libgd
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/libgd
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

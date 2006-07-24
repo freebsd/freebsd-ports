@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/syslog/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/syslog/systemlog.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/syslog/systemlog.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/syslog/libpsystemlog.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/syslog/testlog.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/syslog
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%/syslog
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

@@ -8,14 +8,20 @@
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-opengl
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the OpenGL library
 
-RUN_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		fpcmake:${PORTSDIR}/lang/fpc-utils \
+		${UNITSDIR}/x11/Package.fpc:${PORTSDIR}/x11/fpc-x11
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_GL=	yes
 
+UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/extra/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
+HAVE_EXAMPLES=	true
 
 .include "${MASTERDIR}/Makefile"

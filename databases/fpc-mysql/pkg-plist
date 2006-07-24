@@ -1,0 +1,43 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/my4_sys.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4_com.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4_version.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4dyn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4_comdyn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3_com.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3_version.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3_comdyn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3dyn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/my4_sys.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4_com.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4_version.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4dyn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql4_comdyn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3_com.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3_version.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3_comdyn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql3dyn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmy4_sys.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql4_com.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql4_version.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql4.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql4dyn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql4_comdyn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql3_com.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql3_version.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql3.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql3_comdyn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/libpmysql3dyn.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/mysql/testdb3.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/mysql/testdb4.pp
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%/mysql
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

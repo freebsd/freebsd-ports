@@ -1,0 +1,67 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/glib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gmodule.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gdk.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gtk.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gdkpixbuf.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/glib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gmodule.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gdk.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gtk.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gdkpixbuf.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/libpglib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/libpgmodule.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/libpgdk.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/libpgtk.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/libpgdkpixbuf.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gtkglarea.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/gtkglarea.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/libpgtkglarea.a
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut3_3.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut4_3.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut6_1.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut6_2.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut4_5.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut6_3.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut6_4.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut8_5.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/tut2_1.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/Makefile
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tutorial/info.xpm
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/ttt_test.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/toolbar.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/tictactoe.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/statusbar.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/spinbutton.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/scribble.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/rulers.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/progressbar.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/pixmap.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/paned.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/notebook.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/list.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/filesel.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/entry.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/editform.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/clist.pp
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-2.0.2/gtk/Makefile
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/wcprops
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/props
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/text-base
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/props
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/prop-base
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial
+%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk
+%%PORTDOCS%%@dirrmtry share/examples/fpc-2.0.2

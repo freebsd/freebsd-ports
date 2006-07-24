@@ -1,0 +1,15 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oraoci.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/oraoci.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle/libporaoci.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/oracle/test01.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/oracle/oraclew.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/oracle/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/oracle/Makefile
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oracle
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/oracle
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

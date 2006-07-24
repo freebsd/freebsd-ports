@@ -8,12 +8,19 @@
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gnome
 
-MAINTAINER=	acardenas@bsd.org.pe
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal unit to create programs for GNOME 1
 
-RUN_DEPENDS=	${UNITSDIR}/gtk/Package.fpc:${PORTSDIR}/x11-toolkits/fpc-gtk
+BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
+		fpcmake:${PORTSDIR}/lang/fpc-utils \
+		${UNITSDIR}/gtk/Package.fpc:${PORTSDIR}/x11-toolkits/fpc-gtk \
+		${UNITSDIR}/imlib/Package.fpc:${PORTSDIR}/graphics/fpc-imlib \
+		${UNITSDIR}/opengl/Package.fpc:${PORTSDIR}/graphics/fpc-opengl \
+		${UNITSDIR}/x11/Package.fpc:${PORTSDIR}/x11/fpc-x11
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
+WRKUNITDIR=	${PORTNAME}/packages/extra/gnome1/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR}
 
 .include "${MASTERDIR}/Makefile"

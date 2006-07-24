@@ -1,0 +1,33 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/gl.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glu.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glut.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glext.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/dllfuncs.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glx.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/gl.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glu.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glut.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glext.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/dllfuncs.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glx.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpgl.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglu.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglut.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglext.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpdllfuncs.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglx.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glutdemo.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/morph3d.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glxtest.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/radblur.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/bounce.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/Makefile.fpc
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/Makefile
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
+%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/opengl
+%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%
