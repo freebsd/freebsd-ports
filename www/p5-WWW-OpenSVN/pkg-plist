@@ -1,0 +1,5 @@
+%%SITE_PERL%%/WWW/OpenSVN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/OpenSVN/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/OpenSVN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW
