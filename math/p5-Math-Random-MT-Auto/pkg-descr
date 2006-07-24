@@ -1,0 +1,13 @@
+The Mersenne Twister is a fast pseudorandom number generator (PRNG)
+that is capable of providing large volumes (> 10^6004) of "high
+quality" pseudorandom data to applications that may exhaust available
+"truly" random data sources or system-provided PRNGs such as rand.
+
+This module provides PRNGs that are based on the Mersenne Twister.
+There is a functional interface to a single, standalone PRNG, and an
+OO interface (based on the inside-out object model as implemented by
+the Object::InsideOut module) for generating multiple PRNG objects.
+The PRNGs are self-seeding, automatically acquiring a (19968-bit)
+random seed from user-selectable sources.
+
+WWW:	http://search.cpan.org/dist/Math-Random-MT-Auto/
