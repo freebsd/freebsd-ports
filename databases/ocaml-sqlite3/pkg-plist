@@ -1,0 +1,13 @@
+bin/ocamlsqlite3
+lib/ocaml/site-lib/sqlite3/dllsqlite3.so
+lib/ocaml/site-lib/sqlite3/sqlite3.cmx
+lib/ocaml/site-lib/sqlite3/sqlite3.a
+lib/ocaml/site-lib/sqlite3/libsqlite3.a
+lib/ocaml/site-lib/sqlite3/sqlite3.cmxa
+lib/ocaml/site-lib/sqlite3/sqlite3.cma
+lib/ocaml/site-lib/sqlite3/sqlite3.mli
+lib/ocaml/site-lib/sqlite3/sqlite3.cmi
+lib/ocaml/site-lib/sqlite3/META
+@dirrm lib/ocaml/site-lib/sqlite3
+@unexec ocamlfind remove sqlite3 2> /dev/null || true
+@unexec cat %%PREFIX%%/lib/ocaml/ld.conf | grep -v sqlite3 > %%PREFIX%%/lib/ocaml/ld.conf.tmp && mv %%PREFIX%%/lib/ocaml/ld.conf.tmp %%PREFIX%%/lib/ocaml/ld.conf
