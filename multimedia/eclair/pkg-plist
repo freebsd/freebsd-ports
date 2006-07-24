@@ -1,0 +1,30 @@
+bin/eclair
+bin/eclair_wsz2edj
+%%DATADIR%%/fonts/Vera.COPYING
+%%DATADIR%%/fonts/VeraBd.ttf
+%%DATADIR%%/fonts/fonts.alias
+%%DATADIR%%/fonts/fonts.dir
+%%DATADIR%%/icons/add_files.png
+%%DATADIR%%/icons/invert_selection.png
+%%DATADIR%%/icons/load_playlist.png
+%%DATADIR%%/icons/open.png
+%%DATADIR%%/icons/playlist.png
+%%DATADIR%%/icons/remove_all.png
+%%DATADIR%%/icons/remove_selected.png
+%%DATADIR%%/icons/remove_unselected.png
+%%DATADIR%%/icons/save_playlist.png
+%%DATADIR%%/icons/search_window.png
+%%DATADIR%%/icons/select_all.png
+%%DATADIR%%/icons/select_none.png
+%%DATADIR%%/icons/windows.png
+%%DATADIR%%/themes/default.edj
+%%DATADIR%%/themes/gant.edj
+%%DATADIR%%/themes/swallow_me.edj
+%%DATADIR%%/widget_themes/default.edj
+%%DATADIR%%/wsz2edj/wsz2edj_edc.tar.gz
+@dirrmtry %%DATADIR%%/wsz2edj
+@dirrmtry %%DATADIR%%/widget_themes
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%
