@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfstat
-PORTVERSION=	1.7
+PORTVERSION=	2.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,32 +14,33 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mlaier@freebsd.org
 COMMENT=	Utility to render grafical statistics for pf
 
-.if defined(WITH_GD1)
-LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
-CFLAGS+=	-I${LOCALBASE}/include/gd
-MAKE_ARGS=	"LD_GD=gd1"
-.else
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-MAKE_ARGS=	"LD_GD=gd"
-.endif
 
-MAN8=		pfstat.8
+MAKE_ARGS=	"LD_GD=gd"
+
+MAN8=		pfstat.8 \
+		pfstatd.8
 
 MANCOMPRESSED=	no
-PLIST_FILES=	bin/pfstat
+PLIST_FILES=	bin/pfstat \
+		bin/pfstatd
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502106
-IGNORE=		"Only for 5.3 and above"
+IGNORE=		is only for 5.3 and above
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgd|-l$${LD_GD}|; s| -lttf||' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
+		${WRKSRC}/pfstat.[c8]
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfstat ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pfstatd/pfstatd ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${PREFIX}/man/man8
 
 .include <bsd.port.post.mk>
