@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-Postcodes-NO
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Geo
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Norwegian postcodes with associated information
 
-RUN_DEPENDS=	${SITE_PERL}/Geo/Postcodes.pm:${PORTSDIR}/misc/p5-Geo-Postcodes
+RUN_DEPENDS=	p5-Geo-Postcodes>=0.03:${PORTSDIR}/misc/p5-Geo-Postcodes
 
 PERL_CONFIGURE=	yes
 
