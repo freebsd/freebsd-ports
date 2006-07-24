@@ -31,6 +31,6 @@ include/xapian/version.h
 lib/libxapian.a
 lib/libxapian.la
 lib/libxapian.so
-lib/libxapian.so.11
+lib/libxapian.so.12
 share/aclocal/xapian.m4
 @dirrm include/xapian
