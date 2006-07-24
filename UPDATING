@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060723:
+  AFFECTS: users of www/dillo-i18n
+  AUTHOR: tmseck@netcologne.de
+
+  Starting with version 20060709 the i18n version of Dillo encodes
+  the bookmark file using UTF-8 encoding. You can try to convert
+  your existing bookmark file with the bm-update script or you could
+  try to convert it by hand using iconv(1) from you current locale
+  to UTF-8, e.g.  by calling 'iconv -f ISO-8859-1 -t UTF-8 ~/.dillo/bm.txt'.
+
+  Please see the iconv documentation for further details.
+
 20060722:
   AFFECTS: users of games/phpua-*
   AUTHOR: miwi@FreeBSD.org
