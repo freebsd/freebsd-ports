@@ -2422,3 +2422,4 @@ net/ethereal-lite|net/wireshark-lite|2006-07-17|Project name has changed
 net/tethereal|net/tshark|2006-07-17|Project name has changed
 net/tethereal-lite|net/tshark-lite|2006-07-17|Project name has changed
 games/quake3-q3base|games/q3base|2006-07-22|the "quake3-" prefix is used by modifications and the like, not engines
+lang/fpc-demo||2006-07-24|Removed because it's not necessary anymore
