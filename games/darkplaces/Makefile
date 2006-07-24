@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darkplaces
-PORTVERSION=	20050818
-PORTREVISION=	1
+PORTVERSION=	20060606
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
@@ -15,18 +14,17 @@ DISTNAME=	${PORTNAME}engine${PORTVERSION}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake engine modification
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USE_GMAKE=	yes
 USE_ZIP=	yes
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKEFILE=	makefile
 ALL_TARGET=	#
 
-OPTIONS=	CLIENT "Build GLX client" on \
+OPTIONS=	CLIENT "Build GLX client" off \
 		DEDICATED "Build dedicated server" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL_CLIENT "Build SDL client" on
+		SDL "Build SDL client" on
 
 PLIST_FILES=	%%DATADIR%%/dummy
 PLIST_DIRS=	%%DATADIR%%
@@ -35,40 +33,46 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SDL_CLIENT) && \
-    defined(WITHOUT_DEDICATED)
-IGNORE=		needs at least one of CLIENT, SDL_CLIENT and DEDICATED options
+.if !defined(WITH_CLIENT) && !defined(WITH_DEDICATED) && !defined(WITH_SDL)
+IGNORE=		needs at least one of CLIENT, DEDICATED and SDL options
 .endif
 
-.if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL_CLIENT)
+.if defined(WITH_CLIENT) || defined(WITH_SDL)
+USE_GL=		yes
 # Loads libraries at run-time, thus RUN_DEPENDS.
 RUN_DEPENDS+=	${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if !defined(WITHOUT_CLIENT)
-USE_GL=		yes
+.if defined(WITH_CLIENT)
 ALL_TARGET+=	cl-release
 EXE_TARGETS+=	${PORTNAME}-glx
 PLIST_SUB+=	CLIENT=""
 PLIST_FILES+=	bin/${PORTNAME}-glx
 .endif
 
-.if !defined(WITHOUT_DEDICATED)
+.if defined(WITH_DEDICATED)
 ALL_TARGET+=	sv-release
 EXE_TARGETS+=	${PORTNAME}-dedicated
 PLIST_FILES+=	bin/${PORTNAME}-dedicated
 .endif
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if defined(WITH_OPTIMIZED_CFLAGS)
 MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=YES
 .endif
 
-.if !defined(WITHOUT_SDL_CLIENT)
+.if defined(WITH_SDL)
 USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 EXE_TARGETS+=	${PORTNAME}-sdl
 PLIST_FILES+=	bin/${PORTNAME}-sdl
+.endif
+
+.if defined(WITH_GLX)
+pre-everything::
+	@${ECHO_CMD}
+	@${ECHO_CMD} "WARNING: currently the sound is broken in the GLX client. The problem has been reported to the developers, who are working on it. For the moment please use the SDL client instead as a workaround." | ${FMT}
+	@${ECHO_CMD}
 .endif
 
 post-extract:
