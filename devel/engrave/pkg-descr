@@ -1,0 +1,8 @@
+Engrave is a library for editing the contents of an edje .eet file.
+ - parses Edje's .edc format (or the .edc embedded in an edje .eet file)
+ - returns a structural representation of the .edc
+ - provides an API for modifying this representation
+ - writes the modified data back out to an .edc (or an .eet)
+
+Author:	Rephorm <rephorm@rephorm.com> & dj2 <zero@everburning.com>
+WWW:	http://www.enlightenment.org/

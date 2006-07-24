@@ -1,0 +1,24 @@
+bin/engrave-config
+bin/engrave_canvas_test
+bin/engrave_test
+include/engrave/Engrave.h
+include/engrave/engrave_canvas.h
+include/engrave/engrave_data.h
+include/engrave/engrave_enums.h
+include/engrave/engrave_file.h
+include/engrave/engrave_font.h
+include/engrave/engrave_group.h
+include/engrave/engrave_image.h
+include/engrave/engrave_load.h
+include/engrave/engrave_macros.h
+include/engrave/engrave_out.h
+include/engrave/engrave_parse.h
+include/engrave/engrave_part.h
+include/engrave/engrave_part_state.h
+include/engrave/engrave_program.h
+include/engrave/engrave_style.h
+lib/libengrave.a
+lib/libengrave.la
+lib/libengrave.so
+lib/libengrave.so.1
+@dirrm include/engrave
