@@ -2205,6 +2205,7 @@ endeavour	ports/x11-fm/endeavour
 enfle		ports/graphics/enfle
 engine_pkcs11	ports/security/engine_pkcs11
 engradient	ports/x11-themes/engradient
+engrave		ports/devel/engrave
 enigmail	ports/mail/enigmail
 enigmail-seamonkey	ports/mail/enigmail-seamonkey
 enigmail-thunderbird	ports/mail/enigmail-thunderbird
