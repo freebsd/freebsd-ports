@@ -8,8 +8,8 @@
 PORTNAME=	kcfonts
 PORTVERSION=	1.05
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/distfiles/ \
-		ftp://wm28.csie.ncu.edu.tw/pub/distfiles/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kuo Chauo Chinese Fonts collection
