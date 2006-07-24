@@ -37,8 +37,8 @@ SCONS_PORT=	${PORTSDIR}/devel/scons
 CCFLAGS?=	${CFLAGS}
 LINKFLAGS?=	${LDFLAGS}
 PKGCONFIGDIR?=	${LOCALBASE}/libdata/pkgconfig
-LIBPATH=	${LOCALBASE}/lib ${X11BASE}/lib
-CPPPATH=	${LOCALBASE}/include ${X11BASE}/include
+LIBPATH?=	${LOCALBASE}/lib ${X11BASE}/lib
+CPPPATH?=	${LOCALBASE}/include ${X11BASE}/include
 
 #
 # SCONS_ENV is where we pass all the stuff that should be the
