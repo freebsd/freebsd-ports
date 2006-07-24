@@ -9,8 +9,8 @@ PORTNAME=	moettf
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/moettf/ \
-		ftp://ftp.cc.ntut.edu.tw/OS/Linux/packages/chinese/fonts/twmoefont/ttf/
+MASTER_SITES=	http://ftp.riken.go.jp/pub/FreeBSD/distfiles/zh-moettf/ \
+		http://ftp.math.uni-bielefeld.de/pub/unix/FreeBSD/distfiles/zh-moettf/
 DISTFILES=	moe_kai.ttf moe_sung.ttf edustds1.exe edustds2.exe \
 		edustd-15.exe kai-pc.ttf
 
@@ -21,7 +21,7 @@ EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 
 DIST_SUBDIR=	zh-moettf
 
-NO_CDROM=	"Contact Taiwan's Ministry of Education for commercial use."
+NO_CDROM=	Contact Taiwan's Ministry of Education for commercial use.
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
