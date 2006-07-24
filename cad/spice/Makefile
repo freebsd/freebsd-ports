@@ -9,10 +9,9 @@ PORTNAME=	spice
 PORTVERSION=	3f5.2
 PORTREVISION=	3
 CATEGORIES=	cad
-MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:sources	 \
-		ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps/:docs
+MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:sources
 DISTFILES=	spice3f5${EXTRACT_SUFX}:sources	\
-		cp.ps:docs toc.ps:docs doc.ps:docs
+		cp.ps toc.ps doc.ps
 DIST_SUBDIR=	spice
 EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
 
