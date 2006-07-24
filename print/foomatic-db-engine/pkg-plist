@@ -20,6 +20,7 @@ sbin/foomatic-nonumericalids
 sbin/foomatic-preferred-driver
 sbin/foomatic-printermap-to-gimp-print-xml
 sbin/foomatic-replaceoldprinterids
+sbin/foomatic-extract-text
 share/foomatic/templates/pjl_enum_choice.xml
 share/foomatic/templates/pjl_enum_option.xml
 share/foomatic/templates/pjl_num_option.xml
