@@ -428,7 +428,6 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.rediris.es/sites/ftp.gnu.org/ftp/gnu/%SUBDIR%/ \
-	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
 .endif
 
