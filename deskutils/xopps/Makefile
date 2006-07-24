@@ -8,7 +8,7 @@
 PORTNAME=	xopps
 PORTVERSION=	1.13
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://ftp.weird.com/pub/mirror/ \
+MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
 		http://dl.droso.net/ports/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
