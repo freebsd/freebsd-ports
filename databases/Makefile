@@ -152,6 +152,7 @@
     SUBDIR += mysqltcl
     SUBDIR += mytop
     SUBDIR += namazu2
+    SUBDIR += ocaml-sqlite3
     SUBDIR += opendbx
     SUBDIR += oracle7-client
     SUBDIR += oracle8-client

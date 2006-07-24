@@ -1,0 +1,12 @@
+#! /bin/sh
+#
+
+if [ "x$2" = "xPOST-DEINSTALL" ]; then
+	ldconf="%%PREFIX%%/lib/ocaml/ld.conf"
+
+	cat ${ldconf} | grep -v sqlite3 > ${ldconf}.tmp
+	mv ${ldconf}.tmp ${ldconf}
+fi
+
+exit 0
+

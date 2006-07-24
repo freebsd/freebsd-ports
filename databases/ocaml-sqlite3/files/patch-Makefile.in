@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Feb 27 21:11:25 2006
++++ Makefile.in	Mon Feb 27 21:12:12 2006
+@@ -36,7 +36,7 @@
+ install: sqlite3.cma sqlite3.cmxa sqlite3top
+ 	ocamlfind install sqlite3 META sqlite3.cmi sqlite3.mli sqlite3.cma *.cmxa *.a *.cmx *.so
+ 	ocamlfind ocamlmktop -o sqlite3top -package "sqlite3" sqlite3.cma
+-	$(INSTALL) sqlite3top $(bindir)/sqlite3top
++	$(INSTALL) sqlite3top $(bindir)/ocamlsqlite3
+ 
+ remove: uninstall
+ uninstall:

@@ -1,0 +1,11 @@
+#! /bin/sh
+#
+
+if [ "x$2" = "xPOST-INSTALL" ]; then
+	ldconf="%%PREFIX%%/lib/ocaml/ld.conf"
+
+	echo "%%PREFIX%%/lib/ocaml/site-lib/sqlite3" >> ${ldconf}
+fi
+
+exit 0
+
