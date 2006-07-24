@@ -8135,6 +8135,7 @@ p5-Chess-PGN-Parse	ports/textproc/p5-Chess-PGN-Parse
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
 p5-Class-Accessor-Chained	ports/devel/p5-Class-Accessor-Chained
 p5-Class-Accessor-Lvalue	ports/devel/p5-Class-Accessor-Lvalue
+p5-Class-Accessor-Named	ports/devel/p5-Class-Accessor-Named
 p5-Class-AlzaboWrapper	ports/devel/p5-Class-AlzaboWrapper
 p5-Class-ArrayObjects	ports/devel/p5-Class-ArrayObjects
 p5-Class-AutoClass	ports/devel/p5-Class-AutoClass
