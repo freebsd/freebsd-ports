@@ -775,6 +775,7 @@
     SUBDIR += p5-WWW-Mechanize-Plugin-phpBB
     SUBDIR += p5-WWW-Mechanize-Shell
     SUBDIR += p5-WWW-Mixi
+    SUBDIR += p5-WWW-OpenSVN
     SUBDIR += p5-WWW-OpenSearch
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-Scraper-ISBN
