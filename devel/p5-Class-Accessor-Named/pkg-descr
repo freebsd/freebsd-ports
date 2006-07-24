@@ -1,0 +1,12 @@
+Class::Accessor is a great way to automate the tedious task of
+generating accessors and mutators. One small drawback is that due to
+the details of the implemenetation, you only get one __ANON__ entry in
+profiling output. That entry contains all your accessors, which can be
+a real pain if you're attempting to figure out which of your accessors
+is being called six billion times. This module is a development aid
+which uses Hook::LexWrap and Sub::Name to talk your accessors into
+identifying themselves. While it shouldn't add much additional runtime
+overhead (as it acts only Class::Accessor's generator functions), it
+has not been designed for production deployment.
+
+WWW:	http://search.cpan.org/dist/Class-Accessor-Named/
