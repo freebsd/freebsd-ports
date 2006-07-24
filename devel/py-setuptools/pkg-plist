@@ -6,6 +6,7 @@ bin/easy_install.py
 %%PYTHON_SITELIBDIR%%/setuptools.pth
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/scripts/easy_install.py
@@ -62,6 +63,9 @@ bin/easy_install.py
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/install_scripts.py
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/install_scripts.pyc
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/install_scripts.pyo
+%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/register.py
+%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/register.pyc
+%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/register.pyo
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/rotate.py
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/rotate.pyc
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/setuptools/command/rotate.pyo
