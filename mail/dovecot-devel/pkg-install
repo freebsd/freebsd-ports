@@ -83,7 +83,7 @@ POST-INSTALL)
 		fi
 	done
 	chown -R root:wheel   ${base}
-	chmod -R 0700         ${base}
+	chmod -R 0755         ${base}
 	chown -R root:dovecot ${base}/login
 	chmod -R 0750         ${base}/login
 	;;
