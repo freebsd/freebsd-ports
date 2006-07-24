@@ -24,6 +24,9 @@
 %%PYTHON_SITELIBDIR%%/ctypes/test/runtests.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/runtests.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/runtests.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_anon.py
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_anon.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_anon.pyo
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_array_in_pointer.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_array_in_pointer.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_array_in_pointer.pyo
@@ -93,6 +96,9 @@
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_numbers.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_numbers.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_numbers.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_objects.py
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_objects.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_objects.pyo
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_parameters.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_parameters.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_parameters.pyo
@@ -147,6 +153,9 @@
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_values.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_values.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_values.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_varsize_struct.py
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_varsize_struct.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_varsize_struct.pyo
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_win32.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_win32.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_win32.pyo
