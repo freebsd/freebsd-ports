@@ -1,16 +1,17 @@
-@unexec if [ -f %D/lib/netscape-linux/mime.types ]; then (/bin/cat %D/lib/netscape-linux/mime.types | /usr/bin/grep -v "application/x-ica" > %D/lib/netscape-linux/mime.types.tmp; mv %D/lib/netscape-linux/mime.types.tmp %D/lib/netscape-linux/mime.types); fi
-@unexec if [ -f %D/lib/netscape-linux/mailcap ]; then (/bin/cat %D/lib/netscape-linux/mailcap | /usr/bin/grep -v "application/x-ica" > %D/lib/netscape-linux/mailcap.tmp; /bin/mv %D/lib/netscape-linux/mailcap.tmp %D/lib/netscape-linux/mailcap); fi
-@unexec if [ -e %D/lib/netscape-linux/plugins/npica.so ]; then (/bin/rm %D/lib/netscape-linux/plugins/npica.so); fi
 ICAClient/.config/appsrv.ini
 ICAClient/.config/keyboard.ini
 ICAClient/.config/module.ini
 ICAClient/.config/wfclient.ini
+ICAClient/CHARICONV.DLL
+ICAClient/NDS.DLL
 ICAClient/Npica
 ICAClient/Npica.ad
 ICAClient/PDCRYPT1.DLL
 ICAClient/PDCRYPT2.DLL
-ICAClient/SSL.DLL
+ICAClient/TW1.DLL
+ICAClient/VDCM.DLL
 ICAClient/VDSCARD.DLL
+ICAClient/VDSPMIKE.DLL
 ICAClient/Wfcmgr
 ICAClient/Wfcmgr.ad
 ICAClient/Wfica
@@ -19,12 +20,13 @@ ICAClient/config/.server
 ICAClient/config/appsrv.ini
 ICAClient/config/module.ini
 ICAClient/config/wfclient.ini
+ICAClient/desktop/Citrix_PNA.desktop
+ICAClient/desktop/wfcmgr.desktop
 ICAClient/eula.txt
 ICAClient/help/index.htm
-ICAClient/icons/ica16.xpm
-ICAClient/icons/ica32.xpm
-ICAClient/icons/ica48.xpm
-ICAClient/icons/ica64.xpm
+ICAClient/icons/citrix16.xpm
+ICAClient/icons/citrix32.xpm
+ICAClient/icons/citrix48.xpm
 ICAClient/install.txt
 ICAClient/keyboard/age2.kbd
 ICAClient/keyboard/agex2.kbd
@@ -57,6 +59,7 @@ ICAClient/keyboard/hpusitf.kbd
 ICAClient/keyboard/hpusps2.kbd
 ICAClient/keyboard/ibm.kbd
 ICAClient/keyboard/keyboard.ini
+ICAClient/keyboard/linux-ja.kbd
 ICAClient/keyboard/linux.kbd
 ICAClient/keyboard/mac101.kbd
 ICAClient/keyboard/ncdn-101.kbd
@@ -92,6 +95,10 @@ ICAClient/keystore/cacerts/GTECTGlobalRoot.crt
 ICAClient/keystore/cacerts/GTECTRoot.crt
 ICAClient/keystore/cacerts/Pcs3ss_v4.crt
 ICAClient/keystore/cacerts/SecureServer.crt
+ICAClient/libctxssl.so
+ICAClient/nls/de/pna.nls
+ICAClient/nls/en/pna.nls
+ICAClient/nls/C
 ICAClient/npica.so
 ICAClient/pkginf/F.core.linuxx86
 ICAClient/pkginf/Ver.core.linuxx86
@@ -103,20 +110,27 @@ ICAClient/util/XCapture.ad
 ICAClient/util/echo_cmd
 ICAClient/util/hinst
 ICAClient/util/icalicense.sh
+ICAClient/util/nslaunch
+ICAClient/util/pac.js
+ICAClient/util/pacexec
 ICAClient/util/xcapture
 ICAClient/wfcmgr
 ICAClient/wfica
+ICAClient/wfica.sh
+ICAClient/wfica_assoc.sh
 bin/wfcmgr
 bin/wfica
-@dirrm ICAClient/.config
-@dirrm ICAClient/cache/zlcache
-@dirrm ICAClient/cache
-@dirrm ICAClient/config
-@dirrm ICAClient/help
-@dirrm ICAClient/icons
-@dirrm ICAClient/keyboard
+@dirrm ICAClient/util
+@dirrm ICAClient/pkginf
+@dirrm ICAClient/nls/en
+@dirrm ICAClient/nls/de
+@dirrm ICAClient/nls
 @dirrm ICAClient/keystore/cacerts
 @dirrm ICAClient/keystore
-@dirrm ICAClient/pkginf
-@dirrm ICAClient/util
+@dirrm ICAClient/keyboard
+@dirrm ICAClient/icons
+@dirrm ICAClient/help
+@dirrm ICAClient/desktop
+@dirrm ICAClient/config
+@dirrm ICAClient/.config
 @dirrm ICAClient
