@@ -61,7 +61,6 @@
     SUBDIR += forth
     SUBDIR += fpc
     SUBDIR += fpc-base
-    SUBDIR += fpc-demo
     SUBDIR += fpc-devel
     SUBDIR += fpc-docs
     SUBDIR += fpc-tcl
