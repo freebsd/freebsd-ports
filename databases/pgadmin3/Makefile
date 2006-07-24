@@ -18,13 +18,14 @@ USE_GETTEXT=	yes
 USE_PGSQL=	yes
 IGNORE_WITH_PGSQL=	73
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wx=${X11BASE} --with-wx-config=${WX_CONFIG}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
 CONFLICTS=	pgadmin3-1.[12]*
 
-LIB_DEPENDS+=	wx_gtk2u_stc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode-contrib
-WX_CONFIG=	wxgtk2u-2.6-config
+USE_WX=		2.6
+WX_COMPS=	wx contrib
+WX_UNICODE=	yes
+WX_CONF_ARGS=	relative
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
