@@ -1,12 +1,12 @@
---- makefile.inc.orig	Thu Aug 18 21:30:57 2005
-+++ makefile.inc	Sun Jan 15 17:16:57 2006
+--- makefile.inc.orig	Sun Apr 16 23:23:11 2006
++++ makefile.inc	Sun Jul 23 16:34:36 2006
 @@ -1,5 +1,4 @@
  # Choose the compiler you want to use
 -CC=gcc
  
  # athlon optimizations
  #CPUOPTIMIZATIONS=-march=athlon
-@@ -135,13 +134,19 @@
+@@ -137,13 +136,19 @@
  
  # Compilation
  # CFLAGS_COMMON=-MD -Wall -Werror
@@ -28,33 +28,28 @@
  
  DO_CC=$(CC) $(CFLAGS) -c $< -o $@
  
-@@ -157,14 +162,14 @@
+@@ -159,9 +164,9 @@
  OBJ_GLX= builddate.c sys_linux.o vid_glx.o $(OBJ_SOUND) $(OBJ_CD) $(OBJ_COMMON)
  
  LDFLAGS_UNIXCOMMON=-lm
--#LDFLAGS_UNIXCL=-L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm $(LIB_SOUND)
-+#LDFLAGS_UNIXCL=-L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm $(LIB_SOUND)
- ifeq ($(DP_MAKE_TARGET), sunos)
- 	LDFLAGS_UNIXCL=-R$(UNIX_X11LIBPATH) -L$(UNIX_X11LIBPATH) -lX11 -lXext -lXxf86vm $(LIB_SOUND)
- else
- 	LDFLAGS_UNIXCL=-L$(UNIX_X11LIBPATH) -lX11 -lXext -lXxf86dga -lXxf86vm $(LIB_SOUND)
- endif
+-LDFLAGS_UNIXCL=-L$(UNIX_X11LIBPATH) -lX11 -lXext -lXxf86dga -lXxf86vm $(LIB_SOUND)
++LDFLAGS_UNIXCL=-L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm $(LIB_SOUND)
  
 -LDFLAGS_UNIXSDL=`sdl-config --libs`
 +LDFLAGS_UNIXSDL=`$(SDL_CONFIG) --libs`
  EXE_UNIXCL=darkplaces-glx
  EXE_UNIXSV=darkplaces-dedicated
  EXE_UNIXSDL=darkplaces-sdl
-@@ -195,7 +200,7 @@
+@@ -193,7 +198,7 @@
  # Link
- LDFLAGS_MACOSXCL=$(LDFLAGS_UNIXCOMMON) -ldl $(LDFLAGS_UNIXCL)
+ LDFLAGS_MACOSXCL=$(LDFLAGS_UNIXCOMMON) -ldl -framework Carbon $(LIB_SOUND)
  LDFLAGS_MACOSXSV=$(LDFLAGS_UNIXCOMMON) -ldl
 -LDFLAGS_MACOSXSDL=$(LDFLAGS_UNIXCOMMON) -ldl `sdl-config --static-libs`
 +LDFLAGS_MACOSXSDL=$(LDFLAGS_UNIXCOMMON) -ldl `$(SDL_CONFIG) --static-libs`
  
  OBJ_AGL= builddate.c sys_linux.o vid_agl.o $(OBJ_SOUND) $(OBJ_CD) $(OBJ_COMMON)
  
-@@ -238,7 +243,7 @@
+@@ -240,7 +245,7 @@
  LDFLAGS_WINCOMMON=-lwinmm -lwsock32
  LDFLAGS_WINCL=$(LDFLAGS_WINCOMMON) -mwindows -luser32 -lgdi32 -ldxguid -ldinput -lcomctl32
  LDFLAGS_WINSV=$(LDFLAGS_WINCOMMON) -mconsole
@@ -63,7 +58,7 @@
  EXE_WINCL=darkplaces.exe
  EXE_WINSV=darkplaces-dedicated.exe
  EXE_WINSDL=darkplaces-sdl.exe
-@@ -330,40 +335,40 @@
+@@ -357,40 +362,40 @@
  	@echo "========== $(EXE) (debug) =========="
  	$(MAKE) $(EXE) \
  		DP_MAKE_TARGET=$(DP_MAKE_TARGET) DP_SOUND_API=$(DP_SOUND_API) \
