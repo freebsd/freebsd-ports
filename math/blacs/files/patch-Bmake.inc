@@ -31,11 +31,11 @@
  #  Name and location of the MPI library.
  #  -------------------------------------
 -   MPIdir = /usr/local/mpich
-+   MPIdir = @PREFIX@/mpich
++   MPIdir = @LOCALBASE@/mpich2
     MPILIBdir = $(MPIdir)/lib/
     MPIINCdir = $(MPIdir)/include
 -   MPILIB = $(MPILIBdir)/libmpich.a
-+   MPILIB = $(MPILIBdir)/libmpich.a $(MPILIBdir)/libpmpich.a
++   MPILIB = $(MPILIBdir)/libmpich.a
  
  #  -------------------------------------
  #  All libraries required by the tester.
