@@ -1,0 +1,15 @@
+--- install_conf/check4_functions.orig	Tue Jul 11 22:45:07 2006
++++ install_conf/check4_functions	Tue Jul 11 23:04:11 2006
+@@ -1042,9 +1042,9 @@
+ #	output - error message (if any)
+ check4_convert()
+ {
+-is_checked convert && return 0
+-check4_file convert --executable --path "/bin:/usr/bin:/usr/local/bin:/opt/bin"
+-[ $? -ne 0 ] && output="ImageMagic package was not installed. Please install it." && return 1
++#is_checked convert && return 0
++#check4_file convert --executable --path "/bin:/usr/bin:/usr/local/bin:/opt/bin"
++#[ $? -ne 0 ] && output="ImageMagic package was not installed. Please install it." && return 1
+ set_checked convert
+ return 0
+ }

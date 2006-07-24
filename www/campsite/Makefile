@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	campsite
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
+PORTSUBVERSION=	03
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTSUBVERSION}
 
 MAINTAINER=	koutek@o-k.cz
 COMMENT=	The free and open multilingual web publishing tool for news sites
 
-LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
-		idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gm4:${PORTSDIR}/devel/m4 \
 		pear:${PORTSDIR}/devel/pear
@@ -32,8 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_APACHE=	YES
 
-IGNORE_WITH_PHP=	5
-USE_PHP=	mysql curl pcre xml xmlrpc
+USE_PHP=	mysql curl pcre xml xmlrpc imagick gd session
 WANT_PHP_CLI=	YES
 USE_PHP_BUILD=	YES
 
