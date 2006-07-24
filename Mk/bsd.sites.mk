@@ -57,7 +57,7 @@ MASTER_SITE_APACHE+=	\
 	http://www.apache.org/dist/%SUBDIR%/ \
 	http://archive.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/apache/dist/%SUBDIR%/ \
-	ftp://ftp.pop-mg.com.br/pub/apache/dist/%SUBDIR%/ \
+	ftp://ftp.pop-mg.com.br/data/apache/dist/%SUBDIR%/ \
 	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.apache.de/mirrors/dev.apache.org/dist/%SUBDIR%/ \
@@ -76,7 +76,6 @@ MASTER_SITE_APACHE+=	\
 	ftp://ftp.chg.ru/pub/WWW/apache/dist/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/ \
 	ftp://ftp.flirble.org/pub/web/apache/dist/%SUBDIR%/ \
-	ftp://ftp.gbnet.net/pub/apache/dist/%SUBDIR%/ \
 	ftp://mirrors.rmplc.co.uk/pub/apache/%SUBDIR%/ \
 	ftp://apache.secsup.org/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.ccs.neu.edu/net/mirrors/Apache/dist/%SUBDIR%/ \
