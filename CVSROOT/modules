@@ -9154,6 +9154,7 @@ p5-Math-Matrix	ports/math/p5-Math-Matrix
 p5-Math-Pari	ports/math/p5-Math-Pari
 p5-Math-Random	ports/math/p5-Math-Random
 p5-Math-Random-MT	ports/math/p5-Math-Random-MT
+p5-Math-Random-MT-Auto	ports/math/p5-Math-Random-MT-Auto
 p5-Math-RandomOrg	ports/math/p5-Math-RandomOrg
 p5-Math-Round		ports/math/p5-Math-Round
 p5-Math-Round-Var	ports/math/p5-Math-Round-Var
