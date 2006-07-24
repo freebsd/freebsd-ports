@@ -1,0 +1,6 @@
+Emotion library is uses in e17 window manager as wrapper library for
+various multimedia engines. It features simplified and generalized
+interface and power.
+
+Author:	The Rasterman (Carsten Haitzler) <raster@rasterman.com>
+WWW:	http://www.enlightenment.org/

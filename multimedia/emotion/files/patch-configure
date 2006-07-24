@@ -1,0 +1,30 @@
+--- configure.orig	Tue Jul 18 17:40:53 2006
++++ configure	Tue Jul 18 17:41:01 2006
+@@ -21861,27 +21861,6 @@
+ _ACEOF
+ 
+ 
+-function vser
+-{
+-  v=$1
+-  VSTART=`echo $v | awk -F_ '{printf("%s", $1);}'`
+-  V1=`echo $VSTART | awk -F\. '{printf("%s", $1);}'`
+-  V2=`echo $VSTART | awk -F\. '{printf("%s", $2);}'`
+-  V3=`echo $VSTART | awk -F\. '{printf("%s", $3);}'`
+-  V4="0"
+-  VEND=`echo $v | awk -F_ '{printf("%s", $2);}'`
+-  if test -n "$VEND"; then
+-    V4=`echo $VEND | sed s/pre//`
+-  fi
+-  V3=$(( $V3 * 100  ));
+-  V2=$(( $V2 * 10000  ));
+-  V1=$(( $V1 * 1000000  ));
+-  V=$(( $V4 + $V3 + $V2 + $V1 ));
+-  echo $V
+-}
+-
+-
+-
+ # Check whether --with-eet-prefix or --without-eet-prefix was given.
+ if test "${with_eet_prefix+set}" = set; then
+   withval="$with_eet_prefix"
