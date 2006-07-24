@@ -8,8 +8,8 @@
 PORTNAME=	cwtexttf
 PORTVERSION=	1.2
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://ftp1.sinica.edu.tw/pub2/tex/cwTeX/cwTeX-TTF/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/cwTeX-TTF/
+MASTER_SITES=	http://ftp.wustl.edu/pub/FreeBSD/distfiles/ \
+		http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/
 DISTNAME=	cwtex-ttf
 
 MAINTAINER=	ports@FreeBSD.org
