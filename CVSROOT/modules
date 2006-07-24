@@ -2692,6 +2692,7 @@ fpc-syslog	ports/sysutils/fpc-syslog
 fpc-tcl		ports/lang/fpc-tcl
 fpc-units	ports/lang/fpc-units
 fpc-unzip	ports/archivers/fpc-unzip
+fpc-utils	ports/lang/fpc-utils
 fpc-utmp	ports/sysutils/fpc-utmp
 fpc-x11		ports/x11/fpc-x11
 fpc-zlib	ports/devel/fpc-zlib
