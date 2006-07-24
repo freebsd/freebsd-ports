@@ -26,6 +26,7 @@
     SUBDIR += dvdstyler
     SUBDIR += dvdwizard
     SUBDIR += dvts
+    SUBDIR += emotion
     SUBDIR += emovix
     SUBDIR += enjoympeg
     SUBDIR += exportvideo

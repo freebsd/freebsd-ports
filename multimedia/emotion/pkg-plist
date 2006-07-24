@@ -1,0 +1,18 @@
+bin/emotion-config
+bin/emotion_test
+include/Emotion.h
+%%GST%%lib/emotion/emotion_decoder_gstreamer.a
+%%GST%%lib/emotion/emotion_decoder_gstreamer.la
+%%GST%%lib/emotion/emotion_decoder_gstreamer.so
+%%XINE%%lib/emotion/emotion_decoder_xine.a
+%%XINE%%lib/emotion/emotion_decoder_xine.la
+%%XINE%%lib/emotion/emotion_decoder_xine.so
+lib/libemotion.a
+lib/libemotion.la
+lib/libemotion.so
+lib/libemotion.so.0
+libdata/pkgconfig/emotion.pc
+%%DATADIR%%/data/theme.edj
+@dirrmtry share/emotion/data
+@dirrmtry share/emotion
+@dirrmtry lib/emotion
