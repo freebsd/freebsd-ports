@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvs2p4
-PORTVERSION=	2.4
+PORTVERSION=	2.5.5
 CATEGORIES+=	devel
 MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/cvs2p4/
 EXTRACT_SUFX=	.tar
