@@ -17,17 +17,12 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/	\
 		http://ftp.horde.org/pub/horde/
-.if defined(WITH_PHP5)
-PKGNAMESUFFIX=	-php5
-.endif
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A common code-base used by Horde applications, written in PHP
 
 #----------------------------------------------------------------------------
 # You may define these options:
-#
-# - WITH_PHP5: 		if you run PHP5 (you could use www/horde-php5).
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree.
 #
