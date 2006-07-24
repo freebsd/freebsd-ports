@@ -8,7 +8,7 @@
 PORTNAME=	linux-ut
 PORTVERSION=	451
 CATEGORIES=	games linux
-MASTER_SITES=	"http://liflg.org/?what=dl&catid=6&gameid=51&filename=":p436 \
+MASTER_SITES=	http://liflg.org/?what=dl\&catid=6\&gameid=51\&filename=/:p436 \
 		http://www.utpg.org/patches/:p451
 DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
