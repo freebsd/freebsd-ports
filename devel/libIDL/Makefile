@@ -3,11 +3,10 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/devel/libIDL/Makefile,v 1.5 2006/07/24 14:11:11 ahze Exp $
 
 PORTNAME=	libIDL
-PORTVERSION=	0.8.6
-PORTREVISION=	2
+PORTVERSION=	0.8.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
