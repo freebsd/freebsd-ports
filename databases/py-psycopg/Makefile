@@ -8,8 +8,7 @@
 PORTNAME=	psycopg
 PORTVERSION=	1.1.21
 CATEGORIES=	databases python
-MASTER_SITES=	http://initd.org/pub/software/psycopg/ \
-		http://initd.org/pub/software/psycopg/PSYCOPG-1-1/
+MASTER_SITES=	http://initd.org/pub/software/psycopg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	psycopg-${PORTVERSION}
 
