@@ -1,0 +1,32 @@
+bin/ppdep
+bin/ptop
+bin/rstconv
+bin/data2inc
+bin/delp
+bin/bin2obj
+bin/postw32
+bin/fpcmake
+bin/plex
+bin/pyacc
+bin/h2pas
+bin/h2paspp
+bin/fprcp
+bin/fpdoc
+bin/makeskel
+bin/unitdiff
+bin/fpcres
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/lexlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/yacclib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/lexlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/yacclib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/libplexlib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/libpyacclib.a
+lib/fpc/lexyacc/yyparse.cod
+lib/fpc/lexyacc/yylex.cod
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrm lib/fpc/lexyacc
+@dirrmtry lib/fpc
