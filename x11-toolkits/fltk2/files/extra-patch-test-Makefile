@@ -1,0 +1,10 @@
+--- test/Makefile.orig	Fri Jul  7 19:25:42 2006
++++ test/Makefile	Fri Jul  7 19:26:04 2006
+@@ -119,7 +119,6 @@
+ 	bitmap$(EXEEXT) \
+ 	boxtype$(EXEEXT) \
+ 	browser$(EXEEXT) \
+-	cairo$(EXEEXT) \
+ 	checkers$(EXEEXT) \
+ 	clock$(EXEEXT) \
+ 	button$(EXEEXT) \

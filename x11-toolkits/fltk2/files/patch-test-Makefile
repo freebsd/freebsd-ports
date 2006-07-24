@@ -4,17 +4,9 @@ connection when building these programs and fails when it cannot
 do so.
 
 The issue is known and probably a fluid2 bug, see FLTK2 STR #1302.
---- test/Makefile.orig	Fri May 12 22:16:29 2006
-+++ test/Makefile	Mon Jun  5 14:44:17 2006
-@@ -142,7 +142,6 @@
- 	image$(EXEEXT) \
- 	inactive$(EXEEXT) \
- 	input$(EXEEXT) \
--	keyboard$(EXEEXT) \
- 	label$(EXEEXT) \
- 	line_style$(EXEEXT) \
- 	list_visuals$(EXEEXT) \
-@@ -155,7 +154,6 @@
+--- test/Makefile.orig	Fri Jul  7 19:38:14 2006
++++ test/Makefile	Fri Jul  7 19:38:14 2006
+@@ -156,7 +156,6 @@
  	pack$(EXEEXT) \
  	pixmap$(EXEEXT) \
  	progress$(EXEEXT) \
@@ -22,7 +14,7 @@ The issue is known and probably a fluid2 bug, see FLTK2 STR #1302.
  	qubix$(EXEEXT) \
  	resizable$(EXEEXT) \
  	resizealign$(EXEEXT) \
-@@ -169,7 +167,6 @@
+@@ -170,7 +169,6 @@
  	timer$(EXEEXT) \
  	utf$(EXEEXT) \
  	fullscreen$(EXEEXT) \

@@ -137,6 +137,7 @@ include/fltk/StringList.h
 include/fltk/Style.h
 include/fltk/StyleSet.h
 include/fltk/Symbol.h
+include/fltk/SystemMenuBar.h
 include/fltk/TabGroup.h
 include/fltk/TextBuffer.h
 include/fltk/TextDisplay.h
@@ -164,15 +165,16 @@ include/fltk/error.h
 include/fltk/events.h
 include/fltk/file_chooser.h
 include/fltk/filename.h
+include/fltk/fltk_cairo.h
 include/fltk/forms.h
 include/fltk/gl.h
 include/fltk/gl2opengl.h
 include/fltk/glut.h
 include/fltk/layout.h
 include/fltk/load_plugin.h
-include/fltk/mac.h
 include/fltk/mac.r
 include/fltk/math.h
+include/fltk/osx.h
 include/fltk/pnmImage.h
 include/fltk/rgbImage.h
 include/fltk/run.h
@@ -183,6 +185,7 @@ include/fltk/utf.h
 include/fltk/visual.h
 include/fltk/win32.h
 include/fltk/x.h
+include/fltk/x11.h
 include/fltk/xbmImage.h
 include/fltk/xpmImage.h
 @dirrm include/fltk
