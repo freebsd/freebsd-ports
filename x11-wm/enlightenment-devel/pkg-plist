@@ -112,6 +112,7 @@ include/enlightenment/e_prefix.h
 include/enlightenment/e_remember.h
 include/enlightenment/e_resist.h
 include/enlightenment/e_scrollframe.h
+include/enlightenment/e_sha1.h
 include/enlightenment/e_shelf.h
 include/enlightenment/e_signals.h
 include/enlightenment/e_slider.h
@@ -133,6 +134,7 @@ include/enlightenment/e_widget_entry.h
 include/enlightenment/e_widget_fileman.h
 include/enlightenment/e_widget_framelist.h
 include/enlightenment/e_widget_frametable.h
+include/enlightenment/e_widget_fsel.h
 include/enlightenment/e_widget_iconsel.h
 include/enlightenment/e_widget_ilist.h
 include/enlightenment/e_widget_image.h
@@ -140,6 +142,7 @@ include/enlightenment/e_widget_label.h
 include/enlightenment/e_widget_list.h
 include/enlightenment/e_widget_preview.h
 include/enlightenment/e_widget_radio.h
+include/enlightenment/e_widget_scrollframe.h
 include/enlightenment/e_widget_slider.h
 include/enlightenment/e_widget_table.h
 include/enlightenment/e_widget_textblock.h
@@ -212,6 +215,7 @@ lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.so
 %%DATADIR%%/data/input_methods/scim.imc
 %%DATADIR%%/data/input_methods/uim.imc
 %%DATADIR%%/data/other/applications.tar.gz
+%%DATADIR%%/data/other/efm_favorites.tar.gz
 %%DATADIR%%/data/other/icon_example.tar.gz
 %%DATADIR%%/data/themes/default.edj
 %%DATADIR%%/doc/documentation.html
