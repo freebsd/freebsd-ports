@@ -2326,6 +2326,7 @@ evolvotron	ports/graphics/evolvotron
 ewipe		ports/misc/ewipe
 ewl		ports/x11-toolkits/ewl
 exact		ports/mail/exact
+examine		ports/x11/examine
 excalibur-configuration	ports/devel/excalibur-configuration
 excido		ports/games/excido
 exctags		ports/devel/ctags
