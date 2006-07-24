@@ -7,7 +7,7 @@
 
 PORTNAME=	${REALNAME:L}
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foam
@@ -38,7 +38,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
 
 USE_GCC=	3.4+
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.4
 USE_GL=		yes
 REINPLACE_ARGS=	-i ""
 
@@ -91,19 +91,19 @@ DOCS=		README doc/Guides-a4 doc/Guides-usletter
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/lam7
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/lam7
 MAKE_ENV+=	WM_MPLIB=LAM LAM_ARCH_PATH=${LOCALBASE}
-MPICH_VER=	1.2.6
-LAM_VER=	`${GREP} LAM_VERSION ${LOCALBASE}/include/lam_config.h | ${AWK} '{print $$3}'`
+MPICH_VER=	1.0.4
+LAM_VER=	`${LOCALBASE}/bin/laminfo -version lam full | ${AWK} '{print $$2}'`
 MPI_LIB=	LAM
-PLIST_SUB+=	MPI="@comment " LAM="" LAM_VER=7.1.1
-IGNORE=		does not run with lam7 at the moment
+PLIST_SUB+=	MPI="@comment " LAM="" LAM_VER=${LAM_VERSION}
+#IGNORE=		does not run with lam7 at the moment
 .else	# TODO: add support for OpenMPI
-BUILD_DEPENDS+=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
-RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpirun:${PORTSDIR}/net/mpich
-MAKE_ENV+=	WM_MPLIB=MPICH MPICH_ARCH_PATH=${LOCALBASE}/mpich
-MPICH_VER=	`${LOCALBASE}/mpich/bin/mpichversion | ${HEAD} -1 | ${AWK} '{print $$3}'`
-LAM_VER=	7.1.1
+BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
+MAKE_ENV+=	WM_MPLIB=MPICH MPICH_ARCH_PATH=${LOCALBASE}/mpich2
+MPICH_VER=	`${LOCALBASE}/mpich2/bin/mpich2version --version`
+LAM_VER=	7.1.2
 MPI_LIB=	MPICH
-PLIST_SUB+=	MPI="" LAM="@comment " MPICH_VER=1.2.6
+PLIST_SUB+=	MPI="" LAM="@comment " MPICH_VER=${MPICH_VERSION}
 .endif
 
 .include <bsd.port.pre.mk>
@@ -120,7 +120,21 @@ TAR=		${LOCALBASE}/bin/bsdtar
 .if exists(${LOCALBASE}/bin/mico-config)
 MICO_VER=	`${LOCALBASE}/bin/mico-config --version`
 .else
-MICO_VER=	2.3.11
+MICO_VER=	2.3.12
+.endif
+
+.if defined(WITH_LAM)
+. if exists(${LOCALBASE}/bin/laminfo)
+LAM_VERSION!=	${LOCALBASE}/bin/laminfo -version lam full | ${AWK} '{print $$2}'
+. else
+LAM_VERSION=	${LAM_VER}
+. endif
+.else
+. if exists(${LOCALBASE}/mpich2/bin/mpich2version)
+MPICH_VERSION!=	${LOCALBASE}/mpich2/bin/mpich2version --version
+. else
+MPICH_VERSION=	${MPICH_VER}
+. endif
 .endif
 
 OSVERMAJ=	${OSREL:R}
