@@ -140,6 +140,7 @@
     SUBDIR += mtl
     SUBDIR += mtrxmath
     SUBDIR += mumps
+    SUBDIR += mumps-mpich
     SUBDIR += mupad
     SUBDIR += muparser
     SUBDIR += naturalmath
