@@ -7122,6 +7122,7 @@ multisync-syncml	ports/deskutils/multisync-syncml
 multitail	ports/sysutils/multitail
 multivideo	ports/graphics/multivideo
 mumps		ports/math/mumps
+mumps-mpich	ports/math/mumps-mpich
 munger		ports/lang/munger
 munin-main	ports/sysutils/munin-main
 munin-node	ports/sysutils/munin-node
