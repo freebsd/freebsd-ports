@@ -9,8 +9,7 @@
 PORTNAME=	Imager
 PORTVERSION=	0.52
 CATEGORIES=	graphics perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://www.eecs.umich.edu/~addi/perl/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
@@ -28,7 +27,8 @@ USE_FREETYPE=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 		IM_CFLAGS="${CFLAGS}" \
-		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype"
+		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype" \
+		IM_SUPPRESS_PROMPT=1
 
 .include "Makefile.man"
 
