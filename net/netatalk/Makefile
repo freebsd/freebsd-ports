@@ -7,7 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,14 +16,14 @@ MASTER_SITE_SUBDIR=	netatalk
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File and print server for AppleTalk networks
 
-LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
 .if defined(WITH_SRVLOC)
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 .endif
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_RC_SUBR=	yes
+USE_BDB=	41+
+USE_RC_SUBR=	netatalk
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
 			--with-libiconv=${LOCALBASE}
@@ -68,12 +68,11 @@ MAN8=		afpd.8 atalkd.8 cnid_dbd.8 cnid_metad.8 papd.8 papstatus.8 \
 		psf.8 timelord.8
 
 CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1*
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .if defined(WITH_SRVLOC)
-RC_SCRIPTS_SUB+=	SRVLOC="slpd"
+SUB_LIST+=	SRVLOC="slpd"
 .else
-RC_SCRIPTS_SUB+=	SRVLOC=""
+SUB_LIST+=	SRVLOC=""
 .endif
 
 pre-everything::
@@ -86,9 +85,9 @@ pre-everything::
 	@${ECHO_MSG} "See Netatalk's Makefile for more details on some of these options."
 	@${ECHO_MSG} ""
 
-post-extract:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/netatalk.sh > ${WRKSRC}/netatalk.sh
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%BDB_NAME%%|${BDB_INCLUDE_DIR:T}|' \
+		${WRKSRC}/configure
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
