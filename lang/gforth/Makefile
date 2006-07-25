@@ -6,89 +6,50 @@
 #
 
 PORTNAME=	gforth
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Fast and portable Forth system
-
-# BROKEN=	0.6.2 runtime does Segmentation Fault at compilation time !
-#		so, no update is planned right now... sorry.
-
-#ONLY_FOR_ARCHS=	i386 amd64 ia64
-
-# Global variables
-#
 
 STRIP=		#none
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS=${CFLAGS:N-O*:N-f*}
-MAKE_ENV=	CFLAGS=${CFLAGS:N-O*:N-f*}
+USE_GMAKE=	yes
 ALL_TARGET=	all info
+USE_GNOME=	gnometarget
+USE_EMACS=	yes
+EMACS_PORT_NAME?=	emacs22
+EMACS_NO_BUILD_DEPENDS=	yes
+EMACS_NO_RUN_DEPENDS=	yes
+
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
-		EMACS_DIR="${EMACS_DIR:S,^${PREFIX}/,,}" \
-		FORTH_DIR="${FORTH_DIR:S,^${PREFIX}/,,}" \
-		LIB_DIR="${LIB_DIR:S,^${PREFIX}/,,}" \
+		EMACS_DIR="${EMACS_SITE_LISPDIR}" \
 		WORDSIZE=${WORDSIZE} BYTEORDER=${BYTEORDER}
-
-MAN1=		gforth.1
-INFO=		gforth vmgen
-
-# Local variables
-#
-
-.if ${MACHINE_ARCH} == i386
-WORDSIZE=32
-.else
-WORDSIZE=64
-.endif
-
-.if ${MACHINE_ARCH} == sparc64
-BYTEORDER=b
-.else
-BYTEORDER=l
-.endif
 
 DOC_FILES=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
 		INSTALL INSTALL.BINDIST NEWS README \
 		NEWS.vmgen README.vmgen ToDo
 
-LIB_DIR=	${PREFIX}/lib/${PKGBASE}
+MAN1=		gforth.1
+INFO=		gforth vmgen
+PORTDOCS=	*
 
-EMACS_FILES=	gforth.el
-EMACS_DIR=	${PREFIX}/share/emacs/site-lisp
+.include <bsd.port.pre.mk>
 
-EMPTY_FILES=	siteinit.fs
-FORTH_DIR=	${DATADIR}/site-forth
+.if ${ARCH} == i386
+WORDSIZE=32
+.else
+WORDSIZE=64
+.endif
 
-EMPTY_DIRS=	generic hppa ia64 m68k power sparc
-EMPTY_DIRS+=	4stack 6502 8086 avr c165 h8 misc sharc shboom
-ARCH_DIR=	${DATADIR}/${PORTVERSION}/arch
-
-# Post-extract
-#
-
-post-extract: remove-info-files
-
-remove-info-files:
-	@${RM} -f ${WRKSRC}/doc/*.info*
-
-# Post-patch
-#
-
-post-patch: patch-makefiles
-
-patch-makefiles:
-	@${REINPLACE_CMD} -e 's|makeinfo|makeinfo --no-split|g' \
-		${WRKSRC}/Makefile.in
-
-#
-# Post-install
-#
+.if ${ARCH} == sparc64
+BYTEORDER=b
+.else
+BYTEORDER=l
+.endif
 
 post-install: install-doc install-el remove-empty-files remove-empty-dirs
 
@@ -100,21 +61,16 @@ install-doc:
 .endfor
 .endif
 
+# Install Emacs syntax file
 install-el:
-.for filename in ${EMACS_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${filename} ${EMACS_DIR}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/gforth.el ${PREFIX}/${EMACS_SITE_LISPDIR}
 
+# Remove unused file
 remove-empty-files:
-.for filename in ${EMPTY_FILES}
-	@${RM} -f ${FORTH_DIR}/${filename}
-.endfor
+	@${RM} -f ${DATADIR}/site-forth/siteinit.fs
 
+# Remove unused directories
 remove-empty-dirs:
-.for dir in ${EMPTY_DIRS}
-	@${RMDIR} ${ARCH_DIR}/${dir}
-.endfor
+	@${FIND} -d ${DATADIR}/${PORTVERSION}/arch/ -type d -empty -delete
 
-.include <bsd.port.mk>
-
-CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
+.include <bsd.port.post.mk>
