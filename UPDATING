@@ -145,7 +145,7 @@ upgrades.
   versions, you can end up with a portupgrade that does not work with
   older databases. A quick fix is to remove the databases, type:
   'rm /var/db/pkg/pkgdb.db /usr/ports/INDEX*.db'.
-  portupgrade will recreate them automaticaly. It does absolutely no harm.
+  portupgrade will recreate them automatically. It does absolutely no harm.
 
   If you do not want remove the databases, you should detect what database
   type do you use, and set the port options for portupgrade accordingly.
@@ -256,7 +256,7 @@ upgrades.
   linux programs, else FreeBSD libraries will be picked up and the
   programs do not start.
 
-  After this start a linux program to test, e.g., acrorread. If you get
+  After this start a linux program to test, e.g., acroread. If you get
   errors when starting linux programs about problems with libraries, and
   you made sure no LD_* variable is set as described above, you are one of
   those unlucky people where we do not have a better solution as to tell
@@ -303,7 +303,7 @@ upgrades.
   STARTTLS support on smtpd and pop3d, if you want to use it, you need to
   install sysutils/ucspi-ssl-tls port that has the necessary patch applied.
 
-  Remember to select STDERR option and rebuils security/clamav port, this is
+  Remember to select STDERR option and rebuild security/clamav port, this is
   necessary to have the correct log on smtpd.
 
   After upgrade from 2.3.x you will need to set environment var SMTPAUTH to
@@ -616,7 +616,7 @@ portupgrade -a
 
   When a port has USE_BDB defined as either 'USE_BDB=41+' or 'USE_BDB=yes', the
   port will use the oldest installed version of Berkeley DB. For example if
-  both db41 and db43 are installed, the port would end up compling with db41.
+  both db41 and db43 are installed, the port would end up compiling with db41.
   If you add -DWITH_BDB_HIGHEST to your make command, the port will use highest
   db* instead. If no Berkeley DB is installed then the port will default to the
   version specified or the default Berkeley DB version (currently db41).
@@ -767,8 +767,8 @@ portupgrade -a
   AFFECTS: net-im/jabber-pyicq and net-im/jabber-pymsn
   AUTHOR: garga@FreeBSD.org
 
-  Port versions older than 0.7 and 0.11a respectivly run as root which
-  is an uneeded security risk.  Newer versions run as as user jabber,
+  Port versions older than 0.7 and 0.11a respectively run as root which
+  is an unneeded security risk.  Newer versions run as as user jabber,
   so before starting the daemons, you should fix permissions for each
   spooldir (default: /var/spool/jabber):
 
@@ -860,7 +860,7 @@ portupgrade -a
                 mxdcc   ip      10.7.8.9
   "MX" marks the IP address of one of your mail systems that should be ignored
   in initial Received: headers and when reported by sendmail to dccm. "MXDCC"
-  marks IP addresss of your mail systems that run DCC clients and that will have
+  marks IP addresses of your mail systems that run DCC clients and that will have
   already reported mail to the DCC. Continue using "OK" whitelist entries for
   mail systems that you trust to never send or forward unsolicited bulk email.
   Allow custom DNS blacklist SMTP rejection messages. See -Bset:rej-msg=X in the
@@ -2415,7 +2415,7 @@ portupgrade -a
   AFFECTS: users of x11-wm/xfce4
   AUTHOR: oliver@FreeBSD.org
 
-  If you use Xorg 6.8.1: Make shure there is an /tmp/.ICE-unix with propper
+  If you use Xorg 6.8.1: Make sure there is an /tmp/.ICE-unix with propper
   rights. For further informations about that, please refer to 20041229
   Please update all your plugins as well when you update from 4.0.6 to 4.2
   They all need recompiling to link against the new xfce libraries
