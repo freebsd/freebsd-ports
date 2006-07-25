@@ -16,6 +16,7 @@ www/pfw/lib/packetfilter/scrub.class.php
 www/pfw/lib/packetfilter/table.class.php
 www/pfw/test/packetfilter/unit/FilterTest.php
 www/pfw/test/packetfilter/unit/NatTest.php
+www/pfw/test/packetfilter/unit/OptionsTest.php
 www/pfw/web/global_config/index.php
 www/pfw/web/global_config/pfhosts.php
 www/pfw/web/global_config/pfhostsedit.php
