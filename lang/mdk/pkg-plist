@@ -8,5 +8,4 @@ bin/mixvm
 %%DATADIR%%/mixguile-vm-stat.scm
 %%DATADIR%%/mixguile.scm
 %%DATADIR%%/mixvm.el
-share/locale/de/LC_MESSAGES/mdk.mo
 @dirrm %%DATADIR%%
