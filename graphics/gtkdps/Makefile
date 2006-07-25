@@ -6,30 +6,38 @@
 #
 
 PORTNAME=	gtkdps
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.4
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gtkDPS/
+MASTER_SITES=	ftp://ftp.gyve.org/pub/gtkDPS/	\
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	gtkDPS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
-BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
-RUN_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
-
-BROKEN=		Unfetchable
+LIB_DEPENDS+=	dpstk.0:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 post-patch:

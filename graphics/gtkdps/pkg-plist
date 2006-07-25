@@ -16,4 +16,5 @@ lib/libgtkDPS.a
 lib/libgtkDPS.so
 lib/libgtkDPS.so.1
 share/aclocal/gtkDPS.m4
+%%NLS%%share/locale/ja/LC_MESSAGES/gtkDPS.mo
 @dirrm include/gtkDPS
