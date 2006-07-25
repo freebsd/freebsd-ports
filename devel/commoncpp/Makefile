@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	commoncpp2
-PORTVERSION=	1.3.21
-PORTREVISION=	1
+PORTNAME=	commoncpp
+PORTVERSION=	1.4.2
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnutelephony
+DISTNAME=	${PORTNAME:S/$/2/}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
 
 USE_GNOME=	gnomehack gnometarget
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--without-libxml2
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_DOXYGEN=no
 INSTALLS_SHLIB=	yes
