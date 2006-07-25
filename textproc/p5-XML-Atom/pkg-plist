@@ -11,5 +11,5 @@
 %%SITE_PERL%%/XML/Atom/Server.pm
 %%SITE_PERL%%/XML/Atom/Thing.pm
 %%SITE_PERL%%/XML/Atom/Util.pm
-@dirrm %%SITE_PERL%%/XML/Atom
+@dirrmtry %%SITE_PERL%%/XML/Atom
 @dirrmtry %%SITE_PERL%%/XML
