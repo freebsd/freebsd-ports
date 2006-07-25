@@ -9,8 +9,11 @@ CATEGORIES=	mail
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-SMTP_AFTER_POP3=	yes
+WITH_SMTP_AFTER_POP3=	yes
 MASTERDIR?=	${.CURDIR}/../popa3d
+
+OPTIONS?=	STANDALONE_POP3 "Unattended server mode" off \
+		SMTP_AFTER_POP3 "Enable SMTP-after-POP mode" on
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
