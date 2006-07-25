@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtunepimp
-DISTVERSION=	0.4.2
+DISTVERSION=	0.5.0
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/
@@ -16,7 +16,7 @@ COMMENT=	Python bindings for libtunepimp
 
 BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-LIB_DEPENDS=	tunepimp.3:${PORTSDIR}/audio/libtunepimp
+LIB_DEPENDS=	tunepimp.5:${PORTSDIR}/audio/libtunepimp
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
