@@ -1,10 +1,5 @@
 %%SITE_PERL%%/Catalyst/Helper/View/HTML/Template/Compiled.pm
 %%SITE_PERL%%/Catalyst/View/HTML/Template/Compiled.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/HTML/Template/Compiled/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/HTML/Template/Compiled
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/HTML/Template
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/HTML/Template
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/HTML
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
