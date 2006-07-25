@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Baseball/NPB/.packlist
+%%SITE_PERL%%/WWW/Baseball/NPB.pm
+%%SITE_PERL%%/WWW/Baseball/NPB/Game.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Baseball/NPB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Baseball
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Baseball/NPB
+@dirrmtry %%SITE_PERL%%/WWW/Baseball
+@dirrmtry %%SITE_PERL%%/WWW
