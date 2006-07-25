@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqstat
-PORTVERSION=	0.9.5
+PORTVERSION=	1.10
 CATEGORIES=	www
 MASTER_SITES=	http://samm.kiev.ua/sqstat/
 
@@ -24,8 +24,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_LIST=	SQSTATDIR=${SQSTATDIR}
 
 PLIST_DIRS=	${SQSTATDIR}
-PLIST_FILES=	${SQSTATDIR}/sqstat.css ${SQSTATDIR}/sqstat.php
-PORTDOCS=	CHANGES LICENSE README TODO
+PLIST_FILES=	${SQSTATDIR}/arrow.gif ${SQSTATDIR}/sqstat.class.php \
+		${SQSTATDIR}/sqstat.css ${SQSTATDIR}/sqstat.php \
+		${SQSTATDIR}/zhabascript.js \
+		${SQSTATDIR}/config.inc.php.defaults
+PORTDOCS=	CHANGES FAQ LICENSE README TODO
 
 do-install:
 	@${MKDIR} ${PREFIX}/${SQSTATDIR}; \
@@ -35,7 +38,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}; \
 	for f in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/docs/$$f ${DOCSDIR}; \
 	done
 .endif
 
