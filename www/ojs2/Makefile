@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ojs2
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://pkp.sfu.ca/ojs/download/
-DISTNAME=	ojs-2.1.0-1
+DISTNAME=	ojs-2.1.1
 
 MAINTAINER=	filiperocha@gmail.com
 COMMENT=	Open Journal Systems
@@ -17,7 +17,7 @@ COMMENT=	Open Journal Systems
 DIST_SUBDIR=	${PORTNAME}
 
 NO_BUILD=	yes
-USE_PHP=
+USE_PHP=	mbstring
 WANT_PHP_WEB=	yes
 
 OJSDIR?=	www/ojs2
