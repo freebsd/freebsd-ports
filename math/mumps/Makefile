@@ -18,14 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 
 BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran
-.ifdef WITH_MPI
-BUILD_DEPENDS+=	${LOCALBASE}/mpich/include/mpif.h:${PORTSDIR}/net/mpich \
-		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack	\
-		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs
-.endif
-.ifdef WITH_METIS
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
-.endif
 
 #-----------------------------------------------------------------------
 
@@ -65,7 +57,29 @@ BLAS_LIBS?=	-lblas
 .endif
 
 .ifdef WITH_METIS
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
 MAKE_ENV+=	ORDERINGSF=-Dmetis
+.endif
+
+PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/mpich2/bin/mpicc) && !defined(WITHOUT_MPI)
+WITH_MPI=	yes
+.endif
+.ifdef WITH_MPI
+PKGNAMESUFFIX+=		-mpich
+BUILD_DEPENDS+=	${LOCALBASE}/mpich2/include/mpif.h:${PORTSDIR}/net/mpich2 \
+		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
+		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
+# Note: -l?mumps still requires to be linked with -lblacs + -lscalapack
+RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2 \
+		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
+		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
+CONFLICTS=	mumps-4*
+.else
+CONFLICTS=	mumps-mpich-4*
 .endif
 
 .ifndef WITH_MPI
@@ -73,7 +87,6 @@ PLIST_SUB+=	WITH_LIBSEQ=""
 .else
 PLIST_SUB+=	WITH_LIBSEQ="@comment "
 .endif
-PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
 
 post-patch:
 .ifdef WITH_MPI
@@ -109,4 +122,34 @@ do-install:
 	${GZIP_CMD} ${DOCSDIR}/userguide_${PORTVERSION}.ps
 .endif
 
-.include <bsd.port.mk>
+.if defined(MAINTAINER_MODE)
+regression-test:
+. if defined (WITH_MPI)
+.  if !exists(${HOME}/.mpd.conf)
+	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${HOME}/.mpd.conf
+	${CHMOD} go-r ${HOME}/.mpd.conf
+	@${ECHO_MSG} "${HOME}/.mpd.conf has been generated - please change the secret word!"
+.  endif
+	${LOCALBASE}/mpich2/bin/mpd &
+	(cd ${WRKSRC}/test &&	\
+	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./ssimpletest < input_simpletest_real ;	\
+	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./dsimpletest < input_simpletest_real ;	\
+	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./csimpletest < input_simpletest_cmplx ;	\
+	${LOCALBASE}/mpich2/bin/mpirun -np 2 ./zsimpletest < input_simpletest_cmplx ;	\
+	${ECHO_MSG} "The solution should be (1,2,3,4,5)" ;	\
+	${LOCALBASE}/mpich2/bin/mpirun -np 3 ./c_example ;	\
+	${ECHO_MSG} "The solution should be (1,2)")
+	${LOCALBASE}/mpich2/bin/mpdallexit
+. else
+	(cd ${WRKSRC}/test &&	\
+	./ssimpletest < input_simpletest_real ;			\
+	./dsimpletest < input_simpletest_real ;			\
+	./csimpletest < input_simpletest_cmplx ;		\
+	./zsimpletest < input_simpletest_cmplx ;		\
+	${ECHO_MSG} "The solution should be (1,2,3,4,5)" ;	\
+	./c_example ;						\
+	${ECHO_MSG} "The solution should be (1,2)")
+. endif
+.endif
+
+.include <bsd.port.post.mk>
