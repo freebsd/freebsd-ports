@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	350
+PORTVERSION=	351
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -24,7 +24,7 @@ COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+		--x-libraries=${X11BASE}/lib --enable-lt=${LIBTOOL}
 
 WRKSRC=		${WRKDIR}/plt/src
 USE_LDCONFIG=	yes

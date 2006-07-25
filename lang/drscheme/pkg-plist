@@ -18,11 +18,11 @@
 %%MMM%%bin/slideshow3m
 %%MMM%%bin/swindle3m
 %%MMM%%bin/tex2page3m
-%%MMM%%lib/libmred3m-350.so
+%%MMM%%lib/libmred3m-351.so
 %%MMM%%lib/libmred3m.a
 %%MMM%%lib/libmred3m.la
 %%MMM%%lib/libmred3m.so
-%%MMM%%lib/libmzscheme3m-350.so
+%%MMM%%lib/libmzscheme3m-351.so
 %%MMM%%lib/libmzscheme3m.a
 %%MMM%%lib/libmzscheme3m.la
 %%MMM%%lib/libmzscheme3m.so
@@ -62,15 +62,15 @@ include/plt/schvers.h
 include/plt/sconfig.h
 include/plt/stypes.h
 include/plt/uconfig.h
-lib/libmred-350.so
+lib/libmred-351.so
 lib/libmred.a
 lib/libmred.la
 lib/libmred.so
-lib/libmzgc-350.so
+lib/libmzgc-351.so
 lib/libmzgc.a
 lib/libmzgc.la
 lib/libmzgc.so
-lib/libmzscheme-350.so
+lib/libmzscheme-351.so
 lib/libmzscheme.a
 lib/libmzscheme.la
 lib/libmzscheme.so
@@ -1559,6 +1559,8 @@ lib/plt/collects/help/servlets/compiled/resources.dep
 lib/plt/collects/help/servlets/compiled/resources.zo
 lib/plt/collects/help/servlets/compiled/results.dep
 lib/plt/collects/help/servlets/compiled/results.zo
+lib/plt/collects/help/servlets/compiled/teachpacks.dep
+lib/plt/collects/help/servlets/compiled/teachpacks.zo
 lib/plt/collects/help/servlets/doc-anchor.ss
 lib/plt/collects/help/servlets/doc-content.ss
 lib/plt/collects/help/servlets/doc-message.ss
@@ -1677,6 +1679,7 @@ lib/plt/collects/help/servlets/scheme/misc/script.ss
 lib/plt/collects/help/servlets/scheme/misc/standalone.ss
 lib/plt/collects/help/servlets/scheme/misc/system.ss
 lib/plt/collects/help/servlets/scheme/what.ss
+lib/plt/collects/help/servlets/teachpacks.ss
 lib/plt/collects/help/web-root/conf/forbidden.html
 lib/plt/collects/help/web-root/conf/not-found.html
 lib/plt/collects/help/web-root/conf/passwords-refresh.html
@@ -1696,44 +1699,47 @@ lib/plt/collects/hierlist/hierlist-sig.ss
 lib/plt/collects/hierlist/hierlist-unit.ss
 lib/plt/collects/hierlist/hierlist.ss
 lib/plt/collects/hierlist/info.ss
+lib/plt/collects/htdch/colors/Black.java
+lib/plt/collects/htdch/colors/Blue.java
+lib/plt/collects/htdch/colors/Color.java
+lib/plt/collects/htdch/colors/Green.java
+lib/plt/collects/htdch/colors/Red.java
+lib/plt/collects/htdch/colors/White.java
+lib/plt/collects/htdch/colors/Yellow.java
+lib/plt/collects/htdch/colors/compiled/Black.jinfo
+lib/plt/collects/htdch/colors/compiled/Black.zo
+lib/plt/collects/htdch/colors/compiled/Blue.jinfo
+lib/plt/collects/htdch/colors/compiled/Blue.zo
+lib/plt/collects/htdch/colors/compiled/Color.jinfo
+lib/plt/collects/htdch/colors/compiled/Color.zo
+lib/plt/collects/htdch/colors/compiled/Green.jinfo
+lib/plt/collects/htdch/colors/compiled/Green.zo
+lib/plt/collects/htdch/colors/compiled/Red.jinfo
+lib/plt/collects/htdch/colors/compiled/Red.zo
+lib/plt/collects/htdch/colors/compiled/White.jinfo
+lib/plt/collects/htdch/colors/compiled/White.zo
+lib/plt/collects/htdch/colors/compiled/Yellow.jinfo
+lib/plt/collects/htdch/colors/compiled/Yellow.zo
+lib/plt/collects/htdch/colors/compiled/info.dep
+lib/plt/collects/htdch/colors/compiled/info.zo
+lib/plt/collects/htdch/colors/compiled/installer.dep
+lib/plt/collects/htdch/colors/compiled/installer.zo
+lib/plt/collects/htdch/colors/info.ss
+lib/plt/collects/htdch/colors/installer.ss
 lib/plt/collects/htdch/compiled/info.dep
 lib/plt/collects/htdch/compiled/info.zo
-lib/plt/collects/htdch/draw/Black.java
-lib/plt/collects/htdch/draw/Blue.java
 lib/plt/collects/htdch/draw/Canvas-native-methods.ss
 lib/plt/collects/htdch/draw/Canvas.java
-lib/plt/collects/htdch/draw/Color.java
-lib/plt/collects/htdch/draw/Green.java
-lib/plt/collects/htdch/draw/Posn.java
-lib/plt/collects/htdch/draw/Red.java
-lib/plt/collects/htdch/draw/White.java
 lib/plt/collects/htdch/draw/World-native-methods.ss
 lib/plt/collects/htdch/draw/World.java
-lib/plt/collects/htdch/draw/Yellow.java
-lib/plt/collects/htdch/draw/compiled/Black.jinfo
-lib/plt/collects/htdch/draw/compiled/Black.zo
-lib/plt/collects/htdch/draw/compiled/Blue.jinfo
-lib/plt/collects/htdch/draw/compiled/Blue.zo
 lib/plt/collects/htdch/draw/compiled/Canvas-native-methods.dep
 lib/plt/collects/htdch/draw/compiled/Canvas-native-methods.zo
 lib/plt/collects/htdch/draw/compiled/Canvas.jinfo
 lib/plt/collects/htdch/draw/compiled/Canvas.zo
-lib/plt/collects/htdch/draw/compiled/Color.jinfo
-lib/plt/collects/htdch/draw/compiled/Color.zo
-lib/plt/collects/htdch/draw/compiled/Green.jinfo
-lib/plt/collects/htdch/draw/compiled/Green.zo
-lib/plt/collects/htdch/draw/compiled/Posn.jinfo
-lib/plt/collects/htdch/draw/compiled/Posn.zo
-lib/plt/collects/htdch/draw/compiled/Red.jinfo
-lib/plt/collects/htdch/draw/compiled/Red.zo
-lib/plt/collects/htdch/draw/compiled/White.jinfo
-lib/plt/collects/htdch/draw/compiled/White.zo
 lib/plt/collects/htdch/draw/compiled/World-native-methods.dep
 lib/plt/collects/htdch/draw/compiled/World-native-methods.zo
 lib/plt/collects/htdch/draw/compiled/World.jinfo
 lib/plt/collects/htdch/draw/compiled/World.zo
-lib/plt/collects/htdch/draw/compiled/Yellow.jinfo
-lib/plt/collects/htdch/draw/compiled/Yellow.zo
 lib/plt/collects/htdch/draw/compiled/info.dep
 lib/plt/collects/htdch/draw/compiled/info.zo
 lib/plt/collects/htdch/draw/compiled/installer.dep
@@ -1747,6 +1753,15 @@ lib/plt/collects/htdch/draw/info.ss
 lib/plt/collects/htdch/draw/installer.ss
 lib/plt/collects/htdch/draw/pre-installer.ss
 lib/plt/collects/htdch/draw/support.scm
+lib/plt/collects/htdch/geometry/Posn.java
+lib/plt/collects/htdch/geometry/compiled/Posn.jinfo
+lib/plt/collects/htdch/geometry/compiled/Posn.zo
+lib/plt/collects/htdch/geometry/compiled/info.dep
+lib/plt/collects/htdch/geometry/compiled/info.zo
+lib/plt/collects/htdch/geometry/compiled/installer.dep
+lib/plt/collects/htdch/geometry/compiled/installer.zo
+lib/plt/collects/htdch/geometry/info.ss
+lib/plt/collects/htdch/geometry/installer.ss
 lib/plt/collects/htdch/graphics/Black.java
 lib/plt/collects/htdch/graphics/Blue.java
 lib/plt/collects/htdch/graphics/Brown.java
@@ -1778,12 +1793,26 @@ lib/plt/collects/htdch/graphics/compiled/Brown.jinfo
 lib/plt/collects/htdch/graphics/compiled/Brown.zo
 lib/plt/collects/htdch/graphics/compiled/Color.jinfo
 lib/plt/collects/htdch/graphics/compiled/Color.zo
+lib/plt/collects/htdch/graphics/compiled/Command.jinfo
+lib/plt/collects/htdch/graphics/compiled/Command.zo
+lib/plt/collects/htdch/graphics/compiled/CommandSequence.jinfo
+lib/plt/collects/htdch/graphics/compiled/CommandSequence.zo
+lib/plt/collects/htdch/graphics/compiled/DrawImage.jinfo
+lib/plt/collects/htdch/graphics/compiled/DrawImage.zo
+lib/plt/collects/htdch/graphics/compiled/DrawLine.jinfo
+lib/plt/collects/htdch/graphics/compiled/DrawLine.zo
+lib/plt/collects/htdch/graphics/compiled/DrawRectangle.jinfo
+lib/plt/collects/htdch/graphics/compiled/DrawRectangle.zo
+lib/plt/collects/htdch/graphics/compiled/EmptySeq.jinfo
+lib/plt/collects/htdch/graphics/compiled/EmptySeq.zo
 lib/plt/collects/htdch/graphics/compiled/GameWorld.jinfo
 lib/plt/collects/htdch/graphics/compiled/GameWorld.zo
 lib/plt/collects/htdch/graphics/compiled/Green.jinfo
 lib/plt/collects/htdch/graphics/compiled/Green.zo
 lib/plt/collects/htdch/graphics/compiled/Image.jinfo
 lib/plt/collects/htdch/graphics/compiled/Image.zo
+lib/plt/collects/htdch/graphics/compiled/LargerSeq.jinfo
+lib/plt/collects/htdch/graphics/compiled/LargerSeq.zo
 lib/plt/collects/htdch/graphics/compiled/Orange.jinfo
 lib/plt/collects/htdch/graphics/compiled/Orange.zo
 lib/plt/collects/htdch/graphics/compiled/PictureFactory.jinfo
@@ -1796,6 +1825,7 @@ lib/plt/collects/htdch/graphics/compiled/Red.jinfo
 lib/plt/collects/htdch/graphics/compiled/Red.zo
 lib/plt/collects/htdch/graphics/compiled/View.jinfo
 lib/plt/collects/htdch/graphics/compiled/View.zo
+lib/plt/collects/htdch/graphics/compiled/View-composite.zo
 lib/plt/collects/htdch/graphics/compiled/White.jinfo
 lib/plt/collects/htdch/graphics/compiled/White.zo
 lib/plt/collects/htdch/graphics/compiled/World.jinfo
@@ -1814,7 +1844,6 @@ lib/plt/collects/htdch/graphics/installer.ss
 lib/plt/collects/htdch/graphics/rename.ss
 lib/plt/collects/htdch/idraw/Canvas-native-methods.ss
 lib/plt/collects/htdch/idraw/Canvas.java
-lib/plt/collects/htdch/idraw/Color.java
 lib/plt/collects/htdch/idraw/World-native-methods.ss
 lib/plt/collects/htdch/idraw/World.java
 lib/plt/collects/htdch/idraw/compiled/Canvas-native-methods.dep
@@ -3619,6 +3648,13 @@ lib/plt/collects/profj/libs/java/lang/info.ss
 lib/plt/collects/profj/libs/java/lang/installer.ss
 lib/plt/collects/profj/libs/java/lang/mz.ss
 lib/plt/collects/profj/libs/java/runtime.scm
+lib/plt/collects/profj/libs/java/tester/TestBase.djava
+lib/plt/collects/profj/libs/java/tester/compiled/TestBase.jinfo
+lib/plt/collects/profj/libs/java/tester/compiled/TestBase.zo
+lib/plt/collects/profj/libs/java/tester/compiled/installer.dep
+lib/plt/collects/profj/libs/java/tester/compiled/installer.zo
+lib/plt/collects/profj/libs/java/tester/info.ss
+lib/plt/collects/profj/libs/java/tester/installer.ss
 lib/plt/collects/profj/libs/java/util/Random.java
 lib/plt/collects/profj/libs/java/util/compiled/Random.jinfo
 lib/plt/collects/profj/libs/java/util/compiled/Random.zo
@@ -3802,6 +3838,7 @@ lib/plt/collects/sgl/compiled/make-gl-info.dep
 lib/plt/collects/sgl/compiled/make-gl-info.zo
 lib/plt/collects/sgl/compiled/makefile.dep
 lib/plt/collects/sgl/compiled/makefile.zo
+%%MMM%%lib/plt/collects/sgl/compiled/native/i386-freebsd/3m/make-gl-info-helper.so
 lib/plt/collects/sgl/compiled/native/i386-freebsd/make-gl-info-helper.so
 lib/plt/collects/sgl/compiled/sgl.dep
 lib/plt/collects/sgl/compiled/sgl.zo
@@ -4006,6 +4043,36 @@ lib/plt/collects/srfi/31.ss
 lib/plt/collects/srfi/31/compiled/rec.dep
 lib/plt/collects/srfi/31/compiled/rec.zo
 lib/plt/collects/srfi/31/rec.ss
+lib/plt/collects/srfi/32.ss
+lib/plt/collects/srfi/32/compiled/delndups.dep
+lib/plt/collects/srfi/32/compiled/delndups.zo
+lib/plt/collects/srfi/32/compiled/lmsort.dep
+lib/plt/collects/srfi/32/compiled/lmsort.zo
+lib/plt/collects/srfi/32/compiled/sort.dep
+lib/plt/collects/srfi/32/compiled/sort.zo
+lib/plt/collects/srfi/32/compiled/sortp.dep
+lib/plt/collects/srfi/32/compiled/sortp.zo
+lib/plt/collects/srfi/32/compiled/vbinsearch.dep
+lib/plt/collects/srfi/32/compiled/vbinsearch.zo
+lib/plt/collects/srfi/32/compiled/vector-util.dep
+lib/plt/collects/srfi/32/compiled/vector-util.zo
+lib/plt/collects/srfi/32/compiled/vhsort.dep
+lib/plt/collects/srfi/32/compiled/vhsort.zo
+lib/plt/collects/srfi/32/compiled/visort.dep
+lib/plt/collects/srfi/32/compiled/visort.zo
+lib/plt/collects/srfi/32/compiled/vmsort.dep
+lib/plt/collects/srfi/32/compiled/vmsort.zo
+lib/plt/collects/srfi/32/delndups.scm
+lib/plt/collects/srfi/32/lmsort.scm
+lib/plt/collects/srfi/32/sort.scm
+lib/plt/collects/srfi/32/sort.txt
+lib/plt/collects/srfi/32/sortp.scm
+lib/plt/collects/srfi/32/test.scm
+lib/plt/collects/srfi/32/vbinsearch.scm
+lib/plt/collects/srfi/32/vector-util.scm
+lib/plt/collects/srfi/32/vhsort.scm
+lib/plt/collects/srfi/32/visort.scm
+lib/plt/collects/srfi/32/vmsort.scm
 lib/plt/collects/srfi/34.ss
 lib/plt/collects/srfi/34/compiled/exception.dep
 lib/plt/collects/srfi/34/compiled/exception.zo
@@ -4105,6 +4172,12 @@ lib/plt/collects/srfi/74/74.ss
 lib/plt/collects/srfi/74/blob.scm
 lib/plt/collects/srfi/74/compiled/74.dep
 lib/plt/collects/srfi/74/compiled/74.zo
+lib/plt/collects/srfi/78.ss
+lib/plt/collects/srfi/78/check-reference.scm
+lib/plt/collects/srfi/78/check.ss
+lib/plt/collects/srfi/78/compiled/check.dep
+lib/plt/collects/srfi/78/compiled/check.zo
+lib/plt/collects/srfi/78/examples-78.scm
 lib/plt/collects/srfi/8.ss
 lib/plt/collects/srfi/8/compiled/receive.dep
 lib/plt/collects/srfi/8/compiled/receive.zo
@@ -4147,6 +4220,8 @@ lib/plt/collects/srfi/compiled/30.dep
 lib/plt/collects/srfi/compiled/30.zo
 lib/plt/collects/srfi/compiled/31.dep
 lib/plt/collects/srfi/compiled/31.zo
+lib/plt/collects/srfi/compiled/32.dep
+lib/plt/collects/srfi/compiled/32.zo
 lib/plt/collects/srfi/compiled/34.dep
 lib/plt/collects/srfi/compiled/34.zo
 lib/plt/collects/srfi/compiled/38.dep
@@ -4189,6 +4264,8 @@ lib/plt/collects/srfi/compiled/7.dep
 lib/plt/collects/srfi/compiled/7.zo
 lib/plt/collects/srfi/compiled/74.dep
 lib/plt/collects/srfi/compiled/74.zo
+lib/plt/collects/srfi/compiled/78.dep
+lib/plt/collects/srfi/compiled/78.zo
 lib/plt/collects/srfi/compiled/8.dep
 lib/plt/collects/srfi/compiled/8.zo
 lib/plt/collects/srfi/compiled/9.dep
@@ -4449,7 +4526,9 @@ lib/plt/collects/syntax/trusted-xforms.ss
 lib/plt/collects/syntax/zodiac-sig.ss
 lib/plt/collects/syntax/zodiac-unit.ss
 lib/plt/collects/syntax/zodiac.ss
+lib/plt/collects/teachpack/htdc/colors.ss
 lib/plt/collects/teachpack/htdc/draw.ss
+lib/plt/collects/teachpack/htdc/geometry.ss
 lib/plt/collects/teachpack/htdc/idraw.ss
 lib/plt/collects/teachpack/htdp/arrow-gui.ss
 lib/plt/collects/teachpack/htdp/arrow.ss
@@ -4603,6 +4682,8 @@ lib/plt/collects/tests/framework/compiled/text.zo
 lib/plt/collects/tests/framework/debug.ss
 lib/plt/collects/tests/framework/exit.ss
 lib/plt/collects/tests/framework/frame.ss
+lib/plt/collects/tests/framework/framework-test
+lib/plt/collects/tests/framework/framework-test-engine
 lib/plt/collects/tests/framework/framework-test-engine.icns
 lib/plt/collects/tests/framework/framework-test-engine.ss
 lib/plt/collects/tests/framework/group-test.ss
@@ -5131,6 +5212,10 @@ lib/plt/collects/web-server/compiled/connection-manager.dep
 lib/plt/collects/web-server/compiled/connection-manager.zo
 lib/plt/collects/web-server/compiled/connection-structs.dep
 lib/plt/collects/web-server/compiled/connection-structs.zo
+lib/plt/collects/web-server/compiled/dispatch-server-sig.dep
+lib/plt/collects/web-server/compiled/dispatch-server-sig.zo
+lib/plt/collects/web-server/compiled/dispatch-server-unit.dep
+lib/plt/collects/web-server/compiled/dispatch-server-unit.zo
 lib/plt/collects/web-server/compiled/gui-launch.dep
 lib/plt/collects/web-server/compiled/gui-launch.zo
 lib/plt/collects/web-server/compiled/info.dep
@@ -5163,6 +5248,8 @@ lib/plt/collects/web-server/compiled/servlet-language.dep
 lib/plt/collects/web-server/compiled/servlet-language.zo
 lib/plt/collects/web-server/compiled/servlet-sig.dep
 lib/plt/collects/web-server/compiled/servlet-sig.zo
+lib/plt/collects/web-server/compiled/servlet-structs.dep
+lib/plt/collects/web-server/compiled/servlet-structs.zo
 lib/plt/collects/web-server/compiled/servlet.dep
 lib/plt/collects/web-server/compiled/servlet.zo
 lib/plt/collects/web-server/compiled/setup-launch.dep
@@ -5187,8 +5274,6 @@ lib/plt/collects/web-server/compiled/web-server-unit.dep
 lib/plt/collects/web-server/compiled/web-server-unit.zo
 lib/plt/collects/web-server/compiled/web-server.dep
 lib/plt/collects/web-server/compiled/web-server.zo
-lib/plt/collects/web-server/compiled/xexpr-callback.dep
-lib/plt/collects/web-server/compiled/xexpr-callback.zo
 lib/plt/collects/web-server/configuration-structures.ss
 lib/plt/collects/web-server/configuration-table
 lib/plt/collects/web-server/configuration-table-structs.ss
@@ -5269,6 +5354,8 @@ lib/plt/collects/web-server/default-web-root/servlets/tests/size.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/suspended-module.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/test.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/url.ss
+lib/plt/collects/web-server/dispatch-server-sig.ss
+lib/plt/collects/web-server/dispatch-server-unit.ss
 lib/plt/collects/web-server/dispatchers/compiled/dispatch-files.dep
 lib/plt/collects/web-server/dispatchers/compiled/dispatch-files.zo
 lib/plt/collects/web-server/dispatchers/compiled/dispatch-host.dep
@@ -5296,10 +5383,13 @@ lib/plt/collects/web-server/dispatchers/dispatch.ss
 lib/plt/collects/web-server/gui-launch.ss
 lib/plt/collects/web-server/info.ss
 lib/plt/collects/web-server/launch.ss
+lib/plt/collects/web-server/managers/compiled/lru.dep
+lib/plt/collects/web-server/managers/compiled/lru.zo
 lib/plt/collects/web-server/managers/compiled/manager.dep
 lib/plt/collects/web-server/managers/compiled/manager.zo
 lib/plt/collects/web-server/managers/compiled/timeouts.dep
 lib/plt/collects/web-server/managers/compiled/timeouts.zo
+lib/plt/collects/web-server/managers/lru.ss
 lib/plt/collects/web-server/managers/manager.ss
 lib/plt/collects/web-server/managers/timeouts.ss
 lib/plt/collects/web-server/mime-types.ss
@@ -5327,6 +5417,7 @@ lib/plt/collects/web-server/servlet-env.ss
 lib/plt/collects/web-server/servlet-helpers.ss
 lib/plt/collects/web-server/servlet-language.ss
 lib/plt/collects/web-server/servlet-sig.ss
+lib/plt/collects/web-server/servlet-structs.ss
 lib/plt/collects/web-server/servlet.ss
 lib/plt/collects/web-server/setup-launch.ss
 lib/plt/collects/web-server/sig.ss
@@ -5344,7 +5435,6 @@ lib/plt/collects/web-server/web-cells.ss
 lib/plt/collects/web-server/web-server-structs.ss
 lib/plt/collects/web-server/web-server-unit.ss
 lib/plt/collects/web-server/web-server.ss
-lib/plt/collects/web-server/xexpr-callback.ss
 lib/plt/collects/xml/XML.jpg
 lib/plt/collects/xml/compiled/info.dep
 lib/plt/collects/xml/compiled/info.zo
@@ -6052,6 +6142,7 @@ share/plt/doc/beginning/tan.html
 share/plt/doc/beginning/third.html
 share/plt/doc/beginning/variable.html
 share/plt/doc/beginning/zero63.html
+share/plt/doc/doc-license.txt
 share/plt/doc/drscheme/drscheme-Z-G-1.gif
 share/plt/doc/drscheme/drscheme-Z-G-2.gif
 share/plt/doc/drscheme/drscheme-Z-G-3.gif
@@ -6919,8 +7010,8 @@ share/plt/doc/srfi/srfi-59.html
 share/plt/doc/srfi/srfi-6.html
 share/plt/doc/srfi/srfi-60.html
 share/plt/doc/srfi/srfi-61.html
-share/plt/doc/srfi/srfi-63.htm
-share/plt/doc/srfi/srfi-66.htm
+share/plt/doc/srfi/srfi-63.html
+share/plt/doc/srfi/srfi-66.html
 share/plt/doc/srfi/srfi-67/index.htm
 share/plt/doc/srfi/srfi-67/index.html
 share/plt/doc/srfi/srfi-67/srfi-67-Z-G-D-1.png
@@ -6935,7 +7026,7 @@ share/plt/doc/srfi/srfi-67/srfi-67-Z-S.css
 share/plt/doc/srfi/srfi-67/srfi-67.html
 share/plt/doc/srfi/srfi-69.html
 share/plt/doc/srfi/srfi-7.html
-share/plt/doc/srfi/srfi-74.htm
+share/plt/doc/srfi/srfi-74.html
 share/plt/doc/srfi/srfi-8.html
 share/plt/doc/srfi/srfi-9.html
 share/plt/doc/swindle/SwindleFlash.gif
@@ -7002,7 +7093,9 @@ share/plt/doc/t-y-scheme/t-y-scheme-Z-L.scm
 share/plt/doc/t-y-scheme/t-y-scheme-Z-S.css
 share/plt/doc/t-y-scheme/t-y-scheme.hlog
 share/plt/doc/t-y-scheme/t-y-scheme.html
+share/plt/doc/teachpack-htdc/colors.html
 share/plt/doc/teachpack-htdc/draw.html
+share/plt/doc/teachpack-htdc/geometry.html
 share/plt/doc/teachpack-htdc/hdindex
 share/plt/doc/teachpack-htdc/idraw.html
 share/plt/doc/teachpack-htdc/index.html
@@ -7214,8 +7307,12 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/help
 @dirrm lib/plt/collects/hierlist/compiled
 @dirrm lib/plt/collects/hierlist
+@dirrm lib/plt/collects/htdch/colors/compiled
+@dirrm lib/plt/collects/htdch/colors
 @dirrm lib/plt/collects/htdch/draw/compiled
 @dirrm lib/plt/collects/htdch/draw
+@dirrm lib/plt/collects/htdch/geometry/compiled
+@dirrm lib/plt/collects/htdch/geometry
 @dirrm lib/plt/collects/htdch/graphics/compiled
 @dirrm lib/plt/collects/htdch/graphics
 @dirrm lib/plt/collects/htdch/idraw/compiled
@@ -7303,6 +7400,8 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/profj/libs/java/lang
 @dirrm lib/plt/collects/profj/libs/java/util/compiled
 @dirrm lib/plt/collects/profj/libs/java/util
+@dirrm lib/plt/collects/profj/libs/java/tester/compiled
+@dirrm lib/plt/collects/profj/libs/java/tester
 @dirrm lib/plt/collects/profj/libs/java/compiled
 @dirrm lib/plt/collects/profj/libs/java
 @dirrm lib/plt/collects/profj/libs
@@ -7321,6 +7420,7 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/setup/compiled
 @dirrm lib/plt/collects/setup
 @dirrm lib/plt/collects/sgl/examples
+%%MMM%%@dirrm lib/plt/collects/sgl/compiled/native/i386-freebsd/3m
 @dirrm lib/plt/collects/sgl/compiled/native/i386-freebsd
 @dirrm lib/plt/collects/sgl/compiled/native
 @dirrm lib/plt/collects/sgl/compiled
@@ -7358,6 +7458,8 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/srfi/29
 @dirrm lib/plt/collects/srfi/31/compiled
 @dirrm lib/plt/collects/srfi/31
+@dirrm lib/plt/collects/srfi/32/compiled
+@dirrm lib/plt/collects/srfi/32
 @dirrm lib/plt/collects/srfi/34/compiled
 @dirrm lib/plt/collects/srfi/34
 @dirrm lib/plt/collects/srfi/40/compiled
@@ -7392,6 +7494,8 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/srfi/7
 @dirrm lib/plt/collects/srfi/74/compiled
 @dirrm lib/plt/collects/srfi/74
+@dirrm lib/plt/collects/srfi/78/compiled
+@dirrm lib/plt/collects/srfi/78
 @dirrm lib/plt/collects/srfi/8/compiled
 @dirrm lib/plt/collects/srfi/8
 @dirrm lib/plt/collects/srfi/9/compiled
