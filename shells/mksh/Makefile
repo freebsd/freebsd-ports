@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/
 DISTFILES=		${PORTNAME}-${DISTVERSION}.cpio.gz
 
 MAINTAINER=		andreas@syndrom23.de
-COMMENT=		A Korn shell with many additions
+COMMENT=		A MirBSD enhanced shell based on pdksh
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
