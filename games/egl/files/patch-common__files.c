@@ -1,6 +1,6 @@
---- ./common/files.c.orig	Tue May 23 20:05:59 2006
-+++ ./common/files.c	Tue May 23 20:06:00 2006
-@@ -1169,6 +1169,23 @@
+--- common/files.c.orig	Mon Jul 24 13:37:31 2006
++++ common/files.c	Mon Jul 24 13:40:31 2006
+@@ -1258,6 +1258,23 @@
  		return BASE_MODDIRNAME;
  }
  
@@ -24,7 +24,7 @@
  
  /*
  ================
-@@ -1220,10 +1237,17 @@
+@@ -1314,10 +1331,17 @@
  	}
  	else {
  		Cvar_VariableSet (fs_gamedircvar, dir, qTrue);
@@ -41,8 +41,8 @@
 +#endif
  	}
  
- 	if (!firstTime) {
-@@ -1573,16 +1597,30 @@
+ 	// Store a copy of the search paths inverted for FS_FindFiles
+@@ -1693,10 +1717,17 @@
  	fs_defaultPaks	= Cvar_Register ("fs_defaultPaks",	"1",	CVAR_ARCHIVE);
  
  	// Load pak files
@@ -60,16 +60,16 @@
  
  	// Any set gamedirs will be freed up to here
  	fs_baseSearchPath = fs_searchPaths;
- 
- 	if (fs_game->string[0])
+@@ -1704,6 +1735,12 @@
+ 	// Load the game directory
+ 	if (fs_game->string[0]) {
  		FS_SetGamedir (fs_game->string, qTrue);
-+
 +#ifdef HOMEDIR
-+	/* Create the writable directory if doesn't exist ("~/.egl"). */
-+	FS_CreatePath(fs_gameDir);
-+	Sys_Mkdir(fs_gameDir);
-+	Com_Printf(0, "Using '%s' for writing.\n", fs_gameDir);
++		/* Create the writable directory if doesn't exist ("~/.egl"). */
++		FS_CreatePath(fs_gameDir);
++		Sys_Mkdir(fs_gameDir);
++		Com_Printf(0, "Using '%s' for writing.\n", fs_gameDir);
 +#endif
- 
- 	// Check memory integrity
- 	Mem_CheckPoolIntegrity (MEMPOOL_FILESYS);
+ 	}
+ 	else {
+ 		// Store a copy of the search paths inverted for FS_FindFiles

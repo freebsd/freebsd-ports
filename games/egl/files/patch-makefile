@@ -1,34 +1,22 @@
---- ./makefile.orig	Tue May 23 20:06:00 2006
-+++ ./makefile	Tue May 23 20:11:46 2006
-@@ -1,37 +1,64 @@
--BUILD_CLIENT=YES	# client executable
--BUILD_DEDICATED=YES	# server executable
--BUILD_CGAME=YES		# cgame dll
--BUILD_GAME=YES		# game dll
+--- makefile.orig	Mon Jul 24 15:18:20 2006
++++ makefile	Mon Jul 24 15:22:20 2006
+@@ -1,19 +1,30 @@
 +# GNU Makefile for EGL.
 +
 +# Compilation components and options.
-+BUILD_CLIENT?=YES	# Client executable.
-+BUILD_DEDICATED?=YES	# Server executable.
-+BUILD_CGAME?=YES	# cgame shared library.
-+BUILD_GAME?=YES		# game shared library.
+ BUILD_CLIENT?=YES	# client executable
+ BUILD_DEDICATED?=YES	# server executable
+ BUILD_CGAME?=YES	# cgame dll
+ BUILD_GAME?=YES		# game dll
 +WITH_OPT_CFLAGS?=YES	# Optimized compiler flags.
 +WITH_HOMEDIR?=YES	# Write files in "~/.egl".
  
 +# Common variables.
 +CC?=gcc
  VERSION=0.0.6
-+EGL_MAKEFILE=makefile
- 
-+# Compiler flags.
-+SHARED_FLAGS=	$(CFLAGS) -DARCH='\"$(ARCH)\"' \
-+		-DGAME_NAME='\"$(GAME_NAME)\"' \
-+		-DEGLCGAME_NAME='\"$(EGLCGAME_NAME)\"'
-+RELEASE_CFLAGS=	-Isource/ -I./ -I../ $(SHARED_FLAGS)
-+DEBUG_CFLAGS=-	g -Isource/ -I./ -I../ $(SHARED_FLAGS) -DC_ONLY
- 
+-
 -CC=gcc
--EGL_MAKEFILE=makefile
+ EGL_MAKEFILE=makefile
 -SHARED_FLAGS:=
 -RELEASE_CFLAGS=-Isource/ -I./ -I../ $(SHARED_FLAGS) -O2 -fno-strict-aliasing -ffast-math -fexpensive-optimizations
 -DEBUG_CFLAGS=-g -Isource/ -I./ -I../ $(SHARED_FLAGS) -DC_ONLY
@@ -36,25 +24,23 @@
 -DED_LDFLAGS=-ldl -lm -lz
 -MODULE_LDFLAGS=-ldl -lm
 -X11_LDFLAGS=-L/usr/X11R6/lib -lX11 -lXext
++
++# Compiler flags.
++SHARED_FLAGS:=-Isource -I./ -I../ $(CFLAGS)
++RELEASE_CFLAGS=$(SHARED_FLAGS)
++DEBUG_CFLAGS=$(SHARED_FLAGS) -g -DC_ONLY
++
 +# Linker flags.
 +LDFLAGS+=-lm
 +DED_LDFLAGS=-lz
 +MODULE_LDFLAGS=
 +X11_LDFLAGS=-lX11 -lXext -ljpeg -lpng -lz
- 
++
 +# Compilation commands.
  
  SHLIBCFLAGS=-fPIC
  SHLIBLDFLAGS=-shared
- 
--
- DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
- DO_DED_CC=$(CC) $(CFLAGS) -DDEDICATED_ONLY -o $@ -c $<
- DO_SHLIB_CC=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
- 
--
--# this nice line comes from the linux kernel makefile
-+# This nice line comes from the linux kernel makefile.
+@@ -26,8 +37,22 @@
  ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
  SHLIBEXT =so
  
@@ -67,8 +53,6 @@
 +
 +ifeq ($(OSTYPE),Linux)
 +LDFLAGS+=-ldl
-+GAME_NAME=	game$(ARCH)
-+EGLCGAME_NAME=	eglcgame$(ARCH)
 +endif
 +
 +ifeq ($(OSTYPE),FreeBSD)
@@ -77,74 +61,170 @@
 +		-DDATADIR='\"$(Q2DIR)\"' -DLIBDIR='\"$(LIBDIR)\"'
 +LDFLAGS+=	-L$(LOCALBASE)/lib -L$(X11BASE)/lib
 +X11_LDFLAGS+=	$(PTHREAD_LIBS)
-+GAME_NAME=	game
-+EGLCGAME_NAME=	eglcgame
 +endif
  
  ifeq ($(strip $(BUILD_CLIENT)),YES)
    TARGETS += $(BUILDDIR)/egl
-@@ -42,20 +69,27 @@
+@@ -38,19 +63,27 @@
  endif
  
  ifeq ($(strip $(BUILD_CGAME)),YES)
 - TARGETS += $(BUILDDIR)/baseq2/eglcgame$(ARCH).$(SHLIBEXT)
-+ TARGETS += $(BUILDDIR)/baseq2/$(EGLCGAME_NAME).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/baseq2/eglcgame.$(SHLIBEXT)
  endif
  
  ifeq ($(strip $(BUILD_GAME)),YES)
 - TARGETS += $(BUILDDIR)/baseq2/game$(ARCH).$(SHLIBEXT)
-+ TARGETS += $(BUILDDIR)/baseq2/$(GAME_NAME).$(SHLIBEXT)
++ TARGETS += $(BUILDDIR)/baseq2/game.$(SHLIBEXT)
  endif
  
+-ifeq ($(wildcard /usr/include/X11/extensions/xf86vmode.h),/usr/include/X11/extensions/xf86vmode.h)
 +ifeq ($(strip $(WITH_OPT_CFLAGS)),YES)
 +RELEASE_CFLAGS += -O2 -fno-strict-aliasing -ffast-math -fexpensive-optimizations
 +endif
- 
--ifeq ($(wildcard /usr/include/X11/extensions/xf86vmode.h),/usr/include/X11/extensions/xf86vmode.h)
++
 +ifeq ($(strip $(WITH_HOMEDIR)),YES)
 +SHARED_FLAGS += -DHOMEDIR
 +endif
 +
-+ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86vmode.h),$(X11BASE)/include/X11/extensions/xf86vmode.h)
++ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86vmode.h),/usr/include/X11/extensions/xf86vmode.h)
  SHARED_FLAGS += -DXF86VMODE
  X11_LDFLAGS += -lXxf86vm
  endif
  
 -ifeq ($(wildcard /usr/include/X11/extensions/xf86dga.h),/usr/include/X11/extensions/xf86dga.h)
-+ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86dga.h),$(X11BASE)/include/X11/extensions/xf86dga.h)
++ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86dga.h),/usr/include/X11/extensions/xf86dga.h)
  SHARED_FLAGS += -DXF86DGA
  X11_LDFLAGS += -lXxf86dga
  endif
-@@ -527,7 +561,7 @@
+@@ -111,6 +144,7 @@
+ 	$(BUILDDIR)/client/sv_user.o \
+ 	$(BUILDDIR)/client/sv_world.o \
+ 	\
++	$(BUILDDIR)/client/cl_acapi.o \
+ 	$(BUILDDIR)/client/cl_cgapi.o \
+ 	$(BUILDDIR)/client/cl_cin.o \
+ 	$(BUILDDIR)/client/cl_console.o \
+@@ -135,7 +169,7 @@
+ 	\
+ 	$(BUILDDIR)/client/r_math.o \
+ 	$(BUILDDIR)/client/rb_batch.o \
+-	$(BUILDDIR)/client/rb_cin.o \
++	$(BUILDDIR)/client/rf_video.o \
+ 	$(BUILDDIR)/client/rb_entity.o \
+ 	$(BUILDDIR)/client/rb_light.o \
+ 	$(BUILDDIR)/client/rb_math.o \
+@@ -173,7 +207,6 @@
+ 	$(BUILDDIR)/client/x11_main.o \
+ 	$(BUILDDIR)/client/x11_utils.o \
+ 	\
+-	$(BUILDDIR)/client/byteswap.o \
+ 	$(BUILDDIR)/client/infostrings.o \
+ 	$(BUILDDIR)/client/m_angles.o \
+ 	$(BUILDDIR)/client/m_bounds.o \
+@@ -222,6 +255,7 @@
+ $(BUILDDIR)/client/sv_user.o: $(SOURCEDIR)/server/sv_user.c; $(DO_CC)
+ $(BUILDDIR)/client/sv_world.o: $(SOURCEDIR)/server/sv_world.c; $(DO_CC)
+ 
++$(BUILDDIR)/client/cl_acapi.o: $(SOURCEDIR)/client/cl_acapi.c; $(DO_CC)
+ $(BUILDDIR)/client/cl_cgapi.o: $(SOURCEDIR)/client/cl_cgapi.c; $(DO_CC)
+ $(BUILDDIR)/client/cl_cin.o: $(SOURCEDIR)/client/cl_cin.c; $(DO_CC)
+ $(BUILDDIR)/client/cl_console.o: $(SOURCEDIR)/client/cl_console.c; $(DO_CC)
+@@ -246,7 +280,7 @@
+ 
+ $(BUILDDIR)/client/r_math.o: $(SOURCEDIR)/renderer/r_math.c; $(DO_CC)
+ $(BUILDDIR)/client/rb_batch.o: $(SOURCEDIR)/renderer/rb_batch.c; $(DO_CC)
+-$(BUILDDIR)/client/rb_cin.o: $(SOURCEDIR)/renderer/rb_cin.c; $(DO_CC)
++$(BUILDDIR)/client/rf_video.o: $(SOURCEDIR)/renderer/rf_video.c; $(DO_CC)
+ $(BUILDDIR)/client/rb_entity.o: $(SOURCEDIR)/renderer/rb_entity.c; $(DO_CC)
+ $(BUILDDIR)/client/rb_light.o: $(SOURCEDIR)/renderer/rb_light.c; $(DO_CC)
+ $(BUILDDIR)/client/rb_math.o: $(SOURCEDIR)/renderer/rb_math.c; $(DO_CC)
+@@ -284,7 +318,6 @@
+ $(BUILDDIR)/client/x11_main.o: $(SOURCEDIR)/unix/x11_main.c; $(DO_CC)
+ $(BUILDDIR)/client/x11_utils.o: $(SOURCEDIR)/unix/x11_utils.c; $(DO_CC)
+ 
+-$(BUILDDIR)/client/byteswap.o: $(SOURCEDIR)/shared/byteswap.c; $(DO_CC)
+ $(BUILDDIR)/client/infostrings.o: $(SOURCEDIR)/shared/infostrings.c; $(DO_CC)
+ $(BUILDDIR)/client/m_angles.o: $(SOURCEDIR)/shared/m_angles.c; $(DO_CC)
+ $(BUILDDIR)/client/m_bounds.o: $(SOURCEDIR)/shared/m_bounds.c; $(DO_CC)
+@@ -337,7 +370,6 @@
+ 	$(BUILDDIR)/dedicated/unix_main.o \
+ 	$(BUILDDIR)/dedicated/unix_udp.o \
+ 	\
+-	$(BUILDDIR)/dedicated/byteswap.o \
+ 	$(BUILDDIR)/dedicated/infostrings.o \
+ 	$(BUILDDIR)/dedicated/m_angles.o \
+ 	$(BUILDDIR)/dedicated/m_bounds.o \
+@@ -355,7 +387,7 @@
  
  $(BUILDDIR)/eglded: $(OBJS_DEDICATED)
  	@echo Linking eglded;
 -	$(CC) $(CFLAGS) -o $@ $(OBJS_DEDICATED) $(DED_LDFLAGS)
 +	$(CC) $(CFLAGS) -o $@ $(OBJS_DEDICATED) $(LDFLAGS) $(DED_LDFLAGS)
  
- $(BUILDDIR)/dedicated/alias.o: $(SOURCEDIR)/common/alias.c
- 	$(DO_DED_CC)
-@@ -738,9 +772,9 @@
+ $(BUILDDIR)/dedicated/alias.o: $(SOURCEDIR)/common/alias.c; $(DO_DED_CC)
+ $(BUILDDIR)/dedicated/cbuf.o: $(SOURCEDIR)/common/cbuf.c; $(DO_DED_CC)
+@@ -390,7 +422,6 @@
+ $(BUILDDIR)/dedicated/unix_main.o: $(SOURCEDIR)/unix/unix_main.c; $(DO_DED_CC)
+ $(BUILDDIR)/dedicated/unix_udp.o: $(SOURCEDIR)/unix/unix_udp.c; $(DO_DED_CC)
+ 
+-$(BUILDDIR)/dedicated/byteswap.o: $(SOURCEDIR)/shared/byteswap.c; $(DO_DED_CC)
+ $(BUILDDIR)/dedicated/infostrings.o: $(SOURCEDIR)/shared/infostrings.c; $(DO_DED_CC)
+ $(BUILDDIR)/dedicated/m_angles.o: $(SOURCEDIR)/shared/m_angles.c; $(DO_DED_CC)
+ $(BUILDDIR)/dedicated/m_bounds.o: $(SOURCEDIR)/shared/m_bounds.c; $(DO_DED_CC)
+@@ -475,7 +506,6 @@
+ 	\
+ 	$(BUILDDIR)/baseq2/cgame/pmove.o \
+ 	\
+-	$(BUILDDIR)/baseq2/cgame/byteswap.o \
+ 	$(BUILDDIR)/baseq2/cgame/infostrings.o \
+ 	$(BUILDDIR)/baseq2/cgame/m_angles.o \
+ 	$(BUILDDIR)/baseq2/cgame/m_bounds.o \
+@@ -490,9 +520,9 @@
  	$(BUILDDIR)/baseq2/cgame/m_flash.o \
  
  
 -$(BUILDDIR)/baseq2/eglcgame$(ARCH).$(SHLIBEXT): $(OBJS_CGAME)
-+$(BUILDDIR)/baseq2/$(EGLCGAME_NAME).$(SHLIBEXT): $(OBJS_CGAME)
++$(BUILDDIR)/baseq2/eglcgame.$(SHLIBEXT): $(OBJS_CGAME)
  	@echo Linking cgame dll;
 -	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_CGAME) $(MODULE_LDFLAGS)
 +	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_CGAME) $(LDFLAGS) $(MODULE_LDFLAGS)
  
- $(BUILDDIR)/baseq2/cgame/cg_api.o: $(SOURCEDIR)/cgame/cg_api.c
- 	$(DO_SHLIB_CC)
-@@ -1026,9 +1060,9 @@
+ $(BUILDDIR)/baseq2/cgame/cg_api.o: $(SOURCEDIR)/cgame/cg_api.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/cgame/cg_console.o: $(SOURCEDIR)/cgame/cg_console.c; $(DO_SHLIB_CC)
+@@ -557,7 +587,6 @@
+ $(BUILDDIR)/baseq2/cgame/ui_keys.o: $(SOURCEDIR)/cgame/ui/ui_keys.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/cgame/pmove.o: $(SOURCEDIR)/cgame/pmove.c; $(DO_SHLIB_CC)
+ 
+-$(BUILDDIR)/baseq2/cgame/byteswap.o: $(SOURCEDIR)/shared/byteswap.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/cgame/infostrings.o: $(SOURCEDIR)/shared/infostrings.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/cgame/m_angles.o: $(SOURCEDIR)/shared/m_angles.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/cgame/m_bounds.o: $(SOURCEDIR)/shared/m_bounds.c; $(DO_SHLIB_CC)
+@@ -625,7 +654,6 @@
+ 	$(BUILDDIR)/baseq2/game/p_view.o \
+ 	$(BUILDDIR)/baseq2/game/p_weapon.o \
+ 	\
+-	$(BUILDDIR)/baseq2/game/byteswap.o \
+ 	$(BUILDDIR)/baseq2/game/infostrings.o \
+ 	$(BUILDDIR)/baseq2/game/m_angles.o \
+ 	$(BUILDDIR)/baseq2/game/m_bounds.o \
+@@ -639,9 +667,9 @@
  	$(BUILDDIR)/baseq2/game/string.o \
  
  
 -$(BUILDDIR)/baseq2/game$(ARCH).$(SHLIBEXT): $(OBJS_GAME)
-+$(BUILDDIR)/baseq2/$(GAME_NAME).$(SHLIBEXT): $(OBJS_GAME)
++$(BUILDDIR)/baseq2/game.$(SHLIBEXT): $(OBJS_GAME)
  	@echo Linking game dll;
 -	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_GAME) $(MODULE_LDFLAGS)
 +	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(OBJS_GAME) $(LDFLAGS) $(MODULE_LDFLAGS)
  
- $(BUILDDIR)/baseq2/game/cg_api.o: $(SOURCEDIR)/cgame/cg_api.c
- 	$(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/game/g_ai.o: $(SOURCEDIR)/game/g_ai.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/game/g_chase.o: $(SOURCEDIR)/game/g_chase.c; $(DO_SHLIB_CC)
+@@ -691,7 +719,6 @@
+ $(BUILDDIR)/baseq2/game/p_view.o: $(SOURCEDIR)/game/p_view.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/game/p_weapon.o: $(SOURCEDIR)/game/p_weapon.c; $(DO_SHLIB_CC)
+ 
+-$(BUILDDIR)/baseq2/game/byteswap.o: $(SOURCEDIR)/shared/byteswap.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/game/infostrings.o: $(SOURCEDIR)/shared/infostrings.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/game/m_angles.o: $(SOURCEDIR)/shared/m_angles.c; $(DO_SHLIB_CC)
+ $(BUILDDIR)/baseq2/game/m_bounds.o: $(SOURCEDIR)/shared/m_bounds.c; $(DO_SHLIB_CC)

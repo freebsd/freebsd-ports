@@ -1,6 +1,6 @@
---- ./client/snd_main.c.orig	Tue May 23 20:05:59 2006
-+++ ./client/snd_main.c	Tue May 23 20:06:00 2006
-@@ -25,7 +25,8 @@
+--- client/snd_main.c.orig	Mon Jul 24 15:09:29 2006
++++ client/snd_main.c	Mon Jul 24 15:13:16 2006
+@@ -24,7 +24,8 @@
  #include "snd_local.h"
  
  qBool					snd_isActive = qTrue;
@@ -11,7 +11,7 @@
  qBool					snd_isAL;
  
 @@ -870,7 +871,7 @@
- 	int		initTime;
+ 	uint32	initTime;
  
  	if (snd_isInitialized)
 -		Snd_Shutdown ();
@@ -34,7 +34,7 @@
 -	al_minDistance		= Cvar_Register ("al_minDistance",		"100",			CVAR_ARCHIVE);
 -	al_maxDistance		= Cvar_Register ("al_maxDistance",		"8192",			CVAR_ARCHIVE);
 -	al_rollOffFactor	= Cvar_Register ("al_rollOffFactor",	"0.8",			CVAR_ARCHIVE);
-+	if (s_initSound->integer == 2) {
++	if (s_initSound->intVal == 2) {
 +		al_allowExtensions	= Cvar_Register ("al_allowExtensions",	"1",			CVAR_ARCHIVE|CVAR_LATCH_AUDIO);
 +		al_device			= Cvar_Register ("al_device",			"",				CVAR_ARCHIVE);
 +		al_dopplerFactor	= Cvar_Register ("al_dopplerFactor",	"1",			CVAR_ARCHIVE);
@@ -69,7 +69,7 @@
 +	 */
 +	snd_isInitialized = qTrue;
 +
- 	if (!s_initSound->value) {
+ 	if (!s_initSound->intVal) {
  		Com_Printf (0, "...not initializing\n");
  		Com_Printf (0, "----------------------------------------\n");
 +		Snd_Shutdown();
@@ -95,7 +95,7 @@
  	Com_Printf (0, "----------------------------------------\n");
 @@ -955,18 +973,19 @@
  {
- 	int		size;
+ 	uint32	size;
  
 -	Cmd_RemoveCommand ("snd_restart", cmd_snd_restart);
 +	if (!snd_isInitialized)
