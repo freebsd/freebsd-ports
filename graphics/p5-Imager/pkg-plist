@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/API.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Imager/APIRef.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/API.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/APIRef.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Float.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Table.pm
@@ -12,6 +12,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/ExtUtils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/File/CUR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/File/ICO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Files.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Fill.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filter/DynTest.pm
@@ -27,6 +29,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Win32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Wrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Fountain.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Handy.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/ImageTypes.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Inline.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Matrix2d.pm
@@ -50,6 +53,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imio.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imperl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayer.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayert.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/log.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/plug.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/ppport.h
@@ -61,6 +65,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor/CountColor.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO/ICO.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO/ICO.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest/DynTest.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest/DynTest.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines/Flines.bs
@@ -73,11 +79,14 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/Flines
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter/DynTest
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File/ICO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/CountColor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Imager
