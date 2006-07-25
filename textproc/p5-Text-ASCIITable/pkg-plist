@@ -1,8 +1,5 @@
 %%SITE_PERL%%/Text/ASCIITable.pm
 %%SITE_PERL%%/Text/ASCIITable/Wrap.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ASCIITable/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ASCIITable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/ASCIITable
 @dirrmtry %%SITE_PERL%%/Text
 %%PORTDOCS%%%%EXAMPLESDIR%%/ansi-example.pl
