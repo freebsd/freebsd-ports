@@ -1,0 +1,24 @@
+Bastardize provides an magical object into which text can be charged
+and then returned in various, slighty modified ways.
+
+Among others, bastardize has the following methods:
+
+rdct converts english to hyperreductionist english
+    (ex. "english" becomes "")
+
+pig pig latin
+    (ex. "hi there" becomes "ihay erethay")
+
+k3wlt0k a k3wlt0kizer developed originally by Fmh
+
+rot13 implements rot13 "encryption" in perl
+    (ex. "foo bar" becomes "sbb one")
+
+rev reverses the arrangement of characters
+
+censor attempts to censor text which might be innaproriate
+
+n20e performs numerical abbreviations
+    (ex. "numerical_abbreviation" becomes "n20e")
+
+WWW: http://search.cpan.org/dist/Text-Bastardize/

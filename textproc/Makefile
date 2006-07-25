@@ -463,6 +463,7 @@
     SUBDIR += p5-Text-Aspell
     SUBDIR += p5-Text-Autoformat
     SUBDIR += p5-Text-Balanced
+    SUBDIR += p5-Text-Bastardize
     SUBDIR += p5-Text-BibTeX
     SUBDIR += p5-Text-Bind
     SUBDIR += p5-Text-CSV
