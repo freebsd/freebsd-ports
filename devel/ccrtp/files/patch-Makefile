@@ -1,0 +1,11 @@
+--- Makefile.in	Sat Apr 22 19:41:06 2006
++++ Makefile.in	Sat Apr 22 19:41:35 2006
+@@ -224,7 +224,7 @@
+ 
+ SUBDIRS = src doc
+ DIST_SUBDIRS = m4 src phone doc demo w32
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)data/pkgconfig
+ pkgconfig_DATA = libccrtp1.pc
+ all: all-recursive
+ 
