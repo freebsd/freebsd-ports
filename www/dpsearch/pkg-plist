@@ -349,11 +349,11 @@ include/dps_wild.h
 include/dps_word.h
 include/dps_xmalloc.h
 include/dpsearch.h
-lib/libdpcharset-440.so
+lib/libdpcharset-4.so
 lib/libdpcharset.a
 lib/libdpcharset.la
 lib/libdpcharset.so
-lib/libdpsearch-440.so
+lib/libdpsearch-4.so
 lib/libdpsearch.a
 lib/libdpsearch.la
 lib/libdpsearch.so
