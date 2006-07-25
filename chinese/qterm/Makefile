@@ -16,8 +16,10 @@ MAINTAINER=	gavin@FreeBSDChina.org
 COMMENT=	QTerm is a BBS client in Unix
 
 USE_QT_VER=	3
+USE_AUTOTOOLS=	libtool:15
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX} \
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS= --enable-mt --prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 .if !defined(WITHOUT_PYTHON)
