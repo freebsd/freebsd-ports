@@ -72,6 +72,7 @@
     SUBDIR += mldonkey-serverspy
     SUBDIR += mldonkey-urlslave
     SUBDIR += mutella
+    SUBDIR += mooseekd
     SUBDIR += mute-net
     SUBDIR += mute-net-gui
     SUBDIR += mute-net-text

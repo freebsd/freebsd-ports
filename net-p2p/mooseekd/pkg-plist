@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/mooscan
+bin/mooscand
+bin/mooseekd
+bin/moosetup
+%%DATADIR%%/mooseekd/config.xml.tmpl
+@dirrm %%DATADIR%%/mooseekd
+@dirrm %%DATADIR%%
