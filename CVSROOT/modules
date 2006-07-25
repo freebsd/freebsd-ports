@@ -8194,6 +8194,7 @@ p5-Class-Gomor	ports/devel/p5-Class-Gomor
 p5-Class-Handle	ports/devel/p5-Class-Handle
 p5-Class-Hook	ports/devel/p5-Class-Hook
 p5-Class-ISA	ports/devel/p5-Class-ISA
+p5-Class-Inflate	ports/databases/p5-Class-Inflate
 p5-Class-Inner	ports/devel/p5-Class-Inner
 p5-Class-InsideOut	ports/devel/p5-Class-InsideOut
 p5-Class-Inspector	ports/devel/p5-Class-Inspector
