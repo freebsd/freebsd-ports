@@ -85,6 +85,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/tld.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/tmnt.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/toto.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/tour_de_france.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/trigan.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/unicode.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/us_presidents.pm
