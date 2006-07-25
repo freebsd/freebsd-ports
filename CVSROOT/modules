@@ -9835,6 +9835,7 @@ p5-Text-Diff-HTML	ports/textproc/p5-Text-Diff-HTML
 p5-Text-Diff3	ports/textproc/p5-Text-Diff3
 p5-Text-DoubleMetaphone	ports/textproc/p5-Text-DoubleMetaphone
 p5-Text-Emoticon	ports/textproc/p5-Text-Emoticon
+p5-Text-Emoticon-GoogleTalk	ports/textproc/p5-Text-Emoticon-GoogleTalk
 p5-Text-EtText	ports/textproc/p5-Text-EtText
 p5-Text-ExtractWords	ports/textproc/p5-Text-ExtractWords
 p5-Text-FIGlet	ports/misc/p5-Text-FIGlet
