@@ -1,0 +1,2 @@
+#!/bin/sh
+exec %%JAVA%% -Xmx256M -cp %%ABCL_JAR%% org.armedbear.lisp.Main "$@"

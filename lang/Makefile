@@ -7,6 +7,7 @@
     SUBDIR += STk
     SUBDIR += Sather
     SUBDIR += TenDRA
+    SUBDIR += abcl
     SUBDIR += afnix
     SUBDIR += alisp
     SUBDIR += arena
