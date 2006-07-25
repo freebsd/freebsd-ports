@@ -1349,6 +1349,7 @@
     SUBDIR += p5-Test-MockModule
     SUBDIR += p5-Test-MockObject
     SUBDIR += p5-Test-NoWarnings
+    SUBDIR += p5-Test-Number-Delta
     SUBDIR += p5-Test-Output
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
