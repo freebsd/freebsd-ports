@@ -534,6 +534,7 @@
     SUBDIR += p5-UML-Sequence
     SUBDIR += p5-UML-State
     SUBDIR += p5-URI-Find
+    SUBDIR += p5-Unicode-CheckUTF8
     SUBDIR += p5-Unicode-Normalize
     SUBDIR += p5-WDDX
     SUBDIR += p5-WWW-Google-SiteMap

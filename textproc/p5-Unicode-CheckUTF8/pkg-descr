@@ -1,0 +1,11 @@
+This is an XS wrapper around some Unicode Consortium code to check if
+a string is valid UTF-8, revised to conform to what expat/Mozilla
+think is valid UTF-8, especially with regard to low-ASCII characters.
+
+Note that this module has NOTHING to do with Perl's internal UTF8 flag
+on scalars.
+
+This module is for use when you're getting input from users and want
+to make sure it's valid UTF-8 before continuing.
+
+WWW: http://search.cpan.org/dist/Unicode-CheckUTF8/
