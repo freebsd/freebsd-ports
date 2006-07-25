@@ -28,7 +28,7 @@ qmailr:*:86:82:QMail user:/var/qmail:/nonexistent
 qmails:*:87:82:QMail user:/var/qmail:/nonexistent
 mysql:*:88:88:MySQL Daemon:/var/db/mysql:/sbin/nologin
 vpopmail:*:89:89:VPop Mail User:/usr/local/vpopmail:/nonexistent
-firebird:*:90:90:Firebird Database Administrator:/usr/local/firebird:/bin/sh
+firebird:*:90:90:Firebird Database Administrator:/var/db/firebird:/bin/sh
 mailman:*:91:91:Mailman User:/usr/local/mailman:/sbin/nologin
 gdm:*:92:92:GDM Sandbox:/:/sbin/nologin
 jabber:*:93:93:Jabber Daemon:/nonexistent:/nonexistent
