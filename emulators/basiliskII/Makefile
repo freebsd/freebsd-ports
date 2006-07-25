@@ -7,18 +7,16 @@
 
 PORTNAME=	basiliskII
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.gibix.net/projects/basilisk2/files/
 MASTER_SITE_SUBDIR=	basilisk
-DISTNAME=	BasiliskII_src_22112005
+DISTNAME=	BasiliskII_src_01052006
 
 MAINTAINER=	mmendez@energyhq.be
 COMMENT=	A free, portable, Open Source 68k Mac emulator
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
-
-BROKEN=		Does not compile
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -38,7 +36,7 @@ CFLAGS+=	-fpermissive
 .endif
 
 .if ${ARCH} == amd64
-BROKEN=		"Does not compile"
+BROKEN=	does not compile on AMD64 architectures
 .endif
 
 post-install:
