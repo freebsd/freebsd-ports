@@ -15,14 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 modules for Atom feed and API implementation
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/LWP/Authen/Wsse.pm:${PORTSDIR}/www/p5-LWP-Authen-Wsse \
-	${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
-	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+    		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/LWP/Authen/Wsse.pm:${PORTSDIR}/www/p5-LWP-Authen-Wsse \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
+		p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
