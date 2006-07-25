@@ -10,7 +10,6 @@ PORTVERSION=	1.6.9
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.dkuug.dk/gnu/ftp/savannah/files/bnf/ \
-		http://gnu.rtin.bz/ftp/savannah/files/bnf/ \
 		http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/bnf/ \
 		http://mirrors.dotsrc.org/ftp.gnu.org/savannah/files/bnf/ \
 		http://mirrors.ibiblio.org/pub/mirrors/gnu/ftp/savannah/files/bnf/
