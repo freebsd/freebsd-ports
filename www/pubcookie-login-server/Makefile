@@ -7,6 +7,7 @@
 
 PORTNAME=	pubcookie
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://pubcookie.org/downloads/
 PKGNAMESUFFIX=	-login-server
