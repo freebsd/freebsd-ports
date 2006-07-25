@@ -1,5 +1,5 @@
 --- products.py.orig	Wed Jun 28 15:53:05 2006
-+++ products.py	Sat Jul  1 19:53:16 2006
++++ products.py	Mon Jul 24 16:14:55 2006
 @@ -966,16 +966,18 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB', 'PYMODULES_PREFIX',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI',
@@ -55,7 +55,27 @@
     opt['F90INCLUDE']=''
  
     # ----- check for MED and HDF5 libraries, and HDF5 includes
-@@ -1160,7 +1174,7 @@
+@@ -1100,11 +1114,14 @@
+ 
+    # ----- MUMPS
+    if cfg['HOME_MUMPS'] != '':
+-      for lib in ('dmumps', 'zmumps', 'pord', 'mpiseq'):
+-         ftools.findlib_and_set(cfg, 'MUMPSLIB', lib,
+-            kargs['libdirs'], cfg['HOME_MUMPS'],
+-            err=False, append=True)
+-         ftools.CheckFromLastFound(cfg, 'HOME_MUMPS', 'lib')
++      if cfg['MUMPSLIB'] != '':
++         opt['MUMPSLIB'] =  cfg['MUMPSLIB']
++      else:
++         for lib in ('dmumps', 'zmumps', 'pord', 'mpiseq'):
++            ftools.findlib_and_set(cfg, 'MUMPSLIB', lib,
++               kargs['libdirs'], cfg['HOME_MUMPS'],
++               err=False, append=True)
++            ftools.CheckFromLastFound(cfg, 'HOME_MUMPS', 'lib')
+       opt['F90INCLUDE'] += ' -I%s' % os.path.join(cfg['ASTER_ROOT'],cfg['ASTER_VERSION'],'bibf90','include_mumps')
+    else:
+       opt['MUMPSLIB'] = ''
+@@ -1160,7 +1177,7 @@
           ftools.findlib_and_set(cfg, 'SCOTCHLIB', lib,
              kargs['libdirs'], cfg['HOME_SCOTCH'],
              err=True, append=True)
