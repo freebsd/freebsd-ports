@@ -31,7 +31,7 @@ FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 
 .ifdef WITH_OPTIMIZED_FLAGS
-FFLAGS+=	-O3 -ffast-math -funroll-loops
+FFLAGS+=	-O3 -ffast-math
 .endif
 
 CONFIGURE_ENV+=	F77=${FC} FFLAGS="${FFLAGS}"

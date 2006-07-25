@@ -36,7 +36,7 @@ PLIST_SUB=	WITH_EXAMPLES=""
 .endif
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+=	-O2 -ffast-math -funroll-loops -fexpensive-optimizations
+FFLAGS+=	-O2 -ffast-math
 .endif
 
 pre-configure:
