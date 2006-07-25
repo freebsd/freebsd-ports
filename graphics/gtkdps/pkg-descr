@@ -1,1 +1,4 @@
-gtk bindings for the Display GhostScript System
+A set of functions, objects, and widgets to use Display GhostScript System
+easily with GTK.
+
+WWW:	http://www.gyve.org/gtkDPS/
