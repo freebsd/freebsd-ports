@@ -117,6 +117,7 @@
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += ccmalloc
+    SUBDIR += ccrtp
     SUBDIR += cdecl
     SUBDIR += cdialog
     SUBDIR += cdk

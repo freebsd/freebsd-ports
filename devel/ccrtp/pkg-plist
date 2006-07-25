@@ -1,0 +1,21 @@
+include/ccrtp/base.h
+include/ccrtp/cqueue.h
+include/ccrtp/channel.h
+include/ccrtp/ext.h
+include/ccrtp/formats.h
+include/ccrtp/ioqueue.h
+include/ccrtp/iqueue.h
+include/ccrtp/oqueue.h
+include/ccrtp/pool.h
+include/ccrtp/queuebase.h
+include/ccrtp/rtcppkt.h
+include/ccrtp/rtp.h
+include/ccrtp/rtppkt.h
+include/ccrtp/sources.h
+lib/libccrtp1-1.4.so.0
+lib/libccrtp1-1.4.so
+lib/libccrtp1.so
+lib/libccrtp1.a
+lib/libccrtp1.la
+libdata/pkgconfig/libccrtp1.pc
+@dirrm include/ccrtp
