@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	6.2.2
-PORTREVISION=	1
+PORTVERSION=	6.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
@@ -40,6 +39,7 @@ USE_PERL5=	yes
 SLIMCPANPKGS=	Compress-Zlib-1.33.tar.gz \
 		DBI-1.46.tar.gz \
 		DBD-SQLite-1.08.tar.gz \
+		Digest-SHA1-2.11.tar.gz \
 		HTML-Parser-3.45.tar.gz \
 		Template-Toolkit-2.13.tar.gz \
 		Time-HiRes-1.66.tar.gz \
@@ -118,7 +118,7 @@ post-fetch:
 .endfor
 
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e 's|%%PERL%%|${PERL}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
