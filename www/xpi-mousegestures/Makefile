@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mouse_gestures
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 DISTVERSIONSUFFIX=	-fx+mz+zm+tb
 CATEGORIES=	www
 
