@@ -30,7 +30,7 @@ FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 
 .ifdef WITH_OPTIMIZED_FLAGS
-FCFLAGS+=	-O3 -ffast-math -funroll-loops
+FCFLAGS+=	-O3 -ffast-math
 .endif
 
 USE_AUTOTOOLS=	autoconf:259
