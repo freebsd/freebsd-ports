@@ -11574,6 +11574,7 @@ py-paramiko	ports/security/py-paramiko
 py-parsing	ports/devel/py-parsing
 py-pcap		ports/net/py-pcap
 py-pcapy	ports/net/py-pcapy
+py-pefile	ports/devel/py-pefile
 py-period	ports/devel/py-period
 py-pexpect	ports/misc/py-pexpect
 py-plex		ports/devel/py-plex
