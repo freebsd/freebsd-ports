@@ -1,7 +1,6 @@
 ======================================================================
-- Edit %%PREFIX%%/%%SQSTATDIR%%/sqstat.php file:
-
-set $squidhost, $squidport, $cachemgr_passwd, $resolveip as you like.
+- Copy file config.inc.php.defaults to config.inc.php, edit
+  config.inc.php to specify your squid proxy server IP and port.
 
 - Set up squid:
 
