@@ -1617,6 +1617,7 @@
     SUBDIR += py-optik
     SUBDIR += py-orbit
     SUBDIR += py-parsing
+    SUBDIR += py-pefile
     SUBDIR += py-period
     SUBDIR += py-plex
     SUBDIR += py-pmock
