@@ -9793,6 +9793,7 @@ p5-Test-LongString	ports/devel/p5-Test-LongString
 p5-Test-Manifest	ports/devel/p5-Test-Manifest
 p5-Test-MockModule	ports/devel/p5-Test-MockModule
 p5-Test-MockObject	ports/devel/p5-Test-MockObject
+p5-Test-MockRandom	ports/devel/p5-Test-MockRandom
 p5-Test-NoWarnings	ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta	ports/devel/p5-Test-Number-Delta
 p5-Test-Output	ports/devel/p5-Test-Output
