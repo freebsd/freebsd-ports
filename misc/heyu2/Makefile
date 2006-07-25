@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.0.b.5
+PORTVERSION=	2.0.b.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
-DISTNAME=	heyu-2.0beta.5
+DISTNAME=	heyu-2.0beta.6.2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mstowe@chicago.us.mensa.org
@@ -19,7 +19,7 @@ CONFLICTS=	heyu-[0-9]*
 
 #IS_INTERACTIVE=	yes
 ALL_TARGET=	all
-WRKSRC=		${WRKDIR}/heyu-2.0beta.5
+WRKSRC=		${WRKDIR}/heyu-2.0beta.6.2
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	freebsd
@@ -33,7 +33,8 @@ MAN5=		x10config.5 \
 
 post-patch:
 	@${REINPLACE_CMD} -E 's|/usr/local|${PREFIX}|g; \
-			     s,(CC|CFLAGS) =,\1 ?=,g' \
+			     s,(CC) =,\1 ?=,g; \
+			     s,(CFLAGS) =,\1 +=,g' \
 		${WRKSRC}/Configure
 .if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -e 's|<.*termio[s]*.h|<sys/ttycom.h|g' \
