@@ -1058,6 +1058,7 @@ cclient		ports/mail/cclient
 ccmalloc	ports/devel/ccmalloc
 ccmath		ports/math/ccmath
 ccmsn		ports/net-im/ccmsn
+ccrtp		ports/devel/ccrtp
 ccrypt		ports/security/ccrypt
 ccscript	ports/lang/ccscript
 ccxstream	ports/net/ccxstream
