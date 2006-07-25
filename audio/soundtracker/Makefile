@@ -11,7 +11,7 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
