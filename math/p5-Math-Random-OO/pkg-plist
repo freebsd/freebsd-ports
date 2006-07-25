@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Math/Random/OO.pm
+%%SITE_PERL%%/Math/Random/OO/Bootstrap.pm
+%%SITE_PERL%%/Math/Random/OO/Normal.pm
+%%SITE_PERL%%/Math/Random/OO/Uniform.pm
+%%SITE_PERL%%/Math/Random/OO/UniformInt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/OO/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/OO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/Random/OO
+@dirrmtry %%SITE_PERL%%/Math/Random
+@dirrmtry %%SITE_PERL%%/Math
