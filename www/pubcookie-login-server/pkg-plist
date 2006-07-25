@@ -49,8 +49,6 @@ pubcookie/login_templates.default/pinit_response2
 pubcookie/login_templates.default/status
 pubcookie/login_templates.default/welcome_back
 pubcookie/starter.key
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm pubcookie/login_templates.default/images
 @dirrm pubcookie/login_templates.default
 @dirrmtry pubcookie/login
