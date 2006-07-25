@@ -1,4 +1,4 @@
-%%STANDALONE_POP3%%etc/rc.d/popa3d.sh-dist
+%%STANDALONE_POP3%%etc/rc.d/popa3d.sh
 libexec/popa3d
 %%PORTDOCS%%%%DOCSDIR%%/DESIGN
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

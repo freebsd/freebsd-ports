@@ -1,16 +1,16 @@
 #!/bin/sh
 
-case "$1" in
-start)
-	[ -x %%PREFIX%%/libexec/popa3d ] && %%PREFIX%%/libexec/popa3d -D && echo -n ' popa3d'
-	;;
-stop)
-	killall popa3d
-	;;
-*)
-	echo "Usage: ${0##*/}: { start | stop }" >&2
-	exit 64
-	;;
-esac
+# PROVIDE: popa3d
+# REQUIRE: LOGIN cleanvar
 
-exit 0
+. /etc/rc.subr
+
+name="popa3d"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/libexec/${name}"
+flags="-D"
+
+load_rc_config $name
+run_rc_command "$1"
+
