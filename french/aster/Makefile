@@ -128,13 +128,21 @@ WITH_MPI=	yes	# For the FETI solver
 F90=		gfortran41
 FC=		${LOCALBASE}/bin/${F90}
 DLIBF90!=	${DIRNAME} `${LDCONFIG} -r | ${GREP} gfortran | ${AWK} '{print $$3}'`
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/mumps	\
+. if exists(${LOCALBASE}/lib/libmpiseq.a)
+MUMPS_PORT=	mumps
+. else
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs	\
+		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
+MUMPS_PORT=	mumps-mpich
+MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/mpich2/lib -lmpich
+. endif
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}	\
 		${FC}:${PORTSDIR}/lang/gfortran
 .endif
 
 .if defined(WITH_MPI)
-BUILD_DEPENDS+=	${HOME_MPI}/include/mpif.h:${PORTSDIR}/net/mpich
-HOME_MPI=	${LOCALBASE}/mpich
+BUILD_DEPENDS+=	${HOME_MPI}/include/mpif.h:${PORTSDIR}/net/mpich2
+HOME_MPI=	${LOCALBASE}/mpich2
 .endif
 
 .if !${OSVERSION} < 500039
@@ -210,70 +218,74 @@ LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
-	@${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
+	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
+	${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
 		-e 's|/usr/bin/gcc|${CC}|;s|/usr/bin/g77|${F77}|'	\
 		${WRKSRC}/setup.cfg
 .if defined(WITH_ATLAS)
-	@${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
+	${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
 		${WRKSRC}/products.py
 .endif
-	@${ECHO_CMD} "_install_hdf5 = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_med = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_tcl = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_tk  = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_Pmw = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_Numeric = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_gmsh = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_gibi = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_grace = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "XMGRACE = 'xmgrace'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_homard = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_eficas = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_astk = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_astk_serv = False"		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_metis = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "_install_scotch  = False"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_hdf5 = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_med = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_tcl = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_tk  = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_Pmw = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_Numeric = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_gmsh = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_gibi = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_grace = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "XMGRACE = 'xmgrace'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_homard = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_eficas = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_astk = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_astk_serv = False"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_metis = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_scotch  = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MUMPS)
-	@${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "F90='${LOCALBASE}/bin/gfortran41'"	>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c -L${DLIBF90} -lgfortran'"	\
+	${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+. if ${MUMPS_PORT} == "mumps-mpich"
+	# else libmpiseq.a used instead of libmpich, default is OK
+	${ECHO_CMD} "MUMPSLIB = '${MUMPSLIB}'"			>> ${WRKSRC}/setup.cfg
+. endif
+	${ECHO_CMD} "F90='${LOCALBASE}/bin/gfortran41'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c -L${DLIBF90} -lgfortran'"	\
 		>> ${WRKSRC}/setup.cfg
 .else
-	@${ECHO_CMD} "HOME_MUMPS = ''"				>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
+	${ECHO_CMD} "HOME_MUMPS = ''"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lg2c'"	\
 		>> ${WRKSRC}/setup.cfg
 .endif
 .if defined(WITH_MPI)
-	@${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
 .else
-	@${ECHO_CMD} "HOME_MPI = ''"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_MPI = ''"				>> ${WRKSRC}/setup.cfg
 .endif
-	@${ECHO_CMD} "HOME_ZMAT = ''"				>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_ZMAT = ''"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_HDF='${hdf_dir}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_MED='${LOCALBASE}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_TCL_TK='${tcl_dir}'"			>> ${WRKSRC}/setup.cfg
 .if defined(WITH_ATLAS)
-	@${ECHO_CMD} "ATLASLIB='${lib_atlas}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "ATLASLIB='${lib_atlas}'"			>> ${WRKSRC}/setup.cfg
 .endif
-	@${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "LAPACKLIB='${LOCALBASE}/lib/liblapack.a'"	>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "FFLAGS_DBG='-c -g -O -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "BLASLIB='${lib_blas}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "LAPACKLIB='${LOCALBASE}/lib/liblapack.a'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "FFLAGS_DBG='-c -g -O -D${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O -ff2c -D${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	@${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} -D${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 
 do-configure:
