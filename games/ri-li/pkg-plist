@@ -1,0 +1,22 @@
+bin/Ri_li
+%%DATADIR%%/Ri-li-1.0.3-r1.ebuild
+%%DATADIR%%/Ri-li-icon-16x16.png
+%%DATADIR%%/Ri-li-icon-32x32.png
+%%DATADIR%%/Ri-li-icon-48x48.png
+%%DATADIR%%/Sounds/clic.wav
+%%DATADIR%%/Sounds/crash.wav
+%%DATADIR%%/Sounds/end.wav
+%%DATADIR%%/Sounds/etire.wav
+%%DATADIR%%/Sounds/jeu1.xm
+%%DATADIR%%/Sounds/jeu2.xm
+%%DATADIR%%/Sounds/live.wav
+%%DATADIR%%/Sounds/lose.wav
+%%DATADIR%%/Sounds/menu.mod
+%%DATADIR%%/Sounds/reduit.wav
+%%DATADIR%%/Sounds/speed.wav
+%%DATADIR%%/Sounds/wagon.wav
+%%DATADIR%%/levels.dat
+%%DATADIR%%/ri-li.ico
+%%DATADIR%%/sprites.dat
+@dirrm %%DATADIR%%/Sounds
+@dirrm %%DATADIR%%

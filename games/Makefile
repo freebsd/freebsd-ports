@@ -570,6 +570,7 @@
     SUBDIR += race
     SUBDIR += reminiscence
     SUBDIR += rfksay
+    SUBDIR += ri-li
     SUBDIR += robocode
     SUBDIR += robotfindskitten
     SUBDIR += rockdodger
