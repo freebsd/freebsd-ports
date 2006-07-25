@@ -14,21 +14,8 @@ bin/gforthmi-%%PORTVERSION%%
 bin/vmgen-%%PORTVERSION%%
 @exec ln -fs %f %B/vmgen
 @unexec rm -f %B/vmgen
-%%LIB_DIR%%/%%PORTVERSION%%/gforth-ditc
-%%LIB_DIR%%/%%PORTVERSION%%/gforth.fi
-@exec mkdir -p %D/lib/gforth/site-forth
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/Benchres
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.DOC
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.BINDIST
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.vmgen
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.vmgen
-%%PORTDOCS%%%%DOCSDIR%%/ToDo
+lib/gforth/%%PORTVERSION%%/gforth-ditc
+lib/gforth/%%PORTVERSION%%/gforth.fi
 %%EMACS_DIR%%/gforth.el
 %%DATADIR%%/%%PORTVERSION%%/TAGS
 %%DATADIR%%/%%PORTVERSION%%/add.fs
@@ -37,43 +24,11 @@ bin/vmgen-%%PORTVERSION%%
 %%DATADIR%%/%%PORTVERSION%%/answords.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/386/asm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/386/disasm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/asm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/mach.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/prim.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/4stack/relocate.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/asm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/cold.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/mach.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/prim.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/softuart.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/6502/zero.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/8086/asm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/8086/mach.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/8086/prim.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/alpha/asm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/alpha/disasm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/avr/asm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/c165/asm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/c165/mach.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/c165/prim.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/h8/asm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/mips/asm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/mips/disasm.fs
 %%DATADIR%%/%%PORTVERSION%%/arch/mips/insts.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/asm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/mach.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/prim.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/sim.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/sokoban.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/misc/tt.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/sharc/mach.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/asm.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/compiler.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/dis.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/dis2.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/doers.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/mach.fs
-@comment %%DATADIR%%/%%PORTVERSION%%/arch/shboom/prim.fs
 %%DATADIR%%/%%PORTVERSION%%/asm/README
 %%DATADIR%%/%%PORTVERSION%%/asm/basic.fs
 %%DATADIR%%/%%PORTVERSION%%/asm/bitmask.fs
@@ -123,6 +78,7 @@ bin/vmgen-%%PORTVERSION%%
 %%DATADIR%%/%%PORTVERSION%%/exboot.fs
 %%DATADIR%%/%%PORTVERSION%%/except.fs
 %%DATADIR%%/%%PORTVERSION%%/extend.fs
+%%DATADIR%%/%%PORTVERSION%%/fflib.fs
 %%DATADIR%%/%%PORTVERSION%%/fi2c.fs
 %%DATADIR%%/%%PORTVERSION%%/fib.fs
 %%DATADIR%%/%%PORTVERSION%%/filedump.fs
@@ -149,7 +105,6 @@ bin/vmgen-%%PORTVERSION%%
 %%DATADIR%%/%%PORTVERSION%%/kernel/errore.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/files.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/getdoers.fs
-%%DATADIR%%/%%PORTVERSION%%/kernel/groups.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/input.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/int.fs
 %%DATADIR%%/%%PORTVERSION%%/kernel/io.fs
@@ -186,6 +141,7 @@ bin/vmgen-%%PORTVERSION%%
 %%DATADIR%%/%%PORTVERSION%%/more.fs
 %%DATADIR%%/%%PORTVERSION%%/objects.fs
 %%DATADIR%%/%%PORTVERSION%%/objexamp.fs
+%%DATADIR%%/%%PORTVERSION%%/oldlib.fs
 %%DATADIR%%/%%PORTVERSION%%/oof.fs
 %%DATADIR%%/%%PORTVERSION%%/oofsampl.fs
 %%DATADIR%%/%%PORTVERSION%%/other.fs
@@ -229,30 +185,20 @@ bin/vmgen-%%PORTVERSION%%
 %%DATADIR%%/%%PORTVERSION%%/wordinfo.fs
 %%DATADIR%%/%%PORTVERSION%%/wordsets.fs
 @exec mkdir -p %D/%%DATADIR%%/site-forth
-@dirrm %%DATADIR%%/site-forth
-@dirrm %%DATADIR%%/%%PORTVERSION%%/unix
-@dirrm %%DATADIR%%/%%PORTVERSION%%/test
-@dirrm %%DATADIR%%/%%PORTVERSION%%/kernel
-@dirrm %%DATADIR%%/%%PORTVERSION%%/ec
-@dirrm %%DATADIR%%/%%PORTVERSION%%/doc
-@dirrm %%DATADIR%%/%%PORTVERSION%%/compat
-@dirrm %%DATADIR%%/%%PORTVERSION%%/asm
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/shboom
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/sharc
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/misc
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/mips
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/h8
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/c165
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/avr
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/alpha
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/8086
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/6205
-@comment @dirrm %%DATADIR%%/%%PORTVERSION%%/arch/4stack
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch/386
-@dirrm %%DATADIR%%/%%PORTVERSION%%/arch
-@dirrm %%DATADIR%%/%%PORTVERSION%%
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIB_DIR%%/site-forth
-@dirrm %%LIB_DIR%%/%%PORTVERSION%%
-@dirrm %%LIB_DIR%%
+@dirrmtry %%DATADIR%%/site-forth
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/unix
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/test
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/kernel
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/ec
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/doc
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/compat
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/asm
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch/mips
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch/alpha
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch/386
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%/arch
+@dirrmtry %%DATADIR%%/%%PORTVERSION%%
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/gforth/site-forth
+@dirrmtry lib/gforth/%%PORTVERSION%%
+@dirrmtry lib/gforth
