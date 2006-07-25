@@ -9,7 +9,7 @@ PORTNAME=	acpicatools
 PORTVERSION=	20030523.0
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~iwasaki/acpi/:g1 \
-		http://ftp.ale.org/pub/mirrors/freebsd/distfiles/:g2
+		http://ftp.osuosl.org/pub/FreeBSD/distfiles/:g2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:g1,g2 \
 		acpica-unix-20030523.tar.gz:g2
 
