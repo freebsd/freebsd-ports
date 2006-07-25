@@ -1,6 +1,7 @@
 bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Config.pm
 %%SITE_PERL%%/Perl/Critic/DEVELOPER.pod
+%%SITE_PERL%%/Perl/Critic/TestUtils.pm
 %%SITE_PERL%%/Perl/Critic/Utils.pm
 %%SITE_PERL%%/Perl/Critic/Policy.pm
 %%SITE_PERL%%/Perl/Critic/PolicySummary.pod

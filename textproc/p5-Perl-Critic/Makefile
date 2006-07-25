@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -30,6 +30,7 @@ MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
+	Perl::Critic::TestUtils.3 \
 	Perl::Critic::Policy.3 \
 	Perl::Critic::PolicySummary.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
