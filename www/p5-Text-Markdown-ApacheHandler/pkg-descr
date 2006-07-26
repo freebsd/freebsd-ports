@@ -1,0 +1,5 @@
+Processes files containing Markdown syntax into HTML files and serves
+them, optionally applying CSS styles according to rules in your
+httpd.conf or (more likely) .htaccess files.
+
+WWW:	http://search.cpan.org/dist/Text-Markdown-ApacheHandler/
