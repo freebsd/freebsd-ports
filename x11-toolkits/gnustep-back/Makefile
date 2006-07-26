@@ -61,14 +61,13 @@ CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-cairo-0.*
 .elif defined(WITH_GNUSTEP_CAIRO)
 CFLAGS+=		-I${LOCALBASE}/include/freetype2
 LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
-LIB_DEPENDS+=		glitz-glx.1:${PORTSDIR}/graphics/glitz
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-graphics=cairo --with-name=cairo
+CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=cairo-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment "
 BACK_SUFFIX?=		-cairo
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-art-0.*
-BROKEN=			needs new cairo
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
 CONFIGURE_ARGS+=	--disable-glitz
