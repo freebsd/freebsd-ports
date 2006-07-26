@@ -7,9 +7,10 @@
 
 PORTNAME=	osiris
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.hostintegrity.com/osiris/data/ \
-		http://darkambient.net/
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	The Shmoo client/server host integrity checker
