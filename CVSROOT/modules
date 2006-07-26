@@ -14574,6 +14574,7 @@ xcut		ports/x11/xcut
 xd		ports/misc/xd
 xd3d		ports/graphics/xd3d
 xdaliclock	ports/x11-clocks/xdaliclock
+xdd		ports/sysutils/xdd
 xdeblock	ports/games/xdeblock
 xdelta		ports/misc/xdelta
 xdemineur	ports/games/xdemineur
