@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxemul
-PORTVERSION=	0.3.8
+PORTVERSION=	0.4.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://gavare.se/gxemul/src/ \
 		${MASTER_SITE_LOCAL}
@@ -25,42 +25,14 @@ MAN1=		gxemul.1
 PORTDOCS=	*
 .endif
 
-OPTIONS=	ALWAYS32 "ALWAYS_SIGNEXTEND_32" off \
-		BINTRANS "bintrans" on \
-		CACHES   "cache emulation (experimental)" off \
-		DELAYS   "instruction latency/delay emulation" off \
-		MIPS16   "MIPS16 instruction support (experimental)" off \
-		NEWMIPS  "new MIPS CPU emulation code (experimental)" off \
-		X        "X11 support" on
+OPTIONS=	X11	 "X11 support" on
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OSVERSION} < 500000 )
-USE_GCC=	3.2+
-.endif
-
-.if defined(WITH_ALWAYS32)
-CONFIGURE_ARGS+=--always32
-.endif
-.if !defined(WITH_BINTRANS)
-CONFIGURE_ARGS+=--disable-bintrans
-.endif
-.if defined(WITH_CACHES)
-CONFIGURE_ARGS+=--enable-caches
-.endif
-.if defined(WITH_DELAYS)
-CONFIGURE_ARGS+=--enable-delays
-.endif
-.if defined(WITH_X)
-USE_XLIB=	yes
-.else
+.if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--disable-x
-.endif
-.if defined(WITH_NEWMIPS)
-CONFIGURE_ARGS+=--enable-newmips
-.endif
-.if defined(WITH_MIPS16)
-CONFIGURE_ARGS+=--enable-mips16
+.else
+USE_XLIB=	yes
 .endif
 
 post-patch:
