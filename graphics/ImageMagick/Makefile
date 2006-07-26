@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.2.7-7
-PORTREVISION=	1
+DISTVERSION=	6.2.8-5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -40,7 +39,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
-		identify.1 import.1 mogrify.1 montage.1
+		identify.1 import.1 mogrify.1 montage.1 stream.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -88,6 +87,7 @@ CONFIGURE_ARGS+=	--with-windows-font-dir=${WITH_WINDOWS_FONT_DIR}
 CONFIGURE_ARGS+=	--with-modules
 PLIST_SUB+=		MODULES=''
 .else
+CONFIGURE_ARGS+=	--without-modules
 PLIST_SUB+=		MODULES='@comment '
 .endif
 
