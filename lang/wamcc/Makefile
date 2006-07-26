@@ -21,4 +21,10 @@ USE_GCC=	2.95 # compiled .pl files dump core w/ gcc 3.x
 
 PLIST_SUB=	CC=${CC}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		does not compile on 7.X
+.endif
+
+.include <bsd.port.post.mk>
