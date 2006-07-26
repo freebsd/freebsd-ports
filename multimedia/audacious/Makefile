@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +19,8 @@ COMMENT=	A media player based on BMP and XMMS
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		curl.3:${PORTSDIR}/ftp/curl
+		curl.3:${PORTSDIR}/ftp/curl \
+		tag.5:${PORTSDIR}/audio/taglib
 
 USE_GNOME=	gtk20 libglade2
 USE_GETTEXT=	yes
@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
 CONFIGURE_ARGS=	--disable-jack --disable-flc --disable-adplug \
-	--disable-lirc --disable-alsa --disable-amidiplug --disable-arts
+	--disable-lirc --disable-alsa --disable-amidiplug --disable-arts --disable-wma
 
 MAN1=		audacious.1
 
@@ -50,9 +50,6 @@ OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		SID	"Enable sid input" off \
 		MPC	"Enable mpc input" off \
 		ESOUND	"Enable Esound output"  off \
-		ID3V2	"Enable id3v2 editing" off \
-		SIMD	"Build with x86 SIMD(3DNow!/MMX) instructions support" on \
-		SDL	"Enable SDL support" off \
 		GNOME   "Build with gnomevfs/gconf support" off
 
 .include <bsd.port.pre.mk>
@@ -112,32 +109,14 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN="@comment "
 .endif
 
-.if defined(WITH_ID3V2)
-LIB_DEPENDS+=	id3-3.8.3:${PORTSDIR}/audio/id3lib
-.endif
-
-.if ${ARCH} != "i386"
-WITHOUT_SIMD=	yes
-.endif
-
-.if !defined(WITHOUT_SIMD) && ${OSVERSION} >= 400021
-CONFIGURE_ARGS+=	--enable-simd
-.endif
-
-.if defined(WITH_SDL)
-USE_SDL=	sdl
-.endif
-
 .if defined(WITH_GNOME)
-USE_GNOME+=	gconf2 gnomevfs2
+USE_GNOME+=	gnomevfs2
 CONFIGURE_ARGS+=	--enable-gnome-vfs --enable-gconf
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(LIBDIR)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
-		${WRKSRC}/configure
+		${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
