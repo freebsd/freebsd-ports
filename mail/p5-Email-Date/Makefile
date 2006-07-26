@@ -6,24 +6,31 @@
 #
 
 PORTNAME=	Email-Date
-PORTVERSION=	1.03
+PORTVERSION=	1.10
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find and Format Date Headers
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
-		${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+BUILD_DEPENDS=	p5-Email-Abstract>=2.10:${PORTSDIR}/mail/p5-Email-Abstract \
+		p5-Email-Simple>=1.9:${PORTSDIR}/mail/p5-Email-Simple \
+		p5-Time-Local>=1.07:${PORTSDIR}/devel/p5-Time-Local \
+		p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece \
+		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Email::Date.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+# inherited from mail/p5-Email-Abstract
+IGNORE=		requires Perl 5.6 or later. Please install lang/perl5 or lang/perl5.8, and try again
+.endif
+
+.include <bsd.port.post.mk>
