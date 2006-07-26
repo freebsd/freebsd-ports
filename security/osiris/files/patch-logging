@@ -1,0 +1,66 @@
+--- src/osirisd/logging.c
++++ src/osirisd/logging.c
+@@ -93,7 +93,7 @@
+             fprintf( stdout, "\n" );
+         }
+ #else
+-    syslog( ( SYSLOG_FACILITY | LOG_ERR ), header );
++    syslog( ( SYSLOG_FACILITY | LOG_ERR ), "%s", header );
+ #endif
+ }
+ 
+@@ -147,7 +147,7 @@
+             fprintf( stdout, "\n" );
+         }
+ #else
+-    syslog( ( SYSLOG_FACILITY | LOG_INFO ), header );
++    syslog( ( SYSLOG_FACILITY | LOG_INFO ), "%s", header );
+ #endif
+ }
+ 
+@@ -201,7 +201,7 @@
+             fprintf( stdout, "\n" );
+         }
+ #else
+-    syslog( ( SYSLOG_FACILITY | LOG_WARNING ), header );
++    syslog( ( SYSLOG_FACILITY | LOG_WARNING ), "%s", header );
+ #endif
+ }
+ 
+--- src/osirismd/logging.c
++++ src/osirismd/logging.c
+@@ -106,7 +106,7 @@
+             fprintf( stdout, "\n" );
+         }
+ #else
+-    syslog( ( syslog_facility | LOG_ERR ), header );
++    syslog( ( syslog_facility | LOG_ERR ), "%s", header );
+ #endif
+ }
+ 
+@@ -168,7 +168,7 @@
+             fprintf( stdout, "\n" );
+         }
+ #else
+-    syslog( ( syslog_facility | LOG_INFO ), header );
++    syslog( ( syslog_facility | LOG_INFO ), "%s", header );
+ #endif
+ }
+ 
+@@ -230,7 +230,7 @@
+             fprintf( stdout, "\n" );
+         }
+ #else
+-    syslog( ( syslog_facility | LOG_WARNING ), header );
++    syslog( ( syslog_facility | LOG_WARNING ), "%s", header );
+ #endif
+ }
+ 
+@@ -281,7 +281,7 @@
+                     NULL);                /* no raw data */
+         }
+ #else
+-        syslog( ( syslog_facility | LOG_INFO ), buffer );
++        syslog( ( syslog_facility | LOG_INFO ), "%s", buffer );
+ #endif
+     }
