@@ -1,0 +1,9 @@
+Cle is a Command Line Editor. It provides the editing/history/completion
+commands of the GNU readline package to any line-oriented Unix command. For
+instance,
+
+$ cle ftp foo.bar.org
+
+adds editing/history/completion commands to the ftp command.
+
+WWW: http://kaolin.unice.fr/Cle/
