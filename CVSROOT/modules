@@ -2011,7 +2011,7 @@ e16utils	ports/x11-wm/e16utils
 e17-module-calendar	ports/x11/e17-module-calendar
 e17-module-cpu	ports/x11/e17-module-cpu
 e17-module-deskshow	ports/x11/e17-module-deskshow
-e17-module-devian	ports/sysutils/e17-module-devian
+e17-module-devian	ports/x11/e17-module-devian
 e17-module-engage	ports/x11/e17-module-engage
 e17-module-eveil	ports/x11/e17-module-eveil
 e17-module-flame	ports/x11/e17-module-flame

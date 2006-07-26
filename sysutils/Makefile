@@ -138,7 +138,6 @@
     SUBDIR += dvdimagecmp
     SUBDIR += dvdtape
     SUBDIR += dwatch
-    SUBDIR += e17-module-devian
     SUBDIR += e2fsprogs
     SUBDIR += eiciel
     SUBDIR += eject
