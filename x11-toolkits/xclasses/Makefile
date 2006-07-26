@@ -15,8 +15,6 @@ DISTNAME=	Xclasses-public-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ layout library for X
 
-BROKEN=		fails to install
-
 INSTALLS_SHLIB=	yes
 NOT_FOR_ARCHS=	alpha amd64 ia64 sparc64
 PLIST=		${WRKDIR}/pkg-plist
@@ -27,13 +25,14 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xclasses
 
-post-patch:
+pre-configure:
 .for file in build System/ARules.FreeBSD
 	@${PERL} -pi \
 		-e "s|%%CXX%%|${CXX}|g;" \
 		-e "s|%%CXXFLAGS%%|${CXXFLAGS}|g;" \
 		-e "s|%%X11BASE%%|${X11BASE}|g;" ${WRKSRC}/${file}
 .endfor
+	${REINPLACE_CMD} -e 's|\([:alnum:]\)\\$$|\1 \\|' ${WRKSRC}/Makefile
 
 do-build:
 	@cd ${WRKSRC} && ${SH} build all
