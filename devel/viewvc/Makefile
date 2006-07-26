@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/31766/
+MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/33320/
 
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	Web-based Version Control Repository Browsing
@@ -23,7 +23,6 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}"
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}

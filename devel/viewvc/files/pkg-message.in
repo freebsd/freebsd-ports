@@ -11,6 +11,6 @@ be edited, e.g.:
 $ cd %%INSTDIR%%
 $ cp viewvc.conf.dist viewvc.conf
 $ cp cvsgraph.conf.dist cvsgraph.conf
-It's up to yo to check the ".dist" files after upgrades.
+It's up to you to check the ".dist" files after upgrades.
 
 *****************************************************************
