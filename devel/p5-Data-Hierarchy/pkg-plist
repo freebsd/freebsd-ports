@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Data/Hierarchy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hierarchy/.packlist
-@dirrm %%SITE_PERL%%/Data
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hierarchy
+@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Hierarchy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
