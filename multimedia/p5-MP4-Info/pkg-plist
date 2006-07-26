@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/MP4/Info.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP4/Info/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP4/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP4/Info
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP4
 @dirrmtry %%SITE_PERL%%/MP4
