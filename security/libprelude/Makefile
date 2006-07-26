@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.10.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -26,6 +26,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--localstatedir=/var
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Doesn't build on 4.x
+.endif
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
