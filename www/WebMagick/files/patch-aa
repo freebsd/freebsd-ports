@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.153
-diff -u -r1.117 -r1.153
+retrieving revision 1.154
+diff -u -r1.117 -r1.154
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	28 Dec 2005 21:44:47 -0000	1.153
++++ webmagick.in	26 Jul 2006 03:36:05 -0000	1.154
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.153 2005/12/28 21:44:47 ache Exp $
++# $Id: webmagick.in,v 1.154 2006/07/26 03:36:05 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -585,7 +585,7 @@ diff -u -r1.117 -r1.153
  		      " file is missing\n")
  		    if $opt_debug;
                  ++$doMontage;
-@@ -1975,7 +2073,8 @@
+@@ -1975,9 +2073,10 @@
      # get indexname of parent directory
      my $upindexname =
  	     get_rc_var('..', 'opt_indexname', "$opt_indexname");
@@ -593,8 +593,29 @@ diff -u -r1.117 -r1.153
 +
 +    unless ( "$upindexname" eq 'NOLINK' || "$opt_forcenouplink" || ( cwd() eq "$opt_rootpath" && ! "$opt_forceuplink" ) ) {
         $uphtml = "<A HREF=\"../${upindexname}\"><IMG\n" .
- 	  "SRC=\"$iconImageUrls{'up'}\" $iconImageSizes{'up'} ALT=\"^\" BORDER=0></A>" .
+-	  "SRC=\"$iconImageUrls{'up'}\" $iconImageSizes{'up'} ALT=\"^\" BORDER=0></A>" .
++	  "SRC=\"$iconImageUrls{'up'}\" $iconImageSizes{'up'} TITLE=\"^\" ALT=\"^\" BORDER=0></A>" .
  	  " <A HREF=\"../${upindexname}\">${opt_msg_up}</A><BR>\n";
+     }
+ 
+@@ -1987,7 +2086,7 @@
+     my $helphtml = '';
+     if( $haveReadme ) {
+ 	$helphtml .= "<A HREF=\"" . escapeurl(${opt_readme}) . "\" TARGET=\"$frameTargets{'readmeview'}\"><IMG\n" .
+-	    "SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} ALT=\"?\" BORDER=0></A>" .
++	    "SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} TITLE=\"?\" ALT=\"?\" BORDER=0></A>" .
+ 	    " <A HREF=\"" . escapeurl(${opt_readme}) . "\" TARGET=\"$frameTargets{'readmeview'}\">${opt_msg_readme}</A><BR>\n";
+     }
+ 
+@@ -1997,7 +2096,7 @@
+     my $nexthtml = '';
+     if( $haveReadme && $haveImages && $opt_framefmt_frames{$opt_framestyle}<=2 ) {
+ 	$nexthtml .= "<A HREF=\"${opt_pageindexname}1$opt_htmlext\" TARGET=\"$frameTargets{'thumbview'}\"><IMG\n" .
+-	    "SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} ALT=\"*\" BORDER=0></A>" .
++	    "SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} TITLE=\"*\" ALT=\"*\" BORDER=0></A>" .
+ 	    " <A HREF=\"${opt_pageindexname}1$opt_htmlext\" TARGET=\"$frameTargets{'thumbview'}\">${opt_msg_images}</A><BR>";
+     }
+ 
 @@ -2023,20 +2122,19 @@
  	    } else {
  		$dirtitle=$subdir;
@@ -611,7 +632,8 @@ diff -u -r1.117 -r1.153
  		# If a bullet icon is defined, then use it
  		# otherwise use plain text only
  		if( defined( $iconImageUrls{'ball'} ) ) {
- 		    $dirhtml .= "<A HREF=\"${url}\"><IMG SRC=\"$iconImageUrls{'ball'}\" $iconImageSizes{'ball'} ALT=\"*\" BORDER=0></A>";
+-		    $dirhtml .= "<A HREF=\"${url}\"><IMG SRC=\"$iconImageUrls{'ball'}\" $iconImageSizes{'ball'} ALT=\"*\" BORDER=0></A>";
++		    $dirhtml .= "<A HREF=\"${url}\"><IMG SRC=\"$iconImageUrls{'ball'}\" $iconImageSizes{'ball'} TITLE=\"*\" ALT=\"*\" BORDER=0></A>";
  		}
 -		$dirhtml .= "<A HREF=\"${url}\">$dirtitle</A></NOBR><BR>\n";
 +		$dirhtml .= "<A HREF=\"${url}\">$dirtitle</A><BR>\n";
@@ -755,7 +777,42 @@ diff -u -r1.117 -r1.153
  
      # Must be visible at each page, if no frames
      if (!$opt_frames) {
-@@ -2329,8 +2422,6 @@
+@@ -2287,7 +2380,7 @@
+ 	# --- readme link ---
+ 	if ( $haveReadme ) {
+ 	    $indexbar .= "<A HREF=\"${opt_readme}\"><IMG\n" .
+-		"SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} ALT=\"${opt_msg_readme}\" BORDER=0></A>\n";
++		"SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} TITLE=\"${opt_msg_readme}\" ALT=\"${opt_msg_readme}\" BORDER=0></A>\n";
+ 	}
+ 
+ 	# --- up link ---
+@@ -2295,7 +2388,7 @@
+ 
+ 	if ( "$upindexname" ne 'NOLINK' ) {
+ 	    $indexbar .= "<A HREF=\"../${upindexname}\"><IMG\n" .
+-		"SRC=\"$iconImageUrls{'up'}\" $iconImageSizes{'up'} ALT=\"${opt_msg_up}\" BORDER=0></A>\n";
++		"SRC=\"$iconImageUrls{'up'}\" $iconImageSizes{'up'} TITLE=\"${opt_msg_up}\" ALT=\"${opt_msg_up}\" BORDER=0></A>\n";
+ 	}
+ 
+     }
+@@ -2312,7 +2405,7 @@
+ 	$indexbar .= " TARGET=\"$frameTargets{'thumbview'}\""
+ 	    if ($opt_frames);
+ 	$indexbar .= "><IMG\n" .
+-	    "SRC=\"$iconImageUrls{'prev'}\" $iconImageSizes{'prev'} ALT=\"${opt_msg_prev}\" BORDER=0></A>\n";
++	    "SRC=\"$iconImageUrls{'prev'}\" $iconImageSizes{'prev'} TITLE=\"${opt_msg_prev}\" ALT=\"${opt_msg_prev}\" BORDER=0></A>\n";
+     }
+ 
+     # --- next link ---
+@@ -2322,15 +2415,13 @@
+ 	    $indexbar .= " TARGET=\"$frameTargets{'thumbview'}\""
+ 		if ($opt_frames);
+ 	    $indexbar .= "><IMG\n" .
+-		"SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} ALT=\"${opt_msg_next}\" BORDER=0></A>\n";
++		"SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} TITLE=\"${opt_msg_next}\" ALT=\"${opt_msg_next}\" BORDER=0></A>\n";
+ 	} else {
+ 	    # Print a grayed out arrow to maintain alignment
+ 	    $indexbar .= "<IMG SRC=\"$iconImageUrls{'next_gray'}\" $iconImageSizes{'next_gray'} ALT=\"\" BORDER=0>\n";
          }
      }
  
@@ -958,7 +1015,13 @@ diff -u -r1.117 -r1.153
  					
  				# Must be visible at each page, if no frames
  				if (!$opt_frames) {
-@@ -2507,7 +2630,7 @@
+@@ -2502,12 +2625,12 @@
+ 				    # --- readme link ---
+ 				    if ( $haveReadme ) {
+ 					print (PICHTML "<A HREF=\"${opt_readme}\"><IMG\n",
+-					    "SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} ALT=\"${opt_msg_readme}\" BORDER=0></A>\n");
++					    "SRC=\"$iconImageUrls{'help'}\" $iconImageSizes{'help'} TITLE=\"${opt_msg_readme}\" ALT=\"${opt_msg_readme}\" BORDER=0></A>\n");
+ 				    }
  				}
  
  				# up
@@ -967,7 +1030,14 @@ diff -u -r1.117 -r1.153
  					if ($opt_frames) {
  					    print ( PICHTML "<A HREF=\"${opt_pageindexname}${pageNumber}${opt_htmlext}\"");
  					    print ( PICHTML " TARGET=\"$frameTargets{'thumbview'}\"")
-@@ -2521,45 +2644,94 @@
+@@ -2515,51 +2638,100 @@
+ 					    print ( PICHTML "<A HREF=\"${pNumber}${opt_indexname}\"");
+ 					}
+ 					print ( PICHTML "><IMG SRC=\"$iconImageUrls{'up'}\"",
+-						" $iconImageSizes{'up'} ALT=\"${opt_msg_up}\" BORDER=0></A>\n");
++						" $iconImageSizes{'up'} TITLE=\"${opt_msg_up}\" ALT=\"${opt_msg_up}\" BORDER=0></A>\n");
+ 					
+ 				}
  				
  				# prev
  				if (($imageNum == 0) && ($pageNumber == 1)) {
@@ -998,7 +1068,8 @@ diff -u -r1.117 -r1.153
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'prev'}\"",
- 						" $iconImageSizes{'prev'} ALT=\"${opt_msg_prev}\" BORDER=0></A>\n");
+-						" $iconImageSizes{'prev'} ALT=\"${opt_msg_prev}\" BORDER=0></A>\n");
++						" $iconImageSizes{'prev'} TITLE=\"${opt_msg_prev}\" ALT=\"${opt_msg_prev}\" BORDER=0></A>\n");
  						
  				}
 -				
@@ -1012,7 +1083,7 @@ diff -u -r1.117 -r1.153
 +					    print ( PICHTML "<A HREF=\"${pNumber}${opt_indexname}\"");
 +					}
 +					print ( PICHTML "><IMG SRC=\"$iconImageUrls{'up'}\"",
-+						" $iconImageSizes{'up'} ALT=\"${opt_msg_up}\" BORDER=0></A>\n");
++						" $iconImageSizes{'up'} TITLE=\"${opt_msg_up}\" ALT=\"${opt_msg_up}\" BORDER=0></A>\n");
 +					
 +				}
 +			
@@ -1045,7 +1116,8 @@ diff -u -r1.117 -r1.153
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'next'}\"",
- 						" $iconImageSizes{'next'} ALT=\"${opt_msg_next}\" BORDER=0></A>\n");
+-						" $iconImageSizes{'next'} ALT=\"${opt_msg_next}\" BORDER=0></A>\n");
++						" $iconImageSizes{'next'} TITLE=\"${opt_msg_next}\" ALT=\"${opt_msg_next}\" BORDER=0></A>\n");
  						
  				}
 -				
