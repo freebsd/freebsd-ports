@@ -1,4 +1,5 @@
 bin/vdrift
+%%NLS%%share/locale/nl/LC_MESSAGES/VDrift.mo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

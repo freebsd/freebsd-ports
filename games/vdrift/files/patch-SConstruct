@@ -1,0 +1,11 @@
+--- SConstruct	Fri Jul 21 16:43:04 2006
++++ SConstruct	Fri Jul 21 16:43:49 2006
+@@ -42,7 +42,7 @@
+ 		env = Environment(ENV = os.environ,
+ 			CPPPATH = ['#include',LOCALBASE + '/include', LOCALBASE + '/include/AL',X11BASE + '/include'],
+ 			LIBPATH = ['.', '#lib', LOCALBASE + '/lib', X11BASE + '/lib'],
+-			LINKFLAGS = ['-pthread'],
++			LINKFLAGS = ['-pthread','-lintl'],
+ 			options = opts)
+          
+ 		check_headers = ['GL/gl.h', 'GL/glu.h', 'SDL11/SDL.h', 'SDL11/SDL_image.h', 'SDL11/SDL_net.h']

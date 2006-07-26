@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	vdrift
-PORTVERSION=	20060221
-PORTREVISION=	2
+PORTVERSION=	20060708
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-2006-02-21-src
+DISTNAME=	${PORTNAME}-2006-07-08-src
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -20,19 +19,22 @@ COMMENT=	Open source driving simulation
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
-RUN_DEPENDS=	${X11BASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl image net
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
-SCONS_ARGS=	prefix=${DATADIR} bin=${PREFIX}/bin
+SCONS_ARGS=	prefix=${PREFIX} \
+		datadir=share/${PORTNAME} \
+		bindir=bin \
+		use_binreloc=0
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	DEBUG	"Additional debug information"	off
+OPTIONS=	DEBUG	"Additional debug information"	off \
+		NLS	"Internationalization support "	on
 
 .include <bsd.port.pre.mk>
 
@@ -40,6 +42,14 @@ OPTIONS=	DEBUG	"Additional debug information"	off
 SCONS_ARGS+=	release=0
 .else
 SCONS_ARGS+=	release=1
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+FLAG_NLS=	true
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${OSVERSION} < 500000
@@ -62,6 +72,13 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/vdrift ${PREFIX}/bin
+
+.if defined(FLAG_NLS)
+.	for DIRE in nl
+		@cd ${WRKSRC}/po/share/locale/${DIRE}/LC_MESSAGES && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" ${PREFIX}/share/locale/${DIRE}/LC_MESSAGES \;
+.	endfor
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
