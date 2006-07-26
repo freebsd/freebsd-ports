@@ -14,8 +14,4 @@ bin/mp
 %%NLS%%share/locale/es/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/it/LC_MESSAGES/minimum-profit.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/minimum-profit.mo
-%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
 @dirrm %%DOCSDIR%%
