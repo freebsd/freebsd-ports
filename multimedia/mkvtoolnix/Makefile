@@ -25,8 +25,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-extra-includes=${LOCALBASE}/include \
-		--with-extra-libs=${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I/usr/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L/usr/lib -L${LOCALBASE}/lib -lmagic -lz"
 
 MAN1=		base64tool.1 mkvextract.1 mkvinfo.1 mkvmerge.1
 PLIST_FILES=	bin/base64tool bin/mkvextract bin/mkvinfo bin/mkvmerge
