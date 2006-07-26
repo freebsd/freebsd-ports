@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -119,15 +119,12 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 USER=		smokeping
+SMOKEPING_UID=	117
 GROUP=		smokeping
-WWW_USER=	www
-WWW_UID=	80
-WWW_GROUP=	www
-WWW_GID=	80
+SMOKEPING_GID=	117
 
-FILES_SUB=	USER=${USER} GROUP=${GROUP} \
-		WWW_USER=${WWW_USER} WWW_UID=${WWW_UID} \
-		WWW_GROUP=${WWW_GROUP} WWW_GID=${WWW_GID} \
+FILES_SUB=	USER=${USER} UID=${SMOKEPING_UID} \
+		GROUP=${GROUP} GID=${SMOKEPING_GID} \
 		PERL=${PERL} PREFIX=${PREFIX}
 
 DOC1=		CHANGES CONTRIBUTORS COPYING COPYRIGHT README TODO
@@ -262,7 +259,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi ${PREFIX}/smokeping/htdocs/smokeping.cgi
 	@${CP} -R ${WRKSRC}/lib ${PREFIX}/smokeping/
 	@${MKDIR} ${PREFIX}/var/smokeping
-	@${CHOWN} ${USER}:${GROUP} ${PREFIX}/var/smokeping
+	@${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
 	@${MKDIR} ${PREFIX}/smokeping/htdocs/img
 	@${CHOWN} ${WWW_USER}:${WWW_GROUP} ${PREFIX}/smokeping/htdocs/img
 	@if [ ! -f ${PREFIX}/etc/rc.d/smokeping.sh ]; then \

@@ -113,6 +113,8 @@ smokeping/htdocs/smokeping.cgi
 smokeping/lib/Smokeping.pm
 smokeping/lib/Smokeping/ciscoRttMonMIB.pm
 smokeping/lib/Smokeping/matchers/base.pm
+smokeping/lib/Smokeping/matchers/CheckLatency.pm
+smokeping/lib/Smokeping/matchers/CheckLoss.pm
 smokeping/lib/Smokeping/matchers/Median.pm
 smokeping/lib/Smokeping/matchers/Avgratio.pm
 smokeping/lib/Smokeping/probes/AnotherDNS.pm
@@ -136,6 +138,7 @@ smokeping/lib/Smokeping/probes/LDAP.pm
 smokeping/lib/Smokeping/probes/Radius.pm
 smokeping/lib/Smokeping/probes/RemoteFPing.pm
 smokeping/lib/Smokeping/probes/SSH.pm
+smokeping/lib/Smokeping/probes/TacacsPlus.pm
 smokeping/lib/Smokeping/probes/TelnetIOSPing.pm
 smokeping/lib/Smokeping/probes/base.pm
 smokeping/lib/Smokeping/probes/basefork.pm
