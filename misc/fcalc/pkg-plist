@@ -1,0 +1,34 @@
+bin/fcalc
+lib/fcalc/AoV.tcl
+lib/fcalc/Dialogs.tcl
+lib/fcalc/DoF.tcl
+lib/fcalc/FoV.tcl
+lib/fcalc/Hyperfocal.tcl
+lib/fcalc/LensMath.tcl
+lib/fcalc/Magnification.tcl
+lib/fcalc/SpotMeter.tcl
+lib/fcalc/fNumbers.tcl
+lib/fcalc/help/AoV.htm
+lib/fcalc/help/Credits.htm
+lib/fcalc/help/DoF.htm
+lib/fcalc/help/FNumber.htm
+lib/fcalc/help/FoV.htm
+lib/fcalc/help/Future.htm
+lib/fcalc/help/Hyperfocal.htm
+lib/fcalc/help/Introduction.htm
+lib/fcalc/help/License.htm
+lib/fcalc/help/Magnification.htm
+lib/fcalc/help/SpotMetering.htm
+lib/fcalc/help/angle-of-view.gif
+lib/fcalc/help/dof-far.gif
+lib/fcalc/help/dof-near.gif
+lib/fcalc/help/f-number-to-stops.gif
+lib/fcalc/help/fov-horz.gif
+lib/fcalc/help/fov-vert.gif
+lib/fcalc/help/hyperfocal.gif
+lib/fcalc/help/magnification.gif
+lib/fcalc/help/spot-metering.gif
+lib/fcalc/help/sqrt2.gif
+lib/fcalc/help/stops-to-f-number.gif
+@dirrm lib/fcalc/help
+@dirrm lib/fcalc
