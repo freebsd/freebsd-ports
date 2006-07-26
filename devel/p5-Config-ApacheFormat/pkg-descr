@@ -1,0 +1,13 @@
+This module is designed to parse a configuration file in the same syntax
+used by the Apache web server (see http://httpd.apache.org for
+details). This allows you to build applications which can be easily
+managed by experienced Apache admins. Also, by using this module,
+you'll benefit from the support for nested blocks with built-in
+parameter inheritance. This can greatly reduce the amount or repeated
+information in your configuration files.
+
+A good reference to the Apache configuration file format can be found
+here:
+http://httpd.apache.org/docs-2.0/configuring.html
+
+WWW: http://search.cpan.org/~samtregar/Config-ApacheFormat-1.2/

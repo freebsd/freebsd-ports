@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Config/ApacheFormat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/ApacheFormat/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/ApacheFormat
+@dirrmtry %%SITE_PERL%%/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config

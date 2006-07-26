@@ -850,6 +850,7 @@
     SUBDIR += p5-Clone-More
     SUBDIR += p5-Code-Perl
     SUBDIR += p5-Commands-Guarded
+    SUBDIR += p5-Config-ApacheFormat
     SUBDIR += p5-Config-Auto
     SUBDIR += p5-Config-Fast
     SUBDIR += p5-Config-General
