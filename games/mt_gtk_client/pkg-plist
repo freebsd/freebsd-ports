@@ -3,6 +3,3 @@ share/locale/fr/LC_MESSAGES/mt_gtk_client.mo
 %%DATADIR%%/data/maitretarot.png
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale
