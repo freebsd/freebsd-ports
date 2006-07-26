@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyao-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	A python wrapper for ao, an audio device abstraction library
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
