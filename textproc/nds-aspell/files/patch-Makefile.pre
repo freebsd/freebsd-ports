@@ -1,0 +1,11 @@
+--- ./Makefile.pre.orig	Wed Dec 22 04:55:19 2004
++++ ./Makefile.pre	Wed Jul 26 23:48:38 2006
+@@ -4,7 +4,7 @@
+ version = 0.01-0
+ 
+ cwl_files = nds.cwl
+-data_files = nds.dat nds_affix.dat nds_phonet.dat iso-8859-15.cset iso-8859-15.cmap
++data_files = nds.dat nds_affix.dat nds_phonet.dat
+ doc_files = README README.iso COPYING Copyright
+ extra_files = configure info Makefile.pre
+ multi_files = lowsaxon.alias nds.multi
