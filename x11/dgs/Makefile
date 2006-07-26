@@ -7,6 +7,7 @@
 
 PORTNAME=	dgs
 PORTVERSION=	0.5.9.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	dgs
@@ -28,8 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.5.9
 
 MAN1=		dgs.1 dpsnx.agent.1
 MANN=		dpsexec.man xepsf.man
-INSTALLDIRS=	gs DPS/clients/pswrap \
-		DPS/demos/dpsexec DPS/demos/xepsf
+INSTALLDIRS=	gs DPS/demos/dpsexec DPS/demos/xepsf
 
 .include <bsd.port.pre.mk>
 
