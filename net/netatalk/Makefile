@@ -93,8 +93,6 @@ post-install:
 	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
 		${PREFIX}/bin/test_parse_mtab \
 		${PREFIX}/bin/afpd-mtab.pl ${PREFIX}/etc/netatalk.conf.dist
-	${INSTALL_SCRIPT} ${WRKSRC}/netatalk.sh \
-		${PREFIX}/etc/rc.d/netatalk.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${PREFIX}/bin/macusers
 .for i in ${FILES}

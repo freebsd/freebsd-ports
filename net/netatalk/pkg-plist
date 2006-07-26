@@ -56,7 +56,6 @@ etc/atalkd.conf.dist
 @unexec if cmp -s %D/etc/papd.conf %D/etc/papd.conf.dist; then rm -f %D/etc/papd.conf; fi
 etc/papd.conf.dist
 @exec [ ! -f %B/papd.conf ] && cp %B/%f %B/papd.conf
-etc/rc.d/netatalk.sh
 etc/uams/uams_clrtxt.so
 etc/uams/uams_dhx.so
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.a
