@@ -1,3 +1,4 @@
+%%DSV%%bin/webjob-dsvtool
 %%PAD%%bin/pad-join
 %%PAD%%bin/pad-make-script
 %%PAD%%bin/pad-make-binary
