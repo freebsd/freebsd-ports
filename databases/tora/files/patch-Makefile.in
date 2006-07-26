@@ -1,5 +1,14 @@
 --- Makefile.in.orig	Fri Feb 24 00:20:06 2006
-+++ Makefile.in	Wed Mar  1 22:32:40 2006
++++ Makefile.in	Wed Jul 26 17:59:30 2006
+@@ -494,7 +494,7 @@
+ 	$(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)
+ CXXLINK = $(LIBTOOL) --tag=CXX --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+-	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(CXXFLAGS) $(AM_LDFLAGS) -v $(LDFLAGS) -o $@
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) \
 @@ -786,7 +786,7 @@
  
  # fix for annoying automake naming problems.
