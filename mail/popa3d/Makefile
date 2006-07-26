@@ -22,8 +22,9 @@ PLIST=		${WRKDIR}/.PLIST.more
 CFLAGS+=	-DPREFIX=${PREFIX}
 UNIQUENAME=	${.CURDIR:T}
 
-OPTIONS?=	STANDALONE_POP3 "Unattended server mode" off \
-		SMTP_AFTER_POP3 "Enable SMTP-after-POP mode" off
+OPTIONS?=	SMTP_AFTER_POP3 "Enable SMTP-after-POP mode" off \
+		STANDALONE_POP3 "Enable standalone server mode" off \
+		SETPROCTITLE "Enable setproctitle mode" off
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +54,10 @@ CONFLICTS?=	popa3d-0.* popa3d-standalone-0.*
 .else
 PLIST_SUB+=	SMTP_AFTER_POP3="@comment "
 CONFLICTS?=	popa3d-standalone-0.* popa3d-before-sendmail-0.*
+.endif
+
+.if defined(WITH_SETPROCTITLE)
+EXTRA_PATCHES+=	${FILESDIR}/setproctitle.patch
 .endif
 
 .if defined(WITH_STANDALONE_POP3)
