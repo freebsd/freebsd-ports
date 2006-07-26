@@ -13,7 +13,7 @@
 %%SITE_PERL%%/FLV/MetaTag.pm
 %%SITE_PERL%%/FLV/Tag.pm
 %%SITE_PERL%%/FLV/ToMP3.pm
-%%SITE_PERL%%/FLV/ToSwf.pm
+%%SITE_PERL%%/FLV/ToSWF.pm
 %%SITE_PERL%%/FLV/VideoTag.pm
 bin/flv2mp3
 bin/flv2swf
