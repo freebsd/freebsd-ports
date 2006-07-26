@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	6.3
+PORTVERSION=	6.3.1
 CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/
 MASTER_SITE_SUBDIR=	science/cartography
@@ -15,13 +15,22 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	david@catwhisker.org
 COMMENT=	A Tcl/Tk-based GPS management utility
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+#RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+USE_TK=		84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
 # MAN1=		gpsman.1
 # MANCOMPRESSED=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+GPSMAN_DEFAULT_PORT?=	/dev/cuaa0
+.else
+GPSMAN_DEFAULT_PORT?=	/dev/cuad0
+.endif
 
 post-patch:
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} "s|/dev/ttyS0|${GPSMAN_DEFAULT_PORT}|" \
@@ -58,10 +67,4 @@ do-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" pkg-message
 .endif
 
-.include <bsd.port.mk>
-
-.if ${OSVERSION} < 600000
-GPSMAN_DEFAULT_PORT?=	/dev/cuaa0
-.else
-GPSMAN_DEFAULT_PORT?=	/dev/cuad0
-.endif
+.include <bsd.port.post.mk>
