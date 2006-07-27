@@ -21,6 +21,9 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-source${EXTRACT_SUFX} \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/e2a92664-1d60-11db-88cf-000c6ec775d9.html
+EXPIRATION_DATE=2006-08-27
+
 LATEST_LINK=	${PORTNAME}10
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
