@@ -7811,6 +7811,7 @@ p5-AcePerl	ports/biology/p5-AcePerl
 p5-Acme-ButFirst	ports/misc/p5-Acme-ButFirst
 p5-Acme-MetaSyntactic	ports/devel/p5-Acme-MetaSyntactic
 p5-Acme-Monta	ports/www/p5-Acme-Monta
+p5-Acme-Steganography-Image-Png	ports/graphics/p5-Acme-Steganography-Image-Png
 p5-AddressBook	ports/net/p5-AddressBook
 p5-Agent	ports/devel/p5-Agent
 p5-Algorithm-Accounting	ports/devel/p5-Algorithm-Accounting
