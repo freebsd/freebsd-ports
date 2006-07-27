@@ -69,6 +69,8 @@ _MLINKS_PREPEND+=${_M${sect}LINKS:S%^%${_MANPREFIX}/man${sect:L}/%:S%$%${MANEXT}
 . endif
 .endfor
 
+SH2FIX=		maninst.sh genintro.sh crossln.sh
+
 DOC_FILES=	CHANGES LICENSE/COPYING LICENSE/LICENSE LICENSE/LUCENT \
 		LICENSE/README LICENSE/COPYING.LGPL README intro.txt
 #NOTE_FILES=	cp/NOTES cpio/TODO dd/NOTES grep/NOTES libuxre/NOTES \
@@ -81,9 +83,10 @@ DOC_FILES=	CHANGES LICENSE/COPYING LICENSE/LICENSE LICENSE/LUCENT \
 IGNORE=		does not build on FreeBSD 4.x which is missing wide-characters
 .endif
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/build/mk.config ${WRKSRC}/su/su.dfl.in
+	@${REINPLACE_CMD} -e 's|/sbin/sh| ${SH}|' ${SH2FIX:S|^|${WRKSRC}/build/|}
 
 post-install: compress-man install-doc
 
