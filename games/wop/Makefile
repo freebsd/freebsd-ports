@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wop
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3
 CATEGORIES=	games
 MASTER_SITES=	http://wormsofprey.org/download/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
