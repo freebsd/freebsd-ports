@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smtptrapd
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://smtptrapd.inodes.org/
 
