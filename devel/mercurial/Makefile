@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.selenic.com/mercurial/release/
 
@@ -18,15 +18,29 @@ USE_PYDISTUTILS=yes
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
+		darcs2hg.py \
 		favicon.ico \
-		hg-menu.vim \
 		hg-ssh \
 		hgdiff \
 		hgk \
-		hgk.py \
 		mercurial.el \
+		sample.hgrc \
 		tcsh_completion \
-		zsh_completion
+		zsh_completion \
+		git-viz/git-cat-file \
+		git-viz/git-diff-tree \
+		git-viz/git-rev-list \
+		git-viz/git-rev-tree \
+		git-viz/hg-viz \
+		hgsh/Makefile \
+		hgsh/hgsh.c \
+		purge/README \
+		purge/purge.py \
+		vim/HGAnnotate.vim \
+		vim/hg-menu.vim \
+		vim/hgcommand.vim \
+		vim/patchreview.txt \
+		vim/patchreview.vim
 
 PORTDOCS=	CONTRIBUTORS COPYING README *.txt doc/*.txt
 
@@ -43,8 +57,12 @@ post-install:
 	done
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/contrib
+	${MKDIR} ${DATADIR}/contrib/git-viz
+	${MKDIR} ${DATADIR}/contrib/hgsh
+	${MKDIR} ${DATADIR}/contrib/purge
+	${MKDIR} ${DATADIR}/contrib/vim
 	for f in ${CONTRIB_FILES}; do \
-		${CP} -p ${WRKSRC}/contrib/$${f} ${DATADIR}/contrib; \
+		${CP} -p ${WRKSRC}/contrib/$${f} ${DATADIR}/contrib/$${f}; \
 	done
 	${MKDIR} ${DATADIR}/www
 	${INSTALL_MAN} ${WRKSRC}/*.cgi ${DATADIR}/www
