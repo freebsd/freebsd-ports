@@ -10,10 +10,10 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/wmbsdbatt/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"dockapp for battery & temperature monitoring through ACPI"
+COMMENT=	Dockapp for battery & temperature monitoring through ACPI
 
-USE_XLIB = yes
-USE_XPM = yes
+USE_XLIB=	yes
+USE_XPM=	yes
 
 PLIST_FILES=	bin/wmbsdbatt
 
@@ -23,7 +23,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=		Does not compile on 4.x
+IGNORE=		does not compile on 4.x
 .endif
 
 .include <bsd.port.post.mk>
