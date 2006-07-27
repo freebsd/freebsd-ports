@@ -68,6 +68,7 @@
     SUBDIR += courierpassd
     SUBDIR += courierpasswd
     SUBDIR += cops
+    SUBDIR += courieruserinfo
     SUBDIR += cp2fwb
     SUBDIR += crack
     SUBDIR += cracklib

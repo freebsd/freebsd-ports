@@ -1,0 +1,44 @@
+
+#########################################################################
+NOTES FOR RUNNING COURIERUSERINFO
+
+In order to use courieruserinfo, it must be able to access the
+authdaemon domain socket, named 'socket'. When courieruserinfo runs as
+root, this presents no problem. However, if you need to run courieruserinfo
+as a non-root user, you have three options, all of which require some
+manual work.
+
+Option 1: Add the user courieruserinfo will run as to the group that
+owns the authdaemon socket directory in /etc/group. More than one user
+can be added to the group vector in this way. This arrangement works
+well if courieruserinfo will be run by only a small number of users.
+If the authdaemon socket directory is owned by courier:courier and you
+run courieruserinfo as user vmail, your /etc/group file will have a line
+something like this:
+
+    courier:x:465:vmail
+
+Option 2: Some programs, such as tcpserver, allow you to separately set
+the uid and gid of programs they call but don't honour the group vector
+found in /etc/group. If you invoke courieruserinfo from such a program,
+set the gid to the group ownership of the authdaemon socket directory.
+
+Option 3: Change the permissions on courieruserinfo to set gid to the
+group ownership of the socket directory. Again, if the socket directory
+is owned by courier:courier, change the ownership and permissions
+of courieruserinfo like so:
+
+    chgrp courier courieruserinfo
+    chmod g+s courieruserinfo
+
+Be aware that this will allow any user on the system to access user
+account information through courieruserinfo.
+
+To mitigate possible security risks posed by running courieruserinfo
+setgid, courieruserinfo cannot retrieve passwords.
+
+The location of the authdaemon domain socket is listed in the
+authdaemonrc configuration file as the parameter authdaemonvar.
+
+#########################################################################
+
