@@ -40,7 +40,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>firefox</name>
 	<range><lt>1.5.0.5,1</lt></range>
-	<range><gt>2.*</gt></range>
+	<range><gt>2.*,1</gt></range>
       </package>
       <package>
 	<name>linux-firefox</name>
@@ -130,6 +130,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-07-25</discovery>
       <entry>2006-07-27</entry>
+      <modified>2006-07-28</modified>
     </dates>
   </vuln>
 
