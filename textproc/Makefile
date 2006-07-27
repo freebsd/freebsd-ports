@@ -571,6 +571,7 @@
     SUBDIR += p5-XML-Filter-SAXT
     SUBDIR += p5-XML-Filter-XInclude
     SUBDIR += p5-XML-Filter-XSLT
+    SUBDIR += p5-XML-Flow
     SUBDIR += p5-XML-GDOME
     SUBDIR += p5-XML-Generator
     SUBDIR += p5-XML-Generator-DBI
