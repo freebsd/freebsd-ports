@@ -26,6 +26,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/mpost:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=		No longer actively maintained
+EXPIRATION_DATE=	2006-10-01
+
 USE_GL=		yes
 USE_PYTHON=	yes
 
