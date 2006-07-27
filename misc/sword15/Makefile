@@ -17,6 +17,7 @@ COMMENT=	A project framework for manipulating Bible texts
 
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
+USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf
@@ -25,10 +26,6 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Fails to compile under FreeBSD 4.X
-.endif
 
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--without-curl
