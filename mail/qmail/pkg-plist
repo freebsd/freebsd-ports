@@ -58,6 +58,7 @@ bin/qmail-smtpd
 bin/qmail-start
 bin/qmail-tcpok
 bin/qmail-tcpto
+%%EXTTODO%%bin/qmail-todo
 %%LDAP%%%%EXTERNAL_TODO%%bin/qmail-todo
 %%LDAP%%bin/qmail-verify
 bin/qreceipt
