@@ -1,0 +1,5 @@
+courieruserinfo is a utility for retrieving user account information.
+Account information is accessed through the courier-authlib authentication
+library.
+
+WWW: http://www.arda.homeunix.net/store/
