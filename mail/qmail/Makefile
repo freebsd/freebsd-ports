@@ -38,6 +38,7 @@ BARRIER_SPF_PATCH=		yes
 .if defined(SLAVE_LDAP)
 BARRIER_BIG_CONCURRENCY_PATCH=	yes
 BARRIER_DNS_PATCH=		yes
+BARRIER_EXTTODO_PATCH=		yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -139,6 +140,9 @@ OPTIONS+=	SPF_PATCH "Implement SPF checker" off
 .endif
 .if !defined(BARRIER_TARPIT_PATCH)
 OPTIONS+=	TARPIT_PATCH "Implement TARPIT functions" off
+.endif
+.if !defined(BARRIER_EXTTODO_PATCH)
+OPTIONS+=	EXTTODO_PATCH "extern high-perform. todo processing" off
 .endif
 .if defined(SLAVE_TLS)
 OPTIONS+=	TLS_DEBUG "enable additional debug information" off
@@ -360,6 +364,33 @@ PATCHFILES+=	qmail-spf-rc5.patch:spf
 . endif
 .endif
 
+.if defined(WITH_EXTTODO_PATCH) && !defined(BARRIER_EXTTODO_PATCH)
+PLIST_SUB+=		EXTTODO=""
+DOCFILES_WRKSRC+=	EXTTODO
+
+. if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
+.  if defined(SLAVE_TLS)
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
+MASTER_SITE_SUBDIR+=	garga/qmail/:exttodo
+EXTTODO_PATCH=	ext_todo-20030105_spf.patch
+DISTFILES+=	${EXTTODO_PATCH}:exttodo
+.  else
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
+PATCHFILES+=	ext_todo-20030105_spf.patch:exttodo
+PATCH_SITE_SUBDIR+=	garga/qmail/:exttodo
+.  endif
+. elif defined(SLAVE_MYSQL)
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
+PATCHFILES+=	ext_todo-20030105_mysql.patch:exttodo
+PATCH_SITE_SUBDIR+=	garga/qmail/:exttodo
+. else
+PATCH_SITES+=	http://www.nrg4u.com/qmail/:exttodo
+PATCHFILES+=	ext_todo-20030105.patch:exttodo
+. endif
+.else
+PLIST_SUB+=	EXTTODO="@comment "
+.endif
+
 .if !defined(BARRIER_DNS_PATCH) \
  	||(defined(WITH_QMAILQUEUE_PATCH)     && !defined(BARRIER_QMAILQUEUE_PATCH)) \
 	||(defined(WITH_BIG_TODO_PATCH)       && !defined(BARRIER_BIG_TODO_PATCH)) \
@@ -482,12 +513,18 @@ post-patch:
 	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch
 . endif
 	@${PATCH} -d ${WRKSRC} < ${SMTP_AUTH_DIR}/auth.patch
-. if defined(WITH_SPF_PATCH) && defined(SLAVE_TLS)
+. if defined(SLAVE_TLS) && defined(WITH_SPF_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_TLS_PATCH}
+.  if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
+	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
+.  endif
 . endif
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/qmail-smtpd-auth-close3.patch
 .elif defined(SLAVE_TLS) && defined(WITH_SPF_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_TLS_PATCH}
+. if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
+	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
+. endif
 .endif
 .if defined(SLAVE_MYSQL)
 	@${REINPLACE_CMD} 's|/opt/mysql|${LOCALBASE}|' \
