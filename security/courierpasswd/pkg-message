@@ -1,0 +1,51 @@
+
+#########################################################################
+NOTES FOR RUNNING COURIERPASSWD
+
+In order to use courierpasswd, it must be able to access the
+authdaemon domain socket, named 'socket'. When courierpasswd runs as
+root, this presents no problem. However, if you need to run courierpasswd
+as a non-root user, you have three options, all of which require some
+manual work.
+
+Option 1: Add the user courierpasswd will run as to the group that
+owns the authdaemon socket directory in /etc/group. More than one user
+can be added to the group vector in this way. This arrangement works
+well if courierpasswd will be run by only a small number of users.
+If the authdaemon socket directory is owned by courier:courier and you
+run courierpasswd as user vmail, your /etc/group file will have a line
+something like this:
+
+    courier:x:465:vmail
+
+Option 2: Some programs, such as tcpserver, allow you to separately set
+the uid and gid of programs they call but don't honour the group vector
+found in /etc/group. If you invoke courierpasswd from such a program,
+set the gid to the group ownership of the authdaemon socket directory.
+For tcpserver, you could do something like this:
+
+    #!/bin/sh
+
+    QMAILUID=`/usr/bin/id -u qmaild`
+    COURIERGID=`/usr/bin/id -g courier`
+
+    exec /usr/local/bin/tcpserver -u "$QMAILUID" -g "$COURIERGID" \
+    0 smtp /var/qmail/bin/qmail-smtpd /usr/local/sbin/courierpasswd -- \
+    /usr/bin/true 2>&1
+
+Option 3: Change the permissions on courierpasswd to set gid to the
+group ownership of the socket directory. Again, if the socket directory
+is owned by courier:courier, change the ownership and permissions
+of courierpasswd like so:
+
+    chgrp courier courierpasswd
+    chmod g+s courierpasswd
+
+Be aware that courierpasswd does not provide any max-failed-retry
+functionality so it is possible for local users to perform dictionary
+attacks against account passwords if courierpasswd is set up this way.
+
+The location of the authdaemon domain socket is listed in the
+authdaemonrc configuration file as the parameter authdaemonvar.
+
+#########################################################################
