@@ -34,6 +34,105 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e2a92664-1d60-11db-88cf-000c6ec775d9">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.5.0.5,1</lt></range>
+	<range><gt>2.*</gt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.5.0.5</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.0.a2006.07.26</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>mozilla-thunderbird</name>
+	<range><lt>1.5.0.5</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<name>linux-mozilla</name>
+	<name>linux-mozilla-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports of multiple
+	  issues.  Several of which can be used to run arbitrary code
+	  with the privilege of the user running the program.</p>
+	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html#seamonkey1.0.3">
+	  <ul>
+	    <li>MFSA 2006-56 chrome: scheme loading remote content</li>
+	    <li>MFSA 2006-55 Crashes with evidence of memory corruption
+	      (rv:1.8.0.5)</li>
+	    <li>MFSA 2006-54 XSS with
+	      XPCNativeWrapper(window).Function(...)</li>
+	    <li>MFSA 2006-53 UniversalBrowserRead privilege escalation</li>
+	    <li>MFSA 2006-52 PAC privilege escalation using
+	      Function.prototype.call</li>
+	    <li>MFSA 2006-51 Privilege escalation using named-functions
+	      and redefined "new Object()"</li>
+	    <li>MFSA 2006-50 JavaScript engine vulnerabilities</li>
+	    <li>MFSA 2006-49 Heap buffer overwrite on malformed VCard</li>
+	    <li>MFSA 2006-48 JavaScript new Function race condition</li>
+	    <li>MFSA 2006-47 Native DOM methods can be hijacked across
+	      domains</li>
+	    <li>MFSA 2006-46 Memory corruption with simultaneous events</li>
+	    <li>MFSA 2006-45 Javascript navigator Object Vulnerability</li>
+	    <li>MFSA 2006-44 Code execution through deleted frame
+	      reference</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3113</cvename>
+      <cvename>CVE-2006-3677</cvename>
+      <cvename>CVE-2006-3801</cvename>
+      <cvename>CVE-2006-3802</cvename>
+      <cvename>CVE-2006-3803</cvename>
+      <cvename>CVE-2006-3804</cvename>
+      <cvename>CVE-2006-3805</cvename>
+      <cvename>CVE-2006-3806</cvename>
+      <cvename>CVE-2006-3807</cvename>
+      <cvename>CVE-2006-3808</cvename>
+      <cvename>CVE-2006-3809</cvename>
+      <cvename>CVE-2006-3810</cvename>
+      <cvename>CVE-2006-3811</cvename>
+      <cvename>CVE-2006-3812</cvename>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html#seamonkey1.0.3</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-44.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-45.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-46.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-47.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-48.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-49.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-50.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-51.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-52.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-53.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-54.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-55.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-56.html</url>
+    </references>
+    <dates>
+      <discovery>2006-07-25</discovery>
+      <entry>2006-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f2a0c40-1322-11db-bd23-000475abc56f">
     <topic>zope -- information disclosure vulnerability</topic>
     <affects>
