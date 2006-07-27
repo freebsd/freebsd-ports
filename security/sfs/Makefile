@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-IGNORE=		nfsmounter component fails execute correctly on ${ARCH} systems
+IGNORE=		nfsmounter component fails to execute correctly on ${ARCH} systems
 .endif
 
 .if ${OSVERSION} > 500000
