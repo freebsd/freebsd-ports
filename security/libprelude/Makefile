@@ -27,10 +27,6 @@ CONFIGURE_ARGS=		--localstatedir=/var
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on 4.x
-.endif
-
 .if defined(WITH_PERL)
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl
