@@ -801,6 +801,13 @@
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.py
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.pyc
 %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/xrc.pyo
+%%PYTHON_SITELIBDIR%%/wxaddons/__init__.py
+%%PYTHON_SITELIBDIR%%/wxaddons/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wxaddons/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wxaddons/setup.py
+%%PYTHON_SITELIBDIR%%/wxaddons/setup.pyc
+%%PYTHON_SITELIBDIR%%/wxaddons/setup.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/wxaddons
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/tools
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/mixins
 @dirrm %%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wxPython/lib/editor
