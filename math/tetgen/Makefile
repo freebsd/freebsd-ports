@@ -8,13 +8,13 @@
 PORTNAME=	tetgen
 PORTVERSION=	1.4.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.wias-berlin.de/people/si/
+MASTER_SITES=	http://www.wias-berlin.de/people/si/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
-BROKEN=		distfile size mismatch
 NO_CDROM=	Tetgen is for academic or personal use only
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
