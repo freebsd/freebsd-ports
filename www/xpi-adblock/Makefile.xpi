@@ -44,7 +44,7 @@
 #				  as a USE_XPI list. If several tuples match, the last non-regexp
 #				  one takes precedence, then the last regexp one.
 #
-# This Makefile is an alpha-version of the new xpi infrastructure. It currently
+# This Makefile is a beta-version of the new xpi infrastructure. It currently
 # supports Gecko 1.8+ (Firefox 1.5+). Support for Gecko 1.7x (and Seamonkey 1.0)
 # may be merged later from Thierry Thomas works.
 #
@@ -123,11 +123,12 @@ WITH_XPI_APPS?=	${WITH_XPI_NTUPLES}
 USE_XPI=	${WITH_XPI_APPS}
 .endif
 
-.if !defined(USE_XPI) || (defined(USE_XPI) && ( ${USE_XPI:U} == "YES" || ${USE_XPI} == "*" ))
+.if !defined(USE_XPI) || ${USE_XPI:U} == "YES" || ${USE_XPI} == "*"
 USE_XPI=	${XPI_APPS_ALL_WC}
 .endif
 
-XPI_APPS?=	${USE_XPI:S.^.${X11BASE}/lib/.:S.$./extensions.}
+XPI_APPS?=	${USE_XPI:S.^.${LOCALBASE}/lib/.:S.$./extensions.} \
+			${USE_XPI:S.^.${X11BASE}/lib/.:S.$./extensions.}
 XPI_SLDIRS_ALL=	${XPI_APPS_ALL:S.^.${XPI_SLDIR}/.}
 XPI_SLDIRS=		${USE_XPI:S.^.${XPI_SLDIR}/.}
 XPI_LINKFARMS=	${XPI_APPS} ${XPI_SLDIRS}

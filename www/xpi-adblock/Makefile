@@ -18,5 +18,5 @@ XPI_FILES=	chrome/adblock.jar chrome.manifest components/.autoreg components/nsA
 		defaults/preferences/adblock.js install.js install.rdf license.txt
 XPI_DIRS=	chrome/adblock chrome components defaults/preferences defaults
 
-.include "../xpi-adblock/Makefile.xpi"
+.include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
