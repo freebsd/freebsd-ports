@@ -6,8 +6,8 @@
 #    $MCom: ports/net/avahi/Makefile,v 1.15 2006/04/28 01:52:15 marcus Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.11
-PORTREVISION?=	1
+PORTVERSION=	0.6.12
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
