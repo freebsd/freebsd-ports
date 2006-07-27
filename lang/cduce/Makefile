@@ -18,6 +18,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		${LOCALBASE}/lib/ocaml/site-lib/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
 		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		${LOCALBASE}/lib/ocaml/site-lib/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
+RUN_DEPENDS=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
 # Support for url via ftp/ocaml-ocurl
 .if defined(WITH_OCURL)
