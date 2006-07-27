@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ofc
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	lang
 MASTER_SITES=	http://ofc.dvoudheusden.net/download/
 
