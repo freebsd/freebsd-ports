@@ -1,0 +1,11 @@
+--- pngconf.h.bak	Wed Jun 28 00:22:34 2006
++++ pngconf.h	Thu Jul 27 22:01:04 2006
+@@ -722,7 +722,7 @@
+ 
+ /* PNG_ASSEMBLER_CODE was enabled by default in version 1.2.0 
+    even when PNG_USE_PNGVCRD or PNG_USE_PNGGCCRD is not defined */
+-#if defined(PNG_READ_SUPPORTED) && !defined(PNG_NO_ASSEMBLER_CODE)
++#if defined(PNG_READ_SUPPORTED) && !defined(PNG_NO_ASSEMBLER_CODE) && defined(__i386__)
+ #  ifndef PNG_ASSEMBLER_CODE_SUPPORTED
+ #    define PNG_ASSEMBLER_CODE_SUPPORTED
+ #  endif

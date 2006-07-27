@@ -1,6 +1,6 @@
---- scripts/makefile.freebsd.orig	Sat May 18 22:46:45 2002
-+++ scripts/makefile.freebsd	Thu Apr 27 23:54:36 2006
-@@ -8,26 +8,31 @@
+--- scripts/makefile.freebsd.orig	Sat Feb 25 15:37:11 2006
++++ scripts/makefile.freebsd	Thu Jul 27 22:03:50 2006
+@@ -8,27 +8,26 @@
  LIB=		png
  SHLIB_MAJOR=	${SHLIB_VER}
  SHLIB_MINOR=	0
@@ -32,15 +32,12 @@
 -CFLAGS+= -I. -DPNG_USE_PNGGCCRD
 -.if (${MACHINE_ARCH} != "i386")
 -CFLAGS+= -DPNG_NO_ASSEMBLER_CODE
-+cppflags=-DPNG_USE_PNGGCCRD
-+.if (${ARCH} != "i386")
-+cppflags+=-DPNG_NO_ASSEMBLER_CODE
- .endif
-+CFLAGS+=-I. ${cppflags}
- 
+-.endif
+-
  SRCS=	png.c pngset.c pngget.c pngrutil.c pngtrans.c pngwutil.c \
  	pngread.c pngrio.c pngwio.c pngwrite.c pngrtran.c \
-@@ -44,5 +49,23 @@
+ 	pngwtran.c pngmem.c pngerror.c pngpread.c pnggccrd.c
+@@ -44,5 +43,23 @@
  DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO
  writelock:
  	chmod a-w *.[ch35] $(DOCS) scripts/*
