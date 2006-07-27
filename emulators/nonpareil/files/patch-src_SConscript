@@ -1,0 +1,73 @@
+--- src/SConscript.orig	Tue Jun 28 04:53:44 2005
++++ src/SConscript	Wed Jul 26 20:37:54 2006
+@@ -37,20 +37,15 @@
+     pkg_config_cmd = 'pkg-config'
+ pkg_config_cmd += ' --cflags --libs '
+ 
+-sdl_pkg_config_cmd = 'sdl-config --cflags --libs'
++sdl_pkg_config_cmd = 'sdl11-config --cflags --libs'
+ 
+ build_env.Append (CPPPATH = ['.'])
+ build_env.Append (CPPPATH = ['#/build/common'])  # generated includes
+-build_env.Append (CCFLAGS = ['-Wall'])
++build_env.Append (CCFLAGS = ['-Wall %%CFLAGS%%'])
+ build_env.Append (YACCFLAGS = [ '-d', '-v' ])
+-
+-if build_env ['debug'] :
+-    build_env.Append (CCFLAGS = ['-g'])
+-else:
+-    build_env.Append (CCFLAGS = ['-O2'])
++build_env.Replace (CC = '%%CC%%')
+ 
+ if cross and ming and build_target_only:
+-    build_env.Replace (CC = '/usr/local/mingw/bin/i586-mingw32msvc-gcc')
+     build_env.Append (CCFLAGS = ['-mms-bitfields'])
+     build_env.Append (CPPPATH = ['/usr/local/gtkwin/include'])  # libpng
+     build_env.Append (CPPPATH = ['/usr/local/gtkwin/SDL-1.2.8/include'])
+@@ -189,46 +184,6 @@
+     native_env.Append (BUILDERS = { 'Assemble': Assemble },
+                        UASM = uasm,
+                        UASMCOM = "$UASM $UASMFLAGS $SOURCE -o $TARGET -l ${TARGETS[1]}")
+-
+-
+-#-----------------------------------------------------------------------------
+-# prepare graphics
+-#-----------------------------------------------------------------------------
+-
+-if not build_target_only:
+-    str2png_env = native_env.Copy ()
+-
+-    # pull in X11-related environment variables to make gdk-pixbuf library happy
+-    for var in [ 'DISPLAY', 'XAUTHORITY' ]:
+-        if var in os.environ:
+-            str2png_env ['ENV'][var] = os.environ [var]
+-
+-    title_env = str2png_env.Copy (STR2PNG_STRING = 'NONPAREIL',
+-                                  STR2PNG_OPTS = '-x 40 -y 44 -m 10')
+-
+-    title_env.STR2PNG (target = 'nonpareil_title',
+-                       source = build_env ['KML_41CV'])
+-
+-    native_env.PNG2C (target = '#build/common/nonpareil_title_png.c',
+-                      source = 'nonpareil_title.png')
+-            
+-    rgoose_env = str2png_env.Copy (STR2PNG_STRING = '.',
+-                                   STR2PNG_OPTS = '-x 40 -y 44')
+-
+-    rgoose_env.STR2PNG (target = 'rgoose',
+-                        source = build_env ['KML_41CV'])
+-
+-    native_env.PNG2C (target = '#build/common/rgoose_png.c',
+-                      source = 'rgoose.png')
+-            
+-    lgoose_env = str2png_env.Copy (STR2PNG_STRING = ',',
+-                                   STR2PNG_OPTS = '-x 40 -y 44')
+-
+-    lgoose_env.STR2PNG (target = 'lgoose',
+-                        source = build_env ['KML_41CV'])
+-
+-    native_env.PNG2C (target = '#build/common/lgoose_png.c',
+-                      source = 'lgoose.png')
+ 
+ #-----------------------------------------------------------------------------
+ # prepare sounds

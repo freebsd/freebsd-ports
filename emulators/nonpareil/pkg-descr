@@ -1,0 +1,7 @@
+Nonpareil is a high-fidelity simulator for calculators. It currently
+supports many HP calculators models introduced between 1972 and
+1982. Simulation fidelity is achieved through the use of the actual
+microcode of the calculators, thus in most cases the simulation
+behavior exactly matches that of the real calculator.
+
+WWW: http://nonpareil.brouhaha.com/
