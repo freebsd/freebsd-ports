@@ -17,8 +17,6 @@ lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow.xpm
 lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow16.xpm
 lib/%%APP_NAME%%/chrome/icons/default/bookmark-window.xpm
 lib/%%APP_NAME%%/chrome/icons/default/bookmark-window16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/calendar-window.xpm
-lib/%%APP_NAME%%/chrome/icons/default/calendar-window16.xpm
 lib/%%APP_NAME%%/chrome/icons/default/chatzilla-window.xpm
 lib/%%APP_NAME%%/chrome/icons/default/chatzilla-window16.xpm
 lib/%%APP_NAME%%/chrome/icons/default/default.xpm
