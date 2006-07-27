@@ -1,13 +1,13 @@
---- setup.py.orig	Wed May 11 11:04:04 2005
-+++ setup.py	Wed May 11 11:04:38 2005
-@@ -30,8 +30,8 @@
+--- setup.py.orig	Wed Jul 26 23:43:50 2006
++++ setup.py	Wed Jul 26 23:44:46 2006
+@@ -72,8 +72,8 @@
+ debug = '--debug' in sys.argv
  
  # Global variables
- lflags_arg = []
 -lib_dirs = []
 -inc_dirs = []
 +lib_dirs = ['%%LOCALBASE%%/lib']
 +inc_dirs = ['%%LOCALBASE%%/include']
+ optional_libs = []
  
- # Some useful functions
- def check_lib_unix(where, libname, headername, compulsory):
+ default_header_dirs = None
