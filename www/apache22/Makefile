@@ -9,6 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://apache.webthing.com/database/:aprmysql
