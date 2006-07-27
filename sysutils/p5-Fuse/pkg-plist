@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/Fuse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/Fuse.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/Fuse.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/autosplit.ix
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Fuse
