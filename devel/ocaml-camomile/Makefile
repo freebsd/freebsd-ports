@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	camomile
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +18,7 @@ COMMENT=	A comprehensive Unicode library for objective caml language
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-
-BROKEN=		Does not build
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -30,10 +29,11 @@ PKGDEINSTALL=	${PKGINSTALL}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Need working <wctype.h>"
+BROKEN=		Need working <wctype.h>
 .endif
 
 post-install:
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${PORTNAME} -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/${PORTNAME}" >> ${TMPPLIST}
