@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	picp
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	devel
 MASTER_SITES=	http://home.pacbell.net/theposts/picmicro/
 
