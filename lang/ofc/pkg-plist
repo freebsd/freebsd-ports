@@ -5,7 +5,9 @@ include/ofc/DAtExit.h
 include/ofc/DAvlTree.h
 include/ofc/DBZipFile.h
 include/ofc/DBigDouble.h
+include/ofc/DBigFraction.h
 include/ofc/DBigInt.h
+include/ofc/DBitArithmetic.h
 include/ofc/DBitArray.h
 include/ofc/DBool.h
 include/ofc/DCRC32.h
@@ -93,5 +95,5 @@ lib/libofc.a
 lib/libofc.la
 lib/libofc.so
 lib/libofc-0.7.so
-lib/libofc-0.7.so.0
+lib/libofc-0.7.so.1
 @dirrm include/ofc
