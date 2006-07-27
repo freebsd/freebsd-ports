@@ -7,6 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -261,7 +262,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/var/smokeping
 	@${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
 	@${MKDIR} ${PREFIX}/smokeping/htdocs/img
-	@${CHOWN} ${WWW_USER}:${WWW_GROUP} ${PREFIX}/smokeping/htdocs/img
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs/img
 	@if [ ! -f ${PREFIX}/etc/rc.d/smokeping.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/smokeping.sh startup file."; \
 		${INSTALL_SCRIPT} ${FILESDIR}/smokeping.sh ${PREFIX}/etc/rc.d/smokeping.sh; \
