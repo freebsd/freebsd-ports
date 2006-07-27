@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Acme/Steganography/Image/Png.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Steganography/Image/Png/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Steganography/Image/Png
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Steganography/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Steganography
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme
+@dirrmtry %%SITE_PERL%%/Acme/Steganography/Image
+@dirrmtry %%SITE_PERL%%/Acme/Steganography
+@dirrmtry %%SITE_PERL%%/Acme

@@ -415,6 +415,7 @@
     SUBDIR += optipng
     SUBDIR += orca
     SUBDIR += osg
+    SUBDIR += p5-Acme-Steganography-Image-Png
     SUBDIR += p5-CAD-Drawing
     SUBDIR += p5-CAD-Drawing-Template
     SUBDIR += p5-Cairo
