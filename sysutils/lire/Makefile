@@ -12,8 +12,7 @@
 #
 
 PORTNAME=	lire
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
@@ -22,6 +21,7 @@ COMMENT=	Logfile analyse toolkit for multiple applications
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+		lambda:${PORTSDIR}/math/lambda \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time-modules \
@@ -39,7 +39,8 @@ USE_GNOME=	libxml2 libxslt
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+="--with-docbookdir=${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd"
+CONFIGURE_ARGS=	"--with-docbookdir=${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd"
+CONFIGURE_ARGS+="--mandir=${PREFIX}/man"
 CONFIGURE_ENV=	POD2MAN=${LOCALBASE}/bin/pod2man
 
 MAN1=		\

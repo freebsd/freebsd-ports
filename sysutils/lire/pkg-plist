@@ -102,6 +102,8 @@ share/doc/lire/ChangeLog.2000.gz
 share/doc/lire/ChangeLog.2001.gz
 share/doc/lire/ChangeLog.2002.gz
 share/doc/lire/ChangeLog.2003.gz
+share/doc/lire/ChangeLog.2004.gz
+share/doc/lire/ChangeLog.2005.gz
 share/doc/lire/README
 share/doc/lire/dev-manual.pdf
 share/doc/lire/dev-manual.txt
@@ -143,6 +145,8 @@ share/doc/lire/dev-manual/ch16s03.html
 share/doc/lire/dev-manual/ch16s04.html
 share/doc/lire/dev-manual/ch17.html
 share/doc/lire/dev-manual/ch18.html
+share/doc/lire/dev-manual/ch18s02.html
+share/doc/lire/dev-manual/ch18s03.html
 share/doc/lire/dev-manual/ch19.html
 share/doc/lire/dev-manual/ch19s02.html
 share/doc/lire/dev-manual/ch19s03.html
