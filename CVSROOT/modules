@@ -7459,6 +7459,7 @@ nokryptia	ports/comms/nokryptia
 nologinmsg	ports/shells/nologinmsg
 nomarch		ports/archivers/nomarch
 nomyso		ports/converters/nomyso
+nonpareil	ports/emulators/nonpareil
 nonsense	ports/games/nonsense
 normalize	ports/audio/normalize
 normalizemime	ports/mail/normalizemime
