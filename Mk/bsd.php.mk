@@ -169,6 +169,7 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/${header}/*.h \
 			${PREFIX}/include/php/ext/${PHP_MODNAME}/${header}
 .	endfor
+	@${RM} -f ${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
 	@${GREP} "#define \(COMPILE\|HAVE\|USE\)_" ${WRKSRC}/config.h \
 		> ${PREFIX}/include/php/ext/${PHP_MODNAME}/config.h
 	@${ECHO_CMD} \#include \"ext/${PHP_MODNAME}/config.h\" \
