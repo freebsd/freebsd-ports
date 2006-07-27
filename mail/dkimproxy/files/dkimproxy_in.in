@@ -1,0 +1,56 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: dkimproxy_in
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dkimproxy.in:
+#
+# dkimproxy_in_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=dkimproxy_in
+rcvar=`set_rcvar`
+
+# set defaults
+
+: ${dkimproxy_in_enable="NO"}
+: ${dkimproxy_in_flags="127.0.0.1:10025 127.0.0.1:10026"}
+: ${dkimproxy_in_pidfile="/var/run/dkimproxy_in.pid"}
+: ${dkimproxy_in_user="dkimproxy"}
+
+start_cmd="dkimproxy_in_start"
+stop_cmd="dkimproxy_in_stop"
+
+dkimproxy_in_start()
+{
+	if [ -f ${dkimproxy_in_pidfile} ]; then
+		echo "${name} already running?"
+		exit 1
+	fi
+	touch ${dkimproxy_in_pidfile}
+	chown ${dkimproxy_in_user} ${dkimproxy_in_pidfile}
+	su -m ${dkimproxy_in_user} -c "daemon -cf -p ${dkimproxy_in_pidfile} \
+		%%PREFIX%%/bin/dkimproxy.in ${dkimproxy_in_flags}"
+	echo "Starting ${name}"
+}
+
+dkimproxy_in_stop()
+{
+	if [ ! -f ${dkimproxy_in_pidfile} ]; then
+		echo "${name} not running?"
+		exit 1
+	fi
+	kill `cat ${dkimproxy_in_pidfile}`
+	rm -f ${dkimproxy_in_pidfile}
+	echo "Stopping ${name}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

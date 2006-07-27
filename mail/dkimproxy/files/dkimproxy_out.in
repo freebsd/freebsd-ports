@@ -1,0 +1,61 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: dkimproxy_out
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable dkimproxy.out:
+#
+# dkimproxy_out_enable="YES"
+#
+# Before you enable dkimproxy.out, you also need to make your domainkey to
+# set it to DNS and configurate dkimproxy_flags.
+#
+
+. %%RC_SUBR%%
+
+name="dkimproxy_out"
+rcvar=`set_rcvar`
+
+# set defaults
+
+: ${dkimproxy_out_enable="NO"}
+: ${dkimproxy_out_flags="--keyfile=%%PREFIX%%/etc/dkimproxy/private.key \
+	--selector=selector1 --domain=example.org --method=relaxed \
+	127.0.0.1:10027 127.0.0.1:10028"}
+: ${dkimproxy_out_pidfile="/var/run/dkimproxy_out.pid"}
+: ${dkimproxy_out_user="dkimproxy"}
+
+start_cmd="dkimproxy_out_start"
+stop_cmd="dkimproxy_out_stop"
+
+dkimproxy_out_start()
+{
+	if [ -f ${dkimproxy_out_pidfile} ]; then
+		echo "${name} already running?"
+		exit 1
+	fi 
+	touch ${dkimproxy_out_pidfile}
+	chown ${dkimproxy_out_user} ${dkimproxy_out_pidfile}
+	su -m ${dkimproxy_out_user} -c "daemon -cf -p ${dkimproxy_out_pidfile} \
+		%%PREFIX%%/bin/dkimproxy.out ${dkimproxy_out_flags}"
+	echo "Starting ${name}."
+}
+
+dkimproxy_out_stop()
+{
+	if [ ! -f ${dkimproxy_out_pidfile} ]; then
+		echo "${name} not running?"
+		exit 1
+	fi
+	kill `cat ${dkimproxy_out_pidfile}`
+	rm -f ${dkimproxy_out_pidfile}
+	echo "Stopping ${name}"
+}
+
+load_rc_config $name
+run_rc_command "$1"

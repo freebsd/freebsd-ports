@@ -63,6 +63,7 @@
     SUBDIR += dkfilter
     SUBDIR += dkim-milter
     SUBDIR += dkimap4
+    SUBDIR += dkimproxy
     SUBDIR += dovecot
     SUBDIR += drac
     SUBDIR += drbl
