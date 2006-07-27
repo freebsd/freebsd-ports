@@ -138,6 +138,8 @@
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testAcquisition.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testBindings.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testBindings.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testChownRecursive.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testChownRecursive.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testClassSecurityInfo.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testClassSecurityInfo.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testDeprecatedAPI.py
@@ -704,6 +706,8 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testRanges.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/www/ControlPanel_icon.gif
 %%ZOPEBASEDIR%%/lib/python/OFS/www/Help_icon.gif
 %%ZOPEBASEDIR%%/lib/python/OFS/www/Properties_icon.gif
@@ -2317,6 +2321,8 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/functional.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/interfaces.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/interfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/placeless.py
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/placeless.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/profiler.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/profiler.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/runalltests.py
@@ -2329,6 +2335,8 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testFunctional.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testInterfaces.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testInterfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPlaceless.py
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPlaceless.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPortalTestCase.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPortalTestCase.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testPythonScript.py
@@ -2343,6 +2351,8 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testZODBCompat.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testZopeTestCase.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testZopeTestCase.pyc
+%%ZOPEBASEDIR%%/lib/python/persistent/tests/test_mapping.py
+%%ZOPEBASEDIR%%/lib/python/persistent/tests/test_mapping.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/threadutils.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/threadutils.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/utils.py
@@ -5434,7 +5444,6 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/utility.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/utility/vocabulary.pyc
-%%ZOPEBASEDIR%%/lib/python/zope/app/version.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/zapi/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/zapi/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/zapi/interfaces.py
