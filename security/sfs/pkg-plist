@@ -173,11 +173,11 @@ sbin/vidb
 %%DOCSDIR%%/README.packageblurb
 %%DOCSDIR%%/README.0.7-upgrade
 @dirrm %%DOCSDIR%%
-share/sfs/agentrc
-share/sfs/sfs_config
-share/sfs/sfs_srp_parms
-share/sfs/sfsauthd_config
-share/sfs/sfscd_config
-share/sfs/sfssd_config
-@dirrm share/sfs
+%%DATADIR%%/agentrc
+%%DATADIR%%/sfs_config
+%%DATADIR%%/sfs_srp_parms
+%%DATADIR%%/sfsauthd_config
+%%DATADIR%%/sfscd_config
+%%DATADIR%%/sfssd_config
+@dirrm %%DATADIR%%
 @dirrm etc/sfs
