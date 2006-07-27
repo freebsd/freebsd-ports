@@ -19,6 +19,7 @@ lib/%%APP_NAME%%/chrome/toolkit.jar
 lib/%%APP_NAME%%/chrome/toolkit.manifest
 lib/%%APP_NAME%%/components/FeedConverter.js
 lib/%%APP_NAME%%/components/FeedProcessor.js
+lib/%%APP_NAME%%/components/FeedWriter.js
 lib/%%APP_NAME%%/components/WebContentConverter.js
 lib/%%APP_NAME%%/components/browser.xpt
 lib/%%APP_NAME%%/components/jsconsole-clhandler.js
