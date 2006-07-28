@@ -16,30 +16,27 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortran 77 driver utility for f2c and gcc
 
 .ifdef GNU_CPP
-RUN_DEPENDS=	${PREFIX}/bin/f2c:${PORTSDIR}/lang/f2c
+RUN_DEPENDS=	${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
 .else
-RUN_DEPENDS=	${PREFIX}/bin/fpp:${PORTSDIR}/devel/fpp \
-		${PREFIX}/bin/f2c:${PORTSDIR}/lang/f2c
+RUN_DEPENDS=	${LOCALBASE}/bin/fpp:${PORTSDIR}/devel/fpp \
+		${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
 .endif
 
 # Set F77NAME to the name of the Fortran 77 wrapper.
 F77NAME=	ftn77
 
 .ifdef GNU_CPP
-MAKE_ARGS=	"CFLAGS= ${CFLAGS} -DPP_COMMAND='\"/usr/bin/cpp\"' \
-		-DF2C_COMMAND='\"${PREFIX}/bin/f2c\"'"
+MAKE_ARGS=	"CFLAGS= ${CFLAGS} -DPP_COMMAND='\"${CPP}\"' \
+		-DF2C_COMMAND='\"${LOCALBASE}/bin/f2c\"'"
 .else
 MAKE_ARGS=	"CFLAGS= ${CFLAGS} -DSUN_FPP \
-		-DPP_COMMAND='\"${PREFIX}/bin/fpp\"' \
-		-DF2C_COMMAND='\"${PREFIX}/bin/f2c\"'"
+		-DPP_COMMAND='\"${LOCALBASE}/bin/fpp\"' \
+		-DF2C_COMMAND='\"${LOCALBASE}/bin/f2c\"'"
 .endif
 
 ALL_TARGET=	depend all
 MAN1=		${F77NAME}.1
-PLIST=		${WRKDIR}/PLIST
-
-pre-install:
-	@${ECHO_CMD} 'bin/${F77NAME}' > ${PLIST}
+PLIST_FILES=	bin/${F77NAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/f77 ${PREFIX}/bin/${F77NAME}
