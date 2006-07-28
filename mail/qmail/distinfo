@@ -79,3 +79,6 @@ SIZE (qmail/ext_todo-20030105_spf.patch) = 33781
 MD5 (qmail/ext_todo-20030105_mysql.patch) = ecddff9ba6d725ec3be61843bc8007a7
 SHA256 (qmail/ext_todo-20030105_mysql.patch) = 3fc65b91faaaae147dbf6264f9381664819ef2f236532764309d174f29919ff1
 SIZE (qmail/ext_todo-20030105_mysql.patch) = 33797
+MD5 (qmail/qmail-spf-rc5.patch-spamcontrol) = 9fe79d3420c9ad75f7ec224e04933bf5
+SHA256 (qmail/qmail-spf-rc5.patch-spamcontrol) = 4c49eb9bb137fb6c07ef9a38773fc6d122a087b120f663c0fc9dc4910875e527
+SIZE (qmail/qmail-spf-rc5.patch-spamcontrol) = 64100
