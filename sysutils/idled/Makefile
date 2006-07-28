@@ -9,9 +9,7 @@ PORTNAME=	idled
 PORTVERSION=	1.16
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.darkwing.com/idled/download/	\
-		ftp://ftp.cs.hope.edu/pub/idled/
-
+MASTER_SITES=	http://www.netsw.org/system/tools/process/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A daemon that logs out idle users and those users hogging resources
 
