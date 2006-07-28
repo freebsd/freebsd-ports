@@ -7,7 +7,7 @@
 
 PORTNAME=	filelight
 PORTVERSION=	0.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
@@ -17,6 +17,8 @@ COMMENT=	Represent a file system as a set of concentric segmented-rings
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 
 post-patch:
 	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/src
