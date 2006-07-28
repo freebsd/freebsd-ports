@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wmapp
-PORTVERSION=	0.0.4.2
-PORTREVISION=	2
+PORTVERSION=	0.0.4.3
 CATEGORIES=	x11-toolkits windowmaker
 MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 
@@ -21,12 +20,6 @@ USE_GMAKE=	yes
 CFLAGS+=	-I${X11BASE}/include
 ALL_TARGET=	# empty
 PLIST_FILES=	lib/libwmapp.a
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-USE_GCC=	3.3
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|export |#export |g" ${WRKSRC}/Makefile
@@ -49,4 +42,4 @@ do-install:
 	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
