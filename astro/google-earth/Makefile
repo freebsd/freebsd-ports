@@ -60,7 +60,7 @@ do-build:
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
-	@${ENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
+	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
 	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh
 	@${CHOWN} -R ${SHAREDOWN}:${SHAREDGRP} ${WRKSRC}
 
