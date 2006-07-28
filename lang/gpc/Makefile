@@ -7,6 +7,7 @@
 
 PORTNAME=	gpc
 PORTVERSION=	20050331
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gnu-pascal.de/alpha/:gpc \
 		${MASTER_SITE_GCC}
