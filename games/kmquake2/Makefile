@@ -7,9 +7,10 @@
 
 PORTNAME=	kmquake2
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/KMQuake2/:src \
-		http://qexpo.quakedev.com/uploaded/54/:data \
+		http://qexpo2005.quakedev.com/uploaded/54/:data \
 		http://www.markshan.com/maps/:pax \
 		ftp://ftp.splatterworld.de/games/q2/mods/:pax \
 		http://www.markshan.com/engine/:paxpatch
@@ -32,9 +33,9 @@ WRKSRC=		${WRKDIR}/KMQuake2_${PORTVERSION:S/.//}_src_unix
 
 OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" off \
 		CLIENT "Build client" on \
-		CTF "Build Capture The Flag modification" off \
+		CTF "Build CTF (Capture The Flag) modification" off \
 		DEDICATED "Build dedicated server" on \
-		GAME "Build main game modification" on \
+		GAME "Build a main game .so file (required)" on \
 		HYBRID "Build Rogue-Xatrix hybrid modification" off \
 		LIGHTS "Build Lights modification with bots" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
@@ -65,7 +66,7 @@ MOD_LIST=	3ZB2 CTF HYBRID LIGHTS PAX ROGUE XATRIX ZAERO
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
     defined(WITHOUT_SDL)
-IGNORE=		needs at least one of CLIENT, DEDICATED and SDL options
+IGNORE=		needs at least one executable (CLIENT, DEDICATED and SDL)
 .endif
 
 .for mod in ${MOD_LIST}
