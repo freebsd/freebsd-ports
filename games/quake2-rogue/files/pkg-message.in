@@ -1,0 +1,8 @@
+==============================================================================
+
+To complete the installation of this port you need to copy the file
+"rogue/pak0.pak" and the directory "rogue/video" with its contents from the
+original Quake II: Ground Zero (Rogue) Mission Pack distribution to
+"%%Q2DIR%%/rogue".
+
+==============================================================================
