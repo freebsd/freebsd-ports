@@ -1,0 +1,4 @@
+Net::Flickr::API - base API class for Net::Flickr::* libraries
+
+Author:	Aaron Straup Cope <ascope@cpan.org>
+WWW:	http://search.cpan.org/dist/Net-Flickr-API/
