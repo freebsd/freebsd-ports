@@ -2446,6 +2446,7 @@ fd		ports/shells/fd
 fdp-tools	ports/textproc/fdp-tools
 fdupes		ports/sysutils/fdupes
 feappv		ports/cad/feappv
+feedjack	ports/www/feedjack
 feedonfeeds	ports/www/feedonfeeds
 feh		ports/graphics/feh
 felis		ports/misc/felis
