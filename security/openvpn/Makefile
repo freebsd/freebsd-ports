@@ -13,6 +13,7 @@ PORTNAME=	openvpn
 # WILL BE DROPPED.       -- Matthias Andree, 2006-04-26
 # -----------------------------------------------------
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -32,10 +33,19 @@ MAN8=		openvpn.8
 OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off
 
 USE_RC_SUBR=	openvpn.sh
+USE_LDCONFIG=	${PREFIX}/lib
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-req
+SUB_LIST+=	OSVERSION=${OSVERSION}
 
 .include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
+rcsuffix=
+.else
+rcsuffix=	.sh
+.endif
+SUB_LIST+=	RCSFX=${rcsuffix}
 
 # NOTE: there is no way to explicitly specify the LZO version to OpenVPN,
 # if LZO2 and LZO1 are installed, OpenVPN will pick LZO2.
@@ -51,13 +61,24 @@ LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 CONFIGURE_ARGS+=	--enable-password-save
 .endif
 
-# self-tests here
 post-build:
+	cd ${WRKSRC}/plugin/down-root && ${MAKE}
+	@# self-tests here
+.if !defined(WITHOUT_CHECK)
 	cd ${WRKSRC} && ${MAKE} check
+.endif
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 post-install:
+	${MKDIR} ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so \
+		${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README \
+		${DOCSDIR}/README.openvpn-down-root
 .for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL NEWS \
 	PORTS README
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}

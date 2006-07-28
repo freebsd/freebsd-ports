@@ -1,4 +1,5 @@
 sbin/openvpn
+lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.GPL
@@ -7,6 +8,7 @@ sbin/openvpn
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.openvpn-down-root
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/README
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-ca
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-dh
