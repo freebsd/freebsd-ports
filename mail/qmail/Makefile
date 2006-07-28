@@ -332,6 +332,15 @@ DISTFILES+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz:smtp_auth
 EXTRACT_ONLY+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz
 MASTER_SITES+=	http://tomclegg.net/qmail/:close3
 DISTFILES+=	qmail-smtpd-auth-close3.patch:close3
+. if defined(SLAVE_TLS)
+AUTH_PATCH=	auth.patch.diff-tls
+. elif defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
+AUTH_PATCH=	auth.patch.diff
+. endif
+
+. if defined(AUTH_PATCH)
+DISTFILES+=	${AUTH_PATCH}:smtp_auth
+. endif
 .endif
 
 .if defined(WITH_MAILDIRQUOTA_PATCH) && !defined(BARRIER_MAILDIRQUOTA_PATCH)
@@ -514,10 +523,8 @@ post-extract:
 post-patch:
 .if defined(WITH_SMTP_AUTH_PATCH) && !defined(BARRIER_SMTP_AUTH_PATCH)
 	@${CP} ${SMTP_AUTH_DIR}/base64.[ch] ${WRKSRC}
-. if defined(SLAVE_TLS)
-	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch-tls
-. elif defined(WITH_SPF_PATCH)
-	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch
+. if defined(AUTH_PATCH)
+	@${PATCH} -d ${SMTP_AUTH_DIR} < ${DISTDIR}/${DIST_SUBDIR}/${AUTH_PATCH}
 . endif
 	@${PATCH} -d ${WRKSRC} < ${SMTP_AUTH_DIR}/auth.patch
 . if defined(SLAVE_TLS) && defined(WITH_SPF_PATCH) && defined(SPF_TLS_PATCH)
