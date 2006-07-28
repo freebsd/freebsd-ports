@@ -557,6 +557,7 @@
     SUBDIR += quake2-data
     SUBDIR += quake2-extras
     SUBDIR += quake2-relay
+    SUBDIR += quake2-rogue
     SUBDIR += quake2-source
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
