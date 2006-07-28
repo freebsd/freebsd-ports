@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.1.13
+PORTVERSION=	5.0.3
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
@@ -61,7 +61,7 @@ pre-fetch:
 	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "This port requires JDK 1.4.x or better to compile, but the"
-	@${ECHO_MSG} "JDBC driver will operate with JVM 1.2.x or better"
+	@${ECHO_MSG} "JDBC driver can be made to operate with JVM 1.2.x or better"
 	@${ECHO_MSG} ""
 
 .if !defined(WITHOUT_COMPILE)
@@ -71,8 +71,9 @@ do-build:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${JAVADOCDIR} && (cd ${SRCDIR}; \
-	    ${JAVADOC} -d ${JAVADOCDIR} -package  \
-	        -classpath  ${JDCLASSPATH}          \
+	    ${JAVADOC} -quiet -breakiterator      \
+		-d ${JAVADOCDIR} -package         \
+	        -classpath  ${JDCLASSPATH}        \
 	         com.mysql.jdbc org.gjt.mm.mysql)
 .endif
 
