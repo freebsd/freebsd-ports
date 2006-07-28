@@ -1,9 +1,4 @@
 bin/ekg
-include/libgadu-config.h
-include/libgadu.h
-lib/libgadu.so
-lib/libgadu.so.3
-libdata/pkgconfig/libgadu.pc
 %%DATADIR%%/themes/arim.theme
 %%DATADIR%%/themes/dj.theme
 %%DATADIR%%/themes/eileen.theme
