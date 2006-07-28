@@ -10,6 +10,6 @@ setting in_dgamouse to 1 (this is actually for people that use the DGA X11
 extension).
 
 You can not change the gamma in SDL-Mode, but you can use "xgamma" to adjust
-the gamma before and after running Quake2Forge.
+it before and after running Quake2Forge.
 
 ==============================================================================

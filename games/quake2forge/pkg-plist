@@ -1,16 +1,10 @@
 bin/quake2forge
-lib/quake2forge/baseq2/game.a
-lib/quake2forge/baseq2/game.la
-lib/quake2forge/baseq2/game.so
-lib/quake2forge/ctf/game.a
-lib/quake2forge/ctf/game.la
-lib/quake2forge/ctf/game.so
-%%ROGUE%%lib/quake2forge/rogue/game.a
-%%ROGUE%%lib/quake2forge/rogue/game.la
-%%ROGUE%%lib/quake2forge/rogue/game.so
-%%XATRIX%%lib/quake2forge/xatrix/game.a
-%%XATRIX%%lib/quake2forge/xatrix/game.la
-%%XATRIX%%lib/quake2forge/xatrix/game.so
+%%GAME%%lib/quake2forge/baseq2/game.a
+%%GAME%%lib/quake2forge/baseq2/game.la
+%%GAME%%lib/quake2forge/baseq2/game.so
+%%CTF%%lib/quake2forge/ctf/game.a
+%%CTF%%lib/quake2forge/ctf/game.la
+%%CTF%%lib/quake2forge/ctf/game.so
 %%GL%%lib/quake2forge/ref_glx.a
 %%GL%%lib/quake2forge/ref_glx.la
 %%GL%%lib/quake2forge/ref_glx.so
@@ -49,27 +43,25 @@ lib/quake2forge/snd_oss.so
 %%PORTDOCS%%%%DOCSDIR%%/TODO-ctf.txt
 %%PORTDOCS%%%%DOCSDIR%%/changes-ctf.txt
 %%PORTDOCS%%%%DOCSDIR%%/changes.txt
-%%PORTDOCS%%%%DOCSDIR%%/ctf/admin.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/adminset.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/automac.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/ghost.jpg
-%%PORTDOCS%%%%DOCSDIR%%/ctf/grapple.jpg
-%%PORTDOCS%%%%DOCSDIR%%/ctf/layout.jpg
-%%PORTDOCS%%%%DOCSDIR%%/ctf/mainctf_back.jpg
-%%PORTDOCS%%%%DOCSDIR%%/ctf/menu.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/q2ctf.html
-%%PORTDOCS%%%%DOCSDIR%%/ctf/say_team.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/stats.jpg
-%%PORTDOCS%%%%DOCSDIR%%/ctf/tech1.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/tech2.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/tech3.gif
-%%PORTDOCS%%%%DOCSDIR%%/ctf/tech4.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/admin.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/adminset.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/automac.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/ghost.jpg
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/grapple.jpg
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/layout.jpg
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/mainctf_back.jpg
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/menu.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/q2ctf.html
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/say_team.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/stats.jpg
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/tech1.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/tech2.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/tech3.gif
+%%CTF%%%%PORTDOCS%%%%DOCSDIR%%/ctf/tech4.gif
 %%PORTDOCS%%%%DOCSDIR%%/joystick.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ctf
+%%CTF%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ctf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/quake2forge/ctf
-@dirrm lib/quake2forge/baseq2
-%%ROGUE%%@dirrm lib/quake2forge/rogue
-%%XATRIX%%@dirrm lib/quake2forge/xatrix
+%%CTF%%@dirrm lib/quake2forge/ctf
+%%GAME%%@dirrm lib/quake2forge/baseq2
 @dirrm lib/quake2forge
