@@ -24,6 +24,7 @@ CONFLICTS=	qmail-vida-[0-9]*
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_MYSQL)
 BARRIER_MAILDIRQUOTA_PATCH=	yes
+BARRIER_SPF_PATCH=		yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -32,7 +33,6 @@ BARRIER_MAILDIRQUOTA_PATCH=	yes
 BARRIER_BLOCKEXEC_PATCH=	yes
 BARRIER_QMAILQUEUE_PATCH=	yes
 BARRIER_SMTP_AUTH_PATCH=	yes
-BARRIER_SPF_PATCH=		yes
 .endif
 
 .if defined(SLAVE_LDAP)
@@ -350,14 +350,21 @@ PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .endif
 
 .if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
-. if defined(SLAVE_TLS)
-MASTER_SITES+=	http://manuel.mausz.at/programming/patches/qmail/:spf_tls
-.  if defined(WITH_SMTP_AUTH_PATCH)
+. if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
+.  if defined(SLAVE_SPAMCONTROL)
+SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol
+MASTER_SITES+=		${MASTER_SITE_LOCAL:S/$/:spf_spamcontrol/}
+MASTER_SITE_SUBDIR+=	garga/qmail/:spf_spamcontrol
+DISTFILES+=		${SPF_SPAMCONTROL_PATCH}:spf_spamcontrol
+.  elif defined(WITH_SMTP_AUTH_PATCH)
 SPF_TLS_PATCH=	qmail-spf-rc5.patch-auth-tls
+MASTER_SITES+=	http://manuel.mausz.at/programming/patches/qmail/:spf_tls
+DISTFILES+=	${SPF_TLS_PATCH}:spf_tls
 .  else
 SPF_TLS_PATCH=	qmail-spf-rc5.patch-tls
-.  endif
+MASTER_SITES+=	http://manuel.mausz.at/programming/patches/qmail/:spf_tls
 DISTFILES+=	${SPF_TLS_PATCH}:spf_tls
+.  endif
 . else
 PATCH_SITES+=	http://www.saout.de/misc/spf/:spf
 PATCHFILES+=	qmail-spf-rc5.patch:spf
@@ -369,7 +376,7 @@ PLIST_SUB+=		EXTTODO=""
 DOCFILES_WRKSRC+=	EXTTODO
 
 . if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
-.  if defined(SLAVE_TLS)
+.  if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:exttodo/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:exttodo
 EXTTODO_PATCH=	ext_todo-20030105_spf.patch
@@ -505,7 +512,7 @@ post-extract:
 .endif
 
 post-patch:
-.if defined(WITH_SMTP_AUTH_PATCH)
+.if defined(WITH_SMTP_AUTH_PATCH) && !defined(BARRIER_SMTP_AUTH_PATCH)
 	@${CP} ${SMTP_AUTH_DIR}/base64.[ch] ${WRKSRC}
 . if defined(SLAVE_TLS)
 	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch-tls
@@ -513,14 +520,14 @@ post-patch:
 	@${PATCH} -d ${SMTP_AUTH_DIR} < ${FILESDIR}/auth.patch.patch
 . endif
 	@${PATCH} -d ${WRKSRC} < ${SMTP_AUTH_DIR}/auth.patch
-. if defined(SLAVE_TLS) && defined(WITH_SPF_PATCH)
+. if defined(SLAVE_TLS) && defined(WITH_SPF_PATCH) && defined(SPF_TLS_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_TLS_PATCH}
 .  if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
 	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
 .  endif
 . endif
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/qmail-smtpd-auth-close3.patch
-.elif defined(SLAVE_TLS) && defined(WITH_SPF_PATCH)
+.elif defined(SLAVE_TLS) && defined(WITH_SPF_PATCH) && defined(SPF_TLS_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_TLS_PATCH}
 . if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
 	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
@@ -538,6 +545,12 @@ post-patch:
 . endfor
 	@cd ${WRKSRC} && ./install_spamcontrol.sh && \
 		${PATCH} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
+.if defined(WITH_SPF_PATCH) && defined(SPF_SPAMCONTROL_PATCH)
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_SPAMCONTROL_PATCH}
+. if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
+	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
+. endif
+.endif
 .elif defined(SLAVE_TLS)
 	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
 		${WRKDIR}/TLS.readme
