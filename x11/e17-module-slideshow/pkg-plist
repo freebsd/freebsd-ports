@@ -1,7 +1,7 @@
 lib/enlightenment/modules/slideshow/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/slideshow/module.eap
 lib/enlightenment/modules/slideshow/%%MODULE_ARCH%%/module.la
 lib/enlightenment/modules/slideshow/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/slideshow/module.eap
 lib/enlightenment/modules/slideshow/module_icon.png
 lib/enlightenment/modules/slideshow/slideshow.edj
 %%NLS%%share/locale/eo/LC_MESSAGES/slideshow.mo
