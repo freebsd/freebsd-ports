@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.2.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.hostintegrity.com/osiris/data/ \
+MASTER_SITES=	http://osiris.shmoo.com/data/ \
 		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@redundancy.redundancy.org
