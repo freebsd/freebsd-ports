@@ -5,20 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	xml2rfc
-PORTVERSION=	1.30
-CATEGORIES=	textproc tcl83
+PORTVERSION=	1.31
+CATEGORIES=	textproc
 MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lennox@cs.columbia.edu
 COMMENT=	A tool to create RFCs and related documents from XML, as per RFC2629
 
-RUN_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
+USE_TCL=yes
 
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-CATEGORIES+=	tk83
+USE_TK=yes
 .endif
+
+PATCH_TCL_SCRIPTS=xml2rfc.tcl
 
 NO_BUILD=	yes
 
