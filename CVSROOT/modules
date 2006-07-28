@@ -1421,6 +1421,7 @@ crashme		ports/sysutils/crashme
 crawl		ports/www/crawl
 cream		ports/editors/cream
 crescendo	ports/net/crescendo
+crf++		ports/science/crf++
 cricket		ports/net-mgmt/cricket
 crimap		ports/biology/crimap
 crimson		ports/textproc/crimson
