@@ -6,6 +6,7 @@
 
 PORTNAME=	jabber.el
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net-im elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	emacs-jabber
@@ -19,8 +20,8 @@ NO_BUILD=	yes
 INFO=		jabber.el
 PORTDOCS+=	AUTHORS NEWS README filetransfer.txt
 
-EMACS_LISPDIR=	${PREFIX}/share/emacs/site-lisp/${PORTNAME}
-XEMACS_LISPDIR=	${PREFIX}/lib/xemacs/site-lisp/${PORTNAME}
+EMACS_LISPDIR=	${PREFIX}/share/emacs/site-lisp/emacs-jabber
+XEMACS_LISPDIR=	${PREFIX}/lib/xemacs/site-lisp/emacs-jabber
 
 ## Generate info
 pre-install:
