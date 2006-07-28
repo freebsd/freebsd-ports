@@ -7,6 +7,7 @@
 
 PORTNAME=	sdlquake2
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://koti.mbnet.fi/~turol/sdlquake2/
 
@@ -21,7 +22,7 @@ USE_GMAKE=	yes
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \
-		GAME "Build main game modification" on
+		GAME "Build a main game .so file" off
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 MAKE_ENV=	LIBDIR="${LIBDIR}"
