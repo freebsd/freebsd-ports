@@ -123,6 +123,7 @@
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
     SUBDIR += fcgi
+    SUBDIR += feedjack
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
     SUBDIR += fhttpd
