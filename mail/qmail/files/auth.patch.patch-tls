@@ -64,7 +64,7 @@
 ++ #ifdef AUTHCRAM
 +  #ifdef TLS
 +!   out("\r\n250-AUTH LOGIN CRAM-MD5 PLAIN");
-+!   out("\r\n250-AUTH LOGIN CRAM-MD5 PLAIN");
++!   out("\r\n250-AUTH=LOGIN CRAM-MD5 PLAIN");
 +!   if (!ssl) out("\r\n250-STARTTLS");
 +! #else
  !   out("\r\n250-AUTH LOGIN CRAM-MD5 PLAIN");
