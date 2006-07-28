@@ -9,7 +9,7 @@ PORTNAME=	frozenbubble
 PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://zarb.org/~gc/fb//
+MASTER_SITES=	http://zarb.org/~gc/fb/
 DISTNAME=	frozen-bubble-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 

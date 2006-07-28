@@ -10,7 +10,7 @@ PORTVERSION=	2.6.8
 PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
-		ftp://ftp.samba.org//pub/%SUBDIR%/ \
+		ftp://ftp.samba.org/pub/%SUBDIR%/ \
 		ftp://sunsite.auc.dk/pub/unix/%SUBDIR%/  \
 		ftp://ftp.sunet.se/pub/unix/admin/%SUBDIR%/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/ \
