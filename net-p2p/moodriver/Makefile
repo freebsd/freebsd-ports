@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodriver
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://files.beep-media-player.org/releases/moodriver/
 
