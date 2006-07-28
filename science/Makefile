@@ -38,6 +38,7 @@
     SUBDIR += gerris
     SUBDIR += getdp
     SUBDIR += ghemical
+    SUBDIR += ghmm
     SUBDIR += gnudatalanguage
     SUBDIR += gramps
     SUBDIR += gromacs

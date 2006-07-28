@@ -1,0 +1,47 @@
+@comment $FreeBSD$
+bin/probdist
+bin/cluster
+bin/scluster
+bin/smix_hmm
+bin/ghmm-config
+include/ghmm/ghmm.h
+include/ghmm/foba.h
+include/ghmm/model.h
+include/ghmm/cluster.h
+include/ghmm/scluster.h
+include/ghmm/root_finder.h
+include/ghmm/reestimate.h
+include/ghmm/sequence.h
+include/ghmm/viterbi.h
+include/ghmm/sfoba.h
+include/ghmm/sviterbi.h
+include/ghmm/smodel.h
+include/ghmm/sdmodel.h
+include/ghmm/sdfoba.h
+include/ghmm/sreestimate.h
+include/ghmm/sgenerate.h
+include/ghmm/smixturehmm.h
+include/ghmm/scanner.h
+include/ghmm/gauss_tail.h
+include/ghmm/smap_classify.h
+include/ghmm/kbest.h
+include/ghmm/gradescent.h
+include/ghmm/discrime.h
+include/ghmm/psequence.h
+include/ghmm/pmodel.h
+include/ghmm/linkedlist.h
+include/ghmm/pviterbi.h
+include/ghmm/pviterbi_propagate.h
+include/ghmm/vector.h
+include/ghmm/matrix.h
+include/ghmm/const.h
+include/ghmm/rng.h
+include/ghmm/mes.h
+include/ghmm/randvar.h
+include/ghmm/internal.h
+lib/libghmm.so.0
+lib/libghmm.so
+lib/libghmm.a
+%%DATADIR%%/PHI_001_20.dat
+@dirrmtry %%DATADIR%%
+@dirrmtry include/ghmm

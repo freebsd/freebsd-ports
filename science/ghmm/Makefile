@@ -1,0 +1,24 @@
+# New ports collection makefile for:	ghmm
+# Date created:		2006-07-26
+# Whom:			Cheng-Lung Sung <clsung@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ghmm
+PORTVERSION=	0.7.0a
+CATEGORIES=	science math
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	clsung@FreeBSD.org
+COMMENT=	General Hidden Markov Model Library in C
+
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-0.7.0
+
+post-patch:
+	@${REINPLACE_CMD} 's|tests doc VisualC|tests VisualC|' ${WRKSRC}/configure
+
+.include <bsd.port.mk>
