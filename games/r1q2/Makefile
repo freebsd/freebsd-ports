@@ -7,7 +7,7 @@
 
 PORTNAME=	r1q2
 PORTVERSION=	6557
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
@@ -29,7 +29,7 @@ NO_WRKSUBDIR=	yes
 
 OPTIONS=	CLIENT "Build OpenGL client" on \
 		DEDICATED "Build dedicated server" on \
-		GAME "Build main game modification" on \
+		GAME "Build a main game .so file" off \
 		GLX "Build OpenGL renderer" on \
 		HTTP "Enable HTTP download support" on \
 		OPENAL "Enable OpenAL support" on \
@@ -77,7 +77,7 @@ R1Q2_BIN+=	r1q2ded
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
-.if !defined(WITHOUT_GAME)
+.if defined(WITH_GAME)
 MAKE_ENV+=	BUILD_GAME=YES
 PLIST_SUB+=	GAME=""
 .else
@@ -136,7 +136,7 @@ do-install:
 .for f in ${R1Q2_REF}
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/ref_${f}.so ${LIBDIR}
 .endfor
-.if !defined(WITHOUT_GAME)
+.if defined(WITH_GAME)
 	${INSTALL_PROGRAM} ${WRKSRC}/quake2/baseq2/game.so ${LIBDIR}/baseq2
 .endif
 .if !defined(NOPORTDOCS)
