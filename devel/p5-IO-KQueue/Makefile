@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-KQueue
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -22,7 +22,6 @@ MAN3=		IO::KQueue.3
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${RM} -f ${WRKSRC}/._* ${WRKSRC}/examples/._*
 .if ${PERL_LEVEL} < 500800
 	${REINPLACE_CMD} -e 's/const //' ${WRKSRC}/KQueue.xs
 .endif
