@@ -539,6 +539,7 @@ astk-serveur	ports/cad/astk-serveur
 astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
 astzclock	ports/x11-clocks/astzclock
+asused		ports/net-mgmt/asused
 aswedit		ports/www/aswedit
 aswiki		ports/www/aswiki
 asymptote	ports/math/asymptote
