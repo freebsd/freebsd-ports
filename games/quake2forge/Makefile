@@ -7,32 +7,27 @@
 
 PORTNAME=	quake2forge
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.galgenberg.net/distfiles/:qf \
-		${MASTER_SITE_IDSOFTWARE:S|$|quake2/source/:id|}
+MASTER_SITES=	http://www.galgenberg.net/distfiles/
 DISTNAME=	quake2-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:qf
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	First Person Shooter with many addons available
 
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_BZIP2=	yes
-WANT_SDL=	yes
 
 CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/${PORTNAME}/'
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-OPTIONS=	AO "Enable libao support" off \
-		GL "Enable OpenGL support" on \
-		ROGUE "Build Ground Zero (Rogue) mission pack" off \
-		SDL "Enable SDL support" off \
-		SVGA "Enable SVGAlib support" off \
-		X11 "Enable X11 support" on \
-		XATRIX "Build The Reckoning (Xatrix) mission pack" off
+OPTIONS=	AO "Build libao sound module" off \
+		CTF "Build the CTF (Capture The Flag) modification" off \
+		GAME "Build a main game .so file" off \
+		GL "Build OpenGL renderer" on \
+		SDL "Build SDL renderers" off \
+		SVGA "Build SVGA renderer" off \
+		X11 "Build X11 renderer" on
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
@@ -49,24 +44,27 @@ CONFIGURE_ARGS+=--without-ao
 PLIST_SUB+=	AO="@comment "
 .endif
 
-.if !defined(WITHOUT_GL)
+.if defined(WITH_CTF)
+PLIST_SUB+=	CTF=""
+.else
+Q2F_BADMODS+=	ctf
+PLIST_SUB+=	CTF="@comment "
+.endif
+
+.if defined(WITH_GAME)
+PLIST_SUB+=	GAME=""
+.else
+Q2F_BADMODS+=	baseq2
+PLIST_SUB+=	GAME="@comment "
+.endif
+
+.if defined(WITH_GL)
 USE_GL=		yes
 CONFIGURE_ARGS+=--with-opengl=${X11BASE}
 PLIST_SUB+=	GL=""
 .else
 CONFIGURE_ARGS+=--with-opengl=no
 PLIST_SUB+=	GL="@comment "
-.endif
-
-.if defined(WITH_ROGUE)
-DISTFILES+=	roguesrc320.shar.Z:id
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_rogue_g__local.h \
-		${FILESDIR}/extra-patch-src_rogue_q__shared.c
-Q2MP+=		rogue
-ROGUE_OFF=	454
-PLIST_SUB+=	ROGUE=""
-.else
-PLIST_SUB+=	ROGUE="@comment "
 .endif
 
 .if defined(WITH_SDL)
@@ -78,7 +76,7 @@ CONFIGURE_ARGS+=--disable-sdl --disable-sdltest
 PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if !defined(WITHOUT_GL) && defined(WITH_SDL)
+.if defined(WITH_GL) && defined(WITH_SDL)
 PLIST_SUB+=	SDLGL=""
 .else
 PLIST_SUB+=	SDLGL="@comment "
@@ -93,7 +91,7 @@ CONFIGURE_ARGS+=--with-svgalib=no
 PLIST_SUB+=	SVGA="@comment "
 .endif
 
-.if !defined(WITHOUT_X11)
+.if defined(WITH_X11)
 USE_XLIB=	yes
 CONFIGURE_ARGS+=--with-x
 PLIST_SUB+=	X11=""
@@ -101,25 +99,6 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11="@comment "
 .endif
-
-.if defined(WITH_XATRIX)
-DISTFILES+=	xatrixsrc320.shar.Z:id
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_xatrix_q__shared.c
-Q2MP+=		xatrix
-XATRIX_OFF=	441
-PLIST_SUB+=	XATRIX=""
-.else
-PLIST_SUB+=	XATRIX="@comment "
-.endif
-
-post-extract:
-.for mp in ${Q2MP}
-	@${MKDIR} ${WRKSRC}/src/${mp}
-	@(cd ${WRKSRC}/src/${mp} && ${GUNZIP_CMD} -c \
-		${DISTDIR}/${DIST_SUBDIR}/${mp}src320.shar.Z > \
-		${mp}src320.shar && \
-		${TAIL} +${${mp:U}_OFF} ${mp}src320.shar | ${SH})
-.endfor
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | \
@@ -130,22 +109,20 @@ post-patch:
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's/%zu/%u/g' ${WRKSRC}/src/main.c
 .endif
-
-post-build:
-.for mp in ${Q2MP}
-	@(cd ${WRKSRC}/src/${mp}; ${MAKE} -f ${FILESDIR}/Makefile.${mp})
+.for f in ${Q2F_BADMODS}
+	@${REINPLACE_CMD} -i "" -e 's/${f}//' ${WRKSRC}/src/Makefile.in
 .endfor
 
 post-install:
-.for mp in ${Q2MP}
-	${MKDIR} ${LIBDIR}/${mp}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${mp}/game.so ${LIBDIR}/${mp}
-.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/ctf
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/README.* ${WRKSRC}/docs/*.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/ctf/*.html ${WRKSRC}/docs/ctf/*.gif \
-		${WRKSRC}/docs/ctf/*.jpg ${DOCSDIR}/ctf
+.if defined(WITH_CTF)
+	${MKDIR} ${DOCSDIR}/ctf
+.for f in *.html *.gif *.jpg
+	${INSTALL_DATA} ${WRKSRC}/docs/ctf/${f} ${DOCSDIR}/ctf
+.endfor
+.endif
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
