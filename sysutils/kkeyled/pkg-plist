@@ -96,9 +96,6 @@ share/icons/locolor/22x22/apps/kkeyled.png
 share/icons/locolor/32x32/apps/kkeyled.png
 share/icons/locolor/48x48/apps/kkeyled.png
 share/locale/de/LC_MESSAGES/kkeyled.mo
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale
 @dirrmtry share/icons/locolor/48x48/apps
 @dirrmtry share/icons/locolor/48x48
 @dirrmtry share/icons/locolor/32x32/apps
