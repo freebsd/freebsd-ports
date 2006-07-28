@@ -9,7 +9,7 @@ PORTVERSION=	0.9.5
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
-MASTER_SITES=	http://www.prelude-ids.org/download/releases/old/
+		http://www.prelude-ids.org/download/releases/old/
 
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Prelude Network Intrusion Detection System central logging point
