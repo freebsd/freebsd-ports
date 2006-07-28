@@ -8,8 +8,8 @@
 PORTNAME=	zip
 PORTVERSION=	2.32
 CATEGORIES=	archivers
-MASTER_SITES=	http://ftp.info-zip.org/pub/infozip/src/ \
-		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
+MASTER_SITES=	http://ftp.info-zip.org/pub/infozip/src/ ${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	tools/zip/info-zip/src
 DISTFILES=	zip232${EXTRACT_SUFX}
 
 MAINTAINER=	ache@FreeBSD.org

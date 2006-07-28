@@ -10,7 +10,7 @@ PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL:S/_//}
 CATEGORIES=	mail
 MASTER_SITES=	http://www.elmme-mailer.org/ \
 	ftp://ftp.elmme-mailer.org/elmme-mailer.org/src/elm-2.4ME+/ \
-	ftp://ftp.funet.fi//pub/unix/mail/elm/elm-2.4ME+/
+	ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/
 DISTNAME=	elm-${ELM_VERSION}ME+${ELM_REVISION}
 
 PATCH_SITES=	${MASTER_SITES}

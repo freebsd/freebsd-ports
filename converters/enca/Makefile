@@ -8,7 +8,7 @@
 PORTNAME=	enca
 PORTVERSION=	1.9
 CATEGORIES=	converters textproc russian ukrainian
-MASTER_SITES=	http://trific.ath.cx/Ftp//enca/ \
+MASTER_SITES=	http://trific.ath.cx/Ftp/enca/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	never@nevermind.kiev.ua
