@@ -533,6 +533,7 @@
     SUBDIR += q15
     SUBDIR += q3base
     SUBDIR += linux-quake3
+    SUBDIR += quake2max
     SUBDIR += quake3-excessive
     SUBDIR += quake3-freezetag
     SUBDIR += quake3-osp

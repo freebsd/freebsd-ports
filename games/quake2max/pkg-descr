@@ -1,0 +1,23 @@
+OpenGL only Quake II engine modification with the following features:
+
+- Requires id Software's Quake II: Patched to v3.20.
+- OpenGL Only: No software mode; No 3dfx.
+- 32-bit color skin/texture support: .jpg; .tga; .png.
+- Texture Compression: For large textures/skins.
+- Particle Engine: Fast intuitive system; dynamically lit; custom special
+  effects.
+- RScript Shaders: Spheremapping; detail textures; animated skins; vertex
+  deformation, other custom functions.
+- Enhanced Menus: Mouse support in menus; menus scaled to fixed resolution;
+  reorganized menus.
+- Client side 3-D Chase Camera: Accurate aiming system; adjustable viewing
+  distance; adjustable viewing angle.
+- Miscellaneous Special Effects: Improved model lighting system; improved
+  dynamic shadows system; overbright maps, entities and particles; transparent
+  surface vertex lighting.
+- Miscellaneous Game play Enhancements: Decals for blood, bullet marks, and
+  impact explosions; mouse FOV autosensitivity; "*.pak" pak loading; CVARlist
+  filter parameter.
+- Backwards Compatible: With old mods.
+
+WWW: http://www.quake2max.net/

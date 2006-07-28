@@ -1,0 +1,9 @@
+%%CLIENT%%bin/quake2max
+%%DEDICATED%%bin/quake2max-ded
+%%SDL%%bin/quake2max-sdl
+%%GAME%%%%LIBDIR%%/baseq2/game.so
+%%LIBDIR%%/baseq2/maxpak.pak
+%%GLX%%%%LIBDIR%%/rfx_glx.so
+%%SDLGL%%%%LIBDIR%%/rfx_sdlgl.so
+@dirrm %%LIBDIR%%/baseq2
+@dirrm %%LIBDIR%%
