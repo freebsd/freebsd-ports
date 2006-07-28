@@ -1,0 +1,7 @@
+%%Q2DIR%%/ctf/game.so
+%%Q2DIR%%/ctf/pak0.pak
+%%Q2DIR%%/ctf/pak1.pak
+%%Q2DIR%%/ctf/server.cfg
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+@dirrm %%Q2DIR%%/ctf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
