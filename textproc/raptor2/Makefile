@@ -11,7 +11,7 @@ PORTVERSION=	1.4.9
 #PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://download.librdf.org/source/ \
+		http://download.librdf.org/source/
 MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	chuck@pkix.net
