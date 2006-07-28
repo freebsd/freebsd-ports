@@ -21,6 +21,7 @@
     SUBDIR += arpwatch-devel
     SUBDIR += arts++
     SUBDIR += aspathtree
+    SUBDIR += asused
     SUBDIR += bandwidthd
     SUBDIR += bgpq
     SUBDIR += bigsister

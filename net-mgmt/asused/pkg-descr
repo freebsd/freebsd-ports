@@ -1,0 +1,5 @@
+Asused is a tool to check and summarise address space registered in the RIPE
+database. For a given list of allocations the tool prints various information
+concerning the allocations and the assignments they contain.
+
+WWW: http://www.ripe.net/tools/
