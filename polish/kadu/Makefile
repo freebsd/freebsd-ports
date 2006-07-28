@@ -7,6 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.4.3
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/
@@ -15,7 +16,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}
 MAINTAINER=		mwisnicki+freebsd@gmail.com
 COMMENT=		QT Gadu-Gadu client
 
-LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/ekg\
+LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/libgadu\
 			sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USE_BZIP2=		yes
