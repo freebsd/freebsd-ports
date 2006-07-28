@@ -34,6 +34,105 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dc8c08c7-1e7c-11db-88cf-000c6ec775d9">
+    <topic>apache -- mod_rewrite buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><ge>1.3.28</ge><lt>1.3.36_1</lt></range>
+	<range><ge>2.0.46</ge><lt>2.0.58_2</lt></range>
+	<range><ge>2.2.0</ge><lt>2.2.2_1</lt></range>
+      </package>
+      <package>
+	<name>apache+mod_perl</name>
+	<range><ge>1.3.28</ge><lt>1.3.36_1</lt></range>
+      </package>
+      <package>
+	<name>apache+ipv6</name>
+	<range><ge>1.3.28</ge><lt>1.3.37</lt></range>
+      </package>
+      <package>
+	<name>apache_fp</name>
+	<name>ru-apache</name>
+	<name>ru-apache+mod_ssl</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>apache+ssl</name>
+	<range><ge>1.3.28</ge><lt>1.3.34.1.57_2</lt></range>
+      </package>
+      <package>
+	<name>apache+mod_ssl</name>
+	<name>apache+mod_ssl+ipv6</name>
+	<name>apache+mod_ssl+mod_accel</name>
+	<name>apache+mod_ssl+mod_accel+ipv6</name>
+	<name>apache+mod_ssl+mod_accel+mod_deflate</name>
+	<name>apache+mod_ssl+mod_accel+mod_deflate+ipv6</name>
+	<name>apache+mod_ssl+mod_deflate</name>
+	<name>apache+mod_ssl+mod_deflate+ipv6</name>
+	<name>apache+mod_ssl+mod_snmp</name>
+	<name>apache+mod_ssl+mod_snmp+mod_accel</name>
+	<name>apache+mod_ssl+mod_snmp+mod_accel+ipv6</name>
+	<name>apache+mod_ssl+mod_snmp+mod_deflate</name>
+	<name>apache+mod_ssl+mod_snmp+mod_deflate+ipv6</name>
+	<name>apache+mod_ssl+mod_snmp+mod_accel+mod_deflate+ipv6</name>
+	<range><ge>1.3.28</ge><lt>1.3.36+2.8.27_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Software Foundation and The Apache HTTP Server
+	  Project reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=apache-httpd-announce&amp;m=115409818602955">
+	  <p>An off-by-one flaw exists in the Rewrite module,
+	    mod_rewrite, as shipped with Apache 1.3 since 1.3.28, 2.0
+	    since 2.0.46, and 2.2 since 2.2.0.</p>
+	  <p>Depending on the manner in which Apache HTTP Server was
+	    compiled, this software defect may result in a
+	    vulnerability which, in combination with certain types of
+	    Rewrite rules in the web server configuration files, could
+	    be triggered remotely. For vulnerable builds, the nature
+	    of the vulnerability can be denial of service (crashing of
+	    web server processes) or potentially allow arbitrary code
+	    execution. This issue has been rated as having important
+	    security impact by the Apache HTTP Server Security Team.</p>
+	  <p>This flaw does not affect a default installation of
+	    Apache HTTP Server.	 Users who do not use, or have not
+	    enabled, the Rewrite module mod_rewrite are not affected
+	    by this issue. This issue only affects installations using
+	    a Rewrite rule with the following characteristics:</p>
+	  <ul>
+	    <li>The RewriteRule allows the attacker to control the
+	      initial part of the rewritten URL (for example if the
+	      substitution URL starts with $1)</li>
+	    <li>The RewriteRule flags do NOT include any of the
+	      following flags: Forbidden (F), Gone (G), or NoEscape
+	      (NE).</li>
+	  </ul>
+	  <p>Please note that ability to exploit this issue is
+	    dependent on the stack layout for a particular compiled
+	    version of mod_rewrite. If the compiler used to compile
+	    Apache HTTP Server has added padding to the stack
+	    immediately after the buffer being overwritten, it will
+	    not be possible to exploit this issue, and Apache HTTP
+	    Server will continue operating normally.</p>
+	  <p>The Apache HTTP Server project thanks Mark Dowd of McAfee
+	    Avert Labs for the responsible reporting of this
+	    vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <certvu>395412</certvu>
+      <cvename>CVE-2006-3747</cvename>
+      <mlist msgid="44CA22D9.6020200@apache.org">http://marc.theaimsgroup.com/?l=apache-httpd-announce&amp;m=115409818602955</mlist>
+    </references>
+    <dates>
+      <discovery>2006-07-27</discovery>
+      <entry>2006-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2a92664-1d60-11db-88cf-000c6ec775d9">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
