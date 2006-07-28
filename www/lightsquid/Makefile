@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lightsquid@logvinov.com
+MAINTAINER=	ports@logvinov.com
 COMMENT=	A light and fast web based squid proxy traffic analyser
 
 .if !defined(WITHOUT_GD)
