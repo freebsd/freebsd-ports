@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/crf_learn
+bin/crf_test
+include/crfpp.h
+lib/libcrfpp.so.0
+lib/libcrfpp.so
+lib/libcrfpp.a
