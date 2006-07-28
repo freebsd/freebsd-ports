@@ -2,6 +2,102 @@ bin/binobj
 bin/gpc
 bin/gpc-run
 bin/gpidump
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/cc1
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtbegin.o
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtbeginS.o
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtend.o
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/crtendS.o
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/README
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/emmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/float.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/gpc-in-c.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/iso646.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/limits.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/math.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/mmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet/ip_compat.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet/ip_fil.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet/ip_lookup.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet/ip_nat.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet/ip_proxy.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet/ip_scan.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet/ip_state.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/pmmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/rpc/svc.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/stdarg.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/stdbool.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/stddef.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/stdio.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/stdlib.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/sys/types.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/syslimits.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/unistd.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/unwind.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/varargs.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/xmmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/gsyslimits.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/README
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/emmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/float.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/iso646.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/limits.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/mmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/pmmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/stdarg.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/stdbool.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/stddef.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/unwind.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/varargs.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include/xmmintrin.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders.conf
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/libgcc.a
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/libgcc_eh.a
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/libgcov.a
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/libgpc.a
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/specs
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/crt.inc
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/crt.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/crtc.c
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/crtc.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/crtdjgpp.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/crtlinux386.h
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/crtx.c
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/dos.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/dosunix.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/fileutils.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/gmp.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/gpc-bp.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/gpc.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/gpcutil.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/heapmon.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/intl.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/intlc.c
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/md5.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/overlay.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/pipes.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/pipesc.c
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/ports.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/printer.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/regex.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/regexc.c
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/rts-config.inc
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/strings.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/stringutils.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/system.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/tfdd.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/trap.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/trapc.c
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/turbo3.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/wincrt.pas
+lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/windos.pas
+lib/libgcc_s.so
+lib/libgcc_s.so.1
+libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/collect2
+libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/gpc1
+libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/gpcpp
+libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixinc.sh
+libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/fixincl
+libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/mkheaders
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -69,56 +165,22 @@ bin/gpidump
 %%PORTDOCS%%%%DOCSDIR%%/demos/tfdddemo.pas
 %%PORTDOCS%%%%DOCSDIR%%/demos/trapdemo.pas
 %%PORTDOCS%%%%DOCSDIR%%/demos/variantdemo.pas
-lib/gpc/crtbegin.o
-lib/gpc/crtbeginS.o
-lib/gpc/crtend.o
-lib/gpc/crtendS.o
-lib/gpc/include/gpc-in-c.h
-lib/gpc/libgcc_eh.a
-lib/gpc/libgpc.a
-lib/gpc/specs
-lib/gpc/units/crt.inc
-lib/gpc/units/crt.pas
-lib/gpc/units/crtc.c
-lib/gpc/units/crtc.h
-lib/gpc/units/crtdjgpp.h
-lib/gpc/units/crtlinux386.h
-lib/gpc/units/crtx.c
-lib/gpc/units/dos.pas
-lib/gpc/units/dosunix.pas
-lib/gpc/units/fileutils.pas
-lib/gpc/units/gmp.pas
-lib/gpc/units/gpc-bp.pas
-lib/gpc/units/gpc.pas
-lib/gpc/units/gpcutil.pas
-lib/gpc/units/heapmon.pas
-lib/gpc/units/intl.pas
-lib/gpc/units/intlc.c
-lib/gpc/units/md5.pas
-lib/gpc/units/overlay.pas
-lib/gpc/units/pipes.pas
-lib/gpc/units/pipesc.c
-lib/gpc/units/ports.pas
-lib/gpc/units/printer.pas
-lib/gpc/units/regex.pas
-lib/gpc/units/regexc.c
-lib/gpc/units/rts-config.inc
-lib/gpc/units/strings.pas
-lib/gpc/units/stringutils.pas
-lib/gpc/units/system.pas
-lib/gpc/units/tfdd.pas
-lib/gpc/units/trap.pas
-lib/gpc/units/trapc.c
-lib/gpc/units/turbo3.pas
-lib/gpc/units/wincrt.pas
-lib/gpc/units/windos.pas
-libexec/gpc/collect2
-libexec/gpc/gpc1
-libexec/gpc/gpcpp
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docdemos
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/demos
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/gpc
-@dirrm lib/gpc/units
-@dirrm lib/gpc/include
-@dirrm lib/gpc
+@dirrm libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools
+@dirrm libexec/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%
+@dirrm libexec/gpc/gcc/%%GNU_HOST%%
+@dirrm libexec/gpc/gcc
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools/include
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/install-tools
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/sys
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/rpc
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include/netinet
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/include
+@dirrm lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%
+@dirrm lib/gpc/gcc/%%GNU_HOST%%
+@dirrm lib/gpc/gcc
