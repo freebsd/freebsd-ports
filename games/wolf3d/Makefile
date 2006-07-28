@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/wolf3d/:wolf \
 		http://cvsup.theplanet.com/distfiles/:wolf \
-		http://www.liquidx.org/distfiles/:sw \
+		http://www.liquidx.org/distfiles/:sw
 DISTNAME=	wolf3d-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:wolf
 
