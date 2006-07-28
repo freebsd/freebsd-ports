@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/moo
 include/moodriver/moo/driver.hh
+include/moodriver/moo/mucipher.h
 include/moodriver/moo/types.hh
 lib/libmoodriver.so.0
 lib/libmoodriver.so
