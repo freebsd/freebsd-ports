@@ -7,42 +7,49 @@
 
 PORTNAME=	data
 PORTVERSION=	3.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
-MASTER_SITE_SUBDIR=	quake2
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|:data,src|}
+MASTER_SITE_SUBDIR=	quake2/:data \
+			quake2/source/:src
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
-DISTFILES=	${Q2FULL}
-DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
+DISTFILES=	${Q2_UPDATE}:data \
+		${Q2_SRC}:src
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake II data files
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-
-NO_BUILD=	yes
+USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS=	CTF "Install the Capture The Flag mod data" on \
-		SHAREWARE "Install demo version game data" off
-
-DATADIR=	${Q2DIR}
+OPTIONS=	MANUAL "Install game manual" off \
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
+		SHAREWARE "Install demo version of the game data" off
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
+DATADIR=	${Q2DIR}
+DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
-Q2FULL=		q2-3.20-x86-full.exe
-Q2DEMO=		q2-314-demo-x86.exe
-Q2CTF=		ctf/q2ctf150.zip
+Q2_DEMO=	q2-314-demo-x86.exe
+Q2_SRC=		q2src${PORTVERSION:S/.//}.shar.Z
+Q2_UPDATE=	q2-${PORTVERSION}-x86-full.exe
 
 .include "Makefile.include"
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
-DISTFILES+=	${Q2CTF}
-PLIST_SUB+=	CTF=""
+.if defined(WITH_MANUAL) || defined(WITH_SHAREWARE)
+DISTFILES+=	${Q2_DEMO}
+.endif
+
+.if defined(WITH_MANUAL)
+PLIST_SUB+=	MANUAL=""
 .else
-PLIST_SUB+=	CTF="@comment "
+PLIST_SUB+=	MANUAL="@comment "
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	WITH_OPTIMIZED_CFLAGS=yes
 .endif
 
 .if defined(WITH_SHAREWARE)
@@ -55,53 +62,35 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
-.if defined(WITH_SHAREWARE) || !defined(NOPORTDOCS)
-DISTFILES+=	${Q2DEMO}
-.endif
-
 do-extract:
 	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} && \
+		uncompress -c ${DISTDIR}/${Q2_SRC} | ${TAIL} +434 | ${SH}
 	@${UNZIP_CMD} -q -d ${WRKDIR} \
-		${DISTDIR}/${DIST_SUBDIR}/${Q2FULL} \
-		baseq2/* -x *.dll
+		${DISTDIR}/${Q2_UPDATE} baseq2/* -x *.dll
+.if defined(WITH_MANUAL)
+	@${UNZIP_CMD} -ajq -d ${WRKDIR}/DOCS \
+		${DISTDIR}/${Q2_DEMO} Install/Data/DOCS/\*
+.endif
 .if defined(WITH_SHAREWARE)
 	@${RM} ${WRKDIR}/baseq2/pak[^0].pak
-.endif
-.if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
-	@${UNZIP_CMD} -aq -d ${WRKDIR}/ctf \
-		${DISTDIR}/${DIST_SUBDIR}/${Q2CTF} \
-		-x *.dll *.ico
-.endif
-.if !defined(NOPORTDOCS)
-	@${UNZIP_CMD} -ajq -d ${WRKDIR}/DOCS \
-		${DISTDIR}/${DIST_SUBDIR}/${Q2DEMO} \
-		Install/Data/DOCS/*
-.endif
-.if defined(WITH_SHAREWARE)
 	@${UNZIP_CMD} -jq -d ${WRKDIR}/baseq2 \
-		${DISTDIR}/${DIST_SUBDIR}/${Q2DEMO} \
-		Install/Data/baseq2/pak0.pak
+		${DISTDIR}/${Q2_DEMO} Install/Data/baseq2/pak0.pak
 .endif
 
+post-extract:
+	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' ${WRKSRC}/q_shared.[ch]
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/baseq2 ${DATADIR}
-.if !defined(WITH_SHAREWARE)
-	@${MKDIR} ${DATADIR}/rogue ${DATADIR}/xatrix
-.endif
-.if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
-	@${MKDIR} ${DATADIR}/ctf
-.   for f in *.cfg *.pak
-	@${INSTALL_DATA} ${WRKSRC}/ctf/${f} ${DATADIR}/ctf
-.   endfor
-.endif
-.if !defined(NOPORTDOCS)
+	${MKDIR} ${DATADIR}/baseq2
+	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${DATADIR}/baseq2
+	${CP} -R ${WRKSRC}/baseq2/* ${DATADIR}/baseq2
+.if defined(WITH_MANUAL)
 	@${MKDIR} ${DOCSDIR}
 	@${CP} -R ${WRKSRC}/DOCS ${DOCSDIR}/manual
-.   if !defined(WITHOUT_CTF) && !defined(WITH_SHAREWARE)
-	@${MKDIR} ${DOCSDIR}/ctf
-	@${INSTALL_DATA} ${WRKSRC}/ctf/*.txt ${DOCSDIR}/ctf
-.   endif
 .endif
 
 post-install:
