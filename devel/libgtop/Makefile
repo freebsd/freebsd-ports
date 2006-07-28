@@ -23,7 +23,7 @@ USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 ltverhack
+USE_GNOME=	gnomehack glib20 ltverhack intlhack
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
