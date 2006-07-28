@@ -555,6 +555,7 @@
     SUBDIR += quake-reaper
     SUBDIR += quake-source
     SUBDIR += quake2-data
+    SUBDIR += quake2-extras
     SUBDIR += quake2-relay
     SUBDIR += quake2-source
     SUBDIR += quake2forge
