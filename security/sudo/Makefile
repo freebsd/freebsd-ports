@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 
 OPTIONS=	LDAP	"With LDAP support" off \
 		OPIE	"With OPIE support" off \
-		SHELL_SETS_HOME "Set $HOME to target user in shell mode" off
+		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off
 
 .include <bsd.port.pre.mk>
 
