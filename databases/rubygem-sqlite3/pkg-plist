@@ -46,6 +46,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/EmptyException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Error.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Exception.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/FormatException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/FullException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/IOException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/InternalException.html
@@ -54,10 +55,12 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MemoryException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MismatchException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/MisuseException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/NotADatabaseException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/NotFoundException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/PermissionException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/Pragmas.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ProtocolException.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/RangeException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ReadOnlyException.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/SQLite3/ResultSet/FieldsContainer.html
