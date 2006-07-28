@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	x4x
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.1
 CATEGORIES=	audio java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	alex@foxybanana.com
 COMMENT=	X4X for XMMS2
@@ -24,8 +25,10 @@ BUILD_DEPENDS=	${JAVALIBDIR}/xmms2java.jar:${PORTSDIR}/audio/java-xmms2 \
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
-MAKE_ARGS=	-DswtHome=$J{JAVALIBDIR} \
+MAKE_ARGS=	-DinstallDir=${JAVASHAREDIR}/X4X \
+		-DsharedDir=${JAVASHAREDIR}/X4X \
 		-Dprefix=${JAVASHAREDIR} \
+		-Dbinary=${PREFIX}/bin/x4x \
 		-Dswt=${JAVALIBDIR}/swt.jar \
 		-Dxmms2java=${JAVALIBDIR}/xmms2java.jar \
 		-Dlog4j=${JAVALIBDIR}/log4j.jar \
@@ -37,16 +40,6 @@ MAKE_ARGS=	-DswtHome=$J{JAVALIBDIR} \
 USE_BZIP2=	yes
 WRKSRC=	${WRKDIR}/X4X
 DATADIR=	${JAVASHAREDIR}/X4X
-
-do-run:
-	cd ${WRKSRC} && ant ${MAKE_ARGS} run
-
-pre-install:
-	${REINPLACE_CMD} -e \
-	's|$${prefix}/share/X4X/images|$${prefix}/X4X/images|g' \
-	${WRKSRC}/build.xml
-	${REINPLACE_CMD} -e 's|$${prefix}/bin/X4X|${PREFIX}/bin/X4X|g' \
-	${WRKSRC}/build.xml
 
 do-install:
 	@cd ${WRKSRC} && ant ${MAKE_ARGS} ${INSTALL_TARGET}
