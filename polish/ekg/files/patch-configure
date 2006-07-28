@@ -1,6 +1,19 @@
---- configure	Mon Jun 28 22:13:05 2004
-+++ configure	Sat Jul 17 10:12:27 2004
-@@ -4554,7 +4554,6 @@
+--- configure.orig	Sun Jul  2 17:24:39 2006
++++ configure	Sun Jul  2 17:25:50 2006
+@@ -3813,12 +3813,6 @@
+ 	lib_static_enabled=no
+ fi
+ 
+-if test "x$enable_static" = "xno" -a "x$enable_shared" != "xyes"; then
+-  { { echo "$as_me:$LINENO: error: You must choose either static or shared version of libgadu." >&5
+-echo "$as_me: error: You must choose either static or shared version of libgadu." >&2;}
+-   { (exit 1); exit 1; }; }
+-fi
+-
+ # Check whether --enable-dynamic or --disable-dynamic was given.
+ if test "${enable_dynamic+set}" = set; then
+   enableval="$enable_dynamic"
+@@ -4770,7 +4764,6 @@
  	LIBS_LIBGADU="$LIBS_LIBGADU $OPENSSL_LIBS"
  	CFLAGS="$CFLAGS $OPENSSL_INCLUDES"
  	CFLAGS_LIBGADU="$CFLAGS_LIBGADU $OPENSSL_INCLUDES"
