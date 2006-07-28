@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	audio java
 PKGNAMEPREFIX=	java-
 
@@ -24,9 +25,21 @@ INSTALLS_SHLIB=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
 SCONS_BUILDENV=	JAVA_HOME=${JAVA_HOME}
-SCONS_TARGET=	src/clients/lib/java/libxmms2java.so src/clients/lib/java/xmms2java.jar
+SCONS_TARGET=	src/clients/lib/java
 
 XMMS2_SLAVE=	java
+
+# Crazy workaround for a bug introduced sometime after DrDoolittle that
+# causes the java bindings to not be built completely on the first
+# run of scons.
+
+do-build:
+	@cd ${WRKSRC} && \
+	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} \
+	${SCONS_TARGET}
+	@cd ${WRKSRC} && \
+	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} \
+	${SCONS_TARGET}
 
 do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/xmms2java.jar \
