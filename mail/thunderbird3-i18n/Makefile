@@ -51,16 +51,16 @@ do-extract:
 	done
 
 do-install:
-	@${INSTALL} -d ${XPI_LIBDIR}
-	@${CP} -Rp ${WRKSRC}/ ${XPI_LIBDIR}
+	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
+	@${CP} -Rp ${WRKSRC}/ ${XPI_LIBDIR}/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${WDIR}/
 	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${WDIR}/
-	@for _app in ${XPI_APPS} ; { for _xpi in ${XPI_LIBDIR}/${WDIR} ; { \
-		${LN} -sf $$_xpi $$_app ${_Q} ; } ; }
-	@${ECHO_CMD} '@exec for _app in ${XPI_APPS} ; { for _xpi in ${XPI_LIBDIR}/${WDIR} ; { \
-		${LN} -sf $$_xpi $$_app ${_Q} ; } ; }' ${_A}
-	@${ECHO_CMD} '@unexec for _app in ${XPI_APPS} ; { ${RM} -f $$_app/${WDIR} ; }' ${_A}
-	@${ECHO_CMD} '@unexec rmdir ${XPI_LIBDIR:S,^${PREFIX},%D,} ${_Q}' ${_A}
+	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q} ; }
+	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
+	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
+		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec rmdir ${XPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
