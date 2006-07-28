@@ -1,0 +1,22 @@
+bin/asused
+bin/cwhois
+@unexec if cmp -s %D/etc/asused.conf %D/etc/asused.conf.dist; then rm -f %D/etc/asused.conf; fi
+etc/asused.conf.dist
+@exec [ -f %B/asused.conf ] || cp %B/%f %B/asused.conf
+%%SITE_PERL%%/ArinWhois.pm
+%%SITE_PERL%%/NCC/CountryCode.pm
+%%SITE_PERL%%/NCC/RipeDelegations.pm
+%%SITE_PERL%%/Net/RIPEWhois/in.pm
+%%SITE_PERL%%/Reg/Asused.pm
+%%SITE_PERL%%/RipeWhois.pm
+%%SITE_PERL%%/RipeWhois/FormatMode.pm
+%%SITE_PERL%%/Whois.pm
+%%SITE_PERL%%/asused.pod
+%%SITE_PERL%%/ipv4pack.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/asused/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/asused
+@dirrm %%SITE_PERL%%/RipeWhois
+@dirrm %%SITE_PERL%%/Reg
+@dirrm %%SITE_PERL%%/Net/RIPEWhois
+@dirrmtry %%SITE_PERL%%/Net
+@dirrm %%SITE_PERL%%/NCC
