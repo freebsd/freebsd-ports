@@ -559,6 +559,7 @@
     SUBDIR += quake2-relay
     SUBDIR += quake2-rogue
     SUBDIR += quake2-source
+    SUBDIR += quake2-xatrix
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
     SUBDIR += quake3

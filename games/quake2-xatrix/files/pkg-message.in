@@ -1,0 +1,8 @@
+==============================================================================
+
+To complete the installation of this port you need to copy the file
+"xatrix/pak0.pak" and the directory "xatrix/video" with its contents from the
+original Quake II: The Reckoning (Xatrix) Mission Pack distribution to
+"%%Q2DIR%%/xatrix".
+
+==============================================================================
