@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	sunclock
-PORTVERSION=	3.54.1
+PORTVERSION=	3.55
 CATEGORIES=	astro x11-clocks
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/ \
+		http://mbsd.msk.ru/dist/
 
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
@@ -22,6 +23,6 @@ USE_XPM=	yes
 USE_IMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		sunclock.1 emx.1
+MAN1=		sunclock.1
 
 .include <bsd.port.mk>

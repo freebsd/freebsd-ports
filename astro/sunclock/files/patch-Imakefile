@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Aug  2 00:13:59 2005
-+++ Imakefile	Fri Nov 25 18:21:34 2005
+--- Imakefile.orig	Sun Jun 18 23:58:50 2006
++++ Imakefile	Wed Jul 26 14:47:03 2006
 @@ -1,18 +1,18 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -53,3 +53,22 @@
  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
  ComplexProgramTarget(sunclock)
+@@ -64,7 +64,7 @@
+ all::
+ 	cd editkit ; xmkmf ; make emx \
+           DESTDIR=$(DESTDIR) \
+-	  BINDIR=$(SHAREDIR)/bin \
++	  BINDIR=/bin \
+ 	  MANDIR=$(SHAREDIR)/editkit \
+ 	  SHAREDIR=$(DESTDIR)$(SHAREDIR)/editkit
+ 
+@@ -78,8 +78,7 @@
+ 	cd i18n ; rm -f *~ ; cp -f Sunclock.* $(DESTDIR)$(SHAREDIR)/i18n
+ 	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/earthmaps/vmf
+ 	cd vmf ; rm -f *~ ; cp -f * $(DESTDIR)$(SHAREDIR)/earthmaps/vmf
+-	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/bin
+-	install -c -s editkit/emx $(DESTDIR)$(SHAREDIR)/bin
++	install -c -s editkit/emx $(DESTDIR)/bin
+ 	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/editkit
+ 	cd editkit ; install -c -m 444 rc.example README MANUAL.emacs \
+ 		$(DESTDIR)$(SHAREDIR)/editkit
