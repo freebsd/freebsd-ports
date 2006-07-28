@@ -71,6 +71,7 @@
     SUBDIR += ovt
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += paraview
+    SUBDIR += pcp
     SUBDIR += psi3
     SUBDIR += py-paida
     SUBDIR += py-scipy

@@ -1,0 +1,21 @@
+PCP (Pattern Classification Program) is an open-source 
+machine learning program for supervised classification 
+of patterns (vectors of measurements). 
+
+PCP implements the following algorithms and methods:
+
+* Fisher's linear discriminant
+* dimensionality reduction using Singular Value Decomposition
+* Principal Component Analysis
+* feature subset selection
+* Bayes error estimation
+* parametric classifiers (linear and quadratic)
+* least-squares (pseudo-inverse) linear discriminant
+* k-Nearest Neighbor (k-NN)
+* neural networks (Multi-Layer Perceptron (MLP))
+* Support Vector Machine (SVM) algorithm
+* SVM, MLP and k-NN model selection
+* cross-validation
+* bagging (committee) classification
+
+WWW:	http://pcp.sourceforge.net/
