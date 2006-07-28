@@ -11925,6 +11925,7 @@ quake2-extras	ports/games/quake2-extras
 quake2-relay	ports/games/quake2-relay
 quake2-rogue	ports/games/quake2-rogue
 quake2-source	ports/games/quake2-source
+quake2-xatrix	ports/games/quake2-xatrix
 quake2forge	ports/games/quake2forge
 quake2lnx	ports/games/quake2lnx
 quake3		ports/games/quake3
