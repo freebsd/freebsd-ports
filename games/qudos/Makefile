@@ -7,6 +7,7 @@
 
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/QuDos/
 DISTNAME=	QuDos-${PORTVERSION}-src
@@ -28,6 +29,7 @@ OPTIONS=	3ZB2 "Build 3zb2 modification (bots)" on \
 		CLIENT "Build client" on \
 		CTF "Build CTF (Capture The Flag) modification" off \
 		DEDICATED "Build dedicated server" on \
+		GAME "Build a main game .so modification" off \
 		GAME_MOD "Enable custom addons in main modification" on \
 		GLX "Build OpenGL renderer" on \
 		IPV6 "Enable IPv6 support" off \
