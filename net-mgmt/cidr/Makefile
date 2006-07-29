@@ -1,4 +1,4 @@
-# New ports collection makefile for:   sqsh
+# New ports collection makefile for:   cidr
 # Date created:		18 Jun 2000
 # Whom:			Domas Mituzas <midom@dammit.lt>
 #
