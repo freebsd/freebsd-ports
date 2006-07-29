@@ -1,9 +1,14 @@
---- berkeleydb/db-4.2.52.patch.orig	Fri Dec 23 09:22:46 2005
-+++ berkeleydb/db-4.2.52.patch	Fri May 19 17:44:11 2006
-@@ -205,6 +205,20 @@
- !         $(SLO)$/dbreg_util.obj
- ! 
- ! .INCLUDE :  target.mk
+Index: berkeleydb/db-4.2.52.patch
+===================================================================
+RCS file: /cvs/external/berkeleydb/db-4.2.52.patch,v
+retrieving revision 1.13
+diff -u -r1.13 db-4.2.52.patch
+--- berkeleydb/db-4.2.52.patch	25 Jul 2006 10:23:22 -0000	1.13
++++ berkeleydb/db-4.2.52.patch	29 Jul 2006 11:01:12 -0000
+@@ -518,6 +518,20 @@
+   emode=	555
+   fmode=	444
+   
 +*** misc/db-4.2.52.NC/dist/config.hin	Wed Dec  3 16:10:00 2003
 +--- misc/build/db-4.2.52.NC/dist/config.hin	Fri May 19 17:37:41 2006
 +***************
@@ -18,10 +23,10 @@
 +  /* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
 +  #undef HAVE_NDIR_H
 +  
- *** misc/db-4.2.52.NC/dist/configure	2003-12-03 22:10:02.000000000 +0100
- --- misc/build/db-4.2.52.NC/dist/configure	2005-12-22 18:36:14.647415000 +0100
+ *** misc/db-4.2.52.NC/dist/configure	Wed Dec  3 22:10:02 2003
+ --- misc/build/db-4.2.52.NC/dist/configure	Tue Jul 25 09:05:20 2006
  ***************
-@@ -241,6 +255,76 @@
+@@ -554,6 +568,76 @@
      fi
    
      # Commands to make compiler produce verbose output that lists
@@ -95,10 +100,10 @@
 +  _ACEOF
 +  
 +  
- *** misc/db-4.2.52.NC/dist/ltmain.sh	2003-04-26 19:45:37.000000000 +0200
- --- misc/build/db-4.2.52.NC/dist/ltmain.sh	2005-12-22 18:36:14.447413000 +0100
+ *** misc/db-4.2.52.NC/dist/ltmain.sh	Sat Apr 26 19:45:37 2003
+ --- misc/build/db-4.2.52.NC/dist/ltmain.sh	Tue Jul 25 09:05:20 2006
  ***************
-@@ -943,3 +1027,39 @@
+@@ -1010,3 +1094,39 @@
  ! 			$(SLO)$/xa_map.obj
  ! 
  ! .INCLUDE :  target.mk
