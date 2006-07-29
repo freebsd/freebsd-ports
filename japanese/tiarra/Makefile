@@ -16,6 +16,7 @@ COMMENT=	IRC Proxy software
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
 
+USE_PERL5_RUN=	yes
 USE_BZIP2=	yes
 USE_RC_SUBR=	tiarra
 NO_BUILD=	yes
@@ -29,6 +30,12 @@ PLIST_SUB=	TIARRA_USER=${TIARRA_USER} \
 
 TIARRA_USER=	tiarra
 TIARRA_GROUP=	tiarra
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		needs perl 5.6.0 or higher, install lang/perl5.8 and try again
+.endif
 
 do-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -44,4 +51,4 @@ do-install:
 	@${CHMOD} o-rwx ${PREFIX}/tiarra/log
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
