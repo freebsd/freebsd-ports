@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-netdb
 

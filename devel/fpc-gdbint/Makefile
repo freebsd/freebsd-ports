@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-gdbint
 

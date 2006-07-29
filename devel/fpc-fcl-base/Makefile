@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	2
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl
 
@@ -33,9 +34,5 @@ WRKUNITDIR=	${PORTNAME}/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR} ${PORTNAME}/rtl ${PORTNAME}/packages/base
 OPT=-CX -Fi../ -Fu${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/units/${BUILDNAME}/*
 HAVE_EXAMPLES=	true
-
-post-extract:
-	@cd ${WRKDIR}/${PORTNAME} && \
-		${FIND} * -type d -name .svn | ${XARGS} ${RM} -rf
 
 .include "${MASTERDIR}/Makefile"

@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	x11 lang
 PKGNAMESUFFIX=	-x11
 
