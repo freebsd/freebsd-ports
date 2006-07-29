@@ -10,15 +10,25 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/ark2soya.py
 %%PYTHON_SITELIBDIR%%/soya/ark2soya.pyc
 %%PYTHON_SITELIBDIR%%/soya/ark2soya.pyo
+%%PYTHON_SITELIBDIR%%/soya/blender2soya_batch.py
+%%PYTHON_SITELIBDIR%%/soya/blender2soya_batch.pyo
+%%PYTHON_SITELIBDIR%%/soya/blender2soya_batch.pyc
 %%PYTHON_SITELIBDIR%%/soya/blender2cal3d.py
 %%PYTHON_SITELIBDIR%%/soya/blender2cal3d.pyc
 %%PYTHON_SITELIBDIR%%/soya/blender2cal3d.pyo
 %%PYTHON_SITELIBDIR%%/soya/blender2soya.py
 %%PYTHON_SITELIBDIR%%/soya/blender2soya.pyc
 %%PYTHON_SITELIBDIR%%/soya/blender2soya.pyo
-%%PYTHON_SITELIBDIR%%/soya/cal3d-export.py
-%%PYTHON_SITELIBDIR%%/soya/cal3d-export.pyc
-%%PYTHON_SITELIBDIR%%/soya/cal3d-export.pyo
+%%PYTHON_SITELIBDIR%%/soya/data/shader_default.data
+%%PYTHON_SITELIBDIR%%/soya/main_loop.py
+%%PYTHON_SITELIBDIR%%/soya/main_loop.pyc
+%%PYTHON_SITELIBDIR%%/soya/main_loop.pyo
+%%PYTHON_SITELIBDIR%%/soya/pygame_sound4soya.py
+%%PYTHON_SITELIBDIR%%/soya/pygame_sound4soya.pyc
+%%PYTHON_SITELIBDIR%%/soya/pygame_sound4soya.pyo
+%%PYTHON_SITELIBDIR%%/soya/terrain.py
+%%PYTHON_SITELIBDIR%%/soya/terrain.pyc
+%%PYTHON_SITELIBDIR%%/soya/terrain.pyo
 %%PYTHON_SITELIBDIR%%/soya/cerealizer4soya.py
 %%PYTHON_SITELIBDIR%%/soya/cerealizer4soya.pyc
 %%PYTHON_SITELIBDIR%%/soya/cerealizer4soya.pyo
@@ -36,7 +46,6 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/data/fx.png
 %%PYTHON_SITELIBDIR%%/soya/data/particle_default.data
 %%PYTHON_SITELIBDIR%%/soya/data/shader.png
-%%PYTHON_SITELIBDIR%%/soya/data/shader_default.data
 %%PYTHON_SITELIBDIR%%/soya/data/soya3d_logo.png
 %%PYTHON_SITELIBDIR%%/soya/editor/__init__.py
 %%PYTHON_SITELIBDIR%%/soya/editor/__init__.pyc
@@ -53,15 +62,9 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/facecutter.py
 %%PYTHON_SITELIBDIR%%/soya/facecutter.pyc
 %%PYTHON_SITELIBDIR%%/soya/facecutter.pyo
-%%PYTHON_SITELIBDIR%%/soya/idler.py
-%%PYTHON_SITELIBDIR%%/soya/idler.pyc
-%%PYTHON_SITELIBDIR%%/soya/idler.pyo
 %%PYTHON_SITELIBDIR%%/soya/label3d.py
 %%PYTHON_SITELIBDIR%%/soya/label3d.pyc
 %%PYTHON_SITELIBDIR%%/soya/label3d.pyo
-%%PYTHON_SITELIBDIR%%/soya/land.py
-%%PYTHON_SITELIBDIR%%/soya/land.pyc
-%%PYTHON_SITELIBDIR%%/soya/land.pyo
 %%PYTHON_SITELIBDIR%%/soya/laser.py
 %%PYTHON_SITELIBDIR%%/soya/laser.pyc
 %%PYTHON_SITELIBDIR%%/soya/laser.pyo
@@ -117,12 +120,12 @@ bin/soya_editor
 %%PYTHON_SITELIBDIR%%/soya/pudding/ext/svgelements.py
 %%PYTHON_SITELIBDIR%%/soya/pudding/ext/svgelements.pyc
 %%PYTHON_SITELIBDIR%%/soya/pudding/ext/svgelements.pyo
-%%PYTHON_SITELIBDIR%%/soya/pudding/idler.py
-%%PYTHON_SITELIBDIR%%/soya/pudding/idler.pyc
-%%PYTHON_SITELIBDIR%%/soya/pudding/idler.pyo
 %%PYTHON_SITELIBDIR%%/soya/pudding/listbox.py
 %%PYTHON_SITELIBDIR%%/soya/pudding/listbox.pyc
 %%PYTHON_SITELIBDIR%%/soya/pudding/listbox.pyo
+%%PYTHON_SITELIBDIR%%/soya/pudding/main_loop.py
+%%PYTHON_SITELIBDIR%%/soya/pudding/main_loop.pyc
+%%PYTHON_SITELIBDIR%%/soya/pudding/main_loop.pyo
 %%PYTHON_SITELIBDIR%%/soya/pudding/python_console.py
 %%PYTHON_SITELIBDIR%%/soya/pudding/python_console.pyc
 %%PYTHON_SITELIBDIR%%/soya/pudding/python_console.pyo
@@ -181,7 +184,21 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/character-animation-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/character-animation-2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/character-animation-shadow-cellshading-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/tourneG.caf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/balazar.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/balazar.cmf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/balazar.crf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/balazar.csf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/chute.caf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/marche.caf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/neighbors_0-0
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/perso.cmf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/recule.caf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/tourneD.caf
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/animated_models/balazar/attente.caf
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/blender/knife.blend
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/blender/sword.blend
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/blender/sword.blend1
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/images/balazar.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/images/block2.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/images/cloud.png
@@ -224,32 +241,32 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/tux1.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/wall_material.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/materials/white.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/buggy_chassis.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/caterpillar.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/caterpillar_head.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/cube.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/earth.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/ferme.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/moon.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/sun.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/sword.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/models/wheel4.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/ms3d/buggy_chassis.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/ms3d/wheel4.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/attente.caf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/balazar.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/balazar.cmf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/balazar.crf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/balazar.csf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/chute.caf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/marche.caf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/neighbors_0-0
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/perso.cmf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/recule.caf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/tourneD.caf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/balazar/tourneG.caf
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/buggy_chassis.data
-%%PORTDOCS%%%%EXAMPLESDIR%%/data/shapes/wheel4.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/sounds/test.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/svg/test.svg
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/a_scene_with_a_rotating_volume.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/caterpillar.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/caterpillar_head.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/cube.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/earth.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/ferme.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/level_tofudemo_static.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/moon.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/pyramid.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/sun.data
 %%PORTDOCS%%%%EXAMPLESDIR%%/data/worlds/sword.data
+%%PORTDOCS%%%%EXAMPLESDIR%%/deform-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/facecutter-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/fullscreen-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/game_skel-1.py
@@ -258,8 +275,6 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/game_skel-4.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/game_skel-5.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/label3D-1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/land-1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/land-2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-3.py
@@ -269,9 +284,10 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-material-2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-shadow-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-smoothlit-1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/modeling-solid-shape-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/modeling-solid-model-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/modeling-transparency-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/multiple-cameras-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/nested-world-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/particle-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/portal-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pudding-1.py
@@ -294,20 +310,27 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/raypicking-2.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/raypicking-3.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-1-scaled.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-1-two-swords.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-2.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-2_0.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-2_1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-2_2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-3.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-3_0.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-3_1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-3_2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/basic-4.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/character-animation-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/character-animation-2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/character-animation-shadow-cellshading-1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/deform-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/facecutter-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/game_skel-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/game_skel-2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/game_skel-3.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/game_skel-4.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/game_skel-5.jpeg
-%%PORTDOCS%%%%EXAMPLESDIR%%/results/land-1.jpeg
-%%PORTDOCS%%%%EXAMPLESDIR%%/results/land-2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/modeling-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/modeling-2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/modeling-3.jpeg
@@ -319,14 +342,23 @@ bin/soya_editor
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/modeling-smoothlit-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/modeling-solid-shape-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/modeling-transparency-1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/nested-world-1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/nested-world-1_1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/nested-world-1_2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/portal-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/ray-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/raypicking-1.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/results/raypicking-2.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/static-shadows-1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/terrain-1.jpeg
+%%PORTDOCS%%%%EXAMPLESDIR%%/results/terrain-2.jpeg
 %%PORTDOCS%%%%EXAMPLESDIR%%/run_tofudemo.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/sound-openal-1.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/sound-sdl_mixer-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/state-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/static-shadows-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/soya-with-tk-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/sound-1.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/terrain-2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/terrain-1.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/tofudemo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/tofudemo_create_level.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/traveling-camera-1.py
@@ -338,13 +370,14 @@ bin/soya_editor
 @dirrm %%PYTHON_SITELIBDIR%%/soya/data
 @dirrm %%PYTHON_SITELIBDIR%%/soya
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/animated_models/balazar
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/animated_models
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/blender
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/images
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/levels
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/materials
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/models
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/ms3d
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/shapes/balazar
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/shapes
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/sounds
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/svg
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/data/worlds

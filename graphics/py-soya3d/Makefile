@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	soya3d
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,7 +37,7 @@ USE_GMAKE=	yes
 MANDIR=	${WRKDIR}/${DISTNAME}/manpage/man1
 MAN1=	soya_editor.1
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
-SOYATUTVER=	0.11
+SOYATUTVER=	0.12
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
@@ -49,7 +49,13 @@ DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 CFLAGS	+=	-fPIC
 .endif
 
+.if ${OSVERSION} < 500000
+STDINTFLAG=	true
+.endif
+
 post-patch:
+	@cd ${WRKSRC} && \
+		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e 's|SDL/|SDL11/|g' "{}" \;
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e \
@@ -69,6 +75,11 @@ post-patch:
 		's|^BUILD=debug|#BUILD=debug|; \
 		s|^#BUILD=release|BUILD=release|' \
 		${WRKSRC}/ode-0.5/config/user-settings
+.if defined(STDINTFLAG)
+	@cd ${WRKSRC} && \
+		${FIND} -i "" * -type f -exec ${REINPLACE_CMD} -i "" -e 's|stdint.h|inttypes.h|g' "{}" \;
+.endif
+
 
 post-install:
 .if !defined(NOPORTDOCS)
