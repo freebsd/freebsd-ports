@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	Sat Jul 29 18:02:28 2006
++++ ./Makefile.in	Sat Jul 29 18:02:54 2006
+@@ -25,7 +25,7 @@
+ 	mkdir -p -m 755 ${bindir} ${mandir}/man8 ${datadir}/etrace
+ 	@INSTALL_PROGRAM@ etrace ${bindir}
+ 	@INSTALL_DATA@ etrace.8 ${mandir}/man8
+-	@INSTALL_DATA@ default.profile ${datadir}/etrace/profile
++	@INSTALL_DATA@ default.profile ${datadir}/etrace/default.profile
+ 	@INSTALL_DATA@ ${PROBE_DATA} ${datadir}/etrace/
+ 
+ clean:

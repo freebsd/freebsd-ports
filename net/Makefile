@@ -116,6 +116,7 @@
     SUBDIR += entitymib
     SUBDIR += erlang_xmlrpc
     SUBDIR += etherboot
+    SUBDIR += etrace
     SUBDIR += etunnel
     SUBDIR += findmtu
     SUBDIR += flowgrep
