@@ -154,8 +154,6 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/template/NMZ.tips.pl
 @dirrm %%DATADIR%%/template
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/fr/LC_MESSAGES
 @dirrmtry share/locale/ja_JP.SJIS/LC_MESSAGES
 @dirrmtry share/locale/ja_JP.SJIS
 @dirrmtry var/namazu/index
