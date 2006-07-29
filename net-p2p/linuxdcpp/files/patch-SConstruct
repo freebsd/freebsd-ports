@@ -1,0 +1,91 @@
+--- SConstruct.orig	Sun Jul 16 11:18:33 2006
++++ SConstruct	Sun Jul 16 11:22:24 2006
+@@ -38,28 +38,12 @@
+      context.Result(ret)
+      return ret
+ 
+-def CheckCXXVersion(context, name, major, minor):
+-	context.Message('Checking for %s >= %d.%d...' % (name, major, minor))
+-	ret = commands.getoutput('%s -dumpversion' % name)
+-
+-	retval = 0
+-	try:
+-		if ((string.atoi(ret[0]) == major and string.atoi(ret[2]) >= minor)
+-		or (string.atoi(ret[0]) > major)):
+-			retval = 1
+-	except ValueError:
+-		print "Oops! No C++ compiler found!"
+-
+-	context.Result(retval)
+-	return retval
+-
+-
+ # Initialize the environment and configure variables
+ 
+-env = Environment(ENV = os.environ)
++env = Environment(ENV = os.environ, CC = '%%CC%%', CXX = '%%CXX%%')
+ 
+ conf = Configure(env,
+-	custom_tests = {'CheckPKGConfig' : CheckPKGConfig, 'CheckPKG' : CheckPKG, 'CheckCXXVersion' : CheckCXXVersion},
++	custom_tests = {'CheckPKGConfig' : CheckPKGConfig, 'CheckPKG' : CheckPKG},
+ 	conf_dir = 'build/sconf',
+ 	log_file = 'build/sconf/config.log')
+ 
+@@ -68,27 +52,6 @@
+ 
+ # Check for dependencies
+ 
+-# This looks up the CXX enviroment variable so that people can specify
+-# what g++ to use on the command line (eg. prompt:> CXX=foo scons)
+-cxx = conf.env.Dictionary()['CXX']
+-if not conf.CheckCXXVersion(cxx, 3, 4):
+-	if WhereIs('g++-3.4') != None:
+-		print 'Found g++-3.4'
+-		cxx = 'g++-3.4'
+-	else:
+-	     print 'Compiler version check failed. g++ 3.4 or later is needed'
+-	     Exit(1)
+-
+-# Add support for compiler caches to speed-up compilation.
+-if os.popen('distcc 2> /dev/null').read():
+-	cxx = 'distcc ' + cxx
+-	print 'Enabling distcc...'
+-if os.popen('ccache 2> /dev/null').read():
+-	cxx = 'ccache ' + cxx
+-	print 'Enabling ccache...'
+-
+-conf.env.Replace(CXX = cxx)
+-
+ if not conf.CheckPKGConfig():
+      print 'pkg-config not found.'
+      Exit(1)
+@@ -120,11 +83,6 @@
+ 	print 'Can\'t live without it, sorry'
+ 	Exit(1)
+ 
+-if not conf.CheckLibWithHeader('pthread', 'pthread.h', 'c'):
+-	print 'Did not find the pthread library, exiting!'
+-	print 'Note: You might have the lib but not the headers'
+-	Exit(1)
+-
+ if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
+ 	print 'Did not find the z library (gzip/z compression)'
+ 	print 'Can\'t live without it, exiting'
+@@ -138,7 +96,7 @@
+ 	Exit(1)
+ 
+ env = conf.Finish()
+-env.Append(CXXFLAGS = ['-I.', '-D_GNU_SOURCE', '-DENABLE_BINRELOC', '-D_FILE_OFFSET_BITS=64'])
++env.Append(CXXFLAGS = ['-I.', '-D_GNU_SOURCE', '-D_FILE_OFFSET_BITS=64'])
+ 
+ 
+ # Parse command line parameters
+@@ -150,7 +108,7 @@
+ 
+ release = ARGUMENTS.get('release', 0)
+ if int(release):
+-	env.Append(CXXFLAGS = '-O3')
++	env.Append(CXXFLAGS = '%%CXXFLAGS%%')
+ 
+ profile = ARGUMENTS.get('profile', 0)
+ if int(profile):

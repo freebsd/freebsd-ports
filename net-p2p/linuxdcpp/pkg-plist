@@ -1,0 +1,42 @@
+bin/ldcpp
+%%DOCSDIR%%/Changelog.txt
+%%DOCSDIR%%/Credits.txt
+%%DOCSDIR%%/License.txt
+%%DOCSDIR%%/Readme.txt
+%%DATADIR%%/glade/downloadqueue.glade
+%%DATADIR%%/glade/favoritehubs.glade
+%%DATADIR%%/glade/finishedtransfers.glade
+%%DATADIR%%/glade/hash.glade
+%%DATADIR%%/glade/hub.glade
+%%DATADIR%%/glade/mainwindow.glade
+%%DATADIR%%/glade/privatemessage.glade
+%%DATADIR%%/glade/publichubs.glade
+%%DATADIR%%/glade/search.glade
+%%DATADIR%%/glade/settingsdialog.glade
+%%DATADIR%%/glade/sharebrowser.glade
+%%DATADIR%%/pixmaps/FinishedDL.png
+%%DATADIR%%/pixmaps/FinishedUL.png
+%%DATADIR%%/pixmaps/connect.png
+%%DATADIR%%/pixmaps/dc++-fw-op.png
+%%DATADIR%%/pixmaps/dc++-fw.png
+%%DATADIR%%/pixmaps/dc++-op.png
+%%DATADIR%%/pixmaps/dc++.png
+%%DATADIR%%/pixmaps/download.png
+%%DATADIR%%/pixmaps/favhubs.png
+%%DATADIR%%/pixmaps/hash.png
+%%DATADIR%%/pixmaps/linuxdcpp-icon.png
+%%DATADIR%%/pixmaps/linuxdcpp.png
+%%DATADIR%%/pixmaps/normal-fw-op.png
+%%DATADIR%%/pixmaps/normal-fw.png
+%%DATADIR%%/pixmaps/normal-op.png
+%%DATADIR%%/pixmaps/normal.png
+%%DATADIR%%/pixmaps/publichubs.png
+%%DATADIR%%/pixmaps/queue.png
+%%DATADIR%%/pixmaps/quit.png
+%%DATADIR%%/pixmaps/search.png
+%%DATADIR%%/pixmaps/settings.png
+%%DATADIR%%/pixmaps/upload.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,34 @@
+--- linux/SConstruct.orig	Sun Jul 16 11:25:22 2006
++++ linux/SConstruct	Sun Jul 16 11:25:57 2006
+@@ -8,7 +8,6 @@
+ 	'hashdialog.cc',
+ 	'hub.cc',
+ 	'mainwindow.cc',
+-	'prefix.cc',
+ 	'privatemessage.cc',
+ 	'publichubs.cc',
+ 	'search.cc',
+--- linux/wulformanager.cc.orig	Sun Jul 16 11:25:32 2006
++++ linux/wulformanager.cc	Sun Jul 16 11:26:29 2006
+@@ -17,7 +17,6 @@
+ */
+ 
+ #include "wulformanager.hh"
+-#include "prefix.hh"
+ #include "publichubs.hh"
+ #include "downloadqueue.hh"
+ #include "hub.hh"
+@@ -230,13 +229,7 @@
+ 
+ string WulforManager::getPath()
+ {
+-#ifdef _DATADIR
+ 	string ret = string(_DATADIR) + PATH_SEPARATOR_STR + "ldcpp";
+-#else
+-	char *temp = br_extract_dir(SELFPATH);
+-	string ret = string(temp);
+-	free(temp);
+-#endif
+ 	return ret;
+ }
+ 
