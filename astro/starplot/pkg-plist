@@ -23,5 +23,3 @@ share/starplot/test.stars
 @dirrmtry share/locale/en@boldquot
 @dirrmtry share/locale/en@quot/LC_MESSAGES
 @dirrmtry share/locale/en@quot
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
