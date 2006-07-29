@@ -28,15 +28,6 @@ share/locale/nl/LC_MESSAGES/kickpim.mo
 share/locale/pl/LC_MESSAGES/kickpim.mo
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
-@dirrmtry share/locale/nl/LC_MESSAGES
-@dirrmtry share/locale/nl
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale
 @dirrm share/doc/HTML/en/kickpim
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML
