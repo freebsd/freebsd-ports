@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.1
-PORTREVISION=	6
+PORTVERSION=	1.1.2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,14 +29,16 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		cdio.7:${PORTSDIR}/sysutils/libcdio \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		Wand.10:${PORTSDIR}/graphics/ImageMagick
+		Wand.10:${PORTSDIR}/graphics/ImageMagick \
+		theora.2:${PORTSDIR}/multimedia/libtheora
 
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget gtk20
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
@@ -48,7 +49,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6
+CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
+		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
 MAN1=	xine-config.1
@@ -115,14 +117,6 @@ LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 PLIST_SUB+=	WITH_XVMC=""
 .else
 PLIST_SUB+=	WITH_XVMC="@comment "
-.endif
-
-.if !defined(WITHOUT_THEORA) && (exists(${LOCALBASE}/lib/libtheora.so.2) || defined (WITH_THEORA))
-LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
-PLIST_SUB+=	WITH_THEORA=""
-.else
-PLIST_SUB+=	WITH_THEORA="@comment "
-CONFIGURE_ARGS+=	--disable-theoratest
 .endif
 
 .if !defined(WITHOUT_SMB) && (exists(${LOCALBASE}/lib/libsmbclient.so.0) || defined (WITH_SMB))
