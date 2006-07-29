@@ -5839,6 +5839,7 @@ libfov		ports/games/libfov
 libfpx		ports/graphics/libfpx
 libfreenet	ports/net-p2p/libfreenet
 libfs++		ports/devel/libfs++
+libftdi		ports/devel/libftdi
 libfwbuilder	ports/security/libfwbuilder
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
