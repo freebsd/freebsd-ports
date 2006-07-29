@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slune
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/slune/
 DISTNAME=	Slune-${PORTVERSION}
