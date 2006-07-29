@@ -241,6 +241,7 @@ adesklets	ports/deskutils/adesklets
 adgali		ports/games/adgali
 adime		ports/devel/adime
 admesh		ports/cad/admesh
+adms		ports/cad/adms
 admuser		ports/www/admuser
 adns		ports/dns/adns
 adobe-cmaps	ports/print/adobe-cmaps
