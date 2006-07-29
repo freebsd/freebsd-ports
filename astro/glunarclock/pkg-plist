@@ -44,5 +44,3 @@ share/locale/wa/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 @dirrmtry share/locale/br
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/wa/LC_MESSAGES
-@dirrmtry share/locale/wa
