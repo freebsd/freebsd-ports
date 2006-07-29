@@ -7,4 +7,5 @@ bin/whois
 %%NLS%%share/locale/ja/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/no/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/whois.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/whois.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/whois.mo
