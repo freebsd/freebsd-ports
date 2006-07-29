@@ -71,6 +71,7 @@
     SUBDIR += jasmin
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
+    SUBDIR += java-gcj-compat
     SUBDIR += java-getopt
     SUBDIR += java-tutorial
     SUBDIR += java3d
