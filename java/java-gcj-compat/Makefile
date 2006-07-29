@@ -7,6 +7,7 @@
 
 PORTNAME=	java-gcj-compat
 PORTVERSION=	1.0.56 # intentionally not upgrading
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/rhug/
 
@@ -31,6 +32,7 @@ CONFIGURE_ARGS+="-with-origin-name=gcj41" "--with-gcc-suffix=41" \
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|%%GCCSUFFIX%%|${GCJVER}|" ${WRKSRC}/java.c
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/jvm/java-1.4.2-gcj41-1.4.2.0 ${PREFIX}/lib/jvm/java-gcj
