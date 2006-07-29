@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NU/NUFFIN
@@ -22,16 +22,17 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Session.3 \
 	Catalyst::Plugin::Session::State.3 \
 	Catalyst::Plugin::Session::Store.3 \
 	Catalyst::Plugin::Session::Store::Dummy.3 \
-	Catalyst::Plugin::Session::Test::Store.3
+	Catalyst::Plugin::Session::Test::Store.3 \
+	Catalyst::Plugin::Session::Tutorial.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Build.PL
+	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
