@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	Tue Jun 27 07:23:23 2006
++++ doc/Makefile.in	Tue Jul 25 15:24:30 2006
+@@ -153,8 +153,8 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-dist_man_MANS = gnucap.1 gnucap-ibis.1
+-pkgdocsdir = ${pkgdatadir}/doc
++dist_man_MANS = gnucap.1
++pkgdocsdir = @docdir@
+ dist_pkgdocs_DATA = \
+ 	acs-tutorial COPYING history INSTALL relnotes.029 \
+ 	relnotes.030 relnotes.031 relnotes.032 relnotes.033 relnotes.034 whatisit 

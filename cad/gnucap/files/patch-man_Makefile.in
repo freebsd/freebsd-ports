@@ -1,0 +1,37 @@
+--- man/Makefile.in.orig	Wed Jun 28 12:29:13 2006
++++ man/Makefile.in	Tue Jul 25 19:29:12 2006
+@@ -152,8 +152,8 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-pkgmanualdir = ${pkgdatadir}/manual
+-dist_pkgmanual_DATA = gnucap-man.pdf gnucap-man.dvi
++pkgmanualdir = @docdir@/manual
++dist_pkgmanual_DATA = gnucap-man.pdf
+ EXTRA_DIST = ${TEXSRCS} README
+ TEXSRCS = \
+ 	addmodel.tex behavior.tex circuit.tex commands.tex copying.tex \
+@@ -165,7 +165,7 @@
+ 	gnucap-man.toc
+ 
+ MAINTAINERCLEANFILES = \
+-	gnucap-man.dvi gnucap-man.pdf
++	gnucap-man.pdf
+ 
+ TEXDIRS = Addmodel Behavior Circuit Commands Tech
+ TEXFILES = ${TEXSRCS} $(foreach __tmp__,$(TEXDIRS),$(wildcard \
+@@ -342,14 +342,6 @@
+ 	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
+ 	pdf-am ps ps-am uninstall uninstall-am \
+ 	uninstall-dist_pkgmanualDATA uninstall-info-am
+-
+-
+-gnucap-man.pdf: gnucap-man.dvi
+-@MISSING_DVIPDFM_TRUE@	@echo "WARNING:  dvipdfm was not found on your system but"
+-@MISSING_DVIPDFM_TRUE@	@echo "          $@ is out of date and needs to be"
+-@MISSING_DVIPDFM_TRUE@	@echo "          rebuilt.  Changes to gnucap-man.dvi"
+-@MISSING_DVIPDFM_TRUE@	@echo "          will be ignored."
+-@MISSING_DVIPDFM_FALSE@	${DVIPDFM} gnucap-man
+ 
+ # run it twice to fix the toc.
+ gnucap-man.dvi: $(TEXFILES)

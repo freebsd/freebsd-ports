@@ -1,0 +1,11 @@
+--- examples/Makefile.in.orig	Tue Jul 25 15:11:22 2006
++++ examples/Makefile.in	Tue Jul 25 15:14:07 2006
+@@ -150,7 +150,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-pkgexamplesdir = ${pkgdatadir}/examples
++pkgexamplesdir = ${prefix}/share/examples/@PACKAGE@
+ dist_pkgexamples_DATA = ${EXFILES}
+ EXFILES = \
+ 	eq2-145.ckt eq2-289.ckt eq2-577.ckt eq3-1153.ckt eq4-2305.ckt \

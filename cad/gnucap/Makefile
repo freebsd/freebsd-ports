@@ -7,52 +7,28 @@
 #
 
 PORTNAME=	gnucap
-PORTVERSION=	2005.01.27
+PORTVERSION=	2006.07.08
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.geda.seul.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	The Gnu Circuit Analysis Package
 
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-MAKE_ARGS=	CCC="${CXX}" CCFLAGS="${CXXFLAGS}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/${PORTNAME} \
+			--mandir=${PREFIX}/man
 
-CFLAGS+=	-DUNIX -DNDEBUG -DNEEDS_IS_INF -DNEEDS_IS_NAN -I..
+OPTIONS=	READLINE "Enable commandline features via readline" on
 
-MAN1=		gnucap-ibis.1 gnucap.1
+MAN1=		gnucap.1
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo|true|g' ${WRKSRC}/src/configure
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ibis/O/gnucap-ibis ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/modelgen/O/gnucap-modelgen ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/O/gnucap ${PREFIX}/bin
-.for file in *.1
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${MANPREFIX}/man/man1
-.endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in acs-tutorial history relnotes.* whatisit
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-.endfor
-	@${MKDIR} ${DOCSDIR}/man
-.for file in *.pdf
-	${INSTALL_DATA} ${WRKSRC}/man/${file} ${DOCSDIR}/man
-.endfor
-	@${MKDIR} ${DOCSDIR}/man/html
-.for file in *.html
-	${INSTALL_DATA} ${WRKSRC}/man/html/${file} ${DOCSDIR}/man/html
-.endfor
-	@${MKDIR} ${EXAMPLESDIR}
-.for file in README runall *.ckt *.doc
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
-.endfor
+.if !defined(WITHOUT_READLINE) || exists(${LOCALBASE}/lib/libreadline.so.5)
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
 .include <bsd.port.post.mk>
