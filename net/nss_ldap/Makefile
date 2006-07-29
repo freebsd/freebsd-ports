@@ -18,7 +18,7 @@ COMMENT=	RFC 2307 NSS module
 
 USE_OPENLDAP=	yes
 
-NSS_LDAP_VERSION=250
+NSS_LDAP_VERSION=251
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -31,7 +31,10 @@ CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
 		--with-ldap-secret-file=${PREFIX}/etc/nss_ldap.secret \
 		--enable-rfc2307bis \
 		--enable-schema-mapping \
-		--enable-paged-results
+		--enable-paged-results \
+		--enable-configurable-krb5-ccname-env
+
+MAN5=	nss_ldap.5
 
 post-extract:
 	${CP} ${FILESDIR}/bsdnss.c ${WRKSRC}
@@ -39,6 +42,9 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${PREFIX}/lib/nss_ldap.so.1
 	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${PREFIX}/etc/nss_ldap.conf.sample
+	@${REINPLACE_CMD} 's,/etc/ldap.,${PREFIX}/etc/nss_ldap.,g' \
+		${WRKSRC}/${MAN5}
+	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${PREFIX}/man/man5
 	${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
