@@ -1,5 +1,5 @@
-Mathomatic is a highly portable, general purpose CAS (Computer Algebra System)
-published under the GNU LGPL license.  Mathomatic can:
+Mathomatic is a highly portable, general purpose CAS (Computer Algebra System).
+Mathomatic can:
 
     * Solve, simplify, and compare algebraic equations,
     * Perform calculus transformations,
