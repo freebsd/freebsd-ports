@@ -20,7 +20,7 @@ LIB_DEPENDS=	xklavier.10:${PORTSDIR}/x11/libxklavier
 USE_X_PREFIX=	yes
 USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_OMF=	yes
