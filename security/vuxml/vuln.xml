@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="76562594-1f19-11db-b7d4-0008743bf21a">
-    <topic>Ruby - Safe Level Security Bypass Vulnerabilities</topic>
+    <topic>ruby - multiple vulnerabilities</topic>
     <affects>
       <package>
         <name>ruby</name>
@@ -46,36 +46,24 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Secunia reports:</p>
-        <blockquote cite="http://secunia.com/advisories/21009/">
-          <p>
-            Two vulnerabilities have been reported in Ruby, which can be
-            exploited by malicious people to bypass certain security
-            restrictions.
-          </p>
-
-          <ol>
-            <li>
-              An error in the handling of the "alias" functionality
-              can be exploited to bypass the safe level protection and
-              replace methods called in the trusted level.
-            </li>
-
-            <li>
-              An error caused due to directory operations not being
-              properly checked can be exploited to bypass the safe
-              level protection and close untainted directory streams.
-            </li>
-          </ol>
-
-          <p>
-            The vulnerabilities have been reported in version 1.8.4 and
-            prior.
-          </p>
-        </blockquote>
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/21009/">
+          <p>Two vulnerabilities have been reported in Ruby, which can
+	    be exploited by malicious people to bypass certain security
+            restrictions.</p>
+	  <ol>
+	    <li>An error in the handling of the "alias" functionality
+	      can be exploited to bypass the safe level protection and
+	      replace methods called in the trusted level.</li>
+	    <li>An error caused due to directory operations not being
+	      properly checked can be exploited to bypass the safe
+	      level protection and close untainted directory streams.</li>
+	  </ol>
+	</blockquote>
       </body>
     </description>
     <references>
+      <bid>18944</bid>
       <cvename>CVE-2006-3694</cvename>
       <url>http://secunia.com/advisories/21009/</url>
       <url>http://jvn.jp/jp/JVN%2383768862/index.html</url>
