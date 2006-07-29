@@ -66,6 +66,7 @@ smxc:*:262:
 smxm:*:263:
 smx:*:264:
 mrtg:*:279:
+dkfilter:*:325:
 ldap:*:389:
 drweb:*:426:
 courier:*:465:
