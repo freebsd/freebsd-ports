@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncftpd
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/ \
 		ftp://ftp.nl.uu.net/pub/unix/ftp/ncftpd/${PORTVERSION}/
@@ -27,9 +27,9 @@ RESTRICTED=	30 day evaluation license
 .if ${OSVERSION} >= 600000
 BINVER=		6.0
 .elif ${OSVERSION} >= 500000
-BINVER=		5.3
-.elif ${OSVERSION} >= 480000
-BINVER=		4.8
+BINVER=		5.4
+.elif ${OSVERSION} >= 491000
+BINVER=		4.11
 .else
 BROKEN=		FreeBSD version too old
 .endif
