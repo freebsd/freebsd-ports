@@ -4,6 +4,7 @@
     COMMENT = CAD tools
 
     SUBDIR += admesh
+    SUBDIR += adms
     SUBDIR += alliance
     SUBDIR += astk-client
     SUBDIR += astk-serveur
