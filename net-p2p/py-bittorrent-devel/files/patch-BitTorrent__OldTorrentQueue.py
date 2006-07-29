@@ -1,5 +1,5 @@
---- ./BitTorrent/OldTorrentQueue.py.orig	Mon Jun 12 22:45:49 2006
-+++ ./BitTorrent/OldTorrentQueue.py	Wed Jun 21 23:57:08 2006
+--- ./BitTorrent/OldTorrentQueue.py.orig	Wed Jul 12 02:18:22 2006
++++ ./BitTorrent/OldTorrentQueue.py	Sat Jul 22 17:42:24 2006
 @@ -20,7 +20,7 @@
  
  

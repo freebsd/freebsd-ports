@@ -1,5 +1,5 @@
---- ./BitTorrent/HTTPHandler.py.orig	Mon Jun 12 22:45:48 2006
-+++ ./BitTorrent/HTTPHandler.py	Wed Jun 21 23:57:08 2006
+--- ./BitTorrent/HTTPHandler.py.orig	Wed Jul 12 02:18:18 2006
++++ ./BitTorrent/HTTPHandler.py	Sat Jul 22 17:42:24 2006
 @@ -19,7 +19,7 @@
  
  

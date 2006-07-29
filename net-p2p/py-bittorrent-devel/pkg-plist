@@ -90,6 +90,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/IPC.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/IPC.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/IPC.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/InternetWatcher.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/InternetWatcher.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/InternetWatcher.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/LaunchPath.pyo
@@ -105,6 +108,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/MultiTorrent.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/MultiTorrent.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/MultiTorrent.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/NamedMutex.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/NamedMutex.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/NamedMutex.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/NatCheck.pyo
@@ -216,9 +222,6 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/defer.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/defer.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/defer.pyo
-%%PYTHON_SITELIBDIR%%/BitTorrent/flock_mutex.py
-%%PYTHON_SITELIBDIR%%/BitTorrent/flock_mutex.pyc
-%%PYTHON_SITELIBDIR%%/BitTorrent/flock_mutex.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/hash.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/hash.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/hash.pyo
@@ -252,6 +255,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/pykill.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/pykill.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/pykill.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/shortargs.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/shortargs.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/shortargs.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/sparse_set.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/sparse_set.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/sparse_set.pyo
@@ -342,34 +348,16 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.py
 %%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyc
 %%PYTHON_SITELIBDIR%%/khashmir/utkhashmir.pyo
-share/locale/af/LC_MESSAGES/bittorrent.mo
-share/locale/bg/LC_MESSAGES/bittorrent.mo
-share/locale/ca/LC_MESSAGES/bittorrent.mo
-share/locale/cs/LC_MESSAGES/bittorrent.mo
-share/locale/da/LC_MESSAGES/bittorrent.mo
 share/locale/de/LC_MESSAGES/bittorrent.mo
-share/locale/el/LC_MESSAGES/bittorrent.mo
+share/locale/en/LC_MESSAGES/bittorrent.mo
 share/locale/es/LC_MESSAGES/bittorrent.mo
 share/locale/es_MX/LC_MESSAGES/bittorrent.mo
 share/locale/fr/LC_MESSAGES/bittorrent.mo
-share/locale/he/LC_MESSAGES/bittorrent.mo
-share/locale/hu/LC_MESSAGES/bittorrent.mo
-share/locale/is/LC_MESSAGES/bittorrent.mo
 share/locale/it/LC_MESSAGES/bittorrent.mo
 share/locale/ja/LC_MESSAGES/bittorrent.mo
 share/locale/ko/LC_MESSAGES/bittorrent.mo
-share/locale/nb_NO/LC_MESSAGES/bittorrent.mo
-share/locale/nl/LC_MESSAGES/bittorrent.mo
-share/locale/pl/LC_MESSAGES/bittorrent.mo
 share/locale/pt/LC_MESSAGES/bittorrent.mo
 share/locale/pt_BR/LC_MESSAGES/bittorrent.mo
-share/locale/ro/LC_MESSAGES/bittorrent.mo
-share/locale/ru/LC_MESSAGES/bittorrent.mo
-share/locale/sk/LC_MESSAGES/bittorrent.mo
-share/locale/sl/LC_MESSAGES/bittorrent.mo
-share/locale/sv/LC_MESSAGES/bittorrent.mo
-share/locale/tr/LC_MESSAGES/bittorrent.mo
-share/locale/vi/LC_MESSAGES/bittorrent.mo
 share/locale/zh_CN/LC_MESSAGES/bittorrent.mo
 share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/themes/default/torrentstate
@@ -386,26 +374,10 @@ share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm %%PYTHON_SITELIBDIR%%/khashmir
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
