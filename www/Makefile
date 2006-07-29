@@ -767,6 +767,7 @@
     SUBDIR += p5-WWW-Comic
     SUBDIR += p5-WWW-Curl
     SUBDIR += p5-WWW-Dilbert
+    SUBDIR += p5-WWW-Google-Calculator
     SUBDIR += p5-WWW-Google-News
     SUBDIR += p5-WWW-Google-News-TW
     SUBDIR += p5-WWW-Google-PageRank
