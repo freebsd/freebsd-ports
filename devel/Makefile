@@ -502,6 +502,7 @@
     SUBDIR += libffi
     SUBDIR += libformat
     SUBDIR += libfs++
+    SUBDIR += libftdi
     SUBDIR += libg++
     SUBDIR += libgconf-java
     SUBDIR += libgetline

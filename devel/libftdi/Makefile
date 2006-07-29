@@ -1,0 +1,48 @@
+# New ports collection makefile for:	libftdi
+# Date created:				2006-07-27
+# Whom:					Olexandr Davydenko <o.davydenko@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libftdi
+PORTVERSION=	0.7
+CATEGORIES=	devel
+MASTER_SITES=	http://www.intra2net.com/de/produkte/opensource/ftdi/TGZ/
+
+MAINTAINER=	o.davydenko@gmail.com
+COMMENT=	A library (using libusb) to talk to FTDI chips
+
+LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAKE_ARGS=		pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+USE_LDCONFIG=		yes
+USE_GNOME=		pkgconfig
+
+PORTDOCS=		COPYING.LIB ChangeLog README
+PLIST_FILES=		bin/libftdi-config \
+				include/ftdi.h \
+				lib/libftdi.a \
+				lib/libftdi.la \
+				lib/libftdi.so \
+				lib/libftdi.so.7 \
+				libdata/pkgconfig/libftdi.pc
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for FILE in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		doesn't install on FreeBSD 4.x
+.endif
+
+.include <bsd.port.post.mk>
