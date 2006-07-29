@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	scsh
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		ftp://ftp.scsh.net/pub/scsh/0.6/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	A Unix shell embedded into Scheme, with access to all Posix calls
 
-CONFLICTS=	scheme48-*
+CONFLICTS=	scheme48-[0-9]*
 
 CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"fails to install on ${ARCH}"
+BROKEN=		fails to install on ${ARCH}
 .endif
 
 GNU_CONFIGURE=	yes
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-lib-dirs-list='("${PREFIX}/lib/scsh/0.6")'
 USE_GMAKE=	yes
 ALL_TARGET=	enough
 MAN1=		scsh.1
-STRIP=
+STRIP=		#empty
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/scsh
