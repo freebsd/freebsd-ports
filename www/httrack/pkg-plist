@@ -1,5 +1,6 @@
 bin/htsserver
 bin/httrack
+bin/proxytrack
 bin/webhttrack
 include/httrack/config.h
 include/httrack/htsbasenet.h
@@ -158,6 +159,8 @@ share/applications/WebHTTrack.desktop
 %%DOCSDIR%%/httrack-doc.html
 %%DATADIR%%/html
 %%DATADIR%%/icons/webhttrack.xpm
+%%DATADIR%%/lang.def
+%%DATADIR%%/lang.indexes
 %%DATADIR%%/lang/Bulgarian.txt
 %%DATADIR%%/lang/Castellano.txt
 %%DATADIR%%/lang/Cesky.txt
@@ -167,6 +170,7 @@ share/applications/WebHTTrack.desktop
 %%DATADIR%%/lang/Deutsch.txt
 %%DATADIR%%/lang/Eesti.txt
 %%DATADIR%%/lang/English.txt
+%%DATADIR%%/lang/Finnish.txt
 %%DATADIR%%/lang/Francais.txt
 %%DATADIR%%/lang/Greek.txt
 %%DATADIR%%/lang/Italiano.txt
@@ -185,8 +189,6 @@ share/applications/WebHTTrack.desktop
 %%DATADIR%%/lang/Svenska.txt
 %%DATADIR%%/lang/Turkish.txt
 %%DATADIR%%/lang/Ukrainian.txt
-%%DATADIR%%/lang.def
-%%DATADIR%%/lang.indexes
 %%DATADIR%%/libtest/callbacks-example-baselinks.c
 %%DATADIR%%/libtest/callbacks-example-contentfilter.c
 %%DATADIR%%/libtest/callbacks-example-displayheader.c

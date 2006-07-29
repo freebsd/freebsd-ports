@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.33.16
-PORTREVISION=	1
+PORTVERSION=	3.40
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+MASTER_SITES=	http://www.httrack.com/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	Easy-to-use offline browser utility and website copier
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.`expr ${PORTREVISION} + 1`
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
-MAN1=		htsserver.1 httrack.1 webhttrack.1
+MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|>&6,|>\&6|g ; \
