@@ -1,0 +1,26 @@
+bin/rebuild-gcj-db
+bin/aot-compile
+bin/aot-compile-rpm
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/lib/tools.jar
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib/i386/libjawt.so
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/bin/java
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/bin/rmiregistry
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/java
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/jar
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/javadoc
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/rmic
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/javah
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/javac
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/rmiregistry
+lib/jvm/java-gcj
+%%PYTHON_SITELIBDIR%%/aotcompile.py
+%%PYTHON_SITELIBDIR%%/aotcompile.pyc
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/bin
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib/%%ARCH%%
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/include
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/lib
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin
+@dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0
+@dirrm lib/jvm

@@ -1,0 +1,11 @@
+--- configure~	Mon Jul 24 18:03:23 2006
++++ configure	Sat Jul 29 12:32:48 2006
+@@ -1996,7 +1996,7 @@
+ # special-case gjdoc and make which are not in the GCC tree
+ GJDOC=`which gjdoc`
+ 
+-MAKE=`which make`
++MAKE=`which gmake`
+ 
+ 
+ # Find gcj prefix using gcj found in PATH.

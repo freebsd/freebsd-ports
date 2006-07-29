@@ -1,0 +1,5 @@
+java-gcj-compat is a collection of wrapper scripts, symlinks and jar
+files.  It is meant to provide an SDK-like interface to the GCJ tool
+set.
+
+WWW: ftp://sources.redhat.com/pub/rhug/
