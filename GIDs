@@ -70,6 +70,7 @@ ldap:*:389:
 drweb:*:426:
 courier:*:465:
 _bbstored:*:505:
+dkimproxy:*:525:
 ejabberd:*:544:
 qtss:*:554:
 ircdru:*:555:
