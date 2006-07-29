@@ -87,7 +87,6 @@ share/locale/tr/LC_MESSAGES/netustad.mo
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 @dirrm etc/netustad
-@dirrmtry share/locale/tr/LC_MESSAGES
 @dirrm %%DATADIR%%/script/images
 @dirrm %%DATADIR%%/script
 @dirrm %%DATADIR%%/cert
