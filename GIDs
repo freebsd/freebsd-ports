@@ -68,6 +68,7 @@ smx:*:264:
 mrtg:*:279:
 dkfilter:*:325:
 ldap:*:389:
+tiarra:*:398:
 drweb:*:426:
 courier:*:465:
 _bbstored:*:505:
