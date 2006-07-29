@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd @Q4DIR@ || exit 1
+exec @Q4DIR@/@APP@ "$@"
