@@ -125,11 +125,13 @@ whatever steps are necessary for each MUA that's being used.
 .IP 6.
 Optionally, send a message containing a list of email addresses
 that you want to receive email from to
-.IR assp-white@yourdomain.com .
+.IR asspwhite@yourdomain.com .
 Have all your users do this.  This will seed
 .IR ASSP 's
 whitelist.  Messages from senders on the whitelist will
-never be blocked.
+never be blocked.  An address can be removed from the whitelist
+by emailing it to
+.IR asspnotwhite@yourdomain.com .
 .IP 7.
 To set up the Bayesian word list filtering, do the following:
 .RS
@@ -209,12 +211,12 @@ Once
 .I ASSP
 is live, users should forward a copy of any spam message that
 still gets through to
-.I assp-spam@yourdomain.com
+.I asspspam@yourdomain.com
 in order to add it to
 .IR ASSP 's
 spam database.  Any non-spam that was mis-classified as spam
 can be copied to
-.IR assp-notspam@yourdomain.com .
+.IR asspnotspam@yourdomain.com .
 .PP
 The
 .I rebuildspamdb.pl
@@ -254,7 +256,7 @@ copies of non-spam messages received
 .IP %%ASSP_HOME%%/spam
 copies of spam messages received
 .IP %%ASSP_HOME%%/errors/{notspam,spam}
-messages forwarded to assp-notspam@ and assp-spam@ addresses
+messages forwarded to asspnotspam@ and asspspam@ addresses
 .IP %%ASSP_HOME%%/maillog.txt
 .IR ASSP 's
 log file
