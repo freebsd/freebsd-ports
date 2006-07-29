@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	yap
-PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTVERSION=	5.1.1
+PORTREVISION=	0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/%SUBDIR%/
+MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/current/
 MASTER_SITE_SUBDIR=	Yap-${PORTVERSION}
 DISTNAME=	Yap-${PORTVERSION}
 
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GMAKE=	yes
 
 INFO=		yap
 
@@ -33,6 +34,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|VERSION}|VERSION:}|g' ${WRKSRC}/docs/yap.tex
+	@${REINPLACE_CMD} -e "s,make),${GMAKE})," \
+		-e "s,make install,${GMAKE} install," ${WRKSRC}/Makefile.in
 
 post-build:
 	cd ${WRKSRC}/docs && makeinfo --no-split yap.tex
@@ -40,5 +43,11 @@ post-build:
 pre-install:
 	@${MKDIR} ${PREFIX}/${INFO_PATH}
 	${INSTALL_DATA} ${WRKSRC}/docs/yap.info ${PREFIX}/${INFO_PATH}
+
+post-install:
+	@${FIND} ${PREFIX}/share/Yap ! -type d | \
+		${SED} "s,^${PREFIX},," >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/share/Yap -type d | ${SORT} -r | \
+		${SED} "s,^${PREFIX},@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
