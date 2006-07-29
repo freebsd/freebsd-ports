@@ -62,7 +62,6 @@ lib/%%DISTNAME%%/library/lists.pl
 lib/%%DISTNAME%%/library/main.pl
 lib/%%DISTNAME%%/library/make.pl
 lib/%%DISTNAME%%/library/nb_set.pl
-lib/%%DISTNAME%%/library/netscape.pl
 lib/%%DISTNAME%%/library/occurs.pl
 lib/%%DISTNAME%%/library/operators.pl
 lib/%%DISTNAME%%/library/option.pl
@@ -70,6 +69,7 @@ lib/%%DISTNAME%%/library/ordsets.pl
 lib/%%DISTNAME%%/library/oset.pl
 lib/%%DISTNAME%%/library/prolog_clause.pl
 lib/%%DISTNAME%%/library/prolog_stack.pl
+lib/%%DISTNAME%%/library/prolog_xref.pl
 lib/%%DISTNAME%%/library/qpforeign.pl
 lib/%%DISTNAME%%/library/qsave.pl
 lib/%%DISTNAME%%/library/quintus.pl
@@ -81,10 +81,13 @@ lib/%%DISTNAME%%/library/statistics.pl
 lib/%%DISTNAME%%/library/system.pl
 lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/tty.pl
+lib/%%DISTNAME%%/library/ugraphs.pl
 lib/%%DISTNAME%%/library/unicode/blocks.pl
 lib/%%DISTNAME%%/library/unicode/unicode_data.pl
 lib/%%DISTNAME%%/library/url.pl
+lib/%%DISTNAME%%/library/utf8.pl
 lib/%%DISTNAME%%/library/when.pl
+lib/%%DISTNAME%%/library/www_browser.pl
 lib/%%DISTNAME%%/swipl
 @dirrm lib/%%DISTNAME%%/library/clp
 @dirrm lib/%%DISTNAME%%/library/unicode
