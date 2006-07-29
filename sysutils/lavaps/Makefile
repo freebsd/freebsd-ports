@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	A lava lamp of currently running processes
 
 WANT_GNOME=	yes
@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		lavaps.1
- 
+
 TCL_VER?=	8.4
 
 CPPFLAGS=	-I${LOCALBASE}/include/tcl${TCL_VER} \
@@ -34,6 +34,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if ${HAVE_GNOME:Mgtk20}!=""
 PKGNAMESUFFIX=	-gtk2
 USE_GNOME+=	gtk20
+USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--with-gtk
 PLIST_SUB+=	NLS=""
 .else
