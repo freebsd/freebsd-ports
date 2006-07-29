@@ -156,6 +156,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
 	<name>mozilla-thunderbird</name>
 	<range><lt>1.5.0.5</lt></range>
       </package>
@@ -229,7 +230,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-07-25</discovery>
       <entry>2006-07-27</entry>
-      <modified>2006-07-28</modified>
+      <modified>2006-07-29</modified>
     </dates>
   </vuln>
 
