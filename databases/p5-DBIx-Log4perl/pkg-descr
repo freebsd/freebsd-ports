@@ -1,0 +1,11 @@
+DBIx::Log4perl is a wrapper over DBI which adds logging of your DBI activity
+via a Log::Log4perl handle. Log::Log4perl has many advantages for logging
+but the ones probably most attractive are:
+
+The ability to turn logging on or off or change the logging you see without
+changing your code.
+
+Different log levels allowing you to separate warnings, errors and fatals
+to different files.
+
+WWW: http://search.cpan.org/dist/DBIx-Log4perl/
