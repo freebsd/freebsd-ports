@@ -21,6 +21,7 @@
     SUBDIR += allegrogl
     SUBDIR += aoi
     SUBDIR += aqsis
+    SUBDIR += autopano-sift
     SUBDIR += autotrace
     SUBDIR += aview
     SUBDIR += ayam
