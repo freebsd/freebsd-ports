@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	smb
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/old/projects/pysmb/ \
 		http://mirror2.unixfreunde.de/ \
