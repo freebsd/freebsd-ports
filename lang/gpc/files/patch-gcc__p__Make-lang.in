@@ -1,6 +1,15 @@
---- ./gcc/p/Make-lang.in.orig	Thu Mar 31 15:21:55 2005
-+++ ./gcc/p/Make-lang.in	Thu Jun 29 20:30:11 2006
-@@ -928,7 +928,7 @@
+--- gcc/p/Make-lang.in.orig	Sat Mar 25 00:33:50 2006
++++ gcc/p/Make-lang.in	Sat Jul 29 13:06:42 2006
+@@ -162,7 +162,7 @@
+ PASCAL_INSTALL_DOC=pascal.real-install-doc
+ 
+ # Where to install the documentation and demos (relative to the prefix)
+-P_DOC_DIR=doc/gpc
++P_DOC_DIR=share/doc/gpc
+ p_inst_docdir=$(prefix)/$(P_DOC_DIR)
+ p_inst_demodir=$(p_inst_docdir)/demos
+ p_inst_docdemodir=$(p_inst_docdir)/docdemos
+@@ -938,7 +938,7 @@
  	  chmod a+x $(DESTDIR)$(bindir)/$(GPC_INSTALL_NAME)$(exeext); \
  	fi
  	rm -f $(DESTDIR)$(bindir)/gpc-run
@@ -9,3 +18,12 @@
  	chmod a+x $(DESTDIR)$(bindir)/gpc-run
  
  pascal.install-utils: pascal.utils
+@@ -1114,7 +1114,7 @@
+ #    in pascal.install-normal for gcc-3.4, it would otherwise be missing here.
+ pascal.install: pascal.install-normal pascal.install-compiler; @true
+ 
+-pascal.install-with-gcc: $(INSTALL_HEADERS) pascal.install $(INSTALL_LIBGCC)
++pascal.install-with-gcc: pascal.install $(INSTALL_LIBGCC)
+ 	for file in $(GCC_PASSES); do \
+ 	  if [ x"$$file" != x"xgcc$(exeext)" ]; then \
+ 	    rm -f $(DESTDIR)$(libsubdir)/$$file; \

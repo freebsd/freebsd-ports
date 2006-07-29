@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpc
-PORTVERSION=	20050331
-PORTREVISION=	1
+PORTVERSION=	20060325
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gnu-pascal.de/alpha/:gpc \
 		${MASTER_SITE_GCC}
@@ -19,6 +18,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	GNU Pascal compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		gsed:${PORTSDIR}/textproc/gsed \
 		help2man:${PORTSDIR}/misc/help2man
 
 USE_BISON=	yes
@@ -51,18 +51,16 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
 post-extract:
-	@${MV} ${WRKDIR}/p ${WRKSRC}/gcc
+	@${MV} ${WRKDIR}/${DISTNAME}/p ${WRKSRC}/gcc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|read junk||' ${WRKSRC}/gcc/p/config-lang.in
-	@${REINPLACE_CMD} -Ee 's|^(sed=)"`.*`"|\1sed|' \
-		${WRKSRC}/gcc/p/script/extract-doc-demos
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -Ee 's|^(PASCAL_INSTALL_DOC=).*|\1|' \
-		${WRKSRC}/gcc/p/Make-lang.in
-.else
+	@${REINPLACE_CMD} -e 's|sed -|gsed -|' ${WRKSRC}/gcc/p/utils/mk-t-inc
 	@${REINPLACE_CMD} -Ee \
 		's|^(P_DOC_DIR=).*|\1${DOCSDIR:S/${PREFIX}\///}|' \
+		${WRKSRC}/gcc/p/Make-lang.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -Ee 's|^(PASCAL_INSTALL_DOC=).*|\1|' \
 		${WRKSRC}/gcc/p/Make-lang.in
 .endif
 
