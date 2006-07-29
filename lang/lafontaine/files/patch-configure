@@ -1,0 +1,12 @@
+--- configure.orig	Thu Jul 27 22:51:55 2006
++++ configure	Thu Jul 27 22:52:37 2006
+@@ -5630,9 +5630,6 @@
+ done
+ test -n "$YACC" || YACC="yacc"
+ 
+-# default CC options
+-CFLAGS="-O3"
+-
+ # debugging option
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then

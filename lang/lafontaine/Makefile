@@ -7,35 +7,27 @@
 #
 
 PORTNAME=	lafontaine
-PORTVERSION=	0.3R3
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nongnu.org/lafontaine/archives/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-20020715
+DISTNAME=	${PORTNAME}_0.4-1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Graphical logo interpreter
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.4
 
-USE_BZIP2=	yes
-USE_GNOME=	gdkpixbuf gnometarget
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|pixmaps/$$PACKAGE|$$PACKAGE|g ; \
-		 s|-O3|$$CFLAGS|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|"\./pixmaps/|PIXMAPDIR "/|g' ${WRKSRC}/src/callbacks.c
-	@${REINPLACE_CMD} -e \
-		's|exit()|exit(0)|g' ${WRKSRC}/src/proc.c
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/share/pixmaps|/share|g'
-.for file in src/lexer.en.l src/lexer.fr.l
-	@${REINPLACE_CMD} -e 's|\.##|.|g' ${WRKSRC}/${file}
-.endfor
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
