@@ -6,21 +6,15 @@
 #
 
 PORTNAME=	intercal
-PORTVERSION=	0.20
+PORTVERSION=	0.24
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
 
-WRKSRC=		$(WRKDIR)/$(DISTNAME)/src
-
-pre-install:
-	${MKDIR} ${PREFIX}/share/intercal
-	${MKDIR} ${PREFIX}/lib/intercal
-
-post-install:
-	${MKDIR} ${PREFIX}/share/intercal/pit
-	${CP} -R $(WRKDIR)/$(DISTNAME)/pit/*  ${PREFIX}/share/intercal/pit
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"
 
 .include <bsd.port.mk>
