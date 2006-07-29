@@ -1,0 +1,3 @@
+%%SITE_PERL%%/WWW/Google/Calculator.pm
+@dirrmtry %%SITE_PERL%%/WWW/Google
+@dirrmtry %%SITE_PERL%%/WWW
