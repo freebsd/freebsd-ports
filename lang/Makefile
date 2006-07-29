@@ -164,6 +164,7 @@
     SUBDIR += objc
     SUBDIR += ocaml
     SUBDIR += ocaml-doc
+    SUBDIR += ocaml-examples
     SUBDIR += ocaml-mode.el
     SUBDIR += ocaml-nox11
     SUBDIR += ofc

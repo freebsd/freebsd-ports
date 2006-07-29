@@ -1,0 +1,250 @@
+%%EXAMPLESDIR%%/TODO
+%%EXAMPLESDIR%%/asl/README
+%%EXAMPLESDIR%%/asl/asl.ml
+%%EXAMPLESDIR%%/asl/asl.mli
+%%EXAMPLESDIR%%/asl/example.asl
+%%EXAMPLESDIR%%/asl/example.res
+%%EXAMPLESDIR%%/asl/loadall.ml
+%%EXAMPLESDIR%%/asl/main.ml
+%%EXAMPLESDIR%%/asl/main.mli
+%%EXAMPLESDIR%%/asl/parser.ml
+%%EXAMPLESDIR%%/asl/parser.mli
+%%EXAMPLESDIR%%/asl/prel.ml
+%%EXAMPLESDIR%%/asl/prel.mli
+%%EXAMPLESDIR%%/asl/run.ml
+%%EXAMPLESDIR%%/asl/semant.ml
+%%EXAMPLESDIR%%/asl/token.ml
+%%EXAMPLESDIR%%/asl/token.mli
+%%EXAMPLESDIR%%/asl/typing.ml
+%%EXAMPLESDIR%%/basics/README
+%%EXAMPLESDIR%%/basics/argcargv.ml
+%%EXAMPLESDIR%%/basics/eng.html
+%%EXAMPLESDIR%%/basics/explode.ml
+%%EXAMPLESDIR%%/basics/explode.mli
+%%EXAMPLESDIR%%/basics/fib.ml
+%%EXAMPLESDIR%%/basics/fra.html
+%%EXAMPLESDIR%%/basics/greeting.ml
+%%EXAMPLESDIR%%/basics/hello.ml
+%%EXAMPLESDIR%%/basics/kmp.ml
+%%EXAMPLESDIR%%/basics/loadall.ml
+%%EXAMPLESDIR%%/basics/queens.ml
+%%EXAMPLESDIR%%/basics/queens_lazy.ml
+%%EXAMPLESDIR%%/basics/queens_tail.ml
+%%EXAMPLESDIR%%/basics/realloc.ml
+%%EXAMPLESDIR%%/basics/realloc.mli
+%%EXAMPLESDIR%%/basics/reverse_rec.ml
+%%EXAMPLESDIR%%/basics/reverse_stdin.ml
+%%EXAMPLESDIR%%/basics/sieve.ml
+%%EXAMPLESDIR%%/basics/sieve_vect.c
+%%EXAMPLESDIR%%/basics/sieve_vect.ml
+%%EXAMPLESDIR%%/basics/sieve_vect_unsafe.ml
+%%EXAMPLESDIR%%/basics/soli.ml
+%%EXAMPLESDIR%%/basics/square.ml
+%%EXAMPLESDIR%%/basics/strpos.ml
+%%EXAMPLESDIR%%/basics/wc.ml
+%%EXAMPLESDIR%%/basics/wc_unix.ml
+%%EXAMPLESDIR%%/calc/README
+%%EXAMPLESDIR%%/calc/calc.ml
+%%EXAMPLESDIR%%/calc/lexer.mll
+%%EXAMPLESDIR%%/calc/loadall.ml
+%%EXAMPLESDIR%%/calc/main.ml
+%%EXAMPLESDIR%%/calc/parser.mly
+%%EXAMPLESDIR%%/camltk/README
+%%EXAMPLESDIR%%/camltk/addition.ml
+%%EXAMPLESDIR%%/camltk/bonjour.ml
+%%EXAMPLESDIR%%/camltk/bonjour_quit.ml
+%%EXAMPLESDIR%%/camltk/camleyes.ml
+%%EXAMPLESDIR%%/camltk/convert.ml
+%%EXAMPLESDIR%%/camltk/convert_euro.ml
+%%EXAMPLESDIR%%/camltk/convertion.ml
+%%EXAMPLESDIR%%/camltk/convertion_euro.ml
+%%EXAMPLESDIR%%/camltk/eng.html
+%%EXAMPLESDIR%%/camltk/hello.ml
+%%EXAMPLESDIR%%/camltk/hello_quit.ml
+%%EXAMPLESDIR%%/camltk/images/CamlBook.gif
+%%EXAMPLESDIR%%/camltk/images/Lambda2.back.gif
+%%EXAMPLESDIR%%/camltk/images/dojoji.back.gif
+%%EXAMPLESDIR%%/camltk/joconde.gif
+%%EXAMPLESDIR%%/camltk/loadall.ml
+%%EXAMPLESDIR%%/camltk/mytext.ml
+%%EXAMPLESDIR%%/camltk/rgb.ml
+%%EXAMPLESDIR%%/camltk/start.ml
+%%EXAMPLESDIR%%/camltk/stop.ml
+%%EXAMPLESDIR%%/camltk/taquin.ml
+%%EXAMPLESDIR%%/camltk/tetris.ml
+%%EXAMPLESDIR%%/camltktutorial/appli.ml
+%%EXAMPLESDIR%%/camltktutorial/complexe.ml
+%%EXAMPLESDIR%%/camltktutorial/complexe0.ml
+%%EXAMPLESDIR%%/camltktutorial/complexegui.ml
+%%EXAMPLESDIR%%/camltktutorial/complexegui0.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/biconnect.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/bipipe.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/bipipe.mli
+%%EXAMPLESDIR%%/camltktutorial/servers/compute.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/gui.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/make_appli
+%%EXAMPLESDIR%%/camltktutorial/servers/multiconnect
+%%EXAMPLESDIR%%/camltktutorial/simple.ml
+%%EXAMPLESDIR%%/colwheel/colwheel.ml
+%%EXAMPLESDIR%%/colwheel/loadall.ml
+%%EXAMPLESDIR%%/compress/compr.ml
+%%EXAMPLESDIR%%/compress/decompr.ml
+%%EXAMPLESDIR%%/compress/esbit.ml
+%%EXAMPLESDIR%%/compress/esbit.mli
+%%EXAMPLESDIR%%/compress/fileprio.ml
+%%EXAMPLESDIR%%/compress/fileprio.mli
+%%EXAMPLESDIR%%/compress/huffman.ml
+%%EXAMPLESDIR%%/compress/huffman.mli
+%%EXAMPLESDIR%%/compress/loadall.ml
+%%EXAMPLESDIR%%/config/Imake.rules
+%%EXAMPLESDIR%%/config/Imake.tmpl
+%%EXAMPLESDIR%%/config/coldboot
+%%EXAMPLESDIR%%/demonstr/asynt.ml
+%%EXAMPLESDIR%%/demonstr/asynt.mli
+%%EXAMPLESDIR%%/demonstr/demo.ml
+%%EXAMPLESDIR%%/demonstr/lexuniv.ml
+%%EXAMPLESDIR%%/demonstr/lexuniv.mli
+%%EXAMPLESDIR%%/demonstr/loadall.ml
+%%EXAMPLESDIR%%/demonstr/prop.ml
+%%EXAMPLESDIR%%/demonstr/prop.mli
+%%EXAMPLESDIR%%/dlls/MakefileByteCode
+%%EXAMPLESDIR%%/dlls/MakefileNative
+%%EXAMPLESDIR%%/dlls/client.c
+%%EXAMPLESDIR%%/dlls/fib.ml
+%%EXAMPLESDIR%%/dlls/fibwrap.c
+%%EXAMPLESDIR%%/dlls/modwrap.c
+%%EXAMPLESDIR%%/docteur/docteur.ml
+%%EXAMPLESDIR%%/docteur/loadall.ml
+%%EXAMPLESDIR%%/doctor/doctor.ml
+%%EXAMPLESDIR%%/doctor/loadall.ml
+%%EXAMPLESDIR%%/eng.html
+%%EXAMPLESDIR%%/fra.html
+%%EXAMPLESDIR%%/grep/auto.ml
+%%EXAMPLESDIR%%/grep/auto.mli
+%%EXAMPLESDIR%%/grep/determ.ml
+%%EXAMPLESDIR%%/grep/determ.mli
+%%EXAMPLESDIR%%/grep/ensent.ml
+%%EXAMPLESDIR%%/grep/ensent.mli
+%%EXAMPLESDIR%%/grep/expr.ml
+%%EXAMPLESDIR%%/grep/expr.mli
+%%EXAMPLESDIR%%/grep/fastgrep.ml
+%%EXAMPLESDIR%%/grep/fastrec.c
+%%EXAMPLESDIR%%/grep/fastrec.mli
+%%EXAMPLESDIR%%/grep/grep.ml
+%%EXAMPLESDIR%%/grep/loadall.ml
+%%EXAMPLESDIR%%/grep/makefast
+%%EXAMPLESDIR%%/hanoi/grahanoi-eng.ml
+%%EXAMPLESDIR%%/hanoi/grahanoi-fra.ml
+%%EXAMPLESDIR%%/hanoi/hanoi-eng.ml
+%%EXAMPLESDIR%%/hanoi/hanoi-fra.ml
+%%EXAMPLESDIR%%/hanoi/koch.ml
+%%EXAMPLESDIR%%/hanoi/loadall.ml
+%%EXAMPLESDIR%%/hanoi/txthanoi-eng.ml
+%%EXAMPLESDIR%%/hanoi/txthanoi-fra.ml
+%%EXAMPLESDIR%%/kb/README
+%%EXAMPLESDIR%%/kb/equation.ml
+%%EXAMPLESDIR%%/kb/go.ml
+%%EXAMPLESDIR%%/kb/kb.ml
+%%EXAMPLESDIR%%/kb/loadall.ml
+%%EXAMPLESDIR%%/kb/order.ml
+%%EXAMPLESDIR%%/kb/prelude.ml
+%%EXAMPLESDIR%%/kb/terms.ml
+%%EXAMPLESDIR%%/minicaml/caml.ml
+%%EXAMPLESDIR%%/minicaml/eval.ml
+%%EXAMPLESDIR%%/minicaml/eval.mli
+%%EXAMPLESDIR%%/minicaml/interp.ml
+%%EXAMPLESDIR%%/minicaml/lexuniv.ml
+%%EXAMPLESDIR%%/minicaml/lexuniv.mli
+%%EXAMPLESDIR%%/minicaml/loadall.ml
+%%EXAMPLESDIR%%/minicaml/syntaxe.ml
+%%EXAMPLESDIR%%/minicaml/syntaxe.mli
+%%EXAMPLESDIR%%/minicaml/synthese.ml
+%%EXAMPLESDIR%%/minicaml/synthese.mli
+%%EXAMPLESDIR%%/minicaml/types.ml
+%%EXAMPLESDIR%%/minicaml/types.mli
+%%EXAMPLESDIR%%/minicaml/typeur.ml
+%%EXAMPLESDIR%%/minilogo/abstract.ml
+%%EXAMPLESDIR%%/minilogo/alex.ml
+%%EXAMPLESDIR%%/minilogo/alex.mli
+%%EXAMPLESDIR%%/minilogo/asynt.ml
+%%EXAMPLESDIR%%/minilogo/asynt.mli
+%%EXAMPLESDIR%%/minilogo/crayon.ml
+%%EXAMPLESDIR%%/minilogo/crayon.mli
+%%EXAMPLESDIR%%/minilogo/langage.ml
+%%EXAMPLESDIR%%/minilogo/langage.mli
+%%EXAMPLESDIR%%/minilogo/loadall.ml
+%%EXAMPLESDIR%%/minilogo/logo.ml
+%%EXAMPLESDIR%%/pascal/compil.ml
+%%EXAMPLESDIR%%/pascal/compil.mli
+%%EXAMPLESDIR%%/pascal/cpascal.ml
+%%EXAMPLESDIR%%/pascal/envir.ml
+%%EXAMPLESDIR%%/pascal/envir.mli
+%%EXAMPLESDIR%%/pascal/fib1.p
+%%EXAMPLESDIR%%/pascal/fib2.p
+%%EXAMPLESDIR%%/pascal/interp.ml
+%%EXAMPLESDIR%%/pascal/interp.mli
+%%EXAMPLESDIR%%/pascal/ipascal.ml
+%%EXAMPLESDIR%%/pascal/lexuniv.ml
+%%EXAMPLESDIR%%/pascal/lexuniv.mli
+%%EXAMPLESDIR%%/pascal/loadall.ml
+%%EXAMPLESDIR%%/pascal/reines.p
+%%EXAMPLESDIR%%/pascal/syntaxe.ml
+%%EXAMPLESDIR%%/pascal/syntaxe.mli
+%%EXAMPLESDIR%%/pascal/typage.ml
+%%EXAMPLESDIR%%/pascal/typage.mli
+%%EXAMPLESDIR%%/pascal/valeur.ml
+%%EXAMPLESDIR%%/pascal/valeur.mli
+%%EXAMPLESDIR%%/picomach/asm.ml
+%%EXAMPLESDIR%%/picomach/code.ml
+%%EXAMPLESDIR%%/picomach/code.mli
+%%EXAMPLESDIR%%/picomach/exec.ml
+%%EXAMPLESDIR%%/picomach/fact.asm
+%%EXAMPLESDIR%%/picomach/lecture.ml
+%%EXAMPLESDIR%%/picomach/lecture.mli
+%%EXAMPLESDIR%%/picomach/lexuniv.ml
+%%EXAMPLESDIR%%/picomach/lexuniv.mli
+%%EXAMPLESDIR%%/picomach/loadall.ml
+%%EXAMPLESDIR%%/picomach/simul.ml
+%%EXAMPLESDIR%%/picomach/simul.mli
+%%EXAMPLESDIR%%/picomach/stockage.ml
+%%EXAMPLESDIR%%/picomach/stockage.mli
+%%EXAMPLESDIR%%/showsort/loadall.ml
+%%EXAMPLESDIR%%/showsort/showsort.ml
+%%EXAMPLESDIR%%/soli/soli.ml
+%%EXAMPLESDIR%%/soli/soli_opt.ml
+%%EXAMPLESDIR%%/spirals/loadall-bw.ml
+%%EXAMPLESDIR%%/spirals/loadall.ml
+%%EXAMPLESDIR%%/spirals/spir-bw.ml
+%%EXAMPLESDIR%%/spirals/spir.ml
+%%EXAMPLESDIR%%/tools/add_banner
+%%EXAMPLESDIR%%/tools/add_banner.ml
+%%EXAMPLESDIR%%/tools/address_book.new.ml
+%%EXAMPLESDIR%%/tools/address_book.old.ml
+%%EXAMPLESDIR%%/tools/banner
+%%EXAMPLESDIR%%/tools/reverse_file_jfm.ml
+@dirrm %%EXAMPLESDIR%%/tools
+@dirrm %%EXAMPLESDIR%%/spirals
+@dirrm %%EXAMPLESDIR%%/soli
+@dirrm %%EXAMPLESDIR%%/showsort
+@dirrm %%EXAMPLESDIR%%/picomach
+@dirrm %%EXAMPLESDIR%%/pascal
+@dirrm %%EXAMPLESDIR%%/minilogo
+@dirrm %%EXAMPLESDIR%%/minicaml
+@dirrm %%EXAMPLESDIR%%/kb
+@dirrm %%EXAMPLESDIR%%/hanoi
+@dirrm %%EXAMPLESDIR%%/grep
+@dirrm %%EXAMPLESDIR%%/doctor
+@dirrm %%EXAMPLESDIR%%/docteur
+@dirrm %%EXAMPLESDIR%%/dlls
+@dirrm %%EXAMPLESDIR%%/demonstr
+@dirrm %%EXAMPLESDIR%%/config
+@dirrm %%EXAMPLESDIR%%/compress
+@dirrm %%EXAMPLESDIR%%/colwheel
+@dirrm %%EXAMPLESDIR%%/camltktutorial/servers
+@dirrm %%EXAMPLESDIR%%/camltktutorial
+@dirrm %%EXAMPLESDIR%%/camltk/images
+@dirrmtry %%EXAMPLESDIR%%/camltk
+@dirrm %%EXAMPLESDIR%%/calc
+@dirrm %%EXAMPLESDIR%%/basics
+@dirrm %%EXAMPLESDIR%%/asl
+@dirrmtry %%EXAMPLESDIR%%
