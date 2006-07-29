@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	security lang
 PKGNAMESUFFIX=	-md5
 

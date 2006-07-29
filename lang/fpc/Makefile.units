@@ -15,6 +15,10 @@ DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
 MAKE_ENV+=	FPCMAKE=${WRKDIR}/${PORTNAME:S/$/-bin/}/bin/fpcmake
 .endif
 
+post-extract:
+	@cd ${WRKDIR}/${WRKUNITDIR} && \
+		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -rf
+
 do-build:
 	@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} all ${MAKE_ENV}
 

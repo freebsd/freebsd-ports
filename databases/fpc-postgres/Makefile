@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-postgres
 

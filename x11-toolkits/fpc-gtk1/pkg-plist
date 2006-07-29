@@ -52,16 +52,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gtk/libpgtkglarea.a
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%
 @dirrmtry lib/fpc
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/wcprops
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/wcprops
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/text-base
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/props
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp/prop-base
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/tmp
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/text-base
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/props
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn/prop-base
-%%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial/.svn
 %%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk/tutorial
 %%PORTDOCS%%@dirrm share/examples/fpc-2.0.2/gtk
 %%PORTDOCS%%@dirrmtry share/examples/fpc-2.0.2

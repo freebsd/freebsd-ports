@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk2
 
