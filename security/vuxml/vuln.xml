@@ -40,8 +40,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
         <name>ruby</name>
         <name>ruby_static</name>
-        <range><gt>1.6.0</gt></range>
-        <range><gt>1.8.0</gt></range>
+        <range><gt>1.6.*</gt><lt>1.8.*</lt></range>
       </package>
     </affects>
     <description>
