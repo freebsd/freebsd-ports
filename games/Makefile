@@ -493,6 +493,7 @@
     SUBDIR += penguin-command
     SUBDIR += pengupop
     SUBDIR += pentix
+    SUBDIR += pets
     SUBDIR += phalanx
     SUBDIR += phpua-bf
     SUBDIR += phpua-cod
