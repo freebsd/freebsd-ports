@@ -23,13 +23,13 @@ rcvar=`set_rcvar`
 
 # set defaults
 
-dkfilter_out_enable=${dkfilter_out_enable:-"NO"}
-dkfilter_out_flags=${dkfilter_out_flags:-" --header \
+: ${dkfilter_out_enable="NO"}
+: ${dkfilter_out_flags=" --header \
 	--keyfile=%%PREFIX%%/etc/dkfilter/private.key \
 	--selector=selector1 --domain=example.org --method=nofws \
 	127.0.0.1:10027 127.0.0.1:10028"}
-dkfilter_out_pidfile=${dkfilter_out_pidfile:-"/var/run/dkfilter_out.pid"}
-dkfilter_out_user=${dkfilter_out_user:-"dkfilter"}
+: ${dkfilter_out_pidfile="/var/run/dkfilter_out.pid"}
+: ${dkfilter_out_user="dkfilter"}
 
 start_cmd="dkfilter_out_start"
 stop_cmd="dkfilter_out_stop"
@@ -40,12 +40,23 @@ dkfilter_out_start()
 		echo "${name} already running?"
 		exit 1
 	fi 
+	echo "Starting ${name}."
+	logger -t ${name} "Starting ${name}."
+	tmpfile=`mktemp /tmp/dkfilter.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
 	touch ${dkfilter_out_pidfile}
 	chown ${dkfilter_out_user} ${dkfilter_out_pidfile}
 	su -m ${dkfilter_out_user} -c "daemon -p ${dkfilter_out_pidfile} \
 		%%PREFIX%%/bin/dkfilter.out ${dkfilter_out_flags}" \
-		> /dev/null 2>&1
-	echo "Starting ${name}."
+		> /dev/null 2> ${tmpfile}
+	sleep 1	# XXX: wait until dkfilter start.
+	logger -t ${name} `cat ${tmpfile}`
+	err=`grep Error ${tmpfile}`
+	if [ "${err}" ]; then
+		echo "Failed to start ${name}."
+		echo "${err}"
+		rm -f ${dkfilter_out_pidfile}
+	fi
+	rm -f ${tmpfile}
 }
 
 dkfilter_out_stop()
