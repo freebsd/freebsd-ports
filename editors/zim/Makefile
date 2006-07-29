@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://zoidberg.student.utwente.nl/downloads/Zim/ \
 		ftp://zoidberg.student.utwente.nl/Zim/
@@ -30,15 +30,18 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Gtk2::Ex::HyperTextBuffer.3 \
 		Gtk2::Ex::HyperTextView.3 \
 		Gtk2::Ex::PathBar.3 \
-		Zim.3 \
-		Zim::Components::Calendar.3 \
-		Zim::Components::PageView.3 \
-		Zim::Components::PathBar.3 \
-		Zim::Components::SearchDialog.3 \
-		Zim::Components::Spell.3 \
-		Zim::Components::TrayIcon.3 \
-		Zim::Components::TreeView.3 \
 		Zim::File.3 \
+		Zim::GUI::Spell.3 \
+		Zim::Selection.3 \
+		Zim::GUI::Calendar.3 \
+		Zim::GUI::ExportDialog.3 \
+		Zim::GUI::FindReplaceDialog.3 \
+		Zim::GUI::SearchDialog.3 \
+		Zim::GUI.3 \
+		Zim::GUI::PageView.3 \
+		Zim::GUI::TrayIcon.3 \
+		Zim::GUI::TreeView.3 \
+		Zim::GUI::PathBar.3 \
 		Zim::Formats::Html.3 \
 		Zim::Formats::Pod.3 \
 		Zim::Formats::Wiki.3 \
@@ -57,6 +60,10 @@ OPTIONS=	TRAYICON	"Support trayicon"	on \
 		SPELL	"Support spell"	on
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	Perl 5.8.0 or newer required. Install lang/perl5.8 and try again.
+.endif
 
 .if !defined(WITHOUT_TRAYICON)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2/TrayIcon.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2-TrayIcon
