@@ -7,7 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.6
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
@@ -34,6 +34,15 @@ BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
 VMVERSION=		3.6-3
 IMAGEVERSION=		3.6
 PATCHNUMBER=		5429
+
+##################################################
+OPTIONS+=		MPG_MMX		"MMX support (MPG plugin)" off
+OPTIONS+=		NPSQUEAK	"browser plugin support" on
+OPTIONS+=		RFB		"remote frame buffer support" on
+OPTIONS+=		FFI		"libffi support" off
+OPTIONS+=		X		"X Windows support" on
+
+.include <bsd.port.pre.mk>
 
 ##################################################
 DIST_SUBDIR=		squeak
@@ -70,11 +79,11 @@ CONFIGURE_ENV=
 
 ##################################################
 # Knobs
-.if defined(WITH_RFB) && (${WITH_RFB}=="no")
+.if defined(WITHOUT_RFB)
 CONFIGURE_ARGS+=	--without-rfb
 .endif
 
-.if defined(WITH_NPSQUEAK) && (${WITH_NPSQUEAK}=="no")
+.if defined(WITHOUT_NPSQUEAK)
 CONFIGURE_ARGS+=	--without-npsqueak
 PLIST_NPSQUEAK=		"@comment feature not wanted - "
 .else
@@ -82,7 +91,7 @@ WITH_NPSQUEAK=		yes
 PLIST_NPSQUEAK=
 .endif
 
-.if defined(WITH_X) && (${WITH_X}=="no")
+.if defined(WITHOUT_X)
 CONFIGURE_ARGS+=	--without-x
 PLIST_X=		"@comment feature not wanted - "
 .else
@@ -91,11 +100,11 @@ CONFIGURE_ARGS+=	--with-x
 PLIST_X=
 .endif
 
-.if defined(WITH_MPG_MMX) && (${WITH_MPG_MMX}=="yes")
+.if defined(WITH_MPG_MMX)
 CONFIGURE_ARGS+=	--enable-mpg-mmx
 .endif
 
-.if defined(WITH_FFI) && (${WITH_FFI}=="yes")
+.if defined(WITH_FFI)
 LIB_DEPENDS+=		ffi.2:${PORTSDIR}/devel/libffi
 PLIST_FFI=
 EXT_PLUGINS+=		SqueakFFIPrims
@@ -112,6 +121,10 @@ MAKE_ARGS+=		CC="${CC}"
 MAKE_ARGS+=		CCFLAGS="${CFLAGS}"
 .endif
 
+PKGMESSAGE=		${WRKDIR}/pkg-message
+PKGMESSAGE_SUB=		PREFIX=${PREFIX} \
+			VMVERSION=${VMVERSION}
+
 PLIST_SUB=		IMAGEVERSION=${IMAGEVERSION}\
 			PATCHNUMBER=${PATCHNUMBER}\
 			VMVERSION=${VMVERSION}\
@@ -119,36 +132,9 @@ PLIST_SUB=		IMAGEVERSION=${IMAGEVERSION}\
 			PLIST_X=${PLIST_X} \
 			PLIST_FFI=${PLIST_FFI}
 
-.include <bsd.port.pre.mk>
-
-##################################################
-pre-everything::
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " ------------------------- Please note: -------------------------"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} "  Squeak has the following tunable options:"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} "    WITH_MPG_MMX=      [yes|no]  MMX support (MPG plugin)"
-	@${ECHO_MSG} "                            ^^   (default: disabled)"
-	@${ECHO_MSG} "    WITH_NPSQUEAK=     [yes|no]  browser plugin support"
-	@${ECHO_MSG} "                        ^^^      (default: enabled)"
-	@${ECHO_MSG} "    WITH_RFB=          [yes|no]  remote frame buffer support"
-	@${ECHO_MSG} "                        ^^^      (default: enabled)"
-	@${ECHO_MSG} "    WITH_X=            [yes|no]  X Windows support"
-	@${ECHO_MSG} "                        ^^^      (default: enabled)"
-	@${ECHO_MSG} "    WITH_FFI=          [yes|no]  FFI support"
-	@${ECHO_MSG} "                            ^^   (default: disabled)"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} "  additional make arguments"
-	@${ECHO_MSG} "    CC=<aString>"
-	@${ECHO_MSG} "    CFLAGS=<aString>"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " ------------------ Thanks for your attention! ------------------"
-	@${ECHO_MSG} " "
-
 ##################################################
 post-patch:
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		-e "s,%%X11BASE%%,${X11BASE},g" \
 		${WRKSRC}/platforms/unix/npsqueak/npsqueakregister.in \
@@ -159,8 +145,6 @@ post-patch:
 ##################################################
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-	@cd ${WRKSRC}/platforms/unix/npsqueak && \
-		${REINPLACE_CMD} -e 's|include|include -I${X11BASE}/include|g' Makefile
 
 ##################################################
 post-configure:
@@ -179,7 +163,7 @@ post-install:
 .for file in ${FILES_TO_GZIP}
 	(cd ${WRKDIR} && ${GZIP_CMD} ${file} && ${INSTALL_DATA} ${file}.gz ${PREFIX}/share/squeak/)
 .endfor
-.if defined(WITH_NPSQUEAK) && (${WITH_NPSQUEAK}=="yes")
+.if defined(WITH_NPSQUEAK)
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u SqueakPlugin.zip -d ${WRKDIR})
 	(cd ${WRKDIR} && ${INSTALL_DATA} SqueakPlugin.image ${PREFIX}/share/squeak/npsqueak.image)
 .endif
@@ -189,21 +173,8 @@ post-install:
 		${WRKSRC}/build/inisqueak > ${WRKSRC}/build/inisqueak.tmp
 	${INSTALL_SCRIPT} ${WRKSRC}/build/inisqueak.tmp ${PREFIX}/bin/inisqueak
 	${CHMOD} 755 ${PREFIX}/bin/inisqueak
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " ------------------------- Please note: -------------------------"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} "  In order to be able to make use of squeak you need to have an"
-	@${ECHO_MSG} "    image and a changes file in your working directory as well"
-	@${ECHO_MSG} "    as access to a source file. This is easy by using inisqueak."
-	@${ECHO_MSG} "    Please see the inisqueak(1) manpage for details."
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} "  Make sure you have the following values in your environment"
-	@${ECHO_MSG} "    variables:"
-	@${ECHO_MSG} "    PATH:            ${PREFIX}/bin"
-	@${ECHO_MSG} "    LD_LIBRARY_PATH: ${PREFIX}/lib"
-	@${ECHO_MSG} "                     ${PREFIX}/share/squeak/${VMVERSION}"
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " ------------------ Thanks for your attention! ------------------"
-	@${ECHO_MSG} " "
+	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
