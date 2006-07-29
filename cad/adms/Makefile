@@ -1,0 +1,24 @@
+# New ports collection makefile for:	adms
+# Date created:		2006-07-29
+# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
+#
+# $MBSDlabs$
+# $FreeBSD$
+#
+
+PORTNAME=	adms
+PORTVERSION=	2.2.4
+CATEGORIES=	cad
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=mot-adms
+
+MAINTAINER=	ssedov@mbsd.msk.ru
+COMMENT=	A model generator for SPICE simulators
+
+USE_GMAKE=	yes
+USE_GNOME=	glib20 pkgconfig
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_GCC=	3.2+
+
+.include <bsd.port.mk>
