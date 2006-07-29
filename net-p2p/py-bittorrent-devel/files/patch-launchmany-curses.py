@@ -1,5 +1,5 @@
---- ./launchmany-curses.py.orig	Mon Jun 12 22:46:19 2006
-+++ ./launchmany-curses.py	Wed Jun 21 23:57:08 2006
+--- ./launchmany-curses.py.orig	Wed Jul 12 02:18:54 2006
++++ ./launchmany-curses.py	Fri Jul 28 23:42:45 2006
 @@ -18,6 +18,7 @@
  
  DOWNLOAD_SCROLL_RATE = 1
@@ -8,7 +8,7 @@
  import sys, os
  from threading import Event
  from time import time, localtime, strftime
-@@ -99,7 +100,7 @@
+@@ -101,7 +102,7 @@
      def winch_handler(self, signum, stackframe):
          self.changeflag.set()
          curses.endwin()
@@ -17,7 +17,7 @@
          self.scrwin = curses.newwin(0, 0, 0, 0)
          self._remake_window()
          self._display_messages()
-@@ -118,22 +119,26 @@
+@@ -120,22 +121,26 @@
          self.mainpan = curses.panel.new_panel(self.mainwin)
          self.mainwin.scrollok(0)
          self.mainwin.nodelay(1)
@@ -44,30 +44,22 @@
  
          try:
              self.scrwin.border(ord('|'),ord('|'),ord('-'),ord('-'),ord(' '),ord(' '),ord(' '),ord(' '))
-@@ -199,7 +204,7 @@
-                 if self._display_line(''):
-                     break
-             ( name, status, progress, peers, seeds, seedsmsg, dist,
--              uprate, dnrate, upamt, dnamt, size, t, msg ) = data[ii]
-+              uprate, dnrate, upamt, dnamt, size, t ) = data[ii]
-             t = fmttime(t)
-             if t:
-                 status = t
-@@ -216,7 +221,7 @@
-             else:
-                 datastr = '    '+status+' ('+progress+')'
-             self._display_line(datastr)
--            self._display_line('    '+ljust(msg,self.mainwinw-4))
-+#            self._display_line('    '+ljust(msg,self.mainwinw-4))
-             i += 1
+@@ -277,7 +282,8 @@
  
-     def display(self, data):
-@@ -236,7 +241,7 @@
-         totalup = 0
-         totaldn = 0
-         for ( name, status, progress, peers, seeds, seedsmsg, dist,
--              uprate, dnrate, upamt, dnamt, size, t, msg ) in data:
-+              uprate, dnrate, upamt, dnamt, size, t ) in data:
-             totalup += uprate
-             totaldn += dnrate
  
+ def LaunchManyWrapper(scrwin, config):
+-    LaunchMany(config, CursesDisplayer(scrwin), 'launchmany-curses')
++    d = CursesDisplayer(scrwin)
++    LaunchMany(config, d, 'launchmany-curses')
+ 
+ 
+ if __name__ == '__main__':
+@@ -306,7 +312,7 @@
+                 platform.decode_from_filesystem(torrent_dir)
+         else:
+             torrent_dir = config['torrent_dir']
+-            torrent_dir,bad = platform.encode_from_filesystem(torrent_dir)
++            torrent_dir,bad = platform.encode_for_filesystem(torrent_dir)
+             if bad:
+               raise BTFailure(_("Warning: ")+config['torrent_dir']+
+                               _(" is not a directory"))
