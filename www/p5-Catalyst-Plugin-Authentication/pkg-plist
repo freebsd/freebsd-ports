@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/User/Hash.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/User.pm
 %%SITE_PERL%%/Catalyst/Plugin/Authentication.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/.packlist
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store/Minimal
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication/User
@@ -12,3 +13,6 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Authentication
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/
