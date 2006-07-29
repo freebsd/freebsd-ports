@@ -4852,6 +4852,7 @@ ja-texfamily	ports/japanese/texfamily
 ja-texfamily-vfn2a	ports/japanese/texfamily-vfn2a
 ja-texinfo	ports/japanese/texinfo
 ja-tgif		ports/japanese/tgif
+ja-tiarra	ports/japanese/tiarra
 ja-timidity++-slang	ports/japanese/timidity++-slang
 ja-timidity++-tcltk	ports/japanese/timidity++-tcltk
 ja-tk42		ports/japanese/tk42
