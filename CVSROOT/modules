@@ -7575,6 +7575,7 @@ ocaml-cryptokit	ports/security/ocaml-cryptokit
 ocaml-doc	ports/lang/ocaml-doc
 ocaml-equeue	ports/devel/ocaml-equeue
 ocaml-event	ports/devel/ocaml-event
+ocaml-examples	ports/lang/ocaml-examples
 ocaml-expat	ports/textproc/ocaml-expat
 ocaml-extlib	ports/devel/ocaml-extlib
 ocaml-findlib	ports/devel/ocaml-findlib
