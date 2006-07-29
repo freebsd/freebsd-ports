@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: tiarra
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+prefix=%%PREFIX%%
+name="tiarra"
+
+tiarra_enable=${tiarra_enable:-"NO"}
+tiarra_flags=${tiarra_flags:-"--quiet"}
+tiarra_user=${tiarra_user:-"%%TIARRA_USER%%"}
+tiarra_chdir=${tiarra_chdir:-"${prefix}/${name}"}
+
+. %%RC_SUBR%%
+
+rcvar=`set_rcvar`
+command="${tiarra_chdir}/${name}"
+command_interpreter="/usr/bin/perl"
+required_dirs="${tiarra_chdir}"
+required_files="${tiarra_chdir}/${name}.conf"
+extra_commands="reload"
+
+load_rc_config $name
+run_rc_command "$1"

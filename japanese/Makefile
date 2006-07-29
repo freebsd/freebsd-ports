@@ -371,6 +371,7 @@
     SUBDIR += texfamily-vfn2a
     SUBDIR += texinfo
     SUBDIR += tgif
+    SUBDIR += tiarra
     SUBDIR += timidity++-slang
     SUBDIR += timidity++-tcltk
     SUBDIR += tk42

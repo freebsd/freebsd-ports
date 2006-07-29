@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+TIARRA_USER=${TIARRA_USER:=%%TIARRA_USER%%}
+TIARRA_GROUP=${TIARRA_GROUP:=%%TIARRA_GROUP%%}
+
+delete_user() {
+	if pw usershow ${TIARRA_USER} 2>/dev/null 1>&2; then
+		echo "To delete tiarra user permanently, use 'pw userdel ${TIARRA_USER}'"
+	fi
+	if pw groupshow ${TIARRA_GROUP} 2>/dev/null 1>&2; then
+		echo "To delete tiarra group permanently, use 'pw groupdel ${TIARRA_GROUP}'"
+	fi
+}
+
+case $2 in
+POST-DEINSTALL)
+	delete_user
+	;;
+esac

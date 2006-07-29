@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+TIARRA_USER=${TIARRA_USER:=%%TIARRA_USER%%}
+TIARRA_GROUP=${TIARRA_GROUP:=%%TIARRA_GROUP%%}
+
+UID=398
+GID=398
+
+#
+# create 'tiarra' user and group before installing
+#
+
+create_user() {
+	USER=${TIARRA_USER}
+	GROUP=${TIARRA_GROUP}
+	PW=/usr/sbin/pw
+
+	if [ -x /usr/sbin/nologin ]; then
+		shell=/usr/sbin/nologin
+	elif [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
+	uhome="/nonexistent"
+
+	if ! ${PW} show group ${GROUP} -q >/dev/null; then
+		gid=${GID}
+		while ${PW} show group -g ${gid} -q >/dev/null; do
+			gid=`expr ${gid} + 1`
+		done
+		if ! ${PW} add group ${GROUP} -g ${gid}; then
+			e=$?
+			echo "*** Failed to add group \`${GROUP}'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added group \`${GROUP}' (id ${gid})"
+	else
+		gid=`${PW} show group ${GROUP} 2>/dev/null | cut -d: -f3`
+	fi
+
+	if ! ${PW} show user ${USER} -q >/dev/null; then
+		uid=${UID}
+		while ${PW} show user -u ${uid} -q >/dev/null; do
+			uid=`expr ${uid} + 1`
+		done
+		if ! ${PW} add user ${USER} -u ${uid} -g ${gid} -d "${uhome}" \
+				-c "Tiarra IRC Proxy" -s "${shell}" -p "*" \
+				; then
+			e=$?
+			echo "*** Failed to add user \`${USER}'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added user \`${USER}' (id ${uid})"
+	else
+		if ! ${PW} mod user ${USER} -g ${gid}; then
+			e=$?
+			echo "*** Failed to update user \`${USER}'."
+			exit ${e}
+		fi
+		echo "*** Updated user \`${USER}'."
+	fi
+}
+
+case $2 in
+PRE-INSTALL)
+	create_user
+	;;
+esac

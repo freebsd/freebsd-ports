@@ -1,0 +1,172 @@
+tiarra/AUTHORS
+tiarra/ChangeLog
+tiarra/HACKING
+tiarra/LICENSE
+tiarra/NEWS
+tiarra/doc-src/README
+tiarra/doc-src/conf-main.tdoc
+tiarra/doc-src/contents.html
+tiarra/doc-src/module-group.tdoc
+tiarra/doc-src/module-toc.html
+tiarra/doc-src/sample.conf.in
+@dirrm tiarra/doc-src
+tiarra/doc/default.css
+tiarra/doc/module-toc.html
+tiarra/doc/module/Auto.html
+tiarra/doc/module/CTCP.html
+tiarra/doc/module/Channel.html
+tiarra/doc/module/Client.html
+tiarra/doc/module/Debug.html
+tiarra/doc/module/Log.html
+tiarra/doc/module/System.html
+tiarra/doc/module/User.html
+@dirrm tiarra/doc/module
+@dirrm tiarra/doc
+tiarra/main/BulletinBoard.pm
+tiarra/main/CTCP.pm
+tiarra/main/ChannelInfo.pm
+tiarra/main/Configuration.pm
+tiarra/main/Configuration/Block.pm
+tiarra/main/Configuration/LexicalAnalyzer.pm
+tiarra/main/Configuration/Parser.pm
+tiarra/main/Configuration/Preprocessor.pm
+@dirrm tiarra/main/Configuration
+tiarra/main/ControlPort.pm
+tiarra/main/Crypt.pm
+tiarra/main/Exception.pm
+tiarra/main/ExternalSocket.pm
+tiarra/main/FunctionalVariable.pm
+tiarra/main/Hook.pm
+tiarra/main/IO/Socket/INET6.pm
+@dirrm tiarra/main/IO/Socket
+@dirrm tiarra/main/IO
+tiarra/main/IRCMessage.pm
+tiarra/main/InstantCapsule.pm
+tiarra/main/IrcIO.pm
+tiarra/main/IrcIO/Client.pm
+tiarra/main/IrcIO/Server.pm
+@dirrm tiarra/main/IrcIO
+tiarra/main/Iterator.pm
+tiarra/main/Iterator/ArrayIterator.pm
+tiarra/main/Iterator/BackwardIterator.pm
+tiarra/main/Iterator/BidirectionalIterator.pm
+tiarra/main/Iterator/ForwardIterator.pm
+tiarra/main/Iterator/RandomAccessIterator.pm
+tiarra/main/Iterator/RoundIterator.pm
+@dirrm tiarra/main/Iterator
+tiarra/main/L10N.pm
+tiarra/main/LinedINETSocket.pm
+tiarra/main/LocalChannelManager.pm
+tiarra/main/Mask.pm
+tiarra/main/Module.pm
+tiarra/main/Module/Use.pm
+tiarra/main/ModuleManager.pm
+@dirrm tiarra/main/Module
+tiarra/main/Multicast.pm
+tiarra/main/NumericReply.pm
+tiarra/main/PersonInChannel.pm
+tiarra/main/PersonalInfo.pm
+tiarra/main/ReloadTrigger.pm
+tiarra/main/RunLoop.pm
+tiarra/main/Template.pm
+tiarra/main/TiarraDoc.pm
+tiarra/main/Timer.pm
+tiarra/main/Unicode/Japanese.pm
+@dirrm tiarra/main/Unicode
+@dirrm tiarra/main
+tiarra/makedoc
+tiarra/module/Auto/Alias.pm
+tiarra/module/Auto/AliasDB.pm
+tiarra/module/Auto/AliasDB/CallbackUtils.pm
+@dirrm tiarra/module/Auto/AliasDB
+tiarra/module/Auto/Answer.pm
+tiarra/module/Auto/CacheManager.pm
+tiarra/module/Auto/ChannelWithoutOper.pm
+tiarra/module/Auto/Joined.pm
+tiarra/module/Auto/MesMail.pm
+tiarra/module/Auto/Oper.pm
+tiarra/module/Auto/Random.pm
+tiarra/module/Auto/Reply.pm
+tiarra/module/Auto/Response.pm
+tiarra/module/Auto/Utils.pm
+@dirrm tiarra/module/Auto
+tiarra/module/CTCP/ClientInfo.pm
+tiarra/module/CTCP/Ping.pm
+tiarra/module/CTCP/Time.pm
+tiarra/module/CTCP/UserInfo.pm
+tiarra/module/CTCP/Version.pm
+@dirrm tiarra/module/CTCP
+tiarra/module/Channel/Freeze.pm
+tiarra/module/Channel/Join/Connect.pm
+tiarra/module/Channel/Join/Invite.pm
+tiarra/module/Channel/Join/Kicked.pm
+@dirrm tiarra/module/Channel/Join
+tiarra/module/Channel/Mode/Get.pm
+tiarra/module/Channel/Mode/Oper/Grant.pm
+@dirrm tiarra/module/Channel/Mode/Oper
+tiarra/module/Channel/Mode/Set.pm
+@dirrm tiarra/module/Channel/Mode
+tiarra/module/Channel/Rejoin.pm
+@dirrm tiarra/module/Channel
+tiarra/module/Client/Cache.pm
+tiarra/module/Client/Cotton.pm
+tiarra/module/Client/Eval.pm
+tiarra/module/Client/GetVersion.pm
+tiarra/module/Client/Rehash.pm
+@dirrm tiarra/module/Client
+tiarra/module/Debug/RawLog.pm
+@dirrm tiarra/module/Debug
+tiarra/module/Log/Channel.pm
+tiarra/module/Log/Logger.pm
+tiarra/module/Log/Recent.pm
+tiarra/module/Log/Writer.pm
+tiarra/module/Log/Writer/Base.pm
+tiarra/module/Log/Writer/File.pm
+@dirrm tiarra/module/Log/Writer
+@dirrm tiarra/module/Log
+tiarra/module/Skelton.pm
+tiarra/module/System/Error.pm
+tiarra/module/System/Macro.pm
+tiarra/module/System/NotifyIcon/Win32.pm
+@dirrm tiarra/module/System/NotifyIcon
+tiarra/module/System/Pong.pm
+tiarra/module/System/PrivTranslator.pm
+tiarra/module/System/Raw.pm
+tiarra/module/System/Reload.pm
+tiarra/module/System/RemoteControl.pm
+tiarra/module/System/Shutdown.pm
+@dirrm tiarra/module/System
+tiarra/module/Tools/DateConvert.pm
+tiarra/module/Tools/FileCache.pm
+tiarra/module/Tools/FileCache/EachFile.pm
+@dirrm tiarra/module/Tools/FileCache
+tiarra/module/Tools/GroupDB.pm
+tiarra/module/Tools/HTTPClient.pm
+tiarra/module/Tools/HashDB.pm
+tiarra/module/Tools/HashTools.pm
+tiarra/module/Tools/LinedDB.pm
+tiarra/module/Tools/MailSend.pm
+tiarra/module/Tools/MailSend/EachServer.pm
+@dirrm tiarra/module/Tools/MailSend
+@dirrm tiarra/module/Tools
+tiarra/module/User/Away/Client.pm
+tiarra/module/User/Away/Nick.pm
+@dirrm tiarra/module/User/Away
+tiarra/module/User/Filter.pm
+tiarra/module/User/Ignore.pm
+tiarra/module/User/Kick.pm
+tiarra/module/User/Nick/Detached.pm
+@dirrm tiarra/module/User/Nick
+tiarra/module/User/ServerOper.pm
+tiarra/module/User/Vanish.pm
+@dirrm tiarra/module/User
+@dirrm tiarra/module
+@unexec if cmp -s %D/tiarra/tiarra.conf %D/tiarra/sample.conf; then rm -f %D/tiarra/tiarra.conf; fi
+tiarra/sample.conf
+@exec [ -f %D/tiarra/tiarra.conf ] || cp %B/%f %D/tiarra/tiarra.conf
+tiarra/tiarra
+@dirrm tiarra/log
+@exec mkdir %D/tiarra/log
+@exec chown %%TIARRA_USER%%:%%TIARRA_GROUP%% %D/tiarra/log
+@exec chmod o-rwx %D/tiarra/log
+@dirrm tiarra
