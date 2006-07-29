@@ -47,7 +47,7 @@ do-install:
 	fi
 	@${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/tiarra
 	@${MKDIR} ${PREFIX}/tiarra/log
-	@${CHOWN} ${TIARRA_USER}:${TIARRA_GROUP} ${PREFIX}/tiarra/log
+	@${CHOWN} -R ${TIARRA_USER}:${TIARRA_GROUP} ${PREFIX}/tiarra/log
 	@${CHMOD} o-rwx ${PREFIX}/tiarra/log
 	@${CAT} ${PKGMESSAGE}
 
