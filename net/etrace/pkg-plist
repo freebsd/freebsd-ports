@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/etrace
+%%DATADIR%%/dns
+%%DATADIR%%/ike
+@unexec if cmp -s %D/share/etrace/profile %D/share/etrace/default.profile; then rm -f %D/share/etrace/profile; fi
+%%DATADIR%%/default.profile
+@exec if [ ! -f %D/share/etrace/profile ]; then cp %D/share/etrace/default.profile %D/share/etrace/profile; fi
+@unexec rm -r %D/%%DATADIR%% || echo "etrace: if you're finished with this port, clean up %D/share/etrace"
