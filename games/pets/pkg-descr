@@ -1,0 +1,7 @@
+This is a port of an old program by Masayuki Koba where a cute tiny kitty was
+following your mouse all over the screen. This new version is base on gtk and
+uses an xml description for animations. There is also another animation with a
+tiny tux (see the art section for povray sources).
+
+Author:	Nicolas P. Rougier <rougier@loria.fr>
+WWW:	http://www.loria.fr/~rougier/software/
