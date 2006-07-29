@@ -41,6 +41,7 @@ Note:  Please add new entries to the beginning of this file.
         <name>ruby</name>
         <name>ruby_static</name>
         <range><gt>1.6.*</gt><lt>1.8.*</lt></range>
+	<range><gt>1.8.*</gt></range>
       </package>
     </affects>
     <description>
