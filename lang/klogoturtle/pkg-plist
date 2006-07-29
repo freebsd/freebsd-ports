@@ -26,15 +26,6 @@ share/locale/de/LC_MESSAGES/klogoturtle.mo
 share/locale/fr/LC_MESSAGES/klogoturtle.mo
 share/locale/it/LC_MESSAGES/klogoturtle.mo
 share/locale/pt_BR/LC_MESSAGES/klogoturtle.mo
-@dirrmtry share/locale/pt_BR/LC_MESSAGES
-@dirrmtry share/locale/pt_BR
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
 @dirrmtry share/icons/locolor/16x16/apps
