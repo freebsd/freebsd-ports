@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	Email-Folder-IMAPS
-PORTVERSION=	1.04
+PORTVERSION=	1.10
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Email
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Email::Folder access to IMAP over SSL folders
 
-BUILD_DEPENDS=	${SITE_PERL}/URI/imaps.pm:${PORTSDIR}/mail/p5-URI-imaps \
-		${SITE_PERL}/Email/Folder/IMAP.pm:${PORTSDIR}/mail/p5-Email-Folder-IMAP \
-		${SITE_PERL}/Email/FolderType/Net.pm:${PORTSDIR}/mail/p5-Email-FolderType-Net \
-		${SITE_PERL}/Net/IMAP/Simple/SSL.pm:${PORTSDIR}/mail/p5-Net-IMAP-Simple-SSL
+BUILD_DEPENDS=	p5-Email-FolderType-Net>=0:${PORTSDIR}/mail/p5-Email-FolderType-Net \
+		p5-Email-Folder-IMAP>=0:${PORTSDIR}/mail/p5-Email-Folder-IMAP \
+		p5-Net-IMAP-Simple-SSL>=1.3:${PORTSDIR}/mail/p5-Net-IMAP-Simple-SSL \
+		p5-URI-imaps>=0:${PORTSDIR}/mail/p5-URI-imaps
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
