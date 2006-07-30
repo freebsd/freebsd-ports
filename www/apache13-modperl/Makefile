@@ -7,7 +7,6 @@
 
 PORTNAME=	apache+mod_perl
 PORTVERSION=	${VERSION_APACHE}
-PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S/$/:apache/} \
 		${MASTER_SITE_PERL_CPAN:S/$/Apache\/:modperl/}
@@ -27,7 +26,8 @@ CONFLICTS=	apache-1.* apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+
 		apache+mod_ssl+mod_snmp+mod_accel-1.* \
 		apache+ipv6-1.* apache+ssl-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
-		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
+		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* \
+		apache-*-2.*
 
 USE_PERL5=	YES
 USE_RC_SUBR=	yes
@@ -43,7 +43,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=		1.3.36
+VERSION_APACHE=		1.3.37
 VERSION_MODPERL=	1.29
 
 WRKSRC_MODPERL=	${WRKDIR}/mod_perl-${VERSION_MODPERL}
