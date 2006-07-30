@@ -8,8 +8,7 @@
 PORTNAME=	ctrace
 PORTVERSION=	0.9
 CATEGORIES=	net
-MASTER_SITES=	http://www.pratyeka.org/ctrace/download/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.pratyeka.org/ctrace/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprotocol traceroute tool
@@ -19,7 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
-USE_BZIP2=	yes
 
 MAN1=		ctrace.1
 PLIST_FILES=	sbin/ctrace
