@@ -17,12 +17,13 @@ shift
 
 . ${pb}/${arch}/portbuild.conf
 
-lock=${pb}/${arch}/lock
+lock=${pb}/${arch}/${branch}/lock
 status=${pb}/${arch}/status
 date=$(date '+%Y%m%d%H')
 shortdate=$(date '+%Y%m%d')
 
 if [ -e ${lock} ]; then
+  echo "Already locked."
   exit 1
 fi
 
