@@ -186,6 +186,7 @@
     SUBDIR += ipguard
     SUBDIR += ipsec-tools
     SUBDIR += isakmpd
+    SUBDIR += isnprober
     SUBDIR += its4
     SUBDIR += jailaudit
     SUBDIR += jce_policy14
