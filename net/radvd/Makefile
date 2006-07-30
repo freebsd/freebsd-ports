@@ -8,7 +8,7 @@
 PORTNAME=	radvd
 PORTVERSION=	0.9.1
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.litech.org/radvd/dist/
+MASTER_SITES=	http://www.litech.org/radvd/dist/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Linux/BSD IPv6 router advertisement daemon

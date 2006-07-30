@@ -8,11 +8,7 @@
 PORTNAME=	parano
 PORTVERSION=	0.3.4
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_BERLIOS} \
-		http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Gnome program to deal with hashfiles

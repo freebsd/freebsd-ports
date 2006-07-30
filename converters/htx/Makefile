@@ -8,10 +8,7 @@
 PORTNAME=	htx
 DISTVERSION=	0.7.7a
 CATEGORIES=	converters www
-MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ \
-		http://bsd.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
+MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	HTML to XHTML converter

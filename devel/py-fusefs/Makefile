@@ -7,10 +7,8 @@
 
 PORTNAME=	fusefs
 DISTVERSION=	0.2pre1-20060720
-CATEGORIES=	audio
-MASTER_SITES=	http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
+CATEGORIES=	devel
+MASTER_SITES=	CSME
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	fuse-python-${DISTVERSION}
 

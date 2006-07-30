@@ -7,9 +7,8 @@
 
 PORTNAME=	laudio
 PORTVERSION=	0.4
-CATEGORIES?=	audio linux
-MASTER_SITES=	http://www.lossless-audio.com/ \
-		http://www.csme.ru/filez/
+CATEGORIES=	audio linux
+MASTER_SITES=	http://www.lossless-audio.com/ CSME
 DISTNAME=	la04
 
 MAINTAINER=	infofarmer@FreeBSD.org

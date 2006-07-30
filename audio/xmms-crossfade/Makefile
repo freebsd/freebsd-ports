@@ -8,10 +8,7 @@
 PORTNAME=	crossfade
 PORTVERSION=	0.3.11
 CATEGORIES=	audio
-MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ \
-		http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
+MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CSME
 PKGNAMEPREFIX=	${APP}-
 DISTNAME=	xmms-${PORTNAME}-${PORTVERSION}
 

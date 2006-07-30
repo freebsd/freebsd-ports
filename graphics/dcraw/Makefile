@@ -8,10 +8,7 @@
 PORTNAME=	dcraw
 PORTVERSION=	8.25
 CATEGORIES=	graphics
-MASTER_SITES=	http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/ \
-		http://www.piwebs.com/distfiles/${PORTNAME}/
+MASTER_SITES=	CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras

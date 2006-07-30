@@ -7,8 +7,7 @@
 PORTNAME=	xquote
 PORTVERSION=	2.6.10
 CATEGORIES=	finance
-MASTER_SITES=	http://xinvest.sunsite.dk/	\
-		${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	http://xinvest.sunsite.dk/ XCONTRIB
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	infofarmer@FreeBSD.org

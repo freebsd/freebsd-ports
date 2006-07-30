@@ -8,7 +8,7 @@
 PORTNAME=	spoofer
 PORTVERSION=	0.4
 CATEGORIES=	net
-MASTER_SITES=	http://spoofer.csail.mit.edu/
+MASTER_SITES=	http://spoofer.csail.mit.edu/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	ANA Spoofer Project testing software

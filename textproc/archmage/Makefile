@@ -8,8 +8,7 @@
 PORTNAME=	archmage
 PORTVERSION=	0.0.7
 CATEGORIES=	textproc python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extensible reader/decompiler of files in CHM format
