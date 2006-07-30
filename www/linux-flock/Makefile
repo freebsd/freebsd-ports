@@ -8,6 +8,7 @@
 PORTNAME=	flock
 PORTVERSION=	0.7.3.2
 DISTVERSIONSUFFIX=	.en-US.linux-i686
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.acc.umu.se/mirror/%SUBDIR%/ \
 		http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
