@@ -21,8 +21,8 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 RESTRICTED=	Restrictions on for-profit distribution.
 
 SUB_FILES=	pkg-message
-ALL_TARGET=	world MOSMLHOME=$(MOSMLHOME)
-INSTALL_TARGET=	install MOSMLHOME=$(MOSMLHOME)
+ALL_TARGET=	world MOSMLHOME=${MOSMLHOME}
+INSTALL_TARGET=	install MOSMLHOME=${MOSMLHOME}
 WRKSRC=		${WRKDIR}/mosml/src
 USE_PERL5=	yes
 MAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" DOCSDIR="${DOCSDIR}" \
@@ -60,6 +60,7 @@ post-install:
 	   --exclude=\*.orig --exclude=\*.bak --exclude=\*.w32 * | \
 	   ${TAR} -xf - -C "${EXAMPLESDIR}"
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} "${EXAMPLESDIR}"
+	@${FIND} ${EXAMPLESDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
