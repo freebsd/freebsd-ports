@@ -86,6 +86,7 @@
     SUBDIR += kile
     SUBDIR += koffice-kde3
     SUBDIR += kxmleditor
+    SUBDIR += lazarus
     SUBDIR += le
     SUBDIR += leafpad
     SUBDIR += led
