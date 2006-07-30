@@ -1217,3 +1217,52 @@ MASTER_SITE_XORG+= \
 	http://xorg.freedesktop.org/%SUBDIR%/ \
 	ftp://ftp.x.org/pub/%SUBDIR%/
 .endif
+
+# Macro magic
+
+MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN SF:SOURCEFORGE SFE:SOURCEFORGE_EXTENDED
+MASTER_SITES_SUBDIRS=	\
+			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
+			BERLIOS:${PORTNAME:L} \
+			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
+			GCC:releases/${DISTNAME} \
+			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
+			MOZDEV:${PORTNAME:L} \
+			PERL_CPAN:${PORTNAME:C/-.*//} \
+			PNET:${PNET_MASTER_SITE_SUBDIR} \
+			PYTHON:${PYTHON_MASTER_SITE_SUBDIR} \
+			RUBY_DBI:${RUBY_DBI_MASTER_SITE_SUBDIR} \
+			RUBY_GNOME:${RUBY_GNOME_MASTER_SITE_SUBDIR} \
+			SAVANNAH:${PORTNAME:L} \
+			SOURCEFORGE:${PORTNAME:L} \
+			SOURCEFORGE_EXTENDED:${PORTNAME:L}
+
+.if defined(MASTER_SITES) && ${MASTER_SITES:N*/*}
+
+.for _site__ in ${MASTER_SITES}
+_site_=${_site__}
+.	if ${_site_:M*/*}
+MASTER_SITES_EXP+=	${_site_}
+MASTER_SITES_EXP:=	${MASTER_SITES_EXP}
+.	else
+_site_url_=		${_site_:C@^(.*):[^/:]+$@\1@}
+_site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
+.		for _abbrev_ in ${MASTER_SITES_ABBREVS}
+.			if ${_site_url_} == ${_abbrev_:C/:.*//}
+_site_url_=	${_abbrev_:C/.*://}
+.			endif
+.		endfor
+.		for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.			if ${_site_url_} == ${_subdir_:C/:.*//}
+MASTER_SITE_SUBDIR?=	${_subdir_:C/.*://}
+.			endif
+.		endfor
+.		ifdef MASTER_SITE_${_site_url_}
+MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S/$/:${_site_group_}/:S/:$//}
+MASTER_SITES_EXP:=	${MASTER_SITES_EXP}
+.		endif
+.	endif
+.endfor
+MASTER_SITES=	${MASTER_SITES_EXP}
+
+.endif
