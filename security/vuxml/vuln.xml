@@ -2517,11 +2517,11 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>1280</bid>
       <cvename>CAN-2005-0017</cvename>
-      <cvename>CAN-2005-0018</cvename>
     </references>
     <dates>
       <discovery>2005-01-27</discovery>
       <entry>2006-04-10</entry>
+      <modified>2006-07-30</modified>
     </dates>
   </vuln>
 
