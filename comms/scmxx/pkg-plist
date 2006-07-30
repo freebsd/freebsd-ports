@@ -20,10 +20,6 @@ share/locale/ru/LC_MESSAGES/scmxx.mo
 %%EXAMPLESDIR%%/vCalendar.vcs
 %%EXAMPLESDIR%%/vCard.vcf
 @dirrm %%EXAMPLESDIR%%
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/ru/LC_MESSAGES
 @dirrmtry man/de/man1
 @dirrmtry man/de/
 @dirrmtry man/ru/man1
