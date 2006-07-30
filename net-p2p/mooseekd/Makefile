@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	mooseekd
-PORTVERSION=	0.01
+PORTVERSION=	0.04
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://files.beep-media-player.org/releases/mooseekd/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A deamon to connect to the Soulseek network
 
-LIB_DEPENDS=	xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++
+LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
 
 USE_BZIP2=	yes
-USE_SCONS=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_FAM=	yes
+USE_ICONV=	yes
 
 .include <bsd.port.mk>
