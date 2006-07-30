@@ -22,6 +22,7 @@
     SUBDIR += clementine
     SUBDIR += ctwm
     SUBDIR += devilspie
+    SUBDIR += dwm
     SUBDIR += e16utils
     SUBDIR += ede
     SUBDIR += enlightenment

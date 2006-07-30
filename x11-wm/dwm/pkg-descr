@@ -1,0 +1,9 @@
+dwm is a minimalistic window manager. It manages windows in tiling and floating
+modes, much like ion, larswm and wmii. dwm however is much smaller, faster and
+simpler.
+
+It consists of a single binary and configuration is done by editing the source
+code, which makes it fast and secure. dwm reads from standard input to print
+arbitrary status text such as the date and/or system load.
+
+WWW: http://10kloc.org/dwm/
