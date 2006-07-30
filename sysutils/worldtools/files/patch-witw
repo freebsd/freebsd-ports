@@ -1,0 +1,12 @@
+--- whereintheworld.orig	Tue Dec  9 23:25:14 2003
++++ whereintheworld	Sat Jul  8 10:39:45 2006
+@@ -25,7 +25,8 @@
+ 		next;
+ 	}
+ 	if ($inside && /^>>>/) {
+-		print;
++		chomp;
++		printf "%-70.70s\n", $_;
+ 		$lastwasdash = 0;
+ 		next;
+ 	}
