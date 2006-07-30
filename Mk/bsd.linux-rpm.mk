@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.8 2006-07-13 12:35:12 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.9 2006-07-30 22:34:30 sat Exp $
 #
 
 # Variables:
@@ -65,11 +65,13 @@ LINUX_DIST_VER?=	3
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}
 
 .    if ${LINUX_DIST} == "fedora"
+.      ifndef MASTER_SITES
 MASTER_SITES?=			${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR?=	${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
 			updates/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}
 MASTER_SITE_SRC_SUBDIR?=	${LINUX_DIST_VER}/SRPMS \
 				updates/${LINUX_DIST_VER}/SRPMS
+.      endif
 .    else
 IGNORE=	unknown LINUX_DIST in port Makefile
 .    endif
