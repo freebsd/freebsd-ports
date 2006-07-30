@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xcpustate
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/jdd/xcpustate/  \
 		${MASTER_SITE_XCONTRIB}
