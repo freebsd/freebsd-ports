@@ -5650,6 +5650,7 @@ latexmk		ports/print/latexmk
 latte		ports/textproc/latte
 laudio		ports/audio/laudio
 lavaps		ports/sysutils/lavaps
+lazarus		ports/editors/lazarus
 lbdb		ports/mail/lbdb
 lbpp		ports/devel/lbpp
 lbrate		ports/archivers/lbrate
