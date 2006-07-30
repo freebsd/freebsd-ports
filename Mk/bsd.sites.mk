@@ -115,6 +115,13 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://ftp.uu.net/usenet/comp.sources.%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_CSME)
+MASTER_SITE_CSME+=	\
+	http://bsd1.csme.ru/%SUBDIR%/ \
+	http://bsd2.csme.ru/%SUBDIR%/ \
+	http://bsd3.csme.ru/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+=	\
 	http://www.gtlib.cc.gatech.edu/pub/debian/%SUBDIR%/ \
@@ -1224,6 +1231,7 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN SF:SOURCEFORGE SFE:SOURCEFORGE_EXTENDED
 MASTER_SITES_SUBDIRS=	\
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:L} \
+			CSME:myports \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
 			GNOME:sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
