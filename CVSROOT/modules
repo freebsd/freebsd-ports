@@ -15062,6 +15062,7 @@ xpi-savegenpage	ports/www/xpi-savegenpage
 xpi-searchstatus	ports/www/xpi-searchstatus
 xpi-server_switcher	ports/www/xpi-server_switcher
 xpi-sessionmanager	ports/www/xpi-sessionmanager
+xpi-statusbarclock	ports/www/xpi-statusbarclock
 xpi-stumbleupon	ports/www/xpi-stumbleupon
 xpi-surfkeys	ports/www/xpi-surfkeys
 xpi-tabextensions-ru	ports/russian/xpi-tabextensions
