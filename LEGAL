@@ -379,6 +379,8 @@ libidea-*		security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
 libSDLx11.so.tar.gz	multimedia/mtv		No redistribution
 LimeWireLinux.tgz	net-p2p/limewire	No redistribution allowed
+linunace*		archivers/linux-unace	Distribution is permitted within the
+						original package only
 Linux-ACU-Driver-v*	sysutils/linux-acu	Redistribution not allowed
 linux_devtools		devel/linux_devtools	GPL binaries
 linux-gtk2		x11-toolkits/linux-gtk2	LGPL binary, no source
