@@ -13866,6 +13866,7 @@ twhttpd		ports/www/twhttpd
 twig		ports/www/twig
 twiki		ports/www/twiki
 twin		ports/emulators/twin
+twinkle		ports/net/twinkle
 twitch		ports/games/twitch
 twoftpd		ports/ftp/twoftpd
 twolame		ports/audio/twolame
