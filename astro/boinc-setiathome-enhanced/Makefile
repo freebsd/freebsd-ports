@@ -5,29 +5,49 @@
 #
 
 PORTNAME=	boinc-setiathome-enhanced
-PORTVERSION=	5.12
+PORTVERSION=	5.13
 CATEGORIES=	astro
-MASTER_SITES=	http://www.lb.shuttle.de/apastron/boinc/
-DISTNAME=	seti${PORTVERSION}freebsd-i386
+MASTER_SITES=	http://home.tiscali.nl/rladan/distfiles/
 
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Setiathome Enhanced for BOINC
 
-USE_BZIP2=	yes
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
+		${LOCALBASE}/include/BOINC/std_fixes.h:${PORTSDIR}/net/boinc-client
+# fftw3f is statically linked :
+LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
+RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 
-.include <bsd.port.pre.mk>
-
-ONLY_FOR_ARCHS=	i386 amd64
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-#also depends on libm.so.3, libstdc++.so.4, libpthread.so.1
+# The compiler flags below are copied from m4/optimizations.m4,
+# leaving out the -march flag which is set by /usr/share/mk/bsd.cpu.mk
+.if ${MACHINE_CPU:Msse3}
+CFLAGS+=	-msse3 -mfpmath=sse
+.elif ${MACHINE_CPU:Msse2}
+CFLAGS+=	-msse2 -mfpmath=sse
+.elif ${MACHINE_CPU:Msse}
+CFLAGS+=	-msse -mfpmath=sse
 .endif
+.if ${MACHINE_CPU:Mmmx}
+CFLAGS+=	-mmmx -mfpmath=387
+.endif
+.ifdef ${MACHINE_CPU:M3dnow}
+CFLAGS+=	-m3dnow -mfpmath=387
+.endif
+# From http://www,lb.shuttle.de/apastron/boincDown.shtml :
+# what about other 64 bit archs (especially S/390, see gcc.info.gz) ?
+.ifdef ${MACHINE_CPU:Mamd64}
+CFLAGS+=	-m64
+.endif
+# no SPARC options (-mvis) available for autodection
 
-RUN_DEPENDS+=	boinc_client:${PORTSDIR}/net/boinc-client
-
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+CFLAGS+=	-I${LOCALBASE}/include -funroll-loops -ffast-math -O3
+CXXFLAGS+=	${CFLAGS}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		BOINCDIR="${LOCALBASE}"
+CONFIGURE_ARGS=	--disable-server \
+		--disable-graphics
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_USER?=	boinc
@@ -35,33 +55,29 @@ BOINC_GROUP?=	nobody
 BOINC_HOME?=	/var/db/boinc
 
 SETI_SITE=	setiathome.berkeley.edu
-SETI_BINARY=	setiathome-${PORTVERSION}.i386-unknown-freebsd
+SETI_BINARY=	setiathome-${PORTVERSION}.${ARCH}-portbld-freebsd
 
-.if ${ARCH} == amd64 && ${OSVERSION} >= 600000
-AMD64=		""
-.else
-AMD64=		"@comment "
-.endif
-
-SUB_FILES=	pkg-message
-SUB_LIST=	AMD64=${AMD64}
+SUB_FILES=	app_info.xml
+SUB_LIST=	STRIPPED_PORTVERSION=${PORTVERSION:S/.//} \
+		SETI_BINARY="${SETI_BINARY}"
 
 PLIST_SUB=	SETI_BINARY="${SETI_BINARY}" SETI_SITE=${SETI_SITE} \
 		BOINC_HOME=${BOINC_HOME}
 
+PORTDOCS=	AUTHORS COPYING COPYRIGHT README checkin_notes
 do-install:
 	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
-	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects/${SETI_SITE}$
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/${SETI_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
+	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects/${SETI_SITE}
+	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKSRC}/client/${SETI_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
 	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/app_info.xml ${BOINC_HOME}/projects/${SETI_SITE}/
-.if !defined(NOPORTDOCS)
+.ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS CHANGES COPYING COPYRIGHT README
-	${INSTALL_DATA} ${WRKDIR}/${file} ${DOCSDIR}/${file}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
 .endfor
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
