@@ -41,7 +41,7 @@ Note:  Please add new entries to the beginning of this file.
         <name>ruby</name>
         <name>ruby_static</name>
         <range><gt>1.6.*</gt><lt>1.8.*</lt></range>
-	<range><gt>1.8.*</gt></range>
+	<range><gt>1.8.*</gt><lt>1.8.4_9,1</range>
       </package>
     </affects>
     <description>
@@ -72,6 +72,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-07-12</discovery>
       <entry>2006-07-29</entry>
+      <modified>2006-07-30</modified>
     </dates>
   </vuln>
   <vuln vid="dc8c08c7-1e7c-11db-88cf-000c6ec775d9">
