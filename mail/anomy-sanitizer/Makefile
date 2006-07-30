@@ -7,6 +7,7 @@
 
 PORTNAME=	anomy-sanitizer
 PORTVERSION=	1.76
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://mailtools.anomy.net/dist/
 
@@ -31,6 +32,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/MIMEStream.pm ${SITE_PERL}/Anomy
 	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer.pm ${SITE_PERL}/Anomy
 	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/FProt.pm ${SITE_PERL}/Anomy/Sanitizer/
+	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/FileTypes.pm ${SITE_PERL}/Anomy/Sanitizer/
 	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/MacroScanner.pm ${SITE_PERL}/Anomy/Sanitizer/
 	${INSTALL_DATA} ${WRKSRC}/bin/Anomy/Sanitizer/Scoring.pm ${SITE_PERL}/Anomy/Sanitizer/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/sanitizer.pl ${PREFIX}/bin
