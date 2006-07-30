@@ -45,6 +45,7 @@ post-install:
 	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
 		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
 	@${CHOWN} -R ${SHAREMODE}:${SHAREGRP} ${EXAMPLESDIR}
+	@${FIND} ${EXAMPLESDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
 
 .include <bsd.port.post.mk>
