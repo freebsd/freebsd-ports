@@ -75,6 +75,7 @@ Note:  Please add new entries to the beginning of this file.
       <modified>2006-07-30</modified>
     </dates>
   </vuln>
+
   <vuln vid="dc8c08c7-1e7c-11db-88cf-000c6ec775d9">
     <topic>apache -- mod_rewrite buffer overflow vulnerability</topic>
     <affects>
@@ -421,10 +422,10 @@ Note:  Please add new entries to the beginning of this file.
 	    suffixes without the .txt filename padding.</p>
 	</blockquote>
 	<p>This issue can also be worked around with a restrictive web
-	  server configuration.	 See the <a
-	    href="http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads"
-	    >TWiki Security Alert</a> for more information about how to
-	  do this.</p>
+	  server configuration.	 See the
+	  <a href="http://twiki.org/cgi-bin/view/Codev/SecurityAlertSecureFileUploads">TWiki
+	    Security Alert</a> for more information about how to do
+	  this.</p>
       </body>
     </description>
     <references>
@@ -440,8 +441,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="b0d61f73-0e11-11db-a47b-000c2957fdf1">
-    <topic>trac -- reStructuredText breach of privacy and denial of
-      service vulnerability</topic>
+    <topic>trac -- reStructuredText breach of privacy and denial of service vulnerability</topic>
     <affects>
       <package>
 	<name>trac</name>
@@ -763,8 +763,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="09429f7c-fd6e-11da-b1cd-0050bf27ba24">
-    <topic>horde -- multiple parameter cross site scripting
-      vulnerabilities</topic>
+    <topic>horde -- multiple parameter cross site scripting vulnerabilities</topic>
     <affects>
       <package>
 	<name>horde</name>
@@ -1053,10 +1052,10 @@ Note:  Please add new entries to the beginning of this file.
 	    SQL injection attacks, similar to the issues noted below.
 	    All sites that have not deployed the rlm_sqlcounter module
 	    are not vulnerable to external exploits.</p>
-	  <p>The issues are:<br /> 
-	    SQL Injection attack in the rlm_sqlcounter module.<br />
+	  <p>The issues are:<br/> 
+	    SQL Injection attack in the rlm_sqlcounter module.<br/>
 	    Buffer overflow in the rlm_sqlcounter module, that may cause
-	    a server crash. <br />
+	    a server crash. <br/>
 	    Buffer overflow while expanding %t, that may cause a server
 	    crash.</p>
 	</blockquote>
@@ -1106,8 +1105,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="00784d6e-f4ce-11da-87a1-000c6ec775d9">
-    <topic>squirrelmail -- plugin.php local file inclusion
-      vulnerability</topic>
+    <topic>squirrelmail -- plugin.php local file inclusion vulnerability</topic>
     <affects>
       <package>
 	<name>squirrelmail</name>
@@ -2024,8 +2022,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="8b683bea-d49c-11da-a672-000e0c2e438a">
-    <topic>asterisk -- denial of service vulnerability, local system
-      access</topic>
+    <topic>asterisk -- denial of service vulnerability, local system access</topic>
     <affects>
       <package>
 	<name>asterisk</name>
@@ -2092,8 +2089,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="86cc5c6f-d2b4-11da-a672-000e0c2e438a">
-    <topic>crossfire-server -- denial of service and remote code
-      execution vulnerability</topic>
+    <topic>crossfire-server -- denial of service and remote code execution vulnerability</topic>
     <affects>
       <package>
 	<name>crossfire-server</name>
@@ -2126,8 +2122,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="8cfb6f42-d2b0-11da-a672-000e0c2e438a">
-    <topic>p5-DBI -- insecure temporary file creation
-      vulnerability</topic>
+    <topic>p5-DBI -- insecure temporary file creation vulnerability</topic>
     <affects>
       <package>
 	<name>p5-DBI-137</name>
@@ -2731,8 +2726,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="99015cf5-c4dd-11da-b2fb-000e0c2e438a">
-    <topic>mediawiki -- hardcoded placeholder string security bypass
-      vulnerability</topic>
+    <topic>mediawiki -- hardcoded placeholder string security bypass vulnerability</topic>
     <affects>
       <package>
 	<name>mediawiki</name>
@@ -3093,8 +3087,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="2db97aa6-be81-11da-9b82-0050bf27ba24">
-    <topic>horde -- remote code execution vulnerability in the help
-      viewer</topic>
+    <topic>horde -- remote code execution vulnerability in the help viewer</topic>
     <affects>
       <package>
 	<name>horde</name>
@@ -3492,8 +3485,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="c7c09579-b466-11da-82d0-0050bf27ba24">
-    <topic>horde -- "url" disclosure of sensitive information
-      vulnerability</topic>
+    <topic>horde -- "url" disclosure of sensitive information vulnerability</topic>
     <affects>
       <package>
 	<name>horde</name>
@@ -3664,8 +3656,8 @@ Note:  Please add new entries to the beginning of this file.
 	      be able to log in using their Unix password, OPIE or SSH
 	      keys.</p>
 	    <p>To do this, execute the following commands as root:</p>
-	    <pre># echo 'UsePAM no' >>/etc/ssh/sshd_config</pre>
-	    <pre># echo 'PasswordAuthentication yes' >>/etc/ssh/sshd_config</pre>
+	    <pre># echo 'UsePAM no' &gt;&gt;/etc/ssh/sshd_config</pre>
+	    <pre># echo 'PasswordAuthentication yes' &gt;&gt;/etc/ssh/sshd_config</pre>
 	    <pre># /etc/rc.d/sshd restart</pre>
           </li>
 	  <li>
@@ -3675,7 +3667,7 @@ Note:  Please add new entries to the beginning of this file.
 	      leave OpenSSH vulnerable to hitherto unknown bugs, and should be
 	      considered a last resort.</p>
 	    <p>To do this, execute the following commands as root:</p>
-	    <pre># echo 'UsePrivilegeSeparation no' >>/etc/ssh/sshd_config</pre>
+	    <pre># echo 'UsePrivilegeSeparation no' &gt;&gt;/etc/ssh/sshd_config</pre>
 	    <pre># /etc/rc.d/sshd restart</pre>
 	  </li>
 	</ol>
@@ -4744,7 +4736,7 @@ Note:  Please add new entries to the beginning of this file.
 	  check operations employs an insecure method of temporary file
 	  generation.  This method produces predictable file names based
 	  on the process ID and fails to confirm which path will be over
-	  written with the user.<br />
+	  written with the user.<br/>
 	  It should be noted that ispell does not have to be installed
 	  in order for this to be exploited.  The option simply needs to
 	  be selected.</p>
@@ -4830,7 +4822,7 @@ Note:  Please add new entries to the beginning of this file.
 	  which an attacker could replace the file with a link to
 	  another file.  While cvsbug(1) is based on the send-pr(1)
 	  utility, this problem does not exist in the version of
-	  send-pr(1) distributed with FreeBSD.<br />
+	  send-pr(1) distributed with FreeBSD.<br/>
 	  In FreeBSD 4.10 and 5.3, some additional problems exist
 	  concerning temporary file usage in both cvsbug(1) and
 	  send-pr(1).</p>
@@ -4842,7 +4834,7 @@ Note:  Please add new entries to the beginning of this file.
 	  documents) or may be used to obtain elevated privileges.</p>
 	<p>Workaround</p>
 	<p>Do not use the cvsbug(1) utility on any system with untrusted
-       	  users.<br />
+       	  users.<br/>
 	  Do not use the send-pr(1) utility on a FreeBSD 4.10 or 5.3
 	  system with untrusted users.</p>
       </body>
@@ -5236,8 +5228,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="f7eb0b23-7099-11da-a15c-0060084a00e5">
-    <topic>fetchmail -- null pointer dereference in multidrop mode with
-      headerless email</topic>
+    <topic>fetchmail -- null pointer dereference in multidrop mode with headerless email</topic>
       <affects>
         <package>
           <name>fetchmail</name>
@@ -5302,8 +5293,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="6e3b12e2-6ce3-11da-b90c-000e0c2e438a">
-    <topic>mantis -- "view_filters_page.php" cross-site scripting
-      vulnerability</topic>
+    <topic>mantis -- "view_filters_page.php" cross-site scripting vulnerability</topic>
     <affects>
       <package>
 	<name>mantis</name>
@@ -5336,8 +5326,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="2506f558-6a8a-11da-b96e-000fb586ba73">
-    <topic>mnemo -- Cross site scripting vulnerabilities in several of
-      the notepad name and note data fields</topic>
+    <topic>mnemo -- Cross site scripting vulnerabilities in several of the notepad name and note data fields</topic>
     <affects>
       <package>
 	<name>mnemo</name>
@@ -5367,8 +5356,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="ee6b5956-6a89-11da-b96e-000fb586ba73">
-    <topic>nag -- Cross site scripting vulnerabilities in several of
-      the tasklist name and task data fields</topic>
+    <topic>nag -- Cross site scripting vulnerabilities in several of the tasklist name and task data fields</topic>
     <affects>
       <package>
 	<name>nag</name>
@@ -5398,8 +5386,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="eeebd55d-6a88-11da-b96e-000fb586ba73">
-    <topic>turba -- Cross site scripting vulnerabilities in several of
-      the address book name and contact data fields</topic>
+    <topic>turba -- Cross site scripting vulnerabilities in several of the address book name and contact data fields</topic>
     <affects>
       <package>
 	<name>turba</name>
@@ -5429,8 +5416,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="36494478-6a88-11da-b96e-000fb586ba73">
-    <topic>kronolith -- Cross site scripting vulnerabilities in several
-      of the calendar name and event data fields</topic>
+    <topic>kronolith -- Cross site scripting vulnerabilities in several of the calendar name and event data fields</topic>
     <affects>
       <package>
 	<name>kronolith</name>
@@ -5460,8 +5446,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="01356ccc-6a87-11da-b96e-000fb586ba73">
-    <topic>horde -- Cross site scripting vulnerabilities in several of
-      Horde's templates</topic>
+    <topic>horde -- Cross site scripting vulnerabilities in several of Horde's templates</topic>
     <affects>
       <package>
 	<name>horde</name>
@@ -6209,8 +6194,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="6129fdc7-6462-456d-a3ef-8fc3fbf44d16">
-    <topic>openvpn -- arbitrary code execution on client through
-      malicious or compromised server</topic>
+    <topic>openvpn -- arbitrary code execution on client through malicious or compromised server</topic>
     <affects>
       <package>
 	<name>openvpn</name>
@@ -6533,8 +6517,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="97d45e95-3ffc-11da-a263-0001020eed82">
-    <topic>snort -- Back Orifice preprocessor buffer overflow
-      vulnerability</topic>
+    <topic>snort -- Back Orifice preprocessor buffer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>snort</name>
@@ -6975,8 +6958,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="271498a9-2cd4-11da-a263-0001020eed82">
-    <topic>clamav -- arbitrary code execution and DoS
-      vulnerabilities</topic>
+    <topic>clamav -- arbitrary code execution and DoS vulnerabilities</topic>
     <affects>
       <package>
 	<name>clamav</name>
@@ -7112,8 +7094,7 @@ Note:  Please add new entries to the beginning of this file.
 	    files on intranet servers behind a firewall.</p>
 	  <h1>Object spoofing using XBL &lt;implements&gt;</h1>
 	  <p>moz_bug_r_a4 demonstrated a DOM object spoofing bug
-	    similar to <a
-	    href="http://www.mozilla.org/security/announce/mfsa2005-55.html">MFSA
+	    similar to <a href="http://www.mozilla.org/security/announce/mfsa2005-55.html">MFSA
 	    2005-55</a> using an XBL control that &lt;implements&gt;
 	    an internal interface. The severity depends on the version
 	    of Firefox: investigation so far indicates Firefox 1.0.x
@@ -7163,8 +7144,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="2e28cefb-2aee-11da-a263-0001020eed82">
-    <topic>firefox &amp; mozilla -- command line URL shell command
-      injection</topic>
+    <topic>firefox &amp; mozilla -- command line URL shell command injection</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -7283,8 +7263,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="7d52081f-2795-11da-bc01-000e0c2e438a">
-    <topic>squirrelmail -- _$POST variable handling allows for various
-      attacks</topic>
+    <topic>squirrelmail -- _$POST variable handling allows for various attacks</topic>
     <affects>
       <package>
 	<name>squirrelmail</name>
@@ -7383,8 +7362,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="8665ebb9-2237-11da-978e-0001020eed82">
-    <topic>firefox &amp; mozilla -- buffer overflow
-      vulnerability</topic>
+    <topic>firefox &amp; mozilla -- buffer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -7462,8 +7440,7 @@ Note:  Please add new entries to the beginning of this file.
 	</blockquote>
 	<p><strong>Note:</strong> It is possible to disable IDN
 	  support as a workaround to protect against this buffer
-	  overflow. How to do this is described on the <em><a
-	  href="http://www.mozilla.org/security/idn.html">What Firefox
+	  overflow. How to do this is described on the <em><a href="http://www.mozilla.org/security/idn.html">What Firefox
 	  and Mozilla users should know about the IDN buffer overflow
 	  security issue</a></em> web page.</p>
       </body>
@@ -7557,7 +7534,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The squid patches page notes:</p>
 	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE10-STORE_PENDING">
 	  <p>Squid crashes with the above assertion failure [assertion failed:
-	    store.c:523: "e->store_status == STORE_PENDING"] in certain
+	    store.c:523: "e-&gt;store_status == STORE_PENDING"] in certain
 	    conditions involving aborted requests.</p>
 	</blockquote>
       </body>
@@ -7698,6 +7675,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2005-08-29</entry>
     </dates>
   </vuln>
+
   <vuln vid="e5afdf63-1746-11da-978e-0001020eed82">
     <topic>evolution -- remote format string vulnerabilities</topic>
     <affects>
@@ -7824,7 +7802,7 @@ Note:  Please add new entries to the beginning of this file.
 	    started copy of Elm, the buffer overflow will happen
 	    immediately. The overflow is stack-based, and it gives full
 	    control over EIP, EBP and EBX. It is caused by a bad
-	    sscanf(3) call, using a format string containing &quot;%s&quot;
+	    sscanf(3) call, using a format string containing "%s"
 	    to copy from a long char array to a shorter array.</p>
 	</blockquote>
       </body>
@@ -7869,7 +7847,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="1986449a-8b74-40fa-b7cc-0d8def8aad65">
-    <topic>openvpn -- denial of service: malicious authenticated &quot;tap&quot; client can deplete server virtual memory</topic>
+    <topic>openvpn -- denial of service: malicious authenticated "tap" client can deplete server virtual memory</topic>
     <affects>
       <package>
 	<name>openvpn</name>
@@ -7880,7 +7858,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>James Yonan reports:</p>
 	<blockquote cite="http://openvpn.net/changelog.html">
-	  <p>A malicious [authenticated] client in &quot;dev tap&quot;
+	  <p>A malicious [authenticated] client in "dev tap"
 	    ethernet bridging mode could theoretically flood the server
 	    with packets appearing to come from hundreds of thousands
 	    of different MAC addresses, causing the OpenVPN process to
@@ -8645,9 +8623,9 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2005-08-01</entry>
     </dates>
   </vuln>
+
   <vuln vid="b1e8c810-01d0-11da-bc08-0001020eed82">
-    <topic>sylpheed -- MIME-encoded file name buffer overflow
-      vulnerability</topic>
+    <topic>sylpheed -- MIME-encoded file name buffer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>sylpheed</name>
@@ -9175,8 +9153,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="b4892b5b-fb1c-11d9-96ba-00909925db3e">
-    <topic>egroupware -- multiple cross-site scripting (XSS) and SQL
-      injection vulnerabilities</topic>
+    <topic>egroupware -- multiple cross-site scripting (XSS) and SQL injection vulnerabilities</topic>
     <affects>
       <package>
 	<name>egroupware</name>
@@ -9720,8 +9697,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="b64481d9-eff4-11d9-8310-0001020eed82">
-    <topic>pear-XML_RPC -- information disclosure
-      vulnerabilities</topic>
+    <topic>pear-XML_RPC -- information disclosure vulnerabilities</topic>
     <affects>
       <package>
 	<name>pear-XML_RPC</name>
@@ -9786,7 +9762,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>bugzilla</name>
 	<name>ja-bugzilla</name>
-	<range><ge>2.17.1</ge><lt>2.18.2 </lt></range>
+	<range><ge>2.17.1</ge><lt>2.18.2</lt></range>
       </package>
     </affects>
     <description>
@@ -9839,7 +9815,7 @@ Note:  Please add new entries to the beginning of this file.
 	  sensitive information are created with insecure permissions.
 	  The information exposed include passwords and can therefore
 	  be used for privilege elevation.</p>
-	<p>An empty &quot;servers&quot; file, which should normally
+	<p>An empty "servers" file, which should normally
 	  contain hostnames of authorized backup servers, may allow
 	  unauthorized backups to be made. Sensitive information can
 	  be extracted from these backups.</p>
@@ -10727,8 +10703,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="40856a51-e1d9-11d9-b875-0001020eed82">
-    <topic>opera -- "javascript:" URL cross-site scripting
-      vulnerability</topic>
+    <topic>opera -- "javascript:" URL cross-site scripting vulnerability</topic>
     <affects>
       <package>
 	<name>linux-opera</name>
@@ -11012,8 +10987,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="63bd4bad-dffe-11d9-b875-0001020eed82">
-    <topic>gzip -- directory traversal and permission race
-      vulnerabilities</topic>
+    <topic>gzip -- directory traversal and permission race vulnerabilities</topic>
     <affects>
       <system>
 	<name>FreeBSD</name>
@@ -11504,8 +11478,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="310d0087-0fde-4929-a41f-96f17c5adffe">
-    <topic>xloadimage -- arbitrary command execution when handling
-      compressed files</topic>
+    <topic>xloadimage -- arbitrary command execution when handling compressed files</topic>
     <affects>
       <package>
 	<name>xli</name>
@@ -11573,8 +11546,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="99b5cfa5-d3d2-11d9-8ffb-00061bc2ad93">
-    <topic>yamt -- buffer overflow and directory traversal
-      issues</topic>
+    <topic>yamt -- buffer overflow and directory traversal issues</topic>
     <affects>
       <package>
 	<name>yamt</name>
@@ -11843,8 +11815,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Barry Warsaw reports:</p>
-	<blockquote
-	  cite="http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html">
+	<blockquote cite="http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html">
 	  <p>Today I am releasing Mailman 2.1.5, a bug fix release
 	    [...] This version also contains a fix for an exploit that
 	    could allow 3rd parties to retrieve member passwords.  It is
@@ -11924,6 +11895,7 @@ Note:  Please add new entries to the beginning of this file.
       <modified>2005-06-01</modified>
     </dates>
   </vuln>
+
   <vuln vid="2fbe16c2-cab6-11d9-9aed-000e0c2e438a">
     <topic>freeradius -- sql injection and denial of service vulnerability</topic>
     <affects>
@@ -12147,7 +12119,7 @@ Note:  Please add new entries to the beginning of this file.
 	  support are not affected by this issue.  On systems which are
 	  affected, the security flaw can be eliminated by setting the
 	  "machdep.hlt_logical_cpus" tunable:</p>
-	<pre># echo "machdep.hlt_logical_cpus=1" >> /boot/loader.conf</pre>
+	<pre># echo "machdep.hlt_logical_cpus=1" &gt;&gt; /boot/loader.conf</pre>
 	<p>The system must be rebooted in order for tunables to take effect.</p>
 	<p>Use of this workaround is not recommended on "dual-core" systems, as
 	  this workaround will also disable one of the processor
@@ -12203,8 +12175,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="a6427195-c2c7-11d9-89f7-02061b08fc24">
-    <topic>mozilla -- privilege escalation via non-DOM property
-      overrides</topic>
+    <topic>mozilla -- privilege escalation via non-DOM property overrides</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -12271,8 +12242,7 @@ Note:  Please add new entries to the beginning of this file.
 	    and Script objects are run with the privileges of the
 	    context that created them, not the potentially elevated
 	    privilege of the context calling them in order to protect
-	    against an additional variant of <a
-	    href="http://www.mozilla.org/security/announce/mfsa2005-41.html">MFSA
+	    against an additional variant of <a href="http://www.mozilla.org/security/announce/mfsa2005-41.html">MFSA
 	    2005-41</a>.</p>
 	</blockquote>
 	<p>The Mozilla Foundation Security Advisory MFSA 2005-41
@@ -12295,8 +12265,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="a81746a1-c2c7-11d9-89f7-02061b08fc24">
-    <topic>mozilla -- "Wrapped" javascript: urls bypass security
-      checks</topic>
+    <topic>mozilla -- "Wrapped" javascript: urls bypass security checks</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -12363,8 +12332,7 @@ Note:  Please add new entries to the beginning of this file.
 	    were incorrect and could be bypassed by wrapping a
 	    javascript: url in the view-source:
 	    pseudo-protocol. Michael Krax demonstrated that a variant
-	    of his <a
-	    href="http://www.mozilla.org/security/announce/mfsa2005-37.html">favicon</a>
+	    of his <a href="http://www.mozilla.org/security/announce/mfsa2005-37.html">favicon</a>
 	    exploit could still execute arbitrary code, and the same
 	    technique could also be used to perform cross-site
 	    scripting.</p>
@@ -12386,8 +12354,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="eca6195a-c233-11d9-804c-02061b08fc24">
-    <topic>mozilla -- code execution via javascript: IconURL
-      vulnerability</topic>
+    <topic>mozilla -- code execution via javascript: IconURL vulnerability</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -12667,8 +12634,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="91c606fc-b5d0-11d9-a788-0001020eed82">
-    <topic>mplayer &amp; libxine -- MMS and Real RTSP buffer overflow
-      vulnerabilities</topic>
+    <topic>mplayer &amp; libxine -- MMS and Real RTSP buffer overflow vulnerabilities</topic>
     <affects>
       <package>
 	<name>mplayer</name>
@@ -12794,8 +12760,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="91f1adc7-b3e9-11d9-a788-0001020eed82">
-    <topic>kdewebdev -- kommander untrusted code execution
-      vulnerability</topic>
+    <topic>kdewebdev -- kommander untrusted code execution vulnerability</topic>
     <affects>
       <package>
 	<name>kdewebdev</name>
@@ -12827,8 +12792,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="97edf5ab-b319-11d9-837d-000e0c2e438a">
-    <topic>junkbuster -- heap corruption vulnerability and configuration
-      modification vulnerability</topic>
+    <topic>junkbuster -- heap corruption vulnerability and configuration modification vulnerability</topic>
     <affects>
       <package>
 	<name>junkbuster</name>
@@ -13255,8 +13219,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="45b75152-ae5f-11d9-a788-0001020eed82">
-    <topic>mozilla --  javascript "lambda" replace exposes memory
-      contents</topic>
+    <topic>mozilla -- javascript "lambda" replace exposes memory contents</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -13451,8 +13414,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="22f00553-a09d-11d9-a788-0001020eed82">
-    <topic>portupgrade -- insecure temporary file handling
-      vulnerability</topic>
+    <topic>portupgrade -- insecure temporary file handling vulnerability</topic>
     <affects>
       <package>
 	<name>portupgrade</name>
@@ -13815,8 +13777,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="48a59c96-9c6e-11d9-a040-000a95bc6fae">
-    <topic>wine -- information disclosure due to insecure temporary
-      file handling</topic>
+    <topic>wine -- information disclosure due to insecure temporary file handling</topic>
     <affects>
       <package>
 	<name>wine</name>
@@ -14152,8 +14113,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="bcf27002-94c3-11d9-a9e0-0001020eed82">
-    <topic>grip -- CDDB response multiple matches buffer overflow
-      vulnerability</topic>
+    <topic>grip -- CDDB response multiple matches buffer overflow vulnerability</topic>
     <affects>
       <package>
 	<name>grip</name>
@@ -14459,7 +14419,7 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-   <vuln vid="c73305ae-8cd7-11d9-9873-000a95bc6fae">
+  <vuln vid="c73305ae-8cd7-11d9-9873-000a95bc6fae">
      <topic>realplayer -- remote heap overflow</topic>
     <affects>
       <package>
@@ -15025,7 +14985,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <li>There are directory traversal bugs when extracting ACE
 	    archives.</li>
 	  <li>There are also buffer overflows when dealing with long
-	    (>17000 characters) command line arguments.</li>
+	    (&gt;17000 characters) command line arguments.</li>
 	</ul>
       </body>
     </description>
@@ -15251,8 +15211,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="6b4b0b3f-8127-11d9-a9e7-0001020eed82">
-    <topic>postgresql -- multiple buffer overflows in PL/PgSQL
-      parser</topic>
+    <topic>postgresql -- multiple buffer overflows in PL/PgSQL parser</topic>
     <affects>
       <package>
 	<name>postgresql</name>
@@ -15827,6 +15786,7 @@ Note:  Please add new entries to the beginning of this file.
     <entry>2005-02-01</entry>
    </dates>
   </vuln>
+
   <vuln vid="7f13607b-6948-11d9-8937-00065be4b5b6">
    <topic>newspost -- server response buffer overflow vulnerability</topic>
    <affects>
@@ -16090,8 +16050,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="b4d94fa0-6e38-11d9-9e1e-c296ac722cb3">
-    <topic>squid -- possible cache-poisoning via malformed HTTP
-      responses</topic>
+    <topic>squid -- possible cache-poisoning via malformed HTTP responses</topic>
     <affects>
       <package>
         <name>squid</name>
@@ -16443,7 +16402,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="e8c6ade2-6bcc-11d9-8e6f-000a95bc6fae">
-    <cancelled superseded="e3cf89f0-53da-11d9-92b7-ceadd4ac2edd" />
+    <cancelled superseded="e3cf89f0-53da-11d9-92b7-ceadd4ac2edd"/>
   </vuln>
 
   <vuln vid="1489df94-6bcb-11d9-a21e-000a95bc6fae">
@@ -16695,7 +16654,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="5c7bb4dd-6a56-11d9-97ec-000c6e8f12ef">
-    <topic>konversation  --  shell script command injection</topic>
+    <topic>konversation -- shell script command injection</topic>
     <affects>
       <package>
 	<name>konversation</name>
@@ -17743,7 +17702,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="14e8f315-600e-11d9-a9e7-0001020eed82">
-    <cancelled superseded="3897a2f8-1d57-11d9-bc4a-000c41e2cdad" />
+    <cancelled superseded="3897a2f8-1d57-11d9-bc4a-000c41e2cdad"/>
   </vuln>
 
   <vuln vid="bd9fc2bf-5ffe-11d9-a11a-000a95bc6fae">
@@ -17907,7 +17866,7 @@ http_access deny Gopher</pre>
 	used to process GRX (GetRight) files that originate from untrusted
 	sources.</p>
 	<p>The bug finder, Manigandan Radhakrishnan, gave the following description:</p>
-	<blockquote cite='http://tigger.uic.edu/~jlongs2/holes/greed.txt'>
+	<blockquote cite="http://tigger.uic.edu/~jlongs2/holes/greed.txt">
 	  <p>Here are the bugs. First, in main.c, DownloadLoop() uses strcat()
 	    to copy an input filename to the end of a 128-byte COMMAND array.
 	    Second, DownloadLoop() passes the input filename to system() without
@@ -18151,7 +18110,7 @@ http_access deny Gopher</pre>
 	<blockquote cite="http://www.squid-cache.org/bugs/show_bug.cgi?id=1166">
 	  <p>The meaning of the configuration gets very confusing when
 	    we encounter empty ACLs such as</p>
-	  <p><code>acl something src "/path/to/empty_file.txt"<br />
+	  <p><code>acl something src "/path/to/empty_file.txt"<br/>
 	      http_access allow something somewhere</code></p>
 	  <p>gets parsed (with warnings) as</p>
 	  <p><code>http_access allow somwhere</code></p>
@@ -18534,7 +18493,7 @@ http_access deny Gopher</pre>
     </dates>
   </vuln>
 
-   <vuln vid="01c231cd-4393-11d9-8bb9-00065be4b5b6">
+  <vuln vid="01c231cd-4393-11d9-8bb9-00065be4b5b6">
      <topic>mysql -- GRANT access restriction problem</topic>
      <affects>
        <package>
@@ -18568,7 +18527,7 @@ http_access deny Gopher</pre>
      </dates>
    </vuln>
 
-   <vuln vid="06a6b2cf-484b-11d9-813c-00065be4b5b6">
+  <vuln vid="06a6b2cf-484b-11d9-813c-00065be4b5b6">
      <topic>mysql -- ALTER MERGE denial of service vulnerability</topic>
      <affects>
        <package>
@@ -18605,7 +18564,7 @@ http_access deny Gopher</pre>
      </dates>
    </vuln>
 
-   <vuln vid="29edd807-438d-11d9-8bb9-00065be4b5b6">
+  <vuln vid="29edd807-438d-11d9-8bb9-00065be4b5b6">
      <topic>mysql -- FTS request denial of service vulnerability</topic>
      <affects>
        <package>
@@ -18634,7 +18593,7 @@ http_access deny Gopher</pre>
      </dates>
    </vuln>
 
-   <vuln vid="835256b8-46ed-11d9-8ce0-00065be4b5b6">
+  <vuln vid="835256b8-46ed-11d9-8ce0-00065be4b5b6">
      <topic>mysql -- mysql_real_connect buffer overflow vulnerability</topic>
      <affects>
        <package>
@@ -18680,7 +18639,7 @@ http_access deny Gopher</pre>
      </dates>
    </vuln>
 
-   <vuln vid="035d17b2-484a-11d9-813c-00065be4b5b6">
+  <vuln vid="035d17b2-484a-11d9-813c-00065be4b5b6">
      <topic>mysql -- erroneous access restrictions applied to table renames</topic>
      <affects>
        <package>
@@ -18978,8 +18937,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="9be819c6-4633-11d9-a9e7-0001020eed82">
-    <topic>bnc -- remotely exploitable buffer overflow in
-      getnickuserhost</topic>
+    <topic>bnc -- remotely exploitable buffer overflow in getnickuserhost</topic>
     <affects>
       <package>
 	<name>bnc</name>
@@ -19504,8 +19462,7 @@ http_access deny Gopher</pre>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>An integer overflow condition in <a
-	    href="http://www.freebsd.org/cgi/man.cgi?query=fetch">fetch(1)</a>
+	<p>An integer overflow condition in <a href="http://www.freebsd.org/cgi/man.cgi?query=fetch">fetch(1)</a>
 	  in the processing of HTTP headers can result in a buffer
 	  overflow.</p>
 	<p>A malicious server or CGI script can respond to an HTTP or
@@ -19777,7 +19734,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="1f8dea68-3436-11d9-952f-000c6e8f12ef">
-    <cancelled superseded="9be819c6-4633-11d9-a9e7-0001020eed82" />
+    <cancelled superseded="9be819c6-4633-11d9-a9e7-0001020eed82"/>
   </vuln>
 
   <vuln vid="027380b7-3404-11d9-ac1b-000d614f7fad">
@@ -19912,8 +19869,7 @@ http_access deny Gopher</pre>
 	<blockquote cite="http://www.dest-unreach.org/socat/advisory/socat-adv-1.html">
 	  <p>socat up to version 1.4.0.2 contains a syslog() based
 	    format string vulnerability. This issue was originally
-	    reported by CoKi on 19 Oct.2004 <a
-	      href="http://www.nosystem.com.ar/advisories/advisory-07.txt">http://www.nosystem.com.ar/advisories/advisory-07.txt</a>.
+	    reported by CoKi on 19 Oct.2004 <a href="http://www.nosystem.com.ar/advisories/advisory-07.txt">http://www.nosystem.com.ar/advisories/advisory-07.txt</a>.
 	    Further investigation showed that this vulnerability could
 	    under some circumstances lead to local or remote execution
 	    of arbitrary code with the privileges of the socat
@@ -19964,7 +19920,7 @@ http_access deny Gopher</pre>
     </dates>
   </vuln>
 
-   <vuln vid="a5742055-300a-11d9-a9e7-0001020eed82">
+  <vuln vid="a5742055-300a-11d9-a9e7-0001020eed82">
     <topic>p5-Archive-Zip -- virus detection evasion</topic>
     <affects>
       <package>
@@ -20046,8 +20002,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="6a164d84-2f7f-11d9-a9e7-0001020eed82">
-    <topic>postgresql-contrib -- insecure temporary file
-      creation</topic>
+    <topic>postgresql-contrib -- insecure temporary file creation</topic>
     <affects>
       <package>
 	<name>postgresql-contrib</name>
@@ -20190,8 +20145,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="ed1d404d-2784-11d9-b954-000bdb1444a4">
-    <topic>horde -- cross-site scripting vulnerability in help
-      window</topic>
+    <topic>horde -- cross-site scripting vulnerability in help window</topic>
     <affects>
       <package>
         <name>horde</name>
@@ -20419,8 +20373,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="e16293f0-26b7-11d9-9289-000c41e2cdad">
-    <topic>gaim -- heap overflow exploitable by malicious GroupWise
-      server</topic>
+    <topic>gaim -- heap overflow exploitable by malicious GroupWise server</topic>
     <affects>
       <package>
 	<name>gaim</name>
@@ -20564,7 +20517,6 @@ http_access deny Gopher</pre>
     </dates>
   </vuln>
 
-
   <vuln vid="20d16518-2477-11d9-814e-0001020eed82">
     <topic>mpg123 -- buffer overflow in URL handling</topic>
     <affects>
@@ -20640,8 +20592,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="fc07c9ca-22ce-11d9-814e-0001020eed82">
-    <topic>phpmyadmin -- remote command execution
-      vulnerability</topic>
+    <topic>phpmyadmin -- remote command execution vulnerability</topic>
     <affects>
       <package>
 	<name>phpMyAdmin</name>
@@ -20778,8 +20729,7 @@ http_access deny Gopher</pre>
 	<p>A Computer Academic Underground advisory describes the
 	  consequences of imwheel's handling of the process ID file (PID
 	  file):</p>
-	<blockquote
-	  cite="http://www.caughq.org/advisories/CAU-2004-0002.txt">
+	<blockquote cite="http://www.caughq.org/advisories/CAU-2004-0002.txt">
           <p>imwheel exclusively uses a predictably named PID file for
             management of multiple imwheel processes. A race condition
             exists when the -k command-line option is used to kill
@@ -20853,8 +20803,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="18974c8a-1fbd-11d9-814e-0001020eed82">
-    <topic>apache13-modssl -- format string vulnerability in
-      proxy support</topic>
+    <topic>apache13-modssl -- format string vulnerability in proxy support</topic>
     <affects>
       <package>
 	<name>apache+mod_ssl</name>
@@ -21351,8 +21300,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="92268205-1947-11d9-bc4a-000c41e2cdad">
-    <topic>cyrus-sasl -- dynamic library loading and set-user-ID
-      applications</topic>
+    <topic>cyrus-sasl -- dynamic library loading and set-user-ID applications</topic>
     <affects>
       <package>
 	<name>cyrus-sasl</name>
@@ -21641,8 +21589,7 @@ http_access deny Gopher</pre>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The syscons CONS_SCRSHOT <a
-	  href="http://www.freebsd.org/cgi/man.cgi?query=ioctl">ioctl(2)</a>
+	<p>The syscons CONS_SCRSHOT <a href="http://www.freebsd.org/cgi/man.cgi?query=ioctl">ioctl(2)</a>
           does insufficient validation of its input arguments.  In
           particular, negative coordinates or large coordinates may
           cause unexpected behavior.</p>
@@ -21669,7 +21616,7 @@ http_access deny Gopher</pre>
     </dates>
   </vuln>
 
-  <vuln vid="2328ADEF-157C-11D9-8402-000D93664D5C">
+  <vuln vid="2328adef-157c-11d9-8402-000d93664d5c">
     <topic>racoon -- improper certificate handling</topic>
     <affects>
       <package>
@@ -21721,7 +21668,7 @@ http_access deny Gopher</pre>
     </dates>
   </vuln>
 
- <vuln vid="b2e6d1d6-1339-11d9-bc4a-000c41e2cdad">
+  <vuln vid="b2e6d1d6-1339-11d9-bc4a-000c41e2cdad">
     <topic>mozilla -- scripting vulnerabilities</topic>
     <affects>
       <package>
@@ -22349,6 +22296,7 @@ http_access deny Gopher</pre>
       <entry>2004-09-26</entry>
     </dates>
   </vuln>
+
   <vuln vid="273cc1a3-0d6b-11d9-8a8a-000c41e2cdad">
     <topic>lha -- numerous vulnerabilities when extracting archives</topic>
     <affects>
@@ -22624,8 +22572,7 @@ http_access deny Gopher</pre>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>An iDEFENSE security advisory reports:</p>
-	<blockquote
-	  cite="http://www.idefense.com/application/poi/display?id=141&amp;type=vulnerabilities">
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=141&amp;type=vulnerabilities">
           <p>Remote exploitation of an input validation error in
             version 1.2 of GNU radiusd could allow a denial of
             service.</p>
@@ -23934,7 +23881,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="bef4515b-eaa9-11d8-9440-000347a4fa7d">
-    <cancelled superseded="b6939d5b-64a1-11d9-9106-000a95bc6fae" />
+    <cancelled superseded="b6939d5b-64a1-11d9-9106-000a95bc6fae"/>
   </vuln>
 
   <vuln vid="3243e839-f489-11d8-9837-000c41e2cdad">
@@ -24491,7 +24438,7 @@ http_access deny Gopher</pre>
   </vuln>
 
   <vuln vid="4764cfd6-d630-11d8-b479-02e0185c0b53">
-    <cancelled superseded="dd7aa4f1-102f-11d9-8a8a-000c41e2cdad" />
+    <cancelled superseded="dd7aa4f1-102f-11d9-8a8a-000c41e2cdad"/>
   </vuln>
 
   <vuln vid="abe47a5a-e23c-11d8-9b0a-000347a4fa7d">
@@ -28393,8 +28340,7 @@ misc.c:
 	  </ul>
 	</blockquote>
 	<p>Additionally, a US-CERT Technical Cyber Security Alert reports:</p>
-	<blockquote
-          cite="http://www.us-cert.gov/cas/techalerts/TA04-356A.html">
+	<blockquote cite="http://www.us-cert.gov/cas/techalerts/TA04-356A.html">
           <p>phpBB contains an user input validation problem with
 	    regard to the parsing of the URL. An intruder can deface a
 	    phpBB website, execute arbitrary commands, or gain
@@ -28546,8 +28492,7 @@ misc.c:
   </vuln>
 
   <vuln vid="c6b9aee8-3071-11da-af18-000ae4641456">
-    <topic>phpmyfaq -- SQL injection, takeover, path disclosure,
-      remote code execution</topic>
+    <topic>phpmyfaq -- SQL injection, takeover, path disclosure, remote code execution</topic>
     <affects>
       <package>
 	<name>phpmyfaq</name>
