@@ -69,31 +69,31 @@ lib/libelk.a
 lib/libelk.la
 lib/libelk.so
 lib/libelk.so.0
-share/elk/apropos.scm
-share/elk/bitstring.scm
-share/elk/cscheme.scm
-share/elk/debug.scm
-share/elk/describe.scm
-share/elk/gdbmtest.scm
-share/elk/initscheme.scm
-share/elk/motif.scm
-share/elk/oops.scm
-share/elk/parse.scm
-share/elk/pp.scm
-share/elk/qsort.scm
-share/elk/record.scm
-share/elk/recordutil.scm
-share/elk/regexp.scm
-share/elk/safe-env.scm
-share/elk/setf.scm
-share/elk/slib.scm
-share/elk/struct.scm
-share/elk/toplevel.scm
-share/elk/trace.scm
-share/elk/unix.scm
-share/elk/xaw.scm
-share/elk/xlib.scm
-share/elk/xwidgets.scm
+%%DATADIR%%/apropos.scm
+%%DATADIR%%/bitstring.scm
+%%DATADIR%%/cscheme.scm
+%%DATADIR%%/debug.scm
+%%DATADIR%%/describe.scm
+%%DATADIR%%/gdbmtest.scm
+%%DATADIR%%/initscheme.scm
+%%DATADIR%%/motif.scm
+%%DATADIR%%/oops.scm
+%%DATADIR%%/parse.scm
+%%DATADIR%%/pp.scm
+%%DATADIR%%/qsort.scm
+%%DATADIR%%/record.scm
+%%DATADIR%%/recordutil.scm
+%%DATADIR%%/regexp.scm
+%%DATADIR%%/safe-env.scm
+%%DATADIR%%/setf.scm
+%%DATADIR%%/slib.scm
+%%DATADIR%%/struct.scm
+%%DATADIR%%/toplevel.scm
+%%DATADIR%%/trace.scm
+%%DATADIR%%/unix.scm
+%%DATADIR%%/xaw.scm
+%%DATADIR%%/xlib.scm
+%%DATADIR%%/xwidgets.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/c++/class.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/c++/constructor.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/motif/drawing-area.scm
@@ -175,7 +175,7 @@ share/elk/xwidgets.scm
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/motif
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/c++
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm share/elk
+@dirrm %%DATADIR%%
 @dirrm lib/elk
 @dirrm include/elk/extensions
 @dirrm include/elk
