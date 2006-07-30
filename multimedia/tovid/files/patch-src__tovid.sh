@@ -9,15 +9,6 @@
      # Rough estimates of KB/sec for different formats
      K_PER_SEC=200
      test x"$TGT_RES" = x"VCD" && K_PER_SEC=172
-@@ -1327,7 +1327,7 @@
-         AUDIO_CMD="cat /dev/zero | $PRIORITY sox -t raw -c 2 -r $SAMPRATE -w -s - -t wav $AUDIO_WAV trim 0 $V_DURATION"
-     # Extract audio normally
-     else
--        AUDIO_CMD="$PRIORITY mplayer $MPLAYER_OPTS -quiet -vc null -vo null -ao pcm:waveheader:file=$AUDIO_WAV \"$IN_FILE\""
-+        AUDIO_CMD="$PRIORITY mplayer $MPLAYER_OPTS -quiet -vc dummy -vo null -ao pcm:waveheader:file=$AUDIO_WAV \"$IN_FILE\""
-         # Normalize, if requested
-         if $DO_NORM; then
-             AUDIO_CMD="$AUDIO_CMD -af volnorm"
 @@ -1512,8 +1512,8 @@
  # ******************************************************************************
  # ******************************************************************************
