@@ -7,8 +7,8 @@
 
 PORTNAME=	greasemonkey
 PORTVERSION=	0.6.5.20060727
-CATEGORIES=	www
 DISTVERSIONSUFFIX=	-fx
+CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Add bits of DHTML to any web page to change its behavior

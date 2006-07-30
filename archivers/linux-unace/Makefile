@@ -9,7 +9,7 @@ PORTNAME=	unace
 PORTVERSION=	2.5
 PORTEPOCH=	1
 CATEGORIES=	archivers linux
-MASTER_SITES=	http://www.winace.com/files/
+MASTER_SITES=	http://www.winace.com/files/ CSME
 PKGNAMEPREFIX=	linux-
 DISTNAME=	lin${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extract, view & test ACE archives
 
-NO_PACKAGE=	"Distribution is permitted within the original package only"
+NO_PACKAGE=	Distribution is permitted within the original package only
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/linunace

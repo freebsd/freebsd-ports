@@ -8,7 +8,7 @@
 PORTNAME=	cjc
 PORTVERSION=	1.0.0
 CATEGORIES=	net-im python
-MASTER_SITES=	http://jabberstudio.2nw.net/cjc/
+MASTER_SITES=	http://jabberstudio.2nw.net/cjc/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The Console Jabber Client

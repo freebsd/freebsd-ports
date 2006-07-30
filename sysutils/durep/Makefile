@@ -9,8 +9,7 @@ PORTNAME=	durep
 PORTVERSION=	0.9
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.hibernaculum.net/download/ \
-		http://bsd.gubkin.ru/myports/
+MASTER_SITES=	http://www.hibernaculum.net/download/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Utility for monitoring disk usage in a more visual way than du

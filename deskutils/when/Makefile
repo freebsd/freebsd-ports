@@ -8,9 +8,7 @@
 PORTNAME=	when
 PORTVERSION=	1.1.0
 CATEGORIES=	deskutils
-MASTER_SITES=	http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
+MASTER_SITES=	CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A very simple personal calendar

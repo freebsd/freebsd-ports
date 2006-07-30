@@ -8,8 +8,7 @@
 PORTNAME=	bitcollider
 PORTVERSION=	0.6.0
 CATEGORIES=	deskutils multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Bitzi metadata generator

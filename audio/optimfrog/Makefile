@@ -8,9 +8,7 @@
 PORTNAME=	optimfrog
 DISTVERSION=	4.520b1
 CATEGORIES=	audio linux
-MASTER_SITES=	http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
+MASTER_SITES=	CSME
 DISTNAME=	OptimFROG_All_Linux_x86_${DISTVERSION:S/.//}
 
 MAINTAINER=	infofarmer@FreeBSD.org

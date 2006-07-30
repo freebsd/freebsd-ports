@@ -12,7 +12,7 @@ CATEGORIES?=	audio
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
 		http://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
 		ftp://ftp.dvo.ru/pub/distfiles/ \
-		ftp://ftp.citkit.ru/pub/FreeBSD/distfiles/ \
+		ftp://ftp.mtu.ru/pub/FreeBSD/distfiles/ \
 		ftp://ftp.chg.ru/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05

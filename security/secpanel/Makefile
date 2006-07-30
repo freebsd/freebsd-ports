@@ -10,10 +10,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security tcl84 tk84
-MASTER_SITES=	http://www.pingx.net/secpanel/ \
-		http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/
+MASTER_SITES=	http://www.pingx.net/secpanel/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities

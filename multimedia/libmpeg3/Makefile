@@ -9,13 +9,13 @@ PORTNAME=	libmpeg3
 PORTVERSION=	1.7
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	heroines
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
 
-BUILD_DEPENSD=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		a52.0:${PORTSDIR}/audio/liba52
 

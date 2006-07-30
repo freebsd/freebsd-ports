@@ -8,7 +8,7 @@
 PORTNAME=	synaesthesia
 PORTVERSION=	2.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/
+MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Graphically represents sound in real time
