@@ -7,7 +7,7 @@
 
 PORTNAME=	huc
 PORTVERSION=	3.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang emulators
 MASTER_SITES=	http://www.zeograd.com/download/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
@@ -28,12 +28,15 @@ do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${TAR} -C ${WRKSRC}/include --exclude "CVS" -cf - . | \
 		${TAR} -C ${PREFIX}/include/${PORTNAME} --unlink -xf -
-	@${CHOWN} ${SHAREOWN}:${SHAREMODE} ${PREFIX}/include/${PORTNAME}
+	@${CHOWN} -R ${SHAREOWN} ${PREFIX}/include/${PORTNAME}
+	@${FIND} ${PREFIX}/include/${PORTNAME}/ -type f -exec ${CHMOD} \
+		${SHAREMODE} {} \;
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/doc --exclude "CVS" -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${CHOWN} ${SHAREOWN}:${SHAREMODE} ${DOCSDIR}
+	@${CHOWN} -R ${SHAREOWN} ${DOCSDIR}
+	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
 	@${CAT} ${PKGMESSAGE}
 
