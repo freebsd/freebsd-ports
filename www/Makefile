@@ -1097,6 +1097,7 @@
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
+    SUBDIR += xpi-statusbarclock
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-surfkeys
     SUBDIR += xpi-tabletools
