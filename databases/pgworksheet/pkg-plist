@@ -39,9 +39,4 @@ share/locale/ja/LC_MESSAGES/pgworksheet.mo
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
 @dirrm share/pixmaps/pgworksheet
-@dirrmtry share/locale/ja/LC_MESSAGES
-@dirrmtry share/locale/ja
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale
 @dirrmtry share/applications
