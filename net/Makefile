@@ -780,6 +780,7 @@
     SUBDIR += ttt
     SUBDIR += tund
     SUBDIR += tvark
+    SUBDIR += twinkle
     SUBDIR += ucarp
     SUBDIR += udptunnel
     SUBDIR += ulxmlrpcpp

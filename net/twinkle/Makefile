@@ -1,0 +1,49 @@
+# New ports collection makefile for:	twinkle
+# Date created:		2006-04-22
+# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	twinkle
+PORTVERSION=	0.8.1
+CATEGORIES=	net
+MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	Soft phone for your VoIP communcations using the SIP protocol
+
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	ccgnu2-1.4.0:${PORTSDIR}/devel/commoncpp \
+		ccrtp1-1.4.0:${PORTSDIR}/devel/ccrtp \
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
+		boost_regex.3:${PORTSDIR}/devel/boost \
+		speex.3:${PORTSDIR}/audio/speex
+
+USE_X_PREFIX=	yes
+USE_GCC=	3.4+
+GNU_CONFIGURE=	yes
+USE_BISON=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_QT_VER=	3
+
+CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	QTDIR="${LOCALBASE}" \
+		QMAKESPEC="${QMAKESPEC}" \
+		CFLAGS="${CFLAGS}"
+MAKE_ENV=	QTDIR=${X11BASE}
+
+QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile
+.endif
+
+post-configure:
+	${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/src/gui/${MAKEFILE}
+
+.include <bsd.port.post.mk>

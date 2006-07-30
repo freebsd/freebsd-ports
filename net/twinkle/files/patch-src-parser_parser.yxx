@@ -1,0 +1,11 @@
+--- src/parser/parser.yxx	Sat Apr 22 20:47:06 2006
++++ src/parser/parser.yxx	Sat Apr 22 20:47:30 2006
+@@ -48,7 +48,7 @@
+ 
+ %union {
+ 	int			yyt_int;
+-	ulong			yyt_ulong;
++	u_long			yyt_ulong;
+ 	float			yyt_float;
+ 	string			*yyt_str;
+ 	t_parameter		*yyt_param;
