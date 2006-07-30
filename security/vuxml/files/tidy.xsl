@@ -50,7 +50,7 @@ don't have <modified>).  Insert an empty line between <vuln> elements.
     <xsl:for-each select="vuxml:vuln">
       <xsl:sort
 	order="descending"
-	select="vuxml:dates/*[last()]/text()" />
+	select="vuxml:dates/entry/text()" />
       <xsl:text disable-output-escaping="yes">&#10;&#32;&#32;</xsl:text>
       <xsl:apply-templates select="." />
       <xsl:text disable-output-escaping="yes">&#10;</xsl:text>
