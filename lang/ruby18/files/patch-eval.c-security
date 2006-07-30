@@ -1,0 +1,35 @@
+--- eval.c.orig	Thu Jul 13 01:48:12 2006
++++ eval.c	Thu Jul 13 01:49:37 2006
+@@ -2050,7 +2050,8 @@
+ 	}
+     }
+     st_insert(RCLASS(klass)->m_tbl, name,
+-      (st_data_t)NEW_METHOD(NEW_FBODY(body, def, origin), orig->nd_noex));
++	      (st_data_t)NEW_METHOD(NEW_FBODY(body, def, origin),
++				    NOEX_WITH_SAFE(orig->nd_noex)));
+     if (singleton) {
+ 	rb_funcall(singleton, singleton_added, 1, ID2SYM(name));
+     }
+@@ -5561,6 +5562,11 @@
+     TMP_PROTECT;
+     volatile int safe = -1;
+ 
++    if (NOEX_SAFE(flags) > ruby_safe_level &&
++	!(flags&NOEX_TAINTED) && ruby_safe_level == 0 && NOEX_SAFE(flags) > 2) {
++	rb_raise(rb_eSecurityError, "calling insecure method: %s",
++		 rb_id2name(id));
++    }
+     switch (ruby_iter->iter) {
+       case ITER_PRE:
+ 	itr = ITER_CUR;
+@@ -5664,10 +5670,6 @@
+ 	    b2 = body = body->nd_next;
+ 
+ 	    if (NOEX_SAFE(flags) > ruby_safe_level) {
+-		if (!(flags&NOEX_TAINTED) && ruby_safe_level == 0 && NOEX_SAFE(flags) > 2) {
+-		    rb_raise(rb_eSecurityError, "calling insecure method: %s",
+-			     rb_id2name(id));
+-		}
+ 		safe = ruby_safe_level;
+ 		ruby_safe_level = NOEX_SAFE(flags);
+ 	    }
