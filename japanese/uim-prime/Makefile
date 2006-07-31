@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	2
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-prime-nox11
