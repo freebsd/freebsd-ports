@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-WBXML
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -20,9 +20,6 @@ LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
 MAN3=	XML::WBXML.3
 
 PERL_CONFIGURE=	yes
-
-post-patch:
-	@${RM} ${WRKSRC}/lib/XML/*.orig
 
 .include <bsd.port.pre.mk>
 
