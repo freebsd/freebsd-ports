@@ -14,6 +14,8 @@ MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
+CONFLICTS=	ktorrent-devel-[0-9]*
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
