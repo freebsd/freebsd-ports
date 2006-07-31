@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
@@ -24,7 +24,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	fm@cross-road.org.ua
 COMMENT=	Shell-like command line ftp client
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		readline.5:${PORTSDIR}/devel/readline
 
 USE_ICONV=	yes
 USE_BZIP2=	yes
@@ -58,6 +59,8 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+CONFIGURE_ARGS+=--mandir="${MAN1PREFIX}/man"
 
 MAN1=		lftp.1 lftpget.1
 
