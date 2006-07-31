@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:${PORTSDIR}/www/p5-Catalyst-Plugin
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-HTML-TokeParser-Simple>=0:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-MIME-Types>=0:${PORTSDIR}/mail/p5-MIME-Types
-BUILD_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
