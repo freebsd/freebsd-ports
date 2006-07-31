@@ -47,6 +47,7 @@
     SUBDIR += jigdo
     SUBDIR += kmldonkey
     SUBDIR += ktorrent
+    SUBDIR += ktorrent-devel
     SUBDIR += libbt
     SUBDIR += liberator
     SUBDIR += libfreenet

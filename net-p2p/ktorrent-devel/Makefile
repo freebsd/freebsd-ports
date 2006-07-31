@@ -1,19 +1,24 @@
-# New ports collection makefile for:	ktorrent
-# Date created:				Wed Jul 13 11:38:46 CEST 2005
+# New ports collection makefile for:	ktorrent-devel
+# Date created:				Sun Jul 30 01:14:55 CEST 2006
 # Whom:					Markus Brueffer <markus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	20060731
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
+MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
+CONFLICTS=	ktorrent-[0.9]*
+
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+
+USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
