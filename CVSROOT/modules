@@ -10540,6 +10540,7 @@ pecl-runkit	ports/devel/pecl-runkit
 pecl-sqlite	ports/databases/pecl-sqlite
 pecl-ssh2	ports/security/pecl-ssh2
 pecl-statgrab	ports/devel/pecl-statgrab
+pecl-stem	ports/textproc/pecl-stem
 pecl-svn	ports/devel/pecl-svn
 pecl-tidy	ports/www/pecl-tidy
 pecl-xdiff	ports/textproc/pecl-xdiff
