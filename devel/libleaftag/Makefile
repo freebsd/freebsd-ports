@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libleaftag
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	devel deskutils
 MASTER_SITES=	http://releases.chipx86.com/leaftag/libleaftag/
 
@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
