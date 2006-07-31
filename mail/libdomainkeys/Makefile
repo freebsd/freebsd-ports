@@ -7,7 +7,7 @@
 
 PORTNAME=	libdomainkeys
 PORTVERSION=	0.68
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	domainkeys
@@ -32,5 +32,10 @@ post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
 	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \
 		${FILESDIR}/Makefile > ${WRKSRC}/Makefile
+
+post-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/dknewkey ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/test ${DATADIR}/dktest
 
 .include <bsd.port.mk>
