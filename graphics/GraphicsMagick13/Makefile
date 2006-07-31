@@ -7,7 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
@@ -46,7 +46,8 @@ WINDOWS_FONT_DIR=${X11BASE}/lib/X11/webfonts
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-perl --with-windows-font-dir=${WINDOWS_FONT_DIR} \
-		--enable-shared --enable-static --without-threads
+		--enable-shared --enable-static --without-threads \
+		--enable-symbol-prefix
 INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)
