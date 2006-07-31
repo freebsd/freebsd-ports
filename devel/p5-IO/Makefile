@@ -25,7 +25,7 @@ MAN3=		IO.3 IO::Dir.3 IO::File.3 IO::Handle.3 IO::Pipe.3 IO::Poll.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} > 500600
-IGNORE=		"This module is already included in perl 5.6.x and later."
+IGNORE=		this module is already included in perl 5.6.x and later
 .endif
 
 .include <bsd.port.post.mk>
