@@ -4,7 +4,7 @@
  	if (result == AUTH_OK) {
  		if (close(channel[0])) return log_error("close");
  		log_pop_auth(result, user);
-+		setproctitle(user);
++		setproctitle("%s", user);
  		return do_pop_trans(spool, mailbox);
  	}
  
