@@ -18,9 +18,8 @@ LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ARGS=		pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 USE_LDCONFIG=		yes
-USE_GNOME=		pkgconfig
+USE_GNOME=		pkgconfig gnomehack
 
 PORTDOCS=		COPYING.LIB ChangeLog README
 PLIST_FILES=		bin/libftdi-config \
@@ -39,10 +38,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		doesn't install on FreeBSD 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
