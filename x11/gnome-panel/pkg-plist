@@ -110,6 +110,9 @@ share/gnome/help/fish/fr/legal.xml
 share/gnome/help/fish/it/figures/fish_applet.png
 share/gnome/help/fish/it/fish.xml
 share/gnome/help/fish/it/legal.xml
+share/gnome/help/fish/sv/figures/fish_applet.png
+share/gnome/help/fish/sv/fish.xml
+share/gnome/help/fish/sv/legal.xml
 share/gnome/help/fish/uk/figures/fish_applet.png
 share/gnome/help/fish/uk/fish.xml
 share/gnome/help/fish/uk/legal.xml
@@ -222,6 +225,7 @@ share/gnome/omf/fish/fish-C.omf
 share/gnome/omf/fish/fish-es.omf
 share/gnome/omf/fish/fish-fr.omf
 share/gnome/omf/fish/fish-it.omf
+share/gnome/omf/fish/fish-sv.omf
 share/gnome/omf/fish/fish-uk.omf
 share/gnome/omf/gnome-panel/fish-applet-2-de.omf
 share/gnome/omf/gnome-panel/fish-applet-2-ja.omf
@@ -245,6 +249,7 @@ share/gnome/omf/window-list/window-list-C.omf
 share/gnome/omf/window-list/window-list-es.omf
 share/gnome/omf/window-list/window-list-fr.omf
 share/gnome/omf/window-list/window-list-it.omf
+share/gnome/omf/window-list/window-list-sv.omf
 share/gnome/omf/window-list/window-list-uk.omf
 share/gnome/omf/window-list/window-list-zh_CN.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-C.omf
@@ -252,6 +257,7 @@ share/gnome/omf/workspace-switcher/workspace-switcher-es.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-fr.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-it.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-nl.omf
+share/gnome/omf/workspace-switcher/workspace-switcher-sv.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-uk.omf
 share/gnome/panel/glade/fish.glade
 share/gnome/panel/glade/panel-properties-dialog.glade
@@ -277,6 +283,7 @@ share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/br/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
@@ -379,6 +386,8 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/br/LC_MESSAGES
 @dirrmtry share/locale/br
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrm share/gnome/panel/pixmaps
 @dirrm share/gnome/panel/glade
 @dirrm share/gnome/omf/workspace-switcher
@@ -437,6 +446,8 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/window-list
 @dirrm share/gnome/help/fish/uk/figures
 @dirrm share/gnome/help/fish/uk
+@dirrm share/gnome/help/fish/sv/figures
+@dirrm share/gnome/help/fish/sv
 @dirrm share/gnome/help/fish/it/figures
 @dirrm share/gnome/help/fish/it
 @dirrm share/gnome/help/fish/fr/figures
