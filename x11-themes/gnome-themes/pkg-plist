@@ -1259,6 +1259,7 @@ share/locale/vi/LC_MESSAGES/gnome-themes.mo
 share/locale/wa/LC_MESSAGES/gnome-themes.mo
 share/locale/xh/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-themes.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-themes.mo
 share/themes/Clearlooks/index.theme
 share/themes/Crux/index.theme
@@ -1922,6 +1923,8 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Glider
 @dirrm share/themes/Crux
 @dirrm share/themes/Clearlooks
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/ku/LC_MESSAGES
