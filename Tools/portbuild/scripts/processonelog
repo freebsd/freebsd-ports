@@ -90,7 +90,7 @@ elif grep -q "USER   PID  PPID  PGID JOBC STAT  TT       TIME COMMAND" $1; then
   reason="runaway_process"; tag="runaway"
 elif grep -q "pnohang: killing make package" $1; then
   reason="runaway_process"; tag="runaway"
-elif grep -qE "pkg_add:.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
+elif grep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
   reason="disk_full"; tag="df"
 elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)' $1; then
   reason="compiler_error"; tag="cc"
