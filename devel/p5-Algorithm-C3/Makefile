@@ -15,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A module for merging hierarchies using the C3 algorithm
 
-BUILD_DEPENDS=	p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_MODBUILD=	yes
 
 MAN3=		Algorithm::C3.3
