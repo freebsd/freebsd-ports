@@ -1,0 +1,15 @@
+This package generates a comprehensive information page for your current
+PEAR install.
+
+  * The format for the page is similar to that for phpinfo() except using PEAR 
+    colors.
+  * Has complete PEAR Credits (based on the packages you have installed).
+  * Will show if there is a newer version than the one presently installed
+    (and what its state is)
+  * Each package has an anchor in the form pkg_PackageName - where PackageName
+    is a case-sensitive PEAR package name
+
+With a few parameters, the entire package.xml is automatically updated with a
+listing of all files in a package.
+
+WWW: http://pear.php.net/package/PEAR_Info/

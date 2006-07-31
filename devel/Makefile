@@ -1473,6 +1473,7 @@
     SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-I18N
     SUBDIR += pear-OLE
+    SUBDIR += pear-PEAR_Info
     SUBDIR += pear-PEAR_PackageFileManager
     SUBDIR += pear-PHPDoc
     SUBDIR += pear-PHPUnit
