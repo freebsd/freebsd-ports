@@ -1,5 +1,6 @@
 %%PYTHON_SITELIBDIR%%/Myghty-%%VERSION%%-py%%PYVER%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/Myghty-%%VERSION%%-py%%PYVER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/Myghty-%%VERSION%%-py%%PYVER%%.egg-info/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/Myghty-%%VERSION%%-py%%PYVER%%.egg-info/entry_points.txt
 %%PYTHON_SITELIBDIR%%/Myghty-%%VERSION%%-py%%PYVER%%.egg-info/requires.txt
 %%PYTHON_SITELIBDIR%%/Myghty-%%VERSION%%-py%%PYVER%%.egg-info/top_level.txt
