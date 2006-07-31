@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MeCab
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${SUB_DIR}
@@ -18,9 +18,13 @@ COMMENT=	MeCab library module for Perl5
 LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
 
 PERL_CONFIGURE=	yes
-SUB_DIR=	20919
+SUB_DIR=	21189
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires perl 5.8.x or later.  Install lang/perl5.8 and try again
+.endif
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
