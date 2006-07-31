@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	security pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-DISTNAME=	ssh2-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A PECL extension to the libssh2 library
 
 LIB_DEPENDS=	ssh2:${PORTSDIR}/security/libssh2
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's, -ldl,,' ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
