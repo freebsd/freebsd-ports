@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.6h
-PORTREVISION=	43
+PORTVERSION=	0.8.6h.${PATCHLEVEL}
+PORTREVISION=	4
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
+DISTNAME=	${PORTNAME}-${SITEDISTVERSION}
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Web-driven graphing interface for RRDTool
 
 # Vendor's patches
-PATCH_SITES=	http://www.cacti.net/downloads/patches/${PORTVERSION}/
+PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
 PATCHFILES=	fix_search_session_clear_issue.patch \
 		fix_sql_syntax_related_to_default_rra_id.patch \
 		nth_percentile_empty_return_set_issue.patch \
-		mysql_5x_strict.patch
+		mysql_5x_strict.patch \
+		database_autoincrement_corruption.patch
+PATCHLEVEL=	5
+SITEDISTVERSION=	${PORTVERSION:S/.${PATCHLEVEL}//}
 
 PATCH_DIST_STRIP=-p1
 
