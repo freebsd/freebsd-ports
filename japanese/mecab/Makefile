@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mecab
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${SUB_DIR}
@@ -15,13 +15,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
-SUB_DIR=	20917
+SUB_DIR=	21187
 
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
+
+# Default charset (euc/sjis/utf8)
+.if defined(WITH_CHARSET)
+CONFIGURE_ARGS=	--with-charset=${WITH_CHARSET}
+.endif
 
 MAN1=		mecab.1
 
@@ -33,7 +38,18 @@ DOCS=		AUTHORS README doc/*.html
 IGNORE=		requires perl 5.8.x or later.  Install lang/perl5.8 and try again
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
+			 -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's/conf_DATA = mecabrc/conf_DATA = mecabrc.dist/' ${WRKSRC}/Makefile.in
+
+post-configure:
+	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.dist
+
 post-install:
+	@if [ ! -f ${PREFIX}/etc/mecabrc ]; then \
+		${INSTALL_DATA} ${PREFIX}/etc/mecabrc.dist ${PREFIX}/etc/mecabrc; \
+	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
@@ -41,9 +57,5 @@ post-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-post-patch:
-	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
-			 -e 's/-O3/${CFLAGS}/' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>

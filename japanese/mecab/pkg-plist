@@ -1,10 +1,10 @@
-lib/libmecab.la
-lib/libmecab.so.1
-lib/libmecab.so
-lib/libmecab.a
 bin/mecab
 bin/mecab-config
 include/mecab.h
+lib/libmecab.a
+lib/libmecab.la
+lib/libmecab.so
+lib/libmecab.so.1
 libexec/mecab/mecab-cost-train
 libexec/mecab/mecab-dict-gen
 libexec/mecab/mecab-dict-index
@@ -12,7 +12,9 @@ libexec/mecab/mecab-dict-info
 libexec/mecab/mecab-system-eval
 libexec/mecab/mecab-test-gen
 @dirrm libexec/mecab
-etc/mecabrc
+@unexec if cmp -s %D/etc/mecabrc.dist %D/etc/mecabrc; then rm -f %D/etc/mecabrc; else true; fi
+etc/mecabrc.dist
+@exec if [ ! -f %D/etc/mecabrc ]; then cp -p %D/%F %B/mecabrc; fi
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/bindings.html
