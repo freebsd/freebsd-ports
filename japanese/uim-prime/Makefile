@@ -35,9 +35,9 @@ do-install:
 
 post-install:
 .if defined(WITHOUT_X11)
-	${LOCALBASE}/bin/uim-module-manager --register anthy
+	${LOCALBASE}/bin/uim-module-manager --register prime
 .else
-	${X11BASE}/bin/uim-module-manager --register anthy
+	${X11BASE}/bin/uim-module-manager --register prime
 .endif
 
 .include "${MASTERDIR}/Makefile"

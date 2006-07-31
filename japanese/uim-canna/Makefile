@@ -34,9 +34,9 @@ do-install:
 
 post-install:
 .if defined(WITHOUT_X11)
-	${LOCALBASE}/bin/uim-module-manager --register anthy
+	${LOCALBASE}/bin/uim-module-manager --register canna
 .else
-	${X11BASE}/bin/uim-module-manager --register anthy
+	${X11BASE}/bin/uim-module-manager --register canna
 .endif
 
 .include "${MASTERDIR}/Makefile"
