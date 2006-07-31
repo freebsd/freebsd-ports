@@ -1,6 +1,6 @@
---- amavisd.orig	Mon Apr 25 01:23:32 2005
-+++ amavisd	Mon Apr 25 09:53:59 2005
-@@ -8495,7 +8495,7 @@
+--- amavisd.orig	Tue Jun 27 13:31:56 2006
++++ amavisd	Mon Jul 31 00:44:09 2006
+@@ -9335,7 +9335,7 @@
  Amavis::Conf::build_default_maps();
  
  # default location of the config file if none specified
@@ -9,3 +9,32 @@
  # Read/execute the config file, which may override default settings
  Amavis::Conf::read_config(@config_files);
  
+@@ -12049,15 +12049,20 @@
+             my($bounced) = $msginfo->dsn_sent;
+             for my $r (@{$msginfo->per_recip_data}) {
+               my($resp) = $r->recip_smtp_response;
+-              if ($bounced && $smtp_resp=~/^2/ && $resp!~/^2/) {
+-                # as the message was already bounced by us,
+-                # MTA must not bounce it again; failure status
+-                # needs to be converted into success!
+-                $resp = sprintf("250 2.5.0 Ok %s, DSN %s (%s)",
+-                        $r->recip_addr, $bounced==1 ? 'sent' : 'muted', $resp);
++              my($recip_quoted) = qquote_rfc2821_local($r->recip_addr);
++              if ($resp=~/^2/) {
++                # success, no need to change status
++              } elsif ($bounced) {
++                # a non-delivery notifications was already sent by us, so
++                # MTA must not bounce it again; turn status into a success
++                $resp = sprintf("250 2.5.0 Ok %s, DSN was sent (%s)",
++                                $recip_quoted, $resp);
++              } elsif ($resp=~/^5/ && $r->recip_destiny != D_REJECT) {
++                $resp = sprintf("250 2.5.0 Ok %s, DSN suppressed (%s)",
++                                $recip_quoted, $resp);
+               }
+-              do_log(4, 'sending LMTP response for <%s>: "%s"',
+-                        $r->recip_addr, $resp);
++              do_log(4, 'sending LMTP response for %s: "%s"',
++                        $recip_quoted, $resp);
+               $self->smtp_resp(0, $resp);
+             }
+           }
