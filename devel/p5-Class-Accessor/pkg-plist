@@ -1,7 +1,9 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/.packlist
 %%SITE_PERL%%/Class/Accessor.pm
 %%SITE_PERL%%/Class/Accessor/Fast.pm
-@dirrm %%SITE_PERL%%/Class/Accessor
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
-@dirrmtry %%SITE_PERL%%/Class
+%%SITE_PERL%%/Class/Accessor/Faster.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/Accessor
+@dirrmtry %%SITE_PERL%%/Class
