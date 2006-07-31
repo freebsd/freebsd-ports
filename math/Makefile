@@ -246,6 +246,7 @@
     SUBDIR += parmetis
     SUBDIR += pear-Structures_Graph
     SUBDIR += pecl-big_int
+    SUBDIR += pecl-stats
     SUBDIR += petsc
     SUBDIR += petsc-mpich
     SUBDIR += pgcalc
