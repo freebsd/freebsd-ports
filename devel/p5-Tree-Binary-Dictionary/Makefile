@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tree-Binary-Dictionary
-PORTVERSION=	0.04
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tree
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	A dictionary API to a binary tree
 
-BUILD_DEPENDS=	${SITE_PERL}/Tree/Binary.pm:${PORTSDIR}/devel/p5-Tree-Binary
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Tree/Binary.pm:${PORTSDIR}/devel/p5-Tree-Binary
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=		Tree::Binary::Dictionary.3
 
