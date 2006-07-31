@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tab_mix_plus
+PORTNAME=	tabmixplus
 PORTVERSION=	0.3.0.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
@@ -13,6 +13,7 @@ CATEGORIES=	www
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	An extension that enhances tab browsing capabilities
 
+XPI_DISTNAME=	tab_mix_plus
 XPI_ID=		{dc572301-7619-498c-a57d-39143191b318}
 XPI_FILES=	chrome/tabmixplus.jar chrome.manifest defaults/preferences/tabmix.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
