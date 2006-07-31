@@ -270,6 +270,12 @@ upgrades.
 	portupgrade -f -o emulators/linux_base-fc4 linux_base\*
 	portupgrade -f -o x11/linux-xorg-libs linux-XFree86-libs
 
+  You need to make sure that you have not changed the sysctl
+  compat.linux.osrelease. FC4 behaves differently depending on the
+  content of this sysctl. Only the default value of this sysctl is
+  supported. In case of problems also revert to the default of the
+  compat.linux.osname if changed.
+
   In case "printenv | grep LD_" prints something, e.g., LD_LIBRARY_PATH
   or LD_PRELOAD, you have to make sure it is not set when starting
   linux programs, else FreeBSD libraries will be picked up and the
