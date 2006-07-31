@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize-Pluggable
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -19,17 +19,21 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
+		${SITE_PERL}/${PERL_ARCH}/Data/Dump/Streamer.pm:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
+		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAN3=	WWW::Mechanize::Pluggable.3 WWW::Mechanize::Plugin::HelloWorld.3
+MAN3=	WWW::Mechanize::Pluggable.3 \
+	WWW::Mechanize::Pluggable::Design.3 \
+	WWW::Mechanize::Plugin::Cookbook.3 \
+	WWW::Mechanize::Plugin::HelloWorld.3
 
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600 # inherited from textproc/p5-YAML
+.if ${PERL_LEVEL} < 500600 # inherited from devel/p5-Data-Dump-Streamer
 IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
 .endif
 
