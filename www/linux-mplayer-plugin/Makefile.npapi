@@ -25,7 +25,10 @@
 #				  Default: ${NPAPI_LIBDIR}/${NPAPI_ID}
 # USE_NPAPI		- If set, the port installs one or more npapi plugins.
 #				  If this is set to a list of apps (wildcards possible) the
-#				  plugins will be installed for them only.
+#				  plugins will be installed for them only. "linux" and "native"
+#				  keywords can be used to support all linux-compat and native
+#				  browsers, correspondingly. "embed" keyword prevents the
+#				  do-install target being set to a default.
 # WITH_NPAPI	- A user-tunable variable, determines which apps should
 #				  plugin be made available for. Can be set to a list of
 #				  apps, same as USE_NPAPI, and/or to "ext:app[,app,app,...]" tuples.
@@ -50,6 +53,11 @@
 
 NPAPI_ID?=			${PKGBASE}
 NPAPI_DISTNAME?=	${PORTNAME}
+NPAPI_WRKSRC?=		${WRKSRC}
+NPAPI_PKGINSTALL?=	${WRKDIR}/npapi-pkg-install
+NPAPI_PKGDEINSTALL?=	${WRKDIR}/npapi-pkg-deinstall
+PKGINSTALL?=	${NPAPI_PKGINSTALL}
+PKGDEINSTALL?=	${NPAPI_PKGDEINSTALL}
 
 NPAPI_APPS_ALL_WC=	*mozilla* *firefox* *flock* *seamonkey* *opera*
 NPAPI_APPS_ALL_WC_LINUX=	${NPAPI_APPS_ALL_WC:S/^*/linux-/}
@@ -101,8 +109,11 @@ USE_NPAPI=	${NPAPI_APPS_ALL_WC}
 .for _TEMP_APP__ in ${NPAPI_APPS_ALL}
 _TEMP_APP_=${_TEMP_APP__}
 _TEMP_FLAG_=0
-.	for _TEMP_USE_ in ${USE_NPAPI}
-.		if !${_TEMP_APP_:C!${_TEMP_USE_:S/*/.*/:S/?/./}!!}
+.	for _TEMP_USE__ in ${USE_NPAPI}
+_TEMP_USE_=${_TEMP_USE__}
+.		if !${_TEMP_APP_:C!${_TEMP_USE_:S/*/.*/:S/?/./}!!} || \
+		( ${_TEMP_APP_:Mlinux-*} && ${_TEMP_USE_:Mlinux} ) || \
+		( ${_TEMP_APP_:Nlinux-*} && ${_TEMP_USE_:Mnative} )
 _TEMP_FLAG_=1
 .		endif
 .	endfor
@@ -116,7 +127,7 @@ NPAPI_APPS?=	${USE_NPAPI_EXP:S.^.${LOCALBASE}/lib/.:S.$./plugins.:N*opera*} \
 				${USE_NPAPI_EXP:S.^.${LOCALBASE}/share/.:S.$./plugins.:M*opera*} \
 				${USE_NPAPI_EXP:S.^.${X11BASE}/share/.:S.$./plugins.:M*opera*}
 NPAPI_SLDIRS_ALL=	${NPAPI_APPS_ALL:S.^.${NPAPI_SLDIR}/.}
-NPAPI_SLDIRS=		${USE_NPAPI:S.^.${NPAPI_SLDIR}/.}
+NPAPI_SLDIRS=		${USE_NPAPI_EXP:S.^.${NPAPI_SLDIR}/.}
 NPAPI_LINKFARMS=	${NPAPI_APPS} ${NPAPI_SLDIRS}
 
 NPAPI_LIBDIR?=	${PREFIX}/lib/npapi
@@ -134,6 +145,8 @@ PLIST_SUB+=		NPAPI_LIBDIR="${NPAPI_LIBDIR:S,^${PREFIX}/,,}" \
 _TD=		${NPAPI_NPAPIDIR:S,^${PREFIX}/,,}
 _TD_FULL=	${NPAPI_NPAPIDIR}
 _A=	>> ${TMPPLIST}
+_PI=	${NPAPI_PKGINSTALL}
+_PD=	${NPAPI_PKGDEINSTALL}
 _Q=	2>/dev/null || true
 PLIST_FILES+=	${NPAPI_FILES:S!^!${_TD}/!}
 PLIST_DIRS+=	${NPAPI_DIRS:S!^!${_TD}/!} ${_TD}
@@ -145,17 +158,27 @@ PLIST_FILES+=	${NPAPI_FILES_${dist}:S!^!${_TD_${dist}}/!}
 PLIST_DIRS+=	${NPAPI_DIRS_${dist}:S!^!${_TD_${dist}}/!} ${_TD_${dist}}
 .endfor
 
-.if !target(do-install)
-do-install:
+npapi-do-install:
 	@${INSTALL} -d ${_TD_FULL} ${NPAPI_SLDIRS_ALL}
-	@${CP} -p ${NPAPI_FILES:S,^,${WRKSRC}/,} ${_TD_FULL}/
+	@${CP} -p ${NPAPI_FILES:S,^,${NPAPI_WRKSRC}/,} ${_TD_FULL}/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${_TD_FULL}/
 	@${CHMOD} -R a+rX,go-w ${_TD_FULL}/
 	@for _dir in ${NPAPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL}/* $$_dir ${_Q} ; }
-	@${ECHO_CMD} '@exec ${INSTALL} -d ${NPAPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
-	@${ECHO_CMD} '@exec for _dir in ${NPAPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL}/* $$_dir ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${NPAPI_LINKFARMS} ; { ${RM} -f ${NPAPI_FILES:S,^,\$_dir/,} ; }' ${_A}
-	@${ECHO_CMD} '@unexec rmdir ${NPAPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
+	@${ECHO_CMD} '${INSTALL} -d ${NPAPI_SLDIRS_ALL}' > ${_PI}
+	@${ECHO_CMD} 'for _dir in ${NPAPI_LINKFARMS} ; \
+		{ ${LN} -sf ${NPAPI_FILES:S,^,${_TD_FULL}/,} $$_dir/ ${_Q}; }' >> ${_PI}
+	@${ECHO_CMD} 'for _dir in ${NPAPI_LINKFARMS} ; \
+		{ ${RM} -f ${NPAPI_FILES:S,^,\$_dir/,} ; }' > ${_PD}
+	@${ECHO_CMD} 'rmdir ${NPAPI_DIRS_TRY:S,^,${PREFIX}/,} ${_Q}' >> ${_PD}
+.if ${PKGINSTALL} != ${NPAPI_PKGINSTALL}
+	@${CAT} ${NPAPI_PKGINSTALL} >> ${PKGINSTALL}
+.endif
+.if ${PKGDEINSTALL} != ${NPAPI_PKGDEINSTALL}
+	@${CAT} ${NPAPI_PKGDEINSTALL} >> ${PKGDEINSTALL}
+.endif
+
+.if !target(do-install) && !${USE_NPAPI:Membed}
+do-install:		npapi-do-install
 .endif
 
 .if !target(relink)
@@ -166,17 +189,14 @@ relink:
 # Maintainer section
 npapi-gen:	extract
 	@${ECHO_CMD} -n 'NPAPI_FILES='
-	@cd ${WRKSRC} && ${FIND} -s . -not -type d | cut -f2- -d/ | ${TR} '\n' ' '
-	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
-		then ${ECHO_CMD} chrome.manifest ; fi
+	@cd ${NPAPI_WRKSRC} && ${FIND} -s . -not -type d | cut -f2- -d/ | ${TR} '\n' ' '
 	@${ECHO_CMD}
 	@${ECHO_CMD} -n 'NPAPI_DIRS='
-	@cd ${WRKSRC} && ${FIND} -ds . -not -name . -type d | cut -f2- -d/ | ${TR} '\n' ' '
+	@cd ${NPAPI_WRKSRC} && ${FIND} -ds . -not -name . -type d | cut -f2- -d/ | ${TR} '\n' ' '
 	@${ECHO_CMD}
 
 npapi-plist:	extract
-	@${FIND} -s ${WRKSRC} -not -type d | ${SED} -e "s,^${WRKSRC},%%NPAPI_NPAPIDIR%%," > ${PLIST}
-	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
-		then ${ECHO_CMD} %%NPAPI_NPAPIDIR%%/chrome.manifest >> ${PLIST} ; fi
-	@${FIND} -ds ${WRKSRC} -type d -not -name ${DISTNAME} | \
-		${SED} -e "s,^${WRKSRC},@dirrm %%NPAPI_NPAPIDIR%%," >> ${PLIST}
+	@${FIND} -s ${NPAPI_WRKSRC} -not -type d | \
+		${SED} -e "s,^${NPAPI_WRKSRC},%%NPAPI_NPAPIDIR%%," > ${PLIST}
+	@${FIND} -ds ${NPAPI_WRKSRC} -type d -not -name ${DISTNAME} | \
+		${SED} -e "s,^${NPAPI_WRKSRC},@dirrm %%NPAPI_NPAPIDIR%%," >> ${PLIST}

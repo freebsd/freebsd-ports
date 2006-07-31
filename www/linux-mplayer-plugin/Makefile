@@ -9,8 +9,7 @@ PORTNAME=	mplayerplug-in
 PORTVERSION=	3.25
 DISTVERSIONSUFFIX=	-fc4
 CATEGORIES=	www multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -24,12 +23,10 @@ LINUX_DIST=	fedora
 LINUX_DIST_VER=	4
 PREFIX?=	${LOCALBASE}
 
-USE_NPAPI=	linux-*
+USE_NPAPI=	linux
+NPAPI_WRKSRC=	${WRKDIR}/usr/lib/mozilla/plugins
 NPAPI_FILES=	${PLUGINS_EXT:S/^/${PORTNAME}/}
 PLUGINS_EXT=	.so .xpt -gmp.so -gmp.xpt -qt.so -qt.xpt -rm.so -rm.xpt -wmp.so -wmp.xpt
-
-post-extract:
-	${MKDIR} ${WRKSRC} && ${MV} ${WRKDIR}/usr/lib/mozilla/plugins/* ${WRKSRC}/
 
 .include "${.CURDIR}/Makefile.npapi"
 .include <bsd.port.mk>
