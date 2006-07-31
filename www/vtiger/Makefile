@@ -16,8 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	vtiger CRM is open source Customer Relationship Management (CRM) software
 
 USE_PHP=	mysql gd session pcre xml
-
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 WWWDIR?=	${PREFIX}/www/vtiger
 WRKSRC=		${WRKDIR}/vtiger_crm
@@ -31,6 +32,6 @@ do-install:
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
