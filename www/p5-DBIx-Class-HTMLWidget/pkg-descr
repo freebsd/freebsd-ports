@@ -1,0 +1,4 @@
+Something like Class::DBI::FromForm / Class::DBI::FromCGI but using
+HTML::Widget for form creation and validation and DBIx::Class as a ORM.
+
+WWW: http://search.cpan.org/dist/DBIx-Class-HTMLWidget/

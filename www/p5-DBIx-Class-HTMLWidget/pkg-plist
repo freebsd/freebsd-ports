@@ -1,0 +1,7 @@
+%%SITE_PERL%%/DBIx/Class/HTMLWidget.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/HTMLWidget/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/HTMLWidget
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
