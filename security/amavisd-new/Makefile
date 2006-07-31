@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -31,13 +32,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
-		${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
-		${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze \
-		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
-		${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop \
-		${LOCALBASE}/bin/arj:${PORTSDIR}/archivers/arj \
-		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
-		${LOCALBASE}/bin/unzoo:${PORTSDIR}/archivers/unzoo \
 		${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract \
 		${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
@@ -53,7 +47,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
 OPTIONS=	MYSQL	"MySQL support"		off \
 		PGSQL	"PgSQL support"		off \
 		LDAP	"LDAP support"		off \
-		MILTER	"sendmail milter support" on
+		MILTER	"sendmail milter support" on \
+		RAR	"rar support"	on \
+		ARJ	"arj support"	on \
+		LHA	"lha support"	on \
+		ARC	"arc support"	on \
+		ZOO	"zoo support with zoo archiver"	on \
+		UNZOO	"zoo support with unzoo archiver"	off \
+		LZOP	"lzop support"	on \
+		FREEZE	"freeze support"	on
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
@@ -104,6 +106,38 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 
 .if defined(WITH_LDAP)
 RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+.endif
+
+.if defined(WITH_RAR)
+RUN_DEPENDS+=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
+.endif
+
+.if defined(WITH_ARJ)
+RUN_DEPENDS+=	${LOCALBASE}/bin/arj:${PORTSDIR}/archivers/arj
+.endif
+
+.if defined(WITH_LHA)
+RUN_DEPENDS+=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
+.endif
+
+.if defined(WITH_ARC)
+RUN_DEPENDS+=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc
+.endif
+
+.if defined(WITH_ZOO)
+RUN_DEPENDS+=	${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo
+.endif
+
+.if defined(WITH_ZOO)
+RUN_DEPENDS+=	${LOCALBASE}/bin/unzoo:${PORTSDIR}/archivers/unzoo
+.endif
+
+.if defined(WITH_LZOP)
+RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop
+.endif
+
+.if defined(WITH_FREEZE)
+RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze
 .endif
 
 post-patch:
