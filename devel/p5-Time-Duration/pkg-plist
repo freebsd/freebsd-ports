@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Duration/.packlist
 %%SITE_PERL%%/Time/Duration.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Duration
-@dirrmtry %%SITE_PERL%%/Time
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Duration
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
+@dirrmtry %%SITE_PERL%%/Time
