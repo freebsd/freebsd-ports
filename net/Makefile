@@ -470,6 +470,7 @@
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Traceroute
     SUBDIR += p5-Net-Traceroute6
+    SUBDIR += p5-Net-VNC
     SUBDIR += p5-Net-Wake
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-Net-Whois-IP
