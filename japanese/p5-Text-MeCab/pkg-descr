@@ -1,0 +1,10 @@
+libmecab (http://mecab.sourceforge.ne.jp) already has a perl interface
+built with it, so why a new module? I just feel that while a subtle
+difference, making the perl interface through a tied hash is just...
+weird.
+
+So Text::MeCab gives you a more natural, Perl-ish way to access
+libmecab!
+
+Author:	Daisuke Maki <dmaki@cpan.org>
+WWW: http://search.cpan.org/dist/Text-MeCab/
