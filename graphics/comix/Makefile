@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,6 +48,8 @@ post-patch:
 		s|/usr/share/mime|${PREFIX}/share/mime|g ; \
 		s|'/usr'|'${PREFIX}'|g" \
 			${WRKSRC}/install.py
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
+		${WRKSRC}/comix
 
 do-install:
 .if defined(THUMBNAILS_ENABLED)

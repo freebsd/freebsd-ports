@@ -17,6 +17,7 @@ share/locale/pl/LC_MESSAGES/comix.mo
 share/locale/pt_BR/LC_MESSAGES/comix.mo
 share/locale/sv/LC_MESSAGES/comix.mo
 share/locale/zh_CN/LC_MESSAGES/comix.mo
+share/locale/zh_TW/LC_MESSAGES/comix.mo
 %%THUMBNAILS:%%share/mime/application/x-cbr.xml
 %%THUMBNAILS:%%share/mime/application/x-cbt.xml
 %%THUMBNAILS:%%share/mime/application/x-cbz.xml
@@ -25,12 +26,21 @@ share/pixmaps/comix.png
 share/pixmaps/comix/cbr.png
 share/pixmaps/comix/cbt.png
 share/pixmaps/comix/cbz.png
+share/pixmaps/comix/double_page.png
+share/pixmaps/comix/fitheight.png
+share/pixmaps/comix/fitnone.png
+share/pixmaps/comix/fitscreen.png
+share/pixmaps/comix/fitwidth.png
 share/pixmaps/comix/flip-horizontal.png
 share/pixmaps/comix/flip-vertical.png
+share/pixmaps/comix/lens.png
 share/pixmaps/comix/library.png
 share/pixmaps/comix/library_add.png
+share/pixmaps/comix/manga.png
 share/pixmaps/comix/rotate-180.png
+share/pixmaps/comix/rotate-270-jpeg.png
 share/pixmaps/comix/rotate-270.png
+share/pixmaps/comix/rotate-90-jpeg.png
 share/pixmaps/comix/rotate-90.png
 share/pixmaps/comix/slideshow.png
 @dirrm share/pixmaps/comix
