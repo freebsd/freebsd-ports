@@ -68,7 +68,7 @@ EXE_TARGETS+=	${PORTNAME}-sdl
 PLIST_FILES+=	bin/${PORTNAME}-sdl
 .endif
 
-.if defined(WITH_GLX)
+.if defined(WITH_CLIENT)
 pre-everything::
 	@${ECHO_CMD}
 	@${ECHO_CMD} "WARNING: currently the sound is broken in the GLX client. The problem has been reported to the developers, who are working on it. For the moment please use the SDL client instead as a workaround." | ${FMT}
