@@ -56,10 +56,10 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF/Core
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/RDF
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/RDF/Core/Enumerator
-@dirrm %%SITE_PERL%%/RDF/Core/Model
-@dirrm %%SITE_PERL%%/RDF/Core/Storage
-@dirrm %%SITE_PERL%%/RDF/Core
+@dirrmtry %%SITE_PERL%%/RDF/Core/Enumerator
+@dirrmtry %%SITE_PERL%%/RDF/Core/Model
+@dirrmtry %%SITE_PERL%%/RDF/Core/Storage
+@dirrmtry %%SITE_PERL%%/RDF/Core
 @dirrmtry %%SITE_PERL%%/RDF
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Core
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Core
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF
