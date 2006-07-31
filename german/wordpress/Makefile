@@ -8,6 +8,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	german www
 MASTER_SITES=	http://files.wordpress.de/uploads/
 PKGNAMEPREFIX=	de-
@@ -38,8 +39,7 @@ pre-install:
 		${SED} -e 's|^|${WORDPRESS}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry www >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST}
 	if [! -f ${WRKSRC}/wp-config-sample.php]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
