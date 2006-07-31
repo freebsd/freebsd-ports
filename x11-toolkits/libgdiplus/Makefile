@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libgdiplus
-PORTVERSION=	1.1.13.2
-PORTREVISION=	1
+PORTVERSION=	1.1.13.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.go-mono.com/sources/libgdiplus-1.1/
 
