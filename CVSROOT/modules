@@ -10472,6 +10472,7 @@ pear-Net_UserAgent_Mobile	ports/net/pear-Net_UserAgent_Mobile
 pear-Numbers_Roman	ports/textproc/pear-Numbers_Roman
 pear-Numbers_Words	ports/textproc/pear-Numbers_Words
 pear-OLE	ports/devel/pear-OLE
+pear-PEAR_Info	ports/devel/pear-PEAR_Info
 pear-PEAR_PackageFileManager	ports/devel/pear-PEAR_PackageFileManager
 pear-PHPDoc	ports/devel/pear-PHPDoc
 pear-PHPUnit	ports/devel/pear-PHPUnit
