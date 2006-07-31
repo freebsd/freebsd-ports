@@ -380,7 +380,7 @@ lib/libedataserverui-%%EVO_VERSION%%.so.6
 lib/libegroupwise-%%EVO_VERSION%%.a
 lib/libegroupwise-%%EVO_VERSION%%.la
 lib/libegroupwise-%%EVO_VERSION%%.so
-lib/libegroupwise-%%EVO_VERSION%%.so.9
+lib/libegroupwise-%%EVO_VERSION%%.so.10
 lib/libexchange-storage-%%EVO_VERSION%%.a
 lib/libexchange-storage-%%EVO_VERSION%%.la
 lib/libexchange-storage-%%EVO_VERSION%%.so
