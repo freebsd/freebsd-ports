@@ -92,6 +92,7 @@ include/wine/windows/basetsd.h
 include/wine/windows/basetyps.h
 include/wine/windows/cderr.h
 include/wine/windows/cguid.h
+include/wine/windows/cierror.h
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
@@ -116,6 +117,9 @@ include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx8core.h
 include/wine/windows/dbghelp.h
+include/wine/windows/dbinit.idl
+include/wine/windows/dbprop.idl
+include/wine/windows/dbs.idl
 include/wine/windows/dbt.h
 include/wine/windows/dciddi.h
 include/wine/windows/dciman.h
@@ -284,6 +288,8 @@ include/wine/windows/ole2.h
 include/wine/windows/ole2ver.h
 include/wine/windows/oleauto.h
 include/wine/windows/olectl.h
+include/wine/windows/oledb.h
+include/wine/windows/oledb.idl
 include/wine/windows/oledlg.h
 include/wine/windows/oleidl.h
 include/wine/windows/oleidl.idl
@@ -353,6 +359,8 @@ include/wine/windows/tchar.h
 include/wine/windows/textserv.h
 include/wine/windows/tlhelp32.h
 include/wine/windows/tmschema.h
+include/wine/windows/tom.h
+include/wine/windows/tom.idl
 include/wine/windows/twain.h
 include/wine/windows/unknwn.h
 include/wine/windows/unknwn.idl
@@ -421,8 +429,6 @@ include/wine/windows/ddk/wdm.h
 include/wine/windows/ddk/winsplp.h
 lib/libwine.so
 lib/libwine.so.1
-lib/libwine_unicode.so
-lib/libwine_unicode.so.1
 lib/wine/activeds.dll.so
 lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
@@ -504,6 +510,7 @@ lib/wine/imaadp32.acm.so
 lib/wine/imagehlp.dll.so
 lib/wine/imm.dll16
 lib/wine/imm32.dll.so
+lib/wine/infosoft.dll.so
 lib/wine/inseng.dll.so
 lib/wine/iphlpapi.dll.so
 lib/wine/itss.dll.so

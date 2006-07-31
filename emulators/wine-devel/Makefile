@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.18
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://ibiblio.org/pub/linux/system/emulators/wine/ \
