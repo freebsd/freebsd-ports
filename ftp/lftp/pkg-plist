@@ -3,31 +3,31 @@ bin/lftpget
 @unexec if cmp -s %D/etc/lftp.conf %D/etc/lftp.conf.sample; then rm -f %D/etc/lftp.conf; fi
 etc/lftp.conf.sample
 @exec if [ ! -f %D/etc/lftp.conf ]; then cp %B/%f %D/etc/lftp.conf; fi
-lib/liblftp-tasks.a
 lib/liblftp-jobs.a
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.debug-levels
-%%PORTDOCS%%%%DOCSDIR%%/README.modules
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+lib/liblftp-tasks.a
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/FAQ
+%%DOCSDIR%%/FEATURES
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.debug-levels
+%%DOCSDIR%%/README.modules
+%%DOCSDIR%%/THANKS
+%%DOCSDIR%%/TODO
 %%DATADIR%%/convert-netscape-cookies
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
 %%DATADIR%%/verify-file
-%%NLS%%share/locale/de/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/es/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/it/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/locale/de/LC_MESSAGES/lftp.mo
+share/locale/es/LC_MESSAGES/lftp.mo
+share/locale/fr/LC_MESSAGES/lftp.mo
+share/locale/it/LC_MESSAGES/lftp.mo
+share/locale/ja/LC_MESSAGES/lftp.mo
+share/locale/ko/LC_MESSAGES/lftp.mo
+share/locale/pl/LC_MESSAGES/lftp.mo
+share/locale/pt_BR/LC_MESSAGES/lftp.mo
+share/locale/ru/LC_MESSAGES/lftp.mo
+share/locale/zh_CN/LC_MESSAGES/lftp.mo
+share/locale/zh_TW/LC_MESSAGES/lftp.mo
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
