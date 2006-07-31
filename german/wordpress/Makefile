@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	german www
 MASTER_SITES=	http://files.wordpress.de/uploads/
+PKGNAMEPREFIX=	de-
 DISTNAME=	wp_de_20
-PKGNAMEPREFIX=  de-
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
@@ -39,12 +39,12 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
+		&& ${ECHO_CMD} @dirrmtry www >> ${PLIST}
 	if [! -f ${WRKSRC}/wp-config-sample.php]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
 do-install:
-	-@${MKDIR} ${PREFIX}/${WORDPRESS}
+	@${MKDIR} ${PREFIX}/${WORDPRESS}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${WORDPRESS}
 	@${CHMOD} 755 ${PREFIX}/${WORDPRESS}
 	${CP} -R ${WRKSRC}/ ${PREFIX}/${WORDPRESS}
