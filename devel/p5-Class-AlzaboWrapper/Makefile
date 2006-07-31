@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Class-AlzaboWrapper
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
-COMMENT=	Higher level wrapper around Alzabo
+COMMENT=	Higher level wrapper around Alzabo Row and Table objects
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}//Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
