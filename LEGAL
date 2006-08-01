@@ -277,6 +277,7 @@ homard-*		french/homard		Only free for use in conjunction with
 						french/aster.  For any other purpose,
 						you have to acquire a license
 hptools-src*		devel/hptools		Not made or distributed for resale
+httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non-commercial use
 HyperSpec-*.tar.gz	devel/clisp-hyperspec	Commercial redistribution
 						prohibited
 IBMJava2-SDK-131.tgz	java/linux-ibm-jdk13	Redistribution of repackaged
