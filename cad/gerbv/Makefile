@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ USE_GNOME=	gnometarget gtk20
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-gtk2
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		gerbv.1
 
@@ -29,8 +28,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|libpng-config --cflags|pkg-config --cflags libpng12|g ; \
-		 s|libpng-config --libs|pkg-config --libs libpng12|g'
+		's|libpng-config --cflags|$$PKG_CONFIG --cflags libpng12|g ; \
+		 s|libpng-config --libs|$$PKG_CONFIG --libs libpng12|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
