@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kbtv
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.3
 CATEGORIES=	multimedia python kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/
 EXTRACT_SUFX=	.tbz
@@ -15,7 +15,8 @@ MAINTAINER=	danny@ricin.com
 COMMENT=	KDE TV viewer for FreeBSD
 
 RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
-BUILD_DEPENDS=	${RUN_DEPENDS} swig1.3:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
+		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
@@ -23,15 +24,20 @@ USE_PYTHON=	yes
 USE_SDL=	sdl
 INSTALLS_ICONS=	yes
 
-OPTIONS=	PWC "Philips & compatible cameras (pwc)" off \
-		SAA "Philips SAA713x based TV cards (saa)" off \
-		SAA_TUNER_PHILIPS "Philips tuner API" on \
-		SAA_TUNER_PHILIPS_MK3 "Philips MK3 tuner API" off \
-		SAA_TUNER_ALPS "Alps tuner API" off \
-		SAA_TUNER_LG "LG tuner API" off \
-		SAA_TUNER_TEMIC "Temic tuner API" off \
-		SAA_TUNER_NTSC "NTSC tuner standard (default PAL)" off \
-		SAA_TUNER_0xC2 "IIC read address 0xc2 (default 0xc0)" off
+OPTIONS=	PWC "Philips and compatible cameras" off \
+		SAA "Philips SAA713x TV cards" off \
+		SAA_TUNER_PHILIPS "SAA with Philips tuner API" on \
+		SAA_TUNER_PHILIPS_MK3 "SAA with Philips MK3 tuner API" off \
+		SAA_TUNER_ALPS "SAA with Alps tuner API" off \
+		SAA_TUNER_LG "SAA with LG tuner API" off \
+		SAA_TUNER_TEMIC "SAA with Temic tuner API" off \
+		SAA_STD_PAL_B_G "SAA with PAL B/G standard" on \
+		SAA_STD_PAL_I "SAA with PAL I standard" off \
+		SAA_STD_PAL_D_K "SAA with PAL/SECAM D/K standard" off \
+		SAA_STD_PAL_L "SAA with PAL/SECAM L standard" off \
+		SAA_STD_PAL_LACCENT "SAA with PAL/SECAM L' standard" off \
+		SAA_STD_NTSC "SAA with NTSC N/M standard" off \
+		SAA_STD_NTSC_JAPAN "SAA with NTSC Japan standard" off
 
 .include <bsd.port.pre.mk>
 
@@ -90,14 +96,31 @@ post-patch:
 		's|SAA_TUNER = SAA_TUNER_PHILIPS|SAA_TUNER = SAA_TUNER_TEMIC|' \
 		${WRKSRC}/buildprefs.py
 .endif
-.if defined(WITH_SAA_TUNER_NTSC)
-	@${REINPLACE_CMD} -e \
-		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL|SAA_TUNER_STD = SAA_TUNER_STD_NTSC|' \
-		${WRKSRC}/buildprefs.py
 .endif
-.if defined(WITH_SAA_TUNER_0xC2)
+.if defined(WITHOUT_SAA_STD_PAL_B_G)
+.if defined(WITH_SAA_STD_PAL_I)
 	@${REINPLACE_CMD} -e \
-		's|SAA_TUNER_IIC = SAA_IIC_0xC0|SAA_TUNER_IIC = SAA_IIC_0xC2|' \
+		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL_B_G|SAA_TUNER_STD = SAA_TUNER_STD_PAL_I|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_STD_PAL_D_K)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL_B_G|SAA_TUNER_STD = SAA_TUNER_STD_PAL_D_K|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_STD_PAL_L)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL_B_G|SAA_TUNER_STD = SAA_TUNER_STD_PAL_L|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_STD_PAL_LACCENT)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL_B_G|SAA_TUNER_STD = SAA_TUNER_STD_PAL_LACCENT|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_STD_NTSC)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL_B_G|SAA_TUNER_STD = SAA_TUNER_STD_NTSC|' \
+		${WRKSRC}/buildprefs.py
+.elif defined(WITH_SAA_STD_NTSC_JAPAN)
+	@${REINPLACE_CMD} -e \
+		's|SAA_TUNER_STD = SAA_TUNER_STD_PAL_B_G|SAA_TUNER_STD = SAA_TUNER_STD_NTSC_JAPAN|' \
 		${WRKSRC}/buildprefs.py
 .endif
 .endif
