@@ -254,6 +254,7 @@
     SUBDIR += guspat
     SUBDIR += gxmms2
     SUBDIR += hawkvoice
+    SUBDIR += herrie
     SUBDIR += holyshout
     SUBDIR += hydrogen
     SUBDIR += icecast
