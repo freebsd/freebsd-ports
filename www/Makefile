@@ -1089,6 +1089,7 @@
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-mousegestures
     SUBDIR += xpi-mozex
+    SUBDIR += xpi-mrtech-local-install
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-pdf_download
