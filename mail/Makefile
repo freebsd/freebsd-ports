@@ -364,6 +364,7 @@
     SUBDIR += pear-Net_Cyrus
     SUBDIR += pear-Net_IMAP
     SUBDIR += pear-Net_LMTP
+    SUBDIR += pecl-esmtp
     SUBDIR += pecl-mailparse
     SUBDIR += perdition
     SUBDIR += pflogstats
