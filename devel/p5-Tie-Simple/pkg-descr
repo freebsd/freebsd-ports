@@ -1,0 +1,14 @@
+This module adds the ability to quickly create new types of tie
+objects without creating a complete class. It does so in such a way as
+to try and make the programmers life easier when it comes to
+single-use ties that I find myself wanting to use from time-to-time.
+
+The Tie::Simple package is actually a front-end to other classes which
+really do all the work once tied, but this package does the dwimming
+to automatically figure out what you're trying to do.
+
+I've tried to make this as intuitive as possible and dependent on
+other bits of Perl where I can to minimize the need for documentation
+and to make this extra, extra spiffy.
+
+WWW:	http://search.cpan.org/dist/Tie-Simple/
