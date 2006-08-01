@@ -547,6 +547,7 @@
     SUBDIR += libphish
     SUBDIR += libpperl
     SUBDIR += libredblack
+    SUBDIR += libs11n
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
