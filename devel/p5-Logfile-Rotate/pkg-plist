@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Logfile/Rotate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Logfile/Rotate/.packlist
+@dirrmtry %%SITE_PERL%%/Logfile
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Logfile/Rotate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Logfile
