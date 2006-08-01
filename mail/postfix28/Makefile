@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.3.2
+PORTVERSION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -93,7 +94,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 .include <bsd.port.pre.mk>
 
 # Default requirement for postfix rc script
-_REQUIRE=	DAEMON
+_REQUIRE=	LOGIN cleanvar
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
