@@ -168,6 +168,7 @@
     SUBDIR += hlfl
     SUBDIR += hmap
     SUBDIR += hostsentry
+    SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra
     SUBDIR += idea
