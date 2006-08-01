@@ -36,11 +36,9 @@ share/apps/kdissert/templatedata/kdissstx.tar.gz
 share/apps/kdissert/tips
 share/apps/kdissertpart/kdissertpart.rc
 share/config.kcfg/kdissert.kcfg
-share/doc/HTML/en/kdissert/common
 share/doc/HTML/en/kdissert/index.cache.bz2
 share/doc/HTML/en/kdissert/index.docbook
 share/doc/HTML/en/kdissert/screenshot.jpg
-share/doc/HTML/fr/kdissert/common
 share/doc/HTML/fr/kdissert/index.cache.bz2
 share/doc/HTML/fr/kdissert/index.docbook
 share/icons/hicolor/128x128/actions/kdissert_sort.png
@@ -59,12 +57,25 @@ share/icons/hicolor/32x32/actions/kdissert_sort.png
 share/icons/hicolor/32x32/apps/kdissert.png
 share/icons/hicolor/64x64/actions/kdissert_sort.png
 share/icons/hicolor/64x64/apps/kdissert.png
+share/locale/bg/LC_MESSAGES/kdissert.mo
+share/locale/br/LC_MESSAGES/kdissert.mo
+share/locale/cs/LC_MESSAGES/kdissert.mo
+share/locale/da/LC_MESSAGES/kdissert.mo
 share/locale/de/LC_MESSAGES/kdissert.mo
+share/locale/el/LC_MESSAGES/kdissert.mo
 share/locale/es/LC_MESSAGES/kdissert.mo
 share/locale/fr/LC_MESSAGES/kdissert.mo
+share/locale/ga/LC_MESSAGES/kdissert.mo
+share/locale/gl/LC_MESSAGES/kdissert.mo
 share/locale/it/LC_MESSAGES/kdissert.mo
+share/locale/ka/LC_MESSAGES/kdissert.mo
 share/locale/nl/LC_MESSAGES/kdissert.mo
 share/locale/pl/LC_MESSAGES/kdissert.mo
+share/locale/pt/LC_MESSAGES/kdissert.mo
+share/locale/pt_BR/LC_MESSAGES/kdissert.mo
+share/locale/ru/LC_MESSAGES/kdissert.mo
+share/locale/sv/LC_MESSAGES/kdissert.mo
+share/locale/tr/LC_MESSAGES/kdissert.mo
 share/mimelnk/application/x-kdissert.desktop
 share/services/kdissertpart.desktop
 @dirrm share/doc/HTML/fr/kdissert
