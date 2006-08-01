@@ -24,6 +24,9 @@ share/icons/qterm.png
 %%DATADIR%%/pic/fonts.png
 %%DATADIR%%/pic/keys.png
 %%DATADIR%%/pic/message.png
+%%DATADIR%%/pic/messagebox_critical.png
+%%DATADIR%%/pic/messagebox_info.png
+%%DATADIR%%/pic/messagebox_warning.png
 %%DATADIR%%/pic/mouse.png
 %%DATADIR%%/pic/paste.png
 %%DATADIR%%/pic/popwidget.png
@@ -35,6 +38,7 @@ share/icons/qterm.png
 %%DATADIR%%/pic/reconnect.png
 %%DATADIR%%/pic/rect.png
 %%DATADIR%%/pic/refresh.png
+%%DATADIR%%/pic/shadow.png
 %%DATADIR%%/pic/sound.png
 %%DATADIR%%/pic/tabpad.png
 %%DATADIR%%/po/qterm_chs.qm
@@ -56,5 +60,5 @@ share/icons/qterm.png
 @dirrm %%DATADIR%%/pic
 @dirrm %%DATADIR%%/cursor
 @dirrm %%DATADIR%%
-@dirrm share/icons
-@dirrm share/applications
+@dirrmtry share/icons
+@dirrmtry share/applications

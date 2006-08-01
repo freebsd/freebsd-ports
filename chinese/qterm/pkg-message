@@ -4,3 +4,12 @@ QTerm's config file privilege in your ~/.qterm directory to 0755 at least
 		To display IP location when using QTerm
 you must get file "QQWry.dat" and put it into your ~/.qterm directory
 *************************************************************************
+
+*************************************************************************
+Unfortunately there is an anonying bug in the release of QTerm 0.4.0. If 
+your language setting is NOT English, you might experience some hang up 
+when connecting to a site.
+
+A simple workaround is to use the English interface. This bug will be fixed
+in the next minor release.
+*************************************************************************
