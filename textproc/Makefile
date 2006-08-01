@@ -474,6 +474,7 @@
     SUBDIR += p5-Text-Chomp
     SUBDIR += p5-Text-Context-EitherSide
     SUBDIR += p5-Text-Decorator
+    SUBDIR += p5-Text-Delimited
     SUBDIR += p5-Text-Diff
     SUBDIR += p5-Text-Diff-HTML
     SUBDIR += p5-Text-Diff3
