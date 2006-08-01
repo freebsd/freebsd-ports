@@ -104,6 +104,7 @@
     SUBDIR += pearpc
     SUBDIR += prodosemu
     SUBDIR += psim-freebsd
+    SUBDIR += pyxmame
     SUBDIR += qemu
     SUBDIR += qemu-launcher
     SUBDIR += quasi88
