@@ -1097,7 +1097,6 @@
     SUBDIR += p5-IPC-Locker
     SUBDIR += p5-IPC-MM
     SUBDIR += p5-IPC-Mmap
-    SUBDIR += p5-IPC-Mmap-SimpleShare
     SUBDIR += p5-IPC-Open3-Simple
     SUBDIR += p5-IPC-Run
     SUBDIR += p5-IPC-Run3
