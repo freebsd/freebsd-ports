@@ -1,91 +1,122 @@
+@comment $FreeBSD$
+%%DATADIR%%/create/ibase/create.sql
+%%DATADIR%%/create/msql/crc-multi.txt
+%%DATADIR%%/create/msql/crc.txt
+%%DATADIR%%/create/msql/create.txt
+%%DATADIR%%/create/msql/multi.txt
+%%DATADIR%%/create/mssql/create.sql
+%%DATADIR%%/create/mysql/categories.txt
+%%DATADIR%%/create/mysql/crc-multi.txt
+%%DATADIR%%/create/mysql/crc.txt
+%%DATADIR%%/create/mysql/create.txt
+%%DATADIR%%/create/mysql/ispell.txt
+%%DATADIR%%/create/mysql/multi.txt
+%%DATADIR%%/create/mysql/track.txt
+%%DATADIR%%/create/oracle/categories.sql
+%%DATADIR%%/create/oracle/crc-multi.sql
+%%DATADIR%%/create/oracle/crc.sql
+%%DATADIR%%/create/oracle/create.sql
+%%DATADIR%%/create/oracle/multi.sql
+%%DATADIR%%/create/oracle/track.sql
+%%DATADIR%%/create/pgsql/categories.txt
+%%DATADIR%%/create/pgsql/crc-multi.txt
+%%DATADIR%%/create/pgsql/crc.txt
+%%DATADIR%%/create/pgsql/create.txt
+%%DATADIR%%/create/pgsql/grant.txt
+%%DATADIR%%/create/pgsql/multi.txt
+%%DATADIR%%/create/pgsql/track.txt
+%%DATADIR%%/create/solid/README
+%%DATADIR%%/create/solid/create.txt
+%%DATADIR%%/create/solid/multi.txt
+%%DATADIR%%/create/stopwords/stop.cz.txt
+%%DATADIR%%/create/stopwords/stop.de.txt
+%%DATADIR%%/create/stopwords/stop.dk.txt
+%%DATADIR%%/create/stopwords/stop.en.big
+%%DATADIR%%/create/stopwords/stop.en.huge
+%%DATADIR%%/create/stopwords/stop.en.txt
+%%DATADIR%%/create/stopwords/stop.es.txt
+%%DATADIR%%/create/stopwords/stop.fr.txt
+%%DATADIR%%/create/stopwords/stop.it.txt
+%%DATADIR%%/create/stopwords/stop.nl.txt
+%%DATADIR%%/create/stopwords/stop.no.txt
+%%DATADIR%%/create/stopwords/stop.pl.txt
+%%DATADIR%%/create/stopwords/stop.pt.txt
+%%DATADIR%%/create/stopwords/stop.ru.txt
+%%DATADIR%%/create/stopwords/stop.sk.txt
+%%DATADIR%%/create/stopwords/stop.ua.txt
+%%DATADIR%%/create/sybase/README
+%%DATADIR%%/create/sybase/create.sql
+%%DATADIR%%/create/virtuoso/crc.txt
+%%DATADIR%%/create/virtuoso/create.txt
+%%DATADIR%%/create/virtuoso/multi.txt
+%%DOCSDIR%%/HTDB.txt
+%%DOCSDIR%%/HTTP-codes.txt
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/NEWS.html
+%%DOCSDIR%%/UdmSearch-Oracle8.html
+%%DOCSDIR%%/bugs.txt
+%%DOCSDIR%%/cachemode.txt
+%%DOCSDIR%%/categories.txt
+%%DOCSDIR%%/charset.txt
+%%DOCSDIR%%/follow.txt
+%%DOCSDIR%%/hrefonly.txt
+%%DOCSDIR%%/html.txt
+%%DOCSDIR%%/ispell.txt
+%%DOCSDIR%%/lib.txt
+%%DOCSDIR%%/mp3.txt
+%%DOCSDIR%%/parsers.txt
+%%DOCSDIR%%/performance.txt
+%%DOCSDIR%%/search.txt
+%%DOCSDIR%%/storage.txt
+%%DOCSDIR%%/syslog.txt
+%%DOCSDIR%%/tags.txt
+%%DOCSDIR%%/templates.txt
+%%DOCSDIR%%/tracking.txt
+%%DOCSDIR%%/usage.txt
+bin/search.cgi
+bin/udm-config
 etc/udmsearch/indexer.conf-dist
 etc/udmsearch/search.htm-dist
-share/udmsearch/search.cgi
-share/udmsearch/create/oracle/crc-multi.sql
-share/udmsearch/create/oracle/create.sql
-share/udmsearch/create/oracle/multi.sql
-share/udmsearch/create/sybase/create.sql
-share/udmsearch/create/sybase/README
-share/udmsearch/create/stopwords/stop.en.1.txt
-share/udmsearch/create/stopwords/stop.ru.txt
-share/udmsearch/create/stopwords/stop.pt.txt
-share/udmsearch/create/stopwords/stop.no.txt
-share/udmsearch/create/stopwords/stop.nl.txt
-share/udmsearch/create/stopwords/stop.fr.txt
-share/udmsearch/create/stopwords/stop.es.txt
-share/udmsearch/create/stopwords/stop.pl.txt
-share/udmsearch/create/stopwords/stop.en.txt
-share/udmsearch/create/stopwords/stop.de.txt
-share/udmsearch/create/stopwords/stop.dk.txt
-share/udmsearch/create/stopwords/stop.it.txt
-share/udmsearch/create/stopwords/stop.ua.txt
-share/udmsearch/create/stopwords/stop.cz.txt
-share/udmsearch/create/solid/create.txt
-share/udmsearch/create/solid/README
-share/udmsearch/create/solid/multi.txt
-share/udmsearch/create/pgsql/create.txt
-share/udmsearch/create/pgsql/crc.txt
-share/udmsearch/create/pgsql/multi.txt
-share/udmsearch/create/pgsql/crc-multi.txt
-share/udmsearch/create/virtuoso/create.txt
-share/udmsearch/create/virtuoso/multi.txt
-share/udmsearch/create/virtuoso/crc.txt
-share/udmsearch/create/mysql/create.txt
-share/udmsearch/create/mysql/crc.txt
-share/udmsearch/create/mysql/multi.txt
-share/udmsearch/create/mysql/crc-multi.txt
-share/udmsearch/create/mysql/ispell.txt
-share/udmsearch/create/mssql/create.sql
-share/udmsearch/create/msql/multi.txt
-share/udmsearch/create/msql/create.txt
-share/udmsearch/create/msql/crc.txt
-share/udmsearch/create/msql/crc-multi.txt
-share/udmsearch/create/ibase/create.sql
+include/udm_boolean.h
+include/udm_cache.h
 include/udm_charset.h
 include/udm_common.h
 include/udm_conf.h
 include/udm_config.h
+include/udm_crc32.h
 include/udm_db.h
+include/udm_ftp.h
+include/udm_host.h
 include/udm_hrefs.h
+include/udm_http.h
+include/udm_id3.h
 include/udm_indexer.h
 include/udm_log.h
 include/udm_mutex.h
 include/udm_os.h
 include/udm_parseurl.h
+include/udm_search_tl.h
+include/udm_searchtool.h
+include/udm_socket.h
 include/udm_spell.h
 include/udm_utils.h
+include/udm_xmalloc.h
 include/udmsearch.h
 lib/libudmsearch.a
+lib/libudmsearch.la
 sbin/indexer
-bin/udm-config
-share/doc/udmsearch/INSTALL
-share/doc/udmsearch/parsers.txt
-share/doc/udmsearch/syslog.txt
-share/doc/udmsearch/templates.txt
-share/doc/udmsearch/usage.txt
-share/doc/udmsearch/HTTP-codes.txt
-share/doc/udmsearch/HTDB.txt
-share/doc/udmsearch/search.txt
-share/doc/udmsearch/ispell.txt
-share/doc/udmsearch/follow.txt
-share/doc/udmsearch/storage.txt
-share/doc/udmsearch/hrefonly.txt
-share/doc/udmsearch/UdmSearch-Oracle8.html
-share/doc/udmsearch/NEWS.html
-share/doc/udmsearch/lib.txt
-share/doc/udmsearch/html.txt
-share/doc/udmsearch/charset.txt
-@dirrm share/doc/udmsearch
-@dirrm share/udmsearch/create/ibase
-@dirrm share/udmsearch/create/msql
-@dirrm share/udmsearch/create/mssql
-@dirrm share/udmsearch/create/mysql
-@dirrm share/udmsearch/create/oracle
-@dirrm share/udmsearch/create/pgsql
-@dirrm share/udmsearch/create/solid
-@dirrm share/udmsearch/create/stopwords
-@dirrm share/udmsearch/create/sybase
-@dirrm share/udmsearch/create/virtuoso
-@dirrm share/udmsearch/create
-@dirrm share/udmsearch
-@dirrm etc/udmsearch
+sbin/splitter
+@dirrmtry %%DATADIR%%/create/ibase
+@dirrmtry %%DATADIR%%/create/msql
+@dirrmtry %%DATADIR%%/create/mssql
+@dirrmtry %%DATADIR%%/create/mysql
+@dirrmtry %%DATADIR%%/create/oracle
+@dirrmtry %%DATADIR%%/create/pgsql
+@dirrmtry %%DATADIR%%/create/solid
+@dirrmtry %%DATADIR%%/create/stopwords
+@dirrmtry %%DATADIR%%/create/sybase
+@dirrmtry %%DATADIR%%/create/virtuoso
+@dirrmtry %%DATADIR%%/create
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%
+@dirrmtry etc/udmsearch
