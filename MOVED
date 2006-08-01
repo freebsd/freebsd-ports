@@ -2426,3 +2426,6 @@ lang/fpc-demo||2006-07-24|Removed because it's not necessary anymore
 www/horde-php5||2006-07-24|Removed: this port is redundant now that php5 is the default
 sysutils/e17-module-devian|x11/e17-module-devian|2006-07-26|Move e17-module-devian from sysutils to x11
 devel/viewcvs|devel/viewvc|2006-07-26|Project name has changed
+japanese/eb3||2006-08-01|Has expired: please use a never version in japanese/eb
+mail/dspampd||2006-08-01|Has expired: Buggy with recent perl versions, not developed anymore, use mail/dspam[-devel] in --daemon mode instead
+net/svnc||2006-08-01|Has expired: mastersite gone, depends on unfetchable, antique version of vnc
