@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -128,7 +128,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc
 RUN_DEPENDS+=	${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo
 .endif
 
-.if defined(WITH_ZOO)
+.if defined(WITH_UNZOO)
 RUN_DEPENDS+=	${LOCALBASE}/bin/unzoo:${PORTSDIR}/archivers/unzoo
 .endif
 
