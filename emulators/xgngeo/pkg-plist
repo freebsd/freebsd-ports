@@ -1,8 +1,31 @@
-bin/xgngeo.py
+bin/xgngeo_startup.py
+bin/xgngeo
+%%PYTHON_SITELIBDIR%%/xgngeo/__init__.py
+%%PYTHON_SITELIBDIR%%/xgngeo/command.py
+%%PYTHON_SITELIBDIR%%/xgngeo/configfile.py
+%%PYTHON_SITELIBDIR%%/xgngeo/emulator.py
+%%PYTHON_SITELIBDIR%%/xgngeo/history.py
+%%PYTHON_SITELIBDIR%%/xgngeo/rominfos.py
+%%PYTHON_SITELIBDIR%%/xgngeo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xgngeo/command.pyc
+%%PYTHON_SITELIBDIR%%/xgngeo/configfile.pyc
+%%PYTHON_SITELIBDIR%%/xgngeo/emulator.pyc
+%%PYTHON_SITELIBDIR%%/xgngeo/history.pyc
+%%PYTHON_SITELIBDIR%%/xgngeo/rominfos.pyc
+%%PYTHON_SITELIBDIR%%/xgngeo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xgngeo/command.pyo
+%%PYTHON_SITELIBDIR%%/xgngeo/configfile.pyo
+%%PYTHON_SITELIBDIR%%/xgngeo/emulator.pyo
+%%PYTHON_SITELIBDIR%%/xgngeo/history.pyo
+%%PYTHON_SITELIBDIR%%/xgngeo/rominfos.pyo
 %%PORTDOCS%%%%DOCSDIR%%/xgngeo-doc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/xgngeo-doc.txt
 %%DATADIR%%/img/chprod.png
 %%DATADIR%%/img/europe.png
+%%DATADIR%%/img/hotkey1.png
+%%DATADIR%%/img/hotkey2.png
+%%DATADIR%%/img/hotkey3.png
+%%DATADIR%%/img/hotkey4.png
 %%DATADIR%%/img/icon.png
 %%DATADIR%%/img/japan.png
 %%DATADIR%%/img/key_A.png
@@ -15,28 +38,20 @@ bin/xgngeo.py
 %%DATADIR%%/img/key_RIGHT.png
 %%DATADIR%%/img/key_START.png
 %%DATADIR%%/img/key_UP.png
+%%DATADIR%%/img/minilogo.png
 %%DATADIR%%/img/usa.png
 %%DATADIR%%/img/xgngeo.png
-share/locale/es/LC_MESSAGES/xgngeo.mo
-share/locale/es/LC_MESSAGES/xgngeo.po
-share/locale/fr/LC_MESSAGES/xgngeo.mo
-share/locale/fr/LC_MESSAGES/xgngeo.po
-share/locale/pl/LC_MESSAGES/xgngeo.mo
-share/locale/pl/LC_MESSAGES/xgngeo.po
-share/locale/pt_BR/LC_MESSAGES/xgngeo.po
-%%DATADIR%%/py/command.py
-%%DATADIR%%/py/configfile.py
-%%DATADIR%%/py/history.py
-%%DATADIR%%/py/rominfos.py
-%%DATADIR%%/py/romrcfile.py
-%%DATADIR%%/py/romrcfile.pyc
-%%DATADIR%%/py/command.pyc
-%%DATADIR%%/py/configfile.pyc
-%%DATADIR%%/py/history.pyc
-%%DATADIR%%/py/rominfos.pyc
 %%DATADIR%%/rominfos.dtd
 %%DATADIR%%/rominfos.xml
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/doc/xgngeo-doc.txt
+share/locale/es/LC_MESSAGES/xgngeo.mo
+share/locale/de/LC_MESSAGES/xgngeo.mo
+share/locale/fr/LC_MESSAGES/xgngeo.mo
+share/locale/pl/LC_MESSAGES/xgngeo.mo
+share/locale/pt_BR/LC_MESSAGES/xgngeo.mo
+@dirrmtry %%DATADIR%%/img
+@dirrmtry %%DATADIR%%/doc
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/py
-@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/xgngeo
