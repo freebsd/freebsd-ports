@@ -1,0 +1,16 @@
+This port provides a GUI for two freely available SPICE electronic circuit
+simulation engines: GNU-Cap and Ng-Spice.
+
+Current features:
+	Import gschem schematic files using gentlist. 
+	Load and parse circuit description (net list) files. 
+	Provides a GUI interface for GNU-Cap OP, DC, AC and Transient
+		analyses and generates appropriate simulator commands
+		based on user input. 
+	Provides a GUI interface for Ng-Spice DC, AC and Transient
+		analyses and generates appropriate simulator commands
+		based on user input. 
+	The raw output may be viewed for any processes initiated by gspiceui. 
+	Formatting of simulator output so that it may be plotted using gwave.
+
+WWW: http://www.geda.seul.org/tools/gspiceui/index.html
