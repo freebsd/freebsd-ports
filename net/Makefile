@@ -728,7 +728,6 @@
     SUBDIR += stund
     SUBDIR += suckblow
     SUBDIR += sup
-    SUBDIR += svnc
     SUBDIR += tableutil
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4

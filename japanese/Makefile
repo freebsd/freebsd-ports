@@ -45,7 +45,6 @@
     SUBDIR += e2ps
     SUBDIR += easypr
     SUBDIR += eb
-    SUBDIR += eb3
     SUBDIR += ebd-fpw
     SUBDIR += eblook
     SUBDIR += ebnetd

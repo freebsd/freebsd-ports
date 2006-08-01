@@ -1948,7 +1948,6 @@ dsnake		ports/games/dsnake
 dsniff		ports/security/dsniff
 dspam		ports/mail/dspam
 dspam-devel	ports/mail/dspam-devel
-dspampd		ports/mail/dspampd
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
 dt		ports/sysutils/dt
@@ -4536,7 +4535,6 @@ ja-dvipsk	ports/japanese/dvipsk
 ja-e2ps		ports/japanese/e2ps
 ja-easypr	ports/japanese/easypr
 ja-eb		ports/japanese/eb
-ja-eb3		ports/japanese/eb3
 ja-ebd-fpw	ports/japanese/ebd-fpw
 ja-eblook	ports/japanese/eblook
 ja-ebnetd	ports/japanese/ebnetd
@@ -13346,7 +13344,6 @@ svg2png		ports/graphics/svg2png
 svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
 svk		ports/devel/svk
-svnc		ports/net/svnc
 svnmailer	ports/mail/svnmailer
 svr4_base	ports/emulators/svr4_base
 sw-aspell	ports/textproc/sw-aspell
