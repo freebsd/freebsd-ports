@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: ziproxy
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# ziproxy_enable (bool):   Set to NO by default.
+#               Set it to YES to enable ziproxy.
+# ziproxy_config (path):   Set to %%PREFIX%%/etc/ziproxy.conf
+#               by default.
+#
+
+. "%%RC_SUBR%%"
+
+name="ziproxy"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${ziproxy_enable="NO"}
+: ${ziproxy_config="%%PREFIX%%/etc/ziproxy.conf"}
+
+command_args="-d -c ${ziproxy_config}"
+
+run_rc_command "$1"

@@ -1115,6 +1115,7 @@
     SUBDIR += yabb
     SUBDIR += yaws
     SUBDIR += zerowait-httpd
+    SUBDIR += ziproxy
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope28

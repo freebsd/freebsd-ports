@@ -1,0 +1,74 @@
+# New ports collection makefile for:	ziproxy
+# Date created:				2006-07-28
+# Whom:					Pankov Pavel <pankov_p@mail.ru>
+#
+# $FreeBSD$
+
+PORTNAME=		ziproxy
+PORTVERSION=		2.1.0
+CATEGORIES=		www
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=		pankov_p@mail.ru
+COMMENT=		A forwarding, non-caching, compressing proxy server
+
+LIB_DEPENDS=		ungif.5:${PORTSDIR}/graphics/libungif \
+			png.5:${PORTSDIR}/graphics/png \
+			jpeg.9:${PORTSDIR}/graphics/jpeg \
+			confuse.0:${PORTSDIR}/devel/libconfuse
+
+USE_BZIP2=		yes
+USE_GCC=		3.2+
+USE_GETOPT_LONG=	yes
+
+CFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+ERRORFILES=		400.html 404.html 408.html 500.html 503.html
+
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--enable-shared-confuse --with-cfgfile=${PREFIX}/etc/ziproxy.conf
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=		README
+.endif
+
+USE_RC_SUBR=		ziproxy
+
+SUB_FILES+=		pkg-message
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/etc/ziproxy.conf
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/etc/ziproxy.conf
+
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+
+post-install:
+	@${MKDIR} ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy.conf ${PREFIX}/etc/ziproxy.conf.sample
+	@if [ ! -f ${PREFIX}/etc/ziproxy.conf ]; then \
+		${CP} -p ${WRKSRC}/etc/ziproxy.conf ${PREFIX}/etc/ziproxy.conf ; \
+	fi
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${DOC}
+.endfor
+.endif
+
+	@${MKDIR} ${DATADIR}/error
+.for FILE in ${ERRORFILES}
+	@${INSTALL_DATA} ${WRKSRC}/var/ziproxy/error/${FILE} ${DATADIR}/error/${FILE}
+.endfor
+
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
