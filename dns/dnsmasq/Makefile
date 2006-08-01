@@ -7,6 +7,7 @@
 
 PORTNAME=	dnsmasq
 PORTVERSION=	2.32
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
@@ -22,9 +23,11 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
+USE_GNOME=	pkgconfig
+MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}" COPTS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
-OPTIONS=	IPV6 "IPv6 support" on
+OPTIONS=	IPV6 "IPv6 support" off
 OPTIONS+=	DBUS "D_BUS support" off
 
 .include <bsd.port.pre.mk>
