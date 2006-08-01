@@ -12165,6 +12165,7 @@ rftp		ports/mail/rftp
 rhtvision	ports/devel/rhtvision
 rhythmbox	ports/audio/rhythmbox
 ri-li		ports/games/ri-li
+richtext	ports/editors/richtext
 ricochet	ports/mail/ricochet
 rid		ports/security/rid
 riece		ports/irc/riece
