@@ -1,0 +1,12 @@
+%%SITE_PERL%%/XML/RSS/Feed.pm
+%%SITE_PERL%%/XML/RSS/Headline.pm
+%%SITE_PERL%%/XML/RSS/Headline/Fark.pm
+%%SITE_PERL%%/XML/RSS/Headline/PerlJobs.pm
+%%SITE_PERL%%/XML/RSS/Headline/UsePerlJournals.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Feed/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Feed
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrm %%SITE_PERL%%/XML/RSS/Headline
+@dirrmtry %%SITE_PERL%%/XML/RSS
+@dirrmtry %%SITE_PERL%%/XML

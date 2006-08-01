@@ -601,6 +601,7 @@
     SUBDIR += p5-XML-Quote
     SUBDIR += p5-XML-RAI
     SUBDIR += p5-XML-RSS
+    SUBDIR += p5-XML-RSS-Feed
     SUBDIR += p5-XML-RSS-JavaScript
     SUBDIR += p5-XML-RSS-LibXML
     SUBDIR += p5-XML-RSS-Liberal
