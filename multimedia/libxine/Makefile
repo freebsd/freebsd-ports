@@ -161,11 +161,6 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_SMB (SMB support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libtheora.so.2) && !defined(WITH_THEORA)
-	@${ECHO_MSG} "===> WITH_THEORA (libtheora support)"
-.else
-	@${ECHO_MSG} "===> WITH_THEORA (libtheora support, enabled)"
-.endif
 .if !exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) && !defined(WITH_XVMC)
 	@${ECHO_MSG} "===> WITH_XVMC (XvMC support)"
 .else
