@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openbabel
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,14 +20,14 @@ USE_GNOME=	gnomehack gnometarget libxml2
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-MAN1=		obchiral.1 obfit.1 obgrep.1 obprop.1 obrotate.1 openbabel.1 
+MAN1=		obchiral.1 obfit.1 obgrep.1 obprop.1 obrotate.1 openbabel.1
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64 (gcc internal error)"
+BROKEN=		does not compile on ia64 (gcc internal error)
 .endif
 
 post-extract:
