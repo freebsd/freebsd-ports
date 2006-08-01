@@ -7,6 +7,7 @@
 
 PORTNAME=	pwcbsd
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	multimedia sysutils
 MASTER_SITES=	http://raaf.atspace.org/
 
@@ -54,7 +55,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/include/linux
-	${INSTALL_DATA} ${WRKSRC}/videodev.h ${PREFIX}/include/linux
 	${INSTALL_MAN} ${MAN4:S|^|${WRKSRC}/|} ${PREFIX}/man/man4
 .if !defined(WITHOUT_PROGRAMS)
 	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${PREFIX}/bin

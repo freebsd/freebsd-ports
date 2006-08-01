@@ -1,6 +1,4 @@
 %%PROGRAMS%%bin/pwcview
-include/linux/videodev.h
-@dirrmtry include/linux
 @cwd /boot/modules
 pwc.ko
 @exec kldxref %D
