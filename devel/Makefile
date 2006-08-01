@@ -1143,6 +1143,7 @@
     SUBDIR += p5-Log-Message-Simple
     SUBDIR += p5-Log-Simple
     SUBDIR += p5-Log-TraceMessages
+    SUBDIR += p5-Logfile-Rotate
     SUBDIR += p5-Luka
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Make
