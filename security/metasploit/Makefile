@@ -7,6 +7,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.metasploit.org/tools/
 DISTNAME=	framework-${PORTVERSION}
@@ -17,6 +18,8 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 RUN_DEPENDS=	${SITE_PERL}/mach/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu	\
 		${SITE_PERL}/mach/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
+
+CONFLICTS=	metasploit-3*
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
