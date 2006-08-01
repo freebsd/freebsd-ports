@@ -7,10 +7,10 @@
 
 PORTNAME=	jetspeed
 PORTVERSION=	1.5
-CATEGORIES=	www
+CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=jetspeed/binaries
-DISTFILES=	${PORTNAME}-${PORTVERSION}-war${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-war
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jetspeed is an Open Source Portal, written in Java and XML
@@ -27,10 +27,10 @@ NO_BUILD=	yes
 JAKARTA_HOME=	${LOCALBASE}/jakarta-tomcat4.1
 
 do-install:
-	@${CP} ${WRKSRC}/jetspeed.war ${JAKARTA_HOME}/webapps
+	@${INSTALL_DATA} ${WRKSRC}/jetspeed.war ${JAKARTA_HOME}/webapps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${CP} ${WRKSRC}/* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/* ${DOCSDIR}
 .endif
 post-install:
 	@${CAT} ${PKGMESSAGE}
