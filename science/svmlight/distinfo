@@ -1,0 +1,6 @@
+MD5 (svm_light.tar.gz) = 22dab64a89dbb01141f87641141e75cc
+SHA256 (svm_light.tar.gz) = 213177ac93b60055439f0b6742d4b4e728e4401f017b8facbe2e808d4143fb11
+SIZE (svm_light.tar.gz) = 50121
+MD5 (SVMLight.patch) = 53426a955bfbdaa0c0a03390df6e2f35
+SHA256 (SVMLight.patch) = 926f6043d43ec174c419fe58ecf291711949daa3d4da89783a8f8cf572e09357
+SIZE (SVMLight.patch) = 10557
