@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FLV-Info
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLOTHO
@@ -17,7 +17,6 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Extract metadata from Flash Video files
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly \
 		${SITE_PERL}/AMF/Perl.pm:${PORTSDIR}/www/p5-AMF-Perl \
 		${SITE_PERL}/SWF/File.pm:${PORTSDIR}/graphics/p5-SWF-File
 
@@ -35,7 +34,7 @@ MAN3=		FLV::AMFReader.3 FLV::AMFWriter.3 FLV::AudioTag.3 \
 IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
 .endif
 
-.if ${PERL_LEVEL} < 500702
+.if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
