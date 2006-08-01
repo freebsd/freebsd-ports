@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libcwd
-PORTVERSION=	0.99.40
-PORTREVISION=	1
+PORTVERSION=	0.99.44
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,18 +21,14 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-USE_GCC=	3.4
-.endif
+USE_GCC=	3.4+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,test x"\$$libcwd_config_alloc" = x"yes",false,g' \
 		-E -e 's,^(DEFS=)(.*),\1"\2 -D__GNU_LIBRARY__=yes",g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's,localtime(,localtime((const time_t *),g' \
+		-e 's,malloc\.h,stdlib.h,g' \
 		${WRKSRC}/debugmalloc.cc
 	@${REINPLACE_CMD} -E -e 's,\$$\(libdir\)/(pkgconfig),${PREFIX}/libdata/\1,g' \
 		${WRKSRC}/${MAKEFILE}.in
@@ -44,4 +39,4 @@ post-patch:
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
