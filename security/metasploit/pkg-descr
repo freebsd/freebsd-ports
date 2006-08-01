@@ -8,4 +8,7 @@
    tools and information on this site are provided for legal penetration
    testing and research purposes only.
 
+This is the stable version of Metasploit Framework. It is based on Perl, and
+will be replaced in the future with Metasploit Framework version 3.
+
 WWW: http://www.metasploit.org
