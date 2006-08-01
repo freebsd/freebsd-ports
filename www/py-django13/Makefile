@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	django
-PORTVERSION?=	0.91
+PORTVERSION?=	0.95
 PORTREVISION?=	0
 CATEGORIES=	www python
 MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION}/
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 DIST_SUBDIR=	python
 USE_PYTHON=	2.3+
+USE_GETTEXT=	yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-django
