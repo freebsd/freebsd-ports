@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Field/.packlist
+%%SITE_PERL%%/Class/Field.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Field
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class
