@@ -128,6 +128,7 @@
     SUBDIR += psgml-mule
     SUBDIR += puff
     SUBDIR += qemacs
+    SUBDIR += richtext
     SUBDIR += rospell
     SUBDIR += rox-edit
     SUBDIR += sam
