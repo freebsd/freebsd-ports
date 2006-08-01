@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ispell
-PORTVERSION=	1.0.R.1
+PORTVERSION=	1.0
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 MASTER_SITES=	http://magyarispell.sourceforge.net/
 DISTNAME=	magyarispell-${PORTVERSION:S/.R.1/-RC1/}
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Hungarian dictionary for ispell
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
