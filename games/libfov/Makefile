@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	libfov
-PORTVERSION=	0.1.2
+PORTVERSION=	1.0.2
 CATEGORIES=	games devel
-MASTER_SITES=	http://members.optushome.com.au/puyo/dev/libfov/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	libfov
 
 MAINTAINER=	aaron@FreeBSD.org
-COMMENT=	This C library implements a course-grained lighting algorithm
+COMMENT=	C  library for calculating fields of view on low resolution rasters
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=	${WRKDIR}/${DISTNAME}/fov
 INSTALLS_SHLIB=	yes
 
 post-extract:
