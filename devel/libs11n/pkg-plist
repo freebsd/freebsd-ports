@@ -1,0 +1,91 @@
+include/s11n.net/s11n/abstract_creator.hpp
+include/s11n.net/s11n/algo.hpp
+include/s11n.net/s11n/algo.tpp
+include/s11n.net/s11n/classload.hpp
+include/s11n.net/s11n/classload.tpp
+include/s11n.net/s11n/client_api.hpp
+include/s11n.net/s11n/exception.hpp
+include/s11n.net/s11n/export.hpp
+include/s11n.net/s11n/factory.hpp
+include/s11n.net/s11n/factory_reg.hpp
+include/s11n.net/s11n/functional.hpp
+include/s11n.net/s11n/io/FlexLexer.hpp
+include/s11n.net/s11n/io/compact_data_nodeFlexLexer.hpp
+include/s11n.net/s11n/io/compact_serializer.hpp
+include/s11n.net/s11n/io/data_node_format.hpp
+include/s11n.net/s11n/io/data_node_io.hpp
+include/s11n.net/s11n/io/expat_serializer.hpp
+include/s11n.net/s11n/io/funtxt_data_nodeFlexLexer.hpp
+include/s11n.net/s11n/io/funtxt_serializer.hpp
+include/s11n.net/s11n/io/funxml_data_nodeFlexLexer.hpp
+include/s11n.net/s11n/io/funxml_serializer.hpp
+include/s11n.net/s11n/io/parens_data_nodeFlexLexer.hpp
+include/s11n.net/s11n/io/parens_serializer.hpp
+include/s11n.net/s11n/io/reg_serializer.hpp
+include/s11n.net/s11n/io/serializers.hpp
+include/s11n.net/s11n/io/simplexml_data_nodeFlexLexer.hpp
+include/s11n.net/s11n/io/simplexml_serializer.hpp
+include/s11n.net/s11n/io/strtool.hpp
+include/s11n.net/s11n/io/wesnoth_data_nodeFlexLexer.hpp
+include/s11n.net/s11n/io/wesnoth_serializer.hpp
+include/s11n.net/s11n/micro_api.hpp
+include/s11n.net/s11n/nodeutil/node_tree.hpp
+include/s11n.net/s11n/phoenix.hpp
+include/s11n.net/s11n/plugin/path_finder.hpp
+include/s11n.net/s11n/plugin/plugin.hpp
+include/s11n.net/s11n/plugin/plugin_config.hpp
+include/s11n.net/s11n/proxy/listish.hpp
+include/s11n.net/s11n/proxy/listish.tpp
+include/s11n.net/s11n/proxy/mapish.hpp
+include/s11n.net/s11n/proxy/mapish.tpp
+include/s11n.net/s11n/proxy/path_finder_s11n.hpp
+include/s11n.net/s11n/proxy/pod/bool.hpp
+include/s11n.net/s11n/proxy/pod/char.hpp
+include/s11n.net/s11n/proxy/pod/double.hpp
+include/s11n.net/s11n/proxy/pod/float.hpp
+include/s11n.net/s11n/proxy/pod/int.hpp
+include/s11n.net/s11n/proxy/pod/long.hpp
+include/s11n.net/s11n/proxy/pod/long_double.hpp
+include/s11n.net/s11n/proxy/pod/size_t.hpp
+include/s11n.net/s11n/proxy/pod/string.hpp
+include/s11n.net/s11n/proxy/pod/uint.hpp
+include/s11n.net/s11n/proxy/pod/ulong.hpp
+include/s11n.net/s11n/proxy/reg_list_specializations.hpp
+include/s11n.net/s11n/proxy/reg_map_specializations.hpp
+include/s11n.net/s11n/proxy/reg_node_type.hpp
+include/s11n.net/s11n/proxy/reg_s11n_traits_template1.hpp
+include/s11n.net/s11n/proxy/reg_s11n_traits_template2.hpp
+include/s11n.net/s11n/proxy/std/deque.hpp
+include/s11n.net/s11n/proxy/std/list.hpp
+include/s11n.net/s11n/proxy/std/map.hpp
+include/s11n.net/s11n/proxy/std/multimap.hpp
+include/s11n.net/s11n/proxy/std/multiset.hpp
+include/s11n.net/s11n/proxy/std/pair.hpp
+include/s11n.net/s11n/proxy/std/set.hpp
+include/s11n.net/s11n/proxy/std/valarray.hpp
+include/s11n.net/s11n/proxy/std/vector.hpp
+include/s11n.net/s11n/reg_s11n_traits.hpp
+include/s11n.net/s11n/s11n.hpp
+include/s11n.net/s11n/s11n_config.hpp
+include/s11n.net/s11n/s11n_debuggering_macros.hpp
+include/s11n.net/s11n/s11n_node.hpp
+include/s11n.net/s11n/s11nlite.hpp
+include/s11n.net/s11n/serialize.hpp
+include/s11n.net/s11n/serialize.tpp
+include/s11n.net/s11n/simple_config.hpp
+include/s11n.net/s11n/tags.hpp
+include/s11n.net/s11n/traits.hpp
+include/s11n.net/s11n/type_traits.hpp
+include/s11n.net/s11n/variant.hpp
+lib/libs11n.a
+lib/libs11n.so
+lib/libs11n.so.1
+lib/libs11n_p.a
+@dirrm include/s11n.net/s11n/proxy/std
+@dirrm include/s11n.net/s11n/proxy/pod
+@dirrm include/s11n.net/s11n/proxy
+@dirrm include/s11n.net/s11n/plugin
+@dirrm include/s11n.net/s11n/nodeutil
+@dirrm include/s11n.net/s11n/io
+@dirrm include/s11n.net/s11n
+@dirrm include/s11n.net
