@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Services_Weather
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	misc www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	PEAR interface to various online weather-services
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -33,12 +32,12 @@ BUILD_DEPENDS+=	${PEARDIR}/SOAP/Base.php:${PORTSDIR}/net/pear-SOAP
 .endif
 
 CATEGORY=	Services
-FILES=		Weather.php Weather/Common.php Weather/Globalweather.php	\
-		Weather/Ejse.php Weather/Metar.php Weather/Weatherdotcom.php	\
-		buildMetarDB.php images/sunrise.gif images/sunset.gif
-EXAMPLES=	globalweather-basic.php ejse-basic.php metar-basic.php		\
-		metar-extensive.php php_sunrise_sunset.php weather.com-basic.php\
-		weather.com-extensive.php
+FILES=		Weather.php Weather/Common.php Weather/Ejse.php			\
+		Weather/Globalweather.php Weather/Metar.php 			\
+		Weather/Weatherdotcom.php buildMetarDB.php images/sunrise.gif 	\
+		images/sunset.gif
+EXAMPLES=	ejse-basic.php globalweather-basic.php metar-basic.php 		\
+		metar-extensive.php weather.com-basic.php weather.com-extensive.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
