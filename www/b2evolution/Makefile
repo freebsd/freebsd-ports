@@ -28,25 +28,8 @@ WANT_PHP_WEB=	YES
 TMPDIR?=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${TMPDIR}
 
-.if !defined(B2EVO_URL)
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define B2EVO_URL to override default of ${PREFIX}/${WWWDOCROOT}/'${B2EVO_URL}'."
-	@${ECHO_MSG} ""
-.endif
-
-# Get HOSTNAME
-.if exists(/sbin/sysctl)
-HOSTNAME!=	/sbin/sysctl -n kern.hostname
-.else
-HOSTNAME!=	/usr/sbin/sysctl -n kern.hostname
-.endif
-
-WWWDOCROOT?=	www/data
 B2EVO_URL?=	b2evo
-WWWOWN?=	www
-WWWGRP?=	www
-B2EVO_DIR?=	${WWWDOCROOT}/${B2EVO_URL}
+B2EVO_DIR?=	www/${B2EVO_URL}
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
@@ -56,8 +39,7 @@ pre-install:
 		${SED} -e 's|^./||;s|^|${B2EVO_DIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${B2EVO_DIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry ${WWWDOCROOT} >> ${PLIST}
+		&& ${ECHO_CMD} @dirrm ${B2EVO_DIR} >> ${PLIST}
 
 do-install:
 	-${MKDIR} ${PREFIX}/${B2EVO_DIR}
@@ -67,7 +49,8 @@ do-install:
 	@${CHMOD} 665 ${PREFIX}/${B2EVO_DIR}/blogs/conf/_config.php
 
 post-install:
-	@${SED} -e 's|%%HOSTNAME%%|${HOSTNAME}|; s|%%B2EVO_URL%%|${B2EVO_URL}|' \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%PORTNAME%%|${PORTNAME}|' \
+		-e 's|%%B2EVO_DIR%%|${B2EVO_DIR}|; s|%%B2EVO_URL%%|${B2EVO_URL}|' \
 		${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

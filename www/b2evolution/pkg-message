@@ -15,10 +15,16 @@ you may have to follow this steps to make it work correctly.
   mysql> FLUSH PRIVILEGES;
   mysql> QUIT;
 
-3.Open b2evo installation page in your web browser 
+3. Please add the following to your apache config, and restart.
+    [1;32m#
+    # Directives to allow use of b2evolution
+    #
+    Alias /%%PORTNAME%% "%%PREFIX%%/%%B2EVO_DIR%%/"[m
+
+4.Open b2evo installation page in your web browser 
   and login with b2evouser/b2evopassword
 
-  http://%%HOSTNAME%%/%%B2EVO_URL%%/blogs/install/
+  http://www.your.host/%%B2EVO_URL%%/blogs/install/
 
   If you are doing a fresh install...
   Note that password carefully! It is a random password that is given to you 
