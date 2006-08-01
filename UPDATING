@@ -7,6 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20060801:
+  AFFECTS: users of www/b2evolution
+  AUTHOR: chinsan.tw@gmail.com
+
+  The default install location has changed from
+  ${PREFIX}/www/data/b2evolution to ${PREFIX}/www/b2evolution.
+
+20060801:
   AFFECTS: users of audio/libtunepimp and any port that depends on it
   AUTHOR: clsung@FreeBSD.org
 
