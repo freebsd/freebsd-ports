@@ -1119,6 +1119,7 @@
     SUBDIR += p5-Iterator-Misc
     SUBDIR += p5-Iterator-Util
     SUBDIR += p5-Java
+    SUBDIR += p5-Linux-Pid
     SUBDIR += p5-List-Cycle
     SUBDIR += p5-List-Group
     SUBDIR += p5-Locale-Maketext

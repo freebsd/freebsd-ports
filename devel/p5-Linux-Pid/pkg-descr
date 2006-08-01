@@ -1,0 +1,12 @@
+Why should one use a module to get the PID and the PPID of a process
+where there are the $$ variable and the getppid() builtin? (Not
+mentioning the equivalent POSIX::getpid() and POSIX::getppid()
+functions.)
+
+In fact, this is useful on Linux, with multithreaded programs. Linux'
+C library, using the linux thread model, returns different values of
+the PID and the PPID from different threads. (Other thread models such
+as NPTL don't have the same behaviour). This module forces perl to
+call the underlying C functions getpid() and getppid().
+
+WWW: http://search.cpan.org/dist/Linux-Pid/
