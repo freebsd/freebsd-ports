@@ -9577,6 +9577,7 @@ p5-Proc-Queue	ports/devel/p5-Proc-Queue
 p5-Proc-Reliable	ports/devel/p5-Proc-Reliable
 p5-Proc-Simple	ports/devel/p5-Proc-Simple
 p5-Project-Gantt	ports/devel/p5-Project-Gantt
+p5-Pugs-Compiler-Rule	ports/lang/p5-Pugs-Compiler-Rule
 p5-Qmail-Envelope	ports/mail/p5-Qmail-Envelope
 p5-Quantum-Superpositions	ports/lang/p5-Quantum-Superpositions
 p5-Quota	ports/sysutils/p5-Quota
