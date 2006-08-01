@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pybench
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	benchmarks python
-MASTER_SITES=	http://www.egenix.com/files/python/
+MASTER_SITES=	http://downloads.egenix.com/python/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible benchmark suite for Python
@@ -30,7 +30,7 @@ do-install:
 		> ${WRKDIR}/pybench.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/pybench.sh ${PREFIX}/bin/pybench
 

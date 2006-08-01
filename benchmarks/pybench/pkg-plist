@@ -1,5 +1,4 @@
 bin/pybench
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/Arithmetic.py
 %%DATADIR%%/Arithmetic.pyc
 %%DATADIR%%/Arithmetic.pyo
@@ -24,12 +23,16 @@ bin/pybench
 %%DATADIR%%/Instances.py
 %%DATADIR%%/Instances.pyc
 %%DATADIR%%/Instances.pyo
+%%DATADIR%%/LICENSE
 %%DATADIR%%/Lists.py
 %%DATADIR%%/Lists.pyc
 %%DATADIR%%/Lists.pyo
 %%DATADIR%%/Lookups.py
 %%DATADIR%%/Lookups.pyc
 %%DATADIR%%/Lookups.pyo
+%%DATADIR%%/NewInstances.py
+%%DATADIR%%/NewInstances.pyc
+%%DATADIR%%/NewInstances.pyo
 %%DATADIR%%/Numbers.py
 %%DATADIR%%/Numbers.pyc
 %%DATADIR%%/Numbers.pyo
@@ -45,6 +48,9 @@ bin/pybench
 %%DATADIR%%/Unicode.py
 %%DATADIR%%/Unicode.pyc
 %%DATADIR%%/Unicode.pyo
+%%DATADIR%%/clockres.py
+%%DATADIR%%/clockres.pyc
+%%DATADIR%%/clockres.pyo
 %%DATADIR%%/package/__init__.py
 %%DATADIR%%/package/__init__.pyc
 %%DATADIR%%/package/__init__.pyo
@@ -57,6 +63,11 @@ bin/pybench
 %%DATADIR%%/pybench.py
 %%DATADIR%%/pybench.pyc
 %%DATADIR%%/pybench.pyo
+%%DATADIR%%/systimes.py
+%%DATADIR%%/systimes.pyc
+%%DATADIR%%/systimes.pyo
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrmtry share/pybench
 @dirrm %%DATADIR%%/package
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
