@@ -821,6 +821,7 @@
     SUBDIR += pear-HTTP_Session
     SUBDIR += pear-HTTP_Upload
     SUBDIR += pear-Text_Wiki
+    SUBDIR += pear-UDDI
     SUBDIR += pecl-APC
     SUBDIR += pecl-pecl_http
     SUBDIR += pecl-tidy
