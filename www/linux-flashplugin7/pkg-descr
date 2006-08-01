@@ -1,14 +1,10 @@
-This is the official Flash Player from Macromedia. This plugin enables
+This is the official Flash Player from Adobe. This plugin enables
 you to see .swf and .spl files on the 'net from your Opera, Mozilla or
-Netscape 6+ sessions.
+Firefox sessions.
 
-Version 7 of the Macromedia Flash Player no longer works with Netscape
-4.x or earlier.  For Flash support in those browsers install the
-linux-flashplugin port.
-
-Please see the Macromedia home page for more information.
+Please see the Adobe home page for more information.
 
 FreeBSD Flash License Agreement:
 	http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/96374
 
-WWW: http://www.macromedia.com/
+WWW: http://www.adobe.com/
