@@ -9067,6 +9067,7 @@ p5-Lingua-Stem-Snowball-Da	ports/textproc/p5-Lingua-Stem-Snowball-Da
 p5-Lingua-Stem-Snowball-No	ports/textproc/p5-Lingua-Stem-Snowball-No
 p5-Lingua-Stem-Snowball-Se	ports/textproc/p5-Lingua-Stem-Snowball-Se
 p5-Lingua-StopWords	ports/textproc/p5-Lingua-StopWords
+p5-Linux-Pid	ports/devel/p5-Linux-Pid
 p5-List-Compare	ports/misc/p5-List-Compare
 p5-List-Cycle	ports/devel/p5-List-Cycle
 p5-List-Group	ports/devel/p5-List-Group
