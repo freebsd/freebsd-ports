@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.kde-apps.org/content/files/
-DISTNAME=	12725-${PORTNAME}-${PORTVERSION}
+DISTNAME=	12725-${PORTNAME}-${PORTVERSION}-waf-b
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE mindmapping tool
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/^12725-//}
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 USE_KDELIBS_VER=	3
+USE_PYTHON_BUILD=	yes
+MAKE_ENV=	QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}"
 
 .include <bsd.port.pre.mk>
 
@@ -28,21 +29,23 @@ USE_KDELIBS_VER=	3
 CXXFLAGS+=	-fpermissive
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && ${TAR} yxf miniwaf.tar.bz2
+
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's:%%CXX%%:${CXX}:g ; \
-		 s:%%CXXFLAGS%%:${CXXFLAGS} ${PTHREAD_CFLAGS}:g ; \
-		 s:%%LINKFLAGS%%:${PTHREAD_LIBS}:g' ${WRKSRC}/SConstruct
+		's|%%LINKFLAGS%%|${PTHREAD_LIBS}|g ; \
+		 s|%%CPPFLAGS%%|${PTHREAD_CFLAGS}|g' \
+			${WRKSRC}/src/kdissert/wscript_build
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} PREFIX="${PREFIX}" \
-		QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}" scons configure
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf.py configure
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf.py
 
 do-install:
-	@cd ${WRKSRC} && scons install
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf.py install
 	@${STRIP_CMD} ${PREFIX}/bin/kdissert
 
 .include <bsd.port.post.mk>
