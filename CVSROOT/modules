@@ -11853,6 +11853,7 @@ pythondirector	ports/net/pythondirector
 pyumlgraph	ports/devel/pyumlgraph
 pyweather	ports/astro/pyweather
 pyweblib	ports/www/pyweblib
+pyxmame		ports/emulators/pyxmame
 pyzor		ports/mail/pyzor
 q		ports/lang/q
 q-audio		ports/audio/q-audio
