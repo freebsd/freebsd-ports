@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Address-MobileJp
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An utility to detect an e-mail is mobile one or not
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+#WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
 
