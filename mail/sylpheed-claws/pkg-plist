@@ -82,6 +82,7 @@ include/sylpheed-claws/grouplistdialog.h
 include/sylpheed-claws/gtk/about.h
 include/sylpheed-claws/gtk/colorlabel.h
 include/sylpheed-claws/gtk/colorsel.h
+include/sylpheed-claws/gtk/combobox.h
 include/sylpheed-claws/gtk/description_window.h
 include/sylpheed-claws/gtk/filesel.h
 include/sylpheed-claws/gtk/foldersort.h
