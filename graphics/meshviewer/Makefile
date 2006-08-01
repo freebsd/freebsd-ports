@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	meshviewer
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mview
@@ -21,7 +21,18 @@ MAKE_ENV=	MOC="${MOC}" \
 		QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
 		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}"
 
-CFLAGS+=	-fpermissive
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-I$$(QTDIR)/include|$${QTCPPFLAGS}|g ; \
+		 s|-L$$(QTDIR)/lib|$${QTCFGLIBS}|g ; \
+		 s|-L/usr/local/lib||g ; \
+		 s|-L${X11BASE}/lib||g ; \
+		 s|=g\+\+|=$${CXX}|g ; \
+		 s|^MOC=|#MOC=|g ; \
+		 s|-O2|$${CXXFLAGS}|g ; \
+		 s|make |$$(MAKE) |g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|<values\.h>|<climits>|g' ${WRKSRC}/mesh/mesh.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mview ${PREFIX}/bin
