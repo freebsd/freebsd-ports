@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimetex
-PORTVERSION=	20060710.1.60
+PORTVERSION=	20060727.1.64
 CATEGORIES=	www math
 MASTER_SITES=	http://www.forkosh.com/ \
 		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
@@ -37,7 +37,7 @@ IMAGES_TYPE=	-DGIF
 .else
 IMAGES_TYPE=	-DAA
 .endif
-# other options (see mimetex.c)
+# other options (see mimetex.c or online documentation)
 # example: make install USER_OPTIONS='-DCACHEPATH=\"/tmp\" -DDISPLAYSIZE=10'
 USER_OPTIONS?=
 
