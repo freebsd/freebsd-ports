@@ -7,6 +7,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	7.0r63
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/
 PKGNAMEPREFIX=	linux-
@@ -14,31 +15,26 @@ DISTNAME=	install_flash_player_7_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jamie@bishopston.net
-COMMENT=	The official Macromedia Flash Player for Linux Mozilla and Netscape 6+
+COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
 
 RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/install_flash_player_7_linux
 LATEST_LINK=	flash7
+PORTDOCS=	Readme.txt Readme.htm
 
-LIBFILES=	libflashplayer.so flashplayer.xpt
+USE_NPAPI=	linux-*
+NPAPI_FILES=	libflashplayer.so flashplayer.xpt
 
-DOCSDIR?=	${PREFIX}/share/doc/${UNIQUENAME}
-
-do-install:
-	@${MKDIR} ${PREFIX}/lib/linux-flashplugin7
-.for f in ${LIBFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/linux-flashplugin7
-.endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Readme.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Readme.htm ${DOCSDIR}
+post-install:
+.ifndef NOPORTDOCS
+	@${INSTALL} -d ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
+.include "${.CURDIR}/../linux-mplayer-plugin/Makefile.npapi"
 .include <bsd.port.mk>
