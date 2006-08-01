@@ -10239,6 +10239,7 @@ p5-rpm-build-perl	ports/devel/p5-rpm-build-perl
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-tagged	ports/audio/p5-tagged
 p5-type1inst	ports/x11-fonts/p5-type1inst
+p5-v6		ports/lang/p5-v6
 p5-version	ports/devel/p5-version
 p5-vpopmail	ports/mail/p5-vpopmail
 p5-webservice-validator-css-w3c		ports/www/p5-webservice-validator-css-w3c
