@@ -1,0 +1,18 @@
+SVMlight is an implementation of Vapnik's Support Vector Machine
+[Vapnik, 1995] for the problem of pattern recognition, for the problem
+of regression, and for the problem of learning a ranking function. The
+optimization algorithms used in SVMlight are described in [Joachims,
+2002a ]. [Joachims, 1999a]. The algorithm has scalable memory
+requirements and can handle problems with many thousands of support
+vectors efficiently.
+
+The software also provides methods for assessing the generalization
+performance efficiently. It includes two efficient estimation methods
+for both error rate and precision/recall. XiAlpha-estimates [Joachims,
+2002a, Joachims, 2000b] can be computed at essentially no
+computational expense, but they are conservatively biased. Almost
+unbiased estimates provides leave-one-out testing. SVMlight exploits
+that the results of most leave-one-outs (often more than 99%) are
+predetermined and need not be computed [Joachims, 2002a].
+
+WWW:	http://svmlight.joachims.org/

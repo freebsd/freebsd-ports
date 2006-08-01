@@ -81,6 +81,7 @@
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
     SUBDIR += simlib
+    SUBDIR += svmlight
     SUBDIR += szip
     SUBDIR += udunits
     SUBDIR += v_sim
