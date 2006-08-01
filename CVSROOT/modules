@@ -9875,6 +9875,7 @@ p5-Text-Capitalize	ports/textproc/p5-Text-Capitalize
 p5-Text-Chomp	ports/textproc/p5-Text-Chomp
 p5-Text-Context-EitherSide	ports/textproc/p5-Text-Context-EitherSide
 p5-Text-Decorator	ports/textproc/p5-Text-Decorator
+p5-Text-Delimited	ports/textproc/p5-Text-Delimited
 p5-Text-Diff	ports/textproc/p5-Text-Diff
 p5-Text-Diff-HTML	ports/textproc/p5-Text-Diff-HTML
 p5-Text-Diff3	ports/textproc/p5-Text-Diff3
