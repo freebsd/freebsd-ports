@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -40,7 +39,8 @@ MAN1=		sylpheed-claws.1
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-manualdir=${DOCSDIR}/manual \
-		--with-faqdir=${DOCSDIR}/faq
+		--with-faqdir=${DOCSDIR}/faq \
+		--with-mandir=${PREFIX}/man
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
