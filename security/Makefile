@@ -495,6 +495,7 @@
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-hash
     SUBDIR += pecl-ssh2
+    SUBDIR += pecl-tcpwrap
     SUBDIR += pft
     SUBDIR += pfw
     SUBDIR += pgp
