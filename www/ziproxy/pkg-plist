@@ -1,0 +1,11 @@
+bin/ziproxy
+@unexec if cmp -s %D/etc/ziproxy.conf.sample %D/etc/ziproxy.conf; then rm -f %D/etc/ziproxy.conf; fi
+@exec if [ ! -f %D/etc/ziproxy.conf ] ; then cp -p %D/%F %B/ziproxy.conf; fi
+etc/ziproxy.conf.sample
+%%DATADIR%%/error/400.html
+%%DATADIR%%/error/404.html
+%%DATADIR%%/error/408.html
+%%DATADIR%%/error/500.html
+%%DATADIR%%/error/503.html
+@dirrm %%DATADIR%%/error
+@dirrm %%DATADIR%%

@@ -1,0 +1,6 @@
+Ziproxy is forwarding, non-caching, compressing proxy server. It
+squeezes images by converting them to low quality jpegs and
+optionally can also gzip HTML and other text-like data. It is
+intended to free bandwidth on dialup connections.
+
+WWW: http://ziproxy.sourceforge.net/
