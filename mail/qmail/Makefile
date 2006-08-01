@@ -39,6 +39,7 @@ BARRIER_SMTP_AUTH_PATCH=	yes
 BARRIER_BIG_CONCURRENCY_PATCH=	yes
 BARRIER_DNS_PATCH=		yes
 BARRIER_EXTTODO_PATCH=		yes
+BARRIER_OUTGOINGIP_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -52,7 +53,6 @@ BARRIER_BIG_TODO_PATCH=		yes
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_SPAMCONTROL) || \
     defined(SLAVE_TLS)
-BARRIER_OUTGOINGIP_PATCH=	yes
 BARRIER_RFC2821_PATCH=		yes
 BARRIER_TARPIT_PATCH=		yes
 .endif
@@ -428,6 +428,10 @@ PATCHFILES+=	big-concurrency.patch
 .if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && \
     defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
 PATCHFILES+=	qmail-1.03-qmtpc_outgoingip.patch:qmtpc_outgoingip
+.elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && defined(SLAVE_SPAMCONTROL)
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:outgoingip_spamcontrol/}
+MASTER_SITE_SUBDIR+=	garga/qmail:outgoingip_spamcontrol
+DISTFILES+=	outgoingip.patch-spamcontrol:outgoingip_spamcontrol
 .elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
 PATCHFILES+=	outgoingip.patch
 .elif defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
@@ -557,6 +561,9 @@ post-patch:
 . if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
 	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
 . endif
+.endif
+.if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/outgoingip.patch-spamcontrol
 .endif
 .elif defined(SLAVE_TLS)
 	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
