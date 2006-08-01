@@ -205,6 +205,7 @@
     SUBDIR += toxine
     SUBDIR += transcode
     SUBDIR += tunapie
+    SUBDIR += v4l_compat
     SUBDIR += vamps
     SUBDIR += vcdgear
     SUBDIR += vcdimager
