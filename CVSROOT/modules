@@ -3674,6 +3674,7 @@ gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
 gsoap		ports/devel/gsoap
 gspeakers	ports/audio/gspeakers
+gspiceui	ports/cad/gspiceui
 gspoof		ports/net/gspoof
 gss		ports/security/gss
 gstopd		ports/sysutils/gstopd
