@@ -1,0 +1,17 @@
+bin/gpass
+bin/gpass-convert
+share/applications/gpass.desktop
+%%DATADIR%%/welcome.glade
+%%DATADIR%%/intergradation.glade
+%%DATADIR%%/authentication.glade
+%%DATADIR%%/window.glade
+%%DATADIR%%/attribute-editor.glade
+%%DATADIR%%/confirm-quit.glade
+%%DATADIR%%/change-master-password.glade
+%%DATADIR%%/password-generator.glade
+%%DATADIR%%/preferences.glade
+%%DATADIR%%/lock.glade
+share/pixmaps/gpass-icon.png
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
+@dirrm %%DATADIR%%

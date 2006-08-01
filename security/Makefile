@@ -150,6 +150,7 @@
     SUBDIR += gorilla
     SUBDIR += gpa
     SUBDIR += gpasman
+    SUBDIR += gpass
     SUBDIR += gpgme
     SUBDIR += gpgme03
     SUBDIR += gringotts
