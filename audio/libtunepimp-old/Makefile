@@ -5,14 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libtunepimp
-PORTVERSION=	0.5.0
-PORTEPOCH=	1
+PORTNAME=	libtunepimp-old
+PORTVERSION=	0.4.2
+PORTREVISION=	2
+PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
+DISTNAME=	libtunepimp-${PORTVERSION}
 
-MAINTAINER=	lauri@kde.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Client library for musicbrainz
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
@@ -22,10 +24,9 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		ofa:${PORTSDIR}/audio/libofa
+		vorbis:${PORTSDIR}/audio/libvorbis
 
-CONFLICTS=	trm-0*
+CONFLICTS=	trm-0* libtunepimp-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
@@ -42,7 +43,5 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e 's|\(^LDFLAGS =.*\)|\1 ${PTHREAD_LIBS} -liconv|g' \
 		${WRKSRC}/examples/Makefile
-	@${REINPLACE_CMD} -e 's|plugins/wv|plugins/tta|' \
-		${WRKSRC}/plugins/tta/Makefile
 
 .include <bsd.port.mk>
