@@ -1,0 +1,11 @@
+--- src/fe-text/textbuffer-view.c.orig	Mon Jul 31 06:28:09 2006
++++ src/fe-text/textbuffer-view.c	Mon Jul 31 06:28:19 2006
+@@ -255,7 +255,7 @@
+ 			continue;
+ 		}
+ 
+-		if (!view->utf8 && char_len > 1) {
++		if (char_len > 1) {
+ 			last_space = xpos;
+ 			last_space_ptr = next_ptr;
+ 			last_color = color;
