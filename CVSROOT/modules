@@ -3564,6 +3564,7 @@ gpac-libgpac	ports/multimedia/gpac-libgpac
 gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
 gpasman		ports/security/gpasman
+gpass		ports/security/gpass
 gpc		ports/devel/gpc
 lang_gpc	ports/lang/gpc
 gpctool		ports/x11/gpctool
