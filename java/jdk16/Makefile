@@ -23,14 +23,15 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-OPTIONS=	DEBUG	"Enable debugging support" off \
-		IPV6	"Enable IPv6 support" off
+OPTIONS=	DEBUG	"Enable debugging support"	off \
+		IPV6	"Enable IPv6 support"		off
 .if ${MACHINE_ARCH} == "amd64"
 WITHOUT_WEB=	yes
 .else
-OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start" on
+OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	on
 .endif
-OPTIONS+=	POLICY	"Install the Unlimited Strength Policy Files" off
+OPTIONS+=	POLICY	"Install the Unlimited Strength Policy Files"	off \
+		JAIL	"Port is being built within a jail"		off
 
 WANT_GNOME=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -264,6 +265,7 @@ pre-build:
 		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
+.if defined(WITH_JAIL)#{
 	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
 	then \
 		${ECHO_MSG} "ERROR: You must have LINPROCFS mounted before" ; \
@@ -279,6 +281,7 @@ pre-build:
 		${ECHO_MSG} "" ; \
 		exit 1 ; \
 	fi
+.endif#}
 .endif
 
 do-build:
