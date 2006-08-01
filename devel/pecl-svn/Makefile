@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svn
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -27,5 +27,8 @@ USE_PHPEXT=	yes
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile on FreeBSD 4.x
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,apr-0,apr-1,' ${WRKSRC}/config.m4
 
 .include <bsd.port.post.mk>
