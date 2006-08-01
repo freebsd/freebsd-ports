@@ -7,6 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	4.0.9
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		http://core.ring.gr.jp/archives/net/mail/qpopper/
@@ -63,11 +64,11 @@ OPTIONS=	APOP_ONLY	"build with APOP authentication only" off \
 WITHOUT_IPV6=	yes
 .endif
 
-# .if !defined(WITHOUT_IPV6)
-# PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-# PATCHFILES=	qpopper4.0.8-ipv6-20050515.diff.gz
-# PATCH_DIST_STRIP=	-p1
-# .endif
+.if !defined(WITHOUT_IPV6)
+PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
+PATCHFILES=	qpopper4.0.9-ipv6-20060626.diff.gz
+PATCH_DIST_STRIP=	-p1
+.endif
 
 .if defined(WITHOUT_APOP)
 QPOPAUTH=	"@comment "

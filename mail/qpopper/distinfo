@@ -1,6 +1,6 @@
 MD5 (qpopper4.0.9.tar.gz) = de2cd15f95cfd00d0d080fd16287acad
 SHA256 (qpopper4.0.9.tar.gz) = c98830ba61c20c38d64c2c2e84fe7f21642b25cfc15f6257f4cad474d01d4c5d
 SIZE (qpopper4.0.9.tar.gz) = 2767261
-# MD5 (qpopper4.0.8-ipv6-20050515.diff.gz) = ece052733db5b780fa76ce6e5bc57719
-# SHA256 (qpopper4.0.8-ipv6-20050515.diff.gz) = b45b671fb1e11d9285d5195ca6e5b2358c171176970287045da50b0632ab9c94
-# SIZE (qpopper4.0.8-ipv6-20050515.diff.gz) = 11479
+MD5 (qpopper4.0.9-ipv6-20060626.diff.gz) = 3b96ab200427f96803b22d58b4b4a943
+SHA256 (qpopper4.0.9-ipv6-20060626.diff.gz) = 73070ad24cb088bf74e58745ccd61442caa32d0a0e61a0a4c33aa6998704d476
+SIZE (qpopper4.0.9-ipv6-20060626.diff.gz) = 10986
