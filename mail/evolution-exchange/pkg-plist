@@ -45,6 +45,7 @@ share/locale/ja/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/ku/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/lv/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/mk/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/ms/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
