@@ -79,7 +79,7 @@ bin/linux-opera
 @dirrm %%DATADIR%%/styles/images
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
-@dirrm %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/locale/en
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/java
@@ -87,7 +87,7 @@ bin/linux-opera
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrm %%DOCSDIR%%
 %%KDE:%%@cwd %%LOCALBASE%%
 %%KDE:%%share/applnk/Internet/linux-opera.desktop
