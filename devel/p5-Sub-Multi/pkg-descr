@@ -1,0 +1,10 @@
+Perl6 allows multiple subs and methods with the same name, differing only in
+their signature.
+
+    multi sub bar (Dog $foo) {?}
+    multi sub bar (Cat $foo) {?}
+
+Dispatching will happen based on the runtime signature of the subroutine or
+method call.
+
+WWW: http://search.cpan.org/dist/Sub-Multi/

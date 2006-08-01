@@ -1308,6 +1308,7 @@
     SUBDIR += p5-Sub-Exporter
     SUBDIR += p5-Sub-Install
     SUBDIR += p5-Sub-Installer
+    SUBDIR += p5-Sub-Multi
     SUBDIR += p5-Sub-Name
     SUBDIR += p5-Sub-Override
     SUBDIR += p5-Sub-Uplevel
