@@ -10153,6 +10153,7 @@ p5-XML-Parser-Style-Elemental	ports/textproc/p5-XML-Parser-Style-Elemental
 p5-XML-Quote	ports/textproc/p5-XML-Quote
 p5-XML-RAI	ports/textproc/p5-XML-RAI
 p5-XML-RSS	ports/textproc/p5-XML-RSS
+p5-XML-RSS-Feed	ports/textproc/p5-XML-RSS-Feed
 p5-XML-RSS-JavaScript	ports/textproc/p5-XML-RSS-JavaScript
 p5-XML-RSS-LibXML	ports/textproc/p5-XML-RSS-LibXML
 p5-XML-RSS-Liberal	ports/textproc/p5-XML-RSS-Liberal
