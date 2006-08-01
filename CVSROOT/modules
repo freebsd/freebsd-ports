@@ -4008,6 +4008,7 @@ help2man	ports/misc/help2man
 hercules	ports/emulators/hercules
 heretic		ports/games/heretic
 heroes		ports/games/heroes
+herrie		ports/audio/herrie
 hesiod		ports/dns/hesiod
 hevea		ports/textproc/hevea
 hex		ports/games/hex
