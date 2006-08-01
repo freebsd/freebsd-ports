@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	courierpassd
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.arda.homeunix.net/store/
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	andrew@arda.homeunix.net
 COMMENT=	User authentication and password changing daemon utility
 
 BUILD_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
@@ -17,16 +17,14 @@ RUN_DEPENDS=	courierauthconfig:${PORTSDIR}/security/courier-authlib-base
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' LDFLAGS='${LDFLAGS}'
 
 MINUID?=	100
 DELAY?=		3
 CONFIGURE_ARGS+=--with-minuid=${MINUID} --with-badpassdelay=${DELAY}
 
-PLIST_FILES=	sbin/courierpassd
 MAN8=		courierpassd.8
 
 pre-everything::
@@ -47,6 +45,15 @@ pre-everything::
 	@${ECHO} ""
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 	@${CAT}	${PKGMESSAGE}
 
 .include <bsd.port.mk>
