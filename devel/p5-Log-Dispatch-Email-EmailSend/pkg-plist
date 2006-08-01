@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Log/Dispatch/Email/EmailSend.pm
+@dirrmtry %%SITE_PERL%%/Log/Dispatch/Email
+@dirrmtry %%SITE_PERL%%/Log/Dispatch
+@dirrmtry %%SITE_PERL%%/Log
