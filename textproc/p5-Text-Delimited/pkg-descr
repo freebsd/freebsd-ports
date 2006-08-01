@@ -1,0 +1,10 @@
+Text::Delimited provides a programattical interface to data stored in
+delimited text files. It is dependant upon the first row of the text
+file containing header information for each corresponding "column" in
+the remainder of the file.
+
+After instancing, for each call to Read the next row's data is
+returned as a hash reference. The individual elements are keyed by
+their corresonding column headings.
+
+WWW:	http://search.cpan.org/dist/Text-Delimited/

@@ -1,0 +1,28 @@
+# New ports collection makefile for:	p5-Text-Delimited
+# Date created:		2006-08-01
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Text-Delimited
+PORTVERSION=	2.00
+CATEGORIES=	textproc perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Text
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Module for parsing delimited text files
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Text::Delimited.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6.0 or newer, install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
