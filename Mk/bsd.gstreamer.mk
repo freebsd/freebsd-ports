@@ -64,7 +64,7 @@ _USE_GSTREAMER_ALL=	a52dec aalib bad cairo cdparanoia dts \
 			dv dvd esound faac faad ffmpeg flac gconf gnomevfs \
 			gnonlin good gsm ivorbis jpeg ladspa lame libcaca \
 			libmms libpng libvisual mad mpeg2dec \
-			musepack ogg pango sdl shout2 sidplay \
+			musepack ogg pango python sdl shout2 sidplay \
 			speex theora ugly vorbis wavpack xvid
 _USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia \
 			dirac dts dv dvd esound faac faad ffmpeg flac \
@@ -72,7 +72,7 @@ _USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia
 			jpeg-mmx ladspa lame libcaca libfame libmms libmng \
 			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
 			musepack musicbrainz nas sdl shout shout2 sidplay \
-			smoothwave sndfile speex theora ogg pango polyp \
+			smoothwave sndfile speex theora ogg pango polyp python \
 			swfdec vorbis wavpack x264 xvid
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes
@@ -209,6 +209,15 @@ mpeg2dec_DEPENDS=	multimedia/gstreamer-plugins-mpeg2dec
 mpeg2enc_DEPENDS=	multimedia/gstreamer-plugins-mpeg2enc
 
 mplex_DEPENDS=	multimedia/gstreamer-plugins-mplex
+
+python_DEPENDS=		multimedia/py-gstreamer
+python_NAME=		gstreamer
+python_GST80_SUFX=	80
+python_GST80_PREFIX=	${PYTHON_PKGNAMEPREFIX}
+python_GST_PREFIX=	${PYTHON_PKGNAMEPREFIX}
+python_GST_SUFX=	# empty
+python_GST80_VERSION=	0.8.2
+python_GST_VERSION=	0.10.4
 
 theora_DEPENDS=	multimedia/gstreamer-plugins-theora
 
