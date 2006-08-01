@@ -14058,6 +14058,7 @@ uwm		ports/x11-wm/uwm
 uz-aspell	ports/textproc/uz-aspell
 uzap		ports/editors/uzap
 v		ports/x11-toolkits/v
+v4l_compat	ports/multimedia/v4l_compat
 v6eval		ports/net/v6eval
 v7sh		ports/shells/v7sh
 vMac		ports/emulators/vMac
