@@ -1322,6 +1322,7 @@
     SUBDIR += p5-Term-Animation
     SUBDIR += p5-Term-CallEditor
     SUBDIR += p5-Term-Encoding
+    SUBDIR += p5-Term-Menus
     SUBDIR += p5-Term-ProgressBar
     SUBDIR += p5-Term-Prompt
     SUBDIR += p5-Term-Query
