@@ -1,0 +1,24 @@
+--- src/Makefile.orig	Wed Jan 11 23:09:15 2006
++++ src/Makefile	Sat Apr 29 19:29:09 2006
+@@ -23,7 +23,7 @@
+ PROG = gspiceui
+ 
+ # wxWidgets configuration utility
+-WXCFG = wx-config
++WXCFG = wxgtk2u-2.6-config
+ 
+ # Directories
+ #ROOT := $(shell cd .. ; pwd)
+@@ -45,10 +45,10 @@
+ 
+ # Includes
+ INCLUDES =-I/usr/include -I/usr/X11R6/include -I. -Ibase -Imain -Inetlist \
+--Ignucap -Ingspice -Iprocess -Iutility
++-Ignucap -Ingspice -Iprocess -Iutility $(shell wxgtk2u-2.6-config --cxxflags)
+ 
+ # Libraries
+-LIB := $(shell wx-config --libs)
++LIB := $(shell wxgtk2u-2.6-config --libs)
+ 
+ # Sources & headers
+ SRCS = *.cpp
