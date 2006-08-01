@@ -657,6 +657,7 @@
     SUBDIR += pear-Numbers_Words
     SUBDIR += pear-Spreadsheet_Excel_Writer
     SUBDIR += pear-XML_Beautifier
+    SUBDIR += pear-XML_DTD
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += pecl-ctemplate
