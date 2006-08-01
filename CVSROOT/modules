@@ -6041,6 +6041,7 @@ librfc822	ports/mail/librfc822
 librsvg		ports/graphics/librsvg
 librsvg2	ports/graphics/librsvg2
 librsync	ports/net/librsync
+libs11n		ports/devel/libs11n
 libsamplerate	ports/audio/libsamplerate
 libsdb		ports/databases/libsdb
 libsectok	ports/security/libsectok
