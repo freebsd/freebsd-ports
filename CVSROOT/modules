@@ -10528,6 +10528,7 @@ pecl-PDO_SQLITE	ports/databases/pecl-PDO_SQLITE
 pecl-big_int	ports/math/pecl-big_int
 pecl-crack	ports/security/pecl-crack
 pecl-ctemplate	ports/textproc/pecl-ctemplate
+pecl-esmtp	ports/mail/pecl-esmtp
 pecl-fileinfo	ports/sysutils/pecl-fileinfo
 pecl-filter	ports/security/pecl-filter
 pecl-fribidi	ports/converters/pecl-fribidi
