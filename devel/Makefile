@@ -1542,6 +1542,7 @@
     SUBDIR += picasm
     SUBDIR += picp
     SUBDIR += picprog
+    SUBDIR += pikdev
     SUBDIR += pinstall
     SUBDIR += pkg-config
     SUBDIR += plan9port
