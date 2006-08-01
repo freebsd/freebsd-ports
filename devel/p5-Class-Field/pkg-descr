@@ -1,0 +1,7 @@
+Class::Field exports two subroutines, field and const. These
+functions are used to declare fields and constants in your class.
+
+Class::Field generates custom code for each accessor that is
+optimized for speed.
+
+WWW: http://search.cpan.org/dist/Class-Field/

@@ -810,6 +810,7 @@
     SUBDIR += p5-Class-ErrorHandler
     SUBDIR += p5-Class-Factory
     SUBDIR += p5-Class-Factory-Util
+    SUBDIR += p5-Class-Field
     SUBDIR += p5-Class-Fields
     SUBDIR += p5-Class-Generate
     SUBDIR += p5-Class-Gomor
