@@ -1,0 +1,10 @@
+This module provides an implementation for Perl 6 Rules.
+
+It is a front-end to several other modules:
+   * Pugs::Grammar::Rule parses the Rules syntax.
+   * Pugs::Grammar::Rule::Rule specifies the Rules syntax with Rules.
+   * Pugs::Emitter::Rule::Perl5 converts parsed Rules to Perl 5 code.
+   * Pugs::Runtime::Rule provides the runtime engine for Rules.
+   * Pugs::Runtime::Match represents a Match object.
+
+WWW: http://search.cpan.org/dist/Pugs-Compiler-Rule/
