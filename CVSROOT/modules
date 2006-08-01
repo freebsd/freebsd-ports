@@ -10557,6 +10557,7 @@ pecl-statgrab	ports/devel/pecl-statgrab
 pecl-stats	ports/math/pecl-stats
 pecl-stem	ports/textproc/pecl-stem
 pecl-svn	ports/devel/pecl-svn
+pecl-tcpwrap	ports/security/pecl-tcpwrap
 pecl-tidy	ports/www/pecl-tidy
 pecl-xdiff	ports/textproc/pecl-xdiff
 pecl-yaz	ports/net/pecl-yaz
