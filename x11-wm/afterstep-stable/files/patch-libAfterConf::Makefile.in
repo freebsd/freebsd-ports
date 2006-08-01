@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- libAfterConf/Makefile.in.orig	Sat Jun 24 22:04:08 2006
++++ libAfterConf/Makefile.in	Sat Jun 24 22:04:21 2006
+@@ -3,7 +3,7 @@
+ #
+ 
+ LIBS_PRIVATE      = ../libAfterConf/libAfterConf.a ../libAfterStep/libAfterStep.a\
+-		    ../libAfterImage/libAfterImage.a ../libAfterBase/libAfterBase.a
++		    ../libAfterImage/libAfterImage.a ../libAfterBase/libAfterBase.a -L%%LOCALBASE%%/lib -lexecinfo
+ 
+ LIB_INCS= afterconf.h
+ 

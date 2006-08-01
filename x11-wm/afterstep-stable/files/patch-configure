@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- configure.orig	Mon Sep 13 11:43:06 2004
-+++ configure	Mon Sep 13 11:43:30 2004
-@@ -1734,7 +1734,7 @@
+--- configure	Sat Jun 24 21:55:24 2006
++++ configure.orig	Sat Jun 24 21:54:41 2006
+@@ -1811,7 +1811,7 @@
  # Check whether --enable-reuse-font or --disable-reuse-font was given.
  if test "${enable_reuse_font+set}" = set; then
    enableval="$enable_reuse_font"
@@ -11,7 +11,7 @@ $FreeBSD$
  cat >>confdefs.h <<\_ACEOF
  #define MODULE_REUSE_LOADED_FONT 1
  _ACEOF
-@@ -5450,7 +5450,7 @@
+@@ -5830,7 +5830,7 @@
  
  have_shmimage=no
  
@@ -20,3 +20,30 @@ $FreeBSD$
  	enable_shmimage=no
  fi
  
+@@ -7955,7 +7955,7 @@
+ fi
+ 
+ if test "x$enable_staticlibs" = "xyes"; then
+-   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a"
++   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a %%LOCALBASE%%/lib/libexecinfo.a"
+    AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.a"
+    AFTERSTEP_LIB="../../libAfterStep/libAfterStep.a"
+    AFTERCONF_LIB="../../libAfterConf/libAfterConf.a"
+@@ -7974,7 +7974,7 @@
+    		LIBPROG='$(LIB_SHARED_CYG)'
+    		LIBINSTALL="install.cyg"
+ 	else
+-   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so"
++   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so %%LOCALBASE%%/lib/libexecinfo.a"
+    		AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.so"
+    		AFTERSTEP_LIB="../../libAfterStep/libAfterStep.so"
+    		AFTERCONF_LIB="../../libAfterConf/libAfterConf.so"
+@@ -7985,7 +7985,7 @@
+ 	fi
+ fi
+ 
+-AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a"
++AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a %%LOCALBASE%%/lib/libexecinfo.a"
+ AFTERIMAGE_STATIC_LIB="../../libAfterImage/libAfterImage.a"
+ AFTERSTEP_STATIC_LIB="../../libAfterStep/libAfterStep.a"
+ AFTERCONF_STATIC_LIB="../../libAfterConf/libAfterConf.a"

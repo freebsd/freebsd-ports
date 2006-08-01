@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,12 +21,12 @@ LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_PERL5=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -75,20 +74,30 @@ post-extract:
 
 post-patch:
 .for file in afterstep/database
-	@${PERL} -pi -e 's,linux-penguin,monitor-bsd,' \
+	@${REINPLACE_CMD} -e 's,linux-penguin,monitor-bsd,' \
 		${WRKSRC}/${file}
 .endfor
 .for file in libAfterBase/Makefile.in libAfterImage/Makefile.in
-	@${PERL} -pi.orig -e 's,^install\.,noinstall.,g ; \
+	@${REINPLACE_CMD} -e 's,^install\.,noinstall.,g ; \
 		 s,^install:,install:#,g' ${WRKSRC}/${file}
 .endfor
 .for file in libAfterBase/configure libAfterImage/configure
-	@${PERL} -pi.orig -e 's,="-O3",="$$CFLAGS",g' \
+	@${REINPLACE_CMD} -e 's,="-O3",="$$CFLAGS",g' \
 		${WRKSRC}/${file}
 .endfor
 .for file in libAfterStep/afterstep-config.in
-	@${PERL} -pi -e 's,ft_version,libafterstep_version,g' \
+	@${REINPLACE_CMD} -e 's,ft_version,libafterstep_version,g' \
 		${WRKSRC}/${file}
 .endfor
+.for file in configure libAfterBase/configure libAfterConf/Makefile.in libAfterImage/configure
+	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		${WRKSRC}/${file}
+.endfor
+
+post-build:
+	${MV} "${WRKSRC}/src/ASDocGen/man/Wharf Folders.man" \
+		"${WRKSRC}/src/ASDocGen/man/WharfFolders.man"
+	${MV} "${WRKSRC}/src/ASDocGen/html/Wharf Folders.html" \
+		"${WRKSRC}/src/ASDocGen/html/WharfFolders.html"
 
 .include <bsd.port.post.mk>

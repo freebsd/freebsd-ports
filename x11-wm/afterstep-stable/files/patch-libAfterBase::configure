@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- libAfterBase/configure.orig	Tue May 23 10:59:30 2006
++++ libAfterBase/configure	Thu Jun 22 15:09:25 2006
+@@ -6379,6 +6379,8 @@
+ 
+ 
+ 
++execinfo_libs="-L%%LOCALBASE%%/lib -lexecinfo"
++LIBS="$execinfo_libs $LIBS"
+ for ac_func in backtrace_symbols
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
