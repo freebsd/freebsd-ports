@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Trac
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -26,7 +26,7 @@ MAN3=		Text::Trac.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500602
-RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
