@@ -1,6 +1,6 @@
---- doc/api/Makefile.in.orig	Wed Dec  1 16:07:11 2004
-+++ doc/api/Makefile.in	Mon Feb 28 15:33:41 2005
-@@ -388,7 +388,7 @@
+--- doc/documentation/code/api/Makefile.in.orig	Wed Aug  2 11:42:11 2006
++++ doc/documentation/code/api/Makefile.in	Wed Aug  2 11:42:25 2006
+@@ -400,7 +400,7 @@
  	doxygen $(srcdir)/dirac_api.doxygen
  
  install-data-hook:

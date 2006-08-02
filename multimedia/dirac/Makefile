@@ -6,25 +6,30 @@
 #
 
 PORTNAME=	dirac
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source video codec from the BBC
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack gnometarget
 USE_GCC=	3.4
-PORTDOCS=	README
+INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include
+CONFIGURE_ENV+=	HAVE_LATEX=false HAVE_DVIPDFM=false
+
+.if defined(NOPORTDOCS)
+CONFIGURE_ENV+=	HAVE_DOXYGEN=false HAVE_DOT=false
+.else
+BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
