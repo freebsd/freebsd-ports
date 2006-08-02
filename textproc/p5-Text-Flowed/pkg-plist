@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Flowed/.packlist
+%%SITE_PERL%%/Text/Flowed.pm
+@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Flowed
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
