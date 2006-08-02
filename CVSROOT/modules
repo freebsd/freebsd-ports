@@ -9613,6 +9613,7 @@ p5-Rcs-Agent	ports/devel/p5-Rcs-Agent
 p5-ReadLine-Gnu	ports/devel/p5-ReadLine-Gnu
 p5-ReadLine-Perl	ports/devel/p5-ReadLine-Perl
 p5-Readonly	ports/devel/p5-Readonly
+p5-Readonly-XS	ports/devel/p5-Readonly-XS
 p5-Regex-PreSuf	ports/textproc/p5-Regex-PreSuf
 p5-Regexp-Assemble	ports/devel/p5-Regexp-Assemble
 p5-Regexp-Bind	ports/devel/p5-Regexp-Bind
