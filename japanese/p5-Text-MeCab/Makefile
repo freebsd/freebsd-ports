@@ -20,9 +20,10 @@ MAN3=			Text::MeCab.3 \
 			Text::MeCab::Node.3
 
 PERL_CONFIGURE=	yes
+IS_INTERACTIVE=	yes
 
 post-patch:
-	# To prevent from overwriting CCFLAGS value by FreeBSD Ports system
+	# To prevent CCFLAGS value from being overwritten by the ports system
 	@${REINPLACE_CMD} -e 's|CCFLAGS|DEFINE|g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
