@@ -1,0 +1,29 @@
+--- Makefile.orig	Fri Jun  9 22:54:24 2006
++++ Makefile	Sun Jul 30 22:11:38 2006
+@@ -3,8 +3,7 @@
+ SRC 	= game.c main.c 
+ VERSION = $(shell svnversion -c . | cut -d : -f 2)
+ 
+-CFLAGS  += -Wall -Werror -O3 -g 
+-LDFLAGS += -g -lSDL -lSDL_image -lSDL_mixer
++LDFLAGS += `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer
+ 
+ ifeq "$(target)" "win32"
+ 
+@@ -18,14 +17,13 @@
+ else
+ 
+ BIN	+= $(NAME)
+-CFLAGS	+= -I/usr/include/SDL
++CFLAGS	+= `${SDL_CONFIG} --cflags`
+ 
+ endif
+ 
+ OBJS    += $(subst .c,.o, $(SRC))
+ 
+-CC 	:= $(CROSS)gcc
+-LD 	:= $(CROSS)gcc
++LD 	:= $(CC)
+ STRIP 	:= $(CROSS)strip
+ WINDRES := $(CROSS)windres
+ NSIS	:= makensis
