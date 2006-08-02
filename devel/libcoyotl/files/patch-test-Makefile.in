@@ -1,0 +1,12 @@
+diff -urN test.orig/Makefile.in test/Makefile.in
+--- test.orig/Makefile.in	Tue Aug  1 18:01:32 2006
++++ test/Makefile.in	Tue Aug  1 18:01:44 2006
+@@ -112,7 +112,7 @@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = -L../libcoyotl -lrt -lpng -lcoyotl
++LIBS = -L../libcoyotl -lpng -lcoyotl
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
