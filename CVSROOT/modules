@@ -2121,6 +2121,7 @@ edje		ports/graphics/edje
 edonkey-gui-gtk	ports/net-p2p/edonkey-gui-gtk
 edonkey-gui-gtk-urlslave	ports/net-p2p/edonkey-gui-gtk-urlslave
 edonkey-tool-hash	ports/net-p2p/edonkey-tool-hash
+eduke32		ports/games/eduke32
 eel		ports/x11-toolkits/eel
 eet		ports/devel/eet
 efax		ports/comms/efax
