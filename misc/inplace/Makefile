@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	inplace
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A tool to edit files in-place through given filter commands
 
 USE_BZIP2=	yes
