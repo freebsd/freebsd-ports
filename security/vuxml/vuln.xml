@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ed529baa-21c6-11db-b625-02e081235dab">
+    <topic>gnupg -- 2 more possible memory allocation attacks</topic>
+    <affects>
+      <package>
+	<name>gnupg</name>
+	<range><lt>1.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Author reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2006q3/000229.html">
+	  <p>Fixed 2 more possible memory allocation attacks.  They are
+	    similar to the problem we fixed with 1.4.4.  This bug can easily
+	    be be exploted for a DoS; remote code execution is not entirely
+	    impossible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2006q3/000229.html</url>
+    </references>
+    <dates>
+      <discovery>2006-08-01</discovery>
+      <entry>2006-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76562594-1f19-11db-b7d4-0008743bf21a">
     <topic>ruby - multiple vulnerabilities</topic>
     <affects>
