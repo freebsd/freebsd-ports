@@ -1,0 +1,31 @@
+# Makefile for defining variables used by Duke Nukem 3D related ports.
+#
+# A dependency to "games/duke3d-data" is automatically added (except for the
+# data port itself). The ports using this definitions should assume the data
+# is installed (i.e. no need for pkg-message asking to copy duke3d.grp).
+#
+# The following variables are defined, and can be used in the port.
+# DN3DPKGNAMEPREFIX	- The package name prefix for Duke Nukem 3D additions.
+# DN3DDIR		- The Duke Nukem 3D data directory (also added to
+#			  MAKE_ENV, PLIST_SUB and SUB_LIST).
+#
+# For notes about this kind of ports see /usr/ports/games/quake2-data (some
+# rules apply to this ports, like search paths).
+#
+
+# Set variables.
+
+DN3DPKGNAMEPREFIX?=duke3d-
+DN3DDIR?=	${LOCALBASE}/share/duke3d
+
+# Add them to the ports system.
+
+MAKE_ENV+=	DN3DDIR="${DN3DDIR}"
+PLIST_SUB+=	DN3DDIR="${DN3DDIR:S/${LOCALBASE}\///}"
+SUB_LIST+=	DN3DDIR="${DN3DDIR}"
+
+# Add the dependency.
+
+.if ${PORTNAME} != "data"
+RUN_DEPENDS+=	${DN3DDIR}:${PORTSDIR}/games/duke3d-data
+.endif
