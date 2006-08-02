@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1.a14
-PORTREVISION=	1
+PORTVERSION=	2.1.a15
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
+		http://www.mirrors.wiretapped.net/security/network-monitoring/arpwatch/ \
+		ftp://ftp.riken.go.jp/pub/net/lbl/ \
 		http://www.goodking.ca/pub/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 
