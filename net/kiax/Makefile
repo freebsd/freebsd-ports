@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	kiax
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	kiax-0.8.5-src
 
 MAINTAINER=	kjelderg@gmail.com
 COMMENT=	An Asterisk (IAX) client written in QT for KDE
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 	lrelease:${PORTSDIR}/x11-toolkits/qt33
 
 USE_GMAKE=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 USE_QT_VER=	3
@@ -33,11 +33,6 @@ MAKE_ARGS+=	QTDIR=${X11BASE} \
 
 .if ${OSVERSION} < 500000
 BROKEN=		does not compile
-.endif
-
-post-patch:
-.if ${OSVERSION} < 500000
-	${REINPLACE_CMD} 's/stdint\.h/inttypes.h/' ${WRKSRC}/lib/spandsp/plc.h
 .endif
 
 .include <bsd.port.post.mk>
