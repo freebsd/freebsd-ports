@@ -1,9 +1,10 @@
---- Makefile.orig	Thu Apr 18 20:39:26 2002
-+++ Makefile	Fri Sep 20 21:16:25 2002
-@@ -1,10 +1,11 @@
+--- Makefile.orig	Thu Apr 18 16:39:26 2002
++++ Makefile	Tue Aug  1 12:53:14 2006
+@@ -1,10 +1,12 @@
  #Adjust this directory for installation
 -LIBDIR=`ocamlc -where`
-+LIBDIR=$(PREFIX)/lib/ocaml/site-lib/classes
++LIBDIR=$(LOCALBASE)/lib/ocaml/site-lib/classes
++DISTDIR=$(PREFIX)/lib/ocaml/site-lib/classes
  COMPILER=ocamlc -c
  LIBRARIAN=ocamlc -a
  OPTCOMP=ocamlopt -c
@@ -14,16 +15,35 @@
  
  OBJECTS=obuffer.cmo	ohashtbl.cmo	oqueue.cmo	ostack.cmo \
  	omap.cmo	oset.cmo	ostream.cmo	omapping.cmo
-@@ -43,12 +44,15 @@
+@@ -16,13 +18,13 @@
+ .SUFFIXES: .ml .mli .cmo .cmi .cmx
+ 
+ .ml.cmo:
+-	$(COMPILER) $(INCLUDES) $<
++	$(COMPILER) -ccopt "${CFLAGS}" $(INCLUDES) $<
+ 
+ .ml.cmx:
+-	$(OPTCOMP) $(INCLUDES) $<
++	$(OPTCOMP) -ccopt "${CFLAGS}" $(INCLUDES) $<
+ 
+ .mli.cmi:
+-	$(COMPILER) $(INCLUDES) $<
++	$(COMPILER) -ccopt "${CFLAGS}" $(INCLUDES) $<
+ 
+ all: stdclass.cma
+ opt: stdclass.cmxa
+@@ -43,12 +45,15 @@
  	@$(MAKE) real-install LIBDIR=$(LIBDIR)
  
  real-install:
-+	$(INSTALLDIR) $(LIBDIR)
- 	$(INSTALL) stdclass.cma *.cmi *.mli $(LIBDIR)
+-	$(INSTALL) stdclass.cma *.cmi *.mli $(LIBDIR)
++	$(INSTALLDIR) $(DISTDIR)
++	$(INSTALL) stdclass.cma *.cmi *.mli $(DISTDIR)
  	if test -f stdclass.cmxa; \
- 	then $(INSTALL) stdclass.cmxa stdclass.a *.cmx $(LIBDIR); fi
+-	then $(INSTALL) stdclass.cmxa stdclass.a *.cmx $(LIBDIR); fi
++	then $(INSTALL) stdclass.cmxa stdclass.a *.cmx $(DISTDIR); fi
 +	if test -f META; \
-+	then $(INSTALL) META $(LIBDIR); fi
++	then $(INSTALL) META $(DISTDIR); fi
  
  clean:
 -	rm -f *.cm* *.o *.a *~ #*
