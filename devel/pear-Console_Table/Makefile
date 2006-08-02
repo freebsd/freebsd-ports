@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Console_Table
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	PHP class that makes it easy to build console style tables
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Console
 FILES=		Table.php
+TESTS=		assoziative_arrays.phpt multibyte.phpt no_header.phpt no_rows.phpt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
