@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun May 21 19:51:30 2006
++++ Makefile.in	Wed Aug  2 16:14:50 2006
+@@ -236,7 +236,7 @@
+ 
+ ACLOCAL_AMFLAGS = -I m4 -I gnulib/m4
+ AC_CONFIG_AUX_DIR = utils
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(PREFIX)/libdata/pkgconfig
+ pkgconfig_DATA = tre.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
