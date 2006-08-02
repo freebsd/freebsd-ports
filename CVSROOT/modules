@@ -6116,6 +6116,7 @@ libtranslate	ports/textproc/libtranslate
 libtre		ports/textproc/libtre
 libtremor	ports/audio/libtremor
 libtunepimp	ports/audio/libtunepimp
+libtunepimp-old	ports/audio/libtunepimp-old
 libudbc		ports/databases/libudbc
 libukcprog	ports/devel/libukcprog
 libungif	ports/graphics/libungif
