@@ -888,7 +888,14 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 .endif
 
+OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so
+OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
+OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
+
 .if defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE)
+.if ( ${OSVERSION} >= 700019 )
+IGNORE=		Conflicts with version in the base
+.endif
 .if ( ${OSVERSION} >= 600100 )
 OPENSSL_SHLIBVER?=	4
 .else
@@ -928,7 +935,7 @@ pre-everything::
 	@${FALSE}
 
 .endif
-.if exists(/usr/lib/libcrypto.so.3) && ${OPENSSL_SHLIBVER} != 3
+.if exists(${DESTDIR}/usr/lib/libcrypto.so.3) && ${OPENSSL_SHLIBVER} != 3
 pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# this ports conflicts with your base system"
@@ -945,6 +952,16 @@ MANPREFIX=	${PREFIX}/openssl
 PLIST_SUB+=	MANDIR=""
 PLIST_SUB+=	NOBASE="@comment "
 .else
+.if ${OPENSSL_SHLIBVER_BASE} > ${OPENSSL_SHLIBVER}
+pre-everything::
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# this ports conflicts with your base system"
+	@${ECHO_CMD} "# please undefine OPENSSL_OVERWRITE_PORT"
+	@${ECHO_CMD} "# and use WITH_OPENSSL_BASE=yes instead."
+	@${ECHO_CMD} "#"
+	@${FALSE}
+
+.endif
 OPENSSLDIR=	${PREFIX}/openssl
 MANPREFIX=	${PREFIX}
 PLIST_SUB+=	MANDIR="@comment "
