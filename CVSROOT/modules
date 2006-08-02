@@ -1969,6 +1969,7 @@ du2ps		ports/sysutils/du2ps
 dualserver	ports/dns/dualserver
 duel		ports/games/duel
 duhdraw		ports/graphics/duhdraw
+duke3d-data	ports/games/duke3d-data
 dumb		ports/devel/dumb
 dummyflash	ports/www/dummyflash
 dump9660	ports/sysutils/dump9660
