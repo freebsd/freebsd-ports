@@ -4,6 +4,7 @@ bin/lablgtk
 %%GNOME%%lib/ocaml/stublibs/dlllablgnome.so
 lib/ocaml/stublibs/dlllablgtk.so
 %%GL%%lib/ocaml/stublibs/dlllablgtkgl.so
+lib/ocaml/lablgtk/META
 lib/ocaml/lablgtk/gBin.cmi
 lib/ocaml/lablgtk/gBin.cmx
 lib/ocaml/lablgtk/gBin.ml
@@ -207,60 +208,62 @@ lib/ocaml/lablgtk/ml_gtk.h
 lib/ocaml/lablgtk/varcc
 lib/ocaml/lablgtk/wrappers.h
 lib/ocaml/lablgtk/xml_lexer.mli
-%%GL%%share/examples/ocaml/lablgtk/GL/gears.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/morph3d.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/planet.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/scene.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/simple.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/tutorial-2.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/tutorial-3.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/tutorial-4.ml
-%%GL%%share/examples/ocaml/lablgtk/GL/tutorial-5.ml
-%%GLADE%%share/examples/ocaml/lablgtk/glade/glade_demo.ml
-%%GLADE%%share/examples/ocaml/lablgtk/glade/gladecalc.ml
-%%GLADE%%share/examples/ocaml/lablgtk/glade/project1.glade
-%%GLADE%%share/examples/ocaml/lablgtk/glade/project2.glade
-%%GNOME%%share/examples/ocaml/lablgtk/xmhtml/test.ml
-share/examples/ocaml/lablgtk/image256x256.rgb
-share/examples/ocaml/lablgtk/buttons.ml
-share/examples/ocaml/lablgtk/calc.ml
-share/examples/ocaml/lablgtk/calendar.ml
-share/examples/ocaml/lablgtk/clist.ml
-share/examples/ocaml/lablgtk/combo.ml
-share/examples/ocaml/lablgtk/counter.ml
-share/examples/ocaml/lablgtk/csview.ml
-share/examples/ocaml/lablgtk/dcalendar.ml
-share/examples/ocaml/lablgtk/drawing.ml
-share/examples/ocaml/lablgtk/editor.ml
-share/examples/ocaml/lablgtk/entry.ml
-share/examples/ocaml/lablgtk/events.ml
-share/examples/ocaml/lablgtk/fifteen.ml
-share/examples/ocaml/lablgtk/fixed_editor.ml
-share/examples/ocaml/lablgtk/fixpoint.ml
-share/examples/ocaml/lablgtk/giotest.ml
-share/examples/ocaml/lablgtk/hello.ml
-share/examples/ocaml/lablgtk/image.ml
-share/examples/ocaml/lablgtk/kaimono.ml
-share/examples/ocaml/lablgtk/label.ml
-share/examples/ocaml/lablgtk/lissajous.ml
-share/examples/ocaml/lablgtk/nihongo.ml
-share/examples/ocaml/lablgtk/pousse.ml
-share/examples/ocaml/lablgtk/progressbar.ml
-share/examples/ocaml/lablgtk/radiobuttons.ml
-share/examples/ocaml/lablgtk/rpn.ml
-share/examples/ocaml/lablgtk/scrolledwin.ml
-share/examples/ocaml/lablgtk/socket.ml
-share/examples/ocaml/lablgtk/testdnd.ml
-share/examples/ocaml/lablgtk/testgtk.ml
-share/examples/ocaml/lablgtk/testinput.ml
-share/examples/ocaml/lablgtk/tictactoe.ml
-share/examples/ocaml/lablgtk/tron.ml
-share/examples/ocaml/lablgtk/test.xpm
-%%PORTDOCS%%share/doc/ocaml/lablgtk/README
+%%GL%%%%EXAMPLESDIR%%/GL/gears.ml
+%%GL%%%%EXAMPLESDIR%%/GL/morph3d.ml
+%%GL%%%%EXAMPLESDIR%%/GL/planet.ml
+%%GL%%%%EXAMPLESDIR%%/GL/scene.ml
+%%GL%%%%EXAMPLESDIR%%/GL/simple.ml
+%%GL%%%%EXAMPLESDIR%%/GL/tutorial-2.ml
+%%GL%%%%EXAMPLESDIR%%/GL/tutorial-3.ml
+%%GL%%%%EXAMPLESDIR%%/GL/tutorial-4.ml
+%%GL%%%%EXAMPLESDIR%%/GL/tutorial-5.ml
+%%GLADE%%%%EXAMPLESDIR%%/glade/glade_demo.ml
+%%GLADE%%%%EXAMPLESDIR%%/glade/gladecalc.ml
+%%GLADE%%%%EXAMPLESDIR%%/glade/project1.glade
+%%GLADE%%%%EXAMPLESDIR%%/glade/project2.glade
+%%GNOME%%%%EXAMPLESDIR%%/xmhtml/test.ml
+%%EXAMPLESDIR%%/image256x256.rgb
+%%EXAMPLESDIR%%/buttons.ml
+%%EXAMPLESDIR%%/calc.ml
+%%EXAMPLESDIR%%/calendar.ml
+%%EXAMPLESDIR%%/clist.ml
+%%EXAMPLESDIR%%/combo.ml
+%%EXAMPLESDIR%%/counter.ml
+%%EXAMPLESDIR%%/csview.ml
+%%EXAMPLESDIR%%/dcalendar.ml
+%%EXAMPLESDIR%%/drawing.ml
+%%EXAMPLESDIR%%/editor.ml
+%%EXAMPLESDIR%%/entry.ml
+%%EXAMPLESDIR%%/events.ml
+%%EXAMPLESDIR%%/fifteen.ml
+%%EXAMPLESDIR%%/fixed_editor.ml
+%%EXAMPLESDIR%%/fixpoint.ml
+%%EXAMPLESDIR%%/giotest.ml
+%%EXAMPLESDIR%%/hello.ml
+%%EXAMPLESDIR%%/image.ml
+%%EXAMPLESDIR%%/kaimono.ml
+%%EXAMPLESDIR%%/label.ml
+%%EXAMPLESDIR%%/lissajous.ml
+%%EXAMPLESDIR%%/nihongo.ml
+%%EXAMPLESDIR%%/pixview.ml
+%%EXAMPLESDIR%%/pousse.ml
+%%EXAMPLESDIR%%/progressbar.ml
+%%EXAMPLESDIR%%/radiobuttons.ml
+%%EXAMPLESDIR%%/rpn.ml
+%%EXAMPLESDIR%%/scrolledwin.ml
+%%EXAMPLESDIR%%/socket.ml
+%%EXAMPLESDIR%%/testdnd.ml
+%%EXAMPLESDIR%%/testgtk.ml
+%%EXAMPLESDIR%%/testinput.ml
+%%EXAMPLESDIR%%/tictactoe.ml
+%%EXAMPLESDIR%%/tron.ml
+%%EXAMPLESDIR%%/test.xpm
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm lib/ocaml/lablgtk
-%%GL%%@dirrm share/examples/ocaml/lablgtk/GL
-%%GNOME%%@dirrm share/examples/ocaml/lablgtk/xmhtml
-%%GLADE%%@dirrm share/examples/ocaml/lablgtk/glade
-@dirrm share/examples/ocaml/lablgtk
-%%PORTDOCS%%@dirrm share/doc/ocaml/lablgtk
-%%PORTDOCS%%@dirrm share/doc/ocaml
+%%GL%%@dirrm %%EXAMPLESDIR%%/GL
+%%GNOME%%@dirrm %%EXAMPLESDIR%%/xmhtml
+%%GLADE%%@dirrm %%EXAMPLESDIR%%/glade
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry share/examples/ocaml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry share/doc/ocaml
