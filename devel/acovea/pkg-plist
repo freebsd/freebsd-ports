@@ -1,0 +1,41 @@
+bin/runacovea
+lib/libacovea.so
+lib/libacovea-5.1.so
+lib/libacovea-5.1.so.5
+lib/libacovea.la
+lib/libacovea.a
+include/libacovea/acovea.h
+share/libacovea/config/Makefile.example
+share/libacovea/config/g++34_opteron.acovea
+share/libacovea/config/g++34_pentium3.acovea
+share/libacovea/config/g++34_pentium4.acovea
+share/libacovea/config/g++40_opteron.acovea
+share/libacovea/config/g++40_pentium4.acovea
+share/libacovea/config/g9540_opteron.acovea
+share/libacovea/config/g9540_pentium3.acovea
+share/libacovea/config/g9540_pentium4.acovea
+share/libacovea/config/gcc34_intel.acovea
+share/libacovea/config/gcc34_opteron.acovea
+share/libacovea/config/gcc34_opteron_makefile.acovea
+share/libacovea/config/gcc34_opteron_size.acovea
+share/libacovea/config/gcc34_pentium3.acovea
+share/libacovea/config/gcc34_pentium4.acovea
+share/libacovea/config/gcc40_opteron.acovea
+share/libacovea/config/gcc40_opteron_makefile.acovea
+share/libacovea/config/gcc40_opteron_nofm.acovea
+share/libacovea/config/gcc40_opteron_size.acovea
+share/libacovea/config/gcc40_pentium4.acovea
+share/libacovea/config/gcc41_opteron_nofm.acovea
+share/libacovea/benchmarks/almabench.c
+share/libacovea/benchmarks/distbench.c
+share/libacovea/benchmarks/evobench.c
+share/libacovea/benchmarks/fftbench.c
+share/libacovea/benchmarks/huffbench.c
+share/libacovea/benchmarks/linbench.c
+share/libacovea/benchmarks/linsmall.c
+share/libacovea/benchmarks/mat1bench.c
+share/libacovea/benchmarks/treebench.c
+@dirrm share/libacovea/config
+@dirrm share/libacovea/benchmarks
+@dirrm share/libacovea
+@dirrm include/libacovea
