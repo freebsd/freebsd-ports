@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	20060731
+PORTVERSION=	20060802
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -14,9 +14,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-CONFLICTS=	ktorrent-[0.9]*
-
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+
+CONFLICTS=	ktorrent-[0.9]*
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
