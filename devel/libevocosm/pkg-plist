@@ -1,0 +1,23 @@
+lib/libevocosm.so
+lib/libevocosm-3.1.so
+lib/libevocosm-3.1.so.1
+lib/libevocosm.la
+lib/libevocosm.a
+include/libevocosm/evocommon.h
+include/libevocosm/evocosm.h
+include/libevocosm/evoreal.h
+include/libevocosm/fsm.h
+include/libevocosm/fsm_tools.h
+include/libevocosm/fuzzy_machine.h
+include/libevocosm/landscape.h
+include/libevocosm/migrator.h
+include/libevocosm/mutator.h
+include/libevocosm/organism.h
+include/libevocosm/reporter.h
+include/libevocosm/reproducer.h
+include/libevocosm/roulette.h
+include/libevocosm/scaler.h
+include/libevocosm/selector.h
+include/libevocosm/simple_fsm.h
+bin/runfuncopt
+@dirrm include/libevocosm

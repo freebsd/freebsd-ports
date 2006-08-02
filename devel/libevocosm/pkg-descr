@@ -1,0 +1,17 @@
+Evocosm is a set of classes that abstract the fundamental
+components of an evolutionary algorithm:
+
+ -- Random Numbers
+ -- Validation
+ -- Floating- Point Chromosomes
+ -- Roulette Wheels
+ -- Organisms
+ -- Fitness Landscapes
+ -- Evocosms
+ -- Fitness Scaling
+ -- Migration
+ -- Selecting Survivors
+ -- Reproduction
+ -- Mutation Operators
+
+WWW:	http://www.coyotegulch.com/products/libevocosm/index.html
