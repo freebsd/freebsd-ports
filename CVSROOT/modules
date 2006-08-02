@@ -8346,6 +8346,7 @@ p5-Crypt-Loki97	ports/security/p5-Crypt-Loki97
 p5-Crypt-MySQL	ports/security/p5-Crypt-MySQL
 p5-Crypt-NULL	ports/security/p5-Crypt-NULL
 p5-Crypt-OFB	ports/security/p5-Crypt-OFB
+p5-Crypt-OICQ	ports/security/p5-Crypt-OICQ
 p5-Crypt-OTP	ports/security/p5-Crypt-OTP
 p5-Crypt-OpenSSL-Bignum	ports/security/p5-Crypt-OpenSSL-Bignum
 p5-Crypt-OpenSSL-DSA	ports/security/p5-Crypt-OpenSSL-DSA
