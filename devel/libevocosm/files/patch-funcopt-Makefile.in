@@ -1,0 +1,12 @@
+diff -urN funcopt.orig/Makefile.in funcopt/Makefile.in
+--- funcopt.orig/Makefile.in	Tue Aug  1 18:25:48 2006
++++ funcopt/Makefile.in	Tue Aug  1 18:26:58 2006
+@@ -117,7 +117,7 @@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = -L../libevocosm -lcoyotl -levocosm
++LIBS = -L../libevocosm -lcoyotl -levocosm -lpng
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@

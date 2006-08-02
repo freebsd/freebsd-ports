@@ -499,6 +499,7 @@
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
     SUBDIR += libevent
+    SUBDIR += libevocosm
     SUBDIR += libexecinfo
     SUBDIR += libffi
     SUBDIR += libformat
