@@ -149,6 +149,7 @@
     SUBDIR += drm
     SUBDIR += dsnake
     SUBDIR += duel
+    SUBDIR += duke3d-data
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
     SUBDIR += easysok
