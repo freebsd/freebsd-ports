@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -34,6 +34,11 @@ PLIST_SUB=	NLS="@comment "
 MAN1=		gpg.1 gpgv.1 gpg.ru.1
 MAN7=		gnupg.7
 INFO=		gpg gpgv
+
+OPTIONS=	LDAP "LDAP keyserver interface" off \
+		LIBICONV "use libiconv" off \
+		SUID_GPG "install GPG with suid" off \
+		NOPORTDOCS "without port docs" off
 
 .include <bsd.port.pre.mk>
 
