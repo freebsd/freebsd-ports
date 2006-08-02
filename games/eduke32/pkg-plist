@@ -1,0 +1,6 @@
+bin/eduke32
+bin/mapster32
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/duke3d.def.sample
+%%PORTDOCS%%%%DOCSDIR%%/enhance.con.sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

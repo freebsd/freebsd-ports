@@ -1,0 +1,14 @@
+--- ./Makefile.deps.orig	Tue Jul 18 16:14:46 2006
++++ ./Makefile.deps	Wed Aug  2 00:41:11 2006
+@@ -45,6 +45,11 @@
+ $(OBJ)scriplib.$o: $(SRC)jmact/scriplib.c $(SRC)jmact/scriplib.h $(SRC)jmact/util_lib.h $(SRC)jmact/_scrplib.h $(SRC)jmact/types.h $(EINC)compat.h
+ 
+ # jAudioLib objects
++$(OBJ)dsl.$o: $(SRC)jaudiolib/dsl.c $(SRC)jaudiolib/util.h
++$(OBJ)nodpmi.$o: $(SRC)jaudiolib/nodpmi.c $(SRC)jaudiolib/dpmi.h
++$(OBJ)unixpitch.$o: $(SRC)jaudiolib/unixpitch.c $(SRC)jaudiolib/pitch.h
++$(OBJ)unixvoc.$o: $(SRC)jaudiolib/unixvoc.c $(SRC)jaudiolib/usrhooks.h $(SRC)jaudiolib/linklist.h $(SRC)jaudiolib/pitch.h $(SRC)jaudiolib/multivoc.h $(SRC)jaudiolib/_multivc.h
++
+ $(OBJ)audiolib_fxstub.$o: $(SRC)jaudiolib/audiolib_fxstub.c $(SRC)jaudiolib/fx_man.h
+ $(OBJ)audiolib_musicstub.$o: $(SRC)jaudiolib/audiolib_musicstub.c $(SRC)jaudiolib/music.h
+ 

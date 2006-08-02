@@ -1,0 +1,57 @@
+--- Makefile.orig	Tue Jul 18 16:14:46 2006
++++ Makefile	Wed Aug  2 01:01:47 2006
+@@ -69,15 +69,12 @@
+ 
+ AUDIOLIB_FX_STUB=$(OBJ)audiolib_fxstub.$o
+ AUDIOLIB_MUSIC_STUB=$(OBJ)audiolib_musicstub.$o
+-AUDIOLIB_JFAUD=$(OBJ)jfaud_sounds.$o
++AUDIOLIB_JFAUD=$(OBJ)sounds.$o
+ AUDIOLIB_FX=$(OBJ)mv_mix.$o \
+ 	  $(OBJ)mv_mix16.$o \
+ 	  $(OBJ)mvreverb.$o \
+-	  $(OBJ)pitch.$o \
+-	  $(OBJ)multivoc.$o \
+ 	  $(OBJ)ll_man.$o \
+-	  $(OBJ)fx_man.$o \
+-	  $(OBJ)dsoundout.$o
++	  $(OBJ)fx_man.$o
+ AUDIOLIB_MUSIC=$(OBJ)midi.$o \
+ 	  $(OBJ)mpu401.$o \
+ 	  $(OBJ)music.$o
+@@ -112,13 +109,16 @@
+ endif
+ 
+ ifeq ($(RENDERTYPE),SDL)
+- 	OURCFLAGS+= $(subst -Dmain=SDL_main,,$(shell sdl-config --cflags))
++	OURCFLAGS+= $(subst -Dmain=SDL_main,,$(shell sdl-config --cflags) -D__cdecl=" ")
++	LIBS+= $(shell sdl-config --libs) -lSDL_mixer
+ 
+-	ifneq (0,$(JFAUD))
+-		AUDIOLIBOBJ=$(AUDIOLIB_JFAUD)
+-	else
+-		AUDIOLIBOBJ=$(AUDIOLIB_MUSIC_STUB) $(AUDIOLIB_FX_STUB) $(OBJ)sounds.$o
+-	endif
++	AUDIOLIB_FX+= $(OBJ)dsl.$o \
++		      $(OBJ)nodpmi.$o \
++		      $(OBJ)unixpitch.$o \
++		      $(OBJ)unixvoc.$o
++
++	AUDIOLIB_MUSIC=$(OBJ)sdlmusic.$o $(OBJ)unixglob.$o
++	AUDIOLIBOBJ=$(AUDIOLIB_JFAUD) $(AUDIOLIB_MUSIC) $(AUDIOLIB_FX)
+ 
+ 	ifeq (1,$(HAVE_GTK2))
+ 		OURCFLAGS+= -DHAVE_GTK2 $(shell pkg-config --cflags gtk+-2.0)
+@@ -180,11 +180,12 @@
+ 	$(CC) $(CFLAGS) $(OURCFLAGS) -o $@ $^ -Wl
+ 	strip duke3d_w32$(EXESUFFIX)
+ 
++AUDIOLIB=$(SRC)/jaudiolib
+ include Makefile.deps
+ 
+ .PHONY: enginelib editorlib
+ enginelib editorlib:
+-	-mkdir $(EOBJ)
++	mkdir -p $(EOBJ)
+ 	$(MAKE) -C $(EROOT) "OBJ=$(CURDIR)/$(EOBJ)" \
+ 		SUPERBUILD=$(SUPERBUILD) POLYMOST=$(POLYMOST) \
+ 		USE_OPENGL=$(USE_OPENGL) USE_A_C=$(USE_A_C) \
