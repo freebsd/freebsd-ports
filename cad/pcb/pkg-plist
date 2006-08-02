@@ -157,6 +157,10 @@ bin/pcb-bin
 %%DATADIR%%/pcblib.contents
 %%DATADIR%%/qfp-ui
 %%DATADIR%%/qfp.dat
+%%PORTDOCS%%%%DATADIR%%/puller.eps
+%%PORTDOCS%%%%DATADIR%%/puller.gif
+%%PORTDOCS%%%%DATADIR%%/puller.pdf
+%%PORTDOCS%%%%DATADIR%%/puller.png
 %%PORTDOCS%%%%DATADIR%%/refcard.pdf
 %%PORTDOCS%%%%DATADIR%%/refcard.ps
 %%PORTDOCS%%%%DATADIR%%/thermal.eps
