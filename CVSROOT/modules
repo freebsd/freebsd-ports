@@ -5834,6 +5834,7 @@ liberator	ports/net-p2p/liberator
 libesmtp	ports/mail/libesmtp
 libetpan	ports/mail/libetpan
 libevent	ports/devel/libevent
+libevocosm	ports/devel/libevocosm
 libexecinfo	ports/devel/libexecinfo
 libexif		ports/graphics/libexif
 libexif-gtk	ports/graphics/libexif-gtk
