@@ -1,0 +1,13 @@
+This module provides functions that deals with formatting data with
+Content-Type 'text/plain; format=flowed' as described in RFC2646
+(http://www.rfc-editor.org/rfc/rfc2646.txt). In a nutshell,
+format=flowed text solves the problem in plain text files where it
+is not known which lines can be considered a logical paragraph,
+enabling lines to be automatically flowed (wrapped and/or joined)
+as appropriate when displaying.
+
+In format=flowed, a soft newline is expressed as " \n", while hard
+newlines are expressed as "\n". Soft newlines can be automatically
+deleted or inserted as appropriate when the text is reformatted.
+
+WWW: http://search.cpan.org/dist/Text-Flowed/
