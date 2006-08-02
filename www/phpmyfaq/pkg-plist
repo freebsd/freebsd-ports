@@ -2,6 +2,7 @@
 %%PHPMYFAQ%%/_httpd.ini
 %%PHPMYFAQ%%/_lighttpd.conf
 %%PHPMYFAQ%%/add.php
+%%PHPMYFAQ%%/phpmyfaq.spec
 %%PHPMYFAQ%%/admin/adminlog.php
 %%PHPMYFAQ%%/admin/attachment.php
 %%PHPMYFAQ%%/admin/backup.import.php
