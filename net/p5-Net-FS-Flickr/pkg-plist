@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/flickrfs
+%%SITE_PERL%%/Net/FS/Flickr.pm
+%%SITE_PERL%%/Net/FS/Flickr/Access.pm
+%%SITE_PERL%%/Net/FS/Flickr/DefaultImage.pm
+@dirrmtry %%SITE_PERL%%/Net/FS/Flickr
+@dirrmtry %%SITE_PERL%%/Net/FS
+@dirrmtry %%SITE_PERL%%/Net
