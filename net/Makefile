@@ -510,6 +510,7 @@
     SUBDIR += p5-Spread-Message
     SUBDIR += p5-Spread-Session
     SUBDIR += p5-URI
+    SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-OpenURL
     SUBDIR += p5-Validate-Net
     SUBDIR += p5-What
