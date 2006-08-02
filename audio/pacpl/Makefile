@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pacpl
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
-DISTNAME=	pac-${PORTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Perl Audio Converter
@@ -43,26 +42,27 @@ RUN_DEPENDS=	${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-MP3-Tag \
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
-FR_FILES=	help long_help rip_help tag_help video_help
-PLIST_FILES=	bin/pacpl etc/pacpl/pacpl.conf ${FR_FILES:S,^,etc/pacpl/lang/FR/,:S,$,.FR,}
-PLIST_DIRS=	etc/pacpl/lang/FR etc/pacpl/lang etc/pacpl
+PACPL_LNG_FILES=	help long_help rip_help tag_help video_help
+PACPL_LNGS=	FR PT
+PLIST_FILES=	bin/pacpl etc/pacpl/pacpl.conf \
+		${PACPL_LNG_FILES:S,^,etc/pacpl/lang/FR/,:S,$,.FR,} \
+		${PACPL_LNG_FILES:S,^,etc/pacpl/lang/PT/,:S,$,.PT,}
+PLIST_DIRS=	etc/pacpl/lang/FR etc/pacpl/lang/PT etc/pacpl/lang etc/pacpl
 MAN1=		pacpl.1
 
 post-extract:
-	@${GUNZIP_CMD} ${WRKSRC}/man/pac.1.gz
+	@${GUNZIP_CMD} ${WRKSRC}/man/pacpl.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/etc#${PREFIX}/etc#' ${WRKSRC}/pac
-	@${REINPLACE_CMD} -Ee 's#([^a-zA-Z]|^)pac([^a-zA-Z]|$$)#\1pacpl\2#g' \
-			  -Ee 's#([^a-zA-Z]|^)PAC([^a-zA-Z]|$$)#\1PACPL\2#g' \
-		${WRKSRC}/pac ${WRKSRC}/man/pac.1
-	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#' ${WRKSRC}/pac.conf
+	@${REINPLACE_CMD} -e 's#/etc#${PREFIX}/etc#' ${WRKSRC}/pacpl
+	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#' ${WRKSRC}/pacpl.conf
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/pac ${PREFIX}/bin/pacpl
-	@${INSTALL} -d ${PREFIX}/etc/pacpl/lang/FR
-	@${INSTALL_DATA} ${WRKSRC}/pac.conf ${PREFIX}/etc/pacpl/pacpl.conf
-	@${INSTALL_DATA} ${FR_FILES:S,^,${WRKSRC}/lang/FR/,:S,$,.FR,} ${PREFIX}/etc/pacpl/lang/FR/
-	@${INSTALL_MAN} ${WRKSRC}/man/pac.1 ${MAN1PREFIX}/man/man1/pacpl.1
+	@${INSTALL_SCRIPT} ${WRKSRC}/pacpl ${PREFIX}/bin/
+	@${INSTALL} -d ${PACPL_LNGS:S,^,${PREFIX}/etc/pacpl/lang/,}
+	@${INSTALL_DATA} ${PACPL_LNG_FILES:S,^,${WRKSRC}/lang/FR/,:S,$,.FR,} ${PREFIX}/etc/pacpl/lang/FR/
+	@${INSTALL_DATA} ${PACPL_LNG_FILES:S,^,${WRKSRC}/lang/PT/,:S,$,.PT,} ${PREFIX}/etc/pacpl/lang/PT/
+	@${INSTALL_DATA} ${WRKSRC}/pacpl.conf ${PREFIX}/etc/pacpl/
+	@${INSTALL_MAN} ${WRKSRC}/man/pacpl.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
