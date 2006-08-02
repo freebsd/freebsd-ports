@@ -1,0 +1,30 @@
+bin/aiprolog
+%%SITE_PERL%%/AI/Prolog/Introduction.pod
+%%SITE_PERL%%/AI/Prolog/Article.pod
+%%SITE_PERL%%/AI/Prolog/TermList.pm
+%%SITE_PERL%%/AI/Prolog/Parser.pm
+%%SITE_PERL%%/AI/Prolog/Builtins.pod
+%%SITE_PERL%%/AI/Prolog/ChoicePoint.pm
+%%SITE_PERL%%/AI/Prolog/Cookbook.pod
+%%SITE_PERL%%/AI/Prolog/Term.pm
+%%SITE_PERL%%/AI/Prolog/Engine.pm
+%%SITE_PERL%%/AI/Prolog/KnowledgeBase.pm
+%%SITE_PERL%%/AI/Prolog/Parser/PreProcessor.pm
+%%SITE_PERL%%/AI/Prolog/Parser/PreProcessor/Math.pm
+%%SITE_PERL%%/AI/Prolog/TermList/Primitive.pm
+%%SITE_PERL%%/AI/Prolog/TermList/Clause.pm
+%%SITE_PERL%%/AI/Prolog/TermList/Step.pm
+%%SITE_PERL%%/AI/Prolog/Engine/Primitives.pm
+%%SITE_PERL%%/AI/Prolog/Term/Cut.pm
+%%SITE_PERL%%/AI/Prolog/Term/Number.pm
+%%SITE_PERL%%/AI/Prolog.pm
+@dirrm %%SITE_PERL%%/AI/Prolog/TermList
+@dirrm %%SITE_PERL%%/AI/Prolog/Term
+@dirrm %%SITE_PERL%%/AI/Prolog/Parser/PreProcessor
+@dirrm %%SITE_PERL%%/AI/Prolog/Parser
+@dirrm %%SITE_PERL%%/AI/Prolog/Engine
+@dirrm %%SITE_PERL%%/AI/Prolog
+@dirrmtry %%SITE_PERL%%/AI
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Prolog
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI

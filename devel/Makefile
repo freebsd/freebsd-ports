@@ -726,6 +726,7 @@
     SUBDIR += p4genpatch
     SUBDIR += p4v
     SUBDIR += p5-AI-Pathfinding-AStar
+    SUBDIR += p5-AI-Prolog
     SUBDIR += p5-Acme-MetaSyntactic
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Accounting
