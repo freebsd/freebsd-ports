@@ -2430,3 +2430,4 @@ japanese/eb3||2006-08-01|Has expired: please use a never version in japanese/eb
 mail/dspampd||2006-08-01|Has expired: Buggy with recent perl versions, not developed anymore, use mail/dspam[-devel] in --daemon mode instead
 net/svnc||2006-08-01|Has expired: mastersite gone, depends on unfetchable, antique version of vnc
 devel/p5-IPC-Mmap-SimpleShare||2006-08-01|Has expired
+devel/p5-Readonly-XS|devel/p5-Readonly|2006-08-02|p5-Readonly installs XS automatically
