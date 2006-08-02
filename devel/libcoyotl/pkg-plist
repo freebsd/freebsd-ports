@@ -1,0 +1,23 @@
+lib/libcoyotl.so
+lib/libcoyotl-3.1.so
+lib/libcoyotl-3.1.so.4
+lib/libcoyotl.la
+lib/libcoyotl.a
+include/libcoyotl/array.h
+include/libcoyotl/cmwc4096.h
+include/libcoyotl/command_line.h
+include/libcoyotl/crccalc.h
+include/libcoyotl/kissrng.h
+include/libcoyotl/maze.h
+include/libcoyotl/maze_recursive.h
+include/libcoyotl/maze_renderer.h
+include/libcoyotl/mtwister.h
+include/libcoyotl/mwc1038.h
+include/libcoyotl/mwc256.h
+include/libcoyotl/prng.h
+include/libcoyotl/realutil.h
+include/libcoyotl/sortutil.h
+include/libcoyotl/validator.h
+bin/test_prng
+bin/test_maze
+@dirrm include/libcoyotl

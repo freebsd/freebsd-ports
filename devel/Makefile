@@ -484,6 +484,7 @@
     SUBDIR += libcii
     SUBDIR += libconfuse
     SUBDIR += libcoro
+    SUBDIR += libcoyotl
     SUBDIR += libcwd
     SUBDIR += libdaemon
     SUBDIR += libdasm
