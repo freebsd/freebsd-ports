@@ -7,6 +7,7 @@
 
 PORTNAME=	mecab
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${SUB_DIR}
@@ -17,13 +18,15 @@ COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
 SUB_DIR=	21187
 
+USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I ${PREFIX}/include" \
+		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
 
-# Default charset (euc/sjis/utf8)
+# Default charset (euc-jp/shift_jis/utf-8)
 .if defined(WITH_CHARSET)
 CONFIGURE_ARGS=	--with-charset=${WITH_CHARSET}
 .endif
