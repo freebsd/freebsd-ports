@@ -1,0 +1,12 @@
+This module allows you to kill off Apache httpd processes if they grow
+too large. You can make the decision to kill a process based on its
+overall size, by setting a minimum limit on shared memory, or a maximum
+on unshared memory.
+
+You can set limits for each of these sizes, and if any limit is exceeded,
+the process will be killed.
+
+You can also limit the frequency that these sizes are checked so that
+this module only checks every N requests.
+
+WWW: http://search.cpan.org/dist/Apache-SizeLimit/

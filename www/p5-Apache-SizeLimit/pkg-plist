@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SizeLimit/.packlist
+%%SITE_PERL%%/Apache/SizeLimit.pm
+@dirrmtry %%SITE_PERL%%/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/SizeLimit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
