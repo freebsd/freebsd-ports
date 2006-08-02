@@ -166,6 +166,8 @@
 %%WWWROOT%%/templates/config/confmain.php
 %%WWWROOT%%/templates/config/confmodules.php
 %%WWWROOT%%/templates/config/conftypes.php
+%%WWWROOT%%/templates/config/mainmanage.php
+%%WWWROOT%%/templates/config/mainlogin.php
 %%WWWROOT%%/templates/config/profmanage.php
 %%WWWROOT%%/templates/delete.php
 %%WWWROOT%%/templates/help.php
