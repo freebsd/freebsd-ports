@@ -9799,6 +9799,7 @@ p5-TeX-Hyphen	ports/textproc/p5-TeX-Hyphen
 p5-Telnet-Cisco	ports/net-mgmt/p5-Telnet-Cisco
 p5-Template-Extract	ports/textproc/p5-Template-Extract
 p5-Template-GD	ports/www/p5-Template-GD
+p5-Template-Iterator-AlzaboWrapperCursor	ports/www/p5-Template-Iterator-AlzaboWrapperCursor
 p5-Template-Magic	ports/textproc/p5-Template-Magic
 p5-Template-Multilingual	ports/www/p5-Template-Multilingual
 p5-Template-Plugin-Class	ports/www/p5-Template-Plugin-Class
