@@ -155,6 +155,7 @@
     SUBDIR += easysok
     SUBDIR += eboard
     SUBDIR += editss
+    SUBDIR += eduke32
     SUBDIR += egl
     SUBDIR += egoboo
     SUBDIR += eif

@@ -1,0 +1,11 @@
+EDuke32 is a Windows/Linux/UNIX version of Duke Nukem 3D aimed at highly
+extending what can be edited in the game. EDuke32 combines the work that JonoF
+and Ken Silverman have put in to JFDuke3D with the original EDuke work done by
+Matt Saettler, while simultaneously adding tons of new and useful features.
+Consequently, EDuke32 is the most advanced version of Duke Nukem 3D in
+existence. EDuke32 is developed and maintained by Richard "TerminX" Gobeille
+and the EDuke32 team.
+
+This port includes icculus.org/duke3d patches for sound and joystick support.
+
+WWW: http://eduke32.com/
