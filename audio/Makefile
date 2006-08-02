@@ -312,6 +312,7 @@
     SUBDIR += libsndfile
     SUBDIR += libtremor
     SUBDIR += libtunepimp
+    SUBDIR += libtunepimp-old
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += lindele
