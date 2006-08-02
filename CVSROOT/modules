@@ -7915,6 +7915,7 @@ p5-Apache-Session-SharedMem	ports/www/p5-Apache-Session-SharedMem
 p5-Apache-Session-Wrapper	ports/www/p5-Apache-Session-Wrapper
 p5-Apache-SessionX	ports/www/p5-Apache-SessionX
 p5-Apache-Singleton	ports/www/p5-Apache-Singleton
+p5-Apache-SizeLimit	ports/www/p5-Apache-SizeLimit
 p5-Apache-SubProcess	ports/www/p5-Apache-SubProcess
 p5-Apache-Template	ports/www/p5-Apache-Template
 p5-Apache-Test	ports/www/p5-Apache-Test
