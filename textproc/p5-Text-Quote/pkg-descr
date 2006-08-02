@@ -1,0 +1,6 @@
+Text::Quote is intended as a utility class for other classes that need to be
+able to produce valid perl quoted strings. It posses routines to determine
+the ideal quote character to correctly quote hash keys, to correctly quote
+and encode binary strings.
+
+WWW: http://search.cpan.org/dist/Text-Quote/
