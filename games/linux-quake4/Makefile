@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quake4
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake4/linux/|} \
@@ -21,9 +21,10 @@ COMMENT=	Quake 4 for Linux
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
+NO_CDROM=	Redistribution is limited, see license
+NO_PACKAGE=	Package will be 230MB, set FORCE_PACKAGE if you really want it
 Q4DIR=		lib/${PORTNAME}
 PLIST_SUB+=	Q4DIR="${Q4DIR}" \
 		LINUXBASE="${LINUXBASE}"
@@ -54,18 +55,18 @@ do-build:
 	@${SED} \
 		-e 's|@Q4DIR@|${PREFIX}/${Q4DIR}|' \
 		-e 's|@APP@|${FILE}.x86|' \
-		${FILESDIR}/run.sh.in > ${WRKSRC}/${FILE}.sh
+		${FILESDIR}/run.sh.in > ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh
 .endfor
 
 do-install:
 	# Executables
 	@${MKDIR} ${PREFIX}/${Q4DIR}
 .for FILE in quake4 q4ded
-	${INSTALL_SCRIPT} ${WRKSRC}/${FILE}.sh ${PREFIX}/bin/${FILE}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh ${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 ${PREFIX}/${Q4DIR}
 .endfor
 .if !defined(WITHOUT_SMP)
-	${INSTALL_SCRIPT} ${WRKSRC}/quake4smp.sh ${PREFIX}/bin/quake4smp
+	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}quake4smp.sh ${PREFIX}/bin/${PKGNAMEPREFIX}quake4smp
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/quake4smp.x86 ${PREFIX}/${Q4DIR}
 .endif
 
@@ -79,7 +80,7 @@ do-install:
 			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
 	# Q4base
 	 @cd ${WRKSRC} && \
-		${FIND} -E q4base -type f -iregex ".*\.(cfg|scriptcfg|pk4)" \
+		${FIND} -E q4base -type f -iregex ".*\.(cfg|scriptcfg|pk4|off)" \
 			-exec ${INSTALL_DATA} "{}" "${PREFIX}/${Q4DIR}/{}" \;
 
 	# All version (except germany) or only germany version
