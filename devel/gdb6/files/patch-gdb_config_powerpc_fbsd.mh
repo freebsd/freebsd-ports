@@ -1,0 +1,10 @@
+
+$FreeBSD$
+
+--- /dev/null
++++ gdb/config/powerpc/fbsd.mh
+@@ -0,0 +1,4 @@
++# Host: FreeBSD/PowerPC
++NATDEPFILES= fbsd-nat.o fork-child.o inf-ptrace.o ppcfbsd-nat.o bsd-kvm.o gcore.o
++
++LOADLIBES= -lkvm
