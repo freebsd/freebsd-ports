@@ -505,6 +505,7 @@
     SUBDIR += p5-Text-Original
     SUBDIR += p5-Text-ParagraphDiff
     SUBDIR += p5-Text-Query
+    SUBDIR += p5-Text-Quote
     SUBDIR += p5-Text-Quoted
     SUBDIR += p5-Text-RecordParser
     SUBDIR += p5-Text-Reflow
