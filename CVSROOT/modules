@@ -5791,6 +5791,7 @@ libcomprex	ports/archivers/libcomprex
 libconfuse	ports/devel/libconfuse
 libconnect	ports/net/libconnect
 libcoro		ports/devel/libcoro
+libcoyotl	ports/devel/libcoyotl
 libcroco	ports/textproc/libcroco
 libctl		ports/science/libctl
 libcwd		ports/devel/libcwd
