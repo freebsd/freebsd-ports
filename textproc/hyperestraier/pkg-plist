@@ -1,3 +1,4 @@
+bin/estbutler
 bin/estcall
 bin/estcmd
 bin/estconfig
@@ -12,7 +13,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.19.0
+lib/libestraier.so.8.20.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estseek.cgi
 %%DATADIR%%/COPYING
