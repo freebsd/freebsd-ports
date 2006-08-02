@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	acroread7
-PORTVERSION?=	7.0.1
-PORTREVISION?=	2
+PORTVERSION?=	7.0.8
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/7x/${VERSIONDIR}/${ADOBE_LANG:L}/ \
@@ -22,12 +22,12 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroreadwrapper \
 		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
 
-RESTRICTED=	"Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html"
-NO_PACKAGE=	"Use and redistribution with repackaging are not allowed"
+RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
+NO_PACKAGE=	Use and redistribution with repackaging are not allowed
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	desktopfileutils
+#USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist.${PORTVERSION}
 PLIST_SUB=	ACRODIR=${ACRODIR} \
@@ -39,7 +39,7 @@ SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/AdobeReader
 
-.if ${PORTVERSION} == 7.0.5
+.if ${PORTVERSION} == 7.0.8
 VERSIONDIR=	${PORTVERSION}
 DISTNAME=	AdobeReader_${ADOBE_LANG:L}-${PORTVERSION}-1.i386
 POSTPROCESS=	> /dev/null
@@ -74,12 +74,13 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			UNAME_r="Linux Compatibility on FreeBSD" \
 			${SH} ./INSTALL --install_path=${INSTALLDIR} ${POSTPROCESS}
 
-do-install:
+pre-install:
 	@${MKDIR} ${INSTALLDIR}
 	@${MKDIR} ${WRKDIR}/bin
 	@${INSTALL_SCRIPT} \
 		${WRKDIR}/ln ${WRKDIR}/rm ${WRKDIR}/mv \
 		${WRKDIR}/bin
+do-install:
 	@${ECHO_CMD} Installing...
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC}
 	${CHMOD} 0 ${INSTALLDIR}/Reader/intellinux/plug_ins/PPKLite.api
