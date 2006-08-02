@@ -1,0 +1,32 @@
+# New ports collection makefile for:	p5-Net-Telnet-Netscreen
+# Date created:		2006-07-30
+# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-Telnet-Netscreen
+PORTVERSION=	1.1
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+DISTNAME=	Netscreen-${PORTVERSION}
+
+MAINTAINER=	snowfly@yuntech.edu.tw
+COMMENT=	A Perl interface for interact with a Netscreen firewall
+
+BUILD_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Net::Telnet::Netscreen.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>

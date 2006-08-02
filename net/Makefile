@@ -468,6 +468,7 @@
     SUBDIR += p5-Net-Services
     SUBDIR += p5-Net-TCLink
     SUBDIR += p5-Net-Telnet
+    SUBDIR += p5-Net-Telnet-Netscreen
     SUBDIR += p5-Net-Traceroute
     SUBDIR += p5-Net-Traceroute6
     SUBDIR += p5-Net-VNC
