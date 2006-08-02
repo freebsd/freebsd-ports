@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.1
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -21,7 +21,7 @@ USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-shared --enable-static
+CONFIGURE_ARGS=	--disable-shared --enable-static --mandir=${PREFIX}/man
 
 MAN1=	uuid-config.1 uuid.1
 MAN3=	uuid.3
@@ -43,7 +43,7 @@ PLIST_SUB+=	WITH_PERL='@comment '
 IGNORE=	supports Perl 5.8.0 or above only
 .endif
 
-test:	build
+test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 .include <bsd.port.post.mk>
