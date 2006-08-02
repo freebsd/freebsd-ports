@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
 MASTER_SITE_SUBDIR=	${GCC_MASTER_SITE_SUBDIR}
-DISTFILES=	${DISTNAME}.tar.gz:gdc \
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}:gdc \
 		gcc-core-${GCC_VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${GCC_VERSIONSTRING}${EXTRACT_SUFX}
-EXTRACT_ONLY=	gcc-core-${GCC_VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	ozawa@ongs.co.jp
@@ -51,7 +49,7 @@ TARGET_GCC=	3.4	# default
 
 .if ${TARGET_GCC} == 4.0
 GCC_VERSION=	4.0.4
-GCC_REVISION=	20060525
+GCC_REVISION=	20060720
 GCC_VERSIONSTRING=	4.0-${GCC_REVISION}
 GCC_MASTER_SITE_SUBDIR=	snapshots/${GCC_VERSIONSTRING}
 .else
@@ -87,7 +85,6 @@ pre-fetch:
 	@${ECHO_CMD}
 
 post-extract:
-	@cd ${WRKDIR} && ${TAR} -xzf ${_DISTDIR}/${DISTNAME}.tar.gz
 	@${MV} ${WRKDIR}/d ${GCCDIR}
 
 post-patch:
@@ -98,8 +95,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^\(gcc_d_include_dir\).*|\1 = ${GDC_INC}|' \
 		${GCCDIR}/d/Make-lang.in
-	@${REINPLACE_CMD} -e \
-		's|etc/c/stlsoft||' ${GCCDIR}/d/phobos/Makefile.in
 
 pre-configure:
 	@(cd ${SRCDIR} && contrib/gcc_update --touch)
