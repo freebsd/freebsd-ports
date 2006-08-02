@@ -1,0 +1,23 @@
+The Readonly module (q.v.) is an effective way to create non-modifiable
+variables. However, it's relatively slow.
+
+The reason it's slow is that is implements the read-only-ness of variables
+via tied objects. This mechanism is inherently slow. Perl simply has to do
+a lot of work under the hood to make tied variables work.
+
+This module corrects the speed problem, at least with respect to scalar
+variables. When Readonly::XS is installed, Readonly uses it to access the
+internals of scalar variables. Instead of creating a scalar variable object
+and tying it, Readonly simply flips the SvREADONLY bit in the scalar's
+FLAGS structure.
+
+Readonly arrays and hashes are not sped up by this, since the SvREADONLY
+flag only works for scalars. Arrays and hashes always use the tie interface.
+
+Why implement this as a separate module? Because not everyone can use XS.
+Not everyone has a C compiler. Also, installations with a statically-linked
+perl may not want to recompile their perl binary just for this module.
+Rather than render Readonly.pm useless for these people, the XS portion was
+put into a separate module.
+
+WWW: http://search.cpan.org/dist/Readonly-XS/
