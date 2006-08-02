@@ -355,6 +355,7 @@
     SUBDIR += p5-Crypt-MySQL
     SUBDIR += p5-Crypt-NULL
     SUBDIR += p5-Crypt-OFB
+    SUBDIR += p5-Crypt-OICQ
     SUBDIR += p5-Crypt-OTP
     SUBDIR += p5-Crypt-OpenSSL-Bignum
     SUBDIR += p5-Crypt-OpenSSL-DSA
