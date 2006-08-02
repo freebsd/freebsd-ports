@@ -401,6 +401,7 @@
     SUBDIR += p5-Petal-Utils
     SUBDIR += p5-Plucene
     SUBDIR += p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
+    SUBDIR += p5-Plucene-Simple
     SUBDIR += p5-Pod-Constants
     SUBDIR += p5-Pod-DocBook
     SUBDIR += p5-Pod-Escapes
