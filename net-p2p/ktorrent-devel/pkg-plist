@@ -35,6 +35,7 @@ lib/libktorrent.so.0
 share/applications/kde/ktorrent.desktop
 share/applnk/Internet/ktorrent.desktop
 share/apps/ktorrent/geoip/FLAGS_LICENCE
+share/apps/ktorrent/geoip/GeoIP-LICENSE.txt
 share/apps/ktorrent/geoip/ad.png
 share/apps/ktorrent/geoip/ae.png
 share/apps/ktorrent/geoip/af.png
@@ -113,6 +114,7 @@ share/apps/ktorrent/geoip/ga.png
 share/apps/ktorrent/geoip/gb.png
 share/apps/ktorrent/geoip/gd.png
 share/apps/ktorrent/geoip/ge.png
+share/apps/ktorrent/geoip/geoip.dat
 share/apps/ktorrent/geoip/gf.png
 share/apps/ktorrent/geoip/gh.png
 share/apps/ktorrent/geoip/gi.png
