@@ -15,6 +15,7 @@
     SUBDIR += ace
     SUBDIR += ace+tao
     SUBDIR += ace+tao-doc
+    SUBDIR += acovea
     SUBDIR += acpicatools
     SUBDIR += activitymail
     SUBDIR += adabindx

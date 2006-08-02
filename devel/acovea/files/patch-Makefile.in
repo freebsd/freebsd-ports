@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Aug  2 11:29:14 2006
++++ Makefile.in	Wed Aug  2 11:30:00 2006
+@@ -600,7 +600,7 @@
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/config; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/config; \
+-	  for cfgfile in $(srcdir)/config/*; do \
++	  for cfgfile in $(srcdir)/config/*.acovea $(srcdir)/config/*.example; do \
+ 	    if test -f $$cfgfile; then \
+ 	      $(INSTALL_DATA) $$cfgfile $(DESTDIR)$(pkgdatadir)/config; \
+ 	    fi \
