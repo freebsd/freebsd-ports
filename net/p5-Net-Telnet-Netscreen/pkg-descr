@@ -1,0 +1,4 @@
+Net::Telnet::Netscreen - interact with a Netscreen firewall
+
+Author:	Marcus Ramberg <mramberg@cpan.org>
+WWW:	http://search.cpan.org/dist/Netscreen/
