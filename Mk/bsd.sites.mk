@@ -925,6 +925,15 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 .endif
 
+# See http://rubyforge.org/credits/
+.if !defined(IGNORE_MASTER_SITE_RUBYFORGE)
+MASTER_SITE_RUBYFORGE+= \
+	http://rubyforge.rubyuser.de/%SUBDIR%/ \
+	http://rubyforge.iasi.roedu.net/files/%SUBDIR%/ \
+	http://rubyforge.halostatue.info/%SUBDIR%/ \
+	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_SAMBA)
 MASTER_SITE_SAMBA+= \
 	http://us1.samba.org/samba/ftp/%SUBDIR%/ \
