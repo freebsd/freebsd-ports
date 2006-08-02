@@ -675,6 +675,7 @@
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-User-Manage
     SUBDIR += p5-Handel
+    SUBDIR += p5-IMDB-Film
     SUBDIR += p5-IMDB-Movie
     SUBDIR += p5-Jifty
     SUBDIR += p5-Kwiki
