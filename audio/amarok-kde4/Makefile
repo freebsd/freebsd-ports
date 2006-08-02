@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.4.0a
+PORTVERSION=	1.4.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,11 +14,11 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		tunepimp:${PORTSDIR}/audio/libtunepimp \
+		tunepimp.3:${PORTSDIR}/audio/libtunepimp-old \
 		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 		xine.15:${PORTSDIR}/multimedia/libxine
 
-MIN_OPTIONS_VER=	${PORTNAME}-1.4.0a
+MIN_OPTIONS_VER=	${PORTNAME}-1.4.1
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
@@ -26,11 +26,9 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
 USE_RUBY=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 
 OPTIONS=	GPOD "iPod support" on \
 		XMMS "XMMS visualizations" off \
-		LIBVISUAL "libvisual support" off \
 		OPENGL "OpenGL support" on \
 		AMAZON "Amazon cover fetching support" on \
 		MYSQL "Use MySQL as collection backend" off \
@@ -38,9 +36,14 @@ OPTIONS=	GPOD "iPod support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-amarok_src_expression.h
+.endif
+
 CONFIGURE_ARGS+=--without-exscalibar \
 		--with-mp4v2 \
-		--with-mp4v2-dir=${PREFIX}
+		--with-mp4v2-dir=${PREFIX} \
+		--without-libvisual
 
 .if !defined(WITH_GPOD)
 PLIST_SUB+=	GPOD="@comment "
@@ -57,14 +60,6 @@ CONFIGURE_ARGS+=--without-xmms
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
-.endif
-
-.if !defined(WITH_LIBVISUAL)
-PLIST_SUB+=	LIBVISUAL="@comment "
-CONFIGURE_ARGS+=--without-libvisual
-.else
-LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
-PLIST_SUB+=	LIBVISUAL=""
 .endif
 
 .if defined(WITHOUT_OPENGL)
