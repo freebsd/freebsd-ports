@@ -1,0 +1,13 @@
+This module allows a Class::AlzaboWrapper::Cursor object to be used as
+a TT2 iterator.
+
+For a cursor which returns one object at a time, the iterator simply
+returns one object per iteration. When the cursor returns multiple
+objects, the iterator returns a hash reference where the keys are the
+table name of the object's class in lower-case, with camel-casing
+turned into underscores. The values of the hash are the objects.
+
+So if the cursor returns Foo::User and Foo::Page objects, the keys are
+"user" and "page".
+
+WWW: http://search.cpan.org/dist/Template-Iterator-AlzaboWrapperCursor/
