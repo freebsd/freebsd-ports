@@ -18,7 +18,6 @@ COMMENT=	Control a CM11A interface from the command line
 
 CONFLICTS=	heyu2-[0-9]*
 
-FOR_CDROM=	yes
 ALL_TARGET=	heyu
 WRKSRC=		${WRKDIR}/heyu.dir
 

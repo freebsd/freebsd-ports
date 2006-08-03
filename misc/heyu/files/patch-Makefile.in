@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -46,7 +46,6 @@
+ 	chgrp $(GROUP) $(BIN)/heyu
+ 	chmod 755 $(BIN)/heyu
+ 	chown $(OWNER) $(BIN)/heyu
+-	./install.sh
+ 
+ $(BIN)/makesched:	makesched
+ 	cp makesched $(BIN)
