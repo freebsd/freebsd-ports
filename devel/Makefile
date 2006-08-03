@@ -1882,7 +1882,6 @@
     SUBDIR += towitoko
     SUBDIR += tpasm
     SUBDIR += tpg
-    SUBDIR += tre
     SUBDIR += trio
     SUBDIR += tvision
     SUBDIR += uclmmbase
