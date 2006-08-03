@@ -206,6 +206,7 @@ acidwarp	ports/graphics/acidwarp
 aclgen		ports/misc/aclgen
 acm		ports/games/acm
 acovea		ports/devel/acovea
+acovea-gtk	ports/devel/acovea-gtk
 acpicatools	ports/devel/acpicatools
 acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
