@@ -1,0 +1,6 @@
+%%SITE_PERL%%/WWW/BitTorrent.pm
+%%SITE_PERL%%//WWW/bittorrent.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/BitTorrent/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/BitTorrent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW
