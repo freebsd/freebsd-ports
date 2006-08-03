@@ -5,6 +5,10 @@ lib/jvm/java-1.4.2-gcj41-1.4.2.0/lib/tools.jar
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib/i386/libjawt.so
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/bin/java
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/bin/rmiregistry
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/gcj
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/gjdoc
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/gcj-dbtool
+lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/gij
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/java
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/jar
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/javadoc
