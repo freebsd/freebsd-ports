@@ -7872,6 +7872,7 @@ p5-Algorithm-Pair-Swiss	ports/games/p5-Algorithm-Pair-Swiss
 p5-Algorithm-Permute	ports/devel/p5-Algorithm-Permute
 p5-Algorithm-RabinKarp	ports/textproc/p5-Algorithm-RabinKarp
 p5-Algorithm-SVM	ports/devel/p5-Algorithm-SVM
+p5-Algorithm-SVMLight	ports/science/p5-Algorithm-SVMLight
 p5-Alias	ports/devel/p5-Alias
 p5-Altoids	ports/net-mgmt/p5-Altoids
 p5-Alzabo	ports/devel/p5-Alzabo
