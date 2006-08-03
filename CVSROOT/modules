@@ -2080,6 +2080,7 @@ echat		ports/net-im/echat
 echolinux	ports/comms/echolinux
 echolot		ports/net-mgmt/echolot
 echoping	ports/net/echoping
+ecj-bootstrap	ports/java/ecj-bootstrap
 ecl		ports/lang/ecl
 eclair		ports/multimedia/eclair
 eclipse		ports/java/eclipse
