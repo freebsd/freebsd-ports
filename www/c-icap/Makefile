@@ -7,7 +7,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	030606
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -20,7 +20,7 @@ COMMENT=	An implementation of an ICAP server
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_RC_SUBR=	c_icap.sh
+USE_RC_SUBR=	c_icap
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/c_icap
@@ -36,6 +36,14 @@ OPTIONS=	CLAMAV "Build with srv_clamav service" on \
 
 # Perl support not ready yet. Try to contact author or hack it by yourself.
 WITHOUT_PERL=	yes
+
+LOG_DIR=	/var/log/c_icap
+TMP_DIR=	/var/tmp
+RUN_DIR=	/var/run
+PLIST_SUB+=	LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
+
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
@@ -77,6 +85,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|User wwwrun|User cicap|g' \
 		-e 's|Group nobody|Group cicap|g' \
+		-e 's|/var/run|${RUN_DIR}|g' \
+		-e 's|/var/tmp|${TMP_DIR}|g' \
+		-e 's|/var/log/c_icap|${LOG_DIR}|g' \
 		${WRKSRC}/c-icap.conf.default ${WRKSRC}/c-icap.conf.default.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|icap_stretch_CFLAGS = -Iinclude/|icap_stretch_CFLAGS = -Iinclude/ ${PTHREAD_CFLAGS}|g' \

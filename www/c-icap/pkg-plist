@@ -8,7 +8,7 @@ etc/c-icap.conf.default
 @unexec if cmp -s %D/etc/c-icap.magic %D/etc/c-icap.magic.default; then rm -f %D/etc/c-icap.magic; fi
 etc/c-icap.magic.default
 @exec [ -f %B/c-icap.magic ] || cp -p %%PREFIX%%/%F %B/c-icap.magic
-@unexec [ ! -f /var/run/c-icap.pid ] || %D/etc/rc.d/c_icap stop
+@unexec [ ! -f %%RUN_DIR%%/c-icap.pid ] || %D/etc/rc.d/c_icap stop
 include/c_icap/access.h
 include/c_icap/body.h
 include/c_icap/c-icap.h
@@ -48,5 +48,4 @@ lib/libicapapi.a
 lib/libicapapi.la
 lib/libicapapi.so.0
 lib/libicapapi.so
-@cwd /
-@dirrmtry var/log/c_icap
+@unexec rmdir %%LOG_DIR%% 2>/dev/null || true

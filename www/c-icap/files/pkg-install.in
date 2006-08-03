@@ -1,13 +1,17 @@
 #!/bin/sh
 # $FreeBSD$
 
+DEST_DIR=${PKG_DESTDIR:-}
+
 CICAP_USER=cicap
 CICAP_GROUP=cicap
 
-LOG_PATH=/var/log/c_icap
+LOG_DIR=$DEST_DIR%%LOG_DIR%%
+TMP_DIR=$DEST_DIR%%TMP_DIR%%
+RUN_DIR=$DEST_DIR%%RUN_DIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
-	if ! pw groupshow "$CICAP_USER" 2>/dev/null 1>&2; then
+	if ! pw groupshow "$CICAP_GROUP" 2>/dev/null 1>&2; then
 		if pw groupadd $CICAP_GROUP; then
 			echo "=> Added group \"$CICAP_GROUP\"."
 		else
@@ -28,9 +32,21 @@ if [ "$2" = "PRE-INSTALL" ]; then
 		fi
 	fi
 elif [ "$2" = "POST-INSTALL" ]; then
-	[ -d "$LOG_PATH" ] || mkdir -p "$LOG_PATH" || exit 1
-	touch "$LOG_PATH/access.log" "$LOG_PATH/server.log" || exit 1
-	chown -R "$CICAP_USER:$CICAP_GROUP" "$LOG_PATH" || exit 1
+	if [ ! -d "$LOG_DIR" ]; then 
+		mkdir -p "$LOG_DIR" || exit 1
+		touch "$LOG_DIR/access.log" "$LOG_DIR/server.log" || exit 1
+		chown -R "$CICAP_USER:$CICAP_GROUP" "$LOG_DIR" || exit 1
+	fi
+
+	if [ ! -d "$TMP_DIR" ]; then
+		mkdir -p "$TMP_DIR" || exit 1
+		chown "$CICAP_USER:$CICAP_GROUP" "$TMP_DIR" || exit 1
+	fi
+
+	if [ ! -d "$RUN_DIR" ]; then
+		mkdir -p "$RUN_DIR" || exit 1
+		chown "$CICAP_USER:$CICAP_GROUP" "$RUN_DIR" || exit 1
+	fi
 fi
 
 exit 0
