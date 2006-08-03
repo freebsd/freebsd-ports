@@ -7,6 +7,7 @@
 
 PORTNAME=	vgb
 PORTVERSION=	3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGB/
@@ -17,7 +18,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
-ONLY_FOR_ARCHS=	i386
+IA32_BINARY_PORT=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
@@ -36,7 +37,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502100
-IGNORE=		Does not work for FreeBSD versions prior to 5.2.1R
+IGNORE=		does not work for FreeBSD versions prior to 5.2.1R
 .endif
 
 .include <bsd.port.post.mk>
