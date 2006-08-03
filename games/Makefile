@@ -435,6 +435,7 @@
     SUBDIR += mythserver
     SUBDIR += nInvaders
     SUBDIR += nadar
+    SUBDIR += nazghul
     SUBDIR += nehquake
     SUBDIR += nethack32
     SUBDIR += nethack33
