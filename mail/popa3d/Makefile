@@ -61,8 +61,19 @@ EXTRA_PATCHES+=	${FILESDIR}/setproctitle.patch
 .endif
 
 .if defined(WITH_STANDALONE_POP3)
+#USE_RC_SUBR=	yes
+# does only work when set before bsd.port.pre.mk
+.if ${OSVERSION} < 500037
+RUN_DEPENDS+=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
+RC_SUBR=	${LOCALBASE}/etc/rc.subr
+.else
+RC_SUBR=	/etc/rc.subr
+.endif
+
 post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/popa3d.sh \
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
+		-e "s=%%RC_SUBR%%=${RC_SUBR}=g" \
+		${FILESDIR}/popa3d.sh \
 		> ${WRKSRC}/popa3d.sh
 .endif
 
