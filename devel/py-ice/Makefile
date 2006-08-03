@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.0/ \
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.1/ \
 		ftp://ftp.ipt.ru/pub/download/
 PKGNAMEPREFIX=	py-
 DISTNAME=	IcePy-${PORTVERSION}
 
-MAINTAINER=	bsam@ipt.ru
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 
-LIB_DEPENDS=	Ice.30:${PORTSDIR}/devel/ice
+LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+
+LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
+PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
 .if defined(DEBUG)
@@ -31,7 +34,7 @@ CFLAGS+=	-DNDEBUG
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"does not compile"
+BROKEN=		does not compile
 .endif
 
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))

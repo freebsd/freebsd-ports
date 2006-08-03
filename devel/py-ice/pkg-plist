@@ -4,6 +4,7 @@
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Router_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_SessionF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Session_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2_SSLInfo_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceBox_IceBox_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IcePatch2_FileInfo_ice.py
@@ -20,8 +21,12 @@
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Admin_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Descriptor_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Exception_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_FileParser_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Observer_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Query_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Registry_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Session_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_UserAccountMapper_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Identity_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_LocalException_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_LocatorF_ice.py
@@ -46,8 +51,8 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IcePy.so
-%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.3.0.0
-%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.30
+%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.%%LIB_VERSION%%
+%%PYTHON_SITELIBDIR%%/Ice/IcePy.so.%%LIB_VRS%%
 %%PYTHON_SITELIBDIR%%/Ice/LICENSE
 %%PYTHON_SITELIBDIR%%/Ice/ICE_LICENSE
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2/__init__.py
