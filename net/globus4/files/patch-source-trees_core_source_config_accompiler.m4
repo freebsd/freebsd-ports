@@ -13,7 +13,7 @@ $FreeBSD$
 +	echo "freebsd: $host"
 +        if test "$lac_cv_build_64bit" = "yes"; then
 +		case ${host} in
-+		i386-*|ppc-*)
++		i386-*|powerpc-*)
 +			AC_MSG_ERROR(64 bits not supported on this platform)
 +			exit 1
 +			;;

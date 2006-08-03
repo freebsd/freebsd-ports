@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	globus
-PORTVERSION=	4.0.1
-PORTREVISION=	20051201
+PORTVERSION=	4.0.2
+PORTREVISION=	20060706
 CATEGORIES=	net java parallel
 MASTER_SITES=	ftp://ftp.globus.org/pub/gt4/4.0/${PORTVERSION}/%SUBDIR%/src/:installers,updates
 MASTER_SITE_SUBDIR=	installers/:installers updates/:updates
@@ -20,11 +20,6 @@ EXTRACT_ONLY=	${INSTALLER}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Grid computing toolkit
 
-BROKEN=		fails to install
-
-CONFLICTS=	globus-2*
-
-EXTRACT_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
 INSTALLER=	${DISTNAME}${EXTRACT_SUFX}
@@ -33,39 +28,13 @@ BUNDLE_SUFX=	.tar.gz
 # Updates from http://www.globus.org/toolkit/advisories.html
 #
 # All entries are listed.  Inapplicable ones are commented out.
-# 2005-08-16	Cancelling multiple process condor jobs (bug 3642).
-#UPDATE_BUNDLES+=	globus_gram_job_manager_setup_condor-2.6:%FLAVOR%
-# 2005-09-20	XIO HTTP driver can crash if content length exceeds
-#		Content-Length buffer size (bug 3733)
-UPDATE_BUNDLES+=	  globus_xio-0.32:%FLAVOR%,%FLAVOR%pthr
-# 2005-11-01	Fixes PBS scheduler event generator parsing issues (bug
-#		3699 bug 3777)
-#UPDATE_BUNDLES+=	globus_scheduler_event_generator_pbs-0.4:%FLAVOR%
-# 2005-11-22	Fixes possible memory corruption issues when using the
-#		restart plugin and performing multiple ftp operations
-#		on the same handle. (bug 3919)
-UPDATE_BUNDLES+=	globus_ftp_client-3.3:%FLAVOR%,%FLAVOR%pthr
-# 2005-11-29	Fix some bash-isms(bug 3958)
-UPDATE_BUNDLES+=	globus_simple_ca-0.15:%FLAVOR%
-# 2005-11-29	Fixes HP-UX setup and pkg_data_src.gpt.tmpl errors
-#		(bug 3702 bug 3567 bug 3958)
-UPDATE_BUNDLES+=	  globus_simple_ca_setup-0.27:%FLAVOR%
-# 2005-12-01	Fixes bug in the -cd option where it would only create
-#		the top level destination directory (bug 3769). Fixes
-#		failed recursive transfers when encountering filenames
-#		that contain url-invalid characters (bug 1858).
-UPDATE_BUNDLES+=	globus_gass_copy-3.20:%FLAVOR%,%FLAVOR%pthr
-# 2005-12-01	Fix possible memory corruption when failing to
-#		discover the local ip address. (bug 3392)
-UPDATE_BUNDLES+=	   globus_usage-0.5:%FLAVOR%
-
-CONFLICTS?=	globus-2*
+# The format is <file name minus .tar.gz>:<flavor list>
+UPDATE_BUNDLES+=	globus_gass_copy-3.21:%FLAVOR%,%FLAVOR%pthr
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-TAR=		gtar
 
 GLOBUS_BASE?=	globus
 GLOBUS_LOCATION=${PREFIX}/${GLOBUS_BASE}
@@ -76,7 +45,7 @@ TMP_GLOBUS_ENV=	GLOBUS_LOCATION=${TMP_GLOBUS_LOCATION} \
 CONFIGURE_ARGS=	--prefix=${TMP_GLOBUS_LOCATION} ${CONFIGURE_TARGET}
 CONFIGURE_ENV+=	${TMP_GLOBUS_ENV}
 # WARNING: this only works because we do the install ourselves
-MAKE_ENV+=	${TMP_GLOBUS_ENV}
+MAKE_ENV+=	${TMP_GLOBUS_ENV} PATH=${WRKDIR}/tmpbin:${PATH} LD_LIBRARY_PATH=${TMP_GLOBUS_LOCATION}/lib
 
 PLIST_SUB+=	BASE_FLAVOR=${BASE_FLAVOR} \
 		GLOBUS_BASE=${GLOBUS_BASE} \
@@ -108,7 +77,7 @@ CPIOARGS=       --quiet -pdum
 IGNORE=		FreeBSD < 5.3 not supported
 .endif
 
-.if (${ARCH} == "i386") || (${ARCH} == "ppc")
+.if (${ARCH} == "i386") || (${ARCH} == "powerpc")
 ARCHBITS?=32
 PERL_ARCH=	${ARCH}-freebsd-64int
 .else
@@ -118,11 +87,11 @@ PERL_ARCH=	${ARCH}-freebsd
 BASE_FLAVOR=	gcc${ARCHBITS}dbg
 
 post-patch:
-	cd ${WRKSRC}/gpt-3.2autotools2004/packaging_tools/etc/ ; \
+	cd ${WRKSRC}/gpt/packaging_tools/etc/ ; \
 	    tar xfz globus_core-src.tar.gz ; \
-	    ${CP} ${WRKSRC}/source-trees/core/source/configure globus_core-4.26/ ; \
-	    ${CP} ${WRKSRC}/source-trees/core/source/config/accompiler.m4 globus_core-4.26/config ; \
-	    tar cfz globus_core-src.tar.gz globus_core-4.26
+	    ${CP} ${WRKSRC}/source-trees/core/source/configure globus_core-4.30/ ; \
+	    ${CP} ${WRKSRC}/source-trees/core/source/config/accompiler.m4 globus_core-4.30/config ; \
+	    tar cfz globus_core-src.tar.gz globus_core-4.30
 
 # HACK: this is under defined(GNU_CONFIGURE) in do-configure, but we
 # have to do it ourselves because we can't set GNU_CONFIGURE and install
@@ -138,7 +107,9 @@ pre-configure:
 	done
 
 pre-build:
-	${MKDIR} ${WRKSRC}/gpt-3.2autotools2004/packaging_tools/etc/gpt
+	${MKDIR} ${WRKSRC}/gpt/packaging_tools/etc/gpt
+	${MKDIR} ${WRKDIR}/tmpbin
+	${LN} -s `which gmake` ${WRKDIR}/tmpbin/make || ${TRUE}
 
 post-build:
 .for _B in ${UPDATE_BUNDLES}
@@ -187,7 +158,8 @@ build-plist:
 	    ${SED} -e 's|${TMP_GLOBUS_LOCATION}/man/[cm]a[nt]./||g' | \
 	    ${SORT} >> ${.CURDIR}/Makefile.man
 	@${FIND} ${TMP_GLOBUS_LOCATION}/man/ -type f | \
-	     ${SED} -e 's|${TMP_GLOBUS_LOCATION}/man/man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' | \
+	     ${SED} -e 's|${TMP_GLOBUS_LOCATION}/man/man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' \
+	    -e 's|${BASE_FLAVOR}|$${BASE_FLAVOR}|g' | \
 	     ${SORT} >> ${.CURDIR}/Makefile.man
 
 .include <bsd.port.post.mk>

@@ -131,7 +131,6 @@
 %%GLOBUS_BASE%%/lib/libglobus_wsa_bindings_%%BASE_FLAVOR%%.so
 %%GLOBUS_BASE%%/lib/libglobus_wsbf_bindings_%%BASE_FLAVOR%%.so
 %%GLOBUS_BASE%%/lib/libglobus_wsc_bindings_%%BASE_FLAVOR%%.so
-%%GLOBUS_BASE%%/lib/libglobus_wsdl_parser_%%BASE_FLAVOR%%.so
 %%GLOBUS_BASE%%/lib/libglobus_wsnt_bindings_%%BASE_FLAVOR%%.so
 %%GLOBUS_BASE%%/lib/libglobus_wsp_bindings_%%BASE_FLAVOR%%.so
 %%GLOBUS_BASE%%/lib/libglobus_wsrf_core_tools_%%BASE_FLAVOR%%.so
@@ -591,15 +590,9 @@
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_ws_security/%%BASE_FLAVOR%%rtl.format
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_ws_security/pkg_data_%%BASE_FLAVOR%%_dev.gpt
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_ws_security/pkg_data_%%BASE_FLAVOR%%_rtl.gpt
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/%%BASE_FLAVOR%%_dev.filelist
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/%%BASE_FLAVOR%%_pgm.filelist
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/%%BASE_FLAVOR%%_rtl.filelist
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/%%BASE_FLAVOR%%dev.format
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/%%BASE_FLAVOR%%pgm.format
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/%%BASE_FLAVOR%%rtl.format
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/pkg_data_%%BASE_FLAVOR%%_dev.gpt
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/pkg_data_%%BASE_FLAVOR%%_pgm.gpt
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsdl_parser/pkg_data_%%BASE_FLAVOR%%_rtl.gpt
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsrf_cgen/%%BASE_FLAVOR%%_pgm.filelist
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsrf_cgen/%%BASE_FLAVOR%%pgm.format
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_c_wsrf_cgen/noflavor_data.filelist
@@ -1359,12 +1352,6 @@
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_libxml2/pkg_data_%%BASE_FLAVOR%%_rtl.gpt
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_libxml2/pkg_data_noflavor_data.gpt
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_libxml2/pkg_data_noflavor_doc.gpt
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_mds_test/%%BASE_FLAVOR%%_pgm.filelist
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_mds_test/%%BASE_FLAVOR%%pgm.format
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_mds_test/noflavor_data.filelist
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_mds_test/noflavordata.format
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_mds_test/pkg_data_%%BASE_FLAVOR%%_pgm.gpt
-%%GLOBUS_BASE%%/etc/gpt/packages/globus_mds_test/pkg_data_noflavor_data.gpt
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_mp/%%BASE_FLAVOR%%_dev.filelist
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_mp/%%BASE_FLAVOR%%_rtl.filelist
 %%GLOBUS_BASE%%/etc/gpt/packages/globus_mp/%%BASE_FLAVOR%%dev.format
@@ -1838,7 +1825,6 @@
 %%GLOBUS_BASE%%/etc/gram-service/registration.xml
 %%GLOBUS_BASE%%/etc/gram-service/server-config.wsdd
 %%GLOBUS_BASE%%/etc/grid-info-gram-rsl-reporter.schema
-%%GLOBUS_BASE%%/etc/myproxy-server.config
 %%GLOBUS_BASE%%/include/%%BASE_FLAVOR%%/%%BASE_FLAVOR%%/shared/ltdl.h
 %%GLOBUS_BASE%%/include/%%BASE_FLAVOR%%/CounterRP.h
 %%GLOBUS_BASE%%/include/%%BASE_FLAVOR%%/CounterRPType.h
@@ -3855,9 +3841,6 @@
 %%GLOBUS_BASE%%/lib/libglobus_wsc_bindings_%%BASE_FLAVOR%%.a
 %%GLOBUS_BASE%%/lib/libglobus_wsc_bindings_%%BASE_FLAVOR%%.la
 %%GLOBUS_BASE%%/lib/libglobus_wsc_bindings_%%BASE_FLAVOR%%.so.0
-%%GLOBUS_BASE%%/lib/libglobus_wsdl_parser_%%BASE_FLAVOR%%.a
-%%GLOBUS_BASE%%/lib/libglobus_wsdl_parser_%%BASE_FLAVOR%%.la
-%%GLOBUS_BASE%%/lib/libglobus_wsdl_parser_%%BASE_FLAVOR%%.so.0
 %%GLOBUS_BASE%%/lib/libglobus_wsnt_bindings_%%BASE_FLAVOR%%.a
 %%GLOBUS_BASE%%/lib/libglobus_wsnt_bindings_%%BASE_FLAVOR%%.la
 %%GLOBUS_BASE%%/lib/libglobus_wsnt_bindings_%%BASE_FLAVOR%%.so.0
@@ -3960,9 +3943,17 @@
 %%GLOBUS_BASE%%/lib/naming-java.jar
 %%GLOBUS_BASE%%/lib/naming-resources.jar
 %%GLOBUS_BASE%%/lib/opensaml.jar
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Entries
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Repository
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Root
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Tag
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Compress/Zlib.pm
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Digest/MD5.pm
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Archive/Tar/.packlist
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Entries
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Repository
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Root
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Tag
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib/.packlist
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib/Zlib.bs
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib/Zlib.so
@@ -3973,6 +3964,10 @@
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/IO/Zlib/.packlist
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Pod/Parser/.packlist
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/.packlist
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Entries
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Repository
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Root
+%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Tag
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/zlib/extralibs.ld
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/perllocal.pod
 %%GLOBUS_BASE%%/lib/perl/Archive/Tar.pm
@@ -4099,6 +4094,8 @@
 %%GLOBUS_BASE%%/lib/webmds/bin/webmds-create-context-file
 %%GLOBUS_BASE%%/lib/webmds/conf/containerinfo
 %%GLOBUS_BASE%%/lib/webmds/conf/containerinfo_nosec
+%%GLOBUS_BASE%%/lib/webmds/conf/gluehostsxsl
+%%GLOBUS_BASE%%/lib/webmds/conf/gluesummaryxsl
 %%GLOBUS_BASE%%/lib/webmds/conf/indexinfo
 %%GLOBUS_BASE%%/lib/webmds/conf/indexinfo_nosec
 %%GLOBUS_BASE%%/lib/webmds/conf/openEndedQuery
@@ -4109,6 +4106,8 @@
 %%GLOBUS_BASE%%/lib/webmds/conf/testfileinfo
 %%GLOBUS_BASE%%/lib/webmds/conf/testxslfalse
 %%GLOBUS_BASE%%/lib/webmds/conf/testxslnull
+%%GLOBUS_BASE%%/lib/webmds/conf/tg_gluehostsxsl
+%%GLOBUS_BASE%%/lib/webmds/conf/tg_gluesummaryxsl
 %%GLOBUS_BASE%%/lib/webmds/eprfiles/testepr.xml
 %%GLOBUS_BASE%%/lib/webmds/index.html
 %%GLOBUS_BASE%%/lib/webmds/sample_form.html
@@ -4117,6 +4116,15 @@
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/container.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/delegation_factory.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/footer.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/glue/clusterbase.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/glue/hostbase.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/glue/queuebase.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/glue/subcluster.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/glue/subclusterhosts.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/glue/tg_subclusterhosts.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/glue/tgextensions.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/gluehosts.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/gluesummary.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/heath.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/local/footer.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/local/style.xsl
@@ -4130,6 +4138,8 @@
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/sgtypes/rft.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/sgtypes/rls.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/sgtypes/sticky.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/tg_gluehosts.xsl
+%%GLOBUS_BASE%%/lib/webmds/xslfiles/tg_gluesummary.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/ugly.xsl
 %%GLOBUS_BASE%%/lib/webmds/xslfiles/xslfooter.xsl
 %%GLOBUS_BASE%%/lib/wsdl4j.jar
@@ -4242,6 +4252,10 @@
 %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared/grid-mapfile-add-entry
 %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared/grid-mapfile-check-consistency
 %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared/grid-mapfile-delete-entry
+%%GLOBUS_BASE%%/sbin/CVS/Entries
+%%GLOBUS_BASE%%/sbin/CVS/Repository
+%%GLOBUS_BASE%%/sbin/CVS/Root
+%%GLOBUS_BASE%%/sbin/CVS/Tag
 %%GLOBUS_BASE%%/sbin/applypatch
 %%GLOBUS_BASE%%/sbin/config.guess
 %%GLOBUS_BASE%%/sbin/globus-build-doxygen-dependencies
@@ -4359,11 +4373,11 @@
 %%GLOBUS_BASE%%/share/aclocal/libtool.m4
 %%GLOBUS_BASE%%/share/aclocal/libxml.m4
 %%GLOBUS_BASE%%/share/aclocal/ltdl.m4
-%%GLOBUS_BASE%%/share/doc/libxml2-0.12/Copyright
-%%GLOBUS_BASE%%/share/doc/libxml2-0.12/examples/testHTML.c
-%%GLOBUS_BASE%%/share/doc/libxml2-0.12/examples/testSAX.c
-%%GLOBUS_BASE%%/share/doc/libxml2-0.12/examples/testXPath.c
-%%GLOBUS_BASE%%/share/doc/libxml2-0.12/examples/xmllint.c
+%%GLOBUS_BASE%%/share/doc/libxml2-0.13/Copyright
+%%GLOBUS_BASE%%/share/doc/libxml2-0.13/examples/testHTML.c
+%%GLOBUS_BASE%%/share/doc/libxml2-0.13/examples/testSAX.c
+%%GLOBUS_BASE%%/share/doc/libxml2-0.13/examples/testXPath.c
+%%GLOBUS_BASE%%/share/doc/libxml2-0.13/examples/xmllint.c
 %%GLOBUS_BASE%%/share/doc/perl/Globus/GRAM/Error.html
 %%GLOBUS_BASE%%/share/doc/perl/Globus/GRAM/JobDescription.html
 %%GLOBUS_BASE%%/share/doc/perl/Globus/GRAM/JobManager.html
@@ -4857,7 +4871,9 @@
 %%GLOBUS_BASE%%/share/globus_wsrf_mds_usefulrp_schema/NStoPkg.properties
 %%GLOBUS_BASE%%/share/globus_wsrf_rendezvous_stubs/NStoPkg.properties
 %%GLOBUS_BASE%%/share/globus_wsrf_rft/rft_schema.sql
+%%GLOBUS_BASE%%/share/globus_wsrf_rft/rft_schema_derby.sql
 %%GLOBUS_BASE%%/share/globus_wsrf_rft/rft_schema_mysql.sql
+%%GLOBUS_BASE%%/share/globus_wsrf_rft/rft_schema_mysql_pre4.0.sql
 %%GLOBUS_BASE%%/share/globus_wsrf_rft/update.sql
 %%GLOBUS_BASE%%/share/globus_wsrf_rft_client/delete.xfr
 %%GLOBUS_BASE%%/share/globus_wsrf_rft_client/dir_transfer.xfr
@@ -5001,6 +5017,7 @@
 %%GLOBUS_BASE%%/share/myproxy/login.html
 %%GLOBUS_BASE%%/share/myproxy/myproxy-get-delegation.cgi
 %%GLOBUS_BASE%%/share/myproxy/myproxy-passphrase-policy
+%%GLOBUS_BASE%%/share/myproxy/myproxy-server.config
 %%GLOBUS_BASE%%/share/myproxy/myproxy.cron
 %%GLOBUS_BASE%%/share/schema/cas/cas_admin_port_type.wsdl
 %%GLOBUS_BASE%%/share/schema/cas/cas_bindings.wsdl
@@ -5241,11 +5258,15 @@
 %%GLOBUS_BASE%%/test/globus_authz_test/authtest
 %%GLOBUS_BASE%%/test/globus_authz_test/authz_cred_test
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/%%BASE_FLAVOR%%/shared/TESTS.pl
+%%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/%%BASE_FLAVOR%%/shared/globus-service-engine-start-stop-test
+%%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/%%BASE_FLAVOR%%/shared/globus-service-engine-start-stop-test.pl
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/%%BASE_FLAVOR%%/shared/xsd-qname-hashtable-test
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/%%BASE_FLAVOR%%/shared/xsd-qname-hashtable-test.pl
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/%%BASE_FLAVOR%%/shared/xsd-type-info-test
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/%%BASE_FLAVOR%%/shared/xsd-type-info-test.pl
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/TESTS.pl
+%%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/globus-service-engine-start-stop-test
+%%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/globus-service-engine-start-stop-test.pl
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/xsd-qname-hashtable-test
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/xsd-qname-hashtable-test.pl
 %%GLOBUS_BASE%%/test/globus_c_ws_messaging_test/xsd-type-info-test
@@ -5881,66 +5902,6 @@
 %%GLOBUS_BASE%%/test/globus_io_test/globus_io_tcp_test_server
 %%GLOBUS_BASE%%/test/globus_io_test/run-io-tests.pl
 %%GLOBUS_BASE%%/test/globus_io_test/testcred.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/TESTS.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/dc31a685.0
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/dc31a685.signing_policy
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-anon-giis-test.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-anon-gris-test.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-anon-load-gris.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-auth-load-giis.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-auth-load-giis.stderr
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-check-for-commands.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-errchk-bad-base.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-errchk-bad-base.stdout
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-infoprov-chk-helper.sh
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-infoprov-chk.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-server-start.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/mds-server-stop.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/reconfig-port.sh
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/run-mds-tests.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared/testcred.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/TESTS.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/dc31a685.0
-%%GLOBUS_BASE%%/test/globus_mds_test/dc31a685.signing_policy
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/lemoncert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/lemonkey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/lucky1cert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/lucky1key.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/lucky6cert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/lucky6key.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/nmi-aixcert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/nmi-aixkey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/pitcairncert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/pitcairnkey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/titancert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared/titankey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/lemoncert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/lemonkey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/lucky1cert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/lucky1key.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/lucky6cert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/lucky6key.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/nmi-aixcert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/nmi-aixkey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/pitcairncert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/pitcairnkey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/titancert.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/titankey.pem
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-anon-giis-test.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-anon-gris-test.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-anon-load-gris.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-auth-load-giis.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-auth-load-giis.stderr
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-check-for-commands.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-errchk-bad-base.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-errchk-bad-base.stdout
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-infoprov-chk-helper.sh
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-infoprov-chk.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-server-start.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/mds-server-stop.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/reconfig-port.sh
-%%GLOBUS_BASE%%/test/globus_mds_test/run-mds-tests.pl
-%%GLOBUS_BASE%%/test/globus_mds_test/testcred.pem
 %%GLOBUS_BASE%%/test/globus_openssl_error_test/%%BASE_FLAVOR%%/shared/TESTS.pl
 %%GLOBUS_BASE%%/test/globus_openssl_error_test/%%BASE_FLAVOR%%/shared/globus-openssl-error-test.pl
 %%GLOBUS_BASE%%/test/globus_openssl_error_test/%%BASE_FLAVOR%%/shared/globus_openssl_error_test
@@ -6130,6 +6091,15 @@
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit302.err
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit302.out
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit302.xml
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit401.err
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit401.in
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit401.out
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit401.xml
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit402.xml
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit403.err
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit403.in
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit403.out
+%%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test/submit403.xml
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/xml-tags.pl
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_throughput/gram-throughput-tester
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_throughput/run-throughput-tests.pl
@@ -6142,6 +6112,8 @@
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_unit/simplest_multi_job.xml
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_unit/sparse_file_mapping.xml
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_unit/test.xml
+%%GLOBUS_BASE%%/test/globus_wsrf_test_interop/TESTS.pl
+%%GLOBUS_BASE%%/test/globus_wsrf_test_unit/TESTS.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/TESTS.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/attr-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/basic-test.pl
@@ -6157,12 +6129,14 @@
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http-post-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http-put-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http-throughput-test.pl
+%%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http-timeout-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http_get_test
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http_header_test
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http_pingpong_test
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http_post_test
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http_put_test
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http_throughput_test
+%%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/http_timeout_test
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/random-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/read-barrier-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/run-all-tests.pl
@@ -6191,12 +6165,14 @@
 %%GLOBUS_BASE%%/test/globus_xio_test/http-post-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/http-put-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/http-throughput-test.pl
+%%GLOBUS_BASE%%/test/globus_xio_test/http-timeout-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/http_get_test
 %%GLOBUS_BASE%%/test/globus_xio_test/http_header_test
 %%GLOBUS_BASE%%/test/globus_xio_test/http_pingpong_test
 %%GLOBUS_BASE%%/test/globus_xio_test/http_post_test
 %%GLOBUS_BASE%%/test/globus_xio_test/http_put_test
 %%GLOBUS_BASE%%/test/globus_xio_test/http_throughput_test
+%%GLOBUS_BASE%%/test/globus_xio_test/http_timeout_test
 %%GLOBUS_BASE%%/test/globus_xio_test/random-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/read-barrier-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/run-all-tests.pl
@@ -6219,6 +6195,8 @@
 @dirrm %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/test/globus_xio_test
+@dirrm %%GLOBUS_BASE%%/test/globus_wsrf_test_unit
+@dirrm %%GLOBUS_BASE%%/test/globus_wsrf_test_interop
 @dirrm %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_unit
 @dirrm %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_throughput
 @dirrm %%GLOBUS_BASE%%/test/globus_wsrf_gram_scheduler_test/submit_test
@@ -6237,12 +6215,6 @@
 @dirrm %%GLOBUS_BASE%%/test/globus_openssl_error_test/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%/test/globus_openssl_error_test/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/test/globus_openssl_error_test
-@dirrm %%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%/shared
-@dirrm %%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts/%%BASE_FLAVOR%%
-@dirrm %%GLOBUS_BASE%%/test/globus_mds_test/ldapcerts
-@dirrm %%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%/shared
-@dirrm %%GLOBUS_BASE%%/test/globus_mds_test/%%BASE_FLAVOR%%
-@dirrm %%GLOBUS_BASE%%/test/globus_mds_test
 @dirrm %%GLOBUS_BASE%%/test/globus_io_test/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%/test/globus_io_test/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/test/globus_io_test
@@ -6397,8 +6369,8 @@
 @dirrm %%GLOBUS_BASE%%/share/doc/perl/Globus/GRAM
 @dirrm %%GLOBUS_BASE%%/share/doc/perl/Globus
 @dirrm %%GLOBUS_BASE%%/share/doc/perl
-@dirrm %%GLOBUS_BASE%%/share/doc/libxml2-0.12/examples
-@dirrm %%GLOBUS_BASE%%/share/doc/libxml2-0.12
+@dirrm %%GLOBUS_BASE%%/share/doc/libxml2-0.13/examples
+@dirrm %%GLOBUS_BASE%%/share/doc/libxml2-0.13
 @dirrm %%GLOBUS_BASE%%/share/doc
 @dirrm %%GLOBUS_BASE%%/share/aclocal/%%BASE_FLAVOR%%pthr/shared
 @dirrm %%GLOBUS_BASE%%/share/aclocal/%%BASE_FLAVOR%%pthr
@@ -6411,6 +6383,7 @@
 @dirrm %%GLOBUS_BASE%%/setup/globus/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/setup/globus
 @dirrm %%GLOBUS_BASE%%/setup
+@dirrm %%GLOBUS_BASE%%/sbin/CVS
 @dirrm %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared
 @dirrm %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr
 @dirrm %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%/shared
@@ -6429,6 +6402,7 @@
 @dirrm %%GLOBUS_BASE%%/man/man1/ssh.d/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/man/man1/ssh.d
 @dirrm %%GLOBUS_BASE%%/man/man1/man1
+@dirrm %%GLOBUS_BASE%%/man/man1/CVS
 @dirrm %%GLOBUS_BASE%%/man/man1/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%/man/man1/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/man/man1
@@ -6443,6 +6417,7 @@
 @dirrm %%GLOBUS_BASE%%/libexec
 @dirrm %%GLOBUS_BASE%%/lib/webmds/xslfiles/sgtypes
 @dirrm %%GLOBUS_BASE%%/lib/webmds/xslfiles/local
+@dirrm %%GLOBUS_BASE%%/lib/webmds/xslfiles/glue
 @dirrm %%GLOBUS_BASE%%/lib/webmds/xslfiles
 @dirrm %%GLOBUS_BASE%%/lib/webmds/test
 @dirrm %%GLOBUS_BASE%%/lib/webmds/schema/mds/webmds
@@ -6471,6 +6446,7 @@
 @dirrm %%GLOBUS_BASE%%/lib/perl/Globus
 @dirrm %%GLOBUS_BASE%%/lib/perl/Archive
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/zlib
+@dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Pod/Parser
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Pod
@@ -6480,11 +6456,13 @@
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Digest
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress
+@dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Archive/Tar
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Archive
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Digest
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Compress
+@dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%
 @dirrm %%GLOBUS_BASE%%/lib/perl
 @dirrm %%GLOBUS_BASE%%/lib/globus_service_modules/wsrf/services
@@ -6629,7 +6607,6 @@
 @dirrm %%GLOBUS_BASE%%/etc/gpt/packages/globus_notification_consumer
 @dirrm %%GLOBUS_BASE%%/etc/gpt/packages/globus_nexus
 @dirrm %%GLOBUS_BASE%%/etc/gpt/packages/globus_mp
-@dirrm %%GLOBUS_BASE%%/etc/gpt/packages/globus_mds_test
 @dirrm %%GLOBUS_BASE%%/etc/gpt/packages/globus_libxml2
 @dirrm %%GLOBUS_BASE%%/etc/gpt/packages/globus_libtool/%%BASE_FLAVOR%%pthr/shared
 @dirrm %%GLOBUS_BASE%%/etc/gpt/packages/globus_libtool/%%BASE_FLAVOR%%pthr
