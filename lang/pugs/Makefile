@@ -15,14 +15,14 @@ DISTNAME=	Perl6-Pugs-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Perl6 Implementation
 
-BROKEN=		fails to deinstall cleanly
-
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
+
+SITE_PERL6_REL=	lib/perl6
 
 MAN3=		Perl6::Pugs.3 \
 		Inline::Pugs.3 \
