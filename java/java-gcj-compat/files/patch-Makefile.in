@@ -11,12 +11,3 @@
  tools_jar_source_files = \
  	$(top_builddir)/com/sun/tools/javac/Config.java \
  	com/sun/tools/javac/Main.java \
-@@ -553,7 +553,7 @@
- 	ln -sf $(GJDOC) $(DESTDIR)$(SDK_BIN_DIR)/javadoc
- 	ln -sf $(GCJ_BIN_DIR)/grmic$(gcc_suffix) $(DESTDIR)$(SDK_BIN_DIR)/rmic
- 	ln -sf $(GCJ_BIN_DIR)/gjnih$(gcc_suffix) $(DESTDIR)$(SDK_BIN_DIR)/javah
--	ln -sf $(GCJ_BIN_DIR)/ecj $(DESTDIR)$(SDK_BIN_DIR)/javac
-+	ln -sf $(GCJ_BIN_DIR)/gcj$(gcc_suffix) $(DESTDIR)$(SDK_BIN_DIR)/javac
- 	ln -sf $(GCJ_BIN_DIR)/grmiregistry$(gcc_suffix) $(DESTDIR)$(SDK_BIN_DIR)/rmiregistry
- 	ln -sf $(GCJ_BIN_DIR)/grmiregistry$(gcc_suffix) $(DESTDIR)$(JRE_BIN_DIR)/rmiregistry
- @INSTALL_SYMLINKS_TRUE@	$(mkinstalldirs) $(DESTDIR)$(prefix)/bin

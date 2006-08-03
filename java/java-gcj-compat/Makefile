@@ -7,7 +7,7 @@
 
 PORTNAME=	java-gcj-compat
 PORTVERSION=	1.0.56 # intentionally not upgrading
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/rhug/
 
@@ -16,9 +16,11 @@ COMMENT=	A collection of wrapper scripts, symlinks and jar files for GCJ
 
 BUILD_DEPENDS+= ${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
 BUILD_DEPENDS+= gjdoc:${PORTSDIR}/java/gjdoc
+BUILD_DEPENDS+= ecj:${PORTSDIR}/java/ecj-bootstrap
 
 RUN_DEPENDS+= ${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
 RUN_DEPENDS+= gjdoc:${PORTSDIR}/java/gjdoc
+RUN_DEPENDS+= ecj:${PORTSDIR}/java/ecj-bootstrap
 
 GCJVER=41
 GNU_CONFIGURE=	yes
