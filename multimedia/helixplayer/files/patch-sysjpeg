@@ -1,0 +1,54 @@
+--- datatype/image/jpg/common/ijglwrap.cpp	Thu Jul  8 21:53:22 2004
++++ datatype/image/jpg/common/ijglwrap.cpp	Sat Jul  8 01:38:05 2006
+@@ -367,4 +367,37 @@
+ }
+ 
++/*
++ * When compiled against ordinary JPEG, which uses RGB order and 3 bytes
++ * per pixel, we need the below function to rearrange things.
++ */
++#if RGB_RED == 0
++static void
++RGBtoBGRx(void *pBuf, size_t uWidth)
++{
++	struct RGB {
++		BYTE R, G, B;
++	} *pRGB = (struct RGB *)pBuf;
++	struct BGRx {
++		BYTE B, G, R, x;
++	} *pBGRx = (struct BGRx *)pBuf;
++
++	HX_ASSERT(sizeof(*pRGB) == 3);
++	HX_ASSERT(sizeof(*pBGRx) == 4);
++
++	pRGB += uWidth - 1;
++	pBGRx += uWidth - 1;
++
++	while (uWidth--)
++	{
++		pBGRx->B = pRGB->B;
++		pBGRx->R = pRGB->R;
++		pBGRx->G = pRGB->G;
++		pBGRx->x = 0;
++		pBGRx--;
++		pRGB--;
++	}
++}
++#endif
++
+ HX_RESULT CIJGLibraryWrapper::Decompress()
+ {
+@@ -438,4 +469,7 @@
+                 else
+                 {
++#if RGB_RED == 0
++                    RGBtoBGRx(pRowBuf, m_cDecompress.output_width); 
++#endif
+                     if (m_bBigEndian)
+                     {
+@@ -572,5 +606,4 @@
+ 
+     /* Save the current public source manager state variables */
+-    UINT32 ulOldBytesInBuffer = pMgr->m_cPubSrcMgr.bytes_in_buffer;
+     BYTE  *pOldNextInputByte  = (BYTE *) pMgr->m_cPubSrcMgr.next_input_byte;
+ 

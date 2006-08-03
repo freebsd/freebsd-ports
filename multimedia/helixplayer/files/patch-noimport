@@ -1,0 +1,188 @@
+--- datatype/image/png/common/Umakefil	Thu Jul  8 21:52:11 2004
++++ datatype/image/png/common/Umakefil	Fri Jul  8 02:11:45 2005
+@@ -58,8 +58,8 @@
+                           "common/runtime/pub",
+                           "common/system/pub",
+-                          "client/include",
+-                          "common/import/zlib/pub")
++                          "client/include")
+ 
+-project.AddIncludes("../import/libpng")
++project.AddSystemPaths('-L/usr/local/lib')
++project.AddDynamicLibraries("-lpng", "-lz")
+ 
+ project.AddSources("pxpngdec.cpp")
+--- datatype/image/jpg/common/Umakefil	Thu Jul  8 21:53:22 2004
++++ datatype/image/jpg/common/Umakefil	Fri Jul  8 02:15:02 2005
+@@ -59,6 +59,8 @@
+                           "common/system/pub",
+                           "datatype/common/util/pub",
+-                          "datatype/image/common/pub",
+-                          "datatype/image/jpg/import/jpeg-6b")
++                          "datatype/image/common/pub")
++
++project.AddSystemPaths('-L/usr/local/lib')
++project.AddDynamicLibraries("-ljpeg")
+ 
+ project.AddSources("jbuffdst.c",
+--- datatype/image/common/Umakefil	Thu Jul  8 21:54:47 2004
++++ datatype/image/common/Umakefil	Fri Jul  8 02:15:38 2005
+@@ -58,5 +58,4 @@
+                           "common/runtime/pub",
+                           "common/system/pub",
+-                          "common/import/zlib/pub",
+                           "common/lang/xml/pub",
+                           "client/include",
+--- datatype/image/common/mkstatic/Umakefil	Thu Jul  8 21:54:32 2004
++++ datatype/image/common/mkstatic/Umakefil	Fri Jul  8 02:16:06 2005
+@@ -54,5 +54,5 @@
+ project.AddModuleIncludes("common/include")
+ 
+-project.AddModuleLibraries("common/import/zlib[zlib]")
++project.AddDynamicLibraries("-lz")
+ 
+ project.AddSources("mkstatic.cpp")
+--- datatype/image/common/test/Umakefil	Thu Jul  8 21:54:43 2004
++++ datatype/image/common/test/Umakefil	Fri Jul  8 02:16:35 2005
+@@ -60,7 +60,7 @@
+ 						   "common/system[syslib]",
+ 						   "common/util[utillib]",
+-						   "common/runtime[runtlib]",
+-						   "common/import/zlib[zlib]")
++						   "common/runtime[runtlib]")
+ 
++project.AddDynamicLibraries("-lz")
+ project.AddSources("testbomb.cpp")
+ 
+--- client/resource/Umakefil	Mon Jul 19 17:03:59 2004
++++ client/resource/Umakefil	Fri Jul  8 02:18:10 2005
+@@ -52,6 +52,5 @@
+ UmakefileVersion(2,2)
+ 
+-project.AddModuleIncludes("common/include",
+-			  "common/import/stlport")
++project.AddModuleIncludes("common/include")
+ 
+ project.AddIncludes("../include",
+--- filesystem/http/Umakefil	Thu Jul  8 22:04:03 2004
++++ filesystem/http/Umakefil	Fri Jul  8 02:18:37 2005
+@@ -77,5 +77,5 @@
+ if project.IsDefined("HELIX_FEATURE_HTTP_GZIP"):
+     project.AddSources("decoder.cpp")
+-    project.AddModuleLibraries("common/import/zlib[zlib]")
++    project.AddDynamicLibraries("-lz")
+ 
+ project.ExportFunction("RMACreateInstance",
+--- datatype/image/realpix/codec/png/umakedll	Thu Jul  8 21:51:04 2004
++++ datatype/image/realpix/codec/png/umakedll	Fri Jul  8 21:30:57 2005
+@@ -56,5 +56,4 @@
+ project.AddModuleLibraries("datatype/image/realpix/codec/png[rppnglib]",
+                            "datatype/image/png/common[pngcomlib]",
+-                           "datatype/image/png/import/libpng[libpng]",
+                            "datatype/image/common[imgcomlib]",
+                            "datatype/common/util[dtutillib]",
+@@ -63,8 +62,9 @@
+                            "common/util[utillib]",
+                            "common/container[contlib]",
+-                           "common/runtime[runtlib]",
+-                           "common/import/zlib[zlib]")
++                           "common/runtime[runtlib]")
+ 
+ project.AddSources("pxcpngfa.cpp")
++project.AddSystemPaths('-L/usr/local/lib')
++project.AddDynamicLibraries("-lpng", "-lz")
+ 
+ project.ExportFunction("RMACreateInstance",
+--- datatype/image/realpix/codec/jpg/umakedll	Thu Jul  8 21:51:18 2004
++++ datatype/image/realpix/codec/jpg/umakedll	Fri Jul  8 21:31:34 2005
+@@ -52,10 +52,8 @@
+ UmakefileVersion(2,2)
+ 
+-project.AddModuleIncludes("common/include",
+-                          "datatype/image/jpg/import/jpeg-6b")
++project.AddModuleIncludes("common/include")
+ 
+ project.AddModuleLibraries("datatype/image/realpix/codec/jpg[rpjpglib]",
+                            "datatype/image/jpg/common[hxijglib]",
+-                           "datatype/image/jpg/import/jpeg-6b[jpeglib]",
+                            "datatype/image/common[imgcomlib]",
+                            "datatype/common/util[dtutillib]",
+@@ -67,4 +65,6 @@
+ 
+ project.AddSources("pxcjpgfa.cpp")
++project.AddSystemPaths('-L/usr/local/lib')
++project.AddDynamicLibraries("-ljpeg")
+ 
+ project.ExportFunction("RMACreateInstance",
+--- datatype/image/png/renderer/umakedll	Thu Jul  8 21:52:28 2004
++++ datatype/image/png/renderer/umakedll	Fri Jul  8 21:32:07 2005
+@@ -59,5 +59,4 @@
+                            "common/container[contlib]",
+                            "common/dbgtool[debuglib]",
+-                           "common/import/zlib[zlib]",
+                            "common/system[syslib]",
+                            "datatype/common/baserend[baserend]",
+@@ -65,8 +64,9 @@
+                            "datatype/image/common[imgcomlib]",
+                            "datatype/image/png/common[pngcomlib]",
+-                           "datatype/image/png/import/libpng[libpng]",
+                            "datatype/image/png/renderer[pngrlib]")
+ 
+ project.AddSources("pngrdll.cpp")
++project.AddSystemPaths('-L/usr/local/lib')
++project.AddDynamicLibraries("-lpng", "-lz")
+ 
+ project.ExportFunction("RMACreateInstance",
+--- datatype/image/png/fileformat/umakedll	Thu Jul  8 21:52:41 2004
++++ datatype/image/png/fileformat/umakedll	Fri Jul  8 21:32:36 2005
+@@ -56,5 +56,4 @@
+ project.AddModuleLibraries("datatype/image/png/fileformat[pngflib]",
+                            "datatype/image/png/common[pngcomlib]",
+-                           "datatype/image/png/import/libpng[libpng]",
+                            "datatype/image/common[imgcomlib]",
+                            "common/util[utillib]",
+@@ -62,8 +61,9 @@
+                            "common/dbgtool[debuglib]",
+                            "common/system[syslib]",
+-                           "common/runtime[runtlib]",
+-                           "common/import/zlib[zlib]")
++                           "common/runtime[runtlib]")
+ 
+ project.AddSources("pngfdll.cpp")
++project.AddSystemPaths('-L/usr/local/lib')
++project.AddDynamicLibraries("-lpng", "-lz")
+ 
+ project.ExportFunction("RMACreateInstance",
+--- datatype/image/jpg/renderer/umakedll	Thu Jul  8 21:53:52 2004
++++ datatype/image/jpg/renderer/umakedll	Fri Jul  8 21:33:05 2005
+@@ -53,6 +53,5 @@
+ 
+ project.AddModuleIncludes("common/include",
+-                          "client/include",
+-                          "datatype/image/jpg/import/jpeg-6b")
++                          "client/include")
+ 
+ project.AddModuleLibraries("common/runtime[runtlib]",
+@@ -64,9 +63,11 @@
+                            "datatype/image/common[imgcomlib]",
+                            "datatype/image/jpg/common[hxijglib]",
+-                           "datatype/image/jpg/import/jpeg-6b[jpeglib]",
+                            "datatype/image/jpg/renderer[jpgrlib]",
+                            "common/system[syslib]")
+ 
+ project.AddSources("jpgrdll.cpp")
++project.AddSystemPaths('-L/usr/local/lib')
++project.AddDynamicLibraries("-ljpeg")
++project.AddSystemPaths('-L/usr/X11R6/lib')
+ 
+ project.ExportFunction("RMACreateInstance",
+--- datatype/image/gif/renderer/umakedll	Thu Jul  8 21:54:06 2004
++++ datatype/image/gif/renderer/umakedll	Fri Jul  8 21:35:18 2005
+@@ -70,5 +70,6 @@
+ 
+ if project.IsDefined("HELIX_FEATURE_GIF_BROKENIMAGE"):
+-        project.AddModuleLibraries("common/import/zlib[zlib]")
++        project.AddDynamicLibraries("-lz")
+ 
++project.AddSystemPaths('-L/usr/X11R6/lib')
+ project.AddSources("gifrdll.cpp")

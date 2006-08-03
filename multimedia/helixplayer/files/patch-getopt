@@ -1,0 +1,9 @@
+--- common/runtime/pub/hlxclib/getopt.h	Wed Dec 22 15:00:41 2004
++++ common/runtime/pub/hlxclib/getopt.h	Mon Mar 21 08:09:01 2005
+@@ -53,4 +53,6 @@
+ #if defined(_SOLARIS) || defined(_HPUX)
+ #include <stdlib.h>
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#include <unistd.h>
+ #else
+ #include <getopt.h>

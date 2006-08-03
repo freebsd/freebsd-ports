@@ -114,7 +114,7 @@
              undefinedSymbols=""
  
 -        cmd = "g++ -shared %s -o %s %s %s %s %s %s -lgcc" % (
-+        cmd = "%%CXX%% -shared %s -o %s %s %s %s %s %s -lgcc" % (
++        cmd = "%%CXX%% -shared %s -o %s %s %s %s %s %s" % (
              lspath, target_path,
              undefinedSymbols,
              objects, libpath,

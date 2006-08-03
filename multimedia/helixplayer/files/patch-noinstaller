@@ -1,0 +1,9 @@
+--- player/installer/archive/Umakefil	Tue Nov 16 16:11:24 2004
++++ player/installer/archive/Umakefil	Wed Jul  5 23:07:43 2006
+@@ -57,5 +57,5 @@
+ UseCommonObjects()
+ 
+-MultiTargetMake("make_tempdir", "make_symbols", "make_archive")
++MultiTargetMake("make_tempdir")
+ 
+ 

@@ -1,0 +1,21 @@
+--- common/lang/xml/xmldll	Mon Jul 19 17:04:07 2004
++++ common/lang/xml/xmldll	Thu Jul  7 23:26:10 2005
+@@ -58,7 +58,5 @@
+                           "common/runtime/pub",
+                           "common/dbgtool/pub",
+-                          "common/system/pub",
+-                          "common/import/expat/xmlparse",
+-                          "common/import/expat/xmltok")
++                          "common/system/pub")
+ 
+ project.AddModuleLibraries("common/util[utillib]",
+@@ -70,8 +68,5 @@
+ project.AddSources("xmlccf.cpp",
+                    "hxexpat/expatprs.cpp",
+-                   "hxexpat/expatapi.cpp",
+-                   "../../import/expat/xmlparse/xmlparse.c",
+-                   "../../import/expat/xmltok/xmltok.c",
+-                   "../../import/expat/xmltok/xmlrole.c")
++                   "hxexpat/expatapi.cpp")
+ 
+ project.AddDefines("XML_DTD",

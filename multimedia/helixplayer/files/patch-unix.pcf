@@ -1,0 +1,54 @@
+--- datatype/ram/renderer/unix.pcf	Thu Jul  8 21:55:54 2004
++++ datatype/ram/renderer/unix.pcf	Fri Jul  8 01:55:24 2005
+@@ -55,4 +55,5 @@
+ 
+ if (not project.IsDefined("QWS")):
++    project.AddSystemPaths('-L' + platform.x_root_dir + '/lib');
+     project.AddSystemLibraries("X11")
+ 
+--- video/site/unix.pcf	Thu Jul  8 21:59:40 2004
++++ video/site/unix.pcf	Fri Jul  8 01:50:56 2005
+@@ -51,4 +51,5 @@
+ 
+ if not project.IsDefined("QWS"):
++    project.AddSystemPaths('-L' + platform.x_root_dir + '/lib');
+     project.AddSystemLibraries( 'm', 'X11', 'Xext' );
+ 
+--- datatype/smil/renderer/unix.pcf	Thu Jul  8 21:58:10 2004
++++ datatype/smil/renderer/unix.pcf	Fri Jul  8 02:02:28 2005
+@@ -51,4 +51,5 @@
+ 
+ project.AddIncludes(platform.x_root_dir + "/include")
++project.AddSystemPaths('-L' + platform.x_root_dir + '/lib')
+ 
+ project.AddSystemLibraries("m", "X11")
+--- datatype/image/wbmp/renderer/umakedll_unix.pcf	Thu Jul  8 21:52:55 2004
++++ datatype/image/wbmp/renderer/umakedll_unix.pcf	Fri Jul  8 21:38:36 2005
+@@ -50,3 +50,4 @@
+ # 
+ 
++project.AddSystemPaths('-L' + platform.x_root_dir + '/lib')
+ project.AddSystemLibraries("X11")
+--- datatype/image/realpix/renderer/umakedll_unix.pcf	Thu Jul  8 21:52:55 2004
++++ datatype/image/realpix/renderer/umakedll_unix.pcf	Fri Jul  8 21:38:36 2005
+@@ -50,3 +50,4 @@
+ # 
+ 
++project.AddSystemPaths('-L' + platform.x_root_dir + '/lib')
+ project.AddSystemLibraries("X11")
+--- datatype/ogg/fileformat/unix.pcf	Wed Sep 10 16:21:27 2003
++++ datatype/ogg/fileformat/unix.pcf	Fri Jul  8 21:49:23 2005
+@@ -1,3 +1,2 @@
+-
+-project.AddLibraries(os.path.join(GetSDKPath("oggvorbissdk"), "lib", "libogg.a"))
+-project.AddLibraries(os.path.join(GetSDKPath("oggvorbissdk"), "lib", "libvorbis.a"))
++project.AddSystemPaths('-L' + os.path.join(GetSDKPath("oggvorbissdk"), "lib"))
++project.AddSystemLibraries("ogg", "vorbis")
+--- datatype/vorbis/renderer/unix.pcf	Wed Sep 10 16:21:27 2003
++++ datatype/vorbis/renderer/unix.pcf	Fri Jul  8 21:49:23 2005
+@@ -1,3 +1,2 @@
+-
+-project.AddLibraries(os.path.join(GetSDKPath("oggvorbissdk"), "lib", "libogg.a"))
+-project.AddLibraries(os.path.join(GetSDKPath("oggvorbissdk"), "lib", "libvorbis.a"))
++project.AddSystemPaths('-L' + os.path.join(GetSDKPath("oggvorbissdk"), "lib"))
++project.AddSystemLibraries("ogg", "vorbis")

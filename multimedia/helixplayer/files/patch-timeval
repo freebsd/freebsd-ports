@@ -1,0 +1,16 @@
+--- common/util/pub/timeval.h	Thu Jul  8 21:48:01 2004
++++ common/util/pub/timeval.h	Sat Jul  8 13:09:00 2006
+@@ -74,5 +74,5 @@
+ #endif
+ 
+-#if	!(defined _UNIX && (defined _LONG_IS_64 || defined _VXWORKS))
++#if	0
+ 	Timeval(int sec, int usec);
+ 	Timeval(int usec);
+@@ -124,5 +124,5 @@
+ }
+ 
+-#if	!(defined _UNIX && (defined _LONG_IS_64 || defined _VXWORKS))
++#if	0
+ 
+ inline Timeval::Timeval(int s, int us) {

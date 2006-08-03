@@ -14,26 +14,35 @@ MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	The Helix Community's open source media player
 
 LIB_DEPENDS=	theora.[1-9]:${PORTSDIR}/multimedia/libtheora		\
-		esd.2:${PORTSDIR}/audio/esound
+		esd.2:${PORTSDIR}/audio/esound	\
+		png:${PORTSDIR}/graphics/png	\
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
+USE_OPENSSL=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
+USE_DOS2UNIX=	player/app/plugin/unix.pcf
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/HelixPlayer/lib
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 CF2FIX=		gcc.cf freebsd.cf freebsd-5.0-i586.cf freebsd-4.0-i386.cf	\
 		freebsd-4.0-i586.cf freebsd-6.0-i586.cf freebsd-7.0-i586.cf
 
+EXCLUDE=	common/import datatype/image/jpg/import \
+		common/util/getopt.c common/util/md5*   \
+		datatype/image/png/import               \
+		build/BIF/build.bif
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S,^,--exclude ${DISTNAME}/,}
+
 pre-patch:
-	${CP} ${WRKSRC}/build/umakecf/freebsd-6.0-i586.cf			\
+	${LN} ${WRKSRC}/build/umakecf/freebsd-6.0-i586.cf			\
 		${WRKSRC}/build/umakecf/freebsd-7.0-i586.cf
 	# Add support for AudioOutLinux
-	${CP} ${WRKSRC}/audio/device/linux2.pcf					\
+	${LN} ${WRKSRC}/audio/device/linux2.pcf					\
 		${WRKSRC}/audio/device/freebsd.pcf
 
 pre-configure:
@@ -58,15 +67,20 @@ pre-configure:
 		${WRKSRC}/player/app/gtk/hxplay
 
 post-build:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If anything failed, please examine or report the file"
-	@${ECHO_MSG} "${WRKSRC}/build.out"
-	@${ECHO_MSG}
+	@if ! ${TAIL} "${WRKSRC}/build.out" | ${GREP} -qF ', 0 of' ; \
+	then	\
+		${ECHO_MSG} ==================================================; \
+		${ECHO_MSG} Something failed, please examine the log file;	\
+		${ECHO_MSG} ${WRKSRC}/build.out;				\
+		${ECHO_MSG} ==================================================; \
+		${FALSE};	\
+	fi
 
 do-install:
 	${MKDIR} ${PREFIX}/HelixPlayer
-	(cd ${PREFIX}/HelixPlayer &&	\
-	${TAR} -xjf ${WRKSRC}/player/installer/archive/install.bz2)
+	${RM} -rf ${WRKSRC}/player/installer/archive/temp/Bin
+	${CP} -Rp ${WRKSRC}/player/installer/archive/temp/* \
+		${PREFIX}/HelixPlayer/
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/HelixPlayer
 .if !defined(WITH_DEBUG)
 	@${STRIP_CMD} ${PREFIX}/HelixPlayer/hxplay.bin

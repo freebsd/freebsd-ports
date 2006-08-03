@@ -1,0 +1,290 @@
+This set of patches change the plugin to compile against the installed
+NSPR and Firefox' APIs (instead of the gecko-sdk bundled by Real) and to
+pass pointers between processes using %p or %td format instead of %d.
+The latter is not safe on 64-bit systems...
+
+	-mi
+
+--- player/app/plugin/unix.pcf	Thu Jul  8 21:48:45 2004
++++ player/app/plugin/unix.pcf	Sun Jul  2 00:43:31 2006
+@@ -52,13 +52,13 @@
+ 
+-project.AddModuleIncludes(
+-	"common/import/gecko-sdk",
+-	"common/import/gecko-sdk/nspr/include",
+-	"common/import/gecko-sdk/java/include",
+-	"common/import/gecko-sdk/xpcom/include",
+-	"common/import/gecko-sdk/plugin/include",
+-	"common/import/gecko-sdk/windowwatcher/include",
+-	"common/import/gecko-sdk/string/include",
+-	"common/import/gecko-sdk/uconv/include",
+-	"common/import/gecko-sdk/dom/include"
+-)
++project.includes.append(
++	"/usr/local/include/nspr",
++	"/usr/local/include/firefox",
++	"/usr/local/include/firefox/java",
++	"/usr/local/include/firefox/xpcom",
++	"/usr/local/include/firefox/plugin",
++	"/usr/local/include/firefox/windowwatcher",
++	"/usr/local/include/firefox/string",
++	"/usr/local/include/firefox/uconv",
++	"/usr/local/include/firefox/dom"
++)
+ 
+--- player/app/plugin/hxbackend.h	Mon Nov 22 19:24:25 2004
++++ player/app/plugin/hxbackend.h	Sun Jul  2 01:13:09 2006
+@@ -62,9 +62,4 @@
+ #include "nsIObserver.h"
+ 
+-/* Mozilla 1.0-1.2 had nsIScriptableTimer.h and a different nsITimer.h. We
+-   use the nsIScriptableTimer version to avoid conflicts with the newer
+-   nsITimer. */
+-#include "nsIScriptableTimer.h"
+-
+ /* Mozilla 1.3+ have the modern nsITimer */
+ #include "nsITimer.h"
+@@ -106,5 +101,5 @@
+     nsresult ReadGenericResponse(PRBool *retval);
+ 
+-    PRBool AreCallbacksSupported(void) { return m_pTimer || m_pObsoleteTimer; }
++    PRBool AreCallbacksSupported(void) { return m_pTimer != NULL; }
+     
+ private:
+@@ -129,5 +124,4 @@
+     
+     nsITimer *m_pTimer;
+-    nsIScriptableTimer *m_pObsoleteTimer; // Only found in old mozilla's
+     nsIScriptableUnicodeConverter *m_pUConv;
+     nsIPromptService *m_pPromptService;
+--- player/app/plugin/nsHXPlayer.cpp	Mon Nov 22 19:24:25 2004
++++ player/app/plugin/nsHXPlayer.cpp	Sun Jul  2 01:47:25 2006
+@@ -560,8 +560,8 @@
+         XFlush(ws_info->display);
+         
+-        nLen = asprintf(&pMsg, "%s %d %d %d %d %d %d %d %d %d %d %d\n",
++        nLen = asprintf(&pMsg, "%s %td %d %d %d %d %d %d %d %d %d %d\n",
+                         szCommand,
+                         m_iPlayerID,
+-                        (int)aWindow->window,
++                        (intptr_t)aWindow->window,
+                         aWindow->x,
+                         aWindow->y,
+@@ -602,5 +602,4 @@
+     PRBool retval;
+     unsigned int nStreamLength;
+-    int nStreamId = 0;
+ 
+     nStreamLength = ( stream->end > 0 ) ? stream->end : 0; 
+@@ -617,16 +616,7 @@
+     *stype = NP_NORMAL;
+ 
+-    if(m_bIsFirstNewStream)
+-    {
+-        nStreamId = 0;    
+-    }
+-    else
+-    {
+-        nStreamId = (int)stream;
+-    }
+-    
+-    nLen = asprintf(&pMsg, "NewStream %d %d %s %s %d\n",
++    nLen = asprintf(&pMsg, "NewStream %d %td %s %s %d\n",
+                     m_iPlayerID,
+-                    nStreamId,
++                    (intptr_t)(m_bIsFirstNewStream ? 0 : stream),
+                     stream->url,
+                     type,
+@@ -671,5 +661,5 @@
+     (void)offset;
+ 
+-    nLen = asprintf(&pMsg, "StreamData %d %d %d\n", m_iPlayerID, (int)streamID, nDataLen);
++    nLen = asprintf(&pMsg, "StreamData %d %td %d\n", m_iPlayerID, (intptr_t)streamID, nDataLen);
+     result = m_pBackend->SendMessage(pMsg, nLen);
+     free(pMsg);
+@@ -704,5 +694,5 @@
+     const void *streamID = (void*)stream;
+     
+-    nLen = asprintf(&pMsg, "StreamDone %d %d\n", m_iPlayerID, (int)streamID);
++    nLen = asprintf(&pMsg, "StreamDone %d %td\n", m_iPlayerID, (intptr_t)streamID);
+     result = m_pBackend->SendMessage(pMsg, nLen);
+     free(pMsg);
+--- player/app/gtk/playeripc.cpp	Mon Nov 22 19:24:25 2004
++++ player/app/gtk/playeripc.cpp	Sun Jul  2 01:52:39 2006
+@@ -1005,8 +1005,8 @@
+         gchar* mime_type;
+         gchar* url;
+-        guint stream_id;
++        uintptr_t stream_id;
+         guint stream_length;
+         
+-        result = sscanf(argv[2], "%d", &stream_id);
++        result = sscanf(argv[2], "%p", &stream_id);
+         url = argv[3];
+         mime_type = argv[4];
+@@ -1068,7 +1068,7 @@
+     else if (strcmp("StreamDone", argv[0]) == 0 && argc == 3)
+     {
+-        guint stream_id;
++        uintptr_t stream_id;
+         
+-        result = sscanf(argv[2], "%d", &stream_id);
++        result = sscanf(argv[2], "%p", &stream_id);
+ 
+         hxembedded_window_stream_done(window, stream_id);        
+@@ -1168,8 +1168,8 @@
+     {
+         /* Get the window id from argv[1] */
+-        guint window_id;
++        uintptr_t window_id;
+         HXEmbeddedWindow* window;
+ 
+-        if(sscanf(argv[1], "%d", &window_id))
++        if(sscanf(argv[1], "%p", &window_id))
+         {        
+             window = hxembedded_window_get_from_id(window_id);
+--- player/app/gtk/embeddedapp.h	Mon Nov 22 19:24:25 2004
++++ player/app/gtk/embeddedapp.h	Sun Jul  2 02:19:00 2006
+@@ -189,5 +189,5 @@
+                                         const gchar*      url);
+ void      hxembedded_window_new_stream (HXEmbeddedWindow* window,
+-                                        guint             stream_id,
++                                        uintptr_t         stream_id,
+                                         const gchar*      url,
+                                         const gchar*      mime_type,
+@@ -198,5 +198,5 @@
+                                         guint             len);
+ void      hxembedded_window_stream_done(HXEmbeddedWindow* window,
+-                                        guint             stream_id);
++                                        uintptr_t         stream_id);
+ 
+ void      hxembedded_window_set_browser_info(HXEmbeddedWindow* window,
+@@ -205,5 +205,5 @@
+                                              gboolean          has_xembed);
+     
+-HXEmbeddedWindow*  hxembedded_window_get_from_id(guint             window_id);
++HXEmbeddedWindow*  hxembedded_window_get_from_id(uintptr_t     window_id);
+ guint              hxembedded_window_get_id     (HXEmbeddedWindow* window);
+ 
+--- player/app/plugin/hxbackend.cpp	Mon Nov 22 19:24:25 2004
++++ player/app/plugin/hxbackend.cpp	Sun Jul  2 02:37:29 2006
+@@ -153,5 +153,4 @@
+         m_nCallbackBufPos(0),
+         m_pTimer(NULL),
+-        m_pObsoleteTimer(NULL),
+         m_pUConv(NULL),
+         m_pPromptService(NULL),
+@@ -424,13 +423,5 @@
+                                                           (void**)&m_pTimer);
+             
+-            if(!m_pTimer)
+-            {
+-                /* Try to get an old-style mozilla 1.0-1.2 timer */
+-                pComponentManager->CreateInstanceByContractID(NS_TIMER_CONTRACTID,
+-                                                              NULL,
+-                                                              NS_GET_IID(nsIScriptableTimer),
+-                                                              (void**)&m_pObsoleteTimer);
+-            }
+-            
++ 
+             NS_RELEASE(pComponentManager);
+         }
+@@ -545,5 +536,5 @@
+             sprintf(cbSd, "%d", cbsockets[1]);
+                 
+-            if (m_pTimer || m_pObsoleteTimer)
++            if (m_pTimer)
+             {
+                 /* We have a timer callback, include --callbacks flag */
+@@ -678,16 +669,7 @@
+     if(instance)
+     {
+-        PRUnichar *pUnicodeTitle = NULL;
+-        PRUnichar *pUnicodeMessage = NULL;
+-
+         NPN_GetValue(instance, NPNVDOMWindow, &pDomWindow);
+ 
+-        if(m_pPromptService && m_pUConv && m_pMemory && pDomWindow)
+-        {
+-            m_pUConv->ConvertToUnicode("Helix DNA Plugin Error", &pUnicodeTitle);
+-            m_pUConv->ConvertToUnicode(szError, &pUnicodeMessage);
+-        }
+-
+-        if(pUnicodeTitle && pUnicodeMessage && m_pPromptService && m_pMemory && pDomWindow)
++        if(m_pPromptService && m_pMemory && pDomWindow)
+         {        
+             /* Cancel the callback timer while the alert dialog is up to
+@@ -698,5 +680,6 @@
+             StopCallbackTimer();
+             
+-            m_pPromptService->Alert(pDomWindow, pUnicodeTitle, pUnicodeMessage);
++            m_pPromptService->Alert(pDomWindow,
++		(const PRUnichar *)"Helix DNA Plugin Error", (const PRUnichar *)szError);
+ 
+             if(bRestartCallbackTimer)
+@@ -716,13 +699,4 @@
+             free(szJavaScriptAlert);        
+         }
+-
+-        if(pUnicodeTitle)
+-        {
+-            m_pMemory->Free(pUnicodeTitle);
+-        }
+-        if(pUnicodeMessage)
+-        {
+-            m_pMemory->Free(pUnicodeMessage);
+-        }
+     }
+     
+@@ -894,5 +868,5 @@
+         m_pTimer->Init(pTimerFob,
+                        500,
+-                       nsIScriptableTimer::TYPE_REPEATING_SLACK);
++                       nsITimer::TYPE_REPEATING_SLACK);
+         m_pTimer->Cancel();
+ 
+@@ -901,20 +875,4 @@
+     }
+ 
+-    if(m_pObsoleteTimer)
+-    {
+-        m_pObsoleteTimer->Cancel();
+-
+-        /* Re-initing causes the timer to unref this and switch its ref
+-           to pTimerFob instead */
+-        m_pObsoleteTimer->Init(pTimerFob,
+-                               500,
+-                               nsIScriptableTimer::PRIORITY_NORMAL,
+-                               nsIScriptableTimer::TYPE_REPEATING_SLACK);
+-        m_pObsoleteTimer->Cancel();
+-
+-        NS_RELEASE(m_pObsoleteTimer);
+-        m_pObsoleteTimer = NULL;
+-    }
+-
+     NS_RELEASE(pTimerFob);
+     
+@@ -1187,12 +1145,4 @@
+                        nsITimer::TYPE_REPEATING_SLACK);
+     }
+-    else if(m_pObsoleteTimer)
+-    {
+-        m_bCallbackTimerRunning = PR_TRUE;
+-        m_pObsoleteTimer->Init(this,
+-                               500,
+-                               nsIScriptableTimer::PRIORITY_NORMAL,
+-                               nsIScriptableTimer::TYPE_REPEATING_SLACK);
+-    }
+ }
+ 
+@@ -1205,10 +1155,3 @@
+         m_pTimer->Cancel();
+     }
+-    if(m_pObsoleteTimer)
+-    {
+-        m_bCallbackTimerRunning = PR_FALSE;
+-        m_pObsoleteTimer->Cancel();
+-    }
+ }
+-
+-

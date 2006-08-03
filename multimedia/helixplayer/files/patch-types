@@ -1,0 +1,118 @@
+--- common/include/hxtypes.h	Fri Jul 23 02:41:37 2004
++++ common/include/hxtypes.h	Fri Jul  7 01:45:23 2006
+@@ -97,4 +97,23 @@
+ typedef TUint32 UINT; /* Its unclear, but UINT is suppose to be 32 bits. */
+ typedef TBool   BOOL;
++#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++/* Most other platforms should use these C99 types too */
++#include <sys/types.h>
++#include <sys/limits.h>
++#	if INT_MAX != LONG_MAX /* XXX Imperfect guess.. */
++#		define _LONG_IS_64
++#	endif
++typedef int8_t  	INT8;
++typedef uint8_t 	UINT8;
++typedef int16_t 	INT16;
++typedef uint16_t	UINT16;
++typedef int32_t 	INT32;
++typedef uint32_t	UINT32;
++/*
++typedef int64_t 	INT64;
++typedef uint64_t	UINT64;
++*/
++typedef int     	BOOL;
++typedef unsigned int	UINT;
+ #else
+ # ifndef _VXWORKS
+@@ -762,4 +781,7 @@
+ #endif
+ 
++
++/* This works-around similar type-bugs in JPEG's <jmorecfg.h> */
++#define XMD_H
+ 
+ #endif /* _HXTYPES_H_ */
+--- player/hxclientkit/pub/HXClientTypes.h	Thu Jul  8 21:49:29 2004
++++ player/hxclientkit/pub/HXClientTypes.h	Fri Jul  7 02:01:08 2006
+@@ -64,4 +64,8 @@
+      typedef int               SInt32;
+      typedef unsigned int      UInt32;
++#  elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#    include <sys/types.h>
++     typedef int32_t           SInt32;
++     typedef uint32_t          UInt32;
+ #  else
+      typedef long int          SInt32;
+--- datatype/wav/fileformat/wvffplin.cpp	Fri Feb 11 04:06:09 2005
++++ datatype/wav/fileformat/wvffplin.cpp	Fri Jul  7 02:16:57 2006
+@@ -1314,5 +1314,5 @@
+ 	    }
+ 	    
+-	    m_pszTitle = new CHAR[len+1];
++	    m_pszTitle = new char[len+1];
+ 	    if (m_pszTitle)
+ 	    {
+@@ -1334,5 +1334,5 @@
+ 	    }
+ 	    
+-	    m_pszAuthor = new CHAR[len+1];
++	    m_pszAuthor = new char[len+1];
+ 	    if (m_pszAuthor)
+ 	    {
+@@ -1354,5 +1354,5 @@
+ 	    }
+ 	    
+-	    m_pszCopyright = new CHAR[len+1];
++	    m_pszCopyright = new char[len+1];
+ 	    if (m_pszCopyright)
+ 	    {
+--- filesystem/http/httpfsys.cpp	Fri Sep 16 16:59:04 2005
++++ filesystem/http/httpfsys.cpp	Fri Jul  7 02:21:19 2006
+@@ -521,5 +521,5 @@
+ #endif
+ 
+-		    INT8* pFilename = ::strrchr(szModule, OS_SEPARATOR_CHAR);
++		    char* pFilename = ::strrchr(szModule, OS_SEPARATOR_CHAR);
+ 
+ 		    if (pFilename == NULL)
+@@ -5636,5 +5636,5 @@
+ #endif
+                         // Find the separator character before the file name
+-                        INT8* pFilename = ::strrchr(szModule, OS_SEPARATOR_CHAR);
++                        char* pFilename = ::strrchr(szModule, OS_SEPARATOR_CHAR);
+ 
+                         // Perhaps they are using the '/' separator
+--- client/core/hxprotocol.cpp	Thu Jul  8 22:05:58 2004
++++ client/core/hxprotocol.cpp	Fri Jul  7 02:22:47 2006
+@@ -444,5 +444,5 @@
+ 	    }
+ 
+-	    pszStats = new CHAR[ulStatsLength];
++	    pszStats = new char[ulStatsLength];
+ 	    memset(pszStats, 0, ulStatsLength);
+ 
+@@ -531,5 +531,5 @@
+ 	if (!pszStats)
+ 	{
+-	    pszStats = new CHAR[ulStatsLength];
++	    pszStats = new char[ulStatsLength];
+ 	    memset(pszStats, 0, ulStatsLength);
+ 	}
+--- filesystem/http/cache.h	Thu Jul  8 22:04:03 2004
++++ filesystem/http/cache.h	Fri Jul  7 02:37:36 2006
+@@ -84,5 +84,5 @@
+ #define CACHE_MIRRORED_SERVERS  2
+     UINT32      m_ulHttpHeaderSize;     // Number of bytes in HTTP Header
+-    CHAR        m_szMimeType[64];
++    char        m_szMimeType[64];
+ } CacheHeader, *PCacheHeader;
+ 
+--- client/core/rtspprotocol.cpp	Tue Jul 13 13:12:04 2004
++++ client/core/rtspprotocol.cpp	Fri Jul  7 02:39:12 2006
+@@ -2922,5 +2922,5 @@
+     STREAM_STATS*   pStats = NULL;
+     IHXBuffer*      pParentName = NULL;
+-    CHAR            RegKeyName[MAX_DISPLAY_NAME] = {0};
++    char            RegKeyName[MAX_DISPLAY_NAME] = {0};
+ 
+     if (!m_pRegistry)
