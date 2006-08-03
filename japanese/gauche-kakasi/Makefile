@@ -21,6 +21,8 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
+BROKEN=		deinstalls file not installed by this port
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}==amd64
