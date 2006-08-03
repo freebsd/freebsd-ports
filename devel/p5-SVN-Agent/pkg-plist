@@ -1,0 +1,5 @@
+%%SITE_PERL%%/SVN/Agent.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Agent/.packlist
+@dirrmtry %%SITE_PERL%%/SVN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Agent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
