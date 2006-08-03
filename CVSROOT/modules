@@ -7289,6 +7289,7 @@ nautilus-sendto	ports/deskutils/nautilus-sendto
 nauty		ports/math/nauty
 nav		ports/net-mgmt/nav
 nawk		ports/lang/nawk
+nazghul		ports/games/nazghul
 nb-aspell	ports/textproc/nb-aspell
 nbaudit		ports/security/nbaudit
 nbd-server	ports/net/nbd-server
