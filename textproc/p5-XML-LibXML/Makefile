@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	1.58
-PORTREVISION=	1
+PORTVERSION=	1.59
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML/PHISH
+MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}_1
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Interface to Gnome libxml2 library
@@ -31,12 +29,13 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
 		XML::LibXML::DOM.3 XML::LibXML::Document.3 \
 		XML::LibXML::DocumentFragment.3 XML::LibXML::Dtd.3 \
-		XML::LibXML::Element.3 XML::LibXML::Literal.3 \
-		XML::LibXML::Namespace.3 XML::LibXML::Node.3 \
-		XML::LibXML::NodeList.3 XML::LibXML::Number.3 XML::LibXML::PI.3 \
-		XML::LibXML::Parser.3 XML::LibXML::SAX.3 \
+		XML::LibXML::Element.3 XML::LibXML::InputCallback.3 \
+		XML::LibXML::Literal.3 XML::LibXML::Namespace.3 \
+		XML::LibXML::Node.3 XML::LibXML::NodeList.3 \
+		XML::LibXML::Number.3 XML::LibXML::PI.3 \
+		XML::LibXML::Parser.3 XML::LibXML::RelaxNG.3 XML::LibXML::SAX.3 \
 		XML::LibXML::SAX::Builder.3 XML::LibXML::SAX::Generator.3 \
-		XML::LibXML::Text.3
+		XML::LibXML::Schema.3 XML::LibXML::Text.3
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${PERL} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
