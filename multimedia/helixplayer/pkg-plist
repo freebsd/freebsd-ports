@@ -1,4 +1,3 @@
-HelixPlayer/Bin/setup
 HelixPlayer/LICENSE
 HelixPlayer/README
 HelixPlayer/codecs/colorcvt.so
@@ -190,6 +189,5 @@ share/applications/hxplay.desktop
 @dirrm HelixPlayer/doc
 @dirrm HelixPlayer/common
 @dirrm HelixPlayer/codecs
-@dirrm HelixPlayer/Bin
 @dirrm HelixPlayer
 @dirrmtry share/applications

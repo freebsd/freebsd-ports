@@ -1,0 +1,46 @@
+This patch allows to use the modern version of expat instead of what
+many vendors continue to bundle with their releases.
+
+--- common/lang/xml/xmlccf.cpp	Mon Jul 19 17:04:07 2004
++++ common/lang/xml/xmlccf.cpp	Thu Jul  7 23:36:23 2005
+@@ -75,5 +75,5 @@
+ #endif
+ 
+-#include "xmlparse.h"
++#include <expat.h>
+ #include "expatprs.h"
+ #include "xmlccf.h"
+--- common/lang/xml/hxexpat/expatapi.cpp	Mon Jul 19 17:04:07 2004
++++ common/lang/xml/hxexpat/expatapi.cpp	Thu Jul  7 23:39:08 2005
+@@ -55,5 +55,5 @@
+ #include "hxplugn.h"
+ 
+-#include "xmlparse.h"
++#include <expat.h>
+ #include "expatapi.h"
+ #include "expatprs.h"
+--- common/lang/xml/hxexpat/expatprs.cpp	Mon Jul 19 17:04:07 2004
++++ common/lang/xml/hxexpat/expatprs.cpp	Thu Jul  7 23:39:08 2005
+@@ -67,5 +67,5 @@
+ 
+ #include "hxxml.ver"
+-#include "xmlparse.h"
++#include <expat.h>
+ #include "expatprs.h"
+ #include "expatapi.h"
+@@ -371,4 +371,9 @@
+ 	    case XML_ERROR_NOT_STANDALONE:
+ 		return HXR_XML_NOT_STANDALONE;
++#if 0 /* { */
++	/*
++	 * modern expat does not have the below errors, but has
++	 * others. Fall back to the generic error message for now
++	 */
+             case XML_ERROR_INVALID_NAME:
+ 		return HXR_XML_INVALID_NAME;
+@@ -408,4 +413,5 @@
+             case XML_ERROR_INVALID_COMMENT: 
+ 		return HXR_XML_INVALID_COMMENT;
++#endif /* } */
+ 	    default:
+ 		return HXR_XML_GENERALERROR;

@@ -1,0 +1,17 @@
+--- common/util/Umakefil	Thu Jul  8 21:48:15 2004
++++ common/util/Umakefil	Mon Mar 21 08:53:52 2005
+@@ -74,6 +74,4 @@
+                    "db_dict.cpp",
+                    "key.cpp",
+-                   "md5.c",
+-                   "md5hl.c",
+                    "mimechk.cpp",
+                    "miscsp.cpp",
+@@ -125,7 +123,4 @@
+                    "hxcbobj.cpp",
+                    "clone_values.cpp")
+-
+-if not project.IsDefined("HELIX_CONFIG_NOSTATICS"):
+-    project.AddSources("getopt.c")
+ 
+ project.AddSources("tconverter/fxpoint/tconverter_fxp.cpp")

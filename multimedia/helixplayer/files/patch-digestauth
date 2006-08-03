@@ -1,0 +1,25 @@
+--- common/auth/rn5auth/digestauth.h	Tue Jul 27 03:41:40 2004
++++ common/auth/rn5auth/digestauth.h	Sun Jul 10 00:54:04 2005
+@@ -50,5 +50,5 @@
+ #define CDIGESTAUTH_H_
+ 
+-enum digest_algo {MD5, MD5_SESS, ALGO_UNKNOWN};
++enum digest_algo {ALGO_MD5, MD5_SESS, ALGO_UNKNOWN};
+ 
+ class CDigestAuthenticator: public CHashAuthenticatorBase,
+--- common/auth/rn5auth/digestauth.cpp	Tue Jul 27 03:41:02 2004
++++ common/auth/rn5auth/digestauth.cpp	Sun Jul 10 00:55:35 2005
+@@ -479,5 +479,5 @@
+             m_algorithm = MD5_SESS;
+         else
+-            m_algorithm = MD5;       
++            m_algorithm = ALGO_MD5;       
+         HX_RELEASE(pbufHdr);
+     }
+@@ -502,5 +502,5 @@
+     switch (m_algorithm)
+     {
+-    case MD5:
++    case ALGO_MD5:
+         pbufA1 = pbufPassword;
+         pbufA1->AddRef();

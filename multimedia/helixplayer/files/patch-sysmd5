@@ -1,0 +1,193 @@
+--- player/installer/postinst/platform/unix/postinst.cpp	Thu Jul  8 21:49:20 2004
++++ player/installer/postinst/platform/unix/postinst.cpp	Fri Jul  8 22:32:13 2005
+@@ -84,3 +84,2 @@
+ 
+-#include "md5.h"
+ 
+--- common/util/chxuuid.cpp	Thu Jul  8 21:48:15 2004
++++ common/util/chxuuid.cpp	Fri Jul  8 22:32:13 2005
+@@ -93,3 +93,3 @@
+ #include "netbyte.h"
+-#include "md5.h"
++#include <openssl/md5.h>
+ 
+@@ -955,13 +955,12 @@
+     if (SUCCEEDED(res))
+     {
+-        md5_state_t ctx;
+-        md5_init(&ctx);
+-        UCHAR aHashBuffer[20];
+-        memset(aHashBuffer, 0, 20);
++        MD5_CTX ctx;
++        MD5_Init(&ctx);
++        UCHAR aHashBuffer[MD5_DIGEST_LENGTH];
+ 
+         // MD5-hash the namespace ID with the name buffer
+-        md5_append(&ctx, (const UCHAR*)pUuid, sizeof(uuid_tt));
+-        md5_append(&ctx, (const UCHAR*)pBuffer, ulBufferSize);                
+-        md5_finish(aHashBuffer, &ctx);
++        MD5_Update(&ctx, pUuid, sizeof(uuid_tt));
++        MD5_Update(&ctx, pBuffer, ulBufferSize);                
++        MD5_Final(aHashBuffer, &ctx);
+ 
+         // Copy the 128-bit hash result into the UUID.  Memcpy one var at a time
+--- common/util/cookies.cpp	Thu Jul  8 21:48:15 2004
++++ common/util/cookies.cpp	Fri Jul  8 22:32:13 2005
+@@ -104,3 +104,2 @@
+ #include "cookies.h"
+-#include "md5.h"
+ #include "filespecutils.h"
+--- common/util/random32.c	Thu Jul  8 21:48:16 2004
++++ common/util/random32.c	Fri Jul  8 22:32:13 2005
+@@ -52,3 +52,3 @@
+ #include "hxtick.h"
+-#include "md5.h"    
++#include <openssl/md5.h>    
+ #include "random32.h"
+@@ -57,5 +57,4 @@
+ static ULONG32 md_32(const unsigned char *string, int length)
+ {
+-    md5_state_t context;
+ 
+     union {
+@@ -66,7 +65,5 @@
+     int i;
+     
+-    md5_init (&context);
+-    md5_append (&context, string, length);
+-    md5_finish ((unsigned char *)&digest, &context);
++    MD5(string, length, &digest);
+     r = 0;
+     for (i = 0; i < 3; i++) {
+--- client/common/container/basehand.cpp	Thu Jul  8 22:07:27 2004
++++ client/common/container/basehand.cpp	Fri Jul  8 22:32:13 2005
+@@ -114,3 +114,2 @@
+ #include "chxuuid.h"
+-#include "md5.h"
+ 
+--- client/common/container/hxresmg.cpp	Thu Jul  8 22:07:27 2004
++++ client/common/container/hxresmg.cpp	Fri Jul  8 22:32:13 2005
+@@ -74,3 +74,3 @@
+ #include "chxpckts.h"
+-#include "md5.h"
++#include <openssl/md5.h>
+ #include "findfile.h"
+@@ -431,15 +431,15 @@
+ {
+     struct stat	    stat_struct;
+-    md5_state_t	    MD5_data;
++    MD5_CTX	    MD5_data;
+     UCHAR	    tempbuf[16];
+ 
+-    md5_init(&MD5_data);
++    MD5_Init(&MD5_data);
+     if (HXR_OK != Stat(pPath, &stat_struct))
+     {
+-        md5_finish(tempbuf, &MD5_data);
++        MD5_Final(tempbuf, &MD5_data);
+ 	return NULL;
+     } 
+-    md5_append(&MD5_data,(UCHAR*)&(stat_struct),sizeof(stat_struct)); 
+-    md5_finish(tempbuf, &MD5_data);
++    MD5_Update(&MD5_data, &(stat_struct), sizeof(stat_struct));
++    MD5_Final(tempbuf, &MD5_data);
+     return ConvertToAsciiString((char*)tempbuf, sizeof(tempbuf));
+ }
+--- client/common/container/plghand2.cpp	Thu Jul  8 22:07:28 2004
++++ client/common/container/plghand2.cpp	Fri Jul  8 22:32:13 2005
+@@ -153,3 +153,3 @@
+ #include "chxuuid.h"
+-#include "md5.h"
++#include <openssl/md5.h>
+ 
+@@ -6515,5 +6515,5 @@
+     SafeStrCat(pszFileNameWithPath, pszFileName, (1<<10));
+ 
+-    UCHAR tempbuf[16] = "";
++    UCHAR tempbuf[16];
+     struct stat stat_stuct;
+     Errors statError = PLUGIN_NOT_FOUND;
+@@ -6551,8 +6551,5 @@
+ 	return NULL;
+     }
+-    md5_state_t MD5_data;
+-    md5_init(&MD5_data);
+-    md5_append(&MD5_data,(UCHAR*)&(stat_stuct),sizeof(stat_stuct));
+-    md5_finish(tempbuf, &MD5_data);
++    MD5((UCHAR*)&(stat_stuct), sizeof(stat_stuct), tempbuf);
+     return ConvertToAsciiString((char*)tempbuf, sizeof(tempbuf));
+ }
+--- installer/common/util/consoleui.cpp	Thu Jul  8 22:03:17 2004
++++ installer/common/util/consoleui.cpp	Fri Jul  8 22:32:13 2005
+@@ -100,3 +100,2 @@
+ //hxmisc
+-#include "md5.h"
+ #ifdef _WIN32
+--- installer/common/prodinstlib.cpp	Thu Jul  8 22:03:21 2004
++++ installer/common/prodinstlib.cpp	Fri Jul  8 22:32:13 2005
+@@ -98,3 +98,2 @@
+ 
+-#include "md5.h"
+ 
+--- installer/common/util/passwdtool.cpp	Thu Jul  8 22:03:17 2004
++++ installer/common/util/passwdtool.cpp	Sat Jul  1 14:27:13 2006
+@@ -95,5 +95,5 @@
+ 
+ //hxmisc
+-#include "md5.h"
++#include <openssl/md5.h>
+ #ifdef _WIN32
+ #include "hxstrutl.h" //strcasecmp
+@@ -127,11 +127,23 @@
+                                       char* szMD5Buf)
+ {
+-    char szBuf[4096];
+-    //char szMD5buf[64];
++	MD5_CTX	ctx;
++	char c;
+ 
+-    sprintf(szBuf, "%s:%s:%s", szUsername, szRealm, szPassword);
+-    MD5Data((char*)szMD5Buf, (const unsigned char*)szBuf,
+-            (unsigned int)strlen(szBuf));
+-    //printf("%s:%s\n", szUsername, szMD5Buf);
++	MD5_Init(&ctx);
++	MD5_Update(&ctx, szUsername, strlen(szUsername));
++	MD5_Update(&ctx, ":", 1);
++	MD5_Update(&ctx, szRealm, strlen(szRealm));
++	MD5_Update(&ctx, ":", 1);
++	MD5_Update(&ctx, szPassword, strlen(szPassword));
++	MD5_Final((unsigned char *)szMD5Buf, &ctx);
++	for (int i = 15; i >= 0; i--) {
++		c = szMD5Buf[i] & 0x0f;
++		c += c > 9 ? 'a' - 0xa : '0';
++		szMD5Buf[i*2 + 1] = c;
++		c = szMD5Buf[i] & 0xf0;
++		c += c > 9 ? 'a' - 0xa : '0';
++		szMD5Buf[i*2] = c;
++	}
++	fprintf(stderr, "%s:%s\n", szUsername, szMD5Buf);
+ }
+ 
+--- client/core/clntcoredll_unix.pcf	Thu Jul  8 22:05:57 2004
++++ client/core/clntcoredll_unix.pcf	Thu Jul  6 00:20:36 2006
+@@ -58 +58,7 @@
+ 
++# Link with the OpenSSL's crypto -- the provider of fast MD5 functionality
++if os.environ.has_key('OPENSSLBASE') and os.environ['OPENSSLBASE'] != '/usr':
++	project.includes.append(os.environ['OPENSSLBASE'] + '/include')
++	project.AddSystemPaths('-L' + os.environ['OPENSSLBASE'] + '/lib')
++
++project.AddDynamicLibraries('-lcrypto')
+--- player/installer/postinst/unix.pcf	Thu Jul  8 21:49:23 2004
++++ player/installer/postinst/unix.pcf	Thu Jul  6 00:38:16 2006
+@@ -48,4 +48,10 @@
+ # ***** END LICENSE BLOCK *****
+ 
++# Link with the OpenSSL's crypto -- the provider of fast MD5 functionality
++if os.environ.has_key('OPENSSLBASE') and os.environ['OPENSSLBASE'] != '/usr':
++	project.includes.append(os.environ['OPENSSLBASE'] + '/include')
++	project.AddSystemPaths('-L' + os.environ['OPENSSLBASE'] + '/lib')
++project.AddDynamicLibraries('-lcrypto')
++
+ project.AddModuleIncludes("installer/common/pub/platform/unix")
+ 

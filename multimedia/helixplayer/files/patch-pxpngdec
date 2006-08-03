@@ -1,0 +1,14 @@
+--- datatype/image/png/common/pxpngdec.cpp	Thu Jul  8 21:52:12 2004
++++ datatype/image/png/common/pxpngdec.cpp	Fri Jul  8 02:25:42 2005
+@@ -400,4 +400,5 @@
+                         SetReadTransforms(m_pPNGStruct, m_pPNGInfo);
+                     }
++#if PNG_LIBPNG_VER_MAJOR == 1 && PNG_LIBPNG_VER_MINOR == 2 && PNG_LIBPNG_VER_RELEASE == 5
+                     // libpng by default assumes that 0 is fully transparent and 255 is
+                     // fully opaque. PXPNGDecode by default outputs alpha in the opposite
+@@ -409,4 +410,5 @@
+                         png_clear_invert_alpha(m_pPNGStruct);
+                     }
++#endif
+                     // Save a copy of the output buffer
+                     HX_RELEASE(m_pOutputBuffer);

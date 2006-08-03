@@ -1,0 +1,9 @@
+--- audio/fixptutil/pub/math64.h	Fri Sep 17 14:22:38 2004
++++ audio/fixptutil/pub/math64.h	Fri Jul  8 00:24:56 2005
+@@ -125,5 +125,5 @@
+ ///////////////////////////////////////////////////////////////////////////////////////
+ 
+-#if defined(__GNUC__) && defined(__i386__) && !defined(_NO_GNU_AS)
++#if defined(__GNUC__) && (defined(__i386__) || defined(__amd64__)) && !defined(_NO_GNU_AS)
+ 
+ #define HAVE_PLATFORM_MACROS

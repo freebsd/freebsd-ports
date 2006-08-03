@@ -1,0 +1,422 @@
+--- build/build/BIF/build.bif	Wed Apr 12 16:27:44 2006
++++ build/build/BIF/build.bif	Wed Jul  5 23:26:24 2006
+@@ -896,5 +896,5 @@
+       <dependlist>
+         common_include common_container common_util common_system common_fileio
+-        common_netio common_lang_xml common_import_zlib common_auth_authmgr common_auth_rn5auth
++        common_netio common_lang_xml common_auth_authmgr common_auth_rn5auth
+       </dependlist>
+     </module>
+@@ -1073,7 +1073,4 @@
+       <attribute id="no_build"/>
+     
+-      <dependlist>
+-        common_import_expat common_import_stlport common_import_zlib common_import_bzip2
+-      </dependlist>
+     </module>
+ 
+@@ -1117,5 +1114,5 @@
+ 
+     <!-- COMMON_IMPORT_STLPORT -->
+-    <module id="common_import_stlport" name="common/import/stlport" group="core">
++    <module id="" name="common/import/stlport" group="core">
+       <location file="/home/build/build/bif-cvs/helix/2006%2f04%2f12%2012%253a50%253a16/client/build/BIF/hxclient_1_4_3_neptunex.bif" line="0"/>
+       <cvstag id="hxclient_1_4_3_neptunex" type="branch"/>
+@@ -1166,5 +1163,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_include common_fileio common_import_expat
++        common_include common_fileio
+       </source_dependlist>
+     </module>
+@@ -1413,5 +1410,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include datatype_common_container protocol_sdp protocol_transport_common_system
++         common_include datatype_common_container protocol_sdp protocol_transport_common_system
+       </source_dependlist>
+     </module>
+@@ -2331,6 +2328,6 @@
+       <dependlist>
+         common_runtime common_dbgtool common_util common_system common_container
+-        common_fileio common_netio common_import_zlib protocol_http protocol_common_util
+-        datatype_rm_common datatype_common_util datatype_image_common datatype_image_jpg_import_jpeg-6b datatype_dist_flash_common
++        common_fileio common_netio protocol_http protocol_common_util
++        datatype_rm_common datatype_common_util datatype_image_common datatype_dist_flash_common
+         datatype_dist_flash_renderer
+       </dependlist>
+@@ -2378,7 +2375,7 @@
+       <dependlist>
+         common_runtime common_util common_container common_dbgtool common_system
+-        common_lang_xml common_import_zlib datatype_common_baserend datatype_common_util datatype_image_common
+-        datatype_image_jpg_import_jpeg-6b datatype_image_jpg_common datatype_image_jpg_fileformat datatype_image_jpg_renderer datatype_image_gif_common
+-        datatype_image_gif_fileformat datatype_image_gif_renderer datatype_image_png_import_libpng datatype_image_png_common datatype_image_png_fileformat
++        common_lang_xml datatype_common_baserend datatype_common_util datatype_image_common
++        datatype_image_jpg_common datatype_image_jpg_fileformat datatype_image_jpg_renderer datatype_image_gif_common
++        datatype_image_gif_fileformat datatype_image_gif_renderer datatype_image_png_common datatype_image_png_fileformat
+         datatype_image_png_renderer datatype_image_realpix_codec_jpg datatype_image_realpix_codec_gif datatype_image_realpix_codec_png datatype_image_realpix_fileformat
+         datatype_image_realpix_renderer datatype_image_wbmp_common datatype_image_wbmp_fileformat datatype_image_wbmp_renderer
+@@ -2516,5 +2513,5 @@
+       <dependlist>
+         datatype_rm_common datatype_dist_rm_video_common datatype_dist_rm_video_payload datatype_common_util datatype_common_vidrend
+-        common_import_stlport client_videosvc client_include common_include common_runtime
++         client_videosvc client_include common_include common_runtime
+         common_dbgtool common_util common_system common_container video_vidutil
+       </dependlist>
+@@ -2549,5 +2546,5 @@
+       <source_dependlist>
+         common_include common_container common_dbgtool common_util common_runtime
+-        common_import_zlib common_lang_xml client_include client_resource datatype_common_util
++        common_lang_xml client_include client_resource datatype_common_util
+       </source_dependlist>
+     </module>
+@@ -2626,5 +2623,5 @@
+       <dependlist>
+         common_runtime common_util common_dbgtool common_container common_system
+-        common_import_zlib datatype_common_util datatype_image_common datatype_image_gif_common
++        datatype_common_util datatype_image_common datatype_image_gif_common
+       </dependlist>
+       <source_dependlist>
+@@ -2644,5 +2641,5 @@
+     
+       <dependlist>
+-        datatype_image_jpg_import_jpeg-6b datatype_image_jpg_common datatype_image_jpg_fileformat datatype_image_jpg_renderer
++        datatype_image_jpg_common datatype_image_jpg_fileformat datatype_image_jpg_renderer
+       </dependlist>
+     </module>
+@@ -2660,5 +2657,5 @@
+       <source_dependlist>
+         common_include common_util common_container common_dbgtool common_runtime
+-        datatype_common_util datatype_image_common datatype_image_jpg_import_jpeg-6b
++        datatype_common_util datatype_image_common
+       </source_dependlist>
+     </module>
+@@ -2725,5 +2722,5 @@
+       <dependlist>
+         common_runtime common_container common_dbgtool common_util datatype_common_baserend
+-        datatype_common_util datatype_image_common datatype_image_jpg_common datatype_image_jpg_import_jpeg-6b
++        datatype_common_util datatype_image_common datatype_image_jpg_common
+       </dependlist>
+       <source_dependlist>
+@@ -2743,5 +2740,5 @@
+     
+       <dependlist>
+-        datatype_image_png_import_libpng datatype_image_png_common datatype_image_png_fileformat datatype_image_png_renderer
++        datatype_image_png_common datatype_image_png_fileformat datatype_image_png_renderer
+       </dependlist>
+     </module>
+@@ -2758,6 +2755,5 @@
+     
+       <source_dependlist>
+-        common_include common_util common_dbgtool client_include common_import_zlib
+-        datatype_image_png_import_libpng
++        common_include common_util common_dbgtool client_include
+       </source_dependlist>
+     </module>
+@@ -2780,5 +2776,5 @@
+       <dependlist>
+         common_runtime common_system common_util common_container common_dbgtool
+-        common_import_zlib datatype_image_common datatype_image_png_common datatype_image_png_import_libpng
++        datatype_image_common datatype_image_png_common
+       </dependlist>
+       <source_dependlist>
+@@ -2797,7 +2793,4 @@
+       </includeplatforms>
+     
+-      <source_dependlist>
+-        common_import_zlib
+-      </source_dependlist>
+     </module>
+ 
+@@ -2818,6 +2811,6 @@
+     
+       <dependlist>
+-        common_runtime common_util common_container common_dbgtool common_import_zlib
+-        datatype_common_util datatype_common_baserend datatype_image_common datatype_image_png_common datatype_image_png_import_libpng
++        common_runtime common_util common_container common_dbgtool
++        datatype_common_util datatype_common_baserend datatype_image_common datatype_image_png_common
+       </dependlist>
+       <source_dependlist>
+@@ -2897,5 +2890,5 @@
+       <dependlist>
+         common_runtime common_system common_util common_container common_dbgtool
+-        datatype_common_util datatype_image_common datatype_image_jpg_common datatype_image_jpg_import_jpeg-6b
++        datatype_common_util datatype_image_common datatype_image_jpg_common
+       </dependlist>
+       <source_dependlist>
+@@ -2921,6 +2914,5 @@
+       <dependlist>
+         common_runtime common_system common_system common_util common_container
+-        common_dbgtool common_import_zlib datatype_common_util datatype_image_common datatype_image_png_common
+-        datatype_image_png_import_libpng
++        common_dbgtool datatype_common_util datatype_image_common datatype_image_png_common
+       </dependlist>
+       <source_dependlist>
+@@ -4990,5 +4982,5 @@
+       <dependlist>
+         common_container common_util common_system common_runtime common_dbgtool
+-        common_fileio common_import_zlib protocol_http protocol_common_util filesystem_data
++        common_fileio protocol_http protocol_common_util filesystem_data
+       </dependlist>
+       <source_dependlist>
+@@ -5163,5 +5155,5 @@
+     
+       <dependlist>
+-        installer_common_util common_import_bzip2
++        installer_common_util
+       </dependlist>
+       <source_dependlist>
+@@ -5430,5 +5422,5 @@
+     
+       <dependlist>
+-        player_installer_archive player_installer_stage1
++        player_installer_archive
+       </dependlist>
+     </module>
+@@ -5668,5 +5660,5 @@
+       </dependlist>
+       <source_dependlist>
+-        client_include player_widget common_import_gecko
++        client_include player_widget
+       </source_dependlist>
+     </module>
+@@ -6032,5 +6024,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_include common_import_stlport common_runtime producersdk_include producersdk_common_util
++        common_include  common_runtime producersdk_include producersdk_common_util
+         producersdk_common_include
+       </source_dependlist>
+@@ -6051,6 +6043,6 @@
+       </dependlist>
+       <source_dependlist>
+-        common_include common_runtime common_util common_netio common_import_stlport
+-        common_import_zlib client_core client_common_container client_common_system client_common_netio
++        common_include common_runtime common_util common_netio 
++        client_core client_common_container client_common_system client_common_netio
+         client_netwksvc client_common_netio server_include server_protocol_sap server_engine_context
+         server_common_util server_common_netio protocol_sdp
+@@ -6069,5 +6061,5 @@
+     
+       <source_dependlist>
+-        common_container common_dbgtool common_import_stlport common_include common_runtime
++        common_container common_dbgtool  common_include common_runtime
+         common_system common_util datatype_rm_common datatype_rm_include producersdk_include
+         producersdk_common_container producersdk_common_graphmanager producersdk_common_system producersdk_common_util
+@@ -6086,5 +6078,5 @@
+     
+       <source_dependlist>
+-        common_container common_dbgtool common_import_stlport common_include common_runtime
++        common_container common_dbgtool  common_include common_runtime
+         producersdk_common_container producersdk_common_graphcore producersdk_common_log producersdk_common_logutil producersdk_common_system
+         producersdk_common_util producersdk_include
+@@ -6120,5 +6112,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_include common_import_stlport common_runtime producersdk_include producersdk_common_container
++        common_include  common_runtime producersdk_include producersdk_common_container
+       </source_dependlist>
+     </module>
+@@ -6139,5 +6131,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_include common_import_stlport common_runtime producersdk_common producersdk_common_container
++        common_include  common_runtime producersdk_common producersdk_common_container
+         producersdk_include
+       </source_dependlist>
+@@ -6158,5 +6150,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime producersdk_include producersdk_common_include
++         common_include common_runtime producersdk_include producersdk_common_include
+       </source_dependlist>
+     </module>
+@@ -6211,5 +6203,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_include common_import_stlport common_runtime producersdk_include producersdk_common_container
++        common_include  common_runtime producersdk_include producersdk_common_container
+         producersdk_common_include
+       </source_dependlist>
+@@ -6230,5 +6222,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_expat common_import_stlport common_include common_runtime producersdk_include
++        common_include common_runtime producersdk_include
+         producersdk_common_include producersdk_common_container
+       </source_dependlist>
+@@ -6278,5 +6270,5 @@
+     
+       <source_dependlist>
+-        common_container common_dbgtool common_import_stlport common_include common_runtime
++        common_container common_dbgtool  common_include common_runtime
+         common_system common_util datatype_rm_include producersdk_common_container producersdk_common_graphcore
+         producersdk_common_graphmanager producersdk_common_logutil producersdk_common_system producersdk_common_util producersdk_engine_include
+@@ -6306,5 +6298,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime datatype_rm_include producersdk_common_logobserver
++         common_include common_runtime datatype_rm_include producersdk_common_logobserver
+         producersdk_engine_include producersdk_include producersdk_plugins_include producersdk_plugins_input_mediasink producersdk_plugins_util
+         producersdk_plugins_headergenerators_headergenerator
+@@ -6336,5 +6328,5 @@
+     
+       <source_dependlist>
+-        common_container common_dbgtool common_import_stlport common_include common_runtime
++        common_container common_dbgtool  common_include common_runtime
+         common_system common_util datatype_rm_include producersdk_common_logutil producersdk_common_system
+         producersdk_common_util producersdk_include producersdk_plugins_headergenerators_headergenerator
+@@ -6584,5 +6576,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_fileio common_import_stlport common_include common_runtime producersdk_common_log
++        common_fileio  common_include common_runtime producersdk_common_log
+       </source_dependlist>
+     </module>
+@@ -6642,5 +6634,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include producersdk_common_container producersdk_common_include producersdk_common_util
++         common_include producersdk_common_container producersdk_common_include producersdk_common_util
+         producersdk_include producersdk_plugins_util
+       </source_dependlist>
+@@ -6677,5 +6669,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime datatype_rm_include protocol_rtsp
++         common_include common_runtime datatype_rm_include protocol_rtsp
+         producersdk_include producersdk_common_log
+       </source_dependlist>
+@@ -6735,5 +6727,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime producersdk_include
++         common_include common_runtime producersdk_include
+       </source_dependlist>
+     </module>
+@@ -6751,5 +6743,5 @@
+       <dependlist>
+         common_dbgtool common_container common_system common_util common_netio
+-        common_import_zlib common_runtime client_common_container client_common_system client_netwksvc
++        common_runtime client_common_container client_common_system client_netwksvc
+         client_common_netio protocol_common_util protocol_http producersdk_common_util producersdk_common_logutil
+         producersdk_common_system producersdk_plugins_util producersdk_common_context
+@@ -6815,5 +6807,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime producersdk_include producersdk_plugins_include
++         common_include common_runtime producersdk_include producersdk_plugins_include
+       </source_dependlist>
+     </module>
+@@ -6834,5 +6826,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime datatype_rm_include datatype_rm_video
++         common_include common_runtime datatype_rm_include datatype_rm_video
+         producersdk_include producersdk_common_graphcore
+       </source_dependlist>
+@@ -6893,5 +6885,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include producersdk_include producersdk_common_include
++         common_include producersdk_include producersdk_common_include
+       </source_dependlist>
+     </module>
+@@ -6990,5 +6982,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime producersdk_include producersdk_plugins_include
++         common_include common_runtime producersdk_include producersdk_plugins_include
+       </source_dependlist>
+     </module>
+@@ -7030,5 +7022,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime producersdk_include producersdk_plugins_util
++         common_include common_runtime producersdk_include producersdk_plugins_util
+       </source_dependlist>
+     </module>
+@@ -7049,5 +7041,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime producersdk_common_container producersdk_include
++         common_include common_runtime producersdk_common_container producersdk_include
+         producersdk_plugins_util
+       </source_dependlist>
+@@ -7069,5 +7061,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_import_stlport common_include common_runtime producersdk_include producersdk_plugins_include
++         common_include common_runtime producersdk_include producersdk_plugins_include
+       </source_dependlist>
+     </module>
+@@ -7202,5 +7194,5 @@
+       </dependlist>
+       <source_dependlist>
+-        common_include common_import_stlport common_runtime datatype_rm_include producersdk_include
++        common_include  common_runtime datatype_rm_include producersdk_include
+         producersdk_common_util producersdk_common_container
+       </source_dependlist>
+@@ -7251,5 +7243,5 @@
+     
+       <source_dependlist>
+-        common_import_stlport common_include producersdk_include producersdk_common_include
++        common_include producersdk_include producersdk_common_include
+       </source_dependlist>
+     </module>
+@@ -7266,5 +7258,5 @@
+     
+       <source_dependlist>
+-        common_import_stlport common_include producersdk_include producersdk_common_include
++         common_include producersdk_include producersdk_common_include
+       </source_dependlist>
+     </module>
+@@ -7281,5 +7273,5 @@
+     
+       <source_dependlist>
+-        common_import_stlport common_include producersdk_include producersdk_common_include
++         common_include producersdk_include producersdk_common_include
+       </source_dependlist>
+     </module>
+@@ -8046,5 +8038,5 @@
+         server_qos_session server_qos_transport server_capex protocol_http protocol_rtsp
+         protocol_sdp protocol_transport_common_system protocol_transport_rtp protocol_common_util common_lang_xml
+-        common_dbgtool common_fileio common_import_zlib common_netio common_system
++        common_dbgtool common_fileio common_netio common_system
+         common_container common_util common_runtime
+       </dependlist>
+@@ -8073,5 +8065,5 @@
+         server_qos_transport server_capex protocol_http protocol_rtsp protocol_sdp
+         protocol_transport_common_system protocol_transport_rtp protocol_common_util common_lang_xml common_dbgtool
+-        common_fileio common_import_zlib common_netio common_system common_container
++        common_fileio common_netio common_system common_container
+         common_util common_runtime
+       </dependlist>
+@@ -8136,5 +8128,5 @@
+         server_common_struct server_protocol_http server_qos_core server_qos_transport server_qos_session
+         protocol_http protocol_rtsp protocol_sdp protocol_transport_common_system protocol_transport_rtp
+-        protocol_common_util common_lang_xml common_dbgtool common_fileio common_import_zlib
++        protocol_common_util common_lang_xml common_dbgtool common_fileio 
+         common_netio common_system common_container common_util common_runtime
+       </dependlist>
+@@ -8404,5 +8396,5 @@
+       <source_dependlist>
+         common_include common_system common_util common_container common_dbgtool
+-        common_runtime common_import_bzip2 server_installer_common_hxarchive
++        common_runtime server_installer_common_hxarchive
+       </source_dependlist>
+     </module>
+@@ -8632,5 +8624,5 @@
+       <source_dependlist>
+         common_include common_runtime common_container common_util common_netio
+-        common_dbgtool common_import_zlib common_system protocol_sdp server_common_struct
++        common_dbgtool common_system protocol_sdp server_common_struct
+         server_common_util server_common_netio server_include
+       </source_dependlist>
+@@ -9223,5 +9215,5 @@
+       <dependlist>
+         server_installer_common_util server_installer_common_hxarchive server_installer_common_uninstall server_installer_common common_runtime
+-        common_dbgtool common_container common_system common_util common_import_bzip2
++        common_dbgtool common_container common_system common_util
+       </dependlist>
+     </module>

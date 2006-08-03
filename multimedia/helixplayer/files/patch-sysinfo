@@ -1,0 +1,43 @@
+--- build/lib/sysinfo.py	Fri Jan 21 17:46:56 2005
++++ build/lib/sysinfo.py	Sun Mar 20 22:49:35 2005
+@@ -143,23 +143,9 @@
+ 
+ AddPlatform(Platform(
+-    id = 'freebsd-4.0-i386',
+-    platform = 'freebsd4',
+-    arch = 'i386',
+-    distribution_id = 'freebsd-4.0-i386',
+-    family_list = ['unix', 'freebsd', 'freebsd4', 'freebsd-4.0'] ))
+-
+-AddPlatform(Platform(
+-    id = 'freebsd-4.0-i586',
+-    platform = 'freebsd4',
+-    arch = 'i386',
+-    distribution_id = 'freebsd-4.0-i386',
+-    family_list = ['unix', 'freebsd', 'freebsd4', 'freebsd-4.0', 'freebsd-4.0-i586'] ))
+-
+-AddPlatform(Platform(
+-    id = 'freebsd-5.0-i586',
+-    platform = 'freebsd5',
+-    arch = 'i386',
+-    distribution_id = 'freebsd-5.0-i586',
+-    family_list = ['unix', 'freebsd', 'freebsd5', 'freebsd-5.0', 'freebsd-5.0-i586'] ))
++    id = 'freebsd',
++    platform = 'freebsd',
++    arch = 'all',
++    distribution_id = 'freebsd',
++    family_list = ['unix', 'freebsd', 'freebsd', 'freebsd', 'freebsd'] ))
+ 
+ AddPlatform(Platform(
+@@ -1103,9 +1089,6 @@
+         set_platform('freebsd-3.0-i386')
+ 
+-    elif sys.platform == 'freebsd4':
+-        set_platform('freebsd-4.0-i386')
+-
+-    elif sys.platform == 'freebsd5':
+-        set_platform('freebsd-5.0-i586')
++    elif sys.platform[0:7] == 'freebsd':
++        set_platform('freebsd')
+ 
+     elif sys.platform == 'hp-uxB':
