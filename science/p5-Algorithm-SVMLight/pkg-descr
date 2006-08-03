@@ -1,0 +1,14 @@
+This module implements a perl interface to Thorsten Joachims' SVMLight
+package:
+
+    SVMLight is an implementation of Vapnik's Support Vector Machine
+    [Vapnik, 1995] for the problem of pattern recognition, for the
+    problem of regression, and for the problem of learning a ranking
+    function. The optimization algorithms used in SVMlight are
+    described in [Joachims, 2002a ]. [Joachims, 1999a]. The algorithm
+    has scalable memory requirements and can handle problems with many
+    thousands of support vectors efficiently.
+
+     -- http://svmlight.joachims.org/
+
+WWW:	http://search.cpan.org/dist/Algorithm-SVMLight/
