@@ -1,5 +1,5 @@
-bin/q4ded-demo
-bin/quake4-demo
+bin/linux-q4ded-demo
+bin/linux-quake4-demo
 %%Q4DIR%%/q4ded.x86
 %%Q4DIR%%/quake4.x86
 %%Q4DIR%%/q4base/game000.pk4

@@ -7,9 +7,11 @@
 
 PORTNAME=	quake4
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|quake4/linux/|} \
-		${MASTER_SITE_GENTOO:S|$|distfiles/|}
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S/$/:id/} \
+		${MASTER_SITE_GENTOO:S/$/:gentoo/}
+MASTER_SITE_SUBDIR=	quake4/demo/:id distfiles/:gentoo
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-demo
 DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX}${PORTVERSION}${PKGNAMESUFFIX}.x86
@@ -23,8 +25,10 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
+NO_CDROM=	Redistribution is limited, see license
+NO_PACKAGE=	Package will be 337MB, set FORCE_PACKAGE if you really want it
 
-Q4DIR=		lib/${PORTNAME}${PKGNAMESUFFIX}
+Q4DIR=		lib/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PLIST_SUB=	Q4DIR="${Q4DIR}"
 
 do-extract:
@@ -38,14 +42,16 @@ do-build:
 	@${SED} \
 		-e 's|@Q4DIR@|${PREFIX}/${Q4DIR}|' \
 		-e 's|@APP@|${FILE}.x86|' \
-		${FILESDIR}/run.sh.in > ${WRKSRC}/${FILE}.sh
+		${FILESDIR}/run.sh.in > ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh
 .endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/${Q4DIR}/q4base
 .for FILE in quake4 q4ded
-	${INSTALL_SCRIPT} ${WRKSRC}/${FILE}.sh ${PREFIX}/bin/${FILE}-demo
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 ${PREFIX}/${Q4DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PKGNAMEPREFIX}${FILE}.sh \
+		${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}-demo
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD/x86/${FILE}.x86 \
+		${PREFIX}/${Q4DIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/q4base/* ${PREFIX}/${Q4DIR}/q4base
 
