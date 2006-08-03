@@ -1,7 +1,6 @@
 bin/linux-opera
+share/applications/linux-opera.desktop
 %%DOCSDIR%%/LICENSE
-%%GNOME:%%share/gnome/applications/linux-opera.desktop
-%%GNOME:%%share/gnome/pixmaps/linux-opera.xpm
 %%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/opera
 %%DATADIR%%/bin/spellcheck.so
@@ -75,11 +74,12 @@ bin/linux-opera
 %%DATADIR%%/svg-sabd.dat
 %%DATADIR%%/svg-se.dat
 %%DATADIR%%/svg-sebd.dat
+share/pixmaps/linux-opera.png
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles/images
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
-@dirrmtry %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/locale/en
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/java
@@ -87,13 +87,6 @@ bin/linux-opera
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/bin
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-%%KDE:%%@cwd %%LOCALBASE%%
-%%KDE:%%share/applnk/Internet/linux-opera.desktop
-%%KDE:%%share/icons/hicolor/22x22/apps/linux-opera.png
-%%KDE:%%share/icons/hicolor/32x32/apps/linux-opera.png
-%%KDE:%%share/icons/hicolor/48x48/apps/linux-opera.png
-%%KDE:%%share/icons/locolor/16x16/apps/linux-opera.png
-%%KDE:%%share/icons/locolor/22x22/apps/linux-opera.png
-%%KDE:%%share/icons/locolor/32x32/apps/linux-opera.png
+@dirrmtry share/applications
