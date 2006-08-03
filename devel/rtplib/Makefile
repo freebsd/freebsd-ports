@@ -16,6 +16,8 @@ COMMENT=	A library for developing applications over RTP
 RTP_HEADERS=	rtp_api.h rtp_highlevel.h rtp_lowlevel.h
 
 RESTRICTED=	"Source recipient must acknowledge license"
+DEPRECATED=	Upstream codebase appears to be unmaintained
+EXPIRATION_DATE= 2006-10-01
 
 GNU_CONFIGURE=	yes
 
