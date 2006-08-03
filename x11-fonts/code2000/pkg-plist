@@ -5,5 +5,3 @@
 %%FONTSDIR%%/fonts.scale
 @unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || true
 @dirrm %%FONTSDIR%%
-%%PKG_OLDXF86%%@exec ln -fs %D/%%FONTSDIR%% %D/%%TTFONTSDIR%%/%%FONTNAME%%
-%%PKG_OLDXF86%%@unexec rm -f %D/%%TTFONTSDIR%%/%%FONTNAME%%
