@@ -21,8 +21,8 @@ name="c_icap"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/c-icap"
-pidfile="/var/run/c-icap.pid"
-required_dirs="/var/tmp"
+pidfile="%%RUN_DIR%%/c-icap.pid"
+required_dirs="%%TMP_DIR%%"
 required_files="%%PREFIX%%/etc/c-icap.conf"
 
 stop_postcmd="rm -f $pidfile"
