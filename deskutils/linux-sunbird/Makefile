@@ -8,7 +8,7 @@
 PORTNAME=	sunbird
 PORTVERSION=	0.3a2
 DISTVERSIONSUFFIX=	.en-US.linux-i686
-CATEGORIES=	deskutils linux
+CATEGORIES=	deskutils
 MASTER_SITE_SUBDIR=	calendar/sunbird/releases/${DISTVERSION}
 
 MAINTAINER=	voisine@gmail.com
