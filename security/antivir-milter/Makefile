@@ -14,6 +14,9 @@ MASTER_SITES=	http://dl.antivir.de/down/unix/packages/
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	AntiVir Milter mail virusscanner for Sendmail
 
+DEPRECATED=	Free license keys are no longer available since September 2005
+EXPIRATION_DATE=	2006-08-31
+
 RESTRICTED=	H+BEDV Datentechnik GmbH forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
