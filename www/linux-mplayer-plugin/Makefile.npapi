@@ -62,11 +62,13 @@ PKGDEINSTALL?=	${NPAPI_PKGDEINSTALL}
 NPAPI_APPS_ALL_WC=	*mozilla* *firefox* *flock* *seamonkey* *opera*
 NPAPI_APPS_ALL_WC_LINUX=	${NPAPI_APPS_ALL_WC:S/^*/linux-/}
 NPAPI_APPS_ALL_WC_NATIVE=	${NPAPI_APPS_ALL_WC:S/^*//}
-NPAPI_APPS_ALL=	mozilla mozilla-devel linux-mozilla \
-				firefox firefox-devel linux-firefox linux-firefox-devel \
-				flock linux-flock \
-				seamonkey linux-seamonkey linux-seamonkey-devel \
-				opera linux-opera
+NPAPI_APPS_ALL=	firefox firefox-devel linux-firefox linux-firefox-devel \
+				flock flock-devel linux-flock linux-flock-devel \
+				mozilla mozilla-devel linux-mozilla  \
+				nvu linux-nvu \
+				opera opera-devel linux-opera linux-opera-devel \
+				seamonkey seamonkey-devel linux-seamonkey linux-seamonkey-devel \
+				sunbird sunbird-devel linux-sunbird linux-sunbird-devel
 
 # === Let's process WITH_NPAPI into WITH_NPAPI_APPS
 WITH_NPAPI_TUPLES=	${WITH_NPAPI:M*?\:?*}
@@ -124,8 +126,8 @@ USE_NPAPI_EXP+=	${_TEMP_APP__}
 
 NPAPI_APPS?=	${USE_NPAPI_EXP:S.^.${LOCALBASE}/lib/.:S.$./plugins.:N*opera*} \
 				${USE_NPAPI_EXP:S.^.${X11BASE}/lib/.:S.$./plugins.:N*opera*} \
-				${USE_NPAPI_EXP:S.^.${LOCALBASE}/share/.:S.$./plugins.:M*opera*} \
-				${USE_NPAPI_EXP:S.^.${X11BASE}/share/.:S.$./plugins.:M*opera*}
+				${USE_NPAPI_EXP:S.^.${LOCALBASE}/share/.:S.$./plugins.:M*/opera*} \
+				${USE_NPAPI_EXP:S.^.${X11BASE}/share/.:S.$./plugins.:M*/opera*}
 NPAPI_SLDIRS_ALL=	${NPAPI_APPS_ALL:S.^.${NPAPI_SLDIR}/.}
 NPAPI_SLDIRS=		${USE_NPAPI_EXP:S.^.${NPAPI_SLDIR}/.}
 NPAPI_LINKFARMS=	${NPAPI_APPS} ${NPAPI_SLDIRS}
