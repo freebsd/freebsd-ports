@@ -3,7 +3,7 @@
 # PROVIDE: popa3d
 # REQUIRE: LOGIN cleanvar
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="popa3d"
 rcvar=`set_rcvar`
