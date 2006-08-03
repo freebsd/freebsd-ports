@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A 2D graphics library
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
