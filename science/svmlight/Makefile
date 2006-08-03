@@ -7,7 +7,7 @@
 
 PORTNAME=	svmlight
 PORTVERSION=	6.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://kodiak.cs.cornell.edu/svm_light/current/
 DISTNAME=	svm_light
@@ -22,11 +22,13 @@ RESTRICTED=	only for education and research
 
 INSTALLS_SHLIB=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"
+NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}
 
 post-build:
-	${CC} ${CFLAGS} -shared -o ${WRKSRC}/libsvmlight.so.1 ${WRKSRC}/libsvmlight.a
+	${CC} ${CFLAGS} -shared -o ${WRKSRC}/libsvmlight.so.1 \
+		${WRKSRC}/svm_common.o ${WRKSRC}/svm_hideo.o \
+		${WRKSRC}/svm_learn.o
 
 do-install:
 	${MKDIR} ${PREFIX}/include/svmlight
