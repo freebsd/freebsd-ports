@@ -1,0 +1,27 @@
+# New ports collection makefile for:	nazghul
+# Date created:		2006-08-02
+# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	nazghul
+PORTVERSION=	0.5.4
+CATEGORIES=	games
+MASTER_SITES=	SF
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	A computer role-playing game engine
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
+USE_GCC=	3.4+
+USE_SDL=	sdl image
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	${REINPLACE_CMD} -i "" 's|malloc.h|stdlib.h|g' ${WRKSRC}/src/scheme.c
+
+.include <bsd.port.mk>
