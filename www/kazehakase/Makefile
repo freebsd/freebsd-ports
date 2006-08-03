@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GECKO=	firefox mozilla seamonkey xulrunner<->thunderbird firefox-devel<->seamonkey
+USE_GECKO=	firefox mozilla seamonkey xulrunner firefox-devel<->seamonkey
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
