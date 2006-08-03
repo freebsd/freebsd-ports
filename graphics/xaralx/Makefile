@@ -45,7 +45,11 @@ MAN1=	xaralx${PKGNAMESUFFIX}.1
 
 .if !defined(NOPORTDOCS)
 DOCS_IN_WRKSRC=	AUTHORS GPL LICENSE README
+.if defined(PKGNAMESUFFIX)
+DOCS_IN_DOC=	en/LICENSE en/xaralxHelp.tar.gz gifutil.txt mtrand.txt
+.else
 DOCS_IN_DOC=	en/xaralx.htm gifutil.txt mtrand.txt
+.endif
 PORTDOCS=	${DOCS_IN_WRKSRC} en ${DOCS_IN_DOC:M*.txt}
 .endif
 

@@ -1,0 +1,32 @@
+bin/xaralx%%PKGNAMESUFFIX%%
+%%DESKTOPDIR%%/xaralx%%PKGNAMESUFFIX%%.desktop
+%%PIXMAPSDIR%%/xaralx%%PKGNAMESUFFIX%%.png
+%%EXAMPLESDIR%%/Designs/BLUECAR.xar
+%%EXAMPLESDIR%%/Designs/CatWoman graphs.xar
+%%EXAMPLESDIR%%/Designs/EngineTimings.xar
+%%EXAMPLESDIR%%/Designs/Fill Types simple.xar
+%%EXAMPLESDIR%%/Designs/GardenPlan.xar
+%%EXAMPLESDIR%%/Designs/Groucho2.xar
+%%EXAMPLESDIR%%/Designs/JagSS100 simple.xar
+%%EXAMPLESDIR%%/Designs/SoftShadow.xar
+%%EXAMPLESDIR%%/Designs/Spitfire.xar
+%%EXAMPLESDIR%%/Designs/TextCurve.xar
+%%EXAMPLESDIR%%/Designs/WATCH.xar
+%%EXAMPLESDIR%%/Designs/WATCH2.xar
+%%EXAMPLESDIR%%/Designs/Watch4.xar
+%%EXAMPLESDIR%%/Designs/amurdove.xar
+%%EXAMPLESDIR%%/Designs/feathers.xar
+%%EXAMPLESDIR%%/Designs/leafgirl.xar
+%%EXAMPLESDIR%%/Designs/scope3 simple.xar
+%%EXAMPLESDIR%%/Templates/1024 by 768 drawing.xar
+%%EXAMPLESDIR%%/Templates/640 by 480 drawing.xar
+%%EXAMPLESDIR%%/Templates/800 by 600 drawing.xar
+%%EXAMPLESDIR%%/Templates/A4 Landscape.xar
+%%EXAMPLESDIR%%/Templates/A4 Portrait.xar
+%%EXAMPLESDIR%%/Templates/A4 double page spread.xar
+%%EXAMPLESDIR%%/Templates/U S Letter.xar
+%%EXAMPLESDIR%%/Templates/animation.xar
+@dirrm %%EXAMPLESDIR%%/Designs
+@dirrm %%EXAMPLESDIR%%/Templates
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry %%DESKTOPDIR%%
