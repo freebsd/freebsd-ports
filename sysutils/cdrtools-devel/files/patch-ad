@@ -1,6 +1,6 @@
---- RULES/i386-freebsd-cc.rul.orig	Tue Oct 15 22:43:39 2002
-+++ RULES/i386-freebsd-cc.rul	Sun Oct 27 19:59:00 2002
-@@ -24,7 +24,8 @@
+--- RULES/cc-gcc.rul.orig	Thu Jul  6 12:59:44 2006
++++ RULES/cc-gcc.rul	Sat Jul 22 03:55:52 2006
+@@ -20,7 +20,8 @@
  ###########################################################################
  
  CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
@@ -10,21 +10,16 @@
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=
-@@ -57,14 +58,14 @@
+@@ -45,10 +46,10 @@
  
  FLOAT_OPTIONS=	
  
 -CC=		@echo "	==> COMPILING \"$@\""; gcc
 -LDCC=		@echo "	==> LINKING \"$@\""; gcc
 -DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
--RANLIB=		@echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib
 +CCCOM=		$(CC)
 +LDCC=		$(CCCOM)
 +DYNLD=		$(CCCOM)
-+RANLIB=		ranlib
- ARFLAGS=	cr
- LORDER=		lorder
- TSORT=		tsort
  
  RMDEP=		:
 -MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
