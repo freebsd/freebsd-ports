@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf \
 		lisp:${PORTSDIR}/lang/cmucl
 
+BROKEN=		does not build
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
