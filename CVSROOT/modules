@@ -3334,6 +3334,7 @@ gnat-doc-info	ports/lang/gnat-doc-info
 gnat-doc-ps	ports/lang/gnat-doc-ps
 gnat-doc-texi	ports/lang/gnat-doc-texi
 gnat-doc-txt	ports/lang/gnat-doc-txt
+gnat-gcc34	ports/lang/gnat-gcc34
 gnat-glade	ports/lang/gnat-glade
 gnats		ports/databases/gnats
 gnats4		ports/databases/gnats4
