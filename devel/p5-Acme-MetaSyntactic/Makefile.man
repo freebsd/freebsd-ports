@@ -86,7 +86,6 @@ MAN3+=	Acme::MetaSyntactic::swords.3
 MAN3+=	Acme::MetaSyntactic::teletubbies.3
 MAN3+=	Acme::MetaSyntactic::tld.3
 MAN3+=	Acme::MetaSyntactic::tmnt.3
-MAN3+=	Acme::MetaSyntactic::toto.3
 MAN3+=	Acme::MetaSyntactic::tour_de_france.3
 MAN3+=	Acme::MetaSyntactic::trigan.3
 MAN3+=	Acme::MetaSyntactic::unicode.3
