@@ -22,6 +22,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GCC=	3.4
 
+BROKEN=		leaves files around after deinstall
+
 PLIST_FILES=	bin/gnofract4d
 
 PORTDOCS=	*
