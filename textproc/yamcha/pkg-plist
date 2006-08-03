@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+bin/yamcha
+bin/yamcha-config
+bin/yamcha-mkmodel
+include/yamcha.h
+lib/libyamcha.so.3
+lib/libyamcha.so
+lib/libyamcha.la
+lib/libyamcha.a
+libexec/yamcha/mkdarts
+libexec/yamcha/mktrie
+libexec/yamcha/pkemine
+libexec/yamcha/mkmodel
+libexec/yamcha/mksvmdata
+libexec/yamcha/svm_learn_wrapper
+libexec/yamcha/mkparam
+libexec/yamcha/showse
+libexec/yamcha/zipmodel
+libexec/yamcha/selecttag
+libexec/yamcha/PKI.pm
+libexec/yamcha/PKE.pm
+libexec/yamcha/Makefile
+@dirrm libexec/yamcha

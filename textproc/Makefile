@@ -931,6 +931,7 @@
     SUBDIR += xt
     SUBDIR += xxdiff
     SUBDIR += y2l
+    SUBDIR += yamcha
     SUBDIR += yi-aspell
     SUBDIR += yodl
     SUBDIR += zu-aspell
