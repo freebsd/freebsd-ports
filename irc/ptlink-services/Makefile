@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Services
-PORTVERSION=	3.4.2
+PORTVERSION=	3.9.2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.sunsite.dk/projects/ptlink/ircsvs3/
 PKGNAMEPREFIX=	PTlink-
 DISTNAME=	PTlinkIRC.${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	dennis@rootxs.org
+MAINTAINER=	freebsd@rootxs.org
 COMMENT=	PTlink IRC services
 
 GNU_CONFIGURE=	yes
@@ -25,11 +25,18 @@ SUB_FILES=	pkg-message
 
 SYSCONFDIR=	${PREFIX}/etc/ptlink-services
 
-CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --with-pidfile=/var/run/ircsvs.pid
+CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --localstatedir=/var \
+		--with-pidfile=/var/run/ircsvs.pid
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Doesn't build on 4.x
+.endif
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CHOWN} -R ircd:ircd ${SYSCONFDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

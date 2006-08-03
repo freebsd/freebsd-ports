@@ -1,11 +1,11 @@
---- configure.orig	Sun Sep 11 12:49:13 2005
-+++ configure	Sun Sep 11 12:49:48 2005
-@@ -7562,7 +7562,7 @@
- "
- #  Web support:                         ${web_support}
- echo "#define BINPATH \"${prefix}/bin\"" > include/path.h
--echo "#define ETCPATH \"${prefix}/etc\"" >> include/path.h
-+echo "#define ETCPATH \"${prefix}/etc/ptlink-services\"" >> include/path.h
- echo "#define DATAPATH \"${prefix}/data\"" >> include/path.h
- echo "#define VARPATH \"${prefix}/var\"" >> include/path.h
- echo "#define LOGPATH \"${prefix}/var/log\"" >> include/path.h
+--- configure.orig	Wed Aug  2 21:44:34 2006
++++ configure	Wed Aug  2 21:44:58 2006
+@@ -6410,7 +6410,7 @@
+ bpath=`eval echo ${bindir}`
+ bpath=`eval echo ${bpath}`
+ cpath=`eval echo ${sysconfdir}`
+-lpath=`eval echo ${localstatedir}`/var
++lpath=`eval echo ${localstatedir}`
+ 
+ cd libircservice
+ ./configure
