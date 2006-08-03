@@ -1,0 +1,4 @@
+bin/ecj-bootstrap-gcj
+bin/ecj
+lib/ecj.jar.so
+share/java/ecj.jar

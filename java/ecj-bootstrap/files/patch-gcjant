@@ -1,0 +1,22 @@
+a workaround for running ant with gcj. ant+gcj
+somehow doesn't find ecj.jar.
+
+--- jdtcoresrc/compilejdtcore.xml~	Thu Aug  3 00:17:48 2006
++++ jdtcoresrc/compilejdtcore.xml	Thu Aug  3 00:19:33 2006
+@@ -14,16 +14,6 @@
+ 		<delete dir="${destdir}"/>
+ 		<mkdir dir="${destdir}"/>
+ 
+-                <condition property="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter">
+-                        <available file="ecj.jar" />
+-                </condition> 
+-				<fail message="The Eclipse compiler (ecj.jar) cannot be found.">
+-					<condition>
+-						<not>
+-							<equals arg1="${build.compiler}" arg2="org.eclipse.jdt.core.JDTCompilerAdapter" />
+-						</not>
+-					</condition>
+-				</fail>
+ 		
+                 <condition property="compilerArg" value="-encoding=ISO-8859-1">
+                         <equals arg1="${build.compiler}" arg2="org.eclipse.jdt.core.JDTCompilerAdapter" />
