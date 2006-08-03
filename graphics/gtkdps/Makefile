@@ -16,7 +16,7 @@ DISTNAME=	gtkDPS-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
-LIB_DEPENDS+=	dpstk.0:${PORTSDIR}/x11/dgs
+LIB_DEPENDS=	dpstk.0:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
@@ -38,6 +38,12 @@ PLIST_SUB+=	NLS="@comment "
 
 .if ${ARCH} == "alpha"
 BROKEN=		Does not compile on alpha
+.endif
+
+.if ${X_WINDOW_SYSTEM:L} == "xfree86-4"
+BUILD_DEPENDS+=	pswrap:${PORTSDIR}/devel/imake-4
+.else
+BUILD_DEPENDS+=	pswrap:${PORTSDIR}/devel/imake-6
 .endif
 
 post-patch:
