@@ -1,5 +1,6 @@
 bin/ecore-config
 bin/ecore_config
+bin/ecore_dbus_test
 bin/ecore_evas_test
 bin/ecore_test
 include/Ecore.h
