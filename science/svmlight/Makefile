@@ -7,6 +7,7 @@
 
 PORTNAME=	svmlight
 PORTVERSION=	6.01
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://kodiak.cs.cornell.edu/svm_light/current/
 DISTNAME=	svm_light
@@ -28,6 +29,8 @@ post-build:
 	${CC} ${CFLAGS} -shared -o ${WRKSRC}/libsvmlight.so.1 ${WRKSRC}/libsvmlight.a
 
 do-install:
+	${MKDIR} ${PREFIX}/include/svmlight
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/svmlight
 .for file in svm_classify svm_learn
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
