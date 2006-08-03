@@ -1,8 +1,12 @@
 @comment $FreeBSD$
 bin/svm_classify
 bin/svm_learn
+include/svmlight/kernel.h
+include/svmlight/svm_common.h
+include/svmlight/svm_learn.h
 lib/libsvmlight.a
 lib/libsvmlight.so
 lib/libsvmlight.so.1
 %%DOCSDIR%%/LICENSE.txt
 @dirrm %%DOCSDIR%%
+@dirrm include/svmlight
