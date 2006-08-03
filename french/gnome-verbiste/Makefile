@@ -17,6 +17,8 @@ CONFIGURE_ARGS=	--with-gnome
 
 MASTERDIR=	${.CURDIR}/../verbiste
 
+BROKEN=		does not install
+
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
