@@ -14,14 +14,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A 2D graphics library
 
-BROKEN=		does not build
-
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fontpath=${DATADIR}/fonts
-CONFIGURE_TARGET=
-
+USE_XLIB=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 ALL_TARGET=	libs
@@ -42,8 +39,10 @@ INFO=		grx
 
 .if defined(WITH_BGI)
 CONFIGURE_ARGS+=--enable-bgi
+PLIST_SUB+=	BGI=""
 .else
 CONFIGURE_ARGS+=--disable-bgi
+PLIST_SUB+=	BGI="@comment "
 .endif
 
 .if defined(WITH_BMP)
@@ -54,13 +53,17 @@ CONFIGURE_ARGS+=--disable-bmp
 
 .if defined(WITH_GPC)
 RUN_DEPENDS+=	gpc:${PORTSDIR}/lang/gpc
-PLIST_SUB+=	GPC=""
+GCC_VER!=	cd ${PORTSDIR}/lang/gpc && ${MAKE} -V GCC_VER
+GNU_HOST!=	cd ${PORTSDIR}/lang/gpc && ${MAKE} -V GNU_HOST
+PLIST_SUB+=	GPC="" \
+		GCC_VER="${GCC_VER}" \
+		GNU_HOST="${GNU_HOST}"
 .else
-PLIST_SUB+=	GPC=""
+PLIST_SUB+=	GPC="@comment "
 .endif
 
 .if defined(WITH_JPEG)
-LIB_DEPENDS+=	jpeg.9${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--enable-jpeg
 .else
 CONFIGURE_ARGS+=--disable-jpeg
@@ -82,7 +85,7 @@ PLIST_SUB+=	PRINT="@comment "
 .endif
 
 .if defined(WITH_TIFF)
-LIB_DEPENDS+=	tiff.4${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=--enable-tiff
 .else
 CONFIGURE_ARGS+=--disable-tiff
@@ -106,10 +109,12 @@ post-patch:
 
 post-install:
 .if defined(WITH_GPC)
-	${INSTALL_DATA} ${WRKSRC}/pascal/grx.pas ${PREFIX}/lib/gpc/units
+	${INSTALL_DATA} ${WRKSRC}/pascal/grx.pas \
+		${PREFIX}/lib/gpc/gcc/${GNU_HOST}/${GCC_VER}/units
+.if defined(WITH_BGI)
+	${INSTALL_DATA} ${WRKSRC}/pascal/bgi/graph.pas \
+		${PREFIX}/lib/gpc/gcc/${GNU_HOST}/${GCC_VER}/units
 .endif
-.if defined(WITH_GPC) && defined(WITH_BGI)
-	${INSTALL_DATA} ${WRKSRC}/pascal/bgi/graph.pas ${PREFIX}/lib/gpc/units
 .endif
 
 .include <bsd.port.post.mk>
