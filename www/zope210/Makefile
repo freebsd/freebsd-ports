@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTVERSION=	2.9.4
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
-		http://www.zope.org/Products/Zope/Hotfix-2006-07-05/Hotfix-20060705/:hotfix_20060705
-DISTNAME=	Zope-${PORTVERSION}
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Hotfix_20060705.tar.gz:hotfix_20060705
 DIST_SUBDIR=	zope
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
@@ -45,10 +40,10 @@ ZOPEINSTANCEBASE?=	${PREFIX}/${SZOPEBASEDIR}
 ZOPEINSTANCEDIR?=	${ZOPEINSTANCEBASE}/${ZOPEINSTANCENAME}
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${ZOPEBASEDIR} --force
+CONFIGURE_ARGS=	--prefix=${ZOPEBASEDIR}
 
-USE_GMAKE=	yes
 ALL_TARGET=	build
+MAKEFILE=	makefile
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
@@ -71,6 +66,12 @@ post-patch:
 		-e 's,^\(EXENAMES="\).*"$$,\1${PYTHON_VERSION}",g' \
 		${WRKSRC}/configure
 
+post-configure:
+	@${REINPLACE_CMD} \
+		-e 's,\(--home="\).*",\1${ZOPEBASEDIR}",g' \
+		-e 's,^.*LN.*PYTHON.*$$,,g' \
+		${WRKSRC}/${MAKEFILE}
+
 post-install:
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
@@ -78,7 +79,6 @@ post-install:
 	${MKDIR} ${ZOPEBASEDIR}/Products
 	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
-	${TAR} xzf ${DISTDIR}/${DIST_SUBDIR}/Hotfix_20060705.tar.gz -C ${ZOPEBASEDIR}/Products/
 
 	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w
 
