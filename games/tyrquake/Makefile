@@ -30,7 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
 .endif
 
-.if !defined(WITHOUT_X86_ASM)
+.if defined(WITHOUT_X86_ASM) || ${ARCH} != "i386"
 MAKE_ENV+=	NO_X86_ASM=YES
 .endif
 
