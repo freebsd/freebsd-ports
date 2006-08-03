@@ -106,6 +106,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Views/MSN/Default_IM/View.xml
 %%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList/Default.html
 %%INSTDIR%%/resources/AppData/Views/MSN/Default_MultiConvoList/View.xml
+%%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/D1.html
 %%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/JID.html
 %%INSTDIR%%/resources/AppData/Views/XMPP/Default_CLContact/View.xml
 %%INSTDIR%%/resources/AppData/Winks/L0g4WmxDZ1JTOXlsZmFvTCtnd0ZIektleXA4PQ==/Wink.cab
