@@ -647,8 +647,9 @@ MASTER_SITE_MOZILLA+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA_EXTENDED)
-MASTER_SITE_MOZILLA_EXTENDED+=	http://releases.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-				${MASTER_SITE_MOZILLA}
+MASTER_SITE_MOZILLA_EXTENDED+=	\
+	http://releases.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	${MASTER_SITE_MOZILLA}
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MYSQL)
