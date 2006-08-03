@@ -23,12 +23,12 @@ name="icecast"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/icecast"
-command_args="1>/dev/null"
+command_args="-b 1>/dev/null"
 required_files="%%PREFIX%%/etc/$name.xml"
 
 # read configuration and set defaults
 load_rc_config "$name"
 : ${icecast_enable="NO"}
-: ${icecast_flags="-c ${required_files} -b"}
+: ${icecast_flags="-c ${required_files}"}
 
 run_rc_command "$1"
