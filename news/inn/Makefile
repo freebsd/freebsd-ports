@@ -45,6 +45,18 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 			--enable-ipv6 \
 			--with-etc-dir=${ETC_DIR}
 
+# Attempt to avoid failures later on, when
+# makedbz is executed: we need a valid hostname.
+
+.if exists(/bin/echo) && exists(/bin/hostname)
+HOSTNAME!=	`/bin/echo /bin/hostname`
+HOSTNAME:=	${HOSTNAME:C/[^\.]//g}
+
+.  if ${HOSTNAME} == ""
+IGNORE=		requires a fully-qualified hostname in order to build
+.  endif
+.endif
+
 .if defined(WITH_BERKELEYDB)
 CONFIGURE_ARGS+=	--with-berkeleydb
 .    if !defined(WITH_BDB_VER)
@@ -149,7 +161,7 @@ post-patch:
 .endif
 
 pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(WITHOUT_STRIP)
@@ -184,6 +196,6 @@ post-install:
 		${MV} history.n.$${s} history.$${s} ; \
 	    done ; \
 	fi)
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL PORTMODE
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL PORTMODE
 
 .include <bsd.port.post.mk>

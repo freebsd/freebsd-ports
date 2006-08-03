@@ -55,6 +55,12 @@ case $2 in
 				touch ${NEWSBASE}/db.dist/${f##*/}
 			done
 		fi
+
+		# Fix permissions
+
+		for f in ${NEWSBASE}/etc/*.ctl ${NEWSBASE}/etc/readers.conf; do
+			chmod 640 ${f}
+		done
 	else
 		fc=`ls ${NEWSBASE}/db/* 2>/dev/null | wc -l`
 
