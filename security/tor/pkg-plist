@@ -1,8 +1,6 @@
-@comment $FreeBSD$
 bin/tor
 bin/tor-resolve
 bin/torify
-etc/rc.d/tor.sh.sample
-etc/tor/torrc.sample
 etc/tor/tor-tsocks.conf.sample
-@dirrmtry etc/tor
+etc/tor/torrc.sample
+@dirrm etc/tor
