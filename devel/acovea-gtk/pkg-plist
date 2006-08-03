@@ -1,0 +1,7 @@
+bin/acovea-gtk
+%%DATADIR%%/pixmaps/acovea0128.png
+%%DATADIR%%/pixmaps/acovea0256.png
+%%DATADIR%%/pixmaps/acovea_icon_032.png
+%%DATADIR%%/pixmaps/acovea_icon_064.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
