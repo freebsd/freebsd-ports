@@ -7,7 +7,7 @@
 
 PORTNAME=	java-gcj-compat
 PORTVERSION=	1.0.56 # intentionally not upgrading
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/rhug/
 
@@ -38,5 +38,9 @@ pre-configure:
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/jvm/java-1.4.2-gcj41-1.4.2.0 ${PREFIX}/lib/jvm/java-gcj
+	@${LN} -sf ${LOCALBASE}/bin/gcj${GCJVER} ${PREFIX}/lib/jvm/java-gcj/bin/gcj
+	@${LN} -sf ${LOCALBASE}/bin/gij${GCJVER} ${PREFIX}/lib/jvm/java-gcj/bin/gij
+	@${LN} -sf ${LOCALBASE}/bin/gcj-dbtool${GCJVER} ${PREFIX}/lib/jvm/java-gcj/bin/gcj-dbtool
+	@${LN} -sf ${LOCALBASE}/bin/gjdoc ${PREFIX}/lib/jvm/java-gcj/bin/gjdoc
 
 .include <bsd.port.mk>
