@@ -16,6 +16,7 @@
     SUBDIR += diablo-jdk15
     SUBDIR += diablo-jre15
     SUBDIR += drexelsnmp
+    SUBDIR += ecj-bootstrap
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
     SUBDIR += eclipse-cdt
