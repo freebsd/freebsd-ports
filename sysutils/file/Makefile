@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
-BROKEN=		does not build
-
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
