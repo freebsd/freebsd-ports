@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Mail/IMAPClient.pm:${PORTSDIR}/mail/p5-Mail-IMAPClie
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not fetch
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 POD2MAN?=	pod2man
