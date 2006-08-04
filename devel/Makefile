@@ -706,6 +706,7 @@
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem
     SUBDIR += ocaml-ulex
+    SUBDIR += ocaml-xstrp4
     SUBDIR += ocamlweb
     SUBDIR += ode
     SUBDIR += ode-devel
