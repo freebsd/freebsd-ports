@@ -1,8 +1,9 @@
-%%PORTDOCS%%%%UTDIR%%Help/Logo.bmp
-%%PORTDOCS%%%%UTDIR%%Help/ReadMe.htm
-%%PORTDOCS%%%%UTDIR%%Help/Unreal.ico
-%%PORTDOCS%%%%UTDIR%%Help/UnrealTournamentSetupLogo.bmp
-%%PORTDOCS%%%%UTDIR%%Help/UnrealTournamentSetupLogo.gif
+%%UTDIR%%Help/Logo.bmp
+%%UTDIR%%Help/ReadMe.htm
+%%UTDIR%%Help/Unreal.ico
+%%UTDIR%%Help/UnrealTournamentSetupLogo.bmp
+%%UTDIR%%Help/UnrealTournamentSetupLogo.gif
+%%UTDIR%%Help/ReleaseNotes.htm
 %%UTDIR%%Logs/delete_me.txt
 %%UTDIR%%Maps/AS-Frigate.unr
 %%UTDIR%%Maps/AS-Guardia.unr
@@ -182,7 +183,6 @@
 %%UTDIR%%NetGamesUSA.com/ngStats/ngusa.jar
 %%UTDIR%%NetGamesUSA.com/ngStats/processedLogs/_tmp
 %%UTDIR%%NetGamesUSA.com/ngStats/spawnBrowser.exe
-%%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/bgWorldStats
 %%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/ngWS.ver
 %%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/ngWorldStats
 %%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/ngWorldStats End User License Agreement (EULA).txt
@@ -435,6 +435,14 @@
 %%UTDIR%%Web/images/right.gif
 %%UTDIR%%Web/menu.uhtm
 %%UTDIR%%Web/message.uhtm
+%%UTDIR%%Web/inc/content_footer_tables.inc
+%%UTDIR%%Web/inc/content_header_tables.inc
+%%UTDIR%%Web/inc/footer.inc
+%%UTDIR%%Web/inc/header.inc
+%%UTDIR%%Web/inc/menu_footer.inc
+%%UTDIR%%Web/inc/menu_header.inc
+%%UTDIR%%Web/inc/top_begin.inc
+%%UTDIR%%Web/inc/top_end.inc
 %%UTDIR%%Web/plaintext/current.uhtm
 %%UTDIR%%Web/plaintext/current_console.uhtm
 %%UTDIR%%Web/plaintext/current_console_log.uhtm
@@ -456,9 +464,14 @@
 %%UTDIR%%Web/plaintext/menu.uhtm
 %%UTDIR%%Web/plaintext/message.uhtm
 %%UTDIR%%Web/plaintext/root.uhtm
+%%UTDIR%%Web/plaintext/inc/footer.inc
+%%UTDIR%%Web/plaintext/inc/header.inc
+%%UTDIR%%Web/plaintext/inc/whiteheader.inc
 %%UTDIR%%Web/root.uhtm
 %%UTDIR%%ucc
+@dirrm %%UTDIR%%Web/plaintext/inc
 @dirrm %%UTDIR%%Web/plaintext
+@dirrm %%UTDIR%%Web/inc
 @dirrm %%UTDIR%%Web/images
 @dirrm %%UTDIR%%Web
 @dirrm %%UTDIR%%Textures
@@ -484,5 +497,5 @@
 @dirrm %%UTDIR%%Music
 @dirrm %%UTDIR%%Maps
 @dirrm %%UTDIR%%Logs
-%%PORTDOCS%%@dirrm %%UTDIR%%Help
-@unexec rmdir %D/%%UTDIR%% 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%UTDIR%%`` to remove any configuration files and logs left." | fmt
+@dirrm %%UTDIR%%Help
+@dirrmtry %%UTDIR%%
