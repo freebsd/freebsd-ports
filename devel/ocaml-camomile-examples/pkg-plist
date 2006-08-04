@@ -1,0 +1,36 @@
+%%EXAMPLESDIR%%/escape/.depend
+%%EXAMPLESDIR%%/escape/Makefile
+%%EXAMPLESDIR%%/escape/Makefile.in
+%%EXAMPLESDIR%%/escape/config.cache
+%%EXAMPLESDIR%%/escape/config.status
+%%EXAMPLESDIR%%/escape/configure
+%%EXAMPLESDIR%%/escape/configure.in
+%%EXAMPLESDIR%%/escape/escape.ml
+%%EXAMPLESDIR%%/escape/get_enc.c
+%%EXAMPLESDIR%%/escape/get_enc.mli
+%%EXAMPLESDIR%%/recode/Makefile
+%%EXAMPLESDIR%%/recode/OcamlMakefile
+%%EXAMPLESDIR%%/recode/recode.ml
+%%EXAMPLESDIR%%/unescape/.depend
+%%EXAMPLESDIR%%/unescape/Makefile
+%%EXAMPLESDIR%%/unescape/Makefile.in
+%%EXAMPLESDIR%%/unescape/config.cache
+%%EXAMPLESDIR%%/unescape/config.status
+%%EXAMPLESDIR%%/unescape/configure
+%%EXAMPLESDIR%%/unescape/configure.in
+%%EXAMPLESDIR%%/unescape/get_enc.c
+%%EXAMPLESDIR%%/unescape/get_enc.mli
+%%EXAMPLESDIR%%/unescape/unescape.ml
+%%EXAMPLESDIR%%/usort/.depend
+%%EXAMPLESDIR%%/usort/Makefile.in
+%%EXAMPLESDIR%%/usort/configure
+%%EXAMPLESDIR%%/usort/configure.in
+%%EXAMPLESDIR%%/usort/get_enc.c
+%%EXAMPLESDIR%%/usort/get_enc.mli
+%%EXAMPLESDIR%%/usort/usort.ml
+@dirrm %%EXAMPLESDIR%%/usort
+@dirrm %%EXAMPLESDIR%%/unescape
+@dirrm %%EXAMPLESDIR%%/recode
+@dirrm %%EXAMPLESDIR%%/escape
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry share/examples/ocaml
