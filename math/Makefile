@@ -103,6 +103,7 @@
     SUBDIR += javaview
     SUBDIR += jsmath
     SUBDIR += jsmath-fonts
+    SUBDIR += jsmath-fonts-sprite
     SUBDIR += k3dsurf
     SUBDIR += kash3
     SUBDIR += kaskade
