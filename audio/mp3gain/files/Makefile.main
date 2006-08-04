@@ -5,9 +5,7 @@ LDADD=	-LmpglibDBL -lm -lmpglibDBL
 DPADD=	mpglibDBL/libmpglibDBL.a
 OBJS=	libmpglibDBL.a
 
-PREFIX?=	/usr/local
-DESTDIR?=	${PREFIX}
-BINDIR=	/bin
+BINDIR=	${PREFIX}/bin
 
 NOMAN=	yes
 

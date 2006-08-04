@@ -20,8 +20,6 @@ USE_ZIP=	yes
 
 NO_WRKSUBDIR=	yes
 
-MAKE_ENV=	PREFIX="${PREFIX}"
-
 pre-patch:
 	@${FIND} ${WRKDIR} -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
