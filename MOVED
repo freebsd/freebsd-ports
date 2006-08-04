@@ -926,7 +926,6 @@ devel/p5-POE-Component-IKC-ReallySimple||2004-03-01|obsolete - deleted from CPAN
 devel/p5-POE-Session-Cascading||2004-03-01|obsolete - deleted from CPAN
 games/linux_nwndata|games/nwndata|2004-03-01|Data files are not Linux-specific
 games/linux_nwnclient|games/linux-nwnclient|2004-03-01|Misnamed
-sysutils/linux-e2fsprogs|sysutils/e2fsprogs|2004-03-01|Native version available
 sysutils/fsck_ext2fs|sysutils/e2fsprogs|2004-03-01|Better utility
 audio/audacity-devel|audio/audacity|2004-03-03|removed (obsolete)
 japanese/vfxdvi118||2004-03-04|removed (obsolate)
