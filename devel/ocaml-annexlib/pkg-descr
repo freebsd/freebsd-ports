@@ -1,0 +1,13 @@
+An extension Library
+
+This is mostly to fill in some gaps in the standard and unix
+libraries, either for completeness or because they're things I find
+myself needing a lot of the time, and a few modules that aren't worthy
+of being their own releases. Enjoy. Most of this used to be part of an
+old library (stew) that I broke up into a couple of smaller ones. This
+one /was/ extlib, now annexlib. Its companion is mathlib.
+
+See supplied documentation for additional info.
+
+Author:	Shawn Wagner <shawnw@speakeasy.org>
+WWW:	http://raevnos.pennmush.org/code/extlib/
