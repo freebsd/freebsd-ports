@@ -17,6 +17,8 @@ COMMENT=	Todo.txt Managers
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+BROKEN=		checksum mismatch
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
