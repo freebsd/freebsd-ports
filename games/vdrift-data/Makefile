@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	20060708
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vdrift
@@ -20,6 +21,7 @@ COMMENT=	Vdrift driving simulation data files
 USE_BZIP2=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/vdrift
+PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}2006-02-21
 
 OPTIONS=	MINIMAL	"Install minimal requerimients of data files" off \
