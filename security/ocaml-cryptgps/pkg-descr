@@ -1,0 +1,4 @@
+This library implements Blowfish, DES, and Triple-DES.
+
+Author:	Gerd Stolpmann
+WWW:	http://www.ocaml-programming.de/packages/
