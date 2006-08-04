@@ -1,6 +1,6 @@
 # ex:ts=4
 #
-# $MBSDlabs: portmk/bsd.ocaml.mk,v 1.14 2006/07/29 18:54:54 stas Exp $
+# $MBSDlabs: portmk/bsd.ocaml.mk,v 1.17 2006/08/02 19:31:46 stas Exp $
 # $FreeBSD$
 #
 # bsd.ocaml.mk - Support for the Objective Caml language packages
@@ -41,9 +41,14 @@ OCAMLCP?=		${LOCALBASE}/bin/ocamlcp
 OCAMLFIND?=		${LOCALBASE}/bin/ocamlfind
 
 #
+# OCaml library directory
+#
+OCAML_LIBDIR?=		lib/ocaml
+
+#
 # Where to install site libraries
 #
-OCAML_SITELIBDIR?=	lib/ocaml/site-lib
+OCAML_SITELIBDIR?=	${OCAML_LIBDIR}/site-lib
 
 #
 # OCaml compiler port dependency
@@ -58,9 +63,15 @@ OCAMLFIND_PORT?=	${PORTSDIR}/devel/ocaml-findlib
 OCAMLFIND_DEPEND?=	${OCAMLFIND}:${OCAMLFIND_PORT}
 
 #
+# Common OCaml examples and documents location
+#
+OCAML_DOCSDIR=		${PREFIX}/share/doc/ocaml
+OCAML_EXAMPLESDIR=	${PREFIX}/share/examples/ocaml
+
+#
 # Location of OCaml ld.conf file
 #
-OCAML_LDCONF?=		lib/ocaml/ld.conf
+OCAML_LDCONF?=		${OCAML_LIBDIR}/ld.conf
 
 OCAMLFIND_DESTDIR?=	${PREFIX}/${OCAML_SITELIBDIR}
 OCAMLFIND_LDCONF?=	${PREFIX}/${OCAML_LDCONF}
@@ -141,4 +152,33 @@ ocaml-ldconfig:
 	@${DO_NADA}
 .endif
 
+#
+# XXX: temporary workaround for non-standard PREFIX
+#
+.if !target(add-plist-post)
+add-plist-post:
+. if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && \
+	${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
+	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
+. else
+	@${DO_NADA}
+. endif
+
+. if (${PREFIX} != ${LOCALBASE})
+	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_SITELIBDIR} 2>/dev/null || true"\
+		>> ${TMPPLIST}
+#	If PREFIX is non-standard and ld.conf is empty
+	@${ECHO_CMD} "@unexec if [ ! -s %D/${OCAML_LDCONF} ]; then ${RM} -f %D/${OCAML_LDCONF}; fi || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_LIBDIR} 2>/dev/null || true" \
+		>> ${TMPPLIST}
+. endif
+
+# If we are using PORTDOCS macro port cannot delete OCAML_DOCSDIR, so
+# we shoud try to accomodate it
+. if defined(PORTDOCS)
+	@${ECHO_CMD} "@unexec rmdir ${OCAML_DOCSDIR} 2>/dev/null || true" \
+		>> ${TMPPLIST}
+. endif
 .endif
+
+.endif #!defined(OCAML_include)
