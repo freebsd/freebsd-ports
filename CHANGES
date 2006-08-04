@@ -10,7 +10,40 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
-20070717:
+20060804:
+AUTHOR:	gabor@FreeBSD.org
+The following functional changes were made to bsd.*.mk and to 
+Tools/scripts/security-check.awk:
+
+  * Add DESTDIR support to let one install ports into a jail from outside.
+    A package is installed under ${DESTDIR}${PREFIX} now and registered under
+    ${DESTDIR}/var/db/pkg.
+
+  * TARGETDIR variable has been added for referencing ${DSTDIR}${PREFIX}.
+
+  * LOCALBASE, LINUXBASE and X11BASE variables point to the final destination
+    now, LOCALBASE_REL, LINUXBASE_REL and X11BASE_REL can be used for the
+    old behavior.  The behavior has not been changed in PLIST_SUB.
+    Note, that the three variables are still overrideable with a hack, so this
+    change doesn't affect POLA, but necessary for DESTDIR support.
+
+  * OSVERSION is now determined from the userland, not from the kernel.
+    Cross-compiling between releases is still not supported, but this
+    behavior is more correct for jails with different kernel version as well.
+
+  * Add some sanity check for PREFIX and DESTDIR.  This can be skipped by
+    defining IGNORE_PATH_CHECKS, but very discouraged.
+
+  * Deinstalling from DESTDIR, determining if a port is already installed in
+    DESTDIR, etc. are implemented by chrooting those specific commands.
+
+  * Text changes to reflect that we are installing to DESTDIR, removing from
+    DESTDIR, etc.
+
+Note, that this change implements only the infrastructure support.  Ports should
+also be implemented to respect DESTDIR.
+
+20060717:
 AUTHOR: portmgr@FreeBSD.org
 The following functional changes were made to bsd.port.mk:
 
@@ -22,7 +55,7 @@ The following functional changes were made to bsd.port.mk:
   * Again fix USE_LDCONFIG logic to make it work with non-default PREFIX to
     fix bug introduced in previous revision.
 
-20070705:
+20060705:
 AUTHOR: portmgr@FreeBSD.org
 The following functional changes were made to bsd.port.mk:
 
