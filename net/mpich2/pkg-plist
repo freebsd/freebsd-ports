@@ -1,7 +1,9 @@
 @comment "PREFIX set to %D/mpich2."
 %%JAVA%%bin/clog2TOslog2
+bin/clog2_join
 bin/clog2_print
 %%JAVA%%bin/clog2print
+bin/clog2_repair
 %%JAVA%%bin/clogTOslog2
 %%JAVA%%bin/clogprint
 %%JAVA%%bin/jumpshot
@@ -109,8 +111,9 @@ etc/mpicc.conf
 etc/mpicxx.conf
 etc/mpif77.conf
 %%F90%%etc/mpif90.conf
-examples/cpi
 include/clog_commset.h
+include/clog_const.h
+include/clog_inttypes.h
 include/clog_uuid.h
 include/mpe.h
 include/mpe_graphics.h
@@ -157,10 +160,11 @@ lib/mpe_prof.o
 %%JAVA%%lib/slog2update205to206.jar
 %%JAVA%%lib/traceTOslog2.jar
 %%JAVA%%lib/traceprint.jar
-%%JAVA%%logfiles/barrier.rlog
-%%JAVA%%logfiles/fpilog.clog
-%%JAVA%%logfiles/fpilog.slog2
 sbin/mpeuninstall
+sbin/mpecheckinstall
+sbin/mpetestlink
+sbin/mpetestexec
+sbin/mpetestexeclog
 %%PORTDOCS%%%%DOCSDIR%%/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/About24.png
@@ -371,63 +375,10 @@ sbin/mpeuninstall
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Error_class.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Error_string.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Exscan.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_c2f.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_call_errhandler.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_close.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_create_errhandler.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_delete.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_f2c.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_amode.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_atomicity.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_byte_offset.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_errhandler.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_group.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_info.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_position.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_position_shared.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_size.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_type_extent.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_get_view.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_iread.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_iread_at.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_iread_shared.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_iwrite.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_iwrite_at.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_iwrite_shared.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_open.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_preallocate.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_all.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_all_begin.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_all_end.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_at.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_at_all.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_at_all_begin.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_at_all_end.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_ordered.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_ordered_begin.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_ordered_end.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_read_shared.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_seek.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_seek_shared.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_set_atomicity.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_set_errhandler.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_set_info.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_set_size.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_set_view.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_sync.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_all.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_all_begin.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_all_end.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_at.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_at_all.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_at_all_begin.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_at_all_end.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_ordered.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_ordered_begin.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_ordered_end.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_File_write_shared.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Finalize.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Finalized.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Free_mem.html
@@ -499,7 +450,6 @@ sbin/mpeuninstall
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Recv_init.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Reduce.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Reduce_scatter.html
-%%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Register_datarep.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Request_free.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Request_get_status.html
 %%PORTDOCS%%%%DOCSDIR%%/www3/MPI_Rsend.html
@@ -609,6 +559,7 @@ share/examples_logging/Makefile
 share/examples_logging/Makefile.in
 share/examples_logging/comm1_isr.c
 share/examples_logging/comm1_isr_loop.c
+share/examples_logging/comm2_connect_accept.c
 share/examples_logging/cpi.c
 share/examples_logging/cpilog.c
 share/examples_logging/cpilog_pack.c
@@ -617,6 +568,10 @@ share/examples_logging/fpilog.f
 share/examples_logging/fpilog_pack.F
 share/examples_logging/iotest.c
 share/examples_logging/srtest.c
+%%JAVA%%share/logfiles/barrier.rlog
+%%JAVA%%share/logfiles/fpilog.clog
+%%JAVA%%share/logfiles/fpilog.slog2
+%%JAVA%%@dirrm share/logfiles
 @dirrm share/examples_logging
 %%X11%%@dirrm share/examples_graphics
 @dirrm share/examples_collchk
@@ -631,7 +586,6 @@ share/examples_logging/srtest.c
 @dirrm man/man3
 @dirrm man/man1
 @dirrm man
-%%JAVA%%@dirrm logfiles
 @dirrm lib
 @dirrm include
 @dirrm examples

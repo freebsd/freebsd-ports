@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
 		http://www-unix.mcs.anl.gov/mpi/mpich/downloads/
@@ -81,10 +81,10 @@ CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-htmldir=${DOCSDIR}
 MAN1=		MPI.1 mpicc.1 mpicxx.1 mpiexec.1 mpif77.1 mpif90.1
 MAN3=		MPI_Abort.3 MPI_Accumulate.3 MPI_Add_error_class.3		\
 		MPI_Add_error_code.3 MPI_Add_error_string.3 MPI_Address.3	\
-		MPI_Allgather.3 MPI_Allgatherv.3 MPI_Alloc_mem.3 MPI_Allreduce.3\
-		MPI_Alltoall.3 MPI_Alltoallv.3 MPI_Alltoallw.3 MPI_Attr_delete.3\
-		MPI_Attr_get.3 MPI_Attr_put.3 MPI_Barrier.3 MPI_Bcast.3		\
-		MPI_Bsend.3 MPI_Bsend_init.3 MPI_Buffer_attach.3		\
+		MPI_Allgather.3 MPI_Allgatherv.3 MPI_Alloc_mem.3		\
+		MPI_Allreduce.3 MPI_Alltoall.3 MPI_Alltoallv.3 MPI_Alltoallw.3	\
+		MPI_Attr_delete.3 MPI_Attr_get.3 MPI_Attr_put.3 MPI_Barrier.3	\
+		MPI_Bcast.3 MPI_Bsend.3 MPI_Bsend_init.3 MPI_Buffer_attach.3	\
 		MPI_Buffer_detach.3 MPI_Cancel.3 MPI_Cart_coords.3		\
 		MPI_Cart_create.3 MPI_Cart_get.3 MPI_Cart_map.3 MPI_Cart_rank.3	\
 		MPI_Cart_shift.3 MPI_Cart_sub.3 MPI_Cartdim_get.3		\
@@ -98,42 +98,21 @@ MAN3=		MPI_Abort.3 MPI_Accumulate.3 MPI_Add_error_class.3		\
 		MPI_Comm_rank.3 MPI_Comm_remote_group.3 MPI_Comm_remote_size.3	\
 		MPI_Comm_set_attr.3 MPI_Comm_set_errhandler.3			\
 		MPI_Comm_set_name.3 MPI_Comm_size.3 MPI_Comm_spawn.3		\
-		MPI_Comm_spawn_multiple.3 MPI_Comm_split.3 MPI_Comm_test_inter.3\
-		MPI_Dims_create.3 MPI_Errhandler_create.3 MPI_Errhandler_free.3	\
-		MPI_Errhandler_get.3 MPI_Errhandler_set.3 MPI_Error_class.3	\
-		MPI_Error_string.3 MPI_Exscan.3 MPI_File_c2f.3			\
-		MPI_File_call_errhandler.3 MPI_File_close.3			\
-		MPI_File_create_errhandler.3 MPI_File_delete.3 MPI_File_f2c.3	\
-		MPI_File_get_amode.3 MPI_File_get_atomicity.3			\
-		MPI_File_get_byte_offset.3 MPI_File_get_errhandler.3		\
-		MPI_File_get_group.3 MPI_File_get_info.3 MPI_File_get_position.3\
-		MPI_File_get_position_shared.3 MPI_File_get_size.3		\
-		MPI_File_get_type_extent.3 MPI_File_get_view.3 MPI_File_iread.3	\
-		MPI_File_iread_at.3 MPI_File_iread_shared.3 MPI_File_iwrite.3	\
-		MPI_File_iwrite_at.3 MPI_File_iwrite_shared.3 MPI_File_open.3	\
-		MPI_File_preallocate.3 MPI_File_read.3 MPI_File_read_all.3	\
-		MPI_File_read_all_begin.3 MPI_File_read_all_end.3		\
-		MPI_File_read_at.3 MPI_File_read_at_all.3			\
-		MPI_File_read_at_all_begin.3 MPI_File_read_at_all_end.3		\
-		MPI_File_read_ordered.3 MPI_File_read_ordered_begin.3		\
-		MPI_File_read_ordered_end.3 MPI_File_read_shared.3		\
-		MPI_File_seek.3 MPI_File_seek_shared.3 MPI_File_set_atomicity.3	\
-		MPI_File_set_errhandler.3 MPI_File_set_info.3			\
-		MPI_File_set_size.3 MPI_File_set_view.3 MPI_File_sync.3		\
-		MPI_File_write.3 MPI_File_write_all.3 MPI_File_write_all_begin.3\
-		MPI_File_write_all_end.3 MPI_File_write_at.3			\
-		MPI_File_write_at_all.3 MPI_File_write_at_all_begin.3		\
-		MPI_File_write_at_all_end.3 MPI_File_write_ordered.3		\
-		MPI_File_write_ordered_begin.3 MPI_File_write_ordered_end.3	\
-		MPI_File_write_shared.3 MPI_Finalize.3 MPI_Finalized.3		\
-		MPI_Free_mem.3 MPI_Gather.3 MPI_Gatherv.3 MPI_Get.3		\
-		MPI_Get_address.3 MPI_Get_count.3 MPI_Get_elements.3		\
-		MPI_Get_processor_name.3 MPI_Get_version.3 MPI_Graph_create.3	\
-		MPI_Graph_get.3 MPI_Graph_map.3 MPI_Graph_neighbors.3		\
-		MPI_Graph_neighbors_count.3 MPI_Graphdims_get.3			\
-		MPI_Grequest_complete.3 MPI_Grequest_start.3 MPI_Group_compare.3\
-		MPI_Group_difference.3 MPI_Group_excl.3 MPI_Group_free.3	\
-		MPI_Group_incl.3 MPI_Group_intersection.3 MPI_Group_range_excl.3\
+		MPI_Comm_spawn_multiple.3 MPI_Comm_split.3			\
+		MPI_Comm_test_inter.3 MPI_Dims_create.3 MPI_Errhandler_create.3	\
+		MPI_Errhandler_free.3 MPI_Errhandler_get.3 MPI_Errhandler_set.3	\
+		MPI_Error_class.3 MPI_Error_string.3 MPI_Exscan.3		\
+		MPI_File_call_errhandler.3 MPI_File_create_errhandler.3		\
+		MPI_File_get_errhandler.3 MPI_File_set_errhandler.3		\
+		MPI_Finalize.3 MPI_Finalized.3 MPI_Free_mem.3 MPI_Gather.3	\
+		MPI_Gatherv.3 MPI_Get.3 MPI_Get_address.3 MPI_Get_count.3	\
+		MPI_Get_elements.3 MPI_Get_processor_name.3 MPI_Get_version.3	\
+		MPI_Graph_create.3 MPI_Graph_get.3 MPI_Graph_map.3		\
+		MPI_Graph_neighbors.3 MPI_Graph_neighbors_count.3		\
+		MPI_Graphdims_get.3 MPI_Grequest_complete.3			\
+		MPI_Grequest_start.3 MPI_Group_compare.3 MPI_Group_difference.3	\
+		MPI_Group_excl.3 MPI_Group_free.3 MPI_Group_incl.3		\
+		MPI_Group_intersection.3 MPI_Group_range_excl.3			\
 		MPI_Group_range_incl.3 MPI_Group_rank.3 MPI_Group_size.3	\
 		MPI_Group_translate_ranks.3 MPI_Group_union.3 MPI_Ibsend.3	\
 		MPI_Info_create.3 MPI_Info_delete.3 MPI_Info_dup.3		\
@@ -147,10 +126,10 @@ MAN3=		MPI_Abort.3 MPI_Accumulate.3 MPI_Add_error_class.3		\
 		MPI_Pack.3 MPI_Pack_external.3 MPI_Pack_external_size.3		\
 		MPI_Pack_size.3 MPI_Pcontrol.3 MPI_Probe.3 MPI_Publish_name.3	\
 		MPI_Put.3 MPI_Query_thread.3 MPI_Recv.3 MPI_Recv_init.3		\
-		MPI_Reduce.3 MPI_Reduce_scatter.3 MPI_Register_datarep.3	\
-		MPI_Request_free.3 MPI_Request_get_status.3 MPI_Rsend.3		\
-		MPI_Rsend_init.3 MPI_Scan.3 MPI_Scatter.3 MPI_Scatterv.3	\
-		MPI_Send.3 MPI_Send_init.3 MPI_Sendrecv.3 MPI_Sendrecv_replace.3\
+		MPI_Reduce.3 MPI_Reduce_scatter.3 MPI_Request_free.3		\
+		MPI_Request_get_status.3 MPI_Rsend.3 MPI_Rsend_init.3		\
+		MPI_Scan.3 MPI_Scatter.3 MPI_Scatterv.3 MPI_Send.3		\
+		MPI_Send_init.3 MPI_Sendrecv.3 MPI_Sendrecv_replace.3		\
 		MPI_Ssend.3 MPI_Ssend_init.3 MPI_Start.3 MPI_Startall.3		\
 		MPI_Status_set_cancelled.3 MPI_Status_set_elements.3 MPI_Test.3	\
 		MPI_Test_cancelled.3 MPI_Testall.3 MPI_Testany.3 MPI_Testsome.3	\
@@ -179,7 +158,8 @@ MAN3=		MPI_Abort.3 MPI_Accumulate.3 MPI_Add_error_class.3		\
 		MPI_Win_test.3 MPI_Win_unlock.3 MPI_Win_wait.3 MPI_Wtick.3	\
 		MPI_Wtime.3
 
-THREAD2FIX=	configure src/mpid/ch3/channels/ib/configure
+THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
+		test/mpi/threads/pt2pt/Makefile.in
 LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
 		src/mpe2/src/slog2sdk/trace_sample/configure
 X11BASE2FIX=	src/mpe2/src/graphics/configure
