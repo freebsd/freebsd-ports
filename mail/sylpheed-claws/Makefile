@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -36,7 +37,7 @@ WANT_GNOME=	yes
 
 MAN1=		sylpheed-claws.1
 
-CONFIGURE_ARGS=	--enable-ipv6 \
+CONFIGURE_ARGS=	\
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-manualdir=${DOCSDIR}/manual \
 		--with-faqdir=${DOCSDIR}/faq \
@@ -55,6 +56,7 @@ OPTIONS=	ALL		"Enable all options."			off \
 		DILLO		"Enable Dillo HTML viewer."		off \
 		GNOMEPRINT	"Enable extended print support (GNOME)."	off \
 		GPGME		"Enable PGP/GnuPG support using GPGME."	off \
+		IPV6		"Enable ipv6 support."			on \
 		JPILOT		"Enable JPilot support."		off \
 		LDAP		"Enable LDAP support."			off \
 		SA_PLUG		"Enable SpamAssassin support."		off \
@@ -154,6 +156,12 @@ RUN_DEPENDS+=	dillo:${PORTSDIR}/www/dillo
 .else
 PLIST_SUB+=	DILLO="@comment "
 CONFIGURE_ARGS+=	--disable-dillo-viewer-plugin
+.endif
+
+.if defined(WITHOUT_IPV6) || defined(WITH_ALL)
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-extract:
