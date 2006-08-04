@@ -5,13 +5,24 @@
 # http://fedora.redhat.com/download/mirrors.html
 
   # Bootstrapping is 3 parts:
+  # 0. Patch ecj.zip
   # 1. Build ecj with gcj -C 
   # 2. Build ecj with gcj-built ecj ("javac")
   # 3. Re-build ecj with output of 2.
-  
+
+  # Patch ecj.zip first
+  rm -rf tmp
+  mkdir tmp
+  unzip -qq -d tmp jdtcoresrc/src/ecj.zip
+  cd tmp
+  patch < ../../files/ecj-patch-Main.java
+  zip -r ../jdtcoresrc/src/ecj.zip *
+  cd ..
+
   # Unzip the "stable compiler" source into a temp dir and build it.
   # Note:  we don't want to build the CompilerAdapter.
 
+  rm -rf ecj-bootstrap-tmp
   mkdir ecj-bootstrap-tmp
   unzip -qq -d ecj-bootstrap-tmp jdtcoresrc/src/ecj.zip
   rm -f ecj-bootstrap-tmp/org/eclipse/jdt/core/JDTCompilerAdapter.java
