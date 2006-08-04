@@ -10,6 +10,33 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20060805:
+AUTHOR:	sat@FreeBSD.org
+The following functional changes were made to bsd.sites.mk:
+
+  * MASTER_SITES variable can now contain special macros which are expanded into
+    traditional URL[:group] syntax and cause some convenient effects, e.g. set a
+    default M_S_SUBDIR.
+
+  * A macro is any space-delimited word in MASTER_SITES without a forward slash.
+
+  * If MASTER_SITE_<macro> is defined, then the macro is expanded to its value.
+
+  * Abbreviated macros are provided for extremely popular locations, e.g. CPAN
+    and SF. To avoid further obfuscation their unabbreviated equivalents should
+    be avoided.
+
+  * Popular macros can trigger M_S_SUBDIR to default to a predefined value, e.g.
+    ${PORTNAME:L} for SF and ${PORTNAME:C/-.*//} for CPAN.
+
+  * Abbreviations and M_S_SUBDIR defaults are defined by MASTER_SITES_ABBREVS
+    and MASTER_SITES_SUBDIRS, both set in bsd.sites.mk.
+
+  * If a macro belongs to a group (e.g. SF:source1), all the sites it expands
+    into also belong to the same group.
+
+  * Macros and traditional URL's can be mixed safely, their order stays intact.
+
 20060804:
 AUTHOR:	gabor@FreeBSD.org
 The following functional changes were made to bsd.*.mk and to 
