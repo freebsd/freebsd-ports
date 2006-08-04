@@ -1,0 +1,5 @@
+This is a camlp4 extension that expands brace expansions like a shell           
+does. See sample.ml for examples.
+
+Author:	Gerd Stolpmann
+WWW:	http://www.ocaml-programming.de/packages/
