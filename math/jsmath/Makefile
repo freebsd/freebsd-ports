@@ -20,12 +20,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 PLIST_SUB+=	WWWDIR=${WWWDIR:S,^${PREFIX}/,,}
 
-OPTIONS=	IMAGE_FONTS "Enable image fonts" On
+OPTIONS=	IMAGE_FONTS "Enable image fonts" On \
+		SPRITE_FONTS "Enable sprite fonts" Off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IMAGE_FONTS)
 RUN_DEPENDS+=	${WWWDIR}/fonts/cm-fonts/alpha/def.js:${PORTSDIR}/math/jsmath-fonts
+.endif
+.if defined(WITH_SPRITE_FONTS)
+RUN_DEPENDS+=	${WWWDIR}/fonts-sprite/cm-fonts/font.js:${PORTSDIR}/math/jsmath-fonts-sprite
 .endif
 
 do-install:
