@@ -15,8 +15,6 @@ PKGNAMESUFFIX=	+ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vi IMproved version 6 with embedded Ruby interpreter
 
-BROKEN=		does not build
-
 #EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 USE_RUBY=	yes
