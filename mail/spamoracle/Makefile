@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://cristal.inria.fr/~xleroy/software/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	procmail spam filter written in ML using Bayesian classification
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 MAN1=	spamoracle.1
 MAN5=	spamoracle.conf.5
 
-PLIST_FILES=	bin/spamoracle	
+PLIST_FILES=	bin/spamoracle
 .ifndef(NOPORTDOCS)
 PORTDOCS=	Changes README
 .endif
