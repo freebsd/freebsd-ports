@@ -128,7 +128,6 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 
 .if defined(WITH_OPENSSL)
 CFLAGS+=	-DHAVE_OPENSSL
-USE_OPENSSL=	yes
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
 PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_tls
