@@ -44,7 +44,7 @@ COMMENT=	Pattern Extraction and Recognition Language + Japanese patches
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -Duseshrplib \
+CONFIGURE_ARGS=		-sde -Dprefix=${TARGETDIR} -Duseshrplib \
 			-Dlibperl=libperl.so.${PERL_SHLIBVER}
 
 JPERL_VER=	5.005
@@ -120,22 +120,22 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 	strict.3 subs.3 vars.3 \
 	I18N::Japanese.3
 
-MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${JPERL_VERSION}/
 
 test:
 	@(cd ${WRKSRC}; make test)
 
 post-install:
-	@strip ${PREFIX}/bin/perl${JPERL_VERSION}
-	@strip ${PREFIX}/bin/sperl${JPERL_VERSION}
-	@${RM} ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
-	@${LN} -sf ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/perl
-	@${LN} -sf ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/perl5
-	@${LN} -fs ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/jperl5
-	@${LN} -fs ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/jperl${JPERL_VERSION}
-	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/suidperl
-	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/jsuidperl
-	@${LN} -fs ${PREFIX}/lib/perl5/${JPERL_VERSION}/${MACHINE_ARCH}-freebsd/CORE/libperl.so.${PERL_SHLIBVER} ${PREFIX}/lib/perl5/${JPERL_VERSION}/${MACHINE_ARCH}-freebsd/CORE/libperl.so
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@strip ${TARGETDIR}/bin/perl${JPERL_VERSION}
+	@strip ${TARGETDIR}/bin/sperl${JPERL_VERSION}
+	@${RM} ${TARGETDIR}/bin/perl ${TARGETDIR}/bin/suidperl
+	@${LN} -sf ${TARGETDIR}/bin/perl${JPERL_VERSION} ${TARGETDIR}/bin/perl
+	@${LN} -sf ${TARGETDIR}/bin/perl${JPERL_VERSION} ${TARGETDIR}/bin/perl5
+	@${LN} -fs ${TARGETDIR}/bin/perl${JPERL_VERSION} ${TARGETDIR}/bin/jperl5
+	@${LN} -fs ${TARGETDIR}/bin/perl${JPERL_VERSION} ${TARGETDIR}/bin/jperl${JPERL_VERSION}
+	@${LN} -fs ${TARGETDIR}/bin/sperl${JPERL_VERSION} ${TARGETDIR}/bin/suidperl
+	@${LN} -fs ${TARGETDIR}/bin/sperl${JPERL_VERSION} ${TARGETDIR}/bin/jsuidperl
+	@${LN} -fs ${TARGETDIR}/lib/perl5/${JPERL_VERSION}/${MACHINE_ARCH}-freebsd/CORE/libperl.so.${PERL_SHLIBVER} ${TARGETDIR}/lib/perl5/${JPERL_VERSION}/${MACHINE_ARCH}-freebsd/CORE/libperl.so
+	@PKG_PREFIX=${TARGETDIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
