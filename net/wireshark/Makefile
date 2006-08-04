@@ -10,10 +10,12 @@ PORTVERSION=	0.99.2
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
-DISTNAME=	wireshark-${PORTVERSION}
+DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
+
+DATADIR_NAME=	wireshark
 
 USE_PERL5_BUILD=yes
 USE_PYTHON_BUILD=yes
@@ -28,6 +30,7 @@ CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=/usr
 MAKE_ENV=	MIBDIRS="/dev/null"
 INSTALLS_SHLIB=	yes
+DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 
 .for x in capinfos editcap idl2wrs mergecap text2pcap
 .if defined(LITE)

@@ -9,6 +9,7 @@
 #
 
 PORTNAME=	tshark
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 
 MASTERDIR=	${.CURDIR}/../wireshark
