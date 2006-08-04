@@ -272,6 +272,7 @@
     SUBDIR += nmapfe
     SUBDIR += nofgpg
     SUBDIR += nss
+    SUBDIR += ocaml-cryptgps
     SUBDIR += ocaml-cryptokit
     SUBDIR += oidentd
     SUBDIR += oinkmaster
