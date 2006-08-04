@@ -280,6 +280,7 @@
     SUBDIR += xorg
     SUBDIR += xorg-clients
     SUBDIR += xorg-documents
+    SUBDIR += xorg-edit
     SUBDIR += xorg-libraries
     SUBDIR += xorg-manpages
     SUBDIR += xprompt
