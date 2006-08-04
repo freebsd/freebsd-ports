@@ -6,35 +6,37 @@
 #
 
 PORTNAME=	warsow
-PORTVERSION=	0.072a
+PORTVERSION=	0.12
 CATEGORIES=	games linux
-MASTER_SITES=	http://mirrors-av.club-internet.fr/pub/games/nofrag/warsow/ \
-		http://www.kpforum.net/games/
+MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
+		http://mirrors-av.club-internet.fr/pub/games/nofrag/warsow/ \
+		http://kenh.rxvt.net/ \
+		http://turkeyfiles.escapedturkey.net/warsow/versions/ \
+		http://www.gizmo.fi/warsow/ \
+		http://warsow.as-mirror.net/ \
+		http://wsw.surreal-xenotronic.com/ \
+		http://tmp.death-row.org/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}_0.072alpha_linux
+DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free multiplayer first person shooter with cartoon design
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
-		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libkrb5support.so.0:${PORTSDIR}/security/linux-krb5-libs \
+		${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl \
+		${LINUXBASE}/lib/libcom_err.so.2:${PORTSDIR}/sysutils/linux-e2fsprogs \
+		${DATADIR}/basewsw/data0.pk3:${PORTSDIR}/games/warsow-data
 
-ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-NO_BUILD=	yes
-RESTRICTED=	"Redistribution is limited, art is copyrighted"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-WARSOWDIR=	${PREFIX}/lib/${PORTNAME}
-WARSOWDIR_REL=	${WARSOWDIR:S,^${PREFIX}/,,}
-
+NO_BUILD=	yes
 SUB_FILES=	warsow-wrapper wsw_server-wrapper
-
-PLIST=		${WRKDIR}/pkg-plist
-PLIST_FILES=	bin/warsow bin/wsw_server \
-		${WARSOWDIR_REL}/warsow ${WARSOWDIR_REL}/wsw_server
-PORTDOCS=	*
+WARSOW_EXTRACT+=${PORTNAME}/basewsw/game${ARCHSUFFIX}.so
+WARSOW_DIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${WARSOW_EXTRACT}
 
 DESKTOP_ENTRIES="Warsow" \
 		"Shoot cartoon enemies" \
@@ -43,46 +45,69 @@ DESKTOP_ENTRIES="Warsow" \
 		"Application;Game;" \
 		false
 
+OPTIONS=	CLIENT	"Install client"	on \
+		SERVER	"Install dedicated server"	on \
+		NVIDIA	"Install support for nvidia"	off
+
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-.if defined(WITH_NVIDIA_GL)
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER)
+IGNORE=		requires at least one of CLIENT and SERVER options
+.endif
+
+.if defined(WITH_NVIDIA)
+.	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.	endif
 .else
+.	if !exists(${LINUXBASE}/usr/X11R6/lib/libGL.so.1)
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.	endif
 .endif
+
+.if ${ARCH} == "i386"
+ENGINESUFFIX=	""
+ARCHSUFFIX=	"_i386"
+PLIST_SUB+=	ENGINESUFFIX=${ENGINESUFFIX} \
+		ARCHSUFFIX=${ARCHSUFFIX}
+.elif ${ARCH} == "amd64"
+ENGINESUFFIX=	".x86_64"
+ARCHSUFFIX=	"_x86_64"
+PLIST_SUB+=	ENGINESUFFIX=${ENGINESUFFIX} \
+		ARCHSUFFIX=${ARCHSUFFIX}
+.endif
+
+.if !defined(WITHOUT_CLIENT)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
+		${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
+		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
+		${LINUXBASE}/usr/lib/libcurl.so.3:${PORTSDIR}/ftp/linux-curl
+PLIST_SUB+=	CLIENT=""
+WARSOW_TARGET+=	warsow
+WARSOW_EXTRACT+=${PORTNAME}/warsow${ENGINESUFFIX} \
+		${PORTNAME}/basewsw/ui${ARCHSUFFIX}.so \
+		${PORTNAME}/basewsw/cgame${ARCHSUFFIX}.so
 .else
-RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
+PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC}/basewsw -type d -empty -exec ${TOUCH} "{}/.keep_me" \;
-
-pre-install:
-	@${RM} -f ${PLIST}
-	@cd ${WRKSRC}/basewsw && \
-	${FIND} * -type f | ${SORT} \
-		| ${SED} -e 's|^|${WARSOWDIR_REL}/basewsw/|' >> ${PLIST} && \
-	${FIND} * -type d | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm ${WARSOWDIR_REL}/basewsw/|' >> ${PLIST}
+.if defined(WITH_SERVER)
+PLIST_SUB+=	SERVER=""
+WARSOW_TARGET+=	wsw_server
+WARSOW_EXTRACT+=${PORTNAME}/wsw_server${ENGINESUFFIX}
+.else
+PLIST_SUB+=	SERVER="@comment "
+.endif
 
 do-install:
-	cd ${WRKSRC}/basewsw && \
-	${FIND} * -type d -exec ${MKDIR} "${WARSOWDIR}/basewsw/{}" \; && \
-	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${WARSOWDIR}/basewsw/{}" \;
-.for f in warsow wsw_server
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${WARSOWDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${f}-wrapper ${PREFIX}/bin/${f}
+	${MKDIR} ${DATADIR}/basewsw
+	${INSTALL_DATA} ${WRKSRC}/basewsw/*.so ${DATADIR}/basewsw
+	${MKDIR} ${WARSOW_DIR}
+.for FILE in ${WARSOW_TARGET}
+	${BRANDELF} -t Linux ${WRKSRC}/${FILE}${ENGINESUFFIX}
+	${INSTALL_PROGRAM} ${WRKSRC}/${FILE}${ENGINESUFFIX} ${WARSOW_DIR}/${FILE}
+	${INSTALL_SCRIPT} ${WRKDIR}/${FILE}-wrapper ${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
 .endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.  for f in Shader* bots_navigation.txt changelog.txt contact.txt demoavi.txt \
-	entities.def linux_sound_sdl.txt quick* server_admin.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
-.  endfor
-.endif
-
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${LN} -s ${DATADIR}/* ${WARSOW_DIR}
 
 .include <bsd.port.post.mk>

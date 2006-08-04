@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd %%PREFIX%%/lib/warsow || exit 1
+cd %%PREFIX%%/lib/linux-warsow || exit 1
 exec ./wsw_server "$@"
