@@ -21,8 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		${SITE_PERL}/App/Info/Lib/Iconv.pm:${PORTSDIR}/devel/p5-App-Info
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		does not package
-
 PERL_CONFIGURE=	YES
 
 MAN3=		I18N::Charset.3
