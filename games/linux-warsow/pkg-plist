@@ -1,0 +1,11 @@
+%%CLIENT%%bin/linux-warsow
+%%SERVER%%bin/linux-wsw_server
+%%CLIENT%%lib/linux-warsow/warsow
+%%SERVER%%lib/linux-warsow/wsw_server
+lib/linux-warsow/basewsw
+%%CLIENT%%%%DATADIR%%/basewsw/cgame%%ARCHSUFFIX%%.so
+%%DATADIR%%/basewsw/game%%ARCHSUFFIX%%.so
+%%CLIENT%%%%DATADIR%%/basewsw/ui%%ARCHSUFFIX%%.so
+@dirrm lib/linux-warsow
+@dirrmtry %%DATADIR%%/basewsw
+@dirrmtry %%DATADIR%%
