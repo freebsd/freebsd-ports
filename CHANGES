@@ -19,7 +19,7 @@ Tools/scripts/security-check.awk:
     A package is installed under ${DESTDIR}${PREFIX} now and registered under
     ${DESTDIR}/var/db/pkg.
 
-  * TARGETDIR variable has been added for referencing ${DSTDIR}${PREFIX}.
+  * TARGETDIR variable has been added for referencing ${DESTDIR}${PREFIX}.
 
   * LOCALBASE, LINUXBASE and X11BASE variables point to the final destination
     now, LOCALBASE_REL, LINUXBASE_REL and X11BASE_REL can be used for the
@@ -29,7 +29,8 @@ Tools/scripts/security-check.awk:
 
   * OSVERSION is now determined from the userland, not from the kernel.
     Cross-compiling between releases is still not supported, but this
-    behavior is more correct for jails with different kernel version as well.
+    behavior is more correct for jails with differing userland from
+    the kernel version.
 
   * Add some sanity check for PREFIX and DESTDIR.  This can be skipped by
     defining IGNORE_PATH_CHECKS, but very discouraged.
