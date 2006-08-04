@@ -7,13 +7,14 @@
 
 PORTNAME=	safestr
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zork.org/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A string handling library for C
 
-LIB_DEPENDS=	xxl.1:${PORTSDIR}/devel/xxl:install
+LIB_DEPENDS=	xxl.2:${PORTSDIR}/devel/xxl:install
 
 CONFIGURE_ARGS+=	--with-xxl=${LOCALBASE}
 GNU_CONFIGURE=	yes
