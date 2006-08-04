@@ -7,7 +7,7 @@
 
 PORTNAME=	pipsecd
 PORTVERSION=	19991014
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 MASTER_SITES=	http://www.enst.fr/~beyssac/pipsec/ \
 		http://www.mindstep.com/pipsec/
