@@ -15,6 +15,8 @@ COMMENT=	Plugin-based instant messenger
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
+BROKEN=		does not deinstall cleanly
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
