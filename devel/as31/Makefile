@@ -7,7 +7,7 @@
 
 PORTNAME=	as31
 PORTVERSION=	2.0.b3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pjrc.com/tech/8051/tools/
 DISTNAME=	${PORTNAME}_beta3
@@ -27,10 +27,12 @@ USE_BISON=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
+MAN1=		as31.1
 PLIST_FILES=	bin/as31 %%X11%%bin/as31_gtk
 
 do-install:
-	@${INSTALL} ${WRKSRC}/as31 ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/as31 ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/as31.1 ${MANPREFIX}/man/man1
 .ifndef(WITHOUT_X11)
 	@${INSTALL} ${WRKSRC}/as31_gtk ${PREFIX}/bin
 .endif
