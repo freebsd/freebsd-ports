@@ -7,40 +7,36 @@
 #
 
 PORTNAME=	camomile
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	A comprehensive Unicode library for objective caml language
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_OCAML=	yes
+USE_OCAML_FINDLIB=yes
+USE_OCAML_LDCONFIG=yes
+GNU_CONFIGURE=	yes
 
-PKGDEINSTALL=	${PKGINSTALL}
+DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if ${OSVERSION} < 500000
 BROKEN=		Need working <wctype.h>
 .endif
 
-post-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/${PORTNAME}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove ${PORTNAME} 2>/dev/null || true" >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+post-extract:
+	@${CP} ${WRKSRC}/META ${WRKSRC}/META.in
+	@${REINPLACE_CMD} -E -e \
+		"s,([[:space:]]*)cp[[:space:]]*-f,\1\$${BSD_INSTALL_DATA}," \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
