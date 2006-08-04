@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fps
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/fps/ \
 		${MASTER_SITE_LOCAL}

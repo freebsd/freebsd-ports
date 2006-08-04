@@ -1,12 +1,21 @@
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/Char8.hi
+%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/Char8.p_hi
+@dirrm lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Base.hi
+%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Base.p_hi
 lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Char8.hi
 %%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Char8.p_hi
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Fusion.hi
+%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Fusion.p_hi
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy.hi
+%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy.p_hi
 @dirrm lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString
 lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString.hi
 %%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data/ByteString.p_hi
 @dirrm lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/Data
-lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/libHSfps-0.6.a
-lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/HSfps-0.6.o
-%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/libHSfps-0.6_p.a
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/libHSfps-%%FPS_VERSION%%.a
+lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/HSfps-%%FPS_VERSION%%.o
+%%PROFILE%%lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%/libHSfps-%%FPS_VERSION%%_p.a
 @dirrm lib/fps-%%FPS_VERSION%%/ghc-%%GHC_VERSION%%
 @dirrm lib/fps-%%FPS_VERSION%%
 @unexec %D/bin/ghc-pkg -r fps
