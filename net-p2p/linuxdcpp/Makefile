@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	0.0.1.20060726	#0.0.1.YYYYMMDD
+PORTVERSION=	0.0.1.20060803	#0.0.1.YYYYMMDD
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=mezz
@@ -19,10 +19,16 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	libglade2
 USE_SCONS=	yes
-SCONS_ARGS=	release=1
 
 DATADIR=	${PREFIX}/share/ldcpp
 DOCSDIR=	${PREFIX}/share/doc/ldcpp
+
+.if defined(WITH_DEBUG)
+SCONS_ARGS=	debug=1
+STRIP=
+.else
+SCONS_ARGS=	release=1
+.endif
 
 post-extract:
 	@${RM} ${WRKSRC}/linux/prefix.*
