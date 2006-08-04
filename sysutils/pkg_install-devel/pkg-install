@@ -13,9 +13,9 @@ TOOLS="add check create delete info sign update version"
 
 PREFIX=${PKG_PREFIX:-/usr/local}
 if [ "${PREFIX}" = "/usr" ]; then
-  MANPREFIX="${PREFIX}/share"
+  MANPREFIX="${TARGETDIR}/share"
 else
-  MANPREFIX="${PREFIX}"
+  MANPREFIX="${TARGETDIR}"
 fi
 
 case $2 in

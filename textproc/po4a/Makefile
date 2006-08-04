@@ -26,7 +26,7 @@ USE_PERL5=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 MAN3=		Locale::Po4a::TransTractor.3 \
  		Locale::Po4a::LaTeX.3 \
  		Locale::Po4a::Pod.3 \

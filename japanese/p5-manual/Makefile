@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 japanese manual
 
 NO_BUILD=	yes
-MANPREFIX=	${PREFIX}/man/ja
+MANPREFIX=	${TARGETDIR}/man/ja
 
 CAT1=		a2p.1 perl.1 perlapi.1 perlbook.1 perlbot.1 perlcall.1 \
 		perldata.1 perldebug.1 perldiag.1 perlembed.1 perlform.1 \

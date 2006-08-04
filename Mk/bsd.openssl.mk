@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.30 2006-05-25 15:17:34 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.31 2006-08-04 12:34:41 erwin Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -59,10 +59,10 @@ WITH_OPENSSL_BASE=yes
 .endif
 
 .if defined(WITH_OPENSSL_BASE)
-OPENSSLBASE=		/usr
-OPENSSLDIR=		/etc/ssl
+OPENSSLBASE=		${DESTDIR}/usr
+OPENSSLDIR=		${DESTDIR}/etc/ssl
 
-.if !exists(/usr/lib/libcrypto.so)
+.if !exists(${DESTDIR}/usr/lib/libcrypto.so)
 check-depends::
 	@${ECHO_CMD} "Dependency error: this port requires the OpenSSL library, which is part of"
 	@${ECHO_CMD} "the FreeBSD crypto distribution but not installed on your"
@@ -98,7 +98,7 @@ OPENSSL_CFLAGS+=	-DNO_IDEA
 .endif
 MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 .endif
-OPENSSLRPATH=		/usr/lib:${LOCALBASE}/lib
+OPENSSLRPATH=		${DESTDIR}/usr/lib:${LOCALBASE}/lib
 
 .else
 

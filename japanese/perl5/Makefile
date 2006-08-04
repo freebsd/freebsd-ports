@@ -120,7 +120,7 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 	strict.3 subs.3 vars.3 \
 	I18N::Japanese.3
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${JPERL_VERSION}/
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 
 test:
 	@(cd ${WRKSRC}; make test)

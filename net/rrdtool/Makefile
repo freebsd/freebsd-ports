@@ -36,7 +36,7 @@ MAN1=		bin_dec_hex.1 cdeftutorial.1 rpntutorial.1 rrd-beginners.1 \
 		rrdthreads.1 rrdtool.1 rrdtune.1 rrdtutorial.1 rrdupdate.1 \
 		rrdxport.1
 MAN3=		RRDp.3 RRDs.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 
 post-extract:
 .if defined(NOPORTDOCS)

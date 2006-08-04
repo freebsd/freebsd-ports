@@ -28,7 +28,7 @@ DOCS=		README INSTALL
 
 CONFLICTS=	metalist
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 MAN3=		FZ.3 Slash.3 Slash::Apache.3 Slash::Apache::Banlist.3 \
 		Slash::Apache::Log.3 Slash::Apache::User.3 \
 		Slash::Custom::Bulkmail.3 Slash::DB.3 Slash::DB::MySQL.3 \

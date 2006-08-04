@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 
 MAN1=		rmail.1zm vacation.1zm zmailer.1zm zmsh.1zm mboxpath.1zm mailq.1zm \
 		mailrm.1zm newaliases.1zm
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 MAN3=		ZMailer::mailq.3
 MAN5=		aliases.5zm mailq-m.5zm zdbases.conf.5zm zmailer.conf.5zm
 MAN8=		hold.8zm router.8zm scheduler.8zm sendmail.8zm sm.8zm smtp.8zm \

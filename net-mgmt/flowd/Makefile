@@ -24,7 +24,7 @@ FLOWD_USER?=	_flowd
 .if defined(WITH_PERL)
 USE_PERL5=	yes
 PLIST_SUB+=	WITH_PERL=""
-#MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+#MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 #MAN3=		Flowd.3
 .else
 PLIST_SUB+=	WITH_PERL="@comment "

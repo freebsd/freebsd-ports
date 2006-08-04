@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.netplex-tech.com/software/downloads/nocol/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network/Service monitoring software
 
-MANPREFIX=	${PREFIX}/nocol/
+MANPREFIX=	${TARGETDIR}/nocol/
 MAN1=		netconsole.1
 MAN3=		nocol-prog.3 perlnocol.3
 MAN8=		etherload.8 eventselect.8 genmon.8 multiping.8 noclogd.8 \

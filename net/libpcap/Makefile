@@ -25,7 +25,7 @@ USE_BISON=	yes
 .if defined(LIBPCAP_OVERWRITE_BASE)
 PREFIX=		/usr
 PKGNAMESUFFIX=	-overwrite-base
-MANPREFIX=	${PREFIX}/share
+MANPREFIX=	${TARGETDIR}/share
 CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
 PLIST_SUB+=	NOTBASE="@comment "
 PLIST_SUB+=	BASE=""

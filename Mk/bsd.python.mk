@@ -404,7 +404,7 @@ check-makevars::
 	@${ECHO} "Legal values are:	2.7 (default), 2.8, 2.9, 3.2"
 	@${FALSE}
 .endif
-ZOPEBASEDIR?=			${PREFIX}/${SZOPEBASEDIR}
+ZOPEBASEDIR?=			${TARGETDIR}/${SZOPEBASEDIR}
 ZOPEPRODUCTDIR?=		Products
 .endif
 

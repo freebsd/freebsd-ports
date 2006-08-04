@@ -63,7 +63,7 @@ OPTIONS=	X11 "build the X11 graphics library" on \
 
 .include <bsd.port.pre.mk>
 # Have to set this here and can't use ${DATADIR} or MLINKS get screwed up
-MANPREFIX=	${PREFIX}/share/metaocaml
+MANPREFIX=	${TARGETDIR}/share/metaocaml
 
 .if defined(WITH_X11)
 USE_XLIB=	yes

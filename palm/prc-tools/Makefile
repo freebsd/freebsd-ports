@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--enable-targets=m68k-palmos,arm-palmos \
 CONFIGURE_ENV=	PATH=${PATH}:${PREFIX}/pilot/bin
 MAKE_ENV=	PATH=${PATH}:${PREFIX}/pilot/bin
 
-MANPREFIX=	${PREFIX}/pilot
+MANPREFIX=	${TARGETDIR}/pilot
 MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1 \
 		m68k-palmos-addr2line.1 m68k-palmos-ar.1 \
 		m68k-palmos-as.1 m68k-palmos-c++filt.1 \

@@ -44,7 +44,7 @@ PLIST_SUB+=	OPML="@comment "
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 PLIST_SUB+=	OPML=""
 # opml2snow only have "" manpage
-_MANPAGES+=	${PREFIX}/man/man1/opml2snow.1
+_MANPAGES+=	${TARGETDIR}/man/man1/opml2snow.1
 .endif
 
 MAN1=		snownews.1
