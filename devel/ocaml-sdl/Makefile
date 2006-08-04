@@ -7,45 +7,46 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlsdl
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocamlsdl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	An OCaml interface to the SDL
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-		lablgl:${PORTSDIR}/graphics/ocaml-lablgl
+BUILD_DEPENDS=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 
-USE_SDL=	sdl ttf image mixer
-USE_AUTOTOOLS=	autoconf:259
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-findlib
 USE_GMAKE=	yes
+USE_OCAML=	yes
+USE_OCAML_FINDLIB=yes
+USE_OCAML_LDCONFIG=yes
+USE_SDL=	sdl ttf image mixer
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--with-findlib
 
-PKGDEINSTALL=	${PKGINSTALL}
+DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/{PORTNAME}
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+.if !defined(NOPORTDOCS)
+INFO=	ocamlsdl
 .endif
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/sdl ! -type d | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/${PORTNAME}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove ${PORTNAME} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir lib/ocaml 2>/dev/null || true" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/html/ ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/ocamlsdl.info ${PREFIX}/${INFO_PATH}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
