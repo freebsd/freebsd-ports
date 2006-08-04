@@ -17,6 +17,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lmd"
 
+SUB_FILES=	pkg-message
+SUB_LIST=	PREFIX=${PREFIX}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's| md5\.o | |g' ${WRKSRC}/Makefile.in
