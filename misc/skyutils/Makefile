@@ -13,6 +13,8 @@ MASTER_SITES=	http://zekiller.skytech.org/fichiers/
 MAINTAINER=	machiel_mastenbroek@hotmail.com
 COMMENT=	A library required by smssend (same author)
 
+BROKEN=		does not fetch
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOTOOLS=	autoconf:259 libtool:15
