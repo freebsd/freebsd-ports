@@ -720,6 +720,7 @@
     SUBDIR += wanderer
     SUBDIR += wargus
     SUBDIR += warsow
+    SUBDIR += warsow-data
     SUBDIR += warzone2100
     SUBDIR += wesnoth
     SUBDIR += wmeyes
