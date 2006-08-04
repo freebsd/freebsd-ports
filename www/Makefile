@@ -713,6 +713,7 @@
     SUBDIR += p5-Maypole-Component
     SUBDIR += p5-Net-Akismet
     SUBDIR += p5-Net-Flickr-API
+    SUBDIR += p5-Net-Flickr-RDF
     SUBDIR += p5-Net-eBay
     SUBDIR += p5-PHP-Session
     SUBDIR += p5-PLP
