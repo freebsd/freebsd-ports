@@ -19,6 +19,10 @@ COMMENT=	Threaded MySQL scanner
 
 LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client/
 
+BROKEN=		does not fetch
+DEPRECATED=	project has closed
+EXPIRATION_DATE=	2006-09-04
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/finger_mysql
 
