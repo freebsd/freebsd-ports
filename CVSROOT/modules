@@ -9347,6 +9347,7 @@ p5-Net-FTP-Recursive	ports/ftp/p5-Net-FTP-Recursive
 p5-Net-FTPServer	ports/ftp/p5-Net-FTPServer
 p5-Net-Finger	ports/net/p5-Net-Finger
 p5-Net-Flickr-API	ports/www/p5-Net-Flickr-API
+p5-Net-Flickr-RDF	ports/www/p5-Net-Flickr-RDF
 p5-Net-FreeDB	ports/audio/p5-Net-FreeDB
 p5-Net-Gnats	ports/net/p5-Net-Gnats
 p5-Net-Google	ports/net/p5-Net-Google
