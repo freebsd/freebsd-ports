@@ -1,0 +1,27 @@
+# New ports collection makefile for:	p5-DateTime-Calendar-Discordian
+# Date created:				04 August 2006
+# Whom:	      				Philip Paeps <philip@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	DateTime-Calendar-Discordian
+PORTVERSION=	0.9.2
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	DateTime
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	philip@FreeBSD.org
+COMMENT=	Perl extension for the Discordian Calendar
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/${PERL_ARCH}/DateTime/Locale.pm:${PORTSDIR}/devel/p5-DateTime-Locale \
+		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		DateTime::Calendar::Discordian.3
+
+.include <bsd.port.mk>
