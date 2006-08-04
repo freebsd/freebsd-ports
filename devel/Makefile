@@ -691,6 +691,7 @@
     SUBDIR += oaf
     SUBDIR += obby
     SUBDIR += obfuscatejs
+    SUBDIR += ocaml-camljava
     SUBDIR += ocaml-camomile
     SUBDIR += ocaml-classes
     SUBDIR += ocaml-equeue
