@@ -1,19 +1,10 @@
---- ./Makefile.in.orig	Mon Mar 13 13:17:35 2006
-+++ ./Makefile.in	Thu Jul 27 14:49:46 2006
-@@ -367,7 +367,7 @@
- install-without-ocamlfind:
- 	mkdir -p $(OCAMLLIB)
- 	cp -f $(INT) $(OCAMLLIB)
--	if [ $(OCAMLBEST) == opt ]; then cp -f public/*.cmx $(OCAMLLIB); fi
-+	if [ "$(OCAMLBEST)" = "opt" ]; then cp -f public/*.cmx $(OCAMLLIB); fi
- 	if [ -f camomile.cmi ]; then cp -f camomile.cmi $(OCAMLLIB); fi
- 	if [ -f camomile.cma ]; then cp -f camomile.cma $(OCAMLLIB); fi
- 	if [ -f camomile.cmxa ]; then cp -f camomile.cmxa $(OCAMLLIB); fi
+--- Makefile.in.orig	Tue Aug  1 16:47:03 2006
++++ Makefile.in	Tue Aug  1 16:47:47 2006
 @@ -378,7 +378,7 @@
  
  install-with-ocamlfind:
  	files= &&\
--	if [ $(OCAMLBEST) == opt ]; then files=public/*.cmx; fi && \
+-	if [ $(OCAMLBEST) = opt ]; then files=public/*.cmx; fi && \
 +	if [ "$(OCAMLBEST)" = "opt" ]; then files=public/*.cmx; fi && \
  	if [ -f camomile.cma ]; then files="camomile.* $$files"; fi&& \
  	if [ -f libcamomile.a ]; then files="libcamomile.a $$files"; fi && \
