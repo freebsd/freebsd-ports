@@ -16,4 +16,7 @@ higher-order routines and iters, exception handling, assertions,
 preconditions, postconditions, and class invariants.  Sather code can
 be compiled into C code and can efficiently link with C object files.
 
+Note: this version will work with non-threaded Tk only due to problems
+with GC and threads!
+
 WWW: http://www.gnu.org/software/sather/
