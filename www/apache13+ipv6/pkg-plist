@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.23 2005-02-11 20:43:04 clement Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.24 2006-08-04 06:26:23 sumikawa Exp $
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
@@ -199,6 +199,7 @@ share/doc/apache/index.html.fr
 share/doc/apache/index.html.html
 share/doc/apache/index.html.ja.jis
 share/doc/apache/install-tpf.html
+share/doc/apache/install-ztpf.html
 share/doc/apache/install.html.en
 share/doc/apache/install.html.es
 share/doc/apache/install.html.fr
@@ -662,7 +663,7 @@ www/icons/world2.png
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
 @unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
 @unexec rm -f %D/etc/apache/httpd.conf.bak 2> /dev/null || true
-@dirrm etc/apache
+@dirrmtry etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
