@@ -7591,6 +7591,7 @@ obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 obtuner		ports/x11-wm/obtuner
 ocaml		ports/lang/ocaml
+ocaml-camljava	ports/devel/ocaml-camljava
 ocaml-camomile	ports/devel/ocaml-camomile
 ocaml-classes	ports/devel/ocaml-classes
 ocaml-cryptokit	ports/security/ocaml-cryptokit
