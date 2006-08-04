@@ -8,6 +8,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.12.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -18,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src_sf,src_bk \
 		${PORTNAME}.pdf:doc_sf,doc_bk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	A daemon for controlling APC UPS
 
 USE_GETTEXT=	yes
@@ -38,11 +39,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 
 MAN8=		apcupsd.8
 
-OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off
-OPTIONS+=	CGI "Compile with CGI programms to show status" off
-OPTIONS+=	USB "Compile with USB Support (READ MANUAL!)" on
-OPTIONS+=	SNMP "Compile with SNMP Support (READ MANUAL!)" on
-OPTIONS+=	PTHREADS "Compile without pthreads support (READ MANUAL!)" off
+OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off \
+		CGI "Compile with CGI programms to show status" off \
+		USB "Compile with USB Support (READ MANUAL!)" on \
+		SNMP "Compile with SNMP Support (READ MANUAL!)" on
 
 IGNOREFILES=	${PORTNAME}.pdf
 PORTDOCS=	${PORTNAME}.pdf
@@ -72,18 +72,9 @@ LIB_DEPENDS+=		netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-snmp
 .endif
 
-.if !defined(WITH_PTHREADS)
-CONFIGURE_ARGS+=	--disable-pthreads
-.endif
-
-# Cause FreeBSD 3.X misses libmenu, libforms and libpanel (curses)
-.if ${OSVERSION} > 400000
 CONFIGURE_ARGS+=	--enable-powerflute --with-libwrap=yes
 CONFIGURE_ENV+=		LIBS="-lcurses -lmenu"
 PLIST_SUB+=		POWERFL=""
-.else
-PLIST_SUB+=		POWERFL="@comment "
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%PREFIX%|${PREFIX}|g" ${WRKSRC}/doc/apcupsd.man
