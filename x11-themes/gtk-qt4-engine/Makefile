@@ -6,28 +6,30 @@
 #
 
 PORTNAME=	gtk-qt-engine
-PORTVERSION=	0.6
-PORTREVISION=	5
+PORTVERSION=	0.7
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.freedesktop.org/~davidsansome/ \
+MASTER_SITES=	http://people.freedesktop.org/~davidsansome/ \
 		http://freebsd.ricin.com/ports/distfiles/
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT (KDE) themes
 
-LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
+LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3 \
+		bonoboui-2:${PORTSDIR}/x11-toolkits/libbonoboui
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gtk20
 USE_QT_VER=	3
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB=	GTK_VER=${GTK2_VERSION}
-PLIST_SUB+=	X11BASE=${X11BASE} LOCALBASE=${LOCALBASE}
+PLIST_SUB+=	X11BASE=${X11BASE}
 
 CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+
+OPTIONS=	BONOBOUI "With libbonoboui (recommended)" on
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|/share/themes/|/X11R6/share/themes/|" \
@@ -37,16 +39,11 @@ post-configure:
 	@${REINPLACE_CMD} -e "s|/usr/lib/menu|/tmp/menu|" \
 		${WRKSRC}/kcm_gtk/Makefile
 	@${REINPLACE_CMD} -e \
-		"s|/usr/share/applications|${LOCALBASE}/share/applications/kde|" \
+		"s|/usr/share/applications|${PREFIX}/share/applications/kde|g" \
 		${WRKSRC}/kcm_gtk/Makefile
 
 post-install:
 	@${RM} /tmp/menu/kcmgtk.menu
 	@if [ "`ls /tmp/menu`" = "" ]; then ${RMDIR} /tmp/menu; fi
-	@${INSTALL_DATA} ${WRKSRC}/kcm_gtk/kcm_kcmgtk.la ${LOCALBASE}/lib/kde3/
-	@${ECHO}
-	@${ECHO} "Use \"GTK styles and fonts\" from the KDE control center to set or"
-	@${ECHO} "change the GTK style. NOTE: this will overwrite your ~/.gtkrc-2.0."
-	@${ECHO}
 
 .include <bsd.port.mk>
