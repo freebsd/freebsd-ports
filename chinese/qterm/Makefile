@@ -7,9 +7,12 @@
 
 PORTNAME=	qterm
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.yuanjue.net/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMEPREFIX=	zh-
 
 MAINTAINER=	yuanjue@yuanjue.net
 COMMENT=	QTerm is a BBS client for BSD/Linux
@@ -36,6 +39,8 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
+	@${CHMOD} +w ${DATADIR}/qterm.cfg
+	@${CHMOD} +w ${DATADIR}/address.cfg
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
