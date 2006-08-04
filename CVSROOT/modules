@@ -5133,6 +5133,7 @@ jsdk		ports/java/jsdk
 jslice		ports/graphics/jslice
 jsmath		ports/math/jsmath
 jsmath-fonts	ports/math/jsmath-fonts
+jsmath-fonts-sprite	ports/math/jsmath-fonts-sprite
 json-c		ports/devel/json-c
 jspice3		ports/cad/jspice3
 jtans		ports/games/jtans
