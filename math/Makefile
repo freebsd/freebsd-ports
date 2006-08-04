@@ -243,6 +243,7 @@
     SUBDIR += p5-Statistics-LTU
     SUBDIR += p5-Statistics-Lite
     SUBDIR += p5-Statistics-OLS
+    SUBDIR += p5-Task-Math-Symbolic
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += pear-Structures_Graph
