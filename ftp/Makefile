@@ -48,6 +48,7 @@
     SUBDIR += kpum
     SUBDIR += kwebget
     SUBDIR += lftp
+    SUBDIR += linux-curl
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
     SUBDIR += lukemftp
