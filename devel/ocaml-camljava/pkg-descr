@@ -1,0 +1,19 @@
+This is a very preliminary release of CamlJava, an OCaml/Java
+interface based on the following schema:
+
+         Caml/C interface       JNI (Java Native Interface)
+  Caml <------------------> C <-----------------------------> Java
+
+Currently, CamlJava provides a low-level, weakly-typed OCaml interface
+very similar to the JNI.  Java object references are mapped to an
+abstract type, and various JNI-like operations are provided to allow
+Java method invocation, field access, and more.  A basic callback
+facility (allowing Java code to invoke methods on Caml objects) is
+also provided, although some stub Java code must be written by hand.
+
+In the future, a higher-level, strongly-typed interface will be
+provided, whereas Java classes are mapped directly to Caml classes.
+This raises fairly delicate type mapping issues, though, so don't hold
+your breath.
+
+WWW:	http://caml.inria.fr/
