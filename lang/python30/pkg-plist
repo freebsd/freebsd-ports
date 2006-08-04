@@ -1279,30 +1279,36 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/weakref.py
 %%PYTHON_LIBDIR%%/webbrowser.py
 %%PYTHON_LIBDIR%%/whichdb.py
+%%PYTHON_LIBDIR%%/wsgiref.egg-info
+%%PYTHON_LIBDIR%%/wsgiref/__init__.py
+%%PYTHON_LIBDIR%%/wsgiref/handlers.py
+%%PYTHON_LIBDIR%%/wsgiref/headers.py
+%%PYTHON_LIBDIR%%/wsgiref/simple_server.py
+%%PYTHON_LIBDIR%%/wsgiref/util.py
+%%PYTHON_LIBDIR%%/wsgiref/validate.py
 %%PYTHON_LIBDIR%%/xdrlib.py
-%%PYTHON_LIBDIR%%/xml.py
-%%PYTHON_LIBDIR%%/xmlcore/__init__.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/NodeFilter.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/__init__.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/domreg.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/expatbuilder.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/minicompat.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/minidom.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/pulldom.py
-%%PYTHON_LIBDIR%%/xmlcore/dom/xmlbuilder.py
-%%PYTHON_LIBDIR%%/xmlcore/etree/ElementInclude.py
-%%PYTHON_LIBDIR%%/xmlcore/etree/ElementPath.py
-%%PYTHON_LIBDIR%%/xmlcore/etree/ElementTree.py
-%%PYTHON_LIBDIR%%/xmlcore/etree/__init__.py
-%%PYTHON_LIBDIR%%/xmlcore/etree/cElementTree.py
-%%PYTHON_LIBDIR%%/xmlcore/parsers/__init__.py
-%%PYTHON_LIBDIR%%/xmlcore/parsers/expat.py
-%%PYTHON_LIBDIR%%/xmlcore/sax/__init__.py
-%%PYTHON_LIBDIR%%/xmlcore/sax/_exceptions.py
-%%PYTHON_LIBDIR%%/xmlcore/sax/expatreader.py
-%%PYTHON_LIBDIR%%/xmlcore/sax/handler.py
-%%PYTHON_LIBDIR%%/xmlcore/sax/saxutils.py
-%%PYTHON_LIBDIR%%/xmlcore/sax/xmlreader.py
+%%PYTHON_LIBDIR%%/xml/__init__.py
+%%PYTHON_LIBDIR%%/xml/dom/NodeFilter.py
+%%PYTHON_LIBDIR%%/xml/dom/__init__.py
+%%PYTHON_LIBDIR%%/xml/dom/domreg.py
+%%PYTHON_LIBDIR%%/xml/dom/expatbuilder.py
+%%PYTHON_LIBDIR%%/xml/dom/minicompat.py
+%%PYTHON_LIBDIR%%/xml/dom/minidom.py
+%%PYTHON_LIBDIR%%/xml/dom/pulldom.py
+%%PYTHON_LIBDIR%%/xml/dom/xmlbuilder.py
+%%PYTHON_LIBDIR%%/xml/etree/ElementInclude.py
+%%PYTHON_LIBDIR%%/xml/etree/ElementPath.py
+%%PYTHON_LIBDIR%%/xml/etree/ElementTree.py
+%%PYTHON_LIBDIR%%/xml/etree/__init__.py
+%%PYTHON_LIBDIR%%/xml/etree/cElementTree.py
+%%PYTHON_LIBDIR%%/xml/parsers/__init__.py
+%%PYTHON_LIBDIR%%/xml/parsers/expat.py
+%%PYTHON_LIBDIR%%/xml/sax/__init__.py
+%%PYTHON_LIBDIR%%/xml/sax/_exceptions.py
+%%PYTHON_LIBDIR%%/xml/sax/expatreader.py
+%%PYTHON_LIBDIR%%/xml/sax/handler.py
+%%PYTHON_LIBDIR%%/xml/sax/saxutils.py
+%%PYTHON_LIBDIR%%/xml/sax/xmlreader.py
 %%PYTHON_LIBDIR%%/xmllib.py
 %%PYTHON_LIBDIR%%/xmlrpclib.py
 %%PYTHON_LIBDIR%%/zipfile.py
@@ -1837,11 +1843,12 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/classes
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%/cgi
 %%PORTDOCS%%@dirrm share/examples/%%PYTHON_VERSION%%
-@dirrm %%PYTHON_LIBDIR%%/xmlcore/sax
-@dirrm %%PYTHON_LIBDIR%%/xmlcore/parsers
-@dirrm %%PYTHON_LIBDIR%%/xmlcore/etree
-@dirrm %%PYTHON_LIBDIR%%/xmlcore/dom
-@dirrm %%PYTHON_LIBDIR%%/xmlcore
+@dirrm %%PYTHON_LIBDIR%%/xml/sax
+@dirrm %%PYTHON_LIBDIR%%/xml/parsers
+@dirrm %%PYTHON_LIBDIR%%/xml/etree
+@dirrm %%PYTHON_LIBDIR%%/xml/dom
+@dirrm %%PYTHON_LIBDIR%%/xml
+@dirrm %%PYTHON_LIBDIR%%/wsgiref
 @dirrm %%PYTHON_LIBDIR%%/test/output
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
 @dirrm %%PYTHON_LIBDIR%%/test
@@ -1854,7 +1861,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd4
 @dirrm %%PYTHON_LIBDIR%%/logging
 @dirrm %%PYTHON_LIBDIR%%/lib-tk
-@dirrm %%PYTHON_LIBDIR%%/lib-old
 @dirrm %%PYTHON_LIBDIR%%/lib-dynload
 @dirrm %%PYTHON_LIBDIR%%/idlelib/Icons
 @dirrm %%PYTHON_LIBDIR%%/idlelib
