@@ -54,7 +54,7 @@ USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	pure_install
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 MAN3=		SDL.3		\
 		SDL::App.3	\
 		SDL::Cdrom.3	\

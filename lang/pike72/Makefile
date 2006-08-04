@@ -178,7 +178,7 @@ CONFIGURE_ARGS+= --without-libpdf
 
 USE_GMAKE=	yes
 MAN1=		hilfe.1 pike.1
-MAN1PREFIX=	${PREFIX}/pike/${PORTVERSION}
+MAN1PREFIX=	${TARGETDIR}/pike/${PORTVERSION}
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)

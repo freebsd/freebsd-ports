@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		dtd2db.pl.1
-MAN1PREFIX=	${PREFIX}
 MAN3=		XML::Handler::Dtd2DocBook.3
 
 .include <bsd.port.mk>

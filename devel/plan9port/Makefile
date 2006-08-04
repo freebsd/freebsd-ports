@@ -23,7 +23,7 @@ SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""
 ONLY_FOR_ARCHS=	i386
 
-PLAN9=		${PREFIX}/plan9
+PLAN9=		${TARGETDIR}/plan9
 MANPREFIX=	${PLAN9}
 
 MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \

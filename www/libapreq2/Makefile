@@ -32,7 +32,7 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--enable-perl-glue --with-perl=${PERL5}
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 MAN3=		APR::Request.3 \
 		APR::Request::Apache2.3 \
 		APR::Request::CGI.3 \

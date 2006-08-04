@@ -21,7 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		xmlpretty.1
-MAN1PREFIX=	${PREFIX}
 MAN3=		XML::Handler::YAWriter.3
 
 .include <bsd.port.mk>

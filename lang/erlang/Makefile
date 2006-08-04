@@ -92,10 +92,10 @@ PLIST_SUB+=	ERTS_VSN=${ERTS_VSN}
 
 NOMANCOMPRESS=	yes
 
-MAN1PREFIX=	${PREFIX}/lib/erlang
-MAN3PREFIX=	${PREFIX}/lib/erlang
-MAN4PREFIX=	${PREFIX}/lib/erlang
-MAN6PREFIX=	${PREFIX}/lib/erlang
+MAN1PREFIX=	${TARGETDIR}/lib/erlang
+MAN3PREFIX=	${TARGETDIR}/lib/erlang
+MAN4PREFIX=	${TARGETDIR}/lib/erlang
+MAN6PREFIX=	${TARGETDIR}/lib/erlang
 
 # Workaround for a ./configure recursion bug which leads to INSTALL being
 # set to "../../../../[...]"

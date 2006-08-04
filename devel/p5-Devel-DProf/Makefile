@@ -17,7 +17,6 @@ COMMENT=	A Perl code profiler
 
 PERL_CONFIGURE=	yes
 
-MAN1PREFIX=	${PREFIX}
 MAN1=		dprofpp.1
 MAN3=		Devel::DProf.3
 

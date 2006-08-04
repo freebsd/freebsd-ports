@@ -948,7 +948,7 @@ pre-everything::
 BASE_SUFFIX=	-overwrite-base
 PREFIX=		/usr
 OPENSSLDIR=	/etc/ssl
-MANPREFIX=	${PREFIX}/openssl
+MANPREFIX=	${TARGETDIR}/openssl
 PLIST_SUB+=	MANDIR=""
 PLIST_SUB+=	NOBASE="@comment "
 .else
@@ -963,7 +963,7 @@ pre-everything::
 
 .endif
 OPENSSLDIR=	${PREFIX}/openssl
-MANPREFIX=	${PREFIX}
+MANPREFIX=	${TARGETDIR}
 PLIST_SUB+=	MANDIR="@comment "
 PLIST_SUB+=	NOBASE=""
 .endif

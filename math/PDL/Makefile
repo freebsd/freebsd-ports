@@ -73,7 +73,7 @@ test:
 # autogen plist
 post-install:
 	@(cd ${WRKSRC}/blib/man3 ; \
-	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/," \
+	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX:S,^${TARGETDIR}/,,}/man/man3/," \
 		>> ${TMPPLIST} ; \
 	  cd ${WRKSRC}/blib/man1 ; \
 	  ${FIND} *.1 | ${SED} "s,^,man/man1/," >> ${TMPPLIST})
