@@ -6298,6 +6298,7 @@ linux-nwserver	ports/games/linux-nwserver
 linux-nx-client	ports/net/linux-nx-client
 linux-openal	ports/audio/linux-openal
 linux-openmotif	ports/x11-toolkits/linux-openmotif
+linux-openssl	ports/security/linux-openssl
 linux-opera	ports/www/linux-opera
 linux-oracle-instantclient-basic	ports/databases/linux-oracle-instantclient-basic
 linux-oracle-instantclient-sdk	ports/databases/linux-oracle-instantclient-sdk
