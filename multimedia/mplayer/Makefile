@@ -84,6 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.8
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -173,6 +174,10 @@ TOOLFILES=	calcbpp.pl countquant.pl dvd2divxscript.pl \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=	does not build on 4.x. Patches are welcome
+.endif
+
 #Building of vidix dependent shared libs is only possible
 #on i386 at the moment.
 .if ${ARCH} == "i386"
@@ -245,12 +250,6 @@ USE_GCC=	3.4
 
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gui
-
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
-.else
-PKGNAMESUFFIX=	-gtk2
-.endif
 
 .if defined(WITH_LANG)
 WITH_LANG=	""
@@ -377,11 +376,6 @@ CONFIGURE_ARGS+=	--disable-x264
 
 .if !defined(WITHOUT_ESOUND)
 USE_GNOME+=	esound
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
-.else
-PKGNAMESUFFIX=	-esound
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
@@ -397,7 +391,12 @@ CONFIGURE_ARGS+=	--enable-real \
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .else
+.if !defined(WITHOUT_WIN32)
+CONFIGURE_ARGS+=	--enable-real \
+			--with-reallibdir=${LOCALBASE}/lib/win32
+.else
 CONFIGURE_ARGS+=	--disable-real
+.endif
 .endif
 
 .if !defined(WITHOUT_LIVEMEDIA)
