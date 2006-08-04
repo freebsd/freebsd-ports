@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netclient
-PORTVERSION=	0.91.1
+PORTVERSION=	0.92.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
@@ -14,27 +14,51 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A HTTP 1.0/1.1, FTP and Telnet client for OCaml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-		${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
-		${OCAML_SITELIBDIR}/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${SA_DIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
+		${SA_DIR}/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
+RUN_DEPENDS=	${SA_DIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
+		${SA_DIR}/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
 
 USE_GMAKE=	yes
+USE_OCAML=	yes
+USE_OCAML_FINDLIB=yes
 
 ALL_TARGET=	all opt
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
-OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
+
+post-extract:
+# For nonstandard prefixes
+.if !exists(${OCAMLFIND_DESTDIR})
+	${MKDIR} ${OCAMLFIND_DESTDIR}
+.endif
+.if !exists(${OCAMLFIND_LDCONF})
+	${TOUCH} ${OCAMLFIND_LDCONF}
+.endif
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
