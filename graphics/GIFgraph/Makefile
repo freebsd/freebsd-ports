@@ -18,6 +18,7 @@ COMMENT=	A Perl package to generate PNG charts
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
+BROKEN=		does not build
 DEPRECATED=	This module is simply a wrapper around GD::Graph and is deprecated.  One should simply use graphics/p5-GD-Graph
 EXPIRATION_DATE=	2007-01-01
 
