@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		ufraw
-PORTVERSION=		0.8.1
+PORTVERSION=		0.9
 CATEGORIES=		graphics gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		markm@FreeBSD.org
+MAINTAINER=		infofarmer@FreeBSD.org
 COMMENT=		Read and manipulate raw images from digital cameras
 
 BUILD_DEPENDS=		gimp:${PORTSDIR}/graphics/gimp
