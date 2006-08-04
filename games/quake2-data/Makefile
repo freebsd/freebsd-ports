@@ -70,7 +70,7 @@ do-extract:
 		${DISTDIR}/${Q2_UPDATE} baseq2/* -x *.dll
 .if defined(WITH_MANUAL)
 	@${UNZIP_CMD} -ajq -d ${WRKDIR}/DOCS \
-		${DISTDIR}/${Q2_DEMO} Install/Data/DOCS/\*
+		${DISTDIR}/${Q2_DEMO} Install/Data/DOCS/*
 .endif
 .if defined(WITH_SHAREWARE)
 	@${RM} ${WRKDIR}/baseq2/pak[^0].pak
