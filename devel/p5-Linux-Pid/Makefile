@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Get native PID and the PPID
 
+BUILD_DEPENDS=	p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Linux::Pid.3
