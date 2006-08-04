@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autossh
-PORTVERSION=	1.4
+PORTVERSION=	1.4a
 CATEGORIES=	security
 MASTER_SITES=	http://www.harding.motd.ca/autossh/
 EXTRACT_SUFX=	.tgz
@@ -24,11 +24,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,cp autossh ,$$\{BSD_INSTALL_PROGRAM\} autossh ,g' ${WRKSRC}/${MAKEFILE}.in
 	@${REINPLACE_CMD} -e 's,cp ,$$\{BSD_INSTALL_DATA\} ,g' ${WRKSRC}/${MAKEFILE}.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -Ee 's,(.*doc.*),#\1,g' ${WRKSRC}/${MAKEFILE}.in
+	@${REINPLACE_CMD} -Ee '/doc/d' ${WRKSRC}/${MAKEFILE}.in
 .endif
-
-post-configure:
-	@${REINPLACE_CMD} -e 's,exec_prefix,EXEC_PREFIX,g' ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e 's,prefix,PREFIX,g' ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
