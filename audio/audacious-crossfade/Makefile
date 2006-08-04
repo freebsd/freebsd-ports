@@ -5,8 +5,10 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 APP=		audacious
-LIB_DEPENDS=	audacious.2:${PORTSDIR}/multimedia/audacious
+LIB_DEPENDS=	audacious.3:${PORTSDIR}/multimedia/audacious
 
 MASTERDIR=	${.CURDIR}/../xmms-crossfade
 
