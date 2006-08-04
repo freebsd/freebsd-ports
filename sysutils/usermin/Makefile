@@ -21,6 +21,8 @@ COMMENT=	Web-based interface for performing some user tasks
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 
+BROKEN=		does not fetch
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	usermin.sh
