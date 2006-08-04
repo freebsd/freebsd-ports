@@ -13,6 +13,7 @@
 
 PORTNAME=	lire
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
@@ -69,6 +70,7 @@ MAN1=		\
 		lr_log2mail.1 \
 		lr_log2report.1 \
 		lr_mail.1 \
+		lr_processmail.1 \
 		lr_rawmail2mail.1 \
 		lr_report_cfg2xml.1 \
 		lr_run.1 \
@@ -144,6 +146,7 @@ MAN3=		\
 		Lire::Config::XMLSpecListSpec.3pm \
 		Lire::Count.3pm \
 		Lire::DataTypes.3pm \
+		Lire::DerivedSchema.3pm \
 		Lire::DlfAnalyser.3pm \
 		Lire::DlfAnalyserProcess.3pm \
 		Lire::DlfCategoriser.3pm \
@@ -156,7 +159,10 @@ MAN3=		\
 		Lire::DlfStream.3pm \
 		Lire::DocBookParser.3pm \
 		Lire::Error.3pm \
+		Lire::ExtendedSchema.3pm \
 		Lire::Field.3pm \
+		Lire::FilterExpr.3pm \
+		Lire::FilterSpec.3pm \
 		Lire::Firewall.3pm \
 		Lire::Firewall::IpchainsDlfConverter.3pm \
 		Lire::Firewall::IpfilterDlfConverter.3pm \
@@ -185,6 +191,7 @@ MAN3=		\
 		Lire::OutputFormats::Text.3pm \
 		Lire::OutputFormats::XML.3pm \
 		Lire::OutputJob.3pm \
+		Lire::Param.3pm \
 		Lire::Plugin.3pm \
 		Lire::PluginManager.3pm \
 		Lire::Program.3pm \
@@ -200,6 +207,7 @@ MAN3=		\
 		Lire::Report::Section.3pm \
 		Lire::Report::Subreport.3pm \
 		Lire::Report::TableInfo.3pm \
+		Lire::ReportConfig.3pm \
 		Lire::ReportJob.3pm \
 		Lire::ReportOperator.3pm \
 		Lire::ReportParser.3pm \
@@ -213,6 +221,8 @@ MAN3=		\
 		Lire::ReportParser::ReportBuilder.3pm \
 		Lire::ReportParser::RowColHandler.3pm \
 		Lire::ReportSchedule.3pm \
+		Lire::ReportSection.3pm \
+		Lire::ReportSpec.3pm \
 		Lire::SQLExt::LrCountUniq.3pm \
 		Lire::SQLExt::LrFirst.3pm \
 		Lire::SQLExt::LrLast.3pm \
@@ -245,6 +255,7 @@ MAN3=		\
 		Lire::WELF.3pm \
 		Lire::WeekCalculator.3pm \
 		Lire::XMLParser.3pm \
+		Lire::XMLSpecContainer.3pm \
 		Lire::XMLSpecI18N.3pm \
 		Lire::XMLSpecParser.3pm
 
