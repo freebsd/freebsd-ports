@@ -12,7 +12,7 @@
 +## 2001-10-18 (matuska)
 +##   modifications to suit FreeBSD UT installation
 +
-+INSTALL_DIR="%%LINUXBASE%%/%%UTDIR%%/System"
++INSTALL_DIR="%%UTDIR%%/System"
 +
 +# set three possible locations for the java executable
 +
@@ -37,7 +37,7 @@
  NGHOME1="../NetGamesUSA.com/ngStats"
  NGHOME2="$INSTALL_DIR/../NetGamesUSA.com/ngStats"
 -NGHOME3="$HOME/UnrealTournament/NetGamesUSA.com/ngStats"
-+NGHOME3="%%LINUXBASE%%/%%UTDIR%/NetGamesUSA.com/ngStats"
++NGHOME3="%%UTDIR%%/NetGamesUSA.com/ngStats"
  
  # try each of the above to see if they work
  
