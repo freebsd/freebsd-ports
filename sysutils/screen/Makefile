@@ -40,6 +40,11 @@ CFLAGS+=	-DCOLORS256
 CFLAGS+=	-DNONETHACK
 .endif
 
+# treat CJK ambiguous characters as full width via option "cjkwidth"
+.if defined(WITH_CJK)
+EXTRA_PATCHES+=	${.CURDIR}/files/opt-cjkwidth
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
 
