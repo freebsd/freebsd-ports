@@ -7,6 +7,7 @@
 
 PORTNAME=	gsoap
 PORTVERSION=	2.7.8c
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gsoap2
@@ -21,5 +22,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.7
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/> (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.c
+	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/> (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.cpp
 
 .include <bsd.port.mk>
