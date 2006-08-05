@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -68,6 +68,6 @@ do-install:
 .endfor
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${.CURDIR}/pkg-message
 
 .include <bsd.port.mk>
