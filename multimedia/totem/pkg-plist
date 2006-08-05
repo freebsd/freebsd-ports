@@ -15,7 +15,6 @@ lib/libtotem-plparser.so.2
 lib/nautilus/extensions-1.0/libtotem-properties-page.a
 lib/nautilus/extensions-1.0/libtotem-properties-page.la
 lib/nautilus/extensions-1.0/libtotem-properties-page.so
-lib/nautilus/extensions-1.0/libtotem-properties-page.so.0
 libdata/pkgconfig/totem-plparser.pc
 %%MOZILLA%%libexec/totem-mozilla-viewer
 share/gnome/applications/totem.desktop
@@ -140,17 +139,19 @@ share/locale/id/LC_MESSAGES/totem.mo
 share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
+share/locale/ka/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/ku/LC_MESSAGES/totem.mo
 share/locale/lt/LC_MESSAGES/totem.mo
 share/locale/lv/LC_MESSAGES/totem.mo
+share/locale/mg/LC_MESSAGES/totem.mo
 share/locale/mk/LC_MESSAGES/totem.mo
 share/locale/ml/LC_MESSAGES/totem.mo
 share/locale/ms/LC_MESSAGES/totem.mo
 share/locale/nb/LC_MESSAGES/totem.mo
 share/locale/ne/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
-share/locale/no/LC_MESSAGES/totem.mo
+share/locale/nn/LC_MESSAGES/totem.mo
 share/locale/pa/LC_MESSAGES/totem.mo
 share/locale/pl/LC_MESSAGES/totem.mo
 share/locale/pt/LC_MESSAGES/totem.mo
@@ -174,6 +175,8 @@ share/locale/xh/LC_MESSAGES/totem.mo
 share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_HK/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrm share/gnome/totem
