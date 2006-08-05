@@ -93,9 +93,10 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 
 .if defined(WITH_GNUGCJ)
 GCCVER=41
-BUILD_DEPENDS+=	${PREFIX}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
-BUILD_DEPENDS+= gjdoc:${PORTSDIR}/java/gjdoc
-RUN_DEPENDS+=	${PREFIX}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
+BUILD_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj/bin/java:${PORTSDIR}/java/java-gcj-compat
+RUN_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
+RUN_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj/bin/java:${PORTSDIR}/java/java-gcj-compat
 .else
 .if ${ARCH} == amd64
 GCCVER=41
@@ -149,14 +150,14 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 .if defined(WITH_GNUGCJ)
-CONFIGURE_ENV+=      PATH="${WRKDIR}/gnugcj/bin:${PATH}"
+CONFIGURE_ENV+=      PATH="${LOCALBASE}/lib/jvm/java-gcj/bin:${PATH}"
 .endif
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL
 #workarounds
 CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
 CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
-.if ${ARCH} == amd64
+.if ${ARCH} == amd64 || defined(WITH_GNUGCJ)
 WITHOUT_MOZILLA=	yes
 .endif
 .if (${GCCVER} == 41)
@@ -167,7 +168,7 @@ CONFIGURE_ARGS+=       --with-system-boost=yes #i58343#
 EXTRA_PATCHES+=	${FILESDIR}/fbsd4-workaroundpatch
 .endif
 .if defined(WITH_GNUGCJ)
-EXTRA_PATCHES+=	${FILESDIR}/cws-maho1.diff ${FILESDIR}/gcj-fbsdworkaround
+EXTRA_PATCHES+=	${FILESDIR}/gcj-fbsdworkaround
 .endif
 
 #.if defined(WITH_TTF_BYTECODE_ENABLED)
@@ -198,13 +199,6 @@ pre-everything::
 post-extract:
 .if defined(WITH_GNUGCJ)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
-	@${RM} -Rf ${WRKDIR}/gnugcj
-	@${MKDIR} ${WRKDIR}/gnugcj/bin
-	@${LN} -s ${LOCALBASE}/bin/gcj41 ${WRKDIR}/gnugcj/bin/gcj
-	@${LN} -s ${LOCALBASE}/bin/gij41 ${WRKDIR}/gnugcj/bin/gij
-	@${LN} -s ${LOCALBASE}/bin/gjdoc ${WRKDIR}/gnugcj/bin/javadoc  # #iXXXXX# xmerge doesn't support gjdoc
-	@${LN} -s ${LOCALBASE}/bin/fastjar41 ${WRKDIR}/gnugcj/bin/fastjar
-	@${LN} -s ${LOCALBASE}/bin/gcj-dbtool41 ${WRKDIR}/gnugcj/bin/gcj-dbtool
 .endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
