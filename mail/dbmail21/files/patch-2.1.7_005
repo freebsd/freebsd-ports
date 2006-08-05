@@ -1,0 +1,14 @@
+Index: modules/sortsieve.c
+===================================================================
+--- modules/sortsieve.c	(revision 2215)
++++ modules/sortsieve.c	(revision 2216)
+@@ -222,6 +222,9 @@
+ 		m->result->cancelkeep = 1;
+ 	}
+ 
++	if (msgflags)
++		g_free(msgflasgs);
++
+ 	return SIEVE2_OK;
+ }
+ 

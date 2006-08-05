@@ -1,0 +1,44 @@
+Index: modules/sortsieve.c
+===================================================================
+--- modules/sortsieve.c	(revision 2211)
++++ modules/sortsieve.c	(revision 2212)
+@@ -198,11 +198,10 @@
+ 	}
+ 
+ 	/* If there were any imapflags, set them. */
++	memset(&msgflags, 0, IMAP_NFLAGS * sizeof(int));
+ 	if (flags) {
+ 		int i, j;
+ 
+-		memset(&msgflags, 0, IMAP_NFLAGS * sizeof(int));
+-
+ 		for (i = 0; flags[i]; i++) { // Loop through all script/user-specified flags.
+ 			for (j = 0; imap_flag_desc[j]; i++) { // Find the ones we support.
+ 				if (g_strcasestr(imap_flag_desc[j], flags[i])) {
+@@ -684,8 +683,10 @@
+ void sort_free_result(sort_result_t *result)
+ {
+ 	if (result == NULL) return;
+-	g_string_free(result->errormsg, TRUE);
+-	g_string_free(result->rejectmsg, TRUE);
++	if (result->errormsg != NULL) 
++		g_string_free(result->errormsg, TRUE);
++	if (result->rejectmsg != NULL) 
++		g_string_free(result->rejectmsg, TRUE);
+ 	dm_free(result);
+ }
+ 
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 2211)
++++ ChangeLog	(revision 2212)
+@@ -1,3 +1,9 @@
++2006-07-26  Aaron Stone  <aaron@serendipity.cx>
++
++	* modules/sortsieve.c:
++	Accepted patch from maenaka (closes bug #383) to clear the IMAP flags
++	if none are given by the Sieve script.
++
+ 2006-07-25  Paul J Stevens <paul@nfg.nl>
+ 
+ 	* misc.c:

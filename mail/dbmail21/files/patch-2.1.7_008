@@ -1,0 +1,22 @@
+Index: modules/sortsieve.c
+===================================================================
+--- modules/sortsieve.c	(revision 2218)
++++ modules/sortsieve.c	(revision 2219)
+@@ -200,7 +200,7 @@
+ 	/* If there were any imapflags, set them. */
+ 	if (flags) {
+ 		int i, j;
+-		msgflags = g_new0(int, IMAP_NFLASGS);
++		msgflags = g_new0(int, IMAP_NFLAGS);
+ 
+ 		for (i = 0; flags[i]; i++) { // Loop through all script/user-specified flags.
+ 			for (j = 0; imap_flag_desc[j]; i++) { // Find the ones we support.
+@@ -223,7 +223,7 @@
+ 	}
+ 
+ 	if (msgflags)
+-		g_free(msgflasgs);
++		g_free(msgflags);
+ 
+ 	return SIEVE2_OK;
+ }
