@@ -1,5 +1,5 @@
---- eggdrop1.6.17/src/eggdrop.h.orig	Mon Jun  2 11:39:45 2003
-+++ eggdrop1.6.17/src/eggdrop.h	Mon Jun  2 11:40:17 2003
+--- src/eggdrop.h.orig	Mon Jun  2 11:39:45 2003
++++ src/eggdrop.h	Mon Jun  2 11:40:17 2003
 @@ -77,7 +77,7 @@
  /* Language stuff */
 -#define LANGDIR  "./language" /* language file directory                   */

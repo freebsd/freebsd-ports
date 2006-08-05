@@ -173,14 +173,14 @@ lib/eggdrop/wire.so
 %%PORTDOCS%%%%DOCSDIR%%/settings/mod.uptime
 %%PORTDOCS%%%%DOCSDIR%%/settings/mod.wire
 %%PORTDOCS%%%%DOCSDIR%%/settings/mod.woobie
-@dirrm lib/eggdrop
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/settings
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/text
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%/help/set
 @dirrm %%DATADIR%%/help/msg
 @dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/language
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/text
 @dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/settings
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/eggdrop
