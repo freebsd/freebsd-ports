@@ -5198,6 +5198,7 @@ kb2mb2		ports/x11/kb2mb2
 kbarcode	ports/graphics/kbarcode
 kbear		ports/ftp/kbear
 kbedic		ports/textproc/kbedic
+kbfx		ports/misc/kbfx
 kbibtex		ports/databases/kbibtex
 kbiff		ports/mail/kbiff
 kbilliards	ports/games/kbilliards
