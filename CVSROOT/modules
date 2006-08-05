@@ -11441,6 +11441,7 @@ publicfile	ports/www/publicfile
 puf		ports/ftp/puf
 puff		ports/editors/puff
 pugs		ports/lang/pugs
+punbb		ports/www/punbb
 pup		ports/print/pup
 pure-emacs20	ports/irc/pure-emacs20
 pure-emacs21	ports/irc/pure-emacs21
