@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	Email-FolderType
-PORTVERSION=	0.8
+PORTVERSION=	0.8.10
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Email
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.810
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Determine the type of a mail folder
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Module-Pluggable>0:${PORTSDIR}/devel/p5-Module-Pluggable
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Email::FolderType.3 \
 		Email::FolderType::Ezmlm.3 \
