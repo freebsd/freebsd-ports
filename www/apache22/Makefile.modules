@@ -97,8 +97,8 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 .if defined(WITH_MYSQL)
 USE_MYSQL=	YES
 CONFIGURE_ARGS+= --with-mysql=${LOCALBASE}
-CFLAGS+=	-I${LOCALBASE}/include/mysql ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include/mysql
+LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 CONFIGURE_ENV+=	LIBS="${LIBS}"
 WITH_THREADS=	YES
 .endif
@@ -120,6 +120,9 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 
 .if !defined(WITH_THREADS)
 WITHOUT_MODULES+=	mem_cache
+.else
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
