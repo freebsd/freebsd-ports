@@ -1,7 +1,7 @@
---- config.mk.orig	Fri Jul 21 21:14:42 2006
-+++ config.mk	Sat Jul 29 21:01:26 2006
-@@ -1,11 +1,11 @@
- # Customize to fit your system
+--- config.mk.orig	Wed Aug  2 18:59:04 2006
++++ config.mk	Wed Aug  2 19:00:14 2006
+@@ -4,21 +4,21 @@
+ # Customize below to fit your system
  
  # paths
 -PREFIX = /usr/local
@@ -14,21 +14,17 @@
 +X11INC = $(X11BASE)/include
 +X11LIB = $(X11BASE)/lib
  
- VERSION = 0.5
+ # includes and libs
+ INCS = -I/usr/lib -I${X11INC}
+ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
  
-@@ -13,7 +13,7 @@
- LIBS = -L${PREFIX}/lib -L/usr/lib -lc -L${X11LIB} -lX11
- 
- # Linux/BSD
--CFLAGS = -O3 -I. -I${PREFIX}/include -I/usr/include -I${X11INC} \
-+CFLAGS+= -I. -I${PREFIX}/include -I/usr/include -I${X11INC} \
- 	-DVERSION=\"${VERSION}\"
+ # flags
+-CFLAGS = -O3 ${INCS} -DVERSION=\"${VERSION}\"
++CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
  LDFLAGS = ${LIBS}
- #CFLAGS = -g -Wall -O2 -I. -I${PREFIX}/include -I/usr/include -I${X11INC} \
-@@ -26,5 +26,5 @@
- #LIBS += -lnsl -lsocket
+ #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = -g ${LIBS}
  
- AR = ar cr
+ # compiler
 -CC = cc
 +CC?= cc
- RANLIB = ranlib
