@@ -161,6 +161,7 @@
     SUBDIR += libnewmail
     SUBDIR += libpst
     SUBDIR += librfc822
+    SUBDIR += libsieve
     SUBDIR += libspf
     SUBDIR += libspf-alt
     SUBDIR += libspf2
