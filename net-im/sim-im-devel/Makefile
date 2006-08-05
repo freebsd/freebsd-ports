@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sim-im-devel
-PORTVERSION=	0.9.5.456
+PORTVERSION=	0.9.5.970
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/
 
@@ -15,7 +15,7 @@ COMMENT=	Plugin-based instant messenger
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-BROKEN=		does not deinstall cleanly
+CONFLICTS=	simicq-[0-9]* sim-im-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -25,13 +25,12 @@ USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 OPTIONS=	KDE "Enable KDE support" off \
 		DEBUG "Enable debug" on
