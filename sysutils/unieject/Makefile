@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 MAN1=	unieject.1
 MAN5=	unieject.conf.5
 
+CONFIGURE_ENV=	CONFUSE_CFLAGS="-I${LOCALBASE}/include" \
+		CONFUSE_LIBS="-L${LOCALBASE}/lib -lconfuse"
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
 		--with-libpopt-prefix=${LOCALBASE} --mandir=${MANPREFIX}/man
 
