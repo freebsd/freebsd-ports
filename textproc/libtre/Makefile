@@ -9,11 +9,15 @@
 PORTNAME=	libtre
 PORTVERSION=	0.7.4
 CATEGORIES=	textproc
-MASTER_SITES=	http://laurikari.net/tre/
+MASTER_SITES=	http://laurikari.net/tre/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	tre-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
+
+CONFLICTS=	glimpse-4*	# agrep(1)
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
