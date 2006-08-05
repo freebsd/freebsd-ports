@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat Aug  5 11:56:42 2006
++++ Makefile	Sat Aug  5 11:56:58 2006
+@@ -1,5 +1,7 @@
+ .include "local.mk"
+ 
++BINDIR=	${PREFIX}/bin
++
+ # Stolen from bsd.port.mk
+ # Get __FreeBSD_version
+ .if !defined(OSVERSION)
