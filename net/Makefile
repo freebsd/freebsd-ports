@@ -538,6 +538,7 @@
     SUBDIR += pear-Net_NNTP
     SUBDIR += pear-Net_POP3
     SUBDIR += pear-Net_Ping
+    SUBDIR += pear-Net_SMS
     SUBDIR += pear-Net_SMTP
     SUBDIR += pear-Net_Server
     SUBDIR += pear-Net_Sieve
