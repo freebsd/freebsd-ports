@@ -17,6 +17,7 @@ BUILD_DEPENDS=	svm_learn:${PORTSDIR}/science/svmlight
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_PERL5_BUILD=yes
 DOC_FILES=	feature.png feature2.png feature3.png \
 		feature4.png feature5.png index.html \
 		yamcha.html yamcha.css
