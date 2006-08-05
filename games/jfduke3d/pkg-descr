@@ -1,10 +1,24 @@
-JonoF's Duke Nukem 3D Port
+JonoF's Duke Nukem 3D Port with icculus.org/duke3d patches for sound and
+joystick support.
 
-This is the Duke Nukem 3D Port written by Jonathan Fowler. Like any
-other Duke Nukem 3D Port it is a hack of the original Duke Nukem 3D
-source code (v1.5 CD Version) which was made publicly avilable by
-3D Realms (the developer of Duke Nukem 3D) on the 1st of April 2003.
+This is the Duke Nukem 3D Port written by Jonathan Fowler. Like any other Duke
+Nukem 3D Port it is a hack of the original Duke Nukem 3D source code (v1.5 CD
+Version) which was made publicly avilable by 3D Realms (the developer of Duke
+Nukem 3D) on the 1st of April 2003.
 
-WWW:  http://jonof.edgenetwork.org/index.php?p=jfduke3d
+The following Duke Nukem 3D versions are supported:
+* Duke3D Shareware
+* Duke3D 1.3d
+* Duke3D 1.4/5 Atomic
 
-arundel@h3c.de
+Be sure to read the release notes in this distribution. There's important
+information about using the new features in this release.
+
+Additions to the retail version features of Duke Nukem 3D can be found on the
+3D Realms forum. These patches/hacks feature high/low resolution textures,
+MD2/MD3 models, Blood and Gore hacks, map hacks, etc. The 3D Realms Forum can
+be accessed through this URL:
+
+http://forums.3drealms.com/
+
+WWW: http://jonof.edgenetwork.org/index.php?p=jfduke3d

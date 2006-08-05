@@ -1,9 +1,7 @@
-%%DATADIR%%/duke3d
-%%DATADIR%%/build
-%%DATADIR%%/fix.sh
-%%DATADIR%%/duke3d.sh
-%%DATADIR%%/build.sh
-%%DATADIR%%/build.cfg
-bin/duke3d
-bin/duke3d-build
-@dirrmtry share/jfduke3d
+bin/jfduke3d
+bin/jfduke3d-build
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/duke3d.def.sample
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

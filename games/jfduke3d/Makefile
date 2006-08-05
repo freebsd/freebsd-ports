@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	jfduke3d
-PORTVERSION=	20050531
+PORTVERSION=	20051009
 CATEGORIES=	games
 MASTER_SITES=	ftp://dialup.edgefiles.com/edgenetwork.org/jonof/buildport/ \
 		ftp://ftp1.edgefiles.com/edgenetwork.org/jonof/buildport/ \
@@ -14,60 +14,48 @@ MASTER_SITES=	ftp://dialup.edgefiles.com/edgenetwork.org/jonof/buildport/ \
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.zip \
 		jfbuild_src_${PORTVERSION}.zip
 
+PATCH_SITES=	http://www.mephisto.ma.cx/mephisto/patches/
+PATCHFILES=	${PORTNAME}_src_${PORTVERSION}.patch \
+		jfbuild_src_${PORTVERSION}.patch
+
 MAINTAINER=	arundel@h3c.de
 COMMENT=	Jonathon Fowler's Duke Nukem 3D Port
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_ZIP=	yes
+USE_GCC=	3.2+
 USE_GMAKE=	yes
-USE_SDL=	sdl
+USE_GL=		yes
 USE_GNOME=	gtk20
-CONFLICTS=	duke3d-200[0-9]*
-
+USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}_src_${PORTVERSION}
+PATCH_WRKSRC=	${WRKDIR}
 
-PROG_FILES=	${WRKSRC}/duke3d ${WRKSRC}/build
-DATA_FILES=	${WRKSRC}/build.cfg
-SCRIPT_FILES=	${WRKDIR}/fix.sh ${WRKDIR}/duke3d.sh ${WRKDIR}/build.sh
-PORTDOCS=	ChangeLog readme.txt releasenotes.html duke3d.def.sample GNU.TXT
-
-SUB_FILES=	pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not build on !i386 (hardcodes i386-specific compiler flags)"
-.endif
-
-pre-build:
-		@${REINPLACE_CMD} -e 's|EROOT=../build/|EROOT=../jfbuild_src_${PORTVERSION}/|g' \
-			${WRKSRC}/Makefile
-
-pre-install:
-		@${SED} -e 's|%%DUKEDIR%%|${DATADIR}|g' ${FILESDIR}/fix.sh > \
-			${WRKDIR}/fix.sh
-		@${SED} -e 's|%%DUKEDIR%%|${DATADIR}|g' ${FILESDIR}/wrapper.sh > \
-			${WRKDIR}/duke3d.sh
-		@${SED} -e 's|%%DUKEDIR%%|${DATADIR}|g' ${FILESDIR}/build-wrapper.sh > \
-			${WRKDIR}/build.sh
+post-patch:
+	@${REINPLACE_CMD} -Ee \
+		's|^(EROOT=)../build/|\1../jfbuild_src_${PORTVERSION}/|; \
+		 s|^(CC=).*|\1${CC}|; \
+		 s|^(CFLAGS=).*|\1${CFLAGS}|; \
+		 s|^(NASMFLAGS=).*|\1 -s -f elf|; \
+		 s|/usr/X11R6|${X11BASE}|; \
+		 s|sdl-config|${SDL_CONFIG}|' \
+		${WRKSRC}/Makefile \
+		${WRKDIR}/jfbuild_src_${PORTVERSION}/Makefile \
+		${WRKDIR}/jfbuild_src_${PORTVERSION}/Makefile.shared
+	@${REINPLACE_CMD} -e 's|/usr/share/games/jfduke3d|${DN3DDIR}|' \
+		${WRKSRC}/source/game.c ${WRKSRC}/source/astub.c
 
 do-install:
-		${INSTALL} -d ${DATADIR}
-		${INSTALL_PROGRAM} ${PROG_FILES} ${DATADIR}
-		${INSTALL_DATA} ${DATA_FILES} ${DATADIR}
-		${INSTALL_SCRIPT} ${SCRIPT_FILES} ${DATADIR}
-		${LN} -fs ${DATADIR}/duke3d.sh ${PREFIX}/bin/duke3d
-		${LN} -fs ${DATADIR}/build.sh ${PREFIX}/bin/duke3d-build
-
-post-install:
-.ifndef(NOPORTDOCS)
-		${INSTALL} -d ${DOCSDIR}
-
-.for file in ${PORTDOCS}
-		${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/duke3d ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/build ${PREFIX}/bin/${PORTNAME}-build
+.if !defined(NOPORTDOCS)
+.for f in ChangeLog readme.txt releasenotes.html duke3d.def.sample
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-		${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../duke3d-data/Makefile.include"
+
+.include <bsd.port.mk>
