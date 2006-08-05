@@ -11,10 +11,10 @@ DISTVERSION=	3.0a1
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=   http://ftp.mozilla.org/pub/mozilla.org/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/ \
-		http://ftp.belnet.be/packages/mozilla/ \
-		ftp://ftp.belnet.be/packages/mozilla/
+MASTER_SITES=   http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+		ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+		http://ftp.belnet.be/packages/mozilla/%SUBDIR%/ \
+		ftp://ftp.belnet.be/packages/mozilla/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/nightly/${SNAPDATE}-04-trunk
 PKGNAMESUFFIX=		-devel
 DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
