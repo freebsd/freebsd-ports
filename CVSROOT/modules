@@ -15133,6 +15133,7 @@ xpi-mozex	ports/www/xpi-mozex
 xpi-mrtech-local-install	ports/www/xpi-mrtech-local-install
 xpi-no-referrer	ports/www/xpi-no-referrer
 xpi-noscript	ports/www/xpi-noscript
+xpi-num2web	ports/www/xpi-num2web
 xpi-pdf_download	ports/www/xpi-pdf_download
 xpi-preferential	ports/www/xpi-preferential
 xpi-quickproxy	ports/www/xpi-quickproxy
