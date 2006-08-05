@@ -5,7 +5,7 @@
 .if !defined(WITH_GNUGCJ)
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .else
-CONFIGURE_ARGS+=	--with-jdk-home="${WRKDIR}/gnugcj" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}"
+CONFIGURE_ARGS+=	--with-jdk-home="${LOCALBASE}/lib/jvm/java-gcj" --with-java=gij --with-ant-home="${WRKDIR}/apache-ant-${ANT_VERSION}"
 .endif
 
 .if defined(WITH_KDE)
