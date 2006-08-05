@@ -9005,6 +9005,7 @@ p5-Image-ExifTool	ports/graphics/p5-Image-ExifTool
 p5-Image-Grab	ports/graphics/p5-Image-Grab
 p5-Image-Imlib2	ports/graphics/p5-Image-Imlib2
 p5-Image-Info	ports/graphics/p5-Image-Info
+p5-Image-MetaData-JPEG	ports/graphics/p5-Image-MetaData-JPEG
 p5-Image-Size	ports/graphics/p5-Image-Size
 p5-Imager	ports/graphics/p5-Imager
 p5-Imager-Graph	ports/graphics/p5-Imager-Graph
