@@ -6,6 +6,7 @@ bin/ntpdc
 bin/ntpq
 bin/ntptime
 bin/ntptrace
+bin/sntp
 bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
@@ -68,8 +69,6 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver2.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver20.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver22.html
-%%PORTDOCS%%%%DOCSDIR%%/drivers/driver23.html
-%%PORTDOCS%%%%DOCSDIR%%/drivers/driver24.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver26.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver27.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver28.html
@@ -95,12 +94,15 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver7.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver8.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/driver9.html
+%%PORTDOCS%%%%DOCSDIR%%/drivers/tf582_4.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/icons/home.gif
 %%PORTDOCS%%%%DOCSDIR%%/drivers/icons/mail2.gif
 %%PORTDOCS%%%%DOCSDIR%%/drivers/oncore-shmem.html
 %%PORTDOCS%%%%DOCSDIR%%/drivers/scripts/footer.txt
 %%PORTDOCS%%%%DOCSDIR%%/drivers/scripts/style.css
 %%PORTDOCS%%%%DOCSDIR%%/extern.html
+%%PORTDOCS%%%%DOCSDIR%%/gadget.html
+%%PORTDOCS%%%%DOCSDIR%%/groups.html
 %%PORTDOCS%%%%DOCSDIR%%/howto.html
 %%PORTDOCS%%%%DOCSDIR%%/icons/home.gif
 %%PORTDOCS%%%%DOCSDIR%%/icons/mail2.gif
@@ -115,10 +117,12 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/msyslog.html
 %%PORTDOCS%%%%DOCSDIR%%/mx4200data.html
 %%PORTDOCS%%%%DOCSDIR%%/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/ntp_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpd.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpdate.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpdc.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpdsim.html
+%%PORTDOCS%%%%DOCSDIR%%/ntpdsim_new.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpq.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptime.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptrace.html
