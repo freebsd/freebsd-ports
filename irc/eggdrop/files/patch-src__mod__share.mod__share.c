@@ -1,5 +1,5 @@
---- eggdrop1.6.17/src/mod/share.mod/share.c.orig	Mon May  5 00:05:33 2003
-+++ eggdrop1.6.17/src/mod/share.mod/share.c	Tue Nov 18 16:51:41 2003
+--- src/mod/share.mod/share.c.orig	Mon May  5 00:05:33 2003
++++ src/mod/share.mod/share.c	Tue Nov 18 16:51:41 2003
 @@ -1120,7 +1120,7 @@
    int i, sock;
    FILE *f;

@@ -1,5 +1,5 @@
---- eggdrop1.6.17/src/main.c.orig	Mon May  5 06:05:32 2003
-+++ eggdrop1.6.17/src/main.c	Mon Jun  2 11:16:57 2003
+--- src/main.c.orig	Mon May  5 06:05:32 2003
++++ src/main.c	Mon Jun  2 11:16:57 2003
 @@ -73,6 +73,6 @@
  #endif
  

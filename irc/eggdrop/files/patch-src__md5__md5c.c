@@ -1,5 +1,5 @@
---- eggdrop1.6.17/src/md5/md5c.c.orig	Fri Sep  3 14:08:28 2004
-+++ eggdrop1.6.17/src/md5/md5c.c	Fri Sep  3 14:04:51 2004
+--- src/md5/md5c.c.orig	Fri Sep  3 14:08:28 2004
++++ src/md5/md5c.c	Fri Sep  3 14:04:51 2004
 @@ -25,6 +25,7 @@
  
  #include "compat/compat.h"

@@ -1,5 +1,5 @@
---- eggdrop1.6.17/src/mod/Makefile.in.orig	Mon Jun  2 11:36:50 2003
-+++ eggdrop1.6.17/src/mod/Makefile.in	Mon Jun  2 11:39:02 2003
+--- src/mod/Makefile.in.orig	Mon Jun  2 11:36:50 2003
++++ src/mod/Makefile.in	Mon Jun  2 11:39:02 2003
 @@ -86,7 +86,7 @@
  			echo ""; \
  			echo "Configuring module '$${modname}'."; \
