@@ -1,0 +1,9 @@
+E164.org is a public enum directory of telephone numbers that can be
+reached over the Internet by anyone anywhere!
+
+The system works by publishing a DNS zone, 'e164.org', that can be used
+by various Internet applications including SER, Gnome Meeting and
+Asterisk. The idea is to be able to map your phone number to an Email
+address, website, VoIP addresses, etc.
+
+WWW: http://www.e164.org/
