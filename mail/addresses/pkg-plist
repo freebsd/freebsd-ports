@@ -103,8 +103,8 @@ Local/Library/Libraries/libAddressView.so.0.0.1
 Local/Library/Libraries/libAddresses.so
 Local/Library/Libraries/libAddresses.so.0
 Local/Library/Libraries/libAddresses.so.0.0.1
-@dirrm Local/Library/Libraries
-@dirrm Local/Library/Headers
+@dirrmtry Local/Library/Libraries
+@dirrmtry Local/Library/Headers
 @dirrm Local/Library/Frameworks/Addresses.framework/Versions/A/Headers
 @dirrm Local/Library/Frameworks/Addresses.framework/Versions/A/Resources/Dutch.lproj
 @dirrm Local/Library/Frameworks/Addresses.framework/Versions/A/Resources/English.lproj
@@ -126,7 +126,7 @@ Local/Library/Libraries/libAddresses.so.0.0.1
 @dirrm Local/Library/Frameworks/AddressView.framework/Versions
 @dirrm Local/Library/Frameworks/AddressView.framework
 @dirrm Local/Library/Frameworks
-@dirrm Local/Library
+@dirrmtry Local/Library
 @dirrm Local/Applications/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm
 @dirrm Local/Applications/AddressManager.app/Resources/Dutch.lproj
 @dirrm Local/Applications/AddressManager.app/Resources/English.lproj/AddressManager.gorm
@@ -139,4 +139,4 @@ Local/Library/Libraries/libAddresses.so.0.0.1
 @dirrm Local/Applications/AddressManager.app/Resources/Spanish.lproj
 @dirrm Local/Applications/AddressManager.app/Resources
 @dirrm Local/Applications/AddressManager.app
-@dirrm Local/Applications
+@dirrmtry Local/Applications
