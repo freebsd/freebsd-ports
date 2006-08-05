@@ -178,6 +178,7 @@ libexec/apache22/httpd.exp
 %%MOD_ASIS%%libexec/apache22/mod_asis.so
 %%MOD_AUTH_BASIC%%libexec/apache22/mod_auth_basic.so
 %%MOD_AUTH_DIGEST%%libexec/apache22/mod_auth_digest.so
+%%MOD_AUTHN_ALIAS%%libexec/apache22/mod_authn_alias.so
 %%MOD_AUTHN_ANON%%libexec/apache22/mod_authn_anon.so
 %%MOD_AUTHN_DBD%%libexec/apache22/mod_authn_dbd.so
 %%MOD_AUTHN_DBM%%libexec/apache22/mod_authn_dbm.so

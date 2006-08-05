@@ -127,7 +127,8 @@ WITHOUT_MODULES+=	authn_dbd dbd
 .endif
 
 AUTH_MODULES=		auth_basic auth_digest
-AUTHN_MODULES=		authn_file authn_dbd authn_dbm authn_anon authn_default
+AUTHN_MODULES=		authn_file authn_dbd authn_dbm authn_anon authn_default \
+			authn_alias
 AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
 			authz_owner authz_default
 CACHE_MODULES=		cache disk_cache file_cache mem_cache
