@@ -56,7 +56,7 @@ PAM=no
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
-MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
+MAKE_ENV+=	LIBDATADIR=${PREFIX}/libdata MANDIR=${MANPREFIX}/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 
 .if ${OSVERSION} < 400014
 MAKE_ENV+=	COMPAT_GETADDRINFO=yes
@@ -101,6 +101,16 @@ post-extract:
 .for i in ${ADDME}
 	@${CP} ${FILESDIR}/${i} ${WRKSRC}/
 .endfor
+
+post-patch:
+.for i in scp sftp ssh ssh-add ssh-agent ssh-keygen ssh-keyscan
+	@${REINPLACE_CMD} "s|BINDIR=	/bin|BINDIR=	${PREFIX}/bin|" ${WRKSRC}/${i}/Makefile
+.endfor
+.for i in sftp-server ssh-keysign
+	@${REINPLACE_CMD} "s|BINDIR=	/libexec|BINDIR=	${PREFIX}/libexec|" ${WRKSRC}/${i}/Makefile
+.endfor
+	@${REINPLACE_CMD} "s|BINDIR=	/sbin|BINDIR=	${PREFIX}/sbin|" ${WRKSRC}/sshd/Makefile
+	@${REINPLACE_CMD} "s|DATADIR=	/libdata/ssh|DATADIR=	${PREFIX}/libdata/ssh|" ${WRKSRC}/scard/Makefile
 
 pre-configure:
 .for i in ${MODIFY:S/pathnames.h//} ${MAN1:S/slogin.1//} ${MAN5} ${MAN8}
