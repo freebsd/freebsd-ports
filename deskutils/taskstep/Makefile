@@ -7,6 +7,7 @@
 
 PORTNAME=	taskstep
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://taskstep.cunningtitle.co.uk/releases/
 DISTNAME=	${PORTNAME}-05
