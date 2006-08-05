@@ -7,6 +7,7 @@
 
 PORTNAME=	feedjack
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://static.tabo.aureal.com.pe/code/
 DISTNAME=	Feedjack-${PORTVERSION}
