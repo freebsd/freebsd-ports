@@ -15,7 +15,7 @@ COMMENT=	Print the contents of a procfs map file
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	/usr/share/mk/bsd.prog.mk
-MAKE_ENV+=	DESTDIR=${PREFIX}/ BINDIR=bin MANDIR=man/man \
+MAKE_ENV+=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man \
 		PROG=procmap MAN8=procmap.8
 
 PLIST_FILES=	bin/procmap
