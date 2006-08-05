@@ -6,7 +6,7 @@
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
@@ -15,14 +15,12 @@ MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	An Objective Caml interface to GTK+ 2.x
-
-BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
-RUN_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+USE_OCAML=	yes
 
 OPTIONS=	GLADE "With glade support" ON \
 		GNOMECANVAS "With gnomecanvas support" ON \
@@ -40,7 +38,10 @@ ALL_TARGET=	all opt
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/lib/ocaml
 
+PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
+
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if (exists(${LOCALBASE}/bin/lablgl) && exists(${X11BASE}/libdata/pkgconfig/gtkgl-2.0.pc)) || defined(WITH_GTKTL)
 CONFIGURE_ARGS+=	--with-gl
@@ -114,6 +115,14 @@ WITH_GTKSPELL=	yes
 CONFIGURE_ARGS+=	--without-gtkspell
 PLIST_SUB+=	GTKSPELL="@comment "
 .endif
+
+post-extract:
+	@${REINPLACE_CMD} -E \
+		-e 's,^(CFLAGS[[:space:]]*\+=[[:space:]]*-O),\1 ${CFLAGS},' \
+		-e 's,^(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,^(${PATTERN}+.*BINDIR),\1\$${BSD_INSTALL_SCRIPT} \3,' \
+		-e 's,^(${PATTERN}+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		${WRKSRC}/src/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
