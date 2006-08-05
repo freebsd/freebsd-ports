@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dictem
-PORTVERSION=	0.8
+PORTVERSION=	0.81
 CATEGORIES=	textproc net elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ PLIST_FILES+=	${LISPDIR}/dictem.el	\
 		${LISPDIR}/dictem.elc
 PLIST_DIRS+=	${LISPDIR}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS+=	README AUTHORS NEWS ChangeLog COPYING
 
 .include <bsd.port.pre.mk>
@@ -44,7 +44,6 @@ do-install:
 	${MKDIR} ${PREFIX}/${LISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/dictem.el ${PREFIX}/${LISPDIR}/
 	${INSTALL_DATA} ${WRKSRC}/dictem.elc ${PREFIX}/${LISPDIR}/
-
 
 post-install:
 .if !defined(NOPORTDOCS)
