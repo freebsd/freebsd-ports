@@ -1,0 +1,116 @@
+Index: pipe.c
+===================================================================
+--- pipe.c	(revision 2220)
++++ pipe.c	(revision 2221)
+@@ -46,6 +46,31 @@
+ 	return ret;
+ }
+ 
++static int parse_and_escape(const char *in, char **out)
++{
++	InternetAddressList *ialist;
++	InternetAddress *ia;
++
++	TRACE(TRACE_DEBUG, "parsing address [%s]", in);
++	ialist = internet_address_parse_string(in);
++	ia = ialist->address;
++	if (ia->type != INTERNET_ADDRESS_NAME) {
++		TRACE(TRACE_MESSAGE, "unable to parse email address [%s]", in);
++		internet_address_list_destroy(ialist);
++		return -1;
++	}
++
++	if (! (*out = dm_shellesc(ia->value.addr))) {
++		TRACE(TRACE_ERROR, "out of memory calling dm_shellesc");
++		internet_address_list_destroy(ialist);
++		return -1;
++	}
++
++	internet_address_list_destroy(ialist);
++
++	return 0;
++}
++
+ // Send only certain parts of the message.
+ #define SENDNOTHING     0
+ #define SENDHEADERS     1
+@@ -61,12 +86,10 @@
+ 		int sendwhat, char *sendmail_external)
+ {
+ 	FILE *mailpipe = NULL;
+-	char *escaped_to = NULL, *parsed_to = NULL;
+-	char *escaped_from = NULL, *parsed_from = NULL;
++	char *escaped_to = NULL;
++	char *escaped_from = NULL;
+ 	char *sendmail_command = NULL;
+ 	field_t sendmail, postmaster;
+-	InternetAddressList *ialist;
+-	InternetAddress *ia;
+ 	int result;
+ 
+ 	if (!from || strlen(from) < 1) {
+@@ -93,60 +116,21 @@
+ 		return -1;
+ 	}
+ 
+-	trace(TRACE_DEBUG, "%s, %s: sendmail command is [%s]",
+-		__FILE__, __func__, sendmail);
+-	
+-	ialist = internet_address_parse_string(to);
+-	ia = ialist->address;
+-	if (ia->type != INTERNET_ADDRESS_NAME) {
+-		// There isn't a valid address here. Bail...
+-		internet_address_list_destroy(ialist);
+-		return -1;
+-	}
+-	parsed_to = ia->value.addr;
+-
+-	if (! (escaped_to = dm_shellesc(parsed_to))) {
+-		trace(TRACE_ERROR, "%s, %s: out of memory calling dm_shellesc",
+-				__FILE__, __func__);
+-		internet_address_list_destroy(ialist);
+-		return -1;
+-	}
+-
+-	internet_address_list_destroy(ialist);
+-
+-	ialist = internet_address_parse_string(from);
+-	ia = ialist->address;
+-	if (ia->type != INTERNET_ADDRESS_NAME) {
+-		// There isn't a valid address here. Bail...
+-		internet_address_list_destroy(ialist);
+-		return -1;
+-	}
+-	parsed_from = ia->value.addr;
+-
+-	if (! (escaped_from = dm_shellesc(parsed_from))) {
+-		trace(TRACE_ERROR, "%s, %s: out of memory calling dm_shellesc",
+-				__FILE__, __func__);
+-		internet_address_list_destroy(ialist);
+-		return -1;
+-	}
+-
+-	internet_address_list_destroy(ialist);
+-
+ 	if (!sendmail_external) {
++		parse_and_escape(to, &escaped_to);
++		parse_and_escape(from, &escaped_from);
+ 		sendmail_command = g_strconcat(sendmail, " -f ", escaped_from, " ", escaped_to, NULL);
+ 		dm_free(escaped_to);
+ 		dm_free(escaped_from);
+ 		if (!sendmail_command) {
+-			trace(TRACE_ERROR, "%s, %s: out of memory calling g_strconcat",
+-					__FILE__, __func__);
++			TRACE(TRACE_ERROR, "out of memory calling g_strconcat");
+ 			return -1;
+ 		}
+ 	} else {
+ 		sendmail_command = sendmail_external;
+ 	}
+ 
+-	trace(TRACE_INFO, "%s, %s: opening pipe to [%s]",
+-		__FILE__, __func__, sendmail_command);
++	TRACE(TRACE_INFO, "opening pipe to [%s]", sendmail_command);
+ 
+ 	if (!(mailpipe = popen(sendmail_command, "w"))) {
+ 		trace(TRACE_ERROR, "%s, %s: could not open pipe to sendmail",

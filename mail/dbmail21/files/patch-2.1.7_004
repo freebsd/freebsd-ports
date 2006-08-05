@@ -1,0 +1,52 @@
+Index: debug.c
+===================================================================
+--- debug.c	(revision 2214)
++++ debug.c	(revision 2215)
+@@ -103,6 +103,7 @@
+ 		fprintf(stderr, "%s %s", trace_to_text(level), message);
+ 		if (message[l] != '\n')
+ 			fprintf(stderr, "\n");
++		fflush(stderr);
+ 	}
+ 
+ 	if (level <= TRACE_SYSLOG) {
+Index: modules/sortsieve.c
+===================================================================
+--- modules/sortsieve.c	(revision 2214)
++++ modules/sortsieve.c	(revision 2215)
+@@ -187,7 +187,7 @@
+ 	extern const char * imap_flag_desc[];
+ 	const char * const * flags;
+ 	const char * mailbox;
+-	int msgflags[IMAP_NFLAGS];
++	int *msgflags = NULL;
+ 
+ 	mailbox = sieve2_getvalue_string(s, "mailbox");
+ 	flags = sieve2_getvalue_stringlist(s, "imapflags"); // TODO
+@@ -198,9 +198,9 @@
+ 	}
+ 
+ 	/* If there were any imapflags, set them. */
+-	memset(&msgflags, 0, IMAP_NFLAGS * sizeof(int));
+ 	if (flags) {
+ 		int i, j;
++		msgflags = g_new0(int, IMAP_NFLASGS);
+ 
+ 		for (i = 0; flags[i]; i++) { // Loop through all script/user-specified flags.
+ 			for (j = 0; imap_flag_desc[j]; i++) { // Find the ones we support.
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 2214)
++++ ChangeLog	(revision 2215)
+@@ -1,3 +1,11 @@
++2006-07-27  Aaron Stone  <aaron@serendipity.cx>
++
++	* debug.c:
++	Added fflush after fprintf (closes bug #388).
++	* modules/sortsieve.c:
++	Make sure that the msgflags pointer is NULL if there are no special
++	flags (closes bug #383).
++
+ 2006-07-26  Paul J Stevens <paul@nfg.nl>
+ 
+ 	* debian/control, modules/sortsieve.c:

@@ -8,7 +8,7 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable dbmail-pop3d:
+# Add the following lines to /etc/rc.conf to enable dbmail-pop3d: 
 #
 #dbmail_pop3d_enable="YES"
 #

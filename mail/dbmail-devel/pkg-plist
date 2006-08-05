@@ -1,36 +1,54 @@
+@unexec if cmp -s %D/etc/dbmail.conf-dist %D/etc/dbmail.conf; then rm -f %D/etc/dbmail.conf; fi
 etc/dbmail.conf-dist
-lib/dbmail/libauthdbmail.so.0
-lib/dbmail/libauthdbmail.a
-lib/dbmail/libauthdbmail.la
-lib/dbmail/libauthdbmail.so
-lib/dbmail/libsortdbmail.so.0
-lib/dbmail/libsortdbmail.a
-lib/dbmail/libsortdbmail.la
-lib/dbmail/libsortdbmail.so
-lib/libdbmail.so.0
-lib/libdbmail.a
-lib/libdbmail.la
-lib/libdbmail.so
+@exec if [ ! -f %D/etc/dbmail.conf ] ; then cp -p %D/%F %B/dbmail.conf; fi
+@exec mkdir -p %D/lib/dbmail
+lib/dbmail/libauth_ldap.a
+lib/dbmail/libauth_ldap.la
+lib/dbmail/libauth_ldap.so
+lib/dbmail/libauth_ldap.so.0
+lib/dbmail/libauth_sql.a
+lib/dbmail/libauth_sql.la
+lib/dbmail/libauth_sql.so
+lib/dbmail/libauth_sql.so.0
+lib/dbmail/libmysql.a
+lib/dbmail/libmysql.la
+lib/dbmail/libmysql.so
+lib/dbmail/libmysql.so.0
+lib/dbmail/libpgsql.a
+lib/dbmail/libpgsql.la
+lib/dbmail/libpgsql.so
+lib/dbmail/libpgsql.so.0
+lib/dbmail/libsort_sieve.a
+lib/dbmail/libsort_sieve.la
+lib/dbmail/libsort_sieve.so
+lib/dbmail/libsort_sieve.so.0
+lib/dbmail/libsqlite.a
+lib/dbmail/libsqlite.la
+lib/dbmail/libsqlite.so
+lib/dbmail/libsqlite.so.0
+@dirrm lib/dbmail
+sbin/dbmail-export
 sbin/dbmail-imapd
 sbin/dbmail-lmtpd
 sbin/dbmail-pop3d
 sbin/dbmail-smtp
 sbin/dbmail-users
 sbin/dbmail-util
-%%MYSQL%%%%DATADIR%%/sql/create_tables.mysql
-%%MYSQL%%%%DATADIR%%/sql/create_tables_innoDB.mysql
-%%MYSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0.mysql
-%%MYSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0_innodb.mysql
-%%MYSQL%%lib/dbmail/libmysqldbmail.so.0
-%%MYSQL%%lib/dbmail/libmysqldbmail.a
-%%MYSQL%%lib/dbmail/libmysqldbmail.la
-%%MYSQL%%lib/dbmail/libmysqldbmail.so
-%%PGSQL%%%%DATADIR%%/sql/create_tables.pgsql
-%%PGSQL%%%%DATADIR%%/sql/migrate_from_1.x_to_2.0.pgsql
-%%PGSQL%%lib/dbmail/libpgsqldbmail.so.0
-%%PGSQL%%lib/dbmail/libpgsqldbmail.a
-%%PGSQL%%lib/dbmail/libpgsqldbmail.la
-%%PGSQL%%lib/dbmail/libpgsqldbmail.so
-@dirrm lib/dbmail
-@dirrm %%DATADIR%%/sql
-@dirrm %%DATADIR%%
+%%SIEVE%%sbin/dbmail-sievecmd
+%%SIEVE%%sbin/dbmail-timsieved
+@exec mkdir -p %D/share/%%PORTNAME%%
+%%MYSQL%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/mysql
+%%MYSQL%%share/%%PORTNAME%%/mysql/create_tables.mysql
+%%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
+%%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_2.0_to_2.1.mysql
+%%MYSQL%%share/%%PORTNAME%%/mysql/update_headervalue_01.mysql
+%%MYSQL%%@dirrm share/%%PORTNAME%%/mysql
+%%PGSQL%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/postgresql
+%%PGSQL%%share/%%PORTNAME%%/postgresql/create_tables.pgsql
+%%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_1.x_to_2.0.pgsql
+%%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_2.0_to_2.1.pgsql
+%%PGSQL%%@dirrm share/%%PORTNAME%%/postgresql
+%%SQLITE%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/sqlite
+%%SQLITE%%share/%%PORTNAME%%/sqlite/create_tables.sqlite
+%%SQLITE%%@dirrm share/%%PORTNAME%%/sqlite
+@dirrm share/%%PORTNAME%%

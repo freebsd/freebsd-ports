@@ -1,0 +1,28 @@
+Index: db.c
+===================================================================
+--- db.c	(revision 2212)
++++ db.c	(revision 2213)
+@@ -2885,6 +2885,9 @@
+ 	*mailboxes = g_list_reverse(*mailboxes);
+ 	*errmsg = "Everything is peachy keen";
+ 
++	g_strfreev(chunks);
++	dm_free(cpy);
++ 
+ 	return DM_SUCCESS;
+ 
+ equery:
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 2212)
++++ ChangeLog	(revision 2213)
+@@ -3,6 +3,9 @@
+ 	* modules/sortsieve.c:
+ 	Accepted patch from maenaka (closes bug #383) to clear the IMAP flags
+ 	if none are given by the Sieve script.
++	* db.c:
++	Accepted patch from Leif Jackson to close a memory leak in
++	db_imap_split_mailbox.
+ 
+ 2006-07-25  Paul J Stevens <paul@nfg.nl>
+ 

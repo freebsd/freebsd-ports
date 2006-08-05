@@ -1,0 +1,63 @@
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 2219)
++++ ChangeLog	(revision 2220)
+@@ -1,3 +1,9 @@
++2006-08-01  Aaron Stone  <aaron@serendipity.cx>
++
++	* pipe.c:
++	Proper fix to prevent passing addresses with full names on the
++	sendmail command line (closes bug #372).
++
+ 2006-07-30  Aaron Stone  <aaron@serendipity.cx>
+ 
+ 	* sql/mysql/create_tables.mysql, migrate_from_2.0_to_2.1.mysql:
+Index: pipe.c
+===================================================================
+--- pipe.c	(revision 2219)
++++ pipe.c	(revision 2220)
+@@ -98,26 +98,40 @@
+ 	
+ 	ialist = internet_address_parse_string(to);
+ 	ia = ialist->address;
+-	parsed_to = internet_address_to_string(ia, TRUE);
+-	internet_address_list_destroy(ialist);
++	if (ia->type != INTERNET_ADDRESS_NAME) {
++		// There isn't a valid address here. Bail...
++		internet_address_list_destroy(ialist);
++		return -1;
++	}
++	parsed_to = ia->value.addr;
+ 
+ 	if (! (escaped_to = dm_shellesc(parsed_to))) {
+ 		trace(TRACE_ERROR, "%s, %s: out of memory calling dm_shellesc",
+ 				__FILE__, __func__);
++		internet_address_list_destroy(ialist);
+ 		return -1;
+ 	}
+ 
++	internet_address_list_destroy(ialist);
++
+ 	ialist = internet_address_parse_string(from);
+ 	ia = ialist->address;
+-	parsed_from = internet_address_to_string(ia, TRUE);
+-	internet_address_list_destroy(ialist);
++	if (ia->type != INTERNET_ADDRESS_NAME) {
++		// There isn't a valid address here. Bail...
++		internet_address_list_destroy(ialist);
++		return -1;
++	}
++	parsed_from = ia->value.addr;
+ 
+ 	if (! (escaped_from = dm_shellesc(parsed_from))) {
+ 		trace(TRACE_ERROR, "%s, %s: out of memory calling dm_shellesc",
+ 				__FILE__, __func__);
++		internet_address_list_destroy(ialist);
+ 		return -1;
+ 	}
+ 
++	internet_address_list_destroy(ialist);
++
+ 	if (!sendmail_external) {
+ 		sendmail_command = g_strconcat(sendmail, " -f ", escaped_from, " ", escaped_to, NULL);
+ 		dm_free(escaped_to);

@@ -1,0 +1,76 @@
+Index: config.c
+===================================================================
+--- config.c	(revision 2217)
++++ config.c	(revision 2218)
+@@ -212,9 +212,10 @@
+ 	if (config_get_value("serverid", "DBMAIL", serverid_string) < 0)
+ 		trace(TRACE_FATAL, "%s,%s: error getting config!",
+ 		      __FILE__, __func__);
++	if (config_get_value("encoding", "DBMAIL", db_params->encoding) < 0)
++		trace(TRACE_FATAL, "%s,%s: error getting config!",
++		      __FILE__, __func__);
+ 
+-	
+-
+ 	if (config_get_value("table_prefix", "DBMAIL", db_params->pfx) < 0)
+ 		trace(TRACE_FATAL, "%s,%s: error getting config!",
+ 		      __FILE__, __func__);
+Index: modules/dbmysql.c
+===================================================================
+--- modules/dbmysql.c	(revision 2217)
++++ modules/dbmysql.c	(revision 2218)
+@@ -90,6 +90,16 @@
+ 	int collations_match = 0;
+ 	int i, j;
+ 
++	if (strlen(_db_params.encoding) > 0) {
++		snprintf(the_query, DEF_QUERYSIZE, "SET NAMES %s", _db_params.encoding);
++		if (db_query(the_query) == DM_EQUERY) {
++			trace(TRACE_ERROR,
++			      "%s,%s: error setting collation", __FILE__, __func__);
++			return DM_EQUERY;
++		}
++		db_free_result();
++	}
++
+ 	snprintf(the_query, DEF_QUERYSIZE,
+ 			"SHOW VARIABLES LIKE 'collation_%%'");
+ 	if (db_query(the_query) == DM_EQUERY) {
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 2217)
++++ ChangeLog	(revision 2218)
+@@ -5,6 +5,9 @@
+ 	InnoDB format (closes bug #386).
+ 	* pipe.c:
+ 	Attempt to resolve bug #372.
++	* config.c, dbmail.conf, dbmailtypes.h, modules/dbmysql.c:
++	Accepted patch from Maenaka to allow configurable MySQL connection
++	encoding (closes bug #385).
+ 
+ 2006-07-27  Aaron Stone  <aaron@serendipity.cx>
+ 
+Index: dbmail.conf
+===================================================================
+--- dbmail.conf	(revision 2217)
++++ dbmail.conf	(revision 2218)
+@@ -18,6 +18,7 @@
+ pass=                   # Database password.
+ db=dbmail               # Database name.
+ #table_prefix=dbmail_   # Table prefix. Defaults to "dbmail_" if not specified.
++#encoding=latin1        # MySQL connection encoding must match to table encoding.
+ #postmaster=DBMAIL-MAILER       # Postmaster's email address for use in bounce messages.
+ sendmail=/usr/sbin/sendmail     # Sendmail executable for forwards, replies, notifies, vacations.
+ 
+Index: dbmailtypes.h
+===================================================================
+--- dbmailtypes.h	(revision 2217)
++++ dbmailtypes.h	(revision 2218)
+@@ -99,6 +99,7 @@
+ 	field_t sock;		/**< path to local unix socket (local connection) */
+ 	field_t pfx;		/**< prefix for tables e.g. dbmail_ */
+ 	unsigned int serverid;	/**< unique id for dbmail instance used in clusters */
++	field_t encoding;	/**< character encoding to use */
+ } db_param_t;
+ 
+ /** configuration items */

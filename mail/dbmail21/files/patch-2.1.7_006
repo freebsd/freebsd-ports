@@ -1,0 +1,138 @@
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 2216)
++++ ChangeLog	(revision 2217)
+@@ -1,3 +1,11 @@
++2006-07-30  Aaron Stone  <aaron@serendipity.cx>
++
++	* sql/mysql/create_tables.mysql, migrate_from_2.0_to_2.1.mysql:
++	Accepted patch from Maenaka to only create Sieve tables once, in
++	InnoDB format (closes bug #386).
++	* pipe.c:
++	Attempt to resolve bug #372.
++
+ 2006-07-27  Aaron Stone  <aaron@serendipity.cx>
+ 
+ 	* debug.c:
+Index: sql/mysql/migrate_from_2.0_to_2.1.mysql
+===================================================================
+--- sql/mysql/migrate_from_2.0_to_2.1.mysql	(revision 2216)
++++ sql/mysql/migrate_from_2.0_to_2.1.mysql	(revision 2217)
+@@ -176,21 +176,18 @@
+ 
+ 
+ CREATE TABLE dbmail_sievescripts (
+-	id		BIGINT NOT NULL AUTO_INCREMENT,
+-        owner_idnr	BIGINT NOT NULL
+-			REFERENCES dbmail_users(user_idnr)
+-			ON UPDATE CASCADE ON DELETE CASCADE,
+-	active		TINYINT(1) DEFAULT '0' NOT NULL,
+-	name		VARCHAR(100) NOT NULL DEFAULT '',
+-	script		TEXT NOT NULL DEFAULT '',
+-	PRIMARY KEY (id)
+-);
++  owner_idnr bigint(21) DEFAULT '0' NOT NULL,
++  name varchar(100) NOT NULL,
++  script text,
++  active tinyint(1) default '0' not null,
++  INDEX (name),
++  INDEX (owner_idnr),
++  INDEX (owner_idnr, name),
++  FOREIGN KEY owner_idnr_fk (owner_idnr)
++    REFERENCES dbmail_users (user_idnr) ON DELETE CASCADE ON UPDATE CASCADE
++) ENGINE=InnoDB;
+ 
+-# Looking in db.c, the WHERE clauses are: owner, owner name, owner active.
+-CREATE INDEX dbmail_sievescripts_1 on dbmail_sievescripts(owner_idnr,name);
+-CREATE INDEX dbmail_sievescripts_2 on dbmail_sievescripts(owner_idnr,active);
+ 
+-
+ # Add columns for storing the Sieve quota.
+ ALTER TABLE dbmail_users
+ 	ADD maxsieve_size BIGINT DEFAULT '0' NOT NULL,
+Index: sql/mysql/create_tables.mysql
+===================================================================
+--- sql/mysql/create_tables.mysql	(revision 2216)
++++ sql/mysql/create_tables.mysql	(revision 2217)
+@@ -207,7 +207,9 @@
+   active tinyint(1) default '0' not null,
+   INDEX (name),
+   INDEX (owner_idnr),
+-  INDEX (owner_idnr, name)
++  INDEX (owner_idnr, name),
++  FOREIGN KEY owner_idnr_fk (owner_idnr)
++    REFERENCES dbmail_users (user_idnr) ON DELETE CASCADE ON UPDATE CASCADE
+ ) ENGINE=InnoDB;
+ 
+ 
+@@ -359,25 +361,6 @@
+   UNIQUE KEY replycache_1 (to_addr,from_addr, handle)
+ ) ENGINE=InnoDB;
+ 
+-#
+-# Add tables and columns to hold Sieve scripts.
+-
+-DROP TABLE IF EXISTS dbmail_sievescripts;
+-CREATE TABLE dbmail_sievescripts (
+-	id		BIGINT NOT NULL AUTO_INCREMENT,
+-        owner_idnr	BIGINT NOT NULL
+-			REFERENCES dbmail_users(user_idnr)
+-			ON UPDATE CASCADE ON DELETE CASCADE,
+-	active		TINYINT(1) DEFAULT '0' NOT NULL,
+-	name		VARCHAR(100) NOT NULL DEFAULT '',
+-	script		TEXT NOT NULL DEFAULT '',
+-	PRIMARY KEY (id)
+-);
+-
+-# Looking in db.c, the WHERE clauses are: owner, owner name, owner active.
+-CREATE INDEX dbmail_sievescripts_1 on dbmail_sievescripts(owner_idnr,name);
+-CREATE INDEX dbmail_sievescripts_2 on dbmail_sievescripts(owner_idnr,active);
+-
+ DROP TABLE IF EXISTS dbmail_usermap;
+ CREATE TABLE dbmail_usermap (
+   login VARCHAR(100) NOT NULL,
+Index: pipe.c
+===================================================================
+--- pipe.c	(revision 2216)
++++ pipe.c	(revision 2217)
+@@ -61,10 +61,12 @@
+ 		int sendwhat, char *sendmail_external)
+ {
+ 	FILE *mailpipe = NULL;
+-	char *escaped_to = NULL;
+-	char *escaped_from = NULL;
++	char *escaped_to = NULL, *parsed_to = NULL;
++	char *escaped_from = NULL, *parsed_from = NULL;
+ 	char *sendmail_command = NULL;
+ 	field_t sendmail, postmaster;
++	InternetAddressList *ialist;
++	InternetAddress *ia;
+ 	int result;
+ 
+ 	if (!from || strlen(from) < 1) {
+@@ -94,13 +96,23 @@
+ 	trace(TRACE_DEBUG, "%s, %s: sendmail command is [%s]",
+ 		__FILE__, __func__, sendmail);
+ 	
+-	if (! (escaped_to = dm_shellesc(to))) {
++	ialist = internet_address_parse_string(to);
++	ia = ialist->address;
++	parsed_to = internet_address_to_string(ia, TRUE);
++	internet_address_list_destroy(ialist);
++
++	if (! (escaped_to = dm_shellesc(parsed_to))) {
+ 		trace(TRACE_ERROR, "%s, %s: out of memory calling dm_shellesc",
+ 				__FILE__, __func__);
+ 		return -1;
+ 	}
+ 
+-	if (! (escaped_from = dm_shellesc(from))) {
++	ialist = internet_address_parse_string(from);
++	ia = ialist->address;
++	parsed_from = internet_address_to_string(ia, TRUE);
++	internet_address_list_destroy(ialist);
++
++	if (! (escaped_from = dm_shellesc(parsed_from))) {
+ 		trace(TRACE_ERROR, "%s, %s: out of memory calling dm_shellesc",
+ 				__FILE__, __func__);
+ 		return -1;
