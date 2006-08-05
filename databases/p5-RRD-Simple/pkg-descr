@@ -1,0 +1,11 @@
+RRD::Simple provides a simple interface to RRDTool's RRDs module. This module
+does not currently offer fetch method that is available in the RRDs module.
+
+It does however create RRD files with a sensible set of default RRA (Round
+Robin Archive) definitions, and can dynamically add new data source names to an
+existing RRD file.
+
+This module is ideal for quick and simple storage of data within an RRD file if
+you do not need to, nor want to, bother defining custom RRA definitions.
+
+WWW: http://search.cpan.org/dist/RRD-Simple/
