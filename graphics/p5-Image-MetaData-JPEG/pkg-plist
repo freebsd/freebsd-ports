@@ -1,0 +1,23 @@
+%%SITE_PERL%%/Image/MetaData/JPEG.pm
+%%SITE_PERL%%/Image/MetaData/JPEG.pod
+%%SITE_PERL%%/Image/MetaData/JPEG/Backtrace.pm
+%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_app13.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_app1_exif.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_comments.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_various.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/MakerNotes.pod
+%%SITE_PERL%%/Image/MetaData/JPEG/Record.pm
+%%SITE_PERL%%/Image/MetaData/JPEG/Segment.pm
+%%SITE_PERL%%/Image/MetaData/JPEG/Segment_dumpers.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/Segment_parsers.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/Structures.pod
+%%SITE_PERL%%/Image/MetaData/JPEG/Tables.pm
+%%SITE_PERL%%/Image/MetaData/JPEG/Tables_makernotes.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/TagLists.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/JPEG/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/JPEG
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image/MetaData/JPEG
+@dirrmtry %%SITE_PERL%%/Image/MetaData
+@dirrmtry %%SITE_PERL%%/Image

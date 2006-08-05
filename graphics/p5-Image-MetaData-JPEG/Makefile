@@ -1,0 +1,31 @@
+# New ports collection makefile for:	p5-Image-MetaData-JPEG
+# Date created:		2006-08-05
+# Whom:			Tsung-Han Yeh <snowfly@yuntech.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Image-MetaData-JPEG
+PORTVERSION=	0.15
+CATEGORIES=	graphics perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Image
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	snowfly@yuntech.edu.tw
+COMMENT=	Perl extension for showing/modifying JPEG (meta)data]
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Image::MetaData::JPEG.3 \
+		Image::MetaData::JPEG::MakerNotes.3 \
+		Image::MetaData::JPEG::Structures.3 \
+		Image::MetaData::JPEG::TagLists.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
