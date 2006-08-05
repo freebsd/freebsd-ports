@@ -866,6 +866,7 @@
     SUBDIR += pserv
     SUBDIR += pubcookie-login-server
     SUBDIR += publicfile
+    SUBDIR += punbb
     SUBDIR += pwebstats
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
