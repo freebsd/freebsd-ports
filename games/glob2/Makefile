@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.8.19
+PORTVERSION=		0.8.21
 CATEGORIES=		games
 MASTER_SITES=		http://globulation2.org/releases/${PORTVERSION}/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=		vorbis.3:${PORTSDIR}/audio/libvorbis	\
 
 USE_SDL=		image net sdl ttf
 USE_GL=			yes
+USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"	\
@@ -38,16 +39,12 @@ BROKEN=			Does not build on ${ARCH}
 pre-configure:
 	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|"	\
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s|Icon=|Icon=${DATADIR}/|"		\
+	${REINPLACE_CMD} -e "s|Icon=|Icon=${DATADIR}/pixmaps/|"	\
 		${WRKSRC}/data/glob2.desktop
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/glob2 ${PREFIX}/bin
-	${MKDIR} ${DATADIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/data/glob2.desktop ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/data/icons/glob2-icon-48x48.png ${DATADIR}
-
 post-install:
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/glob2.desktop ${DESKTOPDIR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
