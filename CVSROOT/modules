@@ -1626,6 +1626,7 @@ dbf		ports/databases/dbf
 dbf2mysql	ports/databases/dbf2mysql
 dbh		ports/databases/dbh
 dbmail		ports/mail/dbmail
+dbmail-devel	ports/mail/dbmail-devel
 dbmetrix	ports/databases/dbmetrix
 dbow		ports/databases/dbow
 dbs		ports/benchmarks/dbs
