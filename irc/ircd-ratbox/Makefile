@@ -7,8 +7,7 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	2.1.8
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/	\
@@ -19,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
 
-CONFLICTS=	rcd-ratbox-devel-[0-9]*
+CONFLICTS=	ircd-ratbox-devel-[0-9]*
 
 MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
@@ -42,7 +41,7 @@ PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
 OPTIONS=	KQUEUE		"Use superior kqueue(2) instead of poll(2)"	on  \
 		OPENSSL		"Enable openssl support"			on  \
-		IPV6		"Enable IPv6 support"				off \
+		IPV6		"Enable IPv6 support"				on  \
 		ZIPLINKS	"Enable ziplinks support"			on  \
 		SHARED_MODULES	"Enable shared modules support"			on  \
 		ASSERT		"Enable debugging code"				off \
@@ -66,7 +65,7 @@ CONFIGURE_ARGS+=	--enable-openssl
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -102,10 +101,6 @@ CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 CONFIGURE_ARGS+=	--with-topiclen=${TOPICLEN}
 .endif
 
-.if defined(MAXCLIENTS)
-CONFIGURE_ARGS+=	--with-maxclients=${MAXCLIENTS}
-.endif
-
 #-----------------------------------------------------------------------
 
 pre-configure:
@@ -113,7 +108,6 @@ pre-configure:
 	@${ECHO_MSG} "This port has additional options:"
 	@${ECHO_MSG} "    NICKLEN     [default 9, max 50]    - Max nick length on server"
 	@${ECHO_MSG} "    TOPICLEN    [default 120, max 390] - Max topic length"
-	@${ECHO_MSG} "    MAXCLIENTS  [default 3000]         - Max clients server can handle"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Press CTRL+C now if you wish to set them."
 	@${ECHO_MSG} ""
