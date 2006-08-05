@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	www
+DISTNAME=	MT-${PORTVERSION}1-en_US
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A web-based personal publishing system for weblogs
@@ -20,10 +20,11 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
-	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
+	${SITE_PERL}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA
 .endif
 
-WRKSRC=		${WRKDIR}/MT-${PORTVERSION}-en_US
+WRKSRC=		${WRKDIR}/MT-${PORTVERSION}1
 DATADIR=	www/data
 CGIDIR=		www/cgi-bin/mt
 
@@ -50,6 +51,10 @@ NO_BUILD=	yes
 RESTRICTED=	License does not permit distribution
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or above
+.endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	\
