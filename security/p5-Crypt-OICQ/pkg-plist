@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OICQ/.packlist
 %%SITE_PERL%%/Crypt/OICQ.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OICQ
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt
