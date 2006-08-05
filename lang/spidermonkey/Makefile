@@ -55,7 +55,7 @@ INSTALLS_SHLIB=	YES
 SRC_DIR=	js/src
 JSH=		jsapi.h jsautocfg.h jscompat.h jslong.h jsosdep.h jsotypes.h jspubtd.h jstypes.h \
 		jsstr.h jshash.h jsprvtd.h
-PLIST_FILES=	bin/js lib/libjs.so ${JSH:S,^,include/,}
+PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/,}
 WRKSRC=	${WRKDIR}/${SRC_DIR}
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 		--exclude js/jsd	\
@@ -86,6 +86,7 @@ do-install:
 		${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/libjs.so \
 		${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/libjs.so ${PREFIX}/lib/libjs.so.1
 	${CP} ${WRKSRC}/${OPSYS}`${UNAME} -r`_DBG.OBJ/jsautocfg.h ${WRKSRC}
 	@${INSTALL_DATA} ${JSH:S,^,${WRKSRC}/,} ${PREFIX}/include/
 
