@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.62
+PORTVERSION=	4.63
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM} \
 		http://dryice.name/computer/FreeBSD/distfiles/
