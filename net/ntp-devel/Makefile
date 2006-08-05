@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.0b
-PORTREVISION=	${YEAR}${MONTH}${DAY}
+PORTVERSION=	4.2.3p21
 CATEGORIES=	net ipv6
-YEAR=		2006
-MONTH=		03
-DAY=		22
-SNAPSHOT_DIR=	snapshots/ntp-dev/${YEAR}/${MONTH}
-MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/${SNAPSHOT_DIR}/ \
-		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/${SNAPSHOT_DIR}/ \
-		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/${SNAPSHOT_DIR} \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/${SNAPSHOT_DIR}/
-DISTNAME=	${PORTNAME}-dev-${PORTVERSION}-rc1-${YEAR}${MONTH}${DAY}
+MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
+		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
+		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-dev/ \
+		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/ntp-dev/
+DISTNAME=	${PORTNAME}-dev-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
@@ -42,6 +37,13 @@ CONFIGURE_ARGS+=	--with-openssl-incdir=${OPENSSLINC} \
 			--with-openssl-libdir=${OPENSSLLIB}
 PLIST_SUB+=		SSL=""
 .endif
+
+.if !defined(DISABLE_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+MAN1=		ntp-keygen.1 ntpd.1 ntpdc.1 ntpdsim.1 ntpq.1 sntp.1
+
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}

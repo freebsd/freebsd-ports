@@ -8,6 +8,10 @@ bin/ntptime
 bin/ntptrace
 bin/sntp
 bin/tickadj
+lib/libopts.a
+lib/libopts.la
+lib/libopts.so
+lib/libopts.so.27
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
 %%PORTDOCS%%%%DOCSDIR%%/audio.html
@@ -102,6 +106,7 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/drivers/tf582_4.html
 %%PORTDOCS%%%%DOCSDIR%%/extern.html
 %%PORTDOCS%%%%DOCSDIR%%/gadget.html
+%%PORTDOCS%%%%DOCSDIR%%/groups.html
 %%PORTDOCS%%%%DOCSDIR%%/howto.html
 %%PORTDOCS%%%%DOCSDIR%%/icons/home.gif
 %%PORTDOCS%%%%DOCSDIR%%/icons/mail2.gif
@@ -116,10 +121,12 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/msyslog.html
 %%PORTDOCS%%%%DOCSDIR%%/mx4200data.html
 %%PORTDOCS%%%%DOCSDIR%%/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/ntp_conf.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpd.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpdate.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpdc.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpdsim.html
+%%PORTDOCS%%%%DOCSDIR%%/ntpdsim_new.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpq.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptime.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptrace.html
