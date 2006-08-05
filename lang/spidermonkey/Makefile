@@ -1,15 +1,14 @@
 # Ports collection makefile for:	spidermonkey
-# Date created:	Fri Apr 18, 2003
-# Whom:	Dan Rench (citric@cubicone.tmetic.com)
+# Date created:		Fri Apr 18, 2003
+# Whom:			Dan Rench <citric@cubicone.tmetic.com>
 #
 # $FreeBSD$
 
 PORTNAME=	spidermonkey
 DISTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_MOZILLA:S/$/:src/} \
-		${MASTER_SITE_MOZILLA:S/$/:older/}
+MASTER_SITES=	MOZILLA:src,older
 MASTER_SITE_SUBDIR=	js/:src js/older-packages/:older
 DISTNAME=	js-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
@@ -51,7 +50,7 @@ USE_GMAKE=	YES
 MAKEFILE=	Makefile.ref
 ALL_TARGET=	${OPSYS}`${UNAME} -r`_DBG.OBJ/js
 MAKE_ENV+=	CC="${CC}" CCC="${CXX}"
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	yes
 SRC_DIR=	js/src
 JSH=		jsapi.h jsautocfg.h jscompat.h jslong.h jsosdep.h jsotypes.h jspubtd.h jstypes.h \
 		jsstr.h jshash.h jsprvtd.h
