@@ -1,0 +1,6 @@
+include/sieve2.h
+include/sieve2_error.h
+lib/libsieve.a
+lib/libsieve.la
+lib/libsieve.so
+lib/libsieve.so.1

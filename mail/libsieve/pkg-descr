@@ -1,0 +1,8 @@
+libSieve provides a library to interpret Sieve scripts, and to execute those
+scripts over a given set of messages. The return codes from the libSieve
+functions let your program know how to handle the message, and then it's up to
+you to make it so. libSieve makes no attempt to have knowledge of how SMTP,
+IMAP, or anything else work; just how to parse and deal with a buffer full of
+emails. The rest is up to you!
+
+WWW: http://libsieve.sourceforge.net/
