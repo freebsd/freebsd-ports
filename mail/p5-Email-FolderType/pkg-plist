@@ -3,5 +3,8 @@
 %%SITE_PERL%%/Email/FolderType/MH.pm
 %%SITE_PERL%%/Email/FolderType/Maildir.pm
 %%SITE_PERL%%/Email/FolderType/Mbox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/FolderType/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/FolderType
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/FolderType
 @dirrmtry %%SITE_PERL%%/Email
