@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	TracGantt
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2a
 CATEGORIES=	www devel python
-MASTER_SITES=	http://ideas.water-powered.com/gantt/ \
+MASTER_SITES=	http://willbarton.com/files/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	trac-
 
