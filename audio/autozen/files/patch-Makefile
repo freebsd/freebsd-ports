@@ -1,0 +1,53 @@
+--- Makefile.orig	Sun Sep 16 20:10:02 2001
++++ Makefile	Sun Jul 30 15:38:35 2006
+@@ -1,10 +1,10 @@
+ 
+-CC = gcc
+-CFLAGS = -g
++#CC = gcc
++#CFLAGS = -g
+ #CFLAGS = -g -DDEBUG
+ 
+-PREFIX = /usr
+-PUBLIC_SEQUENCES = $(PREFIX)/share/AutoZen
++PREFIX = ${X11BASE}
++PUBLIC_SEQUENCES = $(PREFIX)/share/autozen
+ 
+ # uncomment one of the OS= lines below if you're compiling on one of those OSen. 
+ #OS= -D__FreeBSD__
+@@ -19,7 +19,7 @@
+ 	strip autozen seq2wav
+ 
+ autozen: autozen.c *.xpm
+-	$(CC) $(OS) -D_REENTRANT -DPUBLIC_SEQUENCES='"$(PUBLIC_SEQUENCES)"' $(CFLAGS) `gtk-config --cflags` `gtk-config  --libs` -pthread autozen.c -o autozen $(DEBUG_LIBS)
++	$(CC) $(OS) -D_REENTRANT -DPUBLIC_SEQUENCES='"$(PUBLIC_SEQUENCES)"' $(CFLAGS) `gtk-config --cflags` `gtk-config  --libs` ${PTHREAD_FLAGS} autozen.c -o autozen $(DEBUG_LIBS)
+ 
+ seq2wav: seq2wav.c
+ 	$(CC) seq2wav.c -o seq2wav -lm
+@@ -27,17 +27,15 @@
+ 	rm -f autozen seq2wav
+ 
+ install: all
+-	install -d $(PREFIX)/bin
+-	install zentime $(PREFIX)/bin
+-	install -s seq2wav $(PREFIX)/bin
+-	install -s autozen $(PREFIX)/bin
+-	install -d $(PREFIX)/share/AutoZen
+-	install -m 644 *.seq $(PREFIX)/share/AutoZen
+-	install -d $(PREFIX)/share/doc/AutoZen/HTML/images
+-	install -m 644 doc/HTML/*.html $(PREFIX)/share/doc/AutoZen/HTML
+-	install -m 644 doc/HTML/images/* $(PREFIX)/share/doc/AutoZen/HTML/images
+-	install -d $(PREFIX)/man/man1
+-	install -m 644 doc/autozen.1 $(PREFIX)/man/man1
++	${BSD_INSTALL_SCRIPT} zentime ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} seq2wav ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} autozen ${PREFIX}/bin
++	${MKDIR} ${DATADIR}
++	${BSD_INSTALL_DATA} *.seq ${DATADIR}
++#%%DOCS%%	${MKDIR} ${DOCSDIR}/images
++#%%DOCS%%	${BSD_INSTALL_DATA} doc/HTML/*.html ${DOCSDIR}
++#%%DOCS%%	${BSD_INSTALL_DATA} doc/HTML/images/* ${DOCSDIR}/images
++	${BSD_INSTALL_MAN} doc/autozen.1 ${PREFIX}/man/man1
+ 
+ tags: *.[ch] *.xpm
+ 	ctags *.[ch] *.xpm
