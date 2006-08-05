@@ -6068,6 +6068,7 @@ libshout	ports/audio/libshout
 libshout2	ports/audio/libshout2
 libsidplay	ports/audio/libsidplay
 libsidplay2	ports/audio/libsidplay2
+libsieve	ports/mail/libsieve
 libsigc++	ports/devel/libsigc++
 libsigc++12	ports/devel/libsigc++12
 libsigc++20	ports/devel/libsigc++20
