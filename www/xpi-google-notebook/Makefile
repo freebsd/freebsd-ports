@@ -8,7 +8,8 @@
 PORTNAME=	google-notebook
 PORTVERSION=	1.0.0.5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_CSME}
+MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/xpi/ \
+		ftp://chinsan2.twbbs.org/distfiles/xpi/
 # The unversioned dist is at http://dl.google.com/firefox/google-notebook.xpi
 
 MAINTAINER=	chinsan.tw@gmail.com
