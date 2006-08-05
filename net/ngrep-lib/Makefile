@@ -18,7 +18,7 @@ HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} -without-restart
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
