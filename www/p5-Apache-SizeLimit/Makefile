@@ -23,4 +23,6 @@ PERL_CONFIGURE=	YES
 
 MAN3=		${PORTNAME:S/-/::/g}.3
 
+BROKEN=	conflicts with www/mod_perl
+
 .include <bsd.port.mk>
