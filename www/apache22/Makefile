@@ -8,11 +8,10 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
-		http://apache.webthing.com/database/:aprmysql
+		${MASTER_SITE_LOCAL:S/%SUBDIR%\//clement\/:aprmysql/}
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.bz2 \
 		apr_dbd_mysql.c:aprmysql
