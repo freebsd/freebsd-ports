@@ -3,15 +3,14 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports/www/mozilla-devel/Makefile,v 1.10 2005/10/27 00:08:39 marcus Exp $
-#
+#    $MCom: ports/www/mozilla-devel/Makefile,v 1.12 2006/07/18 15:05:56 ahze Exp $
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.b1
 PORTREVISION?=	7
 PORTEPOCH?=	2
 CATEGORIES?=	www
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.b1/b1/}/source
 DISTNAME=	${PORTNAME}-source-${PORTVERSION:S/.b1/b1/}
 
@@ -113,11 +112,6 @@ OPTIONS=CALENDAR "Enable the Calendar module" off \
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=		core dumps on ${ARCH} during post-build
-.endif
-
-.if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
-BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
-		illegibly. Please remove the mozilla-fonts package
 .endif
 
 .if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
