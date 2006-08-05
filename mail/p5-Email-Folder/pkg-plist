@@ -4,5 +4,8 @@
 %%SITE_PERL%%/Email/Folder/Maildir.pm
 %%SITE_PERL%%/Email/Folder/Mbox.pm
 %%SITE_PERL%%/Email/Folder/Reader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Folder/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Folder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/Folder
 @dirrmtry %%SITE_PERL%%/Email
