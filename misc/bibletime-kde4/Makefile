@@ -23,8 +23,14 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		fails to compile under FreeBSD 4.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/bibletime/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
