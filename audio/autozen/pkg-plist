@@ -1,0 +1,10 @@
+bin/autozen
+bin/seq2wav
+bin/zentime
+%%DATADIR%%/deep-relax.seq
+%%DATADIR%%/deep_delta_slide.seq
+%%DATADIR%%/delta_slide.seq
+%%DATADIR%%/moderate-meditation.seq
+%%DATADIR%%/relax.seq
+%%DATADIR%%/wake-up.seq
+@dirrm %%DATADIR%%
