@@ -170,6 +170,7 @@
     SUBDIR += k3b-i18n
     SUBDIR += kaddressbook-plugins
     SUBDIR += katalog
+    SUBDIR += kbfx
     SUBDIR += kcd
     SUBDIR += kcd-devel
     SUBDIR += kde-xdg-env
