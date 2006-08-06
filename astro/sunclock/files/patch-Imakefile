@@ -1,5 +1,5 @@
 --- Imakefile.orig	Sun Jun 18 23:58:50 2006
-+++ Imakefile	Wed Jul 26 14:47:03 2006
++++ Imakefile	Fri Aug  4 19:11:06 2006
 @@ -1,18 +1,18 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -23,7 +23,7 @@
  
  XCOMM
  XCOMM Compile options:
-@@ -42,13 +42,13 @@
+@@ -42,13 +42,12 @@
  #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
  
  # Solaris, Linux
@@ -39,12 +39,11 @@
 +JLIBDIR=-L${LOCALBASE}/lib
 +ZLIBDIR=-L${LOCALBASE}/lib
 +JINC=-I${LOCALBASE}/include
-+CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME -I${LOCALBASE}/include
-+INCLUDES+=	-I${LOCALBASE}/include
++CCOPTIONS=-DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME -I${LOCALBASE}/include -I${X11BASE}/include -L${LOCALBASE}/lib -L${X11BASE}/lib
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
-@@ -56,7 +56,7 @@
+@@ -56,7 +55,7 @@
  OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
       readvmf.o readxpm.o readgif.o readjpeg.o readpng.o
  LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \
@@ -53,7 +52,7 @@
  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
  ComplexProgramTarget(sunclock)
-@@ -64,7 +64,7 @@
+@@ -64,7 +63,7 @@
  all::
  	cd editkit ; xmkmf ; make emx \
            DESTDIR=$(DESTDIR) \
@@ -62,13 +61,23 @@
  	  MANDIR=$(SHAREDIR)/editkit \
  	  SHAREDIR=$(DESTDIR)$(SHAREDIR)/editkit
  
-@@ -78,8 +78,7 @@
- 	cd i18n ; rm -f *~ ; cp -f Sunclock.* $(DESTDIR)$(SHAREDIR)/i18n
+@@ -74,14 +73,13 @@
+ 
+ install:: install.man
+ 	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/i18n
+-	cp -f Sunclockrc $(DESTDIR)$(SHAREDIR)
+-	cd i18n ; rm -f *~ ; cp -f Sunclock.* $(DESTDIR)$(SHAREDIR)/i18n
++	${BSD_INSTALL_DATA} Sunclockrc $(DESTDIR)$(SHAREDIR)
++	cd i18n ; rm -f *~ ; ${BSD_INSTALL_DATA} Sunclock.* $(DESTDIR)$(SHAREDIR)/i18n
  	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/earthmaps/vmf
- 	cd vmf ; rm -f *~ ; cp -f * $(DESTDIR)$(SHAREDIR)/earthmaps/vmf
+-	cd vmf ; rm -f *~ ; cp -f * $(DESTDIR)$(SHAREDIR)/earthmaps/vmf
 -	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/bin
 -	install -c -s editkit/emx $(DESTDIR)$(SHAREDIR)/bin
-+	install -c -s editkit/emx $(DESTDIR)/bin
++	cd vmf ; rm -f *~ ; ${BSD_INSTALL_DATA} * $(DESTDIR)$(SHAREDIR)/earthmaps/vmf
++	${BSD_INSTALL_PROGRAM} editkit/emx $(DESTDIR)/bin
  	$(MKDIRHIER) $(DESTDIR)$(SHAREDIR)/editkit
- 	cd editkit ; install -c -m 444 rc.example README MANUAL.emacs \
+-	cd editkit ; install -c -m 444 rc.example README MANUAL.emacs \
++	cd editkit ; ${BSD_INSTALL_DATA} rc.example README MANUAL.emacs \
  		$(DESTDIR)$(SHAREDIR)/editkit
+ 	cd $(DESTDIR)$(SHAREDIR)/editkit ; mv -f rc.example emxrc
+ 	cat MESSAGE
