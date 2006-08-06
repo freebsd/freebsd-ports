@@ -15398,9 +15398,9 @@ zerowait-httpd	ports/www/zerowait-httpd
 zgv		ports/graphics/zgv
 zh-BBMan	ports/chinese/BBMan
 zh-CJK		ports/chinese/CJK
+zh-CJKUnifonts	ports/chinese/CJKUnifonts
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
 zh-FreeWnn-server	ports/chinese/FreeWnn-server
-zh-arnettf	ports/chinese/arnettf
 zh-arphicttf	ports/chinese/arphicttf
 zh-aterm	ports/chinese/aterm
 zh-auto-cn-l10n	ports/chinese/auto-cn-l10n
