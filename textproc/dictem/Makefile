@@ -26,7 +26,7 @@ PLIST_FILES+=	${LISPDIR}/dictem.el	\
 		${LISPDIR}/dictem.elc
 PLIST_DIRS+=	${LISPDIR}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS+=	README AUTHORS NEWS ChangeLog COPYING
 
 .include <bsd.port.pre.mk>
