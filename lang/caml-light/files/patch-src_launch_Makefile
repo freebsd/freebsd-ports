@@ -1,0 +1,23 @@
+--- src/launch/Makefile.orig	Wed Feb 22 15:03:26 1995
++++ src/launch/Makefile	Sun Aug  6 11:58:56 2006
+@@ -17,16 +17,17 @@
+ 	chmod a+x /tmp/testscr
+ 	sh -c 'if sh -c /tmp/testscr 2>/dev/null; \
+                then echo "#!$(BINDIR)/camlrun" > $(LIBDIR)/header; \
+-               else cp camlexec $(LIBDIR)/header; \
++               else ${BSD_INSTALL_SCRIPT} camlexec $(LIBDIR)/header; \
+                fi'
+ 	rm -f /tmp/testscr
+ 	for script in camlc camllight camlmktop; do \
+-	  cp $$script $(BINDIR)/$$script; \
++	  ${BSD_INSTALL_SCRIPT} $$script $(BINDIR)/$$script; \
+ 	  chmod a+x $(BINDIR)/$$script; \
+ 	done
+ 
+ SEDCOMMANDS=\
+-  -e 's|LIBDIR|$(LIBDIR)|' -e 's|CC|$(CC) $(OPTS)|' -e 's|LIBS|$(LIBS)|'
++  -e 's|LIBDIR|$(LIBDIR)|' -e 's|CC|$(CC) $(OPTS)|' -e 's|LIBS|$(LIBS)|' \
++  -e 's|BINDIR|$(BINDIR)|'
+ 
+ camlc: camlc.tpl ../version.h
+ 	sed  $(SEDCOMMANDS) \
