@@ -1,6 +1,6 @@
---- contrib/Makefile.orig	Sat Nov 11 15:57:42 2000
-+++ contrib/Makefile	Sat Mar  6 06:42:32 2004
-@@ -5,7 +5,7 @@
+--- contrib/Makefile.orig	Sun Nov 12 02:57:42 2000
++++ contrib/Makefile	Sat Aug  5 09:57:42 2006
+@@ -5,24 +5,24 @@
  # Remember that "libunix" is required for
  # "debugger", "libgraph", "camltk", "camltk4", and "search_isos".
  PACKAGES=libunix libgraph debugger libnum libstr mletags \
@@ -9,7 +9,18 @@
  # caml-tex
  # caml-latex2e
  # camltk
-@@ -22,7 +22,7 @@
+ 
+ # Which C compiler to use.
+ # Should be the same compiler used to compile the main system (../src).
+-CC=gcc
++#CC=gcc
+ 
+ # Any additional options to $(CC).
+-OPTS=
++OPTS=${CFLAGS}
+ 
+ # How to call the C preprocessor on a file that does not have the .c extension.
+ # That's /lib/cpp on most machines, sometimes /usr/bin/cpp,
  # and /usr/ccs/lib/cpp under Solaris.
  # The -P option suppresses the generation of "# linenum" directives,
  # which are not understood by Caml Light.
