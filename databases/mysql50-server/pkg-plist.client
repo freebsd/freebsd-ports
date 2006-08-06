@@ -1,6 +1,7 @@
 bin/mysql
 bin/mysql_config
 bin/mysql_fix_privilege_tables
+bin/mysql_upgrade
 bin/mysqladmin
 bin/mysqlbinlog
 bin/mysqlbug
