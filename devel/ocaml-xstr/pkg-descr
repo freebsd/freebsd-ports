@@ -1,0 +1,10 @@
+This package implements frequent string operations: searching, replacing,
+splitting, matching. It is independent from the Str library, and can
+replace Str in many cases. Unlike Str, xstr is thread-safe. xstr does
+not implement regular expressions in general, but an important subset.
+Some operations of xstr are performed as quickly as by Str; if the string
+to be processed is small, xstr is often faster than Str; if the string is
+big, xstr is upto half as fast than Str.
+
+Author:	Gerd Stolpmann <gerd@gerd-stolpmann.de>
+WWW:	http://www.ocaml-programming.de/packages/
