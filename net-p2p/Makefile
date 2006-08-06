@@ -73,6 +73,7 @@
     SUBDIR += mldonkey-sancho
     SUBDIR += mldonkey-serverspy
     SUBDIR += mldonkey-urlslave
+    SUBDIR += museekplus
     SUBDIR += mutella
     SUBDIR += moodriver
     SUBDIR += mooseekd
