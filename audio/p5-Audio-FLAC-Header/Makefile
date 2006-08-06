@@ -21,4 +21,10 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 MAN3=		Audio::FLAC::Header.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
