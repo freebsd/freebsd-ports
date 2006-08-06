@@ -15,6 +15,9 @@ COMMENT=	A flexible port-knocking server and client
 
 GNU_CONFIGURE=	yes
 
+USE_GETOPT_LONG=yes
+CFLAGS+=	-I${LOCALBASE}/include
+
 OPTIONS=	SERVER		"Install knockd server"		on \
 		CLIENT		"Install knock client"		on
 
