@@ -12,7 +12,7 @@ MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc
 DISTNAME=	${PORTNAME}_${P_VERSION}
 .ifndef NOPORTDOCS
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.ps.gz SLU_general.ps.gz:doc simax95.ps.gz:doc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.pdf SLU_general.ps.gz:doc simax95.ps.gz:doc
 .endif
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -64,7 +64,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/SLU_general.ps.gz ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/simax95.ps.gz ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/superlu_ug.ps.gz ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/superlu_ug.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.pre.mk>
