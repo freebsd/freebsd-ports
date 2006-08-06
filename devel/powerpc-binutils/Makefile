@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.16.1
+PORTVERSION=	2.17
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -60,6 +60,13 @@ INFO=			as binutils ld
 BINARIES=		addr2line ar as c++filt ld \
 			nm objcopy objdump ranlib \
 			readelf size strings strip
+
+post-extract:
+	@${REINPLACE_CMD} -E -e 's,^(install:).*,\1,' \
+		${WRKSRC}/bfd/Makefile.in \
+		${WRKSRC}/etc/Makefile.in \
+		${WRKSRC}/libiberty/Makefile.in \
+		${WRKSRC}/opcodes/Makefile.in
 
 post-install:
 .for F in ${BINARIES}
