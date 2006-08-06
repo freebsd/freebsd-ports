@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	castpodder
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://dev-1.borgforge.net/castpodder/chrome/site/downloads/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/
 DISTNAME=	CastPodder-${PORTVERSION}
 
 MAINTAINER=	nivit@email.it
