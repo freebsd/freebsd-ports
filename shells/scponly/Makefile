@@ -71,6 +71,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	4.6
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -84,6 +85,8 @@ MAN8=		scponly.8
 
 GNU_CONFIGURE=	yes
 PLIST_SUB+=	SCPONLY_CHROOT="@comment "
+
+PATCH_STRIP=	-p1
 
 .include <bsd.port.pre.mk>
 
@@ -105,7 +108,6 @@ CONFIGURE_ARGS+=--enable-chrooted-binary
 .endif
 
 .if defined(WITH_SCPONLY_RSYNC)
-BROKEN=		The Rsync compatibility is broken
 BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-rsync-compat
