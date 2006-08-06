@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=libtorrent
@@ -20,7 +20,7 @@ LIB_DEPENDS=	boost_date_time.3:${PORTSDIR}/devel/boost \
 		boost_thread.3:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ENV=	CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
