@@ -6,7 +6,9 @@
 # REQUIRE: NETWORKING SERVERS USR
 # BEFORE: LOGIN
 #
-# Add the following lines to /etc/rc.conf to enable tor
+# Add the following lines to /etc/rc.conf to enable tor.
+# All these options will overide any settings in your local torrc as
+# they are command line options.
 #
 # tor_enable (bool):	Set to "NO" by default
 #			Set it to "YES" to enable tor
@@ -15,8 +17,7 @@
 # tor_user (str):	Tor Daemon user. Default _tor
 # tor_group (str):	Tor Daemon group. Default _tor
 # tor_datadir (str):	Tor DataDir.  Defaults /var/db/tor
-# 			This will overide your torrc as it is
-# 			a command line option.
+# tor_logfile (str):	Tor Log File.  Defaults /var/log/tor
 #
 
 . %%RC_SUBR%%
@@ -36,8 +37,9 @@ load_rc_config ${name}
 
 required_files=${tor_conf}
 required_dirs=${tor_datadir}
+pidfile=${tor_pidfile}
 command="%%PREFIX%%/bin/${name}"
-command_args="-f ${tor_conf} --pidfile ${tor_pidfile} --runasdaemon 1 --datadirectory ${tor_datadir} --user ${tor_user} --group ${tor_group}"
+command_args="-f ${tor_conf} --pidfile ${tor_pidfile} --runasdaemon 1 --datadirectory ${tor_datadir} --user ${tor_user} --group ${tor_group} --log \"notice file ${tor_logfile}\""
 extra_commands="log"
 log_cmd="${name}_log"
 

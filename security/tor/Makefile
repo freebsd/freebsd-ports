@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.1.20
+PORTVERSION=	0.1.1.23
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/ \
 		http://mirror.onionland.org/dist/
