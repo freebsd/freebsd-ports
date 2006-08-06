@@ -6,35 +6,27 @@
 #
 
 PORTNAME=	Email-MIME-Attachment-Stripper
-PORTVERSION=	1.31
-PORTREVISION=	1
+PORTVERSION=	1.31.1
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Email
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-1.311
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Strip the attachments from a mail
 
-BUILD_DEPENDS=	${SITE_PERL}/Email/MIME.pm:${PORTSDIR}/mail/p5-Email-MIME \
-		${SITE_PERL}/Email/MIME/ContentType.pm:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
-		${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME-Modifier
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Email-MIME>=1.82:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-Email-MIME-ContentType>=1.0:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
+		p5-Email-MIME-Modifier>=1.41:${PORTSDIR}/mail/p5-Email-MIME-Modifier
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Email::MIME::Attachment::Stripper.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500503
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
-		${WRKSRC}/lib/Email/MIME/Attachment/Stripper.pm
-	${PERL} -pi -e '$$_ = "" if (/use warnings/);' \
-		${WRKSRC}/Makefile.PL \
-		${WRKSRC}/t/01.t \
-		${WRKSRC}/lib/Email/MIME/Attachment/Stripper.pm
+.if ${PERL_LEVEL} < 500600
+# inherited from mail/p5-Email-MIME
+IGNORE=		requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
 .endif
-
 .include <bsd.port.post.mk>
