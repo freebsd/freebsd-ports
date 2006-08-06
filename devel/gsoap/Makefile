@@ -23,8 +23,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-2.7
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CONST=
+.else
+CONST=	const
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/> (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.c
 	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/> (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.cpp
+	@${REINPLACE_CMD} -e 's/%%CONST%%/${CONST}/' ${WRKSRC}/soapcpp2/stdsoap2.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
