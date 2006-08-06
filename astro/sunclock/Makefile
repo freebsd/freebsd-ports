@@ -8,6 +8,7 @@
 
 PORTNAME=	sunclock
 PORTVERSION=	3.55
+PORTREVISION=	1
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/ \
 		http://mbsd.msk.ru/dist/
@@ -21,7 +22,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 
 MAN1=		sunclock.1
 
