@@ -1,0 +1,16 @@
+--- lang.english/weekday.xpm.orig	Tue Mar  7 22:56:36 2000
++++ lang.english/weekday.xpm
+@@ -27,11 +27,11 @@
+ "b..bb..b.bbbbb.bbb.b",
+ "b.bbbb.b.....b....bb",
+ "bbbbbbbbbbbbbbbbbbbb",
+-"b.....b.bbb.b.....bb",
++"b.....b.bbb.b.bbbb.b",
+ "bbb.bbb.bbb.b.bbbb.b",
+-"bbb.bbb.....b.....bb",
+-"bbb.bbb.bbb.b.bbb.bb",
++"bbb.bbb.....b.bbbb.b",
+ "bbb.bbb.bbb.b.bbbb.b",
++"bbb.bbb.bbb.bb....bb",
+ "bbbbbbbbbbbbbbbbbbbb",
+ "b.....b.....bb.....b",
