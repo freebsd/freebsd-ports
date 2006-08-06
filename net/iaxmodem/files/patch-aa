@@ -38,6 +38,14 @@
  #include <unistd.h>
 --- lib/libiax2/src/iax.c.orig	Mon Jun 12 15:54:46 2006
 +++ lib/libiax2/src/iax.c	Thu Jun 15 14:22:17 2006
+@@ -44,6 +44,7 @@
+ #else
+ 
+ #include <netdb.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <sys/time.h>
 @@ -64,9 +64,9 @@
  #include <arpa/inet.h>
  #include <time.h>
