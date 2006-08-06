@@ -17,14 +17,14 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Standard netcat enhanced with twofish encryption
 
-WRKSRC=         ${WRKDIR}/unix
+WRKSRC=		${WRKDIR}/unix
 ALL_TARGET=	freebsd
 
 PLIST_FILES=	bin/cryptcat
 PORTDOCS=	README.cryptcat
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cryptcat ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cryptcat ${TARGETDIR}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
