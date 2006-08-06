@@ -121,6 +121,7 @@ OpenEXR		ports/graphics/OpenEXR
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
 R		ports/math/R
+SGE		ports/devel/SGE
 STk		ports/lang/STk
 Sather		ports/lang/Sather
 SciPlot		ports/graphics/SciPlot
