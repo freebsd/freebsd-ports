@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	4.3.p5
+PORTVERSION=	4.3.p6
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME:S/e/E/}${PORTVERSION:S/.p/pre/}install1
+DISTNAME=	${PORTNAME:S/e/E/}${PORTVERSION:S/.p/pre/}install
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -20,7 +20,7 @@ COMMENT=	Powerful programmer\'s text editor written in Java
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 CONFLICTS=	jedit-4.2*
 NO_LATEST_LINK=	yes
