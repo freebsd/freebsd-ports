@@ -40,6 +40,10 @@ INFO=		gcc${gcc_suffix}/cpp \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=         does not extract on 4.x (both bzip2 and tar.gz sources are used)
+.endif
+
 gcc_suffix=		34
 targlib=		${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 
