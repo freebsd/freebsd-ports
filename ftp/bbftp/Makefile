@@ -23,6 +23,12 @@ USE_RC_SUBR=	bbftpd
 
 MAN1=		bbftp.1 bbftpd.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 do-configure:
 	${CP} -f ${TEMPLATES}/config.guess ${WRKSRC}
 	${CP} -f ${TEMPLATES}/config.sub ${WRKSRC}
@@ -39,4 +45,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/bbftp.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/bbftpd.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
