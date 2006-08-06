@@ -7633,6 +7633,7 @@ ocaml-sexplib	ports/devel/ocaml-sexplib
 ocaml-sqlite3	ports/databases/ocaml-sqlite3
 ocaml-ulex	ports/devel/ocaml-ulex
 ocaml-wdialog	ports/www/ocaml-wdialog
+ocaml-xstr	ports/devel/ocaml-xstr
 ocaml-xstrp4	ports/devel/ocaml-xstrp4
 ocaml-yaxi	ports/textproc/ocaml-yaxi
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
