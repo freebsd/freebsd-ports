@@ -15,11 +15,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Apache XSLT processor for transforming XML documents
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper \
-		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2 1.3 1.4
+JAVA_VERSION=	1.2+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
@@ -34,6 +33,10 @@ PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|} bin/xalan-j
 SUB_FILES=	xalan-j.sh
 
 .include <bsd.port.pre.mk>
+
+.if ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} != "1.5"
+RUN_DEPENDS+=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
+.endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
