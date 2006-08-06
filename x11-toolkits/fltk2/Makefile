@@ -11,7 +11,6 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.easysw.com/pub/%SUBDIR%/ \
 		ftp://ftp2.easysw.com/pub/%SUBDIR%/ \
 		ftp://ftp3.easysw.com/pub/%SUBDIR%/ \
-		http://mirror.nu6.org/ftp.easysw.com/pub/%SUBDIR%/ \
 		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
 		ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/ \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r5256
+SNAPSHOT=	r5274
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off
@@ -72,7 +71,6 @@ LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 .else
 CONFIGURE_ARGS+=	--disable-cairo
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-test-Makefile
 .endif
 
 post-patch:
