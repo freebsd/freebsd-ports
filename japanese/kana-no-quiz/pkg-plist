@@ -249,6 +249,7 @@ bin/kana-no-quiz
 %%DATADIR%%/img/logo.gif
 %%DATADIR%%/img/modified_hiragana.gif
 %%DATADIR%%/img/modified_katakana.gif
+%%DATADIR%%/img/rarrow.xbm
 %%DATADIR%%/locale/de/LC_MESSAGES/kana-no-quiz.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/kana-no-quiz.mo
 %%DATADIR%%/locale/pt_BR/LC_MESSAGES/kana-no-quiz.mo
