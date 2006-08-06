@@ -7190,6 +7190,7 @@ mupen64-sdlaudio	ports/emulators/mupen64-sdlaudio
 mupen64-sdlinput	ports/emulators/mupen64-sdlinput
 mupen64-sound	ports/emulators/mupen64-sound
 muse		ports/sysutils/muse
+museekplus	ports/net-p2p/museekplus
 musepack	ports/audio/musepack
 musicbox-tag-editor	ports/audio/musicbox-tag-editor
 musiccontrol	ports/audio/musiccontrol
