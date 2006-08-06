@@ -37,6 +37,7 @@
     SUBDIR += autoindex
     SUBDIR += autoindex2
     SUBDIR += awstats
+    SUBDIR += awstats-devel
     SUBDIR += axis
     SUBDIR += b2evolution
     SUBDIR += bannerfilter
