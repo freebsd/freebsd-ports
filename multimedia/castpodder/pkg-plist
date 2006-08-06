@@ -18,10 +18,10 @@ bin/iPodder
 %%DATADIR%%/compat/__init__.py
 %%DATADIR%%/erik_reload_module.py
 %%DATADIR%%/favorites.txt
+%%DATADIR%%/gui/CastPodder.xrc
 %%DATADIR%%/gui/OptionsDialog.py
 %%DATADIR%%/gui/__init__.py
 %%DATADIR%%/gui/clipboard.py
-%%DATADIR%%/gui/iPodder.xrc
 %%DATADIR%%/gui/iPodderWindows.py
 %%DATADIR%%/gui/images.py
 %%DATADIR%%/gui/listctrl.py
@@ -179,6 +179,8 @@ bin/iPodder
 %%DATADIR%%/plugins/description_links.py
 %%DATADIR%%/tools/coverage.py
 %%DATADIR%%/tools/id3-0.77.tar.gz
+%%DATADIR%%/tools/id3-tool/README
+%%DATADIR%%/tools/id3-tool/id3
 %%DATADIR%%/tools/mkupdate.py
 %%DATADIR%%/tools/purge.py
 %%DATADIR%%/updater.py
@@ -198,6 +200,7 @@ bin/iPodder
 @dirrm %%DATADIR%%/localization
 @dirrm %%DATADIR%%/mp3
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/tools/id3-tool
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
