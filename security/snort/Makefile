@@ -10,7 +10,7 @@ PORTVERSION=	2.4.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
-MAINTAINER=	question+fbsdports@closedsrc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
