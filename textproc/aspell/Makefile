@@ -33,7 +33,7 @@ USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_GETTEXT=		yes
 USE_PERL5_BUILD=	yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 SLAVEDIRS=		textproc/aspell-without-dicten
 

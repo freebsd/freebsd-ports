@@ -120,6 +120,8 @@ lib/libpspell.so.16
 %%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
 %%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr
 %%NLS%%@dirrmtry share/locale/tg/LC_MESSAGES
