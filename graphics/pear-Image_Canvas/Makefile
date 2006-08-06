@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image_Canvas
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	numisemis@yahoo.com
@@ -22,18 +22,19 @@ FILES=		Canvas.php Canvas/Color.php Canvas/GD.php \
 		Canvas/ImageMap.php Canvas/PDF.php Canvas/SVG.php \
 		Canvas/Tool.php Canvas/WithMap.php Canvas/Fonts/fontmap.txt \
 		Canvas/Fonts/README Canvas/GD/JPG.php Canvas/GD/PNG.php
-
 TESTS=		canvas_body.php gradients.php imagemap.php jpg.php \
 		lineends.php pdf.php pear-icon.png png.php README svg.php \
 		text.php
-
-DOCS=		ChangeLog README examples/canvas.php examples/pear-icon.png
+DOCS=		ChangeLog README
+EXAMPLES=	canvas.php pear-icon.png
+_EXAMPLESDIR=	docs/examples
 
 LATEST_LINK=	pear-Image_Canvas
 
 post-patch:
 .for file in ${FILES}
 	@${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/${file}
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endfor
 
 .include <bsd.port.pre.mk>
