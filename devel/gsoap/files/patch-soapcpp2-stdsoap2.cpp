@@ -14,7 +14,7 @@
              if (!meth)
                break;
 -            val = meth->i2v(meth, meth->d2i(NULL, (unsigned char**)&ext->value->data, ext->value->length), NULL);
-+            val = meth->i2v(meth, meth->d2i(NULL, (const unsigned char**)&ext->value->data, ext->value->length), NULL);
++            val = meth->i2v(meth, meth->d2i(NULL, (%%CONST%% unsigned char**)&ext->value->data, ext->value->length), NULL);
              for (j = 0; j < sk_CONF_VALUE_num(val); j++)
              { CONF_VALUE *nval = sk_CONF_VALUE_value(val, j);
                if (nval && !strcmp(nval->name, "DNS") && !strcmp(nval->value, host))
