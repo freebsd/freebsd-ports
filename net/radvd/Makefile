@@ -15,7 +15,6 @@ COMMENT=	A Linux/BSD IPv6 router advertisement daemon
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 USE_RC_SUBR=	radvd
 
 MAN5=	radvd.conf.5
@@ -30,4 +29,10 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S.^.${WRKSRC}/.} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.x
+.endif
+
+.include <bsd.port.post.mk>
