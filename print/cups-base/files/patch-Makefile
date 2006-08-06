@@ -1,11 +1,11 @@
---- Makefile.orig	Thu May 18 13:38:50 2006
-+++ Makefile	Thu May 18 13:40:07 2006
-@@ -99,56 +99,11 @@
+--- Makefile.orig	Fri May 19 14:44:29 2006
++++ Makefile	Thu Jun 29 22:07:22 2006
+@@ -99,57 +99,10 @@
  	echo Installing cups-config script...
  	$(INSTALL_DIR) -m 755 $(BINDIR)
  	$(INSTALL_SCRIPT) cups-config $(BINDIR)/cups-config
--	echo Installing startup script...
 -	if test "x$(INITDIR)" != x; then \
+-		echo Installing init scripts...; \
 -		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(INITDIR)/init.d; \
 -		$(INSTALL_SCRIPT) init/cups.sh $(BUILDROOT)$(INITDIR)/init.d/cups; \
 -		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(INITDIR)/rc0.d; \
@@ -20,13 +20,16 @@
 -	if test "x$(INITDIR)" = x -a "x$(INITDDIR)" != x; then \
 -		$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR); \
 -		if test "$(INITDDIR)" = "/System/Library/StartupItems/PrintingServices"; then \
+-			echo Installing StartupItems files...; \
 -			$(INSTALL_SCRIPT) init/PrintingServices $(BUILDROOT)$(INITDDIR)/PrintingServices; \
 -			$(INSTALL_DATA) init/StartupParameters.plist $(BUILDROOT)$(INITDDIR)/StartupParameters.plist; \
 -			$(INSTALL_DIR) -m 755 $(BUILDROOT)$(INITDDIR)/Resources/English.lproj; \
 -			$(INSTALL_DATA) init/Localizable.strings $(BUILDROOT)$(INITDDIR)/Resources/English.lproj/Localizable.strings; \
 -		elif test "$(INITDDIR)" = "/System/Library/LaunchDaemons"; then \
+-			echo Installing LaunchDaemons configuration file...; \
 -			$(INSTALL_DATA) init/org.cups.cupsd.plist $(BUILDROOT)$(DEFAULT_LAUNCHD_CONF); \
 -		else \
+-			echo Installing RC script...; \
 -			$(INSTALL_SCRIPT) init/cups.sh $(BUILDROOT)$(INITDDIR)/cups; \
 -		fi \
 -	fi
@@ -34,7 +37,7 @@
  		echo Installing cups.conf in $(DBUSDIR)...;\
  		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(DBUSDIR); \
  		$(INSTALL_DATA) packaging/cups-dbus.conf $(BUILDROOT)$(DBUSDIR)/cups.conf; \
- 	fi
+-	fi
 -	if test "x$(XINETD)" != x; then \
 -		echo Installing xinetd configuration file for cups-lpd...; \
 -		$(INSTALL_DIR) -m 755 $(BUILDROOT)$(XINETD); \
@@ -52,8 +55,6 @@
 -		$(INSTALL_DATA) desktop/cups-64.png $(BUILDROOT)/usr/share/icons/hicolor/64x64/apps/cups.png; \
 -		$(INSTALL_DIR) -m 755 $(BUILDROOT)/usr/share/icons/hicolor/128x128/apps; \
 -		$(INSTALL_DATA) desktop/cups-128.png $(BUILDROOT)/usr/share/icons/hicolor/128x128/apps/cups.png; \
--	fi
--
+ 	fi
  
- #
- # Install source and header files...
+ 
