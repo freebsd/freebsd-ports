@@ -5,13 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
-DISTNAME=	rox-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	rox-filer-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A simple and easy to use graphical file manager
@@ -20,9 +18,11 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/mi
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
-USE_XLIB=	yes
-USE_GNOME=	pkgconfig glib20 gtk20 libxml2 gnomevfs2 pango
 USE_AUTOTOOLS=	autoconf:213
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	pkgconfig glib20 gtk20 libxml2 gnomevfs2 pango
+USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 
 MAN1=		rox.1

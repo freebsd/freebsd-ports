@@ -29,11 +29,14 @@ apps/ROX-Filer/Messages/pt_PT.gmo
 apps/ROX-Filer/Messages/ro.gmo
 apps/ROX-Filer/Messages/ru.gmo
 apps/ROX-Filer/Messages/sv.gmo
+apps/ROX-Filer/Messages/uk.gmo
+apps/ROX-Filer/Messages/vi_VN.gmo
 apps/ROX-Filer/Messages/zh_CN.gmo
 apps/ROX-Filer/Messages/zh_TW.gmo
 apps/ROX-Filer/Options.xml
 apps/ROX-Filer/ROX-Filer
 apps/ROX-Filer/ROX/MIME/mime-application.png
+apps/ROX-Filer/ROX/MIME/mime-application:msword.png
 apps/ROX-Filer/ROX/MIME/mime-application:pdf.png
 apps/ROX-Filer/ROX/MIME/mime-application:pgp.png
 apps/ROX-Filer/ROX/MIME/mime-application:postscript.png
@@ -41,7 +44,6 @@ apps/ROX-Filer/ROX/MIME/mime-application:vnd.ms-access.png
 apps/ROX-Filer/ROX/MIME/mime-application:vnd.ms-excel.png
 apps/ROX-Filer/ROX/MIME/mime-application:vnd.ms-office.png
 apps/ROX-Filer/ROX/MIME/mime-application:vnd.ms-powerpoint.png
-apps/ROX-Filer/ROX/MIME/mime-application:vnd.ms-word.png
 apps/ROX-Filer/ROX/MIME/mime-application:vnd.rn-realmedia.png
 apps/ROX-Filer/ROX/MIME/mime-application:vnd.stardivision.writer.png
 apps/ROX-Filer/ROX/MIME/mime-application:vnd.sun.xml.calc.png
@@ -87,6 +89,7 @@ apps/ROX-Filer/ROX/MIME/mime-application:x-troff-man-compressed.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-troff-man.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-troff.png
 apps/ROX-Filer/ROX/MIME/mime-application:xhtml+xml.png
+apps/ROX-Filer/ROX/MIME/mime-application:xml.png
 apps/ROX-Filer/ROX/MIME/mime-application:zip.png
 apps/ROX-Filer/ROX/MIME/mime-audio.png
 apps/ROX-Filer/ROX/MIME/mime-audio:midi.png
