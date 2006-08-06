@@ -75,8 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://archive.progeny.com/squid/%SUBDIR%/ \
@@ -88,7 +87,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE1
+DISTNAME=	squid-2.6.STABLE2
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -101,7 +100,8 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets/
-PATCHFILES=	10799.patch
+PATCHFILES=	10894.patch 10895.patch 10896.patch 10898.patch 10899.patch \
+		10900.patch 10901.patch 10902.patch 10903.patch 10904.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -144,7 +144,6 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off \
 		SQUID_PF "Enable transparent proxying with PF" off \
 		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
-		SQUID_IPFW "Enable transparent proxying with IPFW" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
 		SQUID_ICAP "Enable ICAP client functionality" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
@@ -187,7 +186,7 @@ libexec=	cachemgr.cgi digest_pw_auth diskd-daemon ip_user_check \
 libexec+=	unlinkd
 .endif
 
-sbin=		RunCache squidclient squid
+sbin=		RunCache cossdump squidclient squid
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
@@ -331,17 +330,14 @@ IGNORE=		IPFilter headers are not part of the base system
 CONFIGURE_ARGS+=	--enable-ipf-transparent
 .endif
 .endif
-.if defined(WITH_SQUID_IPFW)
-CFLAGS+=	-DIPFW_TRANSPARENT
-.endif
 .if defined(WITH_SQUID_FOLLOW_XFF)
 CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
 .endif
 .if defined(WITH_SQUID_ICAP)
-IGNORE=		patches for ICAP support are not yet updated
-EXTRA_PATCHES+=
-#CONFIGURE_ARGS+=	--enable-icap-support
-#error_files+=		ERR_ICAP_FAILURE
+EXTRA_PATCHES+=		${PATCHDIR}/icap-2.6-bootstrap.patch \
+			${PATCHDIR}/icap-2.6-core.patch
+CONFIGURE_ARGS+=	--enable-icap-support
+error_files+=		ERR_ICAP_FAILURE
 .endif
 .if !defined(WITHOUT_SQUID_KQUEUE)
 CONFIGURE_ARGS+=	--enable-kqueue
