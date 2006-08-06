@@ -30,7 +30,7 @@ post-patch:
 			-e 's|CFLAGS =|CFLAGS +=|' ${WRKSRC}/Makefile.global
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ssl_proxy ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/ssl_proxy ${TARGETDIR}/sbin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
