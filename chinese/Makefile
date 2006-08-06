@@ -5,11 +5,11 @@
 
     SUBDIR += BBMan
     SUBDIR += CJK
+    SUBDIR += CJKUnifonts
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += acroread-zh_CN
     SUBDIR += acroread-zh_TW
-    SUBDIR += arnettf
     SUBDIR += arphicttf
     SUBDIR += aterm
     SUBDIR += auto-cn-l10n
