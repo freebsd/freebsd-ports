@@ -37,10 +37,10 @@ STRIP=
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
-	${INSTALL_MAN} ${WRKSRC}/rar.txt ${PREFIX}/man/cat1/rar.1
-	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/rar ${TARGETDIR}/bin/rar
+	${INSTALL_MAN} ${WRKSRC}/rar.txt ${TARGETDIR}/man/cat1/rar.1
+	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${TARGETDIR}/etc
+	${INSTALL_DATA} ${WRKSRC}/default.sfx ${TARGETDIR}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
