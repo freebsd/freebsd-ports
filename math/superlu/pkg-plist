@@ -13,5 +13,5 @@ lib/libsuperlu.a
 @dirrm include/superlu
 %%PORTDOCS%%%%DOCSDIR%%/SLU_general.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/simax95.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/superlu_ug.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/superlu_ug.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
