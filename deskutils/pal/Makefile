@@ -6,7 +6,7 @@
 
 PORTNAME=	pal
 PORTVERSION=	0.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	palcal
@@ -25,7 +25,7 @@ MAN1=		pal.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
