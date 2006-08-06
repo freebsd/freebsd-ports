@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.120 2006/05/30 04:44:45 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.122 2006/08/06 21:42:40 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -45,7 +45,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -68,6 +68,7 @@ my $automan = 1;
 my $autoinfo = 1;
 my $manchapters = '123456789ln';
 my $localbase = '/usr/local';
+my $numpitems = 6;
 
 my %lang_pref = qw(
 	arabic		ar
@@ -181,7 +182,7 @@ my @varlist =  qw(
 	DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
 	WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
-	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_AUTOTOOLS
+	PKGREQ PKGMESSAGE MD5_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
 	PLIST_FILES OPTIONS INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
 	DIST_SUBDIR ALLFILES IGNOREFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS
@@ -662,10 +663,13 @@ sub checkplist {
 	my(@unexec_info) = ();
 	my(@infofile) = ();
 
-	my $seen_dirrm_docsdir;
+	my $seen_dirrm_docsdir = 0;
+	my $seen_special = 0;
+	my $item_count = 0;
 
 	open(IN, "< $file") || return 0;
 	while (<IN>) {
+		$item_count++;
 		if ($_ =~ /[ \t]+\n?$/) {
 			&perror("WARN", $file, $., "whitespace before end ".
 				"of line.");
@@ -683,6 +687,7 @@ sub checkplist {
 			&perror("WARN", $file, $., "use \%\%SITE_PERL\%\% ".
 					"instead of lib/perl5/site_perl/\%\%PERL_VER\%\%.");
 		}
+		$seen_special++ if /[\%\@]/;
 		$seen_dirrm_docsdir++ if /^(\%\%PORTDOCS\%\%)?\@dirrm\s+\%\%DOCSDIR\%\%/ || /^(\%\%PORTDOCS\%\%)?\@unexec\s+(\/bin\/)?rmdir\s+\%D\/\%\%DOCSDIR\%\%\s+2\>\s*\/dev\/null\s+\|\|\s+(\/usr\/bin\/)?true/;
 		if ($_ =~ /^\@/) {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
@@ -723,7 +728,7 @@ sub checkplist {
 				&perror("WARN", $file, $., "possible ".
 					"direct use of ldconfig ".
 					"in PLIST found. use ".
-					"INSTALLS_SHLIB instead.");
+					"USE_LDCONFIG instead.");
 				}
 				if (/scrollkeeper/) {
 					&perror("WARN", $file, $., "possible ".
@@ -773,10 +778,10 @@ sub checkplist {
 				"into libdata/pkgconfig for them to be found by pkg-config.");
 		}
 
-		if ($_ =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| &&
-			$makevar{INSTALLS_SHLIB} eq '') {
+		if ($_ =~ m|lib[^\/]+\.so(\.\d+)?$| &&
+			$makevar{USE_LDCONFIG} eq '') {
 			&perror("WARN", $file, $., "installing shared libraries, ".
-				"please define INSTALLS_SHLIB as appropriate");
+				"please define USE_LDCONFIG as appropriate");
 		}
 
 		if ($_ =~ m|^share/icons/.*/| &&
@@ -876,6 +881,10 @@ sub checkplist {
 			$sharedocused++;
 		}
 	}
+
+	if ($item_count < $numpitems) {
+		&perror("WARN", $file, -1, "There are only $item_count items in the plist.  Consider using PLIST_FILES instead of pkg-plist when installing less than $numpitems items.");
+}
 
 	if ($sharedocused && !$seen_dirrm_docsdir) {
 		&perror("WARN", $file, -1, "Both ``\%\%PORTDOCS\%\%\@dirrm \%\%DOCSDIR\%\%'' and ``\%\%PORTDOCS\%\%\@unexec \%D/\%\%DOCSDIR\%\% 2>/dev/null || true'' are missing.  At least one should be used.");
@@ -1118,17 +1127,6 @@ sub checkmakefile {
 	}
 
 	#
-	# whole file: check for common typos
-	#
-	print "OK: checking for common typos.\n" if ($verbose);
-	if ($whole =~ /^(INSTALL_SHLIBS?).?=/m ||
-		$whole =~ /^(INSTALLS_SHLIBS).?=/m) {
-		my $lineno = &linenumber($`);
-		&perror("FATAL", $file, $lineno, "$1 should be spelled ".
-			"INSTALLS_SHLIB.");
-	}
-
-	#
 	# whole file: use of .elseif
 	#
 	print "OK: checking for use of .elseif.\n" if ($verbose);
@@ -1150,10 +1148,10 @@ sub checkmakefile {
 		}
 		my @plist_files = split(/\s+/, $makevar{PLIST_FILES});
 		foreach my $plist_file (@plist_files) {
-			if ($plist_file =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| &&
-				$makevar{INSTALLS_SHLIB} eq '') {
+			if ($plist_file =~ m|lib[^\/]+\.so(\.\d+)?$| &&
+				$makevar{USE_LDCONFIG} eq '') {
 				&perror("WARN", "", -1, "PLIST_FILES: installing shared libraries, ".
-					"please define INSTALLS_SHLIB as appropriate");
+					"please define USE_LDCONFIG as appropriate");
 				last;
 			}
 		}
@@ -1400,6 +1398,7 @@ sub checkmakefile {
 	%deprecated = (
 			USE_MESA		=> 'USE_GL',
 			USE_RCORDER		=> 'USE_RC_SUBR',
+			INSTALLS_SHLIB  => 'USE_LDCONFIG',
 	);
 
 	@deplist = (\%autotools_deprecated, \%deprecated);
@@ -1434,7 +1433,7 @@ sub checkmakefile {
 awk basename brandelf cat chmod chown cp cpio dialog dirname egrep expr
 false file find gmake grep gzcat ldconfig ln md5 mkdir mv objcopy paste patch
 pax perl printf rm rmdir pkg_add pkg_delete pkg_info pkg_version
-ruby sed sh sort touch tr which xargs xmkmf
+ruby sed sh sort sysctl touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
