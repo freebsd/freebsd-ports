@@ -7,6 +7,7 @@
     SUBDIR += ORBit
     SUBDIR += ORBit2
     SUBDIR += ORBit2-reference
+    SUBDIR += SGE
     SUBDIR += SpecTcl
     SUBDIR += ZendOptimizer
     SUBDIR += a2dev
