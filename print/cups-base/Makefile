@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	cups-base
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PORTVERSION}/ \
 		ftp://ftp.ntua.gr/pub/gnu/cups/${PORTVERSION}/ \
@@ -21,7 +20,9 @@ DISTNAME=	cups-${PORTVERSION}-source
 MAINTAINER=	asa@agava.com
 COMMENT=	The Common UNIX Printing System
 
-INSTALLS_SHLIB=	yes
+CONFLICTS=	LPRng-[0-9]*
+
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
@@ -35,12 +36,15 @@ OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
 		PYTHON		"Build PYTHON support" off \
 		LIBPAPER	"Build with libpaper support" off
 
-CUPS_FILESDIR=	${.CURDIR}/../../print/cups/files
+.include <bsd.port.pre.mk>
+
+CUPS_FILESDIR=	${PORTSDIR}/print/cups/files
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_RCDIR=	${PREFIX}/etc/rc.d
 CUPS_DOCSDIR=	${PREFIX}/share/doc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
 CUPS_SOCKET?=	/var/run/cups.sock
+DOCSDIR=	${CUPS_DOCSDIR}
 WRKSRC=		${WRKDIR}/cups-${PORTVERSION}
 
 # file, dir ownership
@@ -71,14 +75,18 @@ LIB_DEPENDS+=		gnutls-openssl.13:${PORTSDIR}/security/gnutls
 
 .if defined(WITH_PHP)
 CONFIGURE_ARGS+=	--with-php
-RUN_DEPENDS+=		php:${PORTSDIR}/lang/php4
+USE_PHP=		yes
+PLIST_SUB+=		PHP=""
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 .else
 CONFIGURE_ARGS+=	--without-php
+PLIST_SUB+=		PHP="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
 CONFIGURE_ARGS+=	--with-python
 USE_PYTHON=		yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 
 .if defined(WITH_LIBPAPER)
@@ -95,7 +103,7 @@ MAN5EXT=	5
 MAN7EXT=	7
 MAN8EXT=	8
 
-MAN1=	cancel.$(MAN1EXT) \
+MAN1=	cancel.${MAN1EXT} \
 	cups-config.$(MAN1EXT) \
 	cupstestdsc.$(MAN1EXT) \
 	cupstestppd.$(MAN1EXT) \
@@ -110,6 +118,7 @@ MAN5=	classes.conf.$(MAN5EXT) \
 	client.conf.$(MAN5EXT) \
 	cups-snmp.conf.$(MAN5EXT) \
 	cupsd.conf.$(MAN5EXT) \
+	mailto.conf.$(MAN5EXT) \
 	mime.convs.$(MAN5EXT) \
 	mime.types.$(MAN5EXT) \
 	printers.conf.$(MAN5EXT) \
@@ -127,7 +136,9 @@ MAN8=	accept.$(MAN8EXT) \
 	lpadmin.$(MAN8EXT) \
 	lpinfo.$(MAN8EXT) \
 	lpmove.$(MAN8EXT) \
-	lpc.$(MAN8EXT) \
+	lpc.$(MAN8EXT)
+MLINKS=	accept.$(MAN8EXT) reject.$(MAN8EXT) \
+	cupsenable.$(MAN8EXT) cupsdisable.$(MAN8EXT)
 
 pre-configure::
 	@${ECHO_MSG} Configuring CUPS with options:
@@ -164,4 +175,4 @@ post-install:
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}
 	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
