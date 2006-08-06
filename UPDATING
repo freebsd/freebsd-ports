@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060804:
+  AFFECTS: users of editors/jedit-devel
+  AUTHOR: question+fbsdports@closedsrc.org
+
+  Starting with jEdit 4.3pre6, jedit-devel now requires Java 1.5+ to be
+  installed due to new features and classes used by the package. If you
+  cannot install or use Java 1.5, you will need to stay with jEdit 4.2.
+
 20060802:
   AFFECTS: users of www/linux-opera
   AUTHOR: mezz@FreeBSD.org
