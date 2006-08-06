@@ -9,7 +9,7 @@ bin/myisampack
 bin/mysql_create_system_tables
 bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
-bin/mysql_upgrade
+bin/mysql_upgrade_shell
 bin/mysql_waitpid
 bin/mysqld_safe
 %%NDB%%bin/ndb_config
