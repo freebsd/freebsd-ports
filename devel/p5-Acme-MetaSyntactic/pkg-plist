@@ -10,7 +10,6 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/amber.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/antlers.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/any.pm
-%%SITE_PERL%%/Acme/MetaSyntactic/apollo.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/barbapapa.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/barbarella.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/batman.pm
@@ -59,6 +58,7 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/peanuts.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/pgpfone.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/phonetic.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/pie.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/planets.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/pm_groups.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/pokemon.pm
