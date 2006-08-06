@@ -47,6 +47,10 @@ PLIST_FILES=	bin/espgs etc/cups/pstoraster.convs \
 		libexec/cups/filter/pstopxl libexec/cups/filter/pstoraster \
 		share/cups/model/pxlcolor.ppd share/cups/model/pxlmono.ppd
 
+.ifdef(WITH_GHOSTSCRIPT_AFPL)
+IGNORE=		doesn't build with AFPL version of Ghostscript; please use gnu ghostscript instead
+.endif
+
 post-patch:
 	${LN} -sf ${ESPGS_WRKSRC}/gdevcups.c ${WRKSRC}/src
 	${CAT} ${FILESDIR}/cups.contrib.mak >> ${WRKSRC}/src/contrib.mak
@@ -68,11 +72,11 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/espgs ${PREFIX}/bin
 	${INSTALL_DATA} ${ESPGS_WRKSRC}/pstoraster.convs ${PREFIX}/etc/cups
-.for file in pstopxl pstoraster
-	${INSTALL_SCRIPT} ${ESPGS_WRKSRC}/${file} ${PREFIX}/libexec/cups/filter
+.for _file in pstopxl pstoraster
+	${INSTALL_SCRIPT} ${ESPGS_WRKSRC}/${_file} ${PREFIX}/libexec/cups/filter
 .endfor
-.for file in pxlcolor.ppd pxlmono.ppd
-	${INSTALL_DATA} ${ESPGS_WRKSRC}/${file} ${PREFIX}/share/cups/model
+.for _file in pxlcolor.ppd pxlmono.ppd
+	${INSTALL_DATA} ${ESPGS_WRKSRC}/${_file} ${PREFIX}/share/cups/model
 .endfor
 
 .include <bsd.port.mk>
