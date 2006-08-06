@@ -11,11 +11,11 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	An addressbook program with mutt mail client support
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
 CFLAGS+=	-I${LOCALBASE}/include
 
 .if defined(WITHOUT_NLS)
@@ -28,11 +28,12 @@ PLIST_SUB+=	NLS=""
 
 MAN1=		abook.1
 MAN5=		abookrc.5
-PORTDOCS=	ANNOUNCE AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README THANKS TODO
+PORTDOCS=	ANNOUNCE AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README \
+		THANKS TODO
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
