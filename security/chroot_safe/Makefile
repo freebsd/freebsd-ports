@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A tool to chroot softwares easily
 
-GNU_CONFIGURE=YES
+GNU_CONFIGURE=	YES
 
 MAN1=		chroot_safe.1
 PLIST_FILES=	sbin/chroot_safe libexec/chroot_safe/chroot_safe.so
@@ -23,6 +23,7 @@ PLIST_DIRS=	libexec/chroot_safe
 post-patch:
 	${REINPLACE_CMD} -e  's|CXX=g++|CXX?=c++|' \
 		-e 's|-o chroot_safe.so|chroot_safe.cpp -o chroot_safe.so|' \
+		-e 's|prefix=@prefix@|prefix=${DESTDIR}@prefix@|' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} 's|chroot(1)|chroot(8)|' ${WRKSRC}/chroot_safe.1.in
 	${REINPLACE_CMD} 's|putenv|unsetenv|' ${WRKSRC}/chroot_safe.cpp
