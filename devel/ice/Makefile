@@ -13,11 +13,12 @@ MASTER_SITES=	http://www.zeroc.com/download/Ice/3.1/
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 
-LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42 \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_BDB=	42+
+INVALID_BDB_VER=	2 3 40 41
+USE_LDCONFIG=	yes
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
 .if defined(DEBUG)
@@ -47,6 +48,10 @@ post-patch:
 		s|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g' \
 		${FILESDIR}/Make.rules.FreeBSD > ${WRKSRC}/config/Make.rules.FreeBSD
+	${REINPLACE_CMD} 's|%%BDB_LIB_CXX_NAME%%|${BDB_LIB_CXX_NAME}|g; \
+		s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g; \
+		s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g' \
+		${WRKSRC}/config/Make.rules
 	${REINPLACE_CMD} 's|prefix|install_slicedir|g' ${WRKSRC}/config/Makefile
 	${REINPLACE_CMD} 's|prefix|install_slicedir|g; \
 		s|INSTALL_PROGRAM|INSTALL_DATA|g' ${WRKSRC}/config/ca/Makefile
