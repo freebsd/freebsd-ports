@@ -7,7 +7,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -16,7 +16,7 @@ COMMENT=	Multitrack audio processing software
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound --disable-rubyecasound --with-largefile \
 		--enable-sys-readline
@@ -32,8 +32,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
+
+.if ${OSVERSION} < 500000
 CFLAGS+=	-fpermissive
 .endif
 
