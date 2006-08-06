@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fbdesk
-PORTVERSION=	1.2.1
+PORTVERSION=	1.4.0
 CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 		${MASTER_SITE_GENTOO} \
