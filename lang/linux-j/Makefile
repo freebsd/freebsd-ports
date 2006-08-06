@@ -5,17 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux-j
+PORTNAME=	j
 PORTVERSION=	504b
+PORTREVISION=	1
 CATEGORIES=	lang linux java
 MASTER_SITES=	http://www.jsoftware.com/download/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	j${PORTVERSION}_linux32
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose programming language
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 # Java 1.5 JDKs install ${PREFIX}/bin/jconsole
 CONFLICTS=	diablo-jdk-1.5.0* jdk-1.5.0* linux-sun-jdk-1.5.0*
@@ -42,6 +44,8 @@ do-install:
 	cd ${WRKSRC}/j${PORTVERSION:S/b//g} && \
 		${TAR} -cf - system user profile.ijs j.jar | \
 			${TAR} -xf - -C ${PREFIX}/lib/j
+	@${FIND} ${PREFIX}/lib/j/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${FIND} ${PREFIX}/lib/j/ -type f -exec ${CHOWN} ${SHAREOWN} {} \;
 	${INSTALL_PROGRAM} ${WRKSRC}/j${PORTVERSION:S/b//g}/jconsole ${PREFIX}/lib/j/jconsole
 	${BRANDELF} -t Linux ${PREFIX}/lib/j/jconsole
 
