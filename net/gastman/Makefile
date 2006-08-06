@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^CFLAGS=|CFLAGS=${CFLAGS} -D__FreeBSD__ |g; \
+		's|^CFLAGS=|CFLAGS= -I${WRKSRC}/include ${CFLAGS}|g; \
 		 s|$$(INSTALL_PREFIX)/usr/sbin|${PREFIX}/bin|g; \
 		 s|$$(INSTALL_PREFIX)/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
