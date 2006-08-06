@@ -1,0 +1,29 @@
+#!/bin/sh -
+#
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.1 2006-08-06 03:34:08 scrappy Exp $
+#
+
+# If there is a global system configuration file, suck it in.
+#
+monthly_statistics_mailto="scrappy@hub.org,root"
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+oldmask=$(umask)
+umask 066
+
+case "$monthly_statistics_enable" in
+    [Yy][Ee][Ss])
+      HN=`/bin/hostname`
+      SYS=`/usr/bin/uname -r`
+      ARCH=`/usr/bin/uname -m`
+      /usr/bin/fetch -qo /tmp/getid http://bsdstats.hub.org/scripts/getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH
+      ;;
+    *)  rc=0;;
+esac
+
+umask $oldmask
+exit $rc

@@ -55,6 +55,7 @@
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdadminscripts
     SUBDIR += bsdsar
+    SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
     SUBDIR += bubblemon2
     SUBDIR += ccd2iso
