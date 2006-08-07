@@ -16,4 +16,4 @@ queue_repair features include:
 
 - can run in repair or test (report-only) modes.  The default is test mode.
 
-WWW:	http://www.qcc.ca/~charlesc/software/queue_repair/
+WWW:	http://pyropus.ca/software/queue-repair/

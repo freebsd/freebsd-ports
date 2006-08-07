@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-bin/queue-repair
-%%PORTDOCS%%%%DOCSDIR%%/BLURB
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -20,7 +20,8 @@ USE_QMAIL_RUN=	yes
 
 USE_PYTHON=	yes
 
-DOCS=		BLURB CHANGELOG TODO
+PLIST_FILES=	bin/queue-repair
+PORTDOCS=	BLURB CHANGELOG TODO
 
 do-build:
 	${REINPLACE_CMD} -e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
@@ -33,7 +34,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/queue_repair.py ${PREFIX}/bin/queue-repair
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+. for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+. endfor
 .endif
 
 .include <bsd.port.mk>
