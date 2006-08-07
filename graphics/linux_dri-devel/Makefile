@@ -24,10 +24,6 @@ USE_LINUX=	yes
 USE_LINUX_PREFIX=	yes
 USE_XLIB=	yes
 
-.if ${OSVERSION} < 500000
-BROKEN=         does not extract on 4.x (both bz2 and gz sources are used)
-.endif
-
 # don't package this for amd64 until we come up with 32-bit ioctl wrappers for
 # the drm.
 ONLY_FOR_ARCHS=	i386
@@ -65,4 +61,8 @@ do-install:
 post-install:
 	@${LDCONFIG_LINUX} ${PREFIX}/usr/X11R6/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500000
+BROKEN=         does not extract on 4.x (both bz2 and gz sources are used)
+.endif
+.include <bsd.port.post.mk>
