@@ -22,7 +22,7 @@ INSTALLS_SHLIB=	yes
 MAN3=		tap.3
 
 post-build:
-	${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 check:
 	(cd ${WRKSRC}; ${MAKE} check)
