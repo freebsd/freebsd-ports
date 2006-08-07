@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/portsdb:${PORTSDIR}/sysutils/portupgrade
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
+INSTALLS_ICONS=	yes
+USE_GETTEXT=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.h" -and -not -name "linklocator.h" | \

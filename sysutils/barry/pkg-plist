@@ -30,3 +30,7 @@ share/locale/sv/LC_MESSAGES/barry.mo
 @dirrm share/icons/crystalsvg/16x16/apps
 @dirrm share/icons/crystalsvg/32x32/apps
 @dirrm share/icons/crystalsvg/48x48/apps
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
