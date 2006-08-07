@@ -75,4 +75,8 @@ post-patch:
 	cd ${WRKSRC}; ${FIND} . -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} -e 's/@program_transform_name@//'
 
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.x
+.endif
+
 .include <bsd.port.post.mk>
