@@ -35,7 +35,11 @@ USE_GCC=3.4
 
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
+.if defined(CPUTYPE)
 FFLAGS+=	-mtune=${CPUTYPE} -pipe -O2 -ffast-math -fomit-frame-pointer
+.else
+FFLAGS+=	-pipe -O2 -ffast-math -fomit-frame-pointer
+.endif
 .endif
 
 post-patch:
