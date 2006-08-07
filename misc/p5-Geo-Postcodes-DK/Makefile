@@ -21,4 +21,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Geo::Postcodes::DK.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600	# Inherited from misc/p5-Geo-Postcodes
+IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
