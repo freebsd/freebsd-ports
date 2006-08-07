@@ -11,7 +11,6 @@ PORTVERSION=	5.1.1
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.ncc.up.pt/~vsc/Yap/current/
-MASTER_SITE_SUBDIR=	Yap-${PORTVERSION}
 DISTNAME=	Yap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -36,6 +35,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|VERSION}|VERSION:}|g' ${WRKSRC}/docs/yap.tex
 	@${REINPLACE_CMD} -e "s,make),${GMAKE})," \
 		-e "s,make install,${GMAKE} install," ${WRKSRC}/Makefile.in
+	@${GREP} -lR '<malloc\.h>' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,<malloc\.h>,<stdlib.h>,'
 
 post-build:
 	cd ${WRKSRC}/docs && makeinfo --no-split yap.tex
