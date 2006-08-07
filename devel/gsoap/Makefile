@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 700000
 CONST=
 .else
 CONST=	const
