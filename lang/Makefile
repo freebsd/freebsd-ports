@@ -262,6 +262,7 @@
     SUBDIR += ruby18
     SUBDIR += ruby18_static
     SUBDIR += sather-specification
+    SUBDIR += sather-tutorial
     SUBDIR += sbcl
     SUBDIR += scheme48
     SUBDIR += schemetoc
