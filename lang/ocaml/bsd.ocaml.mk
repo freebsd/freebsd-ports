@@ -1,6 +1,6 @@
 # ex:ts=4
 #
-# $MBSDlabs: portmk/bsd.ocaml.mk,v 1.17 2006/08/02 19:31:46 stas Exp $
+# $MBSDlabs: portmk/bsd.ocaml.mk,v 1.18 2006/08/06 18:47:23 stas Exp $
 # $FreeBSD$
 #
 # bsd.ocaml.mk - Support for the Objective Caml language packages
@@ -20,6 +20,9 @@
 # USE_OCAML_LDCONFIG	-	Set if your port installs shared libraries
 #				into ocaml site-lib dir. OCaml ld.conf file
 #				will be automatically processed.
+# USE_OCAML_WASH	-	Set if your port wants to automatically
+#				purge shared Ocaml dirs on uninstall. It's
+#				useful when installing to non-standard PREFIX
 # OCAML_PKGDIRS		-	Directories under site-lib to be processed
 #				if USE_OCAML_FINDLIB specified.
 #				Default: ${PORTNAME}
@@ -90,7 +93,7 @@ PLIST_SUB+=	OCAML_SITELIBDIR="${OCAML_SITELIBDIR}"
 
 .if defined(USE_OCAML_FINDLIB) || defined(USE_OCAML_LDCONFIG)
 . if !target(post-install-script)
-post-install-script: ocaml-findlib ocaml-ldconfig
+post-install-script: ocaml-findlib ocaml-ldconfig ocaml-wash
 . endif
 .endif
 
@@ -142,6 +145,18 @@ ocaml-ldconfig:
 . endif
 .endif
 
+.if defined(USE_OCAML_WASH)
+. if !target(ocaml-wash)
+ocaml-wash:
+	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_SITELIBDIR} 2>/dev/null || true"\
+		>> ${TMPPLIST}
+#	If ld.conf is empty
+	@${ECHO_CMD} "@unexec if [ ! -s %D/${OCAML_LDCONF} ]; then ${RM} -f %D/${OCAML_LDCONF}; fi || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_LIBDIR} 2>/dev/null || true" \
+		>> ${TMPPLIST}
+. endif
+.endif
+
 .if !target(ocaml-findlib)
 ocaml-findlib:
 	@${DO_NADA}
@@ -149,6 +164,11 @@ ocaml-findlib:
 
 .if !target(ocaml-ldconfig)
 ocaml-ldconfig:
+	@${DO_NADA}
+.endif
+
+.if !target(ocaml-wash)
+ocaml-wash:
 	@${DO_NADA}
 .endif
 
@@ -162,15 +182,6 @@ add-plist-post:
 	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
 . else
 	@${DO_NADA}
-. endif
-
-. if (${PREFIX} != ${LOCALBASE})
-	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_SITELIBDIR} 2>/dev/null || true"\
-		>> ${TMPPLIST}
-#	If PREFIX is non-standard and ld.conf is empty
-	@${ECHO_CMD} "@unexec if [ ! -s %D/${OCAML_LDCONF} ]; then ${RM} -f %D/${OCAML_LDCONF}; fi || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_LIBDIR} 2>/dev/null || true" \
-		>> ${TMPPLIST}
 . endif
 
 # If we are using PORTDOCS macro port cannot delete OCAML_DOCSDIR, so
