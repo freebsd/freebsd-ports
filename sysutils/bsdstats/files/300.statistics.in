@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.2 2006-08-06 14:11:15 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.3 2006-08-07 03:35:39 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -20,10 +20,23 @@ case "$monthly_statistics_enable" in
       HN=`/bin/hostname`
       SYS=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
-      OS=`/usr/bin/uname -s`
-      /usr/bin/fetch -qo /tmp/getid http://bsdstats.hub.org/scripts/getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH\&opsys=$OS
+      /usr/bin/fetch -qo /tmp/getid http://bsdstats.hub.org/scripts/getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH
+      case "$monthly_statistics_report_devices" in
+         [Yy][Ee][Ss])
+IFS="
+"
+           
+            /usr/bin/fetch -qo /tmp/result http://bsdstats.hub.org/scripts/clear_devices.php?hn=$HN
+            for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
+            do
+                DRIVER=`echo $line | awk -F\@ '{print $1}'`
+                VEN=`echo $line | awk '{print $4}' | cut -c12-15`
+                DEV=`echo $line | awk '{print $4}' | cut -c8-11`
+                /usr/bin/fetch -qo /tmp/result http://bsdstats.hub.org/scripts/report_device.php?driver=$DRIVER\&vendor=$VEN\&device=$DEV\&hn=$HN
+            done
+         ;;
+         esac
       ;;
-    *)  rc=0;;
 esac
 
 umask $oldmask
