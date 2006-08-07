@@ -1,0 +1,5 @@
+Mail::Verp encodes the address of an email recipient into the envelope sender
+address so that a bounce can be more easily handled even if the original
+recipient is forwarding their mail to another address and the remote Mail
+Transport Agents send back unhelpful bounce messages. The module must also be
+used to decode bounce recipient addresses.

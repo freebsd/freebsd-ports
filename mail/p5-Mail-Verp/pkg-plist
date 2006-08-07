@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Mail/Verp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Verp/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Verp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%SITE_PERL%%/Mail
