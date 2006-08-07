@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	uffi
-PORTVERSION=	1.5.13
+PORTVERSION=	1.5.14
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://files.b9.com/uffi/
 PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	xenophon+fbsdports@irtnog.org
 COMMENT=	Universal Foreign Function Interface for Common Lisp
-
-BROKEN=		fails to fetch
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
