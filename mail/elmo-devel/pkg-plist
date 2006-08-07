@@ -5,7 +5,9 @@ bin/elmoconf.pl
 %%DATADIR%%/themes/README
 %%DATADIR%%/themes/outlook
 %%DATADIR%%/tutorial
-share/locale/de/LC_MESSAGES/elmo.mo
-share/locale/pl/LC_MESSAGES/elmo.mo
+%%NLS%%share/locale/de/LC_MESSAGES/elmo.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/elmo.mo
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
