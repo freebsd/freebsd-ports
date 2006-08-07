@@ -293,6 +293,8 @@ share/locale/sr@Latn/LC_MESSAGES/conglomerate.mo
 share/locale/sv/LC_MESSAGES/conglomerate.mo
 share/locale/uk/LC_MESSAGES/conglomerate.mo
 share/locale/zh_CN/LC_MESSAGES/conglomerate.mo
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm share/gnome/pixmaps/conglomerate
 @dirrm share/gnome/omf/conglomerate
 @dirrm share/gnome/help/conglomerate/C/figures
