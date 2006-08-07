@@ -7,17 +7,19 @@
 
 PORTNAME=	talkfilters
 PORTVERSION=	2.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.hyperrealm.com/talkfilters/
+MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/
 
-MAINTAINER=	ehaput@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
 CONFLICTS=	jive* chef* filters-*
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	talkfilters.1 wrap.1
@@ -49,5 +51,9 @@ pre-everything::
 
 post-patch:
 	@${RM} -f ${WRKSRC}/*.info*
+	@${REINPLACE_CMD} -e \
+		's|^\(pkgconfigdir\ =\ \).*|\1$$(prefix)/libdata/pkgconfig|' \
+			${WRKSRC}/Makefile.am \
+			${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
