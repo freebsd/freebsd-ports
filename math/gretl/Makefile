@@ -24,23 +24,24 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 ALL_TARGET=	# empty
-INSTALLS_SHLIB=	yes
 
 MAN1=		gretl.1 gretl-config.1
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"math/lapack appears to be broken on alpha"
+BROKEN=		math/lapack appears to be broken on alpha
 .endif
 
-.if ${OSVERSION} < 500018
+.if ${OSVERSION} < 500018 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
@@ -49,8 +50,10 @@ PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
 GCONF_SCHEMAS=	gretl.schemas
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
+PLIST_SUB+=	GNOMEUI=""
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
+PLIST_SUB+=	GNOMEUI="@comment "
 .endif
 
 .include <bsd.port.post.mk>
