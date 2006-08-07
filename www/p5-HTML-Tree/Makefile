@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	HTML-Tree
-PORTVERSION=	3.20
+PORTVERSION=	3.21
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A collection of modules to manupulate HTML syntax trees
 
 BUILD_DEPENDS=	p5-HTML-Parser>=2.19:${PORTSDIR}/www/p5-HTML-Parser \
