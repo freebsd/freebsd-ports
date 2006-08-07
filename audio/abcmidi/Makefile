@@ -8,7 +8,7 @@
 PORTNAME=	abcmidi
 PORTVERSION=	2005.07.03
 CATEGORIES=	audio
-MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
+MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	sylvioc@gmail.com
