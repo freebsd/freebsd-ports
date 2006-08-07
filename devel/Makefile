@@ -1809,6 +1809,7 @@
     SUBDIR += sfslite-dbg
     SUBDIR += sfslite-noopt
     SUBDIR += sgb
+    SUBDIR += sge
     SUBDIR += sgl
     SUBDIR += sh-rtems-binutils
     SUBDIR += sh-rtems-g77
