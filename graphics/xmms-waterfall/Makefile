@@ -9,7 +9,7 @@ PORTNAME=	waterfall
 PORTVERSION=	0.11
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.aigeek.com/waterfall/
+MASTER_SITES=	http://www.sethoscope.net/waterfall/
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	alepulver@FreeBSD.org
