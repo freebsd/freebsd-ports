@@ -12,6 +12,7 @@ include/dirac/libdirac_decoder/dirac_parser.h
 include/dirac/libdirac_decoder/decoder_types.h
 include/dirac/libdirac_common/dirac_types.h
 include/dirac/libdirac_common/common_types.h
+bin/create_dirac_testfile.pl
 bin/dirac_instrumentation
 bin/dirac_encoder
 bin/dirac_decoder
