@@ -77,7 +77,7 @@ post-patch:
 		${WRKSRC}/ode-0.5/config/user-settings
 .if defined(STDINTFLAG)
 	@cd ${WRKSRC} && \
-		${FIND} -i "" * -type f -exec ${REINPLACE_CMD} -i "" -e 's|stdint.h|inttypes.h|g' "{}" \;
+		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e 's|stdint.h|inttypes.h|g' "{}" \;
 .endif
 
 
