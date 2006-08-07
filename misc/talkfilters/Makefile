@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ehaput@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
 CONFLICTS=	jive* chef* filters-*
