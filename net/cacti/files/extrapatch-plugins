@@ -1,0 +1,601 @@
+--- data_sources.php.orig	Wed Jan  4 01:08:30 2006
++++ data_sources.php	Fri Aug  4 00:26:18 2006
+@@ -1043,18 +1043,25 @@
+ 	if (sizeof($data_sources) > 0) {
+ 		foreach ($data_sources as $data_source) {
+ 			form_alternate_row_color($colors["alternate"],$colors["light"],$i); $i++;
++
++				$ds_table['data_source'] = $data_source;
++				$ds_table['data_input_name'] = $data_source['data_input_name'];
++				$ds_table['active'] = (($data_source["active"] == "on") ? "Yes" : "<span style='color: red;'>No</span>");
++				$ds_table['template_name'] = ((empty($data_source["data_template_name"])) ? "<em>None</em>" : $data_source["data_template_name"]);
++				$ds_table = do_hook_function("data_sources_table", $ds_table);
++
+ 				?>
+ 				<td>
+ 					<a class='linkEditMain' href='data_sources.php?action=ds_edit&id=<?php print $data_source["local_data_id"];?>' title='<?php print $data_source["name_cache"];?>'><?php if ($_REQUEST["filter"] != "") { print eregi_replace("(" . preg_quote($_REQUEST["filter"]) . ")", "<span style='background-color: #F8D93D;'>\\1</span>", title_trim($data_source["name_cache"], read_config_option("max_title_data_source"))); }else{ print title_trim($data_source["name_cache"], read_config_option("max_title_data_source")); } ?></a>
+ 				</td>
+ 				<td>
+-					<?php print $data_source["data_input_name"];?>
++					<?php print $ds_table['data_input_name']; ?>
+ 				</td>
+ 				<td>
+-					<?php print (($data_source["active"] == "on") ? "Yes" : "<span style='color: red;'>No</span>");?>
++					<?php print $ds_table['active']; ?>
+ 				</td>
+ 				<td>
+-					<?php print ((empty($data_source["data_template_name"])) ? "<em>None</em>" : $data_source["data_template_name"]);?>
++					<?php print $ds_table['template_name']; ?>
+ 				</td>
+ 				<td style="<?php print get_checkbox_style();?>" width="1%" align="right">
+ 					<input type='checkbox' style='margin: 0px;' name='chk_<?php print $data_source["local_data_id"];?>' title="<?php print $data_source["name_cache"];?>">
+--- graphs_new.php.orig	Wed Jan  4 01:08:30 2006
++++ graphs_new.php	Fri Aug  4 00:26:18 2006
+@@ -399,7 +399,8 @@
+ 			</td>
+ 			<td class="textInfo" rowspan="2" valign="top">
+ 				<span style="color: #c16921;">*</span><a href="host.php?action=edit&id=<?php print $_REQUEST["host_id"];?>">Edit this Host</a><br>
+-				<span style="color: #c16921;">*</span><a href="host.php?action=edit">Create New Host</a>
++				<span style="color: #c16921;">*</span><a href="host.php?action=edit">Create New Host</a><br>
++				<?php do_hook("graphs_new_top_links"); ?>
+ 			</td>
+ 		</tr>
+ 			<td>
+--- include/config.php.orig	Wed Jan  4 01:08:30 2006
++++ include/config.php	Fri Aug  4 03:35:23 2006
+@@ -32,6 +32,31 @@
+ $database_password = "cactiuser";
+ $database_port = "3306";
+ 
++$plugins = array();
++//$plugins[] = 'devices';
++//$plugins[] = 'discovery';
++//$plugins[] = 'flowview';
++//$plugins[] = 'haloe';
++//$plugins[] = 'hostinfo';
++//$plugins[] = 'links';
++//$plugins[] = 'monitor';
++//$plugins[] = 'ntop';
++//$plugins[] = 'reports';
++//$plugins[] = 'thold';
++//$plugins[] = 'tools';
++//$plugins[] = 'update';
++//$plugins[] = 'weathermap';
++
++/* Do not edit this line */
++$config = array();
++
++/* This is full URL Path to the Cacti installation 
++   For example, if your cacti was accessible by http://server/cacti/ you would user '/cacti/'
++   as the url path.  For just http://server/ use '/'
++*/
++
++$config["url_path"] = '/cacti/';
++
+ /* ----- you probably do not need to change anything below this line ----- */
+ 
+ /* Files that do not need http header information - Command line scripts */
+@@ -51,7 +76,6 @@
+ 	"ss_sql.php"
+ );
+ 
+-$config = array();
+ $colors = array();
+ 
+ /* this should be auto-detected, set it manually if needed */
+@@ -64,6 +88,11 @@
+ $config["base_path"] = strtr(ereg_replace("(.*)[\/\\]include", "\\1", dirname(__FILE__)), "\\", "/");
+ $config["library_path"] = ereg_replace("(.*[\/\\])include", "\\1lib", dirname(__FILE__));
+ $config["include_path"] = dirname(__FILE__);
++
++/* include the plugin function, we do this before everything else,
++   incase we want to add hooks to change config options */
++
++include_once($config["include_path"] . "/plugins.php");
+ 
+ /* colors */
+ $colors["dark_outline"] = "454E53";
+--- include/config_arrays.php.orig	Wed Jan  4 01:08:30 2006
++++ include/config_arrays.php	Fri Aug  4 00:26:18 2006
+@@ -24,6 +24,8 @@
+  +-------------------------------------------------------------------------+
+ */
+ 
++global $menu;
++
+ $messages = array(
+ 	1  => array(
+ 		"message" => 'Save Successful.',
+@@ -429,4 +431,6 @@
+ 	GDC_SLASH => "/"
+ 	);
+ 
+-?>
++do_hook("config_arrays");
++
++?>
+\ No newline at end of file
+--- include/config_form.php.orig	Wed Jan  4 01:08:30 2006
++++ include/config_form.php	Fri Aug  4 00:26:18 2006
+@@ -999,4 +999,6 @@
+ 		)
+ 	);
+ 
+-?>
++do_hook("config_form");
++
++?>
+\ No newline at end of file
+--- include/config_settings.php.orig	Wed Jan  4 01:08:30 2006
++++ include/config_settings.php	Fri Aug  4 00:26:18 2006
+@@ -847,4 +847,6 @@
+ 		)
+ 	);
+ 
+-?>
++do_hook("config_settings");
++
++?>
+\ No newline at end of file
+--- /dev/null	Thu Aug  3 21:25:01 2006
++++ include/plugins.php	Tue Jul 25 03:30:14 2006
+@@ -0,0 +1,70 @@
++<?php
++
++/*
++ * Copyright (c) 1999-2005 The SquirrelMail Project Team (http://squirrelmail.org)
++ * Licensed under the GNU GPL. For full terms see the file COPYING.
++ */
++
++global $plugin_hooks;
++$plugin_hooks = array();
++
++function use_plugin ($name) {
++    global $config;
++    if (file_exists($config["base_path"] . "/plugins/$name/setup.php")) {
++        include_once($config["base_path"] . "/plugins/$name/setup.php");
++        $function = "plugin_init_$name";
++        if (function_exists($function)) {
++            $function();
++        }
++    }
++}
++
++/**
++ * This function executes a hook.
++ * @param string $name Name of hook to fire
++ * @return mixed $data
++ */
++function do_hook ($name) {
++    global $plugin_hooks;
++    $data = func_get_args();
++    $ret = '';
++
++    if (isset($plugin_hooks[$name]) && is_array($plugin_hooks[$name])) {
++        foreach ($plugin_hooks[$name] as $function) {
++            if (function_exists($function)) {
++                $function($data);
++            }
++        }
++    }
++
++    /* Variable-length argument lists have a slight problem when */
++    /* passing values by reference. Pity. This is a workaround.  */
++    return $data;
++}
++
++function do_hook_function($name,$parm=NULL) {
++    global $plugin_hooks;
++    $ret = $parm;
++
++    if (isset($plugin_hooks[$name])
++          && is_array($plugin_hooks[$name])) {
++        foreach ($plugin_hooks[$name] as $function) {
++            if (function_exists($function)) {
++                $ret = $function($ret);
++            }
++        }
++    }
++
++    /* Variable-length argument lists have a slight problem when */
++    /* passing values by reference. Pity. This is a workaround.  */
++    return $ret;
++}
++
++/* On startup, register all plugins configured for use. */
++if (isset($plugins) && is_array($plugins)) {
++    foreach ($plugins as $name) {
++        use_plugin($name);
++    }
++}
++
++?>
+--- include/top_graph_header.php.orig	Wed Jan  4 01:08:30 2006
++++ include/top_graph_header.php	Fri Aug  4 00:26:18 2006
+@@ -81,17 +81,18 @@
+ 		if ($_SESSION["custom"]) {
+ 			print "<meta http-equiv=refresh content='99999'; url='" . basename($_SERVER["PHP_SELF"]) . "'>\r\n";
+ 		}else{
+-			print "<meta http-equiv=refresh content='" . read_graph_config_option("page_refresh") . "'; url='" . basename($_SERVER["PHP_SELF"]) . "'>\r\n";
++			$refresh = do_hook_function("top_graph_refresh", read_graph_config_option("page_refresh"));
++			print "<meta http-equiv=refresh content='" . $refresh . "'; url='" . basename($_SERVER["PHP_SELF"]) . "'>\r\n";
+ 		}
+ 	}
+ 	?>
+-	<link href="include/main.css" rel="stylesheet">
++	<link href="<?php echo $config['url_path']; ?>include/main.css" rel="stylesheet">
+ 
+-	<script type="text/javascript" src="include/treeview/ua.js"></script>
+-	<script type="text/javascript" src="include/treeview/ftiens4.js"></script>
+-	<script type="text/javascript" src="include/jscalendar/calendar.js"></script>
+-	<script type="text/javascript" src="include/jscalendar/lang/calendar-en.js"></script>
+-	<script type="text/javascript" src="include/jscalendar/calendar-setup.js"></script>
++	<script type="text/javascript" src="<?php echo $config['url_path']; ?>include/treeview/ua.js"></script>
++	<script type="text/javascript" src="<?php echo $config['url_path']; ?>include/treeview/ftiens4.js"></script>
++	<script type="text/javascript" src="<?php echo $config['url_path']; ?>include/jscalendar/calendar.js"></script>
++	<script type="text/javascript" src="<?php echo $config['url_path']; ?>include/jscalendar/lang/calendar-en.js"></script>
++	<script type="text/javascript" src="<?php echo $config['url_path']; ?>include/jscalendar/calendar-setup.js"></script>
+ </head>
+ 
+ <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+@@ -102,13 +103,15 @@
+ 			<table width="100%" cellspacing="0" cellpadding="0">
+ 				<tr>
+ 					<td nowrap>
+-						&nbsp;<?php if ($show_console_tab == true) {?><a href="index.php"><img src="images/tab_console.gif" alt="Console" align="absmiddle" border="0"></a><?php }?><a href="graph_view.php"><img src="images/tab_graphs.gif" alt="Graphs" align="absmiddle" border="0"></a>&nbsp;
++						&nbsp;<?php if ($show_console_tab == true) {?><a href="<?php echo $config['url_path']; ?>index.php"><img src="<?php echo $config['url_path']; ?>images/tab_console.gif" alt="Console" align="absmiddle" border="0"></a><?php }?><a href="<?php echo $config['url_path']; ?>graph_view.php"><img src="<?php echo $config['url_path']; ?>images/tab_graphs.gif" alt="Graphs" align="absmiddle" border="0"></a><?php
++						do_hook("top_graph_header_tabs");
++					?>&nbsp;
+ 					</td>
+ 					<td>
+-						<img src="images/cacti_backdrop2.gif" align="absmiddle">
++						<img src="<?php echo $config['url_path']; ?>images/cacti_backdrop2.gif" align="absmiddle">
+ 					</td>
+ 					<td align="right" nowrap>
+-						<?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["graph_settings"] == "on")) { print '<a href="graph_settings.php"><img src="images/tab_settings'; if (basename($_SERVER["PHP_SELF"]) == "graph_settings.php") { print "_down"; } print '.gif" border="0" alt="Settings" align="absmiddle"></a>';}?>&nbsp;&nbsp;<?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["show_tree"] == "on")) {?><a href="graph_view.php?action=tree"><img src="images/tab_mode_tree<?php if ($_REQUEST["action"] == "tree") { print "_down"; }?>.gif" border="0" title="Tree View" alt="Tree View" align="absmiddle"></a><?php }?><?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["show_list"] == "on")) {?><a href="graph_view.php?action=list"><img src="images/tab_mode_list<?php if ($_REQUEST["action"] == "list") { print "_down"; }?>.gif" border="0" title="List View" alt="List View" align="absmiddle"></a><?php }?><?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["show_preview"] == "on")) {?><a href="graph_view.php?action=preview"><img src="images/tab_mode_preview<?php if ($_REQUEST["action"] == "preview") { print "_down"; }?>.gif" border="0" title="Preview View" alt="Preview View" align="absmiddle"></a><?php }?>&nbsp;<br>
++						<?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["graph_settings"] == "on")) { print '<a href="' . $config['url_path'] . 'graph_settings.php"><img src="' . $config['url_path'] . 'images/tab_settings'; if (basename($_SERVER["PHP_SELF"]) == "graph_settings.php") { print "_down"; } print '.gif" border="0" alt="Settings" align="absmiddle"></a>';}?>&nbsp;&nbsp;<?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["show_tree"] == "on")) {?><a href="<?php echo $config['url_path'] ?>graph_view.php?action=tree"><img src="<?php echo $config['url_path'] ?>images/tab_mode_tree<?php if ($_REQUEST["action"] == "tree") { print "_down"; }?>.gif" border="0" title="Tree View" alt="Tree View" align="absmiddle"></a><?php }?><?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["show_list"] == "on")) {?><a href="<?php echo $config['url_path'] ?>graph_view.php?action=list"><img src="<?php echo $config['url_path'] ?>images/tab_mode_list<?php if ($_REQUEST["action"] == "list") { print "_down"; }?>.gif" border="0" title="List View" alt="List View" align="absmiddle"></a><?php }?><?php if ((!isset($_SESSION["sess_user_id"])) || ($current_user["show_preview"] == "on")) {?><a href="<?php echo $config['url_path'] ?>graph_view.php?action=preview"><img src="<?php echo $config['url_path'] ?>images/tab_mode_preview<?php if ($_REQUEST["action"] == "preview") { print "_down"; }?>.gif" border="0" title="Preview View" alt="Preview View" align="absmiddle"></a><?php }?>&nbsp;<br>
+ 					</td>
+ 				</tr>
+ 			</table>
+@@ -116,7 +119,7 @@
+ 	</tr>
+ 	<tr height="2" colspan="2" bgcolor="#183c8f">
+ 		<td colspan="2">
+-			<img src="images/transparent_line.gif" width="170" height="2" border="0"><br>
++			<img src="<?php echo $config['url_path']; ?>images/transparent_line.gif" width="170" height="2" border="0"><br>
+ 		</td>
+ 	</tr>
+ 	<tr height="5" bgcolor="#e9e9e9">
+@@ -128,7 +131,7 @@
+ 					</td>
+ 					<td align="right">
+ 						<?php if ((isset($_SESSION["sess_user_id"])) && ($using_guest_account == false)) { ?>
+-						Logged in as <strong><?php print db_fetch_cell("select username from user_auth where id=" . $_SESSION["sess_user_id"]);?></strong> (<a href="logout.php">Logout</a>)&nbsp;
++						Logged in as <strong><?php print db_fetch_cell("select username from user_auth where id=" . $_SESSION["sess_user_id"]);?></strong> (<a href="<?php echo $config['url_path']; ?>logout.php">Logout</a>)&nbsp;
+ 						<?php } ?>
+ 					</td>
+ 				</tr>
+@@ -136,10 +139,10 @@
+ 		</td>
+ 	</tr>
+ 	<tr>
+-		<td bgcolor="#efefef" colspan="1" height="8" style="background-image: url(images/shadow_gray.gif); background-repeat: repeat-x; border-right: #aaaaaa 1px solid;">
+-			<img src="images/transparent_line.gif" width="<?php print read_graph_config_option("default_dual_pane_width");?>" height="2" border="0"><br>
++		<td bgcolor="#efefef" colspan="1" height="8" style="background-image: url(<?php echo $config['url_path']; ?>images/shadow_gray.gif); background-repeat: repeat-x; border-right: #aaaaaa 1px solid;">
++			<img src="<?php echo $config['url_path']; ?>images/transparent_line.gif" width="<?php print read_graph_config_option("default_dual_pane_width");?>" height="2" border="0"><br>
+ 		</td>
+-		<td bgcolor="#ffffff" colspan="1" height="8" style="background-image: url(images/shadow.gif); background-repeat: repeat-x;">
++		<td bgcolor="#ffffff" colspan="1" height="8" style="background-image: url(<?php echo $config['url_path']; ?>images/shadow.gif); background-repeat: repeat-x;">
+ 
+ 		</td>
+ 	</tr>
+--- include/top_header.php.orig	Wed Jan  4 01:08:30 2006
++++ include/top_header.php	Fri Aug  4 00:26:18 2006
+@@ -24,17 +24,17 @@
+  +-------------------------------------------------------------------------+
+ */
+ 
+-global $colors;
++global $colors, $config;
+ ?>
+ <html>
+ <head>
+ 	<title>cacti</title>
+-	<link href="include/main.css" rel="stylesheet">
+-	<script type="text/javascript" src="include/layout.js"></script>
++	<link href="<?php echo $config['url_path']; ?>include/main.css" rel="stylesheet">
++	<script type="text/javascript" src="<?php echo $config['url_path']; ?>include/layout.js"></script>
+ </style>
+ </head>
+ 
+-<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="images/left_border.gif">
++<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" background="<?php echo $config['url_path']; ?>images/left_border.gif">
+ 
+ <table width="100%" cellspacing="0" cellpadding="0">
+ 	<tr height="37" bgcolor="#a9a9a9">
+@@ -42,10 +42,11 @@
+ 			<table width="100%" cellspacing="0" cellpadding="0">
+ 				<tr>
+ 					<td valign="bottom">
+-						&nbsp;<a href="index.php"><img src="images/tab_console.gif" alt="Console" align="absmiddle" border="0"></a><a href="graph_view.php"><img src="images/tab_graphs.gif" alt="Console" align="absmiddle" border="0"></a>
+-					</td>
++						&nbsp;<a href="<?php echo $config['url_path']; ?>index.php"><img src="<?php echo $config['url_path']; ?>images/tab_console.gif" alt="Console" align="absmiddle" border="0"></a><a href="<?php echo $config['url_path']; ?>graph_view.php"><img src="<?php echo $config['url_path']; ?>images/tab_graphs.gif" alt="Console" align="absmiddle" border="0"></a><?php
++						do_hook("top_header_tabs");
++					?></td>
+ 					<td align="right">
+-						<img src="images/cacti_backdrop.gif" align="absmiddle">
++						<img src="<?php echo $config['url_path']; ?>images/cacti_backdrop.gif" align="absmiddle">
+ 					</td>
+ 				</tr>
+ 			</table>
+@@ -53,7 +54,7 @@
+ 	</tr>
+ 	<tr height="2" bgcolor="#183c8f">
+ 		<td colspan="3">
+-			<img src="images/transparent_line.gif" width="170" height="2" border="0"><br>
++			<img src="<?php echo $config['url_path']; ?>images/transparent_line.gif" width="170" height="2" border="0"><br>
+ 		</td>
+ 	</tr>
+ 	<tr height="5" bgcolor="#e9e9e9">
+@@ -65,7 +66,7 @@
+ 					</td>
+ 					<td align="right">
+ 						<?php if (read_config_option("global_auth") == "on") { ?>
+-						Logged in as <strong><?php print db_fetch_cell("select username from user_auth where id=" . $_SESSION["sess_user_id"]);?></strong> (<a href="logout.php">Logout</a>)&nbsp;
++						Logged in as <strong><?php print db_fetch_cell("select username from user_auth where id=" . $_SESSION["sess_user_id"]);?></strong> (<a href="<?php echo $config['url_path']; ?>logout.php">Logout</a>)&nbsp;
+ 						<?php } ?>
+ 					</td>
+ 				</tr>
+@@ -73,10 +74,10 @@
+ 		</td>
+ 	</tr>
+ 	<tr>
+-		<td bgcolor="#f5f5f5" colspan="1" height="8" width="135" style="background-image: url(images/shadow_gray.gif); background-repeat: repeat-x; border-right: #aaaaaa 1px solid;">
+-			<img src="images/transparent_line.gif" width="135" height="2" border="0"><br>
++		<td bgcolor="#f5f5f5" colspan="1" height="8" width="135" style="background-image: url(<?php echo $config['url_path']; ?>images/shadow_gray.gif); background-repeat: repeat-x; border-right: #aaaaaa 1px solid;">
++			<img src="<?php echo $config['url_path']; ?>images/transparent_line.gif" width="135" height="2" border="0"><br>
+ 		</td>
+-		<td colspan="2" height="8" style="background-image: url(images/shadow.gif); background-repeat: repeat-x;" bgcolor="#ffffff">
++		<td colspan="2" height="8" style="background-image: url(<?php echo $config['url_path']; ?>images/shadow.gif); background-repeat: repeat-x;" bgcolor="#ffffff">
+ 
+ 		</td>
+ 	</tr>
+@@ -86,9 +87,9 @@
+ 				<?php draw_menu();?>
+ 			</table>
+ 
+-			<img src="images/transparent_line.gif" width="135" height="5" border="0"><br>
+-			<p align="center"><a href='about.php'><img src="images/cacti_logo.gif" border="0"></a></p>
+-			<img src="images/transparent_line.gif" width="135" height="5" border="0"><br>
++			<img src="<?php echo $config['url_path']; ?>images/transparent_line.gif" width="135" height="5" border="0"><br>
++			<p align="center"><a href='<?php echo $config['url_path']; ?>about.php'><img src="<?php echo $config['url_path']; ?>images/cacti_logo.gif" border="0"></a></p>
++			<img src="<?php echo $config['url_path']; ?>images/transparent_line.gif" width="135" height="5" border="0"><br>
+ 		</td>
+ 		<td></td>
+ 	</tr>
+--- lib/api_device.php.orig	Wed Jan  4 01:08:30 2006
++++ lib/api_device.php	Fri Aug  4 00:26:18 2006
+@@ -76,6 +76,8 @@
+ 	$save["snmp_timeout"] = form_input_validate($snmp_timeout, "snmp_timeout", "^[0-9]+$", false, 3);
+ 	$save["disabled"] = form_input_validate($disabled, "disabled", "", true, 3);
+ 
++	$save = do_hook_function("api_device_save", $save);
++
+ 	$host_id = 0;
+ 
+ 	if (!is_error_message()) {
+--- lib/functions.php.orig	Wed Jan  4 01:08:30 2006
++++ lib/functions.php	Fri Aug  4 00:26:18 2006
+@@ -186,9 +186,9 @@
+      user
+    @returns - (bool) whether the messages array contains an error or not */
+ function is_error_message() {
+-	global $config;
++	global $config, $messages;
+ 
+-	include($config["include_path"] . "/config_arrays.php");
++	include_once($config["include_path"] . "/config_arrays.php");
+ 
+ 	if (isset($_SESSION["sess_messages"])) {
+ 		if (is_array($_SESSION["sess_messages"])) {
+@@ -562,6 +562,8 @@
+ 		}
+ 	}
+ 
++	do_hook_function("update_host_status", array('issue_log_message' => $issue_log_message, 'status' => $status, 'host_id' => $host_id, 'hosts' => $hosts));
++
+ 	db_execute("update host set
+ 		status = '" . $hosts[$host_id]["status"] . "',
+ 		status_event_count = '" . $hosts[$host_id]["status_event_count"] . "',
+@@ -1345,6 +1347,8 @@
+ 		"templates_export.php:save" => array("title" => "Export Results", "mapping" => "index.php:,templates_export.php:", "url" => "templates_export.php", "level" => "2"),
+ 		"templates_import.php:" => array("title" => "Import Templates", "mapping" => "index.php:", "url" => "templates_import.php", "level" => "1"),
+ 		);
++
++	$nav = do_hook_function("draw_navigation_text", $nav);
+ 
+ 	$current_page = basename($_SERVER["PHP_SELF"]);
+ 	$current_action = (isset($_REQUEST["action"]) ? $_REQUEST["action"] : "");
+--- lib/html.php.orig	Wed Jan  4 01:08:30 2006
++++ lib/html.php	Fri Aug  4 00:26:18 2006
+@@ -88,6 +88,7 @@
+    @arg $extra_url_args - extra arguments to append to the url
+    @arg $header - html to use as a header */
+ function html_graph_area(&$graph_array, $no_graphs_message = "", $extra_url_args = "", $header = "") {
++	global $config;
+ 	$i = 0;
+ 	if (sizeof($graph_array) > 0) {
+ 		if ($header != "") {
+@@ -101,10 +102,10 @@
+ 					<table width='1' cellpadding='0'>
+ 						<tr>
+ 							<td>
+-								<a href='graph.php?local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=all'><img src='graph_image.php?local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0<?php print (($extra_url_args == "") ? "" : "&$extra_url_args");?>' border='0' alt='<?php print $graph["title_cache"];?>'></a>
++								<a href='<?php print $config['url_path'] ?>graph.php?local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=all'><img src='<?php print $config['url_path'] ?>graph_image.php?local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0<?php print (($extra_url_args == "") ? "" : "&$extra_url_args");?>' border='0' alt='<?php print $graph["title_cache"];?>'></a>
+ 							</td>
+ 							<td valign='top' style='padding: 3px;'>
+-								<a href='graph.php?action=zoom&local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0&<?php print $extra_url_args;?>'><img src='images/graph_zoom.gif' border='0' alt='Zoom Graph' title='Zoom Graph' style='padding: 3px;'></a><br>
++								<a href='<?php print $config['url_path'] ?>graph.php?action=zoom&local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0&<?php print $extra_url_args;?>'><img src='<?php print $config['url_path'] ?>images/graph_zoom.gif' border='0' alt='Zoom Graph' title='Zoom Graph' style='padding: 3px;'></a><br>
+ 							</td>
+ 						</tr>
+ 					</table>
+@@ -130,6 +131,7 @@
+    @arg $extra_url_args - extra arguments to append to the url
+    @arg $header - html to use as a header */
+ function html_graph_thumbnail_area(&$graph_array, $no_graphs_message = "", $extra_url_args = "", $header = "") {
++	global $config;
+ 	$i = 0; $k = 0;
+ 	if (sizeof($graph_array) > 0) {
+ 		if ($header != "") {
+@@ -144,10 +146,10 @@
+ 				<table width='1' cellpadding='0'>
+ 					<tr>
+ 						<td>
+-							<a href='graph.php?rra_id=all&local_graph_id=<?php print $graph["local_graph_id"];?>'><img src='graph_image.php?local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0&graph_height=<?php print read_graph_config_option("default_height");?>&graph_width=<?php print read_graph_config_option("default_width");?>&graph_nolegend=true<?php print (($extra_url_args == "") ? "" : "&$extra_url_args");?>' border='0' alt='<?php print $graph["title_cache"];?>'></a>
++							<a href='<?php print $config['url_path'] ?>graph.php?rra_id=all&local_graph_id=<?php print $graph["local_graph_id"];?>'><img src='<?php print $config['url_path'] ?>graph_image.php?local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0&graph_height=<?php print read_graph_config_option("default_height");?>&graph_width=<?php print read_graph_config_option("default_width");?>&graph_nolegend=true<?php print (($extra_url_args == "") ? "" : "&$extra_url_args");?>' border='0' alt='<?php print $graph["title_cache"];?>'></a>
+ 						</td>
+ 						<td valign='top' style='padding: 3px;'>
+-							<a href='graph.php?action=zoom&local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0&<?php print $extra_url_args;?>'><img src='images/graph_zoom.gif' border='0' alt='Zoom Graph' title='Zoom Graph' style='padding: 3px;'></a><br>
++							<a href='<?php print $config['url_path'] ?>graph.php?action=zoom&local_graph_id=<?php print $graph["local_graph_id"];?>&rra_id=0&<?php print $extra_url_args;?>'><img src='<?php print $config['url_path'] ?>images/graph_zoom.gif' border='0' alt='Zoom Graph' title='Zoom Graph' style='padding: 3px;'></a><br>
+ 						</td>
+ 					</tr>
+ 				</table>
+@@ -430,6 +432,8 @@
+ 					}
+ 
+ 					while (list($item_sub_url, $item_sub_title) = each($item_title)) {
++						$item_sub_url = $config['url_path'] . $item_sub_url;
++
+ 						/* indent sub-items */
+ 						if ($i > 0) {
+ 							$prepend_string = "---&nbsp;";
+@@ -439,7 +443,7 @@
+ 
+ 						/* do not put a line between each sub-item */
+ 						if (($i == 0) || ($draw_sub_items == false)) {
+-							$background = "images/menu_line.gif";
++							$background = $config['url_path'] . "images/menu_line.gif";
+ 						}else{
+ 							$background = "";
+ 						}
+@@ -468,17 +472,18 @@
+ 			}else{
+ 				if ((isset($user_realms[$current_realm_id])) || (!isset($user_auth_realm_filenames{basename($item_url)}))) {
+ 					/* draw normal (non sub-item) menu item */
++					$item_url = $config['url_path'] . $item_url;
+ 					if (basename($_SERVER["PHP_SELF"]) == basename($item_url)) {
+-						print "<tr><td class='textMenuItemSelected' background='images/menu_line.gif'><strong><a href='$item_url'>$item_title</a></strong></td></tr>\n";
++						print "<tr><td class='textMenuItemSelected' background='" . $config['url_path'] . "images/menu_line.gif'><strong><a href='$item_url'>$item_title</a></strong></td></tr>\n";
+ 					}else{
+-						print "<tr><td class='textMenuItem' background='images/menu_line.gif'><a href='$item_url'>$item_title</a></td></tr>\n";
++						print "<tr><td class='textMenuItem' background='" . $config['url_path'] . "images/menu_line.gif'><a href='$item_url'>$item_title</a></td></tr>\n";
+ 					}
+ 				}
+ 			}
+ 		}
+ 	}
+ 
+-	print "<tr><td class='textMenuItem' background='images/menu_line.gif'></td></tr>\n";
++	print "<tr><td class='textMenuItem' background='" . $config['url_path'] . "images/menu_line.gif'></td></tr>\n";
+ 
+ 	print '</table></td></tr>';
+ }
+@@ -488,18 +493,19 @@
+    @arg $actions_array - an array that contains a list of possible actions. this array should
+      be compatible with the form_dropdown() function */
+ function draw_actions_dropdown($actions_array) {
++	global $config;
+ 	?>
+ 	<table align='center' width='98%'>
+ 		<tr>
+ 			<td width='1' valign='top'>
+-				<img src='images/arrow.gif' alt='' align='absmiddle'>&nbsp;
++				<img src='<?php echo $config['url_path']; ?>images/arrow.gif' alt='' align='absmiddle'>&nbsp;
+ 			</td>
+ 			<td align='right'>
+ 				Choose an action:
+ 				<?php form_dropdown("drp_action",$actions_array,"","","1","","");?>
+ 			</td>
+ 			<td width='1' align='right'>
+-				<input type='image' src='images/button_go.gif' alt='Go'>
++				<input type='image' src='<?php echo $config['url_path']; ?>images/button_go.gif' alt='Go'>
+ 			</td>
+ 		</tr>
+ 	</table>
+@@ -526,4 +532,4 @@
+ 	</tr>
+ <?php }
+ 
+-?>
++?>
+\ No newline at end of file
+--- lib/html_form.php.orig	Wed Jan  4 01:08:30 2006
++++ lib/html_form.php	Fri Aug  4 00:26:18 2006
+@@ -434,6 +434,7 @@
+    @arg $force_type - if specified, will force the 'action' button to be either
+      'save' or 'create'. otherwise this field should be properly auto-detected */
+ function form_save_button($cancel_url, $force_type = "", $key_field = "id") {
++	global $config;
+ 	if (empty($force_type)) {
+ 		if (empty($_GET[$key_field])) {
+ 			$img = "button_create.gif";
+@@ -454,8 +455,8 @@
+ 		<tr>
+ 			 <td bgcolor="#f5f5f5" align="right">
+ 				<input type='hidden' name='action' value='save'>
+-				<a href='<?php print $cancel_url;?>'><img src='images/button_cancel2.gif' alt='Cancel' align='absmiddle' border='0'></a>
+-				<input type='image' src='images/<?php print $img;?>' alt='<?php print $alt;?>' align='absmiddle'>
++				<a href='<?php print $cancel_url;?>'><img src='<?php echo $config['url_path']; ?>images/button_cancel2.gif' alt='Cancel' align='absmiddle' border='0'></a>
++				<input type='image' src='<?php echo $config['url_path']; ?>images/<?php print $img;?>' alt='<?php print $alt;?>' align='absmiddle'>
+ 			</td>
+ 		</tr>
+ 	</table>
+--- /dev/null	Thu Aug  3 21:25:01 2006
++++ plugins/index.php	Tue Jul 25 03:30:15 2006
+@@ -0,0 +1,5 @@
++<?php
++
++header("Location:../index.php");
++
++?>
+--- poller.php.orig	Wed Jan  4 01:08:30 2006
++++ poller.php	Fri Aug  4 00:26:18 2006
+@@ -40,6 +40,8 @@
+ include_once($config["base_path"] . "/lib/graph_export.php");
+ include_once($config["base_path"] . "/lib/rrd.php");
+ 
++do_hook("poller_top");
++
+ /* Record Start Time */
+ list($micro,$seconds) = split(" ", microtime());
+ $start = $seconds + $micro;
+@@ -268,4 +270,6 @@
+ }
+ // End Mainline Processing
+ 
+-?>
++do_hook("poller_bottom");
++
++?>
+\ No newline at end of file
+--- utilities.php.orig	Wed Jan  4 01:08:30 2006
++++ utilities.php	Fri Aug  4 00:26:18 2006
+@@ -88,6 +88,9 @@
+ 		include_once("./include/bottom_footer.php");
+ 		break;
+ 	default:
++
++		do_hook_function("utilities_action", $_REQUEST["action"]);
++
+ 		include_once("./include/top_header.php");
+ 
+ 		utilities();
+@@ -353,6 +356,8 @@
+ 		</td>
+ 	</tr>
+ 	<?php
++
++	do_hook("utilities_list");
+ 
+ 	html_end_box();
+ }
