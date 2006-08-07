@@ -18,6 +18,7 @@ COMMENT=	A GTK interactive geometry sofware
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
