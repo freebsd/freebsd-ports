@@ -6,3 +6,5 @@ bin/filtermail
 %%NLS%%share/locale/it/LC_MESSAGES/filtermail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/filtermail.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/filtermail.mo
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
