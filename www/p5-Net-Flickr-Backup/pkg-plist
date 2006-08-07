@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Net/Flickr/Backup.pm
+@dirrmtry %%SITE_PERL%%/Net/Flickr
+@dirrmtry %%SITE_PERL%%/Net
