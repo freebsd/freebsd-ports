@@ -130,7 +130,9 @@
 %%CACTIDIR%%/images/transparent_line.gif
 %%CACTIDIR%%/include/auth.php
 %%CACTIDIR%%/include/bottom_footer.php
-%%CACTIDIR%%/include/config.php
+@unexec cmp -s %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php && rm -f %D/%%CACTIDIR%%/include/config.php || true
+%%CACTIDIR%%/include/config.php.orig
+@exec [ -f %D/%%CACTIDIR%%/include/config.php ] || cp %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php
 %%CACTIDIR%%/include/config_arrays.php
 %%CACTIDIR%%/include/config_constants.php
 %%CACTIDIR%%/include/config_form.php
@@ -185,6 +187,7 @@
 %%CACTIDIR%%/include/jscalendar/lang/calendar-zh.js
 %%CACTIDIR%%/include/layout.js
 %%CACTIDIR%%/include/main.css
+%%PLUGIN%%%%CACTIDIR%%/include/plugins.php
 %%CACTIDIR%%/include/top_graph_header.php
 %%CACTIDIR%%/include/top_header.php
 %%CACTIDIR%%/include/treeview/ftiens4.js
@@ -283,7 +286,6 @@
 %%CACTIDIR%%/lib/adodb/drivers/adodb-sybase.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-vfp.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-ar.inc.php
-%%CACTIDIR%%/lib/adodb/lang/adodb-hu.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-bg.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-bgutf8.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-ca.inc.php
@@ -293,6 +295,7 @@
 %%CACTIDIR%%/lib/adodb/lang/adodb-en.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-es.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-fr.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-hu.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-it.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-nl.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-pl.inc.php
@@ -333,8 +336,9 @@
 %%CACTIDIR%%/lib/utility.php
 %%CACTIDIR%%/lib/variables.php
 %%CACTIDIR%%/lib/xml.php
-%%CACTIDIR%%/log/cacti.log
+@unexec [ ! -s %%CACTIDIR%%/log/cacti.log ] && rm %%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
+%%PLUGIN%%%%CACTIDIR%%/plugins/index.php
 %%CACTIDIR%%/poller.php
 %%CACTIDIR%%/poller_commands.php
 %%CACTIDIR%%/poller_export.php
@@ -382,12 +386,13 @@
 %%CACTIDIR%%/user_admin.php
 %%CACTIDIR%%/utilities.php
 @dirrm %%CACTIDIR%%/scripts
-@dirrm %%CACTIDIR%%/rra
+@dirrmtry %%CACTIDIR%%/rra
 @dirrm %%CACTIDIR%%/resource/snmp_queries
 @dirrm %%CACTIDIR%%/resource/script_server
 @dirrm %%CACTIDIR%%/resource/script_queries
 @dirrm %%CACTIDIR%%/resource
-@dirrm %%CACTIDIR%%/log
+%%PLUGIN%%@dirrm %%CACTIDIR%%/plugins
+@dirrmtry %%CACTIDIR%%/log
 @dirrm %%CACTIDIR%%/lib/adodb/lang
 @dirrm %%CACTIDIR%%/lib/adodb/drivers
 @dirrm %%CACTIDIR%%/lib/adodb/datadict

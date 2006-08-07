@@ -7,7 +7,7 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.6h.${PATCHLEVEL}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
 DISTNAME=	${PORTNAME}-${SITEDISTVERSION}
@@ -44,9 +44,22 @@ PLIST_SUB+=	CACTIDIR=${CACTIDIR}
 SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
 
+OPTIONS=	PLUGIN "Enable plugin support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PLUGIN)
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-plugins
+
+PLIST_SUB+=	PLUGIN=""
+.else
+PLIST_SUB+=	PLUGIN="@comment "
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \
 	${MV} ${WRKSRC}/include/db-settings.php ${WRKSRC}/include/db-settings.php.orig
+	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.orig
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
@@ -58,9 +71,13 @@ do-install:
 		${CP} ${PREFIX}/${CACTIDIR}/include/db-settings.php.orig \
 			${PREFIX}/${CACTIDIR}/include/db-settings.php; \
 	fi
+	@if [ ! -f ${PREFIX}/${CACTIDIR}/include/config.php ]; then \
+		${CP} ${PREFIX}/${CACTIDIR}/include/config.php.orig \
+			${PREFIX}/${CACTIDIR}/include/config.php; \
+	fi
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
