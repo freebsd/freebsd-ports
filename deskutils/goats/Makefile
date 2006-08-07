@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.menudo.freeserve.co.uk/
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Yellow post-it note applet for GNOME 2
 
+DEPRECATED=	Project disappeared from the internet
+EXPIRATION_DATE=2006-10-07
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeprintui gnomepanel libglade2 gnomeprefix gnomehack
