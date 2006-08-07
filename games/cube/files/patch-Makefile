@@ -1,28 +1,28 @@
---- source/src/Makefile.orig	Sat Dec 20 16:47:58 2003
-+++ source/src/Makefile	Thu Jun  3 20:10:04 2004
-@@ -1,8 +1,7 @@
+--- ./Makefile.orig	Sat Jul 29 19:53:13 2006
++++ ./Makefile	Sat Jul 29 20:57:57 2006
+@@ -1,8 +1,8 @@
 -CXX=g++
--CXXOPTFLAGS=-Wall -O3 -fsigned-char -fomit-frame-pointer
++CXX?=g++
+ CXXOPTFLAGS=-Wall -O3 -fsigned-char -fomit-frame-pointer
 -CXXFLAGS=$(CXXOPTFLAGS) -I../enet/include `sdl-config --cflags`
-+CXX?=%%CXX%%
-+CXXFLAGS=%%CXXFLAGS%% -I../enet/include -I%%X11BASE%%/include `sdl11-config --cflags` -DHAS_SOCKLEN_T
++CXXFLAGS+=$(CXXOPTFLAGS) -I../enet/include `$(SDL_CONFIG) --cflags` -I$(X11BASE)/include
  
 -CLIENT_LIBS=-L../enet -lenet `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
-+CLIENT_LIBS=-L../enet -lenet -L%%X11BASE%%/lib `sdl11-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU
++CLIENT_LIBS=-L../enet -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -L$(X11BASE)/lib -lGL -lGLU 
  CLIENT_OBJS= \
  	client.o \
  	clientextras.o \
-@@ -49,11 +48,11 @@
+@@ -49,11 +49,11 @@
  all: enet client server
  
  enet:
 -	-make -C ../enet all
-+	-gmake -C ../enet all
++	-$(MAKE) -C ../enet all
  
  clean:
  	-rm -f $(SERVER_OBJS) $(CLIENT_OBJS) cube_server cube_client
 -	-make -C ../enet/ clean
-+	-gmake -C ../enet/ clean
++	-$(MAKE) -C ../enet/ clean
  
  standalone.o:
  	$(CXX) $(CXXFLAGS) -DSTANDALONE -o standalone.o -c serverutil.cpp
