@@ -18,17 +18,18 @@ COMMENT=	Drawing organic molecules easily and store them (developer version)
 LIB_DEPENDS=	EMF.1:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-1.7alpha15/
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.7alpha15/
 USE_GNOME=	gtk20
 #USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
 MAN1=	chemtool.1 cht.1
 #to include emf
-CFLAGS+= -I${LOCALBASE}/include/libEMF
-CXXFLAGS+= -I${LOCALBASE}/include/libEMF
+CFLAGS+=	-I${LOCALBASE}/include/libEMF
+CXXFLAGS+=	-I${LOCALBASE}/include/libEMF
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/configure.in
