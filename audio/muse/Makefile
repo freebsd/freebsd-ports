@@ -7,51 +7,62 @@
 #
 
 PORTNAME=	MuSE
-PORTVERSION=	0.9
-PORTREVISION=	3
+PORTVERSION=	0.9.2
+PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.dyne.org/muse/releases/ \
 		http://www.ljudmila.org/~jaromil/muse/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Multiple Streaming Engine
 
-LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
+		ogg.5:${PORTSDIR}/audio/libogg
 
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-debug --disable-lubrify
-
-MAN1=		muse.1
-PORTDOCS=	${DOCSFILES:S,doc/,,g}
-PLIST_FILES=	bin/muse
-
+CONFIGURE_ARGS=	--disable-debug --disable-lubrify --disable-rpath
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT -DHAVE_SYS_UIO_H \
 		${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl
 
-DOCFILES=	AUTHORS ChangeLog KNOWN-BUGS NEWS README TODO doc/USAGE
+OPTIONS=	X11	"Build with X11 support" on \
+		MP3	"Build with MP3 support" on \
+		SNDFILE	"Build with sndfile support" on
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
-CONFIGURE_ARGS+=	--without-x --with-rubik
+CONFIGURE_ARGS+=--without-x --with-rubik
 .else
 USE_GNOME+=	gtk20
 .endif
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/muse ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/muse.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+.if !defined(WITHOUT_MP3) || exists(${LOCALBASE}/lib/libmp3lame.so.0)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 .endif
 
-.include <bsd.port.mk>
+.if !defined(WITHOUT_SNDFILE) || exists(${LOCALBASE}/lib/libsndfile.so.1)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+PLIST_FILES=	bin/muse \
+		share/locale/es/LC_MESSAGES/muse.mo \
+		share/locale/it/LC_MESSAGES/muse.mo
+MAN1=		muse.1
+
+post-patch:
+.if exists(/usr/include/sys/soundcard.h)
+	${REINPLACE_CMD} -e "s,machine/soundcard.h,sys/soundcard.h,g" \
+		${WRKSRC}/src/portaudio/pa_unix_oss.c
+.endif
+
+.include <bsd.port.post.mk>

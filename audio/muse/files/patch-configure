@@ -1,38 +1,58 @@
---- configure.orig	Sun Apr 18 00:33:26 2004
-+++ configure	Mon Apr 19 22:34:18 2004
-@@ -3427,7 +3427,7 @@
+--- configure.orig	Tue Dec 27 16:03:15 2005
++++ configure	Fri Aug  4 11:51:41 2006
+@@ -1894,7 +1894,7 @@
+ echo "$as_me:$LINENO: checking for which platform we are compiling" >&5
+ echo $ECHO_N "checking for which platform we are compiling... $ECHO_C" >&6
+ case $uname in
+-     Linux)
++     Linux|FreeBSD)
+      echo "$as_me:$LINENO: result: Linux" >&5
+ echo "${ECHO_T}Linux" >&6
+ 
+@@ -2613,16 +2613,12 @@
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g ${CFLAGS}"
+   else
+-    CFLAGS="-g"
++    CFLAGS="-g ${CFLAGS}"
+   fi
+ else
+-  if test "$GCC" = yes; then
+-    CFLAGS="-O2"
+-  else
+-    CFLAGS=
+-  fi
++    CFLAGS="${CFLAGS}"
+ fi
+ echo "$as_me:$LINENO: checking for $CC option to accept ANSI C" >&5
+ echo $ECHO_N "checking for $CC option to accept ANSI C... $ECHO_C" >&6
+@@ -3738,7 +3734,7 @@
  #AM_DEFINE_UNQUOTED(HOST_CPU, "${host_cpu}")
  
  #CFLAGS="-O4 -D_REENTRANT -fomit-frame-pointer -march=${host_cpu} -ffast-math -malign-double -funroll-loops -pipe"
 -CFLAGS="-pipe -D_REENTRANT"
-+CFLAGS="$CFLAGS -D_REENTRANT"
++#CFLAGS="-pipe -D_REENTRANT"
  
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
-@@ -11182,7 +11182,7 @@
+@@ -14588,7 +14584,7 @@
  else
  
  lrint_save_CFLAGS=$CFLAGS
 -CFLAGS="-O2 -lm"
-+CFLAGS="$CFLAGS -lm"
++CFLAGS="${CFLAGS} -lm"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -11249,7 +11249,7 @@
+ _ACEOF
+@@ -14665,7 +14661,7 @@
  else
  
  lrintf_save_CFLAGS=$CFLAGS
 -CFLAGS="-O2 -lm"
-+CFLAGS="$CFLAGS -lm"
++CFLAGS="${CFLAGS} -lm"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -11836,8 +11836,6 @@
-    else
-      CFLAGS="$CFLAGS -O3 -fomit-frame-pointer -march=${host_cpu} -ffast-math"
-    fi
--else
--   CFLAGS="$CFLAGS -O2 -ffast-math"
- fi
- 
- 
+ _ACEOF

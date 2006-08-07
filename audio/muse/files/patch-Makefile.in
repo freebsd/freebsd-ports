@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Aug  4 12:11:20 2006
++++ Makefile.in	Fri Aug  4 12:11:27 2006
+@@ -240,7 +240,7 @@
+ target_vendor = @target_vendor@
+ SUBDIRS = po intl src
+ docs_DATA = README COPYING AUTHORS NEWS KNOWN-BUGS ChangeLog TODO USAGE
+-docsdir = ${prefix}/doc/MuSE
++docsdir = ${prefix}/share/doc/MuSE
+ man_MANS = muse.1
+ ACLOCAL_AMFLAGS = -I . -I m4
+ EXTRA_DIST = autogen.sh config.rpath
