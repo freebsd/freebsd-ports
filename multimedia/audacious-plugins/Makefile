@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/ \
 		${MASTER_SITE_LOCAL}
@@ -27,7 +28,7 @@ USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++" \
 		INPUT_PLUGINS="${INPUT_PLUGINS}" \

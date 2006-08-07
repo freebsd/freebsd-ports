@@ -112,3 +112,5 @@ share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @dirrm lib/audacious
 @dirrm include/audacious
 @dirrmtry share/applications
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
