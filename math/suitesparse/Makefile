@@ -16,11 +16,18 @@ COMMENT=	UFspace is a set of packages for sparse matrices calculation
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
 
+.if defined(WITH_BLAS)
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+BLAS=	-L${LOCALBASE}/lib -lblas
+LAPACK=	-L${LOCALBASE}/lib -llapack
+.else
+LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
+BLAS=	-L${LOCALBASE}/lib -lf77blas -latlas -lg2c
+LAPACK=	-L${LOCALBASE}/lib -lalapack -lcblas
+.endif
+
 USE_GMAKE=	yes
 ALL_TARGET=
-
-BLAS=		-L${LOCALBASE}/lib -lf77blas -latlas -lg2c
-LAPACK=		-L${LOCALBASE}/lib -lalapack -lcblas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
