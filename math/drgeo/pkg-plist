@@ -224,3 +224,7 @@ share/locale/zh_TW/LC_MESSAGES/drgeo.mo
 @dirrm share/gnome/drgeo/examples
 @dirrm share/gnome/drgeo/encode
 @dirrm share/gnome/drgeo
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
