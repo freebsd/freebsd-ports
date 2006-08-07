@@ -143,3 +143,5 @@ share/locale/sv/LC_MESSAGES/gcal.mo
 @dirrm %%DATADIR%%/misc/daily
 @dirrm %%DATADIR%%/misc
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
