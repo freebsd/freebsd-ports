@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgpool
-PORTVERSION=	3.1
+PORTVERSION=	3.1.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/932/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/980/
 
 MAINTAINER=	whitekid@gmail.com
 COMMENT=	A connection pool server for PostgreSQL
