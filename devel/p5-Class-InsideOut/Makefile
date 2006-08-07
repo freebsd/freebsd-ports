@@ -22,12 +22,13 @@ MAN3=		Class::InsideOut::Manual::About.3 Class::InsideOut.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500701
-RUN_DEPENDS+=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${LOCALBASE}/pod2man:${PORTSDIR}/textprocs/p5-podlators
 .endif
 
-.if ${PERL_LEVEL} < 500702
-RUN_DEPENDS+=	${SITE_PERL}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
+		${SITE_PERL}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
 .include <bsd.port.post.mk>
