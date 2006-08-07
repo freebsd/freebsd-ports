@@ -18,6 +18,8 @@ COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 NO_FILTER_SHLIBS=	yes
+LATEST_LINK=	sdl-sge
+CONFLICTS=	sge-6*
 
 OPTIONS=	SDL_IMAGE "Enable support for SDL_IMAGE" On \
 		FREETYPE "Enable FreeType support" On \
