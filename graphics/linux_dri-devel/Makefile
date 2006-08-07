@@ -63,6 +63,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
-BROKEN=         does not extract on 4.x (both bz2 and gz sources are used)
+BROKEN=		does not extract on 4.x (both bz2 and gz sources are used)
 .endif
 .include <bsd.port.post.mk>
