@@ -7,6 +7,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/
@@ -38,7 +39,7 @@ pre-install:
 		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
-	if [! -f ${WRKSRC}/wp-config-sample.php]; then ${CP} \
+	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
 do-install:
