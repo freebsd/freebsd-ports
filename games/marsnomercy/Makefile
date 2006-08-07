@@ -30,6 +30,10 @@ OPTIONS=	DEBUG	"With additional debug information"	off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+IGNORE=		does not build on FreeBSD 4.x
+.endif
+
 .if defined(WITH_DEBUG)
 SCONS_ARGS=	debug=1
 .else
