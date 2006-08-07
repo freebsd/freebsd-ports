@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	qtiplot
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
 
-MAINTAINER=	gaoj@cpsc.ucalgary.ca
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
@@ -22,10 +21,8 @@ LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}
-
 PLIST_FILES=	bin/qtiplot
-PORTDOCS=	faq.html help.html
+#PORTDOCS=	faq.html help.html
 
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR=${QT_PREFIX}
@@ -45,15 +42,15 @@ QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s:../3rdparty/qwt/include:${LOCALBASE}/include/qwt:" \
-		-e "s:/home/ion/qt/qwtplot3d/include:${X11BASE}/include:" \
+		-e "s:/usr/include/qwtplot3d:${X11BASE}/include:" \
 		-e "/^unix:LIBS/s:-L /usr/lib:-L${LOCALBASE}/lib:" \
-		-e "/^unix:LIBS/s:../3rdparty/qwt/lib:${LOCALBASE}/lib:" \
+		-e "/^unix:LIBS/s:../3rdparty/qwt/lib/libqwt.a:-L ${LOCALBASE}/lib -lqwt:" \
 		-e "/^unix:documentation.path/s:/usr/share/doc/qtiplot:${DOCSDIR}:" \
-		${WRKSRC}/${PORTNAME}-${PORTVERSION}.pro
+		${WRKSRC}/${PORTNAME}.pro
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${QMAKESPEC} ${PORTNAME}-${PORTVERSION}.pro
+		-spec ${QMAKESPEC} ${PORTNAME}.pro
 
 post-configure:
 	@${REINPLACE_CMD} -e \
@@ -65,12 +62,12 @@ post-configure:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../qtiplot ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for DOCFN in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/doc/${DOCFN} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/qtiplot/qtiplot ${PREFIX}/bin
+#.if !defined(NOPORTDOCS)
+#	${MKDIR} ${DOCSDIR}
+#.for DOCFN in ${PORTDOCS}
+#	${INSTALL_MAN} ${WRKSRC}/doc/${DOCFN} ${DOCSDIR}
+#.endfor
+#.endif
 
 .include <bsd.port.post.mk>
