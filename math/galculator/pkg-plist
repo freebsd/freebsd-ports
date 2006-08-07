@@ -1,22 +1,26 @@
 @comment $FreeBSD$
 bin/galculator
 share/applications/galculator.desktop
-share/galculator/glade/about.glade
-share/galculator/glade/basic_buttons.glade
-share/galculator/glade/color.glade
-share/galculator/glade/dispctrl_bottom.glade
-share/galculator/glade/dispctrl_right.glade
-share/galculator/glade/dispctrl_right_vertical.glade
-share/galculator/glade/font.glade
-share/galculator/glade/main_frame.glade
-share/galculator/glade/prefs.glade
-share/galculator/glade/scientific_buttons.glade
+%%DATADIR%%/glade/about.glade
+%%DATADIR%%/glade/basic_buttons.glade
+%%DATADIR%%/glade/color.glade
+%%DATADIR%%/glade/dispctrl_bottom.glade
+%%DATADIR%%/glade/dispctrl_right.glade
+%%DATADIR%%/glade/dispctrl_right_vertical.glade
+%%DATADIR%%/glade/font.glade
+%%DATADIR%%/glade/main_frame.glade
+%%DATADIR%%/glade/prefs.glade
+%%DATADIR%%/glade/scientific_buttons.glade
 share/locale/de/LC_MESSAGES/galculator.mo
 share/locale/fr/LC_MESSAGES/galculator.mo
 share/locale/ja/LC_MESSAGES/galculator.mo
 share/locale/pl/LC_MESSAGES/galculator.mo
 share/locale/pt_BR/LC_MESSAGES/galculator.mo
 share/locale/ro/LC_MESSAGES/galculator.mo
-@dirrm share/galculator/glade
-@dirrm share/galculator
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
