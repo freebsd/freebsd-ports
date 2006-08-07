@@ -61,3 +61,17 @@ share/locale/sl/LC_MESSAGES/cooledit.mo
 share/locale/sv/LC_MESSAGES/cooledit.mo
 @dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
