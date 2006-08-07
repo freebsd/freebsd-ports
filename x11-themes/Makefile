@@ -19,6 +19,7 @@
     SUBDIR += cursor-jimmac-theme
     SUBDIR += cursor-neutral-theme
     SUBDIR += cursor-polar-theme
+    SUBDIR += e17-splash-blue
     SUBDIR += e17-splash-shiny
     SUBDIR += e17-theme-blokkie
     SUBDIR += e17-theme-blue_default
