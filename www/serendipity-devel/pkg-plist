@@ -507,6 +507,7 @@
 %%SERENDIPITY%%/include/admin/importers/bmachine.inc.php
 %%SERENDIPITY%%/include/admin/importers/geeklog.inc.php
 %%SERENDIPITY%%/include/admin/importers/generic.inc.php
+%%SERENDIPITY%%/include/admin/importers/livejournal.inc.php
 %%SERENDIPITY%%/include/admin/importers/movabletype.inc.php
 %%SERENDIPITY%%/include/admin/importers/nucleus.inc.php
 %%SERENDIPITY%%/include/admin/importers/phpbb.inc.php
@@ -560,6 +561,7 @@
 %%SERENDIPITY%%/include/tpl/htaccess_normal.tpl
 %%SERENDIPITY%%/include/tpl/htaccess_rewrite.tpl
 %%SERENDIPITY%%/index.php
+%%SERENDIPITY%%/lang/UTF-8/plugin_lang.php
 %%SERENDIPITY%%/lang/UTF-8/recode.php
 %%SERENDIPITY%%/lang/UTF-8/recode.sh
 %%SERENDIPITY%%/lang/UTF-8/serendipity_lang_bg.inc.php
@@ -745,6 +747,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_tr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_de.inc.php
@@ -756,6 +759,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_tn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_tr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/serendipity_event_entryproperties.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_bg.inc.php
@@ -1591,6 +1595,7 @@
 %%SERENDIPITY%%/templates/default/commentform.tpl
 %%SERENDIPITY%%/templates/default/commentpopup.tpl
 %%SERENDIPITY%%/templates/default/comments.tpl
+%%SERENDIPITY%%/templates/default/comments_by_author.tpl
 %%SERENDIPITY%%/templates/default/content.tpl
 %%SERENDIPITY%%/templates/default/entries.tpl
 %%SERENDIPITY%%/templates/default/entries_archives.tpl
