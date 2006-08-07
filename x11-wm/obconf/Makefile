@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
@@ -34,7 +34,7 @@ PLIST_DIRS=	%%DATADIR%%
 PLIST=		${WRKDIR}/pkg-plist
 
 pre-install:
-	@${ECHO_CMD} "@dirrmtry shara/applications" > ${PLIST}
+	@${ECHO_CMD} "@dirrmtry share/applications" > ${PLIST}
 
 post-install:
 .if !defined(NOPORTDOCS)
