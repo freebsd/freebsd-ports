@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/Simple/.packlist
+%%SITE_PERL%%/Fuse/Simple.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse
+@dirrmtry %%SITE_PERL%%/Fuse
