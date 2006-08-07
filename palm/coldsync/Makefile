@@ -46,10 +46,6 @@ INFO=		conduits
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Fails to link on sparc64"
-.endif
-
 CFLAGS+=	-D__BSD_VISIBLE=1
 CONFIGURE_ARGS+=	--with-i18n --disable-pedantic --without-perl
 
@@ -63,6 +59,9 @@ post-patch:
 		${WRKSRC}/configure ${WRKSRC}/libpconn/PConnection_usb.c
 .endif
 .endif
+
+post-configure:
+	${REINPLACE_CMD} -e 's,-fpic,-fPIC,g' ${WRKSRC}/Make.rules
 
 post-install:
 	${MKDIR} ${PREFIX}/include/pconn

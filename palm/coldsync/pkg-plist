@@ -26,3 +26,5 @@ include/pconn/netsync.h
 include/pconn/PConnection.h
 include/pconn/spc_client.h
 @dirrm include/pconn
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
