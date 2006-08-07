@@ -21,6 +21,6 @@ NO_BUILD=	none
 USE_PERL5_RUN=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${TARGETDIR}/bin
 
 .include <bsd.port.mk>

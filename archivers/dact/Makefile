@@ -8,7 +8,6 @@
 
 PORTNAME=	dact
 PORTVERSION=	0.8.41
-PORTREVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rkeene.org/files/oss/dact/release/
 
@@ -31,12 +30,17 @@ MAKE_ARGS=	CONF=${EXAMPLESDIR}/dact.conf \
 MAN1=		dact.1
 INSTALLS_SHLIB=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|prefix = @prefix@|prefix = ${TARGETDIR}|" \
+			-e "s|libdir = @libdir@|libdir = ${TARGETDIR}/lib|" \
+			${WRKSRC}/Makefile.in
+
 pre-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${RM} -f ${WRKSRC}/libdact.a
 
 post-install:
-	@${CP} -n ${EXAMPLESDIR}/dact.conf ${PREFIX}/etc
+	@${CP} -n ${EXAMPLESDIR}/dact.conf ${TARGETDIR}/etc
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Docs/dact.txt ${DOCSDIR}
