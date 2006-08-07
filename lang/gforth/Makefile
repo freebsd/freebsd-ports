@@ -51,6 +51,10 @@ BYTEORDER=b
 BYTEORDER=l
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=	Does not compile on 4.x
+.endif
+
 post-install: install-doc install-el remove-empty-files remove-empty-dirs
 
 install-doc:
