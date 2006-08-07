@@ -17,6 +17,8 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/DNG.pm
 %%SITE_PERL%%/Image/ExifTool/Exif.pm
 %%SITE_PERL%%/Image/ExifTool/Fixup.pm
+%%SITE_PERL%%/Image/ExifTool/Flash.pm
+%%SITE_PERL%%/Image/ExifTool/FlashPix.pm
 %%SITE_PERL%%/Image/ExifTool/FujiFilm.pm
 %%SITE_PERL%%/Image/ExifTool/GIF.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
@@ -33,6 +35,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/MIE.pm
 %%SITE_PERL%%/Image/ExifTool/MIFF.pm
 %%SITE_PERL%%/Image/ExifTool/MNG.pm
+%%SITE_PERL%%/Image/ExifTool/MPEG.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
 %%SITE_PERL%%/Image/ExifTool/MinoltaRaw.pm
@@ -51,6 +54,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
 %%SITE_PERL%%/Image/ExifTool/README
 %%SITE_PERL%%/Image/ExifTool/RIFF.pm
+%%SITE_PERL%%/Image/ExifTool/Real.pm
 %%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Sanyo.pm
 %%SITE_PERL%%/Image/ExifTool/Shift.pl
@@ -100,6 +104,8 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/DNG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/EXIF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Extra.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Flash.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/FlashPix.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FujiFilm.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GPS.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GeoTiff.html
@@ -115,6 +121,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MIE.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MNG.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/MPEG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MinoltaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
@@ -130,8 +137,10 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PrintIM.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/QuickTime.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RIFF.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Real.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Ricoh.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sanyo.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Shortcuts.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sigma.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/SigmaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Sony.html
