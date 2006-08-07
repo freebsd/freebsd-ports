@@ -25,7 +25,7 @@ IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Bas64
+RUN_DEPENDS+=	${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
 
 .if ${PERL_LEVEL} < 500803
