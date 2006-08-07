@@ -103,7 +103,6 @@
     SUBDIR += gtk-launch
     SUBDIR += gtk-theme-switch
     SUBDIR += gtk-themepreview
-    SUBDIR += gtk2-theme-switch
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
