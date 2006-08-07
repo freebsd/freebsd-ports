@@ -1,5 +1,5 @@
---- ./Makefile.orig	Wed Jan 11 16:55:21 2006
-+++ ./Makefile	Fri Jul 28 13:30:29 2006
+--- Makefile.orig	Wed Jan 11 16:55:21 2006
++++ Makefile	Mon Aug  7 16:31:23 2006
 @@ -17,15 +17,16 @@
  #OPTIONS
  ######################################
@@ -73,6 +73,15 @@
  endif
  
  $(BINDIR)/quake2max : $(QUAKE2_OBJS) $(QUAKE2_LNX_OBJS) $(QUAKE2_AS_OBJS)
+@@ -478,7 +482,7 @@
+ 	$(DO_DED_CC)
+ 
+ $(BUILDDIR)/ded/q_shared.o :   $(GAME_DIR)/q_shared.c
+-	$(DO_DED_DEBUG_CC)
++	$(DO_DED_CC)
+ 
+ $(BUILDDIR)/ded/pmove.o :      $(COMMON_DIR)/pmove.c
+ 	$(DO_DED_CC)
 @@ -579,7 +583,7 @@
  	$(BUILDDIR)/game/p_weapon.o \
  	$(BUILDDIR)/game/m_flash.o

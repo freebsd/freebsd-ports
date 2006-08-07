@@ -23,6 +23,7 @@ EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.2+
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/Quake2maX-44-src_unix
 
