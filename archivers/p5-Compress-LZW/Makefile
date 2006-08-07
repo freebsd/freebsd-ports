@@ -19,4 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Compress::LZW.3
 
+post-patch:
+	${PERL} -pi -e 's/\@hattmoward/\\\@hattmoward/' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
