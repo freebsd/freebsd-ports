@@ -1,0 +1,11 @@
+bin/libieee1284_test
+include/ieee1284.h
+lib/libieee1284.a
+lib/libieee1284.la
+lib/libieee1284.so
+lib/libieee1284.so.5
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/ieee1284module.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/ieee1284module.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/ieee1284module.so
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
+%%PYTHON%%@dirrmtry %%PYTHON_LIBDIR%%
