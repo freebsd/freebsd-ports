@@ -106,3 +106,5 @@ share/pixmaps/bmp.png
 @dirrm include/bmp
 @exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
 @unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || true
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
