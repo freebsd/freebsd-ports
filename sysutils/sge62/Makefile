@@ -28,7 +28,7 @@ OPTIONS=	BDB "Use DB based spooler (currently broken)" off \
 		DRMAA "Support the Java DRMAA API (requires native Java)" on \
 		QMON "Qmon support (requires X and Motif)" on
 
-CONFLICTS=	sge-5* sgeee-[0-9]*
+CONFLICTS=	sge-5* sgeee-[0-9]* sge-0.*
 
 EXTRA_PATCHES=	${FILESDIR}/sge-freebsd-pdc.diff
 
