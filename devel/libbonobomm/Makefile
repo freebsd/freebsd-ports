@@ -28,4 +28,7 @@ USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lcpp|-l cpp|' ${WRKSRC}/bonobomm/generated/Makefile.in
+
 .include <bsd.port.mk>
