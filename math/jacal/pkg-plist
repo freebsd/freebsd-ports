@@ -13,7 +13,6 @@ lib/jacal/ff.scm
 lib/jacal/func.scm
 lib/jacal/go.scm
 lib/jacal/grammar.scm
-lib/jacal/guile.scm
 lib/jacal/hensel.scm
 lib/jacal/hist.scm
 lib/jacal/info.scm
