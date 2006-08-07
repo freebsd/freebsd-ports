@@ -7,6 +7,7 @@
 
 PORTNAME=	JavaScript
 PORTVERSION=	0.55
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	JavaScript
@@ -15,8 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Perl extension for executing embedded JavaScript
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	js.1:${PORTSDIR}/lang/spidermonkey
 
 MAN3=		JavaScript.3
 
