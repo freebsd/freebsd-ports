@@ -39,10 +39,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
+BROKEN=		does not compile on !i386 and !alpha
 .endif
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
