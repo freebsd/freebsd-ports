@@ -4,5 +4,5 @@ bin/shasum
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA/PurePerl/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/SHA/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
-@dirrm %%SITE_PERL%%/Digest/SHA/
+@dirrmtry %%SITE_PERL%%/Digest/SHA/
 @dirrmtry %%SITE_PERL%%/Digest/
