@@ -7,6 +7,7 @@
 
 PORTNAME=	AMF-Perl
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	www devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/SI/SIMONF
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Flash Remoting in Perl
+
+RUN_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
 
