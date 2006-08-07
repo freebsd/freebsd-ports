@@ -31,3 +31,7 @@ share/locale/vi/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/xh/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/zh_CN/LC_MESSAGES/contact-lookup-applet.mo
 @dirrm share/gnome/lookup-applet
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
