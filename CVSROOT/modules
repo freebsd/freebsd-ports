@@ -626,6 +626,7 @@ avrdude		ports/devel/avrdude
 awele		ports/games/awele
 awka		ports/lang/awka
 awstats		ports/www/awstats
+awstats-devel	ports/www/awstats-devel
 axe		ports/editors/axe
 axel		ports/ftp/axel
 axelq		ports/ftp/axelq
