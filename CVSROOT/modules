@@ -1727,6 +1727,7 @@ deutex		ports/archivers/deutex
 devel-replay	ports/devel/replay
 devel_atlas-devel	ports/devel/atlas-devel
 devel_git	ports/devel/git
+devel_sge	ports/devel/sge
 devhelp		ports/devel/devhelp
 devil		ports/graphics/devil
 devilspie	ports/x11-wm/devilspie
