@@ -279,6 +279,7 @@
     SUBDIR += jxm
     SUBDIR += k3bmonkeyaudioplugin
     SUBDIR += kexis
+    SUBDIR += kid3
     SUBDIR += klira
     SUBDIR += kmp
     SUBDIR += ksmp3play
