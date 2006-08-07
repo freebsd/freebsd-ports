@@ -8,7 +8,8 @@
 PORTNAME=	twhttpd
 PORTVERSION=	1.01
 CATEGORIES=	www
-MASTER_SITES=	http://www.geocities.com/samngms/twhttpd/download/
+MASTER_SITES=	http://www.sunzidigital.com/samngms/twhttpd/download/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure HTTP Proxy
