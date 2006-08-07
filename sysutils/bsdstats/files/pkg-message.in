@@ -3,6 +3,9 @@
 To enable the port, edit or create /etc/periodic.conf and add this line:
 	monthly_statistics_enable=yes
 
+To enable device reporting, add this line:
+	monthly_statistics_report_devices=yes
+
 To run it manually the first time, just run it as:
 	/usr/local/etc/periodic/monthly/300.statistics
 ********************
