@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Pod-Coverage
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	devel textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -36,7 +35,7 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
