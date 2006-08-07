@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/${DISTNAME}
@@ -36,7 +37,8 @@ PREFIX?=	${LOCALBASE}/${OUR_TARGET}
 
 BUILD_DEPENDS=	${PREFIX}/bin/${PKGNAMEPREFIX}as:${PORTSDIR}/devel/powerpc-binutils \
 		${PREFIX}/bin/${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/powerpc-binutils
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PREFIX}/bin/${PKGNAMEPREFIX}as:${PORTSDIR}/devel/powerpc-binutils \
+		${PREFIX}/bin/${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/powerpc-binutils
 
 #override user-defined settings in make.conf
 WITHOUT_CPU_CFLAGS=	yes
