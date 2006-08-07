@@ -75,6 +75,7 @@ share/applications/linux-opera.desktop
 %%DATADIR%%/svg-se.dat
 %%DATADIR%%/svg-sebd.dat
 share/pixmaps/linux-opera.png
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles/images
 @dirrm %%DATADIR%%/styles
