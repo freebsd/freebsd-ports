@@ -9837,6 +9837,7 @@ p5-Task-Catalyst	ports/www/p5-Task-Catalyst
 p5-Task-Math-Symbolic	ports/math/p5-Task-Math-Symbolic
 p5-Tcl		ports/lang/p5-Tcl
 p5-Tcl-Tk	ports/x11-toolkits/p5-Tcl-Tk
+p5-TclTk	ports/x11-toolkits/p5-TclTk
 p5-TeX-Encode	ports/textproc/p5-TeX-Encode
 p5-TeX-Hyphen	ports/textproc/p5-TeX-Hyphen
 p5-Telnet-Cisco	ports/net-mgmt/p5-Telnet-Cisco
