@@ -12736,6 +12736,7 @@ sasp		ports/security/sasp
 satellite	ports/net-mgmt/satellite
 sather		ports/lang/Sather
 sather-specification	ports/lang/sather-specification
+sather-tutorial	ports/lang/sather-tutorial
 sattrack	ports/astro/sattrack
 sauerbraten	ports/games/sauerbraten
 savelogs	ports/sysutils/savelogs
