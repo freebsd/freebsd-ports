@@ -1640,6 +1640,7 @@
     SUBDIR += py-logilab-common
     SUBDIR += py-mx-experimental
     SUBDIR += py-ncurses
+    SUBDIR += py-ocempgui
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit
