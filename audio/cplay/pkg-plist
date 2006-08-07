@@ -5,3 +5,5 @@ share/locale/de/LC_MESSAGES/cplay.mo
 share/locale/hu/LC_MESSAGES/cplay.mo
 share/locale/pl/LC_MESSAGES/cplay.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mask.tf.hut.fi/~flu/hacks/cplay/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	A curses based front-end for various audio players
 
 USE_GETTEXT=	yes
