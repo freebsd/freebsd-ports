@@ -2041,6 +2041,7 @@ e17-module-uptime	ports/x11/e17-module-uptime
 e17-module-weather	ports/x11/e17-module-weather
 e17-splash-azul	ports/x11-themes/e17-splash-azul
 e17-splash-blue	ports/x11-themes/e17-splash-blue
+e17-splash-fortune	ports/x11-themes/e17-splash-fortune
 e17-splash-shiny	ports/x11-themes/e17-splash-shiny
 e17-theme-blokkie	ports/x11-themes/e17-theme-blokkie
 e17-theme-blue_default	ports/x11-themes/e17-theme-blue_default
