@@ -3,11 +3,20 @@ Origin. The result is still far away from its model, but there's a "wish to"
 list that is being constantly worked on.
 
 Features:
-
-  * Neat 2D and 3D data plotting
-  * ASCII-Import
-  * Spreadsheet and calculations in column-logic
-  * Great non-linear y=f(x) curve fitting and estimation of statistical
-    errors of the fit-parameters
+   * 2D and 3D Plots
+   * Powerful and versatile spreadsheets and calculations in column-logic
+   * Easy ASCII-Import/Export of single or multiple files
+   * Linear and non-linear y=f(x) curve fitting and estimation of statistical
+errors of the fit-parameters
+   * Multi-peak fitting with Gaussian and Lorentzian peak profiles
+   * Data analysis: statistics, sorting, FFT, data smoothing (Savitzky-Golay,
+FFT smoothing, and moving window average), data filtering (low/high/band pass
+and band block filters), convolution/deconvolution, correlation, interpolation,
+numerical integration/differentiation, etc...
+   * Matrices optimized for 3D plotting
+   * Templates support: all the settings for plots (2D/3D), tables and matrixes
+can be saved to ASCII files and restored later on for a fast editing process
+   * Project files based on folders, a powerful project explorer with extensive
+built-in features: drag and drop, searching facilities, etc...
 
 WWW: http://soft.proindependent.com/qtiplot.html
