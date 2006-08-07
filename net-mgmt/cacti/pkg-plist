@@ -336,7 +336,7 @@
 %%CACTIDIR%%/lib/utility.php
 %%CACTIDIR%%/lib/variables.php
 %%CACTIDIR%%/lib/xml.php
-@unexec [ ! -s %%CACTIDIR%%/log/cacti.log ] && rm %%CACTIDIR%%/log/cacti.log
+@unexec [ ! -s %%PREFIX%%/%%CACTIDIR%%/log/cacti.log ] && rm -f %%PREFIX%%/%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
 %%PLUGIN%%%%CACTIDIR%%/plugins/index.php
 %%CACTIDIR%%/poller.php
