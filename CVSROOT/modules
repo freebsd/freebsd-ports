@@ -5370,6 +5370,7 @@ kiax		ports/net/kiax
 kicad		ports/cad/kicad
 kicker-applets	ports/misc/kicker-applets
 kickpim		ports/deskutils/kickpim
+kid3		ports/audio/kid3
 kiki		ports/games/kiki
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
