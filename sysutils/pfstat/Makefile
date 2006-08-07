@@ -7,6 +7,7 @@
 
 PORTNAME=	pfstat
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -17,6 +18,7 @@ COMMENT=	Utility to render grafical statistics for pf
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 MAKE_ARGS=	"LD_GD=gd"
+USE_ICONV=	yes
 
 MAN8=		pfstat.8 \
 		pfstatd.8
