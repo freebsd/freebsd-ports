@@ -60,4 +60,3 @@ lib/libnettle.so.2
 %%EXAMPLESDIR%%/rsa-sign.c
 %%EXAMPLESDIR%%/rsa-verify.c
 @dirrm %%EXAMPLESDIR%%
-

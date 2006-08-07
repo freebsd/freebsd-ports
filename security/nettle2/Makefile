@@ -25,6 +25,8 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALLS_SHLIB=	yes
+USE_GETOPT_LONG=	yes
+USE_GCC=	3.4+
 
 DOCS=		NEWS README TODO nettle.html
 EXAMPLES=	examples/*.c examples/*.h
