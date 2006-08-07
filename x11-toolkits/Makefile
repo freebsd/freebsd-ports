@@ -136,6 +136,7 @@
     SUBDIR += p5-Gtk2-TrayIcon
     SUBDIR += p5-GtkXmHTML
     SUBDIR += p5-Prima
+    SUBDIR += p5-TclTk
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += p5-Tk-Autoscroll
