@@ -3855,7 +3855,6 @@ gtk-themepreview ports/x11/gtk-themepreview
 gtk-xfce-engine	ports/x11-themes/gtk-xfce-engine
 gtk-zenith-theme	ports/x11-themes/gtk-zenith-theme
 gtk12		ports/x11-toolkits/gtk12
-gtk2-theme-switch	ports/x11/gtk2-theme-switch
 gtk20		ports/x11-toolkits/gtk20
 gtk20-reference	ports/x11-toolkits/gtk20-reference
 gtkabale	ports/games/gtkabale
@@ -4913,10 +4912,6 @@ ja-wwasw-fpw	ports/japanese/wwasw-fpw
 ja-xchat	ports/japanese/xchat
 ja-xdtp		ports/japanese/xdtp
 ja-xdvik	ports/japanese/xdvik
-ja-xemacs-devel-canna+freewnn	ports/japanese/xemacs-devel-canna+freewnn
-ja-xemacs-devel-canna+wnn6	ports/japanese/xemacs-devel-canna+wnn6
-ja-xemacs-devel-freewnn	ports/japanese/xemacs-devel-freewnn
-ja-xemacs-devel-wnn6	ports/japanese/xemacs-devel-wnn6
 ja-xemacs21-canna	ports/japanese/xemacs21-canna
 ja-xgate	ports/japanese/xgate
 ja-xjman	ports/japanese/xjman
@@ -7764,7 +7759,6 @@ openoffice.org-1.1	ports/editors/openoffice.org-1.1
 openoffice.org-1.1-devel	ports/editors/openoffice.org-1.1-devel
 openoffice.org-2.0	ports/editors/openoffice.org-2.0
 openoffice.org-2.0-devel	ports/editors/openoffice.org-2.0-devel
-openorb		ports/devel/openorb
 openospfd	ports/net/openospfd-devel
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime

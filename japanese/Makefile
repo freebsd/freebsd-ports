@@ -406,10 +406,6 @@
     SUBDIR += xchat
     SUBDIR += xdtp
     SUBDIR += xdvik
-    SUBDIR += xemacs-devel-canna+freewnn
-    SUBDIR += xemacs-devel-canna+wnn6
-    SUBDIR += xemacs-devel-freewnn
-    SUBDIR += xemacs-devel-wnn6
     SUBDIR += xemacs21-canna
     SUBDIR += xgate
     SUBDIR += xjman

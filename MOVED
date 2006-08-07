@@ -2433,3 +2433,9 @@ devel/p5-Readonly-XS|devel/p5-Readonly|2006-08-02|p5-Readonly installs XS automa
 chinese/arnettf||2006-08-06|Renamed to chinese/CJKUnifonts
 devel/SGE||2006-08-07|Has expired
 editors/eshell-emacs20|editors/emacs|2006-08-07|expired
+devel/openorb||2006-08-07|Has expired: not really maintained anymore (last beta version is 2 years old)
+japanese/xemacs-devel-canna+freewnn||2006-08-07|Has expired: Unsupported and broken very long time
+japanese/xemacs-devel-canna+wnn6||2006-08-07|Has expired: Unsupported and broken very long time
+japanese/xemacs-devel-freewnn||2006-08-07|Has expired: Unsupported and broken very long time
+japanese/xemacs-devel-wnn6||2006-08-07|Has expired: Unsupported and broken very long time
+x11/gtk2-theme-switch||2006-08-07|Has expired: nothing new in over 2 years, use x11/gtkchtheme

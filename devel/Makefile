@@ -716,7 +716,6 @@
     SUBDIR += omniORB
     SUBDIR += oniguruma
     SUBDIR += open-beagle
-    SUBDIR += openorb
     SUBDIR += openthreads
     SUBDIR += openzz
     SUBDIR += orbitcpp
