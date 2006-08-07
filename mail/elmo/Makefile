@@ -17,7 +17,6 @@ COMMENT=	Receive, filter, read, compose and send mail at the text console
 CONFLICTS=	elmo-devel-*
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_PERL5_RUN=	yes
@@ -25,6 +24,15 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		elmo.1 elmoconf.pl.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
