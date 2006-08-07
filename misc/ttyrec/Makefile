@@ -14,6 +14,8 @@ MASTER_SITES=	http://0xcc.net/ttyrec/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tty recorder
 
+USE_GCC=	3.4+
+
 MAN1=	ttyplay.1 ttyrec.1
 
 post-patch:
@@ -22,7 +24,7 @@ post-patch:
 
 do-install:
 .for file in ttyrec ttyplay ttytime
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${TARGETDIR}/bin
 .endfor
 .for file in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${file} ${MAN1PREFIX}/man/man1
