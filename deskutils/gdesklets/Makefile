@@ -20,6 +20,7 @@ COMMENT=	A framework for Gnome 2.x for desktop applets
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
