@@ -7,7 +7,7 @@
 
 PORTNAME=	libao
 PORTVERSION=	0.8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ao/src/
 
@@ -28,7 +28,7 @@ MAKE_ENV=	DOC=doc
 MAN5=		libao.conf.5
 
 .if defined(WITH_ARTS)
-LIB_DEPENDS=	artsc.0:${PORTSDIR}/audio/arts
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	ARTS=""
 .else
 CONFIGURE_ARGS+=	--disable-arts
@@ -38,7 +38,7 @@ pre-everything::
 .endif
 
 .if defined(WITH_NAS)
-LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 PLIST_SUB+=	NAS=""
 .else
 CONFIGURE_ARGS+=	--disable-nas
