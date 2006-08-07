@@ -7,7 +7,8 @@
 PORTNAME=		tkshape
 PORTVERSION=		0.4
 CATEGORIES=		x11-toolkits
-MASTER_SITES=		http://www.cs.man.ac.uk/~fellowsd/tcl/
+MASTER_SITES=		http://www.cs.man.ac.uk/~fellowsd/tcl/ \
+			http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
 DISTNAME=		shape${PORTVERSION:S/.//g}
 
 MAINTAINER=		nivit@users.sourceforge.net
@@ -17,7 +18,7 @@ LIB_DEPENDS=		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 PLIST_SUB=		PORTNAME="${PORTNAME}"
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 OPTIONS=		MANPAGES "Install manual pages" on
 
