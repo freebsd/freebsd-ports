@@ -7,6 +7,7 @@ etc/sanitizer.cfg.sample
 %%SITE_PERL%%/Anomy/MIMEStream.pm
 %%SITE_PERL%%/Anomy/Sanitizer.pm
 %%SITE_PERL%%/Anomy/Sanitizer/FProt.pm
+%%SITE_PERL%%/Anomy/Sanitizer/FileTypes.pm
 %%SITE_PERL%%/Anomy/Sanitizer/MacroScanner.pm
 %%SITE_PERL%%/Anomy/Sanitizer/Scoring.pm
 @dirrm %%SITE_PERL%%/Anomy/Sanitizer/
