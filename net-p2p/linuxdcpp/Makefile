@@ -30,6 +30,12 @@ STRIP=
 SCONS_ARGS=	release=1
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	does not compile on FreeBSD 4.x, due to lack of wide character in libc
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/linux/prefix.*
 
@@ -37,4 +43,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; s|%%CXX%%|${CXX}|g ; \
 		s|%%CXXFLAGS%%|${CXXFLAGS}|g' ${WRKSRC}/SConstruct
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
