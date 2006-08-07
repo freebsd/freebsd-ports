@@ -42,4 +42,7 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=--with-xaw3d
 .endif
 
+post-install:
+	@cd ${PREFIX}/lib && ${LN} -sf libXCurses.so libXCurses.so.8
+
 .include <bsd.port.post.mk>
