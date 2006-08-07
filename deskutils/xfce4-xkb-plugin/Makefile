@@ -25,4 +25,10 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
