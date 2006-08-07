@@ -9,7 +9,7 @@ PORTNAME=	xmms
 PORTVERSION=	2
 PORTREVISION=	5
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+MASTER_SITES=	http://gdesklets.zencomputer.ca/
 PKGNAMEPREFIX=	gdesklets-
 EXTRACT_SUFX=	.tgz
 
