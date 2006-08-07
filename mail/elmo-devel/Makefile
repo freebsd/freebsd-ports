@@ -18,7 +18,6 @@ COMMENT=	Receive, filter, read, compose and send mail at the text console
 CONFLICTS=	elmo-[0-9]*
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_PERL5_RUN=	yes
@@ -29,6 +28,14 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 MAN1=		elmo.1 elmoconf.pl.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
