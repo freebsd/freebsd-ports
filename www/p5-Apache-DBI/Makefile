@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	Apache-DBI
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	www databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/P/PG/PGOLLUCCI
+MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}_01
 
 MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	DBI persistent connection, authentication and authorization
