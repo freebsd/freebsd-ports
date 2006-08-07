@@ -7,6 +7,7 @@
 
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.openal.org/openal_webstf/downloads/ \
 		http://aedion.de/openal/
@@ -17,7 +18,7 @@ COMMENT=	The OpenAL Utility Toolkit
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 INSTALLS_SHLIB=	yes
