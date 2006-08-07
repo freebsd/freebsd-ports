@@ -1,6 +1,5 @@
 Index: qemu/configure
-@@ -122,7 +122,8 @@
- *)
+@@ -134,6 +134,7 @@
  oss="yes"
  linux="yes"
  user="yes"
@@ -8,18 +7,19 @@ Index: qemu/configure
  if [ "$cpu" = "i386" -o "$cpu" = "x86_64" ] ; then
      kqemu="yes"
  fi
-@@ -131,6 +132,7 @@
+@@ -143,6 +144,7 @@
  if [ "$bsd" = "yes" ] ; then
-   if [ ! "$darwin" = "yes" ] ; then
+   if [ "$darwin" != "yes" ] ; then
      make="gmake"
 +    usb="bsd"
    fi
  fi
  
-@@ -656,6 +675,19 @@
-   echo "#define _BSD 1" >> $config_h
+@@ -724,6 +726,19 @@
  fi
  
+ echo "#define CONFIG_UNAME_RELEASE \"$uname_release\"" >> $config_h
++
 +# USB host support
 +case "$usb" in
 +linux)
@@ -32,20 +32,19 @@ Index: qemu/configure
 +  echo "HOST_USB=stub" >> $config_mak
 +;;
 +esac
-+
- for target in $target_list; do
  
+ for target in $target_list; do
  target_dir="$target"
 Index: qemu/Makefile.target
-@@ -303,7 +303,7 @@
- endif
+@@ -329,7 +329,7 @@
+ VL_OBJS+= scsi-disk.o cdrom.o lsi53c895a.o
  
  # USB layer
--VL_OBJS+= usb.o usb-hub.o usb-uhci.o usb-linux.o usb-hid.o
-+VL_OBJS+= usb.o usb-hub.o usb-uhci.o usb-$(HOST_USB).o usb-hid.o
+-VL_OBJS+= usb.o usb-hub.o usb-linux.o usb-hid.o usb-ohci.o usb-msd.o
++VL_OBJS+= usb.o usb-hub.o usb-$(HOST_USB).o usb-hid.o usb-ohci.o usb-msd.o
  
  # PCI network cards
- VL_OBJS+= ne2000.o rtl8139.o
+ VL_OBJS+= ne2000.o rtl8139.o pcnet.o
 Index: qemu/usb-stub.c
 @@ -0,0 +1,11 @@
 +#include "vl.h"
@@ -60,11 +59,11 @@ Index: qemu/usb-stub.c
 +    return NULL;
 +}
 Index: qemu/usb-bsd.c
-@@ -0,0 +1,592 @@
+@@ -0,0 +1,603 @@
 +/*
 + * BSD host USB redirector
 + *
-+ * Copyright (c) 2005 Lonnie Mendez
++ * Copyright (c) 2006 Lonnie Mendez
 + * Portions of code and concepts borrowed from
 + * usb-linux.c and libusb's bsd.c and are copyright their respective owners.
 + *
@@ -336,6 +335,23 @@ Index: qemu/usb-bsd.c
 +    }
 +}
 +
++static void usb_host_handle_destroy(USBDevice *opaque)
++{
++    USBHostDevice *s = (USBHostDevice *)opaque;
++    int i;
++
++    for (i = 0; i < USB_MAX_ENDPOINTS; i++)
++        if (s->ep_fd[i] >= 0)
++            close(s->ep_fd[i]);
++
++    if (s->devfd < 0)
++        return;
++
++    close(s->devfd);
++
++    qemu_free(s);
++}
++
 +USBDevice *usb_host_device_open(const char *devname)
 +{
 +    struct usb_device_info bus_info, dev_info;
@@ -409,8 +425,16 @@ Index: qemu/usb-bsd.c
 +        dev->dev.handle_reset = usb_host_handle_reset;
 +        dev->dev.handle_control = usb_host_handle_control;
 +        dev->dev.handle_data = usb_host_handle_data;
++        dev->dev.handle_destroy = usb_host_handle_destroy;
 +
-+        strcpy(dev->devpath, "/dev/");
++        if (strncmp(dev_info.udi_product, "product", 7) != 0)
++            pstrcpy(dev->dev.devname, sizeof(dev->dev.devname),
++                    dev_info.udi_product);
++        else
++            snprintf(dev->dev.devname, sizeof(dev->dev.devname),
++                     "host:%s", devname);
++
++        pstrcpy(dev->devpath, sizeof(dev->devpath), "/dev/");
 +	strcat(dev->devpath, dev_info.udi_devnames[0]);
 +
 +        /* Mark the endpoints as not yet open */
@@ -424,21 +448,6 @@ Index: qemu/usb-bsd.c
 +
 +fail:
 +    return NULL;
-+}
-+
-+void usb_host_device_close(USBDevice *opaque)
-+{
-+    USBHostDevice *s = (USBHostDevice *)opaque;
-+    int i;
-+
-+    for (i = 0; i < USB_MAX_ENDPOINTS; i++)
-+        if (s->ep_fd[i] >= 0)
-+            close(s->ep_fd[i]);
-+
-+    if (s->devfd < 0)
-+        return;
-+
-+    close(s->devfd);
 +}
 +
 +static int usb_host_scan(void *opaque, USBScanFunc *func)
@@ -494,7 +503,8 @@ Index: qemu/usb-bsd.c
 +            speed = dev_info.udi_speed;
 +
 +            if (strncmp(dev_info.udi_product, "product", 7) != 0)
-+                strcpy(product_name, dev_info.udi_product);
++                pstrcpy(product_name, sizeof(product_name),
++                        dev_info.udi_product);
 +            else
 +                product_name[0] = '\0';
 +
@@ -653,55 +663,6 @@ Index: qemu/usb-bsd.c
 +{
 +    usb_host_scan(NULL, usb_host_info_device);
 +}
-Index: qemu/vl.c
-@@ -3245,14 +3258,17 @@
-         dev = usb_host_device_open(p);
-         if (!dev)
-             return -1;
-+        dev->isproxied = 1;
-     } else if (!strcmp(devname, "mouse")) {
-         dev = usb_mouse_init();
-         if (!dev)
-             return -1;
-+        dev->isproxied = 0;
-     } else if (!strcmp(devname, "tablet")) {
- 	dev = usb_tablet_init();
- 	if (!dev)
- 	    return -1;
-+        dev->isproxied = 0;
-     } else {
-         return -1;
-     }
-@@ -3281,6 +3297,8 @@
-         if (dev && dev->addr == addr)
-             break;
-     }
-+    if (dev && dev->isproxied)
-+        usb_host_device_close(dev);
-     if (i == MAX_VM_USB_PORTS)
-         return -1;
-     usb_attach(vm_usb_ports[i], NULL);
-Index: qemu/hw/usb.h
-@@ -135,6 +146,8 @@
-     int setup_state;
-     int setup_len;
-     int setup_index;
-+
-+    int isproxied;
- };
- 
- /* USB port on which a device can be connected */
-@@ -157,8 +170,9 @@
- /* usb-uhci.c */
- void usb_uhci_init(PCIBus *bus, USBPort **usb_ports);
- 
--/* usb-linux.c */
-+/* host proxy functions */
- USBDevice *usb_host_device_open(const char *devname);
-+void usb_host_device_close(USBDevice *dev);
- void usb_host_info(void);
- 
- /* usb-hid.c */
 Index: qemu/usb-linux.c
 @@ -23,7 +23,6 @@
   */
@@ -710,23 +671,8 @@ Index: qemu/usb-linux.c
 -#if defined(__linux__)
  #include <dirent.h>
  #include <sys/ioctl.h>
- #include <linux/usbdevice_fs.h>
-@@ -255,6 +254,14 @@
-     return q - buf;
- }
- 
-+void usb_host_device_close(USBDevice *opaque)
-+{
-+    USBHostDevice *s = (USBHostDevice *)opaque;
-+
-+    if (s->fd >= 0)
-+       close(s->fd);
-+}
-+
- static int usb_host_scan(void *opaque, USBScanFunc *func)
- {
-     FILE *f;
-@@ -468,18 +475,3 @@
+ #include <linux/compiler.h>
+@@ -505,18 +504,3 @@
  {
      usb_host_scan(NULL, usb_host_info_device);
  }

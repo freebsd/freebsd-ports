@@ -13,7 +13,7 @@ bin/qemu-system-x86_64
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
 %%DATADIR%%/ppc_rom.bin
-%%DATADIR%%/proll.elf
+%%DATADIR%%/openbios-sparc32
 %%DATADIR%%/video.x
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/common

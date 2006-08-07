@@ -1,21 +1,17 @@
 Index: qemu/Makefile
-@@ -13,11 +13,14 @@
+@@ -25,7 +25,10 @@
+ DOCS=
  endif
- DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1
  
--all: dyngen$(EXESUF) $(TOOLS) $(DOCS)
-+all: bsd/libmath.a dyngen$(EXESUF) $(TOOLS) $(DOCS)
- 	for d in $(TARGET_DIRS); do \
- 	$(MAKE) -C $$d $@ || exit 1 ; \
-         done
- 
+-all: $(TOOLS) $(DOCS) recurse-all
++all: bsd/libmath.a $(TOOLS) $(DOCS) recurse-all
++
 +bsd/libmath.a:
 +	( cd bsd ; $(BSD_MAKE) CC=$(CC) )
-+
- qemu-img$(EXESUF): qemu-img.c block.c block-cow.c block-qcow.c aes.c block-vmdk.c block-cloop.c block-dmg.c block-bochs.c block-vpc.c block-vvfat.c
- 	$(CC) -DQEMU_TOOL $(CFLAGS) $(LDFLAGS) $(DEFINES) -o $@ $^ -lz $(LIBS)
  
-@@ -26,6 +29,7 @@
+ subdir-%: dyngen$(EXESUF)
+ 	$(MAKE) -C $(subst subdir-,,$@) all
+@@ -40,6 +43,7 @@
  
  clean:
  # avoid old build problems by removing potentially incorrect old files
@@ -36,7 +32,7 @@ Index: qemu/Makefile.target
  cocoa.o: cocoa.m
  	$(CC) $(CFLAGS) $(DEFINES) -c -o $@ $<
 Index: qemu/fpu/softfloat-native.c
-@@ -2,11 +2,15 @@
+@@ -2,11 +2,16 @@
     context is supported */
  #include "softfloat.h"
  #include <math.h>
@@ -47,21 +43,22 @@ Index: qemu/fpu/softfloat-native.c
  void set_float_rounding_mode(int val STATUS_PARAM)
  {
      STATUS(float_rounding_mode) = val;
--#if defined(_BSD) && !defined(__APPLE__)
-+#if defined(_BSD) && !defined(__APPLE__) && \
-+    (defined(__FreeBSD__) && __FreeBSD_version < 500000)
+-#if defined(_BSD) && !defined(__APPLE__) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
++#if defined(_BSD) && !defined(__APPLE__) && !defined(__FreeBSD__) || \
++    (defined(__FreeBSD__) && __FreeBSD_version < 500000) || \
++    (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
      fpsetround(val);
  #elif defined(__arm__)
      /* nothing to do */
-@@ -22,7 +26,7 @@
+@@ -22,7 +25,7 @@
  }
  #endif
  
--#if defined(_BSD)
-+#if defined(_BSD) && !defined(__FreeBSD__)
- #define lrint(d)		((long)rint(d))
- #define llrint(d)		((long long)rint(d))
- #endif
+-#if defined(_BSD) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
++#if (defined(_BSD) && !defined(__FreeBSD__)) || (defined(HOST_SOLARIS) && HOST_SOLARIS < 10)
+ #define lrint(d)		((int32_t)rint(d))
+ #define llrint(d)		((int64_t)rint(d))
+ #define lrintf(f)		((int32_t)rint(f))
 Index: qemu/fpu/softfloat-native.h
 @@ -1,8 +1,28 @@
  /* Native implementation of soft float functions */

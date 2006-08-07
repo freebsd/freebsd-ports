@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
@@ -75,6 +74,12 @@ pre-everything::
 	@${ECHO_MSG} "then you also need samba, you can have this port install it by defining"
 	@${ECHO_MSG} "WITH_SAMBA."
 .endif
+.if !defined(WITH_RTL8139_TIMER)
+	@${ECHO_MSG} "Notice: if you want to use qemu's rtl8139c+ nic with a FreeBSD guest"
+	@${ECHO_MSG} "(qemu -net nic,model=rtl8139 -net user or tap ... - will use re(4)"
+	@${ECHO_MSG} "instead of ed(4) which should use less cpu), then you need to enable"
+	@${ECHO_MSG} "the emulated rtl8139 timer by defining WITH_RTL8139_TIMER."
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/kqemu
@@ -89,6 +94,9 @@ pre-patch:
 post-patch:
 .if defined(WITH_HACKS_CIRRUS) || defined (WITH_HACKS)
 	@cd ${WRKSRC} ; ${PATCH} --quiet < ${DISTDIR}/${DIST_SUBDIR}/patch3_cirrus
+.endif
+.if defined(WITH_RTL8139_TIMER)
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
 .endif
 
 post-install:
