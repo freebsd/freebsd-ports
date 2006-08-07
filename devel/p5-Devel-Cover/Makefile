@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.55
+PORTVERSION=	0.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -15,13 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Code coverage metrics for Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage
+BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/Differences.pm:${PORTSDIR}/devel/p5-Test-Differences
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		cover.1 cpancover.1 gcov2perl.1
 MAN3=		Devel::Cover.3 \
 		Devel::Cover::Annotation::Random.3 \
 		Devel::Cover::Annotation::Svk.3 \
@@ -50,7 +51,6 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Time.3 \
 		Devel::Cover::Truth_Table.3 \
 		Devel::Cover::Tutorial.3
-MAN1=		cover.1 gcov2perl.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	BUGS CHANGES README TODO
@@ -64,7 +64,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .if ${PERL_LEVEL} < 500601
 IGNORE=		Needs 5.6.1 or better
