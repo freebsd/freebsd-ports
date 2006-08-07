@@ -12,3 +12,9 @@ sbin/ap-trapd
 %%PORTDOCS%%%%DOCSDIR%%/HARDWARE-NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README.ap-gl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
