@@ -1,10 +1,18 @@
 #!/bin/sh
 
-# Local version: 1.78
+# Local version: 1.101
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
 # Please see detailed copyright below
+
+trap trap_exit INT
+
+# Keep track of the parent process
+if [ -z "$PARENT_PID" ]; then
+	PARENT_PID=$$
+	export PARENT_PID
+fi
 
 # %%LOCALBASE%% and %%X11BASE%% are needed in path for make
 PATH=/bin:/usr/bin:/sbin:/usr/sbin:%%LOCALBASE%%/bin:%%X11BASE%%/bin
@@ -30,7 +38,7 @@ usage () {
 	echo "${0##*/} [Common flags] -o <new port dir in $pd> <installed port>"
 	echo "${0##*/} [Common flags] -r <name/glob of port directory in $pdb>"
 	echo "${0##*/} -a [Common flags]"
-	echo "${0##*/} -l"
+	echo "${0##*/} -[l|L]"
 	echo "${0##*/} -s"
 	echo "${0##*/} -h"
 	echo ''
@@ -52,6 +60,7 @@ usage () {
 	echo '-a check all ports, update as necessary'
 	echo ''
 	echo '-l list installed ports by category'
+	echo '-L list installed ports by category, and search for updates'
 	echo '-s clean out stale ports that used to be depended on'
 	echo ''
 	echo '-h display this help file'
@@ -66,11 +75,57 @@ fail () {
 	exit 1
 }
 
+trap_exit () {
+	local pid
+
+	if [ -n "$portdir" ]; then
+		echo "===>>> Upgrade for $portdir exiting due to signal"
+	else
+		echo "===>>> Exiting due to signal"
+	fi
+
+	if [ "$$" -eq "$PARENT_PID" ]; then
+		for file in ${TMPDIR:-/tmp}/fetchlog-${PARENT_PID}-*; do
+			pid=`awk '/^MCS_CHILD_PID / {print $2}' $file 2>/dev/null`
+			test -n "$pid" || continue
+			echo -n "===>>> Child process $pid: "
+			if kill $pid >/dev/null 2>&1; then
+				echo Terminated
+			else
+				if ps -p $pid >/dev/null; then
+					echo "Did not die!"
+				else
+					echo Terminated
+				fi
+			fi
+			rm -f $file
+		done
+	fi
+
+	safe_exit
+}
+
 safe_exit () {
 	echo ''
-	rm -f $grep_deps $req_deps
-	test -n "$FORCE_PARENT" && rm -f $UPDATES_DONE_LIST
-	test -n "$CONFIG_PARENT" && rm -f $CONFIG_SEEN_LIST
+	test -n "$grep_deps" && rm -f $grep_deps
+	test -n "$req_deps" && rm -f $req_deps
+
+	if [ "$$" -eq "$PARENT_PID" ]; then
+		test -n "$NO_DEP_UPDATES" && rm -f $NO_DEP_UPDATES
+		test -n "$IPC_SAVE" && rm -f $IPC_SAVE
+	else
+		# Save state for the parent process to read back in
+		echo "CURRENT_DEPS_O='$CURRENT_DEPS_O'" >> $IPC_SAVE
+		echo "CURRENT_DEPS_I='$CURRENT_DEPS_I'" >> $IPC_SAVE
+
+		if [ -n "$INTERACTIVE_UPDATE" ]; then
+			echo "INTERACTIVE_YES='$INTERACTIVE_YES'" >> $IPC_SAVE
+		fi
+		if [ -n "$FORCE" ]; then
+			echo "FORCE_DONE_LIST='$FORCE_DONE_LIST'" >> $IPC_SAVE
+		fi
+	fi
+
 	exit 0
 }
 
@@ -87,7 +142,7 @@ update_contents () {
 		sed "s%N:${oldportdir}\$%N:${newportdir}%" $dep_port_contents > $tempfile &&
 		    mv $tempfile $pdb/$dep_port/+CONTENTS
 		    chmod 644 $pdb/$dep_port/+CONTENTS
-		
+
 	fi
 }
 
@@ -123,7 +178,7 @@ update_reqfile () {
 		read DEPUPDATE
 
 		case "$DEPUPDATE" in
-		[cC])	mv $grep_deps $req_deps ;;
+		[cC])	mv $grep_deps $req_deps ; unset grep_deps ;;
 		[sS])	sdiff_deps=`mktemp -t sdiff-deps-${short_port}`
 			sdiff -o $sdiff_deps --text --suppress-common-lines \
 			    --width=`tput columns` $req_deps $grep_deps
@@ -138,15 +193,21 @@ update_reqfile () {
 update_port () {
 	local upd
 
+	if [ -n "$NO_DEP_UPDATES" ]; then
+		rm -f $NO_DEP_UPDATES
+		unset NO_DEP_UPDATES
+	fi
+
 	case "$1" in
 	-p)	upd=$2 ;;
 	*)	upd=$1 ;;
 	esac
 
-	echo "===>>> Launching child to update $upd"
+	echo "===>>> Launching child to update ${upd#$pd/}"
 	echo ''
 	if [ -z "$NO_ACTION" ]; then
 		($0 $ARGS $@) || fail "Update for $upd failed"
+		. $IPC_SAVE
 	else
 		test -n "$VERBOSE" &&
 		    echo "===>>> Build canceled due to -n flag"
@@ -169,12 +230,21 @@ check_interactive () {
 	local UPD_OR_NOT
 
 	if [ -n "$INTERACTIVE_UPDATE" ]; then
+		case "$INTERACTIVE_YES" in
+		*:${1}:*)	return 0 ;;
+		esac
+
+		test -n "$INTERACTIVE_BUILDING" && return 1
+
 		echo -n "===>>> Update ${1}? [y] "
 		read UPD_OR_NOT
 		case "$UPD_OR_NOT" in
 		[nN]*)	return 1 ;;
 		esac
+
+		INTERACTIVE_YES="${INTERACTIVE_YES}${1}:"
 	fi
+
 	return 0
 }
 
@@ -189,7 +259,7 @@ iport_from_origin () {
 }
 
 origin_from_pdb () {
-	grep '@comment ORIGIN' ${1}/+CONTENTS | cut -f2 -d':'
+	grep '@comment ORIGIN' ${1}/+CONTENTS 2>/dev/null | cut -f2 -d':'
 }
 
 check_for_updates () {
@@ -209,14 +279,21 @@ check_for_updates () {
 		    fail "Cannot cd to port directory: $pd/$upd_port"
 		port_ver=`make $MAKE_ARGS -V PKGNAME`
 
-		test "$1" = "$port_ver" && return 0
+		if [ "$1" = "$port_ver" ]; then
+			if [ -z "$LIST" -a -z "$LIST_PLUS" ]; then
+				# Keep list both ways to increase performance
+				CURRENT_DEPS_O="${CURRENT_DEPS_O}${upd_port}:"
+				CURRENT_DEPS_I="${CURRENT_DEPS_I}${1}:"
+			fi
+			return 0
+		fi
 
 		case `pkg_version -t $1 $port_ver` in
 		\<)	do_update=yes ;;
 		*)	if [ -n "$VERBOSE" ]; then
 				echo ''
-				echo "===>>> Port version $port_ver does not"
-				echo "===>>> seem newer than installed $1"
+				echo "	===>>> Port version $port_ver does not"
+				echo "	===>>> seem newer than installed $1"
 				echo ''
 			fi
 			;;
@@ -231,6 +308,17 @@ check_for_updates () {
 	fi
 
 	if [ -n "$do_update" ]; then
+		case "$2" in
+		list)	if [ -z "$newportdir" ]; then
+				echo "	===>>> New version available: $port_ver"
+				num_updates=$(( $num_updates + 1 ))
+			else
+				unset newportdir
+			fi
+			return 0
+			;;
+		esac
+
 		if ! check_interactive $1 ; then
 			return 0
 		fi
@@ -275,63 +363,69 @@ ports_by_category () {
 	local pkg
 
 	for pkg in $pdb/*; do
-		# Handle regular files, such as portupgrade's pkgdb.db
-		test -d "$pkg" || continue
-
 		if [ -s "$pkg/+REQUIRED_BY" ]; then
-			if grep '^@pkgdep ' $pkg/+CONTENTS >/dev/null; then
+			if grep -q '^@pkgdep ' $pkg/+CONTENTS 2>/dev/null; then
 				branches="$branches $pkg"
 			else
 				trunks="$trunks $pkg"
 			fi
 		else
-			if grep '^@pkgdep ' $pkg/+CONTENTS >/dev/null; then
+			if grep -q '^@pkgdep ' $pkg/+CONTENTS 2>/dev/null; then
 				leaves="$leaves $pkg"
 			else
-				roots="$roots $pkg"
+				test -s $pkg/+CONTENTS && roots="$roots $pkg"
 			fi
 		fi
 	done
 }
 
 dependency_check () {
-	local dep_port_list dep_port cur_p upd_args p op old_p
+	# Re-use dep_port_list for efficiency
+	local dep_port ign_p cur_p upd_args p op old_p
 
 	# Print a message here because sometimes all-depends-list takes
 	# a long time to return.
-	if [ -n "$CONFIG_ONLY" ]; then
-		echo "===>>> Checking $portdir dependencies for recursive 'make config'"
-	else
-		echo "===>>> Checking if dependencies of $portdir are up to date"
+	if [ -z "$dep_port_check_done" ]; then
+		echo "===>>> Gathering dependency list for $portdir from ports"
+		dep_port_list=`make $MAKE_ARGS all-depends-list`
+		dep_port_check_done=yes
 	fi
 
-	dep_port_list=`make $MAKE_ARGS all-depends-list`
 	if [ -z "$dep_port_list" ]; then
 		echo "===>>> No dependencies for $portdir"
 		return 0
+	else
+		if [ -n "$CONFIG_ONLY" ]; then
+			echo "===>>> Starting recursive 'make config' check"
+		else
+			echo "===>>> Starting dependency check"
+		fi
 	fi
 
 	for dep_port in $dep_port_list; do
 		test -n "$VERBOSE" &&
 		    echo "===>>> Checking dependency: $dep_port"
 
-		if [ -n "$CONFIG_SEEN_LIST" ]; then
-			if [ `grep "${dep_port}$" $CONFIG_SEEN_LIST` ]; then
-				continue
-			else
-				echo "$dep_port" >> $CONFIG_SEEN_LIST
-			fi
+		# Do this first to catch out of date dependencies
+		if [ -n "$CONFIG_ONLY" ]; then
+			case "$CONFIG_SEEN_LIST" in
+			*:${dep_port#$pd/}:*)	continue ;;
+			esac
+			CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${dep_port#$pd/}:"
 		fi
 
-		if [ -n "$UPDATES_DONE_LIST" ]; then
-			if [ `grep "${dep_port}$" $UPDATES_DONE_LIST` ]; then
-				continue
-			fi
-		fi
+		case "$CURRENT_DEPS_O" in
+		*:${dep_port#$pd/}:*)	continue ;;
+		esac
+
+		case "$FORCE_DONE_LIST" in
+		*:${dep_port#$pd/}:*)	continue ;;
+		esac
 
 		cur_p=`iport_from_origin ${dep_port#$pd/}`
 		if [ -n "$cur_p" ]; then
 			upd_args=$cur_p
+			ign_p=$cur_p
 		else
 			upd_args="-p $dep_port"		# Sensible default
 			# Check to see if the dependency has moved because
@@ -345,8 +439,18 @@ dependency_check () {
 				old_p=`iport_from_origin ${op}`
 				if [ -n "$old_p" ]; then
 					upd_args=$old_p
+					ign_p=$old_p
 				fi
 			fi
+		fi
+
+		if [ -e "$pdb/$ign_p/+IGNOREME" ]; then
+			if [ -n "$VERBOSE" ]; then
+				echo ''
+				echo "===>>> Skipping $ign_p due to +IGNOREME file"
+				echo ''
+			fi
+			continue
 		fi
 
 		if [ -n "$FORCE" ]; then
@@ -376,8 +480,7 @@ dependency_check () {
 }
 
 unset_recursive_config () {
-	rm -f $CONFIG_SEEN_LIST
-	unset CONFIG_ONLY CONFIG_SEEN_LIST
+	unset CONFIG_SEEN_LIST CONFIG_ONLY
 
 	# Overload this variable to simplify the code
 	NO_RECURSIVE_CONFIG=yes
@@ -412,21 +515,21 @@ fi
 : ${pdb:=/var/db/pkg}
 
 # Save switches for potential child processes
-while getopts 'CDGabdfghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
+while getopts 'CDGLabdfghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
 	case "${COMMAND_LINE_ARGUMENT}" in
 	C)	DONT_PRE_CLEAN=yes; ARGS="-C $ARGS" ;;
 	D)	DONT_SCRUB_DISTFILES=yes; ARGS="-D $ARGS" ;;
 	G)	NO_RECURSIVE_CONFIG=yes; ARGS="-G $ARGS" ;;
+	L)	LIST_PLUS=yes ;;
 	a)	UPDATE_ALL=yes ;;
 	b)	BACKUP=yes; ARGS="-b $ARGS" ;;
 	d)	ALWAYS_SCRUB_DISTFILES=yes; ARGS="-d $ARGS" ;;
-	f)	FORCE_PARENT=yes
-		FORCE=yes
-		UPDATES_DONE_LIST=`mktemp -t updates_done_list`
-		export FORCE UPDATES_DONE_LIST
+	f)	FORCE=yes
+		FORCE_DONE_LIST=':'
+		export FORCE FORCE_DONE_LIST
 		;;
 	g)	MAKE_PACKAGE=yes; ARGS="-g $ARGS" ;;
-	h)	usage ; exit 0 ;;
+	h)	usage ;;
 	i)	INTERACTIVE_UPDATE=yes; ARGS="-i $ARGS" ;;
 	l)	LIST=yes ;;
 	m)	MAKE_ARGS=$OPTARG; ARGS="-m $MAKE_ARGS $ARGS" ;;
@@ -437,21 +540,24 @@ while getopts 'CDGabdfghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
 	s)	CLEAN_STALE=yes ;;
 	u)	UNATTENDED=yes; ARGS="-u $ARGS" ;;
 	v)	VERBOSE=yes; ARGS="-v $ARGS" ;;
+	*)	usage ;;
 	esac
 done
 shift $(( $OPTIND - 1 ))
 
-if [ -n "$LIST" ]; then
+if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
 	ports_by_category
 
 	num_roots=0
 	num_trunks=0
 	num_branches=0
 	num_leaves=0
+	num_updates=0
 
 	echo "===>>> Root ports (No dependencies, not depended on)"
 	for port in $roots; do
 		echo "===>>> ${port##*/}"
+		[ -n "$LIST_PLUS" ] && check_for_updates ${port##*/} list
 		num_roots=$(( $num_roots + 1 ))
 	done
 	echo "===>>> $num_roots root ports"
@@ -459,6 +565,7 @@ if [ -n "$LIST" ]; then
 	echo "===>>> Trunk ports (No dependencies, are depended on)"
 	for port in $trunks; do
 		echo "===>>> ${port##*/}"
+		[ -n "$LIST_PLUS" ] && check_for_updates ${port##*/} list
 		num_trunks=$(( $num_trunks + 1 ))
 	done
 	echo "===>>> $num_trunks trunk ports"
@@ -466,6 +573,7 @@ if [ -n "$LIST" ]; then
 	echo "===>>> Branch ports (Have dependencies, are depended on)"
 	for port in $branches; do
 		echo "===>>> ${port##*/}"
+		[ -n "$LIST_PLUS" ] && check_for_updates ${port##*/} list
 		num_branches=$(( $num_branches + 1 ))
 	done
 	echo "===>>> $num_branches branch ports"
@@ -473,27 +581,47 @@ if [ -n "$LIST" ]; then
 	echo "===>>> Leaf ports (Have dependencies, not depended on)"
 	for port in $leaves; do
 		echo "===>>> ${port##*/}"
+		[ -n "$LIST_PLUS" ] && check_for_updates ${port##*/} list
 		num_leaves=$(( $num_leaves + 1 ))
 	done
 	echo "===>>> $num_leaves leaf ports"
 	echo ''
 	num_ports=$(( $num_roots + $num_trunks + $num_branches + $num_leaves ))
 	echo "===>>> $num_ports total installed ports"
+
+	if [ "$num_updates" -gt 1 ]; then
+		echo "	===>>> $num_updates have new versions available"
+	elif [ "$num_updates" -eq 1 ]; then
+		echo "	===>>> 1 has a new version available"
+	fi
+
 	exit 0
 fi
 
 if [ -n "$CLEAN_STALE" ]; then
+	if [ -z "$do_not_delete" ]; then
+		do_not_delete=':'
+		export do_not_delete
+	fi
+
 	for file in `find $pdb/ -name \+REQUIRED_BY -empty` ; do
 		dir="${file%/+REQUIRED_BY}"
-		origin=`origin_from_pdb $dir`
 
+		case "$do_not_delete" in
+		*:${dir#$pdb/}:*)	continue ;;
+		esac
+
+		origin=`origin_from_pdb $dir`
 		deplist=`grep DEPORIGIN:$origin$ $pdb/*/+CONTENTS`
 		if [ -z "$deplist" ]; then
 			echo -n "===>>> ${dir#$pdb/} is no longer depended on, delete? [n] "
 			read YESNO
 
 			case "$YESNO" in
-			[yY])	pkg_delete ${dir#$pdb/} ;;
+			[yY])	pkg_delete -f ${dir#$pdb/}
+				exec $0 -s
+				;;
+			*)	do_not_delete="${do_not_delete}${dir#$pdb/}:" ;;
 			esac
 		else
 			echo "===>>> Warning: unrecorded dependencies on ${dir#$pdb/}:"
@@ -514,34 +642,64 @@ if [ -n "$UNATTENDED" ]; then
 	fi
 fi
 
-if [ -z "$CONFIG_ONLY" -a -z "$NO_RECURSIVE_CONFIG" ]; then
-	CONFIG_SEEN_LIST=`mktemp -t config_seen_list`
-	CONFIG_ONLY=yes
-	export CONFIG_SEEN_LIST CONFIG_ONLY
+if [ "$$" -eq "$PARENT_PID" ]; then
+	NO_DEP_UPDATES=`mktemp -t no_dep_updates-$PARENT_PID`
 
-	CONFIG_PARENT=yes
+	CURRENT_DEPS_O=':'
+	CURRENT_DEPS_I=':'
+	IPC_SAVE=`mktemp -t ipc_save-$PARENT_PID`
+	export CURRENT_DEPS_O CURRENT_DEPS_I IPC_SAVE
+
+	if [ -n "$INTERACTIVE_UPDATE" ]; then
+		INTERACTIVE_YES=':'
+		export INTERACTIVE_YES
+	fi
+
+	if [ -z "$CONFIG_ONLY" -a -z "$NO_RECURSIVE_CONFIG" ]; then
+		CONFIG_SEEN_LIST=':'
+		CONFIG_ONLY=yes
+		export CONFIG_SEEN_LIST CONFIG_ONLY
+	fi
+else
+	# Zero out this file so that we can save our data to it safely
+	> $IPC_SAVE
 fi
 
 if [ -n "$UPDATE_ALL" ]; then
 	echo "===>>> Starting check of installed ports for available updates"
 	ports_by_category
 
-	if [ -n "$CONFIG_SEEN_LIST" ]; then
+	if [ -n "$CONFIG_ONLY" ]; then
 		echo "===>>> Checking ports for recursive 'make config'"
 		for pkg in $roots $trunks $branches $leaves; do
-			p=`origin_from_pdb $pkg`
-			if [ `grep "${pd}/${p}$" $CONFIG_SEEN_LIST` ]; then
-				continue
-			else
-				echo "${pd}/${p}" >> $CONFIG_SEEN_LIST
-				check_for_updates ${pkg##*/} ||
-				    fail 'Update failed'
-			fi
+			test -n "$VERBOSE" &&
+			    echo "===>>> Checking installed port: ${pkg#$pdb/}"
+
+			case "$CURRENT_DEPS_I" in
+			*:${pkg#$pdb/}:*)	continue ;;
+			esac
+
+			orig=`origin_from_pdb $pkg`
+			case "$CONFIG_SEEN_LIST" in
+			*:${orig}:*)	continue ;;
+			esac
+			CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${orig}:"
+			check_for_updates ${pkg#$pdb/} || fail 'Update failed'
 		done
+
+		if [ -e "$NO_DEP_UPDATES" -a -z "$NO_RECURSIVE_CONFIG" ]; then
+			echo "===>>> The 'make config' check revealed no ports to update"
+			safe_exit
+		fi
+
 		unset_recursive_config
 		echo ''
 		echo "===>>> Starting build for ports that need updating <<<==="
 		echo ''
+		if [ -n "$INTERACTIVE_UPDATE" ]; then
+			INTERACTIVE_BUILDING=yes
+			export INTERACTIVE_BUILDING
+		fi
 	fi
 
 	for pkg in $roots $trunks $branches $leaves; do
@@ -552,19 +710,24 @@ if [ -n "$UPDATE_ALL" ]; then
 		fi
 		if [ -n "$FORCE" ]; then
 			p=`origin_from_pdb $pkg`
-			if [ ! `grep "${pd}/${p}$" $UPDATES_DONE_LIST` ]; then
-				echo "===>>> Forcing update for ${pkg##*/}"
-				update_port ${pkg##*/}
-				continue
-			else
-				test -n "$VERBOSE" &&
+			case "$FORCE_DONE_LIST" in
+			*:${p}:*) test -n "$VERBOSE" &&
 				    echo "===>>> Update for $p already done"
-			fi
+				  continue
+				  ;;
+			esac
+			echo "===>>> Forcing update for ${pkg#$pdb/}"
+			update_port ${pkg#$pdb/}
+			continue
 		else
 			test -n "$VERBOSE" &&
-			    echo "===>>> Checking installed port: ${pkg##*/}"
+			    echo "===>>> Checking installed port: ${pkg#$pdb/}"
 		fi
-		check_for_updates ${pkg##*/} || fail 'Update failed'
+
+		case "$CURRENT_DEPS_I" in
+		*:${pkg#$pdb/}:*)	continue ;;
+		esac
+		check_for_updates ${pkg#$pdb/} || fail 'Update failed'
 	done
 	echo "===>>> Update check of installed ports complete"
 	safe_exit
@@ -579,9 +742,9 @@ if [ -n "$REPLACE_ORIGIN" ]; then
 		upg_port=$2
 	else
 		# Handle existing portupgrade syntax
-		upg_port=`grep -l " ORIGIN:[^\/]*/${2}$" $pdb/*/+CONTENTS`
+		upg_port=`grep -l " ORIGIN:${2#$pd/}$" $pdb/*/+CONTENTS`
 		[ -n "$upg_port" ] ||
-		    upg_port=`grep -l " ORIGIN:[^\/]*/${2}" $pdb/*/+CONTENTS`
+		    upg_port=`grep -l " ORIGIN:${2#$pd/}" $pdb/*/+CONTENTS`
 		[ -n "$upg_port" ] ||
 		    fail "Cannot find an installed port with ORIGIN $2"
 		upg_port="${upg_port%/+CONTENTS}"
@@ -635,6 +798,22 @@ case "$upg_port" in
 	;;
 esac
 
+if [ -e "$pdb/$upg_port/+IGNOREME" ]; then
+	echo ''
+	if [ -z "$UNATTENDED" ]; then
+		echo "===>>> $upg_port has an +IGNOREME file"
+		echo -n "===>>> Update anyway? [n] "
+		read UPD_OR_NOT
+		case "$UPD_OR_NOT" in
+		[yY]*)  ;;
+		*)	safe_exit ;;
+		esac
+	else
+		echo "===>>> $upg_port has an +IGNOREME file, ignoring"
+		safe_exit
+	fi
+fi
+
 if [ -d "$pd/$portdir" ]; then
 	echo "===>>> Port directory: $pd/$portdir"
 else
@@ -644,29 +823,53 @@ fi
 
 cd $pd/$portdir || usage
 
-echo "===>>> Launching 'make checksum' for $portdir in background"
-fetchlog=`mktemp -t fetchlog-${portdir##*/}`
-(make $MAKE_ARGS checksum >$fetchlog 2>&1 ; rm $fetchlog)&
+if [ -n "$CONFIG_ONLY" ]; then
+	echo "===>>> Launching 'make checksum' for $portdir in background"
+	fetchlog=`mktemp -t fetchlog-${PARENT_PID}-${portdir##*/}`
+	(make $MAKE_ARGS checksum >> $fetchlog 2>&1 &&
+	    { rm -f $fetchlog; exit 0;}
+	    dists=`make $MAKE_ARGS -V DISTFILES`
+	    patches=`make $MAKE_ARGS -V PATCHFILES`
+	    make $MAKE_ARGS delete-distfiles \
+		RESTRICTED_FILES="${dists%:[0-9]} ${patches%:[0-9]}" \
+		>> $fetchlog 2>&1 &&
+	    echo "===>>> RE-STARTING FETCH <<<===" >> $fetchlog
+	    make $MAKE_ARGS checksum >> $fetchlog 2>&1 ; rm -f $fetchlog)&
+	echo "MCS_CHILD_PID $!" >> $fetchlog
+fi
 
 # Do this here so that the dependency list is accurate
 # But only if we have not done it recursively first
 test -z "$NO_RECURSIVE_CONFIG" && make $MAKE_ARGS config
 
 if [ -n "$CONFIG_ONLY" ]; then
+	TESTINT=`make -V IS_INTERACTIVE`
+	if [ -n "$TESTINT" ]; then
+		echo ''
+		echo "===>>> Warning: $portdir is interactive, and will likely"
+		echo "       reqire attenton during the build"
+		echo ''
+		echo -n "===>>> Press the [Enter] or [Return] key to continue "
+		read DISCARD
+		echo ''
+	fi
+
 	dependency_check
 
-	if [ -z "$CONFIG_PARENT" ]; then
+	if [ ! "$$" -eq "$PARENT_PID" ]; then
+		# Save state for the parent process to read back in
+		echo "CONFIG_SEEN_LIST='$CONFIG_SEEN_LIST'" > $IPC_SAVE
 		safe_exit
 	else
 		if [ -n "$UPDATE_REQ_BYS" -a \
 		    -s "$pdb/$upg_port/+REQUIRED_BY" ]; then
-			echo "$pd/$portdir" >> $CONFIG_SEEN_LIST
+			CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${portdir}:"
 
 			echo ''
 			echo "===>>> Checking ports that depend on $upg_port"
 			for req_by in `cat $pdb/$upg_port/+REQUIRED_BY`; do
 				test -n "$VERBOSE" &&
-				  echo "===>>> $req_by is required by $upg_port"
+				  echo "===>>> $upg_port is required by $req_by"
 				if [ ! -d "$pdb/$req_by" ]; then
 					req_by_error $upg_port $req_by
 					continue
@@ -685,10 +888,23 @@ if [ -n "$CONFIG_ONLY" ]; then
 	echo ''
 	echo "===>>> Starting build for $portdir <<<==="
 	echo ''
+
+	if [ -n "$INTERACTIVE_UPDATE" ]; then
+		INTERACTIVE_BUILDING=yes
+		export INTERACTIVE_BUILDING
+	fi
 fi
 
 cd $pd/$portdir
-dependency_check
+
+if [ ! -e "$NO_DEP_UPDATES" ]; then
+	dependency_check
+else
+	if [ -z "$NO_RECURSIVE_CONFIG" ]; then
+		echo "===>>> The 'make config' check revealed no dependencies to update"
+		echo ''
+	fi
+fi
 
 if [ -n "$NO_ACTION" ]; then
 	test -n "$VERBOSE" &&
@@ -697,18 +913,19 @@ if [ -n "$NO_ACTION" ]; then
 fi
 
 case "$DONT_PRE_CLEAN" in
-'')	make $MAKE_ARGS clean || fail 'make clean failed' ;;
+'')	make $MAKE_ARGS clean NOCLEANDEPENDS=yes || fail 'make clean failed' ;;
 esac
 
 # In case we went elsewhere in the dependency check
 cd $pd/$portdir
 
-while [ -f "$fetchlog" ]; do
+fl_read=`echo ${TMPDIR:-/tmp}/fetchlog-${PARENT_PID}-${portdir##*/}.*`
+while [ -f "$fl_read" ]; do
 	echo ''
-	echo "===>>> Waiting on fetch to complete for $portdir <<<==="
-	tail -10 $fetchlog 2>/dev/null | grep -v '^$'
+	echo "===>>> Waiting on fetch/checksum for $portdir <<<==="
+	tail -10 $fl_read 2>/dev/null | egrep -v '^$|MCS_CHILD_PID'
 	echo ''
-	echo "===>>> Waiting on fetch to complete for $portdir <<<==="
+	echo "===>>> Waiting on fetch/checksum for $portdir <<<==="
 	sleep 5
 done
 
@@ -750,7 +967,7 @@ elif [ -s "$grep_deps" -a ! -s "$req_deps" ]; then
 
 		case "$INSTALLDEPS" in
 		[yY])	req_deps=`mktemp -t req-deps-${short_port}`
-			mv $grep_deps $req_deps
+			mv $grep_deps $req_deps ; unset grep_deps
 			;;
 		esac
 	else
@@ -770,6 +987,13 @@ if [ -n "$upg_port" ]; then
 		mv ${upg_port}.* $HOME/
 	fi
 	pkg_delete -f $upg_port || fail 'pkg_delete failed'
+
+	if [ -n "$REPLACE_ORIGIN" ]; then
+		installed_newport=`iport_from_origin ${newportdir}`
+		if [ -n "$installed_newport" ]; then
+			pkg_delete -f $installed_newport
+		fi
+	fi
 fi
 
 aw=install
@@ -779,7 +1003,7 @@ if [ -n "$MAKE_PACKAGE" ]; then
 	fw=Packaging
 	echo "===>>> Creating a package for $new_port in $HOME"
 fi
-make $MAKE_ARGS $aw clean || fail "$fw of new port failed"
+make $MAKE_ARGS $aw clean NOCLEANDEPENDS=yes || fail "$fw of new port failed"
 
 if [ -n "$MAKE_PACKAGE" ]; then
 	mv ${new_port}.* $HOME/
@@ -787,6 +1011,12 @@ fi
 
 # By now, if this file exists, it should be authoritative
 if [ -s "$req_deps" ]; then
+
+update_dep_entries () {
+	local upg_port
+
+	test -n "$1" && upg_port=$1
+
 	echo "===>>> Updating package dependency entry for each dependent port"
 	while read dep_port; do
 		dep_port_contents="$pdb/$dep_port/+CONTENTS"
@@ -798,21 +1028,69 @@ if [ -s "$req_deps" ]; then
 			update_contents "$short_port.*" $new_port
 		fi
 	done < $req_deps
-
+}
+	update_dep_entries
 	mv $req_deps $pdb/$new_port/+REQUIRED_BY
+	unset req_deps
 	chmod 644 $pdb/$new_port/+REQUIRED_BY
+
+	if [ -n "$REPLACE_ORIGIN" ]; then
+		req_deps=`mktemp -t req-deps-${short_port}`
+
+		grep -l DEPORIGIN:$newportdir$ $pdb/*/+CONTENTS |
+		    cut -f 5 -d '/' | sort -u > $req_deps
+		update_dep_entries $new_port
+		cat $req_deps >> $pdb/$new_port/+REQUIRED_BY
+	fi
 fi
 
 echo ''
 test -z "$upg_port" && upg_port=$portdir
 echo "===>>> Upgrade for $upg_port to $new_port succeeded"
 
-test -n "$UPDATES_DONE_LIST" && echo "$pd/$portdir" >> $UPDATES_DONE_LIST
+test -n "$FORCE" && FORCE_DONE_LIST="${FORCE_DONE_LIST}${portdir}:"
 
 find_distdir () {
 	distdir=`make $MAKE_ARGS -V DISTDIR`
 	dist_subdir=`make $MAKE_ARGS -V DIST_SUBDIR`
 	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
+}
+
+find_and_delete_distfiles () {
+	local distpattern file DELORNOT
+
+	distpattern=${1%[_-]*}
+	[ "$distpattern" = "$old_distpattern" ] && return 0
+	for file in ${distpattern}*; do
+		# This generally means the pattern did not match
+		case "$file" in
+		*\*)	old_distpattern=$distpattern
+			find_and_delete_distfiles ${distpattern}
+			continue
+			;;
+		esac
+
+		case "$distfiles" in
+		*${file}*)
+			test -n "$VERBOSE" &&
+			    echo "===>>> Keeping new distfile: $file"
+			continue	# Do not delete current version
+			;;
+		*)	[ ! -d "$file" ] || continue
+			if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
+				echo "===>>> Deleting stale distfile: $file"
+				rm -f $file
+				continue
+			fi
+
+			echo -n "===>>> Delete $file? [n] "
+			read DELORNOT
+			case "$DELORNOT" in
+			[yY])	rm -f $file ;;
+			esac
+			;;
+		esac
+	done
 }
 
 delete_stale_distfiles () {
@@ -822,34 +1100,10 @@ delete_stale_distfiles () {
 	find_distdir
 
 	distfiles=`make $MAKE_ARGS -V DISTFILES`
+	distfiles="$distfiles `make $MAKE_ARGS -V PATCHFILES`"
 	cd $distdir || fail "cd to $distdir failed!"
 	for distfile in $distfiles; do
-		for file in ${distfile%%[_-]*}*; do
-			# This generally means the pattern did not match
-			case "$file" in
-			*\*)	continue ;;
-			esac
-
-			case "$distfiles" in
-			*${file}*)
-				test -n "$VERBOSE" &&
-				    echo "===>>> Keeping new distfile: $file"
-				continue	# Do not delete current version
-				;;
-			*)	if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
-					echo "===>>> Deleting stale distfile: $file"
-					rm -f $file
-					continue
-				fi
-
-				echo -n "===>>> Delete $file? [n] "
-				read DELORNOT
-				case "$DELORNOT" in
-				[yY])	rm -f $file ;;
-				esac
-				;;
-			esac
-		done
+		find_and_delete_distfiles $distfile
 	done
 }
 
@@ -887,7 +1141,7 @@ if [ -n "$UPDATE_REQ_BYS" -a -s "$pdb/$new_port/+REQUIRED_BY" ]; then
 	echo "===>>> Updating ports that depend on $new_port"
 	for req_by in `cat $pdb/$new_port/+REQUIRED_BY`; do
 		test -n "$VERBOSE" &&
-		    echo "===>>> $req_by is required by $new_port"
+		    echo "===>>> $new_port is required by $req_by"
 		if [ ! -d "$pdb/$req_by" ]; then
 			req_by_error $new_port $req_by
 			continue
