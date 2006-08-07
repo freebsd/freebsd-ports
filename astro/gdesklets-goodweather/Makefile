@@ -16,6 +16,9 @@ DISTNAME=	GoodWeather
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A desklet that displays current weather condition and forecast
 
+DEPRECATED=	Disappeared from the internet
+EXPIRATION_DATE=2006-10-07
+
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_PYTHON=	yes
