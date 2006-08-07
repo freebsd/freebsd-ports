@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipcalc
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://jodies.de/ipcalc-archive/
 
