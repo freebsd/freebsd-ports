@@ -26,6 +26,7 @@ PLIST_FILES=	bin/lsdvd
 
 .if ${OSVERSION} < 500000
 WITH_DVD_DEVICE?=/dev/acd0c
+BROKEN=		does not configure
 .else
 WITH_DVD_DEVICE?=/dev/acd0
 .endif
