@@ -5,7 +5,7 @@
  	char *buffer, int buflen, int *h_errnop)
  {
 -#ifdef LINUX
-+#if defined(LINUX) || (defined(FREEBSD) && ((__FreeBSD_version >= 700015) || (__FreeBSD_version >= 601103)))
++#if defined(LINUX) || (defined(FREEBSD) && (__FreeBSD_version >= 601103))
  	struct hostent *__result; /* will be the same as result */
  	int __error;
  	__error = gethostbyname_r (name, result, buffer, buflen,
@@ -15,7 +15,7 @@
  }
  #endif /* defined SCO */
  
-+#if !defined(FREEBSD) || (__FreeBSD_version < 700015) || (__FreeBSD_version < 601103)
++#if !defined(FREEBSD) || (__FreeBSD_version < 601103)
 +
  extern int h_errno;
  
@@ -24,7 +24,7 @@
  
    	return res;
  }
-+#endif /* !defined(FREEBSD) || (__FreeBSD_version < 700015) */
++#endif /* !defined(FREEBSD) || (__FreeBSD_version < 601103) */
  
  #if defined(MACOSX)
  /*
@@ -34,10 +34,10 @@
  struct tm *localtime_r(const time_t *timep, struct tm *buffer);
  struct tm *gmtime_r(const time_t *timep, struct tm *buffer);
  #endif /* !defined FREEBSD || (__FreeBSD_version < 500112) */
-+#if !defined(FREEBSD) || (__FreeBSD_version < 700015) || (__FreeBSD_version < 601103)
++#if !defined(FREEBSD) || (__FreeBSD_version < 601103)
  struct hostent *gethostbyname_r(const char *name, struct hostent *result,
  								char *buffer, int buflen, int *h_errnop);
-+#endif /* !defined(FREEBSD) || (__FreeBSD_version < 700015) */
++#endif /* !defined(FREEBSD) || (__FreeBSD_version < 601103) */
  #endif
  
  #endif /* __OSL_SYSTEM_H__ */
@@ -55,7 +55,7 @@
 + 
 +-#if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2)
 ++#if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2) || \
-++	(defined(__FreeBSD__) && (__FreeBSD_version > 700016 || __FreeBSD_version > 601103))
+++	(defined(__FreeBSD__) && __FreeBSD_version > 601103)
 + #define _PR_HAVE_GETPROTO_R
 + #define _PR_HAVE_5_ARG_GETPROTO_R
 + #endif
