@@ -71,6 +71,8 @@ WITHOUT_SUPERLU=	yes
 
 .if !${OSVERSION} < 500039
 F77?=		f77
+.else
+BROKEN=		the Fortran compiler does not work
 .endif
 
 .if exists(${MPIDIR}/bin/mpicc) && !defined(WITHOUT_MPI)
