@@ -54,7 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Linux|@VERSION@|g' ${WRKSRC}/doc/quickref.1.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qsf ${PREFIX}/bin/qsf
+	${INSTALL_PROGRAM} ${WRKSRC}/qsf ${TARGETDIR}/bin/qsf
 	${INSTALL_MAN} ${WRKSRC}/doc/quickref.1 ${MANPREFIX}/man/man1/qsf.1
 
 .include <bsd.port.post.mk>
