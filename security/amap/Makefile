@@ -8,7 +8,8 @@
 PORTNAME=	amap
 PORTVERSION=	5.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.thc.org/releases/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	groups/thc
 
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Application mapper
