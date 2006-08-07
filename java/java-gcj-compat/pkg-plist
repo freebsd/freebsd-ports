@@ -19,6 +19,8 @@ lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/rmiregistry
 lib/jvm/java-gcj
 %%PYTHON_SITELIBDIR%%/aotcompile.py
 %%PYTHON_SITELIBDIR%%/aotcompile.pyc
+%%PYTHON_SITELIBDIR%%/classfile.py
+%%PYTHON_SITELIBDIR%%/classfile.pyc
 @dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/bin
 @dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib/%%ARCH%%
 @dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib
