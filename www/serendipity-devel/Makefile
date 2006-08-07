@@ -16,7 +16,7 @@ COMMENT=	PHP based weblog software
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
-SNAPSHOT=	200607221338
+SNAPSHOT=	200608061338
 WRKSRC=		${WRKDIR}/serendipity-nightly
 NO_BUILD=	YES
 SERENDIPITY?=	www/serendipity
@@ -68,10 +68,10 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 do-install:
-	@-${MKDIR} ${PREFIX}/${SERENDIPITY}
-	@${CHMOD} 755 ${PREFIX}/${SERENDIPITY}
-	@(cd ${WRKSRC} && ${CP} -R * ${PREFIX}/${SERENDIPITY}/ )
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SERENDIPITY}
+	@-${MKDIR} ${TARGETDIR}/${SERENDIPITY}
+	@${CHMOD} 755 ${TARGETDIR}/${SERENDIPITY}
+	@(cd ${WRKSRC} && ${CP} -R * ${TARGETDIR}/${SERENDIPITY}/ )
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TARGETDIR}/${SERENDIPITY}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
