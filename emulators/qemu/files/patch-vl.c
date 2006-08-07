@@ -1,6 +1,5 @@
---- vl.c.orig	Mon Nov 14 15:55:56 2005
-+++ vl.c	Mon Nov 14 15:57:25 2005
-@@ -1363,7 +1367,7 @@
+Index: qemu/vl.c
+@@ -1510,7 +1510,7 @@
      return chr;
  }
  
@@ -8,8 +7,8 @@
 +#if defined(__linux__) || defined(__FreeBSD__)
  CharDriverState *qemu_chr_open_pty(void)
  {
-     char slave_name[1024];
-@@ -1509,6 +1513,7 @@
+     struct termios tty;
+@@ -1665,6 +1665,7 @@
      return chr;
  }
  
@@ -17,11 +16,11 @@
  static int pp_ioctl(CharDriverState *chr, int cmd, void *arg)
  {
      int fd = (int)chr->opaque;
-@@ -1571,6 +1576,7 @@
+@@ -1727,6 +1728,7 @@
      chr->chr_ioctl = pp_ioctl;
      return chr;
  }
-+#endif
++#endif /* defined(__linux__) */
  
  #else
  CharDriverState *qemu_chr_open_pty(void)

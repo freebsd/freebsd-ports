@@ -1,16 +1,31 @@
+Index: qemu/Makefile.target
+@@ -404,7 +404,9 @@
+ ifndef CONFIG_DARWIN
+ ifndef CONFIG_WIN32
+ ifndef CONFIG_SOLARIS
+-VL_LIBS=-lutil -lrt
++#VL_LIBS=-lutil -lrt
++# XXX this cant be just merged back...
++VL_LIBS=-lutil
+ endif
+ endif
+ endif
 Index: qemu/vl.c
-@@ -662,6 +662,14 @@
-     case QEMU_TIMER_REALTIME:
- #ifdef _WIN32
-         return GetTickCount();
-+#elif defined(_BSD)
-+        {
-+            struct timeval r;
-+            if (!gettimeofday(&r, NULL)) {
-+                return ((timer_freq * 1000LL) * (int64_t)r.tv_sec 
-+                      + ((int64_t)r.tv_usec * timer_freq) / 1000) / timer_freq;
-+            }
-+        }        
- #else
-         {
-             struct tms tp;
+@@ -541,7 +541,7 @@
+ static void init_get_clock(void)
+ {
+     use_rt_clock = 0;
+-#if defined(__linux__)
++#if defined(__linux__) || defined(__FreeBSD__)
+     {
+         struct timespec ts;
+         if (clock_gettime(CLOCK_MONOTONIC, &ts) == 0) {
+@@ -553,7 +553,7 @@
+ 
+ static int64_t get_clock(void)
+ {
+-#if defined(__linux__)
++#if defined(__linux__) || defined(__FreeBSD__)
+     if (use_rt_clock) {
+         struct timespec ts;
+         clock_gettime(CLOCK_MONOTONIC, &ts);

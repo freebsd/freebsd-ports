@@ -45,4 +45,15 @@ and run /etc/rc.d/devfs restart.  example devfs.rules:
 	add path 'ugen*' mode 660 group operator
 corresponding rc.conf line:
 	devfs_system_ruleset="ugen_ruleset"
+- still usb: since the hub is no longer attached to the uchi controller
+and the wakeup mechanism, resume interrupt is not implemented yet linux
+guests will suspend the bus, i.e. they wont see devices usb_add'ed after
+its (linux') uhci module got loaded.  workaround: either add devices
+before linux loads the module or rmmod and modprobe it afterwards.
+- to avoid panics or non-working re(4) nics with FreeBSD guests if you
+use qemu -net nic,model=rtl8139 -net user or tap ... enable the emulated
+rtl8139 timer by building the port with WITH_RTL8139_TIMER defined.
+(the rtl8139c+ that model=rtl8139 emulates needs less cpu than qemu's
+default ne2k nic which is driven by ed(4), it has not been made default
+only because it may not work with all guests yet.)
 ====
