@@ -2431,3 +2431,4 @@ net/svnc||2006-08-01|Has expired: mastersite gone, depends on unfetchable, antiq
 devel/p5-IPC-Mmap-SimpleShare||2006-08-01|Has expired
 devel/p5-Readonly-XS|devel/p5-Readonly|2006-08-02|p5-Readonly installs XS automatically
 chinese/arnettf||2006-08-06|Renamed to chinese/CJKUnifonts
+devel/SGE||2006-08-07|Has expired
