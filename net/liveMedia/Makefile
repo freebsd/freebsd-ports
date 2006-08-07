@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2006.07.04
+PORTVERSION=	2006.08.07
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -144,7 +144,6 @@ liveMedia=		\
 		liveMedia/include/OnDemandServerMediaSubsession.hh \
 		liveMedia/include/OutputFile.hh \
 		liveMedia/include/PassiveServerMediaSubsession.hh \
-		liveMedia/include/PrioritizedRTPStreamSelector.hh \
 		liveMedia/include/QCELPAudioRTPSource.hh \
 		liveMedia/include/QuickTimeFileSink.hh \
 		liveMedia/include/QuickTimeGenericRTPSource.hh \
