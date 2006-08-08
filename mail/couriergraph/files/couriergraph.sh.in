@@ -4,6 +4,7 @@
 #
 # PROVIDE: couriergraph
 # REQUIRE: DAEMON
+# BEFORE: mail
 #
 # Add the following line to /etc/rc.conf to enable mailgraph:
 #
