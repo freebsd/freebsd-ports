@@ -20,9 +20,15 @@ MAN1=		sted.1
 PORTDOCS=	CHANGES COPYING README
 PLIST_FILES=	bin/sted
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|CC = gcc|CC ?= gcc|" \
+			-e "s|C_OPTS = -Wall -O2|C_OPTS = ${CFLAGS}|" \
+			${WRKSRC}/Makefile
+	@${REINPLACE_CMD} "s|<curses.h>|<ncurses.h>|" ${WRKSRC}/sted.c
+
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/sted ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/sted.1 ${PREFIX}/man/man1
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/sted ${TARGETDIR}/bin
+	@ ${INSTALL_MAN} ${WRKSRC}/sted.1 ${TARGETDIR}/man/man1
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
