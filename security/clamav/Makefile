@@ -39,7 +39,7 @@ PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
-		--mandir=${MANPREFIX}/man \
+		--mandir=${MANPREFIX:S/^${DESTDIR}//}/man \
 		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
@@ -66,7 +66,8 @@ CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
 SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	DBDIR=${DBDIR} \
+SUB_LIST+=	DESTDIR=${DESTDIR} \
+		DBDIR=${DBDIR} \
 		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR} \
 		CLAMAVUSER=${CLAMAVUSER} \
@@ -152,24 +153,24 @@ post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf
 
 pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
-		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DESTDIR}${DBDIR}
 .for c in clamd freshclam
-	@[ -f ${DESTDIR}${PREFIX}/etc/${c}.conf ] || \
-		${CP} ${DESTDIR}${PREFIX}/etc/${c}.conf.default ${DESTDIR}${PREFIX}/etc/${c}.conf
+	@[ -f ${TARGETDIR}/etc/${c}.conf ] || \
+		${CP} ${TARGETDIR}/etc/${c}.conf.default ${TARGETDIR}/etc/${c}.conf
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
-		${DESTDIR}${DOCSDIR}
-	@${MKDIR} ${DESTDIR}${DOCSDIR}/html
+		${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
-		${DESTDIR}${DOCSDIR}/html
+		${DOCSDIR}/html
 .endif
-	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
-		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
