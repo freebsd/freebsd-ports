@@ -141,9 +141,11 @@
 %%TURBADIR%%/scripts/sql/turba_objects.oci8.sql
 %%TURBADIR%%/scripts/sql/turba_objects.pgsql.sql
 %%TURBADIR%%/scripts/sql/turba_objects.sql
+%%TURBADIR%%/scripts/sql/turba_objects.xml
 %%TURBADIR%%/scripts/sql/turba_weddingguests.sql
 %%TURBADIR%%/scripts/upgrades/create_default_histories.php
 %%TURBADIR%%/scripts/upgrades/1.2_to_2.0.oci8.sql
+%%TURBADIR%%/scripts/upgrades/1.1_to_1.2.sql
 %%TURBADIR%%/scripts/upgrades/1.2_to_2.0.sql
 %%TURBADIR%%/scripts/upgrades/public_to_horde_share.php
 %%TURBADIR%%/search.php
