@@ -20,9 +20,8 @@ COMMENT=	Simple GUI based video editor
 PATCH_DEPENDS=	${ACLOCAL}:${PORTSDIR}/devel/automake19
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
-		xml2.5:${PORTSDIR}/textproc/libxml2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
-RUN_DEPENDS=	${LOCALBASE}/lib/libjs.so:${PORTSDIR}/lang/spidermonkey
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		js.1:${PORTSDIR}/lang/spidermonkey
 
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15 aclocal:19:env
 USE_X_PREFIX=	yes
