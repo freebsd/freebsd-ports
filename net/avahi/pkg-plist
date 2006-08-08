@@ -90,6 +90,7 @@ libdata/pkgconfig/avahi-core.pc
 libdata/pkgconfig/avahi-glib.pc
 sbin/avahi-daemon
 sbin/avahi-dnsconfd
+@exec mkdir -p %D/%%DOCSDIR%%
 %%DATADIR%%/avahi-service.dtd
 %%GTK%%%%DATADIR%%/interfaces/avahi-discover.glade
 %%DATADIR%%/introspection/AddressResolver.introspect
