@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.3 2006-08-07 03:35:39 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.4 2006-08-08 04:06:55 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -20,7 +20,8 @@ case "$monthly_statistics_enable" in
       HN=`/bin/hostname`
       SYS=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
-      /usr/bin/fetch -qo /tmp/getid http://bsdstats.hub.org/scripts/getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH
+      OS=`/usr/bin/uname -s`
+      /usr/bin/fetch -qo /tmp/getid http://bsdstats.hub.org/scripts/getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH\&opsys=$OS
       case "$monthly_statistics_report_devices" in
          [Yy][Ee][Ss])
 IFS="
