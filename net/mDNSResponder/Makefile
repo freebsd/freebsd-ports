@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	107.5
+PORTVERSION=	108
 CATEGORIES=	net dns
 MASTER_SITES=	http://darwinsource.opendarwin.org/tarballs/apsl/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alex@foxybanana.com
 COMMENT=	Apple's mDNSResponder
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 USE_GMAKE=	YES
 USE_RC_SUBR=	mdnsd.sh
