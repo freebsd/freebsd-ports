@@ -35,6 +35,13 @@ DOCSDIR=	${PREFIX}/share/doc/d4x
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
+
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-openssl
 .else
