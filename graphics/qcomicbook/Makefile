@@ -30,4 +30,10 @@ MAN1=		qcomicbook.1
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile on FreeBSD 4.x
+.endif
+
+.include <bsd.port.post.mk>
