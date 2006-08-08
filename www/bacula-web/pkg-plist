@@ -1,0 +1,225 @@
+etc/bacula-web.conf.sample
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+www/bacula-web/CONTACT
+www/bacula-web/COPYING
+www/bacula-web/ChangeLog
+www/bacula-web/README
+www/bacula-web/TODO
+www/bacula-web/array_fill.func.php
+www/bacula-web/classes.inc
+www/bacula-web/classes.inc.orig
+www/bacula-web/external_packages/phplot/ChangeLog
+www/bacula-web/external_packages/phplot/LICENSE.GPL
+www/bacula-web/external_packages/phplot/LICENSE.PHP_3_0
+www/bacula-web/external_packages/phplot/README
+www/bacula-web/external_packages/phplot/doc/imgs/graph1.png
+www/bacula-web/external_packages/phplot/doc/imgs/graph2.png
+www/bacula-web/external_packages/phplot/doc/imgs/graph3.png
+www/bacula-web/external_packages/phplot/doc/imgs/phplot-dia.png
+www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig1.png
+www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig2.png
+www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig3.png
+www/bacula-web/external_packages/phplot/doc/imgs/qstart_fig4.png
+www/bacula-web/external_packages/phplot/doc/index.php
+www/bacula-web/external_packages/phplot/doc/internal_functions.html
+www/bacula-web/external_packages/phplot/doc/quickstart.html
+www/bacula-web/external_packages/phplot/doc/schema.html
+www/bacula-web/external_packages/phplot/doc/style.css
+www/bacula-web/external_packages/phplot/doc/user_functions.html
+www/bacula-web/external_packages/phplot/doc/user_internal_functions.html
+www/bacula-web/external_packages/phplot/examples/benjamingothic.ttf
+www/bacula-web/external_packages/phplot/examples/create_chart.php
+www/bacula-web/external_packages/phplot/examples/data.php
+www/bacula-web/external_packages/phplot/examples/data_date.php
+www/bacula-web/external_packages/phplot/examples/data_date2.php
+www/bacula-web/external_packages/phplot/examples/data_sample1.php
+www/bacula-web/external_packages/phplot/examples/data_sample2.php
+www/bacula-web/external_packages/phplot/examples/data_sample3.php
+www/bacula-web/external_packages/phplot/examples/data_sample4.php
+www/bacula-web/external_packages/phplot/examples/data_sample5.php
+www/bacula-web/external_packages/phplot/examples/example1.php
+www/bacula-web/external_packages/phplot/examples/example2.php
+www/bacula-web/external_packages/phplot/examples/example3.php
+www/bacula-web/external_packages/phplot/examples/example4.php
+www/bacula-web/external_packages/phplot/examples/example6.php
+www/bacula-web/external_packages/phplot/examples/example7.php
+www/bacula-web/external_packages/phplot/examples/example8.php
+www/bacula-web/external_packages/phplot/examples/example9.php
+www/bacula-web/external_packages/phplot/examples/format_chart.php
+www/bacula-web/external_packages/phplot/examples/inline_image.php
+www/bacula-web/external_packages/phplot/examples/test_setup.php
+www/bacula-web/external_packages/phplot/phplot.php
+www/bacula-web/external_packages/phplot/phplot_data.php
+www/bacula-web/external_packages/phplot/rgb.inc.php
+www/bacula-web/external_packages/smarty/COPYING.lib
+www/bacula-web/external_packages/smarty/Config_File.class.php
+www/bacula-web/external_packages/smarty/Smarty.class.php
+www/bacula-web/external_packages/smarty/Smarty_Compiler.class.php
+www/bacula-web/external_packages/smarty/debug.tpl
+www/bacula-web/external_packages/smarty/internals/core.assemble_plugin_filepath.php
+www/bacula-web/external_packages/smarty/internals/core.assign_smarty_interface.php
+www/bacula-web/external_packages/smarty/internals/core.create_dir_structure.php
+www/bacula-web/external_packages/smarty/internals/core.display_debug_console.php
+www/bacula-web/external_packages/smarty/internals/core.get_include_path.php
+www/bacula-web/external_packages/smarty/internals/core.get_microtime.php
+www/bacula-web/external_packages/smarty/internals/core.get_php_resource.php
+www/bacula-web/external_packages/smarty/internals/core.is_secure.php
+www/bacula-web/external_packages/smarty/internals/core.is_trusted.php
+www/bacula-web/external_packages/smarty/internals/core.load_plugins.php
+www/bacula-web/external_packages/smarty/internals/core.load_resource_plugin.php
+www/bacula-web/external_packages/smarty/internals/core.process_cached_inserts.php
+www/bacula-web/external_packages/smarty/internals/core.process_compiled_include.php
+www/bacula-web/external_packages/smarty/internals/core.read_cache_file.php
+www/bacula-web/external_packages/smarty/internals/core.rm_auto.php
+www/bacula-web/external_packages/smarty/internals/core.rmdir.php
+www/bacula-web/external_packages/smarty/internals/core.run_insert_handler.php
+www/bacula-web/external_packages/smarty/internals/core.smarty_include_php.php
+www/bacula-web/external_packages/smarty/internals/core.write_cache_file.php
+www/bacula-web/external_packages/smarty/internals/core.write_compiled_include.php
+www/bacula-web/external_packages/smarty/internals/core.write_compiled_resource.php
+www/bacula-web/external_packages/smarty/internals/core.write_file.php
+www/bacula-web/external_packages/smarty/plugins/block.textformat.php
+www/bacula-web/external_packages/smarty/plugins/compiler.assign.php
+www/bacula-web/external_packages/smarty/plugins/function.assign_debug_info.php
+www/bacula-web/external_packages/smarty/plugins/function.config_load.php
+www/bacula-web/external_packages/smarty/plugins/function.counter.php
+www/bacula-web/external_packages/smarty/plugins/function.cycle.php
+www/bacula-web/external_packages/smarty/plugins/function.debug.php
+www/bacula-web/external_packages/smarty/plugins/function.eval.php
+www/bacula-web/external_packages/smarty/plugins/function.fetch.php
+www/bacula-web/external_packages/smarty/plugins/function.html_checkboxes.php
+www/bacula-web/external_packages/smarty/plugins/function.html_image.php
+www/bacula-web/external_packages/smarty/plugins/function.html_options.php
+www/bacula-web/external_packages/smarty/plugins/function.html_radios.php
+www/bacula-web/external_packages/smarty/plugins/function.html_select_date.php
+www/bacula-web/external_packages/smarty/plugins/function.html_select_time.php
+www/bacula-web/external_packages/smarty/plugins/function.html_table.php
+www/bacula-web/external_packages/smarty/plugins/function.mailto.php
+www/bacula-web/external_packages/smarty/plugins/function.math.php
+www/bacula-web/external_packages/smarty/plugins/function.popup.php
+www/bacula-web/external_packages/smarty/plugins/function.popup_init.php
+www/bacula-web/external_packages/smarty/plugins/modifier.capitalize.php
+www/bacula-web/external_packages/smarty/plugins/modifier.cat.php
+www/bacula-web/external_packages/smarty/plugins/modifier.count_characters.php
+www/bacula-web/external_packages/smarty/plugins/modifier.count_paragraphs.php
+www/bacula-web/external_packages/smarty/plugins/modifier.count_sentences.php
+www/bacula-web/external_packages/smarty/plugins/modifier.count_words.php
+www/bacula-web/external_packages/smarty/plugins/modifier.date_format.php
+www/bacula-web/external_packages/smarty/plugins/modifier.debug_print_var.php
+www/bacula-web/external_packages/smarty/plugins/modifier.default.php
+www/bacula-web/external_packages/smarty/plugins/modifier.escape.php
+www/bacula-web/external_packages/smarty/plugins/modifier.fsize_format.php
+www/bacula-web/external_packages/smarty/plugins/modifier.indent.php
+www/bacula-web/external_packages/smarty/plugins/modifier.lower.php
+www/bacula-web/external_packages/smarty/plugins/modifier.nl2br.php
+www/bacula-web/external_packages/smarty/plugins/modifier.regex_replace.php
+www/bacula-web/external_packages/smarty/plugins/modifier.replace.php
+www/bacula-web/external_packages/smarty/plugins/modifier.spacify.php
+www/bacula-web/external_packages/smarty/plugins/modifier.string_format.php
+www/bacula-web/external_packages/smarty/plugins/modifier.strip.php
+www/bacula-web/external_packages/smarty/plugins/modifier.strip_tags.php
+www/bacula-web/external_packages/smarty/plugins/modifier.truncate.php
+www/bacula-web/external_packages/smarty/plugins/modifier.upper.php
+www/bacula-web/external_packages/smarty/plugins/modifier.wordwrap.php
+www/bacula-web/external_packages/smarty/plugins/outputfilter.trimwhitespace.php
+www/bacula-web/external_packages/smarty/plugins/shared.escape_special_chars.php
+www/bacula-web/external_packages/smarty/plugins/shared.make_timestamp.php
+www/bacula-web/external_packages/smarty_gettext-0.9/COPYING
+www/bacula-web/external_packages/smarty_gettext-0.9/ChangeLog
+www/bacula-web/external_packages/smarty_gettext-0.9/README
+www/bacula-web/external_packages/smarty_gettext-0.9/smarty_gettext.php
+www/bacula-web/external_packages/smarty_gettext-0.9/tsmarty2c.php
+www/bacula-web/images/backlast.gif
+www/bacula-web/images/backlastred.gif
+www/bacula-web/images/bg1.png
+www/bacula-web/images/bg2.png
+www/bacula-web/images/bg3.png
+www/bacula-web/images/bg4.png
+www/bacula-web/images/bg5.png
+www/bacula-web/images/bg6.png
+www/bacula-web/images/bg7.gif
+www/bacula-web/images/bg8.png
+www/bacula-web/images/empty.png
+www/bacula-web/images/end2.png
+www/bacula-web/images/end4.png
+www/bacula-web/images/refresh.gif
+www/bacula-web/images/s_error.gif
+www/bacula-web/images/s_ok.gif
+www/bacula-web/index.php
+www/bacula-web/index.php.orig
+www/bacula-web/js/mini/overlib_anchor_mini.js
+www/bacula-web/js/mini/overlib_crossframe_mini.js
+www/bacula-web/js/mini/overlib_cssstyle_mini.js
+www/bacula-web/js/mini/overlib_exclusive_mini.js
+www/bacula-web/js/mini/overlib_followscroll_mini.js
+www/bacula-web/js/mini/overlib_hideform_mini.js
+www/bacula-web/js/mini/overlib_mini.js
+www/bacula-web/js/mini/overlib_shadow_mini.js
+www/bacula-web/js/overlib.js
+www/bacula-web/js/overlib_anchor.js
+www/bacula-web/js/overlib_crossframe.js
+www/bacula-web/js/overlib_cssstyle.js
+www/bacula-web/js/overlib_exclusive.js
+www/bacula-web/js/overlib_followscroll.js
+www/bacula-web/js/overlib_hideform.js
+www/bacula-web/js/overlib_shadow.js
+www/bacula-web/lang.php
+www/bacula-web/locale/de/LC_MESSAGES/messages.mo
+www/bacula-web/locale/de/LC_MESSAGES/messages_de.po
+www/bacula-web/locale/en/LC_MESSAGES/messages.mo
+www/bacula-web/locale/en/LC_MESSAGES/messages.po
+www/bacula-web/locale/es/LC_MESSAGES/messages.mo
+www/bacula-web/locale/es/LC_MESSAGES/messages.po
+www/bacula-web/locale/fr/LC_MESSAGES/messages.mo
+www/bacula-web/locale/fr/LC_MESSAGES/messages.po.fr
+www/bacula-web/locale/it/LC_MESSAGES/messages.mo
+www/bacula-web/locale/it/LC_MESSAGES/messages_it.po
+www/bacula-web/messages.po
+www/bacula-web/paths.php
+www/bacula-web/report.php
+www/bacula-web/report.php.orig
+www/bacula-web/stats.php
+www/bacula-web/templates/css.tpl
+www/bacula-web/templates/footer.tpl
+www/bacula-web/templates/full_popup.tpl
+www/bacula-web/templates/full_popup.tpl.orig
+www/bacula-web/templates/generaldata.tpl
+www/bacula-web/templates/header.tpl
+www/bacula-web/templates/index.tpl
+www/bacula-web/templates/index.tpl.orig
+www/bacula-web/templates/last_run_report.tpl
+www/bacula-web/templates/report.tpl
+www/bacula-web/templates/report.tpl.orig
+www/bacula-web/templates/report_select.tpl
+www/bacula-web/templates/volumes.tpl
+www/bacula-web/templates/volumes.tpl.orig
+www/bacula-web/templates_c/blank
+www/bacula-web/test.php
+www/bacula-web/tsmarty2c.php
+@dirrm www/bacula-web/templates_c
+@dirrm www/bacula-web/templates
+@dirrm www/bacula-web/locale/it/LC_MESSAGES
+@dirrm www/bacula-web/locale/it
+@dirrm www/bacula-web/locale/fr/LC_MESSAGES
+@dirrm www/bacula-web/locale/fr
+@dirrm www/bacula-web/locale/es/LC_MESSAGES
+@dirrm www/bacula-web/locale/es
+@dirrm www/bacula-web/locale/en/LC_MESSAGES
+@dirrm www/bacula-web/locale/en
+@dirrm www/bacula-web/locale/de/LC_MESSAGES
+@dirrm www/bacula-web/locale/de
+@dirrm www/bacula-web/locale
+@dirrm www/bacula-web/js/mini
+@dirrm www/bacula-web/js
+@dirrm www/bacula-web/images
+@dirrm www/bacula-web/external_packages/smarty_gettext-0.9
+@dirrm www/bacula-web/external_packages/smarty/plugins
+@dirrm www/bacula-web/external_packages/smarty/internals
+@dirrm www/bacula-web/external_packages/smarty
+@dirrm www/bacula-web/external_packages/phplot/examples
+@dirrm www/bacula-web/external_packages/phplot/doc/imgs
+@dirrm www/bacula-web/external_packages/phplot/doc
+@dirrm www/bacula-web/external_packages/phplot
+@dirrm www/bacula-web/external_packages
+@dirrm www/bacula-web

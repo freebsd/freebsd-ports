@@ -40,6 +40,7 @@
     SUBDIR += awstats-devel
     SUBDIR += axis
     SUBDIR += b2evolution
+    SUBDIR += bacula-web
     SUBDIR += bannerfilter
     SUBDIR += bblog
     SUBDIR += bins
