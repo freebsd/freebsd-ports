@@ -23,6 +23,6 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/weatherspect
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin
 
 .include <bsd.port.mk>
