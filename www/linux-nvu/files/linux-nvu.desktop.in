@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Nvu
+Comment=Web Development Editor
+Exec=linux-nvu
+Terminal=false
+Type=Application
+Icon=%%PREFIX%%/lib/%%APP_NAME%%/chrome/icons/default/default.xpm
+Categories=Application;Network;
