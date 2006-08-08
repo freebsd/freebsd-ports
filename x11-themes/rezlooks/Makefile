@@ -24,6 +24,10 @@ OPTIONS+=	ANIMATION "Animation support" On
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not build on 4.x
+.endif
+
 .if !defined(WITHOUT_ANIMATION)
 CONFIGURE_ARGS+=	--enable-animation
 .endif
