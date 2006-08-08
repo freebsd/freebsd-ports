@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://linuxhelp.homeunix.com/gtkjournal/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Gtk+-2 journal/diary
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20 \
