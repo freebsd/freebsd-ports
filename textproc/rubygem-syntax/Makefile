@@ -7,7 +7,8 @@
 PORTNAME=	syntax
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/4953/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	dinoex@FreeBSD.org

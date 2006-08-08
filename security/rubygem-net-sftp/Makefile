@@ -8,7 +8,8 @@
 PORTNAME=	net-sftp
 PORTVERSION=	1.1.0
 CATEGORIES=	security rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7928/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	net-ssh
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	Implementation of the SFTP client protocol

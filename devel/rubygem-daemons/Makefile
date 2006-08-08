@@ -7,7 +7,8 @@
 PORTNAME=	daemons
 PORTVERSION=	0.4.4
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9598/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	A toolkit to convert your script to a controllable daemon

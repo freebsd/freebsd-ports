@@ -7,7 +7,8 @@
 PORTNAME=	mongrel
 PORTVERSION=	0.3.13.1
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/11186/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications

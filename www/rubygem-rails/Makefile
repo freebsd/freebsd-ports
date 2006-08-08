@@ -7,7 +7,8 @@
 PORTNAME=	rails
 PORTVERSION=	1.1.2
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9684/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	MVC web application framework

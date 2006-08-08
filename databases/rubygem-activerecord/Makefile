@@ -7,7 +7,8 @@
 PORTNAME=	activerecord
 PORTVERSION=	1.14.2
 CATEGORIES=	databases rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9680/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Object-relational mapping layer for Rails MVC Framework

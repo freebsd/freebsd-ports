@@ -8,7 +8,8 @@
 PORTNAME=	needle
 PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7842/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	Dependency-injection/inversion-of-control container

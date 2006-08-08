@@ -8,7 +8,8 @@
 PORTNAME=	mp3info
 PORTVERSION=	0.5
 CATEGORIES=	audio rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7598/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tha_walka@hotmail.com

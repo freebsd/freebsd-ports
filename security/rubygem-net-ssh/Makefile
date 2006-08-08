@@ -8,7 +8,8 @@
 PORTNAME=	net-ssh
 PORTVERSION=	1.0.9
 CATEGORIES=	security rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9816/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	Non-interactive SSH processing

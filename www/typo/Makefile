@@ -8,7 +8,8 @@
 PORTNAME=	typo
 PORTVERSION=	2.6.0
 CATEGORIES=	www
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7005/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jw@innerewut.de

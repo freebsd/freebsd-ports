@@ -8,7 +8,8 @@
 PORTNAME=	snmp
 PORTVERSION=	0.6.0
 CATEGORIES=	net-mgmt rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7662/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}lib
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	SNMP library for Ruby
