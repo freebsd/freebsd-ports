@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Float/.packlist
+%%SITE_PERL%%/Data/Float.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Float
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data

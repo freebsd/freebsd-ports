@@ -167,6 +167,7 @@
     SUBDIR += p5-Bit-Vector-Minimal
     SUBDIR += p5-CAD-Calc
     SUBDIR += p5-Chart-Math-Axis
+    SUBDIR += p5-Data-Float
     SUBDIR += p5-Date-Handler
     SUBDIR += p5-Geo-Distance
     SUBDIR += p5-Graph
