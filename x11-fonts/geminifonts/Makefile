@@ -24,11 +24,10 @@ USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 
-MAKE_ENV+=	DESTDIR=${X11BASE}/lib/X11/fonts/koi8-u-gemini
-MAKE_ARGS+=	-E DESTDIR -j 2
-
 post-patch:
-	${PERL} -pi -e 's/\.Z/.gz/g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/\.Z/.gz/g' \
+			-e "s|/usr/X11R6/lib/X11/fonts/ukr|${X11BASE}/lib/X11/fonts/koi8-u-gemini|" \
+			 ${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
