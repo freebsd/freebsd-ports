@@ -35,8 +35,9 @@ LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE= does not extract with the tar in FreeBSD 4.x
+.if ${OSVERSION} < 502111
+EXTRACT_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/libarchive
+TAR=		bsdtar
 .endif
 
 do-install:

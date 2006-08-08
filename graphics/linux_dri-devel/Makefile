@@ -33,6 +33,13 @@ MODULELIST=	i810_dri.so i915_dri.so mach64_dri.so mga_dri.so r128_dri.so \
 		sis_dri.so tdfx_dri.so
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502111
+EXTRACT_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/libarchive
+TAR=		bsdtar
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/usr/X11R6/lib/modules/dri
 	${INSTALL_PROGRAM} ${WRKSRC}/linux_dri/libGL.so.1.2 \
@@ -61,8 +68,4 @@ do-install:
 post-install:
 	@${LDCONFIG_LINUX} ${PREFIX}/usr/X11R6/lib
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500000
-BROKEN=		does not extract on 4.x (both bz2 and gz sources are used)
-.endif
 .include <bsd.port.post.mk>
