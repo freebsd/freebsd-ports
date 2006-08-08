@@ -7,7 +7,7 @@
 
 PORTNAME=	epdfview
 PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://www.emma-soft.com/projects/epdfview/chrome/site/releases/
 
@@ -37,6 +37,9 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '273 s,OPEN,SAVE,' ${WRKSRC}/src/gtk/MainView.cxx
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
