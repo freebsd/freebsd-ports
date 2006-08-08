@@ -8,7 +8,8 @@
 PORTNAME=	capistrano
 PORTVERSION=	1.1.0
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9039/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	A utility for executing commands in parallel on multiple machines

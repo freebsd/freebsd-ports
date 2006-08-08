@@ -7,7 +7,8 @@
 PORTNAME=	memcache-client
 PORTVERSION=	1.0.3
 CATEGORIES=	databases rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/8110/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	rctools
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Ruby bindings for MemCached

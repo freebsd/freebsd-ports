@@ -7,7 +7,8 @@
 PORTNAME=	gem_plugin
 PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9199/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=     mongrel
 
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	Gem Based Plugin System

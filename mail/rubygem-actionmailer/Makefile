@@ -7,7 +7,8 @@
 PORTNAME=	actionmailer
 PORTVERSION=	1.2.1
 CATEGORIES=	mail rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9571/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Easy email delivery and testing for Ruby

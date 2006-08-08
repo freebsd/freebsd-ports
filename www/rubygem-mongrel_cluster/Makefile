@@ -7,7 +7,8 @@
 PORTNAME=	mongrel_cluster
 PORTVERSION=	0.2.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/11160/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	railsmachine
 
 MAINTAINER=	rgl@ruilopes.com
 COMMENT=	Manages multiple Mongrel processes

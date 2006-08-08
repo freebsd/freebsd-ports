@@ -9,7 +9,8 @@ PORTNAME=	instiki
 PORTVERSION=	0.11.0
 PORTREVISION=	1
 CATEGORIES=	www ruby
-MASTER_SITES=	http://rubyforge.rubyuser.de/instiki/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	arsptr@internode.on.net

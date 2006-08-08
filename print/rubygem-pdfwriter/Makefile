@@ -7,7 +7,8 @@
 PORTNAME=	pdfwriter
 PORTVERSION=	1.1.3
 CATEGORIES=	print rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/5993/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	ruby-pdf
 DISTNAME=	pdf-writer-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

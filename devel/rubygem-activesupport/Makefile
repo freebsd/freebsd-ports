@@ -7,7 +7,8 @@
 PORTNAME=	activesupport
 PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9562/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Utility classes and extension that are required by Rails MVC Framework

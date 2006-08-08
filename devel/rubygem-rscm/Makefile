@@ -7,7 +7,8 @@
 PORTNAME=	rscm
 PORTVERSION=	0.3.16
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/7244/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	Ruby SCM, an SCM-independent API for accessing SCMs

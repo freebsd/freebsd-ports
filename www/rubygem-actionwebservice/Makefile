@@ -7,7 +7,8 @@
 PORTNAME=	actionwebservice
 PORTVERSION=	1.1.2
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/9681/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	aws
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Simple support for publishing Web Service APIs for Rails applications

@@ -9,7 +9,8 @@ PORTVERSION=	3.0.3
 PORTREVISION=	1
 DISTNAME=	RedCloth-${PORTVERSION}
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://rubyforge.org/frs/download.php/2898/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jw@innerewut.de
 COMMENT=	A module for using Textile in Ruby
