@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crf++
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	science math
 MASTER_SITES=	http://chasen.org/~taku/software/CRF++/src/
 DISTNAME=	CRF++-${PORTVERSION}
@@ -15,7 +15,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Yet Another CRF toolkit
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GCC=	3.2+
 
 .include <bsd.port.pre.mk>
