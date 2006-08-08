@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.6.0+1
+DISTVERSION=	0.7.0
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -25,7 +25,8 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/aria2c \
 		share/locale/de/LC_MESSAGES/aria2c.mo \
-		share/locale/ja/LC_MESSAGES/aria2c.mo
+		share/locale/ja/LC_MESSAGES/aria2c.mo \
+		share/locale/ru/LC_MESSAGES/aria2c.mo
 
 .include <bsd.port.pre.mk>
 
