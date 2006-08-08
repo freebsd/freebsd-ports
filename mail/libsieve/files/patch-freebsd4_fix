@@ -1,0 +1,47 @@
+--- src/sv_interface/tree.h.orig	Tue Jul 18 17:17:23 2006
++++ src/sv_interface/tree.h	Mon Aug  7 10:11:05 2006
+@@ -30,7 +30,7 @@
+ 
+ #include "comparator.h"
+ 
+-//#include <sys/types.h>
++#include <sys/types.h>
+ #include "regex.h"
+ 
+ 
+--- src/sv_parser/comparator.h	Tue Jul 18 17:15:16 2006
++++ src/sv_parser/comparator.h	Mon Aug  7 10:05:29 2006
+@@ -27,6 +27,8 @@
+ #ifndef COMPARATOR_H
+ #define COMPARATOR_H
+ 
++// sys/types.h was required prior to the FreeBSD 5.0
++#include <sys/types.h>
+ #include "regex.h"
+ 
+ /* compares pat to text; returns 1 if it's true, 0 otherwise 
+--- src/sv_parser/sieve.y.orig	Mon Jul 24 14:24:53 2006
++++ src/sv_parser/sieve.y	Mon Aug  7 10:28:04 2006
+@@ -36,6 +36,9 @@
+ #include <ctype.h>
+ 
+ /* sv_regex */
++/* POSIX says that <sys/types.h> must be included (by the caller) before
++   <regex.h>.  */
++#include <sys/types.h>
+ #include "regex.h"
+ 
+ /* sv_parser */
+--- src/sv_util/xsize.h.orig	Tue Jul 18 17:15:16 2006
++++ src/sv_util/xsize.h	Mon Aug  7 10:47:36 2006
+@@ -26,6 +26,10 @@
+ #include <limits.h>
+ #if HAVE_STDINT_H
+ # include <stdint.h>
++#else
++// stdint.h was introduced in FreeBSD 5.0
++// limits.h in 4.0 has SIZE_T_MAX, not SIZE_MAX
++# define SIZE_MAX SIZE_T_MAX
+ #endif
+ 
+ /* The size of memory objects is often computed through expressions of

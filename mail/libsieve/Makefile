@@ -1,12 +1,13 @@
 # New ports collection makefile for:	libsieve
-# Date created:			4 August 2006
-# Whom:				Mark Starovoytov <mark_sf@kikg.ifmo.ru>
+# Date created:				4 August 2006
+# Whom:					Mark Starovoytov <mark_sf@kikg.ifmo.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libsieve
 PORTVERSION=	2.1.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libsieve
@@ -22,5 +23,7 @@ USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 USE_LDCONFIG=	yes
+# get rid of the `size_t' problem in header.y
+USE_GCC=	3.2+
 
 .include <bsd.port.mk>
