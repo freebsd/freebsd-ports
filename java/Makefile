@@ -42,6 +42,7 @@
     SUBDIR += eclipse-viplugin
     SUBDIR += eclipse-webtools
     SUBDIR += eclipseme
+    SUBDIR += fastjar
     SUBDIR += gj
     SUBDIR += gj-jdk11
     SUBDIR += gjdoc
