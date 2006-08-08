@@ -1,5 +1,5 @@
---- couriergraph.pl.orig	Thu Dec 29 07:47:47 2005
-+++ couriergraph.pl	Thu Dec 29 07:48:36 2005
+--- couriergraph.pl.orig	Tue Jun 20 11:11:39 2006
++++ couriergraph.pl	Tue Aug  8 12:02:45 2006
 @@ -314,11 +314,11 @@
  
  my $daemon_logfile = '/var/log/couriergraph.log';
@@ -23,7 +23,7 @@
  	print "  --daemon-log=FILE  write verbose-log to FILE instead of /var/log/mailgraph.log\n";
  	print "  --rrd-name=NAME    use NAME.rrd for the rrd files\n";
  
-@@ -473,12 +473,12 @@
+@@ -473,7 +473,7 @@
  	my $prog = $sl->[2];
  	my $text = $sl->[4];
  
@@ -31,10 +31,4 @@
 + 	if ($prog eq 'pop3d') {
   		if($text =~ /LOGIN,/) {
  		        event($time, 'pop3d_login');
-   		}
-   	}
-- 	elsif ($prog eq 'imaplogin') {
-+ 	elsif ($prog eq 'imap') {
-  		if($text =~ /LOGIN,/) {
- 		        event($time, 'imapd_login');
    		}
