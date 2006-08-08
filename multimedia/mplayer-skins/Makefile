@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp5.mplayerhq.hu/mplayer/Skin/ \
