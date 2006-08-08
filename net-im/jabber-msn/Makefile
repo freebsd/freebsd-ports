@@ -17,6 +17,9 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	martijn@pacno.net
 COMMENT=	Jabber MSN-Transport module
 
+DEPRECATED=	Depends on broken net-im/jabber, please use net-im/jabber-pymsn instead
+EXPIRATION_DATE=	2006-08-22
+
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
 
