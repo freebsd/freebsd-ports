@@ -8,7 +8,9 @@
 PORTNAME=	eval
 PORTVERSION=	113
 CATEGORIES=	math
-MASTER_SITES=	ftp://wuarchive.wustl.edu/pub/aminet/util/cli/
+MASTER_SITES=	ftp://wuarchive.wustl.edu/pub/aminet/util/cli/ \
+		http://www.netsw.org/math/calc/ \
+		http://main.aminet.net/util/cli/
 DISTNAME=	Eval${PORTVERSION}
 EXTRACT_SUFX=	.lha
 
