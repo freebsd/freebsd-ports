@@ -29,7 +29,6 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets
 		bug-buddy:${PORTSDIR}/devel/bug-buddy \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnome-system-monitor \
 		nautilus:${PORTSDIR}/x11-fm/nautilus \
-		yelp:${PORTSDIR}/x11/yelp \
 		${X11BASE}/sbin/gdm:${PORTSDIR}/x11/gdm \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnome-user-docs \
 		${X11BASE}/share/gnome/sounds/question.wav:${PORTSDIR}/audio/gnome-audio \
@@ -80,6 +79,9 @@ do-install:	# empty
 .if !defined(GNOME_SLAVE)
 .if ${ARCH} == "i386" || ${OSVERSION} > 500035
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
+.endif
+.if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
+RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
 .endif
 .if ${.CURDIR:T}!="gnome2-lite"
 .if ${ARCH}!="sparc64" || ${OSVERSION} >= 700003
