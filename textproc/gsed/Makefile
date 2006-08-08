@@ -7,6 +7,7 @@
 
 PORTNAME=	sed
 PORTVERSION=	4.1.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,11 +27,11 @@ MAN1=		gsed.1
 
 # Local variables
 PATCH_SUBDIRS=	. doc lib sed
-DATADIR=	${PREFIX}/share/${PKGBASE}
+DATADIR=	${TARGETDIR}/share/${PKGBASE}
 SAMP_FILES=	binary*.sed dc.sed
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
+EXAMPLESDIR=	${TARGETDIR}/share/examples/${PKGBASE}
 PORTDOCS=	AUTHORS BUGS COPYING COPYING.DOC NEWS README THANKS
-DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+DOCSDIR=	${TARGETDIR}/share/doc/${PKGBASE}
 
 .include <bsd.port.pre.mk>
 
@@ -41,8 +42,9 @@ EXTRA_PATCHES=	${FILESDIR}/extrapatch-lib-regexec.c
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,^\* sed:,* CNU sed:,' \
+	@${REINPLACE_CMD} 's,^\* sed:,* GNU sed:,' \
 		${WRKSRC}/doc/config.texi
+	@${REINPLACE_CMD} "s|#include <alloca.h>||" ${WRKSRC}/lib/regex_internal.h
 
 post-configure:
 .for subdir in ${PATCH_SUBDIRS}
