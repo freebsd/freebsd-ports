@@ -20,4 +20,10 @@ PLIST_FILES=	bin/kexis
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kexis ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Does not build on 4.x
+.endif
+
+.include <bsd.port.post.mk>
