@@ -7,7 +7,9 @@
 PORTNAME=	gaunit
 PORTVERSION=	0.1.2
 CATEGORIES=	devel scheme
-MASTER_SITES=	http://www.cozmixng.org/~kou/download/
+MASTER_SITES=	http://www.cozmixng.org/~kou/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	rafan
 PKGNAMEPREFIX=	gauche-
 
 MAINTAINER=	ports@FreeBSD.org
