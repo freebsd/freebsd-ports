@@ -1,4 +1,3 @@
-bin/dns-sd
 bin/mDNSClientPosix
 bin/mDNSIdentify
 bin/mDNSNetMonitor
