@@ -1,0 +1,9 @@
+This module is about the native floating point numerical
+data type. A floating point number is one of the types of
+datum that can appear in the numeric part of a Perl scalar.
+
+This module supplies constants describing the native floating
+point type, classification functions, and functions to
+manipulate floating point values at a low level.
+
+WWW:	http://search.cpan.org/dist/Data-Float/
