@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -15,18 +15,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
 
-RUN_DEPENDS=	${SITE_PERL}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		${SITE_PERL}/Feed/Find.pm:${PORTSDIR}/www/p5-Feed-Find \
-		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch \
-		p5-XML-RSS>=1.01:${PORTSDIR}/textproc/p5-XML-RSS \
-		p5-XML-Atom>=0.08:${PORTSDIR}/textproc/p5-XML-Atom \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		${SITE_PERL}/DateTime/Format/Mail.pm:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
 		${SITE_PERL}/DateTime/Format/W3CDTF.pm:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
-		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		${SITE_PERL}/Feed/Find.pm:${PORTSDIR}/www/p5-Feed-Find \
+		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch \
+		p5-XML-Atom>=0.08:${PORTSDIR}/textproc/p5-XML-Atom \
+		p5-XML-RSS>=1.01:${PORTSDIR}/textproc/p5-XML-RSS
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 PERL_MODBUILD=	yes
 
