@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Filter-Zlib
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5
 
 PERL_CONFIGURE=	yes
 
-MAN3=		POE::Filter::Zlib.3
+MAN3=		POE::Filter::Zlib.3 \
+    		POE::Filter::Zlib::Stream.3
 
 .include <bsd.port.mk>
