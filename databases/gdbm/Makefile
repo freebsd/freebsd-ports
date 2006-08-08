@@ -38,4 +38,11 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} "s|prefix = @prefix@|prefix = ${TARGETDIR}|" \
+			${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|LIBS = @LIBS@ -lc|LIBS = @LIBS@|" \
+			-e "s|libgdbm.la libgdbm_compat.la|libgdbm.la libgdbm_compat.la gdbm.info|" \
+			${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
