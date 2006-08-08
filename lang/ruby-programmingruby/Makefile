@@ -7,13 +7,14 @@
 
 PORTNAME=	programmingruby
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang ruby
 MASTER_SITES=	http://dev.rubycentral.com/downloads/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ProgrammingRuby-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
+EXTRACT_ONLY=	#empty
 
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	The source of the Programming Ruby ("pick-axe") book in XML and HTML
@@ -28,7 +29,7 @@ DOCSDIR=	${RUBY_MODDOCDIR}
 
 do-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
-	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -C ${RUBY_MODDOCDIR}
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -C ${RUBY_MODDOCDIR}
 	@${FIND} ${RUBY_MODDOCDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	@${FIND} ${RUBY_MODDOCDIR}/ -type f -exec ${CHOWN} ${SHAREOWN} {} \;
 	@${FIND} -d ${RUBY_MODDOCDIR}/ -type f | \
