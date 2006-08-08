@@ -69,6 +69,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2006-4018</cvename>
       <url>http://www.clamav.net/security/0.88.4.html</url>
     </references>
     <dates>
