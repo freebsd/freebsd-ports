@@ -1,60 +1,69 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/pkg-install.in,v 1.1 2005-05-13 08:16:40 jylefort Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/pkg-install.in,v 1.2 2006-08-08 19:33:04 garga Exp $
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
-DESTDIR=${PKG_DESTDIR:-}
 
 CLAMAVUSER=%%CLAMAVUSER%%
 CLAMAVGROUP=%%CLAMAVGROUP%%
 UID=106
 GID=$UID
 
-DBDIR=$DESTDIR%%DBDIR%%
-LOGDIR=$DESTDIR%%LOGDIR%%
-RUNDIR=$DESTDIR%%RUNDIR%%
+DBDIR=%%DBDIR%%
+LOGDIR=%%LOGDIR%%
+RUNDIR=%%RUNDIR%%
+
+if [ -n "%%DESTDIR%%" ]; then
+	PW="/usr/sbin/chroot %%DESTDIR%% pw"
+	CHOWN="/usr/sbin/chroot %%DESTDIR%% chown"
+	MKDIR="/usr/sbin/chroot %%DESTDIR%% mkdir -p"
+else
+	PW="pw"
+	CHOWN="chown"
+	MKDIR="mkdir -p"
+fi
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
-	if ! pw groupshow "$CLAMAVGROUP" 2>/dev/null 1>&2; then
-		if pw groupadd $CLAMAVGROUP -g $GID; then
-			echo "=> Added group \"$CLAMAVGROUP\"."
+	if ! ${PW} groupshow ${CLAMAVGROUP} 2>/dev/null 1>&2; then
+		if ${PW} groupadd ${CLAMAVGROUP} -g $GID; then
+			echo "=> Added group \"${CLAMAVGROUP}\"."
 		else
-			echo "=> Adding group \"$CLAMAVGROUP\" failed..."
+			echo "=> Adding group \"${CLAMAVGROUP}\" failed..."
 			exit 1
 		fi
 	fi
 
-	if ! pw usershow "$CLAMAVUSER" 2>/dev/null 1>&2; then
-		if pw useradd $CLAMAVUSER -u $UID -g $CLAMAVGROUP -h - \
+	if ! ${PW} usershow ${CLAMAVUSER} 2>/dev/null 1>&2; then
+		if ${PW} useradd ${CLAMAVUSER} -u $UID -g ${CLAMAVGROUP} -h - \
 			-s "/sbin/nologin" -d "/nonexistent" \
 			-c "Clam Antivirus"; \
 		then
-			pw groupmod mail -m $CLAMAVUSER
-			echo "=> Added user \"$CLAMAVUSER\"."
+			${PW} groupmod mail -m ${CLAMAVUSER}
+			echo "=> Added user \"${CLAMAVUSER}\"."
 		else
-			echo "=> Adding user \"$CLAMAVUSER\" failed..."
+			echo "=> Adding user \"${CLAMAVUSER}\" failed..."
 			exit 1
 		fi
 	fi
 
 elif [ "$2" = "POST-INSTALL" ]; then
 
-	if [ ! -d "$DBDIR" ]; then
-		mkdir -p "$DBDIR" || exit 1
-		chown "$CLAMAVUSER:$CLAMAVGROUP" "$DBDIR" || exit 1
+	if [ ! -d "${DESTDIR}${DBDIR}" ]; then
+		${MKDIR} ${DBDIR} || exit 1
+		${CHOWN} ${CLAMAVUSER}:${CLAMAVGROUP} ${DBDIR} || exit 1
 	fi
 
-	if [ ! -d "$LOGDIR" ]; then
-		mkdir -p "$LOGDIR" || exit 1
-		chown "$CLAMAVUSER:$CLAMAVGROUP" "$LOGDIR" || exit 1
+	if [ ! -d "${DESTDIR}${LOGDIR}" ]; then
+		${MKDIR} ${LOGDIR} || exit 1
+		${CHOWN} ${CLAMAVUSER}:${CLAMAVGROUP} ${LOGDIR} || exit 1
 	fi
 
-	if [ ! -d "$RUNDIR" ]; then
-		mkdir -p "$RUNDIR" || exit 1
-		chown "$CLAMAVUSER:$CLAMAVGROUP" "$RUNDIR" || exit 1
+	if [ ! -d "${DESTDIR}${RUNDIR}" ]; then
+		${MKDIR} ${RUNDIR} || exit 1
+		${CHOWN} ${CLAMAVUSER}:${CLAMAVGROUP} ${RUNDIR} || exit 1
 	fi
 
-	if [ -f "$DESTDIR$PREFIX/etc/clamav.conf" ]; then
+	if [ -f "${TARGETDIR}/etc/clamav.conf" ]; then
 		echo
 		echo "**************** WARNING ****************"
 		echo "*                                       *"
