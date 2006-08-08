@@ -1,4 +1,5 @@
 %%SITE_PERL%%/AI/Pathfinding/AStar.pm
+%%SITE_PERL%%/AI/Pathfinding/AStarNode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Pathfinding/AStar/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Pathfinding/AStar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/Pathfinding
