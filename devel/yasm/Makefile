@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yasm
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
@@ -19,7 +19,6 @@ USE_AUTOTOOLS=	autoconf:259 libltdl:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -32,9 +31,5 @@ INSTALL_TARGET=	install install-man
 MAN1=		yasm.1
 MAN7=		yasm_arch.7
 .endif
-
-post-configure:
-	@${REINPLACE_CMD} 's|$${top_builddir}/libltdl/libltdlc.la|-lltdl|' ${WRKSRC}/Makefile
-	@${RM} -rf ${WRKSRC}/libltdl
 
 .include <bsd.port.mk>
