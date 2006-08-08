@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.manicai.net/comp/wmfuzzy/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A fuzzy clock WindowMaker dockapp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
