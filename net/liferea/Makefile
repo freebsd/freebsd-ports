@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.0.19
+PORTVERSION=	1.0.20
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -67,15 +67,10 @@ LIB_DEPENDS+=	dbus-1.2:${PORTSDIR}/devel/dbus
 
 post-patch:
 .ifdef WITH_MOZILLA
-	${REINPLACE_CMD} -e 's,/usr/lib/mozilla,${X11BASE}/lib/${GECKO},g ; \
-		s,%FREEBSD_MOZILLA_HOME%,${X11BASE}/lib/${GECKO},' \
-		${WRKSRC}/src/liferea.in
 	${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
 		-e 's,\(gecko_provider=\).*$$,\1${GECKO},' \
 		-e 's,{print $$1},{print $$2},g' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|gtk_moz_embed_set_comp_path(NULL)|gtk_moz_embed_set_comp_path("${X11BASE}/lib/${GECKO}")|' \
-		${WRKSRC}/src/mozilla/mozilla.c
 .endif
 .ifdef WITH_XPI
 	@${MKDIR} ${WRKDIR}/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}
