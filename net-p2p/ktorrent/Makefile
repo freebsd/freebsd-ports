@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	2.0
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
+
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
 CONFLICTS=	ktorrent-devel-[0-9]*
 
@@ -21,6 +22,9 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 post-patch:
+	@${TOUCH} ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|x-bittorrent.desktop||g' \
+		${WRKSRC}/apps/ktorrent/Makefile.in
 
 .include <bsd.port.mk>
