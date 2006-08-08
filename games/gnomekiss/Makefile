@@ -8,7 +8,7 @@
 PORTNAME=	gnomekiss
 PORTVERSION=	2.0
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/kiss/
+MASTER_SITES=	http://devel.tlrmx.org/kiss/source/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	GNOME version of Kisekae Set System
