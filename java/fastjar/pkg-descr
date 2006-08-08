@@ -1,5 +1,0 @@
-FastJar is a free and fast alternative of Sun's JDK's 'jar' command.
-FastJar take only a second to create a 10MB jar file, while Sun's
-jar takes 50 seconds.
-
-WWW: http://savannah.nongnu.org/projects/fastjar
