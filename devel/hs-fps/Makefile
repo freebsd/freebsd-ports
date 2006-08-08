@@ -45,7 +45,7 @@ do-install:
 	@cd ${WRKSRC}; ./${SETUP} install
 
 post-install:
-	@ver=`ghc -V | ${SED} "s/^.*version \(.*\)$$/\1/"`; \
+	@ver=`ghc --numeric-version`; \
 	    ${REINPLACE_CMD} -e "s|%%GHC_VERSION%%|$${ver}|g" ${TMPPLIST}
 
 .include <bsd.port.post.mk>
