@@ -42,7 +42,7 @@ IGNORE=		needs at least one executable (CLIENT and DEDICATED)
 .if defined(WITH_CLIENT)
 USE_GL=		yes
 USE_SDL=	image mixer sdl
-ALL_TARGET+=	cube_client
+ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
 CUBE_BIN+=	client
 .else
@@ -50,7 +50,7 @@ PLIST_SUB+=	CLIENT=""
 .endif
 
 .if defined(WITH_DEDICATED)
-ALL_TARGET+=	cube_server
+ALL_TARGET+=	server
 PLIST_SUB+=	DEDICATED=""
 CUBE_BIN+=	server
 .else
