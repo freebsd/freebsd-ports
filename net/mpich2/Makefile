@@ -37,7 +37,7 @@ NOCCACHE=	yes
 MAKE_ENV=	CCACHE_DISABLE=yes
 
 NO_MTREE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 

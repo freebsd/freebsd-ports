@@ -588,6 +588,5 @@ share/examples_logging/srtest.c
 @dirrm man
 @dirrm lib
 @dirrm include
-@dirrm examples
 @dirrm etc
 @dirrm bin
