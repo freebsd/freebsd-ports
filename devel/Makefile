@@ -717,6 +717,7 @@
     SUBDIR += oniguruma
     SUBDIR += open-beagle
     SUBDIR += openthreads
+    SUBDIR += openwince-include
     SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += oskit
