@@ -8,7 +8,7 @@
 
 PORTNAME=	gconf2
 PORTVERSION=	2.14.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/GConf/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,6 +21,8 @@ COMMENT=	A configuration database system for GNOME
 USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
+
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
