@@ -24,6 +24,10 @@ MAN1=		qucs.1 qucsator.1 qucsconv.1 qucsdigi.1 qucsedit.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-qucs-core_src_evaluate.cpp
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#qucsdigi\.bat##g' \
 	                  ${WRKSRC}/qucs/Makefile*
