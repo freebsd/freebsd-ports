@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="342d2e48-26db-11db-9275-000475abc56f">
+    <topic>clamav -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><ge>0.88.1</ge><lt>0.88.4</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20060808</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Clamav team reports:</p>
+	<blockquote cite="http://www.clamav.net/security/0.88.4.html">
+	  <p>A heap overflow vulnerability was discovered in libclamav
+	    which could cause a denial of service or allow the
+	    execution of arbitrary code.</p>
+	  <p>The problem is specifically located in the PE file rebuild
+	    function used by the UPX unpacker.</p>
+	  <p>Relevant code from libclamav/upx.c:</p>
+	  <p>
+	    memcpy(dst, newbuf, foffset);
+	    *dsize = foffset;
+	    free(newbuf);
+
+	    cli_dbgmsg("UPX: PE structure rebuilt from compressed file\n");
+	    return 1;</p>
+	  <p>Due to improper validation it is possible to overflow the above
+	    memcpy() beyond the allocated memory block.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.clamav.net/security/0.88.4.html</url>
+    </references>
+    <dates>
+      <discovery>2006-08-07</discovery>
+      <entry>2006-08-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c905298c-2274-11db-896e-000ae42e9b93">
     <topic>drupal -- XSS vulnerability</topic>
     <affects>
