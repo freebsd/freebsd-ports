@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.88.3
+PORTVERSION=	0.88.4
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	clamav
+MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
@@ -28,7 +27,7 @@ OPTIONS=	MILTER "Compile the milter interface" Off \
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 PORTDOCS=	NEWS ChangeLog html
