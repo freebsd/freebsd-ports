@@ -25,6 +25,11 @@ MAN3=		Text::Trac.3
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e 's/^use warnings;//g' ${WRKSRC}/Makefile.PL
+.endif
+
 .if ${PERL_LEVEL} < 500602
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
