@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/tt/src
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.2+
 
 PLIST_FILES=	bin/tt++
 PORTDOCS=	BUGS CREDITS FAQ README TODO tintin19.txt chat_protocol.txt
@@ -30,6 +31,7 @@ PORTDOCS=	BUGS CREDITS FAQ README TODO tintin19.txt chat_protocol.txt
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 CFLAGS+=	-I ${LOCALBASE}/include
 MAKE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+MAKE_ARGS+=	LDFLAGS=${PTHREAD_LIBS}
 .endif
 
 post-patch:
