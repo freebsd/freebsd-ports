@@ -7,8 +7,9 @@
 
 PORTNAME=	dte
 PORTVERSION=	6.12
+PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://freebsd.t-hosting.hu/dte/
+MASTER_SITES=	http://personal.gscit.monash.edu.au/~dougt/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gkovesdan@t-hosting.hu
@@ -19,7 +20,7 @@ PORTDOCS=	dte.doc dte.hlp dte.rc
 PLIST_FILES=	bin/dte
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dte ${PREFIX}/bin/dte
+	${INSTALL_PROGRAM} ${WRKSRC}/dte ${TARGETDIR}/bin/dte
 	${INSTALL_MAN} ${WRKSRC}/dte.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
