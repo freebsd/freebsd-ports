@@ -16,9 +16,9 @@ MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	A cross-platform terminal manipulation library
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/tn
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn
-	${INSTALL_DATA} ${WRKSRC}/libtn.a ${PREFIX}/lib
+	@${MKDIR} ${TARGETDIR}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/*.h ${TARGETDIR}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/libtn.a ${TARGETDIR}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/screenshot
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
