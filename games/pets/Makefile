@@ -21,12 +21,12 @@ USE_GNOME=	gtk20 pkgconfig
 
 SUB_FILES=	pkg-message
 
-GTK_CFLAGS!=	pkg-config gtk+-2.0 gdk-pixbuf-xlib-2.0 --cflags
-GTK_LDFLAGS!=	pkg-config gtk+-2.0 gdk-pixbuf-xlib-2.0 --libs
+GTK_CFLAGS=	pkg-config gtk+-2.0 gdk-pixbuf-xlib-2.0 --cflags
+GTK_LDFLAGS=	pkg-config gtk+-2.0 gdk-pixbuf-xlib-2.0 --libs
 
 do-build:
-	(cd ${WRKSRC} && ${CXX} ${CFLAGS} ${GTK_CFLAGS}-c pet.cc)
-	(cd ${WRKSRC} && ${CXX} ${LDFLAGS} ${GTK_LDFLAGS} pet.o -o pets)
+	(cd ${WRKSRC} && ${CXX} ${CFLAGS} `${GTK_CFLAGS}` -c pet.cc)
+	(cd ${WRKSRC} && ${CXX} ${LDFLAGS} `${GTK_LDFLAGS}` pet.o -o pets)
 
 do-install:
 	${MKDIR} ${DATADIR}
