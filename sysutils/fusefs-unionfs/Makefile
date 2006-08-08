@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unionfs
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/unionfs-fuse/releases/
 PKGNAMEPREFIX=	fusefs-
@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 do-build:
 	(cd ${WRKSRC} && \
 	 ${CC} ${CFLAGS} -I${LOCALBASE}/include/fuse \
-	 -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=25 \
+	 -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=26 \
 	 -o unionfs *.c -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lfuse)
 
 do-install:

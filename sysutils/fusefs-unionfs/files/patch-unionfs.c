@@ -1,16 +1,23 @@
---- unionfs.c.orig	Sun Jul 16 19:02:07 2006
-+++ unionfs.c	Sun Jul 16 19:05:45 2006
-@@ -189,9 +189,13 @@
+--- unionfs.c.orig	Mon Aug  7 07:20:13 2006
++++ unionfs.c	Tue Aug  8 13:53:17 2006
+@@ -188,12 +188,7 @@
+ 
  	if (stats_enabled && strcmp(path, STATS_FILENAME) == 0) return 0;
  
- 	int res;
-+#if FUSE_USE_VERSION >= 26
- 	if (isdatasync) {
- 		res = fdatasync(fi->fh);
- 	} else {
-+#else
-+	{
-+#endif
- 		res = fsync(fi->fh);
+-	int res;
+-	if (isdatasync) {
+-		res = fdatasync(fi->fh);
+-	} else {
+-		res = fsync(fi->fh);
+-	}
++	int res = fsync(fi->fh);
+ 
+ 	if (res == -1) return -errno;
+ 
+@@ -928,5 +923,5 @@
  	}
  
+ 	umask(0);
+-	return fuse_main(args.argc, args.argv, &unionfs_oper, NULL);
++	return fuse_main(args.argc, args.argv, &unionfs_oper);
+ }
