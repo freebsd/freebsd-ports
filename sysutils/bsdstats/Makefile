@@ -7,7 +7,7 @@
 
 PORTNAME=	bsdstats
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 DISTFILES=
 
@@ -23,6 +23,6 @@ do-install:
 	${MKDIR} ${LOCALBASE}/etc/periodic/monthly
 	${CP} ${FILESDIR}/300.statistics ${LOCALBASE}/etc/periodic/monthly
 post-install:
-	${CAT} pkg-message
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
