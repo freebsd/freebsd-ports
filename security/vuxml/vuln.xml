@@ -48,7 +48,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://drupal.org/files/sa-2006-011/advisory.txt">
 	  <p>A malicious user can execute a cross site scripting attack
 	    by enticing someone to visit a Drupal site via a specially
-	    crafted link..</p>
+	    crafted link.</p>
 	</blockquote>
       </body>
     </description>
@@ -56,8 +56,9 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://drupal.org/files/sa-2006-011/advisory.txt</url>
     </references>
     <dates>
-      <discovery>2006-08-FIXME</discovery>
+      <discovery>2006-08-02</discovery>
       <entry>2006-08-02</entry>
+      <modified>2006-08-08</modified>
     </dates>
   </vuln>
 
