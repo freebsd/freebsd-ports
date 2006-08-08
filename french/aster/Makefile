@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aster
-DISTVERSION=	8.3.0-2
+DISTVERSION=	8.3.0-3
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
