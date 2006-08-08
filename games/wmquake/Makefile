@@ -33,6 +33,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmquake ${PREFIX}/bin
 
 post-install:
-	${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
