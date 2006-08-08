@@ -28,6 +28,12 @@ MAN1=		analyze.1 bugpoint.1 gccas.1 gccld.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 llvmgxx.1 \
 		opt.1 stkrc.1
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BROKEN=		does not compile with perl ${PERL_VERSION}
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,\(OPTIONAL_DIRS.*\)examples,\1,g' \
 		${WRKSRC}/Makefile
@@ -38,4 +44,4 @@ post-patch:
 post-install:
 	${RM} -f ${PREFIX}/bin/.dir ${PREFIX}/lib/.dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
