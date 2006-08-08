@@ -7788,6 +7788,7 @@ openvpn		ports/security/openvpn
 openvpn-admin	ports/security/openvpn-admin
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
+openwince-include	ports/devel/openwince-include
 openxmldir	ports/www/openxmldir
 openzz		ports/devel/openzz
 opera		ports/www/opera
