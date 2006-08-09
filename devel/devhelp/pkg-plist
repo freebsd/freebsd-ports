@@ -1,5 +1,4 @@
 bin/devhelp
-etc/rc.d/000.devhelp.sh
 include/devhelp-1.0/devhelp/dh-base.h
 include/devhelp-1.0/devhelp/dh-book-tree.h
 include/devhelp-1.0/devhelp/dh-error.h
@@ -77,3 +76,5 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/gnome/devhelp
 @dirrm include/devhelp-1.0/devhelp
 @dirrm include/devhelp-1.0
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
