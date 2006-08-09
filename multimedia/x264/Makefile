@@ -27,7 +27,7 @@ PLIST_FILES=	bin/x264 \
 		include/x264.h \
 		lib/libx264.a \
 		lib/libx264.so \
-		lib/libx264.so.47 \
+		lib/libx264.so.49 \
 		libdata/pkgconfig/x264.pc
 
 OPTIONS=	GPAC "Enable MPEG-4 Output" On \
