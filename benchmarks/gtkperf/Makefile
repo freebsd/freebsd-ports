@@ -16,6 +16,7 @@ MAINTAINER=		andreas@syndrom23.de
 COMMENT=		Measure your system's GTK+ performance
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
+USE_GCC=		3.4+
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		gtk20 gnomeprefix
