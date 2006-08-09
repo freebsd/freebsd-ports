@@ -7,14 +7,14 @@
 
 PORTNAME=	zsnes
 PORTVERSION=	1.42
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	zsnes${PORTVERSION:S/.//}src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@stsp.in-berlin.de
 COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 
 # This must be >= 0.98!
@@ -26,11 +26,12 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/}/src
 
-USE_X_PREFIX=	yes
+OPTIONS=	X11	"Enable X11 video driver"	on	\
+		OPENGL	"Enable OpenGL video driver"	off
+
 USE_SDL=	sdl
-USE_GL=		yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yyes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	ALL
@@ -40,6 +41,22 @@ PLIST_FILES=	bin/zsnes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--without-x
+PKGNAMESUFFIX=	-nox11
+.else
+CONFIGURE_ARGS+=--with-x
+.endif
+
+.if defined(WITH_OPENGL)
+USE_GL=		yes
+CONFIGURE_ARGS+=--enable-opengl
+.else
+CONFIGURE_ARGS+=--disable-opengl
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -56,4 +73,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zsnes ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/linux/zsnes.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
