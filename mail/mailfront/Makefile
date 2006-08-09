@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	0.98
+PORTVERSION=	0.98.1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	sergei
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
-BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs \
-		${CVM_LIB}/libcvm-v2client.a:${PORTSDIR}/security/cvm
+BUILD_DEPENDS=	bglibs>=1.100:${PORTSDIR}/devel/bglibs
+LIB_DEPENDS=	cvm-v2client.1:${PORTSDIR}/security/cvm
 
 WANT_QMAIL=	yes
 USE_GPG=	yes
