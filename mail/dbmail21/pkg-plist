@@ -2,6 +2,10 @@
 etc/dbmail.conf-dist
 @exec if [ ! -f %D/etc/dbmail.conf ] ; then cp -p %D/%F %B/dbmail.conf; fi
 @exec mkdir -p %D/lib/dbmail
+lib/libdbmail.a
+lib/libdbmail.la
+lib/libdbmail.so
+lib/libdbmail.so.0
 lib/dbmail/libauth_ldap.a
 lib/dbmail/libauth_ldap.la
 lib/dbmail/libauth_ldap.so

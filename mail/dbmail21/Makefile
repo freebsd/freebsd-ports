@@ -1,4 +1,4 @@
-# New ports collection makefile for:	dbmail
+# New ports collection makefile for:	dbmail-devel
 # Date created:				3 August 2006
 # Whom:					Mark Starovoytov <mark_sf@kikg.ifmo.ru>
 #
@@ -25,6 +25,7 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	YES
+USE_GCC=	3.2+
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh
 
@@ -102,10 +103,6 @@ USE_OPENLDAP=	yes
 
 .if defined(WITHOUT_MYSQL) && defined(WITHOUT_POSTGRESQL) && defined(WITHOUT_SQLITE)
 IGNORE="requires at least one database backend selected. Run 'make config'"
-.endif
-
-.if ( ${OSVERSION} < 503000 )
-IGNORE="can be compiled only on FreeBSD 5.3-RELEASE or greater"
 .endif
 
 post-patch:
