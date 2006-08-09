@@ -7,7 +7,9 @@
 PORTNAME=	courierpassd
 PORTVERSION=	1.1.2
 CATEGORIES=	security mail
-MASTER_SITES=	http://www.arda.homeunix.net/store/
+#MASTER_SITES=	http://www.arda.homeunix.net/store/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ade
 
 MAINTAINER=	andrew@arda.homeunix.net
 COMMENT=	User authentication and password changing daemon utility
