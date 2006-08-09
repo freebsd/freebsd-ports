@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	remember.el
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	deskutils elisp
-MASTER_SITES=	http://sacha.free.net.ph/notebook/emacs/planner/ \
+MASTER_SITES=	http://download.gna.org/remember-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	remember-el-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+DISTNAME=	remember-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A Emacs mode for remembering data
 
 USE_EMACS=	yes
+USE_GMAKE=	yes
 EMACS_PORT_NAME?=	emacs21
-
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
 
 OPTIONS=	BBDB "BBDB support" on
 OPTIONS+=	PLANNER "Planner.el support" on
@@ -29,24 +26,21 @@ OPTIONS+=	PLANNER "Planner.el support" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_BBDB)
+.if ${EMACS_NAME} == "xemacs"
+RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb-com.el:${PORTSDIR}/editors/xemacs-packages
+.else
 RUN_DEPENDS+=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
+.endif
+PLIST_SUB+=	HAS_BBDB=""
+.else
+PLIST_SUB+=	HAS_BBDB="@comment "
 .endif
 
 .if !defined(WITHOUT_PLANNER)
 RUN_DEPENDS+=	${PREFIX}/${EMACS_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
+PLIST_SUB+=	HAS_PLANNER=""
+.else
+PLIST_SUB+=	HAS_PLANNER="@comment "
 .endif
-
-INFO=		remember-el
-LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/remember
-
-do-build:
-	cd ${WRKSRC}; makeinfo --no-split remember.texi
-
-do-install:
-	${MKDIR} ${LISPDIR}
-.for i in *.el
-	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/remember-el.info ${PREFIX}/info
 
 .include <bsd.port.post.mk>
