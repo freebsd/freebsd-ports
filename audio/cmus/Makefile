@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	simon@olofsson.de
 COMMENT=	Console-based music player with really cool features
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
