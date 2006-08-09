@@ -19,7 +19,7 @@ CONFLICTS=	bglibs-1.00*
 
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDFLAGS?=	-s
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
