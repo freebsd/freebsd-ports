@@ -8039,6 +8039,7 @@ p5-B-Size	ports/devel/p5-B-Size
 p5-B-Utils	ports/devel/p5-B-Utils
 p5-BFD		ports/devel/p5-BFD
 p5-BIND-Conf_Parser	ports/dns/p5-BIND-Conf_Parser
+p5-BSD-Jail-Object	ports/sysutils/p5-BSD-Jail-Object
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-stat	ports/devel/p5-BSD-stat
 p5-Baseball-Sabermetrics	ports/games/p5-Baseball-Sabermetrics
