@@ -16,13 +16,13 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Charset conversion library and utilities
 
 USE_PERL5=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		biconv.1
 MAN3=		biconv.3 biconv_open.3 biconv_close.3
 
-.if defined(NOPROFILE)
+.if defined(NO_PROFILE) || defined(NOPROFILE)
 PLIST_SUB=	PROFILE:="@comment "
 .else
 PLIST_SUB=	PROFILE:=""
