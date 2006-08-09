@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Text-MeCab
-PORTVERSION=		0.12
+PORTVERSION=		0.13
 CATEGORIES=		japanese textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -20,7 +20,7 @@ MAN3=			Text::MeCab.3 \
 			Text::MeCab::Node.3
 
 PERL_CONFIGURE=	yes
-IS_INTERACTIVE=	yes
+CONFIGURE_ARGS=	</dev/null
 
 post-patch:
 	# To prevent CCFLAGS value from being overwritten by the ports system
