@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	cvm
-PORTVERSION=	0.76
+PORTVERSION=	0.81
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
-BUILD_DEPENDS=	${BGLIBS_LIB}/libbg-unix.a:${PORTSDIR}/devel/bglibs
+BUILD_DEPENDS=	bglibs>=1.100:${PORTSDIR}/devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
 
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
+INSTALLS_SHLIB=	yes
 LDFLAGS?=	-s
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
