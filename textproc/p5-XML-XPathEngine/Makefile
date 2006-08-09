@@ -24,7 +24,10 @@ MAN3=		XML::XPathEngine.3 XML::XPathEngine::Boolean.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
+EXTRA_PATCHES=	${PATCHDIR}/extra-*
+
+post-patch:
+	${PERL} -pi -e '$$_ = "" if /^use warnings/' ${WRKSRC}/Makefile.PL
 .endif
 
 .include <bsd.port.post.mk>
