@@ -382,6 +382,7 @@
     SUBDIR += ods2
     SUBDIR += open
     SUBDIR += openupsd
+    SUBDIR += p5-BSD-Jail-Object
     SUBDIR += p5-Dir-Purge
     SUBDIR += p5-File-Stat-Bits
     SUBDIR += p5-File-Which
