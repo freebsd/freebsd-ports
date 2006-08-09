@@ -411,8 +411,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/random_threshold_channel.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/raise.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/radial_blur.jpg
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m_after.jpg
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m_before.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quad01.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/qbezierpath.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/preview.jpg
