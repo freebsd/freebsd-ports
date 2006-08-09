@@ -1,7 +1,14 @@
-OptiPNG is a PNG optimizer that recompresses the image files to a
-smaller size, without losing any information.
+OptiPNG is a PNG optimizer that recompresses image files to a smaller
+size, without losing any information. This program also converts
+external formats (BMP, GIF, PNM; TIFF support is coming up) to optimized
+PNG, and performs PNG integrity checks and corrections.
 
-WWW: http://www.cs.toronto.edu/~cosmin/pngtech/optipng/
+The idea has been inspired from pngcrush, and is explained in detail in
+the PNG-Tech article "A guide to PNG optimization". The implementation
+is carried forward in OptiPNG, which offers a faster execution per
+trial, and a wider search space.
+
+WWW: http://optipng.sourceforge.net/
 
 - Thomas Hurst
  <freaky@aagh.net>

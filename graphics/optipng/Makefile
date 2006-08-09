@@ -6,26 +6,29 @@
 #
 
 PORTNAME=	optipng
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cs.toronto.edu/~cosmin/pngtech/optipng/
+MASTER_SITES=	SF
 
 MAINTAINER=	freaky@aagh.net
 COMMENT=	An optimizer for PNG files
 
 BUILD_WRKSRC=	${WRKSRC}/src
-MAKEFILE=	scripts/Makefile.gcc
+MAKEFILE=	scripts/gcc-syslib.mak
+ALL_TARGET=	${PORTNAME}
+PLIST_FILES=	bin/optipng
+MAN1=		optipng.1
+PORTDOCS=	CAVEAT.txt HISTORY.txt TODO.txt USAGE.txt \
+		design.html features.html guide.html thanks.html
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/man/optipng.1 ${MAN1PREFIX}/man/man1/
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-
-.for i in CAVEAT DESIGN FEATURES HISTORY LICENSE README TODO USAGE index.html
-	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${DOCSDIR}
-.endfor
+.ifndef NOPORTDOCS
+	${INSTALL} -d ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
