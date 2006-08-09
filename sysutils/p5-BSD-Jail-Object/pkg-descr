@@ -1,0 +1,19 @@
+This is an object oriented perl interface to the FreeBSD jail subsystem.
+
+Here's a replica of the 'jls' utility in just a few lines of perl:
+
+  use BSD::Jail::Object 'jids';
+
+  print "   JID  IP Address      Hostname                      Path\n";
+  printf "%6d  %-15.15s %-29.29s %.74s\n",
+      $_->jid, $_->ip, $_->hostname, $_->path foreach jids( instantiate => 1 );
+
+And here's 'jexec':
+
+  my $j = BSD::Jail::Object->new( $ARGV[0] ) or die $@;
+  $j->attach && chdir('/') && exec $ARGV[1] or exit;
+
+For more info please use 'perldoc' on the module.
+
+Author:	Mahlon E. Smith <mahlon@martini.nu>
+WWW:	http://search.cpan.org/dist//BSD-Jail-Object/
