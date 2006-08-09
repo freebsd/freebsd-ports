@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Test-HasVersion
-PORTVERSION=	0.01
+PORTVERSION=	0.01.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Test
+MASTER_SITE_SUBDIR=	../../authors/id/F/FE/FERREIRA
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.011
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Check Perl modules have version numbers
@@ -22,7 +23,8 @@ MAN3=		Test::HasVersion.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
+post-patch:
+	${PERL} -pi -e '$$_ = "" if /^use warnings/' ${WRKSRC}/HasVersion.pm
 .endif
 
 .include <bsd.port.post.mk>
