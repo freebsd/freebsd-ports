@@ -39,7 +39,6 @@
     SUBDIR += xcode
     SUBDIR += xcyrBGR
     SUBDIR += xmms
-    SUBDIR += xpi-imagezoom
     SUBDIR += xpi-tabextensions
     SUBDIR += xruskb
 
