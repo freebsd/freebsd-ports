@@ -9590,6 +9590,7 @@ p5-Perl-MinimumVersion	ports/textproc/p5-Perl-MinimumVersion
 p5-Perl6-Export	ports/devel/p5-Perl6-Export
 p5-Perl6-Form	ports/devel/p5-Perl6-Form
 p5-Perl6-Subs	ports/lang/p5-Perl6-Subs
+p5-PerlCryptLib	ports/security/p5-PerlCryptLib
 p5-PerlIO-eol	ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip	ports/archivers/p5-PerlIO-gzip
 p5-PerlIO-via-MD5	ports/devel/p5-PerlIO-via-MD5
