@@ -7,7 +7,7 @@
 
 PORTNAME=	devhelp
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C,^([[:digit:]]+\.[[:digit:]]+).*,\1,}
@@ -31,11 +31,11 @@ MOZILLA=	firefox
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui
-USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	${X11BASE}/lib/${MOZILLA}
 GCONF_SCHEMAS=	devhelp.schemas
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
@@ -54,14 +54,5 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  firefox       "
 	@${ECHO_MSG} ""
-
-post-patch:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%MOZILLA%%|${MOZILLA}|g' \
-		${FILESDIR}/devhelp.sh > ${WRKDIR}/devhelp.sh
-
-post-install:
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/devhelp.sh ${PREFIX}/etc/rc.d/000.devhelp.sh
-	@${LDCONFIG} -m ${X11BASE}/lib/${MOZILLA}
 
 .include <bsd.port.post.mk>
