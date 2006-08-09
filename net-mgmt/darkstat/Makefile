@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.524
+PORTVERSION=	3.0.540
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://dmr.ath.cx/net/darkstat/
 
@@ -26,4 +26,10 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-*
+.endif
+
+.include <bsd.port.post.mk>
