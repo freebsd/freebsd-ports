@@ -39,7 +39,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		does not build in Makefile
+BROKEN=		does not build
 
 .if ${ARCH} == i386
 WORDSIZE=32
