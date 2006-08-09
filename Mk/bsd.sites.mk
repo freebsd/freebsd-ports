@@ -1142,11 +1142,45 @@ MASTER_SITE_TUCOWS+= \
 	http://linuxberg.ua.pt/files/%SUBDIR%/
 .endif
 
+# List:		http://www.vim.org/mirrors.php
+# Updated:	2006-06-13
 .if !defined(IGNORE_MASTER_SITE_VIM)
 MASTER_SITE_VIM+= \
 	ftp://ftp.vim.org/pub/vim/unix/  \
+	ftp://ftp2.us.vim.org/pub/vim/unix/ \
+	ftp://ftp9.us.vim.org/pub/vim/unix/ \
+	ftp://ftp.ca.vim.org/pub/vim/unix/ \
+	ftp://ftp.nl.vim.org/pub/vim/unix/ \
+	ftp://ftp.de.vim.org/pub/vim/unix/ \
+	ftp://ftp3.de.vim.org/pub/vim/unix/ \
+	ftp://ftp.uk.vim.org/pub/vim/unix/ \
+	ftp://ftp.ie.vim.org/pub/vim/unix/ \
+	ftp://ftp.at.vim.org/pub/vim/unix/ \
+	ftp://ftp.se.vim.org/pub/vim/unix/ \
+	ftp://ftp.pt.vim.org/pub/vim/unix/ \
+	ftp://ftp.is.vim.org/pub/vim/unix/ \
+	ftp://ftp.il.vim.org/pub/vim/unix/ \
+	ftp://ftp.pl.vim.org/pub/vim/unix/ \
+	ftp://ftp.ro.vim.org/pub/vim/unix/ \
+	ftp://ftp.sk.vim.org/pub/vim/unix/ \
+	ftp://ftp.tw.vim.org/pub/vim/unix/ \
+	ftp://vim.stu.edu.tw/pub/vim/unix/ \
+	ftp://ftp.jp.vim.org/pub/vim/unix/ \
+	ftp://ftp.kr.vim.org/pub/vim/unix/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.vim.org/pub/vim/unix/ \
-	ftp://ftp.jp.vim.org/pub/vim/unix/
+	http://ftp.vim.org/pub/vim/unix/ \
+	http://mirrors.24-7-solutions.net/pub/vim/unix/ \
+	http://ftp.tw.vim.org/pub/vim/unix/ \
+	http://vim.stu.edu.tw/unix/ \
+	http://gd.tuwien.ac.at/pub/vim/unix/ \
+	http://www.etsimo.uniovi.es/pub/vim/unix/ \
+	http://www.pt.vim.org/pub/vim/unix/ \
+	http://www.pangora.org/vim.org/pub/vim/unix/ \
+	http://www.math.technion.ac.il/pub/vim/unix/ \
+	http://vim.fyxm.net/pub/vim/unix/ \
+	http://zloba.ath.cx/pub/vim/unix/ \
+	http://ftp2.uk.vim.org/sites/ftp.vim.org/pub/vim/unix/ \
+	http://vim.mirror.fr/unix/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_WINDOWMAKER)
