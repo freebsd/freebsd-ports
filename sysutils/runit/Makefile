@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
@@ -21,8 +21,7 @@ SERVICE_DIR?=	/var/service
 SUB_LIST=	SERVICE_DIR="${SERVICE_DIR}"
 
 MAN8=		chpst.8 runit-init.8 runit.8 runsv.8 runsvchdir.8 \
-		runsvctrl.8 runsvdir.8 runsvstat.8 sv.8 svlogd.8 \
-		svwaitdown.8 svwaitup.8 utmpset.8
+		runsvdir.8 sv.8 svlogd.8 utmpset.8
 DOCS=		package/CHANGES package/COPYING package/README \
 		package/THANKS doc/*.html
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
