@@ -84,7 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -369,7 +369,7 @@ CONFIGURE_ARGS+=	--disable-theora
 .endif
 
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.47:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.49:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
