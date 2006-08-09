@@ -42,7 +42,12 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=--with-xaw3d
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$$(libdir)/$$(SHLPRE)$$(SHLFILE)$$(SHLPST)|&.2|' \
+		${WRKSRC}/Makefile.in
+
 post-install:
-	@cd ${PREFIX}/lib && ${LN} -sf libXCurses.so libXCurses.so.8
+	@cd ${PREFIX}/lib && ${LN} -sf libXCurses.so.2 libXCurses.so
 
 .include <bsd.port.post.mk>
