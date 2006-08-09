@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.9 2006-08-09 16:54:30 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.10 2006-08-09 18:36:15 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -44,6 +44,7 @@ case "$monthly_statistics_enable" in
       HN=`/bin/hostname`
       SYS=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
+      OS=`/usr/bin/uname -s`
       do_fetch getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH\&opsys=$OS
       echo "Posting monthly OS statistics to $checkin_server"
       case "$monthly_statistics_report_devices" in
