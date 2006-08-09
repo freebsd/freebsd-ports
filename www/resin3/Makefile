@@ -6,12 +6,11 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.0.19
-PORTREVISION=		1
+PORTVERSION=		3.0.20
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
-MAINTAINER=		jb.quenot@caraldi.com
+MAINTAINER=		jbq@caraldi.com
 COMMENT=		Resin, a Java-based Application Server, 3.x branch
 
 USE_JAVA=		yes
@@ -49,6 +48,7 @@ REPLACE_FILES=		${FILESDIR}/pkg-install \
 			${FILESDIR}/pkg-deinstall \
 			${FILESDIR}/install.sh \
 			${FILESDIR}/pkg-message.in \
+			${FILESDIR}/pkg-message-advanced.in \
 			${WRKSRC}/conf/resin.conf \
 			${FILESDIR}/resinctl \
 			${FILESDIR}/resin.sh.in
@@ -102,6 +102,7 @@ SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 			-e "s|%%GROUP%%|${GROUP}|g" \
 			-e "s|%%JAVA%%|${JAVA}|g" \
 			-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
+			-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 			-e "s|%%LOG_FILE%%|${LOG_FILE}|g" \
 			-e "s|%%PID_FILE%%|${PID_FILE}|g" \
 			-e "s|%%PORT%%|${PORT}|g" \
@@ -119,6 +120,7 @@ post-patch:
 	    ${SED} ${SUBSTITUTIONS} $${FILE} > ${WRKDIR}/`basename $${FILE}` ; \
 	    done
 	@${FMT} -w 80 < ${WRKDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${CAT} < ${WRKDIR}/pkg-message-advanced.in >> ${PKGMESSAGE}
 .if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES) || \
 defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
 	@${ECHO_CMD} >> ${PKGMESSAGE}

@@ -1,8 +1,11 @@
 @comment $FreeBSD$
+%%APP_NAME%%/lib/activation.jar
 %%APP_NAME%%/lib/aopalliance.jar
 %%APP_NAME%%/lib/ejb-20.jar
 %%APP_NAME%%/lib/ejb-30.jar
-%%APP_NAME%%/lib/j2eedeploy.jar
+%%APP_NAME%%/lib/j2ee-deploy-10.jar
+%%APP_NAME%%/lib/j2ee-management-10.jar
+%%APP_NAME%%/lib/javamail-14.jar
 %%APP_NAME%%/lib/jca-15.jar
 %%APP_NAME%%/lib/jms-11.jar
 %%APP_NAME%%/lib/jmx-12.jar
