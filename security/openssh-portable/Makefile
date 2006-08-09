@@ -61,6 +61,7 @@ OPTIONS=	PAM		"Enable pam(3) support"			on \
 		GSSAPI		"Enable GSSAPI support"			off \
 		OPENSSH_CHROOT	"Enable CHROOT support"			off \
 		OPENSC		"Enable OpenSC smartcard support"	off \
+		OPENSCPINPATCH	"Enable OpenSC PIN patch"		off \
 		HPN		"Enable HPN-11 SSH/SCP patch"		off \
 		OVERWRITE_BASE	"OpenSSH overwrite base"		off
 
@@ -125,6 +126,11 @@ CFLAGS+=		-DCHROOT
 .if defined(WITH_OPENSC)
 LIB_DEPENDS+=		opensc.2:${PORTSDIR}/security/opensc
 CONFIGURE_ARGS+=	--with-opensc=${LOCALBASE}
+.endif
+
+# See http://bugzilla.mindrot.org/show_bug.cgi?id=608
+.if defined(WITH_OPENSCPINPATCH)
+EXTRA_PATCHES+=		${FILESDIR}/scardpin.patch
 .endif
 
 .if defined(WITH_HPN)
