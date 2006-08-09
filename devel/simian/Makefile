@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simian
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.10
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.redhillconsulting.com.au/products/simian/
 
@@ -81,19 +81,19 @@ pre-fetch:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
-	${CP} ${WRKSRC}/simian.xsl ${PREFIX}/share/xsl/${PORTNAME}
-	@${MKDIR} ${PREFIX}/simian
-	@${MKDIR} ${PREFIX}/simian/bin
+	@${MKDIR} ${TARGETDIR}/share/xsl/${PORTNAME}
+	${CP} ${WRKSRC}/simian.xsl ${TARGETDIR}/share/xsl/${PORTNAME}
+	@${MKDIR} ${TARGETDIR}/simian
+	@${MKDIR} ${TARGETDIR}/simian/bin
 .if !defined(WITHOUT_JAVA)
-	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.jar ${PREFIX}/simian/bin
+	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.jar ${TARGETDIR}/simian/bin
 .endif
 .if defined(WITH_MONO)
-	${CP} ${WRKSRC}/bin/*.dll ${PREFIX}/simian/bin
-	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${PREFIX}/simian/bin
+	${CP} ${WRKSRC}/bin/*.dll ${TARGETDIR}/simian/bin
+	${CP} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${TARGETDIR}/simian/bin
 .endif
-	${CP} ${WRKSRC}/simian ${PREFIX}/bin/simian
-	${CHMOD} a+x ${PREFIX}/bin/simian
+	${CP} ${WRKSRC}/simian ${TARGETDIR}/bin/simian
+	${CHMOD} a+x ${TARGETDIR}/bin/simian
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} \
 		&& ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
