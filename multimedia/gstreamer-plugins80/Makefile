@@ -3,12 +3,13 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins80/Makefile,v 1.60 2006/04/23 22:55:30 mezz Exp $
+#    $MCom: ports/multimedia/gstreamer-plugins80/Makefile,v 1.62 2006/07/17 05:15:45 ahze Exp $
 #
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.12
 PORTREVISION?=	2
+PORTEPOCH=	1
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -27,7 +28,7 @@ SHLIB_VERSION=	1
 VERSION=	0.8
 
 WANT_GSTREAMER=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -158,7 +159,7 @@ post-install:
 . endfor
 .endif
 # register plugins
-	-@${X11BASE}/bin/gst-register-${VERSION} \
+	-@${LOCALBASE}/bin/gst-register-${VERSION} \
 		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.post.mk>
