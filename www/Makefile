@@ -1088,6 +1088,7 @@
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-hit-a-hint
+    SUBDIR += xpi-imagezoom
     SUBDIR += xpi-imdbpreview
     SUBDIR += xpi-imglikeopera
     SUBDIR += xpi-inline-google-definitions
