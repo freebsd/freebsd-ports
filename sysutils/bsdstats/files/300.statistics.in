@@ -1,10 +1,11 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.6 2006-08-08 04:32:21 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.7 2006-08-09 02:37:09 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
 #
+monthly_statistics_mailto="scrappy@hub.org,root"
 if [ -r /etc/defaults/periodic.conf ]
 then
     . /etc/defaults/periodic.conf
@@ -14,26 +15,61 @@ fi
 oldmask=$(umask)
 umask 066
 
+# RFC 2396
+uri_escape () {
+    echo ${1+$@} | sed -e '
+        s/%/%25/g
+        s/;/%3b/g
+        s,/,%2f,g
+        s/?/%3f/g
+        s/:/%3a/g
+        s/@/%40/g
+        s/&/%26/g
+        s/=/%3d/g
+        s/+/%2b/g
+        s/\$/%24/g
+        s/,/%2c/g
+        s/ /%20/g
+        '
+}
+
+do_fetch () {
+    /usr/bin/fetch -qo /dev/null "http://bsdstats.hub.org/scripts/$1"
+}
+
+
 case "$monthly_statistics_enable" in
     [Yy][Ee][Ss])
       HN=`/bin/hostname`
       SYS=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
-      OS=`/usr/bin/uname -s`
-      /usr/bin/fetch -qo /dev/null http://bsdstats.hub.org/scripts/getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH\&opsys=$OS
+      do_fetch getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH\&opsys=$OS
       case "$monthly_statistics_report_devices" in
          [Yy][Ee][Ss])
 IFS="
 "
            
-            /usr/bin/fetch -qo /dev/null http://bsdstats.hub.org/scripts/clear_devices.php?hn=$HN
+            do_fetch clear_devices.php?hn=$HN
             for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
             do
                 DRIVER=`echo $line | awk -F\@ '{print $1}'`
                 VEN=`echo $line | awk '{print $4}' | cut -c12-15`
                 DEV=`echo $line | awk '{print $4}' | cut -c8-11`
-                /usr/bin/fetch -qo /dev/null http://bsdstats.hub.org/scripts/report_device.php?driver=$DRIVER\&vendor=$VEN\&device=$DEV\&hn=$HN
+                do_fetch report_device.php?driver=$DRIVER\&vendor=$VEN\&device=$DEV\&hn=$HN
             done
+
+            line=$( sysctl -n hw.model )
+            VEN=$( echo $line | cut -d ' ' -f 1 )
+            DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
+            n=0
+            count=$( sysctl -n hw.ncpu )
+            do_fetch clear_cpu.php?hn=$HN
+            while [ $n -lt $count ]
+            do
+                do_fetch report_cpu.php?cpu_id=CPU$n\&vendor=$VEN\&cpu_type=$DEV\&hn=$HN
+                n=$(( $n + 1 ))
+            done
+
          ;;
          esac
       ;;
