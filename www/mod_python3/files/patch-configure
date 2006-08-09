@@ -1,7 +1,7 @@
---- configure.orig	Sun Jan 30 06:25:27 2005
-+++ configure	Wed May 18 12:06:06 2005
-@@ -2643,7 +2643,7 @@
- PyLIBP=${PyEXEC_INSTALLDIR}/lib/python${PyVERSION}
+--- configure.orig     Sat Aug  5 09:51:23 2006
++++ configure  Sat Aug  5 09:57:47 2006
+@@ -2899,7 +2899,7 @@
+ PyLIBP=${PY_STD_LIB}
  PyLIBPL=${PyLIBP}/config
  PyPYTHONLIBS=${PyLIBPL}/libpython${PyVERSION}.a
 -PyLIBS=`grep "^LIB[SMC]=" ${PyLIBPL}/Makefile | cut -f2 -d= | tr '\011\012\015' '   '`
