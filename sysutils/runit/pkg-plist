@@ -31,13 +31,9 @@ sbin/utmpset
 %%PORTDOCS%%%%DOCSDIR%%/runscripts.html
 %%PORTDOCS%%%%DOCSDIR%%/runsv.8.html
 %%PORTDOCS%%%%DOCSDIR%%/runsvchdir.8.html
-%%PORTDOCS%%%%DOCSDIR%%/runsvctrl.8.html
 %%PORTDOCS%%%%DOCSDIR%%/runsvdir.8.html
-%%PORTDOCS%%%%DOCSDIR%%/runsvstat.8.html
 %%PORTDOCS%%%%DOCSDIR%%/sv.8.html
 %%PORTDOCS%%%%DOCSDIR%%/svlogd.8.html
-%%PORTDOCS%%%%DOCSDIR%%/svwaitdown.8.html
-%%PORTDOCS%%%%DOCSDIR%%/svwaitup.8.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/usedietlibc.html
 %%PORTDOCS%%%%DOCSDIR%%/useinit.html
