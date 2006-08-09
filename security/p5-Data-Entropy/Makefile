@@ -7,6 +7,7 @@
 
 PORTNAME=	Data-Entropy
 PORTVERSION=	0.002
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -19,16 +20,17 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt \
 		${SITE_PERL}/Math/BigRat.pm:${PORTSDIR}/math/p5-Math-BigRat \
-		${SITE_PERL}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
+		${SITE_PERL}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify \
+		p5-Data-Float>=0.002:${PORTSDIR}/math/p5-Data-Float
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Data::Entropy::RawSource::RandomOrg.3 \
+MAN3=		Data::Entropy::Algorithms.3 \
 		Data::Entropy::RawSource::CryptCounter.3 \
-	       	Data::Entropy::Algorithms.3 \
+	       	Data::Entropy::RawSource::Local.3 \
+		Data::Entropy::RawSource::RandomOrg.3 \
 	       	Data::Entropy::RawSource::RandomnumbersInfo.3 \
-	       	Data::Entropy::Source.3 Data::Entropy.3 \
-	       	Data::Entropy::RawSource::Local.3
+	       	Data::Entropy::Source.3 Data::Entropy.3
 
 .include <bsd.port.pre.mk>
 
