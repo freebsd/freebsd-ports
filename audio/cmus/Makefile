@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
@@ -97,13 +96,26 @@ PLIST_SUB+=	ARTS="@comment "
 PREMSG+=	Define WITH_ARTS=yes to enable arts output support.\n
 .endif
 
+MAN1=	cmus.1 cmus-remote.1
+
 pre-everything::
 	@${PRINTF} "${PREMSG}"
 	@${ECHO_CMD}
+
+post-extract:
+	@${REINPLACE_CMD} -e 's, -Wno-pointer-sign,,' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,$$(mandir)/man1,${PREFIX}/man/man1,' \
+	${WRKSRC}/Doc/Makefile
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|/bin/bash|${LOCALBASE}/bin/bash|; \
 		 s|-lncursesw|-lncurses|g"
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/examples
+	${INSTALL} ${WRKSRC}/cmus-status-display ${DOCSDIR}/examples
+.endif
 
 .include <bsd.port.post.mk>

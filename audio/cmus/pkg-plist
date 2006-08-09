@@ -13,6 +13,10 @@ lib/cmus/op/oss.so
 %%DATADIR%%/cyan.theme.bak
 %%DATADIR%%/default.theme
 %%DATADIR%%/default.theme.bak
+%%DATADIR%%/gray-88.theme
+%%DATADIR%%/gray-88.theme.bak
+%%DATADIR%%/green-mono-88.theme
+%%DATADIR%%/green-mono-88.theme.bak
 %%DATADIR%%/rc
 %%DATADIR%%/rc.bak
 %%DOCSDIR%%/examples/cmus-status-display
