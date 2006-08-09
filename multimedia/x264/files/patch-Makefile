@@ -1,12 +1,12 @@
---- Makefile.orig	Tue May  9 16:45:02 2006
-+++ Makefile	Tue May  9 22:14:14 2006
+--- Makefile.orig	Wed Aug  9 10:07:14 2006
++++ Makefile	Wed Aug  9 10:07:37 2006
 @@ -18,7 +18,7 @@
  endif
  
  # MMX/SSE optims
 -ifeq ($(ARCH),X86)
 +ifeq ($(ARCH),i386)
- SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict-c.c
+ SRCS   += common/i386/mc-c.c common/i386/predict-c.c
  ASMSRC  = common/i386/dct-a.asm common/i386/cpu-a.asm \
            common/i386/pixel-a.asm common/i386/mc-a.asm \
 @@ -30,7 +30,7 @@
@@ -15,17 +15,6 @@
  # MMX/SSE optims
 -ifeq ($(ARCH),X86_64)
 +ifeq ($(ARCH),amd64)
- SRCS   += common/i386/mc-c.c common/i386/dct-c.c common/i386/predict-c.c
+ SRCS   += common/i386/mc-c.c common/i386/predict-c.c
  ASMSRC  = common/amd64/dct-a.asm common/amd64/cpu-a.asm \
            common/amd64/pixel-a.asm common/amd64/mc-a.asm \
-@@ -47,10 +47,6 @@
- endif
- 
- # VIS optims
--ifeq ($(ARCH),UltraSparc)
--ASMSRC += common/sparc/pixel.asm
--OBJASM  = $(ASMSRC:%.asm=%.o)
--endif
- 
- ifneq ($(HAVE_GETOPT_LONG),1)
- SRCS += extras/getopt.c

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20060621
+PORTVERSION=	0.0.20060808
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -20,7 +20,7 @@ USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 ALL_TARGET=	default
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	bin/x264 \
