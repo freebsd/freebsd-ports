@@ -75,7 +75,7 @@ include/pqxx/trigger.hxx
 include/pqxx/util
 include/pqxx/util.h
 include/pqxx/util.hxx
-lib/libpqxx-2.6.6.so
+lib/libpqxx-%%PORTVERSION%%.so
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
