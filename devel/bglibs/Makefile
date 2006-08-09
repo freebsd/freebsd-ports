@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bglibs
-PORTVERSION=	1.041
+PORTVERSION=	1.101
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -19,6 +19,7 @@ USE_GPG=	yes
 SIG_SUFFIX=	.sig
 USE_GCC=	3.2+
 USE_PERL5=	yes
+USE_AUTOTOOLS=	libtool:15:env
 LDFLAGS?=	-s
 BGLIBS_INC=	${PREFIX}/include/${PORTNAME}
 BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}
