@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.8 2006-08-09 16:21:30 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.9 2006-08-09 16:54:30 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -57,7 +57,9 @@ IFS="
                 DRIVER=`echo $line | awk -F\@ '{print $1}'`
                 VEN=`echo $line | awk '{print $4}' | cut -c12-15`
                 DEV=`echo $line | awk '{print $4}' | cut -c8-11`
-                do_fetch report_device.php?driver=$DRIVER\&vendor=$VEN\&device=$DEV\&hn=$HN
+                CLASS=`echo $line | awk '{print $2}' | cut -c9-10`
+                SUBCLASS=`echo $line | awk '{print $2}' | cut -c11-14`
+                do_fetch report_device.php?driver=$DRIVER\&vendor=$VEN\&device=$DEV\&class=$CLASS\&subclass=$SUBCLASS\&hn=$HN
             done
             echo "Posting monthly device statistics to $checkin_server"
 
