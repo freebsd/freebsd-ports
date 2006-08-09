@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.7 2006-08-09 02:37:09 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.8 2006-08-09 16:21:30 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -34,9 +34,10 @@ uri_escape () {
 }
 
 do_fetch () {
-    /usr/bin/fetch -qo /dev/null "http://bsdstats.hub.org/scripts/$1"
+    /usr/bin/fetch -qo /dev/null "http://$checkin_server/scripts/$1"
 }
 
+checkin_server="bsdstats.hub.org";
 
 case "$monthly_statistics_enable" in
     [Yy][Ee][Ss])
@@ -44,6 +45,7 @@ case "$monthly_statistics_enable" in
       SYS=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
       do_fetch getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH\&opsys=$OS
+      echo "Posting monthly OS statistics to $checkin_server"
       case "$monthly_statistics_report_devices" in
          [Yy][Ee][Ss])
 IFS="
@@ -57,6 +59,7 @@ IFS="
                 DEV=`echo $line | awk '{print $4}' | cut -c8-11`
                 do_fetch report_device.php?driver=$DRIVER\&vendor=$VEN\&device=$DEV\&hn=$HN
             done
+            echo "Posting monthly device statistics to $checkin_server"
 
             line=$( sysctl -n hw.model )
             VEN=$( echo $line | cut -d ' ' -f 1 )
@@ -69,9 +72,18 @@ IFS="
                 do_fetch report_cpu.php?cpu_id=CPU$n\&vendor=$VEN\&cpu_type=$DEV\&hn=$HN
                 n=$(( $n + 1 ))
             done
+            echo "Posting monthly CPU statistics to $checkin_server"
 
          ;;
+        *) 
+            echo "Posting monthly device/CPU statistics disabled"
+            echo "    set monthly_statistics_report_devices=yes in /etc/periodic.conf"
+      ;;
          esac
+      ;;
+    *) 
+        echo "Posting monthly OS statistics disabled"
+        echo "    set monthly_statistics_enable=yes in /etc/periodic.conf"
       ;;
 esac
 
