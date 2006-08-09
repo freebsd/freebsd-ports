@@ -154,7 +154,7 @@ if __name__ == '__main__':
     APP_NAME = "%%APP_NAME%%"
     APP_HOME = "%%APP_HOME%%"
     PID_FILE = "%%PID_FILE%%"
-    COMMAND = "%%JAVA%%"
+    COMMAND = "%%PREFIX%%/bin/java"
     ARGS = [COMMAND]
 
     ARGS += sys.argv[1:-1]
@@ -166,8 +166,8 @@ if __name__ == '__main__':
         "-conf", "%%PREFIX%%/etc/%%APP_NAME%%/resin.xml"
         ]
 
-    os.environ['JAVA_HOME'] = "%%JAVA_HOME%%"
     os.environ['CLASSPATH'] = classpath()
+    os.environ['PATH'] = "%%LOCALBASE%%/bin:/usr/bin:/bin"
 
     if len(sys.argv) < 2:
         usage()
