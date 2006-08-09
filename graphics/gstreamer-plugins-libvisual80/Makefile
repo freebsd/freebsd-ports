@@ -15,4 +15,6 @@ GST_PLUGIN=	libvisual
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
+BROKEN=	Does not build
+
 .include "${MASTERDIR}/Makefile"
