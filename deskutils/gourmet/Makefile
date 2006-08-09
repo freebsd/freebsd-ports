@@ -11,7 +11,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	grecipe-manager
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GNOME recipe manager
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21 \
