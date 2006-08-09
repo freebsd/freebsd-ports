@@ -15,4 +15,6 @@ GST_PLUGIN=	dirac
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
+BROKEN=	Does not build with new dirac
+
 .include "${MASTERDIR}/Makefile"
