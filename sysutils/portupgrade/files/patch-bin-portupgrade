@@ -1,5 +1,5 @@
---- bin/portupgrade.orig	Wed Jul 12 20:09:27 2006
-+++ bin/portupgrade	Wed Jul 12 20:09:59 2006
+--- bin/portupgrade.orig	Sat Jul  1 10:40:10 2006
++++ bin/portupgrade	Wed Aug  9 21:06:53 2006
 @@ -900,8 +900,7 @@
  def get_make_env(origin, is_new = false)
    $make_env_table ||= compile_config_table(config_value(:MAKE_ENV))
@@ -10,3 +10,14 @@
  
    make_env = $make_env.dup
    if make_env.empty?
+@@ -1471,6 +1470,10 @@
+ 
+   Dir.chdir(portdir) {
+     $fetch_cmd = `make -V FETCH_CMD`.chomp
++
++    if ! STDOUT.tty?
++      cmdargs << "FETCH_BEFORE_ARGS=-q"
++    end
+ 
+     if $fetch_only
+       cmdargs << '-DBATCH' << '-DPACKAGE_BUILDING'
