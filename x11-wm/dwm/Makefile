@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://10kloc.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -18,8 +18,5 @@ USE_XLIB=	yes
 
 MAN1=		dwm.1
 PLIST_FILES=	bin/dwm
-
-post-patch:
-	${CP} ${WRKSRC}/config.default.h ${WRKSRC}/config.h
 
 .include <bsd.port.mk>

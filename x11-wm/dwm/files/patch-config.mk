@@ -1,5 +1,5 @@
---- config.mk.orig	Wed Aug  2 18:59:04 2006
-+++ config.mk	Wed Aug  2 19:00:14 2006
+--- config.mk.orig     Mon Aug  7 08:52:49 2006
++++ config.mk  Mon Aug  7 13:12:07 2006
 @@ -4,21 +4,21 @@
  # Customize below to fit your system
  
@@ -19,7 +19,7 @@
  LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
  
  # flags
--CFLAGS = -O3 ${INCS} -DVERSION=\"${VERSION}\"
+-CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
 +CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
  LDFLAGS = ${LIBS}
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
