@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.32
-PORTREVISION=	1
+PORTVERSION=	2.33
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
