@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
@@ -25,8 +25,8 @@ WRKSRC=		${WRKDIR}/llvm
 MAN1=		analyze.1 bugpoint.1 gccas.1 gccld.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 llvmgxx.1 \
-		opt.1 stkrc.1
+		llvm-prof.1 llvm-ranlib.1 llvm2cpp.1 llvmc.1 llvmgcc.1 \
+		llvmgxx.1 opt.1 stkrc.1 tblgen.1
 
 .include <bsd.port.pre.mk>
 
