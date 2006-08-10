@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-tls
 
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
 
+CONFLICTS=	qmail-[0-9]* qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]*
+
 SLAVE_TLS=	yes
 
 TLS_PATCH_DATE=	20021228

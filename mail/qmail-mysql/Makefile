@@ -13,6 +13,8 @@ PKGNAMESUFFIX=	-mysql
 
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH MySQL support
 
+CONFLICTS=	qmail-[0-9]* qmail-ldap-[0-9]* qmail-spamcontrol-[0-9]* qmail-tls-[0-9]*
+
 MYSQL_PATCH_VERSION=	1.1.15
 
 SLAVE_MYSQL=	yes
