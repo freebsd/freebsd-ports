@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,16 +16,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free peak fitting software
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost \
-		wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
+LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk20
+USE_WX=		2.6
+WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--with-wx-config=wxgtk2-2.6-config
 
 MAN1=		fityk.1
 PLIST_FILES=	bin/cfityk \
