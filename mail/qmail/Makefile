@@ -19,7 +19,8 @@ COMMENT?=	A secure, reliable, efficient, simple, and fast MTA
 
 DIST_SUBDIR=	qmail
 
-CONFLICTS=	qmail-vida-[0-9]*
+CONFLICTS?=	qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-spamcontrol-[0-9]* qmail-tls-[0-9]*
+CONFLICTS+=	qmail-vida-[0-9]*
 
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_MYSQL)

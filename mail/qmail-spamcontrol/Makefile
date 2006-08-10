@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${QMAIL_DIST}
 
 COMMENT=	Qmail MTA with SpamControl patches
 
+CONFLICTS=	qmail-[0-9]* qmail-ldap-[0-9]* qmail-mysql-[0-9]* qmail-tls-[0-9]*
+
 EXTRA_PATCHES+=	${MASTERDIR}/files/patch-install.c
 
 # Distfiles

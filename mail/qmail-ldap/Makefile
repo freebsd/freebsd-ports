@@ -16,7 +16,8 @@ COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 RUN_DEPENDS=	${LOCALBASE}/bin/svscan:${PORTSDIR}/sysutils/daemontools \
 		${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 
-CONFLICTS=	emboss-[0-9]* digest-[0-9]*
+CONFLICTS=	emboss-[0-9]* digest-[0-9]* qmail-[0-9]* qmail-mysql-[0-9]* \
+		qmail-spamcontrol-[0-9]* qmail-tls-[0-9]*
 
 USE_OPENLDAP=	yes
 SLAVE_LDAP=	yes
