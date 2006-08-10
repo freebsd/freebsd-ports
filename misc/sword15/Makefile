@@ -9,8 +9,7 @@ PORTNAME=	sword
 PORTVERSION=	1.5.8
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
-    		http://www.goodking.ca/pub/files/ \
-		ftp://stjames.stthomasanglican.org/pub/files/
+    		http://www.goodking.ca/pub/files/
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	A project framework for manipulating Bible texts
@@ -21,7 +20,7 @@ USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
