@@ -352,8 +352,8 @@ bin/starte16
 %%DATADIR%%/themes/winter/imageclasses.cfg
 %%DATADIR%%/themes/winter/init.cfg
 %%DATADIR%%/themes/winter/init/images/btn3.png
+%%DATADIR%%/themes/winter/init/images/progress.png
 %%DATADIR%%/themes/winter/init/images/progress_bar.png
-%%DATADIR%%/themes/winter/init/images/text_bg.png
 %%DATADIR%%/themes/winter/init/init.cfg
 %%DATADIR%%/themes/winter/menustyles.cfg
 %%DATADIR%%/themes/winter/menustyles/images/menu-arrow-sel.png
