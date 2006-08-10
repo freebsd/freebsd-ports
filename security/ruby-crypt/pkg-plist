@@ -1,0 +1,10 @@
+%%RUBY_SITELIBDIR%%/crypt/blowfish.rb
+%%RUBY_SITELIBDIR%%/crypt/blowfish-tables.rb
+%%RUBY_SITELIBDIR%%/crypt/cbc.rb
+%%RUBY_SITELIBDIR%%/crypt/gost.rb
+%%RUBY_SITELIBDIR%%/crypt/idea.rb
+%%RUBY_SITELIBDIR%%/crypt/noise.rb
+%%RUBY_SITELIBDIR%%/crypt/rijndael-tables.rb
+%%RUBY_SITELIBDIR%%/crypt/rijndael.rb
+%%RUBY_SITELIBDIR%%/crypt/stringxor.rb
+@dirrm %%RUBY_SITELIBDIR%%/crypt

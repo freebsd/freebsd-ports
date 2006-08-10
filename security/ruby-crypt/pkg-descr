@@ -1,0 +1,10 @@
+The Crypt library is a pure-ruby implementation of a number of 
+popular encryption algorithms. Block cyphers currently available 
+include Blowfish, GOST, IDEA, and Rijndael (AES). 
+Cypher Block Chaining (CBC) has been implemented. 
+Twofish, Serpent, and CAST256 are planned for release soon.
+
+Crypt is written entirely in ruby so deployment is simple - 
+no platform concerns, no library dependencies, nothing to compile.
+
+WWW:	http://crypt.rubyforge.org/
