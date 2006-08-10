@@ -854,6 +854,7 @@
     SUBDIR += phpwebapp
     SUBDIR += phpwiki
     SUBDIR += phpwiki13
+    SUBDIR += pivot-weblog
     SUBDIR += planet
     SUBDIR += plone
     SUBDIR += plugger

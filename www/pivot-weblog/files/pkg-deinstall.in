@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+
+case $2 in
+DEINSTALL)
+	;;
+POST-DEINSTALL)
+	if cmp -s %%PREFIX%%/%%BLOGDIR%%/pivot/pv_cfg_settings.php.default %%PREFIX%%/%%BLOGDIR%%/pivot/pv_cfg_settings.php; 
+	then
+		for OBJECT in db templates pv_cfg_settings.php pv_cfg_weblogs.php
+		do
+			rm -rf %%PREFIX%%/%%BLOGDIR%%/pivot/${OBJECT}
+		done
+		rm -f %%PREFIX%%/%%BLOGDIR%%/pivot/pv_cfg_settings.php.default
+		for DIR in images archives
+		do
+			rmdir %%PREFIX%%/%%BLOGDIR%%/${DIR}
+		done
+		rmdir %%PREFIX%%/%%BLOGDIR%%/pivot
+		rmdir %%PREFIX%%/%%BLOGDIR%%/
+	else
+		echo ""
+		echo "Pivot configuration, templates or database is changed and hence not"
+		echo "deleted automatically. If you will *NOT* use this package anymore,"
+		echo "please remove %%PREFIX%%/%%BLOGDIR%% and its contents manually."
+		echo ""
+	fi
+	;;
+esac
