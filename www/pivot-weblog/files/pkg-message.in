@@ -1,0 +1,28 @@
+******************* NOTE *********************************************
+
+First, add the following line to Apache's httpd.conf
+
+	Alias /%%BLOGURL%% "%%PREFIX%%/%%BLOGDIR%%"
+
+in order to access your weblog from a web browser (or 
+create a VirtualHost with DocumentRoot set to that directory).
+You may also have to add a Directory section:
+
+	<Directory "%%PREFIX%%/%%BLOGDIR%%">
+	    Options Indexes MultiViews
+	    AllowOverride None
+	    Order allow,deny
+	    Allow from all
+	</Directory>
+
+After adding the alias above, you can access the Pivot admin pages at
+
+	http://localhost/%%BLOGURL%%/pivot/
+
+to setup Pivot and generate the default weblog pages.
+
+For Pivot to work properly you will need to make sure the
+following option is set in your php.ini file:
+file_uploads = On
+
+******************* END NOTE ******************************************

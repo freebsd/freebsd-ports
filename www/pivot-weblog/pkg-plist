@@ -1,0 +1,686 @@
+@exec mkdir -p %D/%%BLOGDIR%%/extensions/moblog/mail
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/example.htaccess
+%%BLOGDIR%%/extensions/bbclone_tools/bbclone_lang.php
+%%BLOGDIR%%/extensions/bbclone_tools/count.php
+%%BLOGDIR%%/extensions/bbclone_tools/do_count.php
+%%BLOGDIR%%/extensions/bbclone_tools/getkey.php
+%%BLOGDIR%%/extensions/bbclone_tools/hr_conf.php
+%%BLOGDIR%%/extensions/bbclone_tools/pixel.gif
+%%BLOGDIR%%/extensions/bbclone_tools/readme.txt
+%%BLOGDIR%%/extensions/calendar/calendar.css
+%%BLOGDIR%%/extensions/calendar/calendar.php
+%%BLOGDIR%%/extensions/calendar/lang.php
+%%BLOGDIR%%/extensions/emoticons/config.inc.php
+%%BLOGDIR%%/extensions/emoticons/index.html
+%%BLOGDIR%%/extensions/emoticons/trillian/e_01.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_02.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_03.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_04.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_05.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_06.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_07.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_08.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_09.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_10.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_103.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_11.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_112.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_12.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_121.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_129.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_13.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_14.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_15.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_16.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_168.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_17.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_18.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_24.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_26.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_28.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_31.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_41.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_43.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_48.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_52.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_53.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_58.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_69.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_73.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_75.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_86.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/e_92.gif
+%%BLOGDIR%%/extensions/emoticons/trillian/emoticons.html
+%%BLOGDIR%%/extensions/emoticons/trillian/index.html
+%%BLOGDIR%%/extensions/emoticons/trillian/triggers.php
+%%BLOGDIR%%/extensions/hooks/editor_wysi/blank.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/langs/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/license.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/images/template.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/popup.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/contextmenu/css/contextmenu.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/contextmenu/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/contextmenu/images/spacer.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/contextmenu/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/emotions.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/emotions.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-cool.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-cry.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-embarassed.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-foot-in-mouth.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-frown.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-innocent.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-kiss.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-laughing.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-money-mouth.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-sealed.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-smile.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-surprised.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-tongue-out.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-undecided.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-wink.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images/smiley-yell.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/jscripts/functions.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/css/content.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/css/flash.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/flash.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/images/flash.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/jscripts/flash.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/images/iespell.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/images/insertdate.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/images/inserttime.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/blank.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/css/blank.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/css/pasteword.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/images/pastetext.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/images/pasteword.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/images/selectall.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/jscripts/pastetext.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/jscripts/pasteword.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/pastetext.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/pasteword.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/images/replace.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/images/search.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/jscripts/replace.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/jscripts/search.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/replace.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/search.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/cell.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/css/cell.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/css/row.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/css/table.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/buttons.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_cell_props.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_delete.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_delete_col.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_delete_row.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_insert_col_after.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_insert_col_before.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_insert_row_after.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_insert_row_before.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_merge_cells.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_row_props.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images/table_split_cells.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/jscripts/cell.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/jscripts/merge_cells.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/jscripts/row.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/jscripts/table.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/merge_cells.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/row.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/table.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/zoom/editor_plugin.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/zoom/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/zoom/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/zoom/readme.txt
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/about.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/anchor.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/charmap.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/color_picker.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css/editor_content.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css/editor_popup.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css/editor_ui.css
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/editor_template.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/image.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/anchor.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/anchor_symbol.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/backcolor.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/bold.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/bold_de_se.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/bold_es.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/bold_fr.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/bold_ru.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/browse.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/bullist.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/buttons.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/cancel_button_bg.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/center.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/charmap.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/cleanup.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/close.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/code.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/color.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/copy.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/custom_1.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/cut.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/forecolor.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/full.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/help.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/hr.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/image.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/indent.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/insert_button_bg.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/italic.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/italic_de_se.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/italic_es.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/italic_ru.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/justifycenter.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/justifyfull.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/justifyleft.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/justifyright.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/left.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/link.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/newdocument.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/numlist.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/opacity.png
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/outdent.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/paste.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/pivot_download.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/pivot_image.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/pivot_popup.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/redo.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/removeformat.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/right.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/spacer.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/statusbar_resize.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/strikethrough.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/sub.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/sup.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/table.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/table_delete_col.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/table_delete_row.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/table_insert_col_after.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/table_insert_col_before.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/table_insert_row_after.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/table_insert_row_before.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/underline.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/underline_es.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/underline_fr.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/underline_ru.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/undo.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/unlink.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/visualaid.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/xp/tab_bg.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/xp/tab_end.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/xp/tab_sel_bg.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/xp/tab_sel_end.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/xp/tabs_bg.gif
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/about.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/anchor.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/charmap.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/color_picker.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/image.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/link.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts/source_editor.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/de.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/en.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/fr.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/nb.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs/nl.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/link.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/source_editor.htm
+%%BLOGDIR%%/extensions/hooks/editor_wysi/tiny_mce.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/tiny_mce_gzip.php
+%%BLOGDIR%%/extensions/hooks/editor_wysi/tiny_mce_popup.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/utils/form_utils.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/utils/mclayer.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/utils/mctabs.js
+%%BLOGDIR%%/extensions/hooks/editor_wysi/utils/validate.js
+%%BLOGDIR%%/extensions/hooks/post_editor_wysi.php
+%%BLOGDIR%%/extensions/hooks/pre_editor_wysi.php
+%%BLOGDIR%%/extensions/index.html
+%%BLOGDIR%%/extensions/moblog/config.inc-default.php
+%%BLOGDIR%%/extensions/moblog/fetchmail-imap.php
+%%BLOGDIR%%/extensions/moblog/fetchmail.php
+%%BLOGDIR%%/extensions/moblog/inspect.zip
+%%BLOGDIR%%/extensions/moblog/is_a.php
+%%BLOGDIR%%/extensions/moblog/mail.class.php
+%%BLOGDIR%%/extensions/moblog/mime.php
+%%BLOGDIR%%/extensions/moblog/mimedecode.php
+%%BLOGDIR%%/extensions/moblog/mimepart.php
+%%BLOGDIR%%/extensions/moblog/moblog_lib.php
+%%BLOGDIR%%/extensions/moblog/pear.php
+%%BLOGDIR%%/extensions/moblog/pop3.php
+%%BLOGDIR%%/extensions/moblog/socket.php
+%%BLOGDIR%%/extensions/moblog/system.php
+%%BLOGDIR%%/extensions/snippets/snippet_calendar.php
+%%BLOGDIR%%/extensions/snippets/snippet_hardened_bbclone.php
+%%BLOGDIR%%/extensions/snippets/snippet_moblogcheck.php
+%%BLOGDIR%%/extensions/snippets/snippet_show_bbclone_hits.php
+%%BLOGDIR%%/extensions/snippets/snippet_show_bbclone_referers.php
+%%BLOGDIR%%/extensions/snippets/snippet_textareatools.php
+%%BLOGDIR%%/pivot/archive.php
+%%BLOGDIR%%/pivot/archive_dynamic.php
+%%BLOGDIR%%/pivot/archive_list.php
+%%BLOGDIR%%/pivot/commentsfeed.php
+%%BLOGDIR%%/pivot/default-data/db/blocked_ips.txt.php
+%%BLOGDIR%%/pivot/default-data/db/ignored_domains.txt.php
+%%BLOGDIR%%/pivot/default-data/db/index.html
+%%BLOGDIR%%/pivot/default-data/db/refkeys/index.html
+%%BLOGDIR%%/pivot/default-data/db/rsscache/index.html
+%%BLOGDIR%%/pivot/default-data/db/search/filtered_words.txt
+%%BLOGDIR%%/pivot/default-data/db/ser-archives.php
+%%BLOGDIR%%/pivot/default-data/db/ser-cats.php
+%%BLOGDIR%%/pivot/default-data/db/ser-dates.php
+%%BLOGDIR%%/pivot/default-data/db/ser_lastcomm.php
+%%BLOGDIR%%/pivot/default-data/db/standard-00000/00001.php
+%%BLOGDIR%%/pivot/default-data/db/standard-00000/00002.php
+%%BLOGDIR%%/pivot/default-data/db/standard-00000/index-standard-00000.php
+%%BLOGDIR%%/pivot/default-data/db/users/index.html
+%%BLOGDIR%%/pivot/default-data/pv_cfg_settings.php
+%%BLOGDIR%%/pivot/default-data/pv_cfg_weblogs.php
+%%BLOGDIR%%/pivot/default-data/templates/_aux_link_list.html
+%%BLOGDIR%%/pivot/default-data/templates/_aux_template_onlybody.html
+%%BLOGDIR%%/pivot/default-data/templates/_aux_template_onlycomments.html
+%%BLOGDIR%%/pivot/default-data/templates/_sub_commentform.html
+%%BLOGDIR%%/pivot/default-data/templates/_sub_entry_linkdump.html
+%%BLOGDIR%%/pivot/default-data/templates/_sub_entry_standard.html
+%%BLOGDIR%%/pivot/default-data/templates/about.png
+%%BLOGDIR%%/pivot/default-data/templates/archivepage_template.html
+%%BLOGDIR%%/pivot/default-data/templates/archives.png
+%%BLOGDIR%%/pivot/default-data/templates/calendar.png
+%%BLOGDIR%%/pivot/default-data/templates/comment.png
+%%BLOGDIR%%/pivot/default-data/templates/comments.png
+%%BLOGDIR%%/pivot/default-data/templates/doc.png
+%%BLOGDIR%%/pivot/default-data/templates/entrypage_template_normal.html
+%%BLOGDIR%%/pivot/default-data/templates/entrypage_template_popup.html
+%%BLOGDIR%%/pivot/default-data/templates/feed_atom_template.xml
+%%BLOGDIR%%/pivot/default-data/templates/feed_rss_template.xml
+%%BLOGDIR%%/pivot/default-data/templates/folder.png
+%%BLOGDIR%%/pivot/default-data/templates/frontpage_template_2columns.html
+%%BLOGDIR%%/pivot/default-data/templates/frontpage_template_3columns.html
+%%BLOGDIR%%/pivot/default-data/templates/header.jpg
+%%BLOGDIR%%/pivot/default-data/templates/htrackback.css
+%%BLOGDIR%%/pivot/default-data/templates/linkdump.png
+%%BLOGDIR%%/pivot/default-data/templates/links.png
+%%BLOGDIR%%/pivot/default-data/templates/mojito_popup.css
+%%BLOGDIR%%/pivot/default-data/templates/mojito_structure.css
+%%BLOGDIR%%/pivot/default-data/templates/person.png
+%%BLOGDIR%%/pivot/default-data/templates/readme.txt
+%%BLOGDIR%%/pivot/default-data/templates/referrers.png
+%%BLOGDIR%%/pivot/default-data/templates/search.png
+%%BLOGDIR%%/pivot/default-data/templates/source.txt
+%%BLOGDIR%%/pivot/default-data/templates/stuff.png
+%%BLOGDIR%%/pivot/default-data/templates/vert_grad.png
+%%BLOGDIR%%/pivot/entry.php
+%%BLOGDIR%%/pivot/favicon.ico
+%%BLOGDIR%%/pivot/first_defense.php
+%%BLOGDIR%%/pivot/includes/blogroll.php
+%%BLOGDIR%%/pivot/includes/calendar/calendarcontrol.css
+%%BLOGDIR%%/pivot/includes/calendar/calendarcontrol.js
+%%BLOGDIR%%/pivot/includes/download_config.php
+%%BLOGDIR%%/pivot/includes/edit_new.php
+%%BLOGDIR%%/pivot/includes/editor/bold.gif
+%%BLOGDIR%%/pivot/includes/editor/copy.gif
+%%BLOGDIR%%/pivot/includes/editor/cut.gif
+%%BLOGDIR%%/pivot/includes/editor/download.gif
+%%BLOGDIR%%/pivot/includes/editor/edit_functions.php
+%%BLOGDIR%%/pivot/includes/editor/edit_menu.php
+%%BLOGDIR%%/pivot/includes/editor/editor_alt.js
+%%BLOGDIR%%/pivot/includes/editor/editor_ie.js
+%%BLOGDIR%%/pivot/includes/editor/image.gif
+%%BLOGDIR%%/pivot/includes/editor/index.html
+%%BLOGDIR%%/pivot/includes/editor/insert_download.php
+%%BLOGDIR%%/pivot/includes/editor/insert_image.php
+%%BLOGDIR%%/pivot/includes/editor/insert_link.php
+%%BLOGDIR%%/pivot/includes/editor/insert_popup.php
+%%BLOGDIR%%/pivot/includes/editor/italic.gif
+%%BLOGDIR%%/pivot/includes/editor/link.gif
+%%BLOGDIR%%/pivot/includes/editor/mode.gif
+%%BLOGDIR%%/pivot/includes/editor/paste.gif
+%%BLOGDIR%%/pivot/includes/editor/popup.gif
+%%BLOGDIR%%/pivot/includes/editor/rule.gif
+%%BLOGDIR%%/pivot/includes/editor/strike.gif
+%%BLOGDIR%%/pivot/includes/editor/underline.gif
+%%BLOGDIR%%/pivot/includes/explorer.txt
+%%BLOGDIR%%/pivot/includes/fileupload-class.php
+%%BLOGDIR%%/pivot/includes/index.html
+%%BLOGDIR%%/pivot/includes/js/dhtmlapi.js
+%%BLOGDIR%%/pivot/includes/js/dhtmleditor.js
+%%BLOGDIR%%/pivot/includes/js/dyna_content.js
+%%BLOGDIR%%/pivot/includes/js/gettbkey.php
+%%BLOGDIR%%/pivot/includes/js/index.html
+%%BLOGDIR%%/pivot/includes/js/switch.js
+%%BLOGDIR%%/pivot/includes/magpierss/INSTALL
+%%BLOGDIR%%/pivot/includes/magpierss/README
+%%BLOGDIR%%/pivot/includes/magpierss/extlib/Snoopy.class.inc
+%%BLOGDIR%%/pivot/includes/magpierss/rss_cache.inc
+%%BLOGDIR%%/pivot/includes/magpierss/rss_fetch.inc
+%%BLOGDIR%%/pivot/includes/magpierss/rss_parse.inc
+%%BLOGDIR%%/pivot/includes/magpierss/rss_utils.inc
+%%BLOGDIR%%/pivot/includes/markdown/License.txt
+%%BLOGDIR%%/pivot/includes/markdown/PHP Markdown Readme.txt
+%%BLOGDIR%%/pivot/includes/markdown/PHP SmartyPants Readme.txt
+%%BLOGDIR%%/pivot/includes/markdown/markdown.php
+%%BLOGDIR%%/pivot/includes/markdown/smartypants.php
+%%BLOGDIR%%/pivot/includes/mimeDecode.php
+%%BLOGDIR%%/pivot/includes/photo.php
+%%BLOGDIR%%/pivot/includes/phpsniff/CHANGES
+%%BLOGDIR%%/pivot/includes/phpsniff/LICENSE
+%%BLOGDIR%%/pivot/includes/phpsniff/index.php
+%%BLOGDIR%%/pivot/includes/phpsniff/phpSniff.class.php
+%%BLOGDIR%%/pivot/includes/phpsniff/phpSniff.core.php
+%%BLOGDIR%%/pivot/includes/phpsniff/phpTimer.class.php
+%%BLOGDIR%%/pivot/includes/phpsniff/user_agent.inc
+%%BLOGDIR%%/pivot/includes/pick.php
+%%BLOGDIR%%/pivot/includes/ping.php
+%%BLOGDIR%%/pivot/includes/re.php
+%%BLOGDIR%%/pivot/includes/rss.php
+%%BLOGDIR%%/pivot/includes/send_trackback.php
+%%BLOGDIR%%/pivot/includes/spamping.php
+%%BLOGDIR%%/pivot/includes/textile/classtextile.php
+%%BLOGDIR%%/pivot/includes/textile/help.html
+%%BLOGDIR%%/pivot/includes/textile/index.html
+%%BLOGDIR%%/pivot/includes/textile/overview.html
+%%BLOGDIR%%/pivot/includes/textile/textile.php
+%%BLOGDIR%%/pivot/includes/xmlrpc/compat/array_key_exists.php
+%%BLOGDIR%%/pivot/includes/xmlrpc/compat/is_a.php
+%%BLOGDIR%%/pivot/includes/xmlrpc/compat/is_scalar.php
+%%BLOGDIR%%/pivot/includes/xmlrpc/compat/var_export.php
+%%BLOGDIR%%/pivot/includes/xmlrpc/compat/version_compare.php
+%%BLOGDIR%%/pivot/includes/xmlrpc/index.html
+%%BLOGDIR%%/pivot/includes/xmlrpc/xmlrpc.inc
+%%BLOGDIR%%/pivot/includes/xmlrpc/xmlrpcs.inc
+%%BLOGDIR%%/pivot/index.html
+%%BLOGDIR%%/pivot/index.php
+%%BLOGDIR%%/pivot/lamer_protection.php
+%%BLOGDIR%%/pivot/langs/index.html
+%%BLOGDIR%%/pivot/langs/pvl_de.php
+%%BLOGDIR%%/pivot/langs/pvl_de_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_dk_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_eng.php
+%%BLOGDIR%%/pivot/langs/pvl_eng_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_fr.php
+%%BLOGDIR%%/pivot/langs/pvl_fry.php
+%%BLOGDIR%%/pivot/langs/pvl_ja.php
+%%BLOGDIR%%/pivot/langs/pvl_nb.php
+%%BLOGDIR%%/pivot/langs/pvl_nb_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_nl.php
+%%BLOGDIR%%/pivot/langs/pvl_nl_utf8.php
+%%BLOGDIR%%/pivot/langs/pvl_se_utf-8.php
+%%BLOGDIR%%/pivot/langs/pvl_spa.php
+%%BLOGDIR%%/pivot/license.txt
+%%BLOGDIR%%/pivot/metaweblog.php
+%%BLOGDIR%%/pivot/minilog.php
+%%BLOGDIR%%/pivot/moblog.php
+%%BLOGDIR%%/pivot/modules/index.html
+%%BLOGDIR%%/pivot/modules/module_db.php
+%%BLOGDIR%%/pivot/modules/module_db_xml.php
+%%BLOGDIR%%/pivot/modules/module_debug.php
+%%BLOGDIR%%/pivot/modules/module_i18n.php
+%%BLOGDIR%%/pivot/modules/module_image.php
+%%BLOGDIR%%/pivot/modules/module_imagefunctions.php
+%%BLOGDIR%%/pivot/modules/module_ipblock.php
+%%BLOGDIR%%/pivot/modules/module_lang.php
+%%BLOGDIR%%/pivot/modules/module_parser.php
+%%BLOGDIR%%/pivot/modules/module_search.php
+%%BLOGDIR%%/pivot/modules/module_snippets.php
+%%BLOGDIR%%/pivot/modules/module_spamkiller.php
+%%BLOGDIR%%/pivot/modules/module_userreg.php
+%%BLOGDIR%%/pivot/modules/old_module_xml.php
+%%BLOGDIR%%/pivot/modules/old_xmlfile.php
+%%BLOGDIR%%/pivot/modules/safeaddress.inc.php
+%%BLOGDIR%%/pivot/modules/zip.lib.php
+%%BLOGDIR%%/pivot/pics/arrow_ltr.gif
+%%BLOGDIR%%/pivot/pics/atombutton.png
+%%BLOGDIR%%/pivot/pics/balk_top.gif
+%%BLOGDIR%%/pivot/pics/balk_top.jpg
+%%BLOGDIR%%/pivot/pics/doc01.gif
+%%BLOGDIR%%/pivot/pics/gui_bg.gif
+%%BLOGDIR%%/pivot/pics/gui_logo.gif
+%%BLOGDIR%%/pivot/pics/ico_ao.png
+%%BLOGDIR%%/pivot/pics/ico_av.png
+%%BLOGDIR%%/pivot/pics/ico_blank.gif
+%%BLOGDIR%%/pivot/pics/ico_blank_dim.gif
+%%BLOGDIR%%/pivot/pics/ico_del.gif
+%%BLOGDIR%%/pivot/pics/ico_del_dim.gif
+%%BLOGDIR%%/pivot/pics/ico_edit.gif
+%%BLOGDIR%%/pivot/pics/ico_edit_dim.gif
+%%BLOGDIR%%/pivot/pics/ico_g.png
+%%BLOGDIR%%/pivot/pics/ico_l.png
+%%BLOGDIR%%/pivot/pics/ico_m.png
+%%BLOGDIR%%/pivot/pics/ico_prev.gif
+%%BLOGDIR%%/pivot/pics/ico_prev_dim.gif
+%%BLOGDIR%%/pivot/pics/ico_upload.gif
+%%BLOGDIR%%/pivot/pics/ico_upload_dim.gif
+%%BLOGDIR%%/pivot/pics/ico_v.png
+%%BLOGDIR%%/pivot/pics/ico_y.png
+%%BLOGDIR%%/pivot/pics/icon_file.gif
+%%BLOGDIR%%/pivot/pics/index.html
+%%BLOGDIR%%/pivot/pics/nix.gif
+%%BLOGDIR%%/pivot/pics/node_min.gif
+%%BLOGDIR%%/pivot/pics/node_minmin.gif
+%%BLOGDIR%%/pivot/pics/node_plus.gif
+%%BLOGDIR%%/pivot/pics/node_plusplus.gif
+%%BLOGDIR%%/pivot/pics/pivot-banner_nl120a.gif
+%%BLOGDIR%%/pivot/pics/pivotbutton.png
+%%BLOGDIR%%/pivot/pics/rssbutton.png
+%%BLOGDIR%%/pivot/pics/xml_button.gif
+%%BLOGDIR%%/pivot/pv_admin.php
+%%BLOGDIR%%/pivot/pv_core.php
+%%BLOGDIR%%/pivot/pv_custom.php
+%%BLOGDIR%%/pivot/pv_data.php
+%%BLOGDIR%%/pivot/pvdisp.php
+%%BLOGDIR%%/pivot/pvlib.php
+%%BLOGDIR%%/pivot/search.php
+%%BLOGDIR%%/pivot/selfreg.php
+%%BLOGDIR%%/pivot/setup.php
+%%BLOGDIR%%/pivot/spamwasher.php
+%%BLOGDIR%%/pivot/submit.php
+%%BLOGDIR%%/pivot/tb.php
+%%BLOGDIR%%/pivot/theme/default_theme.css
+%%BLOGDIR%%/pivot/theme/default_theme.inc.php
+%%BLOGDIR%%/pivot/theme/gant/admin_backupconfig.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_blogs.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_buildfrontpage.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_buildindex.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_buildsearch.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_categories.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_category_d.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_category_default.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_category_linkdump.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_down.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_fileexplore.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_filemappings.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_ipblocks.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_maintenance.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_refresh.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_regen.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_seeconfig.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_seeusers.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_spam.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_templates.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_up.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_user.gif
+%%BLOGDIR%%/pivot/theme/gant/admin_userfield.gif
+%%BLOGDIR%%/pivot/theme/gant/bg_shortcuts.gif
+%%BLOGDIR%%/pivot/theme/gant/bread.gif
+%%BLOGDIR%%/pivot/theme/gant/default.gif
+%%BLOGDIR%%/pivot/theme/gant/donut.gif
+%%BLOGDIR%%/pivot/theme/gant/entry_basic.gif
+%%BLOGDIR%%/pivot/theme/gant/entry_del.gif
+%%BLOGDIR%%/pivot/theme/gant/entry_edit_comments.gif
+%%BLOGDIR%%/pivot/theme/gant/entry_extended.gif
+%%BLOGDIR%%/pivot/theme/gant/flame.gif
+%%BLOGDIR%%/pivot/theme/gant/gui_bg.gif
+%%BLOGDIR%%/pivot/theme/gant/gui_bg.png
+%%BLOGDIR%%/pivot/theme/gant/gui_logo.gif
+%%BLOGDIR%%/pivot/theme/gant/gui_logo.png
+%%BLOGDIR%%/pivot/theme/gant/hammer.gif
+%%BLOGDIR%%/pivot/theme/gant/lamp.gif
+%%BLOGDIR%%/pivot/theme/gant/log.gif
+%%BLOGDIR%%/pivot/theme/gant/overview_admin.gif
+%%BLOGDIR%%/pivot/theme/gant/overview_entries.gif
+%%BLOGDIR%%/pivot/theme/gant/overview_files.gif
+%%BLOGDIR%%/pivot/theme/gant/overview_new_entry.gif
+%%BLOGDIR%%/pivot/theme/gant/overview_stats.gif
+%%BLOGDIR%%/pivot/theme/gant/overview_userinfo.gif
+%%BLOGDIR%%/pivot/theme/gant/pumpkin.gif
+%%BLOGDIR%%/pivot/theme/gant/soap.gif
+%%BLOGDIR%%/pivot/theme/gant/templates_d.gif
+%%BLOGDIR%%/pivot/theme/gant/userfields_d.gif
+%%BLOGDIR%%/pivot/theme/gant/userfields_email.gif
+%%BLOGDIR%%/pivot/theme/gant/userfields_nickname.gif
+%%BLOGDIR%%/pivot/theme/gant/weblogs_d.gif
+%%BLOGDIR%%/pivot/theme/gant/weblogs_new.gif
+%%BLOGDIR%%/pivot/theme/pivot_1.10_skin.css
+%%BLOGDIR%%/pivot/user.php
+@dirrm %%BLOGDIR%%/pivot/theme/gant
+@dirrm %%BLOGDIR%%/pivot/theme
+@dirrm %%BLOGDIR%%/pivot/pics
+@dirrm %%BLOGDIR%%/pivot/modules
+@dirrm %%BLOGDIR%%/pivot/langs
+@dirrm %%BLOGDIR%%/pivot/includes/xmlrpc/compat
+@dirrm %%BLOGDIR%%/pivot/includes/xmlrpc
+@dirrm %%BLOGDIR%%/pivot/includes/textile
+@dirrm %%BLOGDIR%%/pivot/includes/phpsniff
+@dirrm %%BLOGDIR%%/pivot/includes/markdown
+@dirrm %%BLOGDIR%%/pivot/includes/magpierss/extlib
+@dirrm %%BLOGDIR%%/pivot/includes/magpierss
+@dirrm %%BLOGDIR%%/pivot/includes/js
+@dirrm %%BLOGDIR%%/pivot/includes/editor
+@dirrm %%BLOGDIR%%/pivot/includes/calendar
+@dirrm %%BLOGDIR%%/pivot/includes
+@dirrm %%BLOGDIR%%/pivot/default-data/templates
+@dirrm %%BLOGDIR%%/pivot/default-data/db/users
+@dirrm %%BLOGDIR%%/pivot/default-data/db/standard-00000
+@dirrm %%BLOGDIR%%/pivot/default-data/db/search
+@dirrm %%BLOGDIR%%/pivot/default-data/db/rsscache
+@dirrm %%BLOGDIR%%/pivot/default-data/db/refkeys
+@dirrm %%BLOGDIR%%/pivot/default-data/db
+@dirrm %%BLOGDIR%%/pivot/default-data
+@dirrmtry %%BLOGDIR%%/pivot
+@dirrm %%BLOGDIR%%/extensions/moblog/mail
+@dirrm %%BLOGDIR%%/extensions/moblog
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/utils
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/jscripts
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images/xp
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced/css
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/themes/advanced
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/themes
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/zoom/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/zoom
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/jscripts
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table/css
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/table
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/jscripts
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/searchreplace
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/jscripts
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste/css
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/paste
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/insertdatetime
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/iespell
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/jscripts
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash/css
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/flash
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/jscripts
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/emotions
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/contextmenu/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/contextmenu/css
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/contextmenu
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template/images
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins/_template
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/plugins
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi/langs
+@dirrm %%BLOGDIR%%/extensions/hooks/editor_wysi
+@dirrmtry %%BLOGDIR%%/extensions/hooks
+@dirrmtry %%BLOGDIR%%/extensions/snippets
+@dirrm %%BLOGDIR%%/extensions/emoticons/trillian
+@dirrm %%BLOGDIR%%/extensions/emoticons
+@dirrm %%BLOGDIR%%/extensions/calendar
+@dirrm %%BLOGDIR%%/extensions/bbclone_tools
+@dirrmtry %%BLOGDIR%%/extensions
+@dirrmtry %%BLOGDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+
+case $2 in
+PRE-INSTALL)
+	;;
+POST-INSTALL)
+	if [ ! -f %%PREFIX%%/%%BLOGDIR%%/pivot/pv_cfg_settings.php ]; then
+		for OBJECT in db templates pv_cfg_settings.php pv_cfg_weblogs.php
+		do
+			cp -Rv %%PREFIX%%/%%BLOGDIR%%/pivot/default-data/${OBJECT} %%PREFIX%%/%%BLOGDIR%%/pivot/
+			chown -R %%WWWOWN%%:%%WWWGRP%% %%PREFIX%%/%%BLOGDIR%%/pivot/${OBJECT}
+		done
+		cp %%PREFIX%%/%%BLOGDIR%%/pivot/pv_cfg_settings.php %%PREFIX%%/%%BLOGDIR%%/pivot/pv_cfg_settings.php.default
+	fi
+	chown %%WWWOWN%%:%%WWWGRP%% %%PREFIX%%/%%BLOGDIR%%
+	for DIR in images archives
+	do
+		mkdir -p %%PREFIX%%/%%BLOGDIR%%/${DIR}
+		chown -R %%WWWOWN%%:%%WWWGRP%% %%PREFIX%%/%%BLOGDIR%%/${DIR}
+	done
+	;;
+esac
