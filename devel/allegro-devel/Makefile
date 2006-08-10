@@ -16,13 +16,16 @@ COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_XLIB=	yes
 WANT_GNOME=	yes
 
-OPTIONS=	ARTS "Enable Arts support" off \
+OPTIONS=	AL "Enable OpenAL support" off \
+		ARTS "Enable Arts support" off \
 		DEBUG "Build debugging library" off \
 		DEVEL "Build development utilities" on \
 		ESOUND "Enable Esound support" off \
+		JACK "Enable JACK support" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		PROFILE "Build profiling library" off \
 		THREADS "Enable threads" on
@@ -34,15 +37,25 @@ ALL_TARGET=	full-build
 
 INFO=		allegro
 
-INSTALLS_SHLIB=	yes
-SHLIB_VER=	42
+CONFLICTS=	allegro-devel-[0-9]*
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
+
+SHLIB_VER=	42
 DEMO=		demo.c demo.dat demo.h music.txt ../readme.txt
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-include-allegro-inline-fmaths.in
+.endif
+
+.if defined(WITH_AL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+CONFIGURE_ARGS+=--enable-sgialdigi
+PLIST_SUB+=	AL=""
+.else
+CONFIGURE_ARGS+=--disable-sgialdigi
+PLIST_SUB+=	AL="@comment "
 .endif
 
 .if defined(WITH_ARTS)
@@ -77,6 +90,15 @@ PLIST_SUB+=	ESOUND=""
 .else
 CONFIGURE_ARGS+=--disable-esddigi
 PLIST_SUB+=	ESOUND="@comment "
+.endif
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=--enable-jackdigi
+PLIST_SUB+=	JACK=""
+.else
+CONFIGURE_ARGS+=--disable-jackdigi
+PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if defined(WITH_PROFILE)
