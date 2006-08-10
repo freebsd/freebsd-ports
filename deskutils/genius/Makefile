@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	0.7.4
-PORTREVISION=	3
+PORTVERSION=	0.7.5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://ftp.5z.com/pub/genius/
@@ -19,11 +18,12 @@ COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 LIB_DEPENDS=	mpfr.1:${PORTSDIR}/math/mpfr
 
 USE_X_PREFIX=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview intlhack \
 		libgnomeui vte
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 LIBTOOLFILES=	configure mpfr/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -33,11 +33,11 @@ INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
+.if ${OSVERSION} < 500018 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
-.if ${OSVERSION} < 500018
+.if ${OSVERSION} < 500000
 BROKEN=		Does not compile on 4.x
 .endif
 
