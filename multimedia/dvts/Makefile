@@ -16,7 +16,7 @@ PATCH_SITES=	http://people.freebsd.org/~simokawa/firewire/
 PATCHFILES=	dvts-patch-20030805
 PATCH_DIST_STRIP=	-p4
 
-MAINTAINER=	simokawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of Digital Video Transport System
 
 CONFLICTS=	gdvrecv-[0-9]*
