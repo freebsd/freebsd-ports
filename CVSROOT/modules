@@ -10981,6 +10981,7 @@ pipsv700-cups	ports/print/pipsv700-cups
 pircbot		ports/irc/pircbot
 pisg		ports/irc/pisg
 pitivi		ports/multimedia/pitivi
+pivot-weblog	ports/www/pivot-weblog
 pixelize	ports/graphics/pixelize
 pixie		ports/graphics/pixie
 pixieplus	ports/graphics/pixieplus
