@@ -1277,6 +1277,7 @@ clockspeed-conf	ports/sysutils/clockspeed-conf
 clog		ports/net-mgmt/clog
 cloop-utils	ports/sysutils/cloop-utils
 clpbar		ports/misc/clpbar
+clucene		ports/textproc/clucene
 clustalw	ports/biology/clustalw
 clusterit	ports/net/clusterit
 clusterssh	ports/security/clusterssh
