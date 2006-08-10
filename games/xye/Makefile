@@ -19,7 +19,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not build on FreeBSD 4.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E 's,#include.*<SDL/(SDL.*\.h)>,#include <SDL11/\1>,g' ${WRKSRC}/src/vxsdl.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
