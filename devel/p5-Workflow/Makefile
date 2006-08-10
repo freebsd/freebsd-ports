@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Workflow
-PORTVERSION=	0.17
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Workflow
@@ -28,7 +28,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
 	${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
 	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
-	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -36,6 +37,7 @@ PERL_CONFIGURE=	yes
 MAN3=	Workflow.3 \
 	Workflow::Action.3 \
 	Workflow::Action::InputField.3 \
+	Workflow::Action::Mailer.3 \
 	Workflow::Action::Null.3 \
 	Workflow::Base.3 \
 	Workflow::Condition.3 \
