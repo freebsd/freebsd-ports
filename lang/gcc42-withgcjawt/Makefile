@@ -16,6 +16,10 @@ DESCR=	${.CURDIR}/pkg-descr
 
 WITH_JAVA_AWT=	yes
 
+.if defined (WITHOUT_JAVA)
+BROKEN=		"Does not build gcj"
+.endif
+
 #weird libtool issue http://gcc.gnu.org/bugzilla/show_bug.cgi?id=28442
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-configure
 USE_AUTOTOOLS=	libtool:15
