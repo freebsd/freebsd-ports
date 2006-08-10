@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Myspace/.packlist
+%%SITE_PERL%%/WWW/Myspace.pm
+%%SITE_PERL%%/WWW/Myspace/Comment.pm
+%%SITE_PERL%%/WWW/Myspace/Data.pm
+%%SITE_PERL%%/WWW/Myspace/FriendAdder.pm
+%%SITE_PERL%%/WWW/Myspace/FriendChanges.pm
+%%SITE_PERL%%/WWW/Myspace/Message.pm
+%%SITE_PERL%%/WWW/Myspace/MyBase.pm
+bin/add_friends
+bin/approve_friends
+bin/comment_myspace
+bin/message_group
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Myspace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Myspace
+@dirrmtry %%SITE_PERL%%/WWW
