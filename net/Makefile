@@ -492,6 +492,7 @@
     SUBDIR += p5-POE-Component-Client-Keepalive
     SUBDIR += p5-POE-Component-Client-Ping
     SUBDIR += p5-POE-Component-Client-Telnet
+    SUBDIR += p5-POE-Component-Client-Traceroute
     SUBDIR += p5-POE-Component-ControlPort
     SUBDIR += p5-POE-Component-Jabber
     SUBDIR += p5-POE-Component-Pcap
