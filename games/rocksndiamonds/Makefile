@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
@@ -35,7 +35,7 @@ post-patch:
 		's:sdl-config:$${SDL_CONFIG}:g' ${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds ${TARGETDIR}/bin
 	${INSTALL_MAN} ${WRKSRC}/rocksndiamonds.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}
 	${TAR} -C ${WRKSRC} -cf - graphics levels music scores sounds | \
