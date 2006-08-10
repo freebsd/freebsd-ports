@@ -7,7 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.1.9
-PORTREVISION=	1	
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://flashcode.free.fr/flashtux/weechat/ \
 		http://weechat.flashtux.org/download/
@@ -64,6 +64,10 @@ CONFIGURE_ARGS+=	--disable-gnu-tls
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	this port does not compile on FreeBSD 4.x.
+.endif
 
 .if defined(WITH_PERL)
 .if ${PERL_LEVEL} < 500600
