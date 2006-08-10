@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.15
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.littlecms.com/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack gnometarget lthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-jpeg --without-tiff
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
