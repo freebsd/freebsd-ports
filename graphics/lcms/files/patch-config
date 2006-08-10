@@ -1,6 +1,6 @@
---- include/lcms.h.orig	Sun Dec 21 00:00:11 2003
-+++ include/lcms.h	Sun May 23 12:14:22 2004
-@@ -52,7 +52,13 @@
+--- include/lcms.h.orig	Sat Nov 26 17:23:47 2005
++++ include/lcms.h	Mon Aug  7 21:28:13 2006
+@@ -47,7 +47,13 @@
  
  // Uncomment this one if you are using big endian machines (only meaningful
  // when NON_WINDOWS is used)
@@ -15,3 +15,12 @@
  
  // Uncomment this one if your compiler/machine does support the
  // "long long" type This will speedup fixed point math. (USE_C only)
+@@ -134,7 +140,7 @@
+ #if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
+ #  include <sys/types.h>
+ #  define USE_INT64           1
+-#  define LCMSSLONGLONG       int_64_t
++#  define LCMSSLONGLONG       int64_t
+ #  define LCMSULONGLONG       u_int64_t
+ #endif
+ 
