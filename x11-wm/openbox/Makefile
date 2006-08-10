@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	redchrom@gmail.com
 COMMENT=	Derived from, and similar to, Blackbox
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
@@ -27,6 +27,12 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
+
+.if defined(WITH_SPLITGRADIENT)
+post-patch::
+	@${ECHO} "===>  Applying split gradient patch"
+	cd ${BUILD_WRKSRC}; ${PATCH} -p1 < ${PATCHDIR}/extra-patch-gradient
+.endif
 
 post-build:
 	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt -c -o ja.mo ja.po
@@ -56,7 +62,7 @@ pre-install:
 .endfor
 	cd ${WRKSRC} && ${FIND} -s data themes -type f \
 		| ${SED} -e 's:^:share/openbox/:' >> ${PLIST} \
-		&& ${FIND} data themes -type d | sort -r \
+		&& ${FIND} data themes -type d | ${SORT} -r \
 		| ${SED} -e 's:^:@dirrm share/openbox/:' >> ${PLIST}
 	cd ${WRKSRC}/data && ${FIND} -s * -type f \
 		| ${SED} -e 's:^:share/openbox/:' >> ${PLIST}

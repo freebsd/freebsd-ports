@@ -1,0 +1,109 @@
+diff -urN openbox-3.2.orig/render/gradient.c openbox-3.2/render/gradient.c
+--- openbox-3.2.orig/render/gradient.c	Tue Aug  8 12:39:59 2006
++++ openbox-3.2/render/gradient.c	Tue Aug  8 12:40:14 2006
+@@ -24,6 +24,7 @@
+ 
+ static void highlight(RrPixel32 *x, RrPixel32 *y, gboolean raised);
+ static void gradient_solid(RrAppearance *l, gint w, gint h);
++static void gradient_split(RrAppearance *a, gint w, gint h);
+ static void gradient_vertical(RrSurface *sf, gint w, gint h);
+ static void gradient_horizontal(RrSurface *sf, gint w, gint h);
+ static void gradient_diagonal(RrSurface *sf, gint w, gint h);
+@@ -41,6 +42,9 @@
+     case RR_SURFACE_SOLID:
+         gradient_solid(a, w, h);
+         break;
++    case RR_SURFACE_SPLIT:
++        gradient_split(a, w, h);
++        break;
+     case RR_SURFACE_VERTICAL:
+         gradient_vertical(&a->surface, w, h);
+         break;
+@@ -357,6 +361,64 @@
+             }                                             \
+         }                                                 \
+     }                                                     \
++}
++
++static void gradient_split(RrAppearance *a, gint w, gint h)
++{
++    gint x, y1, y3, r, g, b;
++    RrSurface *sf = &a->surface;
++    RrPixel32 *data = sf->pixel_data;
++    RrPixel32 current;
++    RrColor *primary_light, *secondary_light;
++
++    r = sf->primary->r;
++    r += r >> 2;
++    g = sf->primary->g;
++    g += g >> 2;
++    b = sf->primary->b;
++    b += b >> 2;
++    if (r > 0xFF) r = 0xFF;
++    if (g > 0xFF) g = 0xFF;
++    if (b > 0xFF) b = 0xFF;
++      primary_light = RrColorNew(a->inst, r, g, b);
++
++    r = sf->secondary->r;
++    r += r >> 4;
++    g = sf->secondary->g;
++    g += g >> 4;
++    b = sf->secondary->b;
++    b += b >> 4;
++    if (r > 0xFF) r = 0xFF;
++    if (g > 0xFF) g = 0xFF;
++    if (b > 0xFF) b = 0xFF;
++    secondary_light = RrColorNew(a->inst, r, g, b);
++
++    VARS(y1);
++    SETUP(y1, primary_light, sf->primary, (h / 2) -1);
++  
++    VARS(y3);
++    SETUP(y3, sf->secondary, secondary_light,  (h / 2) -1);
++
++    for (y1 = h - 1; y1 > (h / 2) -1; --y1) {  /* 0 -> h-1 */
++        current = COLOR(y1);
++        for (x = w - 1; x >= 0; --x)  /* 0 -> w */
++            *(data++) = current;
++
++        NEXT(y1);
++    }
++
++    
++    for (y3 = (h / 2) - 1; y3 > 0; --y3) {
++        current = COLOR(y3);
++        for (x = w - 1; x >= 0; --x)
++            *(data++) = current;
++
++        NEXT(y3);
++    }
++
++    current = COLOR(y3);
++    for (x = w - 1; x >= 0; --x)  /* 0 -> w */
++        *(data++) = current;
+ }
+ 
+ static void gradient_horizontal(RrSurface *sf, gint w, gint h)
+diff -urN openbox-3.2.orig/render/render.h openbox-3.2/render/render.h
+--- openbox-3.2.orig/render/render.h	Tue Aug  8 12:39:59 2006
++++ openbox-3.2/render/render.h	Tue Aug  8 12:40:14 2006
+@@ -60,6 +60,7 @@
+     RR_SURFACE_NONE,
+     RR_SURFACE_PARENTREL,
+     RR_SURFACE_SOLID,
++    RR_SURFACE_SPLIT,
+     RR_SURFACE_HORIZONTAL,
+     RR_SURFACE_VERTICAL,
+     RR_SURFACE_DIAGONAL,
+diff -urN openbox-3.2.orig/render/theme.c openbox-3.2/render/theme.c
+--- openbox-3.2.orig/render/theme.c	Tue Aug  8 12:39:59 2006
++++ openbox-3.2/render/theme.c	Tue Aug  8 12:40:14 2006
+@@ -1200,6 +1200,8 @@
+                 *grad = RR_SURFACE_HORIZONTAL;
+             else if (strstr(tex, "vertical") != NULL)
+                 *grad = RR_SURFACE_VERTICAL;
++            else if (strstr(tex, "split") != NULL)
++                *grad = RR_SURFACE_SPLIT;
+             else
+                 *grad = RR_SURFACE_DIAGONAL;
+         } else {
