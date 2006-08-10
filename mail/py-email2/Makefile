@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	email
-PORTVERSION=	2.5.7
+PORTVERSION=	2.5.8
 CATEGORIES=	mail python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/e/email/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
