@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GSSAPI
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AG/AGROLMS
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Perl extension providing access to the GSSAPIv2 library
-
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
