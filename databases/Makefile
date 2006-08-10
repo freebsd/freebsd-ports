@@ -393,6 +393,7 @@
     SUBDIR += py-mssql
     SUBDIR += py-oops
     SUBDIR += py-psycopg
+    SUBDIR += py-psycopg2
     SUBDIR += py-pyPgSQL
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
