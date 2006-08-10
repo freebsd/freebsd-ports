@@ -295,6 +295,14 @@ NO_MTREE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ( \
+	(defined(WITH_BIG_TODO_PATCH) && !defined(BARRIER_BIG_TODO_PATCH)) || \
+	(defined(SLAVE_SPAMCONTROL) && defined(WITH_BIGTODO)) \
+    ) && \
+    (defined(WITH_EXTTODO_PATCH) && !defined(BARRIER_EXTTODO_PATCH))
+IGNORE=	EXT_TODO and BIG_TODO doesn't work together, choose just one of them
+.endif
+
 .if defined(SLAVE_TLS)
 CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
 . if defined(WITH_TLS_DEBUG)
