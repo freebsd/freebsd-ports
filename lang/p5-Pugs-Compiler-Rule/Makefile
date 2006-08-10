@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	Pugs-Compiler-Rule
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FG/FGLOCK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Compiler for Perl 6 Rules
 
 BUILD_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
