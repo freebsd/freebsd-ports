@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sysvipc
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://deisui.org/~ueno/ruby/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby interface to use System V IPC system calls
 
 USE_RUBY=	yes
