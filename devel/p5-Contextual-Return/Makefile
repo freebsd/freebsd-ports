@@ -1,0 +1,32 @@
+# New ports collection makefile for:	p5-Contextual-Return
+# Date created:		2006-08-09
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Contextual-Return
+PORTVERSION=	0.1.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../authors/id/D/DC/DCONWAY
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Create context-senstive return values
+
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want \
+		${SITE_PERL}/version.pm:${PORTSDIR}/devel/p5-version
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Contextual::Return.3 Contextual::Return::Failure.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600	# Inherited from p5-Want & p5-version
+IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
