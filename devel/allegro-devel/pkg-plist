@@ -98,6 +98,8 @@ include/xalleg.h
 %%ARTS%%lib/allegro/%%SHLIB_VER%%/alleg-artsdigi.so
 lib/allegro/%%SHLIB_VER%%/alleg-dga2.so
 %%ESOUND%%lib/allegro/%%SHLIB_VER%%/alleg-esddigi.so
+%%JACK%%lib/allegro/%%SHLIB_VER%%/alleg-jackdigi.so
+%%AL%%lib/allegro/%%SHLIB_VER%%/alleg-sgialdigi.so
 lib/allegro/%%SHLIB_VER%%/modules.lst
 %%DEBUG%%lib/liballd.so
 %%DEBUG%%lib/liballd.so.%%SHLIB_VER%%
