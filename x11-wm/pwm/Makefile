@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pwm
-PORTVERSION=	2003.06.17
+PORTVERSION=	2006.05.17
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/pwm/dl/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	A lightweight window manager with emphasis on usability
 
 USE_X_PREFIX=	yes
