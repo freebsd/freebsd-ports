@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Object/InsideOut/Overload.pm
 %%SITE_PERL%%/Object/InsideOut/Universal.pm
 %%SITE_PERL%%/Object/InsideOut/Util.pm
+%%SITE_PERL%%/Object/InsideOut/lvalue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
