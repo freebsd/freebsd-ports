@@ -1,22 +1,18 @@
-Fityk is a general-purpose nonlinear curve fitting and data analysis software.
+Fityk is a program for nonlinear fitting of analytical functions (especially 
+peak-shaped) to data (usually experimental data). There are also people using
+it only to display data or to remove baseline from data.
 
-Although it is being developed to analyze powder diffraction patterns, it can
-be used to fit analytical functions to any kind of data: crystallographic
-module is an independent part of the program. Apart from crystallography fityk
-is reported to be used also in chromatography, photoluminescence, infrared and
-Raman spectroscopy, and in other fields.
+It is reported to be used in crystallography, chromatography,
+photoluminescence, infrared and Raman spectroscopy and other fields.
 
-At present fityk knows only about common peak-shaped functions (Gaussian,
-Lorentzian, Voigt, Pearson VII etc.) and polynomial. User-defined functions
-will be implemented in 2005.
+Fityk knows about common peak-shaped functions (Gaussian, Lorentzian, Voigt,
+Pearson VII, bifurcated Gaussian, EMG, Doniach-Sunjic, etc.) and polynomials.
+It also supports user-defined functions.
 
-In terms of powder diffraction fityk will fit the data with a set of position-
-correlated peaks to give the refined lattice parameters, zero-shift, sample
-displacement and wavelength.
+Fityk offers intuitive graphical interface (and also command line interface),
+variouse optimization methods (standard Marquardt least-square algorithm,
+Genetic Algorithms, Nelder-Mead simplex), equality constraints, modelling
+error of x coordinate of points (eg. zero-shift of instrument), handling
+series of datasets, automation of common tasks with scripts, and more.
 
-Fityk offers everything a decent refinement program should offer but first of
-all intuitive graphical interface. Apart from the standard Marquardt least-
-square algorithm one may choose a genetic algorithm or Nelder-Mead simplex
-method for complex or unstable cases.
-
-WWW: http://fityk.sourceforge.net/
+WWW: http://www.unipress.waw.pl/fityk/
