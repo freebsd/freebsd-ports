@@ -1,6 +1,6 @@
---- src/ylocale.cc.orig	Mon Apr 17 01:12:31 2006
-+++ src/ylocale.cc	Mon Apr 17 16:19:46 2006
-@@ -149,10 +149,11 @@
+--- src/ylocale.cc.orig	Mon Aug  7 03:38:14 2006
++++ src/ylocale.cc	Tue Aug  8 01:00:33 2006
+@@ -149,7 +149,8 @@
          return NULL;
  
      YUChar * uStr(new YUChar[lLen + 1]);
@@ -9,8 +9,4 @@
 +    char * outbuf((char *) uStr);
      size_t inlen(lLen), outlen(4 * lLen);
  
--    if (0 > (int) iconv(instance->toUnicode, const_cast<char **>(&inbuf), &inlen, &outbuf, &outlen))
-+    if (0 > (int) iconv(instance->toUnicode, &inbuf, &inlen, &outbuf, &outlen))
-         warn(_("Invalid multibyte string \"%s\": %s"), lStr, strerror(errno));
- 
-     *((YUChar *) outbuf) = 0;
+     if (0 > (int) iconv(instance->toUnicode, &inbuf, &inlen, &outbuf, &outlen))

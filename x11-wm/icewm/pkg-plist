@@ -338,6 +338,7 @@ bin/icewmtray
 %%NLS%%share/locale/bg/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/da/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/el/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/en/LC_MESSAGES/icewm.mo
@@ -352,6 +353,7 @@ bin/icewmtray
 %%NLS%%share/locale/ko/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/icewm.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/icewm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/icewm.mo
