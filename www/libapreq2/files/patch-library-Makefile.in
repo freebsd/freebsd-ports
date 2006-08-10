@@ -1,11 +1,11 @@
---- library/Makefile.in.orig	Sat Feb 11 18:57:28 2006
-+++ library/Makefile.in	Mon May 29 19:13:23 2006
-@@ -141,7 +141,7 @@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)/include
- CPPFLAGS = @CPPFLAGS@
+--- library/Makefile.in.orig	Thu Aug 10 01:43:51 2006
++++ library/Makefile.in	Thu Aug 10 01:43:58 2006
+@@ -144,7 +144,7 @@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
-+LIBS = @LIBS@ -L$(prefix)/lib
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cookie.Plo ./$(DEPDIR)/error.Plo \
++LIBS = @LIBS@ -L$(prefix)
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
