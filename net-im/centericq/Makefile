@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://centericq.de/archive/source/releases/ \
 		http://thekonst.net/download/
@@ -22,7 +22,7 @@ USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="-I${LOCALBASE}/include"
+		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib -lstdc++
 CONFIGURE_ARGS=	--with-openssl --disable-konst
 
