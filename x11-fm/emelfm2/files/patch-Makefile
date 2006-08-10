@@ -1,17 +1,34 @@
---- Makefile.orig	Tue Sep 13 02:06:53 2005
-+++ Makefile	Wed Sep 14 19:42:41 2005
-@@ -124,10 +124,10 @@
+--- Makefile.orig	Thu Jul 27 02:20:13 2006
++++ Makefile	Mon Aug  7 23:26:10 2006
+@@ -57,7 +57,7 @@
+ endif
+ ICON_DIR ?= $(PREFIX)/share/pixmaps/$(TARGET)/
+ LOCALE_DIR ?= $(PREFIX)/share/locale/
+-MAN_DIR ?= $(PREFIX)/share/man/man1/
++MAN_DIR ?= $(PREFIX)/man/man1/
+ 
+ OBJECTS_DIR = objs
+ # object directories that have to be created
+@@ -148,10 +148,10 @@
  ifeq ($(USE_FAM),1)
- 	lLDFLAGS += -lfam
+ 	lLIBS += -lfam
  endif
 -ifeq ($(OPSY),FreeBSD)
 -	OSREL = $(shell sysctl -n kern.osreldate)
--	lLDFLAGS += $(shell if test $(OSREL) -lt 500041 ; then echo "-lgnugetopt"; fi)
+-	lLIBS += $(shell if test $(OSREL) -lt 500041 ; then echo "-lgnugetopt"; fi)
 -endif
 +#ifeq ($(OPSY),FreeBSD)
 +#	OSREL = $(shell sysctl -n kern.osreldate)
-+#	lLDFLAGS += $(shell if test $(OSREL) -lt 500041 ; then echo "-lgnugetopt"; fi)
++#	lLIBS += $(shell if test $(OSREL) -lt 500041 ; then echo "-lgnugetopt"; fi)
 +#endif
  
  .PHONY: all plugins install install_plugins uninstall uninstall_plugins doc \
          clean deps marshals gettext i18n install_i18n uninstall_i18n \
+@@ -176,7 +176,6 @@
+ 	done
+ 	@install -d $(MAN_DIR)
+ 	@install -m 644 docs/$(TARGET).1 $(MAN_DIR);
+-	@bzip2 -f $(MAN_DIR)$(TARGET).1;
+ 	
+ ifeq ($(XGD_INTEGRATION), 1)
+ 		@install -d $(XGD_DESKTOP_DIR)

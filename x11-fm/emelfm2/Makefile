@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.emelfm2.net/rel/ \
 		${MASTER_SITE_LOCAL}
@@ -23,6 +23,7 @@ INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	install install_i18n
 
 MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOC_DIR="${DOCSDIR}"
+MAN1=		emelfm2.1
 
 .include <bsd.port.pre.mk>
 
@@ -31,3 +32,4 @@ USE_GCC=	3.4
 .endif
 
 .include <bsd.port.post.mk>
+
