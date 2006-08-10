@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.sfc.wide.ad.jp/DVTS/software/xdvshow/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	simokawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DV/RTP viewer
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
