@@ -1,0 +1,13 @@
+--- ./src/Makefile.orig	Sat Mar  5 02:24:21 2005
++++ ./src/Makefile	Thu Jul 27 22:50:42 2006
+@@ -1,8 +1,8 @@
+ #	Makefile for f2c, a Fortran 77 to C converter
+ 
+ .SUFFIXES: .c .o
+-CC = cc
+-CFLAGS = -O
++#CC = cc
++#CFLAGS = -O
+ SHELL = /bin/sh
+ YACC = yacc
+ YFLAGS =

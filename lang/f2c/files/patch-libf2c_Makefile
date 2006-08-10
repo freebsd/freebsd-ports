@@ -1,0 +1,50 @@
+--- libf2c/Makefile.orig	Fri Jun  6 15:09:42 2003
++++ libf2c/Makefile	Sun Jul 30 11:48:17 2006
+@@ -13,9 +13,9 @@
+ # to the CFLAGS = line below.
+ 
+ .SUFFIXES: .c .o
+-CC = cc
++#CC = cc
+ SHELL = /bin/sh
+-CFLAGS = -O
++CFLAGS += -fPIC
+ 
+ # compile, then strip unnecessary symbols
+ .c.o:
+@@ -29,7 +29,7 @@
+ 
+ MISC =	f77vers.o i77vers.o main.o s_rnge.o abort_.o exit_.o getarg_.o iargc_.o\
+ 	getenv_.o signal_.o s_stop.o s_paus.o system_.o cabs.o\
+-	derf_.o derfc_.o erf_.o erfc_.o sig_die.o uninit.o
++	derf_.o derfc_.o erf_.o erfc_.o sig_die.o uninit.o MAIN.o
+ POW =	pow_ci.o pow_dd.o pow_di.o pow_hh.o pow_ii.o pow_ri.o pow_zi.o pow_zz.o
+ CX =	c_abs.o c_cos.o c_div.o c_exp.o c_log.o c_sin.o c_sqrt.o
+ DCX =	z_abs.o z_cos.o z_div.o z_exp.o z_log.o z_sin.o z_sqrt.o
+@@ -82,7 +82,7 @@
+ ## of "cc -shared".
+ 
+ libf2c.so: $(OFILES)
+-	cc -shared -o libf2c.so $(OFILES)
++	$(CC) -shared -o libf2c.so $(OFILES)
+ 
+ ### If your system lacks ranlib, you don't need it; see README.
+ 
+@@ -110,12 +110,15 @@
+ # If your system lacks onexit() and you are not using an
+ # ANSI C compiler, then you should uncomment the following
+ # two lines (for compiling main.o):
+-#main.o: main.c
+-#	$(CC) -c -DNO_ONEXIT -DSkip_f2c_Undefs main.c
++main.o: main.c
++	$(CC) -c $(CFLAGS) -DNO_ONEXIT -DSkip_f2c_Undefs main.c
+ # On at least some Sun systems, it is more appropriate to
+ # uncomment the following two lines:
+ #main.o: main.c
+ #	$(CC) -c -Donexit=on_exit -DSkip_f2c_Undefs main.c
++
++MAIN.o: MAIN.c
++	$(CC) -c $(CFLAGS) -DSkip_f2c_Undefs MAIN.c
+ 
+ install: libf2c.a
+ 	cp libf2c.a $(LIBDIR)
