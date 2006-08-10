@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Apache-Test
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test.pm wrapper with helpers for testing Apache
 
 .if defined(WITH_MODPERL2)
-IGNORE=		This port is already included in mod_perl2
+IGNORE=		is already included in mod_perl2
 .else
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
 		${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
@@ -33,7 +33,9 @@ MAN3=		Apache::Test.3 Apache::TestConfig.3 Apache::TestConfigData.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
+.if ${PERL_LEVEL} < 500600 # inherited from www/p5-libwww
+IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
+.elif ${PERL_LEVEL} < 500800
 EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
 .endif
 
