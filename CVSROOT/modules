@@ -8327,6 +8327,7 @@ p5-Config-Std	ports/devel/p5-Config-Std
 p5-Config-Tiny	ports/devel/p5-Config-Tiny
 p5-ConfigReader	ports/devel/p5-ConfigReader
 p5-ConfigReader-Simple	ports/devel/p5-ConfigReader-Simple
+p5-Contextual-Return	ports/devel/p5-Contextual-Return
 p5-Convert-ASCII-Armour	ports/converters/p5-Convert-ASCII-Armour
 p5-Convert-ASN1	ports/converters/p5-Convert-ASN1
 p5-Convert-BER	ports/converters/p5-Convert-BER
