@@ -174,6 +174,11 @@ pre-install:
 	/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	\
 	${PLIST_TEMPLATE} > ${PLIST}
 
+	@# if openssl 0.9.8 is detected, _sha{256,512} module won't be installed
+	([ -f ${WRKSRC}/.without_own_sha ] && \
+		${GREP} -v 'lib-dynload/_sha' ${PLIST} > ${PLIST}.tmp && \
+		${CAT} ${PLIST}.tmp > ${PLIST}) || ${TRUE}
+
 post-install:
 	@# install config providers
 	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION}-config ${PREFIX}/bin
