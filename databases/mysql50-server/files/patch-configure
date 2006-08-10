@@ -1,15 +1,15 @@
---- configure.orig	Sun Dec 21 19:03:09 2003
-+++ configure	Wed Dec 24 10:40:53 2003
-@@ -8128,8 +8128,6 @@
+--- configure.orig	Thu Jul 27 20:53:44 2006
++++ configure	Thu Aug 10 10:16:48 2006
+@@ -20093,8 +20093,6 @@
  # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"; $ac_aux_dir/ltconfig $LIBTOOL_DEPS;
-
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+ 
 -# Always use our own libtool.
 -LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-
+ 
  # Prevent multiple expansion
-
-@@ -12678,8 +12644,8 @@
+ 
+@@ -25651,8 +25649,8 @@
  # Some system specific hacks
  #
  
@@ -18,5 +18,16 @@
 +MAX_C_OPTIMIZE=""
 +MAX_CXX_OPTIMIZE=""
  
- case $SYSTEM_TYPE in
-   *solaris2.7*)
+ ndb_cxxflags_fix=
+ case $SYSTEM_TYPE-$MACHINE_TYPE-$ac_cv_c_compiler_gnu in
+@@ -39038,8 +39036,8 @@
+         OPENSSL_INCLUDE=-I$incs
+       fi
+       # Test for libssl using all known library file endings
+-      if test -f $d/libssl.a || test -f $d/libssl.so || \
+-         test -f $d/libssl.sl || test -f $d/libssl.dylib ; then
++      if test -f $libs/libssl.a || test -f $libs/libssl.so || \
++         test -f $libs/libssl.sl || test -f $libs/libssl.dylib ; then
+         OPENSSL_LIB=$libs
+       fi
+       ;;
