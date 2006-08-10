@@ -4,8 +4,8 @@
 #
 
 # PROVIDE: postfix-policyd-sf
-# REQUIRE: LOGIN
-# BEFORE: mail
+# REQUIRE: LOGIN mysql
+# BEFORE: mail postfix
 # KEYWORD: shutdown
 
 #
