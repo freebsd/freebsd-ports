@@ -17,7 +17,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Create context-senstive return values
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want \
-		${SITE_PERL}/version.pm:${PORTSDIR}/devel/p5-version
+		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 
 PERL_CONFIGURE=	yes
 
