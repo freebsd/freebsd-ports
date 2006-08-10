@@ -11,7 +11,7 @@ CATEGORIES=		sysutils net
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jwd
 
-MAINTAINER=	jwd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control APC 9211 MasterSwitchs via snmp
 
 RUN_DEPENDS=	snmpwalk:${PORTSDIR}/net-mgmt/net-snmp
