@@ -793,6 +793,7 @@
     SUBDIR += ruby-xmlscan-old
     SUBDIR += ruby-xslt
     SUBDIR += ruby-xtemplate
+    SUBDIR += rubygem-ferret
     SUBDIR += rubygem-syntax
     SUBDIR += rw-aspell
     SUBDIR += rxp
