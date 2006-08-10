@@ -1,27 +1,22 @@
 bin/cmus
 bin/cmus-remote
-lib/cmus/ip/flac.so
-lib/cmus/ip/mad.so
+lib/cmus/ip/wav.so
+%%FLAC%%lib/cmus/ip/flac.so
+%%MAD%%lib/cmus/ip/mad.so
 %%MODPLUG%%lib/cmus/ip/modplug.so
 %%MPC%%lib/cmus/ip/mpc.so
 %%VORBIS%%lib/cmus/ip/vorbis.so
-lib/cmus/ip/wav.so
+lib/cmus/op/oss.so
 %%AO%%lib/cmus/op/ao.so
 %%ARTS%%lib/cmus/op/arts.so
-lib/cmus/op/oss.so
 %%DATADIR%%/cyan.theme
-%%DATADIR%%/cyan.theme.bak
 %%DATADIR%%/default.theme
-%%DATADIR%%/default.theme.bak
 %%DATADIR%%/gray-88.theme
-%%DATADIR%%/gray-88.theme.bak
 %%DATADIR%%/green-mono-88.theme
-%%DATADIR%%/green-mono-88.theme.bak
 %%DATADIR%%/rc
-%%DATADIR%%/rc.bak
-%%DOCSDIR%%/examples/cmus-status-display
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
+%%DATADIR%%/xterm-white.theme
+%%PORTDOCS%%%%EXAMPLESDIR%%/cmus-status-display
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/cmus/op
 @dirrm lib/cmus/ip
