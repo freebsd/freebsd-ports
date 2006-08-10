@@ -22,6 +22,7 @@ PORTDOCS=	CHANGES README
 PLIST_FILES=	bin/fastjar bin/grepjar
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+USE_PERL5_BUILD=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
