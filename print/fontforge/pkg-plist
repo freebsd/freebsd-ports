@@ -714,14 +714,3 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 @dirrm %%DOCSDIR%%/ja/nonBMP
 @dirrm %%DOCSDIR%%/ja
 @dirrm %%DOCSDIR%%
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/ja/LC_MESSAGES
-@dirrmtry share/locale/ja
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ru
-@dirrmtry share/locale
