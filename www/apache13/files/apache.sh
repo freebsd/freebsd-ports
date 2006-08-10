@@ -26,7 +26,7 @@ command="%%PREFIX%%/sbin/httpd"
 load_rc_config $name
 
 pidfile="${apache_pidfile}"
-
-start_cmd="echo \"Starting ${name}.\"; /usr/bin/limits -U www ${command} ${apache_flags} ${command_args}"
+start_precmd="`/usr/bin/limits -e -U www`"
+start_postcmd="`/usr/bin/limits -e -C daemon`"
 
 run_rc_command "$1"
