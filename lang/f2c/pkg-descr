@@ -1,7 +1,6 @@
 f2c and its run-time library, libf2c.a, are a port of the
 Fortran-to-C converter available from ftp.netlib.org.  This
 software was originally developed by AT&T, Lucent Technologies,
-and Bellcore.  The port contains some enhancements for FreeBSD.
+and Bellcore.
 
 WWW: http://www.netlib.org/
-FTP: ftp://ftp.netlib.org/
