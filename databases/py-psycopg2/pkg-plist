@@ -1,0 +1,40 @@
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/_psycopg.so
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extensions.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extensions.pyc
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extras.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/extras.pyc
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/pool.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/pool.pyc
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/psycopg1.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/psycopg1.pyc
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/tz.py
+lib/%%PYTHON_VERSION%%/site-packages/psycopg2/tz.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/psycopg2
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/binary.py
+%%EXAMPLESDIR%%/copy_from.py
+%%EXAMPLESDIR%%/copy_to.py
+%%EXAMPLESDIR%%/cursor.py
+%%EXAMPLESDIR%%/dialtone.py
+%%EXAMPLESDIR%%/dict.py
+%%EXAMPLESDIR%%/dt.py
+%%EXAMPLESDIR%%/encoding.py
+%%EXAMPLESDIR%%/fetch.py
+%%EXAMPLESDIR%%/lastrowid.py
+%%EXAMPLESDIR%%/mogrify.py
+%%EXAMPLESDIR%%/myfirstrecipe.py
+%%EXAMPLESDIR%%/notify.py
+%%EXAMPLESDIR%%/simple.py
+%%EXAMPLESDIR%%/somehackers.jpg
+%%EXAMPLESDIR%%/threads.py
+%%EXAMPLESDIR%%/tz.py
+%%EXAMPLESDIR%%/usercast.py
+%%EXAMPLESDIR%%/whereareyou.jpg
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
