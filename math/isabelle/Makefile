@@ -22,6 +22,7 @@ MAINTAINER=	timbob@bigpond.com
 COMMENT=	A generic proof assistant
 
 OPTIONS=	SMLNJ "Use SML/NJ (devel) instead of the faster Poly/ML" Off
+NO_PACKAGE=	Requires non-standard kernel setting.
 
 .include <bsd.port.pre.mk>
 
