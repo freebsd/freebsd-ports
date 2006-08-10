@@ -119,8 +119,9 @@ share/locale/hr/LC_MESSAGES/genius.mo
 share/locale/it/LC_MESSAGES/genius.mo
 share/locale/ja/LC_MESSAGES/genius.mo
 share/locale/ko/LC_MESSAGES/genius.mo
+share/locale/nb/LC_MESSAGES/genius.mo
+share/locale/ne/LC_MESSAGES/genius.mo
 share/locale/nl/LC_MESSAGES/genius.mo
-share/locale/no/LC_MESSAGES/genius.mo
 share/locale/pa/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
@@ -131,6 +132,7 @@ share/locale/sr/LC_MESSAGES/genius.mo
 share/locale/sr@Latn/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
 share/locale/zh_CN/LC_MESSAGES/genius.mo
+share/locale/zh_TW/LC_MESSAGES/genius.mo
 @dirrm share/gnome/omf/genius
 @dirrm share/gnome/help/genius/C/figures
 @dirrm share/gnome/help/genius/C
