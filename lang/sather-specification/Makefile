@@ -7,6 +7,7 @@
 
 PORTNAME=	specification
 PORTVERSION=	000328
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=sather/Doc
@@ -22,14 +23,8 @@ DOCSDIR=	${PREFIX}/share/doc/sather/${PORTNAME}
 
 do-install:
 	${MKDIR} ${DOCSDIR}
-	@${TAR} -xf ${DISTDIR}/${DISTFILES} -C ${DOCSDIR}
+	@${TAR} -xzf ${DISTDIR}/${DISTFILES} -C ${DOCSDIR}
 	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	${CHOWN} -R ${SHAREOWN} ${DOCSDIR}/
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		tar is too old
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
