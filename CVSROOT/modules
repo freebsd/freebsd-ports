@@ -13279,6 +13279,7 @@ squirrelmail-quota_usage-plugin	ports/mail/squirrelmail-quota_usage-plugin
 squirrelmail-secure_login-plugin	ports/mail/squirrelmail-secure_login-plugin
 squirrelmail-timeout_user-plugin	ports/mail/squirrelmail-timeout_user-plugin
 squirrelmail-vlogin-plugin	ports/mail/squirrelmail-vlogin-plugin
+squirrelmail-websearch-plugin	ports/mail/squirrelmail-websearch-plugin
 squirrelmail-wetteronline-plugin	ports/mail/squirrelmail-wetteronline-plugin
 squishdot	ports/www/squishdot
 squsq		ports/archivers/squsq
