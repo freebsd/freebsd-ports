@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	1.79.1
+PORTVERSION=	1.79.2
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
