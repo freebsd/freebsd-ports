@@ -11729,6 +11729,7 @@ py-prolog	ports/lang/py-prolog
 py-protocols	ports/devel/py-protocols
 py-psyco	ports/devel/py-psyco
 py-psycopg	ports/databases/py-psycopg
+py-psycopg2	ports/databases/py-psycopg2
 py-pullparser	ports/www/py-pullparser
 py-px		ports/devel/py-px
 py-py2play	ports/net-p2p/py-py2play
