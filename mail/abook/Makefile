@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abook
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,8 @@ COMMENT=	An addressbook program with mutt mail client support
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
