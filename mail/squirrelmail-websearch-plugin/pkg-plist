@@ -1,0 +1,9 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin web_search; fi
+%%SQUIRRELDIR%%/plugins/web_search/README
+%%SQUIRRELDIR%%/plugins/web_search/api.php
+%%SQUIRRELDIR%%/plugins/web_search/hooks.php
+%%SQUIRRELDIR%%/plugins/web_search/setup.php
+%%SQUIRRELDIR%%/plugins/web_search/version
+%%SQUIRRELDIR%%/plugins/web_search/web_search.conf.php.dist
+@dirrm %%SQUIRRELDIR%%/plugins/web_search/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin web_search; fi
