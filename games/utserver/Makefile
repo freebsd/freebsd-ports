@@ -7,6 +7,7 @@
 
 PORTNAME=	utserver
 PORTVERSION=	451
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=   http://public.planetmirror.com/pub/lokigames/installers/ut/:p436 \
 		http://fileserver.talkware.net/ut/:p436 \
@@ -27,6 +28,7 @@ USE_PERL5=	yes
 NO_CDROM=	Size; the data set is much too big
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ut-server
+USE_RC_SUBR=    ucc
 
 UTDIR=          ut-server
 PLIST_SUB=      UTDIR="${UTDIR}/"
