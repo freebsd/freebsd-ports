@@ -1078,7 +1078,6 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/plugins/translate/index.php
 %%SQUIRRELDIR%%/plugins/translate/options.php
 %%SQUIRRELDIR%%/plugins/translate/setup.php
-%%SQUIRRELDIR%%/po/charsetconvert.pl
 %%SQUIRRELDIR%%/po/compilepo
 %%SQUIRRELDIR%%/po/independent_strings.txt
 %%SQUIRRELDIR%%/po/index.php
