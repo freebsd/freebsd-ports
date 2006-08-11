@@ -296,14 +296,6 @@ NO_MTREE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ( \
-	(defined(WITH_BIG_TODO_PATCH) && !defined(BARRIER_BIG_TODO_PATCH)) || \
-	(defined(SLAVE_SPAMCONTROL) && defined(WITH_BIGTODO)) \
-    ) && \
-    (defined(WITH_EXTTODO_PATCH) && !defined(BARRIER_EXTTODO_PATCH))
-IGNORE=	EXT_TODO and BIG_TODO doesn't work together, choose just one of them
-.endif
-
 .if defined(SLAVE_TLS)
 CFLAGS+=	-I${OPENSSLBASE}/include -L${OPENSSLBASE}/lib -DTLS
 . if defined(WITH_TLS_DEBUG)
@@ -391,6 +383,14 @@ PATCHFILES+=	qmail-spf-rc5.patch:spf
 .if defined(WITH_EXTTODO_PATCH) && !defined(BARRIER_EXTTODO_PATCH)
 PLIST_SUB+=		EXTTODO=""
 DOCFILES_WRKSRC+=	EXTTODO
+
+. if (defined(WITH_BIG_TODO_PATCH) && !defined(BARRIER_BIG_TODO_PATCH)) || \
+     (defined(SLAVE_SPAMCONTROL) && defined(WITH_BIGTODO))
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:ext_big_todo/}
+MASTER_SITE_SUBDIR+=	garga/qmail/:ext_big_todo
+EXT_BIG_TODO_PATCH=	ext_todo-20030105+big-todo.103.patch
+DISTFILES=	${EXT_BIG_TODO_PATCH}:ext_big_todo
+. endif
 
 . if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
 .  if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
@@ -608,6 +608,9 @@ post-patch:
 	@${REINPLACE_CMD} "s|^#LDAPFLAGS=.*$$|LDAPFLAGS=${LDAPFLAGS}|" \
 		${WRKSRC}/Makefile
 . endif
+.endif
+.if defined(EXT_BIG_TODO_PATCH)
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXT_BIG_TODO_PATCH}
 .endif
 	@${REINPLACE_CMD} 's!/var/qmail!${PREFIX}!; \
 			   s!/usr/local/!${LOCALBASE}/!' \

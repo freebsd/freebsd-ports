@@ -91,3 +91,6 @@ SIZE (qmail/auth.patch.diff) = 4412
 MD5 (qmail/auth.patch.diff-tls) = 7e706dd124deb9a25cecd91fe652a90b
 SHA256 (qmail/auth.patch.diff-tls) = 467c5f68d5d332d2400f937c76311e5358b613923d64e68ae98d51d178c7de5e
 SIZE (qmail/auth.patch.diff-tls) = 2993
+MD5 (qmail/ext_todo-20030105+big-todo.103.patch) = 5878870ef85d6a83ba9465ce94d9cd42
+SHA256 (qmail/ext_todo-20030105+big-todo.103.patch) = 4e44ad403b21f5910b6af11295b82296bc8c0f18bc40dcfecfb95c11e5a296f7
+SIZE (qmail/ext_todo-20030105+big-todo.103.patch) = 2523
