@@ -1087,6 +1087,7 @@
     SUBDIR += xpi-formfox
     SUBDIR += xpi-foxmarks
     SUBDIR += xpi-gbrain
+    SUBDIR += xpi-gmail-manager
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-hit-a-hint
