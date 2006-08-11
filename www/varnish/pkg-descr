@@ -1,0 +1,11 @@
+This is an alpha release of the Varnish high-performance HTTP accelerator.
+
+The following Wiki page provides instructions for building and testing
+Varnish:
+
+  http://varnish.projects.linpro.no/wiki/AlphaReadme
+
+Please direct any technical questions to the Varnish development
+mailing list, <varnish-dev@projects.linpro.no>.
+
+WWW: http://varnish.linpro.no/

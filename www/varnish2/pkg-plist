@@ -1,0 +1,17 @@
+bin/varnishd
+bin/varnishlog
+bin/varnishncsa
+bin/varnishstat
+bin/varnishtop
+lib/libvarnish.so.0
+lib/libvarnish.so
+lib/libvarnish.la
+lib/libvarnish.a
+lib/libvarnishapi.so.0
+lib/libvarnishapi.so
+lib/libvarnishapi.la
+lib/libvarnishapi.a
+lib/libvcl.so.0
+lib/libvcl.so
+lib/libvcl.la
+lib/libvcl.a
