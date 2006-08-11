@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	RDF
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-0.3
 
-MAINTAINER=	ascope@cpan.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write RDF without complication
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \

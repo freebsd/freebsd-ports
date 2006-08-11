@@ -9,7 +9,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://aaronland.info/xsl/xhtml/add-css-links/
 
-MAINTAINER=	ascope@cpan.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add one or more CSS <link> elements to an XHTML document
 
 NO_BUILD=	yes

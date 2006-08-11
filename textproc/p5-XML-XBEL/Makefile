@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ascope@cpan.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OOP for reading and writing XBEL documents
 
 BUILD_DEPENDS=	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \

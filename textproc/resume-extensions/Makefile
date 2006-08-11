@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://aaronland.info/xsl/xmlresume/
 DISTNAME=	xml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ascope@cpan.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extends the XML Resume library
 
 RUN_DEPENDS=	${LOCALBASE}/share/xsl/resume:${PORTSDIR}/textproc/resume \
