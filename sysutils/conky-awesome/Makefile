@@ -60,6 +60,10 @@ CONFIGURE_ARGS+=	--disable-mpd
 CONFIGURE_ARGS+=	--disable-double-buffer
 .endif
 
+.if defined(WITHOUT_SETI)
+CONFIGURE_ARGS+=	--disable-seti
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} " "
