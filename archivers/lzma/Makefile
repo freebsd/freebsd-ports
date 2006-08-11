@@ -33,7 +33,7 @@ post-patch:
 		${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/lzma ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/lzma ${TARGETDIR}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
