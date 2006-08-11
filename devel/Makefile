@@ -1790,6 +1790,7 @@
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rscm
+    SUBDIR += rubygem-rtags
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-tzinfo
