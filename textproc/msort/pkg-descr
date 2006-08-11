@@ -1,0 +1,13 @@
+Msort sorts files in sophisticated ways. Records may be fixed size,
+newline-separated blocks, or terminated by any specified character.
+Key fields may be selected by position, tag, or character range. For
+each key, distinct exclusions, multigraphs, substitutions, and a sort
+order may be defined or locale collation rules used. Comparisons may
+be lexicographic, numeric, numeric string, hybrid, random, by string
+length, angle, date, time, month name, or ISO8601 timestamp. Keys may
+be reversed so as to generate reverse dictionaries. Optional keys are
+supported. Unicode is supported, including full case-folding. Msort
+itself has a somewhat complex command line interface, but may be
+driven by an optional GUI.
+
+WWW:	http://billposer.org/Software/msort.html
