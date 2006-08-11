@@ -24,12 +24,15 @@ WRKSRC=		${WRKDIR}/unrar
 
 USE_GMAKE=	yes
 
+PLIST_FILES=	bin/unrar
+PORTDOCS=	license.txt readme.txt
+
 post-patch:
 	@${SED} -e 's|g++|${CXX}|g' -e 's|-O2|${CXXFLAGS}|g' \
 		${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${TARGETDIR}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
