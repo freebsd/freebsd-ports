@@ -2307,7 +2307,6 @@ es		ports/shells/es
 es-aspell	ports/textproc/es-aspell
 esdl		ports/devel/esdl
 esh		ports/shells/esh
-eshell-emacs20	ports/editors/eshell-emacs20
 esmart		ports/graphics/esmart
 esmtp		ports/mail/esmtp
 esniper		ports/misc/esniper
