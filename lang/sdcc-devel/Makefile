@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.5.6.2006.06.29
+PORTVERSION=	2.6.1.2006.08.10
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://www.kalimero.be/mirror/
-DISTNAME=	${PORTNAME}-src-20060629-4251
+DISTNAME=	${PORTNAME}-src-20060810-4330
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -19,16 +19,17 @@ WRKSRC=		${WRKDIR}/sdcc
 
 GNU_CONFIGURE=	yes
 NO_LATEST_LINK=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	MCS51   "Intel mcs51 port" on \
-		Z80     "Z80 port" on \
+		Z80     "Zilog Z80 port" on \
 		AVR     "AVR port" on \
-		DS390   "DS390/DS400 port" on \
-		PIC     "PIC port" on \
-		PIC16   "PIC16 port" on \
-		XA51    "XA51 port" on \
-		HC08    "HC08 port" on \
+		DS390   "Maxim DS390/DS400 port" on \
+		PIC     "Microchip PIC port" on \
+		PIC16   "Microchip PIC16 port" on \
+		XA51    "Philips XA51 port" on \
+		HC08    "Motorola 68HC08 port" on \
 		DEVLIB  "Device libraries" on \
 		UCSIM   "The ucSim simulator" on \
 		PACKIHX "A tool to pack (compress) Intel hex files" on
