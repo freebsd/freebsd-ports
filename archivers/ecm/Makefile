@@ -19,7 +19,7 @@ PORTDOCS=	format.txt
 
 do-install:
 .for f in ${PORTNAME} un${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${TARGETDIR}/bin
 .endfor
 
 .if !defined(NOPORTDOCS)
