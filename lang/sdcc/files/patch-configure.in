@@ -1,11 +1,21 @@
---- configure.in.orig	Mon Apr 11 20:55:28 2005
-+++ configure.in	Mon Apr 11 20:55:44 2005
-@@ -650,7 +650,7 @@
- AC_CONFIG_SUBDIRS(support/cpp2)
- AC_CONFIG_SUBDIRS(packihx)
- AC_CONFIG_SUBDIRS(sim/ucsim)
--#AC_CONFIG_SUBDIRS(device/lib/pic16)
-+AC_CONFIG_SUBDIRS(device/lib/pic16)
+--- configure.in.orig	Thu May 11 22:06:55 2006
++++ configure.in	Wed Jun 28 22:22:07 2006
+@@ -634,6 +634,10 @@
  
- AC_CONFIG_FILES([main.mk:main_in.mk
- src/Makefile
+ test $OPT_DISABLE_AVR = 0 && AC_CONFIG_FILES([src/avr/Makefile])
+ 
++if test $OPT_DISABLE_DS390 = 0 -o $OPT_DISABLE_MCS51 = 0; then
++  AC_CONFIG_FILES([as/mcs51/Makefile])
++fi
++
+ if test $OPT_DISABLE_DS390 = 0; then
+   AC_CONFIG_FILES([src/ds390/Makefile])
+   test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/ds390/Makefile])
+@@ -652,7 +656,6 @@
+ 
+ if test $OPT_DISABLE_MCS51 = 0; then
+   AC_CONFIG_FILES([src/mcs51/Makefile
+-                   as/mcs51/Makefile
+                    debugger/mcs51/Makefile])
+   test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/mcs51/Makefile
+                                                        device/lib/small/Makefile
