@@ -7,14 +7,14 @@
 
 PORTNAME=	utserver
 PORTVERSION=	451
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
-MASTER_SITES=   http://public.planetmirror.com/pub/lokigames/installers/ut/:p436 \
-		http://fileserver.talkware.net/ut/:p436 \
-		http://freebsd.unixfreunde.de/sources/:p436 \
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/:p436 \
+		ftp://ftp.wireplay.co.uk/pub/unrealtournament/server/:p436 \
+		ftp://ftp.fh-niederrhein.de/pub/win9x/gamesup/ut/:p436 \
 		http://www.utpg.org/patches/:p451
-DISTFILES=      ut-server-436.tar.gz:p436 ${PATCH451FILES}
-EXTRACT_ONLY=   ut-server-436.tar.gz
+DISTFILES=	ut-server-436.tar.gz:p436 ${PATCH451FILES}
+EXTRACT_ONLY=	ut-server-436.tar.gz
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Unreal Tournament Dedicated Server for Linux
@@ -28,14 +28,14 @@ USE_PERL5=	yes
 NO_CDROM=	Size; the data set is much too big
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ut-server
-USE_RC_SUBR=    ucc
+USE_RC_SUBR=	ucc
 
-UTDIR=          ut-server
-PLIST_SUB=      UTDIR="${UTDIR}/"
-SUB_LIST=       UTDIR="${PREFIX}/${UTDIR}"
-SUB_FILES=      pkg-message
-PATCH451FILES=  UTPGPatch451.tar.bz2:p451
-EXTRA_PATCHES=  ${WRKDIR}/patch-ngstatsut
+UTDIR=		ut-server
+PLIST_SUB=	UTDIR="${UTDIR}/"
+SUB_LIST=	UTDIR="${PREFIX}/${UTDIR}"
+SUB_FILES=	pkg-message
+PATCH451FILES=	UTPGPatch451.tar.bz2:p451
+EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 
 pre-patch:
 	@${SED} -e "s!%%LOCALBASE%%!${LOCALBASE}!" \
