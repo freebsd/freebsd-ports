@@ -273,13 +273,13 @@ CONFIGURE_ARGS+=--enable-aa
 CONFIGURE_ARGS+=--disable-aa
 .endif
 
-.if (defined(WITH_DIRAC) || exists(${LOCALBASE}/lib/libdirac_decoder.a)) && !defined(WITHOUT_DIRAC)
-LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
-CONFIGURE_ARGS+=--enable-dirac
-CPPFLAGS+=	-I${LOCALBASE}/include/dirac
-.else
+#.if (defined(WITH_DIRAC) || exists(${LOCALBASE}/lib/libdirac_decoder.a)) && !defined(WITHOUT_DIRAC)
+#LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
+#CONFIGURE_ARGS+=--enable-dirac
+#CPPFLAGS+=	-I${LOCALBASE}/include/dirac
+#.else
 CONFIGURE_ARGS+=--disable-dirac
-.endif
+#.endif
 
 .if !defined(WITHOUT_X264)
 CONFIGURE_ARGS+=--enable-x264
