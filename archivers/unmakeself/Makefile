@@ -32,6 +32,6 @@ do-build:
 		${FILESDIR}/unmakeself.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unmakeself ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unmakeself ${TARGETDIR}/bin
 
 .include <bsd.port.post.mk>
