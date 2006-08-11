@@ -283,6 +283,7 @@
     SUBDIR += modlogan
     SUBDIR += mr-aspell
     SUBDIR += ms-aspell
+    SUBDIR += msort
     SUBDIR += mt-aspell
     SUBDIR += muse
     SUBDIR += nb-aspell
