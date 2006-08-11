@@ -1,0 +1,10 @@
+bin/rtags
+%%GEM_SPEC%%
+%%GEM_CACHE%%
+%%GEM_LIB_DIR%%/bin/VERSION
+%%GEM_LIB_DIR%%/bin/rtags
+%%GEM_LIB_DIR%%/test/runner.rb
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/scripts
+@dirrm %%GEM_LIB_DIR%%
