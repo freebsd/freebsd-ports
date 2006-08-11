@@ -11,7 +11,7 @@ CATEGORIES=	multimedia tk82
 MASTER_SITES=	http://freshmeat.net/redir/tkxanim/10652/url_tgz/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontend to xanim
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \

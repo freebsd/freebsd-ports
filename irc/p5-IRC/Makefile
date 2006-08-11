@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net/JMUHLICH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 modules to implement the IRC protocol (RFC 1459)
 
 PERL_CONFIGURE=	yes

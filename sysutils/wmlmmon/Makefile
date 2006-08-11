@@ -10,7 +10,7 @@ PORTVERSION=	0.60
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.fxp.org/~jedgar/wmlmmon/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WM dock app to display info from MB power management controllers
 
 ONLY_FOR_ARCHS=	i386
