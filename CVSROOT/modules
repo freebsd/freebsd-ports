@@ -7134,6 +7134,7 @@ mshell		ports/misc/mshell
 msmtp		ports/mail/msmtp
 msmtpqueue	ports/mail/msmtpqueue
 msntp		ports/net/msntp
+msort		ports/textproc/msort
 msp430-binutils		ports/devel/msp430-binutils
 msp430-gcc		ports/devel/msp430-gcc
 msp430-gdb		ports/devel/msp430-gdb
