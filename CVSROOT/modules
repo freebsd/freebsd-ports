@@ -14153,6 +14153,7 @@ vamos		ports/games/vamos
 vamps		ports/multimedia/vamps
 varconf		ports/devel/varconf
 varkon		ports/cad/varkon
+varnish		ports/www/varnish
 vat		ports/mbone/vat
 vavoom		ports/games/vavoom
 vb2c		ports/devel/vb2c
