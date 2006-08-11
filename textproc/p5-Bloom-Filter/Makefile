@@ -15,7 +15,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.cpan.org/authors/id/M/MC/MCEGLOWS/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ascope@cpan.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A probabilistic algorithm for doing existence tests
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1

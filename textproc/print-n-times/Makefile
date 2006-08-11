@@ -9,7 +9,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://aaronland.info/xsl/string/print-n-times/
 
-MAINTAINER=	ascope@cpan.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print a string (n) times
 
 NO_BUILD=	yes
