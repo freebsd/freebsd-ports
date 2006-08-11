@@ -1378,6 +1378,7 @@
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Number-Delta
     SUBDIR += p5-Test-Output
+    SUBDIR += p5-Test-Parser
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Pod-Coverage
     SUBDIR += p5-Test-RandomResults
