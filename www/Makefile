@@ -1018,6 +1018,7 @@
     SUBDIR += urchin5
     SUBDIR += usermanager
     SUBDIR += validator
+    SUBDIR += varnish
     SUBDIR += visitors
     SUBDIR += vtiger
     SUBDIR += w3
