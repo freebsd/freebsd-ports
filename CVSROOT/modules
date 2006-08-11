@@ -9908,6 +9908,7 @@ p5-Test-MockRandom	ports/devel/p5-Test-MockRandom
 p5-Test-NoWarnings	ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta	ports/devel/p5-Test-Number-Delta
 p5-Test-Output	ports/devel/p5-Test-Output
+p5-Test-Parser	ports/devel/p5-Test-Parser
 p5-Test-Pod	ports/devel/p5-Test-Pod
 p5-Test-Pod-Coverage	ports/devel/p5-Test-Pod-Coverage
 p5-Test-RandomResults	ports/devel/p5-Test-RandomResults
