@@ -1,0 +1,20 @@
+@comment $FreeBSD$
+%%DATADIR%%/metaf-fullhtml.xsl
+%%DATADIR%%/metaf-html.xsl
+%%DATADIR%%/metaf-lang.xsl
+%%DATADIR%%/metaf-text.xsl
+%%DATADIR%%/metaf.xsl
+%%SITE_PERL%%/metaf2xml/FGFS.pm
+%%SITE_PERL%%/metaf2xml/XML.pm
+%%SITE_PERL%%/metaf2xml/basic.pm
+%%SITE_PERL%%/metaf2xml/parser.pm
+bin/metaf2xml.pl
+www/metaf2xml/cgi-bin/metaf.pl
+www/metaf2xml/htdocs/metaf-fullhtml.xsl
+www/metaf2xml/htdocs/metaf-lang.xsl
+www/metaf2xml/htdocs/metaf.xsl
+@dirrmtry %%DATADIR%%
+@dirrmtry %%SITE_PERL%%/metaf2xml
+@dirrmtry www/metaf2xml/cgi-bin
+@dirrmtry www/metaf2xml/htdocs
+@dirrmtry www/metaf2xml

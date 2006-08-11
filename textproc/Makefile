@@ -270,6 +270,7 @@
     SUBDIR += markdown
     SUBDIR += mathml-xsd
     SUBDIR += meld
+    SUBDIR += metaf2xml
     SUBDIR += mgdiff
     SUBDIR += mguesser
     SUBDIR += mi-aspell
