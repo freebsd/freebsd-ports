@@ -1,3 +1,10 @@
+Version 4.55.10
+===============
+- Upgrade to MailScanner 4.55
+- As Julian removed the documentation from the tarball I did the same in the port.
+  Manpage and html docs removed as well. All documentation can now be found on 
+  the web.
+
 Version 4.54.6_1
 =================
 - Path to gunzip in MailScanner.conf fixed

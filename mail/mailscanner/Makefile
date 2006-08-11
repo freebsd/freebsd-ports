@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.54.6
-PORTREVISION=	2
+PORTVERSION=	4.55.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -52,7 +51,7 @@ OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	1
+PATCHLEVEL=	3
 
 USE_PERL5=	yes
 
@@ -60,9 +59,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
 SUB_FILES=	pkg-message
 
 MAN8=		MailScanner.8
-MAN5=		MailScanner.conf.5
-MLINKS=		MailScanner.8 mailscanner.8 \
-		MailScanner.conf.5 mailscanner.conf.5
+MLINKS=		MailScanner.8 mailscanner.8
 
 .include <bsd.port.pre.mk>
 
@@ -109,7 +106,7 @@ RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
 RUN_DEPENDS+=	bdc:${PORTSDIR}/security/bdc
 .endif
 
-DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
+DOC_FILES=	INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf \
@@ -271,21 +268,16 @@ do-install:
 	#
 	# Step 6: Docs & Manpages
 	#
+	# Manpage
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/CHANGES.port ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
-	cd ${WRKSRC}/docs && \
-		${FIND} * -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \
-		${FIND} * -type f ! -name "*.orig" -exec \
-			${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.endif
-	cd ${WRKSRC}/docs/man && \
-		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5 && \
-		${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
 	# Sophos install script
 	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
+.endif
+	cd ${FILESDIR} && \
+		${INSTALL_MAN} ${MAN8} ${MAN5PREFIX}/man/man8
 	${PERL} -pi -e \
 		's,%%LOCALBASE%%,${LOCALBASE},g; \
 		s,%%PREFIX%%,${PREFIX},g;' \
