@@ -6713,6 +6713,7 @@ metacity-longhorninspirat-theme	ports/x11-themes/metacity-longhorninspirat-theme
 metacity-milk-theme	ports/x11-themes/metacity-milk-theme
 metacity-theme-microgui	ports/x11-themes/metacity-theme-microgui
 metacity-themes	ports/x11-themes/metacity-themes
+metaf2xml	ports/textproc/metaf2xml
 metakit		ports/databases/metakit
 metalog		ports/sysutils/metalog
 metamail	ports/mail/metamail
