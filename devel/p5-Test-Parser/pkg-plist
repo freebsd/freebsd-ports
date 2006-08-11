@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Parser/.packlist
+%%SITE_PERL%%/Test/Metadata.pm
+%%SITE_PERL%%/Test/Parser.pm
+%%SITE_PERL%%/Test/Parser/KernelBuild.pm
+%%SITE_PERL%%/Test/Parser/LHCS.pm
+%%SITE_PERL%%/Test/Parser/LTP.pm
+%%SITE_PERL%%/Test/Parser/NewPyNfs.pm
+%%SITE_PERL%%/Test/Parser/Vmstat.pm
+bin/kernel2trpi
+bin/parse_build_kernel
+bin/parse_ltp
+bin/parse_newpynfs
+bin/parse_sysbench_cpu
+bin/parse_sysbench_fileio
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/Parser
+@dirrmtry %%SITE_PERL%%/Test
