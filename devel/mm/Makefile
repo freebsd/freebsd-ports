@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mm
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	lib/${PORTNAME}
@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Shared memory allocation library for pre-forked process models
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		mm-config.1
 MAN3=		mm.3
