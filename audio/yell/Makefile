@@ -31,9 +31,9 @@ do-build:
 
 do-install:
 .if defined(WITH_SUID)
-	${INSTALL_PROGRAM} -m 4110 ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -m 4110 ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin
 .else
-	${INSTALL_PROGRAM} -m 0100 ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -m 0100 ${WRKSRC}/${PORTNAME} ${TARGETDIR}/bin
 .endif
 
 post-install:
