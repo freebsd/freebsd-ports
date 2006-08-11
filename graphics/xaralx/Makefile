@@ -44,13 +44,12 @@ USE_GCC=	3.4+
 MAN1=	xaralx${PKGNAMESUFFIX}.1
 
 .if !defined(NOPORTDOCS)
-DOCS_IN_WRKSRC=	AUTHORS GPL LICENSE README
+DOCS=	AUTHORS GPL LICENSE README doc/gifutil.txt doc/mtrand.txt
 .if defined(PKGNAMESUFFIX)
-DOCS_IN_DOC=	en/LICENSE en/xaralxHelp.tar.gz gifutil.txt mtrand.txt
+DOCS+=	doc/en/LICENSE
 .else
-DOCS_IN_DOC=	en/xaralx.htm gifutil.txt mtrand.txt
+DOCS+=	doc/en/xaralx.htm
 .endif
-PORTDOCS=	${DOCS_IN_WRKSRC} en ${DOCS_IN_DOC:M*.txt}
 .endif
 
 # make non-conflicting with the slave port
@@ -106,12 +105,14 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/en
-.for d in ${DOCS_IN_WRKSRC}
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}/${d}
+.for d in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}/${d:S|^doc/||}
 .endfor
-.for d in ${DOCS_IN_DOC}
-	${INSTALL_DATA} ${WRKSRC}/doc/${d} ${DOCSDIR}/${d}
-.endfor
+.if defined(PKGNAMESUFFIX)
+	${MKDIR} ${DOCSDIR}/en/xaralxHelp
+	${TAR} -C ${DOCSDIR}/en/xaralxHelp \
+		-zxf ${WRKSRC}/doc/en/xaralxHelp.tar.gz
+.endif
 .endif
 .endif
 

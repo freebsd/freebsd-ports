@@ -33,7 +33,16 @@ bin/xaralx%%PKGNAMESUFFIX%%
 %%EXAMPLESDIR%%/Templates/A4 double page spread.xar
 %%EXAMPLESDIR%%/Templates/U S Letter.xar
 %%EXAMPLESDIR%%/Templates/animation.xar
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/GPL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/en/xaralx.htm
+%%PORTDOCS%%%%DOCSDIR%%/gifutil.txt
+%%PORTDOCS%%%%DOCSDIR%%/mtrand.txt
 @dirrm %%EXAMPLESDIR%%/Designs
 @dirrm %%EXAMPLESDIR%%/Templates
 @dirrm %%EXAMPLESDIR%%
 @dirrmtry %%DESKTOPDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
