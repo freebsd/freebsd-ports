@@ -37,7 +37,7 @@ post-patch:
 		${WRKSRC}/portlintgrep.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/portlint.pl ${PREFIX}/bin/portlint
+	${INSTALL_SCRIPT} ${WRKSRC}/portlint.pl ${TARGETDIR}/bin/portlint
 	${INSTALL_MAN} ${WRKSRC}/portlint.1 ${MAN1PREFIX}/man/man1
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/portlintgrep.pl ${EXAMPLESDIR}/portlintgrep
