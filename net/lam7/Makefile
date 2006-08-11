@@ -20,6 +20,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rsh=ssh
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LDCONFIG=	yes
 
 CONFLICTS=	lam-6.*
 
@@ -383,12 +384,19 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${ARCH} == "i386"
 PLIST_SUB=	I386=""
 .else
+# Note: to enable TotalView on 64 bits platforms,
+# --enable-tv-dll-force should be added to CONFIGURE_ARGS
 PLIST_SUB=	I386="@comment "
 .endif
 
 pre-configure:
 	@${REINPLACE_CMD} -E -e 's|/usr/bin/env perl|${PERL} -w| ; \
 		s|use warnings;||' ${WRKSRC}/tools/mpiexec/mpiexec
+
+post-install:
+.if ${ARCH} != "i386"
+	${RMDIR} ${PREFIX}/lib/lam
+.endif
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
