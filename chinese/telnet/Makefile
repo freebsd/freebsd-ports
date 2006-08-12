@@ -27,7 +27,7 @@ CONTRIB_TELNET=	yes
 .elif exists (${SRCBASE}/usr.bin/telnet)
 SRCDIR=		${SRCBASE}/usr.bin/telnet
 .else
-IGNORE=		"You need to build this port with the source code of telnet"
+IGNORE=		need to build this port with the source code of telnet
 .endif
 
 do-extract:
@@ -52,7 +52,7 @@ pre-build:
 	@cd ${WRKSRC}/libtelnet && ${MAKE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${PREFIX}/bin/zh-telnet
-	@${INSTALL_MAN} ${WRKSRC}/telnet.1 ${PREFIX}/man/man1/${MAN1}
+	@${INSTALL_PROGRAM} ${WRKSRC}/telnet ${TARGETDIR}/bin/zh-telnet
+	@${INSTALL_MAN} ${WRKSRC}/telnet.1 ${MAN1PREFIX}/man/man1/${MAN1}
 
 .include <bsd.port.post.mk>
