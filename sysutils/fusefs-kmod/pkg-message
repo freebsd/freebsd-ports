@@ -2,7 +2,7 @@ In order to automatically load the fuse module on startup, you need to
 set the following settings:
 
  - Set the module path in /etc/sysctl.conf:
-   kern.module_path="%%MODULE_PATH%%"
+   kern.module_path=%%MODULE_PATH%%
 
  - Add fusefs_enable="YES" to your /etc/rc.conf
 
