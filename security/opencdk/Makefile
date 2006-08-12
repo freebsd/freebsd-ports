@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opencdk
-PORTVERSION=	0.5.8
-PORTREVISION=	1
+PORTVERSION=	0.5.9
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/ \
@@ -28,11 +27,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libgcrypt-prefix=${LOCALBASE}
 
 DOCS=		AUTHORS NEWS README THANKS doc/opencdk-api.html
-
-post-patch:
-.for f in encrypt.c main.c misc.c
-	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' ${WRKSRC}/src/${f}
-.endfor
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
