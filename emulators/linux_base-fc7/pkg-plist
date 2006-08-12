@@ -53,6 +53,8 @@ etc/hosts.deny
 etc/inputrc
 etc/issue
 etc/issue.net
+@unexec if cmp -s %D/etc/krb5.conf.dist %D/etc/krb5.conf; then rm -f %D/etc/krb5.conf; fi
+etc/krb5.conf.dist
 etc/ld.so.cache
 etc/ld.so.conf
 etc/logrotate.d/rpm
@@ -100,10 +102,14 @@ lib/libanl-%%GLIBCVER%%.so
 lib/libanl.so.1
 lib/libattr.so.1
 lib/libattr.so.1.1.0
+lib/libblkid.so.1
+lib/libblkid.so.1.0
 lib/libc-%%GLIBCVER%%.so
 lib/libc.so.6
 lib/libcidn-%%GLIBCVER%%.so
 lib/libcidn.so.1
+lib/libcom_err.so.2
+lib/libcom_err.so.2.1
 lib/libcrypt-%%GLIBCVER%%.so
 lib/libcrypt.so.1
 lib/libdb-4.1.so
@@ -111,6 +117,10 @@ lib/libdb-4.2.so
 lib/libdb-4.3.so
 lib/libdl-%%GLIBCVER%%.so
 lib/libdl.so.2
+lib/libe2p.so.2
+lib/libe2p.so.2.3
+lib/libext2fs.so.2
+lib/libext2fs.so.2.4
 lib/libgcc_s-4.0.2-20051126.so.1
 lib/libgcc_s.so.1
 lib/libm-%%GLIBCVER%%.so
@@ -150,12 +160,16 @@ lib/libresolv.so.2
 lib/librt-%%GLIBCVER%%.so
 lib/librt.so.1
 lib/libselinux.so.1
+lib/libss.so.2
+lib/libss.so.2.0
 lib/libtermcap.so.2
 lib/libtermcap.so.2.0.8
 lib/libthread_db-1.0.so
 lib/libthread_db.so.1
 lib/libutil-%%GLIBCVER%%.so
 lib/libutil.so.1
+lib/libuuid.so.1
+lib/libuuid.so.1.2
 lib/obsolete/linuxthreads/libc-%%GLIBCVER%%.so
 lib/obsolete/linuxthreads/libc.so.6
 lib/obsolete/linuxthreads/libm-%%GLIBCVER%%.so
@@ -169,10 +183,27 @@ lib/obsolete/linuxthreads/libthread_db.so.1
 lib/tls/i486/libdb-4.3.so
 lib/tls/i586/libdb-4.3.so
 lib/tls/i686/libdb-4.3.so
+sbin/badblocks
+sbin/blkid
+sbin/debugfs
+sbin/dumpe2fs
+sbin/e2image
+sbin/e2fsck
+sbin/e2label
+sbin/findfs
+sbin/fsck
+sbin/fsck.ext3
+sbin/fsck.ext2
 sbin/install-info
 sbin/ldconfig
+sbin/logsave
+sbin/mkfs.ext3
+sbin/mkfs.ext2
+sbin/mke2fs
 sbin/runuser
+sbin/resize2fs
 sbin/sln
+sbin/tune2fs
 usr/bin/X11
 usr/bin/[
 usr/bin/bashbug-32
@@ -189,6 +220,7 @@ usr/bin/bzless
 usr/bin/bzmore
 usr/bin/captoinfo
 usr/bin/catchsegv
+usr/bin/chattr
 usr/bin/chcon
 usr/bin/cksum
 usr/bin/clear
@@ -222,7 +254,9 @@ usr/bin/du
 usr/bin/env
 usr/bin/expand
 usr/bin/expr
+usr/sbin/ext2online
 usr/bin/factor
+usr/sbin/filefrag
 usr/bin/fmt
 usr/bin/fold
 usr/bin/gencat
@@ -245,8 +279,10 @@ usr/bin/lddlibc4
 usr/bin/locale
 usr/bin/localedef
 usr/bin/logname
+usr/bin/lsattr
 usr/bin/md5sum
 usr/bin/mkfifo
+usr/sbin/mklost+found
 usr/bin/nl
 usr/bin/nohup
 usr/bin/od
@@ -292,12 +328,17 @@ usr/bin/tzselect
 usr/bin/unexpand
 usr/bin/uniq
 usr/bin/users
+usr/bin/uuidgen
 usr/bin/vdir
 usr/bin/wc
 usr/bin/who
 usr/bin/whoami
 usr/bin/yes
 usr/include/popt.h
+usr/kerberos/share/examples/krb5/kdc.conf
+usr/kerberos/share/examples/krb5/krb5.conf
+usr/kerberos/share/examples/krb5/services.append
+usr/kerberos/share/gnats/mit
 usr/lib/X11
 usr/lib/gconv/ANSI_X3.110.so
 usr/lib/gconv/ARMSCII-8.so
@@ -545,6 +586,8 @@ usr/lib/libcurses.so
 usr/lib/libcursesw.so
 usr/lib/libdb-4.3.so
 usr/lib/libdb_cxx-4.3.so
+usr/lib/libdes425.so.3
+usr/lib/libdes425.so.3.0
 usr/lib/libelf-0.108.so
 usr/lib/libelf.so.1
 usr/lib/libform.so
@@ -561,10 +604,28 @@ usr/lib/libglib-1.2.so.0
 usr/lib/libglib-1.2.so.0.0.10
 usr/lib/libgmodule-1.2.so.0
 usr/lib/libgmodule-1.2.so.0.0.10
+usr/lib/libgssapi_krb5.so.2
+usr/lib/libgssapi_krb5.so.2.2
+usr/lib/libgssrpc.so.4
+usr/lib/libgssrpc.so.4.0
 usr/lib/libgthread-1.2.so.0
 usr/lib/libgthread-1.2.so.0.0.10
 usr/lib/libhistory.so.5
 usr/lib/libhistory.so.5.0
+usr/lib/libk5crypto.so.3
+usr/lib/libk5crypto.so.3.0
+usr/lib/libkadm5clnt.so.5
+usr/lib/libkadm5clnt.so.5.1
+usr/lib/libkadm5srv.so.5
+usr/lib/libkadm5srv.so.5.1
+usr/lib/libkdb5.so.4
+usr/lib/libkdb5.so.4.0
+usr/lib/libkrb4.so.2
+usr/lib/libkrb4.so.2.0
+usr/lib/libkrb5.so.3
+usr/lib/libkrb5.so.3.2
+usr/lib/libkrb5support.so.0
+usr/lib/libkrb5support.so.0.0
 usr/lib/libmenu.so
 usr/lib/libmenu.so.5
 usr/lib/libmenu.so.5.4
@@ -5282,6 +5343,13 @@ usr/share/doc/coreutils-5.2.1/textutils/ChangeLog.bz2
 usr/share/doc/coreutils-5.2.1/textutils/NEWS
 usr/share/doc/db4-4.3.27/LICENSE
 usr/share/doc/db4-4.3.27/README
+usr/share/doc/e2fsprogs-1.38/AUTHORS.ext2resize
+usr/share/doc/e2fsprogs-1.38/COPYING.ext2resize
+usr/share/doc/e2fsprogs-1.38/HOWTO.ext2resize
+usr/share/doc/e2fsprogs-1.38/NEWS.ext2resize
+usr/share/doc/e2fsprogs-1.38/README
+usr/share/doc/e2fsprogs-1.38/README.ext2resize
+usr/share/doc/e2fsprogs-1.38/RELEASE-NOTES
 usr/share/doc/fedora-release-4/GPL
 usr/share/doc/fedora-release-4/README
 usr/share/doc/fedora-release-4/README-Accessibility
@@ -5998,6 +6066,7 @@ usr/share/locale/ca/LC_MESSAGES/coreutils.mo
 usr/share/locale/ca/LC_MESSAGES/libc.mo
 usr/share/locale/ca/LC_TIME/coreutils.mo
 usr/share/locale/cs/LC_MESSAGES/coreutils.mo
+usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/cs/LC_MESSAGES/freetype.mo
 usr/share/locale/cs/LC_MESSAGES/grep.mo
 usr/share/locale/cs/LC_MESSAGES/libc.mo
@@ -6010,6 +6079,7 @@ usr/share/locale/da/LC_MESSAGES/popt.mo
 usr/share/locale/da/LC_MESSAGES/rpm.mo
 usr/share/locale/da/LC_TIME/coreutils.mo
 usr/share/locale/de/LC_MESSAGES/coreutils.mo
+usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/de/LC_MESSAGES/freetype.mo
 usr/share/locale/de/LC_MESSAGES/grep.mo
 usr/share/locale/de/LC_MESSAGES/libc.mo
@@ -6025,6 +6095,7 @@ usr/share/locale/en@quot/LC_MESSAGES/bash.mo
 usr/share/locale/en_GB/LC_MESSAGES/libc.mo
 usr/share/locale/eo/LC_MESSAGES/grep.mo
 usr/share/locale/es/LC_MESSAGES/coreutils.mo
+usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/es/LC_MESSAGES/freetype.mo
 usr/share/locale/es/LC_MESSAGES/grep.mo
 usr/share/locale/es/LC_MESSAGES/libc.mo
@@ -6040,6 +6111,7 @@ usr/share/locale/fi/LC_MESSAGES/popt.mo
 usr/share/locale/fi/LC_MESSAGES/rpm.mo
 usr/share/locale/fi/LC_TIME/coreutils.mo
 usr/share/locale/fr/LC_MESSAGES/coreutils.mo
+usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/fr/LC_MESSAGES/freetype.mo
 usr/share/locale/fr/LC_MESSAGES/grep.mo
 usr/share/locale/fr/LC_MESSAGES/libc.mo
@@ -6065,6 +6137,7 @@ usr/share/locale/id/LC_MESSAGES/popt.mo
 usr/share/locale/is/LC_MESSAGES/popt.mo
 usr/share/locale/is/LC_MESSAGES/rpm.mo
 usr/share/locale/it/LC_MESSAGES/coreutils.mo
+usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/it/LC_MESSAGES/grep.mo
 usr/share/locale/it/LC_MESSAGES/libc.mo
 usr/share/locale/it/LC_MESSAGES/popt.mo
@@ -6090,6 +6163,7 @@ usr/share/locale/nb/LC_MESSAGES/coreutils.mo
 usr/share/locale/nb/LC_MESSAGES/libc.mo
 usr/share/locale/nb/LC_TIME/coreutils.mo
 usr/share/locale/nl/LC_MESSAGES/coreutils.mo
+usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/nl/LC_MESSAGES/freetype.mo
 usr/share/locale/nl/LC_MESSAGES/grep.mo
 usr/share/locale/nl/LC_MESSAGES/libc.mo
@@ -6100,6 +6174,7 @@ usr/share/locale/no/LC_MESSAGES/popt.mo
 usr/share/locale/no/LC_MESSAGES/rpm.mo
 usr/share/locale/no/LC_TIME/coreutils.mo
 usr/share/locale/pl/LC_MESSAGES/coreutils.mo
+usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/pl/LC_MESSAGES/grep.mo
 usr/share/locale/pl/LC_MESSAGES/libc.mo
 usr/share/locale/pl/LC_MESSAGES/popt.mo
@@ -6123,6 +6198,7 @@ usr/share/locale/ru/LC_MESSAGES/libc.mo
 usr/share/locale/ru/LC_MESSAGES/popt.mo
 usr/share/locale/ru/LC_MESSAGES/rpm.mo
 usr/share/locale/ru/LC_TIME/coreutils.mo
+usr/share/locale/rw/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/rw/LC_MESSAGES/libc.mo
 usr/share/locale/sk/LC_MESSAGES/coreutils.mo
 usr/share/locale/sk/LC_MESSAGES/libc.mo
@@ -6137,12 +6213,14 @@ usr/share/locale/sl/LC_TIME/coreutils.mo
 usr/share/locale/sr/LC_MESSAGES/popt.mo
 usr/share/locale/sr/LC_MESSAGES/rpm.mo
 usr/share/locale/sv/LC_MESSAGES/coreutils.mo
+usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/sv/LC_MESSAGES/grep.mo
 usr/share/locale/sv/LC_MESSAGES/libc.mo
 usr/share/locale/sv/LC_MESSAGES/popt.mo
 usr/share/locale/sv/LC_MESSAGES/rpm.mo
 usr/share/locale/sv/LC_TIME/coreutils.mo
 usr/share/locale/tr/LC_MESSAGES/coreutils.mo
+usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/tr/LC_MESSAGES/libc.mo
 usr/share/locale/tr/LC_MESSAGES/popt.mo
 usr/share/locale/tr/LC_MESSAGES/rpm.mo
@@ -6187,6 +6265,7 @@ usr/share/man/man1/bzmore.1.gz
 usr/share/man/man1/captoinfo.1m.gz
 usr/share/man/man1/cat.1.gz
 usr/share/man/man1/cd.1.gz
+usr/share/man/man1/chattr.1.gz
 usr/share/man/man1/chcon.1.gz
 usr/share/man/man1/chgrp.1.gz
 usr/share/man/man1/chmod.1.gz
@@ -6254,6 +6333,7 @@ usr/share/man/man1/local.1.gz
 usr/share/man/man1/logname.1.gz
 usr/share/man/man1/logout.1.gz
 usr/share/man/man1/ls.1.gz
+usr/share/man/man1/lsattr.1.gz
 usr/share/man/man1/md5sum.1.gz
 usr/share/man/man1/mkdir.1.gz
 usr/share/man/man1/mkfifo.1.gz
@@ -6328,6 +6408,7 @@ usr/share/man/man1/uniq.1.gz
 usr/share/man/man1/unlink.1.gz
 usr/share/man/man1/unset.1.gz
 usr/share/man/man1/users.1.gz
+usr/share/man/man1/uuidgen.1.gz
 usr/share/man/man1/vdir.1.gz
 usr/share/man/man1/wait.1.gz
 usr/share/man/man1/wc.1.gz
@@ -6342,12 +6423,32 @@ usr/share/man/man5/term.5.gz
 usr/share/man/man5/terminfo.5.gz
 usr/share/man/man7/term.7.gz
 usr/share/man/man8/avcstat.8.gz
+usr/share/man/man8/badblocks.8.gz
+usr/share/man/man8/blkid.8.gz
 usr/share/man/man8/booleans.8.gz
+usr/share/man/man8/debugfs.8.gz
+usr/share/man/man8/dumpe2fs.8.gz
+usr/share/man/man8/e2fsck.8.gz
+usr/share/man/man8/e2image.8.gz
+usr/share/man/man8/e2label.8.gz
+usr/share/man/man8/ext2online.8.gz
+usr/share/man/man8/filefrag.8.gz
+usr/share/man/man8/findfs.8.gz
+usr/share/man/man8/fsck.8.gz
+usr/share/man/man8/fsck.ext3.8.gz
+usr/share/man/man8/fsck.ext2.8.gz
 usr/share/man/man8/getenforce.8.gz
 usr/share/man/man8/getsebool.8.gz
+usr/share/man/man8/logsave.8.gz
 usr/share/man/man8/matchpathcon.8.gz
+usr/share/man/man8/mkfs.ext3.8.gz
+usr/share/man/man8/mkfs.ext2.8.gz
+usr/share/man/man8/mke2fs.8.gz
+usr/share/man/man8/mklost+found.8.gz
+usr/share/man/man8/resize2fs.8.gz
 usr/share/man/man8/rpm.8.gz
 usr/share/man/man8/rpm2cpio.8.gz
+usr/share/man/man8/tune2fs.8.gz
 usr/share/man/man8/selinux.8.gz
 usr/share/man/man8/selinuxenabled.8.gz
 usr/share/man/man8/setenforce.8.gz
@@ -9214,6 +9315,7 @@ var/mail
 @dirrm usr/share/doc/fedora-release-4/stylesheet-images
 @dirrm usr/share/doc/fedora-release-4/figs
 @dirrm usr/share/doc/fedora-release-4
+@dirrm usr/share/doc/e2fsprogs-1.38
 @dirrm usr/share/doc/db4-4.3.27
 @dirrm usr/share/doc/coreutils-5.2.1/textutils
 @dirrm usr/share/doc/coreutils-5.2.1/sh-utils
@@ -9986,6 +10088,11 @@ var/mail
 @dirrm usr/lib/games
 @dirrm usr/lib
 @dirrm usr/include
+@dirrm usr/kerberos/share/examples/krb5
+@dirrm usr/kerberos/share/examples
+@dirrm usr/kerberos/share/gnats
+@dirrm usr/kerberos/share
+@dirrm usr/kerberos
 @dirrm usr/games
 @dirrm usr/etc
 @dirrm usr/doc
