@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 .if defined(WITH_MYSQL)
 USE_MYSQL=	YES
 CONFIGURE_ARGS+= --with-mysql=${LOCALBASE}
-CFLAGS+=	-I${LOCALBASE}/include/mysql
+CFLAGS+=	-I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 CONFIGURE_ENV+=	LIBS="${LIBS}"
 WITH_THREADS=	YES
