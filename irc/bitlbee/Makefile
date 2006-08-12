@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
@@ -27,24 +26,17 @@ USE_GETOPT_LONG=yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	MSN "Enable MSN protocol support" On \
-		MSN6_FEATURES "Enable MSN6 features (icons, etc)" Off \
 		LDAP "Enable LDAP authentication support" Off
 
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 
 .include <bsd.port.pre.mk>
 
-PATCH_DIST_STRIP=	-p1
-
-.if defined(WITH_MSN6_FEATURES)
-PATCHFILES+=	${DISTNAME}-msn6-akke.diff
-.endif
-
 .if defined(WITH_LDAP)
 PATCHFILES+=	${PORTNAME}-1.0-ldap.diff
 .endif
 
-.if !defined(WITHOUT_MSN) || defined(WITH_MSN6_FEATURES)
+.if !defined(WITHOUT_MSN)
 LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--msn=1
 .else
