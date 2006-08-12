@@ -45,6 +45,7 @@
     SUBDIR += gromacs
     SUBDIR += gsmc
     SUBDIR += gsystem
+    SUBDIR += gwyddion
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += isaac-cfd
