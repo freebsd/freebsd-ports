@@ -18,6 +18,6 @@ PLIST_FILES=	bin/9e
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="" HDRS=""
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/9e ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/9e ${TARGETDIR}/bin
 
 .include <bsd.port.mk>
