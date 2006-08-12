@@ -35,7 +35,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/argus_bpf ${TARGETDIR}/sbin/argus
 	${MKDIR} ${TARGETDIR}/argus/archive
 .if !defined(NOPORTDOCS)
- 	${MKDIR} ${DOCSDIR}/html/man
+	${MKDIR} ${DOCSDIR}/html/man
 .for i in  doc/html/man/*.html
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}/html/man
 .endfor
