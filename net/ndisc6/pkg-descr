@@ -1,0 +1,6 @@
+ndisc6 is a collection of diagnostic tools for IPv6 networks,
+including ICMPv6 Neighbor Discovery tools (rdisc6 and ndisc6),
+an UDP, TCP and ICMP-based IPv6 traceroute implementation and
+a simplistic bandwidth measurement program (tcpspray6).
+
+WWW: http://www.simphalempin.com/dev/ndisc6/

@@ -316,6 +316,7 @@
     SUBDIR += nc6
     SUBDIR += ncp
     SUBDIR += ncplib
+    SUBDIR += ndisc6
     SUBDIR += nemesis
     SUBDIR += nepenthes
     SUBDIR += nepim

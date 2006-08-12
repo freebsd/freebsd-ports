@@ -1,0 +1,6 @@
+bin/tcpspray6
+sbin/ndisc6
+sbin/rdisc6
+sbin/tcptraceroute6
+sbin/rltraceroute6
+sbin/tracert6
