@@ -1,8 +1,0 @@
-bin/unzip
-bin/funzip
-bin/unzipsfx
-bin/zipgrep
-bin/zipinfo
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/WHERE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
