@@ -1,0 +1,47 @@
+# New ports collection makefile for:	aa
+# Date created:			11 August 2006
+# Whom:				Frank W. Josellis <frank@dynamical-systems.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aa
+PORTVERSION=	56
+CATEGORIES=	astro
+MASTER_SITES=	http://moshier.net/ \
+		http://www.mirrorservice.org/sites/www.moshier.net/
+
+MAINTAINER=	frank@dynamical-systems.org
+COMMENT=	Self-contained ephemeris calculator
+
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+EXTRACT_BEFORE_ARGS=	-aqo
+
+USE_ZIP=	yes
+MAKEFILE=	makefile
+ALL_TARGET=	aa
+
+SUB_FILES=	pkg-message
+
+PORTDOCS=	read.me readme.404 Readme.FreeBSD
+PLIST_FILES=	bin/aa etc/aa.ini.default
+
+post-patch:
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/kfiles.c
+	@${REINPLACE_CMD} 's|CFLAGS=  -O2|CFLAGS+=|' ${WRKSRC}/makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/aa ${TARGETDIR}/bin
+	@${INSTALL_DATA} ${WRKSRC}/aa.ini ${TARGETDIR}/etc/aa.ini.default
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${CAT} ${PKGMESSAGE} > ${WRKSRC}/Readme.FreeBSD
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

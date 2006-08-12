@@ -3,6 +3,7 @@
 
     COMMENT = Astronomical ports
 
+    SUBDIR += aa
     SUBDIR += accrete
     SUBDIR += boinc-einsteinathome
     SUBDIR += boinc-setiathome-enhanced

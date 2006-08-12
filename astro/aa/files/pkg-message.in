@@ -1,0 +1,17 @@
+---------------------------------------------------
+NOTE: The program has been set up to read its
+initialization from a dotfile in a user's home,
+
+	${HOME}/.aa.ini
+
+or from the system's ini file
+
+	%%PREFIX%%/etc/aa.ini
+
+where the latter has the lower priority. The port
+only installs "%%PREFIX%%/etc/aa.ini.default"
+which shows a sample initialization. To configure
+aa properly, this sample file should be copied to
+one of the above ini files which then needs to be
+edited to match the local requirements.
+---------------------------------------------------
