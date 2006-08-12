@@ -7,6 +7,7 @@
 
 PORTNAME=	dictd-database
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://freebsd.csie.ntu.edu.tw/users/rafan/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/dictd-database/
@@ -25,11 +26,11 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 DICTFILES=	cedict pydict moecomp netterm
 
 do-install:
-	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
-	@${MKDIR} ${PREFIX}/lib/dict
+	${SED} 's|%%PREFIX%%|${TARGETDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
+	@${MKDIR} ${TARGETDIR}/lib/dict
 	for f in ${DICTFILES}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$${f}.dict.dz ${PREFIX}/lib/dict; \
-	  ${INSTALL_DATA} ${WRKSRC}/$${f}.index ${PREFIX}/lib/dict; \
+	  ${INSTALL_DATA} ${WRKSRC}/$${f}.dict.dz ${TARGETDIR}/lib/dict; \
+	  ${INSTALL_DATA} ${WRKSRC}/$${f}.index ${TARGETDIR}/lib/dict; \
 	done
 
 post-install:
