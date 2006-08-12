@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flightgear-aircrafts
-PORTVERSION=	20060629
+PORTVERSION=	20060812
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft/
 DISTFILES=	707_20060324.zip \
 		747_20060315.zip \
-		777-200_20060624.zip \
+		777-200_20060701.zip \
 		A300_20060529.zip \
 		A320_20060405.zip \
 		a4_20060530.zip \
@@ -25,7 +25,7 @@ DISTFILES=	707_20060324.zip \
 		asw20_20050502.zip \
 		b1900d_20060410.zip \
 		b29_20060324.zip \
-		B-52F_20060220.zip \
+		B-52F_20060702.zip \
 		BAC-TSR2_20060220.zip \
 		beech99_20050502.zip \
 		bell206_20050502.zip \
@@ -36,6 +36,7 @@ DISTFILES=	707_20060324.zip \
 		c182_20060315.zip \
 		CanberraBI8_20060604.zip \
 		ch47_20051128.zip \
+		ch53e_0.1.zip \
 		Citation_20051216.zip \
 		colditz_20051108.zip \
 		ComperSwift_20060220.zip \
@@ -51,7 +52,7 @@ DISTFILES=	707_20060324.zip \
 		harrier_20060530.zip \
 		Hurricane_20060419.zip \
 		j22_20050616.zip \
-		KC135_20060619.zip \
+		KC135_20060710.zip \
 		Lightning_20060530.zip \
 		Lockheed1049_1.1.zip \
 		Manta_20060206.zip \
@@ -85,8 +86,6 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Additional aircrafts for the FlightGear flight simulator
 
 RUN_DEPENDS=	${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
-
-BROKEN=		does not fetch
 
 PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 USE_ZIP=	yes
