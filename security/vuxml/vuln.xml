@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="21b7c550-2a22-11db-a6e2-000e0c2e438a">
+    <topic>squirrelmail -- random variable overwrite vulnerability</topic>
+    <affects>
+      <package>
+	<name>ja-squirrelmail</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>squirrelmail</name>
+	<range><ge>1.4.0</ge><lt>1.4.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The SquirrelMail developers report:</p>
+	<blockquote cite="http://www.squirrelmail.org/security/issue/2006-08-11">
+	  <p>A logged in user could overwrite random variables in
+	    compose.php, which might make it possible to read/write
+	    other users' preferences or attachments.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4019</cvename>
+      <url>http://www.squirrelmail.org/security/issue/2006-08-11</url>
+    </references>
+    <dates>
+      <discovery>2006-08-11</discovery>
+      <entry>2006-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90064567-28b1-11db-844d-000c6ec775d9">
     <topic>rubygem-rails -- evaluation of ruby code</topic>
     <affects>
