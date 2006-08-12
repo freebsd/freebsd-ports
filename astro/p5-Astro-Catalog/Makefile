@@ -70,9 +70,9 @@ post-patch:
 
 post-install:
 .for f in ${CONFIG}
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}.default
-.if !exists(${PREFIX}/etc/${f})
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${TARGETDIR}/etc/${f}.default
+.if !exists(${TARGETDIR}/etc/${f})
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${TARGETDIR}/etc/${f}
 .endif
 .endfor
 
