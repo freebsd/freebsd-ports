@@ -1026,3 +1026,11 @@ share/locale/sv/LC_MESSAGES/freevo.po
 @dirrm %%PYTHON_SITELIBDIR%%/freevo/animation
 @dirrm %%PYTHON_SITELIBDIR%%/freevo
 @dirrm etc/freevo
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt

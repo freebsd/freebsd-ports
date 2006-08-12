@@ -7,17 +7,13 @@
 
 PORTNAME=	freevo
 PORTVERSION=	1.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freevo
 
 MAINTAINER=	netcom@sauber.net
 COMMENT=	Open source digital jukebox
-
-NO_BUILD=	yes
-SUB_LIST+=	PORTVERSION=${PORTVERSION}
-SUB_FILES=	pkg-message
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 		${PYTHON_SITELIBDIR}/pyosd/__init__.py:${PORTSDIR}/misc/py-osd \
@@ -27,6 +23,11 @@ RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 		${PYTHON_SITELIBDIR}/mmpython/__init__.py:${PORTSDIR}/multimedia/mmpython \
 		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
 
+NO_BUILD=	yes
+SUB_LIST+=	PORTVERSION=${PORTVERSION}
+SUB_FILES=	pkg-message
+
+USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PKGINSTALL=	pkg-install
