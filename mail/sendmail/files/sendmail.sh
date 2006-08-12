@@ -34,21 +34,29 @@ stop)
 	then
 		kill `head -1 /var/run/sendmail.pid`
 		rm -f /var/run/sendmail.pid
+	else
+		echo "ERROR: pidfile /var/run/sendmail.pid does not exist."
 	fi
 	if test -e /var/spool/clientmqueue/sm-client.pid
 	then
 		kill `head -1 /var/spool/clientmqueue/sm-client.pid`
 		rm -f /var/spool/clientmqueue/sm-client.pid
+	else
+		echo "ERROR: pidfile /var/spool/clientmqueue/sm-client.pid does not exist."
 	fi
 	;;
 restart)
 	if test -e /var/run/sendmail.pid
 	then
 		kill -1 `head -1 /var/run/sendmail.pid`
+	else
+		echo "ERROR: pidfile /var/run/sendmail.pid does not exist."
 	fi
 	if test -e /var/spool/clientmqueue/sm-client.pid
 	then
 		kill -1 `head -1 /var/spool/clientmqueue/sm-client.pid`
+	else
+		echo "ERROR: pidfile /var/spool/clientmqueue/sm-client.pid does not exist."
 	fi
 	;;
 *)
