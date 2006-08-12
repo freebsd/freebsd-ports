@@ -8,7 +8,9 @@
 PORTNAME=	cvs2p4
 PORTVERSION=	2.5.5
 CATEGORIES+=	devel
-MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/cvs2p4/
+MASTER_SITES=	ftp://public.perforce.com/public/perforce/utils/cvs2p4/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	erwin
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
