@@ -27,6 +27,6 @@ do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o undms undms-1.3.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/undms ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/undms ${TARGETDIR}/bin/
 
 .include <bsd.port.mk>
