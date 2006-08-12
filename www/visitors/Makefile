@@ -7,6 +7,7 @@
 
 PORTNAME=	visitors
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hping.org/visitors/
 DISTNAME=	${PORTNAME}-0.7
@@ -20,7 +21,7 @@ PLIST_FILES=	bin/visitors
 PORTDOCS=	doc.html
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/visitors ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/visitors ${TARGETDIR}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
