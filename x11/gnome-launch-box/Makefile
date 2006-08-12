@@ -14,10 +14,9 @@ MASTER_SITE_SUBDIR=	jylefort
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	An application launcher for the GNOME desktop
 
-BROKEN=		fails to install
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 USE_GNOME=	libgnomeui evolutiondataserver gnomemenus gnomedesktop
 
 USE_AUTOTOOLS=	autoconf:259 autoheader:259 automake:19 aclocal:19 libtool:15

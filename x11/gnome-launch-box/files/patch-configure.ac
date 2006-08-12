@@ -1,0 +1,10 @@
+--- configure.ac.orig	Sat Aug 12 19:17:07 2006
++++ configure.ac	Sat Aug 12 19:17:19 2006
+@@ -30,6 +30,7 @@
+ ALL_LINGUAS="fr sv"
+ 
+ AM_GLIB_GNU_GETTEXT
++AC_PROG_INTLTOOL
+ 
+ dnl -----------------------------------------------------------
+ 
