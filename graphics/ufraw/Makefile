@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		ufraw
-PORTVERSION=		0.9
+PORTVERSION=		0.9.1
 CATEGORIES=		graphics gnome
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		infofarmer@FreeBSD.org
 COMMENT=		Read and manipulate raw images from digital cameras
@@ -27,6 +26,7 @@ WANT_GNOME=		yes
 
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			CFLAGS="${CFLAGS} -I ${LOCALBASE}/include"
+CONFIGURE_ARGS=		--mandir=${MANPREFIX}/man
 
 .ifndef WITHOUT_EXIF
 LIB_DEPENDS+=		exif:${PORTSDIR}/graphics/libexif
