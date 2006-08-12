@@ -11,8 +11,8 @@ PORTVERSION=	1.1.1
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-DISTNAME=	${PORTNAME}-1.1
 MASTER_SITE_SUBDIR=	xrally
+DISTNAME=	${PORTNAME}-1.1
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	XRally is a Linux clone of the classic Rally X arcade game
@@ -30,4 +30,10 @@ MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include" \
 		INCLUDES="-I${X11BASE}/include"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+BROKEN=		Doesn't work (yet?) on 7.x
+.endif
+
+.include <bsd.port.post.mk>
