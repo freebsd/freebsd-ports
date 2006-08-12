@@ -20,8 +20,8 @@ CONFIGURE_ARGS=	--disable-suid-install --mandir=${MANPREFIX}/man
 
 MAN1=		tcpspray6.1
 MAN8=		ndisc6.8 rdisc6.8 rltraceroute6.8
-MLINKS=		tcptraceroute6.8 rltraceroute6.8 \
-		tracert6.8 rltraceroute6.8
+MLINKS=		rltraceroute6.8 tcptraceroute6.8 \
+		rltraceroute6.8 tracert6.8 
 
 PORTDOCS=	AUTHORS NEWS README
 
