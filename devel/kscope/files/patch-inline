@@ -1,17 +1,17 @@
---- src/kscope.h.orig	Tue May 10 07:41:32 2005
-+++ src/kscope.h	Thu Jul 28 09:00:22 2005
-@@ -142,7 +142,7 @@
+--- src/kscope.h.orig	Thu Aug  3 14:13:54 2006
++++ src/kscope.h	Wed Aug  9 14:22:09 2006
+@@ -160,7 +160,7 @@
  	bool getSymbol(uint&, QString&, bool bPrompt = true);
  	EditorPage* addEditor(const QString&s);
  	EditorPage* createEditorPage();
 -	inline bool isAutoRebuildEnabled();
 +	bool isAutoRebuildEnabled();
  	void loadOpenFiles();
+ 	void toggleQueryWindow(bool);
  	
- private slots:
---- src/kscope.cpp.orig	Tue May 10 07:41:32 2005
-+++ src/kscope.cpp	Thu Jul 28 08:59:22 2005
-@@ -1118,7 +1118,7 @@
+--- src/kscope.cpp.orig	Wed Aug  9 08:27:55 2006
++++ src/kscope.cpp	Wed Aug  9 14:22:09 2006
+@@ -1215,7 +1215,7 @@
   * @return	true if database auto-rebuild is enabled for the current project,
   *			false otherwise
   */
