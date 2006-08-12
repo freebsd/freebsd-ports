@@ -1,156 +1,174 @@
-/* -*-C++-*-
+/*
+ * Copyright (c) 1980, 1989, 1993, 1994
+ *      The Regents of the University of California.  All rights reserved.
+ * Copyright (c) 2001
+ *      David Rufino <daverufino@btinternet.com>
+ * Copyright (c) 2006
+ *      Stanislav Sedov <ssedov@mbsd.msk.ru>
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *      This product includes software developed by the University of
+ *      California, Berkeley and its contributors.
+ * 4. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
 
-  mntentemu.c++
-
-  Copyright (C) 2002 Alan Eldridge
-  
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 2, or (at your option)
-  any later version.
-  
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-  
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software Foundation,
-  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  
-
-  $Id: mntent_compat.cc,v 1.3 2002/09/08 18:42:20 alane Exp $
-
-  2002/09/08 alane@geeksrus.net
-*/
-
-#ifndef HAVE_MNTENT_H
+/* most of this was ripped from the mount(3) source */
 
 #include "config.h"
 #include "mntent.h"
+#include <stdlib.h>
+#include <string.h>
+#include <sys/param.h>
+#include <sys/ucred.h>
+#include <sys/mount.h>
 
-#include <string>
+static int pos = -1;
+static int mntsize = -1;
+static struct mntent _mntent;
 
-// globals (yuck, but easier for debugging)
-
-mntent	G_mntent;
-int	G_mntpos;
-int	G_mntsize;
-bool	G_mntfOpen = false;
-struct statfs *G_pmntstat = 0;
-
-// map option flags to names
-
-struct optmap {
-  int fl;
-  std::string st;
-};
-
-static struct optmap omap[] = {
-  { MNT_SYNCHRONOUS,	"sync"		},
-  { MNT_NOEXEC,		"noexec"	},
-  { MNT_NOSUID,		"nosuid"	},
-#ifdef MNT_NODEV
-  { MNT_NODEV,		"nodev"		},
+struct {
+	int		m_flag;
+	const char	*m_option;
+} mntoptions[] = {
+	{ MNT_ASYNC,		"async" },
+	{ MNT_NOATIME,		"noatime"},
+	{ MNT_NOEXEC,		"noexec"},
+	{ MNT_NOSUID,		"nosuid"},
+	{ MNT_NOSYMFOLLOW,	"nosymfollow"},
+	{ MNT_SYNCHRONOUS,	"sync"},
+	{ MNT_UNION,		"union"},
+	{ MNT_NOCLUSTERR,	"noclusterr"},
+	{ MNT_NOCLUSTERW,	"noclusterw"},
+	{ MNT_SUIDDIR,		"suiddir"},
+#ifdef MNT_SNAPSHOT
+	{ MNT_SNAPSHOT,		"snapshot"},
 #endif
-  { MNT_UNION,		"union"		},
-  { MNT_ASYNC,		"async"		},
-  { MNT_NOATIME,	"noatime"	},
-  { MNT_NOCLUSTERR,	"noclusterr"	},
-  { MNT_NOCLUSTERW,	"noclusterw"	},
-  { MNT_NOSYMFOLLOW,	"nosymfollow"	},
-  { MNT_SUIDDIR,	"suiddir"	},
-  { 0, "noop" }
+#ifdef MNT_MULTILABEL
+	{ MNT_MULTILABEL,	"multilabel"},
+#endif
+#ifdef MNT_ACLS
+	{ MNT_ACLS,		"acls"},
+#endif
+#ifdef MNT_NODEV
+	{ MNT_NODEV,		"nodev"},
+#endif
 };
 
-// zap everything for clarity
-
-void
-mntent::clear()
-{
-  memset(mnt_fsname, 0, sizeof(mnt_fsname));
-  memset(mnt_dir, 0, sizeof(mnt_dir));
-  memset(mnt_type, 0, sizeof(mnt_type));
-  memset(mnt_opts, 0, sizeof(mnt_opts));
-  mnt_freq = mnt_passno = 0;
-}
-
-// fake it from a statfs struct
-
-mntent *
-mntent::from_statfs(struct statfs *pst)
-{
-
-  clear();
-  strcpy(mnt_fsname, pst->f_mntfromname);
-  strcpy(mnt_dir, pst->f_mntonname);
-  strcpy(mnt_type, pst->f_fstypename);
-  mnt_freq = mnt_passno = 0;
-
-  std::string opts;
-  int fl = pst->f_flags;
-
-  opts += (fl & MNT_RDONLY) ? "ro" : "rw";
-  for (optmap *pmp = omap; pmp->fl != 0; pmp++) {
-    if ((fl & pmp->fl) != 0) {
-      opts += (" " + pmp->st);
-    }
-  }
-  strcpy(mnt_opts, opts.c_str());
-
-  return this;
-}
-
-// "rewind" the mtab file 
-
-FILE *
-setmntent(const char *, char *)
-{
-  if (!G_mntfOpen) {
-    G_mntfOpen = true;
-  }
-
-  G_mntpos = 0;
-  G_mntsize = getmntinfo(&G_pmntstat, MNT_NOWAIT);
-
-  return reinterpret_cast<FILE *>(1);
-}
-
-// return ptr to opt string if present
+#define N_OPTS (sizeof(mntoptions) / sizeof(*mntoptions))
 
 char *
-hasmntopt(const mntent *pmnt, const char *szopt)
+hasmntopt (const struct mntent *mnt, const char *option)
 {
-  std::string opt(szopt);
-  std::string mntopts(pmnt->mnt_opts);
+	int found;
+	char *opt, *optbuf;
 
-  std::string::size_type pos = mntopts.find(opt);
-  const char *szret = (pos == std::string::npos) ? "" : pmnt->mnt_opts + pos;
-
-  return const_cast<char *>(szret);
+	optbuf = strdup(mnt->mnt_opts);
+	found = 0;
+	for (opt = optbuf; (opt = strtok(opt, " ")) != NULL; opt = NULL) {
+		if (!strcasecmp(opt, option)) {
+			opt = opt - optbuf + mnt->mnt_opts;
+			free (optbuf);
+			return (opt);
+		}
+	}
+	free (optbuf);
+	return (NULL);
 }
 
-// get next mntent until all gone, then return 0
+static char *
+catopt (char *s0, const char *s1)
+{
+	size_t newlen;
+	char *cp;
+
+	if (s1 == NULL || *s1 == '\0')
+		return s0;
+
+	if (s0 != NULL) {
+		newlen = strlen(s0) + strlen(s1) + 1 + 1;
+		if ((cp = (char *)realloc(s0, newlen)) == NULL)
+			return (NULL);
+
+		(void)strcat(cp, " ");
+		(void)strcat(cp, s1);
+	} else
+		cp = strdup(s1);
+
+	return (cp);
+}
+
+
+static char *
+flags2opts (int flags)
+{
+	char *res = NULL;
+	int i;
+
+	res = catopt(res, (flags & MNT_RDONLY) ? "ro" : "rw");
+
+	for (i = 0; i < N_OPTS; i++)
+		if (flags & mntoptions[i].m_flag)
+			res = catopt(res, mntoptions[i].m_option);
+	return res;
+}
+
+static struct mntent *
+statfs_to_mntent (struct statfs *mntbuf)
+{
+	static char opts_buf[40], *tmp;
+	
+	_mntent.mnt_fsname = mntbuf->f_mntfromname;
+	_mntent.mnt_dir = mntbuf->f_mntonname;
+	_mntent.mnt_type = mntbuf->f_fstypename;
+	tmp = flags2opts (mntbuf->f_flags);
+	if (tmp) {
+		opts_buf[sizeof(opts_buf) - 1] = '\0';
+		strncpy (opts_buf, tmp, sizeof(opts_buf)-1);
+		free (tmp);
+	} else {
+		*opts_buf = '\0';
+	}
+	_mntent.mnt_opts = opts_buf;	
+	_mntent.mnt_freq = _mntent.mnt_passno = 0;
+	return (&_mntent);
+}
 
 struct mntent *
-getmntent(FILE *)
+getmntent (FILE *fp)
 {
-  if (!G_mntfOpen) {
-    return 0;
-  } else if (G_mntpos < G_mntsize) {
-    return G_mntent.from_statfs(G_pmntstat + G_mntpos++);
-  } else {
-    G_mntfOpen = false;
-    return 0;
-  }
+	struct statfs *mntbuf;
+
+	if (pos == -1 || mntsize == -1)
+		mntsize = getmntinfo (&mntbuf, MNT_NOWAIT);
+
+	++pos;
+	if (pos == mntsize) {
+		pos = mntsize = -1;
+		return (NULL);
+	}
+
+	return (statfs_to_mntent (&mntbuf[pos]));
 }
-
-// "close" the mtab file
-
-int 
-endmntent(FILE *)
-{
-  G_mntfOpen = false;
-  return 0;
-}
-
-#endif /* ifndef HAVE_MNTENT_H */

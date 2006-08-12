@@ -1,0 +1,23 @@
+--- configure.in.orig	Fri Aug 11 22:23:19 2006
++++ configure.in	Fri Aug 11 22:24:34 2006
+@@ -308,11 +308,6 @@
+ dnl If we don't have MNTTYPE_NFS , we croak.
+ dnl
+ 
+-FAM_DECL_IN_MNTENT(MNTTYPE_NFS, ,AC_MSG_ERROR(Didn't find MNTTYPE_NFS in mntent.h))
+-FAM_DECL_IN_MNTENT(MNTTYPE_NFS2, AC_DEFINE(HAVE_MNTTYPE_NFS2))
+-FAM_DECL_IN_MNTENT(MNTTYPE_NFS3, AC_DEFINE(HAVE_MNTTYPE_NFS3))
+-FAM_DECL_IN_MNTENT(MNTTYPE_CACHEFS, AC_DEFINE(HAVE_MNTTYPE_CACHEFS))
+-
+ dnl
+ dnl  Test for bindresvport() prototype.
+ dnl
+@@ -563,8 +558,6 @@
+     man/fam.1m
+     support/Makefile
+     test/Makefile
+-    util/Makefile
+-    util/editconf/Makefile
+ )
+ 
+ dnl 

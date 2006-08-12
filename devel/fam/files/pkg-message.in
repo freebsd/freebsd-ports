@@ -3,17 +3,17 @@
 1. In order to run this port, please add the following line to /etc/rpc if
 it is not already there:
 
-==8<====8<====8<====8<====8<====8<====8<====8<====8<====8<==
+--------------------------------------------------------------------
 sgi_fam		391002
-==8<====8<====8<====8<====8<====8<====8<====8<====8<====8<==
+--------------------------------------------------------------------
 
 2. To run fam from inetd (the recommended method), then please add the
 following lines to /etc/inetd.conf if they are not already there:
 
-==8<====8<====8<====8<====8<====8<====8<====8<====8<====8<==
+--------------------------------------------------------------------
 # FAM: File Alteration Monitor [devel/fam]
-sgi_fam/1-2	stream rpc/tcp wait root /usr/local/bin/fam	fam
-==8<====8<====8<====8<====8<====8<====8<====8<====8<====8<==
+sgi_fam/1-2	stream rpc/tcp wait root %%LOCALBASE%%/bin/fam	fam
+--------------------------------------------------------------------
 
 After modifying /etc/inetd.conf, you must (as root) run:
 
@@ -25,7 +25,7 @@ entry to /etc/rc.conf:
 For 4.x:
 Add portmap_enable="YES" and either reboot or run /usr/sbin/portmap.
 
-For 5.x:
-Add rpcbind_enable="YES" and either reboot or run /usr/sbin/rpcbind.
+For 5.x and later:
+Add rpcbind_enable="YES" and either reboot or run /etc/rc.d/rpcbind start.
 
 ************************************************************************
