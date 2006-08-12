@@ -7,6 +7,7 @@
 
 PORTNAME=	mtf
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
@@ -16,16 +17,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Unix reader for the Microsoft Tape Format used by NT Backup
 
 ALL_TARGET=	# empty
-MAKE_ARGS=	CFLAGS="${CFLAGS}"
-
 PLIST_FILES=	bin/mtf
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README
-.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|CC=|CC?=|" \
+			-e "s|CFLAGS=|CFLAGS?=|" \
+			${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${TARGETDIR}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
