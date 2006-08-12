@@ -8,7 +8,12 @@ SC_GROUP=shoutcast
 SC_USER=shoutcast
 SC_SHELL=/bin/sh
 SC_HOME=/nonexistent
-PW=/usr/sbin/pw
+
+if [ -n "${DESTDIR}" ] ; then
+	PW="/usr/sbin/chroot ${DESTDIR} /usr/sbin/pw"
+else
+	PW="/usr/sbin/pw"
+fi
 
 if ! ${PW} show group ${SC_GROUP} -q >/dev/null; then
 	gid=210
