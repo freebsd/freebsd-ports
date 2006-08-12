@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/devel/gdb66/files/Attic/patch-configure.host,v 1.1 2006-08-12 20:54:37 obrien Exp $
 
 --- gdb/configure.host
 +++ gdb/configure.host
