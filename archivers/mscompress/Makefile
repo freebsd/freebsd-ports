@@ -22,9 +22,9 @@ MAN1=		mscompress.1 msexpand.1
 PLIST_FILES=	bin/mscompress bin/msexpand
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mscompress ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/msexpand ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mscompress.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/msexpand.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/mscompress ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/msexpand ${TARGETDIR}/bin
+	${INSTALL_MAN} ${WRKSRC}/mscompress.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/msexpand.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
