@@ -7,6 +7,7 @@
 
 PORTNAME=	unalz
 PORTVERSION=	0.55
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
 EXTRACT_SUFX=	.tgz
@@ -26,8 +27,11 @@ pre-patch:
 		${TR} -d '\015' < ${WRKSRC}/$$f > ${WRKSRC}/$$f.tmp && \
 		${MV} -f ${WRKSRC}/$$f.tmp ${WRKSRC}/$$f; \
 	done
+	${REINPLACE_CMD} -e 's|CPP = g++|CPP = ${CXX}|' \
+			-e "s|CC  =|CC  ?=|" \
+			${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unalz ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unalz ${TARGETDIR}/bin
 
 .include <bsd.port.mk>
