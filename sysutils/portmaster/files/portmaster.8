@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd August 7, 2006
+.Dd August 12, 2006
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -33,10 +33,12 @@
 .Sh SYNOPSIS
 .Nm
 .Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Op Ar name of port directory in /var/db/pkg
+.Op Ar name of port directory in
+.Pa /var/db/pkg
 .Nm
 .Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Op Ar glob pattern from /var/db/pkg
+.Op Ar glob pattern from
+.Pa /var/db/pkg
 .Nm
 .Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
 .Op Fl p Ar port directory in /usr/ports
@@ -45,18 +47,25 @@
 .Op Ar full path to /usr/ports/foo/bar
 .Nm
 .Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Op Fl o Ar <new port dir in /usr/ports> <installed port>
+.Fl o Ar <new port dir in /usr/ports> <installed port>
 .Nm
 .Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Op Fl r Ar name/glob of port in /var/db/pkg
+.Fl r Ar name/glob of port in
+.Pa /var/db/pkg
 .Nm
-.Op Fl a CGbgnv [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
+.Fl a
 .Nm
-.Op Fl [l|L]
+.Fl [l|L]
 .Nm
-.Op Fl s
+.Op Fl b [D|d]
+.Fl e Ar name of port directory in
+.Pa /var/db/pkg
 .Nm
-.Op Fl h
+.Op Fl b [D|d]
+.Fl s
+.Nm
+.Fl h
 .Pp
 .Sh DESCRIPTION
 The
@@ -76,7 +85,7 @@ it.
 In the rare case where you do need to recompile
 ports which depend on a port you are updating,
 the
-.Op Fl r
+.Fl r
 option exists to accomplish this.
 .Pp
 By default
@@ -116,7 +125,7 @@ under normal circumstances the only user interaction
 required after the port starts building is to answer
 questions about the deletion of stale distfiles.
 This can be eliminated with the
-.Op Fl d
+.Fl d
 option.
 .Sh OPTIONS
 The options are as follows:
@@ -160,6 +169,15 @@ check all ports, update as necessary
 list all installed ports by category
 .It Fl L
 list all installed ports by category, and search for updates
+.It Fl e Ar name of port directory in /var/db/pkg
+Expunge port using
+.Xr pkg_delete 1 ,
+and optionally removing all distfiles.
+Calls
+.Fl s
+mode after it is done expunging in case removing
+the port causes a dependency to no longer be
+necessary.
 .It Fl s
 clean out stale ports that used to be depended on
 .It Fl h
@@ -197,7 +215,8 @@ command:
 Print only the ports that have available updates.
 (Note that the whitespace between single quotes is a tab.)
 .Sh SEE ALSO
-.Xr make 1
+.Xr make 1 ,
+.Xr pkg_delete 1 ,
 .Xr ports 7
 .Sh AUTHORS
 This
