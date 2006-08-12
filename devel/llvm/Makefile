@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	1.8
+PORTVERSION=	1.8a
 CATEGORIES=	devel lang
-MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+MASTER_SITES=	http://llvm.org/releases/${PORTVERSION:S/a//}/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
