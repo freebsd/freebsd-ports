@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	alephone
-PORTVERSION=	20051119
+PORTVERSION=	20060701
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	marathon
 DISTNAME=	AlephOne-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ray@cultofray.net
 COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
 		lua.5:${PORTSDIR}/lang/lua50
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget
 USE_SDL=	image net sdl sound
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-		
+
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
