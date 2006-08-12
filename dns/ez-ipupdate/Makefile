@@ -20,12 +20,12 @@ USE_RC_SUBR=	ez-ipupdate.sh
 GNU_CONFIGURE=	yes
 
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
+	${MKDIR} ${TARGETDIR}/share/examples/${PORTNAME}
 	for f in ${WRKSRC}/example-*.conf; \
 	do \
-		${INSTALL_DATA} $$f ${PREFIX}/share/examples/${PORTNAME}/; \
+		${INSTALL_DATA} $$f ${TARGETDIR}/share/examples/${PORTNAME}/; \
 	done
 	${INSTALL_DATA} ${WRKSRC}/example.conf \
-			${PREFIX}/etc/${PORTNAME}.conf.sample
+			${TARGETDIR}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

@@ -20,12 +20,12 @@ USE_GMAKE=	true
 MAN1=		yaps.1
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/yaps.rc ${PREFIX}/etc/yaps.rc.sample
-	${INSTALL_MAN} ${WRKSRC}/yaps.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/yaps.rc ${TARGETDIR}/etc/yaps.rc.sample
+	${INSTALL_MAN} ${WRKSRC}/yaps.1 ${TARGETDIR}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/yaps
-	${INSTALL_DATA} ${WRKSRC}/yaps.doc ${PREFIX}/share/doc/yaps
-	${INSTALL_DATA} ${WRKSRC}/yaps.html ${PREFIX}/share/doc/yaps
+	@${MKDIR} ${TARGETDIR}/share/doc/yaps
+	${INSTALL_DATA} ${WRKSRC}/yaps.doc ${TARGETDIR}/share/doc/yaps
+	${INSTALL_DATA} ${WRKSRC}/yaps.html ${TARGETDIR}/share/doc/yaps
 .endif
 
 .include <bsd.port.mk>

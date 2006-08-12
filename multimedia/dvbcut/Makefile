@@ -34,7 +34,7 @@ MAN1=		dvbcut.1
 PLIST_FILES=	bin/dvbcut
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/dvbcut ${PREFIX}/bin/
-		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${PREFIX}/man/man1/
+		${INSTALL_PROGRAM} ${WRKSRC}/bin/dvbcut ${TARGETDIR}/bin/
+		${INSTALL_MAN} ${WRKSRC}/dvbcut.1 ${TARGETDIR}/man/man1/
 
 .include <bsd.port.mk>
