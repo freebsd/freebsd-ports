@@ -39,8 +39,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>ja-squirrelmail</name>
-	<name>squirrelmail</name>
 	<range><ge>1.4.0</ge><lt>1.4.8,2</lt></range>
+      </package>
+      <package>
+	<name>squirrelmail</name>
+	<range><ge>1.4.0</ge><lt>1.4.8</lt></range>
       </package>
     </affects>
     <description>
