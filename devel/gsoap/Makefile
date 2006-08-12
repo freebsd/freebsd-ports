@@ -7,7 +7,7 @@
 
 PORTNAME=	gsoap
 PORTVERSION=	2.7.8c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gsoap2
@@ -32,8 +32,8 @@ CONST=	const
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/> (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.c
-	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/> (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.cpp
+	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/>= (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.c
+	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/>= (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.cpp
 	@${REINPLACE_CMD} -e 's/%%CONST%%/${CONST}/' ${WRKSRC}/soapcpp2/stdsoap2.cpp
 
 .include <bsd.port.post.mk>
