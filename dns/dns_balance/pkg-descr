@@ -6,4 +6,9 @@ o Can answer the most proper resolution based on the client's IP
 o Implements "A" record lookups only.  This would be good for
   security.
 
-WWW:	http://openlab.ring.gr.jp/dns_balance/index.html.en
+This (FreeBSD) version differs from original in the following:
+- It works as a daemon
+- Has ability to write messages to logfile
+- Can save it's PID
+
+WWW:	http://www.netlab.is.tsukuba.ac.jp/~yokota/izumi/dns_balance/

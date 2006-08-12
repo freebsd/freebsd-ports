@@ -1,9 +1,9 @@
 sbin/dns_balance
-@unexec if cmp -s %D/etc/dns_balance/addrdb.rb %D/etc/dns_balance/addrdb.rb-dist; then rm -f %D/etc/dns_balance/addrdb.rb; fi
-etc/dns_balance/addrdb.rb-dist
+@unexec if cmp -s %%ETCDIR%%/addrdb.rb %%ETCDIR%%/addrdb.rb.dist; then rm -f %%ETCDIR%%/addrdb.rb; fi
+etc/dns_balance/addrdb.rb.dist
 @exec [ ! -f %B/addrdb.rb ] && cp %B/%f %B/addrdb.rb
-@unexec if cmp -s %D/etc/dns_balance/namespace.rb %D/etc/dns_balance/namespace.rb-dist; then rm -f %D/etc/dns_balance/namespace.rb; fi
-etc/dns_balance/namespace.rb-dist
+@unexec if cmp -s %%ETCDIR%%/namespace.rb %%ETCDIR%%/namespace.rb.dist; then rm -f %%ETCDIR%%/namespace.rb; fi
+etc/dns_balance/namespace.rb.dist
 @exec [ ! -f %B/namespace.rb ] && cp %B/%f %B/namespace.rb
 @dirrm etc/dns_balance
 lib/dns_balance/as_search.rb
@@ -13,14 +13,12 @@ lib/dns_balance/log_writer.rb
 lib/dns_balance/multilog.rb
 lib/dns_balance/util.rb
 @dirrm lib/dns_balance
+%%PORTDOCS%%%%DOCSDIR%%/Q_and_A.dns_balance
 %%PORTDOCS%%%%DOCSDIR%%/Q_and_A.dns_balance.eng
+%%PORTDOCS%%%%DOCSDIR%%/README.dns_balance
 %%PORTDOCS%%%%DOCSDIR%%/README.dns_balance.eng
+%%PORTDOCS%%%%DOCSDIR%%/README.dnsbalance+daemontools
 %%PORTDOCS%%%%DOCSDIR%%/README.dnsbalance+daemontools.eng
-%%PORTDOCS%%%%DOCSDIR%%/ja/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ja/Q_and_A.dns_balance
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.dns_balance
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.dnsbalance+daemontools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/addr
 %%PORTDOCS%%%%EXAMPLESDIR%%/addr.ring
@@ -28,6 +26,7 @@ lib/dns_balance/util.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/make_namespace.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/makedb.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/makeringdb.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/namespace.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/namespace.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/ringupdate.sh
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

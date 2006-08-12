@@ -1,36 +1,42 @@
---- dns_balance.rb.orig	Thu Feb  6 17:39:46 2003
-+++ dns_balance.rb	Sun Jul 18 00:58:12 2004
-@@ -19,6 +19,8 @@
- require 'thread'
- require 'getopts'
+--- dns_balance.rb.orig	Sat Jun 11 02:23:56 2005
++++ dns_balance.rb	Tue Aug  8 23:51:31 2006
+@@ -7,14 +7,7 @@
+ # $Id: dns_balance.rb,v 1.25 2003/06/13 22:07:27 elca Exp $
  
-+$:.unshift "%%PREFIX%%/etc/dns_balance", "%%PREFIX%%/lib/dns_balance"
-+
- require 'datatype.rb'
- require 'multilog.rb'
- require 'log_writer.rb'
-@@ -39,9 +41,11 @@
- # 関数
+ # DNS Balance の存在するパス名
+-if ENV["ROOT"] == nil
+-  warn("\"ROOT\" environment is recommended. Use current directory in this time.")
+-  PREFIX = "."
+-#  exit(111)
+-else
+-  PREFIX = ENV["ROOT"]
+-  $LOAD_PATH.unshift(PREFIX)
+-end
++$LOAD_PATH.unshift("%%PREFIX%%/etc/%%PORTNAME%%", "%%PREFIX%%/lib/%%PORTNAME%%")
+ $LOAD_PATH.freeze
  
- def usage()
--  print "Usage: ruby dns_balance.rb [-lh] [-i ipaddr]\n"
-+  print "Usage: dns_balance.rb [-h] [-i ipaddr] [-l logfile] [-p pidfile]\n"
-+  print "       -l logfile print log to logfile\n"
-   print "       -i ipaddr  listen IP address (default:0.0.0.0)\n"
-   print "       -h         help message\n"
-+  print "       -p pidfile record PID in pidfile\n"
-   print "       --as       Enable AS namespace\n"
-   exit(111)
- end
-@@ -184,12 +188,45 @@
- # main
+ require 'socket'
+@@ -204,6 +197,14 @@
+   opt.on("--as", "Enable AS namespace") {
+     OPT["as"] = true
+   }
++  opt.on("-l LOGFILE", String, "Print log to LOGFILE") {
++    |o|
++    OPT["l"] = o;
++  }
++  opt.on("-p PIDFILE", String, "Record PID to PIDFILE") {
++    |o|
++    OPT["p"] = o;
++  }
+   opt.on_tail("-h", "--help", "Show this help message and exit") {
+     STDERR.printf("%s", opt.to_s)
+     exit(111)
+@@ -212,10 +213,42 @@
+ }
+ OPT.freeze
  
- srand()
--getopts("lh", "i:0.0.0.0", "d:", "as")
-+getopts("h", "i:0.0.0.0", "d:", "as", 'l:', 'p:')
- 
- usage() if $OPT_h
- 
+-ML = MultiLog::new
+-ML.open
 +exit! if fork
 +Process::setsid
 +exit! if fork
@@ -39,14 +45,14 @@
 +STDERR.close
 +
 +$pidfile = nil
-+if $OPT_p
-+  $pidfile = $OPT_p
++if OPT["p"]
++  $pidfile = OPT["p"]
 +  File::open($pidfile, 'w') { |f| f.puts $$ }
 +end
 +
-+$logout = nil
-+if $OPT_l
-+  $logout = File::open($OPT_l, 'a+')
++$logout = nil                                                               
++if OPT["l"]
++  $logout = File::open(OPT["l"], 'a+')
 +  $logout.sync = true
 +end
 +
@@ -58,15 +64,34 @@
 +  }
 +end
 +
- ML = MultiLog.new
--ML.open
-+if $OPT_l
-+  $logout = File::open($OPT_l, 'a+')
++ ML = MultiLog.new
++if OPT["l"] 
++  $logout = File::open(OPT["l"], 'a+')
 +  $logout.sync = true
 +  ML.open($logout)
 +else
 +  ML.open
 +end
  
- ML.log("dir: " + Prefix)
+-ML.log("dir: " + PREFIX)
  ML.log("start")
+ 
+ 
+@@ -224,7 +257,7 @@
+ #
+ Thread::start {
+   loop {
+-    if test(?r, PREFIX + "/addr") || test(?r, "./addr")
++    if test(?r, "%%ETCDIR%%" + "/addr")
+       begin
+ 	load("addr")
+ 
+@@ -234,7 +267,7 @@
+       end
+     end
+ 
+-    #if test(?r, PREFIX + "/addr-once") || test(?r, "./addr-once")
++    #if test(?r, "%%ETCDIR%%" + "/addr-once")
+     #  Thread.exit
+     #end
+ 
