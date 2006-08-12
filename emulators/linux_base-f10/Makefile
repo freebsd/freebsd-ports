@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		6
+PORTREVISION=		7
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -33,6 +33,7 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		coreutils-5.2.1-48.1.${LINUX_RPM_ARCH}.rpm \
 		db4-4.3.27-5.fc4.${LINUX_RPM_ARCH}.rpm \
 		elfutils-libelf-0.108-1.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-1.38-0.FC4.1.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-4-2.noarch.rpm \
 		filesystem-2.3.4-1.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.1.9-2.${LINUX_RPM_ARCH}.rpm \
@@ -48,6 +49,7 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		libselinux-1.23.11-1.1.${LINUX_RPM_ARCH}.rpm \
 		libstdc++-4.0.2-8.fc4.${LINUX_RPM_ARCH}.rpm \
 		libtermcap-2.0.8-41.${LINUX_RPM_ARCH}.rpm \
+		krb5-libs-1.4.1-5.${LINUX_RPM_ARCH}.rpm \
 		ncurses-5.4-19.fc4.${LINUX_RPM_ARCH}.rpm \
 		pcre-5.0-4.1.fc4.${LINUX_RPM_ARCH}.rpm \
 		popt-1.10.1-23.${LINUX_RPM_ARCH}.rpm \
@@ -68,6 +70,7 @@ SRC_DISTFILES+=	basesystem-8.0-5.src.rpm \
 		coreutils-5.2.1-48.1.src.rpm \
 		db4-4.3.27-5.fc4.src.rpm \
 		elfutils-0.108-1.src.rpm \
+		e2fsprogs-1.38-0.FC4.1.src.rpm \
 		fedora-release-4-2.src.rpm \
 		filesystem-2.3.4-1.src.rpm \
 		freetype-2.1.9-2.src.rpm \
@@ -78,6 +81,7 @@ SRC_DISTFILES+=	basesystem-8.0-5.src.rpm \
 		acl-2.2.32-1.FC4.2.src.rpm \
 		attr-2.4.24-1.FC4.1.src.rpm \
 		gcc-4.0.2-8.fc4.src.rpm \
+		krb5-1.4.1-5.src.rpm \
 		libselinux-1.23.11-1.1.src.rpm \
 		libtermcap-2.0.8-41.src.rpm \
 		ncurses-5.4-19.fc4.src.rpm \
@@ -171,6 +175,7 @@ do-build:
 # install only ${PREFIX}/etc/nsswitch.conf.dist
 #
 	@${MV} ${WRKSRC}/etc/nsswitch.conf ${WRKSRC}/etc/nsswitch.conf.dist
+	@${MV} ${WRKSRC}/etc/krb5.conf ${WRKSRC}/etc/krb5.conf.dist
 
 # Fix usr/bin/*db4* permissions to allow "portupgrade -s"
 	@${CHMOD} u+w ${WRKSRC}/usr/bin/*db4*

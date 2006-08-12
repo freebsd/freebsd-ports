@@ -27,6 +27,16 @@ POST-INSTALL)
 		cp ${PKG_PREFIX}/etc/nsswitch.conf.dist \
 			${PKG_PREFIX}/etc/nsswitch.conf
 	fi
+	if [ ! -f ${PKG_PREFIX}/etc/krb5.conf ]; then
+		
+		if [ -f /etc/krb5.conf ]; then
+			ln -s /etc/krb5.conf ${PKG_PREFIX}/etc
+		else
+			cp ${PKG_PREFIX}/etc/krb5.conf.dist \
+				${PKG_PREFIX}/etc/krb5.conf
+		fi
+
+	fi
 	if [ ! -f ${PKG_PREFIX}/etc/yp.conf ]; then
 		cp ${PKG_PREFIX}/etc/yp.conf.sample ${PKG_PREFIX}/etc/yp.conf
 	fi
