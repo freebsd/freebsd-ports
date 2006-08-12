@@ -162,6 +162,7 @@ a2dev		ports/devel/a2dev
 a2ps-a4		ports/print/a2ps-a4
 a2ps-letter	ports/print/a2ps-letter
 a2ps-letterdj	ports/print/a2ps-letterdj
+aa		ports/astro/aa
 aaccli		ports/sysutils/aaccli
 aacgain		ports/audio/aacgain
 aafid2		ports/security/aafid2
