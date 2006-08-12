@@ -26,7 +26,7 @@ PORTDOCS=	README.TXT
 WRKSRC=		${WRKDIR}
 
 post-patch:
-	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
+	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		-e 's|=sc_serv.log|=/var/log/sc_serv.log|' \
 		-e 's|=sc_w3c.log|=/var/log/sc_w3c.log|' \
 		-e 's|ScreenLog=1|ScreenLog=0|' \
@@ -36,19 +36,19 @@ post-patch:
 		${WRKSRC}/sc_serv.conf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${PREFIX}/sbin
-	${MKDIR} ${PREFIX}/etc/shoutcast
-	${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast/sc_serv.conf.sample
-	@[ -f ${PREFIX}/etc/shoutcast/sc_serv.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast/sc_serv.conf
+	@${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${TARGETDIR}/sbin
+	@${MKDIR} ${TARGETDIR}/etc/shoutcast
+	@${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${TARGETDIR}/etc/shoutcast/sc_serv.conf.sample
+	@[ -f ${TARGETDIR}/etc/shoutcast/sc_serv.conf ] || \
+		${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${TARGETDIR}/etc/shoutcast/sc_serv.conf
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
 .endif
 
 post-install:
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${BRANDELF} -t Linux ${PREFIX}/sbin/sc_serv
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${BRANDELF} -t Linux ${TARGETDIR}/sbin/sc_serv
 
 .include <bsd.port.mk>
