@@ -6,24 +6,23 @@
 #
 
 PORTNAME=		fam
-PORTVERSION=		2.6.9
-PORTREVISION=		6
+PORTVERSION=		2.6.10
 CATEGORIES=		devel
 MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
-PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=		freebsd-mntent.patch # freebsd-build.patch
 DIST_SUBDIR=		${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	A file alteration monitor
 
-CFLAGS+=		-Wno-deprecated
+CFLAGS+=	-Wno-deprecated
 
-USE_AUTOTOOLS=	automake:15 autoconf:253
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:259 libtool:15
+AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_GNOME=	gnometarget
+USE_LDCONFIG=	yes
+ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+SUB_FILES=	pkg-message
 
 MAN1=		fam.1m
 MAN3=		fam.3x
@@ -35,11 +34,7 @@ pre-configure:
 	@${MV} ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.am.orig
 	@${SED} -e s/util// -e /SUBDIRS/q \
 		<${WRKSRC}/Makefile.am.orig >${WRKSRC}/Makefile.am
-	@${RM} -f ${WRKSRC}/Makefile.am.orig
-	@${RM} -f ${WRKSRC}/fam/mntent*
 	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/fam
-	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
-		-e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

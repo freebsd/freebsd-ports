@@ -5,4 +5,5 @@ lib/libfam.a
 lib/libfam.la
 lib/libfam.so
 lib/libfam.so.0
-@unexec rm -f %D/etc/rc.d/fam.sh || true
+@comment For non-standart prefixes
+@unexec rm -f %D/libdata/ldconfig/fam || true
