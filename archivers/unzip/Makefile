@@ -19,6 +19,8 @@ COMMENT?=	List, test and extract compressed files in a ZIP archive
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
 MAKE_ENV=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK"
+PLIST_FILES=	bin/unzip bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
+PORTDOCS=	README WHERE
 MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 .if defined(WITH_UNZIP_UNREDUCE)
@@ -50,17 +52,17 @@ pre-build:
 
 do-install:
 .for file in funzip unzip unzipsfx
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${TARGETDIR}/bin
 .endfor
-	${LN} -sf unzip ${PREFIX}/bin/zipinfo
-	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${PREFIX}/bin
+	${LN} -sf unzip ${TARGETDIR}/bin/zipinfo
+	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${TARGETDIR}/bin
 .for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${f} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN1PREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/unzip
-.for f in README WHERE
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/unzip
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
