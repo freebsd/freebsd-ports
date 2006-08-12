@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.101
+# Local version: 1.110
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
@@ -39,7 +39,8 @@ usage () {
 	echo "${0##*/} [Common flags] -r <name/glob of port directory in $pdb>"
 	echo "${0##*/} -a [Common flags]"
 	echo "${0##*/} -[l|L]"
-	echo "${0##*/} -s"
+	echo "${0##*/} [-b D|d] -e <full name of port directory in $pdb>"
+	echo "${0##*/} [-b D|d] -s"
 	echo "${0##*/} -h"
 	echo ''
 	echo "-C prevents 'make clean' being run in port directory"
@@ -61,11 +62,13 @@ usage () {
 	echo ''
 	echo '-l list installed ports by category'
 	echo '-L list installed ports by category, and search for updates'
+	echo ''
+	echo '-e expunge a port via pkg_delete, and removing its distfiles'
 	echo '-s clean out stale ports that used to be depended on'
 	echo ''
 	echo '-h display this help file'
 	echo ''
-	exit 1
+	exit ${1:-1}
 }
 
 fail () {
@@ -73,6 +76,44 @@ fail () {
 	echo "===>>> $1"
 	echo "===>>> Aborting update"
 	exit 1
+}
+
+kill_bad_children () {
+	# Make parent_N global in case PIDs are random,
+	# and we have to come back in here after them.
+	local rc pid ppid command
+
+	rc=0
+	ps -axo pid,ppid,command | while read pid ppid command; do
+		case "$ppid" in
+		1)	case "$command" in
+			*" $0 "*)	rc=1 ; parent_2=$pid ; kill $pid ;;
+			esac
+			;;
+		$parent_2)	
+			case "$command" in
+			'make checksum') rc=1 ; parent_3=$pid ; kill $pid ;;
+			esac
+			;;
+		$parent_3|1)
+			case "$command" in
+			\[sh\]|*'/sh '*) rc=1 ; parent_4=$pid ; kill $pid ;;
+			esac
+			;;
+		$parent_4|1)
+			case "$command" in
+			\[sh\]|*'/sh '*) rc=1 ; parent_5=$pid ; kill $pid ;;
+			esac
+			;;
+		$parent_5|1)
+			case "$command" in
+			*'/fetch '*)	rc=1 ; kill $pid ;;
+			esac
+			;;
+		esac
+	done
+
+	return $rc
 }
 
 trap_exit () {
@@ -100,9 +141,13 @@ trap_exit () {
 			fi
 			rm -f $file
 		done
+
+		while ! kill_bad_children ; do
+			# cheap way to keep it looping
+		done
 	fi
 
-	safe_exit
+	safe_exit 1
 }
 
 safe_exit () {
@@ -126,7 +171,7 @@ safe_exit () {
 		fi
 	fi
 
-	exit 0
+	exit ${1:-0}
 }
 
 update_contents () {
@@ -497,6 +542,105 @@ req_by_error () {
 	read DISCARD
 }
 
+find_distdir () {
+	distdir=`make $MAKE_ARGS -V DISTDIR`
+	dist_subdir=`make $MAKE_ARGS -V DIST_SUBDIR`
+	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
+}
+
+find_and_delete_distfiles () {
+	local distpattern file DELORNOT
+
+	distpattern=${1%[_-]*}
+	[ "$distpattern" = "$old_distpattern" ] && return 0
+	for file in ${distpattern}*; do
+		# This generally means the pattern did not match
+		case "$file" in
+		*\*)	old_distpattern=$distpattern
+			find_and_delete_distfiles ${distpattern}
+			continue
+			;;
+		esac
+
+		case "$distfiles" in
+		*${file}*)
+			test -n "$VERBOSE" &&
+			    echo "===>>> Keeping new distfile: $file"
+			continue	# Do not delete current version
+			;;
+		*)	[ ! -d "$file" ] || continue
+			if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
+				echo "===>>> Deleting stale distfile: $file"
+				rm -f $file
+				continue
+			fi
+
+			echo -n "===>>> Delete $file? [n] "
+			read DELORNOT
+			case "$DELORNOT" in
+			[yY])	rm -f $file ;;
+			esac
+			;;
+		esac
+	done
+}
+
+delete_stale_distfiles () {
+	# distfiles is used below
+	local distfile file DELORNOT
+
+	find_distdir
+
+	distfiles=`make $MAKE_ARGS -V DISTFILES`
+	distfiles="$distfiles `make $MAKE_ARGS -V PATCHFILES`"
+	cd $distdir || fail "cd to $distdir failed!"
+	for distfile in $distfiles; do
+		find_and_delete_distfiles $distfile
+	done
+}
+
+delete_all_distfiles () {
+	local do_delete DELORNOT
+
+	if ! cd $pd/$1; then
+		echo "===>>> No $pd/$1 to cd to in order to delete"
+		echo "       old distfiles, remove by hand if desired"
+	else
+		if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
+			echo "===>>> Deleting all distfiles for $1"
+			do_delete=1
+		else
+			echo -n "===>>> Delete all distfiles for ${1}? [n] "
+			read DELORNOT
+			case "$DELORNOT" in
+			[yY])	do_delete=1 ;;
+			*)	delete_stale_distfiles ;;
+			esac
+		fi
+
+		if [ -n "$do_delete" ]; then
+			find_distdir
+			delete_stale_distfiles
+			rm -f $distfiles
+			find $pd/distfiles/ -type d -empty -delete
+		fi
+	fi
+}
+
+backup_package () {
+	echo "===>>> Creating a backup package for old version $1"
+	pkg_create -b $1 || fail "Backup package creation failed for $1"
+	[ -z "$pkgrep" ] &&
+	    pkgrep=`make $MAKE_ARGS -f $pd/Mk/bsd.port.mk -V PKGREPOSITORY`
+	if [ -d "$pkgrep" ]; then
+		mv ${1}.* $pkgrep/ &&
+		    echo "	===>>> Package can be found in $pkgrep"
+	else
+		mv ${1}.* $HOME/ &&
+		    echo "	===>>> Package can be found in $HOME"
+	fi
+}
+
 pd=`make $MAKE_ARGS -f/dev/null -V PORTSDIR 2>/dev/null`
 pdb=`make $MAKE_ARGS -f/dev/null -V PKG_DBDIR 2>/dev/null`
 
@@ -515,7 +659,7 @@ fi
 : ${pdb:=/var/db/pkg}
 
 # Save switches for potential child processes
-while getopts 'CDGLabdfghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
+while getopts 'CDGLabde:fghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
 	case "${COMMAND_LINE_ARGUMENT}" in
 	C)	DONT_PRE_CLEAN=yes; ARGS="-C $ARGS" ;;
 	D)	DONT_SCRUB_DISTFILES=yes; ARGS="-D $ARGS" ;;
@@ -524,12 +668,13 @@ while getopts 'CDGLabdfghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
 	a)	UPDATE_ALL=yes ;;
 	b)	BACKUP=yes; ARGS="-b $ARGS" ;;
 	d)	ALWAYS_SCRUB_DISTFILES=yes; ARGS="-d $ARGS" ;;
+	e)	EXPUNGE=$OPTARG ;;
 	f)	FORCE=yes
 		FORCE_DONE_LIST=':'
 		export FORCE FORCE_DONE_LIST
 		;;
 	g)	MAKE_PACKAGE=yes; ARGS="-g $ARGS" ;;
-	h)	usage ;;
+	h)	usage 0 ;;
 	i)	INTERACTIVE_UPDATE=yes; ARGS="-i $ARGS" ;;
 	l)	LIST=yes ;;
 	m)	MAKE_ARGS=$OPTARG; ARGS="-m $MAKE_ARGS $ARGS" ;;
@@ -598,6 +743,25 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
 	exit 0
 fi
 
+if [ -n "$EXPUNGE" ]; then
+	if [ -d "$pdb/$EXPUNGE" ]; then
+		origin=`origin_from_pdb $pdb/$EXPUNGE`
+
+		[ -n "$BACKUP" ] && backup_package $EXPUNGE
+
+		echo "===>>> Running pkg_delete -f $EXPUNGE"
+		pkg_delete -f $EXPUNGE
+		if [ -z "$DONT_SCRUB_DISTFILES" ]; then
+			delete_all_distfiles $origin
+		fi
+		exec $0 -s $ARGS
+	else
+		fail "No such directory/port: $pdb/$EXPUNGE"
+	fi
+
+	exit 0	# Should not be reached
+fi
+
 if [ -n "$CLEAN_STALE" ]; then
 	if [ -z "$do_not_delete" ]; then
 		do_not_delete=':'
@@ -606,27 +770,41 @@ if [ -n "$CLEAN_STALE" ]; then
 
 	for file in `find $pdb/ -name \+REQUIRED_BY -empty` ; do
 		dir="${file%/+REQUIRED_BY}"
+		iport=${dir#$pdb/}
 
 		case "$do_not_delete" in
-		*:${dir#$pdb/}:*)	continue ;;
+		*:${iport}:*)	continue ;;
 		esac
+
+		echo ''
 
 		origin=`origin_from_pdb $dir`
 		deplist=`grep DEPORIGIN:$origin$ $pdb/*/+CONTENTS`
-		if [ -z "$deplist" ]; then
-			echo -n "===>>> ${dir#$pdb/} is no longer depended on, delete? [n] "
-			read YESNO
-
-			case "$YESNO" in
-			[yY])	pkg_delete -f ${dir#$pdb/}
-				exec $0 -s
-				;;
-			*)	do_not_delete="${do_not_delete}${dir#$pdb/}:" ;;
-			esac
-		else
-			echo "===>>> Warning: unrecorded dependencies on ${dir#$pdb/}:"
+		if [ -n "$deplist" ]; then
+		echo "===>>> Warning: unrecorded dependencies on ${iport}:"
 			echo $deplist
+			continue
 		fi
+
+		echo -n "===>>> ${iport} is no longer depended on, delete? [n] "
+		read YESNO
+		case "$YESNO" in
+		[yY])	[ -n "$BACKUP" ] && backup_package $iport
+
+			pkg_delete -f ${iport}
+			if [ -z "$DONT_SCRUB_DISTFILES" ]; then
+				delete_all_distfiles $origin
+			fi
+			exec $0 -s $ARGS
+			;;
+		*) echo -n "	===>>> Remove empty +REQUIRED_BY file? [n] "
+			read DELORNOT
+			case "$DELORNOT" in
+			[yY])	rm -f $file ;;
+			*)	do_not_delete="${do_not_delete}${iport}:" ;;
+			esac
+			;;
+		esac
 	done
 
 	exit 0
@@ -981,10 +1159,7 @@ fi
 # Ignore if no old port exists
 if [ -n "$upg_port" ]; then
 	if [ -n "$BACKUP" ]; then
-		echo "===>>> Creating a backup package for $upg_port in $HOME"
-		pkg_create -b $upg_port ||
-		    fail "Backup package creation failed for $upg_port"
-		mv ${upg_port}.* $HOME/
+		backup_package $upg_port
 	fi
 	pkg_delete -f $upg_port || fail 'pkg_delete failed'
 
@@ -1001,12 +1176,19 @@ fw=Installation
 if [ -n "$MAKE_PACKAGE" ]; then
 	aw=package
 	fw=Packaging
-	echo "===>>> Creating a package for $new_port in $HOME"
+	echo "===>>> Creating a package for new version $new_port"
 fi
 make $MAKE_ARGS $aw clean NOCLEANDEPENDS=yes || fail "$fw of new port failed"
 
 if [ -n "$MAKE_PACKAGE" ]; then
-	mv ${new_port}.* $HOME/
+	[ -z "$pkgrep" ] &&
+	    pkgrep=`make $MAKE_ARGS -f $pd/Mk/bsd.port.mk -V PKGREPOSITORY`
+	if [ -d "$pkgrep" ]; then
+		echo "	===>>> Package can be found in $pkgrep"
+	else
+		mv ${new_port}.* $HOME/ &&
+		    echo "	===>>> Package can be found in $HOME"
+	fi
 fi
 
 # By now, if this file exists, it should be authoritative
@@ -1050,88 +1232,11 @@ echo "===>>> Upgrade for $upg_port to $new_port succeeded"
 
 test -n "$FORCE" && FORCE_DONE_LIST="${FORCE_DONE_LIST}${portdir}:"
 
-find_distdir () {
-	distdir=`make $MAKE_ARGS -V DISTDIR`
-	dist_subdir=`make $MAKE_ARGS -V DIST_SUBDIR`
-	test -n "$dist_subdir" && distdir="${distdir}/${dist_subdir}"
-}
-
-find_and_delete_distfiles () {
-	local distpattern file DELORNOT
-
-	distpattern=${1%[_-]*}
-	[ "$distpattern" = "$old_distpattern" ] && return 0
-	for file in ${distpattern}*; do
-		# This generally means the pattern did not match
-		case "$file" in
-		*\*)	old_distpattern=$distpattern
-			find_and_delete_distfiles ${distpattern}
-			continue
-			;;
-		esac
-
-		case "$distfiles" in
-		*${file}*)
-			test -n "$VERBOSE" &&
-			    echo "===>>> Keeping new distfile: $file"
-			continue	# Do not delete current version
-			;;
-		*)	[ ! -d "$file" ] || continue
-			if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
-				echo "===>>> Deleting stale distfile: $file"
-				rm -f $file
-				continue
-			fi
-
-			echo -n "===>>> Delete $file? [n] "
-			read DELORNOT
-			case "$DELORNOT" in
-			[yY])	rm -f $file ;;
-			esac
-			;;
-		esac
-	done
-}
-
-delete_stale_distfiles () {
-	# distfiles is used below
-	local distfile file DELORNOT
-
-	find_distdir
-
-	distfiles=`make $MAKE_ARGS -V DISTFILES`
-	distfiles="$distfiles `make $MAKE_ARGS -V PATCHFILES`"
-	cd $distdir || fail "cd to $distdir failed!"
-	for distfile in $distfiles; do
-		find_and_delete_distfiles $distfile
-	done
-}
-
 if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 	if [ -z "$oldportdir" ]; then
 		delete_stale_distfiles
 	else
-		if ! cd $pd/$oldportdir; then
-			echo "===>>> No $oldportdir to cd to in order to delete"
-			echo "       old distfiles, remove by hand if desired"
-		else
-		echo -n "===>>> Delete all distfiles for ${oldportdir#*/}? [n] "
-			read DELORNOT
-			case "$DELORNOT" in
-			[yY])	find_distdir
-				if [ -n "$dist_subdir" ]; then
-					cd $distdir && rm -r *
-				else
-					delete_stale_distfiles
-					rm $distfiles
-				fi
-			echo "===>>> Deleting empty directories (if any)"
-				find $pd/distfiles -type d -empty -print -delete
-				;;
-			*)	delete_stale_distfiles ;;
-			esac
-		fi
-
+		delete_all_distfiles ${oldportdir}
 		cd $pd/$newportdir && delete_stale_distfiles
 	fi
 fi
