@@ -39,7 +39,9 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-BROKEN=		does not build
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on pointyhat, report if you have similar problems
+.endif
 
 .if ${ARCH} == i386
 WORDSIZE=32
