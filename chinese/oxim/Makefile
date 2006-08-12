@@ -29,14 +29,14 @@ USE_X_PREFIX=	yes
 USE_GNOME=
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
-		--with-conf-dir=${PREFIX}/etc/${PORTNAME}
+		--with-conf-dir=${TARGETDIR}/etc/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -81,12 +81,12 @@ PLIST_SUB+=	NLS=""
 #.endif
 
 post-patch:
-	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' \
+	${REINPLACE_CMD} 's|%%PREFIX%%|${TARGETDIR}|' \
 			${WRKSRC}/src/gtk-immodule/gtkintl.h
 
 post-install:
 .if !defined(WITHOUT_GTK2)
-	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
+	@gtk-query-immodules-2.0 > ${TARGETDIR}/etc/gtk-2.0/gtk.immodules
 .endif
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type ${PKG_INFO} -D ${PKGNAME}
