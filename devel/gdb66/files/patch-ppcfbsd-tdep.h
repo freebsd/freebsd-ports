@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/devel/gdb66/files/Attic/patch-ppcfbsd-tdep.h,v 1.1 2006-08-12 20:54:37 obrien Exp $
 
 --- /dev/null
 +++ gdb/ppcfbsd-tdep.h

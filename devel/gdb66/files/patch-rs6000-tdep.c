@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/devel/gdb66/files/Attic/patch-rs6000-tdep.c,v 1.1 2006-08-12 20:54:37 obrien Exp $
 
 --- gdb/rs6000-tdep.c
 +++ gdb/rs6000-tdep.c

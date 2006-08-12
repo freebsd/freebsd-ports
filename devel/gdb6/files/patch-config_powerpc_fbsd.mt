@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/devel/gdb6/files/Attic/patch-config_powerpc_fbsd.mt,v 1.1 2006-08-12 20:54:37 obrien Exp $
 
 --- /dev/null
 +++ gdb/config/powerpc/fbsd.mt
