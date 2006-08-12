@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	11.5
+PORTVERSION=	11.6
 CATEGORIES=	misc
-MASTER_SITES=	http://www.lafn.org/~av832/ \
-		http://bsd1.csme.ru/myports/ \
-		http://bsd2.csme.ru/myports/ \
-		http://bsd3.csme.ru/myports/ \
-		http://voodoo.bawue.com/download/
+MASTER_SITES=	http://www.lafn.org/~av832/ CSME
 PKGNAMEPREFIX=	health-
 
 MAINTAINER=	miwi@FreeBSD.org
