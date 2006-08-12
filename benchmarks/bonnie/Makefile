@@ -23,7 +23,7 @@ MAN1=		bonnie.1
 PLIST_FILES=	bin/bonnie
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${PREFIX}/bin/bonnie
-	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${TARGETDIR}/bin/bonnie
+	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${TARGETDIR}/man/man1
 
 .include <bsd.port.mk>

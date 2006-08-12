@@ -20,7 +20,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 do-install:
-		tar -C ${PREFIX}/lib -xzf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-		${SH} ${FILESDIR}/post-install ${PREFIX}
+		tar -C ${TARGETDIR}/lib -xzf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+		${SH} ${FILESDIR}/post-install ${TARGETDIR}
 
 .include <bsd.port.mk>

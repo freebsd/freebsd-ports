@@ -41,7 +41,7 @@ MAN8=		yersinia.8
 PLIST_FILES=	sbin/yersinia
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/
-		${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${PREFIX}/man/man8/
+		${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${TARGETDIR}/sbin/
+		${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${TARGETDIR}/man/man8/
 
 .include <bsd.port.post.mk>

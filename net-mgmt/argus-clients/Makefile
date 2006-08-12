@@ -26,8 +26,8 @@ CONFIGURE_ARGS+= --with-sasl=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include/sasl
 .endif
 
-DOCSDIR?=	${PREFIX}/share/doc/argus-2.0
-EXAMPLESDIR?=	${PREFIX}/share/examples/argus-2.0
+DOCSDIR?=	${TARGETDIR}/share/doc/argus-2.0
+EXAMPLESDIR?=	${TARGETDIR}/share/examples/argus-2.0
 
 MAN1=	ra.1 racount.1 ragator.1 rahosts.1 ramon.1 ranonymize.1 rapolicy.1 \
 	rasort.1 rastrip.1 raxml.1
@@ -37,20 +37,20 @@ do-install:
 .for i in ra racount ragator ragrep rahistogram rahosts \
 		ramon ranonymize rapath rapolicy rarpwatch raseq \
 		rasort rasrvstats rastrip ratop raxml
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin/$i
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${TARGETDIR}/bin/$i
 .endfor
 .for i in argusbug ragraph
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${PREFIX}/bin/$i
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${TARGETDIR}/bin/$i
 .endfor
 .for i in argus_client.a argus_common.a argus_parse.a
-	${INSTALL_DATA} ${WRKSRC}/lib/$i ${PREFIX}/lib/$i
+	${INSTALL_DATA} ${WRKSRC}/lib/$i ${TARGETDIR}/lib/$i
 .endfor
-	${MKDIR} ${PREFIX}/argus/archive
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/argus
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/argus
-	${MKDIR} ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/cons_def.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${PREFIX}/include
+	${MKDIR} ${TARGETDIR}/argus/archive
+	${INSTALL_DATA} ${WRKSRC}/README ${TARGETDIR}/argus
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${TARGETDIR}/argus
+	${MKDIR} ${TARGETDIR}/include
+	${INSTALL_DATA} ${WRKSRC}/include/cons_def.h ${TARGETDIR}/include
+	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${TARGETDIR}/include
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/support/README ${EXAMPLESDIR}
 .for i in Archive Config System Tools Xml
@@ -70,10 +70,10 @@ do-install:
 .endif
 .if !defined(NOMAN)
 .for i in ${MAN1}
-	${INSTALL_DATA} ${WRKSRC}/man/man1/$i ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/man/man1/$i ${TARGETDIR}/man/man1
 .endfor
 .for i in ${MAN5}
-	${INSTALL_DATA} ${WRKSRC}/man/man5/$i ${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/man/man5/$i ${TARGETDIR}/man/man5
 .endfor
 .endif
 
