@@ -22,12 +22,16 @@ MAKEFILE=	makefile.nix
 ALL_TARGET=	ha
 USE_GMAKE=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
+post-patch:
+	@${REINPLACE_CMD} 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/c/hsc.c ${WRKSRC}/c/cpy.c \
 		${WRKSRC}/c/asc.c
+	@${REINPLACE_CMD} -e 's|CC =|CC ?=|' \
+		-e 's|LDFLAGS = -O2||' \
+		-e 's|CFLAGS = -Wall -O2|CFLAGS += -Wall|' \
+		${WRKSRC}/makefile.nix
 
 do-install:
-	cd ${WRKSRC}; ${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ha ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ha ${TARGETDIR}/bin
 
 .include <bsd.port.mk>
