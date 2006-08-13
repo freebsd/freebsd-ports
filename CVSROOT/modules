@@ -15351,6 +15351,7 @@ xwpe		ports/devel/xwpe
 xwpick		ports/graphics/xwpick
 xwrits		ports/deskutils/xwrits
 xxdiff		ports/textproc/xxdiff
+xxdiff-scripts	ports/textproc/xxdiff-scripts
 xxe		ports/editors/xxe
 xxgdb		ports/devel/xxgdb
 xxkb		ports/x11/xxkb
