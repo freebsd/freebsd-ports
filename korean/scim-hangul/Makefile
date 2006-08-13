@@ -28,6 +28,10 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile on FreeBSD 4.x
+.endif
+
 .if ${OSVERSION} < 500035
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
