@@ -26,10 +26,12 @@ o Boot DSS Administration Tool
     # echo 'streamingadminserver_enable="YES"' >> /etc/rc.conf
     # cd /; env - %%PREFIX%%/etc/rc.d/streamingadminserver.sh start
 
+    (*NOTE*)Darwin Streaming Server will run together.
+
 o Set up DSS Administration Tool with MSIE(Microsoft Internet Explorer)
 
-    Mozilla, Netscape4/7 are not useful.  DSS Administration Tool requires
-    MSIE(4.5 or later) J-Script feature.
+    Mozilla,  Netscape4/7 and Opera etc... are not useful.  DSS Administration
+    Tool requires MSIE(4.5 and later) J-Script feature.
 
 	http://YOUR.STREAMING.SERVER:1220/
 
@@ -49,13 +51,14 @@ Related directories
 
 ===============================================================================
 
-  If you want to invoke Darwin Streaming Server from start-up, put following
-  lines into /etc/rc.conf.
+  If you want to invoke only Darwin Streaming Server from start-up, put
+  following lines into /etc/rc.conf.
 
     darwin_streaming_server_enable="YES"
     darwin_streaming_server_flags=""
 
-  If you want to invoke DSS Administration Tool from start-up, do too.
+  If you want to invoke DSS Administration Tool and Darwin Streaming
+  Server from start-up, do too.
 
     streamingadminserver_enable="YES"
     streamingadminserver_flags=""

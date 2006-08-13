@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: streamingadminserver
+# REQUIRE: login
+#
+streamingadminserver_enable=${streamingadminserver_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name=streamingadminserver
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/${name}.pl
+
+load_rc_config ${name}
+
+pidfile=/var/run/streamingadminserver.pid
+
+run_rc_command "$1"

@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: darwin_streaming_server
+# REQUIRE: streamingadminserver
+#
+darwin_streaming_server_enable=${darwin_streaming_server_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name=darwin_streaming_server
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/DarwinStreamingServer
+
+load_rc_config ${name}
+
+case "$streamingadminserver_enable" in
+[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+	darwin_streaming_server_enable="NO"
+	;;
+esac
+
+pidfile=/var/run/DarwinStreamingServer.pid
+
+run_rc_command "$1"
