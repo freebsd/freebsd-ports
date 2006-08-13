@@ -7,6 +7,14 @@ bin/museekd
 %%MUSEEQ%%bin/museeq
 bin/musetup
 bin/musetup-gtk
+%%PYTHON_SITELIBDIR%%/_mucipherc.so
+%%PYTHON_SITELIBDIR%%/mucipher.py
+%%PYTHON_SITELIBDIR%%/mucipherc.py
+%%PYTHON_SITELIBDIR%%/museek/__init__.py
+%%PYTHON_SITELIBDIR%%/museek/driver.py
+%%PYTHON_SITELIBDIR%%/museek/messages.py
+%%PYTHON_SITELIBDIR%%/pymucous/__init__.py
+%%PYTHON_SITELIBDIR%%/pymucous/utils.py
 %%DATADIR%%/museekd/config.xml.tmpl
 %%MUSEEQ%%%%DATADIR%%/museeq/bluebox/away-banned.png
 %%MUSEEQ%%%%DATADIR%%/museeq/bluebox/away-buddied.png
@@ -80,6 +88,8 @@ bin/musetup-gtk
 %%MUSEEQ%%%%DATADIR%%/museeq/translations/museeq_pt_BR.qm
 %%MUSEEQ%%%%DATADIR%%/museeq/nowplaying.qs
 %%MUSEEQ%%%%DATADIR%%/museeq/uptime.qs
+@dirrm %%PYTHON_SITELIBDIR%%/museek
+@dirrm %%PYTHON_SITELIBDIR%%/pymucous
 @dirrm %%DATADIR%%/museekd
 %%MUSEEQ%%@dirrm %%DATADIR%%/museeq/bluebox
 %%MUSEEQ%%@dirrm %%DATADIR%%/museeq/default
