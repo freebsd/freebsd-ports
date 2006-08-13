@@ -2594,6 +2594,7 @@ flasm		ports/graphics/flasm
 flatzebra	ports/devel/flatzebra
 flawfinder	ports/security/flawfinder
 fldiff		ports/textproc/fldiff
+flex		ports/textproc/flex
 flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
 flick		ports/devel/flick
