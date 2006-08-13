@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="17f53c1d-2ae9-11db-a6e2-000e0c2e438a">
+    <topic>postgresql -- encoding based SQL injection</topic>
+    <affects>
+      <package>
+	<name>postgresql</name>
+	<name>postgresql-server</name>
+	<name>ja-postgresql</name>
+	<range><ge>7.3</ge><lt>7.3.15</lt></range>
+	<range><ge>7.4</ge><lt>7.4.13</lt></range>
+	<range><ge>8.0.0</ge><lt>8.0.8</lt></range>
+	<range><ge>8.1.0</ge><lt>8.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL development team reports:</p>
+	<blockquote cite="http://www.postgresql.org/docs/techdocs.50">
+	  <p>An attacker able to submit crafted strings to an
+	    application that will embed those strings in SQL commands
+	    can use invalidly-encoded multibyte characters to bypass
+	    standard string-escaping methods, resulting in possible
+	    injection of hostile SQL commands into the database.  The
+	    attacks covered here work in any multibyte encoding.</p>
+	  <p>The widely-used practice of escaping ASCII single quote
+	    "'" by turning it into "\'" is unsafe when operating in
+	    multibyte encodings that allow 0x5c (ASCII code for
+	    backslash) as the trailing byte of a multibyte character;
+	    this includes at least SJIS, BIG5, GBK, GB18030, and UHC.
+	    An application that uses this conversion while embedding
+	    untrusted strings in SQL commands is vulnerable to
+	    SQL-injection attacks if it communicates with the server in
+	    one of these encodings.  While the standard client libraries
+	    used with PostgreSQL have escaped "'" in the safe,
+	    SQL-standard way of "''" for some time, the older practice
+	    remains common.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>18092</bid>
+      <cvename>CVE-2006-2313</cvename>
+      <cvename>CVE-2006-2314</cvename>
+      <url>http://www.postgresql.org/docs/techdocs.50</url>
+    </references>
+    <dates>
+      <discovery>2006-05-11</discovery>
+      <entry>2006-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65c8ecf9-2adb-11db-a6e2-000e0c2e438a">
     <topic>postgresql -- multiple vulnerabilities</topic>
     <affects>
