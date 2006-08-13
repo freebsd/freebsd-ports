@@ -133,6 +133,7 @@
     SUBDIR += fist
     SUBDIR += fixrtf
     SUBDIR += fldiff
+    SUBDIR += flex
     SUBDIR += flip
     SUBDIR += fo-aspell
     SUBDIR += foiltex
