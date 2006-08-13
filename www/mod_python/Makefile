@@ -13,11 +13,11 @@ MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	josh@elsasser.org
-COMMENT=	Apache module for integrating Python
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache 1.3 module for integrating Python
 
-USE_APACHE=	yes
-NO_PACKAGE=	"Requires Python without threads support"
+USE_APACHE=	13
+NO_PACKAGE=	Requires Python without threads support
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
@@ -29,6 +29,8 @@ MAKE_ENV=	PORTS_APXS=${APXS}
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 
 pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Note that this is for Apache 1.3 only, use www/mod_python 3 for Apache 2.x"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option:"
 	@${ECHO_MSG} ""
