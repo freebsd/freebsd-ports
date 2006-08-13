@@ -13727,6 +13727,7 @@ tikiwiki	ports/www/tikiwiki
 tilda		ports/x11/tilda
 tileworld	ports/games/tileworld
 tilp		ports/comms/tilp
+timeless	ports/graphics/timeless
 timelimit	ports/sysutils/timelimit
 timer-applet	ports/deskutils/timer-applet
 timeseal	ports/games/timeseal
