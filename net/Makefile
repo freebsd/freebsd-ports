@@ -293,6 +293,7 @@
     SUBDIR += mgen
     SUBDIR += micro_proxy
     SUBDIR += minisapserver
+    SUBDIR += miredo
     SUBDIR += mknbi
     SUBDIR += mmucl
     SUBDIR += mopd

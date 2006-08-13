@@ -1,0 +1,25 @@
+bin/teredo-mire
+sbin/miredo
+sbin/miredo-server
+sbin/miredo-checkconf
+sbin/isatapd
+lib/libteredo.so.2
+lib/libteredo.la
+lib/libteredo.so
+lib/libtun6.so.1
+lib/libtun6.la
+lib/libtun6.so
+include/libteredo/teredo.h
+include/libteredo/teredo-udp.h
+include/libteredo/tunnel.h
+include/libtun6/tun6.h
+@unexec [ -f %%TARGETDIR%%/etc/miredo.conf ] && cmp -s %%TARGETDIR%%/etc/miredo.conf %%TARGETDIR%%/etc/miredo.conf-dist && rm %%TARGETDIR%%/etc/miredo.conf || exit 0
+etc/miredo.conf-dist
+@exec [ -f %B/miredo.conf ] || cp %F %B/miredo.conf
+etc/miredo-server.conf-dist
+etc/isatapd.conf-dist
+%%NLS%%share/locale/en/LC_MESSAGES/miredo.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/miredo.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/miredo.mo
+@dirrm include/libteredo
+@dirrm include/libtun6

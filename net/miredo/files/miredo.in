@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: miredo
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable miredo:
+#
+#miredo_enable="YES"
+#
+miredo_enable="${miredo_enable-NO}"
+
+. /etc/rc.subr
+
+name=miredo
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+required_files=%%PREFIX%%/etc/miredo.conf
+
+load_rc_config ${name}
+run_rc_command "$1"
