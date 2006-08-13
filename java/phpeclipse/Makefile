@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	phpeclipse
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.8
 CATEGORIES=	java editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	PHPeclipse-${PORTVERSION}-features
+DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}.bin.dist
 
-MAINTAINER=	rtdean@cytherianage.net
+MAINTAINER=	lon_kamikaze@gmx.de
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
+
+PLIST_SUB=	VER=${PORTVERSION}
+
+PLUGIN_PATHS=	features plugins
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
@@ -23,16 +27,28 @@ NO_WRKSUBDIR=	yes
 
 ECLIPSE=	${PREFIX}/eclipse
 
-PLIST_SUB=	VER=${PORTVERSION} NSP=net.sourceforge.phpeclipse \
-		QVER=com.quantum.Quantum_2.4.5 TEAMVER=3.0.0 \
-		OTS=org.tigris.subversion OTSVER=0.9.30 UIVER=1.1.2 \
-		TIDYVER=1.2.1 HTMLVER=1.1.3 UNITVER=phpunit_1.0.0
-
 do-install:
-	@${MKDIR} ${ECLIPSE}/features
-	@${MKDIR} ${ECLIPSE}/plugins
-	@${CP} -r ${WRKSRC}/eclipse/features/* ${ECLIPSE}/features
-	@${CP} -r ${WRKSRC}/eclipse/plugins/* ${ECLIPSE}/plugins
+.for _path in ${PLUGIN_PATHS}
+	@${MKDIR} ${ECLIPSE}/${_path}
+	@${CP} -r ${WRKSRC}/${_path}/* ${ECLIPSE}/${_path}/
+.endfor
+
+plist: patch
+	@${ECHO} "===>  Rebuilding PLIST."
+	@${TOUCH} ${PLIST}
+	@${RM} ${PLIST}
+.for _path in ${PLUGIN_PATHS}
+	@${FIND} ${WRKSRC}/${_path}/ -type f \
+		| ${SED} "s|${WRKSRC}|eclipse|1" \
+		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
+		>> ${PLIST}
+	@${FIND} -d ${WRKSRC}/${_path}/ -mindepth 1 -type d \
+		| ${SED} "s|${WRKSRC}|@dirrm eclipse|1" \
+		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
+		>> ${PLIST}
+	@${ECHO} "@dirrmtry eclipse/${_path}" >> ${PLIST}
+.endfor
+	@${ECHO} "@dirrmtry eclipse" >> ${PLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
