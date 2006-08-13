@@ -539,6 +539,7 @@
     SUBDIR += pythonchess
     SUBDIR += q15
     SUBDIR += q3base
+    SUBDIR += q3cellshading
     SUBDIR += linux-quake3
     SUBDIR += quake2max
     SUBDIR += quake3-excessive

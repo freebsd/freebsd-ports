@@ -11940,6 +11940,7 @@ q-audio		ports/audio/q-audio
 q-graph		ports/graphics/q-graph
 q15		ports/games/q15
 q3base		ports/games/q3base
+q3cellshading	ports/games/q3cellshading
 qadsl		ports/net/qadsl
 qalculate	ports/math/qalculate
 qbrew		ports/misc/qbrew
