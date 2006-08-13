@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	ws/axis/${PORTVERSION:S,.,_,g}
 DISTNAME=		axis-bin-${PORTVERSION:S,.,_,g}
 
-MAINTAINER=	rui@ruilopes.com
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	SOAP implementation by APACHE project
 
 #
