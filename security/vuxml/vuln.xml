@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9855ac8e-2aec-11db-a6e2-000e0c2e438a">
+    <topic>alsaplayer -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>alsaplayer</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Luigi Auriemma reports three vulnerabilities within
+	  alsaplayer:</p>
+	<blockquote cite="http://aluigi.altervista.org/adv/alsapbof-adv.txt">
+	  <ul>
+	    <li>The function which handles the HTTP connections is
+	      vulnerable to a buffer-overflow that happens when it uses
+	      sscanf for copying the URL in the Location's field
+	      received from the server into the redirect buffer of only
+	      1024 bytes declared in http_open.</li>
+	    <li>A buffer-overflow exists in the functions which add items
+	      to the playlist when the GTK interface is used (so the other
+	      interfaces are not affected by this problem): new_list_item
+	      and CbUpdated in interface/gtk/PlaylistWindow.cpp.</li>
+	    <li>AlsaPlayer automatically queries the CDDB server
+	      specified in its configuration (by default
+	      freedb.freedb.org) when the user choices the CDDA function
+	      for playing audio CDs.  The function which queries the
+	      server uses a buffer of 20 bytes and one of 9 for storing
+	      the category and ID strings received from the server while
+	      the buffer which contains this server's response is 32768
+	      bytes long.  Naturally for exploiting this bug the attacker
+	      must have control of the freedb server specified in the
+	      AlsaPlayer's configuration.</li>
+	  </ul>
+	</blockquote>
+	<p>These vulnerabilities could allow a remote attacker to
+	  execute arbitrary code, possibly gaining access to the
+	  system.</p>
+      </body>
+    </description>
+    <references>
+      <bid>19450</bid>
+      <url>http://aluigi.altervista.org/adv/alsapbof-adv.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-08-09</discovery>
+      <entry>2006-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="17f53c1d-2ae9-11db-a6e2-000e0c2e438a">
     <topic>postgresql -- encoding based SQL injection</topic>
     <affects>
