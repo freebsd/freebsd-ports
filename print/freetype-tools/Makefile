@@ -7,7 +7,7 @@
 
 PORTNAME=	freetype-tools
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -22,14 +22,14 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Tools for FreeType 1
 
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
-BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
-TEXMFMAIN=	${PREFIX}/share/texmf
+TEXMFMAIN=	${TARGETDIR}/share/texmf
 
 MAN1=		ttf2bdf.1 ttf2tfm.1 ttf2pk.1
 
@@ -38,13 +38,13 @@ post-patch:
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LIBTOOL =.*|LIBTOOL = ${LIBTOOL}|'
-	@${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-build:
-	@cd ${WRKSRC}/contrib/ttf2bdf && ./configure --prefix=${PREFIX} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttf2pfb && ./configure --prefix=${PREFIX} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttf2pk && ./configure --prefix=${PREFIX} --with-kpathsea-dir=${LOCALBASE} && ${GMAKE}
-	@cd ${WRKSRC}/contrib/ttfbanner && ./configure --prefix=${PREFIX} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttf2bdf && ./configure --prefix=${TARGETDIR} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttf2pfb && ./configure --prefix=${TARGETDIR} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttf2pk && ./configure --prefix=${TARGETDIR} --with-kpathsea-dir=${LOCALBASE} && ${GMAKE}
+	@cd ${WRKSRC}/contrib/ttfbanner && ./configure --prefix=${TARGETDIR} && ${GMAKE}
 
 do-install:
 	@cd ${WRKSRC}/contrib/ttf2bdf && ${GMAKE} install
