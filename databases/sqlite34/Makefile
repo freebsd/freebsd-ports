@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	3.3.6
+PORTVERSION=	3.3.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
@@ -18,7 +18,7 @@ USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15
 USE_DOS2UNIX=	*.pc.in
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
