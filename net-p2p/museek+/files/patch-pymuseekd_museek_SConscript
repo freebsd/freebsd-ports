@@ -1,0 +1,11 @@
+--- pymuseekd/museek/SConscript.orig	Sat Aug 12 14:07:46 2006
++++ pymuseekd/museek/SConscript	Sat Aug 12 14:08:21 2006
+@@ -14,7 +14,7 @@
+ 
+ import sys, os
+ py_ver = str(sys.version_info[0]) + "." + str(sys.version_info[1])
+-py_dest = env['DESTDIR'] + os.path.join(sys.prefix, "lib", "python" + py_ver, "site-packages", "museek")
++py_dest = env['DESTDIR'] + os.path.join("%%PYTHONPREFIX_SITELIBDIR%%", "museek")
+ 
+ install = env.Install(py_dest, files)
+ env.Alias('install_pymuseekd', install)

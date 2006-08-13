@@ -13,6 +13,7 @@
 
 PORTNAME=	museekplus
 PORTVERSION=	0.1.11
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	museek-plus
@@ -30,38 +31,38 @@ USE_PYTHON=	yes
 USE_SCONS=	yes
 USE_FAM=	yes
 
-SCONS_PARAMS=	QTDIR=${X11BASE} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
+SCONS_ARGS=	QTDIR=${X11BASE} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
 DATADIR=	share/museek
 
 MAN1=		muscan.1 muscand.1 museekd.1 musetup.1 musetup-gtk.1 mulog.1 \
 		museekcontrol.1 mucous.1
 
 .if defined(WITHOUT_MUSEEQ)
-SCONS_PARAMS+=	MUSEEQ=no
+SCONS_ARGS+=	MUSEEQ=no
 PLIST_SUB+=	MUSEEQ="@comment "
 .else
 USE_QT_VER=	3
-SCONS_PARAMS+=	MUSEEQ=yes
+SCONS_ARGS+=	MUSEEQ=yes
 PLIST_SUB+=	MUSEEQ=""
 MAN1+=		museeq.1
 .if defined(WITHOUT_QSA)
-SCONS_PARAMS+=	QSA=no
+SCONS_ARGS+=	QSA=no
 .else
-SCONS_PARAMS+=	QSA=yes
+SCONS_ARGS+=	QSA=yes
 LIB_DEPENDS+=	qsa:${PORTSDIR}/devel/qsa
 .endif
 .endif
 
 .if defined(WITH_DEBUG)
-SCONS_PARAMS+=	MULOG="cycle,debug"
+SCONS_ARGS+=	MULOG="cycle,debug"
 .else
-SCONS_PARAMS+=	MULOG=""
+SCONS_ARGS+=	MULOG=""
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-SCONS_PARAMS+=	RELEASE=yes
+SCONS_ARGS+=	RELEASE=yes
 .else
-SCONS_PARAMS+=	RELEASE=no
+SCONS_ARGS+=	RELEASE=no
 .endif
 
 pre-everything::
@@ -75,16 +76,19 @@ pre-everything::
 	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFALGS to build with optmizations"
 .endif
 
-do-build:
-	@cd ${WRKSRC} && scons ${SCONS_PARAMS}
-
-do-install:
-	@cd ${WRKSRC} && scons install
+post-patch:
+	@${REINPLACE_CMD} \
+		-e "s,%%PYTHONPREFIX_SITELIBDIR%%,${PYTHONPREFIX_SITELIBDIR},g"\
+		${WRKSRC}/Mucipher/python/SConscript \
+		${WRKSRC}/mucous/pymucous/SConscript \
+		${WRKSRC}/pymuseekd/museek/SConscript
 
 post-install:
 	@${REINPLACE_CMD} -i "" -e "s,/usr/bin/python,${PYTHON_CMD},g" \
 		${PREFIX}/bin/mucous
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.pre.mk>
 

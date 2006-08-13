@@ -1,0 +1,11 @@
+--- Mucipher/python/SConscript.orig	Sat Aug 12 13:50:30 2006
++++ Mucipher/python/SConscript	Sat Aug 12 13:51:26 2006
+@@ -28,7 +28,7 @@
+ 
+     mucipherc = env_swigpy.SharedLibrary('_mucipherc', sources, SWIGFLAGS='-python')
+ 
+-    py_dest = env['DESTDIR'] + os.path.join(sys.prefix, "lib", "python" + py_ver, "site-packages")
++    py_dest = env['DESTDIR'] + "%%PYTHONPREFIX_SITELIBDIR%%"
+ 
+     install = env.Install(py_dest, source = [ mucipherc, 'mucipherc.py',  'mucipher.py'])
+ 
