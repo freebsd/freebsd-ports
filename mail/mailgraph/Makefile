@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool	\
 
 NO_BUILD=	yes
 
-DATADIR?=	/var/db/mailgraph
+DATADIR?=	${DESTDIR}/var/db/mailgraph
 MAILGRAPH_USER?=	${WWWOWN}
 MAILGRAPH_GROUP?=	${WWWGRP}
 
@@ -44,11 +44,11 @@ post-patch:
 	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 do-install:
-	${MKDIR} ${PREFIX}/www/cgi-bin
+	${MKDIR} ${TARGETDIR}/www/cgi-bin
 	${MKDIR} ${DATADIR}
 	@${CHOWN} -R ${MAILGRAPH_USER}:${MAILGRAPH_GROUP} ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${PREFIX}/www/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${TARGETDIR}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${TARGETDIR}/www/cgi-bin
 
 post-install:
 	@${ECHO}
