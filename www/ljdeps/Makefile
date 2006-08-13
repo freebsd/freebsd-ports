@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	# Undefined
 DISTFILES=	# Undefined
 
-MAINTAINER=	rtdean@cytherianage.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A meta-port to install all the perl modules used by LiveJournal
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
