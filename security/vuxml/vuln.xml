@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fcb90eb0-2ace-11db-a6e2-000e0c2e438a">
+    <topic>mysql -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>5.1</ge><lt>5.1.6</lt></range>
+	<range><ge>5.0</ge><lt>5.0.19</lt></range>
+	<range><ge>4.1</ge><lt>4.1.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jean-David Maillefer reports a Denial of Service vulnerability
+	  within MySQL.  The vulnerability is caused by improper checking
+	  of the data_format routine, which cause the MySQL server to
+	  crash.  The crash is triggered by the following code:<br />
+	  <code>"SELECT date_format('%d%s', 1);</code></p>
+      </body>
+    </description>
+    <references>
+      <bid>19032</bid>
+      <cvename>CVE-2006-3469</cvename>
+      <url>http://bugs.mysql.com/bug.php?id=20729</url>
+    </references>
+    <dates>
+      <discovery>2006-08-FIXME</discovery>
+      <entry>2006-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21b7c550-2a22-11db-a6e2-000e0c2e438a">
     <topic>squirrelmail -- random variable overwrite vulnerability</topic>
     <affects>
