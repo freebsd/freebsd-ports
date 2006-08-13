@@ -2,20 +2,14 @@
 # Date created:				6 JUNE 2003
 # Whom:					Kensaku MASUDA <greg@greg.rim.or.jp>
 #
-# Most of pkg-plist can be created with:
-# # make PREFIX=`pwd`/install install
-# # (echo @cwd %%WEBAPPS%% ; /usr/ports/Tools/scripts/plist -d -m /etc/mtree/BSD.local.dist /usr/local/jakarta-tomcat4.1/webapps/axis/ | sed -E 's,^([^@]),axis/\1,g ; s,^(@.+ ),\1axis/,g' ; echo @dirrm axis) > temp-pkg-plist
-# # (echo @cwd %%PREFIX%% ; /usr/ports/Tools/scripts/plist -d -m /etc/mtree/BSD.local.dist `pwd`/install|sed -E 's,^.+share/nls/.+$,,g'|tr -s '\n') >> temp-pkg-plist
-#
 # $FreeBSD$
 
 PORTNAME=		axis
-PORTVERSION=		1.1
-PORTREVISION=		2
+PORTVERSION=		1.4
 CATEGORIES=		www java
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	ws/axis/${PORTVERSION:S,.,_,g}
-DISTNAME=		axis-${PORTVERSION:S,.,_,g}
+DISTNAME=		axis-bin-${PORTVERSION:S,.,_,g}
 
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	SOAP implementation by APACHE project
@@ -23,24 +17,35 @@ COMMENT=	SOAP implementation by APACHE project
 #
 # Change webapp directory by TOMCAT version
 #
-.if exists(${LOCALBASE}/jakarta-tomcat4.1/webapps)
-WEBAPPDIR=	${LOCALBASE}/jakarta-tomcat4.1/webapps
+.if exists(${LOCALBASE}/tomcat5.5/webapps)
+WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
+BUILD_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
+RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
+.elif exists(${LOCALBASE}/jakarta-tomcat5/webapps)
+WEBAPPDIR=	${PREFIX}/jakarta-tomcat5/webapps
+BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat5:${PORTSDIR}/www/jakarta-tomcat5
+RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat5:${PORTSDIR}/www/jakarta-tomcat5
+.elif exists(${LOCALBASE}/jakarta-tomcat4.1/webapps)
+WEBAPPDIR=	${PREFIX}/jakarta-tomcat4.1/webapps
 BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
 RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
 .elif exists(${LOCALBASE}/jakarta-tomcat4.0.6/webapps)
-WEBAPPDIR=	${LOCALBASE}/jakarta-tomcat4.0.6/webapps
+WEBAPPDIR=	${PREFIX}/jakarta-tomcat4.0.6/webapps
 BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.0.6:${PORTSDIR}/www/jakarta-tomcat4
 RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.0.6:${PORTSDIR}/www/jakarta-tomcat4
 .else
-WEBAPPDIR=	${LOCALBASE}/jakarta-tomcat4.1/webapps
-BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
-RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
+WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
+BUILD_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
+RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
 .endif
 
 NO_BUILD=	YES
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 USER=		www
 GROUP=		www
+
+WRKSRC=		${WRKDIR}/axis-${PORTVERSION:S,.,_,g}
 
 .include <bsd.port.pre.mk>
 
@@ -48,26 +53,19 @@ GROUP=		www
 # Install procedure
 #
 SYSTEM_JARS=	axis.jar jaxrpc.jar saaj.jar
-PLIST_SUB+=	PREFIX=${PREFIX} WEBAPPS=${WEBAPPDIR} USER=${USER} GROUP=${GROUP}
-
-.if !defined(NOPORTDOCS)
-SAMPLECLASSES=''
-.else
-SAMPLECLASSES=classes
-.endif
+PLIST_SUB+=	WEBAPPS=${WEBAPPDIR:S|^${PREFIX}||} USER=${USER} GROUP=${GROUP}
 
 do-install:
 .for i in ${SYSTEM_JARS}
-	${MKDIR} ${JAVAJARDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${JAVAJARDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${JAVAJARDIR}
 .endfor
-	(cd ${WRKSRC}/webapps ; tar cf - --exclude "${SAMPLECLASSES}" axis) | (cd ${WEBAPPDIR} ; tar xvf -)
-	${CHOWN} -R ${USER}:${GROUP} ${WEBAPPDIR}/axis
+	cd ${WRKSRC}/webapps && ${FIND} axis -type d -exec ${INSTALL} -d -g ${GROUP} -o ${USER} -m 755 ${WEBAPPDIR}/{} \;
+	cd ${WRKSRC}/webapps && ${FIND} axis -type f -exec ${INSTALL} -g ${GROUP} -o ${USER} -m 444 {} ${WEBAPPDIR}/{} \;
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/axis
-	(cd ${WRKSRC}/docs ; tar cf - *) | (cd ${PREFIX}/share/doc/axis ; tar xvf -)
-	${MKDIR} ${PREFIX}/share/examples/axis
-	(cd ${WRKSRC}/samples ; tar cf - --exclude '*.class' *) | (cd ${PREFIX}/share/examples/axis ; tar xvf -)
+	cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
+	cd ${WRKSRC}/samples && ${FIND} . -type f -not -name '*.class' -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 .endif
 
 .include <bsd.port.post.mk>
