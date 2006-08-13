@@ -12,6 +12,7 @@ streamingadminserver_enable=${streamingadminserver_enable-"NO"}
 name=streamingadminserver
 rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/${name}.pl
+command_interpreter=%%PERL%%
 
 load_rc_config ${name}
 
