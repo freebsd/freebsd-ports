@@ -82,6 +82,7 @@ bin/ctest
 %%DATADIR%%/Modules/Documentation.cmake
 %%DATADIR%%/Modules/DummyCXXFile.cxx
 %%DATADIR%%/Modules/FindAVIFile.cmake
+%%DATADIR%%/Modules/FindBoost.cmake
 %%DATADIR%%/Modules/FindCABLE.cmake
 %%DATADIR%%/Modules/FindCurses.cmake
 %%DATADIR%%/Modules/FindCygwin.cmake
@@ -147,6 +148,7 @@ bin/ctest
 %%DATADIR%%/Modules/InstallRequiredSystemLibraries.cmake
 %%DATADIR%%/Modules/KDE3Macros.cmake
 %%DATADIR%%/Modules/MacOSXBundleInfo.plist.in
+%%DATADIR%%/Modules/MacroAddFileDependencies.cmake
 %%DATADIR%%/Modules/NSIS.InstallOptions.ini.in
 %%DATADIR%%/Modules/NSIS.template.in
 %%DATADIR%%/Modules/Platform/AIX.cmake
