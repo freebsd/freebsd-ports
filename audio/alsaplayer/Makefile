@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.alsa-project.org/pub/people/andy/ \
 MAINTAINER=	co9@xs4all.nl
 COMMENT=	Audio player with pitch control and a GNOME GUI
 
+FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/9855ac8e-2aec-11db-a6e2-000e0c2e438a.html
+
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
