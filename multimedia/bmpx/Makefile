@@ -7,6 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.20.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/${PORTVERSION:C/\.[0-9]*$//}/
 
@@ -28,9 +29,8 @@ USE_FAM=	yes
 USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
-LIBTOOLFILES=	configure libhrel/configure \
-		libchroma/configure libskinned/configure
-USE_GSTREAMER=	good mad ogg
+INSTALLS_ICONS=	yes
+USE_GSTREAMER=	good mad ogg vorbis
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
