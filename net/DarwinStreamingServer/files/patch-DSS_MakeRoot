@@ -1,0 +1,15 @@
+--- DSS_MakeRoot.orig	Fri May 27 18:54:45 2005
++++ DSS_MakeRoot	Sun Aug 13 00:33:59 2006
+@@ -5,10 +5,10 @@
+ # source release
+ 
+ DSS=0
+-if [ $1 = "-f" ]; then
++if [ x"$1" = x"-f" ]; then
+ 	FLATTEN=1
+ 	INSTALLROOT=$2
+-	if [ $3 = "dss" ]; then
++	if [ x"$3" = x"dss" ]; then
+ 	    DSS=1
+ 	fi
+ else

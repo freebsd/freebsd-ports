@@ -139,8 +139,6 @@ libexec/StreamingServerModules/QTSSHomeDirectoryModule
 %%DATADIR%%/movies/sample_h264_100kbit.mp4
 %%DATADIR%%/movies/sample_h264_1mbit.mp4
 %%DATADIR%%/movies/sample_h264_300kbit.mp4
-etc/rc.d/streamingadminserver.sh
-etc/rc.d/darwin_streaming_server.sh
 etc/streaming/qtusers-dist
 etc/streaming/qtgroups-dist
 @unexec if cmp -s %D/etc/streaming/relayconfig.xml %D/etc/streaming/relayconfig.xml-dist; then rm -f %D/etc/streaming/relayconfig.xml; fi

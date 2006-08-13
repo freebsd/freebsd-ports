@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	5.5
+PORTVERSION=	5.5.3
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
-#		DarwinStreamingSrvr5.5-Source.tar.
+#		DarwinStreamingSrvr5.5.3-Source.tar.
 DISTNAME=	DarwinStreamingSrvr${PORTVERSION}-Source
 EXTRACT_SUFX=	.tar
 
@@ -23,6 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 RESTRICTED=	"See http://www.opensource.apple.com/apsl/"
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
+
+USE_RC_SUBR=	streamingadminserver.sh darwin_streaming_server.sh
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 IGNORE=		${RESTRICTED}
@@ -135,10 +137,6 @@ pre-install:
 
 do-install:
 	@(cd ${WRKSRC}/${OPSYS}; ${SETENV} ${MAKE_ENV} ./Install)
-
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/streamingadminserver.sh    ${PREFIX}/etc/rc.d/
-	${INSTALL_SCRIPT} ${FILESDIR}/darwin_streaming_server.sh ${PREFIX}/etc/rc.d/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
