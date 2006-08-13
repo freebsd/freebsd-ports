@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	ws/axis/${PORTVERSION:S,.,_,g}
 DISTNAME=		axis-bin-${PORTVERSION:S,.,_,g}
 
 MAINTAINER=	hq@FreeBSD.org
-COMMENT=	SOAP implementation by APACHE project
+COMMENT=	Java SOAP implementation by Apache
 
 #
 # Change webapp directory by TOMCAT version
