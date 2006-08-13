@@ -1,18 +1,23 @@
-Quake III Arena, developed by the gaming wizards at id Software,
-is the third installment of one of the most popular computer game
-franchises of all time. Organic caverns, gothic cathedrals and
-futuristic spacescapes play host to Quake III Arena's unrivaled
-blend of action, strategy and jaw-dropping technology as Linux
-gamers are invited to square off against 32 of history's greatest
-warriors. Built around a revolutionary new graphics engine capable
-of delivering mind blowing 3D special effects including curved
-surfaces and volumetric fog, Quake III Arena is the final word in
-deathmatching mayhem.
+The goal of this project is to add Cell Shading capabilities to the Quake III
+engine with Real-time performance.
 
-This is a native build for FreeBSD. Sorry, no joystick support
-is available at this time.
+In order to provide such feature we have decided to use Kuwahara filter.
+Kuwahara filter is a noise-reduction filter that preserves edges.
 
-WWW: http://www.idsoftware.com/games/quake/quake3-arena/
+It uses four subquadrants to calculate the mean and variance and chooses the
+mean value for the region with the smallest variance.
 
-- Linas
-shirshegsm@gmail.com
+To increase the hand-painted effect we have decided to apply a simple blur
+filter to reduce hard-edges on textures and increase the flatness effect.
+
+To produce the cell shading effect we use no graphics card shaders, so our
+implementation could run with almost any gfx card. The edge effect is produced
+by painting backface polygons with a thick wireframe without textures and
+repaint all the scene, but this time, with textures.
+
+We have also implemented a different algorithm (we call it White Texture),
+which uses white textures. It looks like this and this, you can set the
+console variable r_celshadalgo to 2, and load another map, or run using the
+appropiate link that came with the release.
+
+WWW: http://q3cellshading.sourceforge.net/

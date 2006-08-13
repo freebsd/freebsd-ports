@@ -1,29 +1,24 @@
-# New ports collection makefile for:	quake3
-# Date created:				23 August 2005
-# Whom:					pypt
+# New ports collection makefile for:	q3cellshading
+# Date created:				8 Aug 2006
+# Whom:					alepulver
 #
 # $FreeBSD$
 #
 
-PORTNAME=	quake3
-PORTVERSION=	1.32c
+PORTNAME=	q3cellshading
+PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.proarena.com/p/ftpx/x8524/quake_3_arena/ \
-		http://www.planetgargoyle.com/ \
-		http://www.teamdarkside.net/ \
-		http://0day.icculus.org/mirrors/quake3/ \
-		http://www.olpainless.net/files/ \
-		${MASTER_SITE_IDSOFTWARE:S|$|source/|}
-DISTNAME=	${PORTNAME}-${REALVERSION}-source
+MASTER_SITES=	SF
+DISTNAME=	q3cel-${PORTVERSION}-src
 
-MAINTAINER=	shirshegsm@gmail.com
-COMMENT=	Quake III Arena -- first person shooter (native build)
+MAINTAINER=	alepulver@FreeBSD.org
+COMMENT=	Quake III engine with Cell Shading capabilities
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.2+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${REALVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 
 OPTIONS=	CLIENT "Build client" on \
@@ -36,7 +31,6 @@ MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
-REALVERSION=	1.32b
 VM_ARCHS=	i386 powerpc
 
 .include <bsd.port.pre.mk>
@@ -110,7 +104,8 @@ post-patch:
 
 do-install:
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/${bin} \
+		${PREFIX}/bin/${bin:C/(quake3|q3)/\1cel/}
 .endfor
 .if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
 .for dir in baseq3 missionpack

@@ -1,5 +1,5 @@
---- code/unix/Makefile.orig	Sun Jun  4 18:13:21 2006
-+++ code/unix/Makefile	Sun Jun  4 18:14:42 2006
+--- code/unix/Makefile.orig	Tue Aug  8 18:19:12 2006
++++ code/unix/Makefile	Tue Aug  8 18:22:25 2006
 @@ -34,7 +34,7 @@
  
  # Build name
@@ -20,6 +20,15 @@
  CDIR=$(MOUNT_DIR)/client
  SDIR=$(MOUNT_DIR)/server
  RDIR=$(MOUNT_DIR)/renderer
+@@ -65,7 +65,7 @@
+ SPLNDIR=$(MOUNT_DIR)/splines
+ 
+ # extract version info
+-VERSION=$(shell ./extract_ver.pl)
++VERSION="Q3 1.32c"
+ RPM_RELEASE=1
+ 
+ # NOTE: used by dcp rcp targets, not referenced
 @@ -76,7 +76,7 @@
  #############################################################################
  
