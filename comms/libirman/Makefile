@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libirman
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	comms
 MASTER_SITES=	http://lirc.sourceforge.net/software/snapshots/
 
