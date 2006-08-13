@@ -59,7 +59,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://bugs.mysql.com/bug.php?id=20729</url>
     </references>
     <dates>
-      <discovery>2006-08-FIXME</discovery>
+      <discovery>2006-06-27</discovery>
       <entry>2006-08-13</entry>
     </dates>
   </vuln>
