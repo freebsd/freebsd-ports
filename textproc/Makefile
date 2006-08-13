@@ -935,6 +935,7 @@
     SUBDIR += xstream
     SUBDIR += xt
     SUBDIR += xxdiff
+    SUBDIR += xxdiff-scripts
     SUBDIR += y2l
     SUBDIR += yamcha
     SUBDIR += yi-aspell
