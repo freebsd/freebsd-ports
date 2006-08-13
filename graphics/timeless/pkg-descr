@@ -1,0 +1,7 @@
+This is a FreeBSD/SDL port of Tran's timeless demo written in 1994. The demo
+is like a screen saver, there is stuff warping around onscreen, colors are
+changing and sprites are moving all over the place.  The original conversion
+from ASM to C for Linux/SDL was written by Dave Ashley.  I enabled fullscreen
+and added music to this version.  Hope you like it!
+
+WWW: http://www.linuxmotors.com/timeless/
