@@ -15,14 +15,13 @@ PORTNAME=	ztelnet
 PORTVERSION=	1.0.p3
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/unix-app/net/ztelnet/
+MASTER_SITES=	http://www.exit.com/Archives/FreeBSD/
 DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz \
 		ztelnet-patch-cmascott.tar.gz
 
-MAINTAINER=	cjh@FreeBSD.org
+MAINTAINER=	frank@exit.com
 COMMENT=	Telnet program with zmodem transfer
 
-BROKEN=		fails to fetch
 RESTRICTED=	"zmodem code has restrictive copyright"
 
 NO_WRKSUBDIR=	yes
