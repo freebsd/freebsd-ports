@@ -1,14 +1,5 @@
---- makefile.in.orig	Sat Sep 10 17:17:51 2005
-+++ makefile.in	Sat Nov 12 19:41:57 2005
-@@ -20,7 +20,7 @@
- mandir = @mandir@
- libdir = @libdir@
- modulebasedir = $(libdir)/allegro
--moduledir = $(modulebasedir)/$(shared_major_minor)
-+moduledir = $(modulebasedir)/$(shared_version)
- 
- EXE =
- OBJ = .o
+--- makefile.in.orig	Mon Jul 24 09:10:58 2006
++++ makefile.in	Wed Aug  9 19:15:49 2006
 @@ -29,12 +29,13 @@
  INFO_DIR = $(infodir)/dir
  DESTDIR =
@@ -26,7 +17,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_INFO = @INSTALL_INFO@
  
-@@ -354,6 +355,11 @@
+@@ -355,6 +356,11 @@
  endif
  
  lib: $(ALLEGRO_LIB_TARGETS)
@@ -38,7 +29,7 @@
  
  modules: $(ALLEGRO_MODULE_TARGETS)
  
-@@ -465,9 +471,9 @@
+@@ -466,9 +472,9 @@
  	  fi; \
  	done
  	@for l in alleg alld allp; do \
@@ -51,7 +42,7 @@
  	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}_unsharable.a $(DESTDIR)$(libdir)/; \
  	  fi; \
  	done
-@@ -481,20 +487,10 @@
+@@ -482,20 +488,10 @@
  	fi
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	@echo Installing allegro-config to $(DESTDIR)$(bindir)

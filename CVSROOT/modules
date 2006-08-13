@@ -335,6 +335,7 @@ align		ports/textproc/align
 alignmargins	ports/print/alignmargins
 alisp		ports/lang/alisp
 allegro		ports/devel/allegro
+allegro-devel	ports/devel/allegro-devel
 allegrogl	ports/graphics/allegrogl
 alleyoop	ports/devel/alleyoop
 alliance	ports/cad/alliance
