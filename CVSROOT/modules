@@ -6813,6 +6813,7 @@ mipsel-linux-gcc	ports/devel/mipsel-linux-gcc
 mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
 miracl		ports/math/miracl
 mird		ports/databases/mird
+miredo		ports/net/miredo
 mirmon		ports/misc/mirmon
 mirror		ports/ftp/mirror
 mirrormagic	ports/games/mirrormagic
