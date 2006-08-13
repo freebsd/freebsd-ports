@@ -14,6 +14,7 @@ include/allegro/3d.h
 include/allegro/3dmaths.h
 include/allegro/alcompat.h
 include/allegro/alinline.h
+include/allegro/altime.h
 include/allegro/alunixac.h
 include/allegro/base.h
 include/allegro/color.h
@@ -22,7 +23,9 @@ include/allegro/config.h
 include/allegro/datafile.h
 include/allegro/debug.h
 include/allegro/digi.h
+include/allegro/display.h
 include/allegro/draw.h
+include/allegro/events.h
 include/allegro/file.h
 include/allegro/fix.h
 include/allegro/fixed.h
@@ -44,12 +47,15 @@ include/allegro/inline/matrix.inl
 include/allegro/inline/rle.inl
 include/allegro/inline/system.inl
 include/allegro/internal/aintern.h
+include/allegro/internal/aintern2.h
 include/allegro/internal/aintvga.h
 include/allegro/internal/alconfig.h
 include/allegro/joystick.h
 include/allegro/keyboard.h
+include/allegro/keycodes.h
 include/allegro/lzss.h
 include/allegro/matrix.h
+include/allegro/memory.h
 include/allegro/midi.h
 include/allegro/mouse.h
 include/allegro/palette.h
@@ -83,6 +89,7 @@ include/allegro/platform/alunix.h
 include/allegro/platform/alunixac.h
 include/allegro/platform/alwatcom.h
 include/allegro/platform/alwin.h
+include/allegro/platform/astdbool.h
 include/allegro/platform/astdint.h
 include/allegro/platform/macdef.h
 include/allegro/quat.h

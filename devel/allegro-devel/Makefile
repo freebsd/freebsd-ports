@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	allegro
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
@@ -37,11 +38,12 @@ ALL_TARGET=	full-build
 
 INFO=		allegro
 
-CONFLICTS=	allegro-devel-[0-9]*
+CONFLICTS=	allegro-[0-9]*
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-SHLIB_VER=	42
 DEMO=		demo.c demo.dat demo.h music.txt ../readme.txt
+SHLIB_VER=	43
 
 .include <bsd.port.pre.mk>
 
@@ -131,6 +133,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ffast-math||g' \
 		${CONFIGURE_WRKSRC}/configure.in
 .endif
+
+# Threading libraries.
+	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' ${WRKSRC}/aclocal.m4
 
 # Enable/disable compilation optimizations.
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)
