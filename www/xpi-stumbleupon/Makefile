@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stumbleupon
-PORTVERSION=	2.82
+PORTVERSION=	2.83
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
 CATEGORIES=	www
 
