@@ -620,6 +620,7 @@
     SUBDIR += tiff
     SUBDIR += tiff2png
     SUBDIR += tifmerge
+    SUBDIR += timeless
     SUBDIR += tintfu
     SUBDIR += togl
     SUBDIR += truevision
