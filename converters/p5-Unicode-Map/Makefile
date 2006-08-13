@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rtdean@cytherianage.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl class that converts strings to/from 2-byte Unicode UCS2 format
 
 PERL_CONFIGURE=	yes
