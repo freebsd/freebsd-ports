@@ -59,9 +59,9 @@ post-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${TARGETDIR}/bin/
 .if defined(WITH_PYTHON)
 	${INSTALL_SCRIPT} ${WRKSRC}/python/svm.py ${PYTHON_SITELIBDIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/python/svmc.so ${PYTHON_SITELIBDIR}/
