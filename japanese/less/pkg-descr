@@ -7,5 +7,5 @@
   This enhanced less support ISO 2022 code extension techniqes and
 Japanese codes(EUC Japanese, SJIS) and compressed(or gzipped) file
 viewing. The author of this patch is jam@pobox.com. See 
-WWW: http://www.io.com/~kazushi/less/
+WWW: http://www25.big.jp/~jam/less/
 for the latest info.
