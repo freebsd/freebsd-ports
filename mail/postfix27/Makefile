@@ -201,7 +201,7 @@ _REQUIRE+=		ypserv
 
 .if defined(WITH_VDA)
 PATCH_SITES+=		http://web.onda.com.br/nadal/postfix/VDA/
-PATCHFILES+=		postfix-2.3.1-vda.patch.gz
+PATCHFILES+=		postfix-2.3.2-vda.patch.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
