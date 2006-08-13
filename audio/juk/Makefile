@@ -7,6 +7,7 @@
 
 PORTNAME=	juk
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -20,7 +21,7 @@ COMMENT=	KDE audio player
 LIB_DEPENDS=	akode:${PORTSDIR}/audio/akode \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		tag:${PORTSDIR}/audio/taglib \
-		tunepimp:${PORTSDIR}/audio/libtunepimp
+		tunepimp.3:${PORTSDIR}/audio/libtunepimp-old
 
 CONFLICTS=	kdemultimedia-3.3*
 
