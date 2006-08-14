@@ -6,6 +6,7 @@
 
 PORTNAME=	pyicq
 PORTVERSION=	0.7b
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
 PKGNAMEPREFIX=	jabber-
@@ -25,9 +26,10 @@ OPTIONS=	EJABBERD "Use transport with ejabberd" off
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	jabber-pyicq-transport.sh
+LOCAL_PYTHON=	${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST=	PYTHON_CMD=${LOCAL_PYTHON}
 
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
@@ -49,9 +51,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/spooldir/s|\.|/var/spool/jabber|' \
 		-e '/pid/s|PyICQt.pid|/var/jabberd/pid/PyICQt.pid|' \
 		${WRKSRC}/config_example.xml
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%PYTHON_CMD%%|${LOCAL_PYTHON}|g' \
 		${WRKSRC}/src/main.py
-	@${REINPLACE_CMD} -i "" 's|#!/usr/bin/env .*python.*$$|#!${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -i "" 's|^#!.*$$|#!${LOCAL_PYTHON}|' \
 		${WRKSRC}/PyICQt.py
 	@${RM} ${WRKSRC}/src/main.py.*
 
