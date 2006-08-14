@@ -7,6 +7,7 @@
 
 PORTNAME=	twinkle
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -18,7 +19,8 @@ LIB_DEPENDS=	ccgnu2-1.4.0:${PORTSDIR}/devel/commoncpp \
 		ccrtp1-1.4.0:${PORTSDIR}/devel/ccrtp \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		boost_regex.3:${PORTSDIR}/devel/boost \
-		speex.3:${PORTSDIR}/audio/speex
+		speex.3:${PORTSDIR}/audio/speex \
+		ilbc.0:${PORTSDIR}/net/ilbc
 
 USE_X_PREFIX=	yes
 USE_GCC=	3.4+
