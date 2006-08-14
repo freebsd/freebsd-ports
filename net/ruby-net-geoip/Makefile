@@ -7,7 +7,7 @@
 
 PORTNAME=	net-geoip
 PORTVERSION=	0.06
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.gigavenue.com/mirrors/ruby/ \
 		http://www.maxmind.com/download/geoip/api/ruby/
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around libGeoIP
 
-LIB_DEPENDS=	GeoIP.4:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
 
 USE_ICONV=	yes
 USE_RUBY=	yes

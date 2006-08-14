@@ -7,7 +7,7 @@
 
 PORTNAME=	Geo-IP
 PORTVERSION=	1.27
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.maxmind.com/download/geoip/api/perl/
@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Gets country name by IP or hostname
 
-LIB_DEPENDS=	GeoIP.4:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib' INC='-I${LOCALBASE}/include'

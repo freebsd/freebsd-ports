@@ -7,7 +7,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-Python-${PORTVERSION}
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Mapping of IP addresses/hostnames to country names in Python
 
-LIB_DEPENDS=	GeoIP.4:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
