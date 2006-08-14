@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 CONFIGURE_ARGS=	--with-glob
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
 MAN1=		gendiff.1

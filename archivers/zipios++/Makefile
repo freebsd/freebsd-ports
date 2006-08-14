@@ -17,7 +17,7 @@ COMMENT=	A java.util.zip-like C++ library for reading and writing Zip files
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 # port don't strictly need it, but Wesnoth use it so must we
 USE_GCC=	3.4
 USE_AUTOTOOLS=	automake:19:env

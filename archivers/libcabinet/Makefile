@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library and utility to use Microsoft cabinet files (.cab)
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SRCFILE=	${WRKSRC}/listcab.cpp
 PROGFILE=	${SRCFILE:S/.cpp$//}
