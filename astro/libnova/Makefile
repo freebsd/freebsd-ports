@@ -18,7 +18,7 @@ COMMENT=	Astronomical Calculation Library
 
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=  yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

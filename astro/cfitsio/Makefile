@@ -17,7 +17,7 @@ COMMENT=	Library for reading and writing files in FITS data format
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 ALL_TARGET=	shared
 

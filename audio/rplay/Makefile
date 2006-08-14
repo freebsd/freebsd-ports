@@ -16,7 +16,7 @@ COMMENT=	Network audio player
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

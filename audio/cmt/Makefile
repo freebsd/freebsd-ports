@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 WRKSRC=		${WRKDIR}/cmt
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_FILES=	lib/ladspa/cmt.so
 
 pre-patch:

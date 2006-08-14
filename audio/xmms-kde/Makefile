@@ -20,7 +20,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 USE_KDELIBS_VER=3
 WRKSRC=		${WRKDIR}/${DISTNAME:S/0.0/0/}
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-xmms-prefix=${X11BASE}

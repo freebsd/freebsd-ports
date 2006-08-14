@@ -18,7 +18,7 @@ COMMENT=	High quality audio compression format
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3\ -fomit-frame-pointer||g' \

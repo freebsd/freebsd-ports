@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound --disable-rubyecasound --with-largefile \
 		--enable-sys-readline
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1 ecaconvert.1 \
 		ecafixdc.1 ecalength.1 ecamonitor.1 ecanormalize.1 \

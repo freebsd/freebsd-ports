@@ -19,7 +19,7 @@ COMMENT=	Toolkit for developing bioinformatic related software in C++
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|@CXXFLAGS@|g' ${WRKSRC}/src/Makefile.in
