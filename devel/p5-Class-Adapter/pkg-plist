@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Class/Adapter.pm
+%%SITE_PERL%%/Class/Adapter/Builder.pm
+%%SITE_PERL%%/Class/Adapter/Clear.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Adapter/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Adapter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/Class/Adapter
+@dirrmtry %%SITE_PERL%%/Class

@@ -805,6 +805,7 @@
     SUBDIR += p5-Class-Accessor-Chained
     SUBDIR += p5-Class-Accessor-Lvalue
     SUBDIR += p5-Class-Accessor-Named
+    SUBDIR += p5-Class-Adapter
     SUBDIR += p5-Class-AlzaboWrapper
     SUBDIR += p5-Class-ArrayObjects
     SUBDIR += p5-Class-AutoClass
