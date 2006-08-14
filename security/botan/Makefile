@@ -24,12 +24,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} gcc-freebsd-generic
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}" \
 		LANG_FLAGS="-fpermissive"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
-DOCSDIR=	${PREFIX}/share/doc/Botan-${PORTVERSION}
+DOCSDIR=	${TARGETDIR}/share/doc/Botan-${PORTVERSION}
 PORTDOCS=	*
 .endif
 
