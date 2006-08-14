@@ -34,10 +34,10 @@ pre-install:
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/src && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
+		${INSTALL_PROGRAM} ${PROGRAMS} ${TARGETDIR}/bin && \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${TARGETDIR}/bin
 	cd ${WRKSRC}/man && \
-		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1 && \
+		${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
 	cd ${WRKSRC}/doc && \
 		${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
