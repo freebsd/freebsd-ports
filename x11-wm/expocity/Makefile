@@ -26,7 +26,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack gnomehier gconf2 libglade2
 GCONF_SCHEMAS=	metacity.schemas
 USE_GETTEXT=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
