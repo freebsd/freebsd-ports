@@ -31,6 +31,6 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mboxstats ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mboxstats ${TARGETDIR}/bin
 
 .include <bsd.port.post.mk>
