@@ -1,0 +1,20 @@
+bin/advi
+share/texmf/tex/latex/advi/advi-annot.sty
+share/texmf/tex/latex/advi/advi-graphicx.sty
+share/texmf/tex/latex/advi/advi-slides.sty
+share/texmf/tex/latex/advi/advi.sty
+share/texmf/tex/latex/advi/advilogo.eps
+share/texmf/tex/latex/advi/argv.sty
+share/texmf/tex/latex/advi/bar.eps
+share/texmf/tex/latex/advi/bubble.sty
+share/texmf/tex/latex/advi/caml.eps
+share/texmf/tex/latex/advi/jpfonts.conf
+share/texmf/tex/latex/advi/scratch_draw_splash.dvi
+share/texmf/tex/latex/advi/scratch_write_splash.dvi
+share/texmf/tex/latex/advi/splash.dvi
+share/texmf/tex/latex/advi/superpose.sty
+share/texmf/tex/latex/advi/xwindows-colors.sty
+@dirrm share/texmf/tex/latex/advi
+@dirrmtry share/texmf/tex/latex
+@dirrmtry share/texmf/tex
+@dirrmtry share/texmf
