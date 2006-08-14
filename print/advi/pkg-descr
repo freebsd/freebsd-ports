@@ -1,0 +1,5 @@
+Active-DVI ``plays'' the DVI files that is displays: during presentation advi
+can launch arbitrary commands that were incorporated into the LaTeX source of
+the DVI file to animate the presentation.
+
+WWW:	http://caml.inria.fr/advi/

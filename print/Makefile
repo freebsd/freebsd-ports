@@ -13,6 +13,7 @@
     SUBDIR += acroread7
     SUBDIR += acroreadwrapper
     SUBDIR += adobe-cmaps
+    SUBDIR += advi
     SUBDIR += afm
     SUBDIR += alignmargins
     SUBDIR += amspsfnt
