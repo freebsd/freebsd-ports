@@ -1,6 +1,6 @@
 bin/quetoo
-%%LIBDIR%%/baseq2/game.so
-%%LIBDIR%%/ctf/game.so
+%%GAME%%%%LIBDIR%%/baseq2/game.so
+%%CTF%%%%LIBDIR%%/ctf/game.so
 %%QMASS%%%%LIBDIR%%/qmass/game.so
 %%LIBDIR%%/vid_glsdl.so
 %%LIBDIR%%/vid_glx.so
@@ -10,7 +10,7 @@ bin/quetoo
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%QMASS%%%%PORTDOCS%%%%DOCSDIR%%/qmass-README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LIBDIR%%/baseq2
-@dirrm %%LIBDIR%%/ctf
+%%GAME%%@dirrm %%LIBDIR%%/baseq2
+%%CTF%%@dirrm %%LIBDIR%%/ctf
 %%QMASS%%@dirrm %%LIBDIR%%/qmass
 @dirrm %%LIBDIR%%
