@@ -16,7 +16,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Project Environment determination
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV+=	DIRPROJECT_PREFIX=${PREFIX}
+CONFIGURE_ENV+=	DIRPROJECT_PREFIX=${TARGETDIR}
 
 MAN1=		project_bin.1 project_dir.1
 MAN3=		Dir::Project.3
