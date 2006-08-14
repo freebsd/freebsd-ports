@@ -17,6 +17,8 @@ COMMENT=	Compile regular languages into executable C/C++ code
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
+USE_GCC=	3.2+
+
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
