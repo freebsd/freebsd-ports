@@ -1,8 +1,8 @@
 bin/enhance
+include/libtecla.h
 lib/libtecla.a
 lib/libtecla.so
 lib/libtecla.so.1
 %%THREADS%%lib/libtecla_r.a
 %%THREADS%%lib/libtecla_r.so
 %%THREADS%%lib/libtecla_r.so.1
-include/libtecla.h
