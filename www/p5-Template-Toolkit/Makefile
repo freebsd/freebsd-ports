@@ -56,7 +56,7 @@ CONFIGURE_ENV=	|
 .include "Makefile.man"
 
 post-patch:
-	${PERL} -pi -e 's,/usr/local/tt2,${PREFIX}/share/tt2,g' \
+	${PERL} -pi -e 's,/usr/local/tt2,${TARGETDIR}/share/tt2,g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .if ${PERL_LEVEL} < 500600
