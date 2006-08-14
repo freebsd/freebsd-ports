@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 PKG_CONFIG_PATH=	${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PKG_CONFIG_PATH}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

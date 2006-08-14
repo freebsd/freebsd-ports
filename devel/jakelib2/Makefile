@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-debug
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INFO=	jakelib2
 
 post-patch:

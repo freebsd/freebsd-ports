@@ -20,7 +20,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		vstr.3 vstr_const.3
 

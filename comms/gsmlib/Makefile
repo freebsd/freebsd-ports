@@ -20,7 +20,7 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	gsmctl.1 gsmpb.1 gsmsendsms.1 gsmsmsstore.1
 MAN7=	gsminfo.7

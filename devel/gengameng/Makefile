@@ -16,7 +16,7 @@ COMMENT=	An SDL game engine library
 
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--program-prefix=""
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"

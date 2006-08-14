@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libiconv-prefix=${LOCALBASE}
 
 MAN1=		namazu.1 mknmz.1
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-install:
 .if defined(NOPORTDOCS)

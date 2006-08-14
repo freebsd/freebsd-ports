@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk	# To build man-pages
 USE_BISON=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1

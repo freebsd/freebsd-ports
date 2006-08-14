@@ -16,7 +16,7 @@ DISTNAME=	ElectricFence-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugging malloc() that uses the VM hardware to detect buffer overruns
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CFLAGS+=	-D__USE_BSD
 MAN3=		efence.3
 

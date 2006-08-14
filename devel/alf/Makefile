@@ -18,6 +18,6 @@ COMMENT=	Abstract Large File
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ COMMENT=	Abstract user interface protocol library
 LIB_DEPENDS=	aura3.3:${PORTSDIR}/devel/libaura
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SONAME=		${SOLINK}.4
 SOLINK=		${PORTNAME}4.so

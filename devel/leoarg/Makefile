@@ -18,7 +18,7 @@ COMMENT=	A class for parsing command lines
 
 USE_GNOME=	gnometarget lthack
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/LeoArg.hh lib/libLeoArg.a lib/libLeoArg.la \
 		lib/libLeoArg.so lib/libLeoArg.so.2 \

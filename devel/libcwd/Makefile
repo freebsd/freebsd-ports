@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-threading
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GETOPT_LONG=yes
 USE_GCC=	3.4+
 

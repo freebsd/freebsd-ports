@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library that supports printf style like format printing
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PORTDOCS=	ChangeLog README testformat.cpp
 PLIST_FILES=	include/format.h lib/libformat.a lib/libformat.so lib/libformat.so.1

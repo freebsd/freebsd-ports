@@ -19,7 +19,7 @@ COMMENT=	A C++ Wrapper for the SDL (Simple DirectMedia Layer)
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=	SDLmm.3 SDLmm_Audio.3 SDLmm_BaseSurface.3 SDLmm_CD.3 SDLmm_ColorRGB.3 \
 	SDLmm_ColorRGBA.3 SDLmm_Display.3 SDLmm_Event.3 SDLmm_EventHandler.3 \

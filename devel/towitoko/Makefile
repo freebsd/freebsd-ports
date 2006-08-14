@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX driver for Towitoko smartcard readers
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=	ctapi.3 ctbcs.3
 MLINKS=	ctapi.3 CT_close.3 \

@@ -19,7 +19,7 @@ COMMENT=	A library for the creation of CGI-based Web applications
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h
 

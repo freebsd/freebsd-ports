@@ -26,7 +26,7 @@ USE_QT_VER=	3
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/qextmdi
 MAKE_ENV+=	QTDIR=${QT_PREFIX} QMAKESPEC=${PREFIX}/share/qt/mkspecs/freebsd-g++ KDE2DIR=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

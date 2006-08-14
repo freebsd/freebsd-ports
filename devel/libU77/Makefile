@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds Fortran intrinsics missing from f2c
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile

@@ -23,7 +23,7 @@ MAKE_ENV=	prefix="${PREFIX}" CC="${CC}" \
 		RPM_OPT_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		allocator.3m bitset.3m cfg.3m csv.3m diff.3m eval.3m hashmap.3m \
 		hexdump.3m linkedlist.3m msgno.3m path.3m pool.3m shellout.3m \

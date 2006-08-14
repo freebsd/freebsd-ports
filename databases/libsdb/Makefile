@@ -18,7 +18,7 @@ COMMENT=	Simple database library
 
 HAS_CONFIGURE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_FILTER_SHLIBS=	yes
 
 MAN3=		sdb.3 sdb_init.3 sdb_open.3 sdb_close.3 sdb_query.3

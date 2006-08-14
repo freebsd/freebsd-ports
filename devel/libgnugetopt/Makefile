@@ -22,7 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU getopt library
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/getopt.h ${PREFIX}/include

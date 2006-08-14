@@ -24,7 +24,7 @@ USE_GNOME=	gnomehack gnometarget libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
 MAN3=	ao_string_tokenize.3 configFileLoad.3 optionFileLoad.3 \

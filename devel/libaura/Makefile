@@ -15,7 +15,7 @@ MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Library of Assorted Useful Reusable Abstractions
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SONAME=		${SOLINK}.3
 SOLINK=		${PORTNAME}3.so

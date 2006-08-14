@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ngpt-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NGPT is a next generation pthread implementation based on GNU pth
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tests=no --enable-maintainer=no --enable-pthread \
 		--disable-kernel-patch

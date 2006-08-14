@@ -19,7 +19,7 @@ COMMENT=	The Berkeley DB package, revision 2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=		--enable-compat185 \

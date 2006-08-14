@@ -18,7 +18,7 @@ COMMENT=	A freely-redistributable libiberty clone
 
 CONFLICTS=	gnulibiberty-*
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libiberty.a ${PREFIX}/lib

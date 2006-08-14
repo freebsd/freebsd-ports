@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode conversion routines between UCS-4 and UTF-8
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		libutf-8.3 fgetu8.3 fputu8.3 sgetu8.3 sputu8.3
 

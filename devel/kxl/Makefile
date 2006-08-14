@@ -17,7 +17,7 @@ COMMENT=	A visual, sound library for games
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS=="-L${X11BASE}/lib"

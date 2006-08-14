@@ -16,7 +16,7 @@ COMMENT=	C API for reading and writing ArcView Shapefiles
 
 USE_AUTOTOOLS=	libtool:15:env
 ALL_TARGET=	lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	lib_install
 
 post-patch:
