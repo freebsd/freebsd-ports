@@ -3,7 +3,6 @@ bin/ztcfg
 bin/ztmonitor
 bin/zttest
 bin/zttool
-etc/rc.d/zaptel.sh.sample
 include/tonezone.h
 include/zaptel.h
 lib/libtonezone.a
