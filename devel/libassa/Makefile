@@ -7,34 +7,31 @@
 #
 
 PORTNAME=	libassa
-PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTVERSION=	3.4.1
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	An C++ networking library and application framework
 
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--disable-html-docs --disable-static
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+PLIST_SUB=	ASSA_VERSION=${PORTVERSION:R}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s: doc : :g' ${WRKSRC}/Makefile.in
 
-pre-configure:
-	@${CP} ${LTMAIN} ${WRKSRC}
-
 .include <bsd.port.pre.mk>
 
 .if ( ${OSVERSION} < 500000 )
-BROKEN=	"Compilation fails and passing -fhuge-objects does not help"
+BROKEN=	compilation fails and passing -fhuge-objects does not help
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		does not build on sparc64
 .endif
 
 .include <bsd.port.post.mk>
