@@ -7,11 +7,10 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/:icc \
-		http://www.icculus.org/quake2/files/:icc \
-		${MASTER_SITE_IDSOFTWARE:S|$|quake2/source/:id|}
+		http://www.icculus.org/quake2/files/:icc
 DISTNAME=	quake2-r${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:icc
 DIST_SUBDIR=	${PORTNAME}
@@ -35,8 +34,6 @@ OPTIONS=	X11		"Build X11 software driver" on \
 		SERVER		"Build dedicated server executable" on \
 		GAME		"Build a main game .so file" on \
 		CTF		"Build Capture The Flag mod" off \
-		ROGUE		"Build Ground Zero (Rogue) mission pack" off \
-		XATRIX		"Build The Reckoning (Xatrix) mission pack" off \
 		RETEXTURE	"Enable support of retextured graphics" off \
 		JOYSTICK	"Enable joystick support" off \
 		REDBLUE		"Enable 3D glasses rendering" off \
@@ -44,8 +41,6 @@ OPTIONS=	X11		"Build X11 software driver" on \
 		ARTS		"Enable support for aRts sound daemon" off \
 		OPTIMIZED_CFLAGS "Enable extra optimization options" off \
 		X86_ASM		"Enable use of x86 assembly code" on
-
-DATADIR=	${Q2DIR}
 
 ALL_TARGET=	build_release
 
@@ -106,7 +101,7 @@ PLIST_SUB+=	SDLGL="@comment "
 
 .if defined(WITH_SDLCLIENT) && (defined(WITH_SDL) || ${HAVE_SDL:Msdl} != "")
 MAKE_ARGS+=	BUILD_SDLQUAKE2=YES
-EXE_TARGETS+=	sdlquake2
+EXE_TARGETS+=	quake2-sdl
 PLIST_SUB+=	SDLCLIENT=""
 .else
 PLIST_SUB+=	SDLCLIENT="@comment "
@@ -164,38 +159,13 @@ PLIST_SUB+=	CTF=""
 PLIST_SUB+=	CTF="@comment "
 .endif
 
-.if defined(WITH_ROGUE)
-DISTFILES+=	roguesrc320.shar.Z:id
-MAKE_ARGS+=	BUILD_ROGUE=YES
-Q2MP+=		rogue
-ROGUE_OFF=	454
-PLIST_SUB+=	ROGUE=""
-.else
-PLIST_SUB+=	ROGUE="@comment "
-.endif
-
-.if defined(WITH_XATRIX)
-DISTFILES+=	xatrixsrc320.shar.Z:id
-MAKE_ARGS+=	BUILD_XATRIX=YES
-Q2MP+=		xatrix
-XATRIX_OFF=	441
-PLIST_SUB+=	XATRIX=""
-.else
-PLIST_SUB+=	XATRIX="@comment "
-.endif
-
 ###                        #
 ## MISCELLANEOUS TUNABLES ##
 #                        ###
 
 .if defined(WITH_RETEXTURE)
-.   for i in 10 11 12 13 14 16 17 19
-DISTFILES+=	pak${i}.pak:icc
-.   endfor
 MAKE_ARGS+=	BUILD_RETEXTURE=YES
-PLIST_SUB+=	RETEX=""
-.else
-PLIST_SUB+=	RETEX="@comment "
+RUN_DEPENDS+=	${Q2DIR}/baseq2/pak10.pak:${PORTSDIR}/games/quake2-retexture
 .endif
 
 .if defined(WITH_JOYSTICK)
@@ -227,35 +197,19 @@ MAKE_ARGS+=	NO_X86_ASM=YES
 ## END OF CONFIGURATION KNOBS ##
 #                            ###
 
-post-extract: .SILENT
-.for mp in ${Q2MP}
-	${MKDIR} ${WRKSRC}/src/${mp}
-	cd ${WRKSRC}/src/${mp} && ${GUNZIP_CMD} -c \
-		${DISTDIR}/${DIST_SUBDIR}/${mp}src320.shar.Z > \
-		${mp}src320.shar && \
-		${TAIL} +${${mp:U}_OFF} ${mp}src320.shar | ${SH} > /dev/null
-.   if defined(WITH_XATRIX) || defined(WITH_ROGUE)
-	${REINPLACE_CMD} -e 's/__ $$/&|| defined __FreeBSD__/' \
-		${WRKSRC}/src/${mp}/q_shared.c
-.   endif
-.endfor
-
 post-patch: .SILENT
-	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}| ; \
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${Q2DIR}| ; \
 		s|%%LIBDIR%%|${LIBDIR}|' ${WRKSRC}/src/qcommon/files.c \
 		${WRKSRC}/src/linux/vid_so.c
 	${REINPLACE_CMD} -e 's|dllname, RTLD_LAZY|& \| RTLD_GLOBAL|' \
 		${WRKSRC}/src/linux/qgl_linux.c
-.if defined(WITH_ROGUE)
-	${REINPLACE_CMD} -e '/^#include <nan.h>/d' ${WRKSRC}/src/rogue/g_local.h
-.endif
 	${REINPLACE_CMD} -e 's|/dev/js|/dev/joy|' ${WRKSRC}/src/linux/joystick.c
 
 do-install:
 .for tgt in ${EXE_TARGETS}
 	${INSTALL_PROGRAM} ${TGTDIR}/${tgt} ${PREFIX}/bin
 .endfor
-	@${MKDIR} ${LIBDIR}
+	@${MKDIR} ${LIBDIR}/baseq2
 .for tgt in ${REF_TARGETS}
 	${INSTALL_PROGRAM} ${TGTDIR}/ref_${tgt}.so ${LIBDIR}
 .endfor
@@ -264,21 +218,11 @@ do-install:
 	${INSTALL_PROGRAM} ${TGTDIR}/ctf/game.so ${LIBDIR}/ctf
 .endif
 .if defined(WITH_EYECANDY)
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak ${DATADIR}/baseq2
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/maxpak.pak ${LIBDIR}/baseq2
 .endif
 .if defined(WITH_GAME)
-	@${MKDIR} ${LIBDIR}/baseq2
 	${INSTALL_PROGRAM} ${TGTDIR}/game.so ${LIBDIR}/baseq2
 .endif
-.if defined(WITH_RETEXTURE)
-.   for i in 10 11 12 13 14 16 17 19
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/pak${i}.pak ${DATADIR}/baseq2
-.   endfor
-.endif
-.for mp in ${Q2MP}
-	@${MKDIR} ${LIBDIR}/${mp}
-	${INSTALL_PROGRAM} ${TGTDIR}/${mp}/game.so ${LIBDIR}/${mp}
-.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

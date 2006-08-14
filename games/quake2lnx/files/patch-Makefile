@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Sep 25 05:06:52 2004
-+++ Makefile	Tue Mar 21 19:18:24 2006
+--- Makefile.orig	Fri Sep 24 19:06:52 2004
++++ Makefile	Thu Jul 27 16:16:06 2006
 @@ -12,30 +12,30 @@
  # (Note: not all options are available for all platforms).
  # quake2 (uses OSS for sound, cdrom ioctls for cd audio) is automatically built.
@@ -59,8 +59,7 @@
  
 -# this nice line comes from the linux kernel makefile
 -ARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
-+RELEASE_CFLAGS=$(BASE_CFLAGS) $(OPTIMIZED_CFLAGS)
- 
+-
 -ifneq ($(ARCH),x86_64)
 -ifneq ($(ARCH),i386)
 -ifneq ($(ARCH),axp)
@@ -104,7 +103,8 @@
 -RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops \
 -	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
 -endif
--
++RELEASE_CFLAGS=$(BASE_CFLAGS) $(OPTIMIZED_CFLAGS)
+ 
 -VERSION=3.21+r0.16
 +VERSION=3.21+r0.16.2
  
@@ -201,60 +201,30 @@
  DO_AS=$(CC) $(CFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
  DO_SHLIB_AS=$(CC) $(CFLAGS) $(SHLIBCFLAGS) -DELF -x assembler-with-cpp -o $@ -c $<
  
-@@ -224,168 +189,54 @@
+@@ -224,167 +189,53 @@
  
  .PHONY : targets build_debug build_release clean clean-debug clean-release clean2
  
 -TARGETS=$(BUILDDIR)/quake2 $(BUILDDIR)/game$(ARCH).$(SHLIBEXT)
+-ifeq ($(strip $(BUILD_DEDICATED)),YES)
+- TARGETS += $(BUILDDIR)/q2ded
+-endif
+-ifeq ($(strip $(BUILD_CTFDLL)),YES)
+- TARGETS += $(BUILDDIR)/ctf/game$(ARCH).$(SHLIBEXT)
 +ifeq ($(strip $(BUILD_CLIENT)),YES)
 + TARGETS += $(BUILDDIR)/quake2
-+endif
-+
+ endif
+ 
+-ifeq ($(strip $(BUILD_XATRIX)),YES)
+- TARGETS += $(BUILDDIR)/xatrix/game$(ARCH).$(SHLIBEXT)
 +ifeq ($(strip $(BUILD_SDLQUAKE2)),YES)
-+ TARGETS += $(BUILDDIR)/sdlquake2
-+endif
-+
++ TARGETS += $(BUILDDIR)/quake2-sdl
+ endif
+ 
+-ifeq ($(strip $(BUILD_ROGUE)),YES)
+- TARGETS += $(BUILDDIR)/rogue/game$(ARCH).$(SHLIBEXT)
 +ifeq ($(strip $(BUILD_SVGA)),YES)
 + TARGETS += $(BUILDDIR)/ref_soft.$(SHLIBEXT)
-+endif
-+
-+ifeq ($(strip $(BUILD_X11)),YES)
-+ TARGETS += $(BUILDDIR)/ref_softx.$(SHLIBEXT)
-+endif
-+
-+ifeq ($(strip $(BUILD_GLX)),YES)
-+ TARGETS += $(BUILDDIR)/ref_glx.$(SHLIBEXT)
-+endif
-+
-+ifeq ($(strip $(BUILD_SDL)),YES)
-+ TARGETS += $(BUILDDIR)/ref_softsdl.$(SHLIBEXT)
-+endif
-+
-+ifeq ($(strip $(BUILD_SDLGL)),YES)
-+ TARGETS += $(BUILDDIR)/ref_sdlgl.$(SHLIBEXT)
-+endif
-+
- ifeq ($(strip $(BUILD_DEDICATED)),YES)
-  TARGETS += $(BUILDDIR)/q2ded
- endif
-+
-+ifeq ($(strip $(BUILD_GAME)),YES)
-+ TARGETS += $(BUILDDIR)/game.$(SHLIBEXT)
-+endif
-+
- ifeq ($(strip $(BUILD_CTFDLL)),YES)
-- TARGETS += $(BUILDDIR)/ctf/game$(ARCH).$(SHLIBEXT)
-+ TARGETS += $(BUILDDIR)/ctf/game.$(SHLIBEXT)
- endif
- 
- ifeq ($(strip $(BUILD_XATRIX)),YES)
-- TARGETS += $(BUILDDIR)/xatrix/game$(ARCH).$(SHLIBEXT)
-+ TARGETS += $(BUILDDIR)/xatrix/game.$(SHLIBEXT)
- endif
- 
- ifeq ($(strip $(BUILD_ROGUE)),YES)
-- TARGETS += $(BUILDDIR)/rogue/game$(ARCH).$(SHLIBEXT)
-+ TARGETS += $(BUILDDIR)/rogue/game.$(SHLIBEXT)
  endif
  
 -ifeq ($(ARCH),axp)
@@ -367,46 +337,72 @@
 - ifeq ($(strip $(BUILD_FXGL)),YES)
 -  $(warning Warning: FXGL not currently supported for $(ARCH))
 - endif
--
++ifeq ($(strip $(BUILD_X11)),YES)
++ TARGETS += $(BUILDDIR)/ref_softx.$(SHLIBEXT)
++endif
+ 
 - ifeq ($(strip $(BUILD_SDLGL)),YES)
 -  TARGETS += $(BUILDDIR)/ref_sdlgl.$(SHLIBEXT)
 - endif
 -endif # ARCH x86_64
--
++ifeq ($(strip $(BUILD_GLX)),YES)
++ TARGETS += $(BUILDDIR)/ref_glx.$(SHLIBEXT)
++endif
+ 
 -ifeq ($(ARCH),i386)
 - ifeq ($(strip $(BUILD_SDLQUAKE2)),YES)
 -  TARGETS += $(BUILDDIR)/sdlquake2
 - endif
--
++ifeq ($(strip $(BUILD_SDL)),YES)
++ TARGETS += $(BUILDDIR)/ref_softsdl.$(SHLIBEXT)
++endif
+ 
 - ifeq ($(strip $(BUILD_SVGA)),YES)
 -  TARGETS += $(BUILDDIR)/ref_soft.$(SHLIBEXT)
 - endif
--
++ifeq ($(strip $(BUILD_SDLGL)),YES)
++ TARGETS += $(BUILDDIR)/ref_sdlgl.$(SHLIBEXT)
++endif
+ 
 - ifeq ($(strip $(BUILD_X11)),YES)
 -  TARGETS += $(BUILDDIR)/ref_softx.$(SHLIBEXT)
 - endif
--
++ifeq ($(strip $(BUILD_DEDICATED)),YES)
++ TARGETS += $(BUILDDIR)/q2ded
++endif
+ 
 - ifeq ($(strip $(BUILD_GLX)),YES)
 -  TARGETS += $(BUILDDIR)/ref_glx.$(SHLIBEXT)
 - endif
--
++ifeq ($(strip $(BUILD_GAME)),YES)
++ TARGETS += $(BUILDDIR)/game.$(SHLIBEXT)
++endif
+ 
 - ifeq ($(strip $(BUILD_FXGL)),YES)
 -  TARGETS += $(BUILDDIR)/ref_gl.$(SHLIBEXT)
 - endif
--
++ifeq ($(strip $(BUILD_CTFDLL)),YES)
++ TARGETS += $(BUILDDIR)/ctf/game.$(SHLIBEXT)
++endif
+ 
 - ifeq ($(strip $(BUILD_SDL)),YES)
 -  TARGETS += $(BUILDDIR)/ref_softsdl.$(SHLIBEXT)
 - endif
--
++ifeq ($(strip $(BUILD_XATRIX)),YES)
++ TARGETS += $(BUILDDIR)/xatrix/game.$(SHLIBEXT)
++endif
+ 
 - ifeq ($(strip $(BUILD_SDLGL)),YES)
 -  TARGETS += $(BUILDDIR)/ref_sdlgl.$(SHLIBEXT)
 - endif
 -endif # ARCH i386
--
++ifeq ($(strip $(BUILD_ROGUE)),YES)
++ TARGETS += $(BUILDDIR)/rogue/game.$(SHLIBEXT)
++endif
+ 
  ifeq ($(strip $(BUILD_AA)),YES)
  	TARGETS += $(BUILDDIR)/ref_softaa.$(SHLIBEXT)
- endif
-@@ -493,10 +344,11 @@
+@@ -493,16 +344,17 @@
  	$(BUILDDIR)/client/snd_sdl.o
  
  ifeq ($(ARCH),i386)
@@ -419,6 +415,13 @@
  endif
  
  $(BUILDDIR)/quake2 : $(QUAKE2_OBJS) $(QUAKE2_LNX_OBJS) $(QUAKE2_AS_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_LNX_OBJS) $(QUAKE2_AS_OBJS) $(LDFLAGS)
+ 
+-$(BUILDDIR)/sdlquake2 : $(QUAKE2_OBJS) $(QUAKE2_SDL_OBJS) $(QUAKE2_AS_OBJS)
++$(BUILDDIR)/quake2-sdl : $(QUAKE2_OBJS) $(QUAKE2_SDL_OBJS) $(QUAKE2_AS_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(QUAKE2_OBJS) $(QUAKE2_SDL_OBJS) $(QUAKE2_AS_OBJS) $(LDFLAGS) $(SDLLDFLAGS)
+ 
+ $(BUILDDIR)/client/cl_cin.o :     $(CLIENT_DIR)/cl_cin.c
 @@ -719,7 +571,7 @@
  	$(DO_DED_CC)
  
