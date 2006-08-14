@@ -442,6 +442,7 @@
     SUBDIR += p5-Image-Compare
     SUBDIR += p5-Image-ExifTool
     SUBDIR += p5-Image-Grab
+    SUBDIR += p5-Image-IPTCInfo
     SUBDIR += p5-Image-Imlib2
     SUBDIR += p5-Image-Info
     SUBDIR += p5-Image-MetaData-GQview
