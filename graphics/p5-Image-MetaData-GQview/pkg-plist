@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/GQview/.packlist
+%%SITE_PERL%%/Image/MetaData/GQview.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/GQview
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image/MetaData
+@dirrmtry %%SITE_PERL%%/Image
