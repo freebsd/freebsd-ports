@@ -58,7 +58,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS}," ${WRKSRC}/configure
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/doc/clamsmtpd.conf ${PREFIX}/etc/clamsmtpd.conf-sample
+	@${INSTALL_DATA} ${WRKSRC}/doc/clamsmtpd.conf ${TARGETDIR}/etc/clamsmtpd.conf-sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
