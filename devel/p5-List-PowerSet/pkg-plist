@@ -1,0 +1,5 @@
+%%SITE_PERL%%/List/PowerSet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/List/PowerSet/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/List/PowerSet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/List
+@dirrmtry %%SITE_PERL%%/List
