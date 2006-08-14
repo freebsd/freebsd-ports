@@ -12640,6 +12640,7 @@ ruby-tserver	ports/net/ruby-tserver
 ruby-tzfile	ports/devel/ruby-tzfile
 ruby-usersguide	ports/lang/ruby-usersguide
 ruby-vorbisfile	ports/audio/ruby-vorbisfile
+ruby-vpim	ports/misc/ruby-vpim
 ruby-webunit	ports/www/ruby-webunit
 ruby-wx		ports/x11-toolkits/ruby-wx
 ruby-xml-script	ports/textproc/ruby-xml-script
