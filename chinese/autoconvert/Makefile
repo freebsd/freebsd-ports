@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Intelligent Chinese encoding converter
 
-USE_GETOPT_LONG=	yes
+DATADIR=	${TARGETDIR}/share/${PKGNAMEPREFIX}${PORTNAME}
 MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
-DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
+USE_GETOPT_LONG=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CFLAGS|#CFLAGS|" \
