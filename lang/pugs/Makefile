@@ -31,8 +31,8 @@ MAN3=		Perl6::Pugs.3 \
 .include <bsd.port.pre.mk>
 
 post-configure:
-	@${REINPLACE_CMD} -e '/^INSTALLPRIVLIB/s,${PREFIX}/lib,${PREFIX}/lib/perl6,;' \
-		-e '/^INSTALLARCHLIB/s,${PREFIX}/lib,${PREFIX}/lib/perl6/mach,' \
+	@${REINPLACE_CMD} -e '/^INSTALLPRIVLIB/s,${PREFIX}/lib,${TARGETDIR}/lib/perl6,;' \
+		-e '/^INSTALLARCHLIB/s,${PREFIX}/lib,${TARGETDIR}/lib/perl6/mach,' \
 		${WRKSRC}/Makefile
 
 .if !defined(NOPORTDOCS)
@@ -41,9 +41,9 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -R ${EXDIR}/ ${EXAMPLESDIR}
 	@${FIND} -s ${EXAMPLESDIR} -type f | \
-		${SED} -e 's|^${PREFIX}/||' >> ${TMPPLIST}
+		${SED} -e 's|^${TARGETDIR}/||' >> ${TMPPLIST}
 	@${FIND} -d ${EXAMPLESDIR} -type d | \
-		${SED} -e 's|^${PREFIX}/|@dirrm |' >> ${TMPPLIST}
+		${SED} -e 's|^${TARGETDIR}/|@dirrm |' >> ${TMPPLIST}
 .endif
 
 .if ${PERL_LEVEL} < 500601
