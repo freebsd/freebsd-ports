@@ -2,5 +2,5 @@ lib/tcl%%TCL_VERSION%%/TclExpat/pkgIndex.tcl
 @dirrm lib/tcl%%TCL_VERSION%%/TclExpat
 lib/libtclexpat.so.1.1
 lib/libtclexpat.so
-%%PORTDOCS%% %%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm  %%DOCSDIR%%
