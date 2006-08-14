@@ -20,17 +20,19 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/doc/bg5ps
-	@${MKDIR} ${PREFIX}/share/examples/bg5ps
-	${INSTALL_SCRIPT} ${WRKSRC}/bg5ps ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ttf2psm ${PREFIX}/bin
-	${CP} -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/bg5ps
-	${INSTALL_DATA} ${WRKSRC}/bg5ps.conf ${PREFIX}/etc/bg5ps.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/gb2312-bg5ps.conf ${PREFIX}/etc/gb2312-bg5ps.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/examples/netscape.ps ${PREFIX}/share/examples/bg5ps
-	${INSTALL_DATA} ${WRKSRC}/examples/test.big5 ${PREFIX}/share/examples/bg5ps
-	${INSTALL_DATA} ${WRKSRC}/examples/test.gb2312 ${PREFIX}/share/examples/bg5ps
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/test.sh ${PREFIX}/share/examples/bg5ps
+	${INSTALL_SCRIPT} ${WRKSRC}/bg5ps ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ttf2psm ${TARGETDIR}/bin
+	${INSTALL_DATA} ${WRKSRC}/bg5ps.conf ${TARGETDIR}/etc/bg5ps.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/gb2312-bg5ps.conf ${TARGETDIR}/etc/gb2312-bg5ps.conf.sample
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/netscape.ps ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/test.big5 ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/test.gb2312 ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/test.sh ${EXAMPLESDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
