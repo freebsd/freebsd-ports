@@ -31,6 +31,7 @@ share/gnome/genius/gel/combinatorics/misc.gel
 share/gnome/genius/gel/combinatorics/recursive_sequences.gel
 share/gnome/genius/gel/equation_solving/diffeqs.gel
 share/gnome/genius/gel/equation_solving/find_root.gel
+share/gnome/genius/gel/equation_solving/formulas.gel
 share/gnome/genius/gel/equation_solving/loader.gel
 share/gnome/genius/gel/functions/complex_numbers.gel
 share/gnome/genius/gel/functions/delta.gel
@@ -67,6 +68,12 @@ share/gnome/genius/plugins/test.plugin
 share/gnome/help/genius/C/about.xml
 share/gnome/help/genius/C/examples.xml
 share/gnome/help/genius/C/figures/genius_window.png
+share/gnome/help/genius/C/figures/line_plot.png
+share/gnome/help/genius/C/figures/line_plot_graph.png
+share/gnome/help/genius/C/figures/parametric.png
+share/gnome/help/genius/C/figures/parametric_graph.png
+share/gnome/help/genius/C/figures/surface_graph.png
+share/gnome/help/genius/C/gel-plotting.xml
 share/gnome/help/genius/C/gel-absolute-value-modulus.xml
 share/gnome/help/genius/C/gel-comparison-operators.xml
 share/gnome/help/genius/C/gel-conditionals.xml
