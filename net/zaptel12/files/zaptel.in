@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: zaptel
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# zaptel_enable (bool):         Set to NO by default.
+#                               Set it to YES to enable zaptel.
+#
+
+. %%RC_SUBR%%
+
+kmod_dir=%%PREFIX%%/lib/zaptel
+
+kmod_load="zaptel.ko qozap.ko wcfxo.ko wcfxs.ko wct1xxp.ko wct4xxp.ko wcte11xp.ko"
+kmod_unload="wcte11xp.ko wct4xxp.ko wct1xxp.ko wcfxs.ko wcfxo.ko qozap.ko zaptel.ko"
+name="zaptel"
+rcvar=${name}_enable
+
+start_cmd="zaptel_start"
+stop_cmd="zaptel_stop"
+
+zaptel_start()
+{
+	echo -n " ${name}"
+	for kmod in ${kmod_load}
+	do
+		kldload ${kmod_dir}/${kmod}
+	done
+}
+
+zaptel_stop()
+{
+        echo -n " ${name}"
+	for kmod in ${kmod_unload}
+	do
+	        kldunload ${kmod}
+	done
+}
+load_rc_config $name
+
+: ${zaptel_enable="NO"}
+
+run_rc_command "$1"

@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------
+IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
+
+To use the driver set zaptel_enable="YES" in your rc.conf.
+
+To load the driver run (as root):
+
+# %%PREFIX%%/etc/rc.d/zaptel start
+
+To unload it:
+
+# %%PREFIX%%/etc/rc.d/zaptel stop
+
+It'll also load the driver automatically when the system is started.
+
+Report problems to Alexander Timoshenko <gonzo@pbxpress.com>. Please note that
+it is still "work in progress" so that your bug reports are welcome and will
+help to improve quality of the drivers.
+
+Great thanks to all companies and individuals who made this driver happen,
+including but not limited to, John Todd, Chris Coleman, Alexander Timoshenko,
+PBXpress, Inc, Max Khon, LF.net, Luigi Rizzo and others contributors.
+
+Thanks and enjoy!
+
+-Maxim
+-------------------------------------------------------------------------------
