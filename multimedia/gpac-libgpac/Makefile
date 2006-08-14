@@ -32,12 +32,11 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 .include <bsd.port.pre.mk>
 
-post-patch:
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
-		${WRKSRC}/include/gpac/setup.h
-	@${RM} -f ${WRKSRC}/include/gpac/setup.h.bak
+BROKEN=	Does not build
 .endif
+
+post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
 
 do-install:
