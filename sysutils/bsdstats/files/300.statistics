@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.11 2006-08-14 07:35:09 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.12 2006-08-14 13:08:01 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -33,12 +33,38 @@ send_devices () {
 }
 
 get_id_token () {
+    local IFS
+
+    IFS='=
+'
+
     if [ ! -f $id_token_file ] ;
     then
        IDTOKEN=$( /usr/bin/openssl rand -base64 16 )
-       /usr/bin/fetch -qo $id_token_file "http://$checkin_server/scripts/getid.php?key=$IDTOKEN"
-       /usr/sbin/chown root:wheel $id_token_file 
-       /bin/chmod 600 $id_token_file                     
+       
+       idf=$( mktemp "$id_token_file.XXXXXX" )   && \
+       /usr/sbin/chown root:wheel $id_token_file && \
+       /bin/chmod 600 $id_token_file             && \    
+
+       /usr/bin/fetch -qo - \
+	   "http://$checkin_server/scripts/getid.php?key=$IDTOKEN" | { 
+	   while read var val 
+	     do  
+	     case $var in
+		 KEY)
+                     echo "KEY=$val"
+		 ;;
+		 TOKEN)
+                     echo "TOKEN=$val"
+		 ;;
+		 *)
+                 ;;
+		 esac
+	   done
+       } > $idf                                  && \
+
+       mv $idf $id_token_file
+
        echo "To protect against abuse, the initial challenge/response phase"
        echo "contains a 15 minute pause.  Please be patient while this time"
        echo "limit elapses"
