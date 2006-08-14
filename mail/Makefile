@@ -285,6 +285,7 @@
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-Email-Valid-Loose
     SUBDIR += p5-IMAP-Admin
+    SUBDIR += p5-IMAP-Client
     SUBDIR += p5-IMAP-Sieve
     SUBDIR += p5-Log-Procmail
     SUBDIR += p5-MIME-Fast

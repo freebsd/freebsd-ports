@@ -1,0 +1,21 @@
+This module was created as a low-level inteface to any IMAP server. It
+was built to be a 'clear box' solution to working with an IMAP
+environment. The idea is that anything an IMAP client should be able
+to do, and any information available via the IMAP specs, should be
+available to a client interface and user. This way, the full strength
+of the IMAP protocol and data can be utilized, ideally in the most
+network-efficient mannger possible, rather than being contrained only
+to a subset of commands or data-limited responses. If the server says
+it, the client should be able to see it.
+
+This module also takes steps to be able to handle anticipated
+situations for the user rather than forcing a per-implementation
+behavior for such expected events, such as referrals. IMAP::Client
+will fully support referrals, and will transparently handle them for
+whatever command is issued to them (so long as the referral s for
+anonymous or the same user with the same password - a new user or
+different password would require a new username/password to be
+obtained. As of 0.01, this is not supported, however the framework is
+down.
+
+WWW:	http://search.cpan.org/dist/IMAP-Client/
