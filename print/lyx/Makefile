@@ -95,7 +95,7 @@ QT_PRESENT=	off
 
 .if ${OSVERSION} < 500035
 CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
-.elif ${OSVERSION} >= 700007 && ${CXX} == c++
+.elif ${OSVERSION} >= 700007 && ${ARCH} == i386 && ${CXX} == c++
 BROKEN=		C++ compiler seg-faults, try using a different one and report to ${MAINTAINER}
 .endif
 
