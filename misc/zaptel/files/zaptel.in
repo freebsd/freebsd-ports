@@ -30,8 +30,9 @@ zaptel_start()
 	echo -n " ${name}"
 	for kmod in ${kmod_load}
 	do
-		kldload ${kmod_dir}/${kmod}
+		kldload ${kmod_dir}/${kmod} || exit 1
 	done
+	%%PREFIX%%/bin/ztcfg
 }
 
 zaptel_stop()
