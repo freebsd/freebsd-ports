@@ -1,5 +1,11 @@
 bin/mcabber
 %%EXAMPLESDIR%%/mcabberrc
+%%DATADIR%%/contrib/cicq2mcabber.pl
+%%DATADIR%%/contrib/eventcmd
+%%DATADIR%%/contrib/mcwizz.pl
+%%DATADIR%%/contrib/themes/light.txt
+%%DATADIR%%/contrib/themes/light2.txt
+%%DATADIR%%/contrib/themes/oliver.txt
 %%DATADIR%%/help/en/hlp.txt
 %%DATADIR%%/help/en/hlp_add.txt
 %%DATADIR%%/help/en/hlp_alias.txt
@@ -85,6 +91,8 @@ bin/mcabber
 %%DATADIR%%/help/pl/hlp_status_to.txt
 %%DATADIR%%/help/pl/hlp_version.txt
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/contrib/themes
+@dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/help/en
 @dirrm %%DATADIR%%/help/fr
 @dirrm %%DATADIR%%/help/pl
