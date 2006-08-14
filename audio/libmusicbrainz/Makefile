@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	2nd generation incarnation of the CD Index - audio metadata
 
+FORBIDDEN=	Multiple buffer overflow vulnerabilities
+
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	musicbrainz-1.*
