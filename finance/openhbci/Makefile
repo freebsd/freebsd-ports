@@ -17,7 +17,7 @@ COMMENT=		HBCI is a bank-independent homebanking standard
 WRKSRC=			${WRKDIR}/${PORTNAME}-0.9.17
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

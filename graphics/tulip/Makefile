@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
 # So we remove it from pkg-plist and disable it here to make sure it does not
 # get build somehow, causing plist problems
 CONFIGURE_ARGS+=	--disable-tlprender
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include \
 		-I${QT_PREFIX}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}

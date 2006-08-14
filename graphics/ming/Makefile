@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming \
 		ac_cv_path_PYTHON=no
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I. -I.. -I${LOCALBASE}/include
 LDFLAGS=	-L. -L.. -L${LOCALBASE}/lib

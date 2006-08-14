@@ -20,7 +20,7 @@ LIB_DEPENDS=	dpstk.0:${PORTSDIR}/x11/dgs
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\

@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe \
 		--enable-3ds-import --enable-sound
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		coin-config.1
 

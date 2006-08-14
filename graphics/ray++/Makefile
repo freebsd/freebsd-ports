@@ -19,7 +19,7 @@ COMMENT=	A collection of C++ classes needed for ray tracing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-fast-handles
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -16,7 +16,7 @@ COMMENT=	Library to merge TIFF files into multi-page TIFF files
 
 EXTRACT_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_ZIP=	yes
 DIST_SUBDIR=	tifmerge
 MAN3=		tifmerge.3

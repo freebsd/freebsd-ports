@@ -30,7 +30,7 @@ CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	config/urt
 MAKEFILE=	makefile
 ALL_TARGET=	# none
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	aliastorle.1 applymap.1 avg4.1 crop.1 cubitorle.1 dvirle.1	\
 	fant.1 getx11.1 giftorle.1 graytorle.1 into.1 mcut.1 mergechan.1\

@@ -26,7 +26,7 @@ USE_AUTOTOOLS=	autoconf:253
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/alleggl
 

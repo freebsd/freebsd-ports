@@ -23,7 +23,7 @@ USE_GCC=	3.4
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-sdltest --enable-static
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if exists(${X11R6}/bin/xmms) || defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms

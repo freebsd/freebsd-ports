@@ -29,7 +29,7 @@ MAKE_ENV=	OPENGLINCDIR="${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 ALL_TARGET=	freebsd
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

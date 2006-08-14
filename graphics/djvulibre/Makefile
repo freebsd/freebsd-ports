@@ -32,7 +32,7 @@ CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		CXX="${CXX}" \
 		X11BASE="${X11BASE}"
 CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MANLANG=	"" ja
 MAN1=		bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 \

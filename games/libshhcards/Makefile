@@ -17,7 +17,7 @@ COMMENT=	Library for displaying game cards on X Window System
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAKEFILE=	${FILESDIR}/Makefile.lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

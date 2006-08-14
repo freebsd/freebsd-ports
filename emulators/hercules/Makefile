@@ -18,7 +18,7 @@ OPTIONS=	PTHREADS "Build with pthreads instead of fthreads." on \
 		DEBUG "Enable for debugging hercules itself." off
 
 GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure

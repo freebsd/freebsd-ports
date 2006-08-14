@@ -29,6 +29,6 @@ CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \
 		--with-gl-libraries=${X11BASE}/lib \
 		--with-glut-includes=${X11BASE}/include \
 		--with-glut-libraries=${X11BASE}/lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ USE_MOTIF=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi --with-motif
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		ode.1 plot.1 plotfont.1 spline.1 tek2plot.1
 INFO=		libxmi plotutils

@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USE_GETOPT_LONG=yes
 USE_ICONV=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		french-conjugator.1 french-deconjugator.1
 MAN3=		verbiste.3

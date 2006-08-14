@@ -25,7 +25,7 @@ USE_XLIB=	yes
 USE_MOTIF=	yes
 USE_GL=		yes
 .endif
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.gnux
 MAKE_ARGS=	"CFG=Rel"

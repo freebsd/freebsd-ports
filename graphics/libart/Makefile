@@ -16,7 +16,7 @@ COMMENT=	Library for high-performance 2D graphics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFLICTS=	libart_lgpl-*
 

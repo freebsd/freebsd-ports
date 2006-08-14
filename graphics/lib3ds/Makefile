@@ -17,7 +17,7 @@ COMMENT=	A library for handling 3DS (3D Studio) files
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"

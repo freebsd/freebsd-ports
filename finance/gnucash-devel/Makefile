@@ -36,7 +36,7 @@ USE_XPM=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp intltool intlhack
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG} \
 		--enable-ofx \
 		--disable-error-on-warning

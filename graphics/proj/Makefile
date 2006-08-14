@@ -18,7 +18,7 @@ NADFILES=	proj-nad27-1.2.tar.gz
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		cs2cs.1 geod.1 nad2nad.1 proj.1
 MAN3=		pj_init.3

@@ -20,7 +20,7 @@ LIB_DEPENDS=	artsmodules.0:${PORTSDIR}/multimedia/kdemultimedia3
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 EXTRA_PATCHES= ${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}"
 

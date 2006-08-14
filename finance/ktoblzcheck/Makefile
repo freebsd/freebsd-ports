@@ -18,7 +18,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PYTHON=	2.3+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		ktoblzcheck.1
 

@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/linux
 PATCH_DIST_STRIP=	-p3
 USE_GMAKE=	yes
 MAKE_ARGS+=	DEBUG="${CFLAGS}" LDFLAGS="${LDFLAGS} -L."
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libftp.so lib/libftp.so.3 \
 		include/ftplib.h bin/qftp bin/ftpdir bin/ftpget \

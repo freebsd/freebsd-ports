@@ -31,7 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs \
 		--without-builtin-ungif --without-afterbase \
 		--with-x
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	ascompose.1x
 

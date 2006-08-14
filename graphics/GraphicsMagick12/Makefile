@@ -48,7 +48,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-perl --with-windows-font-dir=${WINDOWS_FONT_DIR} \
 		--enable-shared --enable-static --without-threads \
 		--enable-symbol-prefix
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-data-html
