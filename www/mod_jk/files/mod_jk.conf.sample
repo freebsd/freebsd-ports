@@ -3,8 +3,9 @@
 #
 <IfModule mod_jk.c>
 	JkWorkersFile %%APACHE_CONF%%/workers.properties
-	JkLogFile  logs/jk.log
-	JkLogLevel warn
+	JkLogFile  /var/log/jk.log
+	JkShmFile  /var/log/jk-runtime-status
+	JkLogLevel error
 
 	# Sample JkMounts.  Replace these with the paths you would
 	# like to mount from your JSP server.

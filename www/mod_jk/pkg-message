@@ -1,5 +1,5 @@
 *****************************************************************************
-Make sure mod_jk.so is enabled in /usr/local/etc/apache/httpd.conf and
+Make sure mod_jk.so is enabled in %%APACHEETCDIR%%/httpd.conf and
 mod_jk is configured.  Have a look at
-/usr/local/etc/apache/mod_jk.conf.sample for an example.
+%%APACHEETCDIR%%/mod_jk.conf.sample for an example.
 *****************************************************************************
