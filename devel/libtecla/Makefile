@@ -7,21 +7,21 @@
 #
 
 PORTNAME=	libtecla
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Interactive command line editing facilities
 
-USE_SUBMAKE=	yes
-USE_AUTOTOOLS=	autoconf:253
 WRKSRC=		${WRKDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
+USE_SUBMAKE=	yes
 ALL_TARGET=	default
+USE_LDCONFIG=	yes
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-	REALCURDIR="${.CURDIR}" \
-	PORTNAME="${PORTNAME}"
-INSTALLS_SHLIB=	yes
+		REALCURDIR="${.CURDIR}" \
+		PORTNAME="${PORTNAME}"
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
@@ -32,6 +32,10 @@ PLIST_SUB+=	THREADS=""
 
 post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genmanlist.sh
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^OPT = -O,OPT =,' \
+		${WRKSRC}/Makefile.in
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
