@@ -7,7 +7,7 @@
 
 PORTNAME=	svmlight
 PORTVERSION=	6.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://kodiak.cs.cornell.edu/svm_light/current/
 DISTNAME=	svm_light
@@ -20,10 +20,11 @@ COMMENT=	An implementation of Support Vector Machines (SVMs) in C
 
 RESTRICTED=	only for education and research
 
-INSTALLS_SHLIB=	yes
+CFLAGS+=	-fPIC
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 post-build:
 	${CC} ${CFLAGS} -shared -o ${WRKSRC}/libsvmlight.so.1 \
