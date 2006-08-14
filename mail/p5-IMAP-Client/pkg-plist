@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP/Client/.packlist
+%%SITE_PERL%%/IMAP/Client.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP
+@dirrmtry %%SITE_PERL%%/IMAP

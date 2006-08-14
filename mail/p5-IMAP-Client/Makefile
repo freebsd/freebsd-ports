@@ -1,0 +1,36 @@
+# New ports collection makefile for:	p5-IMAP-Client
+# Date created:		2006-08-12
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	IMAP-Client
+PORTVERSION=	0.11
+CATEGORIES=	mail perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	IMAP
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Advanced manipulation of IMAP services w/ referral support
+
+RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/URI/imap.pm:${PORTSDIR}/mail/p5-URI-imap
+
+PERL_CONFIGURE=	yes
+
+MAN3=		IMAP::Client.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
+.endif
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.include <bsd.port.post.mk>
