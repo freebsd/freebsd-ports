@@ -20,7 +20,7 @@ SOVERSION=	1
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I." LN="${LN} -sf" \
 		SOLIB="${SOLIB}" SOVERSION="${SOVERSION}"
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	$(INSTALL_PROGRAM) ${WRKSRC}/arccat $(PREFIX)/bin

@@ -24,7 +24,7 @@ USE_AUTOTOOLS=	libltdl:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

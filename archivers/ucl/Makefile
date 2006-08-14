@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A data compression library with low memory usage
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
