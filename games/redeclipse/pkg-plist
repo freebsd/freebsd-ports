@@ -1,7 +1,7 @@
-bin/sauer_client
-bin/sauer_server
-libexec/sauer_client
-libexec/sauer_server
+%%CLIENT%%bin/sauer_client
+%%DEDICATED%%bin/sauer_server
+%%CLIENT%%libexec/sauer_client
+%%DEDICATED%%libexec/sauer_server
 %%PORTDOCS%%%%DOCSDIR%%/config.html
 %%PORTDOCS%%%%DOCSDIR%%/dev/sauer_maps_in_max.jpg
 %%PORTDOCS%%%%DOCSDIR%%/dev/sauerchild.JPG
@@ -25,6 +25,8 @@ libexec/sauer_server
 %%DATADIR%%/data/defaults.cfg
 %%DATADIR%%/data/explosion.jpg
 %%DATADIR%%/data/flare.jpg
+%%DATADIR%%/data/game_fps.cfg
+%%DATADIR%%/data/game_rpg.cfg
 %%DATADIR%%/data/items.png
 %%DATADIR%%/data/keymap.cfg
 %%DATADIR%%/data/martin/ball1.png
@@ -47,11 +49,19 @@ libexec/sauer_server
 %%DATADIR%%/packages/aard/readme.txt
 %%DATADIR%%/packages/base/aard3.cfg
 %%DATADIR%%/packages/base/aard3.ogz
+%%DATADIR%%/packages/base/aard3b.cfg
+%%DATADIR%%/packages/base/aard3b.ogz
+%%DATADIR%%/packages/base/aard3c.cfg
+%%DATADIR%%/packages/base/aard3c.ogz
+%%DATADIR%%/packages/base/bbb.cfg
+%%DATADIR%%/packages/base/bbb.ogz
 %%DATADIR%%/packages/base/bl.cfg
 %%DATADIR%%/packages/base/bl.ogz
 %%DATADIR%%/packages/base/boo2.cfg
 %%DATADIR%%/packages/base/boo2.ogz
 %%DATADIR%%/packages/base/boxfactory.ogz
+%%DATADIR%%/packages/base/bumptest.cfg
+%%DATADIR%%/packages/base/bumptest.ogz
 %%DATADIR%%/packages/base/capturetest.ogz
 %%DATADIR%%/packages/base/cdf.cfg
 %%DATADIR%%/packages/base/cdf.ogz
@@ -59,10 +69,14 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/complex.ogz
 %%DATADIR%%/packages/base/curvedm.cfg
 %%DATADIR%%/packages/base/curvedm.ogz
+%%DATADIR%%/packages/base/chronos.cfg
+%%DATADIR%%/packages/base/chronos.ogz
 %%DATADIR%%/packages/base/chthon.cfg
 %%DATADIR%%/packages/base/chthon.ogz
 %%DATADIR%%/packages/base/darkdeath.cfg
 %%DATADIR%%/packages/base/darkdeath.ogz
+%%DATADIR%%/packages/base/deathtek.cfg
+%%DATADIR%%/packages/base/deathtek.ogz
 %%DATADIR%%/packages/base/demomap.cfg
 %%DATADIR%%/packages/base/demomap.ogz
 %%DATADIR%%/packages/base/door_demo.cfg
@@ -101,6 +115,8 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/metl2.ogz
 %%DATADIR%%/packages/base/metl3.cfg
 %%DATADIR%%/packages/base/metl3.ogz
+%%DATADIR%%/packages/base/metl4.cfg
+%%DATADIR%%/packages/base/metl4.ogz
 %%DATADIR%%/packages/base/moonlite.cfg
 %%DATADIR%%/packages/base/moonlite.ogz
 %%DATADIR%%/packages/base/neon.cfg
@@ -129,6 +145,8 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/oasis.ogz
 %%DATADIR%%/packages/base/ogromines.cfg
 %%DATADIR%%/packages/base/ogromines.ogz
+%%DATADIR%%/packages/base/ogrowaystation.cfg
+%%DATADIR%%/packages/base/ogrowaystation.ogz
 %%DATADIR%%/packages/base/orion.cfg
 %%DATADIR%%/packages/base/orion.ogz
 %%DATADIR%%/packages/base/out.cfg
@@ -143,8 +161,12 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/roughinery.ogz
 %%DATADIR%%/packages/base/rpg.cfg
 %%DATADIR%%/packages/base/rpg.ogz
+%%DATADIR%%/packages/base/rpg_01.cfg
+%%DATADIR%%/packages/base/rpg_01.ogz
+%%DATADIR%%/packages/base/rpgtest.ogz
 %%DATADIR%%/packages/base/sauerbraten.ogz
 %%DATADIR%%/packages/base/secondevermap.ogz
+%%DATADIR%%/packages/base/serpentine.cfg
 %%DATADIR%%/packages/base/serpentine.ogz
 %%DATADIR%%/packages/base/shadowed.cfg
 %%DATADIR%%/packages/base/shadowed.ogz
@@ -155,6 +177,10 @@ libexec/sauer_server
 %%DATADIR%%/packages/base/sp3.ogz
 %%DATADIR%%/packages/base/sp_maps/sauer_sp1-1.cfg
 %%DATADIR%%/packages/base/sp_maps/sauer_sp1-1.ogz
+%%DATADIR%%/packages/base/sp_maps/sauer_sp1-2.cfg
+%%DATADIR%%/packages/base/sp_maps/sauer_sp1-2.ogz
+%%DATADIR%%/packages/base/sp_maps/sauer_sp1-3.cfg
+%%DATADIR%%/packages/base/sp_maps/sauer_sp1-3.ogz
 %%DATADIR%%/packages/base/space.cfg
 %%DATADIR%%/packages/base/space.ogz
 %%DATADIR%%/packages/base/spiralz.ogz
@@ -219,6 +245,20 @@ libexec/sauer_server
 %%DATADIR%%/packages/boxtex/64/red.png
 %%DATADIR%%/packages/boxtex/64/white.png
 %%DATADIR%%/packages/boxtex/64/yellow.png
+%%DATADIR%%/packages/cloward/bricksDepth.jpg
+%%DATADIR%%/packages/cloward/bricksDiffuse.jpg
+%%DATADIR%%/packages/cloward/bricksNormal.jpg
+%%DATADIR%%/packages/cloward/cobblestonesDepth.jpg
+%%DATADIR%%/packages/cloward/cobblestonesDiffuse.jpg
+%%DATADIR%%/packages/cloward/cobblestonesNormal.jpg
+%%DATADIR%%/packages/cloward/flipnormals.cfg
+%%DATADIR%%/packages/cloward/metalSheetDepth.jpg
+%%DATADIR%%/packages/cloward/metalSheetDiffuse.jpg
+%%DATADIR%%/packages/cloward/metalSheetNormal.jpg
+%%DATADIR%%/packages/cloward/readme.txt
+%%DATADIR%%/packages/cloward/stonewallDepth.jpg
+%%DATADIR%%/packages/cloward/stonewallDiffuse.jpg
+%%DATADIR%%/packages/cloward/stonewallNormal.jpg
 %%DATADIR%%/packages/cube/biologie.cgz
 %%DATADIR%%/packages/cube/mak1.cgz
 %%DATADIR%%/packages/cube/metl2.cgz
@@ -374,7 +414,15 @@ libexec/sauer_server
 %%DATADIR%%/packages/fanatic/13.ogg
 %%DATADIR%%/packages/fanatic/14.ogg
 %%DATADIR%%/packages/fanatic/15.ogg
+%%DATADIR%%/packages/fanatic/16.ogg
+%%DATADIR%%/packages/fanatic/17.ogg
+%%DATADIR%%/packages/fanatic/18.ogg
+%%DATADIR%%/packages/fanatic/19.ogg
 %%DATADIR%%/packages/fanatic/2.ogg
+%%DATADIR%%/packages/fanatic/20.ogg
+%%DATADIR%%/packages/fanatic/21.ogg
+%%DATADIR%%/packages/fanatic/22.ogg
+%%DATADIR%%/packages/fanatic/23.ogg
 %%DATADIR%%/packages/fanatic/3.ogg
 %%DATADIR%%/packages/fanatic/4.ogg
 %%DATADIR%%/packages/fanatic/5.ogg
@@ -407,9 +455,223 @@ libexec/sauer_server
 %%DATADIR%%/packages/g_pack/g-mettrim03.jpg
 %%DATADIR%%/packages/g_pack/g-pack_tex_sources_readme.txt
 %%DATADIR%%/packages/g_pack/g-wood02.jpg
+%%DATADIR%%/packages/gibbie/11pipes_d.jpg
+%%DATADIR%%/packages/gibbie/11pipes_local.jpg
+%%DATADIR%%/packages/gibbie/11pipes_s.jpg
+%%DATADIR%%/packages/gibbie/base02_d.jpg
+%%DATADIR%%/packages/gibbie/base02_local.jpg
+%%DATADIR%%/packages/gibbie/base02_s.jpg
+%%DATADIR%%/packages/gibbie/base03_d.jpg
+%%DATADIR%%/packages/gibbie/base03_local.jpg
+%%DATADIR%%/packages/gibbie/base03_s.jpg
+%%DATADIR%%/packages/gibbie/base04_d.jpg
+%%DATADIR%%/packages/gibbie/base04_local.jpg
+%%DATADIR%%/packages/gibbie/base04_s.jpg
+%%DATADIR%%/packages/gibbie/base05_d.jpg
+%%DATADIR%%/packages/gibbie/base05_local.jpg
+%%DATADIR%%/packages/gibbie/base05_s.jpg
+%%DATADIR%%/packages/gibbie/base06_d.jpg
+%%DATADIR%%/packages/gibbie/base06_local.jpg
+%%DATADIR%%/packages/gibbie/base06_s.jpg
+%%DATADIR%%/packages/gibbie/base07_d.jpg
+%%DATADIR%%/packages/gibbie/base07_local.jpg
+%%DATADIR%%/packages/gibbie/base07_s.jpg
+%%DATADIR%%/packages/gibbie/base08_d.jpg
+%%DATADIR%%/packages/gibbie/base08_local.jpg
+%%DATADIR%%/packages/gibbie/base08_s.jpg
+%%DATADIR%%/packages/gibbie/base09_d.jpg
+%%DATADIR%%/packages/gibbie/base09_local.jpg
+%%DATADIR%%/packages/gibbie/base09_s.jpg
+%%DATADIR%%/packages/gibbie/base10_d.jpg
+%%DATADIR%%/packages/gibbie/base10_local.jpg
+%%DATADIR%%/packages/gibbie/base10_s.jpg
+%%DATADIR%%/packages/gibbie/base11_d.jpg
+%%DATADIR%%/packages/gibbie/base11_local.jpg
+%%DATADIR%%/packages/gibbie/base11_s.jpg
+%%DATADIR%%/packages/gibbie/base12_d.jpg
+%%DATADIR%%/packages/gibbie/base12_local.jpg
+%%DATADIR%%/packages/gibbie/base12_s.jpg
+%%DATADIR%%/packages/gibbie/base13_d.jpg
+%%DATADIR%%/packages/gibbie/base13_local.jpg
+%%DATADIR%%/packages/gibbie/base13_s.jpg
+%%DATADIR%%/packages/gibbie/base14_d.jpg
+%%DATADIR%%/packages/gibbie/base14_local.jpg
+%%DATADIR%%/packages/gibbie/base14_s.jpg
+%%DATADIR%%/packages/gibbie/base15_brown_d.jpg
+%%DATADIR%%/packages/gibbie/base15_d.jpg
+%%DATADIR%%/packages/gibbie/base15_local.jpg
+%%DATADIR%%/packages/gibbie/base15_rust_d.jpg
+%%DATADIR%%/packages/gibbie/base15_s.jpg
+%%DATADIR%%/packages/gibbie/base16_brown_d.jpg
+%%DATADIR%%/packages/gibbie/base16_d.jpg
+%%DATADIR%%/packages/gibbie/base16_local.jpg
+%%DATADIR%%/packages/gibbie/base16_rust_d.jpg
+%%DATADIR%%/packages/gibbie/base16_s.jpg
+%%DATADIR%%/packages/gibbie/base17_brown_d.jpg
+%%DATADIR%%/packages/gibbie/base17_d.jpg
+%%DATADIR%%/packages/gibbie/base17_local.jpg
+%%DATADIR%%/packages/gibbie/base17_rust_d.jpg
+%%DATADIR%%/packages/gibbie/base17_s.jpg
+%%DATADIR%%/packages/gibbie/base18_brown_d.jpg
+%%DATADIR%%/packages/gibbie/base18_d.jpg
+%%DATADIR%%/packages/gibbie/base18_local.jpg
+%%DATADIR%%/packages/gibbie/base18_rust_d.jpg
+%%DATADIR%%/packages/gibbie/base18_s.jpg
+%%DATADIR%%/packages/gibbie/base19_d.jpg
+%%DATADIR%%/packages/gibbie/base19_local.jpg
+%%DATADIR%%/packages/gibbie/base19_s.jpg
+%%DATADIR%%/packages/gibbie/base20_d.jpg
+%%DATADIR%%/packages/gibbie/base20_local.jpg
+%%DATADIR%%/packages/gibbie/base20_s.jpg
+%%DATADIR%%/packages/gibbie/base21_d.jpg
+%%DATADIR%%/packages/gibbie/base21_local.jpg
+%%DATADIR%%/packages/gibbie/base21_s.jpg
+%%DATADIR%%/packages/gibbie/base22_d.jpg
+%%DATADIR%%/packages/gibbie/base22_local.jpg
+%%DATADIR%%/packages/gibbie/base22_s.jpg
+%%DATADIR%%/packages/gibbie/base23_d.jpg
+%%DATADIR%%/packages/gibbie/base23_local.jpg
+%%DATADIR%%/packages/gibbie/base23_s.jpg
+%%DATADIR%%/packages/gibbie/base24_d.jpg
+%%DATADIR%%/packages/gibbie/base24_local.jpg
+%%DATADIR%%/packages/gibbie/base24_s.jpg
+%%DATADIR%%/packages/gibbie/base25_d.jpg
+%%DATADIR%%/packages/gibbie/base25_local.jpg
+%%DATADIR%%/packages/gibbie/base25_s.jpg
+%%DATADIR%%/packages/gibbie/base26_d.jpg
+%%DATADIR%%/packages/gibbie/base26_local.jpg
+%%DATADIR%%/packages/gibbie/base26_s.jpg
+%%DATADIR%%/packages/gibbie/base27_d.jpg
+%%DATADIR%%/packages/gibbie/base27_local.jpg
+%%DATADIR%%/packages/gibbie/base27_s.jpg
+%%DATADIR%%/packages/gibbie/base28_d.jpg
+%%DATADIR%%/packages/gibbie/base28_local.jpg
+%%DATADIR%%/packages/gibbie/base28_s.jpg
+%%DATADIR%%/packages/gibbie/base29_d.jpg
+%%DATADIR%%/packages/gibbie/base29_local.jpg
+%%DATADIR%%/packages/gibbie/base29_s.jpg
+%%DATADIR%%/packages/gibbie/base30_d.jpg
+%%DATADIR%%/packages/gibbie/base30_local.jpg
+%%DATADIR%%/packages/gibbie/base30_s.jpg
+%%DATADIR%%/packages/gibbie/base32_d.jpg
+%%DATADIR%%/packages/gibbie/base32_local.jpg
+%%DATADIR%%/packages/gibbie/base32_s.jpg
+%%DATADIR%%/packages/gibbie/base33_d.jpg
+%%DATADIR%%/packages/gibbie/base33_local.jpg
+%%DATADIR%%/packages/gibbie/base33_s.jpg
+%%DATADIR%%/packages/gibbie/base34_d.jpg
+%%DATADIR%%/packages/gibbie/base34_local.jpg
+%%DATADIR%%/packages/gibbie/base34_s.jpg
+%%DATADIR%%/packages/gibbie/base35_d.jpg
+%%DATADIR%%/packages/gibbie/base35_local.jpg
+%%DATADIR%%/packages/gibbie/base35_s.jpg
+%%DATADIR%%/packages/gibbie/base36_d.jpg
+%%DATADIR%%/packages/gibbie/base36_local.jpg
+%%DATADIR%%/packages/gibbie/base36_s.jpg
+%%DATADIR%%/packages/gibbie/base37_d.jpg
+%%DATADIR%%/packages/gibbie/base37_local.jpg
+%%DATADIR%%/packages/gibbie/base37_s.jpg
+%%DATADIR%%/packages/gibbie/base38_d.jpg
+%%DATADIR%%/packages/gibbie/base38_local.jpg
+%%DATADIR%%/packages/gibbie/base38_s.jpg
+%%DATADIR%%/packages/gibbie/base39_d.jpg
+%%DATADIR%%/packages/gibbie/base39_local.jpg
+%%DATADIR%%/packages/gibbie/base39_s.jpg
+%%DATADIR%%/packages/gibbie/base40_d.jpg
+%%DATADIR%%/packages/gibbie/base40_local.jpg
+%%DATADIR%%/packages/gibbie/base40_s.jpg
+%%DATADIR%%/packages/gibbie/base41_d.jpg
+%%DATADIR%%/packages/gibbie/base41_local.jpg
+%%DATADIR%%/packages/gibbie/base41_s.jpg
+%%DATADIR%%/packages/gibbie/base42_d.jpg
+%%DATADIR%%/packages/gibbie/base42_local.jpg
+%%DATADIR%%/packages/gibbie/base42_s.jpg
+%%DATADIR%%/packages/gibbie/base43_d.jpg
+%%DATADIR%%/packages/gibbie/base43_local.jpg
+%%DATADIR%%/packages/gibbie/base43_s.jpg
+%%DATADIR%%/packages/gibbie/base44_d.jpg
+%%DATADIR%%/packages/gibbie/base44_local.jpg
+%%DATADIR%%/packages/gibbie/base44_s.jpg
+%%DATADIR%%/packages/gibbie/base45_brown_d.jpg
+%%DATADIR%%/packages/gibbie/base45_d.jpg
+%%DATADIR%%/packages/gibbie/base45_local.jpg
+%%DATADIR%%/packages/gibbie/base45_rust_d.jpg
+%%DATADIR%%/packages/gibbie/base45_s.jpg
+%%DATADIR%%/packages/gibbie/base46_d.jpg
+%%DATADIR%%/packages/gibbie/base46_local.jpg
+%%DATADIR%%/packages/gibbie/base46_s.jpg
+%%DATADIR%%/packages/gibbie/base47_brown_d.jpg
+%%DATADIR%%/packages/gibbie/base47_d.jpg
+%%DATADIR%%/packages/gibbie/base47_local.jpg
+%%DATADIR%%/packages/gibbie/base47_rust_d.jpg
+%%DATADIR%%/packages/gibbie/base47_s.jpg
+%%DATADIR%%/packages/gibbie/baselight01_add.jpg
+%%DATADIR%%/packages/gibbie/baselight01_d.jpg
+%%DATADIR%%/packages/gibbie/baselight01_local.jpg
+%%DATADIR%%/packages/gibbie/baselight01_s.jpg
+%%DATADIR%%/packages/gibbie/baselight02_add.jpg
+%%DATADIR%%/packages/gibbie/baselight02_d.jpg
+%%DATADIR%%/packages/gibbie/baselight02_local.jpg
+%%DATADIR%%/packages/gibbie/baselight02_s.jpg
+%%DATADIR%%/packages/gibbie/baselight03_add.jpg
+%%DATADIR%%/packages/gibbie/baselight03_d.jpg
+%%DATADIR%%/packages/gibbie/baselight03_local.jpg
+%%DATADIR%%/packages/gibbie/baselight03_s.jpg
+%%DATADIR%%/packages/gibbie/baselight04_add.jpg
+%%DATADIR%%/packages/gibbie/baselight04_d.jpg
+%%DATADIR%%/packages/gibbie/baselight04_local.jpg
+%%DATADIR%%/packages/gibbie/baselight04_s.jpg
+%%DATADIR%%/packages/gibbie/baselight05_add.jpg
+%%DATADIR%%/packages/gibbie/baselight05_d.jpg
+%%DATADIR%%/packages/gibbie/baselight05_local.jpg
+%%DATADIR%%/packages/gibbie/baselight05_s.jpg
+%%DATADIR%%/packages/gibbie/baselight06_add.jpg
+%%DATADIR%%/packages/gibbie/baselight06_d.jpg
+%%DATADIR%%/packages/gibbie/baselight06_local.jpg
+%%DATADIR%%/packages/gibbie/baselight06_s.jpg
+%%DATADIR%%/packages/gibbie/baselight07_add.jpg
+%%DATADIR%%/packages/gibbie/baselight07_d.jpg
+%%DATADIR%%/packages/gibbie/baselight07_local.jpg
+%%DATADIR%%/packages/gibbie/baselight07_s.jpg
+%%DATADIR%%/packages/gibbie/baselight08_add.jpg
+%%DATADIR%%/packages/gibbie/baselight08_d.jpg
+%%DATADIR%%/packages/gibbie/baselight08_local.jpg
+%%DATADIR%%/packages/gibbie/baselight08_s.jpg
+%%DATADIR%%/packages/gibbie/baselight09_add.jpg
+%%DATADIR%%/packages/gibbie/baselight09_d.jpg
+%%DATADIR%%/packages/gibbie/baselight09_local.jpg
+%%DATADIR%%/packages/gibbie/baselight09_s.jpg
+%%DATADIR%%/packages/gibbie/flr1_d.jpg
+%%DATADIR%%/packages/gibbie/flr1_local.jpg
+%%DATADIR%%/packages/gibbie/flr1_s.jpg
+%%DATADIR%%/packages/gibbie/flr2_d.jpg
+%%DATADIR%%/packages/gibbie/flr3_d.jpg
+%%DATADIR%%/packages/gibbie/flrtile1_d.jpg
+%%DATADIR%%/packages/gibbie/flrtile1_local.jpg
+%%DATADIR%%/packages/gibbie/flrtile1_s.jpg
+%%DATADIR%%/packages/gibbie/flrtile2_d.jpg
+%%DATADIR%%/packages/gibbie/flrtile3_d.jpg
+%%DATADIR%%/packages/gibbie/grate_large_d.jpg
+%%DATADIR%%/packages/gibbie/grate_large_local.jpg
+%%DATADIR%%/packages/gibbie/grate_large_s.jpg
+%%DATADIR%%/packages/gibbie/lite2_add.jpg
+%%DATADIR%%/packages/gibbie/lite2_d.jpg
+%%DATADIR%%/packages/gibbie/lite2_local.jpg
+%%DATADIR%%/packages/gibbie/lite2_s.jpg
+%%DATADIR%%/packages/gibbie/readme.txt
+%%DATADIR%%/packages/gibbie/teletop_add.jpg
+%%DATADIR%%/packages/gibbie/teletop_d.jpg
+%%DATADIR%%/packages/gibbie/teletop_local.jpg
+%%DATADIR%%/packages/gibbie/teletop_s.jpg
 %%DATADIR%%/packages/golgotha/lava.jpg
 %%DATADIR%%/packages/golgotha/water2.jpg
 %%DATADIR%%/packages/golgotha/water2d.jpg
+%%DATADIR%%/packages/icons/coins.jpg
+%%DATADIR%%/packages/icons/chat.jpg
+%%DATADIR%%/packages/icons/chest.jpg
+%%DATADIR%%/packages/icons/hand.jpg
+%%DATADIR%%/packages/icons/info.jpg
+%%DATADIR%%/packages/icons/sword.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_bk.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_dn.jpg
 %%DATADIR%%/packages/ik2k/env/iklake_ft.jpg
@@ -585,6 +847,205 @@ libexec/sauer_server
 %%DATADIR%%/packages/lego/whitelego.png
 %%DATADIR%%/packages/lego/yellow.png
 %%DATADIR%%/packages/lego/yellowlego.png
+%%DATADIR%%/packages/lunaran/bigmet1_d.jpg
+%%DATADIR%%/packages/lunaran/bigmet1_local.jpg
+%%DATADIR%%/packages/lunaran/bigmet1_s.jpg
+%%DATADIR%%/packages/lunaran/bigmet2_d.jpg
+%%DATADIR%%/packages/lunaran/bigmet2_local.jpg
+%%DATADIR%%/packages/lunaran/bigmet2_s.jpg
+%%DATADIR%%/packages/lunaran/box1a_d.jpg
+%%DATADIR%%/packages/lunaran/box1a_local.jpg
+%%DATADIR%%/packages/lunaran/box1a_s.jpg
+%%DATADIR%%/packages/lunaran/box1b_d.jpg
+%%DATADIR%%/packages/lunaran/box1b_local.jpg
+%%DATADIR%%/packages/lunaran/box1b_s.jpg
+%%DATADIR%%/packages/lunaran/cord1_d.jpg
+%%DATADIR%%/packages/lunaran/cord1_local.jpg
+%%DATADIR%%/packages/lunaran/cord1_s.jpg
+%%DATADIR%%/packages/lunaran/glue1_d.jpg
+%%DATADIR%%/packages/lunaran/glue1_local.jpg
+%%DATADIR%%/packages/lunaran/glue1_s.jpg
+%%DATADIR%%/packages/lunaran/glue2_d.jpg
+%%DATADIR%%/packages/lunaran/glue2_local.jpg
+%%DATADIR%%/packages/lunaran/glue2_s.jpg
+%%DATADIR%%/packages/lunaran/grate1_d.jpg
+%%DATADIR%%/packages/lunaran/grate1_local.jpg
+%%DATADIR%%/packages/lunaran/grate1_s.jpg
+%%DATADIR%%/packages/lunaran/green1_d.jpg
+%%DATADIR%%/packages/lunaran/green1_local.jpg
+%%DATADIR%%/packages/lunaran/green1_s.jpg
+%%DATADIR%%/packages/lunaran/hexflr1_d.jpg
+%%DATADIR%%/packages/lunaran/hexflr1_local.jpg
+%%DATADIR%%/packages/lunaran/hexflr1_s.jpg
+%%DATADIR%%/packages/lunaran/hexflr2_d.jpg
+%%DATADIR%%/packages/lunaran/hexflr2_local.jpg
+%%DATADIR%%/packages/lunaran/hexflr2_s.jpg
+%%DATADIR%%/packages/lunaran/light_ceil1_d.jpg
+%%DATADIR%%/packages/lunaran/light_ceil1_g.jpg
+%%DATADIR%%/packages/lunaran/light_ceil1_local.jpg
+%%DATADIR%%/packages/lunaran/light_fifty1_d.jpg
+%%DATADIR%%/packages/lunaran/light_fifty1_g.jpg
+%%DATADIR%%/packages/lunaran/light_fifty1_local.jpg
+%%DATADIR%%/packages/lunaran/light_fifty1_s.jpg
+%%DATADIR%%/packages/lunaran/light_fifty2_d.jpg
+%%DATADIR%%/packages/lunaran/light_fifty2_g.jpg
+%%DATADIR%%/packages/lunaran/light_fifty2_local.jpg
+%%DATADIR%%/packages/lunaran/light_fifty2_s.jpg
+%%DATADIR%%/packages/lunaran/light_fifty_d.jpg
+%%DATADIR%%/packages/lunaran/light_fifty_g.jpg
+%%DATADIR%%/packages/lunaran/light_fifty_local.jpg
+%%DATADIR%%/packages/lunaran/light_fifty_s.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0_d.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0_g.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0_local.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0_s.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0a_d.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0a_g.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0a_local.jpg
+%%DATADIR%%/packages/lunaran/light_flouro0a_s.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1_d.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1_g.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1_local.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1_s.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1a_d.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1a_g.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1a_local.jpg
+%%DATADIR%%/packages/lunaran/light_flouro1a_s.jpg
+%%DATADIR%%/packages/lunaran/light_jail_d.jpg
+%%DATADIR%%/packages/lunaran/light_jail_g.jpg
+%%DATADIR%%/packages/lunaran/light_jail_local.jpg
+%%DATADIR%%/packages/lunaran/light_r1_d.jpg
+%%DATADIR%%/packages/lunaran/light_r1_g.jpg
+%%DATADIR%%/packages/lunaran/light_r1_local.jpg
+%%DATADIR%%/packages/lunaran/light_r1_s.jpg
+%%DATADIR%%/packages/lunaran/mech1_d.jpg
+%%DATADIR%%/packages/lunaran/mech1_glow.jpg
+%%DATADIR%%/packages/lunaran/mech1_local.jpg
+%%DATADIR%%/packages/lunaran/mech1_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_1_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_1_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_1_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_2_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_2_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_2_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_3_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_3_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_3_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_3b_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_3b_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_3b_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_4_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_4_g.jpg
+%%DATADIR%%/packages/lunaran/panel128_4_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_4_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_5_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_5_glo.jpg
+%%DATADIR%%/packages/lunaran/panel128_5_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_5_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_6a_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_6a_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_6a_s.jpg
+%%DATADIR%%/packages/lunaran/panel128_6b_d.jpg
+%%DATADIR%%/packages/lunaran/panel128_6b_local.jpg
+%%DATADIR%%/packages/lunaran/panel128_6b_s.jpg
+%%DATADIR%%/packages/lunaran/panel128tri_1_d.jpg
+%%DATADIR%%/packages/lunaran/panel128tri_1_local.jpg
+%%DATADIR%%/packages/lunaran/panel128tri_1_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_0_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_0_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_0_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_1_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_1_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_1_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_2_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_2_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_2_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_2a_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_2a_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_2a_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_2b_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_2b_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_2b_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_3_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_3_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_3_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_3b_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_3b_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_3b_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_4_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_4_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_4_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_5_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_5_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_5_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_5a_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_5a_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_5a_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_5b_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_5b_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_5b_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_6_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_6_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_6_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_6b_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_6b_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_6b_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_7_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_7_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_7_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_7b_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_7b_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_7b_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_7c_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_7c_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_7c_s.jpg
+%%DATADIR%%/packages/lunaran/panel64_7d_d.jpg
+%%DATADIR%%/packages/lunaran/panel64_7d_local.jpg
+%%DATADIR%%/packages/lunaran/panel64_7d_s.jpg
+%%DATADIR%%/packages/lunaran/panel64tri_1_d.jpg
+%%DATADIR%%/packages/lunaran/panel64tri_1_local.jpg
+%%DATADIR%%/packages/lunaran/panel64tri_1_s.jpg
+%%DATADIR%%/packages/lunaran/pwpip1_d.jpg
+%%DATADIR%%/packages/lunaran/pwpip1_local.jpg
+%%DATADIR%%/packages/lunaran/pwpip1_s.jpg
+%%DATADIR%%/packages/lunaran/q4power.txt
+%%DATADIR%%/packages/lunaran/qcomp1_d.jpg
+%%DATADIR%%/packages/lunaran/qcomp1_local.jpg
+%%DATADIR%%/packages/lunaran/qcomp1_s.jpg
+%%DATADIR%%/packages/lunaran/qcomp1g_d.jpg
+%%DATADIR%%/packages/lunaran/qcomp1g_glow.jpg
+%%DATADIR%%/packages/lunaran/qcomp1g_local.jpg
+%%DATADIR%%/packages/lunaran/qcomp1g_s.jpg
+%%DATADIR%%/packages/lunaran/qcomp2_d.jpg
+%%DATADIR%%/packages/lunaran/qcomp2_local.jpg
+%%DATADIR%%/packages/lunaran/qcomp2_s.jpg
+%%DATADIR%%/packages/lunaran/qcomp3_d.jpg
+%%DATADIR%%/packages/lunaran/qcomp3_local.jpg
+%%DATADIR%%/packages/lunaran/qcomp3_s.jpg
+%%DATADIR%%/packages/lunaran/qcomp4_d.jpg
+%%DATADIR%%/packages/lunaran/qcomp4_glow.jpg
+%%DATADIR%%/packages/lunaran/qcomp4_local.jpg
+%%DATADIR%%/packages/lunaran/qcomp4_s.jpg
+%%DATADIR%%/packages/lunaran/qcomp5_d.jpg
+%%DATADIR%%/packages/lunaran/qcomp5_glow.jpg
+%%DATADIR%%/packages/lunaran/qcomp5_glow2.jpg
+%%DATADIR%%/packages/lunaran/qcomp5_local.jpg
+%%DATADIR%%/packages/lunaran/qcomp5_s.jpg
+%%DATADIR%%/packages/lunaran/rock1_d.jpg
+%%DATADIR%%/packages/lunaran/rock1_local.jpg
+%%DATADIR%%/packages/lunaran/rock1_s.jpg
+%%DATADIR%%/packages/lunaran/support1_d.jpg
+%%DATADIR%%/packages/lunaran/support1_local.jpg
+%%DATADIR%%/packages/lunaran/support1_s.jpg
+%%DATADIR%%/packages/lunaran/sym1a_d.jpg
+%%DATADIR%%/packages/lunaran/sym1a_s.jpg
+%%DATADIR%%/packages/lunaran/sym2_d.jpg
+%%DATADIR%%/packages/lunaran/sym2_s.jpg
+%%DATADIR%%/packages/lunaran/wires1_d.jpg
+%%DATADIR%%/packages/lunaran/wires1_local.jpg
+%%DATADIR%%/packages/lunaran/wires1_s.jpg
+%%DATADIR%%/packages/lunaran/ziggy1_d.jpg
+%%DATADIR%%/packages/lunaran/ziggy1_local.jpg
 %%DATADIR%%/packages/models/boost/skin.jpg
 %%DATADIR%%/packages/models/boost/tris.md2
 %%DATADIR%%/packages/models/bullets/skin.jpg
@@ -608,18 +1069,23 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/dcp/biotank/tris.md2
 %%DATADIR%%/packages/models/dcp/candle/skin.jpg
 %%DATADIR%%/packages/models/dcp/candle/tris.md2
+%%DATADIR%%/packages/models/dcp/cart/md2.cfg
 %%DATADIR%%/packages/models/dcp/cart/skin.jpg
 %%DATADIR%%/packages/models/dcp/cart/tris.md2
+%%DATADIR%%/packages/models/dcp/cask/md2.cfg
 %%DATADIR%%/packages/models/dcp/cask/skin.jpg
 %%DATADIR%%/packages/models/dcp/cask/tris.md2
 %%DATADIR%%/packages/models/dcp/console/skin.jpg
 %%DATADIR%%/packages/models/dcp/console/tris.md2
 %%DATADIR%%/packages/models/dcp/chandelier/skin.jpg
 %%DATADIR%%/packages/models/dcp/chandelier/tris.md2
+%%DATADIR%%/packages/models/dcp/chest/md2.cfg
 %%DATADIR%%/packages/models/dcp/chest/skin.jpg
 %%DATADIR%%/packages/models/dcp/chest/tris.md2
 %%DATADIR%%/packages/models/dcp/firebowl/skin.jpg
 %%DATADIR%%/packages/models/dcp/firebowl/tris.md2
+%%DATADIR%%/packages/models/dcp/grass/ivy.cfg
+%%DATADIR%%/packages/models/dcp/grass/md2.cfg
 %%DATADIR%%/packages/models/dcp/grass/readme.txt
 %%DATADIR%%/packages/models/dcp/grass/skin.jpg
 %%DATADIR%%/packages/models/dcp/grass/tris.md2
@@ -629,37 +1095,48 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/dcp/hanginlamp/tris.md2
 %%DATADIR%%/packages/models/dcp/insect/skin.jpg
 %%DATADIR%%/packages/models/dcp/insect/tris.md2
+%%DATADIR%%/packages/models/dcp/ivy/md2.cfg
 %%DATADIR%%/packages/models/dcp/ivy/skin.jpg
 %%DATADIR%%/packages/models/dcp/ivy/tris.md2
 %%DATADIR%%/packages/models/dcp/jumppad2/skin.jpg
 %%DATADIR%%/packages/models/dcp/jumppad2/tris.md2
+%%DATADIR%%/packages/models/dcp/leafs/md2.cfg
 %%DATADIR%%/packages/models/dcp/leafs/skin.jpg
 %%DATADIR%%/packages/models/dcp/leafs/tris.md2
+%%DATADIR%%/packages/models/dcp/mushroom/md2.cfg
 %%DATADIR%%/packages/models/dcp/mushroom/skin.jpg
 %%DATADIR%%/packages/models/dcp/mushroom/tris.md2
 %%DATADIR%%/packages/models/dcp/palette/skin.jpg
 %%DATADIR%%/packages/models/dcp/palette/tris.md2
+%%DATADIR%%/packages/models/dcp/palmtree/md2.cfg
 %%DATADIR%%/packages/models/dcp/palmtree/skin.jpg
 %%DATADIR%%/packages/models/dcp/palmtree/tris.md2
 %%DATADIR%%/packages/models/dcp/pillar/readme.txt
 %%DATADIR%%/packages/models/dcp/pillar/skin.jpg
 %%DATADIR%%/packages/models/dcp/pillar/tris.md2
+%%DATADIR%%/packages/models/dcp/plant1/md2.cfg
 %%DATADIR%%/packages/models/dcp/plant1/skin.jpg
 %%DATADIR%%/packages/models/dcp/plant1/tris.md2
+%%DATADIR%%/packages/models/dcp/reed/md2.cfg
 %%DATADIR%%/packages/models/dcp/reed/skin.jpg
 %%DATADIR%%/packages/models/dcp/reed/tris.md2
+%%DATADIR%%/packages/models/dcp/sack/md2.cfg
 %%DATADIR%%/packages/models/dcp/sack/skin.jpg
 %%DATADIR%%/packages/models/dcp/sack/tris.md2
+%%DATADIR%%/packages/models/dcp/smplant/md2.cfg
 %%DATADIR%%/packages/models/dcp/smplant/skin.jpg
 %%DATADIR%%/packages/models/dcp/smplant/tris.md2
 %%DATADIR%%/packages/models/dcp/streetlamp/readme.txt
 %%DATADIR%%/packages/models/dcp/streetlamp/skin.jpg
 %%DATADIR%%/packages/models/dcp/streetlamp/tris.md2
+%%DATADIR%%/packages/models/dcp/thorns/md2.cfg
 %%DATADIR%%/packages/models/dcp/thorns/skin.jpg
 %%DATADIR%%/packages/models/dcp/thorns/tris.md2
+%%DATADIR%%/packages/models/dcp/tree2/md2.cfg
 %%DATADIR%%/packages/models/dcp/tree2/readme.txt
 %%DATADIR%%/packages/models/dcp/tree2/skin.jpg
 %%DATADIR%%/packages/models/dcp/tree2/tris.md2
+%%DATADIR%%/packages/models/dcp/tree3/md2.cfg
 %%DATADIR%%/packages/models/dcp/tree3/readme.txt
 %%DATADIR%%/packages/models/dcp/tree3/skin.jpg
 %%DATADIR%%/packages/models/dcp/tree3/tris.md2
@@ -677,9 +1154,12 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/doors/door_01/md3.cfg
 %%DATADIR%%/packages/models/doors/door_01/skin.jpg
 %%DATADIR%%/packages/models/doors/door_01/tris.md3
+%%DATADIR%%/packages/models/doors/door_02/license.txt
 %%DATADIR%%/packages/models/doors/door_02/md3.cfg
 %%DATADIR%%/packages/models/doors/door_02/skin.jpg
 %%DATADIR%%/packages/models/doors/door_02/tris.md3
+%%DATADIR%%/packages/models/doors/door_03/license.txt
+%%DATADIR%%/packages/models/doors/door_03/masks.jpg
 %%DATADIR%%/packages/models/doors/door_03/md3.cfg
 %%DATADIR%%/packages/models/doors/door_03/skin.jpg
 %%DATADIR%%/packages/models/doors/door_03/tris.md3
@@ -759,6 +1239,7 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/monster/knight/tris.md2
 %%DATADIR%%/packages/models/monster/md2.cfg
 %%DATADIR%%/packages/models/monster/ogro/Ogro.txt
+%%DATADIR%%/packages/models/monster/ogro/md2.cfg
 %%DATADIR%%/packages/models/monster/ogro/skin.jpg
 %%DATADIR%%/packages/models/monster/ogro/tris.md2
 %%DATADIR%%/packages/models/monster/rat/Ratamahatta.txt
@@ -773,10 +1254,12 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/monster/slith/skin.jpg
 %%DATADIR%%/packages/models/monster/slith/slithMe.txt
 %%DATADIR%%/packages/models/monster/slith/tris.md2
+%%DATADIR%%/packages/models/objects/bed01/md2.cfg
 %%DATADIR%%/packages/models/objects/bed01/skin.jpg
 %%DATADIR%%/packages/models/objects/bed01/tris.md2
 %%DATADIR%%/packages/models/objects/bench01/skin.jpg
 %%DATADIR%%/packages/models/objects/bench01/tris.md2
+%%DATADIR%%/packages/models/objects/chair01/md2.cfg
 %%DATADIR%%/packages/models/objects/chair01/skin.jpg
 %%DATADIR%%/packages/models/objects/chair01/tris.md2
 %%DATADIR%%/packages/models/objects/fire/skin.png
@@ -825,6 +1308,35 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/quad/tris.md2
 %%DATADIR%%/packages/models/rockets/skin.jpg
 %%DATADIR%%/packages/models/rockets/tris.md2
+%%DATADIR%%/packages/models/rpg/characters/dragon/lower.md3
+%%DATADIR%%/packages/models/rpg/characters/dragon/md3.cfg
+%%DATADIR%%/packages/models/rpg/characters/dragon/skin.jpg
+%%DATADIR%%/packages/models/rpg/characters/horse/horse.md3
+%%DATADIR%%/packages/models/rpg/characters/horse/horse.txt
+%%DATADIR%%/packages/models/rpg/characters/horse/md3.cfg
+%%DATADIR%%/packages/models/rpg/characters/horse/skin.jpg
+%%DATADIR%%/packages/models/rpg/characters/mman/head.md3
+%%DATADIR%%/packages/models/rpg/characters/mman/lower.md3
+%%DATADIR%%/packages/models/rpg/characters/mman/md3.cfg
+%%DATADIR%%/packages/models/rpg/characters/mman/skin.png
+%%DATADIR%%/packages/models/rpg/characters/mman/upper.md3
+%%DATADIR%%/packages/models/rpg/characters/npcman/md3.cfg
+%%DATADIR%%/packages/models/rpg/characters/npcman/npcman.md3
+%%DATADIR%%/packages/models/rpg/characters/npcman/skin.jpg
+%%DATADIR%%/packages/models/rpg/characters/rat/lower.md3
+%%DATADIR%%/packages/models/rpg/characters/rat/md3.cfg
+%%DATADIR%%/packages/models/rpg/characters/rat/skin.jpg
+%%DATADIR%%/packages/models/rpg/characters/wolf/head.md3
+%%DATADIR%%/packages/models/rpg/characters/wolf/lower.md3
+%%DATADIR%%/packages/models/rpg/characters/wolf/makkEwolf.txt
+%%DATADIR%%/packages/models/rpg/characters/wolf/masks.jpg
+%%DATADIR%%/packages/models/rpg/characters/wolf/md3.cfg
+%%DATADIR%%/packages/models/rpg/characters/wolf/skin.jpg
+%%DATADIR%%/packages/models/rpg/characters/wolf/upper.md3
+%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin1.jpg
+%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin2.jpg
+%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin3.jpg
+%%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin4.jpg
 %%DATADIR%%/packages/models/rrounds/skin.jpg
 %%DATADIR%%/packages/models/rrounds/tris.md2
 %%DATADIR%%/packages/models/shells/skin.jpg
@@ -925,6 +1437,8 @@ libexec/sauer_server
 %%DATADIR%%/packages/models/y_armour/skin.jpg
 %%DATADIR%%/packages/models/y_armour/tris.md2
 %%DATADIR%%/packages/payne/Box12b.jpg
+%%DATADIR%%/packages/payne/Box12b_depth.jpg
+%%DATADIR%%/packages/payne/Box12b_normal.jpg
 %%DATADIR%%/packages/payne/Brick52a.jpg
 %%DATADIR%%/packages/payne/Brick58_512x512.jpg
 %%DATADIR%%/packages/payne/Grate09b.jpg
@@ -1084,6 +1598,14 @@ libexec/sauer_server
 %%DATADIR%%/packages/sounds/aard/pain5.wav
 %%DATADIR%%/packages/sounds/aard/pain6.wav
 %%DATADIR%%/packages/sounds/aard/tak.wav
+%%DATADIR%%/packages/sounds/aard/voice/base_captured.wav
+%%DATADIR%%/packages/sounds/aard/voice/base_lost.wav
+%%DATADIR%%/packages/sounds/aard/voice/fight.wav
+%%DATADIR%%/packages/sounds/aard/voice/health_boost.wav
+%%DATADIR%%/packages/sounds/aard/voice/health_boost_in_10_seconds.wav
+%%DATADIR%%/packages/sounds/aard/voice/quad_damage.wav
+%%DATADIR%%/packages/sounds/aard/voice/quad_damage_in_10_seconds.wav
+%%DATADIR%%/packages/sounds/aard/voice/respawnpoint.wav
 %%DATADIR%%/packages/sounds/aard/weapload.wav
 %%DATADIR%%/packages/sounds/awesund/Sound.txt
 %%DATADIR%%/packages/sounds/awesund/cg1.wav
@@ -1192,6 +1714,8 @@ libexec/sauer_server
 %%DATADIR%%/packages/tech1soc/blank01a.jpg
 %%DATADIR%%/packages/tech1soc/blank01c.jpg
 %%DATADIR%%/packages/tech1soc/blank02a.jpg
+%%DATADIR%%/packages/tech1soc/blank02a_depth.jpg
+%%DATADIR%%/packages/tech1soc/blank02a_normal.jpg
 %%DATADIR%%/packages/tech1soc/blank02b.jpg
 %%DATADIR%%/packages/tech1soc/blank03a.jpg
 %%DATADIR%%/packages/tech1soc/blank03d.jpg
@@ -1248,6 +1772,8 @@ libexec/sauer_server
 %%DATADIR%%/packages/textures/rock01.jpg
 %%DATADIR%%/packages/textures/specialbrick.jpg
 %%DATADIR%%/packages/textures/tech1soc_wall01b_mod.jpg
+%%DATADIR%%/packages/textures/tech1soc_wall01b_mod_depth.jpg
+%%DATADIR%%/packages/textures/tech1soc_wall01b_mod_normal.jpg
 %%DATADIR%%/packages/than_ind/cretewall03.jpg
 %%DATADIR%%/packages/than_ind/floor02.jpg
 %%DATADIR%%/packages/than_ind/floor05.jpg
@@ -1261,29 +1787,35 @@ libexec/sauer_server
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/data/martin
-@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/packages/dg
+@dirrm %%DATADIR%%/packages/jf1
+@dirrm %%DATADIR%%/packages/cloward
 @dirrm %%DATADIR%%/packages/aard
 @dirrm %%DATADIR%%/packages/base/sp_maps
 @dirrm %%DATADIR%%/packages/base
+@dirrm %%DATADIR%%/packages/dash
+@dirrm %%DATADIR%%/packages/cube
+@dirrm %%DATADIR%%/packages/ik2k/env
+@dirrm %%DATADIR%%/packages/ik2k
+@dirrm %%DATADIR%%/packages/lego
+@dirrm %%DATADIR%%/packages/kurt
+@dirrm %%DATADIR%%/packages/tech1soc
+@dirrm %%DATADIR%%/packages/icons
+@dirrm %%DATADIR%%/packages/payne
+@dirrm %%DATADIR%%/packages/schwenz
+@dirrm %%DATADIR%%/packages/fanatic
+@dirrm %%DATADIR%%/packages/socksky
+@dirrm %%DATADIR%%/packages/textures
+@dirrm %%DATADIR%%/packages/lunaran
 @dirrm %%DATADIR%%/packages/boxtex/32
 @dirrm %%DATADIR%%/packages/boxtex/64
 @dirrm %%DATADIR%%/packages/boxtex/128
 @dirrm %%DATADIR%%/packages/boxtex
-@dirrm %%DATADIR%%/packages/cube
-@dirrm %%DATADIR%%/packages/dash
-@dirrm %%DATADIR%%/packages/dg
-@dirrm %%DATADIR%%/packages/egyptsoc
-@dirrm %%DATADIR%%/packages/fanatic
 @dirrm %%DATADIR%%/packages/g_pack
-@dirrm %%DATADIR%%/packages/golgotha
-@dirrm %%DATADIR%%/packages/ik2k/env
-@dirrm %%DATADIR%%/packages/ik2k
+@dirrm %%DATADIR%%/packages/gibbie
 @dirrm %%DATADIR%%/packages/ikbase
-@dirrm %%DATADIR%%/packages/jf1
+@dirrm %%DATADIR%%/packages/than_ind
 @dirrm %%DATADIR%%/packages/katrez
-@dirrm %%DATADIR%%/packages/kurt
-@dirrm %%DATADIR%%/packages/lego
 @dirrm %%DATADIR%%/packages/models/dcp/ivy
 @dirrm %%DATADIR%%/packages/models/dcp/cart
 @dirrm %%DATADIR%%/packages/models/dcp/cask
@@ -1319,6 +1851,14 @@ libexec/sauer_server
 @dirrm %%DATADIR%%/packages/models/dcp/biotank
 @dirrm %%DATADIR%%/packages/models/dcp/hanginlamp
 @dirrm %%DATADIR%%/packages/models/dcp
+@dirrm %%DATADIR%%/packages/models/rpg/characters/rat
+@dirrm %%DATADIR%%/packages/models/rpg/characters/mman
+@dirrm %%DATADIR%%/packages/models/rpg/characters/wolf
+@dirrm %%DATADIR%%/packages/models/rpg/characters/horse
+@dirrm %%DATADIR%%/packages/models/rpg/characters/dragon
+@dirrm %%DATADIR%%/packages/models/rpg/characters/npcman
+@dirrm %%DATADIR%%/packages/models/rpg/characters
+@dirrm %%DATADIR%%/packages/models/rpg
 @dirrm %%DATADIR%%/packages/models/gibc
 @dirrm %%DATADIR%%/packages/models/gibh
 @dirrm %%DATADIR%%/packages/models/quad
@@ -1440,20 +1980,19 @@ libexec/sauer_server
 @dirrm %%DATADIR%%/packages/models/hudguns
 @dirrm %%DATADIR%%/packages/models/bullets
 @dirrm %%DATADIR%%/packages/models
-@dirrm %%DATADIR%%/packages/payne
 @dirrm %%DATADIR%%/packages/rorschach
-@dirrm %%DATADIR%%/packages/schwenz
-@dirrm %%DATADIR%%/packages/skyboxes
-@dirrm %%DATADIR%%/packages/socksky
+@dirrm %%DATADIR%%/packages/egyptsoc
 @dirrm %%DATADIR%%/packages/sounds/ppm
+@dirrm %%DATADIR%%/packages/sounds/aard/voice
 @dirrm %%DATADIR%%/packages/sounds/aard
 @dirrm %%DATADIR%%/packages/sounds/free
 @dirrm %%DATADIR%%/packages/sounds/awesund
 @dirrm %%DATADIR%%/packages/sounds
 @dirrm %%DATADIR%%/packages/staffy
+@dirrm %%DATADIR%%/packages/skyboxes
+@dirrm %%DATADIR%%/packages/golgotha
 @dirrm %%DATADIR%%/packages/subverse
-@dirrm %%DATADIR%%/packages/tech1soc
-@dirrm %%DATADIR%%/packages/textures
-@dirrm %%DATADIR%%/packages/than_ind
 @dirrm %%DATADIR%%/packages
+@dirrm %%DATADIR%%/data/martin
+@dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%

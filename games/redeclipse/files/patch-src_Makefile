@@ -1,30 +1,16 @@
---- src/Makefile	Tue Jun  6 15:25:26 2006
-+++ src/Makefile	Wed Jun 14 01:19:40 2006
+--- src/Makefile	Mon Aug 14 01:31:27 2006
++++ src/Makefile	Mon Aug 14 01:34:53 2006
 @@ -1,9 +1,8 @@
 -CXX=g++
--CXXOPTFLAGS=-Wall -fsigned-char -O3 -fomit-frame-pointer
--CXXFLAGS=$(CXXOPTFLAGS) -Ienet/include -I. -Ishared -Iengine -Ifpsgame `sdl-config --cflags`
-+CXX=%%CXX%%
-+CXXFLAGS=%%CXXFLAGS%% -I%%X11BASE%%/include -Ienet/include -I. -Ishared -Iengine -Ifpsgame `sdl11-config --cflags` -DHAS_SOCKLEN_T
+-CXXOPTFLAGS=-Wall -fsigned-char	-O3 -fomit-frame-pointer
+-CXXFLAGS=$(CXXOPTFLAGS)	-Ienet/include -I. -Ishared -Iengine -Ifpsgame `sdl-config --cflags`
++CXX?=g++
++CXXFLAGS+=-Ienet/include -I. -Ishared -Iengine -Ifpsgame `$(SDL_CONFIG) --cflags` -I$(X11BASE)/include
  
 -PLATFORM_PREFIX=linux
 -CLIENT_LIBS=-Lenet -lenet `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
 +PLATFORM_PREFIX=FreeBSD
-+CLIENT_LIBS=-L%%X11BASE%%/lib -Lenet -lenet `sdl11-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
++CLIENT_LIBS=-Lenet -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -L$(X11BASE)/lib -lGL -lGLU 
  CLIENT_OBJS= \
  	shared/tools.o \
- 	engine/client.o \
-@@ -46,11 +45,11 @@
- 	cd enet; ./configure
- 	
- libenet: enet/Makefile
--	-make -C enet/ all
-+	-gmake -C enet/ all
- 
- clean: enet/Makefile
- 	-rm -f $(SERVER_OBJS) $(CLIENT_OBJS) sauer_server sauer_client
--	-make -C enet/ clean
-+	-gmake -C enet/ clean
- 
- engine/server-standalone.o:
- 	$(CXX) $(CXXFLAGS) -DSTANDALONE -c -o engine/server-standalone.o engine/server.cpp
+ 	shared/geom.o \
