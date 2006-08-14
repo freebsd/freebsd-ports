@@ -17,8 +17,8 @@ COMMENT=	The Chewing intelligent phonetic input method library
 USE_GNOME=	gnomehack pkgconfig
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-DATADIR=	${PREFIX}/share/chewing
+DATADIR=	${TARGETDIR}/share/chewing
 
 .include <bsd.port.mk>
