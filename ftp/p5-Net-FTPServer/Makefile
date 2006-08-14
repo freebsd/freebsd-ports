@@ -21,10 +21,8 @@ RUN_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync \
-		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV+=	NOCONF=1
@@ -58,7 +56,12 @@ DOCS=	FAQ README TODO doc/*
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=	requires perl 5.6.1 or later. Install lang/perl5 then try again
+IGNORE=	requires perl 5.6.1 or later. Install lang/perl5.8 then try again
+.endif
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 .endif
 
 post-patch:
