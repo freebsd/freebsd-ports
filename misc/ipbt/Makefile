@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipbt
-DISTVERSION=	r6489
+DISTVERSION=	r6770
 CATEGORIES=	misc
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/
 
