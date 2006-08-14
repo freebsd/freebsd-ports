@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade-devel
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://sunner.elcomnet.ru/~sem/
@@ -27,8 +27,6 @@ USE_RUBY_FEATURES=	optparse ruby18
 USE_PERL5_RUN=	yes
 
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/pkg
-USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
