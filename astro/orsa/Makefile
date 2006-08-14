@@ -24,7 +24,7 @@ USE_QT_VER=	3
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

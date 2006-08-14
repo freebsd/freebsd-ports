@@ -17,7 +17,7 @@ COMMENT=	MPEG audio analysis toolkit
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g ; \

@@ -19,7 +19,7 @@ LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

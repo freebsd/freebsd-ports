@@ -18,7 +18,7 @@ COMMENT=	Speech recognition system
 
 DEST=		${WRKSRC}/src/libsphinx2/
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
 

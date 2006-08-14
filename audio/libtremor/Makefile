@@ -19,7 +19,7 @@ SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
 USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}

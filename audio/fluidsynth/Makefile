@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-lash --disable-ladcca
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		fluidsynth.1
 

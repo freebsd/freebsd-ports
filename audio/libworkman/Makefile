@@ -17,7 +17,7 @@ COMMENT=	Workman library required by some audio apps
 
 WRKSRC=		${WRKDIR}/libworkman
 USE_IMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 
 post-patch:

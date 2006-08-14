@@ -35,7 +35,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
