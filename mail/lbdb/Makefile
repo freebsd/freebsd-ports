@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lbdb
-PORTVERSION=	0.31.1
+PORTVERSION=	0.32
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -24,6 +24,9 @@ WITH_ABOOK=	yes
 .endif
 .if exists (${X11BASE}/bin/evolution)
 WITH_EVOLUTION=	yes
+.endif
+.if exists (/usr/bin/getent)
+WITH_GETENT=	yes
 .endif
 
 .if defined(PACKAGE_BUILDING)
@@ -51,6 +54,11 @@ RUN_DEPENDS+=	evolution:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION=""
 .else
 PLIST_SUB+=	EVOLUTION="@comment "
+.endif
+.if defined(WITH_GETENT)
+PLIST_SUB+=	GETENT=""
+.else
+PLIST_SUB+=	GETENT="@comment "
 .endif
 
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}

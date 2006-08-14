@@ -13,6 +13,7 @@ libexec/m_bbdb
 %%EVOLUTION%%libexec/m_evolution
 libexec/m_fido
 libexec/m_finger
+%%GETENT%%libexec/m_getent
 libexec/m_gnomecard
 %%GPG%%libexec/m_gpg
 libexec/m_inmail
