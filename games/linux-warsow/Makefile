@@ -7,6 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.12
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
@@ -24,9 +25,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free multiplayer first person shooter with cartoon design
 
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libkrb5support.so.0:${PORTSDIR}/security/linux-krb5-libs \
-		${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl \
-		${LINUXBASE}/lib/libcom_err.so.2:${PORTSDIR}/sysutils/linux-e2fsprogs \
+RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl \
 		${DATADIR}/basewsw/data0.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
