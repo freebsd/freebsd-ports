@@ -7,6 +7,7 @@
 
 PORTNAME=	POE-Component-Client-Telnet
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -25,6 +26,12 @@ PERL_CONFIGURE=	yes
 MAN3=	POE::Component::Client::Telnet.3
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if /use warnings/;' \
+		${WRKSRC}/Makefile.PL
+.endif
 
 .if ${PERL_LEVEL} < 500602
 BUILD_DEPENDS+=	p5-Test-Simple>=0.32:${PORTSDIR}/devel/p5-Test-Simple
