@@ -1,0 +1,5 @@
+This module is a abstraction to the image meta data of GQview.
+
+All internal errors will trow an error!
+
+WWW:	http://search.cpan.org/dist/Image-MetaData-GQview/
