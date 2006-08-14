@@ -1370,21 +1370,22 @@ PREFIX?=		${LOCALBASE_REL}
 .if defined(USE_LINUX_PREFIX)
 .if !defined(DESTDIR)
 LDCONFIG_CMD?=			${LINUXBASE_REL}/sbin/ldconfig -r ${LINUXBASE_REL}
-.else
-LDCONFIG_CMD?=			${CHROOT} ${DESTDIR} ${LINUXBASE_REL}/sbin/ldconfig -r ${LINUXBASE_REL}
-.endif
 LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG_CMD}
 LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG_CMD}
+.else
+LDCONFIG_CMD?=			${CHROOT} ${DESTDIR} ${LINUXBASE_REL}/sbin/ldconfig -r ${LINUXBASE_REL}
+LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG_CMD}
+LDCONFIG_PLIST_UNEXEC_CMD?=	${LINUXBASE_REL}/sbin/ldconfig -r ${LINUXBASE_REL}
+.endif
 .else
 .if !defined(DESTDIR)
 LDCONFIG_CMD?=			${LDCONFIG} -m ${LDCONFIG_RUNLIST}
 LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG} -m ${LDCONFIG_PLIST}
-LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG} -R
 .else
 LDCONFIG_CMD?=			${CHROOT} ${DESTDIR} ${LDCONFIG} -m ${LDCONFIG_RUNLIST}
 LDCONFIG_PLIST_EXEC_CMD?=	${CHROOT} ${DESTDIR} ${LDCONFIG} -m ${LDCONFIG_PLIST}
-LDCONFIG_PLIST_UNEXEC_CMD?=	${CHROOT} ${DESTDIR} ${LDCONFIG} -R
 .endif
+LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG} -R
 .endif
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
@@ -1588,8 +1589,9 @@ INSTALL_WRKSRC?=${WRKSRC}
 
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL} \
 		DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
-SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL}	\
-			DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR}
+SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL} \
+		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
+		DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
 
 PLIST_REINPLACE+=	dirrmtry
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || true!
@@ -5512,7 +5514,7 @@ install-rc-script:
 	@${ECHO_CMD} "===> Installing early rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd /" >> ${TMPPLIST}
 	@for i in ${USE_RCORDER}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} /etc/rc.d/$${i%.sh}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${DESTDIR}/etc/rc.d/$${i%.sh}; \
 		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
@@ -5581,13 +5583,13 @@ fake-pkg:
 	fi
 	@${RM} -rf ${PKG_DBDIR}/${PKGNAME}
 .endif
-.if !exists(${PKG_DBDIR}/${PKGNAME})
-.if !defined(DESTDIR)
-		@${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"
-.else
-		@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} in ${DESTDIR}"
-.endif
-		@${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
+	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
+		if [ -z "${DESTDIR}" ] ; then \
+			${ECHO_MSG} "===>   Registering installation for ${PKGNAME}"; \
+		else \
+			${ECHO_MSG} "===>   Registering installation for ${PKGNAME} in ${DESTDIR}"; \
+		fi; \
+		${MKDIR} ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
 		${CP} ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
 		${ECHO_CMD} ${COMMENT:Q} > ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
@@ -5610,8 +5612,8 @@ fake-pkg:
 					${ECHO_CMD} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
 				fi; \
 			fi; \
-		done
-.endif
+		done; \
+	fi
 .if !defined(NO_MTREE)
 	@if [ -f ${MTREE_FILE} ]; then \
 		${CP} ${MTREE_FILE} ${PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
