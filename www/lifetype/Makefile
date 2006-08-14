@@ -20,18 +20,15 @@ COMMENT=	A PHP and MySQL based blogging platform
 IGNOREFILES=	${PORTVERSION:R}__all_plugins${EXTRACT_SUFX} \
 		${PORTVERSION:R}__all_templates${EXTRACT_SUFX}
 
-USE_ZIP=	YES
-
-USE_PHP=	ctype mysql pcre session xml
 NO_BUILD=	YES
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST=		${WRKDIR}/pkg-plist
+PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
+PLOGURL?=	lifetype
+USE_PHP=	ctype mysql pcre session xml
+USE_ZIP=	YES
 WANT_PHP_WEB=	YES
 WWWDOCROOT?=	www
-PLOGURL?=	lifetype
-WWWOWN?=	www
-WWWGRP?=	www
-PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
-PLIST=		${WRKDIR}/pkg-plist
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	BIG5		"With Big5 chinese template fix" off \
 		GD		"With GD Support" on \
@@ -74,9 +71,9 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${PLOGDIR} >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PLOGDIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PLOGDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PLOGDIR}
+	@${MKDIR} ${TARGETDIR}/${PLOGDIR}
+	@${CP} -R ${WRKSRC}/ ${TARGETDIR}/${PLOGDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TARGETDIR}/${PLOGDIR}
 
 post-install:
 	@${SED} -e 's|%%PLOGURL%%|${PLOGURL}|' pkg-message > ${PKGMESSAGE}
