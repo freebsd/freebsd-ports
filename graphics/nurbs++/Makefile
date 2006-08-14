@@ -17,7 +17,7 @@ COMMENT=	A C++ library for representing curves or surfaces
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	nurbs++-config.1
 

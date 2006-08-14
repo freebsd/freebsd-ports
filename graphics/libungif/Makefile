@@ -18,7 +18,7 @@ COMMENT=	Tools and library routines for working with GIF images
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	X11='@comment '

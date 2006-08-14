@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
 		--enable-runidn \
 		--enable-extra-ace
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		idnconv.1 \
 		runidn.1

@@ -21,7 +21,7 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	UNIX --prefix=${PREFIX}
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=	V3DGLInterpriteDelete.3 \
 	V3DGLInterpriteNew.3 \

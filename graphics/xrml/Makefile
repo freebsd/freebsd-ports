@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_MOTIF=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(WITH_EXAMPLES)
 PLIST_SUB=	WITH_EXAMPLES="@comment "

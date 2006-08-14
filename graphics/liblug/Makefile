@@ -21,6 +21,6 @@ USE_XLIB=		yes
 
 WRKSRC=			${WRKDIR}/lug
 MAKEFILE=		Makefile.linux
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

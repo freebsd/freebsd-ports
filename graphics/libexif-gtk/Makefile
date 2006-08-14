@@ -21,6 +21,6 @@ USE_GNOME=	gnomehack gnometarget gtk20
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

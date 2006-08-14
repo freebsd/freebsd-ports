@@ -18,7 +18,7 @@ COMMENT=	The X Pixmap library
 CONFLICTS=	XFree86-libraries-[0-9]* xorg-libraries-[0-9]*
 
 USE_IMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		cxpm.1 sxpm.1
 

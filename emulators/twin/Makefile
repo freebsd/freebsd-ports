@@ -29,7 +29,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	depend world
 
 PLIST_SUB=	LIBVER="${LIBVER}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sys-gd=no \
 		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11

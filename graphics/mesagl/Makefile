@@ -20,7 +20,7 @@ COMMENT=	A graphics library similar to SGI's OpenGL
 CONFLICTS=	XFree86-libraries-[4-9]* xorg-libraries-[6-9]*
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WANT_GGI)
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi

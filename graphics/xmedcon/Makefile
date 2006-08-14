@@ -36,7 +36,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
 		--enable-llcheck
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	medcon.1 xmedcon-config.1
 MAN3=	medcon.3

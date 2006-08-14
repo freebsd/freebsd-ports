@@ -30,7 +30,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--without-waili
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		xmorph.1
 INFO=		xmorph

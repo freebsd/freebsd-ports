@@ -17,7 +17,7 @@ COMMENT=	A program that automatically solves games of Freecell
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN6=	fc-solve-board_gen.6 fc-solve.6 \
 	freecell-solver-range-parallel-solve.6 \

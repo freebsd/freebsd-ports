@@ -17,7 +17,7 @@ COMMENT=	A library for loading (and saving) 3d modeller object files
 CONFLICTS=	xmorph*
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \

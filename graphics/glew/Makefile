@@ -18,7 +18,7 @@ COMMENT=	The OpenGL Extension Wrangler Library
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:

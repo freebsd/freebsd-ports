@@ -33,7 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --disable-locking
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>

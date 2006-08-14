@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic viewer for Leaf products
 
 USE_IMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.pre.mk>

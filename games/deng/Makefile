@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 		CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -I${X11BASE}/include"
 USE_SDL=	sdl mixer net
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 SUB_FILES=	pkg-message

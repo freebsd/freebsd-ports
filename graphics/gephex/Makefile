@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--without-V4L --without-ASOUNDLIB --without-LINUX_JOYSTICK \
 		--without-SDL_TTF --without-AALIB --disable-static
 USE_QT_VER=	3
 WANT_SDL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}-${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[[:alpha:]]//g}
 ONLY_FOR_ARCHS=	i386

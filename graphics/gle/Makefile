@@ -20,7 +20,7 @@ COMMENT=	A GL Tubing and Extrusion Library
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"LIBS=-L${X11BASE}/lib -lXext ${PTHREAD_LIBS}"
 
