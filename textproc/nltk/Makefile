@@ -22,13 +22,13 @@ USE_PYTHON_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Coredump during build on alpha 4.x"
+BROKEN=		Coredump during build on alpha 4.x
 .endif
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+		${SED} 's,^${TARGETDIR}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+		${SED} 's,^${TARGETDIR}/,@dirrmtry ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
