@@ -7,6 +7,7 @@
 
 PORTNAME=	ode
 DISTVERSION=	${ODEVER}-060223
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://opende.sourceforge.net/snapshots/
 PKGNAMESUFFIX=	-devel
@@ -26,6 +27,10 @@ USE_GMAKE=	yes
 OPTIONS=	OPCODE "Enable code required by TriList (trimesh) class" on
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC -DPIC
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
