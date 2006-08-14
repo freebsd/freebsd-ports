@@ -17,9 +17,9 @@ COMMENT=	Convert Chinese-Big5 encoded files to PDF, using PDFlib
 
 LIB_DEPENDS=	pdf.7:${PORTSDIR}/print/pdflib
 
+CFLAGS+=	-fPIC
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CFLAGS+=	-fPIC
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR},g' \
@@ -27,8 +27,8 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bg5pdf ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/gbpdf ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bg5pdf ${TARGETDIR}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gbpdf ${TARGETDIR}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bg5pdflib.so ${PYTHON_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.big5 ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.big5.pdf ${EXAMPLESDIR}
