@@ -9128,6 +9128,7 @@ p5-List-Compare	ports/misc/p5-List-Compare
 p5-List-Cycle	ports/devel/p5-List-Cycle
 p5-List-Group	ports/devel/p5-List-Group
 p5-List-MoreUtils	ports/lang/p5-List-MoreUtils
+p5-List-Permutor	ports/devel/p5-List-Permutor
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
 p5-Locale-Currency-Format	ports/finance/p5-Locale-Currency-Format
 p5-Locale-Maketext	ports/devel/p5-Locale-Maketext
