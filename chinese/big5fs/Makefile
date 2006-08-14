@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/big5fs/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads Big5 filenames on Joliet, VFAT and NTFS filesystems
 
-NO_PACKAGE=	"Different versions definitely cause crash"
+NO_PACKAGE=	Different versions definitely cause crash
 
-SYSDIR=		/usr/src/sys
-KMODDIR=	${PREFIX}/modules
+SYSDIR=		${DESTDIR}/usr/src/sys
+KMODDIR=	${TARGETDIR}/modules
 PLIST_SUB=	MSDOSFSKO=${MSDOSFSKO}
 NO_WRKSUBDIR=	yes
 
@@ -39,7 +39,7 @@ NTFSPATCH=	ntfs_big5.diff.440001
 .endif
 
 .if !exists (${SYSDIR})
-IGNORE=	"You need to extract kernel source tree before you build this package"
+IGNORE=		need to extract kernel source tree before you build this package
 .endif
 
 do-extract:
@@ -67,7 +67,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${KMODDIR}
-	@${INSTALL_SCRIPT} ${FILESDIR}/big5fs.sh ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${FILESDIR}/big5fs.sh ${TARGETDIR}/etc/rc.d
 	@${INSTALL_SCRIPT} ${WRKSRC}/*/*.ko ${KMODDIR}
 
 .include <bsd.port.post.mk>
