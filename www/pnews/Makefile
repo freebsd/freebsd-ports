@@ -22,7 +22,7 @@ COMMENT=	PHP Web-based News Reader
 USE_PHP=	yes
 NO_BUILD=	yes
 
-PNEWSDIR?=	${PREFIX}/www/data/pnews
+PNEWSDIR?=	${TARGETDIR}/www/pnews
 
 do-install:
 	@${MKDIR} ${PNEWSDIR}

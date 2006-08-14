@@ -1,76 +1,75 @@
 @comment $FreeBSD$
-www/data/pnews/.htaccess
-www/data/pnews/auth.php
-www/data/pnews/auth/ftp.inc.php
-www/data/pnews/auth/ftps.inc.php
-www/data/pnews/auth/ldap.inc.php
-www/data/pnews/auth/mail.inc.php
-www/data/pnews/auth/mysql.inc.php
-www/data/pnews/auth/nntp.inc.php
-www/data/pnews/auth/nntps.inc.php
-www/data/pnews/auth/pgsql.inc.php
-www/data/pnews/auth/phpbb.inc.php
-www/data/pnews/auth/pop3.inc.php
-www/data/pnews/auth/pop3s.inc.php
-www/data/pnews/auth/sample.inc.php
-www/data/pnews/chg-lang.php
-www/data/pnews/clear-cache.php
-www/data/pnews/css/standard.css
-www/data/pnews/delete.php
-www/data/pnews/doc/acknowlege.php
-www/data/pnews/doc/copying.php
-www/data/pnews/doc/download.php
-www/data/pnews/doc/guide.php
-www/data/pnews/doc/header.php
-www/data/pnews/doc/history.php
-www/data/pnews/doc/index.php
-www/data/pnews/doc/requirement.php
-www/data/pnews/doc/style.css
-www/data/pnews/doc/url_rewrite.php
-www/data/pnews/download.php
-www/data/pnews/examples/config.inc.php
-www/data/pnews/examples/dot_htaccess
-www/data/pnews/examples/newsgroups-twbbs.lst
-www/data/pnews/examples/newsgroups.lst
-www/data/pnews/examples/nntp-test.php
-www/data/pnews/examples/robots.txt
-www/data/pnews/favicon.ico
-www/data/pnews/form-login.php
-www/data/pnews/forward.php
-www/data/pnews/html.inc.php
-www/data/pnews/index.php
-www/data/pnews/indexing.php
-www/data/pnews/language.inc.php
-www/data/pnews/language/big5-gb.tab
-www/data/pnews/language/big5-unicode.tab
-www/data/pnews/language/chinese.inc.php
-www/data/pnews/language/chinese_gb.inc.php
-www/data/pnews/language/english.inc.php
-www/data/pnews/language/finnish.inc.php
-www/data/pnews/language/fix-b2g.php
-www/data/pnews/language/fix-g2b.php
-www/data/pnews/language/french.inc.php
-www/data/pnews/language/gb-big5.tab
-www/data/pnews/language/gb-unicode.tab
-www/data/pnews/language/german.inc.php
-www/data/pnews/language/italian.inc.php
-www/data/pnews/language/slovak.inc.php
-www/data/pnews/language/unicode-big5.tab
-www/data/pnews/language/unicode-gb.tab
-www/data/pnews/nnrpclass.php
-www/data/pnews/post.php
-www/data/pnews/read-art.php
-www/data/pnews/read.php
-www/data/pnews/readcfg.inc.php
-www/data/pnews/reply.php
-www/data/pnews/utils.inc.php
-www/data/pnews/utils.js
-www/data/pnews/version.inc.php
-www/data/pnews/xpost.php
-@dirrmtry www/data/pnews/auth
-@dirrmtry www/data/pnews/css
-@dirrmtry www/data/pnews/doc
-@dirrmtry www/data/pnews/examples
-@dirrmtry www/data/pnews/language
-@dirrmtry www/data/pnews
-@dirrmtry www/data
+www/pnews/.htaccess
+www/pnews/auth.php
+www/pnews/auth/ftp.inc.php
+www/pnews/auth/ftps.inc.php
+www/pnews/auth/ldap.inc.php
+www/pnews/auth/mail.inc.php
+www/pnews/auth/mysql.inc.php
+www/pnews/auth/nntp.inc.php
+www/pnews/auth/nntps.inc.php
+www/pnews/auth/pgsql.inc.php
+www/pnews/auth/phpbb.inc.php
+www/pnews/auth/pop3.inc.php
+www/pnews/auth/pop3s.inc.php
+www/pnews/auth/sample.inc.php
+www/pnews/chg-lang.php
+www/pnews/clear-cache.php
+www/pnews/css/standard.css
+www/pnews/delete.php
+www/pnews/doc/acknowlege.php
+www/pnews/doc/copying.php
+www/pnews/doc/download.php
+www/pnews/doc/guide.php
+www/pnews/doc/header.php
+www/pnews/doc/history.php
+www/pnews/doc/index.php
+www/pnews/doc/requirement.php
+www/pnews/doc/style.css
+www/pnews/doc/url_rewrite.php
+www/pnews/download.php
+www/pnews/examples/config.inc.php
+www/pnews/examples/dot_htaccess
+www/pnews/examples/newsgroups-twbbs.lst
+www/pnews/examples/newsgroups.lst
+www/pnews/examples/nntp-test.php
+www/pnews/examples/robots.txt
+www/pnews/favicon.ico
+www/pnews/form-login.php
+www/pnews/forward.php
+www/pnews/html.inc.php
+www/pnews/index.php
+www/pnews/indexing.php
+www/pnews/language.inc.php
+www/pnews/language/big5-gb.tab
+www/pnews/language/big5-unicode.tab
+www/pnews/language/chinese.inc.php
+www/pnews/language/chinese_gb.inc.php
+www/pnews/language/english.inc.php
+www/pnews/language/finnish.inc.php
+www/pnews/language/fix-b2g.php
+www/pnews/language/fix-g2b.php
+www/pnews/language/french.inc.php
+www/pnews/language/gb-big5.tab
+www/pnews/language/gb-unicode.tab
+www/pnews/language/german.inc.php
+www/pnews/language/italian.inc.php
+www/pnews/language/slovak.inc.php
+www/pnews/language/unicode-big5.tab
+www/pnews/language/unicode-gb.tab
+www/pnews/nnrpclass.php
+www/pnews/post.php
+www/pnews/read-art.php
+www/pnews/read.php
+www/pnews/readcfg.inc.php
+www/pnews/reply.php
+www/pnews/utils.inc.php
+www/pnews/utils.js
+www/pnews/version.inc.php
+www/pnews/xpost.php
+@dirrmtry www/pnews/auth
+@dirrmtry www/pnews/css
+@dirrmtry www/pnews/doc
+@dirrmtry www/pnews/examples
+@dirrmtry www/pnews/language
+@dirrmtry www/pnews
