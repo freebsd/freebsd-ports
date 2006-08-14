@@ -7,6 +7,7 @@
 
 PORTNAME=	verlihub
 PORTVERSION=	0.9.8.c
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,7 +17,7 @@ DISTNAME=	verlihub-0.9.8c-RC2
 MAINTAINER=	hurbold@yahoo.com
 COMMENT=	Verlihub Linux/Unix Direct Connect Hub Software
 
-LIB_DEPENDS=	GeoIP.4:${PORTSDIR}/net/GeoIP \
+LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP \
 		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 

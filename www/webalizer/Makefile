@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
@@ -23,7 +23,7 @@ COMMENT=	A web server log file analysis program
 LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
 .endif
 .if defined(WITH_GEOIP)
-LIB_DEPENDS+=	GeoIP.4:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 .endif
 
 USE_BZIP2=	yes
