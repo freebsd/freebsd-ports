@@ -20,13 +20,14 @@ NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386
 
-PKGMESSAGE=	${WRKSRC}/.MESSAGE
 MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	zaptel
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	"does not build on FreeBSD \< 5.x"
+IGNORE=	does not build on FreeBSD \< 5.x
 .endif
 
 pre-everything::
@@ -42,15 +43,10 @@ post-patch:
 		${WRKSRC}/ztcfg/ztcfg.c
 
 pre-su-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
-		${PKGMESSAGE}
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/zaptel.sh > \
-		${WRKDIR}/zaptel.sh.sample
 	@${MKDIR} ${PREFIX}/lib/zaptel
 
 post-install:
 	@${TOUCH} ${PREFIX}/lib/zaptel/linker.hints
-	@${INSTALL_SCRIPT} ${WRKDIR}/zaptel.sh.sample ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
