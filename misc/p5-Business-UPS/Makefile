@@ -18,7 +18,6 @@ COMMENT=	A UPS Interface Module
 BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
 PERL_CONFIGURE=	yes
 
 MAN3=		Business::UPS.3
