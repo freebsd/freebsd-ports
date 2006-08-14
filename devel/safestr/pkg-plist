@@ -1,4 +1,5 @@
+include/safestr-c99.h
 include/safestr.h
 lib/libsafestr.a
 lib/libsafestr.so
-lib/libsafestr.so.0
+lib/libsafestr.so.3
