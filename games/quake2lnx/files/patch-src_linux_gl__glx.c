@@ -1,6 +1,27 @@
---- src/linux/gl_glx.c.orig	Thu Oct 10 01:29:47 2002
-+++ src/linux/gl_glx.c	Mon Jun 16 23:19:21 2003
-@@ -475,6 +475,10 @@
+--- src/linux/gl_glx.c.orig	Thu Jan 27 19:35:20 2005
++++ src/linux/gl_glx.c	Wed Jul 26 22:32:32 2006
+@@ -428,7 +428,6 @@
+   while (XPending(dpy)) {
+     //ri.Con_Printf(PRINT_ALL,"Bar");
+     XNextEvent(dpy, &event);
+-    mx = my = 0;
+     switch(event.type) {
+     case KeyPress:
+       myxtime = event.xkey.time;
+@@ -449,10 +448,8 @@
+ 	}
+ 	else 
+ 	  {
+-	    mx -= ((int)event.xmotion.x - mwx) * 2;
+-	    my -= ((int)event.xmotion.y - mwy) * 2;
+-	    mwx = event.xmotion.x;
+-	    mwy = event.xmotion.y;
++	    mx += ((int)event.xmotion.x - mwx) * 2;
++	    my += ((int)event.xmotion.y - mwy) * 2;
+ 	    
+ 	    if (mx || my)
+ 	      dowarp = true;
+@@ -475,6 +472,10 @@
  	in_state->Key_Event_fp (K_MWHEELUP, 1);
        else if (event.xbutton.button == 5)
  	in_state->Key_Event_fp (K_MWHEELDOWN, 1);
@@ -11,7 +32,7 @@
        if (b>=0 && in_state && in_state->Key_Event_fp)
  	in_state->Key_Event_fp (K_MOUSE1 + b, true);
        if (b>=0)
-@@ -493,6 +497,10 @@
+@@ -493,6 +494,10 @@
  	in_state->Key_Event_fp (K_MWHEELUP, 0);
        else if (event.xbutton.button == 5)
  	in_state->Key_Event_fp (K_MWHEELDOWN, 0);
@@ -22,7 +43,7 @@
        if (b>=0 && in_state && in_state->Key_Event_fp)
  	in_state->Key_Event_fp (K_MOUSE1 + b, false);
        if (b>=0)
-@@ -1015,7 +1023,7 @@
+@@ -1015,7 +1020,7 @@
  qboolean OpenJoystick(cvar_t *joy_dev) {
    int i, err;
    glob_t pglob;
@@ -31,7 +52,7 @@
  
    err = glob(joy_dev->string, 0, NULL, &pglob);
  
-@@ -1030,7 +1038,7 @@
+@@ -1030,7 +1035,7 @@
      default:
        ri.Con_Printf(PRINT_ALL, "Error #%d while looking for joysticks\n",err);
      }
@@ -40,7 +61,7 @@
    }  
    
    for (i=0;i<pglob.gl_pathc;i++) {
-@@ -1039,38 +1047,36 @@
+@@ -1039,38 +1044,36 @@
      if (joy_fd == -1) {
        ri.Con_Printf(PRINT_ALL, "Error opening joystick dev %s\n", 
  		    pglob.gl_pathv[i]);

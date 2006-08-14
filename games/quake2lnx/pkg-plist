@@ -1,12 +1,10 @@
 @comment === EXECUTABLES ===
 %%SERVER%%bin/q2ded
 %%CLIENT%%bin/quake2
-%%SDLCLIENT%%bin/sdlquake2
+%%SDLCLIENT%%bin/quake2-sdl
 @comment === RENDERERS ===
 %%GAME%%%%LIBDIR%%/baseq2/game.so
 %%CTF%%%%LIBDIR%%/ctf/game.so
-%%ROGUE%%%%LIBDIR%%/rogue/game.so
-%%XATRIX%%%%LIBDIR%%/xatrix/game.so
 %%GLX%%%%LIBDIR%%/ref_glx.so
 %%SDLGL%%%%LIBDIR%%/ref_sdlgl.so
 %%SVGA%%%%LIBDIR%%/ref_soft.so
@@ -19,19 +17,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/joystick.txt
 %%PORTDOCS%%%%DOCSDIR%%/quake2.3dfxgl
 @comment === DATA ===
-%%QMAX%%%%DATADIR%%/baseq2/maxpak.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak10.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak11.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak12.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak13.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak14.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak16.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak17.pak
-%%RETEX%%%%DATADIR%%/baseq2/pak19.pak
+%%QMAX%%%%LIBDIR%%/baseq2/maxpak.pak
 @comment === CLEANUP ===
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CTF%%@dirrm %%LIBDIR%%/ctf
-%%GAME%%@dirrm %%LIBDIR%%/baseq2
-%%ROGUE%%@dirrm %%LIBDIR%%/rogue
-%%XATRIX%%@dirrm %%LIBDIR%%/xatrix
+@dirrm %%LIBDIR%%/baseq2
 @dirrm %%LIBDIR%%
