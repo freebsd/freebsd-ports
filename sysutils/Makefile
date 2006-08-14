@@ -304,7 +304,6 @@
     SUBDIR += lineakd
     SUBDIR += linux-acu
     SUBDIR += linux-afaapps
-    SUBDIR += linux-e2fsprogs
     SUBDIR += linuxfdisk
     SUBDIR += lire
     SUBDIR += livecd
