@@ -7,7 +7,6 @@
 
 PORTNAME=	sary
 PORTVERSION=	1.2.0
-PORTREVISION=	0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://sary.sourceforge.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -33,7 +32,7 @@ DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 post-install: doc-install
-	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${TARGETDIR}/bin/
 
 doc-install:
 .if !defined(NOPORTDOCS)
