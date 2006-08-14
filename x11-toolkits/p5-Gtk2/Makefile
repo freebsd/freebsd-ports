@@ -36,6 +36,6 @@ IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 
 post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
-		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
+		's,^,${MAN3PREFIX:S,^${TARGETDIR}/,,}/man/man3/,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
