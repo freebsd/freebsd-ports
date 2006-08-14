@@ -40,9 +40,9 @@ ECHO_MSG=	/usr/bin/printf
 IGNORE=	:\n\
 You have to fetch ${DISTNAME}${EXTRACT_SUFX} manually after\n\
 reading and agreeing to the license at:\n\
-http://download.bitdefender.com/freebsd/${BDREL}/final/LICENSE\n\
+http://download.bitdefender.com/unices/old/freebsd/${BDREL}/final/LICENSE\n\
 A direct link to the distribution file:\n\
-http://download.bitdefender.com/freebsd/${BDREL}/final/${DISTNAME}${EXTRACT_SUFX}\n\
+http://download.bitdefender.com/unices/old/freebsd/${BDREL}/final/${DISTNAME}${EXTRACT_SUFX}\n\
 Once the file has been downloaded move it to\n\
 ${DISTDIR} and restart the build.\n
 .endif
