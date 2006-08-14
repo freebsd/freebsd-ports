@@ -32,7 +32,13 @@ share/locale/zh_CN/LC_MESSAGES/bazaar.mo
 @dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/fr_BE/LC_MESSAGES
 @dirrmtry share/locale/fr_BE
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
 @dirrmtry share/locale/en_AU/LC_MESSAGES
 @dirrmtry share/locale/en_AU
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
