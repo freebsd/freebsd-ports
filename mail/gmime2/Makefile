@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v${PORTVERSION:C/([0-9]\.[0-9]).*/\1/}/
@@ -19,17 +19,20 @@ CONFLICTS=	gmime-1.0.*
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget glib20
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--enable-mono=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
 
 LATEST_LINK?=	${PORTNAME}2
 
 PORTDOCS=	*
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/zentimer.h
 
 post-install:
 .if !defined(NOPORTDOCS)
