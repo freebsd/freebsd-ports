@@ -257,6 +257,7 @@ adplay		ports/audio/adplay
 adstudio	ports/databases/adstudio
 adtool		ports/sysutils/adtool
 advancecomp	ports/archivers/advancecomp
+advi		ports/print/advi
 adzap		ports/www/adzap
 aee		ports/editors/aee
 aescrypt	ports/security/aescrypt
