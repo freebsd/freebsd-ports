@@ -8977,6 +8977,7 @@ p5-I18N-Charset	ports/misc/p5-I18N-Charset
 p5-I18N-LangTags	ports/misc/p5-I18N-LangTags
 p5-IDNA-Punycode	ports/textproc/p5-IDNA-Punycode
 p5-IMAP-Admin	ports/mail/p5-IMAP-Admin
+p5-IMAP-Client	ports/mail/p5-IMAP-Client
 p5-IMAP-Sieve	ports/mail/p5-IMAP-Sieve
 p5-IMDB-Film	ports/www/p5-IMDB-Film
 p5-IMDB-Movie	ports/www/p5-IMDB-Movie
