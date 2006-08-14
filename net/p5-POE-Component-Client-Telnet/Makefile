@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@Pluto.CDPA.nsysu.edu.tw
+MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	A POE component that provides non-blocking access to Net::Telnet
 
 BUILD_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
