@@ -7,6 +7,7 @@
 
 PORTNAME=	xsim
 PORTVERSION=	0.3.9.4
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +17,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and fast GBK Chinese XIM server
 
-LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
-
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cn-locale=eucCN
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message xsim.sh
+USE_BDB=	40+
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} "s/-O2/${CFLAGS}/g" ${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/xsim.sh ${PREFIX}/bin/xsim
+	${INSTALL_DATA} ${WRKDIR}/xsim.sh ${TARGETDIR}/bin/xsim
 	@${MKDIR} ${DATADIR}/dat
 	@${CP} -R ${WRKDIR}/usr/local/xsim/dat/* ${DATADIR}/dat
 	@${CAT} ${PKGMESSAGE}
