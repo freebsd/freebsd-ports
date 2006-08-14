@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ici
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.zeta.org.au/~atrn/ici/distfiles/
 
@@ -15,7 +15,7 @@ COMMENT=	An interpretive language with C's feel and high level data types
 
 MAKEFILE=	Makefile.bsd
 
-MAN1=		ici.1 icifuncs.1 icioo.1 iciops.1 icire.1\
+MAN1=		ici.1 icifuncs.1 icioo.1 iciops.1 icire.1 \
 		icistmt.1 icitypes.1
 
 MANCOMPRESSED=	yes
@@ -29,7 +29,7 @@ ICIDOCS=	doc/ici.pdf
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
+BROKEN=		does not compile on amd64
 .endif
 
 do-install:

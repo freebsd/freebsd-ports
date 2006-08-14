@@ -1,11 +1,11 @@
 bin/ici
 include/ici.h
 include/icistr-setup.h
-lib/libici4.a
 lib/ici4/ici4core.ici
 lib/ici4/ici4core1.ici
 lib/ici4/ici4core2.ici
 lib/ici4/ici4core3.ici
-share/doc/ici4/ici.pdf
-@dirrmtry lib/ici4
-@dirrm share/doc/ici4
+lib/libici4.a
+%%DOCSDIR%%4/ici.pdf
+@dirrm %%DOCSDIR%%4
+@dirrm lib/ici4
