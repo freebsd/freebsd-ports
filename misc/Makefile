@@ -409,6 +409,7 @@
     SUBDIR += rname
     SUBDIR += rpl
     SUBDIR += rtfm
+    SUBDIR += ruby-vpim
     SUBDIR += salias
     SUBDIR += seizedesktop
     SUBDIR += seq2
