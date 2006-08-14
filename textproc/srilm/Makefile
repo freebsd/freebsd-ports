@@ -64,7 +64,6 @@ MAN5=		ngram-format.5 nbest-format.5 classes-format.5 \
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-ECHO_MSG=/usr/bin/printf
 IGNORE=	because of license document, we suggest you fetch the source \
 distribution\n\
 manually.  Please access ${DOWNLOAD_URL}\n\
@@ -88,14 +87,14 @@ post-patch:
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/bin/freebsd && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
+		${INSTALL_PROGRAM} ${PROGRAMS} ${TARGETDIR}/bin && \
 		${INSTALL_SCRIPT} ${GAWK_SCRIPTS} ${EXAMPLESDIR} && \
 	cd ${WRKSRC}/man/man1 && \
-		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1 && \
+		${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 && \
 	cd ${WRKSRC}/man/man3 && \
-		${INSTALL_MAN} ${MAN3} ${MANPREFIX}/man/man3 && \
+		${INSTALL_MAN} ${MAN3} ${MAN3PREFIX}/man/man3 && \
 	cd ${WRKSRC}/man/man5 && \
-		${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5 && \
+		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5 && \
 	cd ${WRKSRC}/bin && \
 		${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR}
 
