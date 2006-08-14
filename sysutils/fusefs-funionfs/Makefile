@@ -26,7 +26,7 @@ do-build:
 	 -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lfuse)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/funionfs ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/funionfs ${TARGETDIR}/bin
 
 .include <bsd.port.pre.mk>
 
