@@ -19,7 +19,6 @@ BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel
 			${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
-EXAMPLESDIR?=		${PREFIX}/share/examples/${PORTNAME}
 PERL_CONFIGURE=		yes
 
 MAN3=			Term::ProgressBar.3
