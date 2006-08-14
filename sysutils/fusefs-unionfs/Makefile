@@ -29,7 +29,7 @@ do-build:
 	 -o unionfs *.c -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lfuse)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unionfs ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unionfs ${TARGETDIR}/bin
 
 .include <bsd.port.pre.mk>
 
