@@ -21,10 +21,10 @@ SUB_DIR=	21187
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I ${PREFIX}/include" \
-		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I ${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 # Default charset (euc-jp/shift_jis/utf-8)
 .if defined(WITH_CHARSET)
@@ -50,8 +50,8 @@ post-configure:
 	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.dist
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/mecabrc ]; then \
-		${INSTALL_DATA} ${PREFIX}/etc/mecabrc.dist ${PREFIX}/etc/mecabrc; \
+	@if [ ! -f ${TARGETDIR}/etc/mecabrc ]; then \
+		${INSTALL_DATA} ${TARGETDIR}/etc/mecabrc.dist ${TARGETDIR}/etc/mecabrc; \
 	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
