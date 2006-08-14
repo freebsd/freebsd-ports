@@ -1,10 +1,21 @@
 
 ***********************************************************************
-*                             INSTALL PROCEDURE                       *
+*                         POST INSTALL CONFIGURATION                  *
 ***********************************************************************
 
 Please note that everything has been installed in %%PREFIX%%/www/bacula-web.
 
+Read %%PREFIX%%/www/bacula-web/README but keep in mind local changes for
+FreeBSD: you need to copy %%PREFIX%%/etc/bacula-web.conf.sample to 
+%%PREFIX%%/etc/bacula-web.conf.sample and modify with your preferences.
 
-Read %%PREFIX%%/www/bacula-web/README
+You will probably want to add an alias to your httpd.conf file, something
+like this:
+
+	Alias /bacula-web "%%PREFIX%%/www/bacula-web/"
+
+And restart Apache.
+
+Alternatively, you can create a host dedicated to bacula-web and use
+a DocumentRoot of %%PREFIX%%/www/bacula-web.
 
