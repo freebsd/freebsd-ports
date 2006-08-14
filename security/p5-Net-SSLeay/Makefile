@@ -23,7 +23,6 @@ USE_OPENSSL=	yes
 
 MAN3=		Net::SSLeay.3 Net::SSLeay::Handle.3
 
-EXAMPLESDIR=	${PREFIX}/share/examples/p5-Net-SSLeay
 SRCDIR=		${WRKSRC}/examples
 
 .if !defined(NOPORTDOCS)
