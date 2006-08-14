@@ -1,0 +1,15 @@
+This is a pure-ruby library for decoding and encoding vCard and
+iCalendar data ("personal information") called vPim.
+
+vCard (RFC 2426) is a format for personal information, see Vpim::Vcard
+and Vpim::Maker::Vcard.
+
+iCalendar (RFC 2445) is a format for calendar related information, see
+Vpim::Icalendar.
+
+vCard and iCalendar support is built on top of an implementation of
+the MIME Content-Type for Directory Information (RFC 2425). The basic
+RFC 2425 format is implemented by Vpim::DirectoryInfo and
+Vpim::DirectoryInfo::Field.
+
+WWW: http://rubyforge.org/projects/vpim
