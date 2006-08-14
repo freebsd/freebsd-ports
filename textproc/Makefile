@@ -637,6 +637,7 @@
     SUBDIR += p5-XML-Smart
     SUBDIR += p5-XML-Stream
     SUBDIR += p5-XML-TreeBuilder
+    SUBDIR += p5-XML-TreePP
     SUBDIR += p5-XML-Twig
     SUBDIR += p5-XML-Validator-Schema
     SUBDIR += p5-XML-Writer
