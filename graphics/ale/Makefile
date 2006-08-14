@@ -10,7 +10,8 @@ PORTNAME=	ale
 PORTVERSION=	0.8.4
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
+MASTER_SITES=	http://auricle.dyndns.org/ALE/download/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
