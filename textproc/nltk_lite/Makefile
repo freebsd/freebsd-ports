@@ -23,8 +23,8 @@ USE_PYTHON_PREFIX=	yes
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk_lite ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+		${SED} 's,^${TARGETDIR}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk_lite -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+		${SED} 's,^${TARGETDIR}/,@dirrmtry ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
