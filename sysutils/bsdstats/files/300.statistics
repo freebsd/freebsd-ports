@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.12 2006-08-14 13:08:01 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.13 2006-08-14 20:26:12 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -42,9 +42,9 @@ get_id_token () {
     then
        IDTOKEN=$( /usr/bin/openssl rand -base64 16 )
        
-       idf=$( mktemp "$id_token_file.XXXXXX" )   && \
-       /usr/sbin/chown root:wheel $id_token_file && \
-       /bin/chmod 600 $id_token_file             && \    
+       idf=$( mktemp "$id_token_file.XXXXXX" )  && \
+       /usr/sbin/chown root:wheel $idf          && \
+       /bin/chmod 600 $idf                      && \    
 
        /usr/bin/fetch -qo - \
 	   "http://$checkin_server/scripts/getid.php?key=$IDTOKEN" | { 
