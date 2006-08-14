@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	wenju
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
 
-USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
-USE_GETOPT_LONG=yes
 USE_AUTOTOOLS=	libtool:15
+USE_GETOPT_LONG=yes
+USE_GNOME=	gtk20
+USE_LDCONFIG=	yes
+USE_X_PREFIX=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -33,7 +33,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:
-		gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
+		gtk-query-immodules-2.0 > ${TARGETDIR}/etc/gtk-2.0/gtk.immodules
 
 .include <bsd.port.pre.mk>
 
