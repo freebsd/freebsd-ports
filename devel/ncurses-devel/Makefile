@@ -19,23 +19,25 @@ NO_FILTER_SHLIBS=	no
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
+CONFIGURE_ARGS=	--datadir=${TARGETDIR}/share/misc --disable-overwrite \
 		--enable-termcap --disable-database --enable-getcap \
 		--enable-colorfgbg --enable-bsdpad --disable-home-terminfo \
-		--includedir=${PREFIX}/include/ncurses \
+		--includedir=${TARGETDIR}/include/ncurses \
 		--with-profile --with-shared --without-debug \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-safe-sprintf --disable-root-environ \
 		--with-manpage-format=gzip --srcdir=../
+USE_LDCONFIG=	yes
+
 # needed by devel/py-ncurses port
 .if defined(WITH_TRACE)
 CONFIGURE_ARGS+=	--with-trace
 .endif
 
-LDFLAGS+=	-rpath ${PREFIX}/lib
+LDFLAGS+=	-rpath ${TARGETDIR}/lib
 
 CONFIGURE_ENV=	gnat_exists="no" \
-		ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib" \
+		ac_cv_path_LDCONFIG="${LDCONFIG} -m ${TARGETDIR}/lib" \
 		LDFLAGS="${LDFLAGS}"
 
 WIDEC_WRKSRC=	${WRKSRC}/build.widec
@@ -49,10 +51,9 @@ BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
 INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
-		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
-		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
+		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,} \
+		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,}
 
-INSTALLS_SHLIB=	yes
 MANCOMPRESSED=	yes
 MAN1=	captoinfo.1m clear.1 infocmp.1m infotocap.1m reset.1 tack.1 \
 	tic.1m toe.1m tput.1 tset.1
@@ -260,7 +261,7 @@ post-install:
 .endif
 
 	${INSTALL_DATA} ${WRKSRC}/misc/terminfo.src \
-		${PREFIX}/share/misc/terminfo
+		${TARGETDIR}/share/misc/terminfo
 
 .for i in ${EXAMPLES_TARGETS}
 	${MKDIR} ${${i}_EXAMPLESDIR}/c++
