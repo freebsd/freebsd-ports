@@ -27,7 +27,7 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		bash-3.0-31.${LINUX_RPM_ARCH}.rpm \
 		bzip2-1.0.2-16.${LINUX_RPM_ARCH}.rpm \
 		bzip2-libs-1.0.2-16.${LINUX_RPM_ARCH}.rpm \
-		compat-db-4.2.52-2.FC4.${LINUX_RPM_ARCH}.rpm \
+		compat-db-4.2.52-2.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-296-2.96-132.fc4.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-47.fc4.${LINUX_RPM_ARCH}.rpm \
 		coreutils-5.2.1-48.1.${LINUX_RPM_ARCH}.rpm \
@@ -66,7 +66,7 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 SRC_DISTFILES+=	basesystem-8.0-5.src.rpm \
 		bash-3.0-31.src.rpm \
 		bzip2-1.0.2-16.src.rpm \
-		compat-db-4.2.52-2.FC4.src.rpm \
+		compat-db-4.2.52-2.src.rpm \
 		coreutils-5.2.1-48.1.src.rpm \
 		db4-4.3.27-5.fc4.src.rpm \
 		elfutils-0.108-1.src.rpm \
