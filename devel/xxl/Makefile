@@ -5,17 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=		xxl
-PORTVERSION=		1.0.1
-CATEGORIES=		devel
-MASTER_SITES=		http://www.zork.org/software/
+PORTNAME=	xxl
+PORTVERSION=	1.0.1
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	http://www.zork.org/software/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		C and C++ that provides exception handling and asset management
+MAINTAINER=	ssedov@mbsd.msk.ru
+COMMENT=	C/C++ library for exception handling and asset management
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--without-threads
-INSTALLS_SHLIB=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget
+USE_LDCONFIG=	yes
+
+.if defined(WITHOUT_THREADS)
+CONFIGURE_ARGS=	--without-threads
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	xxl.pdf xxl.html
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
