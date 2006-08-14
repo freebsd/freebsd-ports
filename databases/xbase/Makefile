@@ -16,7 +16,7 @@ COMMENT=	An xbase (i.e. dBase, FoxPro, etc.) compatible C++ class library
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	lthack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(MAINTAINER_MODE)
 test:	install

@@ -18,7 +18,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	GTK	"Build with Gtk+/GNOME stroke support"	off
 

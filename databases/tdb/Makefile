@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trivial Database
 
 USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
 MAN3=	tdb.3 tdb_chainlock.3 tdb_close.3 tdb_delete.3 tdb_error.3 \
 	tdb_exists.3 tdb_fetch.3 tdb_firstkey.3 tdb_open.3 tdb_store.3 \

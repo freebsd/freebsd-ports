@@ -33,7 +33,7 @@ MLINKS=		libhash.3 hash_initialise.3 \
 		libhash_convenience.3 hash_copy_int.3 \
 		libhash_convenience.3 hash_copy_string.3
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(NOPROFILE)
 PLIST_SUB+=	PROFILE="@comment "

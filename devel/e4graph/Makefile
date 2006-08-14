@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
 		--with-expat=${LOCALBASE} --enable-xml
 CFLAGS+=	-fpermissive -I${LOCALBASE}/include/tcl${TCL_VER}
 MAKEFILE=	makefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	TCL_VER="${TCL_VER}"
 
 .if defined(WITH_PYTHON)

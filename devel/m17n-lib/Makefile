@@ -25,7 +25,7 @@ USE_GNOME=	gnometarget libxml2 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	ANTHY	"With Anthy support" off \
 		ISPELL	"With Ispell support" off

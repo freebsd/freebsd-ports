@@ -28,7 +28,7 @@ JAVA_VERSION=	1.4
 USE_ANT=	yes
 ALL_TARGET?=	library-linux
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_FILES=	bin/colorer lib/libcolorer.so
 
 post-build:

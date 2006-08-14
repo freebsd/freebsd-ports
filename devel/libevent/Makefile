@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides an API to execute callback functions on certain events
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 

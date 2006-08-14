@@ -30,7 +30,7 @@ MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
 CONFLICTS=	postgresql-*
 USE_RC_SUBR=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 INSTALL_TARGET=	install

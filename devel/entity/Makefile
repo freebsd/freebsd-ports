@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--enable-tcl=no
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		entity.1
 

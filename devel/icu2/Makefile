@@ -17,7 +17,7 @@ COMMENT=	International Components for Unicode
 
 CONFLICTS=	icu-[0-9]*
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 NO_FILTER_SHLIBS=	yes
 
 WRKSRC=			${WRKDIR}/icu

@@ -20,7 +20,7 @@ COMMENT=	An interpreted dynamic parser
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

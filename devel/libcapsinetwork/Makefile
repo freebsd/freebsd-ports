@@ -14,6 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network library aimed at easy development of C++ server daemons
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

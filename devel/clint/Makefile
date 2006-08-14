@@ -20,7 +20,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 INFO=		clint
 

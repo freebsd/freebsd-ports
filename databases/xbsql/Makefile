@@ -19,7 +19,7 @@ LIB_DEPENDS=	xbase-2.0.0:${PORTSDIR}/databases/xbase
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 LB2FIX=		Makefile.in test/Makefile.in xbsql/Makefile.in
 

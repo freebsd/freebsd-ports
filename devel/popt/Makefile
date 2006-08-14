@@ -23,7 +23,7 @@ COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		popt.3
 

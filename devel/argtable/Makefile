@@ -20,7 +20,7 @@ COMMENT=	An ANSI C library for parsing GNU style command line arguments
 USE_GNOME=	gnometarget
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		argtable2.3
 MLINKS=		argtable2.3 argtable.3

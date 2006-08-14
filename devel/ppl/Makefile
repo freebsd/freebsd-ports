@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--disable-debugging \
 		--with-cxxflags="${CXXFLAGS}" \
 		--with-gmp-includes="${LOCALBASE}/include" \
 		--with-gmp-dir="${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>

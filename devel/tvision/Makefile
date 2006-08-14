@@ -18,7 +18,7 @@ COMMENT=	The Turbo Vision C++ CUI library for UNIX
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>

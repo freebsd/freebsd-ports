@@ -18,7 +18,7 @@ LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 MAKE_ARGS=	CXX="${CXX}"
 

@@ -19,7 +19,7 @@ USE_GETOPT_LONG=	yes
 USE_GNOME=	pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	jclassinfo.1
 

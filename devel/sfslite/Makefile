@@ -51,7 +51,7 @@ BUILD_MODE?=	shopt
 RPCC_BIN?=	bin
 .endif # define(BUILD_MODE)
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}/${BUILD_MODE}
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
