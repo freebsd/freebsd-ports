@@ -351,6 +351,8 @@ include/wine/windows/sql.h
 include/wine/windows/sqlext.h
 include/wine/windows/sqltypes.h
 include/wine/windows/sspi.h
+include/wine/windows/stdole2.idl
+include/wine/windows/stdole2.tlb
 include/wine/windows/storage.h
 include/wine/windows/strmif.h
 include/wine/windows/strmif.idl
@@ -500,6 +502,7 @@ lib/wine/glut32.dll.so
 lib/wine/gphoto2.ds.so
 lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
+lib/wine/hid.dll.so
 lib/wine/hlink.dll.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
@@ -559,6 +562,8 @@ lib/wine/libdxerr9.a
 lib/wine/libdxguid.a
 lib/wine/libgdi32.def
 lib/wine/libglu32.def
+lib/wine/libhid.def
+lib/wine/libhlink.def
 lib/wine/libicmp.def
 lib/wine/libimagehlp.def
 lib/wine/libimm32.def

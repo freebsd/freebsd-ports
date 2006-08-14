@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.18
+PORTVERSION=	0.9.19
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://ibiblio.org/pub/linux/system/emulators/wine/ \
-		${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
+		http://ibiblio.org/pub/linux/system/emulators/wine/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gerald@FreeBSD.org
@@ -53,6 +53,8 @@ pre-build:
 
 post-install:
 	${RM} ${PREFIX}/man/man1/wineg++.1
+	${MV} -f ${PREFIX}/lib/libwine.so.1.0 ${PREFIX}/lib/libwine.so.1
+	${LN} -sf ${PREFIX}/lib/libwine.so.1 ${PREFIX}/lib/libwine.so
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS LICENSE
