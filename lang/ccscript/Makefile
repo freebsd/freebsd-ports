@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	ccscript
-PORTVERSION=	2.5.8
-PORTREVISION=	1
+PORTVERSION=	2.5.9
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnutelephony
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	State-event driven class extendible C++ script interpreter
 
-LIB_DEPENDS=	ccgnu2-1.3.1:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.4.0:${PORTSDIR}/devel/commoncpp
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 INSTALL_TARGET=	install man
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		ScriptCommand.3cc ScriptImage.3cc ScriptInterp.3cc \
 		ScriptModule.3cc ScriptSymbol.3cc Script_Locks.3cc \

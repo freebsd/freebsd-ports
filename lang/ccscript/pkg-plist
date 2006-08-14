@@ -17,4 +17,6 @@ lib/ccscript2/string.pkg
 lib/ccscript2/time.pkg
 lib/ccscript2/trig.pkg
 lib/ccscript2/url.pkg
+@dirrm include/cc++2/cc++
+@dirrm include/cc++2
 @dirrm lib/ccscript2
