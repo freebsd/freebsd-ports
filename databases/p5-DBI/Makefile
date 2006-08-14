@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -15,13 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .if defined(WITH_PROXY)
-PROXY_DEPENDS=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
-BUILD_DEPENDS+=	${PROXY_DEPENDS}
-RUN_DEPENDS+=	${PROXY_DEPENDS}
+RUN_DEPENDS+=	${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 .endif
 
 CONFLICTS=	p5-DBI-1.3*
@@ -46,6 +44,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::ProfileData.3 \
 		DBI::ProfileDumper.3 \
 		DBI::ProfileDumper::Apache.3 \
+		DBI::ProfileSubs.3 \
 		DBI::ProxyServer.3 \
 		DBI::PurePerl.3 \
 		DBI::SQL::Nano.3 \
