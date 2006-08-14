@@ -21,6 +21,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileData.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileDumper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileDumper/Apache.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileSubs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProxyServer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/PurePerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Roadmap.pm
