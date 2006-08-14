@@ -1,10 +1,11 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Term/ProgressBar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term-ProgressBar/.packlist
-%%PORTDOCS%%share/examples/Term-ProgressBar/powers
-%%PORTDOCS%%share/examples/Term-ProgressBar/powers2
-%%PORTDOCS%%share/examples/Term-ProgressBar/powers3
-%%PORTDOCS%%share/examples/Term-ProgressBar/powers4
-%%PORTDOCS%%share/examples/Term-ProgressBar/powers5
-%%PORTDOCS%%@dirrm share/examples/Term-ProgressBar
+%%PORTDOCS%%%%EXAMPLESDIR%%/powers
+%%PORTDOCS%%%%EXAMPLESDIR%%/powers2
+%%PORTDOCS%%%%EXAMPLESDIR%%/powers3
+%%PORTDOCS%%%%EXAMPLESDIR%%/powers4
+%%PORTDOCS%%%%EXAMPLESDIR%%/powers5
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term-ProgressBar
 @dirrmtry %%SITE_PERL%%/Term
