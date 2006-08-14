@@ -15,6 +15,7 @@ sbin/portupgrade
 sbin/portversion
 %%RUBY_SITELIBDIR%%/pkg.rb
 %%RUBY_SITELIBDIR%%/pkgdb.rb
+%%RUBY_SITELIBDIR%%/pkgdbtools.rb
 %%RUBY_SITELIBDIR%%/pkginfo.rb
 %%RUBY_SITELIBDIR%%/pkgmisc.rb
 %%RUBY_SITELIBDIR%%/pkgtools.rb
