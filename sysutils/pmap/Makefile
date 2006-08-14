@@ -8,7 +8,8 @@
 PORTNAME=	pmap
 PORTVERSION=	20060622
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/
+MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/ \
+		${MASTER_SITE_LOCAL:S!$!skv/!}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Detailed process memory display
