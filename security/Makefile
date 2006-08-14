@@ -235,7 +235,6 @@
     SUBDIR += libtomcrypt
     SUBDIR += libwhisker
     SUBDIR += liedentd
-    SUBDIR += linux-krb5-libs
     SUBDIR += linux-openssl
     SUBDIR += linux-pam-docs
     SUBDIR += lockdown
