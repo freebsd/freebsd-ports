@@ -6,6 +6,7 @@
 
 PORTNAME=	pymsn
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://delx.cjb.net/pymsnt/tarballs/ \
@@ -30,9 +31,10 @@ OPTIONS=	EJABBERD "Use transport with ejabberd" off
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	jabber-pymsn-transport.sh
+LOCAL_PYTHON=	${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST=	PYTHON_CMD=${LOCAL_PYTHON}
 
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
@@ -64,7 +66,7 @@ post-patch:
 		${WRKSRC}/src/config.py
 	@${REINPLACE_CMD} -i "" 's|"config.xml"|"${PREFIX}/etc/jabber-pymsn.xml"|' \
 		${WRKSRC}/src/main.py
-	@${REINPLACE_CMD} -i "" 's|#!/usr/bin/python|#!${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -i "" 's|#!.*$$|#!${LOCAL_PYTHON}|' \
 		${WRKSRC}/PyMSNt.py
 	@${RM} -f ${WRKSRC}/src/*.orig
 
