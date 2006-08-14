@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Load-Conditional
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -16,14 +16,14 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Looking up Perl modules information/loading at runtime
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Module/Load.pm:${PORTSDIR}/devel/p5-Module-Load \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		${SITE_PERL}/Module/Load.pm:${PORTSDIR}/devel/p5-Module-Load \
 		${SITE_PERL}/Params/Check.pm:${PORTSDIR}/devel/p5-Params-Check
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Module::Load::Conditional.3
+MAN3=		Module::Load::Conditional.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README
