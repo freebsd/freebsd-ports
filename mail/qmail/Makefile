@@ -389,7 +389,7 @@ DOCFILES_WRKSRC+=	EXTTODO
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:ext_big_todo/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:ext_big_todo
 EXT_BIG_TODO_PATCH=	ext_todo-20030105+big-todo.103.patch
-DISTFILES=	${EXT_BIG_TODO_PATCH}:ext_big_todo
+DISTFILES+=	${EXT_BIG_TODO_PATCH}:ext_big_todo
 . endif
 
 . if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
