@@ -1,15 +1,25 @@
 
+This script, meant to be run monthly, submits statistics anonymously
+to a central checkin server (http://bsdstats.org), in an attempt to
+generate reasonably accurate demographics of both *BSD usage, as well
+as devices in use.
+
+Steps have been taken to make eliminate security concerns brought up
+in earlier releases of this, including, but not limited to, not storing
+anything in the database that has been deemed as 'sensitive' (ie. IP of
+the reporting server, and hostname).
+
 ********************
 To enable the port, edit or create /etc/periodic.conf and add this line:
-	monthly_statistics_enable=yes
+	monthly_statistics_enable="YES"
 
 To enable device reporting, add this line:
-	monthly_statistics_report_devices=yes
+	monthly_statistics_report_devices="YES"
 
 To run it manually the first time, just run it as:
 	/usr/local/etc/periodic/monthly/300.statistics
 
 To view current statistics, go to:
-        http://bsdstats.hub.org
+        http://bsdstats.org
 ********************
 

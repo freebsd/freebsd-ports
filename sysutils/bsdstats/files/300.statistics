@@ -1,11 +1,10 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.10 2006-08-09 18:36:15 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.11 2006-08-14 07:35:09 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
 #
-monthly_statistics_mailto="scrappy@hub.org,root"
 if [ -r /etc/defaults/periodic.conf ]
 then
     . /etc/defaults/periodic.conf
@@ -14,6 +13,40 @@ fi
 
 oldmask=$(umask)
 umask 066
+
+checkin_server="bsdstats.org";
+id_token_file='/var/db/bsdstats'
+
+IFS="
+"
+
+send_devices () {
+    for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
+    do
+      DRIVER=`echo $line | awk -F\@ '{print $1}'`
+      DEV=`echo $line | awk '{print $4}' | cut -c8-15`
+      CLASS=`echo $line | awk '{print $2}' | cut -c9-14`
+      query_string=$query_string`echo \&dev[]=$DRIVER:$DEV:$CLASS`
+    done
+
+    do_fetch report_devices.php?key=$KEY$query_string
+}
+
+get_id_token () {
+    if [ ! -f $id_token_file ] ;
+    then
+       IDTOKEN=$( /usr/bin/openssl rand -base64 16 )
+       /usr/bin/fetch -qo $id_token_file "http://$checkin_server/scripts/getid.php?key=$IDTOKEN"
+       /usr/sbin/chown root:wheel $id_token_file 
+       /bin/chmod 600 $id_token_file                     
+       echo "To protect against abuse, the initial challenge/response phase"
+       echo "contains a 15 minute pause.  Please be patient while this time"
+       echo "limit elapses"
+       sleep 900
+    fi
+    . $id_token_file
+    KEY=$( uri_escape $KEY )
+}
 
 # RFC 2396
 uri_escape () {
@@ -37,57 +70,37 @@ do_fetch () {
     /usr/bin/fetch -qo /dev/null "http://$checkin_server/scripts/$1"
 }
 
-checkin_server="bsdstats.hub.org";
 
 case "$monthly_statistics_enable" in
     [Yy][Ee][Ss])
       HN=`/bin/hostname`
-      SYS=`/usr/bin/uname -r`
+      REL=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
       OS=`/usr/bin/uname -s`
-      do_fetch getid.php?hn=$HN\&sys=$SYS\&arch=$ARCH\&opsys=$OS
+      get_id_token
+      do_fetch report_system.php?key=$KEY\&rel=$REL\&arch=$ARCH\&opsys=$OS
       echo "Posting monthly OS statistics to $checkin_server"
       case "$monthly_statistics_report_devices" in
-         [Yy][Ee][Ss])
-IFS="
-"
-           
-            do_fetch clear_devices.php?hn=$HN
-            for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
-            do
-                DRIVER=`echo $line | awk -F\@ '{print $1}'`
-                VEN=`echo $line | awk '{print $4}' | cut -c12-15`
-                DEV=`echo $line | awk '{print $4}' | cut -c8-11`
-                CLASS=`echo $line | awk '{print $2}' | cut -c9-10`
-                SUBCLASS=`echo $line | awk '{print $2}' | cut -c11-14`
-                do_fetch report_device.php?driver=$DRIVER\&vendor=$VEN\&device=$DEV\&class=$CLASS\&subclass=$SUBCLASS\&hn=$HN
-            done
-            echo "Posting monthly device statistics to $checkin_server"
-
-            line=$( sysctl -n hw.model )
-            VEN=$( echo $line | cut -d ' ' -f 1 )
-            DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
-            n=0
-            count=$( sysctl -n hw.ncpu )
-            do_fetch clear_cpu.php?hn=$HN
-            while [ $n -lt $count ]
-            do
-                do_fetch report_cpu.php?cpu_id=CPU$n\&vendor=$VEN\&cpu_type=$DEV\&hn=$HN
-                n=$(( $n + 1 ))
-            done
-            echo "Posting monthly CPU statistics to $checkin_server"
-
-         ;;
-        *) 
-            echo "Posting monthly device/CPU statistics disabled"
-            echo "    set monthly_statistics_report_devices=yes in /etc/periodic.conf"
-      ;;
-         esac
+          [Yy][Ee][Ss])
+              send_devices
+              echo "Posting monthly device statistics to $checkin_server"
+              line=$( sysctl -n hw.model )
+              VEN=$( echo $line | cut -d ' ' -f 1 )
+              DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
+              count=$( sysctl -n hw.ncpu )
+              do_fetch report_cpu.php?key=$KEY\&cpus=$count\&vendor=$VEN\&cpu_type=$DEV
+              echo "Posting monthly CPU statistics to $checkin_server"
+             ;;
+          *) 
+             echo "Posting monthly device/CPU statistics disabled"
+             echo '    set monthly_statistics_report_devices="YES" in /etc/periodic.conf'
+             ;;
+      esac
       ;;
     *) 
-        echo "Posting monthly OS statistics disabled"
-        echo "    set monthly_statistics_enable=yes in /etc/periodic.conf"
-      ;;
+      echo "Posting monthly OS statistics disabled"
+      echo '    set monthly_statistics_enable="YES" in /etc/periodic.conf'
+    ;;
 esac
 
 umask $oldmask

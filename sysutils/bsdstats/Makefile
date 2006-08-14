@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bsdstats
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	sysutils
 DISTFILES=
 
@@ -16,6 +15,8 @@ COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
 NO_BUILD=	yes
 PLIST_FILES=	etc/periodic/monthly/300.statistics
+PLIST_DIRS=	etc/periodic/montly \
+		etc/periodic
 
 .include <bsd.port.pre.mk>
 
