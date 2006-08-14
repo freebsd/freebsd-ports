@@ -7,7 +7,7 @@
 
 PORTNAME=	TclExpat
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc tcl83
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
 
@@ -15,25 +15,22 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	The TCL interface to Expat library
 
 LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER} \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 
-TCL_VERSION=	8.3
+TCL_VERSION?=	8.4
 TCL_DVER=	${TCL_VERSION:S/.//}
 PLIST_SUB+=	TCL_VERSION=${TCL_VERSION}
 
 MAKEFILE=	${FILESDIR}/Makefile
+MAKE_ENV+=	TCL_VERSION=${TCL_VERSION}
 
 # Remove the old version of expat bundled with the package:
 post-extract:
 	${RM} -rf ${WRKSRC}/expat
 
-post-patch:
-	${REINPLACE_CMD} -e 's/TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0/TCL_MAJOR_VERSION >= 8/;' \
-		-e 's/xmlparse.h/expat.h/;' ${WRKSRC}/tclexpat.c
-
-test: build
+post-build test:
 	${LN} -sf libtclexpat.so ${WRKSRC}/tclexpat.so
 	cd ${WRKSRC} && tclsh${TCL_VERSION} test-break.tcl
 	cd ${WRKSRC} && tclsh${TCL_VERSION} test-continue.tcl

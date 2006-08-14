@@ -6,10 +6,11 @@ SRCS=	tclexpat.c
 SHLIB_NAME=	libtclexpat.so.1
 LIBDIR=	${LOCALBASE}/lib
 
-TCL_VERSION?=	8.3
+TCL_VERSION?=	8.4
 TCL_DVER?=	${TCL_VERSION:S/.//}
 
-CFLAGS+= -I${LOCALBASE}/include/tcl${TCL_VERSION} -I${LOCALBASE}/include -Wall
+CFLAGS+= -I${LOCALBASE}/include/tcl${TCL_VERSION} -I${LOCALBASE}/include
+WARNS=	3
 LDADD+=	-L${LOCALBASE}/lib -lexpat
 
 USE_STUBS!=	. ${LOCALBASE}/lib/tcl${TCL_VERSION}/tclConfig.sh; echo $$TCL_SUPPORTS_STUBS
