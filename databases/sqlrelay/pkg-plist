@@ -98,7 +98,7 @@ libdata/pkgconfig/sqlrelay-c++.pc
 %%DOCSDIR%%/api/java/index.html
 %%DOCSDIR%%/api/java/overview-tree.html
 %%DOCSDIR%%/api/java/package-list
-%%DOCSDIR%%/api/java/packages.html
+%%DOCSDIR%%/api/java/resources/inherit.gif
 %%DOCSDIR%%/api/java/stylesheet.css
 %%DOCSDIR%%/api/perl/Connection.html
 %%DOCSDIR%%/api/perl/Cursor.html
@@ -109,16 +109,13 @@ libdata/pkgconfig/sqlrelay-c++.pc
 %%DOCSDIR%%/api/python/PySQLRDB.py.html
 %%DOCSDIR%%/api/ruby/ruby.html
 %%DOCSDIR%%/api/ruby/rubydbi.html
-%%DOCSDIR%%/clientapis.html
 %%DOCSDIR%%/configuring.html
-%%DOCSDIR%%/connections.html
 %%DOCSDIR%%/css/styles.css
 %%DOCSDIR%%/dropin/mysql.html
 %%DOCSDIR%%/dropin/postgresql.html
 %%DOCSDIR%%/faq.html
 %%DOCSDIR%%/gettingstarted/db2.html
 %%DOCSDIR%%/gettingstarted/interbase.html
-%%DOCSDIR%%/gettingstarted/lago.html
 %%DOCSDIR%%/gettingstarted/msql.html
 %%DOCSDIR%%/gettingstarted/mssqlserver.html
 %%DOCSDIR%%/gettingstarted/mysql.html
@@ -151,6 +148,7 @@ libdata/pkgconfig/sqlrelay-c++.pc
 %%DOCSDIR%%/programming/pythondb.html
 %%DOCSDIR%%/programming/ruby.html
 %%DOCSDIR%%/programming/rubydbi.html
+%%DOCSDIR%%/programming/tcl.html
 %%DOCSDIR%%/programming/zope.html
 %%DOCSDIR%%/programming/zope/instance.gif
 %%DOCSDIR%%/programming/zope/management.gif
@@ -187,10 +185,12 @@ libdata/pkgconfig/sqlrelay-c++.pc
 @dirrm %%DOCSDIR%%/gettingstarted
 @dirrm %%DOCSDIR%%/dropin
 @dirrm %%DOCSDIR%%/css
+@dirrm %%DOCSDIR%%/api/tcl
 @dirrm %%DOCSDIR%%/api/ruby
 @dirrm %%DOCSDIR%%/api/python
 @dirrm %%DOCSDIR%%/api/php
 @dirrm %%DOCSDIR%%/api/perl
+@dirrm %%DOCSDIR%%/api/java/resources
 @dirrm %%DOCSDIR%%/api/java/com/firstworks/sqlrelay
 @dirrm %%DOCSDIR%%/api/java/com/firstworks
 @dirrm %%DOCSDIR%%/api/java/com

@@ -17,8 +17,6 @@ COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments
 
-BROKEN=		Does not compile
-
 USE_GMAKE=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV} \
@@ -32,7 +30,7 @@ CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 			--disable-ruby \
 			--disable-zope
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/Makefile.common"
 
