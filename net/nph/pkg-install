@@ -36,11 +36,10 @@ case $2 in
 			fi
 		fi
 
-		if [ -n "${PH_SERVER}" ]; then
-			echo "${PH_SERVER}" > ${PKG_PREFIX}/etc/ph_server.sample;
-		elif [ ! -f "${PKG_PREFIX}/etc/ph_server" ]; then
-			echo "WARNING: cannot determine PH server name - you must create ${PKG_PREFIX}/etc/ph_server manually";
+		if [ -z "${PH_SERVER}" ]; then
+			PH_SERVER="ns.some-domain.example.org";
 		fi
+		echo "${PH_SERVER}" > ${PKG_PREFIX}/etc/ph_server.sample;
 
 		if [ ! -f "${PKG_PREFIX}/etc/ph_server" ]; then
 			echo "creating default ${PKG_PREFIX}/etc/ph_server file...";
