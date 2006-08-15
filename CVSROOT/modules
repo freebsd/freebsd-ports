@@ -8813,6 +8813,7 @@ p5-GD-Graph3d	ports/graphics/p5-GD-Graph3d
 p5-GD-SVG	ports/graphics/p5-GD-SVG
 p5-GD-SecurityImage	ports/security/p5-GD-SecurityImage
 p5-GD-TextUtil	ports/graphics/p5-GD-TextUtil
+p5-GD-Thumbnail	ports/graphics/p5-GD-Thumbnail
 p5-GDBM		ports/databases/p5-GDBM
 p5-GIFgraph	ports/graphics/GIFgraph
 p5-GPS		ports/astro/p5-GPS
