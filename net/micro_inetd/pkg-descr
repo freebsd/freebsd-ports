@@ -1,0 +1,8 @@
+Like inetd, this program listens on the net for requests and spawns a
+server to handle them. However, it only handles one port and one
+program. Other limitations:
+* only 'stream' socket type
+* only 'nowait'
+* doesn't switch user-ids
+
+WWW: http://www.acme.com/software/micro_inetd/
