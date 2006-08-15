@@ -312,10 +312,10 @@ pre-configure:
 
 pre-install:
 .if !defined(WITHOUT_SUPPORTED_DB) && exists(${LOCALBASE}/bin/php)
-	@if ! php -m | ${GREP} -q -e "mysql" ; then \
-	 if ! php -m | ${GREP} -q -e "pgsql" ; then \
-	  if ! php -m | ${GREP} -q -e "sybase" ; then \
-	   if ! php -m | ${GREP} -q -e "SQLite" ; then \
+	@if ! php -m 2>&1 | ${GREP} -q -e "mysql" ; then \
+	 if ! php -m 2>&1 | ${GREP} -q -e "pgsql" ; then \
+	  if ! php -m 2>&1 | ${GREP} -q -e "sybase" ; then \
+	   if ! php -m 2>&1 | ${GREP} -q -e "SQLite" ; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
 	    ${ECHO_MSG} "MySQL, PostgreSQL, SQLite and Sybase (CTLIB or DBLIB)" ; \
