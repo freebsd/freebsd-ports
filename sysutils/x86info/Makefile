@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,6 +21,6 @@ PLIST_FILES=	bin/x86info
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${TARGETDIR}/bin
 
 .include <bsd.port.mk>

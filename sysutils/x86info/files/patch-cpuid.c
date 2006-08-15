@@ -1,11 +1,11 @@
---- cpuid.c.orig	Sat Nov 26 20:51:01 2005
-+++ cpuid.c	Sat Nov 26 20:51:24 2005
-@@ -40,7 +40,7 @@
- 	snprintf (cpuname,18, "/dev/cpu/%d/cpuid", CPU_number);
- 	fh = open (cpuname, O_RDONLY);
+--- cpuid.c.orig	Wed Aug  9 22:54:05 2006
++++ cpuid.c	Wed Aug  9 22:54:20 2006
+@@ -42,7 +42,7 @@
+ 	fh = open(cpuname, O_RDONLY);
  	if (fh != -1) {
--		lseek64 (fh, (off64_t)idx, SEEK_CUR);
-+		lseek (fh, (off_t)idx, SEEK_CUR);
- 		read (fh, &buffer[0], 16);
- 		if (eax!=0)	*eax = (*(unsigned *)(buffer   ));
- 		if (ebx!=0)	*ebx = (*(unsigned *)(buffer+ 4));
+ #ifndef S_SPLINT_S
+-		lseek64(fh, (off64_t)idx, SEEK_CUR);
++		lseek(fh, (off_t)idx, SEEK_CUR);
+ #endif
+ 		if (read(fh, &buffer[0], 16) == -1) {
+ 			perror(cpuname);
