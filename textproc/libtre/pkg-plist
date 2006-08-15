@@ -12,3 +12,5 @@ libdata/pkgconfig/tre.pc
 %%PORTDOCS%%%%DOCSDIR%%/tre-syntax.html
 @dirrm include/tre
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
