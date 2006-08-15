@@ -1,0 +1,18 @@
+This a thumbnail maker. Thumbnails are smaller versions of the original
+image/graphic/picture and are used for preview purposes, where bigger images
+can take a long time to load. They are also used in image galleries to
+preview a lot of images at a time.
+
+This module also has the capability to add information strips about the
+original image. Original image's size (in bytes) and resolution & mime type
+can be added to the thumbnail's upper and lower parts. This feature can be
+useful for web software (image galleries or forums).
+
+This is a Yet Another type of module. There are several other thumbnail
+modules on CPAN, but they simply don't have the features I need, so this
+module is written to increase the thumbnail population on CPAN.
+
+The module can raise an exception if something goes wrong. So, you may have
+to use an eval block to catch them.
+
+WWW: http://search.cpan.org/dist/GD-Thumbnail/

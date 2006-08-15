@@ -423,6 +423,7 @@
     SUBDIR += p5-Chart-Graph
     SUBDIR += p5-Chart-PNGgraph
     SUBDIR += p5-Color-Rgb
+    SUBDIR += p5-GD-Thumbnail
     SUBDIR += p5-Geo-Proj4
     SUBDIR += p5-GD
     SUBDIR += p5-GD-Arrow

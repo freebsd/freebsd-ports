@@ -1,0 +1,25 @@
+# Ports collection makefile for:	GD::Thumbnail
+# Date created:			2006/08/15
+# Whom:	      			chinsan <chinsan.tw@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	GD-Thumbnail
+PORTVERSION=	1.01
+CATEGORIES=	graphics perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	GD
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	chinsan.tw@gmail.com
+COMMENT=	Thumbnail maker for GD
+
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	YES
+
+MAN3=		GD::Thumbnail.3
+
+.include <bsd.port.mk>
