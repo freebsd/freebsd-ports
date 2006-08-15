@@ -268,6 +268,7 @@
     SUBDIR += p5-POE-Component-LaDBI
     SUBDIR += p5-Pg
     SUBDIR += p5-Relations
+    SUBDIR += p5-Relations-Query
     SUBDIR += p5-ResourcePool-Resource-DBI
     SUBDIR += p5-Rose-DB
     SUBDIR += p5-Rose-DB-Object
