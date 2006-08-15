@@ -24,7 +24,7 @@ OPTIONS+=	X11      "Build X11 utilies" off
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--enable-shared --without-krb4
 

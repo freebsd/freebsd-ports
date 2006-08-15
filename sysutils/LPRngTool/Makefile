@@ -36,7 +36,7 @@ PLIST_SUB+=	CWD="@comment " SYSCONFDIR="${SYSCONFDIR:S,^${PREFIX}/,,}"
 .endif
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--with-spool_directory=/var/spool/lpd \
 			--with-sysconfdir="${SYSCONFDIR}"

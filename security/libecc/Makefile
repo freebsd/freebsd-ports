@@ -20,7 +20,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include"

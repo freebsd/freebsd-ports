@@ -25,7 +25,7 @@ CONFLICTS=	cups-base-1.[2-9]*
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	SYSCONFDIR="${SYSCONFDIR}"

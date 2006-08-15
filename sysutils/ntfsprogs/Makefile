@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 USE_GETOPT_LONG=yes
 WANT_GNOME=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_ENV=	PKG_CONFIG=${LOCALBASE}/bin/pkg-config
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

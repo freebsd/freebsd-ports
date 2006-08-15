@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--disable-starttls \
 		--with-db-dir=/var/shishi
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 INFO=		shishi
 

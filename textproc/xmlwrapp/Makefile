@@ -22,7 +22,7 @@ WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
 CONFIGURE_ARGS=	--prefix ${PREFIX}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>

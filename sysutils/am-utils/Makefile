@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley Automounter Suite of Utilities
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 
 PORTDOCS=	AUTHORS BUGS COPYING FAQ NEWS README.attrcache

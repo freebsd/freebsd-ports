@@ -19,7 +19,7 @@ LIB_DEPENDS=	gpg-error:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	autoconf:259 libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		otr_toolkit.1
 MLINKS=		otr_toolkit.1 otr_parse.1 \
