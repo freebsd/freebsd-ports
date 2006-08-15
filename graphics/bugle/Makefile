@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20060528
+PORTVERSION=	0.0.20060813
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ USE_GCC=	3.4
 USE_GL=		yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libltdl:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=--enable-ltdl-install=no
@@ -36,6 +36,10 @@ MAN7=	bugle-camera.7 bugle-checks.7 bugle-eps.7 bugle-error.7 \
 	bugle-frontbuffer.7 bugle-log.7 bugle-screenshot.7 \
 	bugle-showerror.7 bugle-showextensions.7 bugle-showstats.7 \
 	bugle-stats.7 bugle-trace.7 bugle-unwindstack.7 bugle-wireframe.7
+
+OPTIONS=	AVCODEC	"Use lavc from multimedia/ffmpeg"	off
+OPTIONS+=	GUI	"Use gktglext"				off
+OPTIONS+=	THREADS	"Use pthreads"				off
 
 .include <bsd.port.pre.mk>
 
@@ -51,7 +55,7 @@ CONFIGURE_ARGS+=--without-lavc
 .endif
 
 .if defined(WITH_GUI)
-LIB_DEPENDS+=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 CONFIGURE_ARGS+=--with-gtk --with-gtkglext
 .else
 CONFIGURE_ARGS+=--without-gtk --without-gtkglext
