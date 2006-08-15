@@ -6,7 +6,7 @@
 
 PORTNAME=	kwappen
 PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.lcs-chemie.de/
 
@@ -15,6 +15,7 @@ COMMENT=	KDE board game
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes

@@ -6,6 +6,7 @@
 
 PORTNAME=	kbilliards
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.hostnotfound.it/kbilliards/
 
@@ -15,6 +16,7 @@ COMMENT=	Funny billiards simulator game for KDE
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes

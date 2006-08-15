@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-mud
 PORTVERSION=	0.10.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc
 
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnometarget gnomeprefix intlhack libgnomeui \
 		pygtk2 vte
 USE_PYTHON=	yes
