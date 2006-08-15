@@ -7,7 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
@@ -25,6 +25,7 @@ ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
@@ -65,7 +66,7 @@ CONFIGURE_ARGS+=	--with-x11=yes
 CONFIGURE_ARGS+=	--with-debug
 .endif
 .if defined(WITH_ADPLUG)
-LIB_DEPENDS+=		adplug-2.0.0:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS+=		adplug-2.0.1.0:${PORTSDIR}/audio/libadplug
 CONFIGURE_ARGS+=	--without-x11 --with-adplug
 PLIST_SUB+=		ADPLUG=""
 .else
