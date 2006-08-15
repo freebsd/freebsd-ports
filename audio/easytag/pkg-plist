@@ -1,6 +1,6 @@
 bin/easytag
-share/easytag/ChangeLog
-share/easytag/EasyTAG_logo.xpm
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/EasyTAG_logo.xpm
 share/gnome/apps/Multimedia/easytag.desktop
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/da/LC_MESSAGES/easytag.mo
@@ -21,4 +21,14 @@ share/pixmaps/EasyTAG.xpm
 @dirrmtry share/gnome/apps/Multimedia
 @dirrmtry share/gnome/apps
 @dirrmtry share/gnome
-@dirrm share/easytag
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
