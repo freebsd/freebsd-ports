@@ -19,7 +19,7 @@ COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 LATEST_LINK=	${PORTNAME}2
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
 
