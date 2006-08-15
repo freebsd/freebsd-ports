@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060815:
+  AFFECTS: users of net/samba3
+  AUTHOR: timur@gnu.org
+
+  Since Samba 3.0.8, it has been recommended that all domain accounts 
+  listed in smb.conf on a member server be fully qualified with the 
+  domain name.  This is now a requirement.  All unqualified names are 
+  assumed to be local to the Unix host, either as part of the server's 
+  local passdb or in the local system list of accounts (e.g. /etc/passwd 
+  or /etc/group).
+
+  If the member server is not running winbindd at all, domain 
+  accounts will be implicitly mapped to local accounts and their
+  tokens will be modified appropriately to reflect the local 
+  SID and group membership.
+
 20060804:
   AFFECTS: users of editors/jedit-devel
   AUTHOR: question+fbsdports@closedsrc.org
