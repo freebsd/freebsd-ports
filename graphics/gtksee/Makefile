@@ -9,7 +9,8 @@ PORTNAME=	gtksee
 PORTVERSION=	0.5.6
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.berlios.de/gtksee/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer
