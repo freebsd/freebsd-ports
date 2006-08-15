@@ -7,6 +7,7 @@
 
 PORTNAME=	nph
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.feep.net/pub/software/nph/
 
