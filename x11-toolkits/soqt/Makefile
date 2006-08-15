@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 CONFIGURE_ARGS=	--with-pthread=yes --with-coin=${X11BASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		soqt-config.1
 

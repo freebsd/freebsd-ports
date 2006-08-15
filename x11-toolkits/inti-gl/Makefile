@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

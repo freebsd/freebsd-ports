@@ -25,7 +25,7 @@ COMMENT=	A set of Perl bindings for the Qt toolkit
 USE_GL=		yes
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/pqtapi bin/pqtsh bin/puic include/smoke.h \
 		lib/libsmokeqt.la lib/libsmokeqt.so lib/libsmokeqt.so.3

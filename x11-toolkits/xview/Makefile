@@ -20,7 +20,7 @@ COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
 REINPLACE_ARGS=	-i ""
 USE_IMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 IMAKEINCLUDE=	"-I${X11BASE}/lib/X11/config -I${WRKSRC}/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 ALL_TARGET=	World

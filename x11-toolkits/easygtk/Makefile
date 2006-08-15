@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		LN="${LN}"
 

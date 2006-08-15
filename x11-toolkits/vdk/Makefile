@@ -20,7 +20,7 @@ USE_GNOME=	gnomehack gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no --enable-testvdk=no
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		vdk-config-2.1
 

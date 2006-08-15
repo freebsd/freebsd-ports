@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS} -fPIC -DHAS_WCHAR_H" \
 		INC_PATH="-I. -I${X11BASE}/include" LIB_PATH="-L${X11BASE}/lib"
 ALL_TARGET=	lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:so\.3\..:so.3:' ${WRKSRC}/Makefile

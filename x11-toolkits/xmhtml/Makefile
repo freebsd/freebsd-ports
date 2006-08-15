@@ -22,7 +22,7 @@ USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${LIBTOOL} ${CC}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 EXMP_DIR=	${PREFIX}/share/examples/${PORTNAME}
 DOCS_DIR=	${PREFIX}/share/doc/${PORTNAME}

@@ -16,7 +16,7 @@ COMMENT=	A 3-D Athena Widget set that looks like Motif
 
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	XAWVER="${XAWVER}"
