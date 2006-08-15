@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
 			--with-libsynce=${LOCALBASE}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

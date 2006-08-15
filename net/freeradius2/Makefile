@@ -134,7 +134,7 @@ PLIST_SUB+=	RLMPERL="@comment "
 PLIST_SUB+=	RLMPERL=""
 .endif
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
 		radzap.1

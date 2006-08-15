@@ -19,7 +19,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-pre.*//}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes

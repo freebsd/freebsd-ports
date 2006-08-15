@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 #CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_PORT=	${.CURDIR}/../win32-codecs

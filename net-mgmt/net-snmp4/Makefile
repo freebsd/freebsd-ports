@@ -17,7 +17,7 @@ COMMENT=	An extendable SNMP implementation
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 
 CONFIGURE_ARGS+=	--enable-shared \

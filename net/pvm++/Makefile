@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pvm-incs=${LOCALBASE}/include \
 		--with-pvm-libs=${LOCALBASE}/lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

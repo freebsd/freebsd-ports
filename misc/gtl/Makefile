@@ -18,7 +18,7 @@ COMMENT=	C++ STL-based support for graphs and graph algorithms
 
 RESTRICTED=	License forbids redistribution (source or binary)
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
 USE_GCC=	3.3	# Won't build with 3.4

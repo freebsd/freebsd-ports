@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	serveez.1 serveez-config.1
 INFO=	serveez serveez-api

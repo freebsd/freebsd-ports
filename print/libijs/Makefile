@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnometarget lthack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		ijs-config.1
 

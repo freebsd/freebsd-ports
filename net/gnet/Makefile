@@ -16,7 +16,7 @@ COMMENT=	A simple network library built upon Glib
 
 USE_GNOME=	gnomehack glib12
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	gnet-config.1
 

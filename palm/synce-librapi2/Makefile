@@ -25,7 +25,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 .for f in synce-install-cab.in synce-remove-program.in
