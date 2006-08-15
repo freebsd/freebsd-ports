@@ -45,3 +45,5 @@ share/mimelnk/application/pgn.desktop
 @dirrm share/doc/HTML/de/knights
 @dirrm share/apps/knights/themes
 @dirrm share/apps/knights
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi

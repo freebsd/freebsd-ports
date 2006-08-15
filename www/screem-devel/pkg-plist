@@ -247,3 +247,5 @@ share/mime/packages/screem.xml
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

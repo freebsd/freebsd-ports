@@ -66,3 +66,5 @@ share/locale/ru/LC_MESSAGES/kbilliards.mo
 @dirrm share/apps/kbilliards/maps
 @dirrm share/apps/kbilliards/balls
 @dirrm share/apps/kbilliards
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs

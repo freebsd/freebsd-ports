@@ -532,6 +532,8 @@
 %%DATADIR%%/opening/winfont_8x8.fnt
 %%NLS%%share/locale/ca/LC_MESSAGES/lincity.mo
 %%NLS%%share/locale/it/LC_MESSAGES/lincity.mo
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
 @dirrm %%DATADIR%%/opening
 @dirrm %%DATADIR%%/messages
 @dirrm %%DATADIR%%/icons

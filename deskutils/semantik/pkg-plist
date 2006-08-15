@@ -84,3 +84,13 @@ share/services/kdissertpart.desktop
 @dirrm share/apps/kdissert/templatedata
 @dirrm share/apps/kdissert/pics
 @dirrm share/apps/kdissert
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt

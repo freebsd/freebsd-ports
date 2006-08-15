@@ -11,3 +11,9 @@ etc/pinforc
 %%NLS%%share/locale/ru/LC_MESSAGES/pinfo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pinfo.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pinfo.mo
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro

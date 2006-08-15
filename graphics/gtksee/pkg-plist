@@ -10,3 +10,5 @@ bin/gtksee
 %%NLS%%@dirrmtry share/locale/zh_CN.EUC
 %%NLS%%@dirrmtry share/locale/ru_UA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_UA
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl

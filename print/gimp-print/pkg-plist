@@ -4380,3 +4380,17 @@ share/locale/uk/LC_MESSAGES/gimp-print.mo
 %%CUPS%%@dirrmtry share/cups/model/cs
 %%CUPS%%@dirrmtry share/cups/model/C
 @dirrm include/gimp-print
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk

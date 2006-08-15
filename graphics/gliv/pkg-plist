@@ -19,3 +19,5 @@ share/locale/vi/LC_MESSAGES/gliv.mo
 @dirrmtry man/fr
 @dirrmtry man/de/man1
 @dirrmtry man/de
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

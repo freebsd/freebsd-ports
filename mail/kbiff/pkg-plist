@@ -61,11 +61,31 @@ share/locale/sv/LC_MESSAGES/kbiff.mo
 share/locale/tr/LC_MESSAGES/kbiff.mo
 share/locale/uk/LC_MESSAGES/kbiff.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kbiff.mo
-@dirrmtry share/locale/no_NY/LC_MESSAGES
-@dirrmtry share/locale/no_NY
 @dirrm share/doc/HTML/fr/kbiff
 @dirrm share/doc/HTML/es/kbiff
 @dirrm share/doc/HTML/en/kbiff
 @dirrm share/doc/HTML/de/kbiff
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/no_NY/LC_MESSAGES
+@dirrmtry share/locale/no_NY
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk

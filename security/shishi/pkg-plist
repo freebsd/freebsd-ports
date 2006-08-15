@@ -21,3 +21,9 @@ sbin/shishid
 %%NLS%%share/locale/pl/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/shishi.mo
 @dirrmtry etc/shishi
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl

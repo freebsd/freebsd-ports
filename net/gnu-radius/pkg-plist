@@ -122,6 +122,10 @@ share/locale/ru/LC_MESSAGES/radius.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
 @dirrmtry lib/security
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
 @unexec rm -f /var/run/radiusd.pid
 @unexec rm -rf /var/log/radius
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."

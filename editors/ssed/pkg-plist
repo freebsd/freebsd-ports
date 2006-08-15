@@ -30,3 +30,23 @@ bin/ssed
 %%NLS%%share/locale/sv/LC_MESSAGES/ssed.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ssed.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ssed.mo
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl

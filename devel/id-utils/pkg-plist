@@ -13,3 +13,5 @@ share/id-lang.map
 %%NLS%%share/locale/fr/LC_MESSAGES/id-utils.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/id-utils.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/id-utils.mo
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl

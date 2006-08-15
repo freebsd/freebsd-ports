@@ -393,6 +393,16 @@ sbin/saned
 %%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/no/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/no
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
 @exec mkdir %D/share/sane
 @exec mkdir %D/share/sane/artec_eplus48u
 @exec mkdir %D/share/sane/gt68xx

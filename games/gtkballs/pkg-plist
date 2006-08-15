@@ -537,3 +537,5 @@ share/locale/ru/LC_MESSAGES/gtkballs.mo
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
