@@ -35,10 +35,10 @@ USE_GL=		yes
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ENV+=	PERL5LIB=${WRKSRC}/blib/lib
-PLIST_DIRS=	${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline
+PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/Inline
 PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
-		${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline/Pdlpp.pm \
-		${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline/MakePdlppInstallable.pm
+		${SITE_PERL_REL}/${PERL_ARCH}/Inline/Pdlpp.pm \
+		${SITE_PERL_REL}/${PERL_ARCH}/Inline/MakePdlppInstallable.pm
 
 .if defined(KITCHEN_SINK)
 RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
@@ -78,12 +78,12 @@ post-install:
 	  cd ${WRKSRC}/blib/man1 ; \
 	  ${FIND} *.1 | ${SED} "s,^,man/man1/," >> ${TMPPLIST})
 	@(${FIND} ${SITE_PERL}/${PERL_ARCH}/PDL* -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST} ; \
+		${SED} "s,^${TARGETDIR}/,," >> ${TMPPLIST} ; \
 	  ${FIND} ${SITE_PERL}/${PERL_ARCH}/PDL* -type d | ${SORT} -r | \
-		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST} ; \
+		${SED} "s,^${TARGETDIR}/,@dirrm ," >> ${TMPPLIST} ; \
 	  ${FIND} ${SITE_PERL}/${PERL_ARCH}/auto/PDL -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST} ; \
+		${SED} "s,^${TARGETDIR}/,," >> ${TMPPLIST} ; \
 	  ${FIND} ${SITE_PERL}/${PERL_ARCH}/auto/PDL -type d | ${SORT} -r | \
-		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST})
+		${SED} "s,^${TARGETDIR}/,@dirrm ," >> ${TMPPLIST})
 
 .include <bsd.port.post.mk>
