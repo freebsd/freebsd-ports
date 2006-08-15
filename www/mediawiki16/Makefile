@@ -20,6 +20,7 @@ NO_BUILD=	yes
 USE_PHP=	iconv mbstring pcre session xml zlib readline
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
+LATEST_LINK=	${PORTNAME}16
 
 OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL (not funtional)" off \
 		LDAP "Use LDAP authentication" off
