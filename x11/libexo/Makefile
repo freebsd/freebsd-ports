@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc

@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
 		--with-wwwroot=${PREFIX}/www
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
 
