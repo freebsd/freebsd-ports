@@ -26,6 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAKE_ARGS=	confexecdir=${PREFIX}/etc
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
