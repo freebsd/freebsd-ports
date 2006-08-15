@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.23
+PORTVERSION?=		3.0.23b
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -20,6 +20,7 @@ COMMENT?=		A free SMB and CIFS client and server for UNIX
 CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
 USE_ICONV=		yes
+USE_FAM=		yes
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=		autoconf:259 autoheader:259
 
@@ -254,7 +255,6 @@ MAN1+=		wbinfo.1
 MAN7+=		pam_winbind.7
 MAN8+=		winbindd.8
 .endif
-
 
 PLIST_SUB+=		RC_DIR=${RC_DIR} \
 			SAMBA_LOGDIR=${SAMBA_LOGDIR} \
