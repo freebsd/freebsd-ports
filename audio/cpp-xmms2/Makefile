@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 MASTERDIR=	${.CURDIR}/../xmms2
 USE_LDCONFIG=	yes
 
-PLIST=		${.CURDIR}/pkg-plist
+PLIST_FILE=		${.CURDIR}/pkg-plist
 
 SCONS_TARGET=	src/clients/lib/xmmsclient++/libxmmsclient++.so \
 		src/clients/lib/xmmsclient++-glib//libxmmsclient++-glib.so
@@ -27,9 +27,9 @@ XMMS2_SLAVE=	cpp
 do-install:
 	@cd ${WRKSRC} && ${INSTALL_PROGRAM} \
 		src/clients/lib/xmmsclient++/libxmmsclient++.so \
-		${PREFIX}/lib/libxmmsclient++.so
+		${TARGETDIR}/lib/libxmmsclient++.so
 	@cd ${WRKSRC} && ${INSTALL_PROGRAM} \
 		src/clients/lib/xmmsclient++-glib/libxmmsclient++-glib.so \
-		${PREFIX}/lib/libxmmsclient++-glib.so
+		${TARGETDIR}/lib/libxmmsclient++-glib.so
 
 .include "${MASTERDIR}/Makefile"
