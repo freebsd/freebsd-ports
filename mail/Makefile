@@ -255,6 +255,7 @@
     SUBDIR += nohtml
     SUBDIR += normalizemime
     SUBDIR += nullmailer
+    SUBDIR += nullpop
     SUBDIR += offlineimap
     SUBDIR += openwebmail
     SUBDIR += p3scan
