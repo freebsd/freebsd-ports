@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Visio/.packlist
+%%SITE_PERL%%/Visio.pm
+%%SITE_PERL%%/Visio/PageSheet.pm
+%%SITE_PERL%%/Visio/Layout.pm
+%%SITE_PERL%%/Visio/Master.pm
+%%SITE_PERL%%/Visio/Line.pm
+%%SITE_PERL%%/Visio/PageProps.pm
+%%SITE_PERL%%/Visio/Page.pm
+%%SITE_PERL%%/Visio/Shape.pm
+%%SITE_PERL%%/Visio/Hyperlink.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Visio
+@dirrmtry %%SITE_PERL%%/Visio
