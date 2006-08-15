@@ -7,6 +7,7 @@ bin/bomberclone
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
+%%DOCSDIR%%/bomberclone.nsi
 @dirrm %%DOCSDIR%%
 
 share/bomberclone/tileset/zbb_frog/stone.png
@@ -97,6 +98,7 @@ share/bomberclone/player/player0.png
 share/bomberclone/player/dead0.png
 share/bomberclone/player/ghost.png
 share/bomberclone/pixmaps/bomberclone.png
+share/bomberclone/pixmaps/bomberclone.ico
 share/bomberclone/music/zb-tnt.xm
 share/bomberclone/music/slice_me_nice.xm
 share/bomberclone/music/mario_is_a_weenie.xm

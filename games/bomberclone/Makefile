@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bomberclone
-PORTVERSION=	0.11.6.2
+PORTVERSION=	0.11.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +16,14 @@ COMMENT=	Reimplementation of Atomic Bomber Man
 
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=""
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
+
+post-extract:
+	${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -rf ;
 
 .include <bsd.port.mk>
