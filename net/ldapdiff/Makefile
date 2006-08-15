@@ -17,18 +17,18 @@ COMMENT=	A utility for patching LDAP directories using LDIF files
 USE_ICONV=	yes
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-ldap-dir=${PREFIX} \
-		--with-iconv-dir=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
+		--with-ldap-dir=${LOCALBASE} \
+		--with-iconv-dir=${LOCALBASE}
 SAMPLES=	addentry webtomware_without_jpeg.user.ldif \
 		webtomware.init.ldif webtomware.user.ldif
 MAN1=		ldapdiff.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${TARGETDIR}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/ldapdiff.conf \
-		${PREFIX}/etc/ldapdiff.conf.sample
+		${TARGETDIR}/etc/ldapdiff.conf.sample
 	@${MKDIR} ${DATADIR}/samples
 .for i in ${SAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${DATADIR}/samples
