@@ -15,7 +15,7 @@ COMMENT=	A Generic Suffix Tree Library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^\(SUBDIRS = src test\) docs,\1,' \
