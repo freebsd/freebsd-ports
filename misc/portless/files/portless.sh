@@ -1,6 +1,6 @@
-#! /bin/sh --
+#! @BASH@ --
 # (X)Emacs: -*- mode: Shell-Script; coding: iso8859-1; -*-
-# @(#)portless.sh,v 1.8 2006/07/06 10:32:01 martin Exp
+# @(#)portless.sh,v 1.11 2006/08/13 10:23:14 martin Exp
 # Show "pkg-descr" file of matching port(s).
 #
 # Copyright (c) 2006 Martin Kammerhofer <mkamm@gmx.net>
@@ -29,7 +29,7 @@
 Script=`basename $0` # name of this script
 
 # set defaults
-for opt in d f i M m p w; do
+for opt in d f I i M m p w; do
     eval opt_$opt=""
 done
 PORTSDIR=${PORTSDIR:-/usr/ports}
@@ -45,7 +45,7 @@ usage()
 	echo >&2 "$Script: $1"
 	shift
     done
-    echo >&2 "usage: $Script [-dfiMmp] [-P pager] 'portglob'..."
+    echo >&2 "usage: $Script [-dfIiMmpw] [-P pager] 'portglob'..."
     exit 64	# EX_USAGE
 }
 
@@ -60,12 +60,15 @@ addopt()
 }
 
 # process options
-while getopts "D:dfiMmpP:wx" option
+while getopts "D:dfIiMmpP:wx" option
   do
   case "$option" in
       (D) PORTSDIR="$OPTARG";;		# undocumented
       (d) addopt d "$PKGDESCR";;
       (f) opt_f="f";;
+      (I) shopt -s nocaseglob ||
+      usage "Option -I needs bash!"
+      opt_I="I";;
       (i) addopt i "distinfo";;
       (M) addopt M "Makefile";;
       (m) addopt m "pkg-message";;
@@ -82,6 +85,8 @@ if [ -n "$opt_w" ]; then
     [ -n "$filelist" ] && usage "option -w not compatible with other options"
     PAGER="/bin/ls -1d"			# just echo directory name(s)
     filelist="."
+elif [ -n "$opt_f" -a -n "$opt_I" ]; then
+    usage "only one of options -f and -I is useful"
 else
     [ -n "$filelist" ] || filelist="$PKGDESCR"
 fi
@@ -100,6 +105,7 @@ page() {
     dirglob=$1
     portglob=$2
     shift 2
+    set +f
     for f in $filelist; do
 	if [ -n "$opt_f" ]; then
 	    set -- "$@" "$PORTSDIR"$dirglob"$portglob/$f"
@@ -112,6 +118,7 @@ page() {
 
 # main
 for p in "$@"; do
+    set -f
     set -- $p
     [ $# != 1 ] && usage "portglob '$p' contains whitespace!"
     case "$p" in

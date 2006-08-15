@@ -22,11 +22,11 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.\" @(#)portless.1,v 1.6 2006/07/06 10:41:39 martin Exp
+.\" @(#)portless.1,v 1.7 2006/08/13 10:23:14 martin Exp
 .\"
 .\" Note: The date here should be updated whenever a non-trivial
 .\" change is made to the manual page.
-.Dd July 6, 2006
+.Dd August 13, 2006
 .Dt PORTLESS 1
 .Os
 .Sh NAME
@@ -34,7 +34,7 @@
 .Nd "quickly browse port descriptions"
 .Sh SYNOPSIS
 .Nm
-.Op Fl dfiMmp
+.Op Fl dfIiMmp
 .Op Fl P Ar pager
 .Ar portglob...
 .Nm
@@ -55,6 +55,17 @@ file of the port. This is the default.
 Take the
 .Ar portglob
 argument literal (not as a shell glob).
+.It Fl I
+Ignore case when matching
+.Ar portglob
+against the ports tree. This option is only effective when
+.Ar portglob
+contains at least one unquoted globbing meta-character (
+.Sq Li * ,
+.Sq Li \&? ,
+or
+.Sq Li [
+).
 .It Fl i
 Display the
 .Pa distinfo
