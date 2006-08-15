@@ -6,7 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -38,7 +38,7 @@ PLIST_SUB+=	WITH_XML=""
 .if defined(WITHOUT_DB)
 PLIST_SUB+=	WITH_DB="@comment "
 .else
-LIB_DEPENDS+=	preludedb.3:${PORTSDIR}/security/libpreludedb
+LIB_DEPENDS+=	preludedb.4:${PORTSDIR}/security/libpreludedb
 PLIST_SUB+=	WITH_DB=""
 .endif
 
