@@ -462,6 +462,7 @@
     SUBDIR += p5-SpringGraph
     SUBDIR += p5-Tk-JPEG-Lite
     SUBDIR += p5-VCG
+    SUBDIR += p5-Visio
     SUBDIR += p5-chart
     SUBDIR += p5-ming
     SUBDIR += paintlib
