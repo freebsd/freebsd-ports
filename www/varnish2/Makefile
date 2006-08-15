@@ -20,4 +20,10 @@ USE_LDCONFIG=	yes
 
 MAN1=		varnishd.1 varnishlog.1 varnishncsa.1 varnishstat.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 601000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
