@@ -69,7 +69,7 @@ PLIST_SUB+=		TRANSICU="@comment "
 
 # expect this to get broken some day
 NO_FILTER_SHLIBS=	yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
 XERCESWRKSRC=		${WRKSRC}/src/xercesc
 CONFIGURE_WRKSRC=	${XERCESWRKSRC}

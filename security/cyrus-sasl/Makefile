@@ -31,7 +31,7 @@ PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/:apop \
 USE_SUBMAKE=	yes
 USE_OPENSSL=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # IPv6 Patch provided by Hajimu UMEMOTO <ume@mahoroba.org>
 IPV6_VER=	20020106

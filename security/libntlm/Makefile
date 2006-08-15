@@ -17,6 +17,6 @@ COMMENT=	A library that implement Microsoft's NTLM authentication
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

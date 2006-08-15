@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS domain logon PAM module
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes

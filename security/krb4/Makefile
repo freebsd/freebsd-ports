@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KTH Kerberos 4
 
 CONFLICTS=	krb5-[0-9]* heimdal-[0-9]*
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 # Don't remove this.  This port installs several applications
 # which have the same name as some in the base system (e.g.
 # ftp, telnet, su).

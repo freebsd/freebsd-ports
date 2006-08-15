@@ -50,7 +50,7 @@ XERCESCROOT?=	${LOCALBASE}
 
 # expect this to get broken some day
 NO_FILTER_SHLIBS=	yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 
 WRKSRC=			${WRKDIR}/xml-xalan/c
 

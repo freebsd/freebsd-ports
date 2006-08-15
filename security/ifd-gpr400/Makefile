@@ -18,7 +18,7 @@ LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 MAKE_ENV+=	DESTDIR="${PREFIX}"
 
-INSTALLS_SHLIB= yes
+USE_LDCONFIG=	yes
 
 NOMAN=
 

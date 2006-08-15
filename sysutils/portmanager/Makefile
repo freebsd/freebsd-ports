@@ -20,7 +20,7 @@ MAN3=		libMG.3 MGdbAdd.3 MGdbCreate.3 MGdbDelete.3 \
 		MGdbGetRecordQty.3 MGdbGoTop.3 MGdbSeek.3
 
 GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=		install info
 

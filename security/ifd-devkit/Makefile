@@ -16,7 +16,7 @@ COMMENT=	IFD Handler Developer's Kit for MUSCLE PC/SC Lite
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
-INSTALLS_SHLIB= yes
+USE_LDCONFIG=	yes
 
 NOMAN=
 

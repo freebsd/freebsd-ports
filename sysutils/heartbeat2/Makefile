@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib12
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-fatal-warnings \
 			--with-initdir=${PREFIX}/etc/rc.d

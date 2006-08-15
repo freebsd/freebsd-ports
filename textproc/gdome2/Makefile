@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 PLIST_SUB=	DOCSDIR="share/doc/${DISTNAME}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	gdome-config.1
 

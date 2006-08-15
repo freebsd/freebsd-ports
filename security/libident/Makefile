@@ -16,7 +16,7 @@ COMMENT=	A small library to interface the ident protocol server (rfc1413)
 
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		ident.3
 

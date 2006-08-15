@@ -17,7 +17,7 @@ COMMENT=	Password-checking library
 
 MAN3=		cracklib.3
 MLINKS=		cracklib.3 FascistCheck.3
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-su-install:
 	${INSTALL_DATA} ${WRKSRC}/cracklib/libcrack.a ${PREFIX}/lib

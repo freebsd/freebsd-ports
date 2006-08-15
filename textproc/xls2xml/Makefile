@@ -20,7 +20,7 @@ LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole \
 		xml.5:${PORTSDIR}/textproc/libxml
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lcole"
 

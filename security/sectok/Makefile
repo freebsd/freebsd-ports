@@ -19,7 +19,7 @@ LIB_DEPENDS=	sectok.3:${PORTSDIR}/security/libsectok
 
 USE_OPENSSL=	yes
 
-INSTALLS_SHLIB= yes
+USE_LDCONFIG=	yes
 WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		sectok.1

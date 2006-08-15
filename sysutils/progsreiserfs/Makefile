@@ -17,7 +17,7 @@ COMMENT=	Utilities and library to manipulate ReiserFS partitions
 
 USE_GETOPT_LONG=yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-debug
 

@@ -18,7 +18,7 @@ USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
 INSTALL_TARGET=	site-install
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DEFAULT_CHARSET?=	ISO-8859-1
 
