@@ -22,6 +22,8 @@ COMMENT=	Grid computing toolkit
 
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
+FORBIDDEN=	multiple tmpfile race vulnerabilities
+
 INSTALLER=	${DISTNAME}${EXTRACT_SUFX}
 BUNDLE_SUFX=	.tar.gz
 
