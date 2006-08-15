@@ -25,4 +25,10 @@ MAN3=		Visio.3 Visio::Hyperlink.3 Visio::Layout.3 Visio::Line.3 \
 		Visio::Master.3 Visio::Page.3 Visio::PageProps.3 \
 		Visio::PageSheet.3 Visio::Shape.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
