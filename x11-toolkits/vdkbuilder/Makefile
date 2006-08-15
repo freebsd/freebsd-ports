@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-opt=no
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		vdkb2.1
 

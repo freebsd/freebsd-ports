@@ -15,7 +15,7 @@ DISTNAME=	Xclasses-public-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ layout library for X
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NOT_FOR_ARCHS=	alpha amd64 ia64 sparc64
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	VERSION="${PORTVERSION}"

@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 gnomehack
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 LATEST_LINK=	gtkextra2
 DOCSDIR=	${PREFIX}/share/doc/gtkextra2

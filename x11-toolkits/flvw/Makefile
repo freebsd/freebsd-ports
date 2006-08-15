@@ -32,7 +32,7 @@ DOC_FILES=	documentation/html/*.html
 INC_FILES=	Flv_CStyle.H Flv_Data_Source.H Flv_List.H Flv_Style.H \
 		Flv_Table.H Flve_Check_Button.H Flve_Combo.H Flve_Input.H
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	-fPIC

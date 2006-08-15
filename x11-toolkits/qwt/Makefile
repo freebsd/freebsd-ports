@@ -24,7 +24,7 @@ MAKE_ENV=	CXXFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		LIBS="-L${X11BASE}/lib" \
 		QTDIR="${X11BASE}"	\
 		MOC=${MOC}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		QwtAnalogClock.3	\
 		QwtArrayData.3		\

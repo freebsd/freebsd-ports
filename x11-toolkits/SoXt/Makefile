@@ -23,7 +23,7 @@ CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--with-pthread=yes --with-coin=${X11BASE}
 # avoid renaming of soxt-config and soxt-config.1
 CONFIGURE_TARGET=	--target=""
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAN1=		soxt-config.1
 
 .include <bsd.port.mk>

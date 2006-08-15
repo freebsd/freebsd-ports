@@ -26,7 +26,7 @@ USE_GECKO=	mozilla
 WXGTK_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-wx-config=${WXGTK_CONFIG} --enable-python
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"

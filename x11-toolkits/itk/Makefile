@@ -18,7 +18,7 @@ COMMENT=	[incr Tk] (A.K.A. "itk")
 LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		itcl.${MAJOR}:${PORTSDIR}/lang/itcl
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV+=	${PLIST_SUB} \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 

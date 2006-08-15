@@ -21,7 +21,7 @@ LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla

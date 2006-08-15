@@ -21,7 +21,7 @@ USE_SDL=	sdl
 USE_GL=		yes
 USE_GMAKE=	yes
 MAKE_ENV=	OPT="${OPT}" LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPT=		${CFLAGS} -fPIC -DPIC -Iinclude \
 		`${SDL_CONFIG} --cflags` `freetype-config --cflags` \

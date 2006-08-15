@@ -22,7 +22,7 @@ USE_GNOME=	gtksourceview gnomehack gnomeprefix
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
