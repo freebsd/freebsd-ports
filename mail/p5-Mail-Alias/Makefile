@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mail-p5-mail-alias-freebsd-ports@snowchyld.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail::Alias
 
 PERL_CONFIGURE=	yes
