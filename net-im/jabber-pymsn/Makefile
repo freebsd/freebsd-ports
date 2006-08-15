@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymsn
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+DISTVERSION=	0.11.2-dev2
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://delx.cjb.net/pymsnt/tarballs/ \
@@ -14,7 +13,7 @@ MASTER_SITES=	http://delx.cjb.net/pymsnt/tarballs/ \
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
-DISTNAME=	${PORTNAME}t-${PORTVERSION}
+DISTNAME=	${PORTNAME}t-${DISTVERSION}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	garga@FreeBSD.org
@@ -23,8 +22,6 @@ COMMENT=	Python MSN-Transport for Jabber
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
-
-WRKSRC=		${WRKDIR}/${PORTNAME}t-${PORTVERSION}
 
 OPTIONS=	EJABBERD "Use transport with ejabberd" off
 
