@@ -19,7 +19,7 @@ you may have to follow this steps to make it work correctly.
     [1;32m#
     # Directives to allow use of b2evolution
     #
-    Alias /%%PORTNAME%% "%%PREFIX%%/%%B2EVO_DIR%%/"[m
+    Alias /%%PORTNAME%% "%%TARGETDIR%%/%%B2EVO_DIR%%/"[m
 
 4.Open b2evo installation page in your web browser 
   and login with b2evouser/b2evopassword
