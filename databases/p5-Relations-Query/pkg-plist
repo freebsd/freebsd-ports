@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Relations/Query.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Relations/Query/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Relations/Query
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Relations
+@dirrmtry %%SITE_PERL%%/Relations
