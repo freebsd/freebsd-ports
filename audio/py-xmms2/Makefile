@@ -25,6 +25,6 @@ SCONS_TARGET=	src/clients/lib/python/xmmsclient.so
 XMMS2_SLAVE=	python
 
 do-install:
-	@cd ${WRKSRC} && ${INSTALL_PROGRAM} ${SCONS_TARGET} ${PYTHONPREFIX_SITELIBDIR}/xmmsclient.so
+	@cd ${WRKSRC} && ${INSTALL_PROGRAM} ${SCONS_TARGET} ${DESTDIR}/${PYTHONPREFIX_SITELIBDIR}/xmmsclient.so
 
 .include "${MASTERDIR}/Makefile"
