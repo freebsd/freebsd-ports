@@ -31,7 +31,8 @@ LATEST_LINK=	gmime2-sharp
 # Else we conflict with mail/gmime2
 NOPORTDOCS=	yes
 
-post-patch:
+# Done in pre-configure because master port has a post-patch target already.
+pre-configure:
 	@${REINPLACE_CMD} -e 's|.@GMIME_VERSION@||g' \
 		${WRKSRC}/mono/gmime-sharp.dll.config.in
 
