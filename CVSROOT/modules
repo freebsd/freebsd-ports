@@ -14122,6 +14122,7 @@ uppaal		ports/devel/uppaal
 uppc-kmod	ports/palm/uppc-kmod
 ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
+upsdaemon	ports/sysutils/upsdaemon
 upsmon		ports/sysutils/upsmon
 uptimec		ports/sysutils/uptimec
 uptimed		ports/sysutils/uptimed
