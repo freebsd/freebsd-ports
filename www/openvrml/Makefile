@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		XPIDLFLAGS="-I${X11BASE}/share/idl/mozilla"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	VER=${PORTVERSION}
 SUB_FILES=	lookat.sh

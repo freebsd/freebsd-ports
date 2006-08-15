@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drag and drop library
 
 USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/DND/DNDlib
 GNU_CONFIGURE=	yes
 

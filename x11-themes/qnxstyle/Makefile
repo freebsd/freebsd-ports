@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/kde3/plugins/styles/qnx.a \
 		lib/kde3/plugins/styles/qnx.la \

@@ -16,7 +16,7 @@ COMMENT=	Open source search engine for Internet and Intranet sites
 
 #RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch

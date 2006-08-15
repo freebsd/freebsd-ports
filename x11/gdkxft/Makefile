@@ -26,7 +26,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv" \
 		CFLAGS="${CFLAGS} `pkg-config xft --cflags`"
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN8=		gdkxft_sysinstall.8
 
