@@ -114,5 +114,3 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@comment @dirrmtry share/locale/lt/LC_MESSAGES
-@comment @dirrmtry share/locale/lt
