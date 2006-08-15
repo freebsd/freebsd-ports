@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	2.8.2.1
+DISTVERSION=	2.8.2.2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -56,7 +56,7 @@ OPTIONS=	BZ2	 "bzip2 library support" on \
 		MCRYPT   "MCrypt library support" on \
 		MBSTRING "Multi-byte character-set string support" on
 
-PORT_DBDIR?=	/var/db/ports
+PORT_DBDIR?=	${DESTDIR}/var/db/ports
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
@@ -126,7 +126,7 @@ do-install: install-app install-conf
 install-app:
 	cd ${WRKSRC} ; \
 	for src in $$( ${FIND} . ! -name .cvsignore ) ; do \
-	    dst=${PREFIX}/${MYADMDIR}$${src#.} ; \
+	    dst=${TARGETDIR}/${MYADMDIR}$${src#.} ; \
 	    if ${TEST} -d $$src ; then \
 	        ${MKDIR} $$dst ; \
 	    else \
@@ -135,7 +135,7 @@ install-app:
 	done
 
 install-conf: install-app
-	cd ${PREFIX}/${MYADMDIR} ; \
+	cd ${TARGETDIR}/${MYADMDIR} ; \
 	${CHMOD} 0640 ${CFGFILE}.sample ; \
 	${CHGRP} ${MYADMGRP} ${CFGFILE}.sample ; \
 	if ${TEST} ! -f ${CFGFILE} ; then \
