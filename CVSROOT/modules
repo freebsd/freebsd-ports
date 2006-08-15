@@ -9685,6 +9685,7 @@ p5-Regexp-Log	ports/textproc/p5-Regexp-Log
 p5-Regexp-Log-Common	ports/textproc/p5-Regexp-Log-Common
 p5-Regexp-Shellish	ports/devel/p5-Regexp-Shellish
 p5-Relations	ports/databases/p5-Relations
+p5-Relations-Query	ports/databases/p5-Relations-Query
 p5-Religion	ports/devel/p5-Religion
 p5-ResourcePool	ports/devel/p5-ResourcePool
 p5-ResourcePool-Resource-DBI	ports/databases/p5-ResourcePool-Resource-DBI
