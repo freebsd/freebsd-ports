@@ -28,6 +28,7 @@
     SUBDIR += eclipse-examples
     SUBDIR += eclipse-gef
     SUBDIR += eclipse-gef-examples
+    SUBDIR += eclipse-jad
     SUBDIR += eclipse-langpack
     SUBDIR += eclipse-log4e
     SUBDIR += eclipse-lomboz
