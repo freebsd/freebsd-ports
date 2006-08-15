@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Net-LibIDN
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	dns perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/T/TH/THOR
+MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	domi@saargate.de
@@ -18,14 +18,14 @@ COMMENT=	This module provides access to the libidn library
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-libidn=${PREFIX}/lib --with-libidn-inc=${PREFIX}/include
+CONFIGURE_ARGS+=	--with-libidn=${TARGETDIR}/lib --with-libidn-inc=${TARGETDIR}/include
 
 MAN3=		Net::LibIDN.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 and try again
+IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
