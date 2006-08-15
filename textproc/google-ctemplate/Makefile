@@ -17,7 +17,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A simple but powerful template language for C++
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

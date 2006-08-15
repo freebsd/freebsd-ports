@@ -15,7 +15,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	General Hidden Markov Model Library in C
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-0.7.0
 
 post-patch:
