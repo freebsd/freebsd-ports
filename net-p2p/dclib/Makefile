@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:

@@ -18,7 +18,7 @@ COMMENT=	A network data storage and analysis library from CAIDA
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GCC=	2.95
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \

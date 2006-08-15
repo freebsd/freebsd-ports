@@ -28,7 +28,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 lthack
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-ltdl-install --with-crypto
 LDFLAGS+=	-L${LOCALBASE}/lib

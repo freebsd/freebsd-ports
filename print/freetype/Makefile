@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and portable TrueType font rendering engine
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
 .ifdef USE_FREETYPE

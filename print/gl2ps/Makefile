@@ -16,7 +16,7 @@ COMMENT=	A C library providing vector output for OpenGL application
 
 USE_GL=		yes
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-build:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile

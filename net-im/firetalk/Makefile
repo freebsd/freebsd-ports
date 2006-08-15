@@ -16,7 +16,7 @@ COMMENT=	A multi-protocol chat/instant messaging library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 FTHEADERS=	firetalk-int.h icqv5.h toc.h firetalk.h irc.h
 

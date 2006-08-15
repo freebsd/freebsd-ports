@@ -19,7 +19,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>

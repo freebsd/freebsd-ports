@@ -21,7 +21,7 @@ EXTRACT_CMD=	unzip -a
 WRKSRC=		${WRKDIR}/dlgv32/ProjectionLib
 
 USE_ZIP=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 
 post-install:

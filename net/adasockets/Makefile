@@ -17,7 +17,7 @@ BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat \
 		texi2dvi:${PORTSDIR}/print/teTeX
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		adasockets-config.1
 INFO=		adasockets

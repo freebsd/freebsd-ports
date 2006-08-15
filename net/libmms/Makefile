@@ -16,7 +16,7 @@ COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
 USE_GNOME=	gnomehack gnometarget pkgconfig glib20
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|' \

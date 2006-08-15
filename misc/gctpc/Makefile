@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/source
 USE_GMAKE=	yes
 ALL_TARGET=	libgctpc.so.1
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libgctpc.a ${PREFIX}/lib

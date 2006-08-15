@@ -17,7 +17,7 @@ COMMENT=	Synchronize a PalmPilot with a Unix workstation
 USE_GETTEXT=	yes
 REINPLACE_ARGS=	-i "" -E
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 

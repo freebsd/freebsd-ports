@@ -19,7 +19,7 @@ COMMENT=	A C library that handles the new Yahoo! Messenger protocol
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnometarget
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -ansi -pedantic||g' ${WRKSRC}/configure

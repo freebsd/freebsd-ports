@@ -23,7 +23,7 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lapack --with-python
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	anonbblanz.1 bblimage.1 binnseg.1 conseg.1 decomment.1 dumpbblanz.1 \
 	imstack.1 inleav2.1 lovar.1 qdv.1 rpsamp.1 skmiv.1 swab.1 usb2uc.1 \

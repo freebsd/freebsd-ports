@@ -21,7 +21,7 @@ COMMENT=	A convenience package to install the compat4x libraries
 WRKSRC=		${WRKDIR}/usr/lib/compat
 
 NO_BUILD=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat

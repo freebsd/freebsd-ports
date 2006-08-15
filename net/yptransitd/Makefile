@@ -18,7 +18,7 @@ COMMENT=	A replacement for nss_ldap
 USE_OPENLDAP=	yes
 
 USE_BISON=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ldap-prefix=${LOCALBASE}
 

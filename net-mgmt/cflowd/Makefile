@@ -21,7 +21,7 @@ LIB_DEPENDS=	Arts.0:${PORTSDIR}/net-mgmt/arts++
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GCC=	2.95
 
 CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}

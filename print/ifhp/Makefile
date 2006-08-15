@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IFHP - A highly configurable print filter for LPRng
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT=	yes
 
 MAN8=		ifhp.8 textps.8

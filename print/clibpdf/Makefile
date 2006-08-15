@@ -16,7 +16,7 @@ COMMENT=	A library for creating PDF (Acrobat) files directly via C language prog
 
 WRKSRC=		${WRKDIR}/ClibPDF/source
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SHLIB_VER=	0
 
 MAKEFILE=	Makefile.FreeBSD

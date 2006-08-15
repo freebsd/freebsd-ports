@@ -16,6 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper library to the sockets
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

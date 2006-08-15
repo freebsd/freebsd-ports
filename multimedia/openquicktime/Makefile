@@ -22,7 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS=	DEBUG "Turn on debugging" on

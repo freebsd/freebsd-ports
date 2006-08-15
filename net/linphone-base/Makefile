@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--disable-ipv6 --disable-gtk-doc --enable-gnome_ui=no \
 		--disable-ewarning --without-ilbc --disable-strict \
 		--with-speex=${LOCALBASE} --with-osip=${LOCALBASE} \
 		--with-html-dir=${DOCSDIR}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		linphonec.1 sipomatic.1
 
