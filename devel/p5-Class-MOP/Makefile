@@ -16,6 +16,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A Meta Object Protocol for Perl 5
 
 RUN_DEPENDS=	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
