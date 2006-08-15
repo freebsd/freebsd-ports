@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--without-included-gettext \
 			--enable-ipv6 \
 			--datadir="${PREFIX}/share" \
 			--enable-perl
-LATEST_LINK=		xchat1
+LATEST_LINK?=		xchat1
 
 .if defined(WITH_SSL)
 USE_OPENSSL=		YES
