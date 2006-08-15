@@ -23,7 +23,7 @@ WANT_PHP_WEB=	yes
 OJSDIR?=	www/ojs2
 
 OPTIONS=	MYSQL "Use a MYSQL Database" on \
-		PGSQL "Use a PosgreSQL Database" off
+		PGSQL "Use a PostgreSQL Database" off
 
 .include <bsd.port.pre.mk>
 
