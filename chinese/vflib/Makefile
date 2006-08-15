@@ -26,13 +26,14 @@ BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 VFLIB_VERSION=	2.25.1
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
+DATADIR=	${TARGETDIR}/share/VFlib
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-freetype \
+		--with-freetype-includedir=${LOCALBASE}/include/freetype1/freetype \
+		--with-freetype-libdir=${LOCALBASE}/lib
 USE_FREETYPE=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-freetype \
-		--with-freetype-includedir=${PREFIX}/include/freetype1/freetype \
-		--with-freetype-libdir=${PREFIX}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -44,13 +45,13 @@ post-patch:
 
 pre-install:
 	@(cd ${WRKSRC}/tools; \
-	    ${INSTALL_SCRIPT} fmtest disol kban vfperf vftest ${PREFIX}/bin)
+		${INSTALL_SCRIPT} fmtest disol kban vfperf vftest ${TARGETDIR}/bin)
 	@(cd ${WRKSRC}; \
-	  ${MKDIR} ${PREFIX}/share/VFlib/${VFLIB_VERSION} ;\
-	  ${CP} COPYING COPYING.LIB README.txt.JP_EUC \
-		${PREFIX}/share/VFlib/${VFLIB_VERSION})
+		${MKDIR} ${DATADIR}/${VFLIB_VERSION} ;\
+		${CP} COPYING COPYING.LIB README.txt.JP_EUC \
+		${DATADIR}/${VFLIB_VERSION})
 
 post-install:
-	${MV} ${PREFIX}/share/VFlib/${VFLIB_VERSION}/VF.h ${PREFIX}/include
+	${MV} ${DATADIR}/${VFLIB_VERSION}/VF.h ${TARGETDIR}/include
 
 .include <bsd.port.post.mk>
