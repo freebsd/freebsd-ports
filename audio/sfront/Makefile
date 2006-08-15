@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sfront
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
