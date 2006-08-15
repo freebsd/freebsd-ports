@@ -46,23 +46,23 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Globus Alliance reports:</p>
 	<blockquote cite="http://www.globus.org/mail_archive/security-announce/2006/08/msg00000.html">
-          <p>The proxy generation tool (grid-proxy-init) creates the
-            file, secures the file to provide access only to owner and
-            writes proxy to the file. A race condition exists between
-            the opening of the proxy credentials file, and making sure
-            it is safe file to write to. The checks to ensure this
-            file is accessible only to the owner take place using the
-            filename after the file is opened for writing, but before
-            any data is written.</p>
+	  <p>The proxy generation tool (grid-proxy-init) creates the
+	    file, secures the file to provide access only to owner and
+	    writes proxy to the file. A race condition exists between
+	    the opening of the proxy credentials file, and making sure
+	    it is safe file to write to. The checks to ensure this
+	    file is accessible only to the owner take place using the
+	    filename after the file is opened for writing, but before
+	    any data is written.</p>
 	</blockquote>
 	<blockquote cite="http://www.globus.org/mail_archive/security-announce/2006/08/msg00001.html">
-          <p>Various components of the toolkit use files in shared
-            directories to store information, some being sensitive
-            information. For example, the tool to create proxy
-            certificates, stores the generated proxy certificate by
-            default in /tmp. Specific vulnerabilities in handling such
-            files were reported in myproxy-admin-adduser, grid-ca-sign
-            and grid-security-config.</p>
+	  <p>Various components of the toolkit use files in shared
+	    directories to store information, some being sensitive
+	    information. For example, the tool to create proxy
+	    certificates, stores the generated proxy certificate by
+	    default in /tmp. Specific vulnerabilities in handling such
+	    files were reported in myproxy-admin-adduser, grid-ca-sign
+	    and grid-security-config.</p>
 	</blockquote>
       </body>
     </description>
