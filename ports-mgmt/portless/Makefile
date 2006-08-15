@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portless
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	misc
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -15,14 +15,18 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Quick display of files inside the FreeBSD ports tree
 
-NO_BUILD=	yes
+RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+
 MAN1=		portless.1
 MANCOMPRESSED=	no
 
 PLIST_FILES=	bin/portless
 
+do-build:
+	${SED} -e 's;@BASH@;${LOCALBASE}/bin/bash;g' \
+		${FILESDIR}/portless.sh >${WRKDIR}/portless
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/portless.sh ${PREFIX}/bin/portless
+	${INSTALL_SCRIPT} ${WRKDIR}/portless ${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/portless.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
