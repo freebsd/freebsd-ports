@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gapi2-parser:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 RUN_DEPENDS=	gapi2-parser:${PORTSDIR}/x11-toolkits/gtk-sharp20 \
 		monodoc:${PORTSDIR}/devel/mono-tools
 
-USE_GECKO=	mozilla firefox
+USE_GECKO=	firefox mozilla
 USE_GNOME=	gnometarget
 LATEST_LINK=	gecko-sharp20
 USE_X_PREFIX=	yes

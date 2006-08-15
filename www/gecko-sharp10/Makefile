@@ -17,7 +17,7 @@ COMMENT=	Mono bindings for embeding mozilla
 BUILD_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10
 RUN_DEPENDS=	gapi-parser:${PORTSDIR}/x11-toolkits/gtk-sharp10
 
-USE_GECKO=	mozilla firefox
+USE_GECKO=	firefox mozilla
 USE_GNOME=	gnomehack gnometarget
 LATEST_LINK=	gecko-sharp10
 USE_X_PREFIX=	yes
