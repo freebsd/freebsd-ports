@@ -1,0 +1,11 @@
+This perl library contains functions for dealing with databases.  It's
+mainly used as the foundation for all the other Relations modules. It
+may be useful for people that deal with databases in Perl as well.
+
+Relations has functions for creating SQL clauses (like where, from etc.)
+from hashes, arrays and strings. It also has functions for converting
+strings to arrays or hashes, if they're not hashes or arrays already. It
+even has an argument parser, which is used quite heavily by the other
+Relations modules.
+
+WWW: http://www.gaf3.com/
