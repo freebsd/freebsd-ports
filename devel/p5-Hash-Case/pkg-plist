@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case/.packlist
+%%SITE_PERL%%/Hash/Case.pm
+%%SITE_PERL%%/Hash/Case/Lower.pm
+%%SITE_PERL%%/Hash/Case/Preserve.pm
+%%SITE_PERL%%/Hash/Case/Upper.pm
+%%SITE_PERL%%/Hash/Makefile.PL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
+@dirrmtry %%SITE_PERL%%/Hash/Case
+@dirrmtry %%SITE_PERL%%/Hash

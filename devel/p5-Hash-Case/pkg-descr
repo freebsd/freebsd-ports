@@ -1,0 +1,7 @@
+Hash::Case is the base class for various classes which tie special
+treatment for the casing of keys. Be aware of the differences in
+implementation: Lower and Upper are tied native hashes: these hashes
+have no need for hidden fields or other assisting data structured. A
+case Preserve hash will actually create three hashes.
+
+WWW:	http://search.cpan.org/dist/Hash-Case/
