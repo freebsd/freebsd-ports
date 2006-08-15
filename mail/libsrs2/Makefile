@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	srs
 MAINTAINER=		mail-libsrs2-freebsd-ports@snowchyld.org
 COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=		yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

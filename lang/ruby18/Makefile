@@ -52,7 +52,7 @@ CFLAGS+=	-g
 STRIP=		# none
 .endif
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAN1=		${RUBY_NAME}.1
 
 .include <bsd.port.pre.mk>

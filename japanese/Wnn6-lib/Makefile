@@ -19,7 +19,7 @@ BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
 DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # Warning: we cannot use USE_IMAKE.
 do-build:

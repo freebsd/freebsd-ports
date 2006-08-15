@@ -18,7 +18,7 @@ COMMENT=	[incr Tcl] (A.K.A. "itcl")
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PKGINSTALL=	${PORTSDIR}/lang/tcl84/pkg-install.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl84/pkg-deinstall.tclsh
 MAKE_ENV+=	${PLIST_SUB} \

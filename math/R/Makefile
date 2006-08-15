@@ -45,7 +45,7 @@ OPTIONS=	ATLAS        "Use ATLAS instead of BLAS/LAPACK"           off \
 
 MAN1=		R.1
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install install-libR
 ALL_TARGET=	all
 GNU_CONFIGURE=	yes

@@ -18,7 +18,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-optimization
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		freefem.1
 

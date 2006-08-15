@@ -23,7 +23,7 @@ MAKE_ENV=	LD="${CC}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	release
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sircd/sircd ${PREFIX}/sbin/sircd

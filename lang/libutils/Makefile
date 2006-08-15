@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		libutils.3
 

@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 
 MANLANG=	ja
 MAN1=		kakasi.1
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DOCS=		NEWS README README-ja TODO \
 		doc/ChangeLog.lib doc/JISYO \

@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_prog_EMACS=no
 CONFIGURE_ARGS=	--enable-generational-gc=no --enable-gtk=no \
 		--with-emacs=no --with-gmp=no
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		gst.1
 INFO=		gst gst-base gst-libs

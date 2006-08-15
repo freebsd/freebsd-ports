@@ -18,7 +18,7 @@ COMMENT=	A JAM subroutine library
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
 NO_INSTALL_MANPAGES=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=	JAM_AddEmptyMessage.3 \
 	JAM_AddMessage.3 \

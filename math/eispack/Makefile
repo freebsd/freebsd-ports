@@ -18,7 +18,7 @@ COMMENT=	Eigenvalue system package
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
 DIST_SUBDIR=	${PORTNAME}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \

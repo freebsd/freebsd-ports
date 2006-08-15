@@ -21,6 +21,6 @@ BROKEN=	Unfetchable
 USE_AUTOTOOLS=	autoconf:213
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

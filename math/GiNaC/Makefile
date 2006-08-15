@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	ginac-config.1 ginsh.1 viewgar.1
 INFO=	ginac

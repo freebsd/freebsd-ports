@@ -33,7 +33,7 @@ MAINTAINER=	eric+fbports@vangyzen.net
 COMMENT=	The standalone math library from R
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--without-x
 

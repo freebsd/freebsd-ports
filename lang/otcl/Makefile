@@ -18,7 +18,7 @@ LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84
 
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PKGINSTALL=	${PORTSDIR}/lang/tcl84/pkg-install.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl84/pkg-deinstall.tclsh

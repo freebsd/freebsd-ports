@@ -35,7 +35,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/dx/lib_freebsd ${PTHRE
 # in libDXL.so (_dxfImportBin_FP is defined in libDX.so)
 CONFIGURE_ARGS=	--with-dxl-includes=-I${LOCALBASE}/dx/include \
 		"--with-dxl=-lDXL -lDX"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # The tk module is built by default, but you can disable this by defining
 # the following variable.

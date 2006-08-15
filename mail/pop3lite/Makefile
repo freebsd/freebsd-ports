@@ -18,7 +18,7 @@ COMMENT=	A flexible, modular RFC-compliant POP3 daemon
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN5=		pop3lite.conf.5
 MAN8=		pop3lite.8

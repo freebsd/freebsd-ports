@@ -19,7 +19,7 @@ COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 
 CONFLICTS=	elmer-mathlibs-1*
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 
 do-configure:

@@ -16,7 +16,7 @@ COMMENT=	A tiny COBOL compiler for IA32 platforms
 
 LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 USE_GETOPT_LONG=yes
 HAS_CONFIGURE=	yes

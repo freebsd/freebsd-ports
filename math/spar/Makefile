@@ -18,7 +18,7 @@ COMMENT=	A modular math parser
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	spar.1
 

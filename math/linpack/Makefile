@@ -17,7 +17,7 @@ COMMENT=	Linear Algebra package
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 

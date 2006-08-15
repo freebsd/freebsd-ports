@@ -20,7 +20,7 @@ LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
 
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--disable-doxygen --disable-lynx

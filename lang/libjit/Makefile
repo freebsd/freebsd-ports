@@ -16,7 +16,7 @@ COMMENT=	Libjit implements Just-In-Time compilation functionality
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 INFO=		libjit
 MAN3=		libjit.3
