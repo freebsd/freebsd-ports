@@ -7565,6 +7565,7 @@ nuclearchess	ports/games/nuclearchess
 nucleus		ports/x11-fonts/nucleus
 nulib		ports/archivers/nulib
 nullmailer	ports/mail/nullmailer
+nullpop		ports/mail/nullpop
 numchar		ports/misc/numchar
 numlockx	ports/x11/numlockx
 nunnimcax	ports/textproc/nunnimcax
