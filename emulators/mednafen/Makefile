@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mednafen
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	emulators games
 MASTER_SITES=	http://mednafen.com/releases/
 
@@ -18,7 +18,6 @@ LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
