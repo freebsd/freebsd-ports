@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ toolkit, and optionally, GNOME
 
 CONFIGURE_ARGS=	--enable-japanese-conv
+LATEST_LINK=	ja-xchat1
 
 MASTERDIR=	${.CURDIR}/../../irc/xchat1
 
