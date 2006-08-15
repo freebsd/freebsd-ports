@@ -291,6 +291,7 @@
     SUBDIR += mcast-tools
     SUBDIR += merlinmon
     SUBDIR += mgen
+    SUBDIR += micro_inetd
     SUBDIR += micro_proxy
     SUBDIR += minisapserver
     SUBDIR += miredo

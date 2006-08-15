@@ -1,0 +1,24 @@
+--- Makefile.orig	Wed Jan  2 05:24:29 2002
++++ Makefile	Tue Aug 15 14:43:17 2006
+@@ -5,16 +5,15 @@
+ #SYSV_LIBS =	-lnsl -lsocket
+ 
+ 
+-CC =		gcc
+-CFLAGS =	-O
+-LDFLAGS =	-s $(SYSV_LIBS)
+-BINDIR =	/usr/local/bin
+-MANDIR =	/usr/local/man/man1
++CC?=		gcc
++CFLAGS?=	-O
++LDFLAGS?=	-s $(SYSV_LIBS)
++BINDIR?=	/usr/local/bin
++MANDIR?=	/usr/local/man/man1
+ 
+ all:		micro_inetd
+ 
+ micro_inetd:	micro_inetd.c
+-	$(CC) $(CFLAGS) micro_inetd.c $(LDFLAGS) -o micro_inetd
+ 
+ install:	all
+ 	rm -f $(BINDIR)/micro_inetd
