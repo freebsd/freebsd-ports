@@ -7,13 +7,14 @@
 
 PORTNAME=	gtkballs
 PORTVERSION=	3.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
 
+USE_GETTEXT=	yes
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

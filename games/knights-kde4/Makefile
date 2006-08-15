@@ -7,7 +7,7 @@
 
 PORTNAME=	knights
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	knights
@@ -17,6 +17,7 @@ COMMENT=	A KDE chess interface (gnuchess/crafty)
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

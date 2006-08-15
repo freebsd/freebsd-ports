@@ -9,7 +9,7 @@
 
 PORTNAME=	knowit
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://knowit.sourceforge.net/files/
 
@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A note manager with tree organization that uses RTF for storage
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

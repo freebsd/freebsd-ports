@@ -9,6 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/v2.2/:src \
 		http://distfiles.master.finkmirrors.net/:rpm
@@ -32,6 +33,7 @@ INFO=		lilypond lilypond-internals \
 #INSTALLS_SHLIB not needed for phyton library midi.so
 
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_BISON=	yes
 USE_GMAKE=	YES
 USE_PYTHON=	YES

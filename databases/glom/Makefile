@@ -8,7 +8,7 @@
 
 PORTNAME=	glom
 PORTVERSION=	0.8.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -26,6 +26,7 @@ USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnomeextras
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -38,7 +39,7 @@ BROKEN=	needs an update to 1.0
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} < 500000)
-BROKEN=		"Doesn't play well with 4.X."
+BROKEN=		doesn't play well with 4.X.
 .endif
 
 .include <bsd.port.post.mk>
