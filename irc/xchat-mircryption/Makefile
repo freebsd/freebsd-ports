@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_ZIP=	yes
 ALL_TARGET=	freebsd
 CFLAGS+=	-fPIC
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/mircryption/src/xchat/
 #

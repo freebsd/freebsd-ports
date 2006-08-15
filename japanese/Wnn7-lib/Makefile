@@ -20,7 +20,7 @@ BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 WRKSRC=		${WRKDIR}/src
 DOCDIR=		${PREFIX}/share/doc/ja-Wnn7-lib
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # Warning: we cannot use USE_IMAKE.
 do-build:

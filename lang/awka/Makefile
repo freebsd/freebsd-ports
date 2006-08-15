@@ -15,7 +15,7 @@ COMMENT=	Converts the AWK script to C, then compiles it
 
 GNU_CONFIGURE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MANCOMPRESSED=	no
 MAN1=	awka.1

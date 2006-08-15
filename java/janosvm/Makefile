@@ -19,7 +19,7 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	janosvm.1 jsihey.1 jsiregister.1 jsiunregister.1
 

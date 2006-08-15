@@ -30,7 +30,7 @@ ALL_TARGET=	lib
 
 BLAS_LIBS?=	${LOCALBASE}/lib/libblas.a
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-patch:
 	@(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/patch.tar.gz)

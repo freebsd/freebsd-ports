@@ -21,7 +21,7 @@ OPTIONS=	X11 "X11/GTK support" on	\
 		SOX "Sox audio support" off
 
 WANT_GNOME=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		compface.1
 MAN3=		compface.3

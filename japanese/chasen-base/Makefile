@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/darts.h:${PORTSDIR}/devel/darts
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-darts=${LOCALBASE}/include --with-libiconv=${LOCALBASE}
 USE_ICONV=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-install:
 	${RM} -f ${PREFIX}/lib/libchasen.la

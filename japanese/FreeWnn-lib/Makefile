@@ -22,7 +22,7 @@ COMMENT?=	A Japanese/Chinese/Korean input method (Japanese client libraries)
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:253 libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ARGS=	CDEBUGFLAGS="${CFLAGS}"
 ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man

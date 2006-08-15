@@ -16,7 +16,7 @@ COMMENT=	Japanese charset conversion library powered by iconv(3)
 #RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
 
 MAKE_ARGS=	NOPROFILE=true PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_ICONV=	yes
 
 post-patch:

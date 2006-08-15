@@ -18,7 +18,7 @@ COMMENT=	Tcl81 with threads support
 FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
 
 NO_LATEST_LINK=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-threads

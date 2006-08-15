@@ -17,7 +17,7 @@ COMMENT=	Javascript interpreter port from Apple's KHTML and part of Gtk-Webcore
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-pic

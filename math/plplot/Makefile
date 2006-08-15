@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--disable-cgm --disable-java --disable-octave \
 		--with-gd-incdir=${LOCALBASE}/include \
 		--with-gd-libdir=${LOCALBASE}/lib \
 		--with-freetype-font-dir=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		plm2gif.1 plplot_libtool.1 plpr.1 pltek.1 pstex2eps.1

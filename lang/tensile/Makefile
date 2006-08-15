@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-module-postgres
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		sl.1 sla.1
 MAN7=		docstrip.7t sl_crypt.7t sl_files.7t sl_fpmath.7t sl_int64.7t \

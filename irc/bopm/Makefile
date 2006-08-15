@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^[[:space:]]*$$(mkinstalldirs) $$(localstatedir),,' ${WRKSRC}/Makefile.in
