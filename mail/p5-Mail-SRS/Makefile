@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mail-srs-bsd-port@snowchyld.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme
 
 BUILD_DEPENDS=	${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \

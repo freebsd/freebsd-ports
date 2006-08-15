@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	p5-net-msn-freebsd-ports@snowchyld.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Net::MSN interface
 
 BUILD_DEPENDS=	${SITE_PERL}/Hash/Merge.pm:${PORTSDIR}/textproc/p5-Hash-Merge

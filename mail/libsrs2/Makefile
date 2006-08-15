@@ -12,7 +12,7 @@ CATEGORIES=		mail
 MASTER_SITES=		http://www.libsrs2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	srs
 
-MAINTAINER=		mail-libsrs2-freebsd-ports@snowchyld.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Sender Rewriting Scheme 2 C Implementation
 
 USE_LDCONFIG=	yes
