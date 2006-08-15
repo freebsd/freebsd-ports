@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
 USE_SCONS=	yes
-SCONS_ARGS=	EXCLUDE="${EXCLUDE}"
+SCONS_ARGS=	INSTALLDIR=${DESTDIR} EXCLUDE="${EXCLUDE}"
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
@@ -50,7 +50,8 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		MMS "Support to playback streams via MMS" off \
 		SAMBA "Support to playback files via SMB" off \
 		FAM "Support to update Media Library on file change" off \
-		MDNS "Support to announce XMMS2d via mDNS" off #\
+		MDNS_AVAHI "Support to announce XMMS2d via mDNS (Avahi)" off \
+		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on #\
 #		SDL "Support for visualization" on \
 #		JACK "Support to output via the Jack output server" off
 .endif
@@ -180,12 +181,20 @@ EXCLUDE+=	medialib-updater
 PLIST_SUB+=	FAM="@comment "
 .endif
 
-.if defined(WITH_MDNS)
+.if defined(WITH_MDNS_AVAHI)
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
-PLIST_SUB+=	MDNS=""
+PLIST_SUB+=	MDNS_AVAHI=""
 .else
-EXCLUDE+=	mdns
-PLIST_SUB+=	MDNS="@comment "
+EXCLUDE+=	avahi
+PLIST_SUB+=	MDNS_AVAHI="@comment "
+.endif
+
+.if !defined (WITHOUT_MDNS_APPLE)
+LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
+PLIST_SUB+=	MDNS_APPLE=""
+.else
+EXCLUDE+=	dns_sd
+PLIST_SUB+=	MDNS_APPLE="@comment "	
 .endif
 .endif
 
