@@ -1,6 +1,0 @@
-*******************************************************************************
-yell is now installed. Make sure that speaker.ko is loaded on your system. 
-Under FreeBSD 5.x you can put speaker_load="YES" in your /boot/loader.conf. 
-You can manually load speaker.ko by typing "kldload speaker" or recompile your 
-kernel with "device speaker".
-*******************************************************************************

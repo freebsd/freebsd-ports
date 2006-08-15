@@ -1,9 +1,7 @@
-Yell is a little command line utility playing a short tune on your
-speaker device. I mainly use it to yell the "sysop" on a remote 
-machine. It could also be used as a notification for finished tasks 
-(eg. make buildworld && yell).
+Yell is a little command line utility playing a short tune on your speaker
+device. I mainly use it to yell the "sysop" on a remote machine. It could also
+be used as a notification for finished tasks (eg. make buildworld && yell).
 
 WWW: http://www.critical.ch/yell
 
-- ehaupt
-ehaupt@critical.ch
+- ehaupt ehaupt@critical.ch
