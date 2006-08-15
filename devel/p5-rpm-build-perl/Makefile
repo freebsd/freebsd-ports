@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rpm-build-perl
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AT/ATOURBIN
@@ -23,7 +23,7 @@ MAN3=		B::PerlReq.3 PerlReq::Utils.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=         requires Perl 5.6 or newer
+IGNORE=	requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
