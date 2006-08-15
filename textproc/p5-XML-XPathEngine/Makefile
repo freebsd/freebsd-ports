@@ -28,6 +28,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-*
 
 post-patch:
 	${PERL} -pi -e '$$_ = "" if /^use warnings/' ${WRKSRC}/Makefile.PL
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 .endif
 
 .include <bsd.port.post.mk>
