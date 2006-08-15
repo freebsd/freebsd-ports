@@ -25,21 +25,14 @@ TMPDIR?=	${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${TMPDIR}
 
 .if defined(WITH_MYSQL5)
-IGNORE=		Please take a look at http://www.twtt.org/viewtopic.php?t=192&highlight=bsd for soultion
+IGNORE=		take a look at http://www.twtt.org/viewtopic.php?t=192&highlight=bsd for soultion
 .endif
 
 .if !defined(TT_URL)
 pre-fetch:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define TT_URL to override default of ${PREFIX}/${WWWDOCROOT}/'${TT_URL}'."
+	@${ECHO_MSG} "Define TT_URL to override default of ${TARGETDIR}/${WWWDOCROOT}/'${TT_URL}'."
 	@${ECHO_MSG} ""
-.endif
-
-# Get HOSTNAME
-.if exists(/sbin/sysctl)
-HOSTNAME!=	/sbin/sysctl -n kern.hostname
-.else
-HOSTNAME!=	/usr/sbin/sysctl -n kern.hostname
 .endif
 
 WWWDOCROOT?=	www/data
@@ -48,6 +41,9 @@ TT_DIR?=	${WWWDOCROOT}/${TT_URL}
 PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
+
+# Get HOSTNAME
+HOSTNAME!=	${SYSCTL} -n kern.hostname
 
 pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
@@ -58,11 +54,11 @@ pre-install:
 		&& ${ECHO_CMD} @dirrmtry ${WWWDOCROOT} >> ${PLIST}
 
 do-install:
-	-${MKDIR} ${PREFIX}/${TT_DIR}
-	@${CHMOD} 755 ${PREFIX}/${TT_DIR}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${TT_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TT_DIR}
-	@${CHMOD} 777 ${PREFIX}/${TT_DIR}/
+	-${MKDIR} ${TARGETDIR}/${TT_DIR}
+	@${CHMOD} 755 ${TARGETDIR}/${TT_DIR}
+	@${CP} -R ${WRKSRC}/ ${TARGETDIR}/${TT_DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TARGETDIR}/${TT_DIR}
+	@${CHMOD} 777 ${TARGETDIR}/${TT_DIR}/
 
 post-install:
 	@${SED} -e 's|%%HOSTNAME%%|${HOSTNAME}|; s|%%TT_URL%%|${TT_URL}|' \
