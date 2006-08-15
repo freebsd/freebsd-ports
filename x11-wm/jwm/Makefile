@@ -32,7 +32,7 @@ MAN1=		jwm.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${TARGETDIR}|' ${WRKSRC}/example.jwmrc
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/example.jwmrc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/jwm ${TARGETDIR}/bin
