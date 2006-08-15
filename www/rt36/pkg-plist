@@ -241,9 +241,11 @@
 %%RTPLIST%%/lib/t/regression/22search_tix_by_watcher.t
 %%RTPLIST%%/lib/t/regression/23-batch-upload-csv.t
 %%RTPLIST%%/lib/t/regression/23cfsort.t
+%%RTPLIST%%/lib/t/regression/23-web_attachments.t
 %%RTPLIST%%/lib/t/regression/24pawsort.t
 %%RTPLIST%%/lib/t/regression/25scrip_order.t
 %%RTPLIST%%/lib/t/regression/26command_line.t
+%%RTPLIST%%/lib/t/regression/27verp.t
 %%RTPLIST%%/lib/t/regression/mime_tests
 %%RTPLIST%%/lib/t/setup_regression.t
 %%RTPLIST%%/sbin/rt-dump-database
@@ -428,7 +430,6 @@
 %%RTPLIST%%/share/html/Helpers/CalPopup.html
 %%RTPLIST%%/share/html/NoAuth/Logout.html
 %%RTPLIST%%/share/html/NoAuth/Reminder.html
-%%RTPLIST%%/share/html/NoAuth/ahah.js
 %%RTPLIST%%/share/html/NoAuth/css/3.4-compat/body.css
 %%RTPLIST%%/share/html/NoAuth/css/3.4-compat/footer.css
 %%RTPLIST%%/share/html/NoAuth/css/3.4-compat/forms.css

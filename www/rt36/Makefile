@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.6.0
+PORTVERSION?=	3.6.1
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
