@@ -2,7 +2,9 @@ bin/xmms2
 bin/xmms2-et
 bin/xmms2-launcher
 %%FAM%%bin/xmms2-mlib-updater
-%%MDNS%%bin/xmms2-mdns-avahi
+%%MDNS_AVAHI%%bin/xmms2-find-avahi
+%%MDNS_AVAHI%%bin/xmms2-mdns-avahi
+%%MDNS_APPLE%%bin/xmms2-mdns-dnssd
 bin/xmms2d
 include/xmms2/xmms/xmms_config.h
 include/xmms2/xmms/xmms_defs.h
