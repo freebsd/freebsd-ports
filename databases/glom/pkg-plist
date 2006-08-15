@@ -36,3 +36,5 @@ share/mime/packages/glom.xml
 @dirrm share/gnome/glom/xslt
 @dirrm share/gnome/glom/glade
 @dirrm share/gnome/glom
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

@@ -72,3 +72,5 @@ share/locale/pt_BR/LC_MESSAGES/kwappen.mo
 @dirrmtry share/apps
 @dirrmtry share/applnk/Utilities
 @dirrmtry share/applnk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt

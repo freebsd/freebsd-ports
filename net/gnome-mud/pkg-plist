@@ -43,3 +43,5 @@ share/locale/zh_CN/LC_MESSAGES/gnome-mud.mo
 @dirrm share/gnome/help/gnome-mud/C
 @dirrm share/gnome/help/gnome-mud
 @dirrm share/gnome/gnome-mud
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

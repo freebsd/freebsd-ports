@@ -30,3 +30,7 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/knowit.mo
 @dirrm share/apps/knowit
 @dirrmtry share/applnk/Applications
 @dirrmtry share/applnk
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk

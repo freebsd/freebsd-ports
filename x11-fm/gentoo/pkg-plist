@@ -244,3 +244,5 @@ etc/gentoorc
 %%NLS%%@dirrmtry share/locale/ru_RU.utf8
 %%NLS%%@dirrmtry share/locale/ja_JP.UTF-8/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ja_JP.UTF-8
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl

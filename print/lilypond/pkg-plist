@@ -989,6 +989,10 @@ share/locale/sv/LC_MESSAGES/lilypond.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%/make
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
 @exec scrollkeeper-install -q %D/%%CONDITIONAL%%share/omf/lilypond/%%PORTVERSION%%/lilypond-internals.html.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/%%CONDITIONAL%%share/omf/lilypond/%%PORTVERSION%%/lilypond-internals.html.omf 2>/dev/null || /usr/bin/true
 @exec scrollkeeper-install -q %D/%%CONDITIONAL%%share/omf/lilypond/%%PORTVERSION%%/lilypond.html.omf 2>/dev/null || /usr/bin/true

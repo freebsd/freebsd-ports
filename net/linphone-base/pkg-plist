@@ -59,6 +59,10 @@ share/locale/nl/LC_MESSAGES/linphone.mo
 share/locale/pl/LC_MESSAGES/linphone.mo
 share/locale/pt_BR/LC_MESSAGES/linphone.mo
 share/locale/sv/LC_MESSAGES/linphone.mo
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
 @dirrm %%DOCSDIR%%/mediastreamer
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/sounds/rings

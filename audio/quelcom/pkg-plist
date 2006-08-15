@@ -16,3 +16,5 @@ lib/libqwav.so
 share/locale/ca/LC_MESSAGES/quelcom.mo
 share/locale/es/LC_MESSAGES/quelcom.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

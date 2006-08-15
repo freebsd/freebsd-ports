@@ -12,3 +12,5 @@ share/locale/it/LC_MESSAGES/LinNeighborhood.mo
 share/locale/zh_TW/LC_MESSAGES/LinNeighborhood.mo
 share/icons/LinNeighborhood.xpm
 @dirrm share/icons
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl

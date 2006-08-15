@@ -131,3 +131,15 @@ share/locale/tr/LC_MESSAGES/kdbg.mo
 @dirrm share/apps/kdbg/icons/hicolor
 @dirrm share/apps/kdbg/icons
 @dirrm share/apps/kdbg
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk

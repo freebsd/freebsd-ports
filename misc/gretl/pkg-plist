@@ -409,3 +409,5 @@ share/locale/tr/LC_MESSAGES/gretl.mo
 @dirrm lib/gretl-gtk2/data
 @dirrm lib/gretl-gtk2
 @dirrm include/gretl
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

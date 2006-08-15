@@ -82,3 +82,5 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 @dirrmtry share/locale/am_ET
 @dirrmtry share/locale/af_ZA/LC_MESSAGES
 @dirrmtry share/locale/af_ZA
+@dirrmtry share/locale/br/LC_MESSAGES
+@dirrmtry share/locale/br
