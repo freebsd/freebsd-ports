@@ -1,5 +1,0 @@
-bin/mairix
-%%EXAMPLESDIR%%/dotmairixrc.eg
-%%PORTDOCS%%%%DOCSDIR%%/mairix.txt
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
