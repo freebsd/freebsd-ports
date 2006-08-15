@@ -8972,6 +8972,7 @@ p5-HTTPD-Log-Filter	ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-User-Manage	ports/www/p5-HTTPD-User-Manage
 p5-Handel	ports/www/p5-Handel
 p5-Hash-AsObject	ports/devel/p5-Hash-AsObject
+p5-Hash-Case	ports/devel/p5-Hash-Case
 p5-Hash-Merge	ports/textproc/p5-Hash-Merge
 p5-Heap		ports/devel/p5-Heap
 p5-Heap-Simple	ports/devel/p5-Heap-Simple
