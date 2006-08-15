@@ -43,6 +43,19 @@
 %%GALLERYDIR%%/classes/nuke5/AdminUser.php
 %%GALLERYDIR%%/classes/nuke5/User.php
 %%GALLERYDIR%%/classes/nuke5/UserDB.php
+%%GALLERYDIR%%/classes/php-gettext/COPYING
+%%GALLERYDIR%%/classes/php-gettext/Makefile
+%%GALLERYDIR%%/classes/php-gettext/examples/index.php
+%%GALLERYDIR%%/classes/php-gettext/examples/locale/de_CH/LC_MESSAGES/messages.mo
+%%GALLERYDIR%%/classes/php-gettext/examples/locale/de_CH/LC_MESSAGES/messages.po
+%%GALLERYDIR%%/classes/php-gettext/examples/locale/sr_CS/LC_MESSAGES/messages.mo
+%%GALLERYDIR%%/classes/php-gettext/examples/locale/sr_CS/LC_MESSAGES/messages.po
+%%GALLERYDIR%%/classes/php-gettext/examples/pigs_dropin.php
+%%GALLERYDIR%%/classes/php-gettext/examples/pigs_fallback.php
+%%GALLERYDIR%%/classes/php-gettext/examples/update
+%%GALLERYDIR%%/classes/php-gettext/gettext.inc
+%%GALLERYDIR%%/classes/php-gettext/gettext.php
+%%GALLERYDIR%%/classes/php-gettext/streams.php
 %%GALLERYDIR%%/classes/phpbb/User.php
 %%GALLERYDIR%%/classes/phpbb/UserDB.php
 %%GALLERYDIR%%/classes/postnuke/User.php
@@ -521,7 +534,7 @@
 %%NLS%%%%GALLERYDIR%%/locale/en_GB/en_GB-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/en_GB/en_GB-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/en_GB/flagimage/en_GB.gif
-%%NLS%%%%GALLERYDIR%%/locale/en_US/flagimage/en_US.gif
+%%GALLERYDIR%%/locale/en_US/flagimage/en_US.gif
 %%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/es_ES/LC_MESSAGES/es_ES-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/es_ES/es_ES-gallery_config.po
@@ -935,16 +948,6 @@
 %%GALLERYDIR%%/stamp_preview.php
 %%GALLERYDIR%%/stats-wizard.php
 %%GALLERYDIR%%/stats.php
-%%GALLERYDIR%%/tools/build_manifest.php
-%%GALLERYDIR%%/tools/despam-comments.php
-%%GALLERYDIR%%/tools/find_orphans.php
-%%GALLERYDIR%%/tools/g1-makereport.php
-%%GALLERYDIR%%/tools/g1-report.css
-%%GALLERYDIR%%/tools/g1-report.php
-%%GALLERYDIR%%/tools/include/main.inc
-%%GALLERYDIR%%/tools/include/plugin_rowdata.inc
-%%GALLERYDIR%%/tools/include/row_header.inc
-%%GALLERYDIR%%/tools/validate_albums.php
 %%GALLERYDIR%%/upgrade_album.php
 %%GALLERYDIR%%/upgrade_users.php
 %%GALLERYDIR%%/user_preferences.php
@@ -954,8 +957,6 @@
 %%GALLERYDIR%%/view_photo.php
 %%GALLERYDIR%%/view_photo_properties.php
 %%GALLERYDIR%%/watermark_album.php
-@dirrm %%GALLERYDIR%%/tools/include
-@dirrm %%GALLERYDIR%%/tools
 @dirrm %%GALLERYDIR%%/skins/yellow/images
 @dirrm %%GALLERYDIR%%/skins/yellow/css
 @dirrm %%GALLERYDIR%%/skins/yellow
@@ -1099,8 +1100,8 @@
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/es_ES/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/es_ES/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/es_ES
-%%NLS%%@dirrm %%GALLERYDIR%%/locale/en_US/flagimage
-%%NLS%%@dirrm %%GALLERYDIR%%/locale/en_US
+@dirrm %%GALLERYDIR%%/locale/en_US/flagimage
+@dirrm %%GALLERYDIR%%/locale/en_US
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/en_GB/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/en_GB/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/en_GB
@@ -1122,7 +1123,7 @@
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/af_ZA/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/af_ZA/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/af_ZA
-%%NLS%%@dirrm %%GALLERYDIR%%/locale
+@dirrm %%GALLERYDIR%%/locale
 @dirrm %%GALLERYDIR%%/lib
 @dirrm %%GALLERYDIR%%/layout
 @dirrm %%GALLERYDIR%%/js
@@ -1175,6 +1176,13 @@
 @dirrm %%GALLERYDIR%%/classes/postnuke0.7.1
 @dirrm %%GALLERYDIR%%/classes/postnuke
 @dirrm %%GALLERYDIR%%/classes/phpbb
+@dirrm %%GALLERYDIR%%/classes/php-gettext/examples/locale/sr_CS/LC_MESSAGES
+@dirrm %%GALLERYDIR%%/classes/php-gettext/examples/locale/sr_CS
+@dirrm %%GALLERYDIR%%/classes/php-gettext/examples/locale/de_CH/LC_MESSAGES
+@dirrm %%GALLERYDIR%%/classes/php-gettext/examples/locale/de_CH
+@dirrm %%GALLERYDIR%%/classes/php-gettext/examples/locale
+@dirrm %%GALLERYDIR%%/classes/php-gettext/examples
+@dirrm %%GALLERYDIR%%/classes/php-gettext
 @dirrm %%GALLERYDIR%%/classes/nuke5
 @dirrm %%GALLERYDIR%%/classes/nsnnuke
 @dirrm %%GALLERYDIR%%/classes/mambo
