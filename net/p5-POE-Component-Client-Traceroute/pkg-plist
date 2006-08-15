@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Traceroute/.packlist
 %%SITE_PERL%%/POE/Component/Client/Traceroute.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/poe-traceroute.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Traceroute
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
@@ -8,3 +9,4 @@
 @dirrmtry %%SITE_PERL%%/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
