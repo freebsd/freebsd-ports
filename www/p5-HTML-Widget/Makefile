@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	HTML Widget And Validation Framework
 
-BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+RUN_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		p5-Class-Data-Accessor>=0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
@@ -23,10 +23,8 @@ BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
 		p5-Module-Pluggable-Fast>=0:${PORTSDIR}/devel/p5-Module-Pluggable-Fast \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
-		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -79,6 +77,9 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Filter::UpperCase.3 \
 	HTML::Widget::Filter::Whitespace.3 \
 	HTML::Widget::Result.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
