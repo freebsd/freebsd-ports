@@ -7,7 +7,7 @@
 
 PORTNAME=	POE-Component-Client-Telnet
 PORTVERSION=	0.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -28,9 +28,7 @@ MAN3=	POE::Component::Client::Telnet.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /use warnings/;' \
-		${WRKSRC}/Makefile.PL
+IGNORE=	requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500602
