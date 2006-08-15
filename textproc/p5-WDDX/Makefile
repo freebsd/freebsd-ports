@@ -7,6 +7,7 @@
 
 PORTNAME=	WDDX
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/P/PE/PETDANCE
@@ -15,16 +16,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to parse WDDX Packets
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64  \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	yes
+
 MAN3=		WDDX.3
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/WDDX
-	${INSTALL_MAN} ${WRKSRC}/Changes ${PREFIX}/share/doc/WDDX
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.include <bsd.port.post.mk>
