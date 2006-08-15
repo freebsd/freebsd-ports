@@ -1,0 +1,4 @@
+sbin/upsdaemon
+libexec/upsdaemon/upsdaemon-alerts
+libexec/upsdaemon/upsdaemon.sh
+@dirrm libexec/upsdaemon

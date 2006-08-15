@@ -597,6 +597,7 @@
     SUBDIR += unieject
     SUBDIR += unquote
     SUBDIR += upsd
+    SUBDIR += upsdaemon
     SUBDIR += upsmon
     SUBDIR += uptimec
     SUBDIR += uptimed
