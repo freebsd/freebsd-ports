@@ -30,6 +30,12 @@ LDFLAGS+=	-lcrypto -L${LOCALBASE}/lib
 
 MAN1=		mcabber.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000
+BROKEN=	Unicoded ncurses require 5.3
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#$$"$${datadir}"#"$${datadir}"#' \
 		-e 's/waddnwstr/mvwaddnwstr/g' -e 's!ncursesw/!ncurses/!g' ${WRKSRC}/configure
@@ -41,4 +47,4 @@ post-install:
 	@${CP} -R ${WRKSRC}/contrib ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example ${EXAMPLESDIR}/mcabberrc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
