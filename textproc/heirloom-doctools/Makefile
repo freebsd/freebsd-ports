@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,0.0.,,}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable and enhanced troff, nroff, and related utilities
 
-BROKEN=		fails to install
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	#empty
@@ -62,6 +60,8 @@ DOCS=		CHANGES FONTS NEWS PDFS README \
 
 .if ${OSVERSION} < 500000
 IGNORE=		Does not compile on FreeBSD 4.x
+.elif ${OSVERSION} < 600000
+BROKEN=		fails to install on FreeBSD 5.x
 .endif
 
 post-install:
