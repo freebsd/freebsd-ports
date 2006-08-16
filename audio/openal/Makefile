@@ -7,7 +7,7 @@
 
 PORTNAME=	openal
 PORTVERSION=	20060211
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://openal.org/openal_webstf/downloads/
 DISTVERSION=	0.0.8
@@ -87,5 +87,8 @@ post-patch:
 		s|Libs: |&${PTHREAD_LIBS} |;\
 		s|Cflags: |&${PTHREAD_CFLAGS} |' \
 		${WRKSRC}/admin/pkgconfig/openal.pc.in
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
