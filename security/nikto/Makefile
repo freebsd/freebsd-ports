@@ -9,13 +9,13 @@
 
 PORTNAME=	nikto
 PORTVERSION=	1.35
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 USE_BZIP2=	yes
@@ -40,18 +40,21 @@ RUN_DEPENEDS+=	nmap:${PORTSDIR}/security/nmap
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/bin/perl|${PERL}|" ${WRKSRC}/nikto.pl
-	@${REINPLACE_CMD} -Ee "s,(config.txt),${PREFIX}/etc/nikto.conf," ${WRKSRC}/nikto.pl
-	@${REINPLACE_CMD} -Ee "s|/usr/bin/nmap|${PREFIX}/bin/nmap|g" \
+	@${REINPLACE_CMD} -Ee "s,(config.txt),${TARGETDIR}/etc/nikto.conf," ${WRKSRC}/nikto.pl
+	@${REINPLACE_CMD} -Ee "s|/usr/bin/nmap|${LOCALBASE}/bin/nmap|g" \
 		-e "s|# (PLUGINDIR=)/usr/local/nikto/plugins|\1${DATADIR}|g" \
 		${WRKSRC}/config.txt
 	@${REINPLACE_CMD} "s/config.txt/nikto.conf/g" ${WRKSRC}/plugins/* ${WRKSRC}/docs/*
+	@${REINPLACE_CMD} -e 's:\$NIKTO{plugindir}/../docs/CHANGES.txt:\$NIKTO{plugindir}/../docs/nikto/CHANGES.txt:' \
+		-e 's:\$NIKTO{plugindir}/../CHANGES.txt:\$NIKTO{plugindir}/../docs/nikto/CHANGES.txt:' \
+		${WRKSRC}/plugins/nikto_core.plugin
 	@${MV} ${WRKSRC}/docs/nikto-1.34.man ${WRKSRC}/docs/nikto.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
-	${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${TARGETDIR}/bin/nikto
+	${INSTALL_DATA} ${WRKSRC}/config.txt ${TARGETDIR}/etc/nikto.conf.sample
 	[ -f ${PREFIX}/etc/nikto.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto.conf
+		${INSTALL_DATA} ${WRKSRC}/config.txt ${TARGETDIR}/etc/nikto.conf
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/plugins/LW.pm ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/plugins/*.db ${DATADIR}
