@@ -17,6 +17,9 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber AIM Transport module
 
+DEPRECATED=	Depends on broken net-im/jabber, please use net-im/jabber-pyaim instead
+EXPIRATION_DATE=	2006-09-16
+
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-stable-${PORTVERSION:R}
