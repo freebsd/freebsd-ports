@@ -9,7 +9,7 @@
 PORTNAME=	fileutils
 PORTVERSION=	0.6
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/fileutils/
+MASTER_SITES=	http://ftp.livinglogic.de/fileutils/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FileUtils-${PORTVERSION}
 
