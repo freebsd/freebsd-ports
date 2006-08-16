@@ -14,13 +14,15 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/blas/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Basic Linear Algebra, level 1, 2, and 3
 
 CONFLICTS=	elmer-mathlibs-1*
 
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	lib/libblas.a lib/libblas.so lib/libblas.so.1
 
 do-configure:
 	@${INSTALL_DATA} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
