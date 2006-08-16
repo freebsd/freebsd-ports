@@ -12937,6 +12937,7 @@ session2	ports/www/session2
 setcdboot	ports/sysutils/setcdboot
 setedit		ports/editors/setedit
 setquota	ports/sysutils/setquota
+settitle	ports/x11/settitle
 sex		ports/games/sex
 seyon		ports/comms/seyon
 sfbol		ports/games/sfbol
