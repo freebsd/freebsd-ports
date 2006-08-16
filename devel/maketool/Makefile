@@ -9,7 +9,7 @@ PORTNAME=	maketool
 PORTVERSION=	0.8.4
 PORTREVISION=	5
 CATEGORIES=	devel
-MASTER_SITES=	http://www.alphalink.com.au/~gnb/maketool/downloads/
+MASTER_SITES=	http://home.alphalink.com.au/~gnb/maketool/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI interface for make or gmake
