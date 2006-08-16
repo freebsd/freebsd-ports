@@ -1,5 +1,4 @@
 bin/lightningize
-include/lightning.h
 include/lightning/asm-common.h
 include/lightning/asm.h
 include/lightning/core-common.h
@@ -21,9 +20,9 @@ include/lightning/sparc/core.h
 include/lightning/sparc/fp.h
 include/lightning/sparc/funcs.h
 share/aclocal/lightning.m4
-share/lightning/Makefile.am
-@dirrm include/lightning/i386
-@dirrm include/lightning/ppc
+%%DATADIR%%/Makefile.am
+@dirrm %%DATADIR%%
 @dirrm include/lightning/sparc
+@dirrm include/lightning/ppc
+@dirrm include/lightning/i386
 @dirrm include/lightning
-@dirrm share/lightning
