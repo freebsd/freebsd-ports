@@ -56,3 +56,9 @@ share/xfmedia/doc/xfce.css
 @dirrm lib/xfmedia
 @dirrmtry etc/xdg
 @dirrmtry share/applications
+@dirrmtry share/icons/hicolor/22x22/actions
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons

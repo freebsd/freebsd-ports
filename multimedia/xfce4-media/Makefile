@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -29,11 +30,11 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2 intlhack
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
