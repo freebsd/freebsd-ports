@@ -27,13 +27,7 @@ MLINKS=	dnsres.3 dnsres_init.3 dnsres.3 dnsres_gethostbyname.3 \
 	dnsres.3 dnsres_gethostbyname2.3 dnsres.3 dnsres_gethostbyaddr.3 \
 	dnsres.3 dnsres_getaddrinfo.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700014
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
