@@ -9,7 +9,7 @@ PORTNAME=	nwndata
 PORTVERSION=	1.29
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://files.bioware.com/neverwinternights/updates/linux/
+MASTER_SITES=	http://bioware.vo.llnwd.net/o1/neverwinternights/updates/linux/
 # Also at:	http://www.fileshack.com/file.x?fid=2508
 # Previous:	ftp://jeuxlinux.com/bioware/Neverwinter_Nights/
 DISTNAME=	nwresources${PORTVERSION:S/.//}
