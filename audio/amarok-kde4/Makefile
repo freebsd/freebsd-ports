@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
 USE_RUBY=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	GPOD "iPod support" on \
 		XMMS "XMMS visualizations" off \
