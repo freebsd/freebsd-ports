@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gpc
+PORTNAME=	libgpc
 PORTVERSION=	2.32
 CATEGORIES=	devel math graphics
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/toby/gpc/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+DISTNAME=	gpc${PORTVERSION:S/.//}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Generic Polygon Clipper
