@@ -21,6 +21,7 @@ include/rrd.h
 %%PORTDOCS%%%%DOCSDIR%%/html/RRDs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bin_dec_hex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cdeftutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rpntutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrd-beginners.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdbuild.html
