@@ -20,12 +20,14 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		${SITE_PERL}/Unicode/MapUTF8.pm:${PORTSDIR}/converters/p5-Unicode-MapUTF8 \
 		${SITE_PERL}/App/Info/Lib/Iconv.pm:${PORTSDIR}/devel/p5-App-Info
 RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/IO/Capture/Stderr.pm:${PORTSDIR}/devel/p5-IO-Capture
 
 PERL_CONFIGURE=	YES
 
 MAN3=		I18N::Charset.3
 
 post-patch:
-	@${PERL} -pi -e 's#.$$##g' ${WRKSRC}/lib/I18N/Charset.pm
+	@${PERL} -pi -e 's#\r$$##g' ${WRKSRC}/lib/I18N/Charset.pm
+	@${PERL} -pi -e 's#\r$$##g' ${WRKSRC}/lib/I18N/Charset/character-sets
 
 .include <bsd.port.mk>
