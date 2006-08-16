@@ -12,7 +12,7 @@ MASTER_SITES=	http://cvschangelogb.sourceforge.net/files/ \
 		http://mirror.spingen.com/cvschangelogbuilder/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mwill@spingen.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to generate changelogs and reports from a CVS repository
 
 RUN_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
