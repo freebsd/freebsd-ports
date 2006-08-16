@@ -1,3 +1,4 @@
+bin/cal3d_converter
 include/cal3d/animation.h
 include/cal3d/animation_action.h
 include/cal3d/animation_cycle.h
@@ -30,6 +31,8 @@ include/cal3d/morphtargetmixer.h
 include/cal3d/physique.h
 include/cal3d/platform.h
 include/cal3d/quaternion.h
+include/cal3d/refcounted.h
+include/cal3d/refptr.h
 include/cal3d/renderer.h
 include/cal3d/resource.h
 include/cal3d/saver.h
@@ -37,11 +40,12 @@ include/cal3d/skeleton.h
 include/cal3d/springsystem.h
 include/cal3d/streamsource.h
 include/cal3d/submesh.h
-include/cal3d/tinystr.h
 include/cal3d/tinyxml.h
+include/cal3d/transform.h
 include/cal3d/vector.h
-@dirrm include/cal3d
+lib/libcal3d.so.12
+lib/libcal3d.a
 lib/libcal3d.la
 lib/libcal3d.so
-lib/libcal3d.so.11
 libdata/pkgconfig/cal3d.pc
+@dirrm include/cal3d
