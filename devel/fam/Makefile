@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=		fam
-PORTVERSION=		2.6.10
-CATEGORIES=		devel
-MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
-DIST_SUBDIR=		${PORTNAME}
+PORTNAME=	fam
+PORTVERSION=	2.6.10
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	A file alteration monitor
@@ -21,7 +22,7 @@ AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
 SUB_FILES=	pkg-message
 
 MAN1=		fam.1m
