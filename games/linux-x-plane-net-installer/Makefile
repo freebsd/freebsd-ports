@@ -16,7 +16,7 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	The X-Plane network installer
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal \
-		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1.3:${PORTSDIR}/graphics/linux_dri
+		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
 
 USE_X_PREFIX=	yes
 USE_LINUX=	yes
