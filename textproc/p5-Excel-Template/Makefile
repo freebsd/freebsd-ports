@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Excel-Template
-PORTVERSION=	0.26
+PORTVERSION=	0.28
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Excel
@@ -16,6 +16,7 @@ MAINTAINER=	espen@tagestad.no
 COMMENT=	Perl module for templating Excel files
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
 RUN_DEPENDS=	${BUILD_DEPENDS}
