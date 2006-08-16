@@ -20,13 +20,13 @@ NO_BUILD=	yes
 STRCMD=		/usr/games/strfile
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/folksong ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/liuyong ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/stephehchow ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/tangshi ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/xiaoxing ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/yijing ${PREFIX}/share/games/fortune
+	@${MKDIR} ${TARGETDIR}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/folksong ${TARGETDIR}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/liuyong ${TARGETDIR}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/stephehchow ${TARGETDIR}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/tangshi ${TARGETDIR}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/xiaoxing ${TARGETDIR}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/yijing ${TARGETDIR}/share/games/fortune
 
 pre-install:
 .if !exists(${STRCMD})
@@ -35,20 +35,20 @@ pre-install:
 .endif
 
 post-install:
-	@${STRCMD} ${PREFIX}/share/games/fortune/folksong
-	@${STRCMD} ${PREFIX}/share/games/fortune/liuyong
-	@${STRCMD} ${PREFIX}/share/games/fortune/stephehchow
-	@${STRCMD} ${PREFIX}/share/games/fortune/tangshi
-	@${STRCMD} ${PREFIX}/share/games/fortune/xiaoxing
-	@${STRCMD} ${PREFIX}/share/games/fortune/yijing
+	@${STRCMD} ${TARGETDIR}/share/games/fortune/folksong
+	@${STRCMD} ${TARGETDIR}/share/games/fortune/liuyong
+	@${STRCMD} ${TARGETDIR}/share/games/fortune/stephehchow
+	@${STRCMD} ${TARGETDIR}/share/games/fortune/tangshi
+	@${STRCMD} ${TARGETDIR}/share/games/fortune/xiaoxing
+	@${STRCMD} ${TARGETDIR}/share/games/fortune/yijing
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Usage:"
-	@${ECHO_MSG} "${STRCMD} ${PREFIX}/share/games/fortune/folksong"
-	@${ECHO_MSG} "${STRCMD} ${PREFIX}/share/games/fortune/liuyong"
-	@${ECHO_MSG} "${STRCMD} ${PREFIX}/share/games/fortune/stephehchow"
-	@${ECHO_MSG} "${STRCMD} ${PREFIX}/share/games/fortune/tangshi"
-	@${ECHO_MSG} "${STRCMD} ${PREFIX}/share/games/fortune/xiaoxing"
-	@${ECHO_MSG} "${STRCMD} ${PREFIX}/share/games/fortune/yijing"
+	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/folksong"
+	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/liuyong"
+	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/stephehchow"
+	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/tangshi"
+	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/xiaoxing"
+	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/yijing"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
