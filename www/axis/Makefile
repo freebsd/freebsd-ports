@@ -6,6 +6,7 @@
 
 PORTNAME=		axis
 PORTVERSION=		1.4
+PORTREVISION=		1
 CATEGORIES=		www java
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	ws/axis/${PORTVERSION:S,.,_,g}
@@ -53,7 +54,7 @@ WRKSRC=		${WRKDIR}/axis-${PORTVERSION:S,.,_,g}
 # Install procedure
 #
 SYSTEM_JARS=	axis.jar jaxrpc.jar saaj.jar
-PLIST_SUB+=	WEBAPPS=${WEBAPPDIR:S|^${PREFIX}||} USER=${USER} GROUP=${GROUP}
+PLIST_SUB+=	WEBAPPS=${WEBAPPDIR:S|^${PREFIX}/||} USER=${USER} GROUP=${GROUP}
 
 do-install:
 .for i in ${SYSTEM_JARS}
