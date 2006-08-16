@@ -77,7 +77,9 @@ bin/meta
 %%SITE_PERL%%/Acme/MetaSyntactic/services.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/shadok.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/simpsons.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/sins.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/smtp.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/space_missions.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/sql.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/stars.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/swords.pm
