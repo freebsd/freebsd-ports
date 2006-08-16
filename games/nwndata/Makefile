@@ -9,7 +9,9 @@ PORTNAME=	nwndata
 PORTVERSION=	1.29
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	ftp://jeuxlinux.com/bioware/Neverwinter_Nights/
+MASTER_SITES=	http://files.bioware.com/neverwinternights/updates/linux/
+# Also at:	http://www.fileshack.com/file.x?fid=2508
+# Previous:	ftp://jeuxlinux.com/bioware/Neverwinter_Nights/
 DISTNAME=	nwresources${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +20,7 @@ COMMENT=	Neverwinter Nights Data Files
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/nwn
-NO_PACKAGE=	"Compressed package is in excess of 1 GB"
+NO_PACKAGE=	Compressed package is in excess of 1 GB
 
 do-install:
 	${MKDIR} ${DATADIR}
