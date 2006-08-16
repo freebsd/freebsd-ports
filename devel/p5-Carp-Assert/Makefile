@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Executable comments like the ANSI C library assert.h
 
+BUILD_DEPENDS=	pod2test:${PORTSDIR}/devel/p5-Pod-Tests
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Carp::Assert.3
