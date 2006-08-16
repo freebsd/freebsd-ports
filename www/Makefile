@@ -713,6 +713,7 @@
     SUBDIR += p5-Maypole
     SUBDIR += p5-Maypole-Authentication-UserSessionCookie
     SUBDIR += p5-Maypole-Component
+    SUBDIR += p5-MediaWiki
     SUBDIR += p5-Net-Akismet
     SUBDIR += p5-Net-Flickr-API
     SUBDIR += p5-Net-Flickr-Backup
