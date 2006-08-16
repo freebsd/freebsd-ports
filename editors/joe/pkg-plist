@@ -5,6 +5,14 @@ bin/jstar
 bin/rjoe
 bin/termidx
 etc/joe/charmaps/klingon
+etc/joe/doc/ChangeLog
+etc/joe/doc/HACKING
+etc/joe/doc/HINTS
+etc/joe/doc/LIST
+etc/joe/doc/NEWS
+etc/joe/doc/README
+etc/joe/ftyperc
+etc/joe/jicerc.ru
 @unexec if cmp -s %D/etc/joe/jmacsrc.dist %D/etc/joe/jmacsrc; then rm -f %D/etc/joe/jmacsrc; fi
 etc/joe/jmacsrc.dist
 @exec if [ ! -f %D/etc/joe/jmacsrc ]; then cp %D/etc/joe/%f %D/etc/joe/jmacsrc; fi
@@ -20,6 +28,9 @@ etc/joe/jstarrc.dist
 @unexec if cmp -s %D/etc/joe/rjoerc.dist %D/etc/joe/rjoerc; then rm -f %D/etc/joe/rjoerc; fi
 etc/joe/rjoerc.dist
 @exec if [ ! -f %D/etc/joe/rjoerc ]; then cp %D/etc/joe/%f %D/etc/joe/rjoerc; fi
+etc/joe/lang/de.po
+etc/joe/lang/fr.po
+etc/joe/lang/ru.po
 etc/joe/syntax/4gl.jsf
 etc/joe/syntax/ada.jsf
 etc/joe/syntax/asm.jsf
@@ -31,9 +42,13 @@ etc/joe/syntax/csh.jsf
 etc/joe/syntax/css.jsf
 etc/joe/syntax/diff.jsf
 etc/joe/syntax/fortran.jsf
+etc/joe/syntax/haskell.jsf
 etc/joe/syntax/html.jsf
 etc/joe/syntax/java.jsf
+etc/joe/syntax/joerc.jsf
 etc/joe/syntax/lisp.jsf
+etc/joe/syntax/lua.jsf
+etc/joe/syntax/m4.jsf
 etc/joe/syntax/mail.jsf
 etc/joe/syntax/mason.jsf
 etc/joe/syntax/ocaml.jsf
@@ -42,22 +57,23 @@ etc/joe/syntax/perl.jsf
 etc/joe/syntax/php.jsf
 etc/joe/syntax/ps.jsf
 etc/joe/syntax/python.jsf
+etc/joe/syntax/rexx.jsf
+etc/joe/syntax/ruby.jsf
 etc/joe/syntax/sed.jsf
 etc/joe/syntax/sh.jsf
+etc/joe/syntax/skill.jsf
 etc/joe/syntax/sml.jsf
 etc/joe/syntax/sql.jsf
 etc/joe/syntax/tcl.jsf
 etc/joe/syntax/tex.jsf
+etc/joe/syntax/troff.jsf
 etc/joe/syntax/verilog.jsf
 etc/joe/syntax/vhdl.jsf
 etc/joe/syntax/xml.jsf
-etc/joe/doc/ChangeLog
-etc/joe/doc/LIST
-etc/joe/doc/HACKING
-etc/joe/doc/HINTS
-etc/joe/doc/NEWS
-etc/joe/doc/README
-@dirrmtry etc/joe/doc
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
 @dirrmtry etc/joe/charmaps
+@dirrmtry etc/joe/doc
+@dirrmtry etc/joe/lang
 @dirrmtry etc/joe/syntax
 @dirrmtry etc/joe
