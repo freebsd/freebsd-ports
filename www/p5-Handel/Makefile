@@ -18,9 +18,9 @@ COMMENT=	Simple commerce framework with AxKit/TT/Catalyst support
 BUILD_DEPENDS=	${SITE_PERL}/Test/Strict.pm:${PORTSDIR}/devel/p5-Test-Strict \
 	${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
 	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-	${SITE_PERL}/${PERL_ARCH}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
+	${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
 	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-	${SITE_PERL}/${PERL_ARCH}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
+	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 	${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
 	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
