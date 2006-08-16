@@ -2313,7 +2313,6 @@
 @dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples/addr
 @dirrm %%WEBAPPS%%/axis/WEB-INF/classes/samples
 @dirrm %%WEBAPPS%%/axis/WEB-INF/classes
-@dirrm %%WEBAPPS%%/axis/WEB-INF/attachments
 @dirrm %%WEBAPPS%%/axis/WEB-INF
 @dirrm %%WEBAPPS%%/axis
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/xbeans
