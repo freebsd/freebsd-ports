@@ -19,8 +19,6 @@ BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-BROKEN=		does not install
-
 USE_GMAKE=	yes
 DOCSDIR=	${PREFIX}/share/doc/hu-ispell
 DOCS=		OLVASSEL README GYIK ChangeLog
