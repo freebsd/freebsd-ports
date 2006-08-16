@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libjackasyn
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	audio devel
 MASTER_SITES=	http://gige.xdv.org/soft/libjackasyn/download/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -35,10 +35,6 @@ SUB_FILES=	pkg-message
 MAN1=	jacklaunch.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD%%|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
