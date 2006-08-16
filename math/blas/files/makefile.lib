@@ -1,7 +1,7 @@
 #	@(#)Makefile	5.7 (Berkeley) 6/27/91
 FFLAGS=	@FFLAGS@
 
-LIBDIR= ${PREFIX}/lib
+LIBDIR= ${TARGETDIR}/lib
 .if (${OSVERSION} > 600007)
 NO_PROFILE= no
 .else
