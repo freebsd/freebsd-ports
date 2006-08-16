@@ -15435,6 +15435,7 @@ ymessenger	ports/net-im/ymessenger
 yodl		ports/textproc/yodl
 yorick		ports/lang/yorick
 yorick-doc	ports/lang/yorick-doc
+youtube_dl	ports/www/youtube_dl
 yptransitd	ports/net/yptransitd
 ysm		ports/net-im/ysm
 ytalk		ports/net/ytalk
