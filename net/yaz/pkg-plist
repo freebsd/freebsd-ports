@@ -15,9 +15,12 @@ include/yaz/diagsrw.h
 include/yaz/ill-core.h
 include/yaz/ill.h
 include/yaz/item-req.h
+include/yaz/libxml2_error.h
 include/yaz/log.h
 include/yaz/logrpn.h
 include/yaz/marcdisp.h
+include/yaz/nfa.h
+include/yaz/nfaxml.h
 include/yaz/nmem.h
 include/yaz/odr.h
 include/yaz/oid.h
@@ -28,6 +31,8 @@ include/yaz/proto.h
 include/yaz/prt-ext.h
 include/yaz/querytowrbuf.h
 include/yaz/readconf.h
+include/yaz/record_conv.h
+include/yaz/retrieval.h
 include/yaz/soap.h
 include/yaz/sortspec.h
 include/yaz/srw.h
@@ -107,6 +112,7 @@ share/aclocal/yaz.m4
 %%DOCSDIR%%/comstack.summary.html
 %%DOCSDIR%%/credits.html
 %%DOCSDIR%%/future.html
+%%DOCSDIR%%/index.html
 %%DOCSDIR%%/indexdata.html
 %%DOCSDIR%%/installation.html
 %%DOCSDIR%%/installation.unix.html
@@ -135,8 +141,6 @@ share/aclocal/yaz.m4
 %%DOCSDIR%%/tools.marc.html
 %%DOCSDIR%%/tools.nmem.html
 %%DOCSDIR%%/tools.oid.html
-%%DOCSDIR%%/yaz.html
-%%DOCSDIR%%/yaz.pdf
 %%DOCSDIR%%/zoom.events.html
 %%DOCSDIR%%/zoom.ext.html
 %%DOCSDIR%%/zoom.html
