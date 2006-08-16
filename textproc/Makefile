@@ -655,6 +655,7 @@
     SUBDIR += p5-YAPE-HTML
     SUBDIR += p5-YAPE-Regex
     SUBDIR += p5-YAPE-Regex-Explain
+    SUBDIR += p5-ack
     SUBDIR += p5-dTemplate
     SUBDIR += p5-libxml
     SUBDIR += p5-podlators

@@ -1,0 +1,13 @@
+ack is a grep-like program with optimizations for searching through large
+trees of source code.
+
+Key improvements include:
+
+    * Defaults to only searching program source code
+    * Defaults to recursively searching directories
+    * Ignores blib directories.
+    * Ignores source code control directories, like CVS, .svn and _darcs.
+    * Uses Perl regular expressions
+    * Highlights matched text
+
+WWW: http://search.cpan.org/dist/ack/
