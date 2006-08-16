@@ -86,7 +86,6 @@ share/locale/ms/LC_MESSAGES/seahorse.mo
 share/locale/nb/LC_MESSAGES/seahorse.mo
 share/locale/ne/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
-share/locale/no/LC_MESSAGES/seahorse.mo
 share/locale/pa/LC_MESSAGES/seahorse.mo
 share/locale/pl/LC_MESSAGES/seahorse.mo
 share/locale/pt/LC_MESSAGES/seahorse.mo
@@ -100,6 +99,7 @@ share/locale/sr/LC_MESSAGES/seahorse.mo
 share/locale/sr@Latn/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
+share/locale/vi/LC_MESSAGES/seahorse.mo
 share/locale/uk/LC_MESSAGES/seahorse.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 share/locale/zh_TW/LC_MESSAGES/seahorse.mo
