@@ -21,4 +21,4 @@ Design choice, not a bug:
   support roaming clients, you may need to have a mechanism to put policy
   for the roaming client after phase 1 finishes.
 
-WWW: http://www.kame.net/ and http://ipsec-tools.sf.net
+WWW: http://ipsec-tools.sourceforge.net/
