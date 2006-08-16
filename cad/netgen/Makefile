@@ -8,7 +8,7 @@
 PORTNAME=	netgen
 PORTVERSION=	4.4
 CATEGORIES=	cad
-MASTER_SITES=	http://www.hpfem.jku.at/netgen/
+MASTER_SITES=	http://www.hpfem.jku.at/cgi/download.cgi?ID=
 DISTNAME=	ngs${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,6 +22,8 @@ USE_TCL_BUILD=	yes
 USE_TK=		yes
 
 ALL_TARGET=	ng
+
+FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 TUTOS=		boxcyl.geo cone.geo cube.geo cubeandspheres.geo cubemcyl.geo		\
 		cubemsphere.geo cylinder.geo cylsphere.geo demo2d.in2d ellipsoid.geo	\
