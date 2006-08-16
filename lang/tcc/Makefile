@@ -25,6 +25,6 @@ CONFLICTS=	TenDRA-4*
 
 ONLY_FOR_ARCHS=	i386
 
-BROKEN=		tcc -run works, but little else
+IGNORE=		is unusable; tcc -run works, but little else
 
 .include <bsd.port.mk>
