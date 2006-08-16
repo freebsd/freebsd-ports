@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	oglext
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.julius.caesar.de/oglext/${PORTVERSION}/
+MASTER_SITES=	http://www.julius.caesar.de/files/oglext/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +16,6 @@ COMMENT=	A library for easier access to OpenGL extensions
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
@@ -33,7 +32,8 @@ TMAKEPATH?=	${LOCALBASE}/share/tmake/freebsd-g++
 # a quick hack to fix dir's permissions
 post-extract:
 	@(for i in 1 2; do \
-		${CHMOD} u+x `${FIND} ${WRKSRC} -type d`; \
+		${FIND} ${WRKSRC} -type d 2>/dev/null \
+			| ${XARGS} ${CHMOD} u+x; \
 	done)
 
 pre-patch:
