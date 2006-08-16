@@ -8,9 +8,10 @@
 PORTNAME=	qca
 PORTVERSION=	1.0
 CATEGORIES=	devel security
-MASTER_SITES=	http://psi.affinix.com/beta/
+MASTER_SITES=	http://delta.affinix.com/download/qca/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/qca/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Straightforward and cross-platform crypto API
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
