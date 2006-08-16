@@ -7,7 +7,7 @@
 
 PORTNAME=	xqf
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,15 +36,15 @@ OPTIONS=	GTK2 "GTK+ 2.0 support" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GTK2)
+.if !defined(WITHOUT_GTK2)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2
 .else
 USE_GNOME+=	gdkpixbuf
 .endif
 
-.if defined(WITH_GEOIP)
-LIB_DEPENDS+=	GeoIP.4:${PORTSDIR}/net/GeoIP
+.if !defined(WITHOUT_GEOIP)
+LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 .else
 CONFIGURE_ARGS+=	--disable-geoip
 .endif
