@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-13-9].* postfix-current-2.* \
