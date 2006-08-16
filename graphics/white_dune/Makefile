@@ -11,7 +11,7 @@ PORTVERSION=	0.28.11
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.csv.ica.uni-stuttgart.de/vrml/dune/
+MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
