@@ -19,7 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
 
-CACHE_DIR?=	/var/db/portindex
+CACHE_DIR?=	${DESTDIR}/var/db/portindex
 CACHE_OWNER?=	root
 CACHE_GROUP?=	operator
 CACHE_MODE?=	0775
@@ -45,8 +45,8 @@ post-install: install-conf install-cache
 
 install-conf:
 	cd ${WRKSRC} ; \
-	${INSTALL_DATA} ${CFG_FILE}.sample ${PREFIX}/etc/${CFG_FILE}.sample
-	cd ${PREFIX}/etc ; \
+	${INSTALL_DATA} ${CFG_FILE}.sample ${TARGETDIR}/etc/${CFG_FILE}.sample
+	cd ${TARGETDIR}/etc ; \
 	if ${TEST} ! -f ${CFG_FILE} ; then \
 	    ${CP} -p ${CFG_FILE}.sample ${CFG_FILE} ; \
 	fi
