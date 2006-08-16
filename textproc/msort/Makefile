@@ -26,7 +26,12 @@ PLIST_FILES=	bin/msg bin/msort
 
 MAN1=		msort.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's,^#include <alloca.h>,,g' ${WRKSRC}/msort.c
+.if ${OSVERSION} < 500035
+BROKEN=		Does not build with older versions of FreeBSD
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
