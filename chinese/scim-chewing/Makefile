@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	scim-chewing
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	chinese
 MASTER_SITES=	http://chewing.csie.net/download/scim/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	SCIM chewing Chinese input methods
 
-BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	chewing.3:${PORTSDIR}/chinese/libchewing
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -25,6 +26,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-D__STDC_ISO_10646__ -I${LOCALBASE}/include"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/1.0.0/,/,g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's,@DATADIRNAME@,share,g' ${WRKSRC}/po/Makefile.in.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
