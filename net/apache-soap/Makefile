@@ -7,30 +7,36 @@
 
 PORTNAME=	apache-soap
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	net java devel
-MASTER_SITES=	http://apache.inspire.net.nz/ws/soap/version-2.3.1/ \
-		http://cottage.quynh-and-brian.org/freebsd/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	ws/soap/version-${PORTVERSION}
 DISTNAME=	soap-bin-${PORTVERSION}
 
 MAINTAINER=	brian@quynh-and-brian.org
 COMMENT=	The Apache SOAP implementation in Java
 
-RUN_DEPENDS=	${LOCALBASE}/share/java/classes/mail.jar:${PORTSDIR}/java/javamail
+RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:${PORTSDIR}/java/javamail
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
 WRKSRC=		${WRKDIR}/soap-2_3_1
 NO_BUILD=	yes
-TARGET_DIR=	${PREFIX}/share/java/${PKGNAME}
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+DATAFILES=	LICENSE README webapps
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${PREFIX}/share/java/classes
-	${MKDIR} ${TARGET_DIR}
-	${CP} -R ${WRKSRC}/* ${TARGET_DIR}
-	${LN} -sf ${TARGET_DIR}/lib/soap.jar ${PREFIX}/share/java/classes/soap.jar
-	${LN} -sf ${TARGET_DIR}/docs ${PREFIX}/share/doc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/soap.jar ${JAVAJARDIR}/
+	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \;
+	cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
+	cd ${WRKSRC}/samples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+.endif
 
 .include <bsd.port.post.mk>
