@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	5.10
+PORTVERSION=	5.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -17,8 +17,6 @@ COMMENT=	Compile regular languages into executable C/C++ code
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
-USE_GCC=	3.2+
-
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -27,6 +25,13 @@ MAKE_ENV=	GPERF="${LOCALBASE}/bin/gperf"
 
 MAN1=		ragel.1 rlcodegen.1
 PLIST_FILES=	bin/ragel bin/rlcodegen
+
+PORTDOCS=	${PORTNAME}-guide-${PORTVERSION}.pdf
+
+.if !defined(NOPORTDOCS)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTDOCS}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -43,5 +48,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rlcodegen/rlcodegen ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/ragel.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/rlcodegen.1 ${MANPREFIX}/man/man1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
