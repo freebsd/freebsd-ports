@@ -948,6 +948,16 @@
 %%GALLERYDIR%%/stamp_preview.php
 %%GALLERYDIR%%/stats-wizard.php
 %%GALLERYDIR%%/stats.php
+%%GALLERYDIR%%/tools/build_manifest.php
+%%GALLERYDIR%%/tools/despam-comments.php
+%%GALLERYDIR%%/tools/find_orphans.php
+%%GALLERYDIR%%/tools/g1-makereport.php
+%%GALLERYDIR%%/tools/g1-report.css
+%%GALLERYDIR%%/tools/g1-report.php
+%%GALLERYDIR%%/tools/include/main.inc
+%%GALLERYDIR%%/tools/include/plugin_rowdata.inc
+%%GALLERYDIR%%/tools/include/row_header.inc
+%%GALLERYDIR%%/tools/validate_albums.php
 %%GALLERYDIR%%/upgrade_album.php
 %%GALLERYDIR%%/upgrade_users.php
 %%GALLERYDIR%%/user_preferences.php
@@ -957,6 +967,8 @@
 %%GALLERYDIR%%/view_photo.php
 %%GALLERYDIR%%/view_photo_properties.php
 %%GALLERYDIR%%/watermark_album.php
+@dirrm %%GALLERYDIR%%/tools/include
+@dirrm %%GALLERYDIR%%/tools
 @dirrm %%GALLERYDIR%%/skins/yellow/images
 @dirrm %%GALLERYDIR%%/skins/yellow/css
 @dirrm %%GALLERYDIR%%/skins/yellow
