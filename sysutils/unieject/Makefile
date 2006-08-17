@@ -17,6 +17,8 @@ LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
 		confuse.0:${PORTSDIR}/devel/libconfuse \
 		popt.0:${PORTSDIR}/devel/popt
 
+BROKEN=		Configure fails
+
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
