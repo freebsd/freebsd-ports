@@ -20,7 +20,27 @@ share/gtags/gtags.conf
 share/gtags/gtags.el
 share/gtags/gtags.pl
 share/gtags/gtags.vim
+share/gtags/icons/back.png
+share/gtags/icons/bottom.png
+share/gtags/icons/c.png
+share/gtags/icons/dir.png
+share/gtags/icons/first.png
+share/gtags/icons/help.png
+share/gtags/icons/index.png
+share/gtags/icons/last.png
+share/gtags/icons/left.png
+share/gtags/icons/n_bottom.png
+share/gtags/icons/n_first.png
+share/gtags/icons/n_last.png
+share/gtags/icons/n_left.png
+share/gtags/icons/n_right.png
+share/gtags/icons/n_top.png
+share/gtags/icons/pglobe.png
+share/gtags/icons/right.png
+share/gtags/icons/text.png
+share/gtags/icons/top.png
 share/gtags/nvi-1.79-gtags.diff
 share/gtags/style.css
+@dirrm share/gtags/icons
 @dirrm share/gtags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
