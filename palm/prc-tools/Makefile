@@ -66,10 +66,6 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		"Does not build on FreeBSD >= 7.0"
-.endif
-
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
 .endif
