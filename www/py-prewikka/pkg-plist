@@ -31,6 +31,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/templates/SensorAlertListing.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/About.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/FilterEdition.py
+%%PYTHON_SITELIBDIR%%/prewikka/templates/FilterListing.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/ErrorTemplate.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/Command.py
 %%PYTHON_SITELIBDIR%%/prewikka/templates/MessageSummary.py
@@ -53,6 +54,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/templates/SensorAlertListing.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/About.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/FilterEdition.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/templates/FilterListing.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/ErrorTemplate.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/Command.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/templates/MessageSummary.pyc
@@ -75,6 +77,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/templates/SensorAlertListing.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/About.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/FilterEdition.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/templates/FilterListing.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/Command.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/ErrorTemplate.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/templates/MessageSummary.pyo
