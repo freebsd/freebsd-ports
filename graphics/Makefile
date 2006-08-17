@@ -277,6 +277,7 @@
     SUBDIR += jgraph
     SUBDIR += jgv
     SUBDIR += jhead
+    SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg
     SUBDIR += jpeg-mmx
