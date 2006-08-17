@@ -7,6 +7,7 @@
 
 PORTNAME=	ingo
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
 		ftp://ftp.planetmirror.com/pub/horde/ingo/		\
@@ -20,7 +21,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	Horde\'s email-filter management application
+COMMENT=	Horde's email-filter management application
 
 #-----------------------------------------------------------------------
 # You may define this option:
