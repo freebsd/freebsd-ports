@@ -1,0 +1,43 @@
+# New ports collection makefile for:	imp-interpreter
+# Date created:		2006-08-15
+# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
+#
+# $MBSDlabs$
+# $FreeBSD$
+#
+
+PORTNAME=	IMP
+PORTVERSION=	1.0.6
+CATEGORIES=	lang
+MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
+
+MAINTAINER=	ssedov@mbsd.msk.ru
+COMMENT=	Monadic interpreter of a simple imperative language
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_OCAML=	yes
+NO_OCAML_RUNDEPENDS=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/monad
+ALL_TARGET=	nc
+
+PLIST_FILES=	bin/IMP
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README
+.endif
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/main ${TARGETDIR}/bin/IMP
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../,} ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>

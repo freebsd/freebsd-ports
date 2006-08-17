@@ -1,0 +1,14 @@
+IMP is a monadic style implementation of the semantics of the (very simple)
+language IMP, "plain" the implementation with explicit passing of state.
+                                                                                
+The semantics of the IMP-language is presented in the book:
+
+  "The Formal Semantics of Programming Languages" by Glynn Winskel
+  (1993, The MIT Press).
+
+For more details on monads, see Philip Wadler's page on:
+
+ http://cm.bell-labs.com/cm/cs/who/wadler/topics/monads.html#combining-monads
+
+Author:	Markus Mottl <markus.mottl@gmail.com>
+WWW:	http://www.ocaml.info/home/ocaml_sources.html
