@@ -22,6 +22,8 @@ DISTFILES=	#
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Duke Nukem 3D Data
 
+BROKEN=		Does not build
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

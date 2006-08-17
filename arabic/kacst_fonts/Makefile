@@ -17,6 +17,8 @@ COMMENT=	Truetype Arabic fonts created by KACST
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
+BROKEN=		Does not build
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 WRKSRC=	${WRKDIR}/KacstArabicFonts-${PORTVERSION}

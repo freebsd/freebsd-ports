@@ -16,6 +16,8 @@ COMMENT=	Standard set of Unicode Persian fonts
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
+BROKEN=		Does not build
+
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
