@@ -24,39 +24,45 @@ CONFIGURE_TARGET=	--build ${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	YES
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
 MAN1=		gpg.1 gpgv.1 gpg.ru.1
 MAN7=		gnupg.7
 INFO=		gpg gpgv
 
+PORTDOCS=	*
+
 OPTIONS=	LDAP "LDAP keyserver interface" off \
 		LIBICONV "use libiconv" off \
 		SUID_GPG "install GPG with suid" off \
-		NOPORTDOCS "without port docs" off
+		NLS "Native Language Support" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
+
 .if defined(WITH_LIBUSB)
 CONFIGURE_ARGS+=	--with-libusb=${LOCALBASE}
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .else
 CONFIGURE_ARGS+=	--without-libusb
 .endif
+
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 PLIST_SUB+=	WITH_LDAP=""
+CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 .else
 PLIST_SUB+=	WITH_LDAP="@comment "
 CONFIGURE_ARGS+=	--disable-ldap
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	YES
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-install:

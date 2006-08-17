@@ -10,21 +10,6 @@ libexec/gnupg/gpgkeys_hkp
 %%DATADIR%%/FAQ
 %%DATADIR%%/faq.html
 %%DATADIR%%/options.skel
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/DETAILS
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/OpenPGP
-%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/PROJECTS
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/VERSION
 %%NLS%%share/locale/be/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg.mo
@@ -77,4 +62,3 @@ libexec/gnupg/gpgkeys_hkp
 @dirrmtry share/locale/sk
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
-@dirrm %%DOCSDIR%%
