@@ -7,7 +7,7 @@
 
 PORTNAME=	netmond
 PORTVERSION=	2.2b6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.risp.ru/pub/RinetSoftware/
 DISTNAME=	netmond-2.2-b6
