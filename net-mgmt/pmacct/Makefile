@@ -50,7 +50,7 @@ PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+USE_SQLITE=	yes
 CONFIGURE_ARGS+=--enable-sqlite3 \
 		--with-sqlite3-includes=${LOCALBASE}/include
 .else
