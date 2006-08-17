@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Yahoo! Messenger - Instant messaging client
 
-BROKEN=		Dynamically linked binary linked to old version of gtkhtml no longer in ports
+IGNORE=		is a dynamically linked binary linked to old version of gtkhtml no longer in ports
 
 USE_GNOME=	gtk12 gdkpixbuf
 NO_BUILD=	yes
