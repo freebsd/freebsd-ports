@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
 DISTNAME=	SDL_gfx-${PORTVERSION}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 USE_SDL=	sdl
