@@ -7,14 +7,14 @@
 
 PORTNAME=	lha
 PORTVERSION=	1.14i
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP} \
 		http://qgpop.dl.sourceforge.jp/%SUBDIR%/ \
 		http://osdn.dl.sourceforge.jp/%SUBDIR%/
-MASTER_SITE_SUBDIR=	lha/6052
+MASTER_SITE_SUBDIR=	lha/16650
 PKGNAMESUFFIX=	-ac${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ac20030921
+DISTNAME=	${PORTNAME}-${PORTVERSION}-ac20050924
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
