@@ -1,0 +1,10 @@
+Bruteblock allows system administrators to block various bruteforce
+attacks on UNIX services. The program analyzes system logs and adds
+attacker's IP address into ipfw2 table effectively blocking them.
+Addresses are automatically removed from the table after specified
+amount of time. Bruteblock uses regular expressions to parse logs,
+which provides flexibility allowing it to be used with almost any
+network service.  Bruteblock is written in pure C, doesn't use any
+external programs and work with ipfw2 tables via raw sockets API.
+
+WWW: http://samm.kiev.ua/bruteblock/

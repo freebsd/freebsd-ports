@@ -39,6 +39,7 @@
     SUBDIR += borzoi
     SUBDIR += botan
     SUBDIR += bro
+    SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
     SUBDIR += bsp_upektfmess
