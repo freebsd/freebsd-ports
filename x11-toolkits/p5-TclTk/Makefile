@@ -22,6 +22,13 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Tcl::Tk.3
 
+do-configure:
+	-@cd ${CONFIGURE_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} \
+		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+	@cd ${CONFIGURE_WRKSRC} && \
+		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601 # lang/p5-Tcl does
