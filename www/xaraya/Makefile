@@ -8,11 +8,11 @@
 # extension would be used by default.
 
 PORTNAME=	xaraya
-PORTVERSION=	1.0.0r3
+PORTVERSION=	1.1.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-1.0.0-rc3-base
+DISTNAME=	${PORTNAME}-${PORTVERSION}-base
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework to create fully dynamic Content Mangement Solutions
@@ -22,9 +22,8 @@ USE_PHP=	pgsql
 .else
 USE_PHP=	mysql
 .endif
-IGNORE_WITH_PHP=	5
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0.0-rc3
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 # May user to override this
 XARAYADIR?=	www/xaraya
@@ -36,15 +35,13 @@ do-install:
 	${MKDIR} ${PREFIX}/${XARAYADIR}
 	${CP} -r ${WRKSRC}/html/* ${PREFIX}/${XARAYADIR}
 .if !defined(NOTOOLS)
-	${MKDIR} ${DATADIR}
-	${CP} -r ${WRKSRC}/tools ${DATADIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} -r ${WRKSRC}/tools/* ${EXAMPLESDIR}
 .endif
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${XARAYADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}
-	${CP} ${WRKSRC}/INSTALL.txt ${WRKSRC}/LICENSE.txt \
-		${WRKSRC}/CREDITS.txt ${DOCSDIR}
 .endif
 
 # Create plist
@@ -69,9 +66,9 @@ post-install:
 		${SORT} -r >> ${TMPPLIST}
 .endif
 .if !defined(NOTOOLS)
-	@${FIND} ${DATADIR} ! -type d | ${SED} -e \
+	@${FIND} ${EXAMPLESDIR} ! -type d | ${SED} -e \
 		's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SED} -e \
+	@${FIND} ${EXAMPLESDIR} -type d | ${SED} -e \
 		's,^${PREFIX}/,@dirrm ,' | \
 		${SORT} -r >> ${TMPPLIST}
 .endif
