@@ -17,6 +17,8 @@ COMMENT=	Data files for the netpanzer game
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
+BROKEN=		Incorrect pkg-plist
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libphysfs=${LOCALBASE}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
