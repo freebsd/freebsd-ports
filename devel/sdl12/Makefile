@@ -32,7 +32,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+.else
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=--disable-video-x11
+.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
