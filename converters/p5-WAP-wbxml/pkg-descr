@@ -1,0 +1,9 @@
+WAP::wbxml module implements binarisation of XML file according the
+specification:
+
+ * WAP - Wireless Application Protocol / Binary XML Content Format
+   Specification / Version 1.3 WBXML (15th May 2000 Approved)
+
+The binary format was designed to preserve the element structure of XML.
+
+WWW: http://search.cpan.org/dist/WAP-wbxml/
