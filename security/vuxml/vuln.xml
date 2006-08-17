@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e2e8d374-2e40-11db-b683-0008743bf21a">
+    <topic>horde -- Phishing and Cross-Site Scripting Vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>horde</name>
+        <range><le>3.1.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/21500/">
+	  <p>Some vulnerabilities have been reported in Horde, which
+	    can be exploited by malicious people to conduct phishing
+	    and cross-site scripting attacks.
+	  </p>
+	  <ol>
+	    <li>Input passed to the "url" parameter in index.php isn't
+	      properly verified before it is being used to include an
+	      arbitrary web site in a frameset. This can e.g. be
+	      exploited to trick a user into believing certain
+	      malicious content is served from a trusted web site.</li>
+	    <li>Some unspecified input passed in index.php isn't
+	      properly sanitised before being returned to the user.
+	      This can be exploited to execute arbitrary HTML and
+	      script code in a user's browser session in context of an
+	      affected site.</li>
+	  </ol>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/21500/</url>
+      <url>http://lists.horde.org/archives/announce/2006/000292.html</url>
+    </references>
+    <dates>
+      <discovery>2006-08-17</discovery>
+      <entry>2006-08-17</entry>
+    </dates>
+  </vuln>
   <vuln vid="5039ae61-2c9f-11db-8401-000ae42e9b93">
     <topic>globus -- Multiple tmpfile races</topic>
     <affects>
