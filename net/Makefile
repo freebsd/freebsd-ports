@@ -286,7 +286,6 @@
     SUBDIR += lyntin
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
-    SUBDIR += magictun
     SUBDIR += mars_nwe
     SUBDIR += mcast-tools
     SUBDIR += merlinmon
