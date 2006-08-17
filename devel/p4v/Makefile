@@ -6,19 +6,17 @@
 #
 
 PORTNAME=		p4v
-PORTVERSION=		2005.1.85663
+PORTVERSION=		2005.2.94595
 CATEGORIES=		devel
-MASTER_SITES=		\
-	http://www.perforce.com/downloads/perforce/r05.1/bin.freebsd4/ \
-	ftp://ftp.perforce.com/pub/perforce/r05.1/bin.freebsd4/
+MASTER_SITES=		ftp://ftp.perforce.com/pub/perforce/r05.2/bin.freebsd4/
 DISTNAME=		${PORTNAME}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		bms@FreeBSD.org
 COMMENT=		Visual client for Perforce SCM
 
-NO_CDROM=		"Binary redistribution restrictions in effect"
-RESTRICTED=		"${NO_CDROM}"
+NO_CDROM=		Binary redistribution restrictions in effect
+RESTRICTED=		${NO_CDROM}
 
 ONLY_FOR_ARCHS=		i386
 NO_BUILD=		yes
