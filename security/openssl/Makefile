@@ -924,6 +924,10 @@ PLIST_SUB+=	SHLIBVER=${OPENSSL_SHLIBVER}
 INSTALLS_SHLIB=	yes
 .endif
 
+.if defined(WITH_OPENSSL_COMPRESSION)
+EXTRACONFIGURE+=	zlib
+.endif
+
 .if defined(OPENSSL_OVERWRITE_BASE)
 .if exists(/lib/libcrypto.so) || exists(/lib/libcrypto.so.3)
 pre-everything::
