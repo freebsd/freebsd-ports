@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=	3.60.b7
-PORTEPOCH=	3
+PORTVERSION=	3.60
+PORTEPOCH=	4
 CATEGORIES+=	archivers
 MASTER_SITES=	http://files1.rarlab.com/rar/ \
 		http://files2.rarlab.com/rar/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://files1.rarlab.com/rar/ \
 		http://files4.rarlab.com/rar/ \
 		http://files5.rarlab.com/rar/ \
 		http://files6.rarlab.com/rar/
-DISTNAME=	unrarsrc-3.6.7
+DISTNAME=	unrarsrc-3.6.8
 
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
@@ -32,7 +32,7 @@ post-patch:
 		${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
