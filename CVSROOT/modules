@@ -935,6 +935,7 @@ british-ispell	ports/textproc/british-ispell
 brlcad		ports/cad/brlcad
 bro		ports/security/bro
 brs		ports/misc/brs
+bruteblock	ports/security/bruteblock
 brutecopy	ports/net/brutecopy
 bruteforceblocker	ports/security/bruteforceblocker
 bsd-airtools	ports/net-mgmt/bsd-airtools
