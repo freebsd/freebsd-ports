@@ -326,7 +326,6 @@
 %%BLOGDIR%%/extensions/snippets/snippet_textareatools.php
 %%BLOGDIR%%/pivot/archive.php
 %%BLOGDIR%%/pivot/archive_dynamic.php
-%%BLOGDIR%%/pivot/archive_list.php
 %%BLOGDIR%%/pivot/commentsfeed.php
 %%BLOGDIR%%/pivot/default-data/db/blocked_ips.txt.php
 %%BLOGDIR%%/pivot/default-data/db/ignored_domains.txt.php
