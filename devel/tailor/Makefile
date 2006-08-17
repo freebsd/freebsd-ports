@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tailor
-PORTVERSION=	0.9.23
+PORTVERSION=	0.9.26
 CATEGORIES=	devel python
 MASTER_SITES=	http://darcs.arstecnica.it/
 
@@ -32,6 +32,7 @@ x-generate-plist:
 	| ${SED} -E \
 		's,.*share/nls/.+$$,,g \
 		;s,${PYTHON_SITELIBDIR:S,^${PYTHONBASE}/,,},%%PYTHON_SITELIBDIR%%,g \
+		;s,.*${DOCSDIR:S,${PREFIX}/,,}.*,,g \
 		;s,@dirrm (%%PYTHON_SITELIBDIR%%|${PYTHON_LIBDIR:S,${PYTHONBASE}/,,})$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
