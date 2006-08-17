@@ -9,7 +9,7 @@ CATEGORIES=	chinese editors
 
 PATCH_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/
-PATCHFILES=	zh-joe-3.3.diff
+PATCHFILES=	zh-joe-3.5.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	chinsan.tw@gmail.com
