@@ -17,7 +17,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	voland@catpipe.net
 COMMENT=	AF's backup system
 
-BROKEN=		Uses unregistered uid that conflicts with other ports
+IGNORE=		Uses unregistered uid that conflicts with other ports
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-10-17
 
 WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
