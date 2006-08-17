@@ -9774,6 +9774,7 @@ p5-Set-Window	ports/math/p5-Set-Window
 p5-Shape	ports/devel/p5-Shape
 p5-Shell-Base	ports/devel/p5-Shell-Base
 p5-Shell-Parser	ports/devel/p5-Shell-Parser
+p5-Shell-Source	ports/devel/p5-Shell-Source
 p5-Shout	ports/audio/p5-Shout
 p5-Sledge	ports/www/p5-Sledge
 p5-Sledge-Plugin-CacheContent	ports/www/p5-Sledge-Plugin-CacheContent
