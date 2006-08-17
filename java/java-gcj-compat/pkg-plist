@@ -1,3 +1,4 @@
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/java"
 bin/rebuild-gcj-db
 bin/aot-compile
 bin/aot-compile-rpm
@@ -16,11 +17,12 @@ lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/rmic
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/javah
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/javac
 lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/rmiregistry
-lib/jvm/java-gcj
+lib/jvm/java-gcj41
 %%PYTHON_SITELIBDIR%%/aotcompile.py
 %%PYTHON_SITELIBDIR%%/aotcompile.pyc
 %%PYTHON_SITELIBDIR%%/classfile.py
 %%PYTHON_SITELIBDIR%%/classfile.pyc
+@exec %%LOCALBASE%%/bin/registervm "%D/lib/jvm/java-1.4.2-gcj41-1.4.2.0/bin/java # GCJ41"
 @dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/bin
 @dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib/%%ARCH%%
 @dirrm lib/jvm/java-1.4.2-gcj41-1.4.2.0/jre/lib
