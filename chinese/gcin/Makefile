@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
 		http://edt1023.sayya.org/misc/:boshiamy
-DISTFILES=	gcin-1.2.1.tar.bz2:main \
+DISTFILES=	gcin-${PORTVERSION}.tar.bz2:main \
 		noseeing.tar.gz:boshiamy
-EXTRACT_ONLY=	gcin-1.2.1.tar.bz2
+EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A traditional chinese input utility in X
@@ -24,7 +24,7 @@ USE_GNOME=	gtk20
 USE_GMAKE=	YES
 USE_GCC=	3.4+
 INSTALLS_ICONS=	YES
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	off
 IGNOREFILES=	noseeing.tar.gz
 

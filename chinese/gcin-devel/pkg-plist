@@ -5,6 +5,7 @@ bin/juyin-learn
 bin/phoa2d
 bin/phod2a
 bin/sim2trad
+bin/trad2sim
 bin/tsa2d
 bin/tsd2a
 bin/tslearn
