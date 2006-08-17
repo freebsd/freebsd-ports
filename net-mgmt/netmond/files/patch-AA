@@ -1130,4 +1130,13 @@
 +#define inascii(x)	(0255&(x))
  #define iswordc(x) 	chrtyp[inascii(x)]
  #define isinset(x, y) 	((x)[((y)&BLKIND)>>3] & (1<<((y)&BITIND)))
+
+@@ -596,7 +596,7 @@
  
+ #define ANYSKIP	2 	/* CLO ANY END ...	   */
+ #define CHRSKIP	3	/* CLO CHR chr END ...	   */
+-#define CCLSKIP 18	/* CLO CCL 16bytes END ... */
++#define CCLSKIP BITBLK+2	/* CLO CCL 32bytes END ... */
+ 
+ static char *
+ pmatch(prog, lp, ap)
