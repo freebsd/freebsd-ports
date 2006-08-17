@@ -331,7 +331,6 @@
 %%HORDEDIR%%/lib/Horde/Text/Filter/text2html.php
 %%HORDEDIR%%/lib/Horde/Text/Filter/words.php
 %%HORDEDIR%%/lib/Horde/Text/Filter/xss.php
-%%HORDEDIR%%/lib/Horde/Timer.php
 %%HORDEDIR%%/lib/Horde/Token.php
 %%HORDEDIR%%/lib/Horde/Token/file.php
 %%HORDEDIR%%/lib/Horde/Token/sql.php
@@ -1316,6 +1315,7 @@
 %%HORDEDIR%%/themes/graphics/mime/vcard.png
 %%HORDEDIR%%/themes/graphics/mime/video.png
 %%HORDEDIR%%/themes/graphics/mime/xml.png
+%%HORDEDIR%%/themes/graphics/mobile.png
 %%HORDEDIR%%/themes/graphics/mobile/bottom.jpg
 %%HORDEDIR%%/themes/graphics/mobile/display.jpg
 %%HORDEDIR%%/themes/graphics/mobile/left.jpg
