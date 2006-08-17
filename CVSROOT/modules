@@ -4346,6 +4346,7 @@ imlib2		ports/graphics/imlib2
 imlib2_loaders	ports/graphics/imlib2_loaders
 imm		ports/mbone/imm
 imp		ports/mail/imp
+imp-interpreter	ports/lang/imp-interpreter
 impact		ports/cad/impact
 impress		ports/editors/impress
 imwheel		ports/x11/imwheel
