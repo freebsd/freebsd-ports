@@ -36,6 +36,7 @@
     SUBDIR += lbrate
     SUBDIR += lcab
     SUBDIR += lha
+    SUBDIR += lha-ac
     SUBDIR += libarc
     SUBDIR += libarchive
     SUBDIR += libcabinet
