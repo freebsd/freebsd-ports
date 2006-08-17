@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	blobandconquer
-DISTVERSION=	0.2-1
+DISTVERSION=	0.3-1
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
 DISTNAME=	blobAndConquer-${DISTVERSION}
 
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A somewhat violent 3D action game
-
-BROKEN=		does not fetch
 
 FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}
 

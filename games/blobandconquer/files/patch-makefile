@@ -1,6 +1,6 @@
---- makefile.orig	Mon Apr  3 06:09:24 2006
-+++ makefile	Mon Apr  3 06:09:45 2006
-@@ -12,16 +12,16 @@
+--- makefile.orig	Thu Aug 17 07:51:40 2006
++++ makefile	Thu Aug 17 07:55:36 2006
+@@ -13,16 +13,16 @@
  
  PREFIX=$(DESTDIR)/usr
  BINDIR = $(PREFIX)/games/
@@ -12,18 +12,18 @@
  KDE = $(PREFIX)/share/applnk/Games/Arcade/
  GNOME = $(PREFIX)/share/gnome/apps/Games/
  
--CFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
+-CFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
 -CFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall -pedantic
 -LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
 -LIBS = -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
-+CXXFLAGS += -I$(X11BASE)/include `$(SDL_CONFIG) --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK)
++CXXFLAGS += -I$(X11BASE)/include `$(SDL_CONFIG) --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
 +CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall
 +LIBPATH = -L$(X11BASE)/lib
 +LIBS = -lGL -lGLU `$(SDL_CONFIG) --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
  
  # Yes, it means compiling is a little slower... but it's less hassle
  SEARCHPATH = src/ src/3d/ src/common/ src/gui/ src/util/ src/game/ src/system/
-@@ -75,12 +75,12 @@
+@@ -75,7 +75,7 @@
  all: $(PROG) $(PAK)
  
  %.o: %.cpp %.h defines.h defs.h headers.h
@@ -32,9 +32,3 @@
  
  # linking the program.
  $(PROG): $(OBJS) main.o 
- 	$(CXX) $(LIBPATH) $(OBJS) main.o -o $(PROG) $(LIBS)
--	
-+
- $(PAK): $(PAKOBJS)
- 	$(CXX) $(LIBPATH) $(LIBS) $(PAKOBJS) -o pak
- 
