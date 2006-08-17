@@ -7,6 +7,7 @@
 
 PORTNAME=	pyaim
 PORTVERSION=	0.7d
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/${PORTNAME}-t/
 PKGNAMEPREFIX=	jabber-
@@ -17,15 +18,15 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	takeda@takeda.tk
 COMMENT=	Python AIM-Transport for Jabber
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
-
-OPTIONS=	EJABBERD "Use transport with ejabberd" off
+OPTIONS=	EJABBERD "Use transport with ejabberd" off \
+		TWISTED1 "Use old py-twisted 1.x" off
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	jabber-pyaim-transport.sh
+LOCAL_PYTHON=	${PYTHON_CMD}
 
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+SUB_LIST=	PYTHON_CMD=${LOCAL_PYTHON}
 
 INST_DIR=	${PREFIX}/lib/jabber/${PORTNAME}
 
@@ -41,6 +42,14 @@ JABBER_USER?=	jabber
 SUB_LIST+=	JABBER_REQUIRE=jabberd
 .endif
 
+.if defined(WITH_TWISTED1)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore \
+		${PYTHON_SITELIBDIR}/twisted/web/__init__.py:${PORTSDIR}/www/py-twistedWeb \
+		${PYTHON_SITELIBDIR}/twisted/words/__init__.py:${PORTSDIR}/net-im/py-twistedWords
+.endif
+
 SUB_LIST+=	JABBER_USER=${JABBER_USER}
 
 post-patch:
@@ -52,7 +61,7 @@ post-patch:
 		${WRKSRC}/src/config.py
 	@${REINPLACE_CMD} -i "" 's|"config\.xml"|"${PREFIX}/etc/jabber-pyaim.xml"|' \
 		${WRKSRC}/src/main.py
-	@${REINPLACE_CMD} -i "" 's|/usr/bin/env python|${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -i "" 's|#!.*$$|#!${LOCAL_PYTHON}|' \
 		${WRKSRC}/PyAIMt.py
 
 do-install:
@@ -68,8 +77,8 @@ do-install:
 .for portdoc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${portdoc} ${DOCSDIR}/
 .endfor
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${INST_DIR}/src
 .endif
+	${LOCAL_PYTHON} ${PYTHON_LIBDIR}/compileall.py ${INST_DIR}/src
 
 post-install:
 	@${ECHO_CMD}
