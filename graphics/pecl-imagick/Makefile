@@ -17,6 +17,8 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to manipulate images
 
+BROKEN=		Does not build
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
