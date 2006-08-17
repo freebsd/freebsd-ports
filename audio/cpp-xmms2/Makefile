@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 MASTERDIR=	${.CURDIR}/../xmms2
 USE_LDCONFIG=	yes
 
-PLIST_FILE=		${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist
 
 SCONS_TARGET=	src/clients/lib/xmmsclient++/libxmmsclient++.so \
 		src/clients/lib/xmmsclient++-glib//libxmmsclient++-glib.so
