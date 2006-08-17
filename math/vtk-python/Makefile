@@ -14,6 +14,8 @@ LIB_DEPENDS=	vtkCommon.${LIBVER}:${PORTSDIR}/math/vtk \
 		tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
 
+BROKEN=		Does not build
+
 MASTERDIR=	${.CURDIR}/../vtk
 
 WRAP=		Python
