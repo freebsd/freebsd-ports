@@ -6,29 +6,31 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pupnp
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Universal Plug and Play Software Development Kit
 
 CONFLICTS=	upnp-1.0.*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH}==amd64
-BROKEN=does not compile on amd64
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.X
 .endif
 
+NOT_FOR_ARCH=	amd64 sparc64
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 NOT_FOR_ARCHS=	sparc64
 USE_LDCONFIG=	yes
+CONFIGURE_ENV+=	LIBS="-llwres -lcompat"
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--without-docdir
