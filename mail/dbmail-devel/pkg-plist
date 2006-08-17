@@ -40,19 +40,15 @@ sbin/dbmail-users
 sbin/dbmail-util
 %%SIEVE%%sbin/dbmail-sievecmd
 %%SIEVE%%sbin/dbmail-timsieved
-@exec mkdir -p %D/share/%%PORTNAME%%
-%%MYSQL%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/mysql
-%%MYSQL%%share/%%PORTNAME%%/mysql/create_tables.mysql
-%%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
-%%MYSQL%%share/%%PORTNAME%%/mysql/migrate_from_2.0_to_2.1.mysql
-%%MYSQL%%share/%%PORTNAME%%/mysql/update_headervalue_01.mysql
-%%MYSQL%%@dirrm share/%%PORTNAME%%/mysql
-%%PGSQL%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/postgresql
-%%PGSQL%%share/%%PORTNAME%%/postgresql/create_tables.pgsql
-%%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_1.x_to_2.0.pgsql
-%%PGSQL%%share/%%PORTNAME%%/postgresql/migrate_from_2.0_to_2.1.pgsql
-%%PGSQL%%@dirrm share/%%PORTNAME%%/postgresql
-%%SQLITE%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/sqlite
-%%SQLITE%%share/%%PORTNAME%%/sqlite/create_tables.sqlite
-%%SQLITE%%@dirrm share/%%PORTNAME%%/sqlite
-@dirrm share/%%PORTNAME%%
+%%MYSQL%%%%DATADIR%%/mysql/create_tables.mysql
+%%MYSQL%%%%DATADIR%%/mysql/migrate_from_1.x_to_2.0_innodb.mysql
+%%MYSQL%%%%DATADIR%%/mysql/migrate_from_2.0_to_2.1.mysql
+%%MYSQL%%%%DATADIR%%/mysql/update_headervalue_01.mysql
+%%MYSQL%%@dirrm %%DATADIR%%/mysql
+%%PGSQL%%%%DATADIR%%/postgresql/create_tables.pgsql
+%%PGSQL%%%%DATADIR%%/postgresql/migrate_from_1.x_to_2.0.pgsql
+%%PGSQL%%%%DATADIR%%/postgresql/migrate_from_2.0_to_2.1.pgsql
+%%PGSQL%%@dirrm %%DATADIR%%/postgresql
+%%SQLITE%%%%DATADIR%%/sqlite/create_tables.sqlite
+%%SQLITE%%@dirrm %%DATADIR%%/sqlite
+@dirrm %%DATADIR%%
