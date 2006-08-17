@@ -14,7 +14,6 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
-		bison:${PORTSDIR}/devel/bison2 \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 QMAKE=		${LOCALBASE}/bin/qmake
