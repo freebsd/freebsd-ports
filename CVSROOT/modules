@@ -5122,6 +5122,7 @@ jomp		ports/java/jomp
 jools		ports/games/jools
 joomla		ports/www/joomla
 jove		ports/editors/jove
+jp2a		ports/graphics/jp2a
 jpatch		ports/graphics/jpatch
 jpeg		ports/graphics/jpeg
 jpeg-mmx	ports/graphics/jpeg-mmx
