@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	libsieve
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	A library for parsing, sorting and filtering mail
 
+BROKEN=		Does not compile
+
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/src
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
