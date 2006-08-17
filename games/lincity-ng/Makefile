@@ -17,6 +17,8 @@ COMMENT=	Improved rich city simulation game for X
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 USE_GCC=	3.2+
 USE_SDL=	sdl mixer image ttf gfx
