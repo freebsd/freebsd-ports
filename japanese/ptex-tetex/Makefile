@@ -6,7 +6,7 @@
 
 PORTNAME=	ptex-tetex
 PORTVERSION=	3.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
@@ -96,7 +96,7 @@ SUB_LIST=	PREFIX=${PREFIX} \
 INSTDIRS=	doc fonts jbibtex ptex
 DOC_FILES=	COPYRIGHT COPYRIGHT.jis Changes.txt README.txt
 
-MAPDIR=		${TEXMFDIR}/dvips/ptex
+MAPDIR=		${TEXMFDIR}/fonts/map/ptex/dvips
 VFDIR=		${TEXMFDIR}/fonts/vf/ptex
 TFMDIR=		${TEXMFDIR}/fonts/tfm/ptex
 
@@ -151,7 +151,11 @@ post-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKDIR}/updmap-ptex ${PREFIX}/${UPDMAPDIR}/updmap.ptex
 	${MKTEXLSR}
-	${SH} ${UPDMAP_SYS}
+	if ${PREFIX}/bin/kpsewhich -format=map psfonts_jp.map > /dev/null 2>&1; then \
+		${SH} ${UPDMAP_SYS} --enable Map=psfonts_jp.map; \
+	else \
+		${SH} ${UPDMAP_SYS}; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

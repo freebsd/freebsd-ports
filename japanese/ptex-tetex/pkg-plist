@@ -315,8 +315,8 @@ bin/tftopl-ptex
 %%TEXMFDIR%%/ptex/platex/config/hyphen.cfg
 %%TEXMFDIR%%/ptex/platex/config/platex.ini
 @dirrm %%TEXMFDIR%%/ptex/platex/config
-%%TEXMFDIR%%/dvips/ptex/jis.map
-%%TEXMFDIR%%/dvips/ptex/morisawa.map
+%%MAPDIR%%/jis.map
+%%MAPDIR%%/morisawa.map
 @dirrmtry %%TEXMFDIR%%/dvips/ptex
 @exec /bin/mkdir -p %D/%%TEXMFCONFIGDIR%%/dvips/ptex
 @dirrmtry %%TEXMFCONFIGDIR%%/dvips/ptex
