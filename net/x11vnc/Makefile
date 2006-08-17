@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	x11vnc
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=libvncserver
 
 MAINTAINER=	lorenl@north-winds.org
 COMMENT=	VNC server for use with real X displays
-
-FORBIDDEN=	Remote access: http://VuXML.FreeBSD.org/9dda3ff1-2b02-11db-a6e2-000e0c2e438a.html
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
