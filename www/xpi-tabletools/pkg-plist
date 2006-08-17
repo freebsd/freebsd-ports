@@ -34,6 +34,21 @@
 %%XPI_XPIDIR%%/chrome/locale/tabletools/hr-HR/tabletools.properties
 %%XPI_XPIDIR%%/chrome/locale/tabletools/hr-HR/tabletoolsOptions.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/hr-HR/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletoolsOverlay.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/contents.rdf
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/tabletools.properties
@@ -54,6 +69,9 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/fr-FR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/hr-HR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools
 @dirrm %%XPI_XPIDIR%%/chrome/locale
