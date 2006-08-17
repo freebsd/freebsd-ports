@@ -32,13 +32,7 @@ BROKEN=		Configure fails on amd64
 RTEMS_ARCH?=	i386
 LCLTARGET=	${RTEMS_ARCH}-rtems
 
-.if ${RTEMS_ARCH} == m68k && ${ARCH} != "i386"
-BROKEN=		Internal compiler error during build on !i386
-.else
-BROKEN=		Does not compile on i386
-.endif
-
-.if ${RTEMS_ARCH} == sh
+.if ${RTEMS_ARCH} == m68k || ${RTEMS_ARCH} == sh
 BROKEN=		Does not build
 .endif
 
