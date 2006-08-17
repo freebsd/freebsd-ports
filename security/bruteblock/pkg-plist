@@ -1,0 +1,6 @@
+sbin/bruteblock
+sbin/bruteblockd
+@unexec if cmp -s %D/etc/bruteblock/ssh.conf.dist %D/etc/bruteblock/ssh.conf; then rm -f %D/etc/bruteblock/ssh.conf; fi
+etc/bruteblock/ssh.conf.dist
+@exec if [ ! -f %D/etc/bruteblock/ssh.conf ]; then cp -p %D/%F %B/bruteblock/ssh.conf; fi
+@dirrmtry etc/bruteblock
