@@ -14,6 +14,8 @@ DISTNAME=	nfbtr${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII text to Grade Two braille translator
 
+BROKEN=		Unfetchable
+
 RESTRICTED=	"Unclear copyright status"
 
 USE_ZIP=		yes
