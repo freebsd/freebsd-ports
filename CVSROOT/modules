@@ -5732,6 +5732,7 @@ lgeneral	ports/games/lgeneral
 lgeneral-data	ports/games/lgeneral-data
 lgrind		ports/print/lgrind
 lha		ports/archivers/lha
+lha-ac		ports/archivers/lha-ac
 lianliankan	ports/games/lianliankan
 lib3ds		ports/graphics/lib3ds
 lib765		ports/emulators/lib765
