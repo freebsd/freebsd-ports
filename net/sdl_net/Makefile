@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small sample cross-platform networking library
 
 USE_SDL=	sdl

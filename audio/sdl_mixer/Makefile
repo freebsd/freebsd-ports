@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library
 
 USE_SDL=	sdl
