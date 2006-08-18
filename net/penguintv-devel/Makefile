@@ -6,6 +6,7 @@
 
 PORTNAME=	PenguinTV
 PORTVERSION=	1.93
+PORTREVISION=	1
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -23,12 +24,14 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+IGNORE=		has been overtaken by the non-devel version
+
 OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF
 
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
 
-CONFLICTS=	PenguinTV-1.*
+CONFLICTS=	PenguinTV-[0-9]*
 
 .include <bsd.port.pre.mk>
 
