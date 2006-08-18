@@ -12,7 +12,7 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/IDS
 
-MAINTAINER=	dannyboy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays information in real time about users currently logged on
 
 .include <bsd.port.pre.mk>

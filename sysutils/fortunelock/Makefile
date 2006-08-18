@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dannyboy
 
-MAINTAINER=	dannyboy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Locks a terminal while showing fortunes
 
 USE_BZIP2=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
-MAINTAINER=	dannyboy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple 'w'-like program; displays connection type and login shell PID
 
 PLIST_FILES=	bin/yawho
