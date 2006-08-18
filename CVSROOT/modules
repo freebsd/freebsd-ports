@@ -6543,7 +6543,6 @@ magiccube4d	ports/games/magiccube4d
 magicfilter	ports/print/magicfilter
 magicpoint	ports/misc/magicpoint
 magicrescue	ports/sysutils/magicrescue
-magictun	ports/net/magictun
 mahjong		ports/games/mahjong
 mahogany	ports/mail/mahogany
 mail-notification	ports/mail/mail-notification
