@@ -1922,8 +1922,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/trampver.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/webjump.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/webjump.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/zone-mode.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/zone-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/newcomment.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/newcomment.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/novice.el.gz
@@ -2602,44 +2600,47 @@ var/games/emacs/tetris-scores
 @dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VER%%
 @dirrmtry libexec/emacs
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gud
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/icons
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/mail
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget
-@dirrm %%DATADIR%%/%%EMACS_VER%%/etc
-@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/ja-dic
-@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/quail
-@dirrm %%DATADIR%%/%%EMACS_VER%%/leim
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calc
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calendar
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emulation
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/erc
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/eshell
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/gnus
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/international
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/language
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mail
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/net
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/play
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/term
-@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/url
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/term
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/play
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/net
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/mail
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/language
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/international
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/gnus
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/eshell
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/erc
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emulation
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calendar
+@dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/calc
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp
-@dirrmtry %%DATADIR%%/site-lisp
+@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/quail
+@dirrm %%DATADIR%%/%%EMACS_VER%%/leim/ja-dic
+@dirrm %%DATADIR%%/%%EMACS_VER%%/leim
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/mail
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/icons
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gud
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
+@dirrm %%DATADIR%%/%%EMACS_VER%%/etc
 @dirrmtry %%DATADIR%%/%%EMACS_VER%%/site-lisp
 @dirrmtry %%DATADIR%%/%%EMACS_VER%%
+@dirrmtry %%DATADIR%%/site-lisp
+@dirrmtry %%DATADIR%%/nls/POSIX
+@dirrmtry %%DATADIR%%/nls/en_US.US-ASCII
+@dirrmtry %%DATADIR%%/nls
 @dirrmtry %%DATADIR%%
 @dirrmtry var/games/emacs
 @dirrmtry var/games
