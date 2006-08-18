@@ -7,6 +7,7 @@
 
 PORTNAME=	motor
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -33,6 +34,9 @@ MAN1=		motor.1
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|zxvf|&o|' ${WRKSRC}/share/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
