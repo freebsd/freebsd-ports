@@ -790,6 +790,7 @@
     SUBDIR += p5-CPAN-Mini
     SUBDIR += p5-CPAN-YACSmoke
     SUBDIR += p5-CPANPLUS
+    SUBDIR += p5-CPANPLUS-Dist-Build
     SUBDIR += p5-Cache
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Cache-FastMmap
