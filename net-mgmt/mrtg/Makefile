@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.13.2
+PORTVERSION=	2.14.5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
@@ -61,8 +61,8 @@ do-install:
 		${MKDIR} -m 755 ${DATADIR}
 .if !defined(NOPORTDOCS)
 		${MKDIR} -m 755 ${DOCSDIR}
-		for file in ANNOUNCE CHANGES COPYRIGHT MANIFEST README \
-			doc/*.pod doc/*.txt doc/*wml doc/*.png ; do \
+		for file in CHANGES COPYRIGHT MANIFEST README \
+			doc/*.pod doc/*.txt doc/*.png ; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
 		done
 .endif
