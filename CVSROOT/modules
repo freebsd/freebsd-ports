@@ -10566,6 +10566,7 @@ pear-MIME_Type	ports/mail/pear-MIME_Type
 pear-Mail	ports/mail/pear-Mail
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
 pear-Mail_Queue	ports/mail/pear-Mail_Queue
+pear-Net_CDDB	ports/net/pear-Net_CDDB
 pear-Net_CheckIP	ports/net/pear-Net_CheckIP
 pear-Net_Cyrus	ports/mail/pear-Net_Cyrus
 pear-Net_DIME	ports/net/pear-Net_DIME
