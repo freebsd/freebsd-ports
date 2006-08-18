@@ -22,8 +22,6 @@ DISTFILES=	#
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Duke Nukem 3D Data
 
-BROKEN=		Does not build
-
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -39,16 +37,20 @@ DATADIR=	${DN3DDIR}
 .if defined(WITH_SHAREWARE)
 DISTFILES+=	3dduke13.zip
 PLIST_SUB+=	SHAREWARE=""
-
-post-extract:
-	@cd ${WRKSRC} && ${UNZIP_CMD} -qo DN3DSW13.SHR
-
-do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/DUKE3D.GRP ${DATADIR}/duke3d.grp
 .else
 PLIST_SUB+=	SHAREWARE="@comment "
 SUB_FILES+=	pkg-message
+.endif
+
+.if defined(WITH_SHAREWARE)
+post-extract:
+	@cd ${WRKSRC} && ${UNZIP_CMD} -qo DN3DSW13.SHR
+.endif
+
+do-install:
+.if defined(WITH_SHAREWARE)
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/DUKE3D.GRP ${DATADIR}/duke3d.grp
 
 post-install:
 	@${ECHO_CMD}
