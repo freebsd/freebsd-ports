@@ -7,11 +7,12 @@
 
 PORTNAME=	rscheme
 PORTVERSION=	0.7.3.3
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.rscheme.org/rs/b/${PORTVERSION}/32/
 DISTNAME=	rs-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	An object-oriented, extended version of the Scheme dialect of Lisp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

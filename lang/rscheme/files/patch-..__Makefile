@@ -1,9 +1,17 @@
-
-$FreeBSD: /tmp/pcvs/ports/lang/rscheme/files/patch-..__Makefile,v 1.1 2006-04-20 21:32:20 anray Exp $
-
---- ../Makefile.orig	Thu Mar 18 17:40:45 1999
-+++ ../Makefile	Tue Jul 31 10:48:35 2001
-@@ -126,9 +126,9 @@
+--- ../Makefile.orig	Thu Oct 23 02:54:27 2003
++++ ../Makefile	Wed Jul 26 22:32:05 2006
+@@ -59,8 +59,8 @@
+ 	rm -rf $(TARGET_DIR) ; mkdir $(TARGET_DIR)
+ 	(cd ${SRC_DIR}/handc ; \
+          find . \! \( -name CVS -prune \) -print) > .handc.list
+-	cat .handc.list | (cd ${SRC_DIR}/handc ; cpio -oc) \
+-	                | (cd ${TARGET_DIR} ; cpio -idc)
++	cat .handc.list | tar -cf- -C ${SRC_DIR}/handc -T- \
++	                | tar -xf- -C ${TARGET_DIR}
+ 	if test -d $(TARGET_DIR)/tmp ; then : ; \
+ 	else mkdir $(TARGET_DIR)/tmp ; fi
+ 
+@@ -130,9 +130,9 @@
  
  stage1::
  	cd stage0 ; ./configure --prefix=`pwd`/install $(CONFIG_OPTS)
