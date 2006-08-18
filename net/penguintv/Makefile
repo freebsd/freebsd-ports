@@ -1,11 +1,11 @@
-# New ports collection makefile for:	PenguinTV
+# New ports collection makefile for:	PenguinTV-devel
 # Date created:				14 March 2006
 # Whom:					Edwin Groothuis <edwin@mavetju.org>
 #
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	1.05
+PORTVERSION=	2.0
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -22,18 +22,33 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF
+
 USE_GNOME=	pygnomeextras pygnome2
 USE_PYTHON=	yes
 
-CONFLICTS=	PenguinTV-devel-1.*
+CONFLICTS=	PenguinTV-devel-[0-9]*
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MOZILLA)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex \
+		mozilla-config:${PORTSDIR}/www/mozilla
+PLIST_SUB+=	WITH_MOZILLA=""
+.else
+EXTRA_PATCHES+=	${FILESDIR}/patchmozilla-setup.py
+PLIST_SUB+=	WITH_MOZILLA="@comment "
+.endif
+
+pre-fetch:
+	@${ECHO_MSG} If you are upgrading from 1.x, please export your subscriptions for save-keeping!
+	@sleep 5
 
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
 
 do-install:
+	touch ${WRKSRC}/mo/sv/LC_MESSAGES/penguintv.mo
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
