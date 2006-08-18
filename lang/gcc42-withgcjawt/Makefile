@@ -10,14 +10,14 @@ PKGNAMESUFFIX=	-withgcjawt
 
 MAINTAINER=	maho@FreeBSD.org
 
-MASTERDIR=	${.CURDIR}/../../lang/gcc41
+MASTERDIR=	${.CURDIR}/../../lang/gcc42
 
 DESCR=	${.CURDIR}/pkg-descr
 
 WITH_JAVA_AWT=	yes
 
 .if defined (WITHOUT_JAVA)
-BROKEN=		"Does not build gcj"
+BROKEN=		Does not build gcj
 .endif
 
 #weird libtool issue http://gcc.gnu.org/bugzilla/show_bug.cgi?id=28442
