@@ -115,6 +115,8 @@ lib/libcrypt.so.1
 lib/libdb-4.1.so
 lib/libdb-4.2.so
 lib/libdb-4.3.so
+lib/libdb_cxx-4.1.so
+lib/libdb_cxx-4.2.so
 lib/libdl-%%GLIBCVER%%.so
 lib/libdl.so.2
 lib/libe2p.so.2
