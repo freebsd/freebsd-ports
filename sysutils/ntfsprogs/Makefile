@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntfsprogs
-PORTVERSION=	1.13.0
+PORTVERSION=	1.13.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-ntfs
@@ -31,6 +31,7 @@ MAN8=		libntfs-gnomevfs.8 \
 		ntfscat.8	\
 		ntfsclone.8	\
 		ntfscluster.8	\
+		ntfscmp.8	\
 		ntfscp.8	\
 		ntfsfix.8	\
 		ntfsinfo.8	\

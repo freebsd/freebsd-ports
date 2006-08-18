@@ -1,5 +1,6 @@
 bin/ntfscat
 bin/ntfscluster
+bin/ntfscmp
 bin/ntfsfix
 bin/ntfsinfo
 bin/ntfsls
