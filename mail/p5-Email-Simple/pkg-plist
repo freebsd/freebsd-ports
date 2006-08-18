@@ -1,5 +1,8 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Email/Simple.pm
+%%SITE_PERL%%/Email/Simple/Headers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Simple
+@dirrm %%SITE_PERL%%/Email/Simple
 @dirrmtry %%SITE_PERL%%/Email
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
