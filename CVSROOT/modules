@@ -8140,6 +8140,7 @@ p5-CPAN-DistnameInfo	ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Mini	ports/devel/p5-CPAN-Mini
 p5-CPAN-YACSmoke	ports/devel/p5-CPAN-YACSmoke
 p5-CPANPLUS	ports/devel/p5-CPANPLUS
+p5-CPANPLUS-Dist-Build	ports/devel/p5-CPANPLUS-Dist-Build
 p5-CQL-Parser	ports/textproc/p5-CQL-Parser
 p5-CSP		ports/security/p5-CSP
 p5-CSS		ports/textproc/p5-CSS
