@@ -9,8 +9,8 @@ PORTNAME=	userneu
 PORTVERSION=	1.38
 CATEGORIES=	sysutils
 MASTER_SITES=	http://btw23.de/johannes/userneu/ \
-		http://home.arcor.de/fehlner/inhalt/download/ \
-		http://home.arcor.de/teambushido/
+		http://home.arcor.de/fehlner/fbsd_ports/ \
+		http://home.arcor.de/teambushido/fbsd_ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_1
 
 MAINTAINER=	fehlner@gmx.de
