@@ -9,9 +9,11 @@ PORTNAME=	mikmod
 PORTVERSION=	3.2.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://mikmod.raphnet.net/files/
+MASTER_SITES=	http://mikmod.raphnet.net/files/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI and IT mods
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
