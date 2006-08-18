@@ -32,7 +32,8 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${LOCALBASE}/share/xml/dtd/xhtml/xhtml.soc:${PORTSDIR}/textproc/xhtml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent
 
 .include <bsd.port.pre.mk>
 
