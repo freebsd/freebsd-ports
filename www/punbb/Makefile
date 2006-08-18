@@ -26,6 +26,7 @@ NO_BUILD=	yes
 PUNBBDIR?=	${TARGETDIR}/www/punbb
 USE_PHP=	yes
 USE_ZIP=	yes
+BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 OPTIONS=	LANGUAGE_PACK "Install language packs" on
 
