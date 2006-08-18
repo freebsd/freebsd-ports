@@ -1,0 +1,7 @@
+HTML::TableParser uses HTML::Parser to extract data from an HTML table. The
+data is returned via a series of user defined callback functions or methods.
+Specific tables may be selected either by a matching a unique table id or by
+matching against the column names. Multiple (even nested) tables may be
+parsed in a document in one pass.
+
+WWW: http://search.cpan.org/dist/HTML-TableParser/
