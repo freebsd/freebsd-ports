@@ -13796,6 +13796,7 @@ tipograf	ports/print/tipograf
 tirc		ports/irc/tirc
 tircproxy	ports/irc/tircproxy
 titano		ports/devel/titano
+titlefix	ports/sysutils/titlefix
 tits		ports/comms/tits
 tix		ports/x11-toolkits/tix
 tk80		ports/x11-toolkits/tk80
