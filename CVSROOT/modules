@@ -8918,6 +8918,7 @@ p5-HTML-Summary	ports/www/p5-HTML-Summary
 p5-HTML-Table	ports/www/p5-HTML-Table
 p5-HTML-TableExtract	ports/www/p5-HTML-TableExtract
 p5-HTML-TableLayout	ports/www/p5-HTML-TableLayout
+p5-HTML-TableParser	ports/www/p5-HTML-TableParser
 p5-HTML-TableTiler	ports/www/p5-HTML-TableTiler
 p5-HTML-TagCloud	ports/www/p5-HTML-TagCloud
 p5-HTML-TagCloud-Extended	ports/www/p5-HTML-TagCloud-Extended
