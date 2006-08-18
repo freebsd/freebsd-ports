@@ -1,5 +1,8 @@
 bin/sk
 bin/sketchy
+include/sketchy.h
+lib/libsketchy.a
+lib/libsketchy.so
 %%DATADIR%%/LICENSE
 %%DATADIR%%/lib/abs.l
 %%DATADIR%%/lib/append.l
@@ -151,9 +154,10 @@ bin/sketchy
 %%DATADIR%%/src/tree.l
 %%DATADIR%%/src/union.l
 %%DATADIR%%/src/unique.l
-%%DATADIR%%/src/unlabel.l
+%%DATADIR%%/src/unlet.l
 %%DATADIR%%/src/unsort.l
 %%DATADIR%%/src/vqueens.l
+%%DOCSDIR%%/index.html
 %%DOCSDIR%%/library/abs.html
 %%DOCSDIR%%/library/append.html
 %%DOCSDIR%%/library/assoc.html
@@ -256,8 +260,21 @@ bin/sketchy
 %%DOCSDIR%%/library/succ.html
 %%DOCSDIR%%/library/times.html
 %%DOCSDIR%%/library/zerop.html
-%%DOCSDIR%%/index.html
+%%DOCSDIR%%/license.html
 %%DOCSDIR%%/ndx2.html
+%%DOCSDIR%%/prog/bottles.html
+%%DOCSDIR%%/prog/draw-tree.html
+%%DOCSDIR%%/prog/fact.html
+%%DOCSDIR%%/prog/factors.html
+%%DOCSDIR%%/prog/hyper.html
+%%DOCSDIR%%/prog/infix.html
+%%DOCSDIR%%/prog/permute.html
+%%DOCSDIR%%/prog/prefix.html
+%%DOCSDIR%%/prog/prolog.html
+%%DOCSDIR%%/prog/qsort.html
+%%DOCSDIR%%/prog/queens.html
+%%DOCSDIR%%/prog/read-line.html
+%%DOCSDIR%%/progs.html
 %%DOCSDIR%%/sk01.html
 %%DOCSDIR%%/sk02.html
 %%DOCSDIR%%/sk03.html
@@ -267,11 +284,13 @@ bin/sketchy
 %%DOCSDIR%%/sk07.html
 %%DOCSDIR%%/sk08.html
 %%DOCSDIR%%/sk09.html
+%%DOCSDIR%%/sk10.html
+%%DOCSDIR%%/sketchy.css
 %%DOCSDIR%%/toc2-x.html
 %%DOCSDIR%%/toc2.html
-%%DOCSDIR%%/sketchy.css
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/library
+@dirrm %%DOCSDIR%%/prog
 @dirrm %%DOCSDIR%%
