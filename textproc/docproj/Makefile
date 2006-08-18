@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
