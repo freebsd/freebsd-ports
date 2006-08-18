@@ -200,6 +200,8 @@ elif grep -qE "automake(.*): not found" $1; then
   reason="automake"; tag="automake"
 elif grep -q "/usr/local/www/cgi-bin does not exist" $1; then
   reason="cgi-bin"; tag="cgi-bin"
+elif grep -q "Shared object \"libc.so.6\" not found, required by" $1; then
+  reason="compat6x"; tag="compat6x"
 elif grep -q "Cannot open /dev/tty for read" $1; then
   reason="DISPLAY"; tag="display"
 elif grep -q "RuntimeError: cannot open display" $1; then
@@ -272,6 +274,8 @@ elif grep -qE '(gmake:.*Error [12]|tar: Error exit delayed from previous errors)
     reason="install_error"; tag="install"
 elif grep -q "Cannot stat: " $1; then
   reason="configure_error"; tag="configure"
+elif grep -q "/usr/bin/ld: cannot find -l" $1; then
+  reason="linker_error"; tag="ld"
 elif grep -q "cd: can't cd to" $1; then
   reason="NFS"; tag="nfs"
 elif grep -q "pkg_create: make_dist: tar command failed with code" $1; then
