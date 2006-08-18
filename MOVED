@@ -2443,3 +2443,4 @@ russian/xpi-imagezoom|www/xpi-imagezoom|2006-08-09|Russian locale now comes bund
 security/linux-krb5-libs||2006-08-13|Integrated with emulators/linux_base-fc4
 sysutils/linux-e2fsprogs||2006-08-13|Integrated with emulators/linux_base-fc4
 net/magictun||2006-08-17|Abandoned
+lang/gcc41-withgcjawt|lang/gcc41-withgcjawt|2006-08-18|finished repocopy
