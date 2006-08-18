@@ -1,0 +1,6 @@
+Renames files in a proper English title format: prepositions, conjunctions,
+and articles (<5 letters) are in lowercase unless they are the first or
+last word in the title; all others begin with uppercase. Can use id3v2 to
+tag mp3s using info in filename.
+
+WWW: http://sourceforge.net/projects/titlefix/

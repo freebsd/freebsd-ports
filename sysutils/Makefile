@@ -575,6 +575,7 @@
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += tinybsd
+    SUBDIR += titlefix
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
     SUBDIR += topless
