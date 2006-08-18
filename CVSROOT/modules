@@ -3021,6 +3021,7 @@ gcc40		ports/lang/gcc40
 gcc41		ports/lang/gcc41
 gcc41-withgcjawt	ports/lang/gcc41-withgcjawt
 gcc42		ports/lang/gcc42
+gcc42-withgcjawt	ports/lang/gcc42-withgcjawt
 gccxml		ports/devel/gccxml
 gcdmaster	ports/sysutils/gcdmaster
 gcfilms		ports/multimedia/gcfilms
