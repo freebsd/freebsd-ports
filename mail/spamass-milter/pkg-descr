@@ -2,4 +2,4 @@ spamass-milter is a plugin for the Sendmail Milter (Mail Filter) library
 that pipes all incoming mail (including things received by rmail/UUCP)
 through the SpamAssassin, a highly customizable spam filter.
 
-WWW: http://savannah.gnu.org/projects/spamass-milt/
+WWW: http://savannah.nognu.org/projects/spamass-milt/
