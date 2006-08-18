@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -27,13 +27,13 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		bash-3.0-31.${LINUX_RPM_ARCH}.rpm \
 		bzip2-1.0.2-16.${LINUX_RPM_ARCH}.rpm \
 		bzip2-libs-1.0.2-16.${LINUX_RPM_ARCH}.rpm \
-		compat-db-4.2.52-2.${LINUX_RPM_ARCH}.rpm \
+		compat-db-4.2.52-3.fc4.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-296-2.96-132.fc4.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-47.fc4.${LINUX_RPM_ARCH}.rpm \
 		coreutils-5.2.1-48.1.${LINUX_RPM_ARCH}.rpm \
 		db4-4.3.27-5.fc4.${LINUX_RPM_ARCH}.rpm \
-		elfutils-libelf-0.108-1.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.38-0.FC4.1.${LINUX_RPM_ARCH}.rpm \
+		elfutils-libelf-0.108-1.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-4-2.noarch.rpm \
 		filesystem-2.3.4-1.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.1.9-2.${LINUX_RPM_ARCH}.rpm \
@@ -43,13 +43,13 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 		glibc-common-2.3.6-3.${LINUX_RPM_ARCH}.rpm \
 		grep-2.5.1-48.2.${LINUX_RPM_ARCH}.rpm \
 		info-4.8-8.fc4.2.${LINUX_RPM_ARCH}.rpm \
+		krb5-libs-1.4.1-5.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.32-1.FC4.2.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.24-1.FC4.1.${LINUX_RPM_ARCH}.rpm \
 		libgcc-4.0.2-8.fc4.${LINUX_RPM_ARCH}.rpm \
 		libselinux-1.23.11-1.1.${LINUX_RPM_ARCH}.rpm \
 		libstdc++-4.0.2-8.fc4.${LINUX_RPM_ARCH}.rpm \
 		libtermcap-2.0.8-41.${LINUX_RPM_ARCH}.rpm \
-		krb5-libs-1.4.1-5.${LINUX_RPM_ARCH}.rpm \
 		ncurses-5.4-19.fc4.${LINUX_RPM_ARCH}.rpm \
 		pcre-5.0-4.1.fc4.${LINUX_RPM_ARCH}.rpm \
 		popt-1.10.1-23.${LINUX_RPM_ARCH}.rpm \
@@ -63,24 +63,24 @@ BIN_DISTFILES=	basesystem-8.0-5.noarch.rpm \
 
 .if defined(PACKAGE_BUILDING)
 
-SRC_DISTFILES+=	basesystem-8.0-5.src.rpm \
+SRC_DISTFILES+=	acl-2.2.32-1.FC4.2.src.rpm \
+		attr-2.4.24-1.FC4.1.src.rpm \
+		basesystem-8.0-5.src.rpm \
 		bash-3.0-31.src.rpm \
 		bzip2-1.0.2-16.src.rpm \
-		compat-db-4.2.52-2.src.rpm \
+		compat-db-4.2.52-3.fc4.src.rpm \
 		coreutils-5.2.1-48.1.src.rpm \
 		db4-4.3.27-5.fc4.src.rpm \
-		elfutils-0.108-1.src.rpm \
 		e2fsprogs-1.38-0.FC4.1.src.rpm \
+		elfutils-0.108-1.src.rpm \
 		fedora-release-4-2.src.rpm \
 		filesystem-2.3.4-1.src.rpm \
 		freetype-2.1.9-2.src.rpm \
+		gcc-4.0.2-8.fc4.src.rpm \
 		gdbm-1.8.0-25.src.rpm \
 		glib-1.2.10-16.src.rpm \
 		glibc-2.3.6-3.src.rpm \
 		grep-2.5.1-48.2.src.rpm \
-		acl-2.2.32-1.FC4.2.src.rpm \
-		attr-2.4.24-1.FC4.1.src.rpm \
-		gcc-4.0.2-8.fc4.src.rpm \
 		krb5-1.4.1-5.src.rpm \
 		libselinux-1.23.11-1.1.src.rpm \
 		libtermcap-2.0.8-41.src.rpm \
