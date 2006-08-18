@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qsf
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.13
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,16 +45,12 @@ CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if defined(WITH_SQLITE2)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
+USE_SQLITE=	2
 .else
 CONFIGURE_ARGS+=	--without-sqlite
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|Linux|@VERSION@|g' ${WRKSRC}/doc/quickref.1.in
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qsf ${TARGETDIR}/bin/qsf
-	${INSTALL_MAN} ${WRKSRC}/doc/quickref.1 ${MANPREFIX}/man/man1/qsf.1
 
 .include <bsd.port.post.mk>
