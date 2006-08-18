@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.planetmirror.com/pub/horde/imp/		\
