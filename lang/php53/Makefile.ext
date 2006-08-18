@@ -149,6 +149,10 @@ USE_GCC=	3.4+
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 
 USE_OPENLDAP=	yes
+
+. ifdef(WANT_OPENLDAP_SASL)
+CONFIGURE_ARGS+=--with-ldap-sasl
+. endif
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
