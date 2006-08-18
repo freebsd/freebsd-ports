@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Atom-Syndication
-PORTVERSION=	0.92
+PORTVERSION=	0.94
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -38,9 +38,7 @@ MAN3=	XML::Atom::Syndication.3 \
 	XML::Atom::Syndication::Writer.3
 
 post-patch:
-	@${RM} ${WRKSRC}/._*
-	@${RM} ${WRKSRC}/lib/XML/Atom/._*
-	@${RM} ${WRKSRC}/lib/XML/Atom/Syndication/._*
+	${FIND} ${WRKSRC} -name '._*' -delete
 
 .include <bsd.port.pre.mk>
 
