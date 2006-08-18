@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/Dist/Build/.packlist
+%%SITE_PERL%%/CPANPLUS/Dist/Build.pm
+%%SITE_PERL%%/CPANPLUS/Dist/Build/Constants.pm
+@dirrmtry %%SITE_PERL%%/CPANPLUS/Dist/Build
+@dirrmtry %%SITE_PERL%%/CPANPLUS/Dist
+@dirrmtry %%SITE_PERL%%/CPANPLUS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/Dist/Build
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS/Dist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPANPLUS
