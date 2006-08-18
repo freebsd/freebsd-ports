@@ -41,6 +41,10 @@ Note:  Please add new entries to the beginning of this file.
         <name>horde</name>
         <range><le>3.1.2</le></range>
       </package>
+      <package>
+        <name>imp</name>
+        <range><le>4.1.2</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -66,6 +70,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>19557</bid>
+      <bid>19544</bid>
       <url>http://secunia.com/advisories/21500/</url>
       <url>http://lists.horde.org/archives/announce/2006/000292.html</url>
     </references>
