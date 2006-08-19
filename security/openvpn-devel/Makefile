@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	openvpn
-# -----------------------------------------------------
-# DO NOT BOTHER TO SEND NOTICES ABOUT 2.0.7 AS IT FIXES
-# A WINDOWS-ONLY BUG THAT DOESN'T AFFECT *BSD AND THUS
-# DOES NOT WARRANT A PORT UPGRADE! AND UPGRADE REQUESTS
-# WILL BE DROPPED.       -- Matthias Andree, 2006-04-26
-# -----------------------------------------------------
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+DISTVERSION=	2.1_beta14
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
 MASTER_SITES=	http://openvpn.net/release/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Secure IP/Ethernet tunnel daemon
