@@ -1,5 +1,6 @@
 bin/confregdecode
-share/java/confregdecode.jar
+%%DATADIR%%/confregdecode.jar
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ConfregDecode.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

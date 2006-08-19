@@ -6,9 +6,9 @@
 #
 
 # Change this to your path to jre
-JRE=%%LOCALBASE%%/bin/javavm
+JRE=%%LOCALBASE%%/bin/java
 # End changeable things
 
-CLASSPATH=%%PREFIX%%/share/java/confregdecode.jar:${CLASSPATH}
+CLASSPATH=%%DATADIR%%/confregdecode.jar:${CLASSPATH}
 
 exec ${JRE} -classpath ${CLASSPATH} com.marcuscom.confregdecode.ConfregDecode
