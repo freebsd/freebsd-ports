@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Proxy
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A pure Perl HTTP proxy
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -34,6 +34,7 @@ MAN3=		\
 		HTTP::Proxy::Engine::Legacy.3 \
 		HTTP::Proxy::Engine::NoFork.3 \
 		HTTP::Proxy::Engine::ScoreBoard.3 \
+		HTTP::Proxy::FilterStack.3 \
 		HTTP::Proxy::HeaderFilter.3 \
 		HTTP::Proxy::HeaderFilter::simple.3 \
 		HTTP::Proxy::HeaderFilter::standard.3
@@ -41,7 +42,7 @@ MAN3=		\
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
