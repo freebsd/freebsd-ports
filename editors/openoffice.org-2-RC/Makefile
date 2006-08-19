@@ -13,21 +13,25 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOV
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
-		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
+		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
+		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-DISTFILES+=	OOo_${OOOVERSION}_src.tar.gz
+#DISTFILES+=	OOo_${OOOVERSION}_src.tar.gz
+DISTFILES+=	OOo_2.0.1_src.tar.gz
+DISTFILES+=	unowinreg.dll:unowinreg
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-EXTRACT_ONLY=	OOo_${OOOVERSION}_src.tar.gz
+#EXTRACT_ONLY=	OOo_${OOOVERSION}_src.tar.gz
+EXTRACT_ONLY=	OOo_2.0.1_src.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-OOOVERSION=	2.0.3
+OOOVERSION=	2.0.4.m1
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20 gnomevfs2
 MOZILLA_VERSION=	1.7.5
@@ -71,7 +75,7 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-OOOTAG?=		OOC680_m7
+OOOTAG?=		OOD680_m1
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
@@ -153,11 +157,9 @@ NUMOFPROCESSES?=	1
 CONFIGURE_ENV+=      PATH="${LOCALBASE}/lib/jvm/java-gcj/bin:${PATH}"
 .endif
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --with-epm=internal --enable-crashdump=yes --enable-symbols=SMALL
-#workarounds
-CONFIGURE_ARGS+=	--with-system-xrender-headers=yes #i62713#
-CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
-.if ${ARCH} == amd64 || defined(WITH_GNUGCJ)
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --enable-crashdump=yes --enable-symbols=SMALL
+
+.if ${ARCH} == amd64 || ${GCCVER} == 41
 WITHOUT_MOZILLA=	yes
 .endif
 .if (${GCCVER} == 41)
@@ -197,6 +199,7 @@ pre-everything::
 .endif
 
 post-extract:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 .if defined(WITH_GNUGCJ)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
 .endif
@@ -254,10 +257,10 @@ post-install:
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 .if defined(WITH_KDE)
-	@ln -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
+	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
 			${PREFIX}/share/applnk/${EXECBASE}
 	@${PRINTF} "share/applnk/${EXECBASE}\n" >> ${TMPPLIST}
-	@for dir in `ls ${ICONS}/hicolor | grep -v CVS`; do \
+	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
 				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
