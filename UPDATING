@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060818:
+  AFFECTS: users of sysutils/nut
+  AUTHOR: Joerg.Pulz@frm2.tum.de
+
+  Starting with nut-2.0.4, the megatec UPS driver has been backported from
+  the development tree. Users of the following UPS drivers (powermust, blazer,
+  fentonups, mustek, esupssmart, ippon, sms, masterguard) are encouraged to
+  switch to the megatec UPS driver, which should replace all these drivers
+  by nut-2.2 .
+  For more information, please refer to ${LOCALBASE}/share/doc/nut/megatec.txt
+
 20060815:
   AFFECTS: users of net/samba3
   AUTHOR: timur@gnu.org
