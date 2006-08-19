@@ -1,6 +1,15 @@
---- ./configure.orig	Thu Mar 30 14:00:19 2006
-+++ ./configure	Sun May 21 14:02:41 2006
-@@ -667,6 +667,7 @@
+--- configure.orig	Thu Mar 30 16:00:19 2006
++++ configure	Sat Aug 19 10:34:48 2006
+@@ -78,6 +78,8 @@
+         withcurses=no;;
+     -no-shared-libs)
+         withsharedlibs=no;;
++    -no-x11|--no-x11)
++        x11_wanted=no;;
+     -x11include*|--x11include*)
+         x11_include_dir=$2; shift;;
+     -x11lib*|--x11lib*)
+@@ -667,6 +669,7 @@
    i386,*,linux_elf) profiling='prof';;
    i386,*,gnu) profiling='prof';;
    i386,*,bsd_elf) profiling='prof';;
@@ -8,7 +17,7 @@
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1107,117 +1108,14 @@
+@@ -1107,122 +1110,24 @@
  x11_include="not found"
  x11_link="not found"
  
@@ -132,3 +141,13 @@
  
  if test "$x11_include" = "not found" || test "$x11_link" = "not found"
  then
+   echo "X11 not found, the \"graph\" library will not be supported."
+   x11_include=""
++elif test "$x11_wanted" = "no"
++then
++  echo "X11 support was disabled, the \"graph\" library will not be supported."
++  x11_include=""
++  x11_link=""
+ else
+   echo "Location of X11 include files: $x11_include/X11"
+   echo "Options for linking with X11: $x11_link"
