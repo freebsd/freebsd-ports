@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -48,7 +48,6 @@ do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
 
 do-install:
-	touch ${WRKSRC}/mo/sv/LC_MESSAGES/penguintv.mo
 	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install
 
 .include <bsd.port.post.mk>
