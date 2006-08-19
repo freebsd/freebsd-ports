@@ -7,7 +7,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.09.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -59,7 +59,7 @@ THR_LD=		#empty
 CONFIGURE_ARGS+=-no-pthread
 .endif
 
-.if !defined(WITHOUT_X11) || exists(${X11BASE}/lib/libX11.a)
+.if !defined(WITHOUT_X11)
 PLIST_SUB+=	X11=""
 USE_XLIB=	yes
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
@@ -68,6 +68,7 @@ PLIST_SUB+=	X11="@comment "
 WITHOUT_TK=	yes
 SFX=		-nox11
 CONFLICTS+=	ocaml-[0-9]* ocaml-notk-[0-9]*
+CONFIGURE_ARGS+=-no-x11
 .endif
 
 .if defined(WITHOUT_TK)
