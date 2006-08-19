@@ -9,24 +9,24 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.openvpn-down-root
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/README
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-ca
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-dh
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-inter
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key-pass
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key-pkcs12
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-key-server
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-req
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-req-pass
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/clean-all
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/list-crl
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/make-crl
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/openssl.cnf
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/revoke-crt
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/revoke-full
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/sign-req
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/vars
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/README
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-ca
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-dh
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-inter
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key-pass
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key-pkcs12
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-key-server
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-req
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-req-pass
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/clean-all
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/list-crl
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/make-crl
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/openssl.cnf
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/revoke-crt
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/revoke-full
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/sign-req
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/vars
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/README
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-ca
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-dh
@@ -40,11 +40,13 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/clean-all
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/inherit-inter
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/list-crl
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl-0.9.6.cnf
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl.cnf
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/pkitool
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/revoke-full
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/sign-req
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/vars
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/whichopensslcnf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/README
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/client.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/firewall.sh
@@ -65,9 +67,11 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-start
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-stop
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/openvpn.init
+%%PORTDOCS%%%%DOCSDIR%%/sample-scripts/ucn.pl
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/verify-cn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample-scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample-config-files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa/2.0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa/1.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/easy-rsa
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
