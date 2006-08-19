@@ -260,10 +260,10 @@ post-install:
 			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
 .if defined(WITH_KDE)
-	@ln -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
+	@{LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
 			${PREFIX}/share/applnk/${EXECBASE}
 	@${PRINTF} "share/applnk/${EXECBASE}\n" >> ${TMPPLIST}
-	@for dir in `ls ${ICONS}/hicolor | grep -v CVS`; do \
+	@for dir in `ls ${ICONS}/hicolor | ${GREP} -v CVS`; do \
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
 				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
