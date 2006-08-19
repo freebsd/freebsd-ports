@@ -7801,6 +7801,7 @@ openverse	ports/net/openverse
 openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
 openvpn-admin	ports/security/openvpn-admin
+openvpn-devel	ports/security/openvpn-devel
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openwince-include	ports/devel/openwince-include
