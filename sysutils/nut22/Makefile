@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://eu1.networkupstools.org/source/${PORTVERSION:R}/ \
 		http://us1.networkupstools.org/source/${PORTVERSION:R}/

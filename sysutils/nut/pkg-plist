@@ -35,6 +35,7 @@ libexec/nut/ippon
 libexec/nut/isbmex
 libexec/nut/liebert
 libexec/nut/masterguard
+libexec/nut/megatec
 libexec/nut/metasys
 libexec/nut/mge-shut
 libexec/nut/mge-utalk
@@ -42,6 +43,7 @@ libexec/nut/mustek
 libexec/nut/oneac
 libexec/nut/powercom
 libexec/nut/powermust
+libexec/nut/rhino
 libexec/nut/safenet
 libexec/nut/sms
 libexec/nut/solis
@@ -88,6 +90,7 @@ sbin/upssched
 %%PORTDOCS%%%%DOCSDIR%%/developers.txt
 %%PORTDOCS%%%%DOCSDIR%%/ideas.txt
 %%PORTDOCS%%%%DOCSDIR%%/hid-subdrivers.txt
+%%PORTDOCS%%%%DOCSDIR%%/megatec.txt
 %%PORTDOCS%%%%DOCSDIR%%/new-drivers.txt
 %%PORTDOCS%%%%DOCSDIR%%/new-names.txt
 %%PORTDOCS%%%%DOCSDIR%%/osd-notify.txt
