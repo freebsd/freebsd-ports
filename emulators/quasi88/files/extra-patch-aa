@@ -4,17 +4,17 @@
  #	動作確認が取れているのは、freebsd/linux のみです
  
  #---------------------- FreeBSD
--# ARCH = freebsd
-+ARCH = freebsd
+-# OSARCH = freebsd
++OSARCH = freebsd
  #---------------------- Linux
- # ARCH = linux
+ # OSARCH = linux
  #---------------------- NetBSD
 @@ -166,7 +166,7 @@
  #---------------------- BeOS on Intel
- # ARCH = beos
+ # OSARCH = beos
  #---------------------- generic unix, no sound
--ARCH = generic
-+# ARCH = generic
+-OSARCH = generic
++# OSARCH = generic
  
  
  
