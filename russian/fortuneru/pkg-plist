@@ -31,6 +31,16 @@ share/games/fortune/rus/voronezj
 share/games/fortune/rus/voronezj.dat
 share/games/fortune/rus/windows_errors
 share/games/fortune/rus/windows_errors.dat
+share/games/fortune/rus/guberman
+share/games/fortune/rus/guberman.dat
+share/games/fortune/rus/strug
+share/games/fortune/rus/strug.dat
+share/games/fortune/rus/usenet
+share/games/fortune/rus/usenet.dat
+share/games/fortune/rus/verse
+share/games/fortune/rus/verse.dat
+share/games/fortune/rus/hokku
+share/games/fortune/rus/hokku.dat
 @dirrm share/games/fortune/rus
 @dirrmtry share/games/fortune
 @dirrmtry share/games

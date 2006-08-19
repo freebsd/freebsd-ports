@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	fortuneru
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	russian
-MASTER_SITES=	ftp://de22.kiev.ua/pub/files/ \
-		ftp://hosting.cvu.kiev.ua/pub/files/ \
-		ftp://viva-solutions.com/pub/files/
+MASTER_SITES=	ftp://hosting.cvu.kiev.ua/pub/files/
 DISTNAME=	fortune.ru-${PORTVERSION}
 
-MAINTAINER=	bestia@de22.kiev.ua
+MAINTAINER=	obezpalko@gmail.com
 COMMENT=	Fortunes in russian
 
 NO_BUILD=	yes

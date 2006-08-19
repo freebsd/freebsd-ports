@@ -6,7 +6,7 @@ if [ "$2" != "PRE-INSTALL" ]; then
     exit 0
 fi
 
-if [ ! -f "$STRCMD" ]; then
+if [ ! -x "/usr/games/strfile" ]; then
     echo ""
     echo "You must have the ``games'' distribution installed to use this port."
     echo ""
