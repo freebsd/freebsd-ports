@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3b"
+.TH stone 1 "version 2.3c"
 .
 .SH 名称
 stone \- Simple Repeater
@@ -175,6 +175,8 @@ SSL 証明書のチェーンが満たすべき正規表現を指定します。
 \fIn\fP は depth です。re0 が証明書のサブジェクト、
 re1 がその発行者を意味します。
 \fIn\fP は 9 まで指定できます。
+\fIn\fP が負の値の場合は、re-1 が root CA で、
+re-2 がその子 CA を意味します。
 .IP depth=\fIn\fP
 SSL 証明書チェーンの長さの最大値を指定します。
 チェーンの長さがこの値を越えると認証が失敗します。

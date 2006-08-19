@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stone
-PORTVERSION=	2.3b
+PORTVERSION=	2.3c
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.gcd.org/sengoku/stone/
 
