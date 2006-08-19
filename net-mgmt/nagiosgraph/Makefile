@@ -7,12 +7,13 @@
 
 PORTNAME=	nagiosgraph
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dsh@vlink.ru
-COMMENT=	Generate rrdtool's graphs by performance data from nagios plugins
+COMMENT=	Generate rrdtool\'s graphs by performance data from nagios plugins
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios \
 		${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/net/rrdtool
