@@ -13,9 +13,11 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/developer/680
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
-		${MASTER_SITE_MOZILLA:S/$/:mozsrc/}
+		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
+		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
 DISTFILES+=	OOo_SRC680_m${MILESTONE}_source${EXTRACT_SUFX}
+DISTFILES+=     unowinreg.dll:unowinreg
 #DISTFILES+=	OOo_2.0.${MILESTONE}_src${EXTRACT_SUFX}
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
@@ -73,9 +75,9 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-MILESTONE?=		180
+MILESTONE?=		182
 OOOTAG?=		SRC680_m${MILESTONE}
-SNAPDATE=		20060804
+SNAPDATE=		20060818
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org2.0
@@ -159,8 +161,7 @@ CONFIGURE_ENV+=      PATH="${LOCALBASE}/lib/jvm/java-gcj/bin:${PATH}"
 .endif
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --enable-crashdump=yes --enable-symbols=SMALL
-#workarounds
-CONFIGURE_ARGS+=	--with-system-freetype #link error with internal one
+
 .if ${ARCH} == amd64 || ${GCCVER} == 41
 WITHOUT_MOZILLA=	yes
 .endif
@@ -201,6 +202,7 @@ pre-everything::
 .endif
 
 post-extract:
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 .if defined(WITH_GNUGCJ)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
 .endif
