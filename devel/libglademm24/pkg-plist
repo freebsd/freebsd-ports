@@ -23,10 +23,10 @@ libdata/pkgconfig/libglademm-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/classGnome_1_1Glade_1_1XmlError__inherit__graph.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/classGnome_1_1Glade_1_1Xml__inherit__graph.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/classes.html
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000000.html
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
+%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000001.html
+%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dirs.html
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/doxygen.css
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/doxygen.png
@@ -178,10 +178,10 @@ libdata/pkgconfig/libglademm-%%API_VERSION%%.pc
 %%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference
 %%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs
 %%PORTDOCS%%@dirrm share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/doc/gnomemm-2.6 2> /dev/null || /usr/bin/true
+%%PORTDOCS%%@dirrmtry share/doc/gnomemm-2.6
 %%PORTDOCS%%@dirrm share/devhelp/books/libglademm-%%API_VERSION%%
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books 2> /dev/null || /usr/bin/true
-%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp 2> /dev/null || /usr/bin/true
+%%PORTDOCS%%@dirrmtry share/devhelp/books
+%%PORTDOCS%%@dirrmtry share/devhelp
 @dirrm lib/libglademm-%%API_VERSION%%/proc/m4
 @dirrm lib/libglademm-%%API_VERSION%%/proc
 @dirrm lib/libglademm-%%API_VERSION%%/include
