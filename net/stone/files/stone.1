@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3b"
+.TH stone 1 "version 2.3c"
 .
 .SH NAME
 stone \- Simple Repeater
@@ -184,6 +184,8 @@ The certificate of the peer must satisfy the
 \fIregex\fP.  \fIn\fP is the depth.  re0 means the subject
 of the certificate, and re1 means the issure.
 The maximum of \fIn\fP is 9.
+if \fIn\fP is negative, re-1 means the root CA and
+re-2 means its child CA.
 .IP depth=\fIn\fP
 The maximum of the certificate chain.
 If the peer's certificate exceeds \fIn\fP, the
