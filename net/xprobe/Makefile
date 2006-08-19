@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xprobe
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	ICMP active OS fingerprint scanner
 
 HAS_CONFIGURE=	yes

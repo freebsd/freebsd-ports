@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	A free collaborative editor
 
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \

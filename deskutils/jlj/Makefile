@@ -11,7 +11,7 @@ CATEGORIES=	deskutils net
 MASTER_SITES=	http://patsy.cis.rit.edu/Software/perl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	Jerry's command-line LiveJournal.com entry system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

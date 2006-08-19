@@ -10,7 +10,7 @@ PORTVERSION=	10
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://wmii.de/download/
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	A window manager designed to be like Ion and LarsWM
 
 USE_X_PREFIX=	yes

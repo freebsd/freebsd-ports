@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdude
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	A libpcap wrapper library
 
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}

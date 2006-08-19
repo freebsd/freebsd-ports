@@ -12,7 +12,7 @@ MASTER_SITES=	http://libtomcrypt.com/tfm/files/ \
 		http://www.atarininja.org/~wxs/distfiles/
 DISTNAME=	tfm-${PORTVERSION}
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	Portable fixed precision math library for fast exponentiations
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

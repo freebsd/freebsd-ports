@@ -10,7 +10,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.synacklabs.net/projects/cutlass/
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	Encrypted peer-to-peer voice, text, and file transmission protocol
 
 BUILD_DEPENDS=	botan-config:${PORTSDIR}/security/botan \
