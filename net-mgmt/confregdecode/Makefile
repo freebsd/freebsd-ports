@@ -7,6 +7,7 @@
 
 PORTNAME=	confregdecode
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cosi-nms
@@ -15,19 +16,16 @@ DISTNAME=	confregdecode-src-${PORTVERSION}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Cisco Systems IOS(tm) configuration register decoder
 
-USE_JAVA=	1.1+
-NEED_JAVAC=	YES
+USE_JAVA=	yes
 ALL_TARGET=	jar
 MAKE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}"
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+SUB_FILES=	confregdecode
 
 do-install:
-	${MKDIR} ${PREFIX}/share/java
-	${INSTALL_DATA} ${WRKSRC}/confregdecode.jar ${PREFIX}/share/java
-	${SED} \
-		-e s,%%PREFIX%%,${PREFIX}, \
-		-e s,%%LOCALBASE%%,${LOCALBASE}, \
-		< ${FILESDIR}/confregdecode > ${WRKSRC}/confregdecode; \
-	${INSTALL_SCRIPT} ${WRKSRC}/confregdecode ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/confregdecode.jar ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/confregdecode ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
