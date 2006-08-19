@@ -2,24 +2,30 @@ bin/weechat-curses
 %%DOCSDIR%%/html/en/weechat-doc.css
 %%DOCSDIR%%/html/fr/weechat-doc.css
 %%DOCSDIR%%/html/de/weechat-doc.css
+%%DOCSDIR%%/weechat_quickstart.en.txt
+%%DOCSDIR%%/weechat_quickstart.fr.txt
+%%DOCSDIR%%/weechat_quickstart.de.txt
+%%DOCSDIR%%/weechat_quickstart.ru.txt
+%%DOCSDIR%%/weechat_quickstart.pl.txt
+%%DOCSDIR%%/weechat_quickstart.cs.txt
 %%NLS%%share/locale/de/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/es/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/weechat.mo
-%%PYTHON%%lib/weechat/plugins/libpython.so.0
-%%PYTHON%%lib/weechat/plugins/libpython.so
-%%PYTHON%%lib/weechat/plugins/libpython.la
-%%PYTHON%%lib/weechat/plugins/libpython.a
-%%PERL%%lib/weechat/plugins/libperl.so.0
-%%PERL%%lib/weechat/plugins/libperl.so
-%%PERL%%lib/weechat/plugins/libperl.la
-%%PERL%%lib/weechat/plugins/libperl.a
-%%RUBY%%lib/weechat/plugins/libruby.so.0
-%%RUBY%%lib/weechat/plugins/libruby.so
-%%RUBY%%lib/weechat/plugins/libruby.la
-%%RUBY%%lib/weechat/plugins/libruby.a
+%%PYTHON%%lib/weechat/plugins/python.so.0
+%%PYTHON%%lib/weechat/plugins/python.so
+%%PYTHON%%lib/weechat/plugins/python.la
+%%PYTHON%%lib/weechat/plugins/python.a
+%%PERL%%lib/weechat/plugins/perl.so.0
+%%PERL%%lib/weechat/plugins/perl.so
+%%PERL%%lib/weechat/plugins/perl.la
+%%PERL%%lib/weechat/plugins/perl.a
+%%RUBY%%lib/weechat/plugins/ruby.so.0
+%%RUBY%%lib/weechat/plugins/ruby.so
+%%RUBY%%lib/weechat/plugins/ruby.la
+%%RUBY%%lib/weechat/plugins/ruby.a
 @dirrmtry %%DOCSDIR%%/html/fr
 @dirrmtry %%DOCSDIR%%/html/en
 @dirrmtry %%DOCSDIR%%/html/de
