@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	Tag editor for MP3 and OGG files
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \

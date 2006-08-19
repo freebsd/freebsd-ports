@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.com/files/
 DISTNAME=	crypt-${PORTVERSION}
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

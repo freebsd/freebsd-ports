@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://math.libtomcrypt.com/files/
 DISTNAME=	ltm-${PORTVERSION}
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	Comprehensive, modular and portable mathematical routines
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

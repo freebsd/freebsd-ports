@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://emeitner.f2o.org/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	A GTK front-end to Qemu
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
