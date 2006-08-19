@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.rc2
+DISTVERSION=	1.0.rc7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -22,6 +22,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-shadow --localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_LDCONFIG=	${PREFIX}/lib/dovecot \
+		${PREFIX}/lib/dovecot/imap \
+		${PREFIX}/lib/dovecot/pop3 \
+		${PREFIX}/lib/dovecot/lda
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	USE-WIKI-INSTEAD \
@@ -47,7 +51,7 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 ## kqueue(2) support
 #
 .if !defined(WITHOUT_KQUEUE)
-CONFIGURE_ARGS+=	--with-ioloop=kqueue --with-notify=kqueue
+CONFIGURE_ARGS+=	--with-ioloop=kqueue
 .endif
 
 ## SASL2 support
@@ -105,7 +109,7 @@ CONFIGURE_ARGS+=	--with-sqlite
 
 ## IPv6 support
 #
-.if defined(WITHOUT_IPV6) || $(OSVERSION) <= 400014
+.if defined(WITHOUT_IPV6) || ${OSVERSION} <= 400014
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
