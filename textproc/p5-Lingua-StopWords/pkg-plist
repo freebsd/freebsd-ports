@@ -1,8 +1,10 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Lingua/StopWords.pm
 %%SITE_PERL%%/Lingua/StopWords/DA.pm
 %%SITE_PERL%%/Lingua/StopWords/DE.pm
 %%SITE_PERL%%/Lingua/StopWords/EN.pm
 %%SITE_PERL%%/Lingua/StopWords/ES.pm
+%%SITE_PERL%%/Lingua/StopWords/FI.pm
 %%SITE_PERL%%/Lingua/StopWords/FR.pm
 %%SITE_PERL%%/Lingua/StopWords/IT.pm
 %%SITE_PERL%%/Lingua/StopWords/NL.pm
