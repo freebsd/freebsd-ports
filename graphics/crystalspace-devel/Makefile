@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	crystalspace
-PORTVERSION=	0.99
-PORTREVISION=	3
+PORTVERSION=	20060710
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	crystal
-DISTNAME=	cs-pseudo-stable-2006-01-27
+MASTER_SITES=	http://alex.foxybanana.com/freebsd/
+PKGNAMESUFFIX=	-devel
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free and portable 3D Game Development Kit
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
+		swig:${PORTSDIR}/devel/swig13 \
+		jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut \
+		CEGUIBase.0:${PORTSDIR}/graphics/cegui
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 USE_GL=		yes
@@ -33,11 +34,14 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" \
 		CPPFLAGS="${CPPFLAGS} "LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--enable-cpu-specific-optimizations=no
-DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
-WRKSRC=		${WRKDIR}/CS
+CONFIGURE_ARGS+=	--disable-cpu-specific-optimizations \
+			--disable-make-emulation \
+			--prefix=${PREFIX}
+DOCSDIR=	share/doc/${PORTNAME}-0.99
+JAM_CMD=	${LOCALBASE}/bin/jam
+JAM_ARGS=	-qa
 
-OPTIONS=	DEBUG	"Build with debugging information"	on \
+OPTIONS=	DEBUG	"Build with debugging information"	off \
 		PYTHON	"PYTHON interface"	on \
 		PERL	"PERL interface"	on \
 		LCMS	"Little Color Management System support"	on \
@@ -57,10 +61,6 @@ OPTIONS=	DEBUG	"Build with debugging information"	on \
 
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on ${ARCH}
 .endif
 
 .if !defined(WITHOUT_DEBUG)
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=	--without-freetype2
 .endif
 
 .if !defined(WITHOUT_CAL3D)
-LIB_DEPENDS+=	cal3d.11:${PORTSDIR}/graphics/cal3d-devel
+LIB_DEPENDS+=	cal3d.12:${PORTSDIR}/graphics/cal3d
 .else
 CONFIGURE_ARGS+=	--without-cal3d
 .endif
@@ -161,10 +161,21 @@ pre-configure:
 		s,86\*),86\*|amd64|ia64),' ${WRKSRC}/configure
 
 post-configure:
+	@${REINPLACE_CMD} -i "" -e 's|^COMPILER.LFLAGS += "-lm"|COMPILER.LFLAGS += "-lm -lc"|g' \
+		${WRKSRC}/Jamconfig
+	@${REINPLACE_CMD} -i "" -e 's|-lcaca|-lcaca_pic|g' ${WRKSRC}/Jamconfig
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 42,44d ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 26d ${WRKSRC}/Jamfile
 	@${REINPLACE_CMD} -e 79d ${WRKSRC}/Jamfile
 .endif
+
+do-build:
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${JAM_CMD} ${JAM_ARGS}
+
+do-install:
+	@cd ${WRKSRC} && \
+		${JAM_CMD} install
 
 .include <bsd.port.post.mk>
