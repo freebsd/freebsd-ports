@@ -1366,6 +1366,7 @@ conserver-com	ports/comms/conserver-com
 consolehm	ports/sysutils/consolehm
 construo	ports/games/construo
 contact-lookup-applet	ports/mail/contact-lookup-applet
+contacts	ports/deskutils/contacts
 contool		ports/sysutils/contool
 convertall	ports/math/convertall
 convey		ports/net-im/convey
