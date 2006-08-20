@@ -84,7 +84,7 @@ PLIST_SUB+=	ALPHA_NA="@comment "
 .else
 PLIST_SUB+=	ALPHA_NA=""
 .endif
-		
+
 .if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
