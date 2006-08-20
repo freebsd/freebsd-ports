@@ -1462,6 +1462,7 @@ cryptoslam	ports/games/cryptoslam
 cryptplug	ports/security/cryptplug
 crystalentitylayer	ports/graphics/crystalentitylayer
 crystalspace	ports/graphics/crystalspace
+crystalspace-devel	ports/graphics/crystalspace-devel
 cs		ports/misc/cs
 cs-aspell	ports/textproc/cs-aspell
 csb-aspell	ports/textproc/csb-aspell
