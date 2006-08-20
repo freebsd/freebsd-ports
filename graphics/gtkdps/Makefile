@@ -16,8 +16,6 @@ DISTNAME=	gtkDPS-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk bindings for the Display GhostScript System
 
-LIB_DEPENDS=	dpstk.0:${PORTSDIR}/x11/dgs
-
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -44,6 +42,7 @@ BROKEN=		Does not compile on alpha
 BUILD_DEPENDS+=	pswrap:${PORTSDIR}/devel/imake-4
 .else
 BUILD_DEPENDS+=	pswrap:${PORTSDIR}/devel/imake-6
+LIB_DEPENDS+=	dpstk.0:${PORTSDIR}/x11/dgs
 .endif
 
 post-patch:
