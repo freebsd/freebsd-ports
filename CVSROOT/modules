@@ -5750,6 +5750,7 @@ libRmath	ports/math/libRmath
 libSM		ports/x11/libSM
 libU77		ports/devel/libU77
 libX11		ports/x11/libX11
+libXGP		ports/devel/libXGP
 libXau		ports/x11/libXau
 libXaw		ports/x11-toolkits/libXaw
 libXcomposite	ports/x11/libXcomposite
