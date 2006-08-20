@@ -21,6 +21,7 @@
     SUBDIR += cdcat
     SUBDIR += checkrdf
     SUBDIR += chmsee
+    SUBDIR += contacts
     SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deskbar-applet
