@@ -6,7 +6,7 @@
 
 PORTNAME=	libcaca
 PORTVERSION=	0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://sam.zoy.org/projects/libcaca/
 
@@ -33,6 +33,10 @@ LIB_DEPENDS+=		Imlib2.3:${PORTSDIR}/graphics/imlib2
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC -DPIC
+.endif
 
 .if defined(WITH_SLANG) || exists(${LOCALBASE}/lib/libslang.so)
 LIB_DEPENDS+=		slang.1:${PORTSDIR}/devel/libslang
