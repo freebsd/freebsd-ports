@@ -540,6 +540,7 @@
     SUBDIR += squirrelmail-wetteronline-plugin
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
+    SUBDIR += surblhost
     SUBDIR += svnmailer
     SUBDIR += swaks
     SUBDIR += sylpheed

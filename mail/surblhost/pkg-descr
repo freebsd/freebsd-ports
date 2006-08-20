@@ -1,0 +1,11 @@
+Surblhost is a small program to see if hostnames are listed in the Spam
+URI Realtime Blocklists (SURBL).
+
+Hosts that are blacklisted means that global spam email have been reported
+to contain links to these hosts.
+
+Many popular spam email filters use these lists to identify spam email,
+but this program makes it possible to use the lists for any conceivable
+purpose, such as filtering out bad hosts from URL redirection, and so on.
+
+WWW: http://surblhost.sourceforge.net/
