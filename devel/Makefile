@@ -705,6 +705,7 @@
     SUBDIR += ocaml-magic
     SUBDIR += ocaml-ounit
     SUBDIR += ocaml-pcre
+    SUBDIR += ocaml-pomap
     SUBDIR += ocaml-sdl
     SUBDIR += ocaml-sem
     SUBDIR += ocaml-sexplib
