@@ -4292,6 +4292,7 @@ idesk		ports/x11/idesk
 idled		ports/sysutils/idled
 idnits		ports/textproc/idnits
 idnkit		ports/dns/idnkit
+iextract	ports/sysutils/iextract
 ifc		ports/lang/ifc
 ifc7		ports/lang/ifc7
 ifd-devkit	ports/security/ifd-devkit
