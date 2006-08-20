@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxemul
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://gavare.se/gxemul/src/ \
 		${MASTER_SITE_LOCAL}
