@@ -1,0 +1,9 @@
+This OCaml-library interfaces the BLAS-library (Basic Linear Algebra
+Subroutines) and LAPACK-library (Linear Algebra routines), which are
+written in FORTRAN.
+
+This allows people to write high-performance numerical code for
+applications that need linear algebra.
+
+Author:	Markus Mottl <markus.mottl@gmail.com>
+WWW:	http://www.ocaml.info/home/ocaml_sources.html

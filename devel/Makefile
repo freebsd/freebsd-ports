@@ -702,6 +702,7 @@
     SUBDIR += ocaml-event
     SUBDIR += ocaml-extlib
     SUBDIR += ocaml-findlib
+    SUBDIR += ocaml-lacaml
     SUBDIR += ocaml-magic
     SUBDIR += ocaml-ounit
     SUBDIR += ocaml-pcre
