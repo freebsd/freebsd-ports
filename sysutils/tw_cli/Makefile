@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	tw_cli
-PORTVERSION=	9.3.0.3
-PORTREVISION=	1
+PORTVERSION=	9.3.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://3ware.com/download/Escalade9000Series/${PORTVERSION}/
+MASTER_SITES=	http://3ware.com/download/Escalade9550SX-Series/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-freebsd_5.4-${DIST_ARCH}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	frolov@riss-telecom.ru
 COMMENT=	3ware storage controllers management CLI
 
+USE_PERL5_RUN=	yes
 RESTRICTED=	Redistribution is not allowed
 # i386 binary should work on ia64, but not tested
 ONLY_FOR_ARCHS=	i386 amd64 ia64
@@ -38,8 +38,12 @@ DIST_ARCH=	x86_64
 DIST_ARCH=	x86
 .endif
 
+do-configure:
+	${REINPLACE_CMD} 's!/usr/bin/perl!${PERL}!g' ${WRKSRC}/tw_sched
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tw_cli ${WRKSRC}/tw_sched ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tw_cli ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/tw_sched ${PREFIX}/sbin/
 	${INSTALL_MAN} ${WRKSRC}/tw_cli.8.nroff ${MANPREFIX}/man/man8/tw_cli.8
 	${INSTALL_MAN} ${WRKSRC}/tw_sched.8.nroff ${MANPREFIX}/man/man8/tw_sched.8
 	@${MKDIR} ${PREFIX}/etc/periodic/daily
