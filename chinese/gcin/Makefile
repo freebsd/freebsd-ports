@@ -7,12 +7,11 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
-		http://edt1023.sayya.org/misc/:boshiamy
-DISTFILES=	gcin-${PORTVERSION}.tar.bz2:main \
-		noseeing.tar.gz:boshiamy
-EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
+EXTRACT_ONLY=	gcin-1.2.2.tar.bz2
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A traditional chinese input utility in X
@@ -24,9 +23,8 @@ USE_GNOME=	gtk20
 USE_GMAKE=	YES
 USE_GCC=	3.4+
 INSTALLS_ICONS=	YES
-USE_LDCONFIG=	YES
+INSTALLS_SHLIB=	YES
 OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	off
-IGNOREFILES=	noseeing.tar.gz
 
 CONFIGURE_ENV+=	"--new_gtk_im=Y"
 
@@ -35,8 +33,10 @@ MAN1=		gcin.1 gcin2tab.1
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BOSHIAMY)
+MASTER_SITES+=	http://edt1023.sayya.org/misc/:boshiamy
+DISTFILES+=	noseeing-6.tar.gz:boshiamy
 post-extract:
-	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/noseeing.tar.gz \
+	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/noseeing-6.tar.gz \
 		noseeing.cin
 	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
 		${WRKSRC}/data/Makefile
@@ -51,6 +51,7 @@ pre-patch:
 		s/\/usr\/share/$$prefix\/share/; \
 		109,110 s/control-center-2\.0/gnome\/control-center-2\.0/; \
 		s/gcc/$$CC/; s/gcin-$$GCIN_VERSION/gcin/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/qsort/mergesort/' ${WRKSRC}/gcin2tab.c
 	@${REINPLACE_CMD} -e 's/modify-XIM //; 8,10 d' ${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's/bash/sh/;' ${WRKSRC}/scripts/gcin-user-setup
 	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//; s/opt\/gnome/usr\/X11R6/;' \
