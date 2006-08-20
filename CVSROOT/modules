@@ -7622,6 +7622,7 @@ ocaml-annexlib	ports/devel/ocaml-annexlib
 ocaml-camljava	ports/devel/ocaml-camljava
 ocaml-camomile	ports/devel/ocaml-camomile
 ocaml-camomile-examples	ports/devel/ocaml-camomile-examples
+ocaml-cfg	ports/devel/ocaml-cfg
 ocaml-classes	ports/devel/ocaml-classes
 ocaml-cryptgps	ports/security/ocaml-cryptgps
 ocaml-cryptokit	ports/security/ocaml-cryptokit
