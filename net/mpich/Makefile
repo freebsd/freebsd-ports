@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	mpich
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+DISTVERSION=	1.2.7p1
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
-
-PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
-PATCHFILES=	10039 10243 10246
+#PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
+#PATCHFILES=	10039 10243 10246
 
 MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	Message Passing Interface (MPI) Library
 
+USE_BZIP2=	yes
 CONFIGURE_ARGS=	-prefix=${PREFIX}/mpich
 
 OPTIONS=	X11	"Enable MPE graphics" on \
@@ -163,7 +162,7 @@ MAN3=		MPI_File_get_position.3 MPI_File_preallocate.3				\
 		MPI_File_get_position_shared.3 MPI_File_get_type_extent.3		\
 		MPI_File_read_at_all_end.3 MPI_File_seek_shared.3 MPI_File_set_view.3	\
 		MPI_File_write_ordered_begin.3 MPIO_Request_f2c.3			\
-		MPI_File_write_at_all_begin.3
+		MPI_File_write_at_all_begin.3 MPI_Register_datarep.3
 MAN4=		CLOG_Init.4 CLOG_commtype.4 CLOG_cput.4 CLOG_csync.4			\
 		CLOG_get_new_event.4 CLOG_get_new_state.4 CLOG_init_buffers.4		\
 		CLOG_mergelogs.4 CLOG_mergend.4 CLOG_msgtype.4 CLOG_procbuf.4 MPE.4	\
@@ -205,7 +204,7 @@ post-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-test:	build
+regression-test:
 	(cd ${WRKSRC}/examples/test ;	\
 	${MAKE} testing)
 .endif

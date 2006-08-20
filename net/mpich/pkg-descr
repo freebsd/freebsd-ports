@@ -5,4 +5,7 @@ interface should establish a practical, portable, efficient, and
 flexible standard for message passing. Included are a full set of
 documents and parallel programming examples.
 
-WWW: http://www.mcs.anl.gov/mpi/mpich/
+Note: with the exception of users requiring the communication of heterogeneous
+data, the authors strongly encourage everyone to consider switching to MPICH2.
+
+WWW: http://www.mcs.anl.gov/mpi/mpich1/
