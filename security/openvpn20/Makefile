@@ -13,7 +13,7 @@ PORTNAME=	openvpn
 # WILL BE DROPPED.       -- Matthias Andree, 2006-04-26
 # -----------------------------------------------------
 PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -21,6 +21,8 @@ MASTER_SITES=	http://openvpn.net/release/
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Secure IP/Ethernet tunnel daemon
+
+CONFLICTS=	openvpn-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
