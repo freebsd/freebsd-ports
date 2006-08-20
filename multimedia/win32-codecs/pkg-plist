@@ -79,6 +79,7 @@ lib/win32/wmadmod.dll
 lib/win32/wmspdmod.dll
 lib/win32/wmv9dmod.dll
 lib/win32/wmvdmod.dll
+lib/win32/vp7vfw.dll
 lib/win32/vssh264.dll
 lib/win32/vssh264core.dll
 lib/win32/vssh264dec.dll
@@ -106,6 +107,7 @@ lib/win32/vdowave.drv
 lib/win32/vmnc.dll
 lib/win32/wmsdmod.dll
 lib/win32/wmvadvd.dll
+lib/win32/wvc1dmod.dll
 @comment qt63dlls
 lib/win32/ACTLComponent.qtx
 lib/win32/AvidQTAVUICodec.qtx

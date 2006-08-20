@@ -7,7 +7,6 @@
 
 PORTNAME=	win32-codecs
 PORTVERSION=	3.${CODEC_MPLAYER_VERSION:S/pre/.p/}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
@@ -18,10 +17,10 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp1.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/codecs/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/codecs/
-DISTFILES=	all-20060501.tar.bz2 \
+DISTFILES=	all-20060611.tar.bz2 \
 		${ADDITIONAL_CODECS_DISTFILES}
 DIST_SUBDIR=	win32
-EXTRACT_ONLY=	all-20060501.tar.bz2
+EXTRACT_ONLY=	all-20060611.tar.bz2
 
 MAINTAINER=	holger@e-gitt.net
 COMMENT=	Huge compilation of Win32 binary video codecs
@@ -35,7 +34,7 @@ WRKSRC=		${WRKDIR}/w32codec-${CODEC_MPLAYER_VERSION:S/pre7//}
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 
-CODEC_MPLAYER_VERSION=	1.0pre7
+CODEC_MPLAYER_VERSION=	1.0pre8
 # Used by other ports to detect if this is installed
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
