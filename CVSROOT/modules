@@ -1655,6 +1655,7 @@ dcetest		ports/security/dcetest
 dcfldd		ports/sysutils/dcfldd
 dcl		ports/science/dcl
 dclib		ports/net-p2p/dclib
+dclibc		ports/net-p2p/dclibc
 dclock		ports/x11-clocks/dclock
 dcraw		ports/graphics/dcraw
 dctc		ports/net-p2p/dctc
