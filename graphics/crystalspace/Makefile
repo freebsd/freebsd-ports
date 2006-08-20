@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	0.99
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -16,15 +16,19 @@ DISTNAME=	cs-pseudo-stable-2006-01-27
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free and portable 3D Game Development Kit
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
+		swig:${PORTSDIR}/devel/swig13 \
+		jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut \
+		CEGUIBase.0:${PORTSDIR}/graphics/cegui
+
+CONFLICTS=	crystalspace-devel-[0-9]*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4+
 USE_GL=		yes
@@ -33,9 +37,14 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" \
 		CPPFLAGS="${CPPFLAGS} "LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--enable-cpu-specific-optimizations=no
+CONFIGURE_ARGS+=	--enable-cpu-specific-optimizations=no \
+			--disable-make-emulation \
+			--prefix=${PREFIX}
 DOCSDIR=	share/doc/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/CS
+
+JAM_CMD=	${LOCALBASE}/bin/jam
+JAM_ARGS=	-qa
 
 OPTIONS=	DEBUG	"Build with debugging information"	on \
 		PYTHON	"PYTHON interface"	on \
@@ -57,10 +66,6 @@ OPTIONS=	DEBUG	"Build with debugging information"	on \
 
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on ${ARCH}
 .endif
 
 .if !defined(WITHOUT_DEBUG)
@@ -127,7 +132,7 @@ CONFIGURE_ARGS+=	--without-freetype2
 .endif
 
 .if !defined(WITHOUT_CAL3D)
-LIB_DEPENDS+=	cal3d.11:${PORTSDIR}/graphics/cal3d-devel
+LIB_DEPENDS+=	cal3d.12:${PORTSDIR}/graphics/cal3d
 .else
 CONFIGURE_ARGS+=	--without-cal3d
 .endif
@@ -166,5 +171,13 @@ post-configure:
 	@${REINPLACE_CMD} -e 26d ${WRKSRC}/Jamfile
 	@${REINPLACE_CMD} -e 79d ${WRKSRC}/Jamfile
 .endif
+
+do-build:
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${JAM_CMD} ${JAM_ARGS}
+
+do-install:
+	@cd ${WRKSRC} && \
+		${JAM_CMD} install
 
 .include <bsd.port.post.mk>
