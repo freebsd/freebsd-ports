@@ -1,7 +1,4 @@
 bin/mozilla-bonobo-viewer
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mozilla-bonobo.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/mozilla-bonobo.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mozilla-bonobo.schemas > /dev/null || /usr/bin/true
 lib/browser_plugins/libmozilla_bonobo.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

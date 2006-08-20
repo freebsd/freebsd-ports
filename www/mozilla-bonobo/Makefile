@@ -41,6 +41,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \
 			--with-mozilla-include-dir="${X11BASE}/include/mozilla${HEADERS_SUFX}"
 
+GCONF_SCHEMAS=	mozilla-bonobo.schemas
+
 BROKEN=	"Does not build with new Mozilla"
 
 pre-everything::
