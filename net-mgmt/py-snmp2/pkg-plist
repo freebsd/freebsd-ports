@@ -1,0 +1,73 @@
+%%PYTHON_SITELIBDIR%%/pysnmp/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/asn1.py
+%%PYTHON_SITELIBDIR%%/pysnmp/asn1.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/asn1.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/asynrole.py
+%%PYTHON_SITELIBDIR%%/pysnmp/asynrole.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/asynrole.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/bulkrole.py
+%%PYTHON_SITELIBDIR%%/pysnmp/bulkrole.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/bulkrole.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/error.py
+%%PYTHON_SITELIBDIR%%/pysnmp/error.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/error.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/role.py
+%%PYTHON_SITELIBDIR%%/pysnmp/role.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/role.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v1.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v1.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v1.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v2c.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v2c.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v2c.pyo
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/asn1-integer-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1-ipaddress-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1-null-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1-objectid-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1-octetstring-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/asn1.html
+%%PORTDOCS%%%%DOCSDIR%%/asynrole-objects-agent.html
+%%PORTDOCS%%%%DOCSDIR%%/asynrole-objects-manager.html
+%%PORTDOCS%%%%DOCSDIR%%/asynrole.html
+%%PORTDOCS%%%%DOCSDIR%%/bulkrole-manager-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/bulkrole.html
+%%PORTDOCS%%%%DOCSDIR%%/contribution/WARNING
+%%PORTDOCS%%%%DOCSDIR%%/error-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/error.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/role-agent-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/role-manager-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/role.html
+%%PORTDOCS%%%%DOCSDIR%%/v1-getrequest-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/v1-getresponse-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/v1-traprequest-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/v1.html
+%%PORTDOCS%%%%DOCSDIR%%/v2c-getbulkrequest-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/v2c-getrequest-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/v2c-response-objects.html
+%%PORTDOCS%%%%DOCSDIR%%/v2c.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/asyncmgr.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpagent.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpbulk.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpbulkwalk.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpget.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpset.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmptrap.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmptrapd.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/snmpwalk.py
+%%PORTDOCS%%@dirrm share/nls/en_US.US-ASCII
+%%PORTDOCS%%@dirrm share/nls/POSIX
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/contribution
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%/pysnmp
+%%PORTDOCS%%@dirrm %%PYTHON_SITELIBDIR%%
+%%PORTDOCS%%@dirrm lib/python2.4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
