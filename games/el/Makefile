@@ -6,32 +6,29 @@
 #
 
 PORTNAME=	el
-PORTVERSION=	112
-PORTREVISION=	1
+PORTVERSION=	130
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.berlios.de/pub/elc/ http://el.tfm.ro/
-DISTFILES=	${EL_PROG} ${EL_DATA}
-EXTRACT_ONLY=	${EL_PROG}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	acm/${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		openal.0:${PORTSDIR}/audio/openal \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		cal3d.11:${PORTSDIR}/graphics/cal3d \
+		cal3d.12:${PORTSDIR}/graphics/cal3d \
 		alut.1:${PORTSDIR}/audio/freealut
-RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_SDL=	sdl net
 
-EL_PROG=	elc_${PORTVERSION}.tgz
-EL_DATA=	el_${PORTVERSION}_linux.zip
-
-WRKSRC=		${WRKDIR}/elc
-
-ALL_TARGET=	cal3d
-MAKEFILE=	Makefile.bsd
+ALL_TARGET=	el.x86
+MAKEFILE=	Makefile.bsdg
 
 .include <bsd.port.pre.mk>
 
@@ -40,20 +37,30 @@ CFLAGS+=	-DX86_64
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
+BROKEN=		does not compile
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
-do-install:
-	${ECHO} "#!/bin/sh" > ${WRKDIR}/el
-	${ECHO} "cd ${DATADIR}; ./el.x86.bsd.bin" >> ${WRKDIR}/el
-	${INSTALL_SCRIPT} ${WRKDIR}/el ${PREFIX}/bin
+post-extract:
+	@cd ${WRKSRC} && \
+		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e 's|malloc.h|stdlib.h|g' "{}" \;
 
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/el.x86.bsd.bin ${DATADIR}
-	${UNZIP_CMD} ${DISTDIR}/${EL_DATA} -d ${DATADIR}
+post-patch:
+	@${ECHO} "bin/el" > ${PLIST}
+	@${ECHO} "%%DATADIR%%/el.x86" >> ${PLIST}
+	@${ECHO} "@dirrmtry %%DATADIR%%" >> ${PLIST}
+
+pre-install:
+	${ECHO} "#!/bin/sh" > ${WRKDIR}/el
+	${ECHO} "cd ${DATADIR} || exit 1 " >> ${WRKDIR}/el
+	${ECHO} "exec ${DATADIR}/el.x86" >> ${WRKDIR}/el
+
+do-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/el ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/el.x86 ${DATADIR}
 
 .include <bsd.port.post.mk>

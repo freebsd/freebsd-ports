@@ -1,0 +1,53 @@
+--- Makefile.bsdg	Fri Aug 18 08:37:43 2006
++++ Makefile.bsdg	Fri Aug 18 08:47:09 2006
+@@ -1,7 +1,7 @@
+ .PHONY: clean release docs
+ 
+ # tune these for your setup & compile options
+-OPTIONS=-DLINUX -DELC -DPNG_SCREENSHOT -DUSE_FRAMEBUFFER -DNEW_FRUSTUM -DBUG_FIX_3D_OBJECTS_MIN_MAX -DNEW_TEX -DOPTIONS_I18N -DATI_9200_FIX -DNEW_ACTOR_ANIMATION -DAUTO_UPDATE -DCOUNTERS
++OPTIONS=-DFREEBSD -DELC -DPNG_SCREENSHOT -DUSE_FRAMEBUFFER -DNEW_FRUSTUM -DBUG_FIX_3D_OBJECTS_MIN_MAX -DNEW_TEX -DOPTIONS_I18N -DATI_9200_FIX -DNEW_ACTOR_ANIMATION -DAUTO_UPDATE -DCOUNTERS
+ 
+ #-DX86_64
+ #-DTIMER_CHECK
+@@ -25,7 +25,6 @@
+ #-DAFK_FIX	# fixes afk messages to count only PM's, and store and count local messages if the option is selected
+ #-DFONTS_FIX		# dynamically loads all fonts with the filename in the format font*.bmp, and makes them accessable in the options
+ 
+-PLATFORM=-march=i686
+ XDIR=-L/usr/X11R6/lib
+ CWARN=
+ #-Wdeclaration-after-statement -Wall -Werror
+@@ -33,12 +32,12 @@
+ #-Wall -Werror
+ 
+ # basic compiling and linking - rarely changed
+-CFLAGS=$(PLATFORM) $(CWARN) -g -ggdb -pipe $(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags) -I/usr/X11R6/include/
+-_CFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags)
+-CXXFLAGS=$(PLATFORM) $(CPPWARN) -O -ggdb -pipe -I/usr/local/include $(OPTIONS)
+-_CXXFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS)
++CFLAGS+=$(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags) -I/usr/X11R6/include/
++_CFLAGS=$(CFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags)
++CXXFLAGS+=-I/usr/local/include $(OPTIONS)
++_CXXFLAGS=$(CXXFLAGS) -fomit-frame-pointer -ffast-math $(OPTIONS)
+ 
+-LDFLAGS=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
++LDFLAGS+=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lalut -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
+ _LDFLAGS=$(XDIR) -lGL -lpthread -lz
+ STATICLIBS=libs/libSDL_net.a libs/libSDL.a libs/libopenal.a libs/libvorbisfile.a libs/libvorbis.a libs/libogg.a libs/libxml2.a libs/libcal3d.a
+ 
+@@ -68,11 +67,11 @@
+ 
+ OBJS=$(COBJS) $(CXXOBJS)
+ 
+-EXE=el.x86.bsd.bin
++EXE=el.x86
+ 
+-CC=gcc
+-CXX=g++
+-LINK=gcc
++CC?=gcc
++CXX?=g++
++LINK?=gcc
+ 
+ # the compile targets
+ $(EXE): $(OBJS)
