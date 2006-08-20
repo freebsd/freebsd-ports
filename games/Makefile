@@ -162,6 +162,7 @@
     SUBDIR += eights
     SUBDIR += einstein
     SUBDIR += el
+    SUBDIR += el-data
     SUBDIR += emacs-chess
     SUBDIR += ember
     SUBDIR += empire
