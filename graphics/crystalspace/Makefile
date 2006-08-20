@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	0.99
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -166,6 +166,7 @@ pre-configure:
 		s,86\*),86\*|amd64|ia64),' ${WRKSRC}/configure
 
 post-configure:
+	@${REINPLACE_CMD} -i "" -e 's|-lcaca|-lcaca_pic|g' ${WRKSRC}/Jamconfig
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 42,44d ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 26d ${WRKSRC}/Jamfile
