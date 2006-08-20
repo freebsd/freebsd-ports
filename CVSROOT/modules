@@ -2169,6 +2169,7 @@ eject		ports/sysutils/eject
 ekiga		ports/net/ekiga
 el		ports/games/el
 el-aspell	ports/textproc/el-aspell
+el-data		ports/games/el-data
 elan		ports/lang/elan
 eldav.el	ports/www/eldav.el
 electric	ports/cad/electric
