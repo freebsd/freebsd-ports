@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		libspf2
-PORTVERSION=		1.0.4
+PORTNAME=	libspf2
+PORTVERSION=	1.0.4
 PORTREVISION=	1
-CATEGORIES=		mail
-MASTER_SITES=		http://www.libspf2.org/%SUBDIR%/
+CATEGORIES=	mail
+MASTER_SITES=	http://www.libspf2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	spf
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Sender Rewriting Scheme 2 C Implementation
+MAINTAINER=	mnag@FreeBSD.org
+COMMENT=	Sender Rewriting Scheme 2 C Implementation
 
-CONFLICTS=		${PORTNAME}-1.2.*
+CONFLICTS=	${PORTNAME}-1.2.*
 
-LATEST_LINK=		libspf2-10
+LATEST_LINK=	${PORTNAME}-${PORTVERSION:S/.//:R}
 
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
