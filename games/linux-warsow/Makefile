@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
@@ -26,7 +26,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free multiplayer first person shooter with cartoon design
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl \
-		${DATADIR}/basewsw/data0.pk3:${PORTSDIR}/games/warsow-data
+		${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
@@ -100,14 +100,13 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 do-install:
-	${MKDIR} ${DATADIR}/basewsw
-	${INSTALL_DATA} ${WRKSRC}/basewsw/*.so ${DATADIR}/basewsw
-	${MKDIR} ${WARSOW_DIR}
+	${MKDIR} ${WARSOW_DIR}/basewsw
+	${INSTALL_DATA} ${WRKSRC}/basewsw/*.so ${WARSOW_DIR}/basewsw
 .for FILE in ${WARSOW_TARGET}
 	${BRANDELF} -t Linux ${WRKSRC}/${FILE}${ENGINESUFFIX}
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE}${ENGINESUFFIX} ${WARSOW_DIR}/${FILE}
 	${INSTALL_SCRIPT} ${WRKDIR}/${FILE}-wrapper ${PREFIX}/bin/${PKGNAMEPREFIX}${FILE}
 .endfor
-	${LN} -s ${DATADIR}/* ${WARSOW_DIR}
+	${LN} -s ${DATADIR}/* ${WARSOW_DIR}/basewsw
 
 .include <bsd.port.post.mk>

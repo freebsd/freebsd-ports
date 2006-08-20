@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/
 MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
@@ -36,11 +37,11 @@ post-extract:
 	${RM} -R ${WRKSRC}/basewsw/screenshots ${WRKSRC}/basewsw/demos
 
 do-install:
-	@${MKDIR} ${DATADIR}/basewsw
+	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/basewsw && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/basewsw/{}" \; && \
+		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 			${FIND} -E * -type f -iregex ".*\.(pk3|cfg|hud)" \
-				-exec ${INSTALL_DATA} "{}" "${DATADIR}/basewsw/{}" \;
+				-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .	for FILE in Shader* bots_navigation.txt changelog.txt contact.txt dedicated* demoavi.txt \

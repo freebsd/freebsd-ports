@@ -2,7 +2,7 @@
 
 case $2 in
 	DEINSTALL)
-		config_file=$PKG_PREFIX/share/warsow/basewsw/config.cfg
+		config_file=$PKG_PREFIX/share/warsow/config.cfg
 
 		if [ -e $config_file ] && ! [ -s $config_file ]; then
 			rm -f $config_file
@@ -10,7 +10,6 @@ case $2 in
 		;;
 
 	POST-DEINSTALL)
-		rmdir $PKG_PREFIX/share/warsow/basewsw 2>/dev/null || true
 		rmdir $PKG_PREFIX/share/warsow 2>/dev/null || true
 		;;
 esac
