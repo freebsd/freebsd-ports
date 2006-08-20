@@ -5772,6 +5772,7 @@ libXt		ports/x11-toolkits/libXt
 libXtrans	ports/x11/libXtrans
 libXv		ports/x11/libXv
 libXxf86	ports/x11/libXxf86
+libYGP		ports/devel/libYGP
 liba52		ports/audio/liba52
 liba52-devel	ports/audio/liba52-devel
 libadplug	ports/audio/libadplug
