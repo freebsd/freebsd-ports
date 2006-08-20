@@ -63,7 +63,7 @@ case ${arpwatch_interfaces} in
     ;;
 
     *)
-	 if [ "$1" = "start" ]; then
+	 if [ "$1" = "start" -o "$1" = "faststart" ]; then
  	     for interface in ${arpwatch_interfaces}; do
 		 eval options=\$arpwatch_${interface}_options
 		 command_args="-i ${interface} ${options} -f arp.${interface}.dat"
