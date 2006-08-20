@@ -13478,6 +13478,7 @@ superlu_mt	ports/math/superlu_mt
 superswitcher	ports/deskutils/superswitcher
 supertux	ports/games/supertux
 suphp		ports/www/suphp
+surblhost	ports/mail/surblhost
 surf		ports/math/surf
 surfraw		ports/www/surfraw
 susv2		ports/misc/susv2
