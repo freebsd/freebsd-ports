@@ -1,0 +1,4 @@
+share/emacs/site-lisp/table.el
+lib/xemacs/site-lisp/table.el
+@dirrmtry lib/xemacs/site-lisp
+@dirrmtry lib/xemacs

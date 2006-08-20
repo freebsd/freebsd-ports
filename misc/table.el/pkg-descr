@@ -1,0 +1,15 @@
+Table.el is an Emacs lisp package that extends Emacs and provides text
+based table creation and editing feature. With this package Emacs is
+capable of editing tables that are embedded inside a document, the
+feature similar to the ones seen in modern WYSIWYG word processors. A
+table is a rectangular text area consisting from a surrounding frame
+and content inside the frame. The content is usually subdivided into
+multiple rectangular cells, see the actual tables used below in this
+document. Once a table is recognized, editing operation inside a table
+cell is confined into that specific cell's rectangular area. This
+means that typing and deleting characters inside a cell do not affect
+any outside text but introduces appropriate formatting only to the
+cell contents. If necessary for accommodating added text in the cell,
+the cell automatically grows vertically and/or horizontally.
+
+WWW: http://table.sourceforge.net/
