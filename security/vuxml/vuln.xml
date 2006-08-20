@@ -80,6 +80,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2006-08-17</entry>
     </dates>
   </vuln>
+
   <vuln vid="5039ae61-2c9f-11db-8401-000ae42e9b93">
     <topic>globus -- Multiple tmpfile races</topic>
     <affects>
