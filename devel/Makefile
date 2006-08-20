@@ -697,6 +697,7 @@
     SUBDIR += ocaml-camljava
     SUBDIR += ocaml-camomile
     SUBDIR += ocaml-camomile-examples
+    SUBDIR += ocaml-cfg
     SUBDIR += ocaml-classes
     SUBDIR += ocaml-equeue
     SUBDIR += ocaml-event
