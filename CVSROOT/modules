@@ -11831,6 +11831,7 @@ py-slimmer	ports/www/py-slimmer
 py-smb		ports/net/py-smb
 py-smbpasswd	ports/net/py-smbpasswd
 py-snmp		ports/net-mgmt/py-snmp
+py-snmp2	ports/net-mgmt/py-snmp2
 py-snmp4	ports/net-mgmt/py-snmp4
 py-snmp4-apps	ports/net-mgmt/py-snmp4-apps
 py-snmp4-mibs	ports/net-mgmt/py-snmp4-mibs
