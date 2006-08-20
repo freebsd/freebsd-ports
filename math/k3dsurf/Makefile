@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	k3dsurf
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualize and manipulate Mathematical surfaces or curves
