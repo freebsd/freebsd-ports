@@ -14,6 +14,7 @@
     SUBDIR += ctorrent
     SUBDIR += dcd
     SUBDIR += dclib
+    SUBDIR += dclibc
     SUBDIR += dctc
     SUBDIR += dctc-gui
     SUBDIR += dctc-gui-qt

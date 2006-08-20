@@ -1,0 +1,14 @@
+include/dclibc/dclibc/dclibc.h
+include/dclibc/dclibc/dcproto.h
+include/dclibc/dclibc/hub.h
+include/dclibc/dclibc/hubconn.h
+include/dclibc/dclibc/search.h
+include/dclibc/dclibc/userinfo.h
+include/dclibc/dclibc/userlist.h
+lib/libdclibc.a
+lib/libdclibc.la
+lib/libdclibc.so
+lib/libdclibc.so.8
+libdata/pkgconfig/dclibc.pc
+@dirrm include/dclibc/dclibc
+@dirrm include/dclibc

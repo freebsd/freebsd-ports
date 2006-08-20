@@ -1,0 +1,6 @@
+DCLibC is a library for implementing the Direct Connect peer-to-peer
+protocol. It offers support for the NMDC protocol (client-hub
+commands and client-client operations) and an interface to the
+most common filelists.
+
+WWW: http://www.gtkdc.org/
