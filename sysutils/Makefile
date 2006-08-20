@@ -254,6 +254,7 @@
     SUBDIR += httplog
     SUBDIR += i855vidctl10
     SUBDIR += idled
+    SUBDIR += iextract
     SUBDIR += installwatch
     SUBDIR += ipa
     SUBDIR += ipmi-kmod
