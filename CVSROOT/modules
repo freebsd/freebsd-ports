@@ -7649,6 +7649,7 @@ ocaml-ounit	ports/devel/ocaml-ounit
 ocaml-pcre	ports/devel/ocaml-pcre
 ocaml-pomap	ports/devel/ocaml-pomap
 ocaml-pxp	ports/textproc/ocaml-pxp
+ocaml-res	ports/devel/ocaml-res
 ocaml-sdl	ports/devel/ocaml-sdl
 ocaml-sem	ports/devel/ocaml-sem
 ocaml-sexplib	ports/devel/ocaml-sexplib
