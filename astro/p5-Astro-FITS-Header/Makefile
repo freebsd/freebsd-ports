@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Astro-FITS-Header
-PORTVERSION=	2.8.1
+PORTVERSION=	3.0
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Astro
@@ -19,9 +19,16 @@ COMMENT=	Object Orientated interface to FITS HDUs
 PERL_CONFIGURE=	yes
 
 MAN3=	Astro::FITS::Header.3 \
+	Astro::FITS::Header::AST.3 \
 	Astro::FITS::Header::CFITSIO.3 \
 	Astro::FITS::Header::GSD.3 \
 	Astro::FITS::Header::Item.3 \
 	Astro::FITS::Header::NDF.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	requires at least Perl 5.6. Please install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
