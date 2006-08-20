@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-StopWords
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -20,7 +20,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=	requires perl 5.6.1 or newer
+IGNORE=	requires at least Perl 5.6.1. Please install lang/perl5.8 and try again
 .endif
 
 MAN3=	Lingua::StopWords.3

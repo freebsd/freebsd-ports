@@ -1,5 +1,6 @@
 This module provides lists of stopwords for several languages.
-Currently supported languages are Danish, Dutch, English, French,
-German, Italian, Norwegian, Portugese, Spanish, and Swedish.
+Currently supported languages are Danish, Dutch, English, Finnish,
+French, German, Italian, Norwegian, Portugese, Spanish, Swedish,
+and Russian.
 
 WWW: http://search.cpan.org/dist/Lingua-StopWords/
