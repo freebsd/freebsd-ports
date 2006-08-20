@@ -1798,6 +1798,7 @@ dimes		ports/net/dimes
 dinotrace	ports/cad/dinotrace
 dirac		ports/multimedia/dirac
 diradmin	ports/net/diradmin
+dircomp		ports/sysutils/dircomp
 dircproxy	ports/irc/dircproxy
 dirdiff		ports/sysutils/dirdiff
 directfb	ports/devel/directfb
