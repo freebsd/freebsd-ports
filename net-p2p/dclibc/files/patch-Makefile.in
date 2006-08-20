@@ -1,0 +1,11 @@
+--- Makefile.in-orig	Mon May 22 10:23:09 2006
++++ Makefile.in	Sun Aug 20 01:23:21 2006
+@@ -193,7 +193,7 @@
+ target_alias = @target_alias@
+ SUBDIRS = dclibc
+ EXTRA_DIST = TODO dclibc.pc.in
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = @exec_prefix@/libdata/pkgconfig
+ pkgconfig_DATA = dclibc.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
