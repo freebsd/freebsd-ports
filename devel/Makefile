@@ -467,6 +467,8 @@
     SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libU77
+    SUBDIR += libXGP
+    SUBDIR += libYGP
     SUBDIR += libafterbase
     SUBDIR += libassa
     SUBDIR += libassetml

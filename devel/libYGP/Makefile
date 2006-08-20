@@ -1,0 +1,56 @@
+# New ports collection makefile for:	libygp
+# Date created:		2 August 2006
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME?=	libYGP
+PORTVERSION=	0.8.10
+CATEGORIES=	devel
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	libymp
+DISTNAME=	libYGP-${PORTVERSION}
+
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Yet another General Purpose library
+
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GNOME=	pkgconfig gnomehack
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp
+
+.if ${PORTNAME:M*XGP}
+LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml3 \
+		YGP-${PORTVERSION}.0:${PORTSDIR}/devel/libYGP
+PLIST_SUB+=	YGP="@comment " XGP=""
+CFG_PATCH+=	s/mozembed/mozembedNO/g;
+XGP_PATCH+=	s/(^@AM.*)?GtkMozViewer(.lo|.c|.Plo@am__quote@)//;
+MKIN_PATCH+=	s/^(SUBDIRS = ).*$$/\1XGP/;
+.else
+PLIST_SUB+=	XGP="@comment " YGP=""
+MKIN_PATCH+=	s/@MYSUBDIRS@/YGP/;
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's/(test.*)==/\1=/g;${CFG_PATCH}' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -Ee '${XGP_PATCH}' ${WRKSRC}/XGP/Makefile.in
+	@${REINPLACE_CMD} -Ee '${MKIN_PATCH}' ${WRKSRC}/Makefile.in
+.if ${PORTNAME:M*XGP}
+	@${FIND} ${WRKSRC} -type f -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e 's/ygp-cfg/xgp-cfg/g'
+	@${CP} ${WRKSRC}/ygp-cfg.h ${WRKSRC}/xgp-cfg.h
+	@${CP} ${WRKSRC}/ygp-cfg.h.in ${WRKSRC}/xgp-cfg.h.in
+.endif
+
+post-install:
+	@${LN} -sf ${PREFIX}/lib/${PORTNAME}-${PORTVERSION}.so \
+		${PREFIX}/lib/${PORTNAME}-${PORTVERSION}.so.0
+
+.include <bsd.port.mk>
