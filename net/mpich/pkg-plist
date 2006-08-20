@@ -486,6 +486,7 @@ mpich/www/www3/MPI_Recv.html
 mpich/www/www3/MPI_Recv_init.html
 mpich/www/www3/MPI_Reduce.html
 mpich/www/www3/MPI_Reduce_scatter.html
+mpich/www/www3/MPI_Register_datarep.html
 mpich/www/www3/MPI_Request_c2f.html
 mpich/www/www3/MPI_Request_free.html
 mpich/www/www3/MPI_Rsend.html
