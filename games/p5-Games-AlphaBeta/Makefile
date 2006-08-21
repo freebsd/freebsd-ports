@@ -16,7 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Game-tree search with object oriented interface
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
-		${SITE_PERL}/${PERL_ARCH}/Pod/Coverage/CountParents.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
+		${SITE_PERL}/Pod/Coverage/CountParents.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
