@@ -907,6 +907,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_is.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_nl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_tn.inc.php
@@ -951,6 +952,7 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_is.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_ko.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_nl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_tn.inc.php
