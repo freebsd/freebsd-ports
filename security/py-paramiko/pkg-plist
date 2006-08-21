@@ -2,9 +2,12 @@
 %%PYTHON_SITELIBDIR%%/paramiko/agent.py
 %%PYTHON_SITELIBDIR%%/paramiko/auth_handler.py
 %%PYTHON_SITELIBDIR%%/paramiko/ber.py
+%%PYTHON_SITELIBDIR%%/paramiko/buffered_pipe.py
 %%PYTHON_SITELIBDIR%%/paramiko/channel.py
+%%PYTHON_SITELIBDIR%%/paramiko/client.py
 %%PYTHON_SITELIBDIR%%/paramiko/common.py
 %%PYTHON_SITELIBDIR%%/paramiko/compress.py
+%%PYTHON_SITELIBDIR%%/paramiko/config.py
 %%PYTHON_SITELIBDIR%%/paramiko/dsskey.py
 %%PYTHON_SITELIBDIR%%/paramiko/file.py
 %%PYTHON_SITELIBDIR%%/paramiko/hostkeys.py
@@ -12,6 +15,7 @@
 %%PYTHON_SITELIBDIR%%/paramiko/kex_group1.py
 %%PYTHON_SITELIBDIR%%/paramiko/logging22.py
 %%PYTHON_SITELIBDIR%%/paramiko/message.py
+%%PYTHON_SITELIBDIR%%/paramiko/odict.py
 %%PYTHON_SITELIBDIR%%/paramiko/packet.py
 %%PYTHON_SITELIBDIR%%/paramiko/pipe.py
 %%PYTHON_SITELIBDIR%%/paramiko/pkey.py
@@ -28,13 +32,17 @@
 %%PYTHON_SITELIBDIR%%/paramiko/ssh_exception.py
 %%PYTHON_SITELIBDIR%%/paramiko/transport.py
 %%PYTHON_SITELIBDIR%%/paramiko/util.py
+%%PYTHON_SITELIBDIR%%/paramiko/win_pageant.py
 %%PYTHON_SITELIBDIR%%/paramiko/__init__.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/agent.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/auth_handler.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/ber.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/buffered_pipe.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/channel.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/client.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/common.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/compress.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/config.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/dsskey.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/file.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/hostkeys.pyc
@@ -42,6 +50,7 @@
 %%PYTHON_SITELIBDIR%%/paramiko/kex_group1.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/logging22.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/message.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/odict.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/packet.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/pipe.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/pkey.pyc
@@ -58,13 +67,17 @@
 %%PYTHON_SITELIBDIR%%/paramiko/ssh_exception.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/transport.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/util.pyc
+%%PYTHON_SITELIBDIR%%/paramiko/win_pageant.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/__init__.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/agent.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/auth_handler.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/ber.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/buffered_pipe.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/channel.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/client.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/common.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/compress.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/config.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/dsskey.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/file.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/hostkeys.pyo
@@ -72,6 +85,7 @@
 %%PYTHON_SITELIBDIR%%/paramiko/kex_group1.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/logging22.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/message.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/odict.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/packet.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/pipe.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/pkey.pyo
@@ -88,4 +102,5 @@
 %%PYTHON_SITELIBDIR%%/paramiko/ssh_exception.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/transport.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/util.pyo
+%%PYTHON_SITELIBDIR%%/paramiko/win_pageant.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/paramiko
