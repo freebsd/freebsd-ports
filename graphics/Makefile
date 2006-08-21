@@ -61,6 +61,7 @@
     SUBDIR += crw
     SUBDIR += crystalentitylayer
     SUBDIR += crystalspace
+    SUBDIR += crystalspace-devel
     SUBDIR += cthumb
     SUBDIR += curator
     SUBDIR += cuttlefish
