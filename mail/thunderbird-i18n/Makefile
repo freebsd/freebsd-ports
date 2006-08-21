@@ -10,7 +10,7 @@ PORTVERSION=	1.5.0.5
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
-DISTFILES=	${THUNDERBIRD_I18N:S/$/.xpi/}
+DISTFILES=	${THUNDERBIRD_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -28,12 +28,13 @@ THUNDERBIRD_I18N_ALL=	bg ca cs da de el en-GB es-AR es-ES eu fi fr ga-IE gu-IN h
 THUNDERBIRD_I18N?=	zh-CN de fr ja ru it es-ES
 
 .if ${THUNDERBIRD_I18N} == all
-THUNDERBIRD_I18N=	${THUNDERBIRD_I18N_ALL}
+THUNDERBIRD_I18N_=	${THUNDERBIRD_I18N_ALL}
 .endif
+THUNDERBIRD_I18N_?=	${THUNDERBIRD_I18N}
 
 WDIR=	langpack-*@thunderbird.mozilla.org
 
-XPI_DISTNAMES=	${THUNDERBIRD_I18N}
+XPI_DISTNAMES=	${THUNDERBIRD_I18N_}
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
 XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar chrome/chromelist.txt
@@ -43,7 +44,7 @@ XPI_DIRS_${dist}=	chrome
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR} ${WRKSRC}
-	@for lang in ${THUNDERBIRD_I18N}; do \
+	@for lang in ${THUNDERBIRD_I18N_}; do \
 		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
 		then \
 			exit 1; \

@@ -10,7 +10,7 @@ PORTVERSION=	1.5.0.6
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
-DISTFILES=	${FIREFOX_I18N:S/$/.xpi/}
+DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -28,12 +28,13 @@ FIREFOX_I18N_ALL=	ar bg ca cs da de el en-GB es-AR es-ES eu fi fr fy-NL ga-IE gu
 FIREFOX_I18N?=	zh-CN de fr ja ru it es-ES
 
 .if ${FIREFOX_I18N} == all
-FIREFOX_I18N=	${FIREFOX_I18N_ALL}
+FIREFOX_I18N_=	${FIREFOX_I18N_ALL}
 .endif
+FIREFOX_I18N_?=	${FIREFOX_I18N}
 
 WDIR=	langpack-*@firefox.mozilla.org
 
-XPI_DISTNAMES=	${FIREFOX_I18N}
+XPI_DISTNAMES=	${FIREFOX_I18N_}
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@firefox.mozilla.org
 XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar chrome/chromelist.txt
@@ -43,7 +44,7 @@ XPI_DIRS_${dist}=	chrome
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR} ${WRKSRC}
-	@for lang in ${FIREFOX_I18N}; do \
+	@for lang in ${FIREFOX_I18N_}; do \
 		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@firefox.mozilla.org);\
 		then \
 			exit 1; \
