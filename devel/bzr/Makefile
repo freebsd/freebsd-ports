@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/pkg/ \
 		http://voodoo.bawue.com/download/
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	lulf@stud.ntnu.no
-COMMENT=	A Python implementation of the GNU arch RCS protocol by Canonical
+COMMENT=	Distributed version control system by Canonical
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
 
