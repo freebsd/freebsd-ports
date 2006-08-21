@@ -118,6 +118,7 @@ etc/pear.conf
 %%DATADIR%%/tests/XML_RPC/tests/allgot.inc
 %%DATADIR%%/tests/XML_RPC/tests/empty-value-struct.php
 %%DATADIR%%/tests/XML_RPC/tests/empty-value.php
+%%DATADIR%%/tests/XML_RPC/tests/extra-lines.php
 %%DATADIR%%/tests/XML_RPC/tests/protoport.php
 %%DATADIR%%/tests/XML_RPC/tests/test_Dump.php
 %%DATADIR%%/tests/XML_RPC/tests/types.php
