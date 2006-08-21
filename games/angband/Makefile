@@ -8,9 +8,7 @@
 PORTNAME=	angband
 PORTVERSION=	3.0.6
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.thangorodrim.net/pub/angband/Source/ \
-		ftp://ftp.sunet.se/pub/games/Angband/Source/ \
-		ftp://ftp.planetmirror.com/pub/angband/Source/
+MASTER_SITES=	http://angband.oook.cz/download/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
