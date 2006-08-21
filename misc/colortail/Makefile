@@ -9,9 +9,11 @@ PORTNAME=	colortail
 PORTVERSION=	0.3.0
 PORTREVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
+MASTER_SITES=	http://morrdusk.net/files/ \
+		ftp://ftp.jaist.ac.jp/pub/pkgsrc/distfiles/ \
+		http://www.goodking.ca/pub/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	A colour-able replacement for tail(1)
 
 USE_GETOPT_LONG=	yes
