@@ -1,5 +1,6 @@
 bin/Ri_li
-%%DATADIR%%/Ri-li-1.0.3-r1.ebuild
+%%DATADIR%%/COPYING.Music
+%%DATADIR%%/Ri-li-1.2.0-r1.ebuild
 %%DATADIR%%/Ri-li-icon-16x16.png
 %%DATADIR%%/Ri-li-icon-32x32.png
 %%DATADIR%%/Ri-li-icon-48x48.png
