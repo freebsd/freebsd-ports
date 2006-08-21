@@ -1,0 +1,11 @@
+--- ./configure.orig	Mon Aug 21 20:20:00 2006
++++ ./configure	Mon Aug 21 20:23:34 2006
+@@ -28656,7 +28656,7 @@
+ and GTK_LIBS to avoid the need to call pkg-config.
+ See the pkg-config man page for more details.
+ " >&2;}
+-   { (exit 1); exit 1; }; }
++   }
+ elif test $pkg_failed = untried; then
+ 	{ { echo "$as_me:$LINENO: error: The pkg-config script could not be found or is too old.  Make sure it
+ is in your PATH or set the PKG_CONFIG environment variable to the full
