@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	iaxmodem
-PORTVERSION=	0.1.9
-CATEGORIES=	comms
+PORTVERSION=	0.1.14
+CATEGORIES=	comms net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	filippo.natali@gmail.com
-COMMENT=	Software modem that connects ta IAX channel
+COMMENT=	Software modem that connects to IAX channel
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
@@ -20,16 +20,17 @@ MAN1=		iaxmodem.1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 SUB_FILES=	pkg-message
-USE_RC_SUBR=	iaxmodem.sh
+USE_RC_SUBR=	iaxmodem
+GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/etc|${PREFIX}/etc|g" ${WRKSRC}/iaxmodem.1
 	@${REINPLACE_CMD} -e "s|/etc/iaxmodem|${PREFIX}/etc/iaxmodem|g" ${WRKSRC}/iaxmodem.c
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build static
+	@${CP} ${FILESDIR}/configure ${FILESDIR}/Makefile.in ${WRKSRC}/
+	@${CHMOD} a+x ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iaxmodem ${PREFIX}/sbin/ && \
@@ -49,4 +50,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
