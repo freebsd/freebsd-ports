@@ -236,7 +236,6 @@
     SUBDIR += l2tpd
     SUBDIR += l4ip
     SUBDIR += lam
-    SUBDIR += lam7
     SUBDIR += lambdamoo
     SUBDIR += lanbrowsing
     SUBDIR += latd

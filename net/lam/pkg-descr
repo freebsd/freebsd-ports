@@ -1,10 +1,14 @@
 LAM (Local Area Multicomputer) is an MPI programming environment and
 development system for heterogeneous computers on a network.  With LAM,
 a dedicated cluster or an existing network computing infrastructure can act
-as one parallel computer solving one problem. 
+as one parallel computer solving one problem.
 
 LAM features extensive debugging support in the application development cycle
 and peak performance for production applications.  LAM features a full
 implementation of the MPI communication standard.
+
+Note: LAM/MPI is now in a maintenance mode. This is a direct result of the
+LAM/MPI Team spending the vast majority of their time working on the
+next-generation MPI implementation -- Open MPI, i.e. the port net/openmpi.
 
 WWW: http://www.lam-mpi.org/
