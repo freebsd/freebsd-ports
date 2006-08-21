@@ -1,7 +1,11 @@
---- man/mans/Makefile.in	Mon Jan 27 17:03:38 2003
-+++ man/mans/Makefile.in	Wed Jun 18 12:18:05 2003
-@@ -193,3 +193,3 @@
- 
+--- man/mans/Makefile.in.orig	Fri Mar 10 22:31:27 2006
++++ man/mans/Makefile.in	Sun Jul 16 16:43:58 2006
+@@ -134,7 +134,7 @@
+ CONFIG_CLEAN_FILES =
+ SOURCES =
+ DIST_SOURCES =
 -mansdir = $(mandir)/mans
 +mansdir = $(datadir)/lam
+ am__installdirs = "$(DESTDIR)$(mansdir)"
+ NROFF = nroff
  MANS = $(man_MANS)

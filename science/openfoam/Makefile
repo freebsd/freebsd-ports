@@ -88,14 +88,13 @@ APPDIR=		applications/bin/${APPSUBDIR}
 DOCS=		README doc/Guides-a4 doc/Guides-usletter
 
 .if defined(WITH_LAM)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/lam7
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/lam7
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/lam
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/lam
 MAKE_ENV+=	WM_MPLIB=LAM LAM_ARCH_PATH=${LOCALBASE}
 MPICH_VER=	1.0.4
 LAM_VER=	`${LOCALBASE}/bin/laminfo -version lam full | ${AWK} '{print $$2}'`
 MPI_LIB=	LAM
 PLIST_SUB+=	MPI="@comment " LAM="" LAM_VER=${LAM_VERSION}
-#IGNORE=		does not run with lam7 at the moment
 .else	# TODO: add support for OpenMPI
 BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2

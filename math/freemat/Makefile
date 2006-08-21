@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		freemat
-PORTVERSION=		1.10
+PORTVERSION=		1.10	# Note: FreeMat 2.0 is waiting for QT4.
 PORTREVISION=		2
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
@@ -72,13 +72,8 @@ DATADIR=	${PREFIX}/share/FreeMat
 BROKEN=	Does not compile with gcc-2.95
 .endif
 
-.if exists(${LOCALBASE}/bin/balky)
-WITH_MPI=	yes
-.endif
 .if defined(WITH_MPI)
-. if exists(${LOCALBASE}/bin/laminfo)
-BROKEN=	does not work with net/lam7, please install net/lam
-. endif
+IGNORE=	does not work with lam-7
 BUILD_DEPENDS+=	mpiCC:${PORTSDIR}/net/lam
 RUN_DEPENDS+=	lamboot:${PORTSDIR}/net/lam
 CONFIGURE_ARGS+=--with-mpi=yes

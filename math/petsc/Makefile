@@ -80,7 +80,7 @@ WITH_MPI=	yes
 .endif
 .if defined(WITH_MPI)
 . if exists(${LOCALBASE}/include/mpi.h)
-BROKEN=		Cannot build with mpich when lam7 is installed - set WITHOUT_MPI or deinstall lam7
+BROKEN=		Cannot build with mpich when lam-7 is installed - set WITHOUT_MPI or deinstall net/lam
 . endif
 PKGNAMESUFFIX+=		-mpich
 BUILD_DEPENDS+=		${MPIDIR}/bin/mpicc:${PORTSDIR}/net/mpich2

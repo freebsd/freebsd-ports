@@ -2444,3 +2444,4 @@ security/linux-krb5-libs||2006-08-13|Integrated with emulators/linux_base-fc4
 sysutils/linux-e2fsprogs||2006-08-13|Integrated with emulators/linux_base-fc4
 net/magictun||2006-08-17|Abandoned
 lang/gcc41-withgcjawt|lang/gcc41-withgcjawt|2006-08-18|finished repocopy
+net/lam7|net/lam|2006-08-21|Replace lam-6 which was deprecated
