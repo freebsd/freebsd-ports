@@ -3238,15 +3238,12 @@
 @dirrm %%DATADIR%%/languages/fr/Encyclopedia
 @dirrm %%DATADIR%%/languages/fr/strings
 @dirrm %%DATADIR%%/languages/fr
-@dirrm %%DATADIR%%/languages/po/books
 @dirrm %%DATADIR%%/languages/po/Encyclopedia
-@dirrm %%DATADIR%%/languages/po/strings
 @dirrm %%DATADIR%%/languages/po
 @dirrm %%DATADIR%%/languages/si/Encyclopedia/images
 @dirrm %%DATADIR%%/languages/si/Encyclopedia
 @dirrm %%DATADIR%%/languages/si
 @dirrm %%DATADIR%%/languages/tr/Encyclopedia
-@dirrm %%DATADIR%%/languages/tr/strings
 @dirrm %%DATADIR%%/languages/tr
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%/mapeditor
