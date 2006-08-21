@@ -611,6 +611,7 @@
     SUBDIR += sig2dot
     SUBDIR += signing-party
     SUBDIR += silktools
+    SUBDIR += sinfp
     SUBDIR += sks
     SUBDIR += slurpie
     SUBDIR += slush
