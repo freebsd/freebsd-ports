@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	serendipity
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.s9y.org/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	php-blog
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	PHP based weblog software
