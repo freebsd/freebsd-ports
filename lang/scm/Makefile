@@ -8,7 +8,8 @@
 PORTNAME=	scm
 PORTVERSION=	5e2
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/
+MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/ \
+		ftp://ftp.informatik.uni-hamburg.de/ftpmnt/inf1/pub/soft/lang/scheme/
 MASTER_SITE_SUBDIR=	. OLD
 DISTFILES=	${PORTNAME}${PORTVERSION}.zip slib3a2.zip slib-psd1-3.tar.gz
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.zip slib3a2.zip
