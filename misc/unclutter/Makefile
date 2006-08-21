@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon@olofsson.de
 COMMENT=	Remove idle cursor image from screen
 
 WRKSRC=		$(WRKDIR)/unclutter
