@@ -15,8 +15,8 @@ lib/cmus/op/oss.so
 %%DATADIR%%/green-mono-88.theme
 %%DATADIR%%/rc
 %%DATADIR%%/xterm-white.theme
-%%PORTDOCS%%%%EXAMPLESDIR%%/cmus-status-display
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%EXAMPLESDIR%%/cmus-status-display
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/cmus/op
 @dirrm lib/cmus/ip

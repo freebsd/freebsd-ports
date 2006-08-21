@@ -7,6 +7,7 @@
 
 PORTNAME=	cmus
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
@@ -15,6 +16,7 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	Console-based music player with really cool features
 
 USE_BZIP2=	yes
+USE_GCC=	3.2+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
@@ -27,11 +29,15 @@ OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		MODPLUG "libmodplug (mod, x3m, ...) support" Off \
 		MUSEPACK "libmpcdec (Musepack .mpc) support" Off \
 		VORBIS "Ogg/Vorbis support" On \
-		LIBAO "Libao cross-platform audio library" On \
-		ARTS "ARTS support" Off \
-		TREMOR "Use Tremor as Ogg/Vorbis input plugin" Off
+		TREMOR "Use Tremor as Ogg/Vorbis input plugin" Off \
+		LIBAO "Libao cross-platform audio library" Off \
+		ARTS "ARTS support" Off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile on FreeBSD 4.X
+.endif
 
 .if defined(WITH_FLAC)
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
@@ -78,7 +84,7 @@ CONFIGURE_ARGS+=CONFIG_VORBIS=n
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.if !defined(WITHOUT_LIBAO)
+.if defined(WITH_LIBAO)
 LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=CONFIG_AO=y
 PLIST_SUB+=	AO=""
@@ -105,11 +111,6 @@ MAN1=	cmus.1 cmus-remote.1
 
 post-extract:
 	@${REINPLACE_CMD} -e 's,-lncursesw,-lncurses,g' ${WRKSRC}/configure
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL} ${WRKSRC}/cmus-status-display ${EXAMPLESDIR}
-.endif
+	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
