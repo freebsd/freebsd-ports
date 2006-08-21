@@ -13059,6 +13059,7 @@ simplog		ports/www/simplog
 simscan		ports/mail/simscan
 simulavr	ports/devel/simulavr
 since		ports/misc/since
+sinfp		ports/security/sinfp
 sing		ports/net-mgmt/sing
 siod		ports/lang/siod
 sip_scenario	ports/net/sip_scenario
