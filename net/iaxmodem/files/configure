@@ -1,0 +1,30 @@
+#!/bin/sh
+cd lib/libiax2 && \
+./configure CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" --disable-shared && \
+cd ../../lib/spandsp && \
+./configure CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" --disable-shared && \
+cd ../..
+
+if [ $? != 0 ]; then
+	exit 1
+fi
+
+STEP1=`grep @VERSION@ lib/spandsp/config.status | sed 's/;.*//g'`
+DSPVER=`echo "@VERSION@" | sed ${STEP1}`
+if [ -n "${DSPVER}" ]; then
+	DSPVER="spandsp-${DSPVER}-snapshot-20060707+"
+fi
+STEP1=`grep @VERSION@ lib/libiax2/config.status | sed 's/;.*//g'`
+IAXVER=`echo "@VERSION@" | sed ${STEP1}`
+if [ -n "${IAXVER}" ]; then
+	IAXVER="libiax2-${IAXVER}-CVS-20060222+"
+fi
+
+cat Makefile.in | sed -e "s/@DSPVER@/${DSPVER}/g" | \
+	sed -e "s/@IAXVER@/${IAXVER}/g" > Makefile
+
+echo ${IAXVER}
+echo ${DSPVER}
+
+exit $?
+
