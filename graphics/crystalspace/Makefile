@@ -7,11 +7,12 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	0.99
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
 DISTNAME=	cs-pseudo-stable-2006-01-27
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free and portable 3D Game Development Kit
@@ -46,7 +47,7 @@ WRKSRC=		${WRKDIR}/CS
 JAM_CMD=	${LOCALBASE}/bin/jam
 JAM_ARGS=	-qa
 
-OPTIONS=	DEBUG	"Build with debugging information"	on \
+OPTIONS=	DEBUG	"Build with debugging information"	off \
 		PYTHON	"PYTHON interface"	on \
 		PERL	"PERL interface"	on \
 		LCMS	"Little Color Management System support"	on \
@@ -68,10 +69,10 @@ OPTIONS=	DEBUG	"Build with debugging information"	on \
 BROKEN=		Does not compile
 .endif
 
-.if !defined(WITHOUT_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug=yes
-.else
+.if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=no
+.else
+CONFIGURE_ARGS+=	--enable-debug=yes
 .endif
 
 .if !defined(WITHOUT_PYTHON)
