@@ -7,6 +7,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
 		${PYTHON_SITELIBDIR}/pysdl_mixer/sdl_mixer.so:${PORTSDIR}/audio/py-sdl_mixer \
 		pyrexc:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d \
+LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-editobj \
