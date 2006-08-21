@@ -1,5 +1,5 @@
---- sound.c	Fri Aug 18 12:54:36 2006
-+++ sound.c	Fri Aug 18 11:33:35 2006
+--- sound.c	Mon Aug 21 11:20:53 2006
++++ sound.c	Mon Aug 21 11:25:49 2006
 @@ -313,10 +313,11 @@
  ALuint get_loaded_buffer(int i)
  {
@@ -24,7 +24,33 @@
 -		alBufferData(sound_buffer[i],format,data,size,freq);
 -		alutUnloadWAV(format,data,size,freq);
 +		alBufferData(sound_buffer[i],format,data,size,(int)freq);
-+//		alutUnloadWAV(format,data,size,freq);
++		free(data);
  	}
  	return sound_buffer[i];
  }
+@@ -377,14 +378,14 @@
+ #ifndef OSX
+ 		alutLoadWAVFile(szPath,&pSample->format,&data,&pSample->size,&pSample->freq,&loop);
+ #else
+-		alutLoadWAVFile(szPath,&pSample->format,&data,&pSample->size,&pSample->freq);
++		data = alutLoadMemoryFromFile(szPath, &pSample->format, &pSample->size, &pSample->freq);
+ #endif
+ 		if(!data)
+ 		{//couldn't load the file
+ 		#ifdef ELC
+ 			LOG_ERROR("%s: %s",snd_buff_error, "NO SOUND DATA");
+ 		#else
+-			printf("ensure_sample_loaded : alutLoadWAVFile(%s) = %s\n",
++			printf("ensure_sample_loaded : alutLoadMemoryFromFile(%s) = %s\n",
+ 				szPath, "NO SOUND DATA");
+ 		#endif
+ 			return 1;
+@@ -420,7 +421,7 @@
+ 		pSample->length = (pSample->size*1000) / ((pSample->bits >> 3)*pSample->channels*pSample->freq);
+ 
+ 		//get rid of the temporary data
+-		alutUnloadWAV(pSample->format,data,pSample->size,pSample->freq);
++		free(data);
+     }
+ 
+ 	pSample->loaded_status = 1;

@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	130
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.other-life.com/el/:data \
 		http://www.eternalmusik.org/music/:sound \
@@ -41,6 +42,9 @@ post-extract:
 	@${FIND} ${WRKSRC} -type f -name "*.exe" -print0 | \
 		${XARGS} -0 ${RM} -R
 	@${RM} ${WRKSRC}/el-130.*
+.for DIRE in languages/po/books languages/po/strings languages/tr/strings
+	@${RMDIR} ${WRKSRC}/${DIRE}
+.endfor
 
 do-install:
 	${MKDIR} ${DATADIR}
