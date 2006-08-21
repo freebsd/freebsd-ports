@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
 		${SITE_PERL}/LWP/ConnCache.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
+		${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
 		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
 		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
 		${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
