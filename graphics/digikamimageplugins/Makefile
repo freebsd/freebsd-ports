@@ -20,6 +20,7 @@ LIB_DEPENDS=	digikam.0:${PORTSDIR}/graphics/digikam
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 CONFIGURE_ARGS+=--program-prefix=''
 
