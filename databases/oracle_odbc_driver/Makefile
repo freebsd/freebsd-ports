@@ -30,4 +30,7 @@ CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}" \
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lclntst8 -lcompat -lpthread -lm/-lclntst8 -lcompat ${PTHREAD_LIBS} -lm/' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
