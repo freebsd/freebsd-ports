@@ -5634,7 +5634,6 @@ ladder		ports/games/ladder
 ladspa		ports/audio/ladspa
 lafontaine	ports/lang/lafontaine
 lagan		ports/biology/lagan
-lam7		ports/net/lam7
 lamarc		ports/biology/lamarc
 lambda		ports/math/lambda
 lambdamoo	ports/net/lambdamoo
