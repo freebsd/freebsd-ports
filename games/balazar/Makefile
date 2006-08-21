@@ -7,6 +7,7 @@
 
 PORTNAME=	balazar
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	Balazar-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D adventure and roleplaying game
 
-LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d \
+LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \

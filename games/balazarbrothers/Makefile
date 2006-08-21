@@ -7,6 +7,7 @@
 
 PORTNAME=	balazarbrothers
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/${PORTNAME:S/brothers//}/
 DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME:S/b/B/g}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Balazar Brother is a free software 3D puzzle game
 
-LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d \
+LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer \
@@ -22,7 +23,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py
 		${PYTHON_SITELIBDIR}/tofu/__init__.py:${PORTSDIR}/net/py-tofu \
 		${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-vorbis
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
