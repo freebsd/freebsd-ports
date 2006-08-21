@@ -9,7 +9,8 @@
 PORTNAME=	cdpr
 PORTVERSION=	2.2.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.monkeymental.com/mmfiles/
+MASTER_SITES=	http://www.monkeymental.com/mmfiles/ \
+		http://freebsdcluster.org/~mich/software/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@FreeBSD.org
