@@ -1,5 +1,5 @@
---- OOCocoa.h.orig	Thu Apr 27 14:16:30 2006
-+++ OOCocoa.h	Thu Apr 27 15:14:04 2006
+--- src/Core/OOCocoa.h.orig	Thu Apr 27 14:16:30 2006
++++ src/Core/OOCocoa.h	Thu Apr 27 15:14:04 2006
 @@ -1,7 +1,7 @@
  // Import OpenStep main headers and define some Macisms and other compatibility stuff.
  
