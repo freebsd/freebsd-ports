@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.179
+PORTVERSION=	1.182
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
 EXTRACT_SUFX=	.tgz
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Mail/IMAPClient.pm:${PORTSDIR}/mail/p5-Mail-IMAPClie
 		${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC \
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		does not fetch
 
 USE_PERL5=	yes
 NO_BUILD=	yes
