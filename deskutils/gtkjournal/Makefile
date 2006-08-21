@@ -9,7 +9,7 @@ PORTNAME=	gtkjournal
 PORTVERSION=	0.3.5.b
 PORTREVISION=	7
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://linuxhelp.homeunix.com/gtkjournal/files/
+MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	beech@alaskaparadise.com
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack lthack gnometarget
 CONFIGURE_ARGS=	--enable-gtkspell
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		${PORTNAME}.1
 
