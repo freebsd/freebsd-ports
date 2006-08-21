@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	planeshift
-PORTVERSION=	0.3.013
+PORTVERSION=	0.3.015b
 CATEGORIES=	games
-MASTER_SITES=	#
-NO_CHECKSUM=	${DISTFILES}
+MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First 3D MMORPG to be free for players
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
-		cs-config:${PORTSDIR}/graphics/crystalspace \
-		cel-config:${PORTSDIR}/graphics/crystalentitylayer \
+		cs-config:${PORTSDIR}/graphics/crystalspace-devel \
+		cel-config:${PORTSDIR}/graphics/crystalentitylayer-devel \
 		${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
-LIB_DEPENDS=	cal3d.11:${PORTSDIR}/graphics/cal3d-devel \
+LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 		curl.3:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
@@ -35,8 +34,10 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" CRYSTAL="${CRYSTAL}" 
 SUB_FILES=	pkg-message planeshift pssetup updater psserver
 PLANEDIR=	lib/${PORTNAME}
 PLIST_SUB=	PLANEDIR=${PLANEDIR}
+INSTALL_PSDATA=	${INSTALL} ${COPY} ${_SHROWNGRP} -m 0644
 
 JAM_CMD=	jam
+JAM_ARGS=	-qa
 
 OPTIONS=	MYSQL	"MySQL support for server mode "	off
 
@@ -55,62 +56,33 @@ PLIST_SUB+=	MYSQL="@comment " \
 		EXAMPLE="@comment "
 .endif
 
-CVS_CMD?=	cvs -z3
-CVS_DATE=	2006-03-01 00:00:00
-CVS_SITES?=	pserver:anonymous@planeshift.cvs.sourceforge.net:/cvsroot/planeshift
-CVS_MODULE=	${PORTNAME}
-
-do-fetch:
-	@if test ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ; then \
-		${MKDIR} ${DISTDIR}/${DISTNAME} && \
-		cd ${DISTDIR}/${DISTNAME}; \
-		for CVS_SITE in ${CVS_SITES}; do \
-			${ECHO_MSG} ">> Attempting to check out from $${CVS_SITE}."; \
-			if ${CVS_CMD} -d:$${CVS_SITE} co -D "${CVS_DATE}" ${CVS_MODULE}; \
-			then \
-				cd ${DISTDIR}; \
-				${ECHO_MSG} ">> Creating dist tarball in ${DISTDIR}"; \
-				${ECHO_MSG} ">> \"${DISTNAME}${EXTRACT_SUFX}\"."; \
-				${MV} ${DISTNAME}/${CVS_MODULE} \
-					${DISTNAME}/${CVS_MODULE:H}/${DISTNAME}; \
-					${TAR} -cj \
-					-X ${FILESDIR}/tarignore \
-					-f ${DISTNAME}${EXTRACT_SUFX} \
-					-C ${DISTNAME}/${CVS_MODULE:H} \
-					${DISTNAME}; \
-					${RM} -rf ${DISTDIR}/${DISTNAME}; \
-				exit; \
-			fi \
-		done; \
-		${RM} -rf ${DISTDIR}/${DISTNAME}; \
-		${ECHO_MSG} ">> CVS checkout failed."; \
-		exit 1; \
-	fi
-
 post-patch:
 	${REINPLACE_CMD} -e 's|%%AUTOHEADER%%|${AUTOHEADER}|g' -e 's|%%AUTOCONF%%|${AUTOCONF}|g' \
 		${WRKSRC}/autogen.sh
 	@cd ${WRKSRC}/src && \
 		${FIND} * -type f -name "*.c" -exec \
 			${REINPLACE_CMD} -i "" -e 's|malloc.h|stdlib.h|g' "{}" \;
+	@cd ${WRKSRC} && \
+		${FIND} * -type f -name ".cvsignore" -print0 | \
+			${XARGS} -0 ${RM} -R
 
 pre-configure:
 	@cd ${WRKSRC} && ${SH} autogen.sh
 
 do-build:
 	@cd ${WRKSRC} && \
-		${JAM_CMD} -q
+		${SETENV} ${MAKE_ENV} ${JAM_CMD} ${JAM_ARGS}
 
 post-build:
 	@${REINPLACE_CMD} -e 's|<mirror id="1" name="local" url="http://192.168.2.19/updater/" />| \
 		<mirror id="1" name="mir1" url="http://psmirror.pfdev.net/psupdater/" \
-			repository="repository.zip\" files="" /> \
+			repository="repository.zip" files="" /> \n \
 		<mirror id="2" name="mir2" url="http://planeshift.mirror.thumbnail.cz/psupdater/" \
-			repository="repository.zip" files="" /> \
+			repository="repository.zip" files="" /> \n \
 		<mirror id="3" name="mir3" url="http://www.psmirror.org/psupdater/" \
-			repository="repository.zip" files="" /> \
+			repository="repository.zip" files="" /> \n \
 		<mirror id="4" name="mir4" url="http://psmirror.u24.solone.net/psupdater/" \
-			repository="repository.zip" files="" /> \
+			repository="repository.zip" files="" /> \n \
 		<mirror id="5" name="backp" url="http://laanx.fragnetics.com/updater_hidden/" \
 			repository="repository.zip" files="" />|g' ${WRKSRC}/updaterconfig.xml
 
@@ -123,14 +95,14 @@ do-install:
 .endfor
 
 .for FILE in *.cfg *.xml
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${PLANEDIR}
+	${INSTALL_PSDATA} ${WRKSRC}/${FILE} ${PREFIX}/${PLANEDIR}
 .endfor
 
 .for DIRE in art data
 	@${MKDIR} ${PREFIX}/${PLANEDIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
 		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${PLANEDIR}/${DIRE}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${PLANEDIR}/${DIRE}/{}" \;
+			${FIND} * -type f -exec ${INSTALL_PSDATA} "{}" "${PREFIX}/${PLANEDIR}/${DIRE}/{}" \;
 .endfor
 
 .if defined(MYSQL_FLAG)
