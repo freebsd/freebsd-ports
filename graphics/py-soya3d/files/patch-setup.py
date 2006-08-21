@@ -1,34 +1,13 @@
---- setup.py.orig	Tue Jul 18 15:14:24 2006
-+++ setup.py	Thu Jul 27 20:21:36 2006
-@@ -32,21 +32,22 @@
- INCDIR = [
- 	"ode-0.5/include",
- 	"/usr/include",
--	"/usr/local/include",
--	"/usr/X11R6/include",
-+	"%%LOCALBASE%%/include",
-+	"%%X11BASE%%/include",
+--- setup.py	Mon Aug 21 00:22:53 2006
++++ setup.py	Mon Aug 21 00:24:52 2006
+@@ -37,6 +37,7 @@
  	"/usr/include/freetype2",
--	"/usr/local/include/freetype2",
-+	"%%LOCALBASE%%/include/freetype2",
+ 	"/usr/local/include/freetype2",
  	"/usr/include/cal3d",
--	"/usr/local/include/cal3d",
-+	"%%LOCALBASE%%/include/SDL11",
-+	"%%LOCALBASE%%/include/cal3d",
++	"/usr/local/include/SDL11",
+ 	"/usr/local/include/cal3d",
  	"/sw/include", # For Mac OS X "fink"
      "/opt/local/include", # For Mac OS X "darwin port"
- 	]
- LIBDIR = [
- 	"ode-0.5/lib",
- 	"/usr/lib",
--	"/usr/local/lib",
-+	"%%LOCALBASE%%/lib",
- 	"/opt/local/lib", # For Mac OS X "darwin port"
--	"/usr/X11R6/lib",
-+	"%%X11BASE%%/lib",
- 	"/sw/lib/", # For Mac OS X
- 	]
- 
 @@ -80,7 +81,7 @@
  	LIBS = ["m", "glew32", "SDL", "freetype", "cal3d", "stdc++"]
  else:
@@ -38,7 +17,15 @@
  
  SOYA_PYREX_SOURCES  = ["_soya.pyx", "matrix.c", "chunk.c" ]
  SOYA_C_SOURCES      = ["_soya.c"  , "matrix.c", "chunk.c" ]
-@@ -133,14 +134,14 @@
+@@ -99,6 +100,7 @@
+ 	if USE_OPENAL:
+ 		print "Sound support (with OpenAL) enabled..."
+ 		LIBS.append("openal")
++		LIBS.append("alut")
+ 		CONFIG_PXD_FILE.write("""include "sound/al.pxd"\n""")
+ 		CONFIG_PYX_FILE.write("""include "sound/sound.pyx"\n""")
+ 	else:
+@@ -133,14 +135,14 @@
  			print "ODE and OPCODE have already been compiled; if you want to recompile them do:  cd %s ; make clean" % ODE_DIR
  		else:
  			print "Building ODE and OPCODE from %s" % ODE_DIR
