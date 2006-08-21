@@ -7,11 +7,12 @@
 
 PORTNAME=	crystalentitylayer
 PORTVERSION=	0.99
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cel
 DISTNAME=	cel-pseudo-stable-2006-01-27
+DIST_SUBDIR=	crystalspace
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	CEL is a layer that sits on top of Crystal Space 3D Engine
@@ -44,10 +45,10 @@ OPTIONS=	DEBUG	"Build with debugging information"	off \
 
 .include <bsd.port.pre.mk>
 
-.if!defined(WITHOUT_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug=yes
-.else
+.if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=no
+.else
+CONFIGURE_ARGS+=	--enable-debug=yes
 .endif
 
 .if!defined(WITHOUT_PYTHON)
