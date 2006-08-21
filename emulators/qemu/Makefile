@@ -7,6 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.qemu.org/:release \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
@@ -39,9 +40,11 @@ USE_SDL=	sdl
 USE_PERL5=	yes
 PATCH_STRIP=	-p1
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
-MAKE_ENV+=	BSD_MAKE=${MAKE}
+MAKE_ENV+=	BSD_MAKE="${MAKE}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
+WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
+
 .if defined(WITH_KQEMU)
 CONFIGURE_ARGS+=	--enable-kqemu
 .else
@@ -98,6 +101,14 @@ post-patch:
 .if defined(WITH_RTL8139_TIMER)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
 .endif
+	@${REINPLACE_CMD} -E \
+		-e "s,^(CFLAGS=).*,\1${CFLAGS} -fno-strict-aliasing," \
+		-e "s,^(LDFLAGS=).*,\1${LDFLAGS}," \
+		${WRKSRC}/Makefile.target
+	@${REINPLACE_CMD} -E \
+		-e "s,^(CFLAGS=).*,\1${CFLAGS} -fno-strict-aliasing -I.," \
+		-e "s,^(LDFLAGS=).*,\1${LDFLAGS}," \
+		${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
