@@ -28,7 +28,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--program-prefix=''
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
