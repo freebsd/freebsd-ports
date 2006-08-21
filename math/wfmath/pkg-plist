@@ -1,6 +1,6 @@
 lib/libwfmath-0.3.la
 lib/libwfmath-0.3.so
-lib/libwfmath-0.3.so.3
+lib/libwfmath-0.3.so.4
 include/wfmath-0.3/wfmath/error.h
 include/wfmath-0.3/wfmath/const.h
 include/wfmath-0.3/wfmath/int_to_string.h

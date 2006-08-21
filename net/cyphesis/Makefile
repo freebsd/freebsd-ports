@@ -16,7 +16,7 @@ COMMENT=	A server for WorldForge games
 
 LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
-		wfmath-0.3.3:${PORTSDIR}/math/wfmath \
+		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
 		skstream-0.3.3:${PORTSDIR}/net/skstream \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt
