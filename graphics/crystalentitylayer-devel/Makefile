@@ -6,34 +6,32 @@
 #
 
 PORTNAME=	crystalentitylayer
-PORTVERSION=	0.99
-PORTREVISION=	3
+PORTVERSION=	20060708
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	cel
-DISTNAME=	cel-pseudo-stable-2006-01-27
+MASTER_SITES=	http://alex.foxybanana.com/freebsd/
+PKGNAMESUFFIX=	-devel
+DIST_SUBDIR=	crystalspace
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	CEL is a layer that sits on top of Crystal Space 3D Engine
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
-		cs-config:${PORTSDIR}/graphics/crystalspace
+		cs-config:${PORTSDIR}/graphics/crystalspace-devel
 
-CONFLICTS=	crystalentitylayer-devel-[0-9]*
+CONFLICTS=	crystalentitylayer-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-cs-prefix=${LOCALBASE}
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-DOCSDIR=	share/doc/cel-${PORTVERSION}
+DOCSDIR=	share/doc/cel-0.99
 DATADIR=	share/cel
 PLIST_SUB+=	DOCSDIR=${DOCSDIR} \
 		DATADIR=${DATADIR}
-WRKSRC=	${WRKDIR}/cel
-
 JAM_CMD=	${LOCALBASE}/bin/jam
 JAM_ARGS=	-qa
 
