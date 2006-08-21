@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	worldforge
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A procedural terrain library
 
-LIB_DEPENDS=	wfmath-0.3.3:${PORTSDIR}/math/wfmath
+LIB_DEPENDS=	wfmath-0.3.4:${PORTSDIR}/math/wfmath
 
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
