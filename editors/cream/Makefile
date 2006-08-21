@@ -7,6 +7,7 @@
 
 PORTNAME=	cream
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,194 +15,30 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Gvim extension with many features
 
-RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
+RUN_DEPENDS=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
 
-NO_BUILD=	YES
-
-PLIST_FILES=	bin/cream
-
+NO_BUILD=	yes
 # needs updating for each major vim update.
-VIMRUNTIMEDIR=	share/vim/vim70
-
-CREAM_FILES=	EasyHtml.vim EnhancedCommentify.vim Rndm.vim calendar.vim \
-		cream-abbr-eng.vim cream-abbr-fre.vim cream-abbr.vim \
-		cream-addon.vim cream-ascii.vim cream-autocmd.vim \
-		cream-behavior.vim cream-bookmarks.vim cream-capitalization.vim \
-		cream-colors-blackwhite.vim cream-colors-chocolateliquor.vim \
-		cream-colors-dawn.vim cream-colors-default.vim \
-		cream-colors-navajo-night.vim cream-colors-navajo.vim \
-		cream-colors-night.vim cream-colors-oceandeep.vim \
-		cream-colors-terminal.vim cream-colors-zenburn.vim \
-		cream-colors.vim cream-columns.vim cream-conf.example.vim \
-		cream-devel.vim cream-expertmode.vim cream-explorer.vim \
-		cream-filetype.vim cream-find.vim cream-gui.vim \
-		cream-iso3166-1.vim cream-iso639.vim cream-justify.vim \
-		cream-keys.vim cream-lib.vim cream-loremipsum.vim \
-		cream-macros.vim cream-menu-developer.vim cream-menu-edit.vim \
-		cream-menu-file.vim cream-menu-format.vim cream-menu-help.vim \
-		cream-menu-insert.vim cream-menu-mru.vim cream-menu-popup.vim \
-		cream-menu-settings.vim cream-menu-toolbar.vim \
-		cream-menu-tools.vim cream-menu-window-buffer.vim \
-		cream-menu-window.vim cream-menu.vim cream-numberlines.vim \
-		cream-playpen.vim cream-pop.vim cream-print.vim \
-		cream-replace.vim cream-replacemulti.vim cream-server.vim \
-		cream-settings.vim cream-showinvisibles.vim cream-spell.vim \
-		cream-statusline.vim cream-templates.vim \
-		cream.vim creamrc genutils.vim \
-		multvals.vim opsplorer.vim taglist.vim
-
-CREAM_ADDONS=	cream-colorinvert.vim cream-convert-hex.vim \
-		cream-cream-bugreport.vim cream-cream-ctags.vim \
-		cream-cream-fileformat.vim cream-cream-foldfunctions.vim \
-		cream-cream-keytest.vim cream-cream-release.vim \
-		cream-cream-update.vim cream-cream-vim-abbrev.vim \
-		cream-cream-vim-deformat.vim cream-dailyread.vim \
-		cream-debinary.vim cream-email-formatter.vim \
-		cream-email-munge.vim cream-encrypt-algorithmic.vim \
-		cream-encrypt-h4x0r.vim cream-encrypt-hexme.vim \
-		cream-encrypt-rot13.vim cream-helptags.vim \
-		cream-highlight-ctrlchars.vim cream-highlight-mbyte.vim \
-		cream-ispell.vim cream-sort.vim cream-spell-french.vim \
-		cream-stamp-filename.vim cream-str-invert.vim cream-table.vim \
-		cream-text2html.vim cream-timestamp.vim cream-typingtutor.vim
-
-CREAM_BITMAPS=	book.xpm broken_image.xpm copy_alt.xpm cut_alt.xpm exit.xpm \
-		font.xpm help.xpm new.xpm open.xpm paste.xpm print.xpm \
-		redo.xpm save.xpm save_all.xpm save_as.xpm search.xpm \
-		search_and_replace.xpm spellcheck.xpm text_align_center.xpm \
-		text_align_justify.xpm text_align_left.xpm \
-		text_align_right.xpm undo.xpm
-
-CREAM_DOCS=	CHANGELOG.txt COPYING.txt DEVELOPER.txt \
-		KEYBOARD.txt PressRelease.txt README.txt RELEASE.txt \
-		TODO.txt WINDOWS.txt
-
-CREAM_HTML=	PHPClientSniffer.php about.html \
-		contributors.html css.php download.html external.gif \
-		faq.html favicon.ico featurelist.html features.html \
-		home.html index.html installation.html \
-		keyboardshortcuts.html \
-		screenshot1-thumb.png screenshot1.png \
-		screenshot2-thumb.png screenshot2.png \
-		screenshot3-thumb.png screenshot3.png \
-		screenshot1.html screenshot2.html screenshot3.html \
-		statusline.html statusline-thumb.png \
-		statusline.png vim.html
-
-CREAM_FTYPES=	c.vim html.vim lisp.vim txt.vim vim.vim
-
-CREAM_HELP=	EnhancedCommentify.txt opsplorer.txt
-
-CREAM_LANG=	menu_chinese_gb.936.vim menu_en_us.utf-8.vim \
-		menu_fr_fr.latin1.vim menu_zh.cp936.vim menu_zh.cp950.vim \
-		menu_zh.gb2312.vim menu_zh_cn.18030.vim menu_zh_cn.cp936.vim \
-		menu_zh_cn.gb2312.vim menu_zh_cn.gbk.vim menu_zh_cn.utf-8.vim \
-		strings_en_us.utf-8.vim
-
-CREAM_SPELL=	cream-spell-dict-eng-s-GB_1.vim \
-		cream-spell-dict-eng-s-GB_2.vim \
-		cream-spell-dict-eng-s-GB_3.vim \
-		cream-spell-dict-eng-s-GB_4.vim \
-		cream-spell-dict-eng-s-CA_1.vim \
-		cream-spell-dict-eng-s-CA_2.vim \
-		cream-spell-dict-eng-s-CA_3.vim \
-		cream-spell-dict-eng-s-CA_4.vim \
-		cream-spell-dict-eng-s-US_1.vim \
-		cream-spell-dict-eng-s-US_2.vim \
-		cream-spell-dict-eng-s-US_3.vim \
-		cream-spell-dict-eng-s-US_4.vim \
-		cream-spell-dict-eng-s_1.vim \
-		cream-spell-dict-eng-s_2.vim \
-		cream-spell-dict-eng-s_3.vim \
-		cream-spell-dict-eng-s_4.vim \
-		cream-spell-dict.vim
+VIMRUNTIME=	${PREFIX}/share/vim/vim70
+PLIST_SUB=	VIMRUNTIME="${VIMRUNTIME:S/${PREFIX}\///}"
 
 do-install:
-		#creating directories
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/addons/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/bitmaps/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/docs/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/docs-html/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/filetypes/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/help/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/lang/
-		${MKDIR}	${PREFIX}/${VIMRUNTIMEDIR}/cream/spelldicts/
-		#installing files
-.for f in ${CREAM_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${VIMRUNTIMEDIR}/cream
+	${INSTALL_SCRIPT} ${WRKSRC}/cream ${PREFIX}/bin
+	${MKDIR} ${VIMRUNTIME}/cream
+	${INSTALL_DATA} ${WRKSRC}/creamrc ${WRKSRC}/*.vim ${VIMRUNTIME}/cream
+.for f in addons bitmaps help lang spelldicts
+	${MKDIR} ${VIMRUNTIME}/cream/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f}/* ${VIMRUNTIME}/cream/${f}
 .endfor
-.for f in ${CREAM_ADDONS}
-	${INSTALL_DATA} ${WRKSRC}/addons/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/addons/
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/cream.png ${WRKSRC}/cream.svg \
+		${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/cream.desktop ${PREFIX}/share/applications
+.if !defined(NOPORTDOCS)
+.for f in docs docs-html
+	${MKDIR} ${DOCSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f}/* ${DOCSDIR}/${f}
 .endfor
-.for f in ${CREAM_BITMAPS}
-	${INSTALL_DATA} ${WRKSRC}/bitmaps/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/bitmaps/
-.endfor
-.for f in ${CREAM_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/docs/
-.endfor
-.for f in ${CREAM_HTML}
-	${INSTALL_DATA} ${WRKSRC}/docs-html/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/docs-html/
-.endfor
-.for f in ${CREAM_FTYPES}
-	${INSTALL_DATA} ${WRKSRC}/filetypes/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/filetypes/
-.endfor
-.for f in ${CREAM_HELP}
-	${INSTALL_DATA} ${WRKSRC}/help/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/help/
-.endfor
-.for f in ${CREAM_LANG}
-	${INSTALL_DATA} ${WRKSRC}/lang/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/lang/
-.endfor
-.for f in ${CREAM_SPELL}
-	${INSTALL_DATA} ${WRKSRC}/spelldicts/${f} \
-		${PREFIX}/${VIMRUNTIMEDIR}/cream/spelldicts/
-.endfor
-	 ${INSTALL_SCRIPT} ${WRKSRC}/cream ${PREFIX}/bin/
-
-post-install:
-# create the package listings
-.for f in ${CREAM_FILES}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_ADDONS}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/addons/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_BITMAPS}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/bitmaps/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_DOCS}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/docs/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_HTML}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/docs-html/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_FTYPES}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/filetypes/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_HELP}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/help/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_LANG}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/lang/${f} >>${TMPPLIST}
-.endfor
-.for f in ${CREAM_SPELL}
-	${ECHO} ${VIMRUNTIMEDIR}/cream/spelldicts/${f} >>${TMPPLIST}
-.endfor
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/addons" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/bitmaps" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/docs" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/docs-html" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/filetypes" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/help" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/lang" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream/spelldicts" >>${TMPPLIST}
-	${ECHO} "@dirrm ${VIMRUNTIMEDIR}/cream" >>${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
