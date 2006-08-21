@@ -60,6 +60,7 @@
     SUBDIR += cqcam
     SUBDIR += crw
     SUBDIR += crystalentitylayer
+    SUBDIR += crystalentitylayer-devel
     SUBDIR += crystalspace
     SUBDIR += crystalspace-devel
     SUBDIR += cthumb
