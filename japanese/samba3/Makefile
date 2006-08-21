@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTREVISION=		1
+PORTREVISION=		0
 PORTEPOCH=		1
 CATEGORIES=		japanese net
 PKGNAMEPREFIX=		ja-
 
 PATCH_SITES=		http://dist.bsdlab.org/
-PATCHFILES=		samba-3.0.23-i18n-20060718.bz2
+PATCHFILES=		samba-3.0.23b-i18n-20060821.bz2
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=		kuriyama@FreeBSD.org
