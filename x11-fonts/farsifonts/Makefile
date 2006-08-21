@@ -8,15 +8,13 @@
 PORTNAME=	farsifonts
 PORTVERSION=	0.4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.farsiweb.info/font/ \
-		http://www.unixified.net/distfiles/
+MASTER_SITES=	http://www.unixified.net/distfiles/ \
+		http://www.farsiweb.info/font/
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Standard set of Unicode Persian fonts
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
-
-BROKEN=		Does not build
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
@@ -24,7 +22,7 @@ PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 
 do-build:
-	@ttmkfdir -c -d ${WRKSRC} > ${WRKSRC}/fonts.dir
+	@ttmkfdir -c -d ${WRKSRC} -o ${WRKSRC}/fonts.dir
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/farsifonts
