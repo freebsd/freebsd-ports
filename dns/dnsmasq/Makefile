@@ -7,8 +7,10 @@
 
 PORTNAME=	dnsmasq
 PORTVERSION=	2.33
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
@@ -40,11 +42,7 @@ LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
 CFLAGS+=	-DHAVE_DBUS
 .endif
 
-.if ${OSVERSION} < 500037
 USE_RC_SUBR=	dnsmasq.sh
-.else
-USE_RCORDER=	dnsmasq.sh
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
