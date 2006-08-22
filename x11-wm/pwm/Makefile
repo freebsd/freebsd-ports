@@ -8,7 +8,7 @@
 PORTNAME=	pwm
 PORTVERSION=	2006.05.17
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://modeemi.fi/~tuomov/pwm/dl/
+MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	schot@a-eskwadraat.nl
