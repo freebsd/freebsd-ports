@@ -6,26 +6,30 @@
 #
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	3.33
+PORTVERSION=	4.00.4
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LU/LUISMUNOZ
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9])$/\1/}
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module for working with IP addresses and blocks thereof
 
 PERL_CONFIGURE=	yes
 
-MAN3=		NetAddr::IP.3
+MAN3=		NetAddr::IP.3 \
+	NetAddr::IP::Lite.3 \
+	NetAddr::IP::Util.3 \
+	NetAddr::IP::UtilPP.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later version
-.elif ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+post-patch:
+	${PERL} -ni -e 'print unless /^=head1/../^=cut/' ${WRKSRC}/Lite/Util/Makefile.PL
+
+.if ${PERL_LEVEL} < 500700
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 
