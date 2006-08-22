@@ -212,11 +212,13 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Argentina/Ushuaia.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Aruba.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Asuncion.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Atikokan.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Atka.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Bahia.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Barbados.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Belem.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Belize.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Blanc__m__Sablon.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Boa_Vista.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Bogota.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Boise.rb
@@ -541,8 +543,11 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Copenhagen.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Dublin.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Gibraltar.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Guernsey.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Helsinki.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Isle_of_Man.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Istanbul.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Jersey.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Kaliningrad.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Kiev.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Lisbon.rb
@@ -576,6 +581,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Vatican.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Vienna.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Vilnius.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Volgograd.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Warsaw.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Zagreb.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Zaporozhye.rb
