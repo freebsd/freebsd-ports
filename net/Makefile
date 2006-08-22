@@ -398,6 +398,7 @@
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Apache2-SOAP
     SUBDIR += p5-Archie
+    SUBDIR += p5-BBS-UserInfo
     SUBDIR += p5-BBS-UserInfo-Maple3
     SUBDIR += p5-BBS-UserInfo-Ptt
     SUBDIR += p5-EasyTCP
