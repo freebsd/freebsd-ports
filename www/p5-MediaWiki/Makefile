@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MediaWiki
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/SP/SPECTRUM/
@@ -25,8 +25,8 @@ MAN3=		MediaWiki.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600 #inherited from www/p5-libwww
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500600	# Inherited from www/p5-libwww
+IGNORE=		requires 5.6.0 or newer. Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
