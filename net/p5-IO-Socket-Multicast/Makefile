@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Socket-Multicast
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -15,11 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Perl module to send and receive multicast messages
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=		IO::Socket::Multicast.3
 
 PERL_CONFIGURE=	yes
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}
+		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
