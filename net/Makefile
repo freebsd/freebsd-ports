@@ -503,6 +503,7 @@
     SUBDIR += p5-Parallel-MPI
     SUBDIR += p5-Parallel-Pvm
     SUBDIR += p5-PlRPC
+    SUBDIR += p5-RPC-Simple
     SUBDIR += p5-RPC-XML
     SUBDIR += p5-RRD-Simple
     SUBDIR += p5-ResourcePool-Resource-Net-LDAP

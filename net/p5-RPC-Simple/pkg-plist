@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/Simple/.packlist
+%%SITE_PERL%%/RPC/Simple.pm
+%%SITE_PERL%%/RPC/Simple/Agent.pm
+%%SITE_PERL%%/RPC/Simple/AnyLocal.pm
+%%SITE_PERL%%/RPC/Simple/AnyRemote.pm
+%%SITE_PERL%%/RPC/Simple/AnyWhere.pm
+%%SITE_PERL%%/RPC/Simple/CallHandler.pm
+%%SITE_PERL%%/RPC/Simple/Factory.pm
+%%SITE_PERL%%/RPC/Simple/ObjectHandler.pm
+%%SITE_PERL%%/RPC/Simple/Server.pm
+@dirrmtry %%SITE_PERL%%/RPC/Simple
+@dirrmtry %%SITE_PERL%%/RPC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
