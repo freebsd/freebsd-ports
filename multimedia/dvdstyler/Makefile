@@ -23,7 +23,9 @@ BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 		lavfile-1.8.0:${PORTSDIR}/multimedia/mjpegtools \
 		wxsvg.0:${PORTSDIR}/graphics/wxsvg
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		mpgcat:${PORTSDIR}/multimedia/mpgtx \
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 #RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 
 DVDSTYLER_ICON=	${DATADIR}/rc/dvdstyler.png
