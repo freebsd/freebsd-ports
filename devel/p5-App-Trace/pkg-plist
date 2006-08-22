@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Trace/.packlist
+%%SITE_PERL%%/App/Trace.pm
+@dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Trace
