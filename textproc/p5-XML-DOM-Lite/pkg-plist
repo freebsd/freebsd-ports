@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM/Lite/.packlist
+%%SITE_PERL%%/XML/DOM/Lite.pm
+%%SITE_PERL%%/XML/DOM/Lite/Parser.pm
+%%SITE_PERL%%/XML/DOM/Lite/XSLT.pm
+%%SITE_PERL%%/XML/DOM/Lite/NodeList.pm
+%%SITE_PERL%%/XML/DOM/Lite/NodeIterator.pm
+%%SITE_PERL%%/XML/DOM/Lite/XPath.pm
+%%SITE_PERL%%/XML/DOM/Lite/Serializer.pm
+%%SITE_PERL%%/XML/DOM/Lite/Node.pm
+%%SITE_PERL%%/XML/DOM/Lite/Constants.pm
+%%SITE_PERL%%/XML/DOM/Lite/Document.pm
+@dirrmtry %%SITE_PERL%%/XML/DOM/Lite
+@dirrmtry %%SITE_PERL%%/XML/DOM
+@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/DOM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

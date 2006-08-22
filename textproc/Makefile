@@ -559,6 +559,7 @@
     SUBDIR += p5-XML-Clean
     SUBDIR += p5-XML-DBMS
     SUBDIR += p5-XML-DOM
+    SUBDIR += p5-XML-DOM-Lite
     SUBDIR += p5-XML-DOM-XPath
     SUBDIR += p5-XML-DOM2
     SUBDIR += p5-XML-DT
