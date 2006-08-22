@@ -553,6 +553,7 @@
     SUBDIR += pear-Net_UserAgent_Detect
     SUBDIR += pear-Net_UserAgent_Mobile
     SUBDIR += pear-SOAP
+    SUBDIR += pecl-cvsclient
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += pen
