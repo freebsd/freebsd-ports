@@ -56,9 +56,12 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 pre-patch:
 	(${CP} ${WRKSRC}/BMAKES/Bmake.MPI-LINUX ${WRKSRC}/Bmake.inc)
 
-post-patch:
+pre-configure:
 	(${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@DEBUG_LEVEL@,${DEBUG_LEVEL},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,   ARCH *.= ar,   ARCMD = ar,'  ${WRKSRC}/Bmake.inc)
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/SRC/MPI/Makefile
+.if ${OSVERSION} < 500000
+	${REINPLACE_CMD} -e 's|F77LOADFLAGS   = |F77LOADFLAGS   = ${PTHREAD_LIBS}|' ${WRKSRC}/Bmake.inc
+.endif
 
 do-build:
 	(cd ${WRKSRC}; make mpi; make tester)
