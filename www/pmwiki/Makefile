@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.1.13
+PORTVERSION=	2.1.14
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -34,17 +34,15 @@ pre-fetch:
 .endif
 
 PMWIKIDIR?=	www/pmwiki
-WWWUSER?=	www
-WWWGROUP?=	www
 
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/${PMWIKIDIR}
 	@${CP} -R ${WRKSRC}/ ${PREFIX}/${PMWIKIDIR}
-	@${CHOWN} ${WWWUSER}:${WWWGROUP} ${PREFIX}/${PMWIKIDIR}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${PMWIKIDIR}
 
 post-install:
 	@${MKDIR} -m 775 ${PREFIX}/${PMWIKIDIR}/wiki.d
-	@${CHOWN} ${WWWUSER}:${WWWGROUP} ${PREFIX}/${PMWIKIDIR}/wiki.d
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${PMWIKIDIR}/wiki.d
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
