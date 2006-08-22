@@ -8065,6 +8065,7 @@ p5-B-Keywords	ports/devel/p5-B-Keywords
 p5-B-LexInfo	ports/www/p5-B-LexInfo
 p5-B-Size	ports/devel/p5-B-Size
 p5-B-Utils	ports/devel/p5-B-Utils
+p5-BBS-UserInfo-Ptt	ports/net/p5-BBS-UserInfo-Ptt
 p5-BFD		ports/devel/p5-BFD
 p5-BIND-Conf_Parser	ports/dns/p5-BIND-Conf_Parser
 p5-BSD-Jail-Object	ports/sysutils/p5-BSD-Jail-Object
