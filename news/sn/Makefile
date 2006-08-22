@@ -9,7 +9,8 @@ PORTNAME=	sn
 PORTVERSION=	0.3.8
 CATEGORIES=	news
 MASTER_SITES=	http://www.infa.abo.fi/~patrik/sn/files/ \
-		http://home.arcor.de/teambushido/fbsd_ports/
+		http://home.arcor.de/teambushido/fbsd_ports/\
+		http://home.arcor.de/fehlner/fbsd_ports/
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Small news system for small sites serving
