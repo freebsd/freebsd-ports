@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.16.0
+PORTVERSION=	0.16.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	thomas@goodking.ca
