@@ -7,21 +7,10 @@ ICAP patchset.
 
 Please see icap-2.6-core.patch for further information.
 
-Patch last updated: 2006-08-05
+Patch last updated: 2006-08-19
 
 --- configure.orig Sat Aug  5 16:24:35 2006
 +++ configure	Sat Aug  5 16:19:46 2006
-@@ -270,8 +270,8 @@
- # Identity of this package.
- PACKAGE_NAME='Squid Web Proxy'
- PACKAGE_TARNAME='squid'
--PACKAGE_VERSION='2.6.STABLE2'
--PACKAGE_STRING='Squid Web Proxy 2.6.STABLE2'
-+PACKAGE_VERSION='2.6.STABLE2-CVS'
-+PACKAGE_STRING='Squid Web Proxy 2.6.STABLE2-CVS'
- PACKAGE_BUGREPORT='http://www.squid-cache.org/bugs/'
- 
- ac_default_prefix=/usr/local/squid
 @@ -312,7 +312,7 @@
  # include <unistd.h>
  #endif"

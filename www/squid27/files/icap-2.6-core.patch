@@ -11,12 +11,12 @@ a second patch, icap-2.6-bootstrap.patch.
 The patchset was pulled from the project's CVS repository
 at cvs.devel.squid-cache.org using
 
-cvs diff -u -b -N -kk -rZ-icap-s2_6_merge_HEAD -ricap-2_6
+cvs diff -u -b -N -kk -rZ-icap-2_6_merge_HEAD -ricap-2_6
 
 See http://devel.squid-cache.org/icap/ for further information
 about the ICAP client project.
 
-Patch last updated: 2006-08-05
+Patch last updated: 2006-08-19
 
 Index: errors/Azerbaijani/ERR_ICAP_FAILURE
 ===================================================================
@@ -1377,10 +1377,10 @@ Index: src/MemBuf.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/MemBuf.c,v
 retrieving revision 1.10
-retrieving revision 1.9.10.2
-diff -p -u -b -r1.10 -r1.9.10.2
+retrieving revision 1.9.10.3
+diff -p -u -b -r1.10 -r1.9.10.3
 --- src/MemBuf.c	20 May 2006 22:50:55 -0000	1.10
-+++ src/MemBuf.c	26 May 2006 18:21:31 -0000	1.9.10.2
++++ src/MemBuf.c	12 Aug 2006 23:02:50 -0000	1.9.10.3
 @@ -341,3 +341,15 @@ memBufReport(MemBuf * mb)
      assert(mb);
      memBufPrintf(mb, "memBufReport is not yet implemented @?@\n");
@@ -1393,7 +1393,7 @@ diff -p -u -b -r1.10 -r1.9.10.2
 +    if (mb->capacity == mb->size)
 +	memBufGrow(mb, SQUID_TCP_SO_RCVBUF);
 +    len = FD_READ_METHOD(fd, mb->buf + mb->size, mb->capacity - mb->size);
-+    if (len)
++    if (len > 0)
 +	mb->size += len;
 +    return len;
 +}
