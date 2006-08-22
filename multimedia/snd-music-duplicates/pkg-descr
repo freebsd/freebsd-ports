@@ -1,0 +1,8 @@
+Seek & Destroy Music Duplicates is a tool for locating and removing
+duplicated music files. It does not crash on corrupted files and
+normally suggests the best song from amongst the duplicates. It uses
+an incremental scanning strategy and uses relatively few system
+resources. MP3, Ogg, WMA, and AAC formats are supported.
+
+Author:	Igor Tavcar <igor_tavcar@t-2.net>
+WWW:	http://www.pekarna.si/
