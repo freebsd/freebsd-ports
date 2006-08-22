@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# The executable needs to be run from its data directory.
-
-cd %%DATADIR%% || exit 1
-
-exec %%PREFIX%%/libexec/warzone "$@"

@@ -6,77 +6,50 @@
 #
 
 PORTNAME=	warzone2100
-PORTVERSION=	0.2.2
-PORTREVISON=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
+DISTNAME=	warzone-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
 
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		openal.0:${PORTSDIR}/audio/openal \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		alut.1:${PORTSDIR}/audio/freealut
+		physfs-1.0.1:${PORTSDIR}/devel/physfs \
+		png.5:${PORTSDIR}/graphics/png \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
+USE_BISON=	yes
 USE_GL=		yes
 USE_SDL=	net sdl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		LIBS="${PTHREAD_LIBS}"
 
-SUB_FILES=	warzone
+DATADIR=	${PREFIX}/share/warzone
 
 post-patch:
-# Remove "-m32" flag
+	@${REINPLACE_CMD} -e '/stdint.h/d' ${WRKSRC}/lib/ivis_opengl/screen.c
 	@${REINPLACE_CMD} -e 's|-m32||' \
-				${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
-				${WRKSRC}/makerules/common.mk
-
-# Fix SDL include statement
+		-e 's|/usr/local|${LOCALBASE}|; s|/usr/X11R6|${X11BASE}|' \
+		${WRKSRC}/configure
 .for f in configure *.c *.h
 	@${FIND} ${WRKSRC} -type f -name "${f}" -print0 | \
-		${XARGS} -0 ${REINPLACE_CMD} -e \
-		's|\(#include.*\)SDL/\(SDL.*\)|\1\2| ; \
-		s|-lopenal |&-lalut|g ; \
-		s|"-lalut|"-lopenal -lalut|'
+		${XARGS} -0 ${REINPLACE_CMD} -e 's|SDL/||'
 .endfor
 
-do-install:
-# Script
-	@${INSTALL_SCRIPT} ${WRKDIR}/warzone ${PREFIX}/bin
-
-# Program
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/warzone ${PREFIX}/libexec
-
-# Data
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/data/* ${DATADIR}
-
-# Documentation
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-post-install:
-# Fix permissions
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	@${FIND} ${DATADIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${DATADIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile (missing stdint.h)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
