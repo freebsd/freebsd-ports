@@ -8,9 +8,10 @@
 PORTNAME=	since
 PORTVERSION=	0.5
 CATEGORIES=	misc
-MASTER_SITES=	ftp://jade.cs.uct.ac.za/pub/
+MASTER_SITES=	http://fresh.t-systems-sfr.com/linux/src/ \
+		http://www.goodking.ca/pub/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	View the end of a file like tail(1), but save state between sessions
 
 MAN1=		since.1
