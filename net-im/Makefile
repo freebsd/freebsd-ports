@@ -92,6 +92,7 @@
     SUBDIR += py-msnp
     SUBDIR += py-pyxmpp
     SUBDIR += p5-Jabber-Connection
+    SUBDIR += p5-Jabber-SimpleSend
     SUBDIR += p5-Net-AIM
     SUBDIR += p5-Net-AOLIM
     SUBDIR += p5-Net-ICQ2000
