@@ -774,6 +774,7 @@
     SUBDIR += p5-App-CLI
     SUBDIR += p5-App-Cache
     SUBDIR += p5-App-Info
+    SUBDIR += p5-App-Options
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
     SUBDIR += p5-Array-Iterator
