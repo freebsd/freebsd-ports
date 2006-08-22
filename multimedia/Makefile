@@ -190,6 +190,7 @@
     SUBDIR += slideshow
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
+    SUBDIR += snd-music-duplicates
     SUBDIR += spigot
     SUBDIR += streamanalyze
     SUBDIR += streamdvd
