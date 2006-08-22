@@ -3,7 +3,4 @@ manipulation involved when handling IP address calculations. It also
 helps by performing range comparisons between subnets as well as other
 frequently used functions.
 
-Please note that this module provides more functionality when used with
-perl 5.6.1 or perl 5.8.0.
-
 WWW: http://search.cpan.org/dist/NetAddr-IP/
