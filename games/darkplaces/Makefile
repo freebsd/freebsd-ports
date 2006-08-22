@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darkplaces
-PORTVERSION=	20060606
+PORTVERSION=	20060725
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 ALL_TARGET=	#
 
-OPTIONS=	CLIENT "Build GLX client" off \
+OPTIONS=	CLIENT "Build GLX client" on \
 		DEDICATED "Build dedicated server" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		SDL "Build SDL client" on
@@ -66,13 +66,6 @@ USE_SDL=	sdl
 ALL_TARGET+=	sdl-release
 EXE_TARGETS+=	${PORTNAME}-sdl
 PLIST_FILES+=	bin/${PORTNAME}-sdl
-.endif
-
-.if defined(WITH_CLIENT)
-pre-everything::
-	@${ECHO_CMD}
-	@${ECHO_CMD} "WARNING: currently the sound is broken in the GLX client. The problem has been reported to the developers, who are working on it. For the moment please use the SDL client instead as a workaround." | ${FMT}
-	@${ECHO_CMD}
 .endif
 
 post-extract:
