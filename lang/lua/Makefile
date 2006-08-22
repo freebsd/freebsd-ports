@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	5.1
+PORTVERSION=	5.1.1
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
