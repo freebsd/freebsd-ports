@@ -1118,6 +1118,7 @@
     SUBDIR += p5-IO-Toolkit
     SUBDIR += p5-IO-Tty
     SUBDIR += p5-IO-Util
+    SUBDIR += p5-IO-YAML
     SUBDIR += p5-IO-stringy
     SUBDIR += p5-IPC-Cache
     SUBDIR += p5-IPC-Cmd
