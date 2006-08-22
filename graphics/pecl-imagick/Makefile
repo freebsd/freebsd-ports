@@ -17,14 +17,15 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to manipulate images
 
-BROKEN=		Does not build
+DEPRECATED=	Project is dead and does not work
+EXPIRATION_DATE=	2006-09-10
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
 
-OPTIONS=	GM "Use GraphicsMagick backend" on
+OPTIONS=	GM "Use GraphicsMagick backend" off
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +34,7 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 .else
 LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 CONFIGURE_ARGS+=--with-imagick-gm
+BROKEN=		Does not build
 .endif
 
 .if !defined(NOPORTDOCS)
