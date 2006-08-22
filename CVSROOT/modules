@@ -10232,6 +10232,7 @@ p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-Clean	ports/textproc/p5-XML-Clean
 p5-XML-DBMS	ports/textproc/p5-XML-DBMS
 p5-XML-DOM	ports/textproc/p5-XML-DOM
+p5-XML-DOM-Lite	ports/textproc/p5-XML-DOM-Lite
 p5-XML-DOM-XPath	ports/textproc/p5-XML-DOM-XPath
 p5-XML-DOM2	ports/textproc/p5-XML-DOM2
 p5-XML-DT	ports/textproc/p5-XML-DT
