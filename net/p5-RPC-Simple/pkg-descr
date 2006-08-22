@@ -1,0 +1,18 @@
+This module implements remote procedure call. I've tried to keep
+things simple.
+
+So this module should be :
+- quite simple to use (thanks to autoload mechanisms)
+- lightweight
+
+It sure is not :
+- DCE
+- CORBA
+- bulletproof
+- securityproof
+- foolproof
+
+But it works. (Although I'm opened to suggestion regarding the
+"un-proof" areas)
+
+WWW:	http://search.cpan.org/dist/RPC-Simple/
