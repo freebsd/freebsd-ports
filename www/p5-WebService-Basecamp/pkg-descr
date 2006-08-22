@@ -1,0 +1,21 @@
+Basecamp is a web based project collaboration tool that makes it
+simple to communicate and collaborate on projects. Basecamp is built
+on the Ruby on Rails platform but provides a webservice API to many of
+the application functions. WebService::Basecamp is a Perl interface to
+the Basecamp web service API.
+
+For more information on Basecamp, visit the Basecamp website.
+http://www.basecamphq.com.
+
+This module does much of the heavy lifting for you when accessing the
+Basecamp API. Once initialising a WebService::Basecamp object you can
+access the API function via method calls. The module takes care of the
+creation and parsing of the XML (using XML::Simple) that relays the
+data across the web service, however there is an option to access the
+XML directly (see new()).
+
+The documentation for this module is based on the Basecamp API docs
+available at http://www.basecamphq.com/api. It is recommended you read
+the official docs to become familiar with the data reference.
+
+WWW:	http://search.cpan.org/dist/WebService-Basecamp/
