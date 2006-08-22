@@ -191,6 +191,7 @@
     SUBDIR += fusefs-httpfs
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
+    SUBDIR += fusefs-sqlfs
     SUBDIR += fusefs-sshfs
     SUBDIR += fusefs-unionfs
     SUBDIR += fusefs-wdfs
