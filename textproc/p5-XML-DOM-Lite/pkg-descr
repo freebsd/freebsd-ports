@@ -1,0 +1,16 @@
+XML::DOM::Lite is designed to be a reasonably fast, highly portable,
+XML parser kit written in pure perl, implementing the DOM standard
+quite closely. To keep performance up and footprint down.
+
+The standard pattern for using the XML::DOM::Lite parser kit is to use
+XML::DOM::Lite qw(Parser :constants);
+
+Available exports are : Parser, Node, NodeList, NodeIterator,
+NodeFilter, XPath, Document, XSLT and the constants.
+
+This is mostly for convenience, so that you can save your key-strokes
+for the fun stuff. Alternatively, to avoid polluting your namespace,
+you can simply : use XML::DOM::Lite::Parser; use
+XML::DOM::Lite::Constants qw(:all); # ... etc
+
+WWW:	http://search.cpan.org/dist/XML-DOM-Lite/
