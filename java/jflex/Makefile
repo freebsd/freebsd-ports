@@ -24,13 +24,18 @@ USE_JAVA=	yes
 USE_ANT=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	jar
-MAKE_ENV+=	CLASSPATH="${DISTDIR}/JFlex.jar:${DISTDIR}/java_cup.jar:${JAVALIBDIR}/junit.jar"
+MAKE_ENV+=	CLASSPATH="${JAVALIBDIR}/junit.jar"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 SUB_FILES=	jflex.sh
+
+post-extract:
+	${MKDIR} ${WRKSRC}/tools
+	${CP} ${DISTDIR}/JFlex.jar ${WRKSRC}/tools/
+	${CP} ${DISTDIR}/java_cup.jar ${WRKSRC}/tools/
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jflex.sh ${PREFIX}/bin/jflex
