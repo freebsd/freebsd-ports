@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.software.ibm.com/software/globalization/icu/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
