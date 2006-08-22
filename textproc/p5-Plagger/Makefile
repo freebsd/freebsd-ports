@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -53,6 +53,7 @@ OPTIONS=	PODTESTING "POD Testing Support" off \
 		PALMDOC "Publish::PalmDoc Support" off \
 		FILTERPPT "Filter::TTP Support" off \
 		KINOSEARCH "Search::KinoSearch Support" off \
+		PUBLISHGMAIL "Publish::Gmail Support" on \
 		PUBDELICIOUS "Publish::Delicious Support" off \
 		HATENARSS "Subscription::HatenaRSS Support" off \
 		NOTIFYIRC "Notify::IRC Support" off \
@@ -74,7 +75,6 @@ OPTIONS=	PODTESTING "POD Testing Support" off \
 #		RULEFRESH "Rule::Fresh Support" on \
 #		SUBSCRDBI "Subscription::DBI Support" off \
 #		NOTIFYBEEP "Notify::Beep Support" off \
-#		PUBLISHGMAIL "Publish::Gmail Support" on \
 #		SUBSCRFOAF "Subscription::FOAF Support" off \
 #		ESTRAIER "Search::Estraier Support" off \
 #		PROFANITY "Filter::Profanity Support" off \
@@ -150,6 +150,12 @@ BUILD_DEPENDS+=	${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find
 
 .if defined(WITH_KINOSEARCH)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/KinoSearch.pm:${PORTSDIR}/textproc/p5-KinoSearch
+.endif
+
+.if defined(WITH_PUBLISHGMAIL)
+BUILD_DEPENDS+=	${SITE_PERL}/Net/SMTP/TLS.pm:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
+		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
+		${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address
 .endif
 
 .if defined(WITH_PUBDELICIOUS)
