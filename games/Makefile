@@ -203,6 +203,7 @@
     SUBDIR += freeciv
     SUBDIR += freeciv-gtk
     SUBDIR += freeciv-gtk2
+    SUBDIR += freeciv-nox11
     SUBDIR += freedoko
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
