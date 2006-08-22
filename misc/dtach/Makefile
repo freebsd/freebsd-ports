@@ -11,7 +11,7 @@ CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dtach
 
-MAINTAINER=	bkhl@elektrubadur.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small program that emulates the detach feature of screen
 
 GNU_CONFIGURE=	yes

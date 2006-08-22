@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	news
 MASTER_SITES=	http://www.nih.at/cg/
 
-MAINTAINER=	bkhl@elektrubadur.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Semi-automatic newsgroup binary downloader
 
 GNU_CONFIGURE=	yes
