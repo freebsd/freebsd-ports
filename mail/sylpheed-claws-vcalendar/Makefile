@@ -8,7 +8,9 @@
 PORTNAME=	vcalendar
 PORTVERSION=	1.79.2
 CATEGORIES=	mail
-MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
+MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	sylpheed-claws-
 
 MAINTAINER=	c0rn@o2.pl
