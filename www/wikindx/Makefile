@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wikindx
-PORTVERSION=	3.3.2
+PORTVERSION=	3.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
-DISTNAME=	wikindx3_3_2
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	Bibliographic and quotations/notes management system

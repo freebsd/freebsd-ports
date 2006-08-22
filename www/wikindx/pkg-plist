@@ -25,6 +25,7 @@
 %%WIKINDX%%/core/browse/BROWSECREATOR.php
 %%WIKINDX%%/core/browse/BROWSEKEYWORD.php
 %%WIKINDX%%/core/browse/BROWSEPUBLISHER.php
+%%WIKINDX%%/core/browse/CATEGORYTREE.php
 %%WIKINDX%%/core/cite/CITE.php
 %%WIKINDX%%/core/cite/cite.js
 %%WIKINDX%%/core/collection/COLLECTION.php
@@ -157,6 +158,8 @@
 %%WIKINDX%%/core/sql/xsl/convert-0.1-0.2.xsl
 %%WIKINDX%%/core/sql/xsl/convert-0.2-0.1.xsl
 %%WIKINDX%%/core/sql/xsl/remove-0.2.xsl
+%%WIKINDX%%/core/statistics/STATISTICS.php
+%%WIKINDX%%/core/statistics/green.gif
 %%WIKINDX%%/core/styles/BIBFORMAT.php
 %%WIKINDX%%/core/styles/BIBSTYLE.php
 %%WIKINDX%%/core/styles/CITEFORMAT.php
@@ -785,6 +788,7 @@
 @dirrm %%WIKINDX%%/core/text
 @dirrm %%WIKINDX%%/core/template
 @dirrm %%WIKINDX%%/core/styles
+@dirrm %%WIKINDX%%/core/statistics
 @dirrm %%WIKINDX%%/core/sql/xsl
 @dirrm %%WIKINDX%%/core/sql/drivers
 @dirrm %%WIKINDX%%/core/sql/datadict
