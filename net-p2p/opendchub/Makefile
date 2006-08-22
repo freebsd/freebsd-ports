@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	opendchub
-PORTVERSION=	0.7.14
-PORTREVISION=	2
+PORTVERSION=	0.7.15
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 
 USE_PERL5=	yes
@@ -31,7 +30,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-IGNORE=		"needs at least perl 5.6.1 to build"
+IGNORE=		needs at least perl 5.6.1 to build
 .endif
 
 .include <bsd.port.post.mk>
