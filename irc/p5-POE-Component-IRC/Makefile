@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	4.97
+PORTVERSION=	4.98
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -16,12 +16,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	A fully event-driven IRC client module
 
-BUILD_DEPENDS=	p5-POE>=0.3202:${PORTSDIR}/devel/p5-POE \
+RUN_DEPENDS=	p5-POE>=0.3202:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Filter-IRCD>=1.7:${PORTSDIR}/irc/p5-POE-Filter-IRCD \
 		${SITE_PERL}/POE/Component/Client/DNS.pm:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
 		${SITE_PERL}/POE/Component/Client/Ident.pm:${PORTSDIR}/net/p5-POE-Component-Client-Ident \
 		${SITE_PERL}/POE/Component/SSLify.pm:${PORTSDIR}/security/p5-POE-Component-SSLify
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
