@@ -2901,6 +2901,7 @@ fusefs-gphotofs	ports/graphics/fusefs-gphotofs
 fusefs-httpfs	ports/sysutils/fusefs-httpfs
 fusefs-kmod	ports/sysutils/fusefs-kmod
 fusefs-libs	ports/sysutils/fusefs-libs
+fusefs-sqlfs	ports/sysutils/fusefs-sqlfs
 fusefs-sshfs	ports/sysutils/fusefs-sshfs
 fusefs-unionfs	ports/sysutils/fusefs-unionfs
 fusefs-wdfs	ports/sysutils/fusefs-wdfs
