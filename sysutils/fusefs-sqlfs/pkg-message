@@ -1,0 +1,11 @@
+==============================================================================
+
+Now sqlfs filesystem is installed.
+You can mount it by issuing
+% sqlfs -o /path/to/sqlite/database /path/to/mountpoint
+
+Alternatively you can supply database name via SQLFS_DBNAME env variable
+
+For additional information see supplied documentation.
+
+==============================================================================
