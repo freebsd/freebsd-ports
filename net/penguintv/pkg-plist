@@ -1,3 +1,6 @@
+share/locale/pt_BR/LC_MESSAGES/penguintv.mo
+share/locale/sv/LC_MESSAGES/penguintv.mo
+share/locale/pt/LC_MESSAGES/penguintv.mo
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/BTDownloader.py
