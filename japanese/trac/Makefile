@@ -7,6 +7,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
@@ -22,7 +23,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
-		DOCUTILS   "Allow additional text markup" On
+		DOCUTILS   "Allow additional text markup" On \
+		LOCALTZ    "Use local TZ in notify mail Date: header" Off
 CONFLICTS=	trac-0.*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-ja-1
 
@@ -59,6 +61,10 @@ RUN_DEPENDS+=	${PREFIX}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
 
 .if defined(WITH_DOCUTILS)
 RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
+.endif
+
+.if defined(WITH_LOCALTZ)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Notify.py
 .endif
 
 .include <bsd.port.post.mk>
