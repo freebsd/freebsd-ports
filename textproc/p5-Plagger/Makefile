@@ -7,6 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -42,24 +43,26 @@ OPTIONS=	PODTESTING "POD Testing Support" off \
 		XPATH "XPath Support" on \
 		PUBLISHEXCEL "Publish::Excel Support" off \
 		FILTERPIPE "Filter::Pipe Support" off \
-		PUBLISHPLANET "Publish::Planet Support" off \
+		PUBLISHPLANET "Publish::Planet Support" on \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
 		PUBLISHMT "Publish::MT Support" off \
 		ROMANIZE "Filter::Romanize Support" off \
 		SUBSCOPML "Subscription::OPML Support" on \
 		FLICKRSEARCH "CustomFeed::FlickrSearch Support" off \
+		HATENABKMK "Filter::HatenaBookmarkUsersCount Support" off \
 		PALMDOC "Publish::PalmDoc Support" off \
 		FILTERPPT "Filter::TTP Support" off \
 		KINOSEARCH "Search::KinoSearch Support" off \
 		PUBDELICIOUS "Publish::Delicious Support" off \
 		HATENARSS "Subscription::HatenaRSS Support" off \
 		NOTIFYIRC "Notify::IRC Support" off \
+		HATENADIARY "Filter::HatenaDiaryKeywordLink Support" off \
 		IMAGEINFO "Filter::ImageInfo Support" off \
 		PUBLISHIMAP "Publish::IMAP Support" off \
-		BLOGLINES "Subscription::Bloglines Support" off \
+		BLOGLINES "Subscription::Bloglines Support" on \
 		CUSFEEDMIXI "CustomFeed::Mixi Support" off \
 		NTFYNETSEND "Notify::NetSend Support" off \
-		FILHTMLSCRB "Filter::HTMLScrubber Support" off
+		FILHTMLSCRB "Filter::HTMLScrubber Support" on
 # The below options are not supported yet due to missing depending modules
 #		BETTERENCODING "Better Encoding detection Support" on \
 #		COOKIESHARING "Cookie sharing with Firefox Support" off \
@@ -133,6 +136,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Flickr/API.pm:${PORTSDIR}/www/p5-Flickr-API \
 		${SITE_PERL}/DateTime/Format/Epoch.pm:${PORTSDIR}/devel/p5-DateTime-Format-Epoch
 .endif
 
+.if defined(WITH_HATENABKMK)
+BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+.endif
+
 .if defined(WITH_PALMDOC)
 BUILD_DEPENDS+=	${SITE_PERL}/Palm/PalmDoc.pm:${PORTSDIR}/palm/p5-Palm-PalmDoc
 .endif
@@ -156,6 +163,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 .if defined(WITH_NOTIFYIRC)
 BUILD_DEPENDS+=	${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		${SITE_PERL}/POE/Component/IKC.pm:${PORTSDIR}/devel/p5-POE-Component-IKC
+.endif
+
+.if defined(WITH_HATENADIARY)
+BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
 .if defined(WITH_IMAGEINFO)
@@ -330,6 +341,6 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Rule::URLBL.3 \
 
 post-patch:
-	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL \
+	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
