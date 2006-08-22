@@ -4,7 +4,7 @@ RCS file: /cvs/gsl/vcl/unx/gtk/app/gtkinst.cxx,v
 retrieving revision 1.14.88.1
 diff -u -r1.14.88.1 gtkinst.cxx
 --- vcl/unx/gtk/app/gtkinst.cxx	10 Aug 2006 14:53:08 -0000	1.14.88.1
-+++ vcl/unx/gtk/app/gtkinst.cxx	19 Aug 2006 11:13:07 -0000
++++ vcl/unx/gtk/app/gtkinst.cxx	21 Aug 2006 05:38:21 -0000
 @@ -43,6 +43,7 @@
  #include <plugins/gtk/atkbridge.hxx>
  
@@ -13,7 +13,7 @@ diff -u -r1.14.88.1 gtkinst.cxx
  
  #if OSL_DEBUG_LEVEL > 1
  #include <stdio.h>
-@@ -111,11 +112,26 @@
+@@ -111,13 +112,28 @@
  		GtkHookedYieldMutex *pYieldMutex = GET_YIELD_MUTEX();
  		pYieldMutex->ThreadsLeave();
  	}
@@ -39,8 +39,11 @@ diff -u -r1.14.88.1 gtkinst.cxx
 +		}
 +
  		GdkLockFn gdk_threads_set_lock_functions =
- 				(GdkLockFn) osl_getFunctionSymbol( pModule, aSymbolName.pData );
+-				(GdkLockFn) osl_getFunctionSymbol( pModule, aSymbolName.pData );
++				(GdkLockFn) osl_getFunctionSymbol( aMod, aSymbolName.pData );
  		if ( !gdk_threads_set_lock_functions )
+ 		{
+ #if OSL_DEBUG_LEVEL > 1
 @@ -150,7 +166,7 @@
  		if ( !g_thread_supported() )
  			g_thread_init( NULL );
