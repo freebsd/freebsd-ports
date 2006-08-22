@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	dns
 MASTER_SITES=	http://threading.2038bug.com/sheerdns/
 
-MAINTAINER=	bkhl@elektrubadur.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A light-weight, simple and fast master DNS server
 
 USE_GMAKE=	yes
