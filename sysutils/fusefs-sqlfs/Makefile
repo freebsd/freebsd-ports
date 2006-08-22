@@ -42,7 +42,7 @@ do-build:
 		${PTHREAD_LIBS} sqlfs.c fuse_main.c -o sqlfs)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/sqlfs ${PREFIX}/bin/
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/
