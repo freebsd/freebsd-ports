@@ -67,6 +67,9 @@ HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
 HORDE_INC=	${LOCALBASE}/etc/horde
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
+
 pre-configure:
 	@${SED} -e "s:/home/httpd/html/horde/ingo:${INGODIR}:g"		\
 		${FILESDIR}/httpd.conf.ingo >${WRKDIR}/httpd-ingo.conf
