@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -30,9 +30,11 @@ MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
+	Perl::Critic::Document.3 \
 	Perl::Critic::TestUtils.3 \
 	Perl::Critic::Policy.3 \
 	Perl::Critic::PolicySummary.3 \
+	Perl::Critic::Policy::BuiltinFunctions::ProhibitStringySplit.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitSleepViaSelect.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitStringyEval.3 \
@@ -52,14 +54,17 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::CodeLayout::RequireTrailingCommas.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitCStyleForLoops.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitCascadingIfElse.3 \
+	Perl::Critic::Policy::ControlStructures::ProhibitDeepNests.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3 \
 	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
 	Perl::Critic::Policy::Documentation::RequirePodSections.3 \
+	Perl::Critic::Policy::ErrorHandling::RequireCarping.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3 \
+	Perl::Critic::Policy::InputOutput::ProhibitInteractiveTest.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitOneArgSelect.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitReadlineInForLoop.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen.3 \
@@ -78,6 +83,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitAmbiguousNames.3 \
 	Perl::Critic::Policy::References::ProhibitDoubleSigils.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitCaptureWithoutTest.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireLineBoundaryMatching.3 \
 	Perl::Critic::Policy::Subroutines::ProtectPrivateSubs.3 \
@@ -110,6 +116,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::ProhibitMatchVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitConditionalDeclarations.3 \
 	Perl::Critic::Policy::Variables::RequireInitializationForLocalVars.3 \
+	Perl::Critic::Policy::Variables::RequireLexicalLoopIterators.3 \
+	Perl::Critic::Policy::Variables::RequireNegativeIndices.3 \
 	Perl::Critic::Utils.3 \
 	Perl::Critic::Violation.3
 
