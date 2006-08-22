@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pathload
-PORTVERSION=	1.2
+PORTVERSION=	1.3.2
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.cc.gatech.edu/fac/Constantinos.Dovrolis/
+MASTER_SITES=	http://www-static.cc.gatech.edu/fac/Constantinos.Dovrolis/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	dikshie@lapi.itb.ac.id
