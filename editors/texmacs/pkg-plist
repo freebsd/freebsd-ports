@@ -3,6 +3,7 @@ bin/texmacs
 include/TeXmacs.h
 libexec/TeXmacs/bin/maxima_detect
 libexec/TeXmacs/bin/maxima_filter
+libexec/TeXmacs/bin/r_install
 libexec/TeXmacs/bin/realpath
 libexec/TeXmacs/bin/realpath.py
 libexec/TeXmacs/bin/texmacs.bin
@@ -1748,6 +1749,7 @@ share/TeXmacs/misc/pixmaps/tm_point_style.xpm
 share/TeXmacs/misc/pixmaps/tm_prime.xpm
 share/TeXmacs/misc/pixmaps/tm_print.xpm
 share/TeXmacs/misc/pixmaps/tm_redo.xpm
+share/TeXmacs/misc/pixmaps/tm_reload.xpm
 share/TeXmacs/misc/pixmaps/tm_replace.xpm
 share/TeXmacs/misc/pixmaps/tm_right.xpm
 share/TeXmacs/misc/pixmaps/tm_root.xpm
@@ -1868,6 +1870,7 @@ share/TeXmacs/packages/utilities/chat.ts
 share/TeXmacs/plugins/axiom/packages/session/axiom.ts
 share/TeXmacs/plugins/axiom/progs/axiom-input.scm
 share/TeXmacs/plugins/axiom/progs/init-axiom.scm
+share/TeXmacs/plugins/cadabra/progs/init-cadabra.scm
 share/TeXmacs/plugins/dratex/examples/texts/dratex.tm
 share/TeXmacs/plugins/dratex/latex/AlDraTex.sty
 share/TeXmacs/plugins/dratex/latex/DraTex.sty
@@ -1898,6 +1901,7 @@ share/TeXmacs/plugins/maple/maple/init-maple.mpl
 share/TeXmacs/plugins/maple/packages/session/maple.ts
 share/TeXmacs/plugins/maple/progs/init-maple.scm
 share/TeXmacs/plugins/maple/progs/maple-input.scm
+share/TeXmacs/plugins/maple/src.9/tm_maple_9.c
 share/TeXmacs/plugins/mathemagix/packages/session/mathemagix.ts
 share/TeXmacs/plugins/mathemagix/progs/init-mathemagix.scm
 share/TeXmacs/plugins/mathemagix/progs/mathemagix-input.scm
@@ -1906,6 +1910,7 @@ share/TeXmacs/plugins/mathematica/packages/session/mathematica.ts
 share/TeXmacs/plugins/mathematica/progs/init-mathematica.scm
 share/TeXmacs/plugins/mathematica/ps/post
 share/TeXmacs/plugins/mathematica/ps/pre
+share/TeXmacs/plugins/mathematica/src.lazy/tm_mathematica.c
 share/TeXmacs/plugins/matlab/code/isnewans.m
 share/TeXmacs/plugins/matlab/code/mat2scm.m
 share/TeXmacs/plugins/matlab/code/num2scm.m
@@ -1970,15 +1975,7 @@ share/TeXmacs/plugins/qcl/progs/init-qcl.scm
 share/TeXmacs/plugins/qcl/progs/qcl-input.scm
 share/TeXmacs/plugins/r/progs/init-r.scm
 share/TeXmacs/plugins/r/progs/r-input.scm
-share/TeXmacs/plugins/r/r/TeXmacs/CONTENTS
 share/TeXmacs/plugins/r/r/TeXmacs/DESCRIPTION
-share/TeXmacs/plugins/r/r/TeXmacs/INDEX
-share/TeXmacs/plugins/r/r/TeXmacs/Meta/Rd.rds
-share/TeXmacs/plugins/r/r/TeXmacs/Meta/data.rds
-share/TeXmacs/plugins/r/r/TeXmacs/Meta/demo.rds
-share/TeXmacs/plugins/r/r/TeXmacs/R-ex/TeXmacsView.R
-share/TeXmacs/plugins/r/r/TeXmacs/R-ex/v.R
-share/TeXmacs/plugins/r/r/TeXmacs/R/TeXmacs
 share/TeXmacs/plugins/r/r/TeXmacs/demo/00Index
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.Hershey.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.Japanese.R
@@ -1989,15 +1986,8 @@ share/TeXmacs/plugins/r/r/TeXmacs/demo/T.nlm.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.persp.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.plotmath.R
 share/TeXmacs/plugins/r/r/TeXmacs/demo/T.recursion.R
-share/TeXmacs/plugins/r/r/TeXmacs/help/AnIndex
-share/TeXmacs/plugins/r/r/TeXmacs/help/TeXmacsView
-share/TeXmacs/plugins/r/r/TeXmacs/help/v
-share/TeXmacs/plugins/r/r/TeXmacs/html/00Index.html
-share/TeXmacs/plugins/r/r/TeXmacs/html/TeXmacsView.html
-share/TeXmacs/plugins/r/r/TeXmacs/html/v.html
-share/TeXmacs/plugins/r/r/TeXmacs/latex/TeXmacsView.tex
-share/TeXmacs/plugins/r/r/TeXmacs/latex/v.tex
 share/TeXmacs/plugins/r/r/TeXmacs/man/TeXmacs.Rd
+share/TeXmacs/plugins/r/r/TeXmacs/R/TeXmacs.R
 share/TeXmacs/plugins/reduce/install/README
 share/TeXmacs/plugins/reduce/install/reducerc
 share/TeXmacs/plugins/reduce/install/tmprint.red
@@ -2085,8 +2075,11 @@ share/TeXmacs/progs/generic/format-menu.scm
 share/TeXmacs/progs/generic/generic-edit.scm
 share/TeXmacs/progs/generic/generic-kbd.scm
 share/TeXmacs/progs/generic/insert-menu.scm
+share/TeXmacs/progs/graphics/graphics-context.scm
 share/TeXmacs/progs/graphics/graphics-edit.scm
+share/TeXmacs/progs/graphics/graphics-menu-functions.scm
 share/TeXmacs/progs/graphics/graphics-menu.scm
+share/TeXmacs/progs/graphics/graphics-utils.scm
 share/TeXmacs/progs/init-buffer.scm
 share/TeXmacs/progs/init-texmacs.scm
 share/TeXmacs/progs/kernel/boot/abbrevs.scm
@@ -2115,6 +2108,7 @@ share/TeXmacs/progs/kernel/regexp/regexp-test.scm
 share/TeXmacs/progs/kernel/texmacs/tm-convert.scm
 share/TeXmacs/progs/kernel/texmacs/tm-define.scm
 share/TeXmacs/progs/kernel/texmacs/tm-dialogue.scm
+share/TeXmacs/progs/kernel/texmacs/tm-file-system.scm
 share/TeXmacs/progs/kernel/texmacs/tm-modes.scm
 share/TeXmacs/progs/kernel/texmacs/tm-overload.scm
 share/TeXmacs/progs/kernel/texmacs/tm-plugins.scm
@@ -2136,6 +2130,8 @@ share/TeXmacs/progs/remote/chat-menu.scm
 share/TeXmacs/progs/remote/client.scm
 share/TeXmacs/progs/remote/crypt.scm
 share/TeXmacs/progs/remote/remote-menu.scm
+share/TeXmacs/progs/remote/tmfs-menu.scm
+share/TeXmacs/progs/remote/tmfs-remote.scm
 share/TeXmacs/progs/source/source-edit.scm
 share/TeXmacs/progs/source/source-kbd.scm
 share/TeXmacs/progs/source/source-menu.scm
@@ -2275,13 +2271,8 @@ share/nls/en_US.US-ASCII
 @dirrm share/TeXmacs/plugins/reduce/install
 @dirrm share/TeXmacs/plugins/reduce
 @dirrm share/TeXmacs/plugins/r/r/TeXmacs/man
-@dirrm share/TeXmacs/plugins/r/r/TeXmacs/latex
-@dirrm share/TeXmacs/plugins/r/r/TeXmacs/html
-@dirrm share/TeXmacs/plugins/r/r/TeXmacs/help
 @dirrm share/TeXmacs/plugins/r/r/TeXmacs/demo
-@dirrm share/TeXmacs/plugins/r/r/TeXmacs/R-ex
 @dirrm share/TeXmacs/plugins/r/r/TeXmacs/R
-@dirrm share/TeXmacs/plugins/r/r/TeXmacs/Meta
 @dirrm share/TeXmacs/plugins/r/r/TeXmacs
 @dirrm share/TeXmacs/plugins/r/r
 @dirrm share/TeXmacs/plugins/r/progs
@@ -2316,6 +2307,7 @@ share/nls/en_US.US-ASCII
 @dirrm share/TeXmacs/plugins/matlab/progs
 @dirrm share/TeXmacs/plugins/matlab/code
 @dirrm share/TeXmacs/plugins/matlab
+@dirrm share/TeXmacs/plugins/mathematica/src.lazy
 @dirrm share/TeXmacs/plugins/mathematica/ps
 @dirrm share/TeXmacs/plugins/mathematica/progs
 @dirrm share/TeXmacs/plugins/mathematica/packages/session
@@ -2325,6 +2317,7 @@ share/nls/en_US.US-ASCII
 @dirrm share/TeXmacs/plugins/mathemagix/packages/session
 @dirrm share/TeXmacs/plugins/mathemagix/packages
 @dirrm share/TeXmacs/plugins/mathemagix
+@dirrm share/TeXmacs/plugins/maple/src.9
 @dirrm share/TeXmacs/plugins/maple/progs
 @dirrm share/TeXmacs/plugins/maple/packages/session
 @dirrm share/TeXmacs/plugins/maple/packages
@@ -2361,6 +2354,8 @@ share/nls/en_US.US-ASCII
 @dirrm share/TeXmacs/plugins/dratex/examples/texts
 @dirrm share/TeXmacs/plugins/dratex/examples
 @dirrm share/TeXmacs/plugins/dratex
+@dirrm share/TeXmacs/plugins/cadabra/progs
+@dirrm share/TeXmacs/plugins/cadabra
 @dirrm share/TeXmacs/plugins/axiom/progs
 @dirrm share/TeXmacs/plugins/axiom/packages/session
 @dirrm share/TeXmacs/plugins/axiom/packages
