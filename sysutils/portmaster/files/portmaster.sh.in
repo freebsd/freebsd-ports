@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.110
+# Local version: 1.112
 # $FreeBSD$
 
 # Copyright (c) 2005-2006 Douglas Barton, All rights reserved
@@ -521,6 +521,7 @@ dependency_check () {
 		echo "===>>> Recursive 'make config' check complete for $portdir"
 	else
 		echo "===>>> Dependency check complete for $portdir"
+		echo ''
 	fi
 }
 
@@ -677,7 +678,10 @@ while getopts 'CDGLabde:fghilm:nop:r:suv' COMMAND_LINE_ARGUMENT ; do
 	h)	usage 0 ;;
 	i)	INTERACTIVE_UPDATE=yes; ARGS="-i $ARGS" ;;
 	l)	LIST=yes ;;
-	m)	MAKE_ARGS=$OPTARG; ARGS="-m $MAKE_ARGS $ARGS" ;;
+	m)	MAKE_ARGS=$OPTARG
+		export MAKE_ARGS	# For 'make checksum'
+		ARGS="-m $MAKE_ARGS $ARGS"
+		;;
 	n)	NO_ACTION=yes ;;
 	o)	REPLACE_ORIGIN=yes ;;
 	p)	portdir="${OPTARG#$pd/}" ;;
@@ -791,6 +795,7 @@ if [ -n "$CLEAN_STALE" ]; then
 		case "$YESNO" in
 		[yY])	[ -n "$BACKUP" ] && backup_package $iport
 
+			echo "===>>> Running pkg_delete -f $iport"
 			pkg_delete -f ${iport}
 			if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 				delete_all_distfiles $origin
@@ -1001,6 +1006,15 @@ fi
 
 cd $pd/$portdir || usage
 
+ignore=`make -V IGNORE`
+if [ -n "$ignore" ]; then
+	echo "===>>> This port is marked IGNORE:"
+	echo "===>>> $portdir $ignore"
+	echo "===>>> If you are sure you can build the port successfully,"
+	echo "       remove the IGNORE line in the Makefile and try again."
+	safe_exit 1
+fi
+
 if [ -n "$CONFIG_ONLY" ]; then
 	echo "===>>> Launching 'make checksum' for $portdir in background"
 	fetchlog=`mktemp -t fetchlog-${PARENT_PID}-${portdir##*/}`
@@ -1090,12 +1104,12 @@ if [ -n "$NO_ACTION" ]; then
 	safe_exit
 fi
 
+# In case we went elsewhere in the dependency check
+cd $pd/$portdir
+
 case "$DONT_PRE_CLEAN" in
 '')	make $MAKE_ARGS clean NOCLEANDEPENDS=yes || fail 'make clean failed' ;;
 esac
-
-# In case we went elsewhere in the dependency check
-cd $pd/$portdir
 
 fl_read=`echo ${TMPDIR:-/tmp}/fetchlog-${PARENT_PID}-${portdir##*/}.*`
 while [ -f "$fl_read" ]; do
