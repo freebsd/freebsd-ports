@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	gnome-osd
-DISTVERSION=	0.9.1-1
+DISTVERSION=	0.11.3
 CATEGORIES=	misc
 MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/${DISTVERSION:C|-.*$||}/
-DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	An On-Screen-Display infrastructure using Pango text rendering
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 GCONF_SCHEMAS=	gnome-osd.schemas
 PORTDOCS=	AUTHORS NEWS README
+MAN1=		gnome-osd-client.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|control-center-2.0/capplets|applications|; \

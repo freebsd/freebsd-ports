@@ -1,6 +1,7 @@
 bin/gnome-osd-client
+bin/gnome-osd-event-bridge
 bin/gnome-osd-properties
-bin/rbosd.py
+etc/xdg/autostart/gnome-osd-event-bridge.desktop
 libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/__init__.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/__init__.pyc
@@ -11,6 +12,9 @@ libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/client.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/client.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/client.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/eventbridge.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/eventbridge.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/eventbridge.pyo
 %%PYTHON_SITELIBDIR%%/gnomeosd/gconfsync.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/gconfsync.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/gconfsync.pyo
@@ -23,16 +27,25 @@ libdata/bonobo/servers/GNOME_OSD.server
 %%PYTHON_SITELIBDIR%%/gnomeosd/gtasklet.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/gtasklet.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/gtasklet.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/gtkexcepthook.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/gtkexcepthook.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/gtkexcepthook.pyo
 %%PYTHON_SITELIBDIR%%/gnomeosd/server.py
 %%PYTHON_SITELIBDIR%%/gnomeosd/server.pyc
 %%PYTHON_SITELIBDIR%%/gnomeosd/server.pyo
+%%PYTHON_SITELIBDIR%%/gnomeosd/xscreensaver.py
+%%PYTHON_SITELIBDIR%%/gnomeosd/xscreensaver.pyc
+%%PYTHON_SITELIBDIR%%/gnomeosd/xscreensaver.pyo
 libexec/gnome-osd-server
+share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.EventBridge.service
 share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.service
 share/gnome/applications/gnome-osd-properties.desktop
 share/gnome/gnome-osd/xchatosd.py
 share/gnome/pixmaps/gnome-osd.png
+share/locale/cs/LC_MESSAGES/gnome-osd.mo
 share/locale/ja/LC_MESSAGES/gnome-osd.mo
 share/locale/pt/LC_MESSAGES/gnome-osd.mo
+@dirrmtry etc/xdg/autostart
 @dirrm share/gnome/gnome-osd
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
 @dirrmtry %%PYTHON_SITELIBDIR%%
