@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www
-MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/ \
+MASTER_SITES=	http://quixote.python.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
