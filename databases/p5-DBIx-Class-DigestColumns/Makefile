@@ -1,0 +1,34 @@
+# New ports collection makefile for:	DBIx-Class-DigestColumns
+# Date created:		23 Aug 2006
+# Whom:			Lars Balker Rasmussen <lbr@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	DBIx-Class-DigestColumns
+PORTVERSION=	0.02000
+CATEGORIES=	databases perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	DBIx
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	lbr@FreeBSD.org
+COMMENT=	Automatic digest columns
+
+RUN_DEPENDS=	p5-DBIx-Class>=0.06002:${PORTSDIR}/databases/p5-DBIx-Class \
+		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Digest>=1.11:${PORTSDIR}/security/p5-Digest
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+PERL_MODBUILD=	yes
+
+MAN3=	DBIx::Class::DigestColumns.3
+
+post-extract:
+	@${PERL} -i.bak -ne 'print unless /^\s*build_requires/ .. /},$$/ or /^\s*recommends/ .. /},$$/ ' ${WRKSRC}/Build.PL
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500801
+IGNORE=	requires at least Perl 5.8.1. Install lang/perl5.8, and try again
+.endif
+.include <bsd.port.post.mk>

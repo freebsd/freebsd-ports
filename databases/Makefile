@@ -225,6 +225,7 @@
     SUBDIR += p5-DBIx-AnyDBD
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
+    SUBDIR += p5-DBIx-Class-DigestColumns
     SUBDIR += p5-DBIx-Class-Loader
     SUBDIR += p5-DBIx-Class-Schema-Loader
     SUBDIR += p5-DBIx-Class-WebForm
