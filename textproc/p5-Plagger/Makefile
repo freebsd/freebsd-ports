@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -39,6 +39,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch
 
 OPTIONS=	PODTESTING "POD Testing Support" off \
+		COOKIESHARING "Cookie sharing with Firefox Support" off \
 		LIBERALXML "Liberal XML parsing Support" on \
 		XPATH "XPath Support" on \
 		PUBLISHEXCEL "Publish::Excel Support" off \
@@ -66,7 +67,6 @@ OPTIONS=	PODTESTING "POD Testing Support" off \
 		FILHTMLSCRB "Filter::HTMLScrubber Support" on
 # The below options are not supported yet due to missing depending modules
 #		BETTERENCODING "Better Encoding detection Support" on \
-#		COOKIESHARING "Cookie sharing with Firefox Support" off \
 #		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
 #		PUBLISHCSV "Publish::CSV Support" off \
 #		JAVASCRIPT "Publish::JavaScript Support" off \
@@ -91,6 +91,10 @@ OPTIONS=	PODTESTING "POD Testing Support" off \
 .if defined(WITH_PODTESTING)
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
 		${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+.endif
+
+.if defined(WITH_COOKIESHARING)
+BUILD_DEPENDS+=	${SITE_PERL}/HTTP/Cookies/Mozilla.pm:${PORTSDIR}/www/p5-HTTP-Cookies-Mozilla
 .endif
 
 .if !defined(WITHOUT_LIBERALXML)
