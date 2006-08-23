@@ -296,6 +296,7 @@ aguri		ports/net-mgmt/aguri
 ah-tty		ports/sysutils/ah-tty
 ahwm		ports/x11-wm/ahwm
 aide		ports/security/aide
+aifad		ports/devel/aifad
 aiksaurus	ports/textproc/aiksaurus
 aiksaurus-gtk	ports/textproc/aiksaurus-gtk
 aim		ports/net-im/aim
