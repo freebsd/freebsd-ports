@@ -1,5 +1,5 @@
 bin/soundtracker
-%%GNOME:%%share/gnome/apps/Multimedia/soundtracker.desktop
+share/pixmaps/soundtracker.xpm
 %%NLS%%share/locale/da/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/de/LC_MESSAGES/soundtracker.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/soundtracker.mo
