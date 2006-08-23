@@ -1,5 +1,5 @@
---- src/pcf/pcfread.c.orig	Sun May  1 15:38:55 2005
-+++ src/pcf/pcfread.c	Tue Aug 22 21:43:41 2006
+--- src/pcf/pcfread.c.orig	Sun May  1 11:38:55 2005
++++ src/pcf/pcfread.c	Wed Aug 23 00:07:33 2006
 @@ -102,7 +102,8 @@ THE SOFTWARE.
        return PCF_Err_Cannot_Open_Resource;
  
@@ -345,7 +345,15 @@
      return error;
    }
  
-@@ -598,14 +689,16 @@ THE SOFTWARE.
+@@ -571,7 +662,6 @@ THE SOFTWARE.
+     FT_Long    bitmapSizes[GLYPHPADOPTIONS];
+     FT_ULong   format, size;
+     int        nbitmaps, i, sizebitmaps = 0;
+-    char*      bitmaps;
+ 
+ 
+     error = pcf_seek_to_table_type( stream,
+@@ -598,14 +688,16 @@ THE SOFTWARE.
      if ( !PCF_FORMAT_MATCH( format, PCF_DEFAULT_FORMAT ) )
        return PCF_Err_Invalid_File_Format;
  
@@ -364,7 +372,7 @@
      for ( i = 0; i < nbitmaps; i++ )
      {
        if ( PCF_BYTE_ORDER( format ) == MSBFirst )
-@@ -613,7 +706,7 @@ THE SOFTWARE.
+@@ -613,7 +705,7 @@ THE SOFTWARE.
        else
          (void)FT_READ_LONG_LE( offsets[i] );
  
@@ -373,7 +381,7 @@
                    i, offsets[i], offsets[i] ));
      }
      if ( error )
-@@ -641,13 +734,20 @@ THE SOFTWARE.
+@@ -641,16 +733,22 @@ THE SOFTWARE.
      FT_UNUSED( sizebitmaps );       /* only used for debugging */
  
      for ( i = 0; i < nbitmaps; i++ )
@@ -397,8 +405,11 @@
 -
    Bail:
      FT_FREE ( offsets );
-     FT_FREE ( bitmaps );
-@@ -736,7 +836,7 @@ THE SOFTWARE.
+-    FT_FREE ( bitmaps );
+     return error;
+   }
+ 
+@@ -736,7 +834,7 @@ THE SOFTWARE.
  
          tmpEncoding[j].glyph = (FT_Short)encodingOffset;
  
@@ -407,7 +418,7 @@
                      tmpEncoding[j].enc, tmpEncoding[j].enc,
                      tmpEncoding[j].glyph ));
  
-@@ -830,7 +930,8 @@ THE SOFTWARE.
+@@ -830,7 +928,8 @@ THE SOFTWARE.
      if ( error )
        goto Bail;
  
@@ -417,7 +428,7 @@
  
      if ( !PCF_FORMAT_MATCH( format, PCF_DEFAULT_FORMAT )    &&
           !PCF_FORMAT_MATCH( format, PCF_ACCEL_W_INKBOUNDS ) )
-@@ -878,7 +979,6 @@ THE SOFTWARE.
+@@ -878,7 +977,6 @@ THE SOFTWARE.
        accel->ink_minbounds = accel->minbounds; /* I'm not sure about this */
        accel->ink_maxbounds = accel->maxbounds;
      }
@@ -425,7 +436,7 @@
  
    Bail:
      return error;
-@@ -1084,11 +1184,12 @@ THE SOFTWARE.
+@@ -1084,11 +1182,12 @@ THE SOFTWARE.
        else
          root->family_name = NULL;
  
@@ -441,7 +452,7 @@
         */
        root->num_glyphs = face->nmetrics + 1;
  
-@@ -1170,7 +1271,7 @@ THE SOFTWARE.
+@@ -1170,7 +1269,7 @@ THE SOFTWARE.
    Exit:
      if ( error )
      {
