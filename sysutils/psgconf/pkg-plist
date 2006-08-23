@@ -2,33 +2,40 @@
 @unexec cmp %D/etc/psgconf_modules.sample %D/etc/psgconf_modules && rm %D/etc/psgconf_modules
 etc/psg.conf.sample
 etc/psgconf_modules.sample
+sbin/ConfigFile2Storable
 sbin/psgconf
+sbin/psgconf-import
 sbin/platform-name
-share/psgconf/config/defaults.conf
-share/psgconf/config/platform-freebsd4.conf
-share/psgconf/config/platform-freebsd5.conf
-share/psgconf/config/platform-freebsd6.conf
-share/psgconf/config/platform-hpux10.conf
-share/psgconf/config/platform-hpux11.conf
-share/psgconf/config/platform-irix6.conf
-share/psgconf/config/platform-ix86-linux2.4.conf
-share/psgconf/config/platform-rs6000-aix4.3.3.conf
-share/psgconf/config/platform-rs6000-aix5.1.0.conf
-share/psgconf/config/platform-sparc-solaris8.conf
-share/psgconf/config/platform-sparc-solaris9.conf
-share/psgconf/config/platform-sparc-solaris10.conf
-share/psgconf/files/magic
-share/psgconf/files/rc.shutdown
+%%DATADIR%%/config/defaults.conf
+%%DATADIR%%/config/platform-fc4.conf
+%%DATADIR%%/config/platform-freebsd4.conf
+%%DATADIR%%/config/platform-freebsd5.conf
+%%DATADIR%%/config/platform-freebsd6.conf
+%%DATADIR%%/config/platform-hpux10.conf
+%%DATADIR%%/config/platform-hpux11.conf
+%%DATADIR%%/config/platform-irix6.conf
+%%DATADIR%%/config/platform-rhel3.conf
+%%DATADIR%%/config/platform-rhel4.conf
+%%DATADIR%%/config/platform-rs6000-aix4.3.3.conf
+%%DATADIR%%/config/platform-rs6000-aix5.1.0.conf
+%%DATADIR%%/config/platform-solaris8.conf
+%%DATADIR%%/config/platform-solaris9.conf
+%%DATADIR%%/config/platform-solaris10.conf
+%%DATADIR%%/files/magic
+%%DATADIR%%/files/rc.shutdown
 %%SITE_PERL%%//%%PERL_ARCH%%/auto/PSGConf/.packlist
 %%SITE_PERL%%/psgconf-intro.pod
 %%SITE_PERL%%/PSGConf.pm
 %%SITE_PERL%%/PSGConf/Action.pm
+%%SITE_PERL%%/PSGConf/Action/ChGrp.pm
 %%SITE_PERL%%/PSGConf/Action/ChMod.pm
+%%SITE_PERL%%/PSGConf/Action/ChOwn.pm
 %%SITE_PERL%%/PSGConf/Action/CopyFile.pm
 %%SITE_PERL%%/PSGConf/Action/CreateFile.pm
 %%SITE_PERL%%/PSGConf/Action/Crontab.pm
 %%SITE_PERL%%/PSGConf/Action/File.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/AppConfig.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/BSD_exports.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/EnvFile.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/Literal.pm
@@ -90,6 +97,7 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Action/PackageManager/FreeBSD/Ports.pm
 %%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat/RHN.pm
 %%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat/RPMS.pm
+%%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat/Yum.pm
 %%SITE_PERL%%/PSGConf/Action/PackageManager/Solaris.pm
 %%SITE_PERL%%/PSGConf/Action/Remove.pm
 %%SITE_PERL%%/PSGConf/Action/RemoveCrontab.pm
@@ -99,6 +107,7 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Action/Symlink.pm
 %%SITE_PERL%%/PSGConf/Action/TouchFile.pm
 %%SITE_PERL%%/PSGConf/Action/UntarFile.pm
+%%SITE_PERL%%/PSGConf/Action/svcs/addpg.pm
 %%SITE_PERL%%/PSGConf/Action/svcs/import.pm
 %%SITE_PERL%%/PSGConf/Action/svcs/setprop.pm
 %%SITE_PERL%%/PSGConf/Control.pm
@@ -112,9 +121,6 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Control/FreeBSD.pm
 %%SITE_PERL%%/PSGConf/Control/InitScripts.pm
 %%SITE_PERL%%/PSGConf/Control/Inittab.pm
-%%SITE_PERL%%/PSGConf/Control/Library/crle.pm
-%%SITE_PERL%%/PSGConf/Control/Library/ld_so_conf.pm
-%%SITE_PERL%%/PSGConf/Control/Library/ldconfig.pm
 %%SITE_PERL%%/PSGConf/Control/NFS_Client.pm
 %%SITE_PERL%%/PSGConf/Control/NFS_Server.pm
 %%SITE_PERL%%/PSGConf/Control/NTP.pm
@@ -124,10 +130,12 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Control/Packages.pm
 %%SITE_PERL%%/PSGConf/Control/PostgreSQL.pm
 %%SITE_PERL%%/PSGConf/Control/Printers.pm
-%%SITE_PERL%%/PSGConf/Control/RHN.pm
 %%SITE_PERL%%/PSGConf/Control/RPC.pm
+%%SITE_PERL%%/PSGConf/Control/RPC/rstatd.pm
 %%SITE_PERL%%/PSGConf/Control/Resolver.pm
+%%SITE_PERL%%/PSGConf/Control/RedHat.pm
 %%SITE_PERL%%/PSGConf/Control/SASL.pm
+%%SITE_PERL%%/PSGConf/Control/SharedLibrary.pm
 %%SITE_PERL%%/PSGConf/Control/ShellStartupFiles.pm
 %%SITE_PERL%%/PSGConf/Control/Shells.pm
 %%SITE_PERL%%/PSGConf/Control/Solaris.pm
@@ -145,6 +153,7 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Control/sendmail.pm
 %%SITE_PERL%%/PSGConf/Control/sshd.pm
 %%SITE_PERL%%/PSGConf/Control/sudo.pm
+%%SITE_PERL%%/PSGConf/Control/swatch.pm
 %%SITE_PERL%%/PSGConf/Control/syslog.pm
 %%SITE_PERL%%/PSGConf/Data.pm
 %%SITE_PERL%%/PSGConf/Data/Boolean.pm
@@ -155,7 +164,17 @@ share/psgconf/files/rc.shutdown
 %%SITE_PERL%%/PSGConf/Data/List.pm
 %%SITE_PERL%%/PSGConf/Data/String.pm
 %%SITE_PERL%%/PSGConf/Data/Table.pm
+%%SITE_PERL%%/PSGConf/DataStore.pm
+%%SITE_PERL%%/PSGConf/DataStore/AppConfig.pm
 %%SITE_PERL%%/PSGConf/DataStore/ConfigFile.pm
+%%SITE_PERL%%/PSGConf/DataStore/Storable.pm
+%%SITE_PERL%%/PSGConf/Import/Data/Hash.pm
+%%SITE_PERL%%/PSGConf/Import/Data/List.pm
+%%SITE_PERL%%/PSGConf/Import/Data/Table.pm
+%%SITE_PERL%%/PSGConf/Import/inittab.pm
+%%SITE_PERL%%/PSGConf/Import/pkg_default_versions.pm
+%%SITE_PERL%%/PSGConf/Import/ports.pm
+%%SITE_PERL%%/PSGConf/Import/shells.pm
 %%SITE_PERL%%/PSGConf/Util.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PSGConf
 @dirrmtry %%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat
@@ -166,10 +185,13 @@ share/psgconf/files/rc.shutdown
 @dirrmtry %%SITE_PERL%%/PSGConf/Action
 @dirrmtry %%SITE_PERL%%/PSGConf/Control/Apache
 @dirrmtry %%SITE_PERL%%/PSGConf/Control/Library
+@dirrmtry %%SITE_PERL%%/PSGConf/Control/RPC
 @dirrmtry %%SITE_PERL%%/PSGConf/Control
 @dirrmtry %%SITE_PERL%%/PSGConf/Data
 @dirrmtry %%SITE_PERL%%/PSGConf/DataStore
+@dirrmtry %%SITE_PERL%%/PSGConf/Import/Data
+@dirrmtry %%SITE_PERL%%/PSGConf/Import
 @dirrmtry %%SITE_PERL%%/PSGConf
-@dirrmtry share/psgconf/config
-@dirrmtry share/psgconf/files
-@dirrmtry share/psgconf
+@dirrmtry %%DATADIR%%/config
+@dirrmtry %%DATADIR%%/files
+@dirrmtry %%DATADIR%%

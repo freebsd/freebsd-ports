@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psgconf
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 
@@ -26,7 +26,9 @@ PERL_CONFIGURE=	YES
 MAN1=		psgconf.1
 MAN3=		PSGConf.3 \
 		PSGConf::Action.3 \
+		PSGConf::Action::ChGrp.3 \
 		PSGConf::Action::ChMod.3 \
+		PSGConf::Action::ChOwn.3 \
 		PSGConf::Action::CopyFile.3 \
 		PSGConf::Action::CreateFile.3 \
 		PSGConf::Action::Crontab.3 \
@@ -186,26 +188,18 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 IGNORE=		requires perl 5.6 or newer
 .endif
 
-.if ${OSVERSION} <= 600000
-BROKEN=		does not compile on 4.X/5.X
-.else
-BROKEN=		attempts to modify file under /usr/ports, which could be an RO file system
-.endif
+PKGINSTALL=	${WRKSRC}/postinstall
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-build:
 	cd ${WRKSRC} && ${MAKE} test
-	${CP} ${WRKSRC}/postinstall ${PKGINSTALL}
 
 post-install:
 	-@${MKDIR} ${PREFIX}/etc
 	@${CP} ${WRKSRC}/etc/psg.conf ${PREFIX}/etc/psg.conf.sample
 	@${CP} ${WRKSRC}/etc/psgconf_modules ${PREFIX}/etc/psgconf_modules.sample
 	PKG_PREFIX=${PREFIX} PKG_MGR=FreeBSD::Ports ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-post-clean:
-	@${RM} -f ${PKGINSTALL}
 
 .include <bsd.port.post.mk>

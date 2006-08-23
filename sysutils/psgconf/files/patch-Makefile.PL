@@ -6,6 +6,7 @@
  
 -$etc_dir	= '/etc';
 +$etc_dir	= '$(PREFIX)/etc';
- $share_dir	= '$(PREFIX)/share/psgconf';
+-$share_dir	= '/usr/local/share/psgconf';
++$share_dir	= '$(PREFIX)/share/psgconf';
  
  GetOptions(
