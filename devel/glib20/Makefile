@@ -42,10 +42,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+OPTIONS=	COLLATION_FIX "fix string collation" off
+
 .include <bsd.port.pre.mk>
 
 .if ( ( ${OSVERSION} < 504101 ) || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600012 ) )
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gthread_gthread-posix.c
+.endif
+
+.if defined(WITH_COLLATION_FIX)
+LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
+		${FILESDIR}/extra-patch-glib_gunicollate.c
 .endif
 
 post-patch:
