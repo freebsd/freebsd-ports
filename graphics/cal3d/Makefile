@@ -9,6 +9,7 @@ PORTNAME=	cal3d
 PORTVERSION=	0.11.0
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.gna.org/cal3d/sources/
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Skeletal based 3d character animation library written in C++
