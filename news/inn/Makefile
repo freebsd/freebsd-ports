@@ -48,12 +48,13 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 # Attempt to avoid failures later on, when
 # makedbz is executed: we need a valid hostname.
 
-.if exists(/bin/echo) && exists(/bin/hostname)
-HOSTNAME!=	`/bin/echo /bin/hostname`
+.if exists(/bin/hostname)
+HOSTNAME!=	/bin/hostname
+.  if ${HOSTNAME} != ""
 HOSTNAME:=	${HOSTNAME:C/[^\.]//g}
-
-.  if ${HOSTNAME} == ""
+.    if ${HOSTNAME} == ""
 IGNORE=		requires a fully-qualified hostname in order to build
+.    endif
 .  endif
 .endif
 
