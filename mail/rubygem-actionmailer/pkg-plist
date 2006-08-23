@@ -1,4 +1,4 @@
-%%CACHE_DIR%%/actionmailer-%%PORTVERSION%%.gem
+%%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000454.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer/Base.src/M000455.html
@@ -484,6 +484,7 @@
 %%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_LIB_DIR%%/MIT-LICENSE
 %%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/install.rb
 %%GEM_LIB_DIR%%/lib/action_mailer.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/adv_attr_accessor.rb
@@ -519,7 +520,6 @@
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/tmail.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/utils.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/version.rb
-%%GEM_LIB_DIR%%/rakefile
 %%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper_method.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_mail_helper.rhtml
@@ -551,7 +551,7 @@
 %%GEM_LIB_DIR%%/test/mail_service_test.rb
 %%GEM_LIB_DIR%%/test/quoting_test.rb
 %%GEM_LIB_DIR%%/test/tmail_test.rb
-%%SPEC_DIR%%/actionmailer-1.2.1.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/test_mailer
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/templates
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/path.with.dots
@@ -564,7 +564,7 @@
 @dirrm %%GEM_LIB_DIR%%/lib/action_mailer/vendor
 @dirrm %%GEM_LIB_DIR%%/lib/action_mailer
 @dirrm %%GEM_LIB_DIR%%/lib
-@dirrm %%GEMS_DIR%%/actionmailer-1.2.1
+@dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/text
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor
@@ -628,4 +628,4 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionMailer
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
-@dirrm %%DOC_DIR%%/actionmailer-1.2.1
+@dirrm %%GEM_DOC_DIR%%

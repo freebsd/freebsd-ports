@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,10 @@ COMMENT=	MVC web application framework
 
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
 		${LOCALBASE}/${SPEC_DIR}/activesupport-1.3.1.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
-		${LOCALBASE}/${SPEC_DIR}/actionpack-1.12.1.gemspec:${PORTSDIR}/www/rubygem-actionpack \
-		${LOCALBASE}/${SPEC_DIR}/actionwebservice-1.1.2.gemspec:${PORTSDIR}/www/rubygem-actionwebservice \
-		${LOCALBASE}/${SPEC_DIR}/actionmailer-1.2.1.gemspec:${PORTSDIR}/mail/rubygem-actionmailer \
-		${LOCALBASE}/${SPEC_DIR}/activerecord-1.14.2.gemspec:${PORTSDIR}/databases/rubygem-activerecord
+		${LOCALBASE}/${SPEC_DIR}/activerecord-1.14.4.gemspec:${PORTSDIR}/databases/rubygem-activerecord \
+		${LOCALBASE}/${SPEC_DIR}/actionpack-1.12.5.gemspec:${PORTSDIR}/www/rubygem-actionpack \
+		${LOCALBASE}/${SPEC_DIR}/actionmailer-1.2.5.gemspec:${PORTSDIR}/mail/rubygem-actionmailer \
+		${LOCALBASE}/${SPEC_DIR}/actionwebservice-1.1.6.gemspec:${PORTSDIR}/www/rubygem-actionwebservice
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	FCGI "FastCGI support" Off\
@@ -27,6 +27,19 @@ OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 # to get RUBY_SITEARCHLIBDIR
 USE_RUBY=	yes
+
+# This target is only meant to be used by the port maintainer.
+x-generate-plist:
+	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
+	| ${SED} -E \
+		's,.*share/nls/.+$$,,g \
+		;s,^${GEM_CACHE}$$,%%GEM_CACHE%%,g \
+		;s,${GEM_DOC_DIR}(/.+)?$$,%%GEM_DOC_DIR%%\1,g \
+		;s,${GEM_LIB_DIR}(/.+)?$$,%%GEM_LIB_DIR%%\1,g \
+		;s,^${GEM_SPEC}$$,%%GEM_SPEC%%,g \
+		;s,^${GEMS_BASE_DIR}/(.+)$$,\1,g \
+		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
+		' | ${TR} -s '\n') > temp-pkg-plist
 
 .include <bsd.port.pre.mk>
 

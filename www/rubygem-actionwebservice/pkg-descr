@@ -13,7 +13,8 @@ Features
 * Type signature hints to improve interoperability with static languages
 * Active Record model class support in signatures
 
-WWW:	http://www.rubyonrails.com
+WWW: http://www.rubyonrails.org/
+WWW: http://rubyforge.org/projects/aws/
 
 - Jonathan Weiss
 jw@innerewut.de
