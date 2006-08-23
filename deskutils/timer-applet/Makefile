@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timer-applet
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	timerapplet
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	timerapplet
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A timer applet for the GNOME panel
 
+LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/gnome-audio
 
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
