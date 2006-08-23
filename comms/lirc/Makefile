@@ -23,8 +23,6 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-manage-devices --with-devdir=/var/lirc
 
-OPTIONS=	IRMAN "Build with libirman support" On
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -34,7 +32,6 @@ PLIST_SUB+=	SMODE2=
 PLIST_SUB+=	SMODE2="@comment "
 .endif
 
-.if defined(WITH_IRMAN)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
 CONFIGURE_ARGS+=	--with-driver=irman
 .if ${OSVERSION} >= 500041
@@ -42,9 +39,6 @@ CONFIGURE_ARGS+=	--with-driver=irman
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.endif
-.else
-CONFIGURE_ARGS+=	--with-driver=any
 .endif
 
 MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
