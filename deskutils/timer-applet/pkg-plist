@@ -9,9 +9,13 @@ share/gnome/omf/timer-applet/timer-applet-C.omf
 share/gnome/omf/timer-applet/timer-applet-fr.omf
 share/gnome/pixmaps/timer-applet/timer-applet-icon.png
 share/locale/de/LC_MESSAGES/timer-applet.mo
+share/locale/eo/LC_MESSAGES/timer-applet.mo
 share/locale/es/LC_MESSAGES/timer-applet.mo
 share/locale/eu/LC_MESSAGES/timer-applet.mo
+share/locale/fi/LC_MESSAGES/timer-applet.mo
 share/locale/fr/LC_MESSAGES/timer-applet.mo
+share/locale/it/LC_MESSAGES/timer-applet.mo
+share/locale/ko/LC_MESSAGES/timer-applet.mo
 share/locale/pl/LC_MESSAGES/timer-applet.mo
 share/locale/sv/LC_MESSAGES/timer-applet.mo
 share/locale/tr/LC_MESSAGES/timer-applet.mo
