@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/PcapUtils.pm:${PORTSDIR}/net/p5-Net-PcapUtils \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
 		${SITE_PERL}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP \
 		${SITE_PERL}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface \
-		${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
+		p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
