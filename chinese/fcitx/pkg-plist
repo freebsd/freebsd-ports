@@ -1,9 +1,13 @@
 bin/createPYMB
 bin/fcitx
+bin/jd2fcitx
 bin/mb2txt
+bin/pyjj2fcitx
 bin/txt2mb
+bin/win2fcitx
 %%DATADIR%%/data/cj.mb
 %%DATADIR%%/data/erbi.mb
+%%DATADIR%%/data/gbks2t.tab
 %%DATADIR%%/data/punc.mb
 %%DATADIR%%/data/pySym.mb
 %%DATADIR%%/data/pybase.mb

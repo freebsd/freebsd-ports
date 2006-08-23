@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Tue Jun  6 22:17:38 2006
-+++ doc/Makefile.in	Wed Jun 14 10:42:58 2006
-@@ -90,7 +90,7 @@
- install_sh = @install_sh@
- mkdir_p = @mkdir_p@
- 
+--- doc/Makefile.in.orig	Fri Aug 11 00:40:27 2006
++++ doc/Makefile.in	Wed Aug 23 12:44:19 2006
+@@ -148,7 +148,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -docdir = $(pkgdatadir)/doc
 +docdir = $(datadir)/doc/@PACKAGE@
- doc_DATA =          cjkvinput.txt wb_fh.htm fcitx3.pdf pinyin.txt
+ doc_DATA = \
+         cjkvinput.txt wb_fh.htm fcitx3.pdf pinyin.txt
  
- EXTRA_DIST = $(doc_DATA)
