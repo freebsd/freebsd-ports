@@ -34,6 +34,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c9d2e361-32fb-11db-a6e2-000e0c2e438a">
+    <topic>ppp -- buffer overflow vulnerability</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.11</ge><lt>4.11_20</lt></range>
+	<range><ge>5.3</ge><lt>5.3_32</lt></range>
+	<range><ge>5.4</ge><lt>5.4_17</lt></range>
+	<range><ge>5.5</ge><lt>5.5_3</lt></range>
+	<range><ge>6.0</ge><lt>6.0_10</lt></range>
+	<range><ge>6.1</ge><lt>6.1_4</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>While processing Link Control Protocol (LCP) configuration
+	  options received from the remote host, ppp(4) fails to
+	  correctly validate option lengths.  This may result in data
+	  being read or written beyond the allocated kernel memory
+	  buffer.</p>
+	<h1>Impact</h1>
+	<p>An attacker able to send LCP packets, including the remote
+	  end of a ppp(4) connection, can cause the FreeBSD kernel to
+	  panic.  Such an attacker may also be able to obtain
+	  sensitive information or gain elevated privileges.</p>
+	<h1>Workaround</h1>
+	<p>No workaround is available, but systems which do not use ppp(4) are not
+	vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4304</cvename>
+      <freebsdsa>SA-06:18.ppp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-08-23</discovery>
+      <entry>2006-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2e8d374-2e40-11db-b683-0008743bf21a">
     <topic>horde -- Phishing and Cross-Site Scripting Vulnerabilities</topic>
     <affects>
