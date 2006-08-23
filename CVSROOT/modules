@@ -12398,6 +12398,7 @@ rsibreak	ports/x11/rsibreak
 rsnapshot	ports/sysutils/rsnapshot
 rssh		ports/shells/rssh
 rssowl		ports/www/rssowl
+rst.el		ports/textproc/rst.el
 rsync		ports/net/rsync
 rsyncmanager	ports/sysutils/rsyncmanager
 rsynth		ports/audio/rsynth
