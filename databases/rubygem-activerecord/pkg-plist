@@ -1,4 +1,4 @@
-%%CACHE_DIR%%/activerecord-%%PORTVERSION%%.gem
+%%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/ActiveRecord/Acts/List/ClassMethods.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActiveRecord/Acts/List/ClassMethods.src/M000147.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActiveRecord/Acts/List/InstanceMethods.html
@@ -891,7 +891,7 @@
 %%GEM_LIB_DIR%%/test/transactions_test.rb
 %%GEM_LIB_DIR%%/test/unconnected_test.rb
 %%GEM_LIB_DIR%%/test/validations_test.rb
-%%SPEC_DIR%%/activerecord-1.14.2.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/subscribers
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/naked/yml
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/naked/csv
@@ -926,7 +926,7 @@
 @dirrm %%GEM_LIB_DIR%%/lib/active_record
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/examples
-@dirrm %%GEMS_DIR%%/activerecord-1.14.2
+@dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_record/wrappers
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_record/vendor
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_record/connection_adapters/abstract
@@ -1012,4 +1012,4 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveRecord
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
-@dirrm %%DOC_DIR%%/activerecord-1.14.2
+@dirrm %%GEM_DOC_DIR%%

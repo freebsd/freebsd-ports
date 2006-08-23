@@ -1,4 +1,4 @@
-%%CACHE_DIR%%/actionpack-%%PORTVERSION%%.gem
+%%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000119.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000120.html
@@ -31,8 +31,8 @@
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000148.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000149.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000150.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/AbstractRequest.src/M000151.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000154.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000155.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000156.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Base.src/M000157.html
@@ -117,9 +117,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000043.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Integration/Session.src/M000044.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000151.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000152.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000153.html
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController/IntegrationTest.src/M000154.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Layout/ClassMethods.src/M000061.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionController/Macros.html
@@ -466,6 +466,7 @@
 %%GEM_LIB_DIR%%/MIT-LICENSE
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/RUNNING_UNIT_TESTS
+%%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/examples/.htaccess
 %%GEM_LIB_DIR%%/examples/address_book/index.rhtml
 %%GEM_LIB_DIR%%/examples/address_book/layout.rhtml
@@ -480,6 +481,7 @@
 %%GEM_LIB_DIR%%/examples/debate/new_topic.rhtml
 %%GEM_LIB_DIR%%/examples/debate/topic.rhtml
 %%GEM_LIB_DIR%%/examples/debate_controller.cgi
+%%GEM_LIB_DIR%%/filler.txt
 %%GEM_LIB_DIR%%/install.rb
 %%GEM_LIB_DIR%%/lib/action_controller.rb
 %%GEM_LIB_DIR%%/lib/action_controller/assertions.rb
@@ -571,7 +573,6 @@
 %%GEM_LIB_DIR%%/lib/action_view/helpers/url_helper.rb
 %%GEM_LIB_DIR%%/lib/action_view/partials.rb
 %%GEM_LIB_DIR%%/lib/action_view/template_error.rb
-%%GEM_LIB_DIR%%/rakefile
 %%GEM_LIB_DIR%%/test/abstract_unit.rb
 %%GEM_LIB_DIR%%/test/active_record_unit.rb
 %%GEM_LIB_DIR%%/test/activerecord/active_record_assertions_test.rb
@@ -588,6 +589,7 @@
 %%GEM_LIB_DIR%%/test/controller/cookie_test.rb
 %%GEM_LIB_DIR%%/test/controller/custom_handler_test.rb
 %%GEM_LIB_DIR%%/test/controller/fake_controllers.rb
+%%GEM_LIB_DIR%%/test/controller/filter_params_test.rb
 %%GEM_LIB_DIR%%/test/controller/filters_test.rb
 %%GEM_LIB_DIR%%/test/controller/flash_test.rb
 %%GEM_LIB_DIR%%/test/controller/fragment_store_setting_test.rb
@@ -608,12 +610,16 @@
 %%GEM_LIB_DIR%%/test/controller/verification_test.rb
 %%GEM_LIB_DIR%%/test/controller/webservice_test.rb
 %%GEM_LIB_DIR%%/test/fixtures/addresses/list.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/a_class_that_contains_a_controller/poorly_placed_controller.rb
+%%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/module_that_holds_controllers/nested_controller.rb
+%%GEM_LIB_DIR%%/test/fixtures/application_root/app/models/a_class_that_contains_a_controller.rb
 %%GEM_LIB_DIR%%/test/fixtures/companies.yml
 %%GEM_LIB_DIR%%/test/fixtures/company.rb
 %%GEM_LIB_DIR%%/test/fixtures/db_definitions/sqlite.sql
 %%GEM_LIB_DIR%%/test/fixtures/developer.rb
 %%GEM_LIB_DIR%%/test/fixtures/developers.yml
 %%GEM_LIB_DIR%%/test/fixtures/developers_projects.yml
+%%GEM_LIB_DIR%%/test/fixtures/dont_load.rb
 %%GEM_LIB_DIR%%/test/fixtures/fun/games/hello_world.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/helpers/abc_helper.rb
 %%GEM_LIB_DIR%%/test/fixtures/helpers/fun/games_helper.rb
@@ -679,7 +685,7 @@
 %%GEM_LIB_DIR%%/test/template/active_record_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/asset_tag_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/benchmark_helper_test.rb
-%%GEM_LIB_DIR%%/test/template/compiled_templates_tests.rb
+%%GEM_LIB_DIR%%/test/template/compiled_templates_test.rb
 %%GEM_LIB_DIR%%/test/template/date_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/form_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/form_options_helper_test.rb
@@ -693,7 +699,7 @@
 %%GEM_LIB_DIR%%/test/template/text_helper_test.rb
 %%GEM_LIB_DIR%%/test/template/url_helper_test.rb
 %%GEM_LIB_DIR%%/test/testing_sandbox.rb
-%%SPEC_DIR%%/actionpack-1.12.1.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/test/template
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/test/dot.directory
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/test
@@ -714,6 +720,12 @@
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/fun/games
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/fun
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/db_definitions
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/models
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/module_that_holds_controllers
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers/a_class_that_contains_a_controller
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app/controllers
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root/app
+@dirrm %%GEM_LIB_DIR%%/test/fixtures/application_root
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/addresses
 @dirrm %%GEM_LIB_DIR%%/test/fixtures
 @dirrm %%GEM_LIB_DIR%%/test/controller
@@ -737,7 +749,7 @@
 @dirrm %%GEM_LIB_DIR%%/examples/debate
 @dirrm %%GEM_LIB_DIR%%/examples/address_book
 @dirrm %%GEM_LIB_DIR%%/examples
-@dirrm %%GEMS_DIR%%/actionpack-1.12.1
+@dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_view/helpers
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_view
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/action_pack
@@ -832,4 +844,4 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActionController
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
-@dirrm %%DOC_DIR%%/actionpack-1.12.1
+@dirrm %%GEM_DOC_DIR%%

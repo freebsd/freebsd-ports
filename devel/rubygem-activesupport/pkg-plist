@@ -1,4 +1,4 @@
-%%CACHE_DIR%%/activesupport-%%PORTVERSION%%.gem
+%%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CachingTools/HashCaching.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport/CoreExtensions/Array/Conversions.html
@@ -347,7 +347,7 @@
 %%GEM_LIB_DIR%%/lib/active_support/vendor/builder/xmlmarkup.rb
 %%GEM_LIB_DIR%%/lib/active_support/version.rb
 %%GEM_LIB_DIR%%/lib/active_support/whiny_nil.rb
-%%SPEC_DIR%%/activesupport-1.3.1.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/vendor/builder
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/vendor
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/values
@@ -370,7 +370,7 @@
 @dirrm %%GEM_LIB_DIR%%/lib/active_support/core_ext
 @dirrm %%GEM_LIB_DIR%%/lib/active_support
 @dirrm %%GEM_LIB_DIR%%/lib
-@dirrm %%GEMS_DIR%%/activesupport-1.3.1
+@dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor/builder
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/vendor
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/active_support/values
@@ -445,4 +445,4 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveSupport
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
-@dirrm %%DOC_DIR%%/activesupport-1.3.1
+@dirrm %%GEM_DOC_DIR%%

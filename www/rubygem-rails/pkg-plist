@@ -1,5 +1,5 @@
 bin/rails
-%%CACHE_DIR%%/rails-%%PORTVERSION%%.gem
+%%GEM_CACHE%%
 %%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_LIB_DIR%%/MIT-LICENSE
 %%GEM_LIB_DIR%%/README
@@ -169,7 +169,7 @@ bin/rails
 %%GEM_LIB_DIR%%/lib/tasks/tmp.rake
 %%GEM_LIB_DIR%%/lib/test_help.rb
 %%GEM_LIB_DIR%%/lib/webrick_server.rb
-%%SPEC_DIR%%/rails-1.1.2.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/lib/tasks
 @dirrm %%GEM_LIB_DIR%%/lib/rails_generator/scripts
 @dirrm %%GEM_LIB_DIR%%/lib/rails_generator/generators/components/web_service/templates
@@ -217,4 +217,4 @@ bin/rails
 @dirrm %%GEM_LIB_DIR%%/bin/process
 @dirrm %%GEM_LIB_DIR%%/bin/performance
 @dirrm %%GEM_LIB_DIR%%/bin
-@dirrm %%GEMS_DIR%%/rails-1.1.2
+@dirrm %%GEM_LIB_DIR%%
