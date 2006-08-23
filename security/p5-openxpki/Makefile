@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.402
+PORTVERSION=	0.9.455
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,17 +33,19 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 	${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std \
 	${SITE_PERL}/IO/Prompt.pm:${PORTSDIR}/devel/p5-IO-Prompt \
+	${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
+	${SITE_PERL}/Mail/RFC822/Address.pm:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
 	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SERVER=		OpenXPKI-0.9.402.tar.gz
-CLIENT=		OpenXPKI-Client-0.9.349.tar.gz \
-		OpenXPKI-Client-SCEP-0.9.342.tar.gz \
-		OpenXPKI-Client-SOAP-Lite-0.9.342.tar.gz \
-		OpenXPKI-Client-CLI-0.9.389.tar.gz \
-		OpenXPKI-Client-HTML-Mason-0.9.402.tar.gz
-DEPLOYMENT=	openxpki-deployment-0.9.402.tar.gz
-I18N=		openxpki-i18n-0.9.402.tar.gz
+SERVER=		OpenXPKI-0.9.455.tar.gz
+CLIENT=		OpenXPKI-Client-0.9.450.tar.gz \
+		OpenXPKI-Client-SCEP-0.9.421.tar.gz \
+		OpenXPKI-Client-SOAP-Lite-0.9.421.tar.gz \
+		OpenXPKI-Client-CLI-0.9.443.tar.gz \
+		OpenXPKI-Client-HTML-Mason-0.9.454.tar.gz
+DEPLOYMENT=	openxpki-deployment-0.9.453.tar.gz
+I18N=		openxpki-i18n-0.9.421.tar.gz
 MAN1=	openxpki-configure.1 \
 	openxpki-metaconf.1 \
 	openxpkiadm.1 \
@@ -57,6 +59,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Client::HTML::Mason::Menu.3 \
 	OpenXPKI::Client::SCEP.3 \
 	OpenXPKI::Client::SOAP::Lite.3 \
+	OpenXPKI::Crypto::API.3 \
 	OpenXPKI::Crypto::Backend::API.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::CLI.3 \
@@ -88,6 +91,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine::OpenSSL.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine::nCipher.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::XS.3 \
+	OpenXPKI::Crypto::CLI.3 \
 	OpenXPKI::Crypto::CRL.3 \
 	OpenXPKI::Crypto::CRR.3 \
 	OpenXPKI::Crypto::CSR.3 \
@@ -97,18 +101,30 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Profile::Base.3 \
 	OpenXPKI::Crypto::Profile::CRL.3 \
 	OpenXPKI::Crypto::Profile::Certificate.3 \
+	OpenXPKI::Crypto::Secret.3 \
+	OpenXPKI::Crypto::Secret::Plain.3 \
+	OpenXPKI::Crypto::Secret::Split.3 \
 	OpenXPKI::Crypto::TokenManager.3 \
+	OpenXPKI::Crypto::Tool::SCEP.3 \
+	OpenXPKI::Crypto::Tool::SCEP::API.3 \
+	OpenXPKI::Crypto::Tool::SCEP::CLI.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Command::get_message_type.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Command::get_transaction_id.3 \
+	OpenXPKI::Crypto::Tool::SCEP::Engine::OpenSSL.3 \
+	OpenXPKI::Crypto::Toolkit.3 \
 	OpenXPKI::Crypto::VolatileVault.3 \
 	OpenXPKI::Crypto::X509.3 \
 	OpenXPKI::DN.3 \
 	OpenXPKI::DateTime.3 \
 	OpenXPKI::Debug.3 \
 	OpenXPKI::Exception.3 \
+	OpenXPKI::FileUtils.3 \
 	OpenXPKI::Serialization::JSON.3 \
 	OpenXPKI::Serialization::Simple.3 \
 	OpenXPKI::Server.3 \
 	OpenXPKI::Server::ACL.3 \
 	OpenXPKI::Server::API.3 \
+	OpenXPKI::Server::API::Workflow.3 \
 	OpenXPKI::Server::Authentication.3 \
 	OpenXPKI::Server::Authentication::Anonymous.3 \
 	OpenXPKI::Server::Authentication::External.3 \
@@ -142,6 +158,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::Request::Certificate::PKCS10::Create.3 \
 	OpenXPKI::Server::Workflow::Activity::Skeleton.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::DetermineIssuingCA.3 \
+	OpenXPKI::Server::Workflow::Condition::ACL.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI::SequenceId.3 \
 	OpenXPKI::Server::Workflow::Validator::CertProfile.3 \
@@ -152,6 +169,10 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Service::Default.3 \
 	OpenXPKI::Service::Default::Command.3 \
 	OpenXPKI::Service::Default::Command::nop.3 \
+	OpenXPKI::Service::SCEP.3 \
+	OpenXPKI::Service::SCEP::Command.3 \
+	OpenXPKI::Service::SCEP::Command::GetCACert.3 \
+	OpenXPKI::Service::SCEP::Command::PKIOperation.3 \
 	OpenXPKI::Service::Test.3 \
 	OpenXPKI::Transport::Simple.3 \
 	OpenXPKI::VERSION.3 \
@@ -169,7 +190,8 @@ PERL_DIRS=	${SERVER} ${CLIENT}
 NO_PERL_DIRS=	${DEPLOYMENT} ${I18N}
 MAKE_MAKER_ENV=	PREFIX=${PREFIX}
 DESTDIR?=	/.
-CONFIGURE_ARGS=	--prefix ${PREFIX} --dest ${DESTDIR}
+#CONFIGURE_ARGS=	--prefix ${PREFIX} --dest ${DESTDIR} # To be used in next ver.
+CONFIGURE_ARGS=	--prefix ${PREFIX}
 MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 
 do-configure:
@@ -205,6 +227,7 @@ post-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}; \
 	done
+#	@${ECHO} "TARGETDIR = ${TARGETDIR}"
 
 .include <bsd.port.pre.mk>
 
