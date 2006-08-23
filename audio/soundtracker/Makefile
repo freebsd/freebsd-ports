@@ -7,6 +7,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
@@ -17,22 +18,30 @@ COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USE_X_PREFIX=	yes
-WANT_GNOME=	yes
 USE_GNOME=	esound gdkpixbuf gnomehack gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+OPTIONS=	GNOME "use GNOME 1.x (enables envelope editors)" off \
+		I386_ASM "i386 asm optimizations (potentially unstable)" off \
+		JACK "JACK support" off \
+		SDL "SDL support" off
+
+DESKTOP_ENTRIES="SoundTracker" \
+		"Compose music" \
+		"soundtracker.xpm" \
+		"soundtracker" \
+		"" \
+		false
+
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
-CONFIGURE_ARGS+=	--disable-asm
-.else
+.if ${ARCH} == "i386" && defined(WITH_I386_ASM)
 CONFIGURE_ARGS+=	--enable-asm
 .endif
 
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-PKGNAMESUFFIX=	-gnome
+.if defined(WITH_GNOME)
 USE_GNOME+=	gnomelibs gnomeprefix
 CONFIGURE_ARGS+=	--enable-gnome
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
@@ -61,14 +70,21 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's| install-exec-local||g'
-	@${REINPLACE_CMD} -e 's|asm_support=yes|asm_support=$$enableval|g ; \
-		 s|-pthread -ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|soundtracker.desktop||' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's| install-exec-local||' \
+		${WRKSRC}/app/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ldl||' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|PREFIX"/share/soundtracker|DATADIR"|' \
+		${WRKSRC}/app/gui.c
 
 pre-build:
 .if !defined(WITHOUT_NLS)
 	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt -c -o ja.gmo ja.po
 .endif
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/sharp.xpm ${PREFIX}/share/pixmaps/soundtracker.xpm
 
 .include <bsd.port.post.mk>
