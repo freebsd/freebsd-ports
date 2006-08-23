@@ -165,7 +165,6 @@ lib/%%APP_NAME%%/components/libmsgimap.so
 lib/%%APP_NAME%%/components/libmsgmdn.so
 lib/%%APP_NAME%%/components/libmsgnews.so
 lib/%%APP_NAME%%/components/libmsgsmime.so
-lib/%%APP_NAME%%/components/libmyspell.so
 lib/%%APP_NAME%%/components/libnecko.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/components/libnsappshell.so
@@ -185,9 +184,9 @@ lib/%%APP_NAME%%/components/libsearchservice.so
 lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libsroaming.so
 lib/%%APP_NAME%%/components/libstoragecomps.so
+lib/%%APP_NAME%%/components/libsuitetypeaheadfind.so
 lib/%%APP_NAME%%/components/libsystem-pref.so
 lib/%%APP_NAME%%/components/libtxmgr.so
-lib/%%APP_NAME%%/components/libtypeaheadfind.so
 lib/%%APP_NAME%%/components/libuconv.so
 lib/%%APP_NAME%%/components/libucvmath.so
 lib/%%APP_NAME%%/components/libuniversalchardet.so
@@ -273,6 +272,7 @@ lib/%%APP_NAME%%/components/signonviewer.xpt
 lib/%%APP_NAME%%/components/smime-service.js
 lib/%%APP_NAME%%/components/spellchecker.xpt
 lib/%%APP_NAME%%/components/storage.xpt
+lib/%%APP_NAME%%/components/suitetypeaheadfind.xpt
 lib/%%APP_NAME%%/components/talkback/XTalkback.ad
 lib/%%APP_NAME%%/components/talkback/master.ini
 lib/%%APP_NAME%%/components/talkback/talkback
@@ -280,7 +280,6 @@ lib/%%APP_NAME%%/components/talkback/talkback.so
 lib/%%APP_NAME%%/components/toolkitremote.xpt
 lib/%%APP_NAME%%/components/txmgr.xpt
 lib/%%APP_NAME%%/components/txtsvc.xpt
-lib/%%APP_NAME%%/components/typeaheadfind.xpt
 lib/%%APP_NAME%%/components/uconv.xpt
 lib/%%APP_NAME%%/components/unicharutil.xpt
 lib/%%APP_NAME%%/components/uriloader.xpt
