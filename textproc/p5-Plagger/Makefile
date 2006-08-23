@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -38,7 +38,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/HTML/ResolveLink.pm:${PORTSDIR}/www/p5-HTML-ResolveLink \
 		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch
 
-OPTIONS=	PODTESTING "POD Testing Support" off \
+OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
+		PODTESTING "POD Testing Support" off \
 		COOKIESHARING "Cookie sharing with Firefox Support" off \
 		LIBERALXML "Liberal XML parsing Support" on \
 		XPATH "XPath Support" on \
@@ -48,45 +49,48 @@ OPTIONS=	PODTESTING "POD Testing Support" off \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
 		PUBLISHMT "Publish::MT Support" off \
 		ROMANIZE "Filter::Romanize Support" off \
+		JAVASCRIPT "Publish::JavaScript Support" off \
+		EMOTICON "Filter::Emoticon Support" off \
+		FILHATENA "Filter::HatenaFormat Support" off \
 		SUBSCOPML "Subscription::OPML Support" on \
 		FLICKRSEARCH "CustomFeed::FlickrSearch Support" off \
 		HATENABKMK "Filter::HatenaBookmarkUsersCount Support" off \
 		PALMDOC "Publish::PalmDoc Support" off \
+		NOTIFYBEEP "Notify::Beep Support" off \
 		FILTERPPT "Filter::TTP Support" off \
 		KINOSEARCH "Search::KinoSearch Support" off \
 		PUBLISHGMAIL "Publish::Gmail Support" on \
 		PUBDELICIOUS "Publish::Delicious Support" off \
+		ESTRAIER "Search::Estraier Support" off \
+		PROFANITY "Filter::Profanity Support" off \
 		HATENARSS "Subscription::HatenaRSS Support" off \
 		NOTIFYIRC "Notify::IRC Support" off \
+		AGRXANGO "Aggregator::Xango Support" off \
 		HATENADIARY "Filter::HatenaDiaryKeywordLink Support" off \
 		IMAGEINFO "Filter::ImageInfo Support" off \
 		PUBLISHIMAP "Publish::IMAP Support" off \
+		PUBLISHPDF "Publish::PDF Support" off \
 		BLOGLINES "Subscription::Bloglines Support" on \
+		BABELFISH "Filter::Babelfish Support" off \
 		CUSFEEDMIXI "CustomFeed::Mixi Support" off \
 		NTFYNETSEND "Notify::NetSend Support" off \
-		FILHTMLSCRB "Filter::HTMLScrubber Support" on
+		FILHTMLSCRB "Filter::HTMLScrubber Support" on \
+		PLANETINI "Subscription::PlanetINI Support" off
 # The below options are not supported yet due to missing depending modules
-#		BETTERENCODING "Better Encoding detection Support" on \
 #		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
 #		PUBLISHCSV "Publish::CSV Support" off \
-#		JAVASCRIPT "Publish::JavaScript Support" off \
-#		EMOTICON "Filter::Emoticon Support" off \
-#		HATENA "Filter::Hatena Support" off \
 #		RULEFRESH "Rule::Fresh Support" on \
 #		SUBSCRDBI "Subscription::DBI Support" off \
-#		NOTIFYBEEP "Notify::Beep Support" off \
 #		SUBSCRFOAF "Subscription::FOAF Support" off \
-#		ESTRAIER "Search::Estraier Support" off \
-#		PROFANITY "Filter::Profanity Support" off \
-#		AGRXANGO "Aggregator::Xango Support" off \
 #		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
 #		LIVEDOOR "Subscription::LivedoorReader Support" off \
-#		PUBLISHPDF "Publish::PDF Support" off \
-#		BABELFISH "Filter::Babelfish Support" off \
 #		PUBLISHSWF "Publish::SWF Support" off \
-#		PLANETINI "Subscription::PlanetINI Support" off \
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_BETTERENCODING)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect
+.endif
 
 .if defined(WITH_PODTESTING)
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
@@ -131,6 +135,18 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/MovableType.pm:${PORTSDIR}/net/p5-Net-MovableTy
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
 .endif
 
+.if defined(WITH_JAVASCRIPT)
+BUILD_DEPENDS+=	${SITE_PERL}/Template/Plugin/JavaScript.pm:${PORTSDIR}/www/p5-Template-Plugin-JavaScript
+.endif
+
+.if defined(WITH_EMOTICON)
+BUILD_DEPENDS+=	${SITE_PERL}/Text/Emoticon.pm:${PORTSDIR}/textproc/p5-Text-Emoticon
+.endif
+
+.if defined(WITH_FILHATENA)
+BUILD_DEPENDS+=	${SITE_PERL}/Text/Hatena.pm:${PORTSDIR}/textproc/p5-Text-Hatena
+.endif
+
 .if !defined(WITHOUT_SUBSCOPML)
 BUILD_DEPENDS+=	${SITE_PERL}/XML/OPML.pm:${PORTSDIR}/textproc/p5-XML-OPML
 .endif
@@ -146,6 +162,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 
 .if defined(WITH_PALMDOC)
 BUILD_DEPENDS+=	${SITE_PERL}/Palm/PalmDoc.pm:${PORTSDIR}/palm/p5-Palm-PalmDoc
+.endif
+
+.if defined(WITH_NOTIFYBEEP)
+BUILD_DEPENDS+=	${SITE_PERL}/Audio/Beep.pm:${PORTSDIR}/audio/p5-Audio-Beep
 .endif
 
 .if defined(WITH_FILTERPPT)
@@ -166,6 +186,14 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/SMTP/TLS.pm:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
 BUILD_DEPENDS+=	${SITE_PERL}/Net/Delicious.pm:${PORTSDIR}/net/p5-Net-Delicious
 .endif
 
+.if defined(WITH_ESTRAIER)
+BUILD_DEPENDS+=	${SITE_PERL}/Search/Estraier.pm:${PORTSDIR}/textproc/p5-Search-Estraier
+.endif
+
+.if defined(WITH_PROFANITY)
+BUILD_DEPENDS+=	${SITE_PERL}/Regexp/Common/profanity_us.pm:${PORTSDIR}/textproc/p5-Regexp-Common-profanity_us
+.endif
+
 .if defined(WITH_HATENARSS)
 BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 .endif
@@ -173,6 +201,14 @@ BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 .if defined(WITH_NOTIFYIRC)
 BUILD_DEPENDS+=	${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		${SITE_PERL}/POE/Component/IKC.pm:${PORTSDIR}/devel/p5-POE-Component-IKC
+.endif
+
+.if defined(WITH_AGRXANGO)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Cache/FastMmap.pm:${PORTSDIR}/devel/p5-Cache-FastMmap \
+		${SITE_PERL}/POE/Component/Client/DNS.pm:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
+		${SITE_PERL}/POE/Component/Client/HTTP.pm:${PORTSDIR}/www/p5-POE-Component-Client-HTTP \
+		${SITE_PERL}/Xango.pm:${PORTSDIR}/www/p5-Xango \
+		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 .endif
 
 .if defined(WITH_HATENADIARY)
@@ -187,8 +223,16 @@ BUILD_DEPENDS+=	${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/IMAPClient.pm:${PORTSDIR}/mail/p5-Mail-IMAPClient
 .endif
 
+.if defined(WITH_PUBLISHPDF)
+BUILD_DEPENDS+=	${SITE_PERL}/PDF/FromHTML.pm:${PORTSDIR}/textproc/p5-PDF-FromHTML
+.endif
+
 .if defined(WITH_BLOGLINES)
 BUILD_DEPENDS+=	${SITE_PERL}/WebService/Bloglines.pm:${PORTSDIR}/www/p5-WebService-Bloglines
+.endif
+
+.if defined(WITH_BABELFISH)
+BUILD_DEPENDS+=	${SITE_PERL}/WWW/Babelfish.pm:${PORTSDIR}/www/p5-WWW-Babelfish
 .endif
 
 .if defined(WITH_CUSFEEDMIXI)
@@ -201,6 +245,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/NetSend.pm:${PORTSDIR}/net-im/p5-Net-NetSend
 
 .if defined(WITH_FILHTMLSCRB)
 BUILD_DEPENDS+=	${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber
+.endif
+
+.if defined(WITH_PLANETINI)
+BUILD_DEPENDS+=	${SITE_PERL}/Config/INI/Simple.pm:${PORTSDIR}/devel/p5-Config-INI-Simple
 .endif
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
