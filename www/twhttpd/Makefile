@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure HTTP Proxy
 
-BROKEN=		Unfetchable
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lmd"
