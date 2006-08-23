@@ -52,10 +52,10 @@ pre-build:
 
 do-install:
 .for file in funzip unzip unzipsfx
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
-	${LN} -sf unzip ${TARGETDIR}/bin/zipinfo
-	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${TARGETDIR}/bin
+	${LN} -sf unzip ${PREFIX}/bin/zipinfo
+	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${PREFIX}/bin
 .for f in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN1PREFIX}/man/man1
 .endfor
