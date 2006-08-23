@@ -1,0 +1,13 @@
+Chart::Clicker aims to be a powerful, extensible charting package that
+creates really pretty output.
+
+Clicker leverages the power of Cairo to create snazzy 2D graphics easily and
+quickly.
+
+At it's core Clicker is more of a toolkit for creating charts. It's
+interface is a bit more complex because making pretty charts requires
+attention and care. Some fine defaults are established to make getting
+started easier, but to really unleash the potential of Clicker you must roll
+up your sleeves and build things by hand.
+
+WWW: http://search.cpan.org/dist/Chart-Clicker/
