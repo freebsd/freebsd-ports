@@ -26,9 +26,7 @@ lib/%%APP_NAME%%/components/jsconsole-clhandler.js
 lib/%%APP_NAME%%/components/libjar50.so
 lib/%%APP_NAME%%/components/libjsd.so
 lib/%%APP_NAME%%/components/libmozgnome.so
-lib/%%APP_NAME%%/components/libmyspell.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
-lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libxpinstall.so
 lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
 lib/%%APP_NAME%%/components/nsBrowserGlue.js
@@ -47,6 +45,7 @@ lib/%%APP_NAME%%/components/nsSessionStartup.js
 lib/%%APP_NAME%%/components/nsSessionStore.js
 lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
 lib/%%APP_NAME%%/components/nsSidebar.js
+lib/%%APP_NAME%%/components/nsURLFormatter.js
 lib/%%APP_NAME%%/components/nsUpdateService.js
 lib/%%APP_NAME%%/components/nsUrlClassifierLib.js
 lib/%%APP_NAME%%/components/nsUrlClassifierListManager.js

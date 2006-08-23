@@ -22,7 +22,7 @@ DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-SNAPDATE=	2006-07-26
+SNAPDATE=	2006-08-21
 USE_BZIP2=	yes
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
