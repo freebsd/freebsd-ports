@@ -15,7 +15,7 @@ COMMENT=	Controls system configuration
 
 BUILD_DEPENDS=	${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Objective \
  	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
- 	${SITE_PERL}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+ 	p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable/Process.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod \
 	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
