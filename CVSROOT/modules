@@ -7053,6 +7053,7 @@ moria		ports/games/moria
 morla		ports/editors/morla
 morpheus	ports/graphics/morpheus
 moscow_ml	ports/lang/moscow_ml
+mosref		ports/security/mosref
 most		ports/sysutils/most
 moth		ports/graphics/moth
 motion		ports/multimedia/motion
