@@ -1,6 +1,6 @@
---- linux/SConstruct.orig	Sun Jul 16 11:25:22 2006
-+++ linux/SConstruct	Sun Jul 16 11:25:57 2006
-@@ -8,7 +8,6 @@
+--- linux/SConstruct.orig	Mon Aug 21 12:20:32 2006
++++ linux/SConstruct	Mon Aug 21 12:20:57 2006
+@@ -9,7 +9,6 @@
  	'hashdialog.cc',
  	'hub.cc',
  	'mainwindow.cc',
@@ -8,17 +8,17 @@
  	'privatemessage.cc',
  	'publichubs.cc',
  	'search.cc',
---- linux/wulformanager.cc.orig	Sun Jul 16 11:25:32 2006
-+++ linux/wulformanager.cc	Sun Jul 16 11:26:29 2006
-@@ -17,7 +17,6 @@
- */
- 
- #include "wulformanager.hh"
--#include "prefix.hh"
- #include "publichubs.hh"
- #include "downloadqueue.hh"
+--- linux/wulformanager.cc.orig	Mon Aug 21 12:20:40 2006
++++ linux/wulformanager.cc	Mon Aug 21 12:21:31 2006
+@@ -24,7 +24,6 @@
+ #include "func.hh"
+ #include "hashdialog.hh"
  #include "hub.hh"
-@@ -230,13 +229,7 @@
+-#include "prefix.hh"
+ #include "privatemessage.hh"
+ #include "publichubs.hh"
+ #include "search.hh"
+@@ -299,13 +298,7 @@
  
  string WulforManager::getPath()
  {
