@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
@@ -111,6 +110,8 @@ MAN1=	cmus.1 cmus-remote.1
 
 post-extract:
 	@${REINPLACE_CMD} -e 's,-lncursesw,-lncurses,g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' \
+	${WRKSRC}/Makefile ${WRKSRC}/Doc/cmus.txt
+	@${REINPLACE_CMD} -e 's,\/usr,${PREFIX},g' ${WRKSRC}/Doc/cmus.txt
 
 .include <bsd.port.post.mk>
