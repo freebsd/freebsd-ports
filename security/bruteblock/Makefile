@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bruteblock
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	security
 MASTER_SITES=	http://samm.kiev.ua/bruteblock/
 
@@ -23,6 +23,8 @@ MAN8=		bruteblock.8
 
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
+PORTDOCS=	FAQ README CHANGES
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
@@ -33,13 +35,19 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bruteblock ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/bruteblockd ${PREFIX}/sbin/
 	${MKDIR} ${PREFIX}/etc/bruteblock
-.for file in ssh	# more configs are planned to be added
+.for file in ssh proftpd
 	${INSTALL_DATA} ${WRKSRC}/etc/${file}.conf ${CONFDIR}/${file}.conf.dist
 	if [ ! -f ${CONFDIR}/${file}.conf ]; then \
 		${INSTALL_DATA} ${CONFDIR}/${file}.conf.dist ${CONFDIR}/${file}.conf; \
 	fi
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${PREFIX}/man/man8/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${DOCSDIR}/
+.endif
 
 post-install:
 .if !defined(BATCH)
