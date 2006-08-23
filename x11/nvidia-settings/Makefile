@@ -26,7 +26,8 @@ MAN1=		nvidia-settings.1
 MAKE_ENV=	ROOT=${PREFIX} \
 		CC=${CC} \
 		X11R6_LIB_DIR=${X11BASE}/lib \
-		X11R6_INC_DIR=${X11BASE}/include
+		X11R6_INC_DIR=${X11BASE}/include \
+		LDFLAGS="${PTHREAD_LIBS}"
 
 pre-build:
 	cd ${WRKSRC}/src/libXNVCtrl; \
