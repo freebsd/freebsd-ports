@@ -255,6 +255,7 @@
     SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
+    SUBDIR += mosref
     SUBDIR += mussh
     SUBDIR += nbaudit
     SUBDIR += ncrypt
