@@ -12,6 +12,5 @@ share/applications/gpass.desktop
 %%DATADIR%%/preferences.glade
 %%DATADIR%%/lock.glade
 share/pixmaps/gpass-icon.png
-@dirrmtry share/pixmaps
 @dirrmtry share/applications
 @dirrm %%DATADIR%%
