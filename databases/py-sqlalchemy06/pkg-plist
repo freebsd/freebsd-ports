@@ -1,0 +1,13 @@
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
+%%EXAMPLEDIR%%/adjacencytree/basic_tree.py
+%%EXAMPLEDIR%%/adjacencytree/byroot_tree.py
+%%EXAMPLEDIR%%/backref/backref_tree.py
+%%EXAMPLEDIR%%/polymorph/concrete.py
+%%EXAMPLEDIR%%/polymorph/polymorph.py
+%%EXAMPLEDIR%%/polymorph/single.py
+%%EXAMPLEDIR%%/vertical/vertical.py
+@dirrm %%EXAMPLEDIR%%/adjacencytree
+@dirrm %%EXAMPLEDIR%%/backref
+@dirrm %%EXAMPLEDIR%%/polymorph
+@dirrm %%EXAMPLEDIR%%/vertical
+@dirrm %%EXAMPLEDIR%%
