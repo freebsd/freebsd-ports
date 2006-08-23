@@ -1,0 +1,8 @@
+AIFAD stands for --Automated Induction of Functions over Algebraic
+Datatypes-- and improves decision tree learning by supporting significantly
+more complex kinds of data. This allows users to more conveniently describe
+the data they want to have learnt, which can improve accuracy and complexity
+of resulting models.
+
+Author:	Markus Mottl <markus.mottl@gmail.com>
+WWW:	http://www.ocaml.info/aifad/
