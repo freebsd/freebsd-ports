@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
