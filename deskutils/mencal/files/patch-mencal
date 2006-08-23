@@ -1,11 +1,5 @@
---- mencal.orig	Thu Jul 17 09:26:57 2003
-+++ mencal	Thu Jul 17 09:27:35 2003
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl -w
-+#!/usr/bin/env perl -w
- 
- ##< month object >##
- 
+--- mencal.orig	Thu Jul 17 07:53:15 2003
++++ mencal	Wed Aug 23 23:24:21 2006
 @@ -276,15 +276,6 @@
      }
    }

@@ -7,6 +7,7 @@
 
 PORTNAME=	mencal
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kyberdigi.cz/projects/${PORTNAME}/
 
@@ -16,6 +17,9 @@ COMMENT=	A variation of the unix command cal
 USE_PERL5=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/mencal
+
+post-patch:
+	@${REINPLACE_CMD} -e '1s|.*|#!${PERL} -w|' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mencal ${PREFIX}/bin
