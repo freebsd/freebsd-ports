@@ -23,7 +23,7 @@ post-patch:
 	${CP} ${FILESDIR}/sanitize.c ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unarj ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unarj ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR}
 .for i in ${PORTDOCS}	

@@ -32,6 +32,6 @@ post-patch:
 		${WRKSRC}/makefile.nix
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ha ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ha ${PREFIX}/bin
 
 .include <bsd.port.mk>
