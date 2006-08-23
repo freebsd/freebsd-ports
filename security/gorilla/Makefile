@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gorilla
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.fpx.de/fp/Software/Gorilla/download/
 
