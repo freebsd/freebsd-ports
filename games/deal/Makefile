@@ -25,4 +25,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deal ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/deal.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
+.endif
+
+.include <bsd.port.post.mk>
