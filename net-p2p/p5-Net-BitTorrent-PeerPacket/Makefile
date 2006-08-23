@@ -1,0 +1,28 @@
+# New ports collection makefile for:	p5-Net-BitTorrent-PeerPacket
+# Date created:		2006-08-23
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-BitTorrent-PeerPacket
+PORTVERSION=	1.0
+CATEGORIES=	net-p2p perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Parse/Build Peer Packets from BitTorrent
+
+PERL_MODBUILD=	yes
+
+MAN3=		Net::BitTorrent::PeerPacket.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
