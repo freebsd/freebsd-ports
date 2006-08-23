@@ -31,6 +31,7 @@
     SUBDIR += agenda-snow-libs
     SUBDIR += agenda-static-libs
     SUBDIR += agide
+    SUBDIR += aifad
     SUBDIR += ald
     SUBDIR += alf
     SUBDIR += allegro
