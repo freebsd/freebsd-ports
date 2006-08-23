@@ -20,8 +20,12 @@ lib/gorilla/pwsafe/pwsafe-io.tcl
 lib/gorilla/pwsafe/pwsafe.dat
 lib/gorilla/pwsafe/pwsafe.tcl
 lib/gorilla/pwsafe/pwtest.tcl
+lib/gorilla/pwsafe/pwsafe-v2.tcl
+lib/gorilla/pwsafe/pwsafe-v3.tcl
 lib/gorilla/twofish/twofish.tcl
 lib/gorilla/twofish/twotest.tcl
+lib/gorilla/twofish/pkgIndex.tcl
+lib/gorilla/twofish/LICENSE.txt
 @dirrm lib/gorilla/blowfish
 @dirrm lib/gorilla/pics
 @dirrm lib/gorilla/twofish
