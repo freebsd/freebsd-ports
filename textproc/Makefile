@@ -759,6 +759,7 @@
     SUBDIR += romdict
     SUBDIR += rot
     SUBDIR += rotix
+    SUBDIR += rst.el
     SUBDIR += rtf2html
     SUBDIR += rtfreader
     SUBDIR += rtfx
