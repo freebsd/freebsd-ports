@@ -46,6 +46,8 @@ FAAC			FAAC AAC and MP4 audio encoder support
 FLAC			Flac audio support
 GHC			Prefer/use Glasgow Haskell Compiler
 GNOME			Adds GNOME support
+GNUTLS			Adds GnuTLS support
+GSASL			Adds GSASL support
 GSTREAMER		Gstreamer multimedia support
 GTK1			Adds Gtk+1 support
 GTK2			Adds Gtk+2 support
