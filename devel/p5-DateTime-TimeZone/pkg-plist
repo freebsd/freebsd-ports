@@ -68,10 +68,12 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Ushuaia.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Aruba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Asuncion.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Atikokan.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Bahia.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Barbados.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Belem.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Belize.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Blanc_Sablon.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Boa_Vista.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Bogota.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Boise.pm
@@ -83,7 +85,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Cayman.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Chicago.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Chihuahua.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Coral_Harbour.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Costa_Rica.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cuiaba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Curacao.pm
@@ -326,6 +327,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vaduz.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vienna.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Vilnius.pm
+%%SITE_PERL%%/DateTime/TimeZone/Europe/Volgograd.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Warsaw.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zaporozhye.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Zurich.pm
