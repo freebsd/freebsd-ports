@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	intlhack
+USE_GETTEXT=	yes
 
 MAN1=		scim-make-table.1
 
@@ -50,10 +51,15 @@ pre-patch:
 BUILD_DEPENDS+=	skim:${PORTSDIR}/textproc/skim
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB=	SKIM=""
+USE_AUTOTOOLS=	libtool:15
 post-patch:
 	@${REINPLACE_CMD} -e "/^DIST_SUBDIRS/s/$$/ skim/" \
 		-e "/^@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR =/s/$$/ skim/" \
 		${WRKSRC}/Makefile.in
+post-configure:
+	${REINPLACE_CMD} \
+		-e 's,$$(top_builddir)/libtool --silent,${LIBTOOL},' \
+		${WRKSRC}/skim/Makefile ${WRKSRC}/skim/setupui/Makefile
 .endif
 
 post-install:
