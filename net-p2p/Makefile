@@ -100,6 +100,7 @@
     SUBDIR += py-kenosis-bittorrent
     SUBDIR += py-py2play
     SUBDIR += p5-Net-BitTorrent-File
+    SUBDIR += p5-Net-BitTorrent-PeerPacket
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += p5-pdonkey
     SUBDIR += qtella
