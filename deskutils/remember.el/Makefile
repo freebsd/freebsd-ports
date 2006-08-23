@@ -7,6 +7,7 @@
 
 PORTNAME=	remember.el
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://download.gna.org/remember-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -27,9 +28,9 @@ OPTIONS+=	PLANNER "Planner.el support" on
 
 .if !defined(WITHOUT_BBDB)
 .if ${EMACS_NAME} == "xemacs"
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb-com.el:${PORTSDIR}/editors/xemacs-packages
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb-com.el:${PORTSDIR}/editors/xemacs-packages
 .else
-RUN_DEPENDS+=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
 .endif
 PLIST_SUB+=	HAS_BBDB=""
 .else
