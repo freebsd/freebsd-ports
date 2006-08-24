@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -67,7 +67,7 @@ post-install:
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .if ${PERL_LEVEL} < 500601
-IGNORE=		Needs 5.6.1 or better
+IGNORE=		requires Perl 5.6.1 or newer. Install lang/perl5.8 and try again
 .endif
 .endif
 
