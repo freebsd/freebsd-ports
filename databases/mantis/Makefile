@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mantisbt
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	dan@langille.org
 COMMENT=	A bug tracking system written in PHP
@@ -19,18 +20,20 @@ USE_MYSQL=	yes
 USE_APACHE=	yes
 USE_PHP=	yes
 
-SUB_FILES=	pkg-message
+MANTISDIR?=	www/${PORTNAME}
 
-post-patch:
-	@${RM} ${WRKSRC}/.cvsignore
-	@${RM} ${WRKSRC}/core/.cvsignore
+SUB_FILES=	pkg-message
+SUB_LIST=	MANTISDIR=${MANTISDIR}
+
+PLIST_SUB=	MANTISDIR=${MANTISDIR}
 
 do-install:
-	@${ECHO} "Installing in ${PREFIX}/www/mantis"
-	${MKDIR} ${PREFIX}/www/mantis
-	${CP} -R ${WRKSRC}/* ${PREFIX}/www/mantis
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/mantis
+	@${ECHO} "Installing in ${PREFIX}/${MANTISDIR}"
+	${MKDIR} ${PREFIX}/${MANTISDIR}
+	${CP} -R ${WRKSRC}/* ${PREFIX}/${MANTISDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MANTISDIR}
 
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
