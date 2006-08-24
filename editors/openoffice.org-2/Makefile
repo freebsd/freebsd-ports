@@ -59,7 +59,7 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${ARCH} == amd64
 GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
