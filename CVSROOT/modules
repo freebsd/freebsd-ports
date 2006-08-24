@@ -9381,6 +9381,7 @@ p5-NEXT		ports/devel/p5-NEXT
 p5-NNML		ports/news/p5-NNML
 p5-NNTPClient	ports/news/p5-NNTPClient
 p5-NSNMP	ports/net-mgmt/p5-NSNMP
+p5-Nagios-Plugin	ports/net-mgmt/p5-Nagios-Plugin
 p5-Net		ports/net/p5-Net
 p5-Net-AIM	ports/net-im/p5-Net-AIM
 p5-Net-AOLIM	ports/net-im/p5-Net-AOLIM
