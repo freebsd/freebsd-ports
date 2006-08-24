@@ -7,6 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	20060710
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 PKGNAMESUFFIX=	-devel
@@ -114,7 +115,7 @@ CONFIGURE_ARGS+=	--without-3ds
 .endif
 
 .if !defined(WITHOUT_ODE)
-BUILD_DEPENDS+=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode-devel
+BUILD_DEPENDS+=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 CONFIGURE_ARGS+=	--with-ode=${X11BASE}
 .else
 CONFIGURE_ARGS+=	--without-ode

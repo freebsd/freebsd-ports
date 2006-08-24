@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	0.99
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--without-3ds
 .endif
 
 .if !defined(WITHOUT_ODE)
-BUILD_DEPENDS+=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode-devel
+BUILD_DEPENDS+=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 CONFIGURE_ARGS+=	--with-ode=${X11BASE}
 .else
 CONFIGURE_ARGS+=	--without-ode
