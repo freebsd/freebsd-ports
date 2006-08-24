@@ -1,0 +1,6 @@
+Yabause is a Sega Saturn emulator. It currently runs on GNU/Linux, FreeBSD and 
+is being ported to Microsoft Windows and Mac OS X. It is also ported to the 
+Sega Dreamcast as a separate project. It is written in C using the SDL and 
+OpenGL libraries with support for cdrom and iso files.
+
+WWW:	http://yabause.sourceforge.net/

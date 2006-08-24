@@ -156,6 +156,7 @@
     SUBDIR += xmess
     SUBDIR += xsystem35
     SUBDIR += xzx
+    SUBDIR += yabause
     SUBDIR += yape
     SUBDIR += zsnes
 
