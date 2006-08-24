@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/download.php/1565/
+MASTER_SITES=	http://alioth.debian.org/download.php/1738/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -19,18 +19,18 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
-CONFIGURE_ARGS+=--prefix=${PREFIX} \
-		--enable-debug \
+CONFIGURE_ARGS+=--enable-debug \
 		--enable-syslog \
 		--enable-runpid=/var/run/pcscd.pid \
 		--enable-ipcdir=/var/tmp/ \
 		--enable-confdir=${PREFIX}/etc/ \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 		--enable-muscledropdir=${PREFIX}/lib/pcsc/services/ \
-		--enable-threadsafe
+		--enable-threadsafe \
+		--mandir=${PREFIX}/man
 USE_GETOPT_LONG=yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
