@@ -1,0 +1,5 @@
+%%SITE_PERL%%/FFmpeg/Command.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FFmpeg/Command/.packlist
+@dirrmtry %%SITE_PERL%%/FFMpeg
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FFmpeg/Command/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FFmpeg/Command/
