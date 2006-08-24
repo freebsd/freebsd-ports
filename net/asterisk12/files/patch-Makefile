@@ -1,5 +1,8 @@
---- Makefile.orig	Wed Jun 14 11:59:17 2006
-+++ Makefile	Wed Jun 14 13:54:57 2006
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -19,8 +19,8 @@
  # CROSS_COMPILE=/opt/montavista/pro/devkit/arm/xscale_be/bin/xscale_be-
  # CROSS_COMPILE_BIN=/opt/montavista/pro/devkit/arm/xscale_be/bin/
@@ -71,7 +74,7 @@
  INCLUDE+=-Iinclude -I../include
 -ASTCFLAGS+=-pipe  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
 -ASTCFLAGS+=$(OPTIMIZE)
-+ASTCFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
++ASTCFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE -DMAKE_VALGRIND_HAPPY
 +#ASTCFLAGS+=$(OPTIMIZE)
  ASTOBJ=-o asterisk
  
