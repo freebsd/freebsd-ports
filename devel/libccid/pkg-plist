@@ -1,4 +1,4 @@
-lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so.1.0.1
+lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so.%%VER%%
 lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
 @dirrm lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD
 @dirrm lib/pcsc/drivers/ifd-ccid.bundle/Contents
