@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	faac
-PORTVERSION=	1.24
-PORTREVISION=	6
+PORTVERSION=	1.25
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	faac
@@ -16,37 +15,27 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 
 PATCH_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 NO_PACKAGE=	Distribution in binary form is prohibited
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_DOS2UNIX=	yes
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
+USE_DOS2UNIX=	yes
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		HAVECXX="yes"
-
-INSTALLS_SHLIB=	yes
-
-OPTIONS=	MPEG4IP "Enable mpeg4 audio encoding" On
+		LIBS="-lmp4v2"
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libmp4v2.a)
-WITH_MPEG4IP=yes
-.endif
-
-.if !defined(WITHOUT_MPEG4IP) || defined(WITH_MPEG4IP)
-LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
-.endif
 
 post-patch:
 	@${ECHO_CMD} "" >>${WRKSRC}/libfaac/psych.h
 	@cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I .; \
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
-	${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
-		${WRKSRC}/aclocal.m4
 
 .include <bsd.port.post.mk>
