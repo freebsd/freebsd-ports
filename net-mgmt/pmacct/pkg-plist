@@ -26,6 +26,8 @@ sbin/sfacctd
 %%EXAMPLESDIR%%/pmacctd-sqlite3_v4.conf.example
 %%EXAMPLESDIR%%/ports.lst.example
 %%EXAMPLESDIR%%/pretag.map.example
+%%EXAMPLESDIR%%/probe_netflow.conf.example
+%%EXAMPLESDIR%%/probe_sflow.conf.example
 %%EXAMPLESDIR%%/rrdtool-example.sh
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
