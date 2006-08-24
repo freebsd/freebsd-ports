@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Install
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -39,6 +39,7 @@ MAN3=		inc::Module::Install.3 \
 		Module::Install::Deprecated.3 \
 		Module::Install::External.3 \
 		Module::Install::Makefile.3 \
+    		Module::Install::PAR.3 \
 		Module::Install::Philosophy.3 \
 		Module::Install::Share.3
 
