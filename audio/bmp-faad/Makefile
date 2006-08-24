@@ -36,7 +36,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -DHAVE_GTK" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 
 DESCR=		${PORTSDIR}/audio/faad/pkg-descr
-MD5_FILE=	${PORTSDIR}/audio/faad/distinfo
 PLIST_FILES=	lib/bmp/Input/libmp4.a \
 		lib/bmp/Input/libmp4.la \
 		lib/bmp/Input/libmp4.so
