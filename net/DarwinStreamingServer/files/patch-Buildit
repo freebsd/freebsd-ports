@@ -1,5 +1,5 @@
 --- Buildit.orig	Fri Jul 14 18:36:35 2006
-+++ Buildit	Sat Aug 12 23:51:46 2006
++++ Buildit	Thu Aug 24 13:58:16 2006
 @@ -100,20 +100,20 @@
  		fi
  		;;
@@ -18,7 +18,7 @@
   		
 -		COMPILER_FLAGS=
 -        INCLUDE_FLAG="-include"
-+		COMPILER_FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
++		COMPILER_FLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -fPIC -funsigned-char"
 +		INCLUDE_FLAG="-include"
  		
 -		CORE_LINK_LIBS="-pthread -lm -lcrypt"
