@@ -14,7 +14,7 @@ DISTFILES=	Django-${PORTVERSION}.tar.gz:freebsd
 SNAPSHOT=	20060802
 DJANGOVER=	0.95
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
 CONFLICTS=	py2[0-9]-django-[0-9]*
