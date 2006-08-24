@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pmacct
-DISTVERSION=	0.11.0rc1
+DISTVERSION=	0.11.0rc3-20060823
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.pmacct.net/
+MASTER_SITES=	http://www.pmacct.net/ \
+		http://voodoo.bawue.com/download/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETOPT_LONG=yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/.[a-z][0-9]$//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.0
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
