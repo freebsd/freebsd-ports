@@ -241,6 +241,15 @@
 %%GALLERY2DIR%%/lib/support/phpinfo.php
 %%GALLERY2DIR%%/lib/support/security.inc
 %%GALLERY2DIR%%/lib/support/support.css
+%%GALLERY2DIR%%/lib/tools/po/.htaccess
+%%GALLERY2DIR%%/lib/tools/po/GNUmakefile.inc
+%%GALLERY2DIR%%/lib/tools/po/extract.php
+%%GALLERY2DIR%%/lib/tools/po/header.pl
+%%GALLERY2DIR%%/lib/tools/po/header.txt
+%%GALLERY2DIR%%/lib/tools/po/premerge-messages.pl
+%%GALLERY2DIR%%/lib/tools/po/shtool
+%%GALLERY2DIR%%/lib/tools/po/trim-po.php
+%%GALLERY2DIR%%/lib/tools/po/update-all-translations.pl
 %%GALLERY2DIR%%/lib/wz_dragdrop/transparentpixel.gif
 %%GALLERY2DIR%%/lib/wz_dragdrop/wz_dragdrop.js
 %%GALLERY2DIR%%/main.php
@@ -7764,6 +7773,8 @@
 @dirrm %%GALLERY2DIR%%/modules/albumselect
 @dirrm %%GALLERY2DIR%%/modules
 @dirrm %%GALLERY2DIR%%/lib/wz_dragdrop
+@dirrm %%GALLERY2DIR%%/lib/tools/po
+@dirrm %%GALLERY2DIR%%/lib/tools
 @dirrm %%GALLERY2DIR%%/lib/support
 @dirrm %%GALLERY2DIR%%/lib/smtp
 @dirrm %%GALLERY2DIR%%/lib/smarty_plugins
@@ -7826,4 +7837,3 @@
 @dirrmtry %%GALLERY2DIR%%/install
 @dirrm %%GALLERY2DIR%%/images
 @dirrmtry %%GALLERY2DIR%%
-@dirrmtry www/data

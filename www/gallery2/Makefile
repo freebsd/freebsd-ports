@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gallery2
-PORTVERSION=	2.1.1a
+PORTVERSION=	2.1.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gallery
-DISTNAME=	gallery-2.1.1a-full
+DISTNAME=	gallery-2.1.2-full
 DIST_SUBDIR=	gallery2
 
 MAINTAINER=	freebsd-ports@varju.ca
@@ -25,7 +25,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CPIOARGS=	--quiet -pdum -R
 PLIST_SUB+=	GALLERY2DIR=${GALLERY2DIR}
 
-GALLERY2DIR?=	www/data/gallery2
+GALLERY2DIR?=	www/gallery2
 WWWOWN?=	www
 WWWGRP?=	www
 
