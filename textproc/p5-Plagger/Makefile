@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Plagger
-PORTVERSION=	0.7.8
-PORTREVISION=	4
+PORTVERSION=	0.7.9
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -48,6 +47,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		PUBLISHPLANET "Publish::Planet Support" on \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
 		PUBLISHMT "Publish::MT Support" off \
+		PUBSERLZR "Publish-Serializer Support" off \
 		ROMANIZE "Filter::Romanize Support" off \
 		JAVASCRIPT "Publish::JavaScript Support" off \
 		EMOTICON "Filter::Emoticon Support" off \
@@ -62,12 +62,14 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		PUBLISHGMAIL "Publish::Gmail Support" on \
 		PUBDELICIOUS "Publish::Delicious Support" off \
 		ESTRAIER "Search::Estraier Support" off \
+		FILSPAMASSN "Filter-SpamAssassin Support" off \
 		PROFANITY "Filter::Profanity Support" off \
 		HATENARSS "Subscription::HatenaRSS Support" off \
 		NOTIFYIRC "Notify::IRC Support" off \
 		AGRXANGO "Aggregator::Xango Support" off \
 		HATENADIARY "Filter::HatenaDiaryKeywordLink Support" off \
 		IMAGEINFO "Filter::ImageInfo Support" off \
+		FILMRKDWN "Filter::Markdown Support" off \
 		PUBLISHIMAP "Publish::IMAP Support" off \
 		PUBLISHPDF "Publish::PDF Support" off \
 		BLOGLINES "Subscription::Bloglines Support" on \
@@ -84,6 +86,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 #		SUBSCRFOAF "Subscription::FOAF Support" off \
 #		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
 #		LIVEDOOR "Subscription::LivedoorReader Support" off \
+#		PINGSERVER "Subscription::PingServer Support" off \
 #		PUBLISHSWF "Publish::SWF Support" off \
 
 .include <bsd.port.pre.mk>
@@ -129,6 +132,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address
 
 .if defined(WITH_PUBLISHMT)
 BUILD_DEPENDS+=	${SITE_PERL}/Net/MovableType.pm:${PORTSDIR}/net/p5-Net-MovableType
+.endif
+
+.if defined(WITH_PUBSERLZR)
+BUILD_DEPENDS+=	${SITE_PERL}/Data/Serializer.pm:${PORTSDIR}/devel/p5-Data-Serializer
 .endif
 
 .if defined(WITH_ROMANIZE)
@@ -190,6 +197,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/Delicious.pm:${PORTSDIR}/net/p5-Net-Delicious
 BUILD_DEPENDS+=	${SITE_PERL}/Search/Estraier.pm:${PORTSDIR}/textproc/p5-Search-Estraier
 .endif
 
+.if defined(WITH_FILSPAMASSN)
+BUILD_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+.endif
+
 .if defined(WITH_PROFANITY)
 BUILD_DEPENDS+=	${SITE_PERL}/Regexp/Common/profanity_us.pm:${PORTSDIR}/textproc/p5-Regexp-Common-profanity_us
 .endif
@@ -217,6 +228,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 
 .if defined(WITH_IMAGEINFO)
 BUILD_DEPENDS+=	${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info
+.endif
+
+.if defined(WITH_FILMRKDWN)
+BUILD_DEPENDS+=	${SITE_PERL}/Text/Markdown.pm:${PORTSDIR}/textproc/p5-Text-Markdown
 .endif
 
 .if defined(WITH_PUBLISHIMAP)
@@ -272,7 +287,6 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::CustomFeed::PerlMonks.3 \
 		Plagger::Plugin::CustomFeed::SVNLog.3 \
 		Plagger::Plugin::CustomFeed::Simple.3 \
-		Plagger::Plugin::CustomFeed::Yahoo360JP.3 \
 		Plagger::Plugin::CustomFeed::YouTube.3 \
 		Plagger::Plugin::CustomFeed::iTunesRecentPlay.3 \
 		Plagger::Plugin::Filter::2chNewsokuTitle.3 \
@@ -327,6 +341,7 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::Filter::Thumbnail.3 \
 		Plagger::Plugin::Filter::TruePermalink.3 \
 		Plagger::Plugin::Filter::tDiaryComment.3 \
+		Plagger::Plugin::Notify::Audio.3 \
 		Plagger::Plugin::Notify::Balloon.3 \
 		Plagger::Plugin::Notify::Beep.3 \
 		Plagger::Plugin::Notify::Campfire.3 \
@@ -351,6 +366,7 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::Publish::HatenaBookmark.3 \
 		Plagger::Plugin::Publish::IMAP.3 \
 		Plagger::Plugin::Publish::JavaScript.3 \
+		Plagger::Plugin::Publish::JSON.3 \
 		Plagger::Plugin::Publish::LivedoorClip.3 \
 		Plagger::Plugin::Publish::MT.3 \
 		Plagger::Plugin::Publish::MTWidget.3 \
@@ -364,6 +380,7 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::Publish::Playlog.3 \
 		Plagger::Plugin::Publish::PowerPoint.3 \
 		Plagger::Plugin::Publish::SWF.3 \
+		Plagger::Plugin::Publish::Serializer.3 \
 		Plagger::Plugin::Publish::Speech::MacOSX.3 \
 		Plagger::Plugin::Search::Estraier.3 \
 		Plagger::Plugin::Search::KinoSearch.3 \
