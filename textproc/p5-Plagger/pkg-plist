@@ -12,6 +12,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Enclosure.pm
 %%SITE_PERL%%/Plagger/Entry.pm
 %%SITE_PERL%%/Plagger/Feed.pm
+%%SITE_PERL%%/Plagger/FeedParser.pm
 %%SITE_PERL%%/Plagger/Mechanize.pm
 %%SITE_PERL%%/Plagger/Operator.pm
 %%SITE_PERL%%/Plagger/Plugin.pm
@@ -36,7 +37,6 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/PerlMonks.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/SVNLog.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/Simple.pm
-%%SITE_PERL%%/Plagger/Plugin/CustomFeed/Yahoo360JP.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/YouTube.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/iTunesRecentPlay.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/2chNewsokuTitle.pm
@@ -95,6 +95,10 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Filter/TruePermalink.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/URLBL.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/tDiaryComment.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/Audio.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/Audio/MSWin32.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/Audio/iTunesMac.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/Audio/iTunesWin32.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Balloon.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Beep.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Campfire.pm
@@ -122,6 +126,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Publish/HatenaBookmark.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/IMAP.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/JavaScript.pm
+%%SITE_PERL%%/Plagger/Plugin/Publish/JSON.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/LivedoorClip.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/MT.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/MTWidget.pm
@@ -136,6 +141,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Publish/Playlog.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/PowerPoint.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/SWF.pm
+%%SITE_PERL%%/Plagger/Plugin/Publish/Serializer.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/Speech.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/Speech/MacOSX.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/Speech/Win32.pm
@@ -198,6 +204,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Update.pm
 %%SITE_PERL%%/Plagger/UserAgent.pm
 %%SITE_PERL%%/Plagger/Util.pm
+%%SITE_PERL%%/Plagger/Walker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger/.packlist
 @dirrm %%SITE_PERL%%/Plagger/TT/Plagger
 @dirrm %%SITE_PERL%%/Plagger/TT
@@ -212,6 +219,7 @@ bin/plagger-ircbot
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Publish/Speech
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Publish
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/Eject
+@dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/Audio
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Notify
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Filter/Romanize
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Filter/FetchEnclosure
@@ -225,5 +233,3 @@ bin/plagger-ircbot
 @dirrm %%SITE_PERL%%/Plagger/Cache
 @dirrm %%SITE_PERL%%/Plagger
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger
-
-
