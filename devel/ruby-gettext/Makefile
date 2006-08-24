@@ -21,7 +21,7 @@ BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
 
 USE_GETTEXT=	yes
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	racc-runtime
+USE_RUBY_FEATURES=	racc-runtime iconv
 USE_RUBY_SETUP=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
