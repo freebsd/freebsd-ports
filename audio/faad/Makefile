@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	faad2
-PORTVERSION=	2.0
-PORTREVISION=	6
+PORTVERSION=	2.5
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,45 +16,29 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
 PATCH_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
 NO_CDROM=	Restrictive copyright (do not sell for profit)
 
+USE_DOS2UNIX=	yes
 USE_AUTOTOOLS=	automake:15 autoheader:259 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-drm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-
-INSTALLS_SHLIB=	yes
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-# make sure everything is prepared prior to configure stage
-# pre-configure will not work since *AUTO* tools happen in-between
+	${MKDIR} ${WRKSRC}/plugins/bmp
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${ACLOCAL_DIR} -I .; \
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
-	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
-		${WRKSRC}/aclocal.m4
 	@${ECHO_CMD} "SUBDIRS = libfaad common frontend" > \
 		${WRKSRC}/Makefile.am
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|sys/inttypes.h|' \
-		${WRKSRC}/common/mp4ff/mp4ff_int_types.h
-.endif
-# CFLAGS safeness
-	 @${FIND} ${WRKSRC} -type f -name Makefile.am | \
-		${XARGS} -n 5 -x \
-			${REINPLACE_CMD} -e \
-				's|-O2|${CFLAGS}|'
 
 .include <bsd.port.post.mk>
