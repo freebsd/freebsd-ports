@@ -36,8 +36,10 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 IGNORE=		requires kernel source (/usr/src/sys) to build
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=	Does not compile on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=	Does not compile on ${ARCH}
+.else
+BROKEN=	leaves files behind on deinstall
 .endif
 
 .if ${OSVERSION} < 502000
