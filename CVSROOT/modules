@@ -15449,6 +15449,7 @@ y2l		ports/textproc/y2l
 y4mscaler	ports/multimedia/y4mscaler
 ya-yasou-fpw	ports/japanese/yasou-fpw
 yabasic		ports/lang/yabasic
+yabause		ports/emulators/yabause
 yabb		ports/www/yabb
 yabm		ports/net-mgmt/yabm
 yacas		ports/math/yacas
