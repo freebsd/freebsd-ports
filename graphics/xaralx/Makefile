@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XaraLX
-PORTVERSION?=	0.6r1441
+PORTVERSION?=	0.7r1692
 PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/
@@ -42,14 +42,11 @@ MAKE_ENV?=	INCLUDES="-I${LOCALBASE}/include/dlmalloc"
 USE_GCC=	3.4+
 
 MAN1=	xaralx${PKGNAMESUFFIX}.1
+MANFILE=	xaralx.1
 
 .if !defined(NOPORTDOCS)
-DOCS=	AUTHORS GPL LICENSE README doc/gifutil.txt doc/mtrand.txt
-.if defined(PKGNAMESUFFIX)
-DOCS+=	doc/en/LICENSE
-.else
-DOCS+=	doc/en/xaralx.htm
-.endif
+DOCS=	AUTHORS GPL LICENSE README doc/gifutil.txt doc/mtrand.txt \
+	doc/en/LICENSE
 .endif
 
 # make non-conflicting with the slave port
@@ -100,7 +97,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}/${xardir}
 	${INSTALL_DATA} ${WRKSRC}/${xardir}/*.xar ${EXAMPLESDIR}/${xardir}/
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/XaraLX.1 \
+	${INSTALL_MAN} ${WRKSRC}/doc/${MANFILE} \
 		${MANPREFIX}/man/man1/xaralx${PKGNAMESUFFIX}.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -108,11 +105,9 @@ do-install:
 .for d in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}/${d:S|^doc/||}
 .endfor
-.if defined(PKGNAMESUFFIX)
 	${MKDIR} ${DOCSDIR}/en/xaralxHelp
 	${TAR} -C ${DOCSDIR}/en/xaralxHelp \
 		-zxf ${WRKSRC}/doc/en/xaralxHelp.tar.gz
-.endif
 .endif
 .endif
 
