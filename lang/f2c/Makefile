@@ -55,6 +55,7 @@ do-build:
 	@${ECHO_MSG} "===> Building libf2c..."
 	@(cd ${WRKSRC}/libf2c;	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET} libf2c.so)
+	${MV} ${WRKSRC}/libf2c/libf2c.so ${WRKSRC}/libf2c/libf2c.so.2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/f2c ${PREFIX}/bin
@@ -63,7 +64,6 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/src/f2c.h ${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/src/f2c.1 ${MAN1PREFIX}/man/man1
-	${MV} ${WRKSRC}/libf2c/libf2c.so ${WRKSRC}/libf2c/libf2c.so.2
 	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.so.2 ${PREFIX}/lib
 	${LN} -sf libf2c.so.2 ${PREFIX}/lib/libf2c.so
