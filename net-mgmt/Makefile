@@ -193,6 +193,7 @@
     SUBDIR += tcptrack
     SUBDIR += torrus
     SUBDIR += trafd
+    SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
     SUBDIR += yabm
