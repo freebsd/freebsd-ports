@@ -9,8 +9,8 @@ PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
 CATEGORIES+=	editors java
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOVERSION}/&,} \
-		http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+		http://openoffice.lunarshells.com/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
