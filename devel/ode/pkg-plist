@@ -1,5 +1,4 @@
-lib/libdrawstuff.a
-lib/libode.a
+bin/ode-config
 include/ode/collision.h
 include/ode/collision_space.h
 include/ode/collision_trimesh.h
@@ -21,4 +20,5 @@ include/ode/odecpp_old.h
 include/ode/odemath.h
 include/ode/rotation.h
 include/ode/timer.h
+lib/libode.a
 @dirrm include/ode
