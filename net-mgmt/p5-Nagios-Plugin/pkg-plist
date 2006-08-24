@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Nagios/Plugin.pm
+%%SITE_PERL%%/Nagios/Plugin/Base.pm
+%%SITE_PERL%%/Nagios/Plugin/Performance.pm
+%%SITE_PERL%%/Nagios/Plugin/Range.pm
+%%SITE_PERL%%/Nagios/Plugin/Threshold.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios
+@dirrm %%SITE_PERL%%/Nagios/Plugin
+@dirrmtry %%SITE_PERL%%/Nagios
