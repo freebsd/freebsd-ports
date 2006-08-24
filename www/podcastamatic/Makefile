@@ -9,7 +9,8 @@ PORTNAME=	podcastamatic
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://bradley.chicago.il.us/projects/podcastamatic/
+MASTER_SITES=	http://bradley.chicago.il.us/projects/podcastamatic/ \
+		http://larseggert.de/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
 MAINTAINER=	lars.eggert@gmx.net
