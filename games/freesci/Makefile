@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
+INSTALLS_ICONS=	yes
 
 CONFIGURE_TARGET=
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
@@ -34,7 +35,7 @@ OPTIONS=	CONSOLE		 "With console support"			off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS=		-O3 -fexpensive-optimizations -fomit-frame-pointer -funroll-loops \
+CFLAGS+=		-O3 -fexpensive-optimizations -fomit-frame-pointer -funroll-loops \
 		-fstrict-aliasing
 .if ${ARCH} != "alpha"
 CFLAGS+=	-ffast-math
