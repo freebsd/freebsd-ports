@@ -2476,6 +2476,7 @@ fcptools	ports/net-p2p/fcptools
 fcrackzip	ports/security/fcrackzip
 fcron		ports/sysutils/fcron
 fd		ports/shells/fd
+fdm		ports/mail/fdm
 fdp-tools	ports/textproc/fdp-tools
 fdupes		ports/sysutils/fdupes
 feappv		ports/cad/feappv
