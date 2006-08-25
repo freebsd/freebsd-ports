@@ -11943,6 +11943,7 @@ py-xmpppy-irc	ports/net-im/py-xmpppy-irc
 py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-yaml		ports/devel/py-yaml
 py-yapsnmp	ports/net-mgmt/py-yapsnmp
+py-yenc		ports/news/py-yenc
 py-zconfig	ports/devel/py-zconfig
 py-zopeInterface	ports/devel/py-zopeInterface
 py-zpt		ports/textproc/py-zpt
