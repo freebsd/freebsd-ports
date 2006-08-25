@@ -13653,6 +13653,7 @@ tclExpat	ports/textproc/tclExpat
 tclX		ports/lang/tclX
 tclcheck	ports/devel/tclcheck
 tclcl		ports/devel/tclcl
+tclgeomap	ports/astro/tclgeomap
 tclgetopts	ports/devel/tclgetopts
 tclhttpd	ports/www/tclhttpd
 tcllib		ports/devel/tcllib
