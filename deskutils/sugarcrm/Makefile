@@ -7,9 +7,9 @@
 PORTNAME=	sugarcrm
 PORTVERSION=	3.5.1
 CATEGORIES=	deskutils www
-MASTER_SITES=	${SCRM_DISPATCHER}/392/:src \
-		${SCRM_DISPATCHER}/387/:userdoc \
-		${SCRM_DISPATCHER}/389/:installdoc
+MASTER_SITES=	${SCRM_DISPATCHER}/sugarcrm/SugarOSArchive/SugarSuiteDownloadArchive/:src \
+		${SCRM_DISPATCHER}/sugardocs/Manuals/v3.5Manuals/:userdoc \
+		${SCRM_DISPATCHER}/sugardocs/Manuals/InstallationandUpgradeManuals/:installdoc
 DISTFILES=	${USERDOCFILE}:userdoc \
 		${INSTALLDOCFILE}:installdoc \
 		${SRCNAME}${EXTRACT_SUFX}:src
@@ -26,7 +26,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 SUGARCRMDIR?=	www/${PORTNAME}
 
-SCRM_DISPATCHER=	http://www.sugarforge.org/frs/download.php
+SCRM_DISPATCHER=	http://dl.sugarforge.org
 SRCNAME=	SugarSuite-${PORTVERSION}
 USERDOCFILE=	Sugar_Open_Source_User_Guide_v35.pdf
 INSTALLDOCFILE=	Sugar_Open_Source_Installation_Guide_v35.pdf
