@@ -1,6 +1,6 @@
---- src/Player.cpp.orig	Sat Nov 26 01:04:36 2005
-+++ src/Player.cpp	Mon Dec 19 11:26:04 2005
-@@ -33,6 +33,10 @@
+--- src/Player.cpp.orig	Sun Aug 13 14:36:55 2006
++++ src/Player.cpp	Thu Aug 24 21:22:42 2006
+@@ -31,6 +31,10 @@
  
  // member functions
  
@@ -8,6 +8,6 @@
 +#define INFINITY MAXFLOAT
 +#endif
 +
- Player::Player(ToyCar& inCar)
- 	: car(inCar), lapFlag(-1), laps(0), curLap(0.0), prevLap(0.0), bestLapTime(INFINITY), courseTime(0.0)
- {
+ Player::Player(ToyCar& inCar, list<Tuple> *path, int inPlayerNumber)
+ 	: car(inCar), lapFlag(0), laps(-1), curLap(-1e-1), prevLap(-1e-1), revolutions(-1), bestLapTime(INFINITY), courseTime(0.0),
+ 	  pathEnd(path->end()), pathClosestPerp(INFINITY), pathSize(path->size()), playerNumber(inPlayerNumber)
