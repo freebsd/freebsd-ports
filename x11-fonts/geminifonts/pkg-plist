@@ -68,4 +68,5 @@ lib/X11/fonts/koi8-u-gemini/koi6x13.pcf.gz
 lib/X11/fonts/koi8-u-gemini/koi8x13.pcf.gz
 lib/X11/fonts/koi8-u-gemini/koi9x15.pcf.gz
 lib/X11/fonts/koi8-u-gemini/koinil2.pcf.gz
+@unexec rm -f %D/lib/X11/fonts/koi8-u-gemini/fonts.cache-*
 @dirrm lib/X11/fonts/koi8-u-gemini
