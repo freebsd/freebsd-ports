@@ -1,0 +1,9 @@
+trayer is small program designed to provide systray functionality
+present in GNOME/KDE desktop enviroments for window managers 
+which doesn't support that function. It's similar to other 
+applications such as 'peksystray' and 'docker'.
+
+trayer code was extracted from fbpanel application, you can find more
+about it on it's homepage
+
+WWW: http://fbpanel.sourceforge.net/
