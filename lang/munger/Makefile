@@ -1,16 +1,16 @@
 # New ports collection makefile for:  munger
 # Date created:                       Thu, 03 Jul 2003 20:05:06 EDT
-# Whom:                               James Bailie <jimmy@jamesbailie.com>
+# Whom:                               James Bailie <jimmy@mammothcheese.ca>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.108
+PORTVERSION=	4.109
 CATEGORIES=	lang
-MASTER_SITES=	http://www.jamesbailie.com/
+MASTER_SITES=	http://www.mammothcheese.ca/
 
-MAINTAINER=	jimmy@jamesbailie.com
+MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Static lisp interpreter with text processing abilities
 
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
@@ -24,7 +24,7 @@ OPTIONS=	FCGI "include FastCGI interface" on \
 		BN   "include bignum support" off \
 		DKNS "install Dickens text editor" off
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
