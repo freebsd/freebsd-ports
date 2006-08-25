@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	3.51
-PORTREVISION=	1
+PORTVERSION=	3.60
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files.rarlab.com/rar/ \
 		http://files2.rarlab.com/rar/
-DISTNAME=	rarbsd-3.5.1
+DISTNAME=	rarbsd-3.6.0
 
 MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	File archiver (binary port)
@@ -21,6 +20,9 @@ IA32_BINARY_PORT=	YES
 NO_PACKAGE=	Only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
+PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
+PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
+		readme.txt file_id.diz
 
 .include <bsd.port.pre.mk>
 
@@ -37,7 +39,11 @@ STRIP=
 .endif
 
 do-install:
+.if !defined(WITH_STATIC)
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${TARGETDIR}/bin/rar
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${TARGETDIR}/bin/rar
+.endif
 	${INSTALL_MAN} ${WRKSRC}/rar.txt ${TARGETDIR}/man/cat1/rar.1
 	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${TARGETDIR}/etc
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${TARGETDIR}/lib
@@ -45,8 +51,8 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for FILE in technote.txt license.txt order.htm readme.txt whatsnew.txt file_id.diz
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
