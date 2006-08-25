@@ -1,0 +1,9 @@
+======================================================================
+If you want to add eucJP-ms to Encode's demand-loading list (so you
+don't have to "use Encode::EUCJPMS"), run
+
+    enc2xs -C
+
+to update Encode::ConfigLocal, a module that controls local settings.
+After that, "use Encode;" is enough to load eucJP-ms on demand.
+======================================================================

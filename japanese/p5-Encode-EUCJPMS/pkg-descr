@@ -1,0 +1,16 @@
+This is a Perl5 module that defines Microsoft compatible encodings for
+Japanese.
+
+Encodings supported are as follows.
+
+  Canonical     Alias                                      Description
+  --------------------------------------------------------------------
+  eucJP-ms      qr/\beuc-?jp-?ms$/i                           eucJP-ms
+                qr/\beuc-?jp-?win$/i
+  cp51932       qr/\bcp51932$/i                 Windows Codepage 51932
+  cp50220                                       Windows Codepage 50220
+  cp50221                                       Windows Codepage 50221
+  --------------------------------------------------------------------
+
+Author:	NARUSE, Yui <naruse@airemix.com>
+WWW:	http://search.cpan.org/dist/Unicode-Japanese/
