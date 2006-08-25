@@ -39,7 +39,6 @@ share/locale/sq/LC_MESSAGES/goobox.mo
 share/locale/sv/LC_MESSAGES/goobox.mo
 share/locale/zh_CN/LC_MESSAGES/goobox.mo
 share/locale/zh_TW/LC_MESSAGES/goobox.mo
-@dirrmtry share/locale/ar
 @dirrm share/gnome/omf/goobox
 @dirrm share/gnome/help/goobox/C
 @dirrm share/gnome/help/goobox
