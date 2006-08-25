@@ -13863,6 +13863,7 @@ tkdesk		ports/x11-fm/tkdesk
 tkdiff		ports/textproc/tkdiff
 tkfont		ports/x11-fonts/tkfont
 tkgate		ports/cad/tkgate
+tkgeomap	ports/astro/tkgeomap
 tkgoodstuff	ports/x11/tkgoodstuff
 tkhfs		ports/emulators/tkhfs
 tkhylafax	ports/comms/tkhylafax
