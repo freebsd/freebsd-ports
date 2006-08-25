@@ -1,7 +1,6 @@
 lib/kde3/kcm_kcmgtk.a
 lib/kde3/kcm_kcmgtk.la
 lib/kde3/kcm_kcmgtk.so
-share/applnk/Settings/LookNFeel/kcmgtk.desktop
 share/applications/kde/kcmgtk-xdg.desktop
 share/locale/de/LC_MESSAGES/gtkqtengine.mo
 share/locale/es/LC_MESSAGES/gtkqtengine.mo
