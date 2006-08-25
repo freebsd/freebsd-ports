@@ -1703,7 +1703,6 @@
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
-    SUBDIR += py-ui
     SUBDIR += py-unit
     SUBDIR += py-urwid
     SUBDIR += py-utils

@@ -51,7 +51,6 @@
     SUBDIR += jabber-aim
     SUBDIR += jabber-conference
     SUBDIR += jabber-jud
-    SUBDIR += jabber-msn
     SUBDIR += jabber-pyaim
     SUBDIR += jabber-pyicq
     SUBDIR += jabber-pymsn
