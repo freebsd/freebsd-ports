@@ -161,6 +161,7 @@ include/wine/windows/dplobby.h
 include/wine/windows/dplobby8.h
 include/wine/windows/dpnathlp.h
 include/wine/windows/dsconf.h
+include/wine/windows/dsgetdc.h
 include/wine/windows/dshow.h
 include/wine/windows/dsdriver.h
 include/wine/windows/dsound.h
@@ -193,8 +194,8 @@ include/wine/windows/icmpapi.h
 include/wine/windows/idispids.h
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
-include/wine/windows/indexsvr.h
-include/wine/windows/indexsvr.idl
+include/wine/windows/indexsrv.h
+include/wine/windows/indexsrv.idl
 include/wine/windows/initguid.h
 include/wine/windows/ipexport.h
 include/wine/windows/iphlpapi.h
@@ -711,6 +712,7 @@ lib/wine/opengl32.dll.so
 lib/wine/powrprof.dll.so
 lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
+lib/wine/pstorec.dll.so
 lib/wine/qcap.dll.so
 lib/wine/quartz.dll.so
 lib/wine/query.dll.so
