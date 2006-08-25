@@ -7282,6 +7282,7 @@ mysql_last_value	ports/databases/mysql_last_value
 mysqlcc		ports/databases/mysqlcc
 mysqlcppapi	ports/databases/mysqlcppapi
 mysqlman	ports/databases/mysqlman
+mysqlphp2postgres	ports/www/mysqlphp2postgres
 mysqltcl	ports/databases/mysqltcl
 mythserver	ports/games/mythserver
 mytop		ports/databases/mytop
