@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Aug 24 21:10:59 2006
++++ Makefile	Thu Aug 24 21:11:09 2006
+@@ -1,6 +1,6 @@
+ SHELL = /bin/sh
+ 
+-prefix = /usr/local
++prefix = ${PREFIX}
+ exec_prefix = ${prefix}
+ bindir = ${exec_prefix}/bin
+ mandir = ${prefix}/man/man1
