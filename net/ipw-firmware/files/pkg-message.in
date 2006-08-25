@@ -34,4 +34,7 @@ firmware.
 %%MIGHT_NEED_MODULE%%if not already done or rebuild the port with WITH_MODULE=yes.
 %%MIGHT_NEED_MODULE%%
 %%MIGHT_NEED_MODULE%%[1] http://damien.bergamini.free.fr/ipw/
+
+Note: You need to have a kernel compiled with "device %%DRIVERNAME%%" or "if_%%DRIVERNAME%%_load="YES"
+in /boot/loader.conf to be able to use this firmware.
 ------------------------------------------------------------------
