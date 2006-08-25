@@ -17,8 +17,6 @@ MASTER_SITE_SUBDIR=	fenner
 MAINTAINER=		tonymaher@optusnet.com.au
 COMMENT=		Generic Network Queuing System
 
-BROKEN=			Does not compile
-
 USE_BZIP2=		yes
 IS_INTERACTIVE=	yes
 NO_PACKAGE=		have to build on site due to the descriptors created in\
@@ -104,6 +102,7 @@ post-patch:
 	${SED} -e 's|-O6 -fno-strength-reduce|${CFLAGS}|' \
 	${WRKSRC}/SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh.orig \
 	> ${WRKSRC}/SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh
+	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#;' `${FIND} ${WRKSRC} -type f`
 
 pre-configure:
 	@ ${SED} -e 's|XX_CFLAGS_XX|${CFLAGS}|' ${FILESDIR}/${TEMPLATE} > ${PLATFORMDIR}/${PLATFORM}; \

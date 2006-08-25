@@ -1,19 +1,35 @@
 #!/bin/sh
+#
 
-case $1 in
-start)
-	if [ -x XXXX/sbin/nqsdaemon ] ; then
-	    XXXX/sbin/nqsdaemon > /var/log/nqs.log
-	    echo -n ' nqs' 
-	fi
-	;;
-stop)
-	killall -KILL nqsdaemon netdaemon loaddaemon && echo -n ' nqs'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+# PROVIDE: nqs
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: LOGIN
+# KEYWORD: shutdown
 
-exit 0
+#
+# Add the following lines to /etc/rc.conf to enable NQS:
+# nqs_enable (bool):      Set to "NO" by default.
+#                             Set it to "YES" to enable NQS
+
+. %%RC_SUBR%%
+
+name="nqs"
+rcvar=`set_rcvar`
+
+prefix="XXXX"
+logfile="/var/log/nqs.log"
+start_cmd="nqs_start"
+stop_cmd="nqs_stop"
+load_rc_config $name
+
+nqs_start()
+{
+	${prefix}/sbin/nqsdaemon >> ${logfile} 2>&1 && echo 'Starting nqs.'
+}
+
+nqs_stop()
+{
+	/usr/bin/killall -KILL nqsdaemon netdaemon loaddaemon && echo 'Stopping nqs.'
+}
+
+run_rc_command "$1"
