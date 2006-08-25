@@ -7,6 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.9
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -52,6 +53,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		JAVASCRIPT "Publish::JavaScript Support" off \
 		EMOTICON "Filter::Emoticon Support" off \
 		FILHATENA "Filter::HatenaFormat Support" off \
+		RULEFRESH "Rule::Fresh Support" on \
 		SUBSCOPML "Subscription::OPML Support" on \
 		FLICKRSEARCH "CustomFeed::FlickrSearch Support" off \
 		HATENABKMK "Filter::HatenaBookmarkUsersCount Support" off \
@@ -81,7 +83,6 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 # The below options are not supported yet due to missing depending modules
 #		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
 #		PUBLISHCSV "Publish::CSV Support" off \
-#		RULEFRESH "Rule::Fresh Support" on \
 #		SUBSCRDBI "Subscription::DBI Support" off \
 #		SUBSCRFOAF "Subscription::FOAF Support" off \
 #		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
@@ -152,6 +153,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Text/Emoticon.pm:${PORTSDIR}/textproc/p5-Text-Emoti
 
 .if defined(WITH_FILHATENA)
 BUILD_DEPENDS+=	${SITE_PERL}/Text/Hatena.pm:${PORTSDIR}/textproc/p5-Text-Hatena
+.endif
+
+.if !defined(WITHOUT_RULEFRESH)
+BUILD_DEPENDS+=	${SITE_PERL}/Time/Duration/Parse.pm:${PORTSDIR}/devel/p5-Time-Duration-Parse
 .endif
 
 .if !defined(WITHOUT_SUBSCOPML)
