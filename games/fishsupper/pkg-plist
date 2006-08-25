@@ -1,48 +1,45 @@
 bin/fishsupper
-%%DATADIR%%/images/cats_whiskers.png
-%%DATADIR%%/images/font1.png
-%%DATADIR%%/images/font2.png
-%%DATADIR%%/images/fs_image_00.png
-%%DATADIR%%/images/fs_image_01.png
-%%DATADIR%%/images/fs_image_02.png
-%%DATADIR%%/images/fs_image_03.png
-%%DATADIR%%/images/fs_image_04.png
-%%DATADIR%%/images/fs_image_05.png
-%%DATADIR%%/images/fs_image_06.png
-%%DATADIR%%/images/fs_image_07.png
-%%DATADIR%%/images/fs_image_08.png
-%%DATADIR%%/images/fs_image_09.png
-%%DATADIR%%/images/fs_image_10.png
-%%DATADIR%%/images/fs_image_11.png
-%%DATADIR%%/images/fs_image_12.png
-%%DATADIR%%/images/fs_image_13.png
-%%DATADIR%%/images/fs_image_14.png
-%%DATADIR%%/images/fs_image_15.png
-%%DATADIR%%/images/fs_image_16.png
-%%DATADIR%%/images/fs_image_17.png
-%%DATADIR%%/images/fs_image_18.png
-%%DATADIR%%/images/fs_image_19.png
-%%DATADIR%%/images/fs_image_20.png
-%%DATADIR%%/images/fs_image_21.png
-%%DATADIR%%/images/fs_image_22.png
-%%DATADIR%%/images/fs_image_23.png
-%%DATADIR%%/images/fs_image_24.png
-%%DATADIR%%/images/fs_image_25.png
-%%DATADIR%%/images/fs_image_26.png
-%%DATADIR%%/images/fs_image_27.png
-%%DATADIR%%/images/fs_image_28.png
-%%DATADIR%%/images/fs_image_29.png
-%%DATADIR%%/images/get_ready_bg.png
-%%DATADIR%%/images/high_scores_font.png
-%%DATADIR%%/images/high_scores_font_faint.png
-%%DATADIR%%/images/hiscores.png
-%%DATADIR%%/images/hiscores_h.png
-%%DATADIR%%/images/intro_screen.png
-%%DATADIR%%/images/play.png
-%%DATADIR%%/images/play_h.png
-%%DATADIR%%/images/quit.png
-%%DATADIR%%/images/quit_h.png
-%%DATADIR%%/images/settings.png
+%%DATADIR%%/images/fonts/font2.png
+%%DATADIR%%/images/fonts/high_scores_font.png
+%%DATADIR%%/images/fonts/high_scores_font_faint.png
+%%DATADIR%%/images/fonts/small_font.png
+%%DATADIR%%/images/fonts/small_font_faint.png
+%%DATADIR%%/images/getready/get_ready_bg.png
+%%DATADIR%%/images/highscores/cats_whiskers.png
+%%DATADIR%%/images/play/fs_image_00.png
+%%DATADIR%%/images/play/fs_image_01.png
+%%DATADIR%%/images/play/fs_image_02.png
+%%DATADIR%%/images/play/fs_image_03.png
+%%DATADIR%%/images/play/fs_image_04.png
+%%DATADIR%%/images/play/fs_image_05.png
+%%DATADIR%%/images/play/fs_image_06.png
+%%DATADIR%%/images/play/fs_image_07.png
+%%DATADIR%%/images/play/fs_image_08.png
+%%DATADIR%%/images/play/fs_image_09.png
+%%DATADIR%%/images/play/fs_image_10.png
+%%DATADIR%%/images/play/fs_image_11.png
+%%DATADIR%%/images/play/fs_image_12.png
+%%DATADIR%%/images/play/fs_image_13.png
+%%DATADIR%%/images/play/fs_image_14.png
+%%DATADIR%%/images/play/fs_image_15.png
+%%DATADIR%%/images/play/fs_image_16.png
+%%DATADIR%%/images/play/fs_image_17.png
+%%DATADIR%%/images/play/fs_image_18.png
+%%DATADIR%%/images/play/fs_image_19.png
+%%DATADIR%%/images/play/fs_image_20.png
+%%DATADIR%%/images/play/fs_image_21.png
+%%DATADIR%%/images/play/fs_image_22.png
+%%DATADIR%%/images/play/fs_image_23.png
+%%DATADIR%%/images/play/fs_image_24.png
+%%DATADIR%%/images/play/fs_image_25.png
+%%DATADIR%%/images/play/fs_image_26.png
+%%DATADIR%%/images/play/fs_image_27.png
+%%DATADIR%%/images/play/fs_image_28.png
+%%DATADIR%%/images/play/fs_image_29.png
+%%DATADIR%%/images/play/fs_image_30.png
+%%DATADIR%%/images/play/fs_image_31.png
+%%DATADIR%%/images/play/fs_image_32.png
+%%DATADIR%%/images/play/fs_image_33.png
 %%DATADIR%%/images/settings/background.png
 %%DATADIR%%/images/settings/image_00.png
 %%DATADIR%%/images/settings/image_01.png
@@ -56,9 +53,11 @@ bin/fishsupper
 %%DATADIR%%/images/settings/image_09.png
 %%DATADIR%%/images/settings/image_10.png
 %%DATADIR%%/images/settings/image_11.png
-%%DATADIR%%/images/settings_h.png
-%%DATADIR%%/images/small_font.png
-%%DATADIR%%/images/small_font_faint.png
+%%DATADIR%%/images/titlescreen/hiscores_h.png
+%%DATADIR%%/images/titlescreen/intro_screen.png
+%%DATADIR%%/images/titlescreen/play_h.png
+%%DATADIR%%/images/titlescreen/quit_h.png
+%%DATADIR%%/images/titlescreen/settings_h.png
 %%DATADIR%%/levels/level_01.fsl
 %%DATADIR%%/levels/level_02.fsl
 %%DATADIR%%/levels/level_03.fsl
@@ -75,6 +74,11 @@ bin/fishsupper
 %%DATADIR%%/sounds/splash.wav
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/images/titlescreen
 @dirrm %%DATADIR%%/images/settings
+@dirrm %%DATADIR%%/images/play
+@dirrm %%DATADIR%%/images/highscores
+@dirrm %%DATADIR%%/images/getready
+@dirrm %%DATADIR%%/images/fonts
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
