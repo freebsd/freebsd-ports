@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	optipng
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	freaky@aagh.net
 COMMENT=	An optimizer for PNG files
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 BUILD_WRKSRC=	${WRKSRC}/src
-MAKEFILE=	scripts/gcc-syslib.mak
+MAKEFILE=	scripts/unix-secure.mak
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	bin/optipng
 MAN1=		optipng.1
