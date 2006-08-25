@@ -24,7 +24,8 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
 		${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
 		xml2-config:${PORTSDIR}/textproc/libxml2 \
 		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS+=	${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
+RUN_DEPENDS+=	${WXDEP}:${PORTSDIR}/x11-toolkits/wxgtk26-unicode \
+		convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS+=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
