@@ -62,6 +62,8 @@
     SUBDIR += stars
     SUBDIR += stellarium
     SUBDIR += sunclock
+    SUBDIR += tclgeomap
+    SUBDIR += tkgeomap
     SUBDIR += weatherspect
     SUBDIR += wmglobe
     SUBDIR += wmjupiter
