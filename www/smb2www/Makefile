@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows Network client that is accessible through a web browser
 
 RUN_DEPENDS=	httpd:${PORTSDIR}/${APACHE_PORT} \
-		smbclient:${PORTSDIR}/net/samba \
+		smbclient:${PORTSDIR}/net/samba3 \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 IS_INTERACTIVE=	yes

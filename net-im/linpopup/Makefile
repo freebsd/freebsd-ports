@@ -15,7 +15,7 @@ DISTNAME=	LinPopUp-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 port of WinPopup
 
-RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba
+RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
 
 WRKSRC=		${WRKDIR}/LinPopUp-${PORTVERSION}/src
 ALL_TARGET=

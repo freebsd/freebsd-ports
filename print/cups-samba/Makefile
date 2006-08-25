@@ -21,8 +21,8 @@ COMMENT=	The Common UNIX Printing System:  MS Windows client drivers
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		tardy:${PORTSDIR}/archivers/tardy \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base \
-		smbspool:${PORTSDIR}/net/samba
-RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba \
+		smbspool:${PORTSDIR}/net/samba3
+RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base \
 		espgs:${PORTSDIR}/print/cups-pstoraster
 

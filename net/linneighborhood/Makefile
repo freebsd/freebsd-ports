@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ gui for browsing and mounting SMB filesystems
 
-RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba
+RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba3
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

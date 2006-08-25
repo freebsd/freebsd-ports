@@ -14,7 +14,7 @@ MASTER_SITES=	http://nuxo1.free.fr/logiciel_reseau/visu_reso/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
 
-RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba \
+RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3 \
 		${LOCALBASE}/bin/expectk:${PORTSDIR}/lang/expect
 
 USE_PERL5_BUILD=yes
