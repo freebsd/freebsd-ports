@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://perso.club-internet.fr/lclevy/adflib/
 DISTNAME=	adflib
 
-MAINTAINER=	wigren@home.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from .adf-files used by Amiga emulators
 
 NO_WRKSUBDIR=	yes
