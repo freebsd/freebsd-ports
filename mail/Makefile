@@ -108,6 +108,7 @@
     SUBDIR += ezmlm-idx
     SUBDIR += ezmlm-web
     SUBDIR += faces
+    SUBDIR += fdm
     SUBDIR += fetchmail
     SUBDIR += fetchyahoo
     SUBDIR += filtermail
