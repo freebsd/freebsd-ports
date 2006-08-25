@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mgetty
-PORTVERSION=	1.1.34
+PORTVERSION=	1.1.35
 PORTREVISION=	0
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
-DISTNAME=	${PORTNAME}${PORTVERSION}-Nov30
+DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
@@ -39,6 +39,7 @@ MAN1=		autopvf.1 \
 MAN4=		mgettydefs.4
 MAN5=		faxqueue.5
 MAN8=		callback.8 \
+		faxq-helper.8 \
 		faxrunqd.8 \
 		mgetty.8 \
 		sendfax.8 \

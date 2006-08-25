@@ -6,7 +6,6 @@ bin/faxrunq
 bin/faxspool
 bin/g32pbm
 bin/g3cat
-bin/g3topbm
 bin/lintopvf
 bin/mg.echo
 bin/newslock
