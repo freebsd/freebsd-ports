@@ -41,6 +41,7 @@ MAKE_ENV:=	${CONFIGURE_ENV}
 
 OPTIONS=	OPENSSL		"Build with OpenSSL support"			on \
 		FAM		"Build in fam support for IDLE command"		off \
+		DRAC		"Build in DRAC support"				off \
 		TRASHQUOTA	"Include deleted mails in the quota"		off \
 		GDBM		"Use gdbm db instead of system bdb"		off \
 		IPV6		"Build with IPv6 support"			on
