@@ -36,5 +36,5 @@ lib/nqs/GNQS.VERSION
 lib/nqs/General.conf.def
 lib/nqs/qmgr.hlp
 lib/nqs/nmap/machines
-@unexec rm -rf %D/lib/nqs
-@unexec rm -rf XXXX
+@unexec rm -rf %D/lib/nqs 2>&1 >/dev/null || true
+@unexec rm -rf XXXX       2>&1 >/dev/null || true
