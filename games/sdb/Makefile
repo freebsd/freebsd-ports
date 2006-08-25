@@ -8,7 +8,7 @@
 PORTNAME=	sdb
 PORTVERSION=	1.0.2
 CATEGORIES=	games
-MASTER_SITES=	http://gcsociety.pc.cc.cmu.edu/~frenzy/
+MASTER_SITES=	http://sdb.gamecreation.org/
 
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Futuristic overhead shooter
