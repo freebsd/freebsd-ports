@@ -8,7 +8,7 @@
 PORTNAME?=	ipw-firmware
 RELNAME?=	ipw2100
 PORTVERSION?=	1.3
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/ipw
@@ -86,7 +86,7 @@ IGNORE=		is now obsolete, install net/${DRIVERNAME}-firmware-kmod instead
 SUB_LIST+=	DONT_NEED_CONTROL="@comment "
 MTREE_DIRRM=	"@comment "
 . if !defined(WITHOUT_CONTROL)
-IGNORE=		is configured with ${DRIVERNAME}control(8) which you don't need
+IGNORE=		is configured with ${DRIVERNAME}control(8) which you don't need, use 'make rmconfig' and uncheck CONTROL
 . endif
 .else
 SUB_LIST+=	DONT_NEED_CONTROL=""
@@ -107,7 +107,7 @@ PLIST_SUB+=	MTREE_DIRRM=${MTREE_DIRRM}
 
 .if defined(WITH_MODULE)
 . if ${OSVERSION} > 600023
-IGNORE=		is configured with ${DRIVERNAME}(4) support which you don't need
+IGNORE=		is configured with ${DRIVERNAME}(4) support which you don't need, use 'make rmconfig' and uncheck MODULE
 . else
 PLIST_SUB+=	WITH_MODULE=""
 MAN4+=		${DRIVERNAME}.4
