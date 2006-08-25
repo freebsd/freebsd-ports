@@ -1,6 +1,0 @@
-GOB2 is a preprocessor for making GObjects with inline C code so that
-generated files are not edited. Syntax is inspired by Java and Yacc or
-Lex. The implementation is intentionally kept simple, and no C actual
-code parsing is done.
-
-WWW: http://www.5z.com/jirka/gob.html
