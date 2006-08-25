@@ -4809,6 +4809,7 @@ ja-p5-PDFJ	ports/japanese/p5-PDFJ
 ja-p5-Text-ChaSen	ports/japanese/p5-Text-ChaSen
 ja-p5-Text-Kakasi	ports/japanese/p5-Text-Kakasi
 ja-p5-Text-MeCab	ports/japanese/p5-Text-MeCab
+ja-p5-Unicode-Japanese	ports/japanese/p5-Unicode-Japanese
 ja-p5-jcode.pl	ports/japanese/p5-jcode.pl
 ja-p5-man	ports/japanese/p5-manual
 ja-p5-manual	ports/japanese/p5-manual
