@@ -2,6 +2,8 @@ bin/backupschema
 bin/fields
 bin/query
 bin/sqlr-cachemanager
+bin/sqlr-export
+bin/sqlr-import
 bin/sqlrclient-config
 bin/sqlrclientwrapper-config
 %%IF_GTK%%bin/sqlr-config-gtk
