@@ -92,6 +92,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/dtds/rss.dtd
 %%DATADIR%%/dtds/smil.dtd
 %%DATADIR%%/dtds/watcherinfo.dtd
+%%DATADIR%%/dtds/xcap-caps.dtd
 %%DATADIR%%/editcap.html
 %%DATADIR%%/wireshark-filter.html
 %%DATADIR%%/wireshark.html

@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.3a
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
@@ -20,7 +20,7 @@ DATADIR_NAME=	wireshark
 USE_PERL5_BUILD=yes
 USE_PYTHON_BUILD=yes
 USE_ICONV=	yes
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GCC=	3.4+
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes

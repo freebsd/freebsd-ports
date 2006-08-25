@@ -1,6 +1,6 @@
---- configure.orig	Tue Jul 18 00:20:03 2006
-+++ configure	Tue Jul 18 00:19:03 2006
-@@ -22210,6 +22210,7 @@ echo $ECHO_N "checking for GLIB - versio
+--- configure.orig	Thu Aug 24 13:04:01 2006
++++ configure	Fri Aug 25 02:24:24 2006
+@@ -22373,6 +22373,7 @@ echo $ECHO_N "checking for GLIB - versio
    else
      GLIB_CFLAGS=`$GLIB_CONFIG $glib_config_args --cflags`
      GLIB_LIBS=`$GLIB_CONFIG $glib_config_args --libs`
@@ -8,32 +8,17 @@
      glib_config_major_version=`$GLIB_CONFIG $glib_config_args --version | \
             sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
      glib_config_minor_version=`$GLIB_CONFIG $glib_config_args --version | \
-@@ -22220,7 +22221,7 @@ echo $ECHO_N "checking for GLIB - versio
+@@ -22383,7 +22384,8 @@ echo $ECHO_N "checking for GLIB - versio
        ac_save_CFLAGS="$CFLAGS"
        ac_save_LIBS="$LIBS"
        CFLAGS="$CFLAGS $GLIB_CFLAGS"
 -      LIBS="$GLIB_LIBS $LIBS"
 +      LIBS="$GLIB_LIBS -liconv $LIBS"
-       rm -f conf.glibtest
-       if test "$cross_compiling" = yes; then
-   echo $ac_n "cross compiling; assumed OK... $ac_c"
-@@ -22854,6 +22855,7 @@ echo $ECHO_N "checking for GLIB - versio
-   else
-     GLIB_CFLAGS=`$GLIB_CONFIG $glib_config_args --cflags`
-     GLIB_LIBS=`$GLIB_CONFIG $glib_config_args --libs`
-+    GLIB_LIBS="-liconv $GLIB_LIBS"
-     glib_config_major_version=`$GLIB_CONFIG $glib_config_args --version | \
-            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
-     glib_config_minor_version=`$GLIB_CONFIG $glib_config_args --version | \
-@@ -22865,6 +22867,7 @@ echo $ECHO_N "checking for GLIB - versio
-       ac_save_LIBS="$LIBS"
-       CFLAGS="$CFLAGS $GLIB_CFLAGS"
-       LIBS="$GLIB_LIBS $LIBS"
 +      LIBS="$GLIB_LIBS -liconv $LIBS"
        rm -f conf.glibtest
        if test "$cross_compiling" = yes; then
    echo $ac_n "cross compiling; assumed OK... $ac_c"
-@@ -23084,7 +23087,7 @@ echo $ECHO_N "checking whether GLib supp
+@@ -22603,7 +22605,7 @@ echo $ECHO_N "checking whether GLib supp
  ac_save_CFLAGS="$CFLAGS"
  ac_save_LIBS="$LIBS"
  CFLAGS="$CFLAGS $GLIB_CFLAGS"
@@ -42,7 +27,7 @@
  if test "$cross_compiling" = yes; then
    echo $ac_n "cross compiling; assumed OK... $ac_c"
      ac_cv_glib_supports_modules=yes
-@@ -28684,7 +28687,7 @@ echo "${ECHO_T}yes" >&6
+@@ -28520,7 +28522,7 @@ echo "${ECHO_T}yes" >&6
  	  #
  	  CFLAGS="$CFLAGS -I$krb5_dir/include"
  	  CPPFLAGS="$CPPFLAGS -I$krb5_dir/include"
@@ -51,7 +36,7 @@
  	  ac_mit_version=`grep 'Massachusetts Institute of Technology' $krb5_dir/include/krb5.h | head -n 1 | sed 's/^.*Massachusetts Institute of Technology.*$/MIT/'`
  	  ac_krb5_version="$ac_heimdal_version$ac_mit_version"
  	  if test "x$ac_krb5_version" = "xHEIMDAL"
-@@ -28742,7 +28745,7 @@ fi
+@@ -28578,7 +28580,7 @@ fi
  
  	  if test -x "$KRB5_CONFIG"
  	  then
@@ -60,7 +45,7 @@
  	    KRB5_LIBS=`"$KRB5_CONFIG" --libs`
  	    CFLAGS="$CFLAGS $KRB5_FLAGS"
  	    CPPFLAGS="$CPPFLAGS $KRB5_FLAGS"
-@@ -30342,7 +30345,7 @@ fi
+@@ -30066,7 +30068,7 @@ fi
  
  
  ac_save_LIBS="$LIBS"
@@ -69,7 +54,7 @@
  G_ASCII_STRTOULL_C=""
  G_ASCII_STRTOULL_O=""
  G_ASCII_STRTOULL_LO=""
-@@ -31509,7 +31512,7 @@ fi
+@@ -31233,7 +31235,7 @@ fi
  #
  # The plugin dissectors reside in ./plugins/PROTO/
  #
