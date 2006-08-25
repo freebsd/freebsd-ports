@@ -1,2 +1,5 @@
-This program tries to determine input document encoding
-and to convert it to koi8, CP-1251 or cp866.
+Xcode automatically determines input file charset and converts it
+to the necessary charset. The important feature of the program is
+biunique charset conversion which protects your file from damages.
+
+WWW: http://www.rusf.ru/books/yo/xcode.html

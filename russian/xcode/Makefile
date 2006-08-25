@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	xcode
-PORTVERSION=	1.0
-PORTREVISION=	1
-CATEGORIES=	russian
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/text/
-DISTNAME=	${PORTNAME}
+PORTVERSION=	4.1
+CATEGORIES=	russian converters
+MASTER_SITES=	http://www.rusf.ru/books/yo/src/ \
+		http://pankovpv.sovietservers.com/stuff/freebsd-distfiles/
+DISTNAME=	xcodesrc
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Auto detect encoding and convert to koi8, CP-1251 or cp866
+MAINTAINER=	pankov_p@mail.ru
+COMMENT=	A program for converting russian encodings with care to letter YO
 
 PLIST_FILES=	bin/xcode
-USE_BZIP2=	yes
+USE_ZIP=	yes
+NO_WRKSUBDIR=	yes
+MAKEFILE=	makefile
+ALL_TARGET=	xcode
+CFLAGS+=	-DD_KOI
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xcode ${PREFIX}/bin
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/xcode ${TARGETDIR}/bin
 
 .include <bsd.port.mk>
