@@ -27,7 +27,7 @@ COMMENT=	QEMU CPU Emulator
 
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .if defined(WITH_SAMBA)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3
 .endif
 .if defined(WITH_KQEMU)
 BUILD_DEPENDS+=	kqemu-kmod>=1.3.0pre5:${PORTSDIR}/emulators/kqemu-kmod
