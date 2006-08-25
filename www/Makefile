@@ -405,6 +405,7 @@
     SUBDIR += myfaces
     SUBDIR += myghty
     SUBDIR += mysar
+    SUBDIR += mysqlphp2postgres
     SUBDIR += nanoblogger
     SUBDIR += nd
     SUBDIR += neon
