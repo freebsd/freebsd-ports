@@ -737,6 +737,7 @@
     SUBDIR += ssldump
     SUBDIR += ssltunnel-client
     SUBDIR += ssltunnel-server
+    SUBDIR += ssmping
     SUBDIR += stone
     SUBDIR += straw
     SUBDIR += stund
