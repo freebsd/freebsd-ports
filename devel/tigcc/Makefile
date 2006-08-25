@@ -8,8 +8,8 @@
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b7
 CATEGORIES=	devel
-MASTER_SITES=		${MASTER_SITE_GCC}:gcc \
-			${MASTER_SITE_GNU}:gas \
+MASTER_SITES=		${MASTER_SITE_GCC:S/$/:gcc/} \
+			${MASTER_SITE_GNU:S/$/:gas/} \
 			http://tigcc.ticalc.org/linux/:tigcc
 MASTER_SITE_SUBDIR=	snapshots/4.1-20060728/:gcc \
 			binutils/:gas
@@ -102,10 +102,8 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tigcc/sources/tprbuilder/src/tprbuilder ${PREFIX}/tigcc/bin/tprbuilder
 
 	@${ECHO} Installing TIGCCLIB
-	@${MKDIR} ${PREFIX}/tigcc/include
 	@${CP} -R ${WRKSRC}/tigcc/tigcclib/include ${PREFIX}/tigcc/
 	@${LN} -s ./os.h ${PREFIX}/tigcc/include/asm/OS.h
-	@${MKDIR} ${PREFIX}/tigcc/lib
 	@${CP} -R ${WRKSRC}/tigcc/tigcclib/lib ${PREFIX}/tigcc/
 
 post-install:
