@@ -4959,7 +4959,6 @@ jabber		ports/net-im/jabber
 jabber-aim	ports/net-im/jabber-aim
 jabber-conference	ports/net-im/jabber-conference
 jabber-jud	ports/net-im/jabber-jud
-jabber-msn	ports/net-im/jabber-msn
 jabber-pyaim	ports/net-im/jabber-pyaim
 jabber-pyicq	ports/net-im/jabber-pyicq
 jabber-pymsn	ports/net-im/jabber-pymsn
@@ -11911,7 +11910,6 @@ py-twistedWeb	ports/www/py-twistedWeb
 py-twistedWeb2	ports/www/py-twistedWeb2
 py-twistedWords	ports/net-im/py-twistedWords
 py-twofish	ports/security/py-twofish
-py-ui		ports/devel/py-ui
 py-unit		ports/devel/py-unit
 py-urwid	ports/devel/py-urwid
 py-utils	ports/devel/py-utils
