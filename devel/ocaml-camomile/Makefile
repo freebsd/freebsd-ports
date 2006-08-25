@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	camomile
-PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +27,9 @@ GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
+PLIST_FILES=	bin/camomilecharmap \
+		bin/camomilelocaledef
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
@@ -35,8 +37,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 BROKEN=		Need working <wctype.h>
 .endif
 
-post-extract:
-	@${CP} ${WRKSRC}/META ${WRKSRC}/META.in
+post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,([[:space:]]*)cp[[:space:]]*-f,\1\$${BSD_INSTALL_DATA}," \
 		${WRKSRC}/Makefile.in
