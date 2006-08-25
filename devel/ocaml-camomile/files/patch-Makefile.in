@@ -1,11 +1,15 @@
---- Makefile.in.orig	Tue Aug  1 16:47:03 2006
-+++ Makefile.in	Tue Aug  1 16:47:47 2006
-@@ -378,7 +378,7 @@
+--- Makefile.in.orig	Tue Aug 22 13:35:58 2006
++++ Makefile.in	Tue Aug 22 13:36:45 2006
+@@ -375,8 +375,10 @@
+ 	ocamlfind install camomile $$files META $(MLI) camomileLibrary.cmi
  
- install-with-ocamlfind:
- 	files= &&\
--	if [ $(OCAMLBEST) = opt ]; then files=public/*.cmx; fi && \
-+	if [ "$(OCAMLBEST)" = "opt" ]; then files=public/*.cmx; fi && \
- 	if [ -f camomile.cma ]; then files="camomile.* $$files"; fi&& \
- 	if [ -f libcamomile.a ]; then files="libcamomile.a $$files"; fi && \
- 	if [ -f dllcamomile.so ]; then files="dllcamomile.so $$files"; fi && \
+ install-bin:
+-	cp -f tools/camomilecharmap.$(OCAMLBEST) $(BINDIR)
+-	cp -f tools/camomilelocaledef.$(OCAMLBEST) $(BINDIR)
++	${BSD_INSTALL_PROGRAM} tools/camomilecharmap.$(OCAMLBEST) \
++		$(BINDIR)/camomilecharmap
++	${BSD_INSTALL_PROGRAM} tools/camomilelocaledef.$(OCAMLBEST) \
++		$(BINDIR)/camomilelocaledef
+ 
+ install-data:
+ 	mkdir -p $(DATADIR)
