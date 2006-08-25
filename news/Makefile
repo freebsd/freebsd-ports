@@ -80,6 +80,7 @@
     SUBDIR += pgpmoose
     SUBDIR += plor
     SUBDIR += py-twistedNews
+    SUBDIR += py-yenc
     SUBDIR += pyne
     SUBDIR += rawdog
     SUBDIR += rkive
