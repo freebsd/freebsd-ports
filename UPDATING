@@ -9,6 +9,19 @@ upgrades.
 
 
 20060818:
+  AFFECTS: users of net/isc-dhcp3-server or net/isc-dhcp3-relay
+  AUTHOR: Joerg.Pulz@frm2.tum.de
+
+  Starting with version 3.0.5rc1 of the ISC DHCPD package, any running
+  "dhcpd" or "dhcrelay" processes are stopped automatically when the port
+  gets deinstalled.
+  Please remember to start the services again manually, in case you upgrade
+  from version 3.0.5rc1 or newer to any other version.
+  Due to the better use of the USE_RC_SUBR framework, the rc script name may
+  change from isc-dhcpd.sh or isc-dhcrelay.sh to isc-dhcpd or isc-dhcrelay
+  depending on the FreeBSD version you use.
+
+20060818:
   AFFECTS: users of www/gallery2
   AUTHOR: miwi@FreeBSD.org
 

@@ -9,10 +9,18 @@
 
 case $2 in
 POST-INSTALL)
-	${PKG_PREFIX}/etc/rc.d/isc-dhcpd.sh forceinstall
+	if [ ${PKG_PREFIX}/etc/rc.d/isc-dhcpd ]; then
+		${PKG_PREFIX}/etc/rc.d/isc-dhcpd forceinstall
+	else
+		${PKG_PREFIX}/etc/rc.d/isc-dhcpd.sh forceinstall
+	fi
 	;;
 DEINSTALL)
-	${PKG_PREFIX}/etc/rc.d/isc-dhcpd.sh forceuninstall
+	if [ ${PKG_PREFIX}/etc/rc.d/isc-dhcpd ]; then
+		${PKG_PREFIX}/etc/rc.d/isc-dhcpd forceuninstall
+	else
+		${PKG_PREFIX}/etc/rc.d/isc-dhcpd.sh forceuninstall
+	fi
 	;;
 POST-DEINSTALL|PRE-INSTALL)
 	;;

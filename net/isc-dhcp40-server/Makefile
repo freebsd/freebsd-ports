@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.4
-PORTREVISION=	2
+PORTVERSION=	3.0.5.r1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -18,8 +17,6 @@ DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
-
-USE_RC_SUBR=	yes
 
 SUBSYS?=	server
 
@@ -141,7 +138,7 @@ SAMP_FILES=	client/dhclient.conf
 DATA_FILES=	dhclient.leases
 .elif ${SUBSYS} == server
 BIN_FILES=	dhcpd omshell
-RC_FILES=	isc-dhcpd
+USE_RC_SUBR=	isc-dhcpd
 SAMP_FILES=	server/dhcpd.conf
 DATA_FILES=	dhcpd.leases
 .if defined(WITH_DHCP_LDAP)
@@ -151,13 +148,12 @@ LDAP_SCHEMA=	contrib/dhcp.schema
 .endif
 .elif ${SUBSYS} == relay
 BIN_FILES=	dhcrelay
-RC_FILES=	isc-dhcrelay
+USE_RC_SUBR=	isc-dhcrelay
 .endif
 
 SAMP_SUFX=	.sample
 
 CONF_DIR=	${PREFIX}/etc
-RC_DIR=		${PREFIX}/etc/rc.d
 SCHEMA_DIR=	${PREFIX}/share/${PKGBASE}
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 DATADIR=	/var/db
@@ -169,21 +165,20 @@ PLIST_SUB+=	LDAP=""
 PLIST_SUB+=	LDAP="@comment "
 .endif
 REINPLACE_SUB=	PREFIX=${PREFIX}
-RCSCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 .if ${OSVERSION} >= 502100
-RCSCRIPTS_SUB+=	NOLOGIN=/usr/sbin/nologin
+SUB_LIST+=	NOLOGIN=/usr/sbin/nologin
 .else
-RCSCRIPTS_SUB+=	NOLOGIN=/sbin/nologin
+SUB_LIST+=	NOLOGIN=/sbin/nologin
 .endif
 .if !defined(WITHOUT_DHCP_PARANOIA)
-RCSCRIPTS_SUB+=	PARANOIA=YES
+SUB_LIST+=	PARANOIA=YES
 .else
-RCSCRIPTS_SUB+=	PARANOIA=NO
+SUB_LIST+=	PARANOIA=NO
 .endif
 .if !defined(WITHOUT_DHCP_JAIL)
-RCSCRIPTS_SUB+=	JAIL=YES
+SUB_LIST+=	JAIL=YES
 .else
-RCSCRIPTS_SUB+=	JAIL=NO
+SUB_LIST+=	JAIL=NO
 .endif
 PKGMESSAGE_SUB=	PREFIX="${PREFIX}" MAN1PREFIX="${MAN1PREFIX}" \
 		DOCSDIR="${DOCSDIR}" SCHEMA_DIR="${SCHEMA_DIR}"
@@ -208,7 +203,7 @@ extract-script:
 post-patch: patch-scripts patch-makefile-conf \
 	    patch-makefiles-dist patch-man-pages \
 	    patch-pkgmessage patch-site-conf \
-	    patch-rc-scripts patch-dlq
+	    patch-dlq
 
 patch-scripts:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -254,12 +249,6 @@ patch-makefiles-dist:
 patch-man-pages:
 	@${REINPLACE_CMD} -e '/^\.Fd$$/d' ${WRKSRC}/dhcpctl/dhcpctl.3
 
-patch-rc-scripts:
-.for f in ${RC_FILES}
-	@${SED} ${RCSCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${f}.sh${SAMP_SUFX} > ${WRKDIR}/${f}.sh
-.endfor
-
 patch-pkgmessage:
 .if ${SUBSYS} != devel
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -283,12 +272,13 @@ patch-dlq:
 # Post-install
 #
 
-POST-INSTALL=	parallel-post-install configure-package display-message
+POST-INSTALL=	parallel-post-install install-rc-script configure-package \
+		display-message
 .ORDER: ${POST-INSTALL}
 post-install: ${POST-INSTALL}
 
 parallel-post-install: \
-	strip-binary-files install-startup-files \
+	strip-binary-files \
 	install-doc-files install-ldap-files install-sample-files \
 	create-conf-files create-data-files
 
@@ -300,11 +290,6 @@ strip-binary-files:
 .if exists(${PREFIX}/sbin/${f})
 	@${STRIP_CMD} ${PREFIX}/sbin/${f}
 .endif
-.endfor
-
-install-startup-files:
-.for f in ${RC_FILES}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${f}.sh ${RC_DIR}
 .endfor
 
 install-doc-files:
