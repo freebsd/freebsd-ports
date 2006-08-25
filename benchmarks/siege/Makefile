@@ -22,6 +22,12 @@ MAN1=		siege.1 siege.config.1 bombardment.1 siege2csv.1
 MAN5=		urls_txt.5
 MAN7=		layingsiege.7
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 700000)
+BROKEN=		Does not compile on 7.X
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/siege ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/utils/bombardment ${PREFIX}/bin
@@ -36,4 +42,4 @@ do-install:
 	@${SED} -e "s,%%DATADIR%%,${DATADIR}," ${FILESDIR}/siege.config.in > ${PREFIX}/bin/siege.config
 	@${CHMOD} 555 ${PREFIX}/bin/siege.config
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
