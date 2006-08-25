@@ -8,7 +8,8 @@
 PORTNAME=	ctwm
 PORTVERSION=	3.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://ctwm.free.lp.se/dist/
+MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
+		http://www.centralmiss.com/~matt/distfiles/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	An extension to twm, with support for multiple virtual screens, etc
