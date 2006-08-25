@@ -13980,6 +13980,7 @@ transmission	ports/net-p2p/transmission
 transmission-gtk2	ports/net-p2p/transmission-gtk2
 transproxy	ports/www/transproxy
 transset-df	ports/x11-wm/transset-df
+trayer		ports/x11/trayer
 tree		ports/sysutils/tree
 tree-widget	ports/editors/tree-widget
 treecc		ports/lang/treecc
