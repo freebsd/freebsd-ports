@@ -13403,6 +13403,7 @@ sslsniffer	ports/security/sslsniffer
 ssltunnel-client	ports/net/ssltunnel-client
 ssltunnel-server	ports/net/ssltunnel-server
 sslwrap		ports/security/sslwrap
+ssmping		ports/net/ssmping
 ssmtp		ports/mail/ssmtp
 ssserver	ports/www/ssserver
 sst		ports/security/sst
