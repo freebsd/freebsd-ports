@@ -18,7 +18,7 @@ name=dhcpd
 paranoia=%%PARANOIA%%				# compiled in paranoia?
 jail=%%JAIL%%				# compiled in jail?
 
-load_rc_config $name
+load_rc_config ${name}
 
 # override these variables in /etc/rc.conf
 dhcpd_enable=${dhcpd_enable:-"NO"}
@@ -697,7 +697,7 @@ dhcpd_uninstall ()
 	fi
 }
 
-rcvar=$(set_rcvar)
+rcvar=${name}_enable
 load_rc_config ${name}
 
 __dhcpd_uninstall="NO"			# internal use only

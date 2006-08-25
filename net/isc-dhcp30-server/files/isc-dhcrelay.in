@@ -47,7 +47,7 @@ dhcrelay_precmd ()
 . %%RC_SUBR%%
 
 name=dhcrelay
-rcvar=$(set_rcvar)
+rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
