@@ -208,6 +208,7 @@
     SUBDIR += tilda
     SUBDIR += tkXwin
     SUBDIR += tkgoodstuff
+    SUBDIR += trayer
     SUBDIR += tycoon
     SUBDIR += vdesk
     SUBDIR += wdm
