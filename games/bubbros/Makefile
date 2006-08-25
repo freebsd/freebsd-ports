@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bubbros
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bub-n-bros
@@ -20,8 +20,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 
-DOC_FILES=	Introduction.html download.html help.html INSTALL.txt
-
 do-build:
 	# Compile the statesaver extension module
 	cd ${WRKSRC}/bubbob; ${PYTHON_CMD} setup.py build_ext -i
@@ -30,7 +28,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}; tar --exclude build -cf - bubbob common display http2 java metaserver BubBob.py) | \
+	(cd ${WRKSRC}; tar --exclude build --exclude "*.orig" -cf - bubbob common display http2 java metaserver BubBob.py) | \
 		(cd ${DATADIR}; tar --unlink -xf -)
 	@${PRINTF} "#!/bin/sh\ncd ${DATADIR} && \
 		exec ${PYTHON_CMD} ${DATADIR}/BubBob.py\n" > ${WRKDIR}/bubbros.sh
@@ -41,9 +39,8 @@ do-install:
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	(cd ${WRKSRC}/doc; tar -cf - .) | \
+		(cd ${DOCSDIR}; tar --unlink -xf -)
 .endif
 
 .include <bsd.port.mk>
