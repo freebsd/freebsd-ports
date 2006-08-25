@@ -9,8 +9,8 @@ PORTNAME=	managepkg
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cul.de/data/\
-		http://home.arcor.de/fehlner/download/\
-		http://home.arcor.de/teambushido/download/
+		http://home.arcor.de/fehlner/fbsd_ports/\
+		http://home.arcor.de/teambushido/fbsd_ports/
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	fehlner@gmx.de
