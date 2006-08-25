@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.2.11
+PORTVERSION=	2.2.13
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -41,12 +41,13 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${DOCSDIR} \
 		--disable-gtk-doc \
-		--enable-static
+		--enable-static \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

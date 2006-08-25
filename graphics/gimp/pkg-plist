@@ -490,6 +490,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimp/libgimp-image.html
 %%DOCSDIR%%/libgimp/libgimp-selectors.html
 %%DOCSDIR%%/libgimp/libgimp.devhelp
+%%DOCSDIR%%/libgimp/libgimp.devhelp2
 %%DOCSDIR%%/libgimp/libgimp.html
 %%DOCSDIR%%/libgimp/libgimpui-hierarchy.html
 %%DOCSDIR%%/libgimp/libgimpui.html
@@ -516,6 +517,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpbase/libgimpbase-gimpversion.html
 %%DOCSDIR%%/libgimpbase/libgimpbase-gimpwire.html
 %%DOCSDIR%%/libgimpbase/libgimpbase.devhelp
+%%DOCSDIR%%/libgimpbase/libgimpbase.devhelp2
 %%DOCSDIR%%/libgimpbase/libgimpbase.html
 %%DOCSDIR%%/libgimpbase/right.png
 %%DOCSDIR%%/libgimpbase/style.css
@@ -568,6 +570,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpthumb/libgimpthumb-gimpthumb-error.html
 %%DOCSDIR%%/libgimpthumb/libgimpthumb-gimpthumb-utils.html
 %%DOCSDIR%%/libgimpthumb/libgimpthumb.devhelp
+%%DOCSDIR%%/libgimpthumb/libgimpthumb.devhelp2
 %%DOCSDIR%%/libgimpthumb/libgimpthumb.html
 %%DOCSDIR%%/libgimpthumb/right.png
 %%DOCSDIR%%/libgimpthumb/style.css
@@ -610,7 +613,6 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpQueryBox.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpScrolledPreview.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpStock.html
-%%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpStock.html~
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-GimpWidgets.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-cell-renderers.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-colordisplay.html
@@ -622,6 +624,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-utils.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets-widgets.html
 %%DOCSDIR%%/libgimpwidgets/libgimpwidgets.devhelp
+%%DOCSDIR%%/libgimpwidgets/libgimpwidgets.devhelp2
 %%DOCSDIR%%/libgimpwidgets/right.png
 %%DOCSDIR%%/libgimpwidgets/stock-anchor-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-cap-butt-16.png
