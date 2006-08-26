@@ -16,6 +16,6 @@ MAINTAINER=	freebsd@next-generation.org
 MASTERDIR=	${.CURDIR}/../../net-im/gaim
 MD5_FILE=	${.CURDIR}/distinfo
 
-CONFLICTS=	gaim-[0-9]*
+CONFLICTS=	gaim-[0-9]* gaim-devel-[0-9]*
 
 .include "${MASTERDIR}/Makefile"
