@@ -20,6 +20,6 @@ To run it manually the first time, just run it as:
 	/usr/local/etc/periodic/monthly/300.statistics
 
 To view current statistics, go to:
-        http://bsdstats.org
+        http://www.bsdstats.org
 ********************
 
