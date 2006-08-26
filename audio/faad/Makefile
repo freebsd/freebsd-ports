@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	faac
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
 
-PATCH_DEPENDS=	${BUILD_DEPENDS}
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_CDROM=	Restrictive copyright (do not sell for profit)
 
@@ -34,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
-post-patch:
+pre-configure:
 	${MKDIR} ${WRKSRC}/plugins/bmp
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${ACLOCAL_DIR} -I .; \
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
