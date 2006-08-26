@@ -2447,3 +2447,4 @@ lang/gcc41-withgcjawt|lang/gcc41-withgcjawt|2006-08-18|finished repocopy
 net/lam7|net/lam|2006-08-21|Replace lam-6 which was deprecated
 devel/py-ui||2006-08-25|Has expired: PyUI does not work with well with current versions of graphics/py-opengl and has not been developed in over two years. Python game development should be done with devel/py-game instead
 net-im/jabber-msn||2006-08-25|Has expired: Depends on broken net-im/jabber, please use net-im/jabber-pymsn instead
+net-im/gaim-devel||2006-08-26|Remove since gaim's maintainer don't want to add it now
