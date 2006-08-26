@@ -23,7 +23,6 @@
     SUBDIR += gaim
     SUBDIR += gaim-assistant
     SUBDIR += gaim-bangexec
-    SUBDIR += gaim-devel
     SUBDIR += gaim-extprefs
     SUBDIR += gaim-guifications
     SUBDIR += gaim-ignorance
