@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.13 2006-08-14 20:26:12 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.14 2006-08-26 17:12:50 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -44,7 +44,7 @@ get_id_token () {
        
        idf=$( mktemp "$id_token_file.XXXXXX" )  && \
        /usr/sbin/chown root:wheel $idf          && \
-       /bin/chmod 600 $idf                      && \    
+       /bin/chmod 600 $idf
 
        /usr/bin/fetch -qo - \
 	   "http://$checkin_server/scripts/getid.php?key=$IDTOKEN" | { 
