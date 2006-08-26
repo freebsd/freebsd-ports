@@ -9,9 +9,11 @@ bin/pcmanfm
 %%NLS%%share/locale/pl/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pcmanfm.mo
-%%NLS%%share/locale/sw/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
 %%NLS%%@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv_SE
 %%NLS%%@dirrmtry share/locale/sw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sw

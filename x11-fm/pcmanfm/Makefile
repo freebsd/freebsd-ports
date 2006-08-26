@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcmanfm
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.0.2
 CATEGORIES=	x11-fm deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,13 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	PCMan File Manager
 
-USE_GNOME=	gtk20 intlhack
+USE_GNOME=	gtk20 intlhack gnomedesktop
 USE_GCC=	3.3+
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_FAM=	yes
-WANT_FAM_SYSTEM=fam
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
