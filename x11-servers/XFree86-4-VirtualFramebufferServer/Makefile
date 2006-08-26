@@ -7,6 +7,7 @@
 
 PORTNAME=	VirtualFramebufferServer
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -20,6 +21,7 @@ COMMENT=	XFree86-4 virtual framebuffer server
 
 CONFLICTS=	xorg-vfbserver-[0-9]*
 
+EXTRA_PATCHES=	${.CURDIR}/../../x11-servers/XFree86-4-Server/files/patch-lib_font_bitmap_pcfread.c
 MAN1=			Xvfb.1
 PLIST_FILES=		bin/Xvfb
 
