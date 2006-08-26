@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--disable-build-docs
 PLIST_SUB=	SGML="@comment "
 .endif
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
