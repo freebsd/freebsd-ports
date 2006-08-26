@@ -48,7 +48,11 @@ CFG_PATCH=s/[[:<:]](test)[[:space:]]*([^=]*)[[:>:]][[:space:]]*==[[:space:]]*([^
 CONFLICTS_ALL=	freeciv freeciv-gtk freeciv-gtk2 freeciv-nox11
 CONFLICTS=	${CONFLICTS_ALL:S/^${PKGBASE}$//:S/$/-[0-9]*/}
 
-.if defined(WITH_GTK2)
+.if defined(WITHOUT_X11)
+PLIST_SUB+=	X11="@comment "
+PKGNAMESUFFIX?=	-nox11
+CONFIGURE_ARGS+=	--enable-client=no
+.elif defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX?=	-gtk2
 CONFIGURE_ARGS+=	--enable-client=gtk2
@@ -58,10 +62,6 @@ USE_GNOME+=	imlib gtk12
 PKGNAMESUFFIX?=	-gtk
 CONFIGURE_ARGS+=	--enable-client=gtk
 PLIST_FILES+=	%%DATADIR%%/freeciv.rc
-.elif defined(WITHOUT_X11)
-PLIST_SUB+=	X11="@comment "
-PKGNAMESUFFIX?=	-nox11
-CONFIGURE_ARGS+=	--enable-client=no
 .else
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=	--enable-client=xaw3d
@@ -71,12 +71,12 @@ PLIST_FILES+=	%%DATADIR%%/Freeciv
 pre-fetch:
 .ifdef AUTO_DEPENDS
 	@${ECHO} -n "No WITH_GTK, WITH_GTK2, WITHOUT_GNOME or WITHOUT_X11 defined, autodetecting: "
-.ifdef WITH_GTK
-	@${ECHO} "GTK"
+.ifdef WITHOUT_X11
+	@${ECHO} "NOX11"
 .elifdef WITH_GTK2
 	@${ECHO} "GTK2"
-.elifdef WITHOUT_X11
-	@${ECHO} "NOX11"
+.elifdef WITH_GTK
+	@${ECHO} "GTK"
 .else
 	@${ECHO} "Xaw3d"
 .endif
