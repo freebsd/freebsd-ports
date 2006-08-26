@@ -1036,10 +1036,13 @@ share/locale/sr@Latn/LC_MESSAGES/kile.mo
 share/locale/sv/LC_MESSAGES/kile.mo
 share/locale/ta/LC_MESSAGES/kile.mo
 share/locale/tr/LC_MESSAGES/kile.mo
+share/locale/uk/LC_MESSAGES/kile.mo
 share/locale/zh_CN/LC_MESSAGES/kile.mo
 share/mimelnk/text/x-kilepr.desktop
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/sk/LC_MESSAGES
