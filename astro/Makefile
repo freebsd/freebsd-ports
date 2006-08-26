@@ -48,6 +48,7 @@
     SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += pp3
+    SUBDIR += ptiger
     SUBDIR += py-metar
     SUBDIR += pyweather
     SUBDIR += rmap
