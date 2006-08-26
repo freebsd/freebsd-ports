@@ -31,18 +31,29 @@ share/pixmaps/comix/fitheight.png
 share/pixmaps/comix/fitnone.png
 share/pixmaps/comix/fitscreen.png
 share/pixmaps/comix/fitwidth.png
+share/pixmaps/comix/flip-horizontal-jpeg.png
 share/pixmaps/comix/flip-horizontal.png
+share/pixmaps/comix/flip-vertical-jpeg.png
 share/pixmaps/comix/flip-vertical.png
 share/pixmaps/comix/lens.png
-share/pixmaps/comix/library.png
-share/pixmaps/comix/library_add.png
 share/pixmaps/comix/manga.png
 share/pixmaps/comix/rotate-180.png
 share/pixmaps/comix/rotate-270-jpeg.png
 share/pixmaps/comix/rotate-270.png
 share/pixmaps/comix/rotate-90-jpeg.png
 share/pixmaps/comix/rotate-90.png
-share/pixmaps/comix/slideshow.png
+share/pixmaps/comix/silk-bookmarks.png
+share/pixmaps/comix/silk-desaturate.png
+share/pixmaps/comix/silk-edit_bookmarks.png
+share/pixmaps/comix/silk-file_operations.png
+share/pixmaps/comix/silk-library.png
+share/pixmaps/comix/silk-library_add.png
+share/pixmaps/comix/silk-recent_files.png
+share/pixmaps/comix/silk-slideshow.png
+share/pixmaps/comix/silk-thumbnails.png
+share/pixmaps/comix/silk-transform.png
+share/pixmaps/comix/silk-view.png
+share/pixmaps/comix/silk-zoom.png
 @dirrm share/pixmaps/comix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
