@@ -17,7 +17,7 @@ COMMENT=	Multi-protocol instant messaging client
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
-CONFLICTS?=	ja-gaim-[0-9]*
+CONFLICTS?=	ja-gaim-[0-9]* gaim-devel-[0-9]*
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
