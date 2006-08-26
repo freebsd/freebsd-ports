@@ -11532,6 +11532,7 @@ pt-staroffice52	ports/portuguese/staroffice52
 pt-webalizer-pt_BR	ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT	ports/portuguese/webalizer-pt_PT
 pth		ports/devel/pth
+ptiger		ports/astro/ptiger
 ptkei		ports/games/ptkei
 ptlink-ircd	ports/irc/ptlink-ircd
 ptlink-services	ports/irc/ptlink-services
