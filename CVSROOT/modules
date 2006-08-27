@@ -15162,6 +15162,7 @@ xmms-wma	ports/audio/xmms-wma
 xmms-xf86audio	ports/audio/xmms-xf86audio
 xmms-xymms	ports/audio/xmms-xymms
 xmms2		ports/audio/xmms2
+xmms2-scrobbler	ports/audio/xmms2-scrobbler
 xmmsctrl	ports/audio/xmmsctrl
 xmold		ports/x11/xmold
 xmolwt		ports/biology/xmolwt
