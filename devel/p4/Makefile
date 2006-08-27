@@ -18,6 +18,10 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
+ONLY_FOR_ARCHS=	i386 amd64 alpha
+DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
+MD5_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
+
 #
 # This is a kludge.  I don't know a better way to set PORTVERSION and
 # PORTREVISION such that pkg_version figures out an update is needed
@@ -26,26 +30,20 @@ ARCH!=	/usr/bin/uname -p
 ARCH?=	i386
 
 .if (${ARCH} == i386) || (${ARCH} == amd64)
-DIST_SUBDIR=	perforce/${VERSION}/i386
-VERSION=	05.2
-REVISION=	3
-PLATFORM=	freebsd4
+VERSION=	06.1
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
-REL_NOTES=	http://www.perforce.com/perforce/doc.052/user/relnotes.txt
-MD5_FILE=	${MASTERDIR}/distinfo.i386
+REL_NOTES=	http://www.perforce.com/perforce/doc.061/user/relnotes.txt
 .elif ${ARCH} == alpha
-DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 VERSION=	99.1
 REVISION=	1
 PLATFORM=	freebsdaxp
 BIN_FILES=	p4
 SBIN_FILES=	p4d
 REL_NOTES=	http://www.perforce.com/perforce/doc.991/user/relnotes.txt
-MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .else
 VERSION=	0
-IGNORE=		"Unsupported platform, sorry."
+IGNORE=		unsupported platform, sorry
 .endif
 
 # End of kludge
@@ -59,6 +57,28 @@ PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 		${SBIN_FILES:S+^+sbin/+g}
 
 .include <bsd.port.pre.mk>
+
+# Figure out what to install
+.if (${ARCH} == i386) || (${ARCH} == amd64)
+.if ${OSVERSION} > 504000
+.if ${ARCH} == amd64
+PLATFORM=	freebsd54x86_64
+.else
+PLATFORM=	freebsd54x86
+.endif
+.elif ${OSVERSION} > 400000
+PLATFORM=	freebsd4
+.else
+INGORE=		only supported on FreeBSD 4.x and greater
+.endif
+.endif
+
+# Add compatability dependencies.
+.if ${OSVERSION} > 600000
+LIB_DEPENDS+=	c_r.5:${PORTSDIR}/misc/compat5x
+.elif (${OSVERSION} < 540000) && (${OSVERSION} > 500000)
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
 
 # These variables are all configurable.
 PERFORCE_USER?=		p4admin
