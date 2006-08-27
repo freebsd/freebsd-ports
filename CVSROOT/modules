@@ -15294,6 +15294,7 @@ xpi-unplug	ports/www/xpi-unplug
 xpi-urllink	ports/www/xpi-urllink
 xpi-videodownloader	ports/www/xpi-videodownloader
 xpi-web_developer	ports/www/xpi-web_developer
+xpi-wmlbrowser	ports/www/xpi-wmlbrowser
 xpi-xpcom-component-viewer	ports/www/xpi-xpcom-component-viewer
 xpilot		ports/games/xpilot
 xpilot-ng-client	ports/games/xpilot-ng-client
