@@ -72,9 +72,9 @@ lib/xine/plugins/1.1.2/xineplug_decode_dts.so
 lib/xine/plugins/1.1.2/xineplug_decode_dvaudio.so
 lib/xine/plugins/1.1.2/xineplug_decode_faad.so
 lib/xine/plugins/1.1.2/xineplug_decode_ff.so
-lib/xine/plugins/1.1.2/xineplug_decode_gdk_pixbuf.so
+%%WITH_GTK2%%lib/xine/plugins/1.1.2/xineplug_decode_gdk_pixbuf.so
 lib/xine/plugins/1.1.2/xineplug_decode_gsm610.so
-lib/xine/plugins/1.1.2/xineplug_decode_image.so
+%%WITH_IMAGEMAGICK%%lib/xine/plugins/1.1.2/xineplug_decode_image.so
 lib/xine/plugins/1.1.2/xineplug_decode_lpcm.so
 lib/xine/plugins/1.1.2/xineplug_decode_mad.so
 lib/xine/plugins/1.1.2/xineplug_decode_mpc.so
@@ -91,7 +91,6 @@ lib/xine/plugins/1.1.2/xineplug_decode_spucmml.so
 lib/xine/plugins/1.1.2/xineplug_decode_spudvb.so
 lib/xine/plugins/1.1.2/xineplug_decode_sputext.so
 lib/xine/plugins/1.1.2/xineplug_decode_theora.so
-%%WITH_CACA%%lib/xine/plugins/1.1.2/xineplug_vo_out_caca.so
 lib/xine/plugins/1.1.2/xineplug_decode_vorbis.so
 %%WITH_VIDIX%%lib/xine/plugins/1.1.2/xineplug_decode_w32dll.so
 lib/xine/plugins/1.1.2/xineplug_decode_yuv.so
@@ -102,7 +101,7 @@ lib/xine/plugins/1.1.2/xineplug_dmx_fli.so
 lib/xine/plugins/1.1.2/xineplug_dmx_flv.so
 lib/xine/plugins/1.1.2/xineplug_dmx_games.so
 lib/xine/plugins/1.1.2/xineplug_dmx_iff.so
-lib/xine/plugins/1.1.2/xineplug_dmx_image.so
+%%WITH_IMAGEMAGICK%%lib/xine/plugins/1.1.2/xineplug_dmx_image.so
 lib/xine/plugins/1.1.2/xineplug_dmx_matroska.so
 lib/xine/plugins/1.1.2/xineplug_dmx_mng.so
 lib/xine/plugins/1.1.2/xineplug_dmx_mpeg.so
@@ -136,7 +135,8 @@ lib/xine/plugins/1.1.2/xineplug_inp_rtsp.so
 lib/xine/plugins/1.1.2/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/1.1.2/xineplug_inp_vcd.so
 lib/xine/plugins/1.1.2/xineplug_inp_vcdo.so
-lib/xine/plugins/1.1.2/xineplug_vo_out_aa.so
+%%WITH_AALIB%%lib/xine/plugins/1.1.2/xineplug_vo_out_aa.so
+%%WITH_CACA%%lib/xine/plugins/1.1.2/xineplug_vo_out_caca.so
 lib/xine/plugins/1.1.2/xineplug_vo_out_none.so
 lib/xine/plugins/1.1.2/xineplug_vo_out_opengl.so
 lib/xine/plugins/1.1.2/xineplug_vo_out_sdl.so
