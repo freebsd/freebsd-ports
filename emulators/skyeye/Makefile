@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skyeye
-DISTVERSION=	1.2.0-RC4
+DISTVERSION=	1.2-RC8
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.gro.clinux.org/skyeye/
 
@@ -21,13 +21,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty \
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.2.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-v1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
+ONLY_FOR_ARCHS=	i386 amd64
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/binary/skyeye ${PREFIX}/bin
