@@ -1,5 +1,5 @@
-bin/aaxine
-%%WITH_LIBCACA%%bin/cacaxine
+%%WITH_AALIB%%bin/aaxine
+%%WITH_CACA%%bin/cacaxine
 bin/fbxine
 bin/xine
 bin/xine-bugreport
