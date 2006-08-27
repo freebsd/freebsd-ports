@@ -11,8 +11,10 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.taskjuggler.org/download/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A project management tool for UNIX based operating systems
+
+BROKEN=		fails to install
 
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
@@ -55,7 +57,7 @@ PLIST_SUB+=	WITH_KDE="@comment "
 .endif
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=		Perl > 5.6 is required.
+IGNORE=		Perl > 5.6 is required.
 .endif
 
 post-patch:
