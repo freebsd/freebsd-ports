@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.icot.or.jp/ifs/symbolic-proc/unix/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nin@Jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The KL1 programming environment on an ordinary UNIX system
 
 EMACS_FILES=	kl1-mode.el pdss-init.e.el pdss-init.j.el \
@@ -28,8 +28,11 @@ SCRIPTS_ENV+=	BSD_INSTALL_DIR="${INSTALL_DIR}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
+
+DEPRECATED=	fails to compile on recent FreeBSD versions
+EXPIRATION_DATE=	2006-10-27
 
 do-configure:
 	@${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile
