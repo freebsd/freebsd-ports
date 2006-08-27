@@ -1,0 +1,257 @@
+@comment $FreeBSD: /tmp/pcvs/ports/multimedia/bmpx-devel/Attic/pkg-plist,v 1.1 2006-08-27 14:42:57 novel Exp $
+bin/bmp2
+bin/bmp-enqueue-files-2.0
+bin/bmp-enqueue-uris-2.0
+bin/bmp-play-files-2.0
+bin/beep-media-player-2
+include/bmp-2.0/bmp/dbus.h
+libdata/pkgconfig/bmp-2.0.pc
+libexec/beep-media-player-2-bin
+lib/bmpx/plugins/flow/libflow_linear.so.0
+lib/bmpx/plugins/flow/libflow_linear.so
+lib/bmpx/plugins/flow/libflow_linear.la
+lib/bmpx/plugins/flow/libflow_shuffle.so.0
+lib/bmpx/plugins/flow/libflow_shuffle.so
+lib/bmpx/plugins/flow/libflow_shuffle.la
+lib/bmpx/plugins/vfs/container/libcontainer_folder.so.0
+lib/bmpx/plugins/vfs/container/libcontainer_folder.so
+lib/bmpx/plugins/vfs/container/libcontainer_folder.la
+lib/bmpx/plugins/vfs/container/libcontainer_m3u.so.0
+lib/bmpx/plugins/vfs/container/libcontainer_m3u.so
+lib/bmpx/plugins/vfs/container/libcontainer_m3u.la
+lib/bmpx/plugins/vfs/container/libcontainer_mlq.so.0
+lib/bmpx/plugins/vfs/container/libcontainer_mlq.so
+lib/bmpx/plugins/vfs/container/libcontainer_mlq.la
+lib/bmpx/plugins/vfs/container/libcontainer_pls.so.0
+lib/bmpx/plugins/vfs/container/libcontainer_pls.so
+lib/bmpx/plugins/vfs/container/libcontainer_pls.la
+lib/bmpx/plugins/vfs/container/libcontainer_query.so.0
+lib/bmpx/plugins/vfs/container/libcontainer_query.so
+lib/bmpx/plugins/vfs/container/libcontainer_query.la
+lib/bmpx/plugins/vfs/container/libcontainer_xspf.so.0
+lib/bmpx/plugins/vfs/container/libcontainer_xspf.so
+lib/bmpx/plugins/vfs/container/libcontainer_xspf.la
+lib/bmpx/plugins/vfs/transport/libtransport_file.so.0
+lib/bmpx/plugins/vfs/transport/libtransport_file.so
+lib/bmpx/plugins/vfs/transport/libtransport_file.la
+lib/bmpx/plugins/vfs/transport/libtransport_http.so.0
+lib/bmpx/plugins/vfs/transport/libtransport_http.so
+lib/bmpx/plugins/vfs/transport/libtransport_http.la
+%%DATADIR%%/data/GPL.txt
+%%DATADIR%%/glade/dialog-filelist.glade
+%%DATADIR%%/glade/export.glade
+%%DATADIR%%/glade/filebrowser.glade
+%%DATADIR%%/glade/gaim_send_file.glade
+%%DATADIR%%/glade/lastfm_recommend.glade
+%%DATADIR%%/glade/library_ui.glade
+%%DATADIR%%/glade/library_ui_modify.glade
+%%DATADIR%%/glade/library_ui_modify_tracks.glade
+%%DATADIR%%/glade/library_ui_relocate_album.glade
+%%DATADIR%%/glade/moodialog.glade
+%%DATADIR%%/glade/preferences.glade
+%%DATADIR%%/glade/streams.glade
+%%DATADIR%%/glade/trackinfo.glade
+%%DATADIR%%/icons/themes/darksphere/icon_player_128.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_16.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_32.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_48.png
+%%DATADIR%%/icons/themes/darksphere/icon_player_64.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_128.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_16.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_32.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_48.png
+%%DATADIR%%/icons/themes/darksphere/icon_playlist_64.png
+%%DATADIR%%/icons/themes/display/icon_player_128.png
+%%DATADIR%%/icons/themes/display/icon_player_16.png
+%%DATADIR%%/icons/themes/display/icon_player_32.png
+%%DATADIR%%/icons/themes/display/icon_player_48.png
+%%DATADIR%%/icons/themes/display/icon_player_64.png
+%%DATADIR%%/icons/themes/display/icon_playlist_128.png
+%%DATADIR%%/icons/themes/display/icon_playlist_16.png
+%%DATADIR%%/icons/themes/display/icon_playlist_32.png
+%%DATADIR%%/icons/themes/display/icon_playlist_48.png
+%%DATADIR%%/icons/themes/display/icon_playlist_64.png
+%%DATADIR%%/icons/themes/plastic/icon_player_128.png
+%%DATADIR%%/icons/themes/plastic/icon_player_16.png
+%%DATADIR%%/icons/themes/plastic/icon_player_32.png
+%%DATADIR%%/icons/themes/plastic/icon_player_48.png
+%%DATADIR%%/icons/themes/plastic/icon_player_64.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_128.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_16.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_32.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_48.png
+%%DATADIR%%/icons/themes/plastic/icon_playlist_64.png
+%%DATADIR%%/icons/themes/red/icon_library_128.png
+%%DATADIR%%/icons/themes/red/icon_library_16.png
+%%DATADIR%%/icons/themes/red/icon_library_32.png
+%%DATADIR%%/icons/themes/red/icon_library_48.png
+%%DATADIR%%/icons/themes/red/icon_library_64.png
+%%DATADIR%%/icons/themes/red/icon_player_128.png
+%%DATADIR%%/icons/themes/red/icon_player_16.png
+%%DATADIR%%/icons/themes/red/icon_player_32.png
+%%DATADIR%%/icons/themes/red/icon_player_48.png
+%%DATADIR%%/icons/themes/red/icon_player_64.png
+%%DATADIR%%/icons/themes/red/icon_playlist_128.png
+%%DATADIR%%/icons/themes/red/icon_playlist_16.png
+%%DATADIR%%/icons/themes/red/icon_playlist_32.png
+%%DATADIR%%/icons/themes/red/icon_playlist_48.png
+%%DATADIR%%/icons/themes/red/icon_playlist_64.png
+%%DATADIR%%/icons/themes/red/icon_streams_128.png
+%%DATADIR%%/icons/themes/red/icon_streams_16.png
+%%DATADIR%%/icons/themes/red/icon_streams_32.png
+%%DATADIR%%/icons/themes/red/icon_streams_48.png
+%%DATADIR%%/icons/themes/red/icon_streams_64.png
+%%DATADIR%%/icons/tray-icons/tray-icon-default.png
+%%DATADIR%%/icons/tray-icons/tray-icon-exit.png
+%%DATADIR%%/icons/tray-icons/tray-icon-paused.png
+%%DATADIR%%/icons/tray-icons/tray-icon-playing.png
+%%DATADIR%%/images/downloads/header-logo-left.png
+%%DATADIR%%/images/downloads/header-logo-right.png
+%%DATADIR%%/images/downloads/header-logo-slice.png
+%%DATADIR%%/images/lastfm/audioscrobbler.png
+%%DATADIR%%/images/lastfm/header-logo-left.png
+%%DATADIR%%/images/lastfm/header-logo-right.png
+%%DATADIR%%/images/lastfm/header-logo-slice.png
+%%DATADIR%%/images/lastfm/lastfm-net-idle.png
+%%DATADIR%%/images/lastfm/lastfm-net-rx.png
+%%DATADIR%%/images/lastfm/lastfm-net-tx.png
+%%DATADIR%%/images/preferences/appearance.png
+%%DATADIR%%/images/preferences/eq.png
+%%DATADIR%%/images/preferences/lastfm.png
+%%DATADIR%%/images/preferences/library.png
+%%DATADIR%%/images/preferences/misc.png
+%%DATADIR%%/images/preferences/museek.png
+%%DATADIR%%/images/preferences/playback.png
+%%DATADIR%%/images/preferences/playlist.png
+%%DATADIR%%/images/preferences/plugins.png
+%%DATADIR%%/images/rating/stars_0.png
+%%DATADIR%%/images/rating/stars_1.png
+%%DATADIR%%/images/rating/stars_2.png
+%%DATADIR%%/images/rating/stars_3.png
+%%DATADIR%%/images/rating/stars_4.png
+%%DATADIR%%/images/rating/stars_5.png
+%%DATADIR%%/images/streams/header-logo-left.png
+%%DATADIR%%/images/streams/header-logo-right.png
+%%DATADIR%%/images/streams/header-logo-slice.png
+%%DATADIR%%/images/splash.png
+%%DATADIR%%/images/about-logo.png
+%%DATADIR%%/images/audio.png
+%%DATADIR%%/images/wait.gif
+%%DATADIR%%/images/library/header-logo-left.png
+%%DATADIR%%/images/library/header-logo-right.png
+%%DATADIR%%/images/library/header-logo-slice.png
+%%DATADIR%%/images/library/add.png
+%%DATADIR%%/images/library/remove.png
+%%DATADIR%%/images/stock/approve.png
+%%DATADIR%%/images/stock/lastfm.png
+%%DATADIR%%/images/stock/library.png
+%%DATADIR%%/images/stock/museek.png
+%%DATADIR%%/images/stock/streams.png
+%%DATADIR%%/images/stock/bmp.png
+%%DATADIR%%/images/stock/bookmarks.png
+%%DATADIR%%/images/stock/xiph.png
+%%DATADIR%%/images/stock/shoutcast.png
+%%DATADIR%%/images/stock/musicbrainz.png
+%%DATADIR%%/images/stock/amazon.png
+%%DATADIR%%/images/stock/search.png
+%%DATADIR%%/images/stock/tachikoma.png
+%%DATADIR%%/images/stock/audio.png
+%%DATADIR%%/images/stock/tag.png
+%%DATADIR%%/images/stock/playlist.png
+%%DATADIR%%/images/stock/silk-cart_put.png
+%%DATADIR%%/images/stock/silk-cd_edit.png
+%%DATADIR%%/images/stock/silk-cd_go.png
+%%DATADIR%%/images/stock/silk-cd_add.png
+%%DATADIR%%/images/stock/silk-cd_delete.png
+%%DATADIR%%/images/stock/silk-add.png
+%%DATADIR%%/images/stock/silk-delete.png
+%%DATADIR%%/images/stock/silk-application_edit.png
+%%DATADIR%%/images/stock/silk-plugin.png
+%%DATADIR%%/images/stock/silk-control_play_blue.png
+%%DATADIR%%/images/stock/silk-control_pause_blue.png
+%%DATADIR%%/images/stock/silk-control_stop_blue.png
+%%DATADIR%%/images/stock/silk-plugin_disabled.png
+%%DATADIR%%/images/stock/silk-mod-server_down.png
+%%DATADIR%%/images/stock/silk-mod-server_up.png
+%%DATADIR%%/skins/default/balance.bmp
+%%DATADIR%%/skins/default/cbuttons.bmp
+%%DATADIR%%/skins/default/eq_ex.bmp
+%%DATADIR%%/skins/default/eqmain.bmp
+%%DATADIR%%/skins/default/main.bmp
+%%DATADIR%%/skins/default/monoster.bmp
+%%DATADIR%%/skins/default/nums_ex.bmp
+%%DATADIR%%/skins/default/playpaus.bmp
+%%DATADIR%%/skins/default/pledit.bmp
+%%DATADIR%%/skins/default/posbar.bmp
+%%DATADIR%%/skins/default/shufrep.bmp
+%%DATADIR%%/skins/default/text.bmp
+%%DATADIR%%/skins/default/titlebar.bmp
+%%DATADIR%%/skins/default/volume.bmp
+%%DATADIR%%/skins/default/pledit.txt
+%%DATADIR%%/skins/default/viscolor.txt
+%%DATADIR%%/skins/default/README
+%%DATADIR%%/ui/main.ui
+%%DATADIR%%/ui/tracklist.ui
+%%DATADIR%%/ui/tracklist-dnd.ui
+%%DATADIR%%/ui/trayicon.ui
+%%NLS%%share/locale/af/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/de/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/el/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/es/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/et/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/it/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/th_TH/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/bmpx.mo
+share/dbus-1/services/org.beepmediaplayer.bmp.service
+share/mime/packages/bmp-2.0.xml
+share/icons/hicolor/48x48/apps/bmpx.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-media-library-query.png
+share/applications/bmp-2.0.desktop
+share/applications/bmp-enqueue-2.0.desktop
+share/applications/bmp-play-2.0.desktop
+@dirrm lib/bmpx/plugins/vfs/transport
+@dirrm lib/bmpx/plugins/vfs/container
+@dirrm lib/bmpx/plugins/vfs
+@dirrm lib/bmpx/plugins/flow
+@dirrm lib/bmpx/plugins
+@dirrm lib/bmpx
+@dirrm include/bmp-2.0/bmp
+@dirrm include/bmp-2.0
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/icons/themes/darksphere
+@dirrm %%DATADIR%%/icons/themes/display
+@dirrm %%DATADIR%%/icons/themes/plastic
+@dirrm %%DATADIR%%/icons/themes/red
+@dirrm %%DATADIR%%/icons/themes
+@dirrm %%DATADIR%%/icons/tray-icons
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/images/downloads
+@dirrm %%DATADIR%%/images/lastfm
+@dirrm %%DATADIR%%/images/library
+@dirrm %%DATADIR%%/images/preferences
+@dirrm %%DATADIR%%/images/rating
+@dirrm %%DATADIR%%/images/stock
+@dirrm %%DATADIR%%/images/streams
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/th_TH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/th_TH
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

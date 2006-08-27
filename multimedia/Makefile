@@ -11,6 +11,7 @@
     SUBDIR += beep-media-player
     SUBDIR += bmp-extra-plugins
     SUBDIR += bmpx
+    SUBDIR += bmpx-devel
     SUBDIR += bsdav
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
