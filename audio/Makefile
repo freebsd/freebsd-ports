@@ -43,6 +43,7 @@
     SUBDIR += autools
     SUBDIR += autozen
     SUBDIR += aylet
+    SUBDIR += azrael
     SUBDIR += baudline
     SUBDIR += beast
     SUBDIR += bebocd
