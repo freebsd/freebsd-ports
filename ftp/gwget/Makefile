@@ -15,6 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	radek@raadradd.com
 COMMENT=	A download manager for GNOME, based on wget
 
+BROKEN=		fails to install
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=	yes
