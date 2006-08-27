@@ -15,4 +15,6 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	mess
 
+BROKEN=		leaves a file behind on deinstall
+
 .include "${MASTERDIR}/Makefile"
