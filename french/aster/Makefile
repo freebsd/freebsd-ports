@@ -72,6 +72,8 @@ FLAGARCH=	TRU64		# 64 bits
 
 .if ${OSVERSION} < 500000
 BROKEN=	Does not compile on FreeBSD-4.x, and cannot be patched easily.
+.elif ${OSVERSION} < 600000
+BROKEN=	Does not install on FreeBSD 5.x
 .endif
 .if ${ARCH} == "amd64"
 BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
