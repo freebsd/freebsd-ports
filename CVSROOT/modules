@@ -871,6 +871,7 @@ bmp-songchange	ports/audio/bmp-songchange
 bmp-wma		ports/audio/bmp-wma
 bmp2html	ports/graphics/bmp2html
 bmpx		ports/multimedia/bmpx
+bmpx-devel	ports/multimedia/bmpx-devel
 bn-aspell	ports/textproc/bn-aspell
 bnbt		ports/net-p2p/bnbt
 bnc		ports/irc/bnc
