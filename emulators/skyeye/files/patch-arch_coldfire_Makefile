@@ -1,5 +1,5 @@
---- arch/coldfire/Makefile.orig	Fri Jan 20 01:06:08 2006
-+++ arch/coldfire/Makefile	Fri Jan 20 01:06:50 2006
+--- arch/coldfire/Makefile.orig	Sun Aug 27 14:26:21 2006
++++ arch/coldfire/Makefile	Sun Aug 27 14:26:47 2006
 @@ -1,9 +1,9 @@
  all:
 -	make -C i_5206/
