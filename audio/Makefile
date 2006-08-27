@@ -665,6 +665,7 @@
     SUBDIR += xmms-xf86audio
     SUBDIR += xmms-xymms
     SUBDIR += xmms2
+    SUBDIR += xmms2-scrobbler
     SUBDIR += xmmsctrl
     SUBDIR += xmp
     SUBDIR += xmpeg3
