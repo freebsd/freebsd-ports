@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
@@ -38,7 +37,8 @@ RUBY_NO_RUN_DEPENDS=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
-		--enable-shared --with-openssl-include=${OPENSSLINC}
+		--enable-shared --with-openssl-include=${OPENSSLINC} \
+		--mandir=${PREFIX}/man
 
 .if defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=--enable-pthread
@@ -54,6 +54,7 @@ STRIP=		# none
 
 USE_LDCONFIG=	yes
 MAN1=		${RUBY_NAME}.1
+#NOMANCOMPRESS=	yes
 
 .include <bsd.port.pre.mk>
 

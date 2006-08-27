@@ -136,7 +136,7 @@ _RUBY_SITEDIR!=		${_RUBY_CONFIG} 'puts C["sitedir"]'
 RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 
 .if defined(RUBY_VER) && ${RUBY_VER} == 1.8
-RUBY_VERSION?=		1.8.4
+RUBY_VERSION?=		1.8.5
 #RUBY_DISTVERSION?=	${RUBY_VERSION}
 #RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-yyyy.mm.dd.diff.bz2
 
