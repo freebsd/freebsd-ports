@@ -958,6 +958,7 @@ bsflite		ports/net-im/bsflite
 bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
 bsnmpd		ports/net-mgmt/bsnmpd
+bsnmptools	ports/net-mgmt/bsnmptools
 bsp		ports/games/bsp
 bsp_upektfmess	ports/security/bsp_upektfmess
 bsvc		ports/emulators/bsvc
