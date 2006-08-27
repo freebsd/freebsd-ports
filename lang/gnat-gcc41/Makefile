@@ -11,8 +11,8 @@ PORTVERSION=	3.4.6
 CATEGORIES=		lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
-DISTFILES=		gcc-core-${PORTVERSION}.tar.bz2 \
-				gcc-ada-${PORTVERSION}.tar.bz2
+DISTFILES=		gcc-core-${PORTVERSION}.tar.gz \
+				gcc-ada-${PORTVERSION}.tar.gz
 
 MAINTAINER=		karel@lovetemple.net
 COMMENT=		The GNU Ada Compiler system
@@ -41,7 +41,7 @@ INFO=		gcc${gcc_suffix}/cpp \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=         does not extract on 4.x (both bzip2 and tar.gz sources are used)
+BROKEN=		does not deinstall cleanly at 4.x (PR/101809 pending)
 .endif
 
 gcc_suffix=		34
@@ -111,6 +111,7 @@ bootstrap_path=
 ONLY_FOR_ARCHS=	i386
 DISTFILES+=		gnat-3.15p-boot.tar.gz:boot
 MASTER_SITES+=	${MASTER_SITE_LOCAL}:boot
+MASTER_SITE_SUBDIR+=	deischen/gcc/:boot
 .if ${OSVERSION} >= 500000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
 .endif
