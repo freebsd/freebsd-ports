@@ -1131,6 +1131,7 @@
     SUBDIR += xpi-urllink
     SUBDIR += xpi-videodownloader
     SUBDIR += xpi-web_developer
+    SUBDIR += xpi-wmlbrowser
     SUBDIR += xpi-xpcom-component-viewer
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
