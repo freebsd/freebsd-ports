@@ -1100,6 +1100,7 @@
     SUBDIR += xpi-imagezoom
     SUBDIR += xpi-imdbpreview
     SUBDIR += xpi-imglikeopera
+    SUBDIR += xpi-infolister
     SUBDIR += xpi-inline-google-definitions
     SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
