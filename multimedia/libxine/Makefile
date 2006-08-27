@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +17,10 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		speex.3:${PORTSDIR}/audio/speex \
-		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
@@ -29,8 +29,8 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		cdio.7:${PORTSDIR}/sysutils/libcdio \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		Wand.10:${PORTSDIR}/graphics/ImageMagick \
-		theora.2:${PORTSDIR}/multimedia/libtheora
+		theora.2:${PORTSDIR}/multimedia/libtheora \
+		mad.2:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -38,7 +38,7 @@ USE_ICONV=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
@@ -50,7 +50,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
-		--mandir=${PREFIX}/man
+		--mandir=${PREFIX}/man --with-external-libmad \
+		--with-external-libdts
 INSTALLS_SHLIB=	yes
 
 MAN1=	xine-config.1
@@ -104,13 +105,6 @@ PLIST_SUB+=	WITH_POLYPAUDIO="@comment "
 CONFIGURE_ARGS+=	--disable-polypaudio
 .endif
 
-.if ${ARCH} == "i386"
-PLIST_SUB+=	WITH_VIDIX=""
-.else
-PLIST_SUB+=	WITH_VIDIX="@comment "
-CONFIGURE_ARGS+=	--disable-vidix
-.endif
-
 .if !defined(WITHOUT_XVMC) && (exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || defined(WITH_XVMC))
 CONFIGURE_ARGS+=--with-xvmc-lib=XvMCNVIDIA
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
@@ -125,6 +119,37 @@ PLIST_SUB+=	WITH_SMB=""
 .else
 PLIST_SUB+=	WITH_SMB="@comment "
 CONFIGURE_ARGS+=	--disable-samba
+.endif
+
+.if !defined(WITHOUT_AALIB) && (exists(${LOCALBASE}/lib/libaa.so.1) || defined (WITH_AALIB))
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+PLIST_SUB+=	WITH_AALIB=""
+.else
+PLIST_SUB+=	WITH_AALIB="@comment "
+CONFIGURE_ARGS+=	--disable-aalib
+.endif
+
+.if !defined(WITHOUT_IMAGEMAGICK) && (exists(${LOCALBASE}/lib/libWand.so.10) || defined (WITH_IMAGEMAGICK))
+LIB_DEPENDS+=	Wand.10:${PORTSDIR}/graphics/ImageMagick
+PLIST_SUB+=	WITH_IMAGEMAGICK=""
+.else
+PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
+CONFIGURE_ARGS+=	--disable-imagemagick
+.endif
+
+.if !defined(WITHOUT_GTK2) && (exists(${X11BASE}/lib/libgtk-x11-2.0.so.0) || defined (WITH_GTK2))
+USE_GNOME+=	gtk20
+PLIST_SUB+=	WITH_GTK2=""
+.else
+PLIST_SUB+=	WITH_GTK2="@comment "
+CONFIGURE_ARGS+=	--disable-gdkpixbuf
+.endif
+
+.if ${ARCH} == "i386"
+PLIST_SUB+=	WITH_VIDIX=""
+.else
+PLIST_SUB+=	WITH_VIDIX="@comment "
+CONFIGURE_ARGS+=	--disable-vidix
 .endif
 
 pre-everything::
