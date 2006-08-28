@@ -1,6 +1,4 @@
-@unexec if cmp -s %D/etc/fonts/local.conf %D/etc/fonts/local.conf-%%FONTNAME%%; then rm -f %D/etc/fonts/local.conf; fi
-etc/fonts/local.conf-%%FONTNAME%%
-@exec [ ! -f %B/local.conf ] && cp %B/%f %B/local.conf
+etc/fonts/conf.d/%%FONTNAME%%.conf
 %%FONTSDIR%%/GenAI102.ttf
 %%FONTSDIR%%/GenAR102.ttf
 %%FONTSDIR%%/GenI102.ttf
@@ -19,3 +17,4 @@ etc/fonts/local.conf-%%FONTNAME%%
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
 @exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
+@dirrmtry etc/fonts/conf.d

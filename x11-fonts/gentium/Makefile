@@ -9,6 +9,7 @@
 
 PORTNAME=	gentium
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=Gentium_102_L_tar&_sc=1&filename=/
 DISTNAME=	ttf-sil-${PORTNAME}_${PORTVERSION}
@@ -23,8 +24,8 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ttf-sil-${PORTNAME}-${PORTVERSION:C@\.([[:digit:]]+)$@\1@}
 
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}" \
-		FONTNAME=${FONTNAME}
+PLIST_SUB=	FONTSDIR="${FONTSDIR}" \
+		FONTNAME="${FONTNAME}"
 
 SUB_LIST=	"FONTSDIR=${FONTSDIR}"
 SUB_FILES=	pkg-message
@@ -34,7 +35,8 @@ SUB_FILES=	pkg-message
 #
 
 FONTNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
+FONTSDIR?=	lib/X11/fonts/${FONTNAME}
+FONTSTGT=	${PREFIX}/${FONTSDIR}
 
 DOCSLIST=	FONTLOG GENTIUM-FAQ Gentium-Greek-Specimen.pdf \
 		Gentium-RU-A3Proofs.pdf Gentium-RU-Specimen.pdf \
@@ -49,18 +51,15 @@ DOCSLIST=	FONTLOG GENTIUM-FAQ Gentium-Greek-Specimen.pdf \
 do-install: install-fonts install-conf install-docs
 
 install-fonts:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/OFL ${FONTSDIR}
+	${MKDIR} ${FONTSTGT}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSTGT}
+	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSTGT}
+	${INSTALL_DATA} ${WRKSRC}/OFL ${FONTSTGT}
 
 install-conf:
-	${MKDIR} ${PREFIX}/etc/fonts
-	if [ ! -f ${PREFIX}/etc/fonts/local.conf ]; then \
-	    ${INSTALL_DATA} ${WRKSRC}/local.conf ${PREFIX}/etc/fonts ; \
-	fi
+	${MKDIR} ${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${WRKSRC}/local.conf \
-		${PREFIX}/etc/fonts/local.conf-${FONTNAME}
+		${PREFIX}/etc/fonts/conf.d/${FONTNAME}.conf
 
 install-docs:
 .if !defined(NOPORTDOCS)
@@ -72,7 +71,7 @@ install-docs:
 
 post-install:
 	${ECHO_MSG} "===> Running fc-cache"
-	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
+	-${X11BASE}/bin/fc-cache -f -v ${FONTSTGT}
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}
