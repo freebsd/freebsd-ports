@@ -17,6 +17,7 @@ COMMENT=	A lightweight and user friendly ncurse based IRC client
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:259
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-lua
