@@ -11,6 +11,7 @@
 %%SITE_PERL%%/HTML/Template/Compiled/Lazy.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Parser.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Plugin/XMLEscape.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Reference.pod
 %%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
