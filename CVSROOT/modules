@@ -7313,6 +7313,7 @@ najitool	ports/misc/najitool
 nakenchat	ports/net/nakenchat
 nam		ports/net/nam
 namazu2		ports/databases/namazu2
+namefix		ports/sysutils/namefix
 nana		ports/devel/nana
 nano		ports/editors/nano
 nanoblogger	ports/www/nanoblogger
