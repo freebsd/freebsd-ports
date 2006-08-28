@@ -55,7 +55,6 @@
     SUBDIR += p5-Encode-JIS2K
     SUBDIR += p5-Encode-compat
     SUBDIR += p5-JSON
-    SUBDIR += p5-JSON-Syck
     SUBDIR += p5-MIME-Base32
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-String-Multibyte
