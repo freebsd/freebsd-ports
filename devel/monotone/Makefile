@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/downloads/
 
@@ -25,7 +25,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
 
-PLIST_FILES=	bin/mtn
+PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
+		"@dirrm share/zsh/site-functions" \
+		"@dirrmtry share/zsh"
 INFO=		monotone
 MAN1=		mtn.1
 PORTDOCS=	NEWS UPGRADE monotone.html
@@ -33,9 +35,9 @@ PORTDOCS=	NEWS UPGRADE monotone.html
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost-gcc3
+LIB_DEPENDS+=	boost_regex.3:${PORTSDIR}/devel/boost-gcc3
 .else
-LIB_DEPENDS=	boost_regex.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=	boost_regex.3:${PORTSDIR}/devel/boost
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -53,11 +55,9 @@ PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
 post-extract:
 	@${RM} -f ${WRKSRC}/monotone.info*
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|\($$(CXX) -Wall\)|\1 ${CXXFLAGS}|' \
-		${WRKSRC}/Makefile.in
-
 post-install:
+	${MKDIR} ${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/contrib/monotone.zsh_completion ${PREFIX}/share/zsh/site-functions/_mtn
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
