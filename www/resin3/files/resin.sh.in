@@ -18,8 +18,8 @@
 name=%%APP_NAME%%
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/%%APP_NAME%%ctl
-command_args="$1"
+command="%%PREFIX%%/sbin/%%APP_NAME%%ctl"
+command_args="start"
 pidfile=%%PID_FILE%%
 
 # set defaults
