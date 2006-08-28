@@ -14,7 +14,7 @@ DISTNAME=	gpct${PORTVERSION:S/.//g}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Evaluation tool for the Generic Polygon Clipper library
 
-LIB_DEPENDS=	gpc:${PORTSDIR}/devel/gpc	\
+LIB_DEPENDS=	gpc:${PORTSDIR}/devel/libgpc	\
 		formsGL:${PORTSDIR}/x11-toolkits/xforms
 
 USE_ZIP=	yes
