@@ -385,6 +385,7 @@
     SUBDIR += guichan
     SUBDIR += guikachu
     SUBDIR += gwenhywfar
+    SUBDIR += gzstream
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hc12mem

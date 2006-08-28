@@ -1,0 +1,8 @@
+Gzstream is a small C++ library, basically just a wrapper, that provides
+the functionality of the zlib C-library in a C++ iostream. It is freely
+available under the LGPL license.
+
+Gzstream has been written by Deepak Bandyopadhyay and Lutz Kettner at the
+Computational Geometry Group at UNC Chapel Hill.
+
+WWW: http://www.cs.unc.edu/Research/compgeom/gzstream/
