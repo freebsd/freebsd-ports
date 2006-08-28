@@ -49,6 +49,7 @@ smokeping:*:117:
 ircproxyd:*:118:
 postfix:*:125:
 maildrop:*:126:
+vchat:*:128:
 _bgpd:*:130:
 _ospfd:*:131:
 rbldns:*:153:
