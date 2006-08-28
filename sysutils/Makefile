@@ -363,6 +363,7 @@
     SUBDIR += munin-node
     SUBDIR += muse
     SUBDIR += nagios-statd
+    SUBDIR += namefix
     SUBDIR += nautilus-cd-burner
     SUBDIR += nbosd
     SUBDIR += nctop
