@@ -3,16 +3,18 @@
 %%SITE_PERL%%/XML/Liberal.pm
 %%SITE_PERL%%/XML/Liberal/LibXML.pm
 %%SITE_PERL%%/XML/Liberal/Remedy.pm
+%%SITE_PERL%%/XML/Liberal/Remedy/ControlCode.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/EntityRef.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/HTMLEntity.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/InvalidEncoding.pm
+%%SITE_PERL%%/XML/Liberal/Remedy/LowAsciiChars.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/NotUTF8.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/StandaloneAttribute.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/UndeclaredNS.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/UnquotedAttribute.pm
 %%SITE_PERL%%/XML/Liberal/Remedy/XHTMLEmptyTag.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Liberal/Remedy
 @dirrmtry %%SITE_PERL%%/XML/Liberal
 @dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Liberal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
