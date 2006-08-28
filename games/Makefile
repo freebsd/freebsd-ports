@@ -126,6 +126,7 @@
     SUBDIR += cursive
     SUBDIR += d2x
     SUBDIR += daimonin-client
+    SUBDIR += dangen
     SUBDIR += dangerdeep
     SUBDIR += darkplaces
     SUBDIR += deal
