@@ -16,6 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 interface to the Berkeley DB package
 
 USE_BDB=	yes
+USE_GCC=	3.2+
 
 PERL_CONFIGURE=	yes
 
@@ -26,10 +27,4 @@ post-patch:
 	@${ECHO} "LIB = ${LOCALBASE}/lib" >> ${WRKSRC}/config.in
 	@${ECHO} "DBNAME = -l${BDB_LIB_NAME}" >> ${WRKSRC}/config.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on FreeBSD 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
