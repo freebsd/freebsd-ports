@@ -1,0 +1,29 @@
+bin/palomino
+%%DATADIR%%/pony/models/f-14tomcat.pal
+%%DATADIR%%/pony/models/tank.pal
+%%DATADIR%%/pony/out/eng.py
+%%DATADIR%%/pony/out/game_pony.py
+%%DATADIR%%/pony/textures/cloud1.tga.gz
+%%DATADIR%%/pony/textures/desert1.tga.gz
+%%DATADIR%%/pony/textures/explosion1.tga.gz
+%%DATADIR%%/pony/textures/grass1.tga.gz
+%%DATADIR%%/pony/textures/hangar1.tga.gz
+%%DATADIR%%/pony/textures/road1.tga.gz
+%%DATADIR%%/pony/textures/sand1.tga.gz
+%%DATADIR%%/pony/textures/tree1.tga.gz
+%%DATADIR%%/pony/textures/tree2.tga.gz
+%%DATADIR%%/pony/textures/tree3.tga.gz
+%%DATADIR%%/pony/textures/tree4.tga.gz
+%%DATADIR%%/pony/textures/treeCactus1.tga.gz
+%%DATADIR%%/pony/textures/treeDead1.tga.gz
+%%DATADIR%%/pony/textures/treeOrange1.tga.gz
+%%DATADIR%%/pony/textures/treePalmSabal1.tga.gz
+%%DATADIR%%/pony/textures/treePine1.tga.gz
+%%DATADIR%%/pony/textures/treePine2.tga.gz
+%%DATADIR%%/pony/textures/treeShrub1.tga.gz
+%%DATADIR%%/pony/textures/water1.tga.gz
+@dirrm %%DATADIR%%/pony/models
+@dirrm %%DATADIR%%/pony/out
+@dirrm %%DATADIR%%/pony/textures
+@dirrm %%DATADIR%%/pony
+@dirrm %%DATADIR%%
