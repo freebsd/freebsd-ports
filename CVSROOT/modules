@@ -1849,6 +1849,7 @@ dlx		ports/emulators/dlx
 dmachine	ports/ftp/dmachine
 dmake		ports/devel/dmake
 dmalloc		ports/devel/dmalloc
+dmenu		ports/x11/dmenu
 dmidecode	ports/sysutils/dmidecode
 dmitry		ports/security/dmitry
 dmjava		ports/games/dmjava
