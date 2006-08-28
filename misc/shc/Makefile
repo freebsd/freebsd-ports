@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shc
-PORTVERSION=	3.8.3
+PORTVERSION=	3.8.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/
 EXTRACT_SUFX=	.tgz
