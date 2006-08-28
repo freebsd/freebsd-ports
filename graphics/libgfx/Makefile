@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	Generates three-dimensional coherent noise
+COMMENT=	OpenGL/FLTK development
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		tiff.4:${PORTSDIR}/graphics/tiff \
