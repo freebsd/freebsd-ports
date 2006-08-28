@@ -73,7 +73,6 @@ share/gnome/help/genius/C/figures/line_plot_graph.png
 share/gnome/help/genius/C/figures/parametric.png
 share/gnome/help/genius/C/figures/parametric_graph.png
 share/gnome/help/genius/C/figures/surface_graph.png
-share/gnome/help/genius/C/gel-plotting.xml
 share/gnome/help/genius/C/gel-absolute-value-modulus.xml
 share/gnome/help/genius/C/gel-comparison-operators.xml
 share/gnome/help/genius/C/gel-conditionals.xml
@@ -87,6 +86,7 @@ share/gnome/help/genius/C/gel-matrix-support.xml
 share/gnome/help/genius/C/gel-matrix-transpose.xml
 share/gnome/help/genius/C/gel-modular-evaluation.xml
 share/gnome/help/genius/C/gel-operator-list.xml
+share/gnome/help/genius/C/gel-plotting.xml
 share/gnome/help/genius/C/gel-polynomials.xml
 share/gnome/help/genius/C/gel-previous-result.xml
 share/gnome/help/genius/C/gel-references.xml

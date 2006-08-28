@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://ftp.5z.com/pub/genius/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
@@ -22,14 +22,13 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview intlhack \
 		libgnomeui vte
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure mpfr/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-extra-gcc-optimization
 INSTALLS_OMF=	yes
-INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
