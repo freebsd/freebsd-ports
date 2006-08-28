@@ -493,6 +493,7 @@
     SUBDIR += p5-Games-Dice
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
+    SUBDIR += palomino
     SUBDIR += pathological
     SUBDIR += pcgen
     SUBDIR += pear-Games_Chess
