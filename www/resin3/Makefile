@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.0.20
+PORTVERSION=		3.0.21
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
