@@ -726,7 +726,7 @@
     SUBDIR += wargus
     SUBDIR += warsow
     SUBDIR += warsow-data
-    SUBDIR += warzone2100
+    SUBDIR += warzone
     SUBDIR += wesnoth
     SUBDIR += wmeyes
     SUBDIR += wmfortune

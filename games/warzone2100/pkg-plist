@@ -1,6 +1,0 @@
-bin/warzone
-%%DATADIR%%/mp.wz
-%%DATADIR%%/warzone.wz
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
