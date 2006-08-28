@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	libsieve
 MAINTAINER=	mark_sf@kikg.ifmo.ru
 COMMENT=	A library for parsing, sorting and filtering mail
 
-BROKEN=		Does not compile
-
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/src
 CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
@@ -24,6 +22,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
+USE_BISON=	yes
 USE_LDCONFIG=	yes
 # get rid of the `size_t' problem in header.y
 USE_GCC=	3.2+
