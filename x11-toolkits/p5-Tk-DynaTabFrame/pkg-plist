@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/DynaTabFrame/.packlist
+%%SITE_PERL%%/Tk/DynaTabFrame.pm
+@dirrmtry %%SITE_PERL%%/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/DynaTabFrame
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
