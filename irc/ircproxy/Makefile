@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ircproxy
-PORTVERSION=	1.2.41
+DISTVERSION=	1.2.42d.pre2
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.night-light.net/pub/unix/ircproxy/
-DISTNAME=	ircproxy-1.2.41d.pl2
+MASTER_SITES=	http://www.ircproxy.night-light.net/files/
 
-MAINTAINER=	jonaski@night-light.net
-COMMENT=	An IRC proxy server
+MAINTAINER=	jonas@night-light.net
+COMMENT=	An IRC proxy/bouncer daemon
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/config
 
 #
@@ -32,8 +31,5 @@ pre-build:
 	fi;
 	${CHMOD} u+x ${WRKSRC}/pkg-install || exit 1
 	${CHMOD} u+x ${WRKSRC}/pkg-deinstall || exit 1
-
-post-configure:
-	@${REINPLACE_CMD} -e 's+^MAIL=+MAIL="/bin/true"+' ${WRKSRC}/sendreport.sh
 
 .include <bsd.port.mk>
