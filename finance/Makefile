@@ -23,6 +23,7 @@
     SUBDIR += mybudget
     SUBDIR += myphpmoney
     SUBDIR += openhbci
+    SUBDIR += opentaxsolver
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-OCV
     SUBDIR += p5-Business-OnlinePayment
