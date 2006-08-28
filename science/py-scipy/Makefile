@@ -34,6 +34,10 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if !exists(${LOCALBASE}/lib/libalapack.a)
+IGNORE=	Atlas needs to be built with WITH_STATICLIB for scipy to function properly
+.endif
+
 post-install:
 	@${RMDIR} ${PYTHON_SITELIBDIR}/weave/swig # empty
 .for dir in ${PYTHON_SITELIBDIR}/gui_thread ${PYTHON_SITELIBDIR}/scipy \
