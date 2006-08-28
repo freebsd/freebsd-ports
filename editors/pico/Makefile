@@ -22,8 +22,15 @@ DISTNAME=	pine${PORTVERSION}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	PIne's message COmposition editor
 
+OPTIONS=	ISPELL "Use ispell as the spell checker" on \
+		NO_SPELLER "Do not use a spell checker" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_NO_SPELLER)
 .if !defined(WITHOUT_ISPELL)
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+.endif
 .endif
 
 WRKSRC=		${WRKDIR}/pine${PORTVERSION}/pico
@@ -44,4 +51,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pico ${PREFIX}/bin/pico
 	${INSTALL_MAN} ${WRKSRC}/../doc/pico.1 ${PREFIX}/man/man1/pico.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -24,8 +24,15 @@ EXTRACT_ONLY=	bind-src.tar.gz bind-doc.tar.gz
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
 
-.if defined(PORT_REPLACES_BASE_BIND8_INCLUDES)
-PORT_REPLACES_BASE_BIND8=	yes
+CONFLICTS=	bind-8.* bind9* host-* zh-bind-8.*
+
+OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
+		REPLACE_BASE_INCLUDES "Replace includes as well as binaries" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_REPLACE_BASE_INCLUDES)
+WITH_REPLACE_BASE=	yes
 INCLUDE_PATH=	include
 PLIST_SUB+=	INCLUDE_PATH=${INCLUDE_PATH}
 .else
@@ -33,7 +40,7 @@ INCLUDE_PATH=	include/bind
 PLIST_SUB+=	INCLUDE_PATH=${INCLUDE_PATH}
 .endif
 
-.if defined(PORT_REPLACES_BASE_BIND8)
+.if defined(WITH_REPLACE_BASE)
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
@@ -86,7 +93,7 @@ post-patch:
 	@${MV} ${WRKSRC}/lib/irs/getaddrinfo.c.sed \
 		${WRKSRC}/lib/irs/getaddrinfo.c
 
-.if defined(PORT_REPLACES_BASE_BIND8)
+.if defined(WITH_REPLACE_BASE)
 .for dir in nslookup nsupdate
 	@${SED} -e "s#{DESTBIN}#{DESTSBIN}#g" \
 	${WRKSRC}/bin/${dir}/Makefile > ${WRKSRC}/bin/${dir}/Makefile.sed
@@ -119,4 +126,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

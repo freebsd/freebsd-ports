@@ -21,9 +21,13 @@ DISTNAME=	pine${PORTVERSION}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	PINE(tm) -- a Program for Internet News & Email
 
-.if !defined(WITHOUT_ISPELL)
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-.endif
+OPTIONS=	PICO "Build and install pico, the default editor" on \
+		LDAP "Add support for LDAP" off \
+		IPV6 "Add support for IPv6" off
+
+USE_OPENSSL=	yes
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PICO)
 RUN_DEPENDS+=	pico:${PORTSDIR}/editors/pico
@@ -42,7 +46,6 @@ EXTRA_OPTS=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber"
 .if defined(WITHOUT_SSL)
 MAKE_ARGS+=	SSLTYPE=none
 .else
-USE_OPENSSL=	yes
 EXTRA_OPTS+=	SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}
 .if defined(WITH_SSL_AND_PLAINTEXT)
 EXTRA_OPTS+=	SSLTYPE=unix
@@ -127,4 +130,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

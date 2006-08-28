@@ -33,6 +33,13 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
+CONFLICTS=	bind-8.* bind84-8.* bind9-dlz-* bind9-sdb-mysql-* host-* zh-bind-8.*
+
+OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
+		THREADS	"Compile with thread support (NOT RECOMMENDED!)" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_OPENSSL_PORT)
 CONFIGURE_ARGS+=	--with-openssl=${LOCALBASE}
 .else
@@ -41,13 +48,13 @@ CONFIGURE_ARGS+=	--with-openssl
 
 # ISC staff has informed me that for 9.3.x, threads are always a bad idea.
 # Leave the affirmative option for those that want to experiment.
-.if defined(WITH_BIND9_THREADS)
+.if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if defined(WITH_PORT_REPLACES_BASE_BIND9)
+.if defined(WITH_REPLACE_BASE)
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 BIND_DESTETC=	/etc/namedb
@@ -98,19 +105,6 @@ MAN5=	named.conf.5 rndc.conf.5
 MAN8=	dnssec-keygen.8 dnssec-signzone.8 lwresd.8 named-checkconf.8 \
 	named-checkzone.8 named.8 nsupdate.8 rndc-confgen.8 rndc.8
 
-pre-fetch:
-.if defined(PORT_REPLACES_BASE_BIND9)
-	@${ECHO} ""
-	@${ECHO} "***************************************************"
-	@${ECHO} "Support for the old PORT_REPLACES_BASE_BIND9 option"
-	@${ECHO} "will be removed in future versions of the port."
-	@${ECHO} "Use WITH_PORT_REPLACES_BASE_BIND9 instead."
-	@${ECHO} "***************************************************"
-	@${ECHO} ""
-	@/bin/sleep 5
-WITH_PORT_REPLACES_BASE_BIND9=	true
-.endif
-
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
@@ -136,4 +130,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
