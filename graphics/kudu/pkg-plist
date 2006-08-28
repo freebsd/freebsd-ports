@@ -6,12 +6,13 @@ bin/kudu
 %%DATADIR%%/images/bone.png
 %%DATADIR%%/images/edge.png
 %%DATADIR%%/images/face.png
+%%DATADIR%%/images/joint.png
 %%DATADIR%%/images/logo.png
 %%DATADIR%%/images/object.png
 %%DATADIR%%/images/shape.png
 %%DATADIR%%/images/vertex.png
 %%DATADIR%%/scripts/Axle-Spinner.py
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
