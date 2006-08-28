@@ -262,15 +262,28 @@
                      else if (mailbuf.st_atime > mailbuf.st_mtime)
                        printf("You have mail.\n");
                      else
-@@ -1248,6 +1374,11 @@
-               }
+@@ -1249,6 +1375,11 @@
            }
        }
-+
+ 
 +#if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
 +      login_close(lc);
 +      endpwent();
 +#endif /* __FreeBSD__ && HAVE_LOGIN_CAP_H */
- 
++
        execve(shell, argv, env);
        /* Executing the shell failed. */
+       perror(shell);
+@@ -2315,9 +2446,9 @@
+     {
+       ssh_encode_buffer(&buffer,
+                         SSH_FORMAT_UINT32, (SshUInt32) -exit_status,
+-                        SSH_FORMAT_BOOLEAN, FALSE,
+-                        SSH_FORMAT_UINT32_STR, NULL, 0,
+-                        SSH_FORMAT_UINT32_STR, NULL, 0,
++                        SSH_FORMAT_BOOLEAN, (Boolean) FALSE,
++                        SSH_FORMAT_UINT32_STR, NULL, (size_t) 0,
++                        SSH_FORMAT_UINT32_STR, NULL, (size_t) 0,
+                         SSH_FORMAT_END);
+ 
+ 
