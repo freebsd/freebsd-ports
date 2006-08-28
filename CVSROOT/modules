@@ -5182,6 +5182,7 @@ jumpgis		ports/graphics/jumpgis
 jumpgis-postgis	ports/graphics/jumpgis-postgis
 jumpnbump	ports/games/jumpnbump
 junglemonkey	ports/ftp/junglemonkey
+junicode	ports/x11-fonts/junicode
 junipoll	ports/net-mgmt/junipoll
 junit		ports/java/junit
 junkbuster	ports/www/junkbuster
