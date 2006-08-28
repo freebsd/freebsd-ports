@@ -142,6 +142,7 @@
     SUBDIR += p5-Tk-Autoscroll
     SUBDIR += p5-Tk-ColourChooser
     SUBDIR += p5-Tk-Date
+    SUBDIR += p5-Tk-DynaTabFrame
     SUBDIR += p5-Tk-Enscript
     SUBDIR += p5-Tk-FileDialog
     SUBDIR += p5-Tk-GBARR
