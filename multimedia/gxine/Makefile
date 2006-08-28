@@ -6,33 +6,49 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.3.3
-PORTREVISION=	16
+PORTVERSION=	0.5.7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
 
-MAINTAINER=	greg@chown.ath.cx
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An alternative GUI for the Xine media player
 
 LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 gnomehier
+USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+INSTALLS_ICONS=	yes
 
 MANLANG=	"" de
-MAN1=		gxine.1
+MAN1=		gxine.1 gxine_client.1
+MANCOMPRESSED=	no
 
 OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on
 
 .include <bsd.port.pre.mk>
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .if defined(WITHOUT_MOZILLA_PLUGIN)
+LIB_DEPENDS+=	js.1:${PORTSDIR}/lang/spidermonkey
+CONFIGURE_ARGS+=--without-browser-plugin
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
+USE_GECKO=	firefox mozilla seamonkey xulrunner firefox-devel
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+CONFIGURE_ARGS+=--disable-libjs
 PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
 

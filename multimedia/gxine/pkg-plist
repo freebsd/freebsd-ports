@@ -1,17 +1,50 @@
 bin/gxine
 bin/gxine_client
-%%DATADIR%%/logo.mpv
-%%DATADIR%%/pixmaps/gxine-logo.png
-%%DATADIR%%/pixmaps/gxine-icon.xpm
-%%DATADIR%%/pixmaps/wizards.png
-%%DATADIR%%/pixmaps/splash.png
-%%DATADIR%%/mediamarks
-share/gnome/apps/Multimedia/gxine.desktop
-lib/gxine/gxineplugin.a
-lib/gxine/gxineplugin.la
-lib/gxine/gxineplugin.so
+etc/gxine/gtkrc
+etc/gxine/keypad.xml
+etc/gxine/startup
+etc/gxine/toolbar-fullscreen.xml
+etc/gxine/toolbar-window.xml
 %%MOZILLA_PLUGIN%%lib/browser_plugins/gxineplugin.so
+%%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.a
+%%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.la
+%%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.so
+share/applications/gxine.desktop
+%%DATADIR%%/logo.mpv
+%%DATADIR%%/mediamarks
+%%DATADIR%%/pixmaps/gxine-icon.xpm
+%%DATADIR%%/pixmaps/nospeaker.png
+%%DATADIR%%/pixmaps/set-brightness.svg
+%%DATADIR%%/pixmaps/set-contrast.svg
+%%DATADIR%%/pixmaps/set-saturation.svg
+%%DATADIR%%/pixmaps/set-volume.svg
+%%DATADIR%%/pixmaps/speaker.png
+%%DATADIR%%/pixmaps/splash.png
+share/icons/hicolor/48x48/apps/gxine.png
+%%NLS%%share/locale/cs/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gxine.theme.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.theme.mo
+share/pixmaps/gxine.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry man/de/man1
+@dirrmtry man/de
 @dirrm lib/gxine
 %%MOZILLA_PLUGIN%%@dirrmtry lib/browser_plugins
+@dirrm etc/gxine
