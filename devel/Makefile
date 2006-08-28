@@ -1010,6 +1010,7 @@
     SUBDIR += p5-Devel-Profile
     SUBDIR += p5-Devel-Profiler
     SUBDIR += p5-Devel-RingBuffer
+    SUBDIR += p5-Devel-STrace
     SUBDIR += p5-Devel-SimpleTrace
     SUBDIR += p5-Devel-Size
     SUBDIR += p5-Devel-SmallProf
