@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.2.8
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT-based comic book archive viewer
 
+LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 
@@ -30,10 +31,4 @@ MAN1=		qcomicbook.1
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on FreeBSD 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
