@@ -7,7 +7,7 @@
 
 PORTNAME=	pcfclock
 PORTVERSION=	0.44
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www-stud.ims.uni-stuttgart.de/~voegelas/pcfclock/
 

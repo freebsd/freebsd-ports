@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: pcfdate
-# BEFORE:  SERVERS
+# REQUIRE: adjkerntz
+# BEFORE:  hostname
 #
 # Define these pcfdate_* variables in one of these files:
 #	/etc/rc.conf
