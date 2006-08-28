@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -64,12 +64,14 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		PUBLISHGMAIL "Publish::Gmail Support" on \
 		PUBDELICIOUS "Publish::Delicious Support" off \
 		ESTRAIER "Search::Estraier Support" off \
+		PUBJSON "Publish::JSON Support" off \
 		FILSPAMASSN "Filter-SpamAssassin Support" off \
 		PROFANITY "Filter::Profanity Support" off \
 		HATENARSS "Subscription::HatenaRSS Support" off \
 		NOTIFYIRC "Notify::IRC Support" off \
 		AGRXANGO "Aggregator::Xango Support" off \
 		HATENADIARY "Filter::HatenaDiaryKeywordLink Support" off \
+		LIVEDOOR "Subscription::LivedoorReader Support" off \
 		IMAGEINFO "Filter::ImageInfo Support" off \
 		FILMRKDWN "Filter::Markdown Support" off \
 		PUBLISHIMAP "Publish::IMAP Support" off \
@@ -86,7 +88,6 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 #		SUBSCRDBI "Subscription::DBI Support" off \
 #		SUBSCRFOAF "Subscription::FOAF Support" off \
 #		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
-#		LIVEDOOR "Subscription::LivedoorReader Support" off \
 #		PINGSERVER "Subscription::PingServer Support" off \
 #		PUBLISHSWF "Publish::SWF Support" off \
 
@@ -202,6 +203,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/Delicious.pm:${PORTSDIR}/net/p5-Net-Delicious
 BUILD_DEPENDS+=	${SITE_PERL}/Search/Estraier.pm:${PORTSDIR}/textproc/p5-Search-Estraier
 .endif
 
+.if defined(WITH_PUBJSON)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/JSON/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
+.endif
+
 .if defined(WITH_FILSPAMASSN)
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
@@ -229,6 +234,11 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Cache/FastMmap.pm:${PORTSDIR}/devel/p5
 
 .if defined(WITH_HATENADIARY)
 BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+.endif
+
+.if defined(WITH_LIVEDOOR)
+BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
+		${SITE_PERL}/${PERL_ARCH}/JSON/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
 .endif
 
 .if defined(WITH_IMAGEINFO)
