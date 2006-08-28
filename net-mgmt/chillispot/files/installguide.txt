@@ -129,6 +129,24 @@ uncomment & change the user & group entries from
  & change
 proxy_requests  = yes to no
 
+now create the log files freeRADIUS will use in /var/log
+mkdir /var/log/radacct
+touch /var/log/radius.log
+touch /var/log/radutmp
+touch /var/log/radwtmp
+
+assign them right permissions
+chmod 700 /var/log/radacct
+chmod 644 /var/log/radius.log
+chmod 600 /var/log/radutmp
+chmod 644 /var/log/radwtmp
+
+then change their ownership
+chown radiusd:radiusd /var/log/radacct
+chown radiusd:radiusd /var/log/radius.log
+chown radiusd:radiusd /var/log/radutmp
+chown radiusd:radiusd /var/log/radwtmp
+
 10) Now fireup freeRADIUS in debug mode 
  by issuing {PREFIX}/sbin/radiusd -X
 & using the radtest tool query freeRADIUS
