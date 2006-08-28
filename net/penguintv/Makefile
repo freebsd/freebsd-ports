@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -43,6 +42,7 @@ PLIST_SUB+=	WITH_MOZILLA="@comment "
 
 pre-fetch:
 	@${ECHO_MSG} If you are upgrading from 1.x, please export your subscriptions for save-keeping!
+	@${ECHO_MSG} The database scheme should be upgraded automatically.
 	@sleep 5
 
 do-build:
