@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	faac
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 
-PATCH_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 NO_PACKAGE=	Distribution in binary form is prohibited
@@ -33,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-post-patch:
+pre-configure:
 	@${ECHO_CMD} "" >>${WRKSRC}/libfaac/psych.h
 	@cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I .; \
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
