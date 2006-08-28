@@ -1,0 +1,40 @@
+--- src/Makefile.in.orig	Sat Mar 17 18:28:56 2001
++++ src/Makefile.in	Mon Aug 28 08:05:10 2006
+@@ -69,10 +69,10 @@
+ 
+ bin_PROGRAMS = kasm
+ 
+-kasm_SOURCES = main.cpp 		kasm_parser.yy 		kasm_lexer.ll 		kasm_mnemonics.cpp 		entrytable.cpp 		nib_io.cpp 		getopt.c 		getopt1.c
++kasm_SOURCES = main.cpp 		kasm_parser.yy 		kasm_lexer.ll 		kasm_mnemonics.cpp 		entrytable.cpp 		nib_io.cpp
+ 
+ 
+-noinst_HEADERS = kasm_parser.h 		 entrytable.hpp 		 kasm.hpp 		 nib_io.hpp 		 getopt.h
++noinst_HEADERS = kasm_parser.h 		 entrytable.hpp 		 kasm.hpp 		 nib_io.hpp
+ 
+ 
+ YFLAGS = -dt
+@@ -89,7 +89,7 @@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ kasm_OBJECTS =  main.o kasm_parser.o kasm_lexer.o kasm_mnemonics.o \
+-entrytable.o nib_io.o getopt.o getopt1.o
++entrytable.o nib_io.o
+ kasm_LDADD = $(LDADD)
+ kasm_DEPENDENCIES = 
+ kasm_LDFLAGS = 
+@@ -235,13 +235,13 @@
+ 	kasm.hpp
+ getopt.o: getopt.c ../config.h
+ getopt1.o: getopt1.c ../config.h getopt.h
+-kasm_lexer.o: kasm_lexer.cc getopt.h ../config.h entrytable.hpp \
++kasm_lexer.o: kasm_lexer.cc ../config.h entrytable.hpp \
+ 	nib_io.hpp kasm.hpp kasm_parser.h
+ kasm_mnemonics.o: kasm_mnemonics.cpp ../config.h entrytable.hpp \
+ 	nib_io.hpp kasm.hpp
+ kasm_parser.o: kasm_parser.cc ../config.h entrytable.hpp nib_io.hpp \
+ 	kasm.hpp
+-main.o: main.cpp ../config.h getopt.h entrytable.hpp nib_io.hpp kasm.hpp
++main.o: main.cpp ../config.h entrytable.hpp nib_io.hpp kasm.hpp
+ nib_io.o: nib_io.cpp ../config.h nib_io.hpp
+ 
+ info-am:

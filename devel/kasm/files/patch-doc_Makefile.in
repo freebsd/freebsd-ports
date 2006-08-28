@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sat Mar 17 18:28:53 2001
++++ doc/Makefile.in	Mon Aug 28 08:11:13 2006
+@@ -67,7 +67,7 @@
+ VERSION = @VERSION@
+ YACC = @YACC@
+ 
+-docdir = $(prefix)/doc/kalc-$(VERSION)
++docdir = $(prefix)/share/doc/kasm
+ 
+ doc_DATA = kasm.dvi kasm.ps
+ 
