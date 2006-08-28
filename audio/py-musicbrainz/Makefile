@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicbrainz
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 PORTEPOCH=	1
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
