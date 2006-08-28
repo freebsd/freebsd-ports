@@ -1,0 +1,8 @@
+Provides a strace/truss-like runtime call monitor for Perl applications.
+Note that, while strace/truss only dumps system calls, Devel::STrace
+dumps all calls to Perl subs on the application's stack.  Also note that
+Devel::STrace cannot trace non-Perl calls (e.g., calls inside XS/C
+modules), so an additional external strace/truss monitor may be needed
+to fully diagnose a misbehaving Perl script.
+
+WWW: http://search.cpan.org/dist/Devel-STrace/
