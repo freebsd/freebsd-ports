@@ -22,6 +22,7 @@ campsite/instance/database/upgrade/2.0.x/tables.sql
 campsite/instance/database/upgrade/2.1.x/data-required.sql
 campsite/instance/database/upgrade/2.1.x/tables.sql
 campsite/instance/database/upgrade/2.1.x/transfer_images.php
+campsite/instance/database/upgrade/2.1.x/transfer_images.php.orig
 campsite/instance/database/upgrade/2.1.x/transfer_templates.php
 campsite/instance/database/upgrade/2.2.x/data-required.sql
 campsite/instance/database/upgrade/2.2.x/tables.sql
@@ -36,6 +37,8 @@ campsite/instance/database/upgrade/2.5.x/init_user_types.php
 campsite/instance/database/upgrade/2.5.x/tables.sql
 campsite/instance/database/upgrade/2.5.x/upgrade_article_types.php
 campsite/instance/database/upgrade/2.5.x/upgrade_user_perms.php
+campsite/instance/database/upgrade/2.6.0/data-required.sql
+campsite/instance/database/upgrade/2.6.0/tables.sql
 campsite/sbin/campsite_autopublish
 campsite/sbin/campsite_autopublish.php
 campsite/sbin/campsite_config
@@ -82,6 +85,7 @@ campsite/www-common/html/classes/Phorum_message.php
 campsite/www-common/html/classes/Phorum_user.php
 campsite/www-common/html/classes/Publication.php
 campsite/www-common/html/classes/Section.php
+campsite/www-common/html/classes/ShortURL.php
 campsite/www-common/html/classes/SimplePager.php
 campsite/www-common/html/classes/Subscription.php
 campsite/www-common/html/classes/SubscriptionDefaultTime.php
@@ -2123,6 +2127,7 @@ campsite/www-common/html/priv/lang/kr/user_subscriptions.php
 campsite/www-common/html/priv/lang/kr/user_types.php
 campsite/www-common/html/priv/lang/kr/users.php
 campsite/www-common/html/priv/lang/nl/api.php
+campsite/www-common/html/priv/lang/nl/article_comments.php
 campsite/www-common/html/priv/lang/nl/article_files.php
 campsite/www-common/html/priv/lang/nl/article_images.php
 campsite/www-common/html/priv/lang/nl/article_topics.php
@@ -2130,6 +2135,7 @@ campsite/www-common/html/priv/lang/nl/article_type_fields.php
 campsite/www-common/html/priv/lang/nl/article_types.php
 campsite/www-common/html/priv/lang/nl/articles.php
 campsite/www-common/html/priv/lang/nl/bug_reporting.php
+campsite/www-common/html/priv/lang/nl/comments.php
 campsite/www-common/html/priv/lang/nl/country.php
 campsite/www-common/html/priv/lang/nl/feedback.php
 campsite/www-common/html/priv/lang/nl/globals.php
@@ -2141,6 +2147,7 @@ campsite/www-common/html/priv/lang/nl/localizer.php
 campsite/www-common/html/priv/lang/nl/logs.php
 campsite/www-common/html/priv/lang/nl/pub.php
 campsite/www-common/html/priv/lang/nl/sections.php
+campsite/www-common/html/priv/lang/nl/system_pref.php
 campsite/www-common/html/priv/lang/nl/templates.php
 campsite/www-common/html/priv/lang/nl/topics.php
 campsite/www-common/html/priv/lang/nl/user_subscription_sections.php
@@ -2772,6 +2779,7 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common
 @dirrm campsite/www
 @dirrm campsite/sbin
+@dirrm campsite/instance/database/upgrade/2.6.0
 @dirrm campsite/instance/database/upgrade/2.5.x
 @dirrm campsite/instance/database/upgrade/2.4.x
 @dirrm campsite/instance/database/upgrade/2.3.x
