@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	daimonin_client
-DISTVERSION=	BETA3-0966
-PORTREVISION=	1
+DISTVERSION=	BETA3-0967
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	daimonin
@@ -27,6 +26,8 @@ WRKSRC=		${WRKDIR}/daimonin/client/make/linux
 
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|daimonin-beta03-0\.966|daimonin-beta03-0\.967|' \
+		${WRKSRC}/Makefile.in
 	@${CP} ${PORTSDIR}/Templates/config.guess ${PORTSDIR}/Templates/config.sub \
 		${WRKSRC}/make_utils/
 
