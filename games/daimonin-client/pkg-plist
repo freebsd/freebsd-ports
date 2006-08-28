@@ -1,5 +1,7 @@
 bin/daimonin
 share/daimonin_client/sfx/arrow_hit.wav
+share/daimonin_client/sfx/book.wav
+share/daimonin_client/sfx/page.wav
 share/daimonin_client/sfx/weapon_attack.wav
 share/daimonin_client/sfx/warning_statup.wav
 share/daimonin_client/sfx/warning_statdown.wav
@@ -136,6 +138,8 @@ share/daimonin_client/media/welcome.png
 @dirrm share/daimonin_client/media
 share/daimonin_client/cache/README.txt
 @dirrm share/daimonin_client/cache
+share/daimonin_client/bitmaps/journal.png
+share/daimonin_client/bitmaps/font11x15.png
 share/daimonin_client/bitmaps/apply.png
 share/daimonin_client/bitmaps/warn_food.png
 share/daimonin_client/bitmaps/wand.png
