@@ -7,7 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/arpwatch/ \

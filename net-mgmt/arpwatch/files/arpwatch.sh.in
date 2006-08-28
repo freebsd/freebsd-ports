@@ -12,7 +12,6 @@
 #
 arpwatch_enable=${arpwatch_enable:-"NO"}
 arpwatch_dir="%%PREFIX%%/arpwatch/"
-arpwatch_interfaces=
 
 . %%RC_SUBR%%
 
