@@ -46,6 +46,7 @@ amavis:*:113:
 dhis:*:114:
 _symon:*:115:
 smokeping:*:117:
+ircproxyd:*:118:
 postfix:*:125:
 maildrop:*:126:
 _bgpd:*:130:
