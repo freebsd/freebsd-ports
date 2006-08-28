@@ -1,5 +1,0 @@
-A bit of post install work needs to be done to get everything rolling
-rename & copy chillspot.sample from ${PREFIX}/share/chillispot/ to ${PREFIX}/etc/chillispot.conf
-& hotspotlogin.cgi from ${PREFIX}/share/chillispot/ to your apache cgi-bin directory
-
-For further config info/help check out the chillispot forum & mailing list

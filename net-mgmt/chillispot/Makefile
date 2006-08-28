@@ -7,7 +7,7 @@
 
 PORTNAME=	chillispot
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chillispot.org/download/ \
 		http://www.geeklan.co.uk/files/ \
@@ -20,10 +20,12 @@ GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 CONFIGURE_TARGET=-build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
+USE_RC_SUBR=	chillispot.sh
+SUB_FILES=	pkg-message
 MAN8=		chilli.8
 
 OPTIONS=	RAW "Latest Release Of Apache & mySQL" Off \
-		MATURE "Stable Releases of Apache &  mySQL" Off \
+		MATURE "Stable Releases of Apache with mod_ssl &  MySQL" Off \
 		FREE "freeRADIUS" Off \
 		OPENR "openradius" Off
 
@@ -35,7 +37,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20 \
 .endif
 
 .if defined(WITH_MATURE)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
+RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13-modssl \
 	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql41-server
 .endif
 
@@ -50,11 +52,14 @@ RUN_DEPENDS+=	radiusd:${PORTSDIR}/net/openradius
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/chilli.conf ${DATADIR}/chilli.sample
+	${INSTALL_MAN} ${WRKSRC}/doc/chilli.conf ${DATADIR}/chilli.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/doc/dictionary.chillispot ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/freeradius.users ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/hotspotlogin.cgi ${DATADIR}
+	${INSTALL_MAN} ${FILESDIR}/installguide.txt ${DATADIR}
+	${INSTALL_MAN} ${FILESDIR}/pf.conf.sample ${DATADIR}
+	${INSTALL_MAN} ${FILESDIR}/ipfw-config.sample ${DATADIR}
 .endif
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

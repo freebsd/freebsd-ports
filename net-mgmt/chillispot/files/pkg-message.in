@@ -1,0 +1,8 @@
+|
+| OK, everything you're going to need is going to be in %%DATADIR%%
+| This update includes a sample ipfw config files, a sample pf config file and
+| a installation guide which covers how to get a basic hotspot up & running
+| with chillispot, freeRADIUS & Apache+mod_ssl
+|
+| For further config info/help check out the chillispot forum & mailing list
+|
