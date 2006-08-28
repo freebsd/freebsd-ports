@@ -58,6 +58,7 @@ hplip:*:116:116:HPLIP Server:/nonexistent:/sbin/nologin
 smokeping:*:117:117:SmokePing Daemon:/nonexistent:/sbin/nologin
 ircproxyd:*:118:118:Night Light IRC Proxy:/nonexistent:/sbin/nologin
 postfix:*:125:125:Postfix Mail System:/var/spool/postfix:/sbin/nologin
+vchat:*:128:128:VChat Conferencing System:/nonexistent:/sbin/nologin
 _bgpd:*:130:130:BGP Daemon:/var/empty:/sbin/nologin
 _ospfd:*:131:131:OSPF Daemon:/var/empty:/sbin/nologin
 rbldns:*:153:153:rbldnsd pseudo-user:/nonexistent:/sbin/nologin
