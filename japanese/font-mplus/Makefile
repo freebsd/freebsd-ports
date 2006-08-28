@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplusfonts
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/5030/ \
 		http://wids.net/archive/mplusfonts/distfiles/
@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCS=		INSTALL_E LICENSE_E README_E \
 		INSTALL_J LICENSE_J README_J
 
