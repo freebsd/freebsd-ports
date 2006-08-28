@@ -6038,6 +6038,7 @@ libnetdude	ports/net/libnetdude
 libneural	ports/math/libneural
 libnewmail	ports/mail/libnewmail
 libnids		ports/net/libnids
+libnoise	ports/audio/libnoise
 libnotify	ports/devel/libnotify
 libnova		ports/astro/libnova
 libnss-mysql	ports/net/libnss-mysql
