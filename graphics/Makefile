@@ -330,6 +330,7 @@
     SUBDIR += libfpx
     SUBDIR += libgdgeda
     SUBDIR += libgeotiff
+    SUBDIR += libgfx
     SUBDIR += libggi
     SUBDIR += libggigcp
     SUBDIR += libggimisc
