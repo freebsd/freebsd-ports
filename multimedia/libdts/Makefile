@@ -7,6 +7,7 @@
 
 PORTNAME=	libdts
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://debian.unnet.nl/pub/videolan/libdts/${PORTVERSION}/ \
 		http://download.videolan.org/pub/videolan/libdts/${PORTVERSION}/
@@ -19,4 +20,11 @@ USE_GNOME=	pkgconfig gnomehack
 
 MAN1=		dtsdec.1 extract_dts.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldts|ldts_pic|' ${WRKSRC}/libdts/libdts.pc.in
+.endif
+
+.include <bsd.port.post.mk>
