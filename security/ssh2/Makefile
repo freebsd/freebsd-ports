@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh2
 PORTVERSION=	3.2.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security ipv6
 # The list of official mirror sites is at:
 # http://www.ssh.com/support/downloads/secureshellserver/non-commercial.html
@@ -115,8 +115,8 @@ pre-everything::
 	@${ECHO_MSG} "				security/krb5 is installed."
 .endif
 .if !defined(WITHOUT_X11)
-	@${ECHO_MSG} "WITHOUT_X11=yes			builds without X11 support. Same as compiling"
-	@${ECHO_MSG} "				security/ssh2-nox11."
+	@${ECHO_MSG} "WITHOUT_X11=yes			builds without X11 support. Setting this is"
+	@${ECHO_MSG} "				the same as compiling security/ssh2-nox11."
 .endif
 	@${ECHO_MSG} ""
 .endif
@@ -131,6 +131,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\/etc\/ssh2|${PREFIX}&|g' \
 		${WRKSRC}/apps/ssh/subconfig/${i}
 .endfor
+	@${FIND} ${WRKSRC} -name Makefile.in -print0 -type f | \
+		${XARGS} -0 ${REINPLACE_CMD} -E -e \
+		's|-I\$$\(top_srcdir\)\/lib\/zlib||g; \
+		s|\$$\(top_builddir\)\/lib\/zlib\/libz.a||g'
 	@${REINPLACE_CMD} -e 's|\/etc\/ssh2|${PREFIX}&|g' \
 		${WRKSRC}/HOWTO.anonymous.sftp
 	@${REINPLACE_CMD} -e \
