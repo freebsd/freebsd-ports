@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.0.24
+PORTVERSION=	0.0.25
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,5 +17,13 @@ COMMENT=	Highly configurable source code beautifier
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+post-install:
+	cd ${WRKSRC}/documentation; \
+		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; ; \
+		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+.endif
 
 .include <bsd.port.mk>
