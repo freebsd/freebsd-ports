@@ -36,6 +36,7 @@
     SUBDIR += gnome-font-sampler
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
+    SUBDIR += junicode
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += libXft
