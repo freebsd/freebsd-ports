@@ -1,0 +1,11 @@
+Provides shared memory structures (using memory mapped files via
+IPC::Mmap) to be used by diagnostic and debugger applications for Perl
+scripts (see Devel::STrace).  Using XS/C code to maximize performance,
+creates a set of ringbuffers with a configurable number of slots.  Each
+slot includes a field for a linenumber, a timestamp, and a fully
+qualified subroutine name.  Each ring buffer also includes additional
+headers and fields to support diagnostic interfaces, e.g., watched
+expressions, command/reponse interfaces to the monitored applications,
+etc.
+
+WWW: http://search.cpan.org/dist/Devel-RingBuffer/
