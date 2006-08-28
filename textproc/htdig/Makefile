@@ -41,6 +41,7 @@ OPTIONS=	APACHE "Include ${APACHE_PORT} as a dependency" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
+USE_APACHE=	yes
 CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
 .endif
