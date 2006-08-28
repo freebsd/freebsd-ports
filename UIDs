@@ -56,6 +56,7 @@ dhis:*:114:114:DHIS Daemon:/nonexistent:/sbin/nologin
 _symon:*:115:115:Symon Account:/var/empty:/sbin/nologin
 hplip:*:116:116:HPLIP Server:/nonexistent:/sbin/nologin
 smokeping:*:117:117:SmokePing Daemon:/nonexistent:/sbin/nologin
+ircproxyd:*:118:118:Night Light IRC Proxy:/nonexistent:/sbin/nologin
 postfix:*:125:125:Postfix Mail System:/var/spool/postfix:/sbin/nologin
 _bgpd:*:130:130:BGP Daemon:/var/empty:/sbin/nologin
 _ospfd:*:131:131:OSPF Daemon:/var/empty:/sbin/nologin
