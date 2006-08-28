@@ -1,0 +1,5 @@
+#!/bin/sh
+CURDIR=`pwd`
+cd DATADIR
+nice -n 20 ./BINNAME -freeBSD
+cd $CURDIR
