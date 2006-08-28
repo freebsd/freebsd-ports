@@ -20,8 +20,6 @@ DISTNAME=	htdig-3.2.0b6
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	A www indexing and searching system
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-default-config-file=${PREFIX}/etc/htdig/htdig.conf \
@@ -31,16 +29,21 @@ CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-search-dir=${PREFIX}/www/data \
 		--with-image-dir=${PREFIX}/www/icons/htdig \
 		--with-image-url-prefix=/icons/htdig \
-		--with-ssl \
-		--with-apache=${LOCALBASE}/sbin
+		--with-ssl
 
 MAN1=		htdig.1 htdig-pdfparser.1 htdump.1 htfuzzy.1 htload.1 \
 		htmerge.1 htnotify.1 htpurge.1 htsearch.1 htstat.1 rundig.1
 
 MAN8=		htdigconfig.8
-APACHE_COMPAT=	YES
+
+OPTIONS=	APACHE "Include ${APACHE_PORT} as a dependency" on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_APACHE)
+CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
+.endif
 
 .if ${OSVERSION} < 500000
 EXTRA_PATCHES+=	${PATCHDIR}/RELENG_4-patch-htnet_SSLConnection.cc
