@@ -9,6 +9,13 @@ upgrades.
 
 
 20060828:
+  AFFECTS: users of devel/gpc
+  AUTHOR: mi+mx@aldan.algebra.com
+
+  devel/gpc port directory was renamed to devel/libgpc to avoid conflicting
+  with lang/gpc.
+
+20060828:
   AFFECTS: users of games/warzone2100
   AUTHOR: alepulver@FreeBSD.org
 

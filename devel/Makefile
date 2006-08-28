@@ -368,7 +368,6 @@
     SUBDIR += gonzui
     SUBDIR += google-sparsehash
     SUBDIR += gorm
-    SUBDIR += gpc
     SUBDIR += gperf
     SUBDIR += gpsim
     SUBDIR += gputils
@@ -527,6 +526,7 @@
     SUBDIR += libglademm
     SUBDIR += libglademm24
     SUBDIR += libgnugetopt
+    SUBDIR += libgpc
     SUBDIR += libgsf
     SUBDIR += libgsf-gnome
     SUBDIR += libgtop
