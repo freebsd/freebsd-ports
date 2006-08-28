@@ -1,0 +1,15 @@
+kasm is a System RPL/Machine Language assembler for the Saturn microprocessor,
+used in the HP48/HP49 calculators (this microprocessor is also used in other
+HP calculators, but kasm is made specifically for the HP48/HP49
+calculators). It uses the same syntax as the MASD compiler (found in the
+MetaKernel program for HP48 calculators and in the HP49 calculator). This
+syntax, which has only very small incompatibilities with the traditional
+syntax (used in the HP Tools, in the GNU Tools and in JAZZ), supports a few
+constructs that make the assembly language be closer to a high level
+programming language. It supports all the structures (blocks, etc.) and
+shortcuts (RPL, SCREEN, etc.) of the MASD compiler in the HP49G calculators.
+
+WWW: http://k-asm.sourceforge.net/
+
+- Jean-Yves Lefort
+jylefort@FreeBSD.org

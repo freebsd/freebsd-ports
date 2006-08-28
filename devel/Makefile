@@ -447,6 +447,7 @@
     SUBDIR += jude-community
     SUBDIR += judy
     SUBDIR += kaptain
+    SUBDIR += kasm
     SUBDIR += kcachegrind
     SUBDIR += kdbg
     SUBDIR += kdesdk3
