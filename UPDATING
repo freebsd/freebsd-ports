@@ -8,6 +8,13 @@ upgrades.
 
 
 
+20060828:
+  AFFECTS: users of games/warzone2100
+  AUTHOR: alepulver@FreeBSD.org
+
+  games/warzone2100 port directory was renamed to games/warzone to match
+  the port distfile and data directory.
+
 20060827:
   AFFECTS: users of devel/perforce
   AUTHOR: lth@FreeBSD.org

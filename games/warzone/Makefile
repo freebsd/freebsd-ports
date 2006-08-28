@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	warzone2100
+PORTNAME=	warzone
 PORTVERSION=	2.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
-DISTNAME=	warzone-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
@@ -33,8 +32,6 @@ CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS}"
-
-DATADIR=	${PREFIX}/share/warzone
 
 post-patch:
 	@${REINPLACE_CMD} -e '/stdint.h/d' ${WRKSRC}/lib/ivis_opengl/screen.c

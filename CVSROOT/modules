@@ -14456,7 +14456,7 @@ wargus		ports/games/wargus
 warppipe	ports/net/warppipe
 warsow		ports/games/warsow
 warsow-data	ports/games/warsow-data
-warzone2100	ports/games/warzone2100
+warzone		ports/games/warzone
 washerdryer	ports/x11-clocks/washerdryer
 watchdog	ports/sysutils/watchdog
 watchfolder	ports/sysutils/watchfolder
