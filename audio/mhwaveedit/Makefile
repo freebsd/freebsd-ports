@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -24,6 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--disable-optimization --without-alsalib
 
 PLIST_FILES=	bin/mhwaveedit \
+		share/locale/de/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
