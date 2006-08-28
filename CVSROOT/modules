@@ -3999,6 +3999,7 @@ gxmms2		ports/audio/gxmms2
 gxset		ports/x11/gxset
 gyach		ports/net-im/gyach
 gzrecover	ports/archivers/gzrecover
+gzstream	ports/devel/gzstream
 h2n		ports/dns/h2n
 ha		ports/archivers/ha
 hackbot		ports/security/hackbot
