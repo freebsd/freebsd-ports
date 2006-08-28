@@ -1,12 +1,12 @@
---- src/http.c.orig	Sat Apr 19 02:22:23 2003
-+++ src/http.c	Sat Apr 19 02:22:34 2003
+--- src/http.c.orig	Thu Jun 29 04:35:39 2006
++++ src/http.c	Tue Jul 11 00:54:35 2006
 @@ -35,6 +35,9 @@
- #include <unistd.h>
  #include <ctype.h>
  #include <errno.h>
+ 
 +#include <netinet/in.h>
 +#include <arpa/inet.h>
 +#define IPPROTO_TCP 6
- 
  #include "http.h"
+ #include "utils.h"
  
