@@ -1,0 +1,23 @@
+===>  Basic Instructions:
+
+After kldload fuse.ko (see sysutils/fusefs-kmod documentation) and setting
+
+	# sysctl vfs.usermount=1
+
+you should make .smb directory in your homedir:
+
+	% mkdir ~/.smb
+
+Copy your smb.conf (usually in %%PREFIX%%/etc/) and
+%%PREFIX%%/share/doc/smbnetfs/smbnetfs.conf to this directory:
+
+	% cp %%PREFIX%%/smb.conf %%PREFIX%%/share/doc/smbnetfs/smbnetfs.conf ~/.smb/
+
+Make mountpoint for smb network and mount it:
+	
+	% mkdir ~/mountpoint
+	% smbnetfs ~/mountpoint
+
+Now you can get access to smb shares in your network, for example:
+
+	% cd ~/mountpoint/ip-addr

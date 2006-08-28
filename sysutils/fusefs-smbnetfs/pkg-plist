@@ -1,0 +1,5 @@
+bin/smbnetfs
+share/doc/smbnetfs/INSTALL
+share/doc/smbnetfs/RUSSIAN.FAQ
+share/doc/smbnetfs/smbnetfs.conf
+@dirrm share/doc/smbnetfs
