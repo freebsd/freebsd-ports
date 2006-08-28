@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	MediaWiki
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/S/SP/SPECTRUM/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OOP MediaWiki engine client
 
 RUN_DEPENDS=	${SITE_PERL}/Config/IniHash.pm:${PORTSDIR}/devel/p5-Config-IniHash \
