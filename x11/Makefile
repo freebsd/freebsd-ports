@@ -35,6 +35,7 @@
     SUBDIR += decurs
     SUBDIR += deskmenu
     SUBDIR += dgs
+    SUBDIR += dmenu
     SUBDIR += docker
     SUBDIR += dxpc
     SUBDIR += dynamag
