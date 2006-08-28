@@ -7822,6 +7822,7 @@ openssh-askpass	ports/security/openssh-askpass
 openssh-portable	ports/security/openssh-portable
 openssl-beta	ports/security/openssl-beta
 openssl-stable	ports/security/openssl-stable
+opentaxsolver	ports/finance/opentaxsolver
 openthreads	ports/devel/openthreads
 openttd		ports/games/openttd
 openuniverse	ports/astro/openuniverse
