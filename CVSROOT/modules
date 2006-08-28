@@ -5917,6 +5917,7 @@ libgeda		ports/cad/libgeda
 libgenome	ports/biology/libgenome
 libgeotiff	ports/graphics/libgeotiff
 libgetline	ports/devel/libgetline
+libgfx		ports/graphics/libgfx
 libggi		ports/graphics/libggi
 libggigcp	ports/graphics/libggigcp
 libggimisc	ports/graphics/libggimisc
