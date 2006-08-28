@@ -1,0 +1,9 @@
+dmenu is a minimalistic X11 menu. It reads a newline separated list of items
+from stdin and shows them as a menu on the top of the screen. When the user
+selects one item or types any text and presses Enter, his choice is printed to
+stdout.
+
+dmenu was developed as an addition to the dwm window manager, but can be used
+in any X11-environment.
+
+WWW: http://10kloc.org/dwm/
