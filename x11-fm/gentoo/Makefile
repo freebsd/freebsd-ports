@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.55
-PORTREVISION=	2
+PORTVERSION=	0.11.56
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
+OPTIONS=	NLS "Native Language Support" on \
+		FAM "File Alteration Monitor Support" off
+
 USE_GNOME=	gnometarget gtk12
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		gentoo.1
 
-OPTIONS=	NLS "Native Language Support" on \
-		FAM "File Alteration Monitor Support" off
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +40,9 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_FAM)
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+USE_FAM=	yes
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--disable-fam
 .endif
