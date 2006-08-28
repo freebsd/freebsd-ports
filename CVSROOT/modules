@@ -10430,6 +10430,7 @@ paintlib	ports/graphics/paintlib
 pal		ports/deskutils/pal
 palmos-sdk	ports/palm/palmos-sdk
 palmpower	ports/palm/palmpower
+palomino	ports/games/palomino
 pam-mysql	ports/security/pam-mysql
 pam-pgsql	ports/security/pam-pgsql
 pam_af		ports/security/pam_af
