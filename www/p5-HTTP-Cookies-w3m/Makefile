@@ -1,0 +1,25 @@
+# New ports collection makefile for:	p5-HTTP-Cookies-w3m
+# Date created:		2006-08-27
+# Whom:			Masahiro Teramoto <markun@onohara.to>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	HTTP-Cookies-w3m
+PORTVERSION=	0.01
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	HTTP
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	markun@gate.onohara.to
+COMMENT=	Cookie storage and management for w3m
+
+BUILD_DEPENDS=	${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Install
+
+MAN3=		HTTP::Cookies::w3m.3
+
+PERL_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/w3m/.packlist
+%%SITE_PERL%%/HTTP/Cookies/w3m.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies/w3m
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Cookies
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP/Cookies
+@dirrmtry %%SITE_PERL%%/HTTP
