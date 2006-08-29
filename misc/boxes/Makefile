@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	boxes
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://boxes.thomasjensen.com/download/ \
 		${MASTER_SITE_SUNSITE}
