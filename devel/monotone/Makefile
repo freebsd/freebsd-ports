@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		MAKEINFO="makeinfo --no-split"
 
 PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
-		"@dirrm share/zsh/site-functions" \
+		"@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true" \
 		"@dirrmtry share/zsh"
 INFO=		monotone
 MAN1=		mtn.1
