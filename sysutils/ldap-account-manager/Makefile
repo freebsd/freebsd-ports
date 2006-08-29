@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -19,7 +18,7 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
-USE_PHP=	pcre xml gettext session mcrypt ldap
+USE_PHP=	pcre xml gettext session mcrypt ldap mhash iconv
 WANT_PHP_WEB=	yes
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
@@ -29,10 +28,27 @@ WWWOWN?=	www
 WWWGRP?=	www
 PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
-WWW_DATA=	index.html config graphics help lib locale sess style templates tmp
-MYPORTDOCS=	HISTORY README TODO COPYING INSTALL VERSION copyright docs/*
+WWW_DATA=	index.html config graphics help lib sess style templates tmp
+WWW_LOCALE=	locale
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+FLAG_NLS=	true
+.endif
+
+MYPORTDOCS =	COPYING HISTORY INSTALL README TODO copyright \
+	docs/README.Kolab.txt docs/README.fpdf.htm \
+	docs/README.hosts.txt docs/README.lamdaemon.txt \
+	docs/README.openldap.txt docs/README.schema.txt \
+	docs/README.security.txt docs/README.upgrade.txt
+
 LAM_SCRIPTS=	lib/lamdaemon.pl
-PORTDOCS=	*
+HTMLPORTDOCS=	docs/devel
 
 do-configure:
 	@${RM} ${WRKSRC}/config/shells
@@ -43,12 +59,20 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${TAR} cf - ${MYPORTDOCS} | ${TAR} xf - -C ${DOCSDIR}
+	@${MKDIR} ${PREFIX}/${WWW_ROOT}/html
+	cd ${WRKSRC} && ${TAR} -C ${HTMLPORTDOCS} -cf - . | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}/html
 .endif
+
+.if defined(FLAG_NLS)
+	cd ${WRKSRC} && ${TAR} cf - ${WWW_LOCALE} | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}
+.endif
+
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}/tmp
 	@[ -e ${PREFIX}/${WWW_ROOT}/config/config.cfg ] || \
-			${INSTALL_DATA} ${WRKSRC}/config/config.cfg_sample ${PREFIX}/${WWW_ROOT}/config/config.cfg
+		${INSTALL_DATA} ${WRKSRC}/config/config.cfg_sample ${PREFIX}/${WWW_ROOT}/config/config.cfg
 	@[ -e ${PREFIX}/${WWW_ROOT}/config/lam.conf ] || \
-			${INSTALL_DATA} ${WRKSRC}/config/lam.conf_sample ${PREFIX}/${WWW_ROOT}/config/lam.conf
+		${INSTALL_DATA} ${WRKSRC}/config/lam.conf_sample ${PREFIX}/${WWW_ROOT}/config/lam.conf
+
 post-patch:
 	@${SED} -e "s;%%WWWOWN%%;${WWWOWN};g" \
 		-e "s;%%WWWGRP%%;${WWWGRP};g" \
@@ -64,4 +88,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} WWW_ROOT=${WWW_ROOT} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
