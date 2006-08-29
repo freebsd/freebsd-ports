@@ -23,7 +23,7 @@ CONFIGURE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 
 .include <bsd.port.pre.mk>
 
- byacc broken, http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/85115"
+# byacc broken, http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/85115"
 .if ${OSVERSION} >= 500113
 BUILD_DEPENDS+=	byaccj:${PORTSDIR}/devel/byaccj
 .endif
