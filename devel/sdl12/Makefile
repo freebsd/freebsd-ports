@@ -16,17 +16,15 @@ DISTNAME=	SDL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API
 
-LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-video-aalib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
@@ -44,7 +42,8 @@ PORTDOCS=	*
 .endif
 
 OPTIONS=	NAS	"Include support for the Network Audio System" Off \
-		GL	"Include support for OpenGL" On
+		GL	"Include support for OpenGL" On \
+		AALIB	"Include support for AA-lib" On
 
 .include <bsd.port.pre.mk>
 
@@ -68,6 +67,12 @@ CONFIGURE_ARGS+=--disable-video-opengl
 .else
 USE_GL=		yes
 CONFIGURE_ARGS+=--enable-video-opengl
+.endif
+.if defined(WITHOUT_AALIB)
+CONFIGURE_ARGS+=--disable-video-aalib
+.else
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+CONFIGURE_ARGS+=--enable-video-aalib
 .endif
 .if exists(/usr/include/libusbhid.h)
 CONFIGURE_ENV+=	USB_LIBS=-lusbhid
