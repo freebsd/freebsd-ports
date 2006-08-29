@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2006-06-26
+DISTVERSION=		2006-08-28
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\

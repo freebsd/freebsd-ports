@@ -20,18 +20,14 @@
 %%INSTDIR%%/demos/electric/electric.cache.lib
 %%INSTDIR%%/demos/electric/electric.pro
 %%INSTDIR%%/demos/electric/electric.sch
-%%INSTDIR%%/demos/interf_u/interf_u.000
 %%INSTDIR%%/demos/interf_u/interf_u.brd
 %%INSTDIR%%/demos/interf_u/interf_u.cache.lib
 %%INSTDIR%%/demos/interf_u/interf_u.cmp
-%%INSTDIR%%/demos/interf_u/interf_u.net
 %%INSTDIR%%/demos/interf_u/interf_u.pro
 %%INSTDIR%%/demos/interf_u/interf_u.sch
-%%INSTDIR%%/demos/interf_u/interf_u.tmp
 %%INSTDIR%%/demos/microwave/microwave.brd
 %%INSTDIR%%/demos/microwave/microwave.pro
 %%INSTDIR%%/demos/microwave/shape1.txt
-%%INSTDIR%%/demos/pic_programmer/$savepcb.brd
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.brd
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.cache.lib
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.cmp
@@ -372,6 +368,12 @@
 %%INSTDIR%%/help/fr/pcbnew/doc_pcbnew.zip
 %%INSTDIR%%/help/fr/pcbnew/footprints.pdf
 %%INSTDIR%%/help/fr/pcbnew/pcbnew.html
+%%INSTDIR%%/help/it/docs_src/pcbnew/pcbnew_chap1_IT.sxw
+%%INSTDIR%%/help/it/docs_src/pcbnew/pcbnew_chap3_IT.sxw
+%%INSTDIR%%/help/it/docs_src/pcbnew/pcbnew_chap2_IT.sxw
+%%INSTDIR%%/help/it/docs_src/eeschema/Eeschema_Chapter12_IT.sxw
+%%INSTDIR%%/help/it/docs_src/eeschema/Eeschema_Chapter1_IT.sxw
+%%INSTDIR%%/help/it/docs_src/eeschema/Eeschema_Chapter6_IT.sxw
 %%INSTDIR%%/help/pt/contents.hhc
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt.html
 %%INSTDIR%%/help/pt/cvpcb/cvpcb-pt_html_11370164.png
@@ -503,6 +505,8 @@
 %%INSTDIR%%/how-to-build-kicad.txt~
 %%INSTDIR%%/install.txt
 %%INSTDIR%%/install_spanish.txt
+%%INSTDIR%%/internat/de/kicad.mo
+%%INSTDIR%%/internat/de/kicad.po
 %%INSTDIR%%/internat/es/kicad.mo
 %%INSTDIR%%/internat/es/kicad.po
 %%INSTDIR%%/internat/fr/kicad.mo
@@ -1164,6 +1168,7 @@
 @dirrm %%INSTDIR%%/internat/hu
 @dirrm %%INSTDIR%%/internat/fr
 @dirrm %%INSTDIR%%/internat/es
+@dirrm %%INSTDIR%%/internat/de
 @dirrm %%INSTDIR%%/internat
 @dirrm %%INSTDIR%%/help/ru/pcbnew
 @dirrm %%INSTDIR%%/help/ru/eeschema
@@ -1186,6 +1191,10 @@
 @dirrm %%INSTDIR%%/help/pt/docs_src
 @dirrm %%INSTDIR%%/help/pt/cvpcb
 @dirrm %%INSTDIR%%/help/pt
+@dirrm %%INSTDIR%%/help/it/docs_src/pcbnew
+@dirrm %%INSTDIR%%/help/it/docs_src/eeschema
+@dirrm %%INSTDIR%%/help/it/docs_src
+@dirrm %%INSTDIR%%/help/it
 @dirrm %%INSTDIR%%/help/fr/pcbnew
 @dirrm %%INSTDIR%%/help/fr/kicad
 @dirrm %%INSTDIR%%/help/fr/gerbview
