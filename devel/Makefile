@@ -1653,6 +1653,7 @@
     SUBDIR += py-fusefs
     SUBDIR += py-game
     SUBDIR += py-gamin
+    SUBDIR += py-generate
     SUBDIR += py-getargs
     SUBDIR += py-gobject
     SUBDIR += py-grouch
