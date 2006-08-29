@@ -1,11 +1,24 @@
-@comment $FreeBSD$
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/HISTORY
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/copyright
+%%DOCSDIR%%/docs/README.Kolab.txt
+%%DOCSDIR%%/docs/README.fpdf.htm
+%%DOCSDIR%%/docs/README.hosts.txt
+%%DOCSDIR%%/docs/README.lamdaemon.txt
+%%DOCSDIR%%/docs/README.openldap.txt
+%%DOCSDIR%%/docs/README.schema.txt
+%%DOCSDIR%%/docs/README.security.txt
+%%DOCSDIR%%/docs/README.upgrade.txt
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 %%WWWROOT%%/config/.htaccess
-@unexec if cmp -s %D/%%WWWROOT%%/config/config.cfg %D/%%WWWROOT%%/config/config.cfg_sample; then rm -f %D/%%WWWROOT%%/config/config.cfg ; fi
+%%WWWROOT%%/config/config.cfg
 %%WWWROOT%%/config/config.cfg_sample
-@exec [ -f %B/config.cfg ] || cp %B/%f %B/config.cfg
-@unexec if cmp -s %D/%%WWWROOT%%/config/lam.conf %D/%%WWWROOT%%/config/lam.conf_sample; then rm -f %D/%%WWWROOT%%/config/lam.conf; fi
+%%WWWROOT%%/config/lam.conf
 %%WWWROOT%%/config/lam.conf_sample
-@exec [ -f %B/lam.conf ] || cp %B/%f %B/lam.conf
 %%WWWROOT%%/config/language
 %%WWWROOT%%/config/pdf/default.group.xml
 %%WWWROOT%%/config/pdf/default.host.xml
@@ -13,14 +26,19 @@
 %%WWWROOT%%/config/pdf/default.smbDomain.xml
 %%WWWROOT%%/config/pdf/default.user.xml
 %%WWWROOT%%/config/pdf/logos/printLogo.jpg
+%%WWWROOT%%/config/profiles/.htaccess
 %%WWWROOT%%/config/profiles/default.group
 %%WWWROOT%%/config/profiles/default.host
 %%WWWROOT%%/config/profiles/default.mailAlias
 %%WWWROOT%%/config/profiles/default.smbDomain
 %%WWWROOT%%/config/profiles/default.user
+%%WWWROOT%%/config/selfService/.htaccess
 %%WWWROOT%%/config/shells
 %%WWWROOT%%/graphics/add.png
 %%WWWROOT%%/graphics/banner.jpg
+%%WWWROOT%%/graphics/bigPeople.png
+%%WWWROOT%%/graphics/bigServers.png
+%%WWWROOT%%/graphics/bigTools.png
 %%WWWROOT%%/graphics/catalog.png
 %%WWWROOT%%/graphics/dc.png
 %%WWWROOT%%/graphics/delete.gif
@@ -74,6 +92,62 @@
 %%WWWROOT%%/graphics/userDefault.png
 %%WWWROOT%%/graphics/warn.png
 %%WWWROOT%%/help/help.inc
+%%WWWROOT%%/html/FAQ.htm
+%%WWWROOT%%/html/account_modules.htm
+%%WWWROOT%%/html/account_modules_lib.htm
+%%WWWROOT%%/html/account_pages.htm
+%%WWWROOT%%/html/account_types.htm
+%%WWWROOT%%/html/account_types_lib.htm
+%%WWWROOT%%/html/base_module.htm
+%%WWWROOT%%/html/base_type.htm
+%%WWWROOT%%/html/config.htm
+%%WWWROOT%%/html/config_files.htm
+%%WWWROOT%%/html/config_pages.htm
+%%WWWROOT%%/html/images/lam_baseModule.png
+%%WWWROOT%%/html/images/lam_baseType.png
+%%WWWROOT%%/html/images/lam_config.png
+%%WWWROOT%%/html/images/lam_lists.png
+%%WWWROOT%%/html/images/lam_overview.png
+%%WWWROOT%%/html/images/lam_pdfEditor.png
+%%WWWROOT%%/html/images/lam_profedit.png
+%%WWWROOT%%/html/images/lam_upload.png
+%%WWWROOT%%/html/index.htm
+%%WWWROOT%%/html/ldap.htm
+%%WWWROOT%%/html/lists.htm
+%%WWWROOT%%/html/login.htm
+%%WWWROOT%%/html/mod_accountPages.htm
+%%WWWROOT%%/html/mod_basics.htm
+%%WWWROOT%%/html/mod_config.htm
+%%WWWROOT%%/html/mod_ext.htm
+%%WWWROOT%%/html/mod_general.htm
+%%WWWROOT%%/html/mod_help.htm
+%%WWWROOT%%/html/mod_index.htm
+%%WWWROOT%%/html/mod_pdf.htm
+%%WWWROOT%%/html/mod_profiles.htm
+%%WWWROOT%%/html/mod_rdn.htm
+%%WWWROOT%%/html/mod_upload.htm
+%%WWWROOT%%/html/mod_upload2.htm
+%%WWWROOT%%/html/modules-specification.htm
+%%WWWROOT%%/html/other_libs.htm
+%%WWWROOT%%/html/ou-edit.htm
+%%WWWROOT%%/html/pdf_editor.htm
+%%WWWROOT%%/html/pdf_libs.htm
+%%WWWROOT%%/html/pdf_profiles.htm
+%%WWWROOT%%/html/profile_editor.htm
+%%WWWROOT%%/html/profile_files.htm
+%%WWWROOT%%/html/profiles.htm
+%%WWWROOT%%/html/samba_domains.htm
+%%WWWROOT%%/html/style/layout.css
+%%WWWROOT%%/html/tree_schema.htm
+%%WWWROOT%%/html/type_basics.htm
+%%WWWROOT%%/html/type_css.htm
+%%WWWROOT%%/html/type_general.htm
+%%WWWROOT%%/html/type_icon.htm
+%%WWWROOT%%/html/type_index.htm
+%%WWWROOT%%/html/type_list.htm
+%%WWWROOT%%/html/type_profile.htm
+%%WWWROOT%%/html/types-specification.htm
+%%WWWROOT%%/html/upload.htm
 %%WWWROOT%%/index.html
 %%WWWROOT%%/lib/.htaccess
 %%WWWROOT%%/lib/account.inc
@@ -125,6 +199,7 @@
 %%WWWROOT%%/lib/profiles.inc
 %%WWWROOT%%/lib/schema.inc
 %%WWWROOT%%/lib/security.inc
+%%WWWROOT%%/lib/selfService.inc
 %%WWWROOT%%/lib/status.inc
 %%WWWROOT%%/lib/tree.inc
 %%WWWROOT%%/lib/types.inc
@@ -135,24 +210,26 @@
 %%WWWROOT%%/lib/types/user.inc
 %%WWWROOT%%/lib/ufpdf.php
 %%WWWROOT%%/lib/xml_parser.inc
-%%WWWROOT%%/locale/ca_ES/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/ca_ES/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/es_ES/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/es_ES/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/it_IT/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/it_IT/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/ca_ES/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/ca_ES/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/es_ES/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/es_ES/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/it_IT/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/it_IT/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/ru_RU/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/ru_RU/LC_MESSAGES/messages.po
+%%NLS%%%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.mo
+%%NLS%%%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWROOT%%/sess/.cvsignore
 %%WWWROOT%%/sess/.htaccess
 %%WWWROOT%%/style/layout.css
@@ -166,8 +243,9 @@
 %%WWWROOT%%/templates/config/confmain.php
 %%WWWROOT%%/templates/config/confmodules.php
 %%WWWROOT%%/templates/config/conftypes.php
-%%WWWROOT%%/templates/config/mainmanage.php
+%%WWWROOT%%/templates/config/index.php
 %%WWWROOT%%/templates/config/mainlogin.php
+%%WWWROOT%%/templates/config/mainmanage.php
 %%WWWROOT%%/templates/config/profmanage.php
 %%WWWROOT%%/templates/delete.php
 %%WWWROOT%%/templates/help.php
@@ -232,33 +310,41 @@
 @dirrm %%WWWROOT%%/templates
 @dirrm %%WWWROOT%%/style
 @dirrm %%WWWROOT%%/sess
-@dirrm %%WWWROOT%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/zh_TW
-@dirrm %%WWWROOT%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/nl_NL
-@dirrm %%WWWROOT%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/ja_JP
-@dirrm %%WWWROOT%%/locale/it_IT/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/it_IT
-@dirrm %%WWWROOT%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/hu_HU
-@dirrm %%WWWROOT%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/fr_FR
-@dirrm %%WWWROOT%%/locale/es_ES/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/es_ES
-@dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/de_DE
-@dirrm %%WWWROOT%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/ca_ES
-@dirrm %%WWWROOT%%/locale
+%%NLS%%@dirrm %%WWWROOT%%/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/zh_TW
+%%NLS%%@dirrm %%WWWROOT%%/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/ru_RU
+%%NLS%%@dirrm %%WWWROOT%%/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/nl_NL
+%%NLS%%@dirrm %%WWWROOT%%/locale/ja_JP/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/ja_JP
+%%NLS%%@dirrm %%WWWROOT%%/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/it_IT
+%%NLS%%@dirrm %%WWWROOT%%/locale/hu_HU/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/hu_HU
+%%NLS%%@dirrm %%WWWROOT%%/locale/fr_FR/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/fr_FR
+%%NLS%%@dirrm %%WWWROOT%%/locale/es_ES/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/es_ES
+%%NLS%%@dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/de_DE
+%%NLS%%@dirrm %%WWWROOT%%/locale/ca_ES/LC_MESSAGES
+%%NLS%%@dirrm %%WWWROOT%%/locale/ca_ES
+%%NLS%%@dirrm %%WWWROOT%%/locale
 @dirrm %%WWWROOT%%/lib/types
 @dirrm %%WWWROOT%%/lib/modules
 @dirrm %%WWWROOT%%/lib/font
 @dirrm %%WWWROOT%%/lib
+@dirrm %%WWWROOT%%/html/style
+@dirrm %%WWWROOT%%/html/images
+@dirrm %%WWWROOT%%/html
 @dirrm %%WWWROOT%%/help
 @dirrm %%WWWROOT%%/graphics
+@dirrm %%WWWROOT%%/config/selfService
 @dirrm %%WWWROOT%%/config/profiles
 @dirrm %%WWWROOT%%/config/pdf/logos
 @dirrm %%WWWROOT%%/config/pdf
 @dirrm %%WWWROOT%%/config
 @dirrm %%WWWROOT%%
+@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
