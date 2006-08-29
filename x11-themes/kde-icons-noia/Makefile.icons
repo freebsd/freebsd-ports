@@ -28,7 +28,7 @@ NO_PACKAGE?=	${RESTRICTED}
 INDEX_FILES=	index.desktop index.theme
 
 # do not create some dirs
-PLIST_DIR_PATTERN_EXTRA?=	.
+PLIST_DIR_PATTERN_EXTRA?=	^\./
 
 # do not install some files
 PLIST_FILE_PATTERN=	-i -v "(Thumbs\.db|(\.(bak|txt)|/(copying|readme))\$$)"
@@ -85,6 +85,8 @@ generate-tmpplist:
 			-e 's|^\.|@dirrm share/icons/${PORT_SHAREDIR:S/"//g}|' \
 			>> ${TMPPLIST}
 	@${ECHO_CMD} \
+		'@dirrm share/icons/${PORT_SHAREDIR:S/"//g}' >> ${TMPPLIST}
+	@${ECHO_CMD} \
 		'@unexec rmdir %D/share/icons 2>/dev/null || true' >> ${TMPPLIST}
 
 # use generated installation scripts
@@ -94,5 +96,8 @@ install-run-scripts:
 .endfor
 
 do-install: annotate-install generate-install-scripts generate-tmpplist install-run-scripts
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
