@@ -1,11 +1,6 @@
---- Makefile.orig	Thu Dec 15 09:57:49 2005
-+++ Makefile	Mon Jan 16 22:06:37 2006
-@@ -79,12 +79,11 @@
-   ifndef STRIP
-     STRIP = strip
-   endif
--  CFLAGS += -O
- endif
+--- Makefile.orig	Wed Aug  2 13:29:56 2006
++++ Makefile	Mon Aug 28 16:15:57 2006
+@@ -84,7 +84,7 @@
  
  # default prefix
  ifdef ROOT
@@ -14,7 +9,7 @@
  else
    prefix = /usr/local
  endif
-@@ -102,16 +101,14 @@
+@@ -102,16 +102,14 @@
  else
  ECHO=echo
  define INSTALL_RULE
@@ -34,7 +29,7 @@
  
  X11R6_CFLAGS = -I $(X11R6_INC_DIR)
  
-@@ -192,7 +189,6 @@
+@@ -200,7 +198,6 @@
  all: $(NVIDIA_SETTINGS) doc/$(MANPAGE)
  
  install: all
