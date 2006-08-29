@@ -3943,17 +3943,9 @@
 %%GLOBUS_BASE%%/lib/naming-java.jar
 %%GLOBUS_BASE%%/lib/naming-resources.jar
 %%GLOBUS_BASE%%/lib/opensaml.jar
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Entries
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Repository
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Root
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS/Tag
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Compress/Zlib.pm
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Digest/MD5.pm
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Archive/Tar/.packlist
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Entries
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Repository
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Root
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS/Tag
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib/.packlist
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib/Zlib.bs
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib/Zlib.so
@@ -3964,10 +3956,6 @@
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/IO/Zlib/.packlist
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Pod/Parser/.packlist
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/.packlist
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Entries
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Repository
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Root
-%%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS/Tag
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/zlib/extralibs.ld
 %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/perllocal.pod
 %%GLOBUS_BASE%%/lib/perl/Archive/Tar.pm
@@ -3977,6 +3965,7 @@
 %%GLOBUS_BASE%%/lib/perl/Globus/GRAM/JobSignal.pm
 %%GLOBUS_BASE%%/lib/perl/Globus/GRAM/JobState.pm
 %%GLOBUS_BASE%%/lib/perl/Globus/GRAM/StdioMerger.pm
+%%GLOBUS_BASE%%/lib/perl/Globus/Testing/Container.pm
 %%GLOBUS_BASE%%/lib/perl/Globus/Testing/Utilities.pm
 %%GLOBUS_BASE%%/lib/perl/Globus/URL.pm
 %%GLOBUS_BASE%%/lib/perl/Grid/GPT/Algorithms.pm
@@ -4252,10 +4241,6 @@
 %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared/grid-mapfile-add-entry
 %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared/grid-mapfile-check-consistency
 %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared/grid-mapfile-delete-entry
-%%GLOBUS_BASE%%/sbin/CVS/Entries
-%%GLOBUS_BASE%%/sbin/CVS/Repository
-%%GLOBUS_BASE%%/sbin/CVS/Root
-%%GLOBUS_BASE%%/sbin/CVS/Tag
 %%GLOBUS_BASE%%/sbin/applypatch
 %%GLOBUS_BASE%%/sbin/config.guess
 %%GLOBUS_BASE%%/sbin/globus-build-doxygen-dependencies
@@ -6114,6 +6099,7 @@
 %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_unit/test.xml
 %%GLOBUS_BASE%%/test/globus_wsrf_test_interop/TESTS.pl
 %%GLOBUS_BASE%%/test/globus_wsrf_test_unit/TESTS.pl
+%%GLOBUS_BASE%%/test/globus_wsrf_test_unit_sec/TESTS.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/TESTS.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/attr-test.pl
 %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared/basic-test.pl
@@ -6195,6 +6181,7 @@
 @dirrm %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%/test/globus_xio_test/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/test/globus_xio_test
+@dirrm %%GLOBUS_BASE%%/test/globus_wsrf_test_unit_sec
 @dirrm %%GLOBUS_BASE%%/test/globus_wsrf_test_unit
 @dirrm %%GLOBUS_BASE%%/test/globus_wsrf_test_interop
 @dirrm %%GLOBUS_BASE%%/test/globus_wsrf_gram_service_java_test_unit
@@ -6296,6 +6283,7 @@
 @dirrm %%GLOBUS_BASE%%/share/schema/mds/aggregator
 @dirrm %%GLOBUS_BASE%%/share/schema/mds
 @dirrm %%GLOBUS_BASE%%/share/schema/inmemorysg
+@dirrm %%GLOBUS_BASE%%/share/schema/gram/4.0
 @dirrm %%GLOBUS_BASE%%/share/schema/gram/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%/share/schema/gram/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/share/schema/gram
@@ -6383,7 +6371,6 @@
 @dirrm %%GLOBUS_BASE%%/setup/globus/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/setup/globus
 @dirrm %%GLOBUS_BASE%%/setup
-@dirrm %%GLOBUS_BASE%%/sbin/CVS
 @dirrm %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr/shared
 @dirrm %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%pthr
 @dirrm %%GLOBUS_BASE%%/sbin/%%BASE_FLAVOR%%/shared
@@ -6402,7 +6389,6 @@
 @dirrm %%GLOBUS_BASE%%/man/man1/ssh.d/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/man/man1/ssh.d
 @dirrm %%GLOBUS_BASE%%/man/man1/man1
-@dirrm %%GLOBUS_BASE%%/man/man1/CVS
 @dirrm %%GLOBUS_BASE%%/man/man1/%%BASE_FLAVOR%%/shared
 @dirrm %%GLOBUS_BASE%%/man/man1/%%BASE_FLAVOR%%
 @dirrm %%GLOBUS_BASE%%/man/man1
@@ -6446,7 +6432,6 @@
 @dirrm %%GLOBUS_BASE%%/lib/perl/Globus
 @dirrm %%GLOBUS_BASE%%/lib/perl/Archive
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/zlib
-@dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch/CVS
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/makepatch
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Pod/Parser
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Pod
@@ -6456,13 +6441,11 @@
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Digest
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress/Zlib
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Compress
-@dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/CVS
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Archive/Tar
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto/Archive
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/auto
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Digest
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/Compress
-@dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%/CVS
 @dirrm %%GLOBUS_BASE%%/lib/perl/%%PERL_ARCH%%
 @dirrm %%GLOBUS_BASE%%/lib/perl
 @dirrm %%GLOBUS_BASE%%/lib/globus_service_modules/wsrf/services
