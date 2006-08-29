@@ -1,7 +1,5 @@
 bin/bubblemon
-share/examples/bubblemon-dockapp/wak.wav
-share/examples/bubblemon-dockapp/wakwak.sh
-share/examples/bubblemon-dockapp/Xdefaults.sample
-@dirrm share/examples/bubblemon-dockapp
-%%PORTDOCS%%share/doc/bubblemon-dockapp/README
-%%PORTDOCS%%@dirrm share/doc/bubblemon-dockapp
+%%EXAMPLESDIR%%/wak.wav
+%%EXAMPLESDIR%%/wakwak.sh
+%%EXAMPLESDIR%%/Xdefaults.sample
+@dirrm %%EXAMPLESDIR%%

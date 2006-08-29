@@ -7,19 +7,22 @@
 
 PORTNAME=	bubblemon-dockapp
 PORTVERSION=	1.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
+MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	X eye candy for displaying CPU and memory load in a dock
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 MAKE_ARGS+=	PREFIX="${PREFIX}"
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
+
+PORTDOCS=	README
 
 post-patch:
 	${REINPLACE_CMD} -e "s@CC = gcc@CC = ${CC}@g; \
