@@ -62,7 +62,7 @@ OPTIONS=	PAM		"Enable pam(3) support"			on \
 		OPENSSH_CHROOT	"Enable CHROOT support"			off \
 		OPENSC		"Enable OpenSC smartcard support"	off \
 		OPENSCPINPATCH	"Enable OpenSC PIN patch"		off \
-		HPN		"Enable HPN-11 SSH/SCP patch"		off \
+		HPN		"Enable HPN-SSH patch"			off \
 		OVERWRITE_BASE	"OpenSSH overwrite base"		off
 
 .include <bsd.port.pre.mk>
