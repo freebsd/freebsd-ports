@@ -19,7 +19,7 @@ COMMENT=	SNMP framework for Python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyasn1/__init__.py:${PORTSDIR}/devel/py-asn1 \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
-CONFLICTS=	py??-snmp-[0-9]*
+CONFLICTS=	py??-snmp-[0-9]* py??-snmp2-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
@@ -32,8 +32,6 @@ BASEDOCS=	CHANGES \
 		LICENSE \
 		README \
 		TODO
-
-CONFLICTS=	py*-snmp-3.*
 
 post-install:
 .if !defined(NOPORTDOCS)
