@@ -3123,6 +3123,7 @@ gekko-modules	ports/www/gekko-modules
 gemcal		ports/deskutils/gemcal
 gemdropx	ports/games/gemdropx
 geminifonts	ports/x11-fonts/geminifonts
+generate	ports/devel/generate
 generator	ports/emulators/generator
 generator-cbiere	ports/emulators/generator-cbiere
 generic-nqs	ports/net/generic-nqs
