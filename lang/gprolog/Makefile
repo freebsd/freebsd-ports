@@ -7,7 +7,7 @@
 
 PORTNAME=	gprolog
 PORTVERSION=	1.2.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_DEBIAN} ftp://ftp.inria.fr/INRIA/Projects/contraintes/gprolog/:doc
 MASTER_SITE_SUBDIR=	pool/main/g/${PORTNAME}
@@ -35,6 +35,8 @@ CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}" \
 
 PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
 
+PORTDOCS=	*
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_FD)
@@ -57,6 +59,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${DOCSDIR} && ${GZIP_CMD} -cd ${_DISTDIR}/manual.pdf.gz >manual.pdf
 	@cd ${DOCSDIR} && ${TAR} zxf ${_DISTDIR}/manual-html.tar.gz
+	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${FIND} ${DOCSDIR}/ -type f -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
 .	endif
 
 .include <bsd.port.post.mk>
