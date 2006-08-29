@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
+CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}" \
+		--infodir="${PREFIX}/info" --mandir="${PREFIX}/man"
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
 
