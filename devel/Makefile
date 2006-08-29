@@ -330,6 +330,7 @@
     SUBDIR += gdb6
     SUBDIR += gdbmods
     SUBDIR += geany
+    SUBDIR += generate
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += genproto
