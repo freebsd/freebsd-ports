@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2006g
+DISTVERSION=	2006k
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}
@@ -31,7 +31,22 @@ NO_PACKAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/patch4-zone.tab
+EXTRA_PATCHES+=	${FILESDIR}/patch4-zone.tab
+.endif
+
+HAS_GG!=	${GREP} -c ^GG /usr/share/misc/iso3166 || ${TRUE}
+.if ${HAS_GG} == "0"
+EXTRA_PATCHES+=	${FILESDIR}/patchremove-gg
+.endif
+
+HAS_IM!=	${GREP} -c ^IM /usr/share/misc/iso3166 || ${TRUE}
+.if ${HAS_IM} == "0"
+EXTRA_PATCHES+=	${FILESDIR}/patchremove-im
+.endif
+
+HAS_JE!=	${GREP} -c ^JE /usr/share/misc/iso3166 || ${TRUE}
+.if ${HAS_JE} == "0"
+EXTRA_PATCHES+=	${FILESDIR}/patchremove-je
 .endif
 
 do-build:
