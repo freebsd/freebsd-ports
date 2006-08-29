@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Acme-MetaSyntactic
-PORTVERSION=	0.88
+PORTVERSION=	0.89
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Acme
@@ -24,7 +24,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5 and try again
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
