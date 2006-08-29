@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	globus
-PORTVERSION=	4.0.2
-PORTREVISION=	20060706
+PORTVERSION=	4.0.3
+PORTREVISION=	20060825
 CATEGORIES=	net java parallel
 MASTER_SITES=	ftp://ftp.globus.org/pub/gt4/4.0/${PORTVERSION}/%SUBDIR%/src/:installers,updates
 MASTER_SITE_SUBDIR=	installers/:installers updates/:updates
@@ -22,32 +22,32 @@ COMMENT=	Grid computing toolkit
 
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
-FORBIDDEN=	multiple tmpfile race vulnerabilities
-
 INSTALLER=	${DISTNAME}${EXTRACT_SUFX}
 BUNDLE_SUFX=	.tar.gz
 
 # Updates from http://www.globus.org/toolkit/advisories.html
 #
-# All entries are listed.  Inapplicable ones are commented out.
 # The format is <file name minus .tar.gz>:<flavor list>
-UPDATE_BUNDLES+=	globus_gass_copy-3.21:%FLAVOR%,%FLAVOR%pthr
+#UPDATE_BUNDLES+=	globus_gass_copy-3.21:%FLAVOR%,%FLAVOR%pthr
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_LDCONFIG=	${GLOBUS_LOCATION}/lib
 
 GLOBUS_BASE?=	globus
 GLOBUS_LOCATION=${TARGETDIR}/${GLOBUS_BASE}
 TMP_GLOBUS_LOCATION=	${WRKDIR}/globus
 TMP_GLOBUS_ENV=	GLOBUS_LOCATION=${TMP_GLOBUS_LOCATION} \
-		GPT_LOCATION=${TMP_GLOBUS_LOCATION}
+		GPT_LOCATION=${TMP_GLOBUS_LOCATION} \
+		PATH=${WRKDIR}/tmpbin:${PATH} \
+		LD_LIBRARY_PATH=${TMP_GLOBUS_LOCATION}/lib
 
 CONFIGURE_ARGS=	--prefix=${TMP_GLOBUS_LOCATION} ${CONFIGURE_TARGET}
 CONFIGURE_ENV+=	${TMP_GLOBUS_ENV}
 # WARNING: this only works because we do the install ourselves
-MAKE_ENV+=	${TMP_GLOBUS_ENV} PATH=${WRKDIR}/tmpbin:${PATH} LD_LIBRARY_PATH=${TMP_GLOBUS_LOCATION}/lib
+MAKE_ENV+=	${TMP_GLOBUS_ENV}
 
 PLIST_SUB+=	BASE_FLAVOR=${BASE_FLAVOR} \
 		GLOBUS_BASE=${GLOBUS_BASE} \
@@ -90,10 +90,11 @@ BASE_FLAVOR=	gcc${ARCHBITS}dbg
 
 post-patch:
 	cd ${WRKSRC}/gpt/packaging_tools/etc/ ; \
-	    tar xfz globus_core-src.tar.gz ; \
+	    tar xfzv globus_core-src.tar.gz ; \
 	    ${CP} ${WRKSRC}/source-trees/core/source/configure globus_core-4.30/ ; \
 	    ${CP} ${WRKSRC}/source-trees/core/source/config/accompiler.m4 globus_core-4.30/config ; \
-	    tar cfz globus_core-src.tar.gz globus_core-4.30
+	    tar cfzv globus_core-src.tar.gz globus_core-4.30 ; \
+	    ${RM} -r globus_core-4.30
 
 # HACK: this is under defined(GNU_CONFIGURE) in do-configure, but we
 # have to do it ourselves because we can't set GNU_CONFIGURE and install
@@ -112,6 +113,7 @@ pre-build:
 	${MKDIR} ${WRKSRC}/gpt/packaging_tools/etc/gpt
 	${MKDIR} ${WRKDIR}/tmpbin
 	${LN} -s `which gmake` ${WRKDIR}/tmpbin/make || ${TRUE}
+	ls -l ${WRKDIR}/tmpbin
 
 post-build:
 .for _B in ${UPDATE_BUNDLES}
@@ -122,6 +124,7 @@ post-build:
 .endfor
 	${FIND} ${TMP_GLOBUS_LOCATION}/etc/gpt/packages/ -name bak -depth 2 | \
 	    ${XARGS} ${RM} -rf
+	${FIND} ${TMP_GLOBUS_LOCATION} -type d -name CVS | xargs ${RM} -r
 	${RM} -rf ${TMP_GLOBUS_LOCATION}/man/cat*
 
 do-install:
