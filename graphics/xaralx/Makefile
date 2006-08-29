@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--with-wx-config=wxgtk2u-2.6-config \
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
 
 USE_GMAKE=	yes
-MAKE_ENV?=	INCLUDES="-I${LOCALBASE}/include/dlmalloc"
+MAKE_ENV?=	INCLUDES="-I${LOCALBASE}/include/dlmalloc" LANG=C
 
 USE_GCC=	3.4+
 
