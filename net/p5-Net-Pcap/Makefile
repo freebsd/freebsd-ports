@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Pcap
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -15,9 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to pcap(3) LBL packet capture library
 
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface
+
 PERL_CONFIGURE=	yes
 
 MAN1=		pcapinfo.1
 MAN3=		Net::Pcap.3
+
+do-patch:
+		@${REINPLACE_CMD} -e "s#cc_r =>#cc => '-o', cc_r =>#" \
+			${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
