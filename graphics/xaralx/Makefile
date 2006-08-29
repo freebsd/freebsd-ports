@@ -71,7 +71,7 @@ BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 
 post-patch:
 	${REINPLACE_CMD} -E \
-		-e 's/^Name=Xara LX$$/Name=Xara LX ${PORTVERSION}/' \
+		-e 's/^Name=Xara Xtreme$$/Name=Xara Xtreme ${PORTVERSION}/' \
 		-e 's/^Icon=xaralx.png$$/Icon=xaralx${PKGNAMESUFFIX}.png/' \
 		-e 's/^FilePattern=xaralx;$$/FilePattern=xaralx${PKGNAMESUFFIX}/' \
 		-e 's/^Exec=xaralx %F$$/Exec=xaralx${PKGNAMESUFFIX} %F/' \
