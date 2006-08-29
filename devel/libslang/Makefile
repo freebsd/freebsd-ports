@@ -21,7 +21,7 @@ OPTIONS=	UTF8	"Enable UTF-8 support - EXPERIMENTAL"	off
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFLICTS=	libslang2-2.* libslang-1.*.j[0-9]
 
