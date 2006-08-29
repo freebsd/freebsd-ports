@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.1.23
+PORTVERSION=	0.1.2.1
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/ \
 		http://mirror.onionland.org/dist/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
@@ -24,8 +25,16 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
+CONFLICTS=	tor-1.1.[0-9]*
+
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/contrib/tor-tsocks.conf \
@@ -49,4 +58,4 @@ post-install:
 	@${CHOWN} _tor:_tor /var/db/tor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
