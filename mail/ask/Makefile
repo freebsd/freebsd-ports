@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ask
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-s-k
@@ -17,33 +17,35 @@ COMMENT=	Anti Spam Killer content filtering
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_SUB=	VER=${PORTVERSION}
+ASKLIBDIR=	${PREFIX}/lib/${PORTNAME}
+BINS=		askfilter asksetup utils/asksenders
+MAN1=		askfilter.1 asksenders.1 asksetup.1
+SUB_FILES=	pkg-message
+PORTDOCS=	*
+
+post-extract:
+	@${REINPLACE_CMD} -E \
+		-e "s,/usr/share/ask/templates,${EXAMPLESDIR},g" \
+		-e "s,/usr/lib/ask,${ASKLIBDIR},g" \
+		-e "s,^(#!)/usr/bin/python,\1${PYTHON_CMD}," \
+		${BINS:S,^,${WRKSRC}/,} ${WRKSRC}/*.py
 
 do-install:
-	${MKDIR} ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/COPYING ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/ChangeLog ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/TODO ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/ask.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/askconfig.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/ask-${PORTVERSION}-1.spec ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/asklock.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/asklog.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/askmail.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/askmain.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/askmessage.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/askremote.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/asksetup.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/askversion.py ${PREFIX}/ask
-	${INSTALL_SCRIPT} ${WRKSRC}/test.py ${PREFIX}/ask
-	${CP} -R ${WRKSRC}/samples ${PREFIX}/ask
-	${CP} -R ${WRKSRC}/templates ${PREFIX}/ask
+	${MKDIR} ${ASKLIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.py ${ASKLIBDIR}
+	${INSTALL_SCRIPT} ${BINS:S,^,${WRKSRC}/,} ${PREFIX}/bin
 
-post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/templates/* ${EXAMPLESDIR}
+
+	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/docs/,} ${PREFIX}/man/man1
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs ${DOCSDIR}
-	${CP} -R ${WRKSRC}/utils ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.[!1]* ${DOCSDIR}
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
