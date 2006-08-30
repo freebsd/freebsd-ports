@@ -8,6 +8,13 @@ upgrades.
 
 
 
+20060830:
+  AFFECTS: users of textproc/p5-Senna
+  AUTHOR: kuriyama@FreeBSD.org
+
+  This version (0.50) of p5-Senna module breaks some compatibilities
+  with the previous versions.
+
 20060828:
   AFFECTS: users of devel/gpc
   AUTHOR: mi+mx@aldan.algebra.com
