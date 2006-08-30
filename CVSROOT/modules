@@ -4288,6 +4288,7 @@ iconv-rfc1345	ports/converters/iconv-rfc1345
 icoutils	ports/graphics/icoutils
 icpld		ports/net/icpld
 icqlib		ports/net-im/icqlib
+icqnd		ports/net-im/icqnd
 icu		ports/devel/icu
 icu2		ports/devel/icu2
 id-aspell	ports/textproc/id-aspell
