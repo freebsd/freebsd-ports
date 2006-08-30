@@ -275,6 +275,7 @@
     SUBDIR += p5-Rose-DB-Object
     SUBDIR += p5-SQL-Abstract
     SUBDIR += p5-SQL-Abstract-Limit
+    SUBDIR += p5-SQL-ReservedWords
     SUBDIR += p5-SQL-Statement
     SUBDIR += p5-SQL-Translator
     SUBDIR += p5-SQLite-Work

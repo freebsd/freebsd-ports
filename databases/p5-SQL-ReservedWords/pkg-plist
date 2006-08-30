@@ -1,0 +1,15 @@
+bin/sqlrw
+%%SITE_PERL%%/SQL/ReservedWords.pm
+%%SITE_PERL%%/SQL/ReservedWords/DB2.pm
+%%SITE_PERL%%/SQL/ReservedWords/MySQL.pm
+%%SITE_PERL%%/SQL/ReservedWords/ODBC.pm
+%%SITE_PERL%%/SQL/ReservedWords/Oracle.pm
+%%SITE_PERL%%/SQL/ReservedWords/PostgreSQL.pm
+%%SITE_PERL%%/SQL/ReservedWords/SQLServer.pm
+%%SITE_PERL%%/SQL/ReservedWords/SQLite.pm
+%%SITE_PERL%%/SQL/ReservedWords/Sybase.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/ReservedWords/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/ReservedWords
+@dirrmtry %%SITE_PERL%%/SQL/ReservedWords
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
+@dirrmtry %%SITE_PERL%%/SQL
