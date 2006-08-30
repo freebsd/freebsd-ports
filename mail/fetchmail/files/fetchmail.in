@@ -67,6 +67,7 @@ load_rc_config "$name"
 : ${fetchmail_enable="NO"}
 : ${fetchmail_config="%%PREFIX%%/etc/fetchmailrc"}
 : ${fetchmail_polling_interval="900"}
+: ${fetchmail_logging_facility="--syslog"}
 : ${fetchmail_home_prefix="/home"}
 : ${fetchmail_config_name=".fetchmailrc"}
 
@@ -101,7 +102,7 @@ if [ -n "$2" ]; then
 		fetchmail_flags="-f ${fetchmail_config} \
 				--pidfile ${pidfile} \
 				-d ${fetchmail_polling_interval} \
-				--syslog"
+				${fetchmail_logging_facility}"
         else
                 echo "$0: extra argument ignored"
         fi

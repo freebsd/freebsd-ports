@@ -115,7 +115,7 @@ post-install:
 
 	${INSTALL} -m 644 -o fetchmail -g fetchmail ${FILESDIR}/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc.sample
 	if [ ! -f ${PREFIX}/etc/fetchmailrc ]; then \
-		cp -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
+		${CP} -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
 	fi
 
 
