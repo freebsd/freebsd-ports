@@ -1,44 +1,66 @@
 @comment $FreeBSD$
 bin/snort
-etc/snort/classification.config.default
-etc/snort/gen-msg.map.default
-etc/snort/generators.default
-etc/snort/reference.config.default
-etc/snort/sid.default
-etc/snort/sid-msg.map.default
-etc/snort/snort.conf.default
-etc/snort/threshold.conf.default
-etc/snort/unicode.map.default
+@unexec if cmp  -s %D/etc/snort/classification.config-sample %D/etc/snort/classification.config; then rm -f %D/etc/snort/classification.config; fi
+etc/snort/classification.config-sample
+@exec if [ ! -f %D/etc/snort/classification.config ] ; then cp -p %D/%F %B/snort/classification.config; fi
+@unexec if cmp  -s %D/etc/snort/gen-msg.map-sample %D/etc/snort/gen-msg.map; then rm -f %D/etc/snort/gen-msg.map; fi
+etc/snort/gen-msg.map-sample
+@exec if [ ! -f %D/etc/snort/gen-msg.map ] ; then cp -p %D/%F %B/snort/gen-msg.map; fi
+@unexec if cmp  -s %D/etc/snort/generators-sample %D/etc/snort/generators; then rm -f %D/etc/snort/generators; fi
+etc/snort/generators-sample
+@exec if [ ! -f %D/etc/snort/generators ] ; then cp -p %D/%F %B/snort/generators; fi
+@unexec if cmp  -s %D/etc/snort/reference.config-sample %D/etc/snort/reference.config; then rm -f %D/etc/snort/reference.config; fi
+etc/snort/reference.config-sample
+@exec if [ ! -f %D/etc/snort/reference.config ] ; then cp -p %D/%F %B/snort/reference.config; fi
+@unexec if cmp -s %D/etc/snort/sid-sample %D/etc/snort/sid; then rm -f %D/etc/snort/sid; fi
+etc/snort/sid-sample
+@exec if [ ! -f %D/etc/snort/sid ] ; then cp -p %D/%F %B/sid; fi
+@unexec if cmp  -s %D/etc/snort/sid-msg.map-sample %D/etc/snort/sid-msg.map; then rm -f %D/etc/snort/sid-msg.map; fi
+etc/snort/sid-msg.map-sample
+@exec if [ ! -f %D/etc/snort/sid-msg.map ] ; then cp -p %D/%F %B/sid-msg.map; fi
+@unexec if cmp  -s %D/etc/snort/snort.conf-sample %D/etc/snort/snort.conf; then rm -f %D/etc/snort/snort.conf; fi
+etc/snort/snort.conf-sample
+@exec if [ ! -f %D/etc/snort/snort.conf ] ; then cp -p %D/%F %B/snort/snort.conf; fi
+@unexec if cmp  -s %D/etc/snort/threshold.conf-sample %D/etc/snort/threshold.conf; then rm -f %D/etc/snort/threshold.conf; fi
+etc/snort/threshold.conf-sample
+@exec if [ ! -f %D/etc/snort/threshold.conf ] ; then cp -p %D/%F %B/snort/threshold.conf; fi
+@unexec if cmp  -s %D/etc/snort/unicode.map-sample %D/etc/snort/unicode.map; then rm -f %D/etc/snort/unicode.map; fi
+etc/snort/unicode.map-sample
+@exec if [ ! -f %D/etc/snort/unicode.map ] ; then cp -p %D/%F %B/snort/unicode.map; fi
 @dirrmtry etc/snort/rules
 @dirrmtry etc/snort
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
-%%PORTDOCS%%%%DOCSDIR%%/README.INLINE
-%%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
-%%PORTDOCS%%%%DOCSDIR%%/README.UNSOCK
-%%PORTDOCS%%%%DOCSDIR%%/README.WIN32
-%%PORTDOCS%%%%DOCSDIR%%/README.alert_order
-%%PORTDOCS%%%%DOCSDIR%%/README.asn1
-%%PORTDOCS%%%%DOCSDIR%%/README.csv
-%%PORTDOCS%%%%DOCSDIR%%/README.database
-%%PORTDOCS%%%%DOCSDIR%%/README.event_queue
-%%PORTDOCS%%%%DOCSDIR%%/README.flow
-%%PORTDOCS%%%%DOCSDIR%%/README.flowbits
-%%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
-%%PORTDOCS%%%%DOCSDIR%%/README.frag3
-%%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
-%%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
-%%PORTDOCS%%%%DOCSDIR%%/README.thresholding
-%%PORTDOCS%%%%DOCSDIR%%/README.wireless
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
-%%PORTDOCS%%%%DOCSDIR%%/USAGE
-%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
-%%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_common.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_meta.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preprocessor.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.c
+%%DYNAMIC%%src/snort_dynamicsrc/sf_snort_packet.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_snort_plugin_api.h
+%%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.h
+%%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.c
+%%DYNAMIC%%src/snort_dynamicsrc/snort_packet_header.h
+%%DYNAMIC%%src/snort_dynamicsrc/str_search.h
+%%DYNAMIC%%src/snort_dynamicsrc/stream_api.h
+%%DYNAMIC%%src/snort_dynamicsrc/debug.h
+%%DYNAMIC%%src/snort_dynamicsrc/profiler.h
+%%DYNAMIC%%src/snort_dynamicsrc/preprocids.h
+%%DYNAMIC%%@dirrmtry src/snort_dynamicsrc
+%%DYNAMIC%%@dirrmtry src
+%%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.so
+%%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.so.0
+%%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.la
+%%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.a
+%%DYNAMIC%%@dirrmtry lib/snort/dynamicengine
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.a
+%%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
+%%DYNAMIC%%@dirrmtry lib/snort
 %%EXAMPLESDIR%%/classification.config-sample
 %%EXAMPLESDIR%%/create_mssql
 %%EXAMPLESDIR%%/create_mysql
@@ -53,3 +75,35 @@ etc/snort/unicode.map.default
 %%EXAMPLESDIR%%/threshold.conf-sample
 %%EXAMPLESDIR%%/unicode.map-sample
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
+%%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP2
+%%PORTDOCS%%%%DOCSDIR%%/README.INLINE
+%%PORTDOCS%%%%DOCSDIR%%/README.PLUGINS
+%%PORTDOCS%%%%DOCSDIR%%/README.PerfProfiling
+%%PORTDOCS%%%%DOCSDIR%%/README.SMTP
+%%PORTDOCS%%%%DOCSDIR%%/README.UNSOCK
+%%PORTDOCS%%%%DOCSDIR%%/README.WIN32
+%%PORTDOCS%%%%DOCSDIR%%/README.alert_order
+%%PORTDOCS%%%%DOCSDIR%%/README.asn1
+%%PORTDOCS%%%%DOCSDIR%%/README.csv
+%%PORTDOCS%%%%DOCSDIR%%/README.database
+%%PORTDOCS%%%%DOCSDIR%%/README.event_queue
+%%PORTDOCS%%%%DOCSDIR%%/README.flow
+%%PORTDOCS%%%%DOCSDIR%%/README.flowbits
+%%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
+%%PORTDOCS%%%%DOCSDIR%%/README.frag3
+%%PORTDOCS%%%%DOCSDIR%%/README.ftptelnet
+%%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
+%%PORTDOCS%%%%DOCSDIR%%/README.thresholding
+%%PORTDOCS%%%%DOCSDIR%%/README.wireless
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/faq.pdf
+%%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
