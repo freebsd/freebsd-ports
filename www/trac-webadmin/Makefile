@@ -7,6 +7,7 @@
 
 PORTNAME=	webadmin
 PORTVERSION=	0.1.1.2765
+PORTREVISION=	1
 CATEGORIES=	www devel python
 #MASTER_SITES=	http://projects.edgewall.com/trac/attachment/wiki/WebAdmin/TracWebAdmin-0.1.1dev_r2765-py2.4.egg.zip?format=raw
 MASTER_SITES=	http://dist.bsdlab.org/
@@ -16,7 +17,8 @@ DISTNAME=	TracWebAdmin-${VERSION_ID}.egg
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Web Administering plugin for trac
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac \
+		easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
