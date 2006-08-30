@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsearch
-PORTVERSION=	0.3
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -18,6 +18,11 @@ USE_GCC=	3.3+
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-PLIST_FILES=	bin/xsearch
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+PLIST_FILES=	bin/xsearch %%DATADIR%%/pixmaps/${PORTNAME}-300x300.png \
+		%%DATADIR%%/pixmaps/${PORTNAME}-32x32.png
+PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
+CFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
