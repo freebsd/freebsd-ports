@@ -22,11 +22,11 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.\" @(#)portless.1,v 1.7 2006/08/13 10:23:14 martin Exp
+.\" @(#)portless.1,v 1.10 2006/08/30 09:36:44 martin Exp
 .\"
 .\" Note: The date here should be updated whenever a non-trivial
 .\" change is made to the manual page.
-.Dd August 13, 2006
+.Dd August 30, 2006
 .Dt PORTLESS 1
 .Os
 .Sh NAME
@@ -38,7 +38,7 @@
 .Op Fl P Ar pager
 .Ar portglob...
 .Nm
-.Op Fl w
+.Op Fl W | w
 .Ar portglob...
 .Sh DESCRIPTION
 .Nm
@@ -58,7 +58,7 @@ argument literal (not as a shell glob).
 .It Fl I
 Ignore case when matching
 .Ar portglob
-against the ports tree. This option is only effective when
+against the ports tree. This option is only effective if
 .Ar portglob
 contains at least one unquoted globbing meta-character (
 .Sq Li * ,
@@ -93,8 +93,19 @@ Rather than browsing files inside the ports tree just echo the names
 of directories matching
 .Ar portglob
 to stdout.
-This option is incompatible with all other options.
+.It Fl W
+Like
+.Fl w
+but echoes just the last two components of the directory (i.e.\&
+.Em category/portname
+) to stdout.
 .El
+.Lp
+Options
+.Fl W
+and
+.Fl w
+are incompatible with all other options.
 .Sh ENVIRONMENT
 The
 .Nm
@@ -129,8 +140,4 @@ The
 .Nm
 utility and this manual page were written by
 .An Martin Kammerhofer Aq mkamm@gmx.net .
-.Sh BUGS
-The
-.Fl w
-option is a retrofitted hack.
 .\" EOF
