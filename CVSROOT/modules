@@ -9781,6 +9781,7 @@ p5-SOAP-Lite	ports/net/p5-SOAP-Lite
 p5-SPOPS	ports/devel/p5-SPOPS
 p5-SQL-Abstract	ports/databases/p5-SQL-Abstract
 p5-SQL-Abstract-Limit	ports/databases/p5-SQL-Abstract-Limit
+p5-SQL-ReservedWords	ports/databases/p5-SQL-ReservedWords
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
 p5-SQL-Translator	ports/databases/p5-SQL-Translator
 p5-SQLite-Work	ports/databases/p5-SQLite-Work
