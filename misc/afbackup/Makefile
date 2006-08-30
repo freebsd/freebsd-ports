@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 # XXX Remember to remove the comment if the actual variable is needed by someone.
 #SLAVEDIRS=misc/afbackup-client misc/afbackup-server
 
-MAINTAINER=	voland@catpipe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AF's backup system
 
 IGNORE=		Uses unregistered uid that conflicts with other ports
