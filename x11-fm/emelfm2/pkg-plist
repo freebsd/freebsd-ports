@@ -32,9 +32,9 @@ share/applications/emelfm2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
 %%PORTDOCS%%%%DOCSDIR%%/WARNING
 %%PORTDOCS%%%%DOCSDIR%%/help.txt
-share/locale/de/LC_MESSAGES/emelfm2.mo
-share/locale/fr/LC_MESSAGES/emelfm2.mo
-share/locale/ja/LC_MESSAGES/emelfm2.mo
+%%NLS%%share/locale/de/LC_MESSAGES/emelfm2.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/emelfm2.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/emelfm2.mo
 share/pixmaps/emelfm2/add_mark_bottom_48.png
 share/pixmaps/emelfm2/add_mark_top_48.png
 share/pixmaps/emelfm2/apply_all_48.png

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.emelfm2.net/rel/ \
 		${MASTER_SITE_LOCAL}
@@ -19,17 +19,24 @@ USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
-INSTALLS_SHLIB=	yes
-INSTALL_TARGET=	install install_i18n
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	install
 
-MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOC_DIR="${DOCSDIR}"
+MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOC_DIR="${DOCSDIR}/"
 MAN1=		emelfm2.1
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+INSTALL_TARGET+=install_i18n
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
 .endif
 
 .include <bsd.port.post.mk>
-
