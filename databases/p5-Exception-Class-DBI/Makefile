@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Exception-Class-DBI
-PORTVERSION=	0.93
+PORTVERSION=	0.95
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Exception
@@ -15,9 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@rbt.ca
 COMMENT=	DBI Exception objects
 
-BUILD_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
+RUN_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
