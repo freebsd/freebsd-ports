@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Plagger
-PORTVERSION=	0.7.9
-PORTREVISION=	2
+PORTVERSION=	0.7.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -58,6 +57,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		FLICKRSEARCH "CustomFeed::FlickrSearch Support" off \
 		HATENABKMK "Filter::HatenaBookmarkUsersCount Support" off \
 		PALMDOC "Publish::PalmDoc Support" off \
+		SUBSCRDBI "Subscription::DBI Support" off \
 		NOTIFYBEEP "Notify::Beep Support" off \
 		FILTERPPT "Filter::TTP Support" off \
 		KINOSEARCH "Search::KinoSearch Support" off \
@@ -85,7 +85,6 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 # The below options are not supported yet due to missing depending modules
 #		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
 #		PUBLISHCSV "Publish::CSV Support" off \
-#		SUBSCRDBI "Subscription::DBI Support" off \
 #		SUBSCRFOAF "Subscription::FOAF Support" off \
 #		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
 #		PINGSERVER "Subscription::PingServer Support" off \
@@ -175,6 +174,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 
 .if defined(WITH_PALMDOC)
 BUILD_DEPENDS+=	${SITE_PERL}/Palm/PalmDoc.pm:${PORTSDIR}/palm/p5-Palm-PalmDoc
+.endif
+
+.if defined(WITH_SUBSCRDBI)
+BUILD_DEPENDS+=	${SITE_PERL}/DBIx/Class/Schema.pm:${PORTSDIR}/databases/p5-DBIx-Class
 .endif
 
 .if defined(WITH_NOTIFYBEEP)
