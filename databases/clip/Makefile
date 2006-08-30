@@ -7,6 +7,7 @@
 
 PORTNAME=	clip
 DISTVERSION=	1.1.16-1
+PORTREVISION=	1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://www.cis.by/pub/clip/pub/clip/	\
@@ -103,8 +104,7 @@ USE_XPM=		yes
 USE_GNOME=		gtk12 gtk20
 HAS_CONFIGURE=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/clip
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=		${LOCALBASE}/clip/lib
+USE_LDCONFIG=		${LOCALBASE}/clip/lib
 ALL_TARGET=		local
 MAKE_ENV=		HOME="${WRKDIR}" \
 			LANG="C" \
