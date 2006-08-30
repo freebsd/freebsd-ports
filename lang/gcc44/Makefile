@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.0
-PORTREVISION=	20060819
+PORTREVISION=	20060826
 CATEGORIES=	lang java
 VERSIONSTRING=	4.2-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -46,6 +46,10 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502102
+CONFIGURE_ARGS+=	--disable-libgomp
+.endif
 
 .if ${ARCH} != i386
 WITHOUT_JAVA=	yes
