@@ -1,8 +1,18 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Senna.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Cursor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Senna/Index.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Result.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Query.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/RC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Record.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Records.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Snippet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Symbol.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/Values.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/OptArg/Select.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Senna/OptArg/Sort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Senna/Senna.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Senna/Senna.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Senna
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Senna/OptArg
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Senna

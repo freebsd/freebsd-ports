@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Senna
-PORTVERSION=	0.12
+PORTVERSION=	0.50
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DM/DMAKI/
@@ -19,8 +19,13 @@ BUILD_DEPENDS=	senna-cfg:${PORTSDIR}/textproc/senna
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	YES
+CONFIGURE_ARGS+=</dev/null
 CFLAGS+=	-I${LOCALBASE}/include
-MAN3=		Senna.3 Senna::Cursor.3 Senna::Index.3 Senna::Result.3
+MAN3=		Senna.3 \
+	Senna::Constants.3 Senna::Index.3 Senna::OptArg::Select.3 \
+	Senna::OptArg::Sort.3 Senna::Query.3 Senna::RC.3 Senna::Record.3 \
+	Senna::Records.3 Senna::Set.3 Senna::Snippet.3 Senna::Symbol.3 \
+	Senna::Values.3
 
 .include <bsd.port.pre.mk>
 
