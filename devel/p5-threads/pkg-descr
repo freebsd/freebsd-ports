@@ -1,0 +1,21 @@
+Perl 5.6 introduced something called interpreter threads. Interpreter
+threads are different from 5005threads (the thread model of Perl 5.005)
+by creating a new Perl interpreter per thread, and not sharing any
+data or state between threads by default.
+
+Prior to Perl 5.8, this has only been available to people embedding 
+Perl, and for emulating fork() on Windows.
+
+The threads API is loosely based on the old Thread.pm API. It is very
+important to note that variables are not shared between threads, all
+variables are by default thread local. To use shared variables one
+must use threads::shared.
+
+It is also important to note that you must enable threads by doing use
+threads as early as possible in the script itself, and that it is not
+possible to enable threading inside an eval "", do, require, or use.
+In particular, if you are intending to share variables with
+threads::shared, you must use threads before you use threads::shared.
+(threads will emit a warning if you do it the other way around.)
+
+WWW:	http://search.cpan.org/dist/threads/
