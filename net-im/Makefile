@@ -44,6 +44,7 @@
     SUBDIR += ickle
     SUBDIR += icmpchat
     SUBDIR += icqlib
+    SUBDIR += icqnd
     SUBDIR += imcom
     SUBDIR += jabber.el
     SUBDIR += jabberd
