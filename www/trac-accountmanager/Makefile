@@ -7,7 +7,7 @@
 
 PORTNAME=	accountmanagerplugin
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 #MASTER_SITES=	http://trac-hacks.org/download/accountmanagerplugin.zip
 MASTER_SITES=	http://dist.bsdlab.org/
@@ -17,7 +17,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Account Manager Plugin for trac
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac \
+		easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
