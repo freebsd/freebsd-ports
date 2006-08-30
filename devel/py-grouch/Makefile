@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grouch
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

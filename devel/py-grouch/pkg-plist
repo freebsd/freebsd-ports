@@ -1,39 +1,44 @@
-%%PORTDOCS%%share/doc/grouch/CHANGES.txt
-%%PORTDOCS%%share/doc/grouch/LICENSE.txt
-%%PORTDOCS%%share/doc/grouch/README.txt
-%%PORTDOCS%%share/doc/grouch/checking.txt
-%%PORTDOCS%%share/doc/grouch/schema.txt
-%%PORTDOCS%%share/doc/grouch/type-system.txt
-%%PORTDOCS%%share/examples/grouch/animal.py
-%%PORTDOCS%%share/examples/grouch/make_things
-%%PORTDOCS%%share/examples/grouch/thing.py
-%%PORTDOCS%%share/examples/grouch/things.proj
 bin/check_data
 bin/gen_schema
-lib/%%PYTHON_VERSION%%/site-packages/grouch/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/grouch/context.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/context.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/context.pyo
-lib/%%PYTHON_VERSION%%/site-packages/grouch/schema.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/schema.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/schema.pyo
-lib/%%PYTHON_VERSION%%/site-packages/grouch/script_util.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/script_util.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/script_util.pyo
-lib/%%PYTHON_VERSION%%/site-packages/grouch/spark.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/spark.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/spark.pyo
-lib/%%PYTHON_VERSION%%/site-packages/grouch/type_parser.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/type_parser.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/type_parser.pyo
-lib/%%PYTHON_VERSION%%/site-packages/grouch/util.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/util.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/util.pyo
-lib/%%PYTHON_VERSION%%/site-packages/grouch/valuetype.py
-lib/%%PYTHON_VERSION%%/site-packages/grouch/valuetype.pyc
-lib/%%PYTHON_VERSION%%/site-packages/grouch/valuetype.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/grouch
-%%PORTDOCS%%@dirrm share/examples/grouch
-%%PORTDOCS%%@dirrm share/doc/grouch
+%%PYTHON_SITELIBDIR%%/grouch/__init__.py
+%%PYTHON_SITELIBDIR%%/grouch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/grouch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/grouch/context.py
+%%PYTHON_SITELIBDIR%%/grouch/context.pyc
+%%PYTHON_SITELIBDIR%%/grouch/context.pyo
+%%PYTHON_SITELIBDIR%%/grouch/schema.py
+%%PYTHON_SITELIBDIR%%/grouch/schema.pyc
+%%PYTHON_SITELIBDIR%%/grouch/schema.pyo
+%%PYTHON_SITELIBDIR%%/grouch/schema_util.py
+%%PYTHON_SITELIBDIR%%/grouch/schema_util.pyc
+%%PYTHON_SITELIBDIR%%/grouch/schema_util.pyo
+%%PYTHON_SITELIBDIR%%/grouch/script_util.py
+%%PYTHON_SITELIBDIR%%/grouch/script_util.pyc
+%%PYTHON_SITELIBDIR%%/grouch/script_util.pyo
+%%PYTHON_SITELIBDIR%%/grouch/spark.py
+%%PYTHON_SITELIBDIR%%/grouch/spark.pyc
+%%PYTHON_SITELIBDIR%%/grouch/spark.pyo
+%%PYTHON_SITELIBDIR%%/grouch/type_parser.py
+%%PYTHON_SITELIBDIR%%/grouch/type_parser.pyc
+%%PYTHON_SITELIBDIR%%/grouch/type_parser.pyo
+%%PYTHON_SITELIBDIR%%/grouch/util.py
+%%PYTHON_SITELIBDIR%%/grouch/util.pyc
+%%PYTHON_SITELIBDIR%%/grouch/util.pyo
+%%PYTHON_SITELIBDIR%%/grouch/valuetype.py
+%%PYTHON_SITELIBDIR%%/grouch/valuetype.pyc
+%%PYTHON_SITELIBDIR%%/grouch/valuetype.pyo
+%%DOCSDIR%%/CHANGES.txt
+%%DOCSDIR%%/LICENSE.txt
+%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/checking.txt
+%%DOCSDIR%%/schema.txt
+%%DOCSDIR%%/type-system.txt
+%%EXAMPLESDIR%%/animal.py
+%%EXAMPLESDIR%%/make_things
+%%EXAMPLESDIR%%/thing.py
+%%EXAMPLESDIR%%/things.proj
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/grouch
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrm %%PYTHON_LIBDIR%%
