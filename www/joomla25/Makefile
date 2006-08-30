@@ -13,6 +13,8 @@ DISTFILES=	${JOOMLA_SRC}:source1
 MAINTAINER=	include@npf.pt.freebsd.org
 COMMENT=	A dynamic web content management system (CMS)
 
+FORBIDDEN=	remote code execution: http://vuxml.FreeBSD.org/0ab423e7-3822-11db-81e1-000e0c2e438a.html
+
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre xml zlib session gd pdf
