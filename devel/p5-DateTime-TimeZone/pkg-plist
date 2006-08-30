@@ -403,5 +403,5 @@
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America/Argentina
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Africa
-@dirrm %%SITE_PERL%%/DateTime/TimeZone
+@dirrmtry %%SITE_PERL%%/DateTime/TimeZone
 @dirrmtry %%SITE_PERL%%/DateTime
