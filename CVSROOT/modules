@@ -10412,6 +10412,7 @@ p5-qt		ports/x11-toolkits/p5-qt
 p5-rpm-build-perl	ports/devel/p5-rpm-build-perl
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-tagged	ports/audio/p5-tagged
+p5-threads	ports/devel/p5-threads
 p5-type1inst	ports/x11-fonts/p5-type1inst
 p5-v6		ports/lang/p5-v6
 p5-version	ports/devel/p5-version
