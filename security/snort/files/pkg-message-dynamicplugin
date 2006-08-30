@@ -1,0 +1,12 @@
+=========================================================================
+NOTE: The port has been configured without support for dynamic plugins.
+      It is recommended that you enable dynamic plugins by pressing
+      Ctrl-C now, run 'make config' and enable the DYNAMIC option.
+
+      If you choose not to enable dynamic plugins, the default Snort
+      configuration file may reference some dynamic plugins and
+      preprocessors that may cause Snort to not work properly or throw
+      errors. Please read the Snort documentation for more information
+      regarding dynamic plugins and which configuration directives
+      are affected.
+=========================================================================

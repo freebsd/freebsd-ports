@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.4.5
+PORTVERSION=	2.6.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-OPTIONS=	FLEXRESP "Flexible response to events" off \
+CONFLICTS?=	snort-1.* snort-2.0.* snort-2.1.* snort-2.2.* snort-2.3.* \
+		snort-2.4.*
+
+OPTIONS=	DYNAMIC "Enable dynamic plugin support" on \
+		FLEXRESP "Flexible response to events" off \
+		FLEXRESP2 "Flexible response to events (version 2)" off \
 		MYSQL "Enable MySQL support" off \
 		ODBC "Enable ODBC support" off \
 		POSTGRESQL "Enable PostgreSQL support" off \
@@ -33,7 +38,7 @@ CONFIG_DIR?=	${PREFIX}/etc/snort
 CONFIG_FILES=	classification.config gen-msg.map generators reference.config \
 		sid sid-msg.map snort.conf threshold.conf unicode.map
 RULES_DIR=	${PREFIX}/etc/snort/rules
-LOGS_DIR=	/var/log/snort
+LOGS_DIR=	${DESTDIR}/var/log/snort
 
 MAN8=		snort.8
 DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
@@ -41,9 +46,32 @@ DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_DYNAMIC)
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS+=	--enable-dynamicplugin
+PLIST_SUB+=	DYNAMIC=""
+.else
+PLIST_SUB+=	DYNAMIC="@comment "
+.endif
+
 .if defined(WITH_FLEXRESP)
+.if defined(WITH_FLEXRESP2)
+IGNORE=			options FLEXRESP and FLEXRESP2 are mutually exclusive
+.endif
 BUILD_DEPENDS+=		libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
 CONFIGURE_ARGS+=	--enable-flexresp \
+			--with-libnet-includes=${LOCALBASE}/include \
+			--with-libnet-libraries=${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_FLEXRESP2)
+BROKEN=			FLEXRESP2 patch file does not incorporate cleanly
+PATCH_SITES+=		http://cerberus.sourcefire.com/~jeff/archives/snort/sp_respond2/
+PATCHFILES+=		sp_respond2.diff.gz
+BUILD_DEPENDS+=		libnet*>=1.1.2.1,1:${PORTSDIR}/net/libnet \
+			libdnet*>=1.10_1:${PORTSDIR}/net/libdnet
+CONFIGURE_ARGS+=	--enable-flexresp2 \
 			--with-libnet-includes=${LOCALBASE}/include \
 			--with-libnet-libraries=${LOCALBASE}/lib
 .endif
@@ -83,17 +111,35 @@ PLIST_SUB+=		PRELUDE="@comment "
 .endif
 
 post-patch:
+	${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
+	    's|lib/snort_|lib/snort/|g'
 	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
 		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
+.if defined(WITHOUT_DYNAMIC)
+	${REINPLACE_CMD} -e "s,-am: install-libLTLIBRARIES,-am:," \
+		${WRKSRC}/src/dynamic-plugins/sf_engine/Makefile.in
+.endif
+
+pre-configure:
+.if defined(WITHOUT_DYNAMIC)
+	@${CAT} ${PATCHDIR}/pkg-message-dynamicplugin
+	@sleep 5
+.endif
 
 post-install:
+.if !defined(WITHOUT_DYNAMIC)
+	@${LIBTOOL} --finish ${LOCALBASE}/snort/dynamicpreprocessor
+.endif
 	[ -d ${CONFIG_DIR} ] || ${MKDIR} ${CONFIG_DIR}
 	[ -d ${EXAMPLESDIR} ] || ${MKDIR} ${EXAMPLESDIR}
 	[ -d ${RULES_DIR} ] || ${MKDIR} ${RULES_DIR}
 	[ -d ${LOGS_DIR} ] || ${MKDIR} ${LOGS_DIR}
 .for f in ${CONFIG_FILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${CONFIG_DIR}/${f}.default
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${CONFIG_DIR}/${f}-sample
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${EXAMPLESDIR}/${f}-sample
+	@if [ ! -f ${CONFIG_DIR}/${f} ]; then \
+		${CP} -p ${CONFIG_DIR}/${f}-sample ${CONFIG_DIR}/${f} ; \
+	fi
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/schemas/create* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
