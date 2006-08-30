@@ -58,9 +58,9 @@ WITH_BDB_VER=	41
 .    if (${WITH_BDB_VER} == 3) || (${WITH_BDB_VER} == 4) || (${WITH_BDB_VER} == 41)
 LIB_DEPENDS+=	db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 .    elif ${WITH_BDB_VER} == 2
-BROKEN=		"Does not compile with db2"
+BROKEN=		does not compile with db2
 .    else
-BROKEN=		"Unknown BerkeleyDB version"
+BROKEN=		unknown BerkeleyDB version
 .    endif
 CONFIGURE_ENV+=		DB_VER=db${WITH_BDB_VER}
 CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
@@ -129,7 +129,7 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+BROKEN=		does not compile on ${ARCH}
 .endif
 
 .if defined(WITH_STANDARD_ETC)
@@ -165,6 +165,8 @@ post-install:
 	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
+	@${FIND} ${WRKSRC} -name "inn.conf" \
+	    | ${XARGS} ${REINPLACE_CMD} -e 's/^pathhost:.*/pathhost:               host.example.com/'
 	@PKG_PREFIX=${PKG_PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF ${ETC_DIR}
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \

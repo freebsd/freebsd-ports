@@ -45,19 +45,6 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 			--enable-ipv6 \
 			--with-etc-dir=${ETC_DIR}
 
-# Attempt to avoid failures later on, when
-# makedbz is executed: we need a valid hostname.
-
-.if exists(/bin/hostname)
-HOSTNAME!=	/bin/hostname
-.  if ${HOSTNAME} != ""
-HOSTNAME:=	${HOSTNAME:C/[^\.]//g}
-.    if ${HOSTNAME} == ""
-IGNORE=		requires a fully-qualified hostname in order to build
-.    endif
-.  endif
-.endif
-
 .if defined(WITH_BERKELEYDB)
 CONFIGURE_ARGS+=	--with-berkeleydb
 .    if !defined(WITH_BDB_VER)
@@ -185,6 +172,8 @@ post-install:
 .endfor
 	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
+	@${FIND} ${WRKSRC} -name "inn.conf" \
+	    | ${XARGS} ${REINPLACE_CMD} -e 's/^pathhost:.*/pathhost:               host.example.com/'
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF ${ETC_DIR}
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \

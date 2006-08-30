@@ -56,9 +56,9 @@ LIB_DEPENDS+=		db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 .elif (${WITH_BDB_VER} == 42)
 LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
 .    elif ${WITH_BDB_VER} == 2
-IGNORE=		"Does not compile with db2"
+IGNORE=		does not compile with db2
 .    else
-IGNORE=		"Unknown BerkeleyDB version"
+IGNORE=		unknown BerkeleyDB version
 .    endif
 CONFIGURE_ENV+=		DB_VER=db${WITH_BDB_VER}
 CONFIGURE_ARGS+=	--with-berkeleydb
@@ -174,6 +174,8 @@ post-install:
 	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
+	@${FIND} ${WRKSRC} -name "inn.conf" \
+	    | ${XARGS} ${REINPLACE_CMD} -e 's/^pathhost:.*/pathhost:               host.example.com/'
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF ${ETC_DIR}
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \
