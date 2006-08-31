@@ -146,6 +146,7 @@
     SUBDIR += vpce
     SUBDIR += vx68k
     SUBDIR += vxtools
+    SUBDIR += wahcade
     SUBDIR += wine
     SUBDIR += x48
     SUBDIR += xbraitenberg
