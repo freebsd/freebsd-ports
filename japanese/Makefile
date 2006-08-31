@@ -292,6 +292,7 @@
     SUBDIR += paledit
     SUBDIR += pejv-fpw
     SUBDIR += perl5
+    SUBDIR += php5-mecab
     SUBDIR += php_doc
     SUBDIR += plain2
     SUBDIR += plan
