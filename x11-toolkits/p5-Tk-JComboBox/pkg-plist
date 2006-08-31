@@ -1,0 +1,15 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JComboBox/.packlist
+%%SITE_PERL%%/Tk/CWidget.pm
+%%SITE_PERL%%/Tk/CWidget.pod
+%%SITE_PERL%%/Tk/CWidget/Util/Boolean.pm
+%%SITE_PERL%%/Tk/JComboBox.pm
+%%SITE_PERL%%/Tk/JComboBox.pod
+%%SITE_PERL%%/Tk/JComboBox/jcb_edit.gif
+%%SITE_PERL%%/Tk/JComboBox/jcb_ro.gif
+%%SITE_PERL%%/Tk/JComboBox/tutorial.pod
+@dirrmtry %%SITE_PERL%%/Tk/JComboBox
+@dirrmtry %%SITE_PERL%%/Tk/CWidget/Util
+@dirrmtry %%SITE_PERL%%/Tk/CWidget
+@dirrmtry %%SITE_PERL%%/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JComboBox
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk

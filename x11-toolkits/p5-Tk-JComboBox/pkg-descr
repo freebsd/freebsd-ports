@@ -1,0 +1,23 @@
+JComboBox is a composite widget that contains a text Label or Entry, a
+Button, and a popup Listbox. It performs the same sort of tasks that can be
+accomplished by several other Composite widgets. Some such as BrowseEntry
+and Optionmenu are part of the standard Tk distribution, and there are many
+others available in CPAN.
+
+JComboBox borrows features from the Java Swing component bearing the same
+name, but falls short of being a true clone. Many of the methods and the
+general look and feel should be familiar to java developers. JComboBox also
+combines several features offered by many of the other "Combo Box"
+implementations, and works in two modes: editable and readonly.
+
+In readonly mode, JComboBox offers similar functionality to Optionmenu. It
+is basically a labeled button that activates a popup list. An item from the
+list is displayed on the Button when selected.
+
+When editable, JComboBox somewhat resembles BrowseEntry. That is, the
+widget is composed of an Entry widget with a Button to the right of it. As
+in the editable mode, the Button activates a popup Listbox from which a
+single item can be selected.
+
+WWW: http://search.cpan.org/dist/Tk-JComboBox/
+Author: Rob Seegel <RobSeegel@comcast.net>
