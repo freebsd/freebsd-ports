@@ -2889,6 +2889,7 @@ ftpmirror	ports/ftp/ftpmirror
 ftpproxy	ports/ftp/ftpproxy
 ftpq		ports/ftp/ftpq
 ftpsesame	ports/ftp/ftpsesame
+ftpsync		ports/ftp/ftpsync
 ftptool		ports/ftp/ftptool
 ftrace		ports/sysutils/ftrace
 ftrack		ports/mail/ftrack
