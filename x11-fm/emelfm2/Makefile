@@ -39,4 +39,10 @@ PLIST_SUB+=	NLS="@comment "
 USE_GCC=	3.4
 .endif
 
+.if ${OSVERSION} < 600000
+post-patch:
+	@${REINPLACE_CMD} -e 's|blksize_t buf_size =|__int32_t buf_size =|g' \
+		${WRKSRC}/src/e2_task_backend.c
+.endif
+
 .include <bsd.port.post.mk>
