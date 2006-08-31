@@ -22,6 +22,8 @@ USE_PHP=	yes
 DEFAULT_PHP_VER=5
 USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LIBS="${LIBS} ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
