@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	Frontier
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-0.07b4
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Frontier::RPC implements UserLand Software's XML RPC
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
