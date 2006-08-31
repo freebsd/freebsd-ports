@@ -4828,6 +4828,7 @@ ja-p5-nkf	ports/japanese/p5-nkf
 ja-paledit	ports/japanese/paledit
 ja-pejv-fpw	ports/japanese/pejv-fpw
 ja-perl5	ports/japanese/perl5
+ja-php5-mecab	ports/japanese/php5-mecab
 ja-plain2	ports/japanese/plain2
 ja-plan		ports/japanese/plan
 ja-platex-jsclasses	ports/japanese/platex-jsclasses
