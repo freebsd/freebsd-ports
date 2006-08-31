@@ -10503,6 +10503,7 @@ pathological	ports/games/pathological
 pathrate	ports/benchmarks/pathrate
 pavuk		ports/ftp/pavuk
 pawm		ports/x11-wm/pawm
+pax-utils	ports/sysutils/pax-utils
 pbasic		ports/lang/pbasic
 pbnc		ports/net/pbnc
 pbs		ports/misc/pbs
