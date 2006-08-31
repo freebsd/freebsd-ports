@@ -1,8 +1,8 @@
 @comment $FreeBSD$
 bin/bash
-bin/bash2
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
+bin/bash2
 bin/bashbug
 %%PORTDOCS%%%%DOCSDIR%%/article.ps.bz2
 %%PORTDOCS%%%%DOCSDIR%%/bashref.ps.bz2
