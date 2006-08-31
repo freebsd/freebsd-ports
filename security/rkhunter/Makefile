@@ -39,10 +39,6 @@ RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
-
 do-install:
 	cd ${WRKSRC} && ./installer.sh --installdir ${PREFIX}
 	${INSTALL_MAN} ${WRKSRC}/files/development/rkhunter.8 ${MAN8PREFIX}/man/man8
