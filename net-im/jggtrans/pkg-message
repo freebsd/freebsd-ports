@@ -1,0 +1,8 @@
+******************************************************************************
+
+Remember to edit jggtrans.xml to suit your needs.
+Also, keep in mind, that jggtrans should be always started with
+the same uid and gid as your Jabberd daemon, and never should
+be launched before it.
+
+******************************************************************************
