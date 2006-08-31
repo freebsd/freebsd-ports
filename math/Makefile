@@ -121,6 +121,7 @@
     SUBDIR += libjbigi
     SUBDIR += libmath++
     SUBDIR += libneural
+    SUBDIR += liborigin
     SUBDIR += libqalculate
     SUBDIR += libranlib
     SUBDIR += libtommath
