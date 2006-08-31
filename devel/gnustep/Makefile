@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	devel lang
 MASTER_SITES=	# empty
 DISTFILES=	# empty
