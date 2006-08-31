@@ -31,6 +31,7 @@
     SUBDIR += ftpproxy
     SUBDIR += ftpq
     SUBDIR += ftpsesame
+    SUBDIR += ftpsync
     SUBDIR += ftptool
     SUBDIR += gftp
     SUBDIR += gnusget
