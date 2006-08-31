@@ -14455,6 +14455,7 @@ w9wm		ports/x11-wm/w9wm
 wa-aspell	ports/textproc/wa-aspell
 waccess	ports/www/waccess
 wacko		ports/www/wacko
+wahcade		ports/emulators/wahcade
 waimea		ports/x11-wm/waimea
 waimea-devel		ports/x11-wm/waimea-devel
 wais		ports/net/wais
