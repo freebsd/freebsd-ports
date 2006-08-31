@@ -31,6 +31,10 @@ CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not build on sparc64
+.endif
+
 post-extract:
 .for f in configure src/fileops.cc src/gametime.cc src/image.cc src/win_types.h
 	@${REINPLACE_CMD} -e 's@SDL/SDL@SDL11/SDL@g' ${WRKSRC}/$f
