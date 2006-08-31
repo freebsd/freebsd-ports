@@ -6063,6 +6063,7 @@ liboop		ports/devel/liboop
 libopendaap	ports/devel/libopendaap
 libopennet	ports/net/libopennet
 libopensync	ports/devel/libopensync
+liborigin	ports/math/liborigin
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
 libotf		ports/print/libotf
