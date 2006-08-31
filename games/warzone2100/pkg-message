@@ -1,0 +1,22 @@
+==============================================================================
+
+Warzone2100 has been installed.
+
+If the game locks up in heavy fight (e.g. many units firing at each other) try
+to set OPENAL_BUFFER_SIZE to 8192 before running it.
+
+$ env OPENAL_BUFFER_SIZE=8192 warzone
+
+Or set the environment variable in your shell's configuration file (you can
+also run these commands directly from the command-line).
+
+For sh/bash add in your /etc/profile or ~/.profile:
+OPENAL_BUFFER_SIZE=8192
+export OPENAL_BUFFER_SIZE
+
+For csh/tcsh add in your /etc/csh.cshrc or ~/.cshrc:
+setenv OPENAL_BUFFER_SIZE=8192
+
+Enjoy!
+
+==============================================================================

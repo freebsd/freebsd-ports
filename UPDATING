@@ -8,6 +8,13 @@ upgrades.
 
 
 
+20060831:
+  AFFECTS: users of games/warzone
+  AUTHOR: alepulver@FreeBSD.org
+
+  games/warzone port directory was renamed back to games/warzone2100 because
+  the last version (2.0.4) uses the original name.
+
 20060830:
   AFFECTS: users of textproc/p5-Senna
   AUTHOR: kuriyama@FreeBSD.org
