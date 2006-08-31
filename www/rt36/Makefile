@@ -67,7 +67,11 @@ LATEST_LINK=	rt36
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
+.if defined(WITH_APACHE2)
+USE_APACHE=	2.0+
+.else
 USE_APACHE=	1.3+
+.endif
 
 CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 		--enable-layout=${LAYOUT} \
