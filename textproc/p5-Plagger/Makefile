@@ -7,6 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.10
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -37,7 +38,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/HTML/ResolveLink.pm:${PORTSDIR}/www/p5-HTML-ResolveLink \
 		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch
 
-OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
+OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		PODTESTING "POD Testing Support" off \
 		COOKIESHARING "Cookie sharing with Firefox Support" off \
 		LIBERALXML "Liberal XML parsing Support" on \
@@ -435,5 +436,11 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 
 post-patch:
 	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.yaml ${EXAMPLESDIR}/
+.endif
 
 .include <bsd.port.post.mk>

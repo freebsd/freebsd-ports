@@ -206,6 +206,20 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Util.pm
 %%SITE_PERL%%/Plagger/Walker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/atode.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/bloglines2gmail.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/iefav2opml.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/irc.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/livedoorreader2gmail.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/planet-old.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/planet.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/podcast.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/rss2email.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/search.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/weather-notify.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/xoxo-planet.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/xoxo2opml.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/yapcvideo.yaml
 @dirrm %%SITE_PERL%%/Plagger/TT/Plagger
 @dirrm %%SITE_PERL%%/Plagger/TT
 @dirrm %%SITE_PERL%%/Plagger/Rule/Deduped
@@ -233,3 +247,4 @@ bin/plagger-ircbot
 @dirrm %%SITE_PERL%%/Plagger/Cache
 @dirrm %%SITE_PERL%%/Plagger
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plagger
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
