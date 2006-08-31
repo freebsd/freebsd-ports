@@ -3366,7 +3366,7 @@ lib/libboost_date_time.so.3
 lib/libboost_filesystem.a
 lib/libboost_filesystem.so
 lib/libboost_filesystem.so.3
-lib/libbgl-viz.a
+%%BOOST_SPIRIT_1.8%%lib/libbgl-viz.a
 lib/libboost_prg_exec_monitor.a
 lib/libboost_prg_exec_monitor.so
 lib/libboost_prg_exec_monitor.so.3
@@ -3385,6 +3385,7 @@ lib/libboost_regex.so
 lib/libboost_regex.so.3
 lib/libboost_serialization.a
 lib/libboost_serialization.so
+lib/libboost_serialization.so.3
 lib/libboost_signals.a
 lib/libboost_signals.so
 lib/libboost_signals.so.3
