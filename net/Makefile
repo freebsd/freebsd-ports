@@ -683,6 +683,7 @@
     SUBDIR += samba
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
+    SUBDIR += samba-pdbsql
     SUBDIR += samba3
     SUBDIR += samba4wins
     SUBDIR += sambasentinel

@@ -1,0 +1,12 @@
+lib/samba/pdb/multi.so
+%%MYSQL%%lib/samba/pdb/mysql.so
+%%PGSQL%%lib/samba/pdb/pgsql.so
+%%MYSQL%%%%EXAMPLESDIR%%/mysql.dump
+%%MYSQL%%%%EXAMPLESDIR%%/smb.conf.mysql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql.dump
+%%PGSQL%%%%EXAMPLESDIR%%/smb.conf.pgsql
+%%PORTDOCS%%%%DOCSDIR%%/pdb_mysql.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry lib/samba/pdb
+@dirrmtry lib/samba
