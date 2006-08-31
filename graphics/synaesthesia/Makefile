@@ -7,17 +7,16 @@
 
 PORTNAME=	synaesthesia
 PORTVERSION=	2.4
-CATEGORIES=	graphics
+CATEGORIES=	graphics audio
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/ CSME
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Graphically represents sound in real time
 
 USE_SDL=	sdl
-USE_GMAKE=	Yes
-USE_X_PREFIX=	Yes
+USE_GMAKE=	yes
 
-GNU_CONFIGURE=	Yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE}
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
@@ -36,7 +35,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/synaesthesia ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
