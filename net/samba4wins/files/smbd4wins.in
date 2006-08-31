@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: smbd2wins
+# PROVIDE: smbd4wins
 # REQUIRE: NETWORKING SERVERS named ldconfig
 # BEFORE: DAEMON
 # KEYWORD: shutdown
