@@ -9,7 +9,7 @@ If you have mouse problems you can try running it with the "-nomdga"
 parameter (this will make the mouse work fine when the DGA X11 extension is
 disabled).
 
-If you hace sound problems try running it with the parameter
+If you have sound problems try running it with the parameter
 "-sndspeed <speed>", where "<speed>" could be 22050 or 44100 for example.
 
 If you enable water alpha ("r_wateralpha" or from the menu), set "r_novis" to
