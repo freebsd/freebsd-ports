@@ -39,8 +39,8 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 
 UNIQ=		/usr/bin/uniq
 BOOST_LIBS=	date_time filesystem iostreams prg_exec_monitor\
-		program_options regex signals test_exec_monitor\
-		unit_test_framework
+		program_options regex serialization signals\
+		test_exec_monitor unit_test_framework
 BOOST_SHARED_LIB_VER=	3
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -100,6 +100,7 @@ SPIRIT_VERSION=	1.6.2
 # - needs stlport
 # - spirit 1.6.x
 # - don't build wave
+# - don't build libbgl-wiz (needs spirit 1.8)
 # WITH_GCC34:
 # - no wchar support
 .if ${OSVERSION} < 500000
@@ -141,6 +142,7 @@ BUILD_DEPENDS+=	${RUN_DEPENDS}
 # - wchar support
 # - spirit 1.8.x
 # - wave 1.2
+# - build libbgl-wiz
 .else
 BOOST_TOOLS=	gcc
 EXTRA_PATCHES=	${FILESDIR}/FBSD5-patch-boost::python::detail::config.hpp
@@ -283,11 +285,13 @@ do-build:
 		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
 		${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
 
+.if ${OSVERSION} >= 500000 || defined(WITH_GCC34)
 # build bgl-viz library
 	cd ${WRKSRC}/libs/graph/build && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
                 "-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
                 ${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
+.endif
 
 # build random device code
 	cd ${WRKSRC}/libs/random && \
