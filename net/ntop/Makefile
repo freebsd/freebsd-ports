@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wxs@csh.rit.edu
+MAINTAINER=	wxs@atarininja.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
