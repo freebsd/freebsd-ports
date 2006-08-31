@@ -177,6 +177,7 @@
     SUBDIR += exhaust-ma
     SUBDIR += exmars
     SUBDIR += exult
+    SUBDIR += ezquake
     SUBDIR += falconseye
     SUBDIR += farblazer
     SUBDIR += fargoal
