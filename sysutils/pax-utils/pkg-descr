@@ -1,0 +1,4 @@
+Various ELF related utils for ELF32, ELF64 binaries useful
+tools that can check files for security relevant properties
+
+WWW: http://www.gentoo.org/proj/en/hardened/pax-utils.xml

@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed May 17 23:48:10 2006
++++ Makefile	Thu Jul 20 20:51:39 2006
+@@ -20,7 +20,7 @@
+ LDFLAGS   +=
+ LIBS      :=
+ DESTDIR    =
+-PREFIX    := $(DESTDIR)/usr
++#PREFIX    := $(DESTDIR)/usr
+ STRIP     := strip
+ MKDIR     := mkdir -p
+ CP        := cp
+@@ -98,7 +98,7 @@
+ 	$(STRIP) --strip-unneeded $(TARGETS)
+ 
+ install: all
+-	-$(MKDIR) $(PREFIX)/bin/ $(PREFIX)/share/man/man1/
++	-$(MKDIR) $(PREFIX)/bin/ $(MANPREFIX)/man/man1/
+ 	$(CP) $(TARGETS) $(PREFIX)/bin/
+ ifeq ($(S),)
+ 	-$(MKDIR) $(PREFIX)/share/doc/pax-utils/
+@@ -106,7 +106,7 @@
+ endif
+ 	for mpage in $(MPAGES) ; do \
+ 		[ -e $$mpage ] \
+-			&& cp $$mpage $(PREFIX)/share/man/man1/ || : ;\
++			&& cp $$mpage $(MANPREFIX)/man/man1/ || : ;\
+ 	done
+ 
+ dist: distclean

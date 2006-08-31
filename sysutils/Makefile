@@ -420,6 +420,7 @@
     SUBDIR += p5-Unix-Syslog
     SUBDIR += p5-User
     SUBDIR += paicc
+    SUBDIR += pax-utils
     SUBDIR += pcfclock
     SUBDIR += pciutils
     SUBDIR += pdixtract
