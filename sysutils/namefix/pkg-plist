@@ -1,6 +1,5 @@
 bin/namefix.pl
 %%SITE_PERL%%/namefix/about.pm
-%%SITE_PERL%%/namefix/arrays.pm
 %%SITE_PERL%%/namefix/bookmarks.pm
 %%SITE_PERL%%/namefix/changelog.pm
 %%SITE_PERL%%/namefix/config.pm
@@ -8,6 +7,7 @@ bin/namefix.pl
 %%SITE_PERL%%/namefix/edit_lists.pm
 %%SITE_PERL%%/namefix/filter.pm
 %%SITE_PERL%%/namefix/fixname.pm
+%%SITE_PERL%%/namefix/global_variables.pm
 %%SITE_PERL%%/namefix/links.pm
 %%SITE_PERL%%/namefix/manual.pm
 %%SITE_PERL%%/namefix/menu.pm
