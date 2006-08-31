@@ -18,6 +18,8 @@ COMMENT=	The X-Plane network installer
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
