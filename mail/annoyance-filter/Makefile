@@ -15,13 +15,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/-//}
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Adaptive Bayesian Junk Mail Filter
 
-#USE_GPG=		yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
-CFLAGS+=		${CPPFLAGS}
 
 MAN1=		annoyance-filter.1
 DOCS=		COPYING INSTALL README *.pdf
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CFLAGS+=	-I. ${CPPFLAGS}
+.else
+CFLAGS+=	${CPPFLAGS}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -32,4 +38,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
