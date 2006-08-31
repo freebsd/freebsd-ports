@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
@@ -14,19 +14,38 @@ MASTER_SITES=	http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 MAINTAINER=	ed@fxq.nl
 COMMENT=	A small command line interface music player
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
-		mad.2:${PORTSDIR}/audio/mad \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+USE_OPENSSL=	yes
+USE_GNOME=	glib20
+USE_GMAKE=	yes
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	herrie
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+OPTIONS=	MAD "MAD MP3 support" on \
+		VORBIS "Ogg Vorbis support" on \
+		SNDFILE "libsndfile support" off
 
 PLIST_FILES=	bin/herrie
+MAN1=		herrie.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		doesn't like 4.x thread libs
+.if !defined(WITHOUT_MAD)
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
+.else
+MAKE_ENV+=	NO_MP3=yes
+.endif
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+.else
+MAKE_ENV+=	NO_VORBIS=yes
+.endif
+.if !defined(WITHOUT_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+.else
+MAKE_ENV+=	NO_SNDFILE=yes
 .endif
 
 .include <bsd.port.post.mk>
