@@ -1667,6 +1667,7 @@
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
+    SUBDIR += py-levenshtein
     SUBDIR += py-ll-core
     SUBDIR += py-log4py
     SUBDIR += py-logging
