@@ -23,6 +23,8 @@ COMMENT=	Jonathon Fowler's Duke Nukem 3D Port
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	uses x86 assembly code
 USE_ZIP=	yes
 USE_GCC=	3.2+
 USE_GMAKE=	yes
