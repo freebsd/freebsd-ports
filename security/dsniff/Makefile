@@ -11,11 +11,13 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
 BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
+
+BROKEN=		Depends on incompatible versions of libnet
 
 GNU_CONFIGURE=	yes
 
