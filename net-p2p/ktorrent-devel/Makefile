@@ -16,6 +16,8 @@ COMMENT=	BitTorrent client for KDE
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
+BROKEN=		Does not compile
+
 CONFLICTS=	ktorrent-[0.9]*
 
 USE_BZIP2=	yes
