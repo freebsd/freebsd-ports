@@ -5119,6 +5119,7 @@ jflex		ports/java/jflex
 jfreechart	ports/java/jfreechart
 jftp		ports/ftp/jftp
 jftpgw		ports/ftp/jftpgw
+jggtrans	ports/net-im/jggtrans
 jgraph		ports/graphics/jgraph
 jgrapht		ports/java/jgrapht
 jgv		ports/graphics/jgv
