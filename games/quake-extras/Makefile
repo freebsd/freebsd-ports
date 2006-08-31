@@ -37,6 +37,10 @@ SKYFILE=	fuhquake-skyboxes.zip
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Does not build on !i386
+.endif
+
 .if !defined(WITHOUT_REMODEL) || !defined(WITHOUT_SKYBOXES)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
