@@ -2424,6 +2424,7 @@ ezm3		ports/lang/ezm3
 ezmlm		ports/mail/ezmlm
 ezmlm-idx	ports/mail/ezmlm-idx
 ezmlm-web	ports/mail/ezmlm-web
+ezquake		ports/games/ezquake
 ezstream	ports/audio/ezstream
 ezxml		ports/textproc/ezxml
 f-prot		ports/security/f-prot
