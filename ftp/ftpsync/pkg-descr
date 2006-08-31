@@ -1,0 +1,7 @@
+ftpsync.pl synchronizes a local directory tree and a remote FTP directory
+tree. It was initally written to automize web publishing, but might be
+useful for some other purposes, like mirroring not-too-large public sites,
+data replication, and more.
+
+WWW: http://ftpsync.sourceforge.net/
+Author: Christoph Lechleitner <ibcl@users.sourceforge.net>
