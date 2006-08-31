@@ -304,6 +304,7 @@
     SUBDIR += libmpcdec
     SUBDIR += libmpd
     SUBDIR += libmusicbrainz
+    SUBDIR += libnjb
     SUBDIR += libnoise
     SUBDIR += libofa
     SUBDIR += libogg
