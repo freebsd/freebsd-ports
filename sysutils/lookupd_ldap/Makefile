@@ -14,6 +14,8 @@ COMMENT=	The LDAP plugin for the lookupd daemon
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lookupd:${PORTSDIR}/sysutils/lookupd
 
+BROKEN=		Does not compile
+
 INSTALLS_SHLIB=	yes
 USE_OPENLDAP=	yes
 
