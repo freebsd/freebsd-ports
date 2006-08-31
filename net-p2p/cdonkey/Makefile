@@ -10,7 +10,7 @@ PORTNAME=	cdonkey
 PORTVERSION=	0.9.0
 PORTREVISION=	1
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://suche.org/
+MASTER_SITES=	http://www.sourcefiles.org/Internet/File_Sharing/Edonkey/
 DISTNAME=	cDonkey-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
