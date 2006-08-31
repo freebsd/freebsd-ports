@@ -24,9 +24,15 @@ MAN3=		Authen::Krb5.3
 
 KRB5_HOME?=	${LOCALBASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	Doesn't build on 4.x
+.endif
+
 post-patch:
 	@${PERL} -pi -e 's:/usr/local/krb5:${KRB5_HOME}:g; \
 		         s:/usr/local:${LOCALBASE}:g;' \
 		${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
