@@ -23,6 +23,8 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
 		dbus-1.2:${PORTSDIR}/devel/dbus
 
+BROKEN=		Incomplete pkg-plist (needs to use gettext infrastructure)
+
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_FAM=	yes
