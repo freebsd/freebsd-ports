@@ -32,9 +32,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|g' \
+		${WRKSRC}/common/mp4ff/mp4ff_int_types.h
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/plugins/bmp
