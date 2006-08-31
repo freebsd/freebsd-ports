@@ -9,7 +9,7 @@
 
 PORTNAME=		linux_base-suse
 PORTVERSION=		9.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_SUSE} ${MASTER_SITE_SUSE:S/$/:update/}
 MASTER_SITE_SUBDIR=	i386/9.2/suse/i586 i386/update/9.2/rpm/i586/:update
@@ -25,13 +25,13 @@ DISTFILES=	\
 	bash-3.0-8.2.i586.rpm:update \
 	ncurses-5.4-65.i586.rpm \
 	readline-5.0-1.2.i586.rpm:update \
-	zlib-1.2.1-74.i586.rpm \
-	bzip2-1.0.2-347.i586.rpm \
+	zlib-1.2.1-74.4.i586.rpm:update \
+	bzip2-1.0.2-347.3.i586.rpm:update \
 	libzio-0.1-4.i586.rpm \
 	info-4.7-6.i586.rpm \
 	grep-2.5.1-431.i586.rpm \
 	desktop-file-utils-0.7-2.1.i586.rpm \
-	coreutils-5.2.1-32.i586.rpm \
+	coreutils-5.2.1-32.2.i586.rpm:update \
 	popt-1.7-190.i586.rpm \
 	insserv-1.00.5-6.2.i586.rpm \
 	setserial-2.17-579.i586.rpm \
@@ -48,14 +48,11 @@ COMMENT=		Basic packages for Linux mode from SUSE 9.2/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=		linux_base-7* linux_base-debian* linux_base-fc* \
-			linux_base-gentoo* linux_base-rh* linux_base-suse-9.1*
+CONFLICTS=		linux_base-7* linux_base-8* linux_base-debian* \
+			linux_base-fc* linux_base-gentoo* linux_base-rh* \
+			linux_base-suse-9.1* linux_base-suse-9.3*
 
-DEPRECATED=	unmaintained and does not comply to the linux_base invariants
-EXPIRATION_DATE=2006-09-01
-IGNORE=		${DEPRECATED}
-
-RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
+RESTRICTED=	binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt
 ONLY_FOR_ARCHS=		amd64 i386
 DIST_SUBDIR=		rpm/i386/suse/9.2
 PREFIX=			${LINUXBASE}
