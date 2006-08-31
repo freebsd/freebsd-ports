@@ -1,30 +1,22 @@
 bin/geany
-share/applications/geany.desktop
-share/locale/de/LC_MESSAGES/geany.mo
-share/pixmaps/geany.png
-%%DATADIR%%/filetypes.asm
-%%DATADIR%%/filetypes.c
-%%DATADIR%%/filetypes.common
-%%DATADIR%%/filetypes.conf
-%%DATADIR%%/filetypes.css
-%%DATADIR%%/filetypes.docbook
-%%DATADIR%%/filetypes.java
-%%DATADIR%%/filetypes.makefile
-%%DATADIR%%/filetypes.markup
-%%DATADIR%%/filetypes.pascal
-%%DATADIR%%/filetypes.perl
-%%DATADIR%%/filetypes.python
-%%DATADIR%%/filetypes.sh
-%%DATADIR%%/filetypes.tex
-%%DATADIR%%/global.tags
-%%PORTDOCS%%%%DOCSDIR%%/geany.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_keys.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_templ.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_tools.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.jpg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%%%DOCSDIR%%/html/geany.css
 %%PORTDOCS%%%%DOCSDIR%%/html/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apb.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apbs02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apbs03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/apc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch01s04.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch02s02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch02s03.html
@@ -35,16 +27,49 @@ share/pixmaps/geany.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s05.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s06.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s07.html
-%%PORTDOCS%%%%DOCSDIR%%/html/geany.css
-%%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_templ.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_tools.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s08.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s09.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-@dirrmtry share/applications
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ScintillaLicense.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%share/locale/de/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/es/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/be/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
+share/applications/geany.desktop
+share/pixmaps/geany.png
+@dirrmtry share/applications
+%%DATADIR%%/global.tags
+%%DATADIR%%/GPL-2
+%%DATADIR%%/filetypes.asm
+%%DATADIR%%/filetypes.c
+%%DATADIR%%/filetypes.caml
+%%DATADIR%%/filetypes.common
+%%DATADIR%%/filetypes.conf
+%%DATADIR%%/filetypes.cpp
+%%DATADIR%%/filetypes.css
+%%DATADIR%%/filetypes.docbook
+%%DATADIR%%/filetypes.java
+%%DATADIR%%/filetypes.latex
+%%DATADIR%%/filetypes.makefile
+%%DATADIR%%/filetypes.oms
+%%DATADIR%%/filetypes.pascal
+%%DATADIR%%/filetypes.perl
+%%DATADIR%%/filetypes.php
+%%DATADIR%%/filetypes.python
+%%DATADIR%%/filetypes.ruby
+%%DATADIR%%/filetypes.sh
+%%DATADIR%%/filetypes.sql
+%%DATADIR%%/filetypes.tcl
+%%DATADIR%%/filetypes.xml
+@dirrmtry %%DATADIR%%
