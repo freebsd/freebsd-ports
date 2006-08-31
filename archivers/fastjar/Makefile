@@ -14,7 +14,10 @@ MASTER_SITE_SUBDIR=	maho/fastjar
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A version of JDK's `jar' command written entirely in C
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
+USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
