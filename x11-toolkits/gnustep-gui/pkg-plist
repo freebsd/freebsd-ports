@@ -321,11 +321,14 @@ System/Library/Headers/AppKit/GSHbox.h
 System/Library/Headers/AppKit/GSHelpManagerPanel.h
 System/Library/Headers/AppKit/GSHorizontalTypesetter.h
 System/Library/Headers/AppKit/GSInfoPanel.h
+System/Library/Headers/AppKit/GSInstantiator.h
 System/Library/Headers/AppKit/GSLayoutManager.h
 System/Library/Headers/AppKit/GSLayoutManager_internal.h
 System/Library/Headers/AppKit/GSMemoryPanel.h
 System/Library/Headers/AppKit/GSMethodTable.h
+System/Library/Headers/AppKit/GSModelLoaderFactory.h
 System/Library/Headers/AppKit/GSNibCompatibility.h
+System/Library/Headers/AppKit/GSNibContainer.h
 System/Library/Headers/AppKit/GSNibTemplates.h
 System/Library/Headers/AppKit/GSPDFPrintOperation.h
 System/Library/Headers/AppKit/GSPasteboardServer.h
@@ -431,6 +434,8 @@ System/Library/Headers/AppKit/NSSavePanel.h
 System/Library/Headers/AppKit/NSScreen.h
 System/Library/Headers/AppKit/NSScrollView.h
 System/Library/Headers/AppKit/NSScroller.h
+System/Library/Headers/AppKit/NSSearchField.h
+System/Library/Headers/AppKit/NSSearchFieldCell.h
 System/Library/Headers/AppKit/NSSecureTextField.h
 System/Library/Headers/AppKit/NSSelection.h
 System/Library/Headers/AppKit/NSSlider.h
@@ -478,11 +483,14 @@ System/Library/Headers/GNUstepGUI/GSHbox.h
 System/Library/Headers/GNUstepGUI/GSHelpManagerPanel.h
 System/Library/Headers/GNUstepGUI/GSHorizontalTypesetter.h
 System/Library/Headers/GNUstepGUI/GSInfoPanel.h
+System/Library/Headers/GNUstepGUI/GSInstantiator.h
 System/Library/Headers/GNUstepGUI/GSLayoutManager.h
 System/Library/Headers/GNUstepGUI/GSLayoutManager_internal.h
 System/Library/Headers/GNUstepGUI/GSMemoryPanel.h
 System/Library/Headers/GNUstepGUI/GSMethodTable.h
+System/Library/Headers/GNUstepGUI/GSModelLoaderFactory.h
 System/Library/Headers/GNUstepGUI/GSNibCompatibility.h
+System/Library/Headers/GNUstepGUI/GSNibContainer.h
 System/Library/Headers/GNUstepGUI/GSNibTemplates.h
 System/Library/Headers/GNUstepGUI/GSPDFPrintOperation.h
 System/Library/Headers/GNUstepGUI/GSPasteboardServer.h
@@ -511,11 +519,14 @@ System/Library/Headers/gnustep/gui/GSHbox.h
 System/Library/Headers/gnustep/gui/GSHelpManagerPanel.h
 System/Library/Headers/gnustep/gui/GSHorizontalTypesetter.h
 System/Library/Headers/gnustep/gui/GSInfoPanel.h
+System/Library/Headers/gnustep/gui/GSInstantiator.h
 System/Library/Headers/gnustep/gui/GSLayoutManager.h
 System/Library/Headers/gnustep/gui/GSLayoutManager_internal.h
 System/Library/Headers/gnustep/gui/GSMemoryPanel.h
 System/Library/Headers/gnustep/gui/GSMethodTable.h
+System/Library/Headers/gnustep/gui/GSModelLoaderFactory.h
 System/Library/Headers/gnustep/gui/GSNibCompatibility.h
+System/Library/Headers/gnustep/gui/GSNibContainer.h
 System/Library/Headers/gnustep/gui/GSNibTemplates.h
 System/Library/Headers/gnustep/gui/GSPasteboardServer.h
 System/Library/Headers/gnustep/gui/GSServicesManager.h
@@ -638,8 +649,11 @@ System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/o
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/data.classes
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/objects.gorm
 System/Library/Libraries/Resources/gnustep-gui/English.lproj/Localizable.strings
+System/Library/Libraries/Resources/gnustep-gui/Esperanto.lproj/Localizable.strings
+System/Library/Libraries/Resources/gnustep-gui/German.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-gui/Info-gnustep.plist
 System/Library/Libraries/Resources/gnustep-gui/Italian.lproj/Localizable.strings
+System/Library/Libraries/Resources/gnustep-gui/Lojban.lproj/Localizable.strings
 System/Library/Libraries/libgnustep-gui.so
 System/Library/Libraries/libgnustep-gui.so.%%BASEVERSION%%
 System/Library/Libraries/libgnustep-gui.so.%%VERSION%%
@@ -657,7 +671,10 @@ System/Tools/set_show_service
 @dirrm System/Library/Services/GSspell.service
 @dirrm System/Library/PostScript/PPD/English.lproj
 @dirrm System/Library/PostScript/PPD
+@dirrm System/Library/Libraries/Resources/gnustep-gui/Lojban.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-gui/Italian.lproj
+@dirrm System/Library/Libraries/Resources/gnustep-gui/German.lproj
+@dirrm System/Library/Libraries/Resources/gnustep-gui/Esperanto.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm
 @dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm
 @dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm
