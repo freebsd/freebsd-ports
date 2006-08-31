@@ -9497,5 +9497,5 @@
 @dirrm %%ZOPEBASEDIR%%/lib
 @dirrm %%ZOPEBASEDIR%%/doc
 @dirrm %%ZOPEBASEDIR%%/bin
-@dirrm %%ZOPEBASEDIR%%/Products
-@dirrm %%ZOPEBASEDIR%%
+@dirrmtry %%ZOPEBASEDIR%%/Products
+@dirrmtry %%ZOPEBASEDIR%%
