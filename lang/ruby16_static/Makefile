@@ -70,7 +70,7 @@ CFLAGS+=	-g
 STRIP=		# none
 .endif
 
-MAKE_ARGS=	-j3
+#MAKE_ARGS=	-j3
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 IF_DEFAULT=	""
