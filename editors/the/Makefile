@@ -27,6 +27,26 @@ ALL_TARGET=	all html
 
 MAN1=		the.1
 
+OPTIONS=	XAW3D "Enable Xaw3D" off \
+		XCURSES "Build XCurses (X11) version" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_XAW3D)
+CONFIGURE_ARGS+=--with-xaw3d
+LIB_DEPENDS+=	Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d
+.endif
+
+.if defined(WITH_XCURSES)
+CONFIGURE_ARGS+=--with-xcurses \
+		--with-cursesincdir=${LOCALBASE}/include \
+		--with-curseslibdir=${LOCALBASE}/lib
+LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses
+PLIST_SUB=	XCURSES="" NCURSES="@comment "
+.else
+PLIST_SUB=	XCURSES="@comment " NCURSES=""
+.endif
+
 .if defined(WITH_REXX_REGINA)
 BUILD_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
 RUN_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
@@ -38,10 +58,14 @@ CONFIGURE_ARGS+=	--with-rexx=rexximc
 .endif
 
 post-install:
+.if defined(WITH_XCURSES)
+	@${LN} -sf xthe ${PREFIX}/bin/the
+.else
 	@${LN} -sf nthe ${PREFIX}/bin/the
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/THE
 	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/THE
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

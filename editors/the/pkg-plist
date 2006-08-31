@@ -1,5 +1,6 @@
-bin/nthe
+%%NCURSES%%bin/nthe
 bin/the
+%%XCURSES%%bin/xthe
 share/THE/THE_Help.txt
 share/THE/abf.tld
 share/THE/append.the
