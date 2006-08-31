@@ -8,10 +8,10 @@
 
 PORTNAME=		linux_base-suse
 PORTVERSION=		9.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		emulators linux
-MASTER_SITES=		${MASTER_SITE_SUSE}
-MASTER_SITE_SUBDIR=	i386/9.1/suse/i586
+MASTER_SITES=		${MASTER_SITE_SUSE} ${MASTER_SITE_SUSE:S/$/:update/}
+MASTER_SITE_SUBDIR=	i386/9.1/suse/i586 i386/update/9.1/rpm/i586/:update
 DISTFILES=	suse-release-9.1-0.i586.rpm \
 		glibc-locale-2.3.3-98.i586.rpm \
 		glibc-2.3.3-98.i586.rpm \
@@ -20,21 +20,21 @@ DISTFILES=	suse-release-9.1-0.i586.rpm \
 		db-4.2.52-85.i586.rpm \
 		gdbm-1.8.3-225.i586.rpm \
 		glib-1.2.10-586.i586.rpm \
-		bash-2.05b-305.i586.rpm \
-		ncurses-5.4-59.i586.rpm \
+		bash-2.05b-305.1.i586.rpm:update \
+		ncurses-5.4-61.3.i586.rpm:update \
 		readline-4.3-306.i586.rpm \
-		zlib-1.2.1-70.i586.rpm \
+		zlib-1.2.1-70.12.i586.rpm:update \
 		info-4.6-61.i586.rpm \
 		grep-2.5.1-416.i586.rpm \
 		desktop-file-utils-0.3.0.cvs20030807-221.i586.rpm \
-		coreutils-5.2.1-23.i586.rpm \
+		coreutils-5.2.1-23.8.i586.rpm:update \
 		popt-1.7-176.i586.rpm \
 		insserv-1.00.2-85.i586.rpm \
 		setserial-2.17-577.i586.rpm \
 		libstdc++-3.3.3-41.i586.rpm \
 		slang-1.4.9-121.i586.rpm \
-		bzip2-1.0.2-344.i586.rpm \
-		libacl-2.2.21-54.i586.rpm \
+		bzip2-1.0.2-346.6.i586.rpm:update \
+		libacl-2.2.21-54.4.i586.rpm:update \
 		libselinux-1.8-16.i586.rpm \
 		rpm-4.1.1-177.i586.rpm \
 		libgcc-3.3.3-41.i586.rpm \
@@ -46,15 +46,12 @@ COMMENT=	Basic packages for Linux mode from SUSE 9.1/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=	linux_base-7* linux_base-debian* \
-		linux_base-gentoo* linux_base-rh-9* linux_base-fc*
-
-DEPRECATED=     unmaintained and does not comply to the linux_base invariants
-EXPIRATION_DATE=2006-09-01
-IGNORE=         ${DEPRECATED}
+CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
+		linux_base-fc* linux_base-gentoo* linux_base-rh-9* \
+		linux_base-suse-9.2* linux_base-suse-9.3*
 
 NO_LATEST_LINK=		yes
-RESTRICTED=		"binaries under GNU GPL without accompanying source"
+RESTRICTED=		binaries under GNU GPL without accompanying source
 ONLY_FOR_ARCHS=		i386
 DIST_SUBDIR=		rpm/${ARCH}/suse
 PREFIX=			${LINUXBASE}
@@ -104,7 +101,7 @@ do-extract:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in ${DISTFILES:S/:new//}; do \
+	@for R in ${DISTFILES:S/:update//}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
