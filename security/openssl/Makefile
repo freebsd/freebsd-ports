@@ -888,7 +888,7 @@ MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=-Bforcearchive
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive
 .endif
 
-OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so
+OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
 
