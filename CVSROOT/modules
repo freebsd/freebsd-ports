@@ -6046,6 +6046,7 @@ libnetdude	ports/net/libnetdude
 libneural	ports/math/libneural
 libnewmail	ports/mail/libnewmail
 libnids		ports/net/libnids
+libnjb		ports/audio/libnjb
 libnoise	ports/audio/libnoise
 libnotify	ports/devel/libnotify
 libnova		ports/astro/libnova
