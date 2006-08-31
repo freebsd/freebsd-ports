@@ -14,7 +14,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
 WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
-GUN_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
