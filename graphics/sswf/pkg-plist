@@ -1,25 +1,53 @@
+bin/asc
 bin/ft2sswf
+bin/jpg2swf
 bin/sswf
 bin/swf_dump
 include/sswf/libsswf-config.h
 include/sswf/libsswf-version.h
 include/sswf/libsswf.h
-lib/libsswf-1.7.2.so
+include/sswf/libsswf_as.h
+include/sswf/libsswf_asas.h
+lib/libsswf-1.7.4.so
 lib/libsswf.a
 lib/libsswf.la
 lib/libsswf.so
+lib/libsswf_as-1.7.4.so
+lib/libsswf_as.a
+lib/libsswf_as.la
+lib/libsswf_as.so
+lib/libsswf_asas-1.7.4.so
+lib/libsswf_asas.a
+lib/libsswf_asas.la
+lib/libsswf_asas.so
+@comment For non-standard prefixes
+@unexec rm -f %D/libdata/ldconfig/sswf 2>/dev/null || true
+%%DATADIR%%/ASC-TODO.txt
 %%DATADIR%%/AUTHORS.txt
 %%DATADIR%%/CHANGES.txt
+%%DATADIR%%/INSTALL-DEBIAN.txt
 %%DATADIR%%/INSTALL-IRIX.txt
 %%DATADIR%%/INSTALL-MACOSX.txt
 %%DATADIR%%/INSTALL-RPM.txt
 %%DATADIR%%/INSTALL-SLACKWARE.txt
+%%DATADIR%%/INSTALL-SRC.txt
 %%DATADIR%%/INSTALL.txt
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/LINKS.txt
 %%DATADIR%%/NOTES.txt
 %%DATADIR%%/TODO.txt
+%%DATADIR%%/misc/Alexis-PGP.key
+%%DATADIR%%/misc/asc.vim
+%%DATADIR%%/misc/package_creation_date.txt
+%%DATADIR%%/misc/sswf.vim
+%%DATADIR%%/misc/xswf.vim
 %%DATADIR%%/samples/README.txt
+%%DATADIR%%/samples/asc_logo/logo.html
+%%DATADIR%%/samples/asc_logo/logo.png
+%%DATADIR%%/samples/asc_logo/logo.sswf
+%%DATADIR%%/samples/asc_logo/run
+%%DATADIR%%/samples/asc_logo/run.bat
+%%DATADIR%%/samples/asc_logo/swf_dump-tables.jpg
 %%DATADIR%%/samples/check_version/makefile
 %%DATADIR%%/samples/check_version/version.c++
 %%DATADIR%%/samples/dyn-button/button.html
@@ -108,25 +136,70 @@ lib/libsswf.so
 %%DATADIR%%/samples/sun-flower/sun_flower.jpg
 %%DATADIR%%/samples/sun-flower/sun_flower.sswf
 %%DATADIR%%/samples/sun-flower/sun_flower_mask.tga
-%%DATADIR%%/samples/trail/run
-%%DATADIR%%/samples/trail/run.bat
-%%DATADIR%%/samples/trail/trail.html
-%%DATADIR%%/samples/trail/trail.sswf
 %%DATADIR%%/samples/web-site-anim/anim.html
 %%DATADIR%%/samples/web-site-anim/anim.sswf
 %%DATADIR%%/samples/web-site-anim/run
 %%DATADIR%%/samples/web-site-anim/run.bat
 %%DATADIR%%/samples/web-site-anim/sswf.wav
 %%DATADIR%%/scripts/colors.sswf
+%%DATADIR%%/scripts/extensions/complex.asc
+%%DATADIR%%/scripts/extensions/trace.asc
 %%DATADIR%%/scripts/flags.sswf
 %%DATADIR%%/scripts/fonts/font-blue_highway-condensed.sswf
 %%DATADIR%%/scripts/fonts/font-fotinos.sswf
 %%DATADIR%%/scripts/fonts/larabie-font_read_me.txt
+%%DATADIR%%/scripts/global/array.asc
+%%DATADIR%%/scripts/global/as_init.asc
+%%DATADIR%%/scripts/global/boolean.asc
+%%DATADIR%%/scripts/global/date.asc
+%%DATADIR%%/scripts/global/double.asc
+%%DATADIR%%/scripts/global/error.asc
+%%DATADIR%%/scripts/global/extensions.asc
+%%DATADIR%%/scripts/global/function.asc
+%%DATADIR%%/scripts/global/integer.asc
+%%DATADIR%%/scripts/global/math.asc
+%%DATADIR%%/scripts/global/object.asc
+%%DATADIR%%/scripts/global/string.asc
+%%DATADIR%%/scripts/native/accessibility.asc
+%%DATADIR%%/scripts/native/as_init.asc
+%%DATADIR%%/scripts/native/button.asc
+%%DATADIR%%/scripts/native/camera.asc
+%%DATADIR%%/scripts/native/color.asc
+%%DATADIR%%/scripts/native/command.asc
+%%DATADIR%%/scripts/native/custom_actions.asc
+%%DATADIR%%/scripts/native/key.asc
+%%DATADIR%%/scripts/native/loadvars.asc
+%%DATADIR%%/scripts/native/local_connection.asc
+%%DATADIR%%/scripts/native/menu.asc
+%%DATADIR%%/scripts/native/microphone.asc
+%%DATADIR%%/scripts/native/mouse.asc
+%%DATADIR%%/scripts/native/movie_clip.asc
+%%DATADIR%%/scripts/native/movie_clip_loader.asc
+%%DATADIR%%/scripts/native/net_connection.asc
+%%DATADIR%%/scripts/native/net_stream.asc
+%%DATADIR%%/scripts/native/print_job.asc
+%%DATADIR%%/scripts/native/selection.asc
+%%DATADIR%%/scripts/native/shared_object.asc
+%%DATADIR%%/scripts/native/sound.asc
+%%DATADIR%%/scripts/native/stage.asc
+%%DATADIR%%/scripts/native/text_field.asc
+%%DATADIR%%/scripts/native/text_snapshot.asc
+%%DATADIR%%/scripts/native/timer.asc
+%%DATADIR%%/scripts/native/video.asc
+%%DATADIR%%/scripts/native/xml.asc
 %%DATADIR%%/scripts/origin.sswf
+%%DATADIR%%/scripts/sswf.rc
+%%DATADIR%%/scripts/system/as_init.asc
+%%DATADIR%%/scripts/system/capabilities.asc
+%%DATADIR%%/scripts/system/security.asc
+%%DATADIR%%/scripts/system/system.asc
+@dirrm %%DATADIR%%/scripts/system
+@dirrm %%DATADIR%%/scripts/native
+@dirrm %%DATADIR%%/scripts/global
 @dirrm %%DATADIR%%/scripts/fonts
+@dirrm %%DATADIR%%/scripts/extensions
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/samples/web-site-anim
-@dirrm %%DATADIR%%/samples/trail
 @dirrm %%DATADIR%%/samples/sun-flower
 @dirrm %%DATADIR%%/samples/showfont
 @dirrm %%DATADIR%%/samples/scroller
@@ -139,6 +212,8 @@ lib/libsswf.so
 @dirrm %%DATADIR%%/samples/functions
 @dirrm %%DATADIR%%/samples/dyn-button
 @dirrm %%DATADIR%%/samples/check_version
+@dirrm %%DATADIR%%/samples/asc_logo
 @dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%/misc
 @dirrm %%DATADIR%%
 @dirrm include/sswf
