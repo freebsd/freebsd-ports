@@ -14,4 +14,7 @@ RUBY_VER=	1.8
 
 LATEST_LINK=	ruby18_static
 
+pre-build:
+	@${RM} ${WRKSRC}/ext/iconv/extconf.rb
+
 .include "${MASTERDIR}/Makefile"
