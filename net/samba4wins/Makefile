@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba4wins
-PORTVERSION=		1.0.3.r1
+PORTVERSION=		1.0.4.r1
 CATEGORIES=		net
 MASTER_SITES=		http://ftp.sernet.de/pub/samba4WINS/debian/pool/
 DISTNAME=		${PORTNAME}_${PORTVERSION:S/.r/-/}
@@ -16,13 +16,15 @@ COMMENT=		A full featured replicating WINS server for UNIX
 
 CONFLICTS=		ja-samba-2.* ja-samba-4.* samba-2.* samba-4.* sharity-light-1.*
 
+USE_ICONV=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		autoconf:259 autoheader:259
 
 WRKSRC=			${WRKDIR}/${PORTNAME}/source
 
 # directories
-VARDIR=			${DESTDIR}/var
+VARDIR?=		${DESTDIR}/var
 S4W_DATADIR=		${PREFIX}/share/${PORTNAME}
 S4W_LOGDIR=		${VARDIR}/log/${PORTNAME}
 S4W_RUNDIR=		${VARDIR}/run
@@ -48,11 +50,17 @@ CONFIGURE_ARGS+=	--disable-reg-gconf --disable-socket-wrapper \
 			--with-libiconv=${LOCALBASE} --without-sqlite3 \
 			--without-pthreads --without-python
 
-USE_RC_SUBR=		smbd4wins.sh
+USE_RC_SUBR=		smbd4wins
 SUB_LIST+=		S4W_RUNDIR=${S4W_RUNDIR}
 
 PLIST_SUB+=		S4W_LOGDIR=${S4W_LOGDIR} \
 			S4W_LOCKDIR=${S4W_LOCKDIR}
+
+post-build:
+			@for f in ${WRKSRC}/scripting/bin/*; do \
+			    ${REINPLACE_CMD} -i '' -e 's|smbscript|${PREFIX}/bin/smbscript4|' \
+				$${f} && ${MV} $${f} $${f}4; \
+			done
 
 post-install:
 			@${MKDIR} ${S4W_CONFDIR}

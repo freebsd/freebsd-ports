@@ -1,5 +1,5 @@
---- utils/config.mk.orig	Sun Apr  9 23:55:42 2006
-+++ utils/config.mk	Sun Apr  9 23:56:16 2006
+--- utils/config.mk.orig	Mon Jul  3 09:48:15 2006
++++ utils/config.mk	Mon Aug 28 02:13:42 2006
 @@ -77,7 +77,7 @@
  
  #################################
@@ -9,3 +9,12 @@
  INSTALLDIR = BINDIR
  OBJ_FILES = \
  		nmblookup.o
+@@ -92,7 +92,7 @@
+ 
+ #################################
+ # Start BINARY testparm
+-[BINARY::testparm]
++[BINARY::testparm4]
+ INSTALLDIR = BINDIR
+ OBJ_FILES = \
+ 		testparm.o

@@ -1,18 +1,17 @@
-@unexec %D/etc/rc.d/samba4wins.sh forcestop 2>/dev/null || true
 etc/samba4wins.conf.sample
 bin/nmblookup4
-bin/ldbadd
-bin/ldbdel
-bin/ldbedit
-bin/ldbmodify
-bin/ldbrename
-bin/ldbsearch
-bin/samba3dump
-bin/smbscript
-bin/smbstatus
-bin/smbtorture
-bin/testparm
-bin/winreg
+bin/ldbadd4
+bin/ldbdel4
+bin/ldbedit4
+bin/ldbmodify4
+bin/ldbrename4
+bin/ldbsearch4
+bin/samba3dump4
+bin/smbscript4
+bin/smbstatus4
+bin/smbtorture4
+bin/testparm4
+bin/winreg4
 sbin/smbd4wins
 lib/samba4wins/lowcase.dat
 lib/samba4wins/upcase.dat
@@ -21,6 +20,7 @@ lib/samba4wins/valid.dat
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/js/auth.js
 %%DATADIR%%/js/base.js
 %%DATADIR%%/js/encoder.js
@@ -40,12 +40,11 @@ lib/samba4wins/valid.dat
 %%DATADIR%%/setup/provision_users.ldif
 %%DATADIR%%/setup/schema.ldif
 %%DATADIR%%/setup/secrets.ldif
-@dirrmtry lib/samba4wins/pkgconfig
-@dirrmtry private/tls
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/js
 @dirrm %%DATADIR%%
+@dirrmtry lib/samba4wins/pkgconfig
 @dirrm lib/samba4wins
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%S4W_LOCKDIR%%/* manually."
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%S4W_LOGDIR%%/* manually."
+@unexec %D/etc/rc.d/samba4wins.sh forcestop 2>/dev/null || true
