@@ -21,6 +21,8 @@ BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		${X11BASE}/libdata/pkgconfig/gecko-sharp.pc:${PORTSDIR}/www/gecko-sharp10
 
+BROKEN=		Does not build
+
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla
 .else
