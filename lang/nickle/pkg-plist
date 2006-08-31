@@ -54,12 +54,13 @@ include/nickle/value.h
 %%DATADIR%%/parse-args.5c
 %%DATADIR%%/printf.5c
 %%DATADIR%%/prng.5c
+%%DATADIR%%/process.5c
 %%DATADIR%%/scanf.5c
 %%DATADIR%%/socket.5c
 %%DATADIR%%/string.5c
 %%DATADIR%%/svg.5c
-@dirrm %%DATADIR%%/examples/turtle/
+@dirrm %%DATADIR%%/examples/turtle
 @dirrm %%DATADIR%%/examples/smlng
 @dirrm %%DATADIR%%/examples
-@unexec /bin/rmdir %D/%%DATADIR%% 2>/dev/null || true
+@dirrm %%DATADIR%%
 @dirrm include/nickle
