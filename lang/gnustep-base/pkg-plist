@@ -33,6 +33,8 @@ System/Library/Headers/Foundation/NSCharacterSet.h
 System/Library/Headers/Foundation/NSClassDescription.h
 System/Library/Headers/Foundation/NSCoder.h
 System/Library/Headers/Foundation/NSConnection.h
+System/Library/Headers/Foundation/NSComparisonPredicate.h
+System/Library/Headers/Foundation/NSCompoundPredicate.h
 System/Library/Headers/Foundation/NSData.h
 System/Library/Headers/Foundation/NSDate.h
 System/Library/Headers/Foundation/NSDateFormatter.h
@@ -46,10 +48,13 @@ System/Library/Headers/Foundation/NSDistributedNotificationCenter.h
 System/Library/Headers/Foundation/NSEnumerator.h
 System/Library/Headers/Foundation/NSError.h
 System/Library/Headers/Foundation/NSException.h
+System/Library/Headers/Foundation/NSExpression.h
 System/Library/Headers/Foundation/NSFileHandle.h
 System/Library/Headers/Foundation/NSFileManager.h
 System/Library/Headers/Foundation/NSFormatter.h
 System/Library/Headers/Foundation/NSGeometry.h
+System/Library/Headers/Foundation/NSHTTPCookie.h
+System/Library/Headers/Foundation/NSHTTPCookieStorage.h
 System/Library/Headers/Foundation/NSHashTable.h
 System/Library/Headers/Foundation/NSHost.h
 System/Library/Headers/Foundation/NSIndexPath.h
@@ -72,6 +77,7 @@ System/Library/Headers/Foundation/NSPort.h
 System/Library/Headers/Foundation/NSPortCoder.h
 System/Library/Headers/Foundation/NSPortMessage.h
 System/Library/Headers/Foundation/NSPortNameServer.h
+System/Library/Headers/Foundation/NSPredicate.h
 System/Library/Headers/Foundation/NSProcessInfo.h
 System/Library/Headers/Foundation/NSPropertyList.h
 System/Library/Headers/Foundation/NSProtocolChecker.h
@@ -89,7 +95,18 @@ System/Library/Headers/Foundation/NSThread.h
 System/Library/Headers/Foundation/NSTimeZone.h
 System/Library/Headers/Foundation/NSTimer.h
 System/Library/Headers/Foundation/NSURL.h
+System/Library/Headers/Foundation/NSURLAuthenticationChallenge.h
+System/Library/Headers/Foundation/NSURLCache.h
+System/Library/Headers/Foundation/NSURLConnection.h
+System/Library/Headers/Foundation/NSURLCredential.h
+System/Library/Headers/Foundation/NSURLCredentialStorage.h
+System/Library/Headers/Foundation/NSURLDownload.h
+System/Library/Headers/Foundation/NSURLError.h
 System/Library/Headers/Foundation/NSURLHandle.h
+System/Library/Headers/Foundation/NSURLProtectionSpace.h
+System/Library/Headers/Foundation/NSURLProtocol.h
+System/Library/Headers/Foundation/NSURLRequest.h
+System/Library/Headers/Foundation/NSURLResponse.h
 System/Library/Headers/Foundation/NSUndoManager.h
 System/Library/Headers/Foundation/NSUserDefaults.h
 System/Library/Headers/Foundation/NSUtilities.h
@@ -144,23 +161,27 @@ System/Library/Headers/gnustep/unicode/decomp.h
 System/Library/Headers/gnustep/unicode/latin2.h
 System/Library/Headers/gnustep/unicode/nextstep.h
 System/Library/Libraries/Resources/gnustep-base/English.lproj/Localizable.strings
+System/Library/Libraries/Resources/gnustep-base/Esperanto.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/French.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/German.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/Info-gnustep.plist
 System/Library/Libraries/Resources/gnustep-base/Italian.lproj/Localizable.strings
+System/Library/Libraries/Resources/gnustep-base/Korean.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/Languages/Dutch
 System/Library/Libraries/Resources/gnustep-base/Languages/English
+System/Library/Libraries/Resources/gnustep-base/Languages/Esperanto
 System/Library/Libraries/Resources/gnustep-base/Languages/French
 System/Library/Libraries/Resources/gnustep-base/Languages/German
 System/Library/Libraries/Resources/gnustep-base/Languages/Hungarian
 System/Library/Libraries/Resources/gnustep-base/Languages/Italian
+System/Library/Libraries/Resources/gnustep-base/Languages/Korean
 System/Library/Libraries/Resources/gnustep-base/Languages/Locale.aliases
 System/Library/Libraries/Resources/gnustep-base/Languages/Locale.encodings
 System/Library/Libraries/Resources/gnustep-base/Languages/Russian
 System/Library/Libraries/Resources/gnustep-base/Languages/Slovak
 System/Library/Libraries/Resources/gnustep-base/Languages/Spanish
 System/Library/Libraries/Resources/gnustep-base/Languages/TraditionalChinese
-System/Library/Libraries/Resources/gnustep-base/Languages/UkraineRussian
+System/Library/Libraries/Resources/gnustep-base/Languages/Ukrainian
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/GNUmakefile
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/GNUstep_zones
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/README
@@ -240,11 +261,13 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argent
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Ushuaia
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Aruba
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Asuncion
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Atikokan
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Atka
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Bahia
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Barbados
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Belem
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Belize
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Blanc-Sablon
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Boa_Vista
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Bogota
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Boise
@@ -327,6 +350,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Nipigo
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Nome
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Noronha
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/North_Dakota/Center
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/North_Dakota/New_Salem
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Panama
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Pangnirtung
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Paramaribo
@@ -568,8 +592,11 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Chisina
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Copenhagen
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Dublin
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Gibraltar
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Guernsey
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Helsinki
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Isle_of_Man
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Istanbul
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Jersey
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Kaliningrad
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Kiev
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Lisbon
@@ -603,6 +630,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Vaduz
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Vatican
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Vienna
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Vilnius
+System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Volgograd
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Warsaw
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Zagreb
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Zaporozhye
@@ -754,6 +782,7 @@ System/Tools/gdnc
 System/Tools/gdomap
 System/Tools/gspath
 System/Tools/make_strings
+System/Tools/objctidy
 System/Tools/pl
 System/Tools/pl2link
 System/Tools/pldes
@@ -789,9 +818,11 @@ System/Tools/xmlparse
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones
 @dirrm System/Library/Libraries/Resources/gnustep-base/Languages
+@dirrm System/Library/Libraries/Resources/gnustep-base/Korean.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/Italian.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/German.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/French.lproj
+@dirrm System/Library/Libraries/Resources/gnustep-base/Esperanto.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base/English.lproj
 @dirrm System/Library/Libraries/Resources/gnustep-base
 @dirrm System/Library/Headers/gnustep/unicode

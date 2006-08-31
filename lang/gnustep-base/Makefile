@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.12.0
-PORTREVISION=	2
+PORTVERSION=	1.13.0
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -82,6 +81,7 @@ post-install:
 	${RM} ${PREFIX}/System/Library/Libraries/libgnustep-base.so
 	${LN} -s libgnustep-base.so.${PORTVERSION} \
 	 ${PREFIX}/System/Library/Libraries/libgnustep-base.so
+	${RM} ${PREFIX}/System/Library/Libraries/Resources/gnustep-base/NSTimeZones/.README.swp
 
 test:
 	@(cd ${WRKSRC}/Testing && . ${SYSTEMDIR}/Makefiles/GNUstep.sh; ${GMAKE})
