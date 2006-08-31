@@ -259,6 +259,7 @@ System/Library/Headers/GormCore/GormControlEditor.h
 System/Library/Headers/GormCore/GormCustomClassInspector.h
 System/Library/Headers/GormCore/GormCustomView.h
 System/Library/Headers/GormCore/GormDocument.h
+System/Library/Headers/GormCore/GormDocumentController.h
 System/Library/Headers/GormCore/GormFilePrefsManager.h
 System/Library/Headers/GormCore/GormFilesOwner.h
 System/Library/Headers/GormCore/GormFontViewController.h
@@ -296,6 +297,8 @@ System/Library/Headers/GormCore/GormViewWindow.h
 System/Library/Headers/GormCore/GormViewWithContentViewEditor.h
 System/Library/Headers/GormCore/GormViewWithSubviewsEditor.h
 System/Library/Headers/GormCore/GormWindowEditor.h
+System/Library/Headers/GormCore/GormWrapperBuilder.h
+System/Library/Headers/GormCore/GormWrapperLoader.h
 System/Library/Headers/GormCore/NSCell+GormAdditions.h
 System/Library/Headers/GormCore/NSColorWell+GormExtensions.h
 System/Library/Headers/GormCore/NSFontManager+GormExtensions.h
