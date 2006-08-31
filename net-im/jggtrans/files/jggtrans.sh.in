@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# PROVIDE: jggtrans
+# REQUIRE: DAEMON %%JABBER_USER%%
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+# SET THEM IN THE /etc/rc.conf 
+
+. %%RC_SUBR%%
+
+name="jggtrans"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${jggtrans_enable="NO"}
+: ${jggtrans_program="%%PREFIX%%/sbin/jggtrans"}
+: ${jggtrans_flags="-u %%JABBER_USER%% -g %%JABBER_USER%%"}
+: ${jggtrans_pidfile="/var/jabberd/pid/jggtrans.pid"}
+
+start_cmd="echo \"Starting ${name}.\"; /usr/bin/nice -5 ${jggtrans_program} ${jggtrans_flags}"
+
+run_rc_command "$1"

@@ -58,6 +58,7 @@
     SUBDIR += jabber-yahoo
     SUBDIR += jabber-users-agent
     SUBDIR += jarl
+    SUBDIR += jggtrans
     SUBDIR += jit
     SUBDIR += jwchat
     SUBDIR += kf
