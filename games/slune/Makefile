@@ -7,7 +7,7 @@
 
 PORTNAME=	slune
 PORTVERSION=	1.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/slune/
 DISTNAME=	Slune-${PORTVERSION}
@@ -29,6 +29,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer
+
+post-patch:
+	@${REINPLACE_CMD} -i "" -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
 
 post-install:
 .if !defined(NOPORTDOCS)
