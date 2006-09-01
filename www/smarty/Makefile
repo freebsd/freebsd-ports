@@ -7,6 +7,7 @@
 
 PORTNAME=	smarty
 PORTVERSION=	2.6.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
@@ -23,7 +24,7 @@ DOCSVERSION=	2.6.11
 WRKSRC=		${WRKDIR}/Smarty-${PORTVERSION}
 
 NO_BUILD=	yes
-USE_PHP=	yes
+USE_PHP=	pcre
 WANT_PHP_WEB=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
