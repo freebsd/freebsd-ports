@@ -106,7 +106,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.12
+PORTVERSION=	1.5.13
 PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
@@ -329,11 +329,6 @@ post-patch::
 .endif
 .endif
 
-.if defined(WITH_MUTT_SIDEBAR_PATCH)
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sidebar
-.endif
-
 .if defined(WITH_MUTT_ASPELL)
 post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-aspell
@@ -419,7 +414,7 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.12.sidebar.20060720.txt
+SIDEBAR_PATCH=	patch-1.5.13.sidebar.20060828.txt
 DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
@@ -442,7 +437,7 @@ post-patch::
 	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \
 		${WRKSRC}/contrib/pgp6.rc
 	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
-		${WRKSRC}/contrib/Makefile.in
+		${WRKSRC}/contrib/Makefile.am
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)

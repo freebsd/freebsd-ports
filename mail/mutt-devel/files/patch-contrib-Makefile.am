@@ -1,6 +1,6 @@
---- contrib/Makefile.in.orig	Wed Apr  2 10:57:06 2003
-+++ contrib/Makefile.in	Mon Mar 21 08:22:47 2005
-@@ -20,7 +20,7 @@
+--- contrib/Makefile.am.orig	Tue Jul 18 20:04:14 2006
++++ contrib/Makefile.am	Wed Aug 30 16:15:04 2006
+@@ -2,7 +2,7 @@
  
  subdir = contrib
  
