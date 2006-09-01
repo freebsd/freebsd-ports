@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.robertjohnkaper.com/downloads/uptimed/ \
-		http://people.fruitsalad.org/tap/distfiles/
+MASTER_SITES=	http://podgorny.cz/uptimed/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andy@athame.co.uk
@@ -17,10 +15,9 @@ COMMENT=	Rob Kaper's uptime daemon
 
 PREFIX=		${LOCALBASE}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE}
-
 USE_GMAKE=	yes
 
 MAN1=		uprecords.1
