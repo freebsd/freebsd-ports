@@ -15768,7 +15768,6 @@ zope3		ports/www/zope3
 zorro		ports/deskutils/zorro
 zphoto		ports/graphics/zphoto
 zsh		ports/shells/zsh
-zsh+euc_hack	ports/shells/zsh+euc_hack
 zsnes		ports/emulators/zsnes
 zssh		ports/comms/zssh
 zsync		ports/net/zsync
