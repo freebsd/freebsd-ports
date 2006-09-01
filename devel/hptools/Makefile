@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.hpcalc.org/hp48/pc/programming/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	System RPL and assembly language tools for HP Calculators
 
 WRKSRC=		${WRKDIR}/Hptools/${CONFIGURE_TARGET}
