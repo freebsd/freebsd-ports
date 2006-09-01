@@ -432,6 +432,7 @@ www/joomla/administrator/images/upload.png
 www/joomla/administrator/images/upload_f2.png
 www/joomla/administrator/images/user.png
 www/joomla/administrator/images/users.png
+www/joomla/administrator/images/version_check.png
 www/joomla/administrator/images/week.png
 www/joomla/administrator/images/week_f2.png
 www/joomla/administrator/images/xml.png
@@ -470,6 +471,7 @@ www/joomla/administrator/modules/mod_pathway.php
 www/joomla/administrator/modules/mod_popular.php
 www/joomla/administrator/modules/mod_popular.xml
 www/joomla/administrator/modules/mod_quickicon.php
+www/joomla/administrator/modules/mod_quickicon.xml
 www/joomla/administrator/modules/mod_stats.php
 www/joomla/administrator/modules/mod_stats.xml
 www/joomla/administrator/modules/mod_toolbar.php
@@ -808,6 +810,8 @@ www/joomla/includes/js/ThemeOffice/help.png
 www/joomla/includes/js/ThemeOffice/home.png
 www/joomla/includes/js/ThemeOffice/index.html
 www/joomla/includes/js/ThemeOffice/install.png
+www/joomla/includes/js/ThemeOffice/joomla_16x16.png
+www/joomla/includes/js/ThemeOffice/Joomla_16x16.png
 www/joomla/includes/js/ThemeOffice/language.png
 www/joomla/includes/js/ThemeOffice/license.png
 www/joomla/includes/js/ThemeOffice/mail.png
