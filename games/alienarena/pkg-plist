@@ -1,5 +1,5 @@
-bin/alienarena
-bin/alienarena-ded
+%%CLIENT%%bin/alienarena
+%%DEDICATED%%bin/alienarena-ded
 %%SDL%%bin/alienarena-sdl
 %%LIBDIR%%/arena/ctf.cfg
 %%LIBDIR%%/arena/default.cfg
@@ -10,8 +10,8 @@ bin/alienarena-ded
 %%LIBDIR%%/arena/server.cfg
 %%LIBDIR%%/arena/video
 %%LIBDIR%%/botinfo
-%%LIBDIR%%/crded
-%%LIBDIR%%/crx
+%%DEDICATED%%%%LIBDIR%%/crded
+%%CLIENT%%%%LIBDIR%%/crx
 %%SDL%%%%LIBDIR%%/crx.sdl
 %%LIBDIR%%/data1/default.cfg
 %%LIBDIR%%/data1/env

@@ -6,43 +6,37 @@
 #
 
 PORTNAME=	alienarena
-DISTVERSION=	2006.ue
+PORTVERSION=	2007
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/ \
-		http://cor.planetquake.gamespy.com/codered/files/ \
+MASTER_SITES=	http://www.alienarena.org/downloads/ \
 		http://www.forsakenweb.com/gamepage/loaders/games/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}-x86
+DISTNAME=	${PORTNAME}-${PORTVERSION}-x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 NO_PACKAGE=	Package will be 163MB, set FORCE_PACKAGE if you want it
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not extract (gzip error)
-.endif
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && \
 		${TAIL} +377 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
 		${TAR} zxf -
-	@${TAR} zxf ${WRKDIR}/${PORTNAME}-${DISTVERSION:S/.//}-data.tar.bz2 \
+	@${TAR} jxf ${WRKDIR}/${PORTNAME}${PORTVERSION}-data.tar.bz2 \
 		-C ${WRKDIR}
-
-post-extract:
-	@cd ${WRKSRC}/data1/levelshots && \
-		${MV} ctf-strongholdl.txt ctf-stronghold.txt
 
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${CP} -R arena botinfo data1 ${DATADIR}
+	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/alienarena.xpm ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
