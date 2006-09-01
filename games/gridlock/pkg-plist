@@ -1,0 +1,37 @@
+Local/Applications/Gridlock.app/Gridlock
+Local/Applications/Gridlock.app/Resources/ClientWindow.gorm/data.classes
+Local/Applications/Gridlock.app/Resources/ClientWindow.gorm/objects.gorm
+Local/Applications/Gridlock.app/Resources/GameWindow.gorm/data.classes
+Local/Applications/Gridlock.app/Resources/GameWindow.gorm/objects.gorm
+Local/Applications/Gridlock.app/Resources/Games.plist
+Local/Applications/Gridlock.app/Resources/Gridlock.desktop
+Local/Applications/Gridlock.app/Resources/Gridlock.gorm/data.classes
+Local/Applications/Gridlock.app/Resources/Gridlock.gorm/objects.gorm
+Local/Applications/Gridlock.app/Resources/Gridlock.tiff
+Local/Applications/Gridlock.app/Resources/Info-gnustep.plist
+Local/Applications/Gridlock.app/Resources/Localizable.strings
+Local/Applications/Gridlock.app/Resources/PieceImages.plist
+Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm/data.classes
+Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm/objects.gorm
+Local/Applications/Gridlock.app/Resources/README.GNUstep
+Local/Applications/Gridlock.app/Resources/ServerWindow.gorm/data.classes
+Local/Applications/Gridlock.app/Resources/ServerWindow.gorm/objects.gorm
+Local/Applications/Gridlock.app/Resources/aqua.tiff
+Local/Applications/Gridlock.app/Resources/blue.tiff
+Local/Applications/Gridlock.app/Resources/graphite.tiff
+Local/Applications/Gridlock.app/Resources/green.tiff
+Local/Applications/Gridlock.app/Resources/purple.tiff
+Local/Applications/Gridlock.app/Resources/readme.html
+Local/Applications/Gridlock.app/Resources/red.tiff
+Local/Applications/Gridlock.app/Resources/wall.tiff
+Local/Applications/Gridlock.app/Resources/yellow.tiff
+Local/Applications/Gridlock.app/library_paths.openapp
+Local/Applications/Gridlock.app/stamp.make
+@dirrm Local/Applications/Gridlock.app/Resources/ServerWindow.gorm
+@dirrm Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm
+@dirrm Local/Applications/Gridlock.app/Resources/Gridlock.gorm
+@dirrm Local/Applications/Gridlock.app/Resources/GameWindow.gorm
+@dirrm Local/Applications/Gridlock.app/Resources/ClientWindow.gorm
+@dirrm Local/Applications/Gridlock.app/Resources
+@dirrm Local/Applications/Gridlock.app
+@dirrmtry Local/Applications
