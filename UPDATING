@@ -9,6 +9,22 @@ upgrades.
 
 
 20060831:
+  AFFECTS: users of x11-wm/fluxbox-devel
+  AUTHOR: mezz@FreeBSD.org
+
+  The prefix has been changed, the fluxbox-devel now lives in LOCALBASE. You
+  will need to download the fluxbox_prefix.sh script and run it as in your
+  normal users that have ~/.fluxbox. The script only will replace old path to
+  the new path; it does not affect on anything else.
+
+  	$ fetch http://people.freebsd.org/~mezz/script/fluxbox_prefix.sh
+	$ sh fluxbox_prefix.sh
+
+  It will creating a backup of ~/.fluxbox to ~/.fluxbox-bak. If everything
+  work fine, then you can remove ~/.fluxbox-bak. If you have the different
+  default of LOCALBASE and X11BASE, you can edit it in fluxbox_prefix.sh.
+
+20060831:
   AFFECTS: users of games/warzone
   AUTHOR: alepulver@FreeBSD.org
 

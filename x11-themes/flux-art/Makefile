@@ -7,6 +7,7 @@
 
 PORTNAME=	flux-art
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.iluxa.kremenchug.net/files/
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
 CONFLICTS=	fluxbox-fluxmod-*
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_DIR=	${PREFIX}/share/fluxbox/styles
@@ -28,7 +29,7 @@ DATA_CMD=	cd ${WRKSRC}; ${FIND} * -type f
 
 pre-install:
 	@for theme in `${THEME_CMD}`; do \
-		${SED} -i '' -e "s,~/.fluxbox,${X11BASE}/share/fluxbox," ${WRKSRC}/$$theme; \
+		${SED} -i '' -e "s,~/.fluxbox,${LOCALBASE}/share/fluxbox," ${WRKSRC}/$$theme; \
 	done
 
 do-install:
