@@ -7,6 +7,7 @@
 #
 
 PORTNAME=		bash
+PATCHLEVEL=		17
 PORTVERSION=		3.1.${PATCHLEVEL:S/^0//g}
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
@@ -20,10 +21,9 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 PATCH_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/
 PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/
-.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17
-PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}
-PATCHLEVEL=		${patch}
-.endfor
+PATCHFILES!=		/usr/bin/jot -s " " -w \
+			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 MAINTAINER=		obrien@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
