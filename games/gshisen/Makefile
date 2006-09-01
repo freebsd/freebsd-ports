@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gshisen
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dinoex
+		http://florida.ethz.ch/ports/distfiles/
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Mahjongg-kind of game that uses the GNUstep toolkit
+COMMENT=	Shisen-sho puzzle game for GNUstep
 
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
