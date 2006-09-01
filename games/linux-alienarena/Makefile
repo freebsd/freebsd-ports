@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	alienarena
-DISTVERSION=	2006.ue
+PORTVERSION=	2007
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://offload1.icculus.org/~ravage/alienarena2006/ \
-		http://cor.planetquake.gamespy.com/codered/files/ \
+MASTER_SITES=	http://www.alienarena.org/downloads/ \
 		http://www.forsakenweb.com/gamepage/loaders/games/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}-x86
+DISTNAME=	${PORTNAME}-${PORTVERSION}-x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena 2006 (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1.3:${PORTSDIR}/graphics/linux_dri \
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
@@ -42,10 +41,6 @@ DESKTOP_ENTRIES="Alien Arena 2006 (Linux version)" \
 		false
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not extract (gzip error)
-.endif
 
 .if defined(WITH_NVIDIA_GL)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
