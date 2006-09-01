@@ -1,5 +1,5 @@
---- config.mk.orig	Mon Aug  7 13:34:51 2006
-+++ config.mk	Mon Aug  7 13:35:50 2006
+--- config.mk.orig	Tue Aug 29 20:32:42 2006
++++ config.mk	Tue Aug 29 20:33:56 2006
 @@ -4,21 +4,21 @@
  # Customize below to fit your system
  
@@ -15,7 +15,7 @@
 +X11LIB = $(X11BASE)/lib
  
  # includes and libs
- INCS = -I/usr/lib -I${X11INC}
+ INCS = -I. -I/usr/include -I${X11INC}
  LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
  
  # flags
@@ -25,6 +25,6 @@
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = -g ${LIBS}
  
- # compiler
+ # compiler and linker
 -CC = cc
 +CC?= cc
