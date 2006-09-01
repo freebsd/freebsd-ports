@@ -99,6 +99,7 @@
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += discid
+    SUBDIR += dream
     SUBDIR += drumpiler
     SUBDIR += dtmfdial
     SUBDIR += easytag
