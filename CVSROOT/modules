@@ -5871,6 +5871,7 @@ libdomainkeys	ports/mail/libdomainkeys
 libdrm		ports/graphics/libdrm
 libds		ports/devel/libds
 libdsp		ports/devel/libdsp
+libdssialsacompat	ports/audio/libdssialsacompat
 libdts		ports/multimedia/libdts
 libdungeonmaker	ports/games/libdungeonmaker
 libdv		ports/multimedia/libdv
