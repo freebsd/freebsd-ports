@@ -3677,6 +3677,7 @@ gretools	ports/games/gretools
 grhino		ports/games/grhino
 gri		ports/math/gri
 gribouy		ports/print/gribouy
+gridlock	ports/games/gridlock
 gridpix		ports/graphics/gridpix
 grig		ports/comms/grig
 gringotts	ports/security/gringotts
