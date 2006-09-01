@@ -25,4 +25,10 @@ PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 CFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>

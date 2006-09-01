@@ -18,4 +18,10 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
