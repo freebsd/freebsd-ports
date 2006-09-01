@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -432,7 +432,7 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::Widget::Simple.3 \
 		Plagger::Rule::Deduped.3 \
 		Plagger::Rule::Fresh.3 \
-		Plagger::Rule::URLBL.3 \
+		Plagger::Rule::URLBL.3
 
 post-patch:
 	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
@@ -442,5 +442,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.yaml ${EXAMPLESDIR}/
 .endif
+	@${MKDIR} ${DATADIR}/assets
+	(cd ${WRKSRC}/assets; ${TAR} cfz - . | ${TAR} zxf - -C ${DATADIR}/assets)
 
 .include <bsd.port.post.mk>
