@@ -1,5 +1,5 @@
---- mk/jam/install.jam.orig	Mon Jun 20 05:08:10 2005
-+++ mk/jam/install.jam	Wed Jun 29 15:45:25 2005
+--- mk/jam/install.jam.orig	Sat Apr 15 04:53:26 2006
++++ mk/jam/install.jam	Fri Sep  1 13:11:31 2006
 @@ -11,7 +11,7 @@
  
  # set some paths
@@ -9,3 +9,12 @@
  appconfdir ?= [ ConcatDirs $(sysconfdir) $(PACKAGE_NAME) ] ;
  plugindir ?= [ ConcatDirs $(libdir) $(PACKAGE_NAME) ] ;
  applicationsdir ?= [ ConcatDirs $(datadir) applications ] ;
+@@ -111,7 +111,7 @@
+ rule DoInstall
+ {
+     local targets target i dir gdir ;
+-    dir = [ ConcatDirs $(DESTDIR) $(2) ] ;
++    dir = [ ConcatDirs  $(2) ] ;
+ 
+     gdir = $(dir:G=dir) ;
+     MkDir $(gdir) ;
