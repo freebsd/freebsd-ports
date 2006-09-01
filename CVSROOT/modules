@@ -11813,6 +11813,7 @@ py-nevow	ports/www/py-nevow
 py-numarray	ports/math/py-numarray
 py-numeric	ports/math/py-numeric
 py-numeric17	ports/math/py-numeric17
+py-numpy	ports/math/py-numpy
 py-ocempgui	ports/devel/py-ocempgui
 py-ogg		ports/audio/py-ogg
 py-omniorb	ports/devel/py-omniorb
