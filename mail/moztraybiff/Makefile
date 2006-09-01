@@ -7,6 +7,7 @@
 
 PORTNAME=	moztraybiff
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +15,6 @@ DISTNAME=	mozTrayBiff-${PORTVERSION}
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	New mail tray icon for Thunderbird
-
-BROKEN=		fails to install
 
 BUILD_DEPENDS=	${X11BASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird \
 		zip:${PORTSDIR}/archivers/zip

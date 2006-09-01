@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jan  6 18:51:34 2006
-+++ Makefile	Mon Jan 16 13:01:55 2006
+--- Makefile.orig	Fri Sep  1 17:13:10 2006
++++ Makefile	Fri Sep  1 17:13:42 2006
 @@ -19,7 +19,7 @@
  XPI_EXTRA_FILES = install.js
  endif
@@ -9,3 +9,12 @@
  XPI_VERSION := $(XPI_VERSION)-tb${MOZILLA_VERSION}
  XPI_EXTRA_FILES = install.rdf
  endif
+@@ -36,7 +36,7 @@
+ 	PLATFORM_FILES = platform/
+ else
+ 	PLATFORM_FILES = components/libtraybiff.so
+-	XPI_VERSION := $(XPI_VERSION)-$(PLATFORM)
++	XPI_VERSION := $(XPI_VERSION)
+ endif
+ 
+ export DEBUG MOZ_TRUNK MOZILLA_PLATFORM REAL_CONFIG
