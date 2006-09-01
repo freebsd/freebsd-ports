@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	el
-PORTVERSION=	130
-PORTREVISION=	1
+PORTVERSION=	132
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	acm/${PORTNAME}
@@ -49,15 +48,14 @@ post-extract:
 	@cd ${WRKSRC} && \
 		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e 's|malloc.h|stdlib.h|g' "{}" \;
 
-post-patch:
+pre-install:
+	@${ECHO} "#!/bin/sh" > ${WRKDIR}/el
+	@${ECHO} "cd ${DATADIR} || exit 1 " >> ${WRKDIR}/el
+	@${ECHO} "exec ${DATADIR}/el.x86" >> ${WRKDIR}/el
+
 	@${ECHO} "bin/el" > ${PLIST}
 	@${ECHO} "%%DATADIR%%/el.x86" >> ${PLIST}
 	@${ECHO} "@dirrmtry %%DATADIR%%" >> ${PLIST}
-
-pre-install:
-	${ECHO} "#!/bin/sh" > ${WRKDIR}/el
-	${ECHO} "cd ${DATADIR} || exit 1 " >> ${WRKDIR}/el
-	${ECHO} "exec ${DATADIR}/el.x86" >> ${WRKDIR}/el
 
 do-install:
 	@${MKDIR} ${DATADIR}

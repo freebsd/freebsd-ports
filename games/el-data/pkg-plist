@@ -2059,7 +2059,9 @@
 %%DATADIR%%/languages/en/books/kalenthrotrollslayer.xml
 %%DATADIR%%/languages/en/books/knowledge/book_of_botanics.xml
 %%DATADIR%%/languages/en/books/knowledge/book_of_metallurgy.xml
+%%DATADIR%%/languages/en/books/knowledge/crystal_technology.xml
 %%DATADIR%%/languages/en/books/laws_of_lord_luxin.xml
+%%DATADIR%%/languages/en/books/lots_history.xml
 %%DATADIR%%/languages/en/books/monsterofghealansea.xml
 %%DATADIR%%/languages/en/books/night_of_the_shadowcaster.xml
 %%DATADIR%%/languages/en/books/odewarriormaiden.xml
@@ -2103,6 +2105,7 @@
 %%DATADIR%%/languages/en/strings/stats.xml
 %%DATADIR%%/languages/en/strings/titles.xml
 %%DATADIR%%/languages/es/Encyclopedia/Alchemy.xml
+%%DATADIR%%/languages/en/Encyclopedia/Armour.xml
 %%DATADIR%%/languages/es/Encyclopedia/Attributes.xml
 %%DATADIR%%/languages/es/Encyclopedia/Books.xml
 %%DATADIR%%/languages/es/Encyclopedia/Clothes.xml
@@ -2123,6 +2126,7 @@
 %%DATADIR%%/languages/es/Encyclopedia/images/monsters2.bmp
 %%DATADIR%%/languages/es/Encyclopedia/images/monsters3.bmp
 %%DATADIR%%/languages/es/Encyclopedia/index.xml
+%%DATADIR%%/languages/en/Encyclopedia/example.yaml
 %%DATADIR%%/languages/es/books/a_rabbits_life.xml
 %%DATADIR%%/languages/es/books/bagatbeam.xml
 %%DATADIR%%/languages/es/books/codesciphers1.xml
@@ -2363,6 +2367,7 @@
 %%DATADIR%%/maps/guildmap_co.elm
 %%DATADIR%%/maps/guildmap_dao.elm
 %%DATADIR%%/maps/guildmap_iron.elm
+%%DATADIR%%/maps/guildmap_lots.elm
 %%DATADIR%%/maps/guildmap_lnx.elm
 %%DATADIR%%/maps/guildmap_pl.elm
 %%DATADIR%%/maps/guildmap_segv.elm
@@ -2423,6 +2428,7 @@
 %%DATADIR%%/maps/mapportalroom.elm
 %%DATADIR%%/maps/mapunderworld1.elm
 %%DATADIR%%/maps/mine1.elm
+%%DATADIR%%/maps/mine1_sub.elm
 %%DATADIR%%/maps/misc1.elm
 %%DATADIR%%/maps/neo.elm
 %%DATADIR%%/maps/newcharactermap.elm
@@ -2461,6 +2467,7 @@
 %%DATADIR%%/meshes/arms6.bmp
 %%DATADIR%%/meshes/arms7.bmp
 %%DATADIR%%/meshes/arms8.bmp
+%%DATADIR%%/meshes/arms9.bmp
 %%DATADIR%%/meshes/arms_fur1.bmp
 %%DATADIR%%/meshes/axe1.bmp
 %%DATADIR%%/meshes/axe1.cmf
@@ -2766,6 +2773,7 @@
 %%DATADIR%%/meshes/pants3.bmp
 %%DATADIR%%/meshes/pants4.bmp
 %%DATADIR%%/meshes/pants5.bmp
+%%DATADIR%%/meshes/pants6.bmp
 %%DATADIR%%/meshes/pants_fur1.bmp
 %%DATADIR%%/meshes/phantom_warrior.cmf
 %%DATADIR%%/meshes/pickaxe1.bmp
@@ -2882,6 +2890,7 @@
 %%DATADIR%%/meshes/torso6.bmp
 %%DATADIR%%/meshes/torso7.bmp
 %%DATADIR%%/meshes/torso8.bmp
+%%DATADIR%%/meshes/torso9.bmp
 %%DATADIR%%/meshes/torso_fur1.bmp
 %%DATADIR%%/meshes/trollm1.bmp
 %%DATADIR%%/meshes/trollm1.cmf
@@ -3042,6 +3051,7 @@
 %%DATADIR%%/particles/teleporter.part
 %%DATADIR%%/particles/watefall_straight.part
 %%DATADIR%%/particles/waterfall.part
+%%DATADIR%%/particles/waterfall_LotS.part
 %%DATADIR%%/particles/waterfall_PL.part
 %%DATADIR%%/particles/waterfall_big.part
 %%DATADIR%%/skeletons/bear.csf
@@ -3102,6 +3112,7 @@
 %%DATADIR%%/textures/login_back.bmp
 %%DATADIR%%/textures/login_menu.bmp
 %%DATADIR%%/textures/openscreen.bmp
+%%DATADIR%%/textures/pants6.bmp
 %%DATADIR%%/textures/paper1.bmp
 %%DATADIR%%/textures/particle0.bmp
 %%DATADIR%%/textures/particle1.bmp
