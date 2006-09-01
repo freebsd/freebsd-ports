@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export AC3D_HOME="%%DATADIR%%"
+
+exec %%PREFIX%%/libexec/ac3ds "$@"

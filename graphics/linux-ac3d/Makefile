@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ac3d
-PORTVERSION=	6.0
+PORTVERSION=	6.030
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.ac3d.org/ac3d/download/release6/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}lx${PORTVERSION:R}
+DISTNAME=	${PORTNAME}lx${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hernan.di.pietro@gmail.com
 COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
@@ -27,17 +27,19 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 
 RESTRICTED=	no distribution permitted
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
-SUB_FILES=	ac3d
+SUB_FILES=	ac3d ac3ds
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ac3d ${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKDIR}/ac3d ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ac3ds ${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKDIR}/ac3ds ${PREFIX}/bin
 
 # Install small Tcl/Tk distribution
 # Tcl/Tk, installed from ports tree will also make a job,
@@ -52,8 +54,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/tclIndex ${DATADIR}/lib/tk8.4
 	${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/*.tcl ${DATADIR}/lib/tk8.4
 	${MKDIR} ${DATADIR}/tcl
+
 .for i in tcl xbm
 	${INSTALL_DATA} ${WRKSRC}/tcl/*.${i} ${DATADIR}/tcl
+.endfor
+
+#images
+	${MKDIR} ${DATADIR}/tcl/images
+.for i in gif
+	${INSTALL_DATA} ${WRKSRC}/tcl/images/*.${i} ${DATADIR}/tcl/images
 .endfor
 
 # fonts
