@@ -7,6 +7,7 @@
 
 PORTNAME=	fluxbox-sid-pack
 PORTVERSION=	20031226
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://fluxbox.org/download/themes/sid/
 DISTNAME=	sidpack
@@ -17,7 +18,7 @@ COMMENT=	Sid themes pack for fluxbox
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
