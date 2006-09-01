@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v2.4/
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ParaView is a powerful scientific data visualization application
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
@@ -22,6 +22,8 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GL=		yes
+USE_GMAKE=	yes
+
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 PLIST_SUB+=	VERMAJORMINOR=2.4
@@ -50,6 +52,7 @@ do-configure:
 		-DVTK_USE_SYSTEM_ZLIB="ON" \
 		-DVTK_USE_SYSTEM_FREETYPE="ON" \
 		-DVTK_USE_SYSTEM_EXPAT="ON" \
+		-DVTK_USE_X="ON" \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1
 
 post-install:
