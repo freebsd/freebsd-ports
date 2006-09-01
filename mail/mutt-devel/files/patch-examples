@@ -1,29 +1,29 @@
---- contrib/Makefile.in.orig	Mon Jun  4 19:14:31 2001
-+++ contrib/Makefile.in	Wed Mar 26 11:45:15 2003
-@@ -12,6 +12,7 @@
- mandir = @mandir@
- srcdir = @srcdir@
- docdir = @docdir@
-+samplesdir = @samplesdir@
- top_srcdir = @top_srcdir@
- top_builddir = ..
- INSTALL = @INSTALL@
-@@ -37,12 +38,12 @@
- check:
+--- contrib/Makefile.am.orig	Tue Jul 18 20:04:14 2006
++++ contrib/Makefile.am	Wed Aug 30 16:05:33 2006
+@@ -1,6 +1,7 @@
+ # $Id: Makefile.am,v 3.1 2006/07/18 18:04:14 brendan Exp $
  
- install:
+ subdir = contrib
++samplesdir = @samplesdir@
+ 
+ SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
+ 	sample.muttrc  sample.mailcap sample.muttrc-tlr \
+@@ -14,12 +15,12 @@
+ 	iconv/make.sh
+ 
+ install-data-local:
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/samples $(DESTDIR)$(docdir)/samples/iconv
 +	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(samplesdir) $(DESTDIR)$(samplesdir)/iconv
  	for f in $(SAMPLES) ; do \
 -		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir)/samples ;	\
-+		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir);	\
++		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(samplesdir) ;	\
  	done
  	for f in $(srcdir)/iconv/*.rc ; do					\
 -		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir)/samples/iconv	  ;	\
-+		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv	  ;	\
++		$(INSTALL) -m 644 $$f $(DESTDIR)$(samplesdir)/iconv  ;	\
  	done
  
- # Nothing needs to be done - uninstall in doc removes samples as well.
+ uninstall-local:
 --- init.h.orig	Tue Mar  4 10:28:12 2003
 +++ init.h	Wed Mar 26 15:41:19 2003
 @@ -1455,8 +1455,8 @@
@@ -48,14 +48,14 @@
    ** (S/MIME only)
    */
    { "smime_verify_command", 	DT_STR, R_NONE, UL &SmimeVerifyCommand, 0},
---- Makefile.am.orig	Mon Jul 17 15:31:10 2006
-+++ Makefile.am	Mon Jul 17 15:32:52 2006
+--- Makefile.am.orig	Wed Aug 30 14:30:28 2006
++++ Makefile.am	Wed Aug 30 14:31:49 2006
 @@ -13,7 +13,7 @@
  
  bin_SCRIPTS = muttbug flea @SMIMEAUX_TARGET@
  
--BUILT_SOURCES = keymap_defs.h patchlist.c reldate.h
-+BUILT_SOURCES = keymap_defs.h patchlist.c reldate.h Muttrc
+-BUILT_SOURCES = keymap_defs.h patchlist.c
++BUILT_SOURCES = keymap_defs.h patchlist.c Muttrc
  
  bin_PROGRAMS = mutt @DOTLOCK_TARGET@ @PGPAUX_TARGET@
  mutt_SOURCES = $(BUILT_SOURCES) \
@@ -77,27 +77,27 @@
  
  into your system's global Muttrc, which normally resides in /etc or
  /usr/local/etc.
---- doc/manual.txt.orig	Thu Sep 15 16:22:18 2005
-+++ doc/manual.txt	Sun Sep 18 15:31:13 2005
-@@ -5004,8 +5004,8 @@
+--- doc/manual.txt.orig	Mon Aug 14 16:10:04 2006
++++ doc/manual.txt	Wed Aug 30 14:34:46 2006
+@@ -5971,8 +5971,8 @@
  
-    For  examples  on  how  to  configure  these  formats  for the various
-    versions  of PGP which are floating around, see the pgp*.rc and gpg.rc
--   files  in  the  samples/ subdirectory which has been installed on your
--   system alongside the documentation. (PGP only)
-+   files  in  the  share/examples/mutt/ subdirectory which has been installed
-+   on your system alongside the documentation. (PGP only)
+    For examples on how to configure these formats for the various versions of
+    PGP which are floating around, see the pgp*.rc and gpg.rc files in the
+-   samples/ subdirectory which has been installed on your system alongside the
+-   documentation. (PGP only)
++   share/examples/mutt/ subdirectory which has been installed on your system
++   alongside the documentation. (PGP only)
  
- 6.3.160. pgp_getkeys_command
+ 3.163. pgp_getkeys_command
  
-@@ -5203,8 +5203,8 @@
-           $$ssmmiimmee__ccaa__llooccaattiioonn" or "-CAfile $$ssmmiimmee__ccaa__llooccaattiioonn".
+@@ -6164,8 +6164,8 @@
+           "-CAfile $smime_ca_location".
  
-    For  examples  on  how to configure these formats, see the smime.rc in
--   the  samples/  subdirectory  which  has  been installed on your system
--   alongside the documentation. (S/MIME only)
-+   the  share/examples/mutt/  subdirectory  which  has  been installed on
-+   your system alongside the documentation. (S/MIME only)
+    For examples on how to configure these formats, see the smime.rc in the
+-   samples/ subdirectory which has been installed on your system alongside the
+-   documentation. (S/MIME only)
++   share/examples/mutt/ subdirectory which has been installed on your system
++   alongside the documentation. (S/MIME only)
  
- 6.3.179. smime_verify_command
+ 3.182. smime_verify_command
  
