@@ -1,0 +1,23 @@
+LibYAML is a YAML 1.1 parser and emitter written in C.
+
+LibYAML covers presenting and parsing processes. Thus LibYAML defines the
+following two processors:
+   * Parser, which takes an input stream of bytes and produces a sequence
+     of parsing events.
+   * Emitter, which takes a sequence of events and produces a stream of
+     bytes. 
+
+The processes of parsing and presenting are inverse to each other. Any
+sequence of events produced by parsing a well-formed YAML document should
+be acceptable by the Emitter, which should produce an equivalent document.
+Similarly, any document produced by emitting a sequence of events should
+be acceptable for the Parser, which should produce an equivalent sequence
+of events.
+
+The job of resolving implicit tags, composing and serializing representation
+trees, as well as constructing and representing native objects is left to
+applications and bindings. Although some of these processes may be covered
+in the latter releases, they are not in the scope of the initial release of
+LibYAML.
+
+WWW: http://pyyaml.org/wiki/LibYAML
