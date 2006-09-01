@@ -22,4 +22,8 @@ MAN3=		Unicode::Japanese.3 Unicode::Japanese::JA.3
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
+.if ${PERL_LEVEL} < 500800
+IGNORE=		needs perl 5.8.0 or higher, install lang/perl5.8 and try again
+.endif
+
 .include <bsd.port.post.mk>
