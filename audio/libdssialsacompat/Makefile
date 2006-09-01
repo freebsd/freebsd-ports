@@ -1,0 +1,22 @@
+# New ports collection makefile for: libdssialsacompat
+# Date created: 14 July 2006
+# Whom:	mahonmesr@googlemail.com
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libdssialsacompat
+PORTVERSION=	1.0.8a
+CATEGORIES=	audio
+MASTER_SITES=	http://home.jps.net/~musound/
+
+MAINTAINER=	mahonmesr@googlemail.com
+COMMENT=	Alsa compatibility library to build DSSI
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+
+.include <bsd.port.mk>

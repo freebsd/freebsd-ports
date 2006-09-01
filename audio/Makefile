@@ -295,6 +295,7 @@
     SUBDIR += libcdaudio
     SUBDIR += libcddb
     SUBDIR += libcddb-doc
+    SUBDIR += libdssialsacompat
     SUBDIR += libgpod
     SUBDIR += libid3tag
     SUBDIR += libjackasyn
