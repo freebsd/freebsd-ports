@@ -293,6 +293,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rotate.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rotate_f.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/roundrect.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/ruby18.core
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rubyname.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rvg_clippath.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/rvg_linecap.rb
