@@ -7,28 +7,36 @@
 
 PORTNAME=	opengl
 PORTVERSION=	2.0.1.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyOpenGL-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	An OpenGL (and related library) interface for Python
 
 BUILD_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
-		swig:${PORTSDIR}/devel/swig11
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+#		swig1.3:${PORTSDIR}/devel/swig13
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+
+OPTIONS=	TKINTER "Build with tkinter for X support" On
+OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 
 USE_GL=		yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_TKINTER)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|||"
@@ -45,4 +53,4 @@ post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/OpenGL -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
