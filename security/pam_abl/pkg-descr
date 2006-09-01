@@ -1,0 +1,4 @@
+The pam_abl provides auto blacklisting of hosts and users
+responsible for repeated failed authentication attempts.
+
+WWW: http://www.hexten.net/pam_abl/
