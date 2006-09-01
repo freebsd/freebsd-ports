@@ -1,8 +1,16 @@
 bin/abakus
 share/applnk/Utilities/abakus.desktop
 share/apps/abakus/abakusui.rc
+share/doc/HTML/en/abakus/abakus-degrees-mode.png
+share/doc/HTML/en/abakus/abakus-dnd.png
+share/doc/HTML/en/abakus/abakus-result.png
 share/doc/HTML/en/abakus/index.cache.bz2
 share/doc/HTML/en/abakus/index.docbook
+share/doc/HTML/en/abakus/kcalc-degrees-mode.png
+share/doc/HTML/en/abakus/kcalc-fifty.png
+share/doc/HTML/en/abakus/kcalc-result.png
+share/doc/HTML/en/abakus/kcalc-sine.png
+share/doc/HTML/en/abakus/kcalc-three.png
 share/icons/hicolor/64x64/apps/abakus.png
 @dirrm share/doc/HTML/en/abakus
 @dirrm share/apps/abakus
