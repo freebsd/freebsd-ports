@@ -8,7 +8,7 @@
 PORTNAME=	lincity-ng
 PORTVERSION=	1.0.3
 CATEGORIES=	games
-MASTER_SITES=	http://download2.berlios.de/lincity-ng/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	az@FreeBSD.org
@@ -16,8 +16,6 @@ COMMENT=	Improved rich city simulation game for X
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
-
-BROKEN=		Incorrect pkg-plist
 
 USE_BZIP2=	yes
 USE_GCC=	3.2+
