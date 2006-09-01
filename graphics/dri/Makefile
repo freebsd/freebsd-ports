@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 MAKE_ENV+=	FBSDCC="${CC}" FBSDCXX="${CXX}" \
 		FBSDCFLAGS="${CFLAGS}" FBSDCXXFLAGS="${CXXFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
+USE_GCC=	3.4+
 
 ONLY_FOR_ARCHS=	i386 alpha amd64
 
@@ -58,6 +59,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/radeon_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/savage_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/sis_dri.so ${DRIMODDIR}
+
+.if ${OSVERSION} < 500000
+pre-patch:
+	${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|g' \
+		${WRKSRC}/src/mesa/drivers/dri/mga/mga_xmesa.c \
+		${WRKSRC}/src/mesa/drivers/dri/mga/mgacontext.h
+.endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
