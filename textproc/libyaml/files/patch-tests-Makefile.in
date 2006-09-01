@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	Thu Aug 31 09:16:34 2006
++++ tests/Makefile.in	Thu Aug 31 09:16:46 2006
+@@ -201,7 +201,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ AM_CPPFLAGS = -I$(top_srcdir)/include
+-AM_CFLAGS = -Wno-pointer-sign
++#AM_CFLAGS = -Wno-pointer-sign
+ LDADD = $(top_builddir)/src/libyaml.la
+ TESTS = test-version test-reader
+ all: all-am
