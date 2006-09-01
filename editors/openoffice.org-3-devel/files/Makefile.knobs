@@ -25,6 +25,12 @@ CONFIGURE_ARGS+=	--disable-mozilla
 CONFIGURE_ARGS+=	--enable-build-mozilla
 .endif
 
+.if defined(WITHOUT_GNOMEVFS)
+CONFIGURE_ARGS+=	--disable-gnome-vfs
+.else
+USE_GNOME+=		gnomevfs2
+.endif
+
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
 .else
@@ -67,6 +73,11 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You can compile OOo without Mozilla connectivity with"
 	@${ECHO} "make -DWITHOUT_MOZILLA"
+.endif
+.if !defined(WITHOUT_GNOMEVFS)
+	@${ECHO}
+	@${ECHO} "You can compile OOo without gnome VFS support with"
+	@${ECHO} "make -DWITHOUT_GNOMEVFS"
 .endif
 #.if !defined(WITH_TTF_BYTECODE_ENABLED)
 #	@${ECHO}

@@ -32,7 +32,7 @@ MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
 
 NO_LATEST_LINK=	yes
-USE_GNOME=	gtk20 gnomevfs2
+USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
