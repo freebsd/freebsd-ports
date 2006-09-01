@@ -20,12 +20,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	SHLIB_MAJOR=0 INCLUDEDIR=${PREFIX}/include LIBDIR=${PREFIX}/lib \
 		MANDIR=${MANPREFIX}/man/man NO_MANCOMPRESS=yes BINDIR=${PREFIX}/bin
 CFLAGS=		-I${WRKSRC}/lib -L${WRKSRC}/lib
-#LDFLAGS=	-L/lib -L${WRKSRC}/lib
 PLIST_FILES=	${BIN_FILES:S,^,bin/,} include/${PORTNAME}.h include/bsnmptc.h \
 		lib/lib${PORTNAME}.a lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0
 BIN_FILES=	bsnmpget bsnmpset bsnmpwalk
 MAN1=	${BIN_FILES:S/$/.1/}
 MAN3=	${PORTNAME}.3
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+LIB_DEPENDS=	bsnmp.2:${PORTSDIR}/net-mgmt/bsnmpd
+CFLAGS+=	-I${LOCALBASE}/lib -L${LOCALBASE}/include
+.endif
 
 post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
@@ -37,4 +43,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's/usr.sbin/tools/' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
