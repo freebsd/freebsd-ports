@@ -47,6 +47,7 @@
 %%YGP%%include/YGP/XDirSrch.h
 %%YGP%%include/YGP/XStrBuf.h
 %%YGP%%include/YGP/XStream.h
+%%XGP%%include/xgp-cfg.h
 %%XGP%%include/XGP/AutoContainer.h
 %%XGP%%include/XGP/BrowserDlg.h
 %%XGP%%include/XGP/ConnectDlg.h
