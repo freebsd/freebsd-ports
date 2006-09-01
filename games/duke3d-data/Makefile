@@ -48,9 +48,10 @@ post-extract:
 .endif
 
 do-install:
-.if defined(WITH_SHAREWARE)
 	${MKDIR} ${DATADIR}
+.if defined(WITH_SHAREWARE)
 	${INSTALL_DATA} ${WRKSRC}/DUKE3D.GRP ${DATADIR}/duke3d.grp
+.else
 
 post-install:
 	@${ECHO_CMD}
