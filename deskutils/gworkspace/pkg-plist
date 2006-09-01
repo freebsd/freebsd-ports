@@ -1,4 +1,5 @@
 System/Applications/GWorkspace.app/GWorkspace
+System/Applications/GWorkspace.app/Resources/BrasilPortuguese.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/CellHighlight.tiff
 System/Applications/GWorkspace.app/Resources/CellHighlight_osx.tiff
 System/Applications/GWorkspace.app/Resources/ComputeSize.tiff
@@ -35,6 +36,42 @@ System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm/o
 System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/browsing.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/views.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd/FileManager.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/dock.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/Fiend-Develop.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/Fiend-menu.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd/FileManager.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd/FileManager.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler-content.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler-drag.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/RecyclerFull.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/Run-panel.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/dummy.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/spatial.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TXT.rtf
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TabbedShelf-develop.tiff
+System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/dummy.tiff
 System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.classes
@@ -69,6 +106,7 @@ System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/obje
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.info
 System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Esperanto.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/FFArrow.tiff
 System/Applications/GWorkspace.app/Resources/FFArrow_disabled.tiff
 System/Applications/GWorkspace.app/Resources/FileIcon_Directory.tiff
@@ -82,6 +120,7 @@ System/Applications/GWorkspace.app/Resources/FileManager.tiff
 System/Applications/GWorkspace.app/Resources/French.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/GWorkspace.desktop
 System/Applications/GWorkspace.app/Resources/German.lproj/Localizable.strings
+System/Applications/GWorkspace.app/Resources/Hungarian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/Italian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Kill.tiff
@@ -122,6 +161,7 @@ System/Applications/GWorkspace.app/Resources/Month-8.tiff
 System/Applications/GWorkspace.app/Resources/Month-9.tiff
 System/Applications/GWorkspace.app/Resources/Month.tiff
 System/Applications/GWorkspace.app/Resources/MultipleSelection.tiff
+System/Applications/GWorkspace.app/Resources/Norvegian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Pboard.tiff
 System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/REWArrow.tiff
@@ -199,6 +239,8 @@ System/Applications/Recycler.app/Resources/Recycler.tiff
 System/Applications/Recycler.app/library_paths.openapp
 System/Applications/Recycler.app/stamp.make
 System/Library/Bundles/AppViewer.inspector/AppViewer
+System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/AppViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/AppViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/AppViewer.inspector/stamp.make
@@ -251,10 +293,15 @@ System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/objects.gor
 System/Library/Bundles/FModuleSize.finder/Resources/Info-gnustep.plist
 System/Library/Bundles/FModuleSize.finder/stamp.make
 System/Library/Bundles/FolderViewer.inspector/FolderViewer
+System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/FolderViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/FolderViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/FolderViewer.inspector/stamp.make
 System/Library/Bundles/IBViewViewer.inspector/IBViewViewer
+System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
+System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/IBViewViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/IBViewViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/IBViewViewer.inspector/stamp.make
@@ -262,6 +309,9 @@ System/Library/Bundles/ImageThumbnailer.thumb/ImageThumbnailer
 System/Library/Bundles/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
 System/Library/Bundles/ImageThumbnailer.thumb/stamp.make
 System/Library/Bundles/ImageViewer.inspector/ImageViewer
+System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
+System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/ImageViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/ImageViewer.inspector/stamp.make
@@ -269,24 +319,35 @@ System/Library/Bundles/MDModuleAnnotations.mdm/MDModuleAnnotations
 System/Library/Bundles/MDModuleAnnotations.mdm/Resources/Info-gnustep.plist
 System/Library/Bundles/MDModuleAnnotations.mdm/stamp.make
 System/Library/Bundles/NSColorViewer.inspector/NSColorViewer
+System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
+System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/NSColorViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/NSColorViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/NSColorViewer.inspector/stamp.make
 System/Library/Bundles/NSRTFViewer.inspector/NSRTFViewer
+System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/NSRTFViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/NSRTFViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/NSRTFViewer.inspector/stamp.make
 System/Library/Bundles/NSTIFFViewer.inspector/NSTIFFViewer
+System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/NSTIFFViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/NSTIFFViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/NSTIFFViewer.inspector/stamp.make
 System/Library/Bundles/Role.extinfo/Resources/Info-gnustep.plist
 System/Library/Bundles/Role.extinfo/Role
 System/Library/Bundles/Role.extinfo/stamp.make
+System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/RtfViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/RtfViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/RtfViewer.inspector/RtfViewer
 System/Library/Bundles/RtfViewer.inspector/stamp.make
+System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 System/Library/Bundles/SoundViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/SoundViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/SoundViewer.inspector/Resources/pause.tiff
@@ -493,26 +554,42 @@ System/Tools/wopen
 @dirrm System/Library/Frameworks/FSNode.framework/Versions/A
 @dirrm System/Library/Frameworks/FSNode.framework/Versions
 @dirrm System/Library/Frameworks/FSNode.framework
+@dirrm System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/SoundViewer.inspector/Resources
 @dirrm System/Library/Bundles/SoundViewer.inspector
+@dirrm System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/RtfViewer.inspector/Resources
 @dirrm System/Library/Bundles/RtfViewer.inspector
 @dirrm System/Library/Bundles/Role.extinfo/Resources
 @dirrm System/Library/Bundles/Role.extinfo
+@dirrm System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/NSTIFFViewer.inspector/Resources
 @dirrm System/Library/Bundles/NSTIFFViewer.inspector
+@dirrm System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/NSRTFViewer.inspector/Resources
 @dirrm System/Library/Bundles/NSRTFViewer.inspector
+@dirrm System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/NSColorViewer.inspector/Resources
 @dirrm System/Library/Bundles/NSColorViewer.inspector
 @dirrm System/Library/Bundles/MDModuleAnnotations.mdm/Resources
 @dirrm System/Library/Bundles/MDModuleAnnotations.mdm
+@dirrm System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/ImageViewer.inspector/Resources
 @dirrm System/Library/Bundles/ImageViewer.inspector
 @dirrm System/Library/Bundles/ImageThumbnailer.thumb/Resources
 @dirrm System/Library/Bundles/ImageThumbnailer.thumb
+@dirrm System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/IBViewViewer.inspector/Resources
 @dirrm System/Library/Bundles/IBViewViewer.inspector
+@dirrm System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/FolderViewer.inspector/Resources
 @dirrm System/Library/Bundles/FolderViewer.inspector
 @dirrm System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm
@@ -539,6 +616,8 @@ System/Tools/wopen
 @dirrm System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm
 @dirrm System/Library/Bundles/FModuleAnnotations.finder/Resources
 @dirrm System/Library/Bundles/FModuleAnnotations.finder
+@dirrm System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Bundles/AppViewer.inspector/Resources/English.lproj
 @dirrm System/Library/Bundles/AppViewer.inspector/Resources
 @dirrm System/Library/Bundles/AppViewer.inspector
 @dirrm System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm
@@ -549,9 +628,12 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj
+@dirrm System/Applications/GWorkspace.app/Resources/Norvegian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/German.lproj
+@dirrm System/Applications/GWorkspace.app/Resources/Hungarian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj
+@dirrm System/Applications/GWorkspace.app/Resources/Esperanto.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm
@@ -565,6 +647,19 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm
@@ -573,5 +668,6 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj
+@dirrm System/Applications/GWorkspace.app/Resources/BrasilPortuguese.lproj
 @dirrm System/Applications/GWorkspace.app/Resources
 @dirrm System/Applications/GWorkspace.app
