@@ -15,7 +15,7 @@ COMMENT=	RPM of the PNG lib (old 1.0 version)
 
 LATEST_LINK=	linux-png10
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
 INSTALLS_SHLIB=	yes
