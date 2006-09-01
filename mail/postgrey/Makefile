@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.24
+PORTVERSION=	1.27
 CATEGORIES=	mail
 MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	postgrey
 NO_BUILD=	yes
 
 ETCFILES=	whitelist_clients whitelist_recipients
@@ -44,8 +44,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s#/etc/#${PREFIX}/etc/#" ${WRKSRC}/postgrey
 
 pre-install:
-	${SED}	-e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%RC_SUBR%%#${RC_SUBR}#g' \
-		${FILESDIR}/postgrey.sh > ${WRKDIR}/postgrey.sh
 	${SED}	-e 's#%%USER%%#${PGY_USERNAME}#g' -e 's#%%UID%%#${PGY_USERID}#g' \
 		-e 's#%%GROUP%%#${PGY_GROUPNAME}#g' -e 's#%%GID%%#${PGY_GROUPID}#g' \
 		-e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%ETCFILES%%#${ETCFILES}#g' \
@@ -56,7 +54,6 @@ pre-install:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/postgrey ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/postgreyreport ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKDIR}/postgrey.sh ${PREFIX}/etc/rc.d
 	${MKDIR} ${PREFIX}/etc/postfix
 .for i in ${ETCFILES}
 	${INSTALL_DATA} ${WRKSRC}/postgrey_${i} ${PREFIX}/etc/postfix/dist-postgrey_${i}

@@ -2,7 +2,6 @@
 @unexec if cmp -s %D/etc/postfix/dist-postgrey_whitelist_clients %D/etc/postfix/postgrey_whitelist_clients; then rm -f %D/etc/postfix/postgrey_whitelist_clients; fi
 sbin/postgrey
 sbin/postgreyreport
-etc/rc.d/postgrey.sh
 etc/postfix/dist-postgrey_whitelist_recipients
 etc/postfix/dist-postgrey_whitelist_clients
 @dirrmtry etc/postfix
