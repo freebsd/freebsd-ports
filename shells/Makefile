@@ -35,6 +35,5 @@
     SUBDIR += wapsh
     SUBDIR += zoidberg
     SUBDIR += zsh
-    SUBDIR += zsh+euc_hack
 
 .include <bsd.port.subdir.mk>
