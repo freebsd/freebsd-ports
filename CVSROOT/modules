@@ -10450,6 +10450,7 @@ palmpower	ports/palm/palmpower
 palomino	ports/games/palomino
 pam-mysql	ports/security/pam-mysql
 pam-pgsql	ports/security/pam-pgsql
+pam_abl		ports/security/pam_abl
 pam_af		ports/security/pam_af
 pam_alreadyloggedin	ports/security/pam_alreadyloggedin
 pam_authsrv	ports/security/pam_authsrv
