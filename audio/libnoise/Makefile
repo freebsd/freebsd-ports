@@ -17,6 +17,7 @@ COMMENT=	Generates three-dimensional coherent noise
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 CXXFLAGS+=	-O3 -fomit-frame-pointer
 WRKSRC=		${WRKDIR}/noise
 NO_FILTER_SHLIBS=	yes
