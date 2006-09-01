@@ -1942,6 +1942,7 @@ dpsearch	ports/www/dpsearch
 drac		ports/mail/drac
 dragstack	ports/deskutils/dragstack
 drbl		ports/mail/drbl
+dream		ports/audio/dream
 drexelsnmp	ports/java/drexelsnmp
 drgeo		ports/math/drgeo
 dri		ports/graphics/dri
