@@ -276,6 +276,7 @@
     SUBDIR += py-numarray
     SUBDIR += py-numeric
     SUBDIR += py-numeric17
+    SUBDIR += py-numpy
     SUBDIR += py-probstat
     SUBDIR += py-scientific
     SUBDIR += qalculate
