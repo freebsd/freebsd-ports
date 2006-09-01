@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	blue_eyed
-PORTVERSION=	0.6.5.2
+PORTVERSION=	0.6.5.3
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/
+MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
+		http://mbsd.msk.ru/dist/
 PKGNAMEPREFIX=	e17-theme-
-DISTNAME=	blue_eyed_0.6.5.g_g
+DISTNAME=	blue_eyed_0.6.5.g_i
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	ssedov@mbsd.msk.ru
@@ -22,7 +23,7 @@ USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/enlightenment/data/themes/blue_eyed_0.6.5.g_g.edj
+PLIST_FILES=	share/enlightenment/data/themes/${DISTNAME}${EXTRACT_SUFX}
 
 do-extract:
 	${MKDIR} ${WRKDIR}
