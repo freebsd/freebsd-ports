@@ -46,6 +46,7 @@ share/locale/cs/LC_MESSAGES/gnome-osd.mo
 share/locale/ja/LC_MESSAGES/gnome-osd.mo
 share/locale/pt/LC_MESSAGES/gnome-osd.mo
 @dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
 @dirrm share/gnome/gnome-osd
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
 @dirrmtry %%PYTHON_SITELIBDIR%%
