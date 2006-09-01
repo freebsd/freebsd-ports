@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabause
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	yes
+USE_GCC=	3.4+
 USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=	${WRKDIR}/${PORTNAME}
