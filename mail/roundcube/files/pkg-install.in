@@ -17,9 +17,6 @@ DEINSTALL)
 		if cmp -s ${i} ${i}.dist; then rm ${i}; fi
 	done
 	;;
-*)
-	exit 1
-	;;
 esac
 
 exit 0

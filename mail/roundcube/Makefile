@@ -7,6 +7,7 @@
 
 PORTNAME=	roundcube
 PORTVERSION=	0.1.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.unixified.net/roundcube/:unixified \
 		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
