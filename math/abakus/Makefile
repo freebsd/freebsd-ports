@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	abakus
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	math kde
 MASTER_SITES=	http://grammarian.homelinux.net/abakus/ \
 		http://www.athame.co.uk/mirror/
@@ -15,7 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	andy@athame.co.uk
 COMMENT=	Michael Pyne's Abakus Calculator
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
+		bison:${PORTSDIR}/devel/bison2
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
 PREFIX=${LOCALBASE}
