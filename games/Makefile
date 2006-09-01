@@ -274,6 +274,7 @@
     SUBDIR += greed
     SUBDIR += gretools
     SUBDIR += grhino
+    SUBDIR += gridlock
     SUBDIR += groundhog
     SUBDIR += gru
     SUBDIR += grubinvaders
