@@ -10,11 +10,12 @@ PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.13
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
+MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/ \
+		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
 DISTNAME=	SDL_gfx-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 USE_SDL=	sdl
@@ -25,7 +26,7 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/SDL11 \
 		--disable-mmx
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
