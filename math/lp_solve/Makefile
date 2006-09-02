@@ -6,36 +6,33 @@
 #
 
 PORTNAME=	lp_solve
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	5.5
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.es.ele.tue.nl/pub/lp_solve/old_versions_which_you_probably_dont_want/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_LOCAL} # http://groups.yahoo.com/group/lp_solve/
+MASTER_SITE_SUBDIR=	maho
+DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear Programming Solver
 
 USE_BISON=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-MAN1=		lp_solve.1
+pre-build:
+	@${REINPLACE_CMD} -e 's:%%CFLAGS%%:${CFLAGS}:g' -e 's:%%CC%%:${CC}:g' ${WRKSRC}/lp_solve/ccc ${WRKSRC}/demo/ccc ${WRKSRC}/lpsolve55/ccc
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g ; \
-	s,%%CFLAGS%%,${CFLAGS},g'  ${WRKSRC}/Makefile
+do-build:
+	cd ${WRKSRC}/lp_solve  ; ${SH} -x ccc
+	cd ${WRKSRC}/demo      ; ${SH} -x ccc
+	cd ${WRKSRC}/lpsolve55 ; ${SH} -x ccc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/lp2mps ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mps2lp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lp_solve.1 ${PREFIX}/man/man1
-.ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/HARTMUT_DOCUMENTATION ${DOCSDIR}
-	${CP} ${WRKSRC}/MPS.description ${DOCSDIR}
-	${CP} ${WRKSRC}/*.pdf ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/lp_solve ${PREFIX}/bin
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/demo ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/lp_examples/* ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/demo/demo ${EXAMPLESDIR}
+	${MKDIR} ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lp_lib.h ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.so ${PREFIX}/lib
 
 .include <bsd.port.mk>
