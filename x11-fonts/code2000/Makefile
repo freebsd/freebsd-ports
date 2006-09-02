@@ -17,7 +17,8 @@ COMMENT=	Shareware demo Unicode TrueType font
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
-NO_PACKAGE=	Only unmodified original package can be distributed
+RESTRICTED=	Only unmodified original package can be distributed
+BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
