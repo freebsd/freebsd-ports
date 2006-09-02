@@ -7,6 +7,7 @@
 
 PORTNAME=	libjackasyn
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	audio devel
 MASTER_SITES=	http://gige.xdv.org/soft/libjackasyn/download/
 
