@@ -7,6 +7,7 @@ bin/avahi-publish-service
 bin/avahi-resolve
 bin/avahi-resolve-address
 bin/avahi-resolve-host-name
+bin/avahi-set-host-name
 etc/avahi/avahi-daemon.conf
 etc/avahi/avahi-dnsconfd.action
 etc/avahi/hosts
@@ -90,7 +91,6 @@ libdata/pkgconfig/avahi-core.pc
 libdata/pkgconfig/avahi-glib.pc
 sbin/avahi-daemon
 sbin/avahi-dnsconfd
-@exec mkdir -p %D/%%DOCSDIR%%
 %%DATADIR%%/avahi-service.dtd
 %%GTK%%%%DATADIR%%/interfaces/avahi-discover.glade
 %%DATADIR%%/introspection/AddressResolver.introspect
@@ -106,7 +106,6 @@ sbin/avahi-dnsconfd
 @dirrm %%DATADIR%%/introspection
 %%GTK%%@dirrm %%DATADIR%%/interfaces
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
 @dirrm include/avahi-glib
 @dirrm include/avahi-core
 %%LIBDNS%%@dirrm include/avahi-compat-libdns_sd

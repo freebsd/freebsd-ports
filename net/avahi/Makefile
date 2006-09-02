@@ -6,8 +6,8 @@
 #    $MCom: ports/net/avahi/Makefile,v 1.15 2006/04/28 01:52:15 marcus Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.12
-PORTREVISION?=	1
+PORTVERSION=	0.6.13
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 USE_GNOME?=	gnomehack ltverhack glib20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-distro=freebsd \
 		--with-dbus-system-address=unix:path=/var/run/dbus/dbus.pipe \
 		--disable-qt3 \
