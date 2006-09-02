@@ -1,3 +1,11 @@
-Openbox is based on, and similar to, blackbox.
+Openbox works with your applications, and makes your desktop easier to manage.
+This is because the approach to its development was the opposite of what seems
+to be the general case for window managers. Openbox was written first to comply
+with standards and to work properly. Only when that was in place did the team
+turn to the visual interface.
+
+Openbox is fully functional as a stand-alone working environment, or can be used
+as a drop-in replacement for the default window manager in the GNOME or KDE
+desktop environments. 
 
 WWW: http://icculus.org/openbox/
