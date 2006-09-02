@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	manedit
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	editors
 MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A UNIX manual page editor and viewer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 MAKEFILE=	Makefile.FreeBSD
 
