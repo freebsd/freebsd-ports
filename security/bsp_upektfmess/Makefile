@@ -28,8 +28,7 @@ USE_ICONV=	yes
 # Both the gui and the non-gui object are linked to libX11
 USE_XLIB=	yes
 
-NO_PACKAGE=	license prohibits redistribution
-NO_CDROM=	no commercial redistribution
+RESTRICTED=	license prohibits redistribution
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
