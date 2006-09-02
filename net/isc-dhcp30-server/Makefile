@@ -7,7 +7,8 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.5.r1
+PORTVERSION=	3.0.5.r2
+PORTREVISION=	${DHCP_PORTREVISION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -17,6 +18,11 @@ DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
+
+PORTREVISION_SERVER=	0
+PORTREVISION_CLIENT=	0
+PORTREVISION_RELAY=	0
+PORTREVISION_DEVEL=	0
 
 SUBSYS?=	server
 
@@ -33,6 +39,17 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 		OPENSSL_BASE "use the base system OpenSSL (required by TLS)" on \
 		OPENSSL_PORT "use OpenSSL from ports (required by TLS)" off \
 		DHCP_LQ "DHCPLEASEQUERY support used by Cisco uBR's" off
+.endif
+
+# PORTREVISION handling
+.if ${SUBSYS} == client
+DHCP_PORTREVISION=	${PORTREVISION_CLIENT}
+.elif ${SUBSYS} == relay
+DHCP_PORTREVISION=	${PORTREVISION_RELAY}
+.elif ${SUBSYS} == devel
+DHCP_PORTREVISION=	${PORTREVISION_DEVEL}
+.else
+DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 
 .include <bsd.port.pre.mk>
