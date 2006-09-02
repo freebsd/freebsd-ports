@@ -46,7 +46,7 @@ MAN8=		xb-gui-control.8 xb-apache-config.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 470000
-FORBIDDEN=	"X-Bone ${PORTVERSION} does not support FreeBSD prior to 4.7"
+IGNORE=		X-Bone ${PORTVERSION} does not support FreeBSD prior to 4.7
 .endif
 
 .if ${PERL_LEVEL} < 500601
