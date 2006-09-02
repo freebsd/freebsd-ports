@@ -29,6 +29,12 @@ PLIST_FILES=	${EMACS_SITE_LISPDIR}/rst.el \
 
 ELISPDIR=	${TARGETDIR}/${EMACS_SITE_LISPDIR}
 
+.include <bsd.port.pre.mk>
+
+.if (${EMACS_NAME} == "xemacs")
+BUILD_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/lisp/xemacs-base/compile.el:${PORTSDIR}/editors/xemacs-packages
+.endif
+
 do-build:
 	cd ${WRKSRC}; ${EMACS_CMD} -batch -q -f batch-byte-compile ${PORTNAME}
 
@@ -39,4 +45,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
