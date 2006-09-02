@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt		\
 		LDFLAGS="-L${LOCALBASE}/lib/libquicktime	\
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-dv1394
 MAN1=	kino.1
 
 .include <bsd.port.pre.mk>
