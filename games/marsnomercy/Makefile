@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	marsnomercy
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mars
@@ -17,16 +17,18 @@ COMMENT=	A turn-based strategy game setting on Mars
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 
-USE_X_PREFIX=	yes
+USE_GL=		yes
 USE_SDL=	sdl image ttf
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
+
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_FILES=	bin/mars-nomercy libexec/mars
 PLIST_DIRS=	%%DATADIR%%
+SUB_FILES=	mars-nomercy pkg-message
 WRKSRC=		${WRKDIR}/mars-${PORTVERSION}
-SUB_FILES=	mars-nomercy
 
-OPTIONS=	DEBUG	"With additional debug information"	off
+OPTIONS=	DEBUG	"With additional debug information"	off \
+		OPENGL	"Install binary with opengl support"	off
 
 .include <bsd.port.pre.mk>
 
@@ -35,9 +37,9 @@ IGNORE=		does not build on FreeBSD 4.x
 .endif
 
 .if defined(WITH_DEBUG)
-SCONS_ARGS=	debug=1
+SCONS_ARGS+=	debug=1
 .else
-SCONS_ARGS=	debug=0
+SCONS_ARGS+=	debug=0
 .endif
 
 do-build:
@@ -55,7 +57,11 @@ do-install:
 		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 	@${INSTALL_SCRIPT} ${WRKDIR}/mars-nomercy ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/libexec
+.if defined(WITH_OPENGL)
+	@${INSTALL_PROGRAM} ${WRKSRC}/mars_gl ${PREFIX}/libexec/mars
+.else
+	@${INSTALL_PROGRAM} ${WRKSRC}/mars_sdl ${PREFIX}/libexec/mars
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -1,18 +1,19 @@
---- SConstruct	Mon Mar  6 16:56:17 2006
-+++ SConstruct	Tue Mar 21 02:12:54 2006
-@@ -1,3 +1,6 @@
+--- SConstruct	Mon Jul 24 18:19:52 2006
++++ SConstruct	Fri Sep  1 18:41:23 2006
+@@ -1,3 +1,5 @@
 +import os
 +import sys
-+
  # create build environment and options
  env = Environment()
  opts = Options()
-@@ -38,12 +41,14 @@
+@@ -40,12 +42,19 @@
  
  # PLATFORM posix or pure cygwin
  else:
--
-+	SDL_CONFIG = os.environ['SDL_CONFIG']	
++	# Section used for FreeBSD port
++	LOCALBASE = os.environ['LOCALBASE']
++	X11BASE = os.environ['X11BASE']
++	SDL_CONFIG = os.environ['SDL_CONFIG']
  	# determine compiler and linker flags for SDL
 -	env.ParseConfig('sdl-config --cflags')
 -	env.ParseConfig('sdl-config --libs')
@@ -20,18 +21,55 @@
 +	env.ParseConfig(SDL_CONFIG + ' --libs')
  	# add additional compiler flags
 -	env.Append(CCFLAGS = ['-O2'])
-+        env.Replace(CC = os.environ['CC'])
-+        env.Replace(CXX = os.environ['CXX'])
-+        env.Replace(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
- 	# add additional libraries to link against
- 	env.Append(LIBS = ['SDL_image', 'SDL_ttf'])
+-
++	env.Replace(CC = os.environ['CC'])
++	env.Replace(CXX = os.environ['CXX'])
++	env.Replace(CPPPATH = [X11BASE + '/include',LOCALBASE+ '/include'])
++	env.Replace(LIBPATH = [X11BASE + '/lib',LOCALBASE+ '/lib'])
++	env.Append(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
  
-@@ -71,7 +76,7 @@
+ # generate help for options
+ Help(opts.GenerateHelpText(env))
+@@ -53,7 +62,7 @@
+ 
+ # build for debug
+ if int(env['debug']):
+-	env.Append(CCFLAGS = ['-g', '-O0'])
++	env.Append(CXXFLAGS = ['-g', '-O0'])
+ 	# of course no stripping if debug
+ 	env['strip'] = 0
+ 
+@@ -63,20 +72,20 @@
+ 
+ # print all warnings
+ if int(env['warnings']):
+-	env.Append(CCFLAGS = ['-Wall'])
++	env.Append(CXXFLAGS = ['-Wall'])
+ 
+ 
+ # check for libraries and headers (if not cleaning)
  if not env.GetOption('clean'):
  	print ":: Checking for libs"
  	conf = Configure(env)
--	if not conf.CheckLibWithHeader('libSDL', 'SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);'):
-+	if not conf.CheckLibWithHeader('libSDL-1.1', 'SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);'):
+-	if not conf.CheckLibWithHeader('libSDL', 'SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);', autoadd = 0):
++	if not conf.CheckLibWithHeader('libSDL-1.1', 'SDL11/SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);', autoadd = 0):
  		print 'Did not find libSDL, exiting!'
  		Exit(1)
- 	if not conf.CheckLibWithHeader('libSDL_image', 'SDL_image.h', 'c', 'IMG_GetError();'):
+-	if not conf.CheckLibWithHeader('libSDL_image', 'SDL_image.h', 'c', 'IMG_GetError();'):
++	if not conf.CheckLibWithHeader('libSDL_image', 'SDL11/SDL_image.h', 'c', 'IMG_GetError();'):
+ 		print 'Did not find libSDL_image, exiting!'
+ 		Exit(1)
+-	if not conf.CheckLibWithHeader('libSDL_ttf', 'SDL_ttf.h', 'c', 'TTF_Init();'):
++	if not conf.CheckLibWithHeader('libSDL_ttf', 'SDL11/SDL_ttf.h', 'c', 'TTF_Init();'):
+ 		print 'Did not find libSDL_ttf, exiting!'
+ 		Exit(1)
+ 	if int(env['with_opengl']):
+@@ -85,7 +94,7 @@
+ 			print 'Try "scons with_opengl=no"'
+ 			Exit(1)
+ 		else:
+-			env.Append(CCFLAGS = ['-DWITH_OPENGL'])
++			env.Append(CXXFLAGS = ['-DWITH_OPENGL'])
+ 	env = conf.Finish()
+ 
+ 
