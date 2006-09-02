@@ -39,7 +39,7 @@ MAKE_ENV+=	SUB_GL="${SUB_GL}"		\
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING) && ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
 IGNORE=		is unnecessary because libGL and libGLU come with XFree86 4.0 and higher
 .endif
 
