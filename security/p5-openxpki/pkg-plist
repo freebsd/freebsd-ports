@@ -1,3 +1,7 @@
+bin/openxpki-configure
+bin/openxpki-metaconf
+bin/openxpkiadm
+bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Client.pm
 %%SITE_PERL%%/OpenXPKI/Client/API.pm
 %%SITE_PERL%%/OpenXPKI/Client/CLI.pm
@@ -142,8 +146,29 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/OpenXPKI.so
 share/locale/de_DE/LC_MESSAGES/openxpki.mo
 share/locale/en_GB/LC_MESSAGES/openxpki.mo
+%%DATADIR%%/templates/default/acl.xml
+%%DATADIR%%/templates/default/auth.xml
+%%DATADIR%%/templates/default/config.xml
+%%DATADIR%%/templates/default/database.xml
+%%DATADIR%%/templates/default/log.conf
+%%DATADIR%%/templates/default/openxpki.conf
+%%DATADIR%%/templates/default/profile.xml
+%%DATADIR%%/templates/default/token.xml
+%%DATADIR%%/templates/default/workflow.xml
+%%DATADIR%%/templates/default/workflow_activity.xml
+%%DATADIR%%/templates/default/workflow_activity_certificate_signing_request.xml
+%%DATADIR%%/templates/default/workflow_activity_null.xml
+%%DATADIR%%/templates/default/workflow_condition.xml
+%%DATADIR%%/templates/default/workflow_def_certificate_signing_request.xml
+%%DATADIR%%/templates/default/workflow_request_dataonly.xml
+%%DATADIR%%/templates/default/workflow_validator_certificate_signing_request.xml
+@dirrmtry %%DATADIR%%/templates/default
+@dirrmtry %%DATADIR%%/templates
+@dirrmtry %%DATADIR%%
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
+@dirrmtry share/locale/en_GB/LC_MESSAGES
+@dirrmtry share/locale/en_GB
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP/Lite
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SCEP
@@ -152,7 +177,6 @@ share/locale/en_GB/LC_MESSAGES/openxpki.mo
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/CLI
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/XML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Transport
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Service/SCEP/Command
@@ -198,7 +222,6 @@ share/locale/en_GB/LC_MESSAGES/openxpki.mo
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto/Backend
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI/Crypto
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/OpenXPKI
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrm %%SITE_PERL%%/OpenXPKI/Client/SOAP
 @dirrm %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason
 @dirrm %%SITE_PERL%%/OpenXPKI/Client/HTML
