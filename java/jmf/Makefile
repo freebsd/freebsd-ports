@@ -23,8 +23,6 @@ NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/JMF-${PORTVERSION}
 
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
-NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
-NO_PACKAGE=	"Redistribution of pre-compiled binaries is not permitted"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
