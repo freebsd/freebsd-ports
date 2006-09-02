@@ -2451,3 +2451,8 @@ net-im/jabber-msn||2006-08-25|Has expired: Depends on broken net-im/jabber, plea
 net-im/gaim-devel|net-im/gaim|2006-08-26|Remove since gaim's maintainer don't want to add it now
 graphics/GIFgraph|graphics/p5-GD-Graph|2006-08-27|broken, use graphics/p5-GD-Graph instead
 www/p5-Apache-SizeLimit||2006-09-02|unresolvable conflict with www/mod_perl
+www/firefox10|www/firefox|2006-09-02|Security vulnerabilities
+net/samba|net/samba3|2006-09-02|Security vulnerabilities
+security/antivir-milter||2006-09-02|Free license keys are no longer available since September 2005
+security/finger_mysql||2006-09-02|Project has closed
+
