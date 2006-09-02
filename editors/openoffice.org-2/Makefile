@@ -9,15 +9,15 @@ PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
 CATEGORIES+=	editors java
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOVERSION}/&,} \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
+		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
 #DISTFILES+=	OOo_${OOOVERSION}_src.tar.gz
-DISTFILES+=	OOo_2.0.1_src.tar.gz
+DISTFILES+=	OOo_${OOOTAG}_source.tar.bz2
 DISTFILES+=	unowinreg.dll:unowinreg
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
@@ -26,12 +26,12 @@ DISTFILES+=     gpc231.tar.Z:gpc
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
 #EXTRACT_ONLY=	OOo_${OOOVERSION}_src.tar.gz
-EXTRACT_ONLY=	OOo_2.0.1_src.tar.gz
+EXTRACT_ONLY=	OOo_${OOOTAG}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-OOOVERSION=	2.0.4.m1
+OOOVERSION=	2.0.4.m2
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
@@ -47,6 +47,7 @@ USE_KDELIBS_VER=        3
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 .if !defined(WITH_GNUGCJ)
@@ -75,7 +76,7 @@ IGNORE=		install lang/perl5.8 then try again
 
 CODELINE=		680
 RELEASE_NR=		2.0
-OOOTAG?=		OOD680_m1
+OOOTAG?=		OOD680_m2
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
@@ -144,7 +145,7 @@ ANT_VERSION=	1.6.5
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .endif
 .if !defined(WITH_GPC)
-LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
+LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
 
 GNU_CONFIGURE=	yes
@@ -163,7 +164,7 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE
 WITHOUT_MOZILLA=	yes
 .endif
 .if (${GCCVER} == 41)
-LIB_DEPENDS=   boost_regex:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=   boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=       --with-system-boost=yes #i58343#
 .endif
 .if (${OSVERSION} <= 492000)
