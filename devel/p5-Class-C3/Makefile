@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-C3
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A pragma to use the C3 method resolution order algorithm
 
-BUILD_DEPENDS=	p5-Algorithm-C3>=0.01:${PORTSDIR}/devel/p5-Algorithm-C3
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Algorithm-C3>=0.05:${PORTSDIR}/devel/p5-Algorithm-C3
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
