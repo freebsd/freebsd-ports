@@ -20,7 +20,6 @@ LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 DEPRECATED=	fd_set -- bitmap index overflow in multiple applications.
-EXPIRATION_DATE=	2006-08-01
 
 USE_RC_SUBR=	jabberd.sh
 USE_BZIP2=	yes
