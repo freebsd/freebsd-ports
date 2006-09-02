@@ -72,6 +72,7 @@
     SUBDIR += p5-Device-Modem
     SUBDIR += p5-Device-SerialPort
     SUBDIR += p5-Fax-Hylafax-Client
+    SUBDIR += p5-SMS-Send
     SUBDIR += plp
     SUBDIR += pr
     SUBDIR += predict

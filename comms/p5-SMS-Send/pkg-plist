@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/SMS/Send.pm
+%%SITE_PERL%%/SMS/Send/AU/Test.pm
+%%SITE_PERL%%/SMS/Send/Driver.pm
+%%SITE_PERL%%/SMS/Send/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS
+@dirrmtry %%SITE_PERL%%/SMS/Send/AU
+@dirrmtry %%SITE_PERL%%/SMS/Send
+@dirrmtry %%SITE_PERL%%/SMS
