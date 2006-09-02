@@ -27,7 +27,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libjpeg=sys \
