@@ -1,10 +1,23 @@
-
-$FreeBSD$
-$MCom: ports/devel/pkgconfig/files/patch-parse.c,v 1.4 2005/10/14 20:39:57 adamw Exp $
-
---- parse.c	2001/08/01 07:24:17	1.1
-+++ parse.c	2001/08/01 07:25:02
-@@ -952,9 +952,9 @@
+--- parse.c.orig	Sun Oct 16 13:09:39 2005
++++ parse.c	Sat Sep  2 14:09:44 2006
+@@ -707,6 +707,16 @@ static void _do_parse_libs (Package *pkg
+           i++;
+           g_free(framework);
+         }
++      else if ((strcmp("-Wl,--rpath",p) == 0 || strcmp("-Wl,-rpath",p) == 0) &&
++        i+1 < argc)
++        {
++          gchar *rpath = trim_string (argv[i+1]);
++
++          pkg->other_libs = g_slist_prepend (pkg->other_libs,
++                                             g_strconcat(arg, " ", rpath, NULL));
++          i++;
++          g_free(rpath);
++        }
+       else
+         {
+           if (*arg != '\0')
+@@ -1190,9 +1200,9 @@ get_compat_package (const char *name)
      {
        char *output;
  
@@ -16,7 +29,7 @@ $MCom: ports/devel/pkgconfig/files/patch-parse.c,v 1.4 2005/10/14 20:39:57 adamw
        if (pkg->version == NULL)
          {
            g_free (pkg);
-@@ -965,12 +965,12 @@
+@@ -1203,12 +1213,12 @@ get_compat_package (const char *name)
        pkg->key = g_strdup ("glib");
        pkg->description = g_strdup ("C Utility Library");
  
