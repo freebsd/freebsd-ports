@@ -15,6 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
+FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/0b79743b-3ab7-11db-81e1-000e0c2e438a.html
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	esound gnomehack gnomeprefix gnometarget libgnomeui
