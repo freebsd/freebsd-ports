@@ -6845,6 +6845,7 @@ minidom		ports/textproc/minidom
 minimalist	ports/mail/minimalist
 minirsyslogd	ports/sysutils/minirsyslogd
 minisapserver	ports/net/minisapserver
+minised		ports/textproc/minised
 minivmac	ports/emulators/minivmac
 mips-rtems-binutils	ports/devel/mips-rtems-binutils
 mips-rtems-g77	ports/devel/mips-rtems-g77
