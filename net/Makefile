@@ -680,7 +680,6 @@
     SUBDIR += ruby-tserver
     SUBDIR += rude
     SUBDIR += rwhoisd
-    SUBDIR += samba
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
     SUBDIR += samba-pdbsql
