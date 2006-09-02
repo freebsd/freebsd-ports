@@ -21,8 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS+=	${LOCALBASE}/f-prot/SIGN.DEF:${PORTSDIR}/security/f-prot-sig
 .endif
 
-NO_PACKAGE=	Free for personal use only
-NO_CDROM=	Free for personal use only
 RESTRICTED=	Free for personal use only
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
