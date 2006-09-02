@@ -71,6 +71,10 @@ CONFIGURE_ARGS+=--enable-acl-support
 CONFIGURE_ARGS+=	--with-rsh=rsh
 .endif
 
+# guard against CFLAGS damage by MAKE_ENV
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS|CONFIGUREDCFLAGS|' ${WRKSRC}/Makefile.in
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/:g'  \
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
