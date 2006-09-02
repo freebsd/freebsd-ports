@@ -1,5 +1,5 @@
---- src/ieee1394io.cc.orig	Mon May 22 00:16:33 2006
-+++ src/ieee1394io.cc	Tue Jul 18 23:29:20 2006
+--- src/ieee1394io.cc.orig	Sun Jul  2 22:52:08 2006
++++ src/ieee1394io.cc	Sat Sep  2 19:32:07 2006
 @@ -64,9 +64,11 @@
  #include <time.h>
  #include <sys/time.h>
@@ -154,21 +154,22 @@
  	if ( avc_handle != NULL )
  	{
  		pthread_mutex_lock( &avc_mutex );
-@@ -842,11 +868,13 @@
+@@ -842,12 +868,14 @@
  		avc_handle = NULL;
  		pthread_mutex_unlock( &avc_mutex );
  	}
 +#endif
  }
  
- 
- extern KinoCommon *common;
+ extern "C" {
+ 	extern KinoCommon *common;
+ }
  
 +#if 0
  int AVC::ResetHandler( raw1394handle_t handle, unsigned int generation )
  {
  	cerr << "Reset Handler received" << endl;
-@@ -854,7 +882,7 @@
+@@ -855,7 +883,7 @@
  	common->getPageCapture()->driver_locked = true;
  	return 0;
  }
@@ -177,7 +178,7 @@
  
  /** See if a node_id is still valid and pointing to an AV/C Recorder.
   
-@@ -870,6 +898,7 @@
+@@ -871,6 +899,7 @@
  int AVC::isPhyIDValid( int phyID )
  {
  	int value = -1;
@@ -185,7 +186,7 @@
  	int currentNode, nodeCount;
  	rom1394_directory rom1394_dir;
  
-@@ -934,6 +963,7 @@
+@@ -935,6 +964,7 @@
  	if ( value == -1 )
  		port = -1;
  	pthread_mutex_unlock( &avc_mutex );
@@ -193,7 +194,7 @@
  	return value;
  }
  
-@@ -942,6 +972,7 @@
+@@ -943,6 +973,7 @@
  */
  void AVC::Noop( void )
  {
@@ -201,7 +202,7 @@
  	struct pollfd raw1394_poll;
  	raw1394_poll.fd = raw1394_get_fd( avc_handle );
  	raw1394_poll.events = POLLIN | POLLPRI;
-@@ -952,11 +983,13 @@
+@@ -953,11 +984,13 @@
  		        || ( raw1394_poll.revents & POLLPRI ) )
  			raw1394_loop_iterate( avc_handle );
  	}
@@ -215,7 +216,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -968,12 +1001,14 @@
+@@ -969,12 +1002,14 @@
  		}
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -230,7 +231,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -990,12 +1025,14 @@
+@@ -991,12 +1026,14 @@
  	    };
  	nanosleep( &t, NULL );
  	pthread_mutex_unlock( &avc_mutex );
@@ -245,7 +246,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1008,12 +1045,14 @@
+@@ -1009,12 +1046,14 @@
  	    };
  	nanosleep( &t, NULL );
  	pthread_mutex_unlock( &avc_mutex );
@@ -260,7 +261,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1021,12 +1060,14 @@
+@@ -1022,12 +1061,14 @@
  			avc1394_vcr_rewind( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -275,7 +276,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1034,11 +1075,13 @@
+@@ -1035,11 +1076,13 @@
  			avc1394_vcr_forward( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -289,7 +290,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1046,11 +1089,13 @@
+@@ -1047,11 +1090,13 @@
  			avc1394_vcr_next( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -303,7 +304,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1058,11 +1103,13 @@
+@@ -1059,11 +1104,13 @@
  			avc1394_vcr_previous( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -317,7 +318,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1070,11 +1117,13 @@
+@@ -1071,11 +1118,13 @@
  			avc1394_vcr_next_index( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -331,7 +332,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1082,11 +1131,13 @@
+@@ -1083,11 +1132,13 @@
  			avc1394_vcr_previous_index( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -345,7 +346,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1094,11 +1145,13 @@
+@@ -1095,11 +1146,13 @@
  			avc1394_vcr_record( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -359,7 +360,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1106,12 +1159,14 @@
+@@ -1107,12 +1160,14 @@
  			avc1394_vcr_trick_play( avc_handle, phyID, speed );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -374,7 +375,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1119,11 +1174,13 @@
+@@ -1120,11 +1175,13 @@
  			val = avc1394_vcr_status( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -388,7 +389,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1151,12 +1208,14 @@
+@@ -1152,12 +1209,14 @@
  
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -403,7 +404,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1198,6 +1257,7 @@
+@@ -1199,6 +1258,7 @@
  	if ( value == -1 )
  		port = -1;
  	pthread_mutex_unlock( &avc_mutex );
@@ -411,7 +412,7 @@
  	return value;
  }
  
-@@ -1321,6 +1381,7 @@
+@@ -1322,6 +1382,7 @@
  int iec61883Writer::HandlerProxy( unsigned char *data, int n_dif_blocks,
  	unsigned int dropped, void *callback_data)
  {
@@ -419,7 +420,7 @@
  	if ( callback_data )
  	{
  		iec61883Writer* writer = static_cast< iec61883Writer* >( callback_data );
-@@ -1330,6 +1391,8 @@
+@@ -1331,6 +1392,8 @@
  	{
  		return -1;
  	}

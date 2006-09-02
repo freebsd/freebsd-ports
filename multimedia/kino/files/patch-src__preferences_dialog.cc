@@ -1,5 +1,5 @@
---- src/preferences_dialog.cc.orig	Mon May 22 00:44:30 2006
-+++ src/preferences_dialog.cc	Tue Jul 18 23:06:23 2006
+--- src/preferences_dialog.cc.orig	Fri Jul 14 08:11:36 2006
++++ src/preferences_dialog.cc	Sat Sep  2 19:34:27 2006
 @@ -34,8 +34,10 @@
  #include "support.h"
  #include "commands.h"
@@ -25,15 +25,15 @@
  
  		media_ctrl_key *mkeys;
  		
-@@ -309,6 +315,7 @@
- 
- 		widget = lookup_widget( dialog, "optionmenu_avc_phyid" );
- 
+@@ -312,6 +318,7 @@
+ #ifdef HAVE_DV1394
+ 		gtk_widget_hide_all( lookup_widget( dialog, "hbox_ieee1394_warning" ) );
+ #endif
 +#if 0
  		if ( ( handle = raw1394_new_handle() ) )
  		{
  			raw1394_portinfo ports[MAX_1394_PORTS];
-@@ -370,6 +377,7 @@
+@@ -373,6 +380,7 @@
  				}
  			}
  		}
@@ -41,7 +41,7 @@
  
  		gtk_option_menu_set_menu ( GTK_OPTION_MENU ( widget ), glade_menu );
  		gtk_option_menu_set_history( GTK_OPTION_MENU( widget ), currentItem );
-@@ -406,7 +414,9 @@
+@@ -409,7 +417,9 @@
  	void
  	on_avc_phyid_activate( GtkMenuItem * menu_item, gpointer user_data )
  	{

@@ -1,6 +1,7 @@
 bin/kino
 include/kino/audio_filters.h
 include/kino/audio_transitions.h
+include/kino/endian_types.h
 include/kino/frame.h
 include/kino/image_create.h
 include/kino/image_filters.h
