@@ -11785,7 +11785,8 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>jabber</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.4.3.1</lt></range>
+	<range><eq>1.4.4</eq></range>
       </package>
       <package>
 	<name>bnc</name>
