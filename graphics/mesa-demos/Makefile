@@ -20,6 +20,8 @@ COMMENT=	OpenGL demos distributed with Mesa
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

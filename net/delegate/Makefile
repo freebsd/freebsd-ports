@@ -16,6 +16,8 @@ MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_BZIP2=	yes
 IS_INTERACTIVE=	YES

@@ -21,6 +21,8 @@ COMMENT=	A dynamic programming language with a syntax similar to C++
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 

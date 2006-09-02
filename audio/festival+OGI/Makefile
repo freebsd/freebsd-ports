@@ -26,6 +26,8 @@ LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound
 
 BROKEN=		Touches filesystem prior to make install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 CONFLICTS=	festival-*
 DIST_SUBDIR=	festival

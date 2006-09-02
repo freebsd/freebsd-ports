@@ -18,6 +18,8 @@ CONFIGURE_ARGS=	--with-gnome
 MASTERDIR=	${.CURDIR}/../verbiste
 
 BROKEN=		does not install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 DESCR=		${.CURDIR}/pkg-descr

@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Setup your PC to use serial port COM1 as its console device
 
 BROKEN=		Modifies files in / and does not undo upon deinstall
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

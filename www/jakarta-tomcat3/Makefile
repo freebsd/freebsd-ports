@@ -18,6 +18,8 @@ COMMENT=	Open-source Java web server by Apache, stable 3.x branch
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/jakarta-tomcat4:pre-everything
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .if !defined(NOPORTDOCS)
 MAN1=	${CONTROL_SCRIPT_NAME}.1

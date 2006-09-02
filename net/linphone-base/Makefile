@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
 BROKEN=		broken by latest update to libosip2
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		jack.0:${PORTSDIR}/audio/jack \

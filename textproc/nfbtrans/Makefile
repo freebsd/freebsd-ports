@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII text to Grade Two braille translator
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 RESTRICTED=	"Unclear copyright status"
 

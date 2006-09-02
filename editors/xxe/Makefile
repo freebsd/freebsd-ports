@@ -16,6 +16,8 @@ MAINTAINER=	fenner@FreeBSD.Org
 COMMENT=	A validating XML editor featuring a word processor-like view
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.5

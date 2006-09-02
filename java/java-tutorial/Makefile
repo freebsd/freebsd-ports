@@ -20,6 +20,8 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Official Java 2 SDK tutorial
 
 BROKEN=		Size mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	This software is under license and export control.

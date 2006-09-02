@@ -24,5 +24,7 @@ PERL_CONFIGURE=	YES
 MAN3=		${PORTNAME:S/-/::/g}.3
 
 BROKEN=	conflicts with www/mod_perl
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .include <bsd.port.mk>

@@ -18,6 +18,8 @@ LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libphysfs=${LOCALBASE}

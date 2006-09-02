@@ -34,6 +34,8 @@ BROKEN=		"Does not compile on !i386"
 .else
 BROKEN=		"Does not install on i386"
 .endif
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 WRKSRC=		${WRKDIR}/cc65-${PORTVERSION}
 

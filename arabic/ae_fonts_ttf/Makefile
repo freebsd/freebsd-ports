@@ -18,6 +18,8 @@ COMMENT=	A collection of truetype Arabic fonts created by Arabeyes.org
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

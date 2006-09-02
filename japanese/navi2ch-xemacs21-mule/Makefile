@@ -15,5 +15,7 @@ RUN_DEPENDS=		${X11BASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese
 			${BUILD_DEPENDS}
 
 BROKEN=			Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .include "${MASTERDIR}/Makefile"

@@ -19,6 +19,8 @@ BUILD_DEPENDS=	\
 		updmap:${PORTSDIR}/print/teTeX-base
 
 BROKEN=		Installs files before 'make install'
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

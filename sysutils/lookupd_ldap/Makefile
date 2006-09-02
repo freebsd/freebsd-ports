@@ -15,6 +15,8 @@ COMMENT=	The LDAP plugin for the lookupd daemon
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lookupd:${PORTSDIR}/sysutils/lookupd
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 INSTALLS_SHLIB=	yes
 USE_OPENLDAP=	yes

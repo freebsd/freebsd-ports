@@ -14,6 +14,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	AT&T's DjVu: The Technology for Scanned Documents on the Web
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 INSTALLS_SHLIB=	yes
 IS_INTERACTIVE=	some think, the AT&T license needs to be acked by the user

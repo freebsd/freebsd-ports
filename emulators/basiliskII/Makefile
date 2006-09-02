@@ -17,6 +17,8 @@ MAINTAINER=	mmendez@energyhq.be
 COMMENT=	A free, portable, Open Source 68k Mac emulator
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 

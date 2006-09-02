@@ -19,6 +19,8 @@ COMMENT=	A high-performance Prolog compiler
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -16,5 +16,7 @@ GST_PLUGIN=	faad
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .include "${MASTERDIR}/Makefile"

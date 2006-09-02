@@ -22,6 +22,8 @@ RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		${X11BASE}/libdata/pkgconfig/gecko-sharp.pc:${PORTSDIR}/www/gecko-sharp10
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .if !defined(WITH_MOZILLA)
 MOZILLA=	mozilla

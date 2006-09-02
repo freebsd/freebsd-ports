@@ -21,6 +21,8 @@ BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
 LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
 
 BROKEN=		install fails
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 CONFLICTS=	xfree86-dri-[0-9]* dri-6.2_* dri-6.4_*
 

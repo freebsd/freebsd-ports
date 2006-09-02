@@ -12,6 +12,8 @@ CATEGORIES=	multimedia
 COMMENT=	Gstreamer mpeg encoder plugin
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 GST_PLUGIN=	mpeg2enc
 

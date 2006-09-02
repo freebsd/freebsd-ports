@@ -16,5 +16,7 @@ DESCR=		${.CURDIR}/pkg-descr
 MAMEMESS=	mess
 
 BROKEN=		leaves a file behind on deinstall
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .include "${MASTERDIR}/Makefile"

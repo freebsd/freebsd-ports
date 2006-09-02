@@ -22,6 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
 BROKEN=		deinstalls file not installed by this port
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .include <bsd.port.pre.mk>
 

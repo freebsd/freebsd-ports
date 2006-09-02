@@ -19,6 +19,8 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata.34:${PORTSDIR}/devel/icu
 
 BROKEN=		doesn not package
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GCC=	3.4+
 USE_PERL5=	yes

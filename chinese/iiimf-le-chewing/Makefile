@@ -17,6 +17,8 @@ MAINTAINER=	kcwu@csie.org
 COMMENT=	IIIMF Chewing engine, an intelligent Chinese phonetic input method
 
 BROKEN=		fails to install (dependency problem)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	chewing.2:${PORTSDIR}/chinese/libchewing
 RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server

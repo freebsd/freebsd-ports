@@ -14,6 +14,8 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
 BROKEN=		Fails self-tests
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 NOT_FOR_ARCHS=	alpha
 

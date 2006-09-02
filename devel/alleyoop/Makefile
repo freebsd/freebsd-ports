@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd \
 RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yex

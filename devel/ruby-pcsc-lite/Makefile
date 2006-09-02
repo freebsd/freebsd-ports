@@ -20,6 +20,8 @@ COMMENT=	Ruby extension for the UNIX PC/SC Lite API (MUSCLE)
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 BROKEN=		"Does not compile with new pcsc-lite. Port will be updated soon."
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_RUBY=	yes
 RUBY_VER=	1.8

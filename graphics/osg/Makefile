@@ -15,6 +15,8 @@ MAINTAINER=	rrghphar@bigpond.net.au
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
 BROKEN=		fails to install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
 		${X11BASE}/lib/libProducer.so:${PORTSDIR}/graphics/openproducer

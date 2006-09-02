@@ -35,6 +35,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 INSTALLS_OMF=	yes
 
 BROKEN=	needs an update to 1.0
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .include <bsd.port.pre.mk>
 

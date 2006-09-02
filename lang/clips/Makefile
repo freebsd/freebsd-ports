@@ -17,6 +17,8 @@ MAINTAINER=	ports@dougdidit.com
 COMMENT=	CLIPS is a productive development and delivery expert system tool
 
 BROKEN=	Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_AUTOTOOLS=	autoconf:213
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}

@@ -22,6 +22,8 @@ BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 MACRO_DIR=	${WRKDIR}/HLaTeX
 FONT_DIR=	${WRKDIR}/uhc-fonts-1.0

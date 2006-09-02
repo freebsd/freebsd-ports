@@ -17,6 +17,8 @@ COMMENT=	BitTorrent client for KDE
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 CONFLICTS=	ktorrent-[0.9]*
 

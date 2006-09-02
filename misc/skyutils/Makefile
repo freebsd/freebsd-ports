@@ -14,6 +14,8 @@ MAINTAINER=	machiel_mastenbroek@hotmail.com
 COMMENT=	A library required by smssend (same author)
 
 BROKEN=		does not fetch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

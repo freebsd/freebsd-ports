@@ -16,5 +16,7 @@ GST_PLUGIN=	dirac
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins80
 
 BROKEN=	Does not build with new dirac
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .include "${MASTERDIR}/Makefile"

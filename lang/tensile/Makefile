@@ -19,6 +19,8 @@ COMMENT=	Programming language designed for especially complex processing texts
 LIB_DEPENDS=	utils.1:${PORTSDIR}/lang/libutils
 
 BROKEN=		Segfault during build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_AUTOTOOLS=	libltdl:15
 USE_GMAKE=	yes

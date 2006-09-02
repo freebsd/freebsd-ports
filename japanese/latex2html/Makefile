@@ -26,6 +26,8 @@ RUN_DEPENDS=	dvips:${PORTSDIR}/japanese/dvipsk \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 VERSION=	2002.2.1
 JP_VERSION=	2.0

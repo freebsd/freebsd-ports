@@ -22,6 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-as
 		lisp:${PORTSDIR}/lang/cmucl
 
 BROKEN=		does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 post-extract:
 	${MKDIR} ${WRKSRC}

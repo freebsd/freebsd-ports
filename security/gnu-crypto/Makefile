@@ -16,6 +16,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Java cryptographic primitives and tools
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

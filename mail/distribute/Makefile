@@ -23,6 +23,8 @@ COMMENT=	Mail dispatcher for mailing list.  Fits nicely with majordomo
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmimekit.a:${PORTSDIR}/japanese/mimekit
 
 BROKEN=		Does not install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 WRKSRC=		${WRKDIR}/distribute-pl19
 MAN1=		distribute.1

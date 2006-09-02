@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${JAVALIBDIR}/castor.jar:${PORTSDIR}/java/castor \
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4

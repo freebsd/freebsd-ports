@@ -27,6 +27,8 @@ COMMENT=	Japanese-English edict UTF-8 dictionaries
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 BROKEN=		Size mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_ICONV=	yes
 ICONV?=		iconv

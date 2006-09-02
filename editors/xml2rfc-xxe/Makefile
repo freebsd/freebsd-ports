@@ -16,6 +16,8 @@ COMMENT=	An xml2rfc configuration for XMLMind XML Editor
 RUN_DEPENDS=	xxe:${PORTSDIR}/editors/xxe
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_ZIP=	YES
 NO_BUILD=	YES

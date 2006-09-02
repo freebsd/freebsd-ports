@@ -14,6 +14,8 @@ MAINTAINER=	changbom.yoon@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
 BROKEN=		fails to install/deinstall cleanly
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 INITIAL_DEP=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen

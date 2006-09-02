@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gapped text buffer extention for Ruby
 
 BROKEN=		Inconsistent dependencies
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes

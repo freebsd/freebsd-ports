@@ -13,6 +13,8 @@ PLIST=          ${MASTERDIR}/pkg-plist
 PKGMESSAGE=     ${MASTERDIR}/pkg-message
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule

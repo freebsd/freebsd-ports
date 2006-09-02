@@ -21,6 +21,8 @@ RUN_DEPENDS=	gedit:${PORTSDIR}/editors/gedit
 GEDIT_VERSION=	2.14
 
 BROKEN=		Not compatible with gedit versions >= 2.14
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_X_PREFIX=	yes
 MAKEFILE=	makefile

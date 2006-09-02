@@ -22,6 +22,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 
 BROKEN=		does not fetch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 NO_BUILD=	yes
 USE_PERL5=	yes
