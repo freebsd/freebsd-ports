@@ -33,6 +33,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/cream.png ${WRKSRC}/cream.svg \
 		${PREFIX}/share/pixmaps
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/cream.desktop ${PREFIX}/share/applications
 .if !defined(NOPORTDOCS)
 .for f in docs docs-html
