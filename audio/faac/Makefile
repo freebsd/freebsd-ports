@@ -16,7 +16,7 @@ COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 
 LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
-NO_PACKAGE=	Distribution in binary form is prohibited
+RESTRICTED=	Distribution in binary form is prohibited
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
