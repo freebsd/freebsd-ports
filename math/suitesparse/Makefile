@@ -27,6 +27,8 @@ BLAS=	-L${LOCALBASE}/lib -lf77blas -latlas -lg2c
 LAPACK=	-L${LOCALBASE}/lib -lalapack -lcblas
 .endif
 
+CONFLICTS=	umfpack-*
+
 USE_GMAKE=	yes
 ALL_TARGET=
 
