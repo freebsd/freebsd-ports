@@ -24,9 +24,6 @@ CONFLICTS=	linux_base-7* linux_base-8* linux_base-gentoo* \
 ONLY_FOR_ARCHS=	alpha amd64 i386
 
 BROKEN=		Does not build reliably
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 DEPRECATED=	unmaintained and does not comply to the linux_base invariants
 EXPIRATION_DATE=2006-09-01
 
