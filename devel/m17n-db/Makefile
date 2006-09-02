@@ -19,6 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for the m17n library
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes

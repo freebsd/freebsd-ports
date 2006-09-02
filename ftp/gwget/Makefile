@@ -16,6 +16,8 @@ MAINTAINER=	radek@raadradd.com
 COMMENT=	A download manager for GNOME, based on wget
 
 BROKEN=		fails to install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

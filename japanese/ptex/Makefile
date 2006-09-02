@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/jap
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-base
 
 BROKEN=		Does not build (uses DESTDIR internally)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -22,6 +22,8 @@ IGNORE=	This port is unsuitable to use with Apache 2.x
 .endif
 
 BROKEN=		"Install fails"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 MASTERDIR=	${.CURDIR}/../../www/rt3
 MD5_FILE=	${.CURDIR}/distinfo

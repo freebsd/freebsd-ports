@@ -18,6 +18,8 @@ LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
 		popt.0:${PORTSDIR}/devel/popt
 
 BROKEN=		Configure fails
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes

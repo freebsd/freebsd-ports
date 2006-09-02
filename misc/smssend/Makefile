@@ -15,6 +15,8 @@ MAINTAINER=	mico@bsd.hu
 COMMENT=	A tool to send a SMS to any GSM
 
 BROKEN=		fails to compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	skyutils-2.9.9:${PORTSDIR}/misc/skyutils
 

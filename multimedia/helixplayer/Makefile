@@ -97,6 +97,8 @@ post-install:
 .include <bsd.port.pre.mk>
 
 BROKEN=		fails to install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .if ${ARCH}==ia64
 BROKEN=		does not compile on ${ARCH} due to coredump

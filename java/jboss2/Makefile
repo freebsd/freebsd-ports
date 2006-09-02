@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBoss 2.x, an open-source J2EE application server
 
 BROKEN=		Broken by www/jakarta-tomcat4/files/startup.sh removal
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+

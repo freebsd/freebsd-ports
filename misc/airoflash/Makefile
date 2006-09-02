@@ -16,6 +16,8 @@ MAINTAINER=	ambrisko@freebsd.org
 COMMENT=	Flash utiltity for Cisco/Aironet 802.11 wireless cards
 
 BROKEN=		unfetchable: connection refused
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 AF_VERSION=	1.7
 PLIST_FILES=	bin/airoflash

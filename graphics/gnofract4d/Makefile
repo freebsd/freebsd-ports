@@ -23,6 +23,8 @@ USE_PYDISTUTILS=yes
 USE_GCC=	3.4
 
 BROKEN=		leaves files around after deinstall
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 PLIST_FILES=	bin/gnofract4d
 

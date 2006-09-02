@@ -19,6 +19,8 @@ COMMENT=	Extra Korean PostScript font collection for HLaTeX(UHC encoding)
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 # just install directly
 NO_BUILD=	YES

@@ -15,6 +15,8 @@ MAINTAINER=	grog@lemis.com
 COMMENT=	Instant workstation installs a typical set of ports for a workstation
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GHOSTSCRIPT_RUN=	yes
 

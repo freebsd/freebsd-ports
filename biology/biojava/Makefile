@@ -17,6 +17,8 @@ RUN_DEPENDS=	${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/xml-apis.jar:${PORTSDIR}/t
 		${JAVAJARDIR:S,^${PREFIX},${LOCALBASE},}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+

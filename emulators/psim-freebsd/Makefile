@@ -18,6 +18,8 @@ MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 6
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

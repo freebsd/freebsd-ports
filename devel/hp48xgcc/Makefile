@@ -43,6 +43,8 @@ BROKEN=		Configure fails on !i386
 .else
 BROKEN=		fails to install
 .endif
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 post-extract: .SILENT
 # Extract GCC distribution separately because of USE_ZIP/.tar.gz conflict

@@ -16,6 +16,8 @@ MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
 BROKEN=		fails to install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
 

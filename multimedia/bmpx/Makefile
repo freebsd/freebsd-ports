@@ -24,6 +24,8 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		dbus-1.2:${PORTSDIR}/devel/dbus
 
 BROKEN=		Incomplete pkg-plist (needs to use gettext infrastructure)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_BISON=	yes
 USE_BZIP2=	yes

@@ -16,6 +16,8 @@ MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A web-based calendar application
 
 BROKEN=		fails to deinstall cleanly
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_PHP=	pcre session ldap
 WANT_PHP_WEB=	yes

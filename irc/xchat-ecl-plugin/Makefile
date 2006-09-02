@@ -20,6 +20,8 @@ BUILD_DEPENDS=	ecl:${PORTSDIR}/lang/ecl
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 INFO=		xchatlisp
 

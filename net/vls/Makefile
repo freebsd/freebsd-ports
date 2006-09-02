@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Broadcasts MPEG(1/2/4, PS/TS) video streams
 
 BROKEN=		fails to install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	dvbpsi.4:${PORTSDIR}/multimedia/libdvbpsi
 .if !defined(WITHOUT_DVD)

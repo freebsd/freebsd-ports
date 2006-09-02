@@ -19,6 +19,8 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		bash:${PORTSDIR}/shells/bash2
 
 BROKEN=		Does not install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 NO_BUILD=	yes
 NAGIOSDIR?=	/var/spool/nagios

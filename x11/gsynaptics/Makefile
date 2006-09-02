@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 RUN_DEPENDS=	${PREFIX}/lib/modules/input/synaptics_drv.o:${PORTSDIR}/x11-servers/synaptics
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GNOME=	lthack intlhack intltool pkgconfig gtk20 libgnome libglade2 libgnomeui
 USE_X_PREFIX=	yes

@@ -15,6 +15,8 @@ LIB_DEPENDS=	vtkCommon.${LIBVER}:${PORTSDIR}/math/vtk \
 		tk84:${PORTSDIR}/x11-toolkits/tk84
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 MASTERDIR=	${.CURDIR}/../vtk
 

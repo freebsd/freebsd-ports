@@ -17,6 +17,8 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perl extension for the Spread group communication system
 
 BROKEN=		fails to deinstall cleanly
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
 

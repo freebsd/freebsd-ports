@@ -20,6 +20,8 @@ MAINTAINER=     openoffice@FreeBSD.org
 COMMENT?=	MySpell dictionaries for OpenOffice.org
 
 BROKEN=		Size mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_ZIP=	yes
 EXTRACT_ONLY=

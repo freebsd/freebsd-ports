@@ -44,6 +44,8 @@ CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \
 GCONF_SCHEMAS=	mozilla-bonobo.schemas
 
 BROKEN=	"Does not build with new Mozilla"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 pre-everything::
 	@${ECHO_MSG} ""

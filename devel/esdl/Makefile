@@ -18,6 +18,8 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A library for accessing SDL and OpenGL through Erlang
 
 BROKEN=		fails to install properly
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang

@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		latex:${PORTSDIR}/print/teTeX
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 #USE_BZIP2=	yes
 USE_GMAKE=	yes

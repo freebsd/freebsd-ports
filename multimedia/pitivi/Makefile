@@ -29,6 +29,8 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 BROKEN=	Installs files during "make all"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .if ${ARCH} != "i386"
 BROKEN=		"Configure fails on !i386"

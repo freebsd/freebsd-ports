@@ -15,6 +15,8 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A set of IRC services for IRC networks
 
 BROKEN=		fails to install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

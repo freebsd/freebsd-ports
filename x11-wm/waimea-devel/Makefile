@@ -19,6 +19,8 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
 BROKEN=		Configure fails
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 LATEST_LINK=	${PORTNAME}-devel
 

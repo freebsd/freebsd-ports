@@ -17,6 +17,8 @@ MAINTAINER=	kay_lehmann@web.de
 COMMENT=	KDar is KDE-based backuptool using libdar
 
 BROKEN=		Does not compile with dar-2.3.0
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	dar.4:${PORTSDIR}/sysutils/dar
 
