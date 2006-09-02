@@ -30,6 +30,8 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
 		png.5:${PORTSDIR}/graphics/png
 
 FORBIDDEN=	http://www.vuxml.org/freebsd/dc930435-d59f-11da-8098-00123ffe8333.html
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2006-12-01
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 

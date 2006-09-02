@@ -16,6 +16,8 @@ MAINTAINER=	nosuzuki@postcard.st
 COMMENT=	An image viewer with thumbnail-based file selector for X
 
 FORBIDDEN=	http://vuxml.freebsd.org/a813a219-d2d4-11da-a672-000e0c2e438a.html
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2006-12-01
 
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib

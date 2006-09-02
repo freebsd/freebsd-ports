@@ -17,6 +17,8 @@ MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Perl5 CGI script providing an LDAP addressbook web interface
 
 FORBIDDEN=	Arbitrary command execution vulnerability in CGI script
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2006-12-01
 
 RUN_DEPENDS=	${SITE_PERL}/AddressBook.pm:${PORTSDIR}/net/p5-AddressBook \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \

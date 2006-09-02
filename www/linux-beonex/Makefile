@@ -16,6 +16,8 @@ DISTNAME=	beonex-comm-${PORTVERSION}-stable-1-linux-i686
 
 FORBIDDEN=	Security issues. From http://www.beonex.com/ 'The currently available Beonex\
 		Communicator 0.8 builds have several known security bugs'
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2006-12-01
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=trevor
