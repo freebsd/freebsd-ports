@@ -22,6 +22,7 @@
 %%PFX%%/bin/matlab/PetscBagRead.m
 %%PFX%%/bin/matlab/PetscBinaryRead.m
 %%PFX%%/bin/matlab/PetscBinaryWrite.m
+%%PFX%%/bin/matlab/PetscReadBinaryMatlab.m
 %%PFX%%/bin/matlab/closeport.m
 %%PFX%%/bin/matlab/launch.m
 %%PFX%%/bin/matlab/openport.m
@@ -30,6 +31,7 @@
 %%PFX%%/bin/mpirun.chiba
 %%PFX%%/bin/mpirun.gmalloc
 %%PFX%%/bin/mpirun.lam
+%%PFX%%/bin/mpirun.llrun
 %%PFX%%/bin/mpirun.poe
 %%PFX%%/bin/mpirun.prun
 %%PFX%%/bin/mpirun.uni
@@ -39,6 +41,9 @@
 %%PFX%%/bin/petsc_libtool
 %%PFX%%/bin/petscmpirun
 %%PFX%%/bin/popup
+%%PFX%%/bin/processSummary.py
+%%PFX%%/bin/processSummary.pyc
+%%PFX%%/bin/processSummary.pyo
 %%PFX%%/bin/taucc.py
 %%PFX%%/bin/taucc.pyc
 %%PFX%%/bin/taucc.pyo
@@ -66,15 +71,12 @@
 %%PFX%%/bmake/%%TARGET%%/configure.py
 %%PFX%%/bmake/%%TARGET%%/configure.pyc
 %%PFX%%/bmake/%%TARGET%%/configure.pyo
-%%PFX%%/bmake/%%TARGET%%/ejobs
-%%PFX%%/bmake/%%TARGET%%/jobs
 %%PFX%%/bmake/%%TARGET%%/petscconf
 %%PFX%%/bmake/%%TARGET%%/petscconf.h
 %%PFX%%/bmake/%%TARGET%%/petscconfiginfo.h
 %%PFX%%/bmake/%%TARGET%%/petscfix.h
 %%PFX%%/bmake/%%TARGET%%/petscmachineinfo.h
 %%PFX%%/bmake/%%TARGET%%/petscrules
-%%PFX%%/bmake/%%TARGET%%/rjobs
 %%PFX%%/bmake/petscconf
 %%PFX%%/include/adic/ad_deriv.h
 %%PFX%%/include/adic/ad_deriv.h.html
@@ -103,6 +105,7 @@
 %%PFX%%/include/finclude/index.html
 %%PFX%%/include/finclude/makefile
 %%PFX%%/include/finclude/makefile.html
+%%PFX%%/include/finclude/moddeps
 %%PFX%%/include/finclude/petsc.h
 %%PFX%%/include/finclude/petsc.h.html
 %%PFX%%/include/finclude/petscao.h
@@ -224,6 +227,8 @@
 %%MPIUNI%%%%PFX%%/lib/%%TARGET%%/libmpiuni.a
 %%PFX%%/lib/%%TARGET%%/libpetsc.a
 %%PFX%%/lib/%%TARGET%%/libpetsc.so
+%%PFX%%/lib/%%TARGET%%/libpetsccontrib.a
+%%PFX%%/lib/%%TARGET%%/libpetsccontrib.so
 %%PFX%%/lib/%%TARGET%%/libpetscdm.a
 %%PFX%%/lib/%%TARGET%%/libpetscdm.so
 %%PFX%%/lib/%%TARGET%%/libpetscksp.a

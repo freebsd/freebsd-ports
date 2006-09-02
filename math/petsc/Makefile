@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	petsc
-DISTVERSION=	2.3.1-p16
-PORTREVISION=	1
+DISTVERSION=	2.3.2-p0
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -38,7 +37,7 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 .if !defined(WITHOUT_X11)
 USE_XLIB=		yes
 CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include	\
-			--with-x-library=${X11BASE}/lib/libX11.so
+			--with-x-lib=${X11BASE}/lib/libX11.so
 .endif
 
 FFLAGS?=	-O2
@@ -238,6 +237,14 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|/bin/ksh|${LOCALBASE}/bin/ksh93|"	\
 		${WRKSRC}/bin/popup
 	@${RM} ${WRKSRC}/bin/popup.bak
+.if defined(PACKAGE_BUILDING)
+	@${REINPLACE_CMD} -e "s|%%PACKAGE%%exit 1; ||"		\
+		-e "s|%%PACKAGE%%sys.exit(3)||"			\
+		${WRKSRC}/makefile ${WRKSRC}/config/configure.py
+.else
+	@${REINPLACE_CMD} -e "s|%%PACKAGE%%||"			\
+		${WRKSRC}/makefile ${WRKSRC}/config/configure.py
+.endif
 
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bin
