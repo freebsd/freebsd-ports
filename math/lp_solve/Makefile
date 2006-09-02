@@ -17,6 +17,7 @@ COMMENT=	Linear Programming Solver
 
 USE_BISON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+INSTALLS_SHLIB=	yes
 
 pre-build:
 	@${REINPLACE_CMD} -e 's:%%CFLAGS%%:${CFLAGS}:g' -e 's:%%CC%%:${CC}:g' ${WRKSRC}/lp_solve/ccc ${WRKSRC}/demo/ccc ${WRKSRC}/lpsolve55/ccc
@@ -34,5 +35,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lp_lib.h ${PREFIX}/include/lpsolve
 	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.so ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/liblpsolve55.so ${PREFIX}/lib/liblpsolve55.so.1
 
 .include <bsd.port.mk>
