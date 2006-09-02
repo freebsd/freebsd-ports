@@ -14,7 +14,6 @@ MAINTAINER=	cartola@openit.com.br
 COMMENT=	Automatic panorama control point generation tool
 
 RESTRICTED=	May be covered by patents
-NO_PACKAGE=	${RESTRICTED}
 
 LIB_DEPENDS+=	gdiplus:${PORTSDIR}/x11-toolkits/libgdiplus
 BUILD_DEPENDS+=	mono:${PORTSDIR}/lang/mono \
