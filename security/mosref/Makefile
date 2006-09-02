@@ -36,7 +36,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/usr/include/stdint.h)
+.if ${OSVERSION} < 500000
 BROKEN=		requires stdint.h
 .endif
 
