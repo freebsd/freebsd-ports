@@ -391,7 +391,6 @@ ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
 anthem		ports/audio/anthem
 antipolix	ports/games/antipolix
-antivir-milter	ports/security/antivir-milter
 antivirus-milter	ports/mail/antivirus-milter
 antiword	ports/textproc/antiword
 antlr		ports/devel/antlr
@@ -2573,7 +2572,6 @@ find_ddos	ports/security/find_ddos
 findmtu		ports/net/findmtu
 findutils	ports/misc/findutils
 finfo		ports/sysutils/finfo
-finger_mysql	ports/security/finger_mysql
 firebird-client	ports/databases/firebird-client
 firebird-devel	ports/databases/firebird-devel
 firebird-server	ports/databases/firebird-server
@@ -2583,7 +2581,6 @@ firefox		ports/www/firefox
 firefox-devel	ports/www/firefox-devel
 firefox-i18n	ports/www/firefox-i18n
 firefox-remote	ports/www/firefox-remote
-firefox10	ports/www/firefox10
 firemime	ports/mail/firemime
 firepay		ports/mail/firepay
 fireprofile	ports/databases/fireprofile
@@ -12842,7 +12839,6 @@ saint		ports/security/saint
 salias		ports/misc/salias
 sam		ports/editors/sam
 sam2p		ports/graphics/sam2p
-samba		ports/net/samba
 samba-libsmbclient	ports/net/samba-libsmbclient
 samba-nmblookup	ports/net/samba-nmblookup
 samba-pdbsql	ports/net/samba-pdbsql
