@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	netio
-PORTVERSION=	1.14
-PORTREVISION=	1
+PORTVERSION=	1.26
 CATEGORIES=	benchmarks net ipv6
-MASTER_SITES=	http://www.netfuse.de/techarea/netio/
-DISTNAME=	netio114
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
+DISTNAME=	netio126
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
@@ -19,17 +19,18 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 PLIST_FILES=	bin/netio
 
+CFLAGS+=	-DUNIX ${PTHREAD_CFLAGS}
+MAKE_ENV+=	OUT="-o" LIBS=${PTHREAD_LIBS}
 .if defined(WITH_IPV6)
 PLIST_FILES+=	bin/netio6
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e "s,-lsocket,," ${WRKSRC}/Makefile
-
 do-build:
-	cd ${WRKSRC} && ${GMAKE} unix
+	cd ${WRKSRC}; \
+	${SETENV} ${MAKE_ENV} O=.o CFLAGS="${CFLAGS}" ${GMAKE} all
 .if defined(WITH_IPV6)
-	cd ${WRKSRC} && ${GMAKE} unix6
+	cd ${WRKSRC}; \
+	${MAKE_ENV} O=.6o X=6 CFLAGS="${CFLAGS} -DUSE_IPV6" ${GMAKE} all
 .endif
 
 do-install:
