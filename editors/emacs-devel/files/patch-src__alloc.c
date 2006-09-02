@@ -1,6 +1,6 @@
---- src/alloc.c.orig	Tue Jul 04 16:55:30 2006 +0300
-+++ src/alloc.c	Tue Jul 04 16:58:01 2006 +0300
-@@ -4542,7 +4542,11 @@ mark_stack ()
+--- ./src/alloc.c.orig	Thu Aug 31 20:50:29 2006
++++ ./src/alloc.c	Fri Sep  1 21:10:08 2006
+@@ -4560,7 +4560,11 @@
       needed on ia64 too.  See mach_dep.c, where it also says inline
       assembler doesn't work with relevant proprietary compilers.  */
  #ifdef sparc

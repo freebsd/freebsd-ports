@@ -1,6 +1,6 @@
---- configure.in.orig	Tue Jul 04 16:55:30 2006 +0300
-+++ configure.in	Tue Jul 04 16:58:01 2006 +0300
-@@ -237,6 +237,9 @@ case "${canonical}" in
+--- ./configure.in.orig	Sun Aug 27 04:16:25 2006
++++ ./configure.in	Fri Sep  1 21:10:08 2006
+@@ -237,6 +237,9 @@
      opsys=freebsd
      case "${canonical}" in
        alpha*-*-freebsd*)	machine=alpha ;;

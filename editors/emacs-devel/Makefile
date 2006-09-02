@@ -10,7 +10,7 @@ PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	keramida
-DISTNAME=	${PORTNAME}-cvs-snapshot-2006.08.13.19.02.57
+DISTNAME=	${PORTNAME}-cvs-snapshot-2006.09.01.17.52.26
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -30,7 +30,7 @@ CONFLICTS=	emacs-19.* emacs-21.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
 EMACS_VER=	22.0.50
-SNAPSHOT=	20060813
+SNAPSHOT=	20060901
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259
 .if !defined(WITHOUT_X11)

@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	Tue Jul 04 16:55:30 2006 +0300
-+++ man/Makefile.in	Tue Jul 04 16:58:01 2006 +0300
-@@ -32,7 +32,7 @@ VPATH=@srcdir@
+--- ./man/Makefile.in.orig	Sat May  6 18:54:21 2006
++++ ./man/Makefile.in	Fri Sep  1 21:10:08 2006
+@@ -32,7 +32,7 @@
  
  # The makeinfo program is part of the Texinfo distribution.
  # Use --force so that it generates output even if there are errors.
