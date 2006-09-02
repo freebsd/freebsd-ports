@@ -3,6 +3,7 @@ bin/sndfile-info
 bin/sndfile-play
 bin/sndfile-regtest
 include/sndfile.h
+include/sndfile.hh
 lib/libsndfile.a
 lib/libsndfile.la
 lib/libsndfile.so
