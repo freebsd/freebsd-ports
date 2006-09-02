@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="09639ccc-3abb-11db-81e1-000e0c2e438a">
+    <topic>hlstats -- multiple cross site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>hlstats</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kefka reports multiple cross site scripting vulnerabilities
+	  within hlstats.  The vulnerabilities are caused due to
+	  improper checking of variables, allowing an attacker to
+	  perform cross site scripting.</p>
+      </body>
+    </description>
+    <references>
+      <bid>19745</bid>
+      <cvename>CVE-2006-4454</cvename>
+    </references>
+    <dates>
+      <discovery>2006-08-29</discovery>
+      <entry>2006-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b79743b-3ab7-11db-81e1-000e0c2e438a">
     <topic>gtetrinet -- remote code execution</topic>
     <affects>
