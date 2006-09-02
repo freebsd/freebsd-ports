@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.17
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		sndfile-convert.1 sndfile-info.1 sndfile-play.1
 
@@ -39,6 +39,7 @@ LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|@mandir@|${PREFIX}/man|' ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
 
 post-install:
