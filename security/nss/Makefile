@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nss
-PORTVERSION=	3.11.1
+PORTVERSION=	3.11.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -72,9 +72,9 @@ do-install:
 	${MKDIR} ${PREFIX}/include/nss
 	${TAR} -C ${DIST}/public --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/include/nss -xf -
-	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
+	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
 		${PREFIX}/lib
-	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/libcrmf.a \
+	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/libcrmf.a \
 		${PREFIX}/lib
 	${INSTALL_PROGRAM} `${SED}	\
 	    -e 's|^bin/|${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/|' \
