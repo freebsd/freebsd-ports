@@ -1,6 +1,6 @@
---- lispref/Makefile.in.orig	Tue Jul 04 16:55:30 2006 +0300
-+++ lispref/Makefile.in	Tue Jul 04 16:58:01 2006 +0300
-@@ -31,7 +31,7 @@ TEXI2DVI = texi2dvi
+--- ./lispref/Makefile.in.orig	Mon Aug 21 08:22:22 2006
++++ ./lispref/Makefile.in	Fri Sep  1 21:10:08 2006
+@@ -32,7 +32,7 @@
  TEXI2DVI = texi2dvi
  SHELL = /bin/sh
  INSTALL_INFO = install-info
@@ -9,7 +9,7 @@
  
  # The name of the manual:
  VERSION=2.9
-@@ -108,7 +108,7 @@ elisp.dvi: $(srcs)
+@@ -109,7 +109,7 @@
  # This is for use in a separate distro of the Emacs Lisp manual.
  install: elisp
  	$(srcdir)/mkinstalldirs $(infodir)
@@ -18,7 +18,7 @@
  	${INSTALL_INFO} --info-dir=${infodir} ${infodir}/elisp
  
  # This is for use in a separate distro of the Emacs Lisp manual.
-@@ -124,7 +124,7 @@ distclean: clean
+@@ -125,7 +125,7 @@
  
  maintainer-clean: clean
  	rm -f elisp.dvi elisp.oaux
@@ -27,7 +27,7 @@
  
  dist: $(infodir)/elisp elisp.dvi
  	-rm -rf temp
-@@ -134,7 +134,7 @@ dist: $(infodir)/elisp elisp.dvi
+@@ -135,7 +135,7 @@
   $(srcdir)/Makefile.in $(srcs) \
   $(srcdir)/../man/texinfo.tex \
   elisp.dvi elisp.aux elisp.??s \

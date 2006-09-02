@@ -1,10 +1,9 @@
---- Makefile.in.orig	Tue Jul 04 16:55:30 2006 +0300
-+++ Makefile.in	Tue Jul 04 16:58:01 2006 +0300
-@@ -408,14 +408,6 @@ install-arch-dep: mkdir
- ## If people complain about the h flag in tar command, take that out.
+--- ./Makefile.in.orig	Sun Aug 27 04:16:25 2006
++++ ./Makefile.in	Fri Sep  1 21:10:08 2006
+@@ -409,14 +409,6 @@
  ## That flag is also used in leim/Makefile.in
  install-arch-indep: mkdir info
--	-set ${COPYDESTS} ; \
+ 	-set ${COPYDESTS} ; \
 -	unset CDPATH; \
 -	for dir in ${COPYDIR} ; do \
 -	  if [ `(cd $$1 && /bin/pwd)` != `(cd $${dir} && /bin/pwd)` ] ; then \
@@ -12,10 +11,11 @@
 -	  fi ; \
 -	  shift ; \
 -	done
- 	-set ${COPYDESTS} ; \
+-	-set ${COPYDESTS} ; \
  	mkdir ${COPYDESTS} ; \
  	chmod ugo+rx ${COPYDESTS} ; \
-@@ -503,9 +495,9 @@ install-arch-indep: mkdir info
+ 	unset CDPATH; \
+@@ -503,9 +495,9 @@
  	   fi; \
  	   cd ${srcdir}/info ; \
  	   for elt in $(INFO_FILES); do \
@@ -28,7 +28,7 @@
  	      done; \
  	   done); \
  	else true; fi
-@@ -515,7 +507,7 @@ install-arch-indep: mkdir info
+@@ -515,7 +507,7 @@
  	then \
  	  for elt in $(INFO_FILES); do \
  	    (cd $${thisdir}; \
