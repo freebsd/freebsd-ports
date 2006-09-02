@@ -7,7 +7,7 @@
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	http://www.nntpcache.com/pub/nntpcache/
 
@@ -57,8 +57,9 @@ PORTDOCS=	AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 		INSTALL LICENSING NEWS README README.INN VERSION
 
 .if defined(WITH_SPAMPHOBIA)
+REVISEDATE=	20060903
 PATCH_SITES+=	http://people.freebsd.org/~leeym/:SPAMPHOBIA
-PATCHFILES+=	${DISTNAME}-spamphobia.diff.gz:SPAMPHOBIA
+PATCHFILES+=	${DISTNAME}-spamphobia-${REVISEDATE}.diff.gz:SPAMPHOBIA
 .endif
 
 post-configure:
