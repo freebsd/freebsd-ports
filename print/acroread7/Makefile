@@ -23,7 +23,6 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroreadwrapper \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
-NO_PACKAGE=	Use and redistribution with repackaging are not allowed
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
