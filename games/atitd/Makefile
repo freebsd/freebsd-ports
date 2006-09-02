@@ -19,6 +19,10 @@ COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
 RUN_DEPENDS=	${X11BASE}/bin/xhost:${X_CLIENTS_PORT}
 
+BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
+
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
