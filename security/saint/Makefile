@@ -14,7 +14,7 @@ COMMENT=	Security Administrator's Integrated Network Tool
 
 BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 .if defined(WITH_SAMBA)
-BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
+BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
 .endif
 
 USE_PERL5=	yes

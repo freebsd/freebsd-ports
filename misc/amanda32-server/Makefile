@@ -116,8 +116,8 @@ PLIST_SUB+=	PLOT='@comment '
 .endif
 
 .if defined (WITH_SAMBA)
-BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
+BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
 CONFIGURE_ARGS+=	--with-smbclient=${PREFIX}/bin/smbclient
 .endif
 
