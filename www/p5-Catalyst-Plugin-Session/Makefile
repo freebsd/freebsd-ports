@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -16,10 +16,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Generic Catalyst Session plugin
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Digest>=0:${PORTSDIR}/security/p5-Digest \
-		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
-		p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools
+		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
