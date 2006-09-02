@@ -7,6 +7,7 @@
 
 PORTNAME=	obconf
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
 
@@ -14,7 +15,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		obparser.2:${PORTSDIR}/x11-wm/openbox
+		obparser.4:${PORTSDIR}/x11-wm/openbox
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnometarget libglade2
