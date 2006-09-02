@@ -20,7 +20,7 @@ GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
 
-NO_PACKAGE=	"patent issues, see http://www.mp3licensing.com/"
+RESTRICTED=	patent issues, see http://www.mp3licensing.com/
 
 MAN1=		lame.1
 
