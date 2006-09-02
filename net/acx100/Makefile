@@ -58,4 +58,8 @@ post-install:
 IGNORE=		This port requires newer kernel sources that include /sys/dev/owi/if_ieee80211.h
 .endif
 
+.if ${OSVERSION} >= 601104
+BROKEN=		Does not compile on FreeBSD >= 6.x
+.endif
+
 .include <bsd.port.post.mk>
