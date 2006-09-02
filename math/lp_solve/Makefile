@@ -7,6 +7,7 @@
 
 PORTNAME=	lp_solve
 PORTVERSION=	5.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL} # http://groups.yahoo.com/group/lp_solve/
 MASTER_SITE_SUBDIR=	maho
@@ -33,6 +34,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/demo/demo ${EXAMPLESDIR}
 	${MKDIR} ${PREFIX}/include/lpsolve
 	${INSTALL_DATA} ${WRKSRC}/lp_lib.h ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lp_types.h ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lp_utils.h ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lp_Hash.h ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lp_matrix.h ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lp_mipbb.h ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/lp_SOS.h ${PREFIX}/include/lpsolve
 	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.so ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/liblpsolve55.so ${PREFIX}/lib/liblpsolve55.so.1
