@@ -1,4 +1,4 @@
-bin/ldcpp
+bin/linuxdcpp
 %%DOCSDIR%%/Changelog.txt
 %%DOCSDIR%%/Credits.txt
 %%DOCSDIR%%/License.txt

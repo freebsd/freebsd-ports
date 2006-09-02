@@ -8,6 +8,13 @@ upgrades.
 
 
 
+20060902:
+  AFFECTS: users of net-p2p/linuxdcpp
+  AUTHOR: mezz@FreeBSD.org
+
+  The name of binary, datadir and docsdir have been renamed from ldcpp to
+  linuxdcpp by the linuxdcpp developer.
+
 20060831:
   AFFECTS: users of x11-wm/fluxbox-devel
   AUTHOR: mezz@FreeBSD.org

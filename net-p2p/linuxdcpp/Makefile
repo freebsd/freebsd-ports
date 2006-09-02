@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	0.0.1.20060821	#0.0.1.YYYYMMDD
+PORTVERSION=	0.0.1.20060901	#0.0.1.YYYYMMDD
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=mezz
@@ -20,9 +20,6 @@ USE_BZIP2=	yes
 USE_GNOME=	libglade2
 USE_SCONS=	yes
 
-DATADIR=	${PREFIX}/share/ldcpp
-DOCSDIR=	${PREFIX}/share/doc/ldcpp
-
 .if defined(WITH_DEBUG)
 SCONS_ARGS=	debug=1
 STRIP=
@@ -35,9 +32,6 @@ SCONS_ARGS=	release=1
 .if ${OSVERSION} < 500000
 IGNORE=	does not compile on FreeBSD 4.x, due to lack of wide character in libc
 .endif
-
-post-extract:
-	@${RM} ${WRKSRC}/linux/prefix.*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; s|%%CXX%%|${CXX}|g ; \
