@@ -18,7 +18,7 @@ COMMENT=	Instant server installs a typical set of ports for a server
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup \
 		${LOCALBASE}/sbin/dhcpd:${PORTSDIR}/net/isc-dhcp3-server \
-		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba \
+		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3 \
 		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
 		cnewsdo:${PORTSDIR}/news/cnews \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT} \
