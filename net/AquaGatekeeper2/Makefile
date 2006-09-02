@@ -23,8 +23,7 @@ NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
-NO_PACKAGE=	"No commercial redistribution"
-NO_CDROM=	"No commercial redistribution"
+RESTRICTED=	"No commercial redistribution"
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
