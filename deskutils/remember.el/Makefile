@@ -17,8 +17,6 @@ DISTNAME=	remember-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A Emacs mode for remembering data
 
-BROKEN=		Incorrect pkg-plist
-
 USE_EMACS=	yes
 USE_GMAKE=	yes
 EMACS_PORT_NAME?=	emacs21
@@ -40,10 +38,11 @@ PLIST_SUB+=	HAS_BBDB="@comment "
 .endif
 
 .if !defined(WITHOUT_PLANNER)
-RUN_DEPENDS+=	${PREFIX}/${EMACS_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_SITE_LISPDIR}/planner/planner.el:${PORTSDIR}/deskutils/planner.el
 PLIST_SUB+=	HAS_PLANNER=""
 .else
 PLIST_SUB+=	HAS_PLANNER="@comment "
 .endif
+RUN_DEPENDS+= ${BUILD_DEPENDS}
 
 .include <bsd.port.post.mk>
