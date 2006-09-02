@@ -15,6 +15,7 @@ COMMENT=	A perl-script frontend for encoding audio CDs to MP3 files
 
 # See pkg-message about other dependencies.
 RUN_DEPENDS=	${SITE_PERL}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get
+RUN_DEPENDS+=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
