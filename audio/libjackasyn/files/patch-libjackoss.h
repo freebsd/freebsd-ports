@@ -6,7 +6,7 @@
  #include <sys/poll.h>
 +#include <sys/param.h>
 +
-+#if __FreeBSD_version <= 492100
++#if __FreeBSD_version < 500000
 +typedef unsigned int	nfds_t;
 +#endif
  

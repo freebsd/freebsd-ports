@@ -7,6 +7,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	0.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +25,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--program-prefix=${PREFIX}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 
@@ -54,8 +55,10 @@ post-patch:
 		-e 's|__isnanf||g; s|__isnan||g' -e 's|-lpthread|-pthread|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^traplib_PROGRAMS / d' ${WRKSRC}/ode/src/Makefile.in
-	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | xargs -0 ${REINPLACE_CMD} \
+	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
 		-e '/CFLAGS/ s|-O[12]||'
+	@${FIND} ${WRKSRC} -type f -name "*.h" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+		-i "" -e 's|<malloc.h>|<stdlib.h>|g'
 
 .include <bsd.port.post.mk>
