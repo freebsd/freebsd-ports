@@ -17,6 +17,8 @@ MAINTAINER=	webmaster@shopcusa.com
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 FORBIDDEN=	Command Injection Vulnerability
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2006-12-01
 
 RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 

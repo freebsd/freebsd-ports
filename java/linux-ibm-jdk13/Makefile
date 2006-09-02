@@ -18,6 +18,8 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	IBM Java Development Kit 1.3 for Linux
 
 FORBIDDEN=	Vulnerabilities in the browser plugin
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=2006-12-01
 
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
