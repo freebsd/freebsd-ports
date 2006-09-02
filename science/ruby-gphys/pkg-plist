@@ -9,6 +9,7 @@ bin/gpmaxmin
 bin/gpprint
 bin/gpview
 bin/grads2nc_with_gphys
+%%RUBY_SITELIBDIR%%/numru/dclext_datetime_ax.rb
 %%RUBY_SITELIBDIR%%/numru/derivative.rb
 %%RUBY_SITELIBDIR%%/numru/gdir.rb
 %%RUBY_SITELIBDIR%%/numru/gdir_connect_ftp-like.rb
@@ -50,6 +51,8 @@ bin/grads2nc_with_gphys
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_cli2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/druby_serv2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_mapfit-axes_dr002687.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_latlon_labelling_dr002690.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/map_projection.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_2.rb
