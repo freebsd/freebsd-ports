@@ -17,7 +17,7 @@ COMMENT=	Deluxe Snake - snake clone with frogs and mushrooms
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/liballeg.so.4.0:${PORTSDIR}/devel/linux-allegro
 
-NO_PACKAGE=	Licence forbids any repacking and reselling
+RESTRICTED=	Licence forbids any repacking and reselling
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
