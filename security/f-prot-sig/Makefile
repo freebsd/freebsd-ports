@@ -19,8 +19,6 @@ COMMENT=	F-Prot Antivirus Signatures
 # F-Prot does not version their .DEF files so the port always pulls the latest.
 IGNOREFILES=	${DISTFILES}
 
-NO_PACKAGE=	Free for personal use only
-NO_CDROM=	Free for personal use only
 RESTRICTED=	Free for personal use only
 
 NO_BUILD=	YES
