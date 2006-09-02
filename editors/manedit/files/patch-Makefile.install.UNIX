@@ -1,15 +1,13 @@
-
-$FreeBSD$
-
---- Makefile.install.UNIX.orig	Wed Apr 30 08:51:49 2003
-+++ Makefile.install.UNIX	Tue Aug 26 04:31:24 2003
-@@ -27,11 +27,11 @@
+--- Makefile.install.UNIX.orig	Wed Aug 23 06:03:14 2006
++++ Makefile.install.UNIX	Sat Sep  2 12:38:12 2006
+@@ -27,12 +27,12 @@
  MKDIR      = mkdir
  MKDIRFLAGS = -p -m 0755
  
--MAN        = $(BIN).1.bz2
-+MAN        = $(BIN).1
- ICON       = $(BIN).xpm
+-MAN          = $(BIN).1.bz2
++MAN          = $(BIN).1
+ ICON         = $(BIN).xpm
+ MANVIEW_ICON = manview.xpm
  
  BIN_DIR   = $(PREFIX)/bin
 -ICONS_DIR = $(PREFIX)/share/icons
@@ -17,7 +15,7 @@ $FreeBSD$
  DATA_DIR  = $(PREFIX)/share/$(BIN)
  MAN_DIR   = $(PREFIX)/man/man1
  
-@@ -42,28 +42,28 @@
+@@ -43,30 +43,30 @@
  install_bin:
  	@echo "Installing $(BIN) -> $(BIN_DIR)"
  	@$(MKDIR) $(MKDIRFLAGS) $(BIN_DIR)
@@ -41,6 +39,8 @@ $FreeBSD$
  	@$(MKDIR) $(MKDIRFLAGS) $(ICONS_DIR)
 -	@$(INSTALL) $(INSTDATFLAGS) $(ICON) $(ICONS_DIR)
 +	@$(BSD_INSTALL_DATA) $(ICON) $(ICONS_DIR)
+ 	@echo "Installing $(MANVIEW_ICON) -> $(ICONS_DIR)"
+ 	@$(INSTALL) $(INSTDATFLAGS) $(MANVIEW_ICON) $(ICONS_DIR)
  	@echo "Installing help files to $(DATA_DIR)/help"
  	@$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)
  	@$(MKDIR) $(MKDIRFLAGS) $(DATA_DIR)/help
