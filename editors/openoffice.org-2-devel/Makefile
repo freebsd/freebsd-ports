@@ -146,7 +146,7 @@ ANT_VERSION=	1.6.5
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .endif
 .if !defined(WITH_GPC)
-LIB_DEPENDS=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
+LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
 
 GNU_CONFIGURE=	yes
@@ -166,7 +166,7 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE
 WITHOUT_MOZILLA=	yes
 .endif
 .if (${GCCVER} == 41)
-LIB_DEPENDS=   boost_regex:${PORTSDIR}/devel/boost
+LIB_DEPENDS+=   boost_regex:${PORTSDIR}/devel/boost
 CONFIGURE_ARGS+=       --with-system-boost=yes #i58343#
 .endif
 .if (${OSVERSION} <= 492000)
