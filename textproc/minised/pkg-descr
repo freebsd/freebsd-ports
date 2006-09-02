@@ -1,0 +1,16 @@
+This is a smaller, cheaper, faster SED implementation. Minix uses it. GNU
+used to use it, until they built their own sed around an extended (some
+would say over-extended) regexp package.
+
+For embedded use we searched for a tiny sed implementation especially for
+use with the dietlibc and found Eric S. Raymond's sed implementation quite
+handy. Though it suffered several bugs and was not under active maintenance
+anymore. After sending a bunch of fixes we agreed to continue maintaining
+this lovely, historic sed implementation.
+
+Along a lot fixes and cleanups, further speedups, and some missing features
+and POSIX conformance, we also added a test-suite to the package, so
+regressions are quickly and easily uncovered.
+
+WWW: http://www.exactcode.de/oss/minised/
+Author: ExactCode <info@exactcode.de>

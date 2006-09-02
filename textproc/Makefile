@@ -279,6 +279,7 @@
     SUBDIR += mifluz
     SUBDIR += mini-xml
     SUBDIR += minidom
+    SUBDIR += minised
     SUBDIR += mk-aspell
     SUBDIR += mkcatalog
     SUBDIR += mn-aspell
