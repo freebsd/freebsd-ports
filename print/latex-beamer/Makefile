@@ -34,6 +34,8 @@ DOC_SUBDIRS=	AUTHORS ChangeLog FILES INSTALL README TODO \
 		doc solutions
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 pre-install:
 	${RM} -f ${PLIST}

@@ -27,6 +27,8 @@ PLIST=		${WRKDIR}/.plist
 PLIST_FILES=	bin/fgfs-l410
 
 IGNORE=		is incompatible with the latest FlightGear release
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 post-extract:
 	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${SRCDIST} ${EXTRACT_AFTER_ARGS}

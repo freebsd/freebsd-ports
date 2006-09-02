@@ -39,6 +39,8 @@ DOC_FILES=	README test1.tex test2.tex test3.tex \
 		test4.tex test5.tex test6.tex
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}

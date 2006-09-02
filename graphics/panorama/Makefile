@@ -31,6 +31,8 @@ MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
 INSTALLS_SHLIB=	yes
 
 IGNORE=		segfaults on startup (GUI only, render binary still works)
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \

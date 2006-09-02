@@ -36,6 +36,8 @@ CLASS_FILES=	booktabs.dtx booktabs.ins booktabs.sty
 DOC_FILES=	booktabs.pdf
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 pre-install:
 	(for F in ${CLASS_FILES}; do \

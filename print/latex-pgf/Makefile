@@ -40,6 +40,8 @@ DOC_FILES=	AUTHORS ChangeLog FILES INSTALL README TODO \
 		pgfuserguide.pdf pgfuserguide.tex
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}

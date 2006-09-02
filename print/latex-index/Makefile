@@ -42,6 +42,8 @@ CLASS_ADD_FILES=	index.sty sample.tex
 DOC_FILES=	README TODO index.pdf
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-extract:
 	${MKDIR} ${WRKSRC}

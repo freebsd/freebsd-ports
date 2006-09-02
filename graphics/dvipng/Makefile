@@ -31,6 +31,8 @@ INFO=		dvipng
 PLIST_FILES=	bin/dvigif bin/dvipng
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dvipng ${PREFIX}/bin

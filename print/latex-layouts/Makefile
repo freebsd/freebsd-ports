@@ -38,6 +38,8 @@ CLASS_FILES=	layouts.dtx layouts.ins layouts.sty
 DOC_FILES=	README layman.pdf layman.tex
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-extract:
 	${MKDIR} ${WRKSRC}

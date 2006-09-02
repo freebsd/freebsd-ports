@@ -13,6 +13,8 @@ COMMENT=	Adaptation of SGI's Standard Template Library for ICC
 BUILD_DEPENDS=	icc:${PORTSDIR}/lang/icc icpc:${PORTSDIR}/lang/icc
 
 IGNORE=		does not work with stlport 4.6.2
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 ONLY_FOR_ARCHS=	i386
 

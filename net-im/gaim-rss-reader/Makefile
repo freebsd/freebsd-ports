@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
 IGNORE=	Requires update to work with Gaim 0.82.1
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -30,6 +30,8 @@ RUN_DEPENDS=	\
 		bash:${PORTSDIR}/shells/bash
 
 IGNORE=		has an incomplete dependency list
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

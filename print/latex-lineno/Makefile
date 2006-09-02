@@ -37,6 +37,8 @@ DOC_FILES=	README.txt CHANGES.txt \
 		lineno.tex lineno.pdf
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-extract:
 	${MKDIR} ${WRKSRC}

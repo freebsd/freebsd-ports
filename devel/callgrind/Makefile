@@ -14,6 +14,8 @@ MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Valgrind skin for cache simulation and call tracing
 
 IGNORE=		Dumps core \(SIGBUS\). \(Also v. 0.9.10\!\)
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes

@@ -26,5 +26,7 @@ CONFLICTS=	TenDRA-4*
 ONLY_FOR_ARCHS=	i386
 
 IGNORE=		is unusable; tcc -run works, but little else
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 .include <bsd.port.mk>

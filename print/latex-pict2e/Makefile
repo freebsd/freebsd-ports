@@ -41,6 +41,8 @@ CLASS_FILES=	p2e-drivers.dtx p2e-dvipdfm.def p2e-dvips.def \
 DOC_FILES=	README pict2e.pdf p2e-drivers.pdf
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-extract:
 	${MKDIR} ${WRKSRC}

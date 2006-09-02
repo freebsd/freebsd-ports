@@ -16,6 +16,8 @@ MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	BSD native set of programs for audio and video reading and writing
 
 IGNORE=		does not work. We need to import bktv patches from OpenBSD to make it work
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 INSTALLS_SHLIB=	yes
 
