@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.723
+PORTVERSION=	0.724
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -17,6 +17,7 @@ MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	A DBI wrapper and abstraction layer
 
 BUILD_DEPENDS=	${SITE_PERL}/Rose/DateTime/Util.pm:${PORTSDIR}/devel/p5-Rose-DateTime \
+		${SITE_PERL}/SQL/ReservedWords.pm:${PORTSDIR}/databases/p5-SQL-ReservedWords \
 		${SITE_PERL}/${PERL_ARCH}/Bit/Vector/Overload.pm:${PORTSDIR}/math/p5-Bit-Vector \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/DateTime/Format/MySQL.pm:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
@@ -40,8 +41,8 @@ MAN3=	Rose::DB.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6 or later. Install lang/perl5 then try again
+.if ${PERL_LEVEL} < 500800
+IGNORE=	requires perl 5.8 or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
