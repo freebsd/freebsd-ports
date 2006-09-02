@@ -19,6 +19,8 @@ MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Yahoo! Messenger - Instant messaging client
 
 IGNORE=		is a dynamically linked binary linked to old version of gtkhtml no longer in ports
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 USE_GNOME=	gtk12 gdkpixbuf
 NO_BUILD=	yes
