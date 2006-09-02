@@ -7,10 +7,14 @@
 #
 
 MASTERDIR=	${.CURDIR}/../gcc41
-PKGNAMESUFFIX=	-withfortran
 WITH_FORTRAN=	yes
+PKGNAMESUFFIX=	-withfortran
+
+MAINTAINER=	gerald@FreeBSD.org
 
 DESCR=	${.CURDIR}/pkg-descr
 PKGMESSAGE=	${.CURDIR}/pkg-message
+
+CONFLICTS=	gcc-4.1.*
 
 .include "${MASTERDIR}/Makefile"
