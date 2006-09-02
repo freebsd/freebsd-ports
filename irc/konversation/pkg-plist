@@ -1,7 +1,6 @@
 bin/konversation
 bin/konversationircprotocolhandler
 share/applications/kde/konversation.desktop
-share/apps/kconf_update/konversation-0.14-mainwindow.pl
 share/apps/kconf_update/konversation-0.19-appearance.pl
 share/apps/kconf_update/konversation-0.19-colorcodes.pl
 share/apps/kconf_update/konversation-0.19-colors.pl
@@ -9,6 +8,8 @@ share/apps/kconf_update/konversation-0.19-custombrowser.pl
 share/apps/kconf_update/konversation-0.19-notifylists.pl
 share/apps/kconf_update/konversation-0.19-sortorder.pl
 share/apps/kconf_update/konversation-0.19-tabplacement.pl
+share/apps/kconf_update/konversation-0.20-customfonts.pl
+share/apps/kconf_update/konversation-0.20-quickbuttons.pl
 share/apps/kconf_update/konversation.upd
 share/apps/konversation/eventsrc
 share/apps/konversation/konversationui.rc
@@ -234,9 +235,40 @@ share/doc/HTML/nl/konversation/webbrowser_screen_co.png
 share/doc/HTML/pt/konversation/common
 share/doc/HTML/pt/konversation/index.cache.bz2
 share/doc/HTML/pt/konversation/index.docbook
+share/doc/HTML/ru/konversation/common
+share/doc/HTML/ru/konversation/index.cache.bz2
+share/doc/HTML/ru/konversation/index.docbook
+share/doc/HTML/sv/konversation/addchannel.png
+share/doc/HTML/sv/konversation/addnetwork_co.png
+share/doc/HTML/sv/konversation/addserver_co.png
+share/doc/HTML/sv/konversation/channel_screen_tour_co.png
+share/doc/HTML/sv/konversation/channellist_screen_co.png
+share/doc/HTML/sv/konversation/checkidentities.png
+share/doc/HTML/sv/konversation/colorchooser_screen.png
 share/doc/HTML/sv/konversation/common
+share/doc/HTML/sv/konversation/dccstatus_screen_co.png
+share/doc/HTML/sv/konversation/first_channel_co.png
+share/doc/HTML/sv/konversation/first_serverlist_co.png
+share/doc/HTML/sv/konversation/highlighting_screen_co.png
+share/doc/HTML/sv/konversation/identities_adv_co.png
+share/doc/HTML/sv/konversation/identities_away_co.png
+share/doc/HTML/sv/konversation/identities_gen_co.png
 share/doc/HTML/sv/konversation/index.cache.bz2
 share/doc/HTML/sv/konversation/index.docbook
+share/doc/HTML/sv/konversation/kimproxy_create_screen2.png
+share/doc/HTML/sv/konversation/kimproxy_create_screen_co.png
+share/doc/HTML/sv/konversation/logviewer_co.png
+share/doc/HTML/sv/konversation/nicksonline_co.png
+share/doc/HTML/sv/konversation/nickthemes_screen_co.png
+share/doc/HTML/sv/konversation/notification_screen_co.png
+share/doc/HTML/sv/konversation/notifylist_screen_co.png
+share/doc/HTML/sv/konversation/osd_demo.png
+share/doc/HTML/sv/konversation/osd_screen_co.png
+share/doc/HTML/sv/konversation/quickbuttons_screen.png
+share/doc/HTML/sv/konversation/quickconnect_screen.png
+share/doc/HTML/sv/konversation/serverlist_co.png
+share/doc/HTML/sv/konversation/urlcatcher_screen_co.png
+share/doc/HTML/sv/konversation/webbrowser_screen_co.png
 share/icons/crystalsvg/16x16/actions/kimproxyaway.png
 share/icons/crystalsvg/16x16/actions/kimproxyoffline.png
 share/icons/crystalsvg/16x16/actions/kimproxyonline.png
@@ -260,7 +292,7 @@ share/icons/hicolor/48x48/apps/konversation.png
 share/icons/hicolor/64x64/apps/konversation.png
 share/icons/hicolor/scalable/apps/konversation.svgz
 share/locale/bg/LC_MESSAGES/konversation.mo
-share/locale/cs/LC_MESSAGES/konversation.mo
+share/locale/ca/LC_MESSAGES/konversation.mo
 share/locale/da/LC_MESSAGES/konversation.mo
 share/locale/de/LC_MESSAGES/konversation.mo
 share/locale/el/LC_MESSAGES/konversation.mo
@@ -269,36 +301,45 @@ share/locale/es/LC_MESSAGES/konversation.mo
 share/locale/et/LC_MESSAGES/konversation.mo
 share/locale/fi/LC_MESSAGES/konversation.mo
 share/locale/fr/LC_MESSAGES/konversation.mo
-share/locale/hi/LC_MESSAGES/konversation.mo
+share/locale/hu/LC_MESSAGES/konversation.mo
 share/locale/it/LC_MESSAGES/konversation.mo
 share/locale/ja/LC_MESSAGES/konversation.mo
+share/locale/ka/LC_MESSAGES/konversation.mo
+share/locale/ko/LC_MESSAGES/konversation.mo
 share/locale/nl/LC_MESSAGES/konversation.mo
 share/locale/pt/LC_MESSAGES/konversation.mo
-share/locale/pt_BR/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
 share/locale/sr/LC_MESSAGES/konversation.mo
 share/locale/sr@Latn/LC_MESSAGES/konversation.mo
 share/locale/sv/LC_MESSAGES/konversation.mo
-share/locale/ta/LC_MESSAGES/konversation.mo
 share/locale/tr/LC_MESSAGES/konversation.mo
+share/locale/zh_TW/LC_MESSAGES/konversation.mo
 share/services/konvirc.protocol
 share/services/konvirc6.protocol
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
 @dirrm share/doc/HTML/sv/konversation
+@dirrm share/doc/HTML/ru/konversation
 @dirrm share/doc/HTML/pt/konversation
 @dirrm share/doc/HTML/nl/konversation
 @dirrm share/doc/HTML/it/konversation
 @dirrm share/doc/HTML/et/konversation
 @dirrm share/doc/HTML/es/konversation
+@dirrm share/doc/HTML/en/konversation-apidocs/konversation/html
+@dirrm share/doc/HTML/en/konversation-apidocs/konversation
+@dirrm share/doc/HTML/en/konversation-apidocs
 @dirrm share/doc/HTML/en/konversation
 @dirrm share/doc/HTML/da/konversation
 @dirrm share/apps/konversation/themes/square
