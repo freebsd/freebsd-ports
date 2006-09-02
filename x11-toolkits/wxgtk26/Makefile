@@ -62,7 +62,7 @@ RUN_DEPENDS=	${X11BASE}/include/wx-2.6/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk26-
 NO_BUILD=	yes
 INSTALL_TARGET=	install-common
 .else
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 .endif # *-common
 
 .if ${WXGTK_FLAVOR:M*-contrib*} != ""
