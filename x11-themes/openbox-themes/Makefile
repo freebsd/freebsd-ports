@@ -7,6 +7,7 @@
 
 PORTNAME=	openbox-themes
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	novel
@@ -23,7 +24,7 @@ WRKSRC=		${PORTNAME}-${PORTVERSION}
 
 do-install:
 	@for i in `${LS} ${WRKDIR}/${WRKSRC}`; do \
-		${CP} -r ${WRKDIR}/${WRKSRC}/$$i ${PREFIX}/share/openbox/themes/; \
+		${CP} -r ${WRKDIR}/${WRKSRC}/$$i ${PREFIX}/share/themes/; \
 	done
 
 .include <bsd.port.mk>
