@@ -18,7 +18,6 @@
     SUBDIR += amavisd
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
-    SUBDIR += antivir-milter
     SUBDIR += apg
     SUBDIR += arirang
     SUBDIR += audit
@@ -117,7 +116,6 @@
     SUBDIR += fiked
     SUBDIR += find-zlib
     SUBDIR += find_ddos
-    SUBDIR += finger_mysql
     SUBDIR += firewalk
     SUBDIR += flawfinder
     SUBDIR += fpc-md5
