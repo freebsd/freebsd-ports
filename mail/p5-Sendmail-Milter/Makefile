@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module to write mail filters in Perl using sendmail's mail filter API
 
 IGNORE=		"Requires perl compiled manually with threads."
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 PERL_CONFIGURE=	yes
 

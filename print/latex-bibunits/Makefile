@@ -36,6 +36,8 @@ CLASS_FILES=	bibunits.sty bibunits.ins bibunits.dtx
 DOC_FILES=	README bibunits.pdf
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-extract:
 	${MKDIR} ${WRKSRC}

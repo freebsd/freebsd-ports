@@ -33,6 +33,8 @@ PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
 .include <bsd.port.pre.mk>
 
 IGNORE=		is incompatible with current GHC, needs updating
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \

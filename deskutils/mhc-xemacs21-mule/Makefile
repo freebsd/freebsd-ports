@@ -11,5 +11,7 @@ MAINTAINER=	yoichi@FreeBSD.org
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 IGNORE=		hangs during build
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 .include "${MASTERDIR}/Makefile"

@@ -22,6 +22,8 @@ MAN1=		dvi2ps.1
 MANLANG=	"" ja
 
 IGNORE=		is obsolete and no longer supported with teTeX 3.0
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 .include <bsd.port.pre.mk>
 

@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen remote login to IBM VM/CMS
 
 IGNORE=		dumps core. Please use net/c3270 instead
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 MAN1=		tn3270.1 mset.1
 MAN5=		map3270.5

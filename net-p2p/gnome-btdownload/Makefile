@@ -19,6 +19,8 @@ COMMENT=	A simple Gnome interface designed as a mime-sink for BitTorrent files
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BitTorrent/__init__.py:${PORTSDIR}/net-p2p/py-bittorrent-core
 
 IGNORE=does not run with BitTorrent 4.x yet
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 USE_X_PREFIX=	yes
 USE_GNOME=	desktopfileutils gnomehack gnomeprefix pygnome2

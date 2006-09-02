@@ -31,6 +31,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 CLASS_FILES=	xcolor.dtx xcolor.ins xcolor.sty
 
 IGNORE=		is already included in the teTeX distribution
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-12-01
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
