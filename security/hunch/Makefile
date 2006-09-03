@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 USE_PERL5=	yes
 
 IS_INTERACTIVE=	yes
-NO_PACKAGE=	"too interactive"
 NO_BUILD=	true
 
 do-install:
