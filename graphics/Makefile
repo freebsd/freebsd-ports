@@ -18,6 +18,7 @@
     SUBDIR += agg
     SUBDIR += ale
     SUBDIR += allegrogl
+    SUBDIR += amanith
     SUBDIR += aoi
     SUBDIR += aqsis
     SUBDIR += autopano-sift
