@@ -91,6 +91,7 @@
     SUBDIR += rxtx
     SUBDIR += scmxx
     SUBDIR += scud
+    SUBDIR += serialoverip
     SUBDIR += seyon
     SUBDIR += sms_client
     SUBDIR += smstools
