@@ -24,6 +24,9 @@ COMMENT=	A virtual machine emulator - a full PC in a window
 RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
+BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 VMWARE_MIRROR_SITES=	\
 		http://www.vmware.com/download1/software/:vmware \
