@@ -9,13 +9,13 @@ PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.3drealms.com/share/ \
 		ftp://ftp.kiarchive.ru/pub/.1/msdos/games/play/3d/ \
-		ftp.relcom.ru/pub/.1/msdos/games/play/3d/ \
-		ftp.relcom.ru/pub/.1/msdos/games/play/3d/ \
-		ftp.lublin.pl/vol/8/planetquake/planetduke/ \
-		ftp.etsimo.uniovi.es/pub/games/msdos/ \
-		ftp.uniovi.es/pub/games/msdos/ \
-		ftp.ziplink.net/users/rhino/ \
-		ftp.kiae.su/pub/.1/msdos/games/play/3d/
+		ftp://ftp.relcom.ru/pub/.1/msdos/games/play/3d/ \
+		ftp://ftp.relcom.ru/pub/.1/msdos/games/play/3d/ \
+		ftp://ftp.lublin.pl/vol/8/planetquake/planetduke/ \
+		ftp://ftp.etsimo.uniovi.es/pub/games/msdos/ \
+		ftp://ftp.uniovi.es/pub/games/msdos/ \
+		ftp://ftp.ziplink.net/users/rhino/ \
+		ftp://ftp.kiae.su/pub/.1/msdos/games/play/3d/
 PKGNAMEPREFIX=	${DN3DPKGNAMEPREFIX}
 DISTFILES=	#
 
