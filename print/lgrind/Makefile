@@ -48,9 +48,10 @@ MANCOMPRESSED=	yes
 
 IGNOREFILES=	${PORTNAME}.tar.gz
 
-NO_CDROM=	"According to the README-file there is a license issue because of non-free code. Check the README file within the source tarball."
-NO_PACKAGE=	"According to the README-file there is a license issue because of non-free code. Check the README file within the source tarball."
-RESTRICTED=	"No response from author of some code this port is based on"
+RESTRICTED=	According to the README-file there is a license issue \
+		because of non-free code. Check the README file within \
+		the source tarball. No response from author of some code \
+		this port is based on.
 
 pre-everything::
 	@${MKDIR} ${DISTDIR}/${PORTNAME}
