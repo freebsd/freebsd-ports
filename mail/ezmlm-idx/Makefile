@@ -44,7 +44,7 @@ EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
 ALL_TARGET=	it ${LANGUAGE}
 .endif
 
-NO_PACKAGE=	Unsure of DJB license
+RESTRICTED=	Unsure of DJB license
 
 WRKSRC=		${WRKDIR}/ezmlm-${EZMLM_VERSION}
 EZMLM_VERSION=	0.53

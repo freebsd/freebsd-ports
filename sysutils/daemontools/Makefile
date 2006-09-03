@@ -32,7 +32,7 @@ USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} SERVICEDIR=${SERVICEDIR}
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
-NO_PACKAGE=	"Unsure of djb\'s license"
+RESTRICTED=	"Unsure of djb\'s license"
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check

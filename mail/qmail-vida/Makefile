@@ -43,7 +43,7 @@ CSH?=		/bin/csh
 PREFIX?=	/var/qmail
 PORTDOCS=	*
 
-NO_PACKAGE=	"djb\'s packaging license does not allow non-standard qmail binary distributions"
+RESTRICTED=	"djb\'s packaging license does not allow non-standard qmail binary distributions"
 
 QMAIL_VERSION?=		1.03
 

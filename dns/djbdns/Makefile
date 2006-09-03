@@ -94,7 +94,7 @@ RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-NO_PACKAGE=	Forbidden - we have patches to the distribution.
+RESTRICTED=	Forbidden to redistribute - we have patches to the distribution.
 
 .if defined(WITH_IPV6)
 PLIST_SUB+=	WITH_IPV6=""

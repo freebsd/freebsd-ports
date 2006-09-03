@@ -14,7 +14,7 @@ MASTER_SITES=	http://cr.yp.to/daemontools/ \
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Service monitoring and logging utilities by djb
 
-NO_PACKAGE=	"Unsure of djb\'s license"
+RESTRICTED=	"Unsure of djb\'s license"
 NO_LATEST_LINK=	yes
 
 ALL_TARGET=	it man
