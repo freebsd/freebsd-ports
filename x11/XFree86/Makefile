@@ -86,6 +86,10 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 601104
+BROKEN=		Does not build on FreeBSD >= 6.x
+.endif
+
 .if ${X_WINDOW_SYSTEM:L} != xfree86-3
 IGNORE= is part of XFree86-3
 .endif
