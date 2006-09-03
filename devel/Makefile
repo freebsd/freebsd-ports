@@ -1946,6 +1946,7 @@
     SUBDIR += wfut
     SUBDIR += wininfo
     SUBDIR += wxGlade
+    SUBDIR += xdg-utils
     SUBDIR += xfc
     SUBDIR += xlslib
     SUBDIR += xmake
