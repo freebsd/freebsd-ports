@@ -24,8 +24,6 @@ ONLY_FOR_ARCHS=	i386
 DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR&SiteId=JSC&TransactionId=try
 
 RESTRICTED=	License does not allow redistribution of any kind
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
