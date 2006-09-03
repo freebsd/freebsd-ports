@@ -1,6 +1,6 @@
---- qt/Makefile.in.orig	Tue Jun 13 00:43:06 2006
-+++ qt/Makefile.in	Tue Jun 13 00:47:10 2006
-@@ -96,8 +96,6 @@
+--- qt/Makefile.in.orig	Mon Aug 14 13:28:21 2006
++++ qt/Makefile.in	Mon Aug 21 01:27:53 2006
+@@ -95,8 +95,6 @@
  	"$(DESTDIR)$(libexecdir)"
  extraLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(extra_LTLIBRARIES) $(noinst_LTLIBRARIES)
@@ -9,7 +9,7 @@
  am__libquiminputcontextplugin_la_SOURCES_DIST =  \
  	immodule-candidatewindow.cpp immodule-qhelpermanager.cpp \
  	immodule-plugin.cpp immodule-candidatewindow.h \
-@@ -116,8 +114,6 @@
+@@ -118,8 +116,6 @@
  	$(am_libquiminputcontextplugin_la_OBJECTS)
  @QT_IMMODULE_TRUE@@QT_TRUE@am_libquiminputcontextplugin_la_rpath =  \
  @QT_IMMODULE_TRUE@@QT_TRUE@	-rpath $(extradir)
@@ -18,24 +18,22 @@
  am__libtoolbarcommon_la_SOURCES_DIST =  \
  	toolbar-common-quimhelpertoolbar.cpp \
  	toolbar-common-uimstateindicator.cpp qtgettext.h \
-@@ -136,7 +132,6 @@
+@@ -138,14 +134,11 @@
  @QT_TRUE@am_uim_candwin_qt_OBJECTS =  \
  @QT_TRUE@	uim_candwin_qt-candwin-qt.$(OBJEXT)
  uim_candwin_qt_OBJECTS = $(am_uim_candwin_qt_OBJECTS)
 -@QT_TRUE@uim_candwin_qt_DEPENDENCIES = $(top_builddir)/uim/libuim.la
  am__uim_im_switcher_qt_SOURCES_DIST = switcher-qt.cpp switcher-qt.h \
- 	qtgettext.h $(top_srcdir)/replace/os_dep.h
- am__objects_1 =
-@@ -145,8 +140,6 @@
- @QT_TRUE@	$(am__objects_1)
+ 	qtgettext.h
+ @QT_TRUE@am_uim_im_switcher_qt_OBJECTS =  \
+ @QT_TRUE@	uim_im_switcher_qt-switcher-qt.$(OBJEXT)
  uim_im_switcher_qt_OBJECTS = $(am_uim_im_switcher_qt_OBJECTS)
- @NEED_SETENV_C_TRUE@@QT_TRUE@am__DEPENDENCIES_1 = $(top_builddir)/replace/libreplace.la
 -@QT_TRUE@uim_im_switcher_qt_DEPENDENCIES =  \
--@QT_TRUE@	$(top_builddir)/uim/libuim.la $(am__DEPENDENCIES_1)
+-@QT_TRUE@	$(top_builddir)/uim/libuim.la
  am__uim_pref_qt_SOURCES_DIST = pref-qt.cpp pref-customwidgets.cpp \
  	pref-kseparator.cpp qtgettext.h pref-qt.h pref-customwidgets.h \
  	pref-kseparator.h
-@@ -158,9 +151,6 @@
+@@ -157,9 +150,6 @@
  @PREF_TRUE@@QT_TRUE@	uim_pref_qt-pref-keyeditformbase.$(OBJEXT)
  uim_pref_qt_OBJECTS = $(am_uim_pref_qt_OBJECTS) \
  	$(nodist_uim_pref_qt_OBJECTS)
@@ -45,7 +43,7 @@
  am__uim_toolbar_qt_SOURCES_DIST = toolbar-standalone-qt.cpp \
  	toolbar-standalone-qt.h qtgettext.h \
  	toolbar-common-quimhelpertoolbar.h \
-@@ -168,8 +158,7 @@
+@@ -167,8 +157,7 @@
  @QT_TRUE@am_uim_toolbar_qt_OBJECTS =  \
  @QT_TRUE@	uim_toolbar_qt-toolbar-standalone-qt.$(OBJEXT)
  uim_toolbar_qt_OBJECTS = $(am_uim_toolbar_qt_OBJECTS)
@@ -55,7 +53,7 @@
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/uim
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
-@@ -496,7 +485,6 @@
+@@ -502,7 +491,6 @@
  
  @QT_IMMODULE_TRUE@@QT_TRUE@libquiminputcontextplugin_la_CXXFLAGS = $(QT_CXXFLAGS)
  @QT_IMMODULE_TRUE@@QT_TRUE@libquiminputcontextplugin_la_LDFLAGS = $(QT_LDFLAGS) -avoid-version
@@ -63,7 +61,7 @@
  
  # Toolbar Common
  @QT_TRUE@noinst_LTLIBRARIES = libtoolbarcommon.la
-@@ -505,7 +493,6 @@
+@@ -511,7 +499,6 @@
  
  @QT_TRUE@libtoolbarcommon_la_CXXFLAGS = $(QT_CXXFLAGS)
  @QT_TRUE@libtoolbarcommon_la_LDFLAGS = $(QT_LDFLAGS) -avoid-version
@@ -71,7 +69,7 @@
  
  # Toolbar Standalone
  @QT_TRUE@uim_toolbar_qt_SOURCES = toolbar-standalone-qt.cpp toolbar-standalone-qt.h qtgettext.h \
-@@ -513,21 +500,18 @@
+@@ -519,19 +506,17 @@
  
  @QT_TRUE@uim_toolbar_qt_CXXFLAGS = $(QT_CXXFLAGS)
  @QT_TRUE@uim_toolbar_qt_LDFLAGS = $(QT_LDFLAGS)
@@ -85,16 +83,14 @@
 -@QT_TRUE@uim_candwin_qt_LDADD = $(top_builddir)/uim/libuim.la
  
  # Switcher
- @QT_TRUE@uim_im_switcher_qt_SOURCES = switcher-qt.cpp switcher-qt.h \
- @QT_TRUE@	qtgettext.h $(am__append_8)
+ @QT_TRUE@uim_im_switcher_qt_SOURCES = switcher-qt.cpp switcher-qt.h qtgettext.h
  @QT_TRUE@uim_im_switcher_qt_CXXFLAGS = $(QT_CXXFLAGS)
  @QT_TRUE@uim_im_switcher_qt_LDFLAGS = $(QT_LDFLAGS)
--@QT_TRUE@uim_im_switcher_qt_LDADD = $(top_builddir)/uim/libuim.la \
--@QT_TRUE@	$(am__append_9)
+-@QT_TRUE@uim_im_switcher_qt_LDADD = $(top_builddir)/uim/libuim.la
  
  # Pref
  @PREF_TRUE@@QT_TRUE@nodist_uim_pref_qt_SOURCES = \
-@@ -543,7 +527,6 @@
+@@ -547,7 +532,6 @@
  
  @PREF_TRUE@@QT_TRUE@uim_pref_qt_CXXFLAGS = $(QT_CXXFLAGS)
  @PREF_TRUE@@QT_TRUE@uim_pref_qt_LDFLAGS = $(QT_LDFLAGS)
