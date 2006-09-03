@@ -25,7 +25,7 @@ ALL_TARGET=	${PORTNAME}.so
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64"
-CFLAGS=	-fPIC
+CFLAGS+=	-fPIC
 .endif
 
 do-install:
