@@ -25,8 +25,6 @@ PLIST_FILES=		bin/visual
 MY_STARTUP_SCRIPT=	visual.sh
 
 RESTRICTED=		"Redistribution is probably not permitted"
-NO_PACKAGE=		${RESTRICTED}
-NO_CDROM=		${RESTRICTED}
 
 OPTIONS=	ATOOLS		"Advanced Tools"				off \
 		COM		"COM"						off \
