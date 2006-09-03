@@ -15,8 +15,7 @@ DISTNAME=	stuffit520.611linux-i386
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stuffit Archive Creator and Expander
 
-NO_CDROM=	Shareware -- should not redistribute
-NO_PACKAGE=	Only unmodified original package can be distributed
+RESTRICTED=	Only unmodified original package can be distributed
 
 ONLY_FOR_ARCHS=	i386 amd64
 
