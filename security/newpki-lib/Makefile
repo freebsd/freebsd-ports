@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/newpki
 
 .if defined(WITHOUT_NLS)
-BROKEN=		"Does not build without gettext"
+BROKEN=		does not build without gettext
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 .else
@@ -39,6 +39,10 @@ GNU_CONFIGURE=	yes
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4
+.endif
+
+.if ${OSVERSION} >= 700019
+BROKEN=		does not compile with OpenSSL 0.9.8b
 .endif
 
 pre-patch:
