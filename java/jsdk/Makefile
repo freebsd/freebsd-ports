@@ -21,8 +21,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 USE_JAVA=	yes
 NO_BUILD=	yes
 
-NO_CDROM=	"Sun has a funky license for this software"
-RESTRICTED=	"no commercial use"
+RESTRICTED=	"Sun has a funky license for this software; no commercial use"
 
 WRKSRC=		${WRKDIR}/JSDK2.0
 
