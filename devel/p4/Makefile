@@ -48,8 +48,7 @@ IGNORE=		unsupported platform, sorry
 
 # End of kludge
 
-NO_PACKAGE=	Restricted distribution
-NO_CDROM=	Restricted distribution
+RESTRICTED=	Restricted distribution
 
 NO_WRKSUBDIR=	yes
 
