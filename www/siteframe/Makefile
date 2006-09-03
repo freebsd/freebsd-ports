@@ -24,8 +24,6 @@ USE_MYSQL=	yes
 DEFAULT_MYSQL_VER=	41
 IGNORE_WITH_MYSQL=	40
 
-NO_PACKAGE=	Conflicting Apache dependencies
-
 # where to install
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
