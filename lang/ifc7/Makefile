@@ -19,8 +19,6 @@ COMMENT=	Intel's Fortran compiler, set up to produce native FreeBSD objects
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 RESTRICTED=	Intel forbids any redistribution
-NO_PACKAGE=	${RESTRICTED}
-NO_CDROM=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=		i386
 
