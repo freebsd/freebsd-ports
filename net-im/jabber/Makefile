@@ -7,6 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.4.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://devel.amessage.info/jabberd14/
@@ -18,8 +19,6 @@ COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
 		expat.6:${PORTSDIR}/textproc/expat2
-
-DEPRECATED=	fd_set -- bitmap index overflow in multiple applications.
 
 USE_RC_SUBR=	jabberd.sh
 USE_BZIP2=	yes
