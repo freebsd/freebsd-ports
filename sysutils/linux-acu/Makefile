@@ -33,7 +33,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
-NO_CDROM=	"Redistribution not allowed"
+RESTRICTED=	"Redistribution not allowed"
 
 LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
 
