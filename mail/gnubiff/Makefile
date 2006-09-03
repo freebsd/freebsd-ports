@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnubiff
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # CXXFLAGS needed to work round issue with gcc and openssl 0.9.8a
 # /usr/local/include/openssl/sha.h:173: error: ISO C++ does not support `long long'
 
+CONFIGURE_ARGS+=	--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 MAN1=		gnubiff.1
 INFO=		gnubiff
 
