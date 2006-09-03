@@ -20,7 +20,7 @@ COMMENT=	Tools for passing mail across serial links
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 USE_QMAIL_RUN=	yes
 
-NO_PACKAGE=	Unsure of DJB license
+RESTRICTED=	Unsure of DJB license
 
 ALL_TARGET=	it
 

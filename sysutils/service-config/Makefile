@@ -19,7 +19,7 @@ ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 USE_PERL5_BUILD=yes
 
-NO_PACKAGE=	A possibly inherited DJB-style license would prohibit \
+RESTRICTED=	A possibly inherited DJB-style license would prohibit \
 		distribution of modified binary packages
 
 post-patch:
