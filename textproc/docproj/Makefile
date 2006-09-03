@@ -48,8 +48,12 @@ WITH_JADETEX=	${JADETEX}
 .endif
 WITH_JADETEX?=
 
+.if defined(PACKAGE_BUILDING)
+WITH_JADETEX=	yes
+.endif
+
 .if empty(WITH_JADETEX)
-IS_INTERACTIVE=	"user must set WITH_JADETEX variable to 'yes' or 'no'"
+IGNORE=		user must set WITH_JADETEX variable to 'yes' or 'no'
 .endif
 .if defined(WITH_JADETEX) && ${WITH_JADETEX} == yes
 RUN_DEPENDS+=	${LOCALBASE}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
