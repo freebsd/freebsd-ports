@@ -6,4 +6,3 @@
 %%SITE_PERL%%/Time/Timezone.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time-modules
 @dirrmtry %%SITE_PERL%%/Time
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
