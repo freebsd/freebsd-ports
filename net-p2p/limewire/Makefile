@@ -23,8 +23,6 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/LimeWire
 
 RESTRICTED=	License does not allow redistribution of any kind
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LimeWire.jar MessagesBundles.jar ProgressTabs.jar \
