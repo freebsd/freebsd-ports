@@ -20,8 +20,6 @@ DISTNAME=	ICON-CoolGorilla
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	CoolGorilla Icons for Gnome
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 
 USE_BZIP2=	yes

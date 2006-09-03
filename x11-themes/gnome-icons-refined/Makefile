@@ -20,8 +20,6 @@ DISTNAME=	ICON-Gnome-RH8
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Refined Icons for Gnome
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 
 WRKSRC=		"${WRKDIR}/gnome-rh8"

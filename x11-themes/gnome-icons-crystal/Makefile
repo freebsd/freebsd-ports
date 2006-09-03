@@ -19,8 +19,6 @@ DISTNAME=	CrystalSVGforGnomeIcons1-2-0_1082838150
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Crystal SVG Icons for Gnome
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 
 USE_BZIP2=	yes
