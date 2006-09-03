@@ -27,11 +27,15 @@ CONFIGURE_ARGS=	--without-openssl
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	"This port requires perl 5.006 or better"
+IGNORE=		requires perl 5.006 or better
 .endif
 
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-EAI_NODATA
+.endif
+
+.if ${OSVERSION} >= 700019
+BROKEN=		does not compile with OpenSSL 0.9.8b
 .endif
 
 CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
