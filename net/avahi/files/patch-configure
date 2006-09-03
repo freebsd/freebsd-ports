@@ -1,0 +1,10 @@
+--- configure.orig	Sun Sep  3 12:31:45 2006
++++ configure	Sun Sep  3 12:32:34 2006
+@@ -20559,6 +20559,7 @@ echo $ECHO_N "checking whether to check 
+    check_inconsistencies=yes
+    case "${host_cpu}-${host_os}" in
+      *-darwin*) check_inconsistencies=no ;;
++     *-freebsd*) check_inconsistencies=no ;;
+    esac
+    if test x"$GCC" != xyes -o "x$check_inconsistencies" != xyes ; then
+       { echo "$as_me:$LINENO: result: no" >&5
