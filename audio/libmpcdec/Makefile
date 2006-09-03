@@ -12,7 +12,7 @@ MASTER_SITES=	http://files2.musepack.net/source/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	High quality audio compression format
 
 USE_BZIP2=	yes
