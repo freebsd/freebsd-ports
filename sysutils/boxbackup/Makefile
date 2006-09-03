@@ -35,7 +35,7 @@ TARGETOS!=	${ECHO_CMD} `${UNAME} -s``${UNAME} -r | ${SED} -e 's/[-(].*//'` | ${T
 
 .if defined(WITH_GNUREADLINE)
 CONFIGURE_ARGS+=--enable-gnu-readline
-NO_PACKAGE=	GNU GPL prevents distributing binaries linked against GNU readline
+RESTRICTED=	GNU GPL prevents distributing binaries linked against GNU readline
 .endif
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER)
