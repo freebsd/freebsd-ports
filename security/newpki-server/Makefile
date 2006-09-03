@@ -50,6 +50,10 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 USE_GCC=	3.4
 .endif
 
+.if ${OSVERSION} >= 700019
+BROKEN=		does not compile with OpenSSL 0.9.8b
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure \
 		${WRKSRC}/publication/ldap/configure

@@ -20,7 +20,13 @@ RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700019
+BROKEN=		does not compile with OpenSSL 0.9.8b
+.endif
+
 post-install:
 	@${SED} -e 's#@LOCALBASE@#${LOCALBASE}#' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
