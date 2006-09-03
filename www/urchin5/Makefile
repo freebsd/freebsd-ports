@@ -18,8 +18,6 @@ ONLY_FOR_ARCHS=	i386
 LICENSE=	commercial
 RESTRICTED=	"Commercial software, also comes bundled with Apache-SSL"
 NO_BUILD=	YES
-NO_CDROM=	"Our installer must be run for proper permissions to be set"
-NO_PACKAGE=	"Our installer must be run for proper permissions to be set"
 WRKSRC=		${WRKDIR}
 
 # Feel free to change this to the user you want Urchin 5 to
