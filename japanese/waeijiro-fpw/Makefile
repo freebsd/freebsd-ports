@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freep
 		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
 
 RESTRICTED=	"The original dictionary is not free"
-NO_PACKAGE=	"The original dictionary is not free"
 USE_GMAKE=	yes
 DICT_PATH?=	/cdrom
 SRCFILE?=	waeiji52.txt

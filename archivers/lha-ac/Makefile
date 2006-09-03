@@ -26,7 +26,6 @@ PLIST_DIRS=	man/ja/man1
 GNU_CONFIGURE=	yes
 
 RESTRICTED=	"no permission to redistribute"
-NO_PACKAGE=	${RESTRICTED}
 
 .if !defined(WITHOUT_NLS)
 CONFIGURE_ARGGS+=	--disable-multibyte-filename
