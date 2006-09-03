@@ -26,7 +26,7 @@ NO_CDROM=	"See the licence"
 RESTRICTED=	"Licenced for individual non-commercial use only"
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE='You must fetch the linux version manually from http://java.sun.com/products/hotjava/ and copy the file to ${DISTDIR} and run make again.'
 .endif
 

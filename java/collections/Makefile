@@ -30,7 +30,7 @@ JARFILE=	collections.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 DOWNLOAD_URL=	"http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7264-collections-1.1-oth-JPR&SiteId=JSC&TransactionId=noreg"
 IGNORE=	"You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again"
 .endif
