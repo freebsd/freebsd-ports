@@ -24,7 +24,6 @@ MSTTF_TAHOMA=	tahoma.ttf
 
 IGNOREFILES=	${MSTTF_SIMHEI} ${MSTTF_SIMSUN} ${MSTTF_TAHOMA}
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
-NO_PACKAGE=	"Redistribution of pre-compiled binaries is not permitted"
 
 NO_BUILD=	yes
 SHAREMODE=	644
