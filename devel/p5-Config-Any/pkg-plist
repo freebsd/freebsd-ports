@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Config/Any.pm
+%%SITE_PERL%%/Config/Any/General.pm
+%%SITE_PERL%%/Config/Any/INI.pm
+%%SITE_PERL%%/Config/Any/JSON.pm
+%%SITE_PERL%%/Config/Any/Perl.pm
+%%SITE_PERL%%/Config/Any/XML.pm
+%%SITE_PERL%%/Config/Any/YAML.pm
+@dirrmtry %%SITE_PERL%%/Config/Any
+@dirrmtry %%SITE_PERL%%/Config
