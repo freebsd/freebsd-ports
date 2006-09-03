@@ -6,7 +6,7 @@
 #    $MCom: ports-stable/databases/qdbm/Makefile,v 1.4 2006/03/04 21:25:54 ahze Exp $
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.68
+PORTVERSION=	1.8.70
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qdbm.sourceforge.net/
@@ -16,7 +16,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT?=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(SLAVEPORT)
 USE_ICONV=	yes
@@ -26,13 +26,13 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAKE_ARGS=	RELCFLAGS="${CFLAGS}" \
 		MYDATADIR="${DOCSDIR}" MYDOCS="${PORTDOCS}"
-INSTALLS_SHLIB=	yes
 .if !defined(NOPORTDOCS)
 PORTDOCS=	spex.html spex-ja.html ChangeLog NEWS
 .endif
 
 MAN1=	cbcodec.1 cbtest.1 crmgr.1 crtest.1 crtsv.1 dpmgr.1 dptest.1 \
-	dptsv.1 hvmgr.1 hvtest.1 odidx.1 odmgr.1 odtest.1 rlmgr.1 rltest.1 \
+	dptsv.1 hvmgr.1 hvtest.1 odidx.1 odmgr.1 odtest.1 qmttest.1 \
+	rlmgr.1 rltest.1 \
 	vlmgr.1 vltest.1 vltsv.1
 MAN3=	cabin.3 curia.3 depot.3 hovel.3 odeum.3 qdbm.3 relic.3 villa.3
 MLINKS=	curia.3 cropen.3 depot.3 dpopen.3 \
