@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.14
-PORTREVISION=	1
+PORTVERSION=	1.0.15
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An addressbook for the gnome2 desktop
+COMMENT=	An addressbook for the GNOME 2 desktop
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-gconf-source=${GCONF_CONFIG_SOURCE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALL_TARGET=	install install-schemas
