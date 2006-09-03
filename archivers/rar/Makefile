@@ -17,7 +17,7 @@ MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	File archiver (binary port)
 
 IA32_BINARY_PORT=	YES
-NO_PACKAGE=	Only unmodified original package can be distributed
+RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
