@@ -1,5 +1,5 @@
 bin/m17n-db
-lib/pkgconfig/m17n-db.pc
+libdata/pkgconfig/m17n-db.pc
 share/m17n/8859-10.map
 share/m17n/8859-11.map
 share/m17n/8859-13.map
