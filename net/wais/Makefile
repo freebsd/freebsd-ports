@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://ftp.icm.edu.pl/vol/wojsyl/freewais/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Wide Area Information Server
 
+DEPRECATED=	Imported 12 years ago; never completed
+EXPIRATION_DATE=2006-12-01
 NO_PACKAGE=	"not yet"
 NO_INSTALL=	almost
 ALL_TARGET=	freebsd
