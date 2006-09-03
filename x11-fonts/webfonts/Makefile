@@ -36,8 +36,7 @@ EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract
 USE_X_PREFIX=	yes
 
 NO_BUILD=	yes
-NO_CDROM=	"Restrictive license - cannot sell for profit"
-NO_PACKAGE=	"Restrictive license - cannot distribute in modified form"
+RESTRICTED=	"Restrictive license - cannot sell for profit or distribute in modified form"
 
 EXTRACT_CMD=		${LOCALBASE}/bin/cabextract
 EXTRACT_BEFORE_ARGS=	-qLF '*.ttf' -d ${WRKSRC}
