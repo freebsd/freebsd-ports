@@ -20,9 +20,8 @@ EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 ONLY_FOR_ARCHS=	i386
 
-NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.hpl.hp.com/research/linux/ski/download.php) and put it in ${DISTDIR} first. License restrictions disallow automatic downloads and redistribution of the software.
-NO_PACKAGE=	${NOTICE}
-NO_CDROM=	${NOTICE}
+NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.hpl.hp.com/research/linux/ski/download.php) and put it in ${DISTDIR} first
+RESTRICTED=	License restrictions disallow automatic downloads and redistribution of the software.
 
 EXTRACT_CMD=		rpm2cpio.pl
 EXTRACT_BEFORE_ARGS=
@@ -54,7 +53,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=	${NOTICE}
 .endif
 
