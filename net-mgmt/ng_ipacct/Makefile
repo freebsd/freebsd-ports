@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
+BROKEN=		Unfetchable
+
 NO_PACKAGE=	"Depends on kernel"
 
 OPTIONS=	MEM_ZONE "Use UMA zone allocator (5.x only)" off
