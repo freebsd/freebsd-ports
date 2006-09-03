@@ -24,8 +24,6 @@ NOFETCHFILES=	hcwPVRP2.sys
 
 RESTRICTED_FILES=	hcwPVRP2.sys
 RESTRICTED=	"This port uses a binary driver which is owned by Hauppauge"
-NO_PACKAGE=	${RESTRICTED}
-NO_CDROM=	${RESTRICTED}
 
 MAN4=		cxm.4
 MAN1=		pvr250-setchannel.1
