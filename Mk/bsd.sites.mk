@@ -1294,15 +1294,22 @@ MASTER_SITES_SUBDIRS=	\
 			SOURCEFORGE:${PORTNAME:L} \
 			SOURCEFORGE_EXTENDED:${PORTNAME:L}
 
-.if defined(MASTER_SITES) && ${MASTER_SITES:N*/*}
+.if defined(MASTER_SITES) && ${MASTER_SITES:N*\:/*}
 
 .for _site__ in ${MASTER_SITES}
 _site_=${_site__}
-.	if ${_site_:M*/*}
+.	if ${_site_:M*\:/*}
 MASTER_SITES_EXP+=	${_site_}
 MASTER_SITES_EXP:=	${MASTER_SITES_EXP}
 .	else
-_site_url_=		${_site_:C@^(.*):[^/:]+$@\1@}
+_site_urlpath_=	${_site_:C@^(.*):[^/:]+$@\1@}
+.		if ${_site_urlpath_:M*/*}
+_site_url_=		${_site_urlpath_:C@^([^/]+)/.*$@\1@}
+_site_subdir_=	${_site_urlpath_:S/^${_site_urlpath_:C@^([^/]+)/.*$@\1@}//:S!^/!!:S!/$!!}
+.		else
+_site_url_=		${_site_urlpath_}
+.undef _site_subdir_
+.		endif
 _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
 .		for _abbrev_ in ${MASTER_SITES_ABBREVS}
 .			if ${_site_url_} == ${_abbrev_:C/:.*//}
@@ -1310,12 +1317,16 @@ _site_url_=	${_abbrev_:C/.*://}
 .			endif
 .		endfor
 .		for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.			if ${_site_url_} == ${_subdir_:C/:.*//}
-MASTER_SITE_SUBDIR?=	${_subdir_:C/.*://}
+.			if ${_site_url_} == ${_subdir_:C/:.*//} && !defined(MASTER_SITE_SUBDIR)
+_site_subdir_?=	${_subdir_:C/.*://}
 .			endif
 .		endfor
 .		ifdef MASTER_SITE_${_site_url_}
+.			ifdef _site_subdir_
+MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}
+.			else
 MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S/$/:${_site_group_}/:S/:$//}
+.			endif
 MASTER_SITES_EXP:=	${MASTER_SITES_EXP}
 .		endif
 .	endif
