@@ -19,8 +19,6 @@ PLIST_FILES=	bin/ipv6socket_scrub
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 RESTRICTED=		"not redistributable, license agreement required"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
