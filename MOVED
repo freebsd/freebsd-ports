@@ -2457,3 +2457,4 @@ security/antivir-milter||2006-09-02|Free license keys are no longer available si
 security/finger_mysql||2006-09-02|Project has closed
 devel/bitkeeper||2006-09-02|Project was discontinued
 net/asterisk-devel||2006-09-02|Port was not currently useful; may return later
+devel/p5-Linux-Pid||2006-09-03|Was a p5-Apache-SizeLimit dependency, now removed
