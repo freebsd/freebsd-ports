@@ -31,7 +31,6 @@
     SUBDIR += asterisk
     SUBDIR += asterisk-addons
     SUBDIR += asterisk-bristuff
-    SUBDIR += asterisk-devel
     SUBDIR += asterisk-oh323
     SUBDIR += astfax
     SUBDIR += atmsupport
