@@ -15,6 +15,8 @@ COMMENT=	WWW server from the W3 Consortium (W3C)
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/wais:build
 
+BROKEN=		Does not compile
+
 NO_WRKSUBDIR=	yes
 WWW_ROOT?=	${PREFIX}/www
 MAKE_ENV+=	PORTSDIR=${PORTSDIR}
