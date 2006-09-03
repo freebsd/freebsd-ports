@@ -18,8 +18,6 @@ MAINTAINER=	thierry@FreeBSD.Org
 COMMENT=	The JDBC drivers for Oracle 9i
 
 RESTRICTED=	'Must be downloaded direct from Oracle via www interface'
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
