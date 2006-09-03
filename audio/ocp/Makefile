@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--with-x11=yes
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--with-debug
 .endif
-.if defined(WITH_ADPLUG)
+.if defined(WITH_ADPLUG) && ${OSVERSION} > 500000
 LIB_DEPENDS+=		adplug-2.0.1.0:${PORTSDIR}/audio/libadplug
 CONFIGURE_ARGS+=	--without-x11 --with-adplug
 PLIST_SUB+=		ADPLUG=""
