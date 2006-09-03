@@ -21,8 +21,6 @@ COMMENT=	The JDBC drivers for Oracle 8i
 PATCH_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
 
 RESTRICTED=	'Must be downloaded direct from Oracle via www interface'
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 USE_ZIP=	yes
 USE_JAVA=	yes
