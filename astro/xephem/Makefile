@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
 MAN1=		xephem.1
 
-NO_CDROM=	"Personal use only"
+RESTRICTED=	"Personal use only"
 
 # XXX needs to be the same as DISTFILES
 XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
