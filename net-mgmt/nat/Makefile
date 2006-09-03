@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.freebsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS auditing tool
 
-NO_PACKAGE=	"Redistribution prohibited by the license"
+RESTRICTED=	Redistribution prohibited by the license
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
