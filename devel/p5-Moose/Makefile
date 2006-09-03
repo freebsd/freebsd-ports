@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 	p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString
 RUN_DEPENDS=	\
 	p5-Scalar-List-Utils>=1.18:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-	p5-Class-MOP>=0.30:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.34:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
 	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 	p5-Sub-Exporter>=0.954:${PORTSDIR}/devel/p5-Sub-Exporter \
