@@ -30,6 +30,10 @@ MAKE_ENV=	OSTYPE=${OPSYS}
 IGNORE=		Systems prior to FreeBSD 4.9 & 5.1 are not supported
 .endif
 
+.if ${OSVERSION} >= 601104
+BROKEN=		Does not compile on FreeBSD >= 6.x
+.endif
+
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		Kernel source files required
