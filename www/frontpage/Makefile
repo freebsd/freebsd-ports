@@ -14,6 +14,9 @@ DISTFILES=	${FRONTPAGE}
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Microsoft Frontpage 2002 Extensions
 
+DEPRECATED=	End-of-life occurred on June 30, 2006.
+EXPIRATION_DATE=2006-12-01
+
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
