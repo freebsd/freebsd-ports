@@ -7094,7 +7094,6 @@ mozart		ports/lang/mozart
 mozex		ports/www/mozex
 mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
-mozilla-devel	ports/www/mozilla-devel
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozplugger	ports/www/mozplugger
 moztraybiff	ports/mail/moztraybiff
