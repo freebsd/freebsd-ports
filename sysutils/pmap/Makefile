@@ -8,8 +8,8 @@
 PORTNAME=	pmap
 PORTVERSION=	20060622
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/ \
-		${MASTER_SITE_LOCAL:S!$!skv/!}
+MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
+		ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/pmap/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Detailed process memory display
@@ -26,10 +26,6 @@ MANCOMPRESSED=	maybe
 
 .if ${OSVERSION} >= 700000
 BROKEN=		Currently does not support -CURRENT
-.endif
-
-.if ${OSVERSION} >= 601104
-BROKEN=		Does not compile on FreeBSD >= 6.x
 .endif
 
 .if ${OSVERSION} <  600000
