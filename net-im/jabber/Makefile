@@ -10,7 +10,7 @@ PORTVERSION=	1.4.3.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im
-MASTER_SITES=	http://devel.amessage.info/jabberd14/
+MASTER_SITES=	http://download.jabberd.org/jabberd14/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_RC_SUBR=	jabberd.sh
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
