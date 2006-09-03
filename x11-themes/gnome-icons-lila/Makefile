@@ -19,8 +19,6 @@ DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
 MAINTAINER=	filippo.natali@gmail.com
 COMMENT=	Lila Icons for Gnome
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 
 USE_BZIP2=	yes

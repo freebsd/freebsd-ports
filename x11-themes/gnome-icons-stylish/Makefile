@@ -20,8 +20,6 @@ DISTNAME=	ICON-Stylish
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Stylish Icons for Gnome
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 
 WRKSRC=		"${WRKDIR}/${PORTNAME}"

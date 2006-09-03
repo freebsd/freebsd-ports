@@ -20,8 +20,6 @@ DISTNAME=	ICON-Snow-Apple
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Snow-Apple Icons for Gnome
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 
 WRKSRC=		"${WRKDIR}/Snow-Apple"

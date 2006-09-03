@@ -14,8 +14,6 @@ DISTNAME=	SnowIsh-${PORTVERSION}_PNG
 MAINTAINER=	babak@farrokhi.net
 COMMENT=	A Mac inspired icon theme for GNOME
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 USE_BZIP2=	yes
 
