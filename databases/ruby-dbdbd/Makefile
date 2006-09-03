@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	David Black's DataBase Definer
 
-NO_PACKAGE=	License only allows unchanged distributions
+RESTRICTED=	License only allows unchanged distributions
 
 USE_RUBY=	yes
 NO_BUILD=	yes
