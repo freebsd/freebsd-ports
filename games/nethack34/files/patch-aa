@@ -1,6 +1,16 @@
---- include/config.h.orig	Sun Dec  7 23:39:13 2003
-+++ include/config.h	Thu Dec 11 02:27:55 2003
-@@ -126,7 +126,7 @@
+--- include/config.h.orig	Mon Dec  8 00:39:13 2003
++++ include/config.h	Sun Sep  3 12:17:19 2006
+@@ -85,9 +85,6 @@
+ #ifdef QT_GRAPHICS
+ # define DEFAULT_WC_TILED_MAP   /* Default to tiles if users doesn't say wc_ascii_map */
+ # define USER_SOUNDS		/* Use sounds */
+-# ifndef __APPLE__
+-#  define USER_SOUNDS_REGEX
+-# endif
+ # define USE_XPM		/* Use XPM format for images (required) */
+ # define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.ppm) */
+ # ifndef DEFAULT_WINDOW_SYS
+@@ -126,7 +123,7 @@
   * would allow:
   *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
   */
@@ -9,7 +19,7 @@
  # ifdef USE_XPM
  #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
  # endif
-@@ -169,11 +169,11 @@
+@@ -169,11 +166,11 @@
  
  #ifdef UNIX
  /* path and file name extension for compression program */
@@ -25,7 +35,7 @@
  #endif
  
  #ifndef COMPRESS
-@@ -204,7 +204,7 @@
+@@ -204,7 +201,7 @@
   * otherwise it will be the current directory.
   */
  # ifndef HACKDIR
