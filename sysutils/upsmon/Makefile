@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic UPS monitor for the APC SmartUPS devices
 
 MAKEFILE=	makefile.bsdi
-NO_PACKAGE=	"must provide without modifications"
+RESTRICTED=	"must provide without modifications"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/upsstat ${PREFIX}/bin
