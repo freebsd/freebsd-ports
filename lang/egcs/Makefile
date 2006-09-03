@@ -26,6 +26,7 @@ NO_CDROM=	'old version, not worth the cost in real estate'
 INFO=		cpp g77 gcc
 
 DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release of gcc instead"
+EXPIRATION_DATE=2006-12-01
 
 .include <bsd.port.pre.mk>
 
