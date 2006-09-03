@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance MPEG video player (shareware)
 
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
-NO_PACKAGE=	"No redistribution"
-NO_CDROM=	"No redistribution"
+RESTRICTED=	No redistribution
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
