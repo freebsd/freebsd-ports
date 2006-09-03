@@ -32,7 +32,7 @@ DISTVERSION=	20041231
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/jp.azzurri.clay.core_${PORTVERSION}.bin.dist.${DISTVERSION}.zip)
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/jp.azzurri.clay.core_${PORTVERSION}.bin.dist.${DISTVERSION}.zip) && !defined(PACKAGE_BUILDING)
 IGNORE='You must manually fetch the tarball from http://www.azzurri.jp/en/software/clay/download.jsp and place it in ${DISTDIR}/${DIST_SUBDIR} then run make again.'
 .endif
 

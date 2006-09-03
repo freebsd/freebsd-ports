@@ -32,7 +32,7 @@ XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tar.gz
 .include <bsd.port.pre.mk>
 
 .for file in ${XEPHEMSRC}
-.if !exists(${DISTDIR}/${file})
+.if !exists(${DISTDIR}/${file}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=	${PRINTF}
 IGNORE=:\n\
 Because of licensing restrictions, you must manually fetch\n\

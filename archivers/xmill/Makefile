@@ -26,7 +26,7 @@ PORTDOCS=	COPYRIGHT.txt LICENSE.txt MANUAL.txt README.txt xmill.ps.gz
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		requires explicit agreement to the terms and conditions of the license.  Download ${DISTNAME}${EXTRACT_SUFX} manually from http://www.research.att.com/sw/tools/XMILL/, put it under ${DISTDIR} and run make again
 .endif
 
