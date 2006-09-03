@@ -29,6 +29,8 @@ CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \
 			--with-mozilla-include-dir="${LOCALBASE}/include/mozilla${HEADERS_SUFX}"
 
 BROKEN=	"Does not build with new Mozilla"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 post-patch:
 	@${REINPLACE_CMD} -e \
