@@ -30,8 +30,6 @@ USE_GMAKE=		yes
 USE_GL=			yes
 USE_PYTHON=		yes
 
-NO_PACKAGE=		"License has restrictions"
-NO_CDROM=		"License has restrictions"
 RESTRICTED=		"License has restrictions"
 
 VMD_DIST=		${PORTNAME}-${PORTVERSION}.src.tar.gz
