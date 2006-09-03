@@ -19,6 +19,9 @@ COMMENT=		Multiplexor, MySQL and PostgeSQL passdb backends for Samba3
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
+# Add a build dependency for Samba port
+USE_AUTOTOOLS=		autoconf:259 autoheader:259
+
 SAMBA_PORT=		net/samba3
 SAMBA_VERSION=		3.0.23
 
