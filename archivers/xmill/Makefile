@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An efficient compressor for XML
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 
