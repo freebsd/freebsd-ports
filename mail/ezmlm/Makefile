@@ -24,7 +24,7 @@ USE_QMAIL_RUN=	yes
 
 CONFLICTS=	ezmlm-idx-*
 
-NO_PACKAGE=	Unsure of DJB license
+RESTRICTED=	Unsure of DJB license
 
 ALL_TARGET=	it
 

@@ -23,7 +23,7 @@ WANT_QMAIL=	yes
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-NO_PACKAGE=	"borrows code from djbdns, thus falls under the same restrictions as dns/djbdns"
+RESTRICTED=	"borrows code from djbdns, thus falls under the same restrictions as dns/djbdns"
 
 PREFIX?=	${QMAIL_PREFIX}
 

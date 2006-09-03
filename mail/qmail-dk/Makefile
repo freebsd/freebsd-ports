@@ -21,7 +21,7 @@ LIB_DEPENDS+=	domainkeys.3:${PORTSDIR}/mail/libdomainkeys
 PATCH_SITES=	${MASTER_SITE_QMAIL}
 PATCHFILES=	qmail-1.03-dk-0.54.patch
 
-NO_PACKAGE=	djb's packaging license does not allow non-standard qmail binary distributions
+RESTRICTED=	djb's packaging license does not allow non-standard qmail binary distributions
 
 USE_QMAIL=	yes
 PREFIX?=	${QMAIL_PREFIX}

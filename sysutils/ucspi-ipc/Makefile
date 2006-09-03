@@ -17,7 +17,7 @@ USE_PERL5=	yes
 
 DISABLE_SIZE=	yes
 
-NO_PACKAGE=	Non-explicit licensing terms
+RESTRICTED=	Non-explicit licensing terms
 
 DOCS=		CHANGES
 

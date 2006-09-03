@@ -24,7 +24,7 @@ CONFLICTS?=	ucspi-ssl-tls-[0-9]*
 
 USE_PERL5=	yes
 
-NO_PACKAGE=	Non-explicit licensing terms
+RESTRICTED=	Non-explicit licensing terms
 
 DOCS=		CHANGES TODO UCSPI-SSL
 
