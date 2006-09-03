@@ -20,8 +20,6 @@ OPTIONS=	PEAR_LOG "PEAR::Log support" off
 
 USE_PHP=	dom pcre
 
-NO_PACKAGE=	"Conflicting dependences between PHP4 and PHP5"
-
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
 
