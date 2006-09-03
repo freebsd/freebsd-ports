@@ -41,9 +41,7 @@ OPTIONS=	DG_APACHE "Enable Apache support for access denied page" on \
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
 
-NO_CDROM=	Commercial download is restricted.  Check ${DG_URL} for more info
-NO_PACKAGE=	Redistribution is restricted.  Check ${DG_URL} for more info
-RESTRICTED=	${NO_PACKAGE}
+RESTRICTED=	Redistribution and commercial download is restricted.  Check ${DG_URL} for more info
 
 .include <bsd.port.pre.mk>
 
