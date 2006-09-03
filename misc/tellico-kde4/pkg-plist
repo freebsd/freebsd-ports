@@ -9,12 +9,19 @@ share/apps/tellico/amazon2tellico.xsl
 share/apps/tellico/bibtex-translation.xml
 share/apps/tellico/cassette-logo.png
 share/apps/tellico/cd-logo.png
+share/apps/tellico/data-sources/dark_horse_comics.py
+share/apps/tellico/data-sources/dark_horse_comics.py.spec
+share/apps/tellico/data-sources/fr.allocine.py
+share/apps/tellico/data-sources/fr.allocine.py.spec
+share/apps/tellico/data-sources/ministerio_de_cultura.py
+share/apps/tellico/data-sources/ministerio_de_cultura.py.spec
 share/apps/tellico/dvd-logo.png
 share/apps/tellico/entry-templates/Album.xsl
 share/apps/tellico/entry-templates/Compact.xsl
 share/apps/tellico/entry-templates/Default.xsl
 share/apps/tellico/entry-templates/Fancy.xsl
 share/apps/tellico/entry-templates/Video.xsl
+share/apps/tellico/isbndb2tellico.xsl
 share/apps/tellico/mods2tellico.xsl
 share/apps/tellico/pics/README.icons
 share/apps/tellico/pics/README.quesnay
@@ -35,6 +42,8 @@ share/apps/tellico/pics/nocover_game.png
 share/apps/tellico/pics/nocover_video.png
 share/apps/tellico/pics/person-open.png
 share/apps/tellico/pics/person.png
+share/apps/tellico/pics/script.png
+share/apps/tellico/pics/script.svg
 share/apps/tellico/pics/stamp.png
 share/apps/tellico/pics/star_off.png
 share/apps/tellico/pics/star_on.png
@@ -76,6 +85,8 @@ share/apps/tellico/tellico2onix.xsl
 share/apps/tellico/tellicoui.rc
 share/apps/tellico/vhs-logo.png
 share/apps/tellico/yahoo2tellico.xsl
+share/apps/tellico/z3950-servers.cfg
+share/config.kcfg/tellico_config.kcfg
 share/doc/HTML/en/tellico/advanced.docbook
 share/doc/HTML/en/tellico/amazon-options.png
 share/doc/HTML/en/tellico/common
@@ -208,6 +219,7 @@ share/mimelnk/application/x-tellico.desktop
 @dirrm share/apps/tellico/report-templates
 @dirrm share/apps/tellico/pics
 @dirrm share/apps/tellico/entry-templates
+@dirrm share/apps/tellico/data-sources
 @dirrm share/apps/tellico
 @dirrmtry share/apps/kconf_update
 @dirrmtry share/applications/kde

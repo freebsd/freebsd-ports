@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_PYTHON=	yes
 
 CONFIGURE_ARGS+=	--disable-cdtext
 
