@@ -28,8 +28,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 
-NO_CDROM=	"License doesn\'t allow distribution"
-NO_PACKAGE=	"License doesn\'t allow binary distributions"
+RESTRICTED=	"License doesn\'t allow distribution"
 
 TARGET_DIR=	${JAVASHAREDIR}/${PORTNAME}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///} JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///}
