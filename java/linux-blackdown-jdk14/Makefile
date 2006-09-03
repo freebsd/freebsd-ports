@@ -37,8 +37,7 @@ JDK_VER_SUFFIX=	-02
 DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/i386/02
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_CDROM=	"License doesn\'t allow distribution with fee"
-NO_PACKAGE=	"License doesn\'t allow binary distributions"
+RESTRICTED=	"License doesn\'t allow binary distribution or distribution with fee"
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
