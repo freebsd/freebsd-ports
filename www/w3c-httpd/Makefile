@@ -16,6 +16,8 @@ COMMENT=	WWW server from the W3 Consortium (W3C)
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/wais:build
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 NO_WRKSUBDIR=	yes
 WWW_ROOT?=	${PREFIX}/www
