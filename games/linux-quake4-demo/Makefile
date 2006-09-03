@@ -20,6 +20,8 @@ EXTRACT_SUFX=	.run
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake 4 for Linux Demo
 
+BROKEN=		Unfetchable
+
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
 ONLY_FOR_ARCHS=	i386 amd64
