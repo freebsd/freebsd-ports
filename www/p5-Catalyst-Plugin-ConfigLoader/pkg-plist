@@ -1,10 +1,3 @@
 %%SITE_PERL%%/Catalyst/Plugin/ConfigLoader.pm
-%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/General.pm
-%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/INI.pm
-%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/JSON.pm
-%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/Perl.pm
-%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/XML.pm
-%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/YAML.pm
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/ConfigLoader
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst
