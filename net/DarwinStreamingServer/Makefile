@@ -20,10 +20,6 @@ COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 
-RESTRICTED=	"See http://www.opensource.apple.com/apsl/"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
-
 USE_RC_SUBR=	streamingadminserver.sh darwin_streaming_server.sh
 SUB_LIST+=	PERL=${PERL}
 
