@@ -46,8 +46,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 		analog:${PORTSDIR}/www/analog
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 
-NO_PACKAGE=	Conflicting dependencies (apache 1.x vs 2.x)
-
 USE_GNOME=	glib20
 USE_PHP=	pcre session xml
 USE_GMAKE=	yes
