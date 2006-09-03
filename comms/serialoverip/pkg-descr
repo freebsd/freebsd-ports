@@ -1,0 +1,8 @@
+SerialOverIP Version 1.0, 8 Mar 2002
+
+Tool for transport of serial interfaces over UDP/IP.
+Useful for accessing a distant serial device by a local Windoze
+program.
+
+WWW: http://www.sourceforge.net/projects/serialoverip/
+Author: Stefan-Florin Nicola <sten@fx.ro>
