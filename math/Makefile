@@ -154,6 +154,7 @@
     SUBDIR += ntl
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += octave
+    SUBDIR += octave-devel
     SUBDIR += octave-forge
     SUBDIR += oleo
     SUBDIR += orpie

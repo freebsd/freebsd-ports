@@ -7702,6 +7702,7 @@ ocamlweb	ports/devel/ocamlweb
 ocp		ports/audio/ocp
 ocrad		ports/graphics/ocrad
 octave		ports/math/octave
+octave-devel	ports/math/octave-devel
 octave-forge	ports/math/octave-forge
 ode		ports/devel/ode
 ode-devel	ports/devel/ode-devel
