@@ -17,6 +17,10 @@ BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
 .endif
 
+BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
+
 USE_PERL5=	yes
 MANCOMPRESSED=	no
 MAN1=		saint.1
