@@ -398,7 +398,6 @@
     SUBDIR += mozex
     SUBDIR += mozilla
     SUBDIR += mozilla-bonobo
-    SUBDIR += mozilla-devel
     SUBDIR += mozplugger
     SUBDIR += mplayer-plugin
     SUBDIR += myfaces
