@@ -214,6 +214,7 @@
     SUBDIR += frikqcc
     SUBDIR += frotz
     SUBDIR += frozenbubble
+    SUBDIR += fteqw
     SUBDIR += ftjava
     SUBDIR += fuhquake
     SUBDIR += fwp
