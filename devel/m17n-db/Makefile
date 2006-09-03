@@ -7,6 +7,7 @@
 
 PORTNAME=	m17n-db
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
@@ -17,10 +18,6 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for the m17n library
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
@@ -35,5 +32,10 @@ CHARMAPSDIR=	glibc-${GLIBC_VERSION}/localedata/charmaps
 
 post-extract:
 	cd ${WRKSRC}; ${TAR} xjf ${DISTDIR}/${GLIBC_DISTFILE} ${CHARMAPSDIR}
+
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
