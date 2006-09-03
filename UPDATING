@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20060902:
+  AFFECTS: users of japanese/uim-anthy and japanese/uim-canna
+  AUTHOR: nobutaka@freebsd.org
+
+  Input modes for uim-anthy and uim-canna are reorganized since version 1.2.0.
+  Please re-configure the following keybindings with uim-pref.
+    - off key
+    - convert to halfwidth alphanumeric key
+    - convert to fullwidth alphanumeric key
+    - convert to halfwidth katakana key
+    - halfwidth katakana mode key
 
 20060902:
   AFFECTS: users of net-p2p/linuxdcpp
