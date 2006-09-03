@@ -10,6 +10,19 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20060903:
+AUTHOR:	sat@FreeBSD.org
+The following functional changes were made to bsd.sites.mk:
+
+  * MASTER_SITES variable can now look like MACRO1/subdir1 MACRO2/subdir2, and
+    be expanded in a way that you expect it to, that is apply different subdirs
+    to different sites. You can safely replace ${M_S_FOO:S/%SUBDIR%/bar/} with
+    FOO/bar.
+
+  * If M_S_SUBDIR is unset, a macro in M_S won't set it anymore, but rather
+    substitute %SUBDIR% all by itself. Now it's possible to use macros with
+    different default subdirs and they will expand in a proper way.
+
 20060805:
 AUTHOR:	sat@FreeBSD.org
 The following functional changes were made to bsd.sites.mk:
