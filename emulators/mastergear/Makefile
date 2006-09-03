@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Master System and Game Gear emulator for X
 
+LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
+
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -32,11 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/MG.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000 || ${OSVERSION} > 600000
-IGNORE=	Does not run, wants libc.so.5
-.endif
-
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
