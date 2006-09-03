@@ -14871,6 +14871,7 @@ xdemineur	ports/games/xdemineur
 xdesktopwaves	ports/games/xdesktopwaves
 xdeview		ports/converters/xdeview
 xdf		ports/misc/xdf
+xdg-utils	ports/devel/xdg-utils
 xdgagrab	ports/graphics/xdgagrab
 xdialog		ports/x11/xdialog
 xdigger		ports/games/xdigger
