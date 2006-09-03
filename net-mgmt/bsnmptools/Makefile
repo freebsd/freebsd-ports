@@ -8,7 +8,7 @@
 PORTNAME=	bsnmptools
 PORTVERSION=	0.0.20060818
 DISTVERSION=	20060818-01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ringlet.net/~shteryana/snmp/ CSME
 EXTRACT_SUFX=	.tar
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	SHLIB_MAJOR=0 INCLUDEDIR=${PREFIX}/include LIBDIR=${PREFIX}/lib \
 		MANDIR=${MANPREFIX}/man/man NO_MANCOMPRESS=yes BINDIR=${PREFIX}/bin \
-		MK_PROFILE="no"
+		MK_PROFILE=no NO_PROFILE=yes
 CFLAGS=		-I${WRKSRC}/lib -L${WRKSRC}/lib
 PLIST_FILES=	${BIN_FILES:S,^,bin/,} include/${PORTNAME}.h include/bsnmptc.h \
 		lib/lib${PORTNAME}.a lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0
