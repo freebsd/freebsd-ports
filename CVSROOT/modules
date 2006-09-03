@@ -13018,6 +13018,7 @@ ser		ports/net/ser
 serendipity	ports/www/serendipity
 serendipity-devel	ports/www/serendipity-devel
 serialmail	ports/mail/serialmail
+serialoverip	ports/comms/serialoverip
 serpentine	ports/sysutils/serpentine
 serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
