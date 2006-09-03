@@ -23,9 +23,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_VENDOR=	${_JAVA_VENDOR_LIST:Nsun}	# the port is broken with Sun JDKs
 NO_BUILD=	yes
-NO_PACKAGE=	Redistribution is not permitted
-NO_CDROM=	${NO_PACKAGE}
-RESTRICTED=	${NO_PACKAGE}
+RESTRICTED=	Redistribution is not permitted
 
 EDITION=	CE
 .if defined(WITH_EDITION)
