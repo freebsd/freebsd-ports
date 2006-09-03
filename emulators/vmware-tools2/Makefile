@@ -18,6 +18,10 @@ DISTNAME=	tools-for-freebsd-${BUILD_VER}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=VMware tools for guest OS (for VMware 2.x, FreeBSD version)
 
+BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
+
 WRKSRC=		${WRKDIR}/vmware-freebsd-tools
 
 ONLY_FOR_ARCHS=	i386
