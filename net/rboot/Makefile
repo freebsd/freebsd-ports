@@ -14,6 +14,7 @@ MAINTAINER=	m.butkus@tu-bs.de
 COMMENT=	A remote-boot solution for M$$ operating systems
 
 NO_PACKAGE=	"this port creates devices"
+BROKEN=		Unfetchable
 
 MAN7=		rboot.7
 MAN8=		netboot.8
