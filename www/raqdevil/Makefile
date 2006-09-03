@@ -1,6 +1,6 @@
 # New ports collection makefile for:    raqdevil
 # Date created:         06 September 2005
-# Whom:                 Devon H. O'Dell <dodell@ixsystems.com>
+# Whom:                 Devon H. O'Dell <devon.odell@coyotepoint.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.raqdevil.com/
 
-MAINTAINER=	dodell@iXsystems.com
+MAINTAINER=	devon.odell@coyotepoint.com
 COMMENT=	A port of the Sun Cobalt RaQ550 software to FreeBSD
 
 # The explicit dependencies on p5-Net, p5-Digest, p5-Authen-SASL,
