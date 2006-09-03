@@ -41,6 +41,8 @@ BROKEN=	Does not compile on ${ARCH}
 .else
 BROKEN=	leaves files behind on deinstall
 .endif
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
 
 .if ${OSVERSION} < 502000
 IGNORE=		is not for FreeBSD versions < 502000
