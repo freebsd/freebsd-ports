@@ -47,6 +47,10 @@ OPTIONS=	DEBUG	"Build with debug symbols"			off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 601104
+BROKEN=		Does not compile on FreeBSD >= 6.x
+.endif
+
 #.if !exists(${SYSDIR})
 #IGNORE=		Could not find the kernel sources in ${SYSDIR}. Please define SYSDIR
 #.endif
