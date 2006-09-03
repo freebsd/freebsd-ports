@@ -31,6 +31,10 @@ WITHOUT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700019
+BROKEN=		does not compile with OpenSSL 0.9.8b
+.endif
+
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME=gtk12
 USE_PERL5=yes
