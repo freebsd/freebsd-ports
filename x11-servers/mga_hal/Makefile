@@ -14,7 +14,6 @@ DISTNAME=	mgadriver-${PORTVERSION}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Module for additional features with X.Org/XFree86 Matrox driver
 
-NO_PACKAGE=	"Matrox drivers may not be distributed"
 RESTRICTED=	"Matrox drivers may not be distributed."
 
 ONLY_FOR_ARCHS= i386
