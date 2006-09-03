@@ -17,8 +17,6 @@ MAINTAINER=     hrs@FreeBSD.org
 COMMENT=        EPSON TrueTypeFontVer.3.0
 
 RESTRICTED=	"Redistribution not permitted; only usable with EPSON printer."
-NO_CDROM=       Redistribution not permitted in any form
-NO_PACKAGE=     Redistribution not permitted in any form
 
 EPSONFONTS=	ttf30
 USE_X_PREFIX=	yes
