@@ -60,8 +60,7 @@ IGNORE="You must manualy fetch ${fpdist} from http://www.rtr.com.  Place the fil
 .endif
 .endfor
 
-NO_CDROM=	"Redistribution is not permitted"
-RESTRICTED=	${NO_CDROM}
+RESTRICTED=	"Redistribution is not permitted"
 
 TODAY!= /bin/date -u "+%Y%m%d"
 
