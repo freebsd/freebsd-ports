@@ -15,8 +15,6 @@ DISTNAME=	mcitymicrogui-default
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	The microGUI Sawfish theme for Metacity
 
-NO_PACKAGE=	${REASON}
-NO_CDROM=	${REASON}
 RESTRICTED=	${REASON}
 
 WRKSRC=		${WRKDIR}/microGUI
