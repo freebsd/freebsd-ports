@@ -8,9 +8,10 @@
 PORTNAME=	vstr
 PORTVERSION=	1.0.15
 CATEGORIES=	devel
-MASTER_SITES=	http://www.and.org/vstr/1.0.15/ \
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://sce-tindy.tecnik93.com/FreeBSD/others_ports/${PORTNAME}/ \
+		http://www.and.org/vstr/1.0.15/ \
 		http://www.and.org/vstr/latest/	\
-		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose string library for C
