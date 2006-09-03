@@ -28,6 +28,10 @@ MANCOMPRESSED=	maybe
 BROKEN=		Currently does not support -CURRENT
 .endif
 
+.if ${OSVERSION} >= 601104
+BROKEN=		Does not compile on FreeBSD >= 6.x
+.endif
+
 .if ${OSVERSION} <  600000
 IGNORE=		not supported on systems prior to 6.0
 .endif
