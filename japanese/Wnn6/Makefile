@@ -22,7 +22,6 @@ MOUNT_PT?=	/cdrom
 MOUNT_DEV?=	/dev/acd0c
 
 RESTRICTED=	"You should buy from Omron Software Co., Ltd."
-NO_CDROM=	"You should buy from Omron Software Co., Ltd."
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 
