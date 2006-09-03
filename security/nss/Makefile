@@ -58,16 +58,6 @@ test:
 		echo "All tests succeeded. Good news.";	\
 	fi
 
-#.if defined(PARALLEL_PACKAGE_BUILD) && ${OSVERSION} >= 500000
-#post-build: test
-#.else
-post-build:
-	#
-	# Please, consider running ``make test'' now and fixing any problems
-	# and/or reporting them to ${MAINTAINER} . Thanks!
-	#
-#.endif
-
 do-install:
 	${MKDIR} ${PREFIX}/include/nss
 	${TAR} -C ${DIST}/public --dereference -cf - . | \
