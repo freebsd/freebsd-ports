@@ -8,7 +8,9 @@
 PORTNAME=	code2000
 PORTVERSION=	1.16
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://home.att.net/~jameskass/
+#MASTER_SITES=	http://home.att.net/~jameskass/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	thierry/${PORTNAME}/v${PORTVERSION}
 DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX:U}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +20,6 @@ COMMENT=	Shareware demo Unicode TrueType font
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
 RESTRICTED=	Only unmodified original package can be distributed
-BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
