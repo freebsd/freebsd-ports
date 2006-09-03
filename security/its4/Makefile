@@ -22,7 +22,7 @@ MAN1=		its4.1
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=	"The source to this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the source manually at: http://www.cigital.com/its4/download.html  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build"
 .endif
 

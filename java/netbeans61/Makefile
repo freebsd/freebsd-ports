@@ -26,7 +26,7 @@ DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?type=5.0&p=1&a=bs
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 

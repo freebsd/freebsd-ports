@@ -25,7 +25,7 @@ RESTRICTED=	"Sun has a funky license for this software; no commercial use"
 
 WRKSRC=		${WRKDIR}/JSDK2.0
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
+.if defined(BATCH)
 IGNORE=		"Should be fetched manually"
 .endif
 

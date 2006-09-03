@@ -37,7 +37,7 @@ JARFILES=	mail.jar imap.jar mailapi.jar pop3.jar smtp.jar
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		You must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
 .endif
 
