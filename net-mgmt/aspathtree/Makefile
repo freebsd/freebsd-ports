@@ -25,6 +25,7 @@ RESTRICTED=		"not redistributable, license agreement required"
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		"You need to read the license and disclaimer on http://carmen.ipv6.tilab.com/cgi-bin/download.pl?pkg=ASpath-tree and download ${DISTFILES} into ${DISTDIR}"
 .endif
+BROKEN=		Unfetchable
 
 NO_BUILD=	yes
 USE_PERL5=	yes
