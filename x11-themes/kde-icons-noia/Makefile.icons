@@ -21,8 +21,6 @@ PORT_SHAREDIR?=	${DISTNAME}
 RESTRICTED?=    It may contain iconic, visual, graphical or other\
 		elements that may not be distributed without the\
 		consent of either the trademark or the patent holder
-
-NO_PACKAGE?=	${RESTRICTED}
 .endif
 
 INDEX_FILES=	index.desktop index.theme
