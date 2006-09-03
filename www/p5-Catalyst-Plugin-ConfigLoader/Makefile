@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -17,18 +17,12 @@ COMMENT=	Load config files of various types
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.02:${PORTSDIR}/devel/p5-Data-Visitor \
-		p5-Module-Pluggable>=3.01:${PORTSDIR}/devel/p5-Module-Pluggable
+		p5-Config-Any>=0.04:${PORTSDIR}/devel/p5-Config-Any
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
-MAN3=	Catalyst::Plugin::ConfigLoader.3 \
-	Catalyst::Plugin::ConfigLoader::General.3 \
-	Catalyst::Plugin::ConfigLoader::INI.3 \
-	Catalyst::Plugin::ConfigLoader::JSON.3 \
-	Catalyst::Plugin::ConfigLoader::Perl.3 \
-	Catalyst::Plugin::ConfigLoader::XML.3 \
-	Catalyst::Plugin::ConfigLoader::YAML.3
+MAN3=	Catalyst::Plugin::ConfigLoader.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500800
