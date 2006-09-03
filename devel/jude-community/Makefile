@@ -24,7 +24,6 @@ JAVA_OS=	native
 NO_BUILD=	yes
 
 RESTRICTED=	See http://jude.change-vision.com/jude-web/notes/ProductLicenseAgreement.html
-NO_CDROM=	${RESTRICTED}
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S!-!_!}
 
