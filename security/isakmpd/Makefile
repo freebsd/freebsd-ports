@@ -34,9 +34,14 @@ MAN5=		isakmpd.conf.5 isakmpd.policy.5
 MAN8=		certpatch.8 isakmpd.8
 MANCOMPRESSED=	yes
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 700019
+BROKEN=		is not buildable with OpenSSL 0.9.8b
+.endif
+
 post-patch:
 .for f in conf.h ike_auth.c isakmpd.8 isakmpd.conf.5 isakmpd.policy.5 policy.h
 	${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/${f}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
