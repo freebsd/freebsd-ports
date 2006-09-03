@@ -2586,6 +2586,7 @@ lib/R/library/cluster/R-ex/agnes.R
 lib/R/library/cluster/R-ex/agriculture.R
 lib/R/library/cluster/R-ex/animals.R
 lib/R/library/cluster/R-ex/bannerplot.R
+lib/R/library/cluster/R-ex/chorSub.R
 lib/R/library/cluster/R-ex/clara.R
 lib/R/library/cluster/R-ex/clusplot.default.R
 lib/R/library/cluster/R-ex/clusplot.partition.R
@@ -2600,6 +2601,7 @@ lib/R/library/cluster/R-ex/lower.to.upper.tri.inds.R
 lib/R/library/cluster/R-ex/mona.R
 lib/R/library/cluster/R-ex/pam.R
 lib/R/library/cluster/R-ex/pam.object.R
+lib/R/library/cluster/R-ex/plantTraits.R
 lib/R/library/cluster/R-ex/plot.agnes.R
 lib/R/library/cluster/R-ex/plot.diana.R
 lib/R/library/cluster/R-ex/plot.partition.R
@@ -2625,6 +2627,7 @@ lib/R/library/cluster/help/agnes.object
 lib/R/library/cluster/help/agriculture
 lib/R/library/cluster/help/animals
 lib/R/library/cluster/help/bannerplot
+lib/R/library/cluster/help/chorSub
 lib/R/library/cluster/help/clara
 lib/R/library/cluster/help/clara.object
 lib/R/library/cluster/help/clusplot
@@ -2646,6 +2649,7 @@ lib/R/library/cluster/help/mona.object
 lib/R/library/cluster/help/pam
 lib/R/library/cluster/help/pam.object
 lib/R/library/cluster/help/partition.object
+lib/R/library/cluster/help/plantTraits
 lib/R/library/cluster/help/plot.agnes
 lib/R/library/cluster/help/plot.diana
 lib/R/library/cluster/help/plot.mona
@@ -2679,6 +2683,7 @@ lib/R/library/cluster/html/agnes.object.html
 lib/R/library/cluster/html/agriculture.html
 lib/R/library/cluster/html/animals.html
 lib/R/library/cluster/html/bannerplot.html
+lib/R/library/cluster/html/chorSub.html
 lib/R/library/cluster/html/clara.html
 lib/R/library/cluster/html/clara.object.html
 lib/R/library/cluster/html/clusplot.default.html
@@ -2700,6 +2705,7 @@ lib/R/library/cluster/html/mona.object.html
 lib/R/library/cluster/html/pam.html
 lib/R/library/cluster/html/pam.object.html
 lib/R/library/cluster/html/partition.object.html
+lib/R/library/cluster/html/plantTraits.html
 lib/R/library/cluster/html/plot.agnes.html
 lib/R/library/cluster/html/plot.diana.html
 lib/R/library/cluster/html/plot.mona.html
@@ -2732,6 +2738,7 @@ lib/R/library/cluster/latex/agnes.tex
 lib/R/library/cluster/latex/agriculture.tex
 lib/R/library/cluster/latex/animals.tex
 lib/R/library/cluster/latex/bannerplot.tex
+lib/R/library/cluster/latex/chorSub.tex
 lib/R/library/cluster/latex/clara.object.tex
 lib/R/library/cluster/latex/clara.tex
 lib/R/library/cluster/latex/clusplot.default.tex
@@ -2753,6 +2760,7 @@ lib/R/library/cluster/latex/mona.tex
 lib/R/library/cluster/latex/pam.object.tex
 lib/R/library/cluster/latex/pam.tex
 lib/R/library/cluster/latex/partition.object.tex
+lib/R/library/cluster/latex/plantTraits.tex
 lib/R/library/cluster/latex/plot.agnes.tex
 lib/R/library/cluster/latex/plot.diana.tex
 lib/R/library/cluster/latex/plot.mona.tex
@@ -4542,6 +4550,7 @@ lib/R/library/mgcv/Meta/package.rds
 lib/R/library/mgcv/NAMESPACE
 lib/R/library/mgcv/R-ex/Predict.matrix.R
 lib/R/library/mgcv/R-ex/anova.gam.R
+lib/R/library/mgcv/R-ex/choose.k.R
 lib/R/library/mgcv/R-ex/exclude.too.far.R
 lib/R/library/mgcv/R-ex/extract.lme.cov.R
 lib/R/library/mgcv/R-ex/fixDependence.R
@@ -4583,6 +4592,7 @@ lib/R/library/mgcv/R/mgcv.rdx
 lib/R/library/mgcv/help/AnIndex
 lib/R/library/mgcv/help/Predict.matrix
 lib/R/library/mgcv/help/anova.gam
+lib/R/library/mgcv/help/choose.k
 lib/R/library/mgcv/help/exclude.too.far
 lib/R/library/mgcv/help/extract.lme.cov
 lib/R/library/mgcv/help/fix.family.link
@@ -4644,6 +4654,7 @@ lib/R/library/mgcv/help/vis.gam
 lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/Predict.matrix.html
 lib/R/library/mgcv/html/anova.gam.html
+lib/R/library/mgcv/html/choose.k.html
 lib/R/library/mgcv/html/exclude.too.far.html
 lib/R/library/mgcv/html/extract.lme.cov.html
 lib/R/library/mgcv/html/fix.family.link.html
@@ -4704,6 +4715,7 @@ lib/R/library/mgcv/html/vcov.gam.html
 lib/R/library/mgcv/html/vis.gam.html
 lib/R/library/mgcv/latex/Predict.matrix.tex
 lib/R/library/mgcv/latex/anova.gam.tex
+lib/R/library/mgcv/latex/choose.k.tex
 lib/R/library/mgcv/latex/exclude.too.far.tex
 lib/R/library/mgcv/latex/extract.lme.cov.tex
 lib/R/library/mgcv/latex/fix.family.link.tex
@@ -4768,6 +4780,7 @@ lib/R/library/nlme/CONTENTS
 lib/R/library/nlme/COPYING
 lib/R/library/nlme/DESCRIPTION
 lib/R/library/nlme/INDEX
+lib/R/library/nlme/LICENCE
 lib/R/library/nlme/Meta/Rd.rds
 lib/R/library/nlme/Meta/data.rds
 lib/R/library/nlme/Meta/hsearch.rds
