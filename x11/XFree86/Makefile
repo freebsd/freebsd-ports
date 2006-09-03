@@ -19,8 +19,10 @@ DISTFILES+=	X336src-3.tgz
 PATCH_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,jmz,g}
 PATCHFILES=	3.3.6-3.3.6a.diffs.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11R6.3/XFree86 core distribution
+DEPRECATED=	Obsolete version, use xorg or XFree86-4 instead
+EXPIRATION_DATE=2006-12-01
 
 LATEST_LINK=	XFree86-3
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
