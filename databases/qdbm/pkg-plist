@@ -12,6 +12,7 @@ bin/hvtest
 bin/odidx
 bin/odmgr
 bin/odtest
+bin/qmttest
 bin/rlmgr
 bin/rltest
 bin/vlmgr
@@ -28,5 +29,5 @@ include/vista.h
 lib/libqdbm.a
 lib/libqdbm.so
 lib/libqdbm.so.14
-lib/libqdbm.so.14.4.0
+lib/libqdbm.so.14.6.0
 libdata/pkgconfig/qdbm.pc
