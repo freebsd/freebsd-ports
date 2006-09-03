@@ -20,19 +20,19 @@ gnu patch is gpatch for FreeBSD.
  	$base_cmd = 'sed \'s/^\(@.*\)\r$/\1/\' | ' . $base_cmd;
      }
 
---- patches/src680/apply.orig	Wed Jun 28 02:03:56 2006
-+++ patches/src680/apply	Sun Jul  2 21:46:56 2006
-@@ -73,6 +73,8 @@
- translate-org-za-win32: translate-org-za-common, translate-org-za-splash, Win32Common, Common
+--- patches/src680/apply.orig	Thu Aug 31 02:44:39 2006
++++ patches/src680/apply	Sat Sep  2 14:50:24 2006
+@@ -80,6 +80,8 @@
  # Novell
  NovellWin32: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver
+ NovellWin32ISO: Win32, NovellOnly, NovellOnlyWin32, Lockdown, CalcSolver
 +# FreeBSD
-+FreeBSD : LinuxCommon, NotDebian
- 
++FreeBSD : LinuxCommon, NotDebian, Lockdown, CalcSolver
  # -------- [ Tag [ >= <tag> etc. ], ] patch sets --------
  
-@@ -748,7 +750,7 @@
- autodoc-add-missing-stdio-h.diff
+ 
+@@ -727,7 +729,7 @@
+ autodoc-add-missing-stdio-h.diff, rengelha
  
  # do not pack any potential .orig files with ppds
 -psprint_config-no-orig.diff, jholesov
@@ -40,7 +40,7 @@ gnu patch is gpatch for FreeBSD.
  
  # changes the SDK gid module name to gid_Module_Root_SDK, so the generated list
  # of files does not conflict with the main package, i#64802
-@@ -844,15 +846,15 @@
+@@ -821,7 +823,7 @@
  buildfix-gcc41-pointers-icu.diff, pmladek
  
  # Don't re-define NULL
@@ -48,48 +48,16 @@ gnu patch is gpatch for FreeBSD.
 +# solar-dont-define-NULL.diff, i#66666, jholesov
  
  # Fix warnings that appear on x86-64 & are considered dangerous
- # (is in m173)
--sixtyfour-warnings-basic.diff, i#66686, jholesov
-+# sixtyfour-warnings-basic.diff, i#66686, jholesov
- 
- # Fix missing sentinel
--sixtyfour-warnings-fpicker.diff, i#66686, jholesov
--sixtyfour-warnings-vcl.diff, i#66686, jholesov
-+# sixtyfour-warnings-fpicker.diff, i#66686, jholesov
-+# sixtyfour-warnings-vcl.diff, i#66686, jholesov
- 
- # Fix warnings that appear on x86-64 & are considered dangerous
- # FIXME file up-stream
-@@ -869,7 +871,7 @@
- warning-uninitialized-variables-binfilter.diff
- 
- # 64bit clean binfilter
--cws-bfsixtyfour.diff, i#64815, jholesov
-+# cws-bfsixtyfour.diff, i#64815, jholesov
- 
- # Fix warnings that appear on x86-64 & are considered dangerous
  # FIXME file up-stream
 
---- patches/src680/speed-ooqstart-x11-only.diff.orig	Fri Mar 10 01:56:53 2006
-+++ patches/src680/speed-ooqstart-x11-only.diff	Mon Jul  3 22:30:09 2006
-@@ -67,7 +67,7 @@
- +#include <X11/Xatom.h>
- +#include <X11/Xutil.h>
+--- patches/gstreamer/gstreamer-avmedia-source-gstreamer.diff~	Fri Sep  1 03:11:26 2006
++++ patches/gstreamer/gstreamer-avmedia-source-gstreamer.diff	Sun Sep  3 20:57:30 2006
+@@ -1162,7 +1162,7 @@
+ +void SAL_CALL Player::setVolumeDB( sal_Int16 nVolumeDB ) 
+ +    throw (uno::RuntimeException)
+ +{
+-+    mnUnmutedVolume = pow10 ( nVolumeDB / 20.0 );
+++    mnUnmutedVolume = pow ( 10.0, nVolumeDB / 20.0 );
  +
--+#include <endian.h>
-++#include "osl/endian.h"
- +#include <fcntl.h>
- +#include <stdint.h>
- +#include <stdio.h>
-@@ -235,9 +235,9 @@
- +		int bytes_per_line = image->bytes_per_line;
- +		int bpp = image->bits_per_pixel;
- +		int byte_order = image->byte_order; 
--+		int machine_byte_order = ( __BYTE_ORDER == __LITTLE_ENDIAN )? LSBFirst: MSBFirst;
-++		int machine_byte_order = ( _BYTE_ORDER == _LITTLE_ENDIAN )? LSBFirst: MSBFirst;
+ +    OSL_TRACE( "set volume: %d gst volume: %lf", nVolumeDB, mnUnmutedVolume );
  +
--+		if ( __BYTE_ORDER != __LITTLE_ENDIAN && __BYTE_ORDER != __BIG_ENDIAN )
-++		if ( _BYTE_ORDER != _LITTLE_ENDIAN && _BYTE_ORDER != _BIG_ENDIAN )
- +		{
- +			fprintf( stderr, "Unsupported machine endianity.\n" );
- +			XFreeGC( display, pixmap_gc );

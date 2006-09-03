@@ -1,0 +1,21 @@
+--- config_office/set_soenv.in~	Sat Sep  2 15:17:15 2006
++++ config_office/set_soenv.in	Sat Sep  2 21:22:09 2006
+@@ -1258,7 +1258,8 @@
+                         $L.$JRETOOLKITDIR.
+                         $L.$JRETHREADDIR.
+                         $L_STLPORT_LIB.
+-                        $L.$XLIB;
++                        $L.$XLIB.
++                        $L.$USR_LOCAL.$LIB;
+ }
+ elsif ($platform =~ m/cygwin/)
+ {  $SOLARLIB          = $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
+@@ -1347,7 +1348,7 @@
+ 	}
+     #The tail, if needed
+     if ($platform =~ m/linux-gnu|freebsd|netbsd/)
+-    {  $SOLARINC  .= $I.$XINC;
++    {  $SOLARINC  .= $I.$XINC.$I.$USR_LOCAL.$INCLUDE;
+     }
+     elsif ($platform =~ m/osf1/)
+     {  $SOLARINC  .= $I.$XINC.

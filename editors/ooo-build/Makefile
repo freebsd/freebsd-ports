@@ -5,8 +5,7 @@
 
 PORTNAME=	ooo-build
 PORTVERSION=	${OOOBUILD_VERSION}
-PORTREVISION=	1
-MASTER_SITES+=	http://www.go-ooo.org/packages/OOC680/ \
+MASTER_SITES+=	http://www.go-ooo.org/packages/OOD680/ \
 		http://www.go-ooo.org/packages/SRC680/ \
 		http://www.openclipart.org/downloads/0.18/:openclipart
 DISTFILES+=	${OOOBUILD_SOURCE} \
@@ -31,9 +30,10 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOOBUILD_VERSION=2.0.3.0
-OOOBUILD_TAG=ooc680-m7
-OOOBUILD=	ooo-build-${OOOBUILD_VERSION}
+OOOBUILD_VERSION=2.0.4.m2
+OOOBUILD_TAG=ood680-m2
+#OOOBUILD=	ooo-build-${OOOBUILD_VERSION}
+OOOBUILD=	ooo-build-${OOOBUILD_TAG}
 OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
 OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
@@ -44,8 +44,15 @@ OOO_PATCHDIR=src680
 MD5_FILE=      ${.CURDIR}/distinfo
 USE_AUTOTOOLS=  autoconf:259
 
-CONFIGURE_ARGS+=	--with-system-cairo --disable-access #--with-system-mdbtools
+CONFIGURE_ARGS+=	--enable-cairo --with-system-cairo --with-system-xrender-headers=yes #i62713#
+CONFIGURE_ARGS+=	--disable-access #--with-system-mdbtools
+#for lpsolve...
+CONFIGURE_ARGS+=	--with-system-lpsolve
+CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS} -L${PREFIX}/lib"
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -L${PREFIX}/lib"
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include"
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	lpsolve55.1:${PORTSDIR}/math/lp_solve
 #LIB_DEPENDS+=	mdb:${PORTSDIR}/databases/mdbtools
 
 INSTALLATION_BASEDIR=	ooo-build-${PORTVERSION}
@@ -53,6 +60,10 @@ EXECBASE=		ooo-build-${PORTVERSION}
 DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER=		${OSREL:C/\.//g}
 PACKAGE_BASENAME=	ooo-build-${PORTVERSION}-${OPSYS}${SIMPLEOSVER}Intel
+
+post-patch:
+	#just for lpsolve...
+	@cd ${WRKSRC}             ; ${PATCH} < ${.CURDIR}/files/set_soenv-patch
 
 pre-configure:
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${OOOBUILD_SOURCE} | ${TAR} xfz -
