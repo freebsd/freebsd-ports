@@ -25,5 +25,13 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	does not compile on FreeBSD 4.x
+.endif
+
+.include <bsd.port.post.mk>
+
