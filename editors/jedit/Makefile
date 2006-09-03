@@ -41,10 +41,6 @@ do-install:
 		${JAVA} installer.Install text
 	@${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${PREFIX}/bin/jedit
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	hang
-.endif
-
 post-install:
 	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
