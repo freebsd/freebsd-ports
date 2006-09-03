@@ -25,7 +25,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/idea.c
 RESTRICTED=	IDEA is Patented in the USA and many European countries
-NO_PACKAGE=	${RESTRICTED}
 
 NO_WRKSUBDIR=	yes
 CFLAGS+=	-shared -fPIC -DIS_MODULE
