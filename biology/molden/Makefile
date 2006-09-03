@@ -21,9 +21,7 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_XLIB=	yes
 
-RESTRICTED=	"free for academic, non profit usage;"
-NO_CDROM=	"Do not re-distribute source and executable."
-NO_PACKAGE=	"Though the source codes are accessible, the author is hoping for distribution in an original form."
+RESTRICTED=	"free for academic, non profit usage; do not re-distribute source and executable."
 MAKEFILE=	${WRKSRC}/makefile
 
 .include <bsd.port.pre.mk>
