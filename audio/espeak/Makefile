@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	espeak
-PORTVERSION=	1.07
+PORTVERSION=	1.13
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +30,7 @@ USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
 
-FIND_DIRS=	data espeak-data
+FIND_DIRS=	espeak-data
 FIND_DOCS=	docs
 
 REPLACE_FILES=	 ${BUILD_WRKSRC}/Makefile  ${BUILD_WRKSRC}/speak.cpp
@@ -51,8 +51,16 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/${FIND_DOCS} && ${FIND} . -type d -exec ${MKDIR} \
+		${DOCSDIR}/{} \;
 	cd ${WRKSRC}/${FIND_DOCS} && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		requires iswdigit(3)
+.endif
+
+.include <bsd.port.post.mk>

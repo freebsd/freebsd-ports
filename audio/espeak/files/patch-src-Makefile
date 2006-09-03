@@ -1,6 +1,5 @@
-$FreeBSD$
---- src/Makefile	Sat Feb 18 11:58:02 2006
-+++ src/Makefile.port	Sat Mar 25 13:29:06 2006
+--- src/Makefile	Thu Apr  6 17:40:54 2006
++++ src/Makefile.port	Sat Sep  2 12:03:47 2006
 @@ -1,13 +1,13 @@
  SRCS=$(wildcard *.cpp)
  OBJS=$(patsubst %.cpp,%.o,$(SRCS))
@@ -9,12 +8,12 @@ $FreeBSD$
  all: speak
  
  .cpp.o:
--	$(CXX) $(CXXFLAGS) -I. -c $<
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -I. -c $<
+-	$(CXX) $(CXXFLAGS) -O2 -Wall -pedantic -I. -c -fno-exceptions $<
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -pedantic -I. -c -fno-exceptions $<
  
  speak: $(OBJS)
 -	$(CXX) -o $@ $(OBJS) $(LIBS)
 +	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS) $(LIBS)
  
  clean:
- 	rm -f *.o
+ 	rm -f *.o *~
