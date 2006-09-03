@@ -20,6 +20,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Steam Enabled Half-Life Dedicated Server with CS and DOD
 
+BROKEN=		Incomplete fetch instructions
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_PERL5=	yes
