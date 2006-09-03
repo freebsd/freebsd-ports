@@ -114,6 +114,13 @@ EOF
 		${ipacctctl} ${iface}_ip_acct:${iface} verbose ${verbose}
 		${ipacctctl} ${iface}_ip_acct:${iface} saveuid ${saveuid}
 		${ipacctctl} ${iface}_ip_acct:${iface} savetime ${savetime}
+
+		eval afterstart_script=\$ng_ipacct_${iface}_afterstart_script
+		if [ -n "${afterstart_script}" ]; then
+		    (set -T
+		    trap 'exit 1' 2
+		    ${afterstart_script} ${iface})
+		fi
 	fi
    done
 }
@@ -146,14 +153,15 @@ stop_cmd()
 	eval checkpoint_script=\$ng_ipacct_${iface}_checkpoint_script
 
 	if ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
-		${sed} "s!%%iface%%!${iface}!g" <<-EOF | ${ngctl_batch}
-$stop_script
-EOF
 	    if [ -n "${checkpoint_script}" ]; then
 		(set -T
 		trap 'exit 1' 2
 		${checkpoint_script})
 	    fi
+
+	    ${sed} "s!%%iface%%!${iface}!g" <<-EOF | ${ngctl_batch}
+$stop_script
+EOF
 
 	    if ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
 		warn "netgraph node '${iface}_ip_acct' did not destroyed!"

@@ -7,13 +7,13 @@
 
 PORTNAME=	ng_ipacct
 PORTVERSION=	20050731
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
+		ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Netgraph IP accounting
-
-BROKEN=		Unfetchable
 
 NO_PACKAGE=	"Depends on kernel"
 
