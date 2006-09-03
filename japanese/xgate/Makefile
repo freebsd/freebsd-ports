@@ -38,8 +38,6 @@ PORTDOCS=	AdminGuide_V3.5.pdf		\
 		xGate32to35migration.pdf
 
 RESTRICTED=	"Commercial license"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 .include <bsd.port.pre.mk>
 
