@@ -536,7 +536,6 @@ assp		ports/mail/assp
 asterisk	ports/net/asterisk
 asterisk-addons	ports/net/asterisk-addons
 asterisk-bristuff	ports/net/asterisk-bristuff
-asterisk-devel	ports/net/asterisk-devel
 asterisk-oh323	ports/net/asterisk-oh323
 astfax		ports/net/astfax
 astime		ports/x11-clocks/astime
