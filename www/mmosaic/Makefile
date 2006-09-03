@@ -20,8 +20,7 @@ COMMENT=	Web browser based on Mosaic, but with many modernizations
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-NO_CDROM="academic, research and internal business purposes only, without a fee"
-NO_PACKAGE=	"must cause any work...derived...to be licensed as a whole...under...this License"
+RESTRICTED=	"academic, research and internal business purposes only, without a fee"
 PLIST=		${WRKDIR}/pkg-plist
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
