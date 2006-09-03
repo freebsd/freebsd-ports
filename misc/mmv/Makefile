@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Move/copy/append/link multiple files with sophisticated wildcard matching
 
-NO_CDROM=	"No redistribution for charge"
-NO_PACKAGE=	"No modification"
+RESTRICTED=	No modification or redistribution for charge
 CFLAGS+=	-DDIRENT
 MAKE_FLAGS=	-e
 MAN1=		mmv.1
