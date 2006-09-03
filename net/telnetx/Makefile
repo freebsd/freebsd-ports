@@ -30,9 +30,15 @@ IGNORE+=". Oh dear, you don\'t have the sources installed neither"
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN=		is not buildable on FreeBSD >= 5.x
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/telnet/telnet ${PREFIX}/bin/telnetx
 	${INSTALL_PROGRAM} ${WRKSRC}/transit/transit ${PREFIX}/bin/transit
 	${INSTALL_MAN} ${WRKSRC}/telnet/telnet.1 ${PREFIX}/man/man1/telnetx.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
