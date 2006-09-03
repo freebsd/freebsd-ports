@@ -20,7 +20,7 @@ lib/libuim-custom.so.2
 lib/libuim.a
 lib/libuim.la
 lib/libuim.so
-lib/libuim.so.2
+lib/libuim.so.3
 lib/uim/plugin/libuim-custom-enabler.a
 lib/uim/plugin/libuim-custom-enabler.la
 lib/uim/plugin/libuim-custom-enabler.so
@@ -101,10 +101,10 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/ja_direct.svg
 %%DATADIR%%/pixmaps/ja_fullwidth_alnum.png
 %%DATADIR%%/pixmaps/ja_fullwidth_alnum.svg
+%%DATADIR%%/pixmaps/ja_halfkana.png
+%%DATADIR%%/pixmaps/ja_halfkana.svg
 %%DATADIR%%/pixmaps/ja_halfwidth_alnum.png
 %%DATADIR%%/pixmaps/ja_halfwidth_alnum.svg
-%%DATADIR%%/pixmaps/ja_halfwidth_katakana.png
-%%DATADIR%%/pixmaps/ja_halfwidth_katakana.svg
 %%DATADIR%%/pixmaps/ja_hiragana.png
 %%DATADIR%%/pixmaps/ja_hiragana.svg
 %%DATADIR%%/pixmaps/ja_kana.png

@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gtk
 COMMENT=	GTK+ modules of uim input method
 
 USE_GNOME=	gtk20
-LIB_DEPENDS=	uim.2:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.3:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

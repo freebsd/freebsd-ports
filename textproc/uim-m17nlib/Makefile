@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-m17nlib-nox11
 .else
@@ -14,8 +13,10 @@ PKGNAMESUFFIX=	-m17nlib
 
 COMMENT=	Uim plugin using m17n library input method
 
+BUILD_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 LIB_DEPENDS=	m17n.1:${PORTSDIR}/devel/m17n-lib \
-		uim.2:${PORTSDIR}/textproc/uim
+		uim.3:${PORTSDIR}/textproc/uim
+RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
