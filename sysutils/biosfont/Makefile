@@ -7,6 +7,7 @@
 
 PORTNAME=	biosfont
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.tiscali.nl/rladan/biosfont/
 
@@ -18,11 +19,12 @@ ONLY_FOR_ARCHS=	i386
 
 MAN4=		biosfont.4
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 KMODDIR?=	/boot/modules
 
 PLIST_SUB=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
