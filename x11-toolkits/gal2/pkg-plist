@@ -245,6 +245,10 @@ share/locale/vi/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/xh/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gal-%%VERSION%%.mo
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
 @dirrm share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps/categories
 @dirrm share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/pixmaps
 @dirrm share/gnome/gal-%%VERSION%%/%%PORTVERSION%%/glade
