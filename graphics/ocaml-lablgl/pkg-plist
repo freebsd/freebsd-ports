@@ -1,59 +1,77 @@
-@comment $FreeBSD$
 bin/lablgl
 bin/lablglut
+lib/ocaml/lablGL/build.ml
 lib/ocaml/lablGL/gl.cmi
 lib/ocaml/lablGL/gl.cmx
+lib/ocaml/lablGL/gl.ml
 lib/ocaml/lablGL/gl.mli
 lib/ocaml/lablGL/glArray.cmi
 lib/ocaml/lablGL/glArray.cmx
+lib/ocaml/lablGL/glArray.ml
 lib/ocaml/lablGL/glArray.mli
 lib/ocaml/lablGL/glClear.cmi
 lib/ocaml/lablGL/glClear.cmx
+lib/ocaml/lablGL/glClear.ml
 lib/ocaml/lablGL/glClear.mli
 lib/ocaml/lablGL/glDraw.cmi
 lib/ocaml/lablGL/glDraw.cmx
+lib/ocaml/lablGL/glDraw.ml
 lib/ocaml/lablGL/glDraw.mli
 lib/ocaml/lablGL/glFunc.cmi
 lib/ocaml/lablGL/glFunc.cmx
+lib/ocaml/lablGL/glFunc.ml
 lib/ocaml/lablGL/glFunc.mli
 lib/ocaml/lablGL/glLight.cmi
 lib/ocaml/lablGL/glLight.cmx
+lib/ocaml/lablGL/glLight.ml
 lib/ocaml/lablGL/glLight.mli
 lib/ocaml/lablGL/glList.cmi
 lib/ocaml/lablGL/glList.cmx
+lib/ocaml/lablGL/glList.ml
 lib/ocaml/lablGL/glList.mli
 lib/ocaml/lablGL/glMap.cmi
 lib/ocaml/lablGL/glMap.cmx
+lib/ocaml/lablGL/glMap.ml
 lib/ocaml/lablGL/glMap.mli
 lib/ocaml/lablGL/glMat.cmi
 lib/ocaml/lablGL/glMat.cmx
+lib/ocaml/lablGL/glMat.ml
 lib/ocaml/lablGL/glMat.mli
 lib/ocaml/lablGL/glMisc.cmi
 lib/ocaml/lablGL/glMisc.cmx
+lib/ocaml/lablGL/glMisc.ml
 lib/ocaml/lablGL/glMisc.mli
 lib/ocaml/lablGL/glPix.cmi
 lib/ocaml/lablGL/glPix.cmx
+lib/ocaml/lablGL/glPix.ml
 lib/ocaml/lablGL/glPix.mli
 lib/ocaml/lablGL/glTex.cmi
 lib/ocaml/lablGL/glTex.cmx
+lib/ocaml/lablGL/glTex.ml
 lib/ocaml/lablGL/glTex.mli
 lib/ocaml/lablGL/gluMat.cmi
 lib/ocaml/lablGL/gluMat.cmx
+lib/ocaml/lablGL/gluMat.ml
 lib/ocaml/lablGL/gluMat.mli
 lib/ocaml/lablGL/gluMisc.cmi
 lib/ocaml/lablGL/gluMisc.cmx
+lib/ocaml/lablGL/gluMisc.ml
 lib/ocaml/lablGL/gluMisc.mli
 lib/ocaml/lablGL/gluNurbs.cmi
 lib/ocaml/lablGL/gluNurbs.cmx
+lib/ocaml/lablGL/gluNurbs.ml
 lib/ocaml/lablGL/gluNurbs.mli
 lib/ocaml/lablGL/gluQuadric.cmi
 lib/ocaml/lablGL/gluQuadric.cmx
+lib/ocaml/lablGL/gluQuadric.ml
 lib/ocaml/lablGL/gluQuadric.mli
 lib/ocaml/lablGL/gluTess.cmi
 lib/ocaml/lablGL/gluTess.cmx
+lib/ocaml/lablGL/gluTess.ml
 lib/ocaml/lablGL/gluTess.mli
 lib/ocaml/lablGL/glut.cmi
 lib/ocaml/lablGL/glut.cmx
+lib/ocaml/lablGL/glut.ml
 lib/ocaml/lablGL/glut.mli
 lib/ocaml/lablGL/lablgl.a
 lib/ocaml/lablGL/lablgl.cma
@@ -66,56 +84,57 @@ lib/ocaml/lablGL/liblablglut.a
 lib/ocaml/lablGL/libtogl.a
 lib/ocaml/lablGL/raw.cmi
 lib/ocaml/lablGL/raw.cmx
+lib/ocaml/lablGL/raw.ml
 lib/ocaml/lablGL/raw.mli
 lib/ocaml/lablGL/togl.a
 lib/ocaml/lablGL/togl.cma
 lib/ocaml/lablGL/togl.cmi
 lib/ocaml/lablGL/togl.cmx
 lib/ocaml/lablGL/togl.cmxa
+lib/ocaml/lablGL/togl.ml
 lib/ocaml/lablGL/togl.mli
 lib/ocaml/stublibs/dlllablgl.so
-lib/ocaml/stublibs/dlltogl.so
 lib/ocaml/stublibs/dlllablglut.so
+lib/ocaml/stublibs/dlltogl.so
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/LablGlut/caml-images/ChangeLog
-%%EXAMPLESDIR%%/LablGlut/caml-images/Makefile
-%%EXAMPLESDIR%%/LablGlut/caml-images/OCamlMakefile
-%%EXAMPLESDIR%%/LablGlut/caml-images/main.ml
-%%EXAMPLESDIR%%/LablGlut/caml-images/ppm.ppm
-%%EXAMPLESDIR%%/LablGlut/etc/in-progress/scene_graph.ml
-%%EXAMPLESDIR%%/LablGlut/etc/draw2d.ml
-%%EXAMPLESDIR%%/LablGlut/lablGL/README
-%%EXAMPLESDIR%%/LablGlut/lablGL/checker.ml
-%%EXAMPLESDIR%%/LablGlut/lablGL/gears.ml
-%%EXAMPLESDIR%%/LablGlut/lablGL/morph3d.ml
-%%EXAMPLESDIR%%/LablGlut/lablGL/planet.ml
-%%EXAMPLESDIR%%/LablGlut/lablGL/scene.ml
-%%EXAMPLESDIR%%/LablGlut/lablGL/simple.ml
-%%EXAMPLESDIR%%/LablGlut/lablGL/texturesurf.ml
-%%EXAMPLESDIR%%/LablGlut/nehe/lesson2.ml
-%%EXAMPLESDIR%%/LablGlut/nehe/lesson3.ml
-%%EXAMPLESDIR%%/LablGlut/nehe/lesson4.ml
-%%EXAMPLESDIR%%/LablGlut/nehe/lesson5.ml
-%%EXAMPLESDIR%%/LablGlut/README
-%%EXAMPLESDIR%%/Togl/Makefile
-%%EXAMPLESDIR%%/Togl/README
-%%EXAMPLESDIR%%/Togl/checker.ml
-%%EXAMPLESDIR%%/Togl/double.ml
-%%EXAMPLESDIR%%/Togl/gears.ml
-%%EXAMPLESDIR%%/Togl/gears_a.ml
-%%EXAMPLESDIR%%/Togl/morph3d.ml
-%%EXAMPLESDIR%%/Togl/planet.ml
-%%EXAMPLESDIR%%/Togl/scene.ml
-%%EXAMPLESDIR%%/Togl/simple.ml
-%%EXAMPLESDIR%%/Togl/tennis.ml
-%%EXAMPLESDIR%%/Togl/texturesurf.ml
-@dirrm lib/ocaml/lablGL
-@dirrm %%EXAMPLESDIR%%/LablGlut/caml-images
-@dirrm %%EXAMPLESDIR%%/LablGlut/etc/in-progress
-@dirrm %%EXAMPLESDIR%%/LablGlut/etc
-@dirrm %%EXAMPLESDIR%%/LablGlut/lablGL
-@dirrm %%EXAMPLESDIR%%/LablGlut/nehe
-@dirrm %%EXAMPLESDIR%%/LablGlut
-@dirrm %%EXAMPLESDIR%%/Togl
+%%EXAMPLESDIR%%/lablglut/caml-images/ChangeLog
+%%EXAMPLESDIR%%/lablglut/caml-images/OCamlMakefile
+%%EXAMPLESDIR%%/lablglut/caml-images/main.ml
+%%EXAMPLESDIR%%/lablglut/caml-images/ppm.ppm
+%%EXAMPLESDIR%%/lablglut/lablGL/README
+%%EXAMPLESDIR%%/lablglut/lablGL/checker.ml
+%%EXAMPLESDIR%%/lablglut/lablGL/gears.ml
+%%EXAMPLESDIR%%/lablglut/lablGL/morph3d.ml
+%%EXAMPLESDIR%%/lablglut/lablGL/planet.ml
+%%EXAMPLESDIR%%/lablglut/lablGL/scene.ml
+%%EXAMPLESDIR%%/lablglut/lablGL/simple.ml
+%%EXAMPLESDIR%%/lablglut/lablGL/texturesurf.ml
+%%EXAMPLESDIR%%/lablglut/nehe/lesson2.ml
+%%EXAMPLESDIR%%/lablglut/nehe/lesson3.ml
+%%EXAMPLESDIR%%/lablglut/nehe/lesson4.ml
+%%EXAMPLESDIR%%/lablglut/nehe/lesson5.ml
+%%EXAMPLESDIR%%/togl/README
+%%EXAMPLESDIR%%/togl/checker.ml
+%%EXAMPLESDIR%%/togl/double.ml
+%%EXAMPLESDIR%%/togl/gears.ml
+%%EXAMPLESDIR%%/togl/gears_a.ml
+%%EXAMPLESDIR%%/togl/morph3d.ml
+%%EXAMPLESDIR%%/togl/planet.ml
+%%EXAMPLESDIR%%/togl/scene.ml
+%%EXAMPLESDIR%%/togl/simple.ml
+%%EXAMPLESDIR%%/togl/tennis.ml
+%%EXAMPLESDIR%%/togl/tesselate.ml
+%%EXAMPLESDIR%%/togl/texturesurf.ml
+@dirrm %%EXAMPLESDIR%%/togl
+@dirrm %%EXAMPLESDIR%%/lablglut/nehe
+@dirrm %%EXAMPLESDIR%%/lablglut/lablGL
+@dirrm %%EXAMPLESDIR%%/lablglut/caml-images
+@dirrm %%EXAMPLESDIR%%/lablglut
 @dirrm %%EXAMPLESDIR%%
+@dirrmtry share/examples/ocaml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry share/doc/ocaml
+@dirrmtry lib/ocaml/stublibs
+@dirrm lib/ocaml/lablGL
+@dirrmtry lib/ocaml
+

@@ -6,54 +6,83 @@
 #
 
 PORTNAME=	lablgl
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.02
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	rk@ronald.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	OpenGL interface for Objective Caml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_GL=		yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/lablgl-${PORTVERSION}
+USE_OCAML=	yes
+USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
-#EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
-#DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+DEPENDS_ARGS+=	WITH_TK=yes
+
+MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
+PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
+
+DOCSDIR=	${PREFIX}/share/doc/ocaml/lablgl
+EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/lablgl
+
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.freebsd ${WRKSRC}/Makefile.config
 
+	@${REINPLACE_CMD} -e "s,/usr/X11R6,${X11BASE},g" \
+		-e "s,/usr/local,${LOCALBASE},g" \
+		-e "s,^\(BINDIR[ \t]*=\).*,\1${PREFIX}/bin,g" \
+		-e "s,^\(RANLIB[ \t]*=\).*,\1ranlib,g" \
+		-e "s,^#\(LIBDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml,g" \
+		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/stublibs,g" \
+		${WRKSRC}/Makefile.config
+
+	@${REINPLACE_CMD} \
+		-e "s,^\(INSTALLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/lablGL,g" \
+		-e "s,^\(COPTS[ \t]*=\).*,\1-c ${CFLAGS},g" \
+		${WRKSRC}/Makefile.common ${WRKSRC}/Makefile
+
+	@${REINPLACE_CMD} -E \
+		-e 's,^(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,^(${PATTERN}+.*BINDIR),\1\$${BSD_INSTALL_SCRIPT} \3,' \
+		-e 's,^(${PATTERN}+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		${WRKSRC}/src/Makefile ${WRKSRC}/LablGlut/src/Makefile \
+		${WRKSRC}/Togl/src/Makefile
+
+pre-install:
+#
+# XXX: for incorrect PREFIX. Really should be done in bsd.ocaml.mk...
+#
+.if !exists(${PREFIX}/lib/ocaml/stublibs)
+	${MKDIR} ${PREFIX}/lib/ocaml/stublibs
+.endif
+
 post-install:
-	${MKDIR} ${EXAMPLESDIR}/LablGlut/caml-images \
-	    ${EXAMPLESDIR}/LablGlut/etc \
-	    ${EXAMPLESDIR}/LablGlut/etc/in-progress \
-	    ${EXAMPLESDIR}/LablGlut/lablGL \
-	    ${EXAMPLESDIR}/LablGlut/nehe \
-	    ${EXAMPLESDIR}/Togl
-	${INSTALL_DATA} ${WRKSRC}/LablGlut/examples/README \
-	    ${EXAMPLESDIR}/LablGlut
-	${INSTALL_DATA} ${WRKSRC}/LablGlut/examples/caml-images/* \
-	    ${EXAMPLESDIR}/LablGlut/caml-images
-	${INSTALL_DATA} ${WRKSRC}/LablGlut/examples/etc/d* \
-	    ${EXAMPLESDIR}/LablGlut/etc
-	${INSTALL_DATA} ${WRKSRC}/LablGlut/examples/etc/in-progress/* \
-	    ${EXAMPLESDIR}/LablGlut/etc/in-progress
-	${INSTALL_DATA} ${WRKSRC}/LablGlut/examples/lablGL/* \
-	    ${EXAMPLESDIR}/LablGlut/lablGL
-	${INSTALL_DATA} ${WRKSRC}/LablGlut/examples/nehe/* \
-	    ${EXAMPLESDIR}/LablGlut/nehe
-	${INSTALL_DATA} ${WRKSRC}/Togl/examples/* \
-	    ${EXAMPLESDIR}/Togl
+	${MKDIR} ${EXAMPLESDIR}/lablglut
+	${MKDIR} ${EXAMPLESDIR}/togl
+	@(cd ${WRKSRC}/LablGlut/examples && ${COPYTREE_SHARE} \* \
+		${EXAMPLESDIR}/lablglut '! -name Makefile')
+	@(cd ${WRKSRC}/Togl/examples && ${COPYTREE_SHARE} \* \
+		${EXAMPLESDIR}/togl '! -name Makefile')
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
