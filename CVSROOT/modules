@@ -10086,7 +10086,6 @@ p5-Text-Similarity	ports/textproc/p5-Text-Similarity
 p5-Text-SimpleTable	ports/textproc/p5-Text-SimpleTable
 p5-Text-SimpleTemplate	ports/textproc/p5-Text-SimpleTemplate
 p5-Text-Striphigh	ports/textproc/p5-Text-Striphigh
-p5-Text-SwiftTemplate	ports/textproc/p5-Text-SwiftTemplate
 p5-Text-Table		ports/textproc/p5-Text-Table
 p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
 p5-Text-TabularDisplay	ports/textproc/p5-Text-TabularDisplay
