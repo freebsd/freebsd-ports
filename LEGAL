@@ -165,7 +165,7 @@ dnews_*			news/dnews		Only free for schools and
 						We currently ask for permission
 						to put a package on the CD-ROM
 dns.tar.Z		dns/h2n			Never get an approval yet
-doom3-linux-*		games/linux-doom3-demo	Redistribution limited
+doom3-linux-*		games/linux-doom3*	Redistribution limited
 doomsrc.zip		games/doom		requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded manually
 drweb-qmail-*.tar.gz	security/drweb-qmail	Non-commercial or evaluation use
