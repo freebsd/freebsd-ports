@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tnef
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	converters mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,14 +16,15 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 
 GNU_CONFIGURE=		yes
 USE_GETOPT_LONG=	yes
+CONFIGURE_ARGS=		--mandir=${MANPREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		tnef.1
 PORTDOCS=	AUTHORS NEWS README THANKS TODO
 PLIST_FILES=	bin/tnef
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
