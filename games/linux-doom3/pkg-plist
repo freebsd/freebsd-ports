@@ -1,5 +1,5 @@
-bin/doom3
-bin/doom3-ded
+bin/linux-doom3
+bin/linux-doom3-ded
 %%DATADIR%%/base/game01.pk4
 %%DATADIR%%/base/pak005.pk4
 %%NEW%%%%DATADIR%%/base/pak006.pk4

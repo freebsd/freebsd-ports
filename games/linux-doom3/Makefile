@@ -7,6 +7,7 @@
 
 PORTNAME=	doom3
 PORTVERSION=	1.3.1302
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	doom3/linux
@@ -20,6 +21,7 @@ COMMENT=	Doom III for Linux
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 USE_LINUX=	yes
+NO_CDROM=	Redistribution is limited, see license
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -29,6 +31,16 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	doom3 doom3-ded pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xfree86-3
+.if defined(WITH_NVIDIA_GL)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
+.else
+RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so.1:${PORTSDIR}/graphics/linux_glx
+.endif
 
 .if defined(WITH_NO_CDKEY)
 PORTVERSION=	1.1.1286
@@ -51,7 +63,9 @@ do-install:
 		${INSTALL_PROGRAM} doom.x86 doomded.x86 ${DATADIR}
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/doom3.png ${PREFIX}/share/pixmaps
-	${INSTALL_PROGRAM} ${WRKDIR}/doom3 ${WRKDIR}/doom3-ded ${PREFIX}/bin
+.for f in doom3 doom3-ded
+	${INSTALL_PROGRAM} ${WRKDIR}/${f} ${PREFIX}/bin/${PKGNAMEPREFIX}${f}
+.endfor
 
 post-install:
 	@${ECHO_CMD}
