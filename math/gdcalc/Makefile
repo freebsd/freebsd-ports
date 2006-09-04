@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://bhepple.freeshell.org/dcalc/unix/
 
-MAINTAINER=	Jan.Stocker@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome-based scientific calculator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gunits:${PORTSDIR}/math/units

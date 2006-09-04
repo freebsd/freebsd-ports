@@ -11,7 +11,7 @@ MASTER_SITES=	http://crimson.seul.org/files/
 PKGNAMESUFFIX=	-fields
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	Jan.Stocker@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tactical war game in the tradition of Battle Isle
 
 GNU_CONFIGURE=	yes

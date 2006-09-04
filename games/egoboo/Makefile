@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	ego222
 
-MAINTAINER=	Jan.Stocker@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3d dungeon crawling adventure in the spirit of NetHack
 
 PATCH_DEPENDS=	gmake:${PORTSDIR}/devel/gmake

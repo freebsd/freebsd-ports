@@ -7,7 +7,7 @@
 
 MASTERDIR=      ${.CURDIR}/../nethack34
 
-MAINTAINER=	Jan.Stocker@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 
 PKGNAMESUFFIX=	-gnome
 
