@@ -10,8 +10,11 @@ PORTVERSION=	1.01
 CATEGORIES=	devel
 MASTER_SITES=	http://libre.act-europe.fr/aunit/
 
-MAINTAINER=	aidan@velvet.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A unit testing framework for the Ada '95 programming language
+
+DEPRECATED=	no longer available from mastersite; current version is 1.03
+EXPIRATION_DATE=	2006-11-04
 
 NO_BUILD=	yes
 
