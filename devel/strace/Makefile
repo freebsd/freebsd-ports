@@ -12,7 +12,7 @@ CATEGORIES=	devel sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alex@rinet.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable process tracer
 
 USE_BZIP2=	yes
