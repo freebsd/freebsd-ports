@@ -14,7 +14,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	eivind@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Diff readability enhancher for color terminals
 
 NO_BUILD=	yes

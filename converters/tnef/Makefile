@@ -11,7 +11,7 @@ CATEGORIES=	converters mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	cr@jcmax.com
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
 
 GNU_CONFIGURE=		yes

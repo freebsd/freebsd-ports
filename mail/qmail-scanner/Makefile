@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	freebsd@simplerezo.com
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
