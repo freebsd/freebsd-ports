@@ -14,7 +14,7 @@
          self.videopath = wx.TextCtrl(id=wxID_PREFERENCESVIDEOPATH,
                name='videopath', parent=self, pos=wx.Point(168, 48),
 -              size=wx.Size(200, 22), style=0, value='/usr/bin/mplayer')
-+              size=wx.Size(200, 22), style=0, value='%%X11BASE%%/bin/xine')
++              size=wx.Size(200, 22), style=0, value='%%VIDEOPLAYER%%')
          self.videopath.SetFont(wx.Font(7, 77, wx.NORMAL, wx.NORMAL, False,
                u'Sans'))
          self.videopath.SetBackgroundColour(wx.Colour(255, 253, 239))
