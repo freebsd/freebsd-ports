@@ -8,7 +8,7 @@
 PORTNAME=	ion-3ds
 PORTVERSION=	20060524
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
+MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 
 MAINTAINER=	ed@fxq.nl
 COMMENT=	The development version of the Ion window manager
