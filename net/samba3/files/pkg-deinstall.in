@@ -1,0 +1,34 @@
+#! /bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+SAMBA_SPOOL="%%SAMBA_SPOOL%%"
+SAMBA_LOGDIR="%%SAMBA_LOGDIR%%"
+SAMBA_LOCKDIR="%%SAMBA_LOCKDIR%%"
+SAMBA_PRIVATEDIR="%%SAMBA_PRIVATEDIR%%"
+SAMBA_OWNER=root
+SAMBA_GROUP=wheel
+
+post-deinstall() {
+	rm -rf ${SAMBA_SPOOL}
+	rmdir ${SAMBA_LOGDIR} 2>/dev/null || true
+	for f in connections.tdb locking.tdb messages.tdb sessionid.tdb \
+	    unexpected.tdb brlock.tdb namelist.debug
+	do
+		rm -f "${SAMBA_LOCKDIR}/${f}"
+	done
+	rmdir ${SAMBA_LOCKDIR} 2>/dev/null || true
+	rmdir ${SAMBA_PRIVATEDIR} 2>/dev/null || true
+	echo "WARNING: If you will *NOT* use this package anymore, please remove the"
+	echo "  following directories manually:"
+	echo "  ${SAMBA_PRIVATEDIR}"
+	echo "  ${SAMBA_LOGDIR}"
+	echo "  ${SAMBA_LOCKDIR}"
+	echo
+}
+
+case $2 in
+	POST-DEINSTALL)
+		post-deinstall
+		;;
+esac

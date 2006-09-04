@@ -1,5 +1,5 @@
---- configure.in.orig	Fri Jun 23 15:16:53 2006
-+++ configure.in	Tue Jun 27 01:17:29 2006
+--- configure.in.orig	Fri Jul 21 18:22:57 2006
++++ configure.in	Thu Aug 24 01:30:57 2006
 @@ -242,7 +242,6 @@
  AC_SUBST(SHELL)
  AC_SUBST(LDSHFLAGS)
@@ -54,7 +54,7 @@
  				if test "${ac_cv_prog_gnu_ld}" = "yes"; then
  					DYNEXP="-Wl,-E"
  				fi
-@@ -4868,6 +4879,7 @@
+@@ -4882,6 +4893,7 @@
  	AC_MSG_RESULT(yes)
  	case "$host_os" in
  	*)
@@ -62,7 +62,7 @@
  		AC_CHECK_LIB(rt,aio_read,[AIO_LIBS="$LIBS -lrt"])
  		AC_CHECK_LIB(aio,aio_read,[AIO_LIBS="$LIBS -laio"])
  		AC_CACHE_CHECK([for asynchronous io support],samba_cv_HAVE_AIO,[
-@@ -5268,14 +5280,17 @@
+@@ -5282,14 +5294,17 @@
  WINBIND_NSS="nsswitch/libnss_winbind.$SHLIBEXT"
  WINBIND_WINS_NSS="nsswitch/libnss_wins.$SHLIBEXT"
  WINBIND_NSS_LDSHFLAGS=$LDSHFLAGS
@@ -80,7 +80,7 @@
  		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
  		    nsswitch/winbind_nss_linux.o"
  		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
-@@ -5290,6 +5305,7 @@
+@@ -5304,6 +5319,7 @@
  	*solaris*)
  		# Solaris winbind client is implemented as a wrapper around
  		# the Linux version.
@@ -88,7 +88,7 @@
  		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_solaris.o \
  		    nsswitch/winbind_nss_linux.o"
  		WINBIND_NSS_EXTRA_LIBS="-lsocket"
-@@ -5316,6 +5332,7 @@
+@@ -5330,6 +5346,7 @@
  AC_SUBST(WINBIND_NSS_LDSHFLAGS)
  AC_SUBST(WINBIND_NSS_EXTRA_OBJS)
  AC_SUBST(WINBIND_NSS_EXTRA_LIBS)

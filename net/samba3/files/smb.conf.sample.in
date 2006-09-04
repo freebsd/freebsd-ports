@@ -95,8 +95,7 @@
 # See the chapter 'Samba performance issues' in the Samba HOWTO Collection
 # and the manual pages for details.
 # You may want to add the following on a Linux system:
-#         SO_RCVBUF=8192 SO_SNDBUF=8192
-;   socket options = TCP_NODELAY
+;   socket options = SO_RCVBUF=8192 SO_SNDBUF=8192
 
 # Configure Samba to use multiple interfaces
 # If you have multiple network interfaces then you must list them
@@ -290,5 +289,3 @@
 ;   writable = yes
 ;   printable = no
 ;   create mask = 0765
-
-

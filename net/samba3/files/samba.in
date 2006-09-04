@@ -5,7 +5,8 @@
 
 # PROVIDE: nmbd smbd
 %%WINBIND%%# PROVIDE: winbindd
-# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv %%CUPSD%%
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+%%CUPSD%%# REQUIRE: cupsd
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
@@ -26,10 +27,13 @@
 
 name=samba
 rcvar=`set_rcvar`
+samba_enable=${samba_enable="NO"}
+testparm_command="%%PREFIX%%/bin/testparm"
+samba_parm="${testparm_command} -s -v --parameter-name"
 
 load_rc_config $name
 # Set defaults
-samba_config=${samba_config="%%SAMBA_CONFIG%%"}
+samba_config=${samba_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"}
 # Config file is required
 if [ ! -r ${samba_config} ]; then
     warn "${samba_config} is not readable."
@@ -39,33 +43,38 @@ if [ ! -r ${samba_config} ]; then
     esac
 fi
 
-if test -n ${samba_enable=""} && checkyesno samba_enable; then
+samba_idmap=`${samba_parm} 'idmap uid' ${samba_config} 2>/dev/null`
+samba_lockdir=`${samba_parm} 'lock directory' ${samba_config} 2>/dev/null`
+
+if test -n ${samba_enable="NO"} && checkyesno samba_enable; then
     nmbd_enable=${nmbd_enable="YES"}
     smbd_enable=${smbd_enable="YES"}
 %%WINBIND%%    # Check that winbind is actually configured
-%%WINBIND%%    if [ "`egrep -i '(idmap.*uid|winbind.*uid)' ${samba_config} 2>/dev/null | egrep -v [\#\;]`" ]; then
+%%WINBIND%%    if [ -n ${samba_idmap} ]; then
 %%WINBIND%%	winbindd_enable="YES"
 %%WINBIND%%    fi
 fi
 
 nmbd_precmd() {
     # XXX: Never delete winbindd_idmap, winbindd_cache and group_mapping
-    if [ -d "%%SAMBA_LOCKDIR%%" ]; then
-	echo "Starting SAMBA: removing stale tdbs :"
+    echo -n "Starting Samba "
+    if [ -d ${samba_lockdir} ]; then
+	echo -n "- removing stale tdbs: "
 	for file in connections.tdb messages.tdb sessionid.tdb \
 		    unexpected.tdb brlock.tdb locking.tdb namelist.debug
 	do
-	    rm -vf "%%SAMBA_LOCKDIR%%/$file"
+	    rm -vf "${samba_lockdir}/${file}"
 	done
     fi
+    echo '.'
 }
 
 # nmbd
 name=nmbd
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/${name}"
-required_dirs="%%SAMBA_LOCKDIR%%"
-pidfile=%%SAMBA_RUNDIR%%/${name}.pid
+required_dirs="${samba_lockdir}"
+pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
 start_precmd="nmbd_precmd"
 # Defaults
 nmbd_enable=${nmbd_enable="NO"}
@@ -80,7 +89,8 @@ _rc_restart_done=false
 name=smbd
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/${name}"
-pidfile=%%SAMBA_RUNDIR%%/${name}.pid
+required_dirs="${samba_lockdir}"
+pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
 start_precmd=":"
 # Defaults
 smbd_enable=${smbd_enable="NO"}
@@ -95,8 +105,8 @@ run_rc_command "$1"
 %%WINBIND%%name=winbindd
 %%WINBIND%%rcvar=`set_rcvar`
 %%WINBIND%%command="%%PREFIX%%/sbin/${name}"
-%%WINBIND%%required_dirs="%%SAMBA_LOCKDIR%%"
-%%WINBIND%%pidfile=%%SAMBA_RUNDIR%%/${name}.pid
+%%WINBIND%%required_dirs="${samba_lockdir}"
+%%WINBIND%%pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
 %%WINBIND%%start_precmd=":"
 %%WINBIND%%# Defaults
 %%WINBIND%%winbindd_enable=${winbindd_enable="NO"}

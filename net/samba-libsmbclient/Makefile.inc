@@ -4,7 +4,7 @@ CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--with-libsmbclient
 SAMBA_INSTALL_LIBS=	libsmbclient
 
-.if defined(WITH_MSRPC)
+.if !defined(WITHOUT_MSRPC)
 CONFIGURE_ARGS+=	--with-libmsrpc
 SAMBA_INSTALL_LIBS+=	libmsrpc
 PLIST_SUB+=		MSRPC=""
@@ -12,7 +12,7 @@ PLIST_SUB+=		MSRPC=""
 PLIST_SUB+=		MSRPC="@comment "
 .endif
 
-.if defined(WITH_SHAREMODES)
+.if !defined(WITHOUT_SHAREMODES)
 CONFIGURE_ARGS+=	--with-libsmbsharemodes
 SAMBA_INSTALL_LIBS+=	libsmbsharemodes
 PLIST_SUB+=		SHAREMODES=""
@@ -25,10 +25,10 @@ MAN7=			libsmbclient.7
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
 	cd ${WRKSRC} && ${MAKE} libsmbclient
-.if defined(WITH_MSRPC)
+.if !defined(WITHOUT_MSRPC)
 	cd ${WRKSRC} && ${MAKE} cac
 .endif
-.if defined(WITH_SHAREMODES)
+.if !defined(WITHOUT_SHAREMODES)
 	cd ${WRKSRC} && ${MAKE} libsmbsharemodes
 .endif
 
@@ -39,7 +39,7 @@ do-install:
 .endfor
 	-@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
-.if defined(WITH_MSRPC)
+.if !defined(WITHOUT_MSRPC)
 	${INSTALL_DATA} ${WRKSRC}/include/libmsrpc.h ${PREFIX}/include
 .endif
 	-@${MKDIR} ${PREFIX}/lib
@@ -50,6 +50,6 @@ do-install:
 .endfor
 	-@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libsmbclient ${EXAMPLESDIR}
-.if defined(WITH_MSRPC)
+.if !defined(WITHOUT_MSRPC)
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libmsrpc ${EXAMPLESDIR}
 .endif
