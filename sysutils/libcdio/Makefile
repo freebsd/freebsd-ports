@@ -6,6 +6,7 @@
 
 PORTNAME=	libcdio
 PORTVERSION=	0.77
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -20,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_ICONV=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
 USE_PERL5_BUILD=yes
@@ -42,6 +43,10 @@ PLIST_SUB+=	PARANOIA="@comment "
 .endif
 
 post-patch:
+.ifndef(WITH_PARANOIA)
+	${REINPLACE_CMD} -e 's|libcdio_paranoia.pc||; s|libcdio_cdda.pc||' \
+		 ${WRKSRC}/Makefile.in
+.endif
 	${REINPLACE_CMD} -e "s,freebsd5\.\*,freebsd5\.\*|freebsd6\.\*|freebsd7\.\*," ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

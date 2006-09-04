@@ -73,8 +73,8 @@ lib/libudf.la
 lib/libudf.so
 lib/libudf.so.0
 libdata/pkgconfig/libcdio.pc
-libdata/pkgconfig/libcdio_cdda.pc
-libdata/pkgconfig/libcdio_paranoia.pc
+%%PARANOIA%%libdata/pkgconfig/libcdio_cdda.pc
+%%PARANOIA%%libdata/pkgconfig/libcdio_paranoia.pc
 libdata/pkgconfig/libiso9660.pc
 @dirrm include/cdio
 @dirrm include/cdio++
