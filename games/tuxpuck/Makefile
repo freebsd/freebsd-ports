@@ -10,9 +10,9 @@ PORTNAME=	tuxpuck
 PORTVERSION=	0.8.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.efd.lth.se/~d00jkr/tuxpuck/
+MASTER_SITES=	http://users.student.lth.se/d00jkr/tuxpuck/
 
-MAINTAINER=	Jan.Stocker@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
