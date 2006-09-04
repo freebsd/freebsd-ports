@@ -15,6 +15,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
+		scanimage:${PORTSDIR}/graphics/sane-backends \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USE_PERL5_RUN=	yes
