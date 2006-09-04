@@ -1,3 +1,6 @@
 MD5 (php-4.4.4.tar.bz2) = bc6fa8908e2ac36e93bab9f7d42cda3a
 SHA256 (php-4.4.4.tar.bz2) = 9f0742fce014a255f8453c1264afee5de289a9e9dcd57c448c77b46978f6a76b
 SIZE (php-4.4.4.tar.bz2) = 4478698
+MD5 (suhosin-patch-4.4.4-0.9.2.patch.gz) = e1ef01355410d846b8a0bd6c4a3d7d3c
+SHA256 (suhosin-patch-4.4.4-0.9.2.patch.gz) = 43e592712c4e524976117f881632a006d9d259d85e996e65ae623494e7186238
+SIZE (suhosin-patch-4.4.4-0.9.2.patch.gz) = 14230
