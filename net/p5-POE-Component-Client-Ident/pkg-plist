@@ -1,8 +1,13 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Ident/.packlist
 %%SITE_PERL%%/POE/Component/Client/Ident.pm
 %%SITE_PERL%%/POE/Component/Client/Ident/Agent.pm
 %%SITE_PERL%%/POE/Filter/Ident.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Ident/.packlist
-@dirrm    %%SITE_PERL%%/POE/Component/Client/Ident
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Ident
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE/Component/Client/Ident
+@dirrmtry %%SITE_PERL%%/POE/Component/Client
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Ident
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
