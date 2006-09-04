@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier intltool gail libbonobo \
 		intlhack
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

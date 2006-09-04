@@ -150,6 +150,14 @@ share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/sr@ije/LC_MESSAGES
+@dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
 @dirrm share/gnome/idl/at-spi-1.0
 @dirrm lib/orbit-2.0
 @dirrm include/at-spi-1.0/login-helper
