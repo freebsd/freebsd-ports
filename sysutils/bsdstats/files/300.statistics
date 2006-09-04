@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.14 2006-08-26 17:12:50 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.15 2006-09-04 01:59:28 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -16,6 +16,9 @@ umask 066
 
 checkin_server="bsdstats.org";
 id_token_file='/var/db/bsdstats'
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin
+export PATH
 
 IFS="
 "
@@ -40,7 +43,7 @@ get_id_token () {
 
     if [ ! -f $id_token_file ] ;
     then
-       IDTOKEN=$( /usr/bin/openssl rand -base64 16 )
+       IDTOKEN=$( openssl rand -base64 16 )
        
        idf=$( mktemp "$id_token_file.XXXXXX" )  && \
        /usr/sbin/chown root:wheel $idf          && \
@@ -69,6 +72,15 @@ get_id_token () {
        echo "contains a 15 minute pause.  Please be patient while this time"
        echo "limit elapses"
        sleep 900
+    else
+       FILETIME=$( stat -f %m $id_token_file )
+       NOW=$( date +%s )
+       if [ $(( $NOW - 900 )) -le $FILETIME ]; then
+          SLEEPTIME=$(( 900 - ($NOW - $FILETIME) ))
+          echo "Token key is younger than 15 minutes!"
+          echo "Sleeping $SLEEPTIME seconds, please wait."
+          sleep $SLEEPTIME
+       fi
     fi
     . $id_token_file
     KEY=$( uri_escape $KEY )
