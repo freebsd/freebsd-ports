@@ -9,7 +9,7 @@ PORTNAME=	coda
 PORTVERSION=	${CODA_VERSION}
 PORTREVISION=	2
 
-MAINTAINER=	coda@cs.cmu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client programs for a replicated high-performance network file system
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
