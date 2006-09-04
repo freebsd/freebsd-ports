@@ -7658,6 +7658,7 @@ obnc		ports/net/obnc
 obtuner		ports/x11-wm/obtuner
 ocaml		ports/lang/ocaml
 ocaml-annexlib	ports/devel/ocaml-annexlib
+ocaml-camlidl	ports/lang/ocaml-camlidl
 ocaml-camljava	ports/devel/ocaml-camljava
 ocaml-camomile	ports/devel/ocaml-camomile
 ocaml-camomile-examples	ports/devel/ocaml-camomile-examples
