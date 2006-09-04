@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.true-audio.com/ftp/
 DISTNAME=	${PORTNAME}enc-${PORTVERSION}-src
 
-MAINTAINER=	dieringe@zedat.fu-berlin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"The True Audio Encoder", lossless (de)compressor
 
 USE_ZIP=	yes

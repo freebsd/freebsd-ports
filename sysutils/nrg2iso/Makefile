@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gregory.kokanosky.free.fr/v4/linux/
 
-MAINTAINER=	dieringe@zedat.fu-berlin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Nero .nrg CD-Image format to ISO
 
 USE_GMAKE=	yes
