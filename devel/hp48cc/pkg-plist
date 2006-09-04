@@ -1,0 +1,16 @@
+bin/hp48cc
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/accuracy.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/astro.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/fact.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/gcd.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/hello.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/inform.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi1.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/pi2.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/sort.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/xcos.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/xexp.hpc
+%%PORTDOCS%%%%EXAMPLESDIR%%/xsin.hpc
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
