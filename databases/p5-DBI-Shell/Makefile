@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dcf@aracnet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive command shell for the DBI
 
 PERL_CONFIGURE=	yes
