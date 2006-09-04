@@ -3700,6 +3700,7 @@ grun		ports/misc/grun
 grustibus	ports/emulators/grustibus
 grx		ports/graphics/grx
 gsasl		ports/security/gsasl
+gscan2pdf	ports/graphics/gscan2pdf
 gscmxx		ports/comms/gscmxx
 gscommander	ports/shells/gscommander
 gsculpt		ports/graphics/gsculpt
