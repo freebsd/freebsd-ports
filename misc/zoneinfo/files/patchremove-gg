@@ -1,0 +1,11 @@
+--- zone.tab.orig	Tue Aug 29 18:02:45 2006
++++ zone.tab	Tue Aug 29 18:02:56 2006
+@@ -178,7 +178,7 @@
+ GD	+1203-06145	America/Grenada
+ GE	+4143+04449	Asia/Tbilisi
+ GF	+0456-05220	America/Cayenne
+-GG	+4927-00232	Europe/Guernsey
++#GG	+4927-00232	Europe/Guernsey
+ GH	+0533-00013	Africa/Accra
+ GI	+3608-00521	Europe/Gibraltar
+ GL	+6411-05144	America/Godthab	most locations
