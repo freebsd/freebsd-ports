@@ -21,7 +21,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		gqview.1
 
