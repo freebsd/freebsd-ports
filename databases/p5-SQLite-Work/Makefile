@@ -11,8 +11,11 @@ CATEGORIES=	databases www perl5
 MASTER_SITES=	http://www.cpan.org/authors/id/R/RU/RUBYKAT/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	darth@vader.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Report on and update an SQLite database
+
+DEPRECATED=	no longer available from mastersite; 0.08 is current
+EXPIRATION_DATE=	2006-11-04
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
