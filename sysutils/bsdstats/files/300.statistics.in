@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.15 2006-09-04 01:59:28 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.16 2006-09-04 20:36:44 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -9,6 +9,8 @@ if [ -r /etc/defaults/periodic.conf ]
 then
     . /etc/defaults/periodic.conf
     source_periodic_confs
+else
+    . /etc/rc.conf	# For systems without periodic.conf, use rc.conf
 fi
 
 oldmask=$(umask)
@@ -36,21 +38,19 @@ send_devices () {
 }
 
 get_id_token () {
-    local IFS
-
-    IFS='=
-'
-
-    if [ ! -f $id_token_file ] ;
+    if [ ! -f $id_token_file -o ! -s $id_token_file ] ;
     then
-       IDTOKEN=$( openssl rand -base64 16 )
+       IDTOKEN=$(uri_escape $( openssl rand -base64 16 ) )
        
        idf=$( mktemp "$id_token_file.XXXXXX" )  && \
        /usr/sbin/chown root:wheel $idf          && \
        /bin/chmod 600 $idf
 
-       /usr/bin/fetch -qo - \
-	   "http://$checkin_server/scripts/getid.php?key=$IDTOKEN" | { 
+       do_fetch getid.php?key=$IDTOKEN | {
+          local IFS
+          IFS='=
+'
+
 	   while read var val 
 	     do  
 	     case $var in
@@ -105,7 +105,12 @@ uri_escape () {
 }
 
 do_fetch () {
-    /usr/bin/fetch -qo /dev/null "http://$checkin_server/scripts/$1"
+    case $(uname) in
+	NetBSD)
+	    /usr/bin/ftp -V -o /dev/null "http://$checkin_server/scripts/$1" ;;
+	FreeBSD | *)
+	    /usr/bin/fetch -qo /dev/null "http://$checkin_server/scripts/$1" ;;
+    esac
 }
 
 
