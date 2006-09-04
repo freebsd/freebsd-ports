@@ -90,6 +90,7 @@ include/magick/splay-tree.h
 include/magick/statistic.h
 include/magick/stream.h
 include/magick/string_.h
+include/magick/threshold.h
 include/magick/timer.h
 include/magick/token.h
 include/magick/transform.h
@@ -452,6 +453,7 @@ libdata/pkgconfig/Wand.pc
 %%DATADIR%%-%%PORTVERSION%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/images/arc.png
 %%PORTDOCS%%%%DOCSDIR%%/images/background.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/black.png
 %%PORTDOCS%%%%DOCSDIR%%/images/button.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/configure.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/definitive-guide.png
@@ -466,12 +468,14 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/logo.eps
 %%PORTDOCS%%%%DOCSDIR%%/images/logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/montage.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/navy.png
 %%PORTDOCS%%%%DOCSDIR%%/images/piechart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/reconstruct.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/red-ball.png
 %%PORTDOCS%%%%DOCSDIR%%/images/red-circle.png
 %%PORTDOCS%%%%DOCSDIR%%/images/right.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/rose-over.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rose-sigmoidal.png
 %%PORTDOCS%%%%DOCSDIR%%/images/rose.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/rose.png
 %%PORTDOCS%%%%DOCSDIR%%/images/script.png
@@ -585,6 +589,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/download.html
 %%PORTDOCS%%%%DOCSDIR%%/www/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/www/formats.html
+%%PORTDOCS%%%%DOCSDIR%%/www/fx.html
 %%PORTDOCS%%%%DOCSDIR%%/www/history.html
 %%PORTDOCS%%%%DOCSDIR%%/www/identify.html
 %%PORTDOCS%%%%DOCSDIR%%/www/import.html
