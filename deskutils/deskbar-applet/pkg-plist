@@ -240,6 +240,10 @@ share/locale/zh_HK/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_TW/LC_MESSAGES/deskbar-applet.mo
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrm share/gnome/deskbar-applet/art
 @dirrm share/gnome/deskbar-applet
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/ui/entriac
