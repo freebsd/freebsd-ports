@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.12.16
+PORTVERSION=	0.12.17
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-k3bsetup=no --without-resmgr --without-hal
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 USE_KDELIBS_VER=	3
 
