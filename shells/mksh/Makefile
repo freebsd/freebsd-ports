@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mksh
-DISTVERSION=		R27e
+DISTVERSION=		R28
 CATEGORIES=		shells
 MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/
 DISTFILES=		${PORTNAME}-${DISTVERSION}.cpio.gz
@@ -17,7 +17,8 @@ COMMENT=		A MirBSD enhanced shell based on pdksh
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
 MAN1=			mksh.1
-PLIST_FILES=		bin/mksh
+PLIST_FILES=		bin/mksh share/examples/mksh/dot.mkshrc
+PLIST_DIRS=		share/examples/mksh
 
 OPTIONS=		STATIC_MKSH "Build static mksh" on
 
@@ -40,6 +41,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mksh ${PREFIX}/bin
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/dot.mkshrc ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/mksh.1 ${MANPREFIX}/man/man1
 
 pre-install:
