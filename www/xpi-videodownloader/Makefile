@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	videodownloader
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -14,12 +14,9 @@ MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	An extension to download videos files
 
 XPI_ID=		videodowloader@videodownloader.net
-XPI_FILES=	chrome/content/viddown.js chrome/content/viddown.xul \
-		chrome/skin/classic/Thumbs.db chrome/skin/classic/viddown.css \
-		chrome/skin/classic/video_16x16.png \
-		chrome/skin/classic/video_24x24.png \
-		chrome.manifest install.rdf
-XPI_DIRS=	chrome/content chrome/skin/classic chrome/skin chrome
+XPI_FILES=	chrome/videodownloader.jar chrome.manifest defaults/preferences/videodownloader.js \
+		install.rdf
+XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
