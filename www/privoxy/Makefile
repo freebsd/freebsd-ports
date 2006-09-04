@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
-MAINTAINER=	john@essenz.com
+MAINTAINER=	freebsd-listen@fabiankeil.de
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
