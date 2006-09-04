@@ -17,6 +17,10 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
+BROKEN=		Size mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
+
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_XLIB=	yes
