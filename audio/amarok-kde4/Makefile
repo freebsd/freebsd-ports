@@ -5,16 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		tunepimp.3:${PORTSDIR}/audio/libtunepimp-old \
+		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 		xine.15:${PORTSDIR}/multimedia/libxine
 
