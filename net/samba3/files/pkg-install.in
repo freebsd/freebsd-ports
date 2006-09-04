@@ -1,0 +1,29 @@
+#! /bin/sh
+
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+SAMBA_SPOOL="%%SAMBA_SPOOL%%"
+SAMBA_LOGDIR="%%SAMBA_LOGDIR%%"
+SAMBA_LOCKDIR="%%SAMBA_LOCKDIR%%"
+SAMBA_PRIVATEDIR="%%SAMBA_PRIVATEDIR%%"
+SAMBA_OWNER=root
+SAMBA_GROUP=wheel
+
+post-install() {
+	mkdir -p ${SAMBA_SPOOL} && chmod 1777 ${SAMBA_SPOOL}
+	mkdir -p ${SAMBA_LOGDIR} && chmod 0755 ${SAMBA_LOGDIR}
+	mkdir -p ${SAMBA_LOCKDIR} && chmod 0755 ${SAMBA_LOCKDIR}
+	mkdir -p ${SAMBA_PRIVATEDIR} && chmod 0700 ${SAMBA_PRIVATEDIR}
+	if [ $(id -u) -eq 0 ]; then
+		chown ${SAMBA_OWNER}:${SAMBA_GROUP} ${SAMBA_SPOOL}
+		chown ${SAMBA_OWNER}:${SAMBA_GROUP} ${SAMBA_LOGDIR}
+		chown ${SAMBA_OWNER}:${SAMBA_GROUP} ${SAMBA_LOCKDIR}
+		chown ${SAMBA_OWNER}:${SAMBA_GROUP} ${SAMBA_PRIVATEDIR}
+	fi
+}
+
+case $2 in
+	POST-INSTALL)
+		post-install
+		;;
+esac

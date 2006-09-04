@@ -1,6 +1,6 @@
---- nsswitch/pam_winbind.c.orig	Sun May 28 02:21:10 2006
-+++ nsswitch/pam_winbind.c	Sun May 28 02:22:16 2006
-@@ -997,7 +997,7 @@
+--- nsswitch/pam_winbind.c.orig	Mon Aug  7 18:46:33 2006
++++ nsswitch/pam_winbind.c	Thu Aug 24 01:30:57 2006
+@@ -1016,7 +1016,7 @@
  		}
  		return PAM_USER_UNKNOWN;
  	case 0:
@@ -9,7 +9,7 @@
  		if (tmp != NULL) {
  			retval = atoi(tmp);
  			switch (retval) {
-@@ -1300,7 +1300,7 @@
+@@ -1319,7 +1319,7 @@
  		 * By reaching here we have approved the passwords and must now
  		 * rebuild the password database file.
  		 */

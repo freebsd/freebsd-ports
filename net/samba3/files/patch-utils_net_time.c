@@ -1,8 +1,8 @@
---- utils/net_time.c.orig	Fri Feb 25 18:59:42 2005
-+++ utils/net_time.c	Sun Mar 20 01:41:20 2005
-@@ -76,9 +76,16 @@
- 
- 	tm = localtime(&t);
+--- utils/net_time.c.orig	Fri Jun 23 15:16:53 2006
++++ utils/net_time.c	Thu Aug 24 01:30:57 2006
+@@ -79,9 +79,16 @@
+ 		return "unknown";
+ 	}
  	
 +#if defined(FREEBSD)
 +	fstr_sprintf(s, "%02d%02d%02d%02d%02d.%02d",

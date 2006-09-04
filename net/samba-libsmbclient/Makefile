@@ -19,7 +19,7 @@ SAMBA_SUBPORT=		yes
 MASTERDIR=		${.CURDIR}/../${SAMBA_PORT}
 PKGDIR=			${.CURDIR}
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 OPTIONS=		ADS		"With Active Directory support" off \
 			MSRPC		"Build the libmsrpc shared library" off \
