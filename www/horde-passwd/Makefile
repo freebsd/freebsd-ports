@@ -7,7 +7,7 @@
 
 PORTNAME=	horde-passwd
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www mail
 MASTER_SITES=	ftp://ftp.horde.org/pub/passwd/				\
 		ftp://ftp.planetmirror.com/pub/horde/passwd/		\
@@ -59,6 +59,9 @@ HORDE_INC=	${LOCALBASE}/etc/horde
 pre-configure:
 	@${SED} -e "s:/home/httpd/html/horde/passwd:${PWDDIR}:g"	\
 		${FILESDIR}/httpd.conf.pwd > ${WRKDIR}/httpd-pwd.conf
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
 	@${MKDIR}  ${PWDDIR}
