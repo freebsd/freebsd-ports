@@ -4,7 +4,7 @@
 # Installation script for FreeBSD ports
 # Written by Jonas Kvinge
 #
-# Last modified: Jonas Kvinge (26.08.2006)
+# Last modified: Jonas Kvinge (03.09.2006)
 #
 
 BINFILE="ircproxyd"
@@ -30,12 +30,13 @@ if [ "$2" = "POST-INSTALL" ]; then
   sed -i -e "s:^IRCPROXYPIDFILE=.*:IRCPROXYPIDFILE=${PIDFILE}:" ${PKG_PREFIX}/sbin/ircproxy.sh || exit 1
   rm -f ${PKG_PREFIX}/sbin/ircproxy.sh-e
 
-  grep -q "^[^#]*${PKG_PREFIX}/sbin/ircproxy\.sh" /etc/crontab >/dev/null 2>&1
-  if [ ! $? -eq 0 ] ; then
-    cat <<EOF >>/etc/crontab || exit 1
-*/5     *       *       *       *       root   $PKG_PREFIX/sbin/ircproxy.sh
-EOF
-  fi
+  #grep -q "^[^#]*${PKG_PREFIX}/sbin/ircproxy\.sh" /etc/crontab >/dev/null 2>&1
+  #if [ ! $? -eq 0 ] ; then
+  #  cat <<EOF >>/etc/crontab || exit 1
+  #*/5     *       *       *       *       root   $PKG_PREFIX/sbin/ircproxy.sh
+  #EOF
+  #fi
+
 fi
 
 
