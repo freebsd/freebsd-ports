@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${CUBE_DATA} ${CUBE_SRC}
 EXTRACT_ONLY=	${CUBE_SRC}
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL 3D First Person Shooter game
 
 USE_ZIP=	yes

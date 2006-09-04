@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2.r/.2-r/}
 
-MAINTAINER=	avleeuwen@piwebs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT-based music manager with fuzzy search
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
