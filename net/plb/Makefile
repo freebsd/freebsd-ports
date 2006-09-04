@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://plb.sunsite.dk/files/
 
-MAINTAINER=	j@pureftpd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance HTTP load balancer
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
