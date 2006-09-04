@@ -22,7 +22,7 @@ MASTER_SITES=	http://www.seanet.com/~kylemonger/vm/ \
 		http://ftp.vim.org/pub/mail/vm/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	olive@oban.frmug.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail reader running inside Emacs or XEmacs
 
 USE_EMACS=	yes

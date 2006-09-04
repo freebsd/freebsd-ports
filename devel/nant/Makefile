@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-0.85-rc3-src
 
-MAINTAINER=	apeiron+ports@coitusmentis.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A .NET build tool inspired by Ant
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono

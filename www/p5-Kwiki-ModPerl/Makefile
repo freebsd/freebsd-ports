@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Kwiki
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	apeiron+ports@coitusmentis.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enable Kwiki to work under mod_perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki

@@ -12,7 +12,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	http://www.penza-gsm.ru/snake/xmpp/
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	alexander.timoshenko@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber ICQ Transport
 
 USE_GMAKE=	yes
