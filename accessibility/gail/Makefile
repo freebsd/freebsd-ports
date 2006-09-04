@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack libgnomecanvas lthack referencehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
