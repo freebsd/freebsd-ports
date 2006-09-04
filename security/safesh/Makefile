@@ -13,7 +13,7 @@ CATEGORIES=	security
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	eivind@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Authentication manager for OpenSSH (making secure auth easier)
 
 NO_BUILD=	yes
