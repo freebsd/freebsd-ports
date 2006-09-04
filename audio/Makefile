@@ -581,6 +581,7 @@
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += voipong
+    SUBDIR += volumecontrol.app
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
