@@ -13016,6 +13016,7 @@ sentinel	ports/mail/sentinel
 seq2		ports/misc/seq2
 seqio		ports/biology/seqio
 ser		ports/net/ser
+ser2net		ports/comms/ser2net
 serendipity	ports/www/serendipity
 serendipity-devel	ports/www/serendipity-devel
 serialmail	ports/mail/serialmail
