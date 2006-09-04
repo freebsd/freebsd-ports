@@ -525,7 +525,6 @@
     SUBDIR += p5-Text-SimpleTable
     SUBDIR += p5-Text-SimpleTemplate
     SUBDIR += p5-Text-Striphigh
-    SUBDIR += p5-Text-SwiftTemplate
     SUBDIR += p5-Text-Table
     SUBDIR += p5-Text-Tabs+Wrap
     SUBDIR += p5-Text-TabularDisplay
