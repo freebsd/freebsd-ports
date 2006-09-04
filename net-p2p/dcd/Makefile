@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dcd
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.dc.ds.pg.gda.pl/download/sources/stable/
 
-MAINTAINER=	mraleks@bk.ru
+MAINTAINER=	az@freebsd.org
 COMMENT=	Direct Connect Hub clone for Unix
 
 USE_BZIP2=	yes
