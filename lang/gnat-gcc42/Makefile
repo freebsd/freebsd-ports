@@ -7,128 +7,87 @@
 #
 
 PORTNAME=		gnat-gcc
-PORTVERSION=	3.4.6
+PORTVERSION=	4.1.2
 CATEGORIES=		lang
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
-DISTFILES=		gcc-core-${PORTVERSION}.tar.gz \
-				gcc-ada-${PORTVERSION}.tar.gz
+MASTER_SITE_SUBDIR=	snapshots/${versionstring}
+DISTFILES=		gcc-core-${versionstring}${EXTRACT_SUFX} \
+				gcc-ada-${versionstring}${EXTRACT_SUFX} \
+				gcc-testsuite-${versionstring}${EXTRACT_SUFX}
 
 MAINTAINER=		karel@lovetemple.net
 COMMENT=		The GNU Ada Compiler system
 
-USE_GMAKE=	yes
-USE_PERL5=	yes
-USE_BISON=	yes
+ONLY_FOR_ARCHS=	i386
 
-CONFLICTS=	gcc-3.4.*
-WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
+USE_BZIP2=		yes
+USE_GMAKE=		yes
+USE_ICONV=		yes
+USE_PERL5_BUILD=	yes
+USE_BISON=		yes
 
-MAN1=		cpp${gcc_suffix}.1 \
-			gcc${gcc_suffix}.1 \
- 			gcov${gcc_suffix}.1
-MAN7=		fsf-funding.7 gfdl.7 gpl.7
-NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
-INFO=		gcc${gcc_suffix}/cpp \
-			gcc${gcc_suffix}/cppinternals \
-			gcc${gcc_suffix}/gcc \
-			gcc${gcc_suffix}/gccinstall \
-			gcc${gcc_suffix}/gccint \
-			gcc${gcc_suffix}/gnat-style \
-			gcc${gcc_suffix}/gnat_rm \
-			gcc${gcc_suffix}/gnat_ugn_unw
+CONFLICTS=		gcc-4.1.*
+WRKSRC=			${WRKDIR}/build
+
+MAN1=			cpp${gcc_suffix}.1 \
+				gcc${gcc_suffix}.1 \
+				gcov${gcc_suffix}.1
+MAN7=			${fsf_mans:S/$/${fsf_suffix}.7/}
+NOMANCOMPRESS=	yes	# 5-cur and releng4 problems?
+INFO=			gcc${gcc_suffix}/cpp \
+				gcc${gcc_suffix}/cppinternals \
+				gcc${gcc_suffix}/gcc \
+				gcc${gcc_suffix}/gccinstall \
+				gcc${gcc_suffix}/gccint \
+				gcc${gcc_suffix}/gnat-style \
+				gcc${gcc_suffix}/gnat_rm \
+				gcc${gcc_suffix}/gnat_ugn_unw
+
+LATEST_LINK=	${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not deinstall cleanly at 4.x (PR/101809 pending)
-.endif
-
-gcc_suffix=		34
+gcc_snapshot=	20060818
+versionstring=	${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
+srcdir=			${WRKDIR}/gcc-${versionstring}
+gcc_suffix=		41
+fsf_mans=		fsf-funding gfdl gpl
+fsf_suffix=		-${PORTNAME}${gcc_suffix}
 targlib=		${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 
-PATCH_WRKSRC=	${WRKSRC}
+PATCH_WRKSRC=	${srcdir}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=	${WRKDIR}/build
-CONFIGURE_SCRIPT=	../${WRKSRC:C/${WRKDIR}\///}/configure
+CONFIGURE_SCRIPT=	../${srcdir:C/${WRKDIR}//}/configure
 CONFIGURE_ARGS=	--enable-languages="c,ada" \
 				--disable-nls \
 				--with-system-zlib \
 				--with-libiconv-prefix=${LOCALBASE} \
-				--enable-threads=posix \
 				--program-suffix=${gcc_suffix} \
 				--bindir=${PREFIX}/bin/gcc${gcc_suffix} \
 				--libdir=${targlib} \
 				--infodir=${PREFIX}/${INFO_PATH}/gcc${gcc_suffix}
 
-BUILD_WRKSRC=	${WRKDIR}/build
-
-INSTALL_WRKSRC=	${WRKDIR}/build
-INSTALLS_SHLIB=	yes
-
-USE_LDCONFIG=	${targlib}
+ALL_TARGET=		bootstrap-lean
+MAKE_ARGS+=		MAKEINFOFLAGS="--no-split"
 
 PLIST_SUB=		GCC_VER=${PORTVERSION} \
 				GNU_HOST=${CONFIGURE_TARGET} \
 				SUFFIX=${gcc_suffix}
 
-ONLY_FOR_ARCHS=	i386
+USE_LDCONFIG=	${targlib}
 
-# You need a compiler who calls an existing GNAT compiler (3.15 or greater).
-# By default, we'll look for one in the path.  If we can't find one, we'll
-# fetch a distfile containing a minimum (still pretty large) compiler toolset
-# and use that to build.
-gnat_gcc!=	if ${WHICH} adagcc > /dev/null 2>&1; then \
-				${ECHO_CMD} "`${WHICH} adagcc`"; \
+# We need an existing GNAT compiler to bootstrap this one.
+have_gnat!=	if ${WHICH} gnatmake > /dev/null 2>&1; then \
+				${ECHO_CMD} "t"; \
 			else \
 				${ECHO_CMD} ""; \
 			fi
-gnat_bind!=	if ${WHICH} gnatbind > /dev/null 2>&1; then \
-				${ECHO_CMD} "`${WHICH} gnatbind`"; \
-			else \
-				${ECHO_CMD} ""; \
-			fi
-.if empty(gnat_gcc)
-gnat_gcc!=	if ${WHICH} gnatgcc > /dev/null 2>&1; then \
-				${ECHO_CMD} "`${WHICH} gnatgcc`"; \
-			else \
-				${ECHO_CMD} ""; \
-			fi
+.if empty(have_gnat)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/gcc34/gcc34:${PORTSDIR}/lang/gnat-gcc34
+CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc34:${PATH} CC=${LOCALBASE}/bin/gcc34/gcc34
+MAKE_ENV+=		PATH=${LOCALBASE}/bin/gcc34:${PATH} CC=${LOCALBASE}/bin/gcc34/gcc34
 .endif
-
-.if !empty(gnat_gcc) && !empty(gnat_bind)
-bootstrap_path!=	if [ -x ${gnat_gcc} -a -x ${gnat_bind} ]; then \
-				${ECHO_CMD} "$$PATH"; \
-			else \
-				${ECHO_CMD} ""; \
-			fi
-.else
-bootstrap_path=
-.endif
-
-.if empty(bootstrap_path)
-ONLY_FOR_ARCHS=	i386
-DISTFILES+=		gnat-3.15p-boot.tar.gz:boot
-MASTER_SITES+=	${MASTER_SITE_LOCAL}:boot
-MASTER_SITE_SUBDIR+=	deischen/gcc/:boot
-.if ${OSVERSION} >= 500000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
-.endif
-# Warning! You need the trailing slash on GCC_EXEC_PREFIX.
-compiler_data=	GCC_EXEC_PREFIX=${WRKDIR}/adaboot/lib/gcc-lib/ \
-				ADA_INCLUDE_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adainclude \
-				ADA_OBJECTS_PATH=${WRKDIR}/adaboot/lib/gcc-lib/adalib
-bootstrap_path=	${WRKDIR}/adaboot/bin:${PATH}
-gnat_gcc=		adagcc
-.endif
-
-# Make sure we use the Ada-aware gcc compiler.
-CC=				${gnat_gcc}
-# C compiler from GNAT 3.15 doesn't understand modern flags.
-CFLAGS=
-CONFIGURE_ENV+=	${compiler_data} PATH=${bootstrap_path}
-MAKE_ENV+=		${compiler_data} PATH=${bootstrap_path} PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC}
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} target=${CONFIGURE_TARGET}"
@@ -136,29 +95,38 @@ pre-everything::
 # Append ' [FreeBSD]' to gcc version string.
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
-	    ${WRKSRC}/gcc/version.c
+	    ${srcdir}/gcc/version.c
 
 pre-configure:
-	cd ${WRKSRC} ; contrib/gcc_update --touch
-	@${RM} -f ${WRKSRC}/gcc/*/*.info*
+	cd ${srcdir} ; contrib/gcc_update --touch
+	@${RM} -f ${srcdir}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
-do-build:
-	(cd ${BUILD_WRKSRC}; \
-	    ${MAKE_ENV} ${GMAKE} bootstrap)
-	(cd ${BUILD_WRKSRC}; \
-	    ${MAKE_ENV} ${GMAKE} -C gcc gnatlib)
-	(cd ${BUILD_WRKSRC}; \
-	    ${MAKE_ENV} ${GMAKE} -C gcc gnattools)
+post-build:
+	@${ECHO_MSG} "Consider running 'make check' before 'make install', especially"
+	@${ECHO_MSG} "if you have not performed this build on -STABLE or -CURRENT."
+	@${ECHO_MSG} "This assumes that you have the dejagnu port installed."
+
+check: build
+	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
 	${LN} -s ${PREFIX}/bin/gcc${gcc_suffix}/gcc${gcc_suffix} \
 		${PREFIX}/bin/gcc${gcc_suffix}/gcc
-	# Man pages can only be generated if Perl >= 5.6 is installed;
-	# fake them otherwise.
+	# Man pages can only be generated if Perl >= 5.6 is installed; fake them otherwise.
 	for mp in ${_MANPAGES}; do \
 		${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
+	# Version FSF funding and licensing manuals.
+	for mp in ${fsf_mans}; do \
+		${MV} -f ${PREFIX}/man/man7/$${mp}.7 \
+			${PREFIX}/man/man7/$${mp}${fsf_suffix}.7; \
+	done
+	# Save the runaway header.
+	${MV} -f ${PREFIX}/include/mf-runtime.h \
+	         ${targlib}/gcc/${CONFIGURE_TARGET}/${PORTVERSION}/include
+	# Remove libtool library files.
+	${RM} -f ${targlib}/*.la
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 	for d in ${targlib:S/^${PREFIX}\///} ${targlib:S/^${PREFIX}\///:S/lib/libexec/}; do \
