@@ -24,10 +24,6 @@ PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAN1=		cda.1 xmcd.1
-MANCOMPRESSED=	no
-RMAN=		${X11BASE}/bin/rman
-
 .include <bsd.port.pre.mk>
 
 LIBBINDIR=	${PREFIX}/lib/X11/xmcd/bin-FreeBSD_${OSREL:R:R}-${ARCH}
@@ -46,16 +42,6 @@ post-patch:
 		-e 's|_CFLAGS= -pthread|_CFLAGS= ${PTHREAD_CFLAGS}|g; \
 		s|_LDFLAGS= -pthread|_LDFLAGS= ${PTHREAD_LIBS}|g'
 
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-post-build:
-	(cd ${WRKSRC}; \
-	 for i in xmcd cda; do \
-		${RM} -f $${i}-1.html; \
-		${RMAN} -f HTML < $${i}_d/$${i}.man > $${i}-1.html && \
-			${MV} $${i}-1.html $${i}.1.html; \
-	 done)
-.endif
-
 post-install:
 	@${STRIP_CMD} ${LIBBINDIR}/cda
 	@${STRIP_CMD} ${LIBBINDIR}/gobrowser
@@ -63,11 +49,5 @@ post-install:
 	@${STRIP_CMD} ${LIBBINDIR}/xmcd
 	@${CAT} ${PKGMESSAGE}
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${PREFIX}/lib/X11/app-defaults/XMcd
-.if ${X_WINDOW_SYSTEM:L} != xfree86-3
-	(cd ${WRKSRC}; \
-	 for i in xmcd cda; do \
-		${INSTALL_MAN} $${i}.1.html ${PREFIX}/lib/X11/doc/html; \
-	 done)
-.endif
 
 .include <bsd.port.post.mk>
