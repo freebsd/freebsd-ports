@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.wolfpackempire.com/Downloads/server/ \
 		http://www.wolfpackempire.com/Downloads/server/oldversions/
 DISTNAME=	empire-${PORTVERSION}
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Long term multiplayer strategy game
 
 .if !defined(BATCH)
