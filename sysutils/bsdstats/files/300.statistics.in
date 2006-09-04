@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.16 2006-09-04 20:36:44 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.17 2006-09-04 22:40:56 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -26,15 +26,22 @@ IFS="
 "
 
 send_devices () {
-    for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
-    do
-      DRIVER=`echo $line | awk -F\@ '{print $1}'`
-      DEV=`echo $line | awk '{print $4}' | cut -c8-15`
-      CLASS=`echo $line | awk '{print $2}' | cut -c9-14`
-      query_string=$query_string`echo \&dev[]=$DRIVER:$DEV:$CLASS`
-    done
+    case $(uname) in
+	NetBSD)
+	    # Not supported
+	    ;;
+	FreeBSD | *)
+	    for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
+	    do
+	      DRIVER=`echo $line | awk -F\@ '{print $1}'`
+	      DEV=`echo $line | awk '{print $4}' | cut -c8-15`
+	      CLASS=`echo $line | awk '{print $2}' | cut -c9-14`
+	      query_string=$query_string`echo \&dev[]=$DRIVER:$DEV:$CLASS`
+	    done
 
-    do_fetch report_devices.php?key=$KEY$query_string
+	    do_fetch report_devices.php?key=$KEY$query_string
+	    ;;
+    esac
 }
 
 get_id_token () {
@@ -67,6 +74,11 @@ get_id_token () {
        } > $idf                                  && \
 
        mv $idf $id_token_file
+    if [ ! -s $id_token_file ] ;
+    then
+	echo "Nothing returned from $checkin_server"
+	exit 1
+    fi
 
        echo "To protect against abuse, the initial challenge/response phase"
        echo "contains a 15 minute pause.  Please be patient while this time"
@@ -105,11 +117,10 @@ uri_escape () {
 }
 
 do_fetch () {
+    url="http://$checkin_server/scripts/$1"
     case $(uname) in
-	NetBSD)
-	    /usr/bin/ftp -V -o /dev/null "http://$checkin_server/scripts/$1" ;;
-	FreeBSD | *)
-	    /usr/bin/fetch -qo /dev/null "http://$checkin_server/scripts/$1" ;;
+	NetBSD)		/usr/bin/ftp -V -o - "$url" ;;
+	FreeBSD | *)	/usr/bin/fetch -q -o - "$url" ;;
     esac
 }
 
