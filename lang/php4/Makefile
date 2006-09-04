@@ -37,13 +37,15 @@ OPTIONS=	CLI "Build CLI version" on \
 		CGI "Build CGI version" on \
 		APACHE "Build Apache module" off \
 		DEBUG "Enable debug" off \
+		SUHOSIN "Enable Suhosin protection system" off \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
 		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
 		DISCARD "Enable discard-path support (CGI only)" off \
 		FASTCGI "Enable fastcgi support (CGI only)" on \
 		PATHINFO "Enable path-info-check support (CGI only)" on \
-		OPENSSL "Build static OpenSSL extension" off
+		OPENSSL "Build static OpenSSL extension" off \
+		ZLIB "Build static zlib extension" off
 
 CONFLICTS=	php5-5*
 
@@ -51,17 +53,21 @@ MAN1=		php-config.1 phpize.1
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_SUHOSIN)
+PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.2.patch.gz
+PATCH_SITES=	http://www.hardened-php.net/suhosin/_media/
+PATCH_DIST_STRIP=	-p1
+PLIST_SUB+=	SUHOSIN=""
+.else
+PLIST_SUB+=	SUHOSIN="@comment "
+.endif
+
 .if !defined(WITHOUT_CLI)
 PHP_SAPI+=	cli
 PLIST_SUB+=	CLI=""
 MAN1+=		php.1
 .else
-# XXX Temporary hack
-.if !defined(WITHOUT_CGI)
-PLIST_SUB+=	CLI=""
-.else
 PLIST_SUB+=	CLI="@comment "
-.endif
 CONFIGURE_ARGS+=--disable-cli
 .endif
 
@@ -121,6 +127,12 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
 		--with-openssl-dir=${OPENSSLBASE}
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
+PHP_EXT_INC+=	openssl
+.endif
+
+.if defined(WITH_ZLIB)
+CONFIGURE_ARGS+=--with-zlib=/usr
+PHP_EXT_INC+=	zlib
 .endif
 
 .if defined(WITH_DEBUG)
@@ -146,8 +158,8 @@ post-build:
 	@${ECHO_CMD} "PHP_VER=4" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
-.if defined(WITH_OPENSSL)
-	@${ECHO_CMD} "PHP_EXT_INC=openssl" >> ${WRKDIR}/php.conf
+.if defined(PHP_EXT_INC)
+	@${ECHO_CMD} "PHP_EXT_INC=${PHP_EXT_INC}" >> ${WRKDIR}/php.conf
 .endif
 
 post-install:
@@ -155,10 +167,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
-# XXX Temporary hack
-.if !defined(WITHOUT_CGI) && defined(WITHOUT_CLI)
-	@${LN} -sf ${PREFIX}/bin/php-cgi ${PREFIX}/bin/php
-.endif
 .if defined(WITH_APACHE)
 	@${CAT} ${PKGMESSAGE}
 .endif
