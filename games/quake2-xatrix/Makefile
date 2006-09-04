@@ -46,4 +46,9 @@ do-install:
 	${MKDIR} ${Q2DIR}/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${Q2DIR}/${PORTNAME}
 
+post-install:
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
+
 .include <bsd.port.post.mk>
