@@ -1,0 +1,20 @@
+Local/Applications/VolumeControl.app
+Local/Applications/VolumeControl.app/VolumeControl
+Local/Applications/VolumeControl.app/library_paths.openapp
+Local/Applications/VolumeControl.app/Resources
+Local/Applications/VolumeControl.app/Resources/Info-gnustep.plist
+Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm
+Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/objects.gorm
+Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/data.classes
+Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/data.info
+Local/Applications/VolumeControl.app/Resources/VolumeControl.desktop
+Local/Applications/VolumeControl.app/Resources/headphones.tiff
+Local/Applications/VolumeControl.app/Resources/VolumeControl.rtf
+Local/Applications/VolumeControl.app/stamp.make
+@dirrm System/Applications/VolumeControl.app/Resources/VolumeControl.gorm
+@dirrm System/Applications/VolumeControl.app/Resources
+@dirrm System/Applications/VolumeControl.app
+@dirrm Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm
+@dirrm Local/Applications/VolumeControl.app/Resources
+@dirrm Local/Applications/VolumeControl.app
+@dirrmtry Local/Applications
