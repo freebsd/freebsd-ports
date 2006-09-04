@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	service-discovery-applet
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	net dns gnome
 MASTER_SITES=	http://0pointer.de/~sebest/
 
@@ -32,7 +31,7 @@ GCONF_SCHEMAS=	service-discovery-applet.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/plugins/gconfterminal.py
+		${WRKSRC}/plugins/gconfterminal.py.in
 
 post-install:
 	@${X11BASE}/bin/gtk-update-icon-cache -f -q --ignore-theme-index \

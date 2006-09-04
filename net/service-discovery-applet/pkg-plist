@@ -30,9 +30,12 @@ share/gnome/service-discovery-applet/plugins/ekiga.py
 share/gnome/service-discovery-applet/plugins/gconfterminal.py
 share/gnome/service-discovery-applet/plugins/nautilus.py
 share/gnome/service-discovery-applet/plugins/xvncviewer.py
+share/gnome/service-discovery-applet/tools/exec_wrapper
+share/locale/ca/LC_MESSAGES/service-discovery-applet.mo
 share/locale/da/LC_MESSAGES/service-discovery-applet.mo
 share/locale/de/LC_MESSAGES/service-discovery-applet.mo
 share/locale/fr/LC_MESSAGES/service-discovery-applet.mo
+@dirrm share/gnome/service-discovery-applet/tools
 @dirrm share/gnome/service-discovery-applet/plugins
 @dirrm share/gnome/service-discovery-applet/interfaces
 @dirrm share/gnome/service-discovery-applet/icons/48x48
