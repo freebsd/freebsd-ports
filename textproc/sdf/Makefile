@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dannyman@toldme.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Document Format - "author-friendly" mark-up system
 
 MAN1=		pod2sdf.1

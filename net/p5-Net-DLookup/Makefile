@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dannyman@toldme.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perform domain lookups on 2-letter and 3-letter TLDs
 
 PERL_CONFIGURE=	YES

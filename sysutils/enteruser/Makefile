@@ -13,7 +13,7 @@ DISTNAME=	enteruser
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	dannyman@toldme.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible script for adding new users
 
 USE_PERL5=	yes
