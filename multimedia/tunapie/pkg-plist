@@ -23,4 +23,6 @@ bin/tunapie
 %%DATADIR%%/tuneradult.pyc
 %%DATADIR%%/tunersafe.py
 %%DATADIR%%/tunersafe.pyc
+%%DESKTOPDIR%%/tunapie.desktop
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

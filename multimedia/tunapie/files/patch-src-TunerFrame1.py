@@ -10,7 +10,7 @@ $FreeBSD$
 -        self.term='/usr/bin/x-terminal-emulator'
 -        self.ripper='/usr/bin/streamripper -t -u winamp2 -o never'
 +        self.mediaplayer='%%X11BASE%%/bin/xmms'
-+        self.videoplayer='%%X11BASE%%/bin/xine'
++        self.videoplayer='%%VIDEOPLAYER%%'
 +        self.term='%%X11BASE%%/bin/xterm'
 +        self.ripper='%%LOCALBASE%%/bin/streamripper -t -u winamp2 -o never'
          self.rdir=self.home+'/.tunapie/streamripper'
