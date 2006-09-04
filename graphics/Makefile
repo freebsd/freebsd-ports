@@ -216,6 +216,7 @@
     SUBDIR += graphviz
     SUBDIR += gridpix
     SUBDIR += grx
+    SUBDIR += gscan2pdf
     SUBDIR += gsculpt
     SUBDIR += gstreamer-plugins-aalib
     SUBDIR += gstreamer-plugins-aalib80
