@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
 
+MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
+
 BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
