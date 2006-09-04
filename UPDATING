@@ -7,6 +7,35 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20060904:
+  AFFECTS: users of net/samba3
+  AUTHOR: timur@gnu.org
+
+  Reviosion of Samba 3.0.23c port had changed location of the directory,
+  where Samba stores it's smbpasswd files from $PREFIX/private to a more
+  common $PREFIX/etc/samba.
+  
+  You need to move *.tdb files from an old to new location and remove old 
+  directory if you use tdbsam backend for Samba user authentication.
+  
+  Starting with the 3.0.23c release, the officially supported passdb 
+  backends (smbpasswd, tdbsam, and ldapsam) now operate identically with
+  regards to the historical RID algorithm for unmapped users  and groups
+  (i.e. accounts not in the passdb or group mapping table). The resulting
+  behavior is that all unmapped users are resolved  to a SID in the
+  S-1-22-1 domain and all unmapped groups resolve to a SID in the S-1-22-2
+  domain.  Previously, when using the  smbpasswd passdb, such users and
+  groups would resolve to an  algorithmic SID in the machine's own domain
+  (S-1-5-XX-XX-XX). However, the smbpasswd backend still utilizes the RID
+  algorithm when creating new user accounts or allocating a RID for a new 
+  group mapping entry.
+  
+  With the changes in the 3.0.23c release, it is now possible to  resolve
+  a uid/gid, name, or SID in any direction and always obtain a symmetric
+  mapping.  This is important so that values for smb.conf  parameters such
+  as "valid users" resolve to the same SIDs as those  included  in the
+  local user's initial token.
+
 20060902:
   AFFECTS: users of japanese/uim-anthy and japanese/uim-canna
   AUTHOR: nobutaka@freebsd.org
