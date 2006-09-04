@@ -14,8 +14,8 @@ CATEGORIES=	sysutils textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	eivind@FreeBSD.org
-COMMENT=	"Automatic 3-way merge of /etc updates"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Automatic 3-way merge of /etc updates
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
