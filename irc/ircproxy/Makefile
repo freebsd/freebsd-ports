@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircproxy
-DISTVERSION=	1.2.42d.pre2
+DISTVERSION=	1.2.42d.pre3
 CATEGORIES=	irc
 MASTER_SITES=	http://www.ircproxy.night-light.net/files/
 
