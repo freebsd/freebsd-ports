@@ -33,14 +33,15 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	ALL
 
 MAN1=		zsnes.1
 PLIST_FILES=	bin/zsnes
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
@@ -49,6 +50,9 @@ CONFIGURE_ARGS+=--without-x
 PKGNAMESUFFIX=	-nox11
 .else
 CONFIGURE_ARGS+=--with-x
+CFLAGS+=	-I${X11BASE}/include
+CPPFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib
 .endif
 
 .if defined(WITH_OPENGL)
@@ -62,6 +66,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's| -pipe||g ; \
 		 s| -I/usr/local/include||g ; \
+		 s|^VERSION=1.41|VERSION=${PORTVERSION}|; \
+		 s| -D__FreeBSD__||g; \
 		 s| -I/usr/include||g ; \
 		 s| -O3 .* -s||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
