@@ -10,7 +10,7 @@ PORTVERSION=	1.28
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/
 
-MAINTAINER=	coda@cs.cmu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interprocess communication library
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
