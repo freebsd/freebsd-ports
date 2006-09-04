@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/gbuffy-${PORTVERSION}/
 
-MAINTAINER=	olive@oban.frmug.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ multiple mailbox "biff" program
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
