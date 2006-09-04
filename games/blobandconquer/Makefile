@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blobandconquer
-DISTVERSION=	0.3-1
+DISTVERSION=	0.4-1
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
 DISTNAME=	blobAndConquer-${DISTVERSION}

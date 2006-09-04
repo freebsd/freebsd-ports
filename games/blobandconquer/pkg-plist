@@ -72,6 +72,7 @@ bin/blobAndConquer
 %%DATADIR%%/data/gameDefs/features
 %%DATADIR%%/data/gameDefs/items
 %%DATADIR%%/data/gameDefs/weapons
+%%DATADIR%%/data/locale/additional
 %%DATADIR%%/data/locale/battle
 %%DATADIR%%/data/locale/cheats
 %%DATADIR%%/data/locale/controls
@@ -85,7 +86,6 @@ bin/blobAndConquer
 %%DATADIR%%/data/locale/system
 %%DATADIR%%/data/locale/weapons
 %%DATADIR%%/data/misc/letterFrequencyTable
-%%DATADIR%%/data/missions/enemytest
 %%DATADIR%%/data/missions/hub
 %%DATADIR%%/data/missions/hubLocale
 %%DATADIR%%/data/missions/mission01
@@ -136,13 +136,13 @@ bin/blobAndConquer
 %%DATADIR%%/data/missions/mission30Locale
 %%DATADIR%%/data/missions/mission31
 %%DATADIR%%/data/missions/mission31Locale
-%%DATADIR%%/data/missions/test
 %%DATADIR%%/data/missions/training
 %%DATADIR%%/data/missions/trainingLocale
 %%DATADIR%%/data/texturespecs/common
 %%DATADIR%%/data/texturespecs/liquid
 %%DATADIR%%/data/texturespecs/list
 %%DATADIR%%/data/texturespecs/mech
+%%DATADIR%%/data/widgets/additional
 %%DATADIR%%/data/widgets/cheats
 %%DATADIR%%/data/widgets/controlOptions
 %%DATADIR%%/data/widgets/gameover
@@ -162,6 +162,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/8.png
 %%DATADIR%%/gfx/game/9.png
 %%DATADIR%%/gfx/game/colon.png
+%%DATADIR%%/gfx/game/dot.png
 %%DATADIR%%/gfx/game/episode2.png
 %%DATADIR%%/gfx/game/missionFailed.png
 %%DATADIR%%/gfx/game/orderIcon1.png
@@ -197,17 +198,20 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/rw2/pointer.blend.raw
 %%DATADIR%%/gfx/rw2/rifle.blend.raw
 %%DATADIR%%/gfx/rw2/uzi.blend.raw
+%%DATADIR%%/music/A Bear Called Otso.xm
+%%DATADIR%%/music/Advancement.xm
 %%DATADIR%%/music/Dark Club.s3m
 %%DATADIR%%/music/Dragon Cave.xm
 %%DATADIR%%/music/Helmet Shake.mod
 %%DATADIR%%/music/Liquid Crystal.xm
+%%DATADIR%%/music/Longstabben.xm
 %%DATADIR%%/music/Neutral Zone.xm
+%%DATADIR%%/music/Scene Music.xm
 %%DATADIR%%/music/Sodom of Evil.xm
 %%DATADIR%%/music/Super Robot Fighter.xm
 %%DATADIR%%/music/Tales Untold.xm
 %%DATADIR%%/music/Temple.xm
-%%DATADIR%%/music/Vort Boojaart.mod
-%%DATADIR%%/music/War Tales 3.xm
+%%DATADIR%%/music/The Siege.xm
 %%DATADIR%%/music/Warlord Theme.s3m
 %%DATADIR%%/music/Zenith.s3m
 %%DATADIR%%/sound/ambience/general/rain.ogg
@@ -222,6 +226,7 @@ bin/blobAndConquer
 %%DATADIR%%/sound/ambience/ruins/soulWail1.ogg
 %%DATADIR%%/sound/ambience/ruins/soulWail2.ogg
 %%DATADIR%%/sound/ambience/ruins/wolfHowl.ogg
+%%DATADIR%%/sound/combat/C4Clock.ogg
 %%DATADIR%%/sound/combat/arm1.ogg
 %%DATADIR%%/sound/combat/arm2.ogg
 %%DATADIR%%/sound/combat/arm3.ogg
@@ -229,8 +234,10 @@ bin/blobAndConquer
 %%DATADIR%%/sound/combat/boom.ogg
 %%DATADIR%%/sound/combat/bulletHitWater.ogg
 %%DATADIR%%/sound/combat/clang.ogg
+%%DATADIR%%/sound/combat/clock.ogg
 %%DATADIR%%/sound/combat/command.ogg
 %%DATADIR%%/sound/combat/computer_write.ogg
+%%DATADIR%%/sound/combat/crateShatter.ogg
 %%DATADIR%%/sound/combat/death1.ogg
 %%DATADIR%%/sound/combat/death2.ogg
 %%DATADIR%%/sound/combat/death3.ogg
@@ -271,10 +278,12 @@ bin/blobAndConquer
 %%DATADIR%%/sound/combat/pistol.ogg
 %%DATADIR%%/sound/combat/pistolReload.ogg
 %%DATADIR%%/sound/combat/plasma1.ogg
+%%DATADIR%%/sound/combat/plasmaHit.ogg
 %%DATADIR%%/sound/combat/rico1.ogg
 %%DATADIR%%/sound/combat/rico2.ogg
 %%DATADIR%%/sound/combat/rifle.ogg
 %%DATADIR%%/sound/combat/rocketLauncher.ogg
+%%DATADIR%%/sound/combat/shieldDestroyed.ogg
 %%DATADIR%%/sound/combat/silencedPistol.ogg
 %%DATADIR%%/sound/combat/sizzle.ogg
 %%DATADIR%%/sound/combat/smallExplode.ogg
@@ -289,18 +298,27 @@ bin/blobAndConquer
 %%DATADIR%%/sound/combat/teleport3.ogg
 %%DATADIR%%/sound/combat/throw1.ogg
 %%DATADIR%%/sound/combat/throw2.ogg
+%%DATADIR%%/sound/combat/timeWarning.ogg
 %%DATADIR%%/sound/combat/waterIn.ogg
 %%DATADIR%%/sound/combat/waterOut.ogg
 %%DATADIR%%/sound/combat/weaponPickup.ogg
 %%DATADIR%%/sound/gui/buttonClick.ogg
 %%DATADIR%%/textures/arctic/snow01.jpg
 %%DATADIR%%/textures/common/blank.jpg
+%%DATADIR%%/textures/common/target.tga
+%%DATADIR%%/textures/common/target2.tga
 %%DATADIR%%/textures/desert/.keep_me
 %%DATADIR%%/textures/game/aquaBlob.png
 %%DATADIR%%/textures/game/arrow.png
 %%DATADIR%%/textures/game/black.png
 %%DATADIR%%/textures/game/blood01.png
+%%DATADIR%%/textures/game/blood02.png
+%%DATADIR%%/textures/game/blood03.png
+%%DATADIR%%/textures/game/blood04.png
+%%DATADIR%%/textures/game/blood05.png
 %%DATADIR%%/textures/game/bullet.png
+%%DATADIR%%/textures/game/bulletHole01.png
+%%DATADIR%%/textures/game/bulletHole02.png
 %%DATADIR%%/textures/game/c4.png
 %%DATADIR%%/textures/game/cherry.png
 %%DATADIR%%/textures/game/cherryTexture.png
@@ -331,6 +349,7 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/overcast.png
 %%DATADIR%%/textures/game/pistolBlob.png
 %%DATADIR%%/textures/game/pistolDroid.png
+%%DATADIR%%/textures/game/plasmaBurn01.png
 %%DATADIR%%/textures/game/sentryGun1.jpg
 %%DATADIR%%/textures/game/shotGunDroid.png
 %%DATADIR%%/textures/game/spotLightMap.png
