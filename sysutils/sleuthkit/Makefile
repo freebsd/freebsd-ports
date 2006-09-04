@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	2.03
+PORTVERSION=	2.05
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,8 +29,6 @@ MAN1=		dcalc.1 dcat.1 disk_sreset.1 disk_stat.1 dls.1 \
 		sigfind.1 sorter.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/BSD5)$$/& || defined(FREEBSD6) || defined(FREEBSD7)/' \
-		${WRKSRC}/src/auxtools/tsk_os.h
 	@${REINPLACE_CMD} -E -e 's/^CC[[:space:]]*=/CC \?=/' \
 		-e 's/[[:space:]]+file test[[:space:]]*$$//' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CC[[:space:]]*=/d' -e 's/\$$(OPT) \$$(DEBUG)//' \
@@ -38,7 +36,10 @@ post-patch:
 		${WRKSRC}/src/disktools/Makefile ${WRKSRC}/src/fstools/Makefile \
 		${WRKSRC}/src/hashtools/Makefile ${WRKSRC}/src/imgtools/Makefile \
 		${WRKSRC}/src/auxtools/Makefile ${WRKSRC}/src/mmtools/Makefile \
-		${WRKSRC}/src/srchtools/Makefile
+		${WRKSRC}/src/srchtools/Makefile ${WRKSRC}/src/libewf/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		-e '8s|-g -Wall|${CFLAGS}| ; 9s|-g -Wall|${CXXFLAGS}|' \
+		${WRKSRC}/src/afflib/Makefile.defs ${WRKSRC}/src/afflib/Makefile
 
 do-install:
 .if !defined(NOPORTDOCS)
