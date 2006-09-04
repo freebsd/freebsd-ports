@@ -1,6 +1,6 @@
 --- Makefile.orig	Thu Nov  7 18:58:32 1996
 +++ Makefile	Mon Feb 20 18:49:33 2006
-@@ -34,19 +34,20 @@
+@@ -34,40 +34,43 @@
  CLASS_SRC = ./class
  MKDIRHIER = mkdir -p
  
@@ -26,8 +26,15 @@
  
  zip: hp48xgcc-$(VERSION_TAG).zip
  
-@@ -57,17 +58,18 @@
+-usr-tree: FORCE
+-	cd $(GCC_SRC); perl -e '\
+-	foreach $$t("cccp", "xgcc", "cc1") { \
++USR_TREE = 'foreach $$t("cccp", "xgcc", "cc1") { \
+ 	if(-e $$t && !-e "$$t$(EXE)") { unlink $$t; } \
  	elsif(!-e $$t && -e "$$t$(EXE)") { unlink "$$t$(EXE)"; } }'
++
++usr-tree: FORCE
++	cd $(GCC_SRC); perl -e $(USR_TREE)
  	$(MAKE) -C $(GCC_SRC) $(GCC_MAKE_ARGS) xgcc cc1 cccp
  	$(MAKE) -e -C $(CLASS_SRC)
 -	$(MAKE) usr-tree1
@@ -48,7 +55,7 @@
  
  public-files: $(addprefix $(INSTPUB)/,$(PUBDIRS)) \
  	      $(addprefix $(INSTPUB)/,$(PUBFILES))
-@@ -76,22 +78,25 @@
+@@ -76,22 +79,25 @@
  	cd $(ROOT) && zip -uyr $@ usr
  
  $(INSTBIN)/xgcc$(EXE): $(GCC_SRC)/xgcc$(EXE)

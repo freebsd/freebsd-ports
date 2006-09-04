@@ -40,11 +40,7 @@ MAKE_ARGS=	GCC_SRC="${GCC_DIR}" GCC_VERSION="${GCC_VER}" \
 
 .if ${ARCH} != "i386"
 BROKEN=		Configure fails on !i386
-.else
-BROKEN=		fails to install
 .endif
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 post-extract: .SILENT
 # Extract GCC distribution separately because of USE_ZIP/.tar.gz conflict
