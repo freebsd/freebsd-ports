@@ -1,4 +1,7 @@
-%%SITE_PERL%%/POE/Filter/IRCD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/IRCD/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/IRCD
+%%SITE_PERL%%/POE/Filter/IRCD.pm
+@dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/IRCD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
