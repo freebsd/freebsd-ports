@@ -39,7 +39,7 @@ MAN1=		ace-gperf.1
 BROKEN=		does not support
 .endif
 
-.if ${OSVERSION} > 700015
+.if ${OSVERSION} >= 700015 || (${OSVERSION} < 700000 && ${OSVERSION} >= 601103)
 EXTRA_PATCHES=	${FILESDIR}/extra-ace-OS_NS_netdb.inl
 .endif
 
