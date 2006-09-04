@@ -681,6 +681,7 @@ batik		ports/graphics/batik
 battalion	ports/games/battalion
 battfink	ports/sysutils/battfink
 battleball	ports/games/battleball
+battmond	ports/sysutils/battmond
 baudline	ports/audio/baudline
 bayespam	ports/mail/bayespam
 bazaar		ports/devel/bazaar
