@@ -510,6 +510,7 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
+    SUBDIR += php-suhosin
     SUBDIR += php4-crack
     SUBDIR += php4-cryptopp
     SUBDIR += php4-mcrypt
