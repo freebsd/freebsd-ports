@@ -7,6 +7,7 @@
 
 PORTNAME=	el
 PORTVERSION=	132
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	acm/${PORTNAME}
@@ -29,6 +30,7 @@ USE_SDL=	sdl net
 
 ALL_TARGET=	el.x86
 MAKEFILE=	Makefile.bsdg
+PLIST=		${WRKDIR}/pkg-plist
 
 .include <bsd.port.pre.mk>
 
