@@ -15,7 +15,7 @@ DISTNAME=	ts2_client_rc2_2032
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main setduplexfake.so.gz:misc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client side of a group voice chat system
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg

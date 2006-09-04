@@ -11,7 +11,7 @@ CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
 DISTFILES=	mup52src.tar.gz mup52doc.tar.gz
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A shareware program for typesetting music
 
 USE_XLIB=	yes

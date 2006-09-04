@@ -12,7 +12,7 @@ CATEGORIES=	devel tcl80 tcl82 tcl83 tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tclreadline
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU readline for TCL
 
 GNU_CONFIGURE=	yes
