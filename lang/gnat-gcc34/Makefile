@@ -8,6 +8,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=	3.4.6
+PORTREVISION=	1
 CATEGORIES=		lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
@@ -16,6 +17,8 @@ DISTFILES=		gcc-core-${PORTVERSION}.tar.gz \
 
 MAINTAINER=		karel@lovetemple.net
 COMMENT=		The GNU Ada Compiler system
+
+ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -27,7 +30,7 @@ WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 MAN1=		cpp${gcc_suffix}.1 \
 			gcc${gcc_suffix}.1 \
  			gcov${gcc_suffix}.1
-MAN7=		fsf-funding.7 gfdl.7 gpl.7
+MAN7=		${fsf_mans:S/$/${fsf_suffix}.7/}
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 INFO=		gcc${gcc_suffix}/cpp \
 			gcc${gcc_suffix}/cppinternals \
@@ -38,13 +41,13 @@ INFO=		gcc${gcc_suffix}/cpp \
 			gcc${gcc_suffix}/gnat_rm \
 			gcc${gcc_suffix}/gnat_ugn_unw
 
+LATEST_LINK=	${PORTNAME}${gcc_suffix}
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not deinstall cleanly at 4.x (PR/101809 pending)
-.endif
-
 gcc_suffix=		34
+fsf_mans=		fsf-funding gfdl gpl
+fsf_suffix=		-${PORTNAME}${gcc_suffix}
 targlib=		${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 
 PATCH_WRKSRC=	${WRKSRC}
@@ -65,15 +68,12 @@ CONFIGURE_ARGS=	--enable-languages="c,ada" \
 BUILD_WRKSRC=	${WRKDIR}/build
 
 INSTALL_WRKSRC=	${WRKDIR}/build
-INSTALLS_SHLIB=	yes
-
-USE_LDCONFIG=	${targlib}
 
 PLIST_SUB=		GCC_VER=${PORTVERSION} \
 				GNU_HOST=${CONFIGURE_TARGET} \
 				SUFFIX=${gcc_suffix}
 
-ONLY_FOR_ARCHS=	i386
+USE_LDCONFIG=	${targlib}
 
 # You need a compiler who calls an existing GNAT compiler (3.15 or greater).
 # By default, we'll look for one in the path.  If we can't find one, we'll
@@ -108,7 +108,6 @@ bootstrap_path=
 .endif
 
 .if empty(bootstrap_path)
-ONLY_FOR_ARCHS=	i386
 DISTFILES+=		gnat-3.15p-boot.tar.gz:boot
 MASTER_SITES+=	${MASTER_SITE_LOCAL}:boot
 MASTER_SITE_SUBDIR+=	deischen/gcc/:boot
@@ -154,10 +153,14 @@ do-build:
 post-install:
 	${LN} -s ${PREFIX}/bin/gcc${gcc_suffix}/gcc${gcc_suffix} \
 		${PREFIX}/bin/gcc${gcc_suffix}/gcc
-	# Man pages can only be generated if Perl >= 5.6 is installed;
-	# fake them otherwise.
+	# Man pages can only be generated if Perl >= 5.6 is installed; fake them otherwise.
 	for mp in ${_MANPAGES}; do \
 		${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
+	done
+	# Version FSF funding and licensing manuals.
+	for mp in ${fsf_mans}; do \
+		${MV} -f ${PREFIX}/man/man7/$${mp}.7 \
+			${PREFIX}/man/man7/$${mp}${fsf_suffix}.7; \
 	done
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
