@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yaml
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	devel python
 MASTER_SITES=	http://pyyaml.org/download/pyyaml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

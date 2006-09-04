@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/yaml/constructor.py
 %%PYTHON_SITELIBDIR%%/yaml/constructor.pyc
 %%PYTHON_SITELIBDIR%%/yaml/constructor.pyo
+%%PYTHON_SITELIBDIR%%/yaml/cyaml.py
+%%PYTHON_SITELIBDIR%%/yaml/cyaml.pyc
+%%PYTHON_SITELIBDIR%%/yaml/cyaml.pyo
 %%PYTHON_SITELIBDIR%%/yaml/dumper.py
 %%PYTHON_SITELIBDIR%%/yaml/dumper.pyc
 %%PYTHON_SITELIBDIR%%/yaml/dumper.pyo
