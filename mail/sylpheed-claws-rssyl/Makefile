@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rssyl
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://claws.sylpheed.org/downloads/plugins/
