@@ -4,10 +4,10 @@ This port has installed the biosfont kernel module.
 
 To load the kernel module immediately, type the following command:
 
-	kldload biosfont 
+	kldload biosfont
 
 To load the kernel module at boot, add the following line to
-/boot/loader.conf:
+%%PREFIX%%/boot/loader.conf:
 
 	biosfont_load="YES"
 
