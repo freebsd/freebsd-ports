@@ -57,8 +57,12 @@ share/locale/vi/LC_MESSAGES/evolution-webcal.mo
 share/locale/xh/LC_MESSAGES/evolution-webcal.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-webcal.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-webcal.mo
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/dz/LC_MESSAGES
