@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://people.freedesktop.org/~hadess/
@@ -15,7 +15,11 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME type database from the FreeDesktop project
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 libxml2 intltool gnomehack
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 libxml2 intltool gnomehack intlhack
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		update-mime-database.1
 
