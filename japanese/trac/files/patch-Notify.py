@@ -15,7 +15,7 @@
 -        msg = MIMEMultipart()
 -        msg.attach(MIMEText(body, 'plain', 'utf-8'))
 -        msg.epilogue = ''
-+        body_esc = string.replace(unicode(body, 'utf-8'), u'\uff5e', u'\u301c')
++        body_esc = string.replace(unicode(body, 'utf-8'), u'\uff5e', u'\u301c').replace(u'\u2225', u'\u2016').replace(u'\uff0d', u'\u2212')
 +        body = body_esc.encode('japanese.c.iso-2022-jp')
 +        msg = MIMEText(body, 'plain', 'iso-2022-jp')
          msg['X-Mailer'] = 'Trac %s, by Edgewall Software' % __version__
@@ -25,7 +25,7 @@
          msg['X-URL'] =  self.config.get('project','url')
 -        msg['Subject'] = Header(self.subject, 'utf-8')
 +        subj = unicode(self.subject, 'utf-8')
-+        subj_esc = string.replace(subj, u'\uff5e', u'\u301c')
++        subj_esc = string.replace(subj, u'\uff5e', u'\u301c').replace(u'\u2225', u'\u2016').replace(u'\uff0d', u'\u2212')
 +        msg['Subject'] = Header(subj_esc.encode('japanese.c.iso-2022-jp'), 'iso-2022-jp')
          msg['From'] = '%s <%s>' % (projname, self.from_email)
          msg['Sender'] = self.from_email
