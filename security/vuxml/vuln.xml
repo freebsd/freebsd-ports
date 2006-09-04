@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fffa9257-3c17-11db-86ab-00123ffe8333">
+    <topic>mailman -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<name>ja-mailman</name>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.9.r1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/21732/">
+	  <p>Mailman can be exploited by malicious people to conduct cross-site
+	    scripting and phishing attacks, and cause a DoS (Denial of
+	    Service).</p>
+	  <p>1) An error in the logging functionality can be exploited to
+	    inject a spoofed log message into the error log via a specially
+	    crafted URL.</p>
+	  <p>Successful exploitation may trick an administrator into visiting
+	    a malicious web site.</p>
+	  <p>2) An error in the processing of malformed headers which does not
+	    follow the RFC 2231 standard can be exploited to cause a DoS
+	    (Denial of Service).</p>
+	  <p>3) Some unspecified input isn't properly sanitised before being
+	    returned to the user. This can be exploited to execute arbitrary
+	    HTML and script code in a user's browser session in context of an
+	    affected site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2941</cvename>
+      <cvename>CVE-2006-3636</cvename>
+      <url>http://secunia.com/advisories/21732/</url>
+      <url>http://sourceforge.net/project/shownotes.php?group_id=103&amp;release_id=444295</url>
+    </references>
+    <dates>
+      <discovery>2006-09-04</discovery>
+      <entry>2006-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09639ccc-3abb-11db-81e1-000e0c2e438a">
     <topic>hlstats -- multiple cross site scripting vulnerabilities</topic>
     <affects>
