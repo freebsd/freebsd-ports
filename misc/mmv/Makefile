@@ -15,6 +15,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Move/copy/append/link multiple files with sophisticated wildcard matching
 
+BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
+
 RESTRICTED=	No modification or redistribution for charge
 CFLAGS+=	-DDIRENT
 MAKE_FLAGS=	-e
