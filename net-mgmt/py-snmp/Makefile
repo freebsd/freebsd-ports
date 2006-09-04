@@ -16,7 +16,7 @@ DISTNAME=	pysnmp-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	SNMP framework for Python
 
-CONFLICTS=	py??-snmp4-[0-9]*
+CONFLICTS=	py??-snmp2-[0-9]* py??-snmp4-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
