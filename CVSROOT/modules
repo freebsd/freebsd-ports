@@ -10837,6 +10837,7 @@ php-magickwand	ports/graphics/php-magickwand
 php-mode.el	ports/lang/php-mode.el
 php-screw	ports/www/php-screw
 php-sqlrelay	ports/databases/php-sqlrelay
+php-suhosin	ports/security/php-suhosin
 php-templates	ports/www/php-templates
 php-xdebug	ports/devel/php-xdebug
 php4		ports/lang/php4
