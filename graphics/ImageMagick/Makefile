@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.2.8-5
+DISTVERSION=	6.2.9-3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -35,7 +35,7 @@ USE_AUTOTOOLS=	libtool:15 libltdl:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
@@ -235,7 +235,7 @@ PKGNAMESUFFIX+=		-nox11
 CONFIGURE_ARGS+=	--without-x --without-mpeg2
 PLIST_SUB+=		X11='@comment '
 .else
-CONFLICTS+=		display
+CONFLICTS+=		display-[0-9]*
 CONFIGURE_ARGS+=	--with-x
 USE_XLIB=		yes
 PLIST_SUB+=		X11=''
