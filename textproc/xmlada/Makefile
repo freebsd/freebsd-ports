@@ -12,8 +12,11 @@ MASTER_SITES=	https://libre2.adacore.com/${PORTNAME}/
 DISTNAME=	XmlAda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aidan@velvet.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML parsing library for Ada 95
+
+DEPRECATED=	no longer available from mastersite; 2.0 is available
+EXPIRATION_DATE=	2006-11-04
 
 BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
