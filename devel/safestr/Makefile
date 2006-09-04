@@ -7,7 +7,7 @@
 
 PORTNAME=	safestr
 PORTVERSION=	1.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zork.org/software/
 
