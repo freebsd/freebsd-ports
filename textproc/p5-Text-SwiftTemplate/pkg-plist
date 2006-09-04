@@ -1,3 +1,0 @@
-@comment $FreeBSD$
-%%SITE_PERL%%/Text/SwiftTemplate.pm
-@dirrmtry %%SITE_PERL%%/Text
