@@ -19,7 +19,7 @@ COMMENT=	Verlihub Linux/Unix Direct Connect Hub Software
 
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP \
 		pcre.0:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/verlihub-0.9.8c
 
@@ -27,8 +27,9 @@ USE_MYSQL=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+SUB_FILES+=	pkg-message
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	configuring.txt help.sql using.txt features.html help.html params.php verlihub.html
@@ -38,9 +39,6 @@ PORTDOCS=	configuring.txt help.sql using.txt features.html help.html params.php 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4+
 .endif
-
-post-patch:
-	@${CAT} ${PKGDIR}/pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
