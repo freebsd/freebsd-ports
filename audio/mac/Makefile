@@ -24,9 +24,6 @@ CONFIGURE_ARGS+=	--enable-backward
 
 INSTALLS_SHLIB=	yes
 
-# does not compile on sparc64
-NOT_FOR_ARCHS=	sparc64
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
