@@ -28,7 +28,7 @@ USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libgnomeprintui \
 		ltverhack
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
