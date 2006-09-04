@@ -84,7 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -118,6 +118,7 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--enable-menu \
 		--disable-libfame \
 		--disable-external-faad \
+		--disable-external-vidix \
 		--disable-tv-v4l \
 		--disable-liblzo \
 		--disable-libcdio
@@ -133,12 +134,14 @@ OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
 OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
 OPTIONS+=	SDL "Enable SDL video output" off
+OPTIONS+=	VIDIX "Enable VIDIX video output on supported archs" on
 OPTIONS+=	NVIDIA "Enable experimental nvidia xvmc driver" off
 OPTIONS+=	SKINS "Force dependency on mplayer-skins" on
 OPTIONS+=	FREETYPE "Use freetype for OSD fonts (TrueType!)" on
 OPTIONS+=	RTC "Add support for kernel real time clock timing" off
 OPTIONS+=	ARTS "Enable KDE sound system support" off
 OPTIONS+=	ESOUND "Enable GNOME esound support" off
+OPTIONS+=	POLYP "Enable polyp sound server support" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
 OPTIONS+=	AALIB "Enable aalib support" off
 OPTIONS+=	LIBCACA "Enable libcaca support" off
@@ -146,6 +149,7 @@ OPTIONS+=	SVGALIB "Enable svgalib support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
 OPTIONS+=	DTS "Enable DTS audio codec support" on
+OPTIONS+=	SPEEX "Enable speex audio codec support" off
 OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
 OPTIONS+=	XMMS "Enable XMMS plugin support" off
 OPTIONS+=	THEORA "Enable ogg theora video support" off
@@ -175,16 +179,33 @@ TOOLFILES=	calcbpp.pl countquant.pl dvd2divxscript.pl \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.x. Patches are welcome
+CFLAGS+=	-Duint_fast64_t=uint64_t
+CFLAGS+=	-Droundf=rintf
+.if ${ARCH} == "i386"
+CFLAGS+=	-DPRId64=\\\"lld\\\"
+CFLAGS+=	-DPRIu64=\\\"llu\\\"
+CFLAGS+=	-DPRIx64=\\\"llx\\\"
+CFLAGS+=	-DPRIX64=\\\"llX\\\"
+.else
+CFLAGS+=	-DPRId64=\\\"ld\\\"
+CFLAGS+=	-DPRIu64=\\\"lu\\\"
+CFLAGS+=	-DPRIx64=\\\"lx\\\"
+CFLAGS+=	-DPRIX64=\\\"lX\\\"
+.endif
 .endif
 
 #Building of vidix dependent shared libs is only possible
-#on i386 at the moment.
-.if ${ARCH} == "i386"
+#on i386 and amd64 at the moment.
+.if !defined(WITHOUT_VIDIX)
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mplayer/vidix
 PLIST_SUB+=	VIDIX=""
 .else
-CONFIGURE_ARGS+=--disable-vidix
+CONFIGURE_ARGS+=--disable-internal-vidix
+PLIST_SUB+=	VIDIX="@comment "
+.endif
+.else
+CONFIGURE_ARGS+=--disable-internal-vidix
 PLIST_SUB+=	VIDIX="@comment "
 .endif
 
@@ -214,14 +235,14 @@ DEFAULT_KERN_HZ=1024
 CFLAGS+=	-fno-force-addr
 .endif 	#MPLAYER_GENERIC_BUILD
 
-.if defined(WITHOUT_X11)
-WITHOUT_GUI=	yes
-BUILD_DEPENDS+=	imake:${X_IMAKE_PORT}
-CONFIGURE_ARGS+=--disable-x11
-.else
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+CFLAGS+=	-I${X11BASE}/include
 CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
 		--with-x11incdir=${X11BASE}/include
+.else
+WITHOUT_GUI=	yes
+CONFIGURE_ARGS+=--disable-x11
 .endif
 
 .if defined(WITH_LANG)
@@ -259,7 +280,7 @@ WITH_LANG=	""
 PLIST_SUB+=	GMPLAYER="@comment "
 .endif #WITHOUT_GUI
 
-.if !defined(WITHOUT_RTC)
+.if defined(WITH_RTC)
 BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 CONFIGURE_ARGS+=	--enable-rtc
@@ -277,33 +298,33 @@ CONFIGURE_ARGS+=	--disable-mencoder
 PLIST_SUB+=	MENCODER="@comment "
 .endif
 
-.if !defined(WITHOUT_NVIDIA)
+.if defined(WITH_NVIDIA)
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 CONFIGURE_ARGS+=	--enable-xvmc \
 			--enable-xvmclib=XvMCNVIDIA
 .endif
 
-.if !defined(WITHOUT_ARTS)
+.if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--enable-arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
-.if !defined(WITHOUT_FRIBIDI)
+.if defined(WITH_FRIBIDI)
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 CONFIGURE_ARGS+=	--enable-fribidi
 .else
 CONFIGURE_ARGS+=	--disable-fribidi
 .endif
 
-.if !defined(WITHOUT_CDPARANOIA)
+.if defined(WITH_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 .else
 CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
-.if !defined(WITHOUT_LIBCACA)
+.if defined(WITH_LIBCACA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
@@ -316,7 +337,7 @@ LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
-.if !defined(WITHOUT_LIBDV)
+.if defined(WITH_LIBDV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--enable-libdv
@@ -324,14 +345,14 @@ CONFIGURE_ARGS+=	--enable-libdv
 CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
-.if !defined(WITHOUT_LIRC)
+.if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--enable-lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
-.if !defined(WITHOUT_MAD)
+.if defined(WITH_MAD)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 
 CONFIGURE_ARGS+=	--enable-mad \
@@ -340,7 +361,7 @@ CONFIGURE_ARGS+=	--enable-mad \
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
-.if !defined(WITHOUT_SDL)
+.if defined(WITH_SDL)
 USE_SDL=	sdl
 WITH_AALIB=	yes
 .undef(WITHOUT_AALIB)
@@ -350,42 +371,49 @@ WITH_SVGALIB=	yes
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
-.if !defined(WITHOUT_SVGALIB)
+.if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .else
 CONFIGURE_ARGS+=	--disable-svga
 .endif
 
-.if !defined(WITHOUT_AALIB)
+.if defined(WITH_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 .else
 CONFIGURE_ARGS+=	--disable-aa
 .endif
 
-.if !defined(WITHOUT_THEORA)
+.if defined(WITH_THEORA)
 LIB_DEPENDS+=	theora.2:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
-.if !defined(WITHOUT_X264)
+.if defined(WITH_X264)
 LIB_DEPENDS+=	x264.49:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
 
-.if !defined(WITHOUT_ESOUND)
+.if defined(WITH_ESOUND)
 USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
-.if defined(WITHOUT_TREMOR)
+.if defined(WITH_POLYP)
+CONFIGURE_ARGS+=	--enable-polyp
+LIB_DEPENDS+=		polyp-0.7.0:${PORTSDIR}/audio/polypaudio
+.else
+CONFIGURE_ARGS+=	--disable-polyp
+.endif
+
+.if !defined(WITH_TREMOR)
 CONFIGURE_ARGS+=	--disable-internal-tremor
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if !defined(WITHOUT_REALPLAYER)
+.if defined(WITH_REALPLAYER)
 CONFIGURE_ARGS+=	--enable-real \
 			--with-reallibdir=${X11BASE}/lib/RealPlayer/codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
@@ -399,7 +427,7 @@ CONFIGURE_ARGS+=	--disable-real
 .endif
 .endif
 
-.if !defined(WITHOUT_LIVEMEDIA)
+.if defined(WITH_LIVEMEDIA)
 CONFIGURE_ARGS+=	--enable-live \
 			--with-livelibdir=${LOCALBASE}/live
 RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
@@ -415,7 +443,7 @@ LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
-.if !defined(WITHOUT_XMMS)
+.if defined(WITH_XMMS)
 CONFIGURE_ARGS+=	--enable-xmms
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .else
@@ -423,10 +451,18 @@ CONFIGURE_ARGS+=	--disable-xmms
 .endif
 
 .if !defined(WITHOUT_DTS)
+CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-libdts
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 .else
 CONFIGURE_ARGS+=	--disable-libdts
+.endif
+
+.if !defined(WITHOUT_SPEEX)
+CONFIGURE_ARGS+=	--enable-speex
+LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+.else
+CONFIGURE_ARGS+=	--disable-speex
 .endif
 
 .if !defined(WITHOUT_FREETYPE)
@@ -438,7 +474,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fo
 CONFIGURE_ARGS+=	--disable-freetype
 .endif
 
-.if !defined(WITHOUT_XANIM)
+.if defined(WITH_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
 CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
 .else
