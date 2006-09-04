@@ -43,6 +43,7 @@ OPTIONS=	CLI "Build CLI version" on \
 		CGI "Build CGI version" on \
 		APACHE "Build Apache module" off \
 		DEBUG "Enable debug" off \
+		SUHOSIN "Enable Suhosin protection system" off \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
 		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
@@ -56,17 +57,21 @@ MAN1=		php-config.1 phpize.1
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_SUHOSIN)
+PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.2.patch.gz
+PATCH_SITES=	http://www.hardened-php.net/suhosin/_media/
+PATCH_DIST_STRIP=	-p1
+PLIST_SUB+=	SUHOSIN=""
+.else
+PLIST_SUB+=	SUHOSIN="@comment "
+.endif
+
 .if !defined(WITHOUT_CLI)
 PHP_SAPI+=	cli
 PLIST_SUB+=	CLI=""
 MAN1+=		php.1
 .else
-# XXX Temporary hack
-.if !defined(WITHOUT_CGI)
-PLIST_SUB+=	CLI=""
-.else
 PLIST_SUB+=	CLI="@comment "
-.endif
 CONFIGURE_ARGS+=--disable-cli
 .endif
 
@@ -158,10 +163,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
-# XXX Temporary hack
-.if !defined(WITHOUT_CGI) && defined(WITHOUT_CLI)
-	@${LN} -sf ${PREFIX}/bin/php-cgi ${PREFIX}/bin/php
-.endif
 .if defined(WITH_APACHE)
 	@${CAT} ${PKGMESSAGE}
 .endif
