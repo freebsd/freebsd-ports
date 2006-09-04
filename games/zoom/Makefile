@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.logicalshift.demon.co.uk/unix/${PORTNAME}/
 DISTNAME=	zoom-1.0.2alpha1
 
-MAINTAINER=	Jan.Stocker@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z-Interpreter for X with full V6 support
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

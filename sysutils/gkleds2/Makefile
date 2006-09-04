@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://heim.ifi.uio.no/~oyvinha/files/files/
 DISTNAME=	gkleds-${PORTVERSION}
 
-MAINTAINER=	Jan.Stocker@t-online.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM Leds for CapsLock, NumLock and ScrollLock
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
