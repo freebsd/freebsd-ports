@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	markun@gate.onohara.to
+MAINTAINER=	markun@onohara.to
 COMMENT=	Cookie storage and management for w3m
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Install
