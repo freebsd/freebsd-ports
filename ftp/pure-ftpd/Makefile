@@ -21,7 +21,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
 
-MAINTAINER=	j@pureftpd.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 USE_BZIP2=	yes
