@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mac-port
 DISTNAME=	${PORTNAME}-3.99-u4-b4
 
-MAINTAINER=	dieringe@zedat.fu-berlin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monkey's Audio lossless audio (de)compressor
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
