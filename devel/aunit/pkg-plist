@@ -19,5 +19,36 @@ include/aunit/aunit-test_suites.ads
 include/aunit/aunit-tests.ads
 include/aunit/aunit.ads
 @dirrm include/aunit
-%%PORTDOCS%%share/doc/aunit/AUnit.html
-%%PORTDOCS%%@dirrm share/doc/aunit
+%%DATADIR%%/template/sample_suite.adb
+%%DATADIR%%/template/sample.adp
+%%DATADIR%%/template/sample.gpr
+%%DATADIR%%/template/pr_xxxx_xxx.adb
+%%DATADIR%%/template/pr_xxxx_xxx.ads
+%%DATADIR%%/template/harness.adb
+@dirrm %%DATADIR%%/template
+%%DATADIR%%/test/default.adp
+%%DATADIR%%/test/empty_test_case.adb
+%%DATADIR%%/test/empty_test_case.ads
+%%DATADIR%%/test/one_test_case-inherited_test_case.adb
+%%DATADIR%%/test/one_test_case-inherited_test_case.ads
+%%DATADIR%%/test/simple_test_case.adb
+%%DATADIR%%/test/simple_test_case.ads
+%%DATADIR%%/test/harness.adb
+%%DATADIR%%/test/test_lists.adb
+%%DATADIR%%/test/test_lists.ads
+%%DATADIR%%/test/timed_harness.adb
+%%DATADIR%%/test/test_test_suite.adb
+%%DATADIR%%/test/test_test_suite.ads
+%%DATADIR%%/test/aunit_suite.adb
+%%DATADIR%%/test/test_test_case_registration.adb
+%%DATADIR%%/test/test_test_case_registration.ads
+%%DATADIR%%/test/test_test_case.adb
+%%DATADIR%%/test/test_test_case.ads
+%%DATADIR%%/test/one_test_case.adb
+%%DATADIR%%/test/one_test_case.ads
+@dirrm %%DATADIR%%/test
+%%DATADIR%%/aunit.gpr
+%%DATADIR%%/aunit_tests.gpr
+%%PORTDOCS%%%%DOCSDIR%%/AUnit.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
