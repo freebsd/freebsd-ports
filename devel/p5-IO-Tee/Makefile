@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dcf@aracnet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplex output to multiple output handles
 
 PERL_CONFIGURE=	yes

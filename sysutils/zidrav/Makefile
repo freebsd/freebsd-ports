@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	zidrav4unix-${PORTVERSION}
 
-MAINTAINER=	cstroe1@uic.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file corruption detection and repair program
 
 ALL_TARGET=	zidrav
