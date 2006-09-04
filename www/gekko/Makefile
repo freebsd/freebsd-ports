@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gekko
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gekkoware
@@ -18,7 +17,8 @@ COMMENT=	Open Source solution for your Web Content Management
 
 NO_BUILD=	yes
 USE_PHP=	bz2 gd mysql pcre session zlib
-GEKKODIR?=	www/${PORTNAME}
+GEKKODIR=	www/${PORTNAME}
+SUB_FILES=	pkg-message
 PLIST_SUB=	GEKKODIR=${GEKKODIR}
 
 do-install:
