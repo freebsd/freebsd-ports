@@ -29,6 +29,7 @@ USE_RUBY=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	GPOD "iPod support" on \
+		NJB "Creative Nomad and Dell support" on \
 		XMMS "XMMS visualizations" off \
 		OPENGL "OpenGL support" on \
 		AMAZON "Amazon cover fetching support" on \
@@ -52,6 +53,14 @@ PLIST_SUB+=	GPOD="@comment "
 LIB_DEPENDS+=	gpod.302:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-libgpod
 PLIST_SUB+=	GPOD=""
+.endif
+
+.if !defined(WITH_NJB)
+PLIST_SUB+=	NJB="@comment "
+.else
+LIB_DEPENDS+=	njb.6:${PORTSDIR}/audio/libnjb
+CONFIGURE_ARGS+=--with-libnjb
+PLIST_SUB+=	NJB=""
 .endif
 
 .if !defined(WITH_XMMS)
