@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-Ident
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	net perl5 devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +15,12 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	POE component for non-blocking ident lookups
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Client::Ident.3 \
-		POE::Component::Client::Ident-Agent.3 \
-		POE::Component::Client::Filter-Ident.3
+		POE::Component::Client::Ident::Agent.3 \
+		POE::Filter::Ident.3
 
 .include <bsd.port.mk>
