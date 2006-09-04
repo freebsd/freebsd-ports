@@ -10,7 +10,7 @@ PORTVERSION=	2.6.2
 CATEGORIES=	security
 MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/
 
-MAINTAINER=	olive@oban.frmug.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A user-friendly front-end to ssh-agent(1)
 
 USE_BZIP2=	yes
