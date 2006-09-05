@@ -22,9 +22,15 @@ USE_GNOME=	pkgconfig libxml2 libxslt
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" PKG_CONFIG=${LOCALBASE}/bin/pkg-config
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
+.if ${OSVERSION} < 500000
+	${REINPLACE_CMD} 's:#include.<stdint\.h>:#include <sys/types.h>:' \
+		${WRKSRC}/src/*.h
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
