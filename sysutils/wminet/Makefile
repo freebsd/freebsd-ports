@@ -11,7 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 
-MAINTAINER=	sk-ports@vegamuse.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dockable inetd monitor
 
 WRKSRC=		${WRKDIR}/wminet.app/wminet
