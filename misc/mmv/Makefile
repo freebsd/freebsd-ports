@@ -8,21 +8,23 @@
 PORTNAME=	mmv
 PORTVERSION=	1.01b
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.unicamp.br/pub/unix-c/file-mgmt/
+MASTER_SITES=	http://www.xs4all.nl/~tournoij/distfiles/ \
+		ftp://ftp.unicamp.br/pub/unix-c/file-mgmt/ \
+		http://carpetsmoker.xs4all.nl/distfiles/
 DISTNAME=	mmv
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@gmail.com
 COMMENT=	Move/copy/append/link multiple files with sophisticated wildcard matching
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 RESTRICTED=	No modification or redistribution for charge
 CFLAGS+=	-DDIRENT
 MAKE_FLAGS=	-e
 MAN1=		mmv.1
+PLIST_FILES=	bin/mad \
+		bin/mcp \
+		bin/mln \
+		bin/mmv
 
 post-extract:
 	(cd ${WRKSRC} ; \
