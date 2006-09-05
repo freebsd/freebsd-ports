@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	scim-imengine/18121
 
-MAINTAINER=	mukai@jmuk.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM IMEngine module like SKK
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
