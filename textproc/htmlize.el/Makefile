@@ -12,7 +12,7 @@ MASTER_SITES=	http://fly.srk.fer.hr/~hniksic/emacs/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 
-MAINTAINER=	marc.vanwoerkom@fernuni-hagen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
 USE_EMACS=	yes

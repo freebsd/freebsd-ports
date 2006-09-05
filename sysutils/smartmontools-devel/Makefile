@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	martines@rochester.rr.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	S.M.A.R.T. disk monitoring tools
 
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-3/v${PORTVERSION}/bin
 
-MAINTAINER=	liukang@bjut.edu.cn
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, stable 3.x branch
 
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/jakarta-tomcat4:pre-everything
