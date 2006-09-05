@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://gadoid.ices.cmu.edu/pub/tkgate/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hansen@cmu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk based digital circuit editor and simulator
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84

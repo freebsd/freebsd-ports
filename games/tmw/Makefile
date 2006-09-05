@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	themanaworld
 
-MAINTAINER=	freebsd@gionet.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free open source 2D MMORPG in development
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \

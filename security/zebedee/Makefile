@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	greg@hewgill.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted, secure compressed TCP tunnel
 
 USE_OPENSSL=	YES

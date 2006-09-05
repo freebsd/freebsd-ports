@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=gdvrecv
 
-MAINTAINER=	hmichelon@e-cml.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DV Tools for FreeBSD
 
 USE_BZIP2=	yes

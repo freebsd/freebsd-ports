@@ -10,7 +10,7 @@ DISTVERSION=	0.0.8alpha2
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mixminion.net/dist/${DISTVERSION}/
 
-MAINTAINER=	freebsd-ports@rikrose.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Type III Anonymous Remailer
 
 USE_OPENSSL=	yes
