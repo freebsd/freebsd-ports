@@ -1,0 +1,15 @@
+--- Makefile.LINUX.orig	Mon Sep  4 20:57:52 2006
++++ Makefile.LINUX	Mon Sep  4 20:58:23 2006
+@@ -1,10 +1,10 @@
+ all : opj2dat liborigin.so
+ 
+ liborigin.so : OPJFile.cpp OPJFile.h
+-	g++ -shared -fPIC OPJFile.cpp -o liborigin.so
++	${CXX} ${CXXFLAGS} -shared -fPIC OPJFile.cpp -o liborigin.so
+ 
+ opj2dat: opj2dat.cpp OPJFile.cpp
+-	g++ -o opj2dat opj2dat.cpp OPJFile.cpp
++	${CXX} ${CXXFLAGS} -o opj2dat opj2dat.cpp OPJFile.cpp
+ 
+ clean :
+ 	rm -f *~ *.o opj2dat liborigin.so
