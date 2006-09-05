@@ -1,6 +1,6 @@
---- LibXML.xs.orig	Sun May 16 19:56:30 2004
-+++ LibXML.xs	Sun May 16 19:57:29 2004
-@@ -75,6 +75,19 @@
+--- LibXML.xs.orig	Sat Aug 26 20:36:44 2006
++++ LibXML.xs	Tue Sep  5 21:30:37 2006
+@@ -74,6 +74,19 @@
  #define TEST_PERL_FLAG(flag) \
      SvTRUE(perl_get_sv(flag, FALSE)) ? 1 : 0
  
@@ -17,6 +17,6 @@
 +}
 +#endif
 +
- static SV * LibXML_match_cb = NULL;
- static SV * LibXML_read_cb  = NULL;
- static SV * LibXML_open_cb  = NULL;
+ /* this should keep the default */
+ static xmlExternalEntityLoader LibXML_old_ext_ent_loader = NULL;
+ 
