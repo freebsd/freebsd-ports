@@ -12,7 +12,7 @@ MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
 		http://www.energyhq.es.eu.org/files/
 DISTNAME=	Addresses-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A versatile addressbook for GNUstep
 
 GNUSTEP_PREFIX?=	${LOCALBASE}/GNUstep
