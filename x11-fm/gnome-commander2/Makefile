@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-commander/1.1
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	rehsack@liwing.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for Gnome2
 
 CONFLICTS=	gnome-commander-*

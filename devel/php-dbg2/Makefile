@@ -12,7 +12,7 @@ MASTER_SITES=	http://dd.cron.ru/dbg/dnld/
 PKGNAMEPREFIX=	php-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	rehsack@liwing.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugger for PHP4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

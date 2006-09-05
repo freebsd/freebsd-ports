@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://home.tu-clausthal.de/student/iMaze/files/
 PKGNAMESUFFIX=	-${TOOLKIT}
 
-MAINTAINER=	rk@ronald.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-player network action game for TCP/IP with 3D graphics
 
 .if defined(WITH_MOTIF) && defined(HAVE_MOTIF)
