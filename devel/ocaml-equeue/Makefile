@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	The Equeue library for OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
