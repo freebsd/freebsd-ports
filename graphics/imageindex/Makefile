@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.edwinh.org/imageindex/release/ \
 		http://www.reynoldsnet.org/imageindex/release/
 
-MAINTAINER=	johnjen@reynoldsnet.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A digital photo gallery tool
 
 RUN_DEPENDS=	\

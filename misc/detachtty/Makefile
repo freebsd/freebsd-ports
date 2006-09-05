@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/detachtty/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	johs@copyleft.no
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run interactive programs non-interactively
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-9

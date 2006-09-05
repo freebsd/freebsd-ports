@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/ \
 		http://www.roughtrade.net/distfiles/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	joshua@roughtrade.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
 GNU_CONFIGURE=	yes
