@@ -13,7 +13,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bsd-pstack
 
-MAINTAINER=	pmedwards@eircom.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Retrieve process/core file stack traces
 
 ONLY_FOR_ARCHS=	i386
