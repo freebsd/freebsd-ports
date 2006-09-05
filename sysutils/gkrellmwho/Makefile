@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	steffen@vogelreuter.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin that scrolls in a panel a list of currently logged on users
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
