@@ -1,6 +1,6 @@
 # New ports collection makefile for:	x48
-# Date created:		Thu Oct 24 13:10:59 CDT 1996
-# Whom:			erich@FreeBSD.org
+# Date created:				Thu Oct 24 13:10:59 CDT 1996
+# Whom:					Eric L. Hernes <erich@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,12 +15,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A HP48 SX/GX calculator emulator
+COMMENT=	An HP48 SX/GX calculator emulator
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
-
-ROMPATH=	${PREFIX}/share/x48
 
 .include <bsd.port.pre.mk>
 
@@ -31,7 +29,7 @@ post-extract: .SILENT
 	${MV} ${WRKSRC}/.hp48/rom ${WRKSRC}/sxrom-e
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+rom.dump+${ROMPATH}/gxrom-r+' \
+	@${REINPLACE_CMD} -e 's+rom.dump+${DATADIR}/gxrom-r+' \
 		${WRKSRC}/src/X48.ad
 .if ${OSVERSION} > 600004
 	@${REINPLACE_CMD} -e 's+cuaa+cuad+' ${WRKSRC}/src/X48.ad
@@ -42,12 +40,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${p} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/src/X48.ad ${PREFIX}/lib/X11/app-defaults/X48
-	@${MKDIR} ${ROMPATH}
-	${INSTALL_DATA} ${WRKSRC}/??rom-? ${ROMPATH}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/??rom-? ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in README doc/CARDS.doc doc/ROMDump.doc
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in README doc/CARDS.doc doc/ROMDump.doc
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
