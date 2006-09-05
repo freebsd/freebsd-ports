@@ -6,32 +6,23 @@
 #
 
 PORTNAME=	cvsutils
-PORTVERSION=	2003.02.03
+PORTVERSION=	0.2.3
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.iDaemons.org/pub/distfiles/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.red-bean.com/cvsutils/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	CVS utilities which facilitate working with local working directories
 
-USE_BZIP2=	yes
 USE_PERL5=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOTOOLS=	automake:15 autoconf:253
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 
 MAN1=		cvsutils.1
-MANCOMPRESSED=	no
-
-pre-configure:
-	cd ${WRKSRC} ; ${ACLOCAL}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in AUTHORS ChangeLog FAQ NEWS README TODO 
+.for f in AUTHORS ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
