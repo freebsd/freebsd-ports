@@ -10,7 +10,7 @@ PORTVERSION=	1.18.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.lfmm.org/ptkei/
 
-MAINTAINER=	marcolz@stack.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python/Tk graphical client for Wolfpack Empire servers
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \

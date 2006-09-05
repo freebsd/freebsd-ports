@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.cmu.edu/~modelcheck/smv/
 DISTNAME=	${PORTNAME}.r${PORTVERSION}
 
-MAINTAINER=	marc.vanwoerkom@fernuni-hagen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Symbolic Model Verifier System for checking finite state systems
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

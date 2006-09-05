@@ -12,7 +12,7 @@ CATEGORIES=	www java
 MASTER_SITES=	http://distfiles.coredump.cn/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/liukang/
 
-MAINTAINER=	liukang@bjut.edu.cn
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, stable 4.0.x branch
 
 DEPRECATED=	www/jakarta-tomcat5 is recommended instead for new installations
