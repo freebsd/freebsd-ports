@@ -7,7 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	1.2.2.001
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enlightenment.freedesktop.org/files/
 
@@ -25,12 +25,16 @@ USE_AUTOTOOLS=	autoconf:259 libltdl:15 libtool:15
 USE_GNOME=	gnomehack pkgconfig gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MMX) && (${ARCH} == "i386")
 CONFIGURE_ARGS+=	--enable-mmx
+.endif
+
+.if (${ARCH} == "amd64")
+CONFIGURE_ARGS+=	--enable-amd64
 .endif
 
 .if defined(WITHOUT_X11)
