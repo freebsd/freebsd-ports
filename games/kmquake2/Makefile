@@ -52,7 +52,7 @@ PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-KMQ2_ADDONS=	KMQuake2_addons_src_unix${EXTRACT_SUFX}
+KMQ2_ADDONS=	KMQuake2_addons_src_unix-1${EXTRACT_SUFX}
 KMQ2_DATA=	kmquake2_${PORTVERSION:S/.//}.zip
 KMQ2_FLARES=	Flares.tar
 PAX_DATA=	paximperia.zip
@@ -80,7 +80,7 @@ PLIST_SUB+=	${mod}="@comment "
 .endfor
 
 .if defined(MOD_REQUESTED)
-DISTFILES+=	${KMQ2_ADDONS}
+DISTFILES+=	${KMQ2_ADDONS}:src
 EXTRACT_ONLY+=	${KMQ2_ADDONS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-addons__Makefile
 MAKE_ENV+=	KMQ2_ADDONS="${KMQ2_ADDONS:S/${EXTRACT_SUFX}//}"
