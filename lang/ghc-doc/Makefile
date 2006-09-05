@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghc-doc
-PORTVERSION=	6.4.1
+PORTNAME=	ghc
+PORTVERSION=	6.4.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
+PKGNAMESUFFIX=	-doc
 DISTFILES=	Cabal.ps.gz Cabal.html.tar.gz building.ps.gz \
 		building.html.tar.gz hslibs.html.tar.gz \
 		hslibs.ps.gz libraries.html.tar.gz users_guide.html.tar.gz \
@@ -22,6 +23,7 @@ COMMENT=	Documentation (HTML, PS) for the Glasgow Haskell Compiler
 
 NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/ghc6
+PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${DOCSDIR}
@@ -34,5 +36,7 @@ do-install:
 	@${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
 		-C ${DOCSDIR}
 .endfor
+	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${FIND} ${DOCSDIR}/ -type f -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
 
 .include <bsd.port.mk>
