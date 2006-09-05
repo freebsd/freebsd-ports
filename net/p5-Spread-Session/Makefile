@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JM/JMAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	joshua@roughtrade.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl OO wrapper for Spread messaging toolkit
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Spread.pm:${PORTSDIR}/net/spread

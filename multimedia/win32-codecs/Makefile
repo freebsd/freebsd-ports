@@ -22,7 +22,7 @@ DISTFILES=	all-20060611.tar.bz2 \
 DIST_SUBDIR=	win32
 EXTRACT_ONLY=	all-20060611.tar.bz2
 
-MAINTAINER=	holger@e-gitt.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
 
 RESTRICTED=	Unsure of codec\'s license

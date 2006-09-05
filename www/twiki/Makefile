@@ -13,7 +13,7 @@ MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/
 DISTNAME=	TWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	justin@hawkins.id.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
 
 NO_WRKSUBDIR=	yes

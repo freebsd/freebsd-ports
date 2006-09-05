@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/
 PKGNAMESUFFIX=	-j
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	joshua@roughtrade.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java client library for the Spread Group Communication System
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant

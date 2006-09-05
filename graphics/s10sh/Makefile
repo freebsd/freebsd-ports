@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 		http://www.edwinh.org/s10sh/
 
-MAINTAINER=	johnjen@reynoldsnet.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	USB/serial userspace driver for the Canon PowerShot digital cameras
 
 .if defined(NOUSB) || defined(WITHOUT_USB)

@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.openh323.org/bin/
 DISTNAME=	pstngw_${PORTVERSION}
 
-MAINTAINER=	jacke@bofh.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple H.323-PSTN (POTS) gateway
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323-112:build
