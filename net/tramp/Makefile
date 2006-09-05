@@ -15,10 +15,6 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Transparent remote file access tool for emacsen
 
-BROKEN=		removes files not belonging to it on deinstall
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 

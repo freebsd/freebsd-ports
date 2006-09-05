@@ -1,5 +1,5 @@
---- texi/Makefile.in.orig	Tue Mar 14 22:27:20 2006
-+++ texi/Makefile.in	Tue Jul  4 15:03:31 2006
+--- texi/Makefile.in.orig	Wed Mar 15 06:27:20 2006
++++ texi/Makefile.in	Tue Sep  5 08:44:47 2006
 @@ -50,10 +50,10 @@
  TEXI_FILES	= tramp.texi trampver.texi \
  		  $(if $(findstring yes, @INSTALL_CHAPTER@), trampinst.texi)
@@ -15,7 +15,15 @@
  CLEAN_FILES	= @TRAMP_CLEAN_FILES@ $(wildcard $(localinfodir)/*)
  
  # To be used by maintainer only
-@@ -73,12 +73,12 @@
+@@ -66,19 +66,19 @@
+ 
+ tramp: $(INFO_FILES) $(localinfodir)/dir
+ 
+-install: tramp $(INSTALL_FILES) $(DESTDIR)$(infodir)/dir
++install: tramp $(INSTALL_FILES)
+ 
+ clean:
+ 	$(RM) $(CLEAN_FILES)
  
  distclean: clean
  
