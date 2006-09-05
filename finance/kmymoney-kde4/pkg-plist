@@ -267,6 +267,7 @@ share/applications/kde/kmymoney2.desktop
 %%DOCSDIR%%/ledgers_view.png
 %%DOCSDIR%%/ledgerview-numbered.png
 %%DOCSDIR%%/mainwindow_numbered.png
+%%DOCSDIR%%/makemostof.docbook
 %%DOCSDIR%%/new.png
 %%DOCSDIR%%/newfile.png
 %%DOCSDIR%%/newinst.png
@@ -332,6 +333,7 @@ share/icons/hicolor/64x64/apps/kmymoney2.png
 share/icons/hicolor/64x64/mimetypes/kmy.png
 share/icons/locolor/16x16/apps/kmymoney2.png
 share/icons/locolor/32x32/apps/kmymoney2.png
+share/locale/ca/LC_MESSAGES/kmymoney2.mo
 share/locale/da/LC_MESSAGES/kmymoney2.mo
 share/locale/de/LC_MESSAGES/kmymoney2.mo
 share/locale/en_GB/LC_MESSAGES/kmymoney2.mo
@@ -339,6 +341,7 @@ share/locale/es/LC_MESSAGES/kmymoney2.mo
 share/locale/fr/LC_MESSAGES/kmymoney2.mo
 share/locale/gl/LC_MESSAGES/kmymoney2.mo
 share/locale/it/LC_MESSAGES/kmymoney2.mo
+share/locale/lt/LC_MESSAGES/kmymoney2.mo
 share/locale/pt_BR/LC_MESSAGES/kmymoney2.mo
 share/locale/pt_PT/LC_MESSAGES/kmymoney2.mo
 share/locale/ru/LC_MESSAGES/kmymoney2.mo
@@ -347,7 +350,6 @@ share/mimelnk/application/x-kmymoney2.desktop
 share/servicetypes/kmymoneyimporterplugin.desktop
 share/servicetypes/kmymoneyplugin.desktop
 @dirrm include/kmymoney
-@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/templates/ru_SU
 @dirrm %%DATADIR%%/templates/pt_BR
 @dirrm %%DATADIR%%/templates/gl_ES
