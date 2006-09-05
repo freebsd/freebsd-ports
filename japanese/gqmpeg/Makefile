@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another gtk-based MP3 frontend with Japanese support
 
 .if defined(WITH_SJIS_TAG)
