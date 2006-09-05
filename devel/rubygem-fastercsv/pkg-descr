@@ -1,0 +1,9 @@
+FasterCSV is intended as a replacement to Ruby's standard CSV library. It
+was designed to address concerns users of that library had and it has three
+primary goals:
+   1. Be significantly faster than CSV while remaining a pure Ruby library.
+   2. Use a smaller and easier to maintain code base. (We're about even now,
+      but not if you compare the features!)
+   3. Improve on the CSV interface.
+
+WWW: http://fastercsv.rubyforge.org/
