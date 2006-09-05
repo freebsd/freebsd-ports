@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filter
-DISTVERSION=	0.9.4
+DISTVERSION=	0.10.0
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,9 +18,9 @@ COMMENT=	PHP extension for safely dealing with input parameters
 
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
+USE_PHP=	pcre
 USE_PHPEXT=	yes
+USE_PHP_BUILD=	yes
 PHP_MODNAME=	filter
 
 DEFAULT_PHP_VER=	5
