@@ -1786,6 +1786,7 @@ didentd		ports/security/didentd
 diehard		ports/math/diehard
 diff-mode.el	ports/textproc/diff-mode.el
 diffconvert	ports/devel/diffconvert
+diffmark	ports/textproc/diffmark
 diffsplit	ports/textproc/diffsplit
 diffstat	ports/textproc/diffstat
 diffutils	ports/textproc/diffutils
