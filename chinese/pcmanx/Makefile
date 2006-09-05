@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pcmanx
-PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTVERSION=	0.3.5
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx.csie.net/release/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
@@ -17,10 +16,11 @@ COMMENT=	BBS client using GTK+ 2.x
 
 USE_GNOME=	gtk20 intlhack
 USE_GCC=	3.3+
+USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
