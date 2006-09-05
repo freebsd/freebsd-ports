@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	rehsack@liwing.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UML modeling environment written in Python
 
 BUILD_DEPENDS=	diacanvas2>=0:${PORTSDIR}/graphics/diacanvas2
