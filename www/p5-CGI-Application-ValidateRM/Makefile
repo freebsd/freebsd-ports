@@ -13,8 +13,11 @@ MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME:S/eRM/e-RM/}-${PORTVERSION}
 
-MAINTAINER=		mig@mig-29.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Help validate forms with the CGI::Application framework
+
+DEPRECATED=		no longer available from mastersites
+EXPIRATION_DATE=	2006-11-05
 
 RUN_DEPENDS=		${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
 			${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
