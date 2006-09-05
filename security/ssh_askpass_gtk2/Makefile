@@ -12,8 +12,11 @@ CATEGORIES=		security
 MASTER_SITES=		http://www.cgabriel.org/sw/gtk2-ssh-askpass/
 DISTNAME=		gtk2-ssh-askpass-0.3
 
-MAINTAINER=		mig@mig-29.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A tiny GTK2 ssh askpass replacement
+
+DEPRECATED=		no longer available from mastersite
+EXPIRATION_DATE=	2006-11-05
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20
