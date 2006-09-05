@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gngeo
-PORTVERSION=	0.6.12
+PORTVERSION=	0.7
 CATEGORIES=	emulators
-MASTER_SITES=	http://m.peponas.free.fr/gngeo/download/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
 
-USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_SDL=	image sdl
@@ -22,6 +22,7 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="" --disable-gp2x
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CPPFLAGS=	${CFLAGS} `${SDL_CONFIG} --cflags` -I${X11BASE}/include
 LDFLAGS=	`${SDL_CONFIG} --libs` -L${X11BASE}/lib
