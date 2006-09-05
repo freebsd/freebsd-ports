@@ -1,1354 +1,1354 @@
 @comment $FreeBSD$
-share/openbox/themes/Simple-Aubergine/README
-share/openbox/themes/Simple-Aubergine/Simple-Orange
-share/openbox/themes/Simple-Aubergine/gtk-2.0/gtkrc
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_apply.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_bottom.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_cancel.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_down-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_down.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_first-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_first.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_last-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_last.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_left-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_left.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_ok.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_refresh.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_right-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_right.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_top-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_top.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_up-16.png
-share/openbox/themes/Simple-Aubergine/gtk-2.0/stock_up.png
-share/openbox/themes/Simple-Aubergine/gtk/gtkrc
-share/openbox/themes/Simple-Aubergine/index.theme
-share/openbox/themes/Simple-Aubergine/metacity-1/metacity-theme-1.xml
-share/openbox/themes/Simple-Aubergine/openbox-3/bullet.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/close.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/desk.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/desk_toggled.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/iconify.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/max.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/max_toggled.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/shade.xbm
-share/openbox/themes/Simple-Aubergine/openbox-3/themerc
-share/openbox/themes/Simple-Generic/gtk-2.0/gtkrc
-share/openbox/themes/Simple-Generic/gtk/gtkrc
-share/openbox/themes/Simple-Generic/index.theme
-share/openbox/themes/Simple-Generic/metacity-1/metacity-theme-1.xml
-share/openbox/themes/Simple-Generic/openbox-3/bullet.xbm
-share/openbox/themes/Simple-Generic/openbox-3/close.xbm
-share/openbox/themes/Simple-Generic/openbox-3/desk.xbm
-share/openbox/themes/Simple-Generic/openbox-3/desk_toggled.xbm
-share/openbox/themes/Simple-Generic/openbox-3/iconify.xbm
-share/openbox/themes/Simple-Generic/openbox-3/max.xbm
-share/openbox/themes/Simple-Generic/openbox-3/max_toggled.xbm
-share/openbox/themes/Simple-Generic/openbox-3/shade.xbm
-share/openbox/themes/Simple-Generic/openbox-3/themerc
-share/openbox/themes/Simple-Green/gtk-2.0/gtkrc
-share/openbox/themes/Simple-Green/gtk/gtkrc
-share/openbox/themes/Simple-Green/index.theme
-share/openbox/themes/Simple-Green/metacity-1/metacity-theme-1.xml
-share/openbox/themes/Simple-Green/openbox-3/bullet.xbm
-share/openbox/themes/Simple-Green/openbox-3/close.xbm
-share/openbox/themes/Simple-Green/openbox-3/desk.xbm
-share/openbox/themes/Simple-Green/openbox-3/desk_toggled.xbm
-share/openbox/themes/Simple-Green/openbox-3/iconify.xbm
-share/openbox/themes/Simple-Green/openbox-3/max.xbm
-share/openbox/themes/Simple-Green/openbox-3/max_toggled.xbm
-share/openbox/themes/Simple-Green/openbox-3/shade.xbm
-share/openbox/themes/Simple-Green/openbox-3/themerc
-share/openbox/themes/Simple-Industrial/README
-share/openbox/themes/Simple-Industrial/Simple-Industrial
-share/openbox/themes/Simple-Industrial/gtk-2.0/gtkrc
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_apply.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_bottom.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_cancel.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_down-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_down.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_first-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_first.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_last-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_last.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_left-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_left.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_ok.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_refresh.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_right-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_right.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_top-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_top.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_up-16.png
-share/openbox/themes/Simple-Industrial/gtk-2.0/stock_up.png
-share/openbox/themes/Simple-Industrial/gtk/gtkrc
-share/openbox/themes/Simple-Industrial/index.theme
-share/openbox/themes/Simple-Industrial/metacity-1/metacity-theme-1.xml
-share/openbox/themes/Simple-Industrial/openbox-3/bullet.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/close.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/desk.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/desk_toggled.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/iconify.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/max.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/max_toggled.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/shade.xbm
-share/openbox/themes/Simple-Industrial/openbox-3/themerc
-share/openbox/themes/Simple-Orange/README
-share/openbox/themes/Simple-Orange/Simple-Orange
-share/openbox/themes/Simple-Orange/gtk-2.0/gtkrc
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_apply.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_bottom.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_cancel.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_down-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_down.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_first-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_first.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_last-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_last.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_left-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_left.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_ok.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_refresh.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_right-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_right.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_top-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_top.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_up-16.png
-share/openbox/themes/Simple-Orange/gtk-2.0/stock_up.png
-share/openbox/themes/Simple-Orange/gtk/gtkrc
-share/openbox/themes/Simple-Orange/index.theme
-share/openbox/themes/Simple-Orange/metacity-1/metacity-theme-1.xml
-share/openbox/themes/Simple-Orange/openbox-3/bullet.xbm
-share/openbox/themes/Simple-Orange/openbox-3/close.xbm
-share/openbox/themes/Simple-Orange/openbox-3/desk.xbm
-share/openbox/themes/Simple-Orange/openbox-3/desk_toggled.xbm
-share/openbox/themes/Simple-Orange/openbox-3/iconify.xbm
-share/openbox/themes/Simple-Orange/openbox-3/max.xbm
-share/openbox/themes/Simple-Orange/openbox-3/max_toggled.xbm
-share/openbox/themes/Simple-Orange/openbox-3/shade.xbm
-share/openbox/themes/Simple-Orange/openbox-3/themerc
-share/openbox/themes/Simple-Red/gtk-2.0/gtkrc
-share/openbox/themes/Simple-Red/gtk/gtkrc
-share/openbox/themes/Simple-Red/index.theme
-share/openbox/themes/Simple-Red/metacity-1/metacity-theme-1.xml
-share/openbox/themes/Simple-Red/openbox-3/bullet.xbm
-share/openbox/themes/Simple-Red/openbox-3/close.xbm
-share/openbox/themes/Simple-Red/openbox-3/desk.xbm
-share/openbox/themes/Simple-Red/openbox-3/desk_toggled.xbm
-share/openbox/themes/Simple-Red/openbox-3/iconify.xbm
-share/openbox/themes/Simple-Red/openbox-3/max.xbm
-share/openbox/themes/Simple-Red/openbox-3/max_toggled.xbm
-share/openbox/themes/Simple-Red/openbox-3/shade.xbm
-share/openbox/themes/Simple-Red/openbox-3/themerc
-share/openbox/themes/Simple-Slate/gtk-2.0/gtkrc
-share/openbox/themes/Simple-Slate/gtk/gtkrc
-share/openbox/themes/Simple-Slate/index.theme
-share/openbox/themes/Simple-Slate/metacity-1/metacity-theme-1.xml
-share/openbox/themes/Simple-Slate/openbox-3/bullet.xbm
-share/openbox/themes/Simple-Slate/openbox-3/close.xbm
-share/openbox/themes/Simple-Slate/openbox-3/desk.xbm
-share/openbox/themes/Simple-Slate/openbox-3/desk_toggled.xbm
-share/openbox/themes/Simple-Slate/openbox-3/iconify.xbm
-share/openbox/themes/Simple-Slate/openbox-3/max.xbm
-share/openbox/themes/Simple-Slate/openbox-3/max_toggled.xbm
-share/openbox/themes/Simple-Slate/openbox-3/shade.xbm
-share/openbox/themes/Simple-Slate/openbox-3/themerc
-share/openbox/themes/arctic/openbox-3/bullet.xbm
-share/openbox/themes/arctic/openbox-3/close.xbm
-share/openbox/themes/arctic/openbox-3/close_hover.xbm
-share/openbox/themes/arctic/openbox-3/close_pressed.xbm
-share/openbox/themes/arctic/openbox-3/desk.xbm
-share/openbox/themes/arctic/openbox-3/desk_toggled.xbm
-share/openbox/themes/arctic/openbox-3/iconify.xbm
-share/openbox/themes/arctic/openbox-3/iconify_hover.xbm
-share/openbox/themes/arctic/openbox-3/iconify_pressed.xbm
-share/openbox/themes/arctic/openbox-3/max.xbm
-share/openbox/themes/arctic/openbox-3/max_disabled.xbm
-share/openbox/themes/arctic/openbox-3/max_hover.xbm
-share/openbox/themes/arctic/openbox-3/max_toggled.xbm
-share/openbox/themes/arctic/openbox-3/themerc
-share/openbox/themes/ayunb/openbox-3/bullet.xbm
-share/openbox/themes/ayunb/openbox-3/close.xbm
-share/openbox/themes/ayunb/openbox-3/close_hover.xbm
-share/openbox/themes/ayunb/openbox-3/close_pressed.xbm
-share/openbox/themes/ayunb/openbox-3/iconify.xbm
-share/openbox/themes/ayunb/openbox-3/iconify_hover.xbm
-share/openbox/themes/ayunb/openbox-3/iconify_pressed.xbm
-share/openbox/themes/ayunb/openbox-3/max.xbm
-share/openbox/themes/ayunb/openbox-3/max_disabled.xbm
-share/openbox/themes/ayunb/openbox-3/max_hover.xbm
-share/openbox/themes/ayunb/openbox-3/max_t.xbm
-share/openbox/themes/ayunb/openbox-3/max_toggled.xbm
-share/openbox/themes/ayunb/openbox-3/shade.xbm
-share/openbox/themes/ayunb/openbox-3/shade_t.xbm
-share/openbox/themes/ayunb/openbox-3/stick.xbm
-share/openbox/themes/ayunb/openbox-3/stick_t.xbm
-share/openbox/themes/ayunb/openbox-3/themerc
-share/openbox/themes/bbstyle/gtk-2.0/gtkrc
-share/openbox/themes/bbstyle/gtk-2.0/window-pattern.png
-share/openbox/themes/bbstyle/openbox-3/bullet.xbm
-share/openbox/themes/bbstyle/openbox-3/close.xbm
-share/openbox/themes/bbstyle/openbox-3/close_disabled.xbm
-share/openbox/themes/bbstyle/openbox-3/close_hover.xbm
-share/openbox/themes/bbstyle/openbox-3/close_pressed.xbm
-share/openbox/themes/bbstyle/openbox-3/desk.xbm
-share/openbox/themes/bbstyle/openbox-3/desk_toggled.xbm
-share/openbox/themes/bbstyle/openbox-3/iconify.xbm
-share/openbox/themes/bbstyle/openbox-3/iconify_hover.xbm
-share/openbox/themes/bbstyle/openbox-3/iconify_pressed.xbm
-share/openbox/themes/bbstyle/openbox-3/max.xbm
-share/openbox/themes/bbstyle/openbox-3/max_disabled.xbm
-share/openbox/themes/bbstyle/openbox-3/max_hover.xbm
-share/openbox/themes/bbstyle/openbox-3/max_pressed.xbm
-share/openbox/themes/bbstyle/openbox-3/max_toggled.xbm
-share/openbox/themes/bbstyle/openbox-3/shade.xbm
-share/openbox/themes/bbstyle/openbox-3/shade_disabled.xbm
-share/openbox/themes/bbstyle/openbox-3/shade_t.xbm
-share/openbox/themes/bbstyle/openbox-3/themerc
-share/openbox/themes/chaos2/openbox-3/bullet.xbm
-share/openbox/themes/chaos2/openbox-3/themerc
-share/openbox/themes/cukoo-spit/gtk-2.0/gtkrc
-share/openbox/themes/cukoo-spit/gtk-2.0/iconrc
-share/openbox/themes/cukoo-spit/gtk/gtkrc
-share/openbox/themes/cukoo-spit/icons/Makefile
-share/openbox/themes/cukoo-spit/icons/Makefile.am
-share/openbox/themes/cukoo-spit/icons/Makefile.in
-share/openbox/themes/cukoo-spit/icons/index.theme
-share/openbox/themes/cukoo-spit/icons/index.theme.in
-share/openbox/themes/cukoo-spit/icons/scalable/Makefile
-share/openbox/themes/cukoo-spit/icons/scalable/Makefile.am
-share/openbox/themes/cukoo-spit/icons/scalable/Makefile.in
-share/openbox/themes/cukoo-spit/icons/scalable/apps/Makefile
-share/openbox/themes/cukoo-spit/icons/scalable/apps/Makefile.am
-share/openbox/themes/cukoo-spit/icons/scalable/apps/Makefile.in
-share/openbox/themes/cukoo-spit/icons/scalable/apps/gnome-gimp.svg
-share/openbox/themes/cukoo-spit/icons/scalable/apps/gnome-terminal.svg
-share/openbox/themes/cukoo-spit/icons/scalable/apps/my-computer.svg
-share/openbox/themes/cukoo-spit/icons/scalable/apps/web-browser.svg
-share/openbox/themes/cukoo-spit/icons/scalable/devices/Makefile
-share/openbox/themes/cukoo-spit/icons/scalable/devices/Makefile.am
-share/openbox/themes/cukoo-spit/icons/scalable/devices/Makefile.in
-share/openbox/themes/cukoo-spit/icons/scalable/devices/gnome-dev-cdrom-audio.svg
-share/openbox/themes/cukoo-spit/icons/scalable/devices/gnome-dev-cdrom.svg
-share/openbox/themes/cukoo-spit/icons/scalable/devices/gnome-dev-dvd.svg
-share/openbox/themes/cukoo-spit/icons/scalable/devices/gnome-dev-harddisk.svg
-share/openbox/themes/cukoo-spit/icons/scalable/devices/gnome-dev-network.svg
-share/openbox/themes/cukoo-spit/icons/scalable/devices/gnome-dev-rw.svg
-share/openbox/themes/cukoo-spit/icons/scalable/devices/gnome-dev-symlink.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/Makefile
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/Makefile.am
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/Makefile.in
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-audio.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-camera.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-cool.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-danger.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-distinguished.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-documents.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-fun.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-generic.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-important.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-multimedia.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-noread.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-nowrite.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-ohno.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-package.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-pictures.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-relax.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-symbolic-link.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-urgent.svg
-share/openbox/themes/cukoo-spit/icons/scalable/emblems/emblem-web.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/Makefile
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/Makefile.am
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/Makefile.in
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-blockdev.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-bookmark-missing.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-bookmark.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-chardev.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory-accept.icon
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory-accept.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory.icon
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-executable.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-ftp.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-home.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-loading-icon.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-network.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-nfs.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-regular.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-server.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-smb.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-ssh.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-trash-empty.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-trash-full.svg
-share/openbox/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-web.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/Makefile
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/Makefile.am
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/Makefile.in
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-compressed.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-msword.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-pdf.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-pgp.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-postscript.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.ms-excel.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.ms-powerpoint.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.rn-realmedia.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.calc.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.draw.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.impress.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.writer.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-abiword.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-backup.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-deb.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-dvi.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-font.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-gnome-app-info.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-gnucash.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-killustrator.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-kpresenter.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-kspread.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-kword.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-rpm.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-shared-library.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-audio-x-midi.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-audio.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-image-x-xcf.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-image.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-css.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-html.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-authors.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-copying.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-install.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-java.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-lyx.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-makefile.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-patch.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-readme.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-sh.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-sql.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-troff-man.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-video.svg
-share/openbox/themes/cukoo-spit/icons/scalable/mimetypes/gnome-package.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/Makefile
-share/openbox/themes/cukoo-spit/icons/scalable/stock/Makefile.am
-share/openbox/themes/cukoo-spit/icons/scalable/stock/Makefile.in
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_about.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_add.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_attach.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_balance.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_bold.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_book-open.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_book.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_cancel.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_cdrom.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_clear.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_close.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_connect.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_convert.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_copy.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_cut.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_delete.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_dialog_error.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_dialog_info.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_dialog_question.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_dialog_warning.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_disconnect.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_dnd.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_dnd_multiple.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_edit.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_execute.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_export.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_find-and-replace.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_find.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_floppy.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_go-back.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_go-down.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_go-forward.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_go-up.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_goto-bottom.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_goto-first.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_goto-last.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_goto-top.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_help.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_home.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_import.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_index.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_insert-image.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_insert-object.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_insert-table.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_italic.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_jump-to.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_justify-center.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_justify-fill.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_justify-left.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_justify-right.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_line-in.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_mic.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_missing-image.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_new.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_no.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_ok.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_open.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_paste.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_preferences.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_print-preview.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_print.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_properties.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_quit.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_redo.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_refresh.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_remove.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_reset.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_revert-to-saved.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_save-as.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_save.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_select-color.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_select-font.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_sort-ascending.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_sort-descending.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_spell-check.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_stop.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_strikethrough.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_undelete.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_underline.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_undo.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_volume.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_yes.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_zoom-100.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_zoom-fit.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_zoom-in.svg
-share/openbox/themes/cukoo-spit/icons/scalable/stock/stock_zoom-out.svg
-share/openbox/themes/cukoo-spit/openbox-3/bullet.xbm
-share/openbox/themes/cukoo-spit/openbox-3/close.xbm
-share/openbox/themes/cukoo-spit/openbox-3/close_disabled.xbm
-share/openbox/themes/cukoo-spit/openbox-3/close_hover.xbm
-share/openbox/themes/cukoo-spit/openbox-3/close_pressed.xbm
-share/openbox/themes/cukoo-spit/openbox-3/desk.xbm
-share/openbox/themes/cukoo-spit/openbox-3/desk_hover.xbm
-share/openbox/themes/cukoo-spit/openbox-3/desk_toggled.xbm
-share/openbox/themes/cukoo-spit/openbox-3/iconify.xbm
-share/openbox/themes/cukoo-spit/openbox-3/iconify_disabled.xbm
-share/openbox/themes/cukoo-spit/openbox-3/iconify_hover.xbm
-share/openbox/themes/cukoo-spit/openbox-3/iconify_pressed.xbm
-share/openbox/themes/cukoo-spit/openbox-3/max.xbm
-share/openbox/themes/cukoo-spit/openbox-3/max_disabled.xbm
-share/openbox/themes/cukoo-spit/openbox-3/max_hover.xbm
-share/openbox/themes/cukoo-spit/openbox-3/max_pressed.xbm
-share/openbox/themes/cukoo-spit/openbox-3/max_toggled.xbm
-share/openbox/themes/cukoo-spit/openbox-3/shade.xbm
-share/openbox/themes/cukoo-spit/openbox-3/themerc
-share/openbox/themes/curdled/openbox-3/bullet-small.xbm
-share/openbox/themes/curdled/openbox-3/bullet.xbm
-share/openbox/themes/curdled/openbox-3/close.xbm
-share/openbox/themes/curdled/openbox-3/desk.xbm
-share/openbox/themes/curdled/openbox-3/desk_toggled.xbm
-share/openbox/themes/curdled/openbox-3/iconify.xbm
-share/openbox/themes/curdled/openbox-3/max.xbm
-share/openbox/themes/curdled/openbox-3/shade.xbm
-share/openbox/themes/curdled/openbox-3/themerc
-share/openbox/themes/day/openbox-3/bullet.xbm
-share/openbox/themes/day/openbox-3/close.xbm
-share/openbox/themes/day/openbox-3/desk.xbm
-share/openbox/themes/day/openbox-3/iconify.xbm
-share/openbox/themes/day/openbox-3/max.xbm
-share/openbox/themes/day/openbox-3/themerc
-share/openbox/themes/debian/changelog
-share/openbox/themes/debian/compat
-share/openbox/themes/debian/control
-share/openbox/themes/debian/copyright
-share/openbox/themes/debian/dirs
-share/openbox/themes/debian/rules
-share/openbox/themes/ebox/openbox-3/bullet.xbm
-share/openbox/themes/ebox/openbox-3/close.xbm
-share/openbox/themes/ebox/openbox-3/desk.xbm
-share/openbox/themes/ebox/openbox-3/iconify.xbm
-share/openbox/themes/ebox/openbox-3/max.xbm
-share/openbox/themes/ebox/openbox-3/max_toggled.xbm
-share/openbox/themes/ebox/openbox-3/stick_toggled.xbm
-share/openbox/themes/ebox/openbox-3/themerc
-share/openbox/themes/fog-i/openbox-3/bullet.xbm
-share/openbox/themes/fog-i/openbox-3/close.xbm
-share/openbox/themes/fog-i/openbox-3/desk.xbm
-share/openbox/themes/fog-i/openbox-3/desk_toggled.xbm
-share/openbox/themes/fog-i/openbox-3/iconify.xbm
-share/openbox/themes/fog-i/openbox-3/max.xbm
-share/openbox/themes/fog-i/openbox-3/max_toggled.xbm
-share/openbox/themes/fog-i/openbox-3/shade.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/bullet.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/close.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/close_disabled.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/desk.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/desk_toggled.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/iconify.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/max.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/max_toggled.xbm
-share/openbox/themes/fog-i/openbox-3/smallerbuttons/shade.xbm
-share/openbox/themes/fog-i/openbox-3/themerc
-share/openbox/themes/fog-maths/gtk-2.0/gtkrc
-share/openbox/themes/fog-maths/gtk-2.0/stock_apply.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_bottom.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_cancel.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_down-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_down.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_first-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_first.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_last-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_last.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_left-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_left.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_ok.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_refresh.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_right-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_right.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_top-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_top.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_up-16.png
-share/openbox/themes/fog-maths/gtk-2.0/stock_up.png
-share/openbox/themes/fog-maths/gtk-2.0/window_pattern4.png
-share/openbox/themes/fog-maths/gtk/gtkrc
-share/openbox/themes/fog-maths/gtk/window_pattern.png
-share/openbox/themes/fog-maths/gtk/window_pattern2.png
-share/openbox/themes/fog-maths/gtk/window_pattern3.png
-share/openbox/themes/fog-maths/gtk/window_pattern4.png
-share/openbox/themes/fog-maths/openbox-3/bullet.xbm
-share/openbox/themes/fog-maths/openbox-3/close.xbm
-share/openbox/themes/fog-maths/openbox-3/desk.xbm
-share/openbox/themes/fog-maths/openbox-3/desk_toggled.xbm
-share/openbox/themes/fog-maths/openbox-3/iconify.xbm
-share/openbox/themes/fog-maths/openbox-3/max.xbm
-share/openbox/themes/fog-maths/openbox-3/max_toggled.xbm
-share/openbox/themes/fog-maths/openbox-3/shade.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/bullet.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/close.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/close_disabled.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/desk.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/desk_toggled.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/iconify.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/max.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/max_toggled.xbm
-share/openbox/themes/fog-maths/openbox-3/smallerbuttons/shade.xbm
-share/openbox/themes/fog-maths/openbox-3/themerc
-share/openbox/themes/fog-mine/openbox-3/bullet.xbm
-share/openbox/themes/fog-mine/openbox-3/close.xbm
-share/openbox/themes/fog-mine/openbox-3/desk.xbm
-share/openbox/themes/fog-mine/openbox-3/desk_toggled.xbm
-share/openbox/themes/fog-mine/openbox-3/iconify.xbm
-share/openbox/themes/fog-mine/openbox-3/max.xbm
-share/openbox/themes/fog-mine/openbox-3/max_toggled.xbm
-share/openbox/themes/fog-mine/openbox-3/shade.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/bullet.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/close.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/close_disabled.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/desk.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/desk_toggled.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/iconify.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/max.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/max_toggled.xbm
-share/openbox/themes/fog-mine/openbox-3/smallerbuttons/shade.xbm
-share/openbox/themes/fog-mine/openbox-3/themerc
-share/openbox/themes/fog-t/openbox-3/bullet.xbm
-share/openbox/themes/fog-t/openbox-3/close.xbm
-share/openbox/themes/fog-t/openbox-3/close_disabled.xbm
-share/openbox/themes/fog-t/openbox-3/desk.xbm
-share/openbox/themes/fog-t/openbox-3/desk_toggled.xbm
-share/openbox/themes/fog-t/openbox-3/iconify.xbm
-share/openbox/themes/fog-t/openbox-3/max.xbm
-share/openbox/themes/fog-t/openbox-3/max_toggled.xbm
-share/openbox/themes/fog-t/openbox-3/shade.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/bullet.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/close.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/close_disabled.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/desk.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/desk_toggled.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/iconify.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/max.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/max_toggled.xbm
-share/openbox/themes/fog-t/openbox-3/smallerbuttons/shade.xbm
-share/openbox/themes/fog-t/openbox-3/themerc
-share/openbox/themes/fog/openbox-3/bullet.xbm
-share/openbox/themes/fog/openbox-3/close.xbm
-share/openbox/themes/fog/openbox-3/desk.xbm
-share/openbox/themes/fog/openbox-3/desk_toggled.xbm
-share/openbox/themes/fog/openbox-3/iconify.xbm
-share/openbox/themes/fog/openbox-3/max.xbm
-share/openbox/themes/fog/openbox-3/max_toggled.xbm
-share/openbox/themes/fog/openbox-3/shade.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/bullet.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/close.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/close_disabled.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/desk.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/desk_toggled.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/iconify.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/max.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/max_toggled.xbm
-share/openbox/themes/fog/openbox-3/smallerbuttons/shade.xbm
-share/openbox/themes/fog/openbox-3/themerc
-share/openbox/themes/fvwmish/openbox-3/close.xbm
-share/openbox/themes/fvwmish/openbox-3/iconify.png
-share/openbox/themes/fvwmish/openbox-3/iconify.xbm
-share/openbox/themes/fvwmish/openbox-3/max.xbm
-share/openbox/themes/fvwmish/openbox-3/shade.xbm
-share/openbox/themes/fvwmish/openbox-3/themerc
-share/openbox/themes/gd-fog/openbox-3/bullet.xbm
-share/openbox/themes/gd-fog/openbox-3/close.xbm
-share/openbox/themes/gd-fog/openbox-3/close_hover.xbm
-share/openbox/themes/gd-fog/openbox-3/close_pressed.xbm
-share/openbox/themes/gd-fog/openbox-3/desk.xbm
-share/openbox/themes/gd-fog/openbox-3/desk_toggled.xbm
-share/openbox/themes/gd-fog/openbox-3/iconify.xbm
-share/openbox/themes/gd-fog/openbox-3/iconify_hover.xbm
-share/openbox/themes/gd-fog/openbox-3/iconify_pressed.xbm
-share/openbox/themes/gd-fog/openbox-3/max.xbm
-share/openbox/themes/gd-fog/openbox-3/max_hover.xbm
-share/openbox/themes/gd-fog/openbox-3/max_pressed.xbm
-share/openbox/themes/gd-fog/openbox-3/max_toggled.xbm
-share/openbox/themes/gd-fog/openbox-3/shade.xbm
-share/openbox/themes/gd-fog/openbox-3/shade_toggled.xbm
-share/openbox/themes/gd-fog/openbox-3/themerc
-share/openbox/themes/gelb-chubby/openbox-3/bullet.xbm
-share/openbox/themes/gelb-chubby/openbox-3/close.xbm
-share/openbox/themes/gelb-chubby/openbox-3/close_hover.xbm
-share/openbox/themes/gelb-chubby/openbox-3/close_pressed.xbm
-share/openbox/themes/gelb-chubby/openbox-3/desk.xbm
-share/openbox/themes/gelb-chubby/openbox-3/desk_toggled.xbm
-share/openbox/themes/gelb-chubby/openbox-3/iconify.xbm
-share/openbox/themes/gelb-chubby/openbox-3/iconify_hover.xbm
-share/openbox/themes/gelb-chubby/openbox-3/iconify_pressed.xbm
-share/openbox/themes/gelb-chubby/openbox-3/max.xbm
-share/openbox/themes/gelb-chubby/openbox-3/max_disabled.xbm
-share/openbox/themes/gelb-chubby/openbox-3/max_hover.xbm
-share/openbox/themes/gelb-chubby/openbox-3/max_toggled.xbm
-share/openbox/themes/gelb-chubby/openbox-3/themerc
-share/openbox/themes/gelb/gtk-2.0/gtkrc
-share/openbox/themes/gelb/gtk/gtkrc
-share/openbox/themes/gelb/openbox-3/bullet.xbm
-share/openbox/themes/gelb/openbox-3/close.xbm
-share/openbox/themes/gelb/openbox-3/close_hover.xbm
-share/openbox/themes/gelb/openbox-3/close_pressed.xbm
-share/openbox/themes/gelb/openbox-3/desk.xbm
-share/openbox/themes/gelb/openbox-3/desk_toggled.xbm
-share/openbox/themes/gelb/openbox-3/iconify.xbm
-share/openbox/themes/gelb/openbox-3/iconify_hover.xbm
-share/openbox/themes/gelb/openbox-3/iconify_pressed.xbm
-share/openbox/themes/gelb/openbox-3/max.xbm
-share/openbox/themes/gelb/openbox-3/max_disabled.xbm
-share/openbox/themes/gelb/openbox-3/max_hover.xbm
-share/openbox/themes/gelb/openbox-3/max_toggled.xbm
-share/openbox/themes/gelb/openbox-3/themerc
-share/openbox/themes/greenz/openbox-3/bullet.xbm
-share/openbox/themes/greenz/openbox-3/themerc
-share/openbox/themes/i-merry/openbox-3/bullet.xbm
-share/openbox/themes/i-merry/openbox-3/close.xbm
-share/openbox/themes/i-merry/openbox-3/close_hover.xbm
-share/openbox/themes/i-merry/openbox-3/close_pressed.xbm
-share/openbox/themes/i-merry/openbox-3/desk.xbm
-share/openbox/themes/i-merry/openbox-3/desk_toggle.xbm
-share/openbox/themes/i-merry/openbox-3/iconify.xbm
-share/openbox/themes/i-merry/openbox-3/iconify_hover.xbm
-share/openbox/themes/i-merry/openbox-3/iconify_pressed.xbm
-share/openbox/themes/i-merry/openbox-3/max.xbm
-share/openbox/themes/i-merry/openbox-3/max_disabled.xbm
-share/openbox/themes/i-merry/openbox-3/max_hover.xbm
-share/openbox/themes/i-merry/openbox-3/max_toggled.xbm
-share/openbox/themes/i-merry/openbox-3/themerc
-share/openbox/themes/i-merryb/openbox-3/bullet.xbm
-share/openbox/themes/i-merryb/openbox-3/close.xbm
-share/openbox/themes/i-merryb/openbox-3/close_hover.xbm
-share/openbox/themes/i-merryb/openbox-3/close_pressed.xbm
-share/openbox/themes/i-merryb/openbox-3/desk.xbm
-share/openbox/themes/i-merryb/openbox-3/desk_toggle.xbm
-share/openbox/themes/i-merryb/openbox-3/iconify.xbm
-share/openbox/themes/i-merryb/openbox-3/iconify_hover.xbm
-share/openbox/themes/i-merryb/openbox-3/iconify_pressed.xbm
-share/openbox/themes/i-merryb/openbox-3/max.xbm
-share/openbox/themes/i-merryb/openbox-3/max_disabled.xbm
-share/openbox/themes/i-merryb/openbox-3/max_hover.xbm
-share/openbox/themes/i-merryb/openbox-3/max_toggled.xbm
-share/openbox/themes/i-merryb/openbox-3/themerc
-share/openbox/themes/isawagorilla/openbox-3/NewDir/bullet.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/close.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/desk.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/desk_toggled.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/iconify.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/max.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/max_pressed.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/max_toggled.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/shade.xbm
-share/openbox/themes/isawagorilla/openbox-3/NewDir/themerc
-share/openbox/themes/isawagorilla/openbox-3/bullet.xbm
-share/openbox/themes/isawagorilla/openbox-3/close.xbm
-share/openbox/themes/isawagorilla/openbox-3/close_disabled.xbm
-share/openbox/themes/isawagorilla/openbox-3/close_hover.xbm
-share/openbox/themes/isawagorilla/openbox-3/close_pressed.xbm
-share/openbox/themes/isawagorilla/openbox-3/desk.xbm
-share/openbox/themes/isawagorilla/openbox-3/desk_toggled.xbm
-share/openbox/themes/isawagorilla/openbox-3/iconify.xbm
-share/openbox/themes/isawagorilla/openbox-3/iconify_hover.xbm
-share/openbox/themes/isawagorilla/openbox-3/iconify_pressed.xbm
-share/openbox/themes/isawagorilla/openbox-3/max.xbm
-share/openbox/themes/isawagorilla/openbox-3/max_disabled.xbm
-share/openbox/themes/isawagorilla/openbox-3/max_hover.xbm
-share/openbox/themes/isawagorilla/openbox-3/max_pressed.xbm
-share/openbox/themes/isawagorilla/openbox-3/max_toggled.xbm
-share/openbox/themes/isawagorilla/openbox-3/shade.xbm
-share/openbox/themes/isawagorilla/openbox-3/themerc
-share/openbox/themes/jolly/openbox-3/bullet.xbm
-share/openbox/themes/jolly/openbox-3/close.xbm
-share/openbox/themes/jolly/openbox-3/close_hover.xbm
-share/openbox/themes/jolly/openbox-3/close_pressed.xbm
-share/openbox/themes/jolly/openbox-3/iconify.xbm
-share/openbox/themes/jolly/openbox-3/iconify_hover.xbm
-share/openbox/themes/jolly/openbox-3/iconify_pressed.xbm
-share/openbox/themes/jolly/openbox-3/max.xbm
-share/openbox/themes/jolly/openbox-3/max_disabled.xbm
-share/openbox/themes/jolly/openbox-3/max_hover.xbm
-share/openbox/themes/jolly/openbox-3/max_toggled.xbm
-share/openbox/themes/jolly/openbox-3/themerc
-share/openbox/themes/kong/openbox-3/bullet.xbm
-share/openbox/themes/kong/openbox-3/themerc
-share/openbox/themes/light-industry/gtk-2.0/gtkrc
-share/openbox/themes/light-industry/gtk-2.0/stock_apply.png
-share/openbox/themes/light-industry/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_bottom.png
-share/openbox/themes/light-industry/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_cancel.png
-share/openbox/themes/light-industry/gtk-2.0/stock_down-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_down.png
-share/openbox/themes/light-industry/gtk-2.0/stock_first-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_first.png
-share/openbox/themes/light-industry/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/light-industry/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/light-industry/gtk-2.0/stock_last-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_last.png
-share/openbox/themes/light-industry/gtk-2.0/stock_left-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_left.png
-share/openbox/themes/light-industry/gtk-2.0/stock_ok.png
-share/openbox/themes/light-industry/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_refresh.png
-share/openbox/themes/light-industry/gtk-2.0/stock_right-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_right.png
-share/openbox/themes/light-industry/gtk-2.0/stock_top-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_top.png
-share/openbox/themes/light-industry/gtk-2.0/stock_up-16.png
-share/openbox/themes/light-industry/gtk-2.0/stock_up.png
-share/openbox/themes/light-industry/gtk-2.0/window_pattern4.png
-share/openbox/themes/light-industry/gtk/gtkrc
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/bullet.xbm
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/close.xbm
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/desk.xbm
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/desk_toggled.xbm
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/iconify.xbm
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/max.xbm
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/max_toggled.xbm
-share/openbox/themes/light-industry/openbox-3/altaltbuttons/shade.xbm
-share/openbox/themes/light-industry/openbox-3/altbuttons/bullet.xbm
-share/openbox/themes/light-industry/openbox-3/altbuttons/close.xbm
-share/openbox/themes/light-industry/openbox-3/altbuttons/desk.xbm
-share/openbox/themes/light-industry/openbox-3/altbuttons/desk_toggled.xbm
-share/openbox/themes/light-industry/openbox-3/altbuttons/iconify.xbm
-share/openbox/themes/light-industry/openbox-3/altbuttons/max.xbm
-share/openbox/themes/light-industry/openbox-3/altbuttons/max_toggled.xbm
-share/openbox/themes/light-industry/openbox-3/bullet.xbm
-share/openbox/themes/light-industry/openbox-3/close.xbm
-share/openbox/themes/light-industry/openbox-3/close_disabled.xbm
-share/openbox/themes/light-industry/openbox-3/close_hover.xbm
-share/openbox/themes/light-industry/openbox-3/close_pressed.xbm
-share/openbox/themes/light-industry/openbox-3/desk.xbm
-share/openbox/themes/light-industry/openbox-3/desk_toggled.xbm
-share/openbox/themes/light-industry/openbox-3/iconify.xbm
-share/openbox/themes/light-industry/openbox-3/iconify_disabled.xbm
-share/openbox/themes/light-industry/openbox-3/iconify_hover.xbm
-share/openbox/themes/light-industry/openbox-3/iconify_pressed.xbm
-share/openbox/themes/light-industry/openbox-3/max.xbm
-share/openbox/themes/light-industry/openbox-3/max_disabled.xbm
-share/openbox/themes/light-industry/openbox-3/max_hover.xbm
-share/openbox/themes/light-industry/openbox-3/max_pressed.xbm
-share/openbox/themes/light-industry/openbox-3/max_toggled.xbm
-share/openbox/themes/light-industry/openbox-3/shade.xbm
-share/openbox/themes/light-industry/openbox-3/shade_hover.xbm
-share/openbox/themes/light-industry/openbox-3/shade_pressed.xbm
-share/openbox/themes/light-industry/openbox-3/themerc
-share/openbox/themes/mavos/openbox-3/bullet.xbm
-share/openbox/themes/mavos/openbox-3/close.xbm
-share/openbox/themes/mavos/openbox-3/desk.xbm
-share/openbox/themes/mavos/openbox-3/desk_toggle.xbm
-share/openbox/themes/mavos/openbox-3/iconify.xbm
-share/openbox/themes/mavos/openbox-3/iconify_pressed.xbm
-share/openbox/themes/mavos/openbox-3/max.xbm
-share/openbox/themes/mavos/openbox-3/max_disabled.xbm
-share/openbox/themes/mavos/openbox-3/max_pressed.xbm
-share/openbox/themes/mavos/openbox-3/max_toggled.xbm
-share/openbox/themes/mavos/openbox-3/shade.xbm
-share/openbox/themes/mavos/openbox-3/shade_pressed.xbm
-share/openbox/themes/mavos/openbox-3/themerc
-share/openbox/themes/merrycity/openbox-3/bitmaps/close.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/close_hover.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/close_pressed.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/iconify.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/iconify_hover.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/iconify_pressed.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/max.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/max_hover.xbm
-share/openbox/themes/merrycity/openbox-3/bitmaps/max_pressed.xbm
-share/openbox/themes/merrycity/openbox-3/bullet.xbm
-share/openbox/themes/merrycity/openbox-3/close.xbm
-share/openbox/themes/merrycity/openbox-3/close_hover.xbm
-share/openbox/themes/merrycity/openbox-3/close_pressed.xbm
-share/openbox/themes/merrycity/openbox-3/desk.xbm
-share/openbox/themes/merrycity/openbox-3/desk_toggle.xbm
-share/openbox/themes/merrycity/openbox-3/iconify.xbm
-share/openbox/themes/merrycity/openbox-3/iconify_hover.xbm
-share/openbox/themes/merrycity/openbox-3/iconify_pressed.xbm
-share/openbox/themes/merrycity/openbox-3/max.xbm
-share/openbox/themes/merrycity/openbox-3/max_disabled.xbm
-share/openbox/themes/merrycity/openbox-3/max_hover.xbm
-share/openbox/themes/merrycity/openbox-3/max_toggled.xbm
-share/openbox/themes/merrycity/openbox-3/themerc
-share/openbox/themes/mist/changeaccent
-share/openbox/themes/mist/gtk-2.0/gtkrc
-share/openbox/themes/mist/gtk-2.0/stock_apply.png
-share/openbox/themes/mist/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/mist/gtk-2.0/stock_bottom.png
-share/openbox/themes/mist/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/mist/gtk-2.0/stock_cancel.png
-share/openbox/themes/mist/gtk-2.0/stock_down-16.png
-share/openbox/themes/mist/gtk-2.0/stock_down.png
-share/openbox/themes/mist/gtk-2.0/stock_first-16.png
-share/openbox/themes/mist/gtk-2.0/stock_first.png
-share/openbox/themes/mist/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/mist/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/mist/gtk-2.0/stock_last-16.png
-share/openbox/themes/mist/gtk-2.0/stock_last.png
-share/openbox/themes/mist/gtk-2.0/stock_left-16.png
-share/openbox/themes/mist/gtk-2.0/stock_left.png
-share/openbox/themes/mist/gtk-2.0/stock_ok.png
-share/openbox/themes/mist/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/mist/gtk-2.0/stock_refresh.png
-share/openbox/themes/mist/gtk-2.0/stock_right-16.png
-share/openbox/themes/mist/gtk-2.0/stock_right.png
-share/openbox/themes/mist/gtk-2.0/stock_top-16.png
-share/openbox/themes/mist/gtk-2.0/stock_top.png
-share/openbox/themes/mist/gtk-2.0/stock_up-16.png
-share/openbox/themes/mist/gtk-2.0/stock_up.png
-share/openbox/themes/mist/gtk/gtkrc
-share/openbox/themes/mist/openbox-3/bullet.xbm
-share/openbox/themes/mist/openbox-3/close.xbm
-share/openbox/themes/mist/openbox-3/desk.xbm
-share/openbox/themes/mist/openbox-3/desk_toggled.xbm
-share/openbox/themes/mist/openbox-3/iconify.xbm
-share/openbox/themes/mist/openbox-3/max.xbm
-share/openbox/themes/mist/openbox-3/max_toggled.xbm
-share/openbox/themes/mist/openbox-3/shade.xbm
-share/openbox/themes/mist/openbox-3/themerc
-share/openbox/themes/misted/changeaccent
-share/openbox/themes/misted/gtk-2.0/gtkrc
-share/openbox/themes/misted/gtk/gtkrc
-share/openbox/themes/misted/openbox-3/bullet.xbm
-share/openbox/themes/misted/openbox-3/close.xbm
-share/openbox/themes/misted/openbox-3/desk.xbm
-share/openbox/themes/misted/openbox-3/desk_toggled.xbm
-share/openbox/themes/misted/openbox-3/iconify.xbm
-share/openbox/themes/misted/openbox-3/max.xbm
-share/openbox/themes/misted/openbox-3/max_toggled.xbm
-share/openbox/themes/misted/openbox-3/shade.xbm
-share/openbox/themes/misted/openbox-3/themerc
-share/openbox/themes/nop/openbox-3/bullet.xbm
-share/openbox/themes/nop/openbox-3/close.xbm
-share/openbox/themes/nop/openbox-3/close_hover.xbm
-share/openbox/themes/nop/openbox-3/close_pressed.xbm
-share/openbox/themes/nop/openbox-3/desk.xbm
-share/openbox/themes/nop/openbox-3/desk_toggle.xbm
-share/openbox/themes/nop/openbox-3/iconify.xbm
-share/openbox/themes/nop/openbox-3/iconify_hover.xbm
-share/openbox/themes/nop/openbox-3/iconify_pressed.xbm
-share/openbox/themes/nop/openbox-3/max.xbm
-share/openbox/themes/nop/openbox-3/max_disabled.xbm
-share/openbox/themes/nop/openbox-3/max_hover.xbm
-share/openbox/themes/nop/openbox-3/max_toggled.xbm
-share/openbox/themes/nop/openbox-3/themerc
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/bullet.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/close.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/close_disabled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/close_hover.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/desk.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/desk_toggled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/iconify.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/max.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/max_disabled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/max_toggled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/shade.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold/themerc
-share/openbox/themes/ob-in-dustry/openbox-3/altbuttons/bullet.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/altbuttons/close.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/altbuttons/desk.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/altbuttons/desk_toggled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/altbuttons/iconify.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/altbuttons/max.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/altbuttons/max_toggled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/bullet.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/close.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/desk.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/desk_toggled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/iconify-real.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/iconify.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/max.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/max_toggled.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/shade.xbm
-share/openbox/themes/ob-in-dustry/openbox-3/themerc
-share/openbox/themes/oldred/openbox-3/bullet.xbm
-share/openbox/themes/oldred/openbox-3/close.xbm
-share/openbox/themes/oldred/openbox-3/desk.xbm
-share/openbox/themes/oldred/openbox-3/desk_toggle.xbm
-share/openbox/themes/oldred/openbox-3/iconify.xbm
-share/openbox/themes/oldred/openbox-3/iconify_pressed.xbm
-share/openbox/themes/oldred/openbox-3/max.xbm
-share/openbox/themes/oldred/openbox-3/max_disabled.xbm
-share/openbox/themes/oldred/openbox-3/max_pressed.xbm
-share/openbox/themes/oldred/openbox-3/max_toggled.xbm
-share/openbox/themes/oldred/openbox-3/shade.xbm
-share/openbox/themes/oldred/openbox-3/shade_pressed.xbm
-share/openbox/themes/oldred/openbox-3/themerc
-share/openbox/themes/opensaw/openbox-3/bullet.xbm
-share/openbox/themes/opensaw/openbox-3/close.xbm
-share/openbox/themes/opensaw/openbox-3/close_disabled.xbm
-share/openbox/themes/opensaw/openbox-3/close_hover.xbm
-share/openbox/themes/opensaw/openbox-3/close_pressed.xbm
-share/openbox/themes/opensaw/openbox-3/iconify.xbm
-share/openbox/themes/opensaw/openbox-3/iconify_disabled.xbm
-share/openbox/themes/opensaw/openbox-3/iconify_hover.xbm
-share/openbox/themes/opensaw/openbox-3/iconify_pressed.xbm
-share/openbox/themes/opensaw/openbox-3/max.xbm
-share/openbox/themes/opensaw/openbox-3/max_disabled.xbm
-share/openbox/themes/opensaw/openbox-3/max_hover.xbm
-share/openbox/themes/opensaw/openbox-3/max_pressed.xbm
-share/openbox/themes/opensaw/openbox-3/max_toggled.xbm
-share/openbox/themes/opensaw/openbox-3/themerc
-share/openbox/themes/opensaw/sawbox/close.xbm
-share/openbox/themes/opensaw/sawbox/close_disabled.xbm
-share/openbox/themes/opensaw/sawbox/close_hover.xbm
-share/openbox/themes/opensaw/sawbox/close_pressed.xbm
-share/openbox/themes/opensaw/sawbox/iconify.xbm
-share/openbox/themes/opensaw/sawbox/iconify_disabled.xbm
-share/openbox/themes/opensaw/sawbox/iconify_hover.xbm
-share/openbox/themes/opensaw/sawbox/iconify_pressed.xbm
-share/openbox/themes/opensaw/sawbox/max.xbm
-share/openbox/themes/opensaw/sawbox/max_disabled.xbm
-share/openbox/themes/opensaw/sawbox/max_hover.xbm
-share/openbox/themes/opensaw/sawbox/max_pressed.xbm
-share/openbox/themes/opensaw/sawbox/max_toggled.xbm
-share/openbox/themes/opensaw/sawbox/themerc
-share/openbox/themes/operation/openbox-3/themerc
-share/openbox/themes/orange-fog/gtk-2.0/gtkrc
-share/openbox/themes/orange-fog/gtk-2.0/stock_apply.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_bottom.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_cancel.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_down-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_down.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_first-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_first.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_last-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_last.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_left-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_left.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_ok.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_refresh.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_right-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_right.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_top-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_top.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_up-16.png
-share/openbox/themes/orange-fog/gtk-2.0/stock_up.png
-share/openbox/themes/orange-fog/gtk/gtkrc
-share/openbox/themes/orange-fog/openbox-3/bullet.xbm
-share/openbox/themes/orange-fog/openbox-3/close.xbm
-share/openbox/themes/orange-fog/openbox-3/desk.xbm
-share/openbox/themes/orange-fog/openbox-3/desk_toggled.xbm
-share/openbox/themes/orange-fog/openbox-3/iconify.xbm
-share/openbox/themes/orange-fog/openbox-3/max.xbm
-share/openbox/themes/orange-fog/openbox-3/max_toggled.xbm
-share/openbox/themes/orange-fog/openbox-3/shade.xbm
-share/openbox/themes/orange-fog/openbox-3/themerc
-share/openbox/themes/palerider/openbox-3/bullet.xbm
-share/openbox/themes/palerider/openbox-3/close.xbm
-share/openbox/themes/palerider/openbox-3/desk.xbm
-share/openbox/themes/palerider/openbox-3/desk_toggle.xbm
-share/openbox/themes/palerider/openbox-3/iconify.xbm
-share/openbox/themes/palerider/openbox-3/iconify_pressed.xbm
-share/openbox/themes/palerider/openbox-3/max.xbm
-share/openbox/themes/palerider/openbox-3/max_disabled.xbm
-share/openbox/themes/palerider/openbox-3/max_pressed.xbm
-share/openbox/themes/palerider/openbox-3/max_toggled.xbm
-share/openbox/themes/palerider/openbox-3/themerc
-share/openbox/themes/planton/openbox-3/bullet.xbm
-share/openbox/themes/planton/openbox-3/close.xbm
-share/openbox/themes/planton/openbox-3/close_disabled.xbm
-share/openbox/themes/planton/openbox-3/close_pressed.xbm
-share/openbox/themes/planton/openbox-3/desk.xbm
-share/openbox/themes/planton/openbox-3/desk_toggled.xbm
-share/openbox/themes/planton/openbox-3/iconify.xbm
-share/openbox/themes/planton/openbox-3/max.xbm
-share/openbox/themes/planton/openbox-3/max_disabled.xbm
-share/openbox/themes/planton/openbox-3/max_pressed.xbm
-share/openbox/themes/planton/openbox-3/max_toggled.xbm
-share/openbox/themes/planton/openbox-3/shade.xbm
-share/openbox/themes/planton/openbox-3/shade_t.xbm
-share/openbox/themes/planton/openbox-3/shade_toggled.xbm
-share/openbox/themes/planton/openbox-3/stick.xbm
-share/openbox/themes/planton/openbox-3/stick_t.xbm
-share/openbox/themes/planton/openbox-3/themerc
-share/openbox/themes/rabbit/openbox-3/bullet.xbm
-share/openbox/themes/rabbit/openbox-3/close.xbm
-share/openbox/themes/rabbit/openbox-3/desk.xbm
-share/openbox/themes/rabbit/openbox-3/desk_toggled.xbm
-share/openbox/themes/rabbit/openbox-3/iconify.xbm
-share/openbox/themes/rabbit/openbox-3/max.xbm
-share/openbox/themes/rabbit/openbox-3/max_toggled.xbm
-share/openbox/themes/rabbit/openbox-3/shade.xbm
-share/openbox/themes/rabbit/openbox-3/themerc
-share/openbox/themes/raffles/openbox-3/bullet.xbm
-share/openbox/themes/raffles/openbox-3/close.xbm
-share/openbox/themes/raffles/openbox-3/iconify.xbm
-share/openbox/themes/raffles/openbox-3/max.xbm
-share/openbox/themes/raffles/openbox-3/shade.xbm
-share/openbox/themes/raffles/openbox-3/themerc
-share/openbox/themes/real-milk/openbox-3/bullet-small.xbm
-share/openbox/themes/real-milk/openbox-3/close.xbm
-share/openbox/themes/real-milk/openbox-3/desk.xbm
-share/openbox/themes/real-milk/openbox-3/desk_toggled.xbm
-share/openbox/themes/real-milk/openbox-3/iconify.xbm
-share/openbox/themes/real-milk/openbox-3/max.xbm
-share/openbox/themes/real-milk/openbox-3/shade.xbm
-share/openbox/themes/real-milk/openbox-3/themerc
-share/openbox/themes/spiffe/gtk-2.0/gtkrc
-share/openbox/themes/spiffe/openbox-3/bullet.xbm
-share/openbox/themes/spiffe/openbox-3/close.xbm
-share/openbox/themes/spiffe/openbox-3/close_hover.xbm
-share/openbox/themes/spiffe/openbox-3/close_pressed.xbm
-share/openbox/themes/spiffe/openbox-3/desk.xbm
-share/openbox/themes/spiffe/openbox-3/desk_toggled.xbm
-share/openbox/themes/spiffe/openbox-3/iconify.xbm
-share/openbox/themes/spiffe/openbox-3/iconify_hover.xbm
-share/openbox/themes/spiffe/openbox-3/iconify_pressed.xbm
-share/openbox/themes/spiffe/openbox-3/max.xbm
-share/openbox/themes/spiffe/openbox-3/max_disabled.xbm
-share/openbox/themes/spiffe/openbox-3/max_hover.xbm
-share/openbox/themes/spiffe/openbox-3/max_toggled.xbm
-share/openbox/themes/spiffe/openbox-3/shade.xbm
-share/openbox/themes/spiffe/openbox-3/themerc
-share/openbox/themes/spiffish/openbox-3/bullet.xbm
-share/openbox/themes/spiffish/openbox-3/close.xbm
-share/openbox/themes/spiffish/openbox-3/close_hover.xbm
-share/openbox/themes/spiffish/openbox-3/close_pressed.xbm
-share/openbox/themes/spiffish/openbox-3/desk.xbm
-share/openbox/themes/spiffish/openbox-3/desk_toggled.xbm
-share/openbox/themes/spiffish/openbox-3/iconify.xbm
-share/openbox/themes/spiffish/openbox-3/iconify_hover.xbm
-share/openbox/themes/spiffish/openbox-3/iconify_pressed.xbm
-share/openbox/themes/spiffish/openbox-3/max.xbm
-share/openbox/themes/spiffish/openbox-3/max_disabled.xbm
-share/openbox/themes/spiffish/openbox-3/max_hover.xbm
-share/openbox/themes/spiffish/openbox-3/max_toggled.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/bullet.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/close.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/close_hover.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/close_pressed.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/desk.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/desk_toggled.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/iconify.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/iconify_hover.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/iconify_pressed.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/max.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/max_disabled.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/max_hover.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/max_toggled.xbm
-share/openbox/themes/spiffish/openbox-3/spiffy/themerc
-share/openbox/themes/spiffish/openbox-3/themerc
-share/openbox/themes/spoff/gtk-2.0-key/gtkrc
-share/openbox/themes/spoff/gtk-2.0/gtkrc
-share/openbox/themes/spoff/gtk-2.0/reptile.png
-share/openbox/themes/spoff/gtk-2.0/reptile2.png
-share/openbox/themes/spoff/gtk/gtkrc
-share/openbox/themes/spoff/gtk/window_pattern.png
-share/openbox/themes/spoff/gtk/window_pattern2.png
-share/openbox/themes/spoff/gtk/window_pattern3.png
-share/openbox/themes/spoff/gtk/window_pattern4.png
-share/openbox/themes/spoff/openbox-3/bullet.xbm
-share/openbox/themes/spoff/openbox-3/close.xbm
-share/openbox/themes/spoff/openbox-3/close_hover.xbm
-share/openbox/themes/spoff/openbox-3/close_pressed.xbm
-share/openbox/themes/spoff/openbox-3/desk.xbm
-share/openbox/themes/spoff/openbox-3/desk_toggled.xbm
-share/openbox/themes/spoff/openbox-3/iconify.xbm
-share/openbox/themes/spoff/openbox-3/iconify_hover.xbm
-share/openbox/themes/spoff/openbox-3/iconify_pressed.xbm
-share/openbox/themes/spoff/openbox-3/max.xbm
-share/openbox/themes/spoff/openbox-3/max_disabled.xbm
-share/openbox/themes/spoff/openbox-3/max_hover.xbm
-share/openbox/themes/spoff/openbox-3/max_toggled.xbm
-share/openbox/themes/spoff/openbox-3/nthemerc
-share/openbox/themes/spoff/openbox-3/shade.xbm
-share/openbox/themes/spoff/openbox-3/themerc
-share/openbox/themes/thebear/openbox-3/bullet.xbm
-share/openbox/themes/thebear/openbox-3/close.xbm
-share/openbox/themes/thebear/openbox-3/desk.xbm
-share/openbox/themes/thebear/openbox-3/desk_toggled.xbm
-share/openbox/themes/thebear/openbox-3/iconify.xbm
-share/openbox/themes/thebear/openbox-3/max.xbm
-share/openbox/themes/thebear/openbox-3/max_toggled.xbm
-share/openbox/themes/thebear/openbox-3/shade.xbm
-share/openbox/themes/thebear/openbox-3/themerc
-share/openbox/themes/turq/openbox-3/bullet.xbm
-share/openbox/themes/turq/openbox-3/close.xbm
-share/openbox/themes/turq/openbox-3/close_disabled.xbm
-share/openbox/themes/turq/openbox-3/close_hover.xbm
-share/openbox/themes/turq/openbox-3/close_pressed.xbm
-share/openbox/themes/turq/openbox-3/desk.xbm
-share/openbox/themes/turq/openbox-3/desk_disabled.xbm
-share/openbox/themes/turq/openbox-3/desk_toggled.xbm
-share/openbox/themes/turq/openbox-3/iconify.xbm
-share/openbox/themes/turq/openbox-3/iconify_disabled.xbm
-share/openbox/themes/turq/openbox-3/iconify_hover.xbm
-share/openbox/themes/turq/openbox-3/iconify_pressed.xbm
-share/openbox/themes/turq/openbox-3/max.xbm
-share/openbox/themes/turq/openbox-3/max_disabled.xbm
-share/openbox/themes/turq/openbox-3/max_hover.xbm
-share/openbox/themes/turq/openbox-3/max_pressed.xbm
-share/openbox/themes/turq/openbox-3/max_toggled.xbm
-share/openbox/themes/turq/openbox-3/shade.xbm
-share/openbox/themes/turq/openbox-3/shade_toggled.xbm
-share/openbox/themes/turq/openbox-3/themerc
-share/openbox/themes/weightless-industry/gtk-2.0/gtkrc
-share/openbox/themes/weightless-industry/gtk-2.0/stock_apply.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_bottom-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_bottom.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_cancel-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_cancel.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_down-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_down.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_first-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_first.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_jump_to_24.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_jump_to_rtl_24.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_last-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_last.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_left-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_left.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_ok.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_refresh-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_refresh.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_right-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_right.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_top-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_top.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_up-16.png
-share/openbox/themes/weightless-industry/gtk-2.0/stock_up.png
-share/openbox/themes/weightless-industry/gtk-2.0/window_pattern4.png
-share/openbox/themes/weightless-industry/openbox-3/altbuttons/bullet.xbm
-share/openbox/themes/weightless-industry/openbox-3/altbuttons/close.xbm
-share/openbox/themes/weightless-industry/openbox-3/altbuttons/desk.xbm
-share/openbox/themes/weightless-industry/openbox-3/altbuttons/desk_toggled.xbm
-share/openbox/themes/weightless-industry/openbox-3/altbuttons/iconify.xbm
-share/openbox/themes/weightless-industry/openbox-3/altbuttons/max.xbm
-share/openbox/themes/weightless-industry/openbox-3/altbuttons/max_toggled.xbm
-share/openbox/themes/weightless-industry/openbox-3/bullet.xbm
-share/openbox/themes/weightless-industry/openbox-3/close.xbm
-share/openbox/themes/weightless-industry/openbox-3/desk.xbm
-share/openbox/themes/weightless-industry/openbox-3/desk_toggled.xbm
-share/openbox/themes/weightless-industry/openbox-3/iconify.xbm
-share/openbox/themes/weightless-industry/openbox-3/max.xbm
-share/openbox/themes/weightless-industry/openbox-3/max_toggled.xbm
-share/openbox/themes/weightless-industry/openbox-3/shade.xbm
-share/openbox/themes/weightless-industry/openbox-3/themerc
-@dirrm share/openbox/themes/weightless-industry/openbox-3/altbuttons
-@dirrm share/openbox/themes/weightless-industry/openbox-3
-@dirrm share/openbox/themes/weightless-industry/gtk-2.0
-@dirrm share/openbox/themes/weightless-industry
-@dirrm share/openbox/themes/turq/openbox-3
-@dirrm share/openbox/themes/turq
-@dirrm share/openbox/themes/thebear/openbox-3
-@dirrm share/openbox/themes/thebear
-@dirrm share/openbox/themes/spoff/openbox-3
-@dirrm share/openbox/themes/spoff/gtk-2.0-key
-@dirrm share/openbox/themes/spoff/gtk-2.0
-@dirrm share/openbox/themes/spoff/gtk
-@dirrm share/openbox/themes/spoff
-@dirrm share/openbox/themes/spiffish/openbox-3/spiffy
-@dirrm share/openbox/themes/spiffish/openbox-3
-@dirrm share/openbox/themes/spiffish
-@dirrm share/openbox/themes/spiffe/openbox-3
-@dirrm share/openbox/themes/spiffe/gtk-2.0
-@dirrm share/openbox/themes/spiffe
-@dirrm share/openbox/themes/real-milk/openbox-3
-@dirrm share/openbox/themes/real-milk
-@dirrm share/openbox/themes/raffles/openbox-3
-@dirrm share/openbox/themes/raffles
-@dirrm share/openbox/themes/rabbit/openbox-3
-@dirrm share/openbox/themes/rabbit
-@dirrm share/openbox/themes/planton/openbox-3
-@dirrm share/openbox/themes/planton
-@dirrm share/openbox/themes/palerider/openbox-3
-@dirrm share/openbox/themes/palerider
-@dirrm share/openbox/themes/orange-fog/openbox-3
-@dirrm share/openbox/themes/orange-fog/gtk-2.0
-@dirrm share/openbox/themes/orange-fog/gtk
-@dirrm share/openbox/themes/orange-fog
-@dirrm share/openbox/themes/operation/openbox-3
-@dirrm share/openbox/themes/operation
-@dirrm share/openbox/themes/opensaw/sawbox
-@dirrm share/openbox/themes/opensaw/openbox-3
-@dirrm share/openbox/themes/opensaw
-@dirrm share/openbox/themes/oldred/openbox-3
-@dirrm share/openbox/themes/oldred
-@dirrm share/openbox/themes/ob-in-dustry/openbox-3/altbuttons
-@dirrm share/openbox/themes/ob-in-dustry/openbox-3/OB-in-dustryold
-@dirrm share/openbox/themes/ob-in-dustry/openbox-3
-@dirrm share/openbox/themes/ob-in-dustry
-@dirrm share/openbox/themes/nop/openbox-3
-@dirrm share/openbox/themes/nop
-@dirrm share/openbox/themes/misted/openbox-3
-@dirrm share/openbox/themes/misted/gtk-2.0
-@dirrm share/openbox/themes/misted/gtk
-@dirrm share/openbox/themes/misted
-@dirrm share/openbox/themes/mist/openbox-3
-@dirrm share/openbox/themes/mist/gtk-2.0
-@dirrm share/openbox/themes/mist/gtk
-@dirrm share/openbox/themes/mist
-@dirrm share/openbox/themes/merrycity/openbox-3/bitmaps
-@dirrm share/openbox/themes/merrycity/openbox-3
-@dirrm share/openbox/themes/merrycity
-@dirrm share/openbox/themes/mavos/openbox-3
-@dirrm share/openbox/themes/mavos
-@dirrm share/openbox/themes/light-industry/openbox-3/altbuttons
-@dirrm share/openbox/themes/light-industry/openbox-3/altaltbuttons
-@dirrm share/openbox/themes/light-industry/openbox-3
-@dirrm share/openbox/themes/light-industry/gtk-2.0
-@dirrm share/openbox/themes/light-industry/gtk
-@dirrm share/openbox/themes/light-industry
-@dirrm share/openbox/themes/kong/openbox-3
-@dirrm share/openbox/themes/kong
-@dirrm share/openbox/themes/jolly/openbox-3
-@dirrm share/openbox/themes/jolly
-@dirrm share/openbox/themes/isawagorilla/openbox-3/NewDir
-@dirrm share/openbox/themes/isawagorilla/openbox-3
-@dirrm share/openbox/themes/isawagorilla
-@dirrm share/openbox/themes/i-merryb/openbox-3
-@dirrm share/openbox/themes/i-merryb
-@dirrm share/openbox/themes/i-merry/openbox-3
-@dirrm share/openbox/themes/i-merry
-@dirrm share/openbox/themes/greenz/openbox-3
-@dirrm share/openbox/themes/greenz
-@dirrm share/openbox/themes/gelb/openbox-3
-@dirrm share/openbox/themes/gelb/gtk-2.0
-@dirrm share/openbox/themes/gelb/gtk
-@dirrm share/openbox/themes/gelb-chubby/openbox-3
-@dirrm share/openbox/themes/gelb-chubby
-@dirrm share/openbox/themes/gelb
-@dirrm share/openbox/themes/gd-fog/openbox-3
-@dirrm share/openbox/themes/gd-fog
-@dirrm share/openbox/themes/fvwmish/openbox-3
-@dirrm share/openbox/themes/fvwmish
-@dirrm share/openbox/themes/fog/openbox-3/smallerbuttons
-@dirrm share/openbox/themes/fog/openbox-3
-@dirrm share/openbox/themes/fog-t/openbox-3/smallerbuttons
-@dirrm share/openbox/themes/fog-t/openbox-3
-@dirrm share/openbox/themes/fog-t
-@dirrm share/openbox/themes/fog-mine/openbox-3/smallerbuttons
-@dirrm share/openbox/themes/fog-mine/openbox-3
-@dirrm share/openbox/themes/fog-mine
-@dirrm share/openbox/themes/fog-maths/openbox-3/smallerbuttons
-@dirrm share/openbox/themes/fog-maths/openbox-3
-@dirrm share/openbox/themes/fog-maths/gtk-2.0
-@dirrm share/openbox/themes/fog-maths/gtk
-@dirrm share/openbox/themes/fog-maths
-@dirrm share/openbox/themes/fog-i/openbox-3/smallerbuttons
-@dirrm share/openbox/themes/fog-i/openbox-3
-@dirrm share/openbox/themes/fog-i
-@dirrm share/openbox/themes/fog
-@dirrm share/openbox/themes/ebox/openbox-3
-@dirrm share/openbox/themes/ebox
-@dirrm share/openbox/themes/debian
-@dirrm share/openbox/themes/day/openbox-3
-@dirrm share/openbox/themes/day
-@dirrm share/openbox/themes/curdled/openbox-3
-@dirrm share/openbox/themes/curdled
-@dirrm share/openbox/themes/cukoo-spit/openbox-3
-@dirrm share/openbox/themes/cukoo-spit/icons/scalable/stock
-@dirrm share/openbox/themes/cukoo-spit/icons/scalable/mimetypes
-@dirrm share/openbox/themes/cukoo-spit/icons/scalable/filesystems
-@dirrm share/openbox/themes/cukoo-spit/icons/scalable/emblems
-@dirrm share/openbox/themes/cukoo-spit/icons/scalable/devices
-@dirrm share/openbox/themes/cukoo-spit/icons/scalable/apps
-@dirrm share/openbox/themes/cukoo-spit/icons/scalable
-@dirrm share/openbox/themes/cukoo-spit/icons
-@dirrm share/openbox/themes/cukoo-spit/gtk-2.0
-@dirrm share/openbox/themes/cukoo-spit/gtk
-@dirrm share/openbox/themes/cukoo-spit
-@dirrm share/openbox/themes/chaos2/openbox-3
-@dirrm share/openbox/themes/chaos2
-@dirrm share/openbox/themes/bbstyle/openbox-3
-@dirrm share/openbox/themes/bbstyle/gtk-2.0
-@dirrm share/openbox/themes/bbstyle
-@dirrm share/openbox/themes/ayunb/openbox-3
-@dirrm share/openbox/themes/ayunb
-@dirrm share/openbox/themes/arctic/openbox-3
-@dirrm share/openbox/themes/arctic
-@dirrm share/openbox/themes/Simple-Slate/openbox-3
-@dirrm share/openbox/themes/Simple-Slate/metacity-1
-@dirrm share/openbox/themes/Simple-Slate/gtk-2.0
-@dirrm share/openbox/themes/Simple-Slate/gtk
-@dirrm share/openbox/themes/Simple-Slate
-@dirrm share/openbox/themes/Simple-Red/openbox-3
-@dirrm share/openbox/themes/Simple-Red/metacity-1
-@dirrm share/openbox/themes/Simple-Red/gtk-2.0
-@dirrm share/openbox/themes/Simple-Red/gtk
-@dirrm share/openbox/themes/Simple-Red
-@dirrm share/openbox/themes/Simple-Orange/openbox-3
-@dirrm share/openbox/themes/Simple-Orange/metacity-1
-@dirrm share/openbox/themes/Simple-Orange/gtk-2.0
-@dirrm share/openbox/themes/Simple-Orange/gtk
-@dirrm share/openbox/themes/Simple-Orange
-@dirrm share/openbox/themes/Simple-Industrial/openbox-3
-@dirrm share/openbox/themes/Simple-Industrial/metacity-1
-@dirrm share/openbox/themes/Simple-Industrial/gtk-2.0
-@dirrm share/openbox/themes/Simple-Industrial/gtk
-@dirrm share/openbox/themes/Simple-Industrial
-@dirrm share/openbox/themes/Simple-Green/openbox-3
-@dirrm share/openbox/themes/Simple-Green/metacity-1
-@dirrm share/openbox/themes/Simple-Green/gtk-2.0
-@dirrm share/openbox/themes/Simple-Green/gtk
-@dirrm share/openbox/themes/Simple-Green
-@dirrm share/openbox/themes/Simple-Generic/openbox-3
-@dirrm share/openbox/themes/Simple-Generic/metacity-1
-@dirrm share/openbox/themes/Simple-Generic/gtk-2.0
-@dirrm share/openbox/themes/Simple-Generic/gtk
-@dirrm share/openbox/themes/Simple-Generic
-@dirrm share/openbox/themes/Simple-Aubergine/openbox-3
-@dirrm share/openbox/themes/Simple-Aubergine/metacity-1
-@dirrm share/openbox/themes/Simple-Aubergine/gtk-2.0
-@dirrm share/openbox/themes/Simple-Aubergine/gtk
-@dirrm share/openbox/themes/Simple-Aubergine
+share/themes/Simple-Aubergine/README
+share/themes/Simple-Aubergine/Simple-Orange
+share/themes/Simple-Aubergine/gtk-2.0/gtkrc
+share/themes/Simple-Aubergine/gtk-2.0/stock_apply.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_bottom-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_bottom.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_cancel-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_cancel.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_down-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_down.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_first-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_first.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_jump_to_24.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_last-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_last.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_left-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_left.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_ok.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_refresh-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_refresh.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_right-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_right.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_top-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_top.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_up-16.png
+share/themes/Simple-Aubergine/gtk-2.0/stock_up.png
+share/themes/Simple-Aubergine/gtk/gtkrc
+share/themes/Simple-Aubergine/index.theme
+share/themes/Simple-Aubergine/metacity-1/metacity-theme-1.xml
+share/themes/Simple-Aubergine/openbox-3/bullet.xbm
+share/themes/Simple-Aubergine/openbox-3/close.xbm
+share/themes/Simple-Aubergine/openbox-3/desk.xbm
+share/themes/Simple-Aubergine/openbox-3/desk_toggled.xbm
+share/themes/Simple-Aubergine/openbox-3/iconify.xbm
+share/themes/Simple-Aubergine/openbox-3/max.xbm
+share/themes/Simple-Aubergine/openbox-3/max_toggled.xbm
+share/themes/Simple-Aubergine/openbox-3/shade.xbm
+share/themes/Simple-Aubergine/openbox-3/themerc
+share/themes/Simple-Generic/gtk-2.0/gtkrc
+share/themes/Simple-Generic/gtk/gtkrc
+share/themes/Simple-Generic/index.theme
+share/themes/Simple-Generic/metacity-1/metacity-theme-1.xml
+share/themes/Simple-Generic/openbox-3/bullet.xbm
+share/themes/Simple-Generic/openbox-3/close.xbm
+share/themes/Simple-Generic/openbox-3/desk.xbm
+share/themes/Simple-Generic/openbox-3/desk_toggled.xbm
+share/themes/Simple-Generic/openbox-3/iconify.xbm
+share/themes/Simple-Generic/openbox-3/max.xbm
+share/themes/Simple-Generic/openbox-3/max_toggled.xbm
+share/themes/Simple-Generic/openbox-3/shade.xbm
+share/themes/Simple-Generic/openbox-3/themerc
+share/themes/Simple-Green/gtk-2.0/gtkrc
+share/themes/Simple-Green/gtk/gtkrc
+share/themes/Simple-Green/index.theme
+share/themes/Simple-Green/metacity-1/metacity-theme-1.xml
+share/themes/Simple-Green/openbox-3/bullet.xbm
+share/themes/Simple-Green/openbox-3/close.xbm
+share/themes/Simple-Green/openbox-3/desk.xbm
+share/themes/Simple-Green/openbox-3/desk_toggled.xbm
+share/themes/Simple-Green/openbox-3/iconify.xbm
+share/themes/Simple-Green/openbox-3/max.xbm
+share/themes/Simple-Green/openbox-3/max_toggled.xbm
+share/themes/Simple-Green/openbox-3/shade.xbm
+share/themes/Simple-Green/openbox-3/themerc
+share/themes/Simple-Industrial/README
+share/themes/Simple-Industrial/Simple-Industrial
+share/themes/Simple-Industrial/gtk-2.0/gtkrc
+share/themes/Simple-Industrial/gtk-2.0/stock_apply.png
+share/themes/Simple-Industrial/gtk-2.0/stock_bottom-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_bottom.png
+share/themes/Simple-Industrial/gtk-2.0/stock_cancel-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_cancel.png
+share/themes/Simple-Industrial/gtk-2.0/stock_down-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_down.png
+share/themes/Simple-Industrial/gtk-2.0/stock_first-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_first.png
+share/themes/Simple-Industrial/gtk-2.0/stock_jump_to_24.png
+share/themes/Simple-Industrial/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/Simple-Industrial/gtk-2.0/stock_last-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_last.png
+share/themes/Simple-Industrial/gtk-2.0/stock_left-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_left.png
+share/themes/Simple-Industrial/gtk-2.0/stock_ok.png
+share/themes/Simple-Industrial/gtk-2.0/stock_refresh-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_refresh.png
+share/themes/Simple-Industrial/gtk-2.0/stock_right-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_right.png
+share/themes/Simple-Industrial/gtk-2.0/stock_top-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_top.png
+share/themes/Simple-Industrial/gtk-2.0/stock_up-16.png
+share/themes/Simple-Industrial/gtk-2.0/stock_up.png
+share/themes/Simple-Industrial/gtk/gtkrc
+share/themes/Simple-Industrial/index.theme
+share/themes/Simple-Industrial/metacity-1/metacity-theme-1.xml
+share/themes/Simple-Industrial/openbox-3/bullet.xbm
+share/themes/Simple-Industrial/openbox-3/close.xbm
+share/themes/Simple-Industrial/openbox-3/desk.xbm
+share/themes/Simple-Industrial/openbox-3/desk_toggled.xbm
+share/themes/Simple-Industrial/openbox-3/iconify.xbm
+share/themes/Simple-Industrial/openbox-3/max.xbm
+share/themes/Simple-Industrial/openbox-3/max_toggled.xbm
+share/themes/Simple-Industrial/openbox-3/shade.xbm
+share/themes/Simple-Industrial/openbox-3/themerc
+share/themes/Simple-Orange/README
+share/themes/Simple-Orange/Simple-Orange
+share/themes/Simple-Orange/gtk-2.0/gtkrc
+share/themes/Simple-Orange/gtk-2.0/stock_apply.png
+share/themes/Simple-Orange/gtk-2.0/stock_bottom-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_bottom.png
+share/themes/Simple-Orange/gtk-2.0/stock_cancel-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_cancel.png
+share/themes/Simple-Orange/gtk-2.0/stock_down-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_down.png
+share/themes/Simple-Orange/gtk-2.0/stock_first-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_first.png
+share/themes/Simple-Orange/gtk-2.0/stock_jump_to_24.png
+share/themes/Simple-Orange/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/Simple-Orange/gtk-2.0/stock_last-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_last.png
+share/themes/Simple-Orange/gtk-2.0/stock_left-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_left.png
+share/themes/Simple-Orange/gtk-2.0/stock_ok.png
+share/themes/Simple-Orange/gtk-2.0/stock_refresh-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_refresh.png
+share/themes/Simple-Orange/gtk-2.0/stock_right-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_right.png
+share/themes/Simple-Orange/gtk-2.0/stock_top-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_top.png
+share/themes/Simple-Orange/gtk-2.0/stock_up-16.png
+share/themes/Simple-Orange/gtk-2.0/stock_up.png
+share/themes/Simple-Orange/gtk/gtkrc
+share/themes/Simple-Orange/index.theme
+share/themes/Simple-Orange/metacity-1/metacity-theme-1.xml
+share/themes/Simple-Orange/openbox-3/bullet.xbm
+share/themes/Simple-Orange/openbox-3/close.xbm
+share/themes/Simple-Orange/openbox-3/desk.xbm
+share/themes/Simple-Orange/openbox-3/desk_toggled.xbm
+share/themes/Simple-Orange/openbox-3/iconify.xbm
+share/themes/Simple-Orange/openbox-3/max.xbm
+share/themes/Simple-Orange/openbox-3/max_toggled.xbm
+share/themes/Simple-Orange/openbox-3/shade.xbm
+share/themes/Simple-Orange/openbox-3/themerc
+share/themes/Simple-Red/gtk-2.0/gtkrc
+share/themes/Simple-Red/gtk/gtkrc
+share/themes/Simple-Red/index.theme
+share/themes/Simple-Red/metacity-1/metacity-theme-1.xml
+share/themes/Simple-Red/openbox-3/bullet.xbm
+share/themes/Simple-Red/openbox-3/close.xbm
+share/themes/Simple-Red/openbox-3/desk.xbm
+share/themes/Simple-Red/openbox-3/desk_toggled.xbm
+share/themes/Simple-Red/openbox-3/iconify.xbm
+share/themes/Simple-Red/openbox-3/max.xbm
+share/themes/Simple-Red/openbox-3/max_toggled.xbm
+share/themes/Simple-Red/openbox-3/shade.xbm
+share/themes/Simple-Red/openbox-3/themerc
+share/themes/Simple-Slate/gtk-2.0/gtkrc
+share/themes/Simple-Slate/gtk/gtkrc
+share/themes/Simple-Slate/index.theme
+share/themes/Simple-Slate/metacity-1/metacity-theme-1.xml
+share/themes/Simple-Slate/openbox-3/bullet.xbm
+share/themes/Simple-Slate/openbox-3/close.xbm
+share/themes/Simple-Slate/openbox-3/desk.xbm
+share/themes/Simple-Slate/openbox-3/desk_toggled.xbm
+share/themes/Simple-Slate/openbox-3/iconify.xbm
+share/themes/Simple-Slate/openbox-3/max.xbm
+share/themes/Simple-Slate/openbox-3/max_toggled.xbm
+share/themes/Simple-Slate/openbox-3/shade.xbm
+share/themes/Simple-Slate/openbox-3/themerc
+share/themes/arctic/openbox-3/bullet.xbm
+share/themes/arctic/openbox-3/close.xbm
+share/themes/arctic/openbox-3/close_hover.xbm
+share/themes/arctic/openbox-3/close_pressed.xbm
+share/themes/arctic/openbox-3/desk.xbm
+share/themes/arctic/openbox-3/desk_toggled.xbm
+share/themes/arctic/openbox-3/iconify.xbm
+share/themes/arctic/openbox-3/iconify_hover.xbm
+share/themes/arctic/openbox-3/iconify_pressed.xbm
+share/themes/arctic/openbox-3/max.xbm
+share/themes/arctic/openbox-3/max_disabled.xbm
+share/themes/arctic/openbox-3/max_hover.xbm
+share/themes/arctic/openbox-3/max_toggled.xbm
+share/themes/arctic/openbox-3/themerc
+share/themes/ayunb/openbox-3/bullet.xbm
+share/themes/ayunb/openbox-3/close.xbm
+share/themes/ayunb/openbox-3/close_hover.xbm
+share/themes/ayunb/openbox-3/close_pressed.xbm
+share/themes/ayunb/openbox-3/iconify.xbm
+share/themes/ayunb/openbox-3/iconify_hover.xbm
+share/themes/ayunb/openbox-3/iconify_pressed.xbm
+share/themes/ayunb/openbox-3/max.xbm
+share/themes/ayunb/openbox-3/max_disabled.xbm
+share/themes/ayunb/openbox-3/max_hover.xbm
+share/themes/ayunb/openbox-3/max_t.xbm
+share/themes/ayunb/openbox-3/max_toggled.xbm
+share/themes/ayunb/openbox-3/shade.xbm
+share/themes/ayunb/openbox-3/shade_t.xbm
+share/themes/ayunb/openbox-3/stick.xbm
+share/themes/ayunb/openbox-3/stick_t.xbm
+share/themes/ayunb/openbox-3/themerc
+share/themes/bbstyle/gtk-2.0/gtkrc
+share/themes/bbstyle/gtk-2.0/window-pattern.png
+share/themes/bbstyle/openbox-3/bullet.xbm
+share/themes/bbstyle/openbox-3/close.xbm
+share/themes/bbstyle/openbox-3/close_disabled.xbm
+share/themes/bbstyle/openbox-3/close_hover.xbm
+share/themes/bbstyle/openbox-3/close_pressed.xbm
+share/themes/bbstyle/openbox-3/desk.xbm
+share/themes/bbstyle/openbox-3/desk_toggled.xbm
+share/themes/bbstyle/openbox-3/iconify.xbm
+share/themes/bbstyle/openbox-3/iconify_hover.xbm
+share/themes/bbstyle/openbox-3/iconify_pressed.xbm
+share/themes/bbstyle/openbox-3/max.xbm
+share/themes/bbstyle/openbox-3/max_disabled.xbm
+share/themes/bbstyle/openbox-3/max_hover.xbm
+share/themes/bbstyle/openbox-3/max_pressed.xbm
+share/themes/bbstyle/openbox-3/max_toggled.xbm
+share/themes/bbstyle/openbox-3/shade.xbm
+share/themes/bbstyle/openbox-3/shade_disabled.xbm
+share/themes/bbstyle/openbox-3/shade_t.xbm
+share/themes/bbstyle/openbox-3/themerc
+share/themes/chaos2/openbox-3/bullet.xbm
+share/themes/chaos2/openbox-3/themerc
+share/themes/cukoo-spit/gtk-2.0/gtkrc
+share/themes/cukoo-spit/gtk-2.0/iconrc
+share/themes/cukoo-spit/gtk/gtkrc
+share/themes/cukoo-spit/icons/Makefile
+share/themes/cukoo-spit/icons/Makefile.am
+share/themes/cukoo-spit/icons/Makefile.in
+share/themes/cukoo-spit/icons/index.theme
+share/themes/cukoo-spit/icons/index.theme.in
+share/themes/cukoo-spit/icons/scalable/Makefile
+share/themes/cukoo-spit/icons/scalable/Makefile.am
+share/themes/cukoo-spit/icons/scalable/Makefile.in
+share/themes/cukoo-spit/icons/scalable/apps/Makefile
+share/themes/cukoo-spit/icons/scalable/apps/Makefile.am
+share/themes/cukoo-spit/icons/scalable/apps/Makefile.in
+share/themes/cukoo-spit/icons/scalable/apps/gnome-gimp.svg
+share/themes/cukoo-spit/icons/scalable/apps/gnome-terminal.svg
+share/themes/cukoo-spit/icons/scalable/apps/my-computer.svg
+share/themes/cukoo-spit/icons/scalable/apps/web-browser.svg
+share/themes/cukoo-spit/icons/scalable/devices/Makefile
+share/themes/cukoo-spit/icons/scalable/devices/Makefile.am
+share/themes/cukoo-spit/icons/scalable/devices/Makefile.in
+share/themes/cukoo-spit/icons/scalable/devices/gnome-dev-cdrom-audio.svg
+share/themes/cukoo-spit/icons/scalable/devices/gnome-dev-cdrom.svg
+share/themes/cukoo-spit/icons/scalable/devices/gnome-dev-dvd.svg
+share/themes/cukoo-spit/icons/scalable/devices/gnome-dev-harddisk.svg
+share/themes/cukoo-spit/icons/scalable/devices/gnome-dev-network.svg
+share/themes/cukoo-spit/icons/scalable/devices/gnome-dev-rw.svg
+share/themes/cukoo-spit/icons/scalable/devices/gnome-dev-symlink.svg
+share/themes/cukoo-spit/icons/scalable/emblems/Makefile
+share/themes/cukoo-spit/icons/scalable/emblems/Makefile.am
+share/themes/cukoo-spit/icons/scalable/emblems/Makefile.in
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-audio.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-camera.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-cool.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-danger.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-distinguished.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-documents.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-fun.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-generic.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-important.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-multimedia.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-noread.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-nowrite.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-ohno.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-package.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-pictures.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-relax.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-symbolic-link.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-urgent.svg
+share/themes/cukoo-spit/icons/scalable/emblems/emblem-web.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/Makefile
+share/themes/cukoo-spit/icons/scalable/filesystems/Makefile.am
+share/themes/cukoo-spit/icons/scalable/filesystems/Makefile.in
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-blockdev.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-bookmark-missing.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-bookmark.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-chardev.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory-accept.icon
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory-accept.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory.icon
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-directory.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-executable.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-ftp.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-home.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-loading-icon.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-network.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-nfs.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-regular.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-server.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-smb.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-ssh.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-trash-empty.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-trash-full.svg
+share/themes/cukoo-spit/icons/scalable/filesystems/gnome-fs-web.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/Makefile
+share/themes/cukoo-spit/icons/scalable/mimetypes/Makefile.am
+share/themes/cukoo-spit/icons/scalable/mimetypes/Makefile.in
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-compressed.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-msword.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-pdf.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-pgp.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-postscript.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.ms-excel.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.ms-powerpoint.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.rn-realmedia.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.calc.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.draw.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.impress.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.writer.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-abiword.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-backup.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-deb.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-dvi.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-font.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-gnome-app-info.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-gnucash.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-killustrator.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-kpresenter.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-kspread.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-kword.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-rpm.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-application-x-shared-library.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-audio-x-midi.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-audio.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-image-x-xcf.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-image.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-css.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-html.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-authors.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-copying.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-install.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-java.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-lyx.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-makefile.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-patch.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-readme.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-sh.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-sql.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text-x-troff-man.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-text.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-mime-video.svg
+share/themes/cukoo-spit/icons/scalable/mimetypes/gnome-package.svg
+share/themes/cukoo-spit/icons/scalable/stock/Makefile
+share/themes/cukoo-spit/icons/scalable/stock/Makefile.am
+share/themes/cukoo-spit/icons/scalable/stock/Makefile.in
+share/themes/cukoo-spit/icons/scalable/stock/stock_about.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_add.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_attach.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_balance.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_bold.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_book-open.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_book.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_cancel.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_cdrom.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_clear.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_close.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_connect.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_convert.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_copy.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_cut.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_delete.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_dialog_error.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_dialog_info.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_dialog_question.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_dialog_warning.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_disconnect.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_dnd.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_dnd_multiple.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_edit.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_execute.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_export.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_find-and-replace.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_find.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_floppy.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_go-back.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_go-down.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_go-forward.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_go-up.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_goto-bottom.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_goto-first.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_goto-last.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_goto-top.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_help.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_home.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_import.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_index.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_insert-image.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_insert-object.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_insert-table.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_italic.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_jump-to.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_justify-center.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_justify-fill.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_justify-left.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_justify-right.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_line-in.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_mic.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_missing-image.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_new.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_no.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_ok.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_open.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_paste.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_preferences.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_print-preview.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_print.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_properties.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_quit.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_redo.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_refresh.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_remove.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_reset.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_revert-to-saved.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_save-as.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_save.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_select-color.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_select-font.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_sort-ascending.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_sort-descending.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_spell-check.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_stop.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_strikethrough.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_undelete.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_underline.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_undo.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_volume.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_yes.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_zoom-100.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_zoom-fit.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_zoom-in.svg
+share/themes/cukoo-spit/icons/scalable/stock/stock_zoom-out.svg
+share/themes/cukoo-spit/openbox-3/bullet.xbm
+share/themes/cukoo-spit/openbox-3/close.xbm
+share/themes/cukoo-spit/openbox-3/close_disabled.xbm
+share/themes/cukoo-spit/openbox-3/close_hover.xbm
+share/themes/cukoo-spit/openbox-3/close_pressed.xbm
+share/themes/cukoo-spit/openbox-3/desk.xbm
+share/themes/cukoo-spit/openbox-3/desk_hover.xbm
+share/themes/cukoo-spit/openbox-3/desk_toggled.xbm
+share/themes/cukoo-spit/openbox-3/iconify.xbm
+share/themes/cukoo-spit/openbox-3/iconify_disabled.xbm
+share/themes/cukoo-spit/openbox-3/iconify_hover.xbm
+share/themes/cukoo-spit/openbox-3/iconify_pressed.xbm
+share/themes/cukoo-spit/openbox-3/max.xbm
+share/themes/cukoo-spit/openbox-3/max_disabled.xbm
+share/themes/cukoo-spit/openbox-3/max_hover.xbm
+share/themes/cukoo-spit/openbox-3/max_pressed.xbm
+share/themes/cukoo-spit/openbox-3/max_toggled.xbm
+share/themes/cukoo-spit/openbox-3/shade.xbm
+share/themes/cukoo-spit/openbox-3/themerc
+share/themes/curdled/openbox-3/bullet-small.xbm
+share/themes/curdled/openbox-3/bullet.xbm
+share/themes/curdled/openbox-3/close.xbm
+share/themes/curdled/openbox-3/desk.xbm
+share/themes/curdled/openbox-3/desk_toggled.xbm
+share/themes/curdled/openbox-3/iconify.xbm
+share/themes/curdled/openbox-3/max.xbm
+share/themes/curdled/openbox-3/shade.xbm
+share/themes/curdled/openbox-3/themerc
+share/themes/day/openbox-3/bullet.xbm
+share/themes/day/openbox-3/close.xbm
+share/themes/day/openbox-3/desk.xbm
+share/themes/day/openbox-3/iconify.xbm
+share/themes/day/openbox-3/max.xbm
+share/themes/day/openbox-3/themerc
+share/themes/debian/changelog
+share/themes/debian/compat
+share/themes/debian/control
+share/themes/debian/copyright
+share/themes/debian/dirs
+share/themes/debian/rules
+share/themes/ebox/openbox-3/bullet.xbm
+share/themes/ebox/openbox-3/close.xbm
+share/themes/ebox/openbox-3/desk.xbm
+share/themes/ebox/openbox-3/iconify.xbm
+share/themes/ebox/openbox-3/max.xbm
+share/themes/ebox/openbox-3/max_toggled.xbm
+share/themes/ebox/openbox-3/stick_toggled.xbm
+share/themes/ebox/openbox-3/themerc
+share/themes/fog-i/openbox-3/bullet.xbm
+share/themes/fog-i/openbox-3/close.xbm
+share/themes/fog-i/openbox-3/desk.xbm
+share/themes/fog-i/openbox-3/desk_toggled.xbm
+share/themes/fog-i/openbox-3/iconify.xbm
+share/themes/fog-i/openbox-3/max.xbm
+share/themes/fog-i/openbox-3/max_toggled.xbm
+share/themes/fog-i/openbox-3/shade.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/bullet.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/close.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/close_disabled.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/desk.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/desk_toggled.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/iconify.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/max.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/max_toggled.xbm
+share/themes/fog-i/openbox-3/smallerbuttons/shade.xbm
+share/themes/fog-i/openbox-3/themerc
+share/themes/fog-maths/gtk-2.0/gtkrc
+share/themes/fog-maths/gtk-2.0/stock_apply.png
+share/themes/fog-maths/gtk-2.0/stock_bottom-16.png
+share/themes/fog-maths/gtk-2.0/stock_bottom.png
+share/themes/fog-maths/gtk-2.0/stock_cancel-16.png
+share/themes/fog-maths/gtk-2.0/stock_cancel.png
+share/themes/fog-maths/gtk-2.0/stock_down-16.png
+share/themes/fog-maths/gtk-2.0/stock_down.png
+share/themes/fog-maths/gtk-2.0/stock_first-16.png
+share/themes/fog-maths/gtk-2.0/stock_first.png
+share/themes/fog-maths/gtk-2.0/stock_jump_to_24.png
+share/themes/fog-maths/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/fog-maths/gtk-2.0/stock_last-16.png
+share/themes/fog-maths/gtk-2.0/stock_last.png
+share/themes/fog-maths/gtk-2.0/stock_left-16.png
+share/themes/fog-maths/gtk-2.0/stock_left.png
+share/themes/fog-maths/gtk-2.0/stock_ok.png
+share/themes/fog-maths/gtk-2.0/stock_refresh-16.png
+share/themes/fog-maths/gtk-2.0/stock_refresh.png
+share/themes/fog-maths/gtk-2.0/stock_right-16.png
+share/themes/fog-maths/gtk-2.0/stock_right.png
+share/themes/fog-maths/gtk-2.0/stock_top-16.png
+share/themes/fog-maths/gtk-2.0/stock_top.png
+share/themes/fog-maths/gtk-2.0/stock_up-16.png
+share/themes/fog-maths/gtk-2.0/stock_up.png
+share/themes/fog-maths/gtk-2.0/window_pattern4.png
+share/themes/fog-maths/gtk/gtkrc
+share/themes/fog-maths/gtk/window_pattern.png
+share/themes/fog-maths/gtk/window_pattern2.png
+share/themes/fog-maths/gtk/window_pattern3.png
+share/themes/fog-maths/gtk/window_pattern4.png
+share/themes/fog-maths/openbox-3/bullet.xbm
+share/themes/fog-maths/openbox-3/close.xbm
+share/themes/fog-maths/openbox-3/desk.xbm
+share/themes/fog-maths/openbox-3/desk_toggled.xbm
+share/themes/fog-maths/openbox-3/iconify.xbm
+share/themes/fog-maths/openbox-3/max.xbm
+share/themes/fog-maths/openbox-3/max_toggled.xbm
+share/themes/fog-maths/openbox-3/shade.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/bullet.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/close.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/close_disabled.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/desk.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/desk_toggled.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/iconify.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/max.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/max_toggled.xbm
+share/themes/fog-maths/openbox-3/smallerbuttons/shade.xbm
+share/themes/fog-maths/openbox-3/themerc
+share/themes/fog-mine/openbox-3/bullet.xbm
+share/themes/fog-mine/openbox-3/close.xbm
+share/themes/fog-mine/openbox-3/desk.xbm
+share/themes/fog-mine/openbox-3/desk_toggled.xbm
+share/themes/fog-mine/openbox-3/iconify.xbm
+share/themes/fog-mine/openbox-3/max.xbm
+share/themes/fog-mine/openbox-3/max_toggled.xbm
+share/themes/fog-mine/openbox-3/shade.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/bullet.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/close.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/close_disabled.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/desk.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/desk_toggled.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/iconify.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/max.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/max_toggled.xbm
+share/themes/fog-mine/openbox-3/smallerbuttons/shade.xbm
+share/themes/fog-mine/openbox-3/themerc
+share/themes/fog-t/openbox-3/bullet.xbm
+share/themes/fog-t/openbox-3/close.xbm
+share/themes/fog-t/openbox-3/close_disabled.xbm
+share/themes/fog-t/openbox-3/desk.xbm
+share/themes/fog-t/openbox-3/desk_toggled.xbm
+share/themes/fog-t/openbox-3/iconify.xbm
+share/themes/fog-t/openbox-3/max.xbm
+share/themes/fog-t/openbox-3/max_toggled.xbm
+share/themes/fog-t/openbox-3/shade.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/bullet.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/close.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/close_disabled.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/desk.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/desk_toggled.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/iconify.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/max.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/max_toggled.xbm
+share/themes/fog-t/openbox-3/smallerbuttons/shade.xbm
+share/themes/fog-t/openbox-3/themerc
+share/themes/fog/openbox-3/bullet.xbm
+share/themes/fog/openbox-3/close.xbm
+share/themes/fog/openbox-3/desk.xbm
+share/themes/fog/openbox-3/desk_toggled.xbm
+share/themes/fog/openbox-3/iconify.xbm
+share/themes/fog/openbox-3/max.xbm
+share/themes/fog/openbox-3/max_toggled.xbm
+share/themes/fog/openbox-3/shade.xbm
+share/themes/fog/openbox-3/smallerbuttons/bullet.xbm
+share/themes/fog/openbox-3/smallerbuttons/close.xbm
+share/themes/fog/openbox-3/smallerbuttons/close_disabled.xbm
+share/themes/fog/openbox-3/smallerbuttons/desk.xbm
+share/themes/fog/openbox-3/smallerbuttons/desk_toggled.xbm
+share/themes/fog/openbox-3/smallerbuttons/iconify.xbm
+share/themes/fog/openbox-3/smallerbuttons/max.xbm
+share/themes/fog/openbox-3/smallerbuttons/max_toggled.xbm
+share/themes/fog/openbox-3/smallerbuttons/shade.xbm
+share/themes/fog/openbox-3/themerc
+share/themes/fvwmish/openbox-3/close.xbm
+share/themes/fvwmish/openbox-3/iconify.png
+share/themes/fvwmish/openbox-3/iconify.xbm
+share/themes/fvwmish/openbox-3/max.xbm
+share/themes/fvwmish/openbox-3/shade.xbm
+share/themes/fvwmish/openbox-3/themerc
+share/themes/gd-fog/openbox-3/bullet.xbm
+share/themes/gd-fog/openbox-3/close.xbm
+share/themes/gd-fog/openbox-3/close_hover.xbm
+share/themes/gd-fog/openbox-3/close_pressed.xbm
+share/themes/gd-fog/openbox-3/desk.xbm
+share/themes/gd-fog/openbox-3/desk_toggled.xbm
+share/themes/gd-fog/openbox-3/iconify.xbm
+share/themes/gd-fog/openbox-3/iconify_hover.xbm
+share/themes/gd-fog/openbox-3/iconify_pressed.xbm
+share/themes/gd-fog/openbox-3/max.xbm
+share/themes/gd-fog/openbox-3/max_hover.xbm
+share/themes/gd-fog/openbox-3/max_pressed.xbm
+share/themes/gd-fog/openbox-3/max_toggled.xbm
+share/themes/gd-fog/openbox-3/shade.xbm
+share/themes/gd-fog/openbox-3/shade_toggled.xbm
+share/themes/gd-fog/openbox-3/themerc
+share/themes/gelb-chubby/openbox-3/bullet.xbm
+share/themes/gelb-chubby/openbox-3/close.xbm
+share/themes/gelb-chubby/openbox-3/close_hover.xbm
+share/themes/gelb-chubby/openbox-3/close_pressed.xbm
+share/themes/gelb-chubby/openbox-3/desk.xbm
+share/themes/gelb-chubby/openbox-3/desk_toggled.xbm
+share/themes/gelb-chubby/openbox-3/iconify.xbm
+share/themes/gelb-chubby/openbox-3/iconify_hover.xbm
+share/themes/gelb-chubby/openbox-3/iconify_pressed.xbm
+share/themes/gelb-chubby/openbox-3/max.xbm
+share/themes/gelb-chubby/openbox-3/max_disabled.xbm
+share/themes/gelb-chubby/openbox-3/max_hover.xbm
+share/themes/gelb-chubby/openbox-3/max_toggled.xbm
+share/themes/gelb-chubby/openbox-3/themerc
+share/themes/gelb/gtk-2.0/gtkrc
+share/themes/gelb/gtk/gtkrc
+share/themes/gelb/openbox-3/bullet.xbm
+share/themes/gelb/openbox-3/close.xbm
+share/themes/gelb/openbox-3/close_hover.xbm
+share/themes/gelb/openbox-3/close_pressed.xbm
+share/themes/gelb/openbox-3/desk.xbm
+share/themes/gelb/openbox-3/desk_toggled.xbm
+share/themes/gelb/openbox-3/iconify.xbm
+share/themes/gelb/openbox-3/iconify_hover.xbm
+share/themes/gelb/openbox-3/iconify_pressed.xbm
+share/themes/gelb/openbox-3/max.xbm
+share/themes/gelb/openbox-3/max_disabled.xbm
+share/themes/gelb/openbox-3/max_hover.xbm
+share/themes/gelb/openbox-3/max_toggled.xbm
+share/themes/gelb/openbox-3/themerc
+share/themes/greenz/openbox-3/bullet.xbm
+share/themes/greenz/openbox-3/themerc
+share/themes/i-merry/openbox-3/bullet.xbm
+share/themes/i-merry/openbox-3/close.xbm
+share/themes/i-merry/openbox-3/close_hover.xbm
+share/themes/i-merry/openbox-3/close_pressed.xbm
+share/themes/i-merry/openbox-3/desk.xbm
+share/themes/i-merry/openbox-3/desk_toggle.xbm
+share/themes/i-merry/openbox-3/iconify.xbm
+share/themes/i-merry/openbox-3/iconify_hover.xbm
+share/themes/i-merry/openbox-3/iconify_pressed.xbm
+share/themes/i-merry/openbox-3/max.xbm
+share/themes/i-merry/openbox-3/max_disabled.xbm
+share/themes/i-merry/openbox-3/max_hover.xbm
+share/themes/i-merry/openbox-3/max_toggled.xbm
+share/themes/i-merry/openbox-3/themerc
+share/themes/i-merryb/openbox-3/bullet.xbm
+share/themes/i-merryb/openbox-3/close.xbm
+share/themes/i-merryb/openbox-3/close_hover.xbm
+share/themes/i-merryb/openbox-3/close_pressed.xbm
+share/themes/i-merryb/openbox-3/desk.xbm
+share/themes/i-merryb/openbox-3/desk_toggle.xbm
+share/themes/i-merryb/openbox-3/iconify.xbm
+share/themes/i-merryb/openbox-3/iconify_hover.xbm
+share/themes/i-merryb/openbox-3/iconify_pressed.xbm
+share/themes/i-merryb/openbox-3/max.xbm
+share/themes/i-merryb/openbox-3/max_disabled.xbm
+share/themes/i-merryb/openbox-3/max_hover.xbm
+share/themes/i-merryb/openbox-3/max_toggled.xbm
+share/themes/i-merryb/openbox-3/themerc
+share/themes/isawagorilla/openbox-3/NewDir/bullet.xbm
+share/themes/isawagorilla/openbox-3/NewDir/close.xbm
+share/themes/isawagorilla/openbox-3/NewDir/desk.xbm
+share/themes/isawagorilla/openbox-3/NewDir/desk_toggled.xbm
+share/themes/isawagorilla/openbox-3/NewDir/iconify.xbm
+share/themes/isawagorilla/openbox-3/NewDir/max.xbm
+share/themes/isawagorilla/openbox-3/NewDir/max_pressed.xbm
+share/themes/isawagorilla/openbox-3/NewDir/max_toggled.xbm
+share/themes/isawagorilla/openbox-3/NewDir/shade.xbm
+share/themes/isawagorilla/openbox-3/NewDir/themerc
+share/themes/isawagorilla/openbox-3/bullet.xbm
+share/themes/isawagorilla/openbox-3/close.xbm
+share/themes/isawagorilla/openbox-3/close_disabled.xbm
+share/themes/isawagorilla/openbox-3/close_hover.xbm
+share/themes/isawagorilla/openbox-3/close_pressed.xbm
+share/themes/isawagorilla/openbox-3/desk.xbm
+share/themes/isawagorilla/openbox-3/desk_toggled.xbm
+share/themes/isawagorilla/openbox-3/iconify.xbm
+share/themes/isawagorilla/openbox-3/iconify_hover.xbm
+share/themes/isawagorilla/openbox-3/iconify_pressed.xbm
+share/themes/isawagorilla/openbox-3/max.xbm
+share/themes/isawagorilla/openbox-3/max_disabled.xbm
+share/themes/isawagorilla/openbox-3/max_hover.xbm
+share/themes/isawagorilla/openbox-3/max_pressed.xbm
+share/themes/isawagorilla/openbox-3/max_toggled.xbm
+share/themes/isawagorilla/openbox-3/shade.xbm
+share/themes/isawagorilla/openbox-3/themerc
+share/themes/jolly/openbox-3/bullet.xbm
+share/themes/jolly/openbox-3/close.xbm
+share/themes/jolly/openbox-3/close_hover.xbm
+share/themes/jolly/openbox-3/close_pressed.xbm
+share/themes/jolly/openbox-3/iconify.xbm
+share/themes/jolly/openbox-3/iconify_hover.xbm
+share/themes/jolly/openbox-3/iconify_pressed.xbm
+share/themes/jolly/openbox-3/max.xbm
+share/themes/jolly/openbox-3/max_disabled.xbm
+share/themes/jolly/openbox-3/max_hover.xbm
+share/themes/jolly/openbox-3/max_toggled.xbm
+share/themes/jolly/openbox-3/themerc
+share/themes/kong/openbox-3/bullet.xbm
+share/themes/kong/openbox-3/themerc
+share/themes/light-industry/gtk-2.0/gtkrc
+share/themes/light-industry/gtk-2.0/stock_apply.png
+share/themes/light-industry/gtk-2.0/stock_bottom-16.png
+share/themes/light-industry/gtk-2.0/stock_bottom.png
+share/themes/light-industry/gtk-2.0/stock_cancel-16.png
+share/themes/light-industry/gtk-2.0/stock_cancel.png
+share/themes/light-industry/gtk-2.0/stock_down-16.png
+share/themes/light-industry/gtk-2.0/stock_down.png
+share/themes/light-industry/gtk-2.0/stock_first-16.png
+share/themes/light-industry/gtk-2.0/stock_first.png
+share/themes/light-industry/gtk-2.0/stock_jump_to_24.png
+share/themes/light-industry/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/light-industry/gtk-2.0/stock_last-16.png
+share/themes/light-industry/gtk-2.0/stock_last.png
+share/themes/light-industry/gtk-2.0/stock_left-16.png
+share/themes/light-industry/gtk-2.0/stock_left.png
+share/themes/light-industry/gtk-2.0/stock_ok.png
+share/themes/light-industry/gtk-2.0/stock_refresh-16.png
+share/themes/light-industry/gtk-2.0/stock_refresh.png
+share/themes/light-industry/gtk-2.0/stock_right-16.png
+share/themes/light-industry/gtk-2.0/stock_right.png
+share/themes/light-industry/gtk-2.0/stock_top-16.png
+share/themes/light-industry/gtk-2.0/stock_top.png
+share/themes/light-industry/gtk-2.0/stock_up-16.png
+share/themes/light-industry/gtk-2.0/stock_up.png
+share/themes/light-industry/gtk-2.0/window_pattern4.png
+share/themes/light-industry/gtk/gtkrc
+share/themes/light-industry/openbox-3/altaltbuttons/bullet.xbm
+share/themes/light-industry/openbox-3/altaltbuttons/close.xbm
+share/themes/light-industry/openbox-3/altaltbuttons/desk.xbm
+share/themes/light-industry/openbox-3/altaltbuttons/desk_toggled.xbm
+share/themes/light-industry/openbox-3/altaltbuttons/iconify.xbm
+share/themes/light-industry/openbox-3/altaltbuttons/max.xbm
+share/themes/light-industry/openbox-3/altaltbuttons/max_toggled.xbm
+share/themes/light-industry/openbox-3/altaltbuttons/shade.xbm
+share/themes/light-industry/openbox-3/altbuttons/bullet.xbm
+share/themes/light-industry/openbox-3/altbuttons/close.xbm
+share/themes/light-industry/openbox-3/altbuttons/desk.xbm
+share/themes/light-industry/openbox-3/altbuttons/desk_toggled.xbm
+share/themes/light-industry/openbox-3/altbuttons/iconify.xbm
+share/themes/light-industry/openbox-3/altbuttons/max.xbm
+share/themes/light-industry/openbox-3/altbuttons/max_toggled.xbm
+share/themes/light-industry/openbox-3/bullet.xbm
+share/themes/light-industry/openbox-3/close.xbm
+share/themes/light-industry/openbox-3/close_disabled.xbm
+share/themes/light-industry/openbox-3/close_hover.xbm
+share/themes/light-industry/openbox-3/close_pressed.xbm
+share/themes/light-industry/openbox-3/desk.xbm
+share/themes/light-industry/openbox-3/desk_toggled.xbm
+share/themes/light-industry/openbox-3/iconify.xbm
+share/themes/light-industry/openbox-3/iconify_disabled.xbm
+share/themes/light-industry/openbox-3/iconify_hover.xbm
+share/themes/light-industry/openbox-3/iconify_pressed.xbm
+share/themes/light-industry/openbox-3/max.xbm
+share/themes/light-industry/openbox-3/max_disabled.xbm
+share/themes/light-industry/openbox-3/max_hover.xbm
+share/themes/light-industry/openbox-3/max_pressed.xbm
+share/themes/light-industry/openbox-3/max_toggled.xbm
+share/themes/light-industry/openbox-3/shade.xbm
+share/themes/light-industry/openbox-3/shade_hover.xbm
+share/themes/light-industry/openbox-3/shade_pressed.xbm
+share/themes/light-industry/openbox-3/themerc
+share/themes/mavos/openbox-3/bullet.xbm
+share/themes/mavos/openbox-3/close.xbm
+share/themes/mavos/openbox-3/desk.xbm
+share/themes/mavos/openbox-3/desk_toggle.xbm
+share/themes/mavos/openbox-3/iconify.xbm
+share/themes/mavos/openbox-3/iconify_pressed.xbm
+share/themes/mavos/openbox-3/max.xbm
+share/themes/mavos/openbox-3/max_disabled.xbm
+share/themes/mavos/openbox-3/max_pressed.xbm
+share/themes/mavos/openbox-3/max_toggled.xbm
+share/themes/mavos/openbox-3/shade.xbm
+share/themes/mavos/openbox-3/shade_pressed.xbm
+share/themes/mavos/openbox-3/themerc
+share/themes/merrycity/openbox-3/bitmaps/close.xbm
+share/themes/merrycity/openbox-3/bitmaps/close_hover.xbm
+share/themes/merrycity/openbox-3/bitmaps/close_pressed.xbm
+share/themes/merrycity/openbox-3/bitmaps/iconify.xbm
+share/themes/merrycity/openbox-3/bitmaps/iconify_hover.xbm
+share/themes/merrycity/openbox-3/bitmaps/iconify_pressed.xbm
+share/themes/merrycity/openbox-3/bitmaps/max.xbm
+share/themes/merrycity/openbox-3/bitmaps/max_hover.xbm
+share/themes/merrycity/openbox-3/bitmaps/max_pressed.xbm
+share/themes/merrycity/openbox-3/bullet.xbm
+share/themes/merrycity/openbox-3/close.xbm
+share/themes/merrycity/openbox-3/close_hover.xbm
+share/themes/merrycity/openbox-3/close_pressed.xbm
+share/themes/merrycity/openbox-3/desk.xbm
+share/themes/merrycity/openbox-3/desk_toggle.xbm
+share/themes/merrycity/openbox-3/iconify.xbm
+share/themes/merrycity/openbox-3/iconify_hover.xbm
+share/themes/merrycity/openbox-3/iconify_pressed.xbm
+share/themes/merrycity/openbox-3/max.xbm
+share/themes/merrycity/openbox-3/max_disabled.xbm
+share/themes/merrycity/openbox-3/max_hover.xbm
+share/themes/merrycity/openbox-3/max_toggled.xbm
+share/themes/merrycity/openbox-3/themerc
+share/themes/mist/changeaccent
+share/themes/mist/gtk-2.0/gtkrc
+share/themes/mist/gtk-2.0/stock_apply.png
+share/themes/mist/gtk-2.0/stock_bottom-16.png
+share/themes/mist/gtk-2.0/stock_bottom.png
+share/themes/mist/gtk-2.0/stock_cancel-16.png
+share/themes/mist/gtk-2.0/stock_cancel.png
+share/themes/mist/gtk-2.0/stock_down-16.png
+share/themes/mist/gtk-2.0/stock_down.png
+share/themes/mist/gtk-2.0/stock_first-16.png
+share/themes/mist/gtk-2.0/stock_first.png
+share/themes/mist/gtk-2.0/stock_jump_to_24.png
+share/themes/mist/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/mist/gtk-2.0/stock_last-16.png
+share/themes/mist/gtk-2.0/stock_last.png
+share/themes/mist/gtk-2.0/stock_left-16.png
+share/themes/mist/gtk-2.0/stock_left.png
+share/themes/mist/gtk-2.0/stock_ok.png
+share/themes/mist/gtk-2.0/stock_refresh-16.png
+share/themes/mist/gtk-2.0/stock_refresh.png
+share/themes/mist/gtk-2.0/stock_right-16.png
+share/themes/mist/gtk-2.0/stock_right.png
+share/themes/mist/gtk-2.0/stock_top-16.png
+share/themes/mist/gtk-2.0/stock_top.png
+share/themes/mist/gtk-2.0/stock_up-16.png
+share/themes/mist/gtk-2.0/stock_up.png
+share/themes/mist/gtk/gtkrc
+share/themes/mist/openbox-3/bullet.xbm
+share/themes/mist/openbox-3/close.xbm
+share/themes/mist/openbox-3/desk.xbm
+share/themes/mist/openbox-3/desk_toggled.xbm
+share/themes/mist/openbox-3/iconify.xbm
+share/themes/mist/openbox-3/max.xbm
+share/themes/mist/openbox-3/max_toggled.xbm
+share/themes/mist/openbox-3/shade.xbm
+share/themes/mist/openbox-3/themerc
+share/themes/misted/changeaccent
+share/themes/misted/gtk-2.0/gtkrc
+share/themes/misted/gtk/gtkrc
+share/themes/misted/openbox-3/bullet.xbm
+share/themes/misted/openbox-3/close.xbm
+share/themes/misted/openbox-3/desk.xbm
+share/themes/misted/openbox-3/desk_toggled.xbm
+share/themes/misted/openbox-3/iconify.xbm
+share/themes/misted/openbox-3/max.xbm
+share/themes/misted/openbox-3/max_toggled.xbm
+share/themes/misted/openbox-3/shade.xbm
+share/themes/misted/openbox-3/themerc
+share/themes/nop/openbox-3/bullet.xbm
+share/themes/nop/openbox-3/close.xbm
+share/themes/nop/openbox-3/close_hover.xbm
+share/themes/nop/openbox-3/close_pressed.xbm
+share/themes/nop/openbox-3/desk.xbm
+share/themes/nop/openbox-3/desk_toggle.xbm
+share/themes/nop/openbox-3/iconify.xbm
+share/themes/nop/openbox-3/iconify_hover.xbm
+share/themes/nop/openbox-3/iconify_pressed.xbm
+share/themes/nop/openbox-3/max.xbm
+share/themes/nop/openbox-3/max_disabled.xbm
+share/themes/nop/openbox-3/max_hover.xbm
+share/themes/nop/openbox-3/max_toggled.xbm
+share/themes/nop/openbox-3/themerc
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/bullet.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/close.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/close_disabled.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/close_hover.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/desk.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/desk_toggled.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/iconify.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/max.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/max_disabled.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/max_toggled.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/shade.xbm
+share/themes/ob-in-dustry/openbox-3/OB-in-dustryold/themerc
+share/themes/ob-in-dustry/openbox-3/altbuttons/bullet.xbm
+share/themes/ob-in-dustry/openbox-3/altbuttons/close.xbm
+share/themes/ob-in-dustry/openbox-3/altbuttons/desk.xbm
+share/themes/ob-in-dustry/openbox-3/altbuttons/desk_toggled.xbm
+share/themes/ob-in-dustry/openbox-3/altbuttons/iconify.xbm
+share/themes/ob-in-dustry/openbox-3/altbuttons/max.xbm
+share/themes/ob-in-dustry/openbox-3/altbuttons/max_toggled.xbm
+share/themes/ob-in-dustry/openbox-3/bullet.xbm
+share/themes/ob-in-dustry/openbox-3/close.xbm
+share/themes/ob-in-dustry/openbox-3/desk.xbm
+share/themes/ob-in-dustry/openbox-3/desk_toggled.xbm
+share/themes/ob-in-dustry/openbox-3/iconify-real.xbm
+share/themes/ob-in-dustry/openbox-3/iconify.xbm
+share/themes/ob-in-dustry/openbox-3/max.xbm
+share/themes/ob-in-dustry/openbox-3/max_toggled.xbm
+share/themes/ob-in-dustry/openbox-3/shade.xbm
+share/themes/ob-in-dustry/openbox-3/themerc
+share/themes/oldred/openbox-3/bullet.xbm
+share/themes/oldred/openbox-3/close.xbm
+share/themes/oldred/openbox-3/desk.xbm
+share/themes/oldred/openbox-3/desk_toggle.xbm
+share/themes/oldred/openbox-3/iconify.xbm
+share/themes/oldred/openbox-3/iconify_pressed.xbm
+share/themes/oldred/openbox-3/max.xbm
+share/themes/oldred/openbox-3/max_disabled.xbm
+share/themes/oldred/openbox-3/max_pressed.xbm
+share/themes/oldred/openbox-3/max_toggled.xbm
+share/themes/oldred/openbox-3/shade.xbm
+share/themes/oldred/openbox-3/shade_pressed.xbm
+share/themes/oldred/openbox-3/themerc
+share/themes/opensaw/openbox-3/bullet.xbm
+share/themes/opensaw/openbox-3/close.xbm
+share/themes/opensaw/openbox-3/close_disabled.xbm
+share/themes/opensaw/openbox-3/close_hover.xbm
+share/themes/opensaw/openbox-3/close_pressed.xbm
+share/themes/opensaw/openbox-3/iconify.xbm
+share/themes/opensaw/openbox-3/iconify_disabled.xbm
+share/themes/opensaw/openbox-3/iconify_hover.xbm
+share/themes/opensaw/openbox-3/iconify_pressed.xbm
+share/themes/opensaw/openbox-3/max.xbm
+share/themes/opensaw/openbox-3/max_disabled.xbm
+share/themes/opensaw/openbox-3/max_hover.xbm
+share/themes/opensaw/openbox-3/max_pressed.xbm
+share/themes/opensaw/openbox-3/max_toggled.xbm
+share/themes/opensaw/openbox-3/themerc
+share/themes/opensaw/sawbox/close.xbm
+share/themes/opensaw/sawbox/close_disabled.xbm
+share/themes/opensaw/sawbox/close_hover.xbm
+share/themes/opensaw/sawbox/close_pressed.xbm
+share/themes/opensaw/sawbox/iconify.xbm
+share/themes/opensaw/sawbox/iconify_disabled.xbm
+share/themes/opensaw/sawbox/iconify_hover.xbm
+share/themes/opensaw/sawbox/iconify_pressed.xbm
+share/themes/opensaw/sawbox/max.xbm
+share/themes/opensaw/sawbox/max_disabled.xbm
+share/themes/opensaw/sawbox/max_hover.xbm
+share/themes/opensaw/sawbox/max_pressed.xbm
+share/themes/opensaw/sawbox/max_toggled.xbm
+share/themes/opensaw/sawbox/themerc
+share/themes/operation/openbox-3/themerc
+share/themes/orange-fog/gtk-2.0/gtkrc
+share/themes/orange-fog/gtk-2.0/stock_apply.png
+share/themes/orange-fog/gtk-2.0/stock_bottom-16.png
+share/themes/orange-fog/gtk-2.0/stock_bottom.png
+share/themes/orange-fog/gtk-2.0/stock_cancel-16.png
+share/themes/orange-fog/gtk-2.0/stock_cancel.png
+share/themes/orange-fog/gtk-2.0/stock_down-16.png
+share/themes/orange-fog/gtk-2.0/stock_down.png
+share/themes/orange-fog/gtk-2.0/stock_first-16.png
+share/themes/orange-fog/gtk-2.0/stock_first.png
+share/themes/orange-fog/gtk-2.0/stock_jump_to_24.png
+share/themes/orange-fog/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/orange-fog/gtk-2.0/stock_last-16.png
+share/themes/orange-fog/gtk-2.0/stock_last.png
+share/themes/orange-fog/gtk-2.0/stock_left-16.png
+share/themes/orange-fog/gtk-2.0/stock_left.png
+share/themes/orange-fog/gtk-2.0/stock_ok.png
+share/themes/orange-fog/gtk-2.0/stock_refresh-16.png
+share/themes/orange-fog/gtk-2.0/stock_refresh.png
+share/themes/orange-fog/gtk-2.0/stock_right-16.png
+share/themes/orange-fog/gtk-2.0/stock_right.png
+share/themes/orange-fog/gtk-2.0/stock_top-16.png
+share/themes/orange-fog/gtk-2.0/stock_top.png
+share/themes/orange-fog/gtk-2.0/stock_up-16.png
+share/themes/orange-fog/gtk-2.0/stock_up.png
+share/themes/orange-fog/gtk/gtkrc
+share/themes/orange-fog/openbox-3/bullet.xbm
+share/themes/orange-fog/openbox-3/close.xbm
+share/themes/orange-fog/openbox-3/desk.xbm
+share/themes/orange-fog/openbox-3/desk_toggled.xbm
+share/themes/orange-fog/openbox-3/iconify.xbm
+share/themes/orange-fog/openbox-3/max.xbm
+share/themes/orange-fog/openbox-3/max_toggled.xbm
+share/themes/orange-fog/openbox-3/shade.xbm
+share/themes/orange-fog/openbox-3/themerc
+share/themes/palerider/openbox-3/bullet.xbm
+share/themes/palerider/openbox-3/close.xbm
+share/themes/palerider/openbox-3/desk.xbm
+share/themes/palerider/openbox-3/desk_toggle.xbm
+share/themes/palerider/openbox-3/iconify.xbm
+share/themes/palerider/openbox-3/iconify_pressed.xbm
+share/themes/palerider/openbox-3/max.xbm
+share/themes/palerider/openbox-3/max_disabled.xbm
+share/themes/palerider/openbox-3/max_pressed.xbm
+share/themes/palerider/openbox-3/max_toggled.xbm
+share/themes/palerider/openbox-3/themerc
+share/themes/planton/openbox-3/bullet.xbm
+share/themes/planton/openbox-3/close.xbm
+share/themes/planton/openbox-3/close_disabled.xbm
+share/themes/planton/openbox-3/close_pressed.xbm
+share/themes/planton/openbox-3/desk.xbm
+share/themes/planton/openbox-3/desk_toggled.xbm
+share/themes/planton/openbox-3/iconify.xbm
+share/themes/planton/openbox-3/max.xbm
+share/themes/planton/openbox-3/max_disabled.xbm
+share/themes/planton/openbox-3/max_pressed.xbm
+share/themes/planton/openbox-3/max_toggled.xbm
+share/themes/planton/openbox-3/shade.xbm
+share/themes/planton/openbox-3/shade_t.xbm
+share/themes/planton/openbox-3/shade_toggled.xbm
+share/themes/planton/openbox-3/stick.xbm
+share/themes/planton/openbox-3/stick_t.xbm
+share/themes/planton/openbox-3/themerc
+share/themes/rabbit/openbox-3/bullet.xbm
+share/themes/rabbit/openbox-3/close.xbm
+share/themes/rabbit/openbox-3/desk.xbm
+share/themes/rabbit/openbox-3/desk_toggled.xbm
+share/themes/rabbit/openbox-3/iconify.xbm
+share/themes/rabbit/openbox-3/max.xbm
+share/themes/rabbit/openbox-3/max_toggled.xbm
+share/themes/rabbit/openbox-3/shade.xbm
+share/themes/rabbit/openbox-3/themerc
+share/themes/raffles/openbox-3/bullet.xbm
+share/themes/raffles/openbox-3/close.xbm
+share/themes/raffles/openbox-3/iconify.xbm
+share/themes/raffles/openbox-3/max.xbm
+share/themes/raffles/openbox-3/shade.xbm
+share/themes/raffles/openbox-3/themerc
+share/themes/real-milk/openbox-3/bullet-small.xbm
+share/themes/real-milk/openbox-3/close.xbm
+share/themes/real-milk/openbox-3/desk.xbm
+share/themes/real-milk/openbox-3/desk_toggled.xbm
+share/themes/real-milk/openbox-3/iconify.xbm
+share/themes/real-milk/openbox-3/max.xbm
+share/themes/real-milk/openbox-3/shade.xbm
+share/themes/real-milk/openbox-3/themerc
+share/themes/spiffe/gtk-2.0/gtkrc
+share/themes/spiffe/openbox-3/bullet.xbm
+share/themes/spiffe/openbox-3/close.xbm
+share/themes/spiffe/openbox-3/close_hover.xbm
+share/themes/spiffe/openbox-3/close_pressed.xbm
+share/themes/spiffe/openbox-3/desk.xbm
+share/themes/spiffe/openbox-3/desk_toggled.xbm
+share/themes/spiffe/openbox-3/iconify.xbm
+share/themes/spiffe/openbox-3/iconify_hover.xbm
+share/themes/spiffe/openbox-3/iconify_pressed.xbm
+share/themes/spiffe/openbox-3/max.xbm
+share/themes/spiffe/openbox-3/max_disabled.xbm
+share/themes/spiffe/openbox-3/max_hover.xbm
+share/themes/spiffe/openbox-3/max_toggled.xbm
+share/themes/spiffe/openbox-3/shade.xbm
+share/themes/spiffe/openbox-3/themerc
+share/themes/spiffish/openbox-3/bullet.xbm
+share/themes/spiffish/openbox-3/close.xbm
+share/themes/spiffish/openbox-3/close_hover.xbm
+share/themes/spiffish/openbox-3/close_pressed.xbm
+share/themes/spiffish/openbox-3/desk.xbm
+share/themes/spiffish/openbox-3/desk_toggled.xbm
+share/themes/spiffish/openbox-3/iconify.xbm
+share/themes/spiffish/openbox-3/iconify_hover.xbm
+share/themes/spiffish/openbox-3/iconify_pressed.xbm
+share/themes/spiffish/openbox-3/max.xbm
+share/themes/spiffish/openbox-3/max_disabled.xbm
+share/themes/spiffish/openbox-3/max_hover.xbm
+share/themes/spiffish/openbox-3/max_toggled.xbm
+share/themes/spiffish/openbox-3/spiffy/bullet.xbm
+share/themes/spiffish/openbox-3/spiffy/close.xbm
+share/themes/spiffish/openbox-3/spiffy/close_hover.xbm
+share/themes/spiffish/openbox-3/spiffy/close_pressed.xbm
+share/themes/spiffish/openbox-3/spiffy/desk.xbm
+share/themes/spiffish/openbox-3/spiffy/desk_toggled.xbm
+share/themes/spiffish/openbox-3/spiffy/iconify.xbm
+share/themes/spiffish/openbox-3/spiffy/iconify_hover.xbm
+share/themes/spiffish/openbox-3/spiffy/iconify_pressed.xbm
+share/themes/spiffish/openbox-3/spiffy/max.xbm
+share/themes/spiffish/openbox-3/spiffy/max_disabled.xbm
+share/themes/spiffish/openbox-3/spiffy/max_hover.xbm
+share/themes/spiffish/openbox-3/spiffy/max_toggled.xbm
+share/themes/spiffish/openbox-3/spiffy/themerc
+share/themes/spiffish/openbox-3/themerc
+share/themes/spoff/gtk-2.0-key/gtkrc
+share/themes/spoff/gtk-2.0/gtkrc
+share/themes/spoff/gtk-2.0/reptile.png
+share/themes/spoff/gtk-2.0/reptile2.png
+share/themes/spoff/gtk/gtkrc
+share/themes/spoff/gtk/window_pattern.png
+share/themes/spoff/gtk/window_pattern2.png
+share/themes/spoff/gtk/window_pattern3.png
+share/themes/spoff/gtk/window_pattern4.png
+share/themes/spoff/openbox-3/bullet.xbm
+share/themes/spoff/openbox-3/close.xbm
+share/themes/spoff/openbox-3/close_hover.xbm
+share/themes/spoff/openbox-3/close_pressed.xbm
+share/themes/spoff/openbox-3/desk.xbm
+share/themes/spoff/openbox-3/desk_toggled.xbm
+share/themes/spoff/openbox-3/iconify.xbm
+share/themes/spoff/openbox-3/iconify_hover.xbm
+share/themes/spoff/openbox-3/iconify_pressed.xbm
+share/themes/spoff/openbox-3/max.xbm
+share/themes/spoff/openbox-3/max_disabled.xbm
+share/themes/spoff/openbox-3/max_hover.xbm
+share/themes/spoff/openbox-3/max_toggled.xbm
+share/themes/spoff/openbox-3/nthemerc
+share/themes/spoff/openbox-3/shade.xbm
+share/themes/spoff/openbox-3/themerc
+share/themes/thebear/openbox-3/bullet.xbm
+share/themes/thebear/openbox-3/close.xbm
+share/themes/thebear/openbox-3/desk.xbm
+share/themes/thebear/openbox-3/desk_toggled.xbm
+share/themes/thebear/openbox-3/iconify.xbm
+share/themes/thebear/openbox-3/max.xbm
+share/themes/thebear/openbox-3/max_toggled.xbm
+share/themes/thebear/openbox-3/shade.xbm
+share/themes/thebear/openbox-3/themerc
+share/themes/turq/openbox-3/bullet.xbm
+share/themes/turq/openbox-3/close.xbm
+share/themes/turq/openbox-3/close_disabled.xbm
+share/themes/turq/openbox-3/close_hover.xbm
+share/themes/turq/openbox-3/close_pressed.xbm
+share/themes/turq/openbox-3/desk.xbm
+share/themes/turq/openbox-3/desk_disabled.xbm
+share/themes/turq/openbox-3/desk_toggled.xbm
+share/themes/turq/openbox-3/iconify.xbm
+share/themes/turq/openbox-3/iconify_disabled.xbm
+share/themes/turq/openbox-3/iconify_hover.xbm
+share/themes/turq/openbox-3/iconify_pressed.xbm
+share/themes/turq/openbox-3/max.xbm
+share/themes/turq/openbox-3/max_disabled.xbm
+share/themes/turq/openbox-3/max_hover.xbm
+share/themes/turq/openbox-3/max_pressed.xbm
+share/themes/turq/openbox-3/max_toggled.xbm
+share/themes/turq/openbox-3/shade.xbm
+share/themes/turq/openbox-3/shade_toggled.xbm
+share/themes/turq/openbox-3/themerc
+share/themes/weightless-industry/gtk-2.0/gtkrc
+share/themes/weightless-industry/gtk-2.0/stock_apply.png
+share/themes/weightless-industry/gtk-2.0/stock_bottom-16.png
+share/themes/weightless-industry/gtk-2.0/stock_bottom.png
+share/themes/weightless-industry/gtk-2.0/stock_cancel-16.png
+share/themes/weightless-industry/gtk-2.0/stock_cancel.png
+share/themes/weightless-industry/gtk-2.0/stock_down-16.png
+share/themes/weightless-industry/gtk-2.0/stock_down.png
+share/themes/weightless-industry/gtk-2.0/stock_first-16.png
+share/themes/weightless-industry/gtk-2.0/stock_first.png
+share/themes/weightless-industry/gtk-2.0/stock_jump_to_24.png
+share/themes/weightless-industry/gtk-2.0/stock_jump_to_rtl_24.png
+share/themes/weightless-industry/gtk-2.0/stock_last-16.png
+share/themes/weightless-industry/gtk-2.0/stock_last.png
+share/themes/weightless-industry/gtk-2.0/stock_left-16.png
+share/themes/weightless-industry/gtk-2.0/stock_left.png
+share/themes/weightless-industry/gtk-2.0/stock_ok.png
+share/themes/weightless-industry/gtk-2.0/stock_refresh-16.png
+share/themes/weightless-industry/gtk-2.0/stock_refresh.png
+share/themes/weightless-industry/gtk-2.0/stock_right-16.png
+share/themes/weightless-industry/gtk-2.0/stock_right.png
+share/themes/weightless-industry/gtk-2.0/stock_top-16.png
+share/themes/weightless-industry/gtk-2.0/stock_top.png
+share/themes/weightless-industry/gtk-2.0/stock_up-16.png
+share/themes/weightless-industry/gtk-2.0/stock_up.png
+share/themes/weightless-industry/gtk-2.0/window_pattern4.png
+share/themes/weightless-industry/openbox-3/altbuttons/bullet.xbm
+share/themes/weightless-industry/openbox-3/altbuttons/close.xbm
+share/themes/weightless-industry/openbox-3/altbuttons/desk.xbm
+share/themes/weightless-industry/openbox-3/altbuttons/desk_toggled.xbm
+share/themes/weightless-industry/openbox-3/altbuttons/iconify.xbm
+share/themes/weightless-industry/openbox-3/altbuttons/max.xbm
+share/themes/weightless-industry/openbox-3/altbuttons/max_toggled.xbm
+share/themes/weightless-industry/openbox-3/bullet.xbm
+share/themes/weightless-industry/openbox-3/close.xbm
+share/themes/weightless-industry/openbox-3/desk.xbm
+share/themes/weightless-industry/openbox-3/desk_toggled.xbm
+share/themes/weightless-industry/openbox-3/iconify.xbm
+share/themes/weightless-industry/openbox-3/max.xbm
+share/themes/weightless-industry/openbox-3/max_toggled.xbm
+share/themes/weightless-industry/openbox-3/shade.xbm
+share/themes/weightless-industry/openbox-3/themerc
+@dirrm share/themes/weightless-industry/openbox-3/altbuttons
+@dirrm share/themes/weightless-industry/openbox-3
+@dirrm share/themes/weightless-industry/gtk-2.0
+@dirrm share/themes/weightless-industry
+@dirrm share/themes/turq/openbox-3
+@dirrm share/themes/turq
+@dirrm share/themes/thebear/openbox-3
+@dirrm share/themes/thebear
+@dirrm share/themes/spoff/openbox-3
+@dirrm share/themes/spoff/gtk-2.0-key
+@dirrm share/themes/spoff/gtk-2.0
+@dirrm share/themes/spoff/gtk
+@dirrm share/themes/spoff
+@dirrm share/themes/spiffish/openbox-3/spiffy
+@dirrm share/themes/spiffish/openbox-3
+@dirrm share/themes/spiffish
+@dirrm share/themes/spiffe/openbox-3
+@dirrm share/themes/spiffe/gtk-2.0
+@dirrm share/themes/spiffe
+@dirrm share/themes/real-milk/openbox-3
+@dirrm share/themes/real-milk
+@dirrm share/themes/raffles/openbox-3
+@dirrm share/themes/raffles
+@dirrm share/themes/rabbit/openbox-3
+@dirrm share/themes/rabbit
+@dirrm share/themes/planton/openbox-3
+@dirrm share/themes/planton
+@dirrm share/themes/palerider/openbox-3
+@dirrm share/themes/palerider
+@dirrm share/themes/orange-fog/openbox-3
+@dirrm share/themes/orange-fog/gtk-2.0
+@dirrm share/themes/orange-fog/gtk
+@dirrm share/themes/orange-fog
+@dirrm share/themes/operation/openbox-3
+@dirrm share/themes/operation
+@dirrm share/themes/opensaw/sawbox
+@dirrm share/themes/opensaw/openbox-3
+@dirrm share/themes/opensaw
+@dirrm share/themes/oldred/openbox-3
+@dirrm share/themes/oldred
+@dirrm share/themes/ob-in-dustry/openbox-3/altbuttons
+@dirrm share/themes/ob-in-dustry/openbox-3/OB-in-dustryold
+@dirrm share/themes/ob-in-dustry/openbox-3
+@dirrm share/themes/ob-in-dustry
+@dirrm share/themes/nop/openbox-3
+@dirrm share/themes/nop
+@dirrm share/themes/misted/openbox-3
+@dirrm share/themes/misted/gtk-2.0
+@dirrm share/themes/misted/gtk
+@dirrm share/themes/misted
+@dirrm share/themes/mist/openbox-3
+@dirrm share/themes/mist/gtk-2.0
+@dirrm share/themes/mist/gtk
+@dirrm share/themes/mist
+@dirrm share/themes/merrycity/openbox-3/bitmaps
+@dirrm share/themes/merrycity/openbox-3
+@dirrm share/themes/merrycity
+@dirrm share/themes/mavos/openbox-3
+@dirrm share/themes/mavos
+@dirrm share/themes/light-industry/openbox-3/altbuttons
+@dirrm share/themes/light-industry/openbox-3/altaltbuttons
+@dirrm share/themes/light-industry/openbox-3
+@dirrm share/themes/light-industry/gtk-2.0
+@dirrm share/themes/light-industry/gtk
+@dirrm share/themes/light-industry
+@dirrm share/themes/kong/openbox-3
+@dirrm share/themes/kong
+@dirrm share/themes/jolly/openbox-3
+@dirrm share/themes/jolly
+@dirrm share/themes/isawagorilla/openbox-3/NewDir
+@dirrm share/themes/isawagorilla/openbox-3
+@dirrm share/themes/isawagorilla
+@dirrm share/themes/i-merryb/openbox-3
+@dirrm share/themes/i-merryb
+@dirrm share/themes/i-merry/openbox-3
+@dirrm share/themes/i-merry
+@dirrm share/themes/greenz/openbox-3
+@dirrm share/themes/greenz
+@dirrm share/themes/gelb/openbox-3
+@dirrm share/themes/gelb/gtk-2.0
+@dirrm share/themes/gelb/gtk
+@dirrm share/themes/gelb-chubby/openbox-3
+@dirrm share/themes/gelb-chubby
+@dirrm share/themes/gelb
+@dirrm share/themes/gd-fog/openbox-3
+@dirrm share/themes/gd-fog
+@dirrm share/themes/fvwmish/openbox-3
+@dirrm share/themes/fvwmish
+@dirrm share/themes/fog/openbox-3/smallerbuttons
+@dirrm share/themes/fog/openbox-3
+@dirrm share/themes/fog-t/openbox-3/smallerbuttons
+@dirrm share/themes/fog-t/openbox-3
+@dirrm share/themes/fog-t
+@dirrm share/themes/fog-mine/openbox-3/smallerbuttons
+@dirrm share/themes/fog-mine/openbox-3
+@dirrm share/themes/fog-mine
+@dirrm share/themes/fog-maths/openbox-3/smallerbuttons
+@dirrm share/themes/fog-maths/openbox-3
+@dirrm share/themes/fog-maths/gtk-2.0
+@dirrm share/themes/fog-maths/gtk
+@dirrm share/themes/fog-maths
+@dirrm share/themes/fog-i/openbox-3/smallerbuttons
+@dirrm share/themes/fog-i/openbox-3
+@dirrm share/themes/fog-i
+@dirrm share/themes/fog
+@dirrm share/themes/ebox/openbox-3
+@dirrm share/themes/ebox
+@dirrm share/themes/debian
+@dirrm share/themes/day/openbox-3
+@dirrm share/themes/day
+@dirrm share/themes/curdled/openbox-3
+@dirrm share/themes/curdled
+@dirrm share/themes/cukoo-spit/openbox-3
+@dirrm share/themes/cukoo-spit/icons/scalable/stock
+@dirrm share/themes/cukoo-spit/icons/scalable/mimetypes
+@dirrm share/themes/cukoo-spit/icons/scalable/filesystems
+@dirrm share/themes/cukoo-spit/icons/scalable/emblems
+@dirrm share/themes/cukoo-spit/icons/scalable/devices
+@dirrm share/themes/cukoo-spit/icons/scalable/apps
+@dirrm share/themes/cukoo-spit/icons/scalable
+@dirrm share/themes/cukoo-spit/icons
+@dirrm share/themes/cukoo-spit/gtk-2.0
+@dirrm share/themes/cukoo-spit/gtk
+@dirrm share/themes/cukoo-spit
+@dirrm share/themes/chaos2/openbox-3
+@dirrm share/themes/chaos2
+@dirrm share/themes/bbstyle/openbox-3
+@dirrm share/themes/bbstyle/gtk-2.0
+@dirrm share/themes/bbstyle
+@dirrm share/themes/ayunb/openbox-3
+@dirrm share/themes/ayunb
+@dirrm share/themes/arctic/openbox-3
+@dirrm share/themes/arctic
+@dirrm share/themes/Simple-Slate/openbox-3
+@dirrm share/themes/Simple-Slate/metacity-1
+@dirrm share/themes/Simple-Slate/gtk-2.0
+@dirrm share/themes/Simple-Slate/gtk
+@dirrm share/themes/Simple-Slate
+@dirrm share/themes/Simple-Red/openbox-3
+@dirrm share/themes/Simple-Red/metacity-1
+@dirrm share/themes/Simple-Red/gtk-2.0
+@dirrm share/themes/Simple-Red/gtk
+@dirrm share/themes/Simple-Red
+@dirrm share/themes/Simple-Orange/openbox-3
+@dirrm share/themes/Simple-Orange/metacity-1
+@dirrm share/themes/Simple-Orange/gtk-2.0
+@dirrm share/themes/Simple-Orange/gtk
+@dirrm share/themes/Simple-Orange
+@dirrm share/themes/Simple-Industrial/openbox-3
+@dirrm share/themes/Simple-Industrial/metacity-1
+@dirrm share/themes/Simple-Industrial/gtk-2.0
+@dirrm share/themes/Simple-Industrial/gtk
+@dirrm share/themes/Simple-Industrial
+@dirrm share/themes/Simple-Green/openbox-3
+@dirrm share/themes/Simple-Green/metacity-1
+@dirrm share/themes/Simple-Green/gtk-2.0
+@dirrm share/themes/Simple-Green/gtk
+@dirrm share/themes/Simple-Green
+@dirrm share/themes/Simple-Generic/openbox-3
+@dirrm share/themes/Simple-Generic/metacity-1
+@dirrm share/themes/Simple-Generic/gtk-2.0
+@dirrm share/themes/Simple-Generic/gtk
+@dirrm share/themes/Simple-Generic
+@dirrm share/themes/Simple-Aubergine/openbox-3
+@dirrm share/themes/Simple-Aubergine/metacity-1
+@dirrm share/themes/Simple-Aubergine/gtk-2.0
+@dirrm share/themes/Simple-Aubergine/gtk
+@dirrm share/themes/Simple-Aubergine
