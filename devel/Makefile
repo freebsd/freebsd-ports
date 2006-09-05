@@ -1814,6 +1814,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-event-loop
+    SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-rake
