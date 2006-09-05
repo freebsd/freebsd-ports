@@ -7,6 +7,7 @@
 
 PORTNAME=	aunit
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://libre2.adacore.com/aunit/
 DISTNAME=	${PORTNAME}-${PORTVERSION}p-src

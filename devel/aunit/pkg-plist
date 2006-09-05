@@ -49,6 +49,7 @@ include/aunit/aunit.ads
 @dirrm %%DATADIR%%/test
 %%DATADIR%%/aunit.gpr
 %%DATADIR%%/aunit_tests.gpr
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUnit.html
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
