@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AL/ALEXP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mig@mig-29.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bridges gap between HTML::Template and other modules
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \

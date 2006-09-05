@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mig@mig-29.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple configuration file class
 
 PERL_CONFIGURE=	yes
