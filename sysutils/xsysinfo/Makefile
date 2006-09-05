@@ -9,10 +9,13 @@ PORTNAME=	xsysinfo
 PORTVERSION=	1.4a
 PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/jdli/source/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	jdli@csie.nctu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system information display tool
+
+DEPRECATED=	no longer available from mastersite
+EXPIRATION_DATE=	2006-11-04
 
 USE_IMAKE=	yes
 MANCOMPRESSED=	yes
