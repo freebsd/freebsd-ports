@@ -11210,6 +11210,7 @@ po4a		ports/textproc/po4a
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 podcastamatic	ports/www/podcastamatic
+podcatcher	ports/multimedia/podcatcher
 poedit		ports/editors/poedit
 poink		ports/net/poink
 pointless	ports/misc/pointless
