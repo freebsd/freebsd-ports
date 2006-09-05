@@ -1,0 +1,10 @@
+BSD::Sysctl offers a native Perl interface for fetching sysctl values that
+describe the kernel state of BSD-like operating systems. This is around 80
+times faster than scraping the output of the sysctl(8) program.
+
+This module handles the conversion of symbolic sysctl variable names to the
+internal numeric format, and this information, along with the details of how
+to format the results, are cached. Hence, the first call to sysctl requires
+three system calls, however, subsequent calls require only one call.
+
+WWW:	http://search.cpan.org/dist/BSD-Sysctl/
