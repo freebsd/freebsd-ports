@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
@@ -16,6 +16,7 @@ COMMENT=	Thread-safe connection pool library
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	gnometarget
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
 
@@ -41,6 +42,6 @@ CONFIGURE_ARGS+=	--without-sqlite
 .endif
 
 post-patch:
-	${REINPLACE_CMD} 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
