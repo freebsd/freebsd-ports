@@ -10,7 +10,7 @@ DISTVERSION=	0.04beta1
 CATEGORIES=	net-im
 MASTER_SITES=	http://echat.deep.perm.ru/files/
 
-MAINTAINER=	sead@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LAN chat program over the TCP/IP networks
 
 MAN1=		echat.1

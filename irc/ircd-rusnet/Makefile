@@ -16,7 +16,7 @@ CATEGORIES=	irc russian
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	rusnet-${PORTVERSION}
 
-MAINTAINER=	sead@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RusNet Internet Relay Chat Server
 
 USE_BZIP2=	yes
