@@ -31,6 +31,10 @@ CONFIGURE_ARGS+=--enable-testing
 CFLAGS+=	-g
 CFLAGS:=	${CFLAGS:S/-O[0-9]*//g}	# gcc generates broken code in uwsmtp
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+CONFIGURE_ARGS+=--with-domain=example.com
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
