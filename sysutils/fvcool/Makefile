@@ -17,35 +17,23 @@ COMMENT=	VCool for FreeBSD - Cooling software for AMD Athlon/Duron CPUs
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	fvcool.sh
+SUB_FILES=	pkg-message
+SUB_LIST+=	"PORTNAME=${PORTNAME}"
 ALL_TARGET=	fvcool
 PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,^${PREFIX}/,,}
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-SED_SCRIPT=	-e 's,%%RC_SUBR%%,${RC_SUBR},g'   \
-		-e 's,%%PORTNAME%%,${PORTNAME},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g'
 
 PORTDOCS=	ReadMe ReadMe.jp ReadMe.tech_KT133
-PLIST_FILES=	sbin/fvcool etc/rc.d/fvcool.sh
+PLIST_FILES=	sbin/fvcool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@CC@|& ${CFLAGS}|; \
 		s|-O3||g ; s| -s | |g' ${BUILD_WRKSRC}/Makefile.in
 
-post-build:
-	@${SED} ${SED_SCRIPT} ${SCRIPTDIR}/${PORTNAME}.sh \
-	    > ${WRKDIR}/${PORTNAME}.sh
-	@${SED} ${SED_SCRIPT} ${MSG_FILE} \
-	    > ${PKGMESSAGE}
-
 do-install: install-doc
 	${INSTALL_PROGRAM} ${WRKSRC}/fvcool ${PREFIX}/sbin/fvcool
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
-	    ${PREFIX}/etc/rc.d/${PORTNAME}.sh
 	@${CAT} ${PKGMESSAGE}
 
 install-doc:
