@@ -18,7 +18,8 @@ COMMENT=	A chinese font pack for the mplayer OSD and SUB
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
 		${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2 \
 		${ARPHIC_FONTDIR}/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \
-		arial.ttf:${PORTSDIR}/x11-fonts/webfonts:build
+		arial.ttf:${PORTSDIR}/x11-fonts/webfonts:build \
+		cabextract:${PORTSDIR}/archivers/cabextract
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${SUBFONT_DISTNAME}
