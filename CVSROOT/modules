@@ -13857,6 +13857,7 @@ tightvnc	ports/net/tightvnc
 tik		ports/net-im/tik
 tikiwiki	ports/www/tikiwiki
 tilda		ports/x11/tilda
+tilem		ports/emulators/tilem
 tileworld	ports/games/tileworld
 tilp		ports/comms/tilp
 timeless	ports/graphics/timeless
