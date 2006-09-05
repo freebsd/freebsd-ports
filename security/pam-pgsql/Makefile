@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	pam-pgsql
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	libpam-pgsql-${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	libpam-pgsql-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A pam module for authenticating with PostgreSQL
+
+LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
 USE_BZIP2=	yes
 USE_PGSQL=	yes
 GNU_CONFIGURE=	yes
-
-LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
+WRKSRC=		${WRKDIR}/${DISTNAME:S/lib//}
 
 post-install:
-	${CAT} ${PKGMESSAGE}
+post-install:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/debian/changelog \
