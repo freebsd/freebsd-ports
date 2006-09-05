@@ -13,8 +13,11 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Editor-${PORTVERSION}
 
-MAINTAINER=	ruslan@shevchenko.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor from OffiX
+
+DEPRECATED=	developement ceased in 1996
+EXPIRATION_DATE=2006-11-05
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 

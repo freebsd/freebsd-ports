@@ -13,8 +13,11 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Printer-2.4
 
-MAINTAINER=	ruslan@shevchenko.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OffiX printer icon with support of DND protocol
+
+DEPRECATED=	development ceased in 1996
+EXPIRATION_DATE=2006-11-05
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 
