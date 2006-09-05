@@ -12,7 +12,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 
-MAINTAINER=	kaname@vamp.jpn.ph
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dock application to shutdown or reboot
 
 USE_GNOME=	gtk12
