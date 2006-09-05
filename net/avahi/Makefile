@@ -7,7 +7,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.13
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -79,7 +79,8 @@ PLIST_SUB+=	GTK="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure \
+	@${REINPLACE_CMD} -e 's|-ldl||g ; s|netdev|network|g' \
+		${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \
 		${WRKSRC}/avahi-daemon/Makefile.in
 
