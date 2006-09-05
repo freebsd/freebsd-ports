@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Autouse
-PORTVERSION=	1.26
+PORTVERSION=	1.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -15,10 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Defer loading of one or more classes
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -29,8 +27,12 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
 .if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
