@@ -9,8 +9,7 @@ PORTNAME=	qmail-contrib
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.qmail.org/pub/software/ \
-		ftp://rucus.ru.ac.za/pub/mail/qmail/src/
+MASTER_SITES=	http://cr.yp.to/software/
 DISTFILES=	dot-forward-${DF_VER}.tar.gz \
 		fastforward-${FF_VER}.tar.gz
 
