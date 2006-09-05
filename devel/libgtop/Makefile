@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgtop
-PORTVERSION=	2.14.2
+PORTVERSION=	2.14.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 ltverhack intlhack
 INSTALLS_SHLIB=	yes
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
