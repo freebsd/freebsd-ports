@@ -7,6 +7,7 @@
 
 PORTNAME=	gdc
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
@@ -23,7 +24,7 @@ ONLY_FOR_ARCHS=	i386
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${GCC_VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
@@ -39,7 +40,7 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}\///}/configure
 
 PLIST_SUB=	GCC_VER=${GCC_VERSION} CONF_TARGET=${CONFIGURE_TARGET}
 
-MAN1=		gdc.1
+MAN1=		gdc.1 gdmd.1
 
 .ifndef TARGET_GCC
 TARGET_GCC=	3.4	# default
@@ -115,7 +116,9 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gcc/gdc ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/gcc/cc1d ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${GCCDIR}/d/dmd-script ${PREFIX}/bin/gdmd
 	${INSTALL_MAN} ${GCCDIR}/d/gdc.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${GCCDIR}/d/dmd-script.1 ${PREFIX}/man/man1/gdmd.1
 	@(cd ${WRKSRC} && ${GMAKE} install-target-libphobos)
 
 check: build

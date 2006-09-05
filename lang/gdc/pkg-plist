@@ -1,5 +1,6 @@
 bin/gdc
 bin/cc1d
+bin/gdmd
 include/d/%%GCC_VER%%/etc/gamma.d
 include/d/%%GCC_VER%%/etc/c/zlib.d
 include/d/%%GCC_VER%%/etc/c/zlib/crc32.h
