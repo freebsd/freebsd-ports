@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
 
-MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another GTK+ based image viewer
 
 USE_X_PREFIX=	yes
