@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.beastwithin.org/users/wwwwolf/code/xmms/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mig@mig-29.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a named pipe to retrive xmms info about currently playing song
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms

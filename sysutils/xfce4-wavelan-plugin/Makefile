@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xfce-wavelan-plugin
 # Date created:				22 May 2004
-# Whom:					Manuel Rabade Garica <mig@mig-29.net
+# Whom:					Manuel Rabade Garica <mig@mig-29.net>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	mig@mig-29.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays various information about a WaveLAN device
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
