@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.infobot.org/src/ \
 		http://www.infobot.org/src/prior/
 
-MAINTAINER=	perlguy@perlguy.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bot written in Perl with a rabid AI
 
 USE_PERL5=	yes
@@ -26,7 +26,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/README ${WRKSRC}/REVISIONS ${DOCSDIR}
-.endif 
+.endif
 	${MKDIR} ${PREFIX}/etc/infobot
 	${INSTALL_DATA} ${WRKSRC}/conf/* ${PREFIX}/etc/infobot
 	${SED} -e 's,$$param{\(.\)basedir\(.\)} = .*,$$param{\1basedir\2} = "${DATADIR}";,' \

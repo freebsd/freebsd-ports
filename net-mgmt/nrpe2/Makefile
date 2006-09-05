@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
 DISTNAME=	nrpe-${PORTVERSION}
 
-MAINTAINER=	paul@nerdlabs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios Remote Plugin Executor
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
