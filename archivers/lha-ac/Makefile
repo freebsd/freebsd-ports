@@ -22,7 +22,7 @@ COMMENT=	Archive files using LZSS and Huffman compression (.lzh files)
 MAN1=		lha.1
 MANLANG=	ja
 PLIST_FILES=	bin/lha
-PLIST_DIRS=	man/ja/man1
+#PLIST_DIRS=	man/ja/man1
 GNU_CONFIGURE=	yes
 
 RESTRICTED=	"no permission to redistribute"
