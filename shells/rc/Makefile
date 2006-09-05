@@ -11,7 +11,7 @@ CATEGORIES=	shells plan9
 MASTER_SITES=	ftp://rc.quanstro.net/pub/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 
-MAINTAINER=	saken@hotel.rmta.org
+MAINTAINER=	quanstro@quanstro.net
 COMMENT=	A unix incarnation of the plan9 shell
 
 USE_BZIP2=	YES
