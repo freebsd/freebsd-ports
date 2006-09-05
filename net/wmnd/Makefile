@@ -10,7 +10,7 @@ PORTVERSION=	0.4.12
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.yuv.info/pub/wmnd/releases/
 
-MAINTAINER=	flag@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
 
 USE_X_PREFIX=	yes

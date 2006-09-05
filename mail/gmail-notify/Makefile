@@ -12,7 +12,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	djulien.bsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GMail Notifier
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/py-gnome-extras:extract

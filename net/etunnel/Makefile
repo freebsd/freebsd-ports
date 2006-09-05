@@ -10,7 +10,7 @@ PORTVERSION=	0.0.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.iem.pw.edu.pl/ftp/distfiles/
 
-MAINTAINER=	expl@punktas.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP/UDP connections tunneling tool via proxy or directly
 
 ALL_TARGET=	${PORTNAME}
