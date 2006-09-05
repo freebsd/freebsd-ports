@@ -77,6 +77,7 @@
     SUBDIR += dictfmt
     SUBDIR += dictionary
     SUBDIR += diff-mode.el
+    SUBDIR += diffmark
     SUBDIR += diffsplit
     SUBDIR += diffstat
     SUBDIR += diffutils
