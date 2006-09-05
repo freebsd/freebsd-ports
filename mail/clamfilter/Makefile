@@ -8,11 +8,13 @@
 PORTNAME=	clamfilter
 PORTVERSION=	0.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ensita.net/products/clamfilter/ \
-		http://ftp.osuosl.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	sead@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, efficient clamav content filter for Postfix
+
+DEPRECATED=		mastersites disappeared
+EXPIRATION_DATE=	2006-11-05
 
 RUN_DEPENDS=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 
