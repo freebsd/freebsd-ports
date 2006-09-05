@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://nwalsh.com/hacks/gkrellsun/
 
-MAINTAINER=	steffen@vogelreuter.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gkrellm-Plugin that displays the local sun rise and sun set times
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm

@@ -13,7 +13,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 MASTER_SITE_SUBDIR=	flz/freevrrpd/:freebsd
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT,freebsd
 
-MAINTAINER=	spe@phear.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This a VRRP RFC2338 Compliant implementation under FreeBSD
 
 MAN8=		freevrrpd.8
