@@ -1,0 +1,13 @@
+--- src/Imakefile.orig	Wed Sep  6 00:58:40 2006
++++ src/Imakefile	Wed Sep  6 01:00:32 2006
+@@ -25,8 +25,8 @@
+             TOP = ..
+             BIN = .
+           UTILS = $(TOP)/utils
+-    READLINELIB = -lreadline TermcapLibrary
+-EXTRA_LIBRARIES =
++    READLINELIB = -lreadline -ltermcap
++EXTRA_LIBRARIES = -lutil
+ 
+ #ifdef HAVE_XSHM
+ # define XSHM_DEF -DHAVE_XSHM
