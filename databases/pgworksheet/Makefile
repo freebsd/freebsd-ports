@@ -10,7 +10,7 @@ PORTVERSION=	1.8.1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/619/
 
-MAINTAINER=	hmichelon@e-cml.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple PostreSQL GUI front end
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyPgSQL/libpq/__init__.py:${PORTSDIR}/databases/py-pyPgSQL
