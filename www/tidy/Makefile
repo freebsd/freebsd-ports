@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.w3.org/People/Raggett/
 DISTNAME=	tidy4aug00
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	saken@hotel.rmta.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
 
 MAN1=		tidy.1
