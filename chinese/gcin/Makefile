@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
-EXTRACT_ONLY=	gcin-1.2.2.tar.bz2
+EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A traditional chinese input utility in X

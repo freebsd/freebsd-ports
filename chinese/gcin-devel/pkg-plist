@@ -1,4 +1,5 @@
 bin/gcin
+bin/gcin-gb-toggle
 bin/gcin-setup
 bin/gcin2tab
 bin/juyin-learn
@@ -6,8 +7,9 @@ bin/phoa2d
 bin/phod2a
 bin/sim2trad
 bin/trad2sim
-bin/tsa2d
+bin/tsa2d32
 bin/tsd2a
+bin/tsd2a32
 bin/tslearn
 include/gcin-im-client.h
 lib/gtk-2.0/immodules/im-gcin.so
@@ -37,8 +39,9 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/pinyin.gtab
 %%DATADIR%%/table/simplex.gtab
 %%DATADIR%%/table/symbol-table
-%%DATADIR%%/table/tsin
-%%DATADIR%%/table/tsin.idx
+%%DATADIR%%/table/tsin-1.src
+%%DATADIR%%/table/tsin32
+%%DATADIR%%/table/tsin32.idx
 %%DATADIR%%/table/zo.kbm
 %%DATADIR%%/table/zo-asdf.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
@@ -46,8 +49,9 @@ lib/libgcin-im-client.so
 share/applications/gcin
 share/applications/gcin-setup
 share/gnome/control-center-2.0/capplets/gcin-setup.desktop
-share/icons/gcin-tray-sim.png
-share/icons/gcin-tray.png
+share/icons/gcin/gcin-tray.png
+share/icons/gcin/greek.png
+share/icons/gcin/tsin.png
 share/icons/gcin.png
 share/icons/gcin/pin-fixed24.png
 share/icons/gcin/pin-float16.png
