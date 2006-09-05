@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
-MAINTAINER=	snar@paranoia.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CDPdaemon - sends Cisco Discovery Protocol announces over ethernet
 
 BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
