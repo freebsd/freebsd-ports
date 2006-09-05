@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.jmknoble.net/WindowMaker/wmclock/
 
-MAINTAINER=	pelle@fukt.bth.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable clock applet for Window Maker
 
 USE_IMAKE=	yes
