@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	xmlsec
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	security python
-MASTER_SITES=	http://pyxmlsec.labs.libre-entreprise.org/releases/sources/
+MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/430/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	xmlsec1.3:${PORTSDIR}/security/xmlsec1
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 USE_PYTHON=	2.2+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
