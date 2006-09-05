@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.rcdrummond.net/uae/${DISTNAME}/ \
 		http://www.energyhq.es.eu.org/files/
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced version of UAE, the Amiga emulator
 
 CONFLICTS=	uae-[0-9]*

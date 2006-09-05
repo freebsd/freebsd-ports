@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	qnxtheme
 DISTNAME=	qnxtheme-default-${PORTVERSION}
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
 WANT_GNOME=	yes

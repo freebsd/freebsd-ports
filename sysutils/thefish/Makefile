@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt/Gtk+/ncurses rc.conf editor/management tool
 
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
