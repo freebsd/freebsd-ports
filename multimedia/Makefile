@@ -173,6 +173,7 @@
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
     SUBDIR += pitivi
+    SUBDIR += podcatcher
     SUBDIR += ppm2fli
     SUBDIR += projectx
     SUBDIR += pvr250

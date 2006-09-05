@@ -1,0 +1,10 @@
+Armangil's podcatcher is a podcast client for the command line. It provides
+several download strategies (new shows only, back-catalog allowed, etc),
+supports BitTorrent, offers cache management, and generates playlists for MP3
+player applications.
+
+This application accepts one or more feeds (RSS or Atom) or subscription lists
+(OPML or iTunes PCAST) as argument, in the form of URLs or filenames.
+Alternatively, it tries to read one such document from the standard input.
+
+WWW: http://podcatcher.rubyforge.org/
