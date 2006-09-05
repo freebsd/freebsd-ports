@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	x48
-PORTVERSION=	0.4.1e
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.hpcalc.org/hp48/pc/emulators/
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/.//g}.tgz \
-		gxrom-r.zip sxrom-e.zip
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION:S/.//g}.tgz
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		x48-gxrom-r${EXTRACT_SUFX} x48-sxrom-e${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A HP48 SX/GX calculator emulator
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/e//}
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
@@ -28,6 +24,12 @@ ROMPATH=	${PREFIX}/share/x48
 
 .include <bsd.port.pre.mk>
 
+post-extract: .SILENT
+	cd ${WRKSRC} && ${TAR} -zxf ${DISTDIR}/x48-gxrom-r${EXTRACT_SUFX}
+	${MV} ${WRKSRC}/.hp48/rom ${WRKSRC}/gxrom-r
+	cd ${WRKSRC} && ${TAR} -zxf ${DISTDIR}/x48-sxrom-e${EXTRACT_SUFX}
+	${MV} ${WRKSRC}/.hp48/rom ${WRKSRC}/sxrom-e
+
 post-patch:
 	@${REINPLACE_CMD} -e 's+rom.dump+${ROMPATH}/gxrom-r+' \
 		${WRKSRC}/src/X48.ad
@@ -35,10 +37,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's+cuaa+cuad+' ${WRKSRC}/src/X48.ad
 .endif
 
-post-install:
+do-install:
+.for p in x48 dump2rom checkrom mkcard
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${p} ${PREFIX}/bin
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/src/X48.ad ${PREFIX}/lib/X11/app-defaults/X48
 	@${MKDIR} ${ROMPATH}
-	${UNZIP_CMD} ${DISTDIR}/${DISTSUBDIR}/gxrom-r -d ${ROMPATH}
-	${UNZIP_CMD} -p ${DISTDIR}/${DISTSUBDIR}/sxrom-e > ${ROMPATH}/sxrom-e
+	${INSTALL_DATA} ${WRKSRC}/??rom-? ${ROMPATH}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in README doc/CARDS.doc doc/ROMDump.doc
