@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GXmame is a GTK frontend for xmame
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

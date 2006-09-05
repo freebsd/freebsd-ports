@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}a${EXTRACT_SUFX} \
 	   	wastesedge-src-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free role playing game
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \

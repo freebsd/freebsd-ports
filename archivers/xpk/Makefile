@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 		http://www.energyhq.es.eu.org/files/
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
 GNU_CONFIGURE=	yes
