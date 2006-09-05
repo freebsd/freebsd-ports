@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocaml-lib
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	mukai@jmuk.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete - yet small - standard library for OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
