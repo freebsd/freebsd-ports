@@ -217,6 +217,7 @@
     SUBDIR += vcdtools
     SUBDIR += vlc
     SUBDIR += vlc-devel
+    SUBDIR += vodcatcher
     SUBDIR += vstream-client
     SUBDIR += win32-codecs
     SUBDIR += x264
