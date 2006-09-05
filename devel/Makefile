@@ -1402,6 +1402,7 @@
     SUBDIR += p5-Test-MockTime
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Number-Delta
+    SUBDIR += p5-Test-Object
     SUBDIR += p5-Test-Output
     SUBDIR += p5-Test-Parser
     SUBDIR += p5-Test-Pod
