@@ -9,7 +9,9 @@ PORTNAME=	XaraLX
 PORTVERSION?=	0.7r1692
 PORTREVISION?=	0
 CATEGORIES=	graphics
-MASTER_SITES=	http://downloads.xara.com/opensource/
+MASTER_SITES=	http://downloads.xara.com/opensource/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vd/${PORTNAME:L}${PKGNAMESUFFIX}
 DISTFILES?=	${PORTNAME}Src-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	vd@FreeBSD.org
