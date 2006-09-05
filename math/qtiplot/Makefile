@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	qtiplot
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6.2
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
+DISTNAME=	${PORTNAME}-0.8.6-2
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl \
-		qwt:${PORTSDIR}/x11-toolkits/qwt \
+		origin.0:${PORTSDIR}/math/liborigin \
 		qwtplot3d:${PORTSDIR}/math/qwtplot3d
 
 USE_BZIP2=	yes
@@ -33,33 +34,41 @@ MAKE_ENV=	QTDIR=${QT_PREFIX}
 IGNORE=		does not compile on FreeBSD 4.x
 .endif
 
-.if exists(${X11BASE}/share/qt/mkspecs/freebsd-g++)
-QMAKESPEC=	${X11BASE}/share/qt/mkspecs/freebsd-g++
-.else
+QMAKE=		qmake
 QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-.endif
+
+QPRO_DIRS=	. \
+		3rdparty/qwt \
+		fitPlugins/fitRational0 \
+		fitPlugins/fitRational1 \
+		qtiplot
 
 post-patch:
+.for d in ${QPRO_DIRS}
 	@${REINPLACE_CMD} -e \
-		"s:../3rdparty/qwt/include:${LOCALBASE}/include/qwt:" \
+		"s:../3rdparty/liborigin/include:${LOCALBASE}/include:" \
 		-e "s:/usr/include/qwtplot3d:${X11BASE}/include:" \
 		-e "/^unix:LIBS/s:-L /usr/lib:-L${LOCALBASE}/lib:" \
-		-e "/^unix:LIBS/s:../3rdparty/qwt/lib/libqwt.a:-L ${LOCALBASE}/lib -lqwt:" \
 		-e "/^unix:documentation.path/s:/usr/share/doc/qtiplot:${DOCSDIR}:" \
-		${WRKSRC}/${PORTNAME}.pro
+		${WRKSRC}/${d}/*.pro
+.endfor
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${QMAKESPEC} ${PORTNAME}.pro
+.for d in ${QPRO_DIRS}
+	@cd ${WRKSRC}/${d} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
+		-spec ${QMAKESPEC} *.pro
+.endfor
 
 post-configure:
+.for d in ${QPRO_DIRS}
 	@${REINPLACE_CMD} -e \
 		's|^CC .*|CC=${CC}|; \
 		 s|^CXX .*|CXX=${CXX}|; \
 		 s|-pipe||; \
 		 s|^\(CFLAGS .*= \)|\1${CFLAGS}|; \
 		 s|^\(CXXFLAGS = \)|\1${CXXFLAGS}|' \
-		${WRKSRC}/Makefile
+		${WRKSRC}/${d}/Makefile
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qtiplot/qtiplot ${PREFIX}/bin
