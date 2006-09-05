@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ninix-aya
-PORTVERSION=	3.8.9a
+PORTVERSION=	3.9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ninix-aya/21548
+MASTER_SITE_SUBDIR=	ninix-aya/21624
 DISTNAME=	ninix-aya-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -19,7 +19,8 @@ COMMENT=	Ninix-aya is a compatible with desktop mascot program "Ukagaka"
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
 PYVERSION=	${PYTHON_VERSION:S/^python//}
 .if defined(PYTHON_VERSION) && ${PYVERSION:S/.//} < 24
