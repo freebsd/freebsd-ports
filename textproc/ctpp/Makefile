@@ -10,7 +10,7 @@ PORTVERSION=	1.7.5
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.reki.ru/products/ctpp/download/
 
-MAINTAINER=	shetuhin@corp.mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to use templates in C/C++ projects
 
 GNU_CONFIGURE=	yes
