@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		lwp
-PORTVERSION=		13.0
+PORTVERSION=		13.1.1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
 			http://mirror1.liquidweather.net/ \
