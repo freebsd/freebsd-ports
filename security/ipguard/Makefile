@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://ipguard.deep.perm.ru/files/
 
-MAINTAINER=	sead@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool designed to protect LAN IP adress space by ARP spoofing
 
 BUILD_DEPENDS=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
