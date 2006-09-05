@@ -13,7 +13,7 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	wmnet-${PORTVERSION}
 
-MAINTAINER=	flag@gufi.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice network monitor for WindowMaker
 
 USE_IMAKE=	yes
