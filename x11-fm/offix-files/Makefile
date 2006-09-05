@@ -13,8 +13,11 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Files-${PORTVERSION}
 
-MAINTAINER=	ruslan@shevchenko.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File bar from OffiX
+
+DEPRECATED=	development ceased in 1996
+EXPIRATION_DATE=2006-11-05
 
 RUN_DEPENDS=	execute:${PORTSDIR}/x11/offix-execute \
 		editor:${PORTSDIR}/editors/offix-editor
