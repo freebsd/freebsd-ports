@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	xdialog
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.1
 CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes
