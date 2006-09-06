@@ -8,13 +8,9 @@
 PORTNAME=	Glib2
 PORTVERSION=	1.120
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	../by-authors/id/T/TS/TSCH/:cpan \
-		gtk2-perl/:sf
+MASTER_SITES=	CPAN/Glib SF/gtk2-perl
 PKGNAMEPREFIX=	p5-
-DISTFILES=	Glib-${PORTVERSION}${EXTRACT_SUFX}:cpan \
-		Glib-${PORTVERSION}${EXTRACT_SUFX}:sf
+DISTNAME=	Glib-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	This module provides access to Glib and GObject libraries
