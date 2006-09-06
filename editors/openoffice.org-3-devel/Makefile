@@ -100,9 +100,9 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .if defined(WITH_GNUGCJ)
 GCCVER=41
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
-BUILD_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj/bin/java:${PORTSDIR}/java/java-gcj-compat
+BUILD_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
 RUN_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
-RUN_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj/bin/java:${PORTSDIR}/java/java-gcj-compat
+RUN_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
 .else
 .if ${ARCH} == amd64
 GCCVER=41
@@ -157,7 +157,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 .if defined(WITH_GNUGCJ)
-CONFIGURE_ENV+=      PATH="${LOCALBASE}/lib/jvm/java-gcj/bin:${PATH}"
+CONFIGURE_ENV+=      PATH="${LOCALBASE}/lib/jvm/java-gcj41/bin:${PATH}"
 .endif
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-gnu-patch=${LOCALBASE}/bin/gpatch --enable-crashdump=yes --enable-symbols=SMALL
