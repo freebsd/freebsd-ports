@@ -15,7 +15,6 @@ DISTNAME=	gtk2-ssh-askpass-0.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny GTK2 ssh askpass replacement
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 MAN1=		ssh-askpass-gtk2.1
