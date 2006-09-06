@@ -1,4 +1,5 @@
 bin/dps-config
+bin/filler.cgi
 bin/search.cgi
 bin/storedoc.cgi
 etc/dpsearch/acronym/en.acr
@@ -23,6 +24,7 @@ etc/dpsearch/langmap/ar.arabic.quran.lm
 etc/dpsearch/langmap/ar.cp1256.lm
 etc/dpsearch/langmap/ar.cp1256.quran.lm
 etc/dpsearch/langmap/ast.utf-8.lm
+etc/dpsearch/langmap/av.utf-8.lm
 etc/dpsearch/langmap/az.utf8.lm
 etc/dpsearch/langmap/ba.cp1251.lm
 etc/dpsearch/langmap/ba.koi8-r.lm
@@ -43,6 +45,7 @@ etc/dpsearch/langmap/bs.latin2.lm
 etc/dpsearch/langmap/bs.utf-8.lm
 etc/dpsearch/langmap/ca.latin1.lit.lm
 etc/dpsearch/langmap/ca.latin1.lm
+etc/dpsearch/langmap/ce.utf-8.lm
 etc/dpsearch/langmap/co.utf-8.lm
 etc/dpsearch/langmap/cs.cp1250.lm
 etc/dpsearch/langmap/cs.iso-8859-1.lm
@@ -129,6 +132,7 @@ etc/dpsearch/langmap/ko.euc-kr.lit.lm
 etc/dpsearch/langmap/ko.utf8.lit.lm
 etc/dpsearch/langmap/ko.utf8.lm
 etc/dpsearch/langmap/ku.utf-8.lm
+etc/dpsearch/langmap/kv.utf-8.lm
 etc/dpsearch/langmap/kw.utf-8.lm
 etc/dpsearch/langmap/ky.utf-8.lm
 etc/dpsearch/langmap/la.ascii.lm
@@ -145,6 +149,7 @@ etc/dpsearch/langmap/lv.utf-8.lm
 etc/dpsearch/langmap/mi.latin1.lm
 etc/dpsearch/langmap/mi.utf-8.lm
 etc/dpsearch/langmap/mk.utf-8.lm
+etc/dpsearch/langmap/mo.utf-8.lm
 etc/dpsearch/langmap/ms.utf-8.lm
 etc/dpsearch/langmap/mt.latin1.lm
 etc/dpsearch/langmap/mt.utf-8.lm
@@ -166,6 +171,7 @@ etc/dpsearch/langmap/pl.latin2.lm
 etc/dpsearch/langmap/pl.utf-8.lm
 etc/dpsearch/langmap/pt-br.latin1.lm
 etc/dpsearch/langmap/pt-pt.latin1.lm
+etc/dpsearch/langmap/rmy.utf-8.lm
 etc/dpsearch/langmap/ro.ascii.lm
 etc/dpsearch/langmap/ro.cp1250.lm
 etc/dpsearch/langmap/ro.latin2.lm
@@ -209,6 +215,7 @@ etc/dpsearch/langmap/te.utf-8.lm
 etc/dpsearch/langmap/th.cp874.lm
 etc/dpsearch/langmap/th.tis-620.lm
 etc/dpsearch/langmap/th.utf-8.lm
+etc/dpsearch/langmap/tk.utf-8.lm
 etc/dpsearch/langmap/tl.ascii.bible.lm
 etc/dpsearch/langmap/tl.ascii.lm
 etc/dpsearch/langmap/tl.utf-8.lm
@@ -217,6 +224,8 @@ etc/dpsearch/langmap/tr.cp857.lm
 etc/dpsearch/langmap/tr.latin5.lm
 etc/dpsearch/langmap/tr.utf-8.lm
 etc/dpsearch/langmap/tt.utf-8.lm
+etc/dpsearch/langmap/udm.utf-8.lm
+etc/dpsearch/langmap/ug.utf-8.lm
 etc/dpsearch/langmap/uk.cp1251.lm
 etc/dpsearch/langmap/uk.cp866u.lm
 etc/dpsearch/langmap/uk.koi8-u.lm
@@ -224,10 +233,12 @@ etc/dpsearch/langmap/uz.utf-8.lm
 etc/dpsearch/langmap/vi.utf-8.lm
 etc/dpsearch/langmap/vi.viscii.lm
 etc/dpsearch/langmap/wa.utf-8.lm
+etc/dpsearch/langmap/xal.utf-8.lm
 etc/dpsearch/langmap/zh-min-nan.utf-8.lm
 etc/dpsearch/langmap/zh.big5.lm
 etc/dpsearch/langmap/zh.gb18030.lm
 etc/dpsearch/langmap/zh.gb2312.lm
+etc/dpsearch/langmap/zh.gbk.lm
 etc/dpsearch/langmap/zh.utf8.lm
 etc/dpsearch/opensearch.htm-dist
 etc/dpsearch/rss.htm-dist
@@ -292,7 +303,6 @@ include/dps_conf.h
 include/dps_config.h
 include/dps_contentencoding.h
 include/dps_cookies.h
-include/dps_crc32.h
 include/dps_crossword.h
 include/dps_db.h
 include/dps_db_int.h
@@ -369,6 +379,8 @@ sbin/stored
 %%DOCSDIR%%/body-after.html
 %%DOCSDIR%%/body-before.html
 %%DOCSDIR%%/datapark.css
+%%DOCSDIR%%/dpsearch-aliases.en.html
+%%DOCSDIR%%/dpsearch-aliases.ru.html
 %%DOCSDIR%%/dpsearch-authors.en.html
 %%DOCSDIR%%/dpsearch-authors.ru.html
 %%DOCSDIR%%/dpsearch-cachemode.en.html
@@ -390,6 +402,8 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-donations.en.html
 %%DOCSDIR%%/dpsearch-extended-indexing.en.html
 %%DOCSDIR%%/dpsearch-extended-indexing.ru.html
+%%DOCSDIR%%/dpsearch-follow.en.html
+%%DOCSDIR%%/dpsearch-follow.ru.html
 %%DOCSDIR%%/dpsearch-fuzzy.en.html
 %%DOCSDIR%%/dpsearch-fuzzy.ru.html
 %%DOCSDIR%%/dpsearch-get.en.html
@@ -414,8 +428,8 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-http-codes.ru.html
 %%DOCSDIR%%/dpsearch-index-ru.ru.html
 %%DOCSDIR%%/dpsearch-index.en.html
-%%DOCSDIR%%/dpsearch-indexer-configuration.en.html
-%%DOCSDIR%%/dpsearch-indexer-configuration.ru.html
+%%DOCSDIR%%/dpsearch-indexcmd.en.html
+%%DOCSDIR%%/dpsearch-indexcmd.ru.html
 %%DOCSDIR%%/dpsearch-indexing.en.html
 %%DOCSDIR%%/dpsearch-indexing.ru.html
 %%DOCSDIR%%/dpsearch-install.en.html
@@ -440,6 +454,8 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-opsys.ru.html
 %%DOCSDIR%%/dpsearch-oracle.en.html
 %%DOCSDIR%%/dpsearch-oracle.ru.html
+%%DOCSDIR%%/dpsearch-pars.ru.html
+%%DOCSDIR%%/dpsearch-pars.en.html
 %%DOCSDIR%%/dpsearch-perf.en.html
 %%DOCSDIR%%/dpsearch-perf.ru.html
 %%DOCSDIR%%/dpsearch-register.en.html
@@ -448,6 +464,8 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-rel.ru.html
 %%DOCSDIR%%/dpsearch-searchd.en.html
 %%DOCSDIR%%/dpsearch-searchd.ru.html
+%%DOCSDIR%%/dpsearch-srvtable.ru.html
+%%DOCSDIR%%/dpsearch-srvtable.en.html
 %%DOCSDIR%%/dpsearch-srcache.en.html
 %%DOCSDIR%%/dpsearch-srcache.ru.html
 %%DOCSDIR%%/dpsearch-stored.en.html
