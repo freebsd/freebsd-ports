@@ -190,6 +190,10 @@ X11BASE2FIX=	src/mpe2/src/graphics/configure
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000 && defined(PACKAGE_BUILDING)
+WITHOUT_JAVA=	yo	# No package for Java ATM
+.endif
+
 PREFIX:=	${PREFIX}/${PORTNAME}
 
 pre-configure:
