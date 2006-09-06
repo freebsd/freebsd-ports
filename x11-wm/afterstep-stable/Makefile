@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-savewindows
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 post-extract:
