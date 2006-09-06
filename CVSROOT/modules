@@ -7744,6 +7744,7 @@ oleo		ports/math/oleo
 olirc		ports/irc/olirc
 olsrd		ports/net/olsrd
 olvwm		ports/x11-wm/olvwm
+omake		ports/devel/omake
 omega		ports/games/omega
 omi		ports/ftp/omi
 omnetpp		ports/science/omnetpp
