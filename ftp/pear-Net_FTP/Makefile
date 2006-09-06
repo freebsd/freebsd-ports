@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_FTP
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	ftp www pear
 
 MAINTAINER=	antonio@php.net
@@ -18,8 +18,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PHP=	ftp
 
 CATEGORY=	Net
-FILES=		FTP.php FTP/Observer.php
-EXAMPLES=	extensions.ini index.php observer.php
+FILES=		FTP.php FTP/Observer.php FTP/Socket.php
+EXAMPLES=	extensions.ini index.php observer.php socket.php
 _EXAMPLESDIR=	example
 
 post-extract:
