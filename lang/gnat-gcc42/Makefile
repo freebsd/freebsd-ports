@@ -47,6 +47,10 @@ LATEST_LINK=	${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700000
+BROKEN=		does not compile at 7.x
+.endif
+
 gcc_snapshot=	20060818
 versionstring=	${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
 srcdir=			${WRKDIR}/gcc-${versionstring}
