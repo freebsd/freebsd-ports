@@ -18,10 +18,6 @@ COMMENT=	An interactive Imlib2 console for the X Window system
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
