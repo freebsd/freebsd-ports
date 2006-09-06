@@ -47,6 +47,10 @@ DOCS=		RELEASE.NOTES doc/AUTHORS doc/BUGS doc/CREDITS \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500036
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-sf_snort_plugin_api.h
+.endif
+
 .if !defined(WITHOUT_DYNAMIC)
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
