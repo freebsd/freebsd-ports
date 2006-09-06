@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.4
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -35,6 +35,7 @@ BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif
 
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	yes
 CONFIGURE_ARGS=	--enable-login-watch --localstatedir=/var \
 		--mandir=${PREFIX}/man --enable-suidcheck
 
@@ -136,11 +137,11 @@ pre-install:
 
 post-install:
 .if !defined(WITH_SERVER)
-	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/samhain.sh.sample
+	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/samhain.sh
 	@${CP} ${WRKSRC}/samhainrc ${PREFIX}/etc/samhainrc.sample
 	@${CHGRP} wheel ${PREFIX}/etc/samhainrc.sample
 .else
-	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/yule.sh.sample
+	@${CP} ${WRKSRC}/init/samhain.startFreeBSD ${PREFIX}/etc/rc.d/yule.sh
 	@${CP} ${WRKSRC}/yulerc ${PREFIX}/etc/yulerc.sample
 .endif
 .if !defined(NOPORTDOCS)
@@ -158,4 +159,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/sh_userfiles.txt ${DOCSDIR}
 .endif
 
+	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.post.mk>
