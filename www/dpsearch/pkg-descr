@@ -19,6 +19,7 @@ Key features:
 * Phrases segmenting for Chinese, Korean, Japanese and Thai languages;
 * mod_dpsearch - search module for Apache web server.
 * Internationalized Domain Names support.
+* The Summary Extraction Algorithm.
 
 WWW: http://www.dataparksearch.org/
 PAD: http://www.dataparksearch.org/dataparksearch.xml
