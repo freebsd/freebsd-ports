@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: teamspeak
-# REQUIRE: NETWORKING
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
