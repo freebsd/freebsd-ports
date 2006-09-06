@@ -7,7 +7,7 @@
 
 PORTNAME=	teamspeak_server
 PORTVERSION=	2.0.20.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/
 DISTNAME=	ts2_server_rc2_20201
