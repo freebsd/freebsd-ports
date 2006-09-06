@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tmw
-PORTVERSION=	0.0.19
+PORTVERSION=	0.0.20
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	themanaworld
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A free open source 2D MMORPG in development
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
@@ -28,4 +28,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` -I${X11
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CXXFLAGS="${PTHREAD_LIBS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
