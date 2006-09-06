@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Object/.packlist
 %%SITE_PERL%%/File/Find/Object.pm
-%%SITE_PERL%%/File/Find/Object/internal.pm
+%%SITE_PERL%%/File/Find/Object/Base.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Object
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
