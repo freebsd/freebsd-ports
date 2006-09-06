@@ -724,6 +724,7 @@
     SUBDIR += ocamlweb
     SUBDIR += ode
     SUBDIR += ode-devel
+    SUBDIR += omake
     SUBDIR += omniNotify
     SUBDIR += omniORB
     SUBDIR += oniguruma

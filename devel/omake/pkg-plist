@@ -1,0 +1,22 @@
+bin/cvs_realclean
+bin/omake
+bin/osh
+lib/omake/OMakefile.default
+lib/omake/OMakeroot.default
+lib/omake/OMakeroot.om
+lib/omake/Pervasives.om
+lib/omake/build/C.om
+lib/omake/build/Common.om
+lib/omake/build/LaTeX.om
+lib/omake/build/OCaml.om
+lib/omake/configure/Configure.om
+lib/omake/configure/fam.om
+lib/omake/configure/ncurses.om
+lib/omake/configure/readline.om
+lib/omake/parse/C/Lex.om
+lib/omake/parse/C/Parse.om
+@dirrm lib/omake/parse/C
+@dirrm lib/omake/parse
+@dirrm lib/omake/configure
+@dirrm lib/omake/build
+@dirrm lib/omake

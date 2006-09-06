@@ -1,0 +1,5 @@
+OMake is a build system designed for scalability and portability. It uses a
+syntax similar to make utilities you may have used, but it features many
+additional enhancements.
+
+WWW:	http://omake.metaprl.org/index.html
