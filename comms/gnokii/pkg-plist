@@ -2,6 +2,7 @@ bin/gnokii
 bin/ppm2nokia
 bin/sendsms
 bin/todologo
+bin/waitcall
 %%X11%%bin/xgnokii
 etc/gnokiirc.sample
 include/gnokii.h
@@ -17,11 +18,12 @@ include/gnokii/rlp-common.h
 include/gnokii/sms.h
 include/gnokii/statemachine.h
 include/gnokii/virtmodem.h
+include/gnokii/wappush.h
 @dirrm include/gnokii
 lib/libgnokii.a
 lib/libgnokii.la
 lib/libgnokii.so
-lib/libgnokii.so.2
+lib/libgnokii.so.3
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
 sbin/gnokiid
@@ -158,3 +160,13 @@ sbin/mgnokiidev
 %%X11%%@dirrm share/xgnokii/help/pl_PL
 %%X11%%@dirrm share/xgnokii/help
 %%X11%%@dirrm share/xgnokii
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
