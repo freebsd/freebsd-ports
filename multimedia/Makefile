@@ -88,6 +88,7 @@
     SUBDIR += handbrake-gtk2
     SUBDIR += hayes
     SUBDIR += helixplayer
+    SUBDIR += iriverter
     SUBDIR += istanbul
     SUBDIR += jahshaka
     SUBDIR += k9copy
