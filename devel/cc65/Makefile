@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 #		ftp://ftp.elysium.pl/tools/crossplatform/programming/c/cc65/ \
 DISTNAME=	${PORTNAME}-sources-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
 
 USE_SUBMAKE=	yes
