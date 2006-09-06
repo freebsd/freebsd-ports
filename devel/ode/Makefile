@@ -7,7 +7,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -60,5 +60,9 @@ post-patch:
 		-e '/CFLAGS/ s|-O[12]||'
 	@${FIND} ${WRKSRC} -type f -name "*.h" -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-i "" -e 's|<malloc.h>|<stdlib.h>|g'
+
+post-install:
+	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/include/ode/config.h \
+		> ${PREFIX}/include/ode/config.h
 
 .include <bsd.port.post.mk>
