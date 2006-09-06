@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -115,6 +116,7 @@ post-patch:
 	    's|lib/snort_|lib/snort/|g'
 	${REINPLACE_CMD} "s,/etc/snort.conf,${CONFIG_DIR}/snort.conf," \
 		${WRKSRC}/src/snort.c ${WRKSRC}/snort.8
+	${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g' ${WRKSRC}/etc/snort.conf
 .if defined(WITHOUT_DYNAMIC)
 	${REINPLACE_CMD} -e "s,-am: install-libLTLIBRARIES,-am:," \
 		${WRKSRC}/src/dynamic-plugins/sf_engine/Makefile.in
