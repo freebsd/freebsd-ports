@@ -10,7 +10,7 @@ PORTVERSION=	0.3.16
 CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
 
-MAINTAINER=	vince@blue-box.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library needed by syslog-ng
 
 GNU_CONFIGURE=	yes

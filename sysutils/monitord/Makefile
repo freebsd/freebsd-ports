@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.erudition.net/pub/monitord/
 
-MAINTAINER=	walt@erudition.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service that restarts other standalone services
 
 MAN8=		monitord.8
