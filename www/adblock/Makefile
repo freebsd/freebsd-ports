@@ -5,26 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	adblock
+PORTNAME=	adblock
 DISTVERSION=	0.5-dev
-PORTREVISION?=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT?=	A content filtering plug-in for Mozilla
+COMMENT=	A content filtering plug-in for ${GECKO}
 
 USE_X_PREFIX=	yes
 
-PLIST_FILES=	%%MOZDIR%%/chrome/adblock.jar	\
-		%%MOZDIR%%/chrome/overlayinfo/mozapps/content/overlays.rdf
-
-SLAVEDIRS=	www/adblock-firefox
+PLIST_FILES=	%%MOZDIR%%/chrome/adblock.jar
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozex/Makefile.xpi"
+
+.if ${GECKO} == mozilla
+PLIST_FILES+=	%%MOZDIR%%/chrome/overlayinfo/mozapps/content/overlays.rdf
+.endif
 
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/chrome/adblock.jar ${MOZDIR}/chrome

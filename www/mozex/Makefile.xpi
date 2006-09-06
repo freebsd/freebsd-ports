@@ -4,53 +4,25 @@
 # $FreeBSD$
 #
 
-EXTRACT_SUFX=   .xpi
+USE_GECKO=	seamonkey mozilla
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
-BUILD_DEPENDS+=	${MOZDIR}/regxpcom:${PORTSDIR}/www/${MOZPORT}
-RUN_DEPENDS+=	${MOZDIR}:${PORTSDIR}/www/${MOZPORT}
+EXTRACT_SUFX=   .xpi
 
 NO_BUILD=	yes
 USE_ZIP=	yes
 
-PKGINSTALL=	${PORTSDIR}/www/mozex/pkg-install.xpi
+PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 
-.if !defined(WITH_FIREFOX)
-# "Regular" mozillas
-. if exists(${X11BASE}/lib)
-MOZDIR!=	${FIND} ${X11BASE}/lib -name mozilla-bin -exec dirname {} \; | ${HEAD} -n 1
-. else
-MOZDIR=
-. endif
-. if empty(MOZDIR)
-MOZPORT=	mozilla
-MOZDIR=		${X11BASE}/lib/${MOZPORT}
-. else
-MOZPORT!=	${BASENAME} ${MOZDIR}
-. endif
-MOZLDIR=	lib/${MOZPORT}
-.else
-# Firefox
-DEPRECATED=	"must be converted to include www/xpi-adblock/Makefile.xpi"
-PKGNAMESUFFIX=	-firefox
-. if exists(${X11BASE}/lib)
-MOZDIR!=	${FIND} ${X11BASE}/lib -name firefox-bin -exec dirname {} \; | ${HEAD} -n 1
-. else
-MOZDIR=
-. endif
-. if empty(MOZDIR)
-MOZVER=		firefox
-. else
-MOZVER!=	${BASENAME} ${MOZDIR}
-. endif
-MOZPORT=	firefox
-MOZLDIR=	lib/firefox
-.endif
-.if empty(MOZDIR)
+MOZLDIR=	lib/${GECKO}
 MOZDIR=		${X11BASE}/${MOZLDIR}
-.endif
-
 PLIST_SUB=	MOZDIR=${MOZLDIR}
+
+pre-configure:
+	${SED} -e 's|%%GECKO%%|${GECKO}|g'	\
+		< ${.CURDIR}/../../www/mozex/pkg-install.xpi	\
+		> ${PKGINSTALL}
 
 pre-install:
 .if ${PREFIX} != ${X11BASE}
