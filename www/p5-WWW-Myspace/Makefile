@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Myspace
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -30,6 +30,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-Spiffy>=0.24:${PORTSDIR}/devel/p5-Spiffy \
 		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -41,8 +42,8 @@ MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 WWW::Myspace::Data.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600	# Inherited from depends
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500804	# Locale::SubCountry needs perl 5.8.4
+IGNORE=		requires Perl 5.8.4 or newer. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
