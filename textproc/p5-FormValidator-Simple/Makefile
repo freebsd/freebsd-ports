@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FormValidator-Simple
-PORTVERSION=		0.16
+PORTVERSION=		0.17
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		lbr@FreeBSD.org
 COMMENT=		Validation with simple chains of constraints
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
+RUN_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Data-Accessor>0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Date-Calc>=5.4:${PORTSDIR}/devel/p5-Date-Calc \
@@ -28,7 +29,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Tie-IxHash>=1.21:${PORTSDIR}/devel/p5-Tie-IxHash \
 		p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
