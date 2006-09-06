@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/
 DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
 
-MAINTAINER=	yoshiaki@kt.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
 
 INSTALLS_SHLIB=	yes

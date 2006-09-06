@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION}/ \
 		ftp://ftp.geda.seul.org/pub/geda/dist/
 DISTNAME=	verilog-${PORTVERSION}
 
-MAINTAINER=	watchman@ludd.ltu.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Verilog simulation and synthesis tool
 
 USE_BISON=	yes

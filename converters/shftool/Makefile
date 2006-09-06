@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	converters
 MASTER_SITES=	http://www.df.lth.se/~triad/krad/shftool/
 
-MAINTAINER=	watchman@ludd.ltu.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converter for the Standard Hex Format (SHF)
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
