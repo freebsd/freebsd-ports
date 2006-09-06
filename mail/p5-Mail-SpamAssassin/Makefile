@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -89,6 +89,7 @@ TOOLS=		"@comment "
 .endif
 
 MAN3=		Mail::SpamAssassin.3 \
+		Mail::SpamAssassin::AICache.3 \
 		Mail::SpamAssassin::ArchiveIterator.3 \
 		Mail::SpamAssassin::AutoWhitelist.3 \
 		Mail::SpamAssassin::Bayes.3 \
