@@ -1,0 +1,10 @@
+--- OMakefile.orig	Wed Sep  6 00:43:31 2006
++++ OMakefile	Wed Sep  6 00:43:41 2006
+@@ -31,7 +31,6 @@
+     #
+     # Extra options for the C compiler
+     #
+-    CFLAGS += -g -O2 -Wall -Werror -Wno-unused
+ 
+     #
+     # Try to build man pages on Unix
