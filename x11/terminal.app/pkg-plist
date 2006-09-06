@@ -1,0 +1,31 @@
+System/Applications/Terminal.app/Resources/DefaultTerminalServices.svcs
+System/Applications/Terminal.app/Resources/English.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/French.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/German.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/Hungarian.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/Info-gnustep.plist
+System/Applications/Terminal.app/Resources/Norwegian.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/Russian.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/Spanish.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/Swedish.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/Terminal.desktop
+System/Applications/Terminal.app/Resources/Terminal.tiff
+System/Applications/Terminal.app/Resources/Turkish.lproj/Localizable.strings
+System/Applications/Terminal.app/Resources/cursor_filled.tiff
+System/Applications/Terminal.app/Resources/cursor_inverted.tiff
+System/Applications/Terminal.app/Resources/cursor_line.tiff
+System/Applications/Terminal.app/Resources/cursor_stroked.tiff
+System/Applications/Terminal.app/Terminal
+System/Applications/Terminal.app/library_paths.openapp
+System/Applications/Terminal.app/stamp.make
+@dirrm System/Applications/Terminal.app/Resources/Turkish.lproj
+@dirrm System/Applications/Terminal.app/Resources/Swedish.lproj
+@dirrm System/Applications/Terminal.app/Resources/Spanish.lproj
+@dirrm System/Applications/Terminal.app/Resources/Russian.lproj
+@dirrm System/Applications/Terminal.app/Resources/Norwegian.lproj
+@dirrm System/Applications/Terminal.app/Resources/Hungarian.lproj
+@dirrm System/Applications/Terminal.app/Resources/German.lproj
+@dirrm System/Applications/Terminal.app/Resources/French.lproj
+@dirrm System/Applications/Terminal.app/Resources/English.lproj
+@dirrm System/Applications/Terminal.app/Resources
+@dirrm System/Applications/Terminal.app
