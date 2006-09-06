@@ -16,10 +16,11 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ari.suutari@syncrontech.com
 COMMENT=	Sun's Java Communications API
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 
-NO_CDROM=	"Sun has a funky license for this software"
-RESTRICTED=	"no commercial use"
+NO_CDROM=	Sun has a funky license for this software
+RESTRICTED=	no commercial use
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/commapi
@@ -32,7 +33,7 @@ DISTPATH=	${DISTDIR}/${DISTFILE}
 PLIST_SUB+=	JAVA_HOME=${JAVA_HOME:S/${PREFIX}\///}
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		"Should be fetched manually"
+IGNORE=		should be fetched manually
 .endif
 
 .include <bsd.port.pre.mk>
