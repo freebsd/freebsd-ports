@@ -4,7 +4,7 @@
 #
 # Date created:			  Mon Oct 27, 2003
 # Whom:				  Thierry Thomas (<thierry@pompo.net>)
-# Register the extension $1 in the chrome registry.
+# Register the extension $1 in the chrome registry for the browser %%GECKO%%.
 
 umask 022
 PATH=/bin:/usr/bin
@@ -15,27 +15,20 @@ PATH=/bin:/usr/bin
 
 PREFIX=${PKG_PREFIX:-/usr/X11R6}
 
-# If this is an extension for firefox, PKGNAMESUFFIX has been set
 PKG_NAME=${1%%-[0-9._]*}
-PKG_ROOT=$(echo $PKG_NAME | sed 's/-firefox$//')
-if [ $PKG_NAME = $PKG_ROOT ]; then
-MOZBIN=mozilla-bin
-else
-MOZBIN=firefox-bin
-fi
 
-MOZDIR=`find $PREFIX/lib -name $MOZBIN -exec dirname {} \; | head -n 1`
+MOZDIR=$PREFIX/lib/%%GECKO%%
 REGXPCOM=$MOZDIR/regxpcom
 REGCHROME=$MOZDIR/regchrome
 
 if [ "x$2" = "xPOST-DEINSTALL" ]; then
-	case $PKG_ROOT in
-		fr-mozilla-flp|fr-firefox-flp)
+	case $PKG_NAME in
+		fr-mozilla-flp)
 			MODEXT="FR.jar fr-unix.jar"
 			;;
 
 		*)
-			MODEXT=$PKG_ROOT
+			MODEXT=$PKG_NAME
 			;;
 	esac
 	# Removing definition of extension $MODEXT
