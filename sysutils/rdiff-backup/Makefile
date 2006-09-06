@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	steve@ion.lu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local/remote mirroring+incremental backup
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync

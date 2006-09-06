@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	steve@ion.lu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for delta compression of streams
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
