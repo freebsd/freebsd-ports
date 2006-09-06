@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/ \
 		http://www.balabit.com/downloads/syslog-ng/1.6/src/old/
 
-MAINTAINER=	vince@blue-box.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 MAN5=		syslog-ng.conf.5
