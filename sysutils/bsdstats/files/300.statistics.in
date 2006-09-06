@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.18 2006-09-06 00:33:26 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.19 2006-09-06 00:36:03 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -29,7 +29,7 @@ IFS="
 
 send_devices () {
     case $(uname) in
-	NetBSD)
+	NetBSD | OpenBSD)
 	    # Not supported
 	    ;;
 	FreeBSD | *)
@@ -122,7 +122,7 @@ do_fetch () {
     url="http://$checkin_server/scripts/$1"
     sleep `openssl rand -base64 1 | hexdump -n 1 -e '"%u"'`
     case $(uname) in
-	NetBSD)		/usr/bin/ftp -V -o - "$url" ;;
+	NetBSD | OpenBSD)		/usr/bin/ftp -V -o - "$url" ;;
 	FreeBSD | *)	/usr/bin/fetch -q -o - "$url" ;;
     esac
 }
