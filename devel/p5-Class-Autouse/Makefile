@@ -22,9 +22,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Class::Autouse.3
 
-post-patch:
-	@${PERL} -pi -e 's/^auto_install.*$$//' ${WRKSRC}/Makefile.PL
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
