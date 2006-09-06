@@ -5,6 +5,7 @@ To set port-specific make variables, create the
 with the following syntax:
 
 ---------------------------------------------------------
+# this is a comment
 editors/openoffice*: WITH_CCACHE|LOCALIZED_LANG=it
 www/firefox-i18n: WITHOUT_SWITCHER | FIREFOX_I18N=fr it
 x11/fakeport: CONFIGURE_ARGS=--with-modules="aaa bbb ccc"
@@ -13,5 +14,6 @@ x11/fakeport: CONFIGURE_ARGS=--with-modules="aaa bbb ccc"
 Global port directory patterns and blanks around the
 pipe "|" symbol are allowed.
 Values shouldn't be quoted even if they contain spaces.
+Lines beginning with a '#' are comments.
 
 *********************************************************
