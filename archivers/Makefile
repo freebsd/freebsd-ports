@@ -58,6 +58,7 @@
     SUBDIR += nomarch
     SUBDIR += nulib
     SUBDIR += nwreckdum
+    SUBDIR += ocaml-zip
     SUBDIR += orange
     SUBDIR += p5-Archive-Extract
     SUBDIR += p5-Archive-Tar
