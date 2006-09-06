@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	webmaster@shopcusa.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
 
 FORBIDDEN=	Command Injection Vulnerability

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.palmos.com/dev/tools/emulator/sources/ \
 DISTFILES=	emulator_src_3.5.tar.gz \
 		emulator-skins-19.tar.gz:skins
 
-MAINTAINER=	wlloyd@slap.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Palm OS(R) Emulator
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
