@@ -16,6 +16,7 @@ etc/mail/spamassassin/v310.pre.sample
 etc/mail/spamassassin/v312.pre.sample
 @exec [ -f %B/v312.pre ] || cp %B/%f %B/v312.pre
 %%SITE_PERL%%/Mail/SpamAssassin.pm
+%%SITE_PERL%%/Mail/SpamAssassin/AICache.pm
 %%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
 %%SITE_PERL%%/Mail/SpamAssassin/AutoWhitelist.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Bayes.pm
@@ -128,6 +129,7 @@ etc/mail/spamassassin/v312.pre.sample
 %%DATADIR%%/50_scores.cf
 %%DATADIR%%/60_awl.cf
 %%DATADIR%%/60_whitelist.cf
+%%DATADIR%%/60_whitelist_dk.cf
 %%DATADIR%%/60_whitelist_dkim.cf
 %%DATADIR%%/60_whitelist_spf.cf
 %%DATADIR%%/60_whitelist_subject.cf
