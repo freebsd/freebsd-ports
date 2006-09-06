@@ -205,6 +205,7 @@
     SUBDIR += startup-notification
     SUBDIR += sxpc
     SUBDIR += temperature.app
+    SUBDIR += terminal.app
     SUBDIR += thinglaunch
     SUBDIR += tilda
     SUBDIR += tkXwin
