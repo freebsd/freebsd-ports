@@ -1,5 +1,5 @@
---- gpilotd/gpilotd.c.orig	Thu Sep  2 11:43:47 2004
-+++ gpilotd/gpilotd.c	Sun Apr 24 15:56:14 2005
+--- gpilotd/gpilotd.c.orig	Tue Sep  5 03:16:41 2006
++++ gpilotd/gpilotd.c	Wed Sep  6 17:04:43 2006
 @@ -27,6 +27,8 @@
  #include "config.h"
  #endif
@@ -9,19 +9,10 @@
  /* for crypt () */
  #ifdef USE_XOPEN_SOURCE
  #ifndef _XOPEN_SOURCE
-@@ -903,7 +905,7 @@
- 	}
- 	
- 	fclose (f);
--	
-+
- 	if (visor_exists) {
- 		l = context->devices;
- 		while (l) {
-@@ -928,6 +930,49 @@
+@@ -1386,6 +1388,49 @@ visor_devices_timeout (gpointer data) 
  }
  
- #endif
+ #endif /* WITH_USB_VISOR */
 +#ifdef freebsd
 +static gboolean
 +visor_devices_timeout (gpointer data)
@@ -64,24 +55,24 @@
 +	return TRUE;
 +}
 +
-+#endif
- #endif
++#endif /* freebsd */
+ #endif /* linux */
  
- void monitor_channel (GPilotDevice *dev,GPilotContext *context) 
-@@ -959,16 +1004,12 @@
- #endif /* WITH_NETWORK */
- 	} if (dev->type == PILOT_DEVICE_USB_VISOR) {
+ 
+@@ -1423,16 +1468,12 @@ monitor_channel (GPilotDevice *dev, GPil
+ 			dev->device_exists = FALSE;
+ 		} else {
  #ifdef WITH_USB_VISOR
 -#ifdef linux
- 		/* We want to watch the /proc/bus/usb/devices file once 
- 		 * per context, and then check all devices each time it is
- 		 * woken up. */
- 		if (visor_timeout_id == -1) {
- 			visor_timeout_id = g_timeout_add (2000, visor_devices_timeout, context);
- 		}
--#else /* linux*/
--		g_assert_not_reached ();
+ 			/* We want to watch for a new recognised USB device
+ 			 * once per context. */
+ 			if (visor_timeout_id == -1) {
+ 				visor_timeout_id = g_timeout_add (2000,
+ 				    visor_devices_timeout, context);
+ 			}
+-#else /* linux */
+-			g_assert_not_reached ();
 -#endif /* linux */
  #endif /* WITH_USB_VISOR */
- 		dev->device_exists = FALSE;
+ 		}
  	}
