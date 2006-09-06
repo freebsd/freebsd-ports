@@ -5,24 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=		ssh_askpass_gtk2
-PORTVERSION=		0.3
+PORTNAME=	ssh_askpass_gtk2
+PORTVERSION=	0.3
 PORTREVISION=	5
-CATEGORIES=		security
-MASTER_SITES=		http://www.cgabriel.org/sw/gtk2-ssh-askpass/
-DISTNAME=		gtk2-ssh-askpass-0.3
+CATEGORIES=	security
+MASTER_SITES=	http://www.cgabriel.org/download/ssh-askpass-fullscreen/
+DISTNAME=	gtk2-ssh-askpass-0.3
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A tiny GTK2 ssh askpass replacement
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tiny GTK2 ssh askpass replacement
 
-DEPRECATED=		no longer available from mastersite
-EXPIRATION_DATE=	2006-11-05
+USE_X_PREFIX=	yes
+USE_GNOME=	gtk20
 
-USE_X_PREFIX=		yes
-USE_GNOME=		gtk20
-
-MAN1=			ssh-askpass-gtk2.1
-PLIST_FILES=		bin/ssh-askpass-gtk2
+MAN1=		ssh-askpass-gtk2.1
+PLIST_FILES=	bin/ssh-askpass-gtk2
 
 do-install:
 	cd ${WRKSRC};\
