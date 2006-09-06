@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s/-snap/}
 
-MAINTAINER=	trish@bsdunix.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Ecartis Listserver \ Mailing List Manager
 
 USE_GMAKE=	yes

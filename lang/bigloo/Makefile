@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 		ftp://kaolin.unice.fr/pub/Bigloo/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	tacho@daemonz.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Scheme interpreter and native code compiler
 
 USE_GMAKE=	yes

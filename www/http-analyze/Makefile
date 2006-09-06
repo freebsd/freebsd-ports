@@ -12,7 +12,7 @@ MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/others_ports/http-analyze/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	tmortensen@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast Log-Analyzer for web servers
 
 PATCH_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png

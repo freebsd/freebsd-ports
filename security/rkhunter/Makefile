@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
-MAINTAINER=	vaidab@safe-mail.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rootkit detection tool
 
 OPTIONS=	LSOF "Use LSOF" on \
