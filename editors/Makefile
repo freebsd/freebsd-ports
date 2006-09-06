@@ -158,6 +158,7 @@
     SUBDIR += texmacs
     SUBDIR += texmaker
     SUBDIR += textedit
+    SUBDIR += textedit.app
     SUBDIR += the
     SUBDIR += thoteditor
     SUBDIR += tpad
