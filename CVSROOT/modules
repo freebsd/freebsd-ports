@@ -13794,6 +13794,7 @@ tenebrae	ports/games/tenebrae
 tenshi		ports/sysutils/tenshi
 tensile		ports/lang/tensile
 tentakel	ports/sysutils/tentakel
+terminal.app	ports/x11/terminal.app
 terminality	ports/devel/terminality
 terminatorx	ports/audio/terminatorx
 terminus-font	ports/x11-fonts/terminus-font
