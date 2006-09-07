@@ -1,6 +1,5 @@
 bin/fontforge
 bin/sfddiff
-bin/acorn2sfd
 lib/libgdraw.la
 lib/libgdraw.so
 lib/libgdraw.so.1
@@ -10,9 +9,11 @@ lib/libgunicode.so.2
 libdata/pkgconfig/fontforge.pc
 share/locale/es/LC_MESSAGES/FontForge.mo
 share/locale/fr/LC_MESSAGES/FontForge.mo
+share/locale/gr/LC_MESSAGES/FontForge.mo
 share/locale/it/LC_MESSAGES/FontForge.mo
 share/locale/ja/LC_MESSAGES/FontForge.mo
 share/locale/ru/LC_MESSAGES/FontForge.mo
+share/locale/vi/LC_MESSAGES/FontForge.mo
 %%DOCSDIR%%/LICENSE
 %%DATADIR%%/Adobe-CNS1-4.cidmap
 %%DATADIR%%/Adobe-GB1-4.cidmap
@@ -180,6 +181,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/charinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/charinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/charview-multilayer.png
+%%PORTDOCS%%%%DOCSDIR%%/charview-quadratic.png
 %%PORTDOCS%%%%DOCSDIR%%/charview-vert.png
 %%PORTDOCS%%%%DOCSDIR%%/charview.html
 %%PORTDOCS%%%%DOCSDIR%%/charview2.png
@@ -200,6 +202,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/copyfeatures.png
 %%PORTDOCS%%%%DOCSDIR%%/corpchar.html
 %%PORTDOCS%%%%DOCSDIR%%/corpchar.txt
+%%PORTDOCS%%%%DOCSDIR%%/cpinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/cpodd.png
 %%PORTDOCS%%%%DOCSDIR%%/cubic2quad.png
 %%PORTDOCS%%%%DOCSDIR%%/cvarrowicon.png
@@ -295,6 +298,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-panose.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-private.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ps.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-psuid.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-size.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-statemach.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-subsup.png
@@ -303,6 +307,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfname-bigedit.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfname.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfvals.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-unicode.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/fontutils.html
@@ -316,6 +321,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/future.html
 %%PORTDOCS%%%%DOCSDIR%%/fv-normal.png
 %%PORTDOCS%%%%DOCSDIR%%/fv-smallcaps.png
+%%PORTDOCS%%%%DOCSDIR%%/fvOutOfDateHinting.png
 %%PORTDOCS%%%%DOCSDIR%%/generate.html
 %%PORTDOCS%%%%DOCSDIR%%/generate.png
 %%PORTDOCS%%%%DOCSDIR%%/getinfo.html
@@ -327,6 +333,9 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/groups.html
 %%PORTDOCS%%%%DOCSDIR%%/helpmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/hexley.png
+%%PORTDOCS%%%%DOCSDIR%%/hintboundingbox.png
+%%PORTDOCS%%%%DOCSDIR%%/hintdiagonalends.png
+%%PORTDOCS%%%%DOCSDIR%%/hintdiagonalinter.png
 %%PORTDOCS%%%%DOCSDIR%%/hinting.html
 %%PORTDOCS%%%%DOCSDIR%%/hintmaskinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/hintsmenu.html
@@ -382,6 +391,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/manual-ja.png
 %%PORTDOCS%%%%DOCSDIR%%/markclass.png
 %%PORTDOCS%%%%DOCSDIR%%/mergepost.png
+%%PORTDOCS%%%%DOCSDIR%%/o1.png
 %%PORTDOCS%%%%DOCSDIR%%/mergepre.png
 %%PORTDOCS%%%%DOCSDIR%%/metricsmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/metricsview.html
@@ -407,7 +417,6 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/non-standard.html
 %%PORTDOCS%%%%DOCSDIR%%/nvd.html
 %%PORTDOCS%%%%DOCSDIR%%/o-baddir.png
-%%PORTDOCS%%%%DOCSDIR%%/o1.png
 %%PORTDOCS%%%%DOCSDIR%%/o2.png
 %%PORTDOCS%%%%DOCSDIR%%/o3.png
 %%PORTDOCS%%%%DOCSDIR%%/o4.png
@@ -439,6 +448,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/pointinfo-interp.png
 %%PORTDOCS%%%%DOCSDIR%%/pointmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/pointsize.png
+%%PORTDOCS%%%%DOCSDIR%%/prefs-accent.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-apps.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-editing.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-font.png
@@ -446,6 +456,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/prefs-macfeat.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-macmap.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-script.png
+%%PORTDOCS%%%%DOCSDIR%%/prefs-tt.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs.html
 %%PORTDOCS%%%%DOCSDIR%%/print.html
 %%PORTDOCS%%%%DOCSDIR%%/privatekey.png
@@ -465,9 +476,12 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/rparen-174.png
 %%PORTDOCS%%%%DOCSDIR%%/rplref.png
 %%PORTDOCS%%%%DOCSDIR%%/rplserifs.png
+%%PORTDOCS%%%%DOCSDIR%%/ruler.png
 %%PORTDOCS%%%%DOCSDIR%%/running.html
 %%PORTDOCS%%%%DOCSDIR%%/sans-serif-def.png
 %%PORTDOCS%%%%DOCSDIR%%/script-A.png
+%%PORTDOCS%%%%DOCSDIR%%/scripting-alpha.html
+%%PORTDOCS%%%%DOCSDIR%%/scripting-tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/scripting.html
 %%PORTDOCS%%%%DOCSDIR%%/scriptlist-pulldown.png
 %%PORTDOCS%%%%DOCSDIR%%/scriptlist.png
@@ -525,6 +539,8 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial-zh_TW.png
 %%PORTDOCS%%%%DOCSDIR%%/twolines.png
 %%PORTDOCS%%%%DOCSDIR%%/typofeat.html
+%%PORTDOCS%%%%DOCSDIR%%/uitranslationnotes.html
+%%PORTDOCS%%%%DOCSDIR%%/uninstall.html
 %%PORTDOCS%%%%DOCSDIR%%/viewmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/views.html
 %%PORTDOCS%%%%DOCSDIR%%/vms-install.html
@@ -541,6 +557,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/flags/StarsStripes.gif
 %%PORTDOCS%%%%DOCSDIR%%/flags/Tricolor.gif
 %%PORTDOCS%%%%DOCSDIR%%/flags/UnionJack.gif
+%%PORTDOCS%%%%DOCSDIR%%/flags/VietnamFlag.png
 %%PORTDOCS%%%%DOCSDIR%%/flags/taiwan.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/AA-Comparison.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/AmbrosiaFV.png
@@ -608,6 +625,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/files.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontcompdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontcompresults.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/fontforge_ja_htdocs-20060822.tar.bz2
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontinfo-comment.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontinfo-macstyle.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/fontinfo-panose.png
@@ -683,6 +701,8 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/ref-caveats.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/rgetinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/running.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/scripting-alpha.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/scripting-tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/scripting.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/scriptnotes.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/search.html
@@ -700,6 +720,7 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 %%PORTDOCS%%%%DOCSDIR%%/ja/transform.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/ttfinstrs.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/typofeat.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/uninstall.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/viewmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/views.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/vms-install.html
@@ -714,3 +735,5 @@ share/locale/ru/LC_MESSAGES/FontForge.mo
 @dirrm %%DOCSDIR%%/ja/nonBMP
 @dirrm %%DOCSDIR%%/ja
 @dirrm %%DOCSDIR%%
+@dirrmtry share/locale/gr/LC_MESSAGES
+@dirrmtry share/locale/gr

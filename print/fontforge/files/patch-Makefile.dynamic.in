@@ -5,25 +5,9 @@
  	#cp .libs/*.so.*.* $(libdir)
  	$(LIBTOOL) --mode=finish $(libdir)
 -	mkdir -p $(libdir)/pkgconfig
--	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge.pc $(libdir)/pkgconfig
+-	$(INSTALL_DATA) fontforge.pc $(libdir)/pkgconfig
 +	mkdir -p ${PREFIX}/libdata/pkgconfig
-+	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge.pc ${PREFIX}/libdata/pkgconfig
++	$(INSTALL_DATA) fontforge.pc ${PREFIX}/libdata/pkgconfig
  
  install_docs:
  	mkdir -p $(docdir)
-@@ -76,6 +76,7 @@
- 	mkdir -p $(sharedir)
- 	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/fontforge $(bindir)
- 	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/sfddiff $(bindir)
-+	$(LIBTOOL) --mode=install $(INSTALL) -c fontforge/acorn2sfd $(bindir)
- #	-rm -f $(bindir)/pfaedit
- #	(cd $(bindir) ; ln -s fontforge pfaedit)
- #	$(INSTALL_DATA) fontforge/pfaedit-*.ui $(sharedir)
-@@ -92,6 +93,7 @@
- uninstall:
- 	-rm $(bindir)/fontforge
- 	-rm $(bindir)/sfddiff
-+	-rm $(bindir)/acorn2sfd
- 	-rm $(sharedir)/pfaedit-*.ui
- 	-rm $(localedir)/*/LC_MESSAGES/FontForge.mo
- 	-rm $(mandir)/man1/fontforge.1
