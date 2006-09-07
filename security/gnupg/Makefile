@@ -32,13 +32,16 @@ PORTDOCS=	*
 
 OPTIONS=	LDAP "LDAP keyserver interface" off \
 		LIBICONV "use libiconv" off \
+		LIBUSB "use libusb" off \
 		SUID_GPG "install GPG with suid" off \
 		NLS "Native Language Support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
+.if defined(WITH_LIBICONV)
 USE_ICONV=	yes
+.else
+CONFIGURE_ARGS+=	--without-libiconv-prefix
 .endif
 
 .if defined(WITH_LIBUSB)
@@ -52,6 +55,7 @@ CONFIGURE_ARGS+=	--without-libusb
 USE_OPENLDAP=	yes
 PLIST_SUB+=	WITH_LDAP=""
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
+#CONFIGURE_ENV+=	LDFLAGS="-L/usr/lib"
 .else
 PLIST_SUB+=	WITH_LDAP="@comment "
 CONFIGURE_ARGS+=	--disable-ldap
