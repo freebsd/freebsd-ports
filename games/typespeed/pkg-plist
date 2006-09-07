@@ -13,6 +13,7 @@ etc/typespeedrc.dist
 %%DATADIR%%/words.portuguese
 %%DATADIR%%/words.prog
 %%DATADIR%%/words.spanish
+%%DATADIR%%/words.test
 %%DATADIR%%/words.thai
 %%DATADIR%%/words.unix
 @dirrm  %%DATADIR%%
