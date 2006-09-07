@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	ply
-PORTVERSION=	1.6
+PORTVERSION=	1.9
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.dabeaz.com/ply/
-PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	Python Lex-Yacc
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 .if !defined(NOPORTDOCS)
 post-install:
