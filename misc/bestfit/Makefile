@@ -8,8 +8,7 @@
 PORTNAME=	bestfit
 PORTVERSION=	0.2.0
 CATEGORIES=	misc
-MASTER_SITES=	http://oskarsapps.mine.nu/src/ \
-		http://critical.ch/distfiles/ \
+MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
