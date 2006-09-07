@@ -30,8 +30,12 @@ DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?type=5.0&p=1&a=bs
 IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
+post-patch:
+	@${RM} ${WRKSRC}/etc/netbeans.conf.orig
+
 do-configure:
 	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/etc/netbeans.conf
+	@${RM} ${WRKSRC}/etc/netbeans.conf.bak
 
 do-install:
 	@${MKDIR} ${PREFIX}/netbeans
