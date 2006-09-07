@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		http://fresh.t-systems-sfr.com/linux/src/ \
@@ -30,7 +30,7 @@ MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 
 .if defined(VICE_WITH_GNOME)
 GNOME_SUFFIX=	-gnome
-USE_GNOME=	gnomelibs
+USE_GNOME=	gnomelibs libgnomeui
 CONFIGURE_ARGS=	--enable-gnomeui
 CONFLICTS?=	vice-1.*
 .else
@@ -38,9 +38,9 @@ CONFIGURE_ARGS=	--with-xaw3d
 CONFLICTS?=	vice-gnome-1.*
 .endif
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \
