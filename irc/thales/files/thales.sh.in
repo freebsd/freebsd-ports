@@ -19,7 +19,7 @@
 name="thales"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/thales"
+command="%%PREFIX%%/sbin/thales"
 
 [ -z "$thales_enable" ]	&& thales_enable="NO"
 
