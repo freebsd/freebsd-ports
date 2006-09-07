@@ -1,0 +1,12 @@
+Local/Applications/Stepulator.app/Resources/Info-gnustep.plist
+Local/Applications/Stepulator.app/Resources/Stepulator.desktop
+Local/Applications/Stepulator.app/Resources/Stepulator.gorm/data.classes
+Local/Applications/Stepulator.app/Resources/Stepulator.gorm/objects.gorm
+Local/Applications/Stepulator.app/Resources/StepulatorInfo.plist
+Local/Applications/Stepulator.app/Stepulator
+Local/Applications/Stepulator.app/library_paths.openapp
+Local/Applications/Stepulator.app/stamp.make
+@dirrm Local/Applications/Stepulator.app/Resources/Stepulator.gorm
+@dirrm Local/Applications/Stepulator.app/Resources
+@dirrm Local/Applications/Stepulator.app
+@dirrmtry Local/Applications
