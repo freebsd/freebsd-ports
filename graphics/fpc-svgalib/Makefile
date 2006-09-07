@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-svgalib
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${PORTNAME}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 HAVE_EXAMPLES=	true
 

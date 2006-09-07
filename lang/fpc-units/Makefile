@@ -24,6 +24,7 @@ BUILDNAME=	${ARCH}-freebsd
 
 OPTIONS=	BFD	"Interface to GNU Binary Format description"	on \
 		FCL	"Free Pascal Component Library"	on \
+		FFTW	"interface to the FFTW3 library" on \
 		FORMS	"Interface to X-Forms"	on \
 		FPGTK	"Interface to create programs with gtk"	on \
 		FV	"Free Pascal unit for Delphi support" on \
@@ -50,12 +51,13 @@ OPTIONS=	BFD	"Interface to GNU Binary Format description"	on \
 .include <bsd.port.pre.mk>
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
-ALL_OPTIONS=	BFD FCL FORMS FPGTK FV GCONF GDBM GGI GNOME GTK GTK2 \
+ALL_OPTIONS=	BFD FCL FFTW FORMS FPGTK FV GCONF GDBM GGI GNOME GTK GTK2 \
 		IMLIB LIBGD LIBPNG NCURSES OPENGL SVGALIB \
 		SYSLOG TCL UNZIP UTMP X11 ZLIB ZVT
 
 BFD_UNIT=	devel/fpc-bfd
 FCL_UNIT=	devel/fpc-fcl
+FFTW_UNIT=	math/fpc-fftw
 FORMS_UNIT=	x11-toolkits/fpc-forms
 FPGTK_UNIT=	graphics/fpc-fpgtk
 FV_UNIT=	devel/fpc-fv

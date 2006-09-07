@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.0.2
-PORTREVISION?=	1
+PORTVERSION=	2.0.4
+PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:sourc
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bin|}
 MASTER_SITE_SUBDIR=	freepascal
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
+DISTFILES=	${PORTNAME:S/$/build/}-${PORTVERSION}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
@@ -36,11 +36,12 @@ MAKE_ENV=	PREFIX=${PREFIX} \
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		BUILDNAME=${BUILDNAME}
 SUB_FILES=	pkg-message
+FPCSRCDIR=	${PORTNAME:S/$/build_/}${PORTVERSION:S/$/_exp/}/${PORTNAME:S/$/src/}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	does not compile
+BROKEN=		does not compile
 .endif
 
 .if !defined(PKGNAMESUFFIX)
@@ -51,10 +52,12 @@ MAN1=	bin2obj.1 \
 	data2inc.1 \
 	delp.1 \
 	fd2pascal.1 \
+	fp.1 \
 	fpc.1 \
 	fpcmake.1 \
 	fpdoc.1 \
 	fprcp.1 \
+	grab_vcsa.1 \
 	h2pas.1 \
 	h2paspp.1 \
 	makeskel.1 \
@@ -87,20 +90,18 @@ do-extract:
 		${WRKDIR}
 # unpack source distribution
 	@cd ${WRKDIR} && \
-		${GZIP_CMD} -dc ${_DISTDIR}/${DISTNAME:S/$/.source/}${EXTRACT_SUFX} \
-			| ${TAR} xf - ${PORTNAME}/compiler ${PORTNAME}/rtl
+		${GZIP_CMD} -dc ${_DISTDIR}/${PORTNAME:S/$/build/}-${PORTVERSION}${EXTRACT_SUFX} \
+			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl
 
 do-build:
 # build fpc compiler
-	@cd ${WRKDIR}/${PORTNAME}/compiler && ${GMAKE} cycle ${MAKE_ENV}
-# build fpc runtime
-#	@cd ${WRKDIR}/${PORTNAME}/rtl && ${GMAKE} all ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} cycle ${MAKE_ENV}
 
 do-install:
 	# Installing fpc compiler
-	@cd ${WRKDIR}/${PORTNAME}/rtl && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${GMAKE} install ${MAKE_ENV}
       	# Installing fpc runtime
-	@cd ${WRKDIR}/${PORTNAME}/compiler && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} install ${MAKE_ENV}
 	# Installing manpages
 	${INSTALL_DATA} ${WRKDIR}/fpc-bin/man/man1/* ${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/fpc-bin/man/man5/* ${MAN1PREFIX}/man/man5

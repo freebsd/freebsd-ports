@@ -68,7 +68,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpviews.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpsysmsg.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpasciitab.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libptimeddlg.a
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/tfileio.pas
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.lpi
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.pas
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/platform.inc
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile.fpc

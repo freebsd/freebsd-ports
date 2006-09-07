@@ -1,6 +1,6 @@
 PLIST=	${.CURDIR}/pkg-plist
 PATCHDIR=	${.CURDIR}/files
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME:S/$/build_/}${PORTVERSION:S/$/_exp/}
 
 UNITPREFIX=    		unit-
 UNITEXTRACT_SUFX=	.tar.gz

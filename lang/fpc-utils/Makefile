@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-utils
 
@@ -15,9 +15,10 @@ COMMENT=	Free Pascal Compiler utils
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		mkxmlrpc:${PORTSDIR}/devel/fpc-fcl \
 		${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
+		${UNITSDIR}/graph/Package.fpc:${PORTSDIR}/graphics/fpc-graph \
 		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
 		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
-		${UNITSDIR}/md5/Package.fpc:${PORTSDIR}/security/fpc-md5 \
+		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash \
 		${UNITSDIR}/mysql/Package.fpc:${PORTSDIR}/databases/fpc-mysql \
 		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
 		${UNITSDIR}/odbc/Package.fpc:${PORTSDIR}/databases/fpc-odbc \
@@ -31,8 +32,8 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${PORTNAME}/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR} ${PORTNAME}/fcl/inc
+WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}
+EXTRACTUNITDIR+=	${WRKUNITDIR} ${FPCSRCDIR}/fcl/inc
 OPT=-CX -Fu../fcl/*
 
 .include "${MASTERDIR}/Makefile"

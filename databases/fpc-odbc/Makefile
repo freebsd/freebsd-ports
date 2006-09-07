@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-odbc
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${PORTNAME}/packages/base/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 HAVE_EXAMPLES=	true
 
