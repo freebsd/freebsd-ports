@@ -42,7 +42,7 @@ HAVE_PERL!=	${WHICH} perl || ${ECHO} nope
 .if ${HAVE_PERL} != "nope"
 PLIST=		${PKGDIR}/pkg-plist.emacs.perl
 .else
-PLIST=		${PKGDIR/pkg-plit.emacs.noperl
+PLIST=		${PKGDIR}/pkg-plit.emacs.noperl
 .endif
 .else
 .if ${HAVE_PERL} != "nope"

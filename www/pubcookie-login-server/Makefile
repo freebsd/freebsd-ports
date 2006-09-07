@@ -83,6 +83,6 @@ Makefile.templates: configure
 	${ECHO_CMD} "# Generated with Makefile.templates target" > Makefile.templates
 	${ECHO_CMD} "LOGIN_TEMPLATES+=" `cd ${WRKSRC} && make -V LOGIN_TEMPLATES | ${SED} -e 's| *./src/login_templates.generic/| |g'` >> Makefile.templates
 	${ECHO_CMD} "LOGIN_IMAGES+=" `cd ${WRKSRC} && make -V LOGIN_IMAGES | ${SED} -e 's| *./src/login_templates.generic/images/| |g'` >> Makefile.templates
-	${CAT{ Makefile.templates
+	${CAT} Makefile.templates
 
 .include <bsd.port.post.mk>

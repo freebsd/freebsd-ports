@@ -153,7 +153,7 @@ pre-install:
 	@if [ ! -d ${TEXMF_TREE}/dvipdfm ]; then \
 	  ${LN} -fs ${TEXMF_TREE}/dvipdfm-teTeX-dist ${TEXMF_TREE}/dvipdfm; \
 	  fi
-	@if [ ! -e $TEXMF_TREE}/web2c/texmf.cnf ]; then \
+	@if [ ! -e ${TEXMF_TREE}/web2c/texmf.cnf ]; then \
 	  ${LN} -fs ${TEXMF_TREE}/web2c/texmf.cnf-teTeX-dist ${TEXMF_TREE}/web2c/texmf.cnf; \
 	  fi
 	@${RM} ${TEXMF_TREE}/ls-R

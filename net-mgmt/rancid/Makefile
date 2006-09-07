@@ -63,7 +63,7 @@ post-install:
 	${ECHO} "       : *** review ${file}.sample for new/deprecated switches or install in place ${file}";  \
 	fi
 .endfor
-	@ if [ -f ${PREFIX}/rancid/$NEWERCONFIG_FILE1} ] ; then \
+	@ if [ -f ${PREFIX}/rancid/${NEWERCONFIG_FILE1} ] ; then \
 	${ECHO} "WARNING: *** ${PREFIX}/rancid/${NEWERCONFIG_FILE1} has been replaced with "; \
 	${ECHO} "       : *** ${PREFIX}/etc/${PORTNAME}/rancid.conf. Merge from sample and old file "; \
 	fi
