@@ -1,5 +1,4 @@
 bin/tkxmlview
-%%SITE_PERL%%/Tk/prereqinst.pl
 %%SITE_PERL%%/Tk/XMLViewer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/XMLViewer/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/XMLViewer
