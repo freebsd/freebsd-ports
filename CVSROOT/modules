@@ -6351,6 +6351,7 @@ linux-libperl5.8	ports/lang/linux-libperl5.8
 linux-libvorbis	ports/audio/linux-libvorbis
 linux-libxml	ports/textproc/linux-libxml
 linux-mbrola	ports/audio/linux-mbrola
+linux-megamgr	ports/sysutils/linux-megamgr
 linux-mozilla	ports/www/linux-mozilla
 linux-mplayer-plugin	ports/www/linux-mplayer-plugin
 linux-nvu	ports/www/linux-nvu
