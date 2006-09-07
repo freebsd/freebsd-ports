@@ -4,6 +4,7 @@
     COMMENT = Scientific ports
 
     SUBDIR += 2dhf
+    SUBDIR += InsightToolkit
     SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += at
