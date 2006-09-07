@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fftw/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fftw/fftw_s.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fftw/fftw_s.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fftw/libpfftw_s.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fftw
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
