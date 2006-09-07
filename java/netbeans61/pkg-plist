@@ -508,7 +508,6 @@ netbeans/enterprise2/update_tracking/org-netbeans-modules-websvc-registry.xml
 netbeans/enterprise2/update_tracking/org-netbeans-modules-websvc-websvcapi.xml
 netbeans/enterprise2/update_tracking/org-netbeans-modules-xml-multiview.xml
 netbeans/etc/netbeans.conf
-netbeans/etc/netbeans.conf.orig
 netbeans/harness/README
 netbeans/harness/build.xml
 netbeans/harness/common.xml
