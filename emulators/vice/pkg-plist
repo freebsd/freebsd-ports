@@ -1,4 +1,5 @@
 bin/c1541
+bin/cartconv
 bin/petcat
 bin/vsid
 bin/x128
@@ -13,6 +14,8 @@ bin/xvic
 %%NLS%%share/locale/nl/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/vice.mo
+lib/vice/C128/amiga_sym.vkm
+lib/vice/C128/amiga_pos.vkm
 lib/vice/C128/basic64
 lib/vice/C128/basichi
 lib/vice/C128/basiclo
@@ -47,6 +50,8 @@ lib/vice/C128/win_pos.vkm
 lib/vice/C128/win_sym.vkm
 lib/vice/C128/x11_pos.vkm
 lib/vice/C128/x11_sym.vkm
+lib/vice/C64/amiga_sym.vkm
+lib/vice/C64/amiga_pos.vkm
 lib/vice/C64/basic
 lib/vice/C64/beos_pos.vkm
 lib/vice/C64/beos_sym.vkm
@@ -72,6 +77,8 @@ lib/vice/C64/win_sym_us.vkm
 lib/vice/C64/x11_pos.vkm
 lib/vice/C64/x11_sym.vkm
 lib/vice/CBM-II/amber.vpl
+lib/vice/CBM-II/amiga_bukp.vkm
+lib/vice/CBM-II/amiga_buks.vkm
 lib/vice/CBM-II/basic.128
 lib/vice/CBM-II/basic.256
 lib/vice/CBM-II/basic.500
@@ -115,6 +122,8 @@ lib/vice/DRIVES/dos2040
 lib/vice/DRIVES/dos3040
 lib/vice/DRIVES/dos4040
 lib/vice/PET/amber.vpl
+lib/vice/PET/amiga_bgrs.vkm
+lib/vice/PET/amiga_buks.vkm
 lib/vice/PET/basic1
 lib/vice/PET/basic2
 lib/vice/PET/basic4
@@ -151,6 +160,8 @@ lib/vice/PET/x11_bgrs.vkm
 lib/vice/PET/x11_buks.vkm
 lib/vice/PLUS4/3plus1hi
 lib/vice/PLUS4/3plus1lo
+lib/vice/PLUS4/amiga_sym.vkm
+lib/vice/PLUS4/amiga_pos.vkm
 lib/vice/PLUS4/basic
 lib/vice/PLUS4/beos_pos.vkm
 lib/vice/PLUS4/beos_sym.vkm
@@ -170,6 +181,8 @@ lib/vice/PRINTER/nl10-cbm
 lib/vice/PRINTER/mps801
 lib/vice/PRINTER/mps803
 lib/vice/PRINTER/mps803.vpl
+lib/vice/VIC20/amiga_sym.vkm
+lib/vice/VIC20/amiga_pos.vkm
 lib/vice/VIC20/basic
 lib/vice/VIC20/beos_pos.vkm
 lib/vice/VIC20/beos_sym.vkm
@@ -191,7 +204,7 @@ lib/vice/fonts/vice-cbm.pcf
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/MSDOS-Ethernet-Howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/MSDOS-Howto.txt
-%%PORTDOCS%%%%DOCSDIR%%/MinixVmd-Howto.txt
+%%PORTDOCS%%%%DOCSDIR%%/Minix-Howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/NLS-Howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/PETdoc.txt
@@ -201,6 +214,8 @@ lib/vice/fonts/vice-cbm.pcf
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/Walkthrough-Howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/Win32-Howto.txt
+%%PORTDOCS%%%%DOCSDIR%%/amigaos.html
+%%PORTDOCS%%%%DOCSDIR%%/cartconv.txt
 %%PORTDOCS%%%%DOCSDIR%%/cbm_basic_tokens.txt
 %%PORTDOCS%%%%DOCSDIR%%/drive_info.txt
 %%PORTDOCS%%%%DOCSDIR%%/iec-bus.txt
@@ -208,6 +223,7 @@ lib/vice/fonts/vice-cbm.pcf
 %%PORTDOCS%%%%DOCSDIR%%/mon.txt
 %%PORTDOCS%%%%DOCSDIR%%/new.gif
 %%PORTDOCS%%%%DOCSDIR%%/serial.txt
+%%PORTDOCS%%%%DOCSDIR%%/solaris.html
 %%PORTDOCS%%%%DOCSDIR%%/vice_1.html
 %%PORTDOCS%%%%DOCSDIR%%/vice_10.html
 %%PORTDOCS%%%%DOCSDIR%%/vice_11.html
