@@ -1,6 +1,15 @@
---- configure.orig	Wed Apr 26 09:44:09 2006
-+++ configure	Wed Apr 26 09:44:09 2006
-@@ -20525,7 +20525,7 @@
+--- configure.orig	Thu Sep  7 08:18:30 2006
++++ configure	Thu Sep  7 08:19:44 2006
+@@ -1651,7 +1651,7 @@
+   else
+     test ".$ax_enable_builddir" = "."  && ax_enable_builddir="."
+     test ".$ax_enable_builddir" = ".no"  && ax_enable_builddir="."
+-    test ".$BUILD" = "." && BUILD=`uname -msr | tr " /" "__"`.d
++    test ".$BUILD" = "." && BUILD=./build
+     test ".$ax_enable_builddir" = ".yes" && ax_enable_builddir="$BUILD"
+     if test ".$ax_enable_builddir" != ".." ; then    # we know where to go and
+       { if $as_mkdir_p; then
+@@ -19477,7 +19477,7 @@
    if test "_$MICRO_VERSION" = "_" ; then MICRO_VERSION="0" ; fi
    if test "_$MINOR_VERSION" = "_" ; then MINOR_VERSION="$MAJOR_VERSION" ; MAJOR_VERSION="0" ; fi
    MINOR_VERSION=`echo "$MINOR_VERSION" | sed -e 's/[^0-9].*//'`
@@ -9,3 +18,12 @@
    VERSION_INFO="-version-info $MINOR_VERSION:$MICRO_VERSION"
  echo "$as_me:$LINENO: result: /$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&5
  echo "${ECHO_T}/$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&6
+@@ -25249,7 +25249,7 @@
+ _EOF
+     test ".$USE_MAINTAINER_MODE" = ".no" || \
+   	cp "$tmp/conftemp.sed" "$ac_top_srcdir/makefile.sed~"            ## DEBUGGING
+-    echo 'BUILD=`uname -msr | tr " /" "__"`.d' >$ac_top_srcdir/Makefile
++    echo 'BUILD=./build' >$ac_top_srcdir/Makefile
+     echo 'ISNOTSRCDIR=test ! -f configure' >>$ac_top_srcdir/Makefile
+     $ax_enable_builddir_sed -f $tmp/conftemp.sed Makefile >>$ac_top_srcdir/Makefile
+     echo 'done: ;@ if grep "$(RULE)-done .*:" Makefile > /dev/null; then     echo $(MAKE) $(RULE)-done ; $(MAKE) $(RULE)-done ; else true ; fi'     >> $ac_top_srcdir/Makefile
