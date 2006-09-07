@@ -10,6 +10,7 @@
     SUBDIR += bind9
     SUBDIR += bind9-dlz
     SUBDIR += bind9-sdb-ldap
+    SUBDIR += c-ares
     SUBDIR += checkdns
     SUBDIR += crossip
     SUBDIR += ddclient
