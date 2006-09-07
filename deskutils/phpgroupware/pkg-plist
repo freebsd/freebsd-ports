@@ -2750,6 +2750,7 @@ www/data-dist/phpgroupware/filemanager/setup/phpgw_es.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_it.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_ja.lang
+www/data-dist/phpgroupware/filemanager/setup/phpgw_nl.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_pt.lang
 www/data-dist/phpgroupware/filemanager/setup/phpgw_sv.lang
@@ -7681,6 +7682,7 @@ www/data-dist/phpgroupware/stocks/preferences.php
 www/data-dist/phpgroupware/stocks/preferences_edit.php
 www/data-dist/phpgroupware/stocks/setup/phpgw_de.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_en.lang
+www/data-dist/phpgroupware/stocks/setup/phpgw_es.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_it.lang
