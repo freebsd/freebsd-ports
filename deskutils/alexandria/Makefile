@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alexandria
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.1
 PORTREVISION=	2
 CATEGORIES=	deskutils ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
@@ -24,18 +24,14 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/amazon.rb:${PORTSDIR}/www/ruby-amazon \
 		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
+INSTALLS_OMF=	yes
 USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-DOCS=		NEWS README TODO
-
 RUBY_REQUIRE=	Ruby > 180
+CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
 .include <bsd.port.pre.mk>
 
@@ -44,11 +40,6 @@ IGNORE=		only works with Ruby 1.8.0 or later
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.endif
+	${RM} ${PREFIX}/share/gnome/help/alexandria/ChangeLog
 
 .include <bsd.port.post.mk>
