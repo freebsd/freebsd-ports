@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gphotofs
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	graphics sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -22,6 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 USE_BZIP2=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/gphotofs
 
 .include <bsd.port.pre.mk>
 
