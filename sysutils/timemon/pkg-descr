@@ -1,0 +1,5 @@
+TimeMon gives a graphical representation of where the CPU cycles
+are going. It's coarse, but better than nothing. The best feature
+is that it runs in an icon on your dock, so that you never lose it.
+
+WWW: http://www.nongnu.org/gap/timemon/index.html

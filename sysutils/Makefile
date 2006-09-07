@@ -582,6 +582,7 @@
     SUBDIR += throttle
     SUBDIR += ticker.app
     SUBDIR += timelimit
+    SUBDIR += timemon
     SUBDIR += tinybsd
     SUBDIR += titlefix
     SUBDIR += tmpreaper

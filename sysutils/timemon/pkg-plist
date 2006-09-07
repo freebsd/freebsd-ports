@@ -1,0 +1,15 @@
+System/Applications/TimeMon.app/Resources/Info-gnustep.plist
+System/Applications/TimeMon.app/Resources/README.rtf
+System/Applications/TimeMon.app/Resources/TimeMon.desktop
+System/Applications/TimeMon.app/Resources/TimeMon.gorm/data.classes
+System/Applications/TimeMon.app/Resources/TimeMon.gorm/data.info
+System/Applications/TimeMon.app/Resources/TimeMon.gorm/icon.png
+System/Applications/TimeMon.app/Resources/TimeMon.gorm/objects.gorm
+System/Applications/TimeMon.app/Resources/TimeMon.tiff
+System/Applications/TimeMon.app/Resources/TimeMonP.tiff
+System/Applications/TimeMon.app/TimeMon
+System/Applications/TimeMon.app/library_paths.openapp
+System/Applications/TimeMon.app/stamp.make
+@dirrm System/Applications/TimeMon.app/Resources/TimeMon.gorm
+@dirrm System/Applications/TimeMon.app/Resources
+@dirrm System/Applications/TimeMon.app
