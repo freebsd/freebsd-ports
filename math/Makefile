@@ -320,6 +320,7 @@
     SUBDIR += spooles
     SUBDIR += spooles-mpich
     SUBDIR += ss
+    SUBDIR += stepulator
     SUBDIR += superlu
     SUBDIR += superlu_mt
     SUBDIR += surf
