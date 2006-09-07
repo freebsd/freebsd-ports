@@ -8,7 +8,7 @@
 PORTNAME=	aluminumalloy
 PORTVERSION?=	2004.01.04
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.users.monornet.hu/linux/files/
+MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX?=	${TYPE}-
 PKGNAMESUFFIX?=	-${FLAVOR}-theme
 DISTNAME=	aa_${FLAVOR}
