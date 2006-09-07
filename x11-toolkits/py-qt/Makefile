@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the Qt toolkit
 
 LIB_DEPENDS=	qscintilla.6:${PORTSDIR}/x11-toolkits/qscintilla

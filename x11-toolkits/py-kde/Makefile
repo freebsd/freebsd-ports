@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyKDE-snapshot20060422
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Bindings for KDE3
 
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt

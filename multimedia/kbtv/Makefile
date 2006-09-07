@@ -11,7 +11,7 @@ CATEGORIES=	multimedia python kde
 MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE TV viewer for FreeBSD
 
 RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde

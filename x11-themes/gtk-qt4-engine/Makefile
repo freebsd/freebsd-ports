@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://people.freedesktop.org/~davidsansome/ \
 		http://freebsd.ricin.com/ports/distfiles/
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-QT Theme Engine allows GTK2 apps to use QT (KDE) themes
 
 LIB_DEPENDS=	kdecore:${PORTSDIR}/x11/kdelibs3
