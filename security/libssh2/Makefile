@@ -7,6 +7,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	A library implementing the SSH2 protocol
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/libssh2.h \
 		include/libssh2_publickey.h \
