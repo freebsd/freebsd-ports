@@ -22,7 +22,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		File::RsyncP.3 \
 		File::RsyncP::Digest.3 \
-		FILe::RsyncP::FileIO.3 \
+		File::RsyncP::FileIO.3 \
 		File::RsyncP::FileList.3
 
 .include <bsd.port.pre.mk>
