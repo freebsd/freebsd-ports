@@ -2147,6 +2147,7 @@ ecu		ports/comms/ecu
 ed2k		ports/net-p2p/ed2k
 edb		ports/databases/edb
 ede		ports/x11-wm/ede
+edenmath	ports/math/edenmath
 edith		ports/editors/edith
 editss		ports/games/editss
 edje		ports/graphics/edje
