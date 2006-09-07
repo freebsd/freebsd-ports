@@ -2460,3 +2460,4 @@ net/asterisk-devel||2006-09-02|Port was not currently useful; may return later
 devel/p5-Linux-Pid||2006-09-03|Was a p5-Apache-SizeLimit dependency, now removed
 www/mozilla-devel|www/seamonkey|2006-09-03|Security vulnerabilities
 textproc/p5-Text-SwiftTemplate||2006-09-04|unfetchable, removed
+security/fpc-md5|security/fpc-hash|2006-09-07|Port was renamed
