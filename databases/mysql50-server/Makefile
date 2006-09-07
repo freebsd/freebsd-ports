@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.24
+PORTVERSION=	5.0.24a
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -54,6 +54,9 @@ CONFIGURE_ARGS+=--without-innodb
 .endif
 .if defined(WITH_ARCHIVE)
 CONFIGURE_ARGS+=--with-archive-storage-engine
+.endif
+.if defined(WITH_CSV)
+CONFIGURE_ARGS+=--with-csv-storage-engine
 .endif
 .if defined(WITH_FEDERATED)
 CONFIGURE_ARGS+=--with-federated-storage-engine
@@ -144,6 +147,7 @@ pre-fetch:
 	@${ECHO} "				(use it if you need even more speed)."
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} "	WITH_ARCHIVE=yes	Enable support for Archive Storage Engine."
+	@${ECHO} "	WITH_CSV=yes		Enable support for CSV Storage Engine."
 	@${ECHO} "	WITH_FEDERATED=yes	Enable support for Federated Storage Engine."
 	@${ECHO} "	WITH_NDB=yes		Enable support for NDB Cluster."
 	@${ECHO} ""
