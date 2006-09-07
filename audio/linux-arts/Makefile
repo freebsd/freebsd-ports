@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		arts
-DISTVERSION=		1.5.2-0.1.fc4
-PORTREVISION=		1
+DISTVERSION=		1.5.3-0.1.fc4
 CATEGORIES=		audio kde linux
 
 MAINTAINER=		jylefort@FreeBSD.org
