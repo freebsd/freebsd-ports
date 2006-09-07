@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	Test-Strict
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Test
+MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Test and report on use strict/warnings coverage
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/Cover.pm:${PORTSDIR}/devel/p5-Devel-Cover
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Devel-Cover>=0.43:${PORTSDIR}/devel/p5-Devel-Cover
 
 PERL_CONFIGURE=	yes
 
