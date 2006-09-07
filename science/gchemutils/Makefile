@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,9 +22,13 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libglade2 libgnomeprintui libgnomeui
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+
+MAN1=		gchem3d-viewer.1 gchemcalc.1 gchemtable.1
+MAN3=		libgcu.3
 
 OPTIONS=	MOZILLA "Build mozilla plugin" off
 
