@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpgraph.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/libpggigraph.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
