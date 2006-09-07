@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk
 
@@ -22,14 +22,9 @@ USE_GNOME=	gtk12
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
-WRKUNITDIR=	${PORTNAME}/packages/extra/${PKGNAMESUFFIX:S/-//}
+WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 HAVE_EXAMPLES=	true
 OPT=-CX -Fu${WRKDIR}/${WRKUNITDIR}/*
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|gtk12|gtk-12|g' ${WRKDIR}/${WRKUNITDIR}/gtk/gtk.pp
-	@${REINPLACE_CMD} -e 's|glib12|glib-12|g' ${WRKDIR}/${WRKUNITDIR}/glib/glib.pp
-	@${REINPLACE_CMD} -e 's|gdk12|gdk-12|g' ${WRKDIR}/${WRKUNITDIR}/gdk/gdk.pp
 
 .include "${MASTERDIR}/Makefile"

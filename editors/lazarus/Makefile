@@ -7,11 +7,12 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.16
+PORTREVISION=	1
 CATEGORIES=	devel editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION:S/$/-0/}${EXTRACT_SUFX} \
-		fpc-${FPC_MINVER:S/$/.source/}${EXTRACT_SUFX}
+		fpcbuild-${FPC_MINVER}${EXTRACT_SUFX}
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
@@ -28,23 +29,25 @@ USE_GNOME=	gtk12 gdkpixbuf
 USE_GMAKE=	yes
 
 MAKE_ENV=	OPT="-Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${X11BASE}/lib"
-EXTRACT_AFTER_ARGS=	| ${TAR} xf - fpc/fcl/image fpc/fcl/inc lazarus
+EXTRACT_AFTER_ARGS=	| ${TAR} xf - ${FPCSRCDIR}/fcl/image ${FPCSRCDIR}/fcl/inc lazarus
+FPCSRCDIR=	fpcbuild_${FPC_MINVER:S/$/_exp/}/fpcsrc
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 BUILDNAME=	${ARCH}-freebsd
-FPC_MINVER=	2.0.2
+FPC_MINVER=	2.0.4
 UNITSDIR=	${LOCALBASE}/lib/fpc/${FPC_MINVER}/units/${BUILDNAME}
-BASE_UNITS=	GDBINT IBASE LIBASYNC MD5 MYSQL NETDB ODBC ORACLE \
+BASE_UNITS=	GDBINT GRAPH IBASE LIBASYNC HASH MYSQL NETDB ODBC ORACLE \
 		PASJPEG PASZLIB PTHREADS POSTGRES REGEXPR SQLITE
-ALL_UNITS=	${BASE_UNITS} BFD FCL FORMS FPGTK FV GCONF GDBM GGI GNOME GTK GTK2 \
+ALL_UNITS=	${BASE_UNITS} BFD FCL FFTW FORMS FPGTK FV GCONF GDBM GGI GNOME GTK GTK2 \
 		IMLIB LIBGD LIBPNG NCURSES OPENGL SVGALIB \
 		SYSLOG TCL UNZIP UTMP X11 ZLIB ZVT
 
 # Base units
 GDBINT_UNIT=	devel/fpc-gdbint
+GRAPH_UNIT=	graphics/fpc-graph
 IBASE_UNIT=	databases/fpc-ibase
 LIBASYNC_UNIT=	net/fpc-libasync
-MD5_UNIT=	security/fpc-md5
+HASH_UNIT=	security/fpc-hash
 MYSQL_UNIT=	databases/fpc-mysql
 NETDB_UNIT=	net/fpc-netdb
 ODBC_UNIT=	databases/fpc-odbc
@@ -59,6 +62,7 @@ SQLITE_UNIT=	databases/fpc-sqlite
 # Extra units
 BFD_UNIT=	devel/fpc-bfd
 FCL_UNIT=	devel/fpc-fcl
+FFTW_UNIT=	math/fpc-fftw
 FORMS_UNIT=	x11-toolkits/fpc-forms
 FPGTK_UNIT=	graphics/fpc-fpgtk
 FV_UNIT=	devel/fpc-fv
@@ -89,9 +93,9 @@ BUILD_DEPENDS+=	${UNITSDIR}/${OPT:L}/Package.fpc:${PORTSDIR}/${${OPT}_UNIT}
 .endfor
 
 post-extract:
-	${CP} ${WRKDIR}/fpc/fcl/inc/zstream.pp ${WRKSRC}/lcl && \
-		${CP} ${WRKDIR}/fpc/fcl/image/fpreadpng.pp \
-			${WRKDIR}/fpc/fcl/image/fpwritepng.pp ${WRKSRC}/lcl
+	${CP} ${WRKDIR}/${FPCSRCDIR}/fcl/inc/zstream.pp ${WRKSRC}/lcl && \
+		${CP} ${WRKDIR}/${FPCSRCDIR}/fcl/image/fpreadpng.pp \
+			${WRKDIR}/${FPCSRCDIR}/fcl/image/fpwritepng.pp ${WRKSRC}/lcl
 
 post-depends:
 .if exists(${LOCALBASE}/bin/fpc)

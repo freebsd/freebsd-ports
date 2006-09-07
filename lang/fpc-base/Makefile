@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	lang
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	fpc-
@@ -17,9 +17,10 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Meta package to install all of the Free Pascal base
 
 RUN_DEPENDS=	${UNITSDIR}/gdbint/Package.fpc:${PORTSDIR}/devel/fpc-gdbint \
+		${UNITSDIR}/graph/Package.fpc:${PORTSDIR}/graphics/fpc-graph \
 		${UNITSDIR}/ibase/Package.fpc:${PORTSDIR}/databases/fpc-ibase \
 		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
-		${UNITSDIR}/md5/Package.fpc:${PORTSDIR}/security/fpc-md5 \
+		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash \
 		${UNITSDIR}/mysql/Package.fpc:${PORTSDIR}/databases/fpc-mysql \
 		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
 		${UNITSDIR}/odbc/Package.fpc:${PORTSDIR}/databases/fpc-odbc \
