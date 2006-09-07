@@ -1,12 +1,13 @@
+@comment $FreeBSD$
 etc/apache/jserv/jserv.conf
 etc/apache/jserv/jserv.properties
 etc/apache/jserv/zone.properties
-share/java/classes/ApacheJServ.jar
+%%JAVAJARDIR%%/ApacheJServ.jar
 libexec/apache/mod_jserv.so
-share/java/servlets/Hello.class
-share/java/servlets/Hello.java
-share/java/servlets/IsItWorking.class
-share/java/servlets/IsItWorking.java
+%%JAVASHAREDIR%%/servlets/Hello.class
+%%JAVASHAREDIR%%/servlets/Hello.java
+%%JAVASHAREDIR%%/servlets/IsItWorking.class
+%%JAVASHAREDIR%%/servlets/IsItWorking.java
 share/doc/mod_jserv/api/org/apache/java/io/SimpleFileFilter.html
 share/doc/mod_jserv/api/org/apache/java/io/package-tree.html
 share/doc/mod_jserv/api/org/apache/java/io/package-frame.html
