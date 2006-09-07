@@ -8,7 +8,7 @@
 PORTNAME=	longhorninspirat
 PORTVERSION=	1.0
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.users.monornet.hu/linux/files/
+MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX=	${TYPE}-
 PKGNAMESUFFIX=	-theme
 DISTNAME=	Longhorn_Inspirat
