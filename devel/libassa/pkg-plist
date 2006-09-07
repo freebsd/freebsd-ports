@@ -1,4 +1,5 @@
 bin/assa-genesis
+bin/assa-hexdump
 include/assa-%%ASSA_VERSION%%/assa/Acceptor.h
 include/assa-%%ASSA_VERSION%%/assa/Address.h
 include/assa-%%ASSA_VERSION%%/assa/Assa.h
@@ -60,8 +61,6 @@ lib/libassa-%%ASSA_VERSION%%.a
 lib/libassa-%%ASSA_VERSION%%.la
 lib/libassa-%%ASSA_VERSION%%.so
 lib/libassa-%%ASSA_VERSION%%.so.4
-@comment For non-standard prefixes
-@unexec rm -f %D/libdata/ldconfig/libassa 2>/dev/null || true
 libdata/pkgconfig/assa-%%ASSA_VERSION%%.pc
 @dirrm include/assa-%%ASSA_VERSION%%/assa
 @dirrm include/assa-%%ASSA_VERSION%%

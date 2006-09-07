@@ -1,10 +1,10 @@
---- assa/Address.h.orig	Thu Jan 29 00:58:13 2004
-+++ assa/Address.h	Thu Jan 29 01:11:14 2004
-@@ -12,7 +12,6 @@
- #ifndef ADDRESS_H
+--- assa/Address.h.orig	Wed Sep  6 16:13:45 2006
++++ assa/Address.h	Wed Sep  6 16:13:57 2006
+@@ -13,7 +13,6 @@
  #define ADDRESS_H
  
--#include <netinet/in.h>
- #include <netdb.h>
- #include <sys/types.h>
- #include <sys/socket.h>
+ #if !defined (WIN32)
+-#  include <netinet/in.h>
+ #  include <netdb.h>
+ #  include <sys/types.h>
+ #  include <sys/socket.h>

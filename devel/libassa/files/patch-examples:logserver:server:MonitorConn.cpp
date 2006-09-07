@@ -1,12 +1,11 @@
---- examples/logserver/server/MonitorConn.cpp.orig	Thu Jan 29 08:53:46 2004
-+++ examples/logserver/server/MonitorConn.cpp	Thu Jan 29 08:54:16 2004
-@@ -19,6 +19,9 @@
- #include "Conn.h"
+--- examples/logserver/server/MonitorConn.cpp.orig	Thu Jul 20 10:30:55 2006
++++ examples/logserver/server/MonitorConn.cpp	Thu Sep  7 16:18:01 2006
+@@ -20,6 +20,8 @@
  #include "LogServer-main.h"
  #include "LogServer.h"
+ 
 +#include <algorithm>
 +
-+using namespace std;
- 
  /** Convert user input to upper case
   */
+ template <class T>

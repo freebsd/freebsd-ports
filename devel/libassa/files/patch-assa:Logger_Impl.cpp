@@ -1,10 +1,10 @@
---- assa/Logger_Impl.cpp.orig	Thu Jan 29 01:12:05 2004
-+++ assa/Logger_Impl.cpp	Thu Jan 29 01:12:37 2004
+--- assa/Logger_Impl.cpp.orig	Thu Jul 20 06:30:54 2006
++++ assa/Logger_Impl.cpp	Wed Sep  6 16:20:05 2006
 @@ -14,6 +14,7 @@
  
  #include <iostream>
  #include <iomanip>
 +#include <cstdio>
+ #include <string.h>				// strerror(3)
  
  #include "assa/TimeVal.h"
- #include "assa/Logger_Impl.h"
