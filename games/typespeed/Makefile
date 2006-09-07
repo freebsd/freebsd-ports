@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	typespeed
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	http://tobias.eyedacor.org/typespeed/ \
 		http://critical.ch/distfiles/ \
