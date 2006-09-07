@@ -2726,6 +2726,7 @@ fpc-gnome	ports/x11-toolkits/fpc-gnome
 fpc-graph	ports/graphics/fpc-graph
 fpc-gtk		ports/x11-toolkits/fpc-gtk
 fpc-gtk2	ports/x11-toolkits/fpc-gtk2
+fpc-hash	ports/security/fpc-hash
 fpc-ibase	ports/databases/fpc-ibase
 fpc-ide		ports/editors/fpc-ide
 fpc-imlib	ports/graphics/fpc-imlib
