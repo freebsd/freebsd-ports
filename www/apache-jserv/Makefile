@@ -15,21 +15,19 @@ DISTNAME=	ApacheJServ-${PORTVERSION}
 MAINTAINER=	greg@greg.rim.or.jp
 COMMENT=	Loadable servlet module for apache
 
-USE_JAVA=	1.1+
-NEED_JAVAC=	yes
+USE_JAVA=	yes
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apachectl:${PORTSDIR}/${APACHE_PORT}\
-		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper\
+		${JAVALIBDIR}/jsdk.jar:${PORTSDIR}/java/jsdk
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper\
 		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/${APACHE_PORT}\
-		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
+		${JAVALIBDIR}/jsdk.jar:${PORTSDIR}/java/jsdk
 
 USE_GMAKE=	yes
 GMAKE=		${LOCALBASE}/bin/gmake # Must have the full path.
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 APACHE_COMPAT=	yes
-JAVAVM?=	${LOCALBASE}/bin/javavm
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--prefix=${PREFIX}\
 		--libexecdir=${LOCALBASE}/libexec/apache\
@@ -38,19 +36,16 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}\
 		--sysconfdir=${PREFIX}/etc/apache\
 		--with-apxs=${APXS}\
 		--with-jdk-home=${JAVA_HOME}\
-		--with-JSDK=${LOCALBASE}/share/java/classes/jsdk.jar\
+		--with-JSDK=${JAVALIBDIR}/jsdk.jar\
 		--with-java=${JAVA}\
 		--with-javac=${JAVAC}\
-		--with-servlets=${PREFIX}/share/java/servlets\
+		--with-servlets=${JAVASHAREDIR}/servlets\
 		--with-gnu-ld\
 		--enable-compressed-jar\
 		--enable-EAPI
-.if defined (WITH_JIKES)
+.if defined (HAVE_JIKES)
 CONFIGURE_ARGS+=--with-javac=${LOCALBASE}/bin/jikes
 .endif
-
-pre-install:
-	${MKDIR} ${PREFIX}/share/java/classes
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
