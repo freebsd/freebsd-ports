@@ -9,7 +9,6 @@ PORTNAME=	data
 PORTVERSION=	0.12
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/
 MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
 		http://mirrors-av.club-internet.fr/pub/games/nofrag/warsow/ \
 		http://kenh.rxvt.net/ \
