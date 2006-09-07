@@ -118,6 +118,7 @@
     SUBDIR += find_ddos
     SUBDIR += firewalk
     SUBDIR += flawfinder
+    SUBDIR += fpc-hash
     SUBDIR += fpc-md5
     SUBDIR += fpm
     SUBDIR += fragroute
