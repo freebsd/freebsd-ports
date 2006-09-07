@@ -522,6 +522,7 @@
     SUBDIR += povray31
     SUBDIR += ppmcaption
     SUBDIR += preview
+    SUBDIR += price
     SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += pstoepsi

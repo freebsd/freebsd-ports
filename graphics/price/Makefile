@@ -1,0 +1,27 @@
+# New ports collection makefile for:    price.app
+# Date created:         28 Aug 2006
+# Whom:                 gurkan@linuks.mine.nu
+#
+# $FreeBSD$
+#
+
+PORTNAME=	price
+PORTVERSION=	0.8.0
+CATEGORIES=	graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	PRICE-${PORTVERSION}
+
+MAINTAINER=	gurkan@linuks.mine.nu
+COMMENT=	Image filtering and manipulation using GNUstep
+
+WRKSRC=		${WRKDIR}/PRICE
+USE_GMAKE=	yes
+USE_GNUSTEP=	yes
+USE_GNUSTEP_PREFIX=	yes
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+MAKEFILE=	GNUmakefile
+
+.include <bsd.port.mk>
