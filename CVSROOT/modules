@@ -2714,6 +2714,7 @@ fpc-bfd		ports/devel/fpc-bfd
 fpc-devel	ports/lang/fpc-devel
 fpc-docs	ports/lang/fpc-docs
 fpc-fcl		ports/devel/fpc-fcl
+fpc-fftw	ports/math/fpc-fftw
 fpc-forms	ports/x11-toolkits/fpc-forms
 fpc-fpgtk	ports/graphics/fpc-fpgtk
 fpc-fv		ports/devel/fpc-fv
