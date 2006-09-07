@@ -46,6 +46,7 @@
     SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += e
+    SUBDIR += edenmath
     SUBDIR += eispack
     SUBDIR += elmer-mathlibs
     SUBDIR += elmer-umfpack
