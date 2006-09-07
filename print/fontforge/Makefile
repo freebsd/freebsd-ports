@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20060413
+PORTVERSION=	20060822
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fontforge
@@ -28,7 +28,7 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-DOC_VERSION=	20060406
+DOC_VERSION=	20060822
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 .if !defined(NOPORTDOCS)
 DOCFILES+=	${PORTNAME}_ja_htdocs-${DOC_VERSION}.tar.bz2
@@ -57,7 +57,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS} \
 		-I${LOCALBASE}/include/freetype2"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.2+
 
