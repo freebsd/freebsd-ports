@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.14
-PORTREVISION=	1
+PORTVERSION=	0.5.15
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -16,23 +15,23 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Library for keyword extraction
 
+LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
+
 USE_GCC=	3.4+
 USE_GNOME=	glib20
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl:15
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--disable-ltdl-install
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-ltdl-install --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
-
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude libltdl
 
-MAN1=		extract.1
-MAN3=		libextractor.3
+MAN1=	extract.1
+MAN3=	libextractor.3
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
@@ -45,6 +44,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^#ifdef EXV_HAVE_STDINT_H$$|#if EXV_HAVE_STDINT_H|' \
 		${WRKSRC}/src/plugins/exiv2/types.hpp
 
+pre-install:
+	${MKDIR} ${PREFIX}/lib/libextractor
+
 check: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
@@ -56,9 +58,9 @@ LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 
 .if exists(${LOCALBASE}/include/vorbis/vorbisfile.h)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	VORBIS:=""
+PLIST_SUB+=	VORBIS=""
 .else
-PLIST_SUB+=	VORBIS:="@comment "
+PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 patch-autotools::
