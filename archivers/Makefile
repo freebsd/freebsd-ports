@@ -77,6 +77,7 @@
     SUBDIR += parchive
     SUBDIR += pbzip2
     SUBDIR += pear-File_Archive
+    SUBDIR += pecl-rar
     SUBDIR += pecl-zip
     SUBDIR += php4-bz2
     SUBDIR += php4-zlib
