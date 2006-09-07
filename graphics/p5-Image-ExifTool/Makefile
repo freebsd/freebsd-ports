@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	6.29
+PORTVERSION=	6.36
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		${MASTER_SITE_PERL_CPAN}
