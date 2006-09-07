@@ -3,10 +3,10 @@ $FreeBSD$
 
 --- amarok/src/metadata/audible/Makefile.in.orig
 +++ amarok/src/metadata/audible/Makefile.in
-@@ -358,7 +358,7 @@
+@@ -435,7 +435,7 @@
+ xmms_cflags = @xmms_cflags@
  xmms_libs = @xmms_libs@
  SUBDIRS = 
- 
 -INCLUDES = $(all_includes) $(taglib_includes)
 +INCLUDES = -I$(top_srcdir)/amarok/src $(all_includes) $(taglib_includes)
  #>- METASOURCES = AUTO

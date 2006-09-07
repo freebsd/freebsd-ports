@@ -449,6 +449,50 @@ share/apps/amarok/images/wizard_compact.png
 share/apps/amarok/images/wizard_xmms.png
 share/apps/amarok/images/xine_logo.png
 share/apps/amarok/ruby_lib/codes.rb
+share/apps/amarok/ruby_lib/gemconfigure.rb
+share/apps/amarok/ruby_lib/http11.rb
+share/apps/amarok/ruby_lib/libhttp11.a
+share/apps/amarok/ruby_lib/libhttp11.la
+share/apps/amarok/ruby_lib/libhttp11.so
+share/apps/amarok/ruby_lib/libhttp11.so.0
+share/apps/amarok/ruby_lib/mongrel.rb
+share/apps/amarok/ruby_lib/rubygems.rb
+share/apps/amarok/ruby_lib/mongrel/cgi.rb
+share/apps/amarok/ruby_lib/mongrel/command.rb
+share/apps/amarok/ruby_lib/mongrel/configurator.rb
+share/apps/amarok/ruby_lib/mongrel/debug.rb
+share/apps/amarok/ruby_lib/mongrel/handlers.rb
+share/apps/amarok/ruby_lib/mongrel/init.rb
+share/apps/amarok/ruby_lib/mongrel/stats.rb
+share/apps/amarok/ruby_lib/mongrel/tcphack.rb
+share/apps/amarok/ruby_lib/rbconfig/datadir.rb
+share/apps/amarok/ruby_lib/rubygems/._gem_commands.rb
+share/apps/amarok/ruby_lib/rubygems/builder.rb
+share/apps/amarok/ruby_lib/rubygems/cmd_manager.rb
+share/apps/amarok/ruby_lib/rubygems/command.rb
+share/apps/amarok/ruby_lib/rubygems/config_file.rb
+share/apps/amarok/ruby_lib/rubygems/custom_require.rb
+share/apps/amarok/ruby_lib/rubygems/dependency_list.rb
+share/apps/amarok/ruby_lib/rubygems/doc_manager.rb
+share/apps/amarok/ruby_lib/rubygems/format.rb
+share/apps/amarok/ruby_lib/rubygems/gem_commands.rb
+share/apps/amarok/ruby_lib/rubygems/gem_openssl.rb
+share/apps/amarok/ruby_lib/rubygems/gem_runner.rb
+share/apps/amarok/ruby_lib/rubygems/incremental_fetcher.rb
+share/apps/amarok/ruby_lib/rubygems/installer.rb
+share/apps/amarok/ruby_lib/rubygems/loadpath_manager.rb
+share/apps/amarok/ruby_lib/rubygems/old_format.rb
+share/apps/amarok/ruby_lib/rubygems/open-uri.rb
+share/apps/amarok/ruby_lib/rubygems/package.rb
+share/apps/amarok/ruby_lib/rubygems/remote_installer.rb
+share/apps/amarok/ruby_lib/rubygems/rubygems_version.rb
+share/apps/amarok/ruby_lib/rubygems/security.rb
+share/apps/amarok/ruby_lib/rubygems/source_index.rb
+share/apps/amarok/ruby_lib/rubygems/specification.rb
+share/apps/amarok/ruby_lib/rubygems/timer.rb
+share/apps/amarok/ruby_lib/rubygems/user_interaction.rb
+share/apps/amarok/ruby_lib/rubygems/validator.rb
+share/apps/amarok/ruby_lib/rubygems/version.rb
 share/apps/amarok/scripts/common/Publisher.py
 share/apps/amarok/scripts/common/Zeroconf.py
 share/apps/amarok/scripts/lyrics_astraweb/COPYING
@@ -915,6 +959,7 @@ share/icons/hicolor/32x32/apps/amarok.png
 share/icons/hicolor/48x48/apps/amarok.png
 share/icons/hicolor/64x64/apps/amarok.png
 share/locale/af/LC_MESSAGES/amarok.mo
+share/locale/ar/LC_MESSAGES/amarok.mo
 share/locale/az/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok.mo
 share/locale/br/LC_MESSAGES/amarok.mo
@@ -1037,6 +1082,9 @@ share/servicetypes/amarok_plugin.desktop
 @dirrm share/apps/amarok/scripts/lyrics_astraweb
 @dirrm share/apps/amarok/scripts/common
 @dirrm share/apps/amarok/scripts
+@dirrm share/apps/amarok/ruby_lib/rubygems
+@dirrm share/apps/amarok/ruby_lib/rbconfig
+@dirrm share/apps/amarok/ruby_lib/mongrel
 @dirrm share/apps/amarok/ruby_lib
 @dirrm share/apps/amarok/images
 @dirrm share/apps/amarok/icons/crystalsvg/64x64/actions
