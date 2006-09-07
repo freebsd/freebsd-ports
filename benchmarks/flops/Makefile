@@ -8,7 +8,7 @@
 PORTNAME=	flops
 PORTVERSION=	2.0
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.nosc.mil/pub/aburto/flops/
+MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTFILES=	${PORTNAME}.c ${PORTNAME}.doc
 
 MAINTAINER=	danfe@FreeBSD.org
