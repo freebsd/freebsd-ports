@@ -129,6 +129,7 @@
     SUBDIR += fnlib
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-ggi
+    SUBDIR += fpc-graph
     SUBDIR += fpc-imlib
     SUBDIR += fpc-libgd
     SUBDIR += fpc-libpng
