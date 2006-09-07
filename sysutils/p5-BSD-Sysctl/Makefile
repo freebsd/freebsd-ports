@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	Fetch sysctl values from BSD-like systems
 
+NOT_FOR_ARCHS=	amd64
+NOT_FOR_ARCHS_REASON_amd64=	lack of machine/bootinfo.h to compile
+
 PERL_CONFIGURE=	yes
 
 MAN3=		BSD::Sysctl.3
