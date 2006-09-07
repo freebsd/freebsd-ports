@@ -1,0 +1,65 @@
+Local/Applications/PRICE.app/PRICE
+Local/Applications/PRICE.app/Resources/BriCon.gorm/data.classes
+Local/Applications/PRICE.app/Resources/BriCon.gorm/data.info
+Local/Applications/PRICE.app/Resources/BriCon.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Convolve55.gorm/data.classes
+Local/Applications/PRICE.app/Resources/Convolve55.gorm/data.info
+Local/Applications/PRICE.app/Resources/Convolve55.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Crop.gorm/data.classes
+Local/Applications/PRICE.app/Resources/Crop.gorm/data.info
+Local/Applications/PRICE.app/Resources/Crop.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/CumulHistogram.gorm/data.classes
+Local/Applications/PRICE.app/Resources/CumulHistogram.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm/data.classes
+Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm/data.info
+Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/DFTHighPass.gorm/data.classes
+Local/Applications/PRICE.app/Resources/DFTHighPass.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/DFTLowPass.gorm/data.classes
+Local/Applications/PRICE.app/Resources/DFTLowPass.gorm/data.info
+Local/Applications/PRICE.app/Resources/DFTLowPass.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Equalize.gorm/data.classes
+Local/Applications/PRICE.app/Resources/Equalize.gorm/data.info
+Local/Applications/PRICE.app/Resources/Equalize.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Histogram.gorm/data.classes
+Local/Applications/PRICE.app/Resources/Histogram.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Info-gnustep.plist
+Local/Applications/PRICE.app/Resources/MainMenu.gorm/data.classes
+Local/Applications/PRICE.app/Resources/MainMenu.gorm/data.info
+Local/Applications/PRICE.app/Resources/MainMenu.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Median.gorm/data.classes
+Local/Applications/PRICE.app/Resources/Median.gorm/data.info
+Local/Applications/PRICE.app/Resources/Median.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/PRICE.desktop
+Local/Applications/PRICE.app/Resources/PRWindow.gorm/data.classes
+Local/Applications/PRICE.app/Resources/PRWindow.gorm/data.info
+Local/Applications/PRICE.app/Resources/PRWindow.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/ProgressPanel.gorm/data.classes
+Local/Applications/PRICE.app/Resources/ProgressPanel.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Scale.gorm/data.classes
+Local/Applications/PRICE.app/Resources/Scale.gorm/data.info
+Local/Applications/PRICE.app/Resources/Scale.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/TraceEdges.gorm/data.classes
+Local/Applications/PRICE.app/Resources/TraceEdges.gorm/data.info
+Local/Applications/PRICE.app/Resources/TraceEdges.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/price-icon-os.tiff
+Local/Applications/PRICE.app/library_paths.openapp
+Local/Applications/PRICE.app/stamp.make
+@dirrm Local/Applications/PRICE.app/Resources/TraceEdges.gorm
+@dirrm Local/Applications/PRICE.app/Resources/Scale.gorm
+@dirrm Local/Applications/PRICE.app/Resources/ProgressPanel.gorm
+@dirrm Local/Applications/PRICE.app/Resources/PRWindow.gorm
+@dirrm Local/Applications/PRICE.app/Resources/Median.gorm
+@dirrm Local/Applications/PRICE.app/Resources/MainMenu.gorm
+@dirrm Local/Applications/PRICE.app/Resources/Histogram.gorm
+@dirrm Local/Applications/PRICE.app/Resources/Equalize.gorm
+@dirrm Local/Applications/PRICE.app/Resources/DFTLowPass.gorm
+@dirrm Local/Applications/PRICE.app/Resources/DFTHighPass.gorm
+@dirrm Local/Applications/PRICE.app/Resources/CustTraceEdges.gorm
+@dirrm Local/Applications/PRICE.app/Resources/CumulHistogram.gorm
+@dirrm Local/Applications/PRICE.app/Resources/Crop.gorm
+@dirrm Local/Applications/PRICE.app/Resources/Convolve55.gorm
+@dirrm Local/Applications/PRICE.app/Resources/BriCon.gorm
+@dirrm Local/Applications/PRICE.app/Resources
+@dirrm Local/Applications/PRICE.app
+@dirrmtry Local/Applications
