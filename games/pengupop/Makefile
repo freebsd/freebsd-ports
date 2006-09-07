@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pengupop
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/
 
