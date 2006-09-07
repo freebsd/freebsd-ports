@@ -96,7 +96,7 @@ run:	aclean rerun
 regression:	run
 	@${ECHO} "Show regression log..."
 	@(cd ${WRKSRC} && diff -u ${FILESDIR}/${REGR_LOG} ${RUN_RESULT}) > ${LOCAL_REGR_LOG}
-	@[ -z ${LOCAL_REGR_LOG ] || ( ${ECHO} "No regression detected"; exit 0 )
+	@[ -z ${LOCAL_REGR_LOG} ] || ( ${ECHO} "No regression detected"; exit 0 )
 	@${ECHO} "Regression log stored at ${LOCAL_REGR_LOG}"
 
 .include <bsd.port.post.mk>
