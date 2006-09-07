@@ -1,7 +1,0 @@
-@comment $FreeBSD$
-bin/cccc
-%%DATADIR%%/cccc_inf.dat
-%%DATADIR%%/cccc_met.dat
-%%DATADIR%%/cccc_tmt.dat
-%%DATADIR%%/cccc_ug.htm
-@dirrm %%DATADIR%%
