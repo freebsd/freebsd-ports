@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	sip-${PORTVERSION}
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
 
 USE_PYTHON=	yes
