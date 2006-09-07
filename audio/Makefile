@@ -325,6 +325,7 @@
     SUBDIR += linux-alsa-lib
     SUBDIR += linux-arts
     SUBDIR += linux-esound
+    SUBDIR += linux-freealut
     SUBDIR += linux-libaudiofile
     SUBDIR += linux-libogg
     SUBDIR += linux-libvorbis
