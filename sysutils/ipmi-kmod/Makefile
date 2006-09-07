@@ -7,6 +7,7 @@
 
 PORTNAME=	ipmi-kmod
 PORTVERSION=	20060418
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dpw.threerings.net/projects/ipmi-kmod/
 
@@ -27,6 +28,12 @@ KMODDIR=	/boot/modules
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+# Don't strip module on amd64 systems to prevent segmentation faults when
+# running kldxref
+.if ${ARCH} == "amd64"
+STRIP=
+.endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
