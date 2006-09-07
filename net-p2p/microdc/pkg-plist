@@ -1,0 +1,3 @@
+bin/microdc
+%%NLS%%share/locale/pl/LC_MESSAGES/microdc.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/microdc.mo
