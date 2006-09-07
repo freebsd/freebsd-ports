@@ -1,0 +1,14 @@
+=============================================================================
+
+For questions or comments regarding this port, please contact the
+port maintainer: bacon@smithers.neuro.mcw.edu
+
+Note that -L%%PREFIX%%/lib/InsightToolkit is necessary in order to
+link to ITK libraries.
+
+The InsightToolkit developers request that users provide some demographic
+data to direct future development. Please visit:
+
+http://www.itk.org/HTML/Download.php.
+
+=============================================================================
