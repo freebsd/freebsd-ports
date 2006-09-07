@@ -1,0 +1,13 @@
+--- configure.orig	Tue Sep  5 13:14:03 2006
++++ configure	Tue Sep  5 13:14:17 2006
+@@ -3738,8 +3738,8 @@
+ if test "$found_openssl" = "no" && test -x "$PKG_CONFIG" && $PKG_CONFIG --exists openssl; then
+   found_openssl=yes
+   pkgcfg_openssl=yes
+-  OPENSSL_LIBLINE=`$PKG_CONFIG --libs openssl`
+-  OPENSSL_INCLINE=`$PKG_CONFIG --variable=includedir openssl`
++  OPENSSL_LIBLINE=-L`$PKG_CONFIG --libs openssl`
++  OPENSSL_INCLINE=-I`$PKG_CONFIG --variable=includedir openssl`
+   echo "$as_me:$LINENO: result: Using paths from pkg-config" >&5
+ echo "${ECHO_T}Using paths from pkg-config" >&6
+ fi
