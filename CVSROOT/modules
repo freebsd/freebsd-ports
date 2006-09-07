@@ -104,6 +104,7 @@ IMHear		ports/security/IMHear
 IPA		ports/graphics/IPA
 IglooFTP	ports/ftp/IglooFTP
 ImageMagick	ports/graphics/ImageMagick
+InsightToolkit	ports/science/InsightToolkit
 KnightCap	ports/games/KnightCap
 L-Breeder	ports/biology/L-Breeder
 LPRng		ports/sysutils/LPRng
