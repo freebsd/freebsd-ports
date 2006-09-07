@@ -20,6 +20,7 @@ EXTRACT_ONLY=	${INSTALLER}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Grid computing toolkit
 
+BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
 INSTALLER=	${DISTNAME}${EXTRACT_SUFX}
@@ -41,12 +42,12 @@ GLOBUS_LOCATION=${TARGETDIR}/${GLOBUS_BASE}
 TMP_GLOBUS_LOCATION=	${WRKDIR}/globus
 TMP_GLOBUS_ENV=	GLOBUS_LOCATION=${TMP_GLOBUS_LOCATION} \
 		GPT_LOCATION=${TMP_GLOBUS_LOCATION} \
-		PATH=${WRKDIR}/tmpbin:${PATH} \
+		PATH=${TMPBINDIR}:${PATH} \
 		LD_LIBRARY_PATH=${TMP_GLOBUS_LOCATION}/lib
+TMPBINDIR=	${WRKDIR}/tmpbin
 
 CONFIGURE_ARGS=	--prefix=${TMP_GLOBUS_LOCATION} ${CONFIGURE_TARGET}
 CONFIGURE_ENV+=	${TMP_GLOBUS_ENV}
-# WARNING: this only works because we do the install ourselves
 MAKE_ENV+=	${TMP_GLOBUS_ENV}
 
 PLIST_SUB+=	BASE_FLAVOR=${BASE_FLAVOR} \
@@ -111,9 +112,9 @@ pre-configure:
 
 pre-build:
 	${MKDIR} ${WRKSRC}/gpt/packaging_tools/etc/gpt
-	${MKDIR} ${WRKDIR}/tmpbin
-	${LN} -s `which gmake` ${WRKDIR}/tmpbin/make || ${TRUE}
-	ls -l ${WRKDIR}/tmpbin
+	${MKDIR} ${TMPBINDIR}
+	${LN} -s `which gmake` ${TMPBINDIR}/make || ${TRUE}
+	ls -l ${TMPBINDIR}
 
 post-build:
 .for _B in ${UPDATE_BUNDLES}
