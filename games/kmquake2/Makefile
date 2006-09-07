@@ -83,7 +83,7 @@ PLIST_SUB+=	${mod}="@comment "
 DISTFILES+=	${KMQ2_ADDONS}:src
 EXTRACT_ONLY+=	${KMQ2_ADDONS}
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-addons__Makefile
-MAKE_ENV+=	KMQ2_ADDONS="${KMQ2_ADDONS:S/${EXTRACT_SUFX}//}"
+MAKE_ENV+=	KMQ2_ADDONS="${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//}"
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL)
@@ -140,7 +140,7 @@ PLIST_SUB+=	SDL="@comment "
 
 .if defined(MOD_REQUESTED)
 post-patch:
-	@${FIND} ${WRKDIR}/${KMQ2_ADDONS:S/${EXTRACT_SUFX}//} \
+	@${FIND} ${WRKDIR}/${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//} \
 		-type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e \
 		's|__linux__|__unix__|; s|#include <bits/nan\.h>||'
 .endif
@@ -167,7 +167,7 @@ do-install:
 	${CP} -Rp ${WRKSRC}/quake2/baseq2/* ${LIBDIR}/baseq2
 .endif
 .if defined(MOD_REQUESTED)
-	${CP} -Rp ${WRKDIR}/${KMQ2_ADDONS:S/${EXTRACT_SUFX}//}/quake2/* \
+	${CP} -Rp ${WRKDIR}/${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//}/quake2/* \
 		${LIBDIR}
 .endif
 .if defined(WITH_PAX)
