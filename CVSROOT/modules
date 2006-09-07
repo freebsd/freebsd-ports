@@ -2733,7 +2733,6 @@ fpc-imlib	ports/graphics/fpc-imlib
 fpc-libasync	ports/net/fpc-libasync
 fpc-libgd	ports/graphics/fpc-libgd
 fpc-libpng	ports/graphics/fpc-libpng
-fpc-md5		ports/security/fpc-md5
 fpc-mysql	ports/databases/fpc-mysql
 fpc-ncurses	ports/graphics/fpc-ncurses
 fpc-netdb	ports/net/fpc-netdb
