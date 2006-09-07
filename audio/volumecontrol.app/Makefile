@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	volumecontrol.app
+PORTNAME=	volumecontrol
 PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuks.mine.nu/volumecontrol/ \
 		http://florida.ethz.ch/ports/distfiles/
-DISTNAME=	volumecontrol-${PORTVERSION}
 
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Audio mixer for GNUstep
