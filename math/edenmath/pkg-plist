@@ -1,0 +1,25 @@
+Local/Applications/EdenMath.app/EdenMath
+Local/Applications/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/10x.tiff
+Local/Applications/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/data.classes
+Local/Applications/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/data.info
+Local/Applications/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/ex.tiff
+Local/Applications/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/objects.gorm
+Local/Applications/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/xy.tiff
+Local/Applications/EdenMath.app/Resources/EdenMath.desktop
+Local/Applications/EdenMath.app/Resources/EdenMath.tiff
+Local/Applications/EdenMath.app/Resources/English.lproj/MainMenu.gorm/10x.tiff
+Local/Applications/EdenMath.app/Resources/English.lproj/MainMenu.gorm/data.classes
+Local/Applications/EdenMath.app/Resources/English.lproj/MainMenu.gorm/data.info
+Local/Applications/EdenMath.app/Resources/English.lproj/MainMenu.gorm/ex.tiff
+Local/Applications/EdenMath.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+Local/Applications/EdenMath.app/Resources/English.lproj/MainMenu.gorm/xy.tiff
+Local/Applications/EdenMath.app/Resources/Info-gnustep.plist
+Local/Applications/EdenMath.app/library_paths.openapp
+Local/Applications/EdenMath.app/stamp.make
+@dirrm Local/Applications/EdenMath.app/Resources/English.lproj/MainMenu.gorm
+@dirrm Local/Applications/EdenMath.app/Resources/English.lproj
+@dirrm Local/Applications/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm
+@dirrm Local/Applications/EdenMath.app/Resources/Bulgarian.lproj
+@dirrm Local/Applications/EdenMath.app/Resources
+@dirrm Local/Applications/EdenMath.app
+@dirrmtry Local/Applications
