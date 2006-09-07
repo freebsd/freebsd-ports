@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.19 2006-09-06 00:36:03 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.20 2006-09-07 04:22:27 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -26,6 +26,10 @@ unset HTTP_USER_AGENT
 
 IFS="
 "
+
+random () {
+  ( ps ax && netstat -a && date ) | sum | cut -c4-5
+}
 
 send_devices () {
     case $(uname) in
@@ -120,7 +124,7 @@ uri_escape () {
 
 do_fetch () {
     url="http://$checkin_server/scripts/$1"
-    sleep `openssl rand -base64 1 | hexdump -n 1 -e '"%u"'`
+    sleep `random`
     case $(uname) in
 	NetBSD | OpenBSD)		/usr/bin/ftp -V -o - "$url" ;;
 	FreeBSD | *)	/usr/bin/fetch -q -o - "$url" ;;
