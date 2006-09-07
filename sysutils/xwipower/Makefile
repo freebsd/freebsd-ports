@@ -9,7 +9,7 @@ PORTNAME=	xwipower
 PORTVERSION=	20000623
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/masafu-o/xwipower/
+MASTER_SITES=	ftp://ftp.fumi.org/pub/xwipower/
 EXTRACT_SUFX=	.tgz
 
 ONLY_FOR_ARCHS=	i386
