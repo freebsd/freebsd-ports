@@ -1,10 +1,10 @@
---- tests/semaphore_test.cpp.orig	Thu Jan 29 08:42:17 2004
-+++ tests/semaphore_test.cpp	Thu Jan 29 08:42:43 2004
+--- tests/semaphore_test.cpp.orig	Thu Jul 20 06:30:56 2006
++++ tests/semaphore_test.cpp	Wed Sep  6 16:30:11 2006
 @@ -16,6 +16,7 @@
  using namespace std;
  
  #include <assert.h>
 +#include <sys/types.h>
- #include <sys/ipc.h>		// ftok(2)
  
- #include "assa/Assert.h"
+ #if !defined (WIN32)
+ #   include <sys/ipc.h>		// ftok(2)
