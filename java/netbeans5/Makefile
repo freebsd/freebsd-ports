@@ -30,6 +30,13 @@ DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?p=1&a=bd&os=1&lan
 IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
+post-patch:
+	@${RM} ${WRKSRC}/etc/netbeans.conf.orig
+
+do-configure:
+	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/etc/netbeans.conf
+	@${RM} ${WRKSRC}/etc/netbeans.conf.bak
+
 do-install:
 	@${MKDIR} ${PREFIX}/netbeans4
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans4
