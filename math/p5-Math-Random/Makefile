@@ -7,6 +7,7 @@
 
 PORTNAME=	Math-Random
 PORTVERSION=	0.68
+PORTREVISION=	1
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -18,5 +19,9 @@ COMMENT=	Random number generators
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Random.3
+
+post-patch:
+	@${RM} ${WRKSRC}/*.pl
+	@${REINPLACE_CMD} -e '/test/d' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
