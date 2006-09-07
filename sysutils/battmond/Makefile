@@ -19,4 +19,10 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	sbin/battmond \
 		etc/rc.d/battmond
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		requires ACPI features present in FreeBSD 6.X and newer
+.endif
+
+.include <bsd.port.post.mk>
