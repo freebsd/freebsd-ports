@@ -10750,6 +10750,7 @@ pecl-paradox	ports/databases/pecl-paradox
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-radius	ports/net/pecl-radius
+pecl-rar	ports/archivers/pecl-rar
 pecl-runkit	ports/devel/pecl-runkit
 pecl-sqlite	ports/databases/pecl-sqlite
 pecl-ssh2	ports/security/pecl-ssh2
