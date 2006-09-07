@@ -7,27 +7,25 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ht-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A file editor/viewer/analyzer for executables
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-release
 
 PLIST_FILES=	bin/ht
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == ia64
-BROKEN=		Does not build on ia64
+BROKEN=	does not build on ia64
 .endif
 
 .if ${OSVERSION} < 400000
@@ -36,7 +34,7 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
-CONFIGURE_ARGS+=	--disable-x11-textmode
+CONFIGURE_ARGS=--disable-x11-textmode
 .else
 USE_XLIB=	yes
 CPPFLAGS=	-I${X11BASE}/include
