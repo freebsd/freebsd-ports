@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	4.99
+PORTVERSION=	5.00
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -45,8 +45,10 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Qnet::State.3 \
 		POE::Component::IRC::State.3 \
 		POE::Component::IRC::Test::Harness.3 \
+		POE::Component::IRC::Test::Plugin.3 \
 		POE::Filter::CTCP.3 \
-		POE::Filter::IRC.3
+		POE::Filter::IRC.3 \
+		POE::Filter::IRC::Compat.3
 
 post-install:
 .ifndef(NOPORTDOCS)
