@@ -38,7 +38,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 601000
-IGNORE=			needs at least FreeBSD 6.1 and amd_linux.ko
+IGNORE=			needs at least FreeBSD 6.1 and amr_linux.ko
 .endif
 
 .include <bsd.port.post.mk>
