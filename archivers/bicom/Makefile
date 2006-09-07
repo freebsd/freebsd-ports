@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}101
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Data compressor in the PPM family
 
-RESTRICTED=	"Contact author personally regarding commercial use"
+RESTRICTED=	Contact author personally regarding commercial use
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	${FILESDIR}/Makefile
