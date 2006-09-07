@@ -17,7 +17,7 @@ COMMENT=		LSI MegaRAID controller management utility
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
 RESTRICTED=		Redistribution prohibited, see: http://www.lsi.com/cm/License.do
-ONLY_FOR_ARCHS=		i386
+ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
 SUB_FILES=		megamgr.sh
 
