@@ -7,6 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	2.0.1131
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.adaptive-enterprises.com.au/~d/software/see/ \
 		http://freshmeat.net/redir/see/45974/url_tgz/
