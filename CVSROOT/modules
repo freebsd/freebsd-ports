@@ -13505,6 +13505,7 @@ stegdetect	ports/security/stegdetect
 steghide	ports/security/steghide
 stella		ports/emulators/stella
 stellarium	ports/astro/stellarium
+stepulator	ports/math/stepulator
 sting		ports/net-mgmt/sting
 stk		ports/lang/STk
 stklos		ports/lang/stklos
