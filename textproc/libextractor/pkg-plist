@@ -43,8 +43,8 @@ lib/libextractor/libextractor_mp3.la
 lib/libextractor/libextractor_mp3.so
 lib/libextractor/libextractor_mpeg.la
 lib/libextractor/libextractor_mpeg.so
-%%VORBIS:%%lib/libextractor/libextractor_ogg.la
-%%VORBIS:%%lib/libextractor/libextractor_ogg.so
+%%VORBIS%%lib/libextractor/libextractor_ogg.la
+%%VORBIS%%lib/libextractor/libextractor_ogg.so
 lib/libextractor/libextractor_oo.la
 lib/libextractor/libextractor_oo.so
 lib/libextractor/libextractor_pdf.la
@@ -87,6 +87,7 @@ lib/libextractor/libextractor_split.la
 lib/libextractor/libextractor_split.so
 lib/libextractor/libextractor_tar.la
 lib/libextractor/libextractor_tar.so
+lib/libextractor/libextractor_thumbnail.so
 lib/libextractor/libextractor_tiff.la
 lib/libextractor/libextractor_tiff.so
 lib/libextractor/libextractor_translit.la
