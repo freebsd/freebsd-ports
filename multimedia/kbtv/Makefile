@@ -8,7 +8,8 @@
 PORTNAME=	kbtv
 DISTVERSION=	1.1.3
 CATEGORIES=	multimedia python kde
-MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	ports@FreeBSD.org
