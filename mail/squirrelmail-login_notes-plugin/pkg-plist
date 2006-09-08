@@ -6,5 +6,5 @@
 %%SQUIRRELDIR%%/plugins/login_notes/functions.php
 %%SQUIRRELDIR%%/plugins/login_notes/index.php
 %%SQUIRRELDIR%%/plugins/login_notes/setup.php
-@dirrm %%SQUIRRELDIR%%/plugins/login_notes/
+@dirrmtry %%SQUIRRELDIR%%/plugins/login_notes/
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin login_notes; fi
