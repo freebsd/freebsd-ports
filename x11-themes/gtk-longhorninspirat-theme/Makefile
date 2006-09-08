@@ -7,6 +7,7 @@
 
 PORTNAME=	longhorninspirat
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX=	${TYPE}-
@@ -36,14 +37,15 @@ USE_GNOME=	gnomehier
 .endif
 
 post-extract:
-	${RM} -r ${WRKSRC}/gtk-2.0/.Trash-roberto
+	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${RM} -r ${WRKSRC}/gtk-2.0/.Trash-roberto
 
 do-install:
 	@${MKDIR} ${THEME_DIR}
+	${INSTALL_DATA} ${WRKSRC}/index.theme ${THEME_DIR}
 .if ${TYPE} == "gtk"
 	cd ${WRKSRC} && ${FIND} gtk-2.0 | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
-	${INSTALL_DATA} ${WRKSRC}/index.theme ${THEME_DIR}
 .else
 	cd ${WRKSRC} && ${FIND} metacity-1 | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
