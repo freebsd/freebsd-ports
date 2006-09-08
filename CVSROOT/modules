@@ -8219,6 +8219,7 @@ p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Cache-FastMmap	ports/devel/p5-Cache-FastMmap
 p5-Cache-Memcached	ports/databases/p5-Cache-Memcached
 p5-Cache-Memcached-Managed	ports/databases/p5-Cache-Memcached-Managed
+p5-Cache-Memcached-XS	ports/databases/p5-Cache-Memcached-XS
 p5-Cache-Mmap	ports/devel/p5-Cache-Mmap
 p5-Cache-Simple-TimedExpiry	ports/devel/p5-Cache-Simple-TimedExpiry
 p5-Cairo	ports/graphics/p5-Cairo
