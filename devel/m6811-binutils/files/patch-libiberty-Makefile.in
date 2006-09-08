@@ -1,0 +1,11 @@
+--- libiberty/Makefile.in.orig	Fri Jan 23 08:34:11 2004
++++ libiberty/Makefile.in	Wed Jul 19 23:58:35 2006
+@@ -266,7 +266,7 @@
+ @MAINT@	echo stamp > stamp-functions
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++install:
+ 
+ install_to_libdir: all
+ 	${mkinstalldirs} $(DESTDIR)$(libdir)$(MULTISUBDIR)
