@@ -1422,6 +1422,9 @@
 %%SERENDIPITY%%/sql/db_update_1.1-alpha5_1.1-alpha6_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.1-alpha5_1.1-alpha6_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.1-alpha5_1.1-alpha6_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.1-beta3_1.1-beta4_sqlite.sql
 %%SERENDIPITY%%/templates/HOWTO
 %%SERENDIPITY%%/templates/blue/htmlarea.css
 %%SERENDIPITY%%/templates/blue/img/back.png
