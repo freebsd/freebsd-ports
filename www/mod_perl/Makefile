@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	1.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -52,7 +52,7 @@ CFLAGS+=	-DAPACHE6
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 500800
+.if ${PERL_LEVEL} >= 500602
 MAN3+=		Apache::MyConfig.3
 .endif
 
