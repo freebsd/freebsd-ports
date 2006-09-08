@@ -1,0 +1,18 @@
+****************************************************************
+The Coppermine Photo Gallery has been installed in the directory
+%%PREFIX%%/%%CPGDIR%%.
+
+You must add appropriate configuration directives to your
+apache configuration file (%%PREFIX%%/etc/apache/httpd.conf).
+A typical configuration would be:
+
+    Alias /coppermine/ "%%PREFIX%%/%%CPGDIR%%/"
+
+    <Directory "%%PREFIX%%/%%CPGDIR%%">
+	Options Indexes FollowSymlinks MultiViews
+	AllowOverride None
+	Order allow,deny
+	Allow from all
+    </Directory>
+
+****************************************************************
