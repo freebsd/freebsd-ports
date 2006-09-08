@@ -1,3 +1,4 @@
+bin/deng
 bin/doomsday
 lib/libdpdehread.a
 lib/libdpdehread.la
@@ -11,10 +12,10 @@ lib/libdropengl.a
 lib/libdropengl.la
 lib/libdropengl.so
 lib/libdropengl.so.0
-%%WITH_OPENAL%%lib/libdsopenal.a
-%%WITH_OPENAL%%lib/libdsopenal.la
-%%WITH_OPENAL%%lib/libdsopenal.so
-%%WITH_OPENAL%%lib/libdsopenal.so.0
+%%OPENAL%%lib/libdsopenal.a
+%%OPENAL%%lib/libdsopenal.la
+%%OPENAL%%lib/libdsopenal.so
+%%OPENAL%%lib/libdsopenal.so.0
 lib/libdssdlmixer.a
 lib/libdssdlmixer.la
 lib/libdssdlmixer.so
@@ -31,29 +32,8 @@ lib/libjhexen.a
 lib/libjhexen.la
 lib/libjhexen.so
 lib/libjhexen.so.0
-%%DATADIR%%/Data/Doomsday.wad
-%%DATADIR%%/Data/Fonts/Fixed.dfn
-%%DATADIR%%/Data/Fonts/Fixed12.dfn
-%%DATADIR%%/Data/Fonts/Large.dfn
-%%DATADIR%%/Data/Fonts/Small10.dfn
-%%DATADIR%%/Data/Fonts/Small7.dfn
-%%DATADIR%%/Data/Fonts/Small8.dfn
-%%DATADIR%%/Data/Fonts/System.dfn
-%%DATADIR%%/Data/Fonts/System12.dfn
-%%DATADIR%%/Data/Graphics/Background.pcx
-%%DATADIR%%/Data/Graphics/BoxCorner.png
-%%DATADIR%%/Data/Graphics/BoxFill.png
-%%DATADIR%%/Data/Graphics/BoxShade.png
-%%DATADIR%%/Data/Graphics/Hint.png
-%%DATADIR%%/Data/Graphics/Logo.png
-%%DATADIR%%/Data/Graphics/Mouse.png
-%%DATADIR%%/Data/Graphics/RadioCC.pcx
-%%DATADIR%%/Data/Graphics/RadioCO.pcx
-%%DATADIR%%/Data/Graphics/WallGlow.pcx
-%%DATADIR%%/Data/KeyMaps/de.dkm
-%%DATADIR%%/Data/KeyMaps/default.dkm
-%%DATADIR%%/Data/KeyMaps/fi.dkm
-%%DATADIR%%/Data/cphelp.txt
+%%DATADIR%%/Data/CPHelp.txt
+%%DATADIR%%/Data/Doomsday.pk3
 %%DATADIR%%/Data/jDoom/jDoom.wad
 %%DATADIR%%/Data/jHeretic/jHeretic.wad
 %%DATADIR%%/Data/jHexen/jHexen.wad
@@ -70,10 +50,14 @@ lib/libjhexen.so.0
 %%DATADIR%%/Defs/jDoom/Maps.ded
 %%DATADIR%%/Defs/jDoom/Objects.ded
 %%DATADIR%%/Defs/jDoom/Particles.ded
+%%DATADIR%%/Defs/jDoom/PlutAnim.ded
 %%DATADIR%%/Defs/jDoom/PlutFinales.ded
+%%DATADIR%%/Defs/jDoom/PlutMaps.ded
 %%DATADIR%%/Defs/jDoom/Special.ded
 %%DATADIR%%/Defs/jDoom/Sprites.ded
+%%DATADIR%%/Defs/jDoom/TNTAnim.ded
 %%DATADIR%%/Defs/jDoom/TNTFinales.ded
+%%DATADIR%%/Defs/jDoom/TNTMaps.ded
 %%DATADIR%%/Defs/jDoom/Text.ded
 %%DATADIR%%/Defs/jDoom/Values.ded
 %%DATADIR%%/Defs/jDoom/jDoom.ded
@@ -111,6 +95,10 @@ lib/libjhexen.so.0
 %%PORTDOCS%%%%DOCSDIR%%/jDoom/JDoom.txt
 %%PORTDOCS%%%%DOCSDIR%%/jHeretic/JHeretic.txt
 %%PORTDOCS%%%%DOCSDIR%%/jHexen/JHexen.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHexen
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHeretic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jDoom
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/Runtime/jHexen
 @dirrm %%DATADIR%%/Runtime/jHeretic
 @dirrm %%DATADIR%%/Runtime/jDoom
@@ -122,12 +110,5 @@ lib/libjhexen.so.0
 @dirrm %%DATADIR%%/Data/jHexen
 @dirrm %%DATADIR%%/Data/jHeretic
 @dirrm %%DATADIR%%/Data/jDoom
-@dirrm %%DATADIR%%/Data/KeyMaps
-@dirrm %%DATADIR%%/Data/Graphics
-@dirrm %%DATADIR%%/Data/Fonts
 @dirrm %%DATADIR%%/Data
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/jDoom
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHeretic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/jHexen
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,66 +6,64 @@
 #
 
 PORTNAME=	deng
-PORTVERSION=	1.9.0b3
+PORTVERSION=	1.9.0b4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An enhanced Doom, Heretic and Hexen source port
 
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity
+RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -I${X11BASE}/include" \
-		CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include -I${X11BASE}/include"
-USE_SDL=	sdl mixer net
 USE_GL=		yes
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386
+USE_SDL=	sdl mixer net
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+		`${SDL_CONFIG} --cflags`"
+CONFIGURE_SCRIPT=	../configure
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/Build
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-SUB_FILES=	pkg-message
-SUB_LIST=	"PREFIX=${PREFIX}" "DOCSDIR=${DOCSDIR}"
+OPTIONS=	OPENAL "Build OpenAL sound plugin" off
+
+SUB_FILES=	${PORTNAME} pkg-message
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/games/doom-data/Makefile.include"
 
-.if exists(${LOCALBASE}/lib/libopenal.so.0) || defined(WITH_OPENAL)
-WITH_OPENAL=	yes
+.if defined(WITH_OPENAL) || exists(${LOCALBASE}/lib/libopenal.so.0)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-.endif
-
-.if !defined(WITH_OPENAL)
-PLIST_SUB=	WITH_OPENAL="@comment "
+PLIST_SUB=	OPENAL=""
 .else
-PLIST_SUB=	WITH_OPENAL=""
-.endif
-
-.ifndef (WITH_OPENAL)
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Optionally define WITH_OPENAL=yes to build OpenAL sound plugin"
-	@${ECHO_CMD} ""
+PLIST_SUB=	OPENAL="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -i '' -e 's/-Wunused-.+ / /g; \
-				 s/SDL(\\|\/)//g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name '*.[ch]' | \
-		${XARGS} ${REINPLACE_CMD} -i '' -E -e 's/SDL(\\|\/)//g'
+	@${REINPLACE_CMD} -Ee \
+		's,-Wunused-variable -Wunused-function ,,; \
+		 s,SDL(\\|/),,' \
+		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} ${PATCH_WRKSRC} -name '*.[ch]' -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -Ee 's,SDL(\\|/),,'
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${DOCSDIR}
-.	for i in jDoom jHeretic jHexen
+.for i in jDoom jHeretic jHexen
 		@${MKDIR} ${DOCSDIR}/${i}
 		${INSTALL_DATA} ${WRKSRC}/Doc/${i}/*.txt ${DOCSDIR}/${i}
-.	endfor
+.endfor
 .endif
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
