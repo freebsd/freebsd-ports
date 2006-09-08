@@ -18,7 +18,6 @@
 %%TIKIWIKI%%/db/README.txt
 %%TIKIWIKI%%/db/_htaccess
 %%TIKIWIKI%%/db/case_patch.php
-%%TIKIWIKI%%/db/comments_fix_1.7to1.8.sql
 %%TIKIWIKI%%/db/dbg_console.sql
 %%TIKIWIKI%%/db/fulltext.sql
 %%TIKIWIKI%%/db/index.php
@@ -31,22 +30,15 @@
 %%TIKIWIKI%%/db/profiles/index.php
 %%TIKIWIKI%%/db/profiles/mk_profile.sh
 %%TIKIWIKI%%/db/profiles/slash.prf
-%%TIKIWIKI%%/db/structure_fix_1.7to1.8.sql
 %%TIKIWIKI%%/db/tiki-1.9-mysql.sql
 %%TIKIWIKI%%/db/tiki-1.9-oci8.sql
 %%TIKIWIKI%%/db/tiki-1.9-pgsql.sql
 %%TIKIWIKI%%/db/tiki-1.9-sqlite.sql
 %%TIKIWIKI%%/db/tiki-1.9-sybase.sql
 %%TIKIWIKI%%/db/tiki-db.php
-%%TIKIWIKI%%/db/tiki-secdb_1.7.X_mysql.sql
-%%TIKIWIKI%%/db/tiki-secdb_1.8.X_mysql.sql
 %%TIKIWIKI%%/db/tiki-secdb_1.9_mysql.sql
-%%TIKIWIKI%%/db/tiki-secdb_pre_1.7_mysql.sql
 %%TIKIWIKI%%/db/tiki.sql
-%%TIKIWIKI%%/db/tiki_1.7to1.8.sql
 %%TIKIWIKI%%/db/tiki_1.8to1.9.sql
-%%TIKIWIKI%%/db/tiki_1.9.1to1.9.2.sql
-%%TIKIWIKI%%/db/tiki_1.9to1.9.2.sql
 %%TIKIWIKI%%/db/tiki_ddl.sql
 %%TIKIWIKI%%/db/tiki_mysql.sql
 %%TIKIWIKI%%/db/tiki_oracle.err.sql
@@ -74,6 +66,7 @@
 %%TIKIWIKI%%/get_strings.php
 %%TIKIWIKI%%/green.favicon.png
 %%TIKIWIKI%%/help.php
+%%TIKIWIKI%%/htaccess.sh
 %%TIKIWIKI%%/images/_htaccess
 %%TIKIWIKI%%/images/book.gif
 %%TIKIWIKI%%/images/code.png
@@ -154,34 +147,6 @@
 %%TIKIWIKI%%/img/avatars/index.php
 %%TIKIWIKI%%/img/css.gif
 %%TIKIWIKI%%/img/css1.png
-%%TIKIWIKI%%/img/custom/article.jpeg
-%%TIKIWIKI%%/img/custom/article2.jpeg
-%%TIKIWIKI%%/img/custom/article3.jpeg
-%%TIKIWIKI%%/img/custom/article4.jpeg
-%%TIKIWIKI%%/img/custom/chat.jpeg
-%%TIKIWIKI%%/img/custom/filegal.jpeg
-%%TIKIWIKI%%/img/custom/files1.jpeg
-%%TIKIWIKI%%/img/custom/files2.jpeg
-%%TIKIWIKI%%/img/custom/forums.jpeg
-%%TIKIWIKI%%/img/custom/forums2.jpeg
-%%TIKIWIKI%%/img/custom/forums3.jpeg
-%%TIKIWIKI%%/img/custom/galleries1.jpeg
-%%TIKIWIKI%%/img/custom/galleries2.jpeg
-%%TIKIWIKI%%/img/custom/galleries3.jpeg
-%%TIKIWIKI%%/img/custom/galleries4.jpeg
-%%TIKIWIKI%%/img/custom/galleries5.jpeg
-%%TIKIWIKI%%/img/custom/index.php
-%%TIKIWIKI%%/img/custom/permissions.jpeg
-%%TIKIWIKI%%/img/custom/users.jpg
-%%TIKIWIKI%%/img/custom/weblog.jpeg
-%%TIKIWIKI%%/img/custom/weblog3.jpeg
-%%TIKIWIKI%%/img/custom/weblogs.jpeg
-%%TIKIWIKI%%/img/custom/weblogs2.jpeg
-%%TIKIWIKI%%/img/custom/wiki.jpeg
-%%TIKIWIKI%%/img/custom/wiki2.jpeg
-%%TIKIWIKI%%/img/custom/wiki3.jpeg
-%%TIKIWIKI%%/img/custom/wiki4.jpeg
-%%TIKIWIKI%%/img/custom/wiki5.jpeg
 %%TIKIWIKI%%/img/flagged.gif
 %%TIKIWIKI%%/img/flags/Algeria.gif
 %%TIKIWIKI%%/img/flags/American_Samoa.gif
@@ -221,6 +186,7 @@
 %%TIKIWIKI%%/img/flags/Egypt.gif
 %%TIKIWIKI%%/img/flags/El_Salvador.gif
 %%TIKIWIKI%%/img/flags/Estonia.gif
+%%TIKIWIKI%%/img/flags/Europe.gif
 %%TIKIWIKI%%/img/flags/Federated_States_of_Micronesia.gif
 %%TIKIWIKI%%/img/flags/Fiji.gif
 %%TIKIWIKI%%/img/flags/Finland.gif
@@ -313,6 +279,7 @@
 %%TIKIWIKI%%/img/flags/Vanuatu.gif
 %%TIKIWIKI%%/img/flags/Venezuela.gif
 %%TIKIWIKI%%/img/flags/Wales.gif
+%%TIKIWIKI%%/img/flags/World.gif
 %%TIKIWIKI%%/img/flags/Yugoslavia.gif
 %%TIKIWIKI%%/img/flags/Zambia.gif
 %%TIKIWIKI%%/img/flags/Zimbabwe.gif
@@ -364,17 +331,9 @@
 %%TIKIWIKI%%/img/icons/4stars.gif
 %%TIKIWIKI%%/img/icons/5stars.gif
 %%TIKIWIKI%%/img/icons/Activity.gif
-%%TIKIWIKI%%/img/icons/Archive.gif
-%%TIKIWIKI%%/img/icons/FallOut.gif
 %%TIKIWIKI%%/img/icons/Instance.gif
-%%TIKIWIKI%%/img/icons/Openflow.gif
 %%TIKIWIKI%%/img/icons/Process.gif
-%%TIKIWIKI%%/img/icons/Token.gif
-%%TIKIWIKI%%/img/icons/Transaction.gif
-%%TIKIWIKI%%/img/icons/Transition.gif
-%%TIKIWIKI%%/img/icons/Workflow.gif
 %%TIKIWIKI%%/img/icons/add.gif
-%%TIKIWIKI%%/img/icons/addressbook.gif
 %%TIKIWIKI%%/img/icons/admin_articles.png
 %%TIKIWIKI%%/img/icons/admin_articles_grey.png
 %%TIKIWIKI%%/img/icons/admin_blogs.png
@@ -392,27 +351,24 @@
 %%TIKIWIKI%%/img/icons/admin_forums.png
 %%TIKIWIKI%%/img/icons/admin_forums_grey.png
 %%TIKIWIKI%%/img/icons/admin_general.png
-%%TIKIWIKI%%/img/icons/admin_homework.png
+%%TIKIWIKI%%/img/icons/admin_gmap.png
+%%TIKIWIKI%%/img/icons/admin_gmap_grey.png
+%%TIKIWIKI%%/img/icons/admin_i18n.png
 %%TIKIWIKI%%/img/icons/admin_imagegal.png
 %%TIKIWIKI%%/img/icons/admin_imagegal_grey.png
 %%TIKIWIKI%%/img/icons/admin_intertiki.png
 %%TIKIWIKI%%/img/icons/admin_intertiki_grey.png
-%%TIKIWIKI%%/img/icons/admin_jukebox.png
-%%TIKIWIKI%%/img/icons/admin_jukebox_grey.png
 %%TIKIWIKI%%/img/icons/admin_login.png
 %%TIKIWIKI%%/img/icons/admin_maps.png
 %%TIKIWIKI%%/img/icons/admin_maps_grey.png
 %%TIKIWIKI%%/img/icons/admin_metatags.png
 %%TIKIWIKI%%/img/icons/admin_polls.png
 %%TIKIWIKI%%/img/icons/admin_polls_grey.png
-%%TIKIWIKI%%/img/icons/admin_projects.png
-%%TIKIWIKI%%/img/icons/admin_projects_grey.png
 %%TIKIWIKI%%/img/icons/admin_rss.png
 %%TIKIWIKI%%/img/icons/admin_score.png
 %%TIKIWIKI%%/img/icons/admin_score_grey.png
 %%TIKIWIKI%%/img/icons/admin_search.png
 %%TIKIWIKI%%/img/icons/admin_search_grey.png
-%%TIKIWIKI%%/img/icons/admin_sections.png
 %%TIKIWIKI%%/img/icons/admin_siteid.png
 %%TIKIWIKI%%/img/icons/admin_siteid_grey.png
 %%TIKIWIKI%%/img/icons/admin_trackers.png
@@ -425,163 +381,71 @@
 %%TIKIWIKI%%/img/icons/admin_wiki_grey.png
 %%TIKIWIKI%%/img/icons/archives.gif
 %%TIKIWIKI%%/img/icons/attachment.gif
-%%TIKIWIKI%%/img/icons/auto_focus.gif
-%%TIKIWIKI%%/img/icons/back.gif
-%%TIKIWIKI%%/img/icons/bk.gif
 %%TIKIWIKI%%/img/icons/bk_gap.gif
-%%TIKIWIKI%%/img/icons/bkr.gif
-%%TIKIWIKI%%/img/icons/bksort.gif
 %%TIKIWIKI%%/img/icons/blue.gif
 %%TIKIWIKI%%/img/icons/bluehalf.gif
 %%TIKIWIKI%%/img/icons/book.gif
-%%TIKIWIKI%%/img/icons/book2.gif
 %%TIKIWIKI%%/img/icons/cal_day.gif
 %%TIKIWIKI%%/img/icons/cal_month.gif
 %%TIKIWIKI%%/img/icons/cal_quarter.gif
 %%TIKIWIKI%%/img/icons/cal_semester.gif
 %%TIKIWIKI%%/img/icons/cal_week.gif
 %%TIKIWIKI%%/img/icons/cal_year.gif
-%%TIKIWIKI%%/img/icons/calendar.gif
 %%TIKIWIKI%%/img/icons/change.gif
-%%TIKIWIKI%%/img/icons/char_a.gif
-%%TIKIWIKI%%/img/icons/clear.gif
-%%TIKIWIKI%%/img/icons/clipboard.gif
 %%TIKIWIKI%%/img/icons/close.gif
-%%TIKIWIKI%%/img/icons/collapse.gif
-%%TIKIWIKI%%/img/icons/color4.gif
-%%TIKIWIKI%%/img/icons/comment.gif
 %%TIKIWIKI%%/img/icons/config.gif
-%%TIKIWIKI%%/img/icons/config2.gif
 %%TIKIWIKI%%/img/icons/cool.gif
-%%TIKIWIKI%%/img/icons/del.gif
 %%TIKIWIKI%%/img/icons/desc_length.gif
-%%TIKIWIKI%%/img/icons/dispurl.gif
 %%TIKIWIKI%%/img/icons/edit.gif
 %%TIKIWIKI%%/img/icons/email.gif
-%%TIKIWIKI%%/img/icons/etc.gif
-%%TIKIWIKI%%/img/icons/etc2.gif
-%%TIKIWIKI%%/img/icons/exit.gif
 %%TIKIWIKI%%/img/icons/expand.gif
-%%TIKIWIKI%%/img/icons/explorer.gif
 %%TIKIWIKI%%/img/icons/export.gif
-%%TIKIWIKI%%/img/icons/expression.gif
 %%TIKIWIKI%%/img/icons/external_link.gif
-%%TIKIWIKI%%/img/icons/external_link.wbmp
-%%TIKIWIKI%%/img/icons/find.gif
 %%TIKIWIKI%%/img/icons/fix.gif
 %%TIKIWIKI%%/img/icons/float.gif
 %%TIKIWIKI%%/img/icons/fo.gif
-%%TIKIWIKI%%/img/icons/fo_gap.gif
-%%TIKIWIKI%%/img/icons/folder.gif
-%%TIKIWIKI%%/img/icons/folder_announce.gif
-%%TIKIWIKI%%/img/icons/folder_announce_new.gif
-%%TIKIWIKI%%/img/icons/folder_hot.gif
-%%TIKIWIKI%%/img/icons/folder_hot_new.gif
-%%TIKIWIKI%%/img/icons/folder_locked.gif
-%%TIKIWIKI%%/img/icons/folder_locked_new.gif
-%%TIKIWIKI%%/img/icons/folder_new.gif
-%%TIKIWIKI%%/img/icons/folder_sticky.gif
-%%TIKIWIKI%%/img/icons/folder_sticky_new.gif
 %%TIKIWIKI%%/img/icons/folderin.gif
 %%TIKIWIKI%%/img/icons/fontfamily.gif
-%%TIKIWIKI%%/img/icons/fontsize.gif
 %%TIKIWIKI%%/img/icons/footprint.gif
-%%TIKIWIKI%%/img/icons/for.gif
 %%TIKIWIKI%%/img/icons/friend.gif
 %%TIKIWIKI%%/img/icons/global.gif
-%%TIKIWIKI%%/img/icons/gradient.gif
-%%TIKIWIKI%%/img/icons/green_dot.gif
-%%TIKIWIKI%%/img/icons/hbk.gif
 %%TIKIWIKI%%/img/icons/help.gif
-%%TIKIWIKI%%/img/icons/hfo.gif
 %%TIKIWIKI%%/img/icons/history_layer.gif
-%%TIKIWIKI%%/img/icons/hofo.gif
 %%TIKIWIKI%%/img/icons/home.gif
-%%TIKIWIKI%%/img/icons/home_url.gif
-%%TIKIWIKI%%/img/icons/ico_center.gif
-%%TIKIWIKI%%/img/icons/ico_clear.gif
-%%TIKIWIKI%%/img/icons/ico_color.gif
-%%TIKIWIKI%%/img/icons/ico_copy.gif
-%%TIKIWIKI%%/img/icons/ico_cut.gif
-%%TIKIWIKI%%/img/icons/ico_emote.gif
 %%TIKIWIKI%%/img/icons/ico_friend.gif
 %%TIKIWIKI%%/img/icons/ico_img.gif
-%%TIKIWIKI%%/img/icons/ico_indent.gif
-%%TIKIWIKI%%/img/icons/ico_italic.gif
-%%TIKIWIKI%%/img/icons/ico_justify.gif
-%%TIKIWIKI%%/img/icons/ico_left.gif
 %%TIKIWIKI%%/img/icons/ico_link.gif
 %%TIKIWIKI%%/img/icons/ico_mode.gif
 %%TIKIWIKI%%/img/icons/ico_not_friend.png
 %%TIKIWIKI%%/img/icons/ico_olist.gif
-%%TIKIWIKI%%/img/icons/ico_open.gif
-%%TIKIWIKI%%/img/icons/ico_outdent.gif
-%%TIKIWIKI%%/img/icons/ico_paste.gif
 %%TIKIWIKI%%/img/icons/ico_pdf.gif
-%%TIKIWIKI%%/img/icons/ico_preview.gif
 %%TIKIWIKI%%/img/icons/ico_print.gif
 %%TIKIWIKI%%/img/icons/ico_redo.gif
-%%TIKIWIKI%%/img/icons/ico_right.gif
 %%TIKIWIKI%%/img/icons/ico_save.gif
 %%TIKIWIKI%%/img/icons/ico_table.gif
-%%TIKIWIKI%%/img/icons/ico_ulist.gif
-%%TIKIWIKI%%/img/icons/ico_underline.gif
-%%TIKIWIKI%%/img/icons/ico_undo.gif
 %%TIKIWIKI%%/img/icons/ico_wiki3d.gif
 %%TIKIWIKI%%/img/icons/icon38.gif
-%%TIKIWIKI%%/img/icons/icon_folder.gif
-%%TIKIWIKI%%/img/icons/icon_folder_t.gif
-%%TIKIWIKI%%/img/icons/icon_name.gif
-%%TIKIWIKI%%/img/icons/icon_row.gif
-%%TIKIWIKI%%/img/icons/icon_size.gif
 %%TIKIWIKI%%/img/icons/icon_ultima.gif
 %%TIKIWIKI%%/img/icons/icon_ultima_no.gif
 %%TIKIWIKI%%/img/icons/icon_unwatch.png
 %%TIKIWIKI%%/img/icons/icon_watch.png
-%%TIKIWIKI%%/img/icons/iconalign.gif
 %%TIKIWIKI%%/img/icons/import.gif
-%%TIKIWIKI%%/img/icons/import2.gif
-%%TIKIWIKI%%/img/icons/inbox.gif
-%%TIKIWIKI%%/img/icons/inc_head.gif
 %%TIKIWIKI%%/img/icons/index.php
 %%TIKIWIKI%%/img/icons/info.gif
 %%TIKIWIKI%%/img/icons/key.gif
 %%TIKIWIKI%%/img/icons/key_active.gif
-%%TIKIWIKI%%/img/icons/linkpage.gif
 %%TIKIWIKI%%/img/icons/linkto.gif
 %%TIKIWIKI%%/img/icons/live-support-off.png
 %%TIKIWIKI%%/img/icons/live-support-on.png
 %%TIKIWIKI%%/img/icons/lock_topic.gif
-%%TIKIWIKI%%/img/icons/memo.gif
-%%TIKIWIKI%%/img/icons/mini_blue_circle.gif
-%%TIKIWIKI%%/img/icons/mini_blue_dbl_circle.gif
 %%TIKIWIKI%%/img/icons/mini_blue_diamond.gif
-%%TIKIWIKI%%/img/icons/mini_blue_hexagon.gif
-%%TIKIWIKI%%/img/icons/mini_blue_inv_triangle.gif
-%%TIKIWIKI%%/img/icons/mini_blue_rectangle.gif
-%%TIKIWIKI%%/img/icons/mini_blue_triangle.gif
-%%TIKIWIKI%%/img/icons/mini_circle.gif
-%%TIKIWIKI%%/img/icons/mini_dbl_circle.gif
 %%TIKIWIKI%%/img/icons/mini_diamond.gif
-%%TIKIWIKI%%/img/icons/mini_hexagon.gif
-%%TIKIWIKI%%/img/icons/mini_inv_triangle.gif
-%%TIKIWIKI%%/img/icons/mini_rectangle.gif
-%%TIKIWIKI%%/img/icons/mini_square.gif
 %%TIKIWIKI%%/img/icons/mini_triangle.gif
-%%TIKIWIKI%%/img/icons/minus.gif
 %%TIKIWIKI%%/img/icons/mo.png
-%%TIKIWIKI%%/img/icons/mode_desc.gif
-%%TIKIWIKI%%/img/icons/mode_tree.gif
 %%TIKIWIKI%%/img/icons/move.gif
-%%TIKIWIKI%%/img/icons/move_topic.gif
-%%TIKIWIKI%%/img/icons/moved.gif
 %%TIKIWIKI%%/img/icons/myinfo.gif
 %%TIKIWIKI%%/img/icons/na_pict.gif
-%%TIKIWIKI%%/img/icons/netscape.gif
 %%TIKIWIKI%%/img/icons/new.gif
-%%TIKIWIKI%%/img/icons/new_3day.gif
-%%TIKIWIKI%%/img/icons/new_day.gif
-%%TIKIWIKI%%/img/icons/new_week.gif
 %%TIKIWIKI%%/img/icons/next.gif
 %%TIKIWIKI%%/img/icons/offline.gif
 %%TIKIWIKI%%/img/icons/ofo.gif
@@ -589,26 +453,10 @@
 %%TIKIWIKI%%/img/icons/online.gif
 %%TIKIWIKI%%/img/icons/opera.gif
 %%TIKIWIKI%%/img/icons/plus.gif
-%%TIKIWIKI%%/img/icons/pm.gif
 %%TIKIWIKI%%/img/icons/popular.gif
 %%TIKIWIKI%%/img/icons/print.gif
-%%TIKIWIKI%%/img/icons/prio1.gif
-%%TIKIWIKI%%/img/icons/prio2.gif
-%%TIKIWIKI%%/img/icons/prio3.gif
-%%TIKIWIKI%%/img/icons/prio4.gif
-%%TIKIWIKI%%/img/icons/prio5.gif
 %%TIKIWIKI%%/img/icons/question.gif
-%%TIKIWIKI%%/img/icons/quote.gif
-%%TIKIWIKI%%/img/icons/red_cross.gif
-%%TIKIWIKI%%/img/icons/red_dot.gif
 %%TIKIWIKI%%/img/icons/refresh.gif
-%%TIKIWIKI%%/img/icons/refresh2.gif
-%%TIKIWIKI%%/img/icons/resize.gif
-%%TIKIWIKI%%/img/icons/root_name.gif
-%%TIKIWIKI%%/img/icons/rotate.gif
-%%TIKIWIKI%%/img/icons/s_red.gif
-%%TIKIWIKI%%/img/icons/search_path.gif
-%%TIKIWIKI%%/img/icons/select.gif
 %%TIKIWIKI%%/img/icons/star.gif
 %%TIKIWIKI%%/img/icons/star_blue.gif
 %%TIKIWIKI%%/img/icons/star_green.gif
@@ -617,13 +465,6 @@
 %%TIKIWIKI%%/img/icons/star_purple.gif
 %%TIKIWIKI%%/img/icons/star_red.gif
 %%TIKIWIKI%%/img/icons/star_yellow.gif
-%%TIKIWIKI%%/img/icons/stop.gif
-%%TIKIWIKI%%/img/icons/support_off.gif
-%%TIKIWIKI%%/img/icons/support_on.gif
-%%TIKIWIKI%%/img/icons/td.gif
-%%TIKIWIKI%%/img/icons/theme.gif
-%%TIKIWIKI%%/img/icons/timer.gif
-%%TIKIWIKI%%/img/icons/timer2.gif
 %%TIKIWIKI%%/img/icons/today.gif
 %%TIKIWIKI%%/img/icons/toleft.gif
 %%TIKIWIKI%%/img/icons/topic_delete.gif
@@ -633,22 +474,10 @@
 %%TIKIWIKI%%/img/icons/topic_unlock.gif
 %%TIKIWIKI%%/img/icons/toright.gif
 %%TIKIWIKI%%/img/icons/trash.gif
-%%TIKIWIKI%%/img/icons/trdot.gif
-%%TIKIWIKI%%/img/icons/tu.gif
 %%TIKIWIKI%%/img/icons/unlock_topic.gif
 %%TIKIWIKI%%/img/icons/up.gif
-%%TIKIWIKI%%/img/icons/url.gif
-%%TIKIWIKI%%/img/icons/url_length.gif
-%%TIKIWIKI%%/img/icons/urlcheck.gif
-%%TIKIWIKI%%/img/icons/visit.gif
-%%TIKIWIKI%%/img/icons/visit_info.gif
-%%TIKIWIKI%%/img/icons/visited_path.gif
-%%TIKIWIKI%%/img/icons/watch.gif
-%%TIKIWIKI%%/img/icons/watchStop.gif
-%%TIKIWIKI%%/img/icons/weather.gif
 %%TIKIWIKI%%/img/icons/whelp.gif
 %%TIKIWIKI%%/img/icons/whelp_toc.gif
-%%TIKIWIKI%%/img/icons/xclipboard.gif
 %%TIKIWIKI%%/img/icons/zoom+.gif
 %%TIKIWIKI%%/img/icons/zoom+2.gif
 %%TIKIWIKI%%/img/icons/zoom+3.gif
@@ -658,110 +487,35 @@
 %%TIKIWIKI%%/img/icons/zoom-3.gif
 %%TIKIWIKI%%/img/icons/zoom-4.gif
 %%TIKIWIKI%%/img/icons/zoom.gif
+%%TIKIWIKI%%/img/icons/zoom_equal.gif
 %%TIKIWIKI%%/img/icons2/1.gif
 %%TIKIWIKI%%/img/icons2/8.gif
-%%TIKIWIKI%%/img/icons2/admin.gif
 %%TIKIWIKI%%/img/icons2/admin_delete.gif
-%%TIKIWIKI%%/img/icons2/admin_hide.gif
-%%TIKIWIKI%%/img/icons2/admin_highlight.gif
 %%TIKIWIKI%%/img/icons2/admin_move.gif
 %%TIKIWIKI%%/img/icons2/admin_rotate.gif
 %%TIKIWIKI%%/img/icons2/admin_unhide.gif
-%%TIKIWIKI%%/img/icons2/albumthumb_BB.gif
-%%TIKIWIKI%%/img/icons2/albumthumb_BL.gif
-%%TIKIWIKI%%/img/icons2/albumthumb_BR.gif
-%%TIKIWIKI%%/img/icons2/albumthumb_RR.gif
-%%TIKIWIKI%%/img/icons2/albumthumb_TR.gif
-%%TIKIWIKI%%/img/icons2/alert.gif
-%%TIKIWIKI%%/img/icons2/arrow-down.gif
-%%TIKIWIKI%%/img/icons2/arrow-right.gif
 %%TIKIWIKI%%/img/icons2/arrow.gif
 %%TIKIWIKI%%/img/icons2/arrow_fliped.gif
-%%TIKIWIKI%%/img/icons2/browse.gif
-%%TIKIWIKI%%/img/icons2/burst_mail.gif
-%%TIKIWIKI%%/img/icons2/cal.gif
-%%TIKIWIKI%%/img/icons2/calendar.gif
-%%TIKIWIKI%%/img/icons2/collapse.gif
-%%TIKIWIKI%%/img/icons2/colorchart.gif
-%%TIKIWIKI%%/img/icons2/communicate.gif
-%%TIKIWIKI%%/img/icons2/companies.gif
-%%TIKIWIKI%%/img/icons2/computer.gif
-%%TIKIWIKI%%/img/icons2/contact.gif
-%%TIKIWIKI%%/img/icons2/contacts.gif
-%%TIKIWIKI%%/img/icons2/corner-dots.gif
+%%TIKIWIKI%%/img/icons2/cycle_next.gif
+%%TIKIWIKI%%/img/icons2/cycle_prev.gif
 %%TIKIWIKI%%/img/icons2/delete.gif
 %%TIKIWIKI%%/img/icons2/delete2.gif
 %%TIKIWIKI%%/img/icons2/delete_all.gif
-%%TIKIWIKI%%/img/icons2/dled.gif
 %%TIKIWIKI%%/img/icons2/dotgreen.gif
 %%TIKIWIKI%%/img/icons2/dotgrey.gif
 %%TIKIWIKI%%/img/icons2/dotredanim.gif
 %%TIKIWIKI%%/img/icons2/dotyellowanim.gif
 %%TIKIWIKI%%/img/icons2/down.gif
-%%TIKIWIKI%%/img/icons2/down_active.gif
-%%TIKIWIKI%%/img/icons2/dp.gif
-%%TIKIWIKI%%/img/icons2/dreistern.gif
-%%TIKIWIKI%%/img/icons2/edit.gif
-%%TIKIWIKI%%/img/icons2/einstern.gif
-%%TIKIWIKI%%/img/icons2/email.gif
 %%TIKIWIKI%%/img/icons2/enlargeH.gif
 %%TIKIWIKI%%/img/icons2/enlargeW.gif
 %%TIKIWIKI%%/img/icons2/error.gif
-%%TIKIWIKI%%/img/icons2/event-attendees.gif
-%%TIKIWIKI%%/img/icons2/event.gif
-%%TIKIWIKI%%/img/icons2/expand.gif
-%%TIKIWIKI%%/img/icons2/folder-shared.gif
-%%TIKIWIKI%%/img/icons2/folder.gif
-%%TIKIWIKI%%/img/icons2/forum_folder.gif
-%%TIKIWIKI%%/img/icons2/fuenfstern.gif
-%%TIKIWIKI%%/img/icons2/graph.gif
-%%TIKIWIKI%%/img/icons2/groups.gif
-%%TIKIWIKI%%/img/icons2/h_trenner.gif
-%%TIKIWIKI%%/img/icons2/help.gif
 %%TIKIWIKI%%/img/icons2/home.gif
-%%TIKIWIKI%%/img/icons2/i_contact_off.gif
-%%TIKIWIKI%%/img/icons2/i_controlpanel_off.gif
-%%TIKIWIKI%%/img/icons2/i_document_off.gif
-%%TIKIWIKI%%/img/icons2/i_event_off.gif
-%%TIKIWIKI%%/img/icons2/i_mystatus_big.gif
-%%TIKIWIKI%%/img/icons2/i_presentation_off.gif
-%%TIKIWIKI%%/img/icons2/i_projectmanager_off.gif
-%%TIKIWIKI%%/img/icons2/i_timezones_off.gif
-%%TIKIWIKI%%/img/icons2/i_todo_off.gif
-%%TIKIWIKI%%/img/icons2/icn_banner.gif
 %%TIKIWIKI%%/img/icons2/icn_budgetgraph.gif
-%%TIKIWIKI%%/img/icons2/icn_comments.gif
-%%TIKIWIKI%%/img/icons2/icn_doc-read.gif
 %%TIKIWIKI%%/img/icons2/icn_forum.gif
 %%TIKIWIKI%%/img/icons2/icn_members.gif
-%%TIKIWIKI%%/img/icons2/icn_person.gif
-%%TIKIWIKI%%/img/icons2/icn_project.gif
-%%TIKIWIKI%%/img/icons2/icn_qc_calendar.gif
-%%TIKIWIKI%%/img/icons2/icn_qc_file.gif
-%%TIKIWIKI%%/img/icons2/icn_qc_forum.gif
-%%TIKIWIKI%%/img/icons2/icn_qc_project.gif
-%%TIKIWIKI%%/img/icons2/icn_qc_resources.gif
-%%TIKIWIKI%%/img/icons2/icn_qc_task.gif
-%%TIKIWIKI%%/img/icons2/icn_qc_todo.gif
 %%TIKIWIKI%%/img/icons2/icn_view.gif
 %%TIKIWIKI%%/img/icons2/index.php
-%%TIKIWIKI%%/img/icons2/led.gif
 %%TIKIWIKI%%/img/icons2/lock.gif
-%%TIKIWIKI%%/img/icons2/log-error.gif
-%%TIKIWIKI%%/img/icons2/log-info.gif
-%%TIKIWIKI%%/img/icons2/log-notice.gif
-%%TIKIWIKI%%/img/icons2/low.gif
-%%TIKIWIKI%%/img/icons2/mail.gif
-%%TIKIWIKI%%/img/icons2/milestone.gif
-%%TIKIWIKI%%/img/icons2/minicalendar.gif
-%%TIKIWIKI%%/img/icons2/miniedit.gif
-%%TIKIWIKI%%/img/icons2/minievent.gif
-%%TIKIWIKI%%/img/icons2/minifile.gif
-%%TIKIWIKI%%/img/icons2/miniforum.gif
-%%TIKIWIKI%%/img/icons2/miniproject.gif
-%%TIKIWIKI%%/img/icons2/minitask.gif
-%%TIKIWIKI%%/img/icons2/money.gif
-%%TIKIWIKI%%/img/icons2/move.gif
 %%TIKIWIKI%%/img/icons2/nav_dot.gif
 %%TIKIWIKI%%/img/icons2/nav_dot_left.gif
 %%TIKIWIKI%%/img/icons2/nav_dot_right.gif
@@ -770,53 +524,22 @@
 %%TIKIWIKI%%/img/icons2/nav_home.gif
 %%TIKIWIKI%%/img/icons2/nav_last.gif
 %%TIKIWIKI%%/img/icons2/nav_next.gif
-%%TIKIWIKI%%/img/icons2/nav_page.gif
 %%TIKIWIKI%%/img/icons2/nav_prev.gif
-%%TIKIWIKI%%/img/icons2/newdir.gif
-%%TIKIWIKI%%/img/icons2/newfile.gif
-%%TIKIWIKI%%/img/icons2/next.gif
-%%TIKIWIKI%%/img/icons2/nix.gif
-%%TIKIWIKI%%/img/icons2/palette.gif
-%%TIKIWIKI%%/img/icons2/pencil.gif
-%%TIKIWIKI%%/img/icons2/phone.gif
-%%TIKIWIKI%%/img/icons2/pixel_trans.gif
 %%TIKIWIKI%%/img/icons2/post.gif
-%%TIKIWIKI%%/img/icons2/posticon.gif
-%%TIKIWIKI%%/img/icons2/preference.gif
-%%TIKIWIKI%%/img/icons2/prev.gif
-%%TIKIWIKI%%/img/icons2/project.gif
-%%TIKIWIKI%%/img/icons2/projects.gif
 %%TIKIWIKI%%/img/icons2/reduceH.gif
 %%TIKIWIKI%%/img/icons2/reduceW.gif
-%%TIKIWIKI%%/img/icons2/reload.gif
-%%TIKIWIKI%%/img/icons2/search.gif
-%%TIKIWIKI%%/img/icons2/shim.gif
-%%TIKIWIKI%%/img/icons2/smartfolder.gif
+%%TIKIWIKI%%/img/icons2/slide2first.gif
+%%TIKIWIKI%%/img/icons2/slide2last.gif
 %%TIKIWIKI%%/img/icons2/status_closed.gif
 %%TIKIWIKI%%/img/icons2/status_closed_off.gif
 %%TIKIWIKI%%/img/icons2/status_open.gif
 %%TIKIWIKI%%/img/icons2/status_open_off.gif
 %%TIKIWIKI%%/img/icons2/status_pending.gif
 %%TIKIWIKI%%/img/icons2/status_pending_off.gif
-%%TIKIWIKI%%/img/icons2/system.gif
-%%TIKIWIKI%%/img/icons2/tasks.gif
 %%TIKIWIKI%%/img/icons2/tick.gif
-%%TIKIWIKI%%/img/icons2/ticketsmith.gif
 %%TIKIWIKI%%/img/icons2/translation.gif
-%%TIKIWIKI%%/img/icons2/trash.gif
-%%TIKIWIKI%%/img/icons2/trash_small.gif
 %%TIKIWIKI%%/img/icons2/up.gif
-%%TIKIWIKI%%/img/icons2/up_active.gif
-%%TIKIWIKI%%/img/icons2/updown.gif
 %%TIKIWIKI%%/img/icons2/upload.gif
-%%TIKIWIKI%%/img/icons2/uploading.gif
-%%TIKIWIKI%%/img/icons2/users.gif
-%%TIKIWIKI%%/img/icons2/vierstern.gif
-%%TIKIWIKI%%/img/icons2/view.week.gif
-%%TIKIWIKI%%/img/icons2/warning.gif
-%%TIKIWIKI%%/img/icons2/week.gif
-%%TIKIWIKI%%/img/icons2/world.gif
-%%TIKIWIKI%%/img/icons2/zweistern.gif
 %%TIKIWIKI%%/img/index.php
 %%TIKIWIKI%%/img/leftbar.gif
 %%TIKIWIKI%%/img/mainbar.gif
@@ -841,6 +564,17 @@
 %%TIKIWIKI%%/img/rdf.gif
 %%TIKIWIKI%%/img/rightbar.gif
 %%TIKIWIKI%%/img/rss.png
+%%TIKIWIKI%%/img/silk/announce.png
+%%TIKIWIKI%%/img/silk/announce_new.png
+%%TIKIWIKI%%/img/silk/hot.png
+%%TIKIWIKI%%/img/silk/hot_new.png
+%%TIKIWIKI%%/img/silk/locked.png
+%%TIKIWIKI%%/img/silk/locked_new.png
+%%TIKIWIKI%%/img/silk/page.png
+%%TIKIWIKI%%/img/silk/page_new.png
+%%TIKIWIKI%%/img/silk/readme.txt
+%%TIKIWIKI%%/img/silk/sticky.png
+%%TIKIWIKI%%/img/silk/sticky_new.png
 %%TIKIWIKI%%/img/smarty.gif
 %%TIKIWIKI%%/img/smiles/icon_arrow.gif
 %%TIKIWIKI%%/img/smiles/icon_biggrin.gif
@@ -1002,72 +736,15 @@
 %%TIKIWIKI%%/lib/Galaxia/docs/doxygen
 %%TIKIWIKI%%/lib/Galaxia/docs/index.php
 %%TIKIWIKI%%/lib/Galaxia/img/icons/Activity.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/Archive.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/FallOut.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/Instance.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/Openflow.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/Process.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/Token.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/Transaction.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/Transition.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/Workflow.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/add.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/addressbook.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/auto_focus.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/back.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/bk.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/bk_gap.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/bkr.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/bksort.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/book.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/book2.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/calendar.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/change.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/char_a.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/clear.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/clipboard.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/close.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/collapse.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/color4.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/comment.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/config.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/config2.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/desc_length.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/dispurl.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/etc.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/exit.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/expand.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/explorer.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/export.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/expression.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/fix.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/float.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/fo.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/fo_gap.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/fontfamily.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/fontsize.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/footprint.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/for.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/global.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/gradient.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/green_dot.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/hbk.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/help.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/hfo.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/history_layer.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/hofo.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/home.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/home_url.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/icon_name.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/icon_row.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/icon_size.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/iconalign.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/import.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/import2.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/inc_head.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/index.php
-%%TIKIWIKI%%/lib/Galaxia/img/icons/key.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/linkpage.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/linkto.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/memo.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/mini_blue_circle.gif
@@ -1085,53 +762,14 @@
 %%TIKIWIKI%%/lib/Galaxia/img/icons/mini_rectangle.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/mini_square.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/mini_triangle.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/mode_desc.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/mode_tree.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/move.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/myinfo.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/netscape.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/new.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/new_3day.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/new_week.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/next.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/ofo.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/opera.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/prio1.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/prio2.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/prio3.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/prio4.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/prio5.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/question.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/red_cross.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/red_dot.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/refresh.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/refresh2.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/resize.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/root_name.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/rotate.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/s_red.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/search_path.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/select.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/star.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/stop.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/theme.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/timer.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/timer2.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/today.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/toleft.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/toright.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/trash.gif
 %%TIKIWIKI%%/lib/Galaxia/img/icons/trdot.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/up.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/url.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/url_length.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/urlcheck.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/visit.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/visit_info.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/visited_path.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/weather.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/xclipboard.gif
-%%TIKIWIKI%%/lib/Galaxia/img/icons/zoom.gif
 %%TIKIWIKI%%/lib/Galaxia/img/index.php
 %%TIKIWIKI%%/lib/Galaxia/index.php
 %%TIKIWIKI%%/lib/Galaxia/log/README
@@ -1348,7 +986,6 @@
 %%TIKIWIKI%%/lib/debug/debugger-ext.php
 %%TIKIWIKI%%/lib/debug/debugger.php
 %%TIKIWIKI%%/lib/debug/index.php
-%%TIKIWIKI%%/lib/diff.php
 %%TIKIWIKI%%/lib/diff/Diff.php
 %%TIKIWIKI%%/lib/diff/Renderer.php
 %%TIKIWIKI%%/lib/diff/difflib.php
@@ -1381,8 +1018,6 @@
 %%TIKIWIKI%%/lib/graph-engine/graph.pie.php
 %%TIKIWIKI%%/lib/graph-engine/pdflib.php
 %%TIKIWIKI%%/lib/graph-engine/ps.php
-%%TIKIWIKI%%/lib/graph2/ARIALBD.TTF
-%%TIKIWIKI%%/lib/graph2/graph.php
 %%TIKIWIKI%%/lib/hawhaw/hawhaw.inc
 %%TIKIWIKI%%/lib/hawhaw/hawiki.inc
 %%TIKIWIKI%%/lib/hawhaw/hawiki_cfg.inc
@@ -1414,6 +1049,7 @@
 %%TIKIWIKI%%/lib/htmlparser/index.php
 %%TIKIWIKI%%/lib/htmlparser/readme.eng.txt
 %%TIKIWIKI%%/lib/htmlparser/rebuildgrammar.php
+%%TIKIWIKI%%/lib/imagegals/imagegallib.js
 %%TIKIWIKI%%/lib/imagegals/imagegallib.php
 %%TIKIWIKI%%/lib/imagegals/index.php
 %%TIKIWIKI%%/lib/index.php
@@ -1641,58 +1277,6 @@
 %%TIKIWIKI%%/lib/pear/Net/URL.php
 %%TIKIWIKI%%/lib/pear/Net/index.php
 %%TIKIWIKI%%/lib/pear/PEAR.php
-%%TIKIWIKI%%/lib/pear/PHPUnit.php
-%%TIKIWIKI%%/lib/pear/SOAP/Base.php
-%%TIKIWIKI%%/lib/pear/SOAP/Client.php
-%%TIKIWIKI%%/lib/pear/SOAP/Disco.php
-%%TIKIWIKI%%/lib/pear/SOAP/Fault.php
-%%TIKIWIKI%%/lib/pear/SOAP/Parser.php
-%%TIKIWIKI%%/lib/pear/SOAP/Server.php
-%%TIKIWIKI%%/lib/pear/SOAP/Server/Email.php
-%%TIKIWIKI%%/lib/pear/SOAP/Server/Email_Gateway.php
-%%TIKIWIKI%%/lib/pear/SOAP/Server/TCP.php
-%%TIKIWIKI%%/lib/pear/SOAP/Server/index.php
-%%TIKIWIKI%%/lib/pear/SOAP/Transport.php
-%%TIKIWIKI%%/lib/pear/SOAP/Transport/HTTP.php
-%%TIKIWIKI%%/lib/pear/SOAP/Transport/SMTP.php
-%%TIKIWIKI%%/lib/pear/SOAP/Transport/TCP.php
-%%TIKIWIKI%%/lib/pear/SOAP/Transport/index.php
-%%TIKIWIKI%%/lib/pear/SOAP/Type/dateTime.php
-%%TIKIWIKI%%/lib/pear/SOAP/Type/duration.php
-%%TIKIWIKI%%/lib/pear/SOAP/Type/hexBinary.php
-%%TIKIWIKI%%/lib/pear/SOAP/Type/index.php
-%%TIKIWIKI%%/lib/pear/SOAP/Value.php
-%%TIKIWIKI%%/lib/pear/SOAP/WSDL.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/amazon/amazon.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/amazon/amazon_modes.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/amazon/amazon_soap.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/amazon/amazon_types.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/amazon/config.php.dist
-%%TIKIWIKI%%/lib/pear/SOAP/example/amazon/index.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/amazon/modes.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/attachment.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/client.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/com_client.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/disco_server.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/email_client.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/email_gateway.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/email_pop_gateway.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/email_pop_server.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/email_server.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/example_server.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/example_types.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/index.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/server.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/server2.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/smtp.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/stockquote.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/tcp_client.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/tcp_daemon.pl
-%%TIKIWIKI%%/lib/pear/SOAP/example/tcp_server.php
-%%TIKIWIKI%%/lib/pear/SOAP/example/wsdl_client.php
-%%TIKIWIKI%%/lib/pear/SOAP/index.php
-%%TIKIWIKI%%/lib/pear/SOAP/tools/genproxy.php
-%%TIKIWIKI%%/lib/pear/SOAP/tools/index.php
 %%TIKIWIKI%%/lib/pear/System.php
 %%TIKIWIKI%%/lib/pear/XML/Dump.php
 %%TIKIWIKI%%/lib/pear/XML/Parser.php
@@ -1703,19 +1287,6 @@
 %%TIKIWIKI%%/lib/pear/XML/Tree/index.php
 %%TIKIWIKI%%/lib/pear/XML/index.php
 %%TIKIWIKI%%/lib/pear/index.php
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/index.php
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/001.phpt
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/002.phpt
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/003.phpt
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/004.phpt
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/005.phpt
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/index.php
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/test2.xml
-%%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests/test3.xml
-%%TIKIWIKI%%/lib/pear/tests/XML_Tree/index.php
-%%TIKIWIKI%%/lib/pear/tests/XML_Tree/tests/index.php
-%%TIKIWIKI%%/lib/pear/tests/XML_Tree/tests/test.php
-%%TIKIWIKI%%/lib/pear/tests/index.php
 %%TIKIWIKI%%/lib/phplayers/ACKNOWLEDGEMENTS
 %%TIKIWIKI%%/lib/phplayers/CHANGELOG
 %%TIKIWIKI%%/lib/phplayers/CHANGE_TEMPLATE_CLASS_NAME.sh
@@ -1725,6 +1296,11 @@
 %%TIKIWIKI%%/lib/phplayers/DUMPS/mysql.start.dump
 %%TIKIWIKI%%/lib/phplayers/DUMPS/pgsql.demo_data.dump
 %%TIKIWIKI%%/lib/phplayers/DUMPS/pgsql.start.dump
+%%TIKIWIKI%%/lib/phplayers/DUMPS/phplayersmenu
+%%TIKIWIKI%%/lib/phplayers/DUMPS/sqlite.demo_data.dump
+%%TIKIWIKI%%/lib/phplayers/DUMPS/sqlite.demo_data.dump.php5
+%%TIKIWIKI%%/lib/phplayers/DUMPS/sqlite.start.dump
+%%TIKIWIKI%%/lib/phplayers/DUMPS/sqlite.start.dump.php5
 %%TIKIWIKI%%/lib/phplayers/LICENSE
 %%TIKIWIKI%%/lib/phplayers/LOGOS/README
 %%TIKIWIKI%%/lib/phplayers/LOGOS/index.php
@@ -1739,12 +1315,22 @@
 %%TIKIWIKI%%/lib/phplayers/LOGOS/powered_by_phplm_l04.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/powered_by_phplm_y01.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/powered_by_phplm_y02.png
+%%TIKIWIKI%%/lib/phplayers/LOGOS/powered_by_phplm_y03.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/powered_by_phplm_y04.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/shortcut_icon_phplm.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/shortcut_icon_phplm_01.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/shortcut_icon_phplm_02.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/shortcut_icon_phplm_03.png
 %%TIKIWIKI%%/lib/phplayers/LOGOS/shortcut_icon_phplm_04.png
+%%TIKIWIKI%%/lib/phplayers/LOGOS/shortcut_icon_phplm_05.png
+%%TIKIWIKI%%/lib/phplayers/PATCHES/FIXEDMENU/README
+%%TIKIWIKI%%/lib/phplayers/PATCHES/FIXEDMENU/fixedmenu.patch
+%%TIKIWIKI%%/lib/phplayers/PATCHES/ICONS_I18N/README
+%%TIKIWIKI%%/lib/phplayers/PATCHES/ICONS_I18N/icons_i18n.patch
+%%TIKIWIKI%%/lib/phplayers/PATCHES/ONCLICK/README
+%%TIKIWIKI%%/lib/phplayers/PATCHES/ONCLICK/onclick-simple.patch
+%%TIKIWIKI%%/lib/phplayers/PATCHES/ONCLICK/onclick.patch
+%%TIKIWIKI%%/lib/phplayers/PATCHES/README
 %%TIKIWIKI%%/lib/phplayers/README.PHPDOC
 %%TIKIWIKI%%/lib/phplayers/README.ihtml
 %%TIKIWIKI%%/lib/phplayers/THEMES/galeon-theme.tar.gz
@@ -1754,7 +1340,12 @@
 %%TIKIWIKI%%/lib/phplayers/THEMES/mozilla-theme.tar.gz
 %%TIKIWIKI%%/lib/phplayers/THEMES/nautilus-gnome-theme.tar.gz
 %%TIKIWIKI%%/lib/phplayers/TODO
+%%TIKIWIKI%%/lib/phplayers/demo.php
+%%TIKIWIKI%%/lib/phplayers/demo.php.html
+%%TIKIWIKI%%/lib/phplayers/demo.phps
 %%TIKIWIKI%%/lib/phplayers/example-db-hormenu.php
+%%TIKIWIKI%%/lib/phplayers/example-db-treemenu.notshown.php
+%%TIKIWIKI%%/lib/phplayers/example-db-treemenu.php
 %%TIKIWIKI%%/lib/phplayers/example-dbtofile.php
 %%TIKIWIKI%%/lib/phplayers/example-filetodb.php
 %%TIKIWIKI%%/lib/phplayers/example-frame-body.php
@@ -1764,11 +1355,16 @@
 %%TIKIWIKI%%/lib/phplayers/example-hormenu.php
 %%TIKIWIKI%%/lib/phplayers/example-hormenu_and_treemenu.php
 %%TIKIWIKI%%/lib/phplayers/example-hormenu_and_vermenu.php
+%%TIKIWIKI%%/lib/phplayers/example-horplainmenu.php
 %%TIKIWIKI%%/lib/phplayers/example-layersmenus_and_treemenus.php
+%%TIKIWIKI%%/lib/phplayers/example-phptreemenu.php
 %%TIKIWIKI%%/lib/phplayers/example-see-through.php
 %%TIKIWIKI%%/lib/phplayers/example-treemenu.php
 %%TIKIWIKI%%/lib/phplayers/example-two_treemenus.php
 %%TIKIWIKI%%/lib/phplayers/example-vermenu.php
+%%TIKIWIKI%%/lib/phplayers/example-verplainmenu.php
+%%TIKIWIKI%%/lib/phplayers/examples-frame.html
+%%TIKIWIKI%%/lib/phplayers/examples-leftbar.html
 %%TIKIWIKI%%/lib/phplayers/images/debian-icon-mini.png
 %%TIKIWIKI%%/lib/phplayers/images/desktop.png
 %%TIKIWIKI%%/lib/phplayers/images/down-arrow.png
@@ -1829,6 +1425,8 @@
 %%TIKIWIKI%%/lib/phplayers/layersmenu-gtk2.css
 %%TIKIWIKI%%/lib/phplayers/layersmenu-horizontal-1.txt
 %%TIKIWIKI%%/lib/phplayers/layersmenu-horizontal-2.txt
+%%TIKIWIKI%%/lib/phplayers/layersmenu-index.css
+%%TIKIWIKI%%/lib/phplayers/layersmenu-index.txt
 %%TIKIWIKI%%/lib/phplayers/layersmenu-keramik.css
 %%TIKIWIKI%%/lib/phplayers/layersmenu-old.css
 %%TIKIWIKI%%/lib/phplayers/layersmenu-vertical-1.txt
@@ -1837,6 +1435,7 @@
 %%TIKIWIKI%%/lib/phplayers/layerstreemenu.css
 %%TIKIWIKI%%/lib/phplayers/lib/PHPLIB.php
 %%TIKIWIKI%%/lib/phplayers/lib/index.php
+%%TIKIWIKI%%/lib/phplayers/lib/layersmenu-browser_detection.php
 %%TIKIWIKI%%/lib/phplayers/lib/layersmenu-common.inc.php
 %%TIKIWIKI%%/lib/phplayers/lib/layersmenu-process.inc.php
 %%TIKIWIKI%%/lib/phplayers/lib/layersmenu.inc.php
@@ -1852,9 +1451,100 @@
 %%TIKIWIKI%%/lib/phplayers/libjs/layersmenu.js
 %%TIKIWIKI%%/lib/phplayers/libjs/layerstreemenu-cookies.js
 %%TIKIWIKI%%/lib/phplayers/libjs/layerstreemenu.ijs
+%%TIKIWIKI%%/lib/phplayers/menuicons/bug-small.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/debian-icon-mini.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/desktop.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/downloadManager16.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/email.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/epiphany-16.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/freshmeat.net_favicon.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/gnome-starthere-mini.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/kfm_home.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/misc_doc.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/mozilla.org_images_mozilla-16.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/netscape-icon-mini.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/office_suites.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/ooo-icon-mini.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/pan-icon-mini.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/php-bugs-icon-mini.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/phplib-logo-mini.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/quanta.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/shortcut_icon_phplm.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/sitebar_root_transparent.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/sourceforge.net_images_favicon.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/tgz.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/www.gimp.org_icons_wilber16.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/www.gnome.org_images_gnome-16.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/www.kde.org_favicon.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/www.kernel.org_images_tux16-16.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/www.mysql.com_favicon.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/www.php.net_favicon.png
+%%TIKIWIKI%%/lib/phplayers/menuicons/www.ximian.com_favicon.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/down-arrow.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/down-galaxy.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/down-gnome.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/down-gtk2.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/down-keramik.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/down-nautilus.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/forward-arrow.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/forward-galaxy.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/forward-gnome.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/forward-gtk2.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/forward-keramik.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/forward-nautilus.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_collapse.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_collapse_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_collapse_corner_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_collapse_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_expand.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_expand_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_expand_corner_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_expand_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_folder_closed.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_folder_open.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_leaf.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_space.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_split.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_split_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/kde_tree_vertline.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_collapse.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_collapse_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_collapse_corner_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_collapse_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_expand.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_expand_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_expand_corner_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_expand_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_folder_closed.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_folder_open.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_leaf.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_space.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_split.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_split_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/nautilus_tree_vertline.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/transparent.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_collapse.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_collapse_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_collapse_corner_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_collapse_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_expand.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_expand_corner.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_expand_corner_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_expand_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_folder_closed.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_folder_open.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_leaf.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_space.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_split.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_split_first.png
+%%TIKIWIKI%%/lib/phplayers/menuimages/tree_vertline.png
 %%TIKIWIKI%%/lib/phplayers/phplayersindex.php
 %%TIKIWIKI%%/lib/phplayers/templates/index.php
 %%TIKIWIKI%%/lib/phplayers/templates/layersmenu-horizontal_menu-full.ihtml
+%%TIKIWIKI%%/lib/phplayers/templates/layersmenu-horizontal_menu-keramik-full.ihtml
 %%TIKIWIKI%%/lib/phplayers/templates/layersmenu-horizontal_menu-keramik.ihtml
 %%TIKIWIKI%%/lib/phplayers/templates/layersmenu-horizontal_menu-old.ihtml
 %%TIKIWIKI%%/lib/phplayers/templates/layersmenu-horizontal_menu.ihtml
@@ -1869,6 +1559,8 @@
 %%TIKIWIKI%%/lib/phplayers/templates/layersmenu-vertical_menu-galaxy.ihtml
 %%TIKIWIKI%%/lib/phplayers/templates/layersmenu-vertical_menu-old.ihtml
 %%TIKIWIKI%%/lib/phplayers/templates/layersmenu-vertical_menu.ihtml
+%%TIKIWIKI%%/lib/phplayers_tiki/lib/index.php
+%%TIKIWIKI%%/lib/phplayers_tiki/lib/layersmenu-common.inc.php
 %%TIKIWIKI%%/lib/polls/index.php
 %%TIKIWIKI%%/lib/polls/polllib.php
 %%TIKIWIKI%%/lib/polls/polllib_shared.php
@@ -2114,7 +1806,7 @@
 %%TIKIWIKI%%/lib/smarty_tiki/prefilter.ticket.php
 %%TIKIWIKI%%/lib/smarty_tiki/prefilter.tr.php
 %%TIKIWIKI%%/lib/snoopy/README
-%%TIKIWIKI%%/lib/snoopy/Snoopy.class.inc
+%%TIKIWIKI%%/lib/snoopy/Snoopy.class.php
 %%TIKIWIKI%%/lib/snoopy/index.php
 %%TIKIWIKI%%/lib/stats/index.php
 %%TIKIWIKI%%/lib/stats/statslib.php
@@ -2122,17 +1814,6 @@
 %%TIKIWIKI%%/lib/structures/structlib.php
 %%TIKIWIKI%%/lib/surveys/index.php
 %%TIKIWIKI%%/lib/surveys/surveylib.php
-%%TIKIWIKI%%/lib/tabs/aqua-tab-active.png
-%%TIKIWIKI%%/lib/tabs/aqua-tab.png
-%%TIKIWIKI%%/lib/tabs/aqua.css
-%%TIKIWIKI%%/lib/tabs/cookie.js
-%%TIKIWIKI%%/lib/tabs/global.js
-%%TIKIWIKI%%/lib/tabs/index.php
-%%TIKIWIKI%%/lib/tabs/mozilla.css
-%%TIKIWIKI%%/lib/tabs/tabs.js
-%%TIKIWIKI%%/lib/tabs/utils.js
-%%TIKIWIKI%%/lib/tabs/viewport.js
-%%TIKIWIKI%%/lib/tabs/winxp.css
 %%TIKIWIKI%%/lib/taglines/index.php
 %%TIKIWIKI%%/lib/taglines/taglinelib.php
 %%TIKIWIKI%%/lib/tail/index.php
@@ -2146,24 +1827,6 @@
 %%TIKIWIKI%%/lib/themecontrol/tcontrol.php
 %%TIKIWIKI%%/lib/tiki-dynamic-js.php
 %%TIKIWIKI%%/lib/tiki-js.js
-%%TIKIWIKI%%/lib/tikiaccesslib.php
-%%TIKIWIKI%%/lib/tikibot/README
-%%TIKIWIKI%%/lib/tikibot/index.php
-%%TIKIWIKI%%/lib/tikibot/modules/Wollabot_Base.php
-%%TIKIWIKI%%/lib/tikibot/modules/act.php
-%%TIKIWIKI%%/lib/tikibot/modules/amiop.php
-%%TIKIWIKI%%/lib/tikibot/modules/faq.php
-%%TIKIWIKI%%/lib/tikibot/modules/fortune.php
-%%TIKIWIKI%%/lib/tikibot/modules/google.php
-%%TIKIWIKI%%/lib/tikibot/modules/index.php
-%%TIKIWIKI%%/lib/tikibot/modules/nickometer.php
-%%TIKIWIKI%%/lib/tikibot/modules/php.def
-%%TIKIWIKI%%/lib/tikibot/modules/phpfunctions.php
-%%TIKIWIKI%%/lib/tikibot/modules/say.php
-%%TIKIWIKI%%/lib/tikibot/modules/tiki.php
-%%TIKIWIKI%%/lib/tikibot/modules/translate.php
-%%TIKIWIKI%%/lib/tikibot/start.php
-%%TIKIWIKI%%/lib/tikibot/wollabot.ini
 %%TIKIWIKI%%/lib/tikidate.php
 %%TIKIWIKI%%/lib/tikidblib-debug.php
 %%TIKIWIKI%%/lib/tikidblib.php
@@ -2230,15 +1893,6 @@
 %%TIKIWIKI%%/lib/userprefs/scrambleEmail.php
 %%TIKIWIKI%%/lib/userprefs/userprefslib.php
 %%TIKIWIKI%%/lib/userslib.php
-%%TIKIWIKI%%/lib/weather/Weather.php
-%%TIKIWIKI%%/lib/weather/WebCell.php
-%%TIKIWIKI%%/lib/weather/changelog.txt
-%%TIKIWIKI%%/lib/weather/get_weather_inc.php
-%%TIKIWIKI%%/lib/weather/index.php
-%%TIKIWIKI%%/lib/weather/readme.txt
-%%TIKIWIKI%%/lib/weather/setup_inc.php
-%%TIKIWIKI%%/lib/weather/socket_test.php
-%%TIKIWIKI%%/lib/weather/weather.tpl
 %%TIKIWIKI%%/lib/webmail/API.txt
 %%TIKIWIKI%%/lib/webmail/class.rc4crypt.php
 %%TIKIWIKI%%/lib/webmail/decodemessage.php
@@ -2296,6 +1950,7 @@
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_sf.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_sheet.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_showpages.php
+%%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_skype.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_sort.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_split.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_sql.php
@@ -2304,6 +1959,7 @@
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_thumb.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_titlesearch.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_tracker.php
+%%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_trackerfilter.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_trackerlist.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_translated.php
 %%TIKIWIKI%%/lib/wiki-plugins/wikiplugin_usercount.php
@@ -2406,6 +2062,7 @@
 %%TIKIWIKI%%/modules/mod-last_visitors.php
 %%TIKIWIKI%%/modules/mod-live_support.php
 %%TIKIWIKI%%/modules/mod-logged_users.php
+%%TIKIWIKI%%/modules/mod-menupage.php
 %%TIKIWIKI%%/modules/mod-messages_unread_messages.php
 %%TIKIWIKI%%/modules/mod-num_submissions.php
 %%TIKIWIKI%%/modules/mod-old_articles.php
@@ -2565,6 +2222,7 @@
 %%TIKIWIKI%%/styles/jalist2/menucap.png
 %%TIKIWIKI%%/styles/lesjetesdelencre.css
 %%TIKIWIKI%%/styles/lesjetesdelencre/tetiere1.jpg
+%%TIKIWIKI%%/styles/lite/lite.css
 %%TIKIWIKI%%/styles/moreneat.css
 %%TIKIWIKI%%/styles/mose.css
 %%TIKIWIKI%%/styles/mose/bgtitlebox.png
@@ -2784,6 +2442,7 @@
 %%TIKIWIKI%%/templates/modules/mod-directory_stats.tpl
 %%TIKIWIKI%%/templates/modules/mod-directory_top_sites.tpl
 %%TIKIWIKI%%/templates/modules/mod-eph.tpl
+%%TIKIWIKI%%/templates/modules/mod-events.tpl
 %%TIKIWIKI%%/templates/modules/mod-featured_links.tpl
 %%TIKIWIKI%%/templates/modules/mod-forums_best_voted_topics.tpl
 %%TIKIWIKI%%/templates/modules/mod-forums_last_posts.tpl
@@ -2819,6 +2478,7 @@
 %%TIKIWIKI%%/templates/modules/mod-login_box.tpl
 %%TIKIWIKI%%/templates/modules/mod-login_box.tpl.nocache
 %%TIKIWIKI%%/templates/modules/mod-logo.tpl
+%%TIKIWIKI%%/templates/modules/mod-menupage.tpl
 %%TIKIWIKI%%/templates/modules/mod-messages_unread_messages.tpl
 %%TIKIWIKI%%/templates/modules/mod-messages_unread_messages.tpl.nocache
 %%TIKIWIKI%%/templates/modules/mod-num_submissions.tpl
@@ -2829,6 +2489,7 @@
 %%TIKIWIKI%%/templates/modules/mod-random_images.tpl
 %%TIKIWIKI%%/templates/modules/mod-random_pages.tpl
 %%TIKIWIKI%%/templates/modules/mod-register.tpl
+%%TIKIWIKI%%/templates/modules/mod-rsslist.tpl
 %%TIKIWIKI%%/templates/modules/mod-search_box.tpl
 %%TIKIWIKI%%/templates/modules/mod-search_new.tpl
 %%TIKIWIKI%%/templates/modules/mod-search_wiki_page.tpl
@@ -2936,7 +2597,6 @@
 %%TIKIWIKI%%/templates/styles/simple/categpath.tpl
 %%TIKIWIKI%%/templates/styles/simple/confirm.tpl
 %%TIKIWIKI%%/templates/styles/simple/error.tpl
-%%TIKIWIKI%%/templates/styles/simple/header.tpl
 %%TIKIWIKI%%/templates/styles/simple/index.php
 %%TIKIWIKI%%/templates/styles/simple/module.tpl
 %%TIKIWIKI%%/templates/styles/simple/modules/index.php
@@ -2948,6 +2608,12 @@
 %%TIKIWIKI%%/templates/styles/simple/modules/mod-last_modif_pages.tpl
 %%TIKIWIKI%%/templates/styles/simple/modules/mod-login_box.tpl
 %%TIKIWIKI%%/templates/styles/simple/modules/mod-quick_edit.tpl
+%%TIKIWIKI%%/templates/styles/simple/modules/mod-register.tpl
+%%TIKIWIKI%%/templates/styles/simple/modules/mod-search_box.tpl
+%%TIKIWIKI%%/templates/styles/simple/modules/mod-search_new.tpl
+%%TIKIWIKI%%/templates/styles/simple/modules/mod-search_wiki_page.tpl
+%%TIKIWIKI%%/templates/styles/simple/modules/mod-search_wiki_page_new.tpl
+%%TIKIWIKI%%/templates/styles/simple/modules/mod-shoutbox.tpl
 %%TIKIWIKI%%/templates/styles/simple/modules/mod-switch_lang.tpl
 %%TIKIWIKI%%/templates/styles/simple/modules/mod-switch_lang2.tpl
 %%TIKIWIKI%%/templates/styles/simple/modules/mod-switch_theme.tpl
@@ -2966,7 +2632,6 @@
 %%TIKIWIKI%%/templates/styles/smartiki/tiki-print_multi_pages.tpl
 %%TIKIWIKI%%/templates/styles/smartiki/tiki.tpl
 %%TIKIWIKI%%/templates/styles/tiki/error.tpl
-%%TIKIWIKI%%/templates/styles/tiki/header.tpl
 %%TIKIWIKI%%/templates/styles/tiki/index.php
 %%TIKIWIKI%%/templates/styles/tiki/modules/index.php
 %%TIKIWIKI%%/templates/styles/tiki/modules/mod-featured_links.tpl
@@ -3001,6 +2666,7 @@
 %%TIKIWIKI%%/templates/tiki-admin-include-gal.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-general.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-gmap.tpl
+%%TIKIWIKI%%/templates/tiki-admin-include-i18n.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-intertiki.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-list-sections.tpl
 %%TIKIWIKI%%/templates/tiki-admin-include-login.tpl
@@ -3155,6 +2821,7 @@
 %%TIKIWIKI%%/templates/tiki-g-view_workitem.tpl
 %%TIKIWIKI%%/templates/tiki-galleries.tpl
 %%TIKIWIKI%%/templates/tiki-gmap_locator.tpl
+%%TIKIWIKI%%/templates/tiki-gmap_usermap.tpl
 %%TIKIWIKI%%/templates/tiki-graph-sheets.tpl
 %%TIKIWIKI%%/templates/tiki-history-sheets.tpl
 %%TIKIWIKI%%/templates/tiki-imexport_languages.tpl
@@ -3217,6 +2884,7 @@
 %%TIKIWIKI%%/templates/tiki-pick_avatar.tpl
 %%TIKIWIKI%%/templates/tiki-plugin_poll.tpl
 %%TIKIWIKI%%/templates/tiki-plugin_sql.tpl
+%%TIKIWIKI%%/templates/tiki-plugin_trackerfilter.tpl
 %%TIKIWIKI%%/templates/tiki-plugin_trackerlist.tpl
 %%TIKIWIKI%%/templates/tiki-poll.tpl
 %%TIKIWIKI%%/templates/tiki-poll_form.tpl
@@ -3306,6 +2974,7 @@
 %%TIKIWIKI%%/templates/tiki-wiki3d.tpl
 %%TIKIWIKI%%/templates/tiki.tpl
 %%TIKIWIKI%%/templates/translated-lang.tpl
+%%TIKIWIKI%%/templates/wiki-plugins/wikiplugin_trackerfilter.tpl
 %%TIKIWIKI%%/templates_c/.htaccess
 %%TIKIWIKI%%/templates_c/README
 %%TIKIWIKI%%/templates_c/index.php
@@ -3338,6 +3007,7 @@
 %%TIKIWIKI%%/tiki-admin_include_gal.php
 %%TIKIWIKI%%/tiki-admin_include_general.php
 %%TIKIWIKI%%/tiki-admin_include_gmap.php
+%%TIKIWIKI%%/tiki-admin_include_i18n.php
 %%TIKIWIKI%%/tiki-admin_include_intertiki.php
 %%TIKIWIKI%%/tiki-admin_include_login.php
 %%TIKIWIKI%%/tiki-admin_include_maps.php
@@ -3492,6 +3162,7 @@
 %%TIKIWIKI%%/tiki-galleries.php
 %%TIKIWIKI%%/tiki-galleries_rankings.php
 %%TIKIWIKI%%/tiki-gmap_locator.php
+%%TIKIWIKI%%/tiki-gmap_usermap.php
 %%TIKIWIKI%%/tiki-graph_formula.php
 %%TIKIWIKI%%/tiki-graph_sheet.php
 %%TIKIWIKI%%/tiki-handlers.php
@@ -3501,6 +3172,7 @@
 %%TIKIWIKI%%/tiki-imexport_languages.php
 %%TIKIWIKI%%/tiki-import_sheet.php
 %%TIKIWIKI%%/tiki-import_structuredtext.php
+%%TIKIWIKI%%/tiki-import_tracker.php
 %%TIKIWIKI%%/tiki-index.php
 %%TIKIWIKI%%/tiki-index_p.php
 %%TIKIWIKI%%/tiki-index_raw.php
@@ -3687,7 +3359,8 @@
 %%TIKIWIKI%%/xmlrpc.php
 @dirrm %%TIKIWIKI%%/whelp
 @dirrm %%TIKIWIKI%%/tikimovies
-@dirrmtry %%TIKIWIKI%%/templates_c
+@dirrm %%TIKIWIKI%%/templates_c
+@dirrm %%TIKIWIKI%%/templates/wiki-plugins
 @dirrm %%TIKIWIKI%%/templates/tables
 @dirrm %%TIKIWIKI%%/templates/styles/vidiki
 @dirrm %%TIKIWIKI%%/templates/styles/trollparty
@@ -3718,8 +3391,8 @@
 @dirrm %%TIKIWIKI%%/templates/debug
 @dirrm %%TIKIWIKI%%/templates
 @dirrm %%TIKIWIKI%%/temp/mail_attachs
-@dirrmtry %%TIKIWIKI%%/temp/cache
-@dirrmtry %%TIKIWIKI%%/temp
+@dirrm %%TIKIWIKI%%/temp/cache
+@dirrm %%TIKIWIKI%%/temp
 @dirrm %%TIKIWIKI%%/styles/vidiki
 @dirrm %%TIKIWIKI%%/styles/transitions
 @dirrm %%TIKIWIKI%%/styles/tranquil
@@ -3733,6 +3406,7 @@
 @dirrm %%TIKIWIKI%%/styles/neat
 @dirrm %%TIKIWIKI%%/styles/mozilla
 @dirrm %%TIKIWIKI%%/styles/mose
+@dirrm %%TIKIWIKI%%/styles/lite
 @dirrm %%TIKIWIKI%%/styles/lesjetesdelencre
 @dirrm %%TIKIWIKI%%/styles/jalist2
 @dirrm %%TIKIWIKI%%/styles/jalist
@@ -3751,8 +3425,6 @@
 @dirrm %%TIKIWIKI%%/popups
 @dirrm %%TIKIWIKI%%/modules/cache
 @dirrm %%TIKIWIKI%%/modules
-@dirrm %%TIKIWIKI%%/mods
-@dirrm %%TIKIWIKI%%/maps
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br/arca/morcego
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br/arca
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br
@@ -3778,7 +3450,6 @@
 @dirrm %%TIKIWIKI%%/lib/wiki-plugins
 @dirrm %%TIKIWIKI%%/lib/wiki
 @dirrm %%TIKIWIKI%%/lib/webmail
-@dirrm %%TIKIWIKI%%/lib/weather
 @dirrm %%TIKIWIKI%%/lib/userprefs
 @dirrm %%TIKIWIKI%%/lib/usermodules
 @dirrm %%TIKIWIKI%%/lib/usermenu
@@ -3790,14 +3461,11 @@
 @dirrm %%TIKIWIKI%%/lib/tikihelp/icons
 @dirrm %%TIKIWIKI%%/lib/tikihelp/css
 @dirrm %%TIKIWIKI%%/lib/tikihelp
-@dirrm %%TIKIWIKI%%/lib/tikibot/modules
-@dirrm %%TIKIWIKI%%/lib/tikibot
 @dirrm %%TIKIWIKI%%/lib/themecontrol
 @dirrm %%TIKIWIKI%%/lib/templates
 @dirrm %%TIKIWIKI%%/lib/tasks
 @dirrm %%TIKIWIKI%%/lib/tail
 @dirrm %%TIKIWIKI%%/lib/taglines
-@dirrm %%TIKIWIKI%%/lib/tabs
 @dirrm %%TIKIWIKI%%/lib/surveys
 @dirrm %%TIKIWIKI%%/lib/structures
 @dirrm %%TIKIWIKI%%/lib/stats
@@ -3840,28 +3508,24 @@
 @dirrm %%TIKIWIKI%%/lib/quicktags
 @dirrm %%TIKIWIKI%%/lib/projects
 @dirrm %%TIKIWIKI%%/lib/polls
+@dirrm %%TIKIWIKI%%/lib/phplayers_tiki/lib
+@dirrm %%TIKIWIKI%%/lib/phplayers_tiki
 @dirrm %%TIKIWIKI%%/lib/phplayers/templates
+@dirrm %%TIKIWIKI%%/lib/phplayers/menuimages
+@dirrm %%TIKIWIKI%%/lib/phplayers/menuicons
 @dirrm %%TIKIWIKI%%/lib/phplayers/libjs
 @dirrm %%TIKIWIKI%%/lib/phplayers/lib
 @dirrm %%TIKIWIKI%%/lib/phplayers/images
 @dirrm %%TIKIWIKI%%/lib/phplayers/THEMES
+@dirrm %%TIKIWIKI%%/lib/phplayers/PATCHES/ONCLICK
+@dirrm %%TIKIWIKI%%/lib/phplayers/PATCHES/ICONS_I18N
+@dirrm %%TIKIWIKI%%/lib/phplayers/PATCHES/FIXEDMENU
+@dirrm %%TIKIWIKI%%/lib/phplayers/PATCHES
 @dirrm %%TIKIWIKI%%/lib/phplayers/LOGOS
 @dirrm %%TIKIWIKI%%/lib/phplayers/DUMPS
 @dirrm %%TIKIWIKI%%/lib/phplayers
-@dirrm %%TIKIWIKI%%/lib/pear/tests/XML_Tree/tests
-@dirrm %%TIKIWIKI%%/lib/pear/tests/XML_Tree
-@dirrm %%TIKIWIKI%%/lib/pear/tests/XML_Parser/tests
-@dirrm %%TIKIWIKI%%/lib/pear/tests/XML_Parser
-@dirrm %%TIKIWIKI%%/lib/pear/tests
 @dirrm %%TIKIWIKI%%/lib/pear/XML/Tree
 @dirrm %%TIKIWIKI%%/lib/pear/XML
-@dirrm %%TIKIWIKI%%/lib/pear/SOAP/tools
-@dirrm %%TIKIWIKI%%/lib/pear/SOAP/example/amazon
-@dirrm %%TIKIWIKI%%/lib/pear/SOAP/example
-@dirrm %%TIKIWIKI%%/lib/pear/SOAP/Type
-@dirrm %%TIKIWIKI%%/lib/pear/SOAP/Transport
-@dirrm %%TIKIWIKI%%/lib/pear/SOAP/Server
-@dirrm %%TIKIWIKI%%/lib/pear/SOAP
 @dirrm %%TIKIWIKI%%/lib/pear/Net
 @dirrm %%TIKIWIKI%%/lib/pear/HTTP/docs
 @dirrm %%TIKIWIKI%%/lib/pear/HTTP
@@ -3907,7 +3571,6 @@
 @dirrm %%TIKIWIKI%%/lib/hawhaw/skin/magnify
 @dirrm %%TIKIWIKI%%/lib/hawhaw/skin
 @dirrm %%TIKIWIKI%%/lib/hawhaw
-@dirrm %%TIKIWIKI%%/lib/graph2
 @dirrm %%TIKIWIKI%%/lib/graph-engine
 @dirrm %%TIKIWIKI%%/lib/games
 @dirrm %%TIKIWIKI%%/lib/filegals
@@ -4003,13 +3666,13 @@
 @dirrm %%TIKIWIKI%%/img/trackers
 @dirrm %%TIKIWIKI%%/img/tiki
 @dirrm %%TIKIWIKI%%/img/smiles
+@dirrm %%TIKIWIKI%%/img/silk
 @dirrm %%TIKIWIKI%%/img/mytiki
 @dirrm %%TIKIWIKI%%/img/icons2
 @dirrm %%TIKIWIKI%%/img/icons
 @dirrm %%TIKIWIKI%%/img/icn
 @dirrm %%TIKIWIKI%%/img/graph
 @dirrm %%TIKIWIKI%%/img/flags
-@dirrm %%TIKIWIKI%%/img/custom
 @dirrm %%TIKIWIKI%%/img/avatars
 @dirrm %%TIKIWIKI%%/img
 @dirrm %%TIKIWIKI%%/images
