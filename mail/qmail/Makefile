@@ -311,7 +311,7 @@ CFLAGS+=	-DDEBUG
 . endif
 
 . for param in ${LDAP_PARAMS}
-.  if defined(WITH_${param})
+.  if defined(WITH_${param}) && !defined(WITHOUT_${param})
 LDAPFLAGS+=	-D${param}
 .  endif
 . endfor
@@ -461,7 +461,7 @@ PATCHFILES+=	tarpit.patch:tarpit
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
 .endif
 
-.if defined(WITH_RCDLINK) && !defined(SLAVE_LDAP)
+.if !defined(WITHOUT_RCDLINK) && !defined(SLAVE_LDAP)
 PLIST_SUB+=	RCDLINK=""
 RCDLINK=
 .else
