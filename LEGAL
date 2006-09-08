@@ -506,6 +506,8 @@ rpm/i386/8.0/*		emulators/linux_base-8	Binaries under GNU GPL
 rtplib-*		devel/rtplib		Limited use license
 ruby/ruby_cast_256.zip	security/ruby-cast_256	Crypto; export-controlled
 runrev/linux.tgz	devel/linux-runrev	Do not sell for profit
+savage/savage*		games/linux-savage	Savage is freeware, but i am 
+						not sure of its license
 sdr-*			mbone/sdr		Crypto; export-controlled
 serialmail-*		mail/serialmail		No license -- see
 						http://cr.yp.to/softwarelaw.html
