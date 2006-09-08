@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Cache/Memcached.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
 @dirrmtry %%SITE_PERL%%/Cache
