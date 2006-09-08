@@ -1,5 +1,0 @@
-bin/multitail
-etc/multitail.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
