@@ -12,7 +12,7 @@ DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=		squirrelmail
 
 MAINTAINER=		gerrit.beine@gmx.de
-COMMENT=		View quota and current usage
+COMMENT=		Place notes on the login screen
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
 			${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
