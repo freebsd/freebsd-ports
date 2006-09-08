@@ -1,6 +1,8 @@
 bin/kplayer
+lib/kde3/kfile_kplayer.a
 lib/kde3/kfile_kplayer.la
 lib/kde3/kfile_kplayer.so
+lib/kde3/libkplayerpart.a
 lib/kde3/libkplayerpart.la
 lib/kde3/libkplayerpart.so
 share/applnk/Multimedia/kplayer.desktop
@@ -210,6 +212,8 @@ share/doc/HTML/sv/kplayer/settings-subtitles.png
 share/doc/HTML/sv/kplayer/settings-video.png
 share/doc/HTML/sv/kplayer/settings-volume.png
 share/doc/HTML/sv/kplayer/settings.docbook
+share/doc/HTML/sv/kplayer/shortcuts-configure.png
+share/doc/HTML/sv/kplayer/shortcuts-define.png
 share/icons/hicolor/16x16/apps/kplayer.png
 share/icons/hicolor/22x22/apps/kplayer.png
 share/icons/hicolor/32x32/apps/kplayer.png
@@ -231,17 +235,16 @@ share/locale/it/LC_MESSAGES/kplayer.mo
 share/locale/pl/LC_MESSAGES/kplayer.mo
 share/locale/pt/LC_MESSAGES/kplayer.mo
 share/locale/ru/LC_MESSAGES/kplayer.mo
+share/locale/sv/LC_MESSAGES/kplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kplayer.mo
 share/services/kfile_kplayer.desktop
 share/services/kplayerpart.desktop
-share/services/mms.protocol
-share/services/mmst.protocol
-share/services/mmsu.protocol
-share/services/pnm.protocol
-share/services/rtsp.protocol
 @dirrmtry lib/kde3
 @dirrmtry share/services
+@dirrm share/doc/HTML/sv/kplayer/
+@dirrm share/doc/HTML/pt/kplayer/
 @dirrm share/doc/HTML/en/kplayer
+@dirrm share/doc/HTML/da/kplayer/
 @dirrm share/apps/kplayer/icons/hicolor/32x32/actions
 @dirrm share/apps/kplayer/icons/hicolor/32x32
 @dirrm share/apps/kplayer/icons/hicolor/22x22/actions
