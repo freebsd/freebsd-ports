@@ -109,6 +109,7 @@
 %%CPGDIR%%/docs/pics/up.gif
 %%CPGDIR%%/docs/pics/user_folder_link.gif
 %%CPGDIR%%/docs/pics/usermgr.gif
+%%CPGDIR%%/docs/pics/usermgr_edit.gif
 %%CPGDIR%%/docs/pics/util_re-size.gif
 %%CPGDIR%%/docs/pics/valid-css.gif
 %%CPGDIR%%/docs/pics/valid-xhtml10.gif
@@ -379,7 +380,9 @@
 %%CPGDIR%%/keyword_create_dict.php
 %%CPGDIR%%/keyword_select.php
 %%CPGDIR%%/keywordmgr.php
+%%CPGDIR%%/lang/albanian.php
 %%CPGDIR%%/lang/basque.php
+%%CPGDIR%%/lang/brazilian_portuguese.php
 %%CPGDIR%%/lang/bulgarian.php
 %%CPGDIR%%/lang/chinese_big5.php
 %%CPGDIR%%/lang/chinese_gb.php
