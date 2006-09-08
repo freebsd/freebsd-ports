@@ -8,43 +8,34 @@
 PORTNAME=	glbsp
 PORTVERSION=	2.20
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	BSP node builder for OpenGL ports of the DOOM game engine
 
-.ifdef (WITH_GUI_VERSION)
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
-.endif
-
 USE_GMAKE=	yes
-MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" X11BASE="${X11BASE}"
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/[[:alpha:]]//}
+
+OPTIONS=	GUI "Build FLTK based GUI" off \
+		PLUGIN "Build plugin used in DOOM engines" off
 
 MAN1=		glbsp.1
 PORTDOCS=	README.txt USAGE.txt
 
-.if !defined (WITH_GUI_VERSION)
-PLIST_SUB=	GUI_VERSION="@comment "
-.else
+.include <bsd.port.pre.mk>
+
+.ifdef (WITH_GUI)
+LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 PLIST_SUB=	GUI_VERSION=""
-.endif
-
-.if !defined (WITH_PLUGIN)
-PLIST_SUB+=	PLUGIN="@comment "
 .else
-PLIST_SUB+=	PLUGIN=""
+PLIST_SUB=	GUI_VERSION="@comment "
 .endif
 
-pre-everything::
-.ifndef (WITH_GUI_VERSION)
-	@${ECHO_CMD} "Define WITH_GUI_VERSION=yes to build FLTK based GUI version"
-.endif
-.ifndef (WITH_PLUGIN)
-	@${ECHO_CMD} "Define WITH_PLUGIN=yes to build plugin version of glBSP used in DOOM engines"
+.ifdef (WITH_PLUGIN)
+PLIST_SUB+=	PLUGIN=""
+.else
+PLIST_SUB+=	PLUGIN="@comment "
 .endif
 
 post-patch:
@@ -52,7 +43,7 @@ post-patch:
 		${WRKSRC}/Makefile ${WRKSRC}/Plugin_unx.mak
 
 post-build:
-.ifdef (WITH_GUI_VERSION)
+.ifdef (WITH_GUI)
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} -f GUI_unx.mak all
 .endif
 .ifdef (WITH_PLUGIN)
@@ -61,7 +52,7 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glbsp ${PREFIX}/bin
-.ifdef (WITH_GUI_VERSION)
+.ifdef (WITH_GUI)
 	${INSTALL_PROGRAM} ${WRKSRC}/glBSPX ${PREFIX}/bin
 .endif
 .ifdef (WITH_PLUGIN)
@@ -74,4 +65,4 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
