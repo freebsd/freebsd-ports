@@ -3859,6 +3859,8 @@ gtk-aquaextremesunken-theme	ports/x11-themes/gtk-aquaextremesunken-theme
 gtk-aqualightblue-theme	ports/x11-themes/gtk-aqualightblue-theme
 gtk-bluecurve-theme	ports/x11-themes/gtk-bluecurve-theme
 gtk-cleanice-engine	ports/x11-themes/gtk-cleanice-engine
+gtk-digital-cream-theme	ports/x11-themes/gtk-digital-cream-theme
+gtk-digital-harmony-theme	ports/x11-themes/gtk-digital-harmony-theme
 gtk-doc		ports/textproc/gtk-doc
 gtk-engines	ports/x11-themes/gtk-engines
 gtk-engines-collection	ports/x11-themes/gtk-engines-collection
@@ -6763,6 +6765,8 @@ metacity-aluminumalloy-volcanic-theme	ports/x11-themes/metacity-aluminumalloy-vo
 metacity-ana-theme	ports/x11-themes/metacity-ana-theme
 metacity-aquaextremesunken-theme	ports/x11-themes/metacity-aquaextremesunken-theme
 metacity-bluecurve-theme	ports/x11-themes/metacity-bluecurve-theme
+metacity-digital-cream-theme	ports/x11-themes/metacity-digital-cream-theme
+metacity-digital-harmony-theme	ports/x11-themes/metacity-digital-harmony-theme
 metacity-longhorninspirat-theme	ports/x11-themes/metacity-longhorninspirat-theme
 metacity-milk-theme	ports/x11-themes/metacity-milk-theme
 metacity-theme-microgui	ports/x11-themes/metacity-theme-microgui
