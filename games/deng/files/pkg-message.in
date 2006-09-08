@@ -1,11 +1,12 @@
-******************************************************************************
+==============================================================================
+
 Now you can start playing Doomsday!
 
 All three games Doom, Heretic and Hexen could be launched with one executable.
 
 A quick start command could be:
 
-	%%PREFIX%%/bin/doomsday -g ${game} -f ${path_to_game_wad}
+	%%PREFIX%%/bin/deng -g ${game} -f ${path_to_game_wad}
 
 where
 
@@ -14,8 +15,8 @@ where
 
 Check documentation in %%DOCSDIR%% for other options.
 
-NOTE: when you run Doomsday it will create about 7 files/dirs in the current
-directory (including temporary files, configuration, etc.) so it's preferable
-to run it in a separate directory.
+NOTE: the "deng" program is a script that creates/enters ~/.deng and then runs
+"doomsday". This is because the program will create about 7 files/dirs in the
+current directory.
 
-******************************************************************************
+==============================================================================
