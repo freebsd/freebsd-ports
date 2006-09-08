@@ -1,6 +1,6 @@
---- xmain.c.orig	Mon Jun 19 22:40:14 2006
-+++ xmain.c	Mon Jun 19 23:33:03 2006
-@@ -38,7 +38,7 @@
+--- xmain.c.orig	Fri Jul 14 17:35:38 2006
++++ xmain.c	Fri Jul 28 12:45:20 2006
+@@ -39,7 +39,7 @@
  float total;
  }PIXINFO;
  
@@ -9,7 +9,7 @@
   
  int main(int argc, char **argv)
  {
-@@ -58,6 +58,8 @@
+@@ -59,6 +59,8 @@
  XTextProperty window_title_property;
  unsigned short int *ipalette;
  XColor xco;
