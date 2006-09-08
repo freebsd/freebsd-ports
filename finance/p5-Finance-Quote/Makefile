@@ -7,6 +7,7 @@
 
 PORTNAME=	Finance-Quote
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Finance
@@ -16,6 +17,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Get stock and mutual fund quotes from various exchanges
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
