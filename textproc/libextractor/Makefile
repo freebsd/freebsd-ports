@@ -44,9 +44,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^#ifdef EXV_HAVE_STDINT_H$$|#if EXV_HAVE_STDINT_H|' \
 		${WRKSRC}/src/plugins/exiv2/types.hpp
 
-pre-install:
-	${MKDIR} ${PREFIX}/lib/libextractor
-
 check: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
