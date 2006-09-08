@@ -1,6 +1,5 @@
 Powerful text searches on Unix using regular expressions for both the
 file name, and the search text. Graphical equivalent of find + grep.
 
-Still beta stage, but usable.
-
-WWW: http://xsearch.sourceforge.net/
+WWW: http://searchmonkey.sourceforge.net/
+Author: Adam Cottrell <cottrela@users.sourceforge.net>
