@@ -87,7 +87,7 @@ MAIL_GID?=	mail
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4)
 BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID?=	nobody
+MAIL_GID?=	mailman
 .endif
 
 .if defined(WITH_CHINESE)
@@ -109,7 +109,7 @@ PLIST_SUB+=	SUB_HTDIG="@comment "
 
 pre-fetch:
 	@${ECHO} ""
-	@${ECHO} "You may change the following build options:"	
+	@${ECHO} "You may change the following build options:"
 	@${ECHO} "MM_USERNAME=mailman	The username of the Mailman user."
 	@${ECHO} "MM_USERID=91		The user ID of the Mailman user."
 	@${ECHO} "MM_GROUPNAME=mailman	The group to which the Mailman user will belong."
@@ -166,5 +166,15 @@ post-install:
 .endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
+.if defined(WITH_POSTFIX)
+	@if [ "x`${PREFIX}/sbin/postconf -h myhostname`" != "xlocalhost" ]; then \
+		${ECHO_CMD} ""; \
+		${ECHO_CMD} "Your Postfix hostname is non-default."; \
+		${ECHO_CMD} -n "You must add \"\$$SMTPHOST = "; \
+		${ECHO_CMD} -n `${PREFIX}/sbin/postconf -h myhostname`; \
+		${ECHO_CMD} "\" to the bottom of mm_cfg.py."; \
+		${ECHO_CMD} ""; \
+		fi
+.endif
 
 .include <bsd.port.post.mk>
