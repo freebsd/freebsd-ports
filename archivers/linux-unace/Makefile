@@ -19,6 +19,7 @@ COMMENT=	Extract, view & test ACE archives
 
 RESTRICTED=	Distribution is permitted within the original package only
 
+ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
 PLIST_FILES=	bin/linunace
 PORTDOCS=	licence
