@@ -1,0 +1,23 @@
+###############################################################################
+
+The Savage game (Linux version) was installed
+
+1) You can to run the editor map using:
+
+   # linux-savage_editor
+
+   Dedicated server
+
+   # linux-savage_server
+
+   Client
+
+   # linux-savage
+
+2) Nowadays, this port doesn't work with SEP and SAMURAI mods. It has some 
+   problems. If you can to do that savage runs with some of these mods, feel 
+   free to contact me.
+
+3) Enjoy it ;)
+
+###############################################################################
