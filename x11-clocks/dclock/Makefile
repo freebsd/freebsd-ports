@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dclock
-PORTVERSION=	2.1.2.7
+PORTVERSION=	2.1.2.8
 CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/d/dclock
 DISTNAME=	dclock_2.1.2.orig
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/d/dclock,}
-PATCHFILES=	dclock_2.1.2-7.diff.gz
+PATCHFILES=	dclock_2.1.2-8.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yasu@utahime.org
