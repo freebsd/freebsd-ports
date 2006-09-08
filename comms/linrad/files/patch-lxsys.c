@@ -1,6 +1,6 @@
---- lxsys.c.orig	Sat May 27 07:48:22 2006
-+++ lxsys.c	Mon Jun 19 23:32:08 2006
-@@ -1,5 +1,7 @@
+--- lxsys.c.orig	Tue Aug 15 15:27:44 2006
++++ lxsys.c	Fri Sep  8 16:35:10 2006
+@@ -1,12 +1,14 @@
 -
 -#include <sys/io.h>
 +#include <sys/cdefs.h>
@@ -9,8 +9,16 @@
 +#include <machine/sysarch.h>
  #include <unistd.h>
  #include <sys/mman.h>
++#include <sys/time.h>
  #include <sys/resource.h>
-@@ -14,6 +16,7 @@
+ #include <semaphore.h>
+ #include <pthread.h>
+ #include <sched.h>
+-#include <sys/time.h>
+ #include <fcntl.h>
+ #include <termios.h>
+ #include "thrdef.h"
+@@ -16,6 +18,7 @@
  #include "lindef.h"
  #include "hwaredef.h"
  
@@ -18,7 +26,7 @@
  
  char *locktext[6]={"*W A R N I N G*  Read z_MLOCK.txt for info.",
                     "*** mlockall can cause system crashes!! ***",
-@@ -40,11 +43,9 @@
+@@ -66,11 +69,9 @@
  // Get permission to write to the parallel port
  if(ui.parport < 0x400-4)
    {
@@ -33,7 +41,7 @@
    }
  if(i != 0)
    {
-@@ -189,11 +190,9 @@
+@@ -214,11 +215,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -48,7 +56,7 @@
    }
  if(i!=0)lirerr(764921);
  i=1000;
-@@ -206,11 +205,9 @@
+@@ -231,11 +230,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -63,3 +71,4 @@
    }
  if(i!=0)lirerr(764921);
  return inb(port);
+

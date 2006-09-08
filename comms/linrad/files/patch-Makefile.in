@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat May 27 07:48:22 2006
-+++ Makefile.in	Mon Jun 19 21:40:59 2006
+--- Makefile.in.orig	Fri Jul 14 17:35:38 2006
++++ Makefile.in	Fri Jul 28 13:12:35 2006
 @@ -4,17 +4,14 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
@@ -20,58 +20,3 @@
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
  -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
-@@ -360,7 +357,8 @@
- 
- 
- # ---------------------- Linux console specific things ------------------
--linrad: Makefile lmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
-+all: xlinrad
-+linrad: lmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
- wide_graph.ol getiq.ol fft0.ol fft1.ol adtest.ol screenvar.ol sigvar.ol \
- baseb_graph.ol afc_graph.ol hires_graph.ol fftasm.ol palette.ol gifsave.ol \
- calibrate.ol calsub.ol calsub2.ol llsqvar.ol caliq.ol hwaredriver.ol \
-@@ -374,7 +372,7 @@
- menu.ol screen.ol sdrvar.ol lsys.ol sdr14.ol keyboard_var.ol linvar.ol \
- fonts.ol screensub.ol membeg.ol lxsys.ol memend.ol
- 
--	gcc -olinrad -lvgagl -lvga -lpthread -lm \
-+	${CC} -olinrad -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -I%%X11BASE%%/include -L%%X11BASE%%/lib -lvgagl -lvga -lpthread -lm \
- -Wl,-Map,linrad.lmap,-warn-common,--cref \
- 	membeg.ol lmain.ol linvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
- mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
-@@ -403,7 +401,7 @@
- 	$(LCC) lmain.c $(CFL) lmain.ol
- 
- # ---------------------- Linux X11 specific things ------------------
--xlinrad: Makefile xmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
-+xlinrad: xmain.ol ui.ol uivar.ol fft1var.ol lsetad.ol hware.ol rxin.ol \
- wide_graph.ol getiq.ol fft0.ol fft1.ol adtest.ol screenvar.ol sigvar.ol \
- baseb_graph.ol afc_graph.ol hires_graph.ol fftasm.ol palette.ol gifsave.ol \
- calibrate.ol calsub.ol calsub2.ol llsqvar.ol caliq.ol hwaredriver.ol \
-@@ -420,7 +418,7 @@
- 
- 
- 
--	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
-+	${CC} -oxlinrad -L%%X11BASE%%/lib -lX11 -lpthread -lm \
- -Wl,-Map,linrad.xmap,-warn-common,--cref \
- membeg.ol xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
- mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
-@@ -636,13 +634,13 @@
- 
- # ------------------      Tools for Linux      -----------------------
- vgatest: vgatest.ol
--	gcc -ovgatest -lvgagl -lvga -lm -Wl -s vgatest.ol
-+	${CC} -ovgatest -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -lvgagl -lvga -lm -Wl -s vgatest.ol
- vgatest.ol: vgatest.c
--	gcc vgatest.c -c -o vgatest.ol
-+	${CC} vgatest.c -I%%LOCALBASE%%/include -c -o vgatest.ol
- mousetest: mousetest.ol
--	gcc -omousetest -lvgagl -lvga -lm -Wl -s mousetest.ol
-+	${CC} -omousetest -L%%LOCALBASE%%/lib -lvgagl -lvga -lm -Wl -s mousetest.ol
- mousetest.ol: mousetest.c
--	gcc mousetest.c -c -o mousetest.ol
-+	${CC} mousetest.c -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib -c -o mousetest.ol
- thrdef.h: rusage.h
- 	rm -f x.x
- 	cp thrdef.h x.x

@@ -1,3 +1,4 @@
+bin/linrad
 bin/xlinrad
 %%DATADIR%%/errors.lir
 %%DATADIR%%/help.lir
