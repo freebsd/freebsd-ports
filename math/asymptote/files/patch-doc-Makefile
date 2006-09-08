@@ -1,15 +1,14 @@
-$FreeBSD$
-
---- doc/Makefile	Mon Jun 19 05:36:12 2006
-+++ doc/Makefile.port	Tue Jun 20 15:35:52 2006
-@@ -52,8 +52,9 @@
+--- doc/Makefile	Wed Sep  6 06:52:34 2006
++++ doc/Makefile.port	Wed Sep  6 18:41:09 2006
+@@ -56,9 +56,10 @@
  	rm -rf asymptote
  
- install-man: man
+ install: man faq
 +	mkdir -p $(prefix)/share/doc/asymptote
+ 	cd FAQ; $(MAKE) install
  	${INSTALL} -d -m 755 $(docdir) $(mandir)/man1
 -	${INSTALL} -p -m 644 asymptote.pdf $(docdir)
 +	${INSTALL} -p -m 644 asymptote.pdf $(prefix)/share/doc/asymptote
  	${INSTALL} -p -m 644 $(MANFILES) $(mandir)/man1
  
- install: doc install-man
+ install-all: doc install

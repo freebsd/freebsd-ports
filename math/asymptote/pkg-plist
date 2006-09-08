@@ -2,7 +2,9 @@
 bin/asy
 bin/xasy
 %%DATADIR%%/animate.asy
+%%DATADIR%%/annotate.asy
 %%DATADIR%%/asy-init.el
+%%DATADIR%%/asy-keywords.el
 %%DATADIR%%/asy-mode.el
 %%DATADIR%%/asy.vim
 %%DATADIR%%/asymptote.py
@@ -17,6 +19,7 @@ bin/xasy
 %%DATADIR%%/geometry.asy
 %%DATADIR%%/graph.asy
 %%DATADIR%%/graph3.asy
+%%DATADIR%%/graph_settings.asy
 %%DATADIR%%/latin1.asy
 %%DATADIR%%/light.asy
 %%DATADIR%%/math.asy
@@ -51,6 +54,17 @@ bin/xasy
 %%DATADIR%%/unicode.asy
 %%DATADIR%%/version.asy
 %%DATADIR%%/x11colors.asy
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.ascii
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section1.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section2.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section3.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section4.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section5.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section6.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section7.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section8.html
+%%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
 %%EXAMPLESDIR%%/Bode.asy
 %%EXAMPLESDIR%%/Gouraud.asy
@@ -61,6 +75,7 @@ bin/xasy
 %%EXAMPLESDIR%%/animations/cube.asy
 %%EXAMPLESDIR%%/animations/embeddedmovie.asy
 %%EXAMPLESDIR%%/animations/wheel.asy
+%%EXAMPLESDIR%%/annotation.asy
 %%EXAMPLESDIR%%/axis3.asy
 %%EXAMPLESDIR%%/bezier.asy
 %%EXAMPLESDIR%%/bezier2.asy
@@ -119,7 +134,6 @@ bin/xasy
 %%EXAMPLESDIR%%/labelbox.asy
 %%EXAMPLESDIR%%/labelsquare.asy
 %%EXAMPLESDIR%%/laserlattice.asy
-%%PORTDOCS%%%%EXAMPLESDIR%%/latexusage.asy
 %%EXAMPLESDIR%%/latexusage.tex
 %%EXAMPLESDIR%%/latticeshading.asy
 %%EXAMPLESDIR%%/leastsquares.asy
@@ -159,11 +173,16 @@ bin/xasy
 %%EXAMPLESDIR%%/ring.asy
 %%EXAMPLESDIR%%/roundpath.asy
 %%EXAMPLESDIR%%/sacone.asy
+%%EXAMPLESDIR%%/sacone3D.asy
+%%EXAMPLESDIR%%/sacylinder.asy
+%%EXAMPLESDIR%%/sacylinder3D.asy
 %%EXAMPLESDIR%%/saddle.asy
 %%EXAMPLESDIR%%/secondaryaxis.asy
 %%EXAMPLESDIR%%/secondaryaxis.csv
 %%EXAMPLESDIR%%/shade.asy
 %%EXAMPLESDIR%%/shadedtiling.asy
+%%EXAMPLESDIR%%/shellmethod.asy
+%%EXAMPLESDIR%%/shellsqrtx01.asy
 %%EXAMPLESDIR%%/sin1x.asy
 %%EXAMPLESDIR%%/sinc.asy
 %%EXAMPLESDIR%%/sinxlex.asy
@@ -193,14 +212,18 @@ bin/xasy
 %%EXAMPLESDIR%%/unitcircle3.asy
 %%EXAMPLESDIR%%/upint.asy
 %%EXAMPLESDIR%%/venn.asy
+%%EXAMPLESDIR%%/washermethod.asy
 %%EXAMPLESDIR%%/wedge.asy
 %%EXAMPLESDIR%%/westnile.asy
 %%EXAMPLESDIR%%/westnile.csv
 %%EXAMPLESDIR%%/workcone.asy
 %%EXAMPLESDIR%%/xsin1x.asy
 %%EXAMPLESDIR%%/xxsq01.asy
+%%EXAMPLESDIR%%/xxsq01x-1.asy
+%%EXAMPLESDIR%%/xxsq01y.asy
 %%EXAMPLESDIR%%/yingyang.asy
 @dirrm %%DATADIR%%
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%/animations
 @dirrm %%EXAMPLESDIR%%
