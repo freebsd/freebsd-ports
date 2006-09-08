@@ -98,6 +98,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.CustomInterMap
 %%PMWIKIDIR%%/wikilib.d/PmWiki.CustomMarkup
 %%PMWIKIDIR%%/wikilib.d/PmWiki.CustomWikiStyles
+%%PMWIKIDIR%%/wikilib.d/PmWiki.DebugVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DeletingPages
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DesignNotes
 %%PMWIKIDIR%%/wikilib.d/PmWiki.DocumentationIndex
@@ -142,6 +143,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.ReleaseNotes
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Requirements
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Security
+%%PMWIKIDIR%%/wikilib.d/PmWiki.SecurityVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SimultaneousEdits
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SitePreferences
 %%PMWIKIDIR%%/wikilib.d/PmWiki.SkinTemplates

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.1.14
+PORTVERSION=	2.1.24
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -29,7 +29,8 @@ SUB_FILES=	pkg-message
 pre-fetch:
 .if !defined(PMWIKIDIR)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define PMWIKIDIR to override default of ${PMWIKIDIR}."
+	@${ECHO_MSG} "Define PMWIKIDIR (now: ${PMWIKIDIR})"
+	@${ECHO_MSG} "to override default: www/pmwiki".
 	@${ECHO_MSG} ""
 .endif
 
