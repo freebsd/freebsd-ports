@@ -167,11 +167,11 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .if defined(WITH_POSTFIX)
-	@if [ "x`${PREFIX}/sbin/postconf -h myhostname`" != "xlocalhost" ]; then \
+	@if [ "x`${LOCALBASE}/sbin/postconf -h myhostname`" != "xlocalhost" ]; then \
 		${ECHO_CMD} ""; \
 		${ECHO_CMD} "Your Postfix hostname is non-default."; \
 		${ECHO_CMD} -n "You must add \"\$$SMTPHOST = "; \
-		${ECHO_CMD} -n `${PREFIX}/sbin/postconf -h myhostname`; \
+		${ECHO_CMD} -n `${LOCALBASE}/sbin/postconf -h myhostname`; \
 		${ECHO_CMD} "\" to the bottom of mm_cfg.py."; \
 		${ECHO_CMD} ""; \
 		fi
