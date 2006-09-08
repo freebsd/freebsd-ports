@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	4.0.6
+PORTVERSION=	4.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -17,6 +17,8 @@ COMMENT=	Tail multiple files on console with ncurses
 USE_GMAKE=	yes
 
 MAN1=		multitail.1
+PLIST_FILES=	bin/multitail etc/multitail.conf.sample
+PORTDOCS=	readme.txt license.txt
 
 .include <bsd.port.pre.mk>
 
