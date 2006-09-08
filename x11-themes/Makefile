@@ -156,6 +156,7 @@
     SUBDIR += metacity-ana-theme
     SUBDIR += metacity-aquaextremesunken-theme
     SUBDIR += metacity-bluecurve-theme
+    SUBDIR += metacity-digital-cream-theme
     SUBDIR += metacity-longhorninspirat-theme
     SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-microgui
