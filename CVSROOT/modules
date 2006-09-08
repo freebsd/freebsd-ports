@@ -8841,6 +8841,7 @@ p5-File-MimeInfo	ports/devel/p5-File-MimeInfo
 p5-File-Modified	ports/devel/p5-File-Modified
 p5-File-NCopy	ports/devel/p5-File-NCopy
 p5-File-NFSLock	ports/devel/p5-File-NFSLock
+p5-File-Next	ports/sysutils/p5-File-Next
 p5-File-Path-Expand	ports/devel/p5-File-Path-Expand
 p5-File-PathConvert	ports/devel/p5-File-PathConvert
 p5-File-Random	ports/devel/p5-File-Random
