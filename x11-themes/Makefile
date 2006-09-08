@@ -161,6 +161,7 @@
     SUBDIR += metacity-milk-theme
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
+    SUBDIR += moodin
     SUBDIR += notif2
     SUBDIR += openbox-themes
     SUBDIR += phase
