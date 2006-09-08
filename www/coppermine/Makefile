@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coppermine
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,6 +36,9 @@ EXCEPTFILES=	${DOCFILES} COPYING docs/COPYING
 CPIOARGS=	--quiet -pdum -R
 PLIST_SUB=	CPGDIR=${CPGDIR}
 
+SUB_FILES+=	pkg-message
+SUB_LIST+=	CPGDIR=${CPGDIR}
+
 pre-everything::
 .if ${CPGDIR} == "www/coppermine"
 	@${ECHO_MSG} ""
@@ -48,11 +51,6 @@ pre-everything::
 
 post-extract:
 	@${CHMOD} -R o-w ${WRKSRC}
-
-pre-patch:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    -e 's|%%CPGDIR%%|${CPGDIR}|g' \
-	    ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${CPGDIR}
@@ -68,7 +66,7 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 ########################################################################
-# The following targets are for the port maintainer.  Use are your own #
+# The following targets are for the port maintainer. Use it atyour own #
 # risk, no user-serviceable parts inside.                              #
 ########################################################################
 # Assuming the port is installed cleanly (i.e. it's unconfigured)
