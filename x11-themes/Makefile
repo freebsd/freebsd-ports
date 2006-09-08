@@ -83,6 +83,7 @@
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-bluecurve-theme
     SUBDIR += gtk-cleanice-engine
+    SUBDIR += gtk-digital-cream-theme
     SUBDIR += gtk-engines
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk-engines2
