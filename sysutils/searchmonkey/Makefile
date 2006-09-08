@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xsearch
-PORTVERSION=	0.4.1
+PORTNAME=	searchMonkey
+PORTVERSION=	0.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -19,8 +19,7 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-PLIST_FILES=	bin/xsearch %%DATADIR%%/pixmaps/${PORTNAME}-300x300.png \
-		%%DATADIR%%/pixmaps/${PORTNAME}-32x32.png
+PLIST_FILES=	bin/${PORTNAME:L} %%DATADIR%%/pixmaps/${PORTNAME:L}-32x32.png
 PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 CFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=-L${LOCALBASE}/lib
