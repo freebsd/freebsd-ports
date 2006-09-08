@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -52,7 +52,7 @@ LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
 # Documentation
 .if !defined(NOPORTDOCS)
 MAN1=	asy.1 xasy.1x
-INFO=	${PORTNAME}
+INFO=	${PORTNAME} asy-faq
 
 ALL_TARGET+=	doc
 INSTALL_TARGET+=	install-doc
