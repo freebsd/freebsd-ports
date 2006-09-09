@@ -13,6 +13,7 @@ include/allegrogl/GLext/glx_ext_list.h
 @dirrm include/allegrogl/GLext
 @dirrm include/allegrogl
 lib/libagl.so
+lib/libagl.so.%%SHLIB_VER%%
 %%EXAMPLESDIR%%/demofont.dat
 %%EXAMPLESDIR%%/dialog.c
 %%EXAMPLESDIR%%/dumbtest.c
@@ -22,6 +23,7 @@ lib/libagl.so
 %%EXAMPLESDIR%%/exext.c
 %%EXAMPLESDIR%%/exgui.c
 %%EXAMPLESDIR%%/exmasked.c
+%%EXAMPLESDIR%%/exmipmaps.c
 %%EXAMPLESDIR%%/extext.c
 %%EXAMPLESDIR%%/extextur.c
 %%EXAMPLESDIR%%/lucidia.dat
