@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bacula-server-devel/files/Attic/bacula-fd.sh.in,v 1.1 2006-04-01 23:06:24 garga Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bacula-server-devel/files/Attic/bacula-fd.sh.in,v 1.2 2006-09-09 20:17:39 itetcu Exp $
 #
 # PROVIDE: utility
 # REQUIRE: DAEMON
@@ -19,9 +19,10 @@
 name="bacula_fd"
 rcvar=${name}_enable
 command=/usr/local/sbin/bacula-fd
-pidfile="${bacula_fd_pidfile}"
 
 load_rc_config $name
+
+pidfile="${bacula_fd_pidfile}"
 
 : ${bacula_fd_enable="NO"}
 : ${bacula_fd_flags=" -u root -g wheel -v -c /usr/local/etc/bacula-fd.conf"}
