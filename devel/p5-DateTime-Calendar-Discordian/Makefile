@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Calendar-Discordian
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -15,13 +15,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl extension for the Discordian Calendar
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Locale.pm:${PORTSDIR}/devel/p5-DateTime-Locale \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Calendar::Discordian.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e '$$_ = "" if /^use warnings/' ${WRKSRC}/lib/DateTime/Calendar/Discordian.pm
+.endif
+
+.include <bsd.port.post.mk>
