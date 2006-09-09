@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	1.38.10-beta1-20060606
+DISTVERSION=	1.39.22-20060908
+
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -20,6 +21,8 @@ CONFLICTS=	bacula-server-[0-9]* bacula-client-[0-9]*
 UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
 
 USE_RC_SUBR?=	bacula-dir.sh bacula-sd.sh
+
+SUB_FILES+=	pkg-message
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
@@ -83,8 +86,6 @@ USE_GNOME=	libgnome
 .endif
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
-
-MAN8=		bacula.8
 
 .include <bsd.port.pre.mk>
 
@@ -160,7 +161,18 @@ CONFIGURE_ARGS+=	--with-openssl
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-MAN8=bacula.8
+MAN8=bacula-fd.8 bconsole.8
+.else
+MAN8=bacula-dir.8 bacula-sd.8 bacula.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 dbcheck.8
+MAN1=bsmtp.1
+.endif
+
+.if defined(WITH_GNOMECONSOLE)
+	MAN1+=bacula-console-gnome.1
+.endif
+
+.if defined(WITH_WXCONSOLE)
+	MAN1+=bacula-wxconsole.1
 .endif
 
 pre-everything::
@@ -220,6 +232,18 @@ pre-install:
 .endif
 
 post-install:
+.if defined(MAN8)
+.	for manpage in ${MAN8}
+		${INSTALL_MAN} ${WRKSRC}/manpages/${manpage} ${PREFIX}/man/man8/${manpage}
+.	endfor
+.endif
+
+.if defined(MAN1)
+.	for manpage in ${MAN1}
+		${INSTALL_MAN} ${WRKSRC}/manpages/${manpage} ${PREFIX}/man/man1/${manpage}
+.	endfor
+.endif
+
 .if defined(WITH_CLIENT_ONLY)
 # 	Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
@@ -227,8 +251,10 @@ post-install:
 # 	Console stuff
 	if [ -f ${PREFIX}/etc/bconsole.conf.new ]; then \
 		${ECHO_CMD} "etc/bconsole.conf.new" >> ${TMPPLIST}; \
+		${CHGRP} bacula ${PREFIX}/etc/bconsole.conf.new; \
 	elif [ -f ${PREFIX}/etc/bconsole.conf ]; then \
 		${MV} ${PREFIX}/etc/bconsole.conf ${PREFIX}/etc/bconsole.conf.sample; \
+		${CHGRP} bacula ${PREFIX}/etc/bconsole.conf.sample; \
 		${ECHO_CMD} "etc/bconsole.conf.sample" >> ${TMPPLIST}; \
 	fi
 .if defined(WITH_WXCONSOLE)
@@ -248,12 +274,8 @@ post-install:
 	fi
 .endif
 
-.if defined(WITH_CLIENT_ONLY)
-	${INSTALL_MAN} ${WRKSRC}/scripts/bacula.man ${PREFIX}/man/man8/bacula.8
-.endif
-
 # Documentation is only installed in -client port
-.if defined(WITH_DOCS)
+.if !defined(NOPORTDOCS) && defined(WITH_DOCS)
 	for na in manual bacula-web; do \
 		${MKDIR} ${DOCSDIR}/$$na ;\
 		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${FIND} $$na | \
@@ -265,6 +287,8 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/kernstodo ${DOCSDIR}
 .endif
 
+#	ensure that users in the bacula group can run bconsole
+	${CHGRP} bacula ${PREFIX}/sbin/bconsole
 .else
 # 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
@@ -278,6 +302,7 @@ post-install:
 # 	chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
+
 .endif
 # 	Install leaves existing conf files untouched. Respect this here!
 	for na in ${CONFFILES}; do \
@@ -339,14 +364,10 @@ post-install:
 	@${ECHO_MSG} "For USB support read the bacula manual!! It could be necessary"
 	@${ECHO_MSG} "to configure/compile a new kernel!"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Look at $PREFIX/share/bacula/update_bacula_tables for"
+	@${ECHO_MSG} "Look at ${PREFIX}/share/bacula/update_bacula_tables for"
 	@${ECHO_MSG} "database update procedure. Details can be found in the"
 	@${ECHO_MSG} "ReleaseNotes"
 .endif
 	@${ECHO_MSG} "*********************************************************************"
-
-.if !defined(WITH_CLIENT_ONLY)
-	${CAT} pkg-message
-.endif
 
 .include <bsd.port.post.mk>

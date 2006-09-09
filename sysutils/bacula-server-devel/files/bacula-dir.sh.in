@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bacula-server-devel/files/Attic/bacula-dir.sh.in,v 1.2 2006-04-07 16:34:48 garga Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bacula-server-devel/files/Attic/bacula-dir.sh.in,v 1.3 2006-09-09 20:17:39 itetcu Exp $
 #
 # PROVIDE: utility
 # REQUIRE: DAEMON %%REQ_MYSQL%% %%REQ_PGSQL%%
@@ -19,9 +19,10 @@
 name="bacula_dir"
 rcvar=${name}_enable
 command=%%PREFIX%%/sbin/bacula-dir
-pidfile="${bacula_dir_pidfile}"
 
 load_rc_config $name
+
+pidfile="${bacula_dir_pidfile}"
 
 : ${bacula_dir_enable="NO"}
 : ${bacula_dir_flags=" -u bacula -g bacula -v -c %%PREFIX%%/etc/bacula-dir.conf"}
