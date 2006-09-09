@@ -1,7 +1,8 @@
-%%SITE_PERL%%/File/Copy/Recursive.pm
-@dirrmtry %%SITE_PERL%%/File/Copy
-@dirrmtry %%SITE_PERL%%/File
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Copy/Recursive/.packlist
+%%SITE_PERL%%/File/Copy/Recursive.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Copy/Recursive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Copy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File/Copy
+@dirrmtry %%SITE_PERL%%/File
