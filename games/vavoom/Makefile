@@ -6,170 +6,125 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.20
+PORTVERSION=	1.21.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USE_AUTOTOOLS=	autoconf:259
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-sdl --with-opengl --without-openal --without-vorbis \
-		--without-libmad --without-mikmod --without-flac
-CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${LOCALBASE}/include" \
-		"CPPFLAGS=${CPPFLAGS} -I${LOCALBASE}/include" \
-		"CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-		"LDFLAGS=-L${LOCALBASE}/lib -L${X11BASE}/lib"
-ALL_TARGET=	all sv
-USE_SDL=	mixer sdl
-USE_GL=		yes
-ONLY_FOR_ARCHS=	i386
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.ifdef (WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
-.endif
+OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
+		FLAC "Enable FLAC support" off \
+		LIBMAD "Enable MP3 support" off \
+		MIKMOD "Enable MikMod support" off \
+		OPENAL "Enable OpenAL support" off \
+		OPENGL "Enable OpenGL support" on \
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" off \
+		VORBIS "Enable Ogg Vorbis support" off \
+		SDL "Use SDL for hardware API" on
 
-SUB_FILES=	pkg-message vavoom
-SUB_LIST=	"PREFIX=${PREFIX}" "PORTSDIR=${PORTSDIR}"
+SUB_FILES=	${PORTNAME} pkg-message
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/games/doom-data/Makefile.include"
 
-CONFIGURE_ARGS+=	--with-sdl-config=${SDL_CONFIG}
+# The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
+# non-working code for `vcc', so we remove it here if present.
+CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
+CXXFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
-OPENAL_CONFIG?=	${LOCALBASE}/bin/openal-config
-.if exists(${OPENAL_CONFIG})
-WITH_OPENAL=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libvorbis.so.3)
-WITH_VORBIS=	yes
+.if !defined(WITH_ALLEGRO) && !defined(WITH_SDL)
+IGNORE=		needs ALLEGRO or SDL for hardware API
 .endif
 
-.if exists(${LOCALBASE}/lib/libmad.so.2)
-WITH_LIBMAD=	yes
+.if defined(WITH_ALLEGRO) && defined(WITH_SDL)
+IGNORE=		selected conflicting options ALLEGRO and SDL
 .endif
 
-MIKMOD_CONFIG?=	${LOCALBASE}/bin/libmikmod-config
-.if exists(${MIKMOD_CONFIG})
-WITH_MIKMOD=	yes
+.if defined(WITH_ALLEGRO)
+LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
+		agl.4:${PORTSDIR}/graphics/allegrogl
+CONFIGURE_ARGS+=--with-allegro
+.else
+CONFIGURE_ARGS+=--without-allegro
 .endif
 
-.if exists(${LOCALBASE}/lib/libFLAC.so.7)
-WITH_FLAC=	yes
+.if defined(WITH_FLAC)
+LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=--with-flac
+.else
+CONFIGURE_ARGS+=--without-flac
 .endif
 
-.ifdef (WITH_OPENAL)
-CONFIGURE_ARGS+=	--with-openal
-LIB_DEPENDS+=		openal.0:${PORTSDIR}/audio/openal
+.if defined(WITH_LIBMAD)
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+CONFIGURE_ARGS+=--with-libmad
+.else
+CONFIGURE_ARGS+=--without-libmad
 .endif
 
-.ifdef (WITH_VORBIS)
-CONFIGURE_ARGS+=	--with-vorbis
-LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
+.if defined(WITH_MIKMOD)
+LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+CONFIGURE_ARGS+=--with-mikmod
+.else
+CONFIGURE_ARGS+=--without-mikmod
 .endif
 
-.ifdef (WITH_LIBMAD)
-CONFIGURE_ARGS+=	--with-libmad
-LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
+.if defined(WITH_OPENAL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+CONFIGURE_ARGS+=--with-openal
+.else
+CONFIGURE_ARGS+=--without-openal
 .endif
 
-.ifdef (WITH_MIKMOD)
-CONFIGURE_ARGS+=	--with-mikmod
-LIB_DEPENDS+=		mikmod.2:${PORTSDIR}/audio/libmikmod
+.if defined(WITH_OPENGL)
+USE_GL=		yes
+CONFIGURE_ARGS+=--with-opengl
+.else
+CONFIGURE_ARGS+=--without-opengl
 .endif
 
-.ifdef (WITH_FLAC)
-CONFIGURE_ARGS+=	--with-flac
-LIB_DEPENDS+=		FLAC.7:${PORTSDIR}/audio/flac
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-# -fno-strict-aliasing (default on FreeBSD 6.0+) produces run-working
-#  code for `vcc', so use a more conservative setting here
-.if (${OSVERSION} >= 600000)
-CFLAGS=		-O -pipe
-CXXFLAGS=	-O -pipe
+.if defined(WITH_VORBIS)
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+CONFIGURE_ARGS+=--with-vorbis
+.else
+CONFIGURE_ARGS+=--without-vorbis
 .endif
 
-pre-everything::
-	@${ECHO_CMD} ""
-.ifndef (WITH_OPENAL)
-	@${ECHO_CMD} "Define WITH_OPENAL=yes to build with 3D sound support"
+.if defined(WITH_SDL)
+USE_SDL=	mixer sdl
+CONFIGURE_ARGS+=--with-sdl --with-sdl-config=${SDL_CONFIG}
+.else
+CONFIGURE_ARGS+=--without-sdl
 .endif
-.ifndef (WITH_VORBIS)
-	@${ECHO_CMD} "Define WITH_VORBIS=yes to build with Vorbis support"
-.endif
-.ifndef (WITH_LIBMAD)
-	@${ECHO_CMD} "Define WITH_LIBMAD=yes to build MP3 music support"
-.endif
-.ifndef (WITH_MIKMOD)
-	@${ECHO_CMD} "Define WITH_MIKMOD=yes to build with MikMod support"
-.endif
-.ifndef (WITH_FLAC)
-	@${ECHO_CMD} "Define WITH_FLAC=yes to build with FLAC support"
-.endif
-.ifndef (WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_CMD} "Define WITH_OPTIMIZED_CFLAGS=yes to build Vavoom optimized for speed"
-.endif
-	@${ECHO_CMD} ""
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
-		${WRKSRC}/utils/acc/parse.c ${WRKSRC}/utils/acc/strlist.c
-	@${REINPLACE_CMD} -e 's|%%SDL_CONFIG%%|${SDL_CONFIG}|g; \
-			s|%%OPENAL_CONFIG%%|${OPENAL_CONFIG}|g; \
-		s|%%MIKMOD_CONFIG%%|${MIKMOD_CONFIG}|g' ${WRKSRC}/configure.ac
-	@(cd ${WRKSRC} && ${SH} ./fixunix.sh)
+	@${REINPLACE_CMD} -e 's|SDL/||g' ${WRKSRC}/source/s_sdl.cpp
+	@${REINPLACE_CMD} -e 's|\.$$host_cpu||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@cd ${WRKSRC} && ${SH} fixunix.sh
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Vavoom ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/VavoomSV ${PREFIX}/bin
-
-# install wrapper script
+post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/basev
-	${INSTALL_DATA} ${WRKSRC}/basev/games.txt ${DATADIR}/basev
-	@${MKDIR} ${DATADIR}/basev/common
-	${INSTALL_DATA} ${WRKSRC}/basev/common/default.cfg \
-			${WRKSRC}/basev/common/startup.vs \
-			${WRKSRC}/basev/common/wad0.wad ${DATADIR}/basev/common
-.for i in doom heretic hexen strife
-	@${MKDIR} ${DATADIR}/basev/${i}
-	${INSTALL_DATA} ${WRKSRC}/basev/${i}/wad0.wad ${DATADIR}/basev/${i}
-.endfor
-.for i in doom1 doom2 tnt plutonia
-	@${MKDIR} ${DATADIR}/basev/${i}
-	${INSTALL_DATA} ${WRKSRC}/basev/${i}/wad0.wad \
-			${WRKSRC}/basev/${i}/base.txt ${DATADIR}/basev/${i}
-.endfor
-
-.ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/vavmref.txt \
-			${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
 .endif
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
-
-# Run this target as a user from which you will play Vavoom. It will create
-# required symlinks in users home directory. This should be done only once.
-installuser:
-	cd ${DATADIR} && \
-	${FIND} . -type d -exec ${MKDIR} ~/.${PORTNAME}/{} \; && \
-	${FIND} . -type f -exec ${LN} -sf ${DATADIR}/{} ~/.${PORTNAME}/{} \;
-.if exists(${DMDIR})
-	cd ${DMDIR} && \
-	${FIND} . -type d -exec ${MKDIR} ~/.${PORTNAME}/{} \; && \
-	${FIND} . -type f -exec ${LN} -sf ${DMDIR}/{} ~/.${PORTNAME}/{} \;
-.endif
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
