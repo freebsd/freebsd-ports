@@ -1,10 +1,10 @@
 CC=		%%CC%%
 RM=		%%RM%%
-CFLAGS=		%%CFLAGS%% -I. -I%%X11BASE%%/include -I%%PREFIX%%/include/
+CFLAGS=		%%CFLAGS%% -I. -I%%X11BASE%%/include -I%%PREFIX%%/include
 LDFLAGS=	-L%%X11BASE%%/lib -L%%PREFIX%%/lib -lagl -lGL -lGLU
 
-ALLEGRO_CFLAGS!=%%ALLEGRO_CONFIG%% --cflags
-ALLEGRO_LFLAGS!=%%ALLEGRO_CONFIG%% --libs
+ALLEGRO_CFLAGS!=allegro-config --cflags
+ALLEGRO_LFLAGS!=allegro-config --libs
 CFLAGS+=	${ALLEGRO_CFLAGS}
 LDFLAGS+=	${ALLEGRO_LFLAGS}
 
@@ -35,6 +35,9 @@ exgui: exgui.o
 	${CC} $> -o $@ ${LDFLAGS}
 
 exmasked: exmasked.o
+	${CC} $> -o $@ ${LDFLAGS}
+
+exmipmaps: exmipmaps.o
 	${CC} $> -o $@ ${LDFLAGS}
 
 extext: extext.o
