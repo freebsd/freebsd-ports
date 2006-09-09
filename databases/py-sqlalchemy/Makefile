@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/S/SQLAlchemy/ \
