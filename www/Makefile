@@ -649,6 +649,7 @@
     SUBDIR += p5-HTML-WikiConverter-PhpWiki
     SUBDIR += p5-HTML-WikiConverter-PmWiki
     SUBDIR += p5-HTML-WikiConverter-SnipSnap
+    SUBDIR += p5-HTML-WikiConverter-Socialtext
     SUBDIR += p5-HTML-WikiConverter-TikiWiki
     SUBDIR += p5-HTML-WikiConverter-UseMod
     SUBDIR += p5-HTML-WikiConverter-WakkaWiki
