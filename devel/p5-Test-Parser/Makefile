@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Parser
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -21,9 +21,17 @@ RUN_DEPENDS=	${SITE_PERL}/Chart/Graph/Gnuplot.pm:${PORTSDIR}/graphics/p5-Chart-G
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Test::Metadata.3 Test::Parser.3 Test::Parser::KernelBuild.3 \
-		Test::Parser::LHCS.3 Test::Parser::LTP.3 \
-		Test::Parser::NewPyNfs.3 Test::Parser::Vmstat.3
+MAN1=	parse_iozone.1 parse_test.1
+
+MAN3=	Test::Metadata.3 Test::Parser.3 \
+		Test::Parser::Dbench.3 Test::Parser::Dbt2.3 \
+		Test::Parser::Iostat.3 Test::Parser::Iozone.3 \
+		Test::Parser::KernelBuild.3 Test::Parser::LHCS.3 \
+		Test::Parser::LTP.3 Test::Parser::NewPyNfs.3 \
+		Test::Parser::Oprofile.3 Test::Parser::PgOptions.3 \
+		Test::Parser::Readprofile.3 Test::Parser::Sar.3 \
+		Test::Parser::SysbenchCPU.3 Test::Parser::SysbenchFileIO.3 \
+		Test::Parser::Sysctl.3 Test::Parser::Vmstat.3
 
 .include <bsd.port.pre.mk>
 
