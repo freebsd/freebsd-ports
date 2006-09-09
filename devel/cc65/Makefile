@@ -35,7 +35,7 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN		does not compile
+BROKEN=		does not compile
 .endif
 
 post-patch:
