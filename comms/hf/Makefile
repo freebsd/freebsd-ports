@@ -34,7 +34,6 @@ post-configure:
 post-install:
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/hf-examplefiles
-	echo WRKSRC ${WRKSRC}
 .for d in ${WRKSRC}/doc/hf-examplefiles/fix.01 \
 	${WRKSRC}/doc/hf-examplefiles/fix.02 \
 	${WRKSRC}/doc/hf-examplefiles/fix.03 \
