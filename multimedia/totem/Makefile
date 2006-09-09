@@ -113,7 +113,8 @@ post-patch:
 		${WRKSRC}/src/backend/bacon-video-widget-gst.c
 .if defined(WITH_GSTREAMER)
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
-		${WRKSRC}/src/backend/bacon-video-widget-gst.c
+		${WRKSRC}/src/backend/bacon-video-widget-gst.c \
+		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
 .endif
 
 post-install:
