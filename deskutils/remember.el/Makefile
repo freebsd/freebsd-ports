@@ -21,6 +21,8 @@ USE_EMACS=	yes
 USE_GMAKE=	yes
 EMACS_PORT_NAME?=	emacs21
 
+INFO=		remember-el
+
 OPTIONS=	BBDB "BBDB support" on
 OPTIONS+=	PLANNER "Planner.el support" on
 
