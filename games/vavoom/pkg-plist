@@ -1,33 +1,33 @@
 bin/vavoom
-bin/Vavoom
-bin/VavoomSV
+libexec/vavoom
+libexec/vavoom-dedicated
 %%DATADIR%%/basev/common/default.cfg
 %%DATADIR%%/basev/common/startup.vs
 %%DATADIR%%/basev/common/wad0.wad
-@dirrm %%DATADIR%%/basev/common
 %%DATADIR%%/basev/doom/wad0.wad
-@dirrm %%DATADIR%%/basev/doom
 %%DATADIR%%/basev/doom1/base.txt
 %%DATADIR%%/basev/doom1/wad0.wad
-@dirrm %%DATADIR%%/basev/doom1
 %%DATADIR%%/basev/doom2/base.txt
 %%DATADIR%%/basev/doom2/wad0.wad
-@dirrm %%DATADIR%%/basev/doom2
+%%DATADIR%%/basev/games.txt
 %%DATADIR%%/basev/heretic/wad0.wad
-@dirrm %%DATADIR%%/basev/heretic
 %%DATADIR%%/basev/hexen/wad0.wad
-@dirrm %%DATADIR%%/basev/hexen
 %%DATADIR%%/basev/plutonia/base.txt
 %%DATADIR%%/basev/plutonia/wad0.wad
-@dirrm %%DATADIR%%/basev/plutonia
 %%DATADIR%%/basev/strife/wad0.wad
-@dirrm %%DATADIR%%/basev/strife
 %%DATADIR%%/basev/tnt/base.txt
 %%DATADIR%%/basev/tnt/wad0.wad
+%%DATADIR%%/vavoom.png
+%%PORTDOCS%%%%DOCSDIR%%/vavoom.txt
 @dirrm %%DATADIR%%/basev/tnt
-%%DATADIR%%/basev/games.txt
+@dirrm %%DATADIR%%/basev/strife
+@dirrm %%DATADIR%%/basev/plutonia
+@dirrm %%DATADIR%%/basev/hexen
+@dirrm %%DATADIR%%/basev/heretic
+@dirrm %%DATADIR%%/basev/doom2
+@dirrm %%DATADIR%%/basev/doom1
+@dirrm %%DATADIR%%/basev/doom
+@dirrm %%DATADIR%%/basev/common
 @dirrm %%DATADIR%%/basev
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/vavmref.txt
-%%PORTDOCS%%%%DOCSDIR%%/vavoom.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

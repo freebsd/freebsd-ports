@@ -1,0 +1,29 @@
+--- ./source/Makefile.in.orig	Sun Aug 13 05:01:36 2006
++++ ./source/Makefile.in	Fri Sep  8 22:22:35 2006
+@@ -847,14 +847,14 @@
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
++	test -z "$(libexecdir)" || $(mkdir_p) "$(DESTDIR)$(libexecdir)"
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+ 	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+ 	  if test -f $$p \
+ 	  ; then \
+ 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
+-	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(libexecdir)/$$f'"; \
++	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(libexecdir)/$$f" || exit 1; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -4038,7 +4038,7 @@
+ 
+ install-data-am: install-dist_baseDATA
+ 
+-install-exec-am: install-binPROGRAMS install-binSCRIPTS
++install-exec-am: install-binPROGRAMS
+ 
+ install-info: install-info-recursive
+ 
