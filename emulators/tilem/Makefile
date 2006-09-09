@@ -17,7 +17,7 @@ COMMENT=	An emulator for the Z80 series of Texas Instruments calculators
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>
