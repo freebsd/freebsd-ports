@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://elvine.org/code/cbview/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer/converter for CBR/CBZ comic book archives
 
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \

@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extras colour schemes for Clearlooks engine theme
 
 NO_BUILD=	yes
