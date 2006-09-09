@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
