@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Mon Jun 26 19:07:22 2006
++++ Makefile.am	Sat Aug 12 23:16:07 2006
+@@ -7,7 +7,7 @@
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
+ 
+-EXTRA = ChangeLog AUTHORS COPYING INSTALL NEWS README TODO THANKS COPYING.bmc-watchdog DISCLAIMER.bmc-watchdog COPYING.ipmipower DISCLAIMER.ipmipower COPYING.ipmiping DISCLAIMER.ipmiping COPYING.rmcpping DISCLAIMER.rmcpping
++EXTRA = ChangeLog AUTHORS INSTALL NEWS README TODO THANKS DISCLAIMER.bmc-watchdog DISCLAIMER.ipmipower DISCLAIMER.ipmiping DISCLAIMER.rmcpping
+ 
+ docdir   = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = $(EXTRA)
