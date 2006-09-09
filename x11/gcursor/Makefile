@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mouse cursor theme selector for GNOME
 
 RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/file-roller
