@@ -19,6 +19,8 @@ USE_EMACS=	yes
 USE_GMAKE=	yes
 EMACS_PORT_NAME?=	emacs21
 
+INFO=		muse
+
 .if ${EMACS_PORT_NAME} != "emacs21"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
