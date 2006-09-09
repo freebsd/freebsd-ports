@@ -6,29 +6,41 @@
 #
 
 PORTNAME=	volleyball
-PORTVERSION=	0.8
+PORTVERSION=	0.8.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/
-DISTNAME=	${PORTNAME}20051004
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A game similar to GNU Arcade Volleyball
 
-USE_SDL=	sdl
+USE_SDL=	sdl image
 USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="`${SDL_CONFIG} --cflags` ${CFLAGS}" \
-		LDFLAGS="`${SDL_CONFIG} --libs`"
-ALL_TARGET=	volleyball
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS=	--disable-nls # strangeness in nls support
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GCC=	3.4+
 
-WRKSRC=	${WRKDIR}/${PORTNAME}/paso_8
+PORTDOCS=	README
+MAN6=		volleyball.6
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|ima/|${DATADIR}/|' ${WRKSRC}/*.c
-	@${REINPLACE_CMD} -e 's|^\([LDC]*FLAGS\)|#\1|' ${WRKSRC}/Makefile
+DATAVERSION=	0.8.4
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/volleyball ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ima/* ${DATADIR}/
+post-configure:
+	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
+		${SETENV} ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+
+post-install:
+	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
+	
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
 
 .include <bsd.port.mk>
