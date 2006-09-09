@@ -1,0 +1,5 @@
+id3 enables to to retrieve and update information from ID3 tags in
+MP3 files. It supports version 1.0, 1.1 and 2.2+ (only reading text- and
+url-frames at the moment).
+
+WWW: http://pecl.php.net/package/id3/

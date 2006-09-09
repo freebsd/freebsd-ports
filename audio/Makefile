@@ -444,6 +444,7 @@
     SUBDIR += pacpl
     SUBDIR += paman
     SUBDIR += pd
+    SUBDIR += pecl-id3
     SUBDIR += penguinsap
     SUBDIR += phatbeat
     SUBDIR += picard
