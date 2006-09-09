@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	oxim
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	chinese textproc
-MASTER_SITES=	ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
-		ftp://ftp4.tnc.edu.tw/pub3/opendesktop-tw/odp/ \
+MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
+		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
+		ftp://ftp4.tnc.edu.tw/pub3/opendesktop-tw/odp/OXIM/Source/ \
+		ftp://140.111.66.34/odp/OXIM/Source/ \
 		ftp://140.111.128.66/odp/OXIM/Source/
 
 MAINTAINER=	rafan@FreeBSD.org
@@ -37,6 +38,9 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
 		--with-conf-dir=${TARGETDIR}/etc/${PORTNAME}
+# oxim requires qinputcontextplugin.h which only exists in Debian package
+CONFIGURE_ARGS+=--disable-qt-immodule \
+		--disable-setup-tool
 
 .include <bsd.port.pre.mk>
 
@@ -79,6 +83,10 @@ PLIST_SUB+=	NLS=""
 #CONFIGURE_ARGS+=--disable-nls
 #PLIST_SUB+=	NLS="@comment "
 #.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		lack of stdint.h
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|%%PREFIX%%|${TARGETDIR}|' \
