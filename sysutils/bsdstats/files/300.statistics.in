@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.21 2006-09-07 04:50:21 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.22 2006-09-09 16:45:36 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -9,8 +9,14 @@ if [ -r /etc/defaults/periodic.conf ]
 then
     . /etc/defaults/periodic.conf
     source_periodic_confs
+    periodic_conf=/etc/periodic.conf
 else
     . /etc/rc.conf	# For systems without periodic.conf, use rc.conf
+    if [ -r /etc/rc.conf.local ] 
+    then
+        . /etc/rc.conf.local
+    fi
+    periodic_conf=/etc/rc.conf.local
 fi
 
 oldmask=$(umask)
@@ -33,10 +39,7 @@ random () {
 
 send_devices () {
     case $(uname) in
-	NetBSD | OpenBSD)
-	    # Not supported
-	    ;;
-	FreeBSD | *)
+	FreeBSD )
 	    for line in `/usr/sbin/pciconf -l | /usr/bin/grep -v none`
 	    do
 	      DRIVER=`echo $line | awk -F\@ '{print $1}'`
@@ -47,6 +50,9 @@ send_devices () {
 
 	    do_fetch report_devices.php?key=$KEY$query_string
 	    ;;
+	* )
+	    # Not supported
+	    ;;
     esac
 }
 
@@ -56,8 +62,8 @@ get_id_token () {
        IDTOKEN=$(uri_escape $( openssl rand -base64 16 ) )
        
        idf=$( mktemp "$id_token_file.XXXXXX" )  && \
-       /usr/sbin/chown root:wheel $idf          && \
-       /bin/chmod 600 $idf
+       chown root:wheel $idf          && \
+       chmod 600 $idf
 
        do_fetch getid.php?key=$IDTOKEN | {
           local IFS
@@ -126,8 +132,12 @@ do_fetch () {
     url="http://$checkin_server/scripts/$1"
     sleep `random`
     case $(uname) in
-	NetBSD | OpenBSD)		/usr/bin/ftp -V -o - "$url" ;;
-	FreeBSD | *)	/usr/bin/fetch -q -o - "$url" ;;
+	FreeBSD )	
+		/usr/bin/fetch -q -o - "$url"
+		;;
+	* )
+		/usr/bin/ftp -V -o - "$url"
+		;;
     esac
 }
 
@@ -154,13 +164,13 @@ case "$monthly_statistics_enable" in
              ;;
           *) 
              echo "Posting monthly device/CPU statistics disabled"
-             echo '    set monthly_statistics_report_devices="YES" in /etc/periodic.conf'
+             echo '    set monthly_statistics_report_devices="YES" in $periodic_conf'
              ;;
       esac
       ;;
     *) 
       echo "Posting monthly OS statistics disabled"
-      echo '    set monthly_statistics_enable="YES" in /etc/periodic.conf'
+      echo '    set monthly_statistics_enable="YES" in $periodic_conf'
     ;;
 esac
 
