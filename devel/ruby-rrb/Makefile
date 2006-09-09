@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Ruby Refactoring Browser for FreeRIDE and EMACS
 
+BROKEN=		Does not compile
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
