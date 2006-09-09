@@ -8,6 +8,7 @@
 
 PORTNAME=	nmzmail
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
@@ -26,7 +27,7 @@ PORTDOCS=	README	NEWS
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500018
+.if ${OSVERSION} < 500018 || exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
