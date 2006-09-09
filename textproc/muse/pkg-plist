@@ -1,4 +1,5 @@
 info/muse
+@unexec install-info --quiet --delete %D/info/muse %D/info/dir
 %%EMACS_SITE_LISPDIR%%/muse/contrib/cgi.el
 %%EMACS_SITE_LISPDIR%%/muse/contrib/cgi.elc
 %%EMACS_SITE_LISPDIR%%/muse/contrib/httpd.el
