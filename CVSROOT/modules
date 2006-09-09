@@ -4075,6 +4075,7 @@ hexpert		ports/editors/hexpert
 hexxagon	ports/games/hexxagon
 heyu		ports/misc/heyu
 heyu2		ports/misc/heyu2
+hf		ports/comms/hf
 hf6to4		ports/net/hf6to4
 hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
