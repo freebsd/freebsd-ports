@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.4.3
-PORTREVISION=	1
+PORTVERSION=	4.4.5
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
-		http://freebsd.ricin.com/ports/distfiles/
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	sip-${PORTVERSION}
 
