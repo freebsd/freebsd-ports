@@ -24,4 +24,14 @@ SUB_DIR=	20904
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 
+# Set charset (euc-jp/sjis_jis/utf-8)
+.if defined(WITH_CHARSET)
+CONFIGURE_ARGS=	--with-charset=${WITH_CHARSET}
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  WITH_CHARSET=charset  sets default charset (euc-jp/sjis_jis/utf-8)"
+	@${ECHO_MSG} ""
+
 .include <bsd.port.mk>
