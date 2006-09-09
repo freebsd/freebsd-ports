@@ -10756,6 +10756,7 @@ pecl-filter	ports/security/pecl-filter
 pecl-fribidi	ports/converters/pecl-fribidi
 pecl-gnupg	ports/security/pecl-gnupg
 pecl-hash	ports/security/pecl-hash
+pecl-id3	ports/audio/pecl-id3
 pecl-imagick	ports/graphics/pecl-imagick
 pecl-json	ports/devel/pecl-json
 pecl-lzf	ports/archivers/pecl-lzf
