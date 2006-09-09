@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Hierarchy
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -22,7 +22,6 @@ MAN3=		Data::Hierarchy.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500700
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 .endif
 
