@@ -20,7 +20,7 @@ RCS file: /cvs/porting/sal/osl/unx/system.c,v
 retrieving revision 1.13
 diff -u -r1.13 system.c
 --- sal/osl/unx/system.c	19 Jul 2006 09:39:37 -0000	1.13
-+++ sal/osl/unx/system.c	29 Jul 2006 09:53:04 -0000
++++ sal/osl/unx/system.c	9 Sep 2006 09:57:26 -0000
 @@ -343,7 +343,7 @@
  }
  #endif /* defined SCO */
@@ -30,14 +30,24 @@ diff -u -r1.13 system.c
  
  extern int h_errno;
  
+@@ -435,7 +435,7 @@
+ 
+   	return res;
+ }
+-#endif /* !defined(FREEBSD) || (__FreeBSD_version < 700015) */
++#endif /* !defined(FREEBSD) || (__FreeBSD_version < 601103) */
+ 
+ #if defined(MACOSX)
+ /*
+
 Index: sal/osl/unx/system.h
 ===================================================================
 RCS file: /cvs/porting/sal/osl/unx/system.h,v
 retrieving revision 1.33
 diff -u -r1.33 system.h
 --- sal/osl/unx/system.h	19 Jul 2006 09:39:50 -0000	1.33
-+++ sal/osl/unx/system.h	29 Jul 2006 09:53:04 -0000
-@@ -537,7 +537,7 @@
++++ sal/osl/unx/system.h	9 Sep 2006 09:55:55 -0000
+@@ -537,10 +537,10 @@
  struct tm *localtime_r(const time_t *timep, struct tm *buffer);
  struct tm *gmtime_r(const time_t *timep, struct tm *buffer);
  #endif /* !defined FREEBSD || (__FreeBSD_version < 500112) */
@@ -45,7 +55,12 @@ diff -u -r1.33 system.h
 +#if !defined(FREEBSD) || (__FreeBSD_version < 601103)
  struct hostent *gethostbyname_r(const char *name, struct hostent *result,
  								char *buffer, int buflen, int *h_errnop);
- #endif /* !defined(FREEBSD) || (__FreeBSD_version < 700015) */
+-#endif /* !defined(FREEBSD) || (__FreeBSD_version < 700015) */
++#endif /* !defined(FREEBSD) || (__FreeBSD_version < 601103) */
+ #endif
+ 
+ #endif /* __OSL_SYSTEM_H__ */
+
 Index: moz/mozilla-source-1.7.5.patch
 ===================================================================
 RCS file: /cvs/external/moz/mozilla-source-1.7.5.patch,v
