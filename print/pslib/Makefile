@@ -8,12 +8,12 @@
 
 PORTNAME=	pslib
 PORTVERSION=	0.2.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A C-library for generating multi page PostScript documents
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -24,11 +24,33 @@ USE_GNOME=	gnomehack gnometarget intlhack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_prog_DOC_TO_MAN=""
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
+OPTIONS=	EXAMPLES	"Install additional examples" On \
+		MAN		"Install manual pages" On \
+		NLS		"Native language support" On
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_EXAMPLES)
+EX_NAME=	pslib-examples-0.0.8
+EX_WRKSRC=	${WRKDIR}/${EX_NAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EX_NAME}${EXTRACT_SUFX}
+PLIST_SUB+=	EXAMPLES=""
+.else
+PLIST_SUB+=	EXAMPLES="@comment "
+.endif
+
+.if !defined(WITHOUT_MAN)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/docbook-to-man:${PORTSDIR}/textproc/docbook-to-man \
+		${LOCALBASE}/bin/docbook2man:${PORTSDIR}/textproc/docbook-utils
+MAN3!=	${CAT} ${FILESDIR}/man3
+.else
+# Avoid building the manpages.
+CONFIGURE_ENV+=	ac_cv_prog_DOC_TO_MAN=""
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
@@ -41,6 +63,13 @@ PLIST_SUB+=	NLS=""
 post-patch:
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e 's|@USE_NLS@|no|g' ${WRKSRC}/po/Makefile.in.in
+.endif
+
+post-install:
+.if !defined(WITHOUT_EXAMPLES)
+	${MKDIR} -m 0755 ${EXAMPLESDIR}
+	@${RM} -f ${EX_WRKSRC}/Makefile ${EX_WRKSRC}/ChangeLog
+	cd ${EX_WRKSRC} && ${PAX} -rw * ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

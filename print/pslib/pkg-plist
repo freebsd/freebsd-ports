@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/libps/pslib-mp.h
 include/libps/pslib.h
 include/libps/psversion.h
@@ -11,5 +10,40 @@ libdata/pkgconfig/libps.pc
 %%DATADIR%%/draft.ps
 %%DATADIR%%/exectime.ps
 %%DATADIR%%/grid.ps
+%%EXAMPLES%%%%EXAMPLESDIR%%/AlteSchwabacher.afm
+%%EXAMPLES%%%%EXAMPLESDIR%%/AlteSchwabacher.enc
+%%EXAMPLES%%%%EXAMPLESDIR%%/AlteSchwabacher.pfb
+%%EXAMPLES%%%%EXAMPLESDIR%%/Courier.afm
+%%EXAMPLES%%%%EXAMPLESDIR%%/Helvetica.afm
+%%EXAMPLES%%%%EXAMPLESDIR%%/Helvetica.pro
+%%EXAMPLES%%%%EXAMPLESDIR%%/README
+%%EXAMPLES%%%%EXAMPLESDIR%%/cork.enc
+%%EXAMPLES%%%%EXAMPLESDIR%%/debian.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/dice.afm
+%%EXAMPLES%%%%EXAMPLESDIR%%/dice.pfb
+%%EXAMPLES%%%%EXAMPLESDIR%%/draw.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/einstein.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/einstein.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/fontsample.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/hyperlinks.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/hyph_de.dic
+%%EXAMPLES%%%%EXAMPLESDIR%%/hyph_en.dic
+%%EXAMPLES%%%%EXAMPLESDIR%%/hyphenate.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/image.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/indexed-alpha.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/indexed.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/ligatures.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/memory.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/mmk.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/overprint.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/pagehook.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/picture.eps
+%%EXAMPLES%%%%EXAMPLESDIR%%/psclock.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/rgb-alpha.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/rgb.png
+%%EXAMPLES%%%%EXAMPLESDIR%%/shading.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/spotcolor.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/txt2ps.c
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
 @dirrm include/libps
