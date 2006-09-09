@@ -1,5 +1,5 @@
---- texk/tetex/updmap.orig	Thu Jun 29 14:46:31 2006
-+++ texk/tetex/updmap	Fri Jun 30 02:40:50 2006
+--- texk/tetex/updmap.orig	Sat Feb  5 06:34:26 2005
++++ texk/tetex/updmap	Sat Sep  9 19:19:14 2006
 @@ -266,6 +266,7 @@
  ###############################################################################
  catMaps()
@@ -48,7 +48,7 @@
      return $?
    fi
  
-@@ -607,10 +616,38 @@
+@@ -607,10 +616,47 @@
  ###############################################################################
  locateMapMigrate()
  {
@@ -64,7 +64,12 @@
 +        prog=dvipdfm
 +	file=`kpsewhich --progname=tmpdvipdfm --format="other text files" "$map"`
 +	if ! [ -f "${file}" ]; then
++		posttype=dvips2dvipdfm
 +		file=`kpsewhich --progname=tmpdvips --format="other text files" "$map"`
++	fi
++	if ! [ -f "${file}" ]; then
++		posttype=dvips2dvipdfm
++		file=`kpsewhich --format=map "$map"`
 +	fi
 +	;;
 +    dvipdfm_catmap)
@@ -73,6 +78,10 @@
 +	if ! [ -f "${file}" ]; then
 +		posttype=dvips2dvipdfm
 +		file=`kpsewhich --progname=tmpdvips --format="other text files" "$map"`
++	fi
++	if ! [ -f "${file}" ]; then
++		posttype=dvips2dvipdfm
++		file=`kpsewhich --format=map "$map"`
 +	fi
 +	;;
 +    dvips*)
@@ -89,7 +98,7 @@
  
      # look up using the old search path
      file2=`kpsewhich --format='dvips config' "$map"`
-@@ -621,8 +658,11 @@
+@@ -621,8 +667,11 @@
  
      if test -f "$file"; then
  
@@ -103,7 +112,7 @@
  
        # we have found the file where we should. If we have additional
        # ones: complain!
-@@ -679,7 +719,7 @@
+@@ -679,7 +728,7 @@
        $3
      Please, consider removing this file.
  "
@@ -112,7 +121,7 @@
      ;;
    manualResolve)
      warn "
-@@ -694,7 +734,7 @@
+@@ -694,7 +743,7 @@
      content of the used map file. Additionally, consider removing the
      obsolete file.
  "
@@ -121,7 +130,7 @@
      ;;
    badLocation)
      map=$2
-@@ -761,7 +801,6 @@
+@@ -761,7 +810,6 @@
  
    trap 'cleanup' 1 2 3 7 13 15
    needsCleanup=true
@@ -129,7 +138,7 @@
  }
  
  ###############################################################################
-@@ -1064,6 +1103,7 @@
+@@ -1064,6 +1112,7 @@
  ###############################################################################
  dvips2dvipdfm()
  {
@@ -137,7 +146,7 @@
    sed -e 's@$@ %@' \
        -e 's@^\(\([^ ]*\).*\)@\1\2@' \
        -e 's@\(.*<\[* *\([^ ]*\)\.enc\(.*\)\)@\1 \2@' \
-@@ -1150,13 +1190,14 @@
+@@ -1150,13 +1199,14 @@
    dvipdfm35=`locateMap dvipdfm35.map` || cleanup
    ps2pk35=`locateMap ps2pk35.map` || cleanup
  
@@ -154,7 +163,7 @@
    verboseMsg
  
    # files should be world-readable
-@@ -1205,9 +1246,26 @@
+@@ -1205,9 +1255,26 @@
    <$tmp3 normalizeLines >> "$pdftexoutputdir/pdftex_ndl14.map"
    <$tmp7 normalizeLines >> "$pdftexoutputdir/pdftex_dl14.map"
  
@@ -183,7 +192,7 @@
    verboseMsg "$progname: All output generated!"
    verboseMsg
  
-@@ -1228,7 +1286,7 @@
+@@ -1228,7 +1295,7 @@
        | awk '{print $(NF-2), $(NF-1), $NF}' | verboseCat
    verboseMsg
  
@@ -192,7 +201,7 @@
      m="
  
  !!! NOTICE:
-@@ -1281,18 +1339,22 @@
+@@ -1281,18 +1348,22 @@
    cnfFile=
    dvipsoutputdir=; pdftexoutputdir=; dvipdfmoutputdir=
    : ${TEXMFMAIN=`kpsewhich -var-value=TEXMFMAIN`}
