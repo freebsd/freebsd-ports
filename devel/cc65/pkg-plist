@@ -1,82 +1,9 @@
-%%PORTDOCS%%share/doc/cc65/samples/Makefile
-%%PORTDOCS%%share/doc/cc65/samples/README
-%%PORTDOCS%%share/doc/cc65/samples/ascii.c
-%%PORTDOCS%%share/doc/cc65/samples/fire.c
-%%PORTDOCS%%share/doc/cc65/samples/gunzip65.c
-%%PORTDOCS%%share/doc/cc65/samples/hello.c
-%%PORTDOCS%%share/doc/cc65/samples/mousedemo.c
-%%PORTDOCS%%share/doc/cc65/samples/nachtm.c
-%%PORTDOCS%%share/doc/cc65/samples/plasma.c
-%%PORTDOCS%%share/doc/cc65/samples/sieve.c
-%%PORTDOCS%%share/doc/cc65/samples/tgidemo.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/appfile.grc
-%%PORTDOCS%%share/doc/cc65/samples/geos/apphello1.grc
-%%PORTDOCS%%share/doc/cc65/samples/geos/apphello2.grc
-%%PORTDOCS%%share/doc/cc65/samples/geos/apprmvprot.grc
-%%PORTDOCS%%share/doc/cc65/samples/geos/appvector-demo.grc
-%%PORTDOCS%%share/doc/cc65/samples/geos/appyesno.grc
-%%PORTDOCS%%share/doc/cc65/samples/geos/dialog.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/filesel.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/geosconio.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/geosconiores.res
-%%PORTDOCS%%share/doc/cc65/samples/geos/grphstr.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/hello1.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/hello2.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/inittab.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/menu.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/rmvprot.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/vector-demo.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/yesno.c
-%%PORTDOCS%%share/doc/cc65/samples/geos/ca65-vlir/Makefile
-%%PORTDOCS%%share/doc/cc65/samples/geos/ca65-vlir/cvthead.grc
-%%PORTDOCS%%share/doc/cc65/samples/geos/ca65-vlir/vlir0.s
-%%PORTDOCS%%share/doc/cc65/samples/geos/ca65-vlir/vlir1.s
-%%PORTDOCS%%share/doc/cc65/samples/geos/ca65-vlir/vlir2.s
-%%PORTDOCS%%share/doc/cc65/samples/tutorial/hello.c
-%%PORTDOCS%%share/doc/cc65/samples/tutorial/text.s
-%%PORTDOCS%%@dirrm share/doc/cc65/samples/tutorial
-%%PORTDOCS%%@dirrm share/doc/cc65/samples/geos/ca65-vlir
-%%PORTDOCS%%@dirrm share/doc/cc65/samples/geos
-%%PORTDOCS%%@dirrm share/doc/cc65/samples
-share/doc/cc65/BUGS
-share/doc/cc65/CREDITS
-share/doc/cc65/Makefile
-share/doc/cc65/Makefile.orig
-share/doc/cc65/announce.txt
-share/doc/cc65/apple2.sgml
-share/doc/cc65/ar65.sgml
-share/doc/cc65/atari.sgml
-share/doc/cc65/c128.sgml
-share/doc/cc65/c16.sgml
-share/doc/cc65/c64.sgml
-share/doc/cc65/ca65.sgml
-share/doc/cc65/ca65html.sgml
-share/doc/cc65/cbm610.sgml
-share/doc/cc65/cc65.sgml
-share/doc/cc65/cl65.sgml
-share/doc/cc65/co65.sgml
-share/doc/cc65/coding.sgml
-share/doc/cc65/compile.txt
-share/doc/cc65/da65.sgml
-share/doc/cc65/debugging.sgml
-share/doc/cc65/dio.sgml
-share/doc/cc65/funcref.sgml
-share/doc/cc65/geos.sgml
-share/doc/cc65/grc.txt
-share/doc/cc65/index.sgml
-share/doc/cc65/internal.txt
-share/doc/cc65/intro.sgml
-share/doc/cc65/ld65.sgml
-share/doc/cc65/library.sgml
-share/doc/cc65/newvers.txt
-share/doc/cc65/plus4.sgml
-share/doc/cc65/readme.1st
-%%PORTDOCS%%@dirrm share/doc/cc65
 bin/ar65
 bin/ca65
 bin/ca65html
 bin/cc65
 bin/cl65
+bin/co65
 bin/da65
 bin/grc
 bin/ld65
@@ -89,9 +16,12 @@ lib/cc65/asminc/em-error.inc
 lib/cc65/asminc/em-kernel.inc
 lib/cc65/asminc/errno.inc
 lib/cc65/asminc/fcntl.inc
+lib/cc65/asminc/get_tv.inc
 lib/cc65/asminc/joy-error.inc
 lib/cc65/asminc/joy-kernel.inc
+lib/cc65/asminc/lynx.inc
 lib/cc65/asminc/modload.inc
+lib/cc65/asminc/mouse-kernel.inc
 lib/cc65/asminc/o65.inc
 lib/cc65/asminc/rs232.inc
 lib/cc65/asminc/ser-error.inc
@@ -104,6 +34,7 @@ lib/cc65/asminc/tgi-mode.inc
 lib/cc65/asminc/utsname.inc
 lib/cc65/asminc/zeropage.inc
 lib/cc65/emd/a2.lc.emd
+lib/cc65/emd/a2e.lc.emd
 lib/cc65/emd/c128-georam.emd
 lib/cc65/emd/c128-ram.emd
 lib/cc65/emd/c128-ramcart.emd
@@ -119,6 +50,7 @@ lib/cc65/emd/cbm510-ram.emd
 lib/cc65/emd/cbm610-ram.emd
 lib/cc65/emd/geos-vdc.emd
 lib/cc65/include/6502.h
+lib/cc65/include/_6522.h
 lib/cc65/include/_6525.h
 lib/cc65/include/_6526.h
 lib/cc65/include/_6545.h
@@ -136,6 +68,7 @@ lib/cc65/include/_vic.h
 lib/cc65/include/_vic2.h
 lib/cc65/include/ace.h
 lib/cc65/include/apple2.h
+lib/cc65/include/apple2enh.h
 lib/cc65/include/assert.h
 lib/cc65/include/atari.h
 lib/cc65/include/atmos.h
@@ -150,16 +83,33 @@ lib/cc65/include/conio.h
 lib/cc65/include/ctype.h
 lib/cc65/include/dbg.h
 lib/cc65/include/dio.h
+lib/cc65/include/dirent.h
 lib/cc65/include/em.h
+lib/cc65/include/em/em-kernel.h
 lib/cc65/include/errno.h
 lib/cc65/include/fcntl.h
 lib/cc65/include/geos.h
+lib/cc65/include/geos/gconst.h
+lib/cc65/include/geos/gdisk.h
+lib/cc65/include/geos/gdlgbox.h
+lib/cc65/include/geos/gfile.h
+lib/cc65/include/geos/ggraph.h
+lib/cc65/include/geos/gmemory.h
+lib/cc65/include/geos/gmenu.h
+lib/cc65/include/geos/gprocess.h
+lib/cc65/include/geos/gsprite.h
+lib/cc65/include/geos/gstruct.h
+lib/cc65/include/geos/gsym.h
+lib/cc65/include/geos/gsys.h
 lib/cc65/include/iso646.h
 lib/cc65/include/joystick.h
+lib/cc65/include/joystick/joy-kernel.h
 lib/cc65/include/limits.h
 lib/cc65/include/locale.h
+lib/cc65/include/lynx.h
 lib/cc65/include/modload.h
 lib/cc65/include/mouse.h
+lib/cc65/include/mouse/mouse-kernel.h
 lib/cc65/include/nes.h
 lib/cc65/include/o65.h
 lib/cc65/include/peekpoke.h
@@ -177,38 +127,38 @@ lib/cc65/include/stdio.h
 lib/cc65/include/stdlib.h
 lib/cc65/include/string.h
 lib/cc65/include/supervision.h
+lib/cc65/include/sys/types.h
+lib/cc65/include/sys/utsname.h
 lib/cc65/include/tgi.h
+lib/cc65/include/tgi/tgi-error.h
+lib/cc65/include/tgi/tgi-kernel.h
+lib/cc65/include/tgi/tgi-mode.h
 lib/cc65/include/time.h
 lib/cc65/include/unistd.h
 lib/cc65/include/vic20.h
 lib/cc65/include/zlib.h
-lib/cc65/include/em/em-kernel.h
-lib/cc65/include/geos/gconst.h
-lib/cc65/include/geos/gdisk.h
-lib/cc65/include/geos/gdlgbox.h
-lib/cc65/include/geos/gfile.h
-lib/cc65/include/geos/ggraph.h
-lib/cc65/include/geos/gmemory.h
-lib/cc65/include/geos/gmenu.h
-lib/cc65/include/geos/gprocess.h
-lib/cc65/include/geos/gsprite.h
-lib/cc65/include/geos/gstruct.h
-lib/cc65/include/geos/gsym.h
-lib/cc65/include/geos/gsys.h
-lib/cc65/include/joystick/joy-kernel.h
-lib/cc65/include/sys/types.h
-lib/cc65/include/sys/utsname.h
-lib/cc65/include/tgi/tgi-error.h
-lib/cc65/include/tgi/tgi-kernel.h
-lib/cc65/include/tgi/tgi-mode.h
-@dirrm lib/cc65/include/tgi
-@dirrm lib/cc65/include/sys
-@dirrm lib/cc65/include/joystick
-@dirrm lib/cc65/include/geos
-@dirrm lib/cc65/include/em
-@dirrm lib/cc65/include
+lib/cc65/joy/a2.stdjoy.joy
+lib/cc65/joy/a2e.stdjoy.joy
+lib/cc65/joy/ataristd.joy
+lib/cc65/joy/c128-ptvjoy.joy
+lib/cc65/joy/c128-stdjoy.joy
+lib/cc65/joy/c16-stdjoy.joy
+lib/cc65/joy/c64-hitjoy.joy
+lib/cc65/joy/c64-numpad.joy
+lib/cc65/joy/c64-ptvjoy.joy
+lib/cc65/joy/c64-stdjoy.joy
+lib/cc65/joy/cbm510-std.joy
+lib/cc65/joy/geos-stdjoy.joy
+lib/cc65/joy/lynx-stdjoy.joy
+lib/cc65/joy/nes-stdjoy.joy
+lib/cc65/joy/pet-ptvjoy.joy
+lib/cc65/joy/plus4-stdjoy.joy
+lib/cc65/joy/vic20-ptvjoy.joy
+lib/cc65/joy/vic20-stdjoy.joy
 lib/cc65/lib/apple2.lib
 lib/cc65/lib/apple2.o
+lib/cc65/lib/apple2enh.lib
+lib/cc65/lib/apple2enh.o
 lib/cc65/lib/atari.lib
 lib/cc65/lib/atari.o
 lib/cc65/lib/atmos.lib
@@ -225,6 +175,8 @@ lib/cc65/lib/cbm610.lib
 lib/cc65/lib/cbm610.o
 lib/cc65/lib/geos.lib
 lib/cc65/lib/geos.o
+lib/cc65/lib/lynx.lib
+lib/cc65/lib/lynx.o
 lib/cc65/lib/nes.lib
 lib/cc65/lib/nes.o
 lib/cc65/lib/pet.lib
@@ -235,14 +187,114 @@ lib/cc65/lib/supervision.lib
 lib/cc65/lib/supervision.o
 lib/cc65/lib/vic20.lib
 lib/cc65/lib/vic20.o
+lib/cc65/mou/c128-1351.mou
+lib/cc65/mou/c128-joy.mou
+lib/cc65/mou/c64-1351.mou
+lib/cc65/mou/c64-joy.mou
+lib/cc65/ser/a2.ssc.ser
+lib/cc65/ser/a2e.ssc.ser
+lib/cc65/ser/c128-swlink.ser
+lib/cc65/ser/c64-swlink.ser
+lib/cc65/ser/cbm510-std.ser
+lib/cc65/ser/cbm610-std.ser
+lib/cc65/ser/plus4-stdser.ser
 lib/cc65/tgi/a2.hi.tgi
 lib/cc65/tgi/a2.lo.tgi
+lib/cc65/tgi/a2e.hi.tgi
+lib/cc65/tgi/a2e.lo.tgi
+lib/cc65/tgi/atmos-240-200-2.tgi
 lib/cc65/tgi/c128-vdc.tgi
 lib/cc65/tgi/c128-vdc2.tgi
 lib/cc65/tgi/c64-hi.tgi
 lib/cc65/tgi/geos-tgi.tgi
-@dirrm lib/cc65/emd
-@dirrm lib/cc65/lib
+lib/cc65/tgi/lynx-160-102-16.tgi
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/apple2-tgi.cfg
+%%PORTDOCS%%%%DOCSDIR%%/apple2.cfg
+%%PORTDOCS%%%%DOCSDIR%%/atari.cfg
+%%PORTDOCS%%%%DOCSDIR%%/atmos.cfg
+%%PORTDOCS%%%%DOCSDIR%%/bbc.cfg
+%%PORTDOCS%%%%DOCSDIR%%/c128.cfg
+%%PORTDOCS%%%%DOCSDIR%%/c16.cfg
+%%PORTDOCS%%%%DOCSDIR%%/c64.cfg
+%%PORTDOCS%%%%DOCSDIR%%/cbm510.cfg
+%%PORTDOCS%%%%DOCSDIR%%/cbm610.cfg
+%%PORTDOCS%%%%DOCSDIR%%/compile.txt
+%%PORTDOCS%%%%DOCSDIR%%/geos.cfg
+%%PORTDOCS%%%%DOCSDIR%%/internal.txt
+%%PORTDOCS%%%%DOCSDIR%%/lunix.cfg
+%%PORTDOCS%%%%DOCSDIR%%/lynx.cfg
+%%PORTDOCS%%%%DOCSDIR%%/module.cfg
+%%PORTDOCS%%%%DOCSDIR%%/nes.cfg
+%%PORTDOCS%%%%DOCSDIR%%/newvers.txt
+%%PORTDOCS%%%%DOCSDIR%%/none.cfg
+%%PORTDOCS%%%%DOCSDIR%%/osa65.cfg
+%%PORTDOCS%%%%DOCSDIR%%/pet.cfg
+%%PORTDOCS%%%%DOCSDIR%%/plus4.cfg
+%%PORTDOCS%%%%DOCSDIR%%/readme.1st
+%%PORTDOCS%%%%DOCSDIR%%/supervision.cfg
+%%PORTDOCS%%%%DOCSDIR%%/supervision128.cfg
+%%PORTDOCS%%%%DOCSDIR%%/supervision16.cfg
+%%PORTDOCS%%%%DOCSDIR%%/supervision64.cfg
+%%PORTDOCS%%%%DOCSDIR%%/vic20.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/ascii.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/diodemo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/fire.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/appfile.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/apphello1.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/apphello2.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/apprmvprot.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/appvector-demo.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/appyesno.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/cvthead.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir0.s
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir1.s
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/ca65-vlir/vlir2.s
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/dialog.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/filesel.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/geosconio.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/geosconiores.res
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/getid.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/getidres.grc
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/grphstr.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/hello1.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/hello2.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/inittab.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/menu.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/rmvprot.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/vector-demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/geos/yesno.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/gunzip65.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/hello.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/mousedemo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/nachtm.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/plasma.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/sieve.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tgidemo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/hello.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/text.s
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/geos/ca65-vlir
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/geos
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/cc65/tgi
+@dirrm lib/cc65/ser
+@dirrm lib/cc65/mou
+@dirrm lib/cc65/lib
+@dirrm lib/cc65/joy
+@dirrm lib/cc65/include/tgi
+@dirrm lib/cc65/include/sys
+@dirrm lib/cc65/include/mouse
+@dirrm lib/cc65/include/joystick
+@dirrm lib/cc65/include/geos
+@dirrm lib/cc65/include/em
+@dirrm lib/cc65/include
+@dirrm lib/cc65/emd
 @dirrm lib/cc65/asminc
 @dirrm lib/cc65
