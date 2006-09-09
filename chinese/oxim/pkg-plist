@@ -1,29 +1,30 @@
 bin/oxim
+bin/oxim-conv
 bin/oxim2tab
 etc/oxim/locale.list
 etc/oxim/oxim.conf
 lib/liboxim.la
 lib/liboxim.so
 lib/liboxim.so.0
-%%GTK2%%lib/gtk-2.0/immodules/gtk-im-oxim.la
 %%GTK2%%lib/gtk-2.0/immodules/gtk-im-oxim.so
 %%CHEWING%%lib/oxim/modules/chewing.la
 %%CHEWING%%lib/oxim/modules/chewing.so
+%%GTK2%%lib/oxim/immodules/gtk-im-oxim.la
+%%GTK2%%lib/oxim/immodules/gtk-im-oxim.so
 lib/oxim/modules/gen-inp.la
 lib/oxim/modules/gen-inp.so
+lib/oxim/modules/gen-inp-v1.la
+lib/oxim/modules/gen-inp-v1.so
 %%UNICODE%%lib/oxim/modules/unicode.la
 %%UNICODE%%lib/oxim/modules/unicode.so
 lib/oxim/panels/defaultkeyboard.conf
 lib/oxim/panels/defaultkeyboard.xpm
-lib/oxim/tables/array30.tab
-lib/oxim/tables/cns11643.tab
 lib/oxim/tables/cnscj.tab
-lib/oxim/tables/cnsimplex.tab
 lib/oxim/tables/cnsphone.tab
 lib/oxim/tables/default.phr
-lib/oxim/tables/ez.tab
 lib/oxim/tables/symbol.list
 @dirrm etc/oxim
+@dirrm lib/oxim/immodules
 @dirrm lib/oxim/modules
 @dirrm lib/oxim/panels
 @dirrm lib/oxim/tables

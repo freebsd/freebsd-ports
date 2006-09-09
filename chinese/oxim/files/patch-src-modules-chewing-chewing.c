@@ -1,5 +1,5 @@
---- src/modules/chewing/chewing.c.orig	Sun Apr 23 06:11:30 2006
-+++ src/modules/chewing/chewing.c	Sat May 20 22:09:19 2006
+--- src/modules/chewing/chewing.c.orig	Mon Jun 12 00:02:39 2006
++++ src/modules/chewing/chewing.c	Thu Sep  7 17:45:14 2006
 @@ -14,7 +14,9 @@
  #include "oximtool.h"
  #include "module.h"
@@ -10,16 +10,15 @@
  
  /* the following keystate masks are defined by oxim */
  #define CAPS_MASK (2)
-@@ -24,18 +26,20 @@
- #define OXIM_BYTE_UTF8 		3
+@@ -28,17 +30,19 @@
+ static int CapsLockMode  = 0; /* 0:小寫, 1:大寫 */
+ static char *selKey_define = "1234567890";
  
- static int chewing_codeset;
 +#if 0
  void preconvert(char *input, char *output, int n_char);
  wchar_t convert(wchar_t input);
 +#endif
  
- static char selKey_define[11] = "1234567890\0"; /* Default */
  static int bAddPhraseForward = 0;
  static uch_t etymon_list[N_KEYCODE];
  
@@ -34,7 +33,7 @@
      int i;
  
      config.selectAreaLen = 100;
-@@ -45,15 +49,15 @@
+@@ -48,14 +52,14 @@
      for (i = 0; i < 10;i++)
          config.selKey[i] = selKey_define[i];
  
@@ -44,42 +43,31 @@
  }
  
  static int
--ChewingInit(void *conf, char *objname, oxim_rc_t *xc)
-+ChewingInit(void *context, char *objname, oxim_rc_t *xc)
+-ChewingInit(void *conf, char *objname)
++ChewingInit(void *context, char *objname)
  {
-     char *cmd[2], kb_type_str[256];
 -    ChewingConf *cf = (ChewingConf *)conf ;
 +    ChewingContext *ctx = (ChewingContext *)context ;
  
      /* TODO : 這裡要改為偵測新酷音詞庫存放路徑 */
      char *prefix = CHEWING_DATA_DIR;
-@@ -68,7 +72,6 @@
-     cmd[1] = "KB_TYPE" ;
-     kb_type_str[0] = '\0';
-     get_resource(xc, cmd, kb_type_str, 200, 2);
--    cf->kb_type = KBStr2Num(kb_type_str);
-     //cf->kb_type = KBStr2Num("KB_HANYU_PINYING");
+@@ -95,14 +99,12 @@
  
-     /* Support selection key definitions */
-@@ -90,17 +93,6 @@
-         }
+     if (oxim_setting_GetInteger(im_settings, "KeyMap", &KeyMap))
+     {
+-	if (KeyMap < KB_DEFAULT && KeyMap > KB_HANYU_PINYING)
++	if (KeyMap < KB_DEFAULT && KeyMap > KB_HANYU_PINYIN)
+ 	{
+ 	    KeyMap = KB_DEFAULT;
+ 	}
      }
  
--    if (cf->kb_type == KB_HANYU_PINYING)
--    {
--	cf->inp_cname = "漢語拼音";
--	cf->inp_ename = "HanYu";
--    }
--    else
--    {
--	cf->inp_cname = "新酷音";
--	cf->inp_ename = "Chewing";
--    }
+-    cf->kb_type = KeyMap;
 -
      char *pho_key = "1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/-7634";
      char *pho_name[41] = {"ㄅ","ㄆ","ㄇ","ㄈ","ㄉ","ㄊ","ㄋ","ㄌ","ㄍ","ㄎ","ㄏ","ㄐ","ㄑ","ㄒ","ㄓ","ㄔ","ㄕ","ㄖ","ㄗ","ㄘ","ㄙ","ㄧ","ㄨ","ㄩ","ㄚ","ㄛ","ㄜ","ㄝ","ㄞ","ㄟ","ㄠ","ㄡ","ㄢ","ㄣ","ㄤ","ㄥ","ㄦ","˙","ˊ","ˇ","ˋ"};
      int keylen = strlen(pho_key), i, idx;
-@@ -112,10 +104,7 @@
+@@ -114,10 +116,7 @@
      }
  
      /* Initialize Chewing */
@@ -89,9 +77,9 @@
 -    ReadHash(prefix);
 +    chewing_Init(prefix, prefix);
  
+     oxim_settings_destroy(im_settings);
      return True;
- }
-@@ -124,21 +113,22 @@
+@@ -127,14 +126,15 @@
  ChewingXimInit(void *conf, inpinfo_t *inpinfo)
  {
      static char cchBuffer[MAX_PHONE_SEQ_LEN];
@@ -102,26 +90,17 @@
 -    inpinfo->iccf = (ChewingData *) calloc(1, sizeof(ChewingData));
 -    inpinfo->etymon_list = (cf->kb_type == KB_HANYU_PINYING) ? NULL : etymon_list;
 +    inpinfo->iccf = chewing_new();
++
++    CallSetConfig(inpinfo, (ChewingContext *) inpinfo->iccf);
  
 -    InitChewing(inpinfo->iccf, cf);
 -    CallSetConfig(inpinfo, (ChewingData *) inpinfo->iccf);
-+    CallSetConfig(inpinfo, (ChewingContext *) inpinfo->iccf);
++    chewing_set_KBType( inpinfo->iccf, KeyMap );
++    inpinfo->etymon_list = (KeyMap == KB_HANYU_PINYIN) ? NULL : etymon_list;
  
-+    chewing_set_KBType( inpinfo->iccf, chewing_KBStr2Num( "KB_DEFAULT" ) );
      inpinfo->lcch = (uch_t *) calloc(MAX_PHONE_SEQ_LEN, sizeof(uch_t));
      inpinfo->lcch_grouping = (ubyte_t *) calloc(MAX_PHONE_SEQ_LEN, sizeof(ubyte_t));
-     inpinfo->cch = cchBuffer;
- 
--    inpinfo->inp_cname = cf->inp_cname;
--    inpinfo->inp_ename = cf->inp_ename;
-+    inpinfo->inp_cname = "新酷音";
-+    inpinfo->inp_ename = "Chewing";
-+    inpinfo->etymon_list = etymon_list;
-+
-     inpinfo->guimode = GUIMOD_LISTCHAR | GUIMOD_SELKEYSPOT;
-     inpinfo->keystroke_len = 0;
-     inpinfo->s_keystroke = (uch_t *) calloc(3 + MAX_PHRASE_LEN, sizeof(uch_t));
-@@ -162,33 +152,29 @@
+@@ -163,33 +163,29 @@
      return True;
  }
  
@@ -161,7 +140,7 @@
      free(inpinfo->s_keystroke);
      free(inpinfo->lcch);
      free(inpinfo->mcch);
-@@ -201,7 +187,7 @@
+@@ -202,7 +198,7 @@
      return rtn ;
  }      
  
@@ -170,7 +149,7 @@
  {
      int i,no,k,len, kk;
      char *output;
-@@ -217,16 +203,12 @@
+@@ -218,16 +214,12 @@
          // in the last page, no will exceed nTotalChoice
          if( no >= pci->nTotalChoice ) 
              break;
@@ -188,7 +167,7 @@
          // set grouping to the length of the phrase
          inpinfo->mcch_grouping[i+1] = kk;
  
-@@ -250,22 +232,23 @@
+@@ -251,22 +243,23 @@
      inpinfo->n_mcch = len ;
  }
  
@@ -215,7 +194,7 @@
  
      if( pgo->chiSymbolBufLen == 0) {
          inpinfo->lcch_grouping[0] = 0 ;
-@@ -304,34 +287,35 @@
+@@ -305,34 +298,35 @@
          inpinfo->lcch_grouping[0] = nGroup ;
  }
  
@@ -259,7 +238,7 @@
  	}
  	else
  	{
-@@ -339,7 +323,7 @@
+@@ -340,7 +334,7 @@
  	    {
  		if(pgo->zuinBuf[i].s[0] != '\0')
  		{
@@ -268,7 +247,7 @@
  		    ++ len;
  		}
  	    }
-@@ -348,13 +332,15 @@
+@@ -349,13 +343,15 @@
      }
  }
  
@@ -286,8 +265,8 @@
      int rtnValue = 0 ;
  
      if(pgo->keystrokeRtn & KEYSTROKE_ABSORB)
-@@ -365,20 +351,20 @@
-         rtnValue |= IMKEY_BELL;
+@@ -364,20 +360,20 @@
+         rtnValue |= IMKEY_IGNORE;
      if(pgo->keystrokeRtn & KEYSTROKE_COMMIT) {
          rtnValue |= IMKEY_COMMIT;
 -        CommitString(inpinfo, pgo);
@@ -313,13 +292,15 @@
      return rtnValue;
  }
  
-@@ -386,67 +372,63 @@
+@@ -385,7 +381,6 @@
  ChewingKeystroke(void *conf, inpinfo_t *inpinfo, keyinfo_t *keyinfo)
  {
      KeySym keysym = keyinfo->keysym;
 -    ChewingOutput gOut ;
      int rtn ;
      static KeySym last_key = 0;
+ 
+@@ -406,61 +401,58 @@
  
      // set Chinese / English mode by keystate
      if( keyinfo->keystate & CAPS_MASK ) { // uppercase
@@ -397,7 +378,7 @@
                  inpinfo->n_mcch = 0;
                  break;
          }
-@@ -454,26 +436,26 @@
+@@ -468,26 +460,26 @@
      else if (keyinfo->keystate & ShiftMask) {
  	switch ( keysym ) {
  	    case XK_Left:
@@ -430,7 +411,7 @@
      return rtn ;
  }
  
-@@ -484,6 +466,7 @@
+@@ -498,6 +490,7 @@
      return False;
  }                              
  
@@ -438,15 +419,15 @@
  /* UTF-8 support */
  void
  preconvert(char *input, char *output, int n_char)
-@@ -519,6 +502,7 @@
+@@ -533,6 +526,7 @@
      iconv_close(cd);
      return output.wch;
  }
 +#endif
  
- static char zh_chewing_comments[] = 
-     "Chewing : a smart phonetic input method module for OXIM.\n"
-@@ -535,7 +519,7 @@
+ static int ChewingTerminate(void *conf)
+ {
+@@ -554,7 +548,7 @@
          zh_chewing_comments 
      },					/* comments */
      zh_chewing_valid_objname,		/* valid_objname */

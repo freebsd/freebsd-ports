@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Sep  8 05:15:45 2006
++++ Makefile.in	Fri Sep  8 05:16:05 2006
+@@ -672,8 +672,6 @@
+ 
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)/$(input_d_dir)
+-	sed 's|@OXIM_IM_MODULE_DIR@|$(IM_MODULES_DIR)|' oxim-start.sh.in > $(DESTDIR)/$(input_d_dir)/oxim
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)/$(input_d_dir)/oxim
