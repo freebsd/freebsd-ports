@@ -26,7 +26,7 @@ PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004 \
 		bash205b-005 bash205b-006 bash205b-007
 #		msg00029.txt msg00031.txt msg00030.txt
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell
 
 CONFLICTS=	bash-3*
