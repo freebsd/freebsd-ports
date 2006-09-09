@@ -1,3 +1,5 @@
+info/remember-el
+@unexec install-info --quiet --delete %D/info/remember-el %D/info/dir
 %%EMACS_SITE_LISPDIR%%/remember/read-file-name.el
 %%EMACS_SITE_LISPDIR%%/remember/read-file-name.elc
 %%EMACS_SITE_LISPDIR%%/remember/remember-autoloads.el
