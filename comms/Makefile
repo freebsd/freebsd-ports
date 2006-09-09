@@ -36,6 +36,7 @@
     SUBDIR += hamfax
     SUBDIR += hamlib
     SUBDIR += hcidump
+    SUBDIR += hf
     SUBDIR += hylafax
     SUBDIR += ixj
     SUBDIR += java-commapi

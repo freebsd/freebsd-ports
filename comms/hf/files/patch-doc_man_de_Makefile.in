@@ -1,0 +1,11 @@
+--- doc/man/de/Makefile.in.orig	Mon Jul 31 08:09:35 2006
++++ doc/man/de/Makefile.in	Mon Jul 31 08:10:20 2006
+@@ -147,7 +147,7 @@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
+-mandir = @mandir@/de
++mandir = @mandir@/de.ISO8859-1
+ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
+ prefix = @prefix@
