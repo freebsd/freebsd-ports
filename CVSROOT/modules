@@ -9032,6 +9032,7 @@ p5-HTML-WikiConverter-PbWiki	ports/www/p5-HTML-WikiConverter-PbWiki
 p5-HTML-WikiConverter-PhpWiki	ports/www/p5-HTML-WikiConverter-PhpWiki
 p5-HTML-WikiConverter-PmWiki	ports/www/p5-HTML-WikiConverter-PmWiki
 p5-HTML-WikiConverter-SnipSnap	ports/www/p5-HTML-WikiConverter-SnipSnap
+p5-HTML-WikiConverter-Socialtext	ports/www/p5-HTML-WikiConverter-Socialtext
 p5-HTML-WikiConverter-TikiWiki	ports/www/p5-HTML-WikiConverter-TikiWiki
 p5-HTML-WikiConverter-UseMod	ports/www/p5-HTML-WikiConverter-UseMod
 p5-HTML-WikiConverter-WakkaWiki	ports/www/p5-HTML-WikiConverter-WakkaWiki
