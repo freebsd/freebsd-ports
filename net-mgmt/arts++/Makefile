@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	arts++
-PORTVERSION=	1.1.a11
-PORTREVISION=	1
+PORTVERSION=	1.1.a12
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
+MASTER_SITES=	http://www.caida.org/tools/utilities/arts/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network data storage and analysis library from CAIDA
@@ -19,7 +18,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
-USE_GCC=	2.95
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 		artsases.l artstoc.l artsagg.l artsprotoagg.l artsnetagg.l \
@@ -28,5 +26,16 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 
 post-configure:
 	@${REINPLACE_CMD} -E -e "s,( gcc\*),\1 | g++\*,g" ${WRKSRC}/libtool
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+.for f in ChangeLog INSTALL WishList
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.for f in *.html
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/html
+.endfor
+.endif
 
 .include <bsd.port.mk>

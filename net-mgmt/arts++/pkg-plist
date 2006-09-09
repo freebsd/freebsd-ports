@@ -94,3 +94,13 @@ lib/libArts.a
 lib/libArts.la
 lib/libArts.so
 lib/libArts.so.0
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/WishList
+%%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus-1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus-2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus-3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus-4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/artsplusplus.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
