@@ -7,8 +7,7 @@
 # $Tecnik: ports/sysutils/apcupsd/Makefile,v 1.9 2006/04/30 11:36:52 itetcu Exp $
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.12.3
-PORTREVISION=	1
+PORTVERSION=	3.12.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
