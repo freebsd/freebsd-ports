@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,10 +21,14 @@ OPTIONS=	PGSQL "Use a PostgreSQL backend" off \
 		FPING "Use fping for pinging hosts" on
 .endif
 
+USE_GMAKE=	yes
+CONFIGURE_ARGS+=--enable-agent
 .ifdef(ZABBIX_AGENT_ONLY)
 PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 .else # ZABBIX_AGENT_ONLY
+CONFIGURE_ARGS+=--enable-server
+# TODO add snmp knob
 LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
 USE_PHP=	gd snmp sockets
 SUB_FILES=	pkg-message
@@ -50,32 +53,36 @@ CONFIGURE_ARGS+=--with-pgsql
 .endif
 .ifndef(WITHOUT_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS=	--with-mysql
+CONFIGURE_ARGS+=--with-mysql
 .endif
 CONFIGURE_ARGS+=--with-net-snmp
 .endif # ZABBIX_AGENT_ONLY
 
-USE_RC_SUBR=	zabbix_agent.sh
+USE_RC_SUBR=	zabbix_agentd.sh
 .if !defined(ZABBIX_AGENT_ONLY)
-USE_RC_SUBR+=	zabbix_suckerd.sh
+USE_RC_SUBR+=	zabbix_server.sh
 .endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
-ZABBIX_BINARIES=	zabbix_agent zabbix_agentd zabbix_sender
+ZABBIX_BINARIES=	zabbix_agent/zabbix_agent \
+			zabbix_agent/zabbix_agentd \
+			zabbix_get/zabbix_get \
+			zabbix_sender/zabbix_sender
 ZABBIX_CONFIGS=		zabbix_agent.conf zabbix_agentd.conf
 .ifndef(ZABBIX_AGENT_ONLY)
-ZABBIX_BINARIES+=	zabbix_suckerd zabbix_trapper zabbix_trapperd
-ZABBIX_CONFIGS+=	zabbix_suckerd.conf zabbix_trapper.conf zabbix_trapperd.conf
+ZABBIX_BINARIES+=	zabbix_server/zabbix_server
+ZABBIX_CONFIGS+=	zabbix_server.conf
 .endif
 
-pre-patch:
 .ifndef(ZABBIX_AGENT_ONLY)
 post-patch:
-	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|' ${WRKSRC}/src/zabbix_sucker/zabbix_sucker.c
+	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|;s|%PREFIX%|${PREFIX}|' ${WRKSRC}/src/zabbix_server/server.c
+	@${REINPLACE_CMD} 's|%PREFIX%|${PREFIX}|' ${WRKSRC}/src/zabbix_agent/zabbix_agent.c
+	@${REINPLACE_CMD} 's|%PREFIX%|${PREFIX}|' ${WRKSRC}/src/zabbix_agent/zabbix_agentd.c
 .ifdef WITHOUT_FPING
-	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_suckerd.conf
+	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_server.conf
 .endif
 .endif # ZABBIX_AGENT_ONLY
 
@@ -86,10 +93,9 @@ post-configure:
 
 do-install:
 .for FILE in ${ZABBIX_BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${FILE} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${FILE} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${PREFIX}/etc/zabbix
-	${LN} -sf ${PREFIX}/etc/zabbix /etc/zabbix
 .for FILE in ${ZABBIX_CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/misc/conf/${FILE} \
 			${PREFIX}/etc/zabbix/${FILE}.sample
@@ -107,5 +113,15 @@ do-install:
 .ifndef(ZABBIX_AGENT_ONLY)
 	@${CAT} ${PKGMESSAGE}
 .endif
+
+# This target is only meant to be used by the port maintainer.
+x-generate-plist:
+	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
+	| ${SED} -E \
+		's,.*share/nls/.+$$,,g \
+		;s,.*/rc.d/.+,,g \
+		;s,@dirrm share/man(/.*)?$$,,g \
+		;s,share/zabbix,%%DATADIR%%,g \
+		' | ${TR} -s '\n') > temp-pkg-plist
 
 .include <bsd.port.post.mk>
