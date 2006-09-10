@@ -6,7 +6,7 @@
 
 PORTNAME=	SAVI-Perl
 PORTVERSION=	0.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security perl5
 MASTER_SITES=	http://www.csupomona.edu/~henson/www/projects/SAVI-Perl/dist/
 MASTER_SITE_SUBDIR=	security
@@ -30,7 +30,9 @@ IGNORE=	requires perl 5.6 or newer. Upgrade your perl and try again.  \
 
 .if exists(${PREFIX}/lib/libsavi.so.3) && !exists(${PREFIX}/lib/libsavi.so)
 FAKELIBDIR=${WRKDIR}/lib
-CONFIGURE_ARGS+= LDDLFLAGS='-shared -L ${FAKELIBDIR}'
+CONFIGURE_ARGS+=LDDLFLAGS='-shared -L ${FAKELIBDIR}'
+.else
+IGNORE=		"Please install first Sophos Anit-Virus."
 .endif
 
 .if defined(FAKELIBDIR)
