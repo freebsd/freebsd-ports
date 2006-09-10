@@ -18,6 +18,8 @@ COMMENT=	Vim documentation Simplified Chinese
 
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 
+BROKEN=		Does not build
+
 PLIST_SUB=	PATH_SUB=vim64
 NO_BUILD=	yes
 VIM_PATH=	${PREFIX}/share/vim/vim64
