@@ -23,6 +23,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	protocol-ext.txt protocol.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@ \@CPPFLAGS\@ |' ${WRKSRC}/src/Makefile.in
@@ -45,4 +51,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
