@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
-MAINTAINER=	dan-ports@dp.id.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	French verb conjugator/deconjugator
 
 USE_GETTEXT=	yes
