@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=--enable-dba
 OPTIONS=	CDB "cdb database support" on \
 		DB4 "Berkeley DB4 support" off \
 		GDBM "GDBM database support" off \
+		QDBM "QDBM database support" off \
 		INIFILE "INI file support" on \
 		FLATFILE "flatfile support" on
 
@@ -432,6 +433,11 @@ CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
+.	endif
+.	if defined(WITH_QDBM)
+LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
+
+CONFIGURE_ARGS+=--with-qdbm=${LOCALBASE}
 .	endif
 .	if defined(WITHOUT_INIFILE)
 CONFIGURE_ARGS+=--without-inifile
