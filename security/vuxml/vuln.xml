@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="28ce7102-4039-11db-a838-00148584c7dd">
+    <topic>gnutls -- Adaptive Chosen Ciphertext Attack</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>1.4.3</lt></range>
+      </package>
+      <package>
+	<name>gnutls-devel</name>
+	<range><le>1.5.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Josefsson reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnutls-dev/2006-September/001203.html">
+	  <p><code>_gnutls_handshake_log ("PKCS #1 padding error");
+	           ret = GNUTLS_E_PKCS1_WRONG_PAD;</code></p>
+            <p>Werner Koch points out that this error message may result in a
+	    vulnerability similar to Bleichenbacher's Crypto 98 attack.  It is not
+	    exactly the same situation -- Bleichenbacher talks about PKCS#1
+	    encryption (block type 1, uses random padding) where this deals with
+	    PKCS#1 verification (block type 2, uses 0xFF padding) -- but at a
+	    glance, it appears to have similar consequences, but differ in the
+	    number of messages required to mount the attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.gnupg.org/pipermail/gnutls-dev/2006-September/001203.html</url>
+      <url>http://www.bell-labs.com/user/bleichen/papers/pkcs.ps</url>
+    </references>
+    <dates>
+      <discovery>2006-09-08</discovery>
+      <entry>2006-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fffa9257-3c17-11db-86ab-00123ffe8333">
     <topic>mailman -- Multiple Vulnerabilities</topic>
     <affects>
