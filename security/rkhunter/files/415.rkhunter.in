@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# This is a maintenance shell script for the rkhunter security tool.
+# You can enable this script in /etc/periodic.conf file by putting these lines into it:
+#	daily_rkhunter_update_enable="YES"
+#	daily_rkhunter_check_enable="YES"
+#
+# Written by: Gabor Kovesdan <gabor@FreeBSD.org>
+
+if [ -r /etc/defaults/periodic.conf ]; then
+   . /etc/defaults/periodic.conf
+   source_periodic_confs
+fi
+
+case "$daily_rkhunter_update_enable" in
+  [Yy][Ee][Ss])
+
+	echo ""
+	echo "Updating the rkhunter database..."
+	%%PREFIX%%/bin/rkhunter --update
+	;;
+esac
+
+case "$daily_rkhunter_check_enable" in
+  [Yy][Ee][Ss])
+
+	echo ""
+	echo "Running rkhunter..."
+	%%PREFIX%%/bin/rkhunter --checkall --cronjob --skip-keypress
+	;;
+esac

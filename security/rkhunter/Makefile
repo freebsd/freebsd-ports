@@ -7,7 +7,7 @@
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
@@ -23,6 +23,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-D
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes
 NO_BUILD=	yes
+SUB_FILES=	415.rkhunter
 
 MAN8=		rkhunter.8
 MANCOMPRESSED=	no
@@ -42,12 +43,14 @@ RUN_DEPENDS+=	nmap:${PORTSDIR}/security/nmap
 do-install:
 	cd ${WRKSRC} && ./installer.sh --installdir ${PREFIX}
 	${INSTALL_MAN} ${WRKSRC}/files/development/rkhunter.8 ${MAN8PREFIX}/man/man8
+	@${MKDIR} ${PREFIX}/etc/periodic/security
+	${INSTALL_SCRIPT} ${WRKDIR}/415.rkhunter ${PREFIX}/etc/periodic/security
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${DOCSDIR}
 .endif
 
 post-install:
-	    @${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
