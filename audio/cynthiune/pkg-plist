@@ -144,13 +144,13 @@ Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/Preference.h
 Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/utils.h
 Local/Library/Frameworks/Cynthiune.framework/Versions/A/Resources/Info-gnustep.plist
 Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so.%%MAJORVERSION%%
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so.%%MAJORVERSION%%.%%MAJORVERSION%%.1
+Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so.%%LIBVERSION%%
 Local/Library/Frameworks/Cynthiune.framework/Versions/Current
 Local/Library/Headers/Cynthiune
 Local/Library/Libraries/libCynthiune.so
-Local/Library/Libraries/libCynthiune.so.%%MAJORVERSION%%
-Local/Library/Libraries/libCynthiune.so.%%MAJORVERSION%%.%%MAJORVERSION%%.1
+Local/Library/Libraries/libCynthiune.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libCynthiune.so.%%LIBVERSION%%
 @dirrmtry Local/Library/Libraries
 @dirrmtry Local/Library/Headers
 @dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/A/Resources
