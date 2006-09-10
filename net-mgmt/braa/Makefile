@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	braa
-PORTVERSION=	0.8
-PORTREVISION=	3
+PORTVERSION=	0.81
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Tool for making SNMP queries
 
 LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
@@ -34,14 +33,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
-.for i in ${PORTNAME}
-	${STRIP_CMD} ${PREFIX}/bin/${i}
-.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
