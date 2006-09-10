@@ -716,6 +716,7 @@
     SUBDIR += sixxs-heartbeatd
     SUBDIR += skstream
     SUBDIR += skype
+    SUBDIR += skype-devel
     SUBDIR += sl2tps
     SUBDIR += slirp
     SUBDIR += slurm
