@@ -12182,6 +12182,7 @@ qt33		ports/x11-toolkits/qt33
 qtella		ports/net-p2p/qtella
 qtfw		ports/security/qtfw
 qtiplot		ports/math/qtiplot
+qtiplot-doc	ports/math/qtiplot-doc
 qtools		ports/mail/qtools
 qtorrent	ports/net-p2p/qtorrent
 qtpixmap	ports/x11-toolkits/qtpixmap
