@@ -13706,6 +13706,7 @@ tagutils	ports/deskutils/tagutils
 tailor		ports/devel/tailor
 taipan		ports/games/taipan
 talkfilters	ports/misc/talkfilters
+talksoup	ports/irc/talksoup
 tamago		ports/editors/tamago
 tamago-emacs20	ports/editors/tamago-emacs20
 tank		ports/games/tank
