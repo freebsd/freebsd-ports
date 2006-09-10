@@ -7434,6 +7434,7 @@ netbeans3	ports/java/netbeans3
 netbeans4	ports/java/netbeans4
 netcat		ports/net/netcat
 netcdf		ports/science/netcdf
+netclasses	ports/net/netclasses
 netcomponents	ports/java/netcomponents
 netdisco	ports/net-mgmt/netdisco
 netdude		ports/net/netdude
