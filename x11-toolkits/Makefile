@@ -190,6 +190,7 @@
     SUBDIR += qt33
     SUBDIR += qtpixmap
     SUBDIR += qwt
+    SUBDIR += renaissance
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox
