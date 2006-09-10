@@ -22,6 +22,10 @@ USE_QT_VER=	3
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 post-patch:
 	@echo "CPPFLAGS= -I. -I.. -I${OPENSSLINC} ${QTCPPFLAGS} -I${LOCALBASE}/include/db4" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS}" >> ${WRKSRC}/Local.mak
