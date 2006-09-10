@@ -26,6 +26,7 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 
 CONFLICTS=	bmpx-[0-9]*
 
+USE_AUTOTOOLS=	autoconf:259
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_FAM=	yes
