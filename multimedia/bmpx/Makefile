@@ -23,10 +23,7 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
 		dbus-1.2:${PORTSDIR}/devel/dbus
 
-BROKEN=		Incomplete pkg-plist (needs to use gettext infrastructure)
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
+USE_AUTOTOOLS=	autoconf:259
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_FAM=	yes
@@ -39,7 +36,8 @@ USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
-			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services"
+			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services" \
+			--with-libintl-prefix="${LOCALBASE}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
