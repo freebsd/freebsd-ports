@@ -6,32 +6,47 @@
 #
 
 PORTNAME=	qtiplot
-PORTVERSION=	0.8.6.2
+PORTVERSION=	0.8.7.2
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
-DISTNAME=	${PORTNAME}-0.8.6-2
+DISTNAME=	${PORTNAME}-0.8.7-2
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
+		sip:${PORTSDIR}/devel/py-sip \
+		pylupdate:${PORTSDIR}/x11-toolkits/py-qt
 LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl \
 		origin.0:${PORTSDIR}/math/liborigin \
 		qwtplot3d:${PORTSDIR}/math/qwtplot3d
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PYTHON=	2.4
 
-PLIST_FILES=	bin/qtiplot
-#PORTDOCS=	faq.html help.html
+USE_DOS2UNIX=	qtiplot/src/application.cpp
 
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR=${QT_PREFIX}
+
+OPTIONS=	DOCS "Install the QtiPlot Handbook" on
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 IGNORE=		does not compile on FreeBSD 4.x
+.endif
+
+.if !defined(WITHOUT_DOCS)
+RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
+.endif
+
+.if !defined(WITHOUT_NLS)
+QTI_LANG=	de es fr ru sv
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 QMAKE=		qmake
@@ -49,7 +64,9 @@ post-patch:
 		"s:../3rdparty/liborigin/include:${LOCALBASE}/include:" \
 		-e "s:/usr/include/qwtplot3d:${X11BASE}/include:" \
 		-e "/^unix:LIBS/s:-L /usr/lib:-L${LOCALBASE}/lib:" \
-		-e "/^unix:documentation.path/s:/usr/share/doc/qtiplot:${DOCSDIR}:" \
+		-e "/^unix:documentation.path/s:/usr/share/doc/qtiplot:${DATADIR}/manual:" \
+		-e "s:/usr/include/python2.4:/usr/local/include/python2.4:" \
+		-e "s:/usr/share/sip:/usr/local/share/py-sip/:" \
 		${WRKSRC}/${d}/*.pro
 .endfor
 
@@ -71,12 +88,16 @@ post-configure:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qtiplot/qtiplot ${PREFIX}/bin
-#.if !defined(NOPORTDOCS)
-#	${MKDIR} ${DOCSDIR}
-#.for DOCFN in ${PORTDOCS}
-#	${INSTALL_MAN} ${WRKSRC}/doc/${DOCFN} ${DOCSDIR}
-#.endfor
-#.endif
+	${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/qtiplot/qtiplot ${DATADIR}/qtiplot
+	${LN} -fs ${DATADIR}/qtiplot ${PREFIX}/bin/qtiplot
+	${INSTALL_DATA} ${WRKSRC}/qtiplot/qtiplotrc.py ${DATADIR}/qtiplotrc.py
+.if !defined(WITHOUT_NLS)
+.for i in ${QTI_LANG}
+	${MKDIR} ${DATADIR}/translations/
+	${INSTALL_DATA}	${WRKSRC}/qtiplot/translations/qtiplot_${i}.qm \
+	${DATADIR}/translations/
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
