@@ -15760,6 +15760,7 @@ zimg		ports/graphics/zimg
 zinf		ports/audio/zinf
 zip		ports/archivers/zip
 zipios++	ports/archivers/zipios++
+zipper		ports/archivers/zipper
 ziproxy		ports/www/ziproxy
 zircon		ports/irc/zircon
 zisofs-tools	ports/sysutils/zisofs-tools
