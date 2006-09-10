@@ -103,6 +103,7 @@
     SUBDIR += slirc
     SUBDIR += solid-ircd
     SUBDIR += srvx
+    SUBDIR += talksoup
     SUBDIR += thales
     SUBDIR += tirc
     SUBDIR += tircproxy
