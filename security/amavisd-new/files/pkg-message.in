@@ -13,10 +13,18 @@
 
     amavisd_enable="YES"
 
- If you want to use the amavis sendmail milter interface,
- you need the following additional line in /etc/rc.conf
+ If you have installed and want to use the amavis sendmail milter interface,
+ you need the following additional line in /etc/rc.conf:
 
     amavis_milter_enable="YES"
+
+ If you have installed and want to use the p0fanalyzer interface,
+ you need the following additional lines in /etc/rc.conf
+ (with modifications according to your needs):
+
+    amavisd_p0fanalyzer_enable="YES"
+    amavisd_p0fanalyzer_p0f_interface='bge0'
+    amavisd_p0fanalyzer_p0f_filter='tcp dst port 25'
 
  Configuration templates are available in %%PREFIX%%/etc
  as amavisd.conf-dist, amavisd.conf-sample and amavisd.conf-default.

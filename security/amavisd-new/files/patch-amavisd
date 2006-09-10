@@ -1,14 +1,5 @@
---- amavisd.orig	Tue Jun 27 13:31:56 2006
-+++ amavisd	Mon Jul 31 00:44:09 2006
-@@ -9335,7 +9335,7 @@
- Amavis::Conf::build_default_maps();
- 
- # default location of the config file if none specified
--push(@config_files, '/etc/amavisd.conf')  if !@config_files;
-+push(@config_files, '%%PREFIX%%/etc/amavisd.conf')  if !@config_files;
- # Read/execute the config file, which may override default settings
- Amavis::Conf::read_config(@config_files);
- 
+--- amavisd.old	Fri Aug 18 13:01:43 2006
++++ amavisd	Fri Aug 18 13:01:51 2006
 @@ -12049,15 +12049,20 @@
              my($bounced) = $msginfo->dsn_sent;
              for my $r (@{$msginfo->per_recip_data}) {
@@ -38,3 +29,12 @@
                $self->smtp_resp(0, $resp);
              }
            }
+@@ -15055,6 +15060,8 @@
+     local_tests_only  => $sa_local_tests_only,
+     home_dir_for_helpers => $helpers_home,
+     stop_at_threshold => 0,
++    LOCAL_STATE_DIR   => '/var/lib',
++    PREFIX            => '/usr/local',
+ #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
+ #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
+ #see man Mail::SpamAssassin for other options
