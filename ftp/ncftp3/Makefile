@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	ncftp
-PORTVERSION=	3.1.9
+PORTVERSION=	3.2.0
 PORTREVISION?=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-319-v6-20050419.diff.gz
+PATCHFILES=	ncftp-320-v6-20060806.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -48,9 +48,10 @@ pre-fetch:
 	@${ECHO} ""
 
 pre-build:
-	${REINPLACE_CMD} -e \
-	    's|u_decodeurl.so u_decodeurl.so|u_decodeurl.so u_decodehost.so|' \
+	${REINPLACE_CMD} -e 's|$$(CCDV)$$(CC)|$$(CCDV) $$(CC)|' \
 	    ${WRKSRC}/libncftp/Makefile
+	${REINPLACE_CMD} -e 's|$$(CCDV)$$(CC)|$$(CCDV) $$(CC)|' \
+	    ${WRKSRC}/sio/Makefile
 	cd ${WRKSRC}/Strn ; make so
 	cd ${WRKSRC}/libncftp ; make so
 	cd ${WRKSRC}/sio; make so
