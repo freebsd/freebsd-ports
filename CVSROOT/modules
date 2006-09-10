@@ -13203,6 +13203,7 @@ skstream	ports/net/skstream
 sky2000		ports/astro/sky2000
 skyeye		ports/emulators/skyeye
 skype		ports/net/skype
+skype-devel	ports/net/skype-devel
 skytemplate	ports/www/skytemplate
 skyutils	ports/misc/skyutils
 sl		ports/games/sl
