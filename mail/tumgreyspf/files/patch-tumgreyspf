@@ -1,9 +1,9 @@
---- tumgreyspf.orig	Wed Aug 31 21:42:35 2005
-+++ tumgreyspf	Wed Aug 31 21:43:01 2005
+--- tumgreyspf.orig	Tue Aug 29 21:07:19 2006
++++ tumgreyspf	Sat Sep  9 22:57:31 2006
 @@ -11,7 +11,6 @@
  
  
- import syslog, os, sys, string, re, time, popen2, urllib, stat
+ import syslog, os, sys, string, re, time, popen2, urllib, stat, errno
 -sys.path.append('/usr/local/lib/tumgreyspf')
  import tumgreyspfsupp
  
