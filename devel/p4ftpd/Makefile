@@ -10,7 +10,8 @@ PORTVERSION=	${VERSION}
 PORTREVISION=	${REVISION}
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/
+MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ \
+		http://filehost.perforce.com/perforce/r${PORTVERSION}/bin.${PLATFORM}/
 EXTRACT_SUFX=
 DISTFILES=	${BIN_FILES} ${SBIN_FILES}
 EXTRACT_ONLY=	# none
