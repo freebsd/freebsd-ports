@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctypes
-PORTVERSION=	0.9.9.9
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,ctypes/,g}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,17 +16,7 @@ COMMENT=	Python module allowing to create and manipulate C data types
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64 alpha powerpc sparc64
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|\(Extension(.*\)$$|\1 define_macros=[("ffi_type_schar", \
-		"ffi_type_sint8"), ("ffi_type_sshort","ffi_type_sint16")],|' \
-		-e 's|define_macros=\[.*CAN_PASS_BY_VALUE.*\],||' \
-		${WRKSRC}/setup.py
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
