@@ -1,0 +1,71 @@
+Local/Applications/Grouch.app/Grouch
+Local/Applications/Grouch.app/Resources/AddWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/AliasWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/AwayMessageWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/BuddyListWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/ChatWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/ContextMenu.Buddy.gsmarkup
+Local/Applications/Grouch.app/Resources/ContextMenu.Chat.gsmarkup
+Local/Applications/Grouch.app/Resources/Copying.rtf
+Local/Applications/Grouch.app/Resources/English.lproj/Localizable.strings
+Local/Applications/Grouch.app/Resources/Grouch.desktop
+Local/Applications/Grouch.app/Resources/Grouch.icns
+Local/Applications/Grouch.app/Resources/Grouch.tiff
+Local/Applications/Grouch.app/Resources/HtmlColors.plist
+Local/Applications/Grouch.app/Resources/HtmlSubstitutions.plist
+Local/Applications/Grouch.app/Resources/Info-gnustep.plist
+Local/Applications/Grouch.app/Resources/InfoWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/JoinChannel.gsmarkup
+Local/Applications/Grouch.app/Resources/LoginWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/Menu.Apple-103.gsmarkup
+Local/Applications/Grouch.app/Resources/Menu.Apple.gsmarkup
+Local/Applications/Grouch.app/Resources/Menu.Gnu.gsmarkup
+Local/Applications/Grouch.app/Resources/MsgWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/Oscar.bundle/Oscar
+Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/English.lproj/Localizable.strings
+Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/English.lproj/LoginErrors.strings
+Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/English.lproj/SnacErrors.strings
+Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/Info-gnustep.plist
+Local/Applications/Grouch.app/Resources/Oscar.bundle/stamp.make
+Local/Applications/Grouch.app/Resources/README
+Local/Applications/Grouch.app/Resources/SetAwayMessage.gsmarkup
+Local/Applications/Grouch.app/Resources/SetProfile.gsmarkup
+Local/Applications/Grouch.app/Resources/StatusWindow.gsmarkup
+Local/Applications/Grouch.app/Resources/UserChooser.gsmarkup
+Local/Applications/Grouch.app/library_paths.openapp
+Local/Applications/Grouch.app/stamp.make
+Local/Library/Bundles/Oscar.bundle/Oscar
+Local/Library/Bundles/Oscar.bundle/Resources/English.lproj/Localizable.strings
+Local/Library/Bundles/Oscar.bundle/Resources/English.lproj/LoginErrors.strings
+Local/Library/Bundles/Oscar.bundle/Resources/English.lproj/SnacErrors.strings
+Local/Library/Bundles/Oscar.bundle/Resources/Info-gnustep.plist
+Local/Library/Bundles/Oscar.bundle/stamp.make
+Local/Library/Headers/Grouch/GrouchClient.h
+Local/Library/Headers/Grouch/GrouchException.h
+Local/Library/Headers/Grouch/GrouchHtml.h
+Local/Library/Headers/Grouch/GrouchRunLoopHack.h
+Local/Library/Headers/Grouch/GrouchSocket.h
+Local/Library/Headers/Grouch/GrouchSocketBackend.h
+Local/Library/Headers/Grouch/GrouchSocketMac.h
+Local/Library/Headers/Grouch/GrouchSocketUnix.h
+Local/Library/Headers/Grouch/GrouchStringTool.h
+Local/Library/Headers/Grouch/GrouchTimedDictionary.h
+Local/Library/Headers/Grouch/NSBundle+Grouch.h
+Local/Library/Libraries/libGrouchCore.so
+Local/Library/Libraries/libGrouchCore.so.%%LIBVERSION%%
+Local/Library/Libraries/libGrouchCore.so.%%MAJORLIBVERSION%%
+@dirrmtry Local/Library/Libraries
+@dirrm Local/Library/Headers/Grouch
+@dirrmtry Local/Library/Headers
+@dirrm Local/Library/Bundles/Oscar.bundle/Resources/English.lproj
+@dirrm Local/Library/Bundles/Oscar.bundle/Resources
+@dirrm Local/Library/Bundles/Oscar.bundle
+@dirrmtry Local/Library/Bundles
+@dirrmtry Local/Library
+@dirrm Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/English.lproj
+@dirrm Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources
+@dirrm Local/Applications/Grouch.app/Resources/Oscar.bundle
+@dirrm Local/Applications/Grouch.app/Resources/English.lproj
+@dirrm Local/Applications/Grouch.app/Resources
+@dirrm Local/Applications/Grouch.app
+@dirrmtry Local/Applications

@@ -38,6 +38,7 @@
     SUBDIR += gnome-jabber
     SUBDIR += gnomeicu
     SUBDIR += gossip
+    SUBDIR += grouch
     SUBDIR += gtkyahoo
     SUBDIR += gyach
     SUBDIR += icb
