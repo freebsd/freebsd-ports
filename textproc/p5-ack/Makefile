@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ack
-PORTVERSION=	1.24
+PORTVERSION=	1.26
 CATEGORIES=	textproc perl5 sysutils
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	App
@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A grep-like text finder for large trees of text
+
+BUILD_DEPENDS=	p5-File-Next>=0:${PORTSDIR}/sysutils/p5-File-Next
 
 PERL_CONFIGURE=	yes
 
