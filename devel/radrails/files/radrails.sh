@@ -1,1 +1,1 @@
-%%JAVA%% -jar %%DATADIR%%/startup.jar -os linux -ws gtk -launcher %%DATADIR%%/radrails -name Radrails -showsplash 600
+%%JAVA%% -verbose -jar %%DATADIR%%/startup.jar -os linux -ws gtk -arch x86 -launcher %%DATADIR%%/RadRails -name RadRails -showsplash 600 -exitdata 120001 -vm %%JAVA%% -vmargs -jar %%DATADIR%%/startup.jar
