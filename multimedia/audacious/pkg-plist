@@ -73,32 +73,32 @@ share/pixmaps/audacious.png
 %%DATADIR%%/images/audioscrobbler.png
 %%DATADIR%%/images/audioscrobbler_badge.png
 %%DATADIR%%/images/connectivity.png
-share/locale/br/LC_MESSAGES/audacious.mo
-share/locale/cs/LC_MESSAGES/audacious.mo
-share/locale/cy/LC_MESSAGES/audacious.mo
-share/locale/de/LC_MESSAGES/audacious.mo
-share/locale/el/LC_MESSAGES/audacious.mo
-share/locale/es/LC_MESSAGES/audacious.mo
-share/locale/fi/LC_MESSAGES/audacious.mo
-share/locale/fr/LC_MESSAGES/audacious.mo
-share/locale/hi/LC_MESSAGES/audacious.mo
-share/locale/hu/LC_MESSAGES/audacious.mo
-share/locale/it/LC_MESSAGES/audacious.mo
-share/locale/ja/LC_MESSAGES/audacious.mo
-share/locale/ka/LC_MESSAGES/audacious.mo
-share/locale/ko/LC_MESSAGES/audacious.mo
-share/locale/lt/LC_MESSAGES/audacious.mo
-share/locale/mk/LC_MESSAGES/audacious.mo
-share/locale/nl/LC_MESSAGES/audacious.mo
-share/locale/pl/LC_MESSAGES/audacious.mo
-share/locale/pt_BR/LC_MESSAGES/audacious.mo
-share/locale/ro/LC_MESSAGES/audacious.mo
-share/locale/ru/LC_MESSAGES/audacious.mo
-share/locale/sk/LC_MESSAGES/audacious.mo
-share/locale/sv/LC_MESSAGES/audacious.mo
-share/locale/uk/LC_MESSAGES/audacious.mo
-share/locale/zh_CN/LC_MESSAGES/audacious.mo
-share/locale/zh_TW/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/br/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/de/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/el/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/es/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/it/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/Skins/Default
@@ -112,5 +112,5 @@ share/locale/zh_TW/LC_MESSAGES/audacious.mo
 @dirrm lib/audacious
 @dirrm include/audacious
 @dirrmtry share/applications
-@dirrmtry share/locale/br/LC_MESSAGES
-@dirrmtry share/locale/br
+%%NLS%%@dirrmtry share/locale/br/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/br

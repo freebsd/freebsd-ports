@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/ \
 		${MASTER_SITE_LOCAL}
@@ -24,7 +23,6 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
 		tag.5:${PORTSDIR}/audio/taglib
 
 USE_GNOME=	gtk20 libglade2
-USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -51,7 +49,8 @@ OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
 		SID	"Enable sid input" off \
 		MPC	"Enable mpc input" off \
 		ESOUND	"Enable Esound output"  off \
-		GNOME   "Build with gnomevfs/gconf support" off
+		GNOME   "Build with gnomevfs/gconf support" off \
+		NLS	"Native Language Support" on
 
 .include <bsd.port.pre.mk>
 
@@ -113,6 +112,15 @@ PLIST_SUB+=	ESDPLUGIN="@comment "
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomevfs2
 CONFIGURE_ARGS+=	--enable-gnome-vfs --enable-gconf
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 post-patch:
