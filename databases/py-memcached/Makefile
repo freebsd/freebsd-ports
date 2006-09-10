@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.31
+PORTVERSION=	1.33
 CATEGORIES=	databases python
-MASTER_SITES=	ftp://ftp.tummy.com/pub/python-memcached/
+MASTER_SITES=	ftp://ftp.tummy.com/pub/python-memcached/ \
+		ftp://ftp.tummy.com/pub/python-memcached/old-releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
