@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.2.0.18
+PORTVERSION=	1.3.0.30
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
-DISTNAME=	skype_staticQT-${PORTVERSION}
+PKGNAMESUFFIX=	-devel
+DISTNAME=	skype-beta_staticQT-${PORTVERSION}
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	P2P VoIP software
 
+CONFLICTS=	skype-[0-9]*
+
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
+		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
+		${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib
 
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
@@ -47,7 +51,7 @@ do-build:
 do-install:
 	${INSTALL} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
 #	${INSTALL} ${WRKSRC}/skype-callto-handler ${PREFIX}/bin/
-	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"\$$@\" 2>&1 | grep -v 'SOUND_MIXER_WRITE_IGAIN failed'" >${PREFIX}/bin/skype
+	${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"\$$@\" 2>&1 | ${GREP} -v 'SOUND_MIXER_WRITE_IGAIN failed'" >${PREFIX}/bin/skype
 	${CHMOD} a+rx ${PREFIX}/bin/skype
 .if ${HAVE_GNOME:Mgnomehier} != ""
 	${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/gnome/applications/
