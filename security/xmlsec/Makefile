@@ -29,6 +29,12 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	xmlsec.1 xmlsec-config.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -36,4 +42,4 @@ post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
