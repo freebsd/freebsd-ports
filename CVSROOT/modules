@@ -999,6 +999,7 @@ bygfoot		ports/games/bygfoot
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
 bzrtools	ports/devel/bzrtools
+c-ares		ports/dns/c-ares
 c-hey		ports/misc/c-hey
 c-icap		ports/www/c-icap
 c-nocem		ports/news/c-nocem
