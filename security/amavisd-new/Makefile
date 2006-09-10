@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -20,7 +20,7 @@ MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Performance-enhanced daemonized version of amavis-perl
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/MIME/Words.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
@@ -29,13 +29,15 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
-		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
-		${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract \
-		${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server
 
 USE_PERL5_RUN=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
+CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
+BUILD_WRKSRC=	${WRKSRC}/helper-progs
 
 AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
@@ -44,26 +46,42 @@ AMAVISQUARANTINE?=	/var/virusmails
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
 
-OPTIONS=	MYSQL	"MySQL support"		off \
-		PGSQL	"PgSQL support"		off \
-		LDAP	"LDAP support"		off \
-		MILTER	"sendmail milter support" on \
-		RAR	"rar support"	on \
-		ARJ	"arj support"	on \
-		LHA	"lha support"	on \
-		ARC	"arc support"	on \
-		ZOO	"zoo support with zoo archiver"	on \
-		UNZOO	"zoo support with unzoo archiver"	off \
-		LZOP	"lzop support"	on \
-		FREEZE	"freeze support"	on
+OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
+		SQLITE	"Use SQLite for lookups/logging/quarantine"	off \
+		MYSQL	"Use MySQL for lookups/logging/quarantine"		off \
+		PGSQL	"Use PgSQL for lookups/logging/quarantine"		off \
+		LDAP	"Use LDAP for lookups"		off \
+		SASL	"Use SASL authentication"	off \
+		MILTER	"Sendmail milter support" on \
+		NEW_MILTER	"New sendmail milter support (external module)"	off \
+		SPAMASSASSIN	"Use mail/p5-Mail-SpamAssassin"	on \
+		P0F	"Passive operating system fingerprinting"	off \
+		FILE	"Use newer file(1) utility from ports"	off \
+		RAR	"RAR support with archivers/rar"	off \
+		UNRAR	"RAR support with archivers/unrar"	on \
+		ARJ	"ARJ support with archivers/arj"	on \
+		UNARJ	"ARJ support with archivers/unarj"	off \
+		LHA	"LHA support with archivers/lha"	on \
+		ARC	"ARC support with archivers/arc"	on \
+		NOMARCH	"ARC support with archivers/nomarch"	off \
+		CAB	"CAB support with archivers/cabextract"	on \
+		RPM	"RPM support with archivers/rpm2cpio"	on \
+		ZOO	"ZOO support with archivers/zoo"	on \
+		UNZOO	"ZOO support with archivers/unzoo"	off \
+		LZOP	"LZOP support with archivers/lzop"	on \
+		FREEZE	"FREEZE support with archivers/freeze"	on \
+		TNEF	"Add external tnef decoder converters/tnef"	off
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
-SUB_LIST=	AMAVISUSER=${AMAVISUSER} \
+SUB_LIST+=	AMAVISUSER=${AMAVISUSER} \
 		AMAVISGROUP=${AMAVISGROUP} \
 		AMAVISDIR=${AMAVISDIR} \
-		AMAVISQUARANTINE=${AMAVISQUARANTINE} \
-		DOCSDIR=${DOCSDIR}
+		AMAVISQUARANTINE=${AMAVISQUARANTINE}
+
+PLIST_SUB+=	AMAVIS_NOAMAVIS=${AMAVIS_NOAMAVIS} \
+		AMAVIS_NOMILTER=${AMAVIS_NOMILTER} \
+		AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
 .include <bsd.port.pre.mk>
 
@@ -79,22 +97,13 @@ USE_RC_SUBR+=	amavis-milter.sh
 AMAVIS_NOMILTER="@comment "
 .endif
 
-PLIST_SUB+=	AMAVIS_NOMILTER=${AMAVIS_NOMILTER} \
-		AMAVIS_NOAMAVIS=${AMAVIS_NOAMAVIS} \
-		RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
-
-.if defined(AMAVIS_NOAMAVIS)
-do-build:
-	@${ECHO} libmilter not available, not building amavis-milter and amavis
-.else
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
-CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
-BUILD_WRKSRC=	${WRKSRC}/helper-progs
+.if defined(WITH_BDB)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
-SED_SCRIPT=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
+.if defined(WITH_SQLITE)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+.endif
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
@@ -108,12 +117,43 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
+.if defined(WITH_SASL)
+RUN_DEPENDS+=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
+.endif
+
+.if defined(WITH_NEW_MILTER)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/amavisd-milter:${PORTSDIR}/security/amavisd-milter
+.endif
+
+.if defined(WITH_SPAMASSASSIN)
+RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+.endif
+
+.if defined(WITH_P0F)
+RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:${PORTSDIR}/net-mgmt/p0f
+USE_RC_SUBR+=	p0fanalyzer.sh
+.else
+AMAVIS_NOP0F=	"@comment "
+.endif
+
+.if defined(WITH_FILE)
+RUN_DEPENDS+=	${LOCALBASE}/bin/file:${PORTSDIR}/sysutils/file
+.endif
+
 .if defined(WITH_RAR)
+RUN_DEPENDS+=	${LOCALBASE}/bin/rar:${PORTSDIR}/archivers/rar
+.endif
+
+.if defined(WITH_UNRAR)
 RUN_DEPENDS+=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
 .endif
 
 .if defined(WITH_ARJ)
 RUN_DEPENDS+=	${LOCALBASE}/bin/arj:${PORTSDIR}/archivers/arj
+.endif
+
+.if defined(WITH_UNARJ)
+RUN_DEPENDS+=	${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj
 .endif
 
 .if defined(WITH_LHA)
@@ -122,6 +162,18 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
 
 .if defined(WITH_ARC)
 RUN_DEPENDS+=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc
+.endif
+
+.if defined(WITH_NOMARCH)
+RUN_DEPENDS+=	${LOCALBASE}/bin/nomarch:${PORTSDIR}/archivers/nomarch
+.endif
+
+.if defined(WITH_CAB)
+RUN_DEPENDS+=	${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract
+.endif
+
+.if defined(WITH_RPM)
+RUN_DEPENDS+=	${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .endif
 
 .if defined(WITH_ZOO)
@@ -140,10 +192,35 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop
 RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze
 .endif
 
+.if defined(WITH_TNEF)
+RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
+.endif
+
 post-patch:
 .for f in amavisd.conf amavisd.conf-sample amavisd amavisd-agent amavisd-nanny amavisd-release
-	@${REINPLACE_CMD} ${SED_SCRIPT} -e "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/${f}
+	@${REINPLACE_CMD} "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/${f}
 .endfor
+.for i in amavisd.conf amavisd.conf-sample
+	@${REINPLACE_CMD} -e "s|$daemon_user  = \'vscan\';|$daemon_user  = \'${AMAVISUSER}\';|" \
+			-e "s|$daemon_group = \'vscan\';|$daemon_group = \'${AMAVISGROUP}\';|" \
+			-e "s|/var/amavis|${AMAVISDIR}|" \
+			-e "s|/var/lib/amavis|${AMAVISDIR}|" \
+			-e 's|$$log_level = 2;|$$log_level = 0;|' \
+			-e "s|/var/virusmails|${AMAVISQUARANTINE}|" \
+			${WRKSRC}/${i}
+.endfor
+	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-agent
+	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-nanny
+	@${REINPLACE_CMD} "s|#define HAVE_MKTEMP|#undef HAVE_MKTEMP|" \
+			${WRKSRC}/helper-progs/config.h.in
+	@${REINPLACE_CMD} "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
+			${WRKSRC}/amavisd
+
+.if defined(AMAVIS_NOAMAVIS)
+do-configure:
+do-build:
+	@${ECHO} libmilter not available, not building amavis-milter and amavis
+.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
@@ -155,21 +232,27 @@ do-install:
 .if !defined(AMAVIS_NOMILTER)
 	${INSTALL_PROGRAM} ${WRKSRC}/helper-progs/amavis-milter ${PREFIX}/sbin
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-agent ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-nanny ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-release ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
-.if !exists(${PREFIX}/etc/amavisd.conf)
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc
+.if defined(WITH_P0F)
+	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl ${PREFIX}/sbin
 .endif
+.for i in amavisd amavisd-agent amavisd-nanny amavisd-release
+	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/sbin
+.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-sample ${PREFIX}/etc/amavisd.conf-sample
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${PREFIX}/etc/amavisd.conf-default
+.if !exists(${PREFIX}/etc/amavisd.conf)
+#
+#  This can contain sensitive information, e.g. SQL passwords, so it should be handled
+#  with care.
+#
+	${INSTALL} -o root -g ${AMAVISGROUP} -m 640 ${WRKSRC}/amavisd.conf ${PREFIX}/etc
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for FILE in AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES README_FILES/*
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-. endfor
+.for i in AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES README_FILES/*
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 
 post-install:
