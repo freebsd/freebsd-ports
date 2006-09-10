@@ -23,6 +23,8 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
 		dbus-1.2:${PORTSDIR}/devel/dbus
 
+CONFLICTS=	bmpx-devel-[0-9]*
+
 USE_AUTOTOOLS=	autoconf:259
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -33,7 +35,7 @@ USE_GNOME=	gtk20 libglade2 desktopfileutils
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	good mad ogg vorbis
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 			--with-dbus-services-dir="${PREFIX}/share/dbus-1/services" \
