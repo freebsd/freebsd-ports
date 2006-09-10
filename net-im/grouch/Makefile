@@ -15,9 +15,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	AOL and ICQ Instant Messenger client for GNUstep
 
-BUILD_DEPENDS+=	${COMBOLIBDIR}/libRenaissance.so:${PORTSDIR}/${RENAISSANCE_PORT}
-RUN_DEPENDS+=	${COMBOLIBDIR}/libRenaissance.so:${PORTSDIR}/${RENAISSANCE_PORT}
-
 WRKSRC=		${WRKDIR}/Grouch
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
@@ -26,6 +23,7 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
+USE_GNUSTEP_SYSTEM_LIBS+=	Renaissance:${RENAISSANCE_PORT}
 RENAISSANCE_PORT?=	x11-toolkits/renaissance
 
 .include <bsd.port.mk>
