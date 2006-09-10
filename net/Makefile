@@ -324,6 +324,7 @@
     SUBDIR += netatalk
     SUBDIR += netboot
     SUBDIR += netcat
+    SUBDIR += netclasses
     SUBDIR += netdude
     SUBDIR += netmap
     SUBDIR += netpipes
