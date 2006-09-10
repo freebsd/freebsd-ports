@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/xcin/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 
-MAINTAINER=	kcwu@csie.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese input method server under X
 
 LIB_DEPENDS=	tabe.3:${PORTSDIR}/chinese/libtabe
