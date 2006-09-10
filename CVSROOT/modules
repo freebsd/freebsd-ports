@@ -3695,6 +3695,7 @@ grok		ports/sysutils/grok
 gromacs		ports/science/gromacs
 gromit		ports/x11/gromit
 groovy		ports/lang/groovy
+grouch		ports/net-im/grouch
 groundhog	ports/games/groundhog
 growspd		ports/sysutils/growspd
 grpn		ports/math/grpn
