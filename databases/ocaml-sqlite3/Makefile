@@ -35,6 +35,12 @@ SUB_FILES=	pkg-install pkg-deinstall
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	README style.css *.html
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+BROKEN=		Does not build on amd64
+.endif
+
 do-install:
 	@${ECHO_MSG} "==>  Installing port files for ${PKGORIGIN}..."
 	@( cd ${WRKSRC};\
@@ -56,4 +62,4 @@ do-install:
 	   done )
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
