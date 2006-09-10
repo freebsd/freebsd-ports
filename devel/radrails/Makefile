@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	radrails
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.1
 CATEGORIES=	devel ruby java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-gtk
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	IDE for Ruby On Rails
@@ -19,8 +19,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/bin/gtk-demo:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LOCALBASE}/bin/rails:${PORTSDIR}/www/rubygem-rails
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USE_ZIP=	yes
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
@@ -46,7 +44,7 @@ PLIST_DIRS=	%%DATADIR%%/${ICONDIR}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN= does not build
+BROKEN=	does not build
 .endif
 
 #do-configure:
