@@ -27,11 +27,15 @@ bin/skype_bin
 %%DATADIR%%/lang/skype_zh_CN.qm
 %%DATADIR%%/lang/skype_zh_TW.qm
 @dirrm %%DATADIR%%/lang
-%%DATADIR%%/sound/busy4.wav
-%%DATADIR%%/sound/call_in.wav
-%%DATADIR%%/sound/call_out.wav
-%%DATADIR%%/sound/hangup.wav
-%%DATADIR%%/sound/im.wav
+%%DATADIR%%/sound/call_busy.wav
+%%DATADIR%%/sound/call_hangup.wav
+%%DATADIR%%/sound/call_hold.wav
+%%DATADIR%%/sound/call_initiated.wav
+%%DATADIR%%/sound/call_resume.wav
+%%DATADIR%%/sound/call_ringin.wav
+%%DATADIR%%/sound/call_ringout.wav
+%%DATADIR%%/sound/im2.wav
+%%DATADIR%%/sound/online.wav
 @dirrm %%DATADIR%%/sound
 %%DATADIR%%/LICENSE
 @dirrm %%DATADIR%%
