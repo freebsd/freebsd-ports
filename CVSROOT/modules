@@ -1572,6 +1572,7 @@ cycle		ports/deskutils/cycle
 cyclone		ports/lang/cyclone
 cygne-sdl	ports/emulators/cygne-sdl
 cymbaline	ports/audio/cymbaline
+cynthiune	ports/audio/cynthiune
 cyphesis	ports/net/cyphesis
 cyr-rfx		ports/x11-fonts/cyr-rfx
 cyrus-imapd2	ports/mail/cyrus-imapd2
