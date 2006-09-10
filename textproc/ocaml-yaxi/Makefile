@@ -26,6 +26,8 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
 		${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/devel/ocaml-camomile
 
+BROKEN=		Does not build
+
 OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
 USE_GMAKE=	yes
 
