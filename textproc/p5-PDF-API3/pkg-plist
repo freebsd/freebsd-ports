@@ -166,6 +166,35 @@
 %%SITE_PERL%%/PDF/API2/Resource/unicolor.txt
 %%SITE_PERL%%/PDF/API2/Resource/unipaper.txt
 %%SITE_PERL%%/PDF/API2/Content/Text.pm
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSans.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSans-Bold.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSans-BoldOblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSans-ExtraLight.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSans-Oblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansCondensed.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansCondensed-Bold.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansCondensed-BoldOblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansCondensed-Oblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansMono.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansMono-Bold.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansMono-BoldOblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSansMono-Oblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerif.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerif-Bold.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerif-BoldOblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerif-Oblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerifCondensed-Bold.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerifCondensed-BoldOblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerifCondensed-Oblique.ttf
+%%SITE_PERL%%/PDF/API2/fonts/DejaVuSerifCondensed.ttf
+%%SITE_PERL%%/PDF/API2/fonts/AUTHORS.txt
+%%SITE_PERL%%/PDF/API2/fonts/BUGS.txt
+%%SITE_PERL%%/PDF/API2/fonts/LICENSE.txt
+%%SITE_PERL%%/PDF/API2/fonts/NEWS.txt
+%%SITE_PERL%%/PDF/API2/fonts/README.txt
+%%SITE_PERL%%/PDF/API2/fonts/langcover.txt
+%%SITE_PERL%%/PDF/API2/fonts/status.txt
+%%SITE_PERL%%/PDF/API2/fonts/unicover.txt
 @dirrm %%SITE_PERL%%/mach/auto/PDF/API2
 @dirrmtry %%SITE_PERL%%/mach/auto/PDF
 @dirrm %%SITE_PERL%%/PDF/API2/Basic/PDF
@@ -187,5 +216,6 @@
 @dirrm %%SITE_PERL%%/PDF/API2/Resource/ColorSpace
 @dirrm %%SITE_PERL%%/PDF/API2/Resource
 @dirrm %%SITE_PERL%%/PDF/API2/Content
+@dirrm %%SITE_PERL%%/PDF/API2/fonts
 @dirrm %%SITE_PERL%%/PDF/API2
 @dirrmtry %%SITE_PERL%%/PDF
