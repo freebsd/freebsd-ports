@@ -33,6 +33,10 @@ PLIST=		${WRKDIR}/PLIST
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700019
+BROKEN=		Incomplete pkg-plist on FreeBSD >= 7.0
+.endif
+
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
