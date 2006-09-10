@@ -24,6 +24,7 @@
     SUBDIR += devilspie
     SUBDIR += dwm
     SUBDIR += e16utils
+    SUBDIR += e17-utils
     SUBDIR += ede
     SUBDIR += enlightenment
     SUBDIR += enlightenment-devel
