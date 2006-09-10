@@ -144,6 +144,11 @@ pre-configure:
 		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
 		s|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/auto/configure
+.if defined(WITH_XTERM_SAVE)                                                  
+	@${REINPLACE_CMD} -e ' \                                              
+		s|/\* #define FEAT_XTERM_SAVE \*/|#define FEAT_XTERM_SAVE|g' \
+		${WRKSRC}/feature.h                                           
+.endif
 
 #	Clean up junk files to keep them from being installed.
 pre-install:
