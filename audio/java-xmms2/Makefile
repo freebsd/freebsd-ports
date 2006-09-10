@@ -18,6 +18,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
+BROKEN=		Incorrect pkg-plist
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
