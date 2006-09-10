@@ -19,10 +19,10 @@ LIB_DEPENDS=		expat.6:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=		yes
 
-.include <bsd.port.post.mk>
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700019
 BROKEN=		Does not compile on FreeBSD >= 7.0
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>
