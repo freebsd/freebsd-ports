@@ -14,11 +14,6 @@ DISTNAME=	GNUMail-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep mail client
 
-BUILD_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
-BUILD_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/${ADDRESSES_PORT}
-RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
-RUN_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/${ADDRESSES_PORT}
-
 WRKSRC=		${WRKDIR}/GNUMail
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
@@ -26,12 +21,11 @@ USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:${PANTOMIME_PORT}
+USE_GNUSTEP_LOCAL_LIBS+=	Addresses:${ADDRESSES_PORT}
 MAKEFILE=
 ALL_TARGET=
-
-.include <bsd.port.pre.mk>
-
 PANTOMIME_PORT?=	mail/pantomime
 ADDRESSES_PORT?=	mail/addresses
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

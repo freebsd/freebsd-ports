@@ -16,9 +16,6 @@ DISTNAME=	Pantomime-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL Connections for pantomime
 
-BUILD_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
-RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
-
 WRKSRC=		${WRKDIR}/Pantomime/Bundles/SSL
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
@@ -27,10 +24,8 @@ USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
+USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:${PANTOMIME_PORT}
 MAKEFILE=	GNUmakefile
-
-.include <bsd.port.pre.mk>
-
 PANTOMIME_PORT?=	mail/pantomime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
