@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Myspace
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -42,7 +42,7 @@ MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 WWW::Myspace::Data.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500804	# Locale::SubCountry needs perl 5.8.4
+.if ${PERL_LEVEL} < 500804	# Locale::SubCountry needs Perl 5.8.4
 IGNORE=		requires Perl 5.8.4 or newer. Install lang/perl5.8 and try again
 .endif
 
