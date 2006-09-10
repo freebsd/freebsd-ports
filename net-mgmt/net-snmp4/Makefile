@@ -73,6 +73,10 @@ PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 .if ${OSVERSION} >= 600000
 CFLAGS+=	-Dfreebsd5
 .endif

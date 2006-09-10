@@ -28,6 +28,10 @@ MAKE_ARGS=	rcdir="${LOCALBASE}/etc/rc.d"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif

@@ -23,6 +23,12 @@ USE_OPENSSL=	yes
 
 PORTDOCS=	POW.pdf
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -31,4 +37,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

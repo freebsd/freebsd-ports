@@ -26,6 +26,12 @@ MAKE_ARGS=	QTDIR=${X11BASE}
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 USE_QT_VER=	3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ARGS} qmake \
 		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ qssl.pro
@@ -35,4 +41,4 @@ do-install:
 		${PREFIX}/lib/libqssl.so.${SHLIB_MAJOR}
 	${LN} -s libqssl.so.${SHLIB_MAJOR} ${PREFIX}/lib/libqssl.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

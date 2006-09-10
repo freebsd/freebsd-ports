@@ -55,6 +55,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls

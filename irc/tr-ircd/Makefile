@@ -40,6 +40,10 @@ CONFIGURE_ARGS+=--enable-small-nets
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700019
+BROKEN=		Does not compile on FreeBSD >= 7.0
+.endif
+
 .if ${OSVERSION} < 500000
 USE_GCC=	3.4 # Needs va_copy
 .endif
