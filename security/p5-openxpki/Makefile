@@ -38,6 +38,8 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 SERVER=		OpenXPKI-0.9.455.tar.gz
 CLIENT=		OpenXPKI-Client-0.9.450.tar.gz \
 		OpenXPKI-Client-SCEP-0.9.421.tar.gz \
