@@ -7,12 +7,15 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.2.0.18
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	P2P VoIP software
+
+CONFLICTS+=	skype-devel-[0-9]*
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
