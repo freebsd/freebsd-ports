@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.linas.org/pub/
 MASTER_SITE_SUBDIR=	gnucash
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
