@@ -12,7 +12,7 @@ CATEGORIES=	chinese textproc
 MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/${PORTVERSION}/
 EXTRACT_SUFX=	-11.src.rpm
 
-MAINTAINER=	kcwu@csie.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IIIMF xcin language engine, a traditional Chinese input method
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio

@@ -13,7 +13,7 @@ CATEGORIES=	chinese textproc
 MASTER_SITES=	http://chewing.csie.net/download/iiimf/
 DISTNAME=	${PORTNAME:C/-le-/-/}-${PORTVERSION}
 
-MAINTAINER=	kcwu@csie.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IIIMF Chewing engine, an intelligent Chinese phonetic input method
 
 BROKEN=		fails to install (dependency problem)
