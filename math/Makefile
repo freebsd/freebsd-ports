@@ -287,6 +287,7 @@
     SUBDIR += qhull
     SUBDIR += qscanplot
     SUBDIR += qtiplot
+    SUBDIR += qtiplot-doc
     SUBDIR += qwtplot3d
     SUBDIR += rascal
     SUBDIR += reed-solomon
