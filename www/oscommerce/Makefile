@@ -14,10 +14,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tep
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/ms/}
 
-MAINTAINER=	hcoyote@ghostar.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An full-featured open source e-commerce system
 
-USE_PHP=	mysql session
+USE_PHP=	mysql session pcre
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 OSCOMMERCE=	${PREFIX}/www/data/oscommerce
