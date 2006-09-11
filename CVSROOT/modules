@@ -5191,6 +5191,7 @@ jslice		ports/graphics/jslice
 jsmath		ports/math/jsmath
 jsmath-fonts	ports/math/jsmath-fonts
 jsmath-fonts-sprite	ports/math/jsmath-fonts-sprite
+jsmin		ports/devel/jsmin
 json-c		ports/devel/json-c
 jspice3		ports/cad/jspice3
 jtag		ports/devel/jtag
