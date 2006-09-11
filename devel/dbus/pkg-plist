@@ -61,7 +61,6 @@ libdata/pkgconfig/dbus-glib-1.pc
 @dirrm include/dbus-%%VERSION%%
 @dirrm etc/dbus-1/system.d
 @dirrm etc/dbus-1
-@cwd /var/run
-@unexec rm -f %D/dbus/dbus.pid
-@unexec rm -f %D/dbus/dbus.pipe
-@dirrm dbus
+@unexec rm -f /var/run/dbus/dbus.pid
+@unexec rm -f /var/run/dbus/dbus.pipe
+@unexec rmdir /var/run/dbus 2>/dev/null || true
