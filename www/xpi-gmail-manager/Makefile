@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmail-manager
-DISTVERSION=	0.5
+DISTVERSION=	0.5.1
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
 CATEGORIES=	www mail
 
