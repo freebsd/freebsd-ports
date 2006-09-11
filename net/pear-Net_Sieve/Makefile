@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Sieve
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	net www pear
 
 MAINTAINER=	amistry@am-productions.biz
