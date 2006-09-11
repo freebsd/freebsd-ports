@@ -63,3 +63,55 @@ this functionality is not used at all.
 + #endif
 + 
 + /*
+--- moz/mozilla-source-1.0.patch~	Sun Sep 10 09:28:29 2006
++++ moz/mozilla-source-1.0.patch	Sun Sep 10 12:01:05 2006
+@@ -4516,3 +4516,49 @@
+  #endif
+  
+  /*
++*** misc/mozilla/configure	Tue May 28 04:29:00 2002
++--- misc/build/mozilla/configure	Sun Sep 10 11:56:33 2006
++***************
++*** 6589,6594 ****
++--- 6589,6596 ----
++  case $target in
++  *-hpux11.*)
++  	;;
+++ *-freebsd*)
+++ 	;;
++  *)
++  	echo $ac_n "checking for gethostbyname_r in -lc_r""... $ac_c" 1>&6
++  echo "configure:6595: checking for gethostbyname_r in -lc_r" >&5
++*** misc/mozilla/configure.in	Tue May 28 04:29:12 2002
++--- misc/build/mozilla/configure.in	Sun Sep 10 11:56:18 2006
++***************
++*** 1606,1611 ****
++--- 1606,1613 ----
++  case $target in
++  *-hpux11.*)
++  	;;
+++ *-freebsd*)
+++ 	;;
++  *)
++  	AC_CHECK_LIB(c_r, gethostbyname_r)
++  	;;
++*** misc/mozilla/nsprpub/pr/src/misc/prnetdb.c	Wed Apr 10 12:17:35 2002
++--- misc/build/mozilla/nsprpub/pr/src/misc/prnetdb.c	Sun Sep 10 11:55:27 2006
++***************
++*** 105,111 ****
++  #define _PR_HAVE_GETPROTO_R_INT
++  #endif
++  
++! #if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2)
++  #define _PR_HAVE_GETPROTO_R
++  #define _PR_HAVE_5_ARG_GETPROTO_R
++  #endif
++--- 105,112 ----
++  #define _PR_HAVE_GETPROTO_R_INT
++  #endif
++  
++! #if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2) ||  \
++!     (defined(__FreeBSD__) && __FreeBSD_version > 601103)
++  #define _PR_HAVE_GETPROTO_R
++  #define _PR_HAVE_5_ARG_GETPROTO_R
++  #endif
