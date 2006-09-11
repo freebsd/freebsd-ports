@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.27
+PORTVERSION=	1.2.28
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -95,7 +95,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-extract:
-	@cd ${WRKSRC}/lib/taskbar && ${MV} icewm.xpm icewm-logo.xpm
+	@cd ${WRKSRC}/lib/taskbar && ${MV} start.xpm icewm-logo.xpm
 	@${CP} -f ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/taskbar
 
 post-patch:
@@ -110,7 +110,7 @@ post-patch:
 .endfor
 
 post-install:
-	@${LN} -sf ${STARTUP_PIXMAP} ${DATADIR}/taskbar/icewm.xpm
+	@${LN} -sf ${STARTUP_PIXMAP} ${DATADIR}/taskbar/start.xpm
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in CHANGES INSTALL README TODO
