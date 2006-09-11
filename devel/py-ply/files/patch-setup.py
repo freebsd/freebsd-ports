@@ -6,6 +6,6 @@
  """,
 -            licence="""Lesser GPL (LGPL)""",
 +            license="""Lesser GPL (LGPL)""",
-             version = "1.9",
+             version = "2.0",
              author = "David Beazley",
              author_email = "dave@dabeaz.com",
