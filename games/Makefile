@@ -648,6 +648,7 @@
     SUBDIR += starlanes
     SUBDIR += stratagus
     SUBDIR += stroq
+    SUBDIR += sturmbahnfahrer
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
     SUBDIR += sudoku
