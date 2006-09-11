@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Acme/MetaSyntactic/yapc.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/weekdays.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/viclones.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/vcs.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/userfriendly.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/us_presidents.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/unicode.pm

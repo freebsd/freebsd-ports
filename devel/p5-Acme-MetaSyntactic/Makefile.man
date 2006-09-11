@@ -95,6 +95,7 @@ MAN3+=	Acme::MetaSyntactic::trigan.3
 MAN3+=	Acme::MetaSyntactic::unicode.3
 MAN3+=	Acme::MetaSyntactic::us_presidents.3
 MAN3+=	Acme::MetaSyntactic::userfriendly.3
+MAN3+=	Acme::MetaSyntactic::vcs.3
 MAN3+=	Acme::MetaSyntactic::viclones.3
 MAN3+=	Acme::MetaSyntactic::weekdays.3
 MAN3+=	Acme::MetaSyntactic::yapc.3
