@@ -1,30 +1,16 @@
 bin/filelight
-share/applnk/Utilities/filelight.desktop
+lib/kde3/libfilelight.a
+lib/kde3/libfilelight.la
+lib/kde3/libfilelight.so
+share/applications/kde/filelight.desktop
+share/apps/filelight/filelight_partui.rc
 share/apps/filelight/filelightui.rc
 share/config/filelightrc
-share/doc/HTML/en/filelight/common
-share/doc/HTML/en/filelight/index.cache.bz2
-share/doc/HTML/en/filelight/index.docbook
-share/icons/crystalsvg/22x22/apps/filelight.png
-share/icons/crystalsvg/48x48/apps/filelight.png
-share/icons/crystalsvg/64x64/apps/filelight.png
-share/locale/cy/LC_MESSAGES/filelight.mo
-share/locale/de/LC_MESSAGES/filelight.mo
-share/locale/nl/LC_MESSAGES/filelight.mo
-share/locale/ru/LC_MESSAGES/filelight.mo
-@dirrmtry share/icons/crystalsvg/64x64/apps
-@dirrmtry share/icons/crystalsvg/64x64
-@dirrmtry share/icons/crystalsvg/48x48/apps
-@dirrmtry share/icons/crystalsvg/48x48
-@dirrmtry share/icons/crystalsvg/22x22/apps
-@dirrmtry share/icons/crystalsvg/22x22
-@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons
-@dirrm share/doc/HTML/en/filelight
-@dirrmtry share/doc/HTML/en
-@dirrmtry share/doc/HTML
-@dirrmtry share/config
+share/icons/crystalsvg/32x32/actions/view_filelight.png
+share/icons/hicolor/16x16/apps/filelight.png
+share/icons/hicolor/22x22/apps/filelight.png
+share/icons/hicolor/32x32/apps/filelight.png
+share/icons/hicolor/48x48/apps/filelight.png
+share/icons/hicolor/64x64/apps/filelight.png
+share/services/filelight_part.desktop
 @dirrm share/apps/filelight
-@dirrmtry share/apps
-@dirrmtry share/applnk/Utilities
-@dirrmtry share/applnk

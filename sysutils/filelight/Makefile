@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	filelight
-PORTVERSION=	0.6.4
-PORTREVISION=	5
+PORTVERSION=	1.0
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	decept0@gmail.com
 COMMENT=	Represent a file system as a set of concentric segmented-rings
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
 post-patch:
-	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/src
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${RM} ${WRKSRC}/src/settingsdialog.h ${WRKSRC}/src/settingsdialog.cpp
 
 .include <bsd.port.mk>
