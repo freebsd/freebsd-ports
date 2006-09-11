@@ -2461,3 +2461,6 @@ devel/p5-Linux-Pid||2006-09-03|Was a p5-Apache-SizeLimit dependency, now removed
 www/mozilla-devel|www/seamonkey|2006-09-03|Security vulnerabilities
 textproc/p5-Text-SwiftTemplate||2006-09-04|unfetchable, removed
 security/fpc-md5|security/fpc-hash|2006-09-07|Port was renamed
+devel/linux_devtools||2006-09-11|Has expired: the dependcy is deprecated, please use a linux_dist port instead
+graphics/pecl-imagick||2006-09-11|Has expired: Project is dead and does not work
+korean/linux_locale||2006-09-11|Has expired: the dependency is scheduled for removal and a recent glib does not need this

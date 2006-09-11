@@ -382,7 +382,6 @@ LimeWireLinux.tgz	net-p2p/limewire	No redistribution allowed
 linunace*		archivers/linux-unace	Distribution is permitted within the
 						original package only
 Linux-ACU-Driver-v*	sysutils/linux-acu	Redistribution not allowed
-linux_devtools		devel/linux_devtools	GPL binaries
 linux-gtk2		x11-toolkits/linux-gtk2	LGPL binary, no source
 linuxq3ademo-*		games/linux-q3ademo	Restrictive license by Loki Software
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so
