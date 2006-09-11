@@ -10,7 +10,7 @@ PORTVERSION=	0.2.6
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 
-MAINTAINER=	kcwu@csie.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
 
 INSTALLS_SHLIB=	yes
