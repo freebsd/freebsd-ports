@@ -5,5 +5,6 @@ checking on the output, to make certain (for example) that start and
 end tags match, that there is exactly one document element, and that
 there are not duplicate attribute names.
 
+WWW: http://search.cpan.org/dist/XML-Writer/
 -Adam
 <adam@herzogdesigns.com>
