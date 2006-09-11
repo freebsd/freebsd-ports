@@ -12503,7 +12503,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>jakarta-tomcat</name>
-	<range><ge>5.*</ge><lt>5.5.7</lt></range>
+	<range><ge>5.0.*</ge><lt>5.0.30,5</lt></range>
+	<range><ge>5.5.*</ge><lt>5.5.7</lt></range>
       </package>
     </affects>
     <description>
@@ -12520,6 +12521,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-01-03</discovery>
       <entry>2005-06-01</entry>
+      <modified>2006-09-11</modified>
     </dates>
   </vuln>
 
