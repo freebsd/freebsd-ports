@@ -8,7 +8,9 @@
 PORTNAME=	pawm
 PORTVERSION=	2.2.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.pleyades.net/pawm/files/
+MASTER_SITES=	http://www.pleyades.net/pawm/files/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Puto Amo Window Manager
