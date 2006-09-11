@@ -5511,7 +5511,6 @@ ko-imhangul	ports/korean/imhangul
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
 ko-kde3-i18n	ports/korean/kde3-i18n
-ko-linux_locale	ports/korean/linux_locale
 ko-linuxdoc-sgml	ports/korean/linuxdoc-sgml
 ko-man-doc	ports/korean/man-doc
 ko-mizifont	ports/korean/mizifont
@@ -6438,7 +6437,6 @@ linux_base-rh-9	ports/emulators/linux_base-rh-9
 linux_base-suse-9.1	ports/emulators/linux_base-suse-9.1
 linux_base-suse-9.2	ports/emulators/linux_base-suse-9.2
 linux_base-suse-9.3	ports/emulators/linux_base-suse-9.3
-linux_devtools	ports/devel/linux_devtools
 linux_dist-gentoo-stage1	ports/emulators/linux_dist-gentoo-stage1
 linux_dist-gentoo-stage2	ports/emulators/linux_dist-gentoo-stage2
 linux_dist-gentoo-stage3	ports/emulators/linux_dist-gentoo-stage3
@@ -10763,7 +10761,6 @@ pecl-fribidi	ports/converters/pecl-fribidi
 pecl-gnupg	ports/security/pecl-gnupg
 pecl-hash	ports/security/pecl-hash
 pecl-id3	ports/audio/pecl-id3
-pecl-imagick	ports/graphics/pecl-imagick
 pecl-json	ports/devel/pecl-json
 pecl-lzf	ports/archivers/pecl-lzf
 pecl-mailparse	ports/mail/pecl-mailparse

@@ -39,7 +39,6 @@
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += kde3-i18n
-    SUBDIR += linux_locale
     SUBDIR += linuxdoc-sgml
     SUBDIR += man-doc
     SUBDIR += mizifont

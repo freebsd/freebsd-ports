@@ -479,7 +479,6 @@
     SUBDIR += pear-Image_Canvas
     SUBDIR += pear-Image_Color
     SUBDIR += pear-Image_Graph
-    SUBDIR += pecl-imagick
     SUBDIR += pecomato
     SUBDIR += peps
     SUBDIR += pgperl
