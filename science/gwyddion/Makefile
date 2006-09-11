@@ -6,10 +6,14 @@
 #
 
 PORTNAME=	gwyddion
-PORTVERSION=	1.99.8
+PORTVERSION=	1.99.9
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+
+PATCHFILES=	gwyddion-1-99-9-crashes.patch
+PATCH_SITES=	${MASTER_SITES}
+PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 
 MAINTAINER=	yeti@gwyddion.net
 COMMENT=	A gtk2 based SPM data visualization and analysis tool
