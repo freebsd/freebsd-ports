@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	madplay
-PORTVERSION=	0.15.0b
-PORTREVISION=	3
+PORTVERSION=	0.15.2b
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/
@@ -21,17 +20,23 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 
 WANT_GNOME=	yes
 
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	all madtime
 
 MAN1=		abxtest.1 madplay.1
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mesound}!=""
+.if ${HAVE_GNOME:Mesound} != ""
 USE_GNOME+=	esound
 PKGNAMESUFFIX=	-esound
 .else
