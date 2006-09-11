@@ -44,10 +44,10 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 
 .if ${OSVERSION} >= 600000
 JDK_OSREL=freebsd6
-.elif ${OSVERSION} >= 500000
+.elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
 JDK_OSREL=freebsd5
 .else
-IGNORE=		Only available for FreeBSD 5.x and later
+IGNORE=		Only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
 
 .if ${ARCH} == "i386"
@@ -58,7 +58,7 @@ PLIST_SUB+=	WEB="@comment "
 PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the distribution\n\
