@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bib2html
-DISTVERSION=	4.3-1
+DISTVERSION=	5.0-1
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.arakhne.org/IMG/gz/ \
 		http://fresh.t-systems-sfr.com/fresh/unix/src/privat2/
@@ -16,16 +16,16 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The BibTeX to HTML Translator
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-4.3/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]$//}/src
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
+	@${SED} -e \
 		's:= "$$0";:= "${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML";:g' \
 		< ${WRKSRC}/bib2html.pl > ${WRKSRC}/bib2html
-	@${REINPLACE_CMD} -e \
+	@${SED} -e \
 		's:= "$$0";:= "${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML";:g' \
 		< ${WRKSRC}/bib2xml.pl > ${WRKSRC}/bib2xml
 
@@ -40,5 +40,9 @@ do-install:
 		${XARGS} ${CHMOD} ${LIBMODE}
 	${FIND} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML -type d | \
 		${XARGS} ${CHMOD} a+rx
+	@${FIND} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML -type f | \
+		${SED} "s,^${TARGETDIR}/,," >> ${TMPPLIST}
+	@${FIND} ${TARGETDIR}/${SITE_PERL_REL}/Bib2HTML -type d | ${SORT} -r | \
+		${SED} "s,^${TARGETDIR}/,@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.mk>
