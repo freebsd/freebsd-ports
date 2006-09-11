@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,12 +26,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/games|share|g' ${WRKSRC}/setup.py
 
 post-build:
-.for lang in de en en_AU en_NZ en_US
+.for lang in de en en_AU en_NZ en_US it
 	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt ${lang}.po -o ${lang}.mo
 .endfor
 
 post-install:
-.for lang in de en en_AU en_NZ en_US
+.for lang in de en en_AU en_NZ en_US it
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/glchess.mo
