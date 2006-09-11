@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	5.0.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
@@ -61,6 +61,10 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		TOMCAT_HOME=${APP_HOME} \
 		TOMCAT_VERSION=${MAJOR_VER:S/.//} \
 		USER=${TOMCAT_USER}
+
+USE_DOS2UNIX=	webapps/jsp-examples/jsp2/jspx/textRotate.jspx \
+		webapps/jsp-examples/jsp2/el/functions.jsp \
+		webapps/jsp-examples/jsp2/el/implicit-objects.jsp
 
 .include <bsd.port.pre.mk>
 
