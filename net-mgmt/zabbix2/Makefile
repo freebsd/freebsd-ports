@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -76,11 +77,11 @@ ZABBIX_BINARIES+=	zabbix_server/zabbix_server
 ZABBIX_CONFIGS+=	zabbix_server.conf
 .endif
 
-.ifndef(ZABBIX_AGENT_ONLY)
 post-patch:
-	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|;s|%PREFIX%|${PREFIX}|' ${WRKSRC}/src/zabbix_server/server.c
 	@${REINPLACE_CMD} 's|%PREFIX%|${PREFIX}|' ${WRKSRC}/src/zabbix_agent/zabbix_agent.c
 	@${REINPLACE_CMD} 's|%PREFIX%|${PREFIX}|' ${WRKSRC}/src/zabbix_agent/zabbix_agentd.c
+.ifndef(ZABBIX_AGENT_ONLY)
+	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|;s|%PREFIX%|${PREFIX}|' ${WRKSRC}/src/zabbix_server/server.c
 .ifdef WITHOUT_FPING
 	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/misc/conf/zabbix_server.conf
 .endif
