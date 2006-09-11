@@ -1,5 +1,5 @@
---- ember.orig	Mon Feb 13 00:33:13 2006
-+++ ember	Wed Mar  8 06:28:31 2006
+--- ember.in.orig	Mon Jul 10 22:21:36 2006
++++ ember.in	Fri Jul 14 06:21:41 2006
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -18,20 +18,11 @@
  #if [ "$fullpath" = "" ]; then
  if [ "$test" = "." ]; then
  	path=${PWD}
-@@ -56,7 +57,7 @@
- etcdir=${prefix}/etc/ember
- homedata=$HOME/.ember
- 
--WFUT_JAR=$datadir/WFUT.jar
-+WFUT_JAR=$bindir/WFUT.jar
- 
- # Create dir if required 
- if [ ! -d $homedata ] ; then
-@@ -96,5 +97,6 @@
+@@ -99,5 +100,6 @@
  # Execute real ember binary
  echo "Starting Ember...."
  #we have to do the LD_PRELOAD thing, because else at least I get an error: libnvidia-tls.so.1: cannot handle TLS data /ehj
--LD_PRELOAD=libGL.so.1 $bindir/ember.bin --binrelocloading
+-LD_PRELOAD=libGL.so.1 $bindir/ember.bin --binrelocloading --home $homedata
 -
 +[ ! -f $homedata/plugins.cfg ] && cp $etcdir/plugins.cfg $homedata/
 +[ ! -f $homedata/resources.cfg ] && cp $etcdir/resources.cfg $homedata/
