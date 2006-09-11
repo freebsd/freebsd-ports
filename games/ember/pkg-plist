@@ -1,120 +1,124 @@
 bin/ember
 bin/ember.bin
-etc/ember/configfile
 etc/ember/ember.conf
 etc/ember/ogre.cfg
 etc/ember/plugins.cfg
 etc/ember/resources.cfg
 etc/ember/terrain.cfg
 share/applications/ember.desktop
-share/games/ember/carpenter/blockspec/adapters.blockspec.xml
-share/games/ember/carpenter/blockspec/fences.blockspec.xml
-share/games/ember/carpenter/blockspec/floors.blockspec.xml
-share/games/ember/carpenter/blockspec/roofs.blockspec.xml
-share/games/ember/carpenter/blockspec/slopewalls.blockspec.xml
-share/games/ember/carpenter/blockspec/walls.blockspec.xml
-share/games/ember/carpenter/blueprints/empty.blueprint.xml
-share/games/ember/carpenter/blueprints/house.blueprint.xml
-share/games/ember/carpenter/blueprints/sty.blueprint.xml
-share/games/ember/carpenter/modelblockspecs/general.modelblocks.xml
-share/games/ember/jesus/modelmappings/general.modelmapping.xml
-share/games/ember/media/gui/CEGUIConfig.xsd
-share/games/ember/media/gui/Font.xsd
-share/games/ember/media/gui/Falagard.xsd
-share/games/ember/media/gui/GUILayout.xsd
-share/games/ember/media/gui/GUIScheme.xsd
-share/games/ember/media/gui/Imageset.xsd
-share/games/ember/media/gui/cegui/datafiles/configs/cegui.config
-share/games/ember/media/gui/cegui/datafiles/fonts/Font.xsd
-share/games/ember/media/gui/cegui/datafiles/fonts/Vera.ttf
-share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-10.xml
-share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-14.xml
-share/games/ember/media/gui/cegui/datafiles/fonts/tahoma-8.xml
-share/games/ember/media/gui/cegui/datafiles/fonts/tahoma.ttf
-share/games/ember/media/gui/cegui/datafiles/fonts/vera-sans-14.xml
-share/games/ember/media/gui/cegui/datafiles/fonts/vera-sans-10.xml
-share/games/ember/media/gui/cegui/datafiles/fonts/vera-sans-8.xml
-share/games/ember/media/gui/cegui/datafiles/fonts/
-share/games/ember/media/gui/cegui/datafiles/imagesets/Imageset.xsd
-share/games/ember/media/gui/cegui/datafiles/imagesets/TaharezLook.imageset
-share/games/ember/media/gui/cegui/datafiles/imagesets/WindowsLook.imageset
-share/games/ember/media/gui/cegui/datafiles/imagesets/iconset_mason.imageset
-share/games/ember/media/gui/cegui/datafiles/imagesets/iconset_standard.imageset
-share/games/ember/media/gui/cegui/datafiles/layouts/Chat.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/ConsoleWidget.xml
-share/games/ember/media/gui/cegui/datafiles/layouts/Debug.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/Demo8.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/EntityEditWidget.xml
-share/games/ember/media/gui/cegui/datafiles/layouts/EntityPicker.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/Give.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/GUILayout.xsd
-share/games/ember/media/gui/cegui/datafiles/layouts/HelpWidget.xml
-share/games/ember/media/gui/cegui/datafiles/layouts/IngameChatWidget.xml
-share/games/ember/media/gui/cegui/datafiles/layouts/InspectWidget.xml
-share/games/ember/media/gui/cegui/datafiles/layouts/InventoryWidget.xml
-share/games/ember/media/gui/cegui/datafiles/layouts/JesusEdit.widget
-share/games/ember/media/gui/cegui/datafiles/layouts/JesusEditFile.widget
-share/games/ember/media/gui/cegui/datafiles/layouts/JesusEditPreview.widget
-share/games/ember/media/gui/cegui/datafiles/layouts/MakeEntityWidget.xml
-share/games/ember/media/gui/cegui/datafiles/layouts/MeshPreview.widget
-share/games/ember/media/gui/cegui/datafiles/layouts/ModelEdit.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/Performance.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/Quit.widget
-share/games/ember/media/gui/cegui/datafiles/layouts/ScriptEdit.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/ServerBrowser.layout
-share/games/ember/media/gui/cegui/datafiles/layouts/ServerWidget.xml
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/Bootstrap.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/Chat.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/Debug.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/demo8.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/EntityPicker.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/Give.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/ModelEdit.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/Performance.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/ServerBrowser.lua
-share/games/ember/media/gui/cegui/datafiles/lua_scripts/ScriptEdit.lua
-share/games/ember/media/gui/cegui/datafiles/imagesets/EmberLook.imageset
-share/games/ember/media/gui/cegui/datafiles/looknfeel/TaharezLook.looknfeel
-share/games/ember/media/gui/cegui/datafiles/looknfeel/Vanilla.looknfeel
-share/games/ember/media/gui/cegui/datafiles/looknfeel/WindowsLook.looknfeel
-share/games/ember/media/gui/cegui/datafiles/looknfeel/EmberLook.looknfeel
-share/games/ember/media/gui/cegui/datafiles/schemes/EmberLookSkin.scheme
-share/games/ember/media/gui/cegui/datafiles/schemes/GUIScheme.xsd
-share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLook.scheme
-share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLookSkin.scheme
-share/games/ember/media/gui/cegui/datafiles/schemes/TaharezLookWidgetAliases.scheme
-share/games/ember/media/gui/cegui/datafiles/schemes/WindowsLook.scheme
-share/games/ember/media/gui/cegui/datafiles/schemes/WindowsLookSkin.scheme
-share/games/ember/media/packs/EmberCore.zip
-share/games/ember/media/packs/OgreCore.zip
+share/ember/WFUT.jar
+share/ember/carpenter/blockspec/adapters.blockspec.xml
+share/ember/carpenter/blockspec/fences.blockspec.xml
+share/ember/carpenter/blockspec/floors.blockspec.xml
+share/ember/carpenter/blockspec/roofs.blockspec.xml
+share/ember/carpenter/blockspec/slopewalls.blockspec.xml
+share/ember/carpenter/blockspec/walls.blockspec.xml
+share/ember/carpenter/blueprints/empty.blueprint.xml
+share/ember/carpenter/blueprints/house.blueprint.xml
+share/ember/carpenter/blueprints/sty.blueprint.xml
+share/ember/carpenter/modelblockspecs/general.modelblocks.xml
+share/ember/jesus/modelmappings/general.modelmapping.xml
+share/ember/media/gui/CEGUIConfig.xsd
+share/ember/media/gui/Falagard.xsd
+share/ember/media/gui/Font.xsd
+share/ember/media/gui/GUILayout.xsd
+share/ember/media/gui/GUIScheme.xsd
+share/ember/media/gui/Imageset.xsd
+share/ember/media/gui/cegui/datafiles/configs/cegui.config
+share/ember/media/gui/cegui/datafiles/fonts/Font.xsd
+share/ember/media/gui/cegui/datafiles/fonts/Vera.ttf
+share/ember/media/gui/cegui/datafiles/fonts/tahoma-10.xml
+share/ember/media/gui/cegui/datafiles/fonts/tahoma-14.xml
+share/ember/media/gui/cegui/datafiles/fonts/tahoma-8.xml
+share/ember/media/gui/cegui/datafiles/fonts/tahoma.ttf
+share/ember/media/gui/cegui/datafiles/fonts/vera-sans-10.xml
+share/ember/media/gui/cegui/datafiles/fonts/vera-sans-14.xml
+share/ember/media/gui/cegui/datafiles/fonts/vera-sans-8.xml
+share/ember/media/gui/cegui/datafiles/imagesets/EmberLook.imageset
+share/ember/media/gui/cegui/datafiles/imagesets/Imageset.xsd
+share/ember/media/gui/cegui/datafiles/imagesets/TaharezLook.imageset
+share/ember/media/gui/cegui/datafiles/imagesets/WindowsLook.imageset
+share/ember/media/gui/cegui/datafiles/imagesets/iconset_mason.imageset
+share/ember/media/gui/cegui/datafiles/imagesets/iconset_standard.imageset
+share/ember/media/gui/cegui/datafiles/layouts/Chat.layout
+share/ember/media/gui/cegui/datafiles/layouts/ConsoleWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/Debug.layout
+share/ember/media/gui/cegui/datafiles/layouts/Demo8.layout
+share/ember/media/gui/cegui/datafiles/layouts/EntityEditWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/EntityPicker.layout
+share/ember/media/gui/cegui/datafiles/layouts/GUILayout.xsd
+share/ember/media/gui/cegui/datafiles/layouts/Give.layout
+share/ember/media/gui/cegui/datafiles/layouts/HelpWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/IngameChatWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/InspectWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/InventoryWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/JesusEdit.widget
+share/ember/media/gui/cegui/datafiles/layouts/JesusEditFile.widget
+share/ember/media/gui/cegui/datafiles/layouts/JesusEditPreview.widget
+share/ember/media/gui/cegui/datafiles/layouts/MakeEntityWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/MeshPreview.widget
+share/ember/media/gui/cegui/datafiles/layouts/ModelEdit.layout
+share/ember/media/gui/cegui/datafiles/layouts/Performance.layout
+share/ember/media/gui/cegui/datafiles/layouts/Quit.widget
+share/ember/media/gui/cegui/datafiles/layouts/ScriptEdit.layout
+share/ember/media/gui/cegui/datafiles/layouts/ServerBrowser.layout
+share/ember/media/gui/cegui/datafiles/layouts/ServerWidget.xml
+share/ember/media/gui/cegui/datafiles/layouts/Tasks.layout
+share/ember/media/gui/cegui/datafiles/layouts/TerrainEditor.layout
+share/ember/media/gui/cegui/datafiles/layouts/CVS/TerrainEditor.layout
+share/ember/media/gui/cegui/datafiles/looknfeel/EmberLook.looknfeel
+share/ember/media/gui/cegui/datafiles/looknfeel/TaharezLook.looknfeel
+share/ember/media/gui/cegui/datafiles/looknfeel/Vanilla.looknfeel
+share/ember/media/gui/cegui/datafiles/looknfeel/WindowsLook.looknfeel
+share/ember/media/gui/cegui/datafiles/lua_scripts/Bootstrap.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/Chat.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/Debug.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/EntityPicker.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/Give.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/ModelEdit.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/Performance.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/ScriptEdit.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/ServerBrowser.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/Tasks.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/TerrainEditor.lua
+share/ember/media/gui/cegui/datafiles/lua_scripts/demo8.lua
+share/ember/media/gui/cegui/datafiles/schemes/EmberLookSkin.scheme
+share/ember/media/gui/cegui/datafiles/schemes/GUIScheme.xsd
+share/ember/media/gui/cegui/datafiles/schemes/TaharezLook.scheme
+share/ember/media/gui/cegui/datafiles/schemes/TaharezLookSkin.scheme
+share/ember/media/gui/cegui/datafiles/schemes/TaharezLookWidgetAliases.scheme
+share/ember/media/gui/cegui/datafiles/schemes/WindowsLook.scheme
+share/ember/media/gui/cegui/datafiles/schemes/WindowsLookSkin.scheme
+share/ember/media/packs/EmberCore.zip
+share/ember/media/packs/OgreCore.zip
 share/icons/worldforge/ember.png
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-@dirrmtry share/applications
 @dirrm etc/ember
-@dirrm share/games/ember/carpenter/blockspec
-@dirrm share/games/ember/carpenter/blueprints
-@dirrm share/games/ember/carpenter/modelblockspecs
-@dirrm share/games/ember/carpenter
-@dirrm share/games/ember/jesus/modelmappings
-@dirrm share/games/ember/jesus
-@dirrm share/games/ember/media/gui/cegui/datafiles/configs
-@dirrm share/games/ember/media/gui/cegui/datafiles/fonts
-@dirrm share/games/ember/media/gui/cegui/datafiles/imagesets
-@dirrm share/games/ember/media/gui/cegui/datafiles/layouts
-@dirrm share/games/ember/media/gui/cegui/datafiles/looknfeel
-@dirrm share/games/ember/media/gui/cegui/datafiles/lua_scripts
-@dirrm share/games/ember/media/gui/cegui/datafiles/schemes
-@dirrm share/games/ember/media/gui/cegui/datafiles
-@dirrm share/games/ember/media/gui/cegui
-@dirrm share/games/ember/media/gui
-@dirrm share/games/ember/media/packs
-@dirrm share/games/ember/media
-@dirrm share/games/ember
-@dirrm share/games
+@dirrmtry share/applications
+@dirrm share/ember/carpenter/blockspec
+@dirrm share/ember/carpenter/blueprints
+@dirrm share/ember/carpenter/modelblockspecs
+@dirrm share/ember/carpenter
+@dirrm share/ember/jesus/modelmappings
+@dirrm share/ember/jesus
+@dirrm share/ember/media/gui/cegui/datafiles/configs
+@dirrm share/ember/media/gui/cegui/datafiles/fonts
+@dirrm share/ember/media/gui/cegui/datafiles/imagesets
+@dirrm share/ember/media/gui/cegui/datafiles/layouts/CVS
+@dirrm share/ember/media/gui/cegui/datafiles/layouts
+@dirrm share/ember/media/gui/cegui/datafiles/looknfeel
+@dirrm share/ember/media/gui/cegui/datafiles/lua_scripts
+@dirrm share/ember/media/gui/cegui/datafiles/schemes
+@dirrm share/ember/media/gui/cegui/datafiles
+@dirrm share/ember/media/gui/cegui
+@dirrm share/ember/media/gui
+@dirrm share/ember/media/packs
+@dirrm share/ember/media
+@dirrm share/ember
 @dirrmtry share/icons/worldforge
 @dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
