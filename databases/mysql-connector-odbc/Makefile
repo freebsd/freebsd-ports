@@ -21,8 +21,8 @@ IGNORE_WITH_MYSQL=	323
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15 libltdl:15
-INSTALLS_SHLIB=	yes
-CFLAGS=		-L${LOCALBASE}/lib
+USE_LDCONFIG=	yes
+CFLAGS+=		-L${LOCALBASE}/lib
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-mysql-path=${LOCALBASE} --without-samples \
 		--disable-gui --enable-test=no
