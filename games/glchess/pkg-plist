@@ -35,6 +35,18 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.py
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyc
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.py
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.py
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ntest.py
+%%PYTHON_SITELIBDIR%%/glchess/ntest.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ntest.pyo
 %%PYTHON_SITELIBDIR%%/glchess/scene/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyo
@@ -63,15 +75,16 @@ share/applications/glchess.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/gui/about.glade
+%%DATADIR%%/gui/ai.glade
 %%DATADIR%%/gui/chess_view.glade
 %%DATADIR%%/gui/error_dialog.glade
 %%DATADIR%%/gui/glchess.glade
+%%DATADIR%%/gui/glchess.svg
 %%DATADIR%%/gui/load_game.glade
 %%DATADIR%%/gui/network_game.glade
 %%DATADIR%%/gui/new_game.glade
-%%DATADIR%%/gui/new_game_simple.glade
 %%DATADIR%%/gui/save_game.glade
-%%DATADIR%%/gui/splashscreen.glade
 %%DATADIR%%/textures/black_board_texture.jpg
 %%DATADIR%%/textures/black_piece_texture.jpg
 %%DATADIR%%/textures/white_board_texture.jpg
@@ -82,6 +95,9 @@ share/locale/en/LC_MESSAGES/glchess.mo
 share/locale/en_AU/LC_MESSAGES/glchess.mo
 share/locale/en_NZ/LC_MESSAGES/glchess.mo
 share/locale/en_US/LC_MESSAGES/glchess.mo
+share/locale/it/LC_MESSAGES/glchess.mo
+share/pixmaps/glchess.svg
+@dirrmtry share/pixmaps
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
 @dirrmtry share/locale/en_NZ/LC_MESSAGES
@@ -95,6 +111,7 @@ share/locale/en_US/LC_MESSAGES/glchess.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/network
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
 @dirrm %%PYTHON_SITELIBDIR%%/glchess
