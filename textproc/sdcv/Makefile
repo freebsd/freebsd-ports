@@ -13,6 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	A text-based utility for work with dictionaries in StarDict's format
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON_sparc64=	does not compile
+
 USE_BZIP2=	yes
 #USE_GCC=	3.3+
 USE_ICONV=	yes
