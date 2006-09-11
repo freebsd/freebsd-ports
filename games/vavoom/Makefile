@@ -9,6 +9,8 @@ PORTNAME=	vavoom
 PORTVERSION=	1.21.2
 CATEGORIES=	games
 MASTER_SITES=	SF
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
@@ -23,9 +25,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
+		DEVEL "Install development tools (Doom/Vavoom)" off \
 		FLAC "Enable FLAC support" off \
 		LIBMAD "Enable MP3 support" off \
 		MIKMOD "Enable MikMod support" off \
+		MODELS "Install 3D models for supported games" off \
 		OPENAL "Enable OpenAL support" off \
 		OPENGL "Enable OpenGL support" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" off \
@@ -58,6 +62,12 @@ CONFIGURE_ARGS+=--with-allegro
 CONFIGURE_ARGS+=--without-allegro
 .endif
 
+.if defined(WITH_DEVEL)
+PLIST_SUB+=	DEVEL=""
+.else
+PLIST_SUB+=	DEVEL="@comment "
+.endif
+
 .if defined(WITH_FLAC)
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--with-flac
@@ -77,6 +87,16 @@ LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-mikmod
 .else
 CONFIGURE_ARGS+=--without-mikmod
+.endif
+
+.if defined(WITH_MODELS)
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+.for f in doom heretic hexen strife
+DISTFILES+=	vmdl_${f}_13.zip
+.endfor
+PLIST_SUB+=	MODELS=""
+.else
+PLIST_SUB+=	MODELS="@comment "
 .endif
 
 .if defined(WITH_OPENAL)
@@ -111,6 +131,13 @@ CONFIGURE_ARGS+=--with-sdl --with-sdl-config=${SDL_CONFIG}
 CONFIGURE_ARGS+=--without-sdl
 .endif
 
+.if defined(WITH_MODELS)
+post-extract:
+.for f in doom heretic hexen strife
+	@${UNZIP_CMD} -aqo ${DISTDIR}/vmdl_${f}_13.zip -d ${WRKDIR}
+.endfor
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/||g' ${WRKSRC}/source/s_sdl.cpp
 	@${REINPLACE_CMD} -e 's|\.$$host_cpu||' \
@@ -119,6 +146,15 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+.if defined(WITH_DEVEL)
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/bin/* ${PREFIX}/libexec/${PORTNAME}
+	${CP} -r ${WRKSRC}/utils/editing ${WRKSRC}/progs ${DATADIR}
+	@${FIND} ${DATADIR}/progs -type f -name "Makefile*" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -i '' -Ee 's|^(VCC =).*|\1 vcc|'
+.endif
+.if defined(WITH_MODELS)
+	${CP} -r ${WRKDIR}/basev ${DATADIR}
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}

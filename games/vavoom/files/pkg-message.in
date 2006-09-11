@@ -5,8 +5,8 @@ Vavoom has been installed.
 The wrapper script is named "vavoom" and accepts a "-s" argument to run the
 dedicated server instead of the client. It creates/enters ~/.vavoom (if it
 does not exist creates symlinks) and runs the programs from there, looking for
-additional IWAD files in %%DMDIR%%.
+additional IWAD files in "%%DMDIR%%".
 
-The real executables are in "%%PREFIX%%/libexec".
+The real executables (and utils) are in "%%PREFIX%%/libexec/vavoom".
 
 ==============================================================================
