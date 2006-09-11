@@ -443,6 +443,7 @@
     SUBDIR += jep
     SUBDIR += jrtplib
     SUBDIR += jsap
+    SUBDIR += jsmin
     SUBDIR += json-c
     SUBDIR += jtag
     SUBDIR += jude-community
