@@ -152,6 +152,7 @@
     SUBDIR += estctrl
     SUBDIR += etcmerge
     SUBDIR += eventwatcher
+    SUBDIR += evtviewer
     SUBDIR += extipl
     SUBDIR += ezjail
     SUBDIR += fanout
