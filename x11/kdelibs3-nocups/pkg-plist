@@ -3177,6 +3177,7 @@ share/icons/crystalsvg/128x128/filesystems/zip_overlay.png
 share/icons/crystalsvg/128x128/mimetypes/applix.png
 share/icons/crystalsvg/128x128/mimetypes/ascii.png
 share/icons/crystalsvg/128x128/mimetypes/binary.png
+share/icons/crystalsvg/128x128/mimetypes/bt.png
 share/icons/crystalsvg/128x128/mimetypes/cdimage.png
 share/icons/crystalsvg/128x128/mimetypes/cdr.png
 share/icons/crystalsvg/128x128/mimetypes/cdtrack.png
@@ -3594,6 +3595,7 @@ share/icons/crystalsvg/16x16/filesystems/zip_overlay.png
 share/icons/crystalsvg/16x16/mimetypes/applix.png
 share/icons/crystalsvg/16x16/mimetypes/ascii.png
 share/icons/crystalsvg/16x16/mimetypes/binary.png
+share/icons/crystalsvg/16x16/mimetypes/bt.png
 share/icons/crystalsvg/16x16/mimetypes/cdimage.png
 share/icons/crystalsvg/16x16/mimetypes/cdr.png
 share/icons/crystalsvg/16x16/mimetypes/cdtrack.png
@@ -3956,6 +3958,7 @@ share/icons/crystalsvg/22x22/filesystems/zip_overlay.png
 share/icons/crystalsvg/22x22/mimetypes/applix.png
 share/icons/crystalsvg/22x22/mimetypes/ascii.png
 share/icons/crystalsvg/22x22/mimetypes/binary.png
+share/icons/crystalsvg/22x22/mimetypes/bt.png
 share/icons/crystalsvg/22x22/mimetypes/cdimage.png
 share/icons/crystalsvg/22x22/mimetypes/cdtrack.png
 share/icons/crystalsvg/22x22/mimetypes/colorscm.png
@@ -4326,6 +4329,7 @@ share/icons/crystalsvg/32x32/filesystems/zip_overlay.png
 share/icons/crystalsvg/32x32/mimetypes/applix.png
 share/icons/crystalsvg/32x32/mimetypes/ascii.png
 share/icons/crystalsvg/32x32/mimetypes/binary.png
+share/icons/crystalsvg/32x32/mimetypes/bt.png
 share/icons/crystalsvg/32x32/mimetypes/cdimage.png
 share/icons/crystalsvg/32x32/mimetypes/cdr.png
 share/icons/crystalsvg/32x32/mimetypes/cdtrack.png
@@ -4549,6 +4553,7 @@ share/icons/crystalsvg/48x48/filesystems/zip_overlay.png
 share/icons/crystalsvg/48x48/mimetypes/applix.png
 share/icons/crystalsvg/48x48/mimetypes/ascii.png
 share/icons/crystalsvg/48x48/mimetypes/binary.png
+share/icons/crystalsvg/48x48/mimetypes/bt.png
 share/icons/crystalsvg/48x48/mimetypes/cdimage.png
 share/icons/crystalsvg/48x48/mimetypes/cdr.png
 share/icons/crystalsvg/48x48/mimetypes/cdtrack.png
@@ -4731,6 +4736,7 @@ share/icons/crystalsvg/64x64/filesystems/zip_overlay.png
 share/icons/crystalsvg/64x64/mimetypes/applix.png
 share/icons/crystalsvg/64x64/mimetypes/ascii.png
 share/icons/crystalsvg/64x64/mimetypes/binary.png
+share/icons/crystalsvg/64x64/mimetypes/bt.png
 share/icons/crystalsvg/64x64/mimetypes/cdimage.png
 share/icons/crystalsvg/64x64/mimetypes/cdr.png
 share/icons/crystalsvg/64x64/mimetypes/cdtrack.png
@@ -5114,7 +5120,6 @@ share/mimelnk/application/vnd.sun.xml.writer.desktop
 share/mimelnk/application/vnd.sun.xml.writer.master.desktop
 share/mimelnk/application/vnd.sun.xml.writer.template.desktop
 share/mimelnk/application/wordperfect.desktop
-share/mimelnk/application/x-7z.desktop
 share/mimelnk/application/x-abiword.desktop
 share/mimelnk/application/x-ace.desktop
 share/mimelnk/application/x-afm.desktop
@@ -5187,6 +5192,7 @@ share/mimelnk/application/x-lyx.desktop
 share/mimelnk/application/x-lzop.desktop
 share/mimelnk/application/x-magicpoint.desktop
 share/mimelnk/application/x-mimearchive.desktop
+share/mimelnk/application/x-mplayer2.desktop
 share/mimelnk/application/x-msaccess.desktop
 share/mimelnk/application/x-msdos-program.desktop
 share/mimelnk/application/x-msmetafile.desktop

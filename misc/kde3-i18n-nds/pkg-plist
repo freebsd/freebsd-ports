@@ -4,6 +4,8 @@ share/locale/nds/LC_MESSAGES/alsaplayerui.mo
 share/locale/nds/LC_MESSAGES/amor.mo
 share/locale/nds/LC_MESSAGES/appletproxy.mo
 share/locale/nds/LC_MESSAGES/ark.mo
+share/locale/nds/LC_MESSAGES/ark_plugin.mo
+share/locale/nds/LC_MESSAGES/atlantik.mo
 share/locale/nds/LC_MESSAGES/atlantikdesigner.mo
 share/locale/nds/LC_MESSAGES/audiorename_plugin.mo
 share/locale/nds/LC_MESSAGES/autorefresh.mo
@@ -45,13 +47,16 @@ share/locale/nds/LC_MESSAGES/kandy.mo
 share/locale/nds/LC_MESSAGES/kappfinder.mo
 share/locale/nds/LC_MESSAGES/karm.mo
 share/locale/nds/LC_MESSAGES/kasbarextension.mo
+share/locale/nds/LC_MESSAGES/kasteroids.mo
 share/locale/nds/LC_MESSAGES/kate.mo
 share/locale/nds/LC_MESSAGES/katecppsymbolviewer.mo
+share/locale/nds/LC_MESSAGES/katefiletemplates.mo
 share/locale/nds/LC_MESSAGES/katefll_initplugin.mo
 share/locale/nds/LC_MESSAGES/katefll_plugin.mo
 share/locale/nds/LC_MESSAGES/katehelloworld.mo
 share/locale/nds/LC_MESSAGES/katehtmltools.mo
 share/locale/nds/LC_MESSAGES/kateinsertcommand.mo
+share/locale/nds/LC_MESSAGES/katekjswrapper.mo
 share/locale/nds/LC_MESSAGES/katemake.mo
 share/locale/nds/LC_MESSAGES/katemodeline.mo
 share/locale/nds/LC_MESSAGES/kateopenheader.mo
@@ -62,6 +67,7 @@ share/locale/nds/LC_MESSAGES/katetabbarextension.mo
 share/locale/nds/LC_MESSAGES/katetextfilter.mo
 share/locale/nds/LC_MESSAGES/katexmlcheck.mo
 share/locale/nds/LC_MESSAGES/katexmltools.mo
+share/locale/nds/LC_MESSAGES/katomic.mo
 share/locale/nds/LC_MESSAGES/kay.mo
 share/locale/nds/LC_MESSAGES/kbabel.mo
 share/locale/nds/LC_MESSAGES/kbinaryclock.mo
@@ -69,6 +75,7 @@ share/locale/nds/LC_MESSAGES/kbstateapplet.mo
 share/locale/nds/LC_MESSAGES/kcalc.mo
 share/locale/nds/LC_MESSAGES/kcharselect.mo
 share/locale/nds/LC_MESSAGES/kcharselectapplet.mo
+share/locale/nds/LC_MESSAGES/kcm_krfb.mo
 share/locale/nds/LC_MESSAGES/kcm_kviewgeneralconfig.mo
 share/locale/nds/LC_MESSAGES/kcm_kviewpluginsconfig.mo
 share/locale/nds/LC_MESSAGES/kcm_kviewviewerpluginsconfig.mo
@@ -108,6 +115,7 @@ share/locale/nds/LC_MESSAGES/kcmkwallet.mo
 share/locale/nds/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/nds/LC_MESSAGES/kcmkwinrules.mo
 share/locale/nds/LC_MESSAGES/kcmkwm.mo
+share/locale/nds/LC_MESSAGES/kcmlanbrowser.mo
 share/locale/nds/LC_MESSAGES/kcmlaptop.mo
 share/locale/nds/LC_MESSAGES/kcmlaunch.mo
 share/locale/nds/LC_MESSAGES/kcmlayout.mo
@@ -127,8 +135,10 @@ share/locale/nds/LC_MESSAGES/kcmsmserver.mo
 share/locale/nds/LC_MESSAGES/kcmspellchecking.mo
 share/locale/nds/LC_MESSAGES/kcmstyle.mo
 share/locale/nds/LC_MESSAGES/kcmtaskbar.mo
+share/locale/nds/LC_MESSAGES/kcmthinkpad.mo
 share/locale/nds/LC_MESSAGES/kcmusb.mo
 share/locale/nds/LC_MESSAGES/kcmview1394.mo
+share/locale/nds/LC_MESSAGES/kcmwifi.mo
 share/locale/nds/LC_MESSAGES/kcmxinerama.mo
 share/locale/nds/LC_MESSAGES/kcoloredit.mo
 share/locale/nds/LC_MESSAGES/kcontrol.mo
@@ -149,9 +159,11 @@ share/locale/nds/LC_MESSAGES/kdesktop.mo
 share/locale/nds/LC_MESSAGES/kdessh.mo
 share/locale/nds/LC_MESSAGES/kdesu.mo
 share/locale/nds/LC_MESSAGES/kdesud.mo
+share/locale/nds/LC_MESSAGES/kdevdesigner.mo
 share/locale/nds/LC_MESSAGES/kdf.mo
 share/locale/nds/LC_MESSAGES/kdgantt.mo
 share/locale/nds/LC_MESSAGES/kdialog.mo
+share/locale/nds/LC_MESSAGES/kdict.mo
 share/locale/nds/LC_MESSAGES/kdictapplet.mo
 share/locale/nds/LC_MESSAGES/kdmconfig.mo
 share/locale/nds/LC_MESSAGES/kdmgreet.mo
@@ -171,6 +183,7 @@ share/locale/nds/LC_MESSAGES/kfile_gif.mo
 share/locale/nds/LC_MESSAGES/kfile_html.mo
 share/locale/nds/LC_MESSAGES/kfile_ico.mo
 share/locale/nds/LC_MESSAGES/kfile_ics.mo
+share/locale/nds/LC_MESSAGES/kfile_lnk.mo
 share/locale/nds/LC_MESSAGES/kfile_m3u.mo
 share/locale/nds/LC_MESSAGES/kfile_mhtml.mo
 share/locale/nds/LC_MESSAGES/kfile_mp3.mo
@@ -195,6 +208,7 @@ share/locale/nds/LC_MESSAGES/kfile_wav.mo
 share/locale/nds/LC_MESSAGES/kfile_xbm.mo
 share/locale/nds/LC_MESSAGES/kfile_xpm.mo
 share/locale/nds/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/nds/LC_MESSAGES/kfileshare.mo
 share/locale/nds/LC_MESSAGES/kfindpart.mo
 share/locale/nds/LC_MESSAGES/kfloppy.mo
 share/locale/nds/LC_MESSAGES/kfmclient.mo
@@ -207,6 +221,7 @@ share/locale/nds/LC_MESSAGES/kgreet_classic.mo
 share/locale/nds/LC_MESSAGES/kgreet_winbind.mo
 share/locale/nds/LC_MESSAGES/khelpcenter.mo
 share/locale/nds/LC_MESSAGES/khexedit.mo
+share/locale/nds/LC_MESSAGES/khexedit2part.mo
 share/locale/nds/LC_MESSAGES/khotkeys.mo
 share/locale/nds/LC_MESSAGES/khtmlkttsd.mo
 share/locale/nds/LC_MESSAGES/khtmlsettingsplugin.mo
@@ -256,12 +271,15 @@ share/locale/nds/LC_MESSAGES/kmail.mo
 share/locale/nds/LC_MESSAGES/kmail_text_calendar_plugin.mo
 share/locale/nds/LC_MESSAGES/kmail_text_vcard_plugin.mo
 share/locale/nds/LC_MESSAGES/kmailcvt.mo
+share/locale/nds/LC_MESSAGES/kmathapplet.mo
 share/locale/nds/LC_MESSAGES/kmcop.mo
 share/locale/nds/LC_MESSAGES/kmenuapplet.mo
 share/locale/nds/LC_MESSAGES/kmenuedit.mo
+share/locale/nds/LC_MESSAGES/kmilo_delli8k.mo
 share/locale/nds/LC_MESSAGES/kmilo_generic.mo
 share/locale/nds/LC_MESSAGES/kmilo_kvaio.mo
 share/locale/nds/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/nds/LC_MESSAGES/kmilo_thinkpad.mo
 share/locale/nds/LC_MESSAGES/kmilod.mo
 share/locale/nds/LC_MESSAGES/kmines.mo
 share/locale/nds/LC_MESSAGES/kminipagerapplet.mo
@@ -270,6 +288,7 @@ share/locale/nds/LC_MESSAGES/kmoon.mo
 share/locale/nds/LC_MESSAGES/kmousetool.mo
 share/locale/nds/LC_MESSAGES/kmouth.mo
 share/locale/nds/LC_MESSAGES/knetattach.mo
+share/locale/nds/LC_MESSAGES/knetworkconf.mo
 share/locale/nds/LC_MESSAGES/knewsticker.mo
 share/locale/nds/LC_MESSAGES/knode.mo
 share/locale/nds/LC_MESSAGES/knotes.mo
@@ -283,7 +302,10 @@ share/locale/nds/LC_MESSAGES/konnector_kcal.mo
 share/locale/nds/LC_MESSAGES/konnector_local.mo
 share/locale/nds/LC_MESSAGES/konnector_qtopia.mo
 share/locale/nds/LC_MESSAGES/konnector_remote.mo
+share/locale/nds/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/nds/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/nds/LC_MESSAGES/konqsidebar_metabar.mo
+share/locale/nds/LC_MESSAGES/konqsidebar_news.mo
 share/locale/nds/LC_MESSAGES/konqueror.mo
 share/locale/nds/LC_MESSAGES/konsole.mo
 share/locale/nds/LC_MESSAGES/konsolekalendar.mo
@@ -313,6 +335,7 @@ share/locale/nds/LC_MESSAGES/kres_kolab.mo
 share/locale/nds/LC_MESSAGES/kres_remote.mo
 share/locale/nds/LC_MESSAGES/kres_tvanytime.mo
 share/locale/nds/LC_MESSAGES/kres_xmlrpc.mo
+share/locale/nds/LC_MESSAGES/krfb.mo
 share/locale/nds/LC_MESSAGES/kruler.mo
 share/locale/nds/LC_MESSAGES/krunapplet.mo
 share/locale/nds/LC_MESSAGES/ksayit.mo
@@ -361,6 +384,7 @@ share/locale/nds/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/nds/LC_MESSAGES/kwalletmanager.mo
 share/locale/nds/LC_MESSAGES/kwatchgnupg.mo
 share/locale/nds/LC_MESSAGES/kweather.mo
+share/locale/nds/LC_MESSAGES/kwifimanager.mo
 share/locale/nds/LC_MESSAGES/kwin.mo
 share/locale/nds/LC_MESSAGES/kwin_clients.mo
 share/locale/nds/LC_MESSAGES/kwin_lib.mo
@@ -372,8 +396,8 @@ share/locale/nds/LC_MESSAGES/kxsconfig.mo
 share/locale/nds/LC_MESSAGES/libKTTSD.mo
 share/locale/nds/LC_MESSAGES/libdmctl.mo
 share/locale/nds/LC_MESSAGES/libkaddrbk_geo_xxport.mo
+share/locale/nds/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/nds/LC_MESSAGES/libkcal.mo
-share/locale/nds/LC_MESSAGES/libkcalsystem.mo
 share/locale/nds/LC_MESSAGES/libkdegames.mo
 share/locale/nds/LC_MESSAGES/libkdepim.mo
 share/locale/nds/LC_MESSAGES/libkholidays.mo
@@ -410,6 +434,8 @@ share/locale/nds/LC_MESSAGES/pitchablespeed.mo
 share/locale/nds/LC_MESSAGES/ppdtranslations.mo
 share/locale/nds/LC_MESSAGES/privacy.mo
 share/locale/nds/LC_MESSAGES/quicklauncher.mo
+share/locale/nds/LC_MESSAGES/rellinks.mo
+share/locale/nds/LC_MESSAGES/searchbarplugin.mo
 share/locale/nds/LC_MESSAGES/secpolicy.mo
 share/locale/nds/LC_MESSAGES/spy.mo
 share/locale/nds/LC_MESSAGES/superkaramba.mo

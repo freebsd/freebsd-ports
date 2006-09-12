@@ -1,3 +1,17 @@
+share/apps/kanagram/data/et/arvutid.kvtml
+share/apps/kanagram/data/et/elukutsed.kvtml
+share/apps/kanagram/data/et/esemed.kvtml
+share/apps/kanagram/data/et/inimesed.kvtml
+share/apps/kanagram/data/et/juurviljad.kvtml
+share/apps/kanagram/data/et/kosmos.kvtml
+share/apps/kanagram/data/et/leiutused.kvtml
+share/apps/kanagram/data/et/loomad.kvtml
+share/apps/kanagram/data/et/pealinnad.kvtml
+share/apps/kanagram/data/et/puuviljad.kvtml
+share/apps/kanagram/data/et/raha.kvtml
+share/apps/kanagram/data/et/riided.kvtml
+share/apps/kanagram/data/et/sport.kvtml
+share/apps/kanagram/data/et/transport.kvtml
 share/apps/khangman/data/et/animals.kvtml
 share/apps/khangman/data/et/easy.kvtml
 share/apps/khangman/data/et/hard.kvtml
@@ -608,6 +622,9 @@ share/doc/HTML/et/kig/man-kig.1.docbook
 share/doc/HTML/et/kinfocenter/blockdevices/common
 share/doc/HTML/et/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/et/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/et/kinfocenter/cdinfo/common
+share/doc/HTML/et/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/et/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/et/kinfocenter/common
 share/doc/HTML/et/kinfocenter/devices/common
 share/doc/HTML/et/kinfocenter/devices/index.cache.bz2
@@ -2042,6 +2059,7 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kinfocenter/interrupts
 @dirrm share/doc/HTML/et/kinfocenter/dma
 @dirrm share/doc/HTML/et/kinfocenter/devices
+@dirrm share/doc/HTML/et/kinfocenter/cdinfo
 @dirrm share/doc/HTML/et/kinfocenter/blockdevices
 @dirrm share/doc/HTML/et/kinfocenter
 @dirrm share/doc/HTML/et/kig
@@ -2182,3 +2200,6 @@ share/locale/et/flag.png
 @dirrm share/apps/khangman/data/et
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/kanagram/data/et
+@dirrm share/apps/kanagram/data
+@dirrm share/apps/kanagram

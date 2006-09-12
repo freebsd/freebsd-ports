@@ -433,6 +433,7 @@ share/locale/he/LC_MESSAGES/kwifimanager.mo
 share/locale/he/LC_MESSAGES/kwin.mo
 share/locale/he/LC_MESSAGES/kwin4.mo
 share/locale/he/LC_MESSAGES/kwin_art_clients.mo
+share/locale/he/LC_MESSAGES/kwin_clients.mo
 share/locale/he/LC_MESSAGES/kwin_lib.mo
 share/locale/he/LC_MESSAGES/kwireless.mo
 share/locale/he/LC_MESSAGES/kworldclock.mo

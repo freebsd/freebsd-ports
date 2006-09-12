@@ -20,7 +20,6 @@ share/locale/eo/LC_MESSAGES/imgalleryplugin.mo
 share/locale/eo/LC_MESSAGES/joystick.mo
 share/locale/eo/LC_MESSAGES/kabc_dir.mo
 share/locale/eo/LC_MESSAGES/kabc_file.mo
-share/locale/eo/LC_MESSAGES/kabc_ldap.mo
 share/locale/eo/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/eo/LC_MESSAGES/kabc_net.mo
 share/locale/eo/LC_MESSAGES/kabc_sql.mo

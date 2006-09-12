@@ -42,7 +42,6 @@ share/locale/cy/LC_MESSAGES/juk.mo
 share/locale/cy/LC_MESSAGES/kabc2mutt.mo
 share/locale/cy/LC_MESSAGES/kabc_dir.mo
 share/locale/cy/LC_MESSAGES/kabc_file.mo
-share/locale/cy/LC_MESSAGES/kabc_ldap.mo
 share/locale/cy/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/cy/LC_MESSAGES/kabc_net.mo
 share/locale/cy/LC_MESSAGES/kabc_slox.mo
@@ -333,7 +332,6 @@ share/locale/cy/LC_MESSAGES/kmathapplet.mo
 share/locale/cy/LC_MESSAGES/kmcop.mo
 share/locale/cy/LC_MESSAGES/kmenuapplet.mo
 share/locale/cy/LC_MESSAGES/kmenuedit.mo
-share/locale/cy/LC_MESSAGES/kmessedwords.mo
 share/locale/cy/LC_MESSAGES/kmid.mo
 share/locale/cy/LC_MESSAGES/kmilo_delli8k.mo
 share/locale/cy/LC_MESSAGES/kmilo_generic.mo

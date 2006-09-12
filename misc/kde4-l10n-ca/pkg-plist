@@ -36,9 +36,12 @@ share/doc/HTML/ca/kate-plugins/textfilter.docbook
 share/doc/HTML/ca/kate-plugins/xmlcheck.docbook
 share/doc/HTML/ca/kate-plugins/xmltools.docbook
 share/doc/HTML/ca/kate/advanced.docbook
+share/doc/HTML/ca/kate/common
 share/doc/HTML/ca/kate/configuring.docbook
 share/doc/HTML/ca/kate/fundamentals.docbook
 share/doc/HTML/ca/kate/highlighting.docbook
+share/doc/HTML/ca/kate/index.cache.bz2
+share/doc/HTML/ca/kate/index.docbook
 share/doc/HTML/ca/kate/man-kate.1.docbook
 share/doc/HTML/ca/kate/mdi.docbook
 share/doc/HTML/ca/kate/menus.docbook
@@ -392,6 +395,9 @@ share/doc/HTML/ca/kicker/man-kicker.1.docbook
 share/doc/HTML/ca/kinfocenter/blockdevices/common
 share/doc/HTML/ca/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/ca/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/ca/kinfocenter/cdinfo/common
+share/doc/HTML/ca/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/ca/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/ca/kinfocenter/common
 share/doc/HTML/ca/kinfocenter/devices/common
 share/doc/HTML/ca/kinfocenter/devices/index.cache.bz2
@@ -722,6 +728,9 @@ share/doc/HTML/ca/kteatime/index.docbook
 share/doc/HTML/ca/ktimer/common
 share/doc/HTML/ca/ktimer/index.cache.bz2
 share/doc/HTML/ca/ktimer/index.docbook
+share/doc/HTML/ca/ktnef/common
+share/doc/HTML/ca/ktnef/index.cache.bz2
+share/doc/HTML/ca/ktnef/index.docbook
 share/doc/HTML/ca/ktouch/common
 share/doc/HTML/ca/ktouch/index.cache.bz2
 share/doc/HTML/ca/ktouch/index.docbook
@@ -1375,6 +1384,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kturtle
 @dirrm share/doc/HTML/ca/kttsd
 @dirrm share/doc/HTML/ca/ktouch
+@dirrm share/doc/HTML/ca/ktnef
 @dirrm share/doc/HTML/ca/ktimer
 @dirrm share/doc/HTML/ca/kteatime
 @dirrm share/doc/HTML/ca/ksysv
@@ -1441,6 +1451,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kinfocenter/interrupts
 @dirrm share/doc/HTML/ca/kinfocenter/dma
 @dirrm share/doc/HTML/ca/kinfocenter/devices
+@dirrm share/doc/HTML/ca/kinfocenter/cdinfo
 @dirrm share/doc/HTML/ca/kinfocenter/blockdevices
 @dirrm share/doc/HTML/ca/kinfocenter
 @dirrm share/doc/HTML/ca/kicker-applets

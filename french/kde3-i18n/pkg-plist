@@ -28,6 +28,9 @@ share/apps/kturtle/examples/fr_FR/triangle.logo
 share/doc/HTML/fr/KRegExpEditor/common
 share/doc/HTML/fr/KRegExpEditor/index.cache.bz2
 share/doc/HTML/fr/KRegExpEditor/index.docbook
+share/doc/HTML/fr/akregator/common
+share/doc/HTML/fr/akregator/index.cache.bz2
+share/doc/HTML/fr/akregator/index.docbook
 share/doc/HTML/fr/amor/common
 share/doc/HTML/fr/amor/index.cache.bz2
 share/doc/HTML/fr/amor/index.docbook
@@ -541,8 +544,10 @@ share/doc/HTML/fr/khelpcenter/quickstart/common
 share/doc/HTML/fr/khelpcenter/quickstart/index.cache.bz2
 share/doc/HTML/fr/khelpcenter/quickstart/index.docbook
 share/doc/HTML/fr/khelpcenter/support.docbook
+share/doc/HTML/fr/khelpcenter/userguide/a-window.png
 share/doc/HTML/fr/khelpcenter/userguide/about-desktop.docbook
 share/doc/HTML/fr/khelpcenter/userguide/accessibility.docbook
+share/doc/HTML/fr/khelpcenter/userguide/amarok.png
 share/doc/HTML/fr/khelpcenter/userguide/base-kde-applications.docbook
 share/doc/HTML/fr/khelpcenter/userguide/browser-fine-tuning.docbook
 share/doc/HTML/fr/khelpcenter/userguide/burning-cds.docbook
@@ -565,32 +570,64 @@ share/doc/HTML/fr/khelpcenter/userguide/index.docbook
 share/doc/HTML/fr/khelpcenter/userguide/installation.docbook
 share/doc/HTML/fr/khelpcenter/userguide/internet-shortcuts.docbook
 share/doc/HTML/fr/khelpcenter/userguide/intro.docbook
+share/doc/HTML/fr/khelpcenter/userguide/juk.png
+share/doc/HTML/fr/khelpcenter/userguide/kaboodle.png
+share/doc/HTML/fr/khelpcenter/userguide/kcalc-systray.png
+share/doc/HTML/fr/khelpcenter/userguide/kcontrol.png
 share/doc/HTML/fr/khelpcenter/userguide/kde-as-root.docbook
 share/doc/HTML/fr/khelpcenter/userguide/kde-edutainment.docbook
 share/doc/HTML/fr/khelpcenter/userguide/kde-for-admins.docbook
 share/doc/HTML/fr/khelpcenter/userguide/kde-office.docbook
+share/doc/HTML/fr/khelpcenter/userguide/kmag.png
+share/doc/HTML/fr/khelpcenter/userguide/kmousetool.png
+share/doc/HTML/fr/khelpcenter/userguide/kmouth.png
+share/doc/HTML/fr/khelpcenter/userguide/kmouth2.png
+share/doc/HTML/fr/khelpcenter/userguide/kmouth3.png
+share/doc/HTML/fr/khelpcenter/userguide/knode-identity.png
+share/doc/HTML/fr/khelpcenter/userguide/knode-mail-account.png
+share/doc/HTML/fr/khelpcenter/userguide/knode-news-account.png
+share/doc/HTML/fr/khelpcenter/userguide/knode-start.png
+share/doc/HTML/fr/khelpcenter/userguide/konq-sidebar.png
+share/doc/HTML/fr/khelpcenter/userguide/konq-simple.png
 share/doc/HTML/fr/khelpcenter/userguide/konsole-intro.docbook
+share/doc/HTML/fr/khelpcenter/userguide/kopete.png
+share/doc/HTML/fr/khelpcenter/userguide/kppp-dialer-tab.png
+share/doc/HTML/fr/khelpcenter/userguide/kppp-wizard.png
 share/doc/HTML/fr/khelpcenter/userguide/messaging-intro.docbook
+share/doc/HTML/fr/khelpcenter/userguide/migrator-applications.docbook
 share/doc/HTML/fr/khelpcenter/userguide/migrator-dictionary.docbook
 share/doc/HTML/fr/khelpcenter/userguide/more-help.docbook
 share/doc/HTML/fr/khelpcenter/userguide/net-connection-setup.docbook
 share/doc/HTML/fr/khelpcenter/userguide/networking-with-windows.docbook
+share/doc/HTML/fr/khelpcenter/userguide/noatun.png
 share/doc/HTML/fr/khelpcenter/userguide/notices-trademarks.docbook
+share/doc/HTML/fr/khelpcenter/userguide/oggfolder.png
+share/doc/HTML/fr/khelpcenter/userguide/open-file-dialog.png
 share/doc/HTML/fr/khelpcenter/userguide/panel-and-desktop.docbook
 share/doc/HTML/fr/khelpcenter/userguide/pdf-files.docbook
+share/doc/HTML/fr/khelpcenter/userguide/playing-audiocds.docbook
 share/doc/HTML/fr/khelpcenter/userguide/playing-movies.docbook
+share/doc/HTML/fr/khelpcenter/userguide/playing-music.docbook
 share/doc/HTML/fr/khelpcenter/userguide/printer-setup.docbook
 share/doc/HTML/fr/khelpcenter/userguide/printing-from-apps.docbook
+share/doc/HTML/fr/khelpcenter/userguide/programs-and-documents.docbook
 share/doc/HTML/fr/khelpcenter/userguide/programs-controlling.docbook
 share/doc/HTML/fr/khelpcenter/userguide/removable-disks.docbook
+share/doc/HTML/fr/khelpcenter/userguide/rip.png
+share/doc/HTML/fr/khelpcenter/userguide/ripsettings.png
 share/doc/HTML/fr/khelpcenter/userguide/screen-captures.docbook
+share/doc/HTML/fr/khelpcenter/userguide/services.png
 share/doc/HTML/fr/khelpcenter/userguide/shared-sessions.docbook
 share/doc/HTML/fr/khelpcenter/userguide/shortcuts.docbook
 share/doc/HTML/fr/khelpcenter/userguide/staff.docbook
+share/doc/HTML/fr/khelpcenter/userguide/standard-menu-entries.docbook
+share/doc/HTML/fr/khelpcenter/userguide/switching-sessions.docbook
 share/doc/HTML/fr/khelpcenter/userguide/the-filemanager.docbook
+share/doc/HTML/fr/khelpcenter/userguide/titlebar-menu.png
 share/doc/HTML/fr/khelpcenter/userguide/troubleshooting-network-x.docbook
 share/doc/HTML/fr/khelpcenter/userguide/troubleshooting-no-open.docbook
 share/doc/HTML/fr/khelpcenter/userguide/ug-faq.docbook
+share/doc/HTML/fr/khelpcenter/userguide/under-the-hood.docbook
 share/doc/HTML/fr/khelpcenter/userguide/usenet.docbook
 share/doc/HTML/fr/khelpcenter/userguide/where-next.docbook
 share/doc/HTML/fr/khelpcenter/userguide/windows-how-to.docbook
@@ -633,6 +670,7 @@ share/doc/HTML/fr/kicker/common
 share/doc/HTML/fr/kicker/index.cache.bz2
 share/doc/HTML/fr/kicker/index.docbook
 share/doc/HTML/fr/kicker/k_menu_icon.png
+share/doc/HTML/fr/kicker/man-appletproxy.1.docbook
 share/doc/HTML/fr/kicker/man-kicker.1.docbook
 share/doc/HTML/fr/kicker/screenshot_left.png
 share/doc/HTML/fr/kicker/screenshot_right.png
@@ -1850,7 +1888,6 @@ share/locale/fr/LC_MESSAGES/kmathapplet.mo
 share/locale/fr/LC_MESSAGES/kmcop.mo
 share/locale/fr/LC_MESSAGES/kmenuapplet.mo
 share/locale/fr/LC_MESSAGES/kmenuedit.mo
-share/locale/fr/LC_MESSAGES/kmessedwords.mo
 share/locale/fr/LC_MESSAGES/kmid.mo
 share/locale/fr/LC_MESSAGES/kmilo_delli8k.mo
 share/locale/fr/LC_MESSAGES/kmilo_generic.mo
@@ -2017,7 +2054,6 @@ share/locale/fr/LC_MESSAGES/libdmctl.mo
 share/locale/fr/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/fr/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/fr/LC_MESSAGES/libkcal.mo
-share/locale/fr/LC_MESSAGES/libkcalsystem.mo
 share/locale/fr/LC_MESSAGES/libkcddb.mo
 share/locale/fr/LC_MESSAGES/libkdeedu.mo
 share/locale/fr/LC_MESSAGES/libkdegames.mo
@@ -2343,6 +2379,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/artsbuilder
 @dirrm share/doc/HTML/fr/ark
 @dirrm share/doc/HTML/fr/amor
+@dirrm share/doc/HTML/fr/akregator
 @dirrm share/doc/HTML/fr/KRegExpEditor
 @dirrm share/apps/kturtle/examples/fr_FR
 @dirrm share/apps/kturtle/examples

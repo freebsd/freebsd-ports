@@ -571,6 +571,7 @@ share/apps/kgeography/flags/lebanon.png
 share/apps/kgeography/flags/lesotho.png
 share/apps/kgeography/flags/liberia.png
 share/apps/kgeography/flags/libya.png
+share/apps/kgeography/flags/liechtenstein.png
 share/apps/kgeography/flags/lithuania.png
 share/apps/kgeography/flags/lower_saxony.png
 share/apps/kgeography/flags/luxembourg.png
@@ -1059,6 +1060,7 @@ share/apps/klatin/klatinui.rc
 share/apps/klettres/cs.txt
 share/apps/klettres/da.txt
 share/apps/klettres/data/sounds.xml
+share/apps/klettres/de.txt
 share/apps/klettres/en/alpha/A.ogg
 share/apps/klettres/en/alpha/B.ogg
 share/apps/klettres/en/alpha/C.ogg

@@ -33,7 +33,6 @@ share/locale/az/LC_MESSAGES/juk.mo
 share/locale/az/LC_MESSAGES/kabc2mutt.mo
 share/locale/az/LC_MESSAGES/kabc_dir.mo
 share/locale/az/LC_MESSAGES/kabc_file.mo
-share/locale/az/LC_MESSAGES/kabc_ldap.mo
 share/locale/az/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/az/LC_MESSAGES/kabc_net.mo
 share/locale/az/LC_MESSAGES/kabc_sql.mo
@@ -264,7 +263,6 @@ share/locale/az/LC_MESSAGES/kmailcvt.mo
 share/locale/az/LC_MESSAGES/kmcop.mo
 share/locale/az/LC_MESSAGES/kmenuapplet.mo
 share/locale/az/LC_MESSAGES/kmenuedit.mo
-share/locale/az/LC_MESSAGES/kmessedwords.mo
 share/locale/az/LC_MESSAGES/kmid.mo
 share/locale/az/LC_MESSAGES/kmines.mo
 share/locale/az/LC_MESSAGES/kminipagerapplet.mo
@@ -384,7 +382,6 @@ share/locale/az/LC_MESSAGES/kxkb.mo
 share/locale/az/LC_MESSAGES/kxsconfig.mo
 share/locale/az/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/az/LC_MESSAGES/libkcal.mo
-share/locale/az/LC_MESSAGES/libkcalsystem.mo
 share/locale/az/LC_MESSAGES/libkcddb.mo
 share/locale/az/LC_MESSAGES/libkdegames.mo
 share/locale/az/LC_MESSAGES/libkdepim.mo

@@ -258,7 +258,6 @@ share/locale/hr/LC_MESSAGES/kmailcvt.mo
 share/locale/hr/LC_MESSAGES/kmcop.mo
 share/locale/hr/LC_MESSAGES/kmenuapplet.mo
 share/locale/hr/LC_MESSAGES/kmenuedit.mo
-share/locale/hr/LC_MESSAGES/kmessedwords.mo
 share/locale/hr/LC_MESSAGES/kmid.mo
 share/locale/hr/LC_MESSAGES/kmines.mo
 share/locale/hr/LC_MESSAGES/kminipagerapplet.mo
@@ -365,7 +364,6 @@ share/locale/hr/LC_MESSAGES/kwriteconfig.mo
 share/locale/hr/LC_MESSAGES/kxkb.mo
 share/locale/hr/LC_MESSAGES/kxsconfig.mo
 share/locale/hr/LC_MESSAGES/libkcal.mo
-share/locale/hr/LC_MESSAGES/libkcalsystem.mo
 share/locale/hr/LC_MESSAGES/libkdegames.mo
 share/locale/hr/LC_MESSAGES/libkdepim.mo
 share/locale/hr/LC_MESSAGES/libkicker.mo

@@ -878,6 +878,7 @@ share/applications/kde/arts.desktop
 share/applications/kde/background.desktop
 share/applications/kde/bell.desktop
 share/applications/kde/cache.desktop
+share/applications/kde/cdinfo.desktop
 share/applications/kde/clock.desktop
 share/applications/kde/colors.desktop
 share/applications/kde/componentchooser.desktop
@@ -1288,6 +1289,7 @@ share/apps/kconf_update/kcmdisplayrc.upd
 share/apps/kconf_update/kfmclient_3_2.upd
 share/apps/kconf_update/kfmclient_3_2_update.sh
 share/apps/kconf_update/khotkeys_32b1_update.upd
+share/apps/kconf_update/khotkeys_printscreen.upd
 share/apps/kconf_update/kicker-3.1-properSizeSetting.pl
 share/apps/kconf_update/kicker-3.5-kconfigXTize.pl
 share/apps/kconf_update/kicker-3.5-taskbarEnums.pl
@@ -1590,6 +1592,7 @@ share/apps/khelpcenter/searchhandlers/man.desktop
 share/apps/khelpcenter/table-of-contents.xslt
 share/apps/khotkeys/kde32b1.khotkeys
 share/apps/khotkeys/konqueror_gestures_kde321.khotkeys
+share/apps/khotkeys/printscreen.khotkeys
 share/apps/khtml/kpartplugins/khtmlkttsd.desktop
 share/apps/khtml/kpartplugins/khtmlkttsd.rc
 share/apps/kicker/applets/clockapplet.desktop
@@ -2526,6 +2529,9 @@ share/doc/HTML/en/kicker/screenshot_right.png
 share/doc/HTML/en/kicker/taskbar_group.png
 share/doc/HTML/en/kicker/terminals_icon.png
 share/doc/HTML/en/kicker/windowlist_icon.png
+share/doc/HTML/en/kinfocenter/cdinfo/common
+share/doc/HTML/en/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/en/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/en/kinfocenter/common
 share/doc/HTML/en/kinfocenter/devices/common
 share/doc/HTML/en/kinfocenter/devices/index.cache.bz2
@@ -4218,7 +4224,8 @@ share/services/tar.protocol
 share/services/textthumbnail.desktop
 share/services/thumbnail.protocol
 share/services/trash.protocol
-share/services/useragentstrings/firefoxoncurrent.desktop
+share/services/useragentstrings/firefox10oncurrent.desktop
+share/services/useragentstrings/firefox15oncurrent.desktop
 share/services/useragentstrings/googlebot.desktop
 share/services/useragentstrings/ie401onwinnt4.desktop
 share/services/useragentstrings/ie45onwinnt5.desktop
@@ -4242,7 +4249,8 @@ share/services/useragentstrings/ns71oncurrent.desktop
 share/services/useragentstrings/ns71onwinnt51.desktop
 share/services/useragentstrings/op403onwinnt4.desktop
 share/services/useragentstrings/op75oncurrent.desktop
-share/services/useragentstrings/safari.desktop
+share/services/useragentstrings/safari12.desktop
+share/services/useragentstrings/safari20.desktop
 share/services/useragentstrings/w3moncurrent.desktop
 share/services/useragentstrings/wgetoncurrent.desktop
 share/services/zip.protocol
@@ -4720,6 +4728,7 @@ share/wallpapers/triplegears.jpg.desktop
 @dirrm share/doc/HTML/en/kinfocenter/interrupts
 @dirrm share/doc/HTML/en/kinfocenter/dma
 @dirrm share/doc/HTML/en/kinfocenter/devices
+@dirrm share/doc/HTML/en/kinfocenter/cdinfo
 @dirrm share/doc/HTML/en/kinfocenter
 @dirrm share/doc/HTML/en/kicker
 @dirrm share/doc/HTML/en/khelpcenter/visualdict

@@ -35,6 +35,8 @@ share/locale/sk/LC_MESSAGES/example.mo
 share/locale/sk/LC_MESSAGES/karbon.mo
 share/locale/sk/LC_MESSAGES/kchart.mo
 share/locale/sk/LC_MESSAGES/kexi.mo
+share/locale/sk/LC_MESSAGES/kfile_abiword.mo
+share/locale/sk/LC_MESSAGES/kfile_gnumeric.mo
 share/locale/sk/LC_MESSAGES/kfile_koffice.mo
 share/locale/sk/LC_MESSAGES/kfile_ooo.mo
 share/locale/sk/LC_MESSAGES/kformdesigner.mo
@@ -42,13 +44,17 @@ share/locale/sk/LC_MESSAGES/kformula.mo
 share/locale/sk/LC_MESSAGES/kivio.mo
 share/locale/sk/LC_MESSAGES/koconverter.mo
 share/locale/sk/LC_MESSAGES/koffice.mo
+share/locale/sk/LC_MESSAGES/koproperty.mo
 share/locale/sk/LC_MESSAGES/koshell.mo
 share/locale/sk/LC_MESSAGES/kounavail.mo
+share/locale/sk/LC_MESSAGES/kplato.mo
 share/locale/sk/LC_MESSAGES/kpresenter.mo
 share/locale/sk/LC_MESSAGES/krita.mo
 share/locale/sk/LC_MESSAGES/kscan_plugin.mo
+share/locale/sk/LC_MESSAGES/kscreenshot_plugin.mo
 share/locale/sk/LC_MESSAGES/kspread.mo
 share/locale/sk/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/sk/LC_MESSAGES/kspreadinsertcalendar.mo
 share/locale/sk/LC_MESSAGES/kthesaurus.mo
 share/locale/sk/LC_MESSAGES/kugar.mo
 share/locale/sk/LC_MESSAGES/kword.mo

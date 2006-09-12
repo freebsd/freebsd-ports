@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	nb-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Norwegian Bokmal messages and documentation for koffice
+COMMENT=	Norwegian Bokmål messages and documentation for koffice
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

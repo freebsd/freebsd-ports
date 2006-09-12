@@ -195,7 +195,6 @@ share/locale/ro/LC_MESSAGES/juk.mo
 share/locale/ro/LC_MESSAGES/kabc2mutt.mo
 share/locale/ro/LC_MESSAGES/kabc_dir.mo
 share/locale/ro/LC_MESSAGES/kabc_file.mo
-share/locale/ro/LC_MESSAGES/kabc_ldap.mo
 share/locale/ro/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/ro/LC_MESSAGES/kabc_net.mo
 share/locale/ro/LC_MESSAGES/kabc_sql.mo
@@ -413,6 +412,7 @@ share/locale/ro/LC_MESSAGES/kio_finger.mo
 share/locale/ro/LC_MESSAGES/kio_fish.mo
 share/locale/ro/LC_MESSAGES/kio_floppy.mo
 share/locale/ro/LC_MESSAGES/kio_help.mo
+share/locale/ro/LC_MESSAGES/kio_home.mo
 share/locale/ro/LC_MESSAGES/kio_imap4.mo
 share/locale/ro/LC_MESSAGES/kio_lan.mo
 share/locale/ro/LC_MESSAGES/kio_ldap.mo
@@ -452,7 +452,6 @@ share/locale/ro/LC_MESSAGES/kmathapplet.mo
 share/locale/ro/LC_MESSAGES/kmcop.mo
 share/locale/ro/LC_MESSAGES/kmenuapplet.mo
 share/locale/ro/LC_MESSAGES/kmenuedit.mo
-share/locale/ro/LC_MESSAGES/kmessedwords.mo
 share/locale/ro/LC_MESSAGES/kmid.mo
 share/locale/ro/LC_MESSAGES/kmilo_generic.mo
 share/locale/ro/LC_MESSAGES/kmilo_kvaio.mo
@@ -586,9 +585,9 @@ share/locale/ro/LC_MESSAGES/kwriteconfig.mo
 share/locale/ro/LC_MESSAGES/kxkb.mo
 share/locale/ro/LC_MESSAGES/kxsconfig.mo
 share/locale/ro/LC_MESSAGES/kxsldbg.mo
+share/locale/ro/LC_MESSAGES/libdmctl.mo
 share/locale/ro/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/ro/LC_MESSAGES/libkcal.mo
-share/locale/ro/LC_MESSAGES/libkcalsystem.mo
 share/locale/ro/LC_MESSAGES/libkcddb.mo
 share/locale/ro/LC_MESSAGES/libkdegames.mo
 share/locale/ro/LC_MESSAGES/libkdepim.mo
@@ -597,6 +596,8 @@ share/locale/ro/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/ro/LC_MESSAGES/libkickermenu_remotemenu.mo
+share/locale/ro/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/ro/LC_MESSAGES/libkickermenu_tom.mo
 share/locale/ro/LC_MESSAGES/libkleopatra.mo
 share/locale/ro/LC_MESSAGES/libkonq.mo
@@ -631,6 +632,7 @@ share/locale/ro/LC_MESSAGES/spy.mo
 share/locale/ro/LC_MESSAGES/synaescope.mo
 share/locale/ro/LC_MESSAGES/timezones.mo
 share/locale/ro/LC_MESSAGES/tippecanoe.mo
+share/locale/ro/LC_MESSAGES/trashapplet.mo
 share/locale/ro/LC_MESSAGES/tyler.mo
 share/locale/ro/LC_MESSAGES/uachangerplugin.mo
 share/locale/ro/LC_MESSAGES/umbrello.mo

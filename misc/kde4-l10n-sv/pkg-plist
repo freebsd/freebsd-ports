@@ -971,6 +971,9 @@ share/doc/HTML/sv/kig/text_label_wizard__select_property.png
 share/doc/HTML/sv/kinfocenter/blockdevices/common
 share/doc/HTML/sv/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/sv/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/sv/kinfocenter/cdinfo/common
+share/doc/HTML/sv/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/sv/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/sv/kinfocenter/common
 share/doc/HTML/sv/kinfocenter/devices/common
 share/doc/HTML/sv/kinfocenter/devices/index.cache.bz2
@@ -2890,6 +2893,7 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kinfocenter/interrupts
 @dirrm share/doc/HTML/sv/kinfocenter/dma
 @dirrm share/doc/HTML/sv/kinfocenter/devices
+@dirrm share/doc/HTML/sv/kinfocenter/cdinfo
 @dirrm share/doc/HTML/sv/kinfocenter/blockdevices
 @dirrm share/doc/HTML/sv/kinfocenter
 @dirrm share/doc/HTML/sv/kig

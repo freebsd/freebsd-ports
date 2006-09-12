@@ -14,6 +14,9 @@ share/doc/HTML/uk/kioslave/bzip2.docbook
 share/doc/HTML/uk/kioslave/file.docbook
 share/doc/HTML/uk/kioslave/finger.docbook
 share/doc/HTML/uk/kioslave/floppy.docbook
+share/doc/HTML/uk/kioslave/imaps.docbook
+share/doc/HTML/uk/kioslave/smb.docbook
+share/doc/HTML/uk/kioslave/tar.docbook
 share/doc/HTML/uk/knotes/common
 share/doc/HTML/uk/knotes/index.cache.bz2
 share/doc/HTML/uk/knotes/index.docbook
@@ -202,8 +205,6 @@ share/locale/uk/LC_MESSAGES/kdessh.mo
 share/locale/uk/LC_MESSAGES/kdesu.mo
 share/locale/uk/LC_MESSAGES/kdesud.mo
 share/locale/uk/LC_MESSAGES/kdevdesigner.mo
-share/locale/uk/LC_MESSAGES/kdevelop.mo
-share/locale/uk/LC_MESSAGES/kdevtipofday.mo
 share/locale/uk/LC_MESSAGES/kdf.mo
 share/locale/uk/LC_MESSAGES/kdgantt.mo
 share/locale/uk/LC_MESSAGES/kdialog.mo
@@ -277,7 +278,6 @@ share/locale/uk/LC_MESSAGES/kfontinst.mo
 share/locale/uk/LC_MESSAGES/kfouleggs.mo
 share/locale/uk/LC_MESSAGES/kgamma.mo
 share/locale/uk/LC_MESSAGES/kgantt.mo
-share/locale/uk/LC_MESSAGES/kgeography.mo
 share/locale/uk/LC_MESSAGES/kget.mo
 share/locale/uk/LC_MESSAGES/kghostview.mo
 share/locale/uk/LC_MESSAGES/kgpg.mo
@@ -291,7 +291,6 @@ share/locale/uk/LC_MESSAGES/khtmlkttsd.mo
 share/locale/uk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/uk/LC_MESSAGES/kicker.mo
 share/locale/uk/LC_MESSAGES/kiconedit.mo
-share/locale/uk/LC_MESSAGES/kig.mo
 share/locale/uk/LC_MESSAGES/kimagemapeditor.mo
 share/locale/uk/LC_MESSAGES/kinetd.mo
 share/locale/uk/LC_MESSAGES/kio.mo
@@ -362,7 +361,6 @@ share/locale/uk/LC_MESSAGES/kmobile.mo
 share/locale/uk/LC_MESSAGES/kmoon.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmouth.mo
-share/locale/uk/LC_MESSAGES/kmplot.mo
 share/locale/uk/LC_MESSAGES/kmrml.mo
 share/locale/uk/LC_MESSAGES/knetattach.mo
 share/locale/uk/LC_MESSAGES/knetwalk.mo
@@ -447,7 +445,6 @@ share/locale/uk/LC_MESSAGES/ksokoban.mo
 share/locale/uk/LC_MESSAGES/kspaceduel.mo
 share/locale/uk/LC_MESSAGES/ksplash.mo
 share/locale/uk/LC_MESSAGES/ksplashthemes.mo
-share/locale/uk/LC_MESSAGES/kstars.mo
 share/locale/uk/LC_MESSAGES/kstart.mo
 share/locale/uk/LC_MESSAGES/kstartperf.mo
 share/locale/uk/LC_MESSAGES/kstyle_highcontrast_config.mo
