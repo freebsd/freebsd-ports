@@ -31,6 +31,12 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile on 4.x
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning! This is the first playable version of FWP using the new libraries."
@@ -45,4 +51,4 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O$$enable_optimize||' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
