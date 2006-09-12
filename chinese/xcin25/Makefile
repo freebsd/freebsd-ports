@@ -11,7 +11,8 @@ PORTREVISION=	6
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.linux.org.tw/pub/xcin/xcin/ \
 		ftp://ftp.linux.org.tw/pub/xcin/xcin/devel/ \
-		http://chewing.good-man.org/snapshot/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	rafan
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 
