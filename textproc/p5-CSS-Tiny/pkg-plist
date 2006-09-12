@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/CSS/Tiny.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Tiny/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Tiny
