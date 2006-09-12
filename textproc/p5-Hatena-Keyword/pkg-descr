@@ -1,0 +1,16 @@
+This module allows you to extract Hatena keywords used in an
+arbitrary text and also allows you to mark up a text as HTML
+with the keywords.
+
+A Hatena keyword is an element in a suite of web sites
+*.hatena.ne.jp having blogs and social bookmarks among others.
+Please refer to http://d.hatena.ne.jp/keyword/ (in Japanese) for details.
+
+In Hatena Diary, a blog hosting service, a Hatena keyword found in
+a posting is linked to the keywords page automatically.
+You can implement the same kind of feature outside Hatena using this module.
+
+It queries Hatena Keyword Link API internally for retrieving terms
+
+Author:	Naoya Ito <naoya@bloghackers.net>
+WWW:	http://search.cpan.org/~naoya/Hatena-Keyword-0.04/
