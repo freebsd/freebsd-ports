@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.16.0
+PORTVERSION=	0.18.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -19,25 +19,29 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
 EXAMPLES=	example.xml serializeAndEncode.php serializeAndReturn.php \
-		serializeArrayWithObjects.php serializeEmptyArray.php \
-		serializeIndexedArray.php serializeNullProperties.php \
-		serializeObject.php serializeRDF.php serializeWithAttributes.php \
-		serializeWithAttributes2.php serializeWithComment.php \
-		serializeWithDtd.php serializeWithIndentedAttributes.php \
-		serializeWithNamespace.php serializeWithTagMap.php \
-		unserializeAnyXML.php unserializeClassNames.php \
-		unserializeEncoded.php unserializeEnum.php unserializeObject.php \
-		unserializeRDF.php unserializeWithAttributes.php \
-		unserializeWithTagMap.php
+		serializeArrayWithObjects.php serializeCData.php \
+		serializeEmptyArray.php serializeIndexedArray.php \
+		serializeIndexedArrayWithContext.php serializeNullProperties.php \
+		serializeObject.php serializeRDF.php serializeSelectiveAttributes.php \
+		serializeWithAttributes.php serializeWithAttributes2.php \
+		serializeWithComment.php serializeWithDtd.php \
+		serializeWithIndentedAttributes.php serializeWithNamespace.php \
+		serializeWithTagMap.php unserializeAnyXML.php \
+		unserializeClassNames.php unserializeEncoded.php \
+		unserializeEnum.php unserializeObject.php unserializeRDF.php \
+		unserializeWhitespace.php unserializeWithAttributes.php \
+		unserializeWithTagMap.php unserializeWithTypeGuessing.php
 DOCS=		todo.txt
 _DOCSDIR=	doc
 
 post-extract:
 .for file in ${FILES}
 	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endfor
 .for file in ${EXAMPLES}
 	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/examples/${file}
+	@${FIND} ${WRKSRC}/examples -name "*.bak" -delete
 .endfor
 
 .include <bsd.port.pre.mk>
