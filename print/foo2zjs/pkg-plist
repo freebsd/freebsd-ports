@@ -7,7 +7,6 @@ bin/foo2zjs-icc2ps
 bin/foo2zjs-wrapper
 bin/getweb
 bin/msexpand
-bin/okidecode
 bin/zjsdecode
 share/cups/model/Generic-OAKT_Printer.ppd.gz
 share/cups/model/Generic-ZjStream_Printer.ppd.gz
