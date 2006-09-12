@@ -1,24 +1,26 @@
 bin/tp_tagger
 bin/trm
-include/tunepimp/context.h
-include/tunepimp/decode_plugin.h
-include/tunepimp/defs.h
-include/tunepimp/fileio.h
-include/tunepimp/metadata_plugin.h
-include/tunepimp/tp_c.h
-include/tunepimp/track.h
-include/tunepimp/tunepimp.h
-lib/libtunepimp.a
-lib/libtunepimp.la
-lib/libtunepimp.so
-lib/libtunepimp.so.3
-lib/tunepimp/plugins/flac.tpp
-lib/tunepimp/plugins/mp3.tpp
-lib/tunepimp/plugins/mp4.tpp
-lib/tunepimp/plugins/mpc.tpp
-lib/tunepimp/plugins/vorbis.tpp
-lib/tunepimp/plugins/wav.tpp
-lib/tunepimp/plugins/wma.tpp
-@dirrm lib/tunepimp/plugins
-@dirrm lib/tunepimp
-@dirrm include/tunepimp
+include/tunepimp-0.4/tunepimp/context.h
+include/tunepimp-0.4/tunepimp/decode_plugin.h
+include/tunepimp-0.4/tunepimp/defs.h
+include/tunepimp-0.4/tunepimp/fileio.h
+include/tunepimp-0.4/tunepimp/metadata_plugin.h
+include/tunepimp-0.4/tunepimp/tp_c.h
+include/tunepimp-0.4/tunepimp/track.h
+include/tunepimp-0.4/tunepimp/tunepimp.h
+lib/tunepimp-0.4/libtunepimp-0.4.a
+lib/tunepimp-0.4/libtunepimp-0.4.la
+lib/tunepimp-0.4/libtunepimp-0.4.so
+lib/tunepimp-0.4/libtunepimp-0.4.so.3
+lib/tunepimp-0.4/tunepimp/plugins/flac.tpp
+lib/tunepimp-0.4/tunepimp/plugins/mp3.tpp
+lib/tunepimp-0.4/tunepimp/plugins/mp4.tpp
+lib/tunepimp-0.4/tunepimp/plugins/mpc.tpp
+lib/tunepimp-0.4/tunepimp/plugins/vorbis.tpp
+lib/tunepimp-0.4/tunepimp/plugins/wav.tpp
+lib/tunepimp-0.4/tunepimp/plugins/wma.tpp
+@dirrm lib/tunepimp-0.4/tunepimp/plugins
+@dirrm lib/tunepimp-0.4/tunepimp
+@dirrm lib/tunepimp-0.4
+@dirrm include/tunepimp-0.4/tunepimp
+@dirrm include/tunepimp-0.4

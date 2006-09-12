@@ -7,7 +7,6 @@
 
 PORTNAME=	juk
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -21,7 +20,7 @@ COMMENT=	KDE audio player
 LIB_DEPENDS=	akode:${PORTSDIR}/audio/akode \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		tag:${PORTSDIR}/audio/taglib \
-		tunepimp.3:${PORTSDIR}/audio/libtunepimp-old
+		tunepimp-0.4.3:${PORTSDIR}/audio/libtunepimp-old
 
 CONFLICTS=	kdemultimedia-3.3*
 
@@ -35,6 +34,8 @@ USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdemultimedia-${PORTVERSION}
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS+=CFLAGS=-I${LOCALBASE}/include/tunepimp-0.4 \
+		LDFLAGS=-L${LOCALBASE}/lib/tunepimp-0.4
 
 .include <bsd.port.pre.mk>
 
@@ -63,6 +64,9 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ltunepimp|-ltunepimp-0.4|g' \
+			-e 's|<tunepimp/tp_c.h>|<tunepimp-0.4/tunepimp/tp_c.h>|g' \
+		${WRKSRC}/configure ${WRKSRC}/juk/ktrm.cpp ${WRKSRC}/juk/Makefile.in
 
 do-build:
 	cd ${WRKSRC}/arts/runtime && ${SETENV} ${MAKE_ENV} ${GMAKE}
