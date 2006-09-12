@@ -35,8 +35,13 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
 		`${SDL_CONFIG} --cflags`
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
+.include <bsd.port.pre.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e '/stdint.h/d' ${WRKSRC}/lib/ivis_opengl/screen.c
+.if ${OSVERSION} < 5000000
+	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
+		${WRKSRC}/lib/framework/types.h
+.endif
 	@${REINPLACE_CMD} -e \
 		's|-m32||; \
 		 s|/usr/local|${LOCALBASE}|; \
@@ -53,4 +58,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
