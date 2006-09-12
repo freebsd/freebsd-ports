@@ -1,0 +1,15 @@
+WebInject is a free tool for automated testing of web applications and web
+services. It can be used to test individual system components that have HTTP
+interfaces (JSP, ASP, CGI, PHP, Servlets, HTML Forms, XML/SOAP Web Services,
+etc), and can be used as a test harness to create a suite of [HTTP level]
+automated functional, acceptance, and regression tests. A test harness, also
+referred to as a test driver or a test framework, allows you to run many
+test cases and collect/report your results. WebInject offers real-time
+results display and may also be used for monitoring system response times.
+
+WebInject can be used as a complete test framework that is controlled by the
+WebInject User Interface (GUI). Optionally, it can be used as a standalone
+test runner (text/console application) which can be integrated and called
+from other test frameworks or applications.
+
+WWW: http://www.webinject.org/

@@ -1046,6 +1046,7 @@
     SUBDIR += webcrawl
     SUBDIR += webfs
     SUBDIR += webglimpse
+    SUBDIR += webinject
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webredirect
