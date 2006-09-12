@@ -36,6 +36,10 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CXXFLAGS+=	-ftemplate-depth-30
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<SDL/SDL|<SDL|g' \
 		${WRKSRC}/Source_Files/Misc/thread_priority_sdl_posix.cpp
