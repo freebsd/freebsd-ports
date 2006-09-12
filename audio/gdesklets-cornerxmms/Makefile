@@ -16,6 +16,9 @@ DISTNAME=	CornerXMMS-${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	A fancy desklet that allows you to control XMMS from the desktop
 
+DEPRECATED=		dead project and not fetchable any more
+EXPIRATION_DATE=	2006-10-12
+
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/xmms/__init__.py:${PORTSDIR}/audio/py-xmms
 
