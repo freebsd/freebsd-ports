@@ -928,7 +928,6 @@ share/apps/kview/kpartplugins/kviewscanner.desktop
 share/apps/kview/kpartplugins/kviewscanner.rc
 share/apps/kview/kview.setdlg
 share/apps/kview/kviewui.rc
-share/apps/kview/photobookui.rc
 share/apps/kviewerpart/icons/hicolor/16x16/actions/movetool.png
 share/apps/kviewerpart/icons/hicolor/16x16/actions/selectiontool.png
 share/apps/kviewerpart/icons/hicolor/22x22/actions/movetool.png
@@ -942,6 +941,7 @@ share/apps/kviewviewer/kpartplugins/kviewbrowser.rc
 share/apps/kviewviewer/kviewpopup.rc
 share/apps/kviewviewer/kviewviewer.rc
 share/apps/kviewviewer/kviewviewer_ro.rc
+share/apps/photobook/photobookui.rc
 share/config.kcfg/djvumultipage.kcfg
 share/config.kcfg/kdvi.kcfg
 share/config.kcfg/kghostview.kcfg
@@ -1205,18 +1205,13 @@ share/servicetypes/kimageviewer.desktop
 share/servicetypes/kimageviewercanvas.desktop
 share/servicetypes/kmultipage.desktop
 share/servicetypes/ksvgrenderer.desktop
-@exec /bin/mkdir -p %D/share/doc/HTML/en/libtext2path-0.1-apidocs/kviewshell/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/libtext2path-0.1-apidocs/kviewshell/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/libtext2path-0.1-apidocs/kfaxview/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/libtext2path-0.1-apidocs/kfaxview/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/libtext2path-0.1-apidocs/kviewshell/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/libtext2path-0.1-apidocs/kfaxview/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegraphics-apidocs/kviewshell/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegraphics-apidocs/kviewshell/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegraphics-apidocs/kfaxview/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegraphics-apidocs/kfaxview/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegraphics-apidocs/kviewshell/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdegraphics-apidocs/kfaxview/html
 @dirrm share/services/kconfiguredialog
-@dirrm share/doc/HTML/en/libtext2path-0.1-apidocs/kviewshell/html
-@dirrm share/doc/HTML/en/libtext2path-0.1-apidocs/kviewshell
-@dirrm share/doc/HTML/en/libtext2path-0.1-apidocs/kfaxview/html
-@dirrm share/doc/HTML/en/libtext2path-0.1-apidocs/kfaxview
-@dirrm share/doc/HTML/en/libtext2path-0.1-apidocs
 @dirrm share/doc/HTML/en/kview
 @dirrm share/doc/HTML/en/ksnapshot
 @dirrm share/doc/HTML/en/kruler
@@ -1227,7 +1222,13 @@ share/servicetypes/ksvgrenderer.desktop
 @dirrm share/doc/HTML/en/kghostview
 @dirrm share/doc/HTML/en/kgamma
 @dirrm share/doc/HTML/en/kdvi
+@dirrm share/doc/HTML/en/kdegraphics-apidocs/kviewshell/html
+@dirrm share/doc/HTML/en/kdegraphics-apidocs/kviewshell
+@dirrm share/doc/HTML/en/kdegraphics-apidocs/kfaxview/html
+@dirrm share/doc/HTML/en/kdegraphics-apidocs/kfaxview
+@dirrm share/doc/HTML/en/kdegraphics-apidocs
 @dirrm share/doc/HTML/en/kcoloredit
+@dirrm share/apps/photobook
 @dirrm share/apps/kviewviewer/kpartplugins
 @dirrm share/apps/kviewviewer
 @dirrm share/apps/kviewshell

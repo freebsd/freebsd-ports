@@ -1,6 +1,7 @@
 share/locale/se/ChangeLog
 share/locale/se/LC_MESSAGES/akregator.mo
 share/locale/se/LC_MESSAGES/appletproxy.mo
+share/locale/se/LC_MESSAGES/atlantik.mo
 share/locale/se/LC_MESSAGES/clockapplet.mo
 share/locale/se/LC_MESSAGES/cupsdconf.mo
 share/locale/se/LC_MESSAGES/display.mo
@@ -29,6 +30,7 @@ share/locale/se/LC_MESSAGES/kasbarextension.mo
 share/locale/se/LC_MESSAGES/kate.mo
 share/locale/se/LC_MESSAGES/katepart.mo
 share/locale/se/LC_MESSAGES/kbabel.mo
+share/locale/se/LC_MESSAGES/kbounce.mo
 share/locale/se/LC_MESSAGES/kcm_kviewcanvasconfig.mo
 share/locale/se/LC_MESSAGES/kcm_kviewgeneralconfig.mo
 share/locale/se/LC_MESSAGES/kcm_kviewpluginsconfig.mo
@@ -201,6 +203,7 @@ share/locale/se/LC_MESSAGES/korganizer.mo
 share/locale/se/LC_MESSAGES/korn.mo
 share/locale/se/LC_MESSAGES/kpackage.mo
 share/locale/se/LC_MESSAGES/kpager.mo
+share/locale/se/LC_MESSAGES/kpat.mo
 share/locale/se/LC_MESSAGES/kpdf.mo
 share/locale/se/LC_MESSAGES/kpersonalizer.mo
 share/locale/se/LC_MESSAGES/kpilot.mo
@@ -217,8 +220,10 @@ share/locale/se/LC_MESSAGES/kres_remote.mo
 share/locale/se/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/se/LC_MESSAGES/kruler.mo
 share/locale/se/LC_MESSAGES/krunapplet.mo
+share/locale/se/LC_MESSAGES/ksame.mo
 share/locale/se/LC_MESSAGES/kscreensaver.mo
 share/locale/se/LC_MESSAGES/ksirc.mo
+share/locale/se/LC_MESSAGES/ksirtet.mo
 share/locale/se/LC_MESSAGES/ksmserver.mo
 share/locale/se/LC_MESSAGES/ksnapshot.mo
 share/locale/se/LC_MESSAGES/ksplash.mo
@@ -258,8 +263,8 @@ share/locale/se/LC_MESSAGES/kwireless.mo
 share/locale/se/LC_MESSAGES/kwriteconfig.mo
 share/locale/se/LC_MESSAGES/kxkb.mo
 share/locale/se/LC_MESSAGES/libkcal.mo
-share/locale/se/LC_MESSAGES/libkcalsystem.mo
 share/locale/se/LC_MESSAGES/libkcddb.mo
+share/locale/se/LC_MESSAGES/libkdegames.mo
 share/locale/se/LC_MESSAGES/libkdepim.mo
 share/locale/se/LC_MESSAGES/libkicker.mo
 share/locale/se/LC_MESSAGES/libkickermenu_kdeprint.mo
@@ -273,6 +278,7 @@ share/locale/se/LC_MESSAGES/libkleopatra.mo
 share/locale/se/LC_MESSAGES/libkonq.mo
 share/locale/se/LC_MESSAGES/libkscan.mo
 share/locale/se/LC_MESSAGES/libkscreensaver.mo
+share/locale/se/LC_MESSAGES/libksirtet.mo
 share/locale/se/LC_MESSAGES/libtaskbar.mo
 share/locale/se/LC_MESSAGES/libtaskmanager.mo
 share/locale/se/LC_MESSAGES/lockout.mo

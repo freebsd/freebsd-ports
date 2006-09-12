@@ -1,8 +1,6 @@
-bin/exif.py
 bin/fsview
 bin/jpegorient
 bin/kio_media_realfolder
-bin/orient.py
 lib/kde3/kcm_kuick.a
 lib/kde3/kcm_kuick.la
 lib/kde3/kcm_kuick.so
@@ -78,7 +76,7 @@ lib/kde3/libwebarchiverplugin.so
 lib/kde3/webarchivethumbnail.a
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applications/kdeaddons-konq-plugins-3.5.3
+share/applications/kdeaddons-konq-plugins-3.5.4
 share/applnk/.hidden/arkplugin.desktop
 share/applnk/.hidden/kcmkuick.desktop
 share/applnk/.hidden/kuickplugin.desktop
@@ -86,6 +84,8 @@ share/applnk/.hidden/mediaplayerplugin.desktop
 share/apps/akregator/pics/rss.png
 share/apps/domtreeviewer/domtreeviewerui.rc
 share/apps/fsview/fsview_part.rc
+share/apps/imagerotation/exif.py
+share/apps/imagerotation/orient.py
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.desktop
 share/apps/khtml/kpartplugins/akregator_konqfeedicon.rc
 share/apps/khtml/kpartplugins/autorefresh.desktop
@@ -240,6 +240,7 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/apps/metabar/themes
 @dirrm share/apps/metabar
 @dirrm share/apps/konqueror/kpartplugins
+@dirrm share/apps/imagerotation
 @dirrm share/apps/fsview
 @dirrm share/apps/domtreeviewer
 @dirrm share/apps/akregator/pics

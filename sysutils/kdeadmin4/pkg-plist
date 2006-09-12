@@ -11,7 +11,6 @@ lib/kde3/kfile_deb.so
 lib/kde3/kfile_rpm.a
 lib/kde3/kfile_rpm.la
 lib/kde3/kfile_rpm.so
-libdata/pkgconfig/system-tools-backends.pc
 share/applications/kde/kcm_knetworkconfmodule.desktop
 share/applications/kde/kcron.desktop
 share/applications/kde/kpackage.desktop

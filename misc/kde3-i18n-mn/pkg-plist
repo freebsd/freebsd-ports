@@ -11,7 +11,6 @@ share/locale/mn/LC_MESSAGES/filetypes.mo
 share/locale/mn/LC_MESSAGES/htmlsearch.mo
 share/locale/mn/LC_MESSAGES/kabc_dir.mo
 share/locale/mn/LC_MESSAGES/kabc_file.mo
-share/locale/mn/LC_MESSAGES/kabc_ldap.mo
 share/locale/mn/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/mn/LC_MESSAGES/kabc_net.mo
 share/locale/mn/LC_MESSAGES/kabc_sql.mo
@@ -137,7 +136,6 @@ share/locale/mn/LC_MESSAGES/klipper.mo
 share/locale/mn/LC_MESSAGES/kmcop.mo
 share/locale/mn/LC_MESSAGES/kmenuapplet.mo
 share/locale/mn/LC_MESSAGES/kmenuedit.mo
-share/locale/mn/LC_MESSAGES/kmessedwords.mo
 share/locale/mn/LC_MESSAGES/kminipagerapplet.mo
 share/locale/mn/LC_MESSAGES/knotify.mo
 share/locale/mn/LC_MESSAGES/konqueror.mo

@@ -3028,6 +3028,7 @@ share/icons/kdeclassic/22x22/actions/kalarm_disabled.png
 share/icons/kdeclassic/22x22/actions/kalarmdgui.png
 share/icons/kdeclassic/22x22/actions/kalarmdgui_disabled.png
 share/icons/kdeclassic/22x22/actions/kanjidic.png
+share/icons/kdeclassic/22x22/actions/kde.png
 share/icons/kdeclassic/22x22/actions/kdeprint_addprinter.png
 share/icons/kdeclassic/22x22/actions/kdeprint_addpseudo.png
 share/icons/kdeclassic/22x22/actions/kdeprint_configmgr.png
@@ -3571,6 +3572,7 @@ share/icons/kdeclassic/32x32/actions/insert_table_col.png
 share/icons/kdeclassic/32x32/actions/insert_table_row.png
 share/icons/kdeclassic/32x32/actions/int.png
 share/icons/kdeclassic/32x32/actions/jail_pay.png
+share/icons/kdeclassic/32x32/actions/kde.png
 share/icons/kdeclassic/32x32/actions/kdeprint_inklevel.png
 share/icons/kdeclassic/32x32/actions/krec_record.png
 share/icons/kdeclassic/32x32/actions/ktip.png

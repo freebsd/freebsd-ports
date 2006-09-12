@@ -164,6 +164,7 @@ share/locale/fi/LC_MESSAGES/kcmlaptop.mo
 share/locale/fi/LC_MESSAGES/kcmlaunch.mo
 share/locale/fi/LC_MESSAGES/kcmlayout.mo
 share/locale/fi/LC_MESSAGES/kcmlilo.mo
+share/locale/fi/LC_MESSAGES/kcmlirc.mo
 share/locale/fi/LC_MESSAGES/kcmlocale.mo
 share/locale/fi/LC_MESSAGES/kcmmedia.mo
 share/locale/fi/LC_MESSAGES/kcmnic.mo
@@ -351,7 +352,6 @@ share/locale/fi/LC_MESSAGES/kmathapplet.mo
 share/locale/fi/LC_MESSAGES/kmcop.mo
 share/locale/fi/LC_MESSAGES/kmenuapplet.mo
 share/locale/fi/LC_MESSAGES/kmenuedit.mo
-share/locale/fi/LC_MESSAGES/kmessedwords.mo
 share/locale/fi/LC_MESSAGES/kmid.mo
 share/locale/fi/LC_MESSAGES/kmilo_delli8k.mo
 share/locale/fi/LC_MESSAGES/kmilo_generic.mo

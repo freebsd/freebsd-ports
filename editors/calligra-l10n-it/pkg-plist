@@ -114,6 +114,7 @@ share/doc/HTML/it/kword/a11y.docbook
 share/doc/HTML/it/kword/basics.docbook
 share/doc/HTML/it/kword/bookmarks.docbook
 share/doc/HTML/it/kword/chapnumb.docbook
+share/doc/HTML/it/kword/colorseldlg.png
 share/doc/HTML/it/kword/columns.docbook
 share/doc/HTML/it/kword/common
 share/doc/HTML/it/kword/doccomments.docbook
@@ -122,6 +123,8 @@ share/doc/HTML/it/kword/docstruct.docbook
 share/doc/HTML/it/kword/docvariables.docbook
 share/doc/HTML/it/kword/editing.docbook
 share/doc/HTML/it/kword/expressions.docbook
+share/doc/HTML/it/kword/finddlg.png
+share/doc/HTML/it/kword/finddlg2.png
 share/doc/HTML/it/kword/footendnotes.docbook
 share/doc/HTML/it/kword/formatchar.docbook
 share/doc/HTML/it/kword/formatframes.docbook
@@ -140,7 +143,18 @@ share/doc/HTML/it/kword/mailmerge.docbook
 share/doc/HTML/it/kword/mbtb.docbook
 share/doc/HTML/it/kword/migrating.docbook
 share/doc/HTML/it/kword/opt.docbook
+share/doc/HTML/it/kword/opt1.png
+share/doc/HTML/it/kword/opt2.png
+share/doc/HTML/it/kword/opt3.png
+share/doc/HTML/it/kword/opt4.png
+share/doc/HTML/it/kword/opt5.png
+share/doc/HTML/it/kword/optkb.png
+share/doc/HTML/it/kword/optkb2.png
+share/doc/HTML/it/kword/opttb.png
 share/doc/HTML/it/kword/pageformat.docbook
+share/doc/HTML/it/kword/pntdlg.png
+share/doc/HTML/it/kword/pntdlg1.png
+share/doc/HTML/it/kword/repldlg.png
 share/doc/HTML/it/kword/storeprint.docbook
 share/doc/HTML/it/kword/styles.docbook
 share/doc/HTML/it/kword/table.docbook

@@ -19,7 +19,6 @@ share/locale/ko/LC_MESSAGES/htmlsearch.mo
 share/locale/ko/LC_MESSAGES/juk.mo
 share/locale/ko/LC_MESSAGES/kabc_dir.mo
 share/locale/ko/LC_MESSAGES/kabc_file.mo
-share/locale/ko/LC_MESSAGES/kabc_ldap.mo
 share/locale/ko/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/ko/LC_MESSAGES/kabc_net.mo
 share/locale/ko/LC_MESSAGES/kabc_sql.mo

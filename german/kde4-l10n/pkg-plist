@@ -4,6 +4,72 @@ share/apps/khangman/data/de/easy.kvtml
 share/apps/khangman/data/de/hard.kvtml
 share/apps/khangman/data/de/medium.kvtml
 share/apps/khangman/de.txt
+share/apps/klettres/de/alpha/a.ogg
+share/apps/klettres/de/alpha/ae.ogg
+share/apps/klettres/de/alpha/b.ogg
+share/apps/klettres/de/alpha/c.ogg
+share/apps/klettres/de/alpha/d.ogg
+share/apps/klettres/de/alpha/e.ogg
+share/apps/klettres/de/alpha/f.ogg
+share/apps/klettres/de/alpha/g.ogg
+share/apps/klettres/de/alpha/h.ogg
+share/apps/klettres/de/alpha/i.ogg
+share/apps/klettres/de/alpha/j.ogg
+share/apps/klettres/de/alpha/k.ogg
+share/apps/klettres/de/alpha/l.ogg
+share/apps/klettres/de/alpha/m.ogg
+share/apps/klettres/de/alpha/n.ogg
+share/apps/klettres/de/alpha/o.ogg
+share/apps/klettres/de/alpha/oe.ogg
+share/apps/klettres/de/alpha/p.ogg
+share/apps/klettres/de/alpha/q.ogg
+share/apps/klettres/de/alpha/r.ogg
+share/apps/klettres/de/alpha/s.ogg
+share/apps/klettres/de/alpha/sz.ogg
+share/apps/klettres/de/alpha/t.ogg
+share/apps/klettres/de/alpha/u.ogg
+share/apps/klettres/de/alpha/ue.ogg
+share/apps/klettres/de/alpha/v.ogg
+share/apps/klettres/de/alpha/w.ogg
+share/apps/klettres/de/alpha/x.ogg
+share/apps/klettres/de/alpha/y.ogg
+share/apps/klettres/de/alpha/z.ogg
+share/apps/klettres/de/sounds.xml
+share/apps/klettres/de/syllab/affe.ogg
+share/apps/klettres/de/syllab/auch.ogg
+share/apps/klettres/de/syllab/baer.ogg
+share/apps/klettres/de/syllab/bus.ogg
+share/apps/klettres/de/syllab/dem.ogg
+share/apps/klettres/de/syllab/die.ogg
+share/apps/klettres/de/syllab/dir.ogg
+share/apps/klettres/de/syllab/ein.ogg
+share/apps/klettres/de/syllab/eule.ogg
+share/apps/klettres/de/syllab/fisch.ogg
+share/apps/klettres/de/syllab/frau.ogg
+share/apps/klettres/de/syllab/fusz.ogg
+share/apps/klettres/de/syllab/gut.ogg
+share/apps/klettres/de/syllab/haus.ogg
+share/apps/klettres/de/syllab/heu.ogg
+share/apps/klettres/de/syllab/hund.ogg
+share/apps/klettres/de/syllab/ist.ogg
+share/apps/klettres/de/syllab/ja.ogg
+share/apps/klettres/de/syllab/kind.ogg
+share/apps/klettres/de/syllab/lisa.ogg
+share/apps/klettres/de/syllab/mutter.ogg
+share/apps/klettres/de/syllab/nase.ogg
+share/apps/klettres/de/syllab/oel.ogg
+share/apps/klettres/de/syllab/opa.ogg
+share/apps/klettres/de/syllab/pute.ogg
+share/apps/klettres/de/syllab/reh.ogg
+share/apps/klettres/de/syllab/rot.ogg
+share/apps/klettres/de/syllab/sein.ogg
+share/apps/klettres/de/syllab/sitz.ogg
+share/apps/klettres/de/syllab/tuer.ogg
+share/apps/klettres/de/syllab/vor.ogg
+share/apps/klettres/de/syllab/was.ogg
+share/apps/klettres/de/syllab/will.ogg
+share/apps/klettres/de/syllab/wo.ogg
+share/apps/klettres/de/syllab/zu.ogg
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -29,6 +95,9 @@ share/apps/kturtle/examples/de_DE/zufallsname.logo
 share/doc/HTML/de/KRegExpEditor/common
 share/doc/HTML/de/KRegExpEditor/index.cache.bz2
 share/doc/HTML/de/KRegExpEditor/index.docbook
+share/doc/HTML/de/akregator/common
+share/doc/HTML/de/akregator/index.cache.bz2
+share/doc/HTML/de/akregator/index.docbook
 share/doc/HTML/de/amor/common
 share/doc/HTML/de/amor/index.cache.bz2
 share/doc/HTML/de/amor/index.docbook
@@ -36,6 +105,7 @@ share/doc/HTML/de/amor/man-amor.6.docbook
 share/doc/HTML/de/ark/common
 share/doc/HTML/de/ark/index.cache.bz2
 share/doc/HTML/de/ark/index.docbook
+share/doc/HTML/de/ark/man-ark.1.docbook
 share/doc/HTML/de/artsbuilder/apis.docbook
 share/doc/HTML/de/artsbuilder/artsbuilder.docbook
 share/doc/HTML/de/artsbuilder/common
@@ -59,6 +129,16 @@ share/doc/HTML/de/atlantik/common
 share/doc/HTML/de/atlantik/index.cache.bz2
 share/doc/HTML/de/atlantik/index.docbook
 share/doc/HTML/de/atlantik/man-atlantik.6.docbook
+share/doc/HTML/de/blinken/blinken1.png
+share/doc/HTML/de/blinken/blinken2.png
+share/doc/HTML/de/blinken/blinken_accesskeys.png
+share/doc/HTML/de/blinken/blinken_helpbutton.png
+share/doc/HTML/de/blinken/blinken_highscorebutton.png
+share/doc/HTML/de/blinken/blinken_nickprompt.png
+share/doc/HTML/de/blinken/blinken_quitbutton.png
+share/doc/HTML/de/blinken/common
+share/doc/HTML/de/blinken/index.cache.bz2
+share/doc/HTML/de/blinken/index.docbook
 share/doc/HTML/de/cervisia/common
 share/doc/HTML/de/cervisia/index.cache.bz2
 share/doc/HTML/de/cervisia/index.docbook
@@ -451,6 +531,7 @@ share/doc/HTML/de/kedit/index.docbook
 share/doc/HTML/de/keduca/common
 share/doc/HTML/de/keduca/index.cache.bz2
 share/doc/HTML/de/keduca/index.docbook
+share/doc/HTML/de/keduca/man-keduca.1.docbook
 share/doc/HTML/de/keduca/screenshot.png
 share/doc/HTML/de/kenolaba/common
 share/doc/HTML/de/kenolaba/index.cache.bz2
@@ -641,6 +722,9 @@ share/doc/HTML/de/kig/text_label_wizard__select_property.png
 share/doc/HTML/de/kinfocenter/blockdevices/common
 share/doc/HTML/de/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/de/kinfocenter/blockdevices/index.docbook
+share/doc/HTML/de/kinfocenter/cdinfo/common
+share/doc/HTML/de/kinfocenter/cdinfo/index.cache.bz2
+share/doc/HTML/de/kinfocenter/cdinfo/index.docbook
 share/doc/HTML/de/kinfocenter/common
 share/doc/HTML/de/kinfocenter/devices/common
 share/doc/HTML/de/kinfocenter/devices/index.cache.bz2
@@ -1373,6 +1457,7 @@ share/doc/HTML/de/kttsd/index.cache.bz2
 share/doc/HTML/de/kttsd/index.docbook
 share/doc/HTML/de/kttsd/interruption.png
 share/doc/HTML/de/kttsd/jobs.png
+share/doc/HTML/de/kttsd/selecttalker.png
 share/doc/HTML/de/kttsd/stringreplacer.png
 share/doc/HTML/de/kttsd/talkerchooser.png
 share/doc/HTML/de/kttsd/talkers.png
@@ -1578,6 +1663,7 @@ share/doc/HTML/de/quanta/q-and-a.docbook
 share/doc/HTML/de/quanta/quanta-menus.docbook
 share/doc/HTML/de/quanta/quanta-projects.docbook
 share/doc/HTML/de/quanta/working-with-quanta.docbook
+share/doc/HTML/de/scripts/man-adddebug.1.docbook
 share/doc/HTML/de/superkaramba/common
 share/doc/HTML/de/superkaramba/index.cache.bz2
 share/doc/HTML/de/superkaramba/index.docbook
@@ -2177,6 +2263,7 @@ share/locale/de/entry.desktop
 share/locale/de/flag.png
 @dirrm share/doc/HTML/de/umbrello
 @dirrm share/doc/HTML/de/superkaramba
+@dirrm share/doc/HTML/de/scripts
 @dirrm share/doc/HTML/de/quanta
 @dirrm share/doc/HTML/de/noatun
 @dirrm share/doc/HTML/de/lskat
@@ -2308,6 +2395,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kinfocenter/interrupts
 @dirrm share/doc/HTML/de/kinfocenter/dma
 @dirrm share/doc/HTML/de/kinfocenter/devices
+@dirrm share/doc/HTML/de/kinfocenter/cdinfo
 @dirrm share/doc/HTML/de/kinfocenter/blockdevices
 @dirrm share/doc/HTML/de/kinfocenter
 @dirrm share/doc/HTML/de/kig
@@ -2427,10 +2515,12 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/docs/common
 @dirrm share/doc/HTML/de/docs
 @dirrm share/doc/HTML/de/cervisia
+@dirrm share/doc/HTML/de/blinken
 @dirrm share/doc/HTML/de/atlantik
 @dirrm share/doc/HTML/de/artsbuilder
 @dirrm share/doc/HTML/de/ark
 @dirrm share/doc/HTML/de/amor
+@dirrm share/doc/HTML/de/akregator
 @dirrm share/doc/HTML/de/KRegExpEditor
 @dirrm share/apps/kturtle/examples/de_DE
 @dirrm share/apps/kturtle/examples
@@ -2439,6 +2529,10 @@ share/locale/de/flag.png
 @dirrm share/apps/ktuberling/sounds/de
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling
+@dirrm share/apps/klettres/de/syllab
+@dirrm share/apps/klettres/de/alpha
+@dirrm share/apps/klettres/de
+@dirrm share/apps/klettres
 @dirrm share/apps/khangman/data/de
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman

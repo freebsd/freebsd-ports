@@ -2,6 +2,8 @@ share/locale/se/LC_MESSAGES/desktop_koffice.mo
 share/locale/se/LC_MESSAGES/example.mo
 share/locale/se/LC_MESSAGES/karbon.mo
 share/locale/se/LC_MESSAGES/kchart.mo
+share/locale/se/LC_MESSAGES/kfile_abiword.mo
+share/locale/se/LC_MESSAGES/kfile_gnumeric.mo
 share/locale/se/LC_MESSAGES/kfile_koffice.mo
 share/locale/se/LC_MESSAGES/kfile_ooo.mo
 share/locale/se/LC_MESSAGES/kformdesigner.mo
@@ -12,6 +14,7 @@ share/locale/se/LC_MESSAGES/koffice.mo
 share/locale/se/LC_MESSAGES/kofficefilters.mo
 share/locale/se/LC_MESSAGES/koshell.mo
 share/locale/se/LC_MESSAGES/kounavail.mo
+share/locale/se/LC_MESSAGES/kplato.mo
 share/locale/se/LC_MESSAGES/kpresenter.mo
 share/locale/se/LC_MESSAGES/kscan_plugin.mo
 share/locale/se/LC_MESSAGES/kspread.mo

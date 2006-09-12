@@ -331,7 +331,6 @@ share/locale/is/LC_MESSAGES/kmathapplet.mo
 share/locale/is/LC_MESSAGES/kmcop.mo
 share/locale/is/LC_MESSAGES/kmenuapplet.mo
 share/locale/is/LC_MESSAGES/kmenuedit.mo
-share/locale/is/LC_MESSAGES/kmessedwords.mo
 share/locale/is/LC_MESSAGES/kmid.mo
 share/locale/is/LC_MESSAGES/kmilo_delli8k.mo
 share/locale/is/LC_MESSAGES/kmilo_generic.mo
@@ -497,7 +496,6 @@ share/locale/is/LC_MESSAGES/libdmctl.mo
 share/locale/is/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/is/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/is/LC_MESSAGES/libkcal.mo
-share/locale/is/LC_MESSAGES/libkcalsystem.mo
 share/locale/is/LC_MESSAGES/libkcddb.mo
 share/locale/is/LC_MESSAGES/libkdeedu.mo
 share/locale/is/LC_MESSAGES/libkdegames.mo

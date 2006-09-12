@@ -66,6 +66,14 @@ share/doc/HTML/fr/koffice/index.docbook
 share/doc/HTML/fr/koshell/common
 share/doc/HTML/fr/koshell/index.cache.bz2
 share/doc/HTML/fr/koshell/index.docbook
+share/doc/HTML/fr/kplato/commands.docbook
+share/doc/HTML/fr/kplato/common
+share/doc/HTML/fr/kplato/definitions.docbook
+share/doc/HTML/fr/kplato/index.cache.bz2
+share/doc/HTML/fr/kplato/index.docbook
+share/doc/HTML/fr/kplato/mainwindow.docbook
+share/doc/HTML/fr/kplato/options.docbook
+share/doc/HTML/fr/kplato/wbs.docbook
 share/doc/HTML/fr/kpresenter/barstyle1.png
 share/doc/HTML/fr/kpresenter/barstyle3.png
 share/doc/HTML/fr/kpresenter/barstyle4.png
@@ -419,6 +427,7 @@ share/locale/fr/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/fr/kspread
 @dirrm share/doc/HTML/fr/kpresenter/pics
 @dirrm share/doc/HTML/fr/kpresenter
+@dirrm share/doc/HTML/fr/kplato
 @dirrm share/doc/HTML/fr/koshell
 @dirrm share/doc/HTML/fr/koffice
 @dirrm share/doc/HTML/fr/kivio

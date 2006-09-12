@@ -10,7 +10,6 @@ share/locale/fa/LC_MESSAGES/filetypes.mo
 share/locale/fa/LC_MESSAGES/htmlsearch.mo
 share/locale/fa/LC_MESSAGES/kabc_dir.mo
 share/locale/fa/LC_MESSAGES/kabc_file.mo
-share/locale/fa/LC_MESSAGES/kabc_ldap.mo
 share/locale/fa/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/fa/LC_MESSAGES/kabc_net.mo
 share/locale/fa/LC_MESSAGES/kabc_sql.mo

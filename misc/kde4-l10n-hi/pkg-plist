@@ -288,7 +288,6 @@ share/locale/hi/LC_MESSAGES/kmathapplet.mo
 share/locale/hi/LC_MESSAGES/kmcop.mo
 share/locale/hi/LC_MESSAGES/kmenuapplet.mo
 share/locale/hi/LC_MESSAGES/kmenuedit.mo
-share/locale/hi/LC_MESSAGES/kmessedwords.mo
 share/locale/hi/LC_MESSAGES/kmid.mo
 share/locale/hi/LC_MESSAGES/kmines.mo
 share/locale/hi/LC_MESSAGES/kminipagerapplet.mo
@@ -421,7 +420,6 @@ share/locale/hi/LC_MESSAGES/libKTTSD.mo
 share/locale/hi/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/hi/LC_MESSAGES/libkaddrbk_gmx_xxport.mo
 share/locale/hi/LC_MESSAGES/libkcal.mo
-share/locale/hi/LC_MESSAGES/libkcalsystem.mo
 share/locale/hi/LC_MESSAGES/libkcddb.mo
 share/locale/hi/LC_MESSAGES/libkdegames.mo
 share/locale/hi/LC_MESSAGES/libkdepim.mo
