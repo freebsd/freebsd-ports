@@ -2377,6 +2377,7 @@ evolution-jescs		ports/deskutils/evolution-jescs
 evolution-sharp		ports/mail/evolution-sharp
 evolution-webcal	ports/www/evolution-webcal
 evolvotron	ports/graphics/evolvotron
+evtviewer	ports/sysutils/evtviewer
 ewipe		ports/misc/ewipe
 ewl		ports/x11-toolkits/ewl
 exact		ports/mail/exact
