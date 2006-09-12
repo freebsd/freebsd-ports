@@ -1,5 +1,7 @@
---- configure.orig	Wed Feb 13 16:03:27 2002
-+++ configure	Thu Mar  4 12:55:48 2004
+$FreeBSD$
+
+--- configure.orig	Thu Feb 14 02:03:27 2002
++++ configure	Tue Sep 12 10:54:53 2006
 @@ -186,6 +186,8 @@
  ac_help="$ac_help
    --with-libiconv-prefix=DIR  search for libiconv in DIR/include and DIR/lib"
@@ -167,10 +169,41 @@
  
  
  for ac_func in personality
-@@ -12512,6 +12651,37 @@
+@@ -12512,6 +12651,68 @@
  WITH_PYTHON_VERSION=
  if test $withval = auto ; then
  
++  echo $ac_n "checking for python 2.4""... $ac_c" 1>&6
++echo "configure:12517: checking for python 2.4" >&5
++  if test "$cross_compiling" = yes; then
++  withval=yes
++else
++  cat > conftest.$ac_ext <<EOF
++#line 12522 "configure"
++#include "confdefs.h"
++
++#include <python2.4/Python.h>
++main() {
++  exit(strncmp("2.4", PY_VERSION, 3));
++} 
++EOF
++if { (eval echo configure:12530: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
++then
++  withval=yes
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -fr conftest*
++  withval=no
++fi
++rm -fr conftest*
++fi
++
++  echo "$ac_t""$withval" 1>&6
++  if test $withval = yes ; then
++    WITH_PYTHON_VERSION="2.4"
++  else
++
 +  echo $ac_n "checking for python 2.3""... $ac_c" 1>&6
 +echo "configure:12517: checking for python 2.3" >&5
 +  if test "$cross_compiling" = yes; then
@@ -205,16 +238,18 @@
    echo $ac_n "checking for python 2.2""... $ac_c" 1>&6
  echo "configure:12517: checking for python 2.2" >&5
    if test "$cross_compiling" = yes; then
-@@ -12577,6 +12747,8 @@
+@@ -12577,6 +12778,10 @@
  
  fi
  
 +fi
 +
++fi
++
  if test -n "$WITH_PYTHON_VERSION" ; then
    WITH_PYTHON_SUBDIR=python
    WITH_PYTHON_SUBPACKAGE=1
-@@ -13130,21 +13302,7 @@
+@@ -13130,21 +13335,7 @@
  
  echo "$ac_t""$ROOT_GROUP" 1>&6
  
@@ -237,7 +272,7 @@
  
  if test "x$tmpdir" = "x"; then
      if test -d $varprefix/tmp; then
-@@ -13349,7 +13507,7 @@
+@@ -13349,7 +13540,7 @@
  
  
  
@@ -246,7 +281,7 @@
  
  
  trap '' 1 2 15
-@@ -13578,6 +13736,8 @@
+@@ -13578,6 +13769,8 @@
  s%@WITH_ZLIB_SUBDIR@%$WITH_ZLIB_SUBDIR%g
  s%@WITH_ZLIB_INCLUDE@%$WITH_ZLIB_INCLUDE%g
  s%@WITH_ZLIB_LIB@%$WITH_ZLIB_LIB%g
@@ -255,7 +290,7 @@
  s%@WITH_DB_SUBDIR@%$WITH_DB_SUBDIR%g
  s%@WITH_INTERNAL_DB@%$WITH_INTERNAL_DB%g
  s%@DBLIBSRCS@%$DBLIBSRCS%g
-@@ -13889,7 +14049,6 @@
+@@ -13889,7 +14082,6 @@
            ;;
          esac
        done
@@ -263,7 +298,7 @@
  	echo timestamp > beecrypt/stamp-h.in
  	echo timestamp > stamp-h.in
    
-@@ -13925,7 +14084,7 @@
+@@ -13925,7 +14117,7 @@
      esac
    done
  
