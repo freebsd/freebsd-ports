@@ -18,4 +18,4 @@
 @dirrm %%MOZDIR%%/defaults/profile/FR
 @dirrm %%MOZDIR%%/defaults/messenger/FR
 @dirrm %%MOZDIR%%/defaults/isp/FR
-@dirrmtry %%MOZDIR%%/defaults/isp
+@unexec rmdir %D/%%MOZDIR%%/defaults/isp 2>/dev/null || true
