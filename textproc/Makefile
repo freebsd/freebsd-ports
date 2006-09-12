@@ -342,6 +342,7 @@
     SUBDIR += p5-HTML-Tidy
     SUBDIR += p5-HTML-Truncate
     SUBDIR += p5-Hash-Merge
+    SUBDIR += p5-Hatena-Keyword
     SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-IO-CSVHeaderFile
     SUBDIR += p5-KinoSearch
