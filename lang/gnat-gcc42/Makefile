@@ -8,6 +8,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=		lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${versionstring}
@@ -47,11 +48,7 @@ LATEST_LINK=	${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700000
-BROKEN=		does not compile at 7.x
-.endif
-
-gcc_snapshot=	20060818
+gcc_snapshot=	20060901
 versionstring=	${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
 srcdir=			${WRKDIR}/gcc-${versionstring}
 gcc_suffix=		41
@@ -73,7 +70,7 @@ CONFIGURE_ARGS=	--enable-languages="c,ada" \
 				--infodir=${PREFIX}/${INFO_PATH}/gcc${gcc_suffix}
 
 ALL_TARGET=		bootstrap-lean
-MAKE_ARGS+=		MAKEINFOFLAGS="--no-split"
+MAKE_ENV+=		MAKEINFOFLAGS="--no-split" PTHREAD_LIBS=${PTHREAD_LIBS}
 
 PLIST_SUB=		GCC_VER=${PORTVERSION} \
 				GNU_HOST=${CONFIGURE_TARGET} \
