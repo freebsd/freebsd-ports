@@ -981,7 +981,7 @@ MASTER_SITE_SOURCEFORGE_EXTENDED+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)
-.for mirror in keihanna
+.for mirror in keihanna osdn qgpop
 MASTER_SITE_SOURCEFORGE_JP+= \
 	http://${mirror}.dl.sourceforge.jp/%SUBDIR%/
 .endfor
