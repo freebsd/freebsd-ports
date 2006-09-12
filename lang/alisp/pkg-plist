@@ -15,6 +15,7 @@ include/alisp.h
 %%DATADIR%%/every.l
 %%DATADIR%%/fact.l
 %%DATADIR%%/filter.l
+%%DATADIR%%/gener.l
 %%DATADIR%%/hanoi.l
 %%DATADIR%%/headp.l
 %%DATADIR%%/hyper.l

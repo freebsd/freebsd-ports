@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	20060717
+PORTVERSION=	20060912
 CATEGORIES=	lang devel lisp
-MASTER_SITES=	http://www.t3x.org/files/
+MASTER_SITES=	http://t3x.org/files/
 
 MAINTAINER=	nmh@t3x.org
 COMMENT=	An interpreter for purely symbolic LISP
@@ -16,11 +16,12 @@ COMMENT=	An interpreter for purely symbolic LISP
 MAN7=		alisp.7
 MANCOMPRESSED=	no
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV+=	BINOWN=${BINOWN} \
 		BINGRP=${BINGRP} \
 		PREFIX=${PREFIX}
 
+# Please, please keep this!
 USE_REINPLACE=	yes
 
 post-patch:
