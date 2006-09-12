@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.2.35
+PORTVERSION=	3.2.39
 PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
@@ -27,6 +27,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--localstatedir=/var/mnogosearch \
 		--datadir=${PREFIX}/share/mnogosearch
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
+MAKE_ENV+=	MKDIRPROG="${MKDIR}"
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 SHLIB_VER=	1
