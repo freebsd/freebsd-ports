@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	google-ctemplate
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	goog-ctemplate
@@ -17,6 +17,8 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A simple but powerful template language for C++
 
 GNU_CONFIGURE=	yes
+USE_GCC=	3.2+
+USE_GETOPT_LONG=	yes
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
