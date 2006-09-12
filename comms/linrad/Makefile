@@ -7,10 +7,11 @@
 
 PORTNAME=	linrad
 PORTVERSION=	2.17
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
-		http://nitehawk.com/sm5bsz/linuxdsp/archive/
+		http://www.sm5bsz.com/linuxdsp/archive/
 DISTNAME=	lir02-17
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
@@ -31,7 +32,7 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
+IGNORE=		does not compile on FreeBSD 4.x
 .endif
 
 post-patch:
