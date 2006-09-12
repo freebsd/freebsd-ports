@@ -5,15 +5,8 @@
 # $FreeBSD$
 #
 
-# To pre-select options in batch mode, run make like this:
-#
-#  make -DBATCH NSD_OPTIONS="ROOT_SERVER BIND8_STATS"
-#
-# the options are the same names as in the scripts/configure.nsd file.
-# NSD_OPTIONS can be set in /etc/make.conf also.
-
 PORTNAME=	nsd
-PORTVERSION=	2.3.5
+PORTVERSION=	3.0.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -40,42 +33,90 @@ SED_SCRIPT=	-e 's,%%NSDUSER%%,${NSDUSER},g' \
 		-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
-MAN8=	nsd.8 zonec.8 nsdc.8 nsd-notify.8 nsd-xfer.8
+MAN5=	nsd.conf.5
+MAN8=	nsd.8 nsdc.8 zonec.8 nsd-checkconf.8 nsd-notify.8 nsd-patch.8 \
+	nsd-xfer.8
 
-PORTDOCS=	README RELNOTES CREDITS DIFFERENCES REQUIREMENTS
+PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
+		NSD-FOR-BIND-USERS README README.icc RELNOTES \
+		REQUIREMENTS TESTPLAN TODO UPGRADING coding-style \
+		differences.tex
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}" \
-		NSD_OPTIONS="${NSD_OPTIONS}"
+OPTIONS=	ROOT_SERVER	"Configure NSD as a root server" Off \
+		LARGEFILE	"Enable support for large files" On \
+		IPV6		"Enable IPv6 support" On \
+		DNSSEC		"Enable DNSSEC" On \
+		BIND8_STATS	"Enable BIND8 like NSTATS & XSTATS" Off \
+		CHECKING	"Enable internal runtime checks" Off \
+		TSIG		"Enable TSIG support" On \
+		NSEC3		"Enable NSEC3 support" Off \
+		NSID		"Enable NSID support" Off \
+		DOCFILES	"Enable PORTDOCS" On
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.nsd
+.include <bsd.port.pre.mk>
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if defined(WITH_ROOT_SERVER)
+CONFIGURE_ARGS+=	--enable-root-server
 .endif
 
-.if defined(NOPORTDOCS)
-READMEDIR=no
-.else
-READMEDIR=${PREFIX}/share/doc/nsd
+.if defined(WITHOUT_LARGEFILE)
+CONFIGURE_ARGS+=	--disable-largefile
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITHOUT_DNSSEC)
+CONFIGURE_ARGS+=	--disable-dnssec
+.endif
+
+.if defined(WITH_BIND8_STATS)
+CONFIGURE_ARGS+=	--enable-bind8-stats
+.endif
+
+.if defined(WITH_CHECKING)
+CONFIGURE_ARGS+=	--enable-checking
+.endif
+
+.if defined(WITHOUT_TSIG)
+CONFIGURE_ARGS+=	--disable-tsig
+.endif
+
+.if defined(WITH_NSEC3)
+CONFIGURE_ARGS+=	--enable-nsec3
+.endif
+
+.if defined(WITH_NSID)
+CONFIGURE_ARGS+=	--enable-nsid
+.endif
+
+pre-patch:
+.if defined(NSD_OPTIONS)
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "***** ALERT *****"
+	@${ECHO_MSG} "NSD_OPTIONS is no longer supported,"
+	@${ECHO_MSG} "${PORTNAME} uses OPTIONS, consider running"
+	@${ECHO_MSG} "# make config"
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@sleep 10
 .endif
 
 post-install:
 	${SED} ${SED_SCRIPT} < ${FILESDIR}/nsd.sh.tmpl >${WRKDIR}/nsd.sh
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
+		${NSDDIR}/nsd.conf.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/nsd.sh ${PREFIX}/etc/rc.d/
+.if !defined(WITHOUT_DOCFILES)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
 .endfor
 .endif
-	${INSTALL_DATA} ${WRKSRC}/nsd.zones.sample \
-		${PREFIX}/etc/nsd/nsd.zones.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/nsd.sh ${PREFIX}/etc/rc.d/
 	@${CAT} ${PKGMESSAGE}
 
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
