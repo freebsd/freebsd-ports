@@ -18,6 +18,7 @@ COMMENT=	Various ELF related utils for ELF32, ELF64 binaries
 
 USE_BZIP2=	true
 USE_GMAKE=	true
+USE_GETOPT_LONG=true
 
 MAN1=		dumpelf.1 pspax.1 scanelf.1
 
