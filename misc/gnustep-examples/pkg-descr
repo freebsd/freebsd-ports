@@ -4,7 +4,11 @@ The GNUstep example applications:
 # CurrencyConverter
 # Finger              It is a simple front-end to finger, ping and traceroute.
 # GFractal
-# GPuzzle             Using a tiff for a puzzle.
 # GSTest
 # HostAddress
 # Ink                 Text Editor
+# NSBrowserTest
+# NSImageTest
+# NSPanelTest
+# NSScreenTest
+# md5Digest
