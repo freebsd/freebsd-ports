@@ -1042,6 +1042,7 @@ callgrind	ports/devel/callgrind
 callid		ports/misc/callid
 cam		ports/audio/cam
 camediaplay	ports/graphics/camediaplay
+camera		ports/graphics/camera
 caml-light	ports/lang/caml-light
 campsite	ports/www/campsite
 camserv		ports/multimedia/camserv
