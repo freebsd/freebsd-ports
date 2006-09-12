@@ -16,6 +16,9 @@ DISTNAME=	displayconstraints-${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	This Sensor allows a user to set maximum constraints on a display
 
+DEPRECATED=	dead project and not fetchable any more
+EXPIRATION_DATE=2006-10-12
+
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}
