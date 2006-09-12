@@ -9,9 +9,10 @@ PORTNAME=	rkhunter
 PORTVERSION=	1.2.8
 PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	http://downloads.rootkit.nl/
+MASTER_SITES=	http://downloads.rootkit.nl/ \
+		http://mirror.trouble-free.net/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	Rootkit detection tool
 
 OPTIONS=	LSOF "Use LSOF" on \
