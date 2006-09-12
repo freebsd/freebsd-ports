@@ -7,7 +7,7 @@
 
 PORTNAME=	libtunepimp-old
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
@@ -30,9 +30,12 @@ CONFLICTS=	trm-0* libtunepimp-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/tunepimp-0.4 --includedir=${PREFIX}/include/tunepimp-0.4
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/tunepimp-0.4
+USE_LDCONFIG=	${PREFIX}/lib/tunepimp-0.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
@@ -43,5 +46,9 @@ post-patch:
 post-configure:
 	@${REINPLACE_CMD} -e 's|\(^LDFLAGS =.*\)|\1 ${PTHREAD_LIBS} -liconv|g' \
 		${WRKSRC}/examples/Makefile
+	@${REINPLACE_CMD} -e \
+	's|PREFIX"/lib/tunepimp/plugins"|PREFIX"/lib/tunepimp-0.4/tunepimp/plugins"|g' \
+		${WRKSRC}/lib/tunepimp.cpp
+
 
 .include <bsd.port.mk>

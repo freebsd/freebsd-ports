@@ -1,0 +1,20 @@
+--- lib/Makefile.in.bak	Sat Jan 28 21:54:05 2006
++++ lib/Makefile.in	Tue Sep 12 19:11:17 2006
+@@ -240,7 +240,7 @@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = utf8 threads
+ INCLUDES = -I$(top_srcdir)/include/tunepimp -Ithreads/posix
+-lib_LTLIBRARIES = libtunepimp.la
++lib_LTLIBRARIES = libtunepimp-0.4.la
+ libtunepimp_la_SOURCES = tunepimp.cpp filecache.cpp filelookup.cpp analyzer.cpp dirsearch.cpp metadata.cpp submit.cpp astrcmp.c track.cpp lookup.cpp lookuptools.cpp write.cpp c_wrapper.cpp watchdog.cpp plugins.cpp readmeta.cpp fileio.cpp
+ 
+ # Here are a set of rules to help you update your library version information:
+@@ -338,7 +338,7 @@
+ 	done
+ libpluginsupport.la: $(libpluginsupport_la_OBJECTS) $(libpluginsupport_la_DEPENDENCIES) 
+ 	$(CXXLINK)  $(libpluginsupport_la_LDFLAGS) $(libpluginsupport_la_OBJECTS) $(libpluginsupport_la_LIBADD) $(LIBS)
+-libtunepimp.la: $(libtunepimp_la_OBJECTS) $(libtunepimp_la_DEPENDENCIES) 
++libtunepimp-0.4.la: $(libtunepimp_la_OBJECTS) $(libtunepimp_la_DEPENDENCIES) 
+ 	$(CXXLINK) -rpath $(libdir) $(libtunepimp_la_LDFLAGS) $(libtunepimp_la_OBJECTS) $(libtunepimp_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:

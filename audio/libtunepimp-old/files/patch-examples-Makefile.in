@@ -1,0 +1,27 @@
+--- examples/Makefile.in.orig	Tue Sep 12 19:17:31 2006
++++ examples/Makefile.in	Tue Sep 12 19:17:56 2006
+@@ -53,10 +53,10 @@
+ PROGRAMS = $(bin_PROGRAMS)
+ am_tp_tagger_OBJECTS = tagger.$(OBJEXT)
+ tp_tagger_OBJECTS = $(am_tp_tagger_OBJECTS)
+-tp_tagger_DEPENDENCIES = $(top_builddir)/lib/libtunepimp.la
++tp_tagger_DEPENDENCIES = $(top_builddir)/lib/libtunepimp-0.4.la
+ am_trm_OBJECTS = trm.$(OBJEXT)
+ trm_OBJECTS = $(am_trm_OBJECTS)
+-trm_DEPENDENCIES = $(top_builddir)/lib/libtunepimp.la
++trm_DEPENDENCIES = $(top_builddir)/lib/libtunepimp-0.4.la
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -207,9 +207,9 @@
+ #
+ INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/lib -I$(top_srcdir)/lib/threads/posix
+ tp_tagger_SOURCES = tagger.c
+-tp_tagger_LDADD = $(top_builddir)/lib/libtunepimp.la @READLINE_LIBS@
++tp_tagger_LDADD = $(top_builddir)/lib/libtunepimp-0.4.la @READLINE_LIBS@
+ trm_SOURCES = trm.c
+-trm_LDADD = $(top_builddir)/lib/libtunepimp.la 
++trm_LDADD = $(top_builddir)/lib/libtunepimp-0.4.la 
+ all: all-am
+ 
+ .SUFFIXES:
