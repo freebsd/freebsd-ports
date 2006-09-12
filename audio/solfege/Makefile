@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,10 +19,6 @@ COMMENT=	Free eartraining software
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		swig:${PORTSDIR}/devel/swig13 \
 		${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
-.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix pygnomeextras
@@ -39,6 +35,15 @@ MAKE_ARGS=	skipmanual=YES
 MAN1=		lessonfile_editor.1 solfege.1
 
 STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
+
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+.else
+.if !defined(DISPLAY) || ${DISPLAY} == ""
+IGNORE=		Requires an active X session (and DISPLAY variable).  Please compile this while running X.
+.endif
+.endif
 
 post-patch:
 	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \

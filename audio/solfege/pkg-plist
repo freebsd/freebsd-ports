@@ -137,9 +137,6 @@ share/gnome/solfege/graphics/test-sound.png
 share/gnome/solfege/graphics/twelve-tone.png
 share/gnome/solfege/help/C/apb.html
 share/gnome/solfege/help/C/bug-reporting.html
-share/gnome/solfege/help/C/ch03s02.html
-share/gnome/solfege/help/C/ch03s03.html
-share/gnome/solfege/help/C/ch03s04.html
 share/gnome/solfege/help/C/chord-module.html
 share/gnome/solfege/help/C/chord.html
 share/gnome/solfege/help/C/compareintervals-module.html
@@ -191,11 +188,6 @@ share/gnome/solfege/help/C/ly/scale-mixolydian-bebop.png
 share/gnome/solfege/help/C/ly/scale-mixolydian.png
 share/gnome/solfege/help/C/ly/scale-phrygian.png
 share/gnome/solfege/help/C/ly/theory-intervals-1.png
-share/gnome/solfege/help/C/ly/theory-intervals-2.png
-share/gnome/solfege/help/C/ly/theory-intervals-3.png
-share/gnome/solfege/help/C/ly/theory-intervals-4.png
-share/gnome/solfege/help/C/ly/theory-intervals-5.png
-share/gnome/solfege/help/C/ly/theory-intervals-6.png
 share/gnome/solfege/help/C/ly/theory-intervals-fifths-1.png
 share/gnome/solfege/help/C/ly/theory-intervals-fifths-2.png
 share/gnome/solfege/help/C/ly/theory-intervals-fifths.png
@@ -206,8 +198,6 @@ share/gnome/solfege/help/C/ly/theory-intervals-seconds-3.png
 share/gnome/solfege/help/C/ly/theory-intervals-seconds.png
 share/gnome/solfege/help/C/ly/theory-intervals-sevenths.png
 share/gnome/solfege/help/C/ly/theory-intervals-sixths.png
-share/gnome/solfege/help/C/ly/theory-intervals-thirds-1.png
-share/gnome/solfege/help/C/ly/theory-intervals-thirds-2.png
 share/gnome/solfege/help/C/ly/theory-intervals-thirds.png
 share/gnome/solfege/help/C/melodicinterval.html
 share/gnome/solfege/help/C/melodicintervals-module.html
@@ -227,7 +217,6 @@ share/gnome/solfege/help/C/singinterval-module.html
 share/gnome/solfege/help/C/singinterval.html
 share/gnome/solfege/help/C/solfege-exercise-helps.html
 share/gnome/solfege/help/C/solfege-intro.html
-share/gnome/solfege/help/C/theory-intervals.html
 share/gnome/solfege/help/C/twelvetone.html
 share/gnome/solfege/help/C/welcome.html
 share/gnome/solfege/help/fr/apb.html
@@ -460,6 +449,7 @@ share/gnome/solfege/lesson-files/harmonic-intervals
 share/gnome/solfege/lesson-files/harmonic-intervals-10
 share/gnome/solfege/lesson-files/harmonic-intervals-2
 share/gnome/solfege/lesson-files/harmonic-intervals-2-3
+share/gnome/solfege/lesson-files/harmonic-intervals-2-to-8
 share/gnome/solfege/lesson-files/harmonic-intervals-3
 share/gnome/solfege/lesson-files/harmonic-intervals-4-5
 share/gnome/solfege/lesson-files/harmonic-intervals-4-5-8
@@ -486,6 +476,7 @@ share/gnome/solfege/lesson-files/melodic-intervals
 share/gnome/solfege/lesson-files/melodic-intervals-10
 share/gnome/solfege/lesson-files/melodic-intervals-2
 share/gnome/solfege/lesson-files/melodic-intervals-2-3
+share/gnome/solfege/lesson-files/melodic-intervals-2-to-8
 share/gnome/solfege/lesson-files/melodic-intervals-2int-2-3
 share/gnome/solfege/lesson-files/melodic-intervals-3
 share/gnome/solfege/lesson-files/melodic-intervals-4-5
@@ -499,6 +490,7 @@ share/gnome/solfege/lesson-files/melodic-intervals-down
 share/gnome/solfege/lesson-files/melodic-intervals-down-10
 share/gnome/solfege/lesson-files/melodic-intervals-down-2
 share/gnome/solfege/lesson-files/melodic-intervals-down-2-3
+share/gnome/solfege/lesson-files/melodic-intervals-down-2-to-8
 share/gnome/solfege/lesson-files/melodic-intervals-down-3
 share/gnome/solfege/lesson-files/melodic-intervals-down-4-5
 share/gnome/solfege/lesson-files/melodic-intervals-down-4-5-8
