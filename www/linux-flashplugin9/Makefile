@@ -17,6 +17,8 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
+FORBIDDEN=	Arbitrary code execution vulnerabilities: http://vuxml.FreeBSD.org/7c75d48c-429b-11db-afae-000c6ec775d9.html
+
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 
