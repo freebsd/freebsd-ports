@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Fri Aug  5 19:15:09 2005
-+++ Makefile.PL	Wed Apr 12 11:13:37 2006
-@@ -65,31 +65,31 @@ if ($force_local = (grep(/USE_LOCAL_SQLI
+--- Makefile.PL.orig	Fri Sep  8 05:45:13 2006
++++ Makefile.PL	Tue Sep 12 13:59:02 2006
+@@ -68,31 +68,31 @@
  
  # Now, check for a compatible sqlite3
  unless ($force_local) {
@@ -39,17 +39,3 @@
              last if $version;
          }
      }
-@@ -115,11 +115,11 @@ WriteMakefile(
-     'OBJECT'        => ($force_local) ? '$(O_FILES)' : 'SQLite.o dbdimp.o',
-     'INC'           => '-I. -I$(DBI_INSTARCH_DIR)' .
-                        (($sqlite_inc) ? " -I$sqlite_inc" : ''),
--    $force_local ? () : ('LIBS' => '-lsqlite3'),
-+    $force_local ? () : ('LIBS' => $sqlite_lib ? "-L$sqlite_lib -lsqlite3" : "-lsqlite3"),
-     $sqlite_lib  ? ('dynamic_lib' => { OTHERLDFLAGS => "-L$sqlite_lib" }) : (),
-     'OPTIMIZE'      => "-O2",
-     'DEFINE'        => "-DNDEBUG=1 -DSQLITE_PTR_SZ=$Config{ptrsize}" .
--                       ( ($Config{d_usleep} ||
-+                       ( (1 ||
-                           $Config{osname} =~ m/linux/) ?
-                                 " -DHAVE_USLEEP=1" : "" ) .
-                        ($DBI::VERSION > 1.42 ? '' : ' -Dno_last_insert_id'),
