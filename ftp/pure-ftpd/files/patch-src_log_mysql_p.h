@@ -1,11 +1,10 @@
---- src/log_mysql_p.h.orig	Mon Sep 11 11:57:13 2006
-+++ src/log_mysql_p.h	Mon Sep 11 11:57:23 2006
-@@ -3,6 +3,8 @@
+--- src/log_mysql_p.h.orig	Sun Feb 29 18:49:28 2004
++++ src/log_mysql_p.h	Tue Sep 12 07:10:35 2006
+@@ -2,6 +2,7 @@
+ #define __LOG_MYSQL_P_H__ 1
  
  #include <mysql.h>
++#include <my_globals.h>
  
-+typedef unsigned long	ulong;
-+
  #ifdef MYSQL_VERSION_ID
  # if MYSQL_VERSION_ID < 32224
- #  define mysql_field_count(X) mysql_num_fields(X)
