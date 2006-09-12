@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
-MAINTAINER=	grog@lemis.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instant workstation installs a typical set of ports for a workstation
 
 BROKEN=		Incomplete pkg-plist
