@@ -3603,6 +3603,7 @@ google-sitemapgen	ports/www/google-sitemapgen
 google-sparsehash	ports/devel/google-sparsehash
 googolplex	ports/net/googolplex
 goom		ports/graphics/goom
+goonies		ports/games/goonies
 goose		ports/www/goose
 gopchop		ports/multimedia/gopchop
 gopher		ports/net/gopher
