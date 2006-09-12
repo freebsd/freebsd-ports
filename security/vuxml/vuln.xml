@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7c75d48c-429b-11db-afae-000c6ec775d9">
+    <topic>linux-flashplugin7 -- arbitrary code execution vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>7.0r68</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb06-11.html">
+	  <p>Multiple input validation errors have been identified in
+	    Flash Player 8.0.24.0 and earlier versions that could lead
+	    to the potential execution of arbitrary code. These
+	    vulnerabilities could be accessed through content
+	    delivered from a remote location via the user?s web
+	    browser, email client, or other applications that include
+	    or reference the Flash Player. (CVE-2006-3311,
+	    CVE-2006-3587, CVE-2006-3588)</p>
+	  <p>These updates include changes to prevent circumvention of
+	    the "allowScriptAccess" option. (CVE-2006-4640)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3311</cvename>
+      <cvename>CVE-2006-3587</cvename>
+      <cvename>CVE-2006-3588</cvename>
+      <cvename>CVE-2006-4640</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb06-11.html</url>
+    </references>
+    <dates>
+      <discovery>2006-09-12</discovery>
+      <entry>2006-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28ce7102-4039-11db-a838-00148584c7dd">
     <topic>gnutls -- Adaptive Chosen Ciphertext Attack</topic>
     <affects>
