@@ -27,6 +27,4 @@ post-install:
 	${CP} -R ${WRKSRC}/example/ ${EXAMPLESDIR}
 .endif
 
-BROKEN=		Does not fetch: a new version (2.0) available
-
 .include <bsd.port.mk>
