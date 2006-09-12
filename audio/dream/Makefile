@@ -32,4 +32,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|neaacdec.h|faad.h|g' ${WRKSRC}/common/sourcedecoders/AudioSourceDecoder.cpp
 	@${REINPLACE_CMD} -e 's|DRMCH_SBR_PS_STEREO|DRMCH_SBR_STEREO|g' ${WRKSRC}/common/sourcedecoders/AudioSourceDecoder.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not build on 4.x
+.endif
+
+.include <bsd.port.post.mk>
