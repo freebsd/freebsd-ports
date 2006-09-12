@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSS-Tiny
-PORTVERSION=	1.11
+PORTVERSION=	1.14
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CSS
@@ -15,18 +15,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hansjoerg.pehofer@uibk.ac.at
 COMMENT=	Read/Write .css files with as little code as possible
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
 MAN3=		CSS::Tiny.3
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	@${PERL} -pi -e '$$_="" if /AutoInstall/' ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e '$$_="" if /Test::More|auto_install/' ${WRKSRC}/Makefile.PL
+.if ${PERL_LEVEL}	<	500504
+IGNORE=		requires perl 5.5.4 or later. Install lang/perl5.8 and try again
+.endif
 
 .include <bsd.port.post.mk>
