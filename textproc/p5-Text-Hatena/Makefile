@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Hatena
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -15,12 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Perl extension for formatting text with Hatena Style
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+RUN_DEPENDS=	p5-HTML-Parser>=3.26:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Net-Amazon>=0.34:${PORTSDIR}/net/p5-Net-Amazon \
+		p5-Template-Toolkit>=2.14:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Net/Amazon.pm:${PORTSDIR}/net/p5-Net-Amazon
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-Text-VimColor>=0.11:${PORTSDIR}/textproc/p5-Text-VimColor
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
