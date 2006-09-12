@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mednafen
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	emulators games
-MASTER_SITES=	http://mednafen.com/releases/
+MASTER_SITES=	http://mednafen.com/releases/files/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
@@ -50,7 +50,7 @@ IGNORE=		needs round(3), which appears in 5.3 or later
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
