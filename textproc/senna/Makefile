@@ -6,26 +6,39 @@
 #
 
 PORTNAME=	senna
-PORTVERSION=	0.${SNAPDATE}
+PORTVERSION=	0.8.1
+PORTEPOCH=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://dist.bsdlab.org/ \
-		http://dev.razil.jp/archive/senna/
-DISTNAME=	${PORTNAME}-${SNAPDATE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	senna/21716
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Embeddable Fulltext Search Engine
 
-LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
-
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-SNAPDATE=	20060829
 SENNA_HOME?=	/var/senna
 
-.include <bsd.port.mk>
+OPTIONS=	MECAB	"use mecab for morphological analysis" on \
+		NFKC	"use nfkc based utf8 normalization" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MECAB)
+CONFIGURE_ARGS+=	--with-mecab
+LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
+.else
+CONFIGURE_ARGS+=	--without-mecab
+.endif
+
+.if !defined(WITH_NFKC)
+CONFIGURE_ARGS+=	--disable-nfkc
+.endif
+
+.include <bsd.port.post.mk>
