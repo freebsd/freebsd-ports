@@ -1,5 +1,5 @@
---- config.php.orig	Thu Mar 16 22:16:54 2006
-+++ config.php	Tue Apr 18 03:56:19 2006
+--- config.php.orig	Fri Jun 30 01:01:08 2006
++++ config.php	Thu Aug 24 23:40:02 2006
 @@ -96,7 +96,7 @@
  // see either httpd.conf User directive or ps -ef to see which user
  // apache runs under, then set mode 700 on directory and change owner
@@ -12,9 +12,9 @@
 @@ -109,7 +109,7 @@
  // not work if php is running in safemode. probing and scanning may 
  // also be against policy for your site!
- //define("NMAP", '');
--define("NMAP", '/usr/bin/nmap');
-+define("NMAP", '%%LOCALBASE%%/bin/nmap');
+ define("NMAP", '');
+-//define("NMAP", '/usr/bin/nmap');
++//define("NMAP", '%%LOCALBASE%%/bin/nmap');
  
  // helpdesk email address
  define("HELPDESKEMAIL", "helpdesk@mydomain.com");
