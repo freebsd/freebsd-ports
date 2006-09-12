@@ -5,13 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com/en/1.1/:bookhtml \
-		http://svnbook.red-bean.com/en/1.1/:bookpdf
+		http://svnbook.red-bean.com/en/1.2/:bookhtml \
+		http://svnbook.red-bean.com/en/1.2/images/:bookhtmlimg \
+		http://svnbook.red-bean.com/en/1.2/:bookpdf
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
+DIST_SUBDIR=	subversion
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lev@freebsd.org
@@ -26,9 +28,9 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-ssl
 
-USE_RC_SUBR=svnserve.sh
+USE_RC_SUBR=	svnserve.sh
 
-MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnversion.1
+MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnsync.1 svnversion.1
 MAN5=		svnserve.conf.5
 MAN8=		svnserve.8
 MANCOMPRESSED=	no
@@ -36,6 +38,10 @@ MANCOMPRESSED=	no
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 .if !defined(NOPORTDOCS)
 PORTDOCS=	${TXT_DOCS}
+.endif
+
+.if defined(WITH_ASVN)
+RUN_DEPENDS= ${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -198,7 +204,15 @@ PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
 PORTDOCS+=	book
-DISTFILES+=	svn-book.html:bookhtml svn-book.pdf:bookpdf
+DISTFILES+=	svn-book.html:bookhtml \
+		ch01dia1.png:bookhtmlimg ch02dia1.png:bookhtmlimg \
+		ch02dia2.png:bookhtmlimg ch02dia3.png:bookhtmlimg \
+		ch02dia5.png:bookhtmlimg ch02dia6.png:bookhtmlimg \
+		ch02dia7.png:bookhtmlimg ch04dia1.png:bookhtmlimg \
+		ch04dia2.png:bookhtmlimg ch04dia3.png:bookhtmlimg \
+		ch04dia4.png:bookhtmlimg ch08dia1.png:bookhtmlimg \
+		ch08dia2.png:bookhtmlimg \
+		svn-book.pdf:bookpdf
 .endif
 
 .if defined(WITH_ASVN)
@@ -315,10 +329,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Many useful scripts will be installed into ${PREFIX}/share/subversion"
 
-post-extract:
-	@${RM} -r ${WRKSRC}/neon
-	@${RM} -r ${WRKSRC}/apr
-	@${RM} -r ${WRKSRC}/apr-util
+#post-extract:
+#	@${RM} -r ${WRKSRC}/neon
+#	@${RM} -r ${WRKSRC}/apr
+#	@${RM} -r ${WRKSRC}/apr-util
 
 post-patch:
 .if ${PREFIX} != "/usr"
@@ -386,8 +400,10 @@ post-install:	${MKREPOS_TARGET}
 	done
 .if defined(WITH_BOOK)
 	${MKDIR} ${DOCSDIR}/book
-	${INSTALL_DATA} ${DISTDIR}/svn-book.html ${DOCSDIR}/book
-	${INSTALL_DATA} ${DISTDIR}/svn-book.pdf ${DOCSDIR}/book
+	${MKDIR} ${DOCSDIR}/book/images
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/svn-book.html ${DOCSDIR}/book
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.png         ${DOCSDIR}/book/images
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/svn-book.pdf  ${DOCSDIR}/book
 .endif
 .endif
 .if defined(WITH_ASVN)

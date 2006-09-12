@@ -4,6 +4,7 @@ bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
 bin/svnserve
+bin/svnsync
 %%ASVN%%bin/asvn
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
 bin/svnversion
@@ -18,6 +19,7 @@ include/subversion-1/svn_ctype.h
 include/subversion-1/svn_dav.h
 include/subversion-1/svn_delta.h
 include/subversion-1/svn_diff.h
+include/subversion-1/svn_dso.h
 include/subversion-1/svn_error.h
 include/subversion-1/svn_error_codes.h
 include/subversion-1/svn_fs.h
@@ -38,6 +40,7 @@ include/subversion-1/svn_string.h
 include/subversion-1/svn_subst.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
+include/subversion-1/svn_user.h
 include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
@@ -107,11 +110,13 @@ lib/libsvn_wc-1.so.0
 %%WITHOUT_GETTEXT%%share/locale/sv/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_CN/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_TW/LC_MESSAGES/subversion.mo
+%%DATADIR%%/README
 %%DATADIR%%/backup/hot-backup.py
 %%DATADIR%%/bdb/erase-all-text-data.py
 %%DATADIR%%/bdb/skel.py
 %%DATADIR%%/bdb/svn-bdb-view.py
 %%DATADIR%%/bdb/svnfs.py
+%%DATADIR%%/bdb/whatis-rep.py
 %%DATADIR%%/client-side/bash_completion
 %%DATADIR%%/client-side/bash_completion_test
 %%DATADIR%%/client-side/server-vsn.py
@@ -120,10 +125,10 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/dev/check-license.py
 %%DATADIR%%/dev/datecheck.py
 %%DATADIR%%/dev/contribulyze.py
-%%DATADIR%%/dev/find-textfiles.sh
 %%DATADIR%%/dev/gcov.patch
 %%DATADIR%%/dev/getsigs.pl
 %%DATADIR%%/dev/gnuify-changelog.pl
+%%DATADIR%%/dev/graph-dav-servers.py
 %%DATADIR%%/dev/iz/defect.dem
 %%DATADIR%%/dev/iz/ff2csv.command
 %%DATADIR%%/dev/iz/ff2csv.py
@@ -142,6 +147,7 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/dev/svn-merge-revs.py
 %%DATADIR%%/dev/trails.py
 %%DATADIR%%/dev/verify-history.py
+%%DATADIR%%/dev/warn-ignored-err.sh
 %%DATADIR%%/dev/which-error.py
 %%DATADIR%%/diff/diff.c
 %%DATADIR%%/diff/diff3.c
@@ -156,32 +162,50 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/examples/minimal_client.c
 %%DATADIR%%/examples/putfile.py
 %%DATADIR%%/examples/revplist.py
+%%DATADIR%%/examples/svnlog2html.rb
 %%DATADIR%%/examples/svnlook.py
 %%DATADIR%%/examples/svnlook.rb
 %%DATADIR%%/examples/svnput.c
 %%DATADIR%%/examples/svnserve-sgid.c
 %%DATADIR%%/examples/svnshell.py
 %%DATADIR%%/examples/svnshell.rb
+%%DATADIR%%/examples/testwrite.c
 %%DATADIR%%/hook-scripts/commit-access-control.cfg.example
 %%DATADIR%%/hook-scripts/commit-access-control.pl
 %%DATADIR%%/hook-scripts/commit-email.pl
 %%DATADIR%%/hook-scripts/commit-email.rb
+%%DATADIR%%/hook-scripts/log-police.py
 %%DATADIR%%/hook-scripts/mailer/mailer.conf.example
 %%DATADIR%%/hook-scripts/mailer/mailer.py
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-init.sh
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.output
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.sh
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-tweak.py
-%%DATADIR%%/hook-scripts/propchange-email.pl
 %%DATADIR%%/hook-scripts/README
 %%DATADIR%%/hook-scripts/svnperms.conf.example
 %%DATADIR%%/hook-scripts/svnperms.py
 %%DATADIR%%/hook-scripts/verify-po.py
+%%DATADIR%%/po/po-update.sh
 %%DATADIR%%/po/svn-po-status-report.sh
 %%DATADIR%%/po/svn-po-status-run.sh
+%%DATADIR%%/server-side/svn-backup-dumps.py
 %%DATADIR%%/server-side/svnauthz-validate.c
 %%DATADIR%%/test-scripts/svntest/README
 %%DATADIR%%/test-scripts/svntest/dav_svn.passwd
+%%DATADIR%%/test-scripts/svntest/encode-base64.py
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.apr-0.9
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.apr-0.9.x
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.apr-util-0.9
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.httpd-2.0
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.shared
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/dav_svn.passwd
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/httpd-2.0.conf
+%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/mod_dav_svn.conf
+%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.apr-0.9
+%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.apr-util-0.9
+%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.httpd-2.0
+%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.solaris.static
+%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/dav_svn.passwd
 %%DATADIR%%/test-scripts/svntest/mod_dav_svn.conf
 %%DATADIR%%/test-scripts/svntest/svntest-bindings.sh
 %%DATADIR%%/test-scripts/svntest/svntest-bindings-generic.sh
@@ -351,6 +375,9 @@ lib/libsvn_wc-1.so.0
 @dirrm %%DATADIR%%/hook-scripts
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/server-side
+@dirrm %%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared
+@dirrm %%DATADIR%%/test-scripts/svntest/examples/solaris-7-static
+@dirrm %%DATADIR%%/test-scripts/svntest/examples
 @dirrm %%DATADIR%%/test-scripts/svntest
 @dirrm %%DATADIR%%/test-scripts
 @dirrm %%DATADIR%%/xslt
