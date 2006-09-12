@@ -27,6 +27,10 @@ USE_PYDISTUTILS=yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
 pre-fetch:
 .if ${PYTHON_REL} < 200
 	@${ECHO} "Py-numpy doesn't work with Python versions < 2.0."
