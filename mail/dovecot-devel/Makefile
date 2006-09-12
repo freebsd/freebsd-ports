@@ -37,7 +37,6 @@ CONFIGURE_ARGS+=	--without-docs
 .endif
 
 OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
-		SASL2		"SASL2 support"		off \
 		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
@@ -52,13 +51,6 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 #
 .if !defined(WITHOUT_KQUEUE)
 CONFIGURE_ARGS+=	--with-ioloop=kqueue
-.endif
-
-## SASL2 support
-#
-.if defined(WITH_SASL2)
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-cyrus-sasl2
 .endif
 
 ## GSSAPI support
