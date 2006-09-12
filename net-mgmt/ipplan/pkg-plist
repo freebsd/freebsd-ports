@@ -232,12 +232,16 @@
 %%IPPLANDIR%%/locale/fr/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/it/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/it/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
 %%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
+%%IPPLANDIR%%/locale/ru/LC_MESSAGES/messages.mo
+%%IPPLANDIR%%/locale/ru/LC_MESSAGES/messages.po
 %%IPPLANDIR%%/menudefs.php
 %%IPPLANDIR%%/menus/ACKNOWLEDGEMENTS
 %%IPPLANDIR%%/menus/CHANGELOG
@@ -557,12 +561,16 @@
 @dirrm %%IPPLANDIR%%/menus/LOGOS
 @dirrm %%IPPLANDIR%%/menus/DUMPS
 @dirrm %%IPPLANDIR%%/menus
+@dirrm %%IPPLANDIR%%/locale/ru/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/ru
 @dirrm %%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%IPPLANDIR%%/locale/pt_BR
 @dirrm %%IPPLANDIR%%/locale/pt/LC_MESSAGES
 @dirrm %%IPPLANDIR%%/locale/pt
 @dirrm %%IPPLANDIR%%/locale/no/LC_MESSAGES
 @dirrm %%IPPLANDIR%%/locale/no
+@dirrm %%IPPLANDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/ja_JP
 @dirrm %%IPPLANDIR%%/locale/it/LC_MESSAGES
 @dirrm %%IPPLANDIR%%/locale/it
 @dirrm %%IPPLANDIR%%/locale/fr/LC_MESSAGES
