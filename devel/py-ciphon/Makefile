@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	ciphon
-PORTVERSION=	0.3.5
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pythonsiphon
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	A module for python that adds cpan-like functionality
 
 RUN_DEPENDS=	${PYEXPAT}
