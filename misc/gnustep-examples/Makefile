@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-examples
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -24,12 +24,8 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 
-MAKE_APPS=	Finger GFractal GPuzzle HostAddress
-INSTALL_APPS=	Finger GFractal GPuzzle HostAddress
-
-post-patch:
-	${REINPLACE_CMD} -e 's|)/Makefiles|)/Library/Makefiles|' \
-		${WRKSRC}/gui/GPuzzle/GNUmakefile
+MAKE_APPS=	Finger GFractal HostAddress
+INSTALL_APPS=	Finger GFractal HostAddress
 
 post-build:
 .for i in ${MAKE_APPS}
