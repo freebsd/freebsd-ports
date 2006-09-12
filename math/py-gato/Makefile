@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	gato
-PORTVERSION=	0.98.Q
+PORTVERSION=	0.99
 CATEGORIES=	math python
-MASTER_SITES=	http://gato.sourceforge.net/Download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gato
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Gato-${PORTVERSION:U:C|\.([^.]*)$|\1|}
+DISTNAME=	Gato-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python-based toolbox to visualise algorithms on graphs
