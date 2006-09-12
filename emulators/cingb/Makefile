@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cingb
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	standard
+
+PORTDOCS=	README README.FAQ
+PLIST_FILES=	bin/cingb bin/cingb_conf
 
 CPPFLAGS=	${PTHREAD_CFLAGS}
 LDFLAGS=	${PTHREAD_LIBS}
@@ -33,7 +36,8 @@ do-configure:
 	cd ${WRKSRC} && ${SED} -e \
 		's|gcc|$${CC}|g ; \
 		 s|/usr/X11R6|$${X11BASE}|g ; \
-		 s|-O6|$${CFLAGS}|g ; \
+		 s|^CFLAGS|#CFLAGS|g ; \
+		 s|^OPTMZ|#OPTMZ|g ; \
 		 s|%%%endian%%%|$${CPPFLAGS}|g ; \
 		 s|%%%pthread%%%|$${LDFLAGS}|g ; \
 		 s|%%%libext%%%|-lXext|g ; \
