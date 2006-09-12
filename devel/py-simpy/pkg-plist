@@ -47,6 +47,7 @@
 %%PYTHON_SITELIBDIR%%/SimPy/tkprogressbar.pyc
 %%PYTHON_SITELIBDIR%%/SimPy/tkprogressbar.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/SimPy
+%%EXAMPLESDIR%%/Carwash.py
 %%EXAMPLESDIR%%/CellularAutomata.py
 %%EXAMPLESDIR%%/GUIdemo.py
 %%EXAMPLESDIR%%/LISTOFMODELS.html
@@ -58,6 +59,7 @@
 %%EXAMPLESDIR%%/Movie_renege.py
 %%EXAMPLESDIR%%/SimGUIStep.py
 %%EXAMPLESDIR%%/SimPy_worker_extend.py
+%%EXAMPLESDIR%%/WidgetPacking.py
 %%EXAMPLESDIR%%/airport.py
 %%EXAMPLESDIR%%/bank08renege.py
 %%EXAMPLESDIR%%/bank11GUI.py
