@@ -268,6 +268,7 @@
     SUBDIR += gnugo
     SUBDIR += gnurobots
     SUBDIR += gnushogi
+    SUBDIR += gnustep-ladder
     SUBDIR += golddig
     SUBDIR += gomoku.app
     SUBDIR += gracer
