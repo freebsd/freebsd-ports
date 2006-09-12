@@ -15,6 +15,8 @@ DISTNAME=	Camera-${PORTVERSION}
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	GNUstep application for digital still cameras
 
+LIB_DEPENDS+=	gphoto2_port:${PORTSDIR}/graphics/libgphoto2
+
 WRKSRC=		${WRKDIR}/Camera
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -24,7 +26,5 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
-
-BUILD_DEPENDS+=	gphoto2-config:${PORTSDIR}/graphics/gphoto2
 
 .include <bsd.port.mk>
