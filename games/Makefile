@@ -271,6 +271,7 @@
     SUBDIR += gnustep-ladder
     SUBDIR += golddig
     SUBDIR += gomoku.app
+    SUBDIR += goonies
     SUBDIR += gracer
     SUBDIR += grande
     SUBDIR += greed
