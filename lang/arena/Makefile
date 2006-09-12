@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arena
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	lang
 MASTER_SITES=	http://www.minimalinux.org/arena/
 
