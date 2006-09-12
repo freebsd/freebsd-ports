@@ -1,5 +1,6 @@
 bin/qucs
 bin/qucsator
+bin/qucsattenuator
 bin/qucsconv
 bin/qucsdigi
 bin/qucsedit
@@ -14,7 +15,11 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/amplifier.png
 %%DATADIR%%/bitmaps/and.png
 %%DATADIR%%/bitmaps/arrow.png
+%%DATADIR%%/bitmaps/att_bridge.png
+%%DATADIR%%/bitmaps/att_pi.png
+%%DATADIR%%/bitmaps/att_tee.png
 %%DATADIR%%/bitmaps/attenuator.png
+%%DATADIR%%/bitmaps/back.png
 %%DATADIR%%/bitmaps/biast.png
 %%DATADIR%%/bitmaps/big.button.qucs.xpm
 %%DATADIR%%/bitmaps/big.qucs.xpm
@@ -60,11 +65,13 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/filesaveall.png
 %%DATADIR%%/bitmaps/filledellipse.png
 %%DATADIR%%/bitmaps/filledrect.png
+%%DATADIR%%/bitmaps/forward.png
 %%DATADIR%%/bitmaps/gear.png
 %%DATADIR%%/bitmaps/gnd.png
 %%DATADIR%%/bitmaps/ground.png
 %%DATADIR%%/bitmaps/gyrator.png
 %%DATADIR%%/bitmaps/hb.png
+%%DATADIR%%/bitmaps/home.png
 %%DATADIR%%/bitmaps/inductor.png
 %%DATADIR%%/bitmaps/inverter.png
 %%DATADIR%%/bitmaps/iprobe.png
@@ -90,6 +97,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/mutual.png
 %%DATADIR%%/bitmaps/mutual2.png
 %%DATADIR%%/bitmaps/nand.png
+%%DATADIR%%/bitmaps/next.png
 %%DATADIR%%/bitmaps/nfet.png
 %%DATADIR%%/bitmaps/nmosfet.png
 %%DATADIR%%/bitmaps/nmosfet_sub.png
@@ -103,6 +111,7 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/npn.png
 %%DATADIR%%/bitmaps/npnsub.png
 %%DATADIR%%/bitmaps/opamp.png
+%%DATADIR%%/bitmaps/optimize.png
 %%DATADIR%%/bitmaps/or.png
 %%DATADIR%%/bitmaps/pfet.png
 %%DATADIR%%/bitmaps/pm_mod.png
@@ -114,7 +123,9 @@ bin/qucstrans
 %%DATADIR%%/bitmaps/polar.png
 %%DATADIR%%/bitmaps/polarsmith.png
 %%DATADIR%%/bitmaps/port.png
+%%DATADIR%%/bitmaps/previous.png
 %%DATADIR%%/bitmaps/pshifter.png
+%%DATADIR%%/bitmaps/quit.png
 %%DATADIR%%/bitmaps/rebuild.png
 %%DATADIR%%/bitmaps/rect.png
 %%DATADIR%%/bitmaps/rect3d.png
@@ -278,4 +289,4 @@ bin/qucstrans
 @dirrm %%DATADIR%%/docs/de
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/bitmaps
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%

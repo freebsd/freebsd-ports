@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qucs
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	cad science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,17 +19,7 @@ USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		qucs.1 qucsator.1 qucsconv.1 qucsdigi.1 qucsedit.1 \
-		qucsfilter.1 qucshelp.1 qucslib.1 qucstrans.1
+MAN1=		qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 qucsdigi.1 \
+		qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 qucstrans.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-qucs-core_src_evaluate.cpp
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's#qucsdigi\.bat##g' \
-	                  ${WRKSRC}/qucs/Makefile*
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
