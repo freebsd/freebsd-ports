@@ -1,0 +1,4 @@
+This is a graphically pleasing implementation of Go. It uses gnugo as its
+engine.
+
+WWW: http://www.nongnu.org/gap/ladder/
