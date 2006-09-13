@@ -26,6 +26,10 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
+.if ${OSVERSION} < 500000
+USE_GMAKE=	yes
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e "s,^\(OCAMLLIB=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^\(BINDIR=\).*,\1${PREFIX}/bin,g" \
@@ -51,8 +55,8 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${TAR} -C ${DOCSDIR} -xf \
-		${_DISTDIR}/${PORTNAME}-${PORTVERSION}.doc.html.tar.gz
+	${GZCAT} ${_DISTDIR}/${PORTNAME}-${PORTVERSION}.doc.html.tar.gz \
+		| ${TAR} -C ${DOCSDIR} -xf -
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
