@@ -29,7 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		LIBS=-Wl,-rpath,${PREFIX}/lib/wine \
 		EXTRA_BINARIES="wine-kthread"
-USE_LDCONFIG=	${PREFIX}/lib/wine
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
 		winemaker.1 wineprefixcreate.1 wineserver.1 wmc.1 wrc.1
 ONLY_FOR_ARCHS=	i386
