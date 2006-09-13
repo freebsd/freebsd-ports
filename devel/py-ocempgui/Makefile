@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=		ocempgui
-PORTVERSION=	0.2.0
-CATEGORIES=		devel python
+PORTNAME=	ocempgui
+PORTVERSION=	0.2.1
+CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocemp
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,11 +22,11 @@ RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/
 USE_GNOME=	atk
 USE_GCC=	3.4+
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 post-patch:
-.	if defined(NOPORTDOCS)
-		${REINPLACE_CMD} -i "" -e 's|datafiles + docfiles|datafiles|g' ${WRKSRC}/setup.py
-.	endif
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -i "" -e 's|datafiles + docfiles|datafiles|g' ${WRKSRC}/setup.py
+.endif
 
 .include <bsd.port.mk>
