@@ -48,6 +48,9 @@ MAN3=	Net::Packet.3 Net::Packet::ARP.3 Net::Packet::Consts.3 Net::Packet::Desc.3
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	GOMOR_PATH=${PREFIX}
 
+ONLY_FOR_ARCHS=		i386 amd64 alpha
+ONLY_FOR_ARCHS_REASON=	Big endian architectures not supported yet
+
 post-extract:
 	@${MV} ${WRKSRC}/gomor/* ${WRKSRC}/
 	@cd ${WRKSRC} && ${RM} -rf dbd-sqlite dbi libdnet libpcap modules net-libdnet net-pcap \
