@@ -287,6 +287,7 @@
     SUBDIR += mad_fcl
     SUBDIR += mars_nwe
     SUBDIR += mcast-tools
+    SUBDIR += mediaproxy
     SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micro_inetd
