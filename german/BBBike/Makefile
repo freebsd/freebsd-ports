@@ -44,7 +44,7 @@ do-build:
 	${CHMOD} 0755 ${WRKSRC}/bbbike
 
 BBBIKEEXE=	bbbike cbbbike bbbikeclient cmdbbbike smsbbbike
-PLIST_IN=	pkg-plist.in
+PLIST_IN=	${PKGDIR}/pkg-plist.in
 PLIST=		${WRKDIR}/pkg-plist
 
 pre-install:
