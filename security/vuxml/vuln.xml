@@ -89,14 +89,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Simon Josefsson reports:</p>
 	<blockquote cite="http://lists.gnupg.org/pipermail/gnutls-dev/2006-September/001203.html">
 	  <p><code>_gnutls_handshake_log ("PKCS #1 padding error");
-	           ret = GNUTLS_E_PKCS1_WRONG_PAD;</code></p>
-            <p>Werner Koch points out that this error message may result in a
-	    vulnerability similar to Bleichenbacher's Crypto 98 attack.  It is not
-	    exactly the same situation -- Bleichenbacher talks about PKCS#1
-	    encryption (block type 1, uses random padding) where this deals with
-	    PKCS#1 verification (block type 2, uses 0xFF padding) -- but at a
-	    glance, it appears to have similar consequences, but differ in the
-	    number of messages required to mount the attack.</p>
+	      ret = GNUTLS_E_PKCS1_WRONG_PAD;</code></p>
+	    <p>Werner Koch points out that this error message may result
+	     in a vulnerability similar to Bleichenbacher's Crypto 98
+	     attack.  It is not exactly the same situation --
+	     Bleichenbacher talks about PKCS#1 encryption (block type 1,
+	     uses random padding) where this deals with PKCS#1
+	     verification (block type 2, uses 0xFF padding) -- but at a
+	     glance, it appears to have similar consequences, but differ
+	     in the number of messages required to mount the attack.</p>
 	</blockquote>
       </body>
     </description>
@@ -107,6 +108,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-08</discovery>
       <entry>2006-09-09</entry>
+      <modified>2006-09-13</modified>
     </dates>
   </vuln>
 
