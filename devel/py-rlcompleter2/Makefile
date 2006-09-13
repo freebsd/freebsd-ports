@@ -12,7 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/rlcompleter2/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Python module for readline interactive completion
 
 USE_PYTHON=	2.2+

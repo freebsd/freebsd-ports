@@ -11,7 +11,7 @@ CATEGORIES=	news python
 MASTER_SITES=	http://www.hellanzb.com/hellanzb-content/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A yenc decoding module for Python in C
 
 USE_PYTHON=	yes

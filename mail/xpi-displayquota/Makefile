@@ -10,7 +10,7 @@ PORTVERSION=	0.1.10
 DISTVERSIONSUFFIX=	-tb
 CATEGORIES=	mail
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An extension that displays your IMAP quota in statusbar
 
 XPI_DISTNAME=	display_quota

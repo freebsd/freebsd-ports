@@ -9,7 +9,7 @@ PORTVERSION=	0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	http://www.brockman.se/software/ruby-event-loop/
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Event loop for ruby applications
 
 .include <bsd.port.pre.mk>
