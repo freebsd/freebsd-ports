@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.1.0
+PORTVERSION=		2.1.1
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +39,7 @@ USE_RC_SUBR=		ziproxy
 
 SUB_FILES+=		pkg-message
 
-.include <bsd.port.pre.mk>
+OPTIONS+=		JPEG2000 "Build with JPEG2000 support" on
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -70,5 +70,14 @@ post-install:
 .endfor
 
 	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_JPEG2000)
+CONFIGURE_ARGS+=	--without-jasper
+.else
+CONFIGURE_ARGS+=	--with-jasper
+LIB_DEPENDS+=		jasper.4:${PORTSDIR}/graphics/jasper
+.endif
 
 .include <bsd.port.post.mk>
