@@ -7498,6 +7498,7 @@ netwox		ports/net-mgmt/netwox
 neverball	ports/games/neverball
 newer		ports/misc/newer
 newfile		ports/devel/newfile
+newlisp		ports/lang/newlisp
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
 newpki-client	ports/security/newpki-client
