@@ -104,6 +104,7 @@
     SUBDIR += dokuwiki-devel
     SUBDIR += dotproject
     SUBDIR += dpsearch
+    SUBDIR += drraw
     SUBDIR += drupal
     SUBDIR += drupal-pubcookie
     SUBDIR += drupal-textile
