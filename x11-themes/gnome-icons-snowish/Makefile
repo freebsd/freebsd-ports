@@ -7,6 +7,7 @@
 
 PORTNAME=	snowish
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://nuovext.pwsp.net/snowish/files/
 DISTNAME=	SnowIsh-${PORTVERSION}_PNG
