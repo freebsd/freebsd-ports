@@ -6732,6 +6732,7 @@ mdnsd		ports/dns/mdnsd
 mdpop3d		ports/mail/mdpop3d
 meanwhile	ports/net-im/meanwhile
 meanwhile-gaim	ports/net-im/meanwhile-gaim
+mediaproxy	ports/net/mediaproxy
 mediawiki	ports/www/mediawiki
 mediawiki13	ports/www/mediawiki13
 mediawiki14	ports/www/mediawiki14
