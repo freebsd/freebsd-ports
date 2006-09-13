@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT?=	An object-oriented interpreted scripting language
 
 .if defined(WITH_ONIGURUMA)
