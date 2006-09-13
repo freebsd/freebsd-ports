@@ -30,9 +30,8 @@ MAN3=	${PORTNAME}.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-LIB_DEPENDS=	bsnmp.2:${PORTSDIR}/net-mgmt/bsnmpd
-CFLAGS+=	-I${LOCALBASE}/lib -L${LOCALBASE}/include
+.if ${OSVERSION} < 600029
+IGNORE=	does not compile on FreeBSD before 6.x
 .endif
 
 post-extract:
