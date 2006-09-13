@@ -268,6 +268,45 @@ share/smi/pibs/tubs/SLS-NEGOTIATION-PIB
 share/smi/pibs/tubs/SLS-NEGOTIATION-PIB-orig
 share/smi/pibs/tubs/UMTS-PIB
 share/smi/pibs/tubs/UMTS-PIB-orig
+share/smi/mibs/ietf/AGGREGATE-MIB
+share/smi/mibs/ietf/ALARM-MIB
+share/smi/mibs/ietf/ARC-MIB
+share/smi/mibs/ietf/DOCS-IETF-BPI2-MIB
+share/smi/mibs/ietf/DOCS-IETF-QOS-MIB
+share/smi/mibs/ietf/DOCS-IETF-SUBMGT-MIB
+share/smi/mibs/ietf/ENTITY-STATE-MIB
+share/smi/mibs/ietf/ENTITY-STATE-TC-MIB
+share/smi/mibs/ietf/FC-MGMT-MIB
+share/smi/mibs/ietf/FCIP-MGMT-MIB
+share/smi/mibs/ietf/IANA-ITU-ALARM-TC-MIB
+share/smi/mibs/ietf/IFCP-MGMT-MIB
+share/smi/mibs/ietf/ISIS-MIB
+share/smi/mibs/ietf/ITU-ALARM-MIB
+share/smi/mibs/ietf/ITU-ALARM-TC-MIB
+share/smi/mibs/ietf/LMP-MIB
+share/smi/mibs/ietf/MOBILEIPV6-MIB
+share/smi/mibs/ietf/MPLS-L3VPN-STD-MIB
+share/smi/mibs/ietf/MPLS-LC-ATM-STD-MIB
+share/smi/mibs/ietf/MPLS-LC-FR-STD-MIB
+share/smi/mibs/ietf/NAT-MIB
+share/smi/mibs/ietf/POLICY-BASED-MANAGEMENT-MIB
+share/smi/mibs/ietf/RSTP-MIB
+share/smi/mibs/ietf/SCSI-MIB
+share/smi/mibs/ietf/SCTP-MIB
+share/smi/mibs/ietf/SSPM-MIB
+share/smi/mibs/ietf/T11-FC-FABRIC-ADDR-MGR-MIB
+share/smi/mibs/ietf/T11-FC-NAME-SERVER-MIB
+share/smi/mibs/ietf/T11-TC-MIB
+share/smi/mibs/ietf/TE-LINK-STD-MIB
+share/smi/mibs/ietf/TE-MIB
+share/smi/mibs/ietf/TIME-AGGREGATE-MIB
+share/smi/mibs/ietf/TRIP-MIB
+share/smi/mibs/ietf/TRIP-TC-MIB
+share/smi/mibs/ietf/VDSL-LINE-EXT-MCM-MIB
+share/smi/mibs/ietf/VDSL-LINE-EXT-SCM-MIB
+share/smi/mibs/ietf/VPN-TC-STD-MIB
+share/smi/mibs/tubs/TUBS-IBR-LINUX-NETFILTER-MIB
+share/smi/mibs/tubs/TUBS-IBR-XEN-MIB
 @dirrm share/smi/pibs/tubs
 @dirrm share/smi/pibs/site
 @dirrm share/smi/pibs/ietf
