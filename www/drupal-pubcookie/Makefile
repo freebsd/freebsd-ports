@@ -7,9 +7,9 @@
 
 PORTNAME=	pubcookie
 DISTVERSION=	${DRUPAL_VERSION}
-PORTREVISION=	20060210
+PORTREVISION=	20060907
 CATEGORIES=	www security
-MASTER_SITE_SUBDIR=	brooks
+MASTER_SITE=	http://ftp.osuosl.org/pub/drupal/files/projects/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Pubcookie user authentication for the Drupal CMS
