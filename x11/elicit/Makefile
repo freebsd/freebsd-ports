@@ -29,4 +29,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "ia64"
+BROKEN=		edje is broken on ia64
+.endif
+
+.include <bsd.port.post.mk>
