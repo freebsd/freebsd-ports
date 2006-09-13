@@ -7,15 +7,13 @@
 
 PORTNAME=	euphoria
 PORTVERSION=	20062006
-PORTREVISON=	1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	XMMS2 GUI frontend written with Enlightenment e17 libraries
-
-SADIR=		${RUBY_SITEARCHLIBDIR}
 
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
 		edje_cc:${PORTSDIR}/graphics/edje
@@ -25,10 +23,15 @@ RUN_DEPENDS=	${SADIR}/edje.so:${PORTSDIR}/graphics/ruby-edje \
 		${SADIR}/ecore.so:${PORTSDIR}/devel/ruby-ecore \
 		${SADIR}/xmmsclient_ecore.so:${PORTSDIR}/audio/ruby-xmms2-ecore
 
+SADIR=		${RUBY_SITEARCHLIBDIR}
+
 USE_BZIP2=	yes
 USE_RUBY=	yes
 
 .include <bsd.port.pre.mk>
+.if ${ARCH} == "ia64"
+BROKEN=		edje is broken on ia64
+.endif
 
 do-build:
 	@(cd ${WRKSRC}; ${LOCALBASE}/bin/rake)
