@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtheora
-DISTVERSION=	1.0alpha6
+DISTVERSION=	1.0alpha7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/ \
 		http://distfiles.master.finkmirrors.net/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_GCC=	3.4+
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include " \
 		LDFLAGS="-L${LOCALBASE}/lib" \
