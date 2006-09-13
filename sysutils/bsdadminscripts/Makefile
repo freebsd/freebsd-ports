@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,8 @@ MANCOMPRESSED=	no
 MAN1=		bsdadminscripts.1
 
 RC_SCRIPTS=	start stop restart status onestart onestop onerestart onestatus
-PORT_SCRIPTS=	config build clean fetch package
+PORT_SCRIPTS=	config build clean fetch package \
+		config-recursive fetch-recursive
 BUILDFLAGS_FILES=	buildflags.mk buildflags.awk buildflags.conf
 
 .if !defined(WITHOUT_RCSTART)
@@ -67,7 +68,10 @@ do-install:
 	@${INSTALL} ${WRKSRC}/${_manpage} ${PREFIX}/man/man1/
 .endfor
 
-post-install:
-	@${CAT} ${.CURDIR}/pkg-message
+message:
+	@${CAT} ${PKGMESSAGE}
+
+post-install: message
+	@${DO_NADA}
 
 .include <bsd.port.mk>
