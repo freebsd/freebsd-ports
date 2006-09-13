@@ -11,4 +11,3 @@ Local/Applications/VolumeControl.app/stamp.make
 @dirrm Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm
 @dirrm Local/Applications/VolumeControl.app/Resources
 @dirrm Local/Applications/VolumeControl.app
-@dirrmtry Local/Applications

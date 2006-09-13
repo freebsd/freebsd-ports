@@ -9,4 +9,3 @@ Local/Applications/GSCommander.app/library_paths.openapp
 Local/Applications/GSCommander.app/stamp.make
 @dirrm Local/Applications/GSCommander.app/Resources
 @dirrm Local/Applications/GSCommander.app
-@dirrmtry Local/Applications

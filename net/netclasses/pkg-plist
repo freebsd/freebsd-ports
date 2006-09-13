@@ -14,12 +14,8 @@ Local/Library/Headers/netclasses
 Local/Library/Libraries/libnetclasses.so
 Local/Library/Libraries/libnetclasses.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libnetclasses.so.%%LIBVERSION%%
-@dirrmtry Local/Library/Libraries
-@dirrmtry Local/Library/Headers
 @dirrm Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Resources
 @dirrm Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers
 @dirrm Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%
 @dirrm Local/Library/Frameworks/netclasses.framework/Versions
 @dirrm Local/Library/Frameworks/netclasses.framework
-@dirrmtry Local/Library/Frameworks
-@dirrmtry Local/Library

@@ -75,5 +75,3 @@ System/Library/Libraries/libRenaissance.so.%%VERSION%%
 @dirrm Local/Applications/GSMarkupLocalizableStrings.app
 @dirrm Local/Applications/GSMarkupBrowser.app/Resources
 @dirrm Local/Applications/GSMarkupBrowser.app
-@dirrmtry Local/Applications
-

@@ -34,4 +34,3 @@ Local/Applications/Gridlock.app/stamp.make
 @dirrm Local/Applications/Gridlock.app/Resources/ClientWindow.gorm
 @dirrm Local/Applications/Gridlock.app/Resources
 @dirrm Local/Applications/Gridlock.app
-@dirrmtry Local/Applications

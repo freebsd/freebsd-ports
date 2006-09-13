@@ -54,18 +54,13 @@ Local/Library/Headers/Grouch/NSBundle+Grouch.h
 Local/Library/Libraries/libGrouchCore.so
 Local/Library/Libraries/libGrouchCore.so.%%LIBVERSION%%
 Local/Library/Libraries/libGrouchCore.so.%%MAJORLIBVERSION%%
-@dirrmtry Local/Library/Libraries
 @dirrm Local/Library/Headers/Grouch
-@dirrmtry Local/Library/Headers
 @dirrm Local/Library/Bundles/Oscar.bundle/Resources/English.lproj
 @dirrm Local/Library/Bundles/Oscar.bundle/Resources
 @dirrm Local/Library/Bundles/Oscar.bundle
-@dirrmtry Local/Library/Bundles
-@dirrmtry Local/Library
 @dirrm Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/English.lproj
 @dirrm Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources
 @dirrm Local/Applications/Grouch.app/Resources/Oscar.bundle
 @dirrm Local/Applications/Grouch.app/Resources/English.lproj
 @dirrm Local/Applications/Grouch.app/Resources
 @dirrm Local/Applications/Grouch.app
-@dirrmtry Local/Applications

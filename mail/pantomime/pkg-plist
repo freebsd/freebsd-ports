@@ -65,7 +65,4 @@ Local/Library/Headers/Pantomime/parseaddrs.h
 Local/Library/Libraries/libPantomime.so
 Local/Library/Libraries/libPantomime.so.%%MAJORVERSION%%
 Local/Library/Libraries/libPantomime.so.1.1.0
-@dirrmtry Local/Library/Libraries
 @dirrm Local/Library/Headers/Pantomime
-@dirrmtry Local/Library/Headers
-@dirrmtry Local/Library

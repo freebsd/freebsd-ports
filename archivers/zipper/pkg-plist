@@ -14,4 +14,3 @@ Local/Applications/Zipper.app/Resources/ZipperInfo.plist
 Local/Applications/Zipper.app/stamp.make
 @dirrm Local/Applications/Zipper.app/Resources
 @dirrm Local/Applications/Zipper.app
-@dirrmtry Local/Applications

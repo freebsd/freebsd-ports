@@ -11,4 +11,3 @@ Local/Applications/Camera.app/stamp.make
 @dirrm Local/Applications/Camera.app/Resources/Camera.gorm
 @dirrm Local/Applications/Camera.app/Resources
 @dirrm Local/Applications/Camera.app
-@dirrmtry Local/Applications
