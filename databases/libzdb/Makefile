@@ -7,6 +7,7 @@
 
 PORTNAME=	libzdb
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
 
 OPTIONS=	MYSQL "Add MySQL support" on \
