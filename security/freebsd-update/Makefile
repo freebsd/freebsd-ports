@@ -21,7 +21,7 @@ RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 .endif
 
 .if ${OSVERSION} > 700019 || ( ${OSVERSION} > 601104 && ${OSVERSION} < 700000 )
-IGNORE=         freebsd-update now contained in the base system
+IGNORE=         is now contained in the base system
 .endif
 
 # This is a critical security port.  If it breaks, Bad Things will happen.
