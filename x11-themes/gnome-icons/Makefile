@@ -10,7 +10,7 @@
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
 PORTNAME=	gnome-icons
-PORTVERSION=	20060913
+PORTVERSION=	20060914
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -31,6 +31,7 @@ RUN_DEPENDS=	${X11BASE}/share/icons/AquaFusion/index.theme:${PORTSDIR}/x11-theme
 		${X11BASE}/share/icons/gnome-rh8/index.theme:${PORTSDIR}/x11-themes/gnome-icons-refined \
 		${X11BASE}/share/icons/Slick/index.theme:${PORTSDIR}/x11-themes/gnome-icons-slick \
 		${X11BASE}/share/icons/Snow-Apple/index.theme:${PORTSDIR}/x11-themes/gnome-icons-snow-apple \
+		${X11BASE}/share/icons/SnowIsh-1.0_PNG/index.theme:${PORTSDIR}/x11-themes/gnome-icons-snowish \
 		${X11BASE}/share/icons/stylish/index.theme:${PORTSDIR}/x11-themes/gnome-icons-stylish \
 		${X11BASE}/share/icons/ximian-south/index.theme:${PORTSDIR}/x11-themes/gnome-icons-ximian-south \
 		${X11BASE}/share/icons/Lila/index.theme:${PORTSDIR}/x11-themes/gnome-icons-lila
