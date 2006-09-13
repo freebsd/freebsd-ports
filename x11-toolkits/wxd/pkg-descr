@@ -1,0 +1,14 @@
+wxWidgets is a C++ cross-platform GUI toolkit.
+Link with the appropriate library for your platform and 
+compiler, and your application will adopt the look and 
+feel appropriate to that platform.
+
+D is a general purpose systems and applications programming
+language. It is a higher level language than C++, but retains the
+ability to write high performance code and interface directly
+with the operating system API's and with hardware. D is not a
+scripting language, nor an interpreted language.
+
+wxD is wxWidgets bindings for the D programming language.
+
+WWW: http://wxd.sourceforge.net/
