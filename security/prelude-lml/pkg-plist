@@ -6,7 +6,8 @@ etc/prelude-lml/ruleset/apc-emu.rules
 etc/prelude-lml/ruleset/arbor.rules
 etc/prelude-lml/ruleset/arpwatch.rules
 etc/prelude-lml/ruleset/checkpoint.rules
-etc/prelude-lml/ruleset/cisco-pix.rules
+etc/prelude-lml/ruleset/cisco-asa.rules
+etc/prelude-lml/ruleset/cisco-css.rules
 etc/prelude-lml/ruleset/cisco-router.rules
 etc/prelude-lml/ruleset/cisco-vpn.rules
 etc/prelude-lml/ruleset/clamav.rules
@@ -39,6 +40,8 @@ etc/prelude-lml/ruleset/selinux.rules
 etc/prelude-lml/ruleset/sendmail.rules
 etc/prelude-lml/ruleset/shadow-utils.rules
 etc/prelude-lml/ruleset/single.rules
+etc/prelude-lml/ruleset/sonicwall.rules
+etc/prelude-lml/ruleset/spamassassin.rules
 etc/prelude-lml/ruleset/squid.rules
 etc/prelude-lml/ruleset/ssh.rules
 etc/prelude-lml/ruleset/sudo.rules
@@ -49,8 +52,6 @@ etc/prelude-lml/ruleset/webmin.rules
 etc/prelude-lml/ruleset/wu-ftp.rules
 etc/prelude-lml/ruleset/zywall.rules
 etc/prelude-lml/ruleset/zyxel.rules
-etc/prelude-lml/ruleset/sonicwall.rules
-etc/prelude-lml/ruleset/spamassassin.rules
 include/prelude-lml/prelude-lml.h
 lib/prelude-lml/debug.la
 lib/prelude-lml/debug.so
