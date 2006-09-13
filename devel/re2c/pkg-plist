@@ -1,46 +1,19 @@
 bin/re2c
-%%PORTDOCS%%%%DOCSDIR%%/loplas.ps
 %%PORTDOCS%%%%DOCSDIR%%/sample.bib
-%%PORTDOCS%%%%EXAMPLESDIR%%/basemmap.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/c.re
-%%PORTDOCS%%%%EXAMPLESDIR%%/cmmap.re
-%%PORTDOCS%%%%EXAMPLESDIR%%/cnokw.re
-%%PORTDOCS%%%%EXAMPLESDIR%%/cunroll.re
-%%PORTDOCS%%%%EXAMPLESDIR%%/modula.re
-%%PORTDOCS%%%%EXAMPLESDIR%%/push.re
-%%PORTDOCS%%%%EXAMPLESDIR%%/repeater.re
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/README
+%%PORTDOCS%%%%DOCSDIR%%/loplas.ps
 %%PORTDOCS%%%%EXAMPLESDIR%%/rexx/rexx.l
+%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/rexx/scanio.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/prop-base/rexx.l.svn-base
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/prop-base/README.svn-base
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/prop-base/scanio.c.svn-base
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/props/rexx.l.svn-work
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/props/README.svn-work
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/props/scanio.c.svn-work
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/wcprops/rexx.l.svn-work
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/wcprops/README.svn-work
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/wcprops/scanio.c.svn-work
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/text-base/rexx.l.svn-base
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/text-base/README.svn-base
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/text-base/scanio.c.svn-base
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/dir-wcprops
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/entries
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/empty-file
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/rexx/.svn/format
 %%PORTDOCS%%%%EXAMPLESDIR%%/sample.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/repeater.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/push.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/modula.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/cunroll.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/cnokw.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/cmmap.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/c.re
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.re
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/tmp/text-base
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/tmp/prop-base
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/tmp/props
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/tmp/wcprops
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/tmp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/prop-base
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/props
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/wcprops
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn/text-base
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx/.svn
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rexx
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/basemmap.c
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/rexx
+%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
