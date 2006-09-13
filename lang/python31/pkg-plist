@@ -202,6 +202,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/ctypes/test/test_anon.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_array_in_pointer.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_arrays.py
+%%PYTHON_LIBDIR%%/ctypes/test/test_as_parameter.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_bitfields.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_buffers.py
 %%PYTHON_LIBDIR%%/ctypes/test/test_byteswap.py
@@ -914,6 +915,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/reperf.py
 %%PYTHON_LIBDIR%%/test/sample_doctest.py
 %%PYTHON_LIBDIR%%/test/seq_tests.py
+%%PYTHON_LIBDIR%%/test/sgml_input.html
 %%PYTHON_LIBDIR%%/test/sortperf.py
 %%PYTHON_LIBDIR%%/test/string_tests.py
 %%PYTHON_LIBDIR%%/test/test.xml
@@ -935,6 +937,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_augassign.py
 %%PYTHON_LIBDIR%%/test/test_base64.py
 %%PYTHON_LIBDIR%%/test/test_bastion.py
+%%PYTHON_LIBDIR%%/test/test_bigaddrspace.py
 %%PYTHON_LIBDIR%%/test/test_bigmem.py
 %%PYTHON_LIBDIR%%/test/test_binascii.py
 %%PYTHON_LIBDIR%%/test/test_binhex.py
