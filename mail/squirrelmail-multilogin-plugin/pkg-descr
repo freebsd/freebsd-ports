@@ -1,0 +1,4 @@
+This plugin displays a pull-down select box with IMAP server choices on the
+login page. The user will be logged in using the IMAP server that is chosen.
+
+WWW: http://www.squirrelmail.org
