@@ -3,6 +3,8 @@ bin/dbsd-hwnotify
 bin/dbsd-nettray
 bin/dbsd-pkgmgr
 bin/dbsd-traymounter
+bin/dbsd-userstart
+bin/kdialog-ports-wrapper
 bin/pgrpmgr
 lib/kde3/libkcm_desktopbsd.la
 lib/kde3/libkcm_desktopbsd.prl
@@ -22,6 +24,7 @@ lib/libdesktopbsd.so
 lib/libdesktopbsd.so.1.0
 lib/libdesktopbsd.so.1
 lib/libdesktopbsd.so.1.0.0
+sbin/dbsd-portsnap
 sbin/pkgdb_check
 share/applnk/Settings/Network/dbsdnetworking.desktop
 share/applnk/Settings/Peripherals/dbsddevinfo.desktop
@@ -32,7 +35,8 @@ share/applnk/Settings/System/dbsdpackages.desktop
 share/applnk/System/dbsd-pkgmgr.desktop
 share/icons/hicolor/16x16/actions/ledgreen.png
 share/icons/hicolor/16x16/actions/ledorange.png
-share/icons/hicolor/16x16/actions/package_old.png
+share/icons/hicolor/16x16/actions/warning.png
+share/icons/hicolor/22x22/actions/package_old.png
 share/icons/hicolor/22x22/apps/dbsd-battinfo-battery.png
 share/icons/hicolor/22x22/apps/dbsd-battinfo-power.png
 share/icons/hicolor/22x22/apps/dbsd-battinfo-recharge.png
@@ -46,6 +50,7 @@ share/icons/hicolor/32x32/apps/desktopbsd.png
 %%DATADIR%%/translations/desktopbsd.es.qm
 %%DATADIR%%/translations/desktopbsd.fr.qm
 %%DATADIR%%/translations/desktopbsd.hr.qm
+%%DATADIR%%/translations/desktopbsd.hu.qm
 %%DATADIR%%/translations/desktopbsd.it.qm
 %%DATADIR%%/translations/desktopbsd.nb.qm
 %%DATADIR%%/translations/desktopbsd.nl.qm
@@ -56,5 +61,7 @@ share/icons/hicolor/32x32/apps/desktopbsd.png
 %%DATADIR%%/translations/desktopbsd.sv.qm
 %%DATADIR%%/translations/desktopbsd.zh_CN.qm
 %%DATADIR%%/translations/locale-map
+%%DATADIR%%/images/pkgmgr-splash.png
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
