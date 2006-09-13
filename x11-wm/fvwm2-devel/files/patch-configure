@@ -1,6 +1,6 @@
---- configure.orig	Fri Oct 21 16:40:26 2005
-+++ configure	Fri Oct 21 16:49:31 2005
-@@ -8640,17 +8640,17 @@
+--- configure.orig	Wed Jul 19 13:34:04 2006
++++ configure	Wed Jul 19 17:38:40 2006
+@@ -9814,17 +9814,17 @@
  if test x$fc_config_exec_prefix != x ; then
    fc_config_args="$fc_config_args --exec-prefix=$fc_config_exec_prefix"
    if test x${FC_CONFIG+set} != xset ; then
@@ -22,7 +22,7 @@
  echo "$as_me:$LINENO: checking for $ac_word" >&5
  echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
  if test "${ac_cv_path_FC_CONFIG+set}" = set; then
-@@ -8714,13 +8714,13 @@
+@@ -9888,13 +9888,13 @@
      no_fc=yes
    fi
  else
@@ -31,17 +31,17 @@
 -  fc_config_major_version=`$FC_CONFIG $fc_config_args --version | \
 +  FC_CFLAGS=`$FC_CONFIG fontconfig $fc_config_args --cflags`
 +  FC_LIBS=`$FC_CONFIG fontconfig $fc_config_args --libs`
-+  fc_config_major_version=`$FC_CONFIG fontconfig $fc_config_args --modversion | \
-          sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
++  fc_config_major_version=`$FC_CONFIG fontconfig $fc_config_args --modversion |
+          sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\1/'`
 -  fc_config_minor_version=`$FC_CONFIG $fc_config_args --version | \
-+  fc_config_minor_version=`$FC_CONFIG fontconfig $fc_config_args --modversion | \
-          sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\2/'`
++  fc_config_minor_version=`$FC_CONFIG fontconfig $fc_config_args --modversion |
+          sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\2/'`
 -  fc_config_micro_version=`$FC_CONFIG $fc_config_args --version | \
-+  fc_config_micro_version=`$FC_CONFIG fontconfig $fc_config_args --modversion | \
-          sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\3/'`
++  fc_config_micro_version=`$FC_CONFIG fontconfig $fc_config_args --modversion |
+          sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\3/'`
    fc_min_major_version=`echo $min_fc_version | \
-          sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
-@@ -9781,7 +9781,7 @@
+          sed 's/^[^0-9.]*\([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*$/\1/'`
+@@ -10962,7 +10962,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -50,7 +50,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -10104,7 +10104,7 @@
+@@ -11288,7 +11288,7 @@
  #define HAVE_PNG 1
  _ACEOF
  
@@ -59,7 +59,7 @@
    problem_png=""
  else
    with_png=no
-@@ -13074,150 +13074,6 @@
+@@ -14349,150 +14349,6 @@
  
    found_gettext=yes
  
@@ -210,7 +210,7 @@
  
  
  
-@@ -13857,7 +13713,7 @@
+@@ -15132,7 +14988,7 @@
  fi
  
          if test "$no_dgettext" != "yes"; then
@@ -219,7 +219,7 @@
            LIBS="$LIBS $intl_LIBS $iconv_LIBS"
            echo "$as_me:$LINENO: checking if a simple gettext program link" >&5
  echo $ECHO_N "checking if a simple gettext program link... $ECHO_C" >&6
-@@ -13935,10 +13791,8 @@
+@@ -15210,10 +15066,8 @@
    else
      with_gettext="no"
      problem_gettext=": Failed to detected GNU gettext"
