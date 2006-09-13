@@ -151,14 +151,11 @@ Local/Library/Headers/Cynthiune
 Local/Library/Libraries/libCynthiune.so
 Local/Library/Libraries/libCynthiune.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libCynthiune.so.%%LIBVERSION%%
-@dirrmtry Local/Library/Libraries
-@dirrmtry Local/Library/Headers
 @dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/A/Resources
 @dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers
 @dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/A
 @dirrm Local/Library/Frameworks/Cynthiune.framework/Versions
 @dirrm Local/Library/Frameworks/Cynthiune.framework
-@dirrmtry Local/Library/Frameworks
 @dirrm Local/Library/Cynthiune/aRts.output/Resources
 @dirrm Local/Library/Cynthiune/aRts.output
 @dirrm Local/Library/Cynthiune/VorbisTags.tags/Resources
@@ -196,7 +193,6 @@ Local/Library/Libraries/libCynthiune.so.%%LIBVERSION%%
 @dirrm Local/Library/Cynthiune/ASFTags.tags/Resources
 @dirrm Local/Library/Cynthiune/ASFTags.tags
 @dirrm Local/Library/Cynthiune
-@dirrmtry Local/Library
 @dirrm Local/Applications/Cynthiune.app/Resources/TraditionalChinese.lproj
 @dirrm Local/Applications/Cynthiune.app/Resources/Spanish.lproj
 @dirrm Local/Applications/Cynthiune.app/Resources/SongInspector.gorm
@@ -212,4 +208,3 @@ Local/Library/Libraries/libCynthiune.so.%%LIBVERSION%%
 @dirrm Local/Applications/Cynthiune.app/Resources/Armenian.lproj
 @dirrm Local/Applications/Cynthiune.app/Resources
 @dirrm Local/Applications/Cynthiune.app
-@dirrmtry Local/Applications

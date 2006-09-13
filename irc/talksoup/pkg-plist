@@ -162,15 +162,12 @@ Local/Library/Headers/TalkSoupBundles
 Local/Library/Libraries/libTalkSoupBundles.so
 Local/Library/Libraries/libTalkSoupBundles.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libTalkSoupBundles.so.%%LIBVERSION%%
-@dirrmtry Local/Library/Libraries
-@dirrmtry Local/Library/Headers
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%/Resources/English.lproj
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%/Resources
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%/Headers
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%MAJORLIBVERSION%%.99%%MAJORLIBVERSION%%
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework
-@dirrmtry Local/Library/Frameworks
 @dirrm Local/Library/ApplicationSupport/TalkSoup/Output/GNUstepOutput/Resources/Tools
 @dirrm Local/Library/ApplicationSupport/TalkSoup/Output/GNUstepOutput/Resources/TabContent.gorm
 @dirrm Local/Library/ApplicationSupport/TalkSoup/Output/GNUstepOutput/Resources/StandardQuery.gorm
@@ -241,7 +238,5 @@ Local/Library/Libraries/libTalkSoupBundles.so.%%LIBVERSION%%
 @dirrm Local/Library/ApplicationSupport/TalkSoup/InFilters
 @dirrm Local/Library/ApplicationSupport/TalkSoup
 @dirrm Local/Library/ApplicationSupport
-@dirrmtry Local/Library
 @dirrm Local/Applications/TalkSoup.app/Resources
 @dirrm Local/Applications/TalkSoup.app
-@dirrmtry Local/Applications

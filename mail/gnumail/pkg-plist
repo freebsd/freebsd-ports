@@ -162,7 +162,6 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Library/GNUMail/Account.prefs/Resources
 @dirrm Local/Library/GNUMail/Account.prefs
 @dirrm Local/Library/GNUMail
-@dirrmtry Local/Library
 @dirrm Local/Applications/GNUMail.app/Resources/Swedish.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/Spanish.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/German.lproj
@@ -171,4 +170,3 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Applications/GNUMail.app/Resources/Czech.lproj
 @dirrm Local/Applications/GNUMail.app/Resources
 @dirrm Local/Applications/GNUMail.app
-@dirrmtry Local/Applications

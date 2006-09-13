@@ -66,8 +66,6 @@
 GNUstep/Local/Library/Libraries/librigs.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/librigs.so.%%MAJORVERSION%%
 GNUstep/Local/Library/Libraries/librigs.so
-@dirrmtry GNUstep/Local/Library/Libraries
-@dirrmtry GNUstep/Local/Library
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Base/Simple.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/CurrencyConverter.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Gui/CurrencyConverter/CurrencyConverterIcon.tiff

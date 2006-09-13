@@ -25,4 +25,3 @@ Local/Applications/Ladder.app/stamp.make
 @dirrm Local/Applications/Ladder.app/Resources/GoDocument.gorm
 @dirrm Local/Applications/Ladder.app/Resources
 @dirrm Local/Applications/Ladder.app
-@dirrmtry Local/Applications

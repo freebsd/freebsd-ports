@@ -62,4 +62,3 @@ Local/Applications/PRICE.app/stamp.make
 @dirrm Local/Applications/PRICE.app/Resources/BriCon.gorm
 @dirrm Local/Applications/PRICE.app/Resources
 @dirrm Local/Applications/PRICE.app
-@dirrmtry Local/Applications

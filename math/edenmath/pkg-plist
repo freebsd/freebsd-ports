@@ -22,4 +22,3 @@ Local/Applications/EdenMath.app/stamp.make
 @dirrm Local/Applications/EdenMath.app/Resources/Bulgarian.lproj
 @dirrm Local/Applications/EdenMath.app/Resources
 @dirrm Local/Applications/EdenMath.app
-@dirrmtry Local/Applications

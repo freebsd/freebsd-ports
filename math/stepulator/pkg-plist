@@ -9,4 +9,3 @@ Local/Applications/Stepulator.app/stamp.make
 @dirrm Local/Applications/Stepulator.app/Resources/Stepulator.gorm
 @dirrm Local/Applications/Stepulator.app/Resources
 @dirrm Local/Applications/Stepulator.app
-@dirrmtry Local/Applications
