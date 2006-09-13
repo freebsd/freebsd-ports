@@ -1,3 +1,6 @@
 MD5 (linuxpluginwrapper-20051113.tar.gz) = 5b847ca900dd8f797ea1f1d880e009c9
 SHA256 (linuxpluginwrapper-20051113.tar.gz) = 431b7bd40000a0cccfb35ff0e498edd14f474957e6fa6cdc8ea2aecb351ba31d
 SIZE (linuxpluginwrapper-20051113.tar.gz) = 22728
+MD5 (patch-nppdf-acroread-7.0.8) = 87dd9f09b9fc47c3161d3b898f5ccd25
+SHA256 (patch-nppdf-acroread-7.0.8) = 21a54781f91bb925109d196e47ed298e887f1bb26bd0b25fc15b750057efc9d8
+SIZE (patch-nppdf-acroread-7.0.8) = 3046

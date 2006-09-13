@@ -7,11 +7,14 @@
 
 PORTNAME=	linuxpluginwrapper
 PORTVERSION=	20051113
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
+
+PATCH_SITES=	http://defan.zenon.net/freebsd/
+PATCHFILES=	patch-nppdf-acroread-7.0.8
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-plugins with native applications
