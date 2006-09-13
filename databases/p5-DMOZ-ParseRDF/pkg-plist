@@ -1,0 +1,5 @@
+%%SITE_PERL%%/DMOZ/ParseRDF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DMOZ/ParseRDF/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DMOZ/ParseRDF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DMOZ
+@dirrmtry %%SITE_PERL%%/DMOZ

@@ -250,6 +250,7 @@
     SUBDIR += p5-DBIx-XML_RDB
     SUBDIR += p5-DBM-Deep
     SUBDIR += p5-DBZ_File
+    SUBDIR += p5-DMOZ-ParseRDF
     SUBDIR += p5-DWH_File
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Data-Pageset
