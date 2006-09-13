@@ -6535,6 +6535,7 @@ lsmlib		ports/sysutils/lsmlib
 lsof		ports/sysutils/lsof
 lsysexp		ports/biology/lsysexp
 lt-aspell	ports/textproc/lt-aspell
+ltm		ports/net/ltm
 ltmdm		ports/comms/ltmdm
 ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
