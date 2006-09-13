@@ -280,6 +280,7 @@
     SUBDIR += linuxigd
     SUBDIR += liveMedia
     SUBDIR += lla
+    SUBDIR += ltm
     SUBDIR += luasocket
     SUBDIR += lyntin
     SUBDIR += mDNSResponder
