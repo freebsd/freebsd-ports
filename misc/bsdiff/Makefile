@@ -19,7 +19,7 @@ PLIST_FILES=	bin/bsdiff bin/bspatch
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 600033 || ( ${OSVERSION} > 504103 && ${OSVERSION} < 600000 )
-IGNORE=		bsdiff now contained in the base system
+IGNORE=		is now contained in the base system
 .endif
 
 .include <bsd.port.post.mk>
