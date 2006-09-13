@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c0fd7890-4346-11db-89cc-000ae42e9b93">
+    <topic>drupal-pubcookie -- authentication may be bypassed</topic>
+    <affects>
+      <package>
+	<name>drupal-pubcookie</name>
+	<range><le>4.6.0_20060210</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/83064">
+	  <p>It is possible for a malicious user to spoof a user's
+	    identity by bypassing the login redirection mechanism in the
+	    pubcookie module. The malicious user may gain the privileges
+	    of the user they are spoofing, including the administrative
+	    user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/83064</url>
+    </references>
+    <dates>
+      <discovery>2006-09-08</discovery>
+      <entry>2006-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c75d48c-429b-11db-afae-000c6ec775d9">
     <topic>linux-flashplugin7 -- arbitrary code execution vulnerabilities</topic>
     <affects>
