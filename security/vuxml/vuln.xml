@@ -34,69 +34,6 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="ea09c5df-4362-11db-81e1-000e0c2e438a">
-    <topic>php -- multiple vulnerabilities</topic>
-    <affects>
-      <package>
-	<name>php4</name>
-	<name>php5</name>
-	<range><lt>4.4.4</lt></range>
-	<range><ge>5</ge><lt>5.1.5</lt></range>
-      </package>
-      <package>
-	<name>php4-cli</name>
-	<name>php5-cli</name>
-	<name>php4-cgi</name>
-	<name>php5-cgi</name>
-	<name>php4-dtc</name>
-	<name>php5-dtc</name>
-	<name>php4-horde</name>
-	<name>php5-horde</name>
-	<name>php4-nms</name>
-	<name>php5-nms</name>
-	<name>mod-php4</name>
-	<name>mod-php5</name>
-	<range><ge>0</ge></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The PHP development team reports:</p>
-	<blockquote cite="http://www.php.net/release_5_1_5.php">
-	  <ul>
-	    <li>Added missing safe_mode/open_basedir checks inside the
-	      error_log(), file_exists(), imap_open() and imap_reopen()
-	      functions.</li>
-	    <li>Fixed overflows inside str_repeat() and wordwrap()
-	      functions on 64bit systems.</li>
-	    <li>Fixed possible open_basedir/safe_mode bypass in cURL
-	      extension and with realpath cache.</li>
-	    <li>Fixed overflow in GD extension on invalid GIF
-	      images.</li>
-	    <li>Fixed a buffer overflow inside sscanf() function.</li>
-	    <li>Fixed an out of bounds read inside stripos()
-	      function.</li>
-	    <li>Fixed memory_limit restriction on 64 bit system.</li>
-	  </ul>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2006-4481</cvename>
-      <cvename>CVE-2006-4482</cvename>
-      <cvename>CVE-2006-4483</cvename>
-      <cvename>CVE-2006-4484</cvename>
-      <cvename>CVE-2006-4485</cvename>
-      <cvename>CVE-2006-4486</cvename>
-      <url>http://www.php.net/release_4_4_4.php</url>
-      <url>http://www.php.net/release_5_1_5.php</url>
-    </references>
-    <dates>
-      <discovery>2006-09-FIXME</discovery>
-      <entry>2006-09-13</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="c0fd7890-4346-11db-89cc-000ae42e9b93">
     <topic>drupal-pubcookie -- authentication may be bypassed</topic>
     <affects>
@@ -2627,764 +2564,764 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <cvename>CVE-2006-1329</cvename>
       <url>http://article.gmane.org/gmane.network.jabber.admin/27372</url>
-<url>http://jabberstudio.org/projects/jabberd2/releases/view.php?id=826</url>
-<url>http://secunia.com/advisories/19281/</url>
-</references>
-<dates>
-<discovery>2006-03-20</discovery>
-<entry>2006-05-01</entry>
-</dates>
-</vuln>
+      <url>http://jabberstudio.org/projects/jabberd2/releases/view.php?id=826</url>
+      <url>http://secunia.com/advisories/19281/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-20</discovery>
+      <entry>2006-05-01</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="79c1154d-d5a5-11da-8098-00123ffe8333">
-<topic>cacti -- ADOdb "server.php" Insecure Test Script Security Issue</topic>
-<affects>
-<package>
-<name>cacti</name>
-<range><lt>0.8.6h</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Secunia reports:</p>
-<blockquote cite="http://secunia.com/advisories/18276/">
-  <p>Cacti have a security issue, which can be exploited by malicious
-    people to execute arbitrary SQL code and potentially compromise a
-    vulnerable system.</p>
-  <p>The problem is caused due to the presence of the insecure
-    "server.php" test script.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<url>http://secunia.com/advisories/18276/</url>
-<url>http://secunia.com/advisories/17418/</url>
-</references>
-<dates>
-<discovery>2006-01-09</discovery>
-<entry>2006-04-27</entry>
-</dates>
-</vuln>
+  <vuln vid="79c1154d-d5a5-11da-8098-00123ffe8333">
+    <topic>cacti -- ADOdb "server.php" Insecure Test Script Security Issue</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.6h</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/18276/">
+	  <p>Cacti have a security issue, which can be exploited by malicious
+	    people to execute arbitrary SQL code and potentially compromise a
+	    vulnerable system.</p>
+	  <p>The problem is caused due to the presence of the insecure
+	    "server.php" test script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/18276/</url>
+      <url>http://secunia.com/advisories/17418/</url>
+    </references>
+    <dates>
+      <discovery>2006-01-09</discovery>
+      <entry>2006-04-27</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="dc930435-d59f-11da-8098-00123ffe8333">
-<topic>amaya -- Attribute Value Buffer Overflow Vulnerabilities</topic>
-<affects>
-<package>
-<name>amaya</name>
-<range><lt>9.5</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Secunia reports:</p>
-<blockquote cite="http://secunia.com/advisories/19670/">
-  <p>Amaya have two vulnerabilities, which can be exploited by
-    malicious people to compromise a user's system.</p>
-  <p>The vulnerabilities are caused due to boundary errors within the
-    parsing of various attribute values. This can be exploited to cause
-    stack-based buffer overflows when a user opens a specially crafted
-    HTML document containing certain tags with overly long attribute
-    values.</p>
-  <p>Successful exploitation allows execution of arbitrary code.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-1900</cvename>
-<url>http://morph3us.org/advisories/20060412-amaya-94.txt</url>
-<url>http://morph3us.org/advisories/20060412-amaya-94-2.txt</url>
-<url>http://secunia.com/advisories/19670/</url>
-</references>
-<dates>
-<discovery>2006-04-14</discovery>
-<entry>2006-04-27</entry>
-</dates>
-</vuln>
+  <vuln vid="dc930435-d59f-11da-8098-00123ffe8333">
+    <topic>amaya -- Attribute Value Buffer Overflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>amaya</name>
+	<range><lt>9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19670/">
+	  <p>Amaya have two vulnerabilities, which can be exploited by
+	    malicious people to compromise a user's system.</p>
+	  <p>The vulnerabilities are caused due to boundary errors within the
+	    parsing of various attribute values. This can be exploited to cause
+	    stack-based buffer overflows when a user opens a specially crafted
+	    HTML document containing certain tags with overly long attribute
+	    values.</p>
+	  <p>Successful exploitation allows execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1900</cvename>
+      <url>http://morph3us.org/advisories/20060412-amaya-94.txt</url>
+      <url>http://morph3us.org/advisories/20060412-amaya-94-2.txt</url>
+      <url>http://secunia.com/advisories/19670/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-14</discovery>
+      <entry>2006-04-27</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="116b0820-d59c-11da-8098-00123ffe8333">
-<topic>lifetype -- ADOdb "server.php" Insecure Test Script Security Issue</topic>
-<affects>
-<package>
-<name>lifetype</name>
-<range><lt>1.0.3</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Secunia reports:</p>
-<blockquote cite="http://secunia.com/advisories/19699/">
-  <p>A security issue has been discovered in LifeType, which can be
-    exploited by malicious people to execute arbitrary SQL code and
-    potentially compromise a vulnerable system.</p>
-  <p>The problem is caused due to the presence of the insecure
-    "server.php" test script.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-0146</cvename>
-<url>http://secunia.com/advisories/19699/</url>
-<url>http://secunia.com/advisories/17418/</url>
-</references>
-<dates>
-<discovery>2006-04-19</discovery>
-<entry>2006-04-27</entry>
-</dates>
-</vuln>
+  <vuln vid="116b0820-d59c-11da-8098-00123ffe8333">
+    <topic>lifetype -- ADOdb "server.php" Insecure Test Script Security Issue</topic>
+    <affects>
+      <package>
+	<name>lifetype</name>
+	<range><lt>1.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19699/">
+	  <p>A security issue has been discovered in LifeType, which can be
+	    exploited by malicious people to execute arbitrary SQL code and
+	    potentially compromise a vulnerable system.</p>
+	  <p>The problem is caused due to the presence of the insecure
+	    "server.php" test script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-0146</cvename>
+      <url>http://secunia.com/advisories/19699/</url>
+      <url>http://secunia.com/advisories/17418/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-19</discovery>
+      <entry>2006-04-27</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="21c223f2-d596-11da-8098-00123ffe8333">
-<topic>ethereal -- Multiple Protocol Dissector Vulnerabilities</topic>
-<affects>
-<package>
-<name>ethereal</name>
-<name>ethereal-lite</name>
-<name>tethereal</name>
-<name>tethereal-lite</name>
-<range><ge>0.8.5</ge><lt>0.99.0</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Secunia reports:</p>
-<blockquote cite="http://secunia.com/advisories/19769/">
-  <p>Multiple vulnerabilities have been reported in Ethereal, which
-    can be exploited by malicious people to cause a DoS (Denial of
-    Service) or compromise a vulnerable system.</p>
-  <p>The vulnerabilities are caused due to various types of errors
-    including boundary errors, an off-by-one error, an infinite loop
-    error, and several unspecified errors in a multitude of protocol
-    dissectors.</p>
-  <p>Successful exploitation causes Ethereal to stop responding,
-    consume a large amount of system resources, crash, or execute
-    arbitrary code.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-1932</cvename>
-<cvename>CVE-2006-1933</cvename>
-<cvename>CVE-2006-1934</cvename>
-<cvename>CVE-2006-1935</cvename>
-<cvename>CVE-2006-1936</cvename>
-<cvename>CVE-2006-1937</cvename>
-<cvename>CVE-2006-1938</cvename>
-<cvename>CVE-2006-1939</cvename>
-<cvename>CVE-2006-1940</cvename>
-<url>http://www.ethereal.com/appnotes/enpa-sa-00023.html</url>
-<url>http://secunia.com/advisories/19769/</url>
-</references>
-<dates>
-<discovery>2006-04-25</discovery>
-<entry>2006-04-27</entry>
-</dates>
-</vuln>
+  <vuln vid="21c223f2-d596-11da-8098-00123ffe8333">
+    <topic>ethereal -- Multiple Protocol Dissector Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><ge>0.8.5</ge><lt>0.99.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19769/">
+	  <p>Multiple vulnerabilities have been reported in Ethereal, which
+	    can be exploited by malicious people to cause a DoS (Denial of
+	    Service) or compromise a vulnerable system.</p>
+	  <p>The vulnerabilities are caused due to various types of errors
+	    including boundary errors, an off-by-one error, an infinite loop
+	    error, and several unspecified errors in a multitude of protocol
+	    dissectors.</p>
+	  <p>Successful exploitation causes Ethereal to stop responding,
+	    consume a large amount of system resources, crash, or execute
+	    arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1932</cvename>
+      <cvename>CVE-2006-1933</cvename>
+      <cvename>CVE-2006-1934</cvename>
+      <cvename>CVE-2006-1935</cvename>
+      <cvename>CVE-2006-1936</cvename>
+      <cvename>CVE-2006-1937</cvename>
+      <cvename>CVE-2006-1938</cvename>
+      <cvename>CVE-2006-1939</cvename>
+      <cvename>CVE-2006-1940</cvename>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00023.html</url>
+      <url>http://secunia.com/advisories/19769/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-25</discovery>
+      <entry>2006-04-27</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="8b683bea-d49c-11da-a672-000e0c2e438a">
-<topic>asterisk -- denial of service vulnerability, local system access</topic>
-<affects>
-<package>
-<name>asterisk</name>
-<range><lt>1.2.7</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Emmanouel Kellenis reports a denial of service vulnerability
-  within asterisk.  The vulnerability is caused by a buffer
-  overflow in "format_jpeg.c".  A large JPEG image could
-  trigger this bug, potentially allowing a local attacker to
-  execute arbitrary code.</p>
-</body>
-</description>
-<references>
-<bid>17561</bid>
-<cvename>CVE-2006-1827</cvename>
-<url>http://www.cipher.org.uk/index.php?p=advisories/Asterisk_Codec_Integer_Overflow_07-04-2006.advisory</url>
-</references>
-<dates>
-<discovery>2006-04-07</discovery>
-<entry>2006-04-25</entry>
-</dates>
-</vuln>
+  <vuln vid="8b683bea-d49c-11da-a672-000e0c2e438a">
+    <topic>asterisk -- denial of service vulnerability, local system access</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Emmanouel Kellenis reports a denial of service vulnerability
+	  within asterisk.  The vulnerability is caused by a buffer
+	  overflow in "format_jpeg.c".  A large JPEG image could
+	  trigger this bug, potentially allowing a local attacker to
+	  execute arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <bid>17561</bid>
+      <cvename>CVE-2006-1827</cvename>
+      <url>http://www.cipher.org.uk/index.php?p=advisories/Asterisk_Codec_Integer_Overflow_07-04-2006.advisory</url>
+    </references>
+    <dates>
+      <discovery>2006-04-07</discovery>
+      <entry>2006-04-25</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="a813a219-d2d4-11da-a672-000e0c2e438a">
-<topic>zgv, xzgv -- heap overflow vulnerability</topic>
-<affects>
-<package>
-<name>zgv</name>
-<range><gt>0</gt></range>
-</package>
-<package>
-<name>xzgv</name>
-<range><gt>0</gt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Gentoo reports:</p>
-<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml">
-  <p>Andrea Barisani of Gentoo Linux discovered xzgv and zgv
-    allocate insufficient memory when rendering images with
-    more than 3 output components, such as images using the
-    YCCK or CMYK colour space.  When xzgv or zgv attempt to
-    render the image, data from the image overruns a heap
-    allocated buffer.</p>
-  <p>An attacker may be able to construct a malicious image that
-    executes arbitrary code with the permissions of the xzgv or
-    zgv user when attempting to render the image.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<bid>17409</bid>
-<cvename>CVE-2006-1060</cvename>
-<url>http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml</url>
-</references>
-<dates>
-<discovery>2006-04-21</discovery>
-<entry>2006-04-23</entry>
-</dates>
-</vuln>
+  <vuln vid="a813a219-d2d4-11da-a672-000e0c2e438a">
+    <topic>zgv, xzgv -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>zgv</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>xzgv</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gentoo reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml">
+	  <p>Andrea Barisani of Gentoo Linux discovered xzgv and zgv
+	    allocate insufficient memory when rendering images with
+	    more than 3 output components, such as images using the
+	    YCCK or CMYK colour space.  When xzgv or zgv attempt to
+	    render the image, data from the image overruns a heap
+	    allocated buffer.</p>
+	  <p>An attacker may be able to construct a malicious image that
+	    executes arbitrary code with the permissions of the xzgv or
+	    zgv user when attempting to render the image.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17409</bid>
+      <cvename>CVE-2006-1060</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200604-10.xml</url>
+    </references>
+    <dates>
+      <discovery>2006-04-21</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="86cc5c6f-d2b4-11da-a672-000e0c2e438a">
-<topic>crossfire-server -- denial of service and remote code execution vulnerability</topic>
-<affects>
-<package>
-<name>crossfire-server</name>
-<range><lt>1.9.0</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>FRSIRT reports:</p>
-<blockquote cite="http://www.frsirt.com/english/advisories/2006/0760">
-  <p>A vulnerability has been identified in CrossFire, which
-    could be exploited by remote attackers to execute arbitrary
-    commands or cause a denial of service.  This flaw is due to
-    a buffer overflow error in the "oldsocketmode" module that
-    fails to properly handle overly large requests, which could
-    be exploited by a malicious client to crash or compromise a
-    vulnerable system.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<bid>16883</bid>
-<cvename>CVE-2006-1010</cvename>
-<url>http://www.frsirt.com/english/advisories/2006/0760</url>
-</references>
-<dates>
-<discovery>2006-02-28</discovery>
-<entry>2006-04-23</entry>
-</dates>
-</vuln>
+  <vuln vid="86cc5c6f-d2b4-11da-a672-000e0c2e438a">
+    <topic>crossfire-server -- denial of service and remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>crossfire-server</name>
+	<range><lt>1.9.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>FRSIRT reports:</p>
+	<blockquote cite="http://www.frsirt.com/english/advisories/2006/0760">
+	  <p>A vulnerability has been identified in CrossFire, which
+	    could be exploited by remote attackers to execute arbitrary
+	    commands or cause a denial of service.  This flaw is due to
+	    a buffer overflow error in the "oldsocketmode" module that
+	    fails to properly handle overly large requests, which could
+	    be exploited by a malicious client to crash or compromise a
+	    vulnerable system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>16883</bid>
+      <cvename>CVE-2006-1010</cvename>
+      <url>http://www.frsirt.com/english/advisories/2006/0760</url>
+    </references>
+    <dates>
+      <discovery>2006-02-28</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="8cfb6f42-d2b0-11da-a672-000e0c2e438a">
-<topic>p5-DBI -- insecure temporary file creation vulnerability</topic>
-<affects>
-<package>
-<name>p5-DBI-137</name>
-<range><ge>0</ge></range>
-</package>
-<package>
-<name>p5-DBI</name>
-<range><lt>1.37_1</lt></range>
-<range><ge>1.38</ge><lt>1.48</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Javier Fernández-Sanguino Peña reports:</p>
-<blockquote cite="http://www.debian.org/security/2005/dsa-658">
-  <p>The DBI library, the Perl5 database interface, creates a
-    temporary PID file in an insecure manner.  This can be
-    exploited by a malicious user to overwrite arbitrary files
-    owned by the person executing the parts of the library.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<bid>12360</bid>
-<cvename>CAN-2005-0077</cvename>
-<url>http://www.debian.org/security/2005/dsa-658</url>
-</references>
-<dates>
-<discovery>2005-01-25</discovery>
-<entry>2006-04-23</entry>
-<modified>2006-05-11</modified>
-</dates>
-</vuln>
+  <vuln vid="8cfb6f42-d2b0-11da-a672-000e0c2e438a">
+    <topic>p5-DBI -- insecure temporary file creation vulnerability</topic>
+    <affects>
+      <package>
+	<name>p5-DBI-137</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>p5-DBI</name>
+	<range><lt>1.37_1</lt></range>
+	<range><ge>1.38</ge><lt>1.48</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Javier Fernández-Sanguino Peña reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-658">
+	  <p>The DBI library, the Perl5 database interface, creates a
+	    temporary PID file in an insecure manner.  This can be
+	    exploited by a malicious user to overwrite arbitrary files
+	    owned by the person executing the parts of the library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12360</bid>
+      <cvename>CAN-2005-0077</cvename>
+      <url>http://www.debian.org/security/2005/dsa-658</url>
+    </references>
+    <dates>
+      <discovery>2005-01-25</discovery>
+      <entry>2006-04-23</entry>
+      <modified>2006-05-11</modified>
+    </dates>
+  </vuln>
 
-<vuln vid="e0b342a1-d2ae-11da-a672-000e0c2e438a">
-<topic>wordpress -- full path disclosure</topic>
-<affects>
-<package>
-<name>wordpress</name>
-<range><lt>1.5.2</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Dedi Dwianto reports:</p>
-<blockquote cite="http://echo.or.id/adv/adv24-theday-2005.txt">
-  <p>A remote user can access the file directly to cause the
-    system to display an error message that indicates the
-    installation path.  The resulting error message will
-    disclose potentially sensitive installation path
-    information to the remote attacker.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<cvename>CVE-2005-4463</cvename>
-<url>http://echo.or.id/adv/adv24-theday-2005.txt</url>
-</references>
-<dates>
-<discovery>2005-12-20</discovery>
-<entry>2006-04-23</entry>
-</dates>
-</vuln>
+  <vuln vid="e0b342a1-d2ae-11da-a672-000e0c2e438a">
+    <topic>wordpress -- full path disclosure</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<range><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dedi Dwianto reports:</p>
+	<blockquote cite="http://echo.or.id/adv/adv24-theday-2005.txt">
+	  <p>A remote user can access the file directly to cause the
+	    system to display an error message that indicates the
+	    installation path.  The resulting error message will
+	    disclose potentially sensitive installation path
+	    information to the remote attacker.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2005-4463</cvename>
+      <url>http://echo.or.id/adv/adv24-theday-2005.txt</url>
+    </references>
+    <dates>
+      <discovery>2005-12-20</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="8d4ae57d-d2ab-11da-a672-000e0c2e438a">
-<topic>xine -- multiple remote string vulnerabilities</topic>
-<affects>
-<package>
-<name>xine</name>
-<range><lt>0.99.4_4</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>c0ntexb reports:</p>
-<blockquote cite="http://www.open-security.org/advisories/16">
-  <p>There are 2 format string bugs in the latest version of
-    Xine that could be exploited by a malicious person to
-    execute code on the system of a remote user running the
-    media player against a malicious playlist file.  By passing
-    a format specifier in the path of a file that is embedded
-    in a remote playlist, it is possible to trigger this bug.
-  </p>
-</blockquote>
-</body>
-</description>
-<references>
-<bid>17579</bid>
-<cvename>CVE-2006-1905</cvename>
-<url>http://www.open-security.org/advisories/16</url>
-</references>
-<dates>
-<discovery>2006-04-18</discovery>
-<entry>2006-04-23</entry>
-</dates>
-</vuln>
+  <vuln vid="8d4ae57d-d2ab-11da-a672-000e0c2e438a">
+    <topic>xine -- multiple remote string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xine</name>
+	<range><lt>0.99.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>c0ntexb reports:</p>
+	<blockquote cite="http://www.open-security.org/advisories/16">
+	  <p>There are 2 format string bugs in the latest version of
+	    Xine that could be exploited by a malicious person to
+	    execute code on the system of a remote user running the
+	    media player against a malicious playlist file.  By passing
+	    a format specifier in the path of a file that is embedded
+	    in a remote playlist, it is possible to trigger this bug.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17579</bid>
+      <cvename>CVE-2006-1905</cvename>
+      <url>http://www.open-security.org/advisories/16</url>
+    </references>
+    <dates>
+      <discovery>2006-04-18</discovery>
+      <entry>2006-04-23</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="408f6ebf-d152-11da-962f-000b972eb521">
-<topic>cyrus-sasl -- DIGEST-MD5 Pre-Authentication Denial of Service</topic>
-<affects>
-<package>
-<name>cyrus-sasl</name>
-<range><ge>2.*</ge><lt>2.1.21</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Unspecified vulnerability in the CMU Cyrus Simple
-Authentication and Security Layer (SASL) library, has unknown
-impact and remote unauthenticated attack vectors, related to
-DIGEST-MD5 negotiation.</p>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-1721</cvename>
-</references>
-<dates>
-<discovery>2006-04-11</discovery>
-<entry>2006-04-22</entry>
-</dates>
-</vuln>
+  <vuln vid="408f6ebf-d152-11da-962f-000b972eb521">
+    <topic>cyrus-sasl -- DIGEST-MD5 Pre-Authentication Denial of Service</topic>
+    <affects>
+      <package>
+	<name>cyrus-sasl</name>
+	<range><ge>2.*</ge><lt>2.1.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Unspecified vulnerability in the CMU Cyrus Simple
+        Authentication and Security Layer (SASL) library, has unknown
+        impact and remote unauthenticated attack vectors, related to
+        DIGEST-MD5 negotiation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1721</cvename>
+    </references>
+    <dates>
+      <discovery>2006-04-11</discovery>
+      <entry>2006-04-22</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="1fa4c9f1-cfca-11da-a672-000e0c2e438a">
-<topic>FreeBSD -- FPU information disclosure</topic>
-<affects>
-<system>
-<name>FreeBSD</name>
-<range><gt>6.0</gt><lt>6.0_7</lt></range>
-<range><gt>5.4</gt><lt>5.4_14</lt></range>
-<range><gt>5.3</gt><lt>5.3_29</lt></range>
-<range><gt>5</gt><lt>5.3</lt></range>
-<range><gt>4.11</gt><lt>4.11_17</lt></range>
-<range><gt>4.10</gt><lt>4.10_23</lt></range>
-<range><lt>4.10</lt></range>
-</system>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<h1>Problem Description</h1>
-<p>On "7th generation" and "8th generation" processors
-  manufactured by AMD, including the AMD Athlon, Duron, Athlon
-  MP, Athlon XP, Athlon64, Athlon64 FX, Opteron, Turion, and
-  Sempron, the fxsave and fxrstor instructions do not save and
-  restore the FOP, FIP, and FDP registers unless the exception
-  summary bit (ES) in the x87 status word is set to 1,
-  indicating that an unmasked x87 exception has occurred.</p>
-<p>This behaviour is consistent with documentation provided by
-  AMD, but is different from processors from other vendors,
-  which save and restore the FOP, FIP, and FDP registers
-  regardless of the value of the ES bit.  As a result of this
-  discrepancy remaining unnoticed until now, the FreeBSD kernel
-  does not restore the contents of the FOP, FIP, and FDP
-  registers between context switches.</p>
-<h1>Impact</h1>
-<p>On affected processors, a local attacker can monitor the
-  execution path of a process which uses floating-point
-  operations.  This may allow an attacker to steal
-  cryptographic keys or other sensitive information.</p>
-<h1>Workaround</h1>
-<p>No workaround is available, but systems which do not use AMD
-  Athlon, Duron, Athlon MP, Athlon XP, Athlon64, Athlon64 FX,
-  Opteron, Turion, or Sempron processors are not vulnerable.</p>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-1056</cvename>
-<freebsdsa>SA-06:14.fpu</freebsdsa>
-</references>
-<dates>
-<discovery>2006-04-19</discovery>
-<entry>2006-04-19</entry>
-<modified>2006-06-09</modified>
-</dates>
-</vuln>
+  <vuln vid="1fa4c9f1-cfca-11da-a672-000e0c2e438a">
+    <topic>FreeBSD -- FPU information disclosure</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.0</gt><lt>6.0_7</lt></range>
+	<range><gt>5.4</gt><lt>5.4_14</lt></range>
+	<range><gt>5.3</gt><lt>5.3_29</lt></range>
+	<range><gt>5</gt><lt>5.3</lt></range>
+	<range><gt>4.11</gt><lt>4.11_17</lt></range>
+	<range><gt>4.10</gt><lt>4.10_23</lt></range>
+	<range><lt>4.10</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description</h1>
+	<p>On "7th generation" and "8th generation" processors
+	  manufactured by AMD, including the AMD Athlon, Duron, Athlon
+	  MP, Athlon XP, Athlon64, Athlon64 FX, Opteron, Turion, and
+	  Sempron, the fxsave and fxrstor instructions do not save and
+	  restore the FOP, FIP, and FDP registers unless the exception
+	  summary bit (ES) in the x87 status word is set to 1,
+	  indicating that an unmasked x87 exception has occurred.</p>
+	<p>This behaviour is consistent with documentation provided by
+	  AMD, but is different from processors from other vendors,
+	  which save and restore the FOP, FIP, and FDP registers
+	  regardless of the value of the ES bit.  As a result of this
+	  discrepancy remaining unnoticed until now, the FreeBSD kernel
+	  does not restore the contents of the FOP, FIP, and FDP
+	  registers between context switches.</p>
+	<h1>Impact</h1>
+	<p>On affected processors, a local attacker can monitor the
+	  execution path of a process which uses floating-point
+	  operations.  This may allow an attacker to steal
+	  cryptographic keys or other sensitive information.</p>
+	<h1>Workaround</h1>
+	<p>No workaround is available, but systems which do not use AMD
+	  Athlon, Duron, Athlon MP, Athlon XP, Athlon64, Athlon64 FX,
+	  Opteron, Turion, or Sempron processors are not vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1056</cvename>
+      <freebsdsa>SA-06:14.fpu</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-04-19</discovery>
+      <entry>2006-04-19</entry>
+      <modified>2006-06-09</modified>
+    </dates>
+  </vuln>
 
-<vuln vid="22c6b826-cee0-11da-8578-00123ffe8333">
-<topic>plone -- "member_id" Parameter Portrait Manipulation Vulnerability</topic>
-<affects>
-<package>
-<name>plone</name>
-<range><lt>2.1.2_1</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Secunia reports:</p>
-<blockquote cite="http://secunia.com/advisories/19633/">
-  <p>The vulnerability is caused due to missing security declarations
-    in "changeMemberPortrait" and "deletePersonalPortrait". This can
-    be exploited to manipulate or delete another user's portrait via
-    the "member_id" parameter.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-1711</cvename>
-<url>http://dev.plone.org/plone/ticket/5432</url>
-<url>http://www.debian.org/security/2006/dsa-1032</url>
-<url>http://secunia.com/advisories/19633/</url>
-</references>
-<dates>
-<discovery>2006-04-13</discovery>
-<entry>2006-04-18</entry>
-</dates>
-</vuln>
+  <vuln vid="22c6b826-cee0-11da-8578-00123ffe8333">
+    <topic>plone -- "member_id" Parameter Portrait Manipulation Vulnerability</topic>
+    <affects>
+      <package>
+	<name>plone</name>
+	<range><lt>2.1.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19633/">
+	  <p>The vulnerability is caused due to missing security declarations
+	    in "changeMemberPortrait" and "deletePersonalPortrait". This can
+	    be exploited to manipulate or delete another user's portrait via
+	    the "member_id" parameter.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1711</cvename>
+      <url>http://dev.plone.org/plone/ticket/5432</url>
+      <url>http://www.debian.org/security/2006/dsa-1032</url>
+      <url>http://secunia.com/advisories/19633/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-13</discovery>
+      <entry>2006-04-18</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="84630f4a-cd8c-11da-b7b9-000c6ec775d9">
-<topic>mozilla -- multiple vulnerabilities</topic>
-<affects>
-<package>
-<name>firefox</name>
-<range><lt>1.0.8,1</lt></range>
-<range><gt>1.5.*,1</gt><lt>1.5.0.2,1</lt></range>
-</package>
-<package>
-<name>linux-firefox</name>
-<range><lt>1.5.0.2</lt></range>
-</package>
-<package>
-<name>mozilla</name>
-<range><lt>1.7.13,2</lt></range>
-<range><ge>1.8.*,2</ge></range>
-</package>
-<package>
-<name>linux-mozilla</name>
-<range><lt>1.7.13</lt></range>
-</package>
-<package>
-<name>linux-mozilla-devel</name>
-<range><gt>0</gt></range>
-</package>
-<package>
-<name>seamonkey</name>
-<name>linux-seamonkey</name>
-<range><lt>1.0.1</lt></range>
-</package>
-<package>
-<name>thunderbird</name>
-<name>mozilla-thunderbird</name>
-<range><lt>1.5.0.2</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>A Mozilla Foundation Security Advisory reports of multiple
-  issues.  Several of which can be used to run arbitrary code
-  with the privilege of the user running the program.</p>
-<blockquote cite="http://www.mozilla.org/security/announce/">
-  <ul>
-    <li>MFSA 2006-29 Spoofing with translucent windows</li>
-    <li>MFSA 2006-28 Security check of js_ValueToFunctionObject() can be circumvented</li>
-    <li>MFSA 2006-26 Mail Multiple Information Disclosure</li>
-    <li>MFSA 2006-25 Privilege escalation through Print Preview</li>
-    <li>MFSA 2006-24 Privilege escalation using crypto.generateCRMFRequest</li>
-    <li>MFSA 2006-23 File stealing by changing input type</li>
-    <li>MFSA 2006-22 CSS Letter-Spacing Heap Overflow Vulnerability</li>
-    <li>MFSA 2006-20 Crashes with evidence of memory corruption (rv:1.8.0.2)</li>
-    <li>MFSA 2006-19 Cross-site scripting using .valueOf.call()</li>
-    <li>MFSA 2006-18 Mozilla Firefox Tag Order Vulnerability</li>
-    <li>MFSA 2006-17 cross-site scripting through window.controllers</li>
-    <li>MFSA 2006-16 Accessing XBL compilation scope via valueOf.call()</li>
-    <li>MFSA 2006-15 Privilege escalation using a JavaScript function's cloned parent</li>
-    <li>MFSA 2006-14 Privilege escalation via XBL.method.eval</li>
-    <li>MFSA 2006-13 Downloading executables with "Save Image As..."</li>
-    <li>MFSA 2006-12 Secure-site spoof (requires security warning dialog)</li>
-    <li>MFSA 2006-11 Crashes with evidence of memory corruption (rv:1.8)</li>
-    <li>MFSA 2006-10 JavaScript garbage-collection hazard audit</li>
-    <li>MFSA 2006-09 Cross-site JavaScript injection using event handlers</li>
-  </ul>
-</blockquote>
-</body>
-</description>
-<references>
-<certvu>179014</certvu>
-<certvu>252324</certvu>
-<certvu>329500</certvu>
-<certvu>350262</certvu>
-<certvu>488774</certvu>
-<certvu>736934</certvu>
-<certvu>813230</certvu>
-<certvu>842094</certvu>
-<certvu>932734</certvu>
-<certvu>935556</certvu>
-<certvu>968814</certvu>
-<cvename>CVE-2006-0749</cvename>
-<cvename>CVE-2006-1045</cvename>
-<cvename>CVE-2006-1529</cvename>
-<cvename>CVE-2006-1530</cvename>
-<cvename>CVE-2006-1531</cvename>
-<cvename>CVE-2006-1723</cvename>
-<cvename>CVE-2006-1724</cvename>
-<cvename>CVE-2006-1725</cvename>
-<cvename>CVE-2006-1726</cvename>
-<cvename>CVE-2006-1727</cvename>
-<cvename>CVE-2006-1728</cvename>
-<cvename>CVE-2006-1729</cvename>
-<cvename>CVE-2006-1730</cvename>
-<cvename>CVE-2006-1731</cvename>
-<cvename>CVE-2006-1732</cvename>
-<cvename>CVE-2006-1733</cvename>
-<cvename>CVE-2006-1734</cvename>
-<cvename>CVE-2006-1735</cvename>
-<cvename>CVE-2006-1736</cvename>
-<cvename>CVE-2006-1737</cvename>
-<cvename>CVE-2006-1738</cvename>
-<cvename>CVE-2006-1739</cvename>
-<cvename>CVE-2006-1740</cvename>
-<cvename>CVE-2006-1741</cvename>
-<cvename>CVE-2006-1742</cvename>
-<cvename>CVE-2006-1790</cvename>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-09.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-10.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-11.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-12.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-13.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-14.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-15.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-16.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-17.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-18.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-19.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-20.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-22.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-23.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-25.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-26.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-28.html</url>
-<url>http://www.mozilla.org/security/announce/2006/mfsa2006-29.html</url>
-<url>http://www.zerodayinitiative.com/advisories/ZDI-06-010.html</url>
-<uscertta>TA06-107A</uscertta>
-</references>
-<dates>
-<discovery>2006-04-13</discovery>
-<entry>2006-04-16</entry>
-<modified>2006-04-27</modified>
-</dates>
-</vuln>
+  <vuln vid="84630f4a-cd8c-11da-b7b9-000c6ec775d9">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.0.8,1</lt></range>
+	<range><gt>1.5.*,1</gt><lt>1.5.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.5.0.2</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.13,2</lt></range>
+	<range><ge>1.8.*,2</ge></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<range><lt>1.7.13</lt></range>
+      </package>
+      <package>
+	<name>linux-mozilla-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>mozilla-thunderbird</name>
+	<range><lt>1.5.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Mozilla Foundation Security Advisory reports of multiple
+	  issues.  Several of which can be used to run arbitrary code
+	  with the privilege of the user running the program.</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/">
+	  <ul>
+	    <li>MFSA 2006-29 Spoofing with translucent windows</li>
+	    <li>MFSA 2006-28 Security check of js_ValueToFunctionObject() can be circumvented</li>
+	    <li>MFSA 2006-26 Mail Multiple Information Disclosure</li>
+	    <li>MFSA 2006-25 Privilege escalation through Print Preview</li>
+	    <li>MFSA 2006-24 Privilege escalation using crypto.generateCRMFRequest</li>
+	    <li>MFSA 2006-23 File stealing by changing input type</li>
+	    <li>MFSA 2006-22 CSS Letter-Spacing Heap Overflow Vulnerability</li>
+	    <li>MFSA 2006-20 Crashes with evidence of memory corruption (rv:1.8.0.2)</li>
+	    <li>MFSA 2006-19 Cross-site scripting using .valueOf.call()</li>
+	    <li>MFSA 2006-18 Mozilla Firefox Tag Order Vulnerability</li>
+	    <li>MFSA 2006-17 cross-site scripting through window.controllers</li>
+	    <li>MFSA 2006-16 Accessing XBL compilation scope via valueOf.call()</li>
+	    <li>MFSA 2006-15 Privilege escalation using a JavaScript function's cloned parent</li>
+	    <li>MFSA 2006-14 Privilege escalation via XBL.method.eval</li>
+	    <li>MFSA 2006-13 Downloading executables with "Save Image As..."</li>
+	    <li>MFSA 2006-12 Secure-site spoof (requires security warning dialog)</li>
+	    <li>MFSA 2006-11 Crashes with evidence of memory corruption (rv:1.8)</li>
+	    <li>MFSA 2006-10 JavaScript garbage-collection hazard audit</li>
+	    <li>MFSA 2006-09 Cross-site JavaScript injection using event handlers</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <certvu>179014</certvu>
+      <certvu>252324</certvu>
+      <certvu>329500</certvu>
+      <certvu>350262</certvu>
+      <certvu>488774</certvu>
+      <certvu>736934</certvu>
+      <certvu>813230</certvu>
+      <certvu>842094</certvu>
+      <certvu>932734</certvu>
+      <certvu>935556</certvu>
+      <certvu>968814</certvu>
+      <cvename>CVE-2006-0749</cvename>
+      <cvename>CVE-2006-1045</cvename>
+      <cvename>CVE-2006-1529</cvename>
+      <cvename>CVE-2006-1530</cvename>
+      <cvename>CVE-2006-1531</cvename>
+      <cvename>CVE-2006-1723</cvename>
+      <cvename>CVE-2006-1724</cvename>
+      <cvename>CVE-2006-1725</cvename>
+      <cvename>CVE-2006-1726</cvename>
+      <cvename>CVE-2006-1727</cvename>
+      <cvename>CVE-2006-1728</cvename>
+      <cvename>CVE-2006-1729</cvename>
+      <cvename>CVE-2006-1730</cvename>
+      <cvename>CVE-2006-1731</cvename>
+      <cvename>CVE-2006-1732</cvename>
+      <cvename>CVE-2006-1733</cvename>
+      <cvename>CVE-2006-1734</cvename>
+      <cvename>CVE-2006-1735</cvename>
+      <cvename>CVE-2006-1736</cvename>
+      <cvename>CVE-2006-1737</cvename>
+      <cvename>CVE-2006-1738</cvename>
+      <cvename>CVE-2006-1739</cvename>
+      <cvename>CVE-2006-1740</cvename>
+      <cvename>CVE-2006-1741</cvename>
+      <cvename>CVE-2006-1742</cvename>
+      <cvename>CVE-2006-1790</cvename>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-09.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-10.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-11.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-12.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-13.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-14.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-15.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-16.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-17.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-18.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-19.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-20.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-22.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-23.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-25.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-26.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-28.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-29.html</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-06-010.html</url>
+      <uscertta>TA06-107A</uscertta>
+    </references>
+    <dates>
+      <discovery>2006-04-13</discovery>
+      <entry>2006-04-16</entry>
+      <modified>2006-04-27</modified>
+    </dates>
+  </vuln>
 
-<vuln vid="8be2e304-cce6-11da-a3b1-00123ffe8333">
-<topic>mailman -- Private Archive Script Cross-Site Scripting</topic>
-<affects>
-<package>
-<name>mailman</name>
-<name>ja-mailman</name>
-<name>mailman-with-htdig</name>
-<range><lt>2.1.8</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Secunia reports:</p>
-<blockquote cite="http://secunia.com/advisories/19558/">
-  <p>A vulnerability has been reported in Mailman, which can be
-    exploited by malicious people to conduct cross-site scripting
-    attacks.</p>
-  <p>Unspecified input passed to the private archive script is not
-    properly sanitised before being returned to users. This can be
-    exploited to execute arbitrary HTML and script code in a user's
-    browser session in context of a vulnerable site.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-1712</cvename>
-<mlist>http://mail.python.org/pipermail/mailman-announce/2006-April/000084.html</mlist>
-<url>http://secunia.com/advisories/19558/</url>
-</references>
-<dates>
-<discovery>2006-04-07</discovery>
-<entry>2006-04-16</entry>
-</dates>
-</vuln>
+  <vuln vid="8be2e304-cce6-11da-a3b1-00123ffe8333">
+    <topic>mailman -- Private Archive Script Cross-Site Scripting</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<name>ja-mailman</name>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19558/">
+	  <p>A vulnerability has been reported in Mailman, which can be
+	    exploited by malicious people to conduct cross-site scripting
+	    attacks.</p>
+	  <p>Unspecified input passed to the private archive script is not
+	    properly sanitised before being returned to users. This can be
+	    exploited to execute arbitrary HTML and script code in a user's
+	    browser session in context of a vulnerable site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1712</cvename>
+      <mlist>http://mail.python.org/pipermail/mailman-announce/2006-April/000084.html</mlist>
+      <url>http://secunia.com/advisories/19558/</url>
+    </references>
+    <dates>
+      <discovery>2006-04-07</discovery>
+      <entry>2006-04-16</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="43cb40b3-c8c2-11da-a672-000e0c2e438a">
-<topic>f2c -- insecure temporary files</topic>
-<affects>
-<package>
-<name>f2c</name>
-<range><lt>20060506</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Javier Fernandez-Sanguino Pena reports two temporary file
-  vulnerability within f2c.  The vulnerabilities are caused
-  due to weak temporary file handling.  An attacker could
-  create an symbolic link, causing a local user running f2c
-  to overwrite the symlinked file.  This could give the
-  attacker elevated privileges.</p>
-</body>
-</description>
-<references>
-<bid>1280</bid>
-<cvename>CAN-2005-0017</cvename>
-</references>
-<dates>
-<discovery>2005-01-27</discovery>
-<entry>2006-04-10</entry>
-<modified>2006-08-15</modified>
-</dates>
-</vuln>
+  <vuln vid="43cb40b3-c8c2-11da-a672-000e0c2e438a">
+    <topic>f2c -- insecure temporary files</topic>
+    <affects>
+      <package>
+	<name>f2c</name>
+	<range><lt>20060506</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Javier Fernandez-Sanguino Pena reports two temporary file
+	  vulnerability within f2c.  The vulnerabilities are caused
+	  due to weak temporary file handling.  An attacker could
+	  create an symbolic link, causing a local user running f2c
+	  to overwrite the symlinked file.  This could give the
+	  attacker elevated privileges.</p>
+      </body>
+    </description>
+    <references>
+      <bid>1280</bid>
+      <cvename>CAN-2005-0017</cvename>
+    </references>
+    <dates>
+      <discovery>2005-01-27</discovery>
+      <entry>2006-04-10</entry>
+      <modified>2006-08-15</modified>
+    </dates>
+  </vuln>
 
-<vuln vid="c7526a14-c4dc-11da-9699-00123ffe8333">
-<topic>mplayer -- Multiple integer overflows</topic>
-<affects>
-<package>
-<name>mplayer</name>
-<name>mplayer-esound</name>
-<name>mplayer-gtk</name>
-<name>mplayer-gtk2</name>
-<name>mplayer-gtk-esound</name>
-<name>mplayer-gtk2-esound</name>
-<range><lt>0.99.7_12</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Secunia reports:</p>
-<blockquote cite="http://secunia.com/advisories/19418/">
-  <p>The vulnerabilities are caused due to integer overflow errors
-    in "libmpdemux/asfheader.c" within the handling of an ASF file,
-    and in "libmpdemux/aviheader.c" when parsing the "indx" chunk in
-    an AVI file. This can be exploited to cause heap-based buffer
-    overflows via a malicious ASF file, or via a AVI file with
-    specially-crafted "wLongsPerEntry" and "nEntriesInUse" values in
-    the "indx" chunk.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<cvename>CVE-2006-1502</cvename>
-<url>http://www.xfocus.org/advisories/200603/11.html</url>
-<url>http://secunia.com/advisories/19418/</url>
-</references>
-<dates>
-<discovery>2006-03-29</discovery>
-<entry>2006-04-07</entry>
-</dates>
-</vuln>
+  <vuln vid="c7526a14-c4dc-11da-9699-00123ffe8333">
+    <topic>mplayer -- Multiple integer overflows</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.7_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/19418/">
+	  <p>The vulnerabilities are caused due to integer overflow errors
+	    in "libmpdemux/asfheader.c" within the handling of an ASF file,
+	    and in "libmpdemux/aviheader.c" when parsing the "indx" chunk in
+	    an AVI file. This can be exploited to cause heap-based buffer
+	    overflows via a malicious ASF file, or via a AVI file with
+	    specially-crafted "wLongsPerEntry" and "nEntriesInUse" values in
+	    the "indx" chunk.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1502</cvename>
+      <url>http://www.xfocus.org/advisories/200603/11.html</url>
+      <url>http://secunia.com/advisories/19418/</url>
+    </references>
+    <dates>
+      <discovery>2006-03-29</discovery>
+      <entry>2006-04-07</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="4bfcd857-c628-11da-b2fb-000e0c2e438a">
-<topic>kaffeine -- buffer overflow vulnerability</topic>
-<affects>
-<package>
-<name>kaffeine</name>
-<range><ge>0.4.2</ge><lt>0.8.0</lt></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>The KDE team reports:</p>
-<blockquote cite="http://www.kde.org/info/security/advisory-20060404-1.txt">
-  <p>Kaffeine can produce a buffer overflow in http_peek() while
-    creating HTTP request headers for fetching remote playlists,
-    which under certain circumstances could be used to crash the
-    application and/or execute arbitrary code.</p>
-</blockquote>
-</body>
-</description>
-<references>
-<bid>17372</bid>
-<cvename>CVE-2006-0051</cvename>
-<url>http://www.kde.org/info/security/advisory-20060404-1.txt</url>
-</references>
-<dates>
-<discovery>2006-04-04</discovery>
-<entry>2006-04-07</entry>
-</dates>
-</vuln>
+  <vuln vid="4bfcd857-c628-11da-b2fb-000e0c2e438a">
+    <topic>kaffeine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>kaffeine</name>
+	<range><ge>0.4.2</ge><lt>0.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The KDE team reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20060404-1.txt">
+	  <p>Kaffeine can produce a buffer overflow in http_peek() while
+	    creating HTTP request headers for fetching remote playlists,
+	    which under certain circumstances could be used to crash the
+	    application and/or execute arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>17372</bid>
+      <cvename>CVE-2006-0051</cvename>
+      <url>http://www.kde.org/info/security/advisory-20060404-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-04-04</discovery>
+      <entry>2006-04-07</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="61349f77-c620-11da-b2fb-000e0c2e438a">
-<topic>thunderbird -- javascript execution</topic>
-<affects>
-<package>
-<name>thunderbird</name>
-<name>mozilla-thunderbird</name>
-<range><le>1.0.7</le></range>
-</package>
-</affects>
-<description>
-<body xmlns="http://www.w3.org/1999/xhtml">
-<p>Renaud Lifchitz reports a vulnerability within thunderbird.
-  The vulnerability is caused by improper checking of javascript
-  scripts.  This could lead to javascript code execution which
-  can lead to information disclosure or a denial of service
-  (application crash).  This vulnerability is present even if
-  javascript had been disabled in the preferences.</p>
-</body>
-</description>
-<references>
-<bid>16770</bid>
-<cvename>CAN-2006-0884</cvename>
-</references>
-<dates>
-<discovery>2006-02-22</discovery>
-<entry>2006-04-07</entry>
-</dates>
-</vuln>
+  <vuln vid="61349f77-c620-11da-b2fb-000e0c2e438a">
+    <topic>thunderbird -- javascript execution</topic>
+    <affects>
+      <package>
+	<name>thunderbird</name>
+	<name>mozilla-thunderbird</name>
+	<range><le>1.0.7</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Renaud Lifchitz reports a vulnerability within thunderbird.
+	  The vulnerability is caused by improper checking of javascript
+	  scripts.  This could lead to javascript code execution which
+	  can lead to information disclosure or a denial of service
+	  (application crash).  This vulnerability is present even if
+	  javascript had been disabled in the preferences.</p>
+      </body>
+    </description>
+    <references>
+      <bid>16770</bid>
+      <cvename>CAN-2006-0884</cvename>
+    </references>
+    <dates>
+      <discovery>2006-02-22</discovery>
+      <entry>2006-04-07</entry>
+    </dates>
+  </vuln>
 
-<vuln vid="fba75b43-c588-11da-9110-00123ffe8333">
-<topic>phpmyadmin -- XSS vulnerabilities</topic>
-<affects>
-<package>
-<name>phpMyAdmin</name>
+  <vuln vid="fba75b43-c588-11da-9110-00123ffe8333">
+    <topic>phpmyadmin -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
 	<range><lt>2.8.0.3</lt></range>
       </package>
     </affects>
