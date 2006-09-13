@@ -8,6 +8,7 @@ libexec/pcal.pl
 %%EXAMPLESDIR%%/calendar_fr.txt
 %%EXAMPLESDIR%%/calendar_gr.txt
 %%EXAMPLESDIR%%/calendar_hu.txt
+%%EXAMPLESDIR%%/calendar_nl.txt
 %%EXAMPLESDIR%%/calendar_no.txt
 %%EXAMPLESDIR%%/calendar_nz.txt
 %%EXAMPLESDIR%%/calendar_uk.txt
