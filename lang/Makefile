@@ -160,6 +160,7 @@
     SUBDIR += mozart
     SUBDIR += munger
     SUBDIR += nawk
+    SUBDIR += newlisp
     SUBDIR += nhc98
     SUBDIR += nickle
     SUBDIR += njs

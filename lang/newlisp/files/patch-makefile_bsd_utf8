@@ -1,0 +1,23 @@
+--- makefile_bsd_utf8.orig	Wed Sep 13 17:33:18 2006
++++ makefile_bsd_utf8	Wed Sep 13 17:33:47 2006
+@@ -4,16 +4,16 @@
+ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
+ 	nl-sock.o nl-import.o nl-xml.o nl-web.o nl-matrix.o nl-debug.o nl-utf8.o pcre.o
+ 
+-CFLAGS = -Wall -Wno-uninitialized -O2 -c -g -DREADLINE -D_BSD -DSUPPORT_UTF8
++CFLAGS += -c -DREADLINE -D_BSD -DSUPPORT_UTF8
+ # for netBSD use following line
+ #CFLAGS = -Wall -Wno-uninitialized -O2 -c -g -D_BSD
+ 
+-CC = gcc
++#CC = gcc
+ 
+ default: $(OBJS)
+-	$(CC) $(OBJS) -g -lm -lreadline -lncurses -o newlisp
++	$(CC) $(OBJS) -lm -lreadline -lncurses -o newlisp
+ # for netBSD use following line
+-#	$(CC) $(OBJS) -g -lm -o newlisp
++#	$(CC) $(OBJS) -lm -o newlisp
+ 	strip newlisp
+ 
+ .c.o:
