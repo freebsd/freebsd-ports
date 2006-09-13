@@ -34,6 +34,69 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ea09c5df-4362-11db-81e1-000e0c2e438a">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php4</name>
+	<name>php5</name>
+	<range><lt>4.4.4</lt></range>
+	<range><ge>5</ge><lt>5.1.5</lt></range>
+      </package>
+      <package>
+	<name>php4-cli</name>
+	<name>php5-cli</name>
+	<name>php4-cgi</name>
+	<name>php5-cgi</name>
+	<name>php4-dtc</name>
+	<name>php5-dtc</name>
+	<name>php4-horde</name>
+	<name>php5-horde</name>
+	<name>php4-nms</name>
+	<name>php5-nms</name>
+	<name>mod-php4</name>
+	<name>mod-php5</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP development team reports:</p>
+	<blockquote cite="http://www.php.net/release_5_1_5.php">
+	  <ul>
+	    <li>Added missing safe_mode/open_basedir checks inside the
+	      error_log(), file_exists(), imap_open() and imap_reopen()
+	      functions.</li>
+	    <li>Fixed overflows inside str_repeat() and wordwrap()
+	      functions on 64bit systems.</li>
+	    <li>Fixed possible open_basedir/safe_mode bypass in cURL
+	      extension and with realpath cache.</li>
+	    <li>Fixed overflow in GD extension on invalid GIF
+	      images.</li>
+	    <li>Fixed a buffer overflow inside sscanf() function.</li>
+	    <li>Fixed an out of bounds read inside stripos()
+	      function.</li>
+	    <li>Fixed memory_limit restriction on 64 bit system.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4481</cvename>
+      <cvename>CVE-2006-4482</cvename>
+      <cvename>CVE-2006-4483</cvename>
+      <cvename>CVE-2006-4484</cvename>
+      <cvename>CVE-2006-4485</cvename>
+      <cvename>CVE-2006-4486</cvename>
+      <url>http://www.php.net/release_4_4_4.php</url>
+      <url>http://www.php.net/release_5_1_5.php</url>
+    </references>
+    <dates>
+      <discovery>2006-09-FIXME</discovery>
+      <entry>2006-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0fd7890-4346-11db-89cc-000ae42e9b93">
     <topic>drupal-pubcookie -- authentication may be bypassed</topic>
     <affects>
