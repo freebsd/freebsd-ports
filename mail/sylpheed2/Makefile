@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	2.2.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
 
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--disable-ssl
 .endif
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.15:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.17:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
 .else

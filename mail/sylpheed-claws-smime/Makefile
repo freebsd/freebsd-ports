@@ -7,6 +7,7 @@
 
 PORTNAME=	smime
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	sylpheed-claws-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	S/MIME plugin for sylpheed-claws
 
-LIB_DEPENDS=	gpgme.15:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
 BUILD_DEPENDS=	sylpheed-claws>=2.1.1:${PORTSDIR}/mail/sylpheed-claws
 RUN_DEPENDS=	sylpheed-claws>=2.1.1:${PORTSDIR}/mail/sylpheed-claws
 

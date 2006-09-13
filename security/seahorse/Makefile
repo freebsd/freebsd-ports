@@ -8,6 +8,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.8
@@ -18,7 +19,7 @@ COMMENT=	A front end for GnuPG
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	gpgme.15:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

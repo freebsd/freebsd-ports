@@ -3,14 +3,14 @@ include/gpgme/gpgme.h
 %%WITH_PTH%%lib/libgpgme-pth.a
 %%WITH_PTH%%lib/libgpgme-pth.la
 %%WITH_PTH%%lib/libgpgme-pth.so
-%%WITH_PTH%%lib/libgpgme-pth.so.15
+%%WITH_PTH%%lib/libgpgme-pth.so.17
 lib/libgpgme-pthread.a
 lib/libgpgme-pthread.la
 lib/libgpgme-pthread.so
-lib/libgpgme-pthread.so.15
+lib/libgpgme-pthread.so.17
 lib/libgpgme.a
 lib/libgpgme.la
 lib/libgpgme.so
-lib/libgpgme.so.15
+lib/libgpgme.so.17
 share/aclocal/gpgme.m4
 @dirrm include/gpgme

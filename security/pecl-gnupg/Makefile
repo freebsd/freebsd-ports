@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A pecl wrapper around the gpgme library
 
-LIB_DEPENDS=	gpgme.15:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
