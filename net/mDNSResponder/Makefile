@@ -12,7 +12,7 @@ CATEGORIES=	net dns
 MASTER_SITES=	http://darwinsource.opendarwin.org/tarballs/apsl/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Apple's mDNSResponder
 
 USE_LDCONFIG=	YES

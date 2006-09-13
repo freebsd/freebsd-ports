@@ -10,7 +10,7 @@ PORTVERSION=	20060412
 CATEGORIES=	audio python
 MASTER_SITES=	http://hem.bredband.net/b298027/
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Shellac is a PyGTK XMMS2 Client
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xmmsclient.so:${PORTSDIR}/audio/py-xmms2

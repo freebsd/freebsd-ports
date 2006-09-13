@@ -8,7 +8,7 @@
 CATEGORIES=	audio ruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Ruby Bindings for XMMS2
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2

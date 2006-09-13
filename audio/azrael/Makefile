@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	azrael
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A GTK2 based XMMS2 client, offering a media library interface
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2

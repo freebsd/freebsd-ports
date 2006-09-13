@@ -12,7 +12,7 @@ MASTER_SITES=	http://divmod.org/static/projects/vertex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Vertex-${PORTVERSION}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Vertex is an implementation of the Q2Q protocol
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/epsilon/__init__.py:${PORTSDIR}/devel/py-epsilon \

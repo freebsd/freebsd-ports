@@ -9,7 +9,7 @@ CATEGORIES=	audio ruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-ecore
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Ruby ecore mainloop bindings for XMMS2
 
 BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2

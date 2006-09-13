@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://sirius.cine7.net/nyello/releases/
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An advanced command-line interface and shell for xmms2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2

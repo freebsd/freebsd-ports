@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Epsilon-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz?format=raw
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Epsilon is a set of Python utility modules used by DivMod projects
 
 USE_PYTHON=	yes

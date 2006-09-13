@@ -4,12 +4,12 @@
 # $FreeBSD$
 #
 # bsd.scons.mk - Python-based SCons build system interface.
-# Author: Alexander Botero-Lowry <alex@foxybanana.com>
+# Author: Alexander Botero-Lowry <alexbl@FreeBSD.org>
 #
 # Please view me with 4 column tabs!
 
 # Please make sure all changes to this file are passed through the maintainer.
-SCONS_MAINTAINER=	alex@foxybanana.com
+SCONS_MAINTAINER=	alexbl@FreeBSD.org
 
 #
 # SCONS_BIN is the location where the scons port installs the scons

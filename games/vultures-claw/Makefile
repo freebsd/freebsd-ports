@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/downloads/${PORTVERSIO
 PKGNAMESUFFIX=	-claw
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An isometric interface to Slash'EM based on Falcon's Eye
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

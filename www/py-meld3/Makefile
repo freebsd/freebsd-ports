@@ -14,7 +14,7 @@ DISTNAME=	PyMeld
 EXTRACT_SUFX=	.py
 EXTRACT_ONLY=	# This space left intentionally empty
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A system for manipulating HTML using a Pythonic object model
 
 USE_PYTHON=	yes

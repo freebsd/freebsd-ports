@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.code-monkey.de/pub/ruby-eet/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-eet-${PORTVERSION}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Ruby support for reading and writing EET files
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake

@@ -9,7 +9,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	audio ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A last.fm submission client for XMMS2
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2 \

@@ -8,7 +8,7 @@
 CATEGORIES=	audio
 PKGNAMEPREFIX=	cpp-
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	C++ Bindings for XMMS2
 
 LIB_DEPENDS=	boost_signals.3:${PORTSDIR}/devel/boost

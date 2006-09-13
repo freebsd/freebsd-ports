@@ -10,7 +10,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicdns.org/themes/musicdns_org/downloads/
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	The Open Fingerprint Architecture Library
 
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \

@@ -10,7 +10,7 @@ CATEGORIES=	graphics ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/redact/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An edje compiler written in ruby
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/imlib2.so:${PORTSDIR}/graphics/ruby-imlib2 \

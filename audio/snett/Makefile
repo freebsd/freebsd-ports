@@ -9,7 +9,7 @@ PORTVERSION=	0.0.2
 CATEGORIES=	audio ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/snett/
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A simple XMMS2 client inspired by strange-quark
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2 \

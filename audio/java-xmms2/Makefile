@@ -9,7 +9,7 @@ PORTREVISION=	1
 CATEGORIES=	audio java
 PKGNAMEPREFIX=	java-
 
-MAINTAINER=	alex@foxybanana.com
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Java Bindings for XMMS2
 
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13 \
