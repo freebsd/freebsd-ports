@@ -13,7 +13,7 @@
 # dkimproxy_out_enable="YES"
 #
 # Before you enable dkimproxy.out, you also need to make your domainkey to
-# set it to DNS and configurate dkimproxy_flags.
+# set it to DNS and configurate dkimproxy_out_flags.
 #
 
 . %%RC_SUBR%%
@@ -39,11 +39,27 @@ dkimproxy_out_start()
 		echo "${name} already running?"
 		exit 1
 	fi 
+	if pw user show "${dkimproxy_out_user}" > /dev/null 2>&1; then else
+		echo "dkimproxy_out_user: ${dkimproxy_out_user} not found"
+		exit 1
+	fi
+	echo "Starting ${name}"
+	logger -t ${name} "Starting ${name}"
 	touch ${dkimproxy_out_pidfile}
 	chown ${dkimproxy_out_user} ${dkimproxy_out_pidfile}
-	su -m ${dkimproxy_out_user} -c "daemon -cf -p ${dkimproxy_out_pidfile} \
-		%%PREFIX%%/bin/dkimproxy.out ${dkimproxy_out_flags}"
-	echo "Starting ${name}."
+	logfile=`mktemp /tmp/${name}.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+	su -m ${dkimproxy_out_user} -c "daemon -c -p ${dkimproxy_out_pidfile} \
+		%%PREFIX%%/bin/dkimproxy.out ${dkimproxy_out_flags}" \
+		> /dev/null 2> ${logfile}
+	sleep 1 # XXX: wait until dkimproxy start.
+	logger -t ${name} "`cat ${logfile}`"
+	err=`grep Error ${logfile}`
+	if [ "${err}" ]; then
+		echo "Failed to start ${name}."
+		echo "${err}"
+		rm -f ${dkimproxy_out_pidfile}
+	fi
+	rm -f ${logfile}
 }
 
 dkimproxy_out_stop()
@@ -52,9 +68,10 @@ dkimproxy_out_stop()
 		echo "${name} not running?"
 		exit 1
 	fi
+	echo "Stopping ${name}"
+	logger -t ${name} "Stopping ${name}"
 	kill `cat ${dkimproxy_out_pidfile}`
 	rm -f ${dkimproxy_out_pidfile}
-	echo "Stopping ${name}"
 }
 
 load_rc_config $name
