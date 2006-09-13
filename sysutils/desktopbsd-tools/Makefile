@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	desktopbsd-tools
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.desktopbsd.net/
 
@@ -15,9 +15,9 @@ COMMENT=	DesktopBSD tools for easy system configuration
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
 		bash:${PORTSDIR}/shells/bash \
-		csup:${PORTSDIR}/net/csup \
 		fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
-		portupgrade:${PORTSDIR}/sysutils/portupgrade
+		portupgrade:${PORTSDIR}/sysutils/portupgrade \
+		portaudit:${PORTSDIR}/security/portaudit
 
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
@@ -37,6 +37,14 @@ DATADIR=	${PREFIX}/share/desktopbsd
 
 .if ${OSVERSION} < 500000
 IGNORE=		requires FreeBSD 5 or newer
+.endif
+
+.if ${OSVERSION} < 601101 || ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700015 )
+RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
+.endif
+
+.if ${OSVERSION} < 504103 || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600033 )
+RUN_DEPENDS+=	portsnap:${PORTSDIR}/sysutils/portsnap
 .endif
 
 post-patch:
