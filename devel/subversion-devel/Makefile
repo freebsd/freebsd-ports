@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.4.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.2/:bookhtml \
