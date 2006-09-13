@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTML/Tidy/.packlist
+%%SITE_PERL%%/Test/HTML/Tidy.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTML/Tidy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test/HTML
+@dirrmtry %%SITE_PERL%%/Test

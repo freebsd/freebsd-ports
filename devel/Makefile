@@ -1391,6 +1391,7 @@
     SUBDIR += p5-Test-Expect
     SUBDIR += p5-Test-File
     SUBDIR += p5-Test-File-Contents
+    SUBDIR += p5-Test-HTML-Tidy
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-HasVersion
     SUBDIR += p5-Test-Inline
