@@ -33,4 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 IGNORE=	does not build on 4.X
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=         edje is broken on ia64
+.endif
+
 .include <bsd.port.post.mk>
