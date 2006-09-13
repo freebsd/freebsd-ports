@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	http://centericq.de/archive/source/releases/ \
 		http://thekonst.net/download/
@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=	--disable-jabber
 .if !defined(WITH_GPGME)
 CONFIGURE_ARGS+=	--without-gpgme
 .else
-LIB_DEPENDS+=		gpgme.15:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.17:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
 .endif
 .endif

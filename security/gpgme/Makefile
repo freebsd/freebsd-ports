@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -42,6 +41,7 @@ PLIST_SUB+=	WITH_PTH='@comment '
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|EOF||g' ${WRKSRC}/assuan/assuan-errors.c
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 					${WRKSRC}/${CONFIGURE_SCRIPT} \
 					${WRKSRC}/gpgme/Makefile.in \
