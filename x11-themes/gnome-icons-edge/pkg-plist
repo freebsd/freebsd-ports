@@ -1,0 +1,136 @@
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-copy.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-edit.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-find-and-replace.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-find.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-home.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-next.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-paste.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-previous.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-zoom-100.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-zoom-fit.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-zoom-in.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-zoom-out.png
+share/icons/Edge-Icons-0.6/24x24/gtk/gtk-zoom.png
+share/icons/Edge-Icons-0.6/24x24/stock/gtk-open.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_copy.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_edit.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_next.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_paste.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_previous.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_search.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_zoom-1.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_zoom-fit.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_zoom-in.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_zoom-in1.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_zoom-out.png
+share/icons/Edge-Icons-0.6/24x24/stock/stock_zoom.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-archive.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-bzip-compressed-tar.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-bzip.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-compress.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-compressed-tar.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-deb.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-gzip.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-rar.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-rpm.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-x-tar.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-mime-application-zip.png
+share/icons/Edge-Icons-0.6/48x48/mimetypes/gnome-package.png
+share/icons/Edge-Icons-0.6/48x48/stock/gtk-open.png
+share/icons/Edge-Icons-0.6/48x48/stock/stock_volume-0.png
+share/icons/Edge-Icons-0.6/48x48/stock/stock_volume-max.png
+share/icons/Edge-Icons-0.6/48x48/stock/stock_volume-med.png
+share/icons/Edge-Icons-0.6/48x48/stock/stock_volume-min.png
+share/icons/Edge-Icons-0.6/48x48/stock/stock_volume-mute.png
+share/icons/Edge-Icons-0.6/NEWS
+share/icons/Edge-Icons-0.6/README
+share/icons/Edge-Icons-0.6/gaim-icons.tar.gz
+share/icons/Edge-Icons-0.6/index.theme
+share/icons/Edge-Icons-0.6/scalable/apps/drawer.png
+share/icons/Edge-Icons-0.6/scalable/apps/epiphany.png
+share/icons/Edge-Icons-0.6/scalable/apps/evolution.png
+share/icons/Edge-Icons-0.6/scalable/apps/firefox.png
+share/icons/Edge-Icons-0.6/scalable/apps/gaim.png
+share/icons/Edge-Icons-0.6/scalable/apps/gnome-searchtool.png
+share/icons/Edge-Icons-0.6/scalable/apps/gnome-terminal.png
+share/icons/Edge-Icons-0.6/scalable/apps/mozilla-firefox.png
+share/icons/Edge-Icons-0.6/scalable/apps/mozilla.png
+share/icons/Edge-Icons-0.6/scalable/apps/skype.png
+share/icons/Edge-Icons-0.6/scalable/apps/web-browser.png
+share/icons/Edge-Icons-0.6/scalable/apps/xchat.png
+share/icons/Edge-Icons-0.6/scalable/devices/gnome-dev-cdrom.png
+share/icons/Edge-Icons-0.6/scalable/devices/gnome-dev-floppy.png
+share/icons/Edge-Icons-0.6/scalable/devices/gnome-dev-harddisk-usb.png
+share/icons/Edge-Icons-0.6/scalable/devices/gnome-dev-harddisk.png
+share/icons/Edge-Icons-0.6/scalable/devices/gnome-dev-network.png
+share/icons/Edge-Icons-0.6/scalable/devices/gnome-dev-removable.png
+share/icons/Edge-Icons-0.6/scalable/emblems/emblem-desktop.png
+share/icons/Edge-Icons-0.6/scalable/emblems/emblem-symbolic-link.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-blockdev.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-client.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-client1.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-desktop.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-directory-accept.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-directory-doc.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-directory-visiting.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-directory.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-fifo.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-home.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-homeOLD.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-network.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-regular.svg
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-server.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-trash-empty.png
+share/icons/Edge-Icons-0.6/scalable/filesystems/gnome-fs-trash-full.png
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-apply.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-cancel.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-back-ltr.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-back-rtl.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-back.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-down.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-forward-ltr.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-forward-rtl.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-forward.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-left.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-right.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-go-up.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-goto-first-ltr.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-goto-first-rtl.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-goto-last-ltr.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-goto-last-rtl.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-refresh.svg
+share/icons/Edge-Icons-0.6/scalable/gtk/gtk-stop.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-application-x-shellscript.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-application.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text-css.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text-html.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text-plain.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text-x-readme.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text-x-sh.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text-x-tex.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text-xml.svg
+share/icons/Edge-Icons-0.6/scalable/mimetypes/gnome-mime-text.svg
+share/icons/Edge-Icons-0.6/scalable/stock/gnome-main-menu.png
+share/icons/Edge-Icons-0.6/scalable/stock/gtk-add.svg
+share/icons/Edge-Icons-0.6/scalable/stock/gtk-apply.svg
+share/icons/Edge-Icons-0.6/scalable/stock/gtk-close.svg
+share/icons/Edge-Icons-0.6/scalable/stock/gtk-new.svg
+share/icons/Edge-Icons-0.6/scalable/stock/gtk-remove.svg
+share/icons/Edge-Icons-0.6/scalable/stock/gtk-save-as.png
+share/icons/Edge-Icons-0.6/scalable/stock/gtk-save.png
+@dirrm share/icons/Edge-Icons-0.6/scalable/stock
+@dirrm share/icons/Edge-Icons-0.6/scalable/mimetypes
+@dirrm share/icons/Edge-Icons-0.6/scalable/gtk
+@dirrm share/icons/Edge-Icons-0.6/scalable/filesystems
+@dirrm share/icons/Edge-Icons-0.6/scalable/emblems
+@dirrm share/icons/Edge-Icons-0.6/scalable/devices
+@dirrm share/icons/Edge-Icons-0.6/scalable/apps
+@dirrm share/icons/Edge-Icons-0.6/scalable
+@dirrm share/icons/Edge-Icons-0.6/48x48/stock
+@dirrm share/icons/Edge-Icons-0.6/48x48/mimetypes
+@dirrm share/icons/Edge-Icons-0.6/48x48
+@dirrm share/icons/Edge-Icons-0.6/24x24/stock
+@dirrm share/icons/Edge-Icons-0.6/24x24/gtk
+@dirrm share/icons/Edge-Icons-0.6/24x24
+@dirrm share/icons/Edge-Icons-0.6
+@dirrmtry share/icons

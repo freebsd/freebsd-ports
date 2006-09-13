@@ -16,23 +16,13 @@ REASON=		Themes may contain artwork not done by the author. \
 		Keep FreeBSD safe if theme author violated copyrights.
 
 USE_X_PREFIX=	yes
-PLIST=		${WRKDIR}/plist
 
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
-pre-install:
-	@${RM} -rf ${PLIST}
+do-install: icon-do-install
 
-	@cd ${WRKDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
-	${SED} -i "" -e "s:^:share/icons/:" ${PLIST}; \
-	${FIND} * -type d ! -empty | ${SORT} -r | \
-		${SED} -e "s:^:@dirrm share/icons/:" | \
-		${GREP} / >> ${PLIST}; \
-	${ECHO} "@unexec /bin/rmdir %D/share/icons 2> /dev/null || \
-		/usr/bin/true" >> ${PLIST}
-
-do-install:
+icon-do-install:
 	cd ${WRKDIR} && ${FIND} * -type d ! -empty \
 		-exec ${MKDIR} -m 0755 \
 		${PREFIX}/share/icons/"{}" \;

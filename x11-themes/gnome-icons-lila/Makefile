@@ -11,7 +11,7 @@
 
 PORTNAME=	lila
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
@@ -26,8 +26,8 @@ WRKSRC=		"${WRKDIR}"
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME}-gnome/Lila ${WRKDIR}; \
-	${MV} ${WRKDIR}/LICENSE ${WRKSRC}; \
-	${MV} ${WRKDIR}/COPYRIGHT ${WRKSRC}
+	${MV} ${WRKDIR}/LICENSE ${WRKDIR}/Lila; \
+	${MV} ${WRKDIR}/COPYRIGHT ${WRKDIR}/Lila
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>
