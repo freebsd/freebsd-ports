@@ -16,9 +16,9 @@ then
 	echo "Using existing ~/.vavoom directory."
 else
 	echo "Creating ~/.vavoom directory."
-	cd %%DATADIR%% || exit 1
-	find . -type d -exec mkdir -p ~/.vavoom/basev/{} \;
-	find . -type f -exec ln -sf %%DATADIR%%/basev/{} ~/.vavoom/basev/{} \;
+	cd %%DATADIR%%/basev || exit 1
+	find * -type d -exec mkdir -p ~/.vavoom/basev/{} \;
+	find * -type f -exec ln -sf %%DATADIR%%/basev/{} ~/.vavoom/basev/{} \;
 fi
 
 cd ~/.vavoom || exit 1
