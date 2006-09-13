@@ -1,0 +1,14 @@
+--- makefile_bsd_lib.orig	Wed Sep 13 17:32:38 2006
++++ makefile_bsd_lib	Wed Sep 13 17:32:59 2006
+@@ -3,9 +3,9 @@
+ OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
+ 	nl-sock.o nl-import.o nl-xml.o nl-web.o nl-matrix.o nl-debug.o pcre.o unix-lib.o
+ 
+-CFLAGS = -Wall -pedantic -Wno-uninitialized -O2 -c -DLIBRARY -D_BSD
++CFLAGS +=-c -DLIBRARY -D_BSD
+ 
+-CC = gcc
++#CC = gcc
+ 
+ default: $(OBJS)
+ 	$(CC) $(OBJS) -lm -shared -o newlisp.so
