@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libsmi
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
 MAINTAINER=	saper@system.pl
 COMMENT=	A library to access SMI MIB information
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 PIBDIR=		${PREFIX}/share/smi/pibs
