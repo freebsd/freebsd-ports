@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nn
-PORTVERSION=	6.7.2
+PORTVERSION=	6.7.3
 CATEGORIES=	news
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://mirror2.unixfreunde.de/
+MASTER_SITES=	http://www.sourcefiles.org/Internet/News/Usenet_Clients/  \
+		http://www.wa.apana.org.au/~dean/sources/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jooji@nickelkid.com
