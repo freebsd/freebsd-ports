@@ -1,0 +1,11 @@
+--- configure.old	Thu Sep 14 00:02:14 2006
++++ configure	Thu Sep 14 00:02:58 2006
+@@ -23349,7 +23349,7 @@
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-eval "$as_ac_var=no"
++eval "$as_ac_var=yes"
+ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
