@@ -9455,6 +9455,7 @@ p5-Net-Address-Ethernet	ports/net/p5-Net-Address-Ethernet
 p5-Net-Address-IPv4-Local	ports/net/p5-Net-Address-IPv4-Local
 p5-Net-Akismet	ports/www/p5-Net-Akismet
 p5-Net-Amazon	ports/net/p5-Net-Amazon
+p5-Net-Analysis	ports/net/p5-Net-Analysis
 p5-Net-BGP	ports/net/p5-Net-BGP
 p5-Net-BitTorrent-File	ports/net-p2p/p5-Net-BitTorrent-File
 p5-Net-BitTorrent-PeerPacket	ports/net-p2p/p5-Net-BitTorrent-PeerPacket
