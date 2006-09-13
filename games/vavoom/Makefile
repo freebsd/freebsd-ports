@@ -155,6 +155,10 @@ post-install:
 .if defined(WITH_MODELS)
 	${CP} -r ${WRKDIR}/basev ${DATADIR}
 .endif
+.if defined(WITH_DEVEL) || defined(WITH_MODELS)
+	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
