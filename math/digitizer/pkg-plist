@@ -121,6 +121,7 @@ bin/digitizer
 %%PORTDOCS%%%%EXAMPLESDIR%%/normdist.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/normdist.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/pointplot.bmp
+%%PORTDOCS%%%%EXAMPLESDIR%%/polarcircles.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarplot.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/polarplot.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/testcase.jpg
