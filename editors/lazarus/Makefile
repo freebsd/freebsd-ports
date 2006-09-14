@@ -9,10 +9,16 @@ PORTNAME=	lazarus
 PORTVERSION=	0.9.16
 PORTREVISION=	1
 CATEGORIES=	devel editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/$/-0/}${EXTRACT_SUFX} \
-		fpcbuild-${FPC_MINVER}${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|freepascal/:freepascal|} \
+		ftp://ftp.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
+		ftp://planetmirror.com/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
+		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/source-${FPC_MINVER}/:freepascal \
+		ftp://freepascal.stack.nl/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
+		ftp://ftp.no.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
+		ftp://ftp.us.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
+		${MASTER_SITE_SOURCEFORGE:S|$|lazarus/:lazarus|}
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/$/-0/}${EXTRACT_SUFX}:lazarus \
+		fpcbuild-${FPC_MINVER}${EXTRACT_SUFX}:freepascal
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
