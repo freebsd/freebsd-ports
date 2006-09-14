@@ -143,13 +143,13 @@ check_dep()
 			err=1
 		fi
 
-		# check if some port mentions the port to be deleted
-		portdir_grep="/`basename ${catport}`"
-		r="`find ${PORTSDIR} -mindepth 3 -maxdepth 3 -name "Makefile*" \
-			|xargs grep -H ${portdir_grep} \
+		# check if some Makefiles mention the port to be deleted
+		portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]+|$)"
+		r="`find ${PORTSDIR} -mindepth 2 -maxdepth 3 \( -name "Makefile*" -or -path "*Mk/*.mk" \) \
+			|xargs grep -EH "${portdir_grep}" \
 			|grep -vE "^(${rmcatports})" || :`"
 		if [ -n "${r}" ] ; then
-			log "${catport}: some ports mention ${portdir_grep} in their Makefiles:"
+			log "${catport}: some Makefiles mention ${portdir_grep}:"
 			printf "%s\n" "${r}" >&2
 			err=1
 		fi
