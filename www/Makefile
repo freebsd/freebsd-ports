@@ -230,6 +230,7 @@
     SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += lifetype
+    SUBDIR += lilurl
     SUBDIR += linkcheck
     SUBDIR += linkchecker
     SUBDIR += linklint
