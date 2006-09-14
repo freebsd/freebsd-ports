@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_beta14
-PORTREVISION=	1
+DISTVERSION=	2.1_beta15
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -57,6 +56,9 @@ LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 .if defined(WITH_PW_SAVE)
 CONFIGURE_ARGS+=	--enable-password-save
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-build:
 	cd ${WRKSRC}/plugin/down-root && ${MAKE}
