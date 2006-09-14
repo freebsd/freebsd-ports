@@ -10,7 +10,7 @@ bin/kscd
 bin/midisend
 bin/noatun
 bin/workman2cddb.pl
-etc/xdg/menus/applications-merged/kde-multimedia-music.menu
+etc/xdg/menus/kde-applications-merged/kde-multimedia-music.menu
 include/arts/artsbuilder.h
 include/arts/artsbuilder.idl
 include/arts/artsgui.h
@@ -1231,4 +1231,4 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm lib/mcop/Arts/Environment
 @dirrm include/noatun
 @dirrm include/libkcddb
-@dirrm etc/xdg/menus/applications-merged
+@dirrm etc/xdg/menus/kde-applications-merged

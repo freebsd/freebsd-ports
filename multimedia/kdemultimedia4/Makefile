@@ -8,6 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -70,6 +71,10 @@ RUN_DEPENDS+=	mpeglibartsplay:${PORTSDIR}/audio/mpeglib_artsplug
 .if defined(DO_NOT_COMPILE)
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
+
+pre-configure:
+	${REINPLACE_CMD} -e "s,applications-merged,kde-applications-merged,g" \
+		${WRKSRC}/kappfinder-data/Makefile.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
