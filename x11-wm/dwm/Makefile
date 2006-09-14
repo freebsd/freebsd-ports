@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	1.2
+PORTVERSION=	1.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://10kloc.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
