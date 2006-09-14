@@ -26,8 +26,4 @@ MAN3=	Params::Util.3
 post-patch:
 	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500600
-IGNORE=	requires Perl 5.6 or newer. Please install lang/perl5 or lang/perl5.8 and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
