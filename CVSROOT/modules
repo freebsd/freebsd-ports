@@ -3028,6 +3028,7 @@ gaul		ports/devel/gaul
 gave		ports/science/gave
 gavl		ports/multimedia/gavl
 gawk		ports/lang/gawk
+gazpacho	ports/devel/gazpacho
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
 gbib		ports/databases/gbib
