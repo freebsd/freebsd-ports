@@ -1,5 +1,5 @@
 include/netgraph/ng_ipacct.h
-etc/ng_ipacct.conf
+etc/ng_ipacct.conf.sample
 sbin/ipacctctl
 @dirrmtry include/netgraph
 @cwd /
