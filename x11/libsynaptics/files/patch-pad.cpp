@@ -1,6 +1,6 @@
---- pad.cpp.orig	Thu Apr 27 00:53:03 2006
-+++ pad.cpp	Thu Apr 27 01:26:18 2006
-@@ -15,11 +15,13 @@
+--- pad.cpp.orig	Thu Sep 14 13:51:00 2006
++++ pad.cpp	Thu Sep 14 13:53:35 2006
+@@ -15,12 +15,14 @@
  #include "version.h"
  
  #include <X11/Xdefs.h> // for typedef Bool
@@ -8,6 +8,7 @@
  #include <sys/shm.h>
  #include <stdlib.h>
 +#include <stdio.h>
+ #include <unistd.h>
  
  #include <pthread.h>
 -static pthread_mutex_t lock;
@@ -15,7 +16,7 @@
  
  #define PAROFF( verId, par ) \
      offsetof( SynShm, verId ) + offsetof( ShmSegment##verId, par )
-@@ -31,7 +33,7 @@
+@@ -32,7 +34,7 @@
      p.max_val = max;
  
  #define NODRIVERVER VER( 0, 0, 0 )
@@ -24,7 +25,7 @@
  
  
  //
-@@ -81,7 +83,7 @@
+@@ -82,7 +84,7 @@
          mSelf = new Synaptics::Pad(); // call constructor
      else
      {
@@ -33,7 +34,7 @@
          return;
      }
  
-@@ -310,7 +312,7 @@
+@@ -333,7 +335,7 @@
      PadType pt = PT_NONE;
  
      // FIXME: detection just based on the assumption that the driver will register as unknown
@@ -42,7 +43,7 @@
          pt = PT_UNKNOWN;
      else
      {
-@@ -345,19 +347,19 @@
+@@ -368,19 +370,19 @@
      {
          Param p = mSupportedDriver[ DRIVERSTR ][ param ];
  
@@ -65,7 +66,7 @@
          {
              rd = *(double*)(((char*)mSynShm) + p.offset );
              RETURN( rd );
-@@ -376,7 +378,7 @@
+@@ -399,7 +401,7 @@
      {
          Param p = mSupportedDriver[ DRIVERSTR ][ param ];
  
@@ -74,7 +75,7 @@
          {
              if ( p.type == PT_BOOL )
                  (*(Bool*)(((char*)mSynShm) + p.offset)) = (Bool)v;
-@@ -391,7 +393,7 @@
+@@ -414,7 +416,7 @@
          }
      }
      // instead of RETURN(void)
