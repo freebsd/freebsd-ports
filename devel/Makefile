@@ -317,6 +317,7 @@
     SUBDIR += gauche-readline
     SUBDIR += gauche-sdl
     SUBDIR += gaul
+    SUBDIR += gazpacho
     SUBDIR += gccxml
     SUBDIR += gconf
     SUBDIR += gconf2
