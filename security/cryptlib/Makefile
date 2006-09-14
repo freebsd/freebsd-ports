@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.2.3
+PORTVERSION=		3.3
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
 DISTNAME=		cl${PORTVERSION:S/.//g}
@@ -33,17 +33,17 @@ PORTDOCS=		README
 
 post-patch:
 .if defined(WITH_OPTIMIZED_CFLAGS)
-	${REINPLACE_CMD} -e 's/%%CFLAGS%%/${CFLAGS:N-O*:N-f*} -fomit-frame-pointer -O3/' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's/%%CFLAGS%%/${CFLAGS:N-O*:N-f*} -fomit-frame-pointer -O3/' ${WRKSRC}/makefile
 .else
-	${REINPLACE_CMD} -e 's/%%CFLAGS%%/${CFLAGS}/' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's/%%CFLAGS%%/${CFLAGS}/' ${WRKSRC}/makefile
 .endif
-	${REINPLACE_CMD} -e 's/%%PTHREAD_CFLAGS%%/${PTHREAD_CFLAGS}/;s/%%PTHREAD_LIBS%%/${PTHREAD_LIBS}/' \
+	@${REINPLACE_CMD} -e 's/%%PTHREAD_CFLAGS%%/${PTHREAD_CFLAGS}/;s/%%PTHREAD_LIBS%%/${PTHREAD_LIBS}/' \
 		${WRKSRC}/makefile
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.${PORTVERSION} \
+	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.${PORTVERSION}.0 \
 		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libcl.so.${PORTVERSION} ${PREFIX}/lib/libcl.so.3
+	${LN} -sf ${PREFIX}/lib/libcl.so.${PORTVERSION}.0 ${PREFIX}/lib/libcl.so.3
 	${LN} -sf ${PREFIX}/lib/libcl.so.3 ${PREFIX}/lib/libcl.so
 	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${PREFIX}/include
 
