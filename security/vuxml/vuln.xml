@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="24f6b1eb-43d5-11db-81e1-000e0c2e438a">
+    <topic>win32-codecs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>win32-codecs</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apple Security Team reports that there are multiple
+	  vulnerabilities within QuickTime (one of the plugins for
+	  win32-codecs).  A remote attacker capable of creating a
+	  malicious SGI image, FlashPix, FLC movie, or a Quicktime
+	  movie can possibly execute remote code via the users browser.
+	  The vulnerabilities can also lead to a Denial of Service
+	  (application crash).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4381</cvename>
+      <cvename>CVE-2006-4382</cvename>
+      <cvename>CVE-2006-4384</cvename>
+      <cvename>CVE-2006-4385</cvename>
+      <cvename>CVE-2006-4386</cvename>
+      <cvename>CVE-2006-4388</cvename>
+      <cvename>CVE-2006-4389</cvename>
+      <url>http://docs.info.apple.com/article.html?artnum=304357</url>
+    </references>
+    <dates>
+      <discovery>2006-09-08</discovery>
+      <entry>2006-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea09c5df-4362-11db-81e1-000e0c2e438a">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
@@ -92,8 +127,9 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.php.net/release_5_1_5.php</url>
     </references>
     <dates>
-      <discovery>2006-09-FIXME</discovery>
+      <discovery>2006-08-18</discovery>
       <entry>2006-09-13</entry>
+      <modified>2006-09-14</modified>
     </dates>
   </vuln>
 
