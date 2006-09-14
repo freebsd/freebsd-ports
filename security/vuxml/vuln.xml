@@ -47,12 +47,13 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Apple Security Team reports that there are multiple
 	  vulnerabilities within QuickTime (one of the plugins for
 	  win32-codecs).  A remote attacker capable of creating a
-	  malicious SGI image, FlashPix, FLC movie, or a Quicktime
-	  movie can possibly execute remote code via the users browser.
-	  The vulnerabilities can also lead to a Denial of Service
-	  (application crash).</p>
-	<p>Users who have QuickTime as a browser plugin might be
-	  directly affected by the remote code execution.</p>
+	  malicious SGI image, FlashPix, FLC movie, or a QuickTime
+	  movie can possibly lead to execution of arbitrary code or
+	  cause a Denial of Service (application crash).</p>
+	<p>Users who have QuickTime (/win32-codecs) as a browser plugin
+	  may be vulnerable to remote code execution by visiting a
+	  website containing a malicious SGI image, FlashPix, FLC movie
+	  or a QuickTime movie.</p>
       </body>
     </description>
     <references>
@@ -91,8 +92,8 @@ Note:  Please add new entries to the beginning of this file.
 	<name>php5-horde</name>
 	<name>php4-nms</name>
 	<name>php5-nms</name>
-	<name>mod-php4</name>
-	<name>mod-php5</name>
+	<name>mod_php4</name>
+	<name>mod_php5</name>
 	<range><ge>0</ge></range>
       </package>
     </affects>
