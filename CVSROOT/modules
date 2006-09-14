@@ -14254,6 +14254,7 @@ umark		ports/games/umark
 umatrix		ports/math/umatrix
 umfpack		ports/math/umfpack
 umix		ports/audio/umix
+umodplayer	ports/audio/umodplayer
 ump		ports/www/ump
 unace		ports/archivers/unace
 unadf		ports/archivers/unadf
