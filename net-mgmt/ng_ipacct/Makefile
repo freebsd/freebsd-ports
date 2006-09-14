@@ -7,7 +7,7 @@
 
 PORTNAME=	ng_ipacct
 PORTVERSION=	20050731
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 		ftp://ftp.wuppy.net.ru/pub/FreeBSD/local/kernel/ng_ipacct/
@@ -40,7 +40,8 @@ CFLAGS+=	-DMEM_USE_ZONE
 post-install:
 	@${MKDIR} ${PREFIX}/include/netgraph
 	${INSTALL_DATA} ${WRKSRC}/ng_ipacct/ng_ipacct.h ${PREFIX}/include/netgraph
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf ${PREFIX}/etc/
+	${INSTALL_DATA} ${FILESDIR}/ng_ipacct.conf \
+		${PREFIX}/etc/ng_ipacct.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
