@@ -7620,6 +7620,7 @@ ns		ports/net/ns
 nsc		ports/net-mgmt/nsc
 nsc2ke		ports/math/nsc2ke
 nsca		ports/net-mgmt/nsca
+nsca-client	ports/net-mgmt/nsca-client
 nscache		ports/www/nscache
 nsd		ports/dns/nsd
 nserver		ports/misc/nserver
