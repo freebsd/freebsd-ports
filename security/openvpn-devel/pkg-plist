@@ -27,6 +27,7 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/revoke-full
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/sign-req
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/vars
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/README
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-ca
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/build-dh
