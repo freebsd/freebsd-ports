@@ -185,9 +185,10 @@ fi
 if [ "${use_jail}" = "1" ]; then
   # Figure out jail IP addr
   chrootpid=$(basename ${chroot})
-  ip1=$(($chrootpid /(256*256)))
-  ip2=$((($chrootpid - ($ip1*256*256)) /256))
-  ip3=$((($chrootpid - ($ip1*256*256) - ($ip2*256))))
+  ipbase=$((${chrootpid}+2))
+  ip1=$(($ipbase /(256*256)))
+  ip2=$((($ipbase - ($ip1*256*256)) /256))
+  ip3=$((($ipbase - ($ip1*256*256) - ($ip2*256))))
 fi
 
 # Set up desired uname version
@@ -260,7 +261,7 @@ fi
 if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
   # JDK ports need linprocfs :(
   mkdir -p ${chroot}/compat/linux/proc
-  chroot ${chroot} mount_linprocfs linprocfs /compat/linux/proc
+  mount_linprocfs linprocfs ${chroot}/compat/linux/proc
 fi
 
 _ldconfig_dirs="/lib /usr/lib /usr/lib/compat"
