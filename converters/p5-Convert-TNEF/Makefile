@@ -12,14 +12,14 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	Perl module to read TNEF files
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes	
+PERL_CONFIGURE=	yes
 
 MAN3=		Convert::TNEF.3
 
