@@ -61,7 +61,7 @@ for dir in ${chrootdir}/*; do
     mkdir ${dir}/used 2>/dev/null || continue
     touch ${dir}/used/${pkgname}
     if [ -f ${dir}/.dirty ]; then
-      ${pb}/scripts/clean-chroot ${arch} ${branch} ${dir} 2 &
+      ${pb}/scripts/clean-chroot ${arch} ${branch} ${dir} 2 >/dev/null 2>/dev/null &
       continue
     fi
     found=1
