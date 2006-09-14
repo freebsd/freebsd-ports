@@ -22,6 +22,8 @@ bin/exige
 %%DATADIR%%/data/emblem/gant.edj
 %%DATADIR%%/data/entangle/default.edj
 %%DATADIR%%/data/exige/default.edj
+share/enlightenment/config-apps/entangle.eap
+@dirrmtry share/enlightenment/config-apps
 @dirrm %%DATADIR%%/data/exige
 @dirrm %%DATADIR%%/data/entangle
 @dirrm %%DATADIR%%/data/emblem
