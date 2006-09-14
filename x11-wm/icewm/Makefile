@@ -82,9 +82,13 @@ CONFIGURE_ARGS+=	--disable-x86-asm
 
 .if defined(WITH_BEASTIE)
 STARTUP_PIXMAP=		bsd-daemon.xpm
+THEMES_START_XPM_SFX=	-suppressed
 .else
 STARTUP_PIXMAP=		icewm-logo.xpm
+THEMES_START_XPM_SFX=
 .endif
+
+PLIST_SUB+=	THEMES_START_XPM_SFX=${THEMES_START_XPM_SFX}
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls --disable-i18n
@@ -97,6 +101,11 @@ PLIST_SUB+=	NLS=""
 post-extract:
 	@cd ${WRKSRC}/lib/taskbar && ${MV} start.xpm icewm-logo.xpm
 	@${CP} -f ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/taskbar
+.if defined(WITH_BEASTIE)
+	@for icon in ${WRKSRC}/lib/themes/*/taskbar/start.xpm ; do \
+		${MV} "$${icon}" "$${icon%.xpm}${THEMES_START_XPM_SFX}.xpm" ; \
+	done
+.endif
 
 post-patch:
 .for file in configure
