@@ -51,6 +51,8 @@ Note:  Please add new entries to the beginning of this file.
 	  movie can possibly execute remote code via the users browser.
 	  The vulnerabilities can also lead to a Denial of Service
 	  (application crash).</p>
+	<p>Users who have QuickTime as a browser plugin might be
+	  directly affected by the remote code execution.</p>
       </body>
     </description>
     <references>
