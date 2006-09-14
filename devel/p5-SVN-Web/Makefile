@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SVN-Web
-PORTVERSION=	0.47
-PORTREVISION=	1
+PORTVERSION=	0.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SVN
@@ -21,7 +20,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS \
+		${SITE_PERL}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
+		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
 		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Exception-Class>=1.22:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
@@ -30,15 +31,21 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-
 		p5-Template-Plugin-Clickable>=0:${PORTSDIR}/www/p5-Template-Plugin-Clickable \
 		p5-Template-Plugin-Number-Format>=0:${PORTSDIR}/www/p5-Template-Plugin-Number-Format \
 		p5-Template-Plugin-Subst>=0:${PORTSDIR}/www/p5-Template-Plugin-Subst \
-		p5-Text-Diff-HTML>=0:${PORTSDIR}/textproc/p5-Text-Diff-HTML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-Text-Diff-HTML>=0:${PORTSDIR}/textproc/p5-Text-Diff-HTML \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${SITE_PERL}/Test/Benchmark.pm:${PORTSDIR}/devel/p5-Test-Benchmark \
+		${SITE_PERL}/Test/HTML/Tidy.pm:${PORTSDIR}/devel/p5-Test-HTML-Tidy \
+		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 
 PERL_MODBUILD=	yes
+CONFIGURE_ARGS=	--skip_questions
 
 MAN1=		svnweb-server.1
 MAN3=		SVN::Web.3 \
 		SVN::Web::Browse.3 \
 		SVN::Web::Checkout.3 \
+		SVN::Web::ConfigData.3 \
 		SVN::Web::Diff.3 \
 		SVN::Web::List.3 \
 		SVN::Web::Log.3 \
@@ -62,6 +69,7 @@ IGNORE=		requires Perl 5.6.0 or newer. Please install lang/perl5.8 and try again
 .endif
 
 .if ${PERL_LEVEL} < 500703
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 .include <bsd.port.post.mk>
