@@ -25,6 +25,7 @@ EXTRACT_ONLY=	all-20060611.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
 
+FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/24f6b1eb-43d5-11db-81e1-000e0c2e438a.html
 RESTRICTED=	Unsure of codec\'s license
 
 ONLY_FOR_ARCHS=	i386
