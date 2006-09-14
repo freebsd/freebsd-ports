@@ -65,8 +65,4 @@ post-install:
 IGNORE=is not supported on FreeBSD < 6.0
 .endif
 
-.if ${OSVERSION} >= 700019
-BROKEN=		does not compile on FreeBSD >= 7.0
-.endif
-
 .include <bsd.port.post.mk>
