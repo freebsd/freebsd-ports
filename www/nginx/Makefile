@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -20,6 +20,10 @@ NGINX_LOGDIR?=	${NGINX_VARDIR}/log
 NGINX_RUNDIR?=	${NGINX_VARDIR}/run
 NGINX_TMPDIR?=	${NGINX_VARDIR}/tmp/nginx
 HTTP_PORT?=	80
+
+.if defined(WITH_PERL_MODULE)
+USE_PERL5=	yes
+.endif
 
 USE_RC_SUBR=	nginx.sh
 HAS_CONFIGURE=	yes
@@ -65,6 +69,10 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
+.if defined(WITH_PERL_MODULE)
+CONFIGURE_ARGS+=--with-http_perl_module
+.endif
+
 .if defined(WITHOUT_WWW)
 PLIST_SUB+=	WWWDATA="@comment "
 .else
@@ -101,6 +109,24 @@ do-install:
 	${ECHO_CMD} "" >>${PREFIX}/www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	[ -e ${PREFIX}/www/nginx ] || \
 		${LN} -sf ${PREFIX}/www/nginx-dist ${PREFIX}/www/nginx
+.endif
+
+.if defined(WITH_PERL_MODULE)
+	${MKDIR} ${SITE_PERL}/${PERL_ARCH}/auto/nginx
+	${INSTALL_PROGRAM} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so \
+		${SITE_PERL}/${PERL_ARCH}/auto/nginx
+	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.bs \
+		${SITE_PERL}/${PERL_ARCH}/auto/nginx
+	${INSTALL_DATA} ${WRKSRC}/objs/src/http/modules/perl/blib/lib/nginx.pm \
+		${SITE_PERL}/${PERL_ARCH}/
+.endif
+
+post-install:
+.if defined(WITH_PERL_MODULE)
+	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.so >> ${TMPPLIST}
+	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx/nginx.bs >> ${TMPPLIST}
+	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/nginx.pm >> ${TMPPLIST}
+	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
