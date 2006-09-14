@@ -26,10 +26,9 @@ USE_MYSQL=	yes
 .endif
 
 post-install:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' files/mediaproxy
-
 	${CP} -pRP ${WRKSRC}/ ${PREFIX}/mediaproxy
 	${CHOWN} -R 0:0 ${PREFIX}/mediaproxy
-	${INSTALL_SCRIPT} -b files/mediaproxy ${PREFIX}/etc/rc.d/mediaproxy
+	${INSTALL_SCRIPT} -b ${FILESDIR}/mediaproxy ${PREFIX}/etc/rc.d/mediaproxy
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${FILESDIR}/mediaproxy
 
 .include <bsd.port.post.mk>
