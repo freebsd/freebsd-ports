@@ -4,9 +4,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@comment This port installs into LOCALBASE as opposed to PREFIX
-@cwd %%LOCALBASE%%
-etc/nagios/nsca.cfg.sample
-etc/nagios/send_nsca.cfg.sample
-libexec/nagios/nsca
-libexec/nagios/send_nsca
+%%SERVER%%etc/nsca.cfg-sample
+%%SERVER%%sbin/nsca
+%%CLIENT%%etc/send_nsca.cfg-sample
+%%CLIENT%%sbin/send_nsca
