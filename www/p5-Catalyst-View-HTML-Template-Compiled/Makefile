@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-View-HTML-Template-Compiled
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst/ESSKAR
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	HTML::Template::Compiled View Class
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Template/Compiled.pm:${PORTSDIR}/www/p5-HTML-Template-Compiled \
+BUILD_DEPENDS=	p5-HTML-Template-Compiled>=0.74:${PORTSDIR}/www/p5-HTML-Template-Compiled \
 		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
 		${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel
