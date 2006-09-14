@@ -70,6 +70,7 @@ makeduds () {
   echo "generating duds"
   echo "================================================"
   echo "duds generation started at $(date)"
+  cp -p ${pb}/${arch}/${branch}/duds ${pb}/${arch}/${branch}/duds.old
   if ! ${scripts}/makeduds ${arch} ${branch}; then
     echo "error(s) detected, exiting script at $(date).  Failed duds list was:"
     cat ${pb}/${arch}/${branch}/duds
@@ -79,7 +80,6 @@ makeduds () {
   echo $(wc -l < ${pb}/${arch}/${branch}/duds) "items in duds"
   echo "duds diff:"
   diff ${pb}/${arch}/${branch}/duds.old ${pb}/${arch}/${branch}/duds
-  cp -p ${pb}/${arch}/${branch}/duds ${pb}/${arch}/${branch}/duds.old
   cp -p ${pb}/${arch}/${branch}/duds ${pb}/${arch}/${branch}/duds.orig
 }
 
@@ -132,6 +132,8 @@ archiveports () {
   echo "ended archive of ${pb}/${arch}/${branch}/ports at $(date)"
 }
 
+# XXX Should use SHA256 instead, but I'm not sure what consumes this file (if anything)
+# XXX Should generate these as the packages are copied in, instead of all at once at the end
 # usage: generatemd5 pb branch
 generatemd5 () {
   pb=$1
@@ -293,8 +295,8 @@ if [ "$skipstart" = 0 ]; then
     cd ${PORTSDIR}
     cvs -qR update -PAd
     # XXX Check for conflicts
+    date > ${pb}/${arch}/${branch}/cvsdone
   fi
-  date > ${pb}/${arch}/${branch}/cvsdone
 
   if [ "$nocvs" = 0 ]; then
     echo "================================================"
@@ -312,15 +314,18 @@ if [ "$skipstart" = 0 ]; then
   make checksubdirs
 
   # this one not run in background to check return status
+  # XXX Return status not checked!
   if [ "$noduds" = 0 ]; then
     makeduds ${pb} ${arch} ${scripts} ${branch}
   fi
 
-  echo "================================================"
-  echo "pruning stale entries from the failed ports list"
-  echo "================================================"
-  # Adding BROKEN ports to duds causes this to remove everything from failure list
-  #lockf -k ${pb}/${arch}/${branch}/failure.lock ${scripts}/prunefailure ${arch} ${branch}
+  if [ "$trybroken" = 1 ]; then
+    echo "================================================"
+    echo "pruning stale entries from the failed ports list"
+    echo "================================================"
+    cp ${pb}/${arch}/${branch}/failure ${pb}/${arch}/${branch}/newfailure ${pb}/${arch}/${branch}/bak
+    lockf -k ${pb}/${arch}/${branch}/failure.lock ${scripts}/prunefailure ${arch} ${branch}
+  fi
 
   if [ "$noindex" = 0 ]; then
     makeindex ${pb} ${arch} ${scripts} ${branch}
@@ -346,27 +351,58 @@ if [ "$skipstart" = 0 ]; then
     cdromlist ${pb} ${arch} ${scripts} ${branch} &
   fi
 
-  ${scripts}/makeparallel ${arch} ${branch}
-
-  cd ${pb}/${arch}
-  mkdir -p ${pb}/${arch}/${branch}/bak
-  cd ${pb}/${arch}/${branch}/bak
-  rm -rf errors logs packages old-errors
-  cd ${pb}/${arch}/${branch}
-  mv make.* tarballs/ports.tar.gz bak
+  ${scripts}/makeparallel ${arch} ${branch} &
 
   cd ${pb}/${arch}/${branch}
-  cp -rp errors logs old-errors bak
+  mkdir -p bak
+  rm -rf bak/packages bak/old-errors
+  mv make.* bak
 
-  shortdate=$(echo ${date} | sed -e 's/..$//')
+  olderrors=$(readlink ${pb}/${arch}/${branch}/errors)
+  oldlogs=$(readlink ${pb}/${arch}/${branch}/logs)
+
+  newerrors=${pb}/${arch}/archive/errorlogs/e.${branch}.${date}
+  newlogs=${pb}/${arch}/archive/errorlogs/a.${branch}.${date}
+
+  # Cycle out the previous symlinks
+  # For now the bak/errors may be a directory, so fall back to removing it if we fail to
+  # remove it as a symlink
+  rm -f bak/errors || rm -rf bak/errors
+  rm -f bak/logs || rm -rf bak/logs
+  mv errors logs bak
+
+  # Create new log directories for archival
+  rm -rf ${newerrors}
+  mkdir -p ${newerrors}/old-errors
+  ln -sf ${newerrors} ${pb}/${arch}/${branch}/errors
+  rm -rf ${newlogs}
+  mkdir -p ${newlogs}
+  ln -sf ${newlogs} ${pb}/${arch}/${branch}/logs
+  
+  echo "error logs in ${newerrors}"
+  cp -p ${pb}/${arch}/${branch}/cvsdone ${newerrors}/cvsdone
+  cp -p ${pb}/${arch}/${branch}/cvsdone ${newlogs}/cvsdone
+  cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${newerrors}/INDEX
+  cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${newlogs}/INDEX
 
   if [ "$incremental" = 1 ]; then
-    # need to preserve symlinks for packages
+    # XXX Don't do this for space reasons
+    # XXX Could be replaced by hardlinks?
     #tar cf - packages | tar xfC - bak
 
-    cd ${PORTSDIR}
+    # Copy back in the restricted ports that were saved after the previous build
+    cd ${pb}/${arch}/${branch}
+    if [ -d bak/restricted/ ]; then
+      tar cfC - bak/restricted/ packages/ | tar xfpP -
+    fi
+
+    # Create hardlinks to previous set of logs
+    cd ${oldlogs} && find . | cpio -dumpl ${newlogs}
+    cd ${olderrors} && find . | cpio -dumpl ${newerrors}
 
     # Identify the ports that have changed and need to be removed before rebuilding
+    # XXX Need to also remove stale distfiles
+    cd ${PORTSDIR}
     cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
     cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
     comm -2 -3 ${INDEXFILE}.old1 ${INDEXFILE}.1 | cut -f 1 -d \| > ${pb}/${arch}/${branch}/.oldports
@@ -381,42 +417,20 @@ if [ "$skipstart" = 0 ]; then
     cd ${pb}/${arch}/${branch}/errors/
     sed "s,\$,.log," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
     sed "s,\$,.log.bz2," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-    find . -name \*.log.bz2 | xargs bunzip2 -f
 
     cd ${pb}/${arch}/${branch}/logs/
     sed 's,$,.log,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
     sed 's,$,.log.bz2,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-    find . -name \*.log.bz2 | xargs bunzip2 -f
   else
-    # need to preserve symlinks for packages
-    #mv -f packages bak
-
-    # Already copied the logs above
-    rm -rf errors logs old-errors
-
     cd ${pb}/${arch}/${branch}
+
+    # XXX Don't do this for space reasons
+    #mv -f packages bak
+    rm -rf packages
     mkdir -p packages/All
 
     rm -rf distfiles/
     mkdir -p distfiles/
-
-    mkdir -p ${pb}/${arch}/archive/errorlogs
-    rm -rf ${pb}/${arch}/archive/errorlogs/e.${branch}.${date} ${pb}/${arch}/archive/errorlogs/e.${branch}.${shortdate}
-    mkdir -p ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}
-    ln -sf ${pb}/${arch}/archive/errorlogs/e.${branch}.${date} ${pb}/${arch}/${branch}/errors
-    ln -sf e.${branch}.${date} ${pb}/${arch}/archive/errorlogs/e.${branch}.${shortdate}
-    mkdir -p ${pb}/${arch}/${branch}/errors/old-errors
-    rm -rf ${pb}/${arch}/archive/errorlogs/a.${branch}.${date} ${pb}/${arch}/archive/errorlogs/a.${branch}.${shortdate}
-    mkdir -p ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}
-    ln -sf ${pb}/${arch}/archive/errorlogs/a.${branch}.${date} ${pb}/${arch}/${branch}/logs
-    ln -sf a.${branch}.${date} ${pb}/${arch}/archive/errorlogs/a.${branch}.${shortdate}
-
-    echo "error logs in ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}"
-    cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/cvsdone
-    cp -p ${pb}/${arch}/${branch}/cvsdone ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/cvsdone
-    cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/e.${branch}.${date}/INDEX
-    cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/archive/errorlogs/a.${branch}.${date}/INDEX
-
   fi
 fi
 
@@ -461,10 +475,15 @@ if [ "$nobuild" = 0 ]; then
     grep -E '(ptimeout|pnohang): killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
   fi
 
-  ls -asFlrt ${pb}/${arch}/${branch}/packages/All > ${pb}/${arch}/${branch}/logs/ls-lrt-1
-  cp -rp errors old-errors
-  cd ${pb}/${arch}/${branch}/old-errors
-  ${scripts}/processlogs
+  ls -asFlrt ${pb}/${arch}/${branch}/packages/All > ${pb}/${arch}/${branch}/logs/ls-lrt
+
+  # XXX Is there any point in keeping a second copy of the phase 1 errors?
+  cd ${pb}/${arch}/${branch}/errors/
+  find . -name '*.log' | cpio -dumpl ${pb}/${arch}/${branch}/errors/old-errors
+
+#  XXX What is the point of the old-errors/ directory (not errors/old-errors/)?
+#  cd ${pb}/${arch}/${branch}/old-errors
+#  ${scripts}/processlogs
 
   echo "================================================"
   echo "setting up nodes"
@@ -516,6 +535,13 @@ cd ${pb}/${arch}/${branch}/packages/All
 if [ "$nofinish" = 0 ]; then
   rm -f Makefile
 
+  if [ "$norestr" = 0 ]; then
+    # Before deleting restricted packages, save a copy so we don't have to rebuild them next time
+    ${pb}/scripts/keeprestr ${arch} ${branch}
+  else
+    rm -rf ${pb}/${arch}/${branch}/bak/restricted/
+  fi
+
   # Always delete restricted packages/distfiles since they're published on the
   # website
   echo "deleting restricted ports"
@@ -530,6 +556,7 @@ if [ "$nofinish" = 0 ]; then
   ${scripts}/prunepkgs ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/${branch}/packages
 fi
 
+# XXX Checking for bad packages should be done after the package is uploaded
 #rm -rf ${pb}/${arch}/${branch}/bad
 #mkdir -p ${pb}/${arch}/${branch}/bad
 #echo "checking packages"
@@ -543,17 +570,10 @@ fi
 #done
 
 if [ "$nofinish" = 0 ]; then
+  generatemd5 ${pb} ${arch} ${branch} &
+
   # Remove INDEX entries for packages that do not exist
   ${scripts}/chopindex ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/${branch}/packages > ${pb}/${arch}/${branch}/packages/INDEX
-
-  cd ${pb}/${arch}/${branch}/old-errors
-  for i in *.log; do
-    cp -p ${i} ${pb}/${arch}/${branch}/errors/old-errors;
-  done
-
-  #archiveports ${pb} ${arch} ${branch} &
-  generatemd5 ${pb} ${arch} ${branch} &
-  wait
 
   ls -asFlrt ${pb}/${arch}/${branch}/packages/All > ${pb}/${arch}/${branch}/logs/ls-lrt
   cp -p ${pb}/${arch}/${branch}/make.[01] ${pb}/${arch}/${branch}/logs
@@ -575,6 +595,8 @@ if [ "$nofinish" = 0 ]; then
     echo "deleting cdrom restricted distfiles"
     sh ${pb}/${arch}/${branch}/cdrom.sh
   fi
+
+  wait
 
   if [ "$branch" != "4-exp" ]; then
     # Currently broken - kk
