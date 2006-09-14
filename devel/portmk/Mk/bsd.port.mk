@@ -1304,6 +1304,7 @@ DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSI
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
+DEVELPORTSDIR?=	${PORTSDIR}/devel/portmk
 LOCALBASE?=		/usr/local
 X11BASE?=		/usr/X11R6
 LINUXBASE?=		/compat/linux
