@@ -10,7 +10,7 @@ fi
 
 arch=$1
 branch=$2
-if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6 -a "x$branch" != x7 ]; then
+if [ "x$branch" != x4 -a "x$branch" != x5 -a "x$branch" != x6-exp -a "x$branch" != x6 -a "x$branch" != x7 ]; then
   usage
 fi
 
@@ -77,24 +77,25 @@ mkdir -p $(cat ${here}/bindist/dirlist)
 (cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
 
 # Post-processing of installed world
-
 date '+%Y%m%d' > var/db/port.mkversion
-
 rm -f kernel.GENERIC
-
 mkdir ${tmpdir}/var/run
-
-chroot ${tmpdir} /sbin/ldconfig /usr/lib
-if [ "${arch}" = "i386" ]; then
-    chroot ${tmpdir} /sbin/ldconfig -aout /usr/lib/aout
-    rm -f /usr/lib/aout/lib*_p.a
-fi
 
 # Create the tarballs
 mkdir -p ${here}/tarballs
+
+if [ -f ${here}/tarballs/.gen ]; then
+  gen=$(cat ${here}/tarballs/.gen)
+else
+  gen=0
+fi
+newgen=$((${gen}+1))
+
 cd ${tmpdir}
 tar cf ${here}/tarballs/bindist.tar.new .
-mv -f ${here}/tarballs/bindist.tar.new ${here}/tarballs/bindist.tar
+rm -f ${here}/tarballs/bindist-${gen}.tar
+mv -f ${here}/tarballs/bindist.tar.new ${here}/tarballs/bindist-${newgen}.tar
+ln -sf ${here}/tarballs/bindist-${newgen}.tar ${here}/tarballs/bindist.tar
 
 # Clean up
 cd ${here}
