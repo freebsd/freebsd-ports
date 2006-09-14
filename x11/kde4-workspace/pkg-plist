@@ -84,7 +84,7 @@ bin/nspluginscan
 bin/nspluginviewer
 bin/startkde
 etc/ksysguarddrc
-etc/xdg/menus/applications-merged/kde-essential.menu
+etc/xdg/menus/kde-applications-merged/kde-essential.menu
 etc/xdg/menus/kde-information.menu
 etc/xdg/menus/kde-screensavers.menu
 etc/xdg/menus/kde-settings.menu
@@ -4986,4 +4986,4 @@ share/wallpapers/triplegears.jpg.desktop
 @dirrm include/ksplash
 @dirrm include/ksgrd
 @dirrm include/kate/utils
-@dirrm etc/xdg/menus/applications-merged
+@dirrm etc/xdg/menus/kde-applications-merged

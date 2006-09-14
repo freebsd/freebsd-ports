@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -70,6 +71,8 @@ post-extract:
 pre-configure:
 	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/kdeprint/descriptions/Makefile.in
+	${REINPLACE_CMD} -e "s,applications-merged,kde-applications-merged,g" \
+		${WRKSRC}/applnk/Makefile.in
 
 post-configure:
 	${REINPLACE_CMD} -e "s@^\s*Exec=.*\$$@Exec=ElectricEyes@" \
