@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	1.5.0.6
+DISTVERSION=	1.5.0.7
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
@@ -50,7 +50,7 @@ IGNORE=	core dumps on ${ARCH}
 
 .if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
 IGNORE=	core dumps on ${ARCH}, kern.osreldate>=601101 needed
-.endif 
+.endif
 
 .if ${OSVERSION} >= 600000
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
