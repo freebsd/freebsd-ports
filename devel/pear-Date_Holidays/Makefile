@@ -8,6 +8,7 @@
 PORTNAME=	Date_Holidays
 PORTVERSION=	0.16.1
 CATEGORIES=	devel www pear
+MASTER_SITES+=	http://www.goodking.ca/pub/files/PEAR/
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR driver based class to calculate holidays
