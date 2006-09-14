@@ -32,6 +32,7 @@ bin/rrbcui
 %%RUBY_SITELIBDIR%%/rrb/scriptfile.rb
 %%RUBY_SITELIBDIR%%/rrb/utils.rb
 %%RUBY_SITELIBDIR%%/rrb/ripper.rb
+%%RUBY_SITELIBDIR%%/rrb/vim_interface.rb
 @dirrm %%RUBY_SITELIBDIR%%/rrb
 %%RUBY_SITEARCHLIBDIR%%/rrb_ripper.so
 %%RUBY_SITEARCHLIBDIR%%/rrb_reflection.so
