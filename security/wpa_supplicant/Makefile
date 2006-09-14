@@ -20,7 +20,7 @@ PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
