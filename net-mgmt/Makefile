@@ -122,6 +122,7 @@
     SUBDIR += nrpep
     SUBDIR += nsc
     SUBDIR += nsca
+    SUBDIR += nsca-client
     SUBDIR += nstreams
     SUBDIR += openvmps
     SUBDIR += oproute
