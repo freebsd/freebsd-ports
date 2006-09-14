@@ -7,6 +7,7 @@
 
 PORTNAME=	seq2
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.referee.at/unix/
 
