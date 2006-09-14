@@ -83,8 +83,8 @@ if [ "$client" = "0" ]; then
 		make all
 		make distribute DISTRIBUTION=/var/chroot/
 	else
-		make DESTDIR=/var/chroot distrib-dirs &&
-		make DESTDIR=/var/chroot distribution
+		make DESTDIR=/var/chroot distrib-dirs && \
+		  make DESTDIR=/var/chroot distribution
 	fi
 	error=$?
 	if [ "$error" != "0" ]; then
