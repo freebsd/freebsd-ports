@@ -292,6 +292,7 @@
     SUBDIR += liba52
     SUBDIR += liba52-devel
     SUBDIR += libadplug
+    SUBDIR += libaiff
     SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio

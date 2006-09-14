@@ -1,0 +1,22 @@
+LibAiff is a library for C applications, providing transparent read and
+write operations for Audio Interchange File Format files.
+
+With LibAiff your application can easily use the Audio IFF format to
+interchange digital audio.
+
+LibAiff wants to implement all the features of the AIFF 1.3 standard,
+including markers, comments, etc.
+
+This version of LibAiff supports the following features:
+
+    * Reading any valid Audio IFF file.
+    * Writing a valid Audio IFF file.
+    * Reading a compressed AIFF Compressed (AIFC) file with audio encoded
+      in Linear PCM, both big-endian and little-endian.
+    * Read & write samples in all formats supported by the Audio IFF standard.
+    * Convert any sample format to and from 32 bits.
+    * Getting and setting all the AIFF Attributes.
+    * Reading and writing markers to positions on the sound.
+    * Reading instrument data from AIFF files.
+
+WWW: http://aifftools.sourceforge.net/libaiff/
