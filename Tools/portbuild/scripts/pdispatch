@@ -12,12 +12,12 @@ shift
 . ${pb}/scripts/buildenv
 
 # Increase timeout on slow build machines
-if [ "$arch" = "alpha" -o "$arch" = "sparc64" ]; then
-	# wait 16 hours maximum
-	timeout=57600
+if [ "$arch" = "sparc64" ]; then
+	# wait 24 hours maximum
+	timeout=86400
 else
-	# wait 80 hours maximum
-	timeout=288000
+	# wait 100 hours maximum
+	timeout=360000
 fi
 
 branch=$1
@@ -117,7 +117,8 @@ while `true`; do
       tar --unlink -C ${pb}/${arch}/${branch} -xvf -
     test -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} && \
       touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
-    rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log
+    rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log && \
+      touch ${pb}/${arch}/${branch}/errors/.force
     lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${pkgname}
     log=${pb}/${arch}/${branch}/logs/$pkgname.log
     if grep -q "even though it is marked BROKEN" ${log}; then
