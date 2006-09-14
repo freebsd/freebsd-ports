@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	autoindex
 
-MAINTAINER=	danger@rulez.sk
+MAINTAINER=	danger@FreeBSD.org
 COMMENT=	PHP 5.x script that makes a table that lists the files in a directory
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
