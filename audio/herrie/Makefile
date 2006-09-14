@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
@@ -20,7 +20,6 @@ USE_OPENSSL=	yes
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=	herrie
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 OPTIONS=	MAD "MAD MP3 support" on \
@@ -33,7 +32,8 @@ MAN1=		herrie.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MAD)
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad \
+		id3tag.0:${PORTSDIR}/audio/libid3tag
 .else
 MAKE_ENV+=	NO_MP3=yes
 .endif
