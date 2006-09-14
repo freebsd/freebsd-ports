@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsynaptics
-PORTVERSION=	0.14.4d
+PORTVERSION=	0.14.6b
 CATEGORIES=	x11
 MASTER_SITES=	http://qsynaptics.sourceforge.net/
 
