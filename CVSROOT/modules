@@ -6268,6 +6268,7 @@ lightsquid	ports/www/lightsquid
 lighttpd	ports/www/lighttpd
 lila-xfwm4	ports/x11-themes/lila-xfwm4
 lile		ports/misc/lile
+lilurl		ports/www/lilurl
 lilypond	ports/print/lilypond
 limewire	ports/net-p2p/limewire
 linalg		ports/math/linalg
