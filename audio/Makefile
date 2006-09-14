@@ -584,6 +584,7 @@
     SUBDIR += twolame
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
+    SUBDIR += umodplayer
     SUBDIR += voipong
     SUBDIR += volumecontrol.app
     SUBDIR += vorbis-tools

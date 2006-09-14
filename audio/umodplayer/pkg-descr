@@ -1,0 +1,21 @@
+UModPlayer or Universal Module Player is a audio module "tool-chain",
+providing you functions to work with modules like playing, exporting,
+getting information, and more.
+
+    * You can play the supported formats and seek to any order in the
+      song. You have pause, timer, display, and other standard features.
+    * You can view the pattern notes while playing.
+    * Playlist support: you can create playlists, delete or move
+      individual items in a playlist, import a playlist from the current
+      directory contents, save a playlist and load a saved playlist...
+    * You can specify any of the ModPlug options: noise reduction,
+      megabass, surround, reverb sound options specifying the grade and
+      the delay of most of the options.
+    * You can export the audio data of a module to any of the supported
+      formats
+    * You can read and export to a file the song builtin message, the
+      song instrument names and the song sample names.
+    * Each user of your UNIX box can save all the sound options.
+    * And much more! 
+
+WWW: http://umodplayer.sourceforge.net/
