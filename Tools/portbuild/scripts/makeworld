@@ -35,12 +35,13 @@ while [ $# -gt 0 ]; do
 done
 
 if [ "$client" = "1" ]; then
-	cd ${pb}/${arch}/src-client
+	SRCBASE=${pb}/${arch}/src-client
 	shift 1
 else
-	cd ${pb}/${arch}/${branch}/src
+	SRCBASE=${pb}/${arch}/${branch}/src
 	export __MAKE_CONF=/dev/null
 fi
+cd ${SRCBASE}
 
 if [ "$nocvs" = "0" ]; then
 	echo "==> Updating source tree"
@@ -76,10 +77,15 @@ if [ "$client" = "0" ]; then
 	fi
 
 	echo "==> Starting make distribute"
-	cd etc
-	make obj
-	make all
-	make distribute DISTRIBUTION=/var/chroot/
+	if [ "$branch" = "5" ]; then
+		cd etc
+		make obj
+		make all
+		make distribute DISTRIBUTION=/var/chroot/
+	else
+		make DESTDIR=/var/chroot distrib-dirs &&
+		make DESTDIR=/var/chroot distribution
+	fi
 	error=$?
 	if [ "$error" != "0" ]; then
 		exit $error
