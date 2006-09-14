@@ -12,12 +12,14 @@ bin/svnweb-server
 %%SITE_PERL%%/SVN/Web/Log.pm
 %%SITE_PERL%%/SVN/Web/RSS.pm
 %%SITE_PERL%%/SVN/Web/Revision.pm
+%%SITE_PERL%%/SVN/Web/ConfigData.pm
 %%SITE_PERL%%/SVN/Web/Style/common.css
 %%SITE_PERL%%/SVN/Web/Style/styles-hlb.css
 %%SITE_PERL%%/SVN/Web/Style/trac/browser.css
 %%SITE_PERL%%/SVN/Web/Style/trac/changeset.css
 %%SITE_PERL%%/SVN/Web/Style/trac/code.css
 %%SITE_PERL%%/SVN/Web/Style/trac/diff.css
+%%SITE_PERL%%/SVN/Web/Style/trac/feed-icon-16x16.png
 %%SITE_PERL%%/SVN/Web/Style/trac/file.png
 %%SITE_PERL%%/SVN/Web/Style/trac/filedeny.png
 %%SITE_PERL%%/SVN/Web/Style/trac/folder.png
@@ -42,6 +44,7 @@ bin/svnweb-server
 %%SITE_PERL%%/SVN/Web/Template/trac/list
 %%SITE_PERL%%/SVN/Web/Template/trac/log
 %%SITE_PERL%%/SVN/Web/Template/trac/revision
+%%SITE_PERL%%/SVN/Web/Template/trac/rss
 %%SITE_PERL%%/SVN/Web/Template/trac/view
 %%SITE_PERL%%/SVN/Web/Template/trac/x
 %%SITE_PERL%%/SVN/Web/Test.pm
