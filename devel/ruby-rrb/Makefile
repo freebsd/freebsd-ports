@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrb
-PORTVERSION=	0.0.3
+PORTVERSION=	0.1.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.kmc.gr.jp/proj/rrb/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,8 +14,6 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Ruby Refactoring Browser for FreeRIDE and EMACS
-
-BROKEN=		Does not compile
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
