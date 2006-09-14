@@ -126,7 +126,7 @@ bin/icewmtray
 %%DATADIR%%/themes/Infadel2/rollupA.xpm
 %%DATADIR%%/themes/Infadel2/rollupI.xpm
 %%DATADIR%%/themes/Infadel2/snap.pcf
-%%DATADIR%%/themes/Infadel2/taskbar/start.xpm
+%%DATADIR%%/themes/Infadel2/taskbar/start%%THEMES_START_XPM_SFX%%.xpm
 %%DATADIR%%/themes/Infadel2/taskbar/windows.xpm
 %%DATADIR%%/themes/Infadel2/titleAB.xpm
 %%DATADIR%%/themes/Infadel2/titleAJ.xpm
