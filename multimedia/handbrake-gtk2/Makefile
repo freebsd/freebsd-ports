@@ -60,6 +60,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
+BROKEN=	Does not build
 USE_GETOPT_LONG=	yes
 MAKE_ENV=		EXTRA_LIBS="-lcipher -lgnugetopt"
 WITH_DVD_DEVICE?=	acd0c
