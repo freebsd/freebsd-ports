@@ -2,6 +2,7 @@ bin/fd
 bin/fdsh
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+bin/fd-dict.tbl
 bin/fd-unicd.tbl
 etc/fd2rc.dist
 @unexec if cmp -s %D/etc/fd2rc %D/etc/fd2rc.sample; then rm -f %D/etc/fd2rc; fi
