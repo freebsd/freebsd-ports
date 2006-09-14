@@ -16,13 +16,20 @@ indexdir=$(realpath $indexdir)
 errordir=$(realpath $errordir)
 indexfilename=$indexdir/INDEX
 
-portname=$(basename $filename .log)
+portname=$(basename $filename .log.bz2)
+if [ "${portname}" = "${filename}" ]; then
+    cat=cat
+else
+    cat=bzcat
+fi
+portname=$(basename $portname .log)
+
 affected=$(($(grep -cF $portname < $indexfilename) -1))
 logsize=$(/bin/ls -sk $errordir/$filename | awk '{print $1}')
-dir=$(sed -n -e '4p' $errordir/$filename | grep '^port directory:' | awk '{print $3}' | \
+dir=$(${cat} $errordir/$filename | head -6 | grep '^port directory:' | awk '{print $3}' | \
 		sed -e 's,^/[^/]*/[^/]*/,,')
-maintainer=$(sed -n -e '3p' $errordir/$filename | grep '^maintained by' | awk '{print $3}')
-datetime=$(sed -n -e '5p' $errordir/$filename | grep '^build started at' | \
+maintainer=$(${cat} $errordir/$filename | head -6 | grep '^maintained by' | awk '{print $3}')
+datetime=$(${cat} $errordir/$filename | head -6 | grep '^build started at' | \
 		sed -e 's/build started at ...//' | tr ' ' '_' )
 
 # now try to classify the type of error found in the file.
@@ -31,52 +38,52 @@ datetime=$(sed -n -e '5p' $errordir/$filename | grep '^build started at' | \
 # to fetch any file, pointyhat being able to build any port, etc.)
 if [ -z "$dir" -o -z "$datetime" ]; then
   reason="cluster"; tag="cluster"
-elif grep -q 'list of extra files and directories' $1; then
+elif bzgrep -q 'list of extra files and directories' $1; then
   reason="mtree"; tag="mtree"
-elif grep -q "See <URL:http://gcc.gnu.org/bugs.html> for instructions." $1; then
+elif bzgrep -q "See <URL:http://gcc.gnu.org/bugs.html> for instructions." $1; then
   reason="gcc_bug"; tag="gcc-bug"
-elif grep -q "See <URL:http://www.gnu.org/software/gcc/bugs.html> for instructions." $1; then
+elif bzgrep -q "See <URL:http://www.gnu.org/software/gcc/bugs.html> for instructions." $1; then
   reason="gcc_bug"; tag="gcc-bug"
-elif grep -q 'Checksum mismatch' $1; then
+elif bzgrep -q 'Checksum mismatch' $1; then
   reason="checksum"; tag="checksum"
-elif grep -qE '/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)' $1; then
+elif bzgrep -qE '/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)' $1; then
   reason="perl"; tag="perl"
-elif grep -qE 'perl(.*): Perl is not installed, try .pkg_add -r perl.' $1; then
+elif bzgrep -qE 'perl(.*): Perl is not installed, try .pkg_add -r perl.' $1; then
   reason="perl"; tag="perl"
-elif grep -q 'cannot find -lc_r' $1; then
+elif bzgrep -q 'cannot find -lc_r' $1; then
   reason="threads"; tag="threads"
-elif grep -q "checking for.*lc_r\.\.\. no" $1; then
+elif bzgrep -q "checking for.*lc_r\.\.\. no" $1; then
   reason="threads"; tag="threads"
-elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
+elif bzgrep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
   reason="distinfo_update"; tag="distinfo"
-elif grep -q "checking whether apxs works.*apxs: not found" $1; then
+elif bzgrep -q "checking whether apxs works.*apxs: not found" $1; then
   reason="apxs"; tag="apxs"
 # note: must run before the configure_error check
-elif grep -qE "Configuration .* not supported" $1; then
+elif bzgrep -qE "Configuration .* not supported" $1; then
   reason="arch"; tag="arch"
-elif grep -qE '(configure: error:|Script.*configure.*failed unexpectedly|script.*failed: here are the contents of)' $1; then
-  if grep -qE "configure: error: cpu .* not supported" $1; then
+elif bzgrep -qE '(configure: error:|Script.*configure.*failed unexpectedly|script.*failed: here are the contents of)' $1; then
+  if bzgrep -qE "configure: error: cpu .* not supported" $1; then
     reason="arch"; tag="arch"
-  elif grep -qE "configure: error: (This program requires STL to compile|One or more.*STL headers are missing)" $1; then
+  elif bzgrep -qE "configure: error: (This program requires STL to compile|One or more.*STL headers are missing)" $1; then
     reason="stl"; tag="stl"
-  elif grep -qE "configure: error: [Pp]erl (5.* required|version too old)" $1; then
+  elif bzgrep -qE "configure: error: [Pp]erl (5.* required|version too old)" $1; then
     reason="perl"; tag="perl"
   else
     reason="configure_error"; tag="configure"
   fi
-elif grep -q "Couldn't fetch it - please try" $1; then
+elif bzgrep -q "Couldn't fetch it - please try" $1; then
   reason="fetch"; tag="fetch"
-elif grep -q "out of .* hunks .*--saving rejects to" $1; then
+elif bzgrep -q "out of .* hunks .*--saving rejects to" $1; then
   reason="patch"; tag="patch"
-elif grep -q 'Error: category .* not in list of valid categories' $1; then
+elif bzgrep -q 'Error: category .* not in list of valid categories' $1; then
   reason="CATEGORIES"; tag="categories"
-elif grep -qi 'read-only file system' $1; then
+elif bzgrep -qi 'read-only file system' $1; then
   reason="WRKDIR"; tag="wrkdir"
-elif grep -q "Error: shared library \".*\" does not exist" $1; then
+elif bzgrep -q "Error: shared library \".*\" does not exist" $1; then
   reason="LIB_DEPENDS"; tag="libdepends"
-elif grep -q ".*\.h: No such file" $1; then
-  if grep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
-	if grep -q "XFree86-.*\.tgz" $1; then
+elif bzgrep -q ".*\.h: No such file" $1; then
+  if bzgrep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
+	if bzgrep -q "XFree86-.*\.tgz" $1; then
 	  reason="missing_header"; tag="header"
 	else
 	  reason="USE_XLIB"; tag="usexlib"
@@ -84,183 +91,181 @@ elif grep -q ".*\.h: No such file" $1; then
   else
 	reason="missing_header"; tag="header"
   fi
-elif grep -q "pnohang: killing make checksum" $1; then
+elif bzgrep -q "pnohang: killing make checksum" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
-elif grep -qE "USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND" $1; then
+elif bzgrep -qE "USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND" $1; then
   reason="runaway_process"; tag="runaway"
-elif grep -q "pnohang: killing make package" $1; then
+elif bzgrep -q "pnohang: killing make package" $1; then
   reason="runaway_process"; tag="runaway"
-elif grep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
+elif bzgrep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
   reason="disk_full"; tag="df"
-elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)' $1; then
+elif bzgrep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)' $1; then
   reason="compiler_error"; tag="cc"
-elif grep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)' $1; then
+elif bzgrep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)' $1; then
   reason="new_compiler_error"; tag="newgcc"
-elif grep -qE '(syntax error before|ISO C\+\+ forbids|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support)' $1; then
+elif bzgrep -qE '(syntax error before|ISO C\+\+ forbids|friend declaration|no matching function for call to|.main. must return .int.|invalid conversion from|cannot be used as a macro name as it is an operator in C\+\+|is not a member of type|after previous specification in|no class template named|because worst conversion for the former|better than worst conversion|no match for.*operator|no match for call to|undeclared in namespace|is used as a type, but is not|error: array bound forbidden|error: class definition|error: expected constructor|error: there are no arguments|error:.*cast.*loses precision|ISO C\+\+ does not support)' $1; then
   reason="bad_C++_code"; tag="badc++"
-elif grep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
+elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
   reason="linker_error"; tag="ld"
-elif grep -qE 'chown:.*[Ii]nvalid argument' $1; then
+elif bzgrep -qE 'chown:.*[Ii]nvalid argument' $1; then
   reason="chown"; tag="chown"
-#elif grep -qE 'cp:.*Invalid argument' $1; then
+#elif bzgrep -qE 'cp:.*Invalid argument' $1; then
 #  reason="munmap"; tag="munmap"
-elif grep -q 'install: .*: No such file' $1; then
-  if grep -q 'install: /usr/local/www/cgi-bin.*No such file or directory' $1; then
+elif bzgrep -q 'install: .*: No such file' $1; then
+  if bzgrep -q 'install: /usr/local/www/cgi-bin.*No such file or directory' $1; then
     reason="cgi-bin"; tag="cgi-bin"
   else
     reason="install_error"; tag="install"
   fi
-elif grep -q "/usr/.*/man/.*: No such file or directory" $1; then
+elif bzgrep -q "/usr/.*/man/.*: No such file or directory" $1; then
   reason="manpage"; tag="manpage"
-elif grep -qE "(Can't|unable to) open display" $1; then
+elif bzgrep -qE "(Can't|unable to) open display" $1; then
   reason="DISPLAY"; tag="display"
-elif grep -q "conflicts with installed package" $1; then
+elif bzgrep -q "conflicts with installed package" $1; then
   reason="depend_object"; tag="dependobj"
-elif grep -q " is already installed - perhaps an older version" $1; then
+elif bzgrep -q " is already installed - perhaps an older version" $1; then
   reason="depend_object"; tag="dependobj"
-elif grep -q "You may wish to ..make deinstall.. and install this port again" $1; then
+elif bzgrep -q "You may wish to ..make deinstall.. and install this port again" $1; then
   reason="depend_object"; tag="dependobj"
-elif grep -q "error in dependency .*, exiting" $1; then
+elif bzgrep -q "error in dependency .*, exiting" $1; then
   reason="depend_package"; tag="dependpkg"
-elif grep -q "core dumped" $1; then
+elif bzgrep -q "core dumped" $1; then
   reason="coredump"; tag="coredump"
-elif grep -q "Segmentation fault" $1; then
+elif bzgrep -q "Segmentation fault" $1; then
   reason="segfault"; tag="segfault"
-elif grep -q "initializer element is not constant" $1; then
+elif bzgrep -q "initializer element is not constant" $1; then
   reason="stdio"; tag="stdio"
-elif grep -q "structure has no member named" $1; then
+elif bzgrep -q "structure has no member named" $1; then
   reason="struct_changes"; tag="struct"
-elif grep -q "Error: alignment not a power of 2" $1; then
+elif bzgrep -q "Error: alignment not a power of 2" $1; then
   reason="alignment"; tag="alignment"
-elif grep -qE "bin.apxs:(.)(not found|No such file or directory)" $1; then
+elif bzgrep -qE "bin.apxs:(.)(not found|No such file or directory)" $1; then
   reason="apxs"; tag="apxs"
-elif grep -qE "failed to exec .*bin/apxs" $1; then
+elif bzgrep -qE "failed to exec .*bin/apxs" $1; then
   reason="apxs"; tag="apxs"
-elif grep -q ".s: Assembler messages:" $1; then
+elif bzgrep -q ".s: Assembler messages:" $1; then
   reason="arch"; tag="arch"
-elif grep -qE "Cannot (determine .* target|find the byte order) for this architecture" $1; then
+elif bzgrep -qE "Cannot (determine .* target|find the byte order) for this architecture" $1; then
   reason="arch"; tag="arch"
-elif grep -qE "^cc1: bad value.*for -mcpu.*switch" $1; then
+elif bzgrep -qE "^cc1: bad value.*for -mcpu.*switch" $1; then
   reason="arch"; tag="arch"
-elif grep -qE "^cc1: invalid option " $1; then
+elif bzgrep -q "could not read symbols: File in wrong format" $1; then
   reason="arch"; tag="arch"
-elif grep -q "could not read symbols: File in wrong format" $1; then
+elif bzgrep -qE "[Ee]rror: [Uu]nknown opcode" $1; then
   reason="arch"; tag="arch"
-elif grep -qE "[Ee]rror: [Uu]nknown opcode" $1; then
+elif bzgrep -qE "error.*Unsupported architecture" $1; then
   reason="arch"; tag="arch"
-elif grep -qE "error.*Unsupported architecture" $1; then
+elif bzgrep -q "ENDIAN must be defined 0 or 1" $1; then
   reason="arch"; tag="arch"
-elif grep -q "ENDIAN must be defined 0 or 1" $1; then
+elif bzgrep -q "failed to merge target-specific data" $1; then
   reason="arch"; tag="arch"
-elif grep -q "failed to merge target-specific data" $1; then
+elif bzgrep -qE "(file not recognized|failed to set dynamic section sizes): File format not recognized" $1; then
   reason="arch"; tag="arch"
-elif grep -qE "(file not recognized|failed to set dynamic section sizes): File format not recognized" $1; then
+elif bzgrep -q "impossible register constraint" $1; then
   reason="arch"; tag="arch"
-elif grep -q "impossible register constraint" $1; then
+elif bzgrep -qE "inconsistent operand constraints in an .asm" $1;  then
   reason="arch"; tag="arch"
-elif grep -qE "inconsistent operand constraints in an .asm" $1;  then
+elif bzgrep -qE "Invalid configuration.*unknown.*machine.*unknown not recognized" $1; then
   reason="arch"; tag="arch"
-elif grep -qE "Invalid configuration.*unknown.*machine.*unknown not recognized" $1; then
+elif bzgrep -q "invalid lvalue in asm statement" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "invalid lvalue in asm statement" $1;  then
+elif bzgrep -qE "is only for.*, and you are running" $1;  then
   reason="arch"; tag="arch"
-elif grep -qE "is only for.*, and you are running" $1;  then
+elif bzgrep -q "not a valid 64 bit base/index expression" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "not a valid 64 bit base/index expression" $1;  then
+elif bzgrep -qE "relocation R_X86_64_32.*can not be used when making a shared object" $1;  then
   reason="arch"; tag="arch"
-elif grep -qE "relocation R_X86_64_32.*can not be used when making a shared object" $1;  then
+elif bzgrep -q "relocation truncated to fit: " $1;  then
   reason="arch"; tag="arch"
-elif grep -q "relocation truncated to fit: " $1;  then
+elif bzgrep -q "shminit failed: Function not implemented" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "shminit failed: Function not implemented" $1;  then
+elif bzgrep -qE "The target cpu, .*, is not currently supported." $1;  then
   reason="arch"; tag="arch"
-elif grep -qE "The target cpu, .*, is not currently supported." $1;  then
+elif bzgrep -q "This architecture seems to be neither big endian nor little endian" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "This architecture seems to be neither big endian nor little endian" $1;  then
+elif bzgrep -q "unknown register name" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "unknown register name" $1;  then
+elif bzgrep -q "Unable to correct byte order" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "Unable to correct byte order" $1;  then
+elif bzgrep -q "Unsupported platform, sorry" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "Unsupported platform, sorry" $1;  then
+elif bzgrep -q "won't run on this architecture" $1;  then
   reason="arch"; tag="arch"
-elif grep -q "won't run on this architecture" $1;  then
-  reason="arch"; tag="arch"
-elif grep -qE "#error .Cannot compile:" $1; then
+elif bzgrep -qE "#error .Cannot compile:" $1; then
   reason="assert"; tag="assert"
-elif grep -qE "autoconf(.*): not found" $1; then
+elif bzgrep -qE "autoconf(.*): not found" $1; then
   reason="autoconf"; tag="autoconf"
-elif grep -qE "autoconf(.*): No such file or directory" $1; then
+elif bzgrep -qE "autoconf(.*): No such file or directory" $1; then
   reason="autoconf"; tag="autoconf"
-elif grep -q "autoheader: not found" $1; then
+elif bzgrep -q "autoheader: not found" $1; then
   reason="autoheader"; tag="autoheader"
-elif grep -qE "automake(.*): not found" $1; then
+elif bzgrep -qE "automake(.*): not found" $1; then
   reason="automake"; tag="automake"
-elif grep -q "/usr/local/www/cgi-bin does not exist" $1; then
+elif bzgrep -q "/usr/local/www/cgi-bin does not exist" $1; then
   reason="cgi-bin"; tag="cgi-bin"
-elif grep -q "Shared object \"libc.so.6\" not found, required by" $1; then
+elif bzgrep -q "Shared object \"libc.so.6\" not found, required by" $1; then
   reason="compat6x"; tag="compat6x"
-elif grep -q "Cannot open /dev/tty for read" $1; then
+elif bzgrep -q "Cannot open /dev/tty for read" $1; then
   reason="DISPLAY"; tag="display"
-elif grep -q "RuntimeError: cannot open display" $1; then
+elif bzgrep -q "RuntimeError: cannot open display" $1; then
   reason="DISPLAY"; tag="display"
-elif grep -q "You must run this program under the X-Window System" $1; then
+elif bzgrep -q "You must run this program under the X-Window System" $1; then
   reason="DISPLAY"; tag="display"
-elif grep -qE "Member name contains .\.\." $1; then
+elif bzgrep -qE "Member name contains .\.\." $1; then
   reason="fetch"; tag="fetch"
-elif grep -q "fetch: transfer timed out" $1; then
+elif bzgrep -q "fetch: transfer timed out" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
-elif grep -q "fetch: transfer timed out" $1; then
+elif bzgrep -q "fetch: transfer timed out" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
-elif grep -q 'Run-time system build failed for some reason' $1; then
+elif bzgrep -q 'Run-time system build failed for some reason' $1; then
   reason="install_error"; tag="install"
-elif grep -q 'tar: Error opening archive: Failed to open.*No such file or directory' $1; then
+elif bzgrep -q 'tar: Error opening archive: Failed to open.*No such file or directory' $1; then
   reason="install_error"; tag="install"
-elif grep -q "cc: .*libintl.*: No such file or directory" $1; then
+elif bzgrep -q "cc: .*libintl.*: No such file or directory" $1; then
   reason="linker_error"; tag="ld"
-elif grep -qE "cc: ndbm\.so: No such file or directory" $1; then
+elif bzgrep -qE "cc: ndbm\.so: No such file or directory" $1; then
   reason="linker_error"; tag="ld"
-elif grep -q "error: The X11 shared library could not be loaded" $1; then
+elif bzgrep -q "error: The X11 shared library could not be loaded" $1; then
   reason="linker_error"; tag="ld"
-elif grep -q "libtool: link: cannot find the library" $1; then
+elif bzgrep -q "libtool: link: cannot find the library" $1; then
   reason="linker_error"; tag="ld"
-elif grep -q "relocation against dynamic symbol" $1; then
+elif bzgrep -q "relocation against dynamic symbol" $1; then
   reason="linker_error"; tag="ld"
-elif grep -q "Shared object.*not found, required by" $1; then
+elif bzgrep -q "Shared object.*not found, required by" $1; then
   reason="linker_error"; tag="ld"
-elif grep -q "Could not create Makefile" $1; then
+elif bzgrep -q "Could not create Makefile" $1; then
   reason="makefile"; tag="makefile"
-elif grep -v "regression-test.continuing" $1 | grep -qE "make.*(cannot open [Mm]akefile|don.t know how to make|fatal errors encountered|No rule to make target|built-in)"; then
+elif bzgrep -v "regression-test.continuing" $1 | grep -qE "make.*(cannot open [Mm]akefile|don.t know how to make|fatal errors encountered|No rule to make target|built-in)"; then
   reason="makefile"; tag="makefile"
-elif grep -qE "(Error: mtree file ./etc/mtree/BSD.local.dist. is missing|error in pkg_delete|filesystem was touched prior to .make install|list of files present before this port was installed|list of filesystem changes from before and after)" $1; then
+elif bzgrep -qE "(Error: mtree file ./etc/mtree/BSD.local.dist. is missing|error in pkg_delete|filesystem was touched prior to .make install|list of files present before this port was installed|list of filesystem changes from before and after)" $1; then
   reason="mtree"; tag="mtree"
-elif grep -qE "cp:.*site_perl: No such file or directory" $1; then
+elif bzgrep -qE "cp:.*site_perl: No such file or directory" $1; then
   reason="perl"; tag="perl"
-elif grep -q "Perl .* required--this is only version" $1; then
+elif bzgrep -q "Perl .* required--this is only version" $1; then
   reason="perl"; tag="perl"
-elif grep -q 'BEGIN failed--compilation aborted at ..Makefile.PL line' $1; then
+elif bzgrep -q 'BEGIN failed--compilation aborted at ..Makefile.PL line' $1; then
   reason="perl5"; tag="perl5"
-elif grep -q "Abort trap" $1; then
+elif bzgrep -q "Abort trap" $1; then
   reason="process_failed"; tag="process"
-elif grep -q "Bus error" $1; then
+elif bzgrep -q "Bus error" $1; then
   reason="process_failed"; tag="process"
-elif grep -q "Signal 11" $1; then
+elif bzgrep -q "Signal 1[01]" $1; then
   reason="process_failed"; tag="process"
-elif grep -q "python: not found" $1; then
+elif bzgrep -q "python: not found" $1; then
   reason="python"; tag="python"
-elif grep -q ': The -pthread option is deprecated' $1; then
+elif bzgrep -q ': The -pthread option is deprecated' $1; then
   reason="threads"; tag="threads"
-elif grep -q "Error: pthreads are required to build this package" $1; then
+elif bzgrep -q "Error: pthreads are required to build this package" $1; then
   reason="threads"; tag="threads"
-elif grep -q "Please install/update your POSIX threads (pthreads) library" $1; then
+elif bzgrep -q "Please install/update your POSIX threads (pthreads) library" $1; then
   reason="threads"; tag="threads"
-elif grep -qE "requires.*thread support" $1; then
+elif bzgrep -qE "requires.*thread support" $1; then
   reason="threads"; tag="threads"
-elif grep -q "/usr/bin/ld: cannot find -lpthread" $1; then
+elif bzgrep -q "/usr/bin/ld: cannot find -lpthread" $1; then
   reason="threads"; tag="threads"
-elif grep -q "/usr/bin/ld: cannot find -lXThrStub" $1; then
+elif bzgrep -q "/usr/bin/ld: cannot find -lXThrStub" $1; then
   reason="threads"; tag="threads"
-elif grep -q "<varargs.h> is obsolete with this version of GCC" $1; then
+elif bzgrep -q "<varargs.h> is obsolete with this version of GCC" $1; then
   reason="varargs"; tag="varargs"
 
 # Although these can be fairly common, and thus in one sense ought to be
@@ -268,15 +273,15 @@ elif grep -q "<varargs.h> is obsolete with this version of GCC" $1; then
 # types of errors, and thus need to be evaluated after all the specific
 # cases.
 
-elif grep -qE '(gmake:.*Error [12]|tar: Error exit delayed from previous errors)' $1; then
+elif bzgrep -qE '(gmake:.*Error [12]|tar: Error exit delayed from previous errors)' $1; then
     reason="install_error"; tag="install"
-elif grep -q "Cannot stat: " $1; then
+elif bzgrep -q "Cannot stat: " $1; then
   reason="configure_error"; tag="configure"
-elif grep -q "/usr/bin/ld: cannot find -l" $1; then
+elif bzgrep -q "/usr/bin/ld: cannot find -l" $1; then
   reason="linker_error"; tag="ld"
-elif grep -q "cd: can't cd to" $1; then
+elif bzgrep -q "cd: can't cd to" $1; then
   reason="NFS"; tag="nfs"
-elif grep -q "pkg_create: make_dist: tar command failed with code" $1; then
+elif bzgrep -q "pkg_create: make_dist: tar command failed with code" $1; then
   reason="PLIST"; tag="plist"
 
 else
@@ -299,7 +304,7 @@ if [ -z "$datetime" ]; then
 fi
 
 broken="no"
-if grep -q "Trying build of .* even though it is marked BROKEN" $1; then
+if bzgrep -q "Trying build of .* even though it is marked BROKEN" $1; then
    broken="broken"
 fi
 
