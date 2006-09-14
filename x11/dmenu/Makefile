@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmenu
-PORTVERSION=	0.6
+PORTVERSION=	0.9
 CATEGORIES=	x11
 MASTER_SITES=	http://10kloc.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
