@@ -36,10 +36,6 @@ MAN1=		ekiga.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
-BROKEN=	does not link due to missing symbol in default thread library
-.endif
-
 .ifndef (WITHOUT_AVAHI)
 LIB_DEPENDS+=	avahi-core.4:${PORTSDIR}/net/avahi
 CONFIGURE_ARGS+=--enable-avahi
