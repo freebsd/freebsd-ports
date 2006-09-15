@@ -1,5 +1,5 @@
---- linux/sys_linux.c.orig	Fri May 19 18:31:30 2006
-+++ linux/sys_linux.c	Fri May 19 18:32:04 2006
+--- linux/sys_linux.c.orig	Fri Sep 15 15:50:28 2006
++++ linux/sys_linux.c	Fri Sep 15 15:51:43 2006
 @@ -230,7 +230,7 @@
  
  	size = backtrace (array, sizeof(array)/sizeof(void*));
@@ -9,7 +9,17 @@
  	array[1] = (void *) uc->uc_mcontext.gregs[REG_EIP];
  #endif
  	
-@@ -414,29 +414,17 @@
+@@ -309,7 +309,9 @@
+ 
+ void Sys_DebugBreak (void)
+ {
++#ifdef __i386__
+ 	__asm ("int $3");
++#endif
+ }
+ 
+ void Sys_Warn (char *warning, ...)
+@@ -414,29 +416,17 @@
  	void	*(*GetGameAPI) (void *);
  
  	char	name[MAX_OSPATH];
@@ -41,7 +51,7 @@
  		game_library = dlopen (name, RTLD_NOW );
  	}
  	else
-@@ -448,7 +436,7 @@
+@@ -448,7 +438,7 @@
  			path = FS_NextPath (path);
  			if (!path)
  				return NULL;		// couldn't find one anywhere
