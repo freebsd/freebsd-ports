@@ -13,5 +13,6 @@ It currently supports the following file types:
   - OpenDocument (ISO/IEC DIS 26300)
   - Zenographics ZjStream
   - Samsung QPDL (aka SPL2)
+  - Samsung SPL1
 
 WWW: http://www.pykota.com/software/pkpgcounter/
