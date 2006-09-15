@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	numbski@hksilver.net
 COMMENT=	VERITAS Backup Exec (tm) UNIX Agent
 
-RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base-fc4
+USE_LINUX=	yes
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
