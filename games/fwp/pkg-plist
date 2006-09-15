@@ -32,6 +32,14 @@ bin/fwp
 %%DATADIR%%/data/arenas/shared/skyboxes/stevecube_up.jpg
 %%DATADIR%%/data/arenas/shared/teleportation_area_core.png
 %%DATADIR%%/data/arenas/shared/white_directional_light.effect.xml
+%%DATADIR%%/data/arenas/snowvalley/beacon.geometry.xml
+%%DATADIR%%/data/arenas/snowvalley/beacon.mesh
+%%DATADIR%%/data/arenas/snowvalley/beacon_sparkle.effect.xml
+%%DATADIR%%/data/arenas/snowvalley/beacon_spmh.bmp
+%%DATADIR%%/data/arenas/snowvalley/beacon_tec1.bmp
+%%DATADIR%%/data/arenas/snowvalley/beacon_tec2.bmp
+%%DATADIR%%/data/arenas/snowvalley/blue_bunker.geometry.xml
+%%DATADIR%%/data/arenas/snowvalley/blue_bunker.mesh
 %%DATADIR%%/data/arenas/snowvalley/blue_corvette.geometry.xml
 %%DATADIR%%/data/arenas/snowvalley/blue_corvette.mesh
 %%DATADIR%%/data/arenas/snowvalley/blue_signal_smoke.effect.xml
@@ -41,6 +49,8 @@ bin/fwp
 %%DATADIR%%/data/arenas/snowvalley/crashed_sat_smoke.effect.xml
 %%DATADIR%%/data/arenas/snowvalley/crashed_sat_smoke.png
 %%DATADIR%%/data/arenas/snowvalley/crashed_sat_smoke_colors.png
+%%DATADIR%%/data/arenas/snowvalley/red_bunker.geometry.xml
+%%DATADIR%%/data/arenas/snowvalley/red_bunker.mesh
 %%DATADIR%%/data/arenas/snowvalley/red_corvette.geometry.xml
 %%DATADIR%%/data/arenas/snowvalley/red_corvette.mesh
 %%DATADIR%%/data/arenas/snowvalley/red_signal_smoke.effect.xml
@@ -74,19 +84,31 @@ bin/fwp
 %%DATADIR%%/data/gui/background_scene/smoke_particle.png
 %%DATADIR%%/data/gui/gui.material
 %%DATADIR%%/data/gui/gui.overlay
+%%DATADIR%%/data/gui/hud/conquest_area_markers.overlay
 %%DATADIR%%/data/gui/hud/crosshair_bars.png
 %%DATADIR%%/data/gui/hud/crosshair_circle.png
 %%DATADIR%%/data/gui/hud/crosshair_cross.png
 %%DATADIR%%/data/gui/hud/crosshair_point.png
 %%DATADIR%%/data/gui/hud/damage_indicator.png
 %%DATADIR%%/data/gui/hud/energy_bar.png
+%%DATADIR%%/data/gui/hud/flag_blue.png
+%%DATADIR%%/data/gui/hud/flag_blue_up.png
+%%DATADIR%%/data/gui/hud/flag_neutral.png
+%%DATADIR%%/data/gui/hud/flag_red.png
+%%DATADIR%%/data/gui/hud/flag_red_up.png
 %%DATADIR%%/data/gui/hud/health_bar.png
 %%DATADIR%%/data/gui/hud/heat_bar.png
 %%DATADIR%%/data/gui/hud/hud.fontdef
 %%DATADIR%%/data/gui/hud/hud.material
 %%DATADIR%%/data/gui/hud/hud.overlay
 %%DATADIR%%/data/gui/hud/overheated_bar.png
+%%DATADIR%%/data/gui/hud/player_marker_rectangle_blue.png
+%%DATADIR%%/data/gui/hud/player_marker_rectangle_red.png
+%%DATADIR%%/data/gui/hud/player_marker_rectangle_yellow.png
+%%DATADIR%%/data/gui/hud/player_markers.overlay
 %%DATADIR%%/data/gui/hud/status.png
+%%DATADIR%%/data/gui/hud/team_status.overlay
+%%DATADIR%%/data/gui/hud/team_status_border.png
 %%DATADIR%%/data/gui/loading_screen.png
 %%DATADIR%%/data/gui/menus/console_menu.layout.xml
 %%DATADIR%%/data/gui/menus/debug_menu.layout.xml
@@ -114,7 +136,9 @@ bin/fwp
 %%DATADIR%%/data/gui/scheme/profont.ttf
 %%DATADIR%%/data/gui/scheme/profontdoc.txt
 %%DATADIR%%/data/gui/scheme/readme_astronbo.html
+%%DATADIR%%/data/hide_skeletons.sh
 %%DATADIR%%/data/ogre_resources.cfg
+%%DATADIR%%/data/show_skeletons.sh
 %%DATADIR%%/data/vehicles/alleycat/alleycat.particle
 %%DATADIR%%/data/vehicles/alleycat/alleycat.vehicle.xml
 %%DATADIR%%/data/vehicles/alleycat/alleycat_booster.effect.xml
@@ -125,14 +149,14 @@ bin/fwp
 %%DATADIR%%/data/vehicles/alleycat/alleycat_prop_debris.mesh
 %%DATADIR%%/data/vehicles/alleycat/alleycat_propulsion_unit.mesh
 %%DATADIR%%/data/vehicles/alleycat/alleycat_propulsion_unit.skeleton
-%%DATADIR%%/data/vehicles/alleycat/dragonfly_main_debris.mesh
-%%DATADIR%%/data/vehicles/alleycat/dragonfly_prop_debris.mesh
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly.particle
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly.vehicle.xml
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly_booster.effect.xml
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly_main_debris.geometry.xml
+%%DATADIR%%/data/vehicles/dragonfly/dragonfly_main_debris.mesh
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly_main_unit.mesh
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly_prop_debris.geometry.xml
+%%DATADIR%%/data/vehicles/dragonfly/dragonfly_prop_debris.mesh
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly_propulsion.effect.xml
 %%DATADIR%%/data/vehicles/dragonfly/dragonfly_propulsion_unit.mesh
 %%DATADIR%%/data/vehicles/firefly/firefly.particle
@@ -143,6 +167,23 @@ bin/fwp
 %%DATADIR%%/data/vehicles/firefly/firefly_main_unit.mesh
 %%DATADIR%%/data/vehicles/firefly/firefly_propulsion.effect.xml
 %%DATADIR%%/data/vehicles/firefly/firefly_propulsion_unit.mesh
+%%DATADIR%%/data/vehicles/scarab/scarab.material
+%%DATADIR%%/data/vehicles/scarab/scarab.particle
+%%DATADIR%%/data/vehicles/scarab/scarab.vehicle.xml
+%%DATADIR%%/data/vehicles/scarab/scarab_booster.effect.xml
+%%DATADIR%%/data/vehicles/scarab/scarab_engine_debris.geometry.xml
+%%DATADIR%%/data/vehicles/scarab/scarab_engine_debris.mesh
+%%DATADIR%%/data/vehicles/scarab/scarab_main_unit.mesh
+%%DATADIR%%/data/vehicles/scarab/scarab_mh.bmp
+%%DATADIR%%/data/vehicles/scarab/scarab_msc.bmp
+%%DATADIR%%/data/vehicles/scarab/scarab_prop_debris.geometry.xml
+%%DATADIR%%/data/vehicles/scarab/scarab_propulsion.effect.xml
+%%DATADIR%%/data/vehicles/scarab/scarab_propulsion_unit.mesh
+%%DATADIR%%/data/vehicles/scarab/scarab_sp1.bmp
+%%DATADIR%%/data/vehicles/scarab/scarab_sp2.bmp
+%%DATADIR%%/data/vehicles/scarab/scarab_tec.bmp
+%%DATADIR%%/data/vehicles/scarab/scarab_wing_debris.geometry.xml
+%%DATADIR%%/data/vehicles/scarab/scarab_wing_debris.mesh
 %%DATADIR%%/data/vehicles/shared/camo_blue.jpg
 %%DATADIR%%/data/vehicles/shared/camo_red.jpg
 %%DATADIR%%/data/vehicles/shared/camo_white.jpg
@@ -229,8 +270,24 @@ bin/fwp
 %%DATADIR%%/data/weapons/shared/weapon_white_smoke_colors.png
 %%DATADIR%%/data/weapons/shared/weapons.material
 %%DATADIR%%/data/weapons/shared/weapons.particle
+%%DATADIR%%/data/weapons/supportpack/support_ball.png
+%%DATADIR%%/data/weapons/supportpack/support_ball.shot.xml
+%%DATADIR%%/data/weapons/supportpack/support_ball_travel.effect.xml
+%%DATADIR%%/data/weapons/supportpack/supportpack.material
+%%DATADIR%%/data/weapons/supportpack/supportpack.particle
+%%DATADIR%%/data/weapons/supportpack/supportpack.weapon.xml
+%%DATADIR%%/data/weapons/supportpack/supportpack_icon.png
+%%DATADIR%%/data/weapons/thermalshocker/thermal_grenade.shot.xml
+%%DATADIR%%/data/weapons/thermalshocker/thermal_grenade_explosion.effect.xml
+%%DATADIR%%/data/weapons/thermalshocker/thermal_grenade_travel.effect.xml
+%%DATADIR%%/data/weapons/thermalshocker/thermalshocker.material
+%%DATADIR%%/data/weapons/thermalshocker/thermalshocker.particle
+%%DATADIR%%/data/weapons/thermalshocker/thermalshocker.weapon.xml
+%%DATADIR%%/data/weapons/thermalshocker/thermalshocker_icon.png
 %%DATADIR%%/doc/somedoc.txt
 @dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/data/weapons/thermalshocker
+@dirrm %%DATADIR%%/data/weapons/supportpack
 @dirrm %%DATADIR%%/data/weapons/shared
 @dirrm %%DATADIR%%/data/weapons/rocketlauncher
 @dirrm %%DATADIR%%/data/weapons/railgun
@@ -242,6 +299,7 @@ bin/fwp
 @dirrm %%DATADIR%%/data/weapons
 @dirrm %%DATADIR%%/data/vehicles/stingray
 @dirrm %%DATADIR%%/data/vehicles/shared
+@dirrm %%DATADIR%%/data/vehicles/scarab
 @dirrm %%DATADIR%%/data/vehicles/firefly
 @dirrm %%DATADIR%%/data/vehicles/dragonfly
 @dirrm %%DATADIR%%/data/vehicles/alleycat

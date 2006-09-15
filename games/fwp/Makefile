@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fwp
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fightwinprevail
@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Multiplayer first person shooter
 
 BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
-LIB_DEPENDS=	OgreMain.10:${PORTSDIR}/graphics/ogre3d
+LIB_DEPENDS=	OgreMain.11:${PORTSDIR}/graphics/ogre3d
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -37,18 +37,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BROKEN=		does not compile on 4.x
 .endif
 
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Warning! This is the first playable version of FWP using the new libraries."
-	@${ECHO_MSG} "It is an alpha and lacks some of the planned features, so you shouldn't"
-	@${ECHO_MSG} "expect too much of it."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You might hit Ctrl-C to abort."
-	@${ECHO_MSG}
-
 post-patch:
 	@${REINPLACE_CMD} -e '/LDFLAGS=/ s|$$LIBS|$$LDFLAGS|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O$$enable_optimize||' ${WRKSRC}/configure
+
+post-install:
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>
