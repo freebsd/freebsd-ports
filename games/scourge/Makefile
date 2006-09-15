@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	scourge
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME:S/$/-src/}-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -21,7 +22,6 @@ RUN_DEPENDS=	${DATADIR}/world/gui.txt:${PORTSDIR}/games/scourge-data
 USE_GL=		yes
 USE_SDL=	sdl mixer net
 USE_GMAKE=	yes
-USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_LIBS}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
@@ -30,18 +30,44 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_ARGS=	--with-data-dir=${DATADIR}
 
+SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+WXCONFIG=	wxgtk2${_WX_UC}-${_WX_VER}-config
 
-OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off
+OPTIONS=	DEBUG	"Produce an executable with debugging symbols"	off \
+		EDITOR	"Install scourge editor"	on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Some dependencies do not compile on 4.x
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.if !defined(WITHOUT_EDITOR)
+USE_WX=		2.6+
+WX_COMPS=	wx contrib
+WX_UNICODE=	yes
+PLIST_FILES+=	bin/${PORTNAME}-editor
+HAVE_EDITOR=	true
+.else
+CONFIGURE_ARGS+=	--disable-editor
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|wx-config|${WXCONFIG} |g' ${WRKSRC}/configure
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
+.if defined(HAVE_EDITOR)
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/tools/tools ${PREFIX}/bin/${PORTNAME}-editor
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
