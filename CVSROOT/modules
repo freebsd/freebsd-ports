@@ -5162,6 +5162,7 @@ jmf		ports/java/jmf
 jmirror		ports/ftp/jmirror
 jmk-x11-fonts	ports/x11-fonts/jmk-x11-fonts
 jmp		ports/java/jmp
+jmusic		ports/audio/jmusic
 jode		ports/java/jode
 joe		ports/editors/joe
 joe2		ports/editors/joe2
