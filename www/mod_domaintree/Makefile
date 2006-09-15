@@ -12,7 +12,7 @@ MASTER_SITES=	http://dev.iworks.at/mod_domaintree/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danger@rulez.sk
+MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Hostname to filesystem mapper for Apache 2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
