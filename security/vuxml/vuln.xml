@@ -34,6 +34,86 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e6296105-449b-11db-ba89-000c6ec775d9">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>1.5.0.7,1</lt></range>
+	<range><gt>2.*,1</gt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>1.5.0.7</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.0.5</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<name>mozilla-thunderbird</name>
+	<range><lt>1.5.0.7</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<name>linux-mozilla-devel</name>
+	<name>linux-mozilla</name>
+	<name>linux-seamonkey-devel</name>
+	<name>mozilla</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports of multiple security issues
+	  in Firefox, Seamonkey, and Thunderbird.  Several of these
+	  issues can probably be used to run arbitrary code with the
+	  privilege of the user running the program.</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/">
+	  <ul>
+	    <li>MFSA 2006-64 Crashes with evidence of memory
+	      corruption (rv:1.8.0.7)</li>
+	    <li>MFSA 2006-63 JavaScript execution in mail via XBL</li>
+	    <li>MFSA 2006-62 Popup-blocker cross-site scripting (XSS)</li>
+	    <li>MFSA 2006-61 Frame spoofing using document.open()</li>
+	    <li>MFSA 2006-60 RSA Signature Forgery</li>
+	    <li>MFSA 2006-59 Concurrency-related vulnerability</li>
+	    <li>MFSA 2006-58 Auto-Update compromise through DNS and
+	      SSL spoofing</li>
+	    <li>MFSA 2006-57 JavaScript Regular Expression Heap
+	      Corruption</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4253</cvename>
+      <cvename>CVE-2006-4340</cvename>
+      <cvename>CVE-2006-4565</cvename>
+      <cvename>CVE-2006-4566</cvename>
+      <cvename>CVE-2006-4567</cvename>
+      <cvename>CVE-2006-4568</cvename>
+      <cvename>CVE-2006-4569</cvename>
+      <cvename>CVE-2006-4570</cvename>
+      <cvename>CVE-2006-4571</cvename>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-57.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-58.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-59.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-60.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-61.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-62.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-63.html</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-64.html</url>
+    </references>
+    <dates>
+      <discovery>2006-09-14</discovery>
+      <entry>2006-09-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="24f6b1eb-43d5-11db-81e1-000e0c2e438a">
     <topic>win32-codecs -- multiple vulnerabilities</topic>
     <affects>
