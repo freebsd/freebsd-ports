@@ -121,6 +121,7 @@
     SUBDIR += xdx
     SUBDIR += xlog
     SUBDIR += xnecview
+    SUBDIR += xwota
     SUBDIR += yagiuda
     SUBDIR += yaps
     SUBDIR += yawmppp
