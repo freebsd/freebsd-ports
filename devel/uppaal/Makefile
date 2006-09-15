@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	uppaal
-PORTVERSION=	3.4.11
+PORTVERSION=	4.0.2
 CATEGORIES=	devel java linux
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	Tool environment for modeling and verifying timed automata
@@ -16,34 +15,26 @@ COMMENT=	Tool environment for modeling and verifying timed automata
 USE_ZIP=	yes
 USE_LINUX=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_RUN=	yes
 
 SUB_FILES=	uppaal verifyta
 SUB_LIST+=	PORTNAME=${PORTNAME}
 PLIST_SUB+=	PORTNAME=${PORTNAME}
+DOWNLOAD_URL=	http://www.it.uu.se/research/group/darts/uppaal/download/registration.php
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		uppaal.1
 MANCOMPRESSED=	no
 
-RESTRICTED=	"Downloading requires completion of a license agreement"
+RESTRICTED=	Downloading requires completion of a license agreement
 
 .include <bsd.port.pre.mk>
 
-do-fetch:
-.if ! exists (${DISTDIR}/${DIST_SUBDIR}/uppaal.zip)
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
-IGNORE=	:\n\n\
-------------------------------------------------------------------\n\
-Downloading this software requires completion of a licence\n\
-agreement, which may be found at: http://www.uppaal.com\n\
-\n\
-Please download the _latest_ version of 'uppaal.zip' into\n\
-${DISTDIR}/${DIST_SUBDIR}\n\
-\n
-IGNORE+=------------------------------------------------------------------\n\n
+IGNORE=Please download ${DISTNAME}${EXTRACT_SUFX} into\
+${DISTDIR}/${DIST_SUBDIR} from:\n\t${DOWNLOAD_URL}\n
 .endif
 
 post-patch:
@@ -54,17 +45,18 @@ post-patch:
 	${BRANDELF} -t Linux ${WRKSRC}/bin-Linux/verifyta
 
 do-install:
-	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${JAVASHAREDIR}/${PORTNAME}/lib
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/License-ASF ${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin-Linux/* ${JAVASHAREDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/uppaal2k.jar ${JAVASHAREDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/uppaal.jar ${JAVASHAREDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${JAVASHAREDIR}/${PORTNAME}/lib
-	${MKDIR} ${JAVASHAREDIR}/${PORTNAME}/demo
-	${INSTALL_DATA} ${WRKSRC}/demo/* ${JAVASHAREDIR}/${PORTNAME}/demo
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/uppaal.1 ${PREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKDIR}/verifyta ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/uppaal ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
