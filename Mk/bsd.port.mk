@@ -72,6 +72,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
 #				  Optional.
 # PKGNAMESUFFIX	- Suffix to specify compilation options.  Optional.
+# PKGVERSION		- Always defined as
+#				  ${PORTVERSION}.
+#				  Do not define this in your Makefile.
 # UNIQUENAME	- A name for your port that is globally unique.  By default,
 #				  this is set to ${LATEST_LINK} when LATEST_LINK is set,
 #				  and to ${PKGNAMEPREFIX}${PORTNAME} otherwise.
@@ -425,6 +428,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies inclusion of bsd.gnome.mk.  See bsd.gnome.mk
 #				  or http://www.FreeBSD.org/gnome/docs/porting.html
 #				  for more details.
+##
+# USE_LUA		- If set, this port uses the Lua library and related
+#				  components. See bsd.lua.mk for more details.
+##
+# USE_WX		- If set, this port uses the WxWidgets library and related
+#				  components. See bsd.wx.mk for more details.
 ##
 # USE_KDEBASE_VER
 #				- Set to 3 to use the KDE windowing system.
@@ -1295,8 +1304,11 @@ _SUF2=	,${PORTEPOCH}
 
 # check for old, crufty, makefile types, part 2.  The "else" case
 # should have been handled in part 1, above.
+.if !defined(PKGVERSION)
+PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
+.endif
 .if !defined(PKGNAME)
-PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
+PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
 .endif
 DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
@@ -1493,6 +1505,10 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
+
+.if defined(WANT_LUA) || defined(USE_LUA) || defined(USE_LUA_NOT)
+.include "${PORTSDIR}/Mk/bsd.lua.mk"
 .endif
 
 .if defined(WANT_WX) || defined(USE_WX) || defined(USE_WX_NOT)
@@ -1995,6 +2011,10 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 
 .if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK)
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.endif
+
+.if defined(USE_LUA) || defined(USE_LUA_NOT)
+.include "${PORTSDIR}/Mk/bsd.lua.mk"
 .endif
 
 .if defined(USE_WX) || defined(USE_WX_NOT)
@@ -5190,7 +5210,7 @@ missing:
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
 		THISORIGIN=$$(${ECHO_CMD} $$dir | ${SED} 's,${PORTSDIR}/,,'); \
 		installed=$$(${PKG_INFO} -qO $${THISORIGIN}); \
-		if [ -z $$installed ]; then \
+		if [ -z "$$installed" ]; then \
 			${ECHO_CMD} $$THISORIGIN; \
 		fi \
 	done
