@@ -15561,6 +15561,7 @@ xwlans		ports/sysutils/xwlans
 xword		ports/games/xword
 xworld		ports/astro/xworld
 xworm		ports/games/xworm
+xwota		ports/comms/xwota
 xwpe		ports/devel/xwpe
 xwpick		ports/graphics/xwpick
 xwrits		ports/deskutils/xwrits
