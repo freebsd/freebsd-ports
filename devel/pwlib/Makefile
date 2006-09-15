@@ -7,6 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.10.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
@@ -125,6 +126,10 @@ PLIST_SUB+=	BSDVIDEO="@comment "
 .endif
 
 post-patch:
+.if ${ARCH} == sparc64 && ${OSVERSION} <= 700003
+	@${REINPLACE_CMD} -e 's|P_PTHREADS_XPG6|0|' \
+		${WRKSRC}/src/ptlib/unix/tlibthrd.cxx
+.endif
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
 		${WRKSRC}/src/ptlib/common/tinyjpeg.cxx \
