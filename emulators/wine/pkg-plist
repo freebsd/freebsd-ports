@@ -5,7 +5,6 @@ bin/progman
 bin/regedit
 bin/regsvr32
 bin/uninstaller
-bin/wcmd
 bin/widl
 bin/wine
 bin/wine-kthread
@@ -357,6 +356,7 @@ include/wine/windows/stdole2.tlb
 include/wine/windows/storage.h
 include/wine/windows/strmif.h
 include/wine/windows/strmif.idl
+include/wine/windows/svrapi.h
 include/wine/windows/tapi.h
 include/wine/windows/tchar.h
 include/wine/windows/textserv.h
@@ -446,6 +446,7 @@ lib/wine/capi2032.dll.so
 lib/wine/cards.dll.so
 lib/wine/cfgmgr32.dll.so
 lib/wine/clock.exe.so
+lib/wine/cmd.exe.so
 lib/wine/comcat.dll.so
 lib/wine/comctl32.dll.so
 lib/wine/comdlg32.dll.so
@@ -645,6 +646,7 @@ lib/wine/libwow32.def
 lib/wine/libws2_32.def
 lib/wine/libwsock32.def
 lib/wine/libwtsapi32.def
+lib/wine/localspl.dll.so
 lib/wine/lz32.dll.so
 lib/wine/lzexpand.dll16
 lib/wine/mapi32.dll.so
@@ -749,6 +751,7 @@ lib/wine/stdole32.tlb.so
 lib/wine/sti.dll.so
 lib/wine/storage.dll16
 lib/wine/stress.dll16
+lib/wine/svrapi.dll.so
 lib/wine/system.drv16
 lib/wine/tapi32.dll.so
 lib/wine/taskmgr.exe.so
@@ -776,7 +779,6 @@ lib/wine/vtdapi.vxd.so
 lib/wine/vwin32.vxd.so
 lib/wine/w32skrnl.dll.so
 lib/wine/w32sys.dll16
-lib/wine/wcmd.exe.so
 lib/wine/win32s16.dll16
 lib/wine/win87em.dll16
 lib/wine/winaspi.dll16
@@ -875,7 +877,6 @@ share/wine/fonts/vgasyst.fon
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.progman
 %%PORTDOCS%%%%DOCSDIR%%/README.uninstaller
-%%PORTDOCS%%%%DOCSDIR%%/README.wcmd
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
 %%PORTDOCS%%%%DOCSDIR%%/README.winemine
