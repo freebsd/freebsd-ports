@@ -10,6 +10,20 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20060914:
+AUTHOR: portmgr@FreeBSD.org
+The following functional changes were made to bsd.port.mk:
+
+  * PKGVERSION was introduced as an intermediate variable refactored out of
+    PKGNAME.
+
+  * bsd.lua.mk was added to support lua-related ports.
+
+  * DESTDIR was removed from bsd.scons.mk because it was problematic.
+
+  * Some quotes were added to the 'missing' target to improve handling of
+    duplicate origins.
+
 20060903:
 AUTHOR:	sat@FreeBSD.org
 The following functional changes were made to bsd.sites.mk:
