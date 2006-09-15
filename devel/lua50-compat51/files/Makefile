@@ -1,9 +1,10 @@
 # $FreeBSD$
 
-LIB=		lua-compat-5.1
+SHLIB=		compat-${CVER}
+SHLIB_NAME=	lcompat-${CVER}.so
 
-SRCS=		compat-5.1.c
+SRCS=		compat-${CVER}.c
 
-CFLAGS+=	-I${PREFIX}/include
+CFLAGS+=	-I${LUA_INCDIR}
 
 .include <bsd.lib.mk>

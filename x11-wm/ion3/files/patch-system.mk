@@ -1,5 +1,5 @@
---- system.mk.orig	Tue Jun  1 16:35:23 2004
-+++ system.mk	Sat Jun  5 13:27:08 2004
+--- ./system.mk.orig	Thu Jul 29 00:10:32 2004
++++ ./system.mk	Mon Jul 17 21:53:01 2006
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -33,15 +33,23 @@
  
  # The following should do it if you have manually installed libtool 1.5 in
  # $(LIBTOOLDIR).
-@@ -72,7 +72,7 @@
+@@ -72,11 +72,11 @@
  
  # If you have installed Lua 5.0 from the official tarball without changing
  # paths, this should do it.
 -LUA_DIR=/usr/local
+-LUA_LIBS = -L$(LUA_DIR)/lib -R$(LUA_DIR)/lib -llua -llualib
+-LUA_INCLUDES = -I$(LUA_DIR)/include
+-LUA=$(LUA_DIR)/bin/lua
+-LUAC=$(LUA_DIR)/bin/luac
 +LUA_DIR=$(LOCALBASE)
- LUA_LIBS = -L$(LUA_DIR)/lib -R$(LUA_DIR)/lib -llua -llualib
- LUA_INCLUDES = -I$(LUA_DIR)/include
- LUA=$(LUA_DIR)/bin/lua
++LUA_LIBS = -L$(LUA_LIBDIR) -R$(LUA_LIBDIR) -llua -llualib
++LUA_INCLUDES = -I$(LUA_INCDIR)
++LUA=$(LUA_BINDIR)/lua
++LUAC=$(LUA_BINDIR)/luac
+ 
+ # If you are using the Debian packages, the following settings should be
+ # what you want.
 @@ -90,7 +90,7 @@
  ## X libraries, includes and options
  ##

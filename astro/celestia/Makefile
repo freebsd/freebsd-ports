@@ -26,9 +26,9 @@ WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 
 CONFIGURE_ARGS=	--program-prefix=""
-CONFIGURE_ENV=	\
-	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm ${PTHREAD_LIBS}" \
-	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${X11BASE}/lib -L${LOCALBASE}/lib -lm ${PTHREAD_LIBS}
 
 UI_LIST=	glut gtk gnome
 CELESTIA_UI?=	glut
@@ -77,8 +77,10 @@ IGNORE=		does not compile on FreeBSD 4.x
 .endif
 
 .if defined(WITH_LUA)
-LIB_DEPENDS+=	lua.5:${PORTSDIR}/lang/lua50
+USE_LUA=	5.0
 CONFIGURE_ARGS+=	--with-lua
+CPPFLAGS+=	-I${LUA_INCDIR}
+LDFLAGS+=	-L${LUA_LIBDIR}
 .endif
 
 pre-patch:

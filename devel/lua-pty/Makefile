@@ -10,18 +10,20 @@ PORTVERSION=	1.25
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= philip
-PKGNAMEPREFIX=	lua50-
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
-		${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
-		${LOCALBASE}/share/lua/5.0/compat-5.1.lua:${PORTSDIR}/devel/lua50-compat51
+USE_LUA=	5.0
+LUA_COMPS=	lua compat51
 
-COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && make -V WRKSRC)`
+COMPAT_SRC!=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
+MAKE_ENV=	COMPATDIR="${COMPAT_SRC}"
+
+PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
+		%%LUA_MODLIBDIR%%/lpty.so
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -30,13 +32,8 @@ do-extract:
 .endfor
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%COMPATDIR%%|${COMPAT_SRC}|" ${WRKSRC}/Makefile
-
 do-install:
-	${MKDIR} ${PREFIX}/lib/lua/5.0
-	${INSTALL_PROGRAM} ${WRKSRC}/lpty.so ${PREFIX}/lib/lua/5.0
-	${MKDIR} ${PREFIX}/share/lua/5.0
-	${INSTALL_DATA} ${WRKSRC}/pty.lua ${PREFIX}/share/lua/5.0
+	${INSTALL_PROGRAM} ${WRKSRC}/lpty.so ${LUA_MODLIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/pty.lua ${LUA_MODSHAREDIR}
 
 .include <bsd.port.mk>

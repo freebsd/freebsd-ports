@@ -13,35 +13,39 @@ MASTER_SITES=	http://imapfilter.hellug.gr/source/
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	IMAP mail filtering utility
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.hpp:${PORTSDIR}/lang/lua
-
 USE_BZIP2=	yes
+USE_LUA=	5.1
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-d ${PREFIX} -s ${DATADIR}
+CPPFLAGS=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+LDFLAGS=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
 MAN1=		imapfilter.1
 MAN5=		imapfilter_config.5
 PORTDOCS=	LICENSE NEWS README
 PLIST_FILES=	bin/imapfilter \
-		${DATADIR:S%${PREFIX}/%%}/interface.lua \
-		${DATADIR:S%${PREFIX}/%%}/auxiliary.lua \
-		${EXAMPLESDIR:S%${PREFIX}/%%}/sample.config.lua \
-		${EXAMPLESDIR:S%${PREFIX}/%%}/sample.extend.lua
-PLIST_DIRS=	${DATADIR:S%${PREFIX}/%%} ${EXAMPLESDIR:S%${PREFIX}/%%}
+		%%DATADIR%%/interface.lua \
+		%%DATADIR%%/auxiliary.lua \
+		%%EXAMPLESDIR%%/sample.config.lua \
+		%%EXAMPLESDIR%%/sample.extend.lua
+PLIST_DIRS=	%%DATADIR%% %%EXAMPLESDIR%%
 
 post-patch:
-	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -Ee \
+		's|^(incdirs=).*|\1"${CPPFLAGS}"| ; \
+		 s|^(libdirs=).*|\1"${LDFLAGS}"| ; \
+		 s|^(mycflags=).*|\1"${CFLAGS}"| ; \
+		 s|-llualib||' \
+		${WRKSRC}/configure
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/imapfilter
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} interface.lua \
-		auxiliary.lua ${DATADIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} sample.config.lua \
-		sample.extend.lua ${EXAMPLESDIR}
+	@${MKDIR} ${DATADIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} interface.lua auxiliary.lua ${DATADIR} && \
+		${INSTALL_DATA} sample.config.lua sample.extend.lua \
+			${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}

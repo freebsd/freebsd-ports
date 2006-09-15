@@ -9,21 +9,20 @@ PORTNAME=	gettext
 PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/gettext/
-PKGNAMEPREFIX=	lua50-
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	lua_gettext.c?rev=${CVER} gettext.lua?rev=${LVER}
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Gettext ibinding for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
-
+USE_LUA=	5.0
 USE_GETTEXT=	yes
-
-LIBDIR=		${PREFIX}/lib/lua/5.0
 
 CVER=		1.15
 LVER=		${PORTVERSION}
+
+PLIST_FILES=	%%LUA_MODSHAREDIR%%/gettext.lua \
+		%%LUA_MODLIBDIR%%/lgettext.so
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -33,10 +32,7 @@ do-extract:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/lua/5.0
-	${MKDIR} ${PREFIX}/share/lua/5.0
-	${INSTALL_DATA} ${WRKSRC}/gettext.lua ${PREFIX}/share/lua/5.0/
-	${MKDIR} ${PREFIX}/lib/lua/5.0
-	${INSTALL_PROGRAM} ${WRKSRC}/lgettext.so ${PREFIX}/lib/lua/5.0/
+	${INSTALL_DATA} ${WRKSRC}/gettext.lua ${LUA_MODSHAREDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lgettext.so ${LUA_MODLIBDIR}
 
 .include <bsd.port.mk>

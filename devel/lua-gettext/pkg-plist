@@ -1,6 +1,0 @@
-lib/lua/5.0/lgettext.so
-share/lua/5.0/gettext.lua
-@dirrmtry lib/lua/5.0
-@dirrmtry lib/lua
-@dirrmtry share/lua/5.0
-@dirrmtry share/lua

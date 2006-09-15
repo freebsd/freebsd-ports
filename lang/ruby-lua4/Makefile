@@ -11,27 +11,32 @@ CATEGORIES=	lang ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	4
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension to make Lua script language as a class
 
-LIB_DEPENDS=	lua.4:${PORTSDIR}/lang/lua4
-
-CONFLICTS=	${RUBY_PKGNAMEPREFIX}lua5-[0-9]*
-
+USE_LUA=	4.0
 USE_ZIP=	yes
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF=	luaconf.rb
+RUBY_MODNAME=	${PORTNAME}-${LUA_VER}
 
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	site-install
 
 EXAMPLES=	html_ssi_lua.rb test_*
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's/[[:<:]](lua(lib)?)[[:>:]]/\1-${LUA_VER}/' \
+		${WRKSRC}/${RUBY_EXTCONF}
+
+post-configure:
+	@${REINPLACE_CMD} -Ee 's|^(CPPFLAGS =.*)|\1 -I${LUA_INCDIR}|' \
+		${WRKSRC}/${MAKEFILE}
 
 post-install:
 .if !defined(NOPORTDOCS)

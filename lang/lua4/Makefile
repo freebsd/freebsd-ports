@@ -17,40 +17,74 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 MAINTAINER=	him@richardkiss.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
-LATEST_LINK=	lua4
-MAN1=		luac.1
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_LDCONFIG=	yes
+USE_LUA=	4.0
+LUA_COMPS=	# only define variables
 ALL_TARGET=	all so
-INSTALLS_SHLIB=	YES
 
-CONFLICTS=	lua-5*
+MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
+DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
+LATEST_LINK=	${LUA_SUBDIR}
 
-do-install:
-	@ ${MKDIR} ${PREFIX}/share/doc/lua
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/lua ${PREFIX}/bin
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/luac ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/luac.1 ${PREFIX}/man/man1/luac.1
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/idx.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/index.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/luac.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${PREFIX}/share/doc/lua
-	@ ${INSTALL_DATA} ${WRKSRC}/include/lua.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/include/luadebug.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/include/lualib.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/include/lauxlib.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblua.a ${PREFIX}/lib
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblua.so.4.0 ${PREFIX}/lib/liblua.so.4
-	@ ${LN} -s ${PREFIX}/lib/liblua.so.4 ${PREFIX}/lib/liblua.so
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblualib.a ${PREFIX}/lib
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblualib.so.4.0 ${PREFIX}/lib/liblualib.so.4
-	@ ${LN} -s ${PREFIX}/lib/liblualib.so.4 ${PREFIX}/lib/liblualib.so
+LUA_BIN=	lua luac
+LUA_LIB=	lua lualib
+LUA_MAN=	${LUA_BIN:S/$/.1/}
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/lua
-	@${STRIP_CMD} ${PREFIX}/bin/luac
+.include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH:L} == "amd64"
+.if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -Ee \
+		's|^#(POPEN=.*)|\1|; \
+		 s|^(CC=).*|\1 ${CC}|; \
+		 s|^(CFLAGS=) -O2 (.*)|\1 ${CFLAGS} \2|; \
+		 s|^(V=)[[:digit:]]\.0|\1 ${LUA_VER}|' \
+		${WRKSRC}/config
+	@${REINPLACE_CMD} -Ee 's|(ld -o lib/(liblua(lib)?)\.so\.\$$V)|\1 -soname=\2-${LUA_VER}.so.${LUA_VER_SH}|' \
+		${WRKSRC}/${MAKEFILE}
+
+post-build:
+	@${RM} -f ${WRKSRC}/test/lua ${WRKSRC}/test/luac
+
+do-install:
+# Programs.
+	${MKDIR} ${LUA_BINDIR}
+.for f in ${LUA_BIN}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${LUA_BINDIR}
+	${LN} -sf ${LUA_SUBDIR}/${f} ${PREFIX}/bin/${f}-${LUA_VER}
+.endfor
+# Include files.
+	${MKDIR} ${LUA_INCDIR}
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${LUA_INCDIR}
+# Libraries.
+	${MKDIR} ${LUA_LIBDIR}
+.for f in ${LUA_LIB}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${f}.a ${LUA_LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${f}.so \
+		${LUA_LIBDIR}/lib${f}-${LUA_VER}.so.${LUA_VER_SH}
+	@${LN} -sf lib${f}-${LUA_VER}.so.${LUA_VER_SH} ${LUA_LIBDIR}/lib${f}.so
+	@${LN} -sf ${LUA_SUBDIR}/lib${f}-${LUA_VER}.so.${LUA_VER_SH} \
+		${PREFIX}/lib
+	@${LN} -sf lib${f}-${LUA_VER}.so.${LUA_VER_SH} \
+		${PREFIX}/lib/lib${f}-${LUA_VER}.so
+.endfor
+# Manual pages.
+.for f in ${LUA_MAN}
+	${INSTALL_MAN} ${WRKSRC}/doc/${f} \
+		${PREFIX}/man/man1/${f:C/.1$//}-${LUA_VER}.1
+.endfor
+# Documentation.
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
+	${CP} -r ${WRKSRC}/etc ${WRKSRC}/test ${DOCSDIR}
+.endif
+# Module directories.
+	${MKDIR} ${LUA_MODSHAREDIR}
+	${MKDIR} ${LUA_MODLIBDIR}
+
+.include <bsd.port.post.mk>

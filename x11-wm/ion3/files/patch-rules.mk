@@ -1,5 +1,5 @@
---- rules.mk	Wed Apr  7 09:15:54 2004
-+++ rules.mk.bsd	Sun Apr 11 12:55:10 2004
+--- ./rules.mk.orig	Thu Jul 29 00:10:32 2004
++++ ./rules.mk	Mon Jul 17 21:50:19 2006
 @@ -91,6 +91,7 @@
  module_install:
  	$(INSTALLDIR) $(MODULEDIR)

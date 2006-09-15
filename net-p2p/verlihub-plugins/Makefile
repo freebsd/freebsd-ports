@@ -16,17 +16,18 @@ MAINTAINER=     hurbold@yahoo.com
 COMMENT=        Plugins for the Verlihub Linux/Unix Direct Connect Hub Software
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
 
 WRKSRC=         ${WRKDIR}/vh_plugins-0.1
 
 USE_GMAKE=	yes
+USE_LUA=	5.0
+USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/include/verlihub
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/verlihub -I${LOCALBASE}/include/mysql"
-
-DATADIR=	${PREFIX}/share/${PORTNAME}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/verlihub -I${LOCALBASE}/include/mysql -I${LUA_INCDIR}
+LDFLAGS=	-L${LUA_LIBDIR}
 
 post-install:
 	@${MKDIR} ${DATADIR}
@@ -44,14 +45,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/extra/perl/src/.libs/libperl_pi.so ${DATADIR}/extra/libperl_pi.so
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502010
-USE_GCC=	3.3
-.endif
-
-.if ${OSVERSION} > 502126
-BROKEN=		Does not compile with gcc 3.4
-.endif
 
 .if ${PERL_LEVEL} < 500800
 IGNORE=		requires perl 5.8 or later. Install lang/perl5.8 and try again

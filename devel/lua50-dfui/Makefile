@@ -10,29 +10,28 @@ PORTVERSION=	0.1.20050901
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	philip
-PKGNAMEPREFIX=	lua50-
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTNAME=	lua-dfui-0.1.20050901
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	DFUI binding for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
-		${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
 LIB_DEPENDS=	dfui4.4:${PORTSDIR}/devel/libdfui
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
-		${LOCALBASE}/share/lua/5.0/compat-5.1.lua:${PORTSDIR}/devel/lua50-compat51 \
-		${LOCALBASE}/share/lua/5.0/posix.lua:${PORTSDIR}/devel/lua50-posix
 
 USE_BZIP2=	yes
+USE_LUA=	5.0
+LUA_COMPS=	compat51 posix
 WRKSRC=		${WRKDIR}/lua-dfui-${PORTVERSION}
 
-COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && make -V WRKSRC)`
-MAKE_ENV=	COMPAT=${COMPAT_SRC}
+COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
+MAKE_ENV=	COMPAT="${COMPAT_SRC}"
+
+PLIST_FILES=	%%LUA_MODLIBDIR%%/ldfui.so \
+		%%LUA_MODSHAREDIR%%/dfui.lua
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/lua/5.0
-	${INSTALL_PROGRAM} ${WRKSRC}/ldfui.so ${PREFIX}/lib/lua/5.0
-	${MKDIR} ${PREFIX}/share/lua/5.0
-	${INSTALL_DATA} ${WRKSRC}/dfui.lua ${PREFIX}/share/lua/5.0
+	${INSTALL_PROGRAM} ${WRKSRC}/ldfui.so ${LUA_MODLIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/dfui.lua ${LUA_MODSHAREDIR}
 
 .include <bsd.port.mk>

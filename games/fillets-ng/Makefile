@@ -19,15 +19,16 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A wonderful puzzle game
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
-
 USE_SDL=	sdl mixer image ttf
+USE_LUA=	5.0
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
+CPPFLAGS=	-I${LUA_INCDIR}
+LDFLAGS=	-L${LUA_LIBDIR}
 
 OPTIONS=	FRIBIDI		"Enable fribidi support"	off
 

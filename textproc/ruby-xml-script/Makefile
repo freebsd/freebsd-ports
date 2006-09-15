@@ -16,9 +16,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby module for scripting an XML stream using an ASP-like notation
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/js.so:${PORTSDIR}/lang/ruby-js \
-		${RUBY_SITEARCHLIBDIR}/lua.so:${PORTSDIR}/lang/ruby-lua4
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/js.so:${PORTSDIR}/lang/ruby-js
 
+USE_LUA=	4.0
+LUA_COMPS=	ruby
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
@@ -27,6 +28,10 @@ WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 DOCS=		AUTHORS \
 		README
 EXAMPLES=	tests/*
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's|(language/lua)|\1-${LUA_VER}|' \
+		${WRKSRC}/lib/xml/script/lua/compiler.rb
 
 post-install:
 .if !defined(NOPORTDOCS)

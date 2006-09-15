@@ -9,7 +9,7 @@ PORTNAME=	tolua++
 PORTVERSION=	1.0.4
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/
-DISTNAME=	tolua++-current
+DISTFILES=	tolua++-current${EXTRACT_SUFX}
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	An extended version of tolua, a tool to integrate C/C++ code with Lua
@@ -21,6 +21,12 @@ WRKSRC=		${WRKDIR}/tolua++-${PORTVERSION}
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 NO_BUILD=	yes
+
+post-patch:
+.for f in LOCALBASE LUA_VER LUA_INCDIR LUA_LIBDIR
+	@${REINPLACE_CMD} -i "" -e 's|%%${f}%%|${${f}}|g' \
+		${WRKSRC}/config_posix.py
+.endfor
 
 do-build:
 	@cd ${WRKSRC} && scons

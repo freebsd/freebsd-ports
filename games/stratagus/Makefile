@@ -16,32 +16,21 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		lua.5:${PORTSDIR}/lang/lua50
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_GMAKE=	yes
+USE_LUA=	5.0
 USE_SDL=	yes
 USE_XLIB=	yes
-USE_GMAKE=	yes
-
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -I${LUA_INCDIR}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LUA_LIBDIR}
 WRKSRC=		${WRKDIR}/stratagus-040702
 
-GNU_CONFIGURE=	yes
-
-.if defined(WITH_OPENGL)
-CONFIGURE_ARGS+=	--with-opengl
-.endif
-
-.if defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=	--without-ogg
-.else
-LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
-.endif
-
-.if defined(WITHOUT_MIKMOD)
-CONFIGURE_ARGS+=	--without-mikmod
-.else
-LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
-.endif
+OPTIONS=	OPENGL "Enable OpenGL support" on \
+		MIKMOD "Enable Mikmod support" off \
+		VORBIS "Enable Ogg Vorbis support" off
 
 PLIST_FILES=	bin/stratagus
 
@@ -51,20 +40,21 @@ PLIST_FILES=	bin/stratagus
 IGNORE=		does not run properly on FreeBSD 4.x
 .endif
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Stratagus has the following tunable option(s):"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_OPENGL=yes		Builds Stratagus with OpenGL"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITHOUT_VORBIS=yes	Turns off Ogg Vorbis support"
-	@${ECHO_MSG} "	WITHOUT_MIKMOD=yes	Turns off Mikmod support"
-	@${ECHO_MSG} ""
+.if defined(WITH_OPENGL)
+CONFIGURE_ARGS+=--with-opengl
+.endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Rules.make
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/Rules.make
+.if defined(WITH_MIKMOD)
+LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+.else
+CONFIGURE_ARGS+=--without-mikmod
+.endif
+
+.if defined(WITH_VORBIS)
+LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=--without-ogg
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
