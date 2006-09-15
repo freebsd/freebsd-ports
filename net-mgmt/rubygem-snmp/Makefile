@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}lib
 
-MAINTAINER=	brooks@FreeBSD.org
+MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP library for Ruby
 
 .include <bsd.port.pre.mk>
