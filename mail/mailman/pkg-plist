@@ -1049,6 +1049,7 @@
 %%MMDIR%%/templates/fr/archliststart.html
 %%MMDIR%%/templates/fr/archtoc.html
 %%MMDIR%%/templates/fr/archtocentry.html
+%%MMDIR%%/templates/fr/archtocnombox.html
 %%MMDIR%%/templates/fr/article.html
 %%MMDIR%%/templates/fr/bounce.txt
 %%MMDIR%%/templates/fr/checkdbs.txt

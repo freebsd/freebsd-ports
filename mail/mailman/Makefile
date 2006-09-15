@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.9rc1
+DISTVERSION=	2.1.9
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
