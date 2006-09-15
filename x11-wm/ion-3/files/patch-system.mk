@@ -1,5 +1,5 @@
---- system.mk.orig	Thu May 18 16:06:53 2006
-+++ system.mk	Fri May 19 13:19:25 2006
+--- ./system.mk.orig	Wed May 24 13:23:51 2006
++++ ./system.mk	Mon Jul 17 18:15:24 2006
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -27,15 +27,23 @@
  
  
  ##
-@@ -56,7 +56,7 @@
+@@ -56,11 +56,11 @@
  
  # If you have installed Lua 5.1 from the official tarball without changing
  # paths, this should do it.
 -LUA_DIR=/usr/local
+-LUA_LIBS = -L$(LUA_DIR)/lib -llua
+-LUA_INCLUDES = -I$(LUA_DIR)/include
+-LUA=$(LUA_DIR)/bin/lua
+-LUAC=$(LUA_DIR)/bin/luac
 +LUA_DIR=$(LOCALBASE)
- LUA_LIBS = -L$(LUA_DIR)/lib -llua
- LUA_INCLUDES = -I$(LUA_DIR)/include
- LUA=$(LUA_DIR)/bin/lua
++LUA_LIBS = -L$(LUA_LIBDIR) -llua
++LUA_INCLUDES = -I$(LUA_INCDIR)
++LUA=$(LUA_BINDIR)/lua
++LUAC=$(LUA_BINDIR)/luac
+ 
+ # If you are using the Debian packages, the following settings should be
+ # what you want.
 @@ -74,7 +74,7 @@
  ## X libraries, includes and options
  ##

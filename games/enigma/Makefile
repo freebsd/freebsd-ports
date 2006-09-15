@@ -15,21 +15,23 @@ DISTNAME=	enigma-${PORTVERSION}
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/tolua:${PORTSDIR}/lang/tolua4
-LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++ \
-		lua.4:${PORTSDIR}/lang/lua4
+LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++
 
 USE_GCC=	3.4
-
-GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_LUA=	4.0
+LUA_COMPS=	lua tolua
 USE_SDL=	gfx image mixer sdl ttf
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target="" \
 		--with-libintl-prefix="${LOCALBASE}"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+CPPFLAGS=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+CXXFLAGS=	-I${X11BASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${LUA_LIBDIR} ${PTHREAD_LIBS}
 
 MAN6=		enigma.6
 

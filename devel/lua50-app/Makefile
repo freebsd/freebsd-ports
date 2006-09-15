@@ -9,24 +9,22 @@ PORTNAME=	app
 PORTVERSION=	1.70
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/app/
-PKGNAMEPREFIX=	lua50-
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	app.lua?rev=${PORTVERSION}
-EXTRACT_ONLY=
+EXTRACT_ONLY=	#
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	App framework for Lua 5.0.x
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50 \
-		${LOCALBASE}/share/lua/5.0/posix.lua:${PORTSDIR}/devel/lua50-posix \
-		${LOCALBASE}/share/lua/5.0/filename.lua:${PORTSDIR}/devel/lua50-filename \
-		${LOCALBASE}/share/lua/5.0/pty.lua:${PORTSDIR}/devel/lua50-pty
-
-NO_WRKSUBDIR=	yes
+USE_LUA=	5.0
+LUA_COMPS=	filename posix pty
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	%%LUA_MODSHAREDIR%%/app.lua
 
 do-install:
-	${MKDIR} ${PREFIX}/share/lua/5.0
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${PREFIX}/share/lua/5.0/${DISTFILES:C/\?.*$//}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
+		${LUA_MODSHAREDIR}/${DISTFILES:C/\?.*$//}
 
 .include <bsd.port.mk>

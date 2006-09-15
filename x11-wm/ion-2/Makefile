@@ -15,15 +15,14 @@ MASTER_SITES=	http://modeemi.fi/~tuomov/ion/dl/
 MAINTAINER=	anthony.ginepro@laposte.net
 COMMENT=	Ion is a tiling tabbed window manager
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
-
 CONFLICTS=	ion-2002* ion-devel-* pwm-*
 
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:15 libltdl:15
 USE_X_PREFIX=	yes
+USE_AUTOTOOLS=	libtool:15 libltdl:15
+USE_LUA=	5.0
 USE_GMAKE=	yes
 MAKE_ENV=	DEFINES="${IONDEFINES}"
+GNU_CONFIGURE=	yes
 
 .if !defined(WITH_MULTIBYTE)
 IONDEFINES+=	-DCF_NO_MB_SUPPORT

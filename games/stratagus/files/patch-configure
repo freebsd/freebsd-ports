@@ -1,5 +1,5 @@
---- configure.orig	Fri Jul  2 03:46:35 2004
-+++ configure	Tue Nov  2 21:31:50 2004
+--- ./configure.orig	Thu Jul  1 22:46:35 2004
++++ ./configure	Mon Jul 17 19:23:06 2006
 @@ -3229,9 +3229,6 @@
  	VIDEO_LIBS="$VIDEO_LIBS -lwsock32 -lws2_32 -lmingwex -lgmon"
      fi

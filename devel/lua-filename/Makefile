@@ -5,23 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lua50-filename
+PORTNAME=	filename
 PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs.bsdinstaller.org/cgi-bin/cvsweb.cgi/installer/src/lib/lua/filename/
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	filename.lua?rev=${PORTVERSION}
-EXTRACT_ONLY=
+EXTRACT_ONLY=	#
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Filename-manipulating functions for Lua 5.0.x
 
-RUN_DEPENDS=	${LOCALBASE}/include/lua.h:${PORTSDIR}/lang/lua50
-
-NO_WRKSUBDIR=	yes
+USE_LUA=	5.0
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	%%LUA_MODSHAREDIR%%/filename.lua
 
 do-install:
-	${MKDIR} ${PREFIX}/share/lua/5.0
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${PREFIX}/share/lua/5.0/${DISTFILES:C/\?.*$//}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
+		${LUA_MODSHAREDIR}/${DISTFILES:C/\?.*$//}
 
 .include <bsd.port.mk>

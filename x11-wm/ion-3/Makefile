@@ -13,12 +13,12 @@ MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 MAINTAINER=	ed@fxq.nl
 COMMENT=	The development version of the Ion window manager
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lua.hpp:${PORTSDIR}/lang/lua
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_LUA=	5.1
 MAKE_ENV=	DEFINES="${IONDEFINES}"
 
 .if !defined(WITH_XINERAMA)

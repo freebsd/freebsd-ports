@@ -74,8 +74,10 @@ CONFIGURE_ARGS+=	--without-guile
 .endif
 
 .if defined(WITH_LUASCRIPT)
-LIB_DEPENDS+=	lua:${PORTSDIR}/lang/lua50
+USE_LUA=	5.0
 CONFIGURE_ARGS+=	--with-lua
+CPPFLAGS+=	-I${LUA_INCDIR}
+LDFLAGS+=	-L${LUA_LIBDIR}
 .else
 CONFIGURE_ARGS+=	--without-lua
 .endif

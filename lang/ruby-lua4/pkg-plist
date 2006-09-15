@@ -1,4 +1,4 @@
-%%RUBY_SITEARCHLIBDIR%%/lua.so
+%%RUBY_SITEARCHLIBDIR%%/lua-%%LUA_VER%%.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubylua.txt
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/html_ssi_lua.rb
