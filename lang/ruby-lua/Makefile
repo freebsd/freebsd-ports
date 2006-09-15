@@ -17,19 +17,20 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension to make Lua script language as a class
 
-LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua50
-
-CONFLICTS=	${RUBY_PKGNAMEPREFIX}lua4-[0-9]*
-
+USE_LUA=	5.0
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
-CONFIGURE_ARGS=	-- --with-lua-dir=${LOCALBASE}
+CONFIGURE_ARGS=	-- --with-lua-include=${LUA_INCDIR} --with-lua-lib=${LUA_LIBDIR}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|\(create_makefile("lua\)")|\1-${LUA_VER}")|' \
+		${WRKSRC}/ext/lua/extconf.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}
 .endif
 
 .include <bsd.port.mk>

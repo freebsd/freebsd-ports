@@ -15,11 +15,10 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	An extended version of tolua, a tool to integrate C/C++ code with Lua
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	lua:${PORTSDIR}/lang/lua50
 
-WRKSRC=		${WRKDIR}/tolua++-${PORTVERSION}
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_LUA=	5.0
 NO_BUILD=	yes
 
 post-patch:
