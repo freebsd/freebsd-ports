@@ -19,7 +19,7 @@ COMMENT=	Pty (pseudo-terminal) bindings for Lua 5.0.x
 USE_LUA=	5.0
 LUA_COMPS=	lua compat51
 
-COMPAT_SRC!=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
+COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
 MAKE_ENV=	COMPATDIR="${COMPAT_SRC}"
 
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/pty.lua \
