@@ -154,7 +154,7 @@ pre-configure:
 		-e "s|2\.3\.11|${MICO_VER}|"					\
 		-e "s|\$$MICO_PATH/platforms/\$$WM_OPTIONS|${LOCALBASE}|"	\
 		-e "s|1\.2\.4|${MPICH_VER}|"					\
-		-e "s|\$$MPICH_PATH/platforms/\$$WM_OPTIONS|${LOCALBASE}/mpich|"\
+		-e "s|\$$MPICH_PATH/platforms/\$$WM_OPTIONS|${LOCALBASE}/mpich2|"\
 		-e "s|7\.1\.1|${LAM_VER}|"					\
 		-e "s|\$$LAMHOME/platforms/\$$WM_OPTIONS|${LOCALBASE}|"		\
 		-e "s|^SOURCE |source |"					\
