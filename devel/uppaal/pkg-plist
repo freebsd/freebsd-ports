@@ -1,25 +1,31 @@
 bin/uppaal
 bin/verifyta
-%%JAVASHAREDIR%%/%%PORTNAME%%/uppaal2k.jar
-%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jhbasic.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/editor.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jdom.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jh.jar
 %%JAVASHAREDIR%%/%%PORTNAME%%/lib/jlfgr-1_0.jar
-%%JAVASHAREDIR%%/%%PORTNAME%%/lib/xalan.jar
-%%JAVASHAREDIR%%/%%PORTNAME%%/lib/xercesImpl.jar
-%%JAVASHAREDIR%%/%%PORTNAME%%/lib/xmlParserAPIs.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jsr173_1.0_api.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/jsr173_1.0_ri.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/model.jar
+%%JAVASHAREDIR%%/%%PORTNAME%%/lib/swixml.jar
 %%JAVASHAREDIR%%/%%PORTNAME%%/server.exe
 %%JAVASHAREDIR%%/%%PORTNAME%%/socketserver.exe
 %%JAVASHAREDIR%%/%%PORTNAME%%/verifyta
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/2doors.xml
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/2doors.q
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/bridge.xml
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/bridge.q
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/fischer.xml
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/fischer.q
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/train-gate.xml
-%%JAVASHAREDIR%%/%%PORTNAME%%/demo/train-gate.q
-%%DOCSDIR%%/README
-%%DOCSDIR%%/License-ASF
-@dirrm %%JAVASHAREDIR%%/%%PORTNAME%%/demo
+%%JAVASHAREDIR%%/%%PORTNAME%%/uppaal.jar
+%%EXAMPLESDIR%%/2doors.xml
+%%EXAMPLESDIR%%/2doors.q
+%%EXAMPLESDIR%%/bridge.xml
+%%EXAMPLESDIR%%/bridge.q
+%%EXAMPLESDIR%%/fischer.xml
+%%EXAMPLESDIR%%/fischer.q
+%%EXAMPLESDIR%%/fischer_symmetry.xml
+%%EXAMPLESDIR%%/fischer_symmetry.q
+%%EXAMPLESDIR%%/interrupt.xml
+%%EXAMPLESDIR%%/interrupt.q
+%%EXAMPLESDIR%%/train-gate.xml
+%%EXAMPLESDIR%%/train-gate.q
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%JAVASHAREDIR%%/%%PORTNAME%%/lib
 @dirrm %%JAVASHAREDIR%%/%%PORTNAME%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

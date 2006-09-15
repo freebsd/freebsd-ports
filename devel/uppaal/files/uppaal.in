@@ -1,12 +1,9 @@
 #!/bin/sh 
 
-JAR=%%JAVASHAREDIR%%/%%PORTNAME%%/uppaal2k.jar
+JAR=%%JAVASHAREDIR%%/%%PORTNAME%%/uppaal.jar
 ENGINE=%%JAVASHAREDIR%%/%%PORTNAME%%
 
-DISPSERV=$(expr "$DISPLAY" : '^\(.*\):.*')
-if [ -z "$DISPSERV" ]; then DISPSERV=$(hostname); fi
-
-if [ "$DISPSERV" = "$(hostname)" ]; then
+if [ "$DISPLAY" = ":0.0" -o "$DISPLAY" = ":0" ]; then 
   java -jar $JAR -enginePath $ENGINE $* 
 else
   java -jar $JAR -enginePath $ENGINE -antialias off $* 
