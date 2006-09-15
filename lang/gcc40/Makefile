@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.4
-PORTREVISION=	20060907
+PORTREVISION=	20060914
 CATEGORIES=	lang
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -93,18 +93,11 @@ post-install:
 	for mp in ${_MANPAGES}; do \
 	  ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp}; \
 	done
-.for f in c++ gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
-	# gij and jv-convert, for example, are not built on all platforms.
-	if [ -e ${PREFIX}/man/man1/${f}.1 ]; then \
-	  ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-	           ${PREFIX}/man/man1/${f}${SUFFIX}.1; \
-	fi
-.endfor
+	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
+	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	${MV} -f ${PREFIX}/include/mf-runtime.h \
 	         ${TARGLIB}/gcc/${CONFIGURE_TARGET}/${PORTVERSION}/include
 	${RM} -f ${TARGLIB}/*.la
-	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
-	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} libexec/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
