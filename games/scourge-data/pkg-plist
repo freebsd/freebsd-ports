@@ -73,6 +73,46 @@
 %%DATADIR%%/mapgrid/map5-2.bmp
 %%DATADIR%%/mapgrid/map5-3.bmp
 %%DATADIR%%/mapgrid/map5-4.bmp
+%%DATADIR%%/maps-backup/hq.map
+%%DATADIR%%/maps-backup/hq.nut
+%%DATADIR%%/maps-backup/hq.txt
+%%DATADIR%%/maps-backup/hq1.map
+%%DATADIR%%/maps-backup/hq1.txt
+%%DATADIR%%/maps-backup/library.map
+%%DATADIR%%/maps-backup/library.txt
+%%DATADIR%%/maps-backup/library1.map
+%%DATADIR%%/maps-backup/library1.txt
+%%DATADIR%%/maps-backup/library2.map
+%%DATADIR%%/maps-backup/library2.txt
+%%DATADIR%%/maps-backup/library3.map
+%%DATADIR%%/maps-backup/library3.txt
+%%DATADIR%%/maps-backup/readme.txt
+%%DATADIR%%/maps-backup/thuzgol.map
+%%DATADIR%%/maps-backup/thuzgol.txt
+%%DATADIR%%/maps-backup/tower.map
+%%DATADIR%%/maps-backup/tower.txt
+%%DATADIR%%/maps-backup/tower1.map
+%%DATADIR%%/maps-backup/tower1.txt
+%%DATADIR%%/maps-backup2/hq.map
+%%DATADIR%%/maps-backup2/hq.nut
+%%DATADIR%%/maps-backup2/hq.txt
+%%DATADIR%%/maps-backup2/hq1.map
+%%DATADIR%%/maps-backup2/hq1.txt
+%%DATADIR%%/maps-backup2/library.map
+%%DATADIR%%/maps-backup2/library.txt
+%%DATADIR%%/maps-backup2/library1.map
+%%DATADIR%%/maps-backup2/library1.txt
+%%DATADIR%%/maps-backup2/library2.map
+%%DATADIR%%/maps-backup2/library2.txt
+%%DATADIR%%/maps-backup2/library3.map
+%%DATADIR%%/maps-backup2/library3.txt
+%%DATADIR%%/maps-backup2/readme.txt
+%%DATADIR%%/maps-backup2/thuzgol.map
+%%DATADIR%%/maps-backup2/thuzgol.txt
+%%DATADIR%%/maps-backup2/tower.map
+%%DATADIR%%/maps-backup2/tower.txt
+%%DATADIR%%/maps-backup2/tower1.map
+%%DATADIR%%/maps-backup2/tower1.txt
 %%DATADIR%%/maps/hq.map
 %%DATADIR%%/maps/hq.nut
 %%DATADIR%%/maps/hq.txt
@@ -86,6 +126,8 @@
 %%DATADIR%%/maps/library2.txt
 %%DATADIR%%/maps/library3.map
 %%DATADIR%%/maps/library3.txt
+%%DATADIR%%/maps/library31.map
+%%DATADIR%%/maps/library31.txt
 %%DATADIR%%/maps/readme.txt
 %%DATADIR%%/maps/thuzgol.map
 %%DATADIR%%/maps/thuzgol.txt
@@ -105,6 +147,61 @@
 %%DATADIR%%/models/Bug/pain25_2.wav
 %%DATADIR%%/models/Bug/readme.txt
 %%DATADIR%%/models/Bug/tris.md2
+%%DATADIR%%/models/Nore/Craz.bmp
+%%DATADIR%%/models/Nore/Drudge.bmp
+%%DATADIR%%/models/Nore/Nore.bmp
+%%DATADIR%%/models/Nore/Sahve.bmp
+%%DATADIR%%/models/Nore/Tarnom.bmp
+%%DATADIR%%/models/Nore/bump1.wav
+%%DATADIR%%/models/Nore/ctf_b.bmp
+%%DATADIR%%/models/Nore/ctf_r.bmp
+%%DATADIR%%/models/Nore/death1.wav
+%%DATADIR%%/models/Nore/death2.wav
+%%DATADIR%%/models/Nore/death3.wav
+%%DATADIR%%/models/Nore/death4.wav
+%%DATADIR%%/models/Nore/drown1.wav
+%%DATADIR%%/models/Nore/fall1.wav
+%%DATADIR%%/models/Nore/fall2.wav
+%%DATADIR%%/models/Nore/gurp1.wav
+%%DATADIR%%/models/Nore/gurp2.wav
+%%DATADIR%%/models/Nore/jump1.wav
+%%DATADIR%%/models/Nore/jump2.wav
+%%DATADIR%%/models/Nore/nore.txt
+%%DATADIR%%/models/Nore/pain100_1.wav
+%%DATADIR%%/models/Nore/pain100_2.wav
+%%DATADIR%%/models/Nore/pain25_1.wav
+%%DATADIR%%/models/Nore/pain25_2.wav
+%%DATADIR%%/models/Nore/pain50_1.wav
+%%DATADIR%%/models/Nore/pain50_2.wav
+%%DATADIR%%/models/Nore/pain75_1.wav
+%%DATADIR%%/models/Nore/pain75_2.wav
+%%DATADIR%%/models/Nore/tris.md2
+%%DATADIR%%/models/alien/Alien.txt
+%%DATADIR%%/models/alien/alien.bmp
+%%DATADIR%%/models/alien/alienbase.bmp
+%%DATADIR%%/models/alien/bump1.wav
+%%DATADIR%%/models/alien/ctf_b.bmp
+%%DATADIR%%/models/alien/ctf_r.bmp
+%%DATADIR%%/models/alien/death1.wav
+%%DATADIR%%/models/alien/death2.wav
+%%DATADIR%%/models/alien/death3.wav
+%%DATADIR%%/models/alien/death4.wav
+%%DATADIR%%/models/alien/drown1.wav
+%%DATADIR%%/models/alien/fall1.wav
+%%DATADIR%%/models/alien/fall2.wav
+%%DATADIR%%/models/alien/green.bmp
+%%DATADIR%%/models/alien/gurp1.wav
+%%DATADIR%%/models/alien/gurp2.wav
+%%DATADIR%%/models/alien/jump1.wav
+%%DATADIR%%/models/alien/pain100_1.wav
+%%DATADIR%%/models/alien/pain100_2.wav
+%%DATADIR%%/models/alien/pain25_1.wav
+%%DATADIR%%/models/alien/pain25_2.wav
+%%DATADIR%%/models/alien/pain50_1.wav
+%%DATADIR%%/models/alien/pain50_2.wav
+%%DATADIR%%/models/alien/pain75_1.wav
+%%DATADIR%%/models/alien/pain75_2.wav
+%%DATADIR%%/models/alien/tris.md2
 %%DATADIR%%/models/character/blade/blade.bmp
 %%DATADIR%%/models/character/blade/blade.txt
 %%DATADIR%%/models/character/blade/tris.md2
@@ -422,6 +519,15 @@
 %%DATADIR%%/models/purgator/purgatori.bmp
 %%DATADIR%%/models/purgator/purgatori.txt
 %%DATADIR%%/models/purgator/tris.md2
+%%DATADIR%%/models/ratamahatta/Gearwhore.bmp
+%%DATADIR%%/models/ratamahatta/Ratamahatta.bmp
+%%DATADIR%%/models/ratamahatta/Ratamahatta.txt
+%%DATADIR%%/models/ratamahatta/ctf_b.bmp
+%%DATADIR%%/models/ratamahatta/ctf_r.bmp
+%%DATADIR%%/models/ratamahatta/dead.bmp
+%%DATADIR%%/models/ratamahatta/jaws.bmp
+%%DATADIR%%/models/ratamahatta/tris.md2
+%%DATADIR%%/models/ratamahatta/vwep_readme.txt
 %%DATADIR%%/models/twigletman/ctf_blue.bmp
 %%DATADIR%%/models/twigletman/ctf_red.bmp
 %%DATADIR%%/models/twigletman/eXodus.bmp
@@ -429,6 +535,30 @@
 %%DATADIR%%/models/twigletman/readme.txt
 %%DATADIR%%/models/twigletman/toxic.bmp
 %%DATADIR%%/models/twigletman/tris.md2
+%%DATADIR%%/models/xenoid/bump1.wav
+%%DATADIR%%/models/xenoid/death1.wav
+%%DATADIR%%/models/xenoid/death2.wav
+%%DATADIR%%/models/xenoid/death3.wav
+%%DATADIR%%/models/xenoid/death4.wav
+%%DATADIR%%/models/xenoid/drown1.wav
+%%DATADIR%%/models/xenoid/fall1.wav
+%%DATADIR%%/models/xenoid/fall2.wav
+%%DATADIR%%/models/xenoid/gurp1.wav
+%%DATADIR%%/models/xenoid/gurp2.wav
+%%DATADIR%%/models/xenoid/jump1.wav
+%%DATADIR%%/models/xenoid/pain100_1.wav
+%%DATADIR%%/models/xenoid/pain100_2.wav
+%%DATADIR%%/models/xenoid/pain25_1.wav
+%%DATADIR%%/models/xenoid/pain25_2.wav
+%%DATADIR%%/models/xenoid/pain50_1.wav
+%%DATADIR%%/models/xenoid/pain50_2.wav
+%%DATADIR%%/models/xenoid/pain75_1.wav
+%%DATADIR%%/models/xenoid/pain75_2.wav
+%%DATADIR%%/models/xenoid/tris.md2
+%%DATADIR%%/models/xenoid/xenoid.txt
+%%DATADIR%%/models/xenoid/xenotype1.bmp
+%%DATADIR%%/models/xenoid/xenotype2.bmp
+%%DATADIR%%/models/xenoid/xenotype3.bmp
 %%DATADIR%%/models/yvonne/Yvonne.bmp
 %%DATADIR%%/models/yvonne/Yvonne.txt
 %%DATADIR%%/models/yvonne/cammy.bmp
@@ -454,6 +584,7 @@
 %%DATADIR%%/objects/arrow.3ds
 %%DATADIR%%/objects/axe.3ds
 %%DATADIR%%/objects/barrel.3ds
+%%DATADIR%%/objects/base.3ds
 %%DATADIR%%/objects/bed.3ds
 %%DATADIR%%/objects/bench.3ds
 %%DATADIR%%/objects/board.3ds
@@ -480,6 +611,7 @@
 %%DATADIR%%/objects/offswitch.3ds
 %%DATADIR%%/objects/onswitch.3ds
 %%DATADIR%%/objects/pedestal.3ds
+%%DATADIR%%/objects/pile.3ds
 %%DATADIR%%/objects/plant.3ds
 %%DATADIR%%/objects/pool.3ds
 %%DATADIR%%/objects/potion.3ds
@@ -489,17 +621,23 @@
 %%DATADIR%%/objects/shield.3ds
 %%DATADIR%%/objects/staff.3ds
 %%DATADIR%%/objects/stairs.3ds
+%%DATADIR%%/objects/stalagmite.3ds
+%%DATADIR%%/objects/stalagmite2.3ds
 %%DATADIR%%/objects/stove.3ds
 %%DATADIR%%/objects/streetlight.3ds
 %%DATADIR%%/objects/sword.3ds
 %%DATADIR%%/objects/sword2.3ds
 %%DATADIR%%/objects/table.3ds
 %%DATADIR%%/objects/tchest.3ds
+%%DATADIR%%/objects/telebase.3ds
 %%DATADIR%%/objects/token.3ds
 %%DATADIR%%/objects/torch.3ds
 %%DATADIR%%/objects/vase.3ds
 %%DATADIR%%/objects/wand.3ds
+%%DATADIR%%/portraits/Thumbs.db
 %%DATADIR%%/portraits/death.bmp
+%%DATADIR%%/portraits/karzul.bmp
+%%DATADIR%%/portraits/knight_full-500.png
 %%DATADIR%%/portraits/m1.bmp
 %%DATADIR%%/portraits/m2.bmp
 %%DATADIR%%/portraits/m3.bmp
@@ -508,8 +646,10 @@
 %%DATADIR%%/portraits/m6.bmp
 %%DATADIR%%/portraits/m7.bmp
 %%DATADIR%%/portraits/m8.bmp
+%%DATADIR%%/portraits/m8.png
 %%DATADIR%%/portraits/m9.bmp
 %%DATADIR%%/portraits/melathor.bmp
+%%DATADIR%%/portraits/monk_full-500.png
 %%DATADIR%%/portraits/myco.bmp
 %%DATADIR%%/portraits/orhithales.bmp
 %%DATADIR%%/portraits/sabien.bmp
@@ -550,6 +690,8 @@
 %%DATADIR%%/sound/weapon-swish/handheld/sw1.wav
 %%DATADIR%%/sound/weapon-swish/handheld/sw2.wav
 %%DATADIR%%/sound/weapon-swish/handheld/sw3.wav
+%%DATADIR%%/textures/Thumbs.db
+%%DATADIR%%/textures/Untitled.xcf
 %%DATADIR%%/textures/area.bmp
 %%DATADIR%%/textures/attack.bmp
 %%DATADIR%%/textures/bar.bmp
@@ -584,10 +726,12 @@
 %%DATADIR%%/textures/darkuitop.bmp
 %%DATADIR%%/textures/darkuiwest.bmp
 %%DATADIR%%/textures/darkuiwestsel.bmp
+%%DATADIR%%/textures/dismiss.bmp
 %%DATADIR%%/textures/door2NS.bmp
 %%DATADIR%%/textures/doorEW.bmp
 %%DATADIR%%/textures/doorNS.bmp
 %%DATADIR%%/textures/dragon.bmp
+%%DATADIR%%/textures/exit.bmp
 %%DATADIR%%/textures/flame.bmp
 %%DATADIR%%/textures/floor.bmp
 %%DATADIR%%/textures/floor2.bmp
@@ -616,11 +760,24 @@
 %%DATADIR%%/textures/frontv1.bmp
 %%DATADIR%%/textures/frontv2.bmp
 %%DATADIR%%/textures/gargoyle.bmp
+%%DATADIR%%/textures/group.bmp
 %%DATADIR%%/textures/gui-wood.bmp
 %%DATADIR%%/textures/gui.bmp
+%%DATADIR%%/textures/gui/button.bmp
+%%DATADIR%%/textures/gui/e.bmp
+%%DATADIR%%/textures/gui/main.bmp
+%%DATADIR%%/textures/gui/n.bmp
+%%DATADIR%%/textures/gui/ne.bmp
+%%DATADIR%%/textures/gui/nw.bmp
+%%DATADIR%%/textures/gui/s.bmp
+%%DATADIR%%/textures/gui/se.bmp
+%%DATADIR%%/textures/gui/sw.bmp
+%%DATADIR%%/textures/gui/w.bmp
+%%DATADIR%%/textures/gui/window.bmp
 %%DATADIR%%/textures/gui2.bmp
 %%DATADIR%%/textures/gui_small.bmp
 %%DATADIR%%/textures/highlight.bmp
+%%DATADIR%%/textures/inventory.bmp
 %%DATADIR%%/textures/iron.bmp
 %%DATADIR%%/textures/light.bmp
 %%DATADIR%%/textures/litewood.bmp
@@ -632,18 +789,25 @@
 %%DATADIR%%/textures/minimap.bmp
 %%DATADIR%%/textures/minimask.bmp
 %%DATADIR%%/textures/move.bmp
+%%DATADIR%%/textures/options.bmp
 %%DATADIR%%/textures/paperdoll.bmp
+%%DATADIR%%/textures/paused.bmp
 %%DATADIR%%/textures/process.bmp
 %%DATADIR%%/textures/ranged.bmp
+%%DATADIR%%/textures/realtime.bmp
 %%DATADIR%%/textures/ring2.bmp
 %%DATADIR%%/textures/ripple.bmp
+%%DATADIR%%/textures/rock.bmp
 %%DATADIR%%/textures/scourge.bmp
 %%DATADIR%%/textures/screw.bmp
+%%DATADIR%%/textures/skulls.bmp
 %%DATADIR%%/textures/spells.bmp
+%%DATADIR%%/textures/start.bmp
 %%DATADIR%%/textures/talk.bmp
 %%DATADIR%%/textures/tiles.bmp
 %%DATADIR%%/textures/torchback.bmp
 %%DATADIR%%/textures/use.bmp
+%%DATADIR%%/textures/wait.bmp
 %%DATADIR%%/textures/wall.bmp
 %%DATADIR%%/textures/wall2.bmp
 %%DATADIR%%/textures/wall2v1.bmp
@@ -689,6 +853,16 @@
 %%DATADIR%%/themes/gurrea2/readme.txt
 %%DATADIR%%/themes/gurrea2/top.bmp
 %%DATADIR%%/themes/gurrea2/wall.bmp
+%%DATADIR%%/themes/infernum/corner.bmp
+%%DATADIR%%/themes/infernum/door.bmp
+%%DATADIR%%/themes/infernum/floor.bmp
+%%DATADIR%%/themes/infernum/floor1.bmp
+%%DATADIR%%/themes/infernum/passage.bmp
+%%DATADIR%%/themes/infernum/passage1.bmp
+%%DATADIR%%/themes/infernum/passage2.bmp
+%%DATADIR%%/themes/infernum/wall.bmp
+%%DATADIR%%/themes/infernum/wall1.bmp
+%%DATADIR%%/themes/infernum/wall2.bmp
 %%DATADIR%%/themes/wb-dragoon/kd3.bmp
 %%DATADIR%%/themes/wb-dragoon/maderos01.bmp
 %%DATADIR%%/themes/wb-dragoon/maderos1.bmp
@@ -698,9 +872,15 @@
 %%DATADIR%%/themes/wb-dragoon/pilarcem16a.bmp
 %%DATADIR%%/themes/wb-dragoon/suelo07b.bmp
 %%DATADIR%%/themes/wb-dragoon/whiteblazer readme.txt
+%%DATADIR%%/tools/del.xpm
+%%DATADIR%%/tools/go-jump.xpm
+%%DATADIR%%/tools/new.xpm
+%%DATADIR%%/tools/next.xpm
+%%DATADIR%%/tools/nextfast.xpm
+%%DATADIR%%/tools/prev.xpm
+%%DATADIR%%/tools/prevfast.xpm
 %%DATADIR%%/world/books.txt
 %%DATADIR%%/world/creatures.txt
-%%DATADIR%%/world/characters.txt
 %%DATADIR%%/world/gui.txt
 %%DATADIR%%/world/items.txt
 %%DATADIR%%/world/locations.txt
@@ -712,28 +892,19 @@
 %%DATADIR%%/world/skills.nut
 %%DATADIR%%/world/skills.txt
 %%DATADIR%%/world/spells.txt
-@dirrm %%DATADIR%%/cave/default
-@dirrm %%DATADIR%%/cave
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/mapgrid
-@dirrm %%DATADIR%%/maps
-@dirrm %%DATADIR%%/models/demoness
-@dirrm %%DATADIR%%/models/yvonne
-@dirrm %%DATADIR%%/models/Bug
-@dirrm %%DATADIR%%/models/nightcrawler
-@dirrm %%DATADIR%%/models/link
-@dirrm %%DATADIR%%/models/purgator
-@dirrm %%DATADIR%%/models/twigletman
+%%DATADIR%%/world/uncat.txt
 @dirrm %%DATADIR%%/models/npc/sfod8
 @dirrm %%DATADIR%%/models/npc/alita
 @dirrm %%DATADIR%%/models/npc/jd
 @dirrm %%DATADIR%%/models/npc
-@dirrm %%DATADIR%%/models/hellogirl
-@dirrm %%DATADIR%%/models/orc
-@dirrm %%DATADIR%%/models/frog
-@dirrm %%DATADIR%%/models/ogro
-@dirrm %%DATADIR%%/models/hueteotl
+@dirrm %%DATADIR%%/models/alien
+@dirrm %%DATADIR%%/models/yvonne
+@dirrm %%DATADIR%%/models/nightcrawler
+@dirrm %%DATADIR%%/models/link
+@dirrm %%DATADIR%%/models/purgator
+@dirrm %%DATADIR%%/models/twigletman
+@dirrm %%DATADIR%%/models/Bug
+@dirrm %%DATADIR%%/models/demoness
 @dirrm %%DATADIR%%/models/character/shinju
 @dirrm %%DATADIR%%/models/character/pknight/sound
 @dirrm %%DATADIR%%/models/character/pknight
@@ -744,27 +915,46 @@
 @dirrm %%DATADIR%%/models/character/darkness
 @dirrm %%DATADIR%%/models/character/sydney
 @dirrm %%DATADIR%%/models/character
+@dirrm %%DATADIR%%/models/hellogirl
+@dirrm %%DATADIR%%/models/orc
+@dirrm %%DATADIR%%/models/frog
+@dirrm %%DATADIR%%/models/ogro
+@dirrm %%DATADIR%%/models/hueteotl
+@dirrm %%DATADIR%%/models/Nore
+@dirrm %%DATADIR%%/models/ratamahatta
+@dirrm %%DATADIR%%/models/xenoid
 @dirrm %%DATADIR%%/models
-@dirrm %%DATADIR%%/objects
-@dirrm %%DATADIR%%/portraits
-@dirrm %%DATADIR%%/sound/magic
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/themes/egypt1
+@dirrm %%DATADIR%%/themes/gurrea1
+@dirrm %%DATADIR%%/themes/gurrea2
+@dirrm %%DATADIR%%/themes/wb-dragoon
+@dirrm %%DATADIR%%/themes/egypt3
+@dirrm %%DATADIR%%/themes/egypt5
+@dirrm %%DATADIR%%/themes/infernum
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/textures/gui
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/sound/imp
 @dirrm %%DATADIR%%/sound/music
 @dirrm %%DATADIR%%/sound/equip
 @dirrm %%DATADIR%%/sound/weapon-swish/handheld
 @dirrm %%DATADIR%%/sound/weapon-swish/bows
 @dirrm %%DATADIR%%/sound/weapon-swish
-@dirrm %%DATADIR%%/sound/imp
+@dirrm %%DATADIR%%/sound/magic
 @dirrm %%DATADIR%%/sound/potion
 @dirrm %%DATADIR%%/sound/ui
 @dirrm %%DATADIR%%/sound/sword
 @dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/themes/wb-dragoon
-@dirrm %%DATADIR%%/themes/gurrea1
-@dirrm %%DATADIR%%/themes/gurrea2
-@dirrm %%DATADIR%%/themes/egypt1
-@dirrm %%DATADIR%%/themes/egypt3
-@dirrm %%DATADIR%%/themes/egypt5
-@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/portraits
+@dirrm %%DATADIR%%/objects
 @dirrm %%DATADIR%%/world
+@dirrm %%DATADIR%%/maps-backup2
+@dirrm %%DATADIR%%/maps-backup
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/mapgrid
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/cave/default
+@dirrm %%DATADIR%%/cave
 @dirrm %%DATADIR%%
