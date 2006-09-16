@@ -7,6 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
