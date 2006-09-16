@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	jewel
-PORTVERSION=	0.12.40
-PORTREVISION=	1
+PORTVERSION=	0.12.41
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://mjr.towers.org.uk/comp/
 
