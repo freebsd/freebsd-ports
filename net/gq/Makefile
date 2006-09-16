@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gq
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -31,6 +31,9 @@ CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
 OPTIONS=	JPEG	"Enable jpegPhoto attr. handling" On \
 		DND	"Enable Drag and drop support in browse mode" On \
 		CACHE	"Support the OpenLDAP experimental client cache" On
+
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+	       	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
