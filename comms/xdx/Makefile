@@ -5,18 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	xdx
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
+MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/
 
-MAINTAINER=	matt@mattsnetwork.co.uk
+MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio DX cluster monitor
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		xdx.1
 
