@@ -1,0 +1,67 @@
+--- Makefile.orig	Thu Aug  3 01:05:54 2006
++++ Makefile	Sun Sep 17 00:19:51 2006
+@@ -7,16 +7,16 @@
+ ### Installation directory (Installation prefix)
+ # If you don't have root privileges, set this to /home/tentacleman/bloboats/
+ # for example, otherwise /. Don't use ~ or other environment variables!
+-PREFIX = /
++#PREFIX = /
+ 
+ ### Or if you don't want to run make install at all, uncomments the next line
+ # and comment the line below. Compile and run with './bin/bloboats'
+ #DATADIR = data
+ 
+-DATADIR = $(PREFIX)/usr/games/bloboats/data
++#DATADIR = $(PREFIX)/usr/games/bloboats/data
+ 
+ ### If you do make install, you may perhaps want to set these
+-BINARYDIR = $(PREFIX)/usr/bin
++BINARYDIR = $(PREFIX)/bin
+ CONFIGDIR = $(PREFIX)/etc
+ 
+ PRIVATEDIR = ~/.bloboats
+@@ -41,7 +41,7 @@
+ 
+ 
+ #This should probably be DEFAULT
+-TARGET = DEFAULT
++TARGET = FREEBSD
+ 
+ 
+ ### Only some random settings below
+@@ -60,7 +60,7 @@
+ CXX_MACOSX = g++
+ CXX_CROSS = i586-mingw32msvc-g++
+ 
+-CXX = $(CXX_$(TARGET))
++CXX ?= $(CXX_$(TARGET))
+ 
+ 
+ ### SDL-Config in your system
+@@ -74,7 +74,7 @@
+ 
+ ### Libs
+ LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
+-LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -L/usr/X11R6/lib -lGL -lGLU
++LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -L$(X11BASE)/lib -lGL -lGLU
+ LIBS_NETBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU -L/usr/pkg/lib
+ LIBS_MACOSX = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -framework OpenGL
+ LIBS_CROSS = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lopengl32 -lglu32
+@@ -92,7 +92,7 @@
+ 
+ ### CXX-Flags
+ CXXFLAGS_DEFAULT = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
+-CXXFLAGS_FREEBSD = -g `$(SDLCONFIG) --cflags` -I/usr/X11R6/include -o bin/$(BINARY) -O2
++CXXFLAGS_FREEBSD = $(CFLAGS) `$(SDLCONFIG) --cflags` -I/usr/X11R6/include -o bin/$(BINARY)
+ CXXFLAGS_NETBSD = -g `$(SDLCONFIG) --cflags` -O2 -I/usr/pkg/include
+ CXXFLAGS_MACOSX = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
+ CXXFLAGS_CROSS = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY) -O2
+@@ -127,7 +127,7 @@
+ BINARY_CROSS_ = blobinv.exe
+ BINARY_ = $(BINARY_$(TARGET)_)
+ CXXFLAGS_DEFAULT_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
+-CXXFLAGS_FREEBSD_ = -g `$(SDLCONFIG) --cflags` -I/usr/X11R6/include -o bin/$(BINARY_) -O2
++CXXFLAGS_FREEBSD_ = `$(SDLCONFIG) --cflags` -I$(X11BASE)/include -o bin/$(BINARY_) -O2
+ CXXFLAGS_NETBSD = -g `$(SDLCONFIG) --cflags` -O2 -I/usr/pkg/include
+ CXXFLAGS_MACOSX_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
+ CXXFLAGS_CROSS_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2

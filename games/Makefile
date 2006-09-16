@@ -66,6 +66,7 @@
     SUBDIR += blackjack
     SUBDIR += blinkensisters
     SUBDIR += blobandconquer
+    SUBDIR += bloboats
     SUBDIR += blobwars
     SUBDIR += block
     SUBDIR += blockade
