@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	20060802
+PORTVERSION=	20060915
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -15,10 +15,6 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
-
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 CONFLICTS=	ktorrent-[0.9]*
 
@@ -30,4 +26,10 @@ USE_GMAKE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on FreeBSD 4.x
+.endif
+
+.include <bsd.port.post.mk>

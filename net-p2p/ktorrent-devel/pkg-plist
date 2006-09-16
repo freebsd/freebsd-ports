@@ -16,6 +16,9 @@ lib/kde3/ktlogviewerplugin.so
 lib/kde3/ktpartfileimportplugin.a
 lib/kde3/ktpartfileimportplugin.la
 lib/kde3/ktpartfileimportplugin.so
+lib/kde3/ktrssfeedplugin.a
+lib/kde3/ktrssfeedplugin.la
+lib/kde3/ktrssfeedplugin.so
 lib/kde3/ktscanfolderplugin.a
 lib/kde3/ktscanfolderplugin.la
 lib/kde3/ktscanfolderplugin.so
@@ -307,6 +310,7 @@ share/config.kcfg/ktinfowidgetplugin.kcfg
 share/config.kcfg/ktipfilterplugin.kcfg
 share/config.kcfg/ktlogviewerplugin.kcfg
 share/config.kcfg/ktorrent.kcfg
+share/config.kcfg/ktrssfeedplugin.kcfg
 share/config.kcfg/ktscanfolderplugin.kcfg
 share/config.kcfg/ktschedulerplugin.kcfg
 share/config.kcfg/ktsearchplugin.kcfg
@@ -327,6 +331,7 @@ share/icons/hicolor/scalable/apps/ktorrent.svgz
 share/icons/hicolor/scalable/mimetypes/torrent.svgz
 share/locale/bg/LC_MESSAGES/ktorrent.mo
 share/locale/br/LC_MESSAGES/ktorrent.mo
+share/locale/ca/LC_MESSAGES/ktorrent.mo
 share/locale/cs/LC_MESSAGES/ktorrent.mo
 share/locale/cy/LC_MESSAGES/ktorrent.mo
 share/locale/da/LC_MESSAGES/ktorrent.mo
@@ -345,12 +350,12 @@ share/locale/ka/LC_MESSAGES/ktorrent.mo
 share/locale/lt/LC_MESSAGES/ktorrent.mo
 share/locale/ms/LC_MESSAGES/ktorrent.mo
 share/locale/nl/LC_MESSAGES/ktorrent.mo
-share/locale/pa/LC_MESSAGES/ktorrent.mo
 share/locale/pl/LC_MESSAGES/ktorrent.mo
 share/locale/pt/LC_MESSAGES/ktorrent.mo
 share/locale/pt_BR/LC_MESSAGES/ktorrent.mo
 share/locale/ru/LC_MESSAGES/ktorrent.mo
 share/locale/rw/LC_MESSAGES/ktorrent.mo
+share/locale/sk/LC_MESSAGES/ktorrent.mo
 share/locale/sr/LC_MESSAGES/ktorrent.mo
 share/locale/sr@Latn/LC_MESSAGES/ktorrent.mo
 share/locale/sv/LC_MESSAGES/ktorrent.mo
@@ -358,11 +363,11 @@ share/locale/tr/LC_MESSAGES/ktorrent.mo
 share/locale/uk/LC_MESSAGES/ktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/ktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/ktorrent.mo
-share/mimelnk/application/x-bittorrent.desktop
 share/services/ktinfowidgetplugin.desktop
 share/services/ktipfilterplugin.desktop
 share/services/ktlogviewerplugin.desktop
 share/services/ktpartfileimportplugin.desktop
+share/services/ktrssfeedplugin.desktop
 share/services/ktscanfolderplugin.desktop
 share/services/ktschedulerplugin.desktop
 share/services/ktsearchplugin.desktop
@@ -376,6 +381,8 @@ share/servicetypes/ktorrentplugin.desktop
 @dirrmtry share/locale/uk
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/pt/LC_MESSAGES
@@ -388,6 +395,8 @@ share/servicetypes/ktorrentplugin.desktop
 @dirrmtry share/locale/el
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
 @dirrm share/apps/ktorrent/icons/hicolor/64x64/filesystems
 @dirrm share/apps/ktorrent/icons/hicolor/64x64/actions
 @dirrm share/apps/ktorrent/icons/hicolor/64x64
