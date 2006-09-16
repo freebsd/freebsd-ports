@@ -1,4 +1,15 @@
 bin/grig
-share/pixmaps/grig/digits_normal.xpm
-share/pixmaps/grig/digits_small.xpm
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/NEWS
+%%DATADIR%%/README
+share/pixmaps/grig/digits_normal.png
+share/pixmaps/grig/digits_small.png
+share/pixmaps/grig/grig-logo.png
+share/pixmaps/grig/ic910.png
+share/pixmaps/grig/smeter.png
 @dirrm share/pixmaps/grig
+@dirrmtry share/pixmaps
+@dirrm %%DATADIR%%
+@dirrmtry locale

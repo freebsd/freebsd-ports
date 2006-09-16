@@ -5,28 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	grig
-PORTVERSION=	0.2.2
-PORTREVISION=	4
+PORTVERSION=	0.7.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	groundstation
 
-MAINTAINER=	matt@mattsnetwork.co.uk
+MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio control front-end
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
 
-USE_X_PREFIX=	yes
-USE_GNOME=	gconf gtk12 gnomecanvas
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-nls	# nls not supported yet
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
-.include <bsd.port.pre.mk>
+MAN1=		grig.1
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|GCONF_LIBS="`|GCONF_LIBS="-lgconf-gtk-1 `|' ${WRKSRC}/configure
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
