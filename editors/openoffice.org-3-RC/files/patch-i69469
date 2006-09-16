@@ -1,0 +1,20 @@
+--- sw/source/core/doc/docfld.cxx.orig	Wed Oct 19 17:23:17 2005
++++ sw/source/core/doc/docfld.cxx	Sun Sep 17 06:24:22 2006
+@@ -1197,7 +1197,7 @@
+ 	pMgr->CloseAll(FALSE);
+ }
+ 
+-void SwDoc::FldsToCalc( SwCalc& rCalc, ULONG nLastNd, USHORT nLastCnt )
++void SwDoc::FldsToCalc( SwCalc& rCalc, sal_uInt32 nLastNd, sal_uInt16 nLastCnt )
+ {
+ 	// erzeuge die Sortierteliste aller SetFelder
+ 	pUpdtFlds->MakeFldList( *this, bNewFldLst, GETFLD_CALC );
+@@ -2217,7 +2217,7 @@
+ 		ResetModified();
+ }
+ 
+-BOOL SwDoc::SetFieldsDirty( BOOL b, const SwNode* pChk, ULONG nLen )
++BOOL SwDoc::SetFieldsDirty( BOOL b, const SwNode* pChk, sal_uInt32 nLen )
+ {
+ 	// teste ggfs. mal, ob die angegbenen Nodes ueberhaupt Felder beinhalten.
+ 	// wenn nicht, braucht das Flag nicht veraendert werden.
