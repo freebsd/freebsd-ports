@@ -7,16 +7,16 @@
 PORTNAME=	xlog
 PORTVERSION=	1.3.1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
+MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/
 
-MAINTAINER=	matt@mattsnetwork.co.uk
+MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio logging application
 
-USE_X_PREFIX=	yes
 USE_GNOME=	libgnomeprint gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mime-update
+CONFIGURE_ARGS=	--with-mime-update \
+		--mandir=${PREFIX}/man
 
 .if defined(WITH_HAMLIB)
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib

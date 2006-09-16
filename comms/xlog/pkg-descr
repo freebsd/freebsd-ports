@@ -14,4 +14,4 @@ save some fields of the log in a TAB separated file. This file can be
 imported into glabels (deskutils/glabels) using the template
 called qsllabels.glabels in the xlog /usr/local/share/xlog directory.
 
-WWW: http://pg4i.mattsnetwork.co.uk/linux/xlog.html
+WWW: http://pg4i.chronos.org.uk/linux/xlog.html

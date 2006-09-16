@@ -55,6 +55,13 @@ share/pixmaps/xlog/xlog.xpm
 %%DATADIR%%/images/xlog-printdialog.png
 %%DATADIR%%/images/xlog-workedwindow.png
 %%DATADIR%%/qsllabels.glabels
+share/locale/da/LC_MESSAGES/xlog.mo
+share/locale/es/LC_MESSAGES/xlog.mo
+share/locale/fr/LC_MESSAGES/xlog.mo
+share/locale/nl/LC_MESSAGES/xlog.mo
+share/locale/cs/LC_MESSAGES/xlog.mo
+share/locale/pl/LC_MESSAGES/xlog.mo
+share/locale/sk/LC_MESSAGES/xlog.mo
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/dxcc
 @dirrm %%DATADIR%%
@@ -68,3 +75,4 @@ share/pixmaps/xlog/xlog.xpm
 @dirrmtry share/mimelnk/text
 @dirrmtry share/mimelnk
 @dirrmtry share/mime-info
+@dirrmtry share/pixmaps
