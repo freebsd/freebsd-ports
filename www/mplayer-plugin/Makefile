@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	3.25
+PORTVERSION=	3.31
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -25,8 +25,10 @@ PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 		mplayerplug-in-qt.so mplayerplug-in-rm.so \
 		mplayerplug-in-gmp.so mplayerplug-in-wmp.xpt \
 		mplayerplug-in-qt.xpt mplayerplug-in-rm.xpt \
-		mplayerplug-in-gmp.xpt
+		mplayerplug-in-gmp.xpt mplayerplug-in-dvx.so \
+		mplayerplug-in-dvx.xpt
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-gmp
 USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DBSD" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
