@@ -5,21 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	gpredict
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	groundstation
 
-MAINTAINER=	matt@mattsnetwork.co.uk
+MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio satellite tracking and prediction
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib:install
 
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomecanvas gal
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-nls	# nls isn't supported yet
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+
+MAN1=		gpredict.1
 
 .include <bsd.port.mk>
