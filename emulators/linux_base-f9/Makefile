@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -184,6 +184,7 @@ do-build:
 		${WRKSRC}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
 		| ${XARGS} ${BRANDELF} -t Linux
+	@${BRANDELF} -t Linux ${WRKSRC}/lib/ld-2.3.6.so
 
 # Restore the status quo for usr/bin/*db4* files
 	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
