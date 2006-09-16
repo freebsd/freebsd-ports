@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-.${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module that hacks around IO::File deficiencies
 
+DEPRECATED=	project no longer exists
+EXPIRATION_DATE=	2006-11-16
+
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>
