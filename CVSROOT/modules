@@ -6366,6 +6366,7 @@ linux-js	ports/devel/linux-js
 linux-libaudiofile	ports/audio/linux-libaudiofile
 linux-libg2c	ports/lang/linux-libg2c
 linux-libglade	ports/devel/linux-libglade
+linux-libmad	ports/audio/linux-libmad
 linux-libmng	ports/graphics/linux-libmng
 linux-libogg	ports/audio/linux-libogg
 linux-libperl5.8	ports/lang/linux-libperl5.8
