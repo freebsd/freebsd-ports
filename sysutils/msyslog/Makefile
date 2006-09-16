@@ -7,7 +7,7 @@
 
 PORTNAME=	msyslog
 PORTVERSION=	1.08g
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www1.corest.com/download/msyslog/
@@ -27,7 +27,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_RC_SUBR=	msyslogd.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
