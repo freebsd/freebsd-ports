@@ -58,7 +58,9 @@ lib/%%APP_NAME%%/components/libhtml2text.so
 lib/%%APP_NAME%%/components/libhtml2xhtml.so
 lib/%%APP_NAME%%/components/libimgscaler.so
 lib/%%APP_NAME%%/components/libjsd.so
+lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libmyspell.so
+lib/%%APP_NAME%%/components/libnkgnomevfs.so
 lib/%%APP_NAME%%/components/libspellchecker.so
 lib/%%APP_NAME%%/components/libxpcomclucene.so
 lib/%%APP_NAME%%/components/libxpinstall.so
