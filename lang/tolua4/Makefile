@@ -8,6 +8,7 @@
 
 PORTNAME=	tolua
 PORTVERSION=	4.0a
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/ \
 		http://www.tecgraf.puc-rio.br/~celes/tolua/
