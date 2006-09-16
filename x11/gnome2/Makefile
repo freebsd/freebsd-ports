@@ -60,7 +60,8 @@ RUN_DEPENDS?=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applets
 		${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc:${PORTSDIR}/www/libgtkhtml \
 		evince:${PORTSDIR}/graphics/evince \
 		${X11BASE}/libexec/fast-user-switch-applet:${PORTSDIR}/x11/fast-user-switch-applet \
-		${X11BASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
+		${X11BASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
+		ekiga:${PORTSDIR}/net/ekiga
 
 NO_BUILD=	yes
 
@@ -82,11 +83,6 @@ RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 .endif
 .if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
 RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
-.endif
-.if ${.CURDIR:T}!="gnome2-lite"
-.if ${ARCH}!="sparc64" || ${OSVERSION} >= 700003
-RUN_DEPENDS+=	ekiga:${PORTSDIR}/net/ekiga
-.endif
 .endif
 .endif
 
