@@ -14285,6 +14285,7 @@ unreal		ports/irc/unreal
 unroff		ports/textproc/unroff
 unrtf		ports/textproc/unrtf
 unshield	ports/archivers/unshield
+untahris	ports/games/untahris
 untar		ports/archivers/untar
 unzip		ports/archivers/unzip
 unzoo		ports/archivers/unzoo
