@@ -124,6 +124,7 @@
     SUBDIR += libxine
     SUBDIR += linux-divx4linux
     SUBDIR += linux-divx4linux4
+    SUBDIR += linux-libtheora
     SUBDIR += linux-realplayer
     SUBDIR += linux-xmovie
     SUBDIR += lsdvd
