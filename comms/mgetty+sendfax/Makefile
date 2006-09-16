@@ -7,15 +7,13 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.35
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
-
-BROKEN=		Incomplete pkg-plist
 
 USE_PERL5=	yes
 
