@@ -2,6 +2,8 @@
 etc/mplayerplug-in.conf.dist
 @unexec if cmp -s %D/etc/mplayerplug-in.types %D/etc/mplayerplug-in.types.dist; then rm -f %D/etc/mplayerplug-in.types; fi
 etc/mplayerplug-in.types.dist
+lib/browser_plugins/mplayerplug-in-dvx.so
+lib/browser_plugins/mplayerplug-in-dvx.xpt
 lib/browser_plugins/mplayerplug-in-gmp.so
 lib/browser_plugins/mplayerplug-in-gmp.xpt
 lib/browser_plugins/mplayerplug-in-qt.so
