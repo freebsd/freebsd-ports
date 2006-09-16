@@ -1595,8 +1595,8 @@ share/texmf/fonts/enc/CJK/argbsung/t1argbsung32.enc
 share/texmf/fonts/enc/CJK/argbsung/t1argbsung33.enc
 share/texmf/fonts/enc/CJK/argbsung/t1argbsung34.enc
 share/texmf/fonts/enc/CJK/argbsung/t1argbsung35.enc
-share/texmf/fonts/map/CJK/CJK-type1.map
-share/texmf/fonts/map/CJK/CJK-pdftex.map
+share/texmf/fonts/map/dvips/CJK/CJK-type1.map
+share/texmf/fonts/map/dvips/CJK/CJK-pdftex.map
 share/texmf/hbf2gf/README
 share/texmf/hbf2gf/b5ka12.cfg
 share/texmf/hbf2gf/b5kr12.cfg

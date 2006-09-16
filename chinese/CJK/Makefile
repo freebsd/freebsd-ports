@@ -7,7 +7,7 @@
 
 PORTNAME=	CJK
 PORTVERSION=	4.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	http://cjk.ffii.org/ \
 		ftp://freebsd.csie.ntu.edu.tw/users/rafan/
@@ -36,7 +36,7 @@ SUB_LIST=	TEXMFMAIN=${LOCALBASE}/share/texmf
 INSTALL_DIR=	${INSTALL} -d -m 0755 -o root -g wheel
 
 CJKDIR=		${PREFIX}/share/texmf/tex/latex/CJK
-CJKMAPDIR=	${PREFIX}/share/texmf/fonts/map/CJK
+CJKMAPDIR=	${PREFIX}/share/texmf/fonts/map/dvips/CJK
 WRKFONTDIR=	${WRKDIR}/fonts
 
 # Options: WITH_*/WITHOUT_*
