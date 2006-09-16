@@ -55,3 +55,17 @@
  struct hostent *gethostbyname_r(const char *name, struct hostent *result,
  								char *buffer, int buflen, int *h_errnop);
  #endif
+
+--- sal/osl/unx/system.h.orig	Fri Aug 15 20:38:50 2003
++++ sal/osl/unx/system.h	Sun Sep 10 13:32:43 2006
+@@ -576,8 +576,10 @@
+ struct tm *localtime_r(const time_t *timep, struct tm *buffer);
+ struct tm *gmtime_r(const time_t *timep, struct tm *buffer);
+ #endif /* !defined FREEBSD || (__FreeBSD_version < 500112) */
++#if !defined(FREEBSD) || (__FreeBSD_version < 601103)
+ struct hostent *gethostbyname_r(const char *name, struct hostent *result,
+ 								char *buffer, int buflen, int *h_errnop);
++#endif /* !defined(FREEBSD) || (__FreeBSD_version < 601103) */
+ #endif
+ 
+ #endif /* __OSL_SYSTEM_H__ */
