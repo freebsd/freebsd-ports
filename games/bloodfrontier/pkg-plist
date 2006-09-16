@@ -16,6 +16,29 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/editing2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/editing3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/editing4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/ Coop Edit Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/ Editing guide.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/ Multiplayer Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/ Performance Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/Beginners Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/Editing Methods.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/Test.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/files/wt101i_1x4x5.jpg
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/home.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/mapcfg.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/sauerbraten md3 howto.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/sauerbraten_wiki_guidelines.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scriptcommands.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scriptdemo_keyboardswitch.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scriptdemo_personamenu.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scriptflowcontrol.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scripting.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scripting101.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scriptmenus.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/scriptsyntax.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/space.menu.html
+%%PORTDOCS%%%%DOCSDIR%%/static_wiki/static/style.css
+%%PORTDOCS%%%%DOCSDIR%%/style.css
 %%DATADIR%%/data/blip_blue.png
 %%DATADIR%%/data/blip_grey.png
 %%DATADIR%%/data/blip_red.png
@@ -86,12 +109,17 @@
 %%DATADIR%%/packages/base/face-capture.cfg
 %%DATADIR%%/packages/base/face-capture.ogz
 %%DATADIR%%/packages/base/fanatic01.ogz
+%%DATADIR%%/packages/base/fanatic_quake.cfg
+%%DATADIR%%/packages/base/fanatic_quake.ogz
+%%DATADIR%%/packages/base/fanatic_quake.txt
 %%DATADIR%%/packages/base/fb_capture.cfg
 %%DATADIR%%/packages/base/fb_capture.ogz
 %%DATADIR%%/packages/base/firstevermap.ogz
 %%DATADIR%%/packages/base/fortress.ogz
 %%DATADIR%%/packages/base/frozen.cfg
 %%DATADIR%%/packages/base/frozen.ogz
+%%DATADIR%%/packages/base/frozenbase.cfg
+%%DATADIR%%/packages/base/frozenbase.ogz
 %%DATADIR%%/packages/base/id.cfg
 %%DATADIR%%/packages/base/id.ogz
 %%DATADIR%%/packages/base/jungle.cfg
@@ -164,6 +192,8 @@
 %%DATADIR%%/packages/base/rpg_01.cfg
 %%DATADIR%%/packages/base/rpg_01.ogz
 %%DATADIR%%/packages/base/rpgtest.ogz
+%%DATADIR%%/packages/base/ruby.cfg
+%%DATADIR%%/packages/base/ruby.ogz
 %%DATADIR%%/packages/base/sauerbraten.ogz
 %%DATADIR%%/packages/base/secondevermap.ogz
 %%DATADIR%%/packages/base/serpentine.cfg
@@ -442,7 +472,7 @@
 %%DATADIR%%/packages/g_pack/g-bricks30.jpg
 %%DATADIR%%/packages/g_pack/g-bricks33.jpg
 %%DATADIR%%/packages/g_pack/g-crate01.jpg
-%%DATADIR%%/packages/g_pack/g-façade01.jpg
+%%DATADIR%%/packages/g_pack/g-facade01.jpg
 %%DATADIR%%/packages/g_pack/g-floor01.jpg
 %%DATADIR%%/packages/g_pack/g-floor04.jpg
 %%DATADIR%%/packages/g_pack/g-floor10.jpg
@@ -795,6 +825,10 @@
 %%DATADIR%%/packages/kurt/ceil3.jpg
 %%DATADIR%%/packages/kurt/ceil4.jpg
 %%DATADIR%%/packages/kurt/ceil5.jpg
+%%DATADIR%%/packages/kurt/grass01.jpg
+%%DATADIR%%/packages/kurt/grass01_path1.png
+%%DATADIR%%/packages/kurt/grass01_path2.png
+%%DATADIR%%/packages/kurt/pathdirt.jpg
 %%DATADIR%%/packages/kurt/rock01.jpg
 %%DATADIR%%/packages/kurt/snowgrass01.jpg
 %%DATADIR%%/packages/lego/black.png
@@ -1046,13 +1080,21 @@
 %%DATADIR%%/packages/lunaran/wires1_s.jpg
 %%DATADIR%%/packages/lunaran/ziggy1_d.jpg
 %%DATADIR%%/packages/lunaran/ziggy1_local.jpg
+%%DATADIR%%/packages/models/boost/license.txt
+%%DATADIR%%/packages/models/boost/masks.jpg
+%%DATADIR%%/packages/models/boost/md3.cfg
 %%DATADIR%%/packages/models/boost/skin.jpg
-%%DATADIR%%/packages/models/boost/tris.md2
+%%DATADIR%%/packages/models/boost/tris.md3
+%%DATADIR%%/packages/models/bullets/license.txt
+%%DATADIR%%/packages/models/bullets/masks.jpg
+%%DATADIR%%/packages/models/bullets/md3.cfg
 %%DATADIR%%/packages/models/bullets/skin.jpg
-%%DATADIR%%/packages/models/bullets/tris.md2
+%%DATADIR%%/packages/models/bullets/tris.md3
 %%DATADIR%%/packages/models/cartridges/license.txt
+%%DATADIR%%/packages/models/cartridges/masks.jpg
+%%DATADIR%%/packages/models/cartridges/md3.cfg
 %%DATADIR%%/packages/models/cartridges/skin.jpg
-%%DATADIR%%/packages/models/cartridges/tris.md2
+%%DATADIR%%/packages/models/cartridges/tris.md3
 %%DATADIR%%/packages/models/carrot/skin.jpg
 %%DATADIR%%/packages/models/carrot/tris.md2
 %%DATADIR%%/packages/models/checkpoint/md2.cfg
@@ -1169,19 +1211,28 @@
 %%DATADIR%%/packages/models/flags/red/skin.jpg
 %%DATADIR%%/packages/models/flags/tris.md2
 %%DATADIR%%/packages/models/g_armour/armor.txt
+%%DATADIR%%/packages/models/g_armour/masks.jpg
+%%DATADIR%%/packages/models/g_armour/md3.cfg
 %%DATADIR%%/packages/models/g_armour/skin.jpg
-%%DATADIR%%/packages/models/g_armour/tris.md2
+%%DATADIR%%/packages/models/g_armour/tris.md3
 %%DATADIR%%/packages/models/gibc/gpl_gibs.txt
+%%DATADIR%%/packages/models/gibc/md2.cfg
 %%DATADIR%%/packages/models/gibc/skin.jpg
 %%DATADIR%%/packages/models/gibc/tris.md2
 %%DATADIR%%/packages/models/gibh/gpl_gibs.txt
+%%DATADIR%%/packages/models/gibh/md2.cfg
 %%DATADIR%%/packages/models/gibh/skin.jpg
 %%DATADIR%%/packages/models/gibh/tris.md2
 %%DATADIR%%/packages/models/grenades/license.txt
+%%DATADIR%%/packages/models/grenades/masks.jpg
+%%DATADIR%%/packages/models/grenades/md3.cfg
 %%DATADIR%%/packages/models/grenades/skin.jpg
-%%DATADIR%%/packages/models/grenades/tris.md2
+%%DATADIR%%/packages/models/grenades/tris.md3
+%%DATADIR%%/packages/models/health/license.txt
+%%DATADIR%%/packages/models/health/masks.jpg
+%%DATADIR%%/packages/models/health/md3.cfg
 %%DATADIR%%/packages/models/health/skin.jpg
-%%DATADIR%%/packages/models/health/tris.md2
+%%DATADIR%%/packages/models/health/tris.md3
 %%DATADIR%%/packages/models/hudguns/Frames.txt
 %%DATADIR%%/packages/models/hudguns/Readme.txt
 %%DATADIR%%/packages/models/hudguns/chaing/md2.qc
@@ -1225,27 +1276,45 @@
 %%DATADIR%%/packages/models/monster/bauul/md2.cfg
 %%DATADIR%%/packages/models/monster/bauul/skin.jpg
 %%DATADIR%%/packages/models/monster/bauul/tris.md2
+%%DATADIR%%/packages/models/monster/bauul/vwep/md2.cfg
+%%DATADIR%%/packages/models/monster/bauul/vwep/skin.jpg
+%%DATADIR%%/packages/models/monster/bauul/vwep/tris.md2
 %%DATADIR%%/packages/models/monster/goblin/md2.cfg
 %%DATADIR%%/packages/models/monster/goblin/readme.txt
 %%DATADIR%%/packages/models/monster/goblin/skin.jpg
 %%DATADIR%%/packages/models/monster/goblin/tris.md2
+%%DATADIR%%/packages/models/monster/goblin/vwep/md2.cfg
+%%DATADIR%%/packages/models/monster/goblin/vwep/skin.jpg
+%%DATADIR%%/packages/models/monster/goblin/vwep/tris.md2
 %%DATADIR%%/packages/models/monster/hellpig/md2.cfg
 %%DATADIR%%/packages/models/monster/hellpig/readme.txt
 %%DATADIR%%/packages/models/monster/hellpig/skin.jpg
 %%DATADIR%%/packages/models/monster/hellpig/tris.md2
+%%DATADIR%%/packages/models/monster/knight/evil/skin.jpg
 %%DATADIR%%/packages/models/monster/knight/md2.cfg
 %%DATADIR%%/packages/models/monster/knight/readme.txt
 %%DATADIR%%/packages/models/monster/knight/skin.jpg
 %%DATADIR%%/packages/models/monster/knight/tris.md2
+%%DATADIR%%/packages/models/monster/knight/vwep/md2.cfg
+%%DATADIR%%/packages/models/monster/knight/vwep/skin.jpg
+%%DATADIR%%/packages/models/monster/knight/vwep/tris.md2
 %%DATADIR%%/packages/models/monster/md2.cfg
 %%DATADIR%%/packages/models/monster/ogro/Ogro.txt
+%%DATADIR%%/packages/models/monster/ogro/blue/skin.jpg
 %%DATADIR%%/packages/models/monster/ogro/md2.cfg
+%%DATADIR%%/packages/models/monster/ogro/red/skin.jpg
 %%DATADIR%%/packages/models/monster/ogro/skin.jpg
 %%DATADIR%%/packages/models/monster/ogro/tris.md2
+%%DATADIR%%/packages/models/monster/ogro/vwep/md2.cfg
+%%DATADIR%%/packages/models/monster/ogro/vwep/skin.jpg
+%%DATADIR%%/packages/models/monster/ogro/vwep/tris.md2
 %%DATADIR%%/packages/models/monster/rat/Ratamahatta.txt
 %%DATADIR%%/packages/models/monster/rat/md2.cfg
 %%DATADIR%%/packages/models/monster/rat/skin.jpg
 %%DATADIR%%/packages/models/monster/rat/tris.md2
+%%DATADIR%%/packages/models/monster/rat/vwep/md2.cfg
+%%DATADIR%%/packages/models/monster/rat/vwep/skin.jpg
+%%DATADIR%%/packages/models/monster/rat/vwep/tris.md2
 %%DATADIR%%/packages/models/monster/rhino/md2.cfg
 %%DATADIR%%/packages/models/monster/rhino/rhino.txt
 %%DATADIR%%/packages/models/monster/rhino/skin.jpg
@@ -1254,6 +1323,9 @@
 %%DATADIR%%/packages/models/monster/slith/skin.jpg
 %%DATADIR%%/packages/models/monster/slith/slithMe.txt
 %%DATADIR%%/packages/models/monster/slith/tris.md2
+%%DATADIR%%/packages/models/monster/slith/vwep/md2.cfg
+%%DATADIR%%/packages/models/monster/slith/vwep/skin.jpg
+%%DATADIR%%/packages/models/monster/slith/vwep/tris.md2
 %%DATADIR%%/packages/models/objects/bed01/md2.cfg
 %%DATADIR%%/packages/models/objects/bed01/skin.jpg
 %%DATADIR%%/packages/models/objects/bed01/tris.md2
@@ -1303,18 +1375,42 @@
 %%DATADIR%%/packages/models/objects/window02/window02_2/tris.md2
 %%DATADIR%%/packages/models/objects/woodchop/skin.jpg
 %%DATADIR%%/packages/models/objects/woodchop/tris.md2
+%%DATADIR%%/packages/models/projectiles/grenade/license.txt
+%%DATADIR%%/packages/models/projectiles/grenade/masks.jpg
+%%DATADIR%%/packages/models/projectiles/grenade/md3.cfg
+%%DATADIR%%/packages/models/projectiles/grenade/skin.jpg
+%%DATADIR%%/packages/models/projectiles/grenade/tris.md3
+%%DATADIR%%/packages/models/projectiles/rocket/license.txt
+%%DATADIR%%/packages/models/projectiles/rocket/masks.jpg
+%%DATADIR%%/packages/models/projectiles/rocket/md3.cfg
+%%DATADIR%%/packages/models/projectiles/rocket/skin.jpg
+%%DATADIR%%/packages/models/projectiles/rocket/tris.md3
 %%DATADIR%%/packages/models/quad/invulner.txt
+%%DATADIR%%/packages/models/quad/masks.jpg
+%%DATADIR%%/packages/models/quad/md3.cfg
+%%DATADIR%%/packages/models/quad/readme.txt
 %%DATADIR%%/packages/models/quad/skin.jpg
-%%DATADIR%%/packages/models/quad/tris.md2
+%%DATADIR%%/packages/models/quad/tris.md3
+%%DATADIR%%/packages/models/rockets/license.txt
+%%DATADIR%%/packages/models/rockets/masks.jpg
+%%DATADIR%%/packages/models/rockets/md3.cfg
 %%DATADIR%%/packages/models/rockets/skin.jpg
-%%DATADIR%%/packages/models/rockets/tris.md2
+%%DATADIR%%/packages/models/rockets/tris.md3
 %%DATADIR%%/packages/models/rpg/characters/dragon/lower.md3
 %%DATADIR%%/packages/models/rpg/characters/dragon/md3.cfg
 %%DATADIR%%/packages/models/rpg/characters/dragon/skin.jpg
+%%DATADIR%%/packages/models/rpg/characters/grizzly/bear.md3
+%%DATADIR%%/packages/models/rpg/characters/grizzly/bear.txt
+%%DATADIR%%/packages/models/rpg/characters/grizzly/mask.jpg
+%%DATADIR%%/packages/models/rpg/characters/grizzly/md3.cfg
+%%DATADIR%%/packages/models/rpg/characters/grizzly/skin.jpg
 %%DATADIR%%/packages/models/rpg/characters/horse/horse.md3
 %%DATADIR%%/packages/models/rpg/characters/horse/horse.txt
+%%DATADIR%%/packages/models/rpg/characters/horse/masks.jpg
 %%DATADIR%%/packages/models/rpg/characters/horse/md3.cfg
 %%DATADIR%%/packages/models/rpg/characters/horse/skin.jpg
+%%DATADIR%%/packages/models/rpg/characters/horse/skin_2.jpg
+%%DATADIR%%/packages/models/rpg/characters/horse/skin_3.jpg
 %%DATADIR%%/packages/models/rpg/characters/mman/head.md3
 %%DATADIR%%/packages/models/rpg/characters/mman/lower.md3
 %%DATADIR%%/packages/models/rpg/characters/mman/md3.cfg
@@ -1337,10 +1433,16 @@
 %%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin2.jpg
 %%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin3.jpg
 %%DATADIR%%/packages/models/rpg/characters/wolf/wolfskin4.jpg
+%%DATADIR%%/packages/models/rrounds/license.txt
+%%DATADIR%%/packages/models/rrounds/masks.jpg
+%%DATADIR%%/packages/models/rrounds/md3.cfg
 %%DATADIR%%/packages/models/rrounds/skin.jpg
-%%DATADIR%%/packages/models/rrounds/tris.md2
+%%DATADIR%%/packages/models/rrounds/tris.md3
+%%DATADIR%%/packages/models/shells/license.txt
+%%DATADIR%%/packages/models/shells/masks.jpg
+%%DATADIR%%/packages/models/shells/md3.cfg
 %%DATADIR%%/packages/models/shells/skin.jpg
-%%DATADIR%%/packages/models/shells/tris.md2
+%%DATADIR%%/packages/models/shells/tris.md3
 %%DATADIR%%/packages/models/switch1/kurt_license.txt
 %%DATADIR%%/packages/models/switch1/md2.cfg
 %%DATADIR%%/packages/models/switch1/skin.jpg
@@ -1348,8 +1450,10 @@
 %%DATADIR%%/packages/models/switch2/md2.cfg
 %%DATADIR%%/packages/models/switch2/skin.jpg
 %%DATADIR%%/packages/models/switch2/tris.md2
+%%DATADIR%%/packages/models/teleporter/masks.jpg
+%%DATADIR%%/packages/models/teleporter/md3.cfg
 %%DATADIR%%/packages/models/teleporter/skin.jpg
-%%DATADIR%%/packages/models/teleporter/tris.md2
+%%DATADIR%%/packages/models/teleporter/tris.md3
 %%DATADIR%%/packages/models/tentus/anvil/skin.jpg
 %%DATADIR%%/packages/models/tentus/anvil/tris.md2
 %%DATADIR%%/packages/models/tentus/barrel/skin.jpg
@@ -1434,8 +1538,10 @@
 %%DATADIR%%/packages/models/vegetation/tree07/skin.png
 %%DATADIR%%/packages/models/vegetation/tree07/tris.md2
 %%DATADIR%%/packages/models/y_armour/armor.txt
+%%DATADIR%%/packages/models/y_armour/masks.jpg
+%%DATADIR%%/packages/models/y_armour/md3.cfg
 %%DATADIR%%/packages/models/y_armour/skin.jpg
-%%DATADIR%%/packages/models/y_armour/tris.md2
+%%DATADIR%%/packages/models/y_armour/tris.md3
 %%DATADIR%%/packages/payne/Box12b.jpg
 %%DATADIR%%/packages/payne/Box12b_depth.jpg
 %%DATADIR%%/packages/payne/Box12b_normal.jpg
@@ -1527,6 +1633,10 @@
 %%DATADIR%%/packages/rorschach/rorschach_readme.txt
 %%DATADIR%%/packages/schwenz/dt_tile_check.01.jpg
 %%DATADIR%%/packages/schwenz/readme.txt
+%%DATADIR%%/packages/sds/corkboard.jpg
+%%DATADIR%%/packages/sds/infirmarysign.jpg
+%%DATADIR%%/packages/sds/station3asign.jpg
+%%DATADIR%%/packages/sds/stationivucsign.jpg
 %%DATADIR%%/packages/skyboxes/black_bk.jpg
 %%DATADIR%%/packages/skyboxes/black_dn.jpg
 %%DATADIR%%/packages/skyboxes/black_ft.jpg
@@ -1774,6 +1884,9 @@
 %%DATADIR%%/packages/textures/tech1soc_wall01b_mod.jpg
 %%DATADIR%%/packages/textures/tech1soc_wall01b_mod_depth.jpg
 %%DATADIR%%/packages/textures/tech1soc_wall01b_mod_normal.jpg
+%%DATADIR%%/packages/textures/waterdudv.jpg
+%%DATADIR%%/packages/textures/waterfall.jpg
+%%DATADIR%%/packages/textures/watern.jpg
 %%DATADIR%%/packages/than_ind/cretewall03.jpg
 %%DATADIR%%/packages/than_ind/floor02.jpg
 %%DATADIR%%/packages/than_ind/floor05.jpg
@@ -1786,9 +1899,13 @@
 %%DATADIR%%/packages/than_ind/trlight06.jpg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/static_wiki/files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/static_wiki/static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/static_wiki
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/packages/dg
 @dirrm %%DATADIR%%/packages/jf1
+@dirrm %%DATADIR%%/packages/sds
 @dirrm %%DATADIR%%/packages/cloward
 @dirrm %%DATADIR%%/packages/aard
 @dirrm %%DATADIR%%/packages/base/sp_maps
@@ -1857,6 +1974,7 @@
 @dirrm %%DATADIR%%/packages/models/rpg/characters/horse
 @dirrm %%DATADIR%%/packages/models/rpg/characters/dragon
 @dirrm %%DATADIR%%/packages/models/rpg/characters/npcman
+@dirrm %%DATADIR%%/packages/models/rpg/characters/grizzly
 @dirrm %%DATADIR%%/packages/models/rpg/characters
 @dirrm %%DATADIR%%/packages/models/rpg
 @dirrm %%DATADIR%%/packages/models/gibc
@@ -1884,6 +2002,9 @@
 @dirrm %%DATADIR%%/packages/models/grenades
 @dirrm %%DATADIR%%/packages/models/rockets
 @dirrm %%DATADIR%%/packages/models/y_armour
+@dirrm %%DATADIR%%/packages/models/projectiles/grenade
+@dirrm %%DATADIR%%/packages/models/projectiles/rocket
+@dirrm %%DATADIR%%/packages/models/projectiles
 @dirrm %%DATADIR%%/packages/models/rrounds
 @dirrm %%DATADIR%%/packages/models/vegetation/bush01
 @dirrm %%DATADIR%%/packages/models/vegetation/tree00
@@ -1899,12 +2020,21 @@
 @dirrm %%DATADIR%%/packages/models/carrot
 @dirrm %%DATADIR%%/packages/models/switch1
 @dirrm %%DATADIR%%/packages/models/switch2
+@dirrm %%DATADIR%%/packages/models/monster/rat/vwep
 @dirrm %%DATADIR%%/packages/models/monster/rat
+@dirrm %%DATADIR%%/packages/models/monster/ogro/red
+@dirrm %%DATADIR%%/packages/models/monster/ogro/blue
+@dirrm %%DATADIR%%/packages/models/monster/ogro/vwep
 @dirrm %%DATADIR%%/packages/models/monster/ogro
+@dirrm %%DATADIR%%/packages/models/monster/bauul/vwep
 @dirrm %%DATADIR%%/packages/models/monster/bauul
 @dirrm %%DATADIR%%/packages/models/monster/rhino
+@dirrm %%DATADIR%%/packages/models/monster/slith/vwep
 @dirrm %%DATADIR%%/packages/models/monster/slith
+@dirrm %%DATADIR%%/packages/models/monster/goblin/vwep
 @dirrm %%DATADIR%%/packages/models/monster/goblin
+@dirrm %%DATADIR%%/packages/models/monster/knight/evil
+@dirrm %%DATADIR%%/packages/models/monster/knight/vwep
 @dirrm %%DATADIR%%/packages/models/monster/knight
 @dirrm %%DATADIR%%/packages/models/monster/hellpig
 @dirrm %%DATADIR%%/packages/models/monster

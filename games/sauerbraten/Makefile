@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20060722
+PORTVERSION=	20060912
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_2006_07_22_normalmap_edition_linux
+DISTNAME=	${PORTNAME}_2006_09_12_water_edition_linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
 
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ACLOCAL=true AUTOCONF=true AUTOMAKE=true
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -35,6 +35,10 @@ SAUDATDIR=	packages data
 
 .if !defined(WITH_CLIENT) && !defined(WITH_DEDICATED)
 IGNORE=		needs at least one executable (CLIENT or DEDICATED)
+.endif
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
 .endif
 
 .if defined(WITH_CLIENT)
