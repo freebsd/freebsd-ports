@@ -9,7 +9,11 @@
 #
 # Add the following lines to /etc/rc.conf to enable msyslogd:
 #
-#msyslogd_enable="YES"
+# msyslogd_enable="YES"
+#
+# Yes, here you can pass arguments to daemon
+#
+# msyslogd_flags=""
 #
 
 . %%RC_SUBR%%
@@ -43,5 +47,6 @@ stop_postcmd()
 # read settings, set default values
 load_rc_config $name
 : ${msyslogd_enable="NO"}
+: ${msyslogd_flags=""}
 
 run_rc_command "$1"
