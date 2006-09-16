@@ -330,6 +330,7 @@
     SUBDIR += linux-esound
     SUBDIR += linux-freealut
     SUBDIR += linux-libaudiofile
+    SUBDIR += linux-libmad
     SUBDIR += linux-libogg
     SUBDIR += linux-libvorbis
     SUBDIR += linux-mbrola
