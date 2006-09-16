@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to make Archie queries via Prospero requests
 
+DEPRECATED=	project no longer exists
+EXPIRATION_DATE=	2006-11-16
+
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes

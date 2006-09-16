@@ -18,6 +18,9 @@ COMMENT=	Modules for perl5, for use in writing CGI scripts
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
+DEPRECATED=	project no longer exists
+EXPIRATION_DATE=	2006-11-16
+
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Base.3 CGI::BasePlus.3 CGI::Carp.3 CGI::Form.3 \

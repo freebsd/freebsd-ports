@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module implementing an optimized, accurate neural network mesh
 
+DEPRECATED=	project no longer exists
+EXPIRATION_DATE=	2006-11-16
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 PERL_CONFIGURE=	yes
