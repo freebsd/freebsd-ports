@@ -714,6 +714,7 @@
     SUBDIR += tyrquake
     SUBDIR += uhexen
     SUBDIR += umark
+    SUBDIR += untahris
     SUBDIR += uox3
     SUBDIR += uqm
     SUBDIR += urban
