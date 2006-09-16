@@ -8,17 +8,19 @@
 PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
 PORTREVISION=	7
-CATEGORIES+=	editors
-MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/  \
+CATEGORIES+=	editors java
+MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
+		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/  \
 		${MASTER_SITE_LOCAL:S/$/:moz/} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
-		${MASTER_SITE_RINGSERVER:S/$/:help/} \
-		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent-1.0/:help \
-		${MASTER_SITE_LOCAL:S/$/:ru/}
+		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:help \
+		http://openoffice.lunarshells.com/sources/helpcontent/:help \
+		${MASTER_SITE_LOCAL:S/$/:ru/} \
+		http://openoffice.lunarshells.com/sources/:ru \
+		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:ru
 MASTER_SITE_SUBDIR+= maho/openoffice.org/:moz,ru \
 		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
-		misc/openoffice/contrib/helpcontent-1.0/:help
 DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz patch-translation-ru-1.0.3.bz2:ru
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
@@ -112,7 +114,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-DISPLAYHACK=localhost:1001
+MAKE_ENV+=		DISPLAY="localhost:1001"
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" \
@@ -184,7 +186,7 @@ do-build:
 .endif
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" DISPLAY=${DISPLAYHACK} ${TCSH} -c 'source FreeBSDEnv.Set ; ${BUILD}'
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c 'source FreeBSDEnv.Set ; ${BUILD}'
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 
@@ -195,7 +197,7 @@ do-install:
 .endif
 	@${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	@${SETENV} "LC_ALL=C" "LANG=C" DISPLAY=${DISPLAYHACK} ${TCSH} -c "cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal ; ./install --prefix=${PREFIX}"
+	@${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal ; ./install --prefix=${PREFIX}"
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 #XXX temporary hack (contains space in dir name)

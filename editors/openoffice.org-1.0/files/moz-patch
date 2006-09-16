@@ -1,7 +1,14 @@
-o disable freetype2 support since build broken and
-  this functionality is not used at all.
-o reduce dependency (gtk is no longer needed)
-o GNUCOPY is not supported by 1.0 series
+#iZ 28398
+#iZ 11424
+
+http://qa.openoffice.org/issues/show_bug.cgi?id=28398
+http://qa.openoffice.org/issues/show_bug.cgi?id=11424
+
+disable freetype2 support since build broken and
+this functionality is not used at all.
+
+reduce dependency (gtk is no longer needed)
+GNUCOPY is not supported by 1.0 series
 
 --- moz/extractfiles.mk.org	Sat Oct 30 22:01:49 2004
 +++ moz/extractfiles.mk	Sat Oct 30 22:00:21 2004
@@ -19,7 +26,7 @@ o GNUCOPY is not supported by 1.0 series
 
 --- moz/mozilla-source-1.0.patch.org	Tue Feb 10 19:44:34 2004
 +++ moz/mozilla-source-1.0.patch	Sat Mar 19 12:51:35 2005
-@@ -4471,14 +4471,16 @@
+@@ -4471,14 +4471,17 @@
       return NS_OK;
   }
  
@@ -27,7 +34,7 @@ o GNUCOPY is not supported by 1.0 series
 +--- misc/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
  +++ misc/build/mozilla/.mozconfig	Mon Jul 28 15:07:20 2003
 -@@ -0,0 +1,8 @@
-+@@ -0,0 +1,10 @@
++@@ -0,0 +1,11 @@
  +ac_add_options --disable-tests
  +ac_add_options --disable-xprint
  +ac_add_options --without-system-zlib
@@ -35,6 +42,79 @@ o GNUCOPY is not supported by 1.0 series
  +ac_add_options --disable-debug
 ++ac_add_options --disable-freetype2
 ++ac_add_options --enable-default-toolkit=xlib
+++ac_add_options --disable-pedantic
  +ac_add_options --enable-optimize
  +ac_add_options --enable-crypto
  +ac_add_options --enable-strip
+@@ -4497,3 +4500,19 @@
+  endif
+  
+  # Windows equivalents
++
++--- misc/build/mozilla/xpcom/typelib/xpidl/xpidl.h	Wed Apr 10 12:38:31 2002
+++++ misc/build/mozilla/xpcom/typelib/xpidl/xpidl.h	Sat Oct 29 12:34:19 2005
++@@ -71,10 +71,10 @@
++  * parens, e.g. XPIDL_WARNING((foo, bar, "sil"))
++  *
++  * Probably best removed when we leave 6.5.  */
++-#define XPIDL_WARNING(x) IDL_tree_warning##x
+++#define XPIDL_WARNING(x) IDL_tree_warning x
++ #else
++ extern void xpidl_tree_warning(IDL_tree p, int level, const char *fmt, ...);
++-#define XPIDL_WARNING(x) xpidl_tree_warning##x
+++#define XPIDL_WARNING(x) xpidl_tree_warning x
++ #endif
++ 
++ /*
+--- moz/mozilla-source-1.0.patch~	Sun Sep 10 09:28:29 2006
++++ moz/mozilla-source-1.0.patch	Sun Sep 10 12:01:05 2006
+@@ -4516,3 +4516,49 @@
+  #endif
+  
+  /*
++*** misc/mozilla/configure	Tue May 28 04:29:00 2002
++--- misc/build/mozilla/configure	Sun Sep 10 11:56:33 2006
++***************
++*** 6589,6594 ****
++--- 6589,6596 ----
++  case $target in
++  *-hpux11.*)
++  	;;
+++ *-freebsd*)
+++ 	;;
++  *)
++  	echo $ac_n "checking for gethostbyname_r in -lc_r""... $ac_c" 1>&6
++  echo "configure:6595: checking for gethostbyname_r in -lc_r" >&5
++*** misc/mozilla/configure.in	Tue May 28 04:29:12 2002
++--- misc/build/mozilla/configure.in	Sun Sep 10 11:56:18 2006
++***************
++*** 1606,1611 ****
++--- 1606,1613 ----
++  case $target in
++  *-hpux11.*)
++  	;;
+++ *-freebsd*)
+++ 	;;
++  *)
++  	AC_CHECK_LIB(c_r, gethostbyname_r)
++  	;;
++*** misc/mozilla/nsprpub/pr/src/misc/prnetdb.c	Wed Apr 10 12:17:35 2002
++--- misc/build/mozilla/nsprpub/pr/src/misc/prnetdb.c	Sun Sep 10 11:55:27 2006
++***************
++*** 105,111 ****
++  #define _PR_HAVE_GETPROTO_R_INT
++  #endif
++  
++! #if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2)
++  #define _PR_HAVE_GETPROTO_R
++  #define _PR_HAVE_5_ARG_GETPROTO_R
++  #endif
++--- 105,112 ----
++  #define _PR_HAVE_GETPROTO_R_INT
++  #endif
++  
++! #if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2) ||  \
++!     (defined(__FreeBSD__) && __FreeBSD_version > 601103)
++  #define _PR_HAVE_GETPROTO_R
++  #define _PR_HAVE_5_ARG_GETPROTO_R
++  #endif
