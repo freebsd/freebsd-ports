@@ -25,8 +25,8 @@ FIRMWARES?=	${RELNAME}-${PORTVERSION}-i.fw:${DRIVERNAME}-i.fw \
 		${RELNAME}-${PORTVERSION}-p.fw:${DRIVERNAME}-p.fw \
 		${RELNAME}-${PORTVERSION}.fw:${DRIVERNAME}.fw
 
-OSVERSION!=     /sbin/sysctl -n kern.osreldate
-
+.include <bsd.port.pre.mk>
+ 
 # Dummy OSVERSION for ipw.
 MIN7OSVERSION?=	999999
 
@@ -66,8 +66,6 @@ MANCOMPRESSED=	yes
 .if !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
 .endif
-
-.include <bsd.port.pre.mk>
 
 # That's a bit arbitrary since I have no idea if ${DRIVERNAME}(4) can be
 # compiled on FreeBSD previous to 5.3-RELEASE. This is just too old, people
