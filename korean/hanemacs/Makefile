@@ -28,6 +28,12 @@ CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 601104
+BROKEN=		Incorrect pkg-plist on FreeBSD >= 6.x
+.endif
+
 pre-build:
 	@cd ${WRKSRC}; \
 	for file in \
@@ -50,4 +56,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/emacs.sh ${PREFIX}/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
