@@ -20,13 +20,8 @@ COMMENT=	A boat racing game in the spirit of Elasto Mania or X-Moto
 USE_GMAKE=	yes
 USE_SDL=	mixer image net sdl
 USE_GL=		yes
+USE_GCC=	3.4+
 
 MAKE_ENV+=	CXX="${CXX}" DATADIR="${DATADIR}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
