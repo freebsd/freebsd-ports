@@ -46,7 +46,22 @@ share/gnome/help/gossip/C/figures/gossip_roster.png
 share/gnome/help/gossip/C/figures/gossip_status_message.png
 share/gnome/help/gossip/C/gossip.xml
 share/gnome/help/gossip/C/legal.xml
+share/gnome/help/gossip/sv/figures/gossip-available.png
+share/gnome/help/gossip/sv/figures/gossip-away.png
+share/gnome/help/gossip/sv/figures/gossip-busy.png
+share/gnome/help/gossip/sv/figures/gossip-extended-away.png
+share/gnome/help/gossip/sv/figures/gossip-group-message.png
+share/gnome/help/gossip/sv/figures/gossip-message.png
+share/gnome/help/gossip/sv/figures/gossip-offline.png
+share/gnome/help/gossip/sv/figures/gossip-typing.png
+share/gnome/help/gossip/sv/figures/gossip_first_start_window.png
+share/gnome/help/gossip/sv/figures/gossip_new_chat_room.png
+share/gnome/help/gossip/sv/figures/gossip_personal_details.png
+share/gnome/help/gossip/sv/figures/gossip_roster.png
+share/gnome/help/gossip/sv/figures/gossip_status_message.png
+share/gnome/help/gossip/sv/gossip.xml
 share/gnome/omf/gossip/gossip-C.omf
+share/gnome/omf/gossip/gossip-sv.omf
 share/gnome/sounds/gossip/chat1.wav
 share/gnome/sounds/gossip/chat2.wav
 share/gnome/sounds/gossip/offline.wav
@@ -96,6 +111,8 @@ share/locale/zh_TW/LC_MESSAGES/gossip.mo
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrm share/gnome/omf/gossip
+@dirrm share/gnome/help/gossip/sv/figures
+@dirrm share/gnome/help/gossip/sv
 @dirrm share/gnome/help/gossip/C/figures
 @dirrm share/gnome/help/gossip/C
 @dirrm share/gnome/help/gossip
