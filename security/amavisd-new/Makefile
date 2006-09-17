@@ -131,7 +131,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAss
 
 .if defined(WITH_P0F)
 RUN_DEPENDS+=	${LOCALBASE}/bin/p0f:${PORTSDIR}/net-mgmt/p0f
-USE_RC_SUBR+=	p0fanalyzer.sh
+USE_RC_SUBR+=	amavis-p0fanalyzer.sh
 .else
 AMAVIS_NOP0F=	"@comment "
 .endif
