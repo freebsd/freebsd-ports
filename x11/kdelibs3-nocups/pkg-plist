@@ -57,7 +57,7 @@ bin/makekdewidgets
 bin/meinproc
 bin/preparetips
 etc/rc.d/kdelibs.sh
-etc/xdg/menus/applications.menu
+etc/xdg/menus/kde-applications.menu
 include/arts/artskde.h
 include/arts/kartsdispatcher.h
 include/arts/kartsfloatwatch.h
