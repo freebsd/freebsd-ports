@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
+BROKEN=		Does not compile
+
 USE_AUTOTOOLS=	libtool:15
 
 OPTIONS=	MYSQL "Enable MySQL support" on \
