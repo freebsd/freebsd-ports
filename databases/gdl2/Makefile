@@ -29,7 +29,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	Gorm:${GORM_PORT}
 # USE_LDCONFIG=	yes
 INSTALL_SHLIBS=	yes
 MAKEFILE=	GNUmakefile
-SLIDESHOWKIT_PORT?=	devel/gorm
+GORM_PORT?=	devel/gorm
 USE_PGSQL=	yes
 
 .include <bsd.port.mk>
