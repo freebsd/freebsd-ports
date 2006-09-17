@@ -23,6 +23,12 @@ MAN1=		mlvwm.1
 
 MLVWMLIBDIR=	${PREFIX}/lib/X11/mlvwm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 601104
+BROKEN=		Does not build on FreeBSD >= 6.x
+.endif
+
 post-extract:
 	@${TAR} -C ${WRKSRC}/pixmap -xzf ${DISTDIR}/mini-icons.tar.gz
 
@@ -35,4 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmap/*.xpm ${MLVWMLIBDIR}/pixmap
 	${INSTALL_DATA} ${WRKSRC}/sample_rc/Mlvwmrc* ${MLVWMLIBDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
