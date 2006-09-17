@@ -13550,6 +13550,7 @@ stegdetect	ports/security/stegdetect
 steghide	ports/security/steghide
 stella		ports/emulators/stella
 stellarium	ports/astro/stellarium
+stepbill	ports/games/stepbill
 stepulator	ports/math/stepulator
 sting		ports/net-mgmt/sting
 stk		ports/lang/STk
