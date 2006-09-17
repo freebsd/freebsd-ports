@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Climate Data Operators
 
+BROKEN=		Does not build
+
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--program-transform-name=""
