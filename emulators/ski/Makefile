@@ -18,6 +18,8 @@ COMMENT=	HP's Ski IA-64 simulator
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
+BROKEN=		Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=	i386
 
 NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.hpl.hp.com/research/linux/ski/download.php) and put it in ${DISTDIR} first

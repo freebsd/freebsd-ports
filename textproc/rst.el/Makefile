@@ -16,6 +16,8 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	ReStructuredText Support for Emacs
 
+BROKEN=		Incomplete pkg-plist
+
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	xemacs21-mule
 

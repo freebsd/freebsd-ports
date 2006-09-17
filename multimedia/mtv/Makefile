@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz libSDLx11.so.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance MPEG video player (shareware)
 
+BROKEN=		Incomplete pkg-plist
+
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 RESTRICTED=	No redistribution
 ONLY_FOR_ARCHS=	i386
