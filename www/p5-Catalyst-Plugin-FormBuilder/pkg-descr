@@ -1,0 +1,9 @@
+Catalyst::Plugin::FormBuilder - Catalyst FormBuilder Plugin
+
+This plugin merges the functionality of CGI::FormBuilder with Catalyst
+and Template Toolkit. This gives you access to all of FormBuilder's
+niceties, such as controllable field stickiness, multilingual support,
+and Javascript generation. For more details, see CGI::FormBuilder or
+the website at: http://www.formbuilder.org
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-FormBuilder/
