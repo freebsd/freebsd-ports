@@ -1,5 +1,5 @@
---- Rules.make.org	Sat Jul  1 12:28:37 2006
-+++ Rules.make	Sat Jul  1 12:30:55 2006
+--- Rules.make.orig	Sun Sep 17 20:42:52 2006
++++ Rules.make	Sun Sep 17 20:48:26 2006
 @@ -4,27 +4,27 @@
  #
  #- Building ----------------------------------------------------------
@@ -42,7 +42,7 @@
  DEST = -o modules/pymol/_cmd.so
  #--- Gcc Options for Linux
 -CCOPT1 = -march=i486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
-+CCOPT1 = @CFLAGS@ #-march=i486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
++CCOPT1 = @PICFLAG@ @CFLAGS@ #-march=i486 -D__i686__ -ffast-math -Wall -ansi -Wmissing-prototypes
  #--- libraries for PyOpenGL 
  PYOGL_LIB =  -lglut -lGL -lGLU -lXmu -lXi
  #---------------------------------------------------------------------
