@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -29,15 +29,12 @@ MAKE_ENV=	CC="${CXX}"
 EXTRA_PATCH_FILES=	lua/include/lauxlib.h \
 			lua/include/lua.h \
 			lua/src/lobject.h \
-			lua/src/lzio.h \
-			lua/src/ltm.h \
 			lua/src/lopcodes.c \
 			lua/src/lopcodes.h \
 			lua/src/lstate.c \
 			lua/src/lstate.h \
 			lua/src/ldo.h \
 			lua/src/lmem.h \
-			lua/src/lgc.h \
 			lua/src/lgc.c \
 			lua/src/lvm.h \
 			lua/src/lstring.h \
@@ -48,13 +45,13 @@ EXTRA_PATCH_FILES=	lua/include/lauxlib.h \
 			lua/src/lparser.c \
 			lua/src/lib/lauxlib.c
 
-OPTIONS=	GTK2 "Turns on GTK-2.x support (Default is GTK-1)" off
+OPTIONS=	GTK2 "Turns on GTK+ 2.x support (Default is GTK+ 1)" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
-PKGNAMESUFFIX=	-gtk2
+PKGNAMESUFFIX:=	-gtk2
 .else
 USE_GNOME+=	gtk12
 MAKE_ARGS=	GTK1=yes
@@ -70,15 +67,17 @@ post-patch:
 .for file in ${EXTRA_PATCH_FILES}
 	@${CP} ${WRKSRC}/../${file} \
 		${WRKSRC}/../${file}.orig
-	@/usr/bin/col < ${WRKSRC}/../${file}.orig \
+	@col < ${WRKSRC}/../${file}.orig \
 		> ${WRKSRC}/../${file}
 .endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/../doc/scite.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/SciTE.desktop ${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/Sci48M.png ${PREFIX}/share/gnome/pixmaps
+	@${MKDIR} ${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/SciTE.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/Sci48M.png ${PREFIX}/share/pixmaps
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.jpg ${DATADIR}
