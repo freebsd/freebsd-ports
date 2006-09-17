@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby module for accessing MySQL databases with a C API like interface
 
+BROKEN=		Does not compile
+
 USE_MYSQL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

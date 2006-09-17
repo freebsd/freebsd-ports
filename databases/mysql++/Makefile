@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-mysql${MYSQL_VER}
 MAINTAINER=	sergey@network-asp.biz
 COMMENT=	Complex C++ API for MySQL${MYSQL_VER}
 
+BROKEN=		Does not compile
+
 USE_MYSQL=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --disable-examples
