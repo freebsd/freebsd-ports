@@ -21,4 +21,6 @@ PORT_SHAREDIR?=	"${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}"
 PLIST_DIR_PATTERN_EXTRA=	-v "extra/work"
 PLIST_FILE_PATTERN_EXTRA=	-v "extra/work"
 
+BROKEN=		Unfetchable
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

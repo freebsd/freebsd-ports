@@ -16,4 +16,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_DIR_PATTERN_EXTRA=	-v "random"
 PLIST_FILE_PATTERN_EXTRA=	-v "random"
 
+BROKEN=		Does not build
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

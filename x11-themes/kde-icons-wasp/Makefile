@@ -16,4 +16,6 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/Wasp
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
+BROKEN=		Unfetchable
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

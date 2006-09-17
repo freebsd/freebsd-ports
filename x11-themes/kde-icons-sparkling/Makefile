@@ -15,4 +15,6 @@ COMMENT=	KDE Sparkling iconset
 WRKSRC=		${WRKDIR}/sparkling
 PORT_SHAREDIR?="${PORTNAME}-${PORTVERSION}"
 
+BROKEN=		Unfetchable
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
