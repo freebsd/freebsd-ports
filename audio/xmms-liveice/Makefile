@@ -18,6 +18,8 @@ COMMENT=	Use XMMS for streaming audio to Icecast servers
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/LiveIce-1.0.0
 
 PLIST_FILES=	lib/xmms/Effect/libliveice.so

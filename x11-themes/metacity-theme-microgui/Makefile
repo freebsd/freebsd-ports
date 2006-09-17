@@ -17,6 +17,8 @@ COMMENT=	The microGUI Sawfish theme for Metacity
 
 RESTRICTED=	${REASON}
 
+BROKEN=		Incomplete pkg-plist
+
 WRKSRC=		${WRKDIR}/microGUI
 
 .include "${.CURDIR}/../metacity-themes/Makefile.metacity"

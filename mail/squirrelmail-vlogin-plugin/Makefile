@@ -16,6 +16,8 @@ COMMENT=		Adds multi-site-hosting capabilities to SquirrelMail
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
+BROKEN=			Incomplete pkg-plist
+
 SQUIRREL_PLUGIN_NAME=	vlogin
 
 .ifdef SQUIRRELDIR

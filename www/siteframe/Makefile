@@ -15,6 +15,8 @@ COMMENT=	A web community content management system in PHP5 and MySQL
 
 RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty
 
+BROKEN=		Incomplete pkg-plist
+
 USE_APACHE=	yes
 WITH_APACHE2=	yes
 USE_PHP=	mysqli simplexml xml session gd

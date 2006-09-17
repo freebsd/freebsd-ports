@@ -17,6 +17,8 @@ COMMENT=	Perforce-Emacs Integration
 
 RUN_DEPENDS=	p4:${.CURDIR}/../perforce
 
+BROKEN=		Incomplete pkg-plist
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
