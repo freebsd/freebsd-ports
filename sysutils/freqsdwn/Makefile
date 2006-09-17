@@ -18,6 +18,8 @@ COMMENT=	FREQSHIP-mini Mitsubishi Electric UPS controller daemon
 
 RESTRICTED=	See http://www.mitsubishielectric.co.jp/frequps/keiyaku.html
 
+BROKEN=		Unfetchable
+
 USE_RC_SUBR=	freqshpd.sh 000.freqshpk.sh
 PLIST_SUB=	PORTNAME=${PORTNAME} CONFDIR=${CONFDIR}
 SUB_LIST=	PORTNAME=${PORTNAME} CONFDIR=${CONFDIR}
