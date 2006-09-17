@@ -10,7 +10,7 @@ PORTNAME=	libsocket++
 PORTVERSION=	1.12.12
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.linuxhacker.at/linux/downloads/src/
+MASTER_SITES=	http://src.linuxhacker.at/socket++/
 DISTNAME=	socket++-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
