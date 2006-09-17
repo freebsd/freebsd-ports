@@ -59,6 +59,7 @@
     SUBDIR += gauche-gdbm
     SUBDIR += gbib
     SUBDIR += gdbm
+    SUBDIR += gdl2
     SUBDIR += gigabase
     SUBDIR += glom
     SUBDIR += gmysql
