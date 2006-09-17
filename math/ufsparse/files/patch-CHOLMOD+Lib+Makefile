@@ -1,5 +1,5 @@
---- CHOLMOD/Lib/Makefile~	Tue May  2 09:12:16 2006
-+++ CHOLMOD/Lib/Makefile	Tue Jul  4 11:52:37 2006
+--- CHOLMOD/Lib/Makefile~	Fri Aug 25 22:44:11 2006
++++ CHOLMOD/Lib/Makefile	Sun Sep 17 21:18:07 2006
 @@ -116,7 +116,7 @@
  $(OBJ): $(INC)
  

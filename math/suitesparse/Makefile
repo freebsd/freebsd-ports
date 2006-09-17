@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ufsparse
-PORTVERSION=	2.0.0.b
+PORTVERSION=	2.1.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/UFsparse/v2.0.0beta/
-DISTNAME=	UFsparse
-DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/current/
+DISTNAME=	SuiteSparse
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	UFspace is a set of packages for sparse matrices calculation
@@ -29,8 +29,8 @@ LAPACK=	-L${LOCALBASE}/lib -lalapack -lcblas
 
 CONFLICTS=	umfpack-*
 
+ALL_TARGET=	default
 USE_GMAKE=	yes
-ALL_TARGET=
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%CC%%,${CC},g' \
@@ -39,6 +39,7 @@ post-patch:
 			  -e 's,%%FFLAGS%%,${FFLAGS},g' \
 			  -e 's,%%BLAS%%,${BLAS},g' \
 			  -e 's,%%LAPACK%%,${LAPACK},g' \
+			  -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk
 do-install:
 	${MKDIR} ${PREFIX}/include/ufsparse
