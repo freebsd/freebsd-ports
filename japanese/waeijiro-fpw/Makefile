@@ -20,6 +20,7 @@ EXTRACT_DEPENDS=${LOCALBASE}/share/freepwing/fpwutils.mk:${PORTSDIR}/japanese/fr
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
 		${JCODE}:${PORTSDIR}/japanese/p5-Jcode
 
+MANUAL_PACKAGE_BUILD=Needs data from a CDROM
 RESTRICTED=	"The original dictionary is not free"
 USE_GMAKE=	yes
 DICT_PATH?=	/cdrom
