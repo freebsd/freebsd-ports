@@ -9,7 +9,7 @@ PORTNAME=	newscache
 PORTVERSION=	1.2.r.6
 PORTREVISION=	2
 CATEGORIES=	news
-MASTER_SITES=	http://www.linuxhacker.at/linux/downloads/src/
+MASTER_SITES=	http://src.linuxhacker.at/NewsCache/
 DISTNAME=	NewsCache-${PORTVERSION:S/.r./rc/}
 
 MAINTAINER=	ports@FreeBSD.org
