@@ -22,6 +22,8 @@ EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
+BROKEN=		Does not compile
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib --enable-lt=${LIBTOOL}
