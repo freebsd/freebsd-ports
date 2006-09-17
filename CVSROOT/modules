@@ -1985,6 +1985,7 @@ dtach		ports/misc/dtach
 dtc		ports/sysutils/dtc
 dtcp		ports/net/dtcp
 dtcpclient	ports/net/dtcpclient
+dtcyber		ports/emulators/dtcyber
 dtd-catalogs	ports/textproc/dtd-catalogs
 dtd2relax	ports/textproc/dtd2relax
 dtdinst		ports/textproc/dtdinst
