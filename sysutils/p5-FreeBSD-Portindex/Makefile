@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
