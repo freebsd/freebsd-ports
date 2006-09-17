@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	ferret
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ferret is a ruby port of Lucene
+
+BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
 
 USE_RUBY=	yes
 
