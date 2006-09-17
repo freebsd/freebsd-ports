@@ -101,6 +101,7 @@ share/icons/locolor/32x32/apps/rkward.png
 %%NLS%%share/locale/fr/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/rkward.mo
 %%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
