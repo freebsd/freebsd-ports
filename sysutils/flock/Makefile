@@ -19,6 +19,7 @@ COMMENT=	Assert/wait for advisory locks with flock(2)
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
+NO_LATEST_LINK=	yes
 MAKE_FLAGS=
 MAKEFILE=
 MAN1=		${PORTNAME}.1
