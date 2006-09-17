@@ -39,6 +39,10 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ${ARCH}
+.endif
+
 .if !defined(WITHOUT_ASDF)
 CONFIGURE_ARGS+=--with-asdf=yes
 PLIST_SUB+=	ASDF=""
