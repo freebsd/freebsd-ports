@@ -27,6 +27,10 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		Does not build on ${ARCH}
+.endif
+
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64" || ${ARCH} == "ia64"
 PICFLAG?=	-fPIC
 .else
