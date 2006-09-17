@@ -649,6 +649,7 @@
     SUBDIR += ssc
     SUBDIR += starfighter
     SUBDIR += starlanes
+    SUBDIR += stepbill
     SUBDIR += stratagus
     SUBDIR += stroq
     SUBDIR += sturmbahnfahrer
