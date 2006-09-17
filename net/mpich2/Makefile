@@ -194,6 +194,11 @@ X11BASE2FIX=	src/mpe2/src/graphics/configure
 WITHOUT_JAVA=	yo	# No package for Java ATM
 .endif
 
+.if ${ARCH} == "amd64"
+# gmake should not be required, this is a work-around
+USE_GMAKE=	yes
+.endif
+
 PREFIX:=	${PREFIX}/${PORTNAME}
 
 pre-configure:
