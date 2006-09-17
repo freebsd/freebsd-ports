@@ -29,9 +29,10 @@ PLIST_FILES=	bin/tuxpuck
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700013
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
-.endif
+post-patch:
+	cd ${WRKSRC}; \
+	${REINPLACE_CMD} "s,timer_create,_timer_create,g" \
+	tuxpuck.c video.c timer.c intro.c tuxpuck.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tuxpuck ${PREFIX}/bin
