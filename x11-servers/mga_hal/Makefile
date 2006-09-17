@@ -16,6 +16,8 @@ COMMENT=	Module for additional features with X.Org/XFree86 Matrox driver
 
 RESTRICTED=	"Matrox drivers may not be distributed."
 
+BROKEN=		Does not install
+
 ONLY_FOR_ARCHS= i386
 
 PREFIX?=	${X11BASE}
