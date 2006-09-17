@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.07001
+PORTVERSION=	0.07002
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -19,8 +19,7 @@ RUN_DEPENDS=	p5-PathTools>=3.19:${PORTSDIR}/devel/p5-PathTools \
 		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-SQL-Abstract>=1.20:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.101:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		p5-Algorithm-C3>=0.04:${PORTSDIR}/devel/p5-Algorithm-C3 \
-		p5-Class-C3>=0.11:${PORTSDIR}/devel/p5-Class-C3 \
+		p5-Class-C3>=0.13:${PORTSDIR}/devel/p5-Class-C3 \
 		p5-Class-Data-Accessor>=0.01:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-DBI>=1.40:${PORTSDIR}/databases/p5-DBI \
@@ -90,9 +89,6 @@ MAN3=	DBIx::Class.3 \
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^\s*build_requires/ .. /},$$/' ${WRKSRC}/Build.PL
-	@${RM} -f ${WRKSRC}/lib/DBIx/Class/Schema.pm.orig
-	@${RM} -f ${WRKSRC}/lib/DBIx/Class/Storage/DBI.pm.orig
-	@${PERL} -i.bak -ne 'print unless /orig$$/' ${WRKSRC}/MANIFEST
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
