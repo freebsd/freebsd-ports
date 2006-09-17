@@ -25,7 +25,13 @@ MAKE_ENV=	MKDIR="${MKDIR}" \
 		CPP="${CXX}" \
 		SYSLIBDIR=${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on amd64 or sparc64
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
