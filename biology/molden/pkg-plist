@@ -29,6 +29,7 @@ bin/moldenogl
 %%PORTDOCS%%share/molden/test/mopac.freq
 %%PORTDOCS%%share/molden/test/mopac.test
 %%PORTDOCS%%share/molden/test/pdb.test
+%%PORTDOCS%%share/molden/test/qchem.test
 %%PORTDOCS%%share/molden/test/reacpth.xyz
 %%PORTDOCS%%share/molden/test/shelx.ins
 %%PORTDOCS%%share/molden/test/surface.molf

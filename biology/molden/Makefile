@@ -7,28 +7,30 @@
 
 PORTNAME=	molden
 PORTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
+DIST_SUBDIR=	${PKGNAME}
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
-BROKEN=		Size mismatch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_XLIB=	yes
 
-RESTRICTED=	"free for academic, non profit usage; do not re-distribute source and executable."
+RESTRICTED=	free for academic, non profit usage; do not re-distribute source and executable.
 MAKEFILE=	${WRKSRC}/makefile
+MAKE_ENV=	FC=${F77}
 
 .include <bsd.port.pre.mk>
+
+.if !${OSVERSION} < 500039
+F77?=		f77
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/xwin.c
