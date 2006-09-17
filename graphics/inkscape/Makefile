@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.44.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
@@ -58,6 +57,8 @@ CONFIGURE_ARGS+=	--without-gnome-vfs
 post-patch:
 	@${REINPLACE_CMD} -e 's|ieefp.h|ieeefp.h|' \
 		${WRKSRC}/src/display/bezier-utils.cpp
+	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng12 >= 1.2|g' \
+	    	${WRKSRC}/configure
 
 post-install:
 	${GZIP_CMD} ${PREFIX}/man/fr/man1/inkscape.1
