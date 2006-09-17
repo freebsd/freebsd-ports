@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-SimpleHTTP
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -40,14 +40,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/POE/Component/SSLify.pm:${PORTSDIR}/security/p5-POE
 BUILD_DEPENDS+=	${SITE_PERL}/IPC/Shareable.pm:${PORTSDIR}/devel/p5-IPC-Shareable
 .endif
 
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${FILESDIR}/500503-*
-
-post-patch:
-	@${PERL} -pi -e 's/^our ([\$$\@]\w+)/use vars qw($$1); $$1/;' \
-		     -e '$$_ = "" if /use warnings/;' \
-		$$(${FIND} ${WRKSRC} -name '*.pm')
-	@${RM} ${WRKSRC}/lib/POE/Component/Server/SimpleHTTP.pm.orig
+.if ${PERL_LEVEL} < 500600  # inherited from www/p5-libwww
+IGNORE=		requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
 .endif
 
 .include <bsd.port.post.mk>
