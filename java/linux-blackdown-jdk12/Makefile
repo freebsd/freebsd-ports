@@ -23,7 +23,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 RESTRICTED=	"License doesn\'t allow binary distributions or distribution with fee"
 LATEST_LINK=	linux-blackdown-jdk12
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	YES
 USE_LINUX=	yes
