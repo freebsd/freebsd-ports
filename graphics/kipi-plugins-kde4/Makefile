@@ -22,6 +22,8 @@ LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
+BROKEN=		Incomplete pkg-plist
+
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \
 		CALENDAR "create calendars" on \
