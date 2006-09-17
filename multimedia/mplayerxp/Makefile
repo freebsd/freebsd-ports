@@ -20,6 +20,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
 
+BROKEN=		Does not compile
+
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
