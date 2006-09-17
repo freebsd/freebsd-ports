@@ -8,7 +8,7 @@
 
 PORTNAME=	blam
 PORTVERSION=	1.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.8
@@ -21,38 +21,19 @@ BUILD_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 RUN_DEPENDS=	gapi-fixup:${PORTSDIR}/x11-toolkits/gtk-sharp10 \
 		${X11BASE}/libdata/pkgconfig/gecko-sharp.pc:${PORTSDIR}/www/gecko-sharp10
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
-.if !defined(WITH_MOZILLA)
-MOZILLA=	mozilla
-.else
-.if ${WITH_MOZILLA}=="firefox"
-MOZILLA=	firefox
-.else
-MOZILLA=	mozilla
-.endif
-.endif
-
+USE_GECKO=	firefox mozilla
 USE_GNOME=	gnomeprefix gnomehack intlhack intltool libgnomeui
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mozilla=${MOZILLA}
+CONFIGURE_ARGS=	--with-mozilla=${GECKO}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	blam.schemas
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default ${PORTNAME} uses www/mozilla for html rendering, but you can"
-	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  firefox       "
-	@${ECHO_MSG} ""
-
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.include <bsd.port.post.mk>
