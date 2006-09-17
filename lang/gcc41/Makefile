@@ -72,6 +72,9 @@ CONFIGURE_ARGS+=	--disable-nls \
 CONFIGURE_ARGS+=	--with-java-home=${PREFIX}/lib/jvm/java-1.4.2-gcj${SUFFIX}-1.4.2.0/jre	\
 			--enable-java-awt=gtk,xlib \
 			--enable-gtk-cairo
+.if defined(WITHOUT_JAVA)
+BROKEN=		Does not compile gcj
+.endif
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
