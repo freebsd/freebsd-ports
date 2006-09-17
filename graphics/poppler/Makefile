@@ -8,14 +8,12 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.5.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A PDF rendering library
-
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -61,6 +59,8 @@ CONFIGURE_ARGS+=--disable-poppler-glib --disable-poppler-qt \
 		--disable-poppler-qt4 --disable-utils
 .if defined(WITHOUT_CAIRO)
 CONFIGURE_ARGS+=	--disable-cairo-output
+.else
+LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 .endif
 .endif
 
