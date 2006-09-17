@@ -59,12 +59,13 @@ INSTALL_TARGET=	install-no-docs
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.5:${PORTSDIR}/misc/compat5x
+.if ${OSVERSION} >= 700014
+#BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.6:${PORTSDIR}/misc/compat6x
+BROKEN=		FreeBSD 6.x binary, needs a compat6x port to run
 .endif
 
-.if ${OSVERSION} < 504000
-IGNORE=		cannot bootstrap on FreeBSD < 5.4
+.if ${OSVERSION} < 600000
+IGNORE=		cannot bootstrap on FreeBSD < 6.0
 .endif
 
 BOOT_EXTRACT=	--bzip2
