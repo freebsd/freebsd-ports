@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	gtk-webcore
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Javascript interpreter port from Apple's KHTML and part of Gtk-Webcore
 
+BROKEN=		Does not compile
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomehack
 USE_LDCONFIG=	yes
