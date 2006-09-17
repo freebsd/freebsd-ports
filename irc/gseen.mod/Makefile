@@ -33,6 +33,12 @@ do-extract:
 	@${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../irc/eggdrop/work/eggdrop1.6.18 ${WRKSRC}
 	cd ${WRKSRC}/src/mod && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
 
+post-extract:
+	${REINPLACE_CMD} -e 's|"-g -O2"|"${CFLAGS}"|' \
+		-e 's|"-g"|"${CFLAGS}"|' \
+		-e 's|"-O2"|"${CFLAGS}"|' \
+		${WRKSRC}/configure
+
 pre-build:
 	@${ECHO_CMD} gseen.mod >> ${WRKSRC}/.modules
 	@${ECHO_CMD} gseen.mod >> ${WRKSRC}/.known_modules
