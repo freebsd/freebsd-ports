@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	flamerobin
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.7.5
 CATEGORIES=	databases
-MASTER_SITES=	http://dindin.webkazan.ru/flamerobin/\
-		http://main.webkazan.ru/flamerobin/\
-		http://superb-west.dl.sourceforge.net/sourceforge/flamerobin/
-DISTNAME=	flamerobin-0.7.2-src
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	dindin@FreeBSD.org.ua
 COMMENT=	The GUI administration tool for firebird database
