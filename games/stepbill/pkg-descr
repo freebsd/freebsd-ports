@@ -1,0 +1,14 @@
+This is a port of the MacBill, which is based on xbill, source to GNUstep.
+
+Ever get the feeling that nothing is going right?  You're a sysadmin, and
+someone's trying to destroy your computers.  The little people running
+around the screen are trying to infect your computers with Wingdows [TM],
+a virus cleverly designed to resemble a popular operating system.  Your
+objective is to click the mouse on them, ending their potential threat.
+If one of the people reaches a computer, it will attempt to replace your
+operating system with the virus it carries. It will then attempt to run off
+the screen with your vital software.
+
+WWW: http://www.linuks.mine.nu/stepbill/
+
+gurkan@linuks.mine.nu
