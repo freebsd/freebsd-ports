@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scintilla
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -23,11 +23,11 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKEFILE=	makefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
-PKGNAMESUFFIX=	-gtk2
+PKGNAMESUFFIX:=	-gtk2
 .else
 USE_GNOME=	gtk12
 MAKE_ARGS+=	GTK1=yes

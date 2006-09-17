@@ -1,6 +1,6 @@
 bin/SciTE
-share/gnome/applications/SciTE.desktop
-share/gnome/pixmaps/Sci48M.png
+share/applications/SciTE.desktop
+share/pixmaps/Sci48M.png
 share/scite/Embedded.properties
 share/scite/PrintHi.png
 share/scite/SciBreak2.jpg
@@ -77,3 +77,5 @@ share/scite/verilog.properties
 share/scite/vhdl.properties
 share/scite/yaml.properties
 @dirrm share/scite
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
