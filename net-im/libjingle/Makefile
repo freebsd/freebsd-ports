@@ -97,6 +97,10 @@ post-install:
 BROKEN=		does not compile on 4.X or 5.X
 .endif
 
+.if ${OSVERSION} >= 700014
+BROKEN=		does not compile on FreeBSD >= 7.0
+.endif
+
 LDFLAGS+=-L${LOCALBASE}/lib -L${OPENSSLLIB} ${PTHREAD_LIBS}
 PKG_CONFIG?=${LOCALBASE}/bin/pkg-config
 
