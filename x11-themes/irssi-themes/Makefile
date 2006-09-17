@@ -9,8 +9,8 @@ PORTNAME=	irssi-themes
 PORTVERSION=	20060917
 CATEGORIES=	x11-themes irc
 MASTER_SITES=	http://www.irssi.org/themefiles/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		http://critical.ch/distfiles/${PORTNAME}/ \
+		http://energy.critical.ch/distfiles/${PORTNAME}/
 DISTFILES=	BitchX.theme IamCyan.theme agon.theme ash.theme asyura.theme \
 		bestican.theme bluu.theme bork.theme c0ders.theme \
 		cananal.theme chaves.theme chill.theme clean.theme crap.theme \
@@ -38,7 +38,7 @@ DISTFILES=	BitchX.theme IamCyan.theme agon.theme ash.theme asyura.theme \
 		tanke.theme telix.theme thirdeye.theme tinylajs.theme \
 		trax.theme void.theme vt510+xterm.theme white.theme \
 		whitespace.theme xmas.theme zhafte.theme zng.theme
-DIST_SUBDIR=	irssi-themes
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A collection of additional irssi themes
