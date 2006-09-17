@@ -112,6 +112,7 @@
     SUBDIR += icons-human-azul
     SUBDIR += icons-tango
     SUBDIR += indubstrial
+    SUBDIR += irssi-themes
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-cezanne
