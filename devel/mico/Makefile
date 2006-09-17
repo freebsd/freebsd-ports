@@ -7,6 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
@@ -16,15 +17,14 @@ PATCHFILES=	mico-2.3.12-secfix1.diff
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Secure, reliable, production-quality, standards-based CORBA middleware
 
-PATCH_DIST_STRIP=-p1
+PATCH_DIST_STRIP=	-p1
 WRKSRC=			${WRKDIR}/${PORTNAME}
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=		autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-#CONFIGURE_ENV+=		CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} \
-#			CXXFLAGS="${CXXFLAGS}" CPP=${CPP}
+CONFIGURE_ENV+=		EGREP=`which egrep`
 
 OPTIONS=	NOSERVICES "Without services, plain ORB" off \
 		SSL "Build with SSL" on \
@@ -45,7 +45,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 .endif
 # ================
 
-USE_GCC=		3.4
+USE_GCC=		3.4+
 
 CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
 
@@ -107,15 +107,6 @@ MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
-# Does not build on alpha 4.x
-.if ${OSVERSION} < 500000
-NOT_FOR_ARCHS=	alpha
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#\"-O2\"#\"${CFLAGS}\"#;s#\"-pthread#\"${PTHREAD_LIBS}#" ${WRKSRC}/configure.in
