@@ -504,6 +504,7 @@
     SUBDIR += p5-CGI-Cache
     SUBDIR += p5-CGI-Ex
     SUBDIR += p5-CGI-FastTemplate
+    SUBDIR += p5-CGI-FormBuilder
     SUBDIR += p5-CGI-Framework
     SUBDIR += p5-CGI-Kwiki
     SUBDIR += p5-CGI-Minimal

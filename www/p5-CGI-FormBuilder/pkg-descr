@@ -1,0 +1,23 @@
+The goal of CGI::FormBuilder (FormBuilder) is to provide an easy way
+for you to generate and process entire CGI form-based applications.
+Its main features are:
+
+* Field Abstraction
+  Viewing fields as entities (instead of just params), where the HTML
+  representation, CGI values, validation, and so on are properties of
+  each field.
+* DWIMmery
+  Lots of built-in "intelligence" (such as automatic field typing),
+  giving you about a 4:1 ratio of the code it generates versus what
+  you have to write.
+* Built-in Validation
+  Full-blown regex validation for fields, even including JavaScript
+  code generation.
+* Template Support
+  Pluggable support for external template engines, such as
+  HTML::Template, Text::Template, Template Toolkit, and
+  CGI::FastTemplate.
+
+Plus, the native HTML generated is valid XHTML 1.0 Transitional.
+
+WWW: http://www.formbuilder.org
