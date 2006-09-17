@@ -3107,6 +3107,7 @@ gdis		ports/science/gdis
 gdk-pixbuf	ports/graphics/gdk-pixbuf
 gdkxft		ports/x11/gdkxft
 gdl		ports/x11-toolkits/gdl
+gdl2		ports/databases/gdl2
 gdm		ports/x11/gdm
 gdmap		ports/sysutils/gdmap
 gdome2		ports/textproc/gdome2
