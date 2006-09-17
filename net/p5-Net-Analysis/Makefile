@@ -7,7 +7,7 @@
 
 PORTNAME=	Net-Analysis
 PORTVERSION=	0.05
-CATEGORIES=	net	perl5
+CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Modules for analysing network traffic
 
-RUN_DEPENDS=${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
 		${SITE_PERL}/NetPacket.pm:${PORTSDIR}/net/p5-NetPacket \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
