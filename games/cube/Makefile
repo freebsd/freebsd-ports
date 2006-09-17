@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${CUBE_SRC}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL 3D First Person Shooter game
 
+BROKEN=		Does not build
+
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
