@@ -1,0 +1,11 @@
+The Desktop CYBER Emulator is a project which successfully brought
+back to life the revolutionary design of Control Data Corporation
+CYBER mainframes. The software provides a reasonable emulation of
+a "typical" CDC CYBER 6600, 7x, 17x based system including common
+peripherals such as console, tape and disk drives, card reader,
+printer and terminal multiplexer. The emulation runs the following
+CDC operating systems: ChippewaOS, SMM, KRONOS 2.1, NOS 1.2, NOS
+1.3, NOS 1.4, NOS 2.2 and NOS 2.8.2. It does not support NOS/VE
+which requires virtual mode only available in CYBER 180s.
+
+WWW:	http://members.iinet.net.au/~tom-hunter/
