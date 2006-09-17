@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	akode
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 PORTEPOCH=	1
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.kde-apps.org/content/
-MASTER_SITE_SUBDIR=lofi
-DISTNAME=	'download.php?content=30375'
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=distfiles
+DISTNAME=	30375-${PORTNAME}-${PORTVERSION}.tar.bz2
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Default KDE audio backend
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
-
-FETCH_CMD=	/usr/bin/fetch
 
 OPTIONS=	JACK "Jack output plugin" off \
 		MPC "Monkey's Audio decoder plugin" on \
@@ -32,8 +29,9 @@ OPTIONS=	JACK "Jack output plugin" off \
 
 USE_AUTOTOOLS=	libltdl
 USE_AUTOTOOLS=  libtool:15
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-2.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH}
 
@@ -73,7 +71,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_xiph_decoder.so:${PORTSDIR}/audio/akode-
 .endif
 
 post-patch:
-	@${SETENV} TZ=UTC ${TOUCH} -t 200511231529.06 ${WRKSRC}/akode/lib/akode_export.h.in
+	@${SETENV} TZ=UTC \
+	${TOUCH} -t 200607222217.01 ${WRKSRC}/akode/lib/akode_export.h.in
 	${REINPLACE_CMD} -e 's|akodeplay_LDFLAGS =.*|akodeplay_LDFLAGS = \
 	$$(all_libraries) ${PTHREAD_LIBS}|g' \
 		${WRKSRC}/akode/akodeplay/Makefile.in
