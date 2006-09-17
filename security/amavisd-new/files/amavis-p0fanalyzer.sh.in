@@ -19,9 +19,9 @@ stop_cmd=p0fanalyzer_stop
 p0fanalyzer_start() {
 	checkyesno p0fanalyzer_enable && echo "Starting p0f-analyzer." && \
 	    /usr/sbin/daemon -p /var/run/p0fanalyzer1.pid \
-	    /usr/local/bin/p0f -i bge0 -l 'tcp dst port 25' 2>&1 | \
+	    %%PREFIX%%/bin/p0f -i bge0 -l 'tcp dst port 25' 2>&1 | \
 	    /usr/sbin/daemon -p /var/run/p0fanalyzer2.pid \
-	    /usr/local/sbin/p0f-analyzer.pl 2345
+	    %%PREFIX%%/sbin/p0f-analyzer.pl 2345
 }
 
 p0fanalyzer_stop() {
