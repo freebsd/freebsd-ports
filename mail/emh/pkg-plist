@@ -2,6 +2,8 @@
 %%EMH_LISPDIR%%/emh.elc
 %%EMH_LISPDIR%%/emh-comp.el
 %%EMH_LISPDIR%%/emh-comp.elc
+%%EMH_LISPDIR%%/emh-def.el
+%%EMH_LISPDIR%%/emh-def.elc
 %%EMH_LISPDIR%%/emh-face.el
 %%EMH_LISPDIR%%/emh-face.elc
 %%EMH_LISPDIR%%/emh-setup.el
