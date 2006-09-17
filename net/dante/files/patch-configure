@@ -1,0 +1,90 @@
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	Mon Jan 16 20:49:45 2006
++++ configure	Sun Sep  3 20:35:01 2006
+@@ -25195,6 +25195,76 @@
+ #include <unistd.h>
+ 
+ struct hostent *
++gethostbyaddr( const void *, int, int
++);
++int
++main ()
++{
++
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext
++if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
++  (eval $ac_compile) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest.$ac_objext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_PROT_GETHOSTBYADDR_0 struct hostent *
++_ACEOF
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_PROT_GETHOSTBYADDR_1 const void *
++_ACEOF
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_PROT_GETHOSTBYADDR_2 int
++_ACEOF
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_PROT_GETHOSTBYADDR_3 int
++_ACEOF
++
++  echo "$as_me:$LINENO: result: ok" >&5
++echo "${ECHO_T}ok" >&6
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++cat >conftest.$ac_ext <<_ACEOF
++
++ /* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/uio.h>
++#include <netdb.h>
++#include <unistd.h>
++
++struct hostent *
+ gethostbyaddr( const void *, socklen_t, int
+ );
+ int
+@@ -25253,6 +25323,8 @@
+ echo "$as_me:$LINENO: result: failure" >&5
+ echo "${ECHO_T}failure" >&6
+   failproto=t
++fi
++rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
+ fi
+ rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
+ fi
