@@ -44,10 +44,6 @@ SUB_LIST+=	PORTNAME=${PORTNAME}
 NOT_FOR_ARCHS=	alpha
 .endif
 
-.if ${OSVERSION} >= 600000 && ${ARCH} == "sparc64"
-BROKEN=		doesn't compile because of internal gcc failure
-.endif
-
 post-patch:
 	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'

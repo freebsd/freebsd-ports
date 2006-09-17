@@ -34,7 +34,7 @@ DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "ia64"
 BROKEN=		"Runaway cc1plus process"
 .endif
 

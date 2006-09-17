@@ -34,10 +34,6 @@ PLIST_DIRS=	%%DOCSDIR%%
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 post-extract:
 	${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' ${WRKSRC}/src/drivers/common/vidblit.c
 

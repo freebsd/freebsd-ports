@@ -53,10 +53,6 @@ PLIST_SUB=	REALVERSION="${REALVERSION}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
-.endif
-
 .if defined(WITH_BOOKMARKS)
 CONFIGURE_ARGS+=	--enable-bookmarks
 .else

@@ -68,10 +68,6 @@ CONFIGURE_ARGS+=	--with-pthread=no
 CFLAGS+=	-DNOREGISTERS
 .endif
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on FreeBSD >=5.x on !i386 and !amd64"
-.endif
-
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xaos
 

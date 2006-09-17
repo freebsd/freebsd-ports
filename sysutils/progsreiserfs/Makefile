@@ -33,10 +33,6 @@ MAN8=		cpfs.reiserfs.8 mkfs.reiserfs.8 reiserfs.8 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on non-i386 and non-amd64"
-.endif
-
 .if ${OSVERSION} >= 500041
 CFLAGS+=	-Dgetopt_long_only=getopt_long
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in

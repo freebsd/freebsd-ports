@@ -19,10 +19,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"does not compile on sparc64"
-.endif
-
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_GETOPT_LONG=yes

@@ -62,10 +62,6 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile completely on sparc64
-.endif
-
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile
 .endif

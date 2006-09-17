@@ -30,8 +30,4 @@ post-patch:
 BROKEN=	compilation fails and passing -fhuge-objects does not help
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		does not build on sparc64
-.endif
-
 .include <bsd.port.post.mk>

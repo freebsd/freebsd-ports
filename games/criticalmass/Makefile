@@ -35,10 +35,6 @@ PLIST_DIRS=	share/Critical_Mass
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 post-patch:
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'

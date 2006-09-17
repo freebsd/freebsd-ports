@@ -23,7 +23,7 @@ ALL_TARGET=	default
 
 PLIST_FILES=	include/tfm.h lib/libtfm.a
 
-NOT_FOR_ARCHS=	ia64 sparc64
+NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	fails to compile
 
 .include <bsd.port.mk>
