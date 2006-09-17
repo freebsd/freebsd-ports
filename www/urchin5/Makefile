@@ -11,8 +11,10 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.urchin.com/urchin5/
 DISTNAME=	urchin5703_freebsd4x
 
-MAINTAINER=	freebsd@urchin.com
+MAINTAINER=	ports@FreeBSD.rog
 COMMENT=	The most powerful web traffic analysis program available
+
+BROKEN=		Does not install
 
 ONLY_FOR_ARCHS=	i386
 LICENSE=	commercial
