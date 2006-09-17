@@ -24,6 +24,8 @@ WRKSRC=		${WRKDIR}/LimeWire
 
 RESTRICTED=	License does not allow redistribution of any kind
 
+BROKEN=		Size mismatch
+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LimeWire.jar MessagesBundles.jar ProgressTabs.jar \
 		clink.jar commons-httpclient.jar commons-logging.jar \
