@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.220
-PORTREVISION=	2
+PORTVERSION=	1.230
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -21,16 +20,12 @@ COMMENT=	Web-based interface for performing some user tasks
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 
-BROKEN=		does not fetch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	usermin.sh
 SUB_LIST=	PERL5=${PERL}
 
-USERMIN_MODULES=mailbox-1.220-2.wbm.gz
+USERMIN_MODULES=
 
 post-extract:
 	@if [ "${USERMIN_MODULES}" != "" ]; then \
