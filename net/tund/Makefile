@@ -20,6 +20,10 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH}=="sparc64"
+CFLAGS+=	-O2
+.endif
+
 .if ${ARCH} == "ia64"
 BROKEN=		"Does not build on ${ARCH}"
 .endif
