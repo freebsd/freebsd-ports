@@ -8,7 +8,7 @@
 PORTNAME=	emh
 PORTVERSION=	1.10.1
 CATEGORIES=	mail elisp
-MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/semi/emh/
+MASTER_SITES=	ftp://ring.aist.go.jp/pub/elisp/semi/emh/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
