@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Natural language toolkit written in python
 
+BROKEN=		Incorrect pkg-plist
+
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
