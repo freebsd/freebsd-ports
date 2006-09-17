@@ -36,10 +36,6 @@ SCM_MODULES=	byte.so crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 post-extract:
 	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/slib-psd1-3.tar.gz
 	@${CP} ${FILESDIR}/require.scm.in ${WRKDIR}/require.scm
