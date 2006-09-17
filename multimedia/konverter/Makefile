@@ -18,6 +18,8 @@ BUILD_DEPENDS=	avimerge:${PORTSDIR}/multimedia/transcode \
 		mencoder:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine
 
+BROKEN=		Unfetchable
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
