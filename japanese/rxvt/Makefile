@@ -29,10 +29,6 @@ RXVTLIB=	${PREFIX}/lib/X11/rxvt
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
 pre-install:
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${FILESDIR}/README.ja ${DOCDIR}

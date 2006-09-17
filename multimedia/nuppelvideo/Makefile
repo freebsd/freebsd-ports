@@ -29,10 +29,6 @@ CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
-.endif
-
 ###
 ## Auto detected features
 ###
