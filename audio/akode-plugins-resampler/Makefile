@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	akode-plugins-${PORTNAMESUFX}
-PORTVERSION=	2.0
-PORTEPOCH=	1
-CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.kde-apps.org/content/
-MASTER_SITE_SUBDIR=lofi
-DISTNAME=	'download.php?content=30375'
+PORTNAME=   akode-plugins-${PORTNAMESUFX}
+PORTVERSION=    2.0.1
+PORTEPOCH=  1
+CATEGORIES= audio kde
+MASTER_SITES=   ${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=distfiles
+DISTNAME=   30375-akode-${PORTVERSION}.tar.bz2
 EXTRACT_SUFX=   # none
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,15 +21,14 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-FETCH_CMD=	/usr/bin/fetch
-
 PLUGIN=		src_resampler
 PORTNAMESUFX=	${PLUGIN:S/_sink//:S/_decoder//:S/src_//}
 
 USE_AUTOTOOLS=	libltdl
 USE_AUTOTOOLS=  libtool:15
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/akode-2.0
+WRKSRC=		${WRKDIR}/akode-${PORTVERSION}
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
@@ -39,7 +37,7 @@ CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \
 
 post-patch:
 	@${SETENV} TZ=UTC \
-	${TOUCH} -t 200511231529.06 ${WRKSRC}/akode/lib/akode_export.h.in
+	${TOUCH} -t 200607222217.01 ${WRKSRC}/akode/lib/akode_export.h.in
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's@%%SUBDIRS%%@${PLUGIN}@g' ${WRKSRC}/akode/plugins/Makefile.in
