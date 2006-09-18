@@ -4996,7 +4996,6 @@ ja-zipcodes	ports/japanese/zipcodes
 ja-zope-ejsplitter	ports/japanese/zope-ejsplitter
 ja-zope-jamailhost	ports/japanese/zope-jamailhost
 jabber		ports/net-im/jabber
-jabber-aim	ports/net-im/jabber-aim
 jabber-conference	ports/net-im/jabber-conference
 jabber-jud	ports/net-im/jabber-jud
 jabber-pyaim	ports/net-im/jabber-pyaim

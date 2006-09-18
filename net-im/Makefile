@@ -50,7 +50,6 @@
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jabber
-    SUBDIR += jabber-aim
     SUBDIR += jabber-conference
     SUBDIR += jabber-jud
     SUBDIR += jabber-pyaim
