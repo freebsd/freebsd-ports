@@ -285,7 +285,6 @@ lib/libsketchy.so
 %%DOCSDIR%%/sk08.html
 %%DOCSDIR%%/sk09.html
 %%DOCSDIR%%/sk10.html
-%%DOCSDIR%%/sketchy.css
 %%DOCSDIR%%/toc2-x.html
 %%DOCSDIR%%/toc2.html
 @dirrm %%DATADIR%%/lib
