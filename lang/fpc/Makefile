@@ -7,7 +7,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	2.0.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \

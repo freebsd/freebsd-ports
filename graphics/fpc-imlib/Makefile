@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-imlib
 
@@ -18,11 +18,11 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/x11/Package.fpc:${PORTSDIR}/x11/fpc-x11 \
 		${UNITSDIR}/opengl/Package.fpc:${PORTSDIR}/graphics/fpc-opengl
 
-USE_GNOME=	imlib
-
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
+
+OPTIONS=	IMLIB	"Install imlib graphic library"	on
 
 .include "${MASTERDIR}/Makefile"

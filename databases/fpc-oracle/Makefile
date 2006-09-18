@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-oracle
 
@@ -13,12 +13,9 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to Oracle
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
-RUN_DEPENDS=	${ORACLE8_LIB}/env_rdbms.mk:${PORTSDIR}/databases/oracle8-client
 
-ORACLE8_LIB=	${LOCALBASE}/oracle8-client/rdbms/lib
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
 
 .include "${MASTERDIR}/Makefile"

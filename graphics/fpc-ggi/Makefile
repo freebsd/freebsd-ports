@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-ggi
 
@@ -14,11 +14,11 @@ COMMENT=	Free Pascal interface to libggi
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
-LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	LIBGGI	"Install ggi library"	on
 
 .include "${MASTERDIR}/Makefile"

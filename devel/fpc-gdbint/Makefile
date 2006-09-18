@@ -17,6 +17,5 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
 
 .include "${MASTERDIR}/Makefile"

@@ -34,6 +34,5 @@ UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR} ${FPCSRCDIR}/fcl/inc
-OPT=-CX -Fu../fcl/*
 
 .include "${MASTERDIR}/Makefile"

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-odbc
 
@@ -13,11 +13,11 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to ODBC
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
-LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	ODBC	"Install ODBC library suite for Unix"	on
 
 .include "${MASTERDIR}/Makefile"

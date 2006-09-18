@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-ibase
 
@@ -13,11 +13,11 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to interbase
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
-LIB_DEPENDS=	fbembed.1:${PORTSDIR}/databases/firebird-client
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	IBASE	"Install Interbase/Firebird client"	on
 
 .include "${MASTERDIR}/Makefile"

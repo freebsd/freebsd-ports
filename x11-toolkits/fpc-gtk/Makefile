@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk
 
@@ -18,13 +18,11 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/x11/Package.fpc:${PORTSDIR}/x11/fpc-x11 \
 		${UNITSDIR}/opengl/Package.fpc:${PORTSDIR}/graphics/fpc-opengl
 
-USE_GNOME=	gtk12
-
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
-OPT=-CX -Fu${WRKDIR}/${WRKUNITDIR}/*
+
+OPTIONS=	GTK1	"Gimp Toolkit for X11 GUI (version 1.x)"	on
 
 .include "${MASTERDIR}/Makefile"

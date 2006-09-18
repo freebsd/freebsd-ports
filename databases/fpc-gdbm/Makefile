@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-gdbm
 
@@ -14,11 +14,11 @@ COMMENT=	Free Pascal interface to the GNU database system
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	GDBM	"Install the GNU database manager"	on
 
 .include "${MASTERDIR}/Makefile"

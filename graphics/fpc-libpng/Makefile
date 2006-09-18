@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-libpng
 
@@ -15,11 +15,12 @@ COMMENT=	Free Pascal interface to libpng, for reading PNG image files
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils \
 		${UNITSDIR}/zlib/Package.fpc:${PORTSDIR}/devel/fpc-zlib
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
+
+OPTIONS=	LIBPNG	"Install png library for manipulating PNG images"	on
 
 .include "${MASTERDIR}/Makefile"

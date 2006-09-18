@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 lang
 PKGNAMESUFFIX=	-x11
 
@@ -15,10 +15,10 @@ COMMENT=	Free Pascal interface to X windows server
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
 
-USE_XLIB=	yes
-
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
+
+OPTIONS=	X11	"Install X libraries"	on
 
 .include "${MASTERDIR}/Makefile"
