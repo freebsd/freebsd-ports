@@ -20,4 +20,5 @@ bin/udvips
 @dirrm %%DVIPSDIR%%/base
 @dirrm %%DVIPSCONFIGDIR%%/config
 @dirrm %%DVIPSCONFIGDIR_DIST%%/config
+@dirrm %%DVIPSDIR%%
 @unexec %%MKTEXLSR%%

@@ -332,7 +332,7 @@ bin/tftopl-ptex
 @exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap
 @exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvipdfm/updmap
 @exec /bin/mkdir -p %D/%%TEXMFVARDIR%%/fonts/map/ptex/pdftex/updmap
-@exec %%UPDMAP_SYS%%
+@exec if %D/bin/kpsewhich -format=map psfonts_jp.map > /dev/null 2>&1; then %%UPDMAP_SYS%% --enable Map=psfonts_jp.map; else %%UPDMAP_SYS%%; fi
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/download35.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/builtin35.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/ptex/dvips/updmap/psfonts_t1.map
