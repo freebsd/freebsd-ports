@@ -7,24 +7,25 @@
 
 PORTNAME=	utserver
 PORTVERSION=	451
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/:p436 \
 		ftp://ftp.wireplay.co.uk/pub/unrealtournament/server/:p436 \
 		ftp://ftp.fh-niederrhein.de/pub/win9x/gamesup/ut/:p436 \
 		http://www.utpg.org/patches/:p451
-DISTFILES=	ut-server-436.tar.gz:p436 ${PATCH451FILES}
-EXTRACT_ONLY=	ut-server-436.tar.gz
+DISTFILES=	${MAINFILE}:p436 ${PATCH451FILE}:p451
+DIST_SUBDIR=	linux-ut
+EXTRACT_ONLY=	${MAINFILE}
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Unreal Tournament Dedicated Server for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-BUILD_DEPENDS=	${RUN_DEPENDS}
+
+OPTIONS=	BONUSPACKS	'install the official bonus packs collection' on
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_PERL5=	yes
 NO_CDROM=	Size; the data set is much too big
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ut-server
@@ -34,28 +35,67 @@ UTDIR=		ut-server
 PLIST_SUB=	UTDIR="${UTDIR}/"
 SUB_LIST=	UTDIR="${PREFIX}/${UTDIR}"
 SUB_FILES=	pkg-message
-PATCH451FILES=	UTPGPatch451.tar.bz2:p451
+MAINFILE=	ut-server-436.tar.gz
+PATCH451FILE=	UTPGPatch451.tar.bz2
 EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+PATCH_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/libarchive
+BSDTAR=		${LOCALBASE}/bin/bsdtar
+.else
+BSDTAR=		${TAR}
+.endif
+
+.if !defined(WITHOUT_BONUSPACKS)
+MASTER_SITES+=	http://liflg.0wnitsch.de/files/native/:pbonus
+BONUSFILE=	unreal.tournament.official.bonus.pack.collection.run
+DISTFILES+=	${BONUSFILE}:pbonus
+PLIST_SUB+=	WITH_BONUSPACKS=""
+.else
+PLIST_SUB+=	WITH_BONUSPACKS="@comment "
+.endif
+
+pre-fetch:
+.if exists(${DISTDIR}/${MAINFILE})
+	@${MKDIR} ${_DISTDIR}
+	@${MV} ${DISTDIR}/${MAINFILE} ${_DISTDIR}/
+.endif
+.if exists(${DISTDIR}/${PATCH451FILE})
+	@${MKDIR} ${_DISTDIR}
+	@${MV} ${DISTDIR}/${PATCH451FILE} ${_DISTDIR}/
+.endif
 
 pre-patch:
 	@${SED} -e "s!%%LOCALBASE%%!${LOCALBASE}!" \
-	    -e "s!%%UTDIR%%!${PREFIX}/${UTDIR}!" \
-	    ${FILESDIR}/template-patch-ngstatsut > \
-	    ${WRKDIR}/patch-ngstatsut
-
-do-patch:
-	@${TAR} jx -C ${WRKSRC} -X ${FILESDIR}/excludefiles \
-	   -f ${_DISTDIR}/${PATCH451FILES:C/:.*//}
+		-e "s!%%UTDIR%%!${PREFIX}/${UTDIR}!" \
+		${FILESDIR}/template-patch-ngstatsut > \
+		${WRKDIR}/patch-ngstatsut
+.if !defined(WITHOUT_BONUSPACKS)
+	@${SED} -e '1,/exit $$res/d' ${_DISTDIR}/${BONUSFILE} | \
+		${BSDTAR} xf - -C ${WRKDIR} -X ${FILESDIR}/excludefiles
+.for file in "bp1.tar.bz2 bp2.tar.bz2 bp3.tar.bz2 bp4.tar.bz2"
+	@${BSDTAR} x -C ${WRKSRC} -f ${WRKDIR}/${file}
+.endfor
+	@${MV} ${WRKDIR}/README.bonus.pack.collection ${WRKSRC}/Help
+.endif
+	@${BSDTAR} x -C ${WRKSRC} -X ${FILESDIR}/excludefiles \
+		-f ${_DISTDIR}/${PATCH451FILE}
+	@${RM} -f ${WRKSRC}/System/libSDL-1.1.so.0
 # remove trailing ^M
 	@${FIND} -E ${WRKSRC} -type f \
-		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|int|lst|pl|pm|sc|sh|scr|txt|url|uhtm|inc)" \
-		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
+		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|int|lst| \
+		pl|pm|sc|sh|scr|txt|url|uhtm|inc|ver)" \
+		-exec ${SH} -c "${SED} "s/`printf '\r'`//" '{}' \
+		>${WRKDIR}/tmp.txt; ${MV} ${WRKDIR}/tmp.txt '{}'" \;
+post-patch:
+	@${FIND} -E ${WRKSRC} -type f -name '*.orig' -exec ${RM} '{}' \;
 
 do-install:
 	@${CP} -Rp ${WRKSRC}/ ${PREFIX}/${UTDIR}
-	@${RM} -f ${PREFIX}/${UTDIR}/System/libSDL-1.1.so.0
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

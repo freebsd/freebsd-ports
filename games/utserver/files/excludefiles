@@ -22,3 +22,5 @@ System/ut-bin
 System/editorres
 checkfiles.sh
 patch.md5
+setup.data
+setup.sh
