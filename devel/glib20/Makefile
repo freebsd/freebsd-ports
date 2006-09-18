@@ -54,6 +54,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gthread_gthread-posix.c
 LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
+CFLAGS+=	-O0	# avoid an icu crash in the gimp
 .endif
 
 post-patch:
