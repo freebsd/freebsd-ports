@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rst.el
-PORTVERSION=	4655
+PORTVERSION=	4747
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://svn.berlios.de/viewcvs/*checkout*/docutils/trunk/docutils/tools/editors/emacs/
 PKGNAMESUFFIX=	-${EMACS_NAME}
@@ -16,8 +16,6 @@ EXTRACT_SUFX=	# empty
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	ReStructuredText Support for Emacs
 
-BROKEN=		Incomplete pkg-plist
-
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	xemacs21-mule
 
@@ -25,9 +23,6 @@ NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	${WRKSRC}/rst.el
-
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/rst.el \
-		${EMACS_SITE_LISPDIR}/rst.elc
 
 ELISPDIR=	${TARGETDIR}/${EMACS_SITE_LISPDIR}
 
