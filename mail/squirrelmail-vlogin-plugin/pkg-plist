@@ -25,8 +25,8 @@
 %%SQUIRRELDIR%%/plugins/vlogin/sql_settings_lookup.php
 %%SQUIRRELDIR%%/plugins/vlogin/make_release.sh
 %%SQUIRRELDIR%%/plugins/vlogin/version
-@dirrm %%SQUIRRELDIR%%/plugins/vlogin/data/service_levels
-@dirrm %%SQUIRRELDIR%%/plugins/vlogin/data/domains
-@dirrm %%SQUIRRELDIR%%/plugins/vlogin/data
-@dirrm %%SQUIRRELDIR%%/plugins/vlogin
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/service_levels
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data/domains
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin/data
+@dirrmtry %%SQUIRRELDIR%%/plugins/vlogin
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin vlogin; fi
