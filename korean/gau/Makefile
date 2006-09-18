@@ -30,7 +30,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+BROKEN=		Does not compile on FreeBSD > 5.0
 .endif
 
 .include <bsd.port.post.mk>
