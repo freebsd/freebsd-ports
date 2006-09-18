@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
@@ -20,11 +19,7 @@ RUN_DEPENDS=	tiff2pdf:${PORTSDIR}/graphics/tiff \
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-	${REINPLACE_CMD} -Ee 's!tiff2pdf (.*) \$$options!tiff2pdf \$$options \1!' ${WRKSRC}/${PORTNAME}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
