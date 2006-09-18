@@ -16,6 +16,8 @@ DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5.0.x
 
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
+
 USE_LUA=	5.0
 LUA_COMPS=	lua compat51
 
