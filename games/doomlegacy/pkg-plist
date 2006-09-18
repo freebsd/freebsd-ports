@@ -1,4 +1,4 @@
-bin/legacy
+bin/doomlegacy
 %%DATADIR%%/legacy.dat
 %%DATADIR%%/llsndserv
 %%DATADIR%%/lsdldoom
