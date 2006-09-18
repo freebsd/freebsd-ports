@@ -4,6 +4,7 @@ lib/kde3/videothumbnail.so
 lib/libarts_xine.a
 lib/libarts_xine.la
 lib/libarts_xine.so
+lib/libarts_xine.so.0
 lib/mcop/xineAudioPlayObject.mcopclass
 lib/mcop/xineVideoPlayObject.mcopclass
 share/apps/videothumbnail/sprocket-large.png
