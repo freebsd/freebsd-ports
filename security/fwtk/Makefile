@@ -50,6 +50,9 @@ IGNORE=		does not build on 5.x and above with WITH_SKEY set because it requires 
 MAN8+=		x-gw.8
 LIBEXEC_BINS+=	x-gw
 USE_XLIB=	yes
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
 .endif
 
 .if defined(WITH_JUMBO_PATCH)
