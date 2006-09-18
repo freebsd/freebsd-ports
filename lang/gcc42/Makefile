@@ -73,8 +73,7 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
 .if defined(WITH_JAVA_AWT)
-CONFIGURE_ARGS+=	--with-java-home=${PREFIX}/lib/jvm/java-1.4.2-gcj${SUFFIX}-1.4.2.0/jre	\
-			--enable-java-awt=gtk,xlib \
+CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
 			--enable-gtk-cairo
 .endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
