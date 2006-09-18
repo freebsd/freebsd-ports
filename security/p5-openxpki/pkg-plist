@@ -167,8 +167,6 @@ share/locale/en_GB/LC_MESSAGES/openxpki.mo
 @dirrmtry %%DATADIR%%
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
-@dirrmtry share/locale/en_GB/LC_MESSAGES
-@dirrmtry share/locale/en_GB
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP/Lite
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SCEP
