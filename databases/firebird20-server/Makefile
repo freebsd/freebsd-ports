@@ -1,27 +1,30 @@
-# New ports collection makefile for:	Firebird
-# Date created:		20 December 2000
-# Whom:			Geoffrey C. Speicher <geoff@sea-incorporated.com>
+# New ports collection makefile for:	firebird2-server
+# Date created:		15 August 2006
+# Whom:			Sergey Skvortsov <skv@protey.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME?=	firebird
-PORTVERSION=	1.5.3
+PORTVERSION=	2.0.0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 PKGNAMESUFFIX?=	-server
-DISTNAME=	firebird-1.5.3.4870
+DISTNAME=	Firebird-2.0.0.12724-ReleaseCandidate4
 
 MAINTAINER=	skv@FreeBSD.org
-COMMENT?=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
+COMMENT?=	Firebird-2 relational database (server)
+
+UNIQUENAME?=	${PORTNAME}2
 
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259 aclocal:19 libtool:15
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal \
+		-I ${WRKSRC}/m4
 USE_GCC=	3.4+
 
 LOCALSTATEDIR=	/var/db/firebird
@@ -37,14 +40,15 @@ LD=	${CC}
 STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64
+CONFLICTS=	firebird-client-1* firebird-server-1*
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME:C/^F/f/}
 
 INSTALL_FB=	${INSTALL} ${COPY} -g firebird
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
-LIB_DEPENDS+=	fbembed.1:${PORTSDIR}/databases/firebird-client
+LIB_DEPENDS+=	fbembed.2:${PORTSDIR}/databases/firebird2-client
 
 AUTOGENARGS=	--with-lock-manager
 
@@ -55,13 +59,13 @@ SUB_FILES=	pkg-install pkg-message aliases.conf
 SUB_LIST+=	LOCALSTATEDIR=${LOCALSTATEDIR}
 
 SUID_BIN=	fb_inet_server fb_lock_mgr gds_drop
-UTIL_BIN=	fb_lock_print gbak gdef gfix gsec gstat
-UDF_SO=		ib_udf.so fbudf.so
-UDF_SQL=	src/extlib/ib_udf.sql src/extlib/fbudf/fbudf.sql
-
-CONFLICTS=	firebird-devel-[0-9]*
+UTIL_BIN=	fb_lock_print gbak gdef gfix gsec gstat nbackup
+UDF_SO=		ib_udf.so
+UDF_SQL=	src/extlib/ib_udf2.sql
 .else
 # Client part stuff
+LIB_DEPENDS=	icuuc.34:${PORTSDIR}/devel/icu
+
 AUTOGENARGS=	--with-editline
 
 ALL_TARGET=	firebird_basic libfbembed embed_isql embed_gpre \
@@ -69,10 +73,15 @@ ALL_TARGET=	firebird_basic libfbembed embed_isql embed_gpre \
 #ALL_TARGET=	firebird_basic libfbembed libfbclient \
 #		client_gpre client_gdef client_isql client_qli extlib
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql qli
 
-CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -81,17 +90,19 @@ PORTDOCS=	*
 
 MAKE_ENV+=	CC=${CC} CXX=${CXX} FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
 
+post-extract:
+	@${RM} -rf ${WRKSRC}/extern/icu
+
+post-patch:
+	@${MKDIR} ${WRKSRC}/m4
+	${CP} ${FILESDIR}/*.m4 ${WRKSRC}/m4
+
 .include <bsd.port.pre.mk>
 
 .if !defined(CLIENT_ONLY)
 pre-everything::
-	@${ECHO_MSG} "NOTE: If the work directory is on an NFS mount, you will"
-	@${ECHO_MSG} "require NFS client locking support for the build to"
-	@${ECHO_MSG} "succeed. Currently this is only available on FreeBSD 5.0"
-	@${ECHO_MSG} "or greater."
-	@${ECHO_MSG}
 	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
-	@${ECHO_MSG} "changed since version 1.0.x."
+	@${ECHO_MSG} "changed since version 1.x."
 	@${ECHO_MSG} "Cancel this installation now and backup your databases"
 	@${ECHO_MSG} "if you have not already done so."
 .if !defined(BATCH)
@@ -100,16 +111,18 @@ pre-everything::
 .endif
 
 .if !defined(CLIENT_ONLY)
-pre-install:
+pre-su-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
-post-install:
+post-su-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .endif
 
 .ifndef WITHOUT_IPC_CLEANUP
 pre-build:
+	@if [ `${ID} -u` -eq 0 ]; then \
+	${ECHO_MSG} "==> Please do not build ${PORTNAME} as 'root' because this may cause conflicts with SysV semaphores of running services."; exit 1; fi
 	[ -f ${WRKDIR}/ipcs.pre.build ] || /usr/bin/ipcs -s | ${TAIL} -n +3 | \
 		${GREP} -F `${ID} -un` | ${CAT} > ${WRKDIR}/ipcs.pre.build
 
@@ -125,7 +138,9 @@ do-configure:
 	${AUTOTOOLS_VARS} ./autogen.sh --localstatedir=${LOCALSTATEDIR} \
 		--prefix=${LOCALSTATEDIR} --exec-prefix=${PREFIX} \
 		--libexecdir=${LIBEXECDIR} \
-		--sysconfdir=${CONFDIR} --datadir=${DATADIR} ${AUTOGENARGS})
+		--sysconfdir=${CONFDIR} --datadir=${DATADIR} \
+		--with-icu-config=${LOCALBASE}/bin/icu-config \
+		${AUTOGENARGS})
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|__attribute__ ((__unused__));||' \
@@ -137,10 +152,13 @@ do-install:
 	${INSTALL_PROGRAM} ${UTIL_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/bin
 
 	${INSTALL_PROGRAM} -o firebird -g firebird -m 6550 \
-		${SUID_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/sbin
+		${SUID_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} ${PREFIX}/bin
 
 	@${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKDIR}/aliases.conf ${CONFDIR}/aliases.conf.sample
+.if !exists(${CONFDIR}/aliases.conf)
+	${INSTALL_DATA} ${WRKDIR}/aliases.conf ${CONFDIR}/aliases.conf
+.endif
 
 	${MKDIR} ${LIBEXECDIR}/udf ${LOCALSTATEDIR}/help ${LIBEXECDIR}/intl
 
@@ -149,19 +167,17 @@ do-install:
 	${INSTALL_FB} -m 0555 ${UDF_SO:S!^!${WRKSRC}/gen/firebird/UDF/!} ${LIBEXECDIR}/udf
 	${INSTALL_FB} -m 0444 ${UDF_SQL:S!^!${WRKSRC}/!} ${LIBEXECDIR}/udf
 
-.if !exists(${LOCALSTATEDIR}/security.fdb)
-	${INSTALL_FB} -m 0660 -o firebird ${WRKSRC}/gen/firebird/security.fdb \
-		${LOCALSTATEDIR}/security.fdb
+.if !exists(${LOCALSTATEDIR}/security2.fdb)
+	${INSTALL_FB} -m 0660 -o firebird ${WRKSRC}/gen/firebird/security2.fdb \
+		${LOCALSTATEDIR}/security2.fdb
 .endif
-	${INSTALL_FB} -m 0660 -o firebird ${WRKSRC}/gen/firebird/security.fdb \
-		${LOCALSTATEDIR}/security.fdb.sample
+	${INSTALL_FB} -m 0660 -o firebird ${WRKSRC}/gen/firebird/security2.fdb \
+		${LOCALSTATEDIR}/security2.fdb.sample
 
 	${INSTALL_FB} -m 0440 ${WRKSRC}/gen/firebird/help/help.fdb \
 		${LOCALSTATEDIR}/help
 
 	${INSTALL_FB} -m 0555 ${WRKSRC}/gen/firebird/intl/libfbintl.so ${LIBEXECDIR}/intl/fbintl
-
-	${INSTALL_DATA} ${FILESDIR}/RELNOTES ${LOCALSTATEDIR}
 .else
 # defined CLIENT_ONLY
 	${INSTALL_PROGRAM} ${CLIENT_BIN:S!^!${WRKSRC}/gen/firebird/bin/!} \
@@ -180,13 +196,14 @@ do-install:
 		${WRKSRC}/gen/firebird/lib/libfbembed.so.${PORTVERSION} \
 		${PREFIX}/lib
 
-	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libfbclient.so.1
-	${LN} -fs libfbclient.so.1 ${PREFIX}/lib/libfbclient.so
+	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libfbclient.so.2
+	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libfbclient.so
 
-	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so.1
-	${LN} -fs libfbembed.so.1 ${PREFIX}/lib/libfbembed.so
-	${LN} -fs libfbembed.so.1 ${PREFIX}/lib/libgds.so.1
-	${LN} -fs libfbembed.so.1 ${PREFIX}/lib/libgds.so
+	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so.2
+	${LN} -fs libfbembed.so.${PORTVERSION} ${PREFIX}/lib/libfbembed.so
+
+	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libgds.so.2
+	${LN} -fs libfbclient.so.${PORTVERSION} ${PREFIX}/lib/libgds.so
 
 	@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/gen/firebird/include/*.h ${PREFIX}/include
@@ -200,10 +217,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/README.user ${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/doc/sql.extensions/README.* ${DOCSDIR}/sql.extensions
 .endif
-
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/gen/firebird/examples/v5/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

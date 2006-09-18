@@ -4,10 +4,9 @@ offers excellent concurrency, high performance, and powerful language
 support for stored procedures and triggers.  It has been used in
 production systems, under a variety of names since 1981.
 
-For more information on Firebird and InterBase, see:
+Firebird is completely free of any registration, licensing or deployment
+fees.  It may be deployed freely for use with any third-party software,
+whether commercial or not.
 
 WWW: http://sourceforge.net/projects/firebird/
-WWW: http://www.ibphoenix.com/
-WWW: http://www.interbase2000.org/
-WWW: http://www.interbase.com/
 WWW: http://www.firebirdsql.org/

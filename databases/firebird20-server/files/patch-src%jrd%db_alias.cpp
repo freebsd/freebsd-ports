@@ -1,13 +1,13 @@
---- src/jrd/db_alias.cpp.orig	Mon Aug 18 01:16:41 2003
-+++ src/jrd/db_alias.cpp	Mon Jul 25 15:07:45 2005
-@@ -37,8 +37,8 @@
+--- src/jrd/db_alias.cpp.orig	Tue Aug 15 23:07:31 2006
++++ src/jrd/db_alias.cpp	Tue Aug 15 23:10:08 2006
+@@ -33,8 +33,8 @@
  
- bool ResolveDatabaseAlias(const char* alias, char* database)
+ bool ResolveDatabaseAlias(const string& alias, string& database)
  {
--	TEXT alias_filename[MAXPATHLEN];
--	gds__prefix(alias_filename, const_cast<char*>(ALIAS_FILE));
-+	TEXT alias_filename[MAXPATHLEN] = FB_CONF_PREFIX "/";
-+	strlcat(alias_filename, ALIAS_FILE, MAXPATHLEN);
+-	string alias_filename;
+-	Firebird::Prefix(alias_filename, ALIAS_FILE);
++	string alias_filename = string(FB_CONF_PREFIX)
++		+ PathUtils::dir_sep + ALIAS_FILE;
  	ConfigFile aliasConfig(false);
- 	aliasConfig.setConfigFile(alias_filename);
+ 	aliasConfig.setConfigFilePath(alias_filename);
  
