@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nspr
-PORTVERSION=	4.6.1
-PORTREVISION=	2
+PORTVERSION=	4.6.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
@@ -17,7 +16,7 @@ COMMENT=	A platform-neutral API for system level and libc like functions
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/nsprpub/build
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
