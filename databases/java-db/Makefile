@@ -17,13 +17,13 @@ DISTNAME=	je-${PORTVERSION}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Berkeley DB Java Edition
 
-BUILD_DEPENDS=	${JAVAJARDIR}/junit.jar:${PORTSDIR}/java/junit
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
 
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/je.jar
+PLIST_FILES=	%%JAVAJARDIR%%/je.jar
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${TARGETDIR}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
