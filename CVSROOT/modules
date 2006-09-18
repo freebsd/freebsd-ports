@@ -5069,6 +5069,7 @@ java-checkstyle	ports/java/java-checkstyle
 java-commapi	ports/comms/java-commapi
 java-commapi-freebsd	ports/comms/java-commapi-freebsd
 java-cup	ports/java/java-cup
+java-db		ports/databases/java-db
 java-gcj-compat	ports/java/java-gcj-compat
 java-getopt	ports/java/java-getopt
 java-sqlrelay	ports/databases/java-sqlrelay
