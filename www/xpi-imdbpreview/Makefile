@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	imdbpreview
-PORTVERSION=	0.3
-DISTVERSIONSUFFIX=	-fx
+DISTVERSION=	0.4a
 CATEGORIES=	www
+MASTER_SITES=	SF
+DISTNAME=	IMDb_Preview_${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Preview movie & actor posters when hovering over their IMDb links
 
-XPI_DISTNAME=	imdb_preview
 XPI_ID=		{10187899-7ffe-4f9a-b9d2-35fdb3b49690}
 XPI_FILES=	change_log.txt chrome/imdb_preview.jar chrome.manifest \
 		defaults/preferences/defaults.js install.rdf
