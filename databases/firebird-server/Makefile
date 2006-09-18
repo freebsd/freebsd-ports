@@ -37,6 +37,7 @@ LD=	${CC}
 STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64
+CONFLICTS=	firebird-client-2* firebird-server-2*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -58,8 +59,6 @@ SUID_BIN=	fb_inet_server fb_lock_mgr gds_drop
 UTIL_BIN=	fb_lock_print gbak gdef gfix gsec gstat
 UDF_SO=		ib_udf.so fbudf.so
 UDF_SQL=	src/extlib/ib_udf.sql src/extlib/fbudf/fbudf.sql
-
-CONFLICTS=	firebird-devel-[0-9]*
 .else
 # Client part stuff
 AUTOGENARGS=	--with-editline
@@ -69,7 +68,7 @@ ALL_TARGET=	firebird_basic libfbembed embed_isql embed_gpre \
 #ALL_TARGET=	firebird_basic libfbembed libfbclient \
 #		client_gpre client_gdef client_isql client_qli extlib
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql qli
 
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -100,16 +99,18 @@ pre-everything::
 .endif
 
 .if !defined(CLIENT_ONLY)
-pre-install:
+pre-su-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
-post-install:
+post-su-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .endif
 
 .ifndef WITHOUT_IPC_CLEANUP
 pre-build:
+	@if [ `${ID} -u` -eq 0 ]; then \
+	${ECHO_MSG} "==> Please do not build ${PORTNAME} as 'root' because this may cause conflicts with SysV semaphores of running services."; exit 1; fi
 	[ -f ${WRKDIR}/ipcs.pre.build ] || /usr/bin/ipcs -s | ${TAIL} -n +3 | \
 		${GREP} -F `${ID} -un` | ${CAT} > ${WRKDIR}/ipcs.pre.build
 

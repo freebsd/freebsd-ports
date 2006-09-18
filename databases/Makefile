@@ -41,9 +41,10 @@
     SUBDIR += erserver
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
-    SUBDIR += firebird-server
     SUBDIR += firebird-client
-    SUBDIR += firebird-devel
+    SUBDIR += firebird-server
+    SUBDIR += firebird2-client
+    SUBDIR += firebird2-server
     SUBDIR += fireprofile
     SUBDIR += flamerobin
     SUBDIR += fpc-gdbm

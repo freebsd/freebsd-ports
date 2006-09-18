@@ -1,24 +1,20 @@
---- src/jrd/plugin_manager.cpp.orig	Wed Mar 15 14:25:42 2006
-+++ src/jrd/plugin_manager.cpp	Wed Mar 15 14:39:12 2006
-@@ -47,9 +47,7 @@
+--- src/jrd/plugin_manager.cpp.orig	Tue Aug 15 23:11:04 2006
++++ src/jrd/plugin_manager.cpp	Tue Aug 15 23:12:01 2006
+@@ -64,7 +64,7 @@
  void PluginManager::loadAllPlugins()
  {
- 	Firebird::list<Path>::iterator pathItr;
--	char fb_lib_path[MAXPATHLEN];
--	gds__prefix(fb_lib_path, "");
--	Firebird::string fbLibPath(fb_lib_path);
-+	Firebird::string fbLibPath(FB_LIBEXEC_PREFIX);
- 	Firebird::string checkDir;
+ 	Firebird::PathName checkDir;
+-	const Firebird::PathName fbLibPath = Config::getRootDirectory();
++	const Firebird::PathName fbLibPath = FB_LIBEXEC_PREFIX;
  	
- 	for(pathItr = searchPaths.begin(); pathItr != searchPaths.end(); ++pathItr)
-@@ -114,9 +112,7 @@
- 
- PluginManager::Module *PluginManager::loadPluginModule(const Firebird::string& name)
+ 	for (spIterator pathItr = searchPaths.begin(); pathItr != searchPaths.end(); ++pathItr)
+ 	{
+@@ -131,7 +131,7 @@
+ PluginManager::Module *PluginManager::loadPluginModule(const Firebird::PathName& name)
  {
--	char fb_lib_path[MAXPATHLEN];
--	gds__prefix(fb_lib_path, "");
--	Firebird::string fbLibPath(fb_lib_path);
-+	Firebird::string fbLibPath(FB_LIBEXEC_PREFIX);
- 	Firebird::string checkPath;
- 	Firebird::list<Path>::iterator itr;
+ 	Firebird::PathName checkPath;
+-	const Firebird::PathName fbLibPath = Config::getRootDirectory();
++	const Firebird::PathName fbLibPath = FB_LIBEXEC_PREFIX;
  	
+ 	// Check to see if the module name was specified as a relative path
+ 	//	from one of our search paths.  This only makes sense if the name

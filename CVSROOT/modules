@@ -2585,8 +2585,9 @@ findmtu		ports/net/findmtu
 findutils	ports/misc/findutils
 finfo		ports/sysutils/finfo
 firebird-client	ports/databases/firebird-client
-firebird-devel	ports/databases/firebird-devel
 firebird-server	ports/databases/firebird-server
+firebird2-client	ports/databases/firebird2-client
+firebird2-server	ports/databases/firebird2-server
 firedns		ports/dns/firedns
 fireflies	ports/x11/fireflies
 firefox		ports/www/firefox
