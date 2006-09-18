@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-opengl
 
@@ -15,14 +15,12 @@ COMMENT=	Free Pascal interface to the OpenGL library
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils \
 		${UNITSDIR}/x11/Package.fpc:${PORTSDIR}/x11/fpc-x11
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
-USE_GL=	yes
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	OPENGL	"Install opengl libraries"	on
 
 .include "${MASTERDIR}/Makefile"

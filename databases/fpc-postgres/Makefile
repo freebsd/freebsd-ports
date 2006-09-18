@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-postgres
 
@@ -14,11 +14,10 @@ COMMENT=	Free Pascal interface to PostGreSQL
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 
-USE_PGSQL=	yes
-
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	PGSQL	"Install PostgreSQL client"	on
 
 .include "${MASTERDIR}/Makefile"

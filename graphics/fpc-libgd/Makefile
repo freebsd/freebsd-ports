@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-libgd
 
@@ -14,11 +14,11 @@ COMMENT=	Free Pascal interface to libgd for producing graphics files
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	LIBGD	"Install gd graphic library"	on
 
 .include "${MASTERDIR}/Makefile"

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-gconf
 
@@ -18,12 +18,11 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/x11/Package.fpc:${PORTSDIR}/x11/fpc-x11 \
 		${UNITSDIR}/opengl/Package.fpc:${PORTSDIR}/graphics/fpc-opengl
 
-USE_GNOME=	gconf
-
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/gnome1/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	GCONF	"Install gconf, a configuration database system"	on
 
 .include "${MASTERDIR}/Makefile"

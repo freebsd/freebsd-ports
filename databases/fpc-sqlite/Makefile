@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-sqlite
 
@@ -14,10 +14,10 @@ COMMENT=	Free Pascal interface to SQLite
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 
-USE_SQLITE=	yes
-
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
+
+OPTIONS=	SQLITE	"Install SQLite database engine"	on
 
 .include "${MASTERDIR}/Makefile"

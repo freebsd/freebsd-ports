@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-mysql
 
@@ -14,11 +14,10 @@ COMMENT=	Free Pascal interface to MySQL
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 
-USE_MYSQL=	yes
-
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	MYSQL	"Install MySQL client"	on
 
 .include "${MASTERDIR}/Makefile"

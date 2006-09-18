@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk2
 
@@ -15,11 +15,10 @@ COMMENT=	Free Pascal interface to the GTK2 libraries
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
 
-USE_GNOME=	gtk20
-
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	GTK2	"Gimp Toolkit for X11 GUI (version 2.x)"	on
 
 .include "${MASTERDIR}/Makefile"

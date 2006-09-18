@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	archivers lang
 PKGNAMESUFFIX=	-unzip
 
@@ -14,10 +14,11 @@ COMMENT=	Free Pascal routines for unzipping zip files
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils
-RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
+
+OPTIONS=	UNZIP	"Install unzip tools"	on
 
 .include "${MASTERDIR}/Makefile"

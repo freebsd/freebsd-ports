@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-tcl
 
@@ -30,12 +30,12 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/postgres/Package.fpc:${PORTSDIR}/databases/fpc-postgres \
 		${UNITSDIR}/regexpr/Package.fpc:${PORTSDIR}/devel/fpc-regexpr \
 		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
-HAVE_EXAMPLES=	true
+
+OPTIONS=	TCL	"Install tool commnad language"	on
 
 .include "${MASTERDIR}/Makefile"
