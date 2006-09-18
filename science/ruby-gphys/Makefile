@@ -8,7 +8,7 @@
 PORTNAME=	gphys
 PORTVERSION=	0.5.2
 CATEGORIES=	science ruby
-MASTER_SITES=	ftp://www.gfd-dennou.org/arch/ruby/products/gphys/
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/gphys/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
