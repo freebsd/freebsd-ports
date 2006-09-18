@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	20060912
+PORTVERSION=	20060917
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://t3x.org/files/
 
