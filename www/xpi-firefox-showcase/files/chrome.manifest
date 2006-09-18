@@ -24,6 +24,8 @@ locale	showcase	it-IT	jar:chrome/showcase.jar!/locale/it-IT/showcase/
 
 locale	showcase	ja-JP	jar:chrome/showcase.jar!/locale/ja-JP/showcase/
 
+locale	showcase	nl-NL	jar:chrome/showcase.jar!/locale/nl-NL/showcase/
+
 locale	showcase	pl-PL	jar:chrome/showcase.jar!/locale/pl-PL/showcase/
 
 locale	showcase	pt-BR	jar:chrome/showcase.jar!/locale/pt-BR/showcase/
@@ -33,3 +35,5 @@ locale	showcase	ru-RU	jar:chrome/showcase.jar!/locale/ru-RU/showcase/
 locale	showcase	sk-SK	jar:chrome/showcase.jar!/locale/sk-SK/showcase/
 
 locale	showcase	zh-CN	jar:chrome/showcase.jar!/locale/zh-CN/showcase/
+
+locale	showcase	hu-HU	jar:chrome/showcase.jar!/locale/hu-HU/showcase/
