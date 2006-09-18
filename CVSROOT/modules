@@ -4008,6 +4008,7 @@ gwee		ports/security/gwee
 gweled		ports/games/gweled
 gwenhywfar	ports/devel/gwenhywfar
 gwenview	ports/graphics/gwenview
+gwenview-i18n	ports/misc/gwenview-i18n
 gwget		ports/ftp/gwget
 gwhich		ports/misc/gwhich
 gwm		ports/x11-wm/gwm
