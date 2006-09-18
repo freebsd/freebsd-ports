@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ogre3d
-PORTVERSION=	1.2.2.p1
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ogre
-DISTNAME=	ogre-linux_osx-v${PORTVERSION:S/./-/g:S/-p/p/}
+DISTNAME=	ogre-linux_osx-v${PORTVERSION:S/./-/g}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++

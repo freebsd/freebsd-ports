@@ -16,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
-		OgreMain.11:${PORTSDIR}/graphics/ogre3d \
+		OgreMain.12:${PORTSDIR}/graphics/ogre3d \
 		eris-1.3:${PORTSDIR}/devel/eris \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
@@ -31,13 +31,14 @@ USE_GCC=	3.4
 USE_X_PREFIX=	YES
 USE_GNOME=	gnomehack
 USE_BZIP2=	YES
+USE_DOS2UNIX=	YES
 CPPFLAGS=	-DBR_NO_MACROS
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-IGNORE=		Does not compile because of inlining error
-.endif
+#.if ${OSVERSION} < 600000
+#IGNORE=		Does not compile because of inlining error
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
@@ -68,6 +69,8 @@ post-patch:
 		${WRKSRC}/src/services/sound/SoundService.h
 	@${REINPLACE_CMD} -e 's|@LDFLAGS@|& -lopenal -lalut|' \
 		${WRKSRC}/src/components/ogre/Makefile.in
+	@${REINPLACE_CMD}  '/^[ 	]*\*[ 	]/d' ${WRKSRC}/src/components/ogre/ogreopcode/opcode/*.cpp ${WRKSRC}/src/components/ogre/ogreopcode/opcode/*.h
+	@${REINPLACE_CMD} -e 's|^[ 	]*//.*||g' ${WRKSRC}/src/components/ogre/ogreopcode/opcode/*.cpp ${WRKSRC}/src/components/ogre/ogreopcode/opcode/*.h
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|lrintf|(long int)rintf|g' \
 		${WRKSRC}/src/components/ogre/environment/meshtree/TStem.cpp \

@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Multiplayer first person shooter
 
 BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
-LIB_DEPENDS=	OgreMain.11:${PORTSDIR}/graphics/ogre3d
+LIB_DEPENDS=	OgreMain.12:${PORTSDIR}/graphics/ogre3d
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
