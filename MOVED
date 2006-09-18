@@ -2464,3 +2464,4 @@ security/fpc-md5|security/fpc-hash|2006-09-07|Port was renamed
 devel/linux_devtools||2006-09-11|Has expired: the dependcy is deprecated, please use a linux_dist port instead
 graphics/pecl-imagick||2006-09-11|Has expired: Project is dead and does not work
 korean/linux_locale||2006-09-11|Has expired: the dependency is scheduled for removal and a recent glib does not need this
+net-im/jabber-aim||2006-09-18|This transport is deprecated, use net-im/jabber-pyaim instead
