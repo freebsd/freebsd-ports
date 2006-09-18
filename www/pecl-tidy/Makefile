@@ -21,7 +21,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/tidy/tidy.h:${PORTSDIR}/www/tidy-devel
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	tidy
-BROKEN_WITH_PHP=	5
+IGNORE_WITH_PHP=	5
 
 CONFIGURE_ARGS=	--enable-tidy
 
