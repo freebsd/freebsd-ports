@@ -47,19 +47,30 @@ dkimproxy_out_start()
 	logger -t ${name} "Starting ${name}"
 	touch ${dkimproxy_out_pidfile}
 	chown ${dkimproxy_out_user} ${dkimproxy_out_pidfile}
-	logfile=`mktemp /tmp/${name}.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+	tmpfile=`mktemp /tmp/${name}.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
 	su -m ${dkimproxy_out_user} -c "daemon -c -p ${dkimproxy_out_pidfile} \
 		%%PREFIX%%/bin/dkimproxy.out ${dkimproxy_out_flags}" \
-		> /dev/null 2> ${logfile}
-	sleep 1 # XXX: wait until dkimproxy start.
-	logger -t ${name} "`cat ${logfile}`"
-	err=`grep Error ${logfile}`
+		> /dev/null 2> ${tmpfile}
+	# wait until dkimproxy start.
+	while true
+	do
+		filesize=`ls -l ${tmpfile}|awk '{print $5}'`
+		if [ ${filesize} -gt 0 ]; then
+			break
+		fi
+	done
+
+	logger -t ${name} "`cat ${tmpfile}`"
+	err=`grep Error ${tmpfile}`
 	if [ "${err}" ]; then
 		echo "Failed to start ${name}."
 		echo "${err}"
 		rm -f ${dkimproxy_out_pidfile}
+	else
+		# To prevent DoS attack by dkimproxy_out_user.
+		chown root:wheel ${dkimproxy_out_pidfile}
 	fi
-	rm -f ${logfile}
+	rm -f ${tmpfile}
 }
 
 dkimproxy_out_stop()

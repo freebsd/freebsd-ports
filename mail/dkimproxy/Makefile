@@ -7,6 +7,7 @@
 
 PORTNAME=	dkimproxy
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://jason.long.name/dkimproxy/
 
