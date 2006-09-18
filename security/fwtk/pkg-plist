@@ -9,7 +9,7 @@ libexec/rlogin-gw
 libexec/smap
 libexec/smapd
 libexec/tn-gw
-libexec/x-gw
+%%X11%%libexec/x-gw
 sbin/authdump
 sbin/authload
 sbin/authmgr
