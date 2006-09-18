@@ -1,11 +1,11 @@
-# New ports collection makefile for:	snett
+# New ports collection makefile for:	xmms2-scrobbler
 # Date created:				06 Apr 2006
 # Whom:					Alexander Botero-Lowry <alex@foxybanana.com>
 #
 # $FreeBSD$
 
 PORTNAME=	xmms2-scrobbler
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	audio ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
 
@@ -38,4 +38,5 @@ post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
+
 .include <bsd.port.post.mk>
