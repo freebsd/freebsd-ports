@@ -39,7 +39,7 @@ Q2_UPDATE=	q2-${PORTVERSION}-x86-full.exe
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MANUAL) || defined(WITH_SHAREWARE)
-DISTFILES+=	${Q2_DEMO}
+DISTFILES+=	${Q2_DEMO}:data
 .endif
 
 .if defined(WITH_MANUAL)
