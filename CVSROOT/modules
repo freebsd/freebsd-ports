@@ -9986,6 +9986,7 @@ p5-Sys-Filesystem	ports/sysutils/p5-Sys-Filesystem
 p5-Sys-Hostname-FQDN	ports/sysutils/p5-Sys-Hostname-FQDN
 p5-Sys-Hostname-Long	ports/sysutils/p5-Sys-Hostname-Long
 p5-Sys-Mmap	ports/devel/p5-Sys-Mmap
+p5-Sys-SigAction	ports/devel/p5-Sys-SigAction
 p5-Sys-Utmp	ports/sysutils/p5-Sys-Utmp
 p5-SyslogScan	ports/sysutils/p5-SyslogScan
 p5-System2	ports/devel/p5-System2
