@@ -25,10 +25,6 @@ PORTDOCS=	protocol-ext.txt protocol.txt
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@ \@CPPFLAGS\@ |' ${WRKSRC}/src/Makefile.in
