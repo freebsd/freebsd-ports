@@ -76,4 +76,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>
