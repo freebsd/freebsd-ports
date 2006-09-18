@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.15.4
+PORTVERSION=	7.15.5
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -24,10 +24,10 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
 		curl_easy_init.3 curl_easy_perform.3 curl_easy_reset.3 \
 		curl_easy_setopt.3 curl_easy_strerror.3 curl_easy_unescape.3 \
 		curl_escape.3 \
-		curl_unescape.3 curl_formadd.3 curl_formfree.3 curl_free.3 \
+		curl_unescape.3 curl_formadd.3 curl_formget.3 curl_formfree.3 curl_free.3 \
 		curl_getdate.3 curl_getenv.3 curl_global_init.3 \
 		curl_global_init_mem.3 curl_global_cleanup.3 curl_mprintf.3 \
-		curl_multi_add_handle.3 curl_multi_cleanup.3 \
+		curl_multi_add_handle.3 curl_multi_assign.3 curl_multi_cleanup.3 \
 		curl_multi_fdset.3 curl_multi_info_read.3 curl_multi_init.3 \
 		curl_multi_perform.3 curl_multi_remove_handle.3 \
 		curl_multi_setopt.3 curl_multi_socket.3 \
@@ -38,7 +38,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
 		curl_version_info.3 libcurl.3 libcurl-easy.3 libcurl-errors.3 \
 		libcurl-multi.3 libcurl-share.3 libcurl-tutorial.3
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SHLIB_VER=	3
 
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
@@ -51,23 +51,20 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		CURL_DEBUG "Enable curl diagnostic output" off \
-		GNUTLS "Use GNU TLS if WITHOUT_SSL is specified" off \
+		GNUTLS "Use GNU TLS if OPENSSL is OFF" off \
 		IPV6 "IPv6 support" on \
 		KERBEROS4 "Kerberos 4 authentication" off \
 		LIBIDN "Internationalized Domain Names via libidn" off \
-		NTLM "NTLM authentication" off
-
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-.endif
+		NTLM "NTLM authentication" off \
+		OPENSSL "OpenSSL support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GNUTLS) && !defined(WITHOUT_SSL)
-IGNORE=		may only use GNU TLS if WITHOUT_SSL is defined
+.if defined(WITH_GNUTLS) && defined(WITH_OPENSSL)
+IGNORE=		may only use GNU TLS if OpenSSL support is disabled
 .endif
 
-.if defined(WITH_NTLM) && defined(WITHOUT_SSL)
+.if defined(WITH_NTLM) && !defined(WITH_OPENSSL)
 IGNORE=		only supports NTLM with OpenSSL
 .endif
 
@@ -75,7 +72,8 @@ IGNORE=		only supports NTLM with OpenSSL
 IGNORE=		does not support both c-ares and IPv6 - disable one of them
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if !defined(WITHOUT_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--without-ssl
@@ -95,7 +93,7 @@ CONFIGURE_ARGS+=--with-gnutls=${LOCALBASE}
 CONFIGURE_ARGS+=--without-gnutls
 .endif
 
-.if !defined(WITHOUT_SSL) || defined(WITH_GNUTLS)
+.if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
 PLIST_SUB+=	SSL=""
 .else
 PLIST_SUB+=	SSL="@comment "
