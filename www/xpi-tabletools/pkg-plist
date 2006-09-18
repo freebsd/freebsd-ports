@@ -49,6 +49,11 @@
 %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletools.properties
 %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletoolsOptions.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL/tabletoolsOverlay.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/about.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/contents.rdf
+%%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/tabletools.properties
+%%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/tabletoolsOptions.dtd
+%%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK/tabletoolsOverlay.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/about.dtd
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/contents.rdf
 %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN/tabletools.properties
@@ -72,6 +77,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/ja-JP
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/nl-NL
+@dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/sk-SK
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools/zh-CN
 @dirrm %%XPI_XPIDIR%%/chrome/locale/tabletools
 @dirrm %%XPI_XPIDIR%%/chrome/locale
