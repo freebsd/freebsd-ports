@@ -78,6 +78,7 @@
     SUBDIR += isql-viewer
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
+    SUBDIR += java-db
     SUBDIR += java-sqlrelay
     SUBDIR += jdb
     SUBDIR += jdbc-oracle8i
