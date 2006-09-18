@@ -147,6 +147,7 @@
     SUBDIR += gtkfind
     SUBDIR += gtktalog
     SUBDIR += gtl
+    SUBDIR += gwenview-i18n
     SUBDIR += gwhich
     SUBDIR += hb
     SUBDIR += hello
