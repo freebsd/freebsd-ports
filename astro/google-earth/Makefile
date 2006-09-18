@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.0.1693
+PORTVERSION=	4.0.2091
 CATEGORIES=	astro deskutils
 MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
 DISTFILES=	${TARGET_DISTFILE}
