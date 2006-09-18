@@ -6,6 +6,7 @@
 
 PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
 PORTVERSION=		3.8.0
+PORTREVISION=		1
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.2.7
@@ -15,8 +16,6 @@ MAINTAINER=		matt@gsicomp.on.ca
 COMMENT=		Adds multi-site-hosting capabilities to SquirrelMail
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
-
-BROKEN=			Incomplete pkg-plist
 
 SQUIRREL_PLUGIN_NAME=	vlogin
 
