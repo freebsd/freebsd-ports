@@ -7,7 +7,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.95b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,hrs/teTeX,:S,$,:udvipspatch,}
@@ -23,8 +23,6 @@ EXTRACT_ONLY=	${TETEX_SRC}${EXTRACT_SUFX} \
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch
-
-BROKEN=		Incomplete pkg-plist
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
