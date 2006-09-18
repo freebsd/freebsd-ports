@@ -25,7 +25,7 @@ load_rc_config $name
 
 pidfile=${ucc_pidfile}
 command="%%UTDIR%%/System/ucc-bin"
-command_args="server ${ucc_map} ini=${ucc_config}"
+command_args="server \"${ucc_map}\" ini=${ucc_config}"
 start_cmd="ucc_startcmd"
 
 ucc_startcmd()
