@@ -48,13 +48,24 @@ dkfilter_out_start()
 	su -m ${dkfilter_out_user} -c "daemon -p ${dkfilter_out_pidfile} \
 		%%PREFIX%%/bin/dkfilter.out ${dkfilter_out_flags}" \
 		> /dev/null 2> ${tmpfile}
-	sleep 1	# XXX: wait until dkfilter start.
+	# wait until dkfilter start.
+	while true
+	do
+		filesize=`ls -l $tmpfile|awk '{print $5}'`
+		if [ ${filesize} -gt 0 ]; then
+			break
+		fi
+	done
+
 	logger -t ${name} `cat ${tmpfile}`
 	err=`grep Error ${tmpfile}`
 	if [ "${err}" ]; then
 		echo "Failed to start ${name}."
 		echo "${err}"
 		rm -f ${dkfilter_out_pidfile}
+	else
+		# To prevent DoS attack by dkfilter_out_user.
+		chown root:wheel ${dkfilter_out_pidfile}
 	fi
 	rm -f ${tmpfile}
 }

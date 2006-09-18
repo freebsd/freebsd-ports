@@ -7,7 +7,7 @@
 
 PORTNAME=	dkfilter
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://jason.long.name/dkfilter/
 
@@ -30,11 +30,11 @@ DKFILTER_USERID?=	325
 DKFILTER_GROUPNAME?=	${DKFILTER_USERNAME}
 DKFILTER_GROUPID?=	${DKFILTER_USERID}
 
-SUB_FILES=      pkg-install pkg-deinstall
-SUB_LIST=       USER=${DKFILTER_USERNAME} \
-                UID=${DKFILTER_USERID} \
-                GROUP=${DKFILTER_GROUPNAME} \
-                GID=${DKFILTER_GROUPID}
+SUB_FILES=	pkg-install pkg-deinstall
+SUB_LIST=	USER=${DKFILTER_USERNAME} \
+		UID=${DKFILTER_USERID} \
+		GROUP=${DKFILTER_GROUPNAME} \
+		GID=${DKFILTER_GROUPID}
 
 .include <bsd.port.pre.mk>
 
