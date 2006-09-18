@@ -44,6 +44,7 @@ EXIF			Support for EXIF headers in JPEG or TIFF files
 FAAD			FAAD AAC and MP4 audio decoder support
 FAAC			FAAC AAC and MP4 audio encoder support
 FLAC			Flac audio support
+FIREBIRD		Firebird (Interbase) database support
 GHC			Prefer/use Glasgow Haskell Compiler
 GNOME			Adds GNOME support
 GNUTLS			Adds GnuTLS support
