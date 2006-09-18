@@ -1,5 +1,5 @@
---- ./lib/Sys/Filesystem/Freebsd.pm.orig	Sat Mar 25 14:44:35 2006
-+++ ./lib/Sys/Filesystem/Freebsd.pm	Thu Jun  1 14:55:02 2006
+--- ./lib/Sys/Filesystem/Freebsd.pm.orig	Mon Sep 18 11:07:46 2006
++++ ./lib/Sys/Filesystem/Freebsd.pm	Mon Sep 18 11:10:30 2006
 @@ -26,20 +26,33 @@
  use FileHandle;
  use Carp qw(croak);
@@ -18,8 +18,8 @@
 +	croak "The statfs strucuture changed version (" . &STATFS_VERSION . ")\n";
 +}
 +# unpack format, we want the 3rd and the last 3 fields.
-+my $format = 'x8L' . 'x192' . ('A' . &MNAMELEN ) x 3 ;
-+
++my $format = 'x8L' . 'x268' . 'A' . &MFSNAMELEN . ('A' . &MNAMELEN ) x 2 ;
++  
  sub new {
  	ref(my $class = shift) && croak 'Class name required';
  	my %args = @_;
@@ -33,7 +33,7 @@
  
  	my @keys = qw(fs_spec fs_file fs_vfstype fs_mntops fs_freq fs_passno);
 -	my @special_fs = qw(swap proc devpts tmpfs);
-+	my @special_fs = qw(swap proc devpts devfs tmpfs);
++	my @special_fs = qw(swap procfs devpts devfs tmpfs);
  
  	# Read the fstab
  	my $fstab = new FileHandle;
