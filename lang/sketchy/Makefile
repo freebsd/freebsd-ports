@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sketchy
-PORTVERSION=	20060807
+PORTVERSION=	20060913
 CATEGORIES=	lang devel lisp scheme
 MASTER_SITES=	http://www.t3x.org/files/
 
@@ -18,6 +18,7 @@ MAN7=		sketchy.7
 MAKE_ENV+=	BINOWN=${BINOWN} \
 		BINGRP=${BINGRP}
 
+# Please keep this!
 USE_REINPLACE=	yes
 
 post-patch:
