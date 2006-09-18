@@ -27,7 +27,8 @@ OPTIONS=	PERL "Enable perl support" on \
 		PROXY "Enable proxy support" off \
 		SOCKS "Enable socks proxy support" off \
 		IPV6 "Enable IPv6" on \
-		BOT "Enable bot" off
+		BOT "Enable bot" off \
+		THEMES "Enable Themes"
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
 
@@ -66,12 +67,16 @@ CONFIGURE_ARGS+=	--with-socks
 CONFIGURE_ARGS+=	--enable-ipv6
 CATEGORIES+=	ipv6
 .else
-BROKEN=	"This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no"
+BROKEN=	This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no
 .endif
 .endif
 
 .if defined(WITH_BOT)
 CONFIGURE_ARGS+=	--with-bot
+.endif
+
+.if defined(WITH_THEMES)
+RUN_DEPENDS+=	irssi-themes:${PORTSDIR}/x11-themes/irssi-themes
 .endif
 
 post-patch:
