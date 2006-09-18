@@ -56,7 +56,7 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=	Does not compile on ${OSVERSION}
+BROKEN=	Does not compile on 4.X
 .endif
 
 post-extract:
