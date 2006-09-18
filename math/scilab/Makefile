@@ -83,8 +83,9 @@ MAKE_ENV+=	BLAS_LIBS="-L${LOCALBASE}/lib ${BLAS_LIBS}"
 USE_GCC=	3.2
 .endif
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102 || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		does not compile on alpha 5.x, ia64, or sparc64
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102 || ${ARCH} == "ia64" || \
+	${ARCH} == "sparc64" || ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		does not compile on alpha 5.x, ia64, sparc64 or amd64 -CURRENT
 .endif
 
 post-patch:
