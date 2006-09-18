@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.15
+PORTVERSION=	4.17
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -15,10 +15,6 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
-
-PATCHFILES+=	fdputline.patch:fdputline
-PATCH_SITES+=	ftp://ftp.mirt.net/stunnel/:fdputline
-PATCH_DIST_STRIP=	-p1
 
 USE_OPENSSL=	YES
 USE_RC_SUBR=	YES
