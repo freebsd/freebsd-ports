@@ -7,6 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	4.20.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://download.bittorrent.com/dl/
@@ -46,7 +47,7 @@ WITHOUT_PSYCO=	yes
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2-unicode/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython26-unicode
 
 PLIST_FILES+=	\
 		bin/bittorrent \
