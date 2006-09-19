@@ -7,7 +7,7 @@
 
 PORTNAME=	utserver
 PORTVERSION=	451
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games linux
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/:p436 \
 		ftp://ftp.wireplay.co.uk/pub/unrealtournament/server/:p436 \
@@ -41,13 +41,6 @@ EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-PATCH_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/libarchive
-BSDTAR=		${LOCALBASE}/bin/bsdtar
-.else
-BSDTAR=		${TAR}
-.endif
-
 .if !defined(WITHOUT_BONUSPACKS)
 MASTER_SITES+=	http://liflg.0wnitsch.de/files/native/:pbonus
 BONUSFILE=	unreal.tournament.official.bonus.pack.collection.run
@@ -73,14 +66,14 @@ pre-patch:
 		${FILESDIR}/template-patch-ngstatsut > \
 		${WRKDIR}/patch-ngstatsut
 .if !defined(WITHOUT_BONUSPACKS)
-	@${SED} -e '1,/exit $$res/d' ${_DISTDIR}/${BONUSFILE} | \
-		${BSDTAR} xf - -C ${WRKDIR} -X ${FILESDIR}/excludefiles
+	@${SED} -e '1,/exit \$$res/d' ${_DISTDIR}/${BONUSFILE} | \
+		${GUNZIP_CMD} -q | ${TAR} xf - -C ${WRKDIR} -X ${FILESDIR}/excludefiles
 .for file in "bp1.tar.bz2 bp2.tar.bz2 bp3.tar.bz2 bp4.tar.bz2"
-	@${BSDTAR} x -C ${WRKSRC} -f ${WRKDIR}/${file}
+	@${TAR} jx -C ${WRKSRC} -f ${WRKDIR}/${file}
 .endfor
 	@${MV} ${WRKDIR}/README.bonus.pack.collection ${WRKSRC}/Help
 .endif
-	@${BSDTAR} x -C ${WRKSRC} -X ${FILESDIR}/excludefiles \
+	@${TAR} jx -C ${WRKSRC} -X ${FILESDIR}/excludefiles \
 		-f ${_DISTDIR}/${PATCH451FILE}
 	@${RM} -f ${WRKSRC}/System/libSDL-1.1.so.0
 # remove trailing ^M
