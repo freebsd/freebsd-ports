@@ -150,6 +150,9 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/services/icq_online.gif
 %%DATADIR%%/pixmaps/default/services/icq_xa.gif
 %%DATADIR%%/pixmaps/default/services/jud.gif
+%%DATADIR%%/pixmaps/default/services/mrim_away.gif
+%%DATADIR%%/pixmaps/default/services/mrim_offline.gif
+%%DATADIR%%/pixmaps/default/services/mrim_online.gif
 %%DATADIR%%/pixmaps/default/services/msn_away.gif
 %%DATADIR%%/pixmaps/default/services/msn_chat.gif
 %%DATADIR%%/pixmaps/default/services/msn_dnd.gif
@@ -192,6 +195,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-show-online.gif
+%%DATADIR%%/pixmaps/default/tkabber/xaddress.gif
 %%DATADIR%%/pixmaps/feather22/icondef.xml
 %%DATADIR%%/pixmaps/feather22/roster/available-away.gif
 %%DATADIR%%/pixmaps/feather22/roster/available-chat.gif
@@ -486,29 +490,25 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/open_chat.tcl
 %%DATADIR%%/plugins/chat/open_window.tcl
 %%DATADIR%%/plugins/chat/popupmenu.tcl
-%%DATADIR%%/plugins/chat/search.tcl
 %%DATADIR%%/plugins/chat/send_message.tcl
 %%DATADIR%%/plugins/chat/unisymbols.tcl
 %%DATADIR%%/plugins/filetransfer/http.tcl
 %%DATADIR%%/plugins/filetransfer/jidlink.tcl
 %%DATADIR%%/plugins/filetransfer/si.tcl
-%%DATADIR%%/plugins/general/annotations.tcl
 %%DATADIR%%/plugins/general/autoaway.tcl
 %%DATADIR%%/plugins/general/avatars.tcl
 %%DATADIR%%/plugins/general/clientinfo.tcl
-%%DATADIR%%/plugins/general/conferenceinfo.tcl
-%%DATADIR%%/plugins/general/conferences.tcl
 %%DATADIR%%/plugins/general/headlines.tcl
 %%DATADIR%%/plugins/general/jitworkaround.tcl
 %%DATADIR%%/plugins/general/message_archive.tcl
 %%DATADIR%%/plugins/general/offline.tcl
 %%DATADIR%%/plugins/general/rawxml.tcl
-%%DATADIR%%/plugins/general/roster_delimiter.tcl
-%%DATADIR%%/plugins/general/rosterx.tcl
+%%DATADIR%%/plugins/general/remote.tcl
 %%DATADIR%%/plugins/general/sound.tcl
 %%DATADIR%%/plugins/general/stats.tcl
 %%DATADIR%%/plugins/general/subscribe_gateway.tcl
 %%DATADIR%%/plugins/general/tkcon.tcl
+%%DATADIR%%/plugins/general/xaddress.tcl
 %%DATADIR%%/plugins/general/xcommands.tcl
 %%DATADIR%%/plugins/iq/browse.tcl
 %%DATADIR%%/plugins/iq/last.tcl
@@ -517,6 +517,17 @@ bin/tkabber
 %%DATADIR%%/plugins/iq/version.tcl
 %%DATADIR%%/plugins/jidlink/dtcp.tcl
 %%DATADIR%%/plugins/jidlink/ibb.tcl
+%%DATADIR%%/plugins/roster/annotations.tcl
+%%DATADIR%%/plugins/roster/cache_categories.tcl
+%%DATADIR%%/plugins/roster/conferenceinfo.tcl
+%%DATADIR%%/plugins/roster/conferences.tcl
+%%DATADIR%%/plugins/roster/roster_delimiter.tcl
+%%DATADIR%%/plugins/roster/rosterx.tcl
+%%DATADIR%%/plugins/search/browser.tcl
+%%DATADIR%%/plugins/search/chat.tcl
+%%DATADIR%%/plugins/search/logger.tcl
+%%DATADIR%%/plugins/search/rawxml.tcl
+%%DATADIR%%/plugins/search/search.tcl
 %%DATADIR%%/plugins/si/ibb.tcl
 %%DATADIR%%/plugins/si/socks5.tcl
 %%DATADIR%%/plugins/unix/dockingtray.tcl
@@ -557,32 +568,34 @@ bin/tkabber
 %%DATADIR%%/utils.tcl
 %%DATADIR%%/version
 %%DATADIR%%/xmppmime.tcl
-%%EXAMPLESDIR%%/badlop-config-home.tcl
-%%EXAMPLESDIR%%/badlop-config.tcl
-%%EXAMPLESDIR%%/badlop-dark.xrdb
-%%EXAMPLESDIR%%/black.xrdb
-%%EXAMPLESDIR%%/config.tcl
-%%EXAMPLESDIR%%/dark.xrdb
-%%EXAMPLESDIR%%/dark2.xrdb
-%%EXAMPLESDIR%%/green.xrdb
-%%EXAMPLESDIR%%/ice.xrdb
-%%EXAMPLESDIR%%/light.xrdb
-%%EXAMPLESDIR%%/mtr-config.tcl
-%%EXAMPLESDIR%%/ocean-deep.xrdb
+%%EXAMPLESDIR%%/configs/badlop-config-home.tcl
+%%EXAMPLESDIR%%/configs/badlop-config.tcl
+%%EXAMPLESDIR%%/configs/config.tcl
+%%EXAMPLESDIR%%/configs/mtr-config.tcl
+%%EXAMPLESDIR%%/configs/teo-config.tcl
 %%EXAMPLESDIR%%/tclCarbonNotification-1.0.0/build.sh
 %%EXAMPLESDIR%%/tclCarbonNotification-1.0.0/tclCarbonNotification.tcl
-%%EXAMPLESDIR%%/teo-config.tcl
-%%EXAMPLESDIR%%/teopetuk.xrdb
-%%EXAMPLESDIR%%/tkabber_setstatus
 %%EXAMPLESDIR%%/tools/howto.txt
 %%EXAMPLESDIR%%/tools/jbot
 %%EXAMPLESDIR%%/tools/jsend.tcl
 %%EXAMPLESDIR%%/tools/rssbot
 %%EXAMPLESDIR%%/tools/rssbot.tcl
-%%EXAMPLESDIR%%/warm.xrdb
+%%EXAMPLESDIR%%/tools/tkabber_setstatus
+%%EXAMPLESDIR%%/xrdb/badlop-dark.xrdb
+%%EXAMPLESDIR%%/xrdb/black.xrdb
+%%EXAMPLESDIR%%/xrdb/dark.xrdb
+%%EXAMPLESDIR%%/xrdb/dark2.xrdb
+%%EXAMPLESDIR%%/xrdb/green.xrdb
+%%EXAMPLESDIR%%/xrdb/ice.xrdb
+%%EXAMPLESDIR%%/xrdb/light.xrdb
+%%EXAMPLESDIR%%/xrdb/lighthouse.xrdb
+%%EXAMPLESDIR%%/xrdb/ocean-deep.xrdb
+%%EXAMPLESDIR%%/xrdb/teopetuk.xrdb
+%%EXAMPLESDIR%%/xrdb/warm.xrdb
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/tkabber.html
 %%PORTDOCS%%%%DOCSDIR%%/tkabber.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -590,56 +603,58 @@ bin/tkabber
 @dirrm %%DATADIR%%/emoticons-tkabber
 @dirrm %%DATADIR%%/ifaceck
 @dirrm %%DATADIR%%/ifacetk
-@dirrm %%DATADIR%%/plugins/filetransfer
-@dirrm %%DATADIR%%/plugins/general
 @dirrm %%DATADIR%%/plugins/iq
-@dirrm %%DATADIR%%/plugins/jidlink
-@dirrm %%DATADIR%%/plugins/chat
-@dirrm %%DATADIR%%/plugins/si
 @dirrm %%DATADIR%%/plugins/unix
+@dirrm %%DATADIR%%/plugins/filetransfer
+@dirrm %%DATADIR%%/plugins/jidlink
+@dirrm %%DATADIR%%/plugins/search
+@dirrm %%DATADIR%%/plugins/chat
 @dirrm %%DATADIR%%/plugins/windows
+@dirrm %%DATADIR%%/plugins/si
+@dirrm %%DATADIR%%/plugins/general
+@dirrm %%DATADIR%%/plugins/roster
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/jabberlib-tclxml/tclxml
 @dirrm %%DATADIR%%/jabberlib-tclxml
-@dirrm %%DATADIR%%/pixmaps/icq/docking
-@dirrm %%DATADIR%%/pixmaps/icq/roster
-@dirrm %%DATADIR%%/pixmaps/icq/tkabber
-@dirrm %%DATADIR%%/pixmaps/icq
-@dirrm %%DATADIR%%/pixmaps/default/docking
-@dirrm %%DATADIR%%/pixmaps/default/roster
-@dirrm %%DATADIR%%/pixmaps/default/services
-@dirrm %%DATADIR%%/pixmaps/default/tkabber
-@dirrm %%DATADIR%%/pixmaps/default
-@dirrm %%DATADIR%%/pixmaps/feather22/roster
-@dirrm %%DATADIR%%/pixmaps/feather22
-@dirrm %%DATADIR%%/pixmaps/gabber/docking
-@dirrm %%DATADIR%%/pixmaps/gabber/roster
-@dirrm %%DATADIR%%/pixmaps/gabber/services
-@dirrm %%DATADIR%%/pixmaps/gabber/tkabber
-@dirrm %%DATADIR%%/pixmaps/gabber
-@dirrm %%DATADIR%%/pixmaps/gush/docking
-@dirrm %%DATADIR%%/pixmaps/gush/roster
-@dirrm %%DATADIR%%/pixmaps/gush/tkabber
-@dirrm %%DATADIR%%/pixmaps/gush
-@dirrm %%DATADIR%%/pixmaps/amibulb/docking
-@dirrm %%DATADIR%%/pixmaps/amibulb/roster
-@dirrm %%DATADIR%%/pixmaps/amibulb/tkabber
-@dirrm %%DATADIR%%/pixmaps/amibulb
-@dirrm %%DATADIR%%/pixmaps/jajc/docking
-@dirrm %%DATADIR%%/pixmaps/jajc/roster
-@dirrm %%DATADIR%%/pixmaps/jajc/services
-@dirrm %%DATADIR%%/pixmaps/jajc/tkabber
-@dirrm %%DATADIR%%/pixmaps/jajc
 @dirrm %%DATADIR%%/pixmaps/jarl/roster
 @dirrm %%DATADIR%%/pixmaps/jarl
-@dirrm %%DATADIR%%/pixmaps/kroc/docking
-@dirrm %%DATADIR%%/pixmaps/kroc/roster
+@dirrm %%DATADIR%%/pixmaps/gabber/services
+@dirrm %%DATADIR%%/pixmaps/gabber/tkabber
+@dirrm %%DATADIR%%/pixmaps/gabber/docking
+@dirrm %%DATADIR%%/pixmaps/gabber/roster
+@dirrm %%DATADIR%%/pixmaps/gabber
+@dirrm %%DATADIR%%/pixmaps/default/services
+@dirrm %%DATADIR%%/pixmaps/default/tkabber
+@dirrm %%DATADIR%%/pixmaps/default/docking
+@dirrm %%DATADIR%%/pixmaps/default/roster
+@dirrm %%DATADIR%%/pixmaps/default
+@dirrm %%DATADIR%%/pixmaps/gush/tkabber
+@dirrm %%DATADIR%%/pixmaps/gush/docking
+@dirrm %%DATADIR%%/pixmaps/gush/roster
+@dirrm %%DATADIR%%/pixmaps/gush
+@dirrm %%DATADIR%%/pixmaps/jajc/services
+@dirrm %%DATADIR%%/pixmaps/jajc/tkabber
+@dirrm %%DATADIR%%/pixmaps/jajc/docking
+@dirrm %%DATADIR%%/pixmaps/jajc/roster
+@dirrm %%DATADIR%%/pixmaps/jajc
+@dirrm %%DATADIR%%/pixmaps/feather22/roster
+@dirrm %%DATADIR%%/pixmaps/feather22
+@dirrm %%DATADIR%%/pixmaps/amibulb/tkabber
+@dirrm %%DATADIR%%/pixmaps/amibulb/docking
+@dirrm %%DATADIR%%/pixmaps/amibulb/roster
+@dirrm %%DATADIR%%/pixmaps/amibulb
+@dirrm %%DATADIR%%/pixmaps/psi/tkabber
+@dirrm %%DATADIR%%/pixmaps/psi/roster
+@dirrm %%DATADIR%%/pixmaps/psi
+@dirrm %%DATADIR%%/pixmaps/icq/tkabber
+@dirrm %%DATADIR%%/pixmaps/icq/docking
+@dirrm %%DATADIR%%/pixmaps/icq/roster
+@dirrm %%DATADIR%%/pixmaps/icq
 @dirrm %%DATADIR%%/pixmaps/kroc/services
 @dirrm %%DATADIR%%/pixmaps/kroc/tkabber
+@dirrm %%DATADIR%%/pixmaps/kroc/docking
+@dirrm %%DATADIR%%/pixmaps/kroc/roster
 @dirrm %%DATADIR%%/pixmaps/kroc
-@dirrm %%DATADIR%%/pixmaps/psi/roster
-@dirrm %%DATADIR%%/pixmaps/psi/tkabber
-@dirrm %%DATADIR%%/pixmaps/psi
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds/psi
@@ -648,6 +663,8 @@ bin/tkabber
 @dirrm %%DATADIR%%/msgs
 @dirrm %%DATADIR%%/mclistbox-1.02
 @dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%/xrdb
 @dirrm %%EXAMPLESDIR%%/tools
+@dirrm %%EXAMPLESDIR%%/configs
 @dirrm %%EXAMPLESDIR%%/tclCarbonNotification-1.0.0
 @dirrm %%EXAMPLESDIR%%
