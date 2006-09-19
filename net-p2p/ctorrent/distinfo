@@ -4,3 +4,6 @@ SIZE (ctorrent-1.3.4.tar.bz2) = 87333
 MD5 (patchset-ctorrent-1.3.4-dnh2.diff) = 587a062bc863c47f4ab8b816ed035e9f
 SHA256 (patchset-ctorrent-1.3.4-dnh2.diff) = e54966def9c541bef97a08eb303e82c91af919536c06108c8582632e451da318
 SIZE (patchset-ctorrent-1.3.4-dnh2.diff) = 394735
+MD5 (patchset-ctorrent-dnh2-dnh2.1.diff) = ed43de4aff93f598489624168927ffcd
+SHA256 (patchset-ctorrent-dnh2-dnh2.1.diff) = dcb5a91a74e39c6a8dfb2eb32b44555c87bf3004967b776262f30a14e04ed4cf
+SIZE (patchset-ctorrent-dnh2-dnh2.1.diff) = 23595
