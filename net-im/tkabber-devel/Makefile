@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.9.a.20060708
+PORTVERSION=	0.9.9.a.20060917
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -55,7 +55,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.  for i in AUTHORS COPYING ChangeLog
+.  for i in AUTHORS COPYING ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .  endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
