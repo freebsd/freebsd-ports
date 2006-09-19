@@ -9,109 +9,145 @@
 %%CUPSD%%# REQUIRE: cupsd
 # BEFORE: LOGIN
 # KEYWORD: shutdown
-
 #
-# Add the following lines to /etc/rc.conf to enable samba:
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
 #
 #samba_enable="YES"
-#
-# or, for fine grain control
-#
+# or, for fine grain control:
 #nmbd_enable="YES"
 #smbd_enable="YES"
 %%WINBIND%%# You need to enable winbindd separately, by adding:
 %%WINBIND%%#winbindd_enable="YES"
 #
+# Configuration file can be set with:
+#samba_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
+#
 
 . %%RC_SUBR%%
 
-name=samba
-rcvar=`set_rcvar`
-samba_enable=${samba_enable="NO"}
-testparm_command="%%PREFIX%%/bin/testparm"
-samba_parm="${testparm_command} -s -v --parameter-name"
+name="samba"
+rcvar=$(set_rcvar)
 
-load_rc_config $name
-# Set defaults
+load_rc_config "${name}"
+# Custom commands
+extra_commands="reload status"
+start_precmd="samba_start_precmd"
+start_cmd="samba_cmd"
+stop_cmd="samba_cmd"
+status_cmd="samba_cmd"
+restart_precmd="samba_checkconfig"
+reload_precmd="samba_checkconfig"
+reload_cmd="samba_reload_cmd"
+rcvar_cmd="samba_rcvar_cmd"
+# Defaults
+samba_enable=${samba_enable:="NO"}
 samba_config=${samba_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"}
-# Config file is required
-if [ ! -r ${samba_config} ]; then
-    warn "${samba_config} is not readable."
-    case $1 in
-	force*) : ;;
-	*) exit 1 ;;
-    esac
-fi
-
-samba_idmap=`${samba_parm} 'idmap uid' ${samba_config} 2>/dev/null`
-samba_lockdir=`${samba_parm} 'lock directory' ${samba_config} 2>/dev/null`
-
-if test -n ${samba_enable="NO"} && checkyesno samba_enable; then
+samba_daemons="nmbd smbd"
+%%WINBIND%%samba_daemons="${samba_daemons} winbindd"
+testparm_command="%%PREFIX%%/bin/testparm"
+smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
+# Fetch parameters from configuration file
+samba_parm="${testparm_command} -s -v --parameter-name"
+%%WINBIND%%samba_idmap=$(${samba_parm} 'idmap uid' ${samba_config} 2>/dev/null)
+samba_lockdir=$(${samba_parm} 'lock directory' ${samba_config} 2>/dev/null)
+# Setup slave variables
+if [ -n "${samba_enable}" ] && checkyesno samba_enable; then
     nmbd_enable=${nmbd_enable="YES"}
     smbd_enable=${smbd_enable="YES"}
-%%WINBIND%%    # Check that winbind is actually configured
-%%WINBIND%%    if [ -n ${samba_idmap} ]; then
-%%WINBIND%%	winbindd_enable="YES"
+%%WINBIND%%    # Check that winbindd is actually configured
+%%WINBIND%%    if [ -n "${samba_idmap}" ]; then
+%%WINBIND%%	winbindd_enable=${winbindd_enable="YES"}
 %%WINBIND%%    fi
 fi
-
-nmbd_precmd() {
-    # XXX: Never delete winbindd_idmap, winbindd_cache and group_mapping
-    echo -n "Starting Samba "
-    if [ -d ${samba_lockdir} ]; then
-	echo -n "- removing stale tdbs: "
-	for file in connections.tdb messages.tdb sessionid.tdb \
-		    unexpected.tdb brlock.tdb locking.tdb namelist.debug
-	do
-	    rm -vf "${samba_lockdir}/${file}"
-	done
+# Defaults for slave variables
+nmbd_enable=${nmbd_enable:="NO"}
+nmbd_flags=${nmbd_flags="-D"}
+smbd_enable=${smbd_enable:="NO"}
+smbd_flags=${smbd_flags="-D"}
+%%WINBIND%%winbindd_enable=${winbindd_enable:="NO"}
+%%WINBIND%%winbindd_flags=${winbindd_flags=""}
+# Requirements
+required_files="${samba_config}"
+required_dirs="${samba_lockdir}"
+command_args="${samba_config:+"-s ${samba_config}"}"
+#"
+samba_checkconfig() {
+    echo -n "Performing sanity check on Samba configuration: "
+    if ${testparm_command} -s ${samba_config} >/dev/null 2>&1; then
+	echo "OK"
+    else
+	echo "FAILED"
+	return 1
     fi
-    echo '.'
 }
 
-# nmbd
-name=nmbd
-rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/${name}"
-required_dirs="${samba_lockdir}"
-pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
-start_precmd="nmbd_precmd"
-# Defaults
-nmbd_enable=${nmbd_enable="NO"}
-nmbd_flags=${nmbd_flags="-D"}
-command_args="-s ${samba_config}"
+samba_start_precmd() {
+    # XXX: Never delete winbindd_idmap, winbindd_cache and group_mapping
+    if [ -d "${samba_lockdir}" ]; then
+	echo -n "Removing stale Samba tdb files: "
+	for file in brlock.tdb browse.dat connections.tdb gencache.tdb \
+		    locking.tdb messages.tdb namelist.debug sessionid.tdb \
+		    unexpected.tdb
+	do
+	    rm "${samba_lockdir}/${file}" </dev/null 2>/dev/null && echo -n '.'
+	done
+	echo " done"
+    fi
+}
 
-load_rc_config $name
+samba_rcvar_cmd() {
+    # Prevent recursive calling
+    unset ${rc_arg}_cmd ${rc_arg}_precmd ${rc_arg}_postcmd
+    # Check master variable
+    echo "# ${name}"
+    if [ -n "${rcvar}" ]; then
+	if checkyesno ${rcvar}; then
+	    echo "\$${rcvar}=YES"
+	else
+	    echo "\$${rcvar}=NO"
+	fi
+    fi
+    # Check slave variables
+    samba_cmd "${_rc_prefix}${rc_arg}" ${rc_extra_args}
+}
+
+samba_reload_cmd() {
+    local name rcvar
+    # Prevent recursive calling
+    unset ${rc_arg}_cmd ${rc_arg}_precmd ${rc_arg}_postcmd
+    # Apply to all the daemons
+    for name in ${samba_daemons}; do
+    	rcvar=$(set_rcvar)
+	command="%%PREFIX%%/sbin/${name}"
+	pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
+	# Daemon should be enabled and running
+	if [ -n "${rcvar}" ] && checkyesno ${rcvar}; then
+	    if [ -n "$(check_pidfile "${pidfile}" "${command}")" ]; then
+		debug "reloading ${name} configuration"
+		echo "Reloading ${name}."
+		${smbcontrol_command} "${name}" 'reload-config' ${command_args}
+	    fi
+	fi
+    done
+}
+
+samba_cmd() {
+    local name rcvar
+    # Prevent recursive calling
+    unset ${rc_arg}_cmd ${rc_arg}_precmd ${rc_arg}_postcmd
+    # Stop processes in the reverse to order
+    if [ "${rc_arg}" = "stop" ] ; then
+	samba_daemons=$(reverse_list ${samba_daemons})
+    fi
+    # Apply to all the daemons
+    for name in ${samba_daemons}; do
+	rcvar=$(set_rcvar)
+	command="%%PREFIX%%/sbin/${name}"
+	pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
+	
+	run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
+    done
+}
+
 run_rc_command "$1"
-_rc_restart_done=false
-
-# smbd
-name=smbd
-rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/${name}"
-required_dirs="${samba_lockdir}"
-pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
-start_precmd=":"
-# Defaults
-smbd_enable=${smbd_enable="NO"}
-smbd_flags=${smbd_flags="-D"}
-command_args="-s ${samba_config}"
-
-load_rc_config $name
-run_rc_command "$1"
-%%WINBIND%%_rc_restart_done=false
-%%WINBIND%%
-%%WINBIND%%# winbindd
-%%WINBIND%%name=winbindd
-%%WINBIND%%rcvar=`set_rcvar`
-%%WINBIND%%command="%%PREFIX%%/sbin/${name}"
-%%WINBIND%%required_dirs="${samba_lockdir}"
-%%WINBIND%%pidfile="%%SAMBA_RUNDIR%%/${name}.pid"
-%%WINBIND%%start_precmd=":"
-%%WINBIND%%# Defaults
-%%WINBIND%%winbindd_enable=${winbindd_enable="NO"}
-%%WINBIND%%winbindd_flags=${winbindd_flags=""}
-%%WINBIND%%command_args="-s ${samba_config}"
-%%WINBIND%%
-%%WINBIND%%load_rc_config $name
-%%WINBIND%%run_rc_command "$1"
