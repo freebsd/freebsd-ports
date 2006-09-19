@@ -57,6 +57,7 @@
 %%SITE_PERL%%/Acme/MetaSyntactic/loremipsum.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/jerkcity.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/jamesbond.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/invasions.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/hhgg.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/haddock.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/groo.pm
