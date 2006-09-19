@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Ping
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	net pear
 
 MAINTAINER=	antonio@php.net
