@@ -1,5 +1,5 @@
---- UFconfig/UFconfig.mk.orig	Tue Sep 12 03:23:15 2006
-+++ UFconfig/UFconfig.mk	Sun Sep 17 21:24:36 2006
+--- UFconfig/UFconfig.mk	Wed Sep 20 05:36:35 2006
++++ UFconfig/UFconfig.mk	Wed Sep 20 05:36:38 2006
 @@ -31,8 +31,8 @@
  # C compiler and compiler flags:  These will normally not give you optimal
  # performance.  You should select the optimization parameters that are best
@@ -44,8 +44,15 @@
  
  # If you use CHOLMOD_CONFIG = -DNPARTITION then you must use the following
  # options:
---- UFconfig/UFconfig.mk~	Sun Sep 17 21:45:24 2006
-+++ UFconfig/UFconfig.mk	Sun Sep 17 22:08:33 2006
+@@ -130,7 +130,7 @@
+ # -DNRECIPROCAL	do not multiply by the reciprocal
+ # -DNO_DIVIDE_BY_ZERO	do not divide by zero
+ 
+-UMFPACK_CONFIG = 
++UMFPACK_CONFIG = -DGETRUSAGE
+ 
+ #------------------------------------------------------------------------------
+ # CHOLMOD configuration
 @@ -180,11 +180,11 @@
  
  # alternatives:
