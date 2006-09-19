@@ -16,9 +16,7 @@ DISTFILES=	VMware-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
 		vmmon-freebsd-0.98${EXTRACT_SUFX}:patch \
 		vmnet-freebsd-0.21${EXTRACT_SUFX}:patch
 
-# Feel free to post your questions/reports/suggestions on this port to
-# freebsd-emulation mailing list with the following maintainer address CC'ed.
-MAINTAINER=	vsilyaev@mindspring.com
+MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	A virtual machine emulator - a full PC in a window
 
 RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
@@ -58,15 +56,15 @@ MODULES=	vmmon vmnet
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400013
-IGNORE=		"Systems prior to 400013 is out of support"
+IGNORE=		Systems prior to 400013 is out of support
 .endif
 
 .if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
-IGNORE=		"This software absolutely requires Linux procfs support"
+IGNORE=		This software absolutely requires Linux procfs support
 .endif
 
 .if !exists(/${SRC_BASE}/Makefile)
-IGNORE=		"Kernel source files required"
+IGNORE=		Kernel source files required
 .endif
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)
