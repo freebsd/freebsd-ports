@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Numbers_Words
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 CATEGORIES=	textproc pear
 
 MAINTAINER=	meritus@innervision.pl
@@ -16,14 +16,17 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Words.php Words/lang.bg.php Words/lang.cs.php \
-		Words/lang.de.php Words/lang.dk.php Words/lang.ee.php \
-		Words/lang.en_100.php Words/lang.en_GB.php \
-		Words/lang.en_US.php Words/lang.es.php Words/lang.es_AR.php \
-		Words/lang.fr.php Words/lang.fr_BE.php Words/lang.he.php \
-		Words/lang.hu_HU.php Words/lang.id.php Words/lang.it_IT.php \
-		Words/lang.lt.php Words/lang.pl.php Words/lang.pt_BR.php \
+		Words/lang.de.php Words/lang.dk.php Words/lang.en_100.php \
+		Words/lang.en_GB.php Words/lang.en_US.php Words/lang.es.php \
+		Words/lang.es_AR.php Words/lang.et.php Words/lang.fr.php \
+		Words/lang.fr_BE.php Words/lang.he.php Words/lang.hu_HU.php \
+		Words/lang.id.php Words/lang.it_IT.php Words/lang.lt.php \
+		Words/lang.nl.php Words/lang.pl.php Words/lang.pt_BR.php \
 		Words/lang.ru.php Words/lang.sv.php
-TESTS=		test-numbers-words.php clitest.php
+TESTS=		clitest.php Numbers_Words_Polish_testcase.php \
+		Numbers_Words_Spanish_testcase.php test-numbers-words.php
+DOCS=		ChangeLog README
+_DOCSDIR=	.
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
