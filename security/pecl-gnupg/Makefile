@@ -24,7 +24,7 @@ USE_PHPEXT=	yes
 PHP_MODNAME=	gnupg
 
 CONFIGURE_ARGS=	--with-gnupg=${LOCALBASE}/include/gpgme
-CFLAGS=		-I${LOCALBASE}/include
+CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
