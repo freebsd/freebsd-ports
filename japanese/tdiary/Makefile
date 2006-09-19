@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese www ruby
 
-MAINTAINER=	jfkimura@yahoo.co.jp
+MAINTAINER=	tota@rtfm.jp
 
 TDIARY_LANG=	tdiary.conf-ja
 MASTERDIR?=	${.CURDIR}/../../www/tdiary

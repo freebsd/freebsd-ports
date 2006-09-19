@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
-MAINTAINER=	jfkimura@yahoo.co.jp
+MAINTAINER=	tota@rtfm.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 NO_BUILD=	yes
