@@ -77,5 +77,4 @@ share/scite/verilog.properties
 share/scite/vhdl.properties
 share/scite/yaml.properties
 @dirrm share/scite
-@dirrmtry share/pixmaps
 @dirrmtry share/applications
