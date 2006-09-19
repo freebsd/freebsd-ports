@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Plagger
-PORTVERSION=	0.7.10
-PORTREVISION=	2
+PORTVERSION=	0.7.12
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -46,6 +45,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		PUBLISHEXCEL "Publish::Excel Support" off \
 		FILTERPIPE "Filter::Pipe Support" off \
 		PUBLISHPLANET "Publish::Planet Support" on \
+		PUBLISHCSV "Publish::CSV Support" off \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
 		PUBLISHMT "Publish::MT Support" off \
 		PUBSERLZR "Publish-Serializer Support" off \
@@ -85,7 +85,6 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		PLANETINI "Subscription::PlanetINI Support" off
 # The below options are not supported yet due to missing depending modules
 #		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
-#		PUBLISHCSV "Publish::CSV Support" off \
 #		SUBSCRFOAF "Subscription::FOAF Support" off \
 #		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
 #		PINGSERVER "Subscription::PingServer Support" off \
@@ -126,6 +125,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
 .if defined(WITH_PUBLISHPLANET)
 BUILD_DEPENDS+=	${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
 		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber
+.endif
+
+.if defined(WITH_PUBLISHCSV)
+BUILD_DEPENDS+=	${SITE_PERL}/Text/CSV_PP.pm:${PORTSDIR}/textproc/p5-Text-CSV_PP
 .endif
 
 .if defined(WITH_AUTHORNAME)

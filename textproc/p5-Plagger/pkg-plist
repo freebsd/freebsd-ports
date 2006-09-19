@@ -93,6 +93,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Filter/TagsToTitle.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/Thumbnail.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/TruePermalink.pm
+%%SITE_PERL%%/Plagger/Plugin/Filter/UnicodeNormalize.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/URLBL.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/tDiaryComment.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Audio.pm
@@ -102,6 +103,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Notify/Balloon.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Beep.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Campfire.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/Command.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Eject.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Eject/darwin.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Eject/freebsd.pm
@@ -147,6 +149,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Publish/Speech/Win32.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/Takahashi.pm
 %%SITE_PERL%%/Plagger/Plugin/Search/Estraier.pm
+%%SITE_PERL%%/Plagger/Plugin/Search/Grep.pm
 %%SITE_PERL%%/Plagger/Plugin/Search/KinoSearch.pm
 %%SITE_PERL%%/Plagger/Plugin/Search/Namazu.pm
 %%SITE_PERL%%/Plagger/Plugin/Search/Rast.pm
@@ -270,6 +273,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/japan_internet_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/japan_zdnet_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/juno.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/keizai_biz.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/kojii_net.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/kyodo.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/kyoko_shimbun_news.yaml
@@ -280,6 +284,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mailman.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mainichi-msn-graph.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mainichi-msn.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/matino-akari_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/memn0ck.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mtv-music.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/mycom_journal.yaml
@@ -314,6 +319,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/slashdot_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/sponichi.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/sportsnavi.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/technobahn_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/tencount.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/theinquirer.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/theregister.yaml
