@@ -1,3 +1,7 @@
+@exec mkdir -p %D/lib/xemacs/site-lisp
+@dirrmtry lib/xemacs/site-lisp
+@exec mkdir -p %D/lib/xemacs/site-modules
+@dirrmtry lib/xemacs/site-modules
 @exec mkdir -p %D/lib/xemacs/site-packages/etc
 @dirrmtry lib/xemacs/site-packages/etc
 @exec mkdir -p %D/lib/xemacs/site-packages/info
@@ -1298,8 +1302,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
-@dirrm lib/xemacs/site-lisp
-@dirrm lib/xemacs/site-modules
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp
