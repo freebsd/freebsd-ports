@@ -1,6 +1,7 @@
 otrs/.fetchmailrc.dist
 otrs/.mailfilter.dist
 otrs/.procmailrc.dist
+otrs/RELEASE
 otrs/bin/CheckDB.pl
 otrs/bin/CleanUp.pl
 otrs/bin/Cron.sh

@@ -7,7 +7,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.otrs.org/pub/otrs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-01
@@ -124,6 +124,7 @@ do-install:
 	@${MKDIR} ${ROOT_DIRS_LIST:S!^!${OTRSDIR}/!} ${BIN_DIRS_LIST:S!^!${OTRSDIR}/bin/!} \
 		${SCRIPTS_DIRS_LIST:S!^!${OTRSDIR}/scripts/!}
 	@${INSTALL_DATA} ${WRKSRC}/.*.dist ${OTRSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/RELEASE ${OTRSDIR}/
 .for D in ${BIN_DIRS_LIST}
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${D}/*.* ${OTRSDIR}/bin/${D}/
 .endfor
