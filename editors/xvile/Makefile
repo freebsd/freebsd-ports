@@ -8,9 +8,9 @@
 PORTNAME=	xvile
 PORTVERSION=	9.5j
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
-		ftp://invisible-island.net/vile/ \
-		ftp://dickey.his.com/vile/
+MASTER_SITES=	ftp://invisible-island.net/vile/ \
+		ftp://dickey.his.com/vile/ \
+		ftp://ftp.phred.org/pub/vile/
 DISTNAME=	vile-9.5
 EXTRACT_SUFX=	.tgz
 
