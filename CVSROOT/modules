@@ -1197,6 +1197,7 @@ chroot_safe	ports/security/chroot_safe
 chrootuid	ports/security/chrootuid
 chryzodus	ports/math/chryzodus
 chtml		ports/www/chtml
+chu		ports/comms/chu
 cicquin		ports/net-im/cicquin
 cider		ports/cad/cider
 cidr		ports/net-mgmt/cidr
