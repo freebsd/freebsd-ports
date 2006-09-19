@@ -12,9 +12,11 @@ bin/rdesktop
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/common
 %%DATADIR%%/keymaps/convert-map
+%%DATADIR%%/keymaps/cs
 %%DATADIR%%/keymaps/da
 %%DATADIR%%/keymaps/de
 %%DATADIR%%/keymaps/de-ch
+%%DATADIR%%/keymaps/en-dv
 %%DATADIR%%/keymaps/en-gb
 %%DATADIR%%/keymaps/en-us
 %%DATADIR%%/keymaps/es
@@ -26,6 +28,7 @@ bin/rdesktop
 %%DATADIR%%/keymaps/fr-ca
 %%DATADIR%%/keymaps/fr-ch
 %%DATADIR%%/keymaps/hr
+%%DATADIR%%/keymaps/he
 %%DATADIR%%/keymaps/hu
 %%DATADIR%%/keymaps/is
 %%DATADIR%%/keymaps/it
