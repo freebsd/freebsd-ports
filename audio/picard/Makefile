@@ -10,13 +10,13 @@ DISTVERSION=	0.7.0
 CATEGORIES=	audio python
 MASTER_SITES=	https://helixcommunity.org/download.php/2093/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Next generation MusicBrainzTagger
 
 LIB_DEPENDS=	ofa.0:${PORTSDIR}/audio/libofa
 RUN_DEPENDS=	\
 		${PYTHON_SITELIBDIR}/tunepimp/__init__.py:${PORTSDIR}/audio/py-libtunepimp \
-		${PYTHON_SITELIBDIR}/musicbrainz.py:${PORTSDIR}/audio/py-musicbrainz
+		${PYTHON_SITELIBDIR}/musicbrainz2/__init__.py:${PORTSDIR}/audio/py-musicbrainz2
 
 USE_WX=		2.6
 WX_COMPS=	python_run
