@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	libtunepimp
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
 
-MAINTAINER=	lauri@kde.org
+MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Client library for musicbrainz
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \

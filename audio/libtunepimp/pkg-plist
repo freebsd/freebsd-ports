@@ -1,10 +1,9 @@
 bin/puid
-include/tunepimp/tp_c.h
-include/tunepimp/defs.h
 include/tunepimp-0.5/context.h
 include/tunepimp-0.5/decode_plugin.h
 include/tunepimp-0.5/defs.h
 include/tunepimp-0.5/fileio.h
+include/tunepimp-0.5/metadata.h
 include/tunepimp-0.5/metadata_plugin.h
 include/tunepimp-0.5/tp_c.h
 include/tunepimp-0.5/track.h
