@@ -107,6 +107,7 @@ RUN_DEPEND+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-
 .if ${ARCH} == amd64
 GCCVER=41
 BUILD_DEPENDS+= gcc41:${PORTSDIR}/lang/gcc41
+RUN_DEPENDS+=	gcc41:${PORTSDIR}/lang/gcc41
 .else
 GCCVER=34
 BUILD_DEPENDS+= gcc-ooo:${PORTSDIR}/lang/gcc-ooo
