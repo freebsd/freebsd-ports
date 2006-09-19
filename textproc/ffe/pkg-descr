@@ -1,0 +1,6 @@
+ffe  is a program for extracting fields from flat file records and dis-
+playing them in different formats. ffe relies on the configuration file
+to control input file structure and the output format.
+
+WWW: http://sourceforge.net/projects/ff-extractor/
+Author: Timo Savinen <tjsa@iki.fi>
