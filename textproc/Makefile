@@ -129,6 +129,7 @@
     SUBDIR += ezxml
     SUBDIR += fa-aspell
     SUBDIR += fdp-tools
+    SUBDIR += ffe
     SUBDIR += fi-aspell
     SUBDIR += filepp
     SUBDIR += fist
