@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	antonio@php.net
