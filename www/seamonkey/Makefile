@@ -57,8 +57,9 @@ LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
 IGNORE=		core dumps on ${ARCH} during post-build
 .endif
 
-.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
-IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
+.if ${ARCH}=="sparc64" # && ${OSVERSION} < 601101
+#IGNORE=		core dumps on ${ARCH}, need kern.osreldate>=601101
+BROKEN=		regchrome core dumps in sparc64
 .endif
 
 .if ${OSVERSION} < 500000
