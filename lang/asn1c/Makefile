@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asn1c
-PORTVERSION=	0.9.20
+PORTVERSION=	0.9.21
 CATEGORIES=	lang converters security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://lionet.info/soft/
