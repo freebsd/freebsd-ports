@@ -109,8 +109,10 @@ post-su-install:
 
 .ifndef WITHOUT_IPC_CLEANUP
 pre-build:
+.ifndef PACKAGE_BUILDING
 	@if [ `${ID} -u` -eq 0 ]; then \
 	${ECHO_MSG} "==> Please do not build ${PORTNAME} as 'root' because this may cause conflicts with SysV semaphores of running services."; exit 1; fi
+.endif
 	[ -f ${WRKDIR}/ipcs.pre.build ] || /usr/bin/ipcs -s | ${TAIL} -n +3 | \
 		${GREP} -F `${ID} -un` | ${CAT} > ${WRKDIR}/ipcs.pre.build
 
