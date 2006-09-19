@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+WANT_GNOME=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	CC="${CXX}"
 EXTRA_PATCH_FILES=	lua/include/lauxlib.h \
