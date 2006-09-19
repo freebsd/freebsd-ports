@@ -1,6 +1,6 @@
 # New ports collection makefile for:	samba
 # Date created:				11th Feb 1995
-# Whom:					Gary Palmer <gpalmer@FreeBSD.org>
+# Whom:					Gary Palmer <gpalmer>
 #
 # $FreeBSD$
 #
@@ -36,7 +36,7 @@ SAMBA_SWATDIR=		${PREFIX}/share/swat
 # DEPRECATED: This is an old location of the private dir
 SAMBA_PRIVATE?=		${PREFIX}/private
 SAMBA_CONFDIR?=		${PREFIX}/etc
-SAMBA_PRIVATEDIR=	${SAMBA_CONFDIR}/samba
+SAMBA_PRIVATEDIR?=	${SAMBA_CONFDIR}/samba
 SAMBA_CONFIG=		smb.conf
 SAMBA_LIB=		lib
 SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
@@ -71,8 +71,8 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		UTMP		"With UTMP accounting support" on \
 		MSDFS		"With MSDFS support" off \
 		SMBSH		"With SMBSH wrapper for UNIX commands" off \
-		PAM_SMBPASS	"With PAM authentication against passdb backend(s)" off \
-		EXP_MODULES	"With experimental module(s)" off \
+		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
+		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on
 .endif
 
@@ -299,6 +299,10 @@ SUB_LIST+=	SAMBA_LOGDIR=${SAMBA_LOGDIR} \
 		SAMBA_PRIVATE=${SAMBA_PRIVATE}
 
 pre-everything::
+.if defined(WANT_FAM_SYSTEM)
+	@${ECHO_CMD} "===>  NOTICE: ${WANT_FAM_SYSTEM} detected, forcing FAM_SUPPORT"
+	@${ECHO_CMD} ""
+.endif
 	@${ECHO_CMD} "===>  NOTICE: This version of port has changed location of Samba password"
 	@${ECHO_CMD} "===>  NOTICE: (smbpasswd) directory. Files in '${SAMBA_PRIVATE}'"
 	@${ECHO_CMD} "===>  NOTICE: have moved to '${SAMBA_PRIVATEDIR}'."
@@ -372,16 +376,6 @@ post-install:
 	@for d in `${FIND} ${SAMBA_MODULEDIR} -type d | ${SORT} -r`; do \
 	    ${ECHO_CMD} "@unexec ${RMDIR} $$d 2>/dev/null || true" >> ${TMPPLIST}; \
 	done
-# Taken from bsd.port.mk
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
-	@for i in ${USE_RC_SUBR}; do \
-	    ${ECHO_CMD} "@unexec %D/etc/rc.d/$${i%.sh} forcestop 2>/dev/null || true" >> ${TMPPLIST}; \
-	done
-.else
-	@for i in ${USE_RC_SUBR}; do \
-	    ${ECHO_CMD} "@unexec %D/etc/rc.d/$${i%.sh}.sh forcestop 2>/dev/null || true" >> ${TMPPLIST}; \
-	done
-.endif
 # Documentation
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
