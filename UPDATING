@@ -1,5 +1,5 @@
 This file documents some of the problems you may encounter when
-upgrading your ports.  We try our best to minimize these disruptions,
+upgrading your ports. We try our best to minimize these disruptions,
 but sometimes they are unavoidable.
 
 You should get into the habit of checking this file for changes each
@@ -18,7 +18,7 @@ upgrades.
   AFFECTS: users of net/samba3
   AUTHOR: timur@gnu.org
 
-  Reviosion of Samba 3.0.23c port had changed location of the directory,
+  Revision of Samba 3.0.23c port had changed location of the directory,
   where Samba stores it's smbpasswd files from $PREFIX/private to a more
   common $PREFIX/etc/samba.
   
@@ -27,20 +27,20 @@ upgrades.
   
   Starting with the 3.0.23c release, the officially supported passdb 
   backends (smbpasswd, tdbsam, and ldapsam) now operate identically with
-  regards to the historical RID algorithm for unmapped users  and groups
+  regards to the historical RID algorithm for unmapped users and groups
   (i.e. accounts not in the passdb or group mapping table). The resulting
-  behavior is that all unmapped users are resolved  to a SID in the
+  behavior is that all unmapped users are resolved to a SID in the
   S-1-22-1 domain and all unmapped groups resolve to a SID in the S-1-22-2
-  domain.  Previously, when using the  smbpasswd passdb, such users and
-  groups would resolve to an  algorithmic SID in the machine's own domain
+  domain. Previously, when using the smbpasswd passdb, such users and
+  groups would resolve to an algorithmic SID in the machine's own domain
   (S-1-5-XX-XX-XX). However, the smbpasswd backend still utilizes the RID
   algorithm when creating new user accounts or allocating a RID for a new 
   group mapping entry.
   
-  With the changes in the 3.0.23c release, it is now possible to  resolve
+  With the changes in the 3.0.23c release, it is now possible to resolve
   a uid/gid, name, or SID in any direction and always obtain a symmetric
-  mapping.  This is important so that values for smb.conf  parameters such
-  as "valid users" resolve to the same SIDs as those  included  in the
+  mapping. This is important so that values for smb.conf parameters such
+  as "valid users" resolve to the same SIDs as those included in the
   local user's initial token.
 
 20060902:
@@ -154,7 +154,7 @@ upgrades.
 
   Since Samba 3.0.8, it has been recommended that all domain accounts 
   listed in smb.conf on a member server be fully qualified with the 
-  domain name.  This is now a requirement.  All unqualified names are 
+  domain name. This is now a requirement. All unqualified names are 
   assumed to be local to the Unix host, either as part of the server's 
   local passdb or in the local system list of accounts (e.g. /etc/passwd 
   or /etc/group).
@@ -213,14 +213,14 @@ upgrades.
   AUTHOR: tmclaugh@sdf.lonestar.org
 
   The krb5_ccname option in ldap.conf has been fixed in the port so that it
-  now works.  Please be aware of this when updating if you have it in your
-  config and are using GSSAPI when use_sasl is enabled.  Using GSSAPI with a
+  now works. Please be aware of this when updating if you have it in your
+  config and are using GSSAPI when use_sasl is enabled. Using GSSAPI with a
   misconfigured krb5_ccname combined with one of the 'hard' bind_policy
   options can effectively lockout users.
 
 20060728:
   AFFECTS: users of polish/ekg and polish/ibgadu
-  AUTHOR:  mwisnicki+freebsd@gmail.com
+  AUTHOR: mwisnicki+freebsd@gmail.com
 
   If you have installed both ekg-1.6,2 and libgadu-20051229_1 then you should
   first deinstall them and install polish/ekg after that, eg:
@@ -235,7 +235,7 @@ upgrades.
   the bookmark file using UTF-8 encoding. You can try to convert
   your existing bookmark file with the bm-update script or you could
   try to convert it by hand using iconv(1) from you current locale
-  to UTF-8, e.g.  by calling 'iconv -f ISO-8859-1 -t UTF-8 ~/.dillo/bm.txt'.
+  to UTF-8, e.g. by calling 'iconv -f ISO-8859-1 -t UTF-8 ~/.dillo/bm.txt'.
 
   Please see the iconv documentation for further details.
 
@@ -253,7 +253,7 @@ upgrades.
   mail/postfix was updated to 2.3.0 and does no longer support POSTIX_OPTIONS,
   please consider using "make config" to set your OPTIONS. The SPF patch was
   removed since this does not apply cleanly and has problems when using
-  pipe(8).  Consider using mail/postfix-policyd-spf instead of the SPF patch.
+  pipe(8). Consider using mail/postfix-policyd-spf instead of the SPF patch.
 
   If you need the Postfix 2.2 version you can find this in mail/postfix22.
 
@@ -326,7 +326,7 @@ upgrades.
   There are two ways to fix it:
   1. The easy way is to remove the ${HOME}/.loki/ut directory, yet all
      local settings will be lost.
-  2. The hard way:  in ${HOME}/.loki/ut/UnrealTrounament.ini, under the
+  2. The hard way: in ${HOME}/.loki/ut/UnrealTrounament.ini, under the
      [Core.System] section, SavePath, CachePath and multiple Paths
      variables should be replaced with the ones in (and in the same order
      as) ${PREFIX}/share/linux-ut/System/UnrealTournament.ini.
@@ -377,8 +377,8 @@ upgrades.
     current database format.
   - Go to portupgrade port directory and configure the port with 
     `make config' command. If you have bdb_* format, then turn on the BDB4
-    option.  If you have bdb1_* format, then turn off BDB4 and turn on
-    the BDB1 option.  If you have dbd_hash format, then turn off all options.
+    option. If you have bdb1_* format, then turn off BDB4 and turn on
+    the BDB1 option. If you have dbd_hash format, then turn off all options.
   - Upgrade portupgrade.
   
   Note: if you change database format with changing port options,
@@ -502,8 +502,8 @@ upgrades.
   AFFECTS: users of www/c-icap
   AUTHOR: b3k@mail.ru
 
-  The format of file c-icap.magic has changed.  If you use your own
-  c-icap.magic file remember to convert it to the new format.  It can be done
+  The format of file c-icap.magic has changed. If you use your own
+  c-icap.magic file remember to convert it to the new format. It can be done
   using the convert_old_magic.pl script located in the contrib directory.
 
 20060605:
@@ -518,7 +518,7 @@ upgrades.
   AFFECTS: users of net/quagga
   AUTHOR: lawrance@FreeBSD.org
 
-  As of version 0.99.4 quagga no longer supports UCD-SNMP v4.  If you
+  As of version 0.99.4 quagga no longer supports UCD-SNMP v4. If you
   require this functionality, you should make alternative arrangements
   before upgrading quagga.
 
@@ -566,9 +566,9 @@ upgrades.
   AUTHOR: delphij@FreeBSD.org
 
   The setting of SHELL backend has been inverted to off by default,
-  because of the side effect it can cause.  A new option, SLURPD
+  because of the side effect it can cause. A new option, SLURPD
   has been added to give the user decision on whether the
-  replication should be built and installed.  Please note that the
+  replication should be built and installed. Please note that the
   replication daemon is disabled when threading is disabled (e.g.
   when using shell backend), no matter what the user option SLURPD
   is set to.
@@ -602,7 +602,7 @@ upgrades.
   new work until after their ports are updated, to minimize loss of
   work.
   Note that this update changes the enhanced client to work for the
-  normal instead of the beta project.  When a beta client for Astropulse
+  normal instead of the beta project. When a beta client for Astropulse
   is released, it will work as the new client for the beta project.
 
 20060518:
@@ -618,16 +618,16 @@ upgrades.
   AFFECTS: users of www/tinyproxy
   AUTHOR: wxs@csh.rit.edu
 
-  tinyproxy now installs a rc.d script.  To enable tinyproxy at boot
+  tinyproxy now installs a rc.d script. To enable tinyproxy at boot
   time, set the following in rc.conf(5):
       tinyproxy_enable="YES"
   The confiration file for tinyproxy has been moved to
-  ${PREFIX}/etc/tinyproxy.conf.  Any old configuration files will need
+  ${PREFIX}/etc/tinyproxy.conf. Any old configuration files will need
   to be migrated over to the new location.
 
 20060514:
   AFFECTS: users of sysutils/smartmontools, others
-  AUTHOR:  jylefort@FreeBSD.org
+  AUTHOR: jylefort@FreeBSD.org
 
   In FreeBSD 6.1, the ata(4) device ABI has changed. After updating to
   FreeBSD 6.1, ports which access ATA drives directly
@@ -635,7 +635,7 @@ upgrades.
 
 20060512:
   AFFECTS: users of mail/fetchmail
-  AUTHOR:  barner@FreeBSD.org
+  AUTHOR: barner@FreeBSD.org
 
   Fetchmail now has a rcNG script. It supports two modes:
 
@@ -649,7 +649,7 @@ upgrades.
 
 20060509:
   AFFECTS: users of net-im/sulci
-  AUTHOR:  Denis Shaposhnikov <dsh@vlink.ru>
+  AUTHOR: Denis Shaposhnikov <dsh@vlink.ru>
 
   After upgrading from 0.5.a.20050918 version you have to convert your
   vocabulary database to sqlite using:
@@ -687,7 +687,7 @@ upgrades.
   AFFECTS: users of lang/lua, editors/kile, x11/kdelibs3, x11/kdebase3
   AUTHOR: pav@FreeBSD.org, kde@FreeBSD.org
 
-  Recently, the port of Lua was updated to version 5.1.  This version is
+  Recently, the port of Lua was updated to version 5.1. This version is
   incompatible with the version 5.0, which is used in a number of applications,
   most notable in the Kile and Kate editors (the latter being part of a base
   KDE installation).
@@ -704,7 +704,7 @@ upgrades.
 
   The instiki port has changed storage methods to use an SQL database.
   The README contains instructions on how to migrate existing wiki data to the
-  new storage methods.  The following is a copy of the relevant information,
+  new storage methods. The following is a copy of the relevant information,
   tailored for FreeBSD port users:
 
   1. cd /usr/ports/www/instiki; make extract
@@ -730,8 +730,8 @@ upgrades.
   AFFECTS: All GNOME users
   AUTHOR: gnome@FreeBSD.org
 
-  GNOME has been updated to 2.14.  This new release does NOT require the
-  use of the gnome_upgrade.sh script.  That script should not be used.
+  GNOME has been updated to 2.14. This new release does NOT require the
+  use of the gnome_upgrade.sh script. That script should not be used.
   Instead, use the following simple recipe:
 
 pkgdb -Ff
@@ -830,7 +830,7 @@ portupgrade -a
   AUTHOR: swhetzel@gmail.com
 
   Most of the ports that depend on Berkeley DB have been updated to use
-  Mk/bsd.database.mk.  Mk/bsd.database.mk is used to include MySQL, PostgreSQL,
+  Mk/bsd.database.mk. Mk/bsd.database.mk is used to include MySQL, PostgreSQL,
   Berkeley DB, and SQLite in a port.
 
   The Berkeley DB support in Mk/bsd.database.mk is used to return the proper
@@ -849,7 +849,7 @@ portupgrade -a
   version specified or the default Berkeley DB version (currently db41).
 
   NOTE: If a port was using a different variable to select Berkeley DB or a
-  version, you will get an IGNORE message when you build the port.  This
+  version, you will get an IGNORE message when you build the port. This
   message will tell you what you need to do.
 
   Port Maintainers please review the comments in Mk/bsd.database.mk on what
@@ -922,7 +922,7 @@ portupgrade -a
 
   docproj now installs a set of CJK (Chinese, Japanese, Korean)
   related stuff in case that you have choosen to install the
-  jadetex feature.  Because the CJK part could be potentially
+  jadetex feature. Because the CJK part could be potentially
   large for those who do not want it, this feature can be disabled
   by defining WITHOUT_CJK=yes.
 
@@ -953,7 +953,7 @@ portupgrade -a
   These versions of the ports which have been installed in your
   system accidentally installed some malformed entries to
   $LOCALBASE/info/dir, which prevent them from being upgraded
-  to the latest versions.  Please remove the following entries
+  to the latest versions. Please remove the following entries
   manually from $LOCALBASE/info/dir before upgrading them to
   vcdimager-0.7.23_2 (and later) and dirmngr-0.9.3_2 (and later)
   respectively.
@@ -982,12 +982,12 @@ portupgrade -a
 
   Unfortunately, it turns out that printing feature of Adobe
   Reader 7.0.5 does not work with FreeBSD's Linux emulation
-  environment for now.  Although English, French, German,
+  environment for now. Although English, French, German,
   Japanese, and Korean version of the port were updated to
   7.0.5 on 2006/02/21, these changes have been reverted consequently.
 
   Please update the packages installed (normal upgrading procedure
-  by using portupgrade(1) and so on should work).  I am sorry for the
+  by using portupgrade(1) and so on should work). I am sorry for the
   confusion.
 
 20060302:
@@ -995,7 +995,7 @@ portupgrade -a
   AUTHOR: garga@FreeBSD.org
 
   Port versions older than 0.7 and 0.11a respectively run as root which
-  is an unneeded security risk.  Newer versions run as as user jabber,
+  is an unneeded security risk. Newer versions run as as user jabber,
   so before starting the daemons, you should fix permissions for each
   spooldir (default: /var/spool/jabber):
 
@@ -1009,7 +1009,7 @@ portupgrade -a
   completely reworked to bring the ports system in line with other
   environments, such as Linux, and pkgsrc.
 
-  devel/libtool13 no longer exists.  devel/libtool15 has been modified
+  devel/libtool13 no longer exists. devel/libtool15 has been modified
   to (a) install in the canonical locations and (b) remove a number
   of long-standing FreeBSD-specific patches that resulted in a very
   different libtool than is present on other systems.
@@ -1019,9 +1019,9 @@ portupgrade -a
   and, as such, PORTREVISIONS have been bumped on ~2000 ports (roughly
   1/7th of the tree).
 
-  Unfortunately, there is no simple upgrade path.  Short of removing
+  Unfortunately, there is no simple upgrade path. Short of removing
   all packages and reinstalling from scratch, the only other viable
-  alternative would be careful use of portupgrade.  Given the large
+  alternative would be careful use of portupgrade. Given the large
   number of different ways in which libtool is used by other ports
   in the tree, this is a process that is likely to vary considerably
   from system to system, and as such, folks should be very mindful
@@ -1049,23 +1049,23 @@ portupgrade -a
   The command filename is ${PREFIX}/bin/acroread as before (this is
   a script installed by print/acroreadwrapper now), and if multiple
   versions are installed, one of them will be selected according to
-  ${ADOBE_LANG} environment variable.  If ${ADOBE_LANG} is not set,
+  ${ADOBE_LANG} environment variable. If ${ADOBE_LANG} is not set,
   it will be automatically set by using ${LANG}; this means when
   LANG=fr_FR.ISO8859-15, ADOBE_LANG will be FRA and the French version
-  will be invoked by ${PREFIX}/bin/acroread.  You can set ADOBE_LANG
+  will be invoked by ${PREFIX}/bin/acroread. You can set ADOBE_LANG
   manually, too.
 
   Also, if you want to activate the PDF plugin, use --install-plugin
-  option in ${PREFIX}/bin/acroread.  For more detail, see
+  option in ${PREFIX}/bin/acroread. For more detail, see
   print/acroreadwrapper/pkg-message.
 
 20060220:
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org
 
-  lang/perl5.8 has been updated to 5.8.8.  You should update everything
-  depending on perl.  The easiest way to do that is to use
-  perl-after-upgrade script supplied with lang/perl5.8.  Please see
+  lang/perl5.8 has been updated to 5.8.8. You should update everything
+  depending on perl. The easiest way to do that is to use
+  perl-after-upgrade script supplied with lang/perl5.8. Please see
   its manual page for details.
 
 20060220:
@@ -1099,19 +1099,19 @@ portupgrade -a
   AUTHOR: lawrance@FreeBSD.org
 
   The Tomcat ports listed above have been converted to use new-style
-  rc scripts.  In order to enable Tomcat, you must add:
+  rc scripts. In order to enable Tomcat, you must add:
 
 	tomcat{4,41,5,55}_enable="YES"
 
-  to your rc.conf.  Select the appropriate version number for your
-  installation.  When shutting down, the rc scripts will kill the
-  Tomcat process after a default timeout of 10 seconds.  This can be
+  to your rc.conf. Select the appropriate version number for your
+  installation. When shutting down, the rc scripts will kill the
+  Tomcat process after a default timeout of 10 seconds. This can be
   changed by setting the tomcatXX_stop_timeout variable in rc.conf.
 
   Tomcat 5.5 users please note that the rc variables have changed name
   from jakarta_tomcat55_* to tomcat55_*.
 
-  The "tomcatctl" executable is no longer installed.  Please use the
+  The "tomcatctl" executable is no longer installed. Please use the
   rc scripts to control tomcat instead.
 
 20060202:
@@ -1260,7 +1260,7 @@ portupgrade -a
   AUTHOR: brooks@FreeBSD.org
 
   The default install location has changed from PREFIX/www/data/drupal
-  to PREFIX/www/drupal.  Users who want to use the old location can set
+  to PREFIX/www/drupal. Users who want to use the old location can set
   the DRUPDIR variable to www/data/drupal.
 
 20060109:
@@ -1399,7 +1399,7 @@ portupgrade -a
   AUTHOR: ale@FreeBSD.org
 
   A few old pear ports have been removed from the tree in favor of a
-  single devel/pear port.  If portupgrade complains about missing ports,
+  single devel/pear port. If portupgrade complains about missing ports,
   you may safely remove pear-XML_RPC, pear-Console_Getopt, pear-Archive_Tar
   and php[45]-pear and then run:
 
@@ -1409,7 +1409,7 @@ portupgrade -a
   AFFECTS: users of net/ntop
   AUTHOR: wxs@csh.rit.edu
 
-  ntop now installs a rcNG script.  It also logs to syslog by default.
+  ntop now installs a rcNG script. It also logs to syslog by default.
   To enable ntop at boot time, set the following in rc.conf(5):
 
   ntop_enable="YES"
@@ -1482,7 +1482,7 @@ portupgrade -a
   AUTHOR: hrs@FreeBSD.org
 
   {ja,zh,ko}-FreeWnn-server now use the new rc.subr(8) framework
-  for their startup script.  Note that to invoke each Wnn daemon at
+  for their startup script. Note that to invoke each Wnn daemon at
   boot time you have to set the following variables in rc.conf(5)
   respectively:
 
@@ -1518,13 +1518,13 @@ portupgrade -a
   AFFECTS: users of security/racoon and security/ipsec-tools
   AUTHOR: lawrance@FreeBSD.org
 
-  security/racoon has been removed.  You should migrate to its
-  replacement, security/ipsec-tools.  No configuration changes will
+  security/racoon has been removed. You should migrate to its
+  replacement, security/ipsec-tools. No configuration changes will
   be required.
 
   The default configuration file location has changed for ipsec-tools.
   You will need to move your racoon configuration files to the new
-  location /usr/local/etc/racoon.  Alternatively, add this line in
+  location /usr/local/etc/racoon. Alternatively, add this line in
   rc.conf to continue using the old location:
 
   racoon_flags="-f /usr/local/etc"
@@ -1555,7 +1555,7 @@ portupgrade -a
 
   A change has been committed against www/lighttpd, which flips the
   meaning of the IPV6 option to match other ports, along with the
-  1.4.7 upgrade.  If you have previously saved configuration that
+  1.4.7 upgrade. If you have previously saved configuration that
   checks the IPV6 option (meaning to disable IPv6), then you will
   have to rerun the configuration with ``make config''.
 
@@ -1601,7 +1601,7 @@ portupgrade -a
   AUTHOR: rui@ruilopes.com
 
   The Trac database schema was changed between versions 0.8 and 0.9. This
-  port also started to use PySQLite 2 (SQLite 3).  Existing environments
+  port also started to use PySQLite 2 (SQLite 3). Existing environments
   must be upgraded before they can be used with Trac 0.9.
 
   The canonical update procedure for existing trac environments is:
@@ -1682,12 +1682,12 @@ portupgrade -a
   AFFECTS: users of sysutils/rdiff-backup, rdiff-backup-devel
   AUTHOR: lawrance@FreeBSD.org
 
-  sysutils/rdiff-backup has been upgraded to version 1.0.1.  This
-  version is incompatible with the previous version.  Users of
+  sysutils/rdiff-backup has been upgraded to version 1.0.1. This
+  version is incompatible with the previous version. Users of
   rdiff-backup will need to redo their initial seed.
 
-  rdiff-backup-devel has been removed.  Users of rdiff-backup-devel
-  should now use rdiff-backup instead.  In this case there is no need
+  rdiff-backup-devel has been removed. Users of rdiff-backup-devel
+  should now use rdiff-backup instead. In this case there is no need
   to redo the initial seed.
 
 20051006:
@@ -1809,7 +1809,7 @@ portupgrade -a
   AUTHOR: kde@FreeBSD.org
 
   One data file has been moved from kdeadmin to kdelibs between
-  KDE 3.4.1 and KDE 3.4.2.  This means that
+  KDE 3.4.1 and KDE 3.4.2. This means that
 
   *********if you currently have the kdeadmin port installed*********
 
@@ -1840,9 +1840,9 @@ portupgrade -a
   AFFECTS: users of sysutils/sge and sysutils/sgeee
   AUTHOR: brooks@FreeBSD.org
 
-  A port of SGE 6 has been installed in sysutils/sge.  SGE 6 is
+  A port of SGE 6 has been installed in sysutils/sge. SGE 6 is
   significantly different from SGE 5 and an upgrade is only possible
-  by removing the SGE 5 install and replacing it.  The SGE vs SGEEE
+  by removing the SGE 5 install and replacing it. The SGE vs SGEEE
   distinction has been removed in SGE 6 so the sgeee port was removed.
   The sge and sgeee ports were repo copied to sge53 and sgeee53
   respectively and existing installations may continue to use them.
@@ -1866,8 +1866,8 @@ portupgrade -a
 
   The shared library version number of all shared libraries built as
   part of the baseline system has been incremented in both RELENG_6
-  and HEAD.  The overall goal is to make handling of the compat library
-  infrastructure easier.  Each new release branch will have different
+  and HEAD. The overall goal is to make handling of the compat library
+  infrastructure easier. Each new release branch will have different
   version numbers for all of the shared libraries and the compat ports
   can simply include all of the shared libraries from the previous
   release.
@@ -1882,7 +1882,7 @@ portupgrade -a
   and old versions of the libraries which would cause big problems.
 
   It will take some time for the pre-built packages available on the
-  FTP mirror sites to be rebuilt against the new libraries.  If you
+  FTP mirror sites to be rebuilt against the new libraries. If you
   want to update your ports using the pre-built packages watch the
   mailing lists for when the rebuilt packages become available.
 
@@ -1911,7 +1911,7 @@ portupgrade -a
   AUTHOR: danfe@FreeBSD.org
 
   Due to several complaints, new (unsupported) option had been added to port
-  Makefile: WITH_LEGACY_GPU_SUPPORT.  Starting with version 7667, NVidia has
+  Makefile: WITH_LEGACY_GPU_SUPPORT. Starting with version 7667, NVidia has
   dropped support for numerous "legacy" GPUs, while this option allows to go
   with previous version of driver (this does not apply to older versions of
   FreeBSD, since you have to use version 6113 of driver (if you did not yet
@@ -1937,9 +1937,9 @@ portupgrade -a
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org
 
-  lang/perl5.8 has been updated to 5.8.7.  You should update everything
-  depending on perl.  The easiest way to do that is to use
-  perl-after-upgrade script supplied with lang/perl5.8.  Please see
+  lang/perl5.8 has been updated to 5.8.7. You should update everything
+  depending on perl. The easiest way to do that is to use
+  perl-after-upgrade script supplied with lang/perl5.8. Please see
   its manual page for details.
 
 20050622:
@@ -2242,7 +2242,7 @@ portupgrade -a
   tac_plus_enable="YES"
 
   You can also pass flags to tac_plus by setting the rc.conf variable
-  tac_plus_flags.  The default flags are "-C ${PREFIX}/etc/tac_plus.conf".
+  tac_plus_flags. The default flags are "-C ${PREFIX}/etc/tac_plus.conf".
 
   Additionally, the default version of IOS for tac_plus has been changed from
   11.x to 12.x.
@@ -2252,7 +2252,7 @@ portupgrade -a
   AUTHOR: brooks@FreeBSD.org
 
   In mDNSResponder 98_1, mdnsd is no longer started by default due to a
-  switch to an rc.subr startup script.  To start it, you must add add
+  switch to an rc.subr startup script. To start it, you must add add
   mdnsd_enable="YES" to your /etc/rc.conf or other suitable
   configuration file.
 
@@ -2341,7 +2341,7 @@ portupgrade -a
 
   As a result of shifting from SHA-1 to SHA-256, the structure of
   portsnap's configuration file and compressed snapshot have both
-  changed.  After upgrading to portsnap 0.9, you will have to
+  changed. After upgrading to portsnap 0.9, you will have to
   update your configuration file ($PREFIX/etc/portsnap.conf) and
   delete your existing portsnap compressed snapshot:
 
@@ -2407,7 +2407,7 @@ portupgrade -a
   DO NOT USE portupgrade(1) to update any gnome or gtk
   or any port that depends on them. Using portupgrade
   will cause problems and you will have to manually
-  upgrade ports.  Please use the gnome_upgrade.sh
+  upgrade ports. Please use the gnome_upgrade.sh
   script from
     http://www.FreeBSD.org/gnome/gnome_upgrade.sh
 
@@ -2462,12 +2462,12 @@ portupgrade -a
   AUTHOR: brooks@FreeBSD.org
 
   With the move to Ganglia 3.0.0, the configuration file for gmond has
-  changed completely.  The -r or --convert options may be used to
+  changed completely. The -r or --convert options may be used to
   emit a file in the new format given one in the old.
 
   Startup is now controlled by an RC_SUBR script so the gmond_enable and
   gmetad_enable variables will need to be set for gmond and gmetad to be
-  started.  Existing gmond.sh and gmetad.sh scripts in PREFIX/etc/rc.d
+  started. Existing gmond.sh and gmetad.sh scripts in PREFIX/etc/rc.d
   should be removed.
 
   Due to a bug in ganglia's build process, the previous version may need
@@ -2513,26 +2513,26 @@ portupgrade -a
   AFFECTS: users of print/teTeX-*
   AUTHOR: hrs@FreeBSD.org
 
-  print/teTeX-* are now based on teTeX 3.0.  Although some
+  print/teTeX-* are now based on teTeX 3.0. Although some
   reliability fixes are also added, here are several common problems
   which you might fall on.
 
   1) $PREFIX/bin/pdftex is missing:
 
    Probably your system has old files included teTeX 2.x which can
-   prevent the new version from working.  Please remove the old
+   prevent the new version from working. Please remove the old
    files first (see 20050206 in this file) and reinstall.
 
   2) Some formats are still corrupted (for example, "Fatal format file error;
      I'm stymied" is displayed) or not updated even after a clean install:
 
    You might have old or corrupted *.fmt and/or *.map files
-   under /root/.texmf-* or $HOME/.texmf-* directories.  Typically
+   under /root/.texmf-* or $HOME/.texmf-* directories. Typically
    these directories are generated when you invoke the updmap(1),
-   texconfig(1), or fmtutil(1) utility manually.  However, for a period
+   texconfig(1), or fmtutil(1) utility manually. However, for a period
    after the first revision of the teTeX-base port erroneously used
    fmtutil(1) to regenerate *.fmt files, you could have these directories
-   without your intent.  In such a case, please remove these directories
+   without your intent. In such a case, please remove these directories
    and reinstall the ports (it is not needed to rebuild ports/packages).
    Just for your information, $HOME/.texmf-config and $HOME/.texmf-var
    can be used for your personal configuration.
@@ -2546,11 +2546,11 @@ portupgrade -a
 
   The dependency on x11-fonts/mkbold and x11-fonts/mkitalic has been
   switched over to x11-fonts/mkbold-mkitalic, which is written in C
-  and has far better performance than the old ones.  There is no
+  and has far better performance than the old ones. There is no
   functional difference between the two, but they will conflict with
-  each other.  Since other ports which depend on x11-fonts/mkbold or
+  each other. Since other ports which depend on x11-fonts/mkbold or
   x11-fonts/mkitalic will be updated to depend on x11-fonts/mkbold-mkitalic,
-  you might get an error during upgrading such ports.  In such a case,
+  you might get an error during upgrading such ports. In such a case,
   please pkg_delete the old ones first.
 
 20050206:
@@ -2581,7 +2581,7 @@ portupgrade -a
 
   Good news is that the pthread support of lang/ruby18 is now enabled
   by default for newer systems, which means the ruby interpreter is
-  linked with libpthread.  This will allow threaded extension
+  linked with libpthread. This will allow threaded extension
   libraries to run and work properly on those systems.
 
 20050201:
@@ -2595,7 +2595,7 @@ portupgrade -a
     * first, upgrade your perl installation (use either lang/perl5 or
       lang/perl5.8, the latter being recommended);
     * for FreeBSD 4.X, run "use.perl port", so that the system knows you
-      have 5.8.6 or 5.6.2;  this step is not needed on FreeBSD 5.X and
+      have 5.8.6 or 5.6.2; this step is not needed on FreeBSD 5.X and
       FreeBSD -CURRENT;
     * run some magic incantations to upgrade all ports depending on perl,
       that is run something like :
@@ -2628,14 +2628,14 @@ portupgrade -a
   AFFECTS: users of net/howl
   AUTHOR: marcus@FreeBSD.org
 
-  Howl now installs an rcNG script for starting mDNSResponder.  To enable
+  Howl now installs an rcNG script for starting mDNSResponder. To enable
   mDNSResponder to start at boot time, add the following to /etc/rc.conf:
 
   mdnsresponder_enable="YES"
 
   You can also pass flags to mDNSResponder by setting the rc.conf variable
-  mdnsresponder_flags to the appropriate value.  See the mDNSResponder(8)
-  man page for the list of supported flags.  The default is not to pass
+  mdnsresponder_flags to the appropriate value. See the mDNSResponder(8)
+  man page for the list of supported flags. The default is not to pass
   any flags to mDNSResponder.
 
 20050126:
@@ -2653,11 +2653,11 @@ portupgrade -a
 
   The -devel port has been updated to contain 8.0 release since
   postgresql80-server can not be updated until 4.11 is released and the
-  changes in PR ports/75344 are committed.  Users who need 8.0 now can
+  changes in PR ports/75344 are committed. Users who need 8.0 now can
   use the -devel port, however, once postgresql80-server has been
-  committed, -devel will begin tracking 8.1.  Please be smart about
+  committed, -devel will begin tracking 8.1. Please be smart about
   tracking ports and if used in production, update to
-  databases/postgresql80-server as soon as it becomes available.  No
+  databases/postgresql80-server as soon as it becomes available. No
   dump/reload will be required when changing from -devel to
   postgresql80-server.
 
@@ -2732,9 +2732,9 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AUTHOR: gnome@FreeBSD.org
 
   Nautilus-cd-burner now requires cdrtools built with UTF-8 encoding
-  support.  The default sysutils/cdrtools port does not support this
+  support. The default sysutils/cdrtools port does not support this
   encoding, and that will cause nautilus-cd-burner to enter an infinite
-  loop when trying to create CD images.  To workaround this, the cdrtools
+  loop when trying to create CD images. To workaround this, the cdrtools
   dependency was changed in nautilus-cd-burner to point to the
   sysutils/cdrtools-cjk port instead.
 
@@ -2846,7 +2846,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AUTHOR: lesi@FreeBSD.org
 
   As of version 4.4.0_6, XFree86-4-Server now depends on
-  graphics/xfree86-dri.  This is due to incompatibilities between
+  graphics/xfree86-dri. This is due to incompatibilities between
   XFree86 and the new xorg 6.8.1 DRI.
 
   Users of XFree86-4-Server are strongly encouraged to switch to
@@ -3083,7 +3083,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of Java
   AUTHOR: glewis@FreeBSD.org
 
-  javavmwrapper has been rewritten.  It now creates symbolic links for
+  javavmwrapper has been rewritten. It now creates symbolic links for
   all executables of the Java VMs that have been registered with it.
   These symbolic links may impact which version of Java you are using,
   depending on your PATH, which may need to be adjusted.
@@ -3178,8 +3178,8 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
   Since there is a known problem that popfile doesn't work with DBD::SQLite 1.x
   at this time, you'll be in trouble after upgrading databases/p5-DBD-SQLite
-  to the latest one.  A workaround is committed to 0.22.0_1 which uses
-  databases/p5-DBD-SQLite2 by default.  However, if already installed popfile,
+  to the latest one. A workaround is committed to 0.22.0_1 which uses
+  databases/p5-DBD-SQLite2 by default. However, if already installed popfile,
   please check ${HOME}/.popfile/popfile.cfg, and change the line
   "bayes_dbconnect dbi:SQLite:dbname=$dbname" to
   "bayes_dbconnect dbi:SQLite2:dbname=$dbname" then restart popfile.
@@ -3190,7 +3190,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
   When upgrading from 1.X to 2.X, read the upgrading instructions.
   The structure of the database has changed, please use the migration
-  scripts provided.  Many of the programs have been renamed and arguments
+  scripts provided. Many of the programs have been renamed and arguments
   have been changed as well.
 
 20041020:
@@ -3285,18 +3285,18 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AUTHOR: freebsd-gnome@FreeBSD.org
 
   After upgrading to firefox-1.0.1.p, certain things such as extension/theme
-  [de]installation, and "Find On Page" may no longer work.  You may also
-  notice an infinite loop when starting Firefox.  If this happens, backup
+  [de]installation, and "Find On Page" may no longer work. You may also
+  notice an infinite loop when starting Firefox. If this happens, backup
   ~/.mozilla/firefox/*/bookmarks.html, and remove ~/.mozilla/firefox.
-  Afterward, Firefox should start up.  You can then restore the bookmarks.html
+  Afterward, Firefox should start up. You can then restore the bookmarks.html
   file to the new ~/.mozilla/firefox/*.default directory.
 
 20041012:
   AFFECTS: users of net/netatalk
   AUTHOR: marcus@FreeBSD.org
 
-  Netatalk has been upgraded to 2.0.0.  There are some important
-  instructions for upgrading from 1.6.x.  Please see
+  Netatalk has been upgraded to 2.0.0. There are some important
+  instructions for upgrading from 1.6.x. Please see
   http://netatalk.sourceforge.net/2.0/htmldocs/upgrade.html on how
   to make the transition.
 
@@ -3329,8 +3329,8 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   /lib/libm.so.2 will be the old one, /lib/libm.so.3 will be the new one).
   Any ports or pre-built packages you have currently installed will
   continue to use the old library, any ports you install after the upgrade
-  will begin to use the new library.  You will need to have all your
-  ports recompiled before the old library goes away.  To help with the
+  will begin to use the new library. You will need to have all your
+  ports recompiled before the old library goes away. To help with the
   migration you could also use /etc/libmap.conf to map libm.so.2 to
   libm.so.3.
 
@@ -3473,12 +3473,12 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   look for the texmf.cnf file in $TEXMF/web2c-ptex/texmf.cnf first,
   while some utilities included in the original teTeX distribution
   such as kpsepath(1) look for the file in $TEXMF/web2c/texmf.cnf
-  first.  This is for separating the pTeX's texmf.cnf and
+  first. This is for separating the pTeX's texmf.cnf and
   the original TeX's texmf.cnf, and you do not have to copy or
   link the file $TEXMF/web2c-ptex/texmf.cnf to $TEXMF/web2c/.
   To lookup pTeX path by using kpsepath(1) and so on, please
   set TEXMFCNF environment variable as described in
-  $TEXMF/web2c-ptex/texmf.cnf.  For more detail, see
+  $TEXMF/web2c-ptex/texmf.cnf. For more detail, see
   $TEXMF/web2c-ptex/texmf.cnf and $TEXMF/web2c/texmf.cnf.
 
 20040820:
@@ -3486,10 +3486,10 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AUTHOR: hrs@FreeBSD.org
 
   japanese/platex209-* are renamed to japanese/platex209 and
-  now depend on japanese/ptex-tetex.  While EUC-JP and JIS
+  now depend on japanese/ptex-tetex. While EUC-JP and JIS
   encoding can be used by default, but Shift JIS is no longer
   supported because it makes very difficult to maintain other
-  pTeX related ports.  However, "ptex --kanji=sjis" still works,
+  pTeX related ports. However, "ptex --kanji=sjis" still works,
   so it can be used if all of macro files under share/texmf are
   converted to Shift JIS encoding manually.
 
@@ -3498,7 +3498,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AUTHOR: hrs@FreeBSD.org
 
   japanese/dvipsk-vflib has been removed because it is not maintained
-  for a long time.  While japanese/dvipsk itself has no support to
+  for a long time. While japanese/dvipsk itself has no support to
   rendering vector fonts, this and Ghostscript give almost the same
   functionality.
 
@@ -3507,7 +3507,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AUTHOR: hrs@FreeBSD.org
 
   japanese/xdvik-vflib has been renamed to japanese/xdvik because
-  it has nothing to do with VFLib now.  It depends on and uses
+  it has nothing to do with VFLib now. It depends on and uses
   FreeType2 to render vector fonts.
 
 20040817:
@@ -3579,7 +3579,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
       This is likely to fail for a few ports, you'll have to upgrade them
       afterwards.
       Please note, that this last step is, strictly speaking, not necessary,
-      if you are upgrading from 5.8.4.  But it is cleaner to do so anyway.
+      if you are upgrading from 5.8.4. But it is cleaner to do so anyway.
 
 20040726:
   AFFECTS: users of devel/apache-ant
@@ -3618,7 +3618,7 @@ Option "XkbRules" "xfree86"
 
   The XFREE86_VERSION variable is deprecated and has been replaced by the
   X_WINDOW_SYSTEM variable. X_WINDOW_SYSTEM may be set to xorg, xfree86-4, or
-  xfree86-3.  X_WINDOW_SYSTEM defaults to xorg on FreeBSD-current.  If you are
+  xfree86-3. X_WINDOW_SYSTEM defaults to xorg on FreeBSD-current. If you are
   switching to xorg, you should follow this set of commands to cleanly upgrade:
 
   pkg_delete -f /var/db/pkg/imake-4* /var/db/pkg/XFree86-*
@@ -3630,18 +3630,18 @@ Option "XkbRules" "xfree86"
 
   Alternately, FreeBSD 5.x and later users can use portupgrade with packages:
     cd /var/db/pkg
-    portupgrade -o devel/imake-6  imake-4*
-    portupgrade -o x11/xorg-libraries  XFree86-libraries
-    portupgrade -o x11/xorg-clients  XFree86-clients
-    portupgrade -o x11/xorg-manpages  XFree86-manuals
-    portupgrade -o x11/xorg-documents  XFree86-documents
-    portupgrade -o x11-fonts/xorg-fonts-truetype  XFree86-fontScalable
-    portupgrade -o x11-fonts/xorg-fonts-100dpi  XFree86-font100dpi
-    portupgrade -o x11-fonts/xorg-fonts-75dpi  XFree86-font75dpi
-    portupgrade -o x11-fonts/xorg-fonts-miscbitmaps  XFree86-fontDefaultBitmaps
-    portupgrade -o x11-fonts/xorg-fonts-cyrillic  XFree86-fontCyrillic
-    portupgrade -o x11-fonts/xorg-fonts-encodings  XFree86-fontEncodings
-    portupgrade -o x11-servers/xorg-server  XFree86-Server
+    portupgrade -o devel/imake-6 imake-4*
+    portupgrade -o x11/xorg-libraries XFree86-libraries
+    portupgrade -o x11/xorg-clients XFree86-clients
+    portupgrade -o x11/xorg-manpages XFree86-manuals
+    portupgrade -o x11/xorg-documents XFree86-documents
+    portupgrade -o x11-fonts/xorg-fonts-truetype XFree86-fontScalable
+    portupgrade -o x11-fonts/xorg-fonts-100dpi XFree86-font100dpi
+    portupgrade -o x11-fonts/xorg-fonts-75dpi XFree86-font75dpi
+    portupgrade -o x11-fonts/xorg-fonts-miscbitmaps XFree86-fontDefaultBitmaps
+    portupgrade -o x11-fonts/xorg-fonts-cyrillic XFree86-fontCyrillic
+    portupgrade -o x11-fonts/xorg-fonts-encodings XFree86-fontEncodings
+    portupgrade -o x11-servers/xorg-server XFree86-Server
     portupgrade -o x11/xorg -f XFree86
 
 20040719:
@@ -3695,9 +3695,9 @@ Option "XkbRules" "xfree86"
 
   Milter-sender version 0.58 released.
   When updating to version 0.58, beware if you have a personalized
-  configuration file (milter-sender.cf).  The meaning of the
+  configuration file (milter-sender.cf). The meaning of the
   MxAcceptsAllAction variable has changed and its default has changed
-  from 4 to 6.  If this variable is not updated, greylisting might be
+  from 4 to 6. If this variable is not updated, greylisting might be
   more aggressive than expected.
 
 20040708:
@@ -3706,10 +3706,10 @@ Option "XkbRules" "xfree86"
 
   Opera 7.52 released.
   The file search.ini has been changed to ensure correct default
-  addresses for dictionary and encyclopedia searches.  Existing
-  versions will be overwritten on upgrade.  Users who have a
+  addresses for dictionary and encyclopedia searches. Existing
+  versions will be overwritten on upgrade. Users who have a
   customized search.ini file that they would like to keep, should
-  edit its version number to 4 before upgrading.  Note that you
+  edit its version number to 4 before upgrading. Note that you
   have to edit the search.ini file located in the /.opera folder.
 
   [Version]
@@ -3730,9 +3730,9 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of net/netatalk-devel
   AUTHOR: marcus@FreeBSD.org
 
-  Netatalk-devel has been converted to use RCng.  That means all of the
+  Netatalk-devel has been converted to use RCng. That means all of the
   netatalk daemons must be enabled in /etc/rc.conf before they will start
-  (previously, all netatalk daemons would start by default).  The following
+  (previously, all netatalk daemons would start by default). The following
   variables are used by the new netatalk.sh script:
 
   atalkd_enable
@@ -3788,7 +3788,7 @@ Option "XkbRules" "xfree86"
   AUTHOR: kuriyama@FreeBSD.org
 
   The openslp port must now be enabled / disabled and configured in
-  rc.conf.  See the script for details.
+  rc.conf. See the script for details.
 
 20040619:
   AFFECTS: users of sysutils/webmin and sysutils/usermin
@@ -3815,8 +3815,8 @@ Option "XkbRules" "xfree86"
   AUTHOR: hrs@FreeBSD.org
 
   The japanese/xdvik-vflib no longer supports VFlib2, and now depends on
-  print/freetype2.  For the configuration details, see vfontmap file which
-  installed as texmf/xdvi/vfontmap.  japanese/kochi-ttfonts is used for
+  print/freetype2. For the configuration details, see vfontmap file which
+  installed as texmf/xdvi/vfontmap. japanese/kochi-ttfonts is used for
   min and goth by default.
 
   xdvik-vflib-pk* variants has been removed because pkfonts are already included
@@ -3828,16 +3828,16 @@ Option "XkbRules" "xfree86"
 
   The print/teTeX has been split into print/teTeX-base and print/teTeX-texmf,
   and print/teTeX is now a meta-port for the two and print/dvipsk-tetex and
-  print/xdvik.  print/teTeX installs dvips and xdvi by default again (via
-  print/dvipsk-tetex and print/xdvik).   For people who want to use teTeX,
+  print/xdvik. print/teTeX installs dvips and xdvi by default again (via
+  print/dvipsk-tetex and print/xdvik). For people who want to use teTeX,
   simply install print/teTeX with options set by default.
 
   print/teTeX-base has additional options for adding xdvi and dvips included
   in the teTeX distribution itself, but use of them are not recommended if
-  you do not understand what you are trying to do.  Especially, when the
+  you do not understand what you are trying to do. Especially, when the
   options are set by yourself, do not install ports that match *xdvi* and
   *dvips* because they break the installed print/teTeX-base's dviware
-  and such conflicts will not be detected.  In most cases, a combination
+  and such conflicts will not be detected. In most cases, a combination
   of print/teTeX-base + print/dvipsk-tetex + print/xdvik (which are
   installed by print/teTeX by default) will be sufficient.
 
@@ -3848,9 +3848,9 @@ Option "XkbRules" "xfree86"
   The firefox-0.9 update has a special requirement before you can run it.
   You must first run firefox as root before running it as another user.
   The best way to do this is to su - to root or log
-  in as root (i.e. do not su -m to root).  After becoming root, simply run
-  ``firefox''.  You can then quit the browser, then run it as any other
-  user.  If you do not run firefox as root first, the browser window will
+  in as root (i.e. do not su -m to root). After becoming root, simply run
+  ``firefox''. You can then quit the browser, then run it as any other
+  user. If you do not run firefox as root first, the browser window will
   not appear.
 
 20040608:
@@ -3858,14 +3858,14 @@ Option "XkbRules" "xfree86"
   AUTHOR: clement@FreeBSD.org
 
   The haproxy port must now be enabled / disabled and configured in
-  rc.conf.  See the pkg-message or script for details.
+  rc.conf. See the pkg-message or script for details.
 
 20040605:
   AFFECTS: users of www/apache2
   AUTHOR: clement@FreeBSD.org
 
   The apache2 port must now be enabled / disabled and configured in
-  rc.conf.  See the pkg-message or script for details.
+  rc.conf. See the pkg-message or script for details.
 
 20040602:
   AFFECTS: users of sysutils/mkisofs and sysutils/mkisofs-devel
@@ -3902,7 +3902,7 @@ Option "XkbRules" "xfree86"
   AUTHOR: nork@FreeBSD.org
 
   In Mailman 2.1.5, some significant changes have been made to the
-  file formats for qfiles and the pendings database.  See
+  file formats for qfiles and the pendings database. See
   $PREFIX/share/doc/mailman/UPGRADING for details (if you define
   NOPORTDOCS, refer relevant file in an archive).
 
@@ -3940,7 +3940,7 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of print/teTeX
   AUTHOR: hrs@FreeBSD.org
 
-  The print/teTeX no longer installs dvipsk by default.  To build and
+  The print/teTeX no longer installs dvipsk by default. To build and
   install dvipsk, you have to specify WITH_DVIPSK, or the dvipsk utility
   in the print/teTeX is also available print/dvipsk-tetex separately.
   This change is to resolve conflicts between various versions of dvips.
@@ -3957,14 +3957,14 @@ Option "XkbRules" "xfree86"
   AUTHOR: nork@FreeBSD.org
 
   The apache13 port must now be enabled / disabled and configured in
-  rc.conf.  See the pkg-message or script for details.
+  rc.conf. See the pkg-message or script for details.
 
 20040429:
   AFFECTS: users of sysutils/smartmontools
   AUTHOR: nork@FreeBSD.org
 
   The smartmontools port must now be enabled / disabled and configured in
-  rc.conf.  See the pkg-message or script for details.
+  rc.conf. See the pkg-message or script for details.
 
 20040420:
   AFFECTS: users of sysutils/cdrtools
@@ -3990,13 +3990,13 @@ Option "XkbRules" "xfree86"
   AFFECTS: GNOME desktop users
   AUTHOR: gnome@FreeBSD.org
 
-  GNOME has been updated to 2.6.  Simply portupgrading will cause serious
-  problems if you are using the desktop itself.  If you are a GNOME desktop
+  GNOME has been updated to 2.6. Simply portupgrading will cause serious
+  problems if you are using the desktop itself. If you are a GNOME desktop
   user, you should carefully read the instructions at:
 
   http://www.freebsd.org/gnome/docs/faq26.html
 
-  And use the gnome_upgrade.sh script to properly upgrade to GNOME 2.6.  If
+  And use the gnome_upgrade.sh script to properly upgrade to GNOME 2.6. If
   you are just a casual user of some of the GNOME libraries, portupgrade
   should be sufficient to update your ports.
 
@@ -4005,7 +4005,7 @@ Option "XkbRules" "xfree86"
   AUTHOR: des@FreeBSD.org
 
   The isc-dhcp3-* ports must now be enabled / disabled and configured in
-  rc.conf.  See the pkg-message for details.
+  rc.conf. See the pkg-message for details.
 
 20040313:
   AFFECTS: users of textproc/expat2
