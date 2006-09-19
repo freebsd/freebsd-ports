@@ -12,6 +12,7 @@
     SUBDIR += birda
     SUBDIR += bpl+
     SUBDIR += cdr_read
+    SUBDIR += chu
     SUBDIR += comserv
     SUBDIR += conserver
     SUBDIR += conserver-com
