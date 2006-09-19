@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Modlist
-PORTVERSION=	0.7
+PORTVERSION=	0.71
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to collect module use information
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Devel::Modlist.3
 
