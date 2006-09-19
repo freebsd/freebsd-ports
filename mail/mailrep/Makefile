@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailrep
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	mail sysutils
 MASTER_SITES=	http://cs.bon.matrix.com.br/araujo/pub/mailrep/
 
@@ -16,7 +16,7 @@ COMMENT=	Program for reporting mail log information
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-PORTDOCS=	*
+PORTDOCS=	LICENSE
 
 .include <bsd.port.pre.mk>
 
