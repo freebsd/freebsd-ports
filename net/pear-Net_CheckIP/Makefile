@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_CheckIP
-PORTVERSION=	1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	net pear
 
 MAINTAINER=	antonio@php.net
