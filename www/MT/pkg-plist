@@ -542,7 +542,6 @@
 %%CGIDIR%%/php/lib/block.MTIfNeedEmail.php
 %%CGIDIR%%/php/lib/block.MTIfNonEmpty.php
 %%CGIDIR%%/php/lib/block.MTIfNonZero.php
-%%CGIDIR%%/php/lib/block.MTIfNotCategory.php
 %%CGIDIR%%/php/lib/block.MTIfPingsAccepted.php
 %%CGIDIR%%/php/lib/block.MTIfPingsActive.php
 %%CGIDIR%%/php/lib/block.MTIfPingsAllowed.php
@@ -779,6 +778,7 @@
 %%CGIDIR%%/plugins/WidgetManager/default_widgets/creative_commons.tmpl
 %%CGIDIR%%/plugins/WidgetManager/default_widgets/monthly_archive_dropdown.tmpl
 %%CGIDIR%%/plugins/WidgetManager/default_widgets/monthly_archive_list.tmpl
+%%CGIDIR%%/plugins/WidgetManager/default_widgets/powered_by.tmpl
 %%CGIDIR%%/plugins/WidgetManager/default_widgets/recent_comments.tmpl
 %%CGIDIR%%/plugins/WidgetManager/default_widgets/recent_posts.tmpl
 %%CGIDIR%%/plugins/WidgetManager/default_widgets/search.tmpl
