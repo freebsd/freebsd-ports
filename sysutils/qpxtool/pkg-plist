@@ -1,0 +1,7 @@
+bin/pioquiet
+bin/pxcontrol
+bin/qpxtool
+lib/libqpxpioneer.so
+lib/libqpxplextor.so
+lib/libqpxscan.so
+lib/libqpxtransport.so
