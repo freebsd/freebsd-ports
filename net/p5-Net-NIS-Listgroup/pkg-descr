@@ -1,0 +1,13 @@
+A library used to get groups or members of a netgroup NIS map.
+listgroup() without any parameters or listgroups() lists all the
+available netgroup groups.
+
+With groupname parameters listgroup, listgroup_user, listgroup_host
+will recusively list the members of the named groups. If the groupname
+is preceded with a - members of that group will be excluded from the
+returned list. Each member in a group is a triplet of
+(host,user,domain). The host portion or user portion of the members is
+returned by listgroup_host() and listgroup(), the user portion of the
+members is returned by listgroup_user().
+
+WWW:	http://search.cpan.org/dist/Net-NIS-Listgroup/
