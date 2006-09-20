@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
-MAN1=		varnishd.1 varnishlog.1 varnishncsa.1 varnishstat.1
+MAN1=		varnishd.1 varnishhist.1 varnishlog.1 varnishncsa.1 \
+		varnishstat.1 varnishtop.1
 
 .include <bsd.port.pre.mk>
 

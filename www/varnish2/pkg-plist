@@ -1,4 +1,5 @@
 bin/varnishd
+bin/varnishhist
 bin/varnishlog
 bin/varnishncsa
 bin/varnishstat
