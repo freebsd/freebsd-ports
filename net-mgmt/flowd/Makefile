@@ -40,7 +40,7 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		Does not compile
+CONFIGURE_ARGS+="ac_cv_sizeof_sa_family_t=1"
 .endif
 
 pre-extract:
