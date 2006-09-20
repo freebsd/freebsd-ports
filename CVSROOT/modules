@@ -9542,6 +9542,7 @@ p5-Net-MAC-Vendor	ports/net/p5-Net-MAC-Vendor
 p5-Net-MSN	ports/net-im/p5-Net-MSN
 p5-Net-MovableType	ports/net/p5-Net-MovableType
 p5-Net-NBName	ports/net/p5-Net-NBName
+p5-Net-NIS	ports/net/p5-Net-NIS
 p5-Net-NetSend	ports/net-im/p5-Net-NetSend
 p5-Net-Netmask	ports/net-mgmt/p5-Net-Netmask
 p5-Net-Nslookup	ports/dns/p5-Net-Nslookup
