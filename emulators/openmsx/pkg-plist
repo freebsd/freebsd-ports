@@ -1,6 +1,8 @@
 bin/openmsx
 %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/hardwareconfig.xml
 %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms/SHA1SUMS
+%%DATADIR%%/extensions/DDX_3.0/hardwareconfig.xml
+%%DATADIR%%/extensions/DDX_3.0/roms/SHA1SUMS
 %%DATADIR%%/extensions/Konami_EC-702/hardwareconfig.xml
 %%DATADIR%%/extensions/Konami_EC-702/roms/SHA1SUMS
 %%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge/hardwareconfig.xml
@@ -186,12 +188,15 @@ bin/openmsx
 %%DATADIR%%/machines/Sony_HB-F9P/roms/SHA1SUMS
 %%DATADIR%%/machines/Spectravideo_SVI-728/hardwareconfig.xml
 %%DATADIR%%/machines/Spectravideo_SVI-728/roms/SHA1SUMS
+%%DATADIR%%/machines/Spectravideo_SVI-738/hardwareconfig.xml
+%%DATADIR%%/machines/Spectravideo_SVI-738/roms/SHA1SUMS
 %%DATADIR%%/machines/Toshiba_HX-10/hardwareconfig.xml
 %%DATADIR%%/machines/Toshiba_HX-10/roms/SHA1SUMS
 %%DATADIR%%/machines/msx1
 %%DATADIR%%/machines/msx2
 %%DATADIR%%/machines/msx2plus
 %%DATADIR%%/machines/turbor
+%%DATADIR%%/scripts/about.tcl
 %%DATADIR%%/scripts/autoplug.tcl
 %%DATADIR%%/scripts/backwards_compatibility.tcl
 %%DATADIR%%/scripts/cheat.tcl
@@ -202,16 +207,28 @@ bin/openmsx
 %%DATADIR%%/scripts/disasm.tcl
 %%DATADIR%%/scripts/guess_title.tcl
 %%DATADIR%%/scripts/load_icons.tcl
+%%DATADIR%%/scripts/monitor.tcl
 %%DATADIR%%/scripts/multi_screenshot.tcl
+%%DATADIR%%/scripts/psg_log.tcl
+%%DATADIR%%/scripts/reg_log.tcl
 %%DATADIR%%/scripts/save_debuggable.tcl
 %%DATADIR%%/scripts/showmem.tcl
 %%DATADIR%%/scripts/slot.tcl
 %%DATADIR%%/scripts/stack.tcl
+%%DATADIR%%/scripts/text_echo.tcl
 %%DATADIR%%/scripts/toggle_freq.tcl
 %%DATADIR%%/scripts/trainers.tcl
+%%DATADIR%%/scripts/umrcallback.tcl
 %%DATADIR%%/scripts/vdp.tcl
 %%DATADIR%%/scripts/vdrive.tcl
 %%DATADIR%%/settings.xml
+%%DATADIR%%/shaders/fishbowl.frag
+%%DATADIR%%/shaders/scale2x.frag
+%%DATADIR%%/shaders/scale2x.vert
+%%DATADIR%%/shaders/simple.frag
+%%DATADIR%%/shaders/simple.vert
+%%DATADIR%%/shaders/tv.frag
+%%DATADIR%%/shaders/tv.vert
 %%DATADIR%%/skins/ConsoleBackground.png
 %%DATADIR%%/skins/ConsoleBackground1.png
 %%DATADIR%%/skins/ConsoleBackground2.png
@@ -276,6 +293,8 @@ bin/openmsx
 %%DATADIR%%/systemroms/README
 @dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms
 @dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK
+@dirrm %%DATADIR%%/extensions/DDX_3.0/roms
+@dirrm %%DATADIR%%/extensions/DDX_3.0
 @dirrm %%DATADIR%%/extensions/Konami_EC-702/roms
 @dirrm %%DATADIR%%/extensions/Konami_EC-702
 @dirrm %%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge
@@ -449,6 +468,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Sony_HB-F9P
 @dirrm %%DATADIR%%/machines/Spectravideo_SVI-728/roms
 @dirrm %%DATADIR%%/machines/Spectravideo_SVI-728
+@dirrm %%DATADIR%%/machines/Spectravideo_SVI-738/roms
+@dirrm %%DATADIR%%/machines/Spectravideo_SVI-738
 @dirrm %%DATADIR%%/machines/Toshiba_HX-10/roms
 @dirrm %%DATADIR%%/machines/Toshiba_HX-10
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX1/roms
@@ -459,6 +480,7 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX2+
 @dirrm %%DATADIR%%/machines
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%/skins/none
 @dirrm %%DATADIR%%/skins/set1
 @dirrm %%DATADIR%%/skins/set2
