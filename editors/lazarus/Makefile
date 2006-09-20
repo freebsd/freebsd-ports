@@ -7,8 +7,8 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.16
-PORTREVISION=	1
-CATEGORIES=	devel editors
+PORTREVISION=	2
+CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|freepascal/:freepascal|} \
 		ftp://ftp.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
 		ftp://planetmirror.com/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
