@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
@@ -25,6 +25,7 @@ CONFIGURE_SCRIPT=	cnf/bin/afnix-setup
 CONFIGURE_ARGS=		-o --prefix "${PREFIX}" --compiler freebsd
 MAKE_ENV=	CXX="${CXX}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
@@ -38,5 +39,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(CP)|$$(BSD_INSTALL_PROGRAM)|' \
 		${WRKSRC}/src/*/*/exe/Makefile
+	@${REINPLACE_CMD} -e '/\.rtf/d' ${WRKSRC}/etc/Makefile
+	@${REINPLACE_CMD} -e '/^MANDIR/s/SHRDIR/MANPREFIX/' \
+		${WRKSRC}/cnf/mak/afnix-defs.mak
 
 .include <bsd.port.post.mk>
