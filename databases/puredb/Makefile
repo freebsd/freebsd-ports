@@ -8,14 +8,15 @@
 PORTNAME=	puredb
 PORTVERSION=	2.1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.pureftpd.org/puredb/
+MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/pure-db/ \
+		ftp://ftp.pureftpd.org/pub/pure-ftpd/pure-db/
 DISTNAME=	pure-db-${PORTVERSION}
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DOCS=		AUTHORS FORMAT_DESCR NEWS README
 
