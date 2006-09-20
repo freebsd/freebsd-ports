@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Sep 20 13:44:49 2006
++++ Makefile	Wed Sep 20 13:45:05 2006
+@@ -126,7 +126,7 @@ adt/hashs.lo: libcompile adt/hashs.c adt
+ adt/hashs.o: compile adt/hashs.c adt/common.h
+ 	./compile adt/hashs.c
+ 
+-all: dotlibs sysdeps.h libraries bg-installer cli-generate selftests
++all: dotlibs sysdeps.h libraries bg-installer cli-generate
+ 
+ base64/asc2bin.lo: libcompile base64/asc2bin.c base64/base64.h str/str.h
+ 	./libcompile base64/asc2bin.c

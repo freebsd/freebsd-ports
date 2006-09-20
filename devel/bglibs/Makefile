@@ -13,10 +13,6 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
-BROKEN=		Fails self-tests
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 NOT_FOR_ARCHS=	alpha
 
 USE_GPG=	yes
@@ -27,6 +23,7 @@ USE_AUTOTOOLS=	libtool:15:env
 LDFLAGS?=	-s
 BGLIBS_INC=	${PREFIX}/include/${PORTNAME}
 BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}
+USE_LDCONFIG=	${BGLIBS_LIB}
 
 DOCS=		NEWS README TODO doc/html/*
 MAN1=		cli-generate.1
@@ -45,5 +42,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+
+selftest: build
+	cd ${WRKSRC} && ${SH} selftests.sh
 
 .include <bsd.port.mk>
