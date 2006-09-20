@@ -1,5 +1,5 @@
---- cherokee/fdpoll-kqueue.c.orig	Fri May 27 02:42:27 2005
-+++ cherokee/fdpoll-kqueue.c	Fri Sep 16 00:03:37 2005
+--- cherokee/fdpoll-kqueue.c.orig	Wed Sep 13 21:45:31 2006
++++ cherokee/fdpoll-kqueue.c	Wed Sep 13 21:45:13 2006
 @@ -27,6 +27,7 @@
  #include "fdpoll-protected.h"
  
