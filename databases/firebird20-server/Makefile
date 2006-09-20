@@ -64,7 +64,7 @@ UDF_SO=		ib_udf.so
 UDF_SQL=	src/extlib/ib_udf2.sql
 .else
 # Client part stuff
-LIB_DEPENDS=	icuuc.34:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 
 AUTOGENARGS=	--with-editline
 
