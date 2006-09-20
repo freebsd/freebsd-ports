@@ -147,6 +147,7 @@
 %%XPI_XPIDIR%%/chrome/skin/help.png
 %%XPI_XPIDIR%%/chrome/skin/hexit.png
 %%XPI_XPIDIR%%/chrome/skin/lair_all.png
+%%XPI_XPIDIR%%/chrome/skin/lair_cache.png
 %%XPI_XPIDIR%%/chrome/skin/lair_config.png
 %%XPI_XPIDIR%%/chrome/skin/lair_dta.png
 %%XPI_XPIDIR%%/chrome/skin/lair_fxsave.png
