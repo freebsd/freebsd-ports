@@ -6,6 +6,7 @@
 
 PORTNAME=	ccid
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://alioth.debian.org/download.php/1740/
 
@@ -16,6 +17,7 @@ LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
 		pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
 GNU_CONFIGURE=	yes
+USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${LOCALBASE}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${LOCALBASE}/lib/pcsc/drivers/serial \
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -25,4 +27,9 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,use warnings;,," ${WRKSRC}/src/create_Info_plist.pl
+
+.include <bsd.port.post.mk>
