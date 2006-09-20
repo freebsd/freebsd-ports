@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
@@ -14,14 +14,16 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
 LIB_DEPENDS=	xine.15:${PORTSDIR}/multimedia/libxine \
-		mp3lame.0:${PORTSDIR}/audio/lame \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 USE_GETTEXT=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
+USE_AUTOTOOLS=		libtool:15
+CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
+CONFIGURE_TARGET=
 
 .ifndef (WITHOUT_GSTREAMER)
 USE_GSTREAMER80=	yes
@@ -29,10 +31,13 @@ PLIST_SUB+=		NOGSTREAMER=""
 .else
 PLIST_SUB+=		NOGSTREAMER="@comment "
 .endif
-
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
-CONFIGURE_TARGET=
+.ifdef (WITH_LAME)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+PLIST_SUB+=	NOLAME=""
+.else
+CONFIGURE_ARGS+=	--without-lame
+PLIST_SUB+=	NOLAME="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -46,5 +51,7 @@ CONFIGURE_ARGS+=	--without-gstreamer
 
 post-patch:
 	${REINPLACE_CMD} -e "s,xx,," ${WRKSRC}/po/Makefile.in
+	${REINPLACE_CMD} "s,#include <endian.h>,," \
+		${WRKSRC}/kaffeine/src/input/disc/paranoia.cpp
 
 .include <bsd.port.post.mk>

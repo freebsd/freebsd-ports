@@ -1,34 +1,33 @@
 bin/kaffeine
 include/kaffeine_export.h
-include/kaffeine/kaffeine_part.h
-include/kaffeine/kaffeine_part_iface.h
 include/kaffeine/kaffeineaudioencoder.h
-include/kaffeine/kmediapart.h
 include/kaffeine/mrl.h
 include/kaffeine/playlistimport.h
+include/kaffeine/kaffeinepart.h
+include/kaffeine/xine_part.h
+include/kaffeine/xine_part_iface.h
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.a
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.so
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.la
-lib/kde3/libkaffeinemp3lame.a
-lib/kde3/libkaffeinemp3lame.la
-lib/kde3/libkaffeinemp3lame.so
+%%NOLAME%%lib/kde3/libkaffeinemp3lame.a
+%%NOLAME%%lib/kde3/libkaffeinemp3lame.la
+%%NOLAME%%lib/kde3/libkaffeinemp3lame.so
 lib/kde3/libkaffeineoggvorbis.a
 lib/kde3/libkaffeineoggvorbis.la
 lib/kde3/libkaffeineoggvorbis.so
-lib/kde3/libkaffeinepart.a
-lib/kde3/libkaffeinepart.la
-lib/kde3/libkaffeinepart.so
 lib/libkaffeineaudioencoder.a
 lib/libkaffeineaudioencoder.la
 lib/libkaffeineaudioencoder.so
 lib/libkaffeineaudioencoder.so.0
-lib/libkmediapart.a
-lib/libkmediapart.la
-lib/libkmediapart.so
-lib/libkmediapart.so.0
+lib/libkaffeinepart.so.0
+lib/libkaffeinepart.so
+lib/libkaffeinepart.la
+lib/libkaffeinepart.a
+lib/kde3/libxinepart.so
+lib/kde3/libxinepart.la
+lib/kde3/libxinepart.a
 share/applications/kde/kaffeine.desktop
 %%NOGSTREAMER%%share/apps/gstreamerpart/gstreamer_part.rc
-share/apps/kaffeine/kaffeine_part.rc
 share/apps/kaffeine/kaffeinedisc.rc
 share/apps/kaffeine/kaffeineplaylist.rc
 share/apps/kaffeine/kaffeineui.rc
@@ -38,6 +37,7 @@ share/apps/kaffeine/logo.mpg
 share/apps/kaffeine/mms.protocol
 share/apps/kaffeine/rtsp.protocol
 share/apps/kaffeine/dvbdata.tar.gz
+share/apps/kaffeine/xine_part.rc
 share/apps/kaffeine/pics/playing.png
 share/apps/konqueror/servicemenus/kaffeine_open_directory.desktop
 share/apps/konqueror/servicemenus/kaffeine_append_file.desktop
@@ -73,6 +73,7 @@ share/icons/hicolor/16x16/mimetypes/mime_kaffeine.png
 share/icons/hicolor/16x16/actions/player_mute.png
 share/icons/hicolor/16x16/actions/player_record.png
 share/icons/hicolor/22x22/apps/kaffeine.png
+share/icons/hicolor/22x22/apps/kilogram.png
 share/icons/hicolor/22x22/actions/player_mute.png
 share/icons/hicolor/22x22/actions/player_record.png
 share/icons/hicolor/32x32/actions/player_mute.png
@@ -120,12 +121,17 @@ share/locale/tr/LC_MESSAGES/kaffeine.mo
 share/locale/uk/LC_MESSAGES/kaffeine.mo
 share/locale/uz/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
+share/locale/et/LC_MESSAGES/kaffeine.mo
+share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
+share/locale/ar/LC_MESSAGES/kaffeine.mo
+share/locale/ka/LC_MESSAGES/kaffeine.mo
+share/locale/km/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
 share/mimelnk/application/x-mplayer2.desktop
 %%NOGSTREAMER%%share/services/gstreamer_part.desktop
-share/services/kaffeine_part.desktop
-share/services/kaffeinemp3lame.desktop
+%%NOLAME%%share/services/kaffeinemp3lame.desktop
 share/services/kaffeineoggvorbis.desktop
+share/services/xine_part.desktop
 share/servicetypes/kaffeineaudioencoder.desktop
 @dirrm include/kaffeine
 @dirrm share/apps/kaffeine/pics
@@ -133,3 +139,4 @@ share/servicetypes/kaffeineaudioencoder.desktop
 @dirrm share/doc/HTML/en/kaffeine
 @dirrmtry share/apps/konqueror/servicemenus
 @dirrmtry share/apps/konqueror
+%%NOGSTREAMER%%@dirrm share/apps/gstreamerpart
