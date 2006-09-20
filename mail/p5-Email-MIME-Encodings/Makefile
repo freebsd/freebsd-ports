@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Email-MIME-Encodings
-PORTVERSION=	1.3
+PORTVERSION=	1.310
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/C/CW/CWEST
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
@@ -23,7 +22,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Email::MIME::Encodings.3
 
 post-patch:
-	${PERL} -pi -e '$$_="" if /use warnings/;' ${WRKSRC}/Encodings.pm
+	${PERL} -pi -e '$$_="" if /use warnings/;' ${WRKSRC}/lib/Email/MIME/Encodings.pm
 test:
 	cd ${WRKSRC} ; make test
 
