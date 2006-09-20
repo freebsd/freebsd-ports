@@ -1,9 +1,6 @@
 
-   phpMyAdmin can manage a whole MySQL server (needs a super-user) as
-   well as a single database. To accomplish the latter you'll need a
-   properly set up MySQL user who can read/write only the desired
-   database. It's up to you to look up the appropriate part in the
-   MySQL manual.
+   phpMyAdmin handles the administration of MySQL over the Web. It can
+   manage a whole MySQL server as well as a single database.
 
    Currently phpMyAdmin can:
      - easily browse through databases and tables
