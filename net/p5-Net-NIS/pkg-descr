@@ -1,0 +1,10 @@
+This is a snapshot release of the NIS interface to Perl 5.  There are
+three parts to the interface: the raw component (Net::NIS), the
+object-oriented component (Net::NIS::Table), and the tied interface
+(Net::NIS).
+
+Unless someone provides strong reason to support the raw or OO
+components, they will be marked as deprecated and not documented or
+enhanced (but still supported for backward compatibility).
+
+WWW:	http://search.cpan.org/dist/Net-NIS/
