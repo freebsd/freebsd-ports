@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	CJKUnifonts
-PORTVERSION=	0.1.20060513
+PORTVERSION=	0.1.20060903
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://ftp.debian.org/debian/pool/main/t/ttf-arphic-uming/:uming \
+MASTER_SITES=	ftp://yilan.twbbs.org/distfiles/:uming \
+		http://ftp.debian.org/debian/pool/main/t/ttf-arphic-uming/:uming \
+		ftp://yilan.twbbs.org/distfiles/:ukai \
 		http://ftp.debian.org/debian/pool/main/t/ttf-arphic-ukai/:ukai
 PKGNAMEPREFIX=	zh-
 DISTFILES=	ttf-arphic-uming_${PORTVERSION}.orig.tar.gz:uming \
@@ -17,6 +19,7 @@ DISTFILES=	ttf-arphic-uming_${PORTVERSION}.orig.tar.gz:uming \
 MAINTAINER=	chinsan.tw@gmail.com
 COMMENT=	CJKUnifonts TrueType Font is a combine of Arphic Ming and Kai fonts
 
+DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
