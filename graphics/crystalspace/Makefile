@@ -66,7 +66,11 @@ OPTIONS=	DEBUG	"Build with debugging information"	off \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		Does not compile
+BROKEN=		Does not compile on 4.x
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 .if !defined(WITH_DEBUG)
