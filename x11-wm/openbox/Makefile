@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.3
+PORTVERSION=	3.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 
@@ -21,6 +21,16 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2
 USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .if !defined(WITHOUT_PANGO)
 USE_GNOME+=	pango

@@ -83,6 +83,26 @@ share/themes/syscrash/openbox-3/max_pressed.xbm
 share/themes/syscrash/openbox-3/max_toggled.xbm
 share/themes/syscrash/openbox-3/shade.xbm
 share/themes/syscrash/openbox-3/themerc
+%%NLS%%share/locale/ca/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/de/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/es/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/no/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/openbox.mo
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
 @dirrm share/themes/syscrash/openbox-3
 @dirrm share/themes/syscrash
 @dirrm share/themes/orang/openbox-3
