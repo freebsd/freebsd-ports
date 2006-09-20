@@ -1,6 +1,12 @@
 bin/poedit
+share/pixmaps/poedit.png
+share/icons/hicolor/16x16/apps/poedit.png
+share/icons/hicolor/32x32/apps/poedit.png
+share/icons/hicolor/48x48/apps/poedit.png
+share/icons/hicolor/scalable/apps/poedit.svg
 share/locale/af_ZA/LC_MESSAGES/poedit.mo
-share/locale/am_ET/LC_MESSAGES/poedit.mo
+share/locale/am/LC_MESSAGES/poedit.mo
+share/locale/ar/LC_MESSAGES/poedit.mo
 share/locale/ast/LC_MESSAGES/poedit.mo
 share/locale/be/LC_MESSAGES/poedit.mo
 share/locale/bg/LC_MESSAGES/poedit.mo
@@ -35,7 +41,9 @@ share/locale/ku/LC_MESSAGES/poedit.mo
 share/locale/ky/LC_MESSAGES/poedit.mo
 share/locale/lt/LC_MESSAGES/poedit.mo
 share/locale/lv/LC_MESSAGES/poedit.mo
+share/locale/mk/LC_MESSAGES/poedit.mo
 share/locale/mn/LC_MESSAGES/poedit.mo
+share/locale/ms/LC_MESSAGES/poedit.mo
 share/locale/nb/LC_MESSAGES/poedit.mo
 share/locale/nl/LC_MESSAGES/poedit.mo
 share/locale/nn/LC_MESSAGES/poedit.mo
@@ -49,25 +57,27 @@ share/locale/sk/LC_MESSAGES/poedit.mo
 share/locale/sl/LC_MESSAGES/poedit.mo
 share/locale/sq_AL/LC_MESSAGES/poedit.mo
 share/locale/sr/LC_MESSAGES/poedit.mo
-share/locale/sv_SE/LC_MESSAGES/poedit.mo
+share/locale/sv/LC_MESSAGES/poedit.mo
 share/locale/ta/LC_MESSAGES/poedit.mo
+share/locale/th/LC_MESSAGES/poedit.mo
 share/locale/tr/LC_MESSAGES/poedit.mo
 share/locale/tt/LC_MESSAGES/poedit.mo
 share/locale/uk/LC_MESSAGES/poedit.mo
 share/locale/wa/LC_MESSAGES/poedit.mo
 share/locale/zh_CN/LC_MESSAGES/poedit.mo
 share/locale/zh_TW/LC_MESSAGES/poedit.mo
-%%DATADIR%%/help-gettext.zip
-%%DATADIR%%/help-hr.zip
-%%DATADIR%%/help.zip
-%%DATADIR%%/resources.zip
-@dirrm %%DATADIR%%
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
-@dirrmtry share/locale/sv_SE/LC_MESSAGES
-@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/th/LC_MESSAGES
+@dirrmtry share/locale/th
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
 @dirrmtry share/locale/sq_AL/LC_MESSAGES
 @dirrmtry share/locale/sq_AL
+@dirrmtry share/locale/ms/LC_MESSAGES
+@dirrmtry share/locale/ms
+@dirrmtry share/locale/mk/LC_MESSAGES
+@dirrmtry share/locale/mk
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -76,11 +86,85 @@ share/locale/zh_TW/LC_MESSAGES/poedit.mo
 @dirrmtry share/locale/fur
 @dirrmtry share/locale/es_PR/LC_MESSAGES
 @dirrmtry share/locale/es_PR
+@dirrmtry share/locale/ar/LC_MESSAGES
+@dirrmtry share/locale/ar
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry share/locale/am_ET/LC_MESSAGES
-@dirrmtry share/locale/am_ET
+@dirrmtry share/locale/am/LC_MESSAGES
+@dirrmtry share/locale/am
 @dirrmtry share/locale/af_ZA/LC_MESSAGES
 @dirrmtry share/locale/af_ZA
 @dirrmtry share/locale/br/LC_MESSAGES
 @dirrmtry share/locale/br
+%%DATADIR%%/help/common/comment.gif
+%%DATADIR%%/help/common/fileopen.gif
+%%DATADIR%%/help/common/filesave.gif
+%%DATADIR%%/help/common/fullscreen.gif
+%%DATADIR%%/help/common/fuzzy.gif
+%%DATADIR%%/help/common/poedit.css
+%%DATADIR%%/help/common/quotes.gif
+%%DATADIR%%/help/common/update.gif
+%%DATADIR%%/help/en/basics.html
+%%DATADIR%%/help/en/gettext/gettext.hhc
+%%DATADIR%%/help/en/gettext/gettext.hhp
+%%DATADIR%%/help/en/gettext/gettext_1.html
+%%DATADIR%%/help/en/gettext/gettext_10.html
+%%DATADIR%%/help/en/gettext/gettext_11.html
+%%DATADIR%%/help/en/gettext/gettext_12.html
+%%DATADIR%%/help/en/gettext/gettext_2.html
+%%DATADIR%%/help/en/gettext/gettext_3.html
+%%DATADIR%%/help/en/gettext/gettext_4.html
+%%DATADIR%%/help/en/gettext/gettext_5.html
+%%DATADIR%%/help/en/gettext/gettext_6.html
+%%DATADIR%%/help/en/gettext/gettext_7.html
+%%DATADIR%%/help/en/gettext/gettext_8.html
+%%DATADIR%%/help/en/gettext/gettext_9.html
+%%DATADIR%%/help/en/gettext/gettext_foot.html
+%%DATADIR%%/help/en/gettext/gettext_toc.html
+%%DATADIR%%/help/en/gettext/index.html
+%%DATADIR%%/help/en/index.html
+%%DATADIR%%/help/en/manager.html
+%%DATADIR%%/help/en/menu.html
+%%DATADIR%%/help/en/poedit.hhc
+%%DATADIR%%/help/en/poedit.hhp
+%%DATADIR%%/help/en/settings.html
+%%DATADIR%%/help/en/tm.html
+%%DATADIR%%/help/en/ui.html
+%%DATADIR%%/help/en/update.html
+%%DATADIR%%/help/hr/basics.html
+%%DATADIR%%/help/hr/index.html
+%%DATADIR%%/help/hr/manager.html
+%%DATADIR%%/help/hr/menu.html
+%%DATADIR%%/help/hr/poedit.hhc
+%%DATADIR%%/help/hr/poedit.hhp
+%%DATADIR%%/help/hr/settings.html
+%%DATADIR%%/help/hr/tm.html
+%%DATADIR%%/help/hr/ui.html
+%%DATADIR%%/help/hr/update.html
+%%DATADIR%%/icons/README
+%%DATADIR%%/icons/document-new.png
+%%DATADIR%%/icons/document-open.png
+%%DATADIR%%/icons/document-properties.png
+%%DATADIR%%/icons/document-save.png
+%%DATADIR%%/icons/edit-delete.png
+%%DATADIR%%/icons/help-browser.png
+%%DATADIR%%/icons/poedit-comment.png
+%%DATADIR%%/icons/poedit-fuzzy.png
+%%DATADIR%%/icons/poedit-quotes.png
+%%DATADIR%%/icons/poedit-status-automatic.png
+%%DATADIR%%/icons/poedit-status-cat-mid.png
+%%DATADIR%%/icons/poedit-status-cat-no.png
+%%DATADIR%%/icons/poedit-status-cat-ok.png
+%%DATADIR%%/icons/poedit-status-comment-modif.png
+%%DATADIR%%/icons/poedit-status-comment.png
+%%DATADIR%%/icons/poedit-status-modified.png
+%%DATADIR%%/icons/poedit-status-nothing.png
+%%DATADIR%%/icons/poedit-update.png
+%%DATADIR%%/icons/view-fullscreen.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/help/hr
+@dirrm %%DATADIR%%/help/en/gettext
+@dirrm %%DATADIR%%/help/en
+@dirrm %%DATADIR%%/help/common
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%
