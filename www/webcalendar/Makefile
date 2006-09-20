@@ -15,11 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A web-based calendar application
 
-BROKEN=		fails to deinstall cleanly
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
-USE_PHP=	pcre session ldap
+USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
@@ -41,7 +37,8 @@ OPTIONS=	MYSQL "Use MySQL database backend (default)" On \
 		MSSQL "Use MSSQL database backend" Off \
 		DBASE "Use DBase database backend" Off \
 		ODBC "Use ODBC database backend" Off \
-		ORACLE "Use Oracle database backend" Off
+		ORACLE "Use Oracle database backend" Off \
+		LDAP "Use LDAP user authentication" Off
 
 .include <bsd.port.pre.mk>
 
@@ -78,7 +75,11 @@ DB_DEFINED=	yes
 .endif
 
 .if ${DB_DEFINED} == "no"
-IGNORE=		please, choose database backend running 'make config'
+IGNORE=		please choose database backend by running 'make config'
+.endif
+
+.if defined(WITH_LDAP)
+USE_PHP+=	ldap
 .endif
 
 # Fix USE_PHP after bsd.port.pre.mk
@@ -91,6 +92,8 @@ pre-install:
 		${SED} -e 's|^|@dirrm ${WEBWCDIR}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${WEBWCDIR} >> ${PLIST}
 	@${CAT} pkg-plist >> ${PLIST}
+	@${ECHO_CMD} @dirrmtry www/data-dist >> ${PLIST}
+	@${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${WEBWCDIR}
