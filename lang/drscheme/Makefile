@@ -7,6 +7,7 @@
 
 PORTNAME=	drscheme
 PORTVERSION=	351
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -22,11 +23,12 @@ EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
-BROKEN=		Does not compile
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib --enable-lt=${LIBTOOL}
+		--x-libraries=${X11BASE}/lib --enable-lt=${LIBTOOL} --disable-libpng \
+		--disable-libjpeg
 
 WRKSRC=		${WRKDIR}/plt/src
 USE_LDCONFIG=	yes
@@ -58,5 +60,8 @@ PLIST_SUB+=		MMM=""
 .else
 PLIST_SUB+=		MMM="@comment "
 .endif
+
+post-patch:
+	${RM} ${WRKSRC}/../collects/profj/to-scheme.ss.orig
 
 .include <bsd.port.post.mk>

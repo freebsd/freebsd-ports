@@ -1797,6 +1797,7 @@ lib/plt/collects/htdch/graphics/compiled/Command.jinfo
 lib/plt/collects/htdch/graphics/compiled/Command.zo
 lib/plt/collects/htdch/graphics/compiled/CommandSequence.jinfo
 lib/plt/collects/htdch/graphics/compiled/CommandSequence.zo
+lib/plt/collects/htdch/graphics/compiled/CommandSequence-composite.zo
 lib/plt/collects/htdch/graphics/compiled/DrawImage.jinfo
 lib/plt/collects/htdch/graphics/compiled/DrawImage.zo
 lib/plt/collects/htdch/graphics/compiled/DrawLine.jinfo
@@ -1825,7 +1826,6 @@ lib/plt/collects/htdch/graphics/compiled/Red.jinfo
 lib/plt/collects/htdch/graphics/compiled/Red.zo
 lib/plt/collects/htdch/graphics/compiled/View.jinfo
 lib/plt/collects/htdch/graphics/compiled/View.zo
-lib/plt/collects/htdch/graphics/compiled/View-composite.zo
 lib/plt/collects/htdch/graphics/compiled/White.jinfo
 lib/plt/collects/htdch/graphics/compiled/White.zo
 lib/plt/collects/htdch/graphics/compiled/World.jinfo
