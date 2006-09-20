@@ -112,9 +112,9 @@ USE_BISON=	yes
 .  if defined(SERVER_ONLY) && defined(WITH_ICU)
 USE_AUTOTOOLS=	autoconf:253
 CONFIGURE_ARGS+=--with-icu
-LIB_DEPENDS=	icudata.34:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-806-icu-34-2006-01-09.diff.gz:icu
+PATCHFILES+=	pg-808-icu-xx-2006-09-20.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
