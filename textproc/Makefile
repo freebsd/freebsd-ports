@@ -511,6 +511,7 @@
     SUBDIR += p5-Text-Markdown
     SUBDIR += p5-Text-Metaphone
     SUBDIR += p5-Text-NSP
+    SUBDIR += p5-Text-NeatTemplate
     SUBDIR += p5-Text-Netstring
     SUBDIR += p5-Text-Ngram
     SUBDIR += p5-Text-Ngrams
