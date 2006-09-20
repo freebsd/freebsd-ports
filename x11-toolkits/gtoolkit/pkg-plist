@@ -104,5 +104,4 @@ Local/Library/Libraries/libGToolKit.so
 Local/Library/Libraries/libGToolKit.so.%%MAJORVERSION%%
 Local/Library/Libraries/libGToolKit.so.%%VERSION%%
 System/Library/Makefiles/gtk-tool.make
-@dirrm Local/Library/Libraries
 @dirrm Local/Library/Headers/GToolKit
