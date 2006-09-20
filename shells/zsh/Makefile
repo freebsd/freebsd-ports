@@ -12,7 +12,7 @@
 #			(default: on)
 # WITHOUT_ZSH_MAILDIR=yes disable support for Maildirs in MAIL and MAILPATH
 #			(default: on)
-# WITHOUT_ZSH_MULTIBYTE=yes disable multibyte character support 
+# WITHOUT_ZSH_MULTIBYTE=yes disable multibyte character support
 # 			(default: on)
 # ZSH_ETCDIR=<dir>	directory for zsh system-wide configuration files:
 #			zshenv, zlogin, zprofile, zshrc, zlogout.
@@ -28,6 +28,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	\
 		http://archive.progeny.com/zsh/ \
@@ -120,6 +121,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,/etc/,${LOCALBASE}/etc/," \
 		${WRKSRC}/Functions/MIME/zsh-mime-setup
 	${RM} -f ${WRKSRC}/Functions/MIME/zsh-mime-setup.bak
+	${RM} -f ${WRKSRC}/Completion/X/Command/_acroread.orig
 .if ${OSVERSION} >= 503000
 	${RM} -f ${WRKSRC}/Completion/Unix/Type/_tar_archive.orig
 .endif
