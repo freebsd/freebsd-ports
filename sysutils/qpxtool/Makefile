@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qpxtool
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,24 +17,21 @@ COMMENT=	A GUI for testing CD/DVD quality and transfer rate
 USE_BZIP2=	yes
 USE_QT_VER=	3
 
-MAKE_ENV+=	QTDIR="${QT_PREFIX}"
-MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
+USE_SCONS=	yes
+SCONS_BUILDENV=	QTDIR="${QT_PREFIX}" TMPDIR="${TMPDIR}" ${SCONS_ENV}
 
-PLIST_FILES=	bin/qpxtool bin/pxcontrol
+USE_LDCONFIG=	yes
+
 PORTDOCS=	README ChangeLog
 
-do-build:
-	cd ${WRKSRC}/qpxtool && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-	cd ${WRKSRC}/pxcontrol && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qpxtool/qpxtool ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/pxcontrol/pxcontrol ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/lib/lib/* ${PREFIX}/lib/
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/qpxtool/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
