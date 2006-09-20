@@ -1,8 +1,11 @@
 include/mhash.h
+include/mutils/mglobal.h
+include/mutils/mhash.h
+include/mutils/mhash_config.h
+include/mutils/mincludes.h
+include/mutils/mtypes.h
+include/mutils/mutils.h
 lib/libmhash.a
 lib/libmhash.so
 lib/libmhash.so.2
-%%PORTDOCS%%%%DOCSDIR%%/example.c
-%%PORTDOCS%%%%DOCSDIR%%/md5-rfc1321.txt
-%%PORTDOCS%%%%DOCSDIR%%/skid2-authentication
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/mutils
