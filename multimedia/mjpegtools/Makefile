@@ -131,10 +131,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-l$$flag|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' \
-		${WRKSRC}/lavtools/liblavplay.c \
-		${WRKSRC}/lavtools/yuvplay.c \
-		${WRKSRC}/lavtools/lavplay.c
 .if defined(DISABLE_GTK2)
 	@${REINPLACE_CMD} -e 's|have_gtk="true"|have_gtk="false"|g' \
 		${WRKSRC}/configure
