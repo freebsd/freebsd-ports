@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-spamd-plugin
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://jhweiss.de/pub/users/weiss/nagios/plugins/
-DISTNAME=	check_spamd.pl
+DISTNAME=	check_spamd-1.2.pl
 EXTRACT_SUFX=
 
 MAINTAINER=	arved@FreeBSD.org
@@ -27,7 +26,7 @@ NAGIOS_PLUGIN_DIR=	libexec/nagios
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_spamd.pl
 
 post-patch:
 	${REINPLACE_CMD} -e \
