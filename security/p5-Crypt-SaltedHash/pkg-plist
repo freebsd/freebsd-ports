@@ -1,5 +1,2 @@
 %%SITE_PERL%%/Crypt/SaltedHash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SaltedHash/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SaltedHash/
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt
