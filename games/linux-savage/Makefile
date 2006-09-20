@@ -7,6 +7,7 @@
 
 PORTNAME=	savage
 PORTVERSION=	2.00c
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://downloads.s2games.com/online_orders/:full \
 		http://patches.s2games.com/:patch
@@ -37,6 +38,20 @@ SAVAGEDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	pkg-message savage savage_editor savage_server
 PLIST_SUB+=	SAVAGEDIR="${SAVAGEDIR}"
 SUB_LIST+=	SAVAGEDIR="${PREFIX}/${SAVAGEDIR}"
+
+OPTIONS=	NVIDIA	"Install support for nvidia (You need a nvidia graphic card)"	off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NVIDIA)
+.	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.	endif
+.else
+.	if !exists(${LINUXBASE}/usr/X11R6/lib/libGL.so.1)
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.	endif
+.endif
 
 do-extract:
 # Extract savage base
@@ -96,4 +111,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX}/${SAVAGEDIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
