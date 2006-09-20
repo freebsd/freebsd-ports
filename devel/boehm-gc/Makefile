@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	boehm-gc
-PORTVERSION=	6.6
-PORTREVISION=	3
+PORTVERSION=	6.8
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
-USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-cplusplus
+USE_GNOME=	gnometarget
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--enable-cplusplus
 OPTIONS=	REDIRECT "Define malloc(3)-family replacements" off \
 		FULLDEBUG "full-debug support (see documentation)" off \
 		THREADING "POSIX thread support" off \
