@@ -16,7 +16,7 @@ MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	${SFX}
 
-MAINTAINER?=	ssedov@mbsd.msk.ru
+MAINTAINER?=	stas@FreeBSD.org
 COMMENT?=	The Objective Caml compiler and programming environment
 
 USE_BZIP2=	yes
