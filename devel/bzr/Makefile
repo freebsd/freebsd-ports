@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	devel
-MASTER_SITES=	http://bazaar-vcs.org/pkg/ \
-		http://voodoo.bawue.com/download/
+MASTER_SITES=	http://bazaar-vcs.org/releases/src/
 MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bzr-${PORTVERSION}
 
