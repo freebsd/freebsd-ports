@@ -7,7 +7,6 @@
 
 PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.8
-PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
@@ -18,13 +17,16 @@ COMMENT=	A library to use TrueType fonts to render text in SDL applications
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl
-USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
+
+.if !defined(WITHOUT_X11) && !defined(WITHOUT_GL)
+USE_GL=		yes
+.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/glfont ${PREFIX}/bin
