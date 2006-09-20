@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	0.67
+PORTVERSION=	0.69
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SOAP
@@ -15,14 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kappa@freebsd.org.ua
 COMMENT=	SOAP::Lite - Client and server side SOAP implementation
 
-BUILD_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
+RUN_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--noprompt
@@ -67,7 +67,7 @@ MAN3=		Apache::SOAP.3 \
 		XMLRPC::Transport::TCP.3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|bin/env|usr/bin/env|' \
+	@${REINPLACE_CMD} -e 's|/bin/env|${SETENV}|' \
 		${WRKSRC}/bin/* ${WRKSRC}/t/*
 
 .include <bsd.port.mk>
