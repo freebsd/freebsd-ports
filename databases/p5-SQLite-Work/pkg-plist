@@ -1,9 +1,9 @@
-bin/sqlreport
-bin/sqlw_mail
-bin/sqlw_import
+@comment $FreeBSD$
 %%SITE_PERL%%/SQLite/Work.pm
-%%SITE_PERL%%/SQLite/Work/Template.pm
 %%SITE_PERL%%/SQLite/Work/CGI.pm
 %%SITE_PERL%%/SQLite/Work/Mail.pm
+bin/sqlreport
+bin/sqlw_import
+bin/sqlw_mail
 @dirrmtry %%SITE_PERL%%/SQLite/Work
 @dirrmtry %%SITE_PERL%%/SQLite
