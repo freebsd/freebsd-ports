@@ -9,19 +9,17 @@ PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
 PORTREVISION=	7
 CATEGORIES+=	editors java
-MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
-		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/  \
+MASTER_SITES+=	http://openoffice.lunarshells.com/sources/:moz,ru,src,help \
+		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:moz,ru,src,help \
 		${MASTER_SITE_LOCAL:S/$/:moz/} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:help \
 		http://openoffice.lunarshells.com/sources/helpcontent/:help \
-		${MASTER_SITE_LOCAL:S/$/:ru/} \
-		http://openoffice.lunarshells.com/sources/:ru \
-		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:ru
+		${MASTER_SITE_LOCAL:S/$/:ru/}
 MASTER_SITE_SUBDIR+= maho/openoffice.org/:moz,ru \
-		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
-DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz patch-translation-ru-1.0.3.bz2:ru
+		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc
+DISTFILES+=	OOo_${RELEASE_NR}_source.tar.gz:src patch-translation-ru-1.0.3.bz2:ru
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
