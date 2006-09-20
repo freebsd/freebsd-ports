@@ -7,7 +7,7 @@
 
 PORTNAME=	slideshow
 PORTVERSION=	0.8.0.p5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
@@ -25,7 +25,11 @@ USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 USE_SDL=	image ttf
 CONFIGURE_ARGS+=	--disable-gtk-gui
-CONFIGURE_ENV+=	LDFLAGS="-lstdc++"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lpng"
+
+BROKEN=		dead project and doesn't work with recent sdl
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-10-17
 
 .include <bsd.port.pre.mk>
 

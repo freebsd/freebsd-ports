@@ -28,10 +28,6 @@ PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/makefile
-.for f in src/headers.h src/CFileData.cpp src/CPak.cpp src/pak.h
-	@${REINPLACE_CMD} -e 's|SDL/SDL\([_a-z]*\)\.h|SDL11/SDL\1.h|' \
-		${WRKSRC}/${f}
-.endfor
 
 .if !defined(NOPORTDOCS)
 post-install:

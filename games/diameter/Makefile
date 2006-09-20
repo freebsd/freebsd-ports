@@ -36,7 +36,6 @@ BROKEN=		Does not build on FreeBSD 4.x
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/snd/snd.h
 	@${REINPLACE_CMD} -e '/PKG_CONFIG/ s|libpng|libpng12|' \
 		-e 's|sdl-config|$$SDL_CONFIG|' \
 		-e '/LIBS/ s|-lSDL |`$$SDL_CONFIG --libs` |' \

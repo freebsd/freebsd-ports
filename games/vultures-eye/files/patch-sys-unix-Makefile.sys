@@ -1,18 +1,20 @@
---- sys/unix/Makefile.src.orig	Thu Apr  6 02:59:04 2006
-+++ sys/unix/Makefile.src	Thu May 25 01:24:10 2006
-@@ -154,21 +154,21 @@
+--- sys/unix/Makefile.src.orig	Tue Jun  6 23:23:32 2006
++++ sys/unix/Makefile.src	Tue Sep 12 18:31:34 2006
+@@ -153,22 +153,17 @@
+ 
  # VULTURESCFLAGS will be passed to the sub-makefile for vultures
  OS = $(shell uname -s)
- ifeq ($(OS),FreeBSD)
+-ifeq ($(OS),FreeBSD)
 -	SDL_CONFIG = sdl11-config
-+#	SDL_CONFIG = sdl11-config
- 	SDLMAIN = -lSDLmain-1.1
- else
- 	SDL_CONFIG = sdl-config
- 	SDLMAIN = -lSDLmain
- endif
+-	SDLMAIN = -lSDLmain-1.1
+-else
+-	SDL_CONFIG = sdl-config
+-	SDLMAIN = -lSDLmain
+-endif
 -VULTURESCFLAGS = -Wall -g
 -CFLAGS = -g -I../include -I ../win/vultures $(shell $(SDL_CONFIG) --cflags)
++SDL_CONFIG = sdl-config
++SDLMAIN = -lSDLmain
 +VULTURESCFLAGS = ${CFLAGS}
 +CFLAGS += -g -I../include -I ../win/vultures $(shell $(SDL_CONFIG) --cflags)
  LFLAGS = 
@@ -27,7 +29,7 @@
  #LINK=g++
  #	For cross-compiling, eg. with gcc on Linux (see also CC further up):
  #CXX=arm-linux-g++
-@@ -480,7 +480,7 @@
+@@ -480,7 +475,7 @@
  	@rm -f $(MAKEDEFS)
  	
  ../win/vultures/build_n/vultures.o: objects.o monst.o ../include/date.h ../win/vultures/* ../win/vultures/util/*

@@ -28,7 +28,7 @@
  	ifdef FBSD_SDL
              INTERFACE=sdl
 -	    OPTS := -DLINUX -DFREEBSD -DHWRENDER -DDIRECTFULLSCREEN -DHAVE_MIXER -DSDL -DVID_X11 $(POLL_POINTER) -I. -I/usr/local/include/SDL11 -I/usr/X11R6/include -Wall
-+	    OPTS := -DLINUX -DFREEBSD -DHWRENDER -DDIRECTFULLSCREEN -DHAVE_MIXER -DSDL -DVID_X11 $(POLL_POINTER) -I. -I/usr/local/include/SDL11 -I/usr/X11R6/include
++	    OPTS := -DLINUX -DFREEBSD -DHWRENDER -DDIRECTFULLSCREEN -DHAVE_MIXER -DSDL -DVID_X11 $(POLL_POINTER) -I. -I/usr/local/include/SDL -I/usr/local/include -I/usr/X11R6/include
  	    SFLAGS=-g $(OPTS)
  	    OBJS=$(O)/i_video.o $(O)/dosstr.o $(O)/endtxt.o \
  		 $(O)/hw_bsp.o $(O)/hw_draw.o $(O)/hw_light.o $(O)/hw_main.o \
@@ -37,7 +37,7 @@
  
  	    LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib
 -	    LIBS=-lm -lSDL-1.1 -lSDL_mixer -lGL -lGLU -lipx -lkvm -pthread
-+	    LIBS=-lm -lSDL-1.1 -lSDL_mixer -lGL -lGLU -lipx -lkvm ${PTHREAD_LIBS}
++	    LIBS=-lm -lSDL -lSDL_mixer -lGL -lGLU -lipx -lkvm ${PTHREAD_LIBS}
 +	    CFLAGS+=${PTHREAD_CFLAGS}
  	    DEBUGLIBS=$(LIBS)
  

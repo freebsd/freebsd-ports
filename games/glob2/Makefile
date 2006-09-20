@@ -7,6 +7,7 @@
 
 PORTNAME=		glob2
 PORTVERSION=		0.8.21
+PORTREVISION=	1
 CATEGORIES=		games
 MASTER_SITES=		http://globulation2.org/releases/${PORTVERSION}/
 

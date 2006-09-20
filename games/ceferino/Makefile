@@ -7,6 +7,7 @@
 
 PORTNAME=	ceferino
 PORTVERSION=	0.97.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/ceferino/descargas/
 
@@ -42,9 +43,7 @@ BROKEN=		Does not compile
 .endif
 
 post-extract:
-	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(cc|h)" \
-		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/<SDL/<SDL11/'
-	@${REINPLACE_CMD} -e 's/-lSDL /`sdl11-config --libs`/g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-lSDL /`sdl-config --libs`/g' ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/-pthread/-pthread -lintl/g' ${WRKSRC}/src/Makefile

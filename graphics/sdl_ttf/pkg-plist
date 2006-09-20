@@ -1,7 +1,8 @@
 bin/glfont
 bin/showfont
-include/SDL11/SDL_ttf.h
+include/SDL/SDL_ttf.h
 lib/libSDL_ttf.a
 lib/libSDL_ttf.la
 lib/libSDL_ttf.so
-lib/libSDL_ttf.so.3
+lib/libSDL_ttf.so.6
+@dirrmtry include/SDL

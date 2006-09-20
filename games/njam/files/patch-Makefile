@@ -14,7 +14,7 @@
  # If you hate warnings under Cygwin use these flags instead
  # MY_CFLAGS = -I/usr/local/include/SDL -Dmain=SDL_main -DWIN32 -Uunix -mno-cygwin
 -MY_CFLAGS = `sdl-config --cflags`
-+MY_CFLAGS += `sdl11-config --cflags`
++MY_CFLAGS += `sdl-config --cflags`
  
  %.o:	%.cpp
 -	$(CC) -O3 -c $(MY_CFLAGS) $< -o $@
@@ -24,7 +24,7 @@
  
  $(PROGRAM):	$(OBJECTS)
 -	$(CC) `sdl-config --libs` -o$(PROGRAM) $(OBJECTS) -lSDL -lSDL_mixer -lSDL_net -lSDL_image
-+	$(CC) `sdl11-config --libs` -o$(PROGRAM) $(OBJECTS) -lSDL_mixer -lSDL_net -lSDL_image
++	$(CC) `sdl-config --libs` -o$(PROGRAM) $(OBJECTS) -lSDL_mixer -lSDL_net -lSDL_image
  
  clean:
  	$(RM) *.o

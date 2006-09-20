@@ -8,20 +8,3 @@
  #include "stdlib.h"
  #include "stdio.h"
  #include "string.h"
-@@ -30,11 +31,11 @@
- 
- #include "zlib.h"
- 
--#include "SDL/SDL.h"
--#include "SDL/SDL_image.h"
--#include "SDL/SDL_mixer.h"
--#include "SDL/SDL_ttf.h"
--#include "SDL/SDL_endian.h"
-+#include "SDL11/SDL.h"
-+#include "SDL11/SDL_image.h"
-+#include "SDL11/SDL_mixer.h"
-+#include "SDL11/SDL_ttf.h"
-+#include "SDL11/SDL_endian.h"
- 
- #include "GL/gl.h"
- #include "GL/glu.h"

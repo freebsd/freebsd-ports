@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -22,7 +22,7 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/SDL11 \
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include \
 		--disable-mmx
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
@@ -33,11 +33,5 @@ USE_LDCONFIG=	yes
 .if defined(WITH_MMX) && (${ARCH} == "i386")
 CFLAGS+=	-DUSE_MMX
 .endif
-
-post-patch:
-	@${GREP} -lR "<SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<SDL/SDL|<SDL|g'
-	@${REINPLACE_CMD} -e \
-		's|$$(includedir)/SDL|$$(includedir)|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

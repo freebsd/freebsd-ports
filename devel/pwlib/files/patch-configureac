@@ -124,7 +124,7 @@
 +  dnl FreeBSD SDL check
    if test "${HAS_SDL:-unset}" = "unset" ; then
 -    AC_CHECK_FILE(/usr/local/include/SDL11/SDL.h, HAS_SDL=1)
-+    AC_CHECK_HEADER(SDL11/SDL.h, HAS_SDL=1)
++    AC_CHECK_HEADER(SDL/SDL.h, HAS_SDL=1)
      if test "${HAS_SDL:-unset}" != "unset" ; then
        SDLLIB=SDL-1.1
      fi

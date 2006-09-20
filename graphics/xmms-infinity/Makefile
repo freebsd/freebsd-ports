@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-infinity
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.carme.free.fr/
 DISTNAME=	infinity-${PORTVERSION}
@@ -25,9 +25,5 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' ${WRKSRC}/*.[ch] \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

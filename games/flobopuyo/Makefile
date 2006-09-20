@@ -7,6 +7,7 @@
 
 PORTNAME=	flobopuyo
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ios-software.com/flobopuyo/
 EXTRACT_SUFX=	.tgz
@@ -20,7 +21,6 @@ USE_SDL=	sdl mixer image
 USE_GCC=	3.4+
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/audio.h ${WRKSRC}/glSDL.h ${WRKSRC}/main.cpp
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=|' ${WRKSRC}/Makefile

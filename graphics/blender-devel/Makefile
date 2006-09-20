@@ -6,6 +6,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.40
+PORTREVISION=	1
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		ftp://ftp.cs.umn.edu/pub/blender.org/source/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	nehquake
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/
 DISTNAME=	NehQuake-bjp-bin-src.linux

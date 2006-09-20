@@ -7,6 +7,7 @@
 
 PORTNAME=	xye
 PORTVERSION=	0.7.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +25,5 @@ USE_GMAKE=	yes
 .if ${OSVERSION} < 500000
 BROKEN=		does not build on FreeBSD 4.x
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -E 's,#include.*<SDL/(SDL.*\.h)>,#include <SDL11/\1>,g' ${WRKSRC}/src/vxsdl.h
 
 .include <bsd.port.post.mk>

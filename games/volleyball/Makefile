@@ -7,6 +7,7 @@
 
 PORTNAME=	volleyball
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

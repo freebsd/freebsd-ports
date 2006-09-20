@@ -1,0 +1,12 @@
+#
+# Temporary hack to provide iconv include directory is well
+# (sdl explicitly includes iconv.h)
+#
+--- sdl.pc.in.orig	Thu Aug 31 03:47:07 2006
++++ sdl.pc.in	Thu Aug 31 03:47:19 2006
+@@ -11,4 +11,4 @@
+ Requires:
+ Conflicts:
+ Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@
+-Cflags: -I${includedir}/SDL @SDL_CFLAGS@
++Cflags: -I${includedir}/SDL -I${includedir} @SDL_CFLAGS@

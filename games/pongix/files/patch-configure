@@ -5,7 +5,7 @@
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lSDL  $LIBS"
-+LIBS="`sdl11-config --libs`  $LIBS"
++LIBS="`sdl-config --libs`  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
@@ -14,7 +14,7 @@
  _ACEOF
  
 -  LIBS="-lSDL $LIBS"
-+  LIBS="`sdl11-config --libs` $LIBS"
++  LIBS="`sdl-config --libs` $LIBS"
  
  else
    \

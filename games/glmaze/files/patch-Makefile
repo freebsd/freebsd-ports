@@ -18,8 +18,8 @@
  
 -SDL_FLAGS=`sdl-config --cflags`
 -SDL_LIBS=`sdl-config --libs`
-+SDL_FLAGS=`sdl11-config --cflags`
-+SDL_LIBS=`sdl11-config --libs`
++SDL_FLAGS=`sdl-config --cflags`
++SDL_LIBS=`sdl-config --libs`
  
  # comment the follwing if you don't want sound
  CC += -DSOUND

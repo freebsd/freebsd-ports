@@ -7,6 +7,7 @@
 
 PORTNAME=	glaxium
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://xhosxe.free.fr/glaxium/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

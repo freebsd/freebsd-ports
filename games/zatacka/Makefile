@@ -7,6 +7,7 @@
 
 PORTNAME=	zatacka
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,8 +27,6 @@ PORTDOCS=	README
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|font.ttf|${DATADIR}/font.ttf|' ${WRKSRC}/fx.h
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/SDL_prim.h \
-		${WRKSRC}/fx.h
 	@${REINPLACE_CMD} -e 's|barrier.jpg|${DATADIR}/barrier.jpg|' \
 		${WRKSRC}/fx.cpp
 	@${REINPLACE_CMD} -e 's|main_screen.jpg|${DATADIR}/main_screen.jpg|' \

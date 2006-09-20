@@ -7,6 +7,7 @@
 
 PORTNAME=	electricsheep
 PORTVERSION=	2.6.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
@@ -57,10 +58,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/X11R6/lib/xscreensaver/config|${X11BASE}/share/xscreensaver/config|' \
 		${WRKSRC}/Makefile.in
-
-	@${REINPLACE_CMD} -e \
-		's|<SDL/SDL.h>|<SDL11/SDL.h>|' \
-		${WRKSRC}/mpeg2dec/libvo/video_out_sdl.c
 
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/share|${DATADIR}|' \

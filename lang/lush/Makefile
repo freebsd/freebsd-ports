@@ -6,7 +6,7 @@
 
 PORTNAME=	lush
 PORTVERSION=	0.99
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lush
@@ -41,10 +41,7 @@ post-patch:
 		s|-pthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure
 
-	@${FIND} ${WRKSRC} | \
-		${XARGS} ${EGREP} -l '(SDL/SDL)' | \
-		${XARGS} ${REINPLACE_CMD} -e \
-		's|SDL/SDL|SDL11/SDL|; \
-		s|"libSDL"|\"libSDL-1.1.so.5\"|'
+pre-install:
+	@${FIND} ${WRKSRC}/ -name "*.bak" -delete
 
 .include <bsd.port.post.mk>

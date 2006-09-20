@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-nebulus
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://nebulus.tuxfamily.org/
 
@@ -28,16 +28,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
 
 post-patch:
-	@${REINPLACE_CMD} -E -e \
-		's|SDL/SDL.h|SDL11/SDL.h|; \
-		s|SDL/SDL_opengl.h|SDL11/SDL_opengl.h|; \
-		s|SDL/SDL_thread.h|SDL11/SDL_thread.h|' \
-		${WRKSRC}/src/nebulus.h \
-		${WRKSRC}/src/nebulus.c \
-		${WRKSRC}/src/face_data.c \
-		${WRKSRC}/src/child_data.c \
-		${WRKSRC}/configure
-
 	@${REINPLACE_CMD} -e \
 		's|-Wall||' \
 		${WRKSRC}/src/Makefile.in

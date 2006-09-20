@@ -7,7 +7,7 @@
 
 PORTNAME=	libmovtar
 PORTVERSION=	0.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -43,9 +43,6 @@ CONFIGURE_ARGS+=	--without-jpeg-mmx
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
-		${WRKSRC}/rtjpeg/rtjshow.c \
-		${WRKSRC}/movtar_play.c
 # Add library patch when using -ljpeg
 # Use proper locations when using -ljpeg-mmx
 	@${REINPLACE_CMD} -E \

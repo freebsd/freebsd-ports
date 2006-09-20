@@ -5,7 +5,7 @@
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lSDL  $LIBS"
-+LIBS="`sdl11-config --libs`  $LIBS"
++LIBS="`sdl-config --libs`  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
@@ -14,7 +14,7 @@
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lSDL_mixer  $LIBS"
-+LIBS="-lSDL_mixer `sdl11-config --libs` $LIBS"
++LIBS="-lSDL_mixer `sdl-config --libs` $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
@@ -23,7 +23,7 @@
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lSDL_image  $LIBS"
-+LIBS="-lSDL_image  `sdl11-config --libs` $LIBS"
++LIBS="-lSDL_image  `sdl-config --libs` $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF

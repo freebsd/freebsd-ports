@@ -7,7 +7,7 @@
 
 PORTNAME=	anagramarama
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.omega.clara.net/anagramarama/dist/
 

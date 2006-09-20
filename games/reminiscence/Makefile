@@ -7,6 +7,7 @@
 
 PORTNAME=	REminiscence
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://membres.lycos.fr/cyxdown/reminiscence/
 

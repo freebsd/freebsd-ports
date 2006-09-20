@@ -55,8 +55,6 @@ STDINTFLAG=	true
 .endif
 
 post-patch:
-	@cd ${WRKSRC} && \
-		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e 's|SDL/|SDL11/|g' "{}" \;
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e \

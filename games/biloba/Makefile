@@ -7,6 +7,7 @@
 
 PORTNAME=	biloba
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +23,5 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 	    ${WRKSRC}/src/Makefile.server
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

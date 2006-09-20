@@ -7,6 +7,7 @@
 
 PORTNAME=	concentration
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/concentration/
 
@@ -25,7 +26,6 @@ CONFIGURE_ENV=	LDFLAGS="`${SDL_CONFIG} --libs`" \
 MAN6=		concentration.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' ${WRKSRC}/configure ${WRKSRC}/src/sound.c
 	@${REINPLACE_CMD} -e 's|-std=gnu99 ||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

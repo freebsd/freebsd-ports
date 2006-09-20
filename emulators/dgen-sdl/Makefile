@@ -7,7 +7,7 @@
 
 PORTNAME=	dgen-sdl
 PORTVERSION=	1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://pknet.com/~joe/
 

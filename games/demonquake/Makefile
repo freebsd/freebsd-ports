@@ -7,6 +7,7 @@
 
 PORTNAME=	demonquake
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/
 DISTNAME=	DemonQuake-v${PORTVERSION}-bin-src.linux

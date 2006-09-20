@@ -7,6 +7,7 @@
 
 PORTNAME=	bmp2html
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/ \
@@ -19,8 +20,8 @@ COMMENT=	A bmp to html converter
 USE_SDL=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-SDL_FLAGS=	-I${LOCALBASE}/include/SDL11
-EXTRA_LDFLAGS=	-lSDL-1.1 -pthread
+SDL_FLAGS=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include
+EXTRA_LDFLAGS=	-lSDL -pthread
 DEFINES=	-D_REENTRANT
 
 PLIST_FILES=	bin/bmp2html

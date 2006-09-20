@@ -8,7 +8,7 @@
 
 PORTNAME=	adgali
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 

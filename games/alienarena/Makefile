@@ -7,6 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2007
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.alienarena.org/downloads/ \
 		http://www.forsakenweb.com/gamepage/loaders/games/

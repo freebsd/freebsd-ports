@@ -7,6 +7,7 @@
 
 PORTNAME=	pachi
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dragontech
@@ -31,7 +32,6 @@ SCOREDIR=	/var/games/pachi
 SCOREFILE=	${SCOREDIR}/scores.dat
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/faes.cpp
 	@${REINPLACE_CMD} -e 's|/var/lib/games/$$PACKAGE|${SCOREDIR}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|SCOREDIR[^,]*|"${SCOREFILE}"|' \

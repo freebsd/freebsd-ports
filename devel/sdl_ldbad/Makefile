@@ -7,13 +7,17 @@
 
 PORTNAME=	sdl_ldbad
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SDL Linux Developer's BandAiD
+
+BROKEN=		incorrect pkg-plist and doesn't required anymore
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-10-17
 
 USE_SDL=	sdl
 NO_BUILD=	yes

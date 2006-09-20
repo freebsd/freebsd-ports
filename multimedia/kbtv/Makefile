@@ -71,7 +71,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|FROMPORT = False|FROMPORT = True|' \
 		${WRKSRC}/installprefs.py
 	@${REINPLACE_CMD} -e 's|sdl11-config|${SDL_CONFIG}|g' \
-		${WRKSRC}/do_build.py
+		${WRKSRC}/do_build.py ${WRKSRC}/do_configure.py
 .if defined(WITH_PWC)
 	@${REINPLACE_CMD} -e 's|WITH_PWC = False|WITH_PWC = True|' \
 		${WRKSRC}/buildprefs.py

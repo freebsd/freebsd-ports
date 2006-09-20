@@ -20,7 +20,7 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		glut.4:${PORTSDIR}/graphics/libglut \
 		alut.1:${PORTSDIR}/audio/freealut
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

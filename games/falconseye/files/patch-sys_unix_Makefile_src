@@ -24,7 +24,7 @@
  # necessary compile and link flags. 
  #
 -JTPINC=$(shell sdl-config --cflags)
-+JTPINC=`sdl11-config --cflags`
++JTPINC=`sdl-config --cflags`
  
  # flags for debugging:
  # CFLAGS = -g -I../include
@@ -53,7 +53,7 @@
  
  # SDL libraries for Falcon's Eye
 -WINJTPLIB = $(shell sdl-config --libs)
-+WINJTPLIB = `sdl11-config --libs`
++WINJTPLIB = `sdl-config --libs`
  
  #
  # libraries for X11

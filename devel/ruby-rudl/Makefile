@@ -7,6 +7,7 @@
 
 PORTNAME=	rudl
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +23,7 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 #NO_WRKSUBDIR=	yes
-CONFIGURE_ARGS=	--with-sdl-config="sdl11-config"
+CONFIGURE_ARGS=	--with-sdl-config="sdl-config"
 INSTALL_TARGET=	site-install
 
 DOCS=	RUDL/audio.html \

@@ -7,6 +7,7 @@
 
 PORTNAME=	mednafen
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	http://mednafen.com/releases/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	glpuzzle
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/glpuzzle/
 EXTRACT_SUFX=	.tgz

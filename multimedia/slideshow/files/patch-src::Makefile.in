@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Mon Aug  4 19:21:52 2003
-+++ src/Makefile.in	Mon Aug  4 19:22:15 2003
-@@ -844,8 +844,6 @@
- 	else \
- 		echo "WARNING: You need swig in order to re-build slideshow_wrap.cxx"; \
- 	fi;
--SDL_defines.i : $(SDL_SDL_video_H)
--	egrep '#define SDL_.*[[:space:]]0x[0-9]{8}' $(SDL_SDL_video_H) | grep -v OVERLAY | sed -e 's,[[:space:]]*/\*.*$$,,' >SDL_defines.i
+--- src/Makefile.in.orig	Tue Sep 12 20:06:57 2006
++++ src/Makefile.in	Tue Sep 12 20:07:19 2006
+@@ -269,7 +269,7 @@
+ #
+ # Regenerate SDL_defines.i if needed
+ #
+-SDL_SDL_video_H = $(shell echo $(SDL_CFLAGS) | sed -e 's/.*-I\([[:alnum:][:punct:]]*\)\>.*/\1/')/SDL_video.h
++SDL_SDL_video_H = ${LOCALBASE}/include/SDL/SDL_video.h
  
- # MgpLoaderLex.cpp \
- # MgpLoaderYacc.cpp
+ _slideshow_la_SOURCES = \
+ slideshow_wrap.cxx

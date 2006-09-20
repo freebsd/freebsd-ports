@@ -7,6 +7,7 @@
 
 PORTNAME=	pongix
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/pongix/descargas/
 
@@ -21,10 +22,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
-post-extract:
-	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(c|h)" \
-		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/<SDL/<SDL11/g'
 
 do-install:
 	${MKDIR} ${DATADIR}
