@@ -1,7 +1,7 @@
 
 Post-installation instructions:
 
-To make WebCalendar workable, please read
+To configure WebCalendar, please read
 %%DOCSDIR%%/WebCalendar-SysAdmin.html
 for information about creating the database, installing
 the database tables and other post-installation tasks,
