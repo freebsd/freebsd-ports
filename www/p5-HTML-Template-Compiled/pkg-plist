@@ -14,9 +14,11 @@
 %%SITE_PERL%%/HTML/Template/Compiled/Plugin/XMLEscape.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Reference.pod
 %%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Compiler/Classic.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/Template/Compiled/Compiler
 @dirrmtry %%SITE_PERL%%/HTML/Template/Compiled/Expression
 @dirrmtry %%SITE_PERL%%/HTML/Template/Compiled/Plugin
 @dirrmtry %%SITE_PERL%%/HTML/Template/Compiled
