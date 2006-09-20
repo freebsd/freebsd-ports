@@ -10134,6 +10134,7 @@ p5-Text-Markdown	ports/textproc/p5-Text-Markdown
 p5-Text-Markdown-ApacheHandler	ports/www/p5-Text-Markdown-ApacheHandler
 p5-Text-Metaphone	ports/textproc/p5-Text-Metaphone
 p5-Text-NSP	ports/textproc/p5-Text-NSP
+p5-Text-NeatTemplate	ports/textproc/p5-Text-NeatTemplate
 p5-Text-Netstring	ports/textproc/p5-Text-Netstring
 p5-Text-Ngram	ports/textproc/p5-Text-Ngram
 p5-Text-Ngrams	ports/textproc/p5-Text-Ngrams
