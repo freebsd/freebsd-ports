@@ -95,6 +95,7 @@ RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py
 .endif
 
 .if defined(WITH_HTDIG)
+BROKEN= patch to mailman 2.1.9 was not released yet, please remove htdig option and try again.
 PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mm/patches/444884/:patch2
 PATCHFILES+=	indexing-2.1.6-0.1.patch.gz:patch1 \
