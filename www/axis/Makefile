@@ -15,10 +15,6 @@ DISTNAME=		axis-bin-${PORTVERSION:S,.,_,g}
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java SOAP implementation by Apache
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 #
 # Change webapp directory by TOMCAT version
 #
