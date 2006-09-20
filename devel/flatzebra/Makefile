@@ -7,6 +7,7 @@
 
 PORTNAME=	flatzebra
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 

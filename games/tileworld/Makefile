@@ -7,6 +7,7 @@
 
 PORTNAME=	tileworld
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/tworld/
 DISTNAME=	tworld-${PORTVERSION}
@@ -24,6 +25,5 @@ MAN6=		tworld.6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$${MAKE}|g; s|cp -i|cp|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

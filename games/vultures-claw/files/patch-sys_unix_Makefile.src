@@ -1,0 +1,31 @@
+--- sys/unix/Makefile.src.orig	Tue Sep 12 18:50:59 2006
++++ sys/unix/Makefile.src	Tue Sep 12 18:51:23 2006
+@@ -147,13 +147,8 @@
+ 
+ # VULTURESCFLAGS will be passed to the sub-makefile for vultures
+ OS = $(shell uname -s)
+-ifeq ($(OS),FreeBSD)
+-        SDL_CONFIG = sdl11-config
+-        SDLMAIN = -lSDLmain-1.1
+-else
+-        SDL_CONFIG = sdl-config
+-        SDLMAIN = -lSDLmain
+-endif
++SDL_CONFIG = sdl-config
++SDLMAIN = -lSDLmain
+ VULTURESCFLAGS = -Wall -O -g
+ CFLAGS = -g -O -I../include -I ../win/vultures $(shell $(SDL_CONFIG) --cflags)
+ LFLAGS =
+@@ -362,11 +357,7 @@
+ # necessary compile and link flags.
+ #
+ OS = $(shell uname -s)
+-ifeq ($(OS),FreeBSD)
+-	SDL = sdl11-config
+-else
+-	SDL = sdl-config
+-endif
++SDL = sdl-config
+ WINVULTURESLIB = `$(SDL) --libs` $(SDLMAIN) -lSDL_mixer -lSDL_ttf -lpng -lz
+ 
+ ifeq ($(OS),Darwin)

@@ -7,6 +7,7 @@
 
 PORTNAME=	scramble
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/scramble/
 
@@ -53,7 +54,7 @@ pre-configure:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-std=gnu99 ||g' -e 's|SDL/|SDL11/|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-std=gnu99 ||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/dict/words|${DICTIONARY}|g' ${WRKSRC}/src/scramble.c
 
 .include <bsd.port.post.mk>

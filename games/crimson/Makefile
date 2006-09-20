@@ -6,6 +6,7 @@
 
 PORTNAME=	crimson
 PORTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://crimson.seul.org/files/
 PKGNAMESUFFIX=	-fields

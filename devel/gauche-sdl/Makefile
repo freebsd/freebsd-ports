@@ -7,6 +7,7 @@
 
 PORTNAME=	gauche-sdl
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	devel scheme
 MASTER_SITES=	http://michaelvess.com/files/
 DISTNAME=	${PORTFAKENAME}

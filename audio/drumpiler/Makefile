@@ -8,7 +8,7 @@
 
 PORTNAME=	drumpiler
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,9 +20,6 @@ USE_SDL=	sdl
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 LIBS+=		`${SDL_CONFIG} --libs`
 PLIST_FILES=	bin/drumpiler
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|SDL.h|SDL11/SDL.h|" ${WRKSRC}/drumpiler.c
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -DUSESDL -o drumpiler drumpiler.c ${LIBS}

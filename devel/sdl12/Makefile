@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.9
-PORTREVISION=	2
+PORTVERSION=	1.2.11
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -21,11 +21,12 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
+USE_GNOME=	gnomehack gnometarget
+USE_ICONV=      yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -37,13 +38,20 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--disable-video-x11
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
+
+EXAMPLES=	test/*.c test/*.bmp test/*.dat test/*.xbm test/*.wav
+DOCS=		BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
 
 OPTIONS=	NAS	"Include support for the Network Audio System" Off \
+		AALIB	"Include support for AA-lib" On \
 		GL	"Include support for OpenGL" On \
-		AALIB	"Include support for AA-lib" On
+		GGI	"Include support for GGI" Off
 
 .include <bsd.port.pre.mk>
 
@@ -62,23 +70,25 @@ LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=--disable-nas
 .endif
 
+.if defined(WITH_GGI)
+LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
+CONFIGURE_ARGS+=--enable-video-ggi
+.else
+CONFIGURE_ARGS+=--disable-video-ggi
+.endif
+
 .if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
 .else
 USE_GL=		yes
 CONFIGURE_ARGS+=--enable-video-opengl
 .endif
+
 .if defined(WITHOUT_AALIB)
 CONFIGURE_ARGS+=--disable-video-aalib
 .else
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 CONFIGURE_ARGS+=--enable-video-aalib
-.endif
-.if exists(/usr/include/libusbhid.h)
-CONFIGURE_ENV+=	USB_LIBS=-lusbhid
-CFLAGS+=	-DHAVE_LIBUSBHID_H
-.else
-CONFIGURE_ENV+=	USB_LIBS=-lusb
 .endif
 
 MAN3!=		${CAT} ${FILESDIR}/man3
@@ -105,34 +115,19 @@ CONFIGURE_ARGS+=--enable-arts
 CONFIGURE_ARGS+=--disable-arts
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} 's|sdl-config|sdl11-config|g'	\
-		${WRKSRC}/test/configure
-	@${RM} ${WRKSRC}/test/configure.bak
-
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${TOUCH}
 
-post-configure:
-	@cd ${WRKSRC} && \
-		${CP} sdl-config sdl11-config && \
-		${CP} sdl.m4 sdl11.m4
-	@${REINPLACE_CMD} 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
-
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/test/configure ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/docs
-.for f in BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}/
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-	@cd ${WRKSRC}/docs; ${TAR} cf - `${ECHO_CMD} [^Mm]*` | \
-		(cd ${DOCSDIR}/docs; ${TAR} --unlink -xf - )
+	@(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} docs ${DOCSDIR}/ "! -regex .*/man3.*")
 .endif
 	@${DISPLAY_MSG}
 

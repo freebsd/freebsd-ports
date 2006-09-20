@@ -7,7 +7,7 @@
 
 PORTNAME=	openal
 PORTVERSION=	20060211
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://openal.org/openal_webstf/downloads/
 DISTVERSION=	0.0.8

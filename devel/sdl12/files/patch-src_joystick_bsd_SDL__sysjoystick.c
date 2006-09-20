@@ -1,6 +1,6 @@
---- src/joystick/bsd/SDL_sysjoystick.c.orig	Fri Nov 12 22:24:46 2004
-+++ src/joystick/bsd/SDL_sysjoystick.c	Tue Nov  8 20:19:38 2005
-@@ -122,6 +122,12 @@
+--- src/joystick/bsd/SDL_sysjoystick.c.orig	Mon May  1 12:02:40 2006
++++ src/joystick/bsd/SDL_sysjoystick.c	Wed Jul  5 01:11:57 2006
+@@ -123,6 +123,12 @@
  	struct	report_desc *repdesc;
  	struct	report inreport;
  	int	axis_map[JOYAXE_count];	/* map present JOYAXE_* to 0,1,..*/
@@ -13,7 +13,7 @@
  };
  
  static char *joynames[MAX_JOYS];
-@@ -255,6 +261,12 @@
+@@ -257,6 +263,12 @@
  	joy->hwdata = hw;
  	hw->fd = fd;
  	hw->path = strdup(path);
@@ -23,12 +23,12 @@
 +	hw->ymin = 0xffff;
 +	hw->xmax = 0;
 +	hw->ymax = 0;
- 	if (! strncmp(path, "/dev/joy", 8)) {
+ 	if (! SDL_strncmp(path, "/dev/joy", 8)) {
  		hw->type = BSDJOY_JOY;
  		joy->naxes = 2;
-@@ -372,43 +384,42 @@
+@@ -380,43 +392,42 @@
  
- #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #if defined(__FREEBSD__) || SDL_JOYSTICK_USBHID_MACHINE_JOYSTICK_H
  	struct joystick gameport;
 -	static int x, y, xmin = 0xffff, ymin = 0xffff, xmax = 0, ymax = 0;
   

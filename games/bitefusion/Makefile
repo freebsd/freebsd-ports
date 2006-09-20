@@ -7,6 +7,7 @@
 
 PORTNAME=	bitefusion
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/
 
@@ -25,7 +26,6 @@ PLIST_FILES=	bin/bitefusion
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e 's|-linux-gnu|-portbld-freebsd|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lSDL||' ${WRKSRC}/Makefile.in

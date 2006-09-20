@@ -1,0 +1,19 @@
+--- Makefile.FreeBSD.orig	Tue Sep 12 17:28:37 2006
++++ Makefile.FreeBSD	Tue Sep 12 17:28:53 2006
+@@ -11,13 +11,13 @@
+ .endif
+ 
+ hex-a-hop:	gfx.o hex_puzzzle.o
+-		$(CXX) $(CXXFLAGS) gfx.o hex_puzzzle.o `sdl11-config --libs` -lm -o hex-a-hop
++		$(CXX) $(CXXFLAGS) gfx.o hex_puzzzle.o `sdl-config --libs` -lm -o hex-a-hop
+ 
+ gfx.o:		gfx.cpp state.h
+-		$(CC) $(CXXFLAGS)  `sdl11-config --cflags`  -c -o $@ $<
++		$(CC) $(CXXFLAGS)  `sdl-config --cflags`  -c -o $@ $<
+ 
+ hex_puzzzle.o:	hex_puzzzle.cpp *.h
+-		$(CC) $(CXXFLAGS)  `sdl11-config --cflags`  -c -o $@ $<
++		$(CC) $(CXXFLAGS)  `sdl-config --cflags`  -c -o $@ $<
+ 	
+ clean :
+ 		rm -f gfx.o hex_puzzzle.o hex-a-hop

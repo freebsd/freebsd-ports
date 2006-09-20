@@ -7,6 +7,7 @@
 
 PORTNAME=	oolite
 PORTVERSION=	1.65
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/oolite-linux/ \
 		http://download2.berlios.de/oolite-linux/ \

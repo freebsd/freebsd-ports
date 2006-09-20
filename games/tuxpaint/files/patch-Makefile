@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Oct 15 00:22:36 2005
-+++ Makefile	Mon Nov 28 16:17:07 2005
+--- Makefile.orig	Sun Nov 27 09:44:15 2005
++++ Makefile	Tue Sep 12 18:22:27 2006
 @@ -17,7 +17,6 @@
  
  # Where to install things:
@@ -22,7 +22,7 @@
  # Libraries, paths, and flags:
  
 -SDL_LIBS=$(shell sdl-config --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
-+SDL_LIBS=$(shell ${SDL_CONFIG} --libs) -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
++SDL_LIBS=$(shell ${SDL_CONFIG} --libs) -lSDL_image -lSDL_ttf -lpng $(SDL_MIXER_LIB)
  SDL_MIXER_LIB=-lSDL_mixer
 -SDL_CFLAGS=$(shell sdl-config --cflags)
 +SDL_CFLAGS=$(shell ${SDL_CONFIG} --cflags)

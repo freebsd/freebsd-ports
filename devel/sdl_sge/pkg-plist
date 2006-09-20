@@ -1,16 +1,16 @@
-include/SDL11/sge.h
-include/SDL11/sge_blib.h
-include/SDL11/sge_bm_text.h
-include/SDL11/sge_collision.h
-include/SDL11/sge_config.h
-include/SDL11/sge_internal.h
-include/SDL11/sge_misc.h
-include/SDL11/sge_primitives.h
-include/SDL11/sge_rotation.h
-include/SDL11/sge_shape.h
-include/SDL11/sge_surface.h
-include/SDL11/sge_textpp.h
-include/SDL11/sge_tt_text.h
+include/SDL/sge.h
+include/SDL/sge_blib.h
+include/SDL/sge_bm_text.h
+include/SDL/sge_collision.h
+include/SDL/sge_config.h
+include/SDL/sge_internal.h
+include/SDL/sge_misc.h
+include/SDL/sge_primitives.h
+include/SDL/sge_rotation.h
+include/SDL/sge_shape.h
+include/SDL/sge_surface.h
+include/SDL/sge_textpp.h
+include/SDL/sge_tt_text.h
 lib/libSGE.a
 lib/libSGE.so
 lib/libSGE.so.0
@@ -59,6 +59,6 @@ lib/libSGE.so.0.030809
 %%PORTDOCS%%%%EXAMPLESDIR%%/sprite2.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/ttf_readme
 %%PORTDOCS%%%%EXAMPLESDIR%%/tux.bmp
-@dirrmtry include/SDL11
+@dirrmtry include/SDL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -7,6 +7,7 @@
 
 PORTNAME=	xpilot-ng
 PORTVERSION=	4.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xpilot
@@ -87,8 +88,6 @@ PLIST_SUB+=	SOUND="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,#include "SDL/,#include "SDL11/,g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|mapconvert\.py||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|xpilot-ng-server\.man||' \
 		${WRKSRC}/doc/man/Makefile.in

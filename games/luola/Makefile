@@ -7,6 +7,7 @@
 
 PORTNAME=	luola
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.luolamies.org/software/luola/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -40,8 +41,7 @@ USE_SDL+=	mixer
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/audio.c ${WRKSRC}/src/startup.c ${WRKSRC}/tools/lcmaptool.c
-	@${REINPLACE_CMD} -e '/LIBS=.*-lSDL_/ s|\(SDL_[a-z]*\)|\1 `sdl11-config --libs`|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/LIBS=.*-lSDL_/ s|\(SDL_[a-z]*\)|\1 `sdl-config --libs`|' ${WRKSRC}/configure
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIR}/*.lev ${WRKDIR}/*.png ${DATADIR}/levels

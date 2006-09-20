@@ -1,6 +1,11 @@
---- SConstruct	Fri Apr 14 05:13:03 2006
-+++ SConstruct	Fri Apr 14 16:18:12 2006
-@@ -81,6 +81,7 @@
+--- SConstruct.orig	Fri Apr 14 14:13:03 2006
++++ SConstruct	Tue Sep 12 18:18:20 2006
+@@ -77,10 +77,11 @@
+ 	SDL_CONFIG = os.environ['SDL_CONFIG']
+ 	env.Replace(CC = os.environ['CC'])
+ 	env.Replace(CXX = os.environ['CXX'])
+-	env.Append(CPPPATH = [LOCALBASE + '/include', LOCALBASE + '/include/SDL11', X11BASE + '/include', X11BASE + '/include/GL'])
++	env.Append(CPPPATH = [LOCALBASE + '/include', LOCALBASE + '/include/SDL', X11BASE + '/include', X11BASE + '/include/GL'])
  	libpath = [LOCALBASE + '/lib', X11BASE + '/lib'] 
  	gllibs = ['GL', 'GLU']
  	sdllibs = ['SDL_image']

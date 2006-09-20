@@ -1,5 +1,18 @@
---- build/unix/config_proginfo_host.orig	Tue Feb  7 03:45:58 2006
-+++ build/unix/config_proginfo_host	Tue Feb  7 03:48:21 2006
+--- build/unix/config_proginfo_host.orig	Thu Jan 19 22:13:38 2006
++++ build/unix/config_proginfo_host	Tue Sep 12 19:12:07 2006
+@@ -55,9 +55,9 @@
+ LIB_SDL_NAME="Simple DirectMedia Layer"
+ case "$HOST_SYSTEM" in
+ 	FreeBSD)
+-		LIB_SDL_CFLAGS='$(sdl11-config --cflags)'
+-		LIB_SDL_LDFLAGS='$(sdl11-config --libs)'
+-		LIB_SDL_VERSION='$(sdl11-config --version)'
++		LIB_SDL_CFLAGS='$(sdl-config --cflags)'
++		LIB_SDL_LDFLAGS='$(sdl-config --libs)'
++		LIB_SDL_VERSION='$(sdl-config --version)'
+ 		;;
+ 	Darwin)
+ 		LIB_SDL_CFLAGS=''
 @@ -102,7 +102,7 @@
  LIB_openal_CFLAGS=""
  case "$HOST_SYSTEM" in

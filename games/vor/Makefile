@@ -7,6 +7,7 @@
 
 PORTNAME=	vor
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qualdan.com/vor/
 

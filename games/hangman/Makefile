@@ -7,6 +7,7 @@
 
 PORTNAME=	hangman
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/hangman/
 
@@ -49,7 +50,6 @@ pre-configure:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/share/dict/words|${DICTIONARY}|g' ${WRKSRC}/src/hangman.c
 	@${REINPLACE_CMD} -e 's|-std=gnu99||g' ${WRKSRC}/configure
 

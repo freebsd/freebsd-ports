@@ -7,6 +7,7 @@
 
 PORTNAME=		q3base
 PORTVERSION=		0.1
+PORTREVISION=	1
 CATEGORIES=		games
 MASTER_SITES=		http://quake3.quakesrc.org/files/quake3/q3base/
 

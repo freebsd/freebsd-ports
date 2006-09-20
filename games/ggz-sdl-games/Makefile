@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-sdl-games
 PORTVERSION=	0.0.13
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
 		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
@@ -27,18 +28,5 @@ CONFIGURE_ARGS=	--disable-debug
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|SDL/SDL.h|SDL11/SDL.h|;	\
-		 s|SDL/SDL_image.h|SDL11/SDL_image.h|;	\
-		 s|SDL/SDL_mixer.h|SDL11/SDL_mixer.h|;	\
-		 s|SDL/SDL_syswm.h|SDL11/SDL_syswm.h|;	\
-		 s|SDL/SDL_ttf.h|SDL11/SDL_ttf.h|'	\
-		 ${WRKSRC}/configure		\
-		 ${WRKSRC}/geekgame/intro.c	\
-		 ${WRKSRC}/geekgame/main.c	\
-		 ${WRKSRC}/ttt3d/display.c	\
-		 ${WRKSRC}/ttt3d/main.c
 
 .include <bsd.port.mk>

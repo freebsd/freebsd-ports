@@ -7,6 +7,7 @@
 
 PORTNAME=	trimines
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.freewebs.com/trimines/
 

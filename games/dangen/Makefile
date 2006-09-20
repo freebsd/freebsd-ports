@@ -7,6 +7,7 @@
 
 PORTNAME=	dangen
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/dangen/
 

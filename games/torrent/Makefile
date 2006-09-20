@@ -7,6 +7,7 @@
 
 PORTNAME=	torrent
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/torrent/
 
@@ -29,6 +30,6 @@ post-extract:
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g; s|-std=gnu99 ||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-std=gnu99 ||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

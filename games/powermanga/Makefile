@@ -7,7 +7,7 @@
 
 PORTNAME=		powermanga
 PORTVERSION=		0.79
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		http://linux.tlk.fr/games/Powermanga/download/
 EXTRACT_SUFX=		.tgz

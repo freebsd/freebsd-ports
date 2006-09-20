@@ -6,6 +6,7 @@
 
 PORTNAME=	jfduke3d
 PORTVERSION=	20051009
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://dialup.edgefiles.com/edgenetwork.org/jonof/buildport/ \
 		ftp://ftp1.edgefiles.com/edgenetwork.org/jonof/buildport/ \

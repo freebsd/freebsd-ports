@@ -7,6 +7,7 @@
 
 PORTNAME=	openmortal
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,11 +26,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC}/src -name "*.cpp" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' -e 's|<malloc.h>|<stdlib.h>|g'
-	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' -e 's|<malloc.h>|<stdlib.h>|g'
 
 .include <bsd.port.pre.mk>
 

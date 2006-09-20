@@ -7,6 +7,7 @@
 
 PORTNAME=	sge
 PORTVERSION=	0.030809
+PORTREVISION=	1
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.etek.chalmers.se/~e8cal1/sge/files/ \
 		http://www.digitalfanatics.org/cal/sge/files/
@@ -53,7 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#USE_FT = n|USE_FT = y|g' ${WRKSRC}/Makefile.conf
 .endif
 	@${REINPLACE_CMD} -e 's|PREFIX =PREFIX|PREFIX =${PREFIX}|g' ${WRKSRC}/Makefile.conf
-	@${REINPLACE_CMD} -e 's|PREFIX_H =PREFIX_H|PREFIX_H =${PREFIX}/include/SDL11|g' ${WRKSRC}/Makefile.conf
+	@${REINPLACE_CMD} -e 's|PREFIX_H =PREFIX_H|PREFIX_H =${PREFIX}/include/SDL|g' ${WRKSRC}/Makefile.conf
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile.conf
 
 post-install:

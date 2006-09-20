@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9.cvs.${RELEASE_DATE}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://mplayerhq.hu/MPlayer/cvs/

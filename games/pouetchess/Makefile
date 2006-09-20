@@ -7,6 +7,7 @@
 
 PORTNAME=	pouetchess
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +37,6 @@ post-patch:
 		-o -name config.ini \) -exec ${REINPLACE_CMD} -e \
 		"s|$$(${PRINTF} '\r')$$||" {} \;
 
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/src/*.cpp ${WRKSRC}/src/*.h
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^LIBS/ s|$$| -L${X11BASE}/lib|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/CXX	/ d' ${WRKSRC}/Makefile

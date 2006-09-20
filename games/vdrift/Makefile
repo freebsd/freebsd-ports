@@ -7,6 +7,7 @@
 
 PORTNAME=	vdrift
 PORTVERSION=	20060708
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -61,10 +62,7 @@ BROKEN=		Does not compile on sparc64
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC}/src/* -type f -exec ${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' "{}" \;
-	@${FIND} ${WRKSRC}/include/* -type f -exec ${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' "{}" \;
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/src/SConscript
 	@${REINPLACE_CMD} -e "s|'openal'|'openal','alut'|g" ${WRKSRC}/SConstruct
 
 do-build:

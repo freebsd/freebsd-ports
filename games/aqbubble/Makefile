@@ -7,6 +7,7 @@
 
 PORTNAME=	aqbubble
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/aqbubble/descargas/
 
@@ -37,12 +38,10 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-extract:
-	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(cpp|h)" \
-		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/<SDL/<SDL11/'
-	@${REINPLACE_CMD} -e 's/-lSDL /`sdl11-config --libs`/g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-lSDL /`sdl-config --libs`/g' ${WRKSRC}/configure
 
 post-configure:
-	@${REINPLACE_CMD} -e 's/-lSDL /`sdl11-config --libs` -lintl /g' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's/-lSDL /`sdl-config --libs` -lintl /g' ${WRKSRC}/src/Makefile
 
 do-install:
 	${MKDIR} ${DATADIR}

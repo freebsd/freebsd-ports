@@ -12,8 +12,8 @@
  INCS="$INCS $SDL_CFLAGS"
 -AC_CHECK_LIB(SDL, SDL_Init, [
 -AC_CHECK_HEADERS(SDL/SDL.h, ,[
-+AC_CHECK_LIB(SDL-1.1, SDL_Init, [
-+AC_CHECK_HEADERS(SDL11/SDL.h, ,[
++AC_CHECK_LIB(SDL, SDL_Init, [
++AC_CHECK_HEADERS(SDL/SDL.h, ,[
  AC_MSG_WARN(SDL found but headers are missing!!)
  with_sdl=no
  ])], [with_sdl=no], $SDL_LIBS)

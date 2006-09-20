@@ -7,7 +7,7 @@
 
 PORTNAME=	rockdodger
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spacerocks
@@ -22,7 +22,6 @@ GAMESDIR?=	/var/games
 
 pre-patch:
 	@${REINPLACE_CMD} \
-		-e "s%sdl-config%sdl11-config%" \
 		-e "s%/usr/share/rockdodger/.highscore%${GAMESDIR}/rockdodger.highscore%" \
 		-e "s%/usr/share/rockdodger%${PREFIX}/share/rockdodger%" \
 		-e "s%/usr/games%${PREFIX}/bin%" \

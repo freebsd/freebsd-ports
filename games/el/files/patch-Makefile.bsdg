@@ -25,13 +25,13 @@
 -_CFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags)
 -CXXFLAGS=$(PLATFORM) $(CPPWARN) -O -ggdb -pipe -I/usr/local/include $(OPTIONS)
 -_CXXFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS)
-+CFLAGS+=$(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags) -I/usr/X11R6/include/
-+_CFLAGS=$(CFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl11-config --cflags) $(shell xml2-config --cflags)
++CFLAGS+=$(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -I/usr/X11R6/include/
++_CFLAGS=$(CFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags)
 +CXXFLAGS+=-I/usr/local/include $(OPTIONS)
 +_CXXFLAGS=$(CXXFLAGS) -fomit-frame-pointer -ffast-math $(OPTIONS)
  
 -LDFLAGS=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
-+LDFLAGS+=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lalut -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
++LDFLAGS+=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lopenal $(XDIR) -lalut -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng
  _LDFLAGS=$(XDIR) -lGL -lpthread -lz
  STATICLIBS=libs/libSDL_net.a libs/libSDL.a libs/libopenal.a libs/libvorbisfile.a libs/libvorbis.a libs/libogg.a libs/libxml2.a libs/libcal3d.a
  

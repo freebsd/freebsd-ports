@@ -7,7 +7,7 @@
 
 PORTNAME=	excido
 PORTVERSION=	0.1.5c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/excido/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

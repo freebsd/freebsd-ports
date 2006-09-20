@@ -7,6 +7,7 @@
 
 PORTNAME=	sidplayer
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://sidplayer.cebix.net/downloads/ \
 		http://critical.ch/distfiles/ \
@@ -21,7 +22,7 @@ COMMENT=	A C64 SID tune player
 USE_SDL=	yes
 GNU_CONFIGURE=	yes
 
-SDLINCLUDEDIR=	SDL11
+SDLINCLUDEDIR=	SDL
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \

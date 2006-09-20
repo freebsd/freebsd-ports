@@ -7,7 +7,7 @@
 
 PORTNAME=	heretic
 PORTVERSION=	1.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/:source \
 		http://heretic.linuxgames.com/wad/:wad

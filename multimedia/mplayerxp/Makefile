@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayerxp
 PORTVERSION=	0.1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -247,7 +247,6 @@ post-patch:
 # win32 codec location
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -x -n 10 ${REINPLACE_CMD} -E -e \
-		's|SDL/|SDL11/|; \
 		s|-lpthread|${PTHREAD_LIBS}|; \
 		s|/usr/local/lib/win32|${WIN32_CODEC_PREFIX}|'
 # win32 codec location

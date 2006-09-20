@@ -7,7 +7,7 @@
 
 PORTNAME=	frozenbubble
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://zarb.org/~gc/fb/
 DISTNAME=	frozen-bubble-${PORTVERSION}
@@ -31,9 +31,6 @@ USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 post-patch:
-.for file in fb_c_stuff.xs Makefile.PL
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'  ${WRKSRC}/${file}
-.endfor
 	@${REINPLACE_CMD} -e 's|sdl-config|\${SDL_CONFIG}|g' ${WRKSRC}/Makefile.PL
 	@${RM} ${WRKSRC}/lib/FBLE.pm.orig
 

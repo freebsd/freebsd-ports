@@ -7,6 +7,7 @@
 
 PORTNAME=	gngb
 PORTVERSION=	20060309
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngb/download/
 
@@ -45,7 +46,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|"$$SDL_CONFIG" = yes|-n "$$SDL_CONFIG"|g ; \
 		 s|sdl-config |$$SDL_CONFIG |g ; \
-		 s|-lSDL|-lSDL-1.1|g ; \
 		 s|$$OPT||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

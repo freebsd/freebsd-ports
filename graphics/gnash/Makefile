@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -29,7 +30,8 @@ USE_GCC=	3.4+
 
 PLUGIN_DIR=	${PREFIX}/lib/browser_plugins
 
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -Wl,--rpath,${PREFIX}/lib/gnash"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -Wl,--rpath,${PREFIX}/lib/gnash" \
+		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/gnash" \
 		--with-plugindir=${PLUGIN_DIR}

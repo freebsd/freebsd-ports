@@ -1,5 +1,5 @@
---- Makefile.freebsd.orig	Thu Jan  1 02:38:22 2004
-+++ Makefile.freebsd	Thu Jan  1 02:38:54 2004
+--- Makefile.freebsd.orig	Wed Mar 12 03:38:56 2003
++++ Makefile.freebsd	Tue Sep 12 18:08:44 2006
 @@ -1,6 +1,7 @@
  #!/usr/bin/env perl 
  
@@ -8,6 +8,26 @@
  use ExtUtils::MakeMaker;
  
  #
+@@ -13,8 +14,8 @@
+ # Configuration detection of Linux / Unix
+ #
+ 
+-chomp ($sdl_cflags = "-I/usr/X11R6/include " . `sdl11-config --cflags`);
+-chomp ($sdl_libs = "-L/usr/X11R6/lib " . `sdl11-config --libs`);
++chomp ($sdl_cflags = "-I/usr/X11R6/include " . `sdl-config --cflags`);
++chomp ($sdl_libs = "-L/usr/X11R6/lib " . `sdl-config --libs`);
+ $sdl_libs =~ s/-Wl,-rpath,\/usr\/local\/lib//; # suppress the insanity
+ $sdl_libs =~ s/-pthread//;
+ 
+@@ -24,7 +25,7 @@
+ 
+ @dirs=(
+ 	'/usr/local/include',
+-	'/usr/local/include/SDL11', 
++	'/usr/local/include/SDL', 
+ 	'/usr/local/include/smpeg',
+ 	'/usr/X11R6/include',
+ 	'/usr/X11R6/include/GL', 
 @@ -96,7 +97,7 @@
  
  my %options = (

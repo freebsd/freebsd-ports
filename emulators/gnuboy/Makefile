@@ -8,7 +8,7 @@
 
 PORTNAME=	gnuboy
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators games
 MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 		http://brightrain.aerifal.cx/~laguna/src/
@@ -32,9 +32,6 @@ PORTDOCS=	*
 PLIST_FILES=	bin/sdlgnuboy bin/sgnuboy bin/xgnuboy
 
 post-patch:
-.for file in sys/sdl/sdl.c sys/sdl/keymap.c
-	@${REINPLACE_CMD} -e "s|SDL/|SDL11/|g" ${WRKSRC}/${file}
-.endfor
 
 do-install:
 .for file in sdlgnuboy sgnuboy xgnuboy

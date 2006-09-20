@@ -7,6 +7,7 @@
 
 PORTNAME=	cygne-sdl
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://sdlemu.ngemu.com/OpenProjects/
 DISTNAME=	Cygne-SDL-${PORTVERSION}-src

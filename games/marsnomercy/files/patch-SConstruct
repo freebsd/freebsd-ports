@@ -1,5 +1,5 @@
---- SConstruct	Mon Jul 24 18:19:52 2006
-+++ SConstruct	Fri Sep  1 18:41:23 2006
+--- SConstruct.orig	Tue Jul 25 03:19:52 2006
++++ SConstruct	Tue Sep 12 18:56:39 2006
 @@ -1,3 +1,5 @@
 +import os
 +import sys
@@ -52,15 +52,15 @@
  	print ":: Checking for libs"
  	conf = Configure(env)
 -	if not conf.CheckLibWithHeader('libSDL', 'SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);', autoadd = 0):
-+	if not conf.CheckLibWithHeader('libSDL-1.1', 'SDL11/SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);', autoadd = 0):
++	if not conf.CheckLibWithHeader('libSDL', 'SDL/SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);', autoadd = 0):
  		print 'Did not find libSDL, exiting!'
  		Exit(1)
 -	if not conf.CheckLibWithHeader('libSDL_image', 'SDL_image.h', 'c', 'IMG_GetError();'):
-+	if not conf.CheckLibWithHeader('libSDL_image', 'SDL11/SDL_image.h', 'c', 'IMG_GetError();'):
++	if not conf.CheckLibWithHeader('libSDL_image', 'SDL/SDL_image.h', 'c', 'IMG_GetError();'):
  		print 'Did not find libSDL_image, exiting!'
  		Exit(1)
 -	if not conf.CheckLibWithHeader('libSDL_ttf', 'SDL_ttf.h', 'c', 'TTF_Init();'):
-+	if not conf.CheckLibWithHeader('libSDL_ttf', 'SDL11/SDL_ttf.h', 'c', 'TTF_Init();'):
++	if not conf.CheckLibWithHeader('libSDL_ttf', 'SDL/SDL_ttf.h', 'c', 'TTF_Init();'):
  		print 'Did not find libSDL_ttf, exiting!'
  		Exit(1)
  	if int(env['with_opengl']):

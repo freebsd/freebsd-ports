@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Aug  3 01:05:54 2006
-+++ Makefile	Sun Sep 17 00:19:51 2006
+--- Makefile.orig	Thu Aug  3 03:05:54 2006
++++ Makefile	Mon Sep 18 20:46:22 2006
 @@ -7,16 +7,16 @@
  ### Installation directory (Installation prefix)
  # If you don't have root privileges, set this to /home/tentacleman/bloboats/
@@ -29,7 +29,7 @@
  
  
  ### Only some random settings below
-@@ -60,7 +60,7 @@
+@@ -60,12 +60,12 @@
  CXX_MACOSX = g++
  CXX_CROSS = i586-mingw32msvc-g++
  
@@ -38,6 +38,12 @@
  
  
  ### SDL-Config in your system
+ SDLCONFIG_DEFAULT = sdl-config
+-SDLCONFIG_FREEBSD = sdl11-config
++SDLCONFIG_FREEBSD = sdl-config
+ SDLCONFIG_NETBSD = sdl-config
+ SDLCONFIG_MACOSX = sdl-config
+ SDLCONFIG_CROSS = i586-mingw32msvc-sdl-config
 @@ -74,7 +74,7 @@
  
  ### Libs

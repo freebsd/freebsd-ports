@@ -7,6 +7,7 @@
 
 PORTNAME=	gcube
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://gcube.exemu.net/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -30,9 +31,6 @@ FIXME=	general.h keys_sdl.h thpview.h video_sdl.c audio_sdl.c hw_gx.c gx.c \
 	gx_texture.c gx_transform.c
 
 post-patch:
-.for i in ${FIXME}
-	${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/${i}
-.endfor
 	${REINPLACE_CMD} \
 		-e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile.rules
 	${REINPLACE_CMD} \

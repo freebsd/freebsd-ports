@@ -7,6 +7,7 @@
 
 PORTNAME=	vp
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://math.missouristate.edu/~erik/files/
 

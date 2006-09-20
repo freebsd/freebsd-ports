@@ -7,13 +7,14 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Ruby extension library to use SDL library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${RUBY_OPENGL_PORTDIR}:patch
@@ -25,7 +26,7 @@ USE_SDL=	mixer image ttf sdl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
+CONFIGURE_ARGS=	--with-sdl-config="sdl-config" \
 		--enable-opengl --linkoglmodule \
 		--with-x11-dir="${X11BASE}"
 INSTALL_TARGET=	site-install

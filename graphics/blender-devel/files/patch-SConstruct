@@ -1,5 +1,5 @@
---- SConstruct.orig	Tue Dec 20 10:56:12 2005
-+++ SConstruct	Fri Dec 30 16:43:44 2005
+--- SConstruct.orig	Tue Dec 20 18:56:12 2005
++++ SConstruct	Tue Sep 12 17:15:19 2006
 @@ -735,7 +735,7 @@
  	openal_libpath = ['/usr/lib']
  	openal_include = ['/usr/include']
@@ -9,7 +9,7 @@
  	print "Building for FreeBSD"
  	use_international = 'false'
  	use_gameengine = 'false'
-@@ -773,6 +773,10 @@
+@@ -773,13 +773,17 @@
  	jpeg_lib = ['jpeg']
  	jpeg_libpath = ['/usr/local/lib']
  	jpeg_include = ['/usr/local/include']
@@ -20,3 +20,11 @@
  	# OpenGL library information
  	opengl_lib = ['GL', 'GLU']
  	opengl_static = ['/usr/lib/libGL.a', '/usr/lib/libGLU.a']
+ 	opengl_libpath = ['/usr/lib', '/usr/X11R6/lib']
+ 	opengl_include = ['/usr/X11R6/include/']
+ 	# SDL library information
+-	sdl_env.ParseConfig ('sdl11-config --cflags --libs')
++	sdl_env.ParseConfig ('sdl-config --cflags --libs')
+ 	sdl_cflags = sdl_env.Dictionary()['CCFLAGS']
+ 	sdl_include = sdl_env.Dictionary()['CPPPATH']
+ 	sdl_libpath = ['/usr/local/include/SDL11']

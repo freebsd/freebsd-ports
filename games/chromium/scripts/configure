@@ -1,5 +1,5 @@
 
-SDL_CONFIG=sdl11-config
+SDL_CONFIG=sdl-config
 SMPEG_CONFIG=smpeg-config
 OPENAL_CONFIG_OPTS="./configure  --enable-sdl --enable-smpeg --enable-vorbis"
 SDL_LIBS="\`\$(SDL_CONFIG) --libs\`"

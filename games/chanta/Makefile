@@ -7,6 +7,7 @@
 
 PORTNAME=	chanta
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/chanta/descargas/
 
@@ -24,12 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CHANTADIRS=	data ima
 
-post-extract:
-	@${FIND} -E ${WRKSRC}/src/ -type f -iregex ".*\.(cpp|h)" \
-		-print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's/<SDL/<SDL11/'
-
 post-configure:
-	@${REINPLACE_CMD} -e 's|-lSDL |`sdl11-config --libs` |g' ${WRKSRC}/src/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|-lSDL |`sdl-config --libs` |g' ${WRKSRC}/src/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|^CXXFLAGS|^CXXFLAGS?|g' ${WRKSRC}/src/${MAKEFILE}
 
 do-install:

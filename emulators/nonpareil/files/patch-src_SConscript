@@ -5,7 +5,7 @@
  pkg_config_cmd += ' --cflags --libs '
  
 -sdl_pkg_config_cmd = 'sdl-config --cflags --libs'
-+sdl_pkg_config_cmd = 'sdl11-config --cflags --libs'
++sdl_pkg_config_cmd = 'sdl-config --cflags --libs'
  
  build_env.Append (CPPPATH = ['.'])
  build_env.Append (CPPPATH = ['#/build/common'])  # generated includes

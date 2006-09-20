@@ -7,6 +7,7 @@
 
 PORTNAME=	pengupop
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/
 
@@ -29,7 +30,6 @@ BROKEN=		does not build on FreeBSD 4.x: lack of swprintf
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/*.c
 	@${REINPLACE_CMD} -e 's|-lSDL||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

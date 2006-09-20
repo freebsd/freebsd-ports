@@ -462,19 +462,16 @@ share/lush/packages/python/pytype.lsh
 share/lush/packages/python/pyunicode.lsh
 share/lush/packages/python/pyweakref.lsh
 share/lush/packages/sdl/SDL.lsh
-share/lush/packages/sdl/SDL.lsh.bak
 share/lush/packages/sdl/SDL_active.lsh
 share/lush/packages/sdl/SDL_audio.lsh
 share/lush/packages/sdl/SDL_byteorder.lsh
 share/lush/packages/sdl/SDL_cdrom.lsh
 share/lush/packages/sdl/SDL_copying.lsh
 share/lush/packages/sdl/SDL_endian.lsh
-share/lush/packages/sdl/SDL_endian.lsh.bak
 share/lush/packages/sdl/SDL_error.lsh
 share/lush/packages/sdl/SDL_events.lsh
 share/lush/packages/sdl/SDL_getenv.lsh
 share/lush/packages/sdl/SDL_image.lsh
-share/lush/packages/sdl/SDL_image.lsh.bak
 share/lush/packages/sdl/SDL_joystick.lsh
 share/lush/packages/sdl/SDL_keyboard.lsh
 share/lush/packages/sdl/SDL_keysym.lsh
@@ -484,9 +481,7 @@ share/lush/packages/sdl/SDL_mutex.lsh
 share/lush/packages/sdl/SDL_quit.lsh
 share/lush/packages/sdl/SDL_rwops.lsh
 share/lush/packages/sdl/SDL_syswm.lsh
-share/lush/packages/sdl/SDL_syswm.lsh.bak
 share/lush/packages/sdl/SDL_thread.lsh
-share/lush/packages/sdl/SDL_thread.lsh.bak
 share/lush/packages/sdl/SDL_timer.lsh
 share/lush/packages/sdl/SDL_types.lsh
 share/lush/packages/sdl/SDL_version.lsh
@@ -502,9 +497,7 @@ share/lush/packages/sdl/demos/sdlgl-demo-01.lsh
 share/lush/packages/sdl/demos/tutorial.lsh
 share/lush/packages/sdl/libgames.lsh
 share/lush/packages/sdl/libsdl.lsh
-share/lush/packages/sdl/libsdl.lsh.bak
 share/lush/packages/sdl/sdl-config.lsh
-share/lush/packages/sdl/sdl-config.lsh.bak
 share/lush/packages/sdl/sdl-tutorial.hlp
 share/lush/packages/sdl/sdl.hlp
 share/lush/packages/sdlgames/lander/bullet.png
@@ -530,7 +523,6 @@ share/lush/packages/sdlgames/slimevolley/net.png
 share/lush/packages/sdlgames/slimevolley/slime-blue.png
 share/lush/packages/sdlgames/slimevolley/slime-red.png
 share/lush/packages/sdlgames/slimevolley/slime.lsh
-share/lush/packages/sdlgames/slimevolley/slime.lsh.bak
 share/lush/packages/sn28/README
 share/lush/packages/sn28/examples/bptool/NetMASK.sn
 share/lush/packages/sn28/examples/bptool/README
@@ -638,7 +630,6 @@ share/lush/packages/video/libdc/libdc.hlp
 share/lush/packages/video/libdc/libdc.lsh
 share/lush/packages/video4linux/demos/effect-demo.lsh
 share/lush/packages/video4linux/demos/effect-sdl-demo.lsh
-share/lush/packages/video4linux/demos/effect-sdl-demo.lsh.bak
 share/lush/packages/video4linux/demos/jabba-320x240.jpg
 share/lush/packages/video4linux/demos/jabba-640x480.jpg
 share/lush/packages/video4linux/demos/v4l-demo.lsh

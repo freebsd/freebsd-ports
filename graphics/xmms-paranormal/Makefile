@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-paranormal
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	paranormal
@@ -29,9 +29,5 @@ INSTALLS_SHLIB=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' \
-		${BUILD_WRKSRC}/xmms.c
 
 .include <bsd.port.mk>

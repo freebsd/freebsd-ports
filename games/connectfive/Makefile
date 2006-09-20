@@ -7,6 +7,7 @@
 
 PORTNAME=	connectfive
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	connectfive
@@ -28,7 +29,6 @@ USE_GMAKE=	yes
 WRKSRC=	${WRKDIR}/connectFive
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' ${WRKSRC}/*.cpp ${WRKSRC}/*.h
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile.linux
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/connect.cpp
 

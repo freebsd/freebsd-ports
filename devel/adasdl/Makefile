@@ -7,7 +7,7 @@
 
 PORTNAME=      adasdl
 PORTVERSION=   20010504
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=    devel
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=    ${PORTNAME}
@@ -30,7 +30,6 @@ do-patch:
 		${REINPLACE_CMD} \
 			-e 's,/usr/local,${LOCALBASE},g' \
 			-e 's,/usr/X11R6,${X11BASE},g' \
-			-e 's,-lSDL\ ,-lSDL-1.1\ ,' \
 			-e 's,-lpthread,-pthread,' \
 			-e 's,-lGL,-L${X11BASE}/lib\ -lX11 -lXext -lGL,' \
 		$${i}; \

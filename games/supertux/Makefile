@@ -7,6 +7,7 @@
 
 PORTNAME=	supertux
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +25,5 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-debug
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
-		${WRKSRC}/src/type.h
 
 .include <bsd.port.post.mk>

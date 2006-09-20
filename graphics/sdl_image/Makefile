@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}
@@ -26,7 +26,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
 CONFIGURE_ARGS=	--enable-tif --enable-xcf
-MAKE_ARGS=	LT_CURRENT=10 LT_REVISION=0 LT_AGE=0
 USE_LDCONFIG=	yes
 
 post-install:

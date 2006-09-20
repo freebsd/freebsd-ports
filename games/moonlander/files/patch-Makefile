@@ -4,11 +4,11 @@
  # Makefile for test program for game_libs - lunar lander
 -CFLAGS=-Wall `sdl-config --libs --cflags` 
 -CC=gcc
-+CFLAGS+=`sdl11-config --cflags` 
++CFLAGS+=`sdl-config --cflags` 
 +#CC=gcc
  
 -LIBS=SDL_image
-+LIBS=`sdl11-config --libs` -lSDL_image -lSDL_mixer
++LIBS=`sdl-config --libs` -lSDL_image -lSDL_mixer
  
  C_FILES=moon_lander.c game_lib.c DT_drawtext.c
  OBJ_FILES=moon_lander.o game_lib.o DT_drawtext.o 

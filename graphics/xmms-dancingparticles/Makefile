@@ -7,7 +7,7 @@
 
 PORTNAME=	dancingparticles
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://tardyp.free.fr/dancingparticles/
 PKGNAMEPREFIX=	xmms-

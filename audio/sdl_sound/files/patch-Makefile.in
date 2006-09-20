@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Tue Sep 12 19:18:15 2006
++++ Makefile.in	Tue Sep 12 19:18:24 2006
+@@ -127,7 +127,6 @@
+ @USE_MPGLIB_FALSE@MPGLIB_LIB = 
+ 
+ libSDL_sound_la_LDFLAGS = \
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libSDL_sound_la_LIBADD = \

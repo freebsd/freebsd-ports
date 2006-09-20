@@ -7,6 +7,7 @@
 
 PORTNAME=	kroc
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.kent.ac.uk/projects/ofa/kroc/ \
 		http://www.frmb.org/download/
