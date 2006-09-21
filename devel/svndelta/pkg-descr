@@ -1,0 +1,13 @@
+svndelta helps control Subversion-managed projects. svndelta summarizes
+project changes (including lines of code) and also adds to and removes
+from Subversion the files that have been added and removed locally.
+
+svndelta filters project changes by using .svnignore files, both
+system-wide and locally. Thus, for example, svndelta will not attempt to
+add backup files or object files to a project, or include them in
+summaries of changes.
+
+Requires ruby.
+
+WWW:		http://www.incava.org/projects/svndelta/
+AUTHOR:		Jeff Pace <jpace@incava.org>

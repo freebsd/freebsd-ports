@@ -1893,6 +1893,7 @@
     SUBDIR += subversion-ruby
     SUBDIR += sunterlib
     SUBDIR += svk
+    SUBDIR += svndelta
     SUBDIR += swig11
     SUBDIR += swig13
     SUBDIR += swigruby
