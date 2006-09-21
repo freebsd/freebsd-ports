@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://txt2tags.sourceforge.net/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
 USE_PYTHON=	yes
