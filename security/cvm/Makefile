@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cvm
-PORTVERSION=	0.81
-PORTREVISION=	1
+PORTVERSION=	0.82
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
