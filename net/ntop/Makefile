@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,9 @@ COMMENT=	Network monitoring tool with command line and web interfaces
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		png.5:${PORTSDIR}/graphics/png
+
+RUN_DEPENDS=    dot:${PORTSDIR}/graphics/graphviz \
+                ${X11BASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonfs
 
 DBDIR?=		/var/db
 
