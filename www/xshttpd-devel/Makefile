@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.4b10
+DISTVERSION=	3.4b15
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -32,6 +32,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 OPTIONS=	SSL "Enable https support" On \
 		LDAP "Enable ldap support" Off \
 		PCRE "Enable pcre rewriting support" Off \
+		CURL "Enable curl (proxy) support" Off \
 		PERSISTENT_PERL "Enable persistent perl interpreter" Off
 
 PORTDOCS=	README BUGS COPYING ChangeLog
@@ -70,6 +71,13 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre=yes
 .else
 CONFIGURE_ARGS+=--with-pcre=no
+.endif
+
+.if defined(WITH_CURL)
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=--with-curl=yes
+.else
+CONFIGURE_ARGS+=--with-curl=no
 .endif
 
 post-patch:
