@@ -1,7 +1,12 @@
-%%SITE_PERL%%/IO/Socket/SSL.pm
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/SSL/.packlist
+%%SITE_PERL%%/IO/Socket/SSL.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/async_https_server.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl_client.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ssl_server.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/SSL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket
-@dirrm %%SITE_PERL%%/IO/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
+@dirrmtry %%SITE_PERL%%/IO/Socket
 @dirrmtry %%SITE_PERL%%/IO
