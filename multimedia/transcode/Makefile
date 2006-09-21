@@ -33,7 +33,7 @@ USE_AUTOTOOLS=	libtool:15
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
+		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-ffmpeg_libs-prefix=${LOCALBASE} \
 			--with-libdvdread-prefix=${LOCALBASE} \
@@ -409,7 +409,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -E -e 's|(seek)64|\1|' ${WRKSRC}/avilib/avidump.c
 	@${REINPLACE_CMD} -E -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
-	@${REINPLACE_CMD} -E -e 's|sdl-config|sdl11-config|g' ${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

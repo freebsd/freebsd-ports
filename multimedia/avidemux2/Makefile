@@ -126,10 +126,6 @@ post-patch:
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} "s|-O3|${CFLAGS}|" ${WRKSRC}/adm_lavcodec/Makefile.am
 .endif
-	@${REINPLACE_CMD} 's|SDL/|SDL11/|' \
-		${WRKSRC}/avidemux/ADM_audiodevice/ADM_deviceSDL.cpp \
-		${WRKSRC}/avidemux/ADM_gui2/GUI_sdlDraw.cpp \
-		${WRKSRC}/avidemux/main.cpp
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} 's|-falign-loops=16||' ${WRKSRC}/configure \
 		${WRKSRC}/adm_lavcodec/Makefile.in \

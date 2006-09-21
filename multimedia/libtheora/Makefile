@@ -27,11 +27,6 @@ CONFIGURE_ARGS=	--disable-sdltest \
 		--enable-shared
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|g; \
-		s|-O2||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|SDL/SDL.h|SDL11/SDL.h|g; \
-		s|machine/soundcard.h|sys/soundcard.h|g' \
-		${WRKSRC}/examples/player_example.c
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/examples/Makefile.in
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in

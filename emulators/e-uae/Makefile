@@ -26,10 +26,6 @@ PLIST_FILES=	bin/uae bin/readdisk
 PORTDOCS=	README bsdsocket.txt compiling.txt configuration.txt \
 		floppies.txt keyboard.txt scsi.txt
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|sdl11-config|' \
-		${WRKSRC}/configure
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/uae ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/readdisk ${PREFIX}/bin
