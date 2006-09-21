@@ -36,4 +36,7 @@ GCONF_SCHEMAS=	blam.schemas
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.if ${GECKO}!="mozilla"
+EXTRA_PATCHES+= ${PATCHDIR}/extra-libblam_blam-gecko-utils.cpp
+.endif
 .include <bsd.port.post.mk>
