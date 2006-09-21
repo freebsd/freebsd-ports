@@ -27,6 +27,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_bubble.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_bump.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_demomenu.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_dtmri.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_hough.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_imgfade.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_landscape.jpg
@@ -53,6 +54,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000018.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000019.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000020.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/ss_mini_000021.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_odykill.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_optflow.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_paint.jpg
@@ -90,6 +92,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x72.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x73.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x74.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x75.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x76.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x77.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x78.html
@@ -115,6 +118,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x72.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x73.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x74.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x75.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x76.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x77.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x78.html
@@ -160,6 +164,7 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/cimgmatlab_cannyderiche.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/cimgmatlab_cannyderiche.m
+%%PORTDOCS%%%%EXAMPLESDIR%%/dtmri_view.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/fade_images.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration4integration.cpp
