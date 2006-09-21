@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	POE-Component-Server-SOAP
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	POE
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
@@ -26,11 +25,7 @@ MAN3=	POE::Component::Server::SOAP.3 \
 	POE::Component::Server::SOAP::Response.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
-		     -e '$$_ = "" if /use warnings/;' \
-		${WRKSRC}/lib/POE/Component/Server/SOAP.pm \
-		${WRKSRC}/lib/POE/Component/Server/SOAP/Response.pm
+.if ${PERL_LEVEL} < 500600  # from p5-MIME-Tools, via p5-SOAP-Lite
+IGNORE=		requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
 .endif
 .include <bsd.port.post.mk>
