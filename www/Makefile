@@ -26,6 +26,7 @@
     SUBDIR += apache20
     SUBDIR += apache21
     SUBDIR += apache22
+    SUBDIR += apercu
     SUBDIR += aria
     SUBDIR += aria2
     SUBDIR += ashe
