@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtunepimp
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/
