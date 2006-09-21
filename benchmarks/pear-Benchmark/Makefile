@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Benchmark
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.6
 CATEGORIES=	benchmarks devel www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
