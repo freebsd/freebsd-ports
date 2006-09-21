@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.58
+PORTVERSION=	4.80b
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	iptrack
-DISTNAME=	${PORTNAME}-4.58
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	IP address management and tracking
