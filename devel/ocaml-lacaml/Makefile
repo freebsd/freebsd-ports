@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	lacaml
-PORTVERSION=	3.0.18
+PORTVERSION=	3.0.19
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	OCaml interface to BLAS and LAPACK libraries
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas \
