@@ -7,7 +7,7 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|freepascal/:freepascal|} \
 		ftp://ftp.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
@@ -139,6 +139,6 @@ do-install:
 .endfor
 
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${DATADIR}
-	${LN} -s ${DATADIR}/lazarus ${PREFIX}/bin/lazarus
+	${LN} -s ${DATADIR}/startlazarus ${PREFIX}/bin/lazarus
 
 .include <bsd.port.post.mk>
