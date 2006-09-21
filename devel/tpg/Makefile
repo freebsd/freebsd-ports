@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parser generator in Python
 
 USE_PYTHON=		2.2+
