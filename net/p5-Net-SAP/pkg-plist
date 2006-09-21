@@ -1,9 +1,5 @@
 bin/psapd
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/SAP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/SAP/Packet.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SAP/SAP.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SAP/SAP.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/SAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
+%%SITE_PERL%%/Net/SAP.pm
+%%SITE_PERL%%/Net/SAP/Packet.pm
+@dirrm %%SITE_PERL%%/Net/SAP
+@dirrmtry %%SITE_PERL%%/Net
