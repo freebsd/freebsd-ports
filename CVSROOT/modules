@@ -423,6 +423,7 @@ apcpwr		ports/sysutils/apcpwr
 apcupsd		ports/sysutils/apcupsd
 apel		ports/editors/apel
 apel-emacs20	ports/editors/apel-emacs20
+apercu		ports/www/apercu
 apg		ports/security/apg
 apinger		ports/net/apinger
 apollon		ports/net-p2p/apollon
