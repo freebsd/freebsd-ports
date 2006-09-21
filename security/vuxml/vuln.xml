@@ -59,9 +59,15 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox-devel</name>
+	<range><lt>3.0.a2006.09.21</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey-devel</name>
+	<range><lt>1.5.a2006.09.21</lt></range>
+      </package>
+      <package>
 	<name>linux-mozilla-devel</name>
 	<name>linux-mozilla</name>
-	<name>linux-seamonkey-devel</name>
 	<name>mozilla</name>
 	<range><gt>0</gt></range>
       </package>
