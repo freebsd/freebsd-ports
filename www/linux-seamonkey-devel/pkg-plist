@@ -131,6 +131,7 @@ lib/%%APP_NAME%%/components/libautoconfig.so
 lib/%%APP_NAME%%/components/libbayesflt.so
 lib/%%APP_NAME%%/components/libbookmark.so
 lib/%%APP_NAME%%/components/libcaps.so
+lib/%%APP_NAME%%/components/libchardet.so
 lib/%%APP_NAME%%/components/libchrome.so
 lib/%%APP_NAME%%/components/libcomposer.so
 lib/%%APP_NAME%%/components/libcookie.so
@@ -323,6 +324,7 @@ lib/%%APP_NAME%%/defaults/pref/composer.js
 lib/%%APP_NAME%%/defaults/pref/inspector.js
 lib/%%APP_NAME%%/defaults/pref/mailnews.js
 lib/%%APP_NAME%%/defaults/pref/mdn.js
+lib/%%APP_NAME%%/defaults/pref/reporter.js
 lib/%%APP_NAME%%/defaults/pref/smime.js
 lib/%%APP_NAME%%/defaults/profile/bookmarks.html
 lib/%%APP_NAME%%/defaults/profile/chrome/userChrome-example.css
@@ -476,24 +478,24 @@ lib/%%APP_NAME%%/xpt_link
 @dirrm lib/%%APP_NAME%%/components/talkback
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/defaults/autoconfig
+@dirrm lib/%%APP_NAME%%/defaults/isp/en-US
+@dirrm lib/%%APP_NAME%%/defaults/isp
+@dirrm lib/%%APP_NAME%%/defaults/messenger/en-US
+@dirrm lib/%%APP_NAME%%/defaults/messenger
+@dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults/profile/chrome
 @dirrm lib/%%APP_NAME%%/defaults/profile/en-US/chrome
 @dirrm lib/%%APP_NAME%%/defaults/profile/en-US
 @dirrm lib/%%APP_NAME%%/defaults/profile
-@dirrm lib/%%APP_NAME%%/defaults/messenger/en-US
-@dirrm lib/%%APP_NAME%%/defaults/messenger
-@dirrm lib/%%APP_NAME%%/defaults/isp/en-US
-@dirrm lib/%%APP_NAME%%/defaults/isp
-@dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults/wallet
 @dirrm lib/%%APP_NAME%%/defaults
 @dirrm lib/%%APP_NAME%%/dictionaries
 @dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/init.d
 @dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/res/dtd
 @dirrm lib/%%APP_NAME%%/res/entityTables
 @dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/dtd
 @dirrm lib/%%APP_NAME%%/res/html
 @dirrm lib/%%APP_NAME%%/res
 @dirrm lib/%%APP_NAME%%/searchplugins

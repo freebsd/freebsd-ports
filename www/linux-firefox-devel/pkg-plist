@@ -56,8 +56,10 @@ lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
+lib/%%APP_NAME%%/defaults/pref/firefox-branding.js
 lib/%%APP_NAME%%/defaults/pref/firefox-l10n.js
 lib/%%APP_NAME%%/defaults/pref/firefox.js
+lib/%%APP_NAME%%/defaults/pref/reporter.js
 lib/%%APP_NAME%%/defaults/profile/bookmarks.html
 lib/%%APP_NAME%%/defaults/profile/chrome/userChrome-example.css
 lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
@@ -191,31 +193,31 @@ lib/%%APP_NAME%%/xpicleanup
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
+@dirrm lib/%%APP_NAME%%/components
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults/pref
 @dirrm lib/%%APP_NAME%%/defaults/profile/chrome
 @dirrm lib/%%APP_NAME%%/defaults/profile
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
 @dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%/dictionaries
-@dirrm lib/%%APP_NAME%%/components
-@dirrm lib/%%APP_NAME%%/plugins
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res/html
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res
-@dirrm lib/%%APP_NAME%%/icons
-@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
-@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org
+@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 @dirrm lib/%%APP_NAME%%/extensions
 @dirrm lib/%%APP_NAME%%/greprefs
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
