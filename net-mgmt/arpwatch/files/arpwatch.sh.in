@@ -11,7 +11,7 @@
 #arpwatch_enable="YES"
 #
 arpwatch_enable=${arpwatch_enable:-"NO"}
-arpwatch_dir="%%PREFIX%%/arpwatch/"
+arpwatch_dir=${arpwatch_dir:-"%%PREFIX%%/arpwatch/"}
 
 . %%RC_SUBR%%
 
@@ -62,15 +62,17 @@ case ${arpwatch_interfaces} in
     ;;
 
     *)
-	 if [ "$1" = "start" -o "$1" = "faststart" ]; then
+	 case "$1" in
+	  *start)
  	     for interface in ${arpwatch_interfaces}; do
 		 eval options=\$arpwatch_${interface}_options
 		 command_args="-i ${interface} ${options} -f arp.${interface}.dat"
-		 pidfile="/var/run/arpwatch-${interface}.pid"
 		 run_rc_command "$1"
 	     done
-	 else
+	     ;;
+	  *)
              run_rc_command "$1"
-	 fi
+	     ;;
+	 esac
     ;;
 esac
