@@ -7,6 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ SF
 
@@ -28,7 +29,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 USE_XPM=	yes
 WANT_GNOME=	yes
-CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
+CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
 PLIST_SUB+=	X11=""
 .endif
 
