@@ -19,10 +19,12 @@ bin/readmsg
 %%CONF_DIR%%/elm.filelist
 @unexec if cmp -s %D/%%CONF_DIR%%/elm.mimecharsets %D/%%CONF_DIR%%/elm.mimecharsets-dist; then rm -f %D/%%CONF_DIR%%/elm.mimecharsets; fi
 %%CONF_DIR%%/elm.mimecharsets-dist
+%%CONF_DIR%%/elm.mimecharsets.NEW
 @exec if [ -f %D/%%LIB_DIR%%/elm.mimecharsets ]; then [ -f %B/elm.mimecharsets ] && old=.old || old=; mv %D/%%LIB_DIR%%/elm.mimecharsets %B/elm.mimecharsets${old}; fi
 @exec [ -f %B/elm.mimecharsets ] || cp %B/%f %B/elm.mimecharsets
 @unexec if cmp -s %D/%%CONF_DIR%%/elm.mimetypes %D/%%CONF_DIR%%/elm.mimetypes-dist; then rm -f %D/%%CONF_DIR%%/elm.mimetypes; fi
 %%CONF_DIR%%/elm.mimetypes-dist
+%%CONF_DIR%%/elm.mimetypes.NEW
 @exec if [ -f %D/%%LIB_DIR%%/elm.mimetypes ]; then [ -f %B/elm.mimetypes ] && old=.old || old=; mv %D/%%LIB_DIR%%/elm.mimetypes %B/elm.mimetypes${old}; fi
 @exec [ -f %B/elm.mimetypes ] || cp %B/%f %B/elm.mimetypes
 @unexec if cmp -s %D/%%CONF_DIR%%/elm.rc %D/%%CONF_DIR%%/elm.rc-dist; then rm -f %D/%%CONF_DIR%%/elm.rc; fi
@@ -31,6 +33,7 @@ bin/readmsg
 @exec [ -f %B/elm.rc ] || cp %B/%f %B/elm.rc
 @unexec if cmp -s %D/%%CONF_DIR%%/elm.terminalinfo %D/%%CONF_DIR%%/elm.terminalinfo-dist; then rm -f %D/%%CONF_DIR%%/elm.terminalinfo; fi
 %%CONF_DIR%%/elm.terminalinfo-dist
+%%CONF_DIR%%/elm.terminalinfo.NEW
 @exec if [ -f %D/%%LIB_DIR%%/elm.terminalinfo ]; then [ -f %B/elm.terminalinfo ] && old=.old || old=; mv %D/%%LIB_DIR%%/elm.terminalinfo %B/elm.terminalinfo${old}; fi
 @exec [ -f %B/elm.terminalinfo ] || cp %B/%f %B/elm.terminalinfo
 %%LIB_DIR%%/elm-help.0
@@ -67,6 +70,7 @@ bin/readmsg
 %%LIB_DIR%%/elmbindata
 %%LIB_DIR%%/elmcharset
 %%LIB_DIR%%/elmlibregister
+%%LIB_DIR%%/elmmimetypes
 %%LIB_DIR%%/elmrc-info
 %%LIB_DIR%%/elmrc-write
 %%LIB_DIR%%/elmregister
@@ -77,6 +81,9 @@ bin/readmsg
 %%LIB_DIR%%/prlong
 %%SHLIB_DIR%%/libelmme-base.so%%SO_REV%%
 %%SHLIB_DIR%%/libelmme-mailer.so%%SO_REV%%
+%%SHLIB_DIR%%/libelmme-mbox.so%%SO_REV%%
+%%SHLIB_DIR%%/libelmme-mime.so%%SO_REV%%
+%%SHLIB_DIR%%/libelmme-misc.so%%SO_REV%%
 %%ELM_ICONV%%%%SHLIB_DIR%%/libelmme-iconv.so%%SO_REV%%
 %%ELM_SMTP%%%%SHLIB_DIR%%/libelmme-smtp.so%%SO_REV%%
 %%ELM_TLS%%%%SHLIB_DIR%%/libelmme-tls.so%%SO_REV%%
