@@ -13648,6 +13648,7 @@ svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
 svk		ports/devel/svk
 svmlight	ports/science/svmlight
+svndelta	ports/devel/svndelta
 svnmailer	ports/mail/svnmailer
 svr4_base	ports/emulators/svr4_base
 sw-aspell	ports/textproc/sw-aspell
