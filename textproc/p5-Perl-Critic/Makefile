@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Critique Perl source for style and standards
