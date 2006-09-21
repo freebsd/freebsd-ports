@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.7
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -18,13 +18,13 @@ COMMENT=	Internationalized Domain Names command line tool
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
-
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
+		--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-
-INSTALLS_SHLIB=	yes
 
 INFO=	libidn
 
