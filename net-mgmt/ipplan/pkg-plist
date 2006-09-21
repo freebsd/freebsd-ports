@@ -1,7 +1,6 @@
 @unexec if cmp -s %D/%%IPPLANDIR%%/config.php %D/%%IPPLANDIR%%/config.php.sample ; then rm -f %D/%%IPPLANDIR%%/config.php; fi
 %%IPPLANDIR%%/CHANGELOG
 %%IPPLANDIR%%/CONTRIBUTORS
-%%IPPLANDIR%%/DNS-USAGE
 %%IPPLANDIR%%/INSTALL
 %%IPPLANDIR%%/INSTALL-IIS+MSSQL
 %%IPPLANDIR%%/INSTALL-ORACLE9i
@@ -212,12 +211,14 @@
 %%IPPLANDIR%%/contrib/ipplan-poller.php
 %%IPPLANDIR%%/contrib/process-exports.pl
 %%IPPLANDIR%%/contrib/process-exports.txt
+%%IPPLANDIR%%/cookies.js
 %%IPPLANDIR%%/docu.css
 %%IPPLANDIR%%/gpl.html
 %%IPPLANDIR%%/images/square_green.jpg
 %%IPPLANDIR%%/images/square_orange.jpg
 %%IPPLANDIR%%/images/square_red.jpg
 %%IPPLANDIR%%/index.php
+%%IPPLANDIR%%/ipplanlib.js
 %%IPPLANDIR%%/ipplanlib.php
 %%IPPLANDIR%%/layout/class.layout
 %%IPPLANDIR%%/layout/layoutman.html
@@ -456,8 +457,15 @@
 %%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu.ihtml
 %%IPPLANDIR%%/messages.po
 %%IPPLANDIR%%/phpmailer.lang-en.php
+%%IPPLANDIR%%/phpserializer.js
 %%IPPLANDIR%%/schema.php
-%%IPPLANDIR%%/templates/customer/custtemplate-ripe.xsl
+%%IPPLANDIR%%/templates/display/basetemplate.xml
+%%IPPLANDIR%%/templates/display/basetemplate.xml.dhcp
+%%IPPLANDIR%%/templates/display/custtemplate-ripe.xml
+%%IPPLANDIR%%/templates/display/custtemplate.xml
+%%IPPLANDIR%%/templates/display/fwdzonetemplate.xml
+%%IPPLANDIR%%/templates/display/iptemplate.xml
+%%IPPLANDIR%%/templates/display/iptemplate.xml.sample
 %%IPPLANDIR%%/templates/ripe_assign-simple-1.0.xsl
 %%IPPLANDIR%%/templates/ripe_person_simple-1.0.xsl
 %%IPPLANDIR%%/templates/swip_reassign-simple-modify3.0.xsl
@@ -466,6 +474,7 @@
 %%IPPLANDIR%%/templates/swip_wdb1.4_delete.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_modify.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
+%%IPPLANDIR%%/themes/default-safari.css
 %%IPPLANDIR%%/themes/default.css
 %%IPPLANDIR%%/themes/pastel.css
 %%IPPLANDIR%%/themes/penguin.css
@@ -476,6 +485,7 @@
 %%IPPLANDIR%%/user/Net/DNS/RR.php
 %%IPPLANDIR%%/user/Net/DNS/RR/A.php
 %%IPPLANDIR%%/user/Net/DNS/RR/AAAA.php
+%%IPPLANDIR%%/user/Net/DNS/RR/AFSDB.php
 %%IPPLANDIR%%/user/Net/DNS/RR/CNAME.php
 %%IPPLANDIR%%/user/Net/DNS/RR/HINFO.php
 %%IPPLANDIR%%/user/Net/DNS/RR/MX.php
@@ -487,13 +497,10 @@
 %%IPPLANDIR%%/user/Net/DNS/RR/TSIG.php
 %%IPPLANDIR%%/user/Net/DNS/RR/TXT.php
 %%IPPLANDIR%%/user/Net/DNS/Resolver.php
-%%IPPLANDIR%%/user/basetemplate.xml
-%%IPPLANDIR%%/user/basetemplate.xml.dhcp
 %%IPPLANDIR%%/user/createarea.php
 %%IPPLANDIR%%/user/createrange.php
 %%IPPLANDIR%%/user/createsubnet.php
 %%IPPLANDIR%%/user/createsubnetform.php
-%%IPPLANDIR%%/user/custtemplate.xml
 %%IPPLANDIR%%/user/deletearea.php
 %%IPPLANDIR%%/user/deletecustomer.php
 %%IPPLANDIR%%/user/deleterange.php
@@ -512,8 +519,6 @@
 %%IPPLANDIR%%/user/exportdhcp.php
 %%IPPLANDIR%%/user/findfree.php
 %%IPPLANDIR%%/user/findfreeform.php
-%%IPPLANDIR%%/user/iptemplate.xml
-%%IPPLANDIR%%/user/iptemplate.xml.sample
 %%IPPLANDIR%%/user/logout.php
 %%IPPLANDIR%%/user/modifyarearange.php
 %%IPPLANDIR%%/user/modifyarearangeform.php
@@ -543,9 +548,7 @@
 @dirrm %%IPPLANDIR%%/user/Net
 @dirrm %%IPPLANDIR%%/user
 @dirrm %%IPPLANDIR%%/themes
-@dirrm %%IPPLANDIR%%/templates/subnet
-@dirrm %%IPPLANDIR%%/templates/ipaddr
-@dirrm %%IPPLANDIR%%/templates/customer
+@dirrm %%IPPLANDIR%%/templates/display
 @dirrm %%IPPLANDIR%%/templates
 @dirrm %%IPPLANDIR%%/menus/templates
 @dirrm %%IPPLANDIR%%/menus/menuimages
