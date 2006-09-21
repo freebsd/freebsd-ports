@@ -22,7 +22,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.5:${PORTSDIR}/graphics/png
 
 RUN_DEPENDS=    dot:${PORTSDIR}/graphics/graphviz \
-                ${X11BASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonfs
+                ${X11BASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
 DBDIR?=		/var/db
 
