@@ -18,6 +18,7 @@ share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/eo/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libidn.mo
