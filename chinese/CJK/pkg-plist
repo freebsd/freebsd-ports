@@ -2411,7 +2411,7 @@ share/texmf/tex/latex/CJK/thai/thaicjk.ldf
 @dirrm share/texmf/fonts/enc/CJK/argbkai
 @dirrm share/texmf/fonts/enc/CJK/argbsung
 @dirrm share/texmf/fonts/enc/CJK
-@dirrm share/texmf/fonts/map/CJK
+@dirrm share/texmf/fonts/map/dvips/CJK
 @dirrm share/texmf/fonts/truetype/CJK
 @dirrm share/texmf/hbf2gf
 @dirrm share/texmf/tex/latex/CJK/Bg5
