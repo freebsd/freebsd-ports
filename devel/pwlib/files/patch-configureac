@@ -1,5 +1,5 @@
---- configure.ac.orig	Wed Feb 22 12:53:28 2006
-+++ configure.ac	Sun May  7 14:19:18 2006
+--- configure.ac.orig	Wed Feb 22 06:53:28 2006
++++ configure.ac	Thu Sep 21 01:33:15 2006
 @@ -136,7 +136,7 @@
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
@@ -116,7 +116,7 @@
  else
    dnl SDL checks
    if test "${SDLLIB:-unset}" = "unset" ; then
-@@ -1501,9 +1502,9 @@
+@@ -1501,11 +1502,11 @@
      AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext)
    fi
  
@@ -126,8 +126,11 @@
 -    AC_CHECK_FILE(/usr/local/include/SDL11/SDL.h, HAS_SDL=1)
 +    AC_CHECK_HEADER(SDL/SDL.h, HAS_SDL=1)
      if test "${HAS_SDL:-unset}" != "unset" ; then
-       SDLLIB=SDL-1.1
+-      SDLLIB=SDL-1.1
++      SDLLIB=SDL
      fi
+   fi
+ 
 @@ -1527,7 +1528,7 @@
  dnl ########################################################################
  dnl check for video capture support.
