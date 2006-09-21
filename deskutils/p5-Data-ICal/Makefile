@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-ICal
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/LongString.pm:${PORTSDIR}/devel/p5-Test-LongStr
 		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		${SITE_PERL}/Text/vFile/asData.pm:${PORTSDIR}/devel/p5-Text-vFile-asData
+		${SITE_PERL}/Text/vFile/asData.pm:${PORTSDIR}/devel/p5-Text-vFile-asData \
+		p5-Class-ReturnValue>0:${PORTSDIR}/devel/p5-Class-ReturnValue
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
