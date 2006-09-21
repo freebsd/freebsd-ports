@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060921:
+  AFFECTS: users of mail/mailfront
+  AUTHOR: sergei@FreeBSD.org
+
+  Mailfront was rewritten in version 1.0 to be totally modular.
+  Its functionality has been split into several modules that are now
+  installed into ${PREFIX}/libexec/mailfront. Various *front-* commands
+  are now merely shell script wrappers around the newly introduced
+  mailfront command and its new modules. 
+
+  The smtpfront-reject command has been removed completely, 
+  being deprecated in favor of using a plugin. 
+
+  Please refer to http://untroubled.org/mailfront/NEWS for further details.
+
 20060910:
   AFFECTS: users of net-mgmt/zabbix
   AUTHOR: sem@FreeBSD.org
