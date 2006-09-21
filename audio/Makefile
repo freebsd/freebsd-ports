@@ -605,7 +605,6 @@
     SUBDIR += wmmp3
     SUBDIR += wmrecord
     SUBDIR += wmsmixer
-    SUBDIR += wmtune
     SUBDIR += wmusic
     SUBDIR += workman
     SUBDIR += wsoundprefs

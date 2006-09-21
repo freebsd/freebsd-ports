@@ -14771,7 +14771,6 @@ wmtime		ports/x11-clocks/wmtime
 wmtimebomb	ports/games/wmtimebomb
 wmtimer		ports/x11-clocks/wmtimer
 wmtop		ports/sysutils/wmtop
-wmtune		ports/audio/wmtune
 wmtunlo		ports/misc/wmtunlo
 wmtz		ports/x11-clocks/wmtz
 wmupmon		ports/sysutils/wmupmon
