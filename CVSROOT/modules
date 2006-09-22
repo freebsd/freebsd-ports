@@ -5195,6 +5195,7 @@ jpegpixi	ports/graphics/jpegpixi
 jpgraph		ports/graphics/jpgraph
 jpgtn		ports/graphics/jpgtn
 jpilot		ports/palm/jpilot
+jpilot-db	ports/palm/jpilot-db
 jps		ports/sysutils/jps
 jre		ports/java/jre
 jrefentry	ports/textproc/jrefentry
