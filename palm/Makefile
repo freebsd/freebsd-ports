@@ -12,6 +12,7 @@
     SUBDIR += isilo
     SUBDIR += jfconv
     SUBDIR += jpilot
+    SUBDIR += jpilot-db
     SUBDIR += libmal
     SUBDIR += makeztxt
     SUBDIR += malsync
