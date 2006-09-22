@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060922:
+  AFFECTS: users of mail/tmda
+  AUTHOR: sergei@FreeBSD.org
+
+  TMDA has been updated to version 1.1.5, which is the latest stable
+  release.  1.1 is now the stable branch, 1.0 branch has been obsoleted.
+
+  Changes include:
+  - ~/.tmdarc configuration file has been obsoleted by ~/.tmda/ dir; 
+    see ${PREFIX}/share/examples/dot-tmda for sample configuration
+  - only minimal set of HTML documentation is now installed;
+    please see http://wiki.tmda.net/ for full documentation
+  - templates has changed: single bounce.txt has been replaced
+    with various bounce_*.txt templates; see ${PREFIX}/share/tmda
+
 20060921:
   AFFECTS: users of mail/mailfront
   AUTHOR: sergei@FreeBSD.org
