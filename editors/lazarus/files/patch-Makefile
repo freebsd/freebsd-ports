@@ -1,12 +1,6 @@
---- Makefile	Sun Jul 23 00:46:54 2006
-+++ Makefile	Sun Jul 23 00:54:26 2006
-@@ -232,12 +232,12 @@
- override PACKAGE_NAME=lazarus
- override PACKAGE_VERSION=0.9b
- RCPP?=$(strip $(firstword cpp$(SRCEXEEXT)))
--LAZARUS_INSTALL_DIR=/usr/share/lazarus
-+LAZARUS_INSTALL_DIR=%%DATADIR%%
- ifneq ($(findstring $(OS_TARGET),win32 win64),)
+--- Makefile	Fri Sep 15 03:55:16 2006
++++ Makefile	Fri Sep 22 00:40:31 2006
+@@ -238,7 +238,7 @@
  LAZARUS_INSTALL_DIR=C:\lazarus
  endif
  ifneq ($(findstring $(OS_TARGET),freebsd),)
@@ -15,10 +9,3 @@
  endif
  ifeq ($(FULL_TARGET),i386-linux)
  override TARGET_DIRS+=lcl components packager/registration ideintf designer packager
-@@ -3759,5 +3759,5 @@
- 	$(COPYTREE) . $(LAZARUS_INSTALL_DIR)
- ifeq ($(OS_TARGET),win32)
- else
--	ln -sf $(LAZARUS_INSTALL_DIR)/lazarus /usr/bin/lazarus
-+	ln -sf $(LAZARUS_INSTALL_DIR)/lazarus %%LOCALBASE%%/bin/lazarus
- endif
