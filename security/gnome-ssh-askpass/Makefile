@@ -23,7 +23,10 @@ PLIST_FILES=	bin/gnome-ssh-askpass2
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
+.include <bsd.port.pre.mk>
+CFLAGS+=	${PTHREAD_LIBS}
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gnome-ssh-askpass2 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
