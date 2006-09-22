@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	3.4.1
+PORTVERSION=	3.6
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.software.ibm.com/software/globalization/icu/${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+		ftp://ftp.software.ibm.com/software/globalization/icu/${PORTVERSION}/
+MASTER_SITE_SUBDIR=${PORTNAME}
+DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
+EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	International Components for Unicode (from IBM)
 
-OPTIONS=	THREADS "Build multi-threaded version of the library" on
+OPTIONS=	THREADS "Build multi-threaded version of the library" off
 CONFLICTS=	icu2-[0-9]*
 
 INSTALLS_SHLIB=		yes
@@ -30,38 +33,32 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no
 
 USE_GMAKE=		yes
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" CC="${CC}" CXX="${CXX}"
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS:N-funroll-loops}" CC="${CC}" CXX="${CXX}"
+CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS:N-funroll-loops}"
 
 MAN1+=	derb.1
 MAN1+=	gencnval.1
+MAN1+=	genctd.1
 MAN1+=	genrb.1
 MAN1+=	icu-config.1
 MAN1+=	makeconv.1
 MAN1+=	pkgdata.1
 MAN1+=	uconv.1
-MAN8+=	decmn.8
 MAN8+=	genccode.8
 MAN8+=	gencmn.8
 MAN8+=	gensprep.8
 MAN8+=	genuca.8
 
 ICUMAJOR=	${PORTVERSION:S/.//:R}
-PLIST_SUB+=	ICUMAJOR=${ICUMAJOR}
+PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=0
 PLIST_SUB+=	ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "sparc64"
-post-patch:
-	${REINPLACE_CMD} 's,-fPIC,-fpic,' ${WRKSRC}/config/mh-bsd-gcc
-.endif
-
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads=yes
-CONFIGURE_ENV+=		THREADSCPPFLAGS="${PTHREAD_CFLAGS}" \
-			THREADSCFLAGS="${PTHREAD_CFLAGS}" \
-			THREADSCXXFLAGS="${PTHREAD_CFLAGS}" \
-			PTHREAD_LIBS="${PTHREAD_LIBS}"
+post-patch:
+	${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=${PTHREAD_CFLAGS},g' ${WRKSRC}/config/mh-bsd-gcc
 .else
 CONFIGURE_ARGS+=	--enable-threads=no
 .endif
