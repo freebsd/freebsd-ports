@@ -6,6 +6,9 @@
 # A simplest case: single IP address, with default value.
 127.0.0.2
 #
+# And some example data...
+172.31 Hurray, your installation worked!
+#
 # Netblock - 256 IP addresses with it's own A and TXT records
 10.8.60.0/24 :127.0.0.3:Address $ is from private IP range
 #

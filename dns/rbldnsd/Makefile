@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rbldnsd
-PORTVERSION=	0.996
+PORTVERSION=	0.996a
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/:0 \
 		http://www.it.ca/~paul/src/:0
@@ -16,7 +16,7 @@ MAINTAINER=	paul+ports@it.ca
 COMMENT=	Small and fast DNS daemon especially for DNSBL zones
 
 .if !defined(NOPORTDOCS)
-EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY+=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 MASTER_SITES+=	http://www.corpit.ru/mjt/:1 \
 		http://www.it.ca/~paul/src/:1
 DISTFILES+=	rbldnsd.html:1
@@ -30,20 +30,9 @@ ROOTDIR=	${PREFIX}/etc/rbldnsd/
 MAN8=		rbldnsd.8
 
 HAS_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	/etc/rc.subr
-.else
-USE_RC_SUBR=	yes
-.endif
-
-SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
-
-post-build:
-		@${SED} ${SED_SCRIPT} <${FILESDIR}/rbldnsd.sh >${WRKSRC}/rbldnsd.sh
+USE_RC_SUBR=	rbldnsd
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 pre-install:
 		@${ECHO} "==>  Creating custom user to run rbldnsd..."
@@ -70,9 +59,5 @@ do-install:
 		@${INSTALL_DATA} ${WRKSRC}/rbldnsd.spec ${DOCSDIR}
 		@${INSTALL_DATA} ${DISTDIR}/rbldnsd.html ${DOCSDIR}
 .endif
-		@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/rbldnsd.sh ${PREFIX}/etc/rc.d/rbldnsd.sh
 
-post-install:
-		@${SED} ${SED_SCRIPT} < ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
