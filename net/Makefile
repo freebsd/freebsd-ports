@@ -859,6 +859,7 @@
     SUBDIR += xisp
     SUBDIR += xmlrpc++
     SUBDIR += xmlrpc-c
+    SUBDIR += xorp
     SUBDIR += xprobe
     SUBDIR += xpvm
     SUBDIR += xrdesktop
