@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="65a8f773-4a37-11db-a4cc-000a48049292">
+    <topic>zope -- restructuredText "csv_table" Information Disclosure</topic>
+    <affects>
+      <package>
+	<name>zope</name>
+	<range><ge>2.7.0</ge><lt>2.7.9_1</lt></range>
+	<range><ge>2.8.0</ge><lt>2.8.8_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/21947/">
+	  <p>A vulnerability has been reported in Zope, which can be
+	    exploited by malicious people to disclose potentially
+	    sensitive information.</p>
+	  <p>The vulnerability is caused due to an error in the use of
+	    the docutils module to parse and render "restructured"
+	    text. This can be exploited to disclose certain information
+	    via the "csv_table" reStructuredText directive.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/21947/</url>
+      <url>http://www.zope.org/Products/Zope/Hotfix-2006-08-21/Hotfix-20060821/README.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-08-21</discovery>
+      <entry>2006-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6bff909-4a26-11db-a4cc-000a48049292">
     <topic>libmms -- stack-based buffer overflow</topic>
     <affects>
