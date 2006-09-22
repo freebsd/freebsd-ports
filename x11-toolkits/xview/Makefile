@@ -7,7 +7,7 @@
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
 		ftp://ftp.uni-heidelberg.de/pub/X11/contrib/libraries/ \
@@ -25,7 +25,7 @@ IMAKEINCLUDE=	"-I${X11BASE}/lib/X11/config -I${WRKSRC}/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 ALL_TARGET=	World
 
-MAN1=		msgfmt.1 xgettext.1 xview.1
+MAN1=		xview.1
 
 .include <bsd.port.pre.mk>
 
@@ -39,6 +39,8 @@ post-patch:
 	  ${WRKSRC}/lib/libxview/help/help_file.c \
 	  ${WRKSRC}/lib/libxview/misc/gettext.h \
 	  ${WRKSRC}/lib/libxview/textsw/txt_e_menu.c
+	${REINPLACE_CMD} -e "s,^MSG_UTIL,#MSG_UTIL," \
+	  ${WRKSRC}/util/Imakefile
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \

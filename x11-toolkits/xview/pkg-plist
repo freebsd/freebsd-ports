@@ -1,5 +1,3 @@
-bin/msgfmt
-bin/xgettext
 include/bitmaps/1x1
 include/bitmaps/2x2
 include/bitmaps/black
