@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Diff
-PORTVERSION=	1.1901
+PORTVERSION=	1.1902
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -16,7 +16,6 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl interface to compute differences between two objects
 
 PERL_CONFIGURE=	yes
-USE_ZIP=	yes
 
 MAN3=		Algorithm::Diff.3 Algorithm::DiffOld.3
 
