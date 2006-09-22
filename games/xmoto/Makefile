@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.2.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,17 +31,39 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -I${LUA_INCDIR}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LUA_LIBDIR}
+MANCOMPRESSED=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	README ChangeLog
 
-OPTIONS=	CURL	"Online high-scores and new levels download support"	on
+OPTIONS=	WWW	"Online high-scores and new levels download support"	on \
+		ZOOM	"Enable zooming"	off
+
+MAN6=		xmoto.6 xmoto-edit.6
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CURL)
+.if !defined(WITHOUT_WWW)
 LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-enable-www=1
+.else
+CONFIGURE_ARGS+=	--with-enable-www=0
+.endif
+
+.if defined(WITH_ZOOM)
+CONFIGURE_ARGS+=	--with-enable-zoom=1
+.else
+CONFIGURE_ARGS+=	--with-enable-zoom=0
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CONFIGURE_ENV+=	LIBS="-lintl"
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -52,8 +73,10 @@ post-patch:
 		${WRKSRC}/src/image/tim_memory_crt.cpp
 	@${REINPLACE_CMD} -e \
 		'/LIBS/ s|\(-lSDL_mixer\)|`${SDL_CONFIG} --libs` \1| ; \
-		 s|test $$ac_cv_lib_curl_curl_easy_init = yes|false|' \
+		 s|function displayRequirement|displayRequirement()|; \
+		 /Locales/ s|libc|libintl|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/mang|/man6|' ${WRKSRC}/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
