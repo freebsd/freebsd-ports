@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f6bff909-4a26-11db-a4cc-000a48049292">
+    <topic>libmms -- stack-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libmms</name>
+	<range><lt>0.3</lt></range>
+      </package>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mitre CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2200">
+	  <p>Stack-based buffer overflow in libmms, as used by (a)
+	    MiMMS 0.0.9 and (b) xine-lib 1.1.0 and earlier, allows
+	    remote attackers to cause a denial of service (application
+	    crash) and possibly execute arbitrary code via the (1)
+	    send_command, (2) string_utf16, (3) get_data, and (4)
+	    get_media_packet functions, and possibly other functions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2200</cvename>
+      <bid>18608</bid>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=374577</url>
+    </references>
+    <dates>
+      <discovery>2006-05-04</discovery>
+      <entry>2006-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1fe734bf-4a06-11db-b48d-00508d6a62df">
     <topic>opera -- RSA Signature Forgery</topic>
     <affects>
