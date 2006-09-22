@@ -34,6 +34,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1fe734bf-4a06-11db-b48d-00508d6a62df">
+    <topic>opera -- RSA Signature Forgery</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>9.02</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera reports:</p>
+	<blockquote cite="http://www.opera.com/support/search/supsearch.dml?index=845">
+	  <p>A specially crafted digital certificate can bypass Opera's
+	    certificate signature verification. Forged certificates can
+	    contain any false information the forger chooses, and Opera
+	    will still present it as valid. Opera will not present any
+	    warning dialogs in this case, and the security status will
+	    be the highest possible (3). This defeats the protection
+	    against "man in the middle", the attacks that SSL was
+	    designed to prevent.</p>
+	  <p>There is a flaw in OpenSSL's RSA signature verification
+	    that affects digital certificates using 3 as the public
+	    exponent. Some of the certificate issuers that are on
+	    Opera's list of trusted signers have root certificates with
+	    3 as the public exponent. The forged certificate can appear
+	    to be signed by one of these.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4339</cvename>
+      <url>http://secunia.com/advisories/21982/</url>
+      <url>http://secunia.com/advisories/21709/</url>
+      <url>http://www.cdc.informatik.tu-darmstadt.de/securebrowser/</url>
+      <url>http://www.openssl.org/news/secadv_20060905.txt</url>
+      <url>http://www.mozilla.org/security/announce/2006/mfsa2006-60.html</url>
+    </references>
+    <dates>
+      <discovery>2006-09-18</discovery>
+      <entry>2006-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6296105-449b-11db-ba89-000c6ec775d9">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
