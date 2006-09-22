@@ -7,7 +7,7 @@
 
 PORTNAME=	netpanzer
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/netpanzer/
 
@@ -16,16 +16,13 @@ COMMENT=	Real time, isometric view, tank multiplayer strategy game
 
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-RUN_DEPENDS=	${X11BASE}/share/netpanzer/wads/netp.act:${PORTSDIR}/games/netpanzer-data
-
-CONFLICTS=	netpanzerdata*
+RUN_DEPENDS=	${LOCALBASE}/share/netpanzer/wads/netp.act:${PORTSDIR}/games/netpanzer-data
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libphysfs=${LOCALBASE} --without-wx-config
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer image ttf
 USE_GNOME=	libxml2
@@ -47,6 +44,6 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} jam)
 
 do-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${INSTALL_TARGET})
+	@(cd ${INSTALL_WRKSRC} && jam ${INSTALL_TARGET})
 
 .include <bsd.port.mk>
