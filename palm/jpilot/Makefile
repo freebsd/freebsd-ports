@@ -7,25 +7,25 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	0.99.8
-PORTREVISION=	4
+PORTVERSION=	0.99.9
+PORTREVISION=	0
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
 MAINTAINER?=	samm@os2.kiev.ua
 COMMENT=	Desktop Organizer Software for the Palm Pilot
 
-LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-pilot-prefix=${LOCALBASE}
+USE_LDCONFIG=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -38,9 +38,9 @@ PLIST_SUB=		NLS="@comment "
 
 .if defined(WITH_GTK1)
 USE_GNOME+=	gtk12
+CONFIGURE_ARGS+=	--disable-gtk2=yes
 .else
 USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--enable-gtk2=yes
 .endif
 
 MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
@@ -71,7 +71,7 @@ post-install:
 .for ext in html png jpg
 	${INSTALL_DATA} ${WRKSRC}/docs/*.${ext} ${DOCSDIR}
 .endfor
-.for i in AUTHORS BUGS COPYING ChangeLog INSTALL README TODO UPGRADING
+.for i in AUTHORS BUGS COPYING ChangeLog INSTALL README TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/icons/README ${DOCSDIR}/README.icons
