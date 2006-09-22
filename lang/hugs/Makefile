@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hugs98
-PORTVERSION=	200605
+PORTVERSION=	200609
 CATEGORIES=	lang haskell
-MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/2006-05/
+MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/2006-09/
 DISTNAME=	${PORTNAME}-plus-${HUGS_DATE}
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #OPTIONS=	HUGS_OPENGL "OpenGL/GLUT support" off
-HUGS_DATE=	May2006
+HUGS_DATE=	Sep2006
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -28,7 +28,8 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--with-pthreads
+CONFIGURE_ARGS+=	--with-pthreads \
+			--mandir=${PREFIX}/man
 
 .if (${OSVERSION} < 500000)
 BROKEN=		missing data type declarations
