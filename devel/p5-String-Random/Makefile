@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	String-Random
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -24,10 +24,8 @@ MAN3=		String::Random.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e '$$_ = "" if m{use warnings};' ${WRKSRC}/lib/String/Random.pm \
-		${WRKSRC}/Build.PL ${WRKSRC}/t/*.t
+.if ${PERL_LEVEL} < 500601
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
