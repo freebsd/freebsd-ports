@@ -246,13 +246,10 @@
 @dirrmtry %%SITE_PERL%%/Mail/Message/TransferEnc
 @dirrmtry %%SITE_PERL%%/Mail/Message/Replace
 @dirrmtry %%SITE_PERL%%/Mail/Message/Head
-@dirrmtry %%SITE_PERL%%/Mail/Message/Head
-@dirrmtry %%SITE_PERL%%/Mail/Message/Field
 @dirrmtry %%SITE_PERL%%/Mail/Message/Field
 @dirrmtry %%SITE_PERL%%/Mail/Message/Convert
 @dirrmtry %%SITE_PERL%%/Mail/Message/Construct
 @dirrmtry %%SITE_PERL%%/Mail/Message/Body
-@dirrmtry %%SITE_PERL%%/Mail/Message
 @dirrmtry %%SITE_PERL%%/Mail/Message
 @dirrmtry %%SITE_PERL%%/Mail/Box/Tie
 @dirrmtry %%SITE_PERL%%/Mail/Box/Thread
@@ -267,11 +264,9 @@
 @dirrmtry %%SITE_PERL%%/Mail/Box/MH
 @dirrmtry %%SITE_PERL%%/Mail/Box/Locker
 @dirrmtry %%SITE_PERL%%/Mail/Box/IMAP4
-@dirrmtry %%SITE_PERL%%/Mail/Box/IMAP4
 @dirrmtry %%SITE_PERL%%/Mail/Box/File
 @dirrmtry %%SITE_PERL%%/Mail/Box/Dir
 @dirrmtry %%SITE_PERL%%/Mail/Box/Dbx
-@dirrmtry %%SITE_PERL%%/Mail/Box
 @dirrmtry %%SITE_PERL%%/Mail/Box
 @dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box
