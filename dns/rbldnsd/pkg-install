@@ -18,7 +18,7 @@ fi
 
 if ! pw usershow "$RBLDNSUSER" 2>/dev/null 1>&2; then
         if pw useradd $RBLDNSUSER -g $RBLDNSGROUP -h - \
-                -s "/sbin/nologin" -d "/nonexistent" \
+                -s "/usr/sbin/nologin" -d "/nonexistent" \
                 -c "rbldnsd pseudo-user"; \
         then
                 echo "=> Added user \"$RBLDNSUSER\"."
