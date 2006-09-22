@@ -46,7 +46,7 @@ PLIST_SUB+=		TRANSICU="@comment "
 .else
 .if (${TRANSCODER} == "icu")
 PKGNAMESUFFIX+=		-icu
-LIB_DEPENDS+=		icuuc.34:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT}
 MAKE_ENV+=		ICUROOT=${ICUROOT}
