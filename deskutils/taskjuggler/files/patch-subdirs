@@ -1,0 +1,10 @@
+--- subdirs.orig	Tue Sep  5 18:27:51 2006
++++ subdirs	Tue Sep 19 23:59:16 2006
+@@ -2,7 +2,6 @@
+ Contrib
+ Examples
+ TaskJugglerUI
+-TestSuite
+ docs
+ i18n
+ man
