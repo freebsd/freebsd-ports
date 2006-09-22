@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	libgpg-error
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
