@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Time-Piece
-PORTVERSION=	1.09
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Time
@@ -20,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Time::Piece.3 Time::Seconds.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
