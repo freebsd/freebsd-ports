@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20060905
+PORTVERSION=	20060922
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -26,7 +26,6 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		unzip:${PORTSDIR}/archivers/unzip
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
-		CURL "Support URL downloading" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_AUTOTOOLS=	libtool:15
@@ -50,7 +49,9 @@ CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--enable-bigstack \
 		--disable-gethostbyname_r \
 		--enable-readdir_r \
-		--disable-dependency-tracking
+		--disable-dependency-tracking \
+		--enable-experimental \
+		--without-libcurl
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I../libclamav \
 		${PTHREAD_CFLAGS}
@@ -119,13 +120,6 @@ CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
 .else
 PLIST_SUB+=	CLAMAV-MILTER="@comment "
-.endif
-
-.if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-libcurl
-.else
-CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
 .if defined(WITH_STDERR)
