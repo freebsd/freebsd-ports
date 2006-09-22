@@ -7,6 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -16,7 +17,7 @@ COMMENT=	A library to make access to GnuPG easier
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		gpgsm:${PORTSDIR}/security/gnupg-devel
-LIB_DEPENDS=	gpg-error:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	gpg-error.3:${PORTSDIR}/security/libgpg-error
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
