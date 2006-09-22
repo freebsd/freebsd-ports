@@ -2,6 +2,7 @@ bin/pdfbklt
 bin/pdfrevert
 bin/pdfstamp
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF/.packlist
+%%SITE_PERL%%/Text/PDF.pm
 %%SITE_PERL%%/Text/PDF/Array.pm
 %%SITE_PERL%%/Text/PDF/Bool.pm
 %%SITE_PERL%%/Text/PDF/Dict.pm
