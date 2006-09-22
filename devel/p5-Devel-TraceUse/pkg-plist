@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Devel/TraceUse.pm
+@dirrmtry rmdir %D/%%SITE_PERL%%/Devel 2>/dev/null || true
