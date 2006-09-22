@@ -1,5 +1,5 @@
---- install.sh.orig	Fri Jul 28 08:10:44 2006
-+++ install.sh	Wed Aug  2 19:11:33 2006
+--- install.sh.orig	Thu Sep 21 22:27:04 2006
++++ install.sh	Thu Sep 21 22:38:24 2006
 @@ -805,10 +805,9 @@
      case "${machine}:${os}" in
  	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD)
@@ -187,17 +187,21 @@
  
      # Documentation
      debug_msg 1 "Documentation"
-@@ -1242,9 +1182,6 @@
+@@ -1242,13 +1182,6 @@
  	mkdir $mkdirv $mkdirp $share_dir/ini/
  	chmod $chmodv 755 $share_dir/ini
  	cp $cpv $cpf $cpR ini/* $share_dir/ini/
 -	if test -f $share_dir/ini/pluginpath.ini
--	then echo ${str_localdirplugin} >> $share_dir/ini/pluginpath.ini
+-	then (
+-	    echo
+-	    echo '; locally installed:'
+-	    echo "${str_localdirplugin}=1"
+-	    ) >> $share_dir/ini/pluginpath.ini
 -	fi
      fi
  
      mkdir $mkdirv $mkdirp $share_dir/locale/
-@@ -1336,43 +1273,11 @@
+@@ -1340,43 +1273,11 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -242,7 +246,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1424,19 +1329,19 @@
+@@ -1428,19 +1329,19 @@
      # arg1 = location
      # arg2 = type
  
@@ -265,7 +269,7 @@
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1460,7 +1365,7 @@
+@@ -1464,7 +1365,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -274,7 +278,7 @@
  Terminal=false"
  
  # Application is not a category, according to
-@@ -1475,25 +1380,26 @@
+@@ -1479,25 +1380,26 @@
  	if test "${2}" = "xdg"; then
  	    desktop_contain="${desktop_contain}
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -307,7 +311,7 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1524,55 +1430,28 @@
+@@ -1528,55 +1430,28 @@
  
      debug_msg 0 "in icons()"
  
