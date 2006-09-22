@@ -137,6 +137,7 @@ bin/updater
 %%PLANEDIR%%/data/gui/exchange.xml
 %%PLANEDIR%%/data/gui/filenavigation.xml
 %%PLANEDIR%%/data/gui/fingering.xml
+%%PLANEDIR%%/data/gui/gameboard.xml
 %%PLANEDIR%%/data/gui/glyph.xml
 %%PLANEDIR%%/data/gui/gmaddeditaction.xml
 %%PLANEDIR%%/data/gui/gmguiwindow.xml
@@ -314,6 +315,8 @@ bin/updater
 %%EXAMPLE%%share/examples/planeshift/quests.sql
 %%EXAMPLE%%share/examples/planeshift/race_info.sql
 %%EXAMPLE%%share/examples/planeshift/sc_npc_definitions.sql
+%%EXAMPLE%%share/examples/planeshift/sc_waypoint_links.sql
+%%EXAMPLE%%share/examples/planeshift/sc_waypoints.sql
 %%EXAMPLE%%share/examples/planeshift/sectors.sql
 %%EXAMPLE%%share/examples/planeshift/security_levels.sql
 %%EXAMPLE%%share/examples/planeshift/server_options.sql
