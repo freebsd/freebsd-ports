@@ -92,40 +92,31 @@ bin/tmda-sendmail
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
-%%PORTDOCS%%%%DOCSDIR%%/challengeresponse.html
-%%PORTDOCS%%%%DOCSDIR%%/config-client.html
-%%PORTDOCS%%%%DOCSDIR%%/config-filter.html
-%%PORTDOCS%%%%DOCSDIR%%/config-pre.html
-%%PORTDOCS%%%%DOCSDIR%%/config-server.html
 %%PORTDOCS%%%%DOCSDIR%%/config-vars.html
-%%PORTDOCS%%%%DOCSDIR%%/config.html
-%%PORTDOCS%%%%DOCSDIR%%/donations.html
-%%PORTDOCS%%%%DOCSDIR%%/download.html
-%%PORTDOCS%%%%DOCSDIR%%/features.html
-%%PORTDOCS%%%%DOCSDIR%%/filter-sources.html
-%%PORTDOCS%%%%DOCSDIR%%/history.html
-%%PORTDOCS%%%%DOCSDIR%%/howto-template.html
+%%PORTDOCS%%%%DOCSDIR%%/img/blocksmall.png
+%%PORTDOCS%%%%DOCSDIR%%/img/stripes.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-186x253.png
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-47x64.png
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-562x765.png
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-70x95.png
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-93x127.png
 %%PORTDOCS%%%%DOCSDIR%%/img/tmda-nt-616x616.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install.html
-%%PORTDOCS%%%%DOCSDIR%%/logos.html
-%%PORTDOCS%%%%DOCSDIR%%/requirements.html
-%%PORTDOCS%%%%DOCSDIR%%/tmda-ofmipd.html
-%%PORTDOCS%%%%DOCSDIR%%/tmda-vdomains.html
-%%PORTDOCS%%%%DOCSDIR%%/trouble.html
-%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/tmda.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/collectaddys
 %%EXAMPLESDIR%%/def2html
+%%EXAMPLESDIR%%/dot-tmda/README
+%%EXAMPLESDIR%%/dot-tmda/config
+%%EXAMPLESDIR%%/dot-tmda/crypt_key
+%%EXAMPLESDIR%%/dot-tmda/filters/incoming
+%%EXAMPLESDIR%%/dot-tmda/filters/outgoing
+%%EXAMPLESDIR%%/dot-tmda/lists/blacklist
+%%EXAMPLESDIR%%/dot-tmda/lists/confirmed
+%%EXAMPLESDIR%%/dot-tmda/lists/whitelist
 %%EXAMPLESDIR%%/printcdb
 %%EXAMPLESDIR%%/printdbm
-%%EXAMPLESDIR%%/sample.config
 %%EXAMPLESDIR%%/sendit.sh
 %%EXAMPLESDIR%%/smtp-check-sender
 %%EXAMPLESDIR%%/tmda.el
@@ -137,8 +128,17 @@ bin/tmda-sendmail
 %%EXAMPLESDIR%%/vpopmail-vdir.sh
 %%EXAMPLESDIR%%/vtmdarc
 %%EXAMPLESDIR%%/wrapfd3.sh
+@dirrm %%EXAMPLESDIR%%/dot-tmda/lists
+@dirrm %%EXAMPLESDIR%%/dot-tmda/filters
+@dirrm %%EXAMPLESDIR%%/dot-tmda
 @dirrm %%EXAMPLESDIR%%
-%%DATADIR%%/bounce.txt
+%%DATADIR%%/bounce_expired_dated.txt
+%%DATADIR%%/bounce_fail_dated.txt
+%%DATADIR%%/bounce_fail_keyword.txt
+%%DATADIR%%/bounce_fail_sender.txt
+%%DATADIR%%/bounce_incoming.txt
+%%DATADIR%%/bounce_invalid_confirmation.txt
+%%DATADIR%%/bounce_missing_pending.txt
 %%DATADIR%%/confirm_accept.txt
 %%DATADIR%%/confirm_request.txt
 @dirrm %%DATADIR%%
