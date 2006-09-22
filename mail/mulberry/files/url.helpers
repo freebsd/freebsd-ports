@@ -1,0 +1,3 @@
+http firefox %s
+https firefox %s
+ftp firefox %s

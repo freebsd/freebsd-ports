@@ -1,0 +1,53 @@
+image/*; kview %s
+application/rtf; openoffice.org %s
+application/pdf; acroread %s
+video/x-ms-wmv; mplayer %s
+
+application/vnd.sun.xml.writer; openoffice.org "%s"
+application/vnd.sun.xml.writer.global; openoffice.org "%s"
+application/vnd.stardivision.writer; openoffice.org "%s"
+application/vnd.stardivision.writer-global; openoffice.org "%s"
+application/x-starwriter; openoffice.org "%s"
+application/vnd.sun.xml.writer.template; openoffice.org "%s"
+application/vnd.sun.xml.calc; openoffice.org "%s"
+application/vnd.stardivision.calc; openoffice.org "%s"
+application/x-starcalc; openoffice.org "%s"
+application/vnd.sun.xml.calc.template; openoffice.org "%s"
+application/vnd.sun.xml.impress; openoffice.org "%s"
+application/vnd.stardivision.impress; openoffice.org "%s"
+application/vnd.stardivision.impress-packed; openoffice.org "%s"
+application/x-starimpress; openoffice.org "%s"
+application/vnd.sun.xml.impress.template; openoffice.org "%s"
+application/vnd.sun.xml.draw; openoffice.org "%s"
+application/vnd.stardivision.draw; openoffice.org "%s"
+application/x-stardraw; openoffice.org "%s"
+application/vnd.sun.xml.draw.template; openoffice.org "%s"
+application/vnd.sun.xml.math; openoffice.org "%s"
+application/vnd.stardivision.math; openoffice.org "%s"
+application/x-starmath; openoffice.org "%s"
+
+application/futuresplash;;\
+application/ms-tnef; tnef2txt "%s"
+application/postscript; kghostview "%s"
+application/smil; realplay "%u"
+application/vnd.ms-excel; openoffice.org "%s"
+application/vnd.ms-word; openoffice.org "%s"
+application/msword; openoffice.org "%s"
+application/vnd.ms-powerpoint; openoffice.org "%s"
+application/vnd.ms-schedule; openoffice.org "%s"
+application/vnd.rn-rn_music_package;freeamp "%s"
+application/x-dvi; kdvi "%s"
+application/x-freeamp-theme;freeamp "%s"
+audio/mp3;xmms -e "%s"
+
+audio/mpeg;xmms -e "%s"
+audio/mpegurl;xmms -e "%s"
+audio/pn-realaudio-plugin;;\
+audio/scpls;xmms -e "%s"
+audio/vnd.rn-realaudio; realplay "%u"
+audio/x-mp3;freeamp "%s"
+audio/x-mpeg;freeamp "%s"
+audio/x-mpegurl;freeamp "%s"
+audio/x-pn-realaudio; realplay "%u"
+audio/x-scpls;xmms -e "%s"
+video/mpeg;xanim "%s"
