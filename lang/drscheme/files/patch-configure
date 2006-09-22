@@ -1,0 +1,10 @@
+--- configure--	Mon Jul 17 18:53:27 2006
++++ configure	Fri Sep 22 14:10:56 2006
+@@ -5331,6 +5331,7 @@
+     ;;
+   FreeBSD)
+     LIBS="$LIBS -rdynamic"
++    DYN_CFLAGS="-fPIC"
+     ;;
+   OpenBSD)
+     LIBS="$LIBS -rdynamic"
