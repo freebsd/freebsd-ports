@@ -1,0 +1,15 @@
+--- doc/xml/Makefile.in.ori	Wed Sep 13 08:03:19 2006
++++ doc/xml/Makefile.in	Wed Sep 13 08:03:24 2006
+@@ -582,9 +582,9 @@
+ 
+ 
+ all:
+-	$(XSLTPROC) $(XSLTPROC_FLAGS) -o $(top_srcdir)/doc/man/ \
+-	$(top_srcdir)/../doc/xml/docbook.xsl \
+-	$(top_srcdir)/../doc/xml/pilot-link.docbook
++#	$(XSLTPROC) $(XSLTPROC_FLAGS) -o $(top_srcdir)/doc/man/ \
++#	$(top_srcdir)/../doc/xml/docbook.xsl \
++#	$(top_srcdir)/../doc/xml/pilot-link.docbook
+ 
+ distclean-local:
+ 	$(RM) -f xml/catalog.xml
