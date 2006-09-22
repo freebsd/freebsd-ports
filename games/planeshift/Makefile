@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	planeshift
-PORTVERSION=	0.3.015b
+PORTVERSION=	0.3.016
 CATEGORIES=	games
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 
