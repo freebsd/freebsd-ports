@@ -7,7 +7,6 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.11
-PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -22,7 +21,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_ICONV=      yes
+USE_ICONV=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
@@ -38,7 +37,7 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--disable-video-x11
 .endif
 
-# XXX: exists untill it will be committed to bsd.port.mk
+# XXX: exists until it will be committed to bsd.port.mk
 COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 		2>&1) && \
 		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
@@ -48,10 +47,10 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 EXAMPLES=	test/*.c test/*.bmp test/*.dat test/*.xbm test/*.wav
 DOCS=		BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
 
-OPTIONS=	NAS	"Include support for the Network Audio System" Off \
-		AALIB	"Include support for AA-lib" On \
-		GL	"Include support for OpenGL" On \
-		GGI	"Include support for GGI" Off
+OPTIONS=	NAS	"Include support for the Network Audio System"	Off	\
+		AALIB	"Include support for AA-lib"			On	\
+		GL	"Include support for OpenGL"			On	\
+		GGI	"Include support for GGI"			Off
 
 .include <bsd.port.pre.mk>
 
