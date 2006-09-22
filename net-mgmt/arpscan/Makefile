@@ -7,13 +7,14 @@
 
 PORTNAME=	arpscan
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ish.cx/~jason/arpscan/
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Simple arp scanner
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
+LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
