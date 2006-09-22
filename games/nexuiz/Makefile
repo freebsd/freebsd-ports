@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,12 +21,12 @@ USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
 MAKEFILE=	BSDmakefile
-MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -ffast-math -funroll-loops"
+MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
 ALL_TARGET=	#
 
 PLIST_FILES=	%%CLIENT%%bin/${PORTNAME}-glx %%SDL_CLIENT%%bin/${PORTNAME}-sdl \
 		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/common-spog.pk3 \
-		%%DATADIR%%/data/data20060614.pk3
+		%%DATADIR%%/data/data20060905.pk3
 PLIST_DIRS=	%%DATADIR%%/data %%DATADIR%%
 
 OPTIONS=	CLIENT		"Build GLX client"		on \
@@ -39,7 +38,8 @@ OPTIONS=	CLIENT		"Build GLX client"		on \
 .if !(defined(WITHOUT_CLIENT) && defined(WITHOUT_SDL_CLIENT))
 # Loads libraries on run-time, thus RUN_DEPENDS
 RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis \
-		${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg
+		${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		${LOCALBASE}/lib/libpng.so:${PORTSDIR}/graphics/png
 .endif
 
 .if !defined(WITHOUT_CLIENT)
@@ -66,14 +66,13 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 pre-patch:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20060614.zip \
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20060905.zip \
 		-d ${WRKDIR}/Nexuiz/sources
 	@${REINPLACE_CMD} -E 's,sdl-config,${SDL_CONFIG},g' \
 		${WRKSRC}/makefile.inc
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 81,$$d' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 88,$$d' \
 		${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E 's,(fs_basedir\, )"",\1"${DATADIR}",' ${WRKSRC}/fs.c
-	@${REINPLACE_CMD} -e 's,libpng12\.so\.0,libpng\.so,' ${WRKSRC}/image_png.c
 	@${REINPLACE_CMD} -e 's,RTLD_LAZY,& | RTLD_GLOBAL,' ${WRKSRC}/vid_glx.c
 
 do-build:
