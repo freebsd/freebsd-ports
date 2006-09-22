@@ -30,7 +30,8 @@ load_rc_config $name
 [ -z "$snort_conf" ]      && snort_conf="%%PREFIX%%/etc/snort/snort.conf"
 [ -z "$snort_flags" ]     && snort_flags="-Dq"
 
-[ -n "$snort_interface" ] && snort_flags="$snort_flags -i $snort_interface"
+[ -n "$snort_interface" ] && snort_flags="$snort_flags -i $snort_interface" \
+                          && pidfile="/var/run/snort_${snort_interface}.pid"
 [ -n "$snort_conf" ]      && snort_flags="$snort_flags -c $snort_conf"
 
 run_rc_command "$1"

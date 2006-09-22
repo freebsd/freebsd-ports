@@ -51,6 +51,10 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.la
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.a
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicengine
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.a
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so.0
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.la
@@ -62,6 +66,7 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
 %%DYNAMIC%%@dirrmtry lib/snort
 %%EXAMPLESDIR%%/classification.config-sample
+%%EXAMPLESDIR%%/create_db2
 %%EXAMPLESDIR%%/create_mssql
 %%EXAMPLESDIR%%/create_mysql
 %%EXAMPLESDIR%%/create_oracle.sql
@@ -91,6 +96,7 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.asn1
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/README.database
+%%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
 %%PORTDOCS%%%%DOCSDIR%%/README.flow
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
