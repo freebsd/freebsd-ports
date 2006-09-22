@@ -1,0 +1,8 @@
+--- TestSuite/Misc/export/project_a.tjp.orig	Tue Sep  5 18:27:47 2006
++++ TestSuite/Misc/export/project_a.tjp	Mon Sep 18 23:40:15 2006
+@@ -1,4 +1,4 @@
+-project test "Test" "$Id" 2000-01-01-00:00:00-MST 2000-03-10-00:00:00-MST {
++project test "Test" "$Id" 2000-01-01-00:00:00-UTC 2000-03-10-00:00:00-UTC {
+ 	timezone "US/Mountain"
+ 	extend task {
+ 		text UserText "User Text"

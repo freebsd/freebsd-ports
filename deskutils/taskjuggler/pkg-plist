@@ -50,55 +50,56 @@ lib/libtaskjuggler.so.3
 %%WITH_KDE%%share/apps/taskjuggler/templates/en_US/Simple_Project.tjp
 %%WITH_KDE%%share/apps/taskjuggler/tips
 %%WITH_KDE%%share/config/taskjugglerrc
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/ChangeLog.xml
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/Example.xml
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/FirstProject.xml
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/GenPropertyReference.xml
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/PropertyReference.xml
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/SyntaxReference.xml
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/UsageGuide.xml
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/ChangeLog.xml
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/Example.xml
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/FirstProject.xml
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/GenPropertyReference.xml
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/PropertyReference.xml
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/SyntaxReference.xml
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/UsageGuide.xml
 %%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/index.cache.bz2
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/index.docbook
-%%PORTDOCS%%%%WITH_KDE%%share/doc/HTML/en/taskjuggler/taskjuggler.xml
-%%DOCSDIR%%/Examples/BigProject/Common/Resources.tji
-%%DOCSDIR%%/Examples/BigProject/Project1/Project1-Interface.tji
-%%DOCSDIR%%/Examples/BigProject/Project1/Project1.html
-%%DOCSDIR%%/Examples/BigProject/Project1/Project1.tjp
-%%DOCSDIR%%/Examples/BigProject/Project2/AccountingReport.html
-%%DOCSDIR%%/Examples/BigProject/Project2/Project2.html
-%%DOCSDIR%%/Examples/BigProject/Project2/Project2.tjp
-%%DOCSDIR%%/Examples/BigProject/README
-%%DOCSDIR%%/Examples/FirstProject/Accounting.html
-%%DOCSDIR%%/Examples/FirstProject/AccountingSoftware.tjp
-%%DOCSDIR%%/Examples/FirstProject/Calendar.html
-%%DOCSDIR%%/Examples/FirstProject/Status-Report.html
-%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-anders.html
-%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-joe.html
-%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-khaled.html
-%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-paul.html
-%%DOCSDIR%%/Examples/ShiftSchedule/Calendar-sally.html
-%%DOCSDIR%%/Examples/ShiftSchedule/ResourceUsage-Jun.html
-%%DOCSDIR%%/Examples/ShiftSchedule/ShiftSchedule.tjp
-%%DOCSDIR%%/Examples/ShiftSchedule/ShiftTimes-06-03.html
-%%DOCSDIR%%/Examples/ShiftSchedule/ShiftTimes-06-10.html
-%%DOCSDIR%%/Examples/ShiftSchedule/TaskCoverage-Jun.html
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/index.docbook
+%%PORTDOCS%%share/doc/HTML/en/taskjuggler/taskjuggler.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/Accounting.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/Calendar.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/Status-Report.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/AccountingSoftware.tjp
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Common/Resources.tji
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1.tjp
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1-Interface.tji
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project2/AccountingReport.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project2/Project2.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project2/Project2.tjp
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-anders.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-joe.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-khaled.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-paul.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-sally.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ResourceUsage-Jun.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftTimes-06-03.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftTimes-06-10.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/TaskCoverage-Jun.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftSchedule.tjp
 %%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tji.png
 %%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjp.png
 %%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjx.png
 %%WITH_KDE%%share/icons/hicolor/16x16/apps/taskjuggler.png
 %%WITH_KDE%%share/icons/hicolor/32x32/apps/taskjuggler.png
+%%WITH_KDE%%share/locale/tr/LC_MESSAGES/taskjuggler.mo
 %%WITH_KDE%%share/mimelnk/application/x-tji.desktop
 %%WITH_KDE%%share/mimelnk/application/x-tjp.desktop
 %%WITH_KDE%%share/mimelnk/application/x-tjx.desktop
-@dirrm %%DOCSDIR%%/Examples/ShiftSchedule
-@dirrm %%DOCSDIR%%/Examples/FirstProject
-@dirrm %%DOCSDIR%%/Examples/BigProject/Project2
-@dirrm %%DOCSDIR%%/Examples/BigProject/Project1
-@dirrm %%DOCSDIR%%/Examples/BigProject/Common
-@dirrm %%DOCSDIR%%/Examples/BigProject
-@dirrm %%DOCSDIR%%/Examples
-@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%WITH_KDE%%@dirrm share/doc/HTML/en/taskjuggler
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/ShiftSchedule
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/FirstProject
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Project2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Project1
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Common
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm share/doc/HTML/en/taskjuggler
 %%WITH_KDE%%@dirrm share/apps/taskjuggler/templates/en_US
 %%WITH_KDE%%@dirrm share/apps/taskjuggler/templates
 %%WITH_KDE%%@dirrm share/apps/taskjuggler/icons/crystalsvg/32x32/actions
