@@ -18,7 +18,6 @@ lib/hugs/demos/EvalRed.hs
 lib/hugs/demos/Examples.hs
 lib/hugs/demos/Expr.hs
 lib/hugs/demos/FastSort.hs
-lib/hugs/demos/Gofer.hs
 lib/hugs/demos/GLUT/BOGLGP/Chapter01/OnYourOwn1.hs
 lib/hugs/demos/GLUT/BOGLGP/Chapter01/Simple.hs
 lib/hugs/demos/GLUT/BOGLGP/Chapter02/OnYourOwn1.hs
@@ -107,6 +106,7 @@ lib/hugs/demos/GLUT/RedBook/Trim.hs
 lib/hugs/demos/GLUT/RedBook/UnProject.hs
 lib/hugs/demos/GLUT/RedBook/VArray.hs
 lib/hugs/demos/GLUT/RedBook/Wrap.hs
+lib/hugs/demos/Gofer.hs
 lib/hugs/demos/HGL/GTest.hs
 lib/hugs/demos/HGL/HelloWorld.hs
 lib/hugs/demos/HGL/README
@@ -244,7 +244,6 @@ lib/hugs/oldlib/DiffArray.hs
 lib/hugs/oldlib/Dynamic.hs
 lib/hugs/oldlib/EdisonPrelude.hs
 lib/hugs/oldlib/Exception.hs
-lib/hugs/oldlib/FiniteMap.lhs
 lib/hugs/oldlib/ForeignObj.hs
 lib/hugs/oldlib/GenericPrint.hs
 lib/hugs/oldlib/GetOpt.lhs
@@ -324,7 +323,6 @@ lib/hugs/oldlib/SampleVar.lhs
 lib/hugs/oldlib/Semaphore.lhs
 lib/hugs/oldlib/Sequence.hs
 lib/hugs/oldlib/SequenceDefaults.hs
-lib/hugs/oldlib/Set.lhs
 lib/hugs/oldlib/ShowFunctions.hs
 lib/hugs/oldlib/SimpleQueue.hs
 lib/hugs/oldlib/SizedSeq.hs
@@ -345,6 +343,43 @@ lib/hugs/oldlib/URI.hs
 lib/hugs/oldlib/UnbalancedSet.hs
 lib/hugs/oldlib/Unique.lhs
 lib/hugs/oldlib/Weak.hs
+lib/hugs/packages/Cabal/Distribution/Compat/Directory.hs
+lib/hugs/packages/Cabal/Distribution/Compat/Exception.hs
+lib/hugs/packages/Cabal/Distribution/Compat/FilePath.hs
+lib/hugs/packages/Cabal/Distribution/Compat/Map.hs
+lib/hugs/packages/Cabal/Distribution/Compat/RawSystem.hs
+lib/hugs/packages/Cabal/Distribution/Compat/ReadP.hs
+lib/hugs/packages/Cabal/Distribution/Compiler.hs
+lib/hugs/packages/Cabal/Distribution/Extension.hs
+lib/hugs/packages/Cabal/Distribution/GetOpt.hs
+lib/hugs/packages/Cabal/Distribution/InstalledPackageInfo.hs
+lib/hugs/packages/Cabal/Distribution/License.hs
+lib/hugs/packages/Cabal/Distribution/Make.hs
+lib/hugs/packages/Cabal/Distribution/Package.hs
+lib/hugs/packages/Cabal/Distribution/PackageDescription.hs
+lib/hugs/packages/Cabal/Distribution/ParseUtils.hs
+lib/hugs/packages/Cabal/Distribution/PreProcess.hs
+lib/hugs/packages/Cabal/Distribution/PreProcess/Unlit.hs
+lib/hugs/packages/Cabal/Distribution/Program.hs
+lib/hugs/packages/Cabal/Distribution/Setup.hs
+lib/hugs/packages/Cabal/Distribution/Simple.hs
+lib/hugs/packages/Cabal/Distribution/Simple/Build.hs
+lib/hugs/packages/Cabal/Distribution/Simple/Configure.hs
+lib/hugs/packages/Cabal/Distribution/Simple/GHC.hs
+lib/hugs/packages/Cabal/Distribution/Simple/GHCPackageConfig.hs
+lib/hugs/packages/Cabal/Distribution/Simple/Hugs.hs
+lib/hugs/packages/Cabal/Distribution/Simple/Install.hs
+lib/hugs/packages/Cabal/Distribution/Simple/JHC.hs
+lib/hugs/packages/Cabal/Distribution/Simple/LocalBuildInfo.hs
+lib/hugs/packages/Cabal/Distribution/Simple/NHC.hs
+lib/hugs/packages/Cabal/Distribution/Simple/Register.hs
+lib/hugs/packages/Cabal/Distribution/Simple/SrcDist.hs
+lib/hugs/packages/Cabal/Distribution/Simple/Utils.hs
+lib/hugs/packages/Cabal/Distribution/Version.hs
+lib/hugs/packages/Cabal/LICENSE
+lib/hugs/packages/Cabal/Language/Haskell/Extension.hs
+lib/hugs/packages/Cabal/Paths_Cabal.hs
+lib/hugs/packages/Cabal/copyright
 lib/hugs/packages/HGL/Graphics/HGL.hs
 lib/hugs/packages/HGL/Graphics/HGL/Core.hs
 lib/hugs/packages/HGL/Graphics/HGL/Draw.hs
@@ -374,32 +409,26 @@ lib/hugs/packages/HGL/Graphics/HGL/X11/Window.hs
 lib/hugs/packages/HGL/Graphics/SOE.hs
 lib/hugs/packages/HGL/LICENSE
 lib/hugs/packages/HGL/Paths_HGL.hs
-lib/hugs/packages/X11/Graphics/X11.hs
-lib/hugs/packages/X11/Graphics/X11/Types.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Atom.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Atom.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Color.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Color.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Context.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Context.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Display.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Display.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Event.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Event.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Font.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Font.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Misc.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Misc.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Region.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Region.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Screen.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Screen.so
-lib/hugs/packages/X11/Graphics/X11/Xlib/Types.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Window.hs
-lib/hugs/packages/X11/Graphics/X11/Xlib/Window.so
-lib/hugs/packages/X11/LICENSE
-lib/hugs/packages/X11/Paths_X11.hs
+lib/hugs/packages/HaXml/Text/ParserCombinators/PolyLazy.hs
+lib/hugs/packages/HaXml/Text/ParserCombinators/PolyStateLazy.hs
+lib/hugs/packages/HaXml/Text/XML/HaXml/Html/ParseLazy.hs
+lib/hugs/packages/HaXml/Text/XML/HaXml/ParseLazy.hs
+lib/hugs/packages/HaXml/Text/XML/HaXml/ShowXmlLazy.hs
+lib/hugs/packages/HaXml/programs/Canonicalise/Main.hs
+lib/hugs/packages/HaXml/programs/Canonicalise/Paths_HaXml.hs
+lib/hugs/packages/HaXml/programs/CanonicaliseLazy/Main.hs
+lib/hugs/packages/HaXml/programs/CanonicaliseLazy/Paths_HaXml.hs
+lib/hugs/packages/HaXml/programs/DtdToHaskell/Main.hs
+lib/hugs/packages/HaXml/programs/DtdToHaskell/Paths_HaXml.hs
+lib/hugs/packages/HaXml/programs/MkOneOf/Main.hs
+lib/hugs/packages/HaXml/programs/MkOneOf/Paths_HaXml.hs
+lib/hugs/packages/HaXml/programs/Validate/Main.hs
+lib/hugs/packages/HaXml/programs/Validate/Paths_HaXml.hs
+lib/hugs/packages/HaXml/programs/Xtract/Main.hs
+lib/hugs/packages/HaXml/programs/Xtract/Paths_HaXml.hs
+lib/hugs/packages/HaXml/programs/XtractLazy/Main.hs
+lib/hugs/packages/HaXml/programs/XtractLazy/Paths_HaXml.hs
+lib/hugs/packages/X11/autogen/Paths_X11.hs
 lib/hugs/packages/base/Control/Applicative.hs
 lib/hugs/packages/base/Control/Arrow.hs
 lib/hugs/packages/base/Control/Concurrent.hs
@@ -429,15 +458,17 @@ lib/hugs/packages/base/Data/Array/Unboxed.hs
 lib/hugs/packages/base/Data/Bits.hs
 lib/hugs/packages/base/Data/Bool.hs
 lib/hugs/packages/base/Data/ByteString.hs
-lib/hugs/packages/base/Data/ByteString.so
+lib/hugs/packages/base/Data/ByteString/Base.hs
+lib/hugs/packages/base/Data/ByteString/Base.so
 lib/hugs/packages/base/Data/ByteString/Char8.hs
-lib/hugs/packages/base/Data/ByteString/Char8.so
+lib/hugs/packages/base/Data/ByteString/Fusion.hs
+lib/hugs/packages/base/Data/ByteString/Lazy.hs
+lib/hugs/packages/base/Data/ByteString/Lazy/Char8.hs
 lib/hugs/packages/base/Data/Char.hs
 lib/hugs/packages/base/Data/Complex.hs
 lib/hugs/packages/base/Data/Dynamic.hs
 lib/hugs/packages/base/Data/Either.hs
 lib/hugs/packages/base/Data/Eq.hs
-lib/hugs/packages/base/Data/FiniteMap.hs
 lib/hugs/packages/base/Data/Fixed.hs
 lib/hugs/packages/base/Data/Foldable.hs
 lib/hugs/packages/base/Data/FunctorM.hs
@@ -516,8 +547,6 @@ lib/hugs/packages/base/System/Process/Internals.hs
 lib/hugs/packages/base/System/Process/Internals.so
 lib/hugs/packages/base/System/Random.hs
 lib/hugs/packages/base/System/Time.hs
-lib/hugs/packages/base/Text/Html.hs
-lib/hugs/packages/base/Text/Html/BlockTable.hs
 lib/hugs/packages/base/Text/ParserCombinators/ReadP.hs
 lib/hugs/packages/base/Text/ParserCombinators/ReadPrec.hs
 lib/hugs/packages/base/Text/PrettyPrint.hs
@@ -525,9 +554,6 @@ lib/hugs/packages/base/Text/PrettyPrint/HughesPJ.hs
 lib/hugs/packages/base/Text/Printf.hs
 lib/hugs/packages/base/Text/Read.hs
 lib/hugs/packages/base/Text/Read/Lex.hs
-lib/hugs/packages/base/Text/Regex.hs
-lib/hugs/packages/base/Text/Regex/Posix.hs
-lib/hugs/packages/base/Text/Regex/Posix.so
 lib/hugs/packages/base/Text/Show.hs
 lib/hugs/packages/base/Text/Show/Functions.hs
 lib/hugs/packages/cpphs/Language/Preprocessor/Cpphs.hs
@@ -623,11 +649,44 @@ lib/hugs/packages/network/LICENSE
 lib/hugs/packages/network/Network.hs
 lib/hugs/packages/network/Network/BSD.hs
 lib/hugs/packages/network/Network/BSD.so
-lib/hugs/packages/network/Network/CGI.hs
 lib/hugs/packages/network/Network/Socket.hs
 lib/hugs/packages/network/Network/Socket.so
 lib/hugs/packages/network/Network/URI.hs
 lib/hugs/packages/network/Paths_network.hs
+lib/hugs/packages/stm/Control/Concurrent/STM.hs
+lib/hugs/packages/stm/Control/Concurrent/STM/TArray.hs
+lib/hugs/packages/stm/Control/Concurrent/STM/TVar.hs
+lib/hugs/packages/stm/Control/Monad/STM.hs
+lib/hugs/packages/stm/Control/Sequential/STM.hs
+lib/hugs/packages/stm/LICENSE
+lib/hugs/packages/stm/Paths_stm.hs
+lib/hugs/packages/time/Data/Time.hs
+lib/hugs/packages/time/Data/Time/Calendar.hs
+lib/hugs/packages/time/Data/Time/Calendar/Days.hs
+lib/hugs/packages/time/Data/Time/Calendar/Easter.hs
+lib/hugs/packages/time/Data/Time/Calendar/Gregorian.hs
+lib/hugs/packages/time/Data/Time/Calendar/Julian.hs
+lib/hugs/packages/time/Data/Time/Calendar/JulianYearDay.hs
+lib/hugs/packages/time/Data/Time/Calendar/MonthDay.hs
+lib/hugs/packages/time/Data/Time/Calendar/OrdinalDate.hs
+lib/hugs/packages/time/Data/Time/Calendar/Private.hs
+lib/hugs/packages/time/Data/Time/Calendar/WeekDate.hs
+lib/hugs/packages/time/Data/Time/Clock.hs
+lib/hugs/packages/time/Data/Time/Clock/CTimeval.hs
+lib/hugs/packages/time/Data/Time/Clock/CTimeval.so
+lib/hugs/packages/time/Data/Time/Clock/POSIX.hs
+lib/hugs/packages/time/Data/Time/Clock/Scale.hs
+lib/hugs/packages/time/Data/Time/Clock/TAI.hs
+lib/hugs/packages/time/Data/Time/Clock/UTC.hs
+lib/hugs/packages/time/Data/Time/Clock/UTCDiff.hs
+lib/hugs/packages/time/Data/Time/LocalTime.hs
+lib/hugs/packages/time/Data/Time/LocalTime/Format.hs
+lib/hugs/packages/time/Data/Time/LocalTime/LocalTime.hs
+lib/hugs/packages/time/Data/Time/LocalTime/TimeOfDay.hs
+lib/hugs/packages/time/Data/Time/LocalTime/TimeZone.hs
+lib/hugs/packages/time/Data/Time/LocalTime/TimeZone.so
+lib/hugs/packages/time/LICENSE
+lib/hugs/packages/time/Paths_time.hs
 lib/hugs/packages/unix/LICENSE
 lib/hugs/packages/unix/Paths_unix.hs
 lib/hugs/packages/unix/System/Posix.hs
@@ -658,42 +717,23 @@ lib/hugs/packages/unix/System/Posix/Unistd.hs
 lib/hugs/packages/unix/System/Posix/Unistd.so
 lib/hugs/packages/unix/System/Posix/User.hs
 lib/hugs/packages/unix/System/Posix/User.so
-lib/hugs/packages/Cabal/Distribution/Compat/Directory.hs
-lib/hugs/packages/Cabal/Distribution/Compat/Exception.hs
-lib/hugs/packages/Cabal/Distribution/Compat/FilePath.hs
-lib/hugs/packages/Cabal/Distribution/Compat/RawSystem.hs
-lib/hugs/packages/Cabal/Distribution/Compat/ReadP.hs
-lib/hugs/packages/Cabal/Distribution/Compiler.hs
-lib/hugs/packages/Cabal/Distribution/Extension.hs
-lib/hugs/packages/Cabal/Distribution/GetOpt.hs
-lib/hugs/packages/Cabal/Distribution/InstalledPackageInfo.hs
-lib/hugs/packages/Cabal/Distribution/License.hs
-lib/hugs/packages/Cabal/Distribution/Make.hs
-lib/hugs/packages/Cabal/Distribution/Package.hs
-lib/hugs/packages/Cabal/Distribution/PackageDescription.hs
-lib/hugs/packages/Cabal/Distribution/ParseUtils.hs
-lib/hugs/packages/Cabal/Distribution/PreProcess.hs
-lib/hugs/packages/Cabal/Distribution/PreProcess/Unlit.hs
-lib/hugs/packages/Cabal/Distribution/Program.hs
-lib/hugs/packages/Cabal/Distribution/Setup.hs
-lib/hugs/packages/Cabal/Distribution/Simple.hs
-lib/hugs/packages/Cabal/Distribution/Simple/Build.hs
-lib/hugs/packages/Cabal/Distribution/Simple/Configure.hs
-lib/hugs/packages/Cabal/Distribution/Simple/GHC.hs
-lib/hugs/packages/Cabal/Distribution/Simple/GHCPackageConfig.hs
-lib/hugs/packages/Cabal/Distribution/Simple/Hugs.hs
-lib/hugs/packages/Cabal/Distribution/Simple/Install.hs
-lib/hugs/packages/Cabal/Distribution/Simple/JHC.hs
-lib/hugs/packages/Cabal/Distribution/Simple/LocalBuildInfo.hs
-lib/hugs/packages/Cabal/Distribution/Simple/NHC.hs
-lib/hugs/packages/Cabal/Distribution/Simple/Register.hs
-lib/hugs/packages/Cabal/Distribution/Simple/SrcDist.hs
-lib/hugs/packages/Cabal/Distribution/Simple/Utils.hs
-lib/hugs/packages/Cabal/Distribution/Version.hs
-lib/hugs/packages/Cabal/LICENSE
-lib/hugs/packages/Cabal/Language/Haskell/Extension.hs
-lib/hugs/packages/Cabal/Paths_Cabal.hs
-lib/hugs/packages/Cabal/copyright
+lib/hugs/packages/xhtml/LICENSE
+lib/hugs/packages/xhtml/Paths_xhtml.hs
+lib/hugs/packages/xhtml/Text/XHtml.hs
+lib/hugs/packages/xhtml/Text/XHtml/BlockTable.hs
+lib/hugs/packages/xhtml/Text/XHtml/Debug.hs
+lib/hugs/packages/xhtml/Text/XHtml/Extras.hs
+lib/hugs/packages/xhtml/Text/XHtml/Frameset.hs
+lib/hugs/packages/xhtml/Text/XHtml/Frameset/Attributes.hs
+lib/hugs/packages/xhtml/Text/XHtml/Frameset/Elements.hs
+lib/hugs/packages/xhtml/Text/XHtml/Internals.hs
+lib/hugs/packages/xhtml/Text/XHtml/Strict.hs
+lib/hugs/packages/xhtml/Text/XHtml/Strict/Attributes.hs
+lib/hugs/packages/xhtml/Text/XHtml/Strict/Elements.hs
+lib/hugs/packages/xhtml/Text/XHtml/Table.hs
+lib/hugs/packages/xhtml/Text/XHtml/Transitional.hs
+lib/hugs/packages/xhtml/Text/XHtml/Transitional/Attributes.hs
+lib/hugs/packages/xhtml/Text/XHtml/Transitional/Elements.hs
 %%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT.hs
 %%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Begin.hs
 %%X11%%lib/hugs/packages/GLUT/Graphics/UI/GLUT/Begin.so
@@ -984,8 +1024,8 @@ lib/hugs/programs/cpphs/Paths_cpphs.hs
 lib/hugs/programs/cpphs/Text/ParserCombinators/HuttonMeijer.hs
 lib/hugs/programs/hsc2hs/Main.hs
 lib/hugs/programs/hsc2hs/Paths_hsc2hs.hs
-share/hsc2hs-0.66/template-hsc.h
-@dirrm share/hsc2hs-0.66
+share/hsc2hs-0.67/template-hsc.h
+@dirrm share/hsc2hs-0.67
 @dirrm lib/hugs/demos/haskell-src
 @dirrm lib/hugs/demos/Cabal
 @dirrm lib/hugs/demos/GLUT/BOGLGP/Chapter01
@@ -1041,6 +1081,14 @@ share/hsc2hs-0.66/template-hsc.h
 @dirrm lib/hugs/packages/HaXml/Text/XML/HaXml
 @dirrm lib/hugs/packages/HaXml/Text/XML
 @dirrm lib/hugs/packages/HaXml/Text
+@dirrm lib/hugs/packages/HaXml/programs/Canonicalise
+@dirrm lib/hugs/packages/HaXml/programs/CanonicaliseLazy
+@dirrm lib/hugs/packages/HaXml/programs/DtdToHaskell
+@dirrm lib/hugs/packages/HaXml/programs/MkOneOf
+@dirrm lib/hugs/packages/HaXml/programs/Validate
+@dirrm lib/hugs/packages/HaXml/programs/Xtract
+@dirrm lib/hugs/packages/HaXml/programs/XtractLazy
+@dirrm lib/hugs/packages/HaXml/programs
 @dirrm lib/hugs/packages/HaXml
 %%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/PixelRectangles
 %%X11%%@dirrm lib/hugs/packages/OpenGL/Graphics/Rendering/OpenGL/GL/Texturing
@@ -1055,16 +1103,12 @@ share/hsc2hs-0.66/template-hsc.h
 @dirrm lib/hugs/packages/QuickCheck/Test/QuickCheck
 @dirrm lib/hugs/packages/QuickCheck/Test
 @dirrm lib/hugs/packages/QuickCheck
-@dirrm lib/hugs/packages/X11/Graphics/X11/Xlib
-@dirrm lib/hugs/packages/X11/Graphics/X11
-@dirrm lib/hugs/packages/X11/Graphics
+@dirrm lib/hugs/packages/X11/autogen
 @dirrm lib/hugs/packages/X11
 @dirrm lib/hugs/packages/base/Text/Show
-@dirrm lib/hugs/packages/base/Text/Regex
 @dirrm lib/hugs/packages/base/Text/Read
 @dirrm lib/hugs/packages/base/Text/PrettyPrint
 @dirrm lib/hugs/packages/base/Text/ParserCombinators
-@dirrm lib/hugs/packages/base/Text/Html
 @dirrm lib/hugs/packages/base/Text
 @dirrm lib/hugs/packages/base/System/Process
 @dirrm lib/hugs/packages/base/System/Posix
@@ -1078,6 +1122,7 @@ share/hsc2hs-0.66/template-hsc.h
 @dirrm lib/hugs/packages/base/Foreign
 @dirrm lib/hugs/packages/base/Debug
 @dirrm lib/hugs/packages/base/Data/STRef
+@dirrm lib/hugs/packages/base/Data/ByteString/Lazy
 @dirrm lib/hugs/packages/base/Data/ByteString
 @dirrm lib/hugs/packages/base/Data/Array/IO
 @dirrm lib/hugs/packages/base/Data/Array
@@ -1120,6 +1165,24 @@ share/hsc2hs-0.66/template-hsc.h
 @dirrm lib/hugs/packages/unix
 @dirrm lib/hugs/packages/network/Network
 @dirrm lib/hugs/packages/network
+@dirrm lib/hugs/packages/stm/Control/Concurrent/STM
+@dirrm lib/hugs/packages/stm/Control/Concurrent
+@dirrm lib/hugs/packages/stm/Control/Monad
+@dirrm lib/hugs/packages/stm/Control/Sequential
+@dirrm lib/hugs/packages/stm/Control
+@dirrm lib/hugs/packages/stm
+@dirrm lib/hugs/packages/time/Data/Time/LocalTime
+@dirrm lib/hugs/packages/time/Data/Time/Clock
+@dirrm lib/hugs/packages/time/Data/Time/Calendar
+@dirrm lib/hugs/packages/time/Data/Time
+@dirrm lib/hugs/packages/time/Data
+@dirrm lib/hugs/packages/time
+@dirrm lib/hugs/packages/xhtml/Text/XHtml/Frameset
+@dirrm lib/hugs/packages/xhtml/Text/XHtml/Strict
+@dirrm lib/hugs/packages/xhtml/Text/XHtml/Transitional
+@dirrm lib/hugs/packages/xhtml/Text/XHtml
+@dirrm lib/hugs/packages/xhtml/Text
+@dirrm lib/hugs/packages/xhtml
 @dirrm lib/hugs/packages
 @dirrm lib/hugs/programs/cpphs/Language/Preprocessor/Cpphs
 @dirrm lib/hugs/programs/cpphs/Language/Preprocessor
