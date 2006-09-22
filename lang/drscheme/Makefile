@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	351
-PORTREVISION=	1
+PORTVERSION=	352
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -23,14 +22,21 @@ EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft	\
+		jpeg.9:${PORTSDIR}/graphics/jpeg	\
+		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib --enable-lt=${LIBTOOL} --disable-libpng \
-		--disable-libjpeg
+CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared \
+		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
+		--enable-lt=${LIBTOOL} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+
+# Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/plt/src
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15:env
@@ -40,7 +46,9 @@ MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
 OPTIONS=	CAIRO "use Cairo graphics" off \
 		MMM "use 3m garbage collection" off
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
+
+PLIST_SUB+=	ARCH=${ARCH}
 
 PLTPATCHES=	# none yet for this version
 

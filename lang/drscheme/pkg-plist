@@ -18,14 +18,15 @@
 %%MMM%%bin/slideshow3m
 %%MMM%%bin/swindle3m
 %%MMM%%bin/tex2page3m
-%%MMM%%lib/libmred3m-351.so
+%%MMM%%lib/libmred3m-352.so
 %%MMM%%lib/libmred3m.a
 %%MMM%%lib/libmred3m.la
 %%MMM%%lib/libmred3m.so
-%%MMM%%lib/libmzscheme3m-351.so
+%%MMM%%lib/libmzscheme3m-352.so
 %%MMM%%lib/libmzscheme3m.a
 %%MMM%%lib/libmzscheme3m.la
 %%MMM%%lib/libmzscheme3m.so
+%%MMM%%lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m/make-gl-info-helper.so
 %%MMM%%lib/plt/mzdyn3m.o
 bin/drscheme
 bin/gmzc
@@ -62,15 +63,15 @@ include/plt/schvers.h
 include/plt/sconfig.h
 include/plt/stypes.h
 include/plt/uconfig.h
-lib/libmred-351.so
+lib/libmred-352.so
 lib/libmred.a
 lib/libmred.la
 lib/libmred.so
-lib/libmzgc-351.so
+lib/libmzgc-352.so
 lib/libmzgc.a
 lib/libmzgc.la
 lib/libmzgc.so
-lib/libmzscheme-351.so
+lib/libmzscheme-352.so
 lib/libmzscheme.a
 lib/libmzscheme.la
 lib/libmzscheme.so
@@ -3183,8 +3184,8 @@ lib/plt/collects/plot/compiled/info.dep
 lib/plt/collects/plot/compiled/info.zo
 lib/plt/collects/plot/compiled/math.dep
 lib/plt/collects/plot/compiled/math.zo
-lib/plt/collects/plot/compiled/native/i386-freebsd/libfit.so
-lib/plt/collects/plot/compiled/native/i386-freebsd/libplplot.so
+lib/plt/collects/plot/compiled/native/%%ARCH%%-freebsd/libfit.so
+lib/plt/collects/plot/compiled/native/%%ARCH%%-freebsd/libplplot.so
 lib/plt/collects/plot/compiled/plot-extend.dep
 lib/plt/collects/plot/compiled/plot-extend.zo
 lib/plt/collects/plot/compiled/plot.dep
@@ -3838,8 +3839,7 @@ lib/plt/collects/sgl/compiled/make-gl-info.dep
 lib/plt/collects/sgl/compiled/make-gl-info.zo
 lib/plt/collects/sgl/compiled/makefile.dep
 lib/plt/collects/sgl/compiled/makefile.zo
-%%MMM%%lib/plt/collects/sgl/compiled/native/i386-freebsd/3m/make-gl-info-helper.so
-lib/plt/collects/sgl/compiled/native/i386-freebsd/make-gl-info-helper.so
+lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/make-gl-info-helper.so
 lib/plt/collects/sgl/compiled/sgl.dep
 lib/plt/collects/sgl/compiled/sgl.zo
 lib/plt/collects/sgl/doc.txt
@@ -4748,6 +4748,96 @@ lib/plt/collects/tests/mzscheme/beg-intml.ss
 lib/plt/collects/tests/mzscheme/bega-adv.ss
 lib/plt/collects/tests/mzscheme/beginner-abbr.ss
 lib/plt/collects/tests/mzscheme/beginner.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/README.txt
+lib/plt/collects/tests/mzscheme/benchmarks/common/browse.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/conform.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/conform.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/cpstack.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/cpstack.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/ctak.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/ctak.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/dderiv.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/deriv.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/deriv.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/destruct.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/destruct.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/div.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/dynamic-input.txt.gz
+lib/plt/collects/tests/mzscheme/benchmarks/common/dynamic.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/dynamic.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/earley.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/earley.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/fft.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/fft.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/graphs.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/graphs.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/nboyer.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/nboyer.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/nestedloop.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/nestedloop.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/nfa.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/nfa.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/nucleic2.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/nucleic2.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/puzzle.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/puzzle.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/sboyer.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/sboyer.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/sort1.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/sort1.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/tak.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/tak.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/takl.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/takl.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/takr.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/takr.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/traverse.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/triangle.sch
+lib/plt/collects/tests/mzscheme/benchmarks/common/triangle.ss
+lib/plt/collects/tests/mzscheme/benchmarks/common/wrap.ss
+lib/plt/collects/tests/mzscheme/benchmarks/mz/expand-class.scm
+lib/plt/collects/tests/mzscheme/benchmarks/mz/input.xml
+lib/plt/collects/tests/mzscheme/benchmarks/mz/parsing.scm
+lib/plt/collects/tests/mzscheme/benchmarks/mz/redsem.scm
+lib/plt/collects/tests/mzscheme/benchmarks/mz/ssax.scm
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/README.txt
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/ackermann.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/ary.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/binarytrees.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/chameneos.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/cheapconcurrency.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/echo.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/except.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/fannkuch.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/fasta.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/fibo.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/hash.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/hash2.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/heapsort.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/lists.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/mandelbrot.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/matrix.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/moments.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/nbody.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/nestedloop.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/nsieve.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/nsievebits.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/partialsums.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/pidigits.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/pidigits1.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/random.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/recursive.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/regexmatch.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/regexpdna.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/reversecomplement.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/reversefile.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/run.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/sieve.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/spellcheck.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/strcat.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/sumcol.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/wc.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/wordfreq.ss
 lib/plt/collects/tests/mzscheme/binc.ss
 lib/plt/collects/tests/mzscheme/boundmap-test.ss
 lib/plt/collects/tests/mzscheme/cache-image-snip-test.ss
@@ -7387,7 +7477,7 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/plot/src/all
 @dirrm lib/plt/collects/plot/src/fit
 @dirrm lib/plt/collects/plot/src
-@dirrm lib/plt/collects/plot/compiled/native/i386-freebsd
+@dirrm lib/plt/collects/plot/compiled/native/%%ARCH%%-freebsd
 @dirrm lib/plt/collects/plot/compiled/native
 @dirrm lib/plt/collects/plot/compiled
 @dirrm lib/plt/collects/plot
@@ -7420,8 +7510,8 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/setup/compiled
 @dirrm lib/plt/collects/setup
 @dirrm lib/plt/collects/sgl/examples
-%%MMM%%@dirrm lib/plt/collects/sgl/compiled/native/i386-freebsd/3m
-@dirrm lib/plt/collects/sgl/compiled/native/i386-freebsd
+%%MMM%%@dirrm lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m
+@dirrm lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd
 @dirrm lib/plt/collects/sgl/compiled/native
 @dirrm lib/plt/collects/sgl/compiled
 @dirrm lib/plt/collects/sgl
@@ -7532,6 +7622,10 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/tests/framework/compiled
 @dirrm lib/plt/collects/tests/framework
 @dirrm lib/plt/collects/tests/mred
+@dirrm lib/plt/collects/tests/mzscheme/benchmarks/common
+@dirrm lib/plt/collects/tests/mzscheme/benchmarks/mz
+@dirrm lib/plt/collects/tests/mzscheme/benchmarks/shootout
+@dirrm lib/plt/collects/tests/mzscheme/benchmarks
 @dirrm lib/plt/collects/tests/mzscheme/match
 @dirrm lib/plt/collects/tests/mzscheme/ttt
 @dirrm lib/plt/collects/tests/mzscheme
