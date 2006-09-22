@@ -1,0 +1,11 @@
+Devel::TraceUse - Show the modules your program loads, recursively.
+
+An apparently simple program may load a lot of modules. That's useful, but
+sometimes you may wonder exactly which part of your program loads which module.
+
+Devel::TraceUse can analyze a program to see which part used which module.
+
+WWW: http://search.cpan.org/dist/Devel-TraceUse
+
+- Mauricio
+mauricio@arareko.net
