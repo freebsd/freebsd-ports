@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plucene
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TM/TMTM
@@ -103,8 +103,8 @@ MAN3=	Plucene.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	This port requires perl 5.6 or above.
+.if ${PERL_LEVEL} < 500801
+IGNORE=	requires perl 5.8.1 or above
 .endif
 
 .include <bsd.port.post.mk>
