@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.5
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
-		http://www.us.tmda.net/releases/%SUBDIR%/ \
-		http://tmda.mirrors.summersault.com/releases/%SUBDIR%/ \
-		http://mirrors.standblue.net/tmda.net/releases/%SUBDIR%/ \
-		http://www.de.tmda.net/releases/%SUBDIR%/ \
-		http://www.pl.tmda.net/releases/%SUBDIR%/ \
-		http://www.au.tmda.net/releases/%SUBDIR%/
-MASTER_SITE_SUBDIR=	stable
+MASTER_SITES=	http://tmda.sourceforge.net/releases/ \
+		http://tmda.mirrors.summersault.com/releases/ \
+		http://mirrors.standblue.net/tmda.net/releases/ \
+		http://tmda.paracode.com/releases/ \
+		http://tmda.rtin.bz/releases/ \
+		http://ftp.heanet.ie/mirrors/tmda.net/releases/ \
+		http://tmda.moscuito.net/releases/ \
+		http://dl.ambiweb.de/mirrors/www.tmda.net/releases/ \
+		http://tmda.pradnik.net/releases/ \
+		http://tmda.planetmirror.com/releases/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sergei@FreeBSD.org
@@ -27,11 +29,11 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 
 USE_PYTHON=	2.1+
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
-DOCS=		CODENAMES CRYPTO README THANKS UPGRADE htdocs/*.html
-DOCS2=		htdocs/img/*.png
-SAMPLES=	sample.config tmda.el tofmipd.sysconfig vtmdarc
+DOCS=		CODENAMES CRYPTO README THANKS UPGRADE \
+		htdocs/README htdocs/*.html htdocs/*.css
+SAMPLES=	tmda.el tofmipd.sysconfig vtmdarc
 SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 	 	smtp-check-sender tofmipd.init tofmipd.sysconfig \
 		update-internaldomains vadduser-tmda vmailmgr-vdir.sh \
@@ -48,18 +50,19 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${SAMPLES} ${EXAMPLESDIR}
-	cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}/dot-tmda/filters ${EXAMPLESDIR}/dot-tmda/lists
+	cd ${WRKSRC}/contrib && \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR} && \
+		${INSTALL_DATA} ${SAMPLES} ${EXAMPLESDIR}
+	cd ${WRKSRC}/contrib/dot-tmda && \
+		${INSTALL_DATA} [Rc]* ${EXAMPLESDIR}/dot-tmda && \
+		${INSTALL_DATA} filters/* ${EXAMPLESDIR}/dot-tmda/filters && \
+		${INSTALL_DATA} lists/* ${EXAMPLESDIR}/dot-tmda/lists
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/img
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${DOCS} ${DOCSDIR} && \
-		${INSTALL_DATA} ${DOCS2} ${DOCSDIR}/img
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR} && \
+		${INSTALL_DATA} htdocs/img/* ${DOCSDIR}/img
 .endif
-	@${SED} -e 's!PREFIX!${PREFIX}!; s!DOCSDIR!${DOCSDIR}!;' \
-	       -e 's!EXAMPLESDIR!${EXAMPLESDIR}!' ${.CURDIR}/pkg-message \
-	       > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
