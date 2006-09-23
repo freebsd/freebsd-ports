@@ -130,19 +130,34 @@ write_row () {
 
     # now write the row
     echo "<tr>" >> ${TMPFILE}
+
     echo "<th align='left' bgcolor='$THCOLOR'>$arch-$build</th>" >> ${TMPFILE}
-    echo "<td align='left' bgcolor='$cellcolor'>$cvsdone</td>" >> ${TMPFILE}
+
+    echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/cvsdone'>" >> ${TMPFILE}
+    echo "$cvsdone</a></td>" >> ${TMPFILE}
+
     echo "<td align='left' bgcolor='$cellcolor'>$latest</td>" >> ${TMPFILE}
-    echo "<td align='right' bgcolor='$cellcolor'>$n_index</td>" >> ${TMPFILE}
+
+    # note: ports/INDEX-n is copied to a file called errorlogs/INDEX
+    echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/INDEX'>" >> ${TMPFILE}
+    echo "$n_index</a></td>" >> ${TMPFILE}
+
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
     echo "$n_packages</a></td>" >> ${TMPFILE}
+
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest'>" >> ${TMPFILE}
     echo "$n_errors</a></td>" >> ${TMPFILE}
+
     echo "<td align='right' bgcolor='$cellcolor'>$n_duds</td>" >> ${TMPFILE}
+
     echo "<td align='right' bgcolor='$cellcolor'>$n_missing</td>" >> ${TMPFILE}
+
     echo "<td align='center' bgcolor='$cellcolor'>$done_flag</td>" >> ${TMPFILE}
+
     echo "</tr>" >> ${TMPFILE}
 }
 
