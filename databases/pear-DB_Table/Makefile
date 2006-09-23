@@ -9,7 +9,7 @@ PORTNAME=	DB_Table
 PORTVERSION=	1.2.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR object-oriented interface to a database table
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \

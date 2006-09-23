@@ -9,7 +9,7 @@ PORTNAME=	Validate
 PORTVERSION=	0.4.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validation class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

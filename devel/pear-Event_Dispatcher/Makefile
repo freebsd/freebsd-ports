@@ -9,7 +9,7 @@ PORTNAME=	Event_Dispatcher
 PORTVERSION=	1.0.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR dispatch notifications using PHP callbacks
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

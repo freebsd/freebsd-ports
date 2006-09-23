@@ -9,7 +9,7 @@ PORTNAME=	HTML_TreeMenu
 PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides an API to create a HTML tree
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

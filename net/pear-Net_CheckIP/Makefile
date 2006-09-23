@@ -9,7 +9,7 @@ PORTNAME=	Net_CheckIP
 PORTVERSION=	1.2.0
 CATEGORIES=	net pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check the syntax of IPv4 addresses
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

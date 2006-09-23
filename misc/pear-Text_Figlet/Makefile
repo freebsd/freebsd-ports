@@ -9,7 +9,7 @@ PORTNAME=	Text_Figlet
 PORTVERSION=	0.8.1
 CATEGORIES=	misc www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Render text using FIGlet fonts
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

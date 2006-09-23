@@ -9,7 +9,7 @@ PORTNAME=	Auth_PrefManager
 PORTVERSION=	1.1.4
 CATEGORIES=	security www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR preferences management class
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB

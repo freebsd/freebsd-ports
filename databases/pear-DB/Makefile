@@ -10,7 +10,7 @@ PORTVERSION=	1.7.6
 PORTEPOCH=	1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

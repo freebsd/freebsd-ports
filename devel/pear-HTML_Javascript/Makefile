@@ -9,7 +9,7 @@ PORTNAME=	HTML_Javascript
 PORTVERSION=	1.1.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides an interface for creating simple JS scripts
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

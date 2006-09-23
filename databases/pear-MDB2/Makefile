@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	databases www pear
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta3
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR database abstraction layer
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser

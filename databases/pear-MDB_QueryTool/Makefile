@@ -9,7 +9,7 @@ PORTNAME=	MDB_QueryTool
 PORTVERSION=	1.0.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR OO-interface for easily retrieving and modifying data in a DB
 
 BUILD_DEPENDS=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB \

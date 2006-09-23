@@ -9,7 +9,7 @@ PORTNAME=	Mail_Queue
 PORTVERSION=	1.1.3
 CATEGORIES=	mail www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for put mails in queue and send them later in background
 
 BUILD_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail

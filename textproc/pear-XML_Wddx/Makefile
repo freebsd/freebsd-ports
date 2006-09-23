@@ -9,7 +9,7 @@ PORTNAME=	XML_Wddx
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Wddx pretty serializer and deserializer
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser

@@ -9,7 +9,7 @@ PORTNAME=	HTTP_Request
 PORTVERSION=	1.3.0
 CATEGORIES=	www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR classes providing an easy way to perform HTTP requests
 
 BUILD_DEPENDS=	${PEARDIR}/Net/URL.php:${PORTSDIR}/net/pear-Net_URL		\

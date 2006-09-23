@@ -9,7 +9,7 @@ PORTNAME=	System_Command
 PORTVERSION=	1.0.3
 CATEGORIES=	devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR command line execution interface
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

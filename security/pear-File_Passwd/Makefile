@@ -9,7 +9,7 @@ PORTNAME=	File_Passwd
 PORTVERSION=	1.1.6
 CATEGORIES=	security pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to manipulate many kinds of password files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

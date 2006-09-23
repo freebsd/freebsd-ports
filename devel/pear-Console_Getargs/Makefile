@@ -9,7 +9,7 @@ PORTNAME=	Console_Getargs
 PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR command-line arguments parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

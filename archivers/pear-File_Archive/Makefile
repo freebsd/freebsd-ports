@@ -9,7 +9,7 @@ PORTNAME=	File_Archive
 PORTVERSION=	1.5.3
 CATEGORIES=	archivers www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to manipulate tar, gz, tgz, bz2, tbz, zip, ar (deb) files
 
 BUILD_DEPENDS=	${PEARDIR}/MIME/Type.php:${PORTSDIR}/mail/pear-MIME_Type

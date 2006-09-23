@@ -9,7 +9,7 @@ PORTNAME=	Net_IPv6
 PORTVERSION=	1.0.5
 CATEGORIES=	net pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check and validate IPv6 addresses
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	XML_NITF
 PORTVERSION=	1.1.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR NITF XML parser
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser

@@ -9,7 +9,7 @@ PORTNAME=	HTML_Form
 PORTVERSION=	1.3.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR simple HTML form package
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

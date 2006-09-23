@@ -9,7 +9,7 @@ PORTNAME=	I18Nv2
 PORTVERSION=	0.11.1
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Internationalization
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

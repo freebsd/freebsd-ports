@@ -9,7 +9,7 @@ PORTNAME=	Crypt_RSA
 PORTVERSION=	1.0.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class allows you to use two-key strong cryptography
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

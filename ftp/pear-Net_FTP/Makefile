@@ -9,7 +9,7 @@ PORTNAME=	Net_FTP
 PORTVERSION=	1.3.2
 CATEGORIES=	ftp www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

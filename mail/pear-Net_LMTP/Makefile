@@ -9,7 +9,7 @@ PORTNAME=	Net_LMTP
 PORTVERSION=	1.0.1
 CATEGORIES=	mail www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR implementation of the RFC2033 LMTP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
