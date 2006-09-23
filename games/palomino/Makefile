@@ -26,12 +26,14 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}/game/pony
 MAKEFILE=	GNUmakefile
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's!(string installDir = ).*$$!\1"${DATADIR}/";!' \
 		-e 's!../game/!!' ${WRKSRC}/palomino/game/pony/src/game_pony_init.cc
 	@${REINPLACE_CMD} -Ee 's!(CC_FLAGS.*:=)!\1 $$(CFLAGS)!' ${WRKSRC}/gfx/GNUmakefile_common
 	@${REINPLACE_CMD} -Ee 's!(-O[0-9s]?|-funroll-loops|-fno-inline)!!g' ${WRKSRC}/gfx/tools/cc-config.sh
+	@${REINPLACE_CMD} -e 's|-march=$$ARCH||' ${WRKSRC}/gfx/tools/cc-config.sh
 
 do-install:
 	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/out/palomino ${PREFIX}/bin/
