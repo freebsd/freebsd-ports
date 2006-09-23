@@ -1,6 +1,33 @@
---- misc/libmap.conf-FreeBSD5-current.old	Fri Apr  7 15:48:13 2006
-+++ misc/libmap.conf-FreeBSD5-current	Fri Apr  7 15:50:32 2006
-@@ -23,7 +23,7 @@
+--- misc/libmap.conf-FreeBSD5-current.orig	Thu Sep 15 00:44:51 2005
++++ misc/libmap.conf-FreeBSD5-current	Sat Sep 23 22:32:45 2006
+@@ -1,29 +1,20 @@
+ # /etc/libmap.conf for FreeBSD 5-current(5.0 to 5.3-BETA6)
+ # $Id: libmap.conf-FreeBSD5-current,v 1.20 2005/09/14 15:44:51 nork Exp $
+ 
+-
+ #######################################################
+-# Flash6 with Opera is not available.
+-
+-# Flash6 with Konqueror
+-# SEE ALSO: http://freebsd.kde.org/howtos/konqueror-flash.php
+-# This configuration was integrated to following one.
+-
+-# Flash6 with Mozilla/Firebird/Galeon/Epiphany/Konqueror/Kazehakase
+-[/usr/X11R6/lib/linux-flashplugin6/libflashplayer.so]
+-libpthread.so.0			pluginwrapper/flash6.so
+-libdl.so.2			pluginwrapper/flash6.so
++# Flash7 with Mozilla
++[/usr/local/lib/npapi/linux-flashplugin/libflashplayer.so]
++libpthread.so.0			libpthread.so.2
++libdl.so.2			pluginwrapper/flash7.so
+ libz.so.1			libz.so.2
+-libstdc++-libc6.2-2.so.3	libstdc++.so.4
+ libm.so.6			libm.so.2
+-libc.so.6			pluginwrapper/flash6.so
+-
++libc.so.6			pluginwrapper/flash7.so
+ 
+ #######################################################
  # Acrobat with Opera is not available.
  
  # Acrobat7 with Mozilla/Firebird/Galeon/Epiphany/Konqueror/Kazehakase
@@ -9,7 +36,7 @@
  libc.so.6			pluginwrapper/acrobat.so
  
  # Japanese Acrobat7 with Mozilla/Firebird/Galeon/Epiphany/Konqueror/Kazehakase
-@@ -36,6 +36,8 @@
+@@ -36,6 +27,8 @@
  [/usr/X11R6/lib/linux-mozilla/plugins/nphelix.so]
  libstdc++.so.5			libstdc++.so.4
  libc.so.6			pluginwrapper/realplayer.so
