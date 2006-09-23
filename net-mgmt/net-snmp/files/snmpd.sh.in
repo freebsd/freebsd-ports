@@ -51,7 +51,7 @@ case "${snmpd_flags}" in
 		"Please use \$snmpd_conffile instead."
 	;;
 *)
-	if [ ! -z ${snmpd_conffile} -a -f ${snmpd_conffile} ]; then
+	if [ ! -z "${snmpd_conffile}" -a -f ${snmpd_conffile} ]; then
 		snmpd_flags="-c ${snmpd_conffile} ${snmpd_flags}"
 	fi
 	;;
