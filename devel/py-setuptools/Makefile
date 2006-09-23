@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setuptools
-PORTVERSION=	0.6c1
+PORTVERSION=	0.6c3
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/setuptools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Download, build, install, upgrade, and uninstall Python packages
 
-USE_ZIP=	yes
 DIST_SUBDIR=	python
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes

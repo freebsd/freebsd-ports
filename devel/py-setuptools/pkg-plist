@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 bin/easy_install
 bin/easy_install-%%PYVER%%
-bin/easy_install.py
 %%PYTHON_SITELIBDIR%%/easy-install.pth
 %%PYTHON_SITELIBDIR%%/setuptools.pth
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/PKG-INFO
@@ -9,7 +8,6 @@ bin/easy_install.py
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/scripts/easy_install.py
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/easy_install.py
 %%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/easy_install.pyc
