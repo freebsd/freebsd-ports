@@ -10,7 +10,7 @@ PORTVERSION=	0.21.1
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
-MAINTAINER=	changbom.yoon@gmail.com
+MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
 BROKEN=		fails to install/deinstall cleanly
