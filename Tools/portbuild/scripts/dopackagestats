@@ -68,13 +68,12 @@ write_row () {
       fi
     fi
 
-    # column: datestamp of latest log
+    # column: datestamp and URL of latest log
     latest="&nbsp;"
     if [ -d $directory/logs ]; then
-      #latest="$(cd $directory/logs; ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}')"
-      latest="$(cd $directory/logs; ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s %s\n",$6,$7)}')"
-      if [ "$latest" ]; then
-        #latest="$latest `date '+%Z'`"
+      latest_suffix="$(cd $directory/logs; ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
+      if [ "$latest_suffix" ]; then
+        latest="<a href=\"http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs/$latest_suffix"
       else
         latest="&nbsp;"
       fi
