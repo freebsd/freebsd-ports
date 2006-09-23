@@ -21,6 +21,8 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
 		${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2
 
+BROKEN=		Unfetchable
+
 NO_BUILD=	yes
 USE_LINUX_RPM=	yes
 USE_XLIB=	yes
