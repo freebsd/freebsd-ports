@@ -38,7 +38,6 @@
     SUBDIR += diclookup-mule
     SUBDIR += drpl
     SUBDIR += dvi2dvi
-    SUBDIR += dvi2ps
     SUBDIR += dvi2tty
     SUBDIR += dvipdfm
     SUBDIR += dvipsk

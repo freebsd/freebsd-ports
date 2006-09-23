@@ -1,9 +1,0 @@
-#!/bin/sh
-if [ "$2" != "INSTALL" ]; then
-  exit 0
-fi
-echo "**********************************************************"
-echo "* Modify RESOLUTION in /usr/local/lib/dvi2ps/fontdesc    *"
-echo "* See /usr/local/lib/dvi2ps/doc/* for customization      *"
-echo "**********************************************************"
-

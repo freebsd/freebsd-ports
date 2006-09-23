@@ -4611,7 +4611,6 @@ ja-diclookup-emacs20	ports/japanese/diclookup-emacs20
 ja-diclookup-mule	ports/japanese/diclookup-mule
 ja-drpl		ports/japanese/drpl
 ja-dvi2dvi	ports/japanese/dvi2dvi
-ja-dvi2ps	ports/japanese/dvi2ps
 ja-dvi2tty	ports/japanese/dvi2tty
 ja-dvipdfm	ports/japanese/dvipdfm
 ja-dvipsk	ports/japanese/dvipsk
