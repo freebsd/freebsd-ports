@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.0
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
 
-LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
-		gcrypt.13:${PORTSDIR}/security/libgcrypt
-
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-openssl \
+		--with-libxml2 --without-gnutls --without-libares --without-libcares
 
 USE_GCC=	3.4+
 USE_BZIP2=	yes
