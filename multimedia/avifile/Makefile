@@ -7,7 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.43
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -25,7 +25,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 LIBTOOLFILES=	acinclude.m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
@@ -222,6 +222,11 @@ post-patch:
 # linux/ioctl.h -> sys/ioctl.h
 	@${REINPLACE_CMD} -e 's|linux/ioctl.h|sys/ioctl.h|' \
 		${WRKSRC}/drivers/libdha/kernelhelper/dhahelper.h
+# pcvt_ioctl.h was removed recently
+.if !exists(/usr/include/machine/pcvt_ioctl.h)
+	@${REINPLACE_CMD} -e 's,machine/pcvt_ioctl.h,sys/kbio.h,' \
+		${WRKSRC}/drivers/libdha/sysdep/pci_freebsd.c
+.endif
 # FreeBSD does not support Video4Linux or equivalent
 # therefore, do not build qtvidcap
 	@${REINPLACE_CMD} -E -e 's|^(SUBDIRS.+)qtvidcap|\1|' \
