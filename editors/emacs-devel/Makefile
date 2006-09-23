@@ -59,6 +59,11 @@ CONFIGURE_ARGS+=	--without-xim
 
 MAN1=		ctags.1 emacs.1 emacsclient.1 etags.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
+.if defined(WITHOUT_GTK)
+PLIST_SUB+=	DOC2=""
+.else
+PLIST_SUB+=	DOC2="@comment "
+.endif
 
 INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 		efaq eintr elisp emacs-mime emacs erc eshell eudc \
@@ -69,10 +74,6 @@ INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 LATEST_LINK=	emacs22
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-texinfo
-.endif
 
 pre-everything::
 .if !defined(WITHOUT_X11) && !defined(WITHOUT_GTK)

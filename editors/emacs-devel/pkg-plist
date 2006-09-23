@@ -24,6 +24,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/DEBUG
 %%DATADIR%%/%%EMACS_VER%%/etc/DISTRIB
 %%DATADIR%%/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.1
+%%DOC2%%%%DATADIR%%/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.2
 %%DATADIR%%/%%EMACS_VER%%/etc/ERC-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.EBNF
 %%DATADIR%%/%%EMACS_VER%%/etc/FTP
@@ -2599,7 +2600,7 @@ var/games/emacs/snake-scores
 var/games/emacs/tetris-scores
 @dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VER%%
-@dirrmtry libexec/emacs
+@dirrm libexec/emacs
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/url
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes
 @dirrm %%DATADIR%%/%%EMACS_VER%%/lisp/term
@@ -2635,9 +2636,8 @@ var/games/emacs/tetris-scores
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/images
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/e
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc
-@dirrmtry %%DATADIR%%/%%EMACS_VER%%/site-lisp
-@dirrmtry %%DATADIR%%/%%EMACS_VER%%
-@dirrmtry %%DATADIR%%/site-lisp
+@dirrm %%DATADIR%%/%%EMACS_VER%%/site-lisp
+@dirrm %%DATADIR%%/%%EMACS_VER%%
 @dirrmtry var/games/emacs
 @dirrmtry var/games
 @dirrmtry var
