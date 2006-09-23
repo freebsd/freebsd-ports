@@ -1,0 +1,10 @@
+ENet's purpose is to provide a relatively thin, simple and robust network
+communication layer on top of UDP (User Datagram Protocol). The primary feature
+it provides is optional reliable, in-order delivery of packets.
+
+ENet is NOT intended to be a general purpose high level networking library that
+handles authentication, lobbying, server discovery, compression, encryption and
+other high level, often application level or dependent tasks.
+
+Author:	Lee Salzman
+WWW:	http://enet.cubik.org

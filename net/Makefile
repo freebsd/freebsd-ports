@@ -112,6 +112,7 @@
     SUBDIR += echoping
     SUBDIR += ekiga
     SUBDIR += empty
+    SUBDIR += enet
     SUBDIR += entitymib
     SUBDIR += erlang_xmlrpc
     SUBDIR += etherboot
