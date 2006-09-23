@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Downhill racing game... kindof like TuxRacer Improved
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

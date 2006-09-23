@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A golf course theme for Tux Racer
 
 RUN_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer

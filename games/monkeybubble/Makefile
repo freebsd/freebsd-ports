@@ -12,7 +12,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	http://home.gna.org/monkeybubble/downloads/
 DISTNAME=	monkey-bubble-${PORTVERSION}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
 USE_X_PREFIX=	yes
