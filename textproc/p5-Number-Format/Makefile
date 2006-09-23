@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Number-Format
-PORTVERSION=		1.51
+PORTVERSION=		1.52
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Number
@@ -22,6 +22,7 @@ MAN3=			Number::Format.3
 .include <bsd.port.pre.mk>
 
 post-patch:
+	${PERL} -pi -e 's/en_US/en_US.US-ASCII/' ${WRKSRC}/t/*.t
 .if ${PERL_LEVEL} < 500800
 	${PERL} -pi -e '$$_="" if m{5.008}' ${WRKSRC}/Format.pm
 .endif
