@@ -10,7 +10,7 @@ CATEGORIES=	audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	changbom.yoon@gmail.com
+MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A Python-based audio metadata tag reader and writer
 
 USE_PYTHON=	yes
