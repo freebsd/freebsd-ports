@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	http://members.chello.nl/~h.lai/libgnomesu/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and frontend for running commands as root
 
 USE_X_PREFIX=	yes
