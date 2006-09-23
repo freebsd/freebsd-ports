@@ -112,6 +112,10 @@ OPTIONS+=	TCPSERVER_MAN "install tcpserver man pages" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
+.endif
+
 MAN1_QMAIL=	forward.1 condredirect.1 bouncesaying.1 except.1 maildirmake.1 \
 	maildir2mbox.1 maildirwatch.1 mailsubj.1 qreceipt.1 qbiff.1 preline.1 \
 	tcp-env.1
