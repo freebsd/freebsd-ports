@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	7.0r63
-PORTREVISION=	1
+PORTVERSION=	7.0r68
+PORTREVISION=	0
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/
 PKGNAMEPREFIX=	linux-
@@ -16,8 +16,6 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	Adobe Flash Player NPAPI Plugin
-
-FORBIDDEN=	Arbitrary code execution vulnerabilities: http://vuxml.FreeBSD.org/7c75d48c-429b-11db-afae-000c6ec775d9.html
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
@@ -38,5 +36,6 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include "${.CURDIR}/../linux-mplayer-plugin/Makefile.npapi"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/linux-mplayer-plugin/Makefile.npapi"
+.include <bsd.port.post.mk>
