@@ -9,7 +9,7 @@ PORTNAME=	XML_Beautifier
 PORTVERSION=	1.1
 CATEGORIES=	textproc devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to format XML documents
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \

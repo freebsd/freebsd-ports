@@ -9,7 +9,7 @@ PORTNAME=	File_Find
 PORTVERSION=	1.2.0
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that facillitates the search of filesystems
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

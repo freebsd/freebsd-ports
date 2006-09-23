@@ -9,7 +9,7 @@ PORTNAME=	LiveUser
 PORTVERSION=	0.15.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
 BUILD_DEPENDS=	${PEARDIR}/Event/Dispatcher.php:${PORTSDIR}/devel/pear-Event_Dispatcher

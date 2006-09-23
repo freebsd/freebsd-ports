@@ -9,7 +9,7 @@ PORTNAME=	PHPUnit2
 PORTVERSION=	2.3.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR regression testing framework for unit tests
 
 BUILD_DEPENDS=	${PEARDIR}/Benchmark/Timer.php:${PORTSDIR}/benchmarks/pear-Benchmark

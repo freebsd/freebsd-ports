@@ -9,7 +9,7 @@ PORTNAME=	DBA
 PORTVERSION=	1.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkely-style database abstraction class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	Structures_Graph
 PORTVERSION=	1.0.1
 CATEGORIES=	math devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR graph datastructure manipulation library
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

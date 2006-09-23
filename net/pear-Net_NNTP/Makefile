@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	net news pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR implementation of the NNTP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket

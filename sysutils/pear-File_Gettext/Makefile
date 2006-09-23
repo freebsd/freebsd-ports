@@ -9,7 +9,7 @@ PORTNAME=	File_Gettext
 PORTVERSION=	0.3.3
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR GNU Gettext file parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	File_Fstab
 PORTVERSION=	2.0.2
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to read and write fstab files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	DB_DataObject_FormBuilder
 PORTVERSION=	0.17.1
 CATEGORIES=	databases www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically build HTML_QuickForm objects using DB_DataObject
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm \

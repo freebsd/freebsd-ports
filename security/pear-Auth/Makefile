@@ -9,7 +9,7 @@ PORTNAME=	Auth
 PORTVERSION=	1.3.0
 CATEGORIES=	security pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for creating an authentication system
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

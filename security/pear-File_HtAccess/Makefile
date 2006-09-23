@@ -9,7 +9,7 @@ PORTNAME=	File_HtAccess
 PORTVERSION=	1.1.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to manipulate .htaccess files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

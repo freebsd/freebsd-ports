@@ -9,7 +9,7 @@ PORTNAME=	LiveUser_Admin
 PORTVERSION=	0.2.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
 BUILD_DEPENDS=	${PEARDIR}/LiveUser/LiveUser.php:${PORTSDIR}/security/pear-LiveUser

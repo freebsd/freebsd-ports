@@ -9,7 +9,7 @@ PORTNAME=	DB_ldap
 PORTVERSION=	1.1.1
 CATEGORIES=	databases net pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR DB compliant interface to LDAP servers
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB

@@ -10,7 +10,7 @@ DISTVERSION=	2.0.0beta6
 PORTEPOCH=	1
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for multilingual applications management
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

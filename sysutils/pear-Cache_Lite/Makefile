@@ -10,7 +10,7 @@ PORTVERSION=	1.7.2
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR fast and safe little cache system
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

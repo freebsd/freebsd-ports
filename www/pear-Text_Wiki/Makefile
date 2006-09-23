@@ -9,7 +9,7 @@ PORTNAME=	Text_Wiki
 PORTVERSION=	1.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstracts parsing and rendering rules for Wiki markup
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

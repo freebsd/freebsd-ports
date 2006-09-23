@@ -9,7 +9,7 @@ PORTNAME=	Auth_HTTP
 PORTVERSION=	2.1.6
 CATEGORIES=	security www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR HTTP authentication
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth

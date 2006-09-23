@@ -9,7 +9,7 @@ PORTNAME=	SOAP
 PORTVERSION=	0.9.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR SOAP Client/Server for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

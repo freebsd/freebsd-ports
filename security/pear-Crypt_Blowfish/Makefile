@@ -9,7 +9,7 @@ PORTNAME=	Crypt_Blowfish
 PORTVERSION=	1.0.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class for blowfish encryption
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

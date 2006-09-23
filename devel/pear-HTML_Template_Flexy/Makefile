@@ -9,7 +9,7 @@ PORTNAME=	HTML_Template_Flexy
 PORTVERSION=	1.2.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extremely powerful Tokenizer driven Template engine
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

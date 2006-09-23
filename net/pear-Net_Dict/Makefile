@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 PORTREVISION=	2
 CATEGORIES=	net www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR interface to the DICT protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \

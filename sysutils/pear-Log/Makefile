@@ -9,7 +9,7 @@ PORTNAME=	Log
 PORTVERSION=	1.9.8
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	antonio@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR logging utilities
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
