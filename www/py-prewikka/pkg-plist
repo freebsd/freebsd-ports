@@ -1,4 +1,4 @@
-etc/prewikka/prewikka.conf
+etc/prewikka/prewikka.conf-dist
 bin/prewikka-httpd
 %%DATADIR%%/cgi-bin/prewikka.cgi
 %%DATADIR%%/htdocs/images/prelude-logo.gif
