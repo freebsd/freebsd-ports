@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.2.7
-PORTREVISION=	1
+PORTVERSION=	2.2.9
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
+MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
