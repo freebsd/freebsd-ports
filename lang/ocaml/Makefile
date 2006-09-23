@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.09.2
-PORTREVISION=	2
+PORTVERSION=	3.09.3
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -141,11 +141,6 @@ post-install:
 	@${ECHO_CMD} "@exec ${LN} %D/${module}.opt %D/${module}" >> ${TMPPLIST}
 . endfor
 .endif
-
-.for module in ${MODOPT}
-	@${ECHO_CMD} "${module:S|^|bin/|}" >> ${TMPPLIST}
-	@${ECHO_CMD} "${module:S|^|bin/|}.opt" >> ${TMPPLIST}
-.endfor
 
 # Add compiler's libs if required
 .if defined(WITH_CMP_LIB)
