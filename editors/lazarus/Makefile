@@ -7,6 +7,7 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|freepascal/:freepascal|} \
 		ftp://ftp.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
@@ -124,6 +125,11 @@ post-build:
 	@cd ${WRKSRC} && \
 		${RM} -Rf Makefile* COPYING* debian
 
+pre-install:
+	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
+	@${ECHO} "cd ${DATADIR} || exit 1 " >> ${WRKDIR}/lazarus-wrapper
+	@${ECHO} "exec ./startlazarus" >> ${WRKDIR}/lazarus-wrapper
+
 do-install:
 .for DIRE in components converter debugger designer doceditor docs examples ide ideintf images install \
 	languages lcl packager tools units
@@ -138,6 +144,6 @@ do-install:
 .endfor
 
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${DATADIR}
-	${LN} -s ${DATADIR}/startlazarus ${PREFIX}/bin/lazarus
+	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
