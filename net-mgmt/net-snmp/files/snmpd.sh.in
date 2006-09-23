@@ -11,7 +11,9 @@
 #
 
 snmpd_enable=${snmpd_enable-"NO"}
-snmpd_flags=${snmpd_flags-"-p /var/run/snmpd.pid"}
+snmpd_flags=${snmpd_flags-""}
+snmpd_pidfile=${snmpd_pidfile-"/var/run/snmpd.pid"}
+snmpd_conffile=${snmpd_conffile-""}
 
 . %%RC_SUBR%%
 
@@ -28,8 +30,31 @@ name=snmpd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
-pidfile=/var/run/${name}.pid
+pidfile=${snmpd_pidfile}
 sig_stop=KILL
 
 load_rc_config ${name}
+
+case "${snmpd_flags}" in
+*-p\ *)
+	echo "Warning: \$snmpd_flags includes -p option." \
+		"Please use \$snmpd_pidfile instead."
+	;;
+*)
+	snmpd_flags="-p ${snmpd_pidfile} ${snmpd_flags}"
+	;;
+esac
+
+case "${snmpd_flags}" in
+*-c\ *)
+	echo "Warning: \$snmpd_flags includes -c option." \
+		"Please use \$snmpd_conffile instead."
+	;;
+*)
+	if [ ! -z ${snmpd_conffile} -a -f ${snmpd_conffile} ]; then
+		snmpd_flags="-c ${snmpd_conffile} ${snmpd_flags}"
+	fi
+	;;
+esac
+
 run_rc_command "$1"
