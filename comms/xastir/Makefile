@@ -7,6 +7,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xastir
@@ -53,7 +54,7 @@ CONFIGURE_ARGS+=	--without-festival
 .endif
 
 .if defined(WITH_GPSMAN)
-RUN_DEPENDS+=	gpsman:${PORTSDIR}/astro/gpsman
+RUN_DEPENDS+=	gpsmanshp:${PORTSDIR}/graphics/gpsmanshp
 WITH_SHAPELIB=	true
 .undef WITHOUT_SHAPELIB
 .else
