@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060923:
+  AFFECTS: users of net-mgmt/net-snmp
+  AUTHOR: nork@FreeBSD.org
+
+  rcNG script was updated to support snmpd_pidfile and snmpd_conffile.
+  So, if you set snmpd_flags like "-c /usr/local/etc/snmpd.conf ...",
+  please change your /etc/rc.conf like following setting:
+
+  from (before update)
+    snmpd_flags="-a -c /usr/local/etc/snmpd.conf -p /var/run/snmpd.pid"
+
+  to   (after update)
+    snmpd_flags="-a"
+    snmpd_pidfile="/var/run/snmpd.pid"
+    snmpd_conffile="/usr/local/etc/snmpd.conf"
+
 20060922:
   AFFECTS: users of mail/tmda
   AUTHOR: sergei@FreeBSD.org
