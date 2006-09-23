@@ -19,3 +19,6 @@ SIZE (djbdns-1.05-ignoreip2.patch) = 3890
 MD5 (tinydns-persistmmap-20040418.patch) = c721977364502180f9563b85cecf133b
 SHA256 (tinydns-persistmmap-20040418.patch) = 9c8e685ed628ef80b92611023c098066633f7bf63be434f373edfba0a465ebb6
 SIZE (tinydns-persistmmap-20040418.patch) = 920
+MD5 (srv-patch) = df1578c70d52809184a417556f0fce39
+SHA256 (srv-patch) = 779546218b09544493c6ba5e23bc29c33c5d284cfc78ac6fa74fa8e050bb3779
+SIZE (srv-patch) = 4508

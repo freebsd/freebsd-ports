@@ -19,12 +19,13 @@ OPTIONS=	DUMPCACHE	'persistent cache for dnscache' off \
 		IGNOREIP	'ignoreip2 patch by Russell Nelson' off \
 		JUMBO		'jumbo patch by Claudiu Costin' off \
 		MAN		'manual pages by Gerritt Pape' on \
-		PERSISTENT_MMAP	'persistent mmap patch by Lennert Buytenhek' off
+		PERSISTENT_MMAP	'persistent mmap patch by Lennert Buytenhek' off \
+		SRV		'SRV record patch by Michael Handler' off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JUMBO)
-.if defined(WITH_IPV6) || defined(WITH_IGNOREIP)
+.if defined(WITH_IPV6) || defined(WITH_IGNOREIP) || defined(WITH_SRV)
 BROKEN=		"The jumbo patch currently conflicts with the IPv6 and ignoreip2 patches"
 .endif
 
@@ -79,6 +80,12 @@ PATCH_DIST_STRIP=	-p1
 .if defined(WITH_PERSISTENT_MMAP)
 PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/patches/dns/:persistent
 PATCHFILES+=	tinydns-persistmmap-20040418.patch:persistent
+PATCH_DIST_STRIP=	-p1
+.endif
+
+.if defined(WITH_SRV)
+PATCH_SITES+=	http://tinydns.org/:srv
+PATCHFILES+=	srv-patch:srv
 PATCH_DIST_STRIP=	-p1
 .endif
 
