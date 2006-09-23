@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.36
-PORTREVISION=	0
+PORTVERSION=	0.37
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:C/$/:text,btparse/g}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AM/AMBS/Text/:text \
@@ -21,7 +20,6 @@ COMMENT=	Manipulate BibTeX files from perl
 
 BTPARSE_VER=	0.35
 
-USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::BibTeX.3 \
