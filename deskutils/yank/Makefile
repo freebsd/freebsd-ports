@@ -17,10 +17,6 @@ COMMENT=	A simple notekeeper and todo-list manager for GNOME
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
-BROKEN=		incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gal gconf gnomehack gnomeprefix gnomeprint
