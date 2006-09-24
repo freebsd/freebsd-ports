@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.7.7
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -67,7 +66,7 @@ CONFLICTS+=	mldonkey-gui-[0.9]*
 .if !defined(WITHOUT_CORE)
 CONFLICTS+=	mldonkey-devel-[0-9]*
 .endif
-BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
+BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net-im/ocaml-jabbr
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
 		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
