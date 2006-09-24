@@ -22,10 +22,6 @@ BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${SITE_PERL}/${PERL_ARCH}/RDFStore.pm:${PORTSDIR}/textproc/p5-RDFStore
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Broken dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 PERL_CONFIGURE=	yes
 
 MAN3=		RDF::Notation3.3 RDF::Notation3::PrefTriples.3 \
