@@ -411,6 +411,7 @@
     SUBDIR += nd
     SUBDIR += neon
     SUBDIR += neowebscript
+    SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += nginx
     SUBDIR += notftp
