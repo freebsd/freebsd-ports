@@ -1,4 +1,5 @@
 Nctop is a remote system monitor for unix hosts.
+
 It is a client/server-application using UDP-packets to receive the information 
 of the hosts running the daemon and listed in the clients configuration file. 
 For each host the client displays a line containing:
