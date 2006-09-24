@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.52.7
+PORTVERSION=	0.98.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Video/JRED
-DISTNAME=	Video-DVDRip-${PORTVERSION}
 
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
@@ -20,23 +19,24 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
+		pstree:${PORTSDIR}/sysutils/pstree \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
+		xvid4conf:${PORTSDIR}/multimedia/xvid4conf \
+		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
 		${BUILD_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
-		${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf \
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		${SITE_PERL}/Event/RPC.pm:${PORTSDIR}/devel/p5-Event-RPC \
 		${SITE_PERL}/Locale/Messages.pm:${PORTSDIR}/devel/p5-Locale-libintl
 
-OPTIONS=	CLUSTER		"Enable cluster mode"	on \
-		SUBTITLE	"Enable support for getting subtitles"	on \
+OPTIONS=	SUBTITLE	"Enable support for getting subtitles"	on \
 		VORBIS		"OGG/Vorbis audio support" on
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 
-MAN1=		dvdrip.1 dr_splitpipe.1 dr_progress.1
-MAN3=		Video::DVDRip.3 Video::DVDRip::CPAN::Scanf.3
+MAN1=		dvdrip.1 dvdrip-progress.1 dvdrip-splitpipe.1
 
 .include <bsd.port.pre.mk>
 
@@ -49,13 +49,6 @@ BROKEN=		You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl, \
 		it's outdated. Install lang/perl5 and issue 'use.perl port'
 .endif
 
-.if !defined(WITHOUT_CLUSTER)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
-		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
-		pstree:${PORTSDIR}/sysutils/pstree
-.endif
-
 .if !defined(WITHOUT_VORBIS)
 RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools
@@ -65,29 +58,23 @@ RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 RUN_DEPENDS+=	subtitle2pgm:${PORTSDIR}/multimedia/subtitleripper
 .endif
 
-pre-everything::
-.if !defined(WITHOUT_CLUSTER)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can disable the cluster daemon and its"
-	@${ECHO_MSG} "dependencies by defining WITHOUT_CLUSTER."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Warning: dvdrip does not like this and will"
-	@${ECHO_MSG} "throw cryptic error-messages. Use with caution."
-.endif
-
 post-patch:
 	@${PERL} -pi -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#' \
 		${WRKSRC}/lib/Video/DVDRip/Cluster/Master.pm \
 		${WRKSRC}/lib/Video/DVDRip/Depend.pm
 	@${PERL} -pi -e 's#/usr/local/bin/perl#${PERL5}#' \
-		${WRKSRC}/dvdrip
-	@${PERL} -pi -e 's#/usr/local/bin/perl#${PERL5}#' \
-		${WRKSRC}/dvdrip-master
-	@${PERL} -pi -e 's#cc#${CC}#' \
-		${WRKSRC}/src/Makefile
+		${WRKSRC}/bin/dvdrip \
+		${WRKSRC}/bin/dvdrip-exec \
+		${WRKSRC}/bin/dvdrip-master \
+		${WRKSRC}/bin/dvdrip-multitee \
+		${WRKSRC}/bin/dvdrip-replex \
+		${WRKSRC}/bin/dvdrip-splash \
+		${WRKSRC}/bin/dvdrip-subpng \
+		${WRKSRC}/bin/dvdrip-thumb
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
+		's,^,${MAN3PREFIX:S,^${TARGETDIR}/,,}/man/man3/,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
