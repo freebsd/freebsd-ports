@@ -59,8 +59,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-snmp \
 	--with-path-to-snmpd=${LOCALBASE}/bin/snmpd \
 	--with-path-to-net-snmpd-config=${LOCALBASE}/bin/net-snmp-config
-.else
-CONFIGURE_ARGS+=	--without-snmp
 .endif
 
 .if defined(WITH_OPTIMIZATION)
