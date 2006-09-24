@@ -28,11 +28,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.${OPERA_TYPE}-${OPERA_LIB}-qt.i
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	9.01
+OPERA_VER=	9.02
 OPERA_MINVER=	
 OPERA_REL=	final
-OPERA_DATE=	20060728
-OPERA_BUILD=	400
+OPERA_DATE=	20060919
+OPERA_BUILD=	434
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
