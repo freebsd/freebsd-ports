@@ -7,8 +7,7 @@
 # ------------------------------------------------------------------------------
 
 PORTNAME=	xalan-c
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML:S/$/:msax,docs/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/source/:msax ${PORTNAME}/docs/:docs
@@ -146,7 +145,7 @@ SAMPLE_BINS=	CompileStylesheet DocumentBuilder ExternalFunction \
 		ParsedSourceWrappers SerializeNodeSet SimpleTransform \
 		SimpleXPathAPI SimpleXPathCAPI StreamTransform \
 		TraceListen TransformToXercesDOM UseStylesheetParam \
-		XPathWrapper XalanTransform XalanTransformerCallback
+		XalanTransform XalanTransformerCallback ThreadSafe
 .else
 PLIST_SUB+=	NO_SAMPLES="@comment "
 .endif

@@ -7,6 +7,7 @@ include/xalanc/DOMSupport/DOMSupportInit.hpp
 include/xalanc/DOMSupport/TreeWalker.hpp
 include/xalanc/DOMSupport/XalanDocumentPrefixResolver.hpp
 include/xalanc/DOMSupport/XalanNamespacesStack.hpp
+include/xalanc/Harness/XalanDiagnosticMemoryManager.hpp
 include/xalanc/Harness/XalanFileUtility.hpp
 include/xalanc/Harness/XalanHarnessDefinitions.hpp
 include/xalanc/Harness/XalanXMLFileReporter.hpp
@@ -19,7 +20,6 @@ include/xalanc/Harness/XalanXMLFileReporter.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatFactory.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatProxy.hpp
 include/xalanc/Include/AIXDefinitions.hpp
-include/xalanc/Include/CygwinDefinitions.hpp
 include/xalanc/Include/GCCDefinitions.hpp
 include/xalanc/Include/HPUXDefinitions.hpp
 include/xalanc/Include/IntelDefinitions.hpp
@@ -34,13 +34,13 @@ include/xalanc/Include/XalanAutoPtr.hpp
 include/xalanc/Include/XalanDeque.hpp
 include/xalanc/Include/XalanList.hpp
 include/xalanc/Include/XalanMap.hpp
-include/xalanc/Include/XalanSet.hpp
 include/xalanc/Include/XalanMemMgrAutoPtr.hpp
 include/xalanc/Include/XalanMemMgrHelper.hpp
 include/xalanc/Include/XalanMemMngArrayAllocate.hpp
 include/xalanc/Include/XalanMemoryManagement.hpp
 include/xalanc/Include/XalanObjectCache.hpp
 include/xalanc/Include/XalanObjectStackCache.hpp
+include/xalanc/Include/XalanSet.hpp
 include/xalanc/Include/XalanVector.hpp
 include/xalanc/Include/XalanVersion.hpp
 include/xalanc/PlatformSupport/ArenaAllocator.hpp
@@ -87,6 +87,7 @@ include/xalanc/PlatformSupport/XalanFileOutputStream.hpp
 include/xalanc/PlatformSupport/XalanICUMessageLoader.hpp
 include/xalanc/PlatformSupport/XalanInMemoryMessageLoader.hpp
 include/xalanc/PlatformSupport/XalanLocator.hpp
+include/xalanc/PlatformSupport/XalanMemoryManagerDefault.hpp
 include/xalanc/PlatformSupport/XalanMessageLoader.hpp
 include/xalanc/PlatformSupport/XalanNLSMessageLoader.hpp
 include/xalanc/PlatformSupport/XalanNamespace.hpp
@@ -103,33 +104,26 @@ include/xalanc/PlatformSupport/XalanTranscodingServices.hpp
 include/xalanc/PlatformSupport/XalanUTF16Transcoder.hpp
 include/xalanc/PlatformSupport/XalanUnicode.hpp
 include/xalanc/PlatformSupport/XalanXMLChar.hpp
-@comment include/xalanc/TestXPath/NodeNameTreeWalker.hpp
-@comment include/xalanc/Utils/MsgCreator/ICUResData.hpp
-@comment include/xalanc/Utils/MsgCreator/ICUResHandler.hpp
-@comment include/xalanc/Utils/MsgCreator/InMemData.hpp
-@comment include/xalanc/Utils/MsgCreator/InMemHandler.hpp
-@comment include/xalanc/Utils/MsgCreator/IndexFileData.hpp
-@comment include/xalanc/Utils/MsgCreator/MsgCreator.hpp
-@comment include/xalanc/Utils/MsgCreator/MsgFileOutputStream.hpp
-@comment include/xalanc/Utils/MsgCreator/NLSData.hpp
-@comment include/xalanc/Utils/MsgCreator/NLSHandler.hpp
-@comment include/xalanc/Utils/MsgCreator/SAX2Handler.hpp
-@comment include/xalanc/Utils/XalanMsgLib/XalanMsgLib.hpp
-@comment include/xalanc/Utils/XalanMsgLib/XalanMsgLibDefinitions.hpp
 include/xalanc/XMLSupport/FormatterToDOM.hpp
 include/xalanc/XMLSupport/FormatterToHTML.hpp
 include/xalanc/XMLSupport/FormatterToNull.hpp
 include/xalanc/XMLSupport/FormatterToText.hpp
 include/xalanc/XMLSupport/FormatterToXML.hpp
-include/xalanc/XMLSupport/FormatterToXMLBase.hpp
-include/xalanc/XMLSupport/FormatterToXML_UTF16.hpp
-include/xalanc/XMLSupport/FormatterToXML_UTF8.hpp
+include/xalanc/XMLSupport/FormatterToXMLUnicode.hpp
 include/xalanc/XMLSupport/FormatterTreeWalker.hpp
 include/xalanc/XMLSupport/XMLParserLiaison.hpp
 include/xalanc/XMLSupport/XMLSupportDefinitions.hpp
 include/xalanc/XMLSupport/XMLSupportException.hpp
 include/xalanc/XMLSupport/XMLSupportInit.hpp
+include/xalanc/XMLSupport/XalanDummyIndentWriter.hpp
+include/xalanc/XMLSupport/XalanFormatterWriter.hpp
 include/xalanc/XMLSupport/XalanHTMLElementsProperties.hpp
+include/xalanc/XMLSupport/XalanIndentWriter.hpp
+include/xalanc/XMLSupport/XalanOtherEncodingWriter.hpp
+include/xalanc/XMLSupport/XalanUTF16Writer.hpp
+include/xalanc/XMLSupport/XalanUTF8Writer.hpp
+include/xalanc/XMLSupport/XalanXMLSerializerBase.hpp
+include/xalanc/XMLSupport/XalanXMLSerializerFactory.hpp
 include/xalanc/XPath/ElementPrefixResolverProxy.hpp
 include/xalanc/XPath/FormatterStringLengthCounter.hpp
 include/xalanc/XPath/Function.hpp
@@ -509,10 +503,10 @@ lib/%%XALANC_LIB%%
 %%NO_SAMPLES%%bin/SimpleXPathAPI
 %%NO_SAMPLES%%bin/SimpleXPathCAPI
 %%NO_SAMPLES%%bin/StreamTransform
+%%NO_SAMPLES%%bin/ThreadSafe
 %%NO_SAMPLES%%bin/TraceListen
 %%NO_SAMPLES%%bin/TransformToXercesDOM
 %%NO_SAMPLES%%bin/UseStylesheetParam
-%%NO_SAMPLES%%bin/XPathWrapper
 %%NO_SAMPLES%%bin/XalanTransform
 %%NO_SAMPLES%%bin/XalanTransformerCallback
 @comment -----------------------------------------------------------------------
