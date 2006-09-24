@@ -1,4 +1,3 @@
-\# ex:ts=8
 # New ports collection makefile for:	pen
 # Date created:			Nov 13, 2001
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.17.0
+PORTVERSION=	0.17.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
@@ -17,6 +16,7 @@ COMMENT=	A load balancer for simple tcp based protocols
 
 GNU_CONFIGURE=		yes
 USE_OPENSSL=		yes
+USE_RC_SUBR=		pen.sh
 CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR} \
 			--with-ssl=${OPENSSLBASE} --with-kqueue
 

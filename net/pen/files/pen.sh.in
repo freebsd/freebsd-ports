@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pen
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable pen:
+#
+# pen_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=pen
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/pen
+
+pen_enable=${pen_enable:-"NO"}
+pen_flags=${pen_flags:-""}
+
+load_rc_config $name
+run_rc_command "$1"
