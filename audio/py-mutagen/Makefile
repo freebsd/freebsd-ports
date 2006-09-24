@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutagen
-PORTVERSION=	1.4
+PORTVERSION=	1.7
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A Python-based audio metadata tag reader and writer
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
