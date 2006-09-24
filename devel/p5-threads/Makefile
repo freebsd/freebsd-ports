@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	threads
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/J/JD/JDHEDDEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interpreter-based threads
 
 PERL_CONFIGURE=	yes
