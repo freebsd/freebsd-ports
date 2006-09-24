@@ -37,6 +37,7 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS:N-funroll-loops}" CC="${CC}" CXX="${CXX}"
 CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS:N-funroll-loops}"
 
 MAN1+=	derb.1
+MAN1+=	genbrk.1
 MAN1+=	gencnval.1
 MAN1+=	genctd.1
 MAN1+=	genrb.1
@@ -44,6 +45,7 @@ MAN1+=	icu-config.1
 MAN1+=	makeconv.1
 MAN1+=	pkgdata.1
 MAN1+=	uconv.1
+MAN8+=	icupkg.8
 MAN8+=	genccode.8
 MAN8+=	gencmn.8
 MAN8+=	gensprep.8
