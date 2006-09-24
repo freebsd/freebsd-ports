@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	2.4.0.2
+PORTVERSION=	2.5.0.0
 CATEGORIES=	net-p2p java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +39,9 @@ USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
 		org/gudy/azureus2/ui/swt/Messages.java \
 		org/gudy/azureus2/ui/swt/views/configsections/ConfigSectionPlugins.java \
 		org/gudy/azureus2/ui/swt/shells/MessageSlideShell.java \
-		org/gudy/azureus2/ui/swt/views/TableView.java
+		org/gudy/azureus2/ui/swt/views/TableView.java \
+		org/gudy/azureus2/ui/swt/Utils.java \
+		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java
 NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
