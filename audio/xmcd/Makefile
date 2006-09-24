@@ -20,6 +20,8 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
+MAN1=		cda.1 xmcd.1
+MANCOMPRESSED=	no
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
