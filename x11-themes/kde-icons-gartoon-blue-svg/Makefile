@@ -18,6 +18,4 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/Gartoon.Blue
 PORT_SHAREDIR?=	"${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}"
 
-BROKEN=		Unfetchable
-
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
