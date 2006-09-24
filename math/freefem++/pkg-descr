@@ -9,6 +9,7 @@ report we build on a fast quadtree-based interpolation algorithm, propose
 a language for the manipulation of data on multiple meshes (generated with
 bamg) and test by designing an extension of freefem and of freefem+.
 
-Suggested add-on: the port graphics/xd3d.
+Suggested add-ons: the ports graphics/xd3d, science/medit and math/gnuplot
+(medit and gnuplot are requested to run some examples).
 
 WWW: http://www.freefem.org/ff++/
