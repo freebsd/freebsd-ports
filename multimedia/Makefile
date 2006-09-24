@@ -17,6 +17,7 @@
     SUBDIR += camserv
     SUBDIR += castpodder
     SUBDIR += dirac
+    SUBDIR += dirac-reference
     SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
