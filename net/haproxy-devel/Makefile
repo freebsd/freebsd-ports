@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.32
+PORTVERSION=	1.1.34
 CATEGORIES=	net www
-MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
-		http://w.ods.org/tools/haproxy/src/old/
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.1/src/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
