@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pwcbsd
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	multimedia sysutils
 MASTER_SITES=	http://raaf.atspace.org/
 
@@ -48,8 +47,12 @@ PLIST_SUB+=	PROGRAMS=""
 PLIST_SUB+=	PROGRAMS="@comment "
 .endif
 
+post-patch:
+.if !defined(WITHOUT_PROGRAMS)
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/Makefile
+.endif
+
 post-install:
-	${MKDIR} ${PREFIX}/include/linux
 	${INSTALL_MAN} ${MAN4:S|^|${WRKSRC}/|} ${PREFIX}/man/man4
 .if !defined(WITHOUT_PROGRAMS)
 	${INSTALL_PROGRAM} ${PROGRAMS:S|^|${WRKSRC}/|} ${PREFIX}/bin
