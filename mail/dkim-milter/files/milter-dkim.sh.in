@@ -15,6 +15,7 @@
 #
 # milterdkim_enable (bool):   Set to "NO" by default.
 #                             Set it to "YES" to enable dkim-milter
+# milterdkim_uid (str):       Set username to run milter.
 # milterdkim_profiles (list): Set to "" by default.
 #                             Define your profiles here.
 # milterdkim_socket (str):    Path to the milter socket.
@@ -30,8 +31,9 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 milterdkim_enable=${milterdkim_enable:-"NO"}
+milterdkim_uid=${milterdkim_uid:-"dkimfilter"}
 milterdkim_profiles=${milterdkim_profiles:-}
-milterdkim_socket=${milterdkim_socket:-"local:/var/run/dkim-filter"}
+milterdkim_socket=${milterdkim_socket:-"local:/var/run/milterdkim/filter"}
 milterdkim_domain=${milterdkim_domain:-"example.com"}
 milterdkim_key=${milterdkim_key:-"/var/db/domainkeys/default.key.pem"}
 milterdkim_selector=${milterdkim_selector:-"default"}
@@ -45,17 +47,17 @@ name="milterdkim"
 rcvar=`set_rcvar`
 
 start_precmd="dkim_prepcmd"
-stop_postcmd="dkim_prepcmd"
+stop_postcmd="dkim_postcmd"
 command="%%PREFIX%%/libexec/dkim-filter"
-_pidprefix="/var/run/dkim-filter"
-pidfile="${_pidprefix}.pid"
+_piddir="/var/run/milterdkim"
+pidfile="${_piddir}/pid"
 
 load_rc_config $name
 
 if [ -n "$2" ]; then
     profile="$2"
     if [ "x${milterdkim_profiles}" != "x" ]; then
-	pidfile="${_pidprefix}.${profile}.pid"
+	pidfile="${_piddir}/${profile}.pid"
 	eval milterdkim_enable="\${milterdkim_${profile}_enable:-${milterdkim_enable}}"
 	eval milterdkim_socket="\${milterdkim_${profile}_socket:-}"
 	if [ "x${milterdkim_socket}" = "x" ];then
@@ -65,7 +67,7 @@ if [ -n "$2" ]; then
 	eval milterdkim_domain="\${milterdkim_${profile}_domain:-${milterdkim_domain}}"
 	eval milterdkim_key="\${milterdkim_${profile}_key:-${milterdkim_key}}"
 	eval milterdkim_flags="\${milterdkim_${profile}_flags:-${milterdkim_flags}}"
-	command_args="-l -p ${milterdkim_socket} -P ${pidfile}"
+	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile}"
     else
 	echo "$0: extra argument ignored"
     fi
@@ -74,7 +76,7 @@ else
 	if [ "x$1" != "xrestart" ]; then
 	    for profile in ${milterdkim_profiles}; do
 		echo "===> milterdkim profile: ${profile}"
-		%%PREFIX%%/etc/rc.d/milter-dkim.sh $1 ${profile}
+		$0 $1 ${profile}
 		retcode="$?"
 		if [ "0${retcode}" -ne 0 ]; then
 		    failed="${profile} (${retcode}) ${failed:-}"
@@ -88,7 +90,7 @@ else
 	fi
     else
 	milterdkim_flags=${milterdkim_flags}
-	command_args="-l -p ${milterdkim_socket} -P ${pidfile}"
+	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile}"
     fi
 fi
 
@@ -99,6 +101,24 @@ dkim_prepcmd ()
     elif [ -S ${milterdkim_socket##unix:} ] ; then
         rm -f ${milterdkim_socket##unix:}
     fi
+    if [ -d ${_piddir} ] ; then
+	return;
+    fi
+    mkdir -p ${_piddir}
+    if [ -n "${milterdkim_uid}" ] ; then
+	chown ${milterdkim_uid} ${_piddir}
+    fi
+}
+
+dkim_postcmd()
+{
+    if [ -S ${milterdkim_socket##local:} ] ; then
+        rm -f ${milterdkim_socket##local:}
+    elif [ -S ${milterdkim_socket##unix:} ] ; then
+        rm -f ${milterdkim_socket##unix:}
+    fi
+    # just if the directory is empty
+    rmdir ${_piddir} > /dev/null 2>&1
 }
 
 run_rc_command "$1"
