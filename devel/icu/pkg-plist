@@ -11,6 +11,7 @@ sbin/genccode
 sbin/gencmn
 sbin/gensprep
 sbin/genuca
+sbin/icupkg
 sbin/icuswap
 include/layout/LEFontInstance.h
 include/layout/LEGlyphFilter.h
