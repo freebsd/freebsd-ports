@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.8-1
+PORTVERSION=	2.9
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of a language dedicated to the finite element method
 
-LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas				\
-		f2c.2:${PORTSDIR}/lang/f2c				\
-		gsl.9:${PORTSDIR}/math/gsl				\
-		lapack.3:${PORTSDIR}/math/lapack			\
+LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack			\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads		\
 		fftw3.4:${PORTSDIR}/math/fftw3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack	\
@@ -37,15 +34,13 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--disable-download					\
+			--without-cadna						\
 			--with-blas="${LIBBLAS}"				\
 			--with-amd="-lamd"					\
 			--with-umfpack="-lumfpack"				\
 			--with-arpack="${LIBARPACK}"
 CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
-
-LIBBLAS=	-lf2c -lf77blas -latlas_r -lgslcblas
-LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
 DOC_TARGET=	freefem++doc.pdf
 PORTDOCS=	AUTHORS BUGS COPYING HISTORY HISTORY_BEFORE_2005 INNOVATION README TODO ${DOC_TARGET}
@@ -61,29 +56,45 @@ MAKE_ARGS+=	"PIC=-fPIC"
 CONFIGURE_ARGS+=	--disable-optim
 .endif
 
-.if exists(${LOCALBASE}/mpich/mpich/include/mpicxx.h) && !defined(WITHOUT_MPI)
-WITH_MPI=	yes	# MPICH-2 is required
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=	yes
 .endif
-#.if defined(WITH_MPI)
-#BUILD_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
-#RUN_DEPENDS+=	${LOCALBASE}/mpich/bin/mpiCC:${PORTSDIR}/net/mpich
-#MPICFLAGS=	-I${LOCALBASE}/mpich/include
-#MPILDFLAGS=	-L${LOCALBASE}/mpich/lib
-#CONFIGURE_ENV+=	PATH="$$PATH:${LOCALBASE}/mpich/bin"
-#CONFIGURE_ARGS+=	--with-mpi=yes
-#PLIST_SUB+=	MPI=""
-#.else
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas	\
+		f2c.2:${PORTSDIR}/lang/f2c		\
+		gsl.9:${PORTSDIR}/math/gsl
+LIBBLAS=	-lf2c -lf77blas -latlas_r -lgslcblas
+LIBARPACK=	-larpack -lalapack ${LIBBLAS}
+.else
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
+LIBBLAS=	-lblas
+LIBARPACK=	-larpack ${LIBBLAS}
+.endif
+
+.if exists(${LOCALBASE}/mpich2/include/mpicxx.h) && !defined(WITHOUT_MPI)
+WITH_MPI=	yes
+.endif
+.if defined(WITH_MPI)
+BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicxx:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpiexec:${PORTSDIR}/net/mpich2
+MPICFLAGS=	-I${LOCALBASE}/mpich2/include -DMPICH_IGNORE_CXX_SEEK
+MPILDFLAGS=	-L${LOCALBASE}/mpich2/lib
+CONFIGURE_ENV+=	PATH="$$PATH:${LOCALBASE}/mpich2/bin"
+CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpich2/bin/mpicxx
+PLIST_SUB+=	MPI=""
+.else
 PLIST_SUB+=	MPI="@comment "
 CONFIGURE_ARGS+=	--without-mpi
-#.endif
+.endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"		\
-		-e "s|=mpiCC|=${LOCALBASE}/mpich/bin/mpiCC|"		\
+	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"		\
 		-e "s|/usr/X11R6|${X11BASE}|g"				\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e "s|mpiCC|${LOCALBASE}/mpich/bin/mpiCC|"	\
+	${REINPLACE_CMD} -e "s|mpicc|${LOCALBASE}/mpich2/bin/mpicxx|"	\
 		${WRKSRC}/src/mpi/Makefile.in
+#	${FIND} ${WRKSRC} -name "*.edp" | ${XARGS} \
+#		${REINPLACE_CMD} -e 's|exec("medit|// exec("medit|g'
 
 post-build:
 .if !defined(NOPORTDOCS)
@@ -114,7 +125,7 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	# Gnuplot needed! Click on the picture to end a set.
+	# Gnuplot and medit needed! Click on the picture to end a set.
 .for direx in - -eigen -tutorial
 	(cd ${EXAMPLESDIR}/${direx:S/-//} ;	\
 	${PREFIX}/bin/FreeFem++ all.edp)
