@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
