@@ -71,9 +71,9 @@ FLAGARCH=	TRU64		# 64 bits
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=	Does not compile on FreeBSD-4.x, and cannot be patched easily.
-.elif ${OSVERSION} < 600000
-BROKEN=	Does not install on FreeBSD 5.x
+IGNORE=	Does not compile on FreeBSD-4.x, and cannot be patched easily.
+.else
+BROKEN=	Does not install
 .endif
 .if ${ARCH} == "amd64"
 BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
@@ -82,6 +82,9 @@ BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
 .endif
+
+DEPRECATED=		Does not install
+EXPIRATION_DATE=	2006-11-24
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
