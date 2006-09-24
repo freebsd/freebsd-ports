@@ -60,6 +60,7 @@
     SUBDIR += mayavi
     SUBDIR += mbdyn
     SUBDIR += mcstas
+    SUBDIR += medit
     SUBDIR += minc
     SUBDIR += minc2
     SUBDIR += mmtk
