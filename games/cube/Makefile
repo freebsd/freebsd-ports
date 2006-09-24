@@ -7,7 +7,7 @@
 
 PORTNAME=	cube
 PORTVERSION=	2005.08.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,54 +17,62 @@ EXTRACT_ONLY=	${CUBE_SRC}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL 3D First Person Shooter game
 
-BROKEN=		Does not build
+BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ACLOCAL=true AUTOCONF=true AUTOMAKE=true
-CONFIGURE_WRKSRC=	${WRKSRC}/../enet
 WRKSRC=		${WRKDIR}/${PORTNAME}_source/src
-ALL_TARGET=	enet
+MAKE_ENV+=	CXX="${CXX}"
+CFLAGS+=	-fsigned-char
+ALL_TARGET=	#empty
 
-OPTIONS=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on
+OPTIONS=	CLIENT		"Build client"			on \
+		DEDICATED	"Build dedicated server"	on \
+		OPT		"Optimized CFLAGS"		off
 
 SUB_FILES=	cube_client cube_server
 
 CUBE_DATA=	${PORTNAME}_${PORTVERSION:S/./_/g}_unix.tar.gz
 CUBE_SRC=	${PORTNAME}_${PORTVERSION:S/./_/g}_src.zip
 
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
+
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_CLIENT) && !defined(WITH_DEDICATED)
+.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
 IGNORE=		needs at least one executable (CLIENT and DEDICATED)
 .endif
 
-.if defined(WITH_CLIENT)
+.if !defined(WITHOUT_CLIENT)
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
 CUBE_BIN+=	client
 .else
-PLIST_SUB+=	CLIENT=""
+PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-.if defined(WITH_DEDICATED)
+.if !defined(WITHOUT_DEDICATED)
 ALL_TARGET+=	server
 PLIST_SUB+=	DEDICATED=""
 CUBE_BIN+=	server
 .else
-PLIST_SUB+=	DEDICATED=""
+PLIST_SUB+=	DEDICATED="@comment "
+.endif
+
+.if defined(WITH_OPT)
+CFLAGS+=	-O3 -fomit-frame-pointer
 .endif
 
 post-extract:
 	@${TAR} zxf ${DISTDIR}/${CUBE_DATA} -C ${WRKDIR}
-
-pre-configure:
-	@${CHMOD} u+x ${CONFIGURE_WRKSRC}/configure
 
 do-install:
 .for f in ${CUBE_BIN}
@@ -72,12 +80,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cube_${f} ${PREFIX}/libexec
 .endfor
 	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKDIR}/cube/data ${WRKDIR}/cube/packages ${DATADIR}
+	@(cd ${WRKDIR}/cube && ${COPYTREE_SHARE} "data packages" ${DATADIR}/)
 	${INSTALL_DATA} ${WRKDIR}/cube/autoexec.cfg ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/cube/readme.html ${DOCSDIR}
-	${CP} -R ${WRKDIR}/cube/docs ${DOCSDIR}
+	@(cd ${WRKDIR}/cube/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
 .endif
 
 .include <bsd.port.post.mk>
