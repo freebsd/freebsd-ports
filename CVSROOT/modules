@@ -10134,6 +10134,7 @@ p5-Text-Glob	ports/textproc/p5-Text-Glob
 p5-Text-Graphics	ports/textproc/p5-Text-Graphics
 p5-Text-Hatena	ports/textproc/p5-Text-Hatena
 p5-Text-Iconv	ports/converters/p5-Text-Iconv
+p5-Text-Language-Guess	ports/textproc/p5-Text-Language-Guess
 p5-Text-LevenshteinXS	ports/devel/p5-Text-LevenshteinXS
 p5-Text-Markdown	ports/textproc/p5-Text-Markdown
 p5-Text-Markdown-ApacheHandler	ports/www/p5-Text-Markdown-ApacheHandler
