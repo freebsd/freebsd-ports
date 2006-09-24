@@ -4,7 +4,7 @@ www/twiki/COPYRIGHT
 www/twiki/INSTALL.html
 www/twiki/LICENSE
 www/twiki/TWikiHistory.html
-www/twiki/TWikiReleaseNotes04x00x00.html
+www/twiki/TWikiReleaseNotes04x00.html
 www/twiki/UpgradeTwiki
 www/twiki/bin/.htaccess.txt
 www/twiki/bin/LocalLib.cfg.txt
@@ -404,8 +404,8 @@ www/twiki/data/TWiki/TWikiReferenceManual.txt
 www/twiki/data/TWiki/TWikiReferenceManual.txt,v
 www/twiki/data/TWiki/TWikiRegistration.txt
 www/twiki/data/TWiki/TWikiRegistration.txt,v
-www/twiki/data/TWiki/TWikiReleaseNotes04x00x00.txt
-www/twiki/data/TWiki/TWikiReleaseNotes04x00x00.txt,v
+www/twiki/data/TWiki/TWikiReleaseNotes04x00.txt
+www/twiki/data/TWiki/TWikiReleaseNotes04x00.txt,v
 www/twiki/data/TWiki/TWikiRenderDotPm.txt
 www/twiki/data/TWiki/TWikiRenderDotPm.txt,v
 www/twiki/data/TWiki/TWikiSandboxDotPm.txt
@@ -554,6 +554,8 @@ www/twiki/data/TWiki/TWikiUsersGuide.txt
 www/twiki/data/TWiki/TWikiUsersGuide.txt,v
 www/twiki/data/TWiki/TWikiUsersPasswordDotPm.txt
 www/twiki/data/TWiki/TWikiUsersPasswordDotPm.txt,v
+www/twiki/data/TWiki/TWikiUsersTWikiUserMappingDotPm.txt
+www/twiki/data/TWiki/TWikiUsersTWikiUserMappingDotPm.txt,v
 www/twiki/data/TWiki/TWikiVariables.txt
 www/twiki/data/TWiki/TWikiVariables.txt,v
 www/twiki/data/TWiki/TWikiVariablesQuickStart.txt
@@ -616,6 +618,8 @@ www/twiki/data/TWiki/VarGMTIME.txt
 www/twiki/data/TWiki/VarGMTIME.txt,v
 www/twiki/data/TWiki/VarGMTIME2.txt
 www/twiki/data/TWiki/VarGMTIME2.txt,v
+www/twiki/data/TWiki/VarGROUPS.txt
+www/twiki/data/TWiki/VarGROUPS.txt,v
 www/twiki/data/TWiki/VarHOMETOPIC.txt
 www/twiki/data/TWiki/VarHOMETOPIC.txt,v
 www/twiki/data/TWiki/VarHTTP.txt
@@ -728,6 +732,8 @@ www/twiki/data/TWiki/VarTWIKIWEB.txt
 www/twiki/data/TWiki/VarTWIKIWEB.txt,v
 www/twiki/data/TWiki/VarURLPARAM.txt
 www/twiki/data/TWiki/VarURLPARAM.txt,v
+www/twiki/data/TWiki/VarUSERINFO.txt
+www/twiki/data/TWiki/VarUSERINFO.txt,v
 www/twiki/data/TWiki/VarUSERNAME.txt
 www/twiki/data/TWiki/VarUSERNAME.txt,v
 www/twiki/data/TWiki/VarVAR.txt
@@ -922,14 +928,13 @@ www/twiki/lib/TWiki/Client/TemplateLogin.pm
 www/twiki/lib/TWiki/Compatibility.pm
 www/twiki/lib/TWiki/Contrib/ClassicSkin.pm
 www/twiki/lib/TWiki/Contrib/JSCalendarContrib.pm
-www/twiki/lib/TWiki/Contrib/JSCalendarContrib/build.pl
 www/twiki/lib/TWiki/Contrib/Mailer.pm
 www/twiki/lib/TWiki/Contrib/MailerContrib/Change.pm
 www/twiki/lib/TWiki/Contrib/MailerContrib/Subscriber.pm
 www/twiki/lib/TWiki/Contrib/MailerContrib/Subscription.pm
 www/twiki/lib/TWiki/Contrib/MailerContrib/UpData.pm
 www/twiki/lib/TWiki/Contrib/MailerContrib/WebNotify.pm
-www/twiki/lib/TWiki/Contrib/MailerContrib/build.pl
+www/twiki/lib/TWiki/Contrib/PatternSkin.pm
 www/twiki/lib/TWiki/Contrib/TipsContrib.pm
 www/twiki/lib/TWiki/Contrib/TwistyContrib.pm
 www/twiki/lib/TWiki/Data/DelimitedFile.pm
@@ -953,11 +958,9 @@ www/twiki/lib/TWiki/Plugins/EmptyPlugin.pm
 www/twiki/lib/TWiki/Plugins/InterwikiPlugin.pm
 www/twiki/lib/TWiki/Plugins/PreferencesPlugin.pm
 www/twiki/lib/TWiki/Plugins/RenderListPlugin.pm
-www/twiki/lib/TWiki/Plugins/RenderListPlugin/Core.pm
 www/twiki/lib/TWiki/Plugins/SlideShowPlugin.pm
 www/twiki/lib/TWiki/Plugins/SlideShowPlugin/SlideShow.pm
 www/twiki/lib/TWiki/Plugins/SmiliesPlugin.pm
-www/twiki/lib/TWiki/Plugins/SmiliesPlugin/build.pl
 www/twiki/lib/TWiki/Plugins/SpreadSheetPlugin.pm
 www/twiki/lib/TWiki/Plugins/SpreadSheetPlugin/Calc.pm
 www/twiki/lib/TWiki/Plugins/TablePlugin.pm
@@ -1009,6 +1012,7 @@ www/twiki/lib/TWiki/Users.pm
 www/twiki/lib/TWiki/Users/ApacheHtpasswdUser.pm
 www/twiki/lib/TWiki/Users/HtPasswdUser.pm
 www/twiki/lib/TWiki/Users/Password.pm
+www/twiki/lib/TWiki/Users/TWikiUserMapping.pm
 www/twiki/locale/TWiki.pot
 www/twiki/locale/da.po
 www/twiki/locale/de.po
@@ -1016,7 +1020,9 @@ www/twiki/locale/es.po
 www/twiki/locale/fr.po
 www/twiki/locale/it.po
 www/twiki/locale/nl.po
+www/twiki/locale/pl.po
 www/twiki/locale/pt.po
+www/twiki/locale/sv.po
 www/twiki/locale/zh-cn.po
 www/twiki/locale/zh-tw.po
 www/twiki/pub-htaccess.txt
@@ -1129,6 +1135,7 @@ www/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/status-bg.gif
 www/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/theme.css
 www/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/title-bg.gif
 www/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/today-bg.gif
+www/twiki/pub/TWiki/JSCalendarContrib/skins/aqua/transparent-bg.png
 www/twiki/pub/TWiki/JSCalendarContrib/test-position.html
 www/twiki/pub/TWiki/JSCalendarContrib/test.php
 www/twiki/pub/TWiki/JSCalendarContrib/twiki.js
@@ -1432,6 +1439,7 @@ www/twiki/pub/TWiki/TWikiJavascripts/twiki_attach.js
 www/twiki/pub/TWiki/TWikiJavascripts/twiki_edit.js
 www/twiki/pub/TWiki/TWikiJavascripts/twiki_renamebase.js
 www/twiki/pub/TWiki/TWikiJavascripts/twiki_renamedelete.js
+www/twiki/pub/TWiki/TWikiJavascripts/unicode_chars.js
 www/twiki/pub/TWiki/TWikiLogos/T-logo-124x35-t.gif
 www/twiki/pub/TWiki/TWikiLogos/T-logo-124x35.png
 www/twiki/pub/TWiki/TWikiLogos/T-logo-140x40-t.gif
@@ -2236,16 +2244,13 @@ www/twiki/twiki_httpd_conf.txt
 @dirrm www/twiki/lib/TWiki/Plugins/WysiwygPlugin
 @dirrm www/twiki/lib/TWiki/Plugins/TablePlugin
 @dirrm www/twiki/lib/TWiki/Plugins/SpreadSheetPlugin
-@dirrm www/twiki/lib/TWiki/Plugins/SmiliesPlugin
 @dirrm www/twiki/lib/TWiki/Plugins/SlideShowPlugin
-@dirrm www/twiki/lib/TWiki/Plugins/RenderListPlugin
 @dirrm www/twiki/lib/TWiki/Plugins/EditTablePlugin
 @dirrm www/twiki/lib/TWiki/Plugins/CommentPlugin
 @dirrm www/twiki/lib/TWiki/Plugins
 @dirrm www/twiki/lib/TWiki/I18N
 @dirrm www/twiki/lib/TWiki/Data
 @dirrm www/twiki/lib/TWiki/Contrib/MailerContrib
-@dirrm www/twiki/lib/TWiki/Contrib/JSCalendarContrib
 @dirrm www/twiki/lib/TWiki/Contrib
 @dirrm www/twiki/lib/TWiki/Client
 @dirrm www/twiki/lib/TWiki
