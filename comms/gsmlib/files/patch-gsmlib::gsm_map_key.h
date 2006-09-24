@@ -1,5 +1,5 @@
---- gsmlib/gsm_map_key.h.orig	Wed May 15 04:38:12 2002
-+++ gsmlib/gsm_map_key.h	Wed Aug 18 22:19:20 2004
+--- gsmlib/gsm_map_key.h.orig	Tue May 14 23:38:12 2002
++++ gsmlib/gsm_map_key.h	Sun Sep 24 00:37:00 2006
 @@ -25,6 +25,16 @@
  
    // wrapper for map key, can access Sortedtore to get sortOrder()
@@ -17,7 +17,7 @@
    template <class SortedStore> class MapKey
    {
      SortedStore &_myStore;   // my store
-@@ -61,14 +71,6 @@
+@@ -61,18 +71,10 @@
                         const MapKey<SortedStore> &y);
    };
  
@@ -32,3 +32,17 @@
    // MapKey members
    
    template <class SortedStore>
+-    bool gsmlib::operator<(const MapKey<SortedStore> &x,
++    bool operator<(const MapKey<SortedStore> &x,
+                            const MapKey<SortedStore> &y)
+     {
+       assert(&x._myStore == &y._myStore);
+@@ -97,7 +99,7 @@
+     }
+ 
+   template <class SortedStore>
+-    bool gsmlib::operator==(const MapKey<SortedStore> &x,
++    bool operator==(const MapKey<SortedStore> &x,
+                             const MapKey<SortedStore> &y)
+     {
+       assert(&x._myStore == &y._myStore);
