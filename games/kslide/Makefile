@@ -5,18 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	kslide
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.0.1
 CATEGORIES=	games kde
 MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 		http://perso.orange.fr/coquelle/taquin/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arved@FreeBSD.org
 COMMENT=	KDE puzzle game
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \

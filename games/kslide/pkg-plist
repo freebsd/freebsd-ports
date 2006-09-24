@@ -31,5 +31,6 @@ share/icons/hicolor/48x48/apps/kslide.png
 share/icons/locolor/16x16/apps/kslide.png
 share/icons/locolor/32x32/apps/kslide.png
 share/icons/hicolor/16x16/actions/solve.png
+share/locale/fr/LC_MESSAGES/kslide.mo
 @dirrm share/apps/kslide/pics
 @dirrm share/apps/kslide
