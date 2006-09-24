@@ -22,10 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -44,6 +40,9 @@ do-install:
 		${SED} -e 's|^\.|share/doc/simulavr/internals_html|' \
 		>> ${TMPPLIST})
 		${CAT} ${PLIST} >> ${TMPPLIST}
+		@for man in ${__MANPAGES}; do \
+			${ECHO_CMD} $${man} >> ${TMPPLIST}; \
+		done
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
 
 .include <bsd.port.pre.mk>
