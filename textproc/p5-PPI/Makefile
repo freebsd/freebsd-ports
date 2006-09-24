@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPI
-PORTVERSION=	1.117
+PORTVERSION=	1.118
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
@@ -59,6 +59,7 @@ MAN3=	PPI.3 \
 	PPI::Statement::Unknown.3 \
 	PPI::Statement::UnmatchedBrace.3 \
 	PPI::Statement::Variable.3 \
+	PPI::Structure.3 \
 	PPI::Structure::Block.3 \
 	PPI::Structure::Condition.3 \
 	PPI::Structure::Constructor.3 \
