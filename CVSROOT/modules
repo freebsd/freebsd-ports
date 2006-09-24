@@ -2949,6 +2949,7 @@ fvwm95		ports/x11-wm/fvwm95
 fvwm95-i18n	ports/x11-wm/fvwm95-i18n
 fwanalog	ports/security/fwanalog
 fwbuilder	ports/security/fwbuilder
+fwipe		ports/security/fwipe
 fwlogwatch	ports/security/fwlogwatch
 fwp		ports/games/fwp
 fwtk		ports/security/fwtk
