@@ -131,6 +131,7 @@
     SUBDIR += fuzz
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
+    SUBDIR += fwipe
     SUBDIR += fwlogwatch
     SUBDIR += fwtk
     SUBDIR += gag
