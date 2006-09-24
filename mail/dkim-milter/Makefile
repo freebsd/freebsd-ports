@@ -4,9 +4,16 @@
 #
 # $FreeBSD$
 #
+## There is a new option WITH_POSTFIX_MILTER
+## to make this port work with mail/postfix port.
+
+## WITH_POSTFIX_MILTER knob implicitly defines
+## SENDMAIL_MILTER_IN_BASE, to build with libmilter*
+## in base system.  If you have deleted sendamil in
+## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +22,12 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dkim.sh
+
+.if defined(WITH_POSTFIX_MILTER)
+SENDMAIL_MILTER_IN_BASE=	yes
+RUN_DEPENDS+=	postfix>=2[3-9]*:${PORTSDIR}/mail/postfix
+PKGMESSAGE=	pkg-message.postfix
+.endif
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 .if defined(SENDMAIL_WITH_SHARED_MILTER)
@@ -28,7 +41,7 @@ SENDMAIL_MILTER_PORT?=	sendmail
 SUB_FILES=	milter-dkim.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		dkim-filter.8
-PLIST_FILES=	libexec/dkim-filter sbin/gentxt
+PLIST_FILES=	lib/libar.a libexec/dkim-filter sbin/gentxt
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh
 
@@ -74,6 +87,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
