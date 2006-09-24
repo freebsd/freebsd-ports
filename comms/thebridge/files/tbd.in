@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# PROVIDE: tbd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+tbd_enable=${tbd_enable-"NO"}
+tbd_flags=${tbd_flags-""}
+
+. %%RC_SUBR%%
+
+name="tbd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/libexec/tbd"
+
+load_rc_config $name
+run_rc_command "$1"
