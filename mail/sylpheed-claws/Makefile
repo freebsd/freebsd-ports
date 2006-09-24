@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=	--enable-aspell
 CONFIGURE_ARGS+=	--disable-aspell
 .endif
 .if defined(WITH_JPILOT) || defined(WITH_ALL)
-LIB_DEPENDS+=		pisock.8:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS+=		pisock:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=	--enable-jpilot
 .else
