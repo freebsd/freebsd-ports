@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache.sh,v 1.14 2006-02-20 20:47:47 dougb Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.1 2006-09-24 16:16:40 clement Exp $
 #
 
 # PROVIDE: apache22
