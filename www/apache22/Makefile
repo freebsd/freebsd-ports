@@ -22,7 +22,12 @@ MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2.2 of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+# When using apr_mysql_db we _must_ rebuild makefiles
+.if defined(WITH_FULLBUILD) || defined(WITH_MYSQL)
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+SCRIPTS_ENV+=	FULLBUILD=on
+.endif
 
 LATEST_LINK=	apache22
 
@@ -44,11 +49,11 @@ USE_BZIP2=		yes
 USE_ICONV=		yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_PERL5=		yes
-USE_RC_SUBR=		yes
+USE_RC_SUBR=		apache22.sh
 LIBTOOLFILES=		configure
 
 .if !defined(WITH_APR_FROM_PORTS)
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=	yes
 .endif
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
@@ -65,7 +70,6 @@ CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
 		LOCALBASE="${LOCALBASE}"
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
@@ -169,8 +173,6 @@ post-extract:
 
 post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKDIR}/apache22.sh
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e "s,%%OSVERSION%%,${OSVERSION}," \
@@ -193,16 +195,7 @@ post-configure:
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-install-startup-script:
-.if !exists(${WRKDIR}/apache22.sh)
-	@${MKDIR} ${WRKDIR}
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKDIR}/apache22.sh
-.endif
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache22.sh startup script."
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache22.sh ${PREFIX}/etc/rc.d/apache22.sh
-
-post-install: install-startup-script
+post-install:
 	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache22/Includes
 	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${PREFIX}/etc/apache22/Includes

@@ -44,7 +44,6 @@
 @unexec if cmp -s %D/etc/apache22/extra/httpd-vhosts.conf %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf; then rm -f %D/etc/apache22/extra/httpd-vhosts.conf; fi
 %%EXAMPLESDIR%%/extra/httpd-vhosts.conf
 @exec [ -f %D/etc/apache22/extra/httpd-vhosts.conf ] || cp %D/%%EXAMPLESDIR%%/extra/httpd-vhosts.conf %D/etc/apache22/extra/httpd-vhosts.conf
-etc/rc.d/apache22.sh
 etc/apache22/Includes/no-accf.conf
 include/apache22/ap_compat.h
 include/apache22/ap_config.h
