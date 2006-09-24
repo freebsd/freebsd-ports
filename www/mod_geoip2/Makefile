@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_geoip2
-PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTVERSION=	1.1.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
