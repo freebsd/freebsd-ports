@@ -1,0 +1,14 @@
+Text::Language::Guess guesses a document's language. Its implementation
+is simple: Using "Text::ExtractWords" and "Lingua::StopWords" from CPAN,
+it determines how many of the known stopwords the document contains for
+each language supported by "Lingua::StopWords".
+
+Each word in the document recognized as stopword of a particular
+language scores one point for this language.
+
+The "language_guess()" function takes a document as a parameter and
+returns the abbreviation of the language that it is most likely written
+in.
+
+Author:	Mike Schilli <cpan@perlmeister.com>
+WWW:	http://search.cpan.org/~mschilli/Text-Language-Guess-0.02/
