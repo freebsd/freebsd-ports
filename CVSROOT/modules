@@ -7483,6 +7483,7 @@ netleak		ports/net-mgmt/netleak
 netmap		ports/net/netmap
 netmask		ports/net-mgmt/netmask
 netmond		ports/net-mgmt/netmond
+netoffice	ports/www/netoffice
 netpanzer	ports/games/netpanzer
 netpanzer-data	ports/games/netpanzer-data
 netpbm		ports/graphics/netpbm
