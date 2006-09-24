@@ -1,7 +1,0 @@
-=============================================================================
-
-The environment variable AFNI_PLUGIN_PATH must contain
-%%PREFIX%%/lib:%%PREFIX%%/share/afni
-in order to run AFNI plugins and view splash images.
-
-=============================================================================

@@ -16,14 +16,14 @@
 # Makefile.BSD, which is included in the source distribution.
 
 PORTNAME=	afni
-PORTVERSION=	2006.03.21.1314
+PORTVERSION=	2006.06.30.1332
 CATEGORIES=	science biology graphics
-MASTER_SITES=	http://afni.nimh.nih.gov/pub/dist/tgz/ \
-		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/
-DISTFILES=	afni_src.tgz afni_doc.tgz afni.1 Makefile.FreeBSD_PORT \
-		TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD CA_EZ_v1.3b-Mar1506.tgz
+MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
+		http://afni.nimh.nih.gov/pub/dist/tgz/
+DISTFILES=	afni_src.tgz afni_doc.tgz afni.1 \
+		TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD CA_EZ_v1.3c-May0806.tgz
 DIST_SUBDIR=	AFNI-${PORTVERSION}
-EXTRACT_ONLY=	afni_src.tgz afni_doc.tgz CA_EZ_v1.3b-Mar1506.tgz
+EXTRACT_ONLY=	afni_src.tgz afni_doc.tgz CA_EZ_v1.3c-May0806.tgz
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Advanced Functional Neuro Imaging
@@ -36,7 +36,7 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
+BROKEN=	Does not compile on sparc64: "undefined reference to `_mcount'"
 .endif
 
 USE_GETTEXT=	yes
@@ -48,8 +48,6 @@ MAKE_ENV=	CC="${CC}"
 WRKSRC=		${WRKDIR}/afni_src
 MAKEFILE=	Makefile.FreeBSD_PORT
 ALL_TARGET=	vastness suma
-
-SUB_FILES=	pkg-message
 
 ###########################################################################
 # Install parameters
@@ -66,6 +64,7 @@ SCRIPTS=\
 	@Center_Distance \
 	@CheckForAfniDset \
 	@CommandGlobb \
+	@DoPerRoi.py \
 	@DTI_studio_reposition \
 	@FromRAI \
 	@GetAfniOrient \
@@ -76,6 +75,7 @@ SCRIPTS=\
 	@Purify_1D \
 	@RenamePanga \
 	@SUMA_AlignToExperiment \
+	@SUMA_Make_Spec_Caret \
 	@SUMA_Make_Spec_FS \
 	@SUMA_Make_Spec_SF \
 	@ToRAI \
@@ -90,6 +90,7 @@ SCRIPTS=\
 	@np \
 	@parse_afni_name \
 	@parse_name \
+	afni_base.py \
 	3dMax \
 	suma_change_spec
 
@@ -99,15 +100,18 @@ INSTALL_WRKSRC=	${WRKSRC}/BSD
 INSTALL_TEMP=	${WRKSRC}/Backup.BSD
 
 post-extract:
-	${CP} -f ${DISTDIR}/${DIST_SUBDIR}/Makefile.FreeBSD_PORT ${WRKSRC}
+	${CP} -f ${FILESDIR}/Makefile.FreeBSD_PORT ${WRKSRC}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${WRKDIR}
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/afni.1
 
 do-install:
-	${MKDIR} ${DATADIR} ${INSTALL_TEMP}
+	${MKDIR} ${DATADIR} ${INSTALL_TEMP} \
+		${PREFIX}/lib/afni ${PREFIX}/include/afni
 	@${MV} ${INSTALL_WRKSRC}/libf2c.a ${INSTALL_TEMP}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/*.so ${INSTALL_WRKSRC}/*.a \
-		${PREFIX}/lib
+		${PREFIX}/lib/afni
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/*.h \
-		${PREFIX}/include
+		${PREFIX}/include/afni
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/*.jpg ${INSTALL_WRKSRC}/*.txt \
 		${DATADIR}
 	@${MV}	${INSTALL_WRKSRC}/*.so \
@@ -126,8 +130,8 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/* ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.3b-Mar1506/* ${DATADIR}
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.3c-May0806/* ${DATADIR}
+	${INSTALL_MAN} ${WRKDIR}/afni.1 ${PREFIX}/man/man1
 	@${MV} ${INSTALL_TEMP}/* ${INSTALL_WRKSRC}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -135,6 +139,6 @@ do-install:
 .endif
 
 post-install:
-	@${CAT} ${WRKDIR}/pkg-message
+	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
