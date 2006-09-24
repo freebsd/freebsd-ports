@@ -26,7 +26,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fpermissive" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"
 
 MAN1=		steghide.1
