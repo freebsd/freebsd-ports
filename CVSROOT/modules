@@ -10365,6 +10365,7 @@ p5-XML-Driver-HTML	ports/textproc/p5-XML-Driver-HTML
 p5-XML-Dumper	ports/textproc/p5-XML-Dumper
 p5-XML-Elemental	ports/textproc/p5-XML-Elemental
 p5-XML-Encoding	ports/textproc/p5-XML-Encoding
+p5-XML-FOAF	ports/textproc/p5-XML-FOAF
 p5-XML-Feed		ports/textproc/p5-XML-Feed
 p5-XML-Filter-BufferText	ports/textproc/p5-XML-Filter-BufferText
 p5-XML-Filter-DOMFilter-LibXML	ports/textproc/p5-XML-Filter-DOMFilter-LibXML
