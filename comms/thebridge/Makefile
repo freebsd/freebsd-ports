@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thebridge
-PORTVERSION=	0.81
+PORTVERSION=	0.83
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cqinet
@@ -18,12 +18,12 @@ COMMENT=	Amateur Radio Echolink conference bridge
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	README
+USE_RC_SUBR=	tbd
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/FreeBSD/tbd.sh ${PREFIX}/etc/rc.d/tbd.sh.sample
 
 .include <bsd.port.mk>
