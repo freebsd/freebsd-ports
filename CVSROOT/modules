@@ -1811,6 +1811,7 @@ dim		ports/sysutils/dim
 dimes		ports/net/dimes
 dinotrace	ports/cad/dinotrace
 dirac		ports/multimedia/dirac
+dirac-reference	ports/multimedia/dirac-reference
 diradmin	ports/net/diradmin
 dircomp		ports/sysutils/dircomp
 dircproxy	ports/irc/dircproxy
