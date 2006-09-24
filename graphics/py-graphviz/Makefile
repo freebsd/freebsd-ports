@@ -12,13 +12,11 @@ MASTER_SITE_SUBDIR=	networkx
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygraphviz-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@x12.dk
 COMMENT=	Python interface to GraphViz agraph
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
-
-NO_CDROM=	"Can't be included in a commercial product"
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
