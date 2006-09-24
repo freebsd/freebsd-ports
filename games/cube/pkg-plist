@@ -1061,18 +1061,17 @@
 %%DATADIR%%/packages/than_ind/trim21.jpg
 %%DATADIR%%/packages/than_ind/trlight01.jpg
 %%DATADIR%%/packages/than_ind/trlight06.jpg
-%%PORTDOCS%%%%DOCSDIR%%/docs/config.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/editing.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/editref.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/game.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/history.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/pics/arch.jpg
-%%PORTDOCS%%%%DOCSDIR%%/docs/pics/basic.jpg
-%%PORTDOCS%%%%DOCSDIR%%/docs/pics/octa.jpg
-%%PORTDOCS%%%%DOCSDIR%%/docs/pics/ocull.jpg
+%%PORTDOCS%%%%DOCSDIR%%/config.html
+%%PORTDOCS%%%%DOCSDIR%%/editing.html
+%%PORTDOCS%%%%DOCSDIR%%/editref.html
+%%PORTDOCS%%%%DOCSDIR%%/game.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/pics/arch.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/basic.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/octa.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/ocull.jpg
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/pics
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/packages/than_ind
 @dirrm %%DATADIR%%/packages/tech1soc
