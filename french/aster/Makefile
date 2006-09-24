@@ -11,7 +11,7 @@ CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
 
 #-----------------------------------------------------------------------
@@ -71,9 +71,7 @@ FLAGARCH=	TRU64		# 64 bits
 .endif
 
 .if ${OSVERSION} < 500000
-IGNORE=	Does not compile on FreeBSD-4.x, and cannot be patched easily.
-.else
-BROKEN=	Does not install
+BROKEN=	Does not compile on FreeBSD-4.x, and cannot be patched easily.
 .endif
 .if ${ARCH} == "amd64"
 BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
@@ -82,9 +80,6 @@ BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
 .endif
-
-DEPRECATED=		Does not install
-EXPIRATION_DATE=	2006-11-24
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
