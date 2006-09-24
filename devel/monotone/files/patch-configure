@@ -1,6 +1,6 @@
---- configure.orig	Fri Dec 31 03:17:44 2004
-+++ configure	Wed Jan 26 22:20:17 2005
-@@ -5143,7 +5143,7 @@
+--- configure.orig	Sun Sep 17 21:28:11 2006
++++ configure	Sat Sep 23 18:38:33 2006
+@@ -10827,7 +10827,7 @@
  #ifdef __cplusplus
  "C"
  #endif
