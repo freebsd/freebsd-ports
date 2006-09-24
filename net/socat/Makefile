@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.4.3.1
-PORTREVISION=	1
+PORTVERSION=	1.5.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Multipurpose relay and more
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
+#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
