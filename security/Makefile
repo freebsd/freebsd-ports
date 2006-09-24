@@ -611,6 +611,7 @@
     SUBDIR += sfs
     SUBDIR += sha
     SUBDIR += shishi
+    SUBDIR += shttpscanner
     SUBDIR += sig2dot
     SUBDIR += signing-party
     SUBDIR += silktools
