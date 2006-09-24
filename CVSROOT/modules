@@ -13174,6 +13174,7 @@ showimg		ports/graphics/showimg
 showkey		ports/converters/showkey
 shtool		ports/devel/shtool
 shttpd		ports/www/shttpd
+shttpscanner	ports/security/shttpscanner
 shuffle		ports/misc/shuffle
 shujit		ports/java/shujit
 sic		ports/irc/sic
