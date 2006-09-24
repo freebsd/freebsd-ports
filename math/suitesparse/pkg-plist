@@ -57,6 +57,7 @@ include/suitesparse/umfpack_timer.h
 include/suitesparse/umfpack_transpose.h
 include/suitesparse/umfpack_triplet_to_col.h
 include/suitesparse/umfpack_wsolve.h
+include/ufsparse
 @dirrm include/suitesparse
 lib/libamd.a
 lib/libbtf.a

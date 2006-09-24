@@ -7,6 +7,7 @@
 
 PORTNAME=	ufsparse
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/current/
 DISTNAME=	SuiteSparse
@@ -43,6 +44,7 @@ post-patch:
 				 ${WRKSRC}/UFconfig/UFconfig.mk
 do-install:
 	${MKDIR} ${PREFIX}/include/suitesparse
+	${LN} -sf ${PREFIX}/include/suitesparse ${PREFIX}/include/ufsparse
 	${INSTALL_DATA} ${WRKSRC}/UFconfig/UFconfig.h                       ${PREFIX}/include/suitesparse
 	${INSTALL_DATA} ${WRKSRC}/UMFPACK/Include/*.h                       ${PREFIX}/include/suitesparse
 	${INSTALL_DATA} ${WRKSRC}/AMD/Include/*.h			     ${PREFIX}/include/suitesparse
