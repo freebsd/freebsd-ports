@@ -508,6 +508,7 @@
     SUBDIR += p5-Text-Glob
     SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-Hatena
+    SUBDIR += p5-Text-Language-Guess
     SUBDIR += p5-Text-Markdown
     SUBDIR += p5-Text-Metaphone
     SUBDIR += p5-Text-NSP
