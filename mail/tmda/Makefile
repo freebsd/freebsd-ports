@@ -11,10 +11,10 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.sourceforge.net/releases/ \
 		http://tmda.mirrors.summersault.com/releases/ \
 		http://mirrors.standblue.net/tmda.net/releases/ \
-		http://tmda.paracode.com/releases/ \
+		http://tmda.paracoda.com/releases/ \
 		http://tmda.rtin.bz/releases/ \
 		http://ftp.heanet.ie/mirrors/tmda.net/releases/ \
-		http://tmda.moscuito.net/releases/ \
+		http://tmda.mosquito.net/releases/ \
 		http://dl.ambiweb.de/mirrors/www.tmda.net/releases/ \
 		http://tmda.pradnik.net/releases/ \
 		http://tmda.planetmirror.com/releases/
