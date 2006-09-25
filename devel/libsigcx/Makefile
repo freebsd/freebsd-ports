@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libsigcx
-PORTVERSION=	0.6.4
-PORTREVISION=	5
+PORTVERSION=	0.6.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,10 +25,4 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-static --enable-shared
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
