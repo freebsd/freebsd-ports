@@ -54,7 +54,7 @@ FFMPEG_LDFLAGS=	\
 		-fPIE
 
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 NO_LATEST_LINK=	yes
 CONFLICTS=      ffmpeg-[0-9]*-*
@@ -545,6 +545,9 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} -n 10 ${REINPLACE_CMD} -E \
+		-e 's|#include <SDL|#include <SDL11/SDL|'
 .endif
 .ifndef(WITHOUT_POSTPROCESS)
 	@${LN} -sf libpostproc.so \
