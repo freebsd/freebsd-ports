@@ -6,7 +6,7 @@
 #    $MCom: ports-stable/databases/qdbm/Makefile,v 1.4 2006/03/04 21:25:54 ahze Exp $
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.70
+PORTVERSION=	1.8.71
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qdbm.sourceforge.net/
@@ -55,9 +55,7 @@ post-install:
 
 .else
 
-BUILD_DEPENDS+=	qdbm>=${PKGNAME:S/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-//}:${PORTSDIR}/databases/qdbm
 LIB_DEPENDS+=	qdbm:${PORTSDIR}/databases/qdbm
-RUN_DEPENDS+=	qdbm>=${PKGNAME:S/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-//}:${PORTSDIR}/databases/qdbm
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
