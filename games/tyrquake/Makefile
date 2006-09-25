@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tyrquake
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	games
 MASTER_SITES=	http://disenchant.net/files/engine/
 
@@ -16,22 +16,27 @@ COMMENT=	Very conservative branch of the Quake source code
 USE_GCC=	3.2+
 USE_GL=		yes
 USE_GMAKE=	yes
+MAKE_ENV=	QBASEDIR="${Q1DIR}"
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		X86_ASM "Enable x86 assembly code when possible" on
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
+.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	OPTIMIZED_CFLAGS=N
 .endif
 
 .if defined(WITHOUT_X86_ASM) || ${ARCH} != "i386"
-MAKE_ENV+=	NO_X86_ASM=YES
+MAKE_ENV+=	USE_X86_ASM=N
+.endif
+
+.if ${OSVERSION} < 500000
+post-patch:
+	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
+		${WRKSRC}/common/model.c ${WRKSRC}/include/bspfile.h
 .endif
 
 do-install:
