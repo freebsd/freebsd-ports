@@ -1536,6 +1536,14 @@ share/foomatic/db/source/PPD/Sharp/shc261fj.ppd.gz
 share/foomatic/db/source/PPD/Sharp/shc261mj.ppd.gz
 share/foomatic/db/source/PPD/Sharp/shc261sj.ppd.gz
 share/foomatic/db/source/PPD/Sharp/shc262sj.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST205_CUPS.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST280_282_CUPS.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST3510c_CUPS.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST450_452_CUPS.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST4511_451c_CUPS.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/TOSHIBA_EST850_CUPS.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/Toshiba_GL1010_CUPS.ppd.gz
+share/foomatic/db/source/PPD/Toshiba/Toshiba_GL1020_CUPS.ppd.gz
 share/foomatic/db/source/driver/PM760p.upp.xml
 share/foomatic/db/source/driver/PM760pl.upp.xml
 share/foomatic/db/source/driver/PM820p.upp.xml
@@ -1754,6 +1762,7 @@ share/foomatic/db/source/driver/sipixa6.upp.xml
 share/foomatic/db/source/driver/sj48.xml
 share/foomatic/db/source/driver/slap.xml
 share/foomatic/db/source/driver/sparc.xml
+share/foomatic/db/source/driver/splix.xml
 share/foomatic/db/source/driver/st640ih.upp.xml
 share/foomatic/db/source/driver/st640ihg.upp.xml
 share/foomatic/db/source/driver/st640p.upp.xml
@@ -1789,6 +1798,10 @@ share/foomatic/db/source/driver/t4693d2.xml
 share/foomatic/db/source/driver/t4693d4.xml
 share/foomatic/db/source/driver/t4693d8.xml
 share/foomatic/db/source/driver/tek4696.xml
+share/foomatic/db/source/driver/tosh282.xml
+share/foomatic/db/source/driver/tosh451c.xml
+share/foomatic/db/source/driver/tosh452.xml
+share/foomatic/db/source/driver/tosh850.xml
 share/foomatic/db/source/driver/xes.xml
 share/foomatic/db/source/opt/1.xml
 share/foomatic/db/source/opt/10.xml
@@ -3341,12 +3354,18 @@ share/foomatic/db/source/printer/HP-PhotoSmart_8100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_8200.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_8400.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_8700.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_A310.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_A430.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_A510.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_A610.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_A710.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C3100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C4100.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_C5100.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_C6100.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_C7100.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_D5060.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_D5100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_D6100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_D7100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_D7300.xml
@@ -3359,6 +3378,7 @@ share/foomatic/db/source/printer/HP-PhotoSmart_P1218.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_P130.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_P1315.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_P230.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_Pro_B8300.xml
 share/foomatic/db/source/printer/HP-ThinkJet.xml
 share/foomatic/db/source/printer/HP-e-printer_e20.xml
 share/foomatic/db/source/printer/Heidelberg-Digimaster_9110.xml
@@ -4008,11 +4028,15 @@ share/foomatic/db/source/printer/Samsung-ML-1440.xml
 share/foomatic/db/source/printer/Samsung-ML-1450.xml
 share/foomatic/db/source/printer/Samsung-ML-1450PS.xml
 share/foomatic/db/source/printer/Samsung-ML-1510.xml
+share/foomatic/db/source/printer/Samsung-ML-1520.xml
+share/foomatic/db/source/printer/Samsung-ML-1610.xml
 share/foomatic/db/source/printer/Samsung-ML-1650.xml
 share/foomatic/db/source/printer/Samsung-ML-1651N.xml
 share/foomatic/db/source/printer/Samsung-ML-1710.xml
+share/foomatic/db/source/printer/Samsung-ML-1740.xml
 share/foomatic/db/source/printer/Samsung-ML-1750.xml
 share/foomatic/db/source/printer/Samsung-ML-200.xml
+share/foomatic/db/source/printer/Samsung-ML-2010.xml
 share/foomatic/db/source/printer/Samsung-ML-210.xml
 share/foomatic/db/source/printer/Samsung-ML-2150.xml
 share/foomatic/db/source/printer/Samsung-ML-2150PS.xml
@@ -4020,6 +4044,7 @@ share/foomatic/db/source/printer/Samsung-ML-2151N.xml
 share/foomatic/db/source/printer/Samsung-ML-2151NPS.xml
 share/foomatic/db/source/printer/Samsung-ML-2152W.xml
 share/foomatic/db/source/printer/Samsung-ML-2152WPS.xml
+share/foomatic/db/source/printer/Samsung-ML-2250.xml
 share/foomatic/db/source/printer/Samsung-ML-2550.xml
 share/foomatic/db/source/printer/Samsung-ML-2551N.xml
 share/foomatic/db/source/printer/Samsung-ML-2552W.xml
@@ -4166,6 +4191,26 @@ share/foomatic/db/source/printer/Tektronix-Phaser_780.xml
 share/foomatic/db/source/printer/Tektronix-Phaser_850.xml
 share/foomatic/db/source/printer/Tektronix-Phaser_IISX.xml
 share/foomatic/db/source/printer/Tektronix-Phaser_PX.xml
+share/foomatic/db/source/printer/Toshiba-DP2570.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_200L.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_202L.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_230.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_232.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_280.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_281c.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_282.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_350.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_3511.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_351c.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_352.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_450.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_4511.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_451c.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_452.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_520.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_600.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_720.xml
+share/foomatic/db/source/printer/Toshiba-e-Studio_850.xml
 share/foomatic/db/source/printer/Xerox-2700_XES.xml
 share/foomatic/db/source/printer/Xerox-3700_XES.xml
 share/foomatic/db/source/printer/Xerox-4045_XES.xml
@@ -4280,6 +4325,7 @@ share/foomatic/db/source/printer/Xerox-WorkCentre_XK35c.xml
 @dirrm share/foomatic/db/source/PPD/Savin/PXL
 @dirrm share/foomatic/db/source/PPD/Savin
 @dirrm share/foomatic/db/source/PPD/Sharp
+@dirrm share/foomatic/db/source/PPD/Toshiba
 @dirrm share/foomatic/db/source/PPD
 @dirrm share/foomatic/db/source/driver
 @dirrm share/foomatic/db/source/opt
