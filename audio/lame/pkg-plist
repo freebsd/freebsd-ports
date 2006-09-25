@@ -2,6 +2,7 @@ bin/lame
 bin/mp3rtp
 include/lame/lame.h
 lib/libmp3lame.a
+lib/libmp3lame.la
 lib/libmp3lame.so
 lib/libmp3lame.so.0
 %%PORTDOCS%%%%DOCSDIR%%/API
