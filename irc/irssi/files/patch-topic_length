@@ -1,0 +1,41 @@
+--- src/fe-common/core/formats.c.orig	Fri Dec  9 01:32:44 2005
++++ src/fe-common/core/formats.c	Mon Sep 25 06:15:26 2006
+@@ -376,6 +376,7 @@
+ 	GString *tmp;
+ 	const char *start;
+ #ifdef HAVE_GLIB2
++	const char *oldstr;
+ 	gboolean utf8;
+ #endif
+ 	g_return_val_if_fail(str != NULL, 0);
+@@ -404,7 +405,10 @@
+ 		}
+ 
+ #ifdef HAVE_GLIB2
++		oldstr = str;
+ 		len -= advance(&str, utf8);
++		if(len < 0)
++			str = oldstr;
+ #else
+ 	  len--;
+ 		str++;
+--- src/fe-text/statusbar.c.orig	Fri Dec  9 01:32:46 2005
++++ src/fe-text/statusbar.c	Mon Sep 25 10:15:25 2006
+@@ -732,7 +732,8 @@
+                         /* they're forcing us smaller than minimum size.. */
+ 			len = format_real_length(tmpstr, item->size);
+                         tmpstr[len] = '\0';
+-		} else {
++		}
++
+ 			/* make sure the str is big enough to fill the
+ 			   requested size, so it won't corrupt screen */
+ 			len = format_get_length(tmpstr);
+@@ -747,7 +748,6 @@
+ 				g_free(fill);
+ 				g_free(tmpstr);
+ 				tmpstr = tmpstr2;
+-			}
+ 		}
+ 
+ 		tmpstr2 = update_statusbar_bg(tmpstr, item->bar->color);
