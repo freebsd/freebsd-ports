@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	eyeOS
-DISTVERSION=	0.9.0-4
+DISTVERSION=	0.9.1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITES=	SF
 
 MAINTAINER=	nivit@email.it
 COMMENT=	Web Based Desktop System
@@ -19,7 +18,7 @@ USE_PHP=	pcre session
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 EYEDIR?=	${PREFIX}/www/${PORTNAME}
-RWDIRS=		etc home usr
+RWDIRS=		etc
 RODIRS=		apps login system
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -28,6 +27,11 @@ SUB_LIST+=	EYEDIR=${EYEDIR}
 
 post-extract:
 	@${RM} -f ${WRKSRC}/DOCS/gpl-license.txt
+	@${MV} ${WRKSRC}/README.txt ${WRKSRC}/DOCS/USER.MANUAL
+
+post-patch:
+	@${FIND} ${WRKSRC}/ -iname \*php | xargs ${REINPLACE_CMD} -e 's/0777/0775/g'
+	@${FIND} ${WRKSRC}/ -iname \*bak -delete
 
 do-install:
 	@${INSTALL} -d ${EYEDIR}
