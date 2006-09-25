@@ -20,7 +20,7 @@ include/sigcx-0.6/sigcx/tunnel.h
 include/sigcx-0.6/sigcx/util.h
 lib/libsigcx-0.6.a
 lib/libsigcx-0.6.so
-lib/libsigcx-0.6.so.2
+lib/libsigcx-0.6.so.3
 lib/libsigcx-gtk-0.6.a
 lib/libsigcx-gtk-0.6.so
 lib/libsigcx-gtk-0.6.so.1
