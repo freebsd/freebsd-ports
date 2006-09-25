@@ -7,6 +7,7 @@
 
 PORTNAME=	lame
 PORTVERSION=	3.97
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	lame
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	ISO code based fast MP3 encoder kit
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
@@ -28,7 +29,7 @@ DOC_FILES=	API LICENSE README TODO USAGE
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
