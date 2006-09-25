@@ -12156,6 +12156,7 @@ qcomicbook	ports/graphics/qcomicbook
 qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
 qdbm		ports/databases/qdbm
+qdbm-java	ports/databases/qdbm-java
 qdbm-plus	ports/databases/qdbm-plus
 qdecoder	ports/www/qdecoder
 qdvdauthor	ports/multimedia/qdvdauthor
