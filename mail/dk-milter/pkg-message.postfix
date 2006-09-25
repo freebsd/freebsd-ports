@@ -1,12 +1,9 @@
 ************************************************************************
 
 In order to run this port, please add the following lines to
-/etc/mail/<your_configuration>.mc:
+${PREFIX}/etc/postfix/main.cf:
 
-INPUT_MAIL_FILTER(`dk-filter', `S=unix:/var/run/milterdk/filter, F=T, T=R:2m')
-
-define(`confMILTER_MACROS_CONNECT', `j, {daemon_name}')
-define(`confMILTER_MACROS_ENVFROM', `i, {auth_type}')
+smtpd_milters = unix:/var/run/milterdk/filter
 
 And to run the milter from startup, add milterdk_enable="YES" in
 your /etc/rc.conf.

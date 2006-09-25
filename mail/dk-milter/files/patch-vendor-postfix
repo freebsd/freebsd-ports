@@ -1,12 +1,22 @@
-Index: dk-filter/dk-filter.c
-===================================================================
-RCS file: /cvs/dk-filter/dk-filter.c,v
-retrieving revision 1.158
-retrieving revision 1.159
-diff -u -r1.158 -r1.159
 --- dk-filter/dk-filter.c	19 May 2006 21:42:05 -0000	1.158
-+++ dk-filter/dk-filter.c	26 Jun 2006 19:41:23 -0000	1.159
-@@ -1625,6 +1625,8 @@
++++ dk-filter/dk-filter.c	31 Aug 2006 21:37:17 -0000
+@@ -1582,15 +1582,7 @@
+ 
+ 	dfc->mctx_jobid = smfi_getsymval(ctx, "i");
+ 	if (dfc->mctx_jobid == NULL)
+-	{
+-		if (no_i_whine && dolog)
+-		{
+-			syslog(LOG_WARNING,
+-			       "WARNING: sendmail symbol 'i' not available");
+-			no_i_whine = FALSE;
+-		}
+ 		dfc->mctx_jobid = JOBIDUNKNOWN;
+-	}
+ 
+ #if _FFR_REQUIRED_HEADERS
+ 	/* if requested, verify RFC2822-required headers */
+@@ -1625,6 +1617,8 @@
  	}
  #endif /* _FFR_REQUIRED_HEADERS */
  
@@ -15,7 +25,7 @@ diff -u -r1.158 -r1.159
  	/* find the Sender: or From: header */
  	memset(addr, '\0', sizeof addr);
  	from = dkf_findheader(dfc, "Sender", 0);
-@@ -1639,7 +1641,8 @@
+@@ -1639,7 +1633,8 @@
  			       dfc->mctx_jobid);
  		}
  
@@ -25,7 +35,7 @@ diff -u -r1.158 -r1.159
  		dfc->mctx_headeronly = TRUE;
  		dfc->mctx_status = DKF_STATUS_BADFORMAT;
  		return SMFIS_CONTINUE;
-@@ -1669,7 +1672,6 @@
+@@ -1669,7 +1664,6 @@
  	originok = FALSE;
  
  	/* is it a domain we sign for? */
@@ -33,6 +43,33 @@ diff -u -r1.158 -r1.159
  	if (!msgsigned && domains != NULL && dfc->mctx_domain != NULL)
  	{
  		int n;
+@@ -2075,6 +2069,26 @@
+ 	assert(cc != NULL);
+ 	dfc = cc->cctx_msg;
+ 	assert(dfc != NULL);
++
++	/*
++	**  If necessary, try again to get the job ID in case it came down
++	**  later than expected (e.g. postfix).
++	*/
++
++	if (dfc->mctx_jobid == JOBIDUNKNOWN)
++	{
++		dfc->mctx_jobid = smfi_getsymval(ctx, "i");
++		if (dfc->mctx_jobid == NULL)
++		{
++			if (no_i_whine && dolog)
++			{
++				syslog(LOG_WARNING,
++				       "WARNING: sendmail symbol 'i' not available");
++				no_i_whine = FALSE;
++			}
++			dfc->mctx_jobid = JOBIDUNKNOWN;
++		}
++	}
+ 
+ 	/* get hostname; used in the X header and in new MIME boundaries */
+ 	hostname = smfi_getsymval(ctx, "j");
 Index: libdk/dk.c
 ===================================================================
 RCS file: /cvs/libdk/dk.c,v
