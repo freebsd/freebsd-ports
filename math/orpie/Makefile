@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	orpie
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES+=	math
 MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/orpie/
 
