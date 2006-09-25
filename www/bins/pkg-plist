@@ -122,20 +122,8 @@ share/locale/it/LC_MESSAGES/bins.mo
 share/locale/pl/LC_MESSAGES/bins.mo
 share/locale/ru/LC_MESSAGES/bins.mo
 share/locale/zh/LC_MESSAGES/bins.mo
-@dirrmtry share/locale/zh/LC_MESSAGES
-@dirrmtry share/locale/zh
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ru
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
 %%PORTDOCS%%@dirrm share/doc/bins
 @dirrm share/bins/templates.joi/static
 @dirrm share/bins/templates.joi
