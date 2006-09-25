@@ -53,7 +53,7 @@ SCRIPTS_ENV+=	ALL_MODULES="${ALL_MODULES}" \
 		REINPLACE_CMD="${REINPLACE_CMD}" \
 		SED="${SED}" \
 		TOUCH="${TOUCH}" \
-		TR="${TR}" \
+		TR="/usr/bin/tr" \
 		WRKDIRPREFIX="${WRKDIRPREFIX}"
 
 ## If MINIMAL_KDE is defined, define WITHOUT_FOO for every
