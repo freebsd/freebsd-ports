@@ -1,32 +1,36 @@
 #!/bin/sh
 # $FreeBSD$
 
-# PROVIDE: p0fanalyzer
+# PROVIDE: amavis_p0fanalyzer
 # REQUIRE: DAEMON
 # BEFORE: amavisd
 # KEYWORD: FreeBSD
 
-p0fanalyzer_enable="${p0fanalyzer_enable-NO}"
+amavis_p0fanalyzer_enable="${amavis_p0fanalyzer_enable-NO}"
+amavis_p0fanalyzer_p0f_filter="${amavis_p0fanalyzer_p0f_filter-"tcp dst port 25"}"
+amavis_p0fanalyzer_pidfile1="${amavis_p0fanalyzer_pidfile1-/var/run/p0fanalyzer1.pid}"
+amavis_p0fanalyzer_pidfile2="${amavis_p0fanalyzer_pidfile2-/var/run/p0fanalyzer2.pid}"
 
 . /etc/rc.subr
 
-name="p0fanalyzer"
+name="amavis_p0fanalyzer"
 rcvar=`set_rcvar`
 
 start_cmd=p0fanalyzer_start
 stop_cmd=p0fanalyzer_stop
 
 p0fanalyzer_start() {
-	checkyesno p0fanalyzer_enable && echo "Starting p0f-analyzer." && \
-	    /usr/sbin/daemon -p /var/run/p0fanalyzer1.pid \
-	    %%PREFIX%%/bin/p0f -i bge0 -l 'tcp dst port 25' 2>&1 | \
-	    /usr/sbin/daemon -p /var/run/p0fanalyzer2.pid \
-	    %%PREFIX%%/sbin/p0f-analyzer.pl 2345
+	echo "Starting p0f-analyzer." && \
+	  /usr/sbin/daemon -p ${amavis_p0fanalyzer_pidfile1} \
+	  %%PREFIX%%/bin/p0f -l "${amavis_p0fanalyzer_p0f_filter}" \
+	  "${amavis_p0fanalyzer_flags}" 2>&1 | \
+	  /usr/sbin/daemon -p ${amavis_p0fanalyzer_pidfile2} \
+	  %%PREFIX%%/sbin/p0f-analyzer.pl 2345
 }
 
 p0fanalyzer_stop() {
-	/bin/kill `cat /var/run/p0fanalyzer2.pid`
-	/bin/kill `cat /var/run/p0fanalyzer1.pid`
+	/bin/kill `cat ${amavis_p0fanalyzer_pidfile2}` && rm ${amavis_p0fanalyzer_pidfile2}
+	/bin/kill `cat ${amavis_p0fanalyzer_pidfile1}` && rm ${amavis_p0fanalyzer_pidfile1}
 }
 
 load_rc_config $name
