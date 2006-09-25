@@ -43,7 +43,7 @@ make_group() {
 	    echo "Done."
 	else
 	    echo "Please create it, and try again."
-	    if ! grep -q "^${u}:" /etc/passwd; then
+	    if ! /usr/sbin/pw user show ${u} >/dev/null 2>/dev/null; then
 		echo "While you're at it, please create a user \"${u}\" too,"
 		echo "with a default group of \"${g}\"."
 	    fi
