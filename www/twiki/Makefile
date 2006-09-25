@@ -46,6 +46,6 @@ do-install:
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${TWIKIDIR})
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
