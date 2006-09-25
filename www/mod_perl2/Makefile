@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
@@ -15,6 +16,9 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_APACHE=	2.0+
 PERL_CONFIGURE=	yes
