@@ -50,14 +50,3 @@ gnu patch is gpatch for FreeBSD.
  # Fix warnings that appear on x86-64 & are considered dangerous
  # FIXME file up-stream
 
---- patches/gstreamer/gstreamer-avmedia-source-gstreamer.diff~	Fri Sep  1 03:11:26 2006
-+++ patches/gstreamer/gstreamer-avmedia-source-gstreamer.diff	Sun Sep  3 20:57:30 2006
-@@ -1162,7 +1162,7 @@
- +void SAL_CALL Player::setVolumeDB( sal_Int16 nVolumeDB ) 
- +    throw (uno::RuntimeException)
- +{
--+    mnUnmutedVolume = pow10 ( nVolumeDB / 20.0 );
-++    mnUnmutedVolume = pow ( 10.0, nVolumeDB / 20.0 );
- +
- +    OSL_TRACE( "set volume: %d gst volume: %lf", nVolumeDB, mnUnmutedVolume );
- +
