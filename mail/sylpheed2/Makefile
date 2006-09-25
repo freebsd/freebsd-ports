@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	2.2.9
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
 
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=--disable-compface
 .endif
 
 .if defined(WITH_JPILOT)
-LIB_DEPENDS+=	pisock.8:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS+=	pisock.9:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=--enable-jpilot
 .else
