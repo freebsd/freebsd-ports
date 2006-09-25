@@ -7,7 +7,7 @@
 
 PORTNAME=	dk-milter
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
@@ -16,6 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dk.sh
+
+.if defined(WITH_POSTFIX_MILTER)
+SENDMAIL_MILTER_IN_BASE=	yes
+RUN_DEPENDS+=	postfix>=2[3-9]*:${PORTSDIR}/mail/postfix
+PKGMESSAGE=	pkg-message.postfix
+.endif
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 .if defined(SENDMAIL_WITH_SHARED_MILTER)
@@ -71,6 +77,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
