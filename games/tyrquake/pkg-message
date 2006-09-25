@@ -2,7 +2,7 @@
 
 TyrQuake has been installed.
 
-If you hace sound problems try running it with the parameter
+If you have sound problems try running it with the parameter
 "-sndspeed <speed>", where "<speed>" could be 22050 or 44100 for example.
 
 ==============================================================================
