@@ -42,8 +42,8 @@ OPTIONS=	PTHREAD "Enable pthread support" Off \
 		DEBUG "Enable debug" Off
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 
 post-build:
@@ -58,12 +58,13 @@ post-install:
 LIB_DEPENDS+=	qdbm:${PORTSDIR}/databases/qdbm
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/java|${JAVA_HOME}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .if ${SLAVEPORT}=="ruby"
-	${FIND} ${WRKSRC} -type f | \
+	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|/usr/bin/ruby -w|${SETENV} ruby|'
-	${FIND} ${WRKSRC} -name '*.bak' | ${XARGS} ${RM} -f
+	@${FIND} ${WRKSRC} -name '*.bak' | ${XARGS} ${RM} -f
 .endif
 .endif
 
