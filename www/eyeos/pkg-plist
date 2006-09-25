@@ -1,7 +1,7 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/QUICK INSTALL MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/QUICK UPGRADE MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY MANUAL
+%%PORTDOCS%%%%DOCSDIR%%/USER.MANUAL
 %%EYEDIR%%/apps/eyeApps.eyeapp/aplic.php
 %%EYEDIR%%/apps/eyeApps.eyeapp/gfx/restore.png
 %%EYEDIR%%/apps/eyeApps.eyeapp/ico_b.png
@@ -184,6 +184,14 @@
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/images/inserttime.gif
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/langs/en.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/readme.txt
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/images/absolute.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/images/backward.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/images/forward.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/images/insert_layer.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/readme.txt
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/css/noneditable.css
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/editor_plugin.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/editor_plugin_src.js
@@ -229,6 +237,15 @@
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/readme.txt
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/replace.htm
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/search.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/css/props.css
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/editor_plugin.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/editor_plugin_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/images/apply_button_bg.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/images/style_info.gif
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/jscripts/props.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/langs/en.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/props.htm
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/readme.txt
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/cell.htm
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/css/cell.css
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/css/row.css
@@ -388,6 +405,7 @@
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/tiny_mce.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/tiny_mce_popup.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/tiny_mce_src.js
+%%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/editable_selects.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/form_utils.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/mclayer.js
 %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/utils/mctabs.js
@@ -404,12 +422,18 @@
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/download.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/file.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/folder.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/gfx/home.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/image.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/install.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/messages.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/newfolder.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/gfx/tabhome.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/gfx/tabhome_x.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/gfx/tabpublic.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/gfx/tabpublic_x.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/text.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/gfx/upload.png
+%%EYEDIR%%/apps/eyeHome.eyeapp/gfx/world.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/ico_b.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/ico_c.png
 %%EYEDIR%%/apps/eyeHome.eyeapp/index.htm
@@ -441,7 +465,6 @@
 %%EYEDIR%%/apps/eyeNav.eyeapp/propietats.xml
 %%EYEDIR%%/apps/eyeNav.eyeapp/searchengines.inc.php
 %%EYEDIR%%/apps/eyeOptions.eyeapp/aplic.php
-%%EYEDIR%%/apps/eyeOptions.eyeapp/esborradir.inc.php
 %%EYEDIR%%/apps/eyeOptions.eyeapp/ico_b.png
 %%EYEDIR%%/apps/eyeOptions.eyeapp/ico_c.png
 %%EYEDIR%%/apps/eyeOptions.eyeapp/index.htm
@@ -475,16 +498,16 @@
 %%EYEDIR%%/changes.txt
 %%EYEDIR%%/desktop.php
 %%EYEDIR%%/etc/index.html
-%%EYEDIR%%/home/index.html
 %%EYEDIR%%/index.php
 %%EYEDIR%%/known-bugs.txt
+%%EYEDIR%%/login/NOTvalidate.txt
 %%EYEDIR%%/login/back.png
 %%EYEDIR%%/login/block_account.png
 %%EYEDIR%%/login/block_be.png
 %%EYEDIR%%/login/block_login.png
+%%EYEDIR%%/login/browlang.php
 %%EYEDIR%%/login/index.php
 %%EYEDIR%%/login/style.css
-%%EYEDIR%%/login/validate.txt
 %%EYEDIR%%/sysdefs.php
 %%EYEDIR%%/system/archive.php
 %%EYEDIR%%/system/baixar.php
@@ -523,66 +546,66 @@
 %%EYEDIR%%/system/scripts/x_eyeOSwin.js
 %%EYEDIR%%/system/stats.php
 %%EYEDIR%%/system/syscall.php
-%%EYEDIR%%/system/themes/BlueIris/IE/1.png
-%%EYEDIR%%/system/themes/BlueIris/IE/3.png
-%%EYEDIR%%/system/themes/BlueIris/IE/5.png
-%%EYEDIR%%/system/themes/BlueIris/IE/close.png
-%%EYEDIR%%/system/themes/BlueIris/IE/default.css
-%%EYEDIR%%/system/themes/BlueIris/IE/exit.png
-%%EYEDIR%%/system/themes/BlueIris/IE/max.png
-%%EYEDIR%%/system/themes/BlueIris/IE/panel.png
-%%EYEDIR%%/system/themes/BlueIris/INFO
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeApps.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeApps.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeBoard.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeBoard.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeCalc.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeCalc.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeCalendar.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeCalendar.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeEdit.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeEdit.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeEdit.eyeapp/propietats.xml~1~
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeHome.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeHome.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeInfo.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeInfo.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeMessages.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeMessages.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeNav.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeNav.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeOptions.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeOptions.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyePhones.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyePhones.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeRSS.eyeapp/ico_b.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeRSS.eyeapp/ico_c.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeTrash.eyeapp/empty.png
-%%EYEDIR%%/system/themes/BlueIris/apps/eyeTrash.eyeapp/full.png
-%%EYEDIR%%/system/themes/BlueIris/default.css
-%%EYEDIR%%/system/themes/BlueIris/desktop/exit.png
-%%EYEDIR%%/system/themes/BlueIris/desktop/exit2.png
-%%EYEDIR%%/system/themes/BlueIris/desktop/panel.png
-%%EYEDIR%%/system/themes/BlueIris/eyeos.jpg
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/1.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/2.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/3.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/4.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/5.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/6.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/7.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/barc.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/barl.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/barr.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles/background.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles/botl.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles/botr.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles/out.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles/topl.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles/topr.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/close.png
-%%EYEDIR%%/system/themes/BlueIris/gfxwin/max.png
-%%EYEDIR%%/system/themes/BlueIris/thumb.png
+%%EYEDIR%%/system/themes/GreenIris/IE/1.png
+%%EYEDIR%%/system/themes/GreenIris/IE/3.png
+%%EYEDIR%%/system/themes/GreenIris/IE/5.png
+%%EYEDIR%%/system/themes/GreenIris/IE/close.png
+%%EYEDIR%%/system/themes/GreenIris/IE/default.css
+%%EYEDIR%%/system/themes/GreenIris/IE/exit.png
+%%EYEDIR%%/system/themes/GreenIris/IE/max.png
+%%EYEDIR%%/system/themes/GreenIris/IE/panel.png
+%%EYEDIR%%/system/themes/GreenIris/INFO
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeApps.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeApps.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeBoard.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeBoard.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeCalc.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeCalc.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeCalendar.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeCalendar.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeEdit.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeEdit.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeEdit.eyeapp/propietats.xml~1~
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeHome.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeHome.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeInfo.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeInfo.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeMessages.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeMessages.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeNav.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeNav.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeOptions.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeOptions.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyePhones.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyePhones.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeRSS.eyeapp/ico_b.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeRSS.eyeapp/ico_c.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeTrash.eyeapp/empty.png
+%%EYEDIR%%/system/themes/GreenIris/apps/eyeTrash.eyeapp/full.png
+%%EYEDIR%%/system/themes/GreenIris/default.css
+%%EYEDIR%%/system/themes/GreenIris/desktop/exit.png
+%%EYEDIR%%/system/themes/GreenIris/desktop/exit2.png
+%%EYEDIR%%/system/themes/GreenIris/desktop/panel.png
+%%EYEDIR%%/system/themes/GreenIris/eyeos.jpg
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/1.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/2.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/3.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/4.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/5.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/6.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/7.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/barc.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/barl.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/barr.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/bubbles/background.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/bubbles/botl.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/bubbles/botr.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/bubbles/out.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/bubbles/topl.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/bubbles/topr.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/close.png
+%%EYEDIR%%/system/themes/GreenIris/gfxwin/max.png
+%%EYEDIR%%/system/themes/GreenIris/thumb.png
 %%EYEDIR%%/system/themes/default/IE/1.png
 %%EYEDIR%%/system/themes/default/IE/3.png
 %%EYEDIR%%/system/themes/default/IE/5.png
@@ -616,7 +639,6 @@
 %%EYEDIR%%/system/themes/default/gfxwin/close.png
 %%EYEDIR%%/system/themes/default/gfxwin/max.png
 %%EYEDIR%%/system/themes/default/thumb.png
-%%EYEDIR%%/usr/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EYEDIR%%/apps/eyeApps.eyeapp/gfx
 @dirrm %%EYEDIR%%/apps/eyeApps.eyeapp
@@ -678,6 +700,9 @@
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/images
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime/langs
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/insertdatetime
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/layer
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable/css
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/noneditable
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/paste/css
@@ -698,6 +723,11 @@
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/jscripts
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace/langs
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/searchreplace
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/css
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/images
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/jscripts
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style/langs
+@dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/style
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/css
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/images
 @dirrm %%EYEDIR%%/apps/eyeEdit.eyeapp/tiny_mce/plugins/table/jscripts
@@ -737,32 +767,30 @@
 @dirrm %%EYEDIR%%/apps/eyeRSS.eyeapp
 @dirrm %%EYEDIR%%/apps/eyeTrash.eyeapp
 @dirrm %%EYEDIR%%/apps
-@dirrmtry %%EYEDIR%%/etc
-@dirrmtry %%EYEDIR%%/home
 @dirrm %%EYEDIR%%/login
 @dirrm %%EYEDIR%%/system/css
 @dirrm %%EYEDIR%%/system/gfx/btn
 @dirrm %%EYEDIR%%/system/gfx
 @dirrm %%EYEDIR%%/system/scripts
-@dirrm %%EYEDIR%%/system/themes/BlueIris/IE
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeApps.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeBoard.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeCalc.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeCalendar.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeEdit.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeHome.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeInfo.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeMessages.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeNav.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeOptions.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyePhones.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeRSS.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps/eyeTrash.eyeapp
-@dirrm %%EYEDIR%%/system/themes/BlueIris/apps
-@dirrm %%EYEDIR%%/system/themes/BlueIris/desktop
-@dirrm %%EYEDIR%%/system/themes/BlueIris/gfxwin/bubbles
-@dirrm %%EYEDIR%%/system/themes/BlueIris/gfxwin
-@dirrm %%EYEDIR%%/system/themes/BlueIris
+@dirrm %%EYEDIR%%/system/themes/GreenIris/IE
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeApps.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeBoard.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeCalc.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeCalendar.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeEdit.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeHome.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeInfo.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeMessages.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeNav.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeOptions.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyePhones.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeRSS.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps/eyeTrash.eyeapp
+@dirrm %%EYEDIR%%/system/themes/GreenIris/apps
+@dirrm %%EYEDIR%%/system/themes/GreenIris/desktop
+@dirrm %%EYEDIR%%/system/themes/GreenIris/gfxwin/bubbles
+@dirrm %%EYEDIR%%/system/themes/GreenIris/gfxwin
+@dirrm %%EYEDIR%%/system/themes/GreenIris
 @dirrm %%EYEDIR%%/system/themes/default/IE
 @dirrm %%EYEDIR%%/system/themes/default/desktop
 @dirrm %%EYEDIR%%/system/themes/default/gfxwin/bubbles
@@ -770,5 +798,5 @@
 @dirrm %%EYEDIR%%/system/themes/default
 @dirrmtry %%EYEDIR%%/system/themes
 @dirrmtry %%EYEDIR%%/system
-@dirrmtry %%EYEDIR%%/usr
+@dirrmtry %%EYEDIR%%/etc
 @dirrmtry %%EYEDIR%%
