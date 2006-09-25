@@ -19,6 +19,7 @@
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += cdcat
+    SUBDIR += charmap
     SUBDIR += checkrdf
     SUBDIR += chmsee
     SUBDIR += contacts

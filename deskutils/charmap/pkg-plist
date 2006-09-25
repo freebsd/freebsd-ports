@@ -1,0 +1,13 @@
+Local/Applications/Charmap.app/Charmap
+Local/Applications/Charmap.app/library_paths.openapp
+Local/Applications/Charmap.app/Resources/Info-gnustep.plist
+Local/Applications/Charmap.app/Resources/CharmapInfo.plist
+Local/Applications/Charmap.app/Resources/Charmap.desktop
+Local/Applications/Charmap.app/Resources/UnicodeData.txt
+Local/Applications/Charmap.app/Resources/Charmap.png
+Local/Applications/Charmap.app/Resources/Charmap.gorm/data.classes
+Local/Applications/Charmap.app/Resources/Charmap.gorm/objects.gorm
+Local/Applications/Charmap.app/stamp.make
+@dirrm Local/Applications/Charmap.app/Resources/Charmap.gorm
+@dirrm Local/Applications/Charmap.app/Resources
+@dirrm Local/Applications/Charmap.app
