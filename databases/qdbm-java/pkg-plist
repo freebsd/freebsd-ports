@@ -1,0 +1,36 @@
+lib/libjqdbm.so
+lib/libjqdbm.so.1
+lib/libjqdbm.so.1.0.0
+lib/qdbm.jar
+%%DATADIR%%/java/japidoc/allclasses-frame.html
+%%DATADIR%%/java/japidoc/allclasses-noframe.html
+%%DATADIR%%/java/japidoc/constant-values.html
+%%DATADIR%%/java/japidoc/index-all.html
+%%DATADIR%%/java/japidoc/index.html
+%%DATADIR%%/java/japidoc/overview-summary.html
+%%DATADIR%%/java/japidoc/overview-tree.html
+%%DATADIR%%/java/japidoc/package-list
+%%DATADIR%%/java/japidoc/packages.html
+%%DATADIR%%/java/japidoc/qdbm/ADBM.html
+%%DATADIR%%/java/japidoc/qdbm/Curia.html
+%%DATADIR%%/java/japidoc/qdbm/CuriaException.html
+%%DATADIR%%/java/japidoc/qdbm/DBMException.html
+%%DATADIR%%/java/japidoc/qdbm/Depot.html
+%%DATADIR%%/java/japidoc/qdbm/DepotException.html
+%%DATADIR%%/java/japidoc/qdbm/Util.html
+%%DATADIR%%/java/japidoc/qdbm/Villa.html
+%%DATADIR%%/java/japidoc/qdbm/VillaCursor.html
+%%DATADIR%%/java/japidoc/qdbm/VillaException.html
+%%DATADIR%%/java/japidoc/qdbm/package-frame.html
+%%DATADIR%%/java/japidoc/qdbm/package-summary.html
+%%DATADIR%%/java/japidoc/qdbm/package-tree.html
+%%DATADIR%%/java/japidoc/resources/inherit.gif
+%%DATADIR%%/java/japidoc/serialized-form.html
+%%DATADIR%%/java/japidoc/stylesheet.css
+%%DATADIR%%/java/jspex-ja.html
+%%DATADIR%%/java/jspex.html
+@dirrm %%DATADIR%%/java/japidoc/resources
+@dirrm %%DATADIR%%/java/japidoc/qdbm
+@dirrm %%DATADIR%%/java/japidoc
+@dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%
