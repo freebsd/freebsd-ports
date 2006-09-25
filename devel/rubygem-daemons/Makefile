@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	daemons
-PORTVERSION=	0.4.4
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +18,10 @@ x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
 	| ${SED} -E \
 		's,.*share/nls/.+$$,,g \
-		;s,^${CACHE_DIR}(/.+)$$,%%CACHE_DIR%%\1,g \
+		;s,^${GEM_CACHE}$$,%%GEM_CACHE%%,g \
 		;s,${GEM_DOC_DIR}(/.+)?$$,%%GEM_DOC_DIR%%\1,g \
 		;s,${GEM_LIB_DIR}(/.+)?$$,%%GEM_LIB_DIR%%\1,g \
-		;s,^${SPEC_DIR}(/.+)$$,%%SPEC_DIR%%\1,g \
+		;s,^${GEM_SPEC}$$,%%GEM_SPEC%%,g \
 		;s,^${GEMS_BASE_DIR}/(.+)$$,\1,g \
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist

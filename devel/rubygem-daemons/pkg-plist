@@ -1,4 +1,4 @@
-%%CACHE_DIR%%/daemons-0.4.4.gem
+%%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000060.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000061.html
@@ -28,16 +28,16 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Application.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Application.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000051.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000052.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000053.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000054.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000059.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/CmdException.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000031.html
@@ -49,10 +49,10 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Error.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Exception.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Optparse.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Optparse.src/M000014.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Optparse.src/M000015.html
@@ -134,7 +134,7 @@
 %%GEM_LIB_DIR%%/test/tc_main.rb
 %%GEM_LIB_DIR%%/test/test1.rb
 %%GEM_LIB_DIR%%/test/testapp.rb
-%%SPEC_DIR%%/daemons-0.4.4.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib/daemons
 @dirrm %%GEM_LIB_DIR%%/lib
