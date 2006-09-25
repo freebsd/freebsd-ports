@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-Address-Ethernet
-PORTVERSION=	1.077
+PORTVERSION=	1.081
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Find hardware ethernet address
 
 RUN_DEPENDS=	${SITE_PERL}/Env/Path.pm:${PORTSDIR}/devel/p5-Env-Path \
