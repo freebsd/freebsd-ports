@@ -9,7 +9,7 @@ PORTNAME=	ldvd
 PORTVERSION=	2.0.1
 PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://ftp-master.debian-unofficial.org/contrib/vedran/ldvd/${PORTVERSION}/
+MASTER_SITES=	://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Gui, which shall simplify shrinking a DVD-9 to a DVD-5
