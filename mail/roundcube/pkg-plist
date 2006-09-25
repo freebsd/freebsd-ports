@@ -1,8 +1,13 @@
 %%DOCSDIR%%/UPGRADING
+%%RCUBEDIR%%/SQL/mssql.initial.sql
 %%RCUBEDIR%%/SQL/mysql.initial.sql
+%%RCUBEDIR%%/SQL/mysql.update-0.1a.sql
 %%RCUBEDIR%%/SQL/mysql.update.sql
+%%RCUBEDIR%%/SQL/mysql5.initial.sql
 %%RCUBEDIR%%/SQL/postgres.initial.sql
+%%RCUBEDIR%%/SQL/postgres.update.sql
 %%RCUBEDIR%%/SQL/sqlite.initial.sql
+%%RCUBEDIR%%/SQL/sqlite.update.sql
 %%RCUBEDIR%%/config/.htaccess
 %%RCUBEDIR%%/config/db.inc.php.dist
 %%RCUBEDIR%%/config/main.inc.php.dist
@@ -22,7 +27,181 @@
 %%RCUBEDIR%%/program/include/session.inc
 %%RCUBEDIR%%/program/js/app.js
 %%RCUBEDIR%%/program/js/common.js
+%%RCUBEDIR%%/program/js/editor.js
 %%RCUBEDIR%%/program/js/googiespell.js
+%%RCUBEDIR%%/program/js/tiny_mce/blank.htm
+%%RCUBEDIR%%/program/js/tiny_mce/langs/en.js
+%%RCUBEDIR%%/program/js/tiny_mce/langs/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/license.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/cleanup/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/cleanup/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/cleanup/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/emotions.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/emotions.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-cool.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-cry.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-embarassed.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-foot-in-mouth.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-frown.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-innocent.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-kiss.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-laughing.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-money-mouth.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-sealed.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-smile.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-surprised.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-tongue-out.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-undecided.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-wink.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images/smiley-yell.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/jscripts/functions.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/langs/en.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images/replace.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images/search.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts/replace.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts/search.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/langs/en.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/replace.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/search.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/cell.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/css/cell.css
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/css/row.css
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/css/table.css
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/buttons.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_cell_props.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_delete.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_delete_col.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_delete_row.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_insert_col_after.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_insert_col_before.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_insert_row_after.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_insert_row_before.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_merge_cells.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_row_props.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images/table_split_cells.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/jscripts/cell.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/jscripts/merge_cells.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/jscripts/row.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/jscripts/table.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/langs/en.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/merge_cells.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/readme.txt
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/row.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/table/table.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/about.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/anchor.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/charmap.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/color_picker.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/about.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/common_buttons.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/create_accessible_content.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/images/insert_anchor_window.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/images/insert_image_window.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/images/insert_link_window.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/images/insert_table_window.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/index.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/insert_anchor_button.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/insert_image_button.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/insert_link_button.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/insert_table_button.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/style.css
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/editor_template.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/editor_template_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/image.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/anchor.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/anchor_symbol.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/backcolor.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/bold.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/bold_de_se.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/bold_es.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/bold_fr.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/bold_ru.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/bold_tw.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/browse.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/bullist.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/button_menu.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/buttons.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/cancel_button_bg.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/charmap.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/cleanup.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/close.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/code.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/color.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/copy.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/custom_1.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/cut.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/forecolor.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/help.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/hr.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/image.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/indent.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/insert_button_bg.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/italic.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/italic_de_se.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/italic_es.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/italic_ru.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/italic_tw.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/justifycenter.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/justifyfull.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/justifyleft.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/justifyright.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/link.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/menu_check.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/newdocument.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/numlist.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/opacity.png
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/outdent.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/paste.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/redo.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/removeformat.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/separator.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/spacer.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/statusbar_resize.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/strikethrough.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/sub.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/sup.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/underline.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/underline_es.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/underline_fr.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/underline_ru.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/underline_tw.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/undo.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/unlink.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/visualaid.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/xp/tab_bg.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/xp/tab_end.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/xp/tab_sel_bg.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/xp/tab_sel_end.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/xp/tabs_bg.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts/about.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts/anchor.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts/charmap.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts/color_picker.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts/image.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts/link.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts/source_editor.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/langs/en.js
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/link.htm
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/source_editor.htm
+%%RCUBEDIR%%/program/js/tiny_mce/tiny_mce.js
+%%RCUBEDIR%%/program/js/tiny_mce/tiny_mce_popup.js
+%%RCUBEDIR%%/program/js/tiny_mce/tiny_mce_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/utils/editable_selects.js
+%%RCUBEDIR%%/program/js/tiny_mce/utils/form_utils.js
+%%RCUBEDIR%%/program/js/tiny_mce/utils/mclayer.js
+%%RCUBEDIR%%/program/js/tiny_mce/utils/mctabs.js
+%%RCUBEDIR%%/program/js/tiny_mce/utils/validate.js
 %%RCUBEDIR%%/program/lib/Auth/SASL.php
 %%RCUBEDIR%%/program/lib/Auth/SASL/Anonymous.php
 %%RCUBEDIR%%/program/lib/Auth/SASL/Common.php
@@ -46,56 +225,6 @@
 %%RCUBEDIR%%/program/lib/DB/sqlite.php
 %%RCUBEDIR%%/program/lib/DB/storage.php
 %%RCUBEDIR%%/program/lib/DB/sybase.php
-%%RCUBEDIR%%/program/lib/MDB2.php
-%%RCUBEDIR%%/program/lib/MDB2/Date.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/Common.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/fbsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/ibase.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/mssql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/mysql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/mysqli.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/oci8.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/pgsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype/sqlite.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/Common.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/fbsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/ibase.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/mssql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/mysql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/mysqli.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/oci8.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/pgsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Manager/sqlite.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/fbsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/ibase.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/mssql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/mysql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/mysqli.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/oci8.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/pgsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Native/sqlite.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/Common.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/fbsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/ibase.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/mssql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/mysql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/mysqli.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/oci8.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/pgsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse/sqlite.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/fbsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/ibase.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/mssql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/mysql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/mysqli.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/oci8.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/pgsql.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/querysim.php
-%%RCUBEDIR%%/program/lib/MDB2/Driver/sqlite.php
-%%RCUBEDIR%%/program/lib/MDB2/Extended.php
-%%RCUBEDIR%%/program/lib/MDB2/Iterator.php
-%%RCUBEDIR%%/program/lib/MDB2/LOB.php
-%%RCUBEDIR%%/program/lib/MDB2/Wrapper/peardb.php
 %%RCUBEDIR%%/program/lib/Mail/mime.php
 %%RCUBEDIR%%/program/lib/Mail/mimeDecode.php
 %%RCUBEDIR%%/program/lib/Mail/mimePart.php
@@ -128,12 +257,16 @@
 %%RCUBEDIR%%/program/lib/mime.inc
 %%RCUBEDIR%%/program/lib/utf7.inc
 %%RCUBEDIR%%/program/lib/utf8.class.php
+%%RCUBEDIR%%/program/localization/am/labels.inc
+%%RCUBEDIR%%/program/localization/am/messages.inc
+%%RCUBEDIR%%/program/localization/ar/labels.inc
+%%RCUBEDIR%%/program/localization/ar/messages.inc
+%%RCUBEDIR%%/program/localization/bg/labels.inc
+%%RCUBEDIR%%/program/localization/bg/messages.inc
 %%RCUBEDIR%%/program/localization/bs_BA/labels.inc
 %%RCUBEDIR%%/program/localization/bs_BA/messages.inc
 %%RCUBEDIR%%/program/localization/ca/labels.inc
 %%RCUBEDIR%%/program/localization/ca/messages.inc
-%%RCUBEDIR%%/program/localization/cn/labels.inc
-%%RCUBEDIR%%/program/localization/cn/messages.inc
 %%RCUBEDIR%%/program/localization/cz/labels.inc
 %%RCUBEDIR%%/program/localization/cz/messages.inc
 %%RCUBEDIR%%/program/localization/da/labels.inc
@@ -142,8 +275,6 @@
 %%RCUBEDIR%%/program/localization/de_CH/messages.inc
 %%RCUBEDIR%%/program/localization/de_DE/labels.inc
 %%RCUBEDIR%%/program/localization/de_DE/messages.inc
-%%RCUBEDIR%%/program/localization/ee/labels.inc
-%%RCUBEDIR%%/program/localization/ee/messages.inc
 %%RCUBEDIR%%/program/localization/el/labels.inc
 %%RCUBEDIR%%/program/localization/el/messages.inc
 %%RCUBEDIR%%/program/localization/en_GB/labels.inc
@@ -152,6 +283,8 @@
 %%RCUBEDIR%%/program/localization/en_US/messages.inc
 %%RCUBEDIR%%/program/localization/es/labels.inc
 %%RCUBEDIR%%/program/localization/es/messages.inc
+%%RCUBEDIR%%/program/localization/et_EE/labels.inc
+%%RCUBEDIR%%/program/localization/et_EE/messages.inc
 %%RCUBEDIR%%/program/localization/eu/labels.inc
 %%RCUBEDIR%%/program/localization/eu/messages.inc
 %%RCUBEDIR%%/program/localization/fi/labels.inc
@@ -199,6 +332,8 @@
 %%RCUBEDIR%%/program/localization/tr/messages.inc
 %%RCUBEDIR%%/program/localization/tw/labels.inc
 %%RCUBEDIR%%/program/localization/tw/messages.inc
+%%RCUBEDIR%%/program/localization/zh_CN/labels.inc
+%%RCUBEDIR%%/program/localization/zh_CN/messages.inc
 %%RCUBEDIR%%/program/steps/addressbook/delete.inc
 %%RCUBEDIR%%/program/steps/addressbook/edit.inc
 %%RCUBEDIR%%/program/steps/addressbook/func.inc
@@ -217,6 +352,7 @@
 %%RCUBEDIR%%/program/steps/mail/list.inc
 %%RCUBEDIR%%/program/steps/mail/mark.inc
 %%RCUBEDIR%%/program/steps/mail/move_del.inc
+%%RCUBEDIR%%/program/steps/mail/quotaimg.inc
 %%RCUBEDIR%%/program/steps/mail/rss.inc
 %%RCUBEDIR%%/program/steps/mail/search.inc
 %%RCUBEDIR%%/program/steps/mail/sendmail.inc
@@ -233,34 +369,51 @@
 %%RCUBEDIR%%/program/steps/settings/save_prefs.inc
 %%RCUBEDIR%%/skins/default/addresses.css
 %%RCUBEDIR%%/skins/default/common.css
+%%RCUBEDIR%%/skins/default/editor_content.css
+%%RCUBEDIR%%/skins/default/editor_popup.css
+%%RCUBEDIR%%/skins/default/editor_ui.css
 %%RCUBEDIR%%/skins/default/googiespell.css
 %%RCUBEDIR%%/skins/default/images/blank.gif
 %%RCUBEDIR%%/skins/default/images/buttons/add_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/add_contact_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/add_contact_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/add_contact_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/add_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/add_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/addressbook.gif
 %%RCUBEDIR%%/skins/default/images/buttons/addressbook.png
 %%RCUBEDIR%%/skins/default/images/buttons/attach_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/attach_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/attach_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/back_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/back_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/back_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/bg.gif
 %%RCUBEDIR%%/skins/default/images/buttons/compose_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/compose_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/compose_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/contacts_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/contacts_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/contacts_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/delete_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/delete_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/delete_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/down_arrow.png
 %%RCUBEDIR%%/skins/default/images/buttons/download_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/download_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/download_sel.png
+%%RCUBEDIR%%/skins/default/images/buttons/drafts_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/drafts_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/drafts_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/edit_contact_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/edit_contact_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/edit_contact_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/forward_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/forward_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/forward_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/inbox_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/inbox_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/inbox_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/ldap_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/ldap_pas.png
 %%RCUBEDIR%%/skins/default/images/buttons/logout.gif
@@ -269,22 +422,33 @@
 %%RCUBEDIR%%/skins/default/images/buttons/mail.png
 %%RCUBEDIR%%/skins/default/images/buttons/next_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/next_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/next_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/previous_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/previous_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/previous_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/print_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/print_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/print_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/reply_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/reply_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/reply_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/replyall_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/replyall_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/replyall_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/send_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/send_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/send_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/settings.gif
 %%RCUBEDIR%%/skins/default/images/buttons/settings.png
 %%RCUBEDIR%%/skins/default/images/buttons/source_act.png
 %%RCUBEDIR%%/skins/default/images/buttons/source_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/source_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/spacer.gif
+%%RCUBEDIR%%/skins/default/images/buttons/spellcheck_act.png
+%%RCUBEDIR%%/skins/default/images/buttons/spellcheck_pas.png
+%%RCUBEDIR%%/skins/default/images/buttons/spellcheck_sel.png
 %%RCUBEDIR%%/skins/default/images/buttons/up_arrow.png
+%%RCUBEDIR%%/skins/default/images/cleardot.png
 %%RCUBEDIR%%/skins/default/images/display/confirm.png
 %%RCUBEDIR%%/skins/default/images/display/info.png
 %%RCUBEDIR%%/skins/default/images/display/loading.gif
@@ -296,9 +460,12 @@
 %%RCUBEDIR%%/skins/default/images/googiespell/spellc.gif
 %%RCUBEDIR%%/skins/default/images/icons/abcard.png
 %%RCUBEDIR%%/skins/default/images/icons/attachment.png
+%%RCUBEDIR%%/skins/default/images/icons/deleted.png
 %%RCUBEDIR%%/skins/default/images/icons/dot.png
+%%RCUBEDIR%%/skins/default/images/icons/edit.png
 %%RCUBEDIR%%/skins/default/images/icons/flagged.png
 %%RCUBEDIR%%/skins/default/images/icons/folder-closed.png
+%%RCUBEDIR%%/skins/default/images/icons/folder-drafts.png
 %%RCUBEDIR%%/skins/default/images/icons/folder-inbox.png
 %%RCUBEDIR%%/skins/default/images/icons/folder-junk.png
 %%RCUBEDIR%%/skins/default/images/icons/folder-open.png
@@ -306,6 +473,7 @@
 %%RCUBEDIR%%/skins/default/images/icons/folder-trash.png
 %%RCUBEDIR%%/skins/default/images/icons/forwarded.png
 %%RCUBEDIR%%/skins/default/images/icons/plus.gif
+%%RCUBEDIR%%/skins/default/images/icons/remove-attachment.png
 %%RCUBEDIR%%/skins/default/images/icons/replied.png
 %%RCUBEDIR%%/skins/default/images/icons/reset.gif
 %%RCUBEDIR%%/skins/default/images/icons/silhouette.png
@@ -357,8 +525,8 @@
 %%RCUBEDIR%%/temp/.htaccess
 @dirrm %%RCUBEDIR%%/skins/default/templates
 @dirrm %%RCUBEDIR%%/skins/default/includes
-@dirrm %%RCUBEDIR%%/skins/default/images/googiespell
 @dirrm %%RCUBEDIR%%/skins/default/images/icons
+@dirrm %%RCUBEDIR%%/skins/default/images/googiespell
 @dirrm %%RCUBEDIR%%/skins/default/images/display
 @dirrm %%RCUBEDIR%%/skins/default/images/buttons
 @dirrm %%RCUBEDIR%%/skins/default/images
@@ -368,6 +536,7 @@
 @dirrm %%RCUBEDIR%%/program/steps/mail
 @dirrm %%RCUBEDIR%%/program/steps/addressbook
 @dirrm %%RCUBEDIR%%/program/steps
+@dirrm %%RCUBEDIR%%/program/localization/zh_CN
 @dirrm %%RCUBEDIR%%/program/localization/tw
 @dirrm %%RCUBEDIR%%/program/localization/tr
 @dirrm %%RCUBEDIR%%/program/localization/sk
@@ -391,6 +560,7 @@
 @dirrm %%RCUBEDIR%%/program/localization/fr
 @dirrm %%RCUBEDIR%%/program/localization/fi
 @dirrm %%RCUBEDIR%%/program/localization/eu
+@dirrm %%RCUBEDIR%%/program/localization/et_EE
 @dirrm %%RCUBEDIR%%/program/localization/es
 @dirrm %%RCUBEDIR%%/program/localization/en_US
 @dirrm %%RCUBEDIR%%/program/localization/en_GB
@@ -400,24 +570,46 @@
 @dirrm %%RCUBEDIR%%/program/localization/de_CH
 @dirrm %%RCUBEDIR%%/program/localization/da
 @dirrm %%RCUBEDIR%%/program/localization/cz
-@dirrm %%RCUBEDIR%%/program/localization/cn
 @dirrm %%RCUBEDIR%%/program/localization/ca
 @dirrm %%RCUBEDIR%%/program/localization/bs_BA
+@dirrm %%RCUBEDIR%%/program/localization/bg
+@dirrm %%RCUBEDIR%%/program/localization/ar
+@dirrm %%RCUBEDIR%%/program/localization/am
 @dirrm %%RCUBEDIR%%/program/localization
 @dirrm %%RCUBEDIR%%/program/lib/encoding
 @dirrm %%RCUBEDIR%%/program/lib/Net
 @dirrm %%RCUBEDIR%%/program/lib/Mail
-@dirrm %%RCUBEDIR%%/program/lib/MDB2/Wrapper
-@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Reverse
-@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Native
-@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Manager
-@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver/Datatype
-@dirrm %%RCUBEDIR%%/program/lib/MDB2/Driver
-@dirrm %%RCUBEDIR%%/program/lib/MDB2
 @dirrm %%RCUBEDIR%%/program/lib/DB
 @dirrm %%RCUBEDIR%%/program/lib/Auth/SASL
 @dirrm %%RCUBEDIR%%/program/lib/Auth
 @dirrm %%RCUBEDIR%%/program/lib
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/utils
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/jscripts
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/xp
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs/en
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/docs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/themes
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/jscripts
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/css
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/jscripts
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/emotions
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/cleanup
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce
 @dirrm %%RCUBEDIR%%/program/js
 @dirrm %%RCUBEDIR%%/program/include
 @dirrm %%RCUBEDIR%%/program
