@@ -7258,6 +7258,7 @@ mtxorbd		ports/sysutils/mtxorbd
 mu-conference	ports/net-im/mu-conference
 muddleftpd	ports/ftp/muddleftpd
 mudix		ports/net/mudix
+mudmagic	ports/games/mudmagic
 mudsh		ports/shells/mudsh
 muggy		ports/editors/muggy
 muh		ports/irc/muh
