@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-pilot
 PORTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -16,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	PalmPilot conduit system for GNOME 2
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
-LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

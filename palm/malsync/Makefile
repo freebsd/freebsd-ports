@@ -7,6 +7,7 @@
 
 PORTNAME=	malsync
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/malsync/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +17,7 @@ DISTNAME=	malsync_2.2.0.src
 MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	Sync to Mobile Application Link (MAL) compliant servers
 
-LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
 # Code is not 64-bit clean
 NOT_FOR_ARCH=	amd64

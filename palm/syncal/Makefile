@@ -7,6 +7,7 @@
 
 PORTNAME=	syncal
 PORTVERSION=	0.8.9
+PORTREVISION=	1
 CATEGORIES=	palm comms deskutils
 MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 		ftp://ftp.Uni-Bielefeld.DE/pub/systems/FreeBSD/lkoeller/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronize your PalmPilot with ical
 
-LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
 
 NO_PACKAGE=	patches installed ical port
