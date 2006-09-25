@@ -1,0 +1,35 @@
+#!/bin/sh
+# PROVIDE: mongrel_cluster
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# This script is modified by placing the following variables inside
+# /etc/rc.conf.local, /etc/rc.conf, or /etc/rc.conf.d/mongrel_cluster:
+#
+# mongrel_cluster_enable (bool):
+# 	Set it to YES to enable this service.
+#	Default: NO
+# mongrel_cluster_conf_dir (path):
+# 	The directory containing the configuration file (*.yml) for each
+#	application you want to control.
+# 	Default: %%PREFIX%%/etc/mongrel_cluster
+
+. %%RC_SUBR%%
+
+name=mongrel_cluster
+rcvar=${name}_enable
+
+command="%%PREFIX%%/bin/mongrel_cluster_ctl"
+required_dirs="%%PREFIX%%/etc/${name}"
+
+load_rc_config $name
+
+: ${mongrel_cluster_enable="NO"}
+: ${mongrel_cluster_conf_dir="%%PREFIX%%/etc/mongrel_cluster"}
+
+command_args="-c ${mongrel_cluster_conf_dir}"
+start_cmd="${command} start ${command_args}"
+stop_cmd="${command} stop ${command_args}"
+restart_cmd="${command} restart ${command_args}"
+
+run_rc_command "$1"
