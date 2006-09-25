@@ -43,3 +43,5 @@ bin/vqadmin
 @dirrm %%CGIBINDIR%%/vqadmin
 @dirrm %%WEBDATADIR%%/images/vqadmin
 @dirrm %%WEBDATADIR%%/images
+@dirrmtry %%CGIBINDIR%%
+@dirrmtry %%WEBDATADIR%%
