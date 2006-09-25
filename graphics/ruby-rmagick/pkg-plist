@@ -281,6 +281,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/preview.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/qbezierpath.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quad01.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m_after.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m_before.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/quantize-m.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/radial_blur.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/raise.rb
