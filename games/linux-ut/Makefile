@@ -41,7 +41,7 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 .for file in ${PATCH436FILES:C/:.*//}
 	@cd ${WRKSRC} &&\
-		${SED} -e '1,/exit $$res/d' ${_DISTDIR}/${file} | ${TAR} zxf -
+		${SED} -e '1,/exit $$res/d' ${_DISTDIR}/${file} | ${GUNZIP_CMD} -q | ${TAR} xf -
 .endfor
 	@${MV} ${WRKSRC}/bin/Linux/x86/ucc ${WRKSRC}/bin/.
 
