@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bsfilter
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.15
 CATEGORIES=	mail ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	bsfilter/20232
+MASTER_SITE_SUBDIR=	bsfilter/21887
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	info@otsune.com
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 
 OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
-		MECAB "Part-of-Speech and Morphological Analyzer (i386 only)" Off \
+		MECAB "Part-of-Speech and Morphological Analyzer" Off \
 		KAKASI "Language processing filter/converter" Off
 
 .include <bsd.port.pre.mk>
@@ -29,7 +29,7 @@ OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
 .if defined(WITH_CHASEN)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/chasen.so:${PORTSDIR}/japanese/ruby-chasen
 .endif
-.if ${ARCH} != "sparc64" && defined(WITH_MECAB)
+.if defined(WITH_MECAB)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/MeCab.so:${PORTSDIR}/japanese/ruby-mecab
 .endif
 .if defined(WITH_KAKASI)
