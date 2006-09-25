@@ -24,13 +24,13 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/
 		${SITE_PERL}/${PERL_ARCH}/Crypt/TEA.pm:${PORTSDIR}/security/p5-Crypt-TEA \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/Twofish.pm:${PORTSDIR}/security/p5-Crypt-Twofish \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/Twofish2.pm:${PORTSDIR}/security/p5-Crypt-Twofish2 \
-		${SITE_PERL}/${PERL_ARCH}/Date/Format.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/${PERL_ARCH}/Date/Parse.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Crypt/Blowfish_PP.pm:${PORTSDIR}/security/p5-Crypt-Blowfish_PP \
 		${SITE_PERL}/Crypt/DES_PP.pm:${PORTSDIR}/security/p5-Crypt-DES_PP \
 		${SITE_PERL}/Crypt/Rijndael_PP.pm:${PORTSDIR}/security/p5-Crypt-Rijndael_PP \
+		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
 		${SITE_PERL}/Hook/LexWrap.pm:${PORTSDIR}/devel/p5-Hook-LexWrap \
 		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
