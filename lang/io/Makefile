@@ -82,12 +82,16 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/_docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
+	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 
 .for subdir in ioCode sampleCode docgen unitTests
 	${MKDIR} ${EXAMPLESDIR}/${subdir}
 	${TAR} -C ${WRKSRC}/vm/_${subdir} -cf - . | \
 		${TAR} -C ${EXAMPLESDIR}/${subdir} -xf -
 .endfor
+	@${FIND} ${EXAMPLESDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>

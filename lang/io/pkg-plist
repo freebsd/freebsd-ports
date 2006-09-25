@@ -114,112 +114,112 @@ lib/libIoSyslog.a
 lib/libIoUser.a
 lib/libIoVM.a
 lib/libIoZlib.a
-%%DOCSDIR%%/docs.html
-%%DOCSDIR%%/embedding.html
-%%DOCSDIR%%/guide.html
-%%DOCSDIR%%/guide.pages/.typeAttributes.dict
-%%DOCSDIR%%/guide.pages/Contents/PkgInfo
-%%DOCSDIR%%/guide.pages/index.xml.gz
-%%DOCSDIR%%/guide.pages/thumbs/page_thumb_1-3.tiff
-%%DOCSDIR%%/guide.pdf
-%%DOCSDIR%%/guide_files/guide.css
-%%DOCSDIR%%/licenseForDocs.txt
-%%DOCSDIR%%/releaseHistory.txt
-%%EXAMPLESDIR%%/docgen/DocsExtractor.io
-%%EXAMPLESDIR%%/ioCode/A0_List.io
-%%EXAMPLESDIR%%/ioCode/A1_Object.io
-%%EXAMPLESDIR%%/ioCode/A2_List.io
-%%EXAMPLESDIR%%/ioCode/A3_Exception.io
-%%EXAMPLESDIR%%/ioCode/Actor.io
-%%EXAMPLESDIR%%/ioCode/B_Sequence.io
-%%EXAMPLESDIR%%/ioCode/Block.io
-%%EXAMPLESDIR%%/ioCode/CFunction.io
-%%EXAMPLESDIR%%/ioCode/Date.io
-%%EXAMPLESDIR%%/ioCode/Directory.io
-%%EXAMPLESDIR%%/ioCode/File.io
-%%EXAMPLESDIR%%/ioCode/Notifier.io
-%%EXAMPLESDIR%%/ioCode/Number.io
-%%EXAMPLESDIR%%/ioCode/P_CGI.io
-%%EXAMPLESDIR%%/ioCode/Range.io
-%%EXAMPLESDIR%%/ioCode/Sandbox.io
-%%EXAMPLESDIR%%/ioCode/Serialize.io
-%%EXAMPLESDIR%%/ioCode/System.io
-%%EXAMPLESDIR%%/ioCode/UnitTest.io
-%%EXAMPLESDIR%%/ioCode/Y_Path.io
-%%EXAMPLESDIR%%/ioCode/Z_CLI.io
-%%EXAMPLESDIR%%/ioCode/Z_Importer.io
-%%EXAMPLESDIR%%/ioCode/_old/Importer2.io
-%%EXAMPLESDIR%%/ioCode/_old/Io2C.io
-%%EXAMPLESDIR%%/ioCode/_old/Object.io
-%%EXAMPLESDIR%%/ioCode/_old/Parser.io
-%%EXAMPLESDIR%%/ioCode/_old/p.io
-%%EXAMPLESDIR%%/ioCode/_test/Compiler.io
-%%EXAMPLESDIR%%/ioCode/_test/System.io
-%%EXAMPLESDIR%%/sampleCode/Account.io
-%%EXAMPLESDIR%%/sampleCode/Ackerman.io
-%%EXAMPLESDIR%%/sampleCode/BottlesOfBeer.io
-%%EXAMPLESDIR%%/sampleCode/Brackets.io
-%%EXAMPLESDIR%%/sampleCode/Cards.io
-%%EXAMPLESDIR%%/sampleCode/CommandLineArgs.io
-%%EXAMPLESDIR%%/sampleCode/ConcurrencyTest.io
-%%EXAMPLESDIR%%/sampleCode/Conditions.io
-%%EXAMPLESDIR%%/sampleCode/Control.io
-%%EXAMPLESDIR%%/sampleCode/ControlFlow.io
-%%EXAMPLESDIR%%/sampleCode/Decompile.io
-%%EXAMPLESDIR%%/sampleCode/Dir.io
-%%EXAMPLESDIR%%/sampleCode/ErlangChallenge.io
-%%EXAMPLESDIR%%/sampleCode/Foreach.io
-%%EXAMPLESDIR%%/sampleCode/Hanoi.io
-%%EXAMPLESDIR%%/sampleCode/HelloWorld.io
-%%EXAMPLESDIR%%/sampleCode/Inheritance.io
-%%EXAMPLESDIR%%/sampleCode/Ping.io
-%%EXAMPLESDIR%%/sampleCode/Sort.io
-%%EXAMPLESDIR%%/sampleCode/Super.io
-%%EXAMPLESDIR%%/sampleCode/WeakLink.io
-%%EXAMPLESDIR%%/sampleCode/_speed/SpeedResults
-%%EXAMPLESDIR%%/sampleCode/_speed/SpeedResults.html
-%%EXAMPLESDIR%%/sampleCode/_speed/coro.io
-%%EXAMPLESDIR%%/sampleCode/_speed/list.io
-%%EXAMPLESDIR%%/sampleCode/_speed/speed.io
-%%EXAMPLESDIR%%/sampleCode/_speed/speed.py
-%%EXAMPLESDIR%%/sampleCode/_speed/speed.rebol
-%%EXAMPLESDIR%%/sampleCode/_speed/speed.ruby
-%%EXAMPLESDIR%%/sampleCode/_speed/speedResults.io
-%%EXAMPLESDIR%%/sampleCode/_speed/speedResults2.io
-%%EXAMPLESDIR%%/sampleCode/except.io
-%%EXAMPLESDIR%%/sampleCode/metrics.io
-%%EXAMPLESDIR%%/sampleCode/qsort.io
-%%EXAMPLESDIR%%/unitTests/AlignTest.io
-%%EXAMPLESDIR%%/unitTests/BigSourceFileTest.io
-%%EXAMPLESDIR%%/unitTests/BlockTest.io
-%%EXAMPLESDIR%%/unitTests/CoroutineTest.io
-%%EXAMPLESDIR%%/unitTests/DateTest.io
-%%EXAMPLESDIR%%/unitTests/EmptyTest.io
-%%EXAMPLESDIR%%/unitTests/IfTest.io
-%%EXAMPLESDIR%%/unitTests/ListTest.io
-%%EXAMPLESDIR%%/unitTests/LoopTest.io
-%%EXAMPLESDIR%%/unitTests/MapTest.io
-%%EXAMPLESDIR%%/unitTests/MessageTest.io
-%%EXAMPLESDIR%%/unitTests/MiscTest.io
-%%EXAMPLESDIR%%/unitTests/NumberTest.io
-%%EXAMPLESDIR%%/unitTests/ObjectTest.io
-%%EXAMPLESDIR%%/unitTests/SequenceTest.io
-%%EXAMPLESDIR%%/unitTests/WeakLinkTest.io
-%%EXAMPLESDIR%%/unitTests/run.io
-@dirrm %%EXAMPLESDIR%%/unitTests
-@dirrm %%EXAMPLESDIR%%/sampleCode/_speed
-@dirrm %%EXAMPLESDIR%%/sampleCode
-@dirrm %%EXAMPLESDIR%%/ioCode/_test
-@dirrm %%EXAMPLESDIR%%/ioCode/_old
-@dirrm %%EXAMPLESDIR%%/ioCode/_new
-@dirrm %%EXAMPLESDIR%%/ioCode
-@dirrm %%EXAMPLESDIR%%/docgen
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/guide_files
-@dirrm %%DOCSDIR%%/guide.pages/thumbs
-@dirrm %%DOCSDIR%%/guide.pages/Contents
-@dirrm %%DOCSDIR%%/guide.pages
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/embedding.html
+%%PORTDOCS%%%%DOCSDIR%%/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/guide.pages/.typeAttributes.dict
+%%PORTDOCS%%%%DOCSDIR%%/guide.pages/Contents/PkgInfo
+%%PORTDOCS%%%%DOCSDIR%%/guide.pages/index.xml.gz
+%%PORTDOCS%%%%DOCSDIR%%/guide.pages/thumbs/page_thumb_1-3.tiff
+%%PORTDOCS%%%%DOCSDIR%%/guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/guide_files/guide.css
+%%PORTDOCS%%%%DOCSDIR%%/licenseForDocs.txt
+%%PORTDOCS%%%%DOCSDIR%%/releaseHistory.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/docgen/DocsExtractor.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/A0_List.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/A1_Object.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/A2_List.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/A3_Exception.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Actor.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/B_Sequence.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Block.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/CFunction.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Date.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Directory.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/File.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Notifier.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Number.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/P_CGI.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Range.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Sandbox.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Serialize.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/System.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/UnitTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Y_Path.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Z_CLI.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/Z_Importer.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/_old/Importer2.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/_old/Io2C.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/_old/Object.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/_old/Parser.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/_old/p.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/_test/Compiler.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/ioCode/_test/System.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Account.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Ackerman.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/BottlesOfBeer.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Brackets.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Cards.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/CommandLineArgs.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/ConcurrencyTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Conditions.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Control.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/ControlFlow.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Decompile.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Dir.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/ErlangChallenge.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Foreach.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Hanoi.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/HelloWorld.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Inheritance.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Ping.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Sort.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/Super.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/WeakLink.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/SpeedResults
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/SpeedResults.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/coro.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/list.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/speed.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/speed.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/speed.rebol
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/speed.ruby
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/speedResults.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/_speed/speedResults2.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/except.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/metrics.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleCode/qsort.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/AlignTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/BigSourceFileTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/BlockTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/CoroutineTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/DateTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/EmptyTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/IfTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/ListTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/LoopTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/MapTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/MessageTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/MiscTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/NumberTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/ObjectTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/SequenceTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/WeakLinkTest.io
+%%PORTDOCS%%%%EXAMPLESDIR%%/unitTests/run.io
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/unitTests
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sampleCode/_speed
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sampleCode
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ioCode/_test
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ioCode/_old
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ioCode/_new
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ioCode
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/docgen
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide_files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide.pages/thumbs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide.pages/Contents
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide.pages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/io/base
 @dirrm include/io/SkipDB
 @dirrm include/io
