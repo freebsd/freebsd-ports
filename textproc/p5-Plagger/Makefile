@@ -7,6 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.12
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -53,6 +54,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		JAVASCRIPT "Publish::JavaScript Support" off \
 		EMOTICON "Filter::Emoticon Support" off \
 		FILHATENA "Filter::HatenaFormat Support" off \
+		FILHATKTAG "Filter::HatenaKeywordTag" off \
 		RULEFRESH "Rule::Fresh Support" on \
 		SUBSCOPML "Subscription::OPML Support" on \
 		FLICKRSEARCH "CustomFeed::FlickrSearch Support" off \
@@ -65,10 +67,12 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		PUBLISHGMAIL "Publish::Gmail Support" on \
 		PUBDELICIOUS "Publish::Delicious Support" off \
 		ESTRAIER "Search::Estraier Support" off \
+		SRCHGREP "Search::Grep" off \
 		PUBJSON "Publish::JSON Support" off \
 		FILSPAMASSN "Filter-SpamAssassin Support" off \
 		PROFANITY "Filter::Profanity Support" off \
 		HATENARSS "Subscription::HatenaRSS Support" off \
+		SUBSCRFOAF "Subscription::FOAF Support" off \
 		NOTIFYIRC "Notify::IRC Support" off \
 		AGRXANGO "Aggregator::Xango Support" off \
 		HATENADIARY "Filter::HatenaDiaryKeywordLink Support" off \
@@ -80,12 +84,11 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		BLOGLINES "Subscription::Bloglines Support" on \
 		BABELFISH "Filter::Babelfish Support" off \
 		CUSFEEDMIXI "CustomFeed::Mixi Support" off \
+		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
 		NTFYNETSEND "Notify::NetSend Support" off \
 		FILHTMLSCRB "Filter::HTMLScrubber Support" on \
 		PLANETINI "Subscription::PlanetINI Support" off
 # The below options are not supported yet due to missing depending modules
-#		CUSTOMSVNLOG "CustomFeed::SVNLog Support" off \
-#		SUBSCRFOAF "Subscription::FOAF Support" off \
 #		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
 #		PINGSERVER "Subscription::PingServer Support" off \
 #		PUBLISHSWF "Publish::SWF Support" off \
@@ -159,6 +162,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Text/Emoticon.pm:${PORTSDIR}/textproc/p5-Text-Emoti
 BUILD_DEPENDS+=	${SITE_PERL}/Text/Hatena.pm:${PORTSDIR}/textproc/p5-Text-Hatena
 .endif
 
+.if defined(WITH_FILHATKTAG)
+BUILD_DEPENDS+=	${SITE_PERL}/Hatena/Keyword.pm:${PORTSDIR}/textproc/p5-Hatena-Keyword
+.endif
+
 .if !defined(WITHOUT_RULEFRESH)
 BUILD_DEPENDS+=	${SITE_PERL}/Time/Duration/Parse.pm:${PORTSDIR}/devel/p5-Time-Duration-Parse
 .endif
@@ -210,6 +217,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/Delicious.pm:${PORTSDIR}/net/p5-Net-Delicious
 BUILD_DEPENDS+=	${SITE_PERL}/Search/Estraier.pm:${PORTSDIR}/textproc/p5-Search-Estraier
 .endif
 
+.if defined(WITH_SRCHGREP)
+BUILD_DEPENDS+=	${SITE_PERL}/File/Grep.pm:${PORTSDIR}/devel/p5-File-Grep
+.endif
+
 .if defined(WITH_PUBJSON)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/JSON/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
 .endif
@@ -224,6 +235,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Regexp/Common/profanity_us.pm:${PORTSDIR}/textproc/
 
 .if defined(WITH_HATENARSS)
 BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
+.endif
+
+.if defined(WITH_SUBSCRFOAF)
+BUILD_DEPENDS+=	${SITE_PERL}/XML/FOAF.pm:${PORTSDIR}/textproc/p5-XML-FOAF
 .endif
 
 .if defined(WITH_NOTIFYIRC)
@@ -276,6 +291,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/WWW/Babelfish.pm:${PORTSDIR}/www/p5-WWW-Babelfish
 BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mixi.pm:${PORTSDIR}/www/p5-WWW-Mixi
 .endif
 
+.if defined(WITH_CUSTOMSVNLOG)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SVN/Client.pm:${PORTSDIR}/devel/subversion-perl
+.endif
+
 .if defined(WITH_NTFYNETSEND)
 BUILD_DEPENDS+=	${SITE_PERL}/Net/NetSend.pm:${PORTSDIR}/net-im/p5-Net-NetSend
 .endif
@@ -291,7 +310,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Config/INI/Simple.pm:${PORTSDIR}/devel/p5-Config-IN
 RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
-MAN3=		Plagger.3 Plagger::Cookies.3 \
+MAN3=		Plagger.3 \
+		Plagger::Cookies.3 \
+		Plagger::Date.3 \
+		Plagger::Plugin.3 \
 		Plagger::Plugin::Aggregator::Null.3 \
 		Plagger::Plugin::Aggregator::Simple.3 \
 		Plagger::Plugin::Bundle::Planet.3 \
@@ -362,11 +384,13 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::Filter::TagsToTitle.3 \
 		Plagger::Plugin::Filter::Thumbnail.3 \
 		Plagger::Plugin::Filter::TruePermalink.3 \
+		Plagger::Plugin::Filter::UnicodeNormalize.3 \
 		Plagger::Plugin::Filter::tDiaryComment.3 \
 		Plagger::Plugin::Notify::Audio.3 \
 		Plagger::Plugin::Notify::Balloon.3 \
 		Plagger::Plugin::Notify::Beep.3 \
 		Plagger::Plugin::Notify::Campfire.3 \
+		Plagger::Plugin::Notify::Command.3 \
 		Plagger::Plugin::Notify::Eject.3 \
 		Plagger::Plugin::Notify::Eject::darwin.3 \
 		Plagger::Plugin::Notify::Eject::freebsd.3 \
@@ -404,7 +428,9 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::Publish::SWF.3 \
 		Plagger::Plugin::Publish::Serializer.3 \
 		Plagger::Plugin::Publish::Speech::MacOSX.3 \
+		Plagger::Plugin::Publish::Takahashi.3 \
 		Plagger::Plugin::Search::Estraier.3 \
+		Plagger::Plugin::Search::Grep.3 \
 		Plagger::Plugin::Search::KinoSearch.3 \
 		Plagger::Plugin::Search::Namazu.3 \
 		Plagger::Plugin::Search::Rast.3 \
@@ -435,7 +461,8 @@ MAN3=		Plagger.3 Plagger::Cookies.3 \
 		Plagger::Plugin::Widget::Simple.3 \
 		Plagger::Rule::Deduped.3 \
 		Plagger::Rule::Fresh.3 \
-		Plagger::Rule::URLBL.3
+		Plagger::Rule::URLBL.3 \
+		Plagger::Template.3
 
 post-patch:
 	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
