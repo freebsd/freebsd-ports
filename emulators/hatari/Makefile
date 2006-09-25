@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hatari
-PORTVERSION=	0.70
-PORTREVISION=	1
+PORTVERSION=	0.90
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,4 +22,10 @@ USE_SDL=	yes
 PLIST_FILES=	bin/hatari %%DATADIR%%/tos.img
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
