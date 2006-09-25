@@ -18,6 +18,10 @@ COMMENT=	Synchronize your PalmPilot with ical
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
 
+BROKEN=		Does not build with new pilot-link
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2006-12-01
+
 NO_PACKAGE=	patches installed ical port
 
 MAN1=		syncal.1
