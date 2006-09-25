@@ -40,6 +40,9 @@ share/doc/HTML/fr/kmplayer/index.docbook
 share/doc/HTML/it/kmplayer/common
 share/doc/HTML/it/kmplayer/index.cache.bz2
 share/doc/HTML/it/kmplayer/index.docbook
+share/doc/HTML/nl/kmplayer/common
+share/doc/HTML/nl/kmplayer/index.cache.bz2
+share/doc/HTML/nl/kmplayer/index.docbook
 share/doc/HTML/pt/kmplayer/common
 share/doc/HTML/pt/kmplayer/index.cache.bz2
 share/doc/HTML/pt/kmplayer/index.docbook
@@ -71,12 +74,14 @@ share/locale/et/LC_MESSAGES/kmplayer.mo
 share/locale/fi/LC_MESSAGES/kmplayer.mo
 share/locale/fr/LC_MESSAGES/kmplayer.mo
 share/locale/ga/LC_MESSAGES/kmplayer.mo
+share/locale/gl/LC_MESSAGES/kmplayer.mo
 share/locale/he/LC_MESSAGES/kmplayer.mo
 share/locale/hi/LC_MESSAGES/kmplayer.mo
 share/locale/hu/LC_MESSAGES/kmplayer.mo
 share/locale/is/LC_MESSAGES/kmplayer.mo
 share/locale/it/LC_MESSAGES/kmplayer.mo
 share/locale/ja/LC_MESSAGES/kmplayer.mo
+share/locale/ka/LC_MESSAGES/kmplayer.mo
 share/locale/lt/LC_MESSAGES/kmplayer.mo
 share/locale/mt/LC_MESSAGES/kmplayer.mo
 share/locale/nb/LC_MESSAGES/kmplayer.mo
@@ -94,6 +99,7 @@ share/locale/sr@Latn/LC_MESSAGES/kmplayer.mo
 share/locale/sv/LC_MESSAGES/kmplayer.mo
 share/locale/ta/LC_MESSAGES/kmplayer.mo
 share/locale/tr/LC_MESSAGES/kmplayer.mo
+share/locale/uk/LC_MESSAGES/kmplayer.mo
 share/locale/xx/LC_MESSAGES/kmplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
 share/services/kmplayer_part.desktop
@@ -102,6 +108,8 @@ share/services/kmplayer_part.desktop
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/xx/LC_MESSAGES
 @dirrmtry share/locale/xx
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/sk/LC_MESSAGES
@@ -114,6 +122,8 @@ share/services/kmplayer_part.desktop
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
@@ -144,6 +154,8 @@ share/services/kmplayer_part.desktop
 @dirrmtry share/doc/HTML/ru
 @dirrm share/doc/HTML/pt/kmplayer
 @dirrmtry share/doc/HTML/pt
+@dirrm share/doc/HTML/nl/kmplayer
+@dirrmtry share/doc/HTML/nl
 @dirrm share/doc/HTML/it/kmplayer
 @dirrmtry share/doc/HTML/it
 @dirrm share/doc/HTML/fr/kmplayer
