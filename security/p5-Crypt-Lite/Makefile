@@ -4,8 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Lite
-PORTVERSION=	0.82.06
-PORTREVISION=	1
+PORTVERSION=	0.82.11
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -15,7 +14,7 @@ MAINTAINER=	gkovesdan@t-hosting.hu
 COMMENT=	Perl extension for a symmetric data encryption and decryption
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
