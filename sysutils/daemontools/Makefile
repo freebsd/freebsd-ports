@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -15,6 +15,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
+
+OPTIONS=	MAN	"Install Gerrit Pape's manual pages" on \
+		SIGQ12	"Add svc support for QUIT, USR1, and USR2 signals" off
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MAN)
 MANDATE=	-20010714
@@ -28,11 +33,17 @@ MAN8=		envdir.8 envuidgid.8 fghack.8 multilog.8 pgrphack.8 \
 MANCOMPRESSED=	no
 .endif
 
+.if defined(WITH_SIGQ12)
+PATCH_SITES+=	http://thedjbway.org/patches/:sigq12
+PATCHFILES+=	daemontools-0.76.sigq12.patch:sigq12
+PATCH_DIST_STRIP=	-p2
+.endif
+
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} SERVICEDIR=${SERVICEDIR}
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
-RESTRICTED=	"Unsure of djb\'s license"
+RESTRICTED=	Unsure of the license of djb software
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
@@ -41,8 +52,6 @@ SAMPLERC=	svscan.sh.sample
 SERVICEDIR?=	/var/service
 STARTUP_SCRIPT?=	${SAMPLERC:S/.sample//}
 PLIST_SUB+=	STARTUP_SCRIPT="${STARTUP_SCRIPT}"
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500023 || ${OSVERSION} < 500000 && ${OSVERSION} >= 460102
 RC_SCRIPTS_SUB+=	DAEMON="/usr/sbin/daemon -f"
