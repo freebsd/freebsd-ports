@@ -18,7 +18,6 @@ COMMENT=	Developer's version of math/octave
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/umfpack \
 		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk \
 		${LOCALBASE}/lib/libcxsparse.a:${PORTSDIR}/math/ufsparse
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
