@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich2
 DISTVERSION=	1.0.4p1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
@@ -24,6 +25,7 @@ COMMENT=	A portable implementation of MPI-1 and MPI-2
 # - WITHOUT_JAVA	don't build MPE Jumpshot-4
 # - WITHOUT_X11		disable MPE graphics routines
 # - WITHOUT_F90		disable gfortran support
+# - WITH_SMPD		use SMPD instead of MPD for OS-mixed cluster
 #-----------------------------------------------------------------------
 
 USE_PYTHON=	yes
@@ -71,6 +73,14 @@ BUILD_DEPENDS+=	${F90}:${PORTSDIR}/lang/gfortran
 F90FLAGS+=	-ff2c
 CONFIGURE_ENV+=	F90=${F90} F90FLAGS=${F90FLAGS}
 PLIST_SUB+=	F90=""
+.endif
+
+.if defined(WITH_SMPD)
+CONFIGURE_ARGS+=	--with-pmi=smpd --with-pm=smpd
+PLIST_SUB+=	PM_MPD="@comment " PM_SMPD=""
+.else
+CONFIGURE_ARGS+=	--with-pmi=simple --with-pm=mpd
+PLIST_SUB+=	PM_MPD="" PM_SMPD="@comment "
 .endif
 
 .if defined(NOPORTDOCS)
@@ -200,6 +210,23 @@ USE_GMAKE=	yes
 .endif
 
 PREFIX:=	${PREFIX}/${PORTNAME}
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You could define the following options:"
+.if !defined(WITHOUT_JAVA)
+	@${ECHO_MSG} "- WITHOUT_JAVA	do not build MPE Jumpshot-4"
+.endif
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} "- WITHOUT_X11	disable MPE graphics routines"
+.endif
+.if !defined(WITHOUT_F90)
+	@${ECHO_MSG} "- WITHOUT_F90	disable gfortran support"
+.endif
+.if !defined(WITH_SMPD)
+	@${ECHO_MSG} "- WITH_SMPD	use SMPD instead of MPD, to work with SMPD under MS Windows"
+.endif
+	@${ECHO_MSG}
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
