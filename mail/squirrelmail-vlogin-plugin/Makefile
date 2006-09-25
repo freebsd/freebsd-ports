@@ -53,9 +53,12 @@ do-install:
 	${CP} -rp ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 
+post-install:
 .ifndef WITHOUT_ACTIVATE
+.if exists( ${SQUIRRELDIR}/config/config.php )
 	@${ECHO} "Activating plug-in in SquirrelMail"
 	${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
+.endif
 .else
 	@${ECHO} "To activate the plug-in in SquirrelMail use"
 	@${ECHO} "${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}"
