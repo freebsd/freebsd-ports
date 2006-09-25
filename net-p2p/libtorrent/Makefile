@@ -29,7 +29,7 @@ EXTRA_PATCHES?=	${.CURDIR}/files/stable-*
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--disable-debug --with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--disable-debug --with-openssl=${OPENSSLBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O3/${CFLAGS}/' ${WRKSRC}/configure
