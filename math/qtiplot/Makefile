@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qtiplot
-PORTVERSION=	0.8.7.2
+PORTVERSION=	0.8.7.3
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
-DISTNAME=	${PORTNAME}-0.8.7-2
+DISTNAME=	${PORTNAME}-0.8.7-3
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl \
 		origin.0:${PORTSDIR}/math/liborigin \
 		qwtplot3d:${PORTSDIR}/math/qwtplot3d
+RUN_DEPENDS=	pylupdate:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
