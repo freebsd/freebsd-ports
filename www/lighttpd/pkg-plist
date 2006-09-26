@@ -45,6 +45,9 @@ lib/lighttpd/mod_flv_streaming.so
 lib/lighttpd/mod_indexfile.a
 lib/lighttpd/mod_indexfile.la
 lib/lighttpd/mod_indexfile.so
+lib/lighttpd/mod_magnet.a
+lib/lighttpd/mod_magnet.la
+lib/lighttpd/mod_magnet.so
 lib/lighttpd/mod_mysql_vhost.a
 lib/lighttpd/mod_mysql_vhost.la
 lib/lighttpd/mod_mysql_vhost.so
