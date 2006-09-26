@@ -1,0 +1,32 @@
+# New ports collection makefile for:	p5-HTML-RSSAutodiscovery
+# Date created:		2006-09-25
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	HTML-RSSAutodiscovery
+PORTVERSION=	1.21
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	HTML
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Methods for retreiving RSS-ish information from an HTML document
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600	# Inherited from both dependencies
+IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
+.endif
+
+MAN3=		HTML::RSSAutodiscovery.3
+
+.include <bsd.port.post.mk>

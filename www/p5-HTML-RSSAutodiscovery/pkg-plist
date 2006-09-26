@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RSSAutodiscovery/.packlist
+%%SITE_PERL%%/HTML/RSSAutodiscovery.pm
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RSSAutodiscovery
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
