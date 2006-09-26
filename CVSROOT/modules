@@ -842,6 +842,7 @@ blobwars	ports/games/blobwars
 block		ports/games/block
 blockade	ports/games/blockade
 blocksolve95	ports/math/blocksolve95
+blocksshd	ports/security/blocksshd
 blogbench	ports/benchmarks/blogbench
 blogtk		ports/deskutils/blogtk
 blokish		ports/games/blokish
