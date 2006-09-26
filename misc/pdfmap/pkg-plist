@@ -1,22 +1,12 @@
 @comment $FreeBSD$
 bin/pdfmap
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Circle.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Cross.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Diamond.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Ellipse.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Image.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_MapBackground.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_MapObject.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_PDFMap.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_PDFMapError.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Rectangle.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Square.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Star.py.html
-%%PORTDOCS%%%%DOCSDIR%%/pdfmap_Triangle.py.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PYTHON_SITELIBDIR%%/pdfmap/__init__.py
+%%PYTHON_SITELIBDIR%%/pdfmap/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pdfmap/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pdfmap/maptool.py
+%%PYTHON_SITELIBDIR%%/pdfmap/maptool.pyc
+%%PYTHON_SITELIBDIR%%/pdfmap/maptool.pyo
+%%PYTHON_SITELIBDIR%%/pdfmap/version.py
+%%PYTHON_SITELIBDIR%%/pdfmap/version.pyc
+%%PYTHON_SITELIBDIR%%/pdfmap/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pdfmap

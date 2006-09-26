@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	pdfmap
-PORTVERSION=	1.60
+PORTVERSION=	2.00
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate maps in PDF format and place clickable objects on them
@@ -25,11 +24,14 @@ USE_PYDISTUTILS=	yes
 
 DOCS=		CREDITS NEWS README TODO doc/*.html
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pdfmap.py ${PREFIX}/bin/pdfmap
 .if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
