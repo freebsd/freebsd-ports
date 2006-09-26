@@ -35,6 +35,7 @@
     SUBDIR += bioapi
     SUBDIR += bioapitool
     SUBDIR += bjorb
+    SUBDIR += blocksshd
     SUBDIR += borzoi
     SUBDIR += botan
     SUBDIR += bro
