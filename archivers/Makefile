@@ -66,6 +66,7 @@
     SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Bzip2
     SUBDIR += p5-Compress-LZF
+    SUBDIR += p5-Compress-LZO
     SUBDIR += p5-Compress-LZW
     SUBDIR += p5-Compress-Zlib
     SUBDIR += p5-IO-Zlib
