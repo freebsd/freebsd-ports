@@ -10,6 +10,7 @@ bin/kudu
 %%DATADIR%%/images/logo.png
 %%DATADIR%%/images/object.png
 %%DATADIR%%/images/shape.png
+%%DATADIR%%/images/splash.png
 %%DATADIR%%/images/vertex.png
 %%DATADIR%%/scripts/Axle-Spinner.py
 @dirrm %%DATADIR%%/scripts
