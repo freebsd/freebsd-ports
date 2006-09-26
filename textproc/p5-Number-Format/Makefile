@@ -7,12 +7,13 @@
 
 PORTNAME=		Number-Format
 PORTVERSION=		1.52
+PORTREVISION=		1
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Number
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		perl@FreeBSD.org
+MAINTAINER=		clsung@FreeBSD.org
 COMMENT=		Perl extension for formatting numbers
 
 PERL_CONFIGURE=		yes
