@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	steve@energistic.com
 COMMENT=	A far-end NAT traversal solution for SER/OpenSER
 
+USE_RC_SUBR=	mediaproxy.sh
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PYTHON=	2.3+
@@ -28,7 +30,5 @@ USE_MYSQL=	yes
 post-install:
 	${CP} -pRP ${WRKSRC}/ ${PREFIX}/mediaproxy
 	${CHOWN} -R 0:0 ${PREFIX}/mediaproxy
-	${INSTALL_SCRIPT} -b ${FILESDIR}/mediaproxy ${PREFIX}/etc/rc.d/mediaproxy
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${FILESDIR}/mediaproxy
 
 .include <bsd.port.post.mk>

@@ -216,5 +216,3 @@ mediaproxy/web/images/40/zyxel-p2000.png
 @dirrm mediaproxy/web
 
 @dirrmtry mediaproxy
-
-etc/rc.d/mediaproxy
