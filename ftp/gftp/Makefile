@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 WANT_GNOME=	yes
 
 OPTIONS=	X11 "Build with X11 frontend" on \
-		GTK2 "gtk2 instead of gtk12" off \
+		GTK1 "gtk12 instead of gtk2" off \
 		NLS "Native Language Support via gettext utilities" on
 
 .if !defined(WITHOUT_X11)
@@ -44,13 +44,13 @@ PLIST_SUB+=	NOX11:="@comment "
 .else
 PLIST_SUB+=	NOX11:=""
 WANT_GNOME=	yes
-.if defined(WITH_GTK2)
-USE_GNOME+=	gtk20
-CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-2.0"
-.else
+.if defined(WITH_GTK1)
 USE_GNOME+=	gtk12
 CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-12"
 CONFIGURE_ARGS+=--disable-gtk20
+.else
+USE_GNOME+=	gtk20
+CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-2.0"
 .endif
 .endif
 
