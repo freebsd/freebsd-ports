@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scare
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/ \
 		http://www.geocities.com/legion_if/
@@ -14,7 +14,11 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/ \
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	ADRIFT-compatible interactive games interpreter
 
+OPTIONS=	XGLK "Use the xglk graphics library" off
+
 USE_ZIP=	yes
+
+.include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
@@ -40,4 +44,4 @@ PLIST_FILES=	${BINFILES:S,^,bin/,}
 do-install:
 		${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/,} ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

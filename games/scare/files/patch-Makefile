@@ -1,32 +1,34 @@
---- Makefile.orig	Sun Feb  6 21:18:36 2005
-+++ Makefile	Sun Feb  6 21:22:41 2005
-@@ -26,16 +26,17 @@
+--- Makefile.orig	Tue Sep 26 21:47:00 2006
++++ Makefile	Tue Sep 26 21:49:23 2006
+@@ -26,18 +26,19 @@
  #
  
  # GCC compiler and linker flags.
 -CC	= gcc
 -DEBUG	=
 -CEXTRA	=
--CFLAGS	= -O3 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
+-CFLAGS	= -O2 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
 +CC	?= gcc
 +DEBUG	?=
 +CEXTRA	?=
-+CFLAGS	?= -O3 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
++CFLAGS	?= -O2 -D__NO_STRING_INLINES -fPIC -ansi -D_STRICT_ANSI_ -Wall -W   \
  	  -pedantic -Wshadow -Wpointer-arith -Wstrict-prototypes	   \
  	  -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls	   \
+ 	  -Wwrite-strings -Wundef -Wbad-function-cast -Waggregate-return   \
+ 	  -Wnested-externs						   \
 -	  $(DEBUG) $(CEXTRA)
 -LDLIBS	=
 -LDEXTRA	=
 -LDFLAGS	= $(DEBUG) $(LDEXTRA)
 +	  $(DEBUG)
-+CFLAGS+=	${CEXTRA}
++CFLAGS  += $(CEXTRA)
 +LDLIBS	?=
 +LDEXTRA	?=
 +LDFLAGS	?= $(DEBUG) $(LDEXTRA)
  
  # Generic compiler and linker flags.
  #CC	= cc
-@@ -77,12 +78,12 @@
+@@ -79,12 +80,12 @@
  SHELL	= /bin/sh
  
  # Miscellaneous tools, overridable by the command line.
