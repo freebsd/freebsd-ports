@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2d9ad236-4d26-11db-b48d-00508d6a62df">
+    <topic>freeciv -- Denial of Service Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freeciv</name>
+	<name>freeciv-gtk</name>
+	<name>freeciv-gtk2</name>
+	<name>freeciv-nox11</name>
+	<range><lt>2.0.8_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/21171/">
+	  <p>Luigi Auriemma has reported a vulnerability in Freeciv,
+	    which can be exploited by malicious people to cause a DoS
+	    (Denial of Service).</p>
+	  <p>An error in the "generic_handle_player_attribute_chunk()"
+	    function in common/packets.c can be exploited to crash the
+	    service via a specially crafted
+	    PACKET_PLAYER_ATTRIBUTE_CHUNK packet sent to the server.</p>
+	  <p>An error in the "handle_unit_orders()" function in
+	    server/unithand.c can be exploited to crash the service
+	    via a specially crafted packet.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3913</cvename>
+      <bid>19117</bid>
+      <url>http://secunia.com/advisories/21171/</url>
+      <url>http://aluigi.altervista.org/adv/freecivx-adv.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-07-23</discovery>
+      <entry>2006-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="339fbbc1-4d23-11db-b48d-00508d6a62df">
     <topic>freeciv -- Packet Parsing Denial of Service Vulnerability</topic>
     <affects>
@@ -61,6 +101,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2006-0047</cvename>
+      <bid>16975</bid>
       <url>http://secunia.com/advisories/19120/</url>
       <url>http://aluigi.altervista.org/adv/freecivdos-adv.txt</url>
     </references>
