@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Apr 30 08:05:12 2004
-+++ Makefile	Fri Feb  4 22:18:07 2005
-@@ -68,7 +68,7 @@
+--- Makefile.orig	Tue Sep 26 22:15:12 2006
++++ Makefile	Tue Sep 26 22:17:36 2006
+@@ -73,7 +73,7 @@
  # If your make can't handle sinclude or -include, and you're not building
  # for Glk, comment out the include line.
  GLKPATH	= $(GLKDIR)/$(GLK)
@@ -9,12 +9,12 @@
  GLKLIBS	= -L$(GLKPATH) $(GLKLIB) $(LINKLIBS)
  
  # Always use the Bourne shell.
-@@ -121,7 +121,7 @@
- 		$(LDLIBS) $(GLKLIBS)
+@@ -127,7 +127,7 @@
  
  os_glk.o: os_glk.c $(HEADERS)
--	$(CC) $(GLKARCH) $(CFLAGS) -c -o $@ $<
-+	$(CC) $(GLKARCH) $(CFLAGS) -DLINUX_GRAPHICS -I${X11BASE}/include/xglk -c -o $@ $<
+ 	$(CC) $(GLKARCH) $(CFLAGS) -Wno-write-strings			\
+-		-I $(GLKDIR)/$(GLK) -c -o $@ $<
++		-DLINUX_GRAPHICS -I${X11BASE}/include/xglk -c -o $@ $<
  
  # Option to build an IFP plugin version of SCARE.
  scare_plugin.c: scare.hdr
