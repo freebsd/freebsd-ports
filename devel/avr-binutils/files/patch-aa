@@ -1,6 +1,6 @@
---- libiberty/Makefile.in.orig	Tue Mar  8 00:20:07 2005
-+++ libiberty/Makefile.in	Thu Jun 30 22:37:45 2005
-@@ -270,7 +270,8 @@
+--- libiberty/Makefile.in.orig	Fri Apr  7 02:01:25 2006
++++ libiberty/Makefile.in	Mon Sep 25 21:54:25 2006
+@@ -330,7 +330,8 @@
  @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@
@@ -10,9 +10,9 @@
  
  install_to_libdir: all
  	${mkinstalldirs} $(DESTDIR)$(libdir)$(MULTISUBDIR)
---- bfd/Makefile.in.orig	Mon May  2 21:45:46 2005
-+++ bfd/Makefile.in	Thu Jun 30 22:39:28 2005
-@@ -1137,7 +1137,8 @@
+--- bfd/Makefile.in.orig	Fri Jun 23 20:17:19 2006
++++ bfd/Makefile.in	Mon Sep 25 21:54:49 2006
+@@ -1158,7 +1158,8 @@
  	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
  	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
  	done
@@ -22,9 +22,9 @@
  install-exec: install-exec-recursive
  install-data: install-data-recursive
  uninstall: uninstall-recursive
---- opcodes/Makefile.in.orig	Mon Feb 21 12:48:33 2005
-+++ opcodes/Makefile.in	Thu Jun 30 22:39:18 2005
-@@ -781,7 +781,8 @@
+--- opcodes/Makefile.in.orig	Thu Apr  6 23:49:35 2006
++++ opcodes/Makefile.in	Mon Sep 25 21:55:23 2006
+@@ -837,7 +837,8 @@
  	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
  	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
  	done
@@ -34,12 +34,12 @@
  install-exec: install-exec-recursive
  install-data: install-data-recursive
  uninstall: uninstall-recursive
---- etc/Makefile.in.orig	Thu Jan  2 21:51:02 2003
-+++ etc/Makefile.in	Thu Jun 30 22:37:45 2005
-@@ -54,7 +54,8 @@
- all:
+--- etc/Makefile.in.orig	Thu Apr  6 23:49:30 2006
++++ etc/Makefile.in	Mon Sep 25 21:55:51 2006
+@@ -59,7 +59,8 @@
+ HTMLFILES = standards.html configure.html
  
- # We want install to imply install-info as per GNU standards.
+ all: info
 -install: install-info
 +#install: install-info
 +install:
