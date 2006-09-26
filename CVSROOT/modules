@@ -13881,6 +13881,7 @@ temperature.app	ports/x11/temperature.app
 tempest_for_eliza	ports/audio/tempest_for_eliza
 templ		ports/devel/templ
 template_	ports/www/template_
+templatelite	ports/www/templatelite
 tenebrae	ports/games/tenebrae
 tenshi		ports/sysutils/tenshi
 tensile		ports/lang/tensile
