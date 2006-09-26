@@ -17,7 +17,7 @@ load_rc_config $name
 
 : ${mediaproxy_enable="NO"}
 
-INSTALL_DIR="/usr/local"
+INSTALL_DIR="/tmp/mediaproxy-1.7.2"
 RUNTIME_DIR="/var/run"
 
 PROXY="$INSTALL_DIR/mediaproxy/mediaproxy.py"
