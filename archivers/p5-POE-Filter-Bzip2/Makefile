@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	POE-Filter-Bzip2
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A POE filter wrapped around Compress::Bzip2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Bzip2.pm:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
-		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
+RUN_DEPENDS=	p5-Compress-Bzip2>=2.08:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
+		p5-POE>=0.3501:${PORTSDIR}/devel/p5-POE
 
 PERL_CONFIGURE=	yes
 
