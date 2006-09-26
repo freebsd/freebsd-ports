@@ -16136,7 +16136,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-unace</name>
-	<range><le>2.5,1</le></range>
+	<range><gt>0</gt></range>
       </package>
     </affects>
     <description>
@@ -16152,13 +16152,6 @@ Note:  Please add new entries to the beginning of this file.
 	</ul>
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/14359/">
-	  <p>Ulf Härnhammar has discovered some vulnerabilities in
-	    unace, which can be exploited by malicious people to
-	    compromise a user's system.</p>
-	  <p>Some boundary errors in the processing of malicious ACE
-	    archives can be exploited to cause a buffer overflow by
-	    tricking a user into extracting, testing, or listing a
-	    specially crafted archive.</p>
 	  <p>The vulnerabilities have been confirmed in version 1.2b.
 	    One of the buffer overflow vulnerabilities have also been
 	    reported in version 2.04, 2.2 and 2.5. Other versions may
