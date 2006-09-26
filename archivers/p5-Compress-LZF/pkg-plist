@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/Compress/LZF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZF/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZF/LZF.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZF/LZF.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Compress
