@@ -3,21 +3,22 @@ bin/vncconnect
 bin/vncpasswd
 bin/vncserver
 bin/vncviewer
-share/tightvnc/classes/AuthPanel.class
-share/tightvnc/classes/ButtonPanel.class
-share/tightvnc/classes/ClipboardFrame.class
-share/tightvnc/classes/DesCipher.class
-share/tightvnc/classes/HTTPConnectSocket.class
-share/tightvnc/classes/HTTPConnectSocketFactory.class
-share/tightvnc/classes/OptionsFrame.class
-share/tightvnc/classes/RecordingFrame.class
-share/tightvnc/classes/ReloginPanel.class
-share/tightvnc/classes/RfbProto.class
-share/tightvnc/classes/SessionRecorder.class
-share/tightvnc/classes/SocketFactory.class
-share/tightvnc/classes/VncCanvas.class
-share/tightvnc/classes/VncViewer.class
-share/tightvnc/classes/VncViewer.jar
-share/tightvnc/classes/index.vnc
-@dirrm share/tightvnc/classes
-@dirrm share/tightvnc
+%%DATADIR%%/classes/AuthPanel.class
+%%DATADIR%%/classes/AuthUnixLoginPanel.class
+%%DATADIR%%/classes/ButtonPanel.class
+%%DATADIR%%/classes/CapabilityInfo.class
+%%DATADIR%%/classes/CapsContainer.class
+%%DATADIR%%/classes/ClipboardFrame.class
+%%DATADIR%%/classes/DesCipher.class
+%%DATADIR%%/classes/OptionsFrame.class
+%%DATADIR%%/classes/RecordingFrame.class
+%%DATADIR%%/classes/ReloginPanel.class
+%%DATADIR%%/classes/RfbProto.class
+%%DATADIR%%/classes/SessionRecorder.class
+%%DATADIR%%/classes/SocketFactory.class
+%%DATADIR%%/classes/VncCanvas.class
+%%DATADIR%%/classes/VncViewer.class
+%%DATADIR%%/classes/VncViewer.jar
+%%DATADIR%%/classes/index.vnc
+@dirrm %%DATADIR%%/classes
+@dirrm %%DATADIR%%
