@@ -74,7 +74,6 @@ lib/libpngimpexp.so
 @dirrm include/amanith/numerics
 @dirrm include/amanith/lang
 @dirrm include/amanith/geometry
-@dirrm include/amanith/3d
 @dirrm include/amanith/2d
 @dirrm include/amanith/1d
 @dirrm include/amanith
