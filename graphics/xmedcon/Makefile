@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.9.9.1
+PORTVERSION=	0.9.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,6 +35,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
+		--mandir=${MANPREFIX}/man \
 		--enable-llcheck
 USE_LDCONFIG=	yes
 
