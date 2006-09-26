@@ -70,6 +70,7 @@
     SUBDIR += p5-DNS-ZoneParse
     SUBDIR += p5-Data-Validate-Domain
     SUBDIR += p5-Net-DNS
+    SUBDIR += p5-Net-DNS-Codes
     SUBDIR += p5-Net-DNS-SEC
     SUBDIR += p5-Net-DNS-ZoneCheck
     SUBDIR += p5-Net-DNS-ZoneFile
