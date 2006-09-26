@@ -34,6 +34,55 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1709084d-4d21-11db-b48d-00508d6a62df">
+    <topic>plans -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>plans</name>
+	<range><lt>6.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/15854/">
+	  <p>A vulnerability has been reported in Plans, which can be
+	    exploited by malicious people to conduct SQL injection
+	    attacks.</p>
+	  <p>Input passed to the "evt_id" parameter in "plans.cgi"
+	    isn't properly sanitised before being used in a SQL query.
+	    This can be exploited to manipulate SQL queries by
+	    injecting arbitrary SQL code.</p>
+	  <p>Successful exploitation requires that SQL database
+	    support has been enabled in "plans_config.pl" (the default
+	    setting is flat files).</p>
+	</blockquote>
+	<blockquote cite="http://secunia.com/advisories/15167/">
+	  <p>Some vulnerabilities have been reported in Plans, which
+	    can be exploited by malicious people to conduct cross-site
+	    scripting attacks or gain knowledge of sensitive
+	    information.</p>
+	  <p>Input passed to various unspecified parameters is not
+	    properly sanitised before being returned to users. This
+	    can be exploited to execute arbitrary HTML and script code
+	    in a user's browser session in context of a vulnerable
+	    site.</p>
+	  <p>An unspecified error can be exploited to gain knowledge
+	    of the MySQL password.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/15167/</url>
+      <url>http://secunia.com/advisories/15854/</url>
+      <url>http://planscalendar.com/forum/viewtopic.php?t=660</url>
+    </references>
+    <dates>
+      <discovery>2005-04-28</discovery>
+      <entry>2006-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d3527663-4ccb-11db-b48d-00508d6a62df">
     <topic>eyeOS -- multiple XSS security bugs</topic>
     <affects>
