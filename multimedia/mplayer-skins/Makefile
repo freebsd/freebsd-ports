@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp5.mplayerhq.hu/mplayer/Skin/ \
@@ -38,7 +38,7 @@ NO_BUILD=	yes
 #
 # Filenames
 #
-ABYSS_FILE=		Abyss-1.1.tar.bz2
+ABYSS_FILE=		Abyss-1.6.tar.bz2
 ALIENMIND_FILE=		AlienMind-1.2.tar.bz2
 AVIFILE_FILE=		avifile-1.6.tar.bz2
 BLUECURVE_FILE=		bluecurve-1.3.tar.bz2
