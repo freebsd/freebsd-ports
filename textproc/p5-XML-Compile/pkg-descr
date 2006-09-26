@@ -1,0 +1,24 @@
+Many applications which process data-centric XML do that based
+on a nice specification, expressed in an XML Schema.
+XML::Compile reads and writes XML data with the help of such
+schema's. On the Perl side, it uses a tree of nested hashes
+with the same structure.
+
+Where other Perl modules, like SOAP::WSDL help you using these
+schema's (often with a lot of run-time (XPath) searches), this
+module takes a different approach: in stead of run-time
+processing of the specification, it will first compile the
+expected structure into real Perl, and then use that to process
+the data.
+
+There are many perl modules with the same as this one: translate
+between XML and nested hashes. However, there are a few serious
+differences: because the schema is used here, we make sure we
+only handle correct data. Data-types are formatted and processed
+correctly; for instance, integer does accept huge values
+(at least 18 digits) as the specification prescribes. Also more
+complex data-types like list, union, and substitutionGroup
+(unions on complex type level) are supported, which is rarely the
+case in other modules.
+
+WWW:	http://search.cpan.org/dist/XML-Compile/
