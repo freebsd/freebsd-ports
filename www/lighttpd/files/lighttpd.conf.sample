@@ -205,11 +205,12 @@ server.groupname           = "www"
 
 #### fastcgi module
 ## read fastcgi.txt for more info
+## for PHP don't forget to set cgi.fix_pathinfo = 1 in the php.ini
 #fastcgi.server             = ( ".php" =>
 #                               ( "localhost" =>
 #                                 (
 #                                   "socket" => "/tmp/php-fastcgi.socket",
-#                                   "bin-path" => "/usr/local/bin/php"
+#                                   "bin-path" => "/usr/local/bin/php-cgi"
 #                                 )
 #                               )
 #                            )

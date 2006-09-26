@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.11
-PORTREVISION=	1
+PORTVERSION=	1.4.12
 CATEGORIES=	www
-MASTER_SITES=	http://www.lighttpd.net/download/
+MASTER_SITES=	http://www.lighttpd.net/download/ \
+		http://mirrors.cat.pdx.edu/lighttpd/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
