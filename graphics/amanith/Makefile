@@ -7,6 +7,7 @@
 
 PORTNAME=	amanith
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.amanith.org/download/files/ \
 		http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/
@@ -45,6 +46,9 @@ IGNORE=		does not build on FreeBSD 4.x
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|3rdpart||' ${WRKSRC}/amanith.pro
+
+post-extract:
+	@${RMDIR} ${WRKSRC}/include/${PORTNAME}/3d
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKECMD} ${WRKSRC}/amanith.pro
