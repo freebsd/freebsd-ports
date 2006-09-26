@@ -2,8 +2,12 @@ bin/curlpp-config
 include/curlpp/CurlHandle.hpp
 include/curlpp/CurlHandle.inl
 include/curlpp/Easy.hpp
+include/curlpp/Easy.inl
 include/curlpp/Exception.hpp
 include/curlpp/Form.hpp
+include/curlpp/Info.hpp
+include/curlpp/Info.inl
+include/curlpp/Infos.hpp
 include/curlpp/NonCopyable.hpp
 include/curlpp/Option.hpp
 include/curlpp/Option.inl
@@ -19,11 +23,48 @@ include/curlpp/SList.hpp
 include/curlpp/StorageOptions.hpp
 include/curlpp/StorageOptions.inl
 include/curlpp/TypeTrait.hpp
-include/curlpp/cURL.hpp
+include/curlpp/Types.hpp
 include/curlpp/cURLpp.hpp
 include/curlpp/dllfct.h
+include/curlpp/utilspp/singleton/CreationStatic.hpp
+include/curlpp/utilspp/singleton/CreationStatic.inl
+include/curlpp/utilspp/singleton/CreationUsingNew.hpp
+include/curlpp/utilspp/singleton/CreationUsingNew.inl
+include/curlpp/utilspp/singleton/LifetimeDefault.hpp
+include/curlpp/utilspp/singleton/LifetimeDefault.inl
+include/curlpp/utilspp/singleton/LifetimeLibrary.hpp
+include/curlpp/utilspp/singleton/LifetimeLibrary.inl
+include/curlpp/utilspp/singleton/LifetimeWithLongevity.hpp
+include/curlpp/utilspp/singleton/LifetimeWithLongevity.inl
+include/curlpp/utilspp/singleton/PrivateMembers.hpp
+include/curlpp/utilspp/singleton/PrivateMembers.inl
+include/curlpp/utilspp/singleton/SingletonHolder.hpp
+include/curlpp/utilspp/singleton/SingletonHolder.inl
+@dirrm include/curlpp/utilspp/singleton
+@dirrm include/curlpp/utilspp
 @dirrm include/curlpp
+include/utilspp/EmptyType.hpp
+include/utilspp/Functors.hpp
+include/utilspp/NonCopyable.hpp
+include/utilspp/NullType.hpp
+include/utilspp/Singleton.hpp
+include/utilspp/SmartPtr.hpp
+include/utilspp/ThreadingFactoryMutex.hpp
+include/utilspp/ThreadingFactoryMutex.inl
+include/utilspp/ThreadingSingle.hpp
+include/utilspp/ThreadingSingle.inl
+include/utilspp/TypeList.hpp
+include/utilspp/functor/Binder.hpp
+include/utilspp/functor/Binder.inl
+include/utilspp/functor/FunctorHandler.hpp
+include/utilspp/functor/Functor.hpp
+include/utilspp/functor/FunctorImpl.hpp
+include/utilspp/functor/Functor.inl
+include/utilspp/functor/MemFunHandler.hpp
+@dirrm include/utilspp/functor
+@dirrm include/utilspp
 lib/libcurlpp.a
+lib/libcurlpp.la
 lib/libcurlpp.so
 lib/libcurlpp.so.0
 libdata/pkgconfig/curlpp.pc
@@ -34,5 +75,12 @@ libdata/pkgconfig/curlpp.pc
 %%PORTDOCS%%%%EXAMPLESDIR%%/example03.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/example04.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/example05.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example06.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example07.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example08.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example09.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example10.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example11.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example12.cpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

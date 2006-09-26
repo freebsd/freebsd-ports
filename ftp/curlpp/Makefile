@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	curlpp
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://rrette.com/downloads/sources/
 
@@ -21,12 +21,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-ewarning
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Does not compile on alpha 4.x"
+BROKEN=		Does not compile on alpha 4.x
 .endif
 
 pre-everything::
