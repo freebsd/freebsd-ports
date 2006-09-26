@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openbsm
-DISTVERSION=	1.0-alpha9
+DISTVERSION=	1.0-alpha12
 CATEGORIES=	security
 MASTER_SITES=	http://www.trustedbsd.org/downloads/
 DISTFILES=	openbsm-${DISTVERSION}.tgz
