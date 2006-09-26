@@ -16006,13 +16006,16 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>unace</name>
-	<range><lt>unace-1.2b_2</lt></range>
+	<range><lt>1.2b_2</lt></range>
+      </package>
+      <package>
+	<name>linux-unace</name>
+	<range><le>2.5,1</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Ulf Härnhammar reports multiple security vulnerabilities
-	  in unace-1.2b:</p>
+	<p>Ulf Härnhammar reports:</p>
 	<ul>
 	  <li>There are buffer overflows when extracting, testing or
 	    listing specially prepared ACE archives.</li>
@@ -16021,6 +16024,22 @@ Note:  Please add new entries to the beginning of this file.
 	  <li>There are also buffer overflows when dealing with long
 	    (&gt;17000 characters) command line arguments.</li>
 	</ul>
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/14359/">
+	  <p>Ulf Härnhammar has discovered some vulnerabilities in
+	    unace, which can be exploited by malicious people to
+	    compromise a user's system.</p>
+	  <p>Some boundary errors in the processing of malicious ACE
+	    archives can be exploited to cause a buffer overflow by
+	    tricking a user into extracting, testing, or listing a
+	    specially crafted archive.</p>
+	  <p>The vulnerabilities have been confirmed in version 1.2b.
+	    One of the buffer overflow vulnerabilities have also been
+	    reported in version 2.04, 2.2 and 2.5. Other versions may
+	    also be affected.</p>
+	  <p>Successful exploitation may allow execution of arbitrary
+	    code.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -16028,11 +16047,12 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2005-0160</cvename>
       <cvename>CVE-2005-0161</cvename>
       <mlist msgid="1109113175.421bb95705d42@webmail.uu.se">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110911451613135</mlist>
+      <url>http://secunia.com/advisories/14359/</url>
     </references>
     <dates>
       <discovery>2005-02-14</discovery>
       <entry>2005-02-22</entry>
-      <modified>2005-10-01</modified>
+      <modified>2006-09-26</modified>
     </dates>
   </vuln>
 
