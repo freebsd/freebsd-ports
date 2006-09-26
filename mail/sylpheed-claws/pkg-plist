@@ -11,6 +11,7 @@ include/sylpheed-claws/addrclip.h
 include/sylpheed-claws/addrdefs.h
 include/sylpheed-claws/addressadd.h
 include/sylpheed-claws/addressbook.h
+include/sylpheed-claws/addressbook_foldersel.h
 include/sylpheed-claws/addressitem.h
 include/sylpheed-claws/addrgather.h
 include/sylpheed-claws/addrharvest.h
@@ -199,6 +200,9 @@ include/sylpheed-claws/undo.h
 include/sylpheed-claws/unmime.h
 include/sylpheed-claws/vcard.h
 include/sylpheed-claws/wizard.h
+lib/sylpheed-claws/plugins/bogofilter.a
+lib/sylpheed-claws/plugins/bogofilter.la
+lib/sylpheed-claws/plugins/bogofilter.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.a
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.la
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
@@ -234,6 +238,10 @@ share/applications/sylpheed-claws.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-claws-manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-claws-manual.ps
 %%PORTDOCS%%%%DOCSDIR%%/manual/en/sylpheed-claws-manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual/es/sylpheed-claws-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/es/sylpheed-claws-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual/es/sylpheed-claws-manual.ps
+%%PORTDOCS%%%%DOCSDIR%%/manual/es/sylpheed-claws-manual.txt
 %%PORTDOCS%%%%DOCSDIR%%/manual/fr/sylpheed-claws-manual.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/fr/sylpheed-claws-manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manual/fr/sylpheed-claws-manual.ps
@@ -2521,6 +2529,7 @@ share/pixmaps/sylpheed-claws.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/es
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
