@@ -5,6 +5,7 @@ use without a libstdc++, and it is little tested.
 
 Supported debugging formats: -gdwarf-2 [default], -gstabs
 Locally hack added: recognizes 0bXXX binary constants
+Backported GCC 4.2 patch for __attribute__((alias))
 
 Locally added support for the following AVR devices:
 
@@ -17,6 +18,7 @@ Locally added support for the following AVR devices:
   ATmega640/ATmega1280/ATmega1281
   AT90PWM2/AT90PWM3               AT90CAN32/64
   AT90USB646/647/1286/1287
+  ATmega2560/ATmega2561 (beta test)
 
 WWW: http://gcc.gnu.org/
 WWW: http://www.nongnu.org/avr-libc/
