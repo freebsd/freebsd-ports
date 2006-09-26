@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20060926:
+  AFFECTS: users of security/libgpg-error and any port that depends on it
+  AUTHOR: novel@FreeBSD.org
+
+  libgpg-error was updated to 1.4 and shared library version has been
+  bumped. So you need to rebuild all ports that depend on libgpg-error.
+  Do something like:
+
+	portupgrade -rf libgpg-error-\*
+
 20060923:
   AFFECTS: users of net-mgmt/net-snmp
   AUTHOR: nork@FreeBSD.org
