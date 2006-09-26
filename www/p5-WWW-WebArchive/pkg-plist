@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-WebArchive/.packlist
+%%SITE_PERL%%/WWW/WebArchive.pm
+%%SITE_PERL%%/WWW/WebArchive/Agent.pm
+%%SITE_PERL%%/WWW/WebArchive/WaybackMachine.pm
+bin/webarchive
+@dirrmtry %%SITE_PERL%%/WWW/WebArchive
+@dirrmtry %%SITE_PERL%%/WWW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-WebArchive

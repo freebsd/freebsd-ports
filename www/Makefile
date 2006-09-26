@@ -816,6 +816,7 @@
     SUBDIR += p5-WWW-SourceForge
     SUBDIR += p5-WWW-TWSMS
     SUBDIR += p5-WWW-VenusEnvy
+    SUBDIR += p5-WWW-WebArchive
     SUBDIR += p5-WWW-Wikipedia
     SUBDIR += p5-WebService-Basecamp
     SUBDIR += p5-WebService-Bloglines

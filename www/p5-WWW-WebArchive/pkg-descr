@@ -1,0 +1,14 @@
+WWW-WebArchive is a set of modules to retrieve old versions of public
+web pages from various web archives.
+
+  * http://www.archive.org - Internet Archive's Wayback Machine
+  * http://www.google.com  - Google's page cache
+
+This is useful if
+
+ 1. Your web server crashed and you didn't have complete backups
+ 2. A site (such as a valuable reference source) changed or went away
+    and you want to restore an old version of the site to your local
+    disk
+
+WWW:	http://search.cpan.org/dist/WWW-WebArchive/
