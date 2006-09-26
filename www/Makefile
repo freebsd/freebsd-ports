@@ -1004,6 +1004,7 @@
     SUBDIR += tdiary-devel
     SUBDIR += tdom
     SUBDIR += template_
+    SUBDIR += templatelite
     SUBDIR += textpattern
     SUBDIR += thttpd
     SUBDIR += thttpd-st
