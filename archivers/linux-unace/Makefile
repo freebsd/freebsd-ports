@@ -18,11 +18,14 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extract, view & test ACE archives
 
 RESTRICTED=	Distribution is permitted within the original package only
+DEPRECATED=		security issues
+EXPIRATION_DATE=	2006-10-26
 
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
 PLIST_FILES=	bin/linunace
 PORTDOCS=	licence
+STRIP=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/unace ${PREFIX}/bin/linunace
