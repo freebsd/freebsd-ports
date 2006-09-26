@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTVERSION=	2.5.1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -19,8 +18,7 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
-RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support \
-		${LOCALBASE}/bin/metamail:${PORTSDIR}/mail/metamail
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 THEMEVERSION=	20060615
 THEMEFILE=	sylpheed-claws-themes-${THEMEVERSION}.tar.gz
@@ -31,7 +29,8 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig gtk20
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+#USE_AUTOTOOLS=	autoconf:259 libtool:15
+GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
 WANT_GNOME=	yes
 
@@ -41,7 +40,7 @@ CONFIGURE_ARGS=	\
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-manualdir=${DOCSDIR}/manual \
 		--with-faqdir=${DOCSDIR}/faq \
-		--with-mandir=${PREFIX}/man
+		--mandir=${PREFIX}/man
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -172,8 +171,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lresolv||g; s|-lpisock\"|-liconv &|g ;\
-		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
+		's|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g ; s|/usr/share|${LOCALBASE}/share|g' \
