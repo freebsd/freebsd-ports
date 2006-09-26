@@ -394,6 +394,7 @@
     SUBDIR += p5-PDF-FromHTML
     SUBDIR += p5-PDF-Writer
     SUBDIR += p5-POE-Filter-XML
+    SUBDIR += p5-POSIX-Regex
     SUBDIR += p5-PPI
     SUBDIR += p5-PPI-HTML
     SUBDIR += p5-Parse-FixedLength

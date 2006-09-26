@@ -1,0 +1,12 @@
+This is a port of the glibc gnu regex engine into perl.  There are few
+reasons you would need this.  The few I can think of include:
+
+0) You wish to use untrusted user expressions in such a way as to be
+able to catch errors.  Example:  eval { alarm 2;  m/((){1024}){1024}/ }
+is an instant uncatchable segmentation fault.  GNU's regexps will still
+fail, but in a timeout way rather than an instant segfault way.
+
+1) You wish to have POSIX compliance on ... something ...  Perl's
+regexps are slightly different -- arguably better, but different.
+
+WWW:	http://search.cpan.org/dist/POSIX-Regex/
