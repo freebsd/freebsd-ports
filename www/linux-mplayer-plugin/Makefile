@@ -9,7 +9,7 @@ PORTNAME=	mplayerplug-in
 PORTVERSION=	3.31
 DISTVERSIONSUFFIX=	-fc4
 CATEGORIES=	www multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}		# bsd.linux-rpm.mk taints MSS
 PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -20,8 +20,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 		${LINUXBASE}/usr/lib/libpangoxft-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango\
 		${LINUXBASE}/usr/lib/libgobject-2.0.so.0:${PORTSDIR}/devel/linux-glib2
-
-BROKEN=		Unfetchable
 
 NO_BUILD=	yes
 USE_LINUX_RPM=	yes
