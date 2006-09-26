@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.17
-PORTREVISION=	3
+PORTVERSION=	1.0.18
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/download.php/1347/ \
+MASTER_SITES=	http://alioth.debian.org/download.php/1669/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -20,7 +19,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 OPTIONS=	USB "USB support" on \
 		NLS "NLS support" on \
@@ -31,7 +31,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --disable-locking
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --with-docdir=${DOCSDIR} \
+		--disable-locking
+		
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 USE_LDCONFIG=	yes
 
@@ -60,13 +62,13 @@ CONFIGURE_ARGS+=	--with-gphoto2=no
 PLIST_SUB+=		GPHOTO2="@comment "
 .endif
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "*** ATTENTION ***"
-	@${ECHO} ""
-	@${ECHO} "Older versions than 1.0.17_1 do not check if you change config files."
-	@${ECHO} "If that's the case for you, press CTRL+C and backup your config files."
-	@${ECHO} ""
+pre-everithing::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "*** ATTENTION ***"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Older versions than 1.0.17_1 do not check if you change config files."
+	@${ECHO_MSG} "If that's the case for you, press CTRL+C and backup your config files."
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
