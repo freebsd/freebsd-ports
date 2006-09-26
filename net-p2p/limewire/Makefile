@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	4.9
+PORTVERSION=	4.12.13
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://maverick.limewire.com/download/
 DISTNAME=	LimeWireOther
 
-MAINTAINER=	ports@edini.net
+MAINTAINER=	armitage@smartwifi.com.ph
 COMMENT=	A Java based gnutella client
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
@@ -24,18 +24,17 @@ WRKSRC=		${WRKDIR}/LimeWire
 
 RESTRICTED=	License does not allow redistribution of any kind
 
-BROKEN=		Size mismatch
-
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	LimeWire.jar MessagesBundles.jar ProgressTabs.jar \
 		clink.jar commons-httpclient.jar commons-logging.jar \
 		daap.jar i18n.jar icu4j.jar id3v2.jar jcraft.jar \
-		jdic.jar jl011.jar jmdns.jar log4j.jar logicrypto.jar \
+		jdic.jar jl011.jar jmdns.jar log4j.jar \
 		looks.jar mp3sp14.jar themes.jar tritonus.jar \
 		vorbis.jar xerces.jar xml-apis.jar xml.war update.ver \
 		hashes libtray.so data.ser runLime.sh \
 		MessagesBundle.properties spacer.gif donotremove.htm \
-		root COPYING README.txt SOURCE
+		root COPYING README.txt SOURCE \
+		commons-net.jar log4j.properties
 
 SUB_FILES=	limewire.sh
 PLIST_FILES=	bin/limewire
