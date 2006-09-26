@@ -7,6 +7,7 @@
 
 PORTNAME=	fwipe
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://jeenyus.net/~budney/linux/software/fwipe/ \
 		http://redundancy.redundancy.org/mirror/
@@ -15,10 +16,10 @@ MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A djb-style file wiping utility
 
 ALL_TARGET=	it
-INSTALL_TARGET=	setup check
+INSTALL_TARGET=	setup
 
 PLIST_FILES=	bin/fwipe bin/fwipe0 bin/echo0
-MAN1=	fwipe0.1 echo0.1 fwipe.1
+MAN1=		fwipe0.1 echo0.1 fwipe.1
 
 post-extract:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
