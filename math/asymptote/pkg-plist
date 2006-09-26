@@ -223,7 +223,7 @@ bin/xasy
 %%EXAMPLESDIR%%/xxsq01y.asy
 %%EXAMPLESDIR%%/yingyang.asy
 @dirrm %%DATADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/asy-faq.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%/animations
 @dirrm %%EXAMPLESDIR%%
