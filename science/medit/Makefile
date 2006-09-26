@@ -34,7 +34,7 @@ MISSING_FILES=	eigenv.c libmesh3.c libmesh3.h
 DISTFILES+=	${PORTNAME}-${ARCH}-${DISTVER}-${PORTVERSION}${EXTRACT_SUFX}
 NO_BUILD=	yes
 PATCHDIR=	# No patches
-ONLY_FOR_ARCHS=	i386	# Ask the maintainer to add one
+ONLY_FOR_ARCHS=	amd64 i386 ia64	# Ask the maintainer to add one
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -54,12 +54,20 @@ USE_GL=		yes
 .include <bsd.port.pre.mk>
 
 . if ${OSVERSION} < 601000
+.  if ${ARCH} == i386
 DISTVER=	4.11
-.  if ${OSVERSION} >= 500000
+.   if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.   endif
+.  else
+BROKEN=		no binary available for your platform x version at the moment
 .  endif
 . else
+.  if ${ARCH} == ia64
+DISTVER=	6.2
+.  else
 DISTVER=	6.1
+.  endif
 . endif
 
 .if defined(MAINTAINER_MODE)
