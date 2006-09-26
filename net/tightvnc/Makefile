@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tightvnc
-PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTVERSION=	1.3.8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vnc-tight
@@ -34,12 +33,8 @@ MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 .if exists(${X11BASE}/share/vnc/classes/index.vnc)
-IGNORE=		vnc has already been installed, please uninstall it first.
+IGNORE=		vnc has already been installed, please uninstall it first
 .endif
 
 post-patch:

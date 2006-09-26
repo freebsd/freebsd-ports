@@ -1,14 +1,5 @@
---- Xvnc/config/cf/FreeBSD.cf.orig	Sun Jun 11 21:00:51 2000
-+++ Xvnc/config/cf/FreeBSD.cf	Fri Dec  6 03:21:44 2002
-@@ -49,7 +49,7 @@
- 
- #define MkdirHierCmd		mkdir -p
- 
--#define CcCmd			cc
-+#define CcCmd			%%CC%%
- #define CppCmd			/usr/libexec/cpp
- #define PreProcessCmd		CppCmd
- #define StandardCppDefines	-traditional
+--- Xvnc/config/cf/FreeBSD.cf.orig	Sun Jun 11 08:00:51 2000
++++ Xvnc/config/cf/FreeBSD.cf	Tue Sep 26 19:07:31 2006
 @@ -253,9 +253,9 @@
  #endif
  
@@ -21,3 +12,11 @@
  #endif
  
  #ifndef PreIncDir
+@@ -359,6 +359,5 @@
+ 
+ #include <bsdLib.rules>
+ 
+-#ifdef i386Architecture
+ #include <xfree86.cf>
+-#endif
++
