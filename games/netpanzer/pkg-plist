@@ -9,4 +9,5 @@ share/applications/netpanzer.desktop
 share/pixmaps/netpanzer.png
 share/pixmaps/netpanzer.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/pixmaps
 @dirrmtry share/applications

@@ -7,7 +7,7 @@
 
 PORTNAME=	netpanzer
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/netpanzer/
 
