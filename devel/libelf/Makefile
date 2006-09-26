@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libelf
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mr511.de/software/ \
 		${MASTER_SITE_SUNSITE}
@@ -15,18 +15,34 @@ MASTER_SITE_SUBDIR=	libs
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 
+OPTIONS=	EXTENDED	'ELF format extensions' on \
+		NLS		'Native Language Support' on
+
+.include <bsd.port.pre.mk>
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_ARGS+=	--enable-shared --disable-compat \
-			--enable-extended-format
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS+=	--enable-shared --disable-compat
+USE_LDCONFIG=	yes
 PLIST_SUB+=	LIBVER=${PORTVERSION:R}
-USE_GETTEXT=	yes
 
 NOMAN=		defined
 
-.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS+=	--enable-nls
+USE_GETTEXT=	yes
+PLIST_SUB+=	GETTEXT=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	GETTEXT="@comment "
+.endif
+
+.if !defined(WITHOUT_EXTENDED)
+CONFIGURE_ARGS+=	--enable-extended-format
+.else
+CONFIGURE_ARGS+=	--disable-extended-format
+.endif
 
 .if ${OSVERSION} < 600102
 
