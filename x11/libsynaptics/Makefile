@@ -8,7 +8,8 @@
 PORTNAME=	libsynaptics
 PORTVERSION=	0.14.6b
 CATEGORIES=	x11
-MASTER_SITES=	http://qsynaptics.sourceforge.net/
+MASTER_SITES=	http://qsynaptics.sourceforge.net/ \
+		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Library to access the Xorg/XFree86 Synaptics TouchPad Driver
