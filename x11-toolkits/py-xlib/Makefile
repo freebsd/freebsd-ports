@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xlib
-PORTVERSION=	0.12a
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-xlib
@@ -19,9 +18,5 @@ COMMENT=	X11 library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-INFO=		python-xlib
-
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/doc/info/python-xlib.info ${PREFIX}/info/
 
 .include <bsd.port.mk>

@@ -127,6 +127,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Xlib/support/vms_connect.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/threaded.py
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/threaded.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/threaded.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Xlib/xauth.py
+lib/%%PYTHON_VERSION%%/site-packages/Xlib/xauth.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Xlib/xauth.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/xobject/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/xobject/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/xobject/__init__.pyo
