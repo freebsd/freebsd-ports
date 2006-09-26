@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	bcel
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
@@ -17,6 +17,12 @@ COMMENT=	A library for generating Java bytecode
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
+
+PLIST_FILES=	%%JAVAJARDIR%%/bcel.jar
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar \
