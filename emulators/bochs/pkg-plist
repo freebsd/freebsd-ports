@@ -7,9 +7,9 @@ bin/bximage
 %%DATADIR%%/VGABIOS-elpin-LICENSE
 %%DATADIR%%/VGABIOS-lgpl-README
 %%DATADIR%%/VGABIOS-lgpl-latest
-%%DATADIR%%/VGABIOS-lgpl-latest-debug
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus-debug
+%%DATADIR%%/VGABIOS-lgpl-latest-debug
 %%DATADIR%%/keymaps/sdl-pc-de.map
 %%DATADIR%%/keymaps/sdl-pc-us.map
 %%DATADIR%%/keymaps/x11-pc-be.map
@@ -23,19 +23,19 @@ bin/bximage
 %%DATADIR%%/keymaps/x11-pc-si.map
 %%DATADIR%%/keymaps/x11-pc-uk.map
 %%DATADIR%%/keymaps/x11-pc-us.map
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/bochsrc-sample.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/biossums.txt
+%%PORTDOCS%%%%DOCSDIR%%/bochsrc-sample.txt
 %%PORTDOCS%%%%DOCSDIR%%/cvs-structure.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/Linux.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cosimulation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/iodebug.html
+%%PORTDOCS%%%%DOCSDIR%%/memory.txt
 %%PORTDOCS%%%%DOCSDIR%%/random.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%

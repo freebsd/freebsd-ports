@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.2.6
+PORTVERSION=	2.3
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -129,6 +129,7 @@ post-patch:
 		s|bios/VGABIOS|${DATADIR}/VGABIOS|; \
 		' ${WRKSRC}/.bochsrc
 	@${REINPLACE_CMD} -E ' \
+		s|install_share install_doc|install_share|; \
 		s|(^sharedir.+=).+|\1 ${DATADIR}|; \
 		s|(^docdir.+=).+|\1 ${DOCSDIR}|; \
 		' ${WRKSRC}/Makefile.in
@@ -141,6 +142,10 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/CHANGES
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}/TODO
+	@${INSTALL_DATA} ${WRKSRC}/.bochsrc ${DOCSDIR}/bochsrc-sample.txt
 	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.txt ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${DOCSDIR}/html
