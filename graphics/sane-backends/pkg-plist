@@ -49,6 +49,7 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/snapscan.conf %D/etc/sane.d/dist/snapscan.conf; then rm -f %D/etc/sane.d/snapscan.conf; fi
 @unexec if cmp -s %D/etc/sane.d/sp15c.conf %D/etc/sane.d/dist/sp15c.conf; then rm -f %D/etc/sane.d/sp15c.conf; fi
 @unexec if cmp -s %D/etc/sane.d/st400.conf %D/etc/sane.d/dist/st400.conf; then rm -f %D/etc/sane.d/st400.conf; fi
+@unexec if cmp -s %D/etc/sane.d/stv680.conf %D/etc/sane.d/dist/stv680.conf; then rm -f %D/etc/sane.d/stv680.conf; fi
 @unexec if cmp -s %D/etc/sane.d/tamarack.conf %D/etc/sane.d/dist/tamarack.conf; then rm -f %D/etc/sane.d/tamarack.conf; fi
 @unexec if cmp -s %D/etc/sane.d/teco1.conf %D/etc/sane.d/dist/teco1.conf; then rm -f %D/etc/sane.d/teco1.conf; fi
 @unexec if cmp -s %D/etc/sane.d/teco2.conf %D/etc/sane.d/dist/teco2.conf; then rm -f %D/etc/sane.d/teco2.conf; fi
@@ -106,6 +107,7 @@ etc/sane.d/dist/sm3840.conf
 etc/sane.d/dist/snapscan.conf
 etc/sane.d/dist/sp15c.conf
 etc/sane.d/dist/st400.conf
+etc/sane.d/dist/stv680.conf
 etc/sane.d/dist/tamarack.conf
 etc/sane.d/dist/teco1.conf
 etc/sane.d/dist/teco2.conf
@@ -165,6 +167,9 @@ lib/sane/libsane-dc240.so.1
 lib/sane/libsane-dc25.la
 lib/sane/libsane-dc25.so
 lib/sane/libsane-dc25.so.1
+lib/sane/libsane-dell1600n_net.la
+lib/sane/libsane-dell1600n_net.so
+lib/sane/libsane-dell1600n_net.so.1
 lib/sane/libsane-dll.la
 lib/sane/libsane-dll.so
 lib/sane/libsane-dll.so.1
@@ -189,6 +194,9 @@ lib/sane/libsane-gt68xx.so.1
 lib/sane/libsane-hp.la
 lib/sane/libsane-hp.so
 lib/sane/libsane-hp.so.1
+lib/sane/libsane-hp3500.la
+lib/sane/libsane-hp3500.so
+lib/sane/libsane-hp3500.so.1
 lib/sane/libsane-hp4200.la
 lib/sane/libsane-hp4200.so
 lib/sane/libsane-hp4200.so.1
@@ -237,6 +245,9 @@ lib/sane/libsane-niash.so.1
 lib/sane/libsane-pie.la
 lib/sane/libsane-pie.so
 lib/sane/libsane-pie.so.1
+lib/sane/libsane-pixma.la
+lib/sane/libsane-pixma.so
+lib/sane/libsane-pixma.so.1
 lib/sane/libsane-plustek.la
 lib/sane/libsane-plustek.so
 lib/sane/libsane-plustek.so.1
@@ -270,6 +281,9 @@ lib/sane/libsane-sp15c.so.1
 lib/sane/libsane-st400.la
 lib/sane/libsane-st400.so
 lib/sane/libsane-st400.so.1
+lib/sane/libsane-stv680.la
+lib/sane/libsane-stv680.so
+lib/sane/libsane-stv680.so.1
 lib/sane/libsane-tamarack.la
 lib/sane/libsane-tamarack.so
 lib/sane/libsane-tamarack.so.1
