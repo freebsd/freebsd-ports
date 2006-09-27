@@ -46,6 +46,7 @@
     SUBDIR += gromacs
     SUBDIR += gsmc
     SUBDIR += gsystem
+    SUBDIR += gtamsanalyzer
     SUBDIR += gwyddion
     SUBDIR += hdf
     SUBDIR += hdf5
