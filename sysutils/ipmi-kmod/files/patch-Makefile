@@ -1,0 +1,12 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 1137)
++++ Makefile	(working copy)
+@@ -1,6 +1,6 @@
+ # $FreeBSD: /tmp/pcvs/ports/sysutils/ipmi-kmod/files/Attic/patch-Makefile,v 1.1 2006-09-27 15:18:37 bsam Exp $
+ 
+-.PATH: ${.CURDIR}/../../dev/ipmi
++.PATH: ${.CURDIR}/dev/ipmi
+ 
+ # XXX - ipmi_smbus and ipmi_ssif depend on smbus
+ # XXX - ipmi_acpi depends on acpi
