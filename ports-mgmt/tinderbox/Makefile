@@ -72,6 +72,7 @@ post-patch:
 		${WRKSRC}/lib/setup-mysql.sh
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
 .endif
+	@${RM} ${WRKSRC}/create.orig ${WRKSRC}/setup.sh.orig
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
