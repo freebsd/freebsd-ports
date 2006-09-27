@@ -127,7 +127,6 @@ share/locale/ar/LC_MESSAGES/kaffeine.mo
 share/locale/ka/LC_MESSAGES/kaffeine.mo
 share/locale/km/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
-share/mimelnk/application/x-mplayer2.desktop
 %%NOGSTREAMER%%share/services/gstreamer_part.desktop
 %%NOLAME%%share/services/kaffeinemp3lame.desktop
 share/services/kaffeineoggvorbis.desktop
@@ -139,4 +138,8 @@ share/servicetypes/kaffeineaudioencoder.desktop
 @dirrm share/doc/HTML/en/kaffeine
 @dirrmtry share/apps/konqueror/servicemenus
 @dirrmtry share/apps/konqueror
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
 %%NOGSTREAMER%%@dirrm share/apps/gstreamerpart
