@@ -1,9 +1,9 @@
---- src/xmms/Program.orig	Thu Jul  6 15:35:55 2006
-+++ src/xmms/Program	Thu Jul  6 17:36:50 2006
-@@ -29,10 +29,10 @@
- 	env.Append(LIBS=['xmmsipc'])
- 	env.Append(LIBS=["xmmssocket"])
- 	env.Append(CPPPATH=["#src/includepriv"])
+--- src/xmms/Program.orig	Tue Sep 26 20:51:07 2006
++++ src/xmms/Program	Tue Sep 26 20:51:39 2006
+@@ -26,10 +26,10 @@
+ 
+ def config(env):
+ 	pluginenv = env.Copy()
 -	env.pkgconfig("glib-2.0 >= 2.6.0", fail=True)
 -	env.pkgconfig("gmodule-2.0", fail=True)
 -	env.pkgconfig("gthread-2.0", fail=True)
@@ -12,6 +12,6 @@
 +	env.pkgconfig("gmodule-2.0")
 +	env.pkgconfig("gthread-2.0")
 +	env.pkgconfig("sqlite3")
- 
- 	if env.platform != 'win32':
- 		env.checklib("m", "sin", fail=True)
+ 	env.Prepend(LIBPATH=["src/lib/xmmsipc"])
+ 	env.Prepend(LIBPATH=["src/lib/xmmssocket"])
+ 	env.Append(LIBS=['xmmsipc'])

@@ -1,0 +1,13 @@
+--- SConstruct.orig	Tue Sep 26 21:07:58 2006
++++ SConstruct	Tue Sep 26 21:08:16 2006
+@@ -182,8 +182,8 @@
+ base_env.add_manpage(1, 'doc/xmms2.1')
+ base_env.add_manpage(8, 'doc/xmms2d.8')
+ base_env.add_manpage(1, 'doc/xmms2-et.1')
+-base_env.add_manpage(1, 'doc/xmms2-launcher.8')
+-base_env.add_manpage(1, 'doc/xmms2-mdns-avahi.8')
++base_env.add_manpage(8, 'doc/xmms2-launcher.8')
++base_env.add_manpage(8, 'doc/xmms2-mdns-avahi.8')
+ 
+ #### Generate pc files.
+ 
