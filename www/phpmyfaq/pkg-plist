@@ -2,7 +2,6 @@
 %%PHPMYFAQ%%/_httpd.ini
 %%PHPMYFAQ%%/_lighttpd.conf
 %%PHPMYFAQ%%/add.php
-%%PHPMYFAQ%%/phpmyfaq.spec
 %%PHPMYFAQ%%/admin/adminlog.php
 %%PHPMYFAQ%%/admin/attachment.php
 %%PHPMYFAQ%%/admin/backup.import.php
@@ -222,6 +221,7 @@
 %%PHPMYFAQ%%/docs/UPDATE.txt
 %%PHPMYFAQ%%/docs/documentation.de.html
 %%PHPMYFAQ%%/docs/documentation.en.html
+%%PHPMYFAQ%%/docs/documentation.fr.html
 %%PHPMYFAQ%%/feed/latest/rss.php
 %%PHPMYFAQ%%/feed/news/rss.php
 %%PHPMYFAQ%%/feed/openquestions/rss.php
@@ -315,6 +315,7 @@
 %%PHPMYFAQ%%/install/update.php
 %%PHPMYFAQ%%/lang/language_ar.php
 %%PHPMYFAQ%%/lang/language_cs.php
+%%PHPMYFAQ%%/lang/language_cy.php
 %%PHPMYFAQ%%/lang/language_da.php
 %%PHPMYFAQ%%/lang/language_de.php
 %%PHPMYFAQ%%/lang/language_el.php
@@ -348,6 +349,7 @@
 %%PHPMYFAQ%%/main.php
 %%PHPMYFAQ%%/open.php
 %%PHPMYFAQ%%/pdf.php
+%%PHPMYFAQ%%/phpmyfaq.spec
 %%PHPMYFAQ%%/save.php
 %%PHPMYFAQ%%/savecomment.php
 %%PHPMYFAQ%%/savequestion.php
