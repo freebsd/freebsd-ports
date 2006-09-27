@@ -5,13 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	www6to4
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Lightweight http proxy to help IPv4 only browsers
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,' \
+		${WRKSRC}/www6to4.c
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/www6to4 ${PREFIX}/sbin
 	@if [ ! -d ${PREFIX}/etc/www6to4 ]; then \
