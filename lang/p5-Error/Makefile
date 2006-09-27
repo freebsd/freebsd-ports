@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Error
-PORTVERSION=	0.17
+PORTVERSION=	0.17.004
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Error
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.17004
 
 MAINTAINER=	pvh@wfeet.za.net
 COMMENT=	Perl module to provide Error/exception support for perl: Error
