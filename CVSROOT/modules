@@ -9553,6 +9553,7 @@ p5-Net-IP-Resolver	ports/net-mgmt/p5-Net-IP-Resolver
 p5-Net-IPv4Addr	ports/net-mgmt/p5-Net-IPv4Addr
 p5-Net-IPv6Addr	ports/net-mgmt/p5-Net-IPv6Addr
 p5-Net-Ident	ports/net/p5-Net-Ident
+p5-Net-Interface	ports/net/p5-Net-Interface
 p5-Net-Jabber	ports/net-im/p5-Net-Jabber
 p5-Net-LibIDN	ports/dns/p5-Net-LibIDN
 p5-Net-Libdnet	ports/net/p5-Net-Libdnet
