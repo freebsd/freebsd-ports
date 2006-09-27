@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libmal
-PORTVERSION=	0.40
-PORTREVISION=	1
+PORTVERSION=	0.42
+PORTREVISION=	0
 CATEGORIES=	palm
 MASTER_SITES=	http://jasonday.home.att.net/code/libmal/
 
@@ -21,7 +21,7 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-pilot-prefix=${LOCALBASE}
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 CONFLICTS=	malsync-[0-9]*
 
 .include <bsd.port.mk>
