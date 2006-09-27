@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	IMAP-Client
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IMAP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Advanced manipulation of IMAP services w/ referral support
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
@@ -27,6 +27,8 @@ MAN3=		IMAP::Client.3
 
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
+post-patch:
+		${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -rf
 .endif
 
 .if ${PERL_LEVEL} < 500703
