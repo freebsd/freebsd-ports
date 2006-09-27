@@ -1,0 +1,10 @@
+Convert::Bencode_XS exists for a couple of reasons, first of all
+performance. Especially bdecode() is between 10 and 200 times faster
+than Convert::Bencode version (depending on file): the great speed
+increase is in part due to the iterative algorithm used. bencode() is
+written in C for better performance, but it still uses a recursive
+algorithm. It manages to be around 3 to 5 times faster than
+Convert::Bencode version. Check out the "extras" directory in this
+distribution for benchmarks.
+
+WWW:	http://search.cpan.org/dist/Convert-Bencode_XS/
