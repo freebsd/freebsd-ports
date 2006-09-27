@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+%%EXAMPLESDIR%%/curses.pl
+%%EXAMPLESDIR%%/kitten.jpg
+%%EXAMPLESDIR%%/kitten.pl
+%%EXAMPLESDIR%%/portrait.jpg
+%%EXAMPLESDIR%%/portrait.pl
+%%EXAMPLESDIR%%/sunset.jpg
+%%EXAMPLESDIR%%/sunset.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Caa/.packlist
+%%SITE_PERL%%/Image/Caa.pm
+%%SITE_PERL%%/Image/Caa/DitherNone.pm
+%%SITE_PERL%%/Image/Caa/DitherOrdered2.pm
+%%SITE_PERL%%/Image/Caa/DitherOrdered4.pm
+%%SITE_PERL%%/Image/Caa/DitherOrdered8.pm
+%%SITE_PERL%%/Image/Caa/DitherRandom.pm
+%%SITE_PERL%%/Image/Caa/DriverANSI.pm
+%%SITE_PERL%%/Image/Caa/DriverCurses.pm
+%%SITE_PERL%%/Image/Caa/DriverTest.pm
+@dirrmtry %%SITE_PERL%%/Image/Caa
+@dirrmtry %%SITE_PERL%%/Image
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Caa
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%EXAMPLESDIR%%
