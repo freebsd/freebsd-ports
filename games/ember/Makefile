@@ -37,9 +37,9 @@ CPPFLAGS=	-DBR_NO_MACROS
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} < 600000
-#IGNORE=		Does not compile because of inlining error
-#.endif
+.if ${OSVERSION} < 600000
+IGNORE=		Does not compile because of inlining error
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
