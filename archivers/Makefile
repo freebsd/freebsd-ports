@@ -72,6 +72,7 @@
     SUBDIR += p5-IO-Zlib
     SUBDIR += p5-Mac-Macbinary
     SUBDIR += p5-POE-Filter-Bzip2
+    SUBDIR += p5-POE-Filter-LZF
     SUBDIR += p5-POE-Filter-LZW
     SUBDIR += p5-POE-Filter-Zlib
     SUBDIR += p5-PerlIO-gzip
