@@ -3865,6 +3865,7 @@ gstreamer80		ports/multimedia/gstreamer80
 gsubedit	ports/multimedia/gsubedit
 gsynaptics	ports/x11/gsynaptics
 gsystem		ports/science/gsystem
+gtamsanalyzer	ports/science/gtamsanalyzer
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
