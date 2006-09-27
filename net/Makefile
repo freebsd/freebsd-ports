@@ -451,6 +451,7 @@
     SUBDIR += p5-Net-MAC-Vendor
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-NBName
+    SUBDIR += p5-Net-NBsocket
     SUBDIR += p5-Net-NIS
     SUBDIR += p5-Net-NIS-Listgroup
     SUBDIR += p5-Net-OpenDHT
