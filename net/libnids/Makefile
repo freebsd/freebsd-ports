@@ -7,6 +7,7 @@
 
 PORTNAME=	libnids
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +16,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Network monitoring library with TCP/IP reassembly
 
 OPTIONS=	LIBNET "Include code requiring libnet" ON \
+		LIBNET10 "Use the old libnet-1.0.x version" ON \
 		GLIB2 "Use GLIB2 for multiprocessing support" ON
 
 GNU_CONFIGURE=	yes
@@ -27,8 +29,11 @@ MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_LIBNET)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
-RUN_DEPENDS+=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+.if !defined(WITHOUT_LIBNET10)
+BUILD_DEPENDS+=	libnet*<=1.1.0,1:${PORTSDIR}/net/libnet10
+.else
+BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-libnet
 .endif
