@@ -229,6 +229,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Initialization-Files.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Internals-Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Internet-Community.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Interpreter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Introduction-to-the-Foreign-Function-Interface.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sbcl/Language-Reference.html
