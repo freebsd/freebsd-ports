@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	kannel
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	babak@farrokhi.net
 COMMENT=	WAP / SMS Gateway
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
@@ -33,7 +33,7 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" || ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on alpha or sparc64"
+BROKEN=		Does not compile on alpha or sparc64
 .endif
 
 post-patch:
