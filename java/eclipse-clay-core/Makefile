@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clay
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=
@@ -18,7 +18,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	mitsuru@riken.jp
 COMMENT=	A database design tool for the Eclipse development environment
 
-RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.0.1/feature.xml:${PORTSDIR}/java/eclipse-gef
+RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.1.1/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 RESTRICTED=	License agreement is required to download.
 
@@ -28,7 +28,7 @@ USE_ZIP=	yes
 DISABLE_SIZE?=	yes
 PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
-DISTVERSION=	20041231
+DISTVERSION=	20050831
 
 .include <bsd.port.pre.mk>
 
