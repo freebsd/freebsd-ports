@@ -12,4 +12,36 @@ ruleset in devfs.rules:
 add path 'ugen*' group operator
 add path 'ugen*' mode 0660
 
+If you have never setup devfs.rules please read the
+manpage and see:
+http://am-productions.biz/docs/devfs.rules.php
+
+The printer MUST attach as a ugen(4) device.  This means
+that you must NOT have "device ulpt" in your kernel and
+ulpt must NOT be loaded as a kernel module.
+
+If you are seeing device connection errors restart the
+printing chain with the following command.  NOTE: It MUST
+be restarted in the stated order.
+%%PREFIX%%/etc/rc.d/hpiod restart && \
+%%PREFIX%%/etc/rc.d/hpssd restart && \
+%%PREFIX%%/etc/rc.d/cupsd restart
+
+If upgrading from version 0.9.11 add the following to
+your %%PREFIX%%/etc/hp/hplip.conf:
+[dirs]
+run=/var/run
+home=%%PREFIX%%/share/hplip
+ppd=%%PREFIX%%/share/ppd
+
+Or just copy the hplip.conf.sample config. [Recommended]
+cp %%PREFIX%%/etc/hp/hplip.conf.sample \
+   %%PREFIX%%/etc/hp/hplip.conf
+
+If you are having problems check:
+http://am-productions.biz/docs/hplip.php
+If you still having problems send the relevant part of
+your /var/log/messages, console output from the hp-*
+utility that you are trying to run, and your rc.conf +
+devfs.rules files to the maintainer.
 **********************************************************

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	0.9.11
+PORTVERSION=	1.6.7
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -40,7 +40,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS=	GUI "build with Python QT" on
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.1.10
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.6.7
 
 .include <bsd.port.pre.mk>
 
@@ -100,6 +100,11 @@ post-install:
 	@${LN} -sf ${PREFIX}/share/hplip/hpssd.py ${PREFIX}/sbin/hpssd
 	@${LN} -sf ${PREFIX}/bin/foomatic-rip \
 		${PREFIX}/libexec/cups/filter/foomatic-rip
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${PREFIX}/etc/hp
+	# Auto-generate sample configuration file
+	@${ECHO} "home=${PREFIX}/share/hplip" >> ${WRKSRC}/hplip.conf
+	@${ECHO} "ppd=${PREFIX}/share/ppd" >> ${WRKSRC}/hplip.conf
+	@${INSTALL_DATA} ${WRKSRC}/hplip.conf ${PREFIX}/etc/hp/hplip.conf.sample
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

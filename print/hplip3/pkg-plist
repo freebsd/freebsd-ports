@@ -6,8 +6,8 @@ bin/hp-colorcal
 bin/hp-fab
 bin/hp-info
 bin/hp-levels
+bin/hp-makecopies
 bin/hp-makeuri
-bin/hp-photo
 bin/hp-print
 bin/hp-sendfax
 bin/hp-setup
@@ -15,21 +15,21 @@ bin/hp-testpage
 bin/hp-toolbox
 bin/hp-unload
 bin/hpijs
-etc/hp/hplip.conf
+etc/hp/hplip.conf.sample
 lib/libhpip.la
 lib/libhpip.so
 lib/libhpip.so.0
 lib/libsane-hpaio.la
 lib/libsane-hpaio.so
 lib/libsane-hpaio.so.1
+%%PYTHON_SITELIBDIR%%/cupsext.so
+%%PYTHON_SITELIBDIR%%/pcardext.so
 lib/sane/libsane-hpaio.so
 lib/sane/libsane-hpaio.so.1
 lib/sane/libsane-hpaio.so.1.0.0
 libexec/cups/backend/hp
 libexec/cups/backend/hpfax
 libexec/cups/filter/foomatic-rip
-%%PYTHON_SITELIBDIR%%/pcardext.so
-%%PYTHON_SITELIBDIR%%/cupsext.so
 sbin/hpiod
 sbin/hpssd
 share/applications/hplip.desktop
@@ -37,6 +37,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%share/doc/hpijs-%%IJSVER%%/COPYING
 %%PORTDOCS%%share/doc/hpijs-%%IJSVER%%/README_LIBJPG
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/about.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/contacts.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/faqs.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/features.html
@@ -48,8 +49,10 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/other.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/pcard.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/printing.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/redhat.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/scanning.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/howtos/toolbox.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/hpaio.desc
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManagePrint.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManageSend_Fax-1.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManageSend_Fax-2.png
@@ -62,17 +65,27 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/HP_Device_ManagerSend_Fax.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/Screenshot-xsane.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_device_list.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_left.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_model_list.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_opening.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/cups_printer_model.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_1.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_2.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_3.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/fullbleed_4.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/gs_hpijs.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hp-tux-printer.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hp_invent_logo.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplip_device_manager.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/hplip_overview.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/linux_printing_logo.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_appssocket.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_device_list.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_device_uri.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/network_model_list.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/osi_certified.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/python-logo.png
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/rest2web.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/sflogo.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_hardware.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_opening_hw.png
@@ -92,6 +105,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/other.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/suse10.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/ubuntu510.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step2/ubuntu606.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step3/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/cups/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/step4/cups/local.html
@@ -104,6 +118,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/legal.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/mailing_lists.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/other_support.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/release_notes.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/screenshots.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/styles/default.css
@@ -111,6 +126,7 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/support_statement.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/color_laser.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/color_laser_mfp.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/combined.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/inkjet.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/supported_devices/inkjet_aio.html
@@ -131,9 +147,10 @@ share/cups/model/foomatic-ppds
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/info.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/levels.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/makecopies.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/makeuri.html
-%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/photo.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/print.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/sendfax.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/setup.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/testpage.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/tech_docs/man_pages/toolbox.html
@@ -174,11 +191,12 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/base/slp.py
 %%DATADIR%%/base/status.py
 %%DATADIR%%/base/strings.py
-%%DATADIR%%/base/subproc.py
 %%DATADIR%%/base/utils.py
 %%DATADIR%%/check
 %%DATADIR%%/clean
 %%DATADIR%%/colorcal
+%%DATADIR%%/copier/__init__.py
+%%DATADIR%%/copier/copier.py
 %%DATADIR%%/data/hplip.desktop
 %%DATADIR%%/data/images/120.png
 %%DATADIR%%/data/images/COLOR_INKJET_PRINTER_CP1700.png
@@ -236,10 +254,10 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/LASERJET_5550.png
 %%DATADIR%%/data/images/LASERJET_5550DTN.png
 %%DATADIR%%/data/images/OFFICEJET_PRO_1150C.png
-%%DATADIR%%/data/images/OfficeJet_Series_300.png
 %%DATADIR%%/data/images/OfficeJet_5105.png
 %%DATADIR%%/data/images/OfficeJet_6100_Series.png
 %%DATADIR%%/data/images/OfficeJet_G85.png
+%%DATADIR%%/data/images/OfficeJet_Series_300.png
 %%DATADIR%%/data/images/Officejet_6150_Series.png
 %%DATADIR%%/data/images/Officejet_6200_series.png
 %%DATADIR%%/data/images/Officejet_7200_series.png
@@ -300,6 +318,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/images/h-kc-3.png
 %%DATADIR%%/data/images/help.png
 %%DATADIR%%/data/images/hp-tux-printer.png
+%%DATADIR%%/data/images/hp-tux-printer.ppm
 %%DATADIR%%/data/images/hp_LaserJet_1200.png
 %%DATADIR%%/data/images/hp_LaserJet_2100.png
 %%DATADIR%%/data/images/hp_LaserJet_3015.png
@@ -429,6 +448,9 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/data/xml/HPLIP-02-2006.xml
 %%DATADIR%%/data/xml/HPLIP-03-2006.xml
 %%DATADIR%%/data/xml/HPLIP-05-2006.xml
+%%DATADIR%%/data/xml/HPLIP-06-2006.xml
+%%DATADIR%%/data/xml/HPLIP-07-2006.xml
+%%DATADIR%%/data/xml/HPLIP-08-2006.xml
 %%DATADIR%%/data/xml/models.xml
 %%DATADIR%%/data/xml/unsupported.xml
 %%DATADIR%%/fab
@@ -437,16 +459,17 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/fax/coverpages.py
 %%DATADIR%%/fax/fax.py
 %%DATADIR%%/fax/ppd/HP-Fax-hplip.ppd
+%%DATADIR%%/hpaio.desc
 %%DATADIR%%/hplip
 %%DATADIR%%/hplip.conf
 %%DATADIR%%/hplip.sh
 %%DATADIR%%/hpssd.py
 %%DATADIR%%/info
 %%DATADIR%%/levels
+%%DATADIR%%/makecopies
 %%DATADIR%%/makeuri
 %%DATADIR%%/pcard/__init__.py
 %%DATADIR%%/pcard/photocard.py
-%%DATADIR%%/photo
 %%DATADIR%%/plugins/Deskjet_460.py
 %%DATADIR%%/plugins/__init__.py
 %%DATADIR%%/plugins/dj450.py
@@ -459,6 +482,7 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/prnt/cups.py
 %%DATADIR%%/prnt/ldl.py
 %%DATADIR%%/prnt/pcl.py
+%%DATADIR%%/prnt/printable_areas.py
 %%DATADIR%%/scan/__init__.py
 %%DATADIR%%/sendfax
 %%DATADIR%%/setup
@@ -510,6 +534,8 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/informationform_base.py
 %%DATADIR%%/ui/loadpaperform.py
 %%DATADIR%%/ui/loadpaperform_base.py
+%%DATADIR%%/ui/makecopiesform.py
+%%DATADIR%%/ui/makecopiesform_base.py
 %%DATADIR%%/ui/nodevicesform.py
 %%DATADIR%%/ui/nodevicesform_base.py
 %%DATADIR%%/ui/paperedgealignform.py
@@ -519,8 +545,6 @@ share/cups/model/foomatic-ppds
 %%DATADIR%%/ui/printerform_base.ui
 %%DATADIR%%/ui/settingsdialog.py
 %%DATADIR%%/ui/settingsdialog_base.py
-%%DATADIR%%/ui/supportform.py
-%%DATADIR%%/ui/supportform_base.py
 %%DATADIR%%/ui/unloadform.py
 %%DATADIR%%/ui/unloadform_base.py
 %%DATADIR%%/ui/waitform.py
@@ -691,6 +715,9 @@ share/ppd/HP/HP-DeskJet_9800-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_980C-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_990C-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_995C-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_D1300-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_D2300-hpijs.ppd.gz
+share/ppd/HP/HP-DeskJet_D4100-hpijs.ppd.gz
 share/ppd/HP/HP-DeskJet_F300-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_1010-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_1012-hpijs.ppd.gz
@@ -783,7 +810,6 @@ share/ppd/HP/HP-OfficeJet_4110-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_4115-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_4200-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_4300-hpijs.ppd.gz
-share/ppd/HP/HP-OfficeJet_6300-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_500-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_5105-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_5110-hpijs.ppd.gz
@@ -803,6 +829,7 @@ share/ppd/HP/HP-OfficeJet_6150-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_6200-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_625-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_630-hpijs.ppd.gz
+share/ppd/HP/HP-OfficeJet_6300-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_635-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_700-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_710-hpijs.ppd.gz
@@ -898,6 +925,15 @@ share/ppd/HP/HP-PhotoSmart_8100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_8200-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_8400-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_8700-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_A430-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_A510-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_A610-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_A710-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_C3100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_C4100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_D6100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_D7100-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_D7300-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_P100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_P1000-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_P1100-hpijs.ppd.gz
@@ -992,7 +1028,6 @@ share/ppd/HP/hp_color_LaserJet_5500.ppd.gz
 share/ppd/HP/hp_color_LaserJet_9500.ppd.gz
 share/ppd/HP/hp_color_LaserJet_9500_MFP.ppd.gz
 share/ppd/HP/hp_officejet_9100_series.ppd.gz
-@dirrmtry share/applications
 @dirrm share/ppd/HP/fax
 @dirrm share/ppd/HP
 @dirrm share/ppd
@@ -1011,6 +1046,7 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 @dirrm %%DATADIR%%/data/ldl
 @dirrm %%DATADIR%%/data/images
 @dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/copier
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/troubleshooting
@@ -1030,4 +1066,5 @@ share/ppd/HP/hp_officejet_9100_series.ppd.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%/howtos
 %%PORTDOCS%%@dirrm %%DOCSDIR%%-%%PORTVERSION%%
 %%PORTDOCS%%@dirrm share/doc/hpijs-%%IJSVER%%
-@dirrm etc/hp
+@dirrmtry share/applications
+@dirrmtry etc/hp

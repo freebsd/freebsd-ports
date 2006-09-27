@@ -1,5 +1,5 @@
---- io/hpiod/device.cpp.orig	Fri Mar  3 00:07:26 2006
-+++ io/hpiod/device.cpp	Wed Apr  5 02:57:32 2006
+--- io/hpiod/device.cpp.orig	Thu Jun 15 02:02:11 2006
++++ io/hpiod/device.cpp	Sun Jul 16 16:57:30 2006
 @@ -25,6 +25,9 @@
  \*****************************************************************************/
  
@@ -10,14 +10,19 @@
  
  const unsigned char Venice_Power_On[] = {0x1b, '%','P','u','i','f','p','.',
          'p','o','w','e','r',' ','1',';',
-@@ -109,6 +112,244 @@
-    return -2;
- }
+@@ -111,21 +114,240 @@
  
-+#elif defined(__FreeBSD__)
-+
-+int Device::Write(int fd, const void *buf, int size)
-+{
+ #elif defined(__FreeBSD__)
+ 
+-/* 
+- * Anish Mistry amistry@am-productions.biz is working on libusb extensions for FreeBSD. His current implementation does not handle device exceptions (ie: paperout).
+- * Once this issue is resolved we will be glade to add his code to the project.
+- */
+-
+ int Device::Write(int fd, const void *buf, int size)
+ {
+-   syslog(LOG_ERR, "error Write: unimplemented (freebsd) %s %s %d\n", URI, __FILE__, __LINE__);
+-   return -1;
 +	int nwrote, total, write_len, r, ep, endpoint_fd;
 +	void *tmp_buf = (void *)buf;
 +	fd_set ready;
@@ -82,10 +87,12 @@
 +
 +	close(endpoint_fd);
 +	return size;
-+}
-+
-+int Device::Read(int fd, void *buf, int size, int usec)
-+{
+ }
+ 
+ int Device::Read(int fd, void *buf, int size, int usec)
+ {
+-   syslog(LOG_ERR, "error Read: unimplemented (freebsd) %s %s %d\n", URI, __FILE__, __LINE__);
+-   return -2;
 +	int nwrote, total, r, ep=0, endpoint_fd, i;
 +	struct timeval t1, t2;
 +	fd_set ready;
@@ -250,18 +257,6 @@
 +
 +	close(endpoint_fd);
 +	return size;
-+}
-+
- #else
+ }
  
- /*
-@@ -589,7 +830,8 @@
- 
-    if (FD[fd].urb_write_active)
-    {
--#if defined(__APPLE__) && defined(__MACH__)
-+#if defined(__APPLE__) && defined(__MACH__) || defined(__FreeBSD__)
-+	syslog(LOG_ERR, "danger! Device::ReleaseInterface, releasing an interface with an active write %s: %s %d\n", URI, __FILE__, __LINE__);
  #else
-       usb_reap_urb_ex(FD[fd].pHD, &FD[fd].urb_write);
- #endif

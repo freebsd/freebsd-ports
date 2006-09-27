@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue May  9 14:18:36 2006
-+++ Makefile.in	Sun May 21 14:32:27 2006
-@@ -377,9 +377,9 @@
+--- Makefile.in.orig	Tue Aug  1 16:41:16 2006
++++ Makefile.in	Wed Sep 27 17:13:29 2006
+@@ -390,12 +390,12 @@
  www5dir = $(docdir)/supported_devices
  dist_www5_DATA = $(wwwsrc)/supported_devices/*
  www6dir = $(docdir)/tech_docs
@@ -11,8 +11,12 @@
 +dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*.html
  www7dir = $(docdir)/troubleshooting
  dist_www7_DATA = $(wwwsrc)/troubleshooting/*
- dist_hplip_DATA = $(doc_DATA) hplip.conf
-@@ -2348,15 +2348,9 @@
+-dist_hplip_DATA = $(doc_DATA) hplip.conf
++dist_hplip_DATA = $(doc_DATA)
+ dist_hplip_SCRIPTS = hpssd.py __init__.py hplip.sh
+ cmddir = $(hplipdir)
+ dist_cmd_SCRIPTS = align.py info.py print.py toolbox.py clean.py colorcal.py unload.py testpage.py makeuri.py check.py fab.py levels.py \
+@@ -2415,15 +2415,9 @@
  #
  #       Do full install if not rpm_install.
  	if [ "$(rpm_install)" = "no" ]; then \
@@ -30,8 +34,8 @@
 +	   ln -sf $(prefix)/lib/$(SOSHORT) $(DESTDIR)$(sanedir)/$(SOLONG); \
  	fi
  
- install-data-hook: test-destdir
-@@ -2414,7 +2408,7 @@
+ install-data-hook: test-destdir install-pcardext install-cupsext
+@@ -2466,7 +2460,7 @@
  	    newname=$${i%.*}; \
  	    mv $(DESTDIR)$(hplipdir)/$$i $(DESTDIR)$(hplipdir)/$$newname; \
  	    if [ "$(rpm_install)" = "no" ]; then \
@@ -40,10 +44,15 @@
  	    fi \
  	done
  #
-@@ -2449,16 +2443,6 @@
- 	if [ "$(rpm_install)" = "no" ]; then \
- 	   $(mkinstalldirs) $(DESTDIR)/etc/hp; \
- 	   $(INSTALL_DATA) $(DESTDIR)$(hplipdir)/$(PACKAGE).conf $(DESTDIR)/etc/hp; \
+@@ -2501,22 +2495,7 @@
+ 	sed 's:HPIODDIR=:HPIODDIR=$(sbindir):' < $(DESTDIR)$(hplipdir)/$(PACKAGE).sh > $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp; \
+ 	sed 's:HPSSDDIR=:HPSSDDIR=$(hplipdir):' < $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp > $(DESTDIR)$(hplipdir)/$(PACKAGE); \
+ 	rm -f $(DESTDIR)$(hplipdir)/$(PACKAGE).tmp
+-#
+-#       Do full install if not rpm_install. Also only run chkconfig/install_initd if DESTDIR="". 
+-	if [ "$(rpm_install)" = "no" ]; then \
+-	   $(mkinstalldirs) $(DESTDIR)/etc/hp; \
+-	   $(INSTALL_DATA) $(DESTDIR)$(hplipdir)/$(PACKAGE).conf $(DESTDIR)/etc/hp; \
 -	   if [ -d $(DESTDIR)/etc/init.d ]; then \
 -	      $(INSTALL_SCRIPT) $(DESTDIR)$(hplipdir)/$(PACKAGE) $(DESTDIR)/etc/init.d; \
 -	      if [ "$(DESTDIR)" = "" ]; then \
@@ -54,6 +63,38 @@
 -	         fi \
 -	      fi \
 -	   fi \
- 	fi
+-	fi
++
  #
  #       For internal testing.
+ 	if [ "$(SHADOW)" != "" ]; then \
+@@ -2548,8 +2527,8 @@
+ 	done
+ #
+ #       Remove hplip.conf and hplip start/stop script.
+-	rm -f $(DESTDIR)/etc/hp/$(PACKAGE).conf
+-	rm -f $(DESTDIR)/etc/init.d/$(PACKAGE)
++	rm -f $(DESTDIR)/usr/local/etc/hp/$(PACKAGE).conf
++	rm -f $(DESTDIR)/usr/local/etc/rc.d/$(PACKAGE)
+ #
+ #       Remove fax support.
+ 	rm -f $(DESTDIR)$(hpfaxdir)/hpfax 
+@@ -2560,13 +2539,13 @@
+ # Add prerequisites for testing (or building?) "make install DESTDIR=/build".
+ test-destdir:
+ 	if [ "$(DESTDIR)" != "" ]; then \
+-	   $(mkinstalldirs) $(DESTDIR)/etc/init.d; \
+-	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
+-	   if [ ! -f $(DESTDIR)/etc/sane.d/dll.conf ]; then \
+-	      touch $(DESTDIR)/etc/sane.d/dll.conf; \
++	   $(mkinstalldirs) $(DESTDIR)/usr/local/etc/rc.d; \
++	   $(mkinstalldirs) $(DESTDIR)/usr/local/etc/sane.d; \
++	   if [ ! -f $(DESTDIR)/usr/local/etc/sane.d/dll.conf ]; then \
++	      touch $(DESTDIR)/usr/local/etc/sane.d/dll.conf; \
+ 	   fi; \
+ 	   $(mkinstalldirs) $(DESTDIR)$(sanedir); \
+-	   $(mkinstalldirs) $(DESTDIR)/usr/share/applications; \
++	   $(mkinstalldirs) $(DESTDIR)/usr/local/share/applications; \
+ 	   $(mkinstalldirs) $(DESTDIR)/usr/bin; \
+ 	fi
+ 
