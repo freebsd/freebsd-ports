@@ -6,6 +6,7 @@ bin/xmms2-launcher
 %%MDNS_AVAHI%%bin/xmms2-mdns-avahi
 %%MDNS_APPLE%%bin/xmms2-mdns-dnssd
 bin/xmms2d
+include/xmms2/xmms/xmms_bindata.h
 include/xmms2/xmms/xmms_config.h
 include/xmms2/xmms/xmms_defs.h
 include/xmms2/xmms/xmms_effect.h
@@ -20,6 +21,7 @@ include/xmms2/xmms/xmms_plsplugins.h
 include/xmms2/xmms/xmms_plugin.h
 include/xmms2/xmms/xmms_sample.h
 include/xmms2/xmms/xmms_streamtype.h
+include/xmms2/xmms/xmms_strfunc.h
 include/xmms2/xmms/xmms_xformplugin.h
 include/xmms2/xmmsc/xmmsc_asyncns.h
 include/xmms2/xmmsc/xmmsc_errorcodes.h
@@ -33,6 +35,7 @@ include/xmms2/xmmsc/xmmsc_stdint.h
 include/xmms2/xmmsc/xmmsc_stringport.h
 include/xmms2/xmmsc/xmmsc_unistd.h
 include/xmms2/xmmsc/xmmsc_util.h
+include/xmms2/xmmsclient/xmmsclient++/bindata.h
 include/xmms2/xmmsclient/xmmsclient++/client.h
 include/xmms2/xmmsclient/xmmsclient++/config.h
 include/xmms2/xmmsclient/xmmsclient++/dict.h
@@ -47,6 +50,7 @@ include/xmms2/xmmsclient/xmmsclient++/playlist.h
 include/xmms2/xmmsclient/xmmsclient++/signal.h
 include/xmms2/xmmsclient/xmmsclient++/stats.h
 include/xmms2/xmmsclient/xmmsclient++/typedefs.h
+include/xmms2/xmmsclient/xmmsclient++/xform.h
 include/xmms2/xmmsclient/xmmsclient++-glib.h
 include/xmms2/xmmsclient/xmmsclient++.h
 include/xmms2/xmmsclient/xmmsclient-cf.h
@@ -61,6 +65,7 @@ lib/libxmmsclient.so
 %%CURL%%lib/xmms2/libxmms_curl_http.so
 lib/xmms2/libxmms_diskwrite.so
 lib/xmms2/libxmms_equalizer.so
+%%DAAP%%lib/xmms2/libxmms_daap.so
 %%FAAD%%lib/xmms2/libxmms_faad.so
 %%FLAC%%lib/xmms2/libxmms_flac.so
 lib/xmms2/libxmms_file.so
@@ -69,6 +74,7 @@ lib/xmms2/libxmms_icymetaint.so
 lib/xmms2/libxmms_id3v2.so
 %%JACK%%lib/xmms2/libxmms_jack.so
 lib/xmms2/libxmms_mad.so
+%%MAC%%lib/xmms2/libxmms_mac.so
 %%MMS%%lib/xmms2/libxmms_mms.so
 %%MODPLUG%%lib/xmms2/libxmms_modplug.so
 %%MUSEPACK%%lib/xmms2/libxmms_musepack.so

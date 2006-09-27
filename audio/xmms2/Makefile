@@ -6,12 +6,11 @@
 #
 
 PORTNAME?=	xmms2
-PORTVERSION=	0.2.d.6
-PORTREVISION=	1
+PORTVERSION=	0.2.d.7
 CATEGORIES?=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.2DrFeelgood
+DISTNAME=	${PORTNAME}-0.2DrGonzo
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
@@ -21,12 +20,9 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
 USE_SCONS=	yes
-SCONS_ARGS=	INSTALLDIR=${DESTDIR} EXCLUDE="${EXCLUDE}"
+SCONS_ARGS=	INSTALLDIR=${DESTDIR} SHAREDIR=${DATADIR} EXCLUDE="${EXCLUDE}"
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
@@ -37,7 +33,7 @@ USE_LDCONFIG=	yes
 
 .if !defined(XMMS2_SLAVE)
 MAN1=		xmms2.1 xmms2-et.1
-MAN8=		xmms2d.8
+MAN8=		xmms2d.8 xmms2-launcher.8 xmms2-mdns-avahi.8
 MANCOMPRESSED=	yes
 
 OPTIONS=	FAAD "Support to playback AAC files" on \
@@ -46,15 +42,17 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		MUSEPACK "Support to playback MPC files" off \
 		SID "Support to playback SID files" off \
 		WMA "Support to playback WMA files" off \
+		APE "Support to playback Monkey's Audio files" off \
 		CURL "Support to playback files via HTTP" on \
 		GNOMEVFS "Support to playback files via GnomeVFS" off \
 		MMS "Support to playback streams via MMS" off \
 		SAMBA "Support to playback files via SMB" off \
+		DAAP "Support to playback files via DAAP" on \
 		FAM "Support to update Media Library on file change" off \
 		MDNS_AVAHI "Support to announce XMMS2d via mDNS (Avahi)" off \
-		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on #\
+		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on \
+		JACK "Support to output via the Jack output server" off #\
 #		SDL "Support for visualization" on \
-#		JACK "Support to output via the Jack output server" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -114,6 +112,14 @@ EXCLUDE+=	wma
 PLIST_SUB+=	WMA="@comment "
 .endif
 
+.if defined(WITH_APE)
+LIB_DEPENDS+=	mac.2:${PORTSDIR}/audio/mac
+PLIST_SUB+=	MAC=""
+.else
+EXCLUDE+=	mac
+PLIST_SUB+=	MAC="@comment "
+.endif
+
 .if !defined(WITHOUT_SDL) && defined(UNDEFINED)
 IGNORE=		visualization has not been updated to the Transforms API
 USE_SDL=	sdl ttf
@@ -157,6 +163,13 @@ EXCLUDE+=	samba
 PLIST_SUB+=	SAMBA="@comment "
 .endif
 
+.if !defined(WITHOUT_DAAP)
+PLIST_SUB+=	DAAP=""
+.else
+EXCLUDE+=	daap
+PLIST_SUB+=	DAAP="@comment "
+.endif
+
 .if defined(WITH_GNOMEVFS)
 USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	GNOMEVFS=""
@@ -195,7 +208,7 @@ LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else
 EXCLUDE+=	dns_sd
-PLIST_SUB+=	MDNS_APPLE="@comment "	
+PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
 .endif
 
