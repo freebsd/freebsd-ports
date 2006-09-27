@@ -17,7 +17,7 @@ load_rc_config $name
 
 : ${mediaproxy_enable="NO"}
 
-INSTALL_DIR="/tmp/mediaproxy-1.7.2"
+INSTALL_DIR="%%PREFIX%%"
 RUNTIME_DIR="/var/run"
 
 PROXY="$INSTALL_DIR/mediaproxy/mediaproxy.py"
@@ -77,7 +77,7 @@ case "$1" in
         start
         ;;
     *)
-        echo "Usage: ${INSTALL_DIR}/etc/init.d/$NAME {start|stop|restart|force-reload}" >&2
+        echo "Usage: ${INSTALL_DIR}/etc/rc.d/$NAME {start|stop|restart|force-reload}" >&2
         exit 1
         ;;
 esac
