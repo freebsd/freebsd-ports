@@ -9560,6 +9560,7 @@ p5-Net-MAC-Vendor	ports/net/p5-Net-MAC-Vendor
 p5-Net-MSN	ports/net-im/p5-Net-MSN
 p5-Net-MovableType	ports/net/p5-Net-MovableType
 p5-Net-NBName	ports/net/p5-Net-NBName
+p5-Net-NBsocket	ports/net/p5-Net-NBsocket
 p5-Net-NIS	ports/net/p5-Net-NIS
 p5-Net-NIS-Listgroup	ports/net/p5-Net-NIS-Listgroup
 p5-Net-NetSend	ports/net-im/p5-Net-NetSend
