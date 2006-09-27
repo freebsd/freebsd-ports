@@ -39,7 +39,7 @@ SUB_FILES=	pkg-message savage savage_editor savage_server
 PLIST_SUB+=	SAVAGEDIR="${SAVAGEDIR}"
 SUB_LIST+=	SAVAGEDIR="${PREFIX}/${SAVAGEDIR}"
 
-OPTIONS=	NVIDIA	"Install support for nvidia (You need a nvidia graphic card)"	off
+OPTIONS=	NVIDIA	"Install support for nvidia"	off
 
 .include <bsd.port.pre.mk>
 
