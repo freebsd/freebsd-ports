@@ -16,6 +16,7 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_full.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_to_diamond.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/amoeba_wet.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/any_element.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/arrow_down.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/arrow_left.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/arrow_right.txt
@@ -123,10 +124,12 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/lamp.active.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/lamp.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/landmine.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/last_ce.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/light_switch.active.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/light_switch.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/magic_wall.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/mole.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/next_ce.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/nut.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/pacman.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/pearl.txt
@@ -143,6 +146,7 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/rock.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/sand.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/satellite.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/self.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/shield_deadly.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/shield_normal.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/sign_exclamation.txt
@@ -235,6 +239,7 @@ bin/rocksndiamonds
 %%DATADIR%%/graphics/gfx_classic/graphicsinfo.conf
 %%DATADIR%%/graphics/gfx_classic/mouse.pcx
 %%DATADIR%%/graphics/gfx_classic/rocks_icon.xbm
+%%DATADIR%%/graphics/gfx_classic/rocks_icon_32x32.pcx
 %%DATADIR%%/graphics/gfx_classic/rocks_iconmask.xbm
 %%DATADIR%%/levels/Classic_Games/classic_boulderdash/000.level
 %%DATADIR%%/levels/Classic_Games/classic_boulderdash/001.level
