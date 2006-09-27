@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.022
+PORTVERSION=	0.024
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve orbital data from www.space-track.org
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
