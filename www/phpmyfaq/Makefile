@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.full
