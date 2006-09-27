@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20060203
+PORTVERSION=	20060926
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		AIRMAX "Some custom rulesets" off \
-		ANTIDRUG "Already included in SA 3.0" off \
 		BACKHAIR "Catch those ugly, unsightly HTML tags" on \
 		BOGUS_VIRUS "Catch 'collateral spam' caused by viruses" on \
 		BRAZILIAN "Catches spam written in Portuguese" off \
@@ -35,6 +34,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		SARE2 "Installs more cpu intensive SARE rules" off \
 		SARE3 "Installs aggressive SARE rules" off \
 		SAREH "Installs SARE high risk rules" off \
+		SAREW "Installs SARE whitelist rules" off \
 		TRIPWIRE "Matches 3 chars that shouldn't be together" off \
 		WEEDS "Looks at alphanum, hex, lower-, uppercase chars" on \
 		WEEDS2 "More restrictive than WEEDS, dont use together" off
@@ -54,10 +54,6 @@ SPAMASS_FILES+=	20_dnsbl_ahbl.cf
 
 .if defined(WITH_AIRMAX)
 SPAMASS_FILES+=	airmax.cf
-.endif
-
-.if defined(WITH_ANTIDRUG)
-SPAMASS_FILES+=	antidrug.cf
 .endif
 
 .if !defined(WITHOUT_BACKHAIR)
@@ -92,9 +88,7 @@ SPAMASS_FILES+=	french_rules.cf
 .endif
 
 .if defined(WITH_GERMAN)
-.for i in 24_de_wiki_BODY.cf 24_de_wiki_HEADER.cf 24_de_wiki_URI.cf
-SPAMASS_FILES+=	$i
-.endfor
+SPAMASS_FILES+=	70_zmi_german.cf
 .endif
 
 .if defined(WITH_MANGLED)
@@ -116,7 +110,7 @@ SPAMASS_FILES+=	blacklist_ro.cf
 .if !defined(WITHOUT_SARE)
 .for i in 70_sare_adult.cf 70_sare_bayes_poison_nxm.cf 70_sare_header0.cf \
 	70_sare_html0.cf 70_sare_genlsubj0.cf 70_sare_oem.cf 70_sare_obfu0.cf \
-	70_sare_random.cf 70_sare_specific.cf 70_sare_spoof.cf \
+	70_sare_random.cf 70_sare_specific.cf 70_sare_spoof.cf 70_sare_stocks.cf \
 	70_sare_unsub.cf 70_sare_uri0.cf 72_sare_redirect_post3.0.0.cf \
 	72_sare_bml_post25x.cf 99_sare_fraud_post25x.cf
 SPAMASS_FILES+=	$i
@@ -130,7 +124,7 @@ SPAMASS_FILES+=	$i
 .endif
 
 .if defined(WITH_SARE2)
-.for i in 70_sare_header2.cf 70_sare_html2.cf 70_sare_genlsubj2.cf 70_sare_obfu2.cf
+.for i in 70_sare_header2.cf 70_sare_html2.cf 70_sare_genlsubj2.cf 70_sare_obfu2.cf 70_sare_uri2.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
@@ -143,6 +137,10 @@ SPAMASS_FILES+=	$i
 
 .if defined(WITH_SAREH)
 SPAMASS_FILES+=	70_sare_highrisk.cf
+.endif
+
+.if defined(WITH_SAREW)
+SPAMASS_FILES+=	70_sare_whitelist.cf
 .endif
 
 .if defined(WITH_TRIPWIRE)
