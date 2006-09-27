@@ -259,6 +259,7 @@
     SUBDIR += p5-Data-Pageset
     SUBDIR += p5-Exception-Class-DBI
     SUBDIR += p5-GDBM
+    SUBDIR += p5-Genezzo
     SUBDIR += p5-GraphViz-DBI
     SUBDIR += p5-Ima-DBI
     SUBDIR += p5-Iterator-DBI

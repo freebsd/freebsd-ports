@@ -1,0 +1,87 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo/.packlist
+%%SITE_PERL%%/Genezzo.pm
+%%SITE_PERL%%/Genezzo/Block/RDBArray.pm
+%%SITE_PERL%%/Genezzo/Block/RDBlkA.pm
+%%SITE_PERL%%/Genezzo/Block/RDBlk_NN.pm
+%%SITE_PERL%%/Genezzo/Block/RDBlock.pm
+%%SITE_PERL%%/Genezzo/Block/RowDir.pm
+%%SITE_PERL%%/Genezzo/Block/Std.pm
+%%SITE_PERL%%/Genezzo/Block/Util.pm
+%%SITE_PERL%%/Genezzo/BufCa/BCFile.pm
+%%SITE_PERL%%/Genezzo/BufCa/BufCa.pm
+%%SITE_PERL%%/Genezzo/BufCa/BufCaElt.pm
+%%SITE_PERL%%/Genezzo/BufCa/DirtyScalar.pm
+%%SITE_PERL%%/Genezzo/BufCa/PinScalar.pm
+%%SITE_PERL%%/Genezzo/Dict.pm
+%%SITE_PERL%%/Genezzo/GenDBI.pm
+%%SITE_PERL%%/Genezzo/Havok.pm
+%%SITE_PERL%%/Genezzo/Havok.yml
+%%SITE_PERL%%/Genezzo/Havok/Basic.pm
+%%SITE_PERL%%/Genezzo/Havok/DebugUtils.pm
+%%SITE_PERL%%/Genezzo/Havok/DebugUtils.yml
+%%SITE_PERL%%/Genezzo/Havok/Examples.pm
+%%SITE_PERL%%/Genezzo/Havok/OO_Examples.pm
+%%SITE_PERL%%/Genezzo/Havok/SQLScalar.pm
+%%SITE_PERL%%/Genezzo/Havok/SQLScalar.yml
+%%SITE_PERL%%/Genezzo/Havok/SysHook.pm
+%%SITE_PERL%%/Genezzo/Havok/SysHook.yml
+%%SITE_PERL%%/Genezzo/Havok/UserExtend.pm
+%%SITE_PERL%%/Genezzo/Havok/UserExtend.yml
+%%SITE_PERL%%/Genezzo/Havok/UserFunctions.pm
+%%SITE_PERL%%/Genezzo/Havok/UserFunctions.yml
+%%SITE_PERL%%/Genezzo/Index/bt2.pm
+%%SITE_PERL%%/Genezzo/Index/bt3.pm
+%%SITE_PERL%%/Genezzo/Index/btHash.pm
+%%SITE_PERL%%/Genezzo/Parse/SQL.pm
+%%SITE_PERL%%/Genezzo/Parse/SQLGrammar.pl
+%%SITE_PERL%%/Genezzo/Plan.pm
+%%SITE_PERL%%/Genezzo/Plan/MakeAlgebra.pm
+%%SITE_PERL%%/Genezzo/Plan/QueryRewrite.pm
+%%SITE_PERL%%/Genezzo/Plan/TypeCheck.pm
+%%SITE_PERL%%/Genezzo/PushHash/HPHRowBlk.pm
+%%SITE_PERL%%/Genezzo/PushHash/PHArray.pm
+%%SITE_PERL%%/Genezzo/PushHash/PHFixed.pm
+%%SITE_PERL%%/Genezzo/PushHash/PHNoUpdate.pm
+%%SITE_PERL%%/Genezzo/PushHash/PushHash.pm
+%%SITE_PERL%%/Genezzo/PushHash/hph.pm
+%%SITE_PERL%%/Genezzo/RawIO.pm
+%%SITE_PERL%%/Genezzo/Row/RSBlock.pm
+%%SITE_PERL%%/Genezzo/Row/RSDual.pm
+%%SITE_PERL%%/Genezzo/Row/RSExpr.pm
+%%SITE_PERL%%/Genezzo/Row/RSFile.pm
+%%SITE_PERL%%/Genezzo/Row/RSIdx1.pm
+%%SITE_PERL%%/Genezzo/Row/RSJoinA.pm
+%%SITE_PERL%%/Genezzo/Row/RSTab.pm
+%%SITE_PERL%%/Genezzo/SpaceMan/SMExtent.pm
+%%SITE_PERL%%/Genezzo/SpaceMan/SMFile.pm
+%%SITE_PERL%%/Genezzo/SpaceMan/SMHook.pm
+%%SITE_PERL%%/Genezzo/SpaceMan/SMHook.yml
+%%SITE_PERL%%/Genezzo/TSHash.pm
+%%SITE_PERL%%/Genezzo/Tablespace.pm
+%%SITE_PERL%%/Genezzo/TestSetup.pm
+%%SITE_PERL%%/Genezzo/Util.pm
+%%SITE_PERL%%/Genezzo/XEval.pm
+%%SITE_PERL%%/Genezzo/XEval/Prepare.pm
+%%SITE_PERL%%/Genezzo/XEval/SQLAlter.pm
+%%SITE_PERL%%/Genezzo/bigdb.sql
+%%SITE_PERL%%/Genezzo/dbi_example.pl
+%%SITE_PERL%%/Genezzo/dict.sql
+%%SITE_PERL%%/Genezzo/gendba.pl
+%%SITE_PERL%%/Genezzo/genexp.pl
+%%SITE_PERL%%/Genezzo/havok.sql
+%%SITE_PERL%%/Genezzo/syshook.sql
+bin/gendba.pl
+bin/genexp.pl
+@dirrmtry %%SITE_PERL%%/Genezzo/XEval
+@dirrmtry %%SITE_PERL%%/Genezzo/SpaceMan
+@dirrmtry %%SITE_PERL%%/Genezzo/Row
+@dirrmtry %%SITE_PERL%%/Genezzo/PushHash
+@dirrmtry %%SITE_PERL%%/Genezzo/Plan
+@dirrmtry %%SITE_PERL%%/Genezzo/Parse
+@dirrmtry %%SITE_PERL%%/Genezzo/Index
+@dirrmtry %%SITE_PERL%%/Genezzo/Havok
+@dirrmtry %%SITE_PERL%%/Genezzo/BufCa
+@dirrmtry %%SITE_PERL%%/Genezzo/Block
+@dirrmtry %%SITE_PERL%%/Genezzo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo
