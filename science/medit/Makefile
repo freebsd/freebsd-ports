@@ -34,7 +34,7 @@ MISSING_FILES=	eigenv.c libmesh3.c libmesh3.h
 DISTFILES+=	${PORTNAME}-${ARCH}-${DISTVER}-${PORTVERSION}${EXTRACT_SUFX}
 NO_BUILD=	yes
 PATCHDIR=	# No patches
-ONLY_FOR_ARCHS=	amd64 i386 ia64	# Ask the maintainer to add one
+ONLY_FOR_ARCHS=	amd64 i386 ia64 sparc64	# Ask the maintainer to add one
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -63,7 +63,7 @@ LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 BROKEN=		no binary available for your platform x version at the moment
 .  endif
 . else
-.  if ${ARCH} == ia64
+.  if (${ARCH} == ia64) || (${ARCH} == sparc64)
 DISTVER=	6.2
 .  else
 DISTVER=	6.1
