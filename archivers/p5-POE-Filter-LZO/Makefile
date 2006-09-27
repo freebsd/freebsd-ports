@@ -1,0 +1,26 @@
+# New ports collection makefile for:	p5-POE-Filter-LZO
+# Date created:		2006-09-10
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	POE-Filter-LZO
+PORTVERSION=	1.5
+CATEGORIES=	archivers perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	POE
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	clsung@FreeBSD.org
+COMMENT=	A POE filter wrapped around Compress::LZO
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/LZO.pm:${PORTSDIR}/archivers/p5-Compress-LZO \
+		p5-POE>=0.3501:${PORTSDIR}/devel/p5-POE
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		POE::Filter::LZO.3
+
+.include <bsd.port.mk>
