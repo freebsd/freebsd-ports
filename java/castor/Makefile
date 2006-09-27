@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	castor
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	java devel
 MASTER_SITES=	http://dist.codehaus.org/castor/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,7 +16,7 @@ MAINTAINER=	acidos@bandwidth-junkies.net
 COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4
+JAVA_VERSION=	1.4+
 USE_ANT=	yes
 USE_JIKES=	no
 
