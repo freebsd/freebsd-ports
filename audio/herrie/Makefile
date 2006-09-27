@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
@@ -18,6 +18,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_OPENSSL=	yes
 USE_GNOME=	glib20
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -26,7 +27,8 @@ OPTIONS=	MAD "MAD MP3 support" on \
 		VORBIS "Ogg Vorbis support" on \
 		SNDFILE "libsndfile support" off
 
-PLIST_FILES=	bin/herrie
+PLIST_FILES=	bin/herrie \
+		share/locale/nl/LC_MESSAGES/herrie.mo
 MAN1=		herrie.1
 
 .include <bsd.port.pre.mk>
