@@ -1,5 +1,5 @@
---- src/sympa_wizard.pl	Wed Sep 14 17:25:58 2005
-+++ src/sympa_wizard.pl	Wed Sep 14 17:26:45 2005
+--- src/sympa_wizard.pl.orig	Thu Aug 24 17:05:36 2006
++++ src/sympa_wizard.pl	Wed Sep 27 10:53:39 2006
 @@ -92,13 +92,13 @@
                 'advice' =>''},
  
@@ -16,7 +16,16 @@
  	       'query' => 'Where to store bounces',
  	       'file' => 'wwsympa.conf',
                 'advice' =>'Better if not in a critical partition'},
-@@ -308,14 +308,14 @@
+@@ -186,7 +186,7 @@
+ 	      {'title' => 'Tuning'},
+ 	      	      
+ 
+-	      {'name' => 'cache\_list\_config',
++	      {'name' => 'cache_list_config',
+ 	       'default' => 'none',
+ 	       'query' => 'Use of binary version of the list config structure on disk: none | binary_file',
+ 	       'file' => 'sympa.conf','edit' => '1',
+@@ -316,14 +316,14 @@
  	       'advice' =>''},
  
                {'name' => 'mhonarc',

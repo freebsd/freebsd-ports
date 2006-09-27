@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	5.2.1
-#PORTREVISION=	1
+PORTVERSION=	5.2.2
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
@@ -28,7 +27,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	sympa5
-CONFLICTS=	sympa-4*
+USE_APACHE=	1.3+
+CONFLICTS=	sympa-4* sympa-5.[0-1]* sympa-5.2.1*
 
 DB_TYPE?=mysql
 
@@ -47,11 +47,7 @@ IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
 .endif
 
 .if defined(WITH_FASTCGI)
-.if defined(WITH_APACHE2)
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.endif
+BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 .endif
 
