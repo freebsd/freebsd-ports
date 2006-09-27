@@ -42,6 +42,7 @@ MAN3+=	Acme::MetaSyntactic::gems.3
 MAN3+=	Acme::MetaSyntactic::groo.3
 MAN3+=	Acme::MetaSyntactic::haddock.3
 MAN3+=	Acme::MetaSyntactic::hhgg.3
+MAN3+=	Acme::MetaSyntactic::jabberwocky.3
 MAN3+=	Acme::MetaSyntactic::jamesbond.3
 MAN3+=	Acme::MetaSyntactic::jerkcity.3
 MAN3+=	Acme::MetaSyntactic::invasions.3
