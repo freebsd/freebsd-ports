@@ -188,7 +188,7 @@ CONFIGURE_ARGS+=--without-server
 .if ${OSVERSION} < 500000
 PLIST_SUB+=	ZLIB=""
 .else
-PLIST_SUB+=     ZLIB="@comment "
+PLIST_SUB+=	ZLIB="@comment "
 .endif
 
 post-patch:
