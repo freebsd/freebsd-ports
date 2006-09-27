@@ -33,8 +33,8 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no
 
 USE_GMAKE=		yes
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS:N-funroll-loops}" CC="${CC}" CXX="${CXX}"
-CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS:N-funroll-loops}"
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS:N-funroll-loops:N-O*} -O2" CXX="${CXX}"
+CONFIGURE_ENV+=		CXXFLAGS="${CXXFLAGS:N-funroll-loops:N-O*} -O2" CC="${CC}"
 
 MAN1+=	derb.1
 MAN1+=	genbrk.1
