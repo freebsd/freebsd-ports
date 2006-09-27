@@ -1,3 +1,4 @@
+bin/onig-config
 include/oniggnu.h
 include/onigposix.h
 include/oniguruma.h
