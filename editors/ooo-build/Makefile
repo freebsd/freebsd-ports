@@ -54,6 +54,7 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include"
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 LIB_DEPENDS+=	lpsolve55.1:${PORTSDIR}/math/lp_solve
 #LIB_DEPENDS+=	mdb:${PORTSDIR}/databases/mdbtools
+USE_GSTREAMER=	yes
 
 INSTALLATION_BASEDIR=	ooo-build-${PORTVERSION}
 EXECBASE=		ooo-build-${PORTVERSION}
