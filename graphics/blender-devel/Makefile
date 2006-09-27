@@ -38,6 +38,10 @@ CFLAGS+=	-O3 -ffast-math
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
