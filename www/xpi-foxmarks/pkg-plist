@@ -58,6 +58,10 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/foxmarks.properties
@@ -79,6 +83,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images
