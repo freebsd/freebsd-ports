@@ -11825,6 +11825,7 @@ py-gdchart	ports/graphics/py-gdchart
 py-gdchart2	ports/graphics/py-gdchart2
 py-generate	ports/devel/py-generate
 py-getargs	ports/devel/py-getargs
+py-glewpy	ports/graphics/py-glewpy
 py-gnome	ports/x11-toolkits/py-gnome
 py-gnome-desktop	ports/x11-toolkits/py-gnome-desktop
 py-gnome-extras	ports/x11-toolkits/py-gnome-extras
