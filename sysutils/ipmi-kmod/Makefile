@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ipmi-kmod
-PORTVERSION=	20060418
-PORTREVISION=	1
+PORTVERSION=	20060926
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dpw.threerings.net/projects/ipmi-kmod/
 
 MAINTAINER=	snb@threerings.net
-COMMENT=	Backport of ipmi driver from FreeBSD 7-CURRENT for FreeBSD 5.x/6.x
+COMMENT=	Backport of ipmi driver from FreeBSD 7-CURRENT for FreeBSD 5.3 - 6.1
 
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST+=	KMODDIR=${KMODDIR}
@@ -29,8 +28,7 @@ KMODDIR=	/boot/modules
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-# Don't strip module on amd64 systems to prevent segmentation faults when
-# running kldxref
+# Don't strip module on amd64 systems
 .if ${ARCH} == "amd64"
 STRIP=
 .endif
@@ -39,7 +37,7 @@ STRIP=
 IGNORE=		requires kernel source to be installed
 .endif
 
-.if ${OSVERSION} >= 700014
+.if ${OSVERSION} >= 601102
 IGNORE=		already in the base system
 .elif ${OSVERSION} < 503000
 IGNORE=		does not support FreeBSD before 5.3
