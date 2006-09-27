@@ -1,5 +1,5 @@
---- source/blender/blenlib/intern/storage.c.orig	Fri Jul  7 14:15:04 2006
-+++ source/blender/blenlib/intern/storage.c	Fri Jul  7 14:17:47 2006
+--- source/blender/blenlib/intern/storage.c.orig	Sun Mar 19 14:28:01 2006
++++ source/blender/blenlib/intern/storage.c	Mon Aug 21 23:50:20 2006
 @@ -50,7 +50,7 @@
  #include <time.h>
  #include <sys/stat.h>
@@ -9,7 +9,7 @@
  #include <sys/statfs.h>
  #endif
  
-@@ -194,7 +194,7 @@
+@@ -196,7 +196,7 @@
  #ifdef __BeOS
  	return -1;
  #endif

@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.40
-PORTREVISION=	1
+PORTVERSION=	2.42a
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		ftp://ftp.cs.umn.edu/pub/blender.org/source/ \
@@ -16,15 +15,20 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	3D modeling/rendering/animation/gaming package
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
+BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
+		 ${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		SDL.11:${PORTSDIR}/devel/sdl12 \
+		Half.2:${PORTSDIR}/graphics/OpenEXR \
+		gettextpo.1:${PORTSDIR}/devel/gettext \
+		avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.3
 USE_SDL=	sdl
 USE_GL=		yes
 
@@ -44,6 +48,6 @@ do-build:
 	@cd ${WRKSRC} && scons
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/../install/freebsd/blender ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
