@@ -15,6 +15,7 @@ share/locale/gl/LC_MESSAGES/quodlibet.mo
 share/locale/he/LC_MESSAGES/quodlibet.mo
 share/locale/hu/LC_MESSAGES/quodlibet.mo
 share/locale/it/LC_MESSAGES/quodlibet.mo
+share/locale/ja/LC_MESSAGES/quodlibet.mo
 share/locale/ko/LC_MESSAGES/quodlibet.mo
 share/locale/lt/LC_MESSAGES/quodlibet.mo
 share/locale/nb/LC_MESSAGES/quodlibet.mo
@@ -24,120 +25,115 @@ share/locale/pt/LC_MESSAGES/quodlibet.mo
 share/locale/ru/LC_MESSAGES/quodlibet.mo
 share/locale/sv/LC_MESSAGES/quodlibet.mo
 share/locale/zh_CN/LC_MESSAGES/quodlibet.mo
+share/locale/zh_TW/LC_MESSAGES/quodlibet.mo
 share/pixmaps/exfalso.png
 share/pixmaps/quodlibet.png
-share/quodlibet/browsers/__init__.py
-share/quodlibet/browsers/_base.py
-share/quodlibet/browsers/albums.py
-share/quodlibet/browsers/audiofeeds.py
-share/quodlibet/browsers/filesystem.py
-share/quodlibet/browsers/iradio.py
-share/quodlibet/browsers/paned.py
-share/quodlibet/browsers/playlists.py
-share/quodlibet/browsers/search.py
-share/quodlibet/config.py
-share/quodlibet/const.py
-share/quodlibet/exfalso.png
-share/quodlibet/exfalso.py
-share/quodlibet/exfalso.svg
-share/quodlibet/formats/__init__.py
-share/quodlibet/formats/_apev2.py
-share/quodlibet/formats/_audio.py
-share/quodlibet/formats/_vorbis.py
-share/quodlibet/formats/flac.py
-share/quodlibet/formats/mod.py
-share/quodlibet/formats/mp3.py
-share/quodlibet/formats/mp4.py
-share/quodlibet/formats/mpc.py
-share/quodlibet/formats/oggvorbis.py
-share/quodlibet/formats/remote.py
-share/quodlibet/formats/wav.py
-share/quodlibet/formats/wavpack.py
-share/quodlibet/library.py
-share/quodlibet/parse/__init__.py
-share/quodlibet/parse/_match.py
-share/quodlibet/parse/_pattern.py
-share/quodlibet/parse/_query.py
-share/quodlibet/player.py
-share/quodlibet/plugins/__init__.py
-share/quodlibet/plugins/editing.py
-share/quodlibet/plugins/events.py
-share/quodlibet/plugins/events/qlscrobbler.py
-share/quodlibet/plugins/songsmenu.py
-share/quodlibet/qltk/__init__.py
-share/quodlibet/qltk/_editpane.py
-share/quodlibet/qltk/about.py
-share/quodlibet/qltk/bookmarks.py
-share/quodlibet/qltk/browser.py
-share/quodlibet/qltk/cbes.py
-share/quodlibet/qltk/ccb.py
-share/quodlibet/qltk/chooser.py
-share/quodlibet/qltk/completion.py
-share/quodlibet/qltk/controls.py
-share/quodlibet/qltk/count.py
-share/quodlibet/qltk/cover.py
-share/quodlibet/qltk/delete.py
-share/quodlibet/qltk/downloader.py
-share/quodlibet/qltk/edittags.py
-share/quodlibet/qltk/entry.py
-share/quodlibet/qltk/exfalso.py
-share/quodlibet/qltk/filesel.py
-share/quodlibet/qltk/getstring.py
-share/quodlibet/qltk/info.py
-share/quodlibet/qltk/information.py
-share/quodlibet/qltk/lyrics.py
-share/quodlibet/qltk/mmkeys.py
-share/quodlibet/qltk/msg.py
-share/quodlibet/qltk/playorder.py
-share/quodlibet/qltk/pluginwin.py
-share/quodlibet/qltk/prefs.py
-share/quodlibet/qltk/properties.py
-share/quodlibet/qltk/queue.py
-share/quodlibet/qltk/quodlibet.py
-share/quodlibet/qltk/remote.py
-share/quodlibet/qltk/renamefiles.py
-share/quodlibet/qltk/session.py
-share/quodlibet/qltk/sliderbutton.py
-share/quodlibet/qltk/songlist.py
-share/quodlibet/qltk/songsmenu.py
-share/quodlibet/qltk/tagscombobox.py
-share/quodlibet/qltk/tagsfrompath.py
-share/quodlibet/qltk/textedit.py
-share/quodlibet/qltk/tracknumbers.py
-share/quodlibet/qltk/trayicon.py
-share/quodlibet/qltk/views.py
-share/quodlibet/qltk/watcher.py
-share/quodlibet/qltk/wlw.py
-share/quodlibet/qltk/x.py
-share/quodlibet/quodlibet.png
-share/quodlibet/quodlibet.py
-share/quodlibet/quodlibet.svg
-share/quodlibet/rhythmbox-volume-max.png
-share/quodlibet/rhythmbox-volume-medium.png
-share/quodlibet/rhythmbox-volume-min.png
-share/quodlibet/rhythmbox-volume-zero.png
-share/quodlibet/stock.py
-share/quodlibet/util/__init__.py
-share/quodlibet/util/i18n.py
-share/quodlibet/util/massagers.py
-share/quodlibet/util/uri.py
-share/quodlibet/widgets.py
+%%DATADIR%%/browsers/__init__.py
+%%DATADIR%%/browsers/_base.py
+%%DATADIR%%/browsers/albums.py
+%%DATADIR%%/browsers/audiofeeds.py
+%%DATADIR%%/browsers/filesystem.py
+%%DATADIR%%/browsers/iradio.py
+%%DATADIR%%/browsers/paned.py
+%%DATADIR%%/browsers/playlists.py
+%%DATADIR%%/browsers/search.py
+%%DATADIR%%/config.py
+%%DATADIR%%/const.py
+%%DATADIR%%/exfalso.png
+%%DATADIR%%/exfalso.py
+%%DATADIR%%/exfalso.svg
+%%DATADIR%%/formats/__init__.py
+%%DATADIR%%/formats/_apev2.py
+%%DATADIR%%/formats/_audio.py
+%%DATADIR%%/formats/_id3.py
+%%DATADIR%%/formats/mod.py
+%%DATADIR%%/formats/mp3.py
+%%DATADIR%%/formats/mp4.py
+%%DATADIR%%/formats/mpc.py
+%%DATADIR%%/formats/remote.py
+%%DATADIR%%/formats/trueaudio.py
+%%DATADIR%%/formats/wav.py
+%%DATADIR%%/formats/wavpack.py
+%%DATADIR%%/formats/xiph.py
+%%DATADIR%%/library/__init__.py
+%%DATADIR%%/library/_library.py
+%%DATADIR%%/library/songs.py
+%%DATADIR%%/parse/__init__.py
+%%DATADIR%%/parse/_match.py
+%%DATADIR%%/parse/_pattern.py
+%%DATADIR%%/parse/_query.py
+%%DATADIR%%/player.py
+%%DATADIR%%/plugins/__init__.py
+%%DATADIR%%/plugins/editing.py
+%%DATADIR%%/plugins/events.py
+%%DATADIR%%/plugins/events/qlscrobbler.py
+%%DATADIR%%/plugins/songsmenu.py
+%%DATADIR%%/qltk/__init__.py
+%%DATADIR%%/qltk/_editpane.py
+%%DATADIR%%/qltk/about.py
+%%DATADIR%%/qltk/bookmarks.py
+%%DATADIR%%/qltk/browser.py
+%%DATADIR%%/qltk/cbes.py
+%%DATADIR%%/qltk/ccb.py
+%%DATADIR%%/qltk/chooser.py
+%%DATADIR%%/qltk/completion.py
+%%DATADIR%%/qltk/controls.py
+%%DATADIR%%/qltk/cover.py
+%%DATADIR%%/qltk/dbus_.py
+%%DATADIR%%/qltk/delete.py
+%%DATADIR%%/qltk/downloader.py
+%%DATADIR%%/qltk/edittags.py
+%%DATADIR%%/qltk/entry.py
+%%DATADIR%%/qltk/exfalso.py
+%%DATADIR%%/qltk/filesel.py
+%%DATADIR%%/qltk/getstring.py
+%%DATADIR%%/qltk/info.py
+%%DATADIR%%/qltk/information.py
+%%DATADIR%%/qltk/lyrics.py
+%%DATADIR%%/qltk/mmkeys.py
+%%DATADIR%%/qltk/msg.py
+%%DATADIR%%/qltk/playorder.py
+%%DATADIR%%/qltk/pluginwin.py
+%%DATADIR%%/qltk/prefs.py
+%%DATADIR%%/qltk/properties.py
+%%DATADIR%%/qltk/queue.py
+%%DATADIR%%/qltk/quodlibet.py
+%%DATADIR%%/qltk/remote.py
+%%DATADIR%%/qltk/renamefiles.py
+%%DATADIR%%/qltk/session.py
+%%DATADIR%%/qltk/sliderbutton.py
+%%DATADIR%%/qltk/songlist.py
+%%DATADIR%%/qltk/songsmenu.py
+%%DATADIR%%/qltk/tagscombobox.py
+%%DATADIR%%/qltk/tagsfrompath.py
+%%DATADIR%%/qltk/textedit.py
+%%DATADIR%%/qltk/tracker.py
+%%DATADIR%%/qltk/tracknumbers.py
+%%DATADIR%%/qltk/views.py
+%%DATADIR%%/qltk/wlw.py
+%%DATADIR%%/qltk/x.py
+%%DATADIR%%/quodlibet.png
+%%DATADIR%%/quodlibet.py
+%%DATADIR%%/quodlibet.svg
+%%DATADIR%%/rhythmbox-volume-max.png
+%%DATADIR%%/rhythmbox-volume-medium.png
+%%DATADIR%%/rhythmbox-volume-min.png
+%%DATADIR%%/rhythmbox-volume-zero.png
+%%DATADIR%%/stock.py
+%%DATADIR%%/util/__init__.py
+%%DATADIR%%/util/copool.py
+%%DATADIR%%/util/i18n.py
+%%DATADIR%%/util/massagers.py
+%%DATADIR%%/util/uri.py
+%%DATADIR%%/widgets.py
 @dirrmtry share/applications
-@exec mkdir -p %D/share/quodlibet/plugins/events
-@dirrm share/quodlibet/plugins/events
-@exec mkdir -p %D/share/quodlibet/plugins
-@dirrm share/quodlibet/plugins
-@exec mkdir -p %D/lib/quodlibet
 @dirrm lib/quodlibet
-@exec mkdir -p %D/share/quodlibet/browsers
-@dirrm share/quodlibet/browsers
-@exec mkdir -p %D/share/quodlibet/formats
-@dirrm share/quodlibet/formats
-@exec mkdir -p %D/share/quodlibet/parse
-@dirrm share/quodlibet/parse
-@exec mkdir -p %D/share/quodlibet/qltk
-@dirrm share/quodlibet/qltk
-@exec mkdir -p %D/share/quodlibet/util
-@dirrm share/quodlibet/util
-@exec mkdir -p %D/share/quodlibet
-@dirrm share/quodlibet
+@dirrm %%DATADIR%%/util
+@dirrm %%DATADIR%%/qltk
+@dirrm %%DATADIR%%/plugins/events
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/parse
+@dirrm %%DATADIR%%/library
+@dirrm %%DATADIR%%/formats
+@dirrm %%DATADIR%%/browsers
+@dirrm %%DATADIR%%

@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	quodlibet
-PORTVERSION=	0.21.1
+PORTVERSION=	0.23.1
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
 
-BROKEN=		fails to install/deinstall cleanly
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
 
-INITIAL_DEP=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
-		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
-BUILD_DEPENDS=	${INITIAL_DEP}
-RUN_DEPENDS=	${INITIAL_DEP}
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	2.4+
 USE_GNOME=	pygtk2
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GSTREAMER=	yes
@@ -31,58 +29,69 @@ USE_GSTREAMER+=	gconf
 
 MAN1=		exfalso.1 quodlibet.1
 
-QUODLIBET_FORMATS?=	ogg vorbis mp3 flac musepack wavpack aac remote
-.for format in ${QUODLIBET_FORMATS}
-WANT_QUODLIBET_${format:U}=	yes
-.endfor
+OPTIONS=	FLAC "Flac audio support" on
+OPTIONS+=	MP3 "MP3 audio support" on
+OPTIONS+=	AAC "AAC support with MPEG4IP" on
+OPTIONS+=	MUSEPACK "Musepack (MPC, musicpd, libmpcdec) support" on
+OPTIONS+=	OGG "OGG multimedia container support" on
+OPTIONS+=	SPEEX "OGG/Speex audio support" on
+OPTIONS+=	VORBIS "OGG/Vorbis audio support" on
+OPTIONS+=	WAVPACK "Wavpack support" on
+OPTIONS+=	REMOTE "Enable remote playback" on
+OPTIONS+=	EXTENSIONS "Enable extensions" off
 
-.if defined(WANT_QUODLIBET_OGG)
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_OGG)
 USE_GSTREAMER+=	ogg
 .endif
 
-.if defined(WANT_QUODLIBET_VORBIS)
+.if !defined(WITHOUT_VORBIS)
 USE_GSTREAMER+=	vorbis
 .endif
 
-.if defined(WANT_QUODLIBET_MP3)
+.if !defined(WITHOUT_SPEEX)
+USE_GSTREAMER+=	speex
+.endif
+
+.if !defined(WITHOUT_MP3)
 USE_GSTREAMER+=	mad
 .endif
 
-.if defined(WANT_QUODLIBET_FLAC)
+.if !defined(WITHOUT_FLAC)
 USE_GSTREAMER+=	flac
 .endif
 
-.if defined(WANT_QUODLIBET_MUSEPACK) || defined(WANT_QUODLIBET_WAVPACK) \
-    || defined(WANT_QUODLIBET_AAC)
-CTYPES_DEP=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-BUILD_DEPENDS+=	${CTYPES_DEP}
-RUN_DEPENDS+=	${CTYPES_DEP}
+.if !defined(WITHOUT_MUSEPACK) || !defined(WITHOUT_WAVPACK) \
+		|| !defined(WITHOUT_AAC)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
 .endif
 
-.if defined(WANT_QUODLIBET_MUSEPACK)
+.if !defined(WITHOUT_MUSEPACK)
+LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
 USE_GSTREAMER+=	musepack
 .endif
 
-.if defined(WANT_QUODLIBET_WAVPACK)
+.if !defined(WITHOUT_WAVPACK)
+LIB_DEPENDS+=	wavpack.0:${PORTSDIR}/audio/wavpack
 USE_GSTREAMER+=	wavpack
 .endif
 
-.if defined(WANT_QUODLIBET_AAC)
+.if !defined(WITHOUT_MPEG4IP)
 LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 USE_GSTREAMER+=	faad
 .endif
 
-.if defined(WANT_QUODLIBET_REMOTE)
-FEEDPARSER_DEP=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
-BUILD_DEPENDS+=	${FEEDPARSER_DEP}
-RUN_DEPENDS+=	${FEEDPARSER_DEP}
+.if !defined(WITHOUT_REMOTE)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
 USE_GSTREAMER+=	gnomevfs
 .endif
 
 .if defined(WITH_EXTENSIONS)
-EXTRAS_DEP=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
-BUILD_DEPENDS+=	${EXTRAS_DEP}
-RUN_DEPENDS+=	${EXTRAS_DEP}
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/egg/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome-extras
 PLIST_SUB+=	EXTENSIONS=""
 .else
 PLIST_SUB+=	EXTENSIONS="@comment "
@@ -93,14 +102,8 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} < 500000
 IGNORE=	is unsupported on FreeBSD 4.x
-.endif
-
-.if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
-BROKEN= Does not configure
 .endif
 
 do-configure:
