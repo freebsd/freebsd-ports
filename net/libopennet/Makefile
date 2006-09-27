@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	libopennet
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.6
 CATEGORIES=	net
-MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/
+MASTER_SITES=	http://www.rkeene.org/files/oss/libopennet/ \
+		http://www.cs.nctu.edu.tw/~gslin/files/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A library for opening files over a network
 
 GNU_CONFIGURE=	yes
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		fopen_net.3 \
 		fseek_net.3 \

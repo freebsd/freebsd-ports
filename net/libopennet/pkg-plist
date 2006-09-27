@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 include/opennet.h
 lib/libopennet.a
 lib/libopennet.so
 lib/libopennet.so.0
-lib/libopennet.so.0.9.3
+lib/libopennet.so.%%PORTVERSION%%
