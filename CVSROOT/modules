@@ -9721,6 +9721,7 @@ p5-POE-Devel-Profiler	ports/devel/p5-POE-Devel-Profiler
 p5-POE-Exceptions	ports/devel/p5-POE-Exceptions
 p5-POE-Filter-Bzip2	ports/archivers/p5-POE-Filter-Bzip2
 p5-POE-Filter-IRCD	ports/irc/p5-POE-Filter-IRCD
+p5-POE-Filter-LZF	ports/archivers/p5-POE-Filter-LZF
 p5-POE-Filter-LZW	ports/archivers/p5-POE-Filter-LZW
 p5-POE-Filter-XML	ports/textproc/p5-POE-Filter-XML
 p5-POE-Filter-Zlib	ports/archivers/p5-POE-Filter-Zlib
