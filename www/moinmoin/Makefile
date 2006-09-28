@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5a
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moin
@@ -54,9 +54,9 @@ pre-everything::
 	@${MKDIR} ${WRKDIR}
 
 post-install:
-	@${FIND} ${PREFIX}/share/moin/underlay \! -type d | ${SED} -e 's,${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/share/moin/underlay -type d | ${SED} -e 's,${PREFIX}/,@dirrm ,' | ${SORT} -r >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm share/moin" >> ${TMPPLIST}
+#	@${FIND} ${PREFIX}/share/moin/underlay \! -type d | ${SED} -e 's,${PREFIX}/,,' >> ${TMPPLIST}
+#	@${FIND} ${PREFIX}/share/moin/underlay -type d | ${SED} -e 's,${PREFIX}/,@dirrm ,' | ${SORT} -r >> ${TMPPLIST}
+#	@${ECHO_CMD} "@dirrm share/moin" >> ${TMPPLIST}
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 instance: pre-everything apply-slist
