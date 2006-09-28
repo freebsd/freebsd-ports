@@ -2,22 +2,14 @@ GNU binutils for Atmel AVR cross-development
 
 Prerequisite for the GCC for AVR cross-compilation environment.
 
-Also included now is the "AVR COFF beta" patch.  It allows avr-objcopy to
+Still included is the "AVR COFF beta" patch.  It allows avr-objcopy to
 generate AVR (extended) COFF files to be used on Atmel AVR Studio and
 VMLAB.  Note that this patch has known issues, see
 http://www.sax.de/~joerg/README.coff-avr-patch
 
-In addition to the stock binutils-2.16.1 distribution, support for the
+In addition to the stock binutils-2.17 distribution, support for the
 following AVR devices has been added by a private patch:
 
-  ATtiny24/44/84
-  ATtiny25/45/85
-  ATtiny261/461/861
-  AT90PWM2/3
-  ATmega164P/324P/644
+  ATmega164P/324P/644P
   ATmega165P/169P
-  ATmega329/3290/649/6490
-  ATmega406
-  ATmega640/1280/1281
-  AT90CAN32/64
-  AT90USB646/647/1286/1287
+  ATmega2560/2561
