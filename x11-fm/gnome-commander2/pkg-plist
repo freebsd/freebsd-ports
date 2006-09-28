@@ -4,6 +4,10 @@ lib/gnome-commander/libgcmd.a
 lib/gnome-commander/libgcmd.la
 lib/gnome-commander/libgcmd.so
 lib/gnome-commander/libgcmd.so.0
+lib/gnome-commander/libgviewer.a
+lib/gnome-commander/libgviewer.la
+lib/gnome-commander/libgviewer.so
+lib/gnome-commander/libgviewer.so.0
 lib/gnome-commander/plugins/libcvs.a
 lib/gnome-commander/plugins/libcvs.la
 lib/gnome-commander/plugins/libcvs.so
@@ -17,10 +21,29 @@ lib/gnome-commander/plugins/libtest.la
 lib/gnome-commander/plugins/libtest.so
 lib/gnome-commander/plugins/libtest.so.0
 share/gnome/applications/gnome-commander.desktop
+share/gnome/help/gnome-commander/C/figures/create_archive.png
+share/gnome/help/gnome-commander/C/figures/dev_cd.png
+share/gnome/help/gnome-commander/C/figures/extract_archive.png
+share/gnome/help/gnome-commander/C/figures/mounting.png
+share/gnome/help/gnome-commander/C/gnome-commander.xml
+share/gnome/help/gnome-commander/C/legal.xml
+share/gnome/omf/gnome-commander/gnome-commander-C.omf
+share/gnome/pixmaps/gnome-commander/copy_file_names.xpm
+share/gnome/pixmaps/gnome-commander/desktop.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/bluetooth.xpm
 share/gnome/pixmaps/gnome-commander/device-icons/burner.xpm
 share/gnome/pixmaps/gnome-commander/device-icons/camera.xpm
 share/gnome/pixmaps/gnome-commander/device-icons/cdrom.xpm
 share/gnome/pixmaps/gnome-commander/device-icons/floppy.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/harddisk.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/ipod.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/pci.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/removable-1394.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/removable-usb.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/removable.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/usb.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/wavelan-encrypted.xpm
+share/gnome/pixmaps/gnome-commander/device-icons/wavelan.xpm
 share/gnome/pixmaps/gnome-commander/device-icons/zip.xpm
 share/gnome/pixmaps/gnome-commander/exec.xpm
 share/gnome/pixmaps/gnome-commander/exec_wheel.xpm
@@ -31,13 +54,12 @@ share/gnome/pixmaps/gnome-commander/file-type-icons/file_type_fifo.xpm
 share/gnome/pixmaps/gnome-commander/file-type-icons/file_type_regular.xpm
 share/gnome/pixmaps/gnome-commander/file-type-icons/file_type_socket.xpm
 share/gnome/pixmaps/gnome-commander/file-type-icons/file_type_symlink.xpm
+share/gnome/pixmaps/gnome-commander/flip-horizontal-16.xpm
+share/gnome/pixmaps/gnome-commander/flip-vertical-16.xpm
 share/gnome/pixmaps/gnome-commander/ftp.xpm
 share/gnome/pixmaps/gnome-commander/ftp_connect.xpm
 share/gnome/pixmaps/gnome-commander/ftp_disconnect.xpm
-share/gnome/pixmaps/gnome-commander/gcmd-icon1.png
-share/gnome/pixmaps/gnome-commander/gcmd-icon1.xpm
-share/gnome/pixmaps/gnome-commander/gcmd-icon2.png
-share/gnome/pixmaps/gnome-commander/gcmd-icon3.xpm
+share/gnome/pixmaps/gnome-commander/gnome-commander.xpm
 share/gnome/pixmaps/gnome-commander/gnome_cmd_arrow_blank.xpm
 share/gnome/pixmaps/gnome-commander/gnome_cmd_arrow_down.xpm
 share/gnome/pixmaps/gnome-commander/gnome_cmd_arrow_up.xpm
@@ -95,27 +117,54 @@ share/gnome/pixmaps/gnome-commander/overlay_symlink.xpm
 share/gnome/pixmaps/gnome-commander/overlay_umount.xpm
 share/gnome/pixmaps/gnome-commander/parent_dir.xpm
 share/gnome/pixmaps/gnome-commander/root_dir.xpm
+share/gnome/pixmaps/gnome-commander/rotate-180-16.xpm
+share/gnome/pixmaps/gnome-commander/rotate-270-16.xpm
+share/gnome/pixmaps/gnome-commander/rotate-90-16.xpm
 share/gnome/pixmaps/gnome-commander/server.xpm
 share/gnome/pixmaps/gnome-commander/smb-computer.xpm
 share/gnome/pixmaps/gnome-commander/smb-network.xpm
 share/gnome/pixmaps/gnome-commander/toggle_horizontal.xpm
 share/gnome/pixmaps/gnome-commander/toggle_vertical.xpm
+share/gnome/pixmaps/gnome-commander.png
 share/locale/ca/LC_MESSAGES/gnome-commander.mo
 share/locale/cs/LC_MESSAGES/gnome-commander.mo
 share/locale/de/LC_MESSAGES/gnome-commander.mo
+share/locale/el/LC_MESSAGES/gnome-commander.mo
+share/locale/en_CA/LC_MESSAGES/gnome-commander.mo
+share/locale/en_GB/LC_MESSAGES/gnome-commander.mo
 share/locale/es/LC_MESSAGES/gnome-commander.mo
+share/locale/eu/LC_MESSAGES/gnome-commander.mo
 share/locale/fr/LC_MESSAGES/gnome-commander.mo
+share/locale/ga/LC_MESSAGES/gnome-commander.mo
+share/locale/hr/LC_MESSAGES/gnome-commander.mo
+share/locale/hu/LC_MESSAGES/gnome-commander.mo
+share/locale/nb/LC_MESSAGES/gnome-commander.mo
+share/locale/ne/LC_MESSAGES/gnome-commander.mo
 share/locale/nl/LC_MESSAGES/gnome-commander.mo
+share/locale/pa/LC_MESSAGES/gnome-commander.mo
 share/locale/pl/LC_MESSAGES/gnome-commander.mo
 share/locale/pt/LC_MESSAGES/gnome-commander.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-commander.mo
+share/locale/ro/LC_MESSAGES/gnome-commander.mo
 share/locale/ru/LC_MESSAGES/gnome-commander.mo
+share/locale/rw/LC_MESSAGES/gnome-commander.mo
 share/locale/sk/LC_MESSAGES/gnome-commander.mo
+share/locale/sl/LC_MESSAGES/gnome-commander.mo
+share/locale/sq/LC_MESSAGES/gnome-commander.mo
 share/locale/sr/LC_MESSAGES/gnome-commander.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-commander.mo
 share/locale/sv/LC_MESSAGES/gnome-commander.mo
+share/locale/uk/LC_MESSAGES/gnome-commander.mo
+share/locale/vi/LC_MESSAGES/gnome-commander.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-commander.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-commander.mo
 @dirrm share/gnome/pixmaps/gnome-commander/mime-icons
 @dirrm share/gnome/pixmaps/gnome-commander/file-type-icons
 @dirrm share/gnome/pixmaps/gnome-commander/device-icons
 @dirrm share/gnome/pixmaps/gnome-commander
+@dirrm share/gnome/omf/gnome-commander
+@dirrm share/gnome/help/gnome-commander/C/figures
+@dirrm share/gnome/help/gnome-commander/C
+@dirrm share/gnome/help/gnome-commander
 @dirrm lib/gnome-commander/plugins
 @dirrm lib/gnome-commander
