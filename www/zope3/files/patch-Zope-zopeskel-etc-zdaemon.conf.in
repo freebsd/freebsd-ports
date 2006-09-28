@@ -1,41 +1,13 @@
---- Zope/zopeskel/etc/zdaemon.conf.in.orig	Thu Aug  5 23:10:05 2004
-+++ Zope/zopeskel/etc/zdaemon.conf.in	Fri Sep 23 14:16:33 2005
-@@ -6,12 +6,26 @@
+--- Zope/zopeskel/etc/zdaemon.conf.in.orig	Wed Jan 11 19:42:09 2006
++++ Zope/zopeskel/etc/zdaemon.conf.in	Wed Sep  6 16:21:42 2006
+@@ -30,9 +30,7 @@
    #
-   program $INSTANCE/bin/runzope
- 
-+  # The pathname of the Unix domain socket used for communication
-+  # between zdctl.py and zdrun.py.  The default is relative to the
-+  # current directory in which zdctl.py and zdrun.py are started. You
-+  # want to specify an absolute pathname here.
-+  socket-name $INSTANCE/var/zdsock
-+
-   # The "daemon" setting controls whether "zopectl" runs Zope as a
-   # daemon process.  This is normally set to "on" here, but this can
-   # be disabled if necessary.
+   # Default: unset
    #
-   daemon on
- 
-+  # When zdrun.py is started by root, this option specifies the user
-+  # as who the the zdrun.py process (and hence the daemon subprocess)
-+  # will run.  This can be a user name or a numeric user id.  Both the
-+  # user and the group are set from the corresponding password entry,
-+  # using setuid() and setgid(). This is done before zdrun.py does
-+  # anything else besides parsing its command line arguments.
+-  # Example:
+-  #
+-  #  user zope1
 +  user www
-+
-   # If set, this option specifies a file to which all output of theh
-   # program being run is written when run in daemon mode.  If not set,
-   # output from the program is discarded.  This has no effect outside
-@@ -27,10 +41,6 @@
-   # filesystem path or the tokens STDOUT or STDERR.
+   
+ </runner>
  
-   <logfile>
--    path $LOGDIR/z3.log
--  </logfile>
--
--  <logfile>
--    path STDOUT
-+    path $LOGDIR/zdaemon.log
-   </logfile>
- </eventlog>
