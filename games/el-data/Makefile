@@ -7,6 +7,7 @@
 
 PORTNAME=	data
 PORTVERSION=	132
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.other-life.com/el/:data \
 		http://www.eternalmusik.org/music/:sound \
