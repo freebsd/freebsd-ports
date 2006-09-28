@@ -1,0 +1,15 @@
+Paje is a graphical tool that displays traces produced during the
+execution of multithreaded programs. Other programs can also generate
+traces for this tool.
+
+Key Features
+ * Supports multi threaded programs
+   - each thread of the analysed program can be individually displayed,
+     or multiple threads can be combined, to reduce screen space usage.
+ * Interactivity
+   - each entity represented on the screen can be interrogated for
+     more information,
+   - related entities are highlighted as mouse cursor passes over
+     some representation
+
+WWW: http://www-id.imag.fr/Logiciels/paje/

@@ -77,6 +77,7 @@
     SUBDIR += ovt
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-Elements
+    SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcp
     SUBDIR += psi3
