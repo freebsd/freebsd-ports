@@ -1,0 +1,12 @@
+The VT102 class provides emulation of most of the functions of a DEC
+VT102 terminal. Once initialised, data passed to a VT102 object is
+processed and the in-memory "screen" modified accordingly. This
+"screen" can be interrogated by the external program in a variety of
+ways.
+
+This allows your program to interface with full-screen console
+programs by running them in a subprocess and passing their output to a
+VT102 class. You can then see what the application has written on the
+screen by querying the class appropriately.
+
+WWW:	http://search.cpan.org/dist/Term-VT102/
