@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.0.5
+PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://www.tcbug.org/ \
-		ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/
-
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
+		http://www.tcbug.org/
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
