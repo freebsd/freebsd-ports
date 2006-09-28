@@ -29,12 +29,12 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_error.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_formatter.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_i18n.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_newlocking.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_newlocking.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_newlocking.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_packages.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_packages.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/_tests/test_packages.pyo
@@ -299,6 +299,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hu.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hu.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/hu.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/id.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/id.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/id.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/it.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/it.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/it.pyo
@@ -605,6 +608,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050400.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050500.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -1940,6 +1946,680 @@ share/moin/server/mointwisted
 share/moin/server/mointwisted.cmd
 share/moin/server/mointwisted.py
 share/moin/server/moinwsgi.py
+share/moin/underlay/meta
+share/moin/underlay/pages/AbandonedPages/current
+share/moin/underlay/pages/AbandonedPages/revisions/00000001
+share/moin/underlay/pages/AutoAdminGroup/current
+share/moin/underlay/pages/AutoAdminGroup/revisions/00000001
+share/moin/underlay/pages/BadContent/current
+share/moin/underlay/pages/BadContent/revisions/00000001
+share/moin/underlay/pages/CategoryCategory/current
+share/moin/underlay/pages/CategoryCategory/revisions/00000001
+share/moin/underlay/pages/CategoryHomepage/current
+share/moin/underlay/pages/CategoryHomepage/revisions/00000001
+share/moin/underlay/pages/CategoryTemplate/current
+share/moin/underlay/pages/CategoryTemplate/revisions/00000001
+share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure/current
+share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure/revisions/00000001
+share/moin/underlay/pages/DesktopEdition/current
+share/moin/underlay/pages/DesktopEdition/revisions/00000001
+share/moin/underlay/pages/EditedSystemPages/current
+share/moin/underlay/pages/EditedSystemPages/revisions/00000001
+share/moin/underlay/pages/EventStats(2f)HitCounts/current
+share/moin/underlay/pages/EventStats(2f)HitCounts/revisions/00000001
+share/moin/underlay/pages/EventStats(2f)UserAgents/current
+share/moin/underlay/pages/EventStats(2f)UserAgents/revisions/00000001
+share/moin/underlay/pages/EventStats/current
+share/moin/underlay/pages/EventStats/revisions/00000001
+share/moin/underlay/pages/FindPage/current
+share/moin/underlay/pages/FindPage/revisions/00000001
+share/moin/underlay/pages/FortuneCookies/current
+share/moin/underlay/pages/FortuneCookies/revisions/00000001
+share/moin/underlay/pages/FrontPage/current
+share/moin/underlay/pages/FrontPage/revisions/00000001
+share/moin/underlay/pages/HelpContents/current
+share/moin/underlay/pages/HelpContents/revisions/00000001
+share/moin/underlay/pages/HelpForBeginners/current
+share/moin/underlay/pages/HelpForBeginners/revisions/00000001
+share/moin/underlay/pages/HelpForDevelopers/current
+share/moin/underlay/pages/HelpForDevelopers/revisions/00000001
+share/moin/underlay/pages/HelpIndex/current
+share/moin/underlay/pages/HelpIndex/revisions/00000001
+share/moin/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures/current
+share/moin/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures/revisions/00000001
+share/moin/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions/current
+share/moin/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions/revisions/00000001
+share/moin/underlay/pages/HelpMiscellaneous/current
+share/moin/underlay/pages/HelpMiscellaneous/revisions/00000001
+share/moin/underlay/pages/HelpOnAccessControlLists/current
+share/moin/underlay/pages/HelpOnAccessControlLists/revisions/00000001
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip1.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip2.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip3a.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip3b.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip5.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip6.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip6b.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip7.png
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/current
+share/moin/underlay/pages/HelpOnActions(2f)AttachFile/revisions/00000001
+share/moin/underlay/pages/HelpOnActions/current
+share/moin/underlay/pages/HelpOnActions/revisions/00000001
+share/moin/underlay/pages/HelpOnAdministration/current
+share/moin/underlay/pages/HelpOnAdministration/revisions/00000001
+share/moin/underlay/pages/HelpOnAuthentication/current
+share/moin/underlay/pages/HelpOnAuthentication/revisions/00000001
+share/moin/underlay/pages/HelpOnAutoAdmin/current
+share/moin/underlay/pages/HelpOnAutoAdmin/revisions/00000001
+share/moin/underlay/pages/HelpOnCategories/current
+share/moin/underlay/pages/HelpOnCategories/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)CascadingStyleSheets/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)CascadingStyleSheets/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)EmailSupport/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)EmailSupport/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)FileAttachments/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)FileAttachments/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)SurgeProtection/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)SurgeProtection/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration(2f)UserPreferences/current
+share/moin/underlay/pages/HelpOnConfiguration(2f)UserPreferences/revisions/00000001
+share/moin/underlay/pages/HelpOnConfiguration/current
+share/moin/underlay/pages/HelpOnConfiguration/revisions/00000001
+share/moin/underlay/pages/HelpOnEditLocks/current
+share/moin/underlay/pages/HelpOnEditLocks/revisions/00000001
+share/moin/underlay/pages/HelpOnEditing(2f)SubPages/current
+share/moin/underlay/pages/HelpOnEditing(2f)SubPages/revisions/00000001
+share/moin/underlay/pages/HelpOnEditing/current
+share/moin/underlay/pages/HelpOnEditing/revisions/00000001
+share/moin/underlay/pages/HelpOnFormatting/current
+share/moin/underlay/pages/HelpOnFormatting/revisions/00000001
+share/moin/underlay/pages/HelpOnGraphicalEditor/current
+share/moin/underlay/pages/HelpOnGraphicalEditor/revisions/00000001
+share/moin/underlay/pages/HelpOnHeadlines/current
+share/moin/underlay/pages/HelpOnHeadlines/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)AolServer/current
+share/moin/underlay/pages/HelpOnInstalling(2f)AolServer/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/current
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/attachments/explore.py
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/current
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/current
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32/current
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/current
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)BasicInstallation/attachments/pythontest.cgi
+share/moin/underlay/pages/HelpOnInstalling(2f)BasicInstallation/current
+share/moin/underlay/pages/HelpOnInstalling(2f)BasicInstallation/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)FastCgi/current
+share/moin/underlay/pages/HelpOnInstalling(2f)FastCgi/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)InternetInformationServer/current
+share/moin/underlay/pages/HelpOnInstalling(2f)InternetInformationServer/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)MinimalWiki/current
+share/moin/underlay/pages/HelpOnInstalling(2f)MinimalWiki/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)StandaloneServer/current
+share/moin/underlay/pages/HelpOnInstalling(2f)StandaloneServer/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/attachments/is_python_here.sh
+share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/current
+share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/current
+share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)WebLogic/current
+share/moin/underlay/pages/HelpOnInstalling(2f)WebLogic/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/attachments/createinstance.sh
+share/moin/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/current
+share/moin/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling/current
+share/moin/underlay/pages/HelpOnInstalling/revisions/00000001
+share/moin/underlay/pages/HelpOnLanguages/current
+share/moin/underlay/pages/HelpOnLanguages/revisions/00000001
+share/moin/underlay/pages/HelpOnLinking/current
+share/moin/underlay/pages/HelpOnLinking/revisions/00000001
+share/moin/underlay/pages/HelpOnLists/current
+share/moin/underlay/pages/HelpOnLists/revisions/00000001
+share/moin/underlay/pages/HelpOnMacros(2f)ImageLink/current
+share/moin/underlay/pages/HelpOnMacros(2f)ImageLink/revisions/00000001
+share/moin/underlay/pages/HelpOnMacros(2f)Include/current
+share/moin/underlay/pages/HelpOnMacros(2f)Include/revisions/00000001
+share/moin/underlay/pages/HelpOnMacros(2f)MailTo/current
+share/moin/underlay/pages/HelpOnMacros(2f)MailTo/revisions/00000001
+share/moin/underlay/pages/HelpOnMacros(2f)MonthCalendar/current
+share/moin/underlay/pages/HelpOnMacros(2f)MonthCalendar/revisions/00000001
+share/moin/underlay/pages/HelpOnMacros/current
+share/moin/underlay/pages/HelpOnMacros/revisions/00000001
+share/moin/underlay/pages/HelpOnNavigation/current
+share/moin/underlay/pages/HelpOnNavigation/revisions/00000001
+share/moin/underlay/pages/HelpOnPackageInstaller/current
+share/moin/underlay/pages/HelpOnPackageInstaller/revisions/00000001
+share/moin/underlay/pages/HelpOnPageCreation/current
+share/moin/underlay/pages/HelpOnPageCreation/revisions/00000001
+share/moin/underlay/pages/HelpOnPageDeletion/current
+share/moin/underlay/pages/HelpOnPageDeletion/revisions/00000001
+share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer/current
+share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer/revisions/00000001
+share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText/current
+share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText/revisions/00000001
+share/moin/underlay/pages/HelpOnParsers/current
+share/moin/underlay/pages/HelpOnParsers/revisions/00000001
+share/moin/underlay/pages/HelpOnProcessingInstructions/current
+share/moin/underlay/pages/HelpOnProcessingInstructions/revisions/00000001
+share/moin/underlay/pages/HelpOnProcessors/current
+share/moin/underlay/pages/HelpOnProcessors/revisions/00000001
+share/moin/underlay/pages/HelpOnRules/current
+share/moin/underlay/pages/HelpOnRules/revisions/00000001
+share/moin/underlay/pages/HelpOnSearching/current
+share/moin/underlay/pages/HelpOnSearching/revisions/00000001
+share/moin/underlay/pages/HelpOnSkins/current
+share/moin/underlay/pages/HelpOnSkins/revisions/00000001
+share/moin/underlay/pages/HelpOnSlideShows(2f)000_Introduction/current
+share/moin/underlay/pages/HelpOnSlideShows(2f)000_Introduction/revisions/00000001
+share/moin/underlay/pages/HelpOnSlideShows(2f)100_Creating_the_slides/current
+share/moin/underlay/pages/HelpOnSlideShows(2f)100_Creating_the_slides/revisions/00000001
+share/moin/underlay/pages/HelpOnSlideShows(2f)900_Last_but_not_least(3a)_Running_your_presentation(2e)/current
+share/moin/underlay/pages/HelpOnSlideShows(2f)900_Last_but_not_least(3a)_Running_your_presentation(2e)/revisions/00000001
+share/moin/underlay/pages/HelpOnSlideShows/current
+share/moin/underlay/pages/HelpOnSlideShows/revisions/00000001
+share/moin/underlay/pages/HelpOnSmileys/current
+share/moin/underlay/pages/HelpOnSmileys/revisions/00000001
+share/moin/underlay/pages/HelpOnSpellCheck/current
+share/moin/underlay/pages/HelpOnSpellCheck/revisions/00000001
+share/moin/underlay/pages/HelpOnSuperUser/current
+share/moin/underlay/pages/HelpOnSuperUser/revisions/00000001
+share/moin/underlay/pages/HelpOnTables/attachments/MiniPage.png
+share/moin/underlay/pages/HelpOnTables/current
+share/moin/underlay/pages/HelpOnTables/revisions/00000001
+share/moin/underlay/pages/HelpOnTemplates/current
+share/moin/underlay/pages/HelpOnTemplates/revisions/00000001
+share/moin/underlay/pages/HelpOnThemes/current
+share/moin/underlay/pages/HelpOnThemes/revisions/00000001
+share/moin/underlay/pages/HelpOnUpdating/current
+share/moin/underlay/pages/HelpOnUpdating/revisions/00000001
+share/moin/underlay/pages/HelpOnUpdatingPython/current
+share/moin/underlay/pages/HelpOnUpdatingPython/revisions/00000001
+share/moin/underlay/pages/HelpOnUserHandling/current
+share/moin/underlay/pages/HelpOnUserHandling/revisions/00000001
+share/moin/underlay/pages/HelpOnUserPreferences/current
+share/moin/underlay/pages/HelpOnUserPreferences/revisions/00000001
+share/moin/underlay/pages/HelpOnVariables/current
+share/moin/underlay/pages/HelpOnVariables/revisions/00000001
+share/moin/underlay/pages/HelpOnXmlPages/current
+share/moin/underlay/pages/HelpOnXmlPages/revisions/00000001
+share/moin/underlay/pages/HelpTemplate/current
+share/moin/underlay/pages/HelpTemplate/revisions/00000001
+share/moin/underlay/pages/HomepageGroupsTemplate/current
+share/moin/underlay/pages/HomepageGroupsTemplate/revisions/00000001
+share/moin/underlay/pages/HomepagePrivatePageTemplate/current
+share/moin/underlay/pages/HomepagePrivatePageTemplate/revisions/00000001
+share/moin/underlay/pages/HomepageReadPageTemplate/current
+share/moin/underlay/pages/HomepageReadPageTemplate/revisions/00000001
+share/moin/underlay/pages/HomepageReadWritePageTemplate/current
+share/moin/underlay/pages/HomepageReadWritePageTemplate/revisions/00000001
+share/moin/underlay/pages/HomepageTemplate/current
+share/moin/underlay/pages/HomepageTemplate/revisions/00000001
+share/moin/underlay/pages/InterWiki/current
+share/moin/underlay/pages/InterWiki/revisions/00000001
+share/moin/underlay/pages/LocalBadContent/current
+share/moin/underlay/pages/LocalBadContent/revisions/00000001
+share/moin/underlay/pages/LocalSpellingWords/current
+share/moin/underlay/pages/LocalSpellingWords/revisions/00000001
+share/moin/underlay/pages/MissingHomePage/current
+share/moin/underlay/pages/MissingHomePage/revisions/00000001
+share/moin/underlay/pages/MissingPage/current
+share/moin/underlay/pages/MissingPage/revisions/00000001
+share/moin/underlay/pages/MoinMoin(2f)InstallDocs/current
+share/moin/underlay/pages/MoinMoin(2f)InstallDocs/revisions/00000001
+share/moin/underlay/pages/MoinMoin(2f)TextFormatting/current
+share/moin/underlay/pages/MoinMoin(2f)TextFormatting/revisions/00000001
+share/moin/underlay/pages/MoinMoin/current
+share/moin/underlay/pages/MoinMoin/revisions/00000001
+share/moin/underlay/pages/MoinPagesEditorGroup/current
+share/moin/underlay/pages/MoinPagesEditorGroup/revisions/00000001
+share/moin/underlay/pages/OrphanedPages/current
+share/moin/underlay/pages/OrphanedPages/revisions/00000001
+share/moin/underlay/pages/PageHits/current
+share/moin/underlay/pages/PageHits/revisions/00000001
+share/moin/underlay/pages/PageSize/current
+share/moin/underlay/pages/PageSize/revisions/00000001
+share/moin/underlay/pages/ProjectGroupsTemplate/current
+share/moin/underlay/pages/ProjectGroupsTemplate/revisions/00000001
+share/moin/underlay/pages/ProjectTemplate/current
+share/moin/underlay/pages/ProjectTemplate/revisions/00000001
+share/moin/underlay/pages/RandomPage/current
+share/moin/underlay/pages/RandomPage/revisions/00000001
+share/moin/underlay/pages/RecentChanges/current
+share/moin/underlay/pages/RecentChanges/revisions/00000001
+share/moin/underlay/pages/SiteNavigation/current
+share/moin/underlay/pages/SiteNavigation/revisions/00000001
+share/moin/underlay/pages/SlideShowHandOutTemplate/current
+share/moin/underlay/pages/SlideShowHandOutTemplate/revisions/00000001
+share/moin/underlay/pages/SlideShowTemplate/current
+share/moin/underlay/pages/SlideShowTemplate/revisions/00000001
+share/moin/underlay/pages/SlideTemplate/current
+share/moin/underlay/pages/SlideTemplate/revisions/00000001
+share/moin/underlay/pages/SyntaxReference/current
+share/moin/underlay/pages/SyntaxReference/revisions/00000001
+share/moin/underlay/pages/SystemInfo/current
+share/moin/underlay/pages/SystemInfo/revisions/00000001
+share/moin/underlay/pages/SystemPagesGroup/current
+share/moin/underlay/pages/SystemPagesGroup/revisions/00000001
+share/moin/underlay/pages/SystemPagesInEnglishGroup/current
+share/moin/underlay/pages/SystemPagesInEnglishGroup/revisions/00000001
+share/moin/underlay/pages/SystemPagesSetup/attachments/Bulgarian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Croatian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Czech.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Danish.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Dutch.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Finnish.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/French.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/German.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Hebrew.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Hungarian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Indonesian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Italian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Japanese.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Korean.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Latvian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/NorwegianBokmal.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Polish.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Portuguese.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Romanian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Russian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Serbian.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/SimplifiedChinese.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Spanish.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Swedish.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/TraditionalChinese.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/Turkish.zip
+share/moin/underlay/pages/SystemPagesSetup/attachments/all_languages.zip
+share/moin/underlay/pages/SystemPagesSetup/current
+share/moin/underlay/pages/SystemPagesSetup/revisions/00000001
+share/moin/underlay/pages/TitleIndex/current
+share/moin/underlay/pages/TitleIndex/revisions/00000001
+share/moin/underlay/pages/UserPreferences/current
+share/moin/underlay/pages/UserPreferences/revisions/00000001
+share/moin/underlay/pages/WantedPages/current
+share/moin/underlay/pages/WantedPages/revisions/00000001
+share/moin/underlay/pages/WhyWikiWorks/current
+share/moin/underlay/pages/WhyWikiWorks/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)000_What_is_a_Wiki(3f)/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)000_What_is_a_Wiki(3f)/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)050_First_Steps/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)050_First_Steps/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)060_How_do_I_navigate(3f)/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)060_How_do_I_navigate(3f)/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)090_The_Editor/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)090_The_Editor/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)091_Tips_on_the_Editor/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)091_Tips_on_the_Editor/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)100_Text_markup/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)100_Text_markup/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)110_Headlines_and_Paragraphs/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)110_Headlines_and_Paragraphs/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)130_Lists/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)130_Lists/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)150_Tables/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)150_Tables/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)180_Macros/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)180_Macros/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)191_Creating_new_Pages/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)191_Creating_new_Pages/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)195_Actions/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)195_Actions/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)200_Wikiquette/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)200_Wikiquette/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)210_Organisation_and_Structure/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)210_Organisation_and_Structure/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)900_Exercises/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)900_Exercises/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction/revisions/00000001
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroductionHandOut/current
+share/moin/underlay/pages/WikiCourse(2f)BasicIntroductionHandOut/revisions/00000001
+share/moin/underlay/pages/WikiCourse/current
+share/moin/underlay/pages/WikiCourse/revisions/00000001
+share/moin/underlay/pages/WikiHomePage/current
+share/moin/underlay/pages/WikiHomePage/revisions/00000001
+share/moin/underlay/pages/WikiName/current
+share/moin/underlay/pages/WikiName/revisions/00000001
+share/moin/underlay/pages/WikiSandBox/attachments/mytest.draw
+share/moin/underlay/pages/WikiSandBox/attachments/mytest.map
+share/moin/underlay/pages/WikiSandBox/attachments/mytest.png
+share/moin/underlay/pages/WikiSandBox/current
+share/moin/underlay/pages/WikiSandBox/revisions/00000001
+share/moin/underlay/pages/WikiWikiWeb/current
+share/moin/underlay/pages/WikiWikiWeb/revisions/00000001
+share/moin/underlay/pages/WordIndex/current
+share/moin/underlay/pages/WordIndex/revisions/00000001
+share/moin/underlay/pages/XsltVersion/current
+share/moin/underlay/pages/XsltVersion/revisions/00000001
+@dirrm share/moin/underlay/pages/XsltVersion/revisions
+@dirrm share/moin/underlay/pages/XsltVersion
+@dirrm share/moin/underlay/pages/WordIndex/revisions
+@dirrm share/moin/underlay/pages/WordIndex
+@dirrm share/moin/underlay/pages/WikiWikiWeb/revisions
+@dirrm share/moin/underlay/pages/WikiWikiWeb
+@dirrm share/moin/underlay/pages/WikiSandBox/revisions
+@dirrm share/moin/underlay/pages/WikiSandBox/attachments
+@dirrm share/moin/underlay/pages/WikiSandBox
+@dirrm share/moin/underlay/pages/WikiName/revisions
+@dirrm share/moin/underlay/pages/WikiName
+@dirrm share/moin/underlay/pages/WikiHomePage/revisions
+@dirrm share/moin/underlay/pages/WikiHomePage
+@dirrm share/moin/underlay/pages/WikiCourse/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroductionHandOut/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroductionHandOut
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)900_Exercises/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)900_Exercises
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)210_Organisation_and_Structure/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)210_Organisation_and_Structure
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)200_Wikiquette/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)200_Wikiquette
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)195_Actions/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)195_Actions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)191_Creating_new_Pages/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)191_Creating_new_Pages
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)180_Macros/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)180_Macros
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)150_Tables/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)150_Tables
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)130_Lists/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)130_Lists
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)110_Headlines_and_Paragraphs/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)110_Headlines_and_Paragraphs
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)100_Text_markup/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)100_Text_markup
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)091_Tips_on_the_Editor/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)091_Tips_on_the_Editor
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)090_The_Editor/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)090_The_Editor
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)060_How_do_I_navigate(3f)/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)060_How_do_I_navigate(3f)
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)050_First_Steps/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)050_First_Steps
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)000_What_is_a_Wiki(3f)/revisions
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction(2f)000_What_is_a_Wiki(3f)
+@dirrm share/moin/underlay/pages/WikiCourse(2f)BasicIntroduction
+@dirrm share/moin/underlay/pages/WikiCourse
+@dirrm share/moin/underlay/pages/WhyWikiWorks/revisions
+@dirrm share/moin/underlay/pages/WhyWikiWorks
+@dirrm share/moin/underlay/pages/WantedPages/revisions
+@dirrm share/moin/underlay/pages/WantedPages
+@dirrm share/moin/underlay/pages/UserPreferences/revisions
+@dirrm share/moin/underlay/pages/UserPreferences
+@dirrm share/moin/underlay/pages/TitleIndex/revisions
+@dirrm share/moin/underlay/pages/TitleIndex
+@dirrm share/moin/underlay/pages/SystemPagesSetup/revisions
+@dirrm share/moin/underlay/pages/SystemPagesSetup/attachments
+@dirrm share/moin/underlay/pages/SystemPagesSetup
+@dirrm share/moin/underlay/pages/SystemPagesInEnglishGroup/revisions
+@dirrm share/moin/underlay/pages/SystemPagesInEnglishGroup
+@dirrm share/moin/underlay/pages/SystemPagesGroup/revisions
+@dirrm share/moin/underlay/pages/SystemPagesGroup
+@dirrm share/moin/underlay/pages/SystemInfo/revisions
+@dirrm share/moin/underlay/pages/SystemInfo
+@dirrm share/moin/underlay/pages/SyntaxReference/revisions
+@dirrm share/moin/underlay/pages/SyntaxReference
+@dirrm share/moin/underlay/pages/SlideTemplate/revisions
+@dirrm share/moin/underlay/pages/SlideTemplate
+@dirrm share/moin/underlay/pages/SlideShowTemplate/revisions
+@dirrm share/moin/underlay/pages/SlideShowTemplate
+@dirrm share/moin/underlay/pages/SlideShowHandOutTemplate/revisions
+@dirrm share/moin/underlay/pages/SlideShowHandOutTemplate
+@dirrm share/moin/underlay/pages/SiteNavigation/revisions
+@dirrm share/moin/underlay/pages/SiteNavigation
+@dirrm share/moin/underlay/pages/RecentChanges/revisions
+@dirrm share/moin/underlay/pages/RecentChanges
+@dirrm share/moin/underlay/pages/RandomPage/revisions
+@dirrm share/moin/underlay/pages/RandomPage
+@dirrm share/moin/underlay/pages/ProjectTemplate/revisions
+@dirrm share/moin/underlay/pages/ProjectTemplate
+@dirrm share/moin/underlay/pages/ProjectGroupsTemplate/revisions
+@dirrm share/moin/underlay/pages/ProjectGroupsTemplate
+@dirrm share/moin/underlay/pages/PageSize/revisions
+@dirrm share/moin/underlay/pages/PageSize
+@dirrm share/moin/underlay/pages/PageHits/revisions
+@dirrm share/moin/underlay/pages/PageHits
+@dirrm share/moin/underlay/pages/OrphanedPages/revisions
+@dirrm share/moin/underlay/pages/OrphanedPages
+@dirrm share/moin/underlay/pages/MoinPagesEditorGroup/revisions
+@dirrm share/moin/underlay/pages/MoinPagesEditorGroup
+@dirrm share/moin/underlay/pages/MoinMoin/revisions
+@dirrm share/moin/underlay/pages/MoinMoin(2f)TextFormatting/revisions
+@dirrm share/moin/underlay/pages/MoinMoin(2f)TextFormatting
+@dirrm share/moin/underlay/pages/MoinMoin(2f)InstallDocs/revisions
+@dirrm share/moin/underlay/pages/MoinMoin(2f)InstallDocs
+@dirrm share/moin/underlay/pages/MoinMoin
+@dirrm share/moin/underlay/pages/MissingPage/revisions
+@dirrm share/moin/underlay/pages/MissingPage
+@dirrm share/moin/underlay/pages/MissingHomePage/revisions
+@dirrm share/moin/underlay/pages/MissingHomePage
+@dirrm share/moin/underlay/pages/LocalSpellingWords/revisions
+@dirrm share/moin/underlay/pages/LocalSpellingWords
+@dirrm share/moin/underlay/pages/LocalBadContent/revisions
+@dirrm share/moin/underlay/pages/LocalBadContent
+@dirrm share/moin/underlay/pages/InterWiki/revisions
+@dirrm share/moin/underlay/pages/InterWiki
+@dirrm share/moin/underlay/pages/HomepageTemplate/revisions
+@dirrm share/moin/underlay/pages/HomepageTemplate
+@dirrm share/moin/underlay/pages/HomepageReadWritePageTemplate/revisions
+@dirrm share/moin/underlay/pages/HomepageReadWritePageTemplate
+@dirrm share/moin/underlay/pages/HomepageReadPageTemplate/revisions
+@dirrm share/moin/underlay/pages/HomepageReadPageTemplate
+@dirrm share/moin/underlay/pages/HomepagePrivatePageTemplate/revisions
+@dirrm share/moin/underlay/pages/HomepagePrivatePageTemplate
+@dirrm share/moin/underlay/pages/HomepageGroupsTemplate/revisions
+@dirrm share/moin/underlay/pages/HomepageGroupsTemplate
+@dirrm share/moin/underlay/pages/HelpTemplate/revisions
+@dirrm share/moin/underlay/pages/HelpTemplate
+@dirrm share/moin/underlay/pages/HelpOnXmlPages/revisions
+@dirrm share/moin/underlay/pages/HelpOnXmlPages
+@dirrm share/moin/underlay/pages/HelpOnVariables/revisions
+@dirrm share/moin/underlay/pages/HelpOnVariables
+@dirrm share/moin/underlay/pages/HelpOnUserPreferences/revisions
+@dirrm share/moin/underlay/pages/HelpOnUserPreferences
+@dirrm share/moin/underlay/pages/HelpOnUserHandling/revisions
+@dirrm share/moin/underlay/pages/HelpOnUserHandling
+@dirrm share/moin/underlay/pages/HelpOnUpdatingPython/revisions
+@dirrm share/moin/underlay/pages/HelpOnUpdatingPython
+@dirrm share/moin/underlay/pages/HelpOnUpdating/revisions
+@dirrm share/moin/underlay/pages/HelpOnUpdating
+@dirrm share/moin/underlay/pages/HelpOnThemes/revisions
+@dirrm share/moin/underlay/pages/HelpOnThemes
+@dirrm share/moin/underlay/pages/HelpOnTemplates/revisions
+@dirrm share/moin/underlay/pages/HelpOnTemplates
+@dirrm share/moin/underlay/pages/HelpOnTables/revisions
+@dirrm share/moin/underlay/pages/HelpOnTables/attachments
+@dirrm share/moin/underlay/pages/HelpOnTables
+@dirrm share/moin/underlay/pages/HelpOnSuperUser/revisions
+@dirrm share/moin/underlay/pages/HelpOnSuperUser
+@dirrm share/moin/underlay/pages/HelpOnSpellCheck/revisions
+@dirrm share/moin/underlay/pages/HelpOnSpellCheck
+@dirrm share/moin/underlay/pages/HelpOnSmileys/revisions
+@dirrm share/moin/underlay/pages/HelpOnSmileys
+@dirrm share/moin/underlay/pages/HelpOnSlideShows/revisions
+@dirrm share/moin/underlay/pages/HelpOnSlideShows(2f)900_Last_but_not_least(3a)_Running_your_presentation(2e)/revisions
+@dirrm share/moin/underlay/pages/HelpOnSlideShows(2f)900_Last_but_not_least(3a)_Running_your_presentation(2e)
+@dirrm share/moin/underlay/pages/HelpOnSlideShows(2f)100_Creating_the_slides/revisions
+@dirrm share/moin/underlay/pages/HelpOnSlideShows(2f)100_Creating_the_slides
+@dirrm share/moin/underlay/pages/HelpOnSlideShows(2f)000_Introduction/revisions
+@dirrm share/moin/underlay/pages/HelpOnSlideShows(2f)000_Introduction
+@dirrm share/moin/underlay/pages/HelpOnSlideShows
+@dirrm share/moin/underlay/pages/HelpOnSkins/revisions
+@dirrm share/moin/underlay/pages/HelpOnSkins
+@dirrm share/moin/underlay/pages/HelpOnSearching/revisions
+@dirrm share/moin/underlay/pages/HelpOnSearching
+@dirrm share/moin/underlay/pages/HelpOnRules/revisions
+@dirrm share/moin/underlay/pages/HelpOnRules
+@dirrm share/moin/underlay/pages/HelpOnProcessors/revisions
+@dirrm share/moin/underlay/pages/HelpOnProcessors
+@dirrm share/moin/underlay/pages/HelpOnProcessingInstructions/revisions
+@dirrm share/moin/underlay/pages/HelpOnProcessingInstructions
+@dirrm share/moin/underlay/pages/HelpOnParsers/revisions
+@dirrm share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText/revisions
+@dirrm share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer/revisions
+@dirrm share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText(2f)RstPrimer
+@dirrm share/moin/underlay/pages/HelpOnParsers(2f)ReStructuredText
+@dirrm share/moin/underlay/pages/HelpOnParsers
+@dirrm share/moin/underlay/pages/HelpOnPageDeletion/revisions
+@dirrm share/moin/underlay/pages/HelpOnPageDeletion
+@dirrm share/moin/underlay/pages/HelpOnPageCreation/revisions
+@dirrm share/moin/underlay/pages/HelpOnPageCreation
+@dirrm share/moin/underlay/pages/HelpOnPackageInstaller/revisions
+@dirrm share/moin/underlay/pages/HelpOnPackageInstaller
+@dirrm share/moin/underlay/pages/HelpOnNavigation/revisions
+@dirrm share/moin/underlay/pages/HelpOnNavigation
+@dirrm share/moin/underlay/pages/HelpOnMacros/revisions
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)MonthCalendar/revisions
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)MonthCalendar
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)MailTo/revisions
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)MailTo
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)Include/revisions
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)Include
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)ImageLink/revisions
+@dirrm share/moin/underlay/pages/HelpOnMacros(2f)ImageLink
+@dirrm share/moin/underlay/pages/HelpOnMacros
+@dirrm share/moin/underlay/pages/HelpOnLists/revisions
+@dirrm share/moin/underlay/pages/HelpOnLists
+@dirrm share/moin/underlay/pages/HelpOnLinking/revisions
+@dirrm share/moin/underlay/pages/HelpOnLinking
+@dirrm share/moin/underlay/pages/HelpOnLanguages/revisions
+@dirrm share/moin/underlay/pages/HelpOnLanguages
+@dirrm share/moin/underlay/pages/HelpOnInstalling/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation/attachments
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)WikiInstanceCreation
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)WebLogic/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)WebLogic
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/attachments
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)StandaloneServer/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)StandaloneServer
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)MinimalWiki/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)MinimalWiki
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)InternetInformationServer/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)InternetInformationServer
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)FastCgi/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)FastCgi
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)BasicInstallation/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)BasicInstallation/attachments
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)BasicInstallation
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnMacOsx
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp/attachments
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinuxFtp
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnLinux
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)AolServer/revisions
+@dirrm share/moin/underlay/pages/HelpOnInstalling(2f)AolServer
+@dirrm share/moin/underlay/pages/HelpOnInstalling
+@dirrm share/moin/underlay/pages/HelpOnHeadlines/revisions
+@dirrm share/moin/underlay/pages/HelpOnHeadlines
+@dirrm share/moin/underlay/pages/HelpOnGraphicalEditor/revisions
+@dirrm share/moin/underlay/pages/HelpOnGraphicalEditor
+@dirrm share/moin/underlay/pages/HelpOnFormatting/revisions
+@dirrm share/moin/underlay/pages/HelpOnFormatting
+@dirrm share/moin/underlay/pages/HelpOnEditing/revisions
+@dirrm share/moin/underlay/pages/HelpOnEditing(2f)SubPages/revisions
+@dirrm share/moin/underlay/pages/HelpOnEditing(2f)SubPages
+@dirrm share/moin/underlay/pages/HelpOnEditing
+@dirrm share/moin/underlay/pages/HelpOnEditLocks/revisions
+@dirrm share/moin/underlay/pages/HelpOnEditLocks
+@dirrm share/moin/underlay/pages/HelpOnConfiguration/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)UserPreferences/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)UserPreferences
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)SurgeProtection/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)SurgeProtection
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)SecurityPolicy
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)IntegratingWithApache
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)FileAttachments/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)FileAttachments
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)EmailSupport/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)EmailSupport
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)CascadingStyleSheets/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)CascadingStyleSheets
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo/revisions
+@dirrm share/moin/underlay/pages/HelpOnConfiguration(2f)ApacheVoodoo
+@dirrm share/moin/underlay/pages/HelpOnConfiguration
+@dirrm share/moin/underlay/pages/HelpOnCategories/revisions
+@dirrm share/moin/underlay/pages/HelpOnCategories
+@dirrm share/moin/underlay/pages/HelpOnAutoAdmin/revisions
+@dirrm share/moin/underlay/pages/HelpOnAutoAdmin
+@dirrm share/moin/underlay/pages/HelpOnAuthentication/revisions
+@dirrm share/moin/underlay/pages/HelpOnAuthentication
+@dirrm share/moin/underlay/pages/HelpOnAdministration/revisions
+@dirrm share/moin/underlay/pages/HelpOnAdministration
+@dirrm share/moin/underlay/pages/HelpOnActions/revisions
+@dirrm share/moin/underlay/pages/HelpOnActions(2f)AttachFile/revisions
+@dirrm share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments
+@dirrm share/moin/underlay/pages/HelpOnActions(2f)AttachFile
+@dirrm share/moin/underlay/pages/HelpOnActions
+@dirrm share/moin/underlay/pages/HelpOnAccessControlLists/revisions
+@dirrm share/moin/underlay/pages/HelpOnAccessControlLists
+@dirrm share/moin/underlay/pages/HelpMiscellaneous/revisions
+@dirrm share/moin/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions/revisions
+@dirrm share/moin/underlay/pages/HelpMiscellaneous(2f)FrequentlyAskedQuestions
+@dirrm share/moin/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures/revisions
+@dirrm share/moin/underlay/pages/HelpMiscellaneous(2f)ExperimentalFeatures
+@dirrm share/moin/underlay/pages/HelpMiscellaneous
+@dirrm share/moin/underlay/pages/HelpIndex/revisions
+@dirrm share/moin/underlay/pages/HelpIndex
+@dirrm share/moin/underlay/pages/HelpForDevelopers/revisions
+@dirrm share/moin/underlay/pages/HelpForDevelopers
+@dirrm share/moin/underlay/pages/HelpForBeginners/revisions
+@dirrm share/moin/underlay/pages/HelpForBeginners
+@dirrm share/moin/underlay/pages/HelpContents/revisions
+@dirrm share/moin/underlay/pages/HelpContents
+@dirrm share/moin/underlay/pages/FrontPage/revisions
+@dirrm share/moin/underlay/pages/FrontPage
+@dirrm share/moin/underlay/pages/FortuneCookies/revisions
+@dirrm share/moin/underlay/pages/FortuneCookies
+@dirrm share/moin/underlay/pages/FindPage/revisions
+@dirrm share/moin/underlay/pages/FindPage
+@dirrm share/moin/underlay/pages/EventStats/revisions
+@dirrm share/moin/underlay/pages/EventStats(2f)UserAgents/revisions
+@dirrm share/moin/underlay/pages/EventStats(2f)UserAgents
+@dirrm share/moin/underlay/pages/EventStats(2f)HitCounts/revisions
+@dirrm share/moin/underlay/pages/EventStats(2f)HitCounts
+@dirrm share/moin/underlay/pages/EventStats
+@dirrm share/moin/underlay/pages/EditedSystemPages/revisions
+@dirrm share/moin/underlay/pages/EditedSystemPages
+@dirrm share/moin/underlay/pages/DesktopEdition/revisions
+@dirrm share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure/revisions
+@dirrm share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure
+@dirrm share/moin/underlay/pages/DesktopEdition
+@dirrm share/moin/underlay/pages/CategoryTemplate/revisions
+@dirrm share/moin/underlay/pages/CategoryTemplate
+@dirrm share/moin/underlay/pages/CategoryHomepage/revisions
+@dirrm share/moin/underlay/pages/CategoryHomepage
+@dirrm share/moin/underlay/pages/CategoryCategory/revisions
+@dirrm share/moin/underlay/pages/CategoryCategory
+@dirrm share/moin/underlay/pages/BadContent/revisions
+@dirrm share/moin/underlay/pages/BadContent
+@dirrm share/moin/underlay/pages/AutoAdminGroup/revisions
+@dirrm share/moin/underlay/pages/AutoAdminGroup
+@dirrm share/moin/underlay/pages/AbandonedPages/revisions
+@dirrm share/moin/underlay/pages/AbandonedPages
+@dirrm share/moin/underlay/pages
+@dirrm share/moin/underlay
 @dirrm share/moin/server
 @dirrm share/moin/htdocs/rightsidebar/img
 @dirrm share/moin/htdocs/rightsidebar/css
@@ -2068,6 +2748,7 @@ share/moin/server/moinwsgi.py
 @dirrm share/moin/config/wikifarm
 @dirrm share/moin/config/more_samples
 @dirrm share/moin/config
+@dirrm share/moin
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/wikixml
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/widget
