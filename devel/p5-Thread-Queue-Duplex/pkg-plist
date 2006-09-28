@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Thread/Queue/TQDContainer.pm
+%%SITE_PERL%%/Thread/Queue/Queueable.pod
+%%SITE_PERL%%/Thread/Queue/Queueable.pm
+%%SITE_PERL%%/Thread/Queue/Duplex.pod
+%%SITE_PERL%%/Thread/Queue/Duplex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Queue/Duplex/.packlist
+@dirrmtry %%SITE_PERL%%/Thread/Queue
+@dirrmtry %%SITE_PERL%%/Thread
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Queue/Duplex
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Queue
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread
