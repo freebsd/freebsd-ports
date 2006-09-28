@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	Net-Packet
-PORTVERSION=	2.22
+DISTVERSION=	3.00_01
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN/../by-authors/id/G/GO/GOMOR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	netpkt@gomor.org
-COMMENT=	A framework to easily send and receive frames from layer 2 to layer 7
+COMMENT=	Send and receive frames from layer 2 to layer 7
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Gomor/Hash.pm:${PORTSDIR}/devel/p5-Class-Gomor \
-		${SITE_PERL}/${PERL_ARCH}/Net/Write/Layer2.pm:${PORTSDIR}/net/p5-Net-Write \
-		${SITE_PERL}/${PERL_ARCH}/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface \
-		${SITE_PERL}/Net/IPv6Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr \
-		${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
-		${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6 \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Bit-Vector>=6.4:${PORTSDIR}/math/p5-Bit-Vector \
+		p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
+		p5-IO-Interface>=1.02:${PORTSDIR}/net/p5-IO-Interface \
+		p5-Net-IPv6Addr>=0.2:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr \
+		p5-Net-Libdnet>=0.01:${PORTSDIR}/net/p5-Net-Libdnet \
+		p5-Net-Write>=0.82:${PORTSDIR}/net/p5-Net-Write \
+		p5-Net-Pcap>=0.14:${PORTSDIR}/net/p5-Net-Pcap \
+		p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6 \
+		p5-Storable>=2.15:${PORTSDIR}/devel/p5-Storable \
+		p5-Time-HiRes>=1.90,1:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
@@ -52,8 +54,7 @@ MAN3=		Net::Packet.3 \
 		Net::Packet::TCP.3 \
 		Net::Packet::UDP.3 \
 		Net::Packet::Utils.3 \
-		Net::Packet::VLAN.3 \
-		Net::Pkt.3
+		Net::Packet::VLAN.3
 
 .include <bsd.port.pre.mk>
 
