@@ -1,0 +1,15 @@
+Inline::TT provides Inline access to version 2.0 and higher of the
+Template Toolkit. This allows you to house your templates inside the
+source code file, while retaining the ability to cache compiled
+templates on the disk (via Inline's caching mechanism).
+
+The names of the blocks in the template are exported as functions.
+Call these with a reference to a hash of values, which will be used
+for interpolation in the templates. This hash reference is the same as
+the second argument to the process method of any Template object. The
+output from template toolkit will be returned to you as a single
+string. Note that leading and trailing spaces are trimmed, further the
+template toolkit options PRE_CHOMP and POST_CHOMP are set. Currently,
+there is no way to change these behaviors.
+
+WWW:	http://search.cpan.org/dist/Inline-TT/
