@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homebank
-DISTVERSION=	3.2alpha2
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -19,10 +18,11 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
-USE_DOS2UNIX=	src/*
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude autom4te.cache
 
 DOCS=		AUTHORS COPYING ChangeLog LICENSE NEWS README
 
@@ -31,9 +31,6 @@ DOCS=		AUTHORS COPYING ChangeLog LICENSE NEWS README
 .if ${OSVERSION} < 500000
 BROKEN=	Does not build on FreeBSD 4.x
 .endif
-
-post-extract:
-	@${RM} -rf ${WRKSRC}/autom4te.cache ${WRKSRC}/po/*.gmo
 
 .ifndef (NOPORTDOCS)
 post-install:

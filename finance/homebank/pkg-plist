@@ -24,6 +24,7 @@ bin/homebank
 %%DATADIR%%/images/lst_new.svg
 %%DATADIR%%/images/lst_remind.svg
 %%DATADIR%%/images/lst_vali.svg
+%%DATADIR%%/images/lst_warning.svg
 %%DATADIR%%/images/ope_add.svg
 %%DATADIR%%/images/ope_delete.svg
 %%DATADIR%%/images/ope_edit.svg
@@ -38,15 +39,18 @@ bin/homebank
 %%DATADIR%%/images/prf_help.svg
 %%DATADIR%%/images/prf_interface.svg
 %%DATADIR%%/images/prf_report.svg
+%%DATADIR%%/images/rate.svg
 %%DATADIR%%/images/refresh.svg
 %%DATADIR%%/images/report_budget.svg
 %%DATADIR%%/images/report_car.svg
 %%DATADIR%%/images/report_overdrawn.svg
 %%DATADIR%%/images/report_stats.svg
+%%DATADIR%%/images/splash.png
 %%DATADIR%%/images/view_bar.svg
 %%DATADIR%%/images/view_line.svg
 %%DATADIR%%/images/view_list.svg
 %%DATADIR%%/images/view_pie.svg
+share/locale/es/LC_MESSAGES/homebank.mo
 share/locale/fr/LC_MESSAGES/homebank.mo
 share/locale/nl/LC_MESSAGES/homebank.mo
 share/locale/ru/LC_MESSAGES/homebank.mo
