@@ -1,0 +1,19 @@
+A mapped queue, similar to Thread::Queue, except that as elements
+are queued, they are assigned unique identifiers, which are used
+to identify responses returned from the dequeueing thread. This
+class provides a simple RPC-like mechanism between multiple client
+and server threads, so that a single server thread can safely
+multiplex requests from multiple client threads. Note that simplex
+versions of the enqueue methods are provided which do not assign
+unique identifiers, and are used for requests to which no response
+is required/expected.
+
+In addition, elements are inspected as they are enqueued/dequeued
+to determine if they are Thread::Queue::Queueable (aka TQQ)
+objects, and, if so, the onEnqueue() or onDequeue() methods are
+called to permit any additional class-specific
+marshalling/unmarshalling to be performed. Thread::Queue::Duplex
+(aka TQD) is itself a Thread::Queue::Queueable object, thus
+permitting TQD objects to be passed between threads.
+
+WWW:	http://search.cpan.org/dist/Thread-Queue-Duplex/

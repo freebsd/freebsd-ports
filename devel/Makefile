@@ -1428,6 +1428,7 @@
     SUBDIR += p5-Test-use-ok
     SUBDIR += p5-Text-LevenshteinXS
     SUBDIR += p5-Text-vFile-asData
+    SUBDIR += p5-Thread-Queue-Duplex
     SUBDIR += p5-Tie-Array-Sorted
     SUBDIR += p5-Tie-Cache
     SUBDIR += p5-Tie-DB_File-SplitHash
