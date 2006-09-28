@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	libunrar
-PORTVERSION=	3.60.b6
+PORTVERSION=	3.6.8
+PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files2.rarlab.com/rar/ \
 		http://files3.rarlab.com/rar/ \
 		http://files4.rarlab.com/rar/ \
 		http://files5.rarlab.com/rar/ \
 		http://files6.rarlab.com/rar/
-DISTNAME=	unrarsrc-3.6.6
+DISTNAME=	unrarsrc-${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Library to work with RAR archivies
@@ -24,7 +25,7 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile.unix
 MAKE_ENV+=	CXX="${CXX}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	lib
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libunrar.so.3 ${PREFIX}/lib/
