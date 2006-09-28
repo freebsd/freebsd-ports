@@ -8,7 +8,8 @@
 PORTNAME=	eif
 PORTVERSION=	1.3.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.stack.nl/~marcolz/empire/
+MASTER_SITES=	http://www.stack.nl/~marcolz/empire/ \
+		ftp://ftp.stack.nl/pub/users/johans/eif/
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Empire text client
@@ -17,4 +18,9 @@ MAN1=		eif.1
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e '/curout_isapipe/d' ${WRKSRC}/src/data.h
+
+.include <bsd.port.post.mk>
