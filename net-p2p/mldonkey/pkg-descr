@@ -1,17 +1,17 @@
-mldonkey is a OCAML/GTK client for a number of
+MLDonkey is an OCAML/GTK client for a number of
 peer-to-peer networks.
 
-It is separated into a core with telnet and web interfaces, and
-a GTK GUI. 
+It is separated into a core with telnet and web
+interfaces, and a GTK GUI.
 
 The following protocols are supported:
-- eDonkey        (http://www.edonkey2000.com/)
-- Overnet        (http://www.overnet.com/)
-- Bittorrent     (http://bitconjurer.org/BitTorrent/)
-- Gnutella       (http://www.gnutella.org/)
-- Gnutella2      (http://www.shareaza.com/)
-- Soulseek       (http://www.slsk.org/)
-- Direct-Connect (http://www.neo-modus.com/)
-- Opennap        (http://opennap.sourceforge.net/)
+- eDonkey		(http://www.edonkey2000.com/)
+- Overnet		(http://www.overnet.com/)
+- Bittorrent		(http://www.bittorrent.com/)
+- Gnutella		(http://www.gnutella.org/)
+- Gnutella2		(http://www.shareaza.com/)
+- Fasttrack		(http://en.wikipedia.org/wiki/Fasttrack)
+- FileTP [http/ftp/ssh]	(http://mldonkey.sourceforge.net/FileTP)
+- Kademlia		(http://en.wikipedia.org/wiki/Kad_Network)
 
-WWW: http://www.nongnu.org/mldonkey/
+WWW: http://mldonkey.sourceforge.net/
