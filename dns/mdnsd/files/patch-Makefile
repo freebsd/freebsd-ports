@@ -1,0 +1,16 @@
+diff -ruN Makefile.orig Makefile
+--- Makefile.orig	Tue Feb 18 09:00:04 2003
++++ Makefile	Mon Sep 25 22:11:16 2006
+@@ -1,10 +1,10 @@
+ all: mquery mhttp
+ 
+ mhttp: mhttp.c
+-	gcc -g -o mhttp mhttp.c mdnsd.c 1035.c sdtxt.c xht.c
++	gcc -Wall -g -o mhttp mhttp.c mdnsd.c 1035.c sdtxt.c xht.c
+ 
+ mquery: mquery.c
+-	gcc -g -o mquery mquery.c mdnsd.c 1035.c
++	gcc -Wall -g -o mquery mquery.c mdnsd.c 1035.c
+ 
+ clean:
+ 	rm -f mquery mhttp
