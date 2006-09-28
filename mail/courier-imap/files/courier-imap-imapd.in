@@ -21,7 +21,7 @@ name="courier_imap_imapd"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/libexec/courier-imap/imapd.rc"
 pidfile="/var/run/imapd.pid"
-procname="%%PREFIX%%/libexec/courier-imap/couriertcpd"
+procname="%%PREFIX%%/sbin/courierlogger"
 
 start_cmd="imapd_cmd start"
 stop_cmd="imapd_cmd stop"

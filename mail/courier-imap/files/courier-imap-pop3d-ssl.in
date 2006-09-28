@@ -21,7 +21,7 @@ name="courier_imap_pop3d_ssl"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/libexec/courier-imap/pop3d-ssl.rc"
 pidfile="/var/run/pop3d-ssl.pid"
-procname="%%PREFIX%%/libexec/courier-imap/couriertcpd"
+procname="%%PREFIX%%/sbin/courierlogger"
 
 start_cmd="pop3d_ssl_cmd start"
 stop_cmd="pop3d_ssl_cmd stop"
