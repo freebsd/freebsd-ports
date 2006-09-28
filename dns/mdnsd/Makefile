@@ -7,12 +7,16 @@
 
 PORTNAME=	mdnsd
 PORTVERSION=	0.7G
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://dotlocal.org/${PORTNAME}/ \
 		http://web.cs.cmu.edu/~dpelleg/download/
 
 MAINTAINER=	daniel+mdnsd@pelleg.org
 COMMENT=	Advertise a service via Rendezvous
+
+PLIST_FILES=	bin/mhttp\
+		bin/mquery
 
 do-install:
 	@${ECHO_MSG} "Installing files"
