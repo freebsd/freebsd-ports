@@ -1364,6 +1364,7 @@
     SUBDIR += p5-Sub-Uplevel
     SUBDIR += p5-Sys-Mmap
     SUBDIR += p5-Sys-SigAction
+    SUBDIR += p5-Sys-Syscall
     SUBDIR += p5-System2
     SUBDIR += p5-Taint-Runtime
     SUBDIR += p5-Term-ANSIColor
