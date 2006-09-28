@@ -16,13 +16,16 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	CLucene is a C++ port of Lucene
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-ascii
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	3.2+
 USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ASCII_SUPPORT)
+CONFIGURE_ARGS+=	--enable-ascii
+.endif
 
 .if ${OSVERSION} < 500016
 CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
