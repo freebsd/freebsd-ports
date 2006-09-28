@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demos
-PORTVERSION=	6.4.1
+PORTVERSION=	6.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d/
@@ -19,41 +19,39 @@ COMMENT=	OpenGL demos distributed with Mesa
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=
-MAKE_ARGS=	SUBDIRS="progs/demos progs/osdemos"
+MAKE_ARGS=	SUBDIRS="progs/demos"
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 DATADIR=	${PREFIX}/share/mesa-demos
 
-DEMO_PROGS=	bounce clearspd cubemap drawpix fire gamma gears geartrain \
-		glinfo gloss gltestperf glutfx ipers isosurf lodbias morph3d \
-		multiarb occlude paltex pixeltex pointblast ray \
-		readpix reflect renormal shadowtex spectex stex3d teapot \
-		terrain tessdemo texcyl texdown texenv texobj trispd tunnel \
-		tunnel2
-DEMO_IMAGES=	bw.rgb girl.rgb reflect.rgb s128.rgb tile.rgb tree2.rgba \
-		tree3.rgb wrs_logo.rgb
+DEMO_PROGS=	glinfo winpos gamma renormal glutfx paltex clearspd glslnoise \
+		singlebuffer bounce spectex readpix arbocclude texobj texdown \
+		lodbias texcyl vao_demo arbfslight fplight fogcoord trispd \
+		drawpix multiarb cubemap tessdemo pointblast gltestperf \
+		arbfplight gears spriteblast gloss terrain gearbox teapot \
+		ipers reflect shadowtex texenv fire stex3d ray morph3d \
+		isosurf engine tunnel tunnel2 geartrain
+
+DEMO_IMAGES=	arch.rgb bw.rgb girl.rgb girl2.rgb reflect.rgb s128.rgb \
+		tile.rgb tree2.rgba tree3.rgb wrs_logo.rgb
 DEMO_DATA=	geartrain.dat isosurf.dat terrain.dat
 
 # Generate packing list
-PLIST_FILES=	bin/osdemo
+PLIST_FILES=
 .for prog in ${DEMO_PROGS}
 PLIST_FILES+=	bin/${prog}
 .endfor
 .for img in ${DEMO_IMAGES}
-PLIST_FILES+=	share/mesa-demos/images/${img}
+PLIST_FILES+=	%%DATADIR%%/images/${img}
 .endfor
 .for dat in ${DEMO_DATA}
-PLIST_FILES+=	share/mesa-demos/data/${dat}
+PLIST_FILES+=	%%DATADIR%%/data/${dat}
 .endfor
-PLIST_DIRS=	share/mesa-demos/images share/mesa-demos/data share/mesa-demos
+PLIST_DIRS=	%%DATADIR%%/images %%DATADIR%%/data %%DATADIR%%
 
 post-extract:
 	${CP} ${FILESDIR}/config ${WRKSRC}/configs/current
@@ -68,10 +66,7 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/$$prog \
 			${PREFIX}/bin ; \
 	done
-	${INSTALL_PROGRAM} ${WRKSRC}/progs/osdemos/osdemo \
-		${PREFIX}/bin ; \
-	${MKDIR} ${PREFIX}/share/mesa-demos/images
-	${MKDIR} ${PREFIX}/share/mesa-demos/data
+	${MKDIR} ${DATADIR}/images ${DATADIR}/data
 	@for img in ${DEMO_IMAGES}; do \
 		${INSTALL_DATA} ${WRKSRC}/progs/images/$$img \
 			${DATADIR}/images ; \
@@ -83,7 +78,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=         does not build with XFree86
+IGNORE=		does not build with XFree86
 .endif
 
 .include <bsd.port.post.mk>
