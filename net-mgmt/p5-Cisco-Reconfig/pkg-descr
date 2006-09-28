@@ -1,0 +1,15 @@
+Cisco::Reconfig makes it easier to write programs to generate changes
+to Cisco configuration files.
+
+Cisco::Reconfig is a module that parses Cisco router configuration
+files. It doesn't have any real understanding of Cisco configurations
+so it might be useful for other similar configuration languages. It
+knows that nesting is shown by indentation. It knows that ! means a
+comment. It knows that no may proceed a line without changing where
+that line exists in the hierarchy. It doesn't know much else.
+
+Cisco::Reconfig can be used to modify configurations. The set() method
+will check the current configruation and return commands to change it
+if it is other than what is wanted (as passed to the set() method).
+
+WWW:	http://search.cpan.org/dist/Cisco-Reconfig/

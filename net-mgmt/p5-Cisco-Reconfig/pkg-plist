@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/Reconfig/.packlist
+%%SITE_PERL%%/Cisco/Reconfig.pm
+%%SITE_PERL%%/Cisco/Reconfig.pod
+@dirrmtry %%SITE_PERL%%/Cisco
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/Reconfig
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
