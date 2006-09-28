@@ -10547,6 +10547,7 @@ pads		ports/net-mgmt/pads
 pager		ports/x11-wm/pager
 paicc		ports/sysutils/paicc
 paintlib	ports/graphics/paintlib
+paje		ports/science/paje
 pal		ports/deskutils/pal
 palmos-sdk	ports/palm/palmos-sdk
 palmpower	ports/palm/palmpower
