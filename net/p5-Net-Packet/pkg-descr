@@ -8,6 +8,4 @@ receive it easily, since the response is automatically searched for and
 matched against the request.
 
 WWW: http://search.cpan.org/dist/Net-Packet/
-
-- GomoR
-netpkt@gomor.org
+Author: GomoR <netpkt@gomor.org>
