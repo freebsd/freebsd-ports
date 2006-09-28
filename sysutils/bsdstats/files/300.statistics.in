@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.23 2006-09-28 18:00:04 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.24 2006-09-28 18:21:51 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -142,9 +142,17 @@ do_fetch () {
     esac
 }
 
+check_dns () {
+    if [ `dig bsdstats.org txt | grep TXT | grep UP | wc -l` = 0 ] 
+    then
+      echo "DNS not reachable, Network Down?"
+      exit
+    fi
+}
 
 case "$monthly_statistics_enable" in
     [Yy][Ee][Ss])
+      check_dns
       HN=`/bin/hostname`
       REL=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
