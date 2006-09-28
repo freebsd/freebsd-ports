@@ -16,8 +16,6 @@ COMMENT=	News caching/anti-spam/server-merging system
 
 USE_AUTOTOOLS=	automake:15:env
 
-NOT_FOR_ARCHS=	space64
-
 # This may be set interactively at install-time.  NNTPCache will
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.
 SPOOLDIR?=	/var/spool
@@ -35,6 +33,10 @@ OPTIONS=	LDAP "OpenLDAP support" off \
 		SPAMPHOBIA "Spamphobia NoCeM support" off
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not build on sparc64
+.endif
 
 .if !defined(WITHOUT_RADIUS)
 CONFIGURE_ARGS+=	--with-authinfo-radius
