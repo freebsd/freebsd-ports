@@ -2239,6 +2239,7 @@ emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
 emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
 emacs-wget	ports/ftp/emacs-wget
 emacs-wiki	ports/textproc/emacs-wiki
+emacs.app	ports/editors/emacs.app
 emacs19		ports/editors/emacs19
 emacs20		ports/editors/emacs20
 emacs20-dl	ports/editors/emacs20-dl
