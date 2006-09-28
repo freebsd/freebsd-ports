@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.2.18
+PORTVERSION=	4.2.21
 CATEGORIES=	games
 MASTER_SITES=	http://www.wolfpackempire.com/Downloads/server/ \
-		http://www.wolfpackempire.com/Downloads/server/oldversions/
+		http://empire.gletsjer.net/Downloads/server/ \
+		http://www.wolfpackempire.com/Downloads/server/oldversions/ \
+		http://empire.gletsjer.net/Downloads/server/oldversions/
 DISTNAME=	empire-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Long term multiplayer strategy game
 
 .if !defined(BATCH)
@@ -20,7 +22,7 @@ IS_INTERACTIVE=	yes     # configure script asks questions
 .endif
 ALL_TARGET=	freebsd
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	wolfpack
 
 MAN1=		fairland.1 files.1 pconfig.1
 MAN6=		emp_client.6 emp_server.6
@@ -30,10 +32,6 @@ MAKE_ARGS=	PREFIX=${PREFIX}
 .include <bsd.port.pre.mk>
 
 PKGDEINSTALL=	${PKGINSTALL}
-
-.if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
-.endif
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
@@ -62,8 +60,5 @@ post-install:
 	@${CAT} ${FILESDIR}/post-install-info
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-	@ ${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}        \
-		${FILESDIR}/wolfpack.sh > ${WRKDIR}/wolfpack.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/wolfpack.sh ${PREFIX}/etc/rc.d/wolfpack.sh
 
 .include <bsd.port.post.mk>

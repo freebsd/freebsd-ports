@@ -13,11 +13,10 @@ rcvar=`set_rcvar`
 wolfdir="%%PREFIX%%/wolfpack"
 
 command="$wolfdir/bin/emp_server"
-pidfile="$wolfdir/data/wolfpack.pid"
+pidfile="$wolfdir/data/server.pid"
 
 wolfpack_enable=${wolfpack_enable:-"NO"}
 wolfpack_user=${wolfpack_user:-"wolfpack"}
-wolfpack_flags=${wolfpack_flags:-"-P $pidfile"}
 
 load_rc_config $name
 

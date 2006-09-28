@@ -25,7 +25,7 @@ PRE-INSTALL)
 		echo "You already have a user \"${USER}\", so I will use it."
 	else
 		if pw useradd ${USER} -g ${GROUP} -h - \
-			-d ${INSTDIR} -c "Teamspeak Server"
+			-d ${INSTDIR} -c "Wolfpack Empire Server"
 		then
 			echo "Added user \"${USER}\"."
 		else

@@ -15,6 +15,7 @@ wolfpack/doc/WACKY_IDEAS
 wolfpack/doc/WISH_LIST
 wolfpack/doc/backups
 wolfpack/doc/bug-reports
+wolfpack/doc/clients-howto
 wolfpack/doc/coding
 wolfpack/doc/compiling
 wolfpack/doc/configuration
@@ -22,11 +23,11 @@ wolfpack/doc/debugging
 wolfpack/doc/disk_space
 wolfpack/doc/econfig
 wolfpack/doc/files
-wolfpack/doc/message
 wolfpack/doc/pthreads
 wolfpack/doc/threads
 wolfpack/doc/troubleshooting
-wolfpack/info.nr/Attack
+wolfpack/doc/unicode
+wolfpack/info.nr/Attacking
 wolfpack/info.nr/Autofeed
 wolfpack/info.nr/Autonav
 wolfpack/info.nr/BTU
@@ -37,6 +38,7 @@ wolfpack/info.nr/CHANGES.CHAINSAW
 wolfpack/info.nr/Citizens
 wolfpack/info.nr/Clients
 wolfpack/info.nr/Combat
+wolfpack/info.nr/Commerce
 wolfpack/info.nr/Commodities
 wolfpack/info.nr/Communication
 wolfpack/info.nr/Damage
@@ -70,13 +72,11 @@ wolfpack/info.nr/LandUnits
 wolfpack/info.nr/Loans
 wolfpack/info.nr/Maintenance
 wolfpack/info.nr/Maps
-wolfpack/info.nr/Market
 wolfpack/info.nr/Merc
 wolfpack/info.nr/Missions
 wolfpack/info.nr/Mobility
-wolfpack/info.nr/Move
 wolfpack/info.nr/Moving
-wolfpack/info.nr/Nation
+wolfpack/info.nr/Nations
 wolfpack/info.nr/Novice
 wolfpack/info.nr/Nuke-types
 wolfpack/info.nr/Obsolete
@@ -89,7 +89,7 @@ wolfpack/info.nr/Plane-types
 wolfpack/info.nr/Planes
 wolfpack/info.nr/Playing
 wolfpack/info.nr/Populace
-wolfpack/info.nr/Production
+wolfpack/info.nr/Producing
 wolfpack/info.nr/Products
 wolfpack/info.nr/Quick-ref
 wolfpack/info.nr/Research
@@ -98,6 +98,7 @@ wolfpack/info.nr/Sector-types
 wolfpack/info.nr/Sectors
 wolfpack/info.nr/Selector
 wolfpack/info.nr/Server
+wolfpack/info.nr/Sheep
 wolfpack/info.nr/Ship-types
 wolfpack/info.nr/Ships
 wolfpack/info.nr/Spies
@@ -108,8 +109,9 @@ wolfpack/info.nr/Taxes
 wolfpack/info.nr/Technology
 wolfpack/info.nr/Time
 wolfpack/info.nr/Trade-ships
+wolfpack/info.nr/Transportation
 wolfpack/info.nr/Unit-types
-wolfpack/info.nr/Update
+wolfpack/info.nr/Updates
 wolfpack/info.nr/Update-sequence
 wolfpack/info.nr/Wolfpack
 wolfpack/info.nr/accept
@@ -172,7 +174,6 @@ wolfpack/info.nr/grind
 wolfpack/info.nr/harden
 wolfpack/info.nr/headlines
 wolfpack/info.nr/help
-wolfpack/info.nr/hidden
 wolfpack/info.nr/improve
 wolfpack/info.nr/info
 wolfpack/info.nr/land
@@ -226,6 +227,7 @@ wolfpack/info.nr/payoff
 wolfpack/info.nr/pbmap
 wolfpack/info.nr/pboard
 wolfpack/info.nr/pdump
+wolfpack/info.nr/peek
 wolfpack/info.nr/plane
 wolfpack/info.nr/players
 wolfpack/info.nr/pmap
@@ -303,14 +305,18 @@ wolfpack/info.nr/wingadd
 wolfpack/info.nr/wipe
 wolfpack/info.nr/wire
 wolfpack/info.nr/work
+wolfpack/info.nr/xdump
 wolfpack/info.nr/zdone
 wolfpack/scripts/README
+wolfpack/scripts/backup
+wolfpack/scripts/backup.bat
 wolfpack/scripts/bigstart
 wolfpack/scripts/blitz/README
 wolfpack/scripts/blitz/crontab.config
 wolfpack/scripts/blitz/motd
 wolfpack/scripts/blitz/setup-blitz
 wolfpack/scripts/blitz/start-blitz
+wolfpack/scripts/blitz-w32/blitz_script.bat
 wolfpack/scripts/crontab.config
 wolfpack/scripts/keepitup
 wolfpack/scripts/mapper/Makefile
@@ -332,8 +338,8 @@ wolfpack/scripts/mapper/text.pbm
 wolfpack/scripts/mapper/text.size
 wolfpack/scripts/postresults
 wolfpack/scripts/saveass
-etc/rc.d/wolfpack.sh
 @dirrm wolfpack/scripts/mapper
+@dirrm wolfpack/scripts/blitz-w32
 @dirrm wolfpack/scripts/blitz
 @dirrm wolfpack/scripts
 @dirrm wolfpack/info.nr
