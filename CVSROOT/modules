@@ -7256,6 +7256,7 @@ mtools		ports/emulators/mtools
 mtoolsfm	ports/x11-fm/mtoolsfm
 mtop		ports/databases/mtop
 mtr		ports/net/mtr
+mtrace		ports/net-mgmt/mtrace
 mtrxmath	ports/math/mtrxmath
 mtv		ports/multimedia/mtv
 mtx		ports/misc/mtx
