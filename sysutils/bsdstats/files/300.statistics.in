@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.22 2006-09-09 16:45:36 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.23 2006-09-28 18:00:04 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -22,7 +22,7 @@ fi
 oldmask=$(umask)
 umask 066
 
-checkin_server="bsdstats.org";
+checkin_server=${monthly_statistics_checkin_server:-"bsdstats.org"}
 id_token_file='/var/db/bsdstats'
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin
@@ -48,7 +48,7 @@ send_devices () {
 	      query_string=$query_string`echo \&dev[]=$DRIVER:$DEV:$CLASS`
 	    done
 
-	    do_fetch report_devices.php?key=$KEY$query_string
+	    do_fetch report_devices.php?token=$TOKEN\&key=$KEY$query_string
 	    ;;
 	* )
 	    # Not supported
@@ -108,6 +108,7 @@ get_id_token () {
     fi
     . $id_token_file
     KEY=$( uri_escape $KEY )
+    TOKEN=$( uri_escape $TOKEN )
 }
 
 # RFC 2396
@@ -149,7 +150,7 @@ case "$monthly_statistics_enable" in
       ARCH=`/usr/bin/uname -m`
       OS=`/usr/bin/uname -s`
       get_id_token
-      do_fetch report_system.php?key=$KEY\&rel=$REL\&arch=$ARCH\&opsys=$OS
+      do_fetch report_system.php?token=$TOKEN\&key=$KEY\&rel=$REL\&arch=$ARCH\&opsys=$OS
       echo "Posting monthly OS statistics to $checkin_server"
       case "$monthly_statistics_report_devices" in
           [Yy][Ee][Ss])
@@ -159,7 +160,7 @@ case "$monthly_statistics_enable" in
               VEN=$( echo $line | cut -d ' ' -f 1 )
               DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
               count=$( sysctl -n hw.ncpu )
-              do_fetch report_cpu.php?key=$KEY\&cpus=$count\&vendor=$VEN\&cpu_type=$DEV
+              do_fetch report_cpu.php?token=$TOKEN\&key=$KEY\&cpus=$count\&vendor=$VEN\&cpu_type=$DEV
               echo "Posting monthly CPU statistics to $checkin_server"
              ;;
           *) 
