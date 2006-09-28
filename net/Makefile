@@ -304,6 +304,7 @@
     SUBDIR += mpich
     SUBDIR += mpich2
     SUBDIR += mping
+    SUBDIR += mrouted
     SUBDIR += mrt
     SUBDIR += mrtg-ping-probe
     SUBDIR += msend

@@ -1,0 +1,19 @@
+--- Makefile.orig	Sun Mar  1 03:09:11 1998
++++ Makefile	Thu Sep 28 22:11:44 2006
+@@ -24,12 +24,13 @@
+ #
+ # Uncomment the following three lines if you want to use RSRR (Routing
+ # Support for Resource Reservations), currently used by RSVP.
+-#RSRRDEF=	-DRSRR
+-#RSRRC=		rsrr.c
+-#RSRRO=		rsrr.o
++RSRRDEF=	-DRSRR
++RSRRC=		rsrr.c
++RSRRO=		rsrr.o
+ #
+ LDFLAGS=
+ CFLAGS=		-O ${MCAST_INCLUDE} ${SNMPDEF} ${RSRRDEF}	## SunOS, OSF1, FreeBSD, IRIX
++CFLAGS+=	-O2 -fno-strict-aliasing -pipe -Dlog=logit
+ #CFLAGS=		-O ${MCAST_INCLUDE} ${SNMPDEF} ${RSRRDEF} -DSYSV -DSUNOS5	## Solaris 2.x
+ #LIB2=-lsocket -lnsl	## Solaris 2.x
+ #CFLAGS=		-O ${MCAST_INCLUDE} ${SNMPDEF} ${RSRRDEF} -D__BSD_SOURCE -DRAW_INPUT_IS_RAW -DRAW_OUTPUT_IS_RAW -DIOCTL_OK_ON_RAW_SOCKET	## Linux
