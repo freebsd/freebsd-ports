@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -54,8 +55,7 @@ LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
 IGNORE=	cannot install: you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing
 .endif
 # have no 'without-' flag
-CONFIGURE_ARGS+=--disable-gui \
-		--disable-gd
+CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
 CONFLICTS+=	mldonkey-core-[0.9]* mldonkey-core-stable-[0.9]* \
 		mldonkey-devel-[0-9]*
@@ -66,10 +66,8 @@ CONFLICTS+=	mldonkey-gui-[0.9]*
 .if !defined(WITHOUT_CORE)
 CONFLICTS+=	mldonkey-devel-[0-9]*
 .endif
-BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2 \
-		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net-im/ocaml-jabbr
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
@@ -82,6 +80,11 @@ PLIST_SUB+=	CORE="@comment " GUICORE="@comment "
 .else
 PLIST_SUB+=	CORE=""	GUICORE=""
 .endif
+.endif
+.if defined(WITHOUT_GD)
+CONFIGURE_ARGS+=--disable-gd
+.elif !defined(WITHOUT_CORE)
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 .endif
 
 DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
@@ -170,9 +173,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${EXAMPLESDIR}
 .endif
 .ifndef(WITHOUT_GUI)
-	@${INSTALL_PROGRAM} ${WRKSRC}/mlchat		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlgui		${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/mlim		${PREFIX}/bin
 .endif
 .ifndef(WITHOUT_CORE && WITHOUT_GUI)
 	@${INSTALL_SCRIPT} ${WRKSRC}/distrib/mldonkey_previewer ${PREFIX}/bin
