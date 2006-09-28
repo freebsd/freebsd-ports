@@ -1,0 +1,5 @@
+subatom is a small script to produce an Atom feed from subversion
+commits. You can use this with a feed reader to see new commits to
+your repository.
+
+WWW:	http://search.cpan.org/dist/subatom/
