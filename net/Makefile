@@ -457,6 +457,7 @@
     SUBDIR += p5-Net-NIS-Listgroup
     SUBDIR += p5-Net-OpenDHT
     SUBDIR += p5-Net-Packet
+    SUBDIR += p5-Net-Packet-Target
     SUBDIR += p5-Net-ParseWhois
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-Pcap
