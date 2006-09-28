@@ -10,3 +10,6 @@ SIZE (elm-2.4ME+PL123b.patch.gz) = 3221
 MD5 (elm-2.4ME+PL123c.patch.gz) = dac5f257ecfa4bea8e0d73ac2a0eec74
 SHA256 (elm-2.4ME+PL123c.patch.gz) = 1163aebb99b2ad357887099c044d686071f12998767f2be488d1584751783f40
 SIZE (elm-2.4ME+PL123c.patch.gz) = 3370
+MD5 (elm-2.4ME+PL123d.patch.gz) = 2e6da93ce89a812aacd0f2757930bb95
+SHA256 (elm-2.4ME+PL123d.patch.gz) = de930a7dab02ba3ec572ae02f3a7a5f59b6d91c483b5327fb2d42367e93e99fc
+SIZE (elm-2.4ME+PL123d.patch.gz) = 15519
