@@ -5,24 +5,17 @@
 %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5.pm
 %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5/Ratchet.pm
 %%SITE_PERL%%/Pugs/Grammar/Base.pm
-%%SITE_PERL%%/Pugs/Grammar/LrepBase.pm
 %%SITE_PERL%%/Pugs/Grammar/Precedence.pm
-%%SITE_PERL%%/Pugs/Grammar/RegexBase.pm
 %%SITE_PERL%%/Pugs/Grammar/Rule.pm
-%%SITE_PERL%%/Pugs/Grammar/Rule/Rule.pm
-%%SITE_PERL%%/Pugs/Grammar/Rule/Rule.pmc
+%%SITE_PERL%%/Pugs/Grammar/Rule2.pm
+%%SITE_PERL%%/Pugs/Grammar/Rule.pmc
 %%SITE_PERL%%/Pugs/Runtime/Common.pm
-%%SITE_PERL%%/Pugs/Runtime/Grammar.pm
-%%SITE_PERL%%/Pugs/Runtime/LrepRule.pm
-%%SITE_PERL%%/Pugs/Runtime/LrepMatch.pm
 %%SITE_PERL%%/Pugs/Runtime/Match.pm
-%%SITE_PERL%%/Pugs/Runtime/Match/Ratchet.pm
+%%SITE_PERL%%/Pugs/Runtime/Match/HsBridge.pm
 %%SITE_PERL%%/Pugs/Runtime/Regex.pm
-%%SITE_PERL%%/Pugs/Runtime/Rule.pl
 %%SITE_PERL%%/Pugs/Runtime/Rule.pm
 @dirrm %%SITE_PERL%%/Pugs/Runtime/Match
 @dirrmtry %%SITE_PERL%%/Pugs/Runtime
-@dirrm %%SITE_PERL%%/Pugs/Grammar/Rule
 @dirrmtry %%SITE_PERL%%/Pugs/Grammar
 @dirrm %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5
 @dirrmtry %%SITE_PERL%%/Pugs/Emitter/Rule
