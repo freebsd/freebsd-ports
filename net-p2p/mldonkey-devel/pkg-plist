@@ -5,7 +5,5 @@
 %%GUICORE%%bin/mlguistarter
 %%GUICORE%%bin/mldonkey_previewer
 %%GUICORE%%bin/mlnet+gui
-%%GUI%%bin/mlchat
 %%GUI%%bin/mlgui
-%%GUI%%bin/mlim
 %%CORE%%@dirrm %%EXAMPLESDIR%%
