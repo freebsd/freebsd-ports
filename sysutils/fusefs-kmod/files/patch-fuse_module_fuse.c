@@ -1,5 +1,5 @@
---- fuse_module/fuse.c.orig	Fri Feb 10 17:31:53 2006
-+++ fuse_module/fuse.c	Sun Jul 16 14:48:43 2006
+--- fuse_module/fuse.c.orig	Wed Sep 27 15:49:47 2006
++++ fuse_module/fuse.c	Wed Sep 27 15:52:02 2006
 @@ -75,7 +75,7 @@
  };
  
@@ -60,6 +60,15 @@
  	if (err)
  		DEBUG2G("op %s (#%d) with body size %d: invalid body size\n",
  		        (0 <= opcode && opcode <= fuse_opnames_entries) ? fuse_opnames[opcode] : "???",
+@@ -904,7 +904,7 @@
+                  uint64_t nid, enum fuse_opcode op, size_t blen,
+                  struct thread* td, struct ucred *cred)
+ {
+-	ihead->len = sizeof(ihead) + blen; /* actually not used by lib */
++	ihead->len = sizeof(*ihead) + blen; /* actually not used by lib */
+ 	ihead->unique = tick->unique;
+ 	ihead->nodeid = nid;
+ 	ihead->opcode = op;
 @@ -988,7 +988,7 @@
  	return (0);
  }
@@ -272,7 +281,24 @@
  	if (doingdirectory && fdvp != tdvp) {
  		/*
  		 * Check for pathname conflict.
-@@ -5741,7 +5745,7 @@
+@@ -5396,7 +5400,6 @@
+ 	struct vnode *vp = fioda->vp;
+ 	struct uio *uio = fioda->uio;
+ 	struct ucred *cred = fioda->cred;
+-	struct fuse_filehandle *fufh = fioda->fufh;
+ 
+ 	int biosize;
+ 
+@@ -5506,7 +5509,7 @@
+ 		if ((bp->b_flags & B_CACHE) == 0) {
+ 			bp->b_iocmd = BIO_READ;
+ 			vfs_busy_pages(bp, 0);
+-			fuse_strategy_i(vp, bp, fufh, 0);
++			fuse_strategy_i(vp, bp, NULL, 0);
+ 			if ((err =  bp->b_error)) {
+ 				brelse(bp);
+ 				break;
+@@ -5741,7 +5744,7 @@
  			        chunksize, (long long unsigned)fri->offset, respsize);
  	
  			if (respsize < chunksize) {
@@ -281,7 +307,7 @@
  				/*
  				 * "if we don't get enough data, just fill the
  				 * rest with zeros."
-@@ -5888,7 +5892,7 @@
+@@ -5888,7 +5891,7 @@
  	        "vp=%p, rc=%d", bp, vp, rc));
  }
  
@@ -290,7 +316,7 @@
  static int
  fuse_germ_access(struct vop_access_args *ap)
  {
-@@ -5908,7 +5912,7 @@
+@@ -5908,7 +5911,7 @@
  
  /*   Modeled after tunclone() of net/if_tun.c
   */
@@ -299,7 +325,7 @@
  static void
  fusedev_clone(void *arg, char *name, int namelen, struct cdev **dev)
  #else
-@@ -6019,7 +6023,7 @@
+@@ -6019,7 +6022,7 @@
  		fuse_fileops.fo_close    = fuse_close_f;
  		fuse_fileops.fo_flags    = DFLAG_PASSABLE | DFLAG_SEEKABLE;
  
@@ -308,14 +334,3 @@
  		memcpy(&fuse_germ_vnops, &dead_vnodeops, sizeof(struct vop_vector));
  		fuse_germ_vnops.vop_access = fuse_germ_access;
  		fuse_germ_vnops.vop_open = fuse_open;
---- fuse_module/fuse.c.orig	Thu Aug  3 02:08:04 2006
-+++ fuse_module/fuse.c	Thu Aug  3 02:08:35 2006
-@@ -904,7 +904,7 @@
-                  uint64_t nid, enum fuse_opcode op, size_t blen,
-                  struct thread* td, struct ucred *cred)
- {
--	ihead->len = sizeof(ihead) + blen; /* actually not used by lib */
-+	ihead->len = sizeof(*ihead) + blen; /* actually not used by lib */
- 	ihead->unique = tick->unique;
- 	ihead->nodeid = nid;
- 	ihead->opcode = op;
