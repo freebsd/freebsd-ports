@@ -21,7 +21,7 @@ name="courier_imap_imapd_ssl"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/libexec/courier-imap/imapd-ssl.rc"
 pidfile="/var/run/imapd-ssl.pid"
-procname="%%PREFIX%%/libexec/courier-imap/couriertcpd"
+procname="%%PREFIX%%/sbin/courierlogger"
 
 start_cmd="imapd_ssl_cmd start"
 stop_cmd="imapd_ssl_cmd stop"

@@ -21,7 +21,7 @@ name="courier_imap_pop3d"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/libexec/courier-imap/pop3d.rc"
 pidfile="/var/run/pop3d.pid"
-procname="%%PREFIX%%/libexec/courier-imap/couriertcpd"
+procname="%%PREFIX%%/sbin/courierlogger"
 
 start_cmd="pop3d_cmd start"
 stop_cmd="pop3d_cmd stop"
