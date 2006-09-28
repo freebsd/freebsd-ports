@@ -1,10 +1,9 @@
-%%CORE%%bin/kill_mldonkey
+%%CORE%%bin/mld_hash
 %%CORE%%bin/mlnet
 %%CORE%%bin/mlnet-real
-%%CORE%%etc/rc.d/mlnet.sh
+%%CORE%%%%EXAMPLESDIR%%/kill_mldonkey
 %%GUICORE%%bin/mlguistarter
 %%GUICORE%%bin/mldonkey_previewer
 %%GUICORE%%bin/mlnet+gui
-%%GUI%%bin/mlchat
 %%GUI%%bin/mlgui
-%%GUI%%bin/mlim
+%%CORE%%@dirrm %%EXAMPLESDIR%%

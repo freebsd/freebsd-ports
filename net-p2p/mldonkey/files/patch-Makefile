@@ -1,49 +1,11 @@
---- config/Makefile.in.orig	Sat Jun 25 01:49:14 2005
-+++ config/Makefile.in	Thu Apr 20 01:23:52 2006
-@@ -19,7 +19,7 @@
- 
- ##################################################################
- 
--DEVFLAGS= -warn-error Am 
-+DEVFLAGS=
- # -dtypes
- 
- NO_LIBS_byte=
-@@ -144,6 +144,11 @@
-   CDK_SRCS +=  $(CDK)/zlib.ml $(CDK)/zlibstubs.c
- endif
- 
-+ifneq ("$(OPENSSLBASE)", "/usr")
-+  LIBS_flags += -ccopt -I$(OPENSSLINC) -cclib -L$(OPENSSLLIB)
-+endif
-+LIBS_flags += -cclib -lcrypto
-+
- ifeq ("$(GD)", "yes")
-   LIBS_flags += -cclib -lgd -cclib -lfreetype -cclib -lm
-   LIBS_flags += -ccopt -W -ccopt -Wall -ccopt -Wno-unused
-@@ -219,8 +224,7 @@
-   $(LIB)/misc.ml $(LIB)/unix32.ml  $(LIB)/md4.ml \
-   $(LIB)/avifile.ml $(LIB)/http_lexer.mll $(LIB)/url.ml \
-   $(LIB)/date.ml  $(LIB)/fst_hash.c \
--  $(LIB)/md4_comp.c $(LIB)/md4_c.c \
--  $(LIB)/gettext.ml4 $(LIB)/md5_c.c $(LIB)/$(SHA1_VERSION)_c.c \
-+  $(LIB)/md4_c.c $(LIB)/gettext.ml4 \
-   $(LIB)/tiger.c \
-   $(LIB)/stubs_c.c  $(LIB)/queues.ml \
-   $(LIB)/charsetstubs.c $(LIB)/charset.ml
-@@ -291,7 +295,7 @@
+--- config/Makefile.in.orig	Tue Apr 26 22:48:10 2005
++++ config/Makefile.in	Tue Apr 26 22:48:41 2005
+@@ -285,7 +285,7 @@
  all: Makefile config/Makefile.config $(TARGET_TYPE)
  
  config/configure: config/configure.in
 -	cd config; autoconf
 +	cd config; %%AUTOCONF%%
  
- ifeq ("$(CONFIGURE_RUN)" , "yes")
+ ifeq ("$(MYCONFIG_ARGS_DEFINED)" , "yes")
  
-@@ -2059,5 +2063,4 @@
- src/utils/lib/sha1new_c.o: src/utils/lib/sha1new_c.h \
-   src/utils/lib/sha1_c.h src/utils/lib/os_stubs.h
- 
--src/daemon/common/commonHasher_c.o: src/utils/lib/sha1_c.h
--src/utils/lib/stubs_c.o: src/utils/lib/sha1_c.h
-+src/daemon/common/commonHasher_c.o:
