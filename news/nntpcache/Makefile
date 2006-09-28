@@ -16,6 +16,8 @@ COMMENT=	News caching/anti-spam/server-merging system
 
 USE_AUTOTOOLS=	automake:15:env
 
+NOT_FOR_ARCHS=	space64
+
 # This may be set interactively at install-time.  NNTPCache will
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.
 SPOOLDIR?=	/var/spool
