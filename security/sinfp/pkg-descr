@@ -13,3 +13,4 @@ only fully standard TCP packets, and limits the number of tests to 2
 or 3 (with only 1 test giving the OS reliably in most cases).
 
 WWW: http://www.gomor.org/sinfp
+Author: GomoR <netpkt@gomor.org>

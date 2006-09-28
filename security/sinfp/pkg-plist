@@ -1,33 +1,6 @@
 bin/sinfp.db
 bin/sinfp.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/gomor/.packlist
-%%SITE_PERL%%/Net/Packet.pm
-%%SITE_PERL%%/Net/Packet/ARP.pm
-%%SITE_PERL%%/Net/Packet/Consts.pm
-%%SITE_PERL%%/Net/Packet/Desc.pm
-%%SITE_PERL%%/Net/Packet/DescL2.pm
-%%SITE_PERL%%/Net/Packet/DescL3.pm
-%%SITE_PERL%%/Net/Packet/DescL4.pm
-%%SITE_PERL%%/Net/Packet/Dump.pm
-%%SITE_PERL%%/Net/Packet/ETH.pm
-%%SITE_PERL%%/Net/Packet/Env.pm
-%%SITE_PERL%%/Net/Packet/Frame.pm
-%%SITE_PERL%%/Net/Packet/ICMPv4.pm
-%%SITE_PERL%%/Net/Packet/IPv4.pm
-%%SITE_PERL%%/Net/Packet/IPv6.pm
-%%SITE_PERL%%/Net/Packet/Layer.pm
-%%SITE_PERL%%/Net/Packet/Layer2.pm
-%%SITE_PERL%%/Net/Packet/Layer3.pm
-%%SITE_PERL%%/Net/Packet/Layer4.pm
-%%SITE_PERL%%/Net/Packet/Layer7.pm
-%%SITE_PERL%%/Net/Packet/NULL.pm
-%%SITE_PERL%%/Net/Packet/RAW.pm
-%%SITE_PERL%%/Net/Packet/SLL.pm
-%%SITE_PERL%%/Net/Packet/TCP.pm
-%%SITE_PERL%%/Net/Packet/Target.pm
-%%SITE_PERL%%/Net/Packet/UDP.pm
-%%SITE_PERL%%/Net/Packet/Utils.pm
-%%SITE_PERL%%/Net/Packet/VLAN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SinFP/.packlist
 %%SITE_PERL%%/Net/SinFP.pm
 %%SITE_PERL%%/Net/SinFP/Consts.pm
 %%SITE_PERL%%/Net/SinFP/DB.pm
@@ -50,6 +23,6 @@ bin/sinfp.pl
 %%SITE_PERL%%/Net/SinFP/SinFP6.pm
 @dirrmtry %%SITE_PERL%%/Net/SinFP/DB
 @dirrmtry %%SITE_PERL%%/Net/SinFP
-@dirrmtry %%SITE_PERL%%/Net/Packet
 @dirrmtry %%SITE_PERL%%/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/gomor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SinFP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
