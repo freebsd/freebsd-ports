@@ -28,7 +28,7 @@ OPTIONS=	PERL "Enable perl support" on \
 		SOCKS "Enable socks proxy support" off \
 		IPV6 "Enable IPv6" on \
 		BOT "Enable bot" off \
-		THEMES "Enable Themes"
+		THEMES "Enable Themes" off
 # USE_OPENSSL must be defined before bsd.port.pre.mk so use old schema
 # for WITH_SSL option
 
