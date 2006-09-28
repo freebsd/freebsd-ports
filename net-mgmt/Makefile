@@ -82,6 +82,7 @@
     SUBDIR += libsmi
     SUBDIR += mbrowse
     SUBDIR += mrtg
+    SUBDIR += mtrace
     SUBDIR += nagcon
     SUBDIR += nagios
     SUBDIR += nagios-plugins

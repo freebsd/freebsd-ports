@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Sep 28 22:57:58 2006
++++ Makefile	Thu Sep 28 22:58:46 2006
+@@ -9,6 +9,7 @@
+ #MCAST_INCLUDE=	-I/sys
+ #
+ CFLAGS=		-O ${MCAST_INCLUDE} 	## SunOS, OSF1, FreeBSD, IRIX
++CFLAGS+=	-O2 -fno-strict-aliasing -Dlog=logit
+ #CFLAGS=		-O ${MCAST_INCLUDE} -DRAW_OUTPUT_IS_RAW ## OpenBSD
+ #CFLAGS=		-O ${MCAST_INCLUDE} -D__BSD_SOURCE -DRAW_OUTPUT_IS_RAW -DRAW_INPUT_IS_RAW	## Linux
+ #CFLAGS=		-O ${MCAST_INCLUDE} -DSYSV -DSUNOS5	## Solaris 2.x
