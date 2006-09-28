@@ -42,6 +42,7 @@
     SUBDIR += em
     SUBDIR += emacs
     SUBDIR += emacs-devel
+    SUBDIR += emacs.app
     SUBDIR += emacs19
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
