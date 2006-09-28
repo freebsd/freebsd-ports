@@ -130,6 +130,7 @@
     SUBDIR += p0f
     SUBDIR += p5-Altoids
     SUBDIR += p5-Cflow
+    SUBDIR += p5-Cisco-Reconfig
     SUBDIR += p5-Mon
     SUBDIR += p5-NSNMP
     SUBDIR += p5-Nagios-Plugin
