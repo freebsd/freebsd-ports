@@ -7,6 +7,7 @@
 
 PORTNAME=	themes
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.eyelook.org/themes/ \
 		http://bsd1.csme.ru/myports/${DIST_SUBDIR}/ \
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.eyelook.org/themes/ \
 		http://bsd3.csme.ru/myports/${DIST_SUBDIR}/
 PKGNAMEPREFIX=	eyeOS-
 DISTFILES=	${EYETHEMES:S/$/.zip/}
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	A themes collection for eyeOS
@@ -37,6 +38,7 @@ OPTIONS+=	Mini_THEME "with mall icons based on Nuvola icon set" On
 OPTIONS+=	NuoveXT_THEME "based on 'NuoveXT' Open Source icons" On
 OPTIONS+=	Nuvola_THEME "inspired in the great icons Nuvola" On
 OPTIONS+=	WaterSide_THEME "inspired in countryside of Saskatchewan" On
+OPTIONS+=	fromX_THEME "based on Tango Icons" On
 
 .include <bsd.port.pre.mk>
 
@@ -53,11 +55,28 @@ PLIST_SUB+=	D${theme:U}="@comment "
 
 PLIST_SUB+=	EYEDIR=${EYEDIR:S,^${PREFIX}/,,}
 
+post-extract:
+	@${FIND} ${WRKSRC} -name \*~ -delete
+
 do-install:
 	${CP} -Rp ${EYETHEMES:S,^,${WRKDIR}/,} ${THEMESDIR}/
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${THEMESDIR}
 	${CHMOD} -R go-w ${THEMESDIR}
 	${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} %D/${THEMESDIR:S,^${PREFIX}/,,} >> ${TMPPLIST}
 	${ECHO_CMD} @exec ${CHMOD} -R go-w %D/${THEMESDIR:S,^${PREFIX}/,,} >> ${TMPPLIST}
+
+# Maintainer section
+create-plist: build
+	: > ${PLIST}
+.for theme in ${OPTIONS:M*_THEME:S/_THEME//:O}
+	${FIND} -s ${WRKSRC}/${theme} -type f -or -type l | \
+		${SED} -e 's#^${WRKSRC}/${theme}#%%${theme:U}%%#' >> ${PLIST}
+.endfor
+.for theme in ${OPTIONS:M*_THEME:S/_THEME//:O}
+	${FIND} -ds ${WRKSRC}/${theme} -type d | \
+		${SED} -e 's#^${WRKSRC}/${theme}#%%D${theme:U}%%#' >> ${PLIST}
+.endfor
+	${ECHO_CMD} @dirrmtry %%EYEDIR%%/system/themes >> ${PLIST}
+	${ECHO_CMD} @dirrmtry %%EYEDIR%%/system >> ${PLIST}
 
 .include <bsd.port.post.mk>
