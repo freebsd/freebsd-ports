@@ -151,6 +151,7 @@ include/php/main/safe_mode.h
 include/php/main/snprintf.h
 include/php/main/spprintf.h
 %%SUHOSIN%%include/php/main/suhosin_globals.h
+%%SUHOSIN%%include/php/main/suhosin_logo.h
 %%SUHOSIN%%include/php/main/suhosin_patch.h
 include/php/main/win95nt.h
 include/php/regex/cclass.h
