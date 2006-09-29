@@ -1,0 +1,12 @@
+A standalone program for mapping and aligning cDNA sequences to a
+genome. The program maps and aligns a single sequence with minimal
+startup time and memory requirements, and provides fast batch
+processing of large sequence sets. The program generates accurate
+gene structures, even in the presence of substantial polymorphisms
+and sequence errors, without using probabilistic splice site models.
+Methodology underlying the program includes a minimal sampling
+strategy for genomic mapping, oligomer chaining for approximate
+alignment, sandwich DP for splice site detection, and microexon
+identification with statistical significance testing.
+
+WWW: http://www.gene.com/share/gmap

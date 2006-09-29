@@ -30,6 +30,7 @@
     SUBDIR += garlic
     SUBDIR += genpak
     SUBDIR += gff2ps
+    SUBDIR += gmap
     SUBDIR += gperiodic
     SUBDIR += grappa
     SUBDIR += hmmer
