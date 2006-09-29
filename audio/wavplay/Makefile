@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	A wav player and recorder
 
-ONLY_FOR_ARCHS=	i386
-
 MAN1=		wavplay.1
 
 PLIST_FILES=	bin/wavplay bin/wavrec
