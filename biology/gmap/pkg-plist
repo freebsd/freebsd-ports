@@ -1,0 +1,12 @@
+bin/gmap
+bin/get-genome
+bin/gmapindex
+bin/iit_store
+bin/iit_get
+bin/iit_dump
+bin/gmap_compress
+bin/gmap_uncompress
+bin/gmap_process
+bin/gmap_setup
+bin/md_coords
+bin/fa_coords
