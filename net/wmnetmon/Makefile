@@ -10,7 +10,7 @@ PORTVERSION=	0.2p5
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.linuks.mine.nu/dockapps/
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A host availability monitor intended for the WindowMaker dock
 
 USE_X_PREFIX=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyogg-${PORTVERSION}
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Object-oriented Python bindings for the ogg library
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Streaming server for MP3, Ogg Vorbis and other streamable audio files
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \

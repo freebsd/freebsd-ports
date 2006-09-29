@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.ibiblio.org/pub/linux/apps/ham/
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A openmotif X psk31 client
 
 USE_XPM=	yes

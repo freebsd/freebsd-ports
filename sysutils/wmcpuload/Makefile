@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	An "lcd" dockapp for windowmaker, which displays the current cpuload
 
 USE_BZIP2=	yes

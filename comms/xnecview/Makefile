@@ -10,7 +10,7 @@ CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A X viewer of nec2c data
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png

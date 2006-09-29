@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	drm
 DISTNAME=	drm-${PORTVERSION}
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Digital Radio Mondiale (DRM) software receiver
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \

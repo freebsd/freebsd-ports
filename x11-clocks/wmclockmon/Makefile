@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A digital clock dockapp with a similar look to wmcpuload
 
 USE_X_PREFIX=	yes
