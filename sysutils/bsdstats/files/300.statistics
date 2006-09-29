@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.25 2006-09-29 02:24:55 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.26 2006-09-29 18:58:20 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -49,7 +49,6 @@ send_devices () {
 	      query_string=$query_string`echo \&dev[]=$DRIVER:$DEV:$CLASS`
 	    done
 
-            sleep `random`
 	    do_fetch report_devices.php?token=$TOKEN\&key=$KEY$query_string
 	    ;;
 	* )
@@ -170,8 +169,8 @@ case "$monthly_statistics_enable" in
       ARCH=`/usr/bin/uname -m`
       OS=`/usr/bin/uname -s`
       get_id_token
-      do_fetch enable_token.php?key=$TOKEN\&token=$KEY
       sleep `random`
+      do_fetch enable_token.php?key=$TOKEN\&token=$KEY
       do_fetch report_system.php?token=$TOKEN\&key=$KEY\&rel=$REL\&arch=$ARCH\&opsys=$OS
       echo "Posting monthly OS statistics to $checkin_server"
       case "$monthly_statistics_report_devices" in
@@ -182,7 +181,6 @@ case "$monthly_statistics_enable" in
               VEN=$( echo $line | cut -d ' ' -f 1 )
               DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
               count=$( sysctl -n hw.ncpu )
-              sleep `random`
               do_fetch report_cpu.php?token=$TOKEN\&key=$KEY\&cpus=$count\&vendor=$VEN\&cpu_type=$DEV
               echo "Posting monthly CPU statistics to $checkin_server"
              ;;
