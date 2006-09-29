@@ -8,7 +8,7 @@
 PORTNAME=	mailrep
 PORTVERSION=	1.1
 CATEGORIES=	mail sysutils
-MASTER_SITES=	http://cs.bon.matrix.com.br/araujo/pub/mailrep/
+MASTER_SITES=	http://server3.bon.matrix.com.br/araujo/pub/mailrep/
 
 MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Program for reporting mail log information
