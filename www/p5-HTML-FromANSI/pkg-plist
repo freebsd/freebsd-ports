@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromANSI/.packlist
+%%SITE_PERL%%/HTML/FromANSI.pm
+bin/ansi2html
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromANSI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
