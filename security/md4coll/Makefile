@@ -16,8 +16,6 @@ EXTRACT_ONLY=
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Fast MD4 collision generator
 
-ONLY_FOR_ARCHS=	i386
-
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
