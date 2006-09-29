@@ -21,8 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-ONLY_FOR_ARCHS=	i386 alpha
-
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:259 libtool:15
 
