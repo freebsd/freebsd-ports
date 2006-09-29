@@ -17,6 +17,13 @@ bin/digitizer
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/commandlineoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/contextmenukonqueror.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/contextmenuwindows.html
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/dateconvert.css
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/dateconvert.html
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/dateconvert.jpg
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/dateconvert.js
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/dateformats.css
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/dateformats.html
+%%PORTDOCS%%%%DOCSDIR%%/usermanual/datefromstring.js
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/dialogs.html
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/discretize_bad_color_after.png
 %%PORTDOCS%%%%DOCSDIR%%/usermanual/discretize_bad_color_before.png
