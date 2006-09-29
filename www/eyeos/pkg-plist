@@ -499,7 +499,6 @@
 %%EYEDIR%%/desktop.php
 %%EYEDIR%%/etc/index.html
 %%EYEDIR%%/index.php
-%%EYEDIR%%/known-bugs.txt
 %%EYEDIR%%/login/NOTvalidate.txt
 %%EYEDIR%%/login/back.png
 %%EYEDIR%%/login/block_account.png
