@@ -16,7 +16,7 @@ COMMENT=	A client/server based TV capture/display program
 USE_XLIB=	yes
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-ONLY_FOR_ARCHS=	alpha i386 ia64
+NOT_FOR_ARCHS=	sparc64
 
 .include <bsd.port.pre.mk>
 
