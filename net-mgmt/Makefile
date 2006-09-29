@@ -135,6 +135,7 @@
     SUBDIR += p5-Mon
     SUBDIR += p5-NSNMP
     SUBDIR += p5-Nagios-Plugin
+    SUBDIR += p5-Net-ACL
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-IP
     SUBDIR += p5-Net-IP-Match-Regexp

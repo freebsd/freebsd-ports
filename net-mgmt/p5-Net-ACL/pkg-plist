@@ -1,0 +1,33 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ACL/.packlist
+%%SITE_PERL%%/Net/ACL.pm
+%%SITE_PERL%%/Net/ACL/Bootstrap.pm
+%%SITE_PERL%%/Net/ACL/File.pm
+%%SITE_PERL%%/Net/ACL/File/ASPath.pm
+%%SITE_PERL%%/Net/ACL/File/Community.pm
+%%SITE_PERL%%/Net/ACL/File/IPAccess.pm
+%%SITE_PERL%%/Net/ACL/File/IPAccessExt.pm
+%%SITE_PERL%%/Net/ACL/File/Prefix.pm
+%%SITE_PERL%%/Net/ACL/File/RouteMap.pm
+%%SITE_PERL%%/Net/ACL/File/Standard.pm
+%%SITE_PERL%%/Net/ACL/IPAccessExtRule.pm
+%%SITE_PERL%%/Net/ACL/Match.pm
+%%SITE_PERL%%/Net/ACL/Match/IP.pm
+%%SITE_PERL%%/Net/ACL/Match/List.pm
+%%SITE_PERL%%/Net/ACL/Match/Member.pm
+%%SITE_PERL%%/Net/ACL/Match/Prefix.pm
+%%SITE_PERL%%/Net/ACL/Match/Regexp.pm
+%%SITE_PERL%%/Net/ACL/Match/Scalar.pm
+%%SITE_PERL%%/Net/ACL/RouteMapRule.pm
+%%SITE_PERL%%/Net/ACL/Rule.pm
+%%SITE_PERL%%/Net/ACL/Set.pm
+%%SITE_PERL%%/Net/ACL/Set/Add.pm
+%%SITE_PERL%%/Net/ACL/Set/Scalar.pm
+%%SITE_PERL%%/Net/ACL/Set/Union.pm
+@dirrmtry %%SITE_PERL%%/Net/ACL/Set
+@dirrmtry %%SITE_PERL%%/Net/ACL/Match
+@dirrmtry %%SITE_PERL%%/Net/ACL/File
+@dirrmtry %%SITE_PERL%%/Net/ACL
+@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ACL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
