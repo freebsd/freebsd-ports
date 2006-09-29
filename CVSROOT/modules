@@ -3368,6 +3368,7 @@ gmail-notify	ports/mail/gmail-notify
 gmake		ports/devel/gmake
 gman		ports/misc/gman
 gmanedit	ports/editors/gmanedit
+gmap		ports/biology/gmap
 gmat		ports/textproc/gmat
 gmcal		ports/deskutils/gmcal
 gmdns		ports/net/gmdns
