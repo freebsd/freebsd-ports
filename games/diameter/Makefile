@@ -7,6 +7,7 @@
 
 PORTNAME=	diameter
 DISTVERSION=	0.3.5-r1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gamediameter
@@ -15,7 +16,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}src
 MAINTAINER=	amdmi3@mail.ru
 COMMENT=	Arcade-style game with elements of economy and adventure
 
-LIB_DEPENDS=	guichan.0:${PORTSDIR}/devel/guichan
+BUILD_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan
+RUN_DEPENDS=	guichan>=0.5.0:${PORTSDIR}/devel/guichan
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
