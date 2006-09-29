@@ -181,6 +181,7 @@ include/php/main/streams/php_stream_transport.h
 include/php/main/streams/php_stream_userspace.h
 include/php/main/streams/php_stream_plain_wrapper.h
 %%SUHOSIN%%include/php/main/suhosin_globals.h
+%%SUHOSIN%%include/php/main/suhosin_logo.h
 %%SUHOSIN%%include/php/main/suhosin_patch.h
 include/php/main/win95nt.h
 include/php/regex/cclass.h
