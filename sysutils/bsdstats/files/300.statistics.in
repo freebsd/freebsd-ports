@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.24 2006-09-28 18:21:51 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.25 2006-09-29 02:24:55 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -22,6 +22,7 @@ fi
 oldmask=$(umask)
 umask 066
 
+version="4.0"
 checkin_server=${monthly_statistics_checkin_server:-"bsdstats.org"}
 id_token_file='/var/db/bsdstats'
 
@@ -48,6 +49,7 @@ send_devices () {
 	      query_string=$query_string`echo \&dev[]=$DRIVER:$DEV:$CLASS`
 	    done
 
+            sleep `random`
 	    do_fetch report_devices.php?token=$TOKEN\&key=$KEY$query_string
 	    ;;
 	* )
@@ -56,15 +58,25 @@ send_devices () {
     esac
 }
 
+
 get_id_token () {
+    if [ -f $id_token_file ]
+    then
+      if [ `cat /var/db/bsdstats | wc -l` -lt 3 ] 
+      then
+        rm $id_token_file
+      fi
+    fi
+
     if [ ! -f $id_token_file -o ! -s $id_token_file ] ;
     then
-       IDTOKEN=$(uri_escape $( openssl rand -base64 16 ) )
+       IDTOKEN=$(uri_escape $( openssl rand -base64 32 ) )
        
        idf=$( mktemp "$id_token_file.XXXXXX" )  && \
        chown root:wheel $idf          && \
        chmod 600 $idf
 
+       sleep `random`
        do_fetch getid.php?key=$IDTOKEN | {
           local IFS
           IFS='=
@@ -83,6 +95,7 @@ get_id_token () {
                  ;;
 		 esac
 	   done
+           echo "VERSION=$version"
        } > $idf                                  && \
 
        mv $idf $id_token_file
@@ -131,7 +144,6 @@ uri_escape () {
 
 do_fetch () {
     url="http://$checkin_server/scripts/$1"
-    sleep `random`
     case $(uname) in
 	FreeBSD )	
 		/usr/bin/fetch -q -o - "$url"
@@ -158,6 +170,8 @@ case "$monthly_statistics_enable" in
       ARCH=`/usr/bin/uname -m`
       OS=`/usr/bin/uname -s`
       get_id_token
+      do_fetch enable_token.php?key=$TOKEN\&token=$KEY
+      sleep `random`
       do_fetch report_system.php?token=$TOKEN\&key=$KEY\&rel=$REL\&arch=$ARCH\&opsys=$OS
       echo "Posting monthly OS statistics to $checkin_server"
       case "$monthly_statistics_report_devices" in
@@ -168,6 +182,7 @@ case "$monthly_statistics_enable" in
               VEN=$( echo $line | cut -d ' ' -f 1 )
               DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
               count=$( sysctl -n hw.ncpu )
+              sleep `random`
               do_fetch report_cpu.php?token=$TOKEN\&key=$KEY\&cpus=$count\&vendor=$VEN\&cpu_type=$DEV
               echo "Posting monthly CPU statistics to $checkin_server"
              ;;
@@ -176,6 +191,7 @@ case "$monthly_statistics_enable" in
              echo '    set monthly_statistics_report_devices="YES" in $periodic_conf'
              ;;
       esac
+      do_fetch disable_token.php?key=$TOKEN\&token=$KEY
       ;;
     *) 
       echo "Posting monthly OS statistics disabled"
