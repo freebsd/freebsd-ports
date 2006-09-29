@@ -16,17 +16,14 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOV
 		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
-#DISTFILES+=	OOo_${OOOVERSION}_src.tar.gz
-DISTFILES+=	OOo_2.0.4rc3_src.tar.gz
-DISTFILES+=	unowinreg.dll:unowinreg
+DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
 .if defined(WITH_GPC)
 DISTFILES+=     gpc231.tar.Z:gpc
 .endif
 .if defined(WITH_GNUGCJ)
 DISTFILES+=     ${ANT_DISTFILE}:antbin
 .endif
-#EXTRACT_ONLY=	OOo_${OOOVERSION}_src.tar.gz
-EXTRACT_ONLY=	OOo_2.0.4rc3_src.tar.gz
+EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
@@ -76,6 +73,7 @@ IGNORE=		install lang/perl5.8 then try again
 CODELINE=		680
 RELEASE_NR=		2.0
 OOOTAG?=		OOD680_m5
+OOOSRC?=		OOo_2.0.4rc3_src.tar.gz
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 DIST_SUBDIR=		openoffice.org2.0
