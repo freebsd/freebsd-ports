@@ -1,0 +1,7 @@
+sbin/pimdd
+etc/pimdd.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/pimd-dense.html
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

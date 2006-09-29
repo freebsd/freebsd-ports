@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Sep 29 11:53:31 2006
++++ Makefile	Fri Sep 29 11:53:50 2006
+@@ -63,7 +63,7 @@
+ #CONFIGCONFIGCONFIG
+ ### Compilation flags for different platforms. Uncomment only one of them
+ ## FreeBSD
+-CFLAGS= -Wall -g	-Iinclude/freebsd ${MCAST_INCLUDE} ${SNMPDEF} ${RSRRDEF} ${MISCDEFS} -DFreeBSD -DPIM
++CFLAGS= -Wall -g	${MCAST_INCLUDE} ${SNMPDEF} ${RSRRDEF} ${MISCDEFS} -DFreeBSD -DPIM -Dlog=logit
+ 
+ ## NetBSD   -DNetBSD is done by OS
+ #CFLAGS= -Wall -g	-Iinclude/netbsd ${MCAST_INCLUDE} ${SNMPDEF} ${RSRRDEF} ${MISCDEFS} -DPIM
