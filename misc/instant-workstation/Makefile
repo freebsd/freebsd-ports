@@ -24,7 +24,7 @@ RUN_DEPENDS=	acroread7:${PORTSDIR}/print/acroread7 \
 		bash:${PORTSDIR}/shells/bash2 \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		dos2unix:${PORTSDIR}/converters/unix2dos \
-		emacs:${PORTSDIR}/editors/emacs21 \
+		emacs:${PORTSDIR}/editors/emacs \
 		fetchmail:${PORTSDIR}/mail/fetchmail \
 		grip:${PORTSDIR}/audio/grip \
 		gimp:${PORTSDIR}/graphics/gimp1 \
