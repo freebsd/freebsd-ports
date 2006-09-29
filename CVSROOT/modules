@@ -11151,6 +11151,7 @@ pike76		ports/lang/pike76
 pilot-link	ports/palm/pilot-link
 pilot_makedoc	ports/palm/pilot_makedoc
 pilrc		ports/palm/pilrc
+pimdd		ports/net/pimdd
 pimp3		ports/audio/pimp3
 pinball		ports/games/pinball
 pine-pgp-filters	ports/mail/pine-pgp-filters
