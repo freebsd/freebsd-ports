@@ -8,9 +8,8 @@
 PORTNAME=	ncftpd
 PORTVERSION=	2.8.3
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/ \
-		ftp://ftp.nl.uu.net/pub/unix/ftp/ncftpd/${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.nl.uu.net/pub/unix/ftp/ncftpd/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${ARCH}-export
 
