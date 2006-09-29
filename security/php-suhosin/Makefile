@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	suhosin
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.hardened-php.net/suhosin/_media/
 PKGNAMEPREFIX=	php-
-DISTNAME=	${PORTNAME}-200609091245
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PHP extension that implements high-level protections
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
