@@ -12,7 +12,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	http://rdflib.net/2006/02/27/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A Python library for RDF manipulation
 
 USE_PYTHON=	2.2+

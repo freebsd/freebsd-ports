@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.antisip.com/download/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
 
-MAINTAINER=	xride@x12.dk
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
