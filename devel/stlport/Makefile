@@ -10,7 +10,8 @@ PORTNAME=	stlport
 PORTVERSION=	4.6.2
 PORTREVISION?=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.stlport.com/archive/
+MASTER_SITES=	http://www.stlport.com/archive/ \
+		SF
 PKGNAMESUFFIX=	-${COMPILER}
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
