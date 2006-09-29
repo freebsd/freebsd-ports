@@ -7,6 +7,7 @@
 
 PORTNAME=	mldonkey
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
@@ -57,7 +58,7 @@ CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
 CONFLICTS+=	mldonkey-core-[0.9]* mldonkey-core-stable-[0.9]* \
 		mldonkey-devel-[0-9]*
-PKGNAMESUFFIX=	-core-devel
+PKGNAMESUFFIX=	-core
 .else
 PLIST_SUB+=	GUI=""
 CONFLICTS+=	mldonkey-gui-[0.9]*
@@ -73,7 +74,7 @@ USE_GNOME=	gtk20
 
 MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 .if defined(WITHOUT_CORE)
-PKGNAMESUFFIX=	-gui-devel
+PKGNAMESUFFIX=	-gui
 PLIST_SUB+=	CORE="@comment " GUICORE="@comment "
 .else
 PLIST_SUB+=	CORE=""	GUICORE=""
