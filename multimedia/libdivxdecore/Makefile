@@ -14,7 +14,6 @@ MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	OpenDivX decoding engine from Project Mayo
 
-ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
