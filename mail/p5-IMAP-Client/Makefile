@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IMAP-Client
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IMAP
@@ -27,8 +27,6 @@ MAN3=		IMAP::Client.3
 
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
-post-patch:
-		${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -rf
 .endif
 
 .if ${PERL_LEVEL} < 500703
