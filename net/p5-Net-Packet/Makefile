@@ -27,7 +27,8 @@ BUILD_DEPENDS=	p5-Bit-Vector>=6.4:${PORTSDIR}/math/p5-Bit-Vector \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=		i386 amd64 alpha
+ONLY_FOR_ARCHS_REASON=	Big endian architectures not supported yet
 
 MAN3=		Net::Packet.3 \
 		Net::Packet::ARP.3 \
