@@ -1,0 +1,21 @@
+Thread::Apartment provides an apartment threading wrapper
+for Perl classes. "Apartment threading" is a method for
+isolating an object (or object hierarchy) in its own thread,
+and providing external interfaces via lightweight client
+proxy objects. This approach is especially valuable in the
+Perl threads environment, which doesn't provide a direct
+means of passing complex, nested structure objects between
+threads, and for non-threadsafe legacy object architectures,
+e.g., Perl/Tk.
+
+By using lightweight client proxy objects that implement the
+Thread::Queue::Queueable interface, with Thread::Queue::Duplex
+objects as the communication channel between client proxies
+and apartment threads (or between threads in general), a more
+thread-friendly OO environment is provided, ala Java, i.e.,
+the ability to pass arbitrary objects between arbitrary threads.
+
+Thread::Apartment is a fundamental component of the PSiCHE
+framework (http://www.presicient.com/psiche).
+
+WWW:	http://search.cpan.org/dist/Thread-Apartment/

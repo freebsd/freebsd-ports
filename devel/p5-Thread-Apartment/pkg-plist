@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Thread/Apartment/Server.pm
+%%SITE_PERL%%/Thread/Apartment/MuxServer.pm
+%%SITE_PERL%%/Thread/Apartment/EventServer.pm
+%%SITE_PERL%%/Thread/Apartment/Container.pm
+%%SITE_PERL%%/Thread/Apartment/Common.pm
+%%SITE_PERL%%/Thread/Apartment/Closure.pm
+%%SITE_PERL%%/Thread/Apartment/Client.pm
+%%SITE_PERL%%/Thread/Apartment.pod
+%%SITE_PERL%%/Thread/Apartment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Apartment/.packlist
+@dirrmtry %%SITE_PERL%%/Thread/Apartment
+@dirrmtry %%SITE_PERL%%/Thread
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread/Apartment
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Thread
