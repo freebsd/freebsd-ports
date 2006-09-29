@@ -10,6 +10,7 @@ include/guichan/focushandler.hpp
 include/guichan/font.hpp
 include/guichan/graphics.hpp
 include/guichan/gui.hpp
+include/guichan/glut.hpp
 include/guichan/image.hpp
 include/guichan/imagefont.hpp
 include/guichan/imageloader.hpp
@@ -21,15 +22,9 @@ include/guichan/listmodel.hpp
 include/guichan/mouseinput.hpp
 include/guichan/mouselistener.hpp
 include/guichan/opengl.hpp
-include/guichan/opengl/openglgraphics.hpp
-include/guichan/opengl/openglimageloader.hpp
 include/guichan/platform.hpp
 include/guichan/rectangle.hpp
 include/guichan/sdl.hpp
-include/guichan/sdl/sdlgraphics.hpp
-include/guichan/sdl/sdlimageloader.hpp
-include/guichan/sdl/sdlinput.hpp
-include/guichan/sdl/sdlpixel.hpp
 include/guichan/widget.hpp
 include/guichan/widgets/button.hpp
 include/guichan/widgets/checkbox.hpp
@@ -45,19 +40,42 @@ include/guichan/widgets/textbox.hpp
 include/guichan/widgets/textfield.hpp
 include/guichan/widgets/window.hpp
 include/guichan/x.hpp
+%%ALLEGRO%%include/guichan/allegro/allegrographics.hpp
+%%ALLEGRO%%include/guichan/allegro/allegroimage.hpp
+%%ALLEGRO%%include/guichan/allegro/allegroimageloader.hpp
+%%ALLEGRO%%include/guichan/allegro/allegroinput.hpp
+%%GLUT%%include/guichan/glut/glutinput.hpp
+%%GL%%include/guichan/opengl/openglgraphics.hpp
+%%GL%%include/guichan/opengl/openglimage.hpp
+%%GL%%include/guichan/opengl/openglsdlimageloader.hpp
+%%SDL%%include/guichan/sdl/sdlgraphics.hpp
+%%SDL%%include/guichan/sdl/sdlimage.hpp
+%%SDL%%include/guichan/sdl/sdlimageloader.hpp
+%%SDL%%include/guichan/sdl/sdlinput.hpp
+%%SDL%%include/guichan/sdl/sdlpixel.hpp
 lib/libguichan.a
 lib/libguichan.la
-lib/libguichan.so
 lib/libguichan.so.0
-lib/libguichan_opengl.a
-lib/libguichan_opengl.la
-lib/libguichan_opengl.so
-lib/libguichan_opengl.so.0
-lib/libguichan_sdl.a
-lib/libguichan_sdl.la
-lib/libguichan_sdl.so
-lib/libguichan_sdl.so.0
+lib/libguichan.so
+%%ALLEGRO%%lib/libguichan_allegro.a
+%%ALLEGRO%%lib/libguichan_allegro.la
+%%ALLEGRO%%lib/libguichan_allegro.so
+%%ALLEGRO%%lib/libguichan_allegro.so.0
+%%GLUT%%lib/libguichan_glut.a
+%%GLUT%%lib/libguichan_glut.la
+%%GLUT%%lib/libguichan_glut.so
+%%GLUT%%lib/libguichan_glut.so.0
+%%GL%%lib/libguichan_opengl.a
+%%GL%%lib/libguichan_opengl.la
+%%GL%%lib/libguichan_opengl.so
+%%GL%%lib/libguichan_opengl.so.0
+%%SDL%%lib/libguichan_sdl.a
+%%SDL%%lib/libguichan_sdl.la
+%%SDL%%lib/libguichan_sdl.so
+%%SDL%%lib/libguichan_sdl.so.0
+%%ALLEGRO%%@dirrm include/guichan/allegro
+%%GLUT%%@dirrm include/guichan/glut
+%%GL%%@dirrm include/guichan/opengl
+%%SDL%%@dirrm include/guichan/sdl
 @dirrm include/guichan/widgets
-@dirrm include/guichan/sdl
-@dirrm include/guichan/opengl
 @dirrm include/guichan
