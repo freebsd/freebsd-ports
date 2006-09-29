@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	guichan
-PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTVERSION=	0.5.0
 CATEGORIES=	devel games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,22 +15,55 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A small, efficient C++ GUI library designed for games
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USE_SDL=	sdl image
 USE_GMAKE=	yes
 USE_GCC=	3.2+
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--disable-allegro
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%LOCALBASE%%/lib
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL \
-		-I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
-		${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%SDL_CONFIG_ONLY%%|${SDL_CONFIG:S/${PREFIX}\/bin\///}|g" \
-		-e "s|%%SDL_CONFIG%%|${SDL_CONFIG}|g" ${WRKSRC}/configure
+OPTIONS=	SDL	"Enable SDL support" On \
+		ALLEGRO	"Enable Allegro support" Off \
+		GL	"Enable OpenGL support" On \
+		GLUT	"Enable Glut support" Off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SDL)
+USE_SDL+=	sdl image
+CONFIGURE_ARGS+=--enable-sdl --enable-sdlimage
+PLIST_SUB+=	SDL=""
+.else
+CONFIGURE_ARGS+=--disable-sdl --disable-sdlimage
+PLIST_SUB+=	SDL="@comment "
+.endif
+
+.if defined(WITH_ALLEGRO)
+LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
+CONFIGURE_ARGS+=--enable-allegro
+PLIST_SUB+=	ALLEGRO=""
+.else
+CONFIGURE_ARGS+=--disable-allegro
+PLIST_SUB+=	ALLEGRO="@comment "
+.endif
+
+.if !defined(WITHOUT_GL)
+USE_GL=		yes
+CONFIGURE_ARGS+=--enable-opengl
+PLIST_SUB+=	GL=""
+.else
+CONFIGURE_ARGS+=--disable-opengl
+PLIST_SUB+=	GL="@comment "
+.endif
+
+.if defined(WITH_GLUT)
+CONFIGURE_ARGS+=--enable-glut
+LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
+PLIST_SUB+=	GLUT=""
+.else
+CONFIGURE_ARGS+=--disable-glut
+PLIST_SUB+=	GLUT="@comment "
+.endif
+
+.include <bsd.port.post.mk>
