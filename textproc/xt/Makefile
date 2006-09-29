@@ -22,7 +22,6 @@ RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
 USE_JAVA=	YES
 JAVA_VERSION=	1.1+
 NO_BUILD=	YES
-ONLY_FOR_ARCHS=	i386
 
 .if !defined(NOPORTDOCS)
 OTHERDOCS=	copying.txt copyingjc.txt index.html
