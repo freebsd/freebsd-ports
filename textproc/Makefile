@@ -607,7 +607,6 @@
     SUBDIR += p5-XML-LibXML
     SUBDIR += p5-XML-LibXML-Common
     SUBDIR += p5-XML-LibXML-Iterator
-    SUBDIR += p5-XML-LibXML-XPathContext
     SUBDIR += p5-XML-LibXSLT
     SUBDIR += p5-XML-Liberal
     SUBDIR += p5-XML-Literal
