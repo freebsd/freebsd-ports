@@ -1,0 +1,13 @@
+KBackup is a program that lets you back up any directories or files, whereby it
+uses an easy to use directory tree to select the things to back up.
+
+The program was designed to be very simple in its use so that it can be used by
+non-computer experts.
+
+The storage format is the well known TAR format, whereby the data is still 
+stored in compressed format (bzip2 or gzip).
+
+It also includes a german, french, italian, slovak and russian translation for 
+the user interface and an english, french and german handbook.
+
+WWW:	http://www.kde-apps.org/content/show.php?content=44998
