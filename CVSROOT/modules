@@ -2198,6 +2198,7 @@ el-data		ports/games/el-data
 elan		ports/lang/elan
 eldav.el	ports/www/eldav.el
 electric	ports/cad/electric
+electric-ng	ports/cad/electric-ng
 electriceyes	ports/graphics/electriceyes
 electricfence	ports/devel/ElectricFence
 electricsheep	ports/x11/electricsheep
