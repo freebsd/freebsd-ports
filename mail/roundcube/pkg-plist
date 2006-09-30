@@ -29,6 +29,7 @@
 %%RCUBEDIR%%/program/js/common.js
 %%RCUBEDIR%%/program/js/editor.js
 %%RCUBEDIR%%/program/js/googiespell.js
+%%RCUBEDIR%%/program/js/list.js
 %%RCUBEDIR%%/program/js/tiny_mce/blank.htm
 %%RCUBEDIR%%/program/js/tiny_mce/langs/en.js
 %%RCUBEDIR%%/program/js/tiny_mce/langs/readme.txt
@@ -71,6 +72,19 @@
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/readme.txt
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/replace.htm
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/search.htm
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/changelog
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/classes/TinyGoogleSpell.class.php
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/classes/TinyPspell.class.php
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/classes/TinyPspellShell.class.php
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/config.php
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/css/content.css
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/css/spellchecker.css
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/editor_plugin.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/editor_plugin_src.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/images/spellchecker.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/images/wline.gif
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/langs/en.js
+%%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/tinyspell.php
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/cell.htm
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/css/cell.css
 %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/css/row.css
@@ -598,6 +612,11 @@
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/images
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table/css
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/table
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/langs
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/images
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/css
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker/classes
+@dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/spellchecker
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/langs
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/jscripts
 @dirrm %%RCUBEDIR%%/program/js/tiny_mce/plugins/searchreplace/images
