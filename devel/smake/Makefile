@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smake
-PORTVERSION=	1.2.a.36
+PORTVERSION=	1.2.a.38
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/alpha/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
