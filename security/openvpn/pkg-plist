@@ -1,4 +1,5 @@
 sbin/openvpn
+lib/openvpn-auth-pam.so
 lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -8,6 +9,7 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.openvpn-auth-pam
 %%PORTDOCS%%%%DOCSDIR%%/README.openvpn-down-root
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/README
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/build-ca
