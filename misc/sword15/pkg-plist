@@ -1,5 +1,6 @@
 bin/addld
 bin/diatheke
+bin/imp2gbs
 bin/imp2ld
 bin/imp2vs
 bin/installmgr
@@ -11,6 +12,7 @@ bin/mod2zmod
 bin/osis2mod
 bin/vpl2mod
 bin/vs2osisref
+bin/xml2gbs
 etc/sword.conf
 include/sword/Greek2Greek.h
 include/sword/GreekChars.h
@@ -40,6 +42,7 @@ include/sword/gbfrtf.h
 include/sword/gbfstrongs.h
 include/sword/gbfthml.h
 include/sword/gbfwebif.h
+include/sword/gbfwordjs.h
 include/sword/greeklexattribs.h
 include/sword/hebrewmcim.h
 include/sword/hrefcom.h
@@ -57,6 +60,7 @@ include/sword/osisheadings.h
 include/sword/osishtmlhref.h
 include/sword/osislemma.h
 include/sword/osismorph.h
+include/sword/osismorphsegmentation.h
 include/sword/osisosis.h
 include/sword/osisplain.h
 include/sword/osisredletterwords.h
@@ -65,6 +69,7 @@ include/sword/osisscripref.h
 include/sword/osisstrongs.h
 include/sword/osiswebif.h
 include/sword/osiswordjs.h
+include/sword/papyriplain.h
 include/sword/plainfootnotes.h
 include/sword/plainhtml.h
 include/sword/rawcom.h
@@ -109,6 +114,8 @@ include/sword/swtext.h
 include/sword/swunicod.h
 include/sword/swversion.h
 include/sword/sysdata.h
+include/sword/teiplain.h
+include/sword/teirtf.h
 include/sword/thmlfootnotes.h
 include/sword/thmlgbf.h
 include/sword/thmlheadings.h
@@ -144,6 +151,7 @@ include/sword/utf8utf16.h
 include/sword/utilstr.h
 include/sword/utilxml.h
 include/sword/versekey.h
+include/sword/versetreekey.h
 include/sword/zcom.h
 include/sword/zconf.h
 include/sword/zipcomprs.h
@@ -152,7 +160,7 @@ include/sword/zlib.h
 include/sword/zstr.h
 include/sword/ztext.h
 include/sword/zverse.h
-lib/libsword-1.5.8.so
+lib/libsword-1.5.9.so
 lib/libsword.a
 lib/libsword.la
 lib/libsword.so
@@ -160,6 +168,8 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/abbr.conf
 %%DATADIR%%/locales.d/af-utf8.conf
 %%DATADIR%%/locales.d/af.conf
+%%DATADIR%%/locales.d/ar_EG-cp1256.conf
+%%DATADIR%%/locales.d/ar_EG-utf8.conf
 %%DATADIR%%/locales.d/bg_BG-cp1251.conf
 %%DATADIR%%/locales.d/bg_BG-utf8.conf
 %%DATADIR%%/locales.d/cs-utf8.conf
@@ -181,6 +191,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/fi.conf
 %%DATADIR%%/locales.d/fr-utf8.conf
 %%DATADIR%%/locales.d/fr.conf
+%%DATADIR%%/locales.d/he-utf8.conf
 %%DATADIR%%/locales.d/hu-utf8.conf
 %%DATADIR%%/locales.d/hu.conf
 %%DATADIR%%/locales.d/id.conf
@@ -210,13 +221,12 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/sl.conf
 %%DATADIR%%/locales.d/sv-utf8.conf
 %%DATADIR%%/locales.d/sv.conf
+%%DATADIR%%/locales.d/th-utf8.conf
 %%DATADIR%%/locales.d/uk_UA-cp1251.conf
 %%DATADIR%%/locales.d/uk_UA-koi8-u.conf
 %%DATADIR%%/locales.d/uk_UA-utf8.conf
 @dirrm %%DATADIR%%/mods.d
 @dirrm %%DATADIR%%/locales.d
 @dirrm %%DATADIR%%
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm lib/sword
 @dirrm include/sword
