@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Array/.packlist
+%%SITE_PERL%%/Object/Array.pm
+%%SITE_PERL%%/Object/Array/Plugin/Builtins.pm
+%%SITE_PERL%%/Object/Array/Plugin/ListMoreUtils.pm
+@dirrmtry %%SITE_PERL%%/Object/Array/Plugin
+@dirrmtry %%SITE_PERL%%/Object/Array
+@dirrmtry %%SITE_PERL%%/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Array
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
