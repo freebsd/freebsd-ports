@@ -37,6 +37,7 @@
 %%WWWDIR%%/plugins/noCache.js
 %%WWWDIR%%/plugins/noGlobal.js
 %%WWWDIR%%/plugins/noImageFonts.js
+%%WWWDIR%%/plugins/smallFonts.js
 %%WWWDIR%%/plugins/spriteImageFonts.js
 %%WWWDIR%%/plugins/tex2math.js
 %%WWWDIR%%/uncompressed/def.js
