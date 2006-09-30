@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math libraries build with F90 for used in ELMER FEM
 
-BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran
 .ifdef WITH_MPI
 BUILD_DEPENDS+=	${LOCALBASE}/mpich/include/mpif.h:${PORTSDIR}/net/mpich
 .endif
@@ -27,7 +26,6 @@ CONFLICTS+=	scalapack-[0-9]*
 
 USE_GCC=	4.1+
 WITH_FORTRAN=	yes
-FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 
 .ifdef WITH_OPTIMIZED_FLAGS

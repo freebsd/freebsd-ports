@@ -78,6 +78,14 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				  3 and 2. If version is not specified directly then
 #				  sqlite3 is used (if USE_SQLITE= yes).
 # SQLITE_VER		- Detected sqlite version.
+##
+# USE_FIREBIRD	- Add dependency on Firebird library. Valid values are:
+#				  2 and 1. If no version is given by the maintainer (if
+#				  USE_FIREBIRD= yes) and the user did not define
+#				  WITH_FIREBIRD_VER variable, fall back to default "2".
+# WITH_FIREBIRD_VER
+#				- User defined variable to set Firebird version.
+# FIREBIRD_VER		- Detected Firebird version.
 
 .if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	50
@@ -377,5 +385,27 @@ IGNORE=	cannot install: unknown sqlite version: ${_SQLITE_VER}
 .endif
 
 .endif # defined(USE_SQLITE)
+
+.if defined(USE_FIREBIRD)
+
+.if defined(WITH_FIREBIRD_VER)
+USE_FIREBIRD=	${WITH_FIREBIRD_VER}
+.endif
+
+.if ${USE_FIREBIRD:L} == "yes"
+FIREBIRD_VER=	2
+.else
+FIREBIRD_VER=	${USE_FIREBIRD}
+.endif
+
+.if ${FIREBIRD_VER} == "2"
+LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird2-client
+.elif ${FIREBIRD_VER} == "1"
+LIB_DEPENDS+=	fbclient.1:${PORTSDIR}/databases/firebird-client
+.else
+IGNORE=	cannot install: unknown Firebird version: ${FIREBIRD_VER}
+.endif
+
+.endif # defined(USE_FIREBIRD)
 
 .endif # defined(_POSTMKINCLUDED) && !defined(Database_Post_Include)
