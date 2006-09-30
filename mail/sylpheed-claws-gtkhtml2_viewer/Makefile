@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkhtml2_viewer
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -15,8 +15,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	HTML renderer plugin for sylpheed-claws
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	sylpheed-claws>=2.1:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.1:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -31,6 +31,10 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 PLIST_FILES=	lib/sylpheed-claws/plugins/gtkhtml2_viewer.a \
 	lib/sylpheed-claws/plugins/gtkhtml2_viewer.la \
 	lib/sylpheed-claws/plugins/gtkhtml2_viewer.so \
+	share/locale/de/LC_MESSAGES/gtkhtml2_viewer.mo \
+	share/locale/fi/LC_MESSAGES/gtkhtml2_viewer.mo \
+	share/locale/sk/LC_MESSAGES/gtkhtml2_viewer.mo \
+	share/locale/sr/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/es/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/fr/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/pl/LC_MESSAGES/gtkhtml2_viewer.mo \
