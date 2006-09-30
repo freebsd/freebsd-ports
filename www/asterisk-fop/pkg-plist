@@ -1,0 +1,86 @@
+www/op_panel/CHANGES
+www/op_panel/FAQ
+www/op_panel/LICENSE
+www/op_panel/README
+www/op_panel/RECIPES
+www/op_panel/TODO
+www/op_panel/UPGRADE
+www/op_panel/dhtml/comunicator.pl
+www/op_panel/dhtml/comunicator.swf
+www/op_panel/dhtml/css/default.css
+www/op_panel/dhtml/css/operator.css
+www/op_panel/dhtml/images/bottom_left.gif
+www/op_panel/dhtml/images/bottom_mid.gif
+www/op_panel/dhtml/images/bottom_right.gif
+www/op_panel/dhtml/images/bottom_right_resize.gif
+www/op_panel/dhtml/images/bug.png
+www/op_panel/dhtml/images/center_left.gif
+www/op_panel/dhtml/images/center_right.gif
+www/op_panel/dhtml/images/close.gif
+www/op_panel/dhtml/images/email.png
+www/op_panel/dhtml/images/group.png
+www/op_panel/dhtml/images/mail.gif
+www/op_panel/dhtml/images/overlay.png
+www/op_panel/dhtml/images/phone.png
+www/op_panel/dhtml/images/phone_sound.png
+www/op_panel/dhtml/images/resize.gif
+www/op_panel/dhtml/images/sizer.gif
+www/op_panel/dhtml/images/status_online.png
+www/op_panel/dhtml/images/telephone.png
+www/op_panel/dhtml/images/telephone_go.png
+www/op_panel/dhtml/images/top_left.gif
+www/op_panel/dhtml/images/top_mid.gif
+www/op_panel/dhtml/images/top_right.gif
+www/op_panel/dhtml/index.php
+www/op_panel/dhtml/js/base64.js
+www/op_panel/dhtml/js/builder.js
+www/op_panel/dhtml/js/controls.js
+www/op_panel/dhtml/js/dhtmltooltip.js
+www/op_panel/dhtml/js/dragdrop.js
+www/op_panel/dhtml/js/effects.js
+www/op_panel/dhtml/js/operator.js
+www/op_panel/dhtml/js/prototype.js
+www/op_panel/dhtml/js/scriptaculous.js
+www/op_panel/dhtml/js/slider.js
+www/op_panel/dhtml/js/window.js
+www/op_panel/dhtml/variables.php
+www/op_panel/extensions.conf.sample
+www/op_panel/flash/help_de.html
+www/op_panel/flash/help_en.html
+www/op_panel/flash/help_es.html
+www/op_panel/flash/help_fr.html
+www/op_panel/flash/help_it.html
+www/op_panel/flash/help_se.html
+www/op_panel/flash/index-clicktodial.html
+www/op_panel/flash/index-crm.html
+www/op_panel/flash/index-fixed.html
+www/op_panel/flash/index-restrict.html
+www/op_panel/flash/index.html
+www/op_panel/flash/mypage.php
+www/op_panel/flash/operator_panel.swf
+www/op_panel/init/op_panel_debian.sh
+www/op_panel/init/op_panel_redhat.sh
+www/op_panel/init/op_panel_suse.sh
+www/op_panel/ming-source/README
+www/op_panel/ming-source/operator_panel.pl
+www/op_panel/op_astdb.cfg
+www/op_panel/op_buttons.cfg
+www/op_panel/op_lang_ca.cfg
+www/op_panel/op_lang_de.cfg
+www/op_panel/op_lang_en.cfg
+www/op_panel/op_lang_es.cfg
+www/op_panel/op_lang_fr.cfg
+www/op_panel/op_lang_it.cfg
+www/op_panel/op_lang_se.cfg
+www/op_panel/op_server.cfg
+www/op_panel/op_server.pl
+www/op_panel/op_style.cfg
+
+@dirrm www/op_panel/dhtml/css
+@dirrm www/op_panel/dhtml/images
+@dirrm www/op_panel/dhtml/js
+@dirrm www/op_panel/dhtml
+@dirrm www/op_panel/flash
+@dirrm www/op_panel/init
+@dirrm www/op_panel/ming-source
+@dirrm www/op_panel
