@@ -31,6 +31,7 @@ WRKSRC=	${WRKDIR}/connectFive
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile.linux
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/connect.cpp
+	@${REINPLACE_CMD} -e 's|Board::||' ${WRKSRC}/Board.h
 
 do-install:
 	@${MKDIR} ${PREFIX}/bin
