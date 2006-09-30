@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perl
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -15,8 +15,8 @@ DISTNAME=	perl_plugin-${PORTVERSION}
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Perl filtering plugin for sylpheed-claws
 
-BUILD_DEPENDS=	sylpheed-claws>=2.1:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.1:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
