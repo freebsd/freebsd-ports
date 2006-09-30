@@ -1,0 +1,4 @@
+LDAPget is an Asterisk application for data retrieval from LDAP
+directories (e.g. OpenLDAP or ActiveDirectory).
+
+WWW: http://www.mezzo.net/asterisk/app_ldap.html

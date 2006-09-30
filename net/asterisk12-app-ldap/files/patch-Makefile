@@ -1,0 +1,34 @@
+--- Makefile.orig	Sun Jul 30 12:20:19 2006
++++ Makefile	Sun Jul 30 12:29:12 2006
+@@ -10,16 +10,16 @@
+ CONF=ldap.conf
+ 
+ CFLAGS=$(shell ./cflags.sh)
+-LIBS=-llber -lldap
+-RES=$(shell if [ -f /usr/include/asterisk/channel.h ]; then echo "$(NAME).so"; fi)
++LIBS=-llber -lldap -liconv
++RES=$(shell if [ -f /usr/local/include/asterisk/channel.h ]; then echo "$(NAME).so"; fi)
+ 
+ ifeq (${OSARCH},Darwin)
+ SOLINK=-dynamic -bundle -undefined suppress -force_flat_namespace
+ else
+-SOLINK=-shared -Xlinker -x
++SOLINK=-shared -Xlinker -x -L/usr/local/lib
+ endif
+ 
+-MODULES_DIR=/usr/lib/asterisk/modules
++MODULES_DIR=/usr/local/lib/asterisk/modules
+ 
+ %.so : %.o
+ 	$(CC) $(SOLINK) -o $@ $(LIBS) $<
+@@ -30,8 +30,8 @@
+ 	rm -f $(NAME).o $(NAME).so
+ 
+ install: all
+-	if ! [ -f /etc/asterisk/$(CONF) ]; then \
+-		install -m 644 $(CONF).sample /etc/asterisk/$(CONF) ; \
++	if ! [ -f /usr/local/etc/asterisk/$(CONF).sample ]; then \
++		install -m 644 $(CONF).sample /usr/local/etc/asterisk/$(CONF).sample ; \
+ 	fi
+ 	if [ -f $(NAME).so ]; then \
+ 		install -m 755 $(NAME).so $(MODULES_DIR) ; \
