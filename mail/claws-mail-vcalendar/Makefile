@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	1.79.2
+PORTVERSION=	1.89.1
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -17,8 +17,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	vCalendar plugin for sylpheed-claws
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	sylpheed-claws>=2.1:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.1:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
