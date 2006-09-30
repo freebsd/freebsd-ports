@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.80
+PORTVERSION=	4.92
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	adodb
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	martin@matuska.org
 COMMENT=	Database library for PHP
 
-USE_PHP=	yes
+USE_PHP=	pcre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
