@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-s-k
 
-MAINTAINER=	araujobsd@gmail.com
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Anti Spam Killer content filtering
 
 USE_PYTHON=	yes
