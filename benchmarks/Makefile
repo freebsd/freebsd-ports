@@ -27,6 +27,7 @@
     SUBDIR += netpipe
     SUBDIR += nqueens
     SUBDIR += nttcp
+    SUBDIR += p5-Benchmark-Stopwatch
     SUBDIR += pathchirp
     SUBDIR += pathload
     SUBDIR += pathrate
