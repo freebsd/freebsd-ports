@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jsMath
-PORTVERSION=	3.3c
+PORTVERSION=	3.3e
 CATEGORIES=	math www
 MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
