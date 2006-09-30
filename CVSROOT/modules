@@ -11352,6 +11352,7 @@ popfile		ports/mail/popfile
 poppassd	ports/mail/poppassd
 popper		ports/mail/popper
 poppler		ports/graphics/poppler
+poppler-data	ports/graphics/poppler-data
 poppler-gtk	ports/graphics/poppler-gtk
 poppler-qt	ports/graphics/poppler-qt
 poppler-utils	ports/graphics/poppler-utils
