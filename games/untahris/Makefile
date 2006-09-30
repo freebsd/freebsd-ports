@@ -33,7 +33,7 @@ BROKEN=		does not compile on 4.x
 post-patch:
 	@${REINPLACE_CMD} -e 's|verabd.ttf|${DATADIR}/VeraBd.ttf|; \
 		s|graph%d|${DATADIR}/graph%d|' ${WRKSRC}/intface.cpp
-	@${REINPLACE_CMD} -e 's|SDL/||' ${WRKSRC}/net.cpp ${WRKSRC}/untahris.h
+	@${REINPLACE_CMD} -e 's|TPlayground::||' ${WRKSRC}/untahris.h
 
 do-build:
 	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --libs --cflags` \
