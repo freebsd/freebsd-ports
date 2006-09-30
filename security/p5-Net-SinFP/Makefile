@@ -1,19 +1,27 @@
-# New ports collection makefile for:	SinFP
+# New ports collection makefile for:	p5-Net-SinFP
 # Date created:		26 May 2006
 # Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Net-SinFP
-PORTVERSION=	2.02.1
+PORTNAME?=	Net-SinFP
 DISTVERSION=	2.02
-PORTREVISION=	1
 CATEGORIES=	security ipv6 perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	CPAN/Net
+DISTNAME=	Net-SinFP-${DISTVERSION}
+.ifdef DBDATE
+PORTREVISION=	${DBDATE}
+MASTER_SITES+=	http://www.gomor.org/files/:DB CSME:DB
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-${DBDATE}.db:DB
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Full operating system stack fingerprinting suite
+
+.if ${PORTNAME} == "Net-SinFP"
+PKGNAMEPREFIX=	p5-
 
 BUILD_DEPENDS=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
 		p5-DBIx-SQLite-Simple>=0.33:${PORTSDIR}/databases/p5-DBIx-SQLite-Simple \
@@ -29,6 +37,10 @@ MAN3=	Net::SinFP.3 Net::SinFP::Consts.3 Net::SinFP::DB.3 Net::SinFP::DB::IpVersi
 	Net::SinFP::DB::PatternTcpOptions.3 Net::SinFP::DB::PatternTcpWindow.3 \
 	Net::SinFP::DB::Signature.3 Net::SinFP::DB::SystemClass.3 Net::SinFP::DB::Vendor.3 \
 	Net::SinFP::Result.3 Net::SinFP::Search.3 Net::SinFP::SinFP4.3 Net::SinFP::SinFP6.3
+
+post-patch:
+	${REINPLACE_CMD} -e 's/.*EXE_FILES.*//' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 
 ONLY_FOR_ARCHS=		i386 amd64 alpha
 ONLY_FOR_ARCHS_REASON=	Big endian architectures not supported yet
