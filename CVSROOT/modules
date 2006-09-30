@@ -5056,6 +5056,7 @@ jakarta-commons-jelly	ports/lang/jakarta-commons-jelly
 jakarta-commons-lang	ports/java/jakarta-commons-lang
 jakarta-commons-logging	ports/java/jakarta-commons-logging
 jakarta-commons-math	ports/math/jakarta-commons-math
+jakarta-commons-net	ports/net/jakarta-commons-net
 jakarta-commons-pool	ports/java/jakarta-commons-pool
 jakarta-commons-primitives	ports/java/jakarta-commons-primitives
 jakarta-jmeter	ports/www/jakarta-jmeter
