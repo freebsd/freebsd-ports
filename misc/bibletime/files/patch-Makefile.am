@@ -1,11 +1,11 @@
---- Makefile.am.orig	Sun Oct 16 06:13:14 2005
-+++ Makefile.am	Tue Jul 11 15:23:47 2006
-@@ -54,7 +54,7 @@
+--- Makefile.am.orig	Fri Sep 22 12:01:51 2006
++++ Makefile.am	Fri Sep 22 12:04:19 2006
+@@ -55,7 +55,7 @@
  	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.files
  
  install-data-local:
 -	chmod 755 $(DESTDIR)$(kde_datadir)/bibletime -R
 +	chmod -R 755 $(DESTDIR)$(kde_datadir)/bibletime
- 	$(mkinstalldirs) $(kde_appsdir)/Applications
- 	$(INSTALL_DATA) $(top_builddir)/bibletime.desktop $(kde_appsdir)/Applications/bibletime.desktop
+ 	$(mkinstalldirs) $(datadir)/applications
+ 	$(INSTALL_DATA) $(top_builddir)/bibletime.desktop $(datadir)/applications/bibletime.desktop
  

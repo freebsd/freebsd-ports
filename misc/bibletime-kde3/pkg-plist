@@ -1,6 +1,6 @@
 bin/bibletime
 include/bibletimeinterface.h
-share/applnk/Applications/bibletime.desktop
+share/applications/bibletime.desktop
 share/apps/bibletime/bibletimeui.rc
 share/apps/bibletime/pics/startuplogo.png
 share/apps/bibletime/tips
@@ -67,6 +67,7 @@ share/icons/hicolor/16x16/actions/bt_commentary_add.png
 share/icons/hicolor/16x16/actions/bt_commentary_locked.png
 share/icons/hicolor/16x16/actions/bt_displayconfig.png
 share/icons/hicolor/16x16/actions/bt_displaytranslit.png
+share/icons/hicolor/16x16/actions/bt_findstrongs.png
 share/icons/hicolor/16x16/actions/bt_lexicon.png
 share/icons/hicolor/16x16/actions/bt_lexicon_add.png
 share/icons/hicolor/16x16/actions/bt_lexicon_locked.png
@@ -89,6 +90,7 @@ share/icons/hicolor/22x22/actions/bt_commentary_add.png
 share/icons/hicolor/22x22/actions/bt_commentary_locked.png
 share/icons/hicolor/22x22/actions/bt_displayconfig.png
 share/icons/hicolor/22x22/actions/bt_displaytranslit.png
+share/icons/hicolor/22x22/actions/bt_findstrongs.png
 share/icons/hicolor/22x22/actions/bt_lexicon.png
 share/icons/hicolor/22x22/actions/bt_lexicon_add.png
 share/icons/hicolor/22x22/actions/bt_lexicon_locked.png
@@ -112,6 +114,7 @@ share/icons/hicolor/32x32/actions/bt_commentary_add.png
 share/icons/hicolor/32x32/actions/bt_commentary_locked.png
 share/icons/hicolor/32x32/actions/bt_displayconfig.png
 share/icons/hicolor/32x32/actions/bt_displaytranslit.png
+share/icons/hicolor/32x32/actions/bt_findstrongs.png
 share/icons/hicolor/32x32/actions/bt_lexicon.png
 share/icons/hicolor/32x32/actions/bt_lexicon_add.png
 share/icons/hicolor/32x32/actions/bt_lexicon_locked.png
@@ -160,6 +163,7 @@ share/doc/HTML/en/common/common
 @dirrmtry share/icons/hicolor/16x16/actions
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/bibletime/howto
 @dirrm share/doc/HTML/en/bibletime/handbook
 @dirrm share/doc/HTML/en/bibletime
@@ -169,5 +173,4 @@ share/doc/HTML/en/common/common
 @dirrm share/apps/bibletime/pics
 @dirrm share/apps/bibletime
 @dirrmtry share/apps
-@dirrmtry share/applnk/Applications
-@dirrmtry share/applnk
+@dirrmtry share/applications
