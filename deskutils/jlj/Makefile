@@ -8,7 +8,8 @@
 PORTNAME=	jlj
 PORTVERSION=	2.12
 CATEGORIES=	deskutils net
-MASTER_SITES=	http://patsy.cis.rit.edu/Software/perl/
+MASTER_SITES=	http://umlautllama.com/projects/perl/ \
+		http://www.atarininja.org/~wxs/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wxs@atarininja.org
