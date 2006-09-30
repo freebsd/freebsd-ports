@@ -7,6 +7,7 @@
 %%ADODB_DIR%%/adodb-exceptions.inc.php
 %%ADODB_DIR%%/adodb-iterator.inc.php
 %%ADODB_DIR%%/adodb-lib.inc.php
+%%ADODB_DIR%%/adodb-memcache.lib.inc.php
 %%ADODB_DIR%%/adodb-pager.inc.php
 %%ADODB_DIR%%/adodb-pear.inc.php
 %%ADODB_DIR%%/adodb-perf.inc.php
@@ -114,13 +115,16 @@
 %%ADODB_DIR%%/session/adodb-compress-bzip2.php
 %%ADODB_DIR%%/session/adodb-compress-gzip.php
 %%ADODB_DIR%%/session/adodb-cryptsession.php
+%%ADODB_DIR%%/session/adodb-cryptsession2.php
 %%ADODB_DIR%%/session/adodb-encrypt-mcrypt.php
 %%ADODB_DIR%%/session/adodb-encrypt-md5.php
 %%ADODB_DIR%%/session/adodb-encrypt-secret.php
 %%ADODB_DIR%%/session/adodb-encrypt-sha1.php
 %%ADODB_DIR%%/session/adodb-sess.txt
 %%ADODB_DIR%%/session/adodb-session-clob.php
+%%ADODB_DIR%%/session/adodb-session-clob2.php
 %%ADODB_DIR%%/session/adodb-session.php
+%%ADODB_DIR%%/session/adodb-session2.php
 %%ADODB_DIR%%/session/adodb-sessions.mysql.sql
 %%ADODB_DIR%%/session/adodb-sessions.oracle.clob.sql
 %%ADODB_DIR%%/session/adodb-sessions.oracle.sql
@@ -130,6 +134,7 @@
 %%ADODB_DIR%%/session/old/adodb-session.php
 %%ADODB_DIR%%/session/old/crypt.inc.php
 %%ADODB_DIR%%/session/session_schema.xml
+%%ADODB_DIR%%/session/session_schema2.xml
 %%ADODB_DIR%%/xsl/convert-0.1-0.2.xsl
 %%ADODB_DIR%%/xsl/convert-0.1-0.3.xsl
 %%ADODB_DIR%%/xsl/convert-0.2-0.1.xsl
@@ -137,10 +142,11 @@
 %%ADODB_DIR%%/xsl/remove-0.2.xsl
 %%ADODB_DIR%%/xsl/remove-0.3.xsl
 %%TESTS%%%%ADODB_DIR%%/tests/benchmark.php
-%%TESTS%%%%ADODB_DIR%%/tests/cf~testsessions.php
 %%TESTS%%%%ADODB_DIR%%/tests/client.php
 %%TESTS%%%%ADODB_DIR%%/tests/pdo.php
 %%TESTS%%%%ADODB_DIR%%/tests/rr.htm
+%%TESTS%%%%ADODB_DIR%%/tests/test-active-record.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-active-recs2.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-datadict.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-perf.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-pgblob.php
@@ -170,6 +176,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs-datadict.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-oracle.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-perf.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs-session.old.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs-session.htm
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/old-changelog.htm
