@@ -1,0 +1,18 @@
+The other benchmark modules provide excellent timing for specific
+parts of your code. This module aims to allow you to easily time the
+progression of your code.
+
+The stopwatch analogy is that at some point you get a new stopwatch
+and start timing. Then you note certain events using lap. Finally you
+stop the watch and then print out a summary.
+
+The summary shows all the events in order, what time they occured at,
+how long since the last lap and the percentage of the total time.
+Hopefully this will give you a good idea of where your code is
+spending most of its time.
+
+The times are all wallclock times in fractional seconds.
+
+That's it.
+
+WWW:	http://search.cpan.org/dist/Benchmark-Stopwatch/
