@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,13 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	A powerful Bible study application for KDE3
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword.so:${PORTSDIR}/misc/sword
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword.so:${PORTSDIR}/misc/sword \
+		${LOCALBASE}/lib/libclucene.so:${PORTSDIR}/textproc/clucene
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--enable-static-clucene
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
