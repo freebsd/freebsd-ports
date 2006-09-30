@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e79876e4-5061-11db-a5ae-00508d6a62df">
+    <topic>punbb -- NULL byte injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>punbb</name>
+	<range><lt>1.2.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE Mitre reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-4759">
+	  <p>PunBB 1.2.12 does not properly handle an avatar directory
+	    pathname ending in %00, which allows remote authenticated
+	    administrative users to upload arbitrary files and execute
+	    code, as demonstrated by a query to admin_options.php with
+	    an avatars_dir parameter ending in %00. NOTE: this issue
+	    was originally disputed by the vendor, but the dispute was
+	    withdrawn on 20060926.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4759</cvename>
+      <url>http://forums.punbb.org/viewtopic.php?id=13255</url>
+    </references>
+    <dates>
+      <discovery>2006-09-13</discovery>
+      <entry>2006-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2d9ad236-4d26-11db-b48d-00508d6a62df">
     <topic>freeciv -- Denial of Service Vulnerabilities</topic>
     <affects>
