@@ -13,8 +13,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualization of Numerical Results in the ELMER FEM package
 
-BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran \
-		${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
@@ -29,7 +28,6 @@ ALL_TARGET=
 
 USE_GCC=	4.1+
 WITH_FORTRAN=	yes
-FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS=${FCFLAGS}
 

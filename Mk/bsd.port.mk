@@ -1038,16 +1038,8 @@ makepatch:
 .endif
 
 
-# Start of pre-makefile section.
-.if !defined(AFTERPORTMK)
-
-.if defined(_PREMKINCLUDED)
-check-makefile::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: you cannot include bsd.port[.pre].mk twice"
-	@${FALSE}
-.endif
-
-_PREMKINCLUDED=	yes
+# Start of options section
+.if defined(INOPTIONSMK) || ( !defined(USEOPTIONSMK) && !defined(AFTERPORTMK) )
 
 .if defined(MAKE_VERSION)
 .if ${MAKE_VERSION} >= 5200408030 || ${MAKE_VERSION} >= 4200408030 && ${MAKE_VERSION} < 5000000000
@@ -1273,6 +1265,20 @@ WITHOUT_${W}:=	true
 .	include "${_OPTIONSFILE}.local"
 .	endif
 .endif
+
+.endif
+
+
+# Start of pre-makefile section.
+.if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)
+
+.if defined(_PREMKINCLUDED)
+check-makefile::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: you cannot include bsd.port[.pre].mk twice"
+	@${FALSE}
+.endif
+
+_PREMKINCLUDED=	yes
 
 # check for old, crufty, makefile types, part 1:
 .if !defined(PORTNAME) || !( defined(PORTVERSION) || defined (DISTVERSION) ) || defined(PKGNAME)
@@ -1581,7 +1587,7 @@ WWWGRP?=	www
 # End of pre-makefile section.
 
 # Start of post-makefile section.
-.if !defined(BEFOREPORTMK)
+.if !defined(BEFOREPORTMK) && !defined(INOPTIONSMK)
 
 .if defined(_POSTMKINCLUDED)
 check-makefile::
@@ -1811,14 +1817,10 @@ USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 .	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
 LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
 .	else
-.		if ${USE_LINUX} == "7"
-LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
-.		else
-.			if ${USE_LINUX:L} == "yes"
+.		if ${USE_LINUX:L} == "yes"
 LINUX_BASE_PORT=	${LINUXBASE}/etc/fedora-release:${PORTSDIR}/emulators/linux_base-fc4
-.			else
+.		else
 IGNORE=	There is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT.
-.			endif
 .		endif
 .	endif
 
@@ -1981,7 +1983,7 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
 	defined(USE_PGSQL) || defined(WANT_PGSQL_VER) || \
-	defined(USE_BDB) || defined(USE_SQLITE)
+	defined(USE_BDB) || defined(USE_SQLITE) || defined(USE_FIREBIRD)
 .include "${PORTSDIR}/Mk/bsd.database.mk"
 .endif
 

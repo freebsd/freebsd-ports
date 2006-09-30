@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FEM solver for use in the ELMER FEM package
 
-BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran	\
-		${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
 		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/elmer-mathlibs	\
 		${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/elmer-mathlibs	\
 		${LOCALBASE}/lib/libumfpack.a:${PORTSDIR}/math/elmer-umfpack	\
@@ -26,7 +25,6 @@ RUN_DEPENDS=	ElmerGrid:${PORTSDIR}/science/elmergrid		\
 
 USE_GCC=	4.1+
 WITH_FORTRAN=	yes
-FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 
 .ifdef WITH_OPTIMIZED_FLAGS

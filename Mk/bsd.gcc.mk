@@ -127,26 +127,43 @@ _USE_GCC:=${_GCC_FOUND}
 
 #
 # Determine if the installed OS already has this GCCVERSION, and if not
-# then set BUILD_DEPENDS, CC, CXX and F77
+# then set BUILD_DEPENDS, CC, CXX, F77, and FC.
 #
 .for v in ${GCCVERSIONS}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
-V:=				${_GCCVERSION_${v}_V:S/.//}
+# If Fortran support is requested, regardless of the value of USE_GCC
+# we need to use lang/gfortran, which is based on lang/gcc41 right now.
+.   if defined(WITH_FORTRAN)
+V:=			41
+_GCC_BUILD_DEPENDS:=	gfortran
+_GCC_PORT_DEPENDS:=	gfortran${V}
+.else
+V:=			${_GCCVERSION_${v}_V:S/.//}
+_GCC_BUILD_DEPENDS:=	gcc${V}
+_GCC_PORT_DEPENDS:=	gcc${V}
+.   endif
 CC:=			gcc${V}
 CXX:=			g++${V}
+# Up to GCC 4.0, we had g77, g77-33, g77-34, and the like.  Starting
+# with GCC 4.0, we have gfortran, gfortran40, gfortran41, and the like.
+.   if ${_USE_GCC} < 4.0
 F77:=			g77-${V}
-_GCC_BUILD_DEPENDS:=	${CC}
+FC:=			${F77}
+.   else
+FC:=			gfortran${V}
+F77:=			${FC}
+.   endif
 .  endif
 . endif
 .endfor
 .undef V
 
 .if defined(_GCC_BUILD_DEPENDS)
-BUILD_DEPENDS+=	${_GCC_BUILD_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
+BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 .endif
 
-MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
+MAKE_ENV+=	CC="${CC}" CXX="${CXX}" F77="${F77}" FC="${FC}"
 
 test-gcc:
 	@echo USE_GCC=${USE_GCC}
@@ -155,6 +172,7 @@ test-gcc:
 .else
 	@echo Port cannot use later versions.
 .endif
+	@echo WITH_FORTRAN=${WITH_FORTRAN}
 .for v in ${GCCVERSIONS}
 	@echo -n "GCC version: ${_GCCVERSION_${v}_V} "
 .if defined(_GCC_FOUND${v})
@@ -163,5 +181,5 @@ test-gcc:
 	@echo "- OSVERSION from ${_GCCVERSION_${v}_L} to ${_GCCVERSION_${v}_R}"
 #	@echo ${v} - ${_GCC_FOUND${v}} - ${_GCCVERSION_${v}_L} to ${_GCCVERSION_${v}_R} - ${_GCCVERSION_${v}_V}
 .endfor
-	@echo Using GCC vesion ${_USE_GCC}
-	@echo CC:${CC} - CXX:${CXX} - F77:${F77} - BUILD_DEPENDS:${BUILD_DEPENDS}
+	@echo Using GCC version ${_USE_GCC}
+	@echo CC:${CC} - CXX:${CXX} - F77:${F77} - FC:${FC} - BUILD_DEPENDS:${BUILD_DEPENDS}

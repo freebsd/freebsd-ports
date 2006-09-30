@@ -14,14 +14,12 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HUTIter library for use in the ELMER FEM package
 
-BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran	\
-		${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/elmer-mathlibs	 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libblas.a:${PORTSDIR}/math/elmer-mathlibs	 \
 		${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/elmer-mathlibs	 \
 		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/elmer-mathlibs
 
 USE_GCC=	4.1+
 
-FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 WITH_FORTRAN=	yes
 CONFIGURE_ENV+=	FC=${FC} F77=${FC}

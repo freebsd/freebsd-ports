@@ -14,11 +14,8 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MatC language library used by ELMER FEM package
 
-BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran
-
 USE_GCC=	4.1+
 WITH_FORTRAN=	yes
-FC=	${LOCALBASE}/bin/gfortran41
 F77=	${FC}
 CONFIGURE_ENV+=	FC=${FC} F77=${FC}
 
