@@ -13116,6 +13116,7 @@ seabattle	ports/games/seabattle
 seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
 seamonkey	ports/www/seamonkey
+searchmonkey	ports/sysutils/searchmonkey
 seaview		ports/biology/seaview
 sec		ports/sysutils/sec
 secpanel	ports/security/secpanel
@@ -15555,7 +15556,6 @@ xscreensaver-gnome	ports/x11/xscreensaver-gnome
 xscreensaver-gnome-hacks	ports/x11/xscreensaver-gnome-hacks
 xscreensaver-kde	ports/x11/xscreensaver-kde
 xscreensaver.app	ports/x11/xscreensaver.app
-xsearch		ports/sysutils/xsearch
 xsel		ports/x11/xsel
 xshisen		ports/games/xshisen
 xshogi		ports/games/xshogi

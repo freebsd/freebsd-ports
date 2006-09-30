@@ -538,6 +538,7 @@
     SUBDIR += scanbuttond
     SUBDIR += screen
     SUBDIR += sdd
+    SUBDIR += searchmonkey
     SUBDIR += sec
     SUBDIR += sensors-applet
     SUBDIR += serpentine
@@ -701,7 +702,6 @@
     SUBDIR += xosview
     SUBDIR += xperfmon
     SUBDIR += xperfmon3
-    SUBDIR += xsearch
     SUBDIR += xstow
     SUBDIR += xsu
     SUBDIR += xsysinfo

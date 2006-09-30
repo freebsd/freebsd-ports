@@ -1,12 +1,12 @@
-# New ports collection makefile for:	xsearch
+# New ports collection makefile for:	searchmonkey
 # Date created:		26 August 2006
 # Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	searchMonkey
-PORTVERSION=	0.6.0
+PORTNAME=	searchmonkey
+PORTVERSION=	0.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-PLIST_FILES=	bin/${PORTNAME:L} %%DATADIR%%/pixmaps/${PORTNAME:L}-32x32.png
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/pixmaps/${PORTNAME}-32x32.png
 PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 CFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=-L${LOCALBASE}/lib
