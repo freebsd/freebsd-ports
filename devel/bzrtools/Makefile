@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://panoramicfeedback.com/opensource/
 
-MAINTAINER=	lulf@kerneled.org
+MAINTAINER=	lulf@pvv.ntnu.no
 COMMENT=	Extensions to devel/bazaar-ng
 
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng \
