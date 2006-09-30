@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchinfo
-PORTVERSION=	0.4.15
+PORTVERSION=	0.4.16
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -15,8 +15,8 @@ DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Header insertation plugin for sylpheed-claws
 
-BUILD_DEPENDS=	sylpheed-claws>=2.0:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.0:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
