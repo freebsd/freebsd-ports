@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-XSH
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/}
@@ -21,8 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
 		${SITE_PERL}/XML/LibXML/Iterator.pm:${PORTSDIR}/textproc/p5-XML-LibXML-Iterator \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		${SITE_PERL}/XML/XUpdate/LibXML.pm:${PORTSDIR}/textproc/p5-XML-XUpdate-LibXML \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML/XPathContext.pm:${PORTSDIR}/textproc/p5-XML-LibXML-XPathContext
+		${SITE_PERL}/XML/XUpdate/LibXML.pm:${PORTSDIR}/textproc/p5-XML-XUpdate-LibXML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
