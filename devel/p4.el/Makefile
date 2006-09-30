@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p4.el
-PORTVERSION=	10.3
+PORTVERSION=	10.6
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	p4el
@@ -15,9 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce-Emacs Integration
 
-RUN_DEPENDS=	p4:${.CURDIR}/../perforce
-
-BROKEN=		Incomplete pkg-plist
+RUN_DEPENDS=	p4:${PORTSDIR}/devel/perforce
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
