@@ -220,6 +220,7 @@
     SUBDIR += iwi-firmware
     SUBDIR += iwi-firmware-kmod
     SUBDIR += jags
+    SUBDIR += jakarta-commons-net
     SUBDIR += java-beepcore
     SUBDIR += jcifs
     SUBDIR += jffnms
