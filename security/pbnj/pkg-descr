@@ -1,0 +1,8 @@
+PBNJ is a network suite to monitor changes that occur on a network
+over time. It does this by checking for changes on the target
+machine(s), which includes the details about the services running on
+them as well as the service state. PBNJ parses the data from a scan
+and stores it in a database. PBNJ uses Nmap to perform scans.
+
+
+WWW: http://www.sf.net/projects/pbnj

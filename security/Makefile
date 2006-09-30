@@ -483,6 +483,7 @@
     SUBDIR += pamsfs
     SUBDIR += pamtester
     SUBDIR += parano
+    SUBDIR += pbnj
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_PrefManager
