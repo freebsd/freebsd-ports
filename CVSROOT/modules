@@ -5284,6 +5284,7 @@ kavmilter	ports/mail/kavmilter
 kawa		ports/lang/kawa
 kazehakase	ports/www/kazehakase
 kb2mb2		ports/x11/kb2mb2
+kbackup		ports/archivers/kbackup
 kbarcode	ports/graphics/kbarcode
 kbear		ports/ftp/kbear
 kbedic		ports/textproc/kbedic
