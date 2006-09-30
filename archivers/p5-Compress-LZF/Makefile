@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Compress-LZF
-PORTVERSION=	1.65
+PORTVERSION=	1.70
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Compress
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C|0$||}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Extremely light-weight Lempel-Ziv-Free compression
