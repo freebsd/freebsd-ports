@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synce
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -16,8 +16,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	Windows CE addressbook plugin for sylpheed-claws
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
-BUILD_DEPENDS=	sylpheed-claws>=2.0:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.0:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
