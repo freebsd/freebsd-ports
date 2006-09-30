@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	1.5
+PORTVERSION=	1.7.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://10kloc.org/download/ \
+MASTER_SITES=	http://www.shortest.de/download/ \
 		http://schot.a-eskwadraat.nl/files/
 
 MAINTAINER=	schot@a-eskwadraat.nl
