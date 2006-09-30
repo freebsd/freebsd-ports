@@ -7,7 +7,7 @@
 
 PORTNAME=	repeater
 PORTVERSION=	0.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://koti.mbnet.fi/jtko/uvncrepeater/
 DISTNAME=	repeater${PORTVERSION:C/\.//}
@@ -16,15 +16,14 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	UltraVNC repeater
 
 USE_ZIP=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	repeater
 WRKSRC=		${WRKDIR}/Ver${PORTVERSION:C/\.//}
 ALL_TARGET=	repeater
 
-PLIST_FILES=	sbin/repeater etc/rc.d/repeater.sh
+PLIST_FILES=	sbin/repeater
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/repeater ${PREFIX}/sbin/repeater
-	${INSTALL_SCRIPT} ${FILESDIR}/repeater.sh ${PREFIX}/etc/rc.d
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	changelog.txt readme.txt ultravncrepeaterlinuxport.html
@@ -34,13 +33,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's,%%LIMITS_H%%,machine/limits.h,g' ${WRKSRC}/repeater.cpp
-.else
-	@${REINPLACE_CMD} -e 's,%%LIMITS_H%%,sys/limits.h,g' ${WRKSRC}/repeater.cpp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
