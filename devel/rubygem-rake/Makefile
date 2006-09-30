@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Ruby Make
 
-MANCOMPRESSED= yes
-MAN1=          rake.1
+MANCOMPRESSED=	yes
+MAN1=		rake.1
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
