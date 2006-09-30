@@ -1,0 +1,20 @@
+The dvdisaster project:
+dvdisaster provides a margin of safety against data loss on CD and DVD media
+caused by aging or scratches.
+
+    * dvdisaster creates error correction data to compensate read errors which
+      are not correctable in the CD/DVD drive.
+
+    * dvdisaster tries to read as much data as possible from defective media.
+      Afterwards unreadable sectors are recovered using the previously created
+      error correction data. The maximum error correction capacity is
+      user-selectable.
+
+    * dvdisaster operates at the image level and does not depend on the file
+      system.
+
+If you create the error correction data in time and keep it at a safe place,
+you have a good chance of recovering the medium contents from typical read
+errors and to transfer your complete data onto a new medium.
+
+WWW: http://www.dvdisaster.com/

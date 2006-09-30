@@ -139,6 +139,7 @@
     SUBDIR += dvd+rw-tools
     SUBDIR += dvdbackup
     SUBDIR += dvdimagecmp
+    SUBDIR += dvdisaster
     SUBDIR += dvdtape
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
