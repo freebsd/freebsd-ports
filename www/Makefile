@@ -31,6 +31,7 @@
     SUBDIR += aria2
     SUBDIR += ashe
     SUBDIR += asp2php
+    SUBDIR += asterisk-fop
     SUBDIR += aswedit
     SUBDIR += aswiki
     SUBDIR += august
