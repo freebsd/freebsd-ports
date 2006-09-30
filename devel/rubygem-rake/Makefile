@@ -13,6 +13,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Ruby Make
 
+MANCOMPRESSED= yes
+MAN1=          rake.1
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
+
+post-install:
+	${MV} ${PREFIX}/${GEM_LIB_DIR}/doc/rake.1.gz \
+		${PREFIX}/man/man1
+	${CHMOD} ${MANMODE} ${PREFIX}/man/man1/rake.1.gz
+	${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/man1/rake.1.gz
+
 .include <bsd.port.post.mk>

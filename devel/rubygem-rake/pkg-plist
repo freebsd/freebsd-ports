@@ -278,7 +278,6 @@ bin/rake
 %%GEM_LIB_DIR%%/doc/glossary.rdoc
 %%GEM_LIB_DIR%%/doc/jamis.rb
 %%GEM_LIB_DIR%%/doc/proto_rake.rdoc
-%%GEM_LIB_DIR%%/doc/rake.1.gz
 %%GEM_LIB_DIR%%/doc/rakefile.rdoc
 %%GEM_LIB_DIR%%/doc/rational.rdoc
 %%GEM_LIB_DIR%%/doc/release_notes/rake-0.4.14.rdoc
