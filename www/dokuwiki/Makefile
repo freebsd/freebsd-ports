@@ -7,7 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.splitbrain.org/_media/projects/dokuwiki/ \
 		http://dev.splitbrain.org/browse/snapshots/
@@ -83,6 +83,9 @@ pre-patch:
 		${WRKSRC}/conf/dokuwiki.php
 	@${FIND} ${WRKSRC}/conf -name "*.php.bak" -delete
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC}/lib/exe -name "*.orig" -delete
 
 pre-install:
 	@${TOUCH} ${WRKSRC}/data/changes.log
