@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notification
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -15,8 +15,8 @@ DISTNAME=	notification_plugin-${PORTVERSION}
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	New/unread mail notification plugin for sylpheed-claws
 
-BUILD_DEPENDS=	sylpheed-claws>=1.9.99:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=1.9.99:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
