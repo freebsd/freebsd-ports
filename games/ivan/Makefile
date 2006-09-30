@@ -26,6 +26,10 @@ STATEDIR=	/var/games/ivan
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|IvanSave|.IvanSave|g' ${WRKSRC}/Main/Source/game.cpp
+	@${REINPLACE_CMD} -Ee 's|(fearray<type>::~?fearray)<type>|\1|' \
+		${WRKSRC}/FeLib/Include/fearray.h
+	@${REINPLACE_CMD} -Ee 's|([a-z]+<[a-z ,]+>::~?[a-z]+)<[a-z ,]+>|\1|' \
+		${WRKSRC}/Main/Source/script.cpp
 
 post-install:
 	${CHGRP} games ${PREFIX}/bin/ivan
