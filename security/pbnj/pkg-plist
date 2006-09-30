@@ -1,0 +1,5 @@
+bin/scanpbnj
+bin/outputpbnj
+bin/genlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/pbnj/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/pbnj
