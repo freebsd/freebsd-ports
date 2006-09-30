@@ -34,6 +34,100 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fcba5764-506a-11db-a5ae-00508d6a62df">
+    <topic>dokuwiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20060309c</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/21819/">
+	  <p>rgod has discovered a vulnerability in DokuWiki, which can
+	    be exploited by malicious people to compromise a vulnerable
+	    system.</p>
+	  <p>Input passed to the "TARGET_FN" parameter in
+	    bin/dwpage.php is not properly sanitised before being used
+	    to copy files. This can be exploited via directory
+	    traversal attacks in combination with DokuWiki's file
+	    upload feature to execute arbitrary PHP code.</p>
+	</blockquote>
+	<p>CVE Mitre reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4674">
+	  <p>Direct static code injection vulnerability in doku.php in
+	    DokuWiki before 2006-03-09c allows remote attackers to
+	    execute arbitrary PHP code via the X-FORWARDED-FOR HTTP
+	    header, which is stored in config.php.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4675">
+	  <p>Unrestricted file upload vulnerability in
+	    lib/exe/media.php in DokuWiki before 2006-03-09c allows
+	    remote attackers to upload executable files into the
+	    data/media folder via unspecified vectors.</p>
+	</blockquote>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4679">
+	  <p>DokuWiki before 2006-03-09c enables the debug feature by
+	    default, which allows remote attackers to obtain sensitive
+	    information by calling doku.php with the X-DOKUWIKI-DO HTTP
+	    header set to "debug".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>19911</bid>
+      <cvename>CVE-2006-4674</cvename>
+      <cvename>CVE-2006-4675</cvename>
+      <cvename>CVE-2006-4679</cvename>
+      <url>http://secunia.com/advisories/21819/</url>
+      <url>http://bugs.splitbrain.org/index.php?do=details&amp;id=906</url>
+    </references>
+    <dates>
+      <discovery>2006-09-08</discovery>
+      <entry>2006-09-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="450b76ee-5068-11db-a5ae-00508d6a62df">
+    <topic>dokuwiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20060309_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/22192/">
+	  <p>Some vulnerabilities have been reported in DokuWiki, which
+	    can be exploited by malicious people to cause a DoS (Denial
+	    of Service) or potentially compromise a vulnerable system.</p>
+	  <p>Input passed to the "w" and "h" parameters in
+	    lib/exec/fetch.php is not properly sanitised before being
+	    passed as resize parameters to the "convert" application.
+	    This can be exploited to cause a DoS due to excessive CPU
+	    and memory consumption by passing very large numbers, or to
+	    inject arbitrary shell commands by passing specially
+	    crafted strings to the "w" and "h" parameter.</p>
+	  <p>Successful exploitation requires that the
+	    "$conf[imconvert]" option is set.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/22192/</url>
+      <url>http://bugs.splitbrain.org/?do=details&amp;id=924</url>
+      <url>http://bugs.splitbrain.org/?do=details&amp;id=926</url>
+    </references>
+    <dates>
+      <discovery>2006-09-26</discovery>
+      <entry>2006-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e4c62abd-5065-11db-a5ae-00508d6a62df">
     <topic>tikiwiki -- multiple vulnerabilities</topic>
     <affects>
