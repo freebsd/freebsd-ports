@@ -445,6 +445,7 @@
     SUBDIR += p5-Net-Daemon-SSL
     SUBDIR += p5-Net-OpenID-Server
     SUBDIR += p5-Net-SSLeay
+    SUBDIR += p5-Net-SinFP
     SUBDIR += p5-Nmap-Parser
     SUBDIR += p5-Nmap-Scanner
     SUBDIR += p5-OpenCA-CRL

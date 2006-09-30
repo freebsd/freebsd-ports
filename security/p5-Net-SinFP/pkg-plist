@@ -1,5 +1,3 @@
-bin/sinfp.db
-bin/sinfp.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SinFP/.packlist
 %%SITE_PERL%%/Net/SinFP.pm
 %%SITE_PERL%%/Net/SinFP/Consts.pm
