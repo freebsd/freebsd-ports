@@ -1,0 +1,31 @@
+Electric is a sophisticated electrical CAD system that can handle
+many forms of circuit design, including:
+ - Custom IC layout (ASICs) 
+ - Schematic drawing 
+ - Hardware description language specifications 
+
+Electric has these CAD operations:  
+ - Design rule checking
+ - Electrical rule checking
+ - Simulation and simulation interface (many options)
+ - Generation (ROMs, PLAs, Pad Frames, etc.)
+ - Compaction
+ - Routing 
+ - VHDL compilation
+ - Silicon compilation
+ - Network consistency checking (LVS)
+ - Logical Effort analysis
+ - Project Management
+       
+Electric can display these types of design:
+ - MOS (many CMOS and nMOS variations)
+ - Bipolar and BiCMOS
+ - Schematics and printed circuits
+ - Digital filters, Temporal logic
+ - Artwork
+
+For real funcionality, one should consider installing
+support simulation software such as cad/spice.
+
+Author:	Static Free Software & Sun Microsystems, Inc.
+WWW:	http://www.staticfreesoft.com/

@@ -1,0 +1,18 @@
+#!/bin/csh
+#
+# $MBSDlabs$
+# $FreeBSD$
+
+set JAVA = "%%LOCALBASE%%/bin/java"
+set LIBFILES = "%%LIBFILES%%"
+set JARPATH = "%%JAVALIBDIR%%"
+setenv JAVA_VERSION "%%JAVA_VERSION%%"
+
+set CLASSPATH = ""
+foreach i (${LIBFILES})
+	set CLASSPATH =  ${CLASSPATH}":"${JARPATH}/$i.jar
+end
+
+set CLASSPATH = `echo ${CLASSPATH} | /usr/bin/sed -e "s#^:##"`
+
+exec "${JAVA}" -cp "${CLASSPATH}" -jar %%JAVAJARDIR%%/%%JARFILE%%
