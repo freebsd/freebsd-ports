@@ -33,6 +33,7 @@
     SUBDIR += hpack.non-usa.only
     SUBDIR += jzip.org
     SUBDIR += jzlib
+    SUBDIR += kbackup
     SUBDIR += kio_p7zip
     SUBDIR += lbrate
     SUBDIR += lcab

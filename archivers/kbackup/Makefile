@@ -1,0 +1,36 @@
+# New ports collection makefile for:	kbackup
+# Date created:		2006-09-29
+# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	kbackup
+PORTVERSION=	0.5
+CATEGORIES=	archivers kde
+MASTER_SITES=	http://www.kde-apps.org/content/files/
+DISTNAME=	44998-${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	A program for back up of directories or files
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+USE_KDELIBS_VER=3
+INSTALLS_ICONS=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.post.mk>
