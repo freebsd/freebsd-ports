@@ -516,6 +516,7 @@
     SUBDIR += pngrewrite
     SUBDIR += pngwriter
     SUBDIR += poppler
+    SUBDIR += poppler-data
     SUBDIR += poppler-gtk
     SUBDIR += poppler-qt
     SUBDIR += poppler-utils
