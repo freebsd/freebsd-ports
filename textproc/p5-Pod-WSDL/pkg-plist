@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Pod/WSDL.pm
+%%SITE_PERL%%/Pod/WSDL/AUTOLOAD.pm
+%%SITE_PERL%%/Pod/WSDL/Attr.pm
+%%SITE_PERL%%/Pod/WSDL/Doc.pm
+%%SITE_PERL%%/Pod/WSDL/Fault.pm
+%%SITE_PERL%%/Pod/WSDL/Method.pm
+%%SITE_PERL%%/Pod/WSDL/Param.pm
+%%SITE_PERL%%/Pod/WSDL/Return.pm
+%%SITE_PERL%%/Pod/WSDL/Type.pm
+%%SITE_PERL%%/Pod/WSDL/Utils.pm
+%%SITE_PERL%%/Pod/WSDL/Writer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/WSDL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/WSDL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
+@dirrmtry %%SITE_PERL%%/Pod/WSDL
+@dirrmtry %%SITE_PERL%%/Pod

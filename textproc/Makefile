@@ -424,6 +424,7 @@
     SUBDIR += p5-Pod-Simple
     SUBDIR += p5-Pod-Stripper
     SUBDIR += p5-Pod-Tree
+    SUBDIR += p5-Pod-WSDL
     SUBDIR += p5-Pod-XML
     SUBDIR += p5-Pod-Xhtml
     SUBDIR += p5-RADIUS-UserFile
