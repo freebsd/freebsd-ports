@@ -7,6 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/ \
@@ -80,6 +81,9 @@ pre-everything::
 .endif
 
 pre-patch:
+# Fix http://bugs.splitbrain.org/?do=details&id=926
+	@${REINPLACE_CMD} -e '25,26 s,=,= (int),' ${WRKSRC}/lib/exe/fetch.php
+	@${FIND} ${WRKSRC}/lib/exe -name "*.php.bak" -delete
 .if defined(WIKI_LANG)
 	@${REINPLACE_CMD} -e 's|lang\(.*\)'en'|lang\1'${WIKI_LANG}'|g' \
 		${WRKSRC}/conf/dokuwiki.php
@@ -88,16 +92,6 @@ pre-patch:
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/data/changes.log
-
-# This target is only meant to be used by the port maintainer.
-x-generate-plist:
-	@make makesum
-	@make patch
-	@cd ${WRKSRC} && ${FIND} -s . -type f | \
-		${SED} -e 's|^./||;s|^|%%DOKUWIKI_DIR%%/|' > ${TEMP_PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm %%DOKUWIKI_DIR%%/|' >> ${TEMP_PLIST} \
-		&& ${ECHO_CMD} "@dirrmtry %%DOKUWIKI_DIR%%" >> ${TEMP_PLIST}
 
 do-install:
 # Data files
