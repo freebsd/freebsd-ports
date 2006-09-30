@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cachesaver
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	sylpheed-claws-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Cache saving plugin for sylpheed-claws
 
-BUILD_DEPENDS=	sylpheed-claws:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
