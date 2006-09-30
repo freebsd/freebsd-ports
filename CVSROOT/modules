@@ -538,6 +538,7 @@ asr10		ports/converters/asr10
 assp		ports/mail/assp
 asterisk	ports/net/asterisk
 asterisk-addons	ports/net/asterisk-addons
+asterisk-app-ldap	ports/net/asterisk-app-ldap
 asterisk-bristuff	ports/net/asterisk-bristuff
 asterisk-oh323	ports/net/asterisk-oh323
 astfax		ports/net/astfax
