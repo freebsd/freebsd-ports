@@ -8175,6 +8175,7 @@ p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-Sysctl	ports/sysutils/p5-BSD-Sysctl
 p5-BSD-stat	ports/devel/p5-BSD-stat
 p5-Baseball-Sabermetrics	ports/games/p5-Baseball-Sabermetrics
+p5-Benchmark-Stopwatch	ports/benchmarks/p5-Benchmark-Stopwatch
 p5-BerkeleyDB	ports/databases/p5-BerkeleyDB
 p5-Bio-ASN1-EntrezGene	ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das	ports/biology/p5-Bio-Das
