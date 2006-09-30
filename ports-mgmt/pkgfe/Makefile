@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkgfe
-PORTVERSION=	20060403
+PORTVERSION=	20060929
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kodu.neti.ee/~madis555/pkgfe/releases/ \
 		http://ketas.life.ee/pkgfe/releases/ \
@@ -17,7 +17,7 @@ COMMENT=	Ncurses front-end to manage the ports collection
 
 RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade \
 		portaudit:${PORTSDIR}/security/portaudit \
-		csup:${PORTSDIR}/net/csup
+		portsnap:${PORTSDIR}/sysutils/portsnap
 
 NO_BUILD=	yes
 
