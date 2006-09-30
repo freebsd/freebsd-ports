@@ -2469,3 +2469,4 @@ databases/firebird-devel|databases/firebird2-server|2006-09-18|firebird-devel is
 audio/wmtune||2006-09-21|Has expired: mastersite disappeared, no longer maintained by author
 palm/pilot-link-devel||2006-09-22|no longer needed, removed
 japanese/dvi2ps|japanese/dvipsk|2006-09-23|Removed because no longer supported and dvipsk has enough compatibility
+sysutils/xsearch|sysutils/searchmonkey|2006-09-30|The project has been renamed
