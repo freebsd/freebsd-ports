@@ -27,7 +27,7 @@ USE_XLIB=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 QMAKE?=		${LOCALBASE}/bin/qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
@@ -35,7 +35,7 @@ QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"does not compile"
+BROKEN=does not compile
 .endif
 
 post-patch:
