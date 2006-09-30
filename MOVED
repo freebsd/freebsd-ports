@@ -2470,3 +2470,4 @@ audio/wmtune||2006-09-21|Has expired: mastersite disappeared, no longer maintain
 palm/pilot-link-devel||2006-09-22|no longer needed, removed
 japanese/dvi2ps|japanese/dvipsk|2006-09-23|Removed because no longer supported and dvipsk has enough compatibility
 sysutils/xsearch|sysutils/searchmonkey|2006-09-30|The project has been renamed
+textproc/p5-XML-LibXML-XPathContext|textproc/p5-XML-LibXML|2006-09-30|merged

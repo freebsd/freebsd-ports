@@ -10433,7 +10433,6 @@ p5-XML-LibRSVG	ports/textproc/p5-XML-LibRSVG
 p5-XML-LibXML	ports/textproc/p5-XML-LibXML
 p5-XML-LibXML-Common	ports/textproc/p5-XML-LibXML-Common
 p5-XML-LibXML-Iterator	ports/textproc/p5-XML-LibXML-Iterator
-p5-XML-LibXML-XPathContext	ports/textproc/p5-XML-LibXML-XPathContext
 p5-XML-LibXSLT	ports/textproc/p5-XML-LibXSLT
 p5-XML-Liberal	ports/textproc/p5-XML-Liberal
 p5-XML-Literal	ports/textproc/p5-XML-Literal
