@@ -10,7 +10,6 @@ your /etc/rc.conf.
 Extra options can be found in startup script.
 
 Note: milter sockets must be accessible from postfix/smtpd;
-  setting milterdkim_user appropriate or using inet sockets might be
-  required.
+  using inet sockets might be preferred.
 
 ************************************************************************
