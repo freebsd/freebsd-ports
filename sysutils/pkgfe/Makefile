@@ -7,6 +7,7 @@
 
 PORTNAME=	pkgfe
 PORTVERSION=	20060929
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kodu.neti.ee/~madis555/pkgfe/releases/ \
 		http://ketas.life.ee/pkgfe/releases/ \
@@ -16,16 +17,21 @@ MAINTAINER=	madis555@hot.ee
 COMMENT=	Ncurses front-end to manage the ports collection
 
 RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade \
-		portaudit:${PORTSDIR}/security/portaudit \
-		portsnap:${PORTSDIR}/sysutils/portsnap
+		portaudit:${PORTSDIR}/security/portaudit
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600033 && ( ${OSVERSION} < 504103 || ${OSVERSION} > 600000 )
+RUN_DEPENDS+=	portsnap:${PORTSDIR}/sysutils/portsnap
+.endif
 
 NO_BUILD=	yes
 
-PLIST_FILES=	sbin/pkgfe etc/pkgfe.conf
+PLIST_FILES=	sbin/pkgfe etc/pkgfe.conf.sample
 
 do-install:
 	${REINPLACE_CMD} -e 's|%PREFIX%|${PREFIX}|g' ${WRKSRC}/pkgfe
 	${INSTALL_SCRIPT} ${WRKSRC}/pkgfe ${PREFIX}/sbin/pkgfe
-	${INSTALL_DATA} ${WRKSRC}/pkgfe.conf ${PREFIX}/etc/pkgfe.conf
+	${INSTALL_DATA} ${WRKSRC}/pkgfe.conf ${PREFIX}/etc/pkgfe.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
