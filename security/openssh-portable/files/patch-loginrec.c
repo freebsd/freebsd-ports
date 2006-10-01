@@ -14,7 +14,7 @@
  	strncpy(ut->ut_name, li->username,
  	    MIN_SIZEOF(ut->ut_name, li->username));
  # ifdef HAVE_HOST_IN_UTMP
-+# if defined(__FreeBSD__) && __FreeBSD_version <= 400000
++# if defined(__FreeBSD__) && __FreeBSD_version < 400000
  	strncpy(ut->ut_host, li->hostname,
  	    MIN_SIZEOF(ut->ut_host, li->hostname));
 +# else

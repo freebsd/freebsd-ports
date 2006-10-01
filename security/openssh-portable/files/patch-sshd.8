@@ -1,0 +1,33 @@
+--- sshd.8.orig	Tue Aug 29 22:07:01 2006
++++ sshd.8	Sat Sep 30 20:05:16 2006
+@@ -65,7 +65,7 @@
+ .Nm
+ listens for connections from clients.
+ It is normally started at boot from
+-.Pa /etc/rc .
++.Pa %%PREFIX%%/etc/rc.d/%%RC_SCRIPT_NAME%% .
+ It forks a new
+ daemon for each incoming connection.
+ The forked daemons handle
+@@ -342,8 +342,9 @@
+ If the login is on a tty, records login time.
+ .It
+ Checks
+-.Pa /etc/nologin ;
+-if it exists, prints contents and quits
++.Pa /etc/nologin and
++.Pa /var/run/nologin ;
++if one exists, it prints the contents and quits
+ (unless root).
+ .It
+ Changes to run with normal user privileges.
+@@ -365,7 +366,8 @@
+ exists, runs it; else if
+ .Pa /etc/ssh/sshrc
+ exists, runs
+-it; otherwise runs xauth.
++it; otherwise runs
++.Xr xauth 1 .
+ The
+ .Dq rc
+ files are given the X11

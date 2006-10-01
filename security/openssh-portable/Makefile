@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssh
-DISTVERSION=	4.3p2
-PORTREVISION=	1
+DISTVERSION=	4.4p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
@@ -42,8 +41,8 @@ USE_OPENSSL=		yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
-			--without-zlib-version-check
+CONFIGURE_ARGS=		--prefix=${PREFIX} --mandir=${MANPREFIX}/man \
+			--with-md5-passwords --without-zlib-version-check
 PRECIOUS=		ssh_config sshd_config ssh_host_key ssh_host_key.pub \
 			ssh_host_rsa_key ssh_host_rsa_key.pub ssh_host_dsa_key \
 			ssh_host_dsa_key.pub
@@ -134,6 +133,7 @@ EXTRA_PATCHES+=		${FILESDIR}/scardpin.patch
 .endif
 
 .if defined(WITH_HPN)
+IGNORE=			option HPN is temporary disabled, waiting patch for new openssh release
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
 PATCHFILES+=		openssh-4.3p2-hpn12.diff.gz
@@ -142,7 +142,7 @@ PATCHFILES+=		openssh-4.3p2-hpn12.diff.gz
 .if defined(WITH_OVERWRITE_BASE)
 WITH_OPENSSL_BASE=	yes
 BASE_SUFFIX=		-overwrite-base
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man --localstatedir=/var
+CONFIGURE_ARGS+=	--localstatedir=/var
 EMPTYDIR=		/var/empty
 PREFIX=			/usr
 ETCSSH=			/etc/ssh
@@ -168,6 +168,13 @@ PLIST_SUB+=		BASE="@comment "
 PLIST_SUB+=		EMPTYDIR="${EMPTYDIR}"
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
 
+# Sync this with bsd.port.mk
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
+RC_SCRIPT_NAME=		openssh
+.else
+RC_SCRIPT_NAME=		openssh.sh
+.endif
+
 post-extract:
 .if defined(OPENSSH_SNAPSHOT)
 	@# rc.d script have same name of openssh snapshot dir
@@ -176,6 +183,21 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
+.if defined(WITH_OVERWRITE_BASE)
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
+		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
+.else
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
+.endif
+	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
+		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
+	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
+		${WRKSRC}/version.h
+	@${ECHO_CMD} '#define SSH_VERSION	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
+		${WRKSRC}/version.h
+	@${ECHO_CMD} '#define SSH_RELEASE	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
+		${WRKSRC}/version.h
 
 pre-install:
 .if defined(WITH_OVERWRITE_BASE)
@@ -204,13 +226,8 @@ post-install:
 .if defined(WITH_OVERWRITE_BASE)
 	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
-.if ${OSVERSION} >= 700007
-	@${INSTALL_SCRIPT} ${WRKDIR}/openssh ${LOCALBASE}/etc/rc.d/openssh
-	@${ECHO_CMD} "etc/rc.d/openssh" >> ${TMPPLIST}
-.else
-	@${INSTALL_SCRIPT} ${WRKDIR}/openssh ${LOCALBASE}/etc/rc.d/openssh.sh
-	@${ECHO_CMD} "etc/rc.d/openssh.sh" >> ${TMPPLIST}
-.endif
+	@${INSTALL_SCRIPT} ${WRKDIR}/openssh ${LOCALBASE}/etc/rc.d/${RC_SCRIPT_NAME}
+	@${ECHO_CMD} "etc/rc.d/${RC_SCRIPT_NAME}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
