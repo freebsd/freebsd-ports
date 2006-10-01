@@ -9,11 +9,10 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -27,19 +29,24 @@
+@@ -27,19 +28,23 @@
  #include <asterisk/utils.h>
  #include <asterisk/callerid.h>
  
-+#include <sasl/sasl.h>
  #include <ctype.h>
  #include <errno.h>
  #include <iconv.h>
