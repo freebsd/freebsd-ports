@@ -52,7 +52,7 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		MDNS_AVAHI "Support to announce XMMS2d via mDNS (Avahi)" off \
 		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on \
 		JACK "Support to output via the Jack output server" off #\
-#		SDL "Support for visualization" on \
+#		SDL "Support for visualization" on
 .endif
 
 .include <bsd.port.pre.mk>
