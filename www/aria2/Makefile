@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SFE
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
@@ -25,6 +25,7 @@ PLIST_FILES=	bin/aria2c \
 		share/locale/de/LC_MESSAGES/aria2c.mo \
 		share/locale/ja/LC_MESSAGES/aria2c.mo \
 		share/locale/ru/LC_MESSAGES/aria2c.mo
+MAN1=		aria2c.1
 
 .include <bsd.port.pre.mk>
 
