@@ -7,18 +7,10 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|freepascal/:freepascal|} \
-		ftp://ftp.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
-		ftp://planetmirror.com/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/source-${FPC_MINVER}/:freepascal \
-		ftp://freepascal.stack.nl/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
-		ftp://ftp.no.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
-		ftp://ftp.us.freepascal.org/pub/fpc/dist/source-${FPC_MINVER}/:freepascal \
-		${MASTER_SITE_SOURCEFORGE:S|$|lazarus/:lazarus|}
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/$/-0/}${EXTRACT_SUFX}:lazarus \
-		fpcbuild-${FPC_MINVER}${EXTRACT_SUFX}:freepascal
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-0/}
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
@@ -35,9 +27,7 @@ USE_GNOME=	gtk12 gdkpixbuf
 USE_GMAKE=	yes
 
 MAKE_ENV=	OPT="-Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${X11BASE}/lib"
-EXTRACT_AFTER_ARGS=	| ${TAR} xf - ${FPCSRCDIR}/fcl/image ${FPCSRCDIR}/fcl/inc lazarus
-FPCSRCDIR=	fpcbuild_${FPC_MINVER:S/$/_exp/}/fpcsrc
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 BUILDNAME=	${ARCH}-freebsd
 FPC_MINVER=	2.0.4
@@ -97,11 +87,6 @@ ZVT_UNIT=	x11-toolkits/fpc-zvt
 .for OPT in ${ALL_UNITS}
 BUILD_DEPENDS+=	${UNITSDIR}/${OPT:L}/Package.fpc:${PORTSDIR}/${${OPT}_UNIT}
 .endfor
-
-post-extract:
-	${CP} ${WRKDIR}/${FPCSRCDIR}/fcl/inc/zstream.pp ${WRKSRC}/lcl && \
-		${CP} ${WRKDIR}/${FPCSRCDIR}/fcl/image/fpreadpng.pp \
-			${WRKDIR}/${FPCSRCDIR}/fcl/image/fpwritepng.pp ${WRKSRC}/lcl
 
 post-depends:
 .if exists(${LOCALBASE}/bin/fpc)
