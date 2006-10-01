@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ndisc6
-PORTVERSION=	0.6.7
+PORTVERSION=	0.7.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/ndisc6/archive/ \
 		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/archive/
@@ -20,10 +20,11 @@ USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install --mandir=${MANPREFIX}/man
 
-MAN1=		tcpspray6.1
+MAN1=		tcpspray6.1 addrinfo.1 dnssort.1
 MAN8=		ndisc6.8 rdisc6.8 rltraceroute6.8
 MLINKS=		rltraceroute6.8 tcptraceroute6.8 \
-		rltraceroute6.8 tracert6.8
+		rltraceroute6.8 tracert6.8 \
+		addrinfo.1 nameinfo.1
 
 PORTDOCS=	AUTHORS NEWS README
 
