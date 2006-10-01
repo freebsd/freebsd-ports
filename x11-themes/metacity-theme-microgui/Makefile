@@ -15,9 +15,9 @@ DISTNAME=	mcitymicrogui-default
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	The microGUI Sawfish theme for Metacity
 
-RESTRICTED=	${REASON}
+USE_GNOME=	gnomehier
 
-BROKEN=		Incomplete pkg-plist
+RESTRICTED=	${REASON}
 
 WRKSRC=		${WRKDIR}/microGUI
 
