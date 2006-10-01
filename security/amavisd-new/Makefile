@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.4.2
-PORTREVISION=	4
+PORTVERSION=	2.4.3
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -47,13 +46,12 @@ AMAVISQUARANTINE?=	/var/virusmails
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
 
 OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
-		SQLITE	"Use SQLite for lookups/logging/quarantine"	off \
+		SQLITE	"Use SQLite for lookups"	off \
 		MYSQL	"Use MySQL for lookups/logging/quarantine"		off \
 		PGSQL	"Use PgSQL for lookups/logging/quarantine"		off \
 		LDAP	"Use LDAP for lookups"		off \
 		SASL	"Use SASL authentication"	off \
 		MILTER	"Sendmail milter support" on \
-		NEW_MILTER	"New sendmail milter support (external module)"	off \
 		SPAMASSASSIN	"Use mail/p5-Mail-SpamAssassin"	on \
 		P0F	"Passive operating system fingerprinting"	off \
 		FILE	"Use newer file(1) utility from ports"	off \
@@ -119,10 +117,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
 .if defined(WITH_SASL)
 RUN_DEPENDS+=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
-.endif
-
-.if defined(WITH_NEW_MILTER)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/amavisd-milter:${PORTSDIR}/security/amavisd-milter
 .endif
 
 .if defined(WITH_SPAMASSASSIN)
