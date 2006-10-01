@@ -36,6 +36,7 @@
     SUBDIR += gsmlib
     SUBDIR += hamfax
     SUBDIR += hamlib
+    SUBDIR += hcfmdm
     SUBDIR += hcidump
     SUBDIR += hf
     SUBDIR += hylafax
