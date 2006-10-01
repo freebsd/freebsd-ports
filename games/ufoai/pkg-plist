@@ -5,6 +5,7 @@ lib/ufoai/base/autoexec.cfg
 lib/ufoai/base/dedicated.cfg
 lib/ufoai/base/default.cfg
 lib/ufoai/base/keys.cfg
+lib/ufoai/base/game.so
 lib/ufoai/base/maps
 lib/ufoai/base/mapshots.cfg
 lib/ufoai/base/media
@@ -32,9 +33,9 @@ lib/ufoai/ufo
 %%UFO2MAP%%lib/ufoai/ufo2map
 lib/ufoai/ref_glx.so
 lib/ufoai/ref_sdl.so
+%%ARTS%%lib/ufoai/snd_arts.so
 lib/ufoai/snd_sdl.so
 lib/ufoai/snd_oss.so
-lib/ufoai/game.so
 @dirrm lib/ufoai/base/i18n/slo/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/slo
 @dirrm lib/ufoai/base/i18n/ru/LC_MESSAGES

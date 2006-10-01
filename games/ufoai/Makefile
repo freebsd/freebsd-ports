@@ -7,6 +7,7 @@
 
 PORTNAME=	ufoai
 DISTVERSION=	2.0RC5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/$/-/}${DISTVERSION:S/R/-R/}-source
@@ -26,8 +27,9 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 
 DATADIR=	share/${PORTNAME}
+SUB_FILES=	pkg-message
 UFO_DIR=	${PREFIX}/lib/${PORTNAME}
-UFO_LIBS=	ref_glx ref_sdl snd_sdl ref_glx snd_oss game
+UFO_LIBS=	ref_glx ref_sdl snd_sdl ref_glx snd_oss
 UFO_FILES=	ufo
 
 OPTIONS=		SERVER	"Install dedicated server"	on \
@@ -63,10 +65,13 @@ PLIST_SUB+=	UFO2MAP="@comment "
 
 .if defined(WITH_ARTS)
 HAVE_ARTS=	true
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 MAKE_ENV+=	BUILD_ARTS="YES"
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+UFO_LIBS+=	snd_arts
+PLIST_SUB+=	ARTS=""
 .else
 MAKE_ENV+=	BUILD_ARTS="NO"
+PLIST_SUB+=	ARTS="@comment "
 .endif
 
 .if defined(WITH_IPV6)
@@ -102,10 +107,14 @@ do-install:
 .	for FILE in ${UFO_LIBS}
 		${INSTALL_PROGRAM} ${WRKSRC}/release${ARCH}/${FILE}.so ${UFO_DIR}
 .	endfor
+		${INSTALL_PROGRAM} ${WRKSRC}/release${ARCH}/game.so ${UFO_DIR}/base
 
 	@cd ${WRKSRC}/base/i18n && \
 		${FIND} * -type d -exec ${MKDIR} "${UFO_DIR}/base/i18n/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${UFO_DIR}/base/i18n/{}" \;
 	${LN} -s ${PREFIX}/${DATADIR}/* ${UFO_DIR}/base
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
