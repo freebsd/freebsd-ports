@@ -17,8 +17,6 @@ DISTNAME=	MUMPS_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 
-BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran
-
 #-----------------------------------------------------------------------
 
 # WARNING: Non-serviceable parts inside, can break other ports
@@ -35,7 +33,6 @@ BUILD_DEPENDS=	${FC}:${PORTSDIR}/lang/gfortran
 
 USE_GCC=	4.1+
 WITH_FORTRAN=	yes
-FC=	${LOCALBASE}/bin/gfortran41
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O3 -ffast-math
