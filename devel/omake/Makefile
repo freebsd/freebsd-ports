@@ -9,18 +9,18 @@
 PORTNAME=	omake
 PORTVERSION=	0.9.6.9.1
 CATEGORIES=	devel
-MASTER_SITES=	http://omake.metaprl.org/downloads/
-#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.[0-9]*$//}-1
+MASTER_SITES=	http://omake.metaprl.org/downloads/ \
+		http://sunner.elcomnet.ru/~stas/
 DISTNAME=	omake-0.9.6.9-1
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A flexible build system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[0-9]*$//}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 
-FETCH_CMD=	/usr/bin/fetch -Rr
+FETCH_CMD?=	/usr/bin/fetch -Rr
 
 MAN1=	omake-base.1 omake-doc.1 omake-language.1 omake-options.1 \
 	omake-pervasives.1 omake-quickstart.1 omake-root.1 omake-rules.1 \
