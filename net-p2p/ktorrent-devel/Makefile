@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	20060915
+PORTVERSION=	20061001
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 PKGNAMESUFFIX=	-devel
