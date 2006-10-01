@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Anti-bruteforce PAM module
 
 USE_BZIP2=	yes
