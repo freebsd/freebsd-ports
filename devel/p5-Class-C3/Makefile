@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-C3
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -18,12 +18,12 @@ COMMENT=	A pragma to use the C3 method resolution order algorithm
 RUN_DEPENDS=	p5-Algorithm-C3>=0.05:${PORTSDIR}/devel/p5-Algorithm-C3
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Class::C3.3
 
 post-extract:
-	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
+	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Build.PL
 
 .include <bsd.port.pre.mk>
 
