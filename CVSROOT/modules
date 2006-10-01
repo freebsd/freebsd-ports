@@ -14259,6 +14259,7 @@ tvark		ports/net/tvark
 tvision		ports/devel/tvision
 tvmet		ports/math/tvmet
 tvp		ports/games/tvp
+tvrss		ports/net-p2p/tvrss
 tvtwm		ports/x11-wm/tvtwm
 tw_cli		ports/sysutils/tw_cli
 twander		ports/x11-fm/twander
