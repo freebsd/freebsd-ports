@@ -25,7 +25,8 @@
     amavis_p0fanalyzer_enable="YES"
     amavis_p0fanalyzer_p0f_filter="tcp dst port 25"
 
- You can pass another command line options to p0fanalyzer by setting
+ You can pass another command line options to p0f daemon by setting
+ amavis_p0f_daemon_flags and to p0f-analyzer.pl by setting
  amavis_p0fanalyzer_flags.
 
  Configuration templates are available in %%PREFIX%%/etc
