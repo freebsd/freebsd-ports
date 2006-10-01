@@ -115,6 +115,7 @@
     SUBDIR += trackerbt
     SUBDIR += transmission
     SUBDIR += transmission-gtk2
+    SUBDIR += tvrss
     SUBDIR += valknut
     SUBDIR += verlihub
     SUBDIR += verlihub-plugins
