@@ -219,10 +219,8 @@ pre-install:
 .endfor
 
 post-install:
-.if !defined(WITH_OVERWRITE_BASE)
 	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
 	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
-.endif
 .if defined(WITH_OVERWRITE_BASE)
 	@${ECHO_CMD} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${LOCALBASE}" >> ${TMPPLIST}
