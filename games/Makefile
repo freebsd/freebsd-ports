@@ -715,6 +715,8 @@
     SUBDIR += twitch
     SUBDIR += typespeed
     SUBDIR += tyrquake
+    SUBDIR += ufoai
+    SUBDIR += ufoai-data
     SUBDIR += uhexen
     SUBDIR += umark
     SUBDIR += untahris
