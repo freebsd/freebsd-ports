@@ -1,18 +1,49 @@
---- sshd_config.orig	Mon May 24 02:36:24 2004
-+++ sshd_config	Mon Sep 20 05:04:48 2004
-@@ -34,6 +34,7 @@
+--- sshd_config.orig	Mon Jul 24 01:06:47 2006
++++ sshd_config	Sat Sep 30 21:52:31 2006
+@@ -34,7 +34,7 @@
+ # Authentication:
  
  #LoginGraceTime 2m
- #PermitRootLogin yes
-+PermitRootLogin no
+-#PermitRootLogin yes
++#PermitRootLogin no
  #StrictModes yes
  #MaxAuthTries 6
  
-@@ -57,6 +58,7 @@
+@@ -52,11 +52,11 @@
+ # Don't read the user's ~/.rhosts and ~/.shosts files
+ #IgnoreRhosts yes
  
- # Change to no to disable s/key passwords
+-# To disable tunneled clear text passwords, change to no here!
+-#PasswordAuthentication yes
++# Change to yes to enable built-in password authentication.
++#PasswordAuthentication no
+ #PermitEmptyPasswords no
+ 
+-# Change to no to disable s/key passwords
++# Change to no to disable PAM authentication
  #ChallengeResponseAuthentication yes
-+ChallengeResponseAuthentication no
  
  # Kerberos options
- #KerberosAuthentication no
+@@ -69,7 +69,7 @@
+ #GSSAPIAuthentication no
+ #GSSAPICleanupCredentials yes
+ 
+-# Set this to 'yes' to enable PAM authentication, account processing, 
++# Set this to 'no' to disable PAM authentication, account processing,
+ # and session processing. If this is enabled, PAM authentication will 
+ # be allowed through the ChallengeResponseAuthentication and
+ # PasswordAuthentication.  Depending on your PAM configuration,
+@@ -78,11 +78,11 @@
+ # If you just want the PAM account and session checks to run without
+ # PAM authentication, then enable this but set PasswordAuthentication
+ # and ChallengeResponseAuthentication to 'no'.
+-#UsePAM no
++#UsePAM yes
+ 
+ #AllowTcpForwarding yes
+ #GatewayPorts no
+-#X11Forwarding no
++#X11Forwarding yes
+ #X11DisplayOffset 10
+ #X11UseLocalhost yes
+ #PrintMotd yes

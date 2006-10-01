@@ -1,20 +1,23 @@
---- sshd.c.orig	Wed Jun 26 01:24:19 2002
-+++ sshd.c	Thu Jul 25 06:32:37 2002
-@@ -53,6 +53,10 @@
+--- sshd.c.patch	Sun Sep 17 01:04:46 2006
++++ sshd.c	Sat Sep 30 10:38:05 2006
+@@ -80,6 +81,13 @@
  #include <prot.h>
  #endif
  
 +#ifdef __FreeBSD__
 +#include <resolv.h>
++#ifdef GSSAPI
++#include <gssapi.h>
++#endif
 +#endif
 +
+ #include "xmalloc.h"
  #include "ssh.h"
  #include "ssh1.h"
- #include "ssh2.h"
-@@ -1409,6 +1413,17 @@
- 	    setsockopt(sock_in, SOL_SOCKET, SO_KEEPALIVE, &on,
- 	    sizeof(on)) < 0)
- 		error("setsockopt SO_KEEPALIVE: %.100s", strerror(errno));
+@@ -1697,6 +1705,29 @@
+ 	signal(SIGQUIT, SIG_DFL);
+ 	signal(SIGCHLD, SIG_DFL);
+ 	signal(SIGINT, SIG_DFL);
 +
 +#ifdef __FreeBSD__
 +	/*
@@ -25,6 +28,18 @@
 +		debug("res_init()");         
 +		res_init();         
 +	}
++#ifdef GSSAPI
++	/*
++	 * Force GSS-API to parse its configuration and load any
++	 * mechanism plugins.
++	 */
++	{
++		gss_OID_set mechs;
++		OM_uint32 minor_status;
++		gss_indicate_mechs(&minor_status, &mechs);
++		gss_release_oid_set(&minor_status, &mechs);
++	}
++#endif
 +#endif
  
  	/*
