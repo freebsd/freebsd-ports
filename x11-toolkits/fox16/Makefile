@@ -13,18 +13,18 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
 MAINTAINER?=	alecn2002@yandex.ru
-COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.2
+COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-CONFLICTS=	fox-1.0.* fox-1.4.*
+CONFLICTS=	fox-1.0.* fox-1.4.* fox-1.2.*
 LATEST_LINK=	fox16
 
 MAJORVER=	1.6
-SHVER=		1
+SHVER=		14
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GNOME=	lthack
@@ -32,7 +32,7 @@ USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-opengl --with-x --enable-threadsafe
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		shutterbug.1 reswrap.1
 
@@ -40,6 +40,10 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		Does not compile at 4.x
+.endif
 
 ##
 ## Additional Options
