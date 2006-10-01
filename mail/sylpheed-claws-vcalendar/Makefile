@@ -7,6 +7,7 @@
 
 PORTNAME=	vcalendar
 PORTVERSION=	1.89.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -28,8 +29,5 @@ USE_AUTOTOOLS=	autoconf:259
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 	--with-libintl-prefix=${LOCALBASE}
-
-pre-configure:
-	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION} && ${AUTOHEADER}
 
 .include <bsd.port.mk>
