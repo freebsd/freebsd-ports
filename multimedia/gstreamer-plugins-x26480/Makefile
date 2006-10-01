@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-x26480/Makefile,v 1.1 2006/01/20 02:56:07 ahze Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer x264 plugin

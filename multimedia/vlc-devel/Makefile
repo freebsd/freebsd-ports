@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6.20060621
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
 #		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
@@ -292,7 +292,7 @@ CONFIGURE_ARGS+=--disable-dirac
 
 .if !defined(WITHOUT_X264)
 CONFIGURE_ARGS+=--enable-x264
-LIB_DEPENDS+=	x264.49:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=--disable-x264
 .endif
