@@ -872,7 +872,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gtetrinet</name>
-	<range><ge>0</ge></range>
+	<range><lt>0.7.10</lt></range>
       </package>
     </affects>
     <description>
@@ -887,12 +887,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>19766</bid>
       <cvename>CVE-2006-3125</cvename>
       <url>http://www.debian.org/security/2006/dsa-1163</url>
     </references>
     <dates>
       <discovery>2006-08-30</discovery>
       <entry>2006-09-02</entry>
+      <modified>2006-10-01</modified>
     </dates>
   </vuln>
 
