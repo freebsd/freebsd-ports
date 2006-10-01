@@ -1,0 +1,7 @@
+This port contains a driver for several Winmodems based on the Conexant
+HCF chipset (Acorp PIM/PIM2). It consists of a shim for the Linux binary 
+only object file.
+
+WWW: http://www.linuxant.com/
+
+- Alexey Illarionov <littlesavage@rambler.ru>
