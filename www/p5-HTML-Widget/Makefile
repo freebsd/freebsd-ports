@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
+MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -30,12 +30,14 @@ PERL_CONFIGURE=	yes
 
 MAN3=	HTML::Widget.3 \
 	HTML::Widget::Accessor.3 \
+	HTML::Widget::BlockContainer.3 \
 	HTML::Widget::Constraint.3 \
 	HTML::Widget::Constraint::ASCII.3 \
 	HTML::Widget::Constraint::All.3 \
 	HTML::Widget::Constraint::AllOrNone.3 \
 	HTML::Widget::Constraint::Any.3 \
 	HTML::Widget::Constraint::Callback.3 \
+	HTML::Widget::Constraint::CallbackOnce.3 \
 	HTML::Widget::Constraint::Date.3 \
 	HTML::Widget::Constraint::DateTime.3 \
 	HTML::Widget::Constraint::DependOn.3 \
@@ -54,9 +56,12 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint::Time.3 \
 	HTML::Widget::Container.3 \
 	HTML::Widget::Element.3 \
+	HTML::Widget::Element::Block.3 \
 	HTML::Widget::Element::Button.3 \
 	HTML::Widget::Element::Checkbox.3 \
+	HTML::Widget::Element::Fieldset.3 \
 	HTML::Widget::Element::Hidden.3 \
+	HTML::Widget::Element::NullContainer.3 \
 	HTML::Widget::Element::Password.3 \
 	HTML::Widget::Element::Radio.3 \
 	HTML::Widget::Element::RadioGroup.3 \
@@ -76,6 +81,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Filter::TrimEdges.3 \
 	HTML::Widget::Filter::UpperCase.3 \
 	HTML::Widget::Filter::Whitespace.3 \
+	HTML::Widget::Manual::Developer.3 \
 	HTML::Widget::Result.3
 
 post-extract:
