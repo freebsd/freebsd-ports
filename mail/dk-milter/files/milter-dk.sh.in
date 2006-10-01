@@ -75,7 +75,7 @@ else
 	if [ "x$1" != "xrestart" ]; then
 	    for profile in ${milterdk_profiles}; do
 		echo "===> milterdk profile: ${profile}"
-		$0 $1 ${profile}
+		%%RC_SCRIPT%% $1 ${profile}
 		retcode="$?"
 		if [ "0${retcode}" -ne 0 ]; then
 		    failed="${profile} (${retcode}) ${failed:-}"
