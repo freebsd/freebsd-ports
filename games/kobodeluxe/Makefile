@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://olofson.net/kobodl/download/
 DISTNAME=	KoboDeluxe-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@mail.ru
 COMMENT=	An SDL port of the scrolling game XKobo
 
 USE_SDL=	image sdl
