@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Oct  2 00:45:41 2006
++++ Makefile.in	Mon Oct  2 00:46:01 2006
+@@ -104,7 +104,7 @@
+ 
+ bin_SCRIPTS = fox-config
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = fox.pc
+ 
+ CLEANFILES = fox.tar.gz

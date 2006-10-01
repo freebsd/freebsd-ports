@@ -443,3 +443,4 @@ lib/libFOX-%%MAJORVER%%.so.%%SHVER%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/fox-%%MAJORVER%%/chart
 @dirrm include/fox-%%MAJORVER%%
+libdata/pkgconfig/fox.pc
