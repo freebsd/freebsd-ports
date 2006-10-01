@@ -6,4 +6,4 @@ that provides control for music playback over a local network.
 py-libmpdclient is a library to aid in rapid client development for
 the Python programming language.
 
-WWW:    http://www.musicpd.org/?page=python_module
+WWW:    http://www.musicpd.org/py-libmpdclient.shtml
