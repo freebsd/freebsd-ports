@@ -8,7 +8,7 @@
 
 PORTNAME=	dovecot
 DISTVERSION=	1.0.rc7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -104,6 +104,13 @@ CONFIGURE_ARGS+=	--with-sqlite
 #
 .if defined(WITHOUT_IPV6) || ${OSVERSION} <= 400014
 CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+post-patch:
+.if defined(WITH_GSSAPI)
+	@${REINPLACE_CMD} -e 's,<gssapi/gssapi\.h>,<gssapi.h>,' \
+		${WRKSRC}/src/auth/mech-gssapi.c \
+		${WRKSRC}/configure
 .endif
 
 post-build:
