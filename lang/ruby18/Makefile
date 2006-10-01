@@ -7,39 +7,39 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT?=	An object-oriented interpreted scripting language
-
-.if defined(WITH_ONIGURUMA)
-PKGNAMESUFFIX=	+oniguruma
-BUILD_DEPENDS+=	${NONEXISTENT}:${ONIGURUMA_PORTDIR}:patch
-ONIGURUMA_PORTDIR=	${PORTSDIR}/devel/oniguruma
-ONIGURUMA_WRKSRC=	`cd ${ONIGURUMA_PORTDIR}; ${MAKE} -V WRKSRC`
-PLIST_SUB+=	ONIGURUMA=""
-.else
-PLIST_SUB+=	ONIGURUMA="@comment "
-.endif
-
-USE_OPENSSL=	yes
-
-RUBY_VER=	1.8
-
-USE_RUBY=	yes
-RUBY_NO_BUILD_DEPENDS=	yes
-RUBY_NO_RUN_DEPENDS=	yes
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared --with-openssl-include=${OPENSSLINC} \
 		--mandir=${PREFIX}/man
+USE_OPENSSL=	yes
+USE_LDCONFIG=	yes
 
+RUBY_VER=		1.8
+USE_RUBY=		yes
+RUBY_NO_BUILD_DEPENDS=	yes
+RUBY_NO_RUN_DEPENDS=	yes
+_RUBY_SYSLIBDIR=	${PREFIX}/lib
+
+OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
+		ONIGURUMA "Build with oniguruma regular expressions lib" off \
+		IPV6 "Enable IPv6 support" on \
+		RDOC "Build and install Rdoc indexes" on \
+		DEBUG "Compile-in debug info" off
+
+.include <bsd.port.pre.mk>
+
+PKGNAMESUFFIX=	#empty
 .if defined(WITH_PTHREADS)
 CONFIGURE_ARGS+=--enable-pthread
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+pthreads
@@ -47,27 +47,37 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+pthreads
 CONFIGURE_ARGS+=--disable-pthread
 .endif
 
-.if defined(DEBUG)
+.if defined(WITH_ONIGURUMA)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+oniguruma
+BUILD_DEPENDS+=	${NONEXISTENT}:${ONIGURUMA_PORTDIR}:patch
+ONIGURUMA_PORTDIR=${PORTSDIR}/devel/oniguruma
+ONIGURUMA_WRKSRC=`cd ${ONIGURUMA_PORTDIR}; ${MAKE} -V WRKSRC`
+PLIST_SUB+=	ONIGURUMA=""
+.else
+PLIST_SUB+=	ONIGURUMA="@comment "
+.endif
+
+.if defined(WITH_DEBUG)
 CFLAGS+=	-g
 STRIP=		# none
 .endif
 
-USE_LDCONFIG=	yes
-MAN1=		${RUBY_NAME}.1
-#NOMANCOMPRESS=	yes
-
-.include <bsd.port.pre.mk>
+#
+# Disable doc generation if requested or docs disabled at all
+#
+.if !defined(WITHOUT_RDOC) && !defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--enable-install-doc
+PLIST_SUB+=		RDOC=""
+.else
+CONFIGURE_ARGS+=	--disable-install-doc
+PLIST_SUB+=		RDOC="@comment "
+.endif
 
 .if ${OSVERSION} < 502102
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 .endif
 
-# Uncomment if it still segfaults with 1.8.4
-#.if ${ARCH} == "ia64"
-#BROKEN=		"Segfault during build on ia64"
-#.endif
-
-.if ${OSVERSION} >= 400014
+.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -76,62 +86,42 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 MLINKS=		${RUBY_NAME}.1 ruby.1
-IF_DEFAULT=	""
+PLIST_SUB+=	IF_DEFAULT=""
 .else
-IF_DEFAULT=	"@comment "
+PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-.if defined(NORUBYLIB)
-RUBYLIB=	"@comment "
-.else
-RUBYLIB=	""
-.endif
+OBSOLETED_MODULES!=	${CAT} ${FILESDIR}/obsoleted
 
-PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
-		RUBYLIB=${RUBYLIB}
+INSTALLED_SCRIPTS=	irb erb h2rb rdoc ri ruby testrb
 
-INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
-			${PREFIX}/bin/erb \
-			${PREFIX}/bin/h2rb \
-			${PREFIX}/bin/rdoc \
-			${PREFIX}/bin/ri \
-			${PREFIX}/bin/testrb
+EXTSAMPLES=	bigdecimal/sample/*.rb	\
+		curses/hello.rb		\
+		curses/rain.rb		\
+		curses/view.rb		\
+		dl/sample/*.C		\
+		dl/sample/*.rb		\
+		pty/expect_sample.rb	\
+		pty/script.rb		\
+		pty/shl.rb
+EXTDOCS=	bigdecimal/bigdecimal_*.html	\
+		digest/digest.txt*		\
+		dl/doc/dl.txt			\
+		enumerator/enumerator.txt	\
+		etc/etc.txt*			\
+		pty/README*			\
+		readline/README*		\
+		syslog/syslog.txt		\
+		zlib/doc/zlib.rd
 
-OBSOLETED_MODULES=	bigfloat \
-			csv \
-			dl \
-			drb \
-			erb \
-			fileutils \
-			gserver \
-			openssl \
-			optparse \
-			racc-runtime \
-			rdoc \
-			rexml \
-			ri \
-			sha1 \
-			shell \
-			soap \
-			strscan \
-			syslog \
-			testunit \
-			timex \
-			urb \
-			uri \
-			webrick \
-			xmlrpc \
-			yaml \
-			zlib
+MAN1=		${RUBY_NAME}.1
 
-pre-everything::
-.if !defined(WITH_PTHREADS)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "NOTE:"
-	@${ECHO_MSG} "You can enable pthread support by defining WITH_PTHREADS variable,"
-	@${ECHO_MSG} "but not recommended since this might break some ruby apps."
-	@${ECHO_MSG} ""
-.endif
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
 post-extract:
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
@@ -142,72 +132,87 @@ post-patch:
 .endif
 	${REINPLACE_CMD} -e 's|-l$$pthread_lib|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
-	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
+
+#
+# Remove modules we don't want
+#
 .for d in Win32API win32ole
 	${RM} -rf ${BUILD_WRKSRC}/ext/${d}
 .endfor
+
+#
+# Prepare modules we are wanting to build via external ports
+#
 .for d in gdbm iconv tk
 	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
 pre-configure:
 .if defined(WITH_ONIGURUMA)
-	cd ${ONIGURUMA_WRKSRC}; \
-	./configure; \
-	${MAKE} -f Makefile ${RUBY_VER:S/.//} RUBYDIR=${WRKSRC}
+	cd ${ONIGURUMA_WRKSRC}; ./configure; \
+		${MAKE} -f Makefile ${RUBY_VER:S/.//} RUBYDIR="${WRKSRC}"
 .endif
 	${TOUCH} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-post-install:
-.if defined(STRIP) && ${STRIP} == -s
-	${STRIP_CMD} ${RUBY}
-.endif
-.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-# Link just installed "ruby" to "ruby18", etc.
-	${LN} -f ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}
-	for f in ${INSTALLED_SCRIPTS}; do \
-		${LN} -f $${f}${RUBY_SUFFIX} $${f}; \
-	done
-.endif
-	${LDCONFIG} -m ${PREFIX}/lib
-	${MKDIR} ${RUBY_ELISPDIR}
-	${TOUCH} ${RUBY_ELISPDIR}/.keep_me.${RUBY_NAME}
-	${MKDIR} ${RUBY_EXAMPLESDIR}
-	${TOUCH} ${RUBY_EXAMPLESDIR}/.keep_me
-	${MKDIR} ${RUBY_DOCDIR}
-	${TOUCH} ${RUBY_DOCDIR}/.keep_me
-	${MKDIR} ${RUBY_RIDIR}
+post-build:
+#
+# Hack to allow modules to be installed into separate PREFIX
+#
+	@${REINPLACE_CMD} -E -e \
+		"s,(CONFIG\[\"prefix\"\][[:space:]]*=[[:space:]]*\()(.*),\1ENV\['PREFIX'\] || \2," ${WRKSRC}/rbconfig.rb
+
+pre-install:
+	${MKDIR}	${RUBY_DOCDIR}		\
+			${RUBY_ELISPDIR}	\
+			${RUBY_EXAMPLESDIR}	\
+			${RUBY_RIDIR}		\
+			${RUBY_SITERIDIR}	\
+			${RUBY_SITEARCHLIBDIR}
+
 	${SETENV} LC_TIME=C /bin/date > ${RUBY_RIDIR}/created.rid
-	${MKDIR} ${RUBY_SITERIDIR}
 	${SETENV} LC_TIME=C /bin/date > ${RUBY_SITERIDIR}/created.rid
+	${TOUCH} ${RUBY_ELISPDIR}/.keep_me.${RUBY_NAME}
+	${TOUCH} ${RUBY_EXAMPLESDIR}/.keep_me
+	${TOUCH} ${RUBY_DOCDIR}/.keep_me
+	${TOUCH} ${RUBY_SITEARCHLIBDIR}/.keep_me
+
+post-install:
+#
+# XXX: hack to strip ruby binary. Ruby uses its own install script that seems
+# bogus to hack.
+#
+.if defined(STRIP) && ${STRIP} == -s
+	${STRIP_CMD} ${PREFIX}/bin/${RUBY_NAME}
+.endif
+
+#
+# Link just installed "ruby" to "ruby18", etc.
+#
+.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
+. for FILE in ${INSTALLED_SCRIPTS}
+	${LN} -f ${PREFIX}/bin/${FILE}${RUBY_SUFFIX} ${PREFIX}/bin/${FILE}
+. endfor
+.endif
+
 .if !defined(NOPORTDOCS)
-	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/
-	${MKDIR} ${RUBY_EXAMPLESDIR}/bigdecimal
-	${INSTALL_DATA} ${WRKSRC}/ext/bigdecimal/sample/*.rb ${RUBY_EXAMPLESDIR}/bigdecimal
-	${MKDIR} ${RUBY_EXAMPLESDIR}/curses
-	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
-	${MKDIR} ${RUBY_EXAMPLESDIR}/dl
-	${INSTALL_DATA} ${WRKSRC}/ext/dl/sample/*.C ${WRKSRC}/ext/dl/sample/*.rb ${RUBY_EXAMPLESDIR}/dl
-	${MKDIR} ${RUBY_EXAMPLESDIR}/pty
-	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${RUBY_EXAMPLESDIR}/pty
-	${INSTALL_DATA} ${WRKSRC}/COPYING* ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/LEGAL ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README* ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/bigdecimal/bigdecimal_*.html ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/digest/digest.txt* ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/dl/doc/dl.txt ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/enumerator/enumerator.txt ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}
-	${MKDIR} ${RUBY_DOCDIR}/pty
-	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty
-	${MKDIR} ${RUBY_DOCDIR}/readline
-	${INSTALL_DATA} ${WRKSRC}/ext/readline/README* ${RUBY_DOCDIR}/readline
-	${INSTALL_DATA} ${WRKSRC}/ext/syslog/syslog.txt ${RUBY_DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/zlib/doc/zlib.rd ${RUBY_DOCDIR}
-	${CP} -R ${WRKSRC}/doc/* ${RUBY_DOCDIR}/
-	cd ${INSTALL_WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-doc
+	# Create all dirs required (":u" isn't avaiable in STABLE yet :-()
+	${MKDIR} ${EXTSAMPLES:C,^([^/]+)/.*,\1,:S,^,${RUBY_EXAMPLESDIR}/,}
+	${MKDIR} ${EXTDOCS:C,^([^/]+)/.*,\1,:S,^,${RUBY_DOCDIR}/,}
+.for FILE in ${EXTSAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/ext/${FILE} \
+		${RUBY_EXAMPLESDIR}/${FILE:C,^([^/]+)/.*,\1,}/
+.endfor
+.for FILE in ${EXTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/ext/${FILE} \
+		${RUBY_DOCDIR}/${FILE:C,^([^/]+)/.*,\1,}/
+.endfor
+	@(cd ${WRKSRC}/sample/ && ${COPYTREE_SHARE} \* ${RUBY_EXAMPLESDIR}/)
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${RUBY_DOCDIR}/)
+	${INSTALL_DATA} ${WRKSRC}/COPYING*	\
+			${WRKSRC}/ChangeLog	\
+			${WRKSRC}/LEGAL		\
+			${WRKSRC}/README*	\
+			${RUBY_DOCDIR}/
 .endif
 	@${ECHO} "Deinstalling obsoleted packages that are now part of ruby..."
 	@cd ${PKG_DBDIR}; for portname in ${OBSOLETED_MODULES}; do \
@@ -221,6 +226,74 @@ post-install:
 	@${ECHO_CMD} "@exec ${ECHO_CMD} \"Deinstalling obsoleted packages that are now part of ruby...\"" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec cd ${PKG_DBDIR} && for portname in ${OBSOLETED_MODULES}; do for pkg in ${RUBY_PKGNAMEPREFIX}\$$portname-*; do if [ -d \$$pkg ]; then ${ECHO_CMD} \"---> \$$pkg\"; ${PKG_DELETE} -f \$$pkg; fi; done; done" >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
+
+plist::
+	truncate -s0 pkg-plist
+.for FILE in ${INSTALLED_SCRIPTS}
+	@${ECHO_CMD} "bin/${FILE}%%RUBY_SUFFIX%%" >> pkg-plist
+	@${ECHO_CMD} "%%IF_DEFAULT%%bin/${FILE}" >> pkg-plist
+.endfor
+	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%-static.a" >> pkg-plist
+	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so" >> pkg-plist
+	@${ECHO_CMD} "lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%" >> pkg-plist
+
+	@${FIND} ${RUBY_DOCDIR}/ ! -type d ! -name .keep_me | \
+		${SED} 's,^${RUBY_DOCDIR},%%PORTDOCS%%%%RUBY_DOCDIR%%,' \
+		 >> pkg-plist
+	@${FIND} ${RUBY_DOCDIR}/ -type d -mindepth 1 | ${SORT} -r | \
+		${SED} -E -e \
+		's,^${RUBY_DOCDIR}(.*),%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%\1,' \
+		>> pkg-plist
+
+	@${FIND} ${RUBY_EXAMPLESDIR}/ ! -type d ! -name .keep_me | \
+		${SED} 's,^${RUBY_EXAMPLESDIR},%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%,' \
+		 >> pkg-plist
+	@${FIND} ${RUBY_EXAMPLESDIR}/ -type d -mindepth 1 | ${SORT} -r | \
+		${SED} -E -e \
+		's,^${RUBY_EXAMPLESDIR}(.*),%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%\1,' \
+		>> pkg-plist
+
+	@${ECHO_CMD} "%%RUBY_DOCDIR%%/.keep_me" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_DOCDIR%%" >> pkg-plist
+
+	@${ECHO_CMD} "%%RUBY_EXAMPLESDIR%%/.keep_me" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_EXAMPLESDIR%%" >> pkg-plist
+
+	@${ECHO_CMD} "%%RUBY_ELISPDIR%%/.keep_me.%%RUBY_NAME%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_ELISPDIR%%" >> pkg-plist
+
+	@${FIND} ${RUBY_RIDIR}/ ! -type d ! -name created.rid | \
+		${SED} 's,^${RUBY_RIDIR},%%RDOC%%%%RUBY_RIDIR%%,' >> pkg-plist
+	@${FIND} ${RUBY_RIDIR}/ -type d -mindepth 1| ${SORT} -r | \
+		${SED} -E -e 's,^${RUBY_RIDIR}(.*),%%RDOC%%@dirrm %%RUBY_RIDIR%%\1,' \
+		>> pkg-plist
+
+	@${ECHO_CMD} "@exec /bin/mkdir -p %D/%%RUBY_RIDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@exec env LC_TIME=C /bin/date > %D/%%RUBY_RIDIR%%/created.rid" >> pkg-plist
+	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_RIDIR%%/created.rid" >> pkg-plist
+
+	@${ECHO_CMD} "@exec /bin/mkdir -p %D/%%RUBY_SITERIDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@exec env LC_TIME=C /bin/date > %D/%%RUBY_SITERIDIR%%/created.rid"  >> pkg-plist
+	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_SITERIDIR%%/created.rid" \
+		>> pkg-plist
+	
+	@${ECHO_CMD} "@dirrmtry %%RUBY_SITERIDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_RIDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry share/ri/%%RUBY_VER%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry share/ri" >> pkg-plist
+
+	@${FIND} ${RUBY_LIBDIR}/ ! -type d | \
+		${SED} 's,^${RUBY_LIBDIR},%%RUBY_LIBDIR%%,' >> pkg-plist
+	@${FIND} ${RUBY_LIBDIR}/ -type d | ${SORT} -r | \
+		${SED} -E -e 's,^${RUBY_LIBDIR}(.*),@dirrm %%RUBY_LIBDIR%%\1,' >> pkg-plist
+
+	@${ECHO_CMD} "%%RUBY_SITEARCHLIBDIR%%/.keep_me" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_SITEARCHLIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_SITELIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry lib/ruby/site_ruby" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry lib/ruby" >> pkg-plist
+
+	@${SED} -i "" -E -e "s,${RUBY_ARCH},%%RUBY_ARCH%%,g" pkg-plist
 
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
