@@ -1,6 +1,15 @@
---- configure.orig	Sun May 21 16:45:02 2006
-+++ configure	Sun May 28 18:27:03 2006
-@@ -129,7 +129,7 @@
+--- configure.orig	Tue Sep 26 16:45:03 2006
++++ configure	Wed Sep 27 07:56:11 2006
+@@ -115,8 +115,6 @@
+     HAVE_GETOPT_LONG=0
+     ;;
+   *)
+-    echo "Unknown system $MACHINE, edit the configure"
+-    exit 1
+     ;;
+ esac
+ 
+@@ -136,7 +134,7 @@
        ASFLAGS="$ASFLAGS -f elf"
      fi
      ;;
@@ -9,16 +18,7 @@
      ARCH="X86_64"
      CFLAGS="$CFLAGS -DHAVE_MMXEXT -DHAVE_SSE2"
      AS="yasm"
-@@ -176,8 +176,6 @@
-     ARCH="PARISC"
-     ;;
-   *)
--    echo "Unknown platform $UNAMEM, edit the configure"
--    exit 1
-     ;;
- esac
- 
-@@ -290,7 +288,7 @@
+@@ -293,7 +291,7 @@
      esac
  fi
  
