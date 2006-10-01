@@ -1,23 +1,27 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/.packlist
-%%SITE_PERL%%/XML/Compile/Schema/Translate.pod
-%%SITE_PERL%%/XML/Compile/Schema/Translate.pm
-%%SITE_PERL%%/XML/Compile/Schema/Specs.pod
-%%SITE_PERL%%/XML/Compile/Schema/Specs.pm
-%%SITE_PERL%%/XML/Compile/Schema/NameSpaces.pod
-%%SITE_PERL%%/XML/Compile/Schema/NameSpaces.pm
-%%SITE_PERL%%/XML/Compile/Schema/Instance.pod
-%%SITE_PERL%%/XML/Compile/Schema/Instance.pm
-%%SITE_PERL%%/XML/Compile/Schema/BuiltInTypes.pod
-%%SITE_PERL%%/XML/Compile/Schema/BuiltInTypes.pm
-%%SITE_PERL%%/XML/Compile/Schema/BuiltInStructs.pod
-%%SITE_PERL%%/XML/Compile/Schema/BuiltInStructs.pm
-%%SITE_PERL%%/XML/Compile/Schema/BuiltInFacets.pod
-%%SITE_PERL%%/XML/Compile/Schema/BuiltInFacets.pm
-%%SITE_PERL%%/XML/Compile/Schema.pod
-%%SITE_PERL%%/XML/Compile/Schema.pm
-%%SITE_PERL%%/XML/Compile.pod
 %%SITE_PERL%%/XML/Compile.pm
+%%SITE_PERL%%/XML/Compile.pod
+%%SITE_PERL%%/XML/Compile/Schema.pm
+%%SITE_PERL%%/XML/Compile/Schema.pod
+%%SITE_PERL%%/XML/Compile/Schema/BuiltInFacets.pm
+%%SITE_PERL%%/XML/Compile/Schema/BuiltInFacets.pod
+%%SITE_PERL%%/XML/Compile/Schema/BuiltInStructs.pm
+%%SITE_PERL%%/XML/Compile/Schema/BuiltInStructs.pod
+%%SITE_PERL%%/XML/Compile/Schema/BuiltInTypes.pm
+%%SITE_PERL%%/XML/Compile/Schema/BuiltInTypes.pod
+%%SITE_PERL%%/XML/Compile/Schema/Instance.pm
+%%SITE_PERL%%/XML/Compile/Schema/Instance.pod
+%%SITE_PERL%%/XML/Compile/Schema/NameSpaces.pm
+%%SITE_PERL%%/XML/Compile/Schema/NameSpaces.pod
+%%SITE_PERL%%/XML/Compile/Schema/Specs.pm
+%%SITE_PERL%%/XML/Compile/Schema/Specs.pod
+%%SITE_PERL%%/XML/Compile/Schema/Translate.pm
+%%SITE_PERL%%/XML/Compile/Schema/Translate.pod
+%%SITE_PERL%%/XML/Compile/Schema/XmlReader.pm
+%%SITE_PERL%%/XML/Compile/Schema/XmlReader.pod
+%%SITE_PERL%%/XML/Compile/Schema/XmlWriter.pm
+%%SITE_PERL%%/XML/Compile/Schema/XmlWriter.pod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Compile/Schema
