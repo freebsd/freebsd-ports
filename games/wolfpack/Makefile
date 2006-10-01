@@ -36,6 +36,10 @@ PKGDEINSTALL=	${PKGINSTALL}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/defined(FBSD)/& \&\& !defined(__ia64__)/' \
+		${WRKSRC}/src/lib/lwp/arch.c
+
 pre-configure:
 	${MKDIR} ${WRKSRC}/data
 
