@@ -15427,6 +15427,7 @@ xorp		ports/net/xorp
 xosd		ports/misc/xosd
 xosmulti	ports/games/xosmulti
 xosview		ports/sysutils/xosview
+xotcl		ports/lang/xotcl
 xp		ports/textproc/xp
 xpacman		ports/games/xpacman
 xpad		ports/deskutils/xpad
