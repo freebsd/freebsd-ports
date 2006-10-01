@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.12.0
-PORTREVISION=	3
+PORTVERSION=	1.13.0
+PORTREVISION=	0
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
 USE_BZIP2=	yes
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib" \
 		RUBY="${RUBY}"
-CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}"
+CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}" --prefix="${PREFIX}"
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-htmldoc
 .endif
@@ -58,6 +58,14 @@ post-install:
 .endfor
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
+#
+# Files installed in /ex may vary over different archs
+#
+	@${FIND} ${RUBY_MODDOCDIR}/ex/ ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${RUBY_MODDOCDIR}/ex/ -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${RUBY_MODDOCDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>
