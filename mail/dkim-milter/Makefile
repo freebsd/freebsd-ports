@@ -23,10 +23,15 @@ COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dkim.sh
 
-.if defined(WITH_POSTFIX_MILTER)
+.if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 SENDMAIL_MILTER_IN_BASE=	yes
-RUN_DEPENDS+=	postfix>=2[3-9]*:${PORTSDIR}/mail/postfix
 PKGMESSAGE=	pkg-message.postfix
+
+.if defined(WITH_POSTFIX_CURRENT)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-current
+.else
+RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
+.endif
 .endif
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
@@ -51,6 +56,13 @@ SITE+=		${FILESDIR}/site.config.m4.milter
 .endif
 
 .include <bsd.port.pre.mk>
+
+# .sh suffix is stripped in recent releases.
+.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101 ))
+SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}"
+.else
+SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR}"
+.endif
 
 .if defined(SENDMAIL_WITHOUT_MILTER)
 pre-fetch:
