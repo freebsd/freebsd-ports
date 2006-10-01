@@ -1,0 +1,16 @@
+bin/x264
+%%GTK%%bin/x264_gtk_encode
+include/x264.h
+%%GTK%%binclude/x264_gtk.h
+%%GTK%%binclude/x264_gtk_enum.h
+lib/libx264.a
+lib/libx264.so
+lib/libx264.so.50
+%%GTK%%blib/libx264gtk.a
+%%GTK%%blib/libx264gtk.so
+%%GTK%%blib/libx264gtk.so.50
+libdata/pkgconfig/x264.pc
+%%GTK%%blibdata/pkgconfig/x264gtk.pc
+%%GTK%%bshare/locale/fr/LC_MESSAGES/x264_gtk.mo
+%%GTK%%b%%DATADIR%%/x264.png
+%%GTK%%b@dirrm %%DATADIR%%
