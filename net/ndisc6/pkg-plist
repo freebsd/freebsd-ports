@@ -1,3 +1,6 @@
+bin/addrinfo
+bin/dnssort
+bin/nameinfo
 bin/tcpspray6
 sbin/ndisc6
 sbin/rdisc6
