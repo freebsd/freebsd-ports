@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	xmmsassesment
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Add song rating control to the XMMS playlist
 
+DEPRECATED=	Project disappeared from the internet
+EXPIRATION_DATE=2006-12-01
+
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
