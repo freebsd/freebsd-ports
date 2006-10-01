@@ -323,6 +323,7 @@
     SUBDIR += visualworks
     SUBDIR += wamcc
     SUBDIR += whitespace
+    SUBDIR += xotcl
     SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yap

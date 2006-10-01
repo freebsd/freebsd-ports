@@ -1,0 +1,49 @@
+--- Makefile.in.orig	Wed Sep 27 16:21:56 2006
++++ Makefile.in	Wed Sep 27 16:43:46 2006
+@@ -261,11 +261,11 @@
+ #========================================================================
+ # This rule installs platform-independent files, such as header files.
+ #========================================================================
+-install-libraries: libraries $(DESTDIR)$(includedir) $(DESTDIR)$(pkglibdir)
+-	@echo "Installing header files in $(DESTDIR)$(includedir)"
++install-libraries: libraries $(DESTDIR)$(pkgincludedir) $(DESTDIR)$(pkglibdir)
++	@echo "Installing header files in $(DESTDIR)$(pkgincludedir)"
+ 	@for i in $(PKG_HEADERS) ; do \
+ 	    echo "    Installing $$i" ; \
+-	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir) ; \
++	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(pkgincludedir) ; \
+ 	done;
+ 	@echo "Installing Libraries to $(DESTDIR)$(pkglibdir)/"
+ 	@for i in $(libdirs) ; do \
+@@ -283,7 +283,7 @@
+ 	    $(INSTALL_DATA) $(src_lib_dir)/$$i $(DESTDIR)$(pkglibdir)/$$i ; \
+ 	done;
+ 	cat unix/pkgIndex.unix >> $(DESTDIR)$(pkglibdir)/pkgIndex.tcl
+-	$(INSTALL_DATA) xotclConfig.sh $(DESTDIR)$(libdir)/
++	$(INSTALL_DATA) xotclConfig.sh $(DESTDIR)$(pkglibdir)/
+ 	@echo "Installing Applications to $(DESTDIR)$(pkglibdir)/apps/"
+ 	@for i in $(appdirs) ; do \
+ 	    echo "    Installing $$i/" ; \
+@@ -534,7 +534,6 @@
+ 	    else \
+ 		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
+ 		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
+-		ln -s $(DESTDIR)$(pkglibdir)/$$p $(DESTDIR)$(libdir)/$$p; \
+ 	    fi; \
+ 	    ext=`echo $$p|sed -e "s/.*\.//"`; \
+ 	    if test "x$$ext" = "xdll"; then \
+@@ -591,12 +590,12 @@
+ 	  rm -f $(DESTDIR)$(bindir)/$$p; \
+ 	done
+ 
+-$(DESTDIR)$(includedir):
+-	$(mkinstalldirs) $@
+ $(DESTDIR)$(bindir):
+ 	$(mkinstalldirs)  $@
+ $(DESTDIR)$(libdir):
+ 	$(mkinstalldirs)  $@
++$(DESTDIR)$(pkgincludedir):
++	$(mkinstalldirs) $@
+ $(DESTDIR)$(pkglibdir):
+ 	$(mkinstalldirs)  $@
+ $(DESTDIR)$(pkglibdir)/apps: $(DESTDIR)$(pkglibdir)
