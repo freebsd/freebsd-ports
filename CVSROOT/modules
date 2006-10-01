@@ -4076,6 +4076,7 @@ hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
 hc12mem		ports/devel/hc12mem
+hcfmdm		ports/comms/hcfmdm
 hcidump		ports/comms/hcidump
 hdf		ports/science/hdf
 hdf-szip	ports/science/szip
