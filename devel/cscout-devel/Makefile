@@ -25,6 +25,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_LATEST_LINK=	yes
 
+DEPRECATED=	The (long overdue) release of 2.2 has made this port obsolete. \
+		Use devel/cscout
+EXPIRATION_DATE=	20061009
+
 MAN1=	cscout.1 cswc.1
 
 post-patch:
