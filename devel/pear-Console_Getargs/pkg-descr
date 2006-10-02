@@ -1,7 +1,7 @@
-PEAR::Console_Getargs implements a Command Line arguments and parameters
-parser for your CLI applications.
+PEAR::Console_Getargs implements a Command Line arguments and
+parameters parser for your CLI applications.
 
-It performs some basic arguments validation and automatically creates a
-formatted help text, based on the given configuration.
+It performs some basic arguments validation and automatically creates
+a formatted help text, based on the given configuration.
 
 WWW: http://pear.php.net/package/Console_Getargs/
