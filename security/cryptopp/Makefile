@@ -7,7 +7,7 @@
 
 PORTNAME=		cryptopp
 PORTVERSION=		5.2.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.eskimo.com/~weidai/ \
@@ -30,7 +30,7 @@ CXXFLAGS+=		-fPIC -O0
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Internal compiler error on alpha 4.x"
+BROKEN=		Internal compiler error on alpha 4.x
 .endif
 
 pre-install:
