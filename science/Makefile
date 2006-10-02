@@ -33,6 +33,7 @@
     SUBDIR += fasthenry
     SUBDIR += felt
     SUBDIR += flounder
+    SUBDIR += g3data
     SUBDIR += gave
     SUBDIR += gchempaint
     SUBDIR += gchemutils
