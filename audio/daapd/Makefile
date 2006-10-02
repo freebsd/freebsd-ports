@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	daapd
-PORTVERSION=	0.2.3d
-PORTREVISION=	1
+PORTVERSION=	0.2.4b
 CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 EXTRACT_SUFX=	.tgz
@@ -15,14 +14,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Server for Digital Audio Access Protocol
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libid3tag.a:${PORTSDIR}/audio/mad \
-		${LOCALBASE}/lib/libdaaplib.a:${PORTSDIR}/audio/daaplib \
-		${LOCALBASE}/lib/libhttpd-persistent.a:${PORTSDIR}/www/libhttpd-persistent
+BUILD_DEPENDS=	daaplib>=0.1.1a_2:${PORTSDIR}/audio/daaplib \
+		libhttpd-persistent>=1.3h_1:${PORTSDIR}/www/libhttpd-persistent
+RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag
 
+USE_GCC=	3.4+
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-ALL_TARGET=	daapd
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	daapd
 
 MAN8=		daapd.8
 
@@ -69,9 +69,6 @@ pre-install:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/daapd-example.conf ${PREFIX}/etc/daapd.conf.sample
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/daapd.sh > ${WRKDIR}/daapd.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/daapd.sh ${PREFIX}/etc/rc.d/daapd.sh
 	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
