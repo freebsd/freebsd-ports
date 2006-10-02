@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios-statd
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	sysutils python net-mgmt
 MASTER_SITES=	http://www.twoevils.org/files/netsaint_statd/
 
@@ -14,6 +14,7 @@ MAINTAINER=	jims@bluenotch.com
 COMMENT=	Daemon/client to check remote host information for Nagios
 
 USE_PYTHON=	yes
+USE_RC_SUBR=	nagiosstatd.sh
 
 MAN1=		nagios-stat.1
 MAN8=		nagios-statd.8
@@ -25,7 +26,6 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/nagios-stat ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/sbin/nagios-statd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${FILESDIR}/nagios-statd.sh.sample ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/share/man1/nagios-stat.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/share/man8/nagios-statd.8 ${PREFIX}/man/man8
 
