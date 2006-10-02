@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sig/.packlist
+%%SITE_PERL%%/Sys/Sig.pm
+@dirrmtry %%SITE_PERL%%/Sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Sig
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
