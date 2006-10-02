@@ -34,6 +34,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="74ff10f6-520f-11db-8f1a-000a48049292">
+    <topic>cscope -- Buffer Overflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cscope</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/21601">
+	  <p>Will Drewry has reported some vulnerabilities in Cscope,
+	    which potentially can be exploited by malicious people to
+	    compromise a vulnerable system.</p>
+	  <p>Various boundary errors within the parsing of file lists
+	    or the expansion of environment variables can be exploited
+	    to cause stack-based buffer overflows when parsing
+	    specially crafted "cscope.lists" files or directories.</p>
+	  <p>A boundary error within the parsing of command line
+	    arguments can be exploited to cause a stack-based buffer
+	    overflow when supplying an overly long "reffile" argument.</p>
+	  <p>Successful exploitation may allow execution of arbitrary
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>19686</bid>
+      <bid>19687</bid>
+      <cvename>CVE-2006-4262</cvename>
+      <url>http://secunia.com/advisories/21601</url>
+      <url>http://sourceforge.net/mailarchive/forum.php?thread_id=30266760&amp;forum_id=33500</url>
+      <url>http://sourceforge.net/mailarchive/forum.php?thread_id=30266761&amp;forum_id=33500</url>
+    </references>
+    <dates>
+      <discovery>2006-08-20</discovery>
+      <entry>2006-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="64bf6234-520d-11db-8f1a-000a48049292">
     <topic>gnutls -- RSA Signature Forgery Vulnerability</topic>
     <affects>
