@@ -1,0 +1,23 @@
+--- Makefile.orig	Sat Oct  8 12:05:13 2005
++++ Makefile	Tue Sep 19 12:03:46 2006
+@@ -1,8 +1,7 @@
+-CC=gcc
+-CFLAGS=-Wall `pkg-config --cflags gtk+-2.0`
++CFLAGS+=-Wall `pkg-config --cflags gtk+-2.0`
+ LIBS=`pkg-config --libs gtk+-2.0`
+-bindir ?= /usr/bin
+-mandir ?= /usr/share/man
++bindir= ${PREFIX}/bin
++mandir= ${PREFIX}/man
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $<
+@@ -21,7 +20,7 @@
+ 
+ g3data.1.gz: g3data.sgml
+ 	rm -f *.1
+-	onsgmls g3data.sgml | sgmlspl /usr/share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl
++	nsgmls g3data.sgml | sgmlspl /usr/local/share/sgml/docbook/utils-0.6.14/helpers/docbook2man-spec.pl
+ 	mv *.1 g3data.1
+ 	gzip g3data.1
+ 
