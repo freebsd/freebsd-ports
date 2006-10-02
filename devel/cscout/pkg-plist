@@ -1,10 +1,13 @@
 bin/cscout
+bin/csmake
 bin/cswc
 @unexec if cmp -s %D/etc/cscout/cscout_defs.h %D/etc/cscout/cscout_defs.FBSD_GCC; then rm -f %D/etc/cscout/cscout_defs.h; fi
 @unexec if cmp -s %D/etc/cscout/cscout_incs.h %D/etc/cscout/cscout_incs.FBSD_GCC; then  rm -f %D/etc/cscout/cscout_incs.h; fi
+etc/cscout/acl
 etc/cscout/cscout_defs.BORLAND
 etc/cscout/cscout_defs.FBSD_GCC
 etc/cscout/cscout_defs.GENERIC
+etc/cscout/cscout_defs.GENERIC_GCC
 etc/cscout/cscout_defs.LINUX_GCC
 etc/cscout/cscout_defs.WIN32_MINGW
 etc/cscout/cscout_defs.WIN32_MSC
@@ -15,14 +18,25 @@ etc/cscout/cscout_incs.WIN32_MINGW
 etc/cscout/cscout_incs.WIN32_MSC
 @dirrmtry etc/cscout
 %%PORTDOCS%%%%DOCSDIR%%/access.html
+%%PORTDOCS%%%%DOCSDIR%%/bib.html
+%%PORTDOCS%%%%DOCSDIR%%/cg.html
+%%PORTDOCS%%%%DOCSDIR%%/change.html
+%%PORTDOCS%%%%DOCSDIR%%/concept.html
 %%PORTDOCS%%%%DOCSDIR%%/contents.html
+%%PORTDOCS%%%%DOCSDIR%%/copy_file.gif
+%%PORTDOCS%%%%DOCSDIR%%/csmake.html
 %%PORTDOCS%%%%DOCSDIR%%/cvs.html
+%%PORTDOCS%%%%DOCSDIR%%/dbschema.html
 %%PORTDOCS%%%%DOCSDIR%%/egglos.html
 %%PORTDOCS%%%%DOCSDIR%%/error.html
 %%PORTDOCS%%%%DOCSDIR%%/ext.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/file.html
-%%PORTDOCS%%%%DOCSDIR%%/fq.html
+%%PORTDOCS%%%%DOCSDIR%%/fileq.html
+%%PORTDOCS%%%%DOCSDIR%%/flow.gif
+%%PORTDOCS%%%%DOCSDIR%%/flow.html
+%%PORTDOCS%%%%DOCSDIR%%/fun.html
+%%PORTDOCS%%%%DOCSDIR%%/funq.html
 %%PORTDOCS%%%%DOCSDIR%%/geglos.html
 %%PORTDOCS%%%%DOCSDIR%%/id.html
 %%PORTDOCS%%%%DOCSDIR%%/idq.html
@@ -31,25 +45,34 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/indexw.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/maincall.gif
 %%PORTDOCS%%%%DOCSDIR%%/mancscout.html
 %%PORTDOCS%%%%DOCSDIR%%/mancswc.html
+%%PORTDOCS%%%%DOCSDIR%%/mismash.gif
 %%PORTDOCS%%%%DOCSDIR%%/name.html
+%%PORTDOCS%%%%DOCSDIR%%/obf.html
 %%PORTDOCS%%%%DOCSDIR%%/op.html
 %%PORTDOCS%%%%DOCSDIR%%/opt.html
+%%PORTDOCS%%%%DOCSDIR%%/optf.html
 %%PORTDOCS%%%%DOCSDIR%%/pragma.html
+%%PORTDOCS%%%%DOCSDIR%%/qeg.html
 %%PORTDOCS%%%%DOCSDIR%%/re.html
 %%PORTDOCS%%%%DOCSDIR%%/run.html
+%%PORTDOCS%%%%DOCSDIR%%/setfile.gif
 %%PORTDOCS%%%%DOCSDIR%%/setup.html
 %%PORTDOCS%%%%DOCSDIR%%/short.html
 %%PORTDOCS%%%%DOCSDIR%%/simul.html
+%%PORTDOCS%%%%DOCSDIR%%/smlogo.png
+%%PORTDOCS%%%%DOCSDIR%%/sql.html
 %%PORTDOCS%%%%DOCSDIR%%/walk.html
 %%PORTDOCS%%%%DOCSDIR%%/web.html
 %%PORTDOCS%%%%DOCSDIR%%/wsp.html
+%%PORTDOCS%%%%DOCSDIR%%/wspd.html
 %%PORTDOCS%%%%DOCSDIR%%/yacc.html
-%%PORTDOCS%%%%DOCSDIR%%/change.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/cscout_defs.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/cscout_incs.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/options
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/awk.cs
 %%PORTDOCS%%%%EXAMPLESDIR%%/awk.prj
@@ -81,7 +104,6 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%EXAMPLESDIR%%/bin.prj
 %%PORTDOCS%%%%EXAMPLESDIR%%/mkproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/sh.prj
-%%PORTDOCS%%%%EXAMPLESDIR%%/FreeBSD-kernel-4.8.cs
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/.cscout
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/awk
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

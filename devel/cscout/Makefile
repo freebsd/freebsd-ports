@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	cscout
-PORTVERSION=	1.16
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spinellis.gr/cscout/ \
 		http://www.dmst.aueb.gr/dds/cscout/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-neutral${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}-freebsd-${ARCH}${EXTRACT_SUFX}
+		${PORTNAME}-${PORTVERSION}-fbsd-${ARCH}${EXTRACT_SUFX}
 
 MAINTAINER=	dds@FreeBSD.org
-COMMENT=	Source code analyzer and refactoring browser for collections of C programs
+COMMENT=	Source code analyzer and refactoring browser for C program collections
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
 MAN1=	cscout.1 cswc.1
@@ -37,6 +37,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/cscout ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/cswc ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/csmake ${PREFIX}/bin
 	cd ${WRKSRC}/etc && ${FIND} . -print | \
 	   ${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}/etc/${PORTNAME}
 # don't overwrite an existing config
