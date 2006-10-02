@@ -1,0 +1,50 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Bigtop.pm
+%%SITE_PERL%%/Bigtop/Backend/CGI.pm
+%%SITE_PERL%%/Bigtop/Backend/CGI/Gantry.pm
+%%SITE_PERL%%/Bigtop/Backend/Conf.pm
+%%SITE_PERL%%/Bigtop/Backend/Conf/General.pm
+%%SITE_PERL%%/Bigtop/Backend/Control.pm
+%%SITE_PERL%%/Bigtop/Backend/Control/Gantry.pm
+%%SITE_PERL%%/Bigtop/Backend/HttpdConf.pm
+%%SITE_PERL%%/Bigtop/Backend/HttpdConf/Gantry.pm
+%%SITE_PERL%%/Bigtop/Backend/Init/Std.pm
+%%SITE_PERL%%/Bigtop/Backend/Model.pm
+%%SITE_PERL%%/Bigtop/Backend/Model/Gantry.pm
+%%SITE_PERL%%/Bigtop/Backend/Model/GantryCDBI.pm
+%%SITE_PERL%%/Bigtop/Backend/Model/GantryDBIxClass.pm
+%%SITE_PERL%%/Bigtop/Backend/SQL.pm
+%%SITE_PERL%%/Bigtop/Backend/SQL/MySQL.pm
+%%SITE_PERL%%/Bigtop/Backend/SQL/Postgres.pm
+%%SITE_PERL%%/Bigtop/Backend/SQL/SQLite.pm
+%%SITE_PERL%%/Bigtop/Backend/SiteLook/GantryDefault.pm
+%%SITE_PERL%%/Bigtop/Deparser.pm
+%%SITE_PERL%%/Bigtop/Docs/About.pm
+%%SITE_PERL%%/Bigtop/Docs/Cookbook.pm
+%%SITE_PERL%%/Bigtop/Docs/Keywords.pm
+%%SITE_PERL%%/Bigtop/Docs/Modules.pm
+%%SITE_PERL%%/Bigtop/Docs/QuickRef.pm
+%%SITE_PERL%%/Bigtop/Docs/Syntax.pm
+%%SITE_PERL%%/Bigtop/Docs/TOC.pm
+%%SITE_PERL%%/Bigtop/Docs/TentRef.pm
+%%SITE_PERL%%/Bigtop/Docs/TentTut.pm
+%%SITE_PERL%%/Bigtop/Docs/Tutorial.pm
+%%SITE_PERL%%/Bigtop/Docs/Vim.pm
+%%SITE_PERL%%/Bigtop/Grammar.pm
+%%SITE_PERL%%/Bigtop/Keywords.pm
+%%SITE_PERL%%/Bigtop/Parser.pm
+%%SITE_PERL%%/Bigtop/ScriptHelp.pm
+%%SITE_PERL%%/Bigtop/TentMaker.pm
+bin/bigtop
+bin/tentmaker
+@dirrmtry %%SITE_PERL%%/Bigtop/Docs
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/SiteLook
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/SQL
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Model
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Init
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/HttpdConf
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Control
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/Conf
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend/CGI
+@dirrmtry %%SITE_PERL%%/Bigtop/Backend
+@dirrmtry %%SITE_PERL%%/Bigtop
