@@ -1,0 +1,20 @@
+POE::Component::Generic is a POE component that provides a
+non-blocking wrapper around any object. It works by forking
+a child process with POE::Wheel::Run and creating the object
+in the child process. Method calls are then serialised and
+sent via STDIN to the child to be handled. Return values are
+posted back to your session via STDOUT. This means that all
+method arguments and return values must survive serialisation.
+If you need to pass coderefs, use "callbacks", "postbacks" or
+"factories".
+
+Method calls are wrapped in eval in the child process so that
+errors may be propagated back to your session. See "OUTPUT".
+
+Output to STDERR in the child, that is from your object, is
+shown only if debug or verbose is set.
+
+STDOUT in the child, that is from your object, is redirected
+to STDERR and will be shown in the same circomstances.
+
+WWW:	http://search.cpan.org/dist/POE-Component-Generic/
