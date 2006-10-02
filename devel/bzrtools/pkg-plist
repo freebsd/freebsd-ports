@@ -19,7 +19,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shelf.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shell.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shove.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/switch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/terminal.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/test.py
@@ -47,7 +46,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shelf.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shell.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shove.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/switch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/terminal.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/test.pyc
@@ -75,7 +73,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/rspush.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shelf.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shell.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/shove.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/switch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/terminal.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/test.pyo
