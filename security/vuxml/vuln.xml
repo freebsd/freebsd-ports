@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="350a5bd9-520b-11db-8f1a-000a48049292">
+    <topic>MT -- Search Unspecified XSS</topic>
+    <affects>
+      <package>
+	<name>MT</name>
+	<range><ge>3.3</ge><lt>3.33</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/22109">
+	  <p>Arai has reported a vulnerability in Movable Type and
+	    Movable Type Enterprise, which can be exploited by
+	    malicious people to conduct cross-site scripting attacks.</p>
+	  <p>Some unspecified input passed via the search functionality
+	    isn't properly sanitised before being returned to the user.
+	    This can be exploited to execute arbitrary HTML and script
+	    code in a user's browser session in context of an affected
+	    site.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5080</cvename>
+      <url>http://secunia.com/advisories/22109</url>
+      <url>http://www.sixapart.com/movabletype/news/2006/09/mt_333-mte_103_updates.html</url>
+    </references>
+    <dates>
+      <discovery>2006-09-26</discovery>
+      <entry>2006-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19b17ab4-51e0-11db-a5ae-00508d6a62df">
     <topic>phpmyadmin -- XSRF vulnerabilities</topic>
     <affects>
