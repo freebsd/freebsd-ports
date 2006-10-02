@@ -9,7 +9,7 @@ PORTNAME=	Date
 PORTVERSION=	1.4.6
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR Date and Time Zone Classes
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
