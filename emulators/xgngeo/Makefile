@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xgngeo
-PORTVERSION=	16b
+PORTVERSION=	16
+PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME:S/xg/XG/}-${PORTVERSION:S/b/_beta/}
+DISTNAME=	${PORTNAME:S/xg/XG/}-${PORTVERSION}
 DIST_SUBDIR=	gngeo
 
 MAINTAINER=	acm@FreeBSD.org
@@ -25,6 +26,16 @@ USE_GETTEXT=	yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+WITHOUT_PSYCO=	yes
+.endif
+
+.if !defined(WITHOUT_PSYCO)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/data/py/configfile.py
 
@@ -34,4 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xgngeo-doc.pdf ${WRKSRC}/doc/xgngeo-doc.txt  ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
