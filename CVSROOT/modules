@@ -6465,14 +6465,10 @@ linux-x-plane-net-installer	ports/games/linux-x-plane-net-installer
 linux-xmovie		ports/multimedia/linux-xmovie
 linux-xorg-libs	ports/x11/linux-xorg-libs
 linux-ymessenger	ports/net-im/linux-ymessenger
-linux_base	ports/emulators/linux_base
-linux_base-8	ports/emulators/linux_base-8
-linux_base-debian	ports/emulators/linux_base-debian
 linux_base-fc4	ports/emulators/linux_base-fc4
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
 linux_base-gentoo-stage2	ports/emulators/linux_base-gentoo-stage2
 linux_base-gentoo-stage3	ports/emulators/linux_base-gentoo-stage3
-linux_base-rh-9	ports/emulators/linux_base-rh-9
 linux_base-suse-9.1	ports/emulators/linux_base-suse-9.1
 linux_base-suse-9.2	ports/emulators/linux_base-suse-9.2
 linux_base-suse-9.3	ports/emulators/linux_base-suse-9.3
@@ -6769,7 +6765,6 @@ meanwhile-gaim	ports/net-im/meanwhile-gaim
 mediaproxy	ports/net/mediaproxy
 mediawiki	ports/www/mediawiki
 mediawiki13	ports/www/mediawiki13
-mediawiki14	ports/www/mediawiki14
 mediawiki15	ports/www/mediawiki15
 mediawiki16	ports/www/mediawiki16
 medit		ports/science/medit
@@ -11343,7 +11338,6 @@ podcastamatic	ports/www/podcastamatic
 podcatcher	ports/multimedia/podcatcher
 poedit		ports/editors/poedit
 poink		ports/net/poink
-pointless	ports/misc/pointless
 polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
 polygraph	ports/benchmarks/polygraph
@@ -12616,7 +12610,6 @@ rtg		ports/net/rtg
 rth		ports/devel/rth
 rtorrent	ports/net-p2p/rtorrent
 rtorrent-devel	ports/net-p2p/rtorrent-devel
-rtplib		ports/devel/rtplib
 rtpmon		ports/mbone/rtpmon
 rtptools	ports/mbone/rtptools
 rtty		ports/sysutils/rtty
