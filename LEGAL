@@ -501,9 +501,6 @@ ringtonetools-*		misc/ringtonetools	Not free for commercial organizations
 rkive3.1.tar.Z		news/rkive		Restrictive copyright
 rman-3.*		textproc/rman		Do not sell for profit
 linux-realplayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
-rpm/i386/8.0/*		emulators/linux_base-8	Binaries under GNU GPL
-						without accompanying source
-rtplib-*		devel/rtplib		Limited use license
 ruby/ruby_cast_256.zip	security/ruby-cast_256	Crypto; export-controlled
 runrev/linux.tgz	devel/linux-runrev	Do not sell for profit
 savage/savage*		games/linux-savage	Savage is freeware, but i am 

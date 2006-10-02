@@ -2471,3 +2471,10 @@ palm/pilot-link-devel||2006-09-22|no longer needed, removed
 japanese/dvi2ps|japanese/dvipsk|2006-09-23|Removed because no longer supported and dvipsk has enough compatibility
 sysutils/xsearch|sysutils/searchmonkey|2006-09-30|The project has been renamed
 textproc/p5-XML-LibXML-XPathContext|textproc/p5-XML-LibXML|2006-09-30|merged
+devel/rtplib||2006-10-02|Has expired: Upstream codebase appears to be unmaintained
+emulators/linux_base||2006-10-02|Has expired: unsupported by upstream, no security support anymore
+emulators/linux_base-debian||2006-10-02|Has expired: unmaintained and does not comply to the linux_base invariants
+emulators/linux_base-8||2006-10-02|Has expired: unsupported by upstream, no security support anymore
+emulators/linux_base-rh-9||2006-10-02|Has expired: unsupported by upstream, no security support anymore
+misc/pointless||2006-10-02|Has expired: No longer actively maintained
+www/mediawiki14||2006-10-02|Has expired: No longer supported, please upgrade your wiki installation

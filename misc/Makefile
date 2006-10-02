@@ -384,7 +384,6 @@
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
-    SUBDIR += pointless
     SUBDIR += porteasy
     SUBDIR += portell
     SUBDIR += portless

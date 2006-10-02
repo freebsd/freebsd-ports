@@ -264,7 +264,6 @@
     SUBDIR += mathopd
     SUBDIR += mediawiki
     SUBDIR += mediawiki13
-    SUBDIR += mediawiki14
     SUBDIR += mediawiki15
     SUBDIR += mediawiki16
     SUBDIR += mergelog
