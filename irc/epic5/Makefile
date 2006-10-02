@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 		http://www.tcbug.org/
+
 MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
