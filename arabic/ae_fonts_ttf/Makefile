@@ -17,10 +17,6 @@ COMMENT=	A collection of truetype Arabic fonts created by Arabeyes.org
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ae_fonts1-${PORTVERSION}
@@ -66,13 +62,13 @@ pre-everything::
 
 do-build:
 .for i in ${FONTS}
-	@ttmkfdir -c -d ${WRKSRC}/${i} > ${WRKSRC}/${i}/fonts.dir
+	cd ${WRKSRC} && ttmkfdir -c -d ${WRKSRC}/${i} > ${WRKSRC}/${i}/fonts.dir
 .endfor
 
 do-install:
 .for i in ${FONTS}
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts1/${i}
-	@${INSTALL_DATA} ${WRKSRC}/${i}/* ${PREFIX}/lib/X11/fonts/ae_fonts1/${i}
+	${MKDIR} ${PREFIX}/lib/X11/fonts/ae_fonts1/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i}/* ${PREFIX}/lib/X11/fonts/ae_fonts1/${i}
 .endfor
 
 post-install:
