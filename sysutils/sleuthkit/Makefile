@@ -18,6 +18,12 @@ CONFLICTS=	ja-ls-[0-9]*
 
 USE_PERL5=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500033
+BROKEN=		Does not build on pre-GEOM versions of FreeBSD
+.endif
+
 PROGS=		dcalc dcat disk_sreset disk_stat dls dstat ffind \
 		fls fsstat hfind icat ifind ils img_stat istat \
 		jcat jls md5 mmls mmstat sha1 sigfind srch_strings
@@ -50,4 +56,4 @@ do-install:
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
