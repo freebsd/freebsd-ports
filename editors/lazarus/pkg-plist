@@ -2265,8 +2265,6 @@ bin/lazarus
 %%DATADIR%%/lcl/forms/replacedlgunit.lrs
 %%DATADIR%%/lcl/forms/replacedlgunit.pas
 %%DATADIR%%/lcl/fpcadds.pas
-%%DATADIR%%/lcl/fpreadpng.pp
-%%DATADIR%%/lcl/fpwritepng.pp
 %%DATADIR%%/lcl/graphics.pp
 %%DATADIR%%/lcl/graphmath.pp
 %%DATADIR%%/lcl/graphtype.pp
@@ -2883,10 +2881,6 @@ bin/lazarus
 %%DATADIR%%/lcl/units/i386-freebsd/forms.ppu
 %%DATADIR%%/lcl/units/i386-freebsd/fpcadds.o
 %%DATADIR%%/lcl/units/i386-freebsd/fpcadds.ppu
-%%DATADIR%%/lcl/units/i386-freebsd/fpreadpng.o
-%%DATADIR%%/lcl/units/i386-freebsd/fpreadpng.ppu
-%%DATADIR%%/lcl/units/i386-freebsd/fpwritepng.o
-%%DATADIR%%/lcl/units/i386-freebsd/fpwritepng.ppu
 %%DATADIR%%/lcl/units/i386-freebsd/graphics.o
 %%DATADIR%%/lcl/units/i386-freebsd/graphics.ppu
 %%DATADIR%%/lcl/units/i386-freebsd/graphmath.o
@@ -3070,8 +3064,6 @@ bin/lazarus
 %%DATADIR%%/lcl/units/i386-freebsd/wstoolwin.ppu
 %%DATADIR%%/lcl/units/i386-freebsd/xmlpropstorage.o
 %%DATADIR%%/lcl/units/i386-freebsd/xmlpropstorage.ppu
-%%DATADIR%%/lcl/units/i386-freebsd/zstream.o
-%%DATADIR%%/lcl/units/i386-freebsd/zstream.ppu
 %%DATADIR%%/lcl/utrace.pp
 %%DATADIR%%/lcl/widgetset/README.txt
 %%DATADIR%%/lcl/widgetset/wsactnlist.pp
@@ -3102,7 +3094,6 @@ bin/lazarus
 %%DATADIR%%/lcl/widgetset/wsstdctrls.pp
 %%DATADIR%%/lcl/widgetset/wstoolwin.pp
 %%DATADIR%%/lcl/xmlpropstorage.pas
-%%DATADIR%%/lcl/zstream.pp
 %%DATADIR%%/localize.sh
 %%DATADIR%%/packager/Makefile
 %%DATADIR%%/packager/Makefile.fpc
