@@ -79,7 +79,6 @@
     SUBDIR += plp
     SUBDIR += pr
     SUBDIR += predict
-    SUBDIR += pstngw
     SUBDIR += py-bulksms
     SUBDIR += py-lirc
     SUBDIR += py-serial
