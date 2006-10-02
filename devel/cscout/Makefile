@@ -18,6 +18,8 @@ COMMENT=	Source code analyzer and refactoring browser for C program collections
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
+ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
 
 MAN1=	cscout.1 cswc.1
 
