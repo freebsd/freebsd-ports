@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/LDAP/.packlist
+%%SITE_PERL%%/Samba/LDAP.pm
+%%SITE_PERL%%/Samba/LDAP/Base.pm
+%%SITE_PERL%%/Samba/LDAP/Config.pm
+%%SITE_PERL%%/Samba/LDAP/Group.pm
+%%SITE_PERL%%/Samba/LDAP/User.pm
+@dirrmtry %%SITE_PERL%%/Samba/LDAP
+@dirrmtry %%SITE_PERL%%/Samba
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba
