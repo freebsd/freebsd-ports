@@ -8,6 +8,7 @@
 
 PORTNAME=	nltk_lite
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:C/_.*//}
@@ -15,18 +16,22 @@ MASTER_SITE_SUBDIR=	${PORTNAME:C/_.*//}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Lightweight Natural language toolkit written in python
 
-BROKEN=		Incorrect pkg-plist
-
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${PYTHON_VERSION} == "python2.5"
+PLIST_SUB+=	EGG_INFO_FILE=${PYTHON_SITELIBDIR:S;${PREFIX}/;;}/${PORTNAME}-${PORTVERSION}-py${_PYTHON_VERSION}.egg-info
+.else
+PLIST_SUB+=	EGG_INFO_FILE=""
+.endif
+
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk_lite ! -type d | \
 		${SED} 's,^${TARGETDIR}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHON_SITELIBDIR}/nltk_lite -type d | ${SORT} -r | \
-		${SED} 's,^${TARGETDIR}/,@dirrmtry ,' >> ${TMPPLIST}
+		${SED} 's,^${TARGETDIR}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
