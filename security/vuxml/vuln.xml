@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="19b17ab4-51e0-11db-a5ae-00508d6a62df">
+    <topic>phpmyadmin -- XSRF vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.9.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-5">
+	  <p>We received a security advisory from Stefan Esser
+	    (sesser@hardened-php.net) and we wish to thank him for his
+	    work.</p>
+	  <p>It was possible to inject arbitrary SQL commands by
+	    forcing an authenticated user to follow a crafted link.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-5</url>
+      <url>http://secunia.com/advisories/22126/</url>
+      <bid>20253</bid>
+    </references>
+    <dates>
+      <discovery>2006-09-28</discovery>
+      <entry>2006-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="32db37a5-50c3-11db-acf3-000c6ec775d9">
     <topic>openssh -- multiple vulnerabilities</topic>
     <affects>
