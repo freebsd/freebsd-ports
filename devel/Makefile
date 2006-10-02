@@ -1646,7 +1646,6 @@
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += pwlib
-    SUBDIR += pwlib152
     SUBDIR += py-anonfunc
     SUBDIR += py-asn1
     SUBDIR += py-astng
