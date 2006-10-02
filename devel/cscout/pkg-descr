@@ -9,11 +9,8 @@ of detail and accuracy provided by  current compilers and linkers.
 The analysis CScout performs takes into account the identifier
 scopes introduced by the C preprocessor and the C language proper
 scopes and namespaces.  CScout has already been applied on projects
-ranging from tens of thousands of lines, like the apache web server
-(using 36MB of memory, taking 6 minutes on a 500MHz Celeron processor),
-to above a million lines of code, like the FreeBSD kernel (using
-813MB of memory, taking 3 hours 42 minutes on a 900MHz Itanium 2
-processor).
+ranging from tens of thousands of lines, like the FreeBSD and
+Linux kernels, and the Apache web server.
 
 This free unsupported version of CScout is distributed under the terms
 of the CScout Public License, which is available in the accompanying
