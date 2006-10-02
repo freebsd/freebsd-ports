@@ -9,7 +9,7 @@ PORTNAME=	Numbers_Roman
 PORTVERSION=	0.2.0
 CATEGORIES=	textproc devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR methods for converting to and from Roman Numerals
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
