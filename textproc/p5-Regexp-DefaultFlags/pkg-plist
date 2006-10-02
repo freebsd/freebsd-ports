@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/DefaultFlags/.packlist
+%%SITE_PERL%%/Regexp/DefaultFlags.pm
+@dirrmtry %%SITE_PERL%%/Regexp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/DefaultFlags
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp

@@ -438,6 +438,7 @@
     SUBDIR += p5-Regex-PreSuf
     SUBDIR += p5-Regexp-Common
     SUBDIR += p5-Regexp-Common-profanity_us
+    SUBDIR += p5-Regexp-DefaultFlags
     SUBDIR += p5-Regexp-Log
     SUBDIR += p5-Regexp-Log-Common
     SUBDIR += p5-SGML-DTDParse
