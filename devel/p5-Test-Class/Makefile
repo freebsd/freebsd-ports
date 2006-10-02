@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Test-Class
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -24,7 +23,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Test::Class.3
+MAN3=		Test::Class.3 \
+    		Test::Class::MethodInfo.3 \
+    		Test::Class::Load.3
 
 .include <bsd.port.pre.mk>
 
