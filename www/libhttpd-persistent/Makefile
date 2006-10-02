@@ -7,6 +7,7 @@
 
 PORTNAME=	libhttpd
 PORTVERSION=	${VERSION}${LEVEL}
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 PKGNAMESUFFIX=	-persistent
@@ -19,7 +20,8 @@ COMMENT=	Library for embedded web servers
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}-persistent-${LEVEL}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CC=		${CXX}
+USE_GCC=	3.4+
+CONFIGURE_ENV=	CC=${CXX}
 
 VERSION=	1.3
 LEVEL=		h

@@ -7,7 +7,7 @@
 
 PORTNAME=	daaplib
 PORTVERSION=	0.1.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daaplib/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A C++ library for DAAP memory streams
 
+USE_GCC=	3.4+
 USE_ZIP=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/daaplib/src
@@ -22,12 +23,15 @@ MAKEFILE=	makefile
 ALL_TARGET=
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} \
+		-e 's|/usr/local|${PREFIX}|g' \
+		-e 's|CC = c\+\+||' \
+		${WRKSRC}/${MAKEFILE}
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

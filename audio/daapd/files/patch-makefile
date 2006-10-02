@@ -1,33 +1,32 @@
---- makefile.orig	Sat Aug 21 15:24:06 2004
-+++ makefile	Wed Sep  1 23:14:25 2004
-@@ -1,8 +1,6 @@
+--- ./makefile.orig	Sun Mar  5 14:39:37 2006
++++ ./makefile	Thu Jul 20 14:04:28 2006
+@@ -1,21 +1,18 @@
  # configure daapd here
  
 -HOWL_ENABLE = 1
  ZLIB_ENABLE = 1
--MPEG4_ENABLE = 1
+-MPEG4_ENABLE = 0
  
  
  # no need to touch anything below this line
-@@ -11,13 +9,12 @@
- CC = g++
+ # -----------------------------------------
+ 
+-CC = g++
++CC = ${CXX}
  MAKE = $(MAKE_COMMAND)
  TARGET = daapd
 -DEPS = daaplib_ libhttpd_
- OBJS = daapd.o db.o dboutput.o songcache.o parsemp3.o
--LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz -lpthread 
+ OBJS = daapd.o db.o dboutput.o songcache.o parsemp3.o util.o
+ LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz
 -LIBPATH = -L. -L./daaplib/src -L./libhttpd/src  -L/usr/local/lib
 -INCPATH = -I. -I./daaplib/include -I./libhttpd/src  -I/usr/local/include
-+LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz $(PTHREAD_LIBS)
-+LIBPATH = -L. -L/usr/local/lib
-+INCPATH = -I. -I/usr/local/include
- DEPLOY = /usr/local
--CFLAGS = -Wall -Wno-multichar
-+CFLAGS = -Wall -Wno-multichar $(PTHREAD_CFLAGS)
++LIBPATH = -L. -L%%LOCALBASE%%/lib
++INCPATH = -I. -I%%LOCALBASE%%/include
+-DEPLOY = /usr/local
++DEPLOY = %%PREFIX%%
+ CFLAGS = -Wall -Wno-multichar
  
- # HOWL
- ifeq ($(HOWL_ENABLE),1)
-@@ -54,28 +51,17 @@
+@@ -60,28 +57,17 @@
  .cc.o:
  	$(CC) $(CFLAGS) $(INCPATH) -c $<
  
