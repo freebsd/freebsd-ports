@@ -135,6 +135,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>dokuwiki</name>
 	<range><lt>20060309c</lt></range>
       </package>
+      <package>
+	<name>dokuwiki-devel</name>
+	<range><lt>20060909</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -181,6 +185,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-08</discovery>
       <entry>2006-09-30</entry>
+      <modified>2006-10-02</modified>
     </dates>
   </vuln>
 
@@ -190,6 +195,10 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>dokuwiki</name>
 	<range><lt>20060309_5</lt></range>
+      </package>
+      <package>
+	<name>dokuwiki-devel</name>
+	<range><lt>20060609_2</lt></range>
       </package>
     </affects>
     <description>
@@ -212,13 +221,17 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2006-5098</cvename>
+      <cvename>CVE-2006-5099</cvename>
       <url>http://secunia.com/advisories/22192/</url>
+      <url>http://secunia.com/advisories/22199/</url>
       <url>http://bugs.splitbrain.org/?do=details&amp;id=924</url>
       <url>http://bugs.splitbrain.org/?do=details&amp;id=926</url>
     </references>
     <dates>
       <discovery>2006-09-26</discovery>
       <entry>2006-09-30</entry>
+      <modified>2006-10-02</modified>
     </dates>
   </vuln>
 
