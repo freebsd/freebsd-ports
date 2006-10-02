@@ -25,6 +25,9 @@ MAKEFILE=	makefile.gcc3x
 MAKEFILE=	makefile.gcc2x
 .endif
 
+post-extract:
+	@${REINPLACE_CMD} -e "s,g++,\$${CXX},g" ${WRKSRC}/${MAKEFILE}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rfstool ${PREFIX}/bin
 
