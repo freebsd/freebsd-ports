@@ -2478,3 +2478,4 @@ emulators/linux_base-8||2006-10-02|Has expired: unsupported by upstream, no secu
 emulators/linux_base-rh-9||2006-10-02|Has expired: unsupported by upstream, no security support anymore
 misc/pointless||2006-10-02|Has expired: No longer actively maintained
 www/mediawiki14||2006-10-02|Has expired: No longer supported, please upgrade your wiki installation
+comms/pstngw||2006-10-02|Has expired
