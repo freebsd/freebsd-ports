@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b975763f-5210-11db-8f1a-000a48049292">
+    <topic>freetype -- LWFN Files Buffer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.1.10_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityTracker reports:</p>
+	<blockquote cite="http://securitytracker.com/alerts/2006/Jul/1016522.html">
+	  <p>A vulnerability was reported in FreeType. A remote user
+	    can cause arbitrary code to be executed on the target
+	    user's system.</p>
+	  <p>A remote user can create a specially crafted font file
+	    that, when loaded by the target user's system, will trigger
+	    an integer underflow or integer overflow and crash the
+	    application or execute arbitrary code on the target system.</p>
+	  <p>Chris Evans reported these vulnerabilities.</p>
+	  <p>Impact: A remote user can create a file that, when loaded
+	    by the target user, will execute arbitrary code on the
+	    target user's system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>18034</bid>
+      <cvename>CVE-2006-0747</cvename>
+      <cvename>CVE-2006-1861</cvename>
+      <cvename>CVE-2006-3467</cvename>
+      <url>http://securitytracker.com/alerts/2006/Jul/1016522.html</url>
+    </references>
+    <dates>
+      <discovery>2006-07-10</discovery>
+      <entry>2006-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="74ff10f6-520f-11db-8f1a-000a48049292">
     <topic>cscope -- Buffer Overflow Vulnerabilities</topic>
     <affects>
