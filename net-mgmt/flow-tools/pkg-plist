@@ -34,10 +34,10 @@ include/ftpaths.h
 include/ftqueue.h
 include/radix.h
 lib/libft.a
-share/flow-tools/asn.sym
-share/flow-tools/ip-prot.sym
-share/flow-tools/ip-type.sym
-share/flow-tools/tag.sym
-share/flow-tools/tcp-port.sym
+%%DATADIR%%/asn.sym
+%%DATADIR%%/ip-prot.sym
+%%DATADIR%%/ip-type.sym
+%%DATADIR%%/tag.sym
+%%DATADIR%%/tcp-port.sym
+@dirrm %%DATADIR%%
 @dirrm etc/flow-tools
-@dirrm share/flow-tools
