@@ -9718,6 +9718,7 @@ p5-POE-Component-Daemon	ports/devel/p5-POE-Component-Daemon
 p5-POE-Component-DebugShell	ports/devel/p5-POE-Component-DebugShell
 p5-POE-Component-DirWatch	ports/devel/p5-POE-Component-DirWatch
 p5-POE-Component-EasyDBI	ports/databases/p5-POE-Component-EasyDBI
+p5-POE-Component-Generic	ports/net/p5-POE-Component-Generic
 p5-POE-Component-IKC	ports/devel/p5-POE-Component-IKC
 p5-POE-Component-IRC	ports/irc/p5-POE-Component-IRC
 p5-POE-Component-IRC-Object	ports/irc/p5-POE-Component-IRC-Object
