@@ -1,0 +1,392 @@
+diff -u camellia.h camellia.h
+--- camellia.h	2004-07-21 19:09:46.000000000 +0200
++++ camellia.h	2006-04-02 17:43:42.000000000 +0200
+@@ -22,7 +22,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#Camellia">Camellia</a>
+ class Camellia : public Camellia_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<Camellia_Info>
++	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<Camellia_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir dir, const byte *key, unsigned int keylen);
+diff -u cast.h cast.h
+--- cast.h	2004-07-21 19:09:46.000000000 +0200
++++ cast.h	2006-04-02 17:44:18.000000000 +0200
+@@ -24,7 +24,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#CAST-128">CAST-128</a>
+ class CAST128 : public CAST128_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public CAST, public BlockCipherImpl<CAST128_Info>
++	class CRYPTOPP_NO_VTABLE Base : public CAST, public BlockCipherImpl<CAST128_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length);
+@@ -60,7 +60,7 @@
+ //! <a href="http://www.weidai.com/scan-mirror/cs.html#CAST-256">CAST-256</a>
+ class CAST256 : public CAST256_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public CAST, public BlockCipherImpl<CAST256_Info>
++	class CRYPTOPP_NO_VTABLE Base : public CAST, public BlockCipherImpl<CAST256_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length = 8);
+diff -u des.h des.h
+--- des.h	2004-07-21 19:09:46.000000000 +0200
++++ des.h	2006-04-02 17:45:11.000000000 +0200
+@@ -35,7 +35,7 @@
+ 	check or correct the parity bits if you wish. */
+ class DES : public DES_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_Info>, public RawDES
++	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_Info>, public RawDES, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void ProcessAndXorBlock(const byte *inBlock, const byte *xorBlock, byte *outBlock) const;
+@@ -60,7 +60,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#DESede">DES-EDE2</a>
+ class DES_EDE2 : public DES_EDE2_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_EDE2_Info>
++	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_EDE2_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length);
+@@ -84,7 +84,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#DESede">DES-EDE3</a>
+ class DES_EDE3 : public DES_EDE3_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_EDE3_Info>
++	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_EDE3_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir dir, const byte *key, unsigned int length);
+@@ -108,7 +108,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#DESX">DES-XEX3</a>, AKA DESX
+ class DES_XEX3 : public DES_XEX3_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_XEX3_Info>
++	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<DES_XEX3_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir dir, const byte *key, unsigned int length);
+diff -u dll.cpp dll.cpp
+--- dll.cpp	2004-06-20 11:22:24.000000000 +0200
++++ dll.cpp	2006-04-02 17:42:50.000000000 +0200
+@@ -1,6 +1,10 @@
+ // dll.cpp - written and placed in the public domain by Wei Dai
+ 
+-#define CRYPTOPP_MANUALLY_INSTANTIATE_TEMPLATES
++#if defined( __GNUC__ ) && __GNUC__ > 3
++#	undef CRYPTOPP_MANUALLY_INSTANTIATE_TEMPLATES
++#else
++#	define CRYPTOPP_MANUALLY_INSTANTIATE_TEMPLATES
++#endif
+ #define CRYPTOPP_DEFAULT_NO_DLL
+ 
+ #include "dll.h"
+@@ -37,6 +41,79 @@
+ CRYPTOPP_DLL_TEMPLATE_CLASS AbstractEuclideanDomain<Integer>;
+ #endif
+ 
++#if defined(__GNUC__) && __GNUC__ > 3
++template class CRYPTOPP_DLL AbstractEuclideanDomain<Integer>;
++template class CRYPTOPP_DLL AbstractEuclideanDomain<PolynomialMod2>;
++template class CRYPTOPP_DLL AbstractGroup<Integer>;
++template class CRYPTOPP_DLL AbstractGroup<EC2NPoint>;
++template class CRYPTOPP_DLL AbstractGroup<ECPPoint>;
++template class CRYPTOPP_DLL AbstractGroup<PolynomialMod2>;
++template class CRYPTOPP_DLL AbstractPolicyHolder<AdditiveCipherAbstractPolicy, TwoBases<SimpleKeyedTransformation<StreamTransformation>, RandomNumberGenerator> >;
++template class CRYPTOPP_DLL AbstractRing<Integer>;
++template class CRYPTOPP_DLL AbstractRing<PolynomialMod2>;
++template class CRYPTOPP_DLL AdditiveCipherTemplate<>;
++template class CRYPTOPP_DLL AdditiveCipherTemplate<AbstractPolicyHolder<AdditiveCipherAbstractPolicy, CTR_ModePolicy> >;
++template class CRYPTOPP_DLL AdditiveCipherTemplate<AbstractPolicyHolder<AdditiveCipherAbstractPolicy, OFB_ModePolicy> >;
++template class CRYPTOPP_DLL AllocatorWithCleanup<byte>;
++template class CRYPTOPP_DLL AllocatorWithCleanup<word16>;
++template class CRYPTOPP_DLL AllocatorWithCleanup<word32>;
++template class CRYPTOPP_DLL AutoSeededX917RNG<DES_EDE3>;
++template class CRYPTOPP_DLL CFB_CipherTemplate<AbstractPolicyHolder<CFB_CipherAbstractPolicy, CFB_ModePolicy> >;
++template class CRYPTOPP_DLL CFB_CipherTemplate<AbstractPolicyHolder<CFB_CipherAbstractPolicy, SymmetricCipher> >;
++template class CRYPTOPP_DLL CFB_DecryptionTemplate<>;
++template class CRYPTOPP_DLL CFB_DecryptionTemplate<AbstractPolicyHolder<CFB_CipherAbstractPolicy, CFB_ModePolicy> >;
++template class CRYPTOPP_DLL CFB_EncryptionTemplate<>;
++template class CRYPTOPP_DLL CFB_EncryptionTemplate<AbstractPolicyHolder<CFB_CipherAbstractPolicy, CFB_ModePolicy> >;
++template class CRYPTOPP_DLL CipherModeFinalTemplate_ExternalCipher<CBC_CTS_Decryption>;
++template class CRYPTOPP_DLL CipherModeFinalTemplate_ExternalCipher<CBC_CTS_Encryption>;
++template class CRYPTOPP_DLL CipherModeFinalTemplate_ExternalCipher<CBC_Decryption>;
++template class CRYPTOPP_DLL CipherModeFinalTemplate_ExternalCipher<CBC_Encryption>;
++template class CRYPTOPP_DLL CipherModeFinalTemplate_ExternalCipher<ECB_OneWay>;
++template class CRYPTOPP_DLL DH_Domain<DL_GroupParameters_GFP_DefaultSafePrime>;
++template class CRYPTOPP_DLL DL_Algorithm_GDSA<EC2N::Point>;
++template class CRYPTOPP_DLL DL_Algorithm_GDSA<ECP::Point>;
++template class CRYPTOPP_DLL DL_Algorithm_GDSA<Integer>;
++template class CRYPTOPP_DLL DL_FixedBasePrecomputationImpl<EC2N::Point>;
++template class CRYPTOPP_DLL DL_FixedBasePrecomputationImpl<ECPPoint>;
++template class CRYPTOPP_DLL DL_FixedBasePrecomputationImpl<Integer>;
++template class CRYPTOPP_DLL DL_GroupParameters<Integer>;
++template class CRYPTOPP_DLL DL_GroupParameters_EC<EC2N>;
++template class CRYPTOPP_DLL DL_GroupParameters_EC<ECP>;
++template class CRYPTOPP_DLL DL_GroupParameters_IntegerBasedImpl<ModExpPrecomputation>;
++template class CRYPTOPP_DLL DL_GroupPrecomputation<EC2N::Point>;
++template class CRYPTOPP_DLL DL_GroupPrecomputation<ECPPoint>;
++template class CRYPTOPP_DLL DL_PrivateKeyImpl<DL_GroupParameters_EC<EC2N> >;
++template class CRYPTOPP_DLL DL_PrivateKeyImpl<DL_GroupParameters_EC<ECP> >;
++template class CRYPTOPP_DLL DL_PrivateKey_EC<EC2N>;
++template class CRYPTOPP_DLL DL_PrivateKey_EC<ECP>;
++template class CRYPTOPP_DLL DL_PrivateKey_GFP<DL_GroupParameters_DSA>;
++template class CRYPTOPP_DLL DL_PrivateKey_WithSignaturePairwiseConsistencyTest<DL_PrivateKey_EC<EC2N>, ECDSA<EC2N> >;
++template class CRYPTOPP_DLL DL_PrivateKey_WithSignaturePairwiseConsistencyTest<DL_PrivateKey_EC<ECP>, ECDSA<ECP> >;
++template class CRYPTOPP_DLL DL_PrivateKey_WithSignaturePairwiseConsistencyTest<DL_PrivateKey_GFP<DL_GroupParameters_DSA>, DSA>;
++template class CRYPTOPP_DLL DL_PublicKeyImpl<DL_GroupParameters_EC<EC2N> >;
++template class CRYPTOPP_DLL DL_PublicKeyImpl<DL_GroupParameters_EC<ECP> >;
++template class CRYPTOPP_DLL DL_PublicKey_EC<EC2N>;
++template class CRYPTOPP_DLL DL_PublicKey_EC<ECP>;
++template class CRYPTOPP_DLL DL_PublicKey_GFP<DL_GroupParameters_DSA>;
++template class CRYPTOPP_DLL EuclideanDomainOf<PolynomialMod2>;
++template class CRYPTOPP_DLL IteratedHashBase<word32, HashTransformation>;
++template class CRYPTOPP_DLL IteratedHashBase<word32, MessageAuthenticationCode>;
++#ifdef WORD64_AVAILABLE
++template class CRYPTOPP_DLL IteratedHashBase<word64, HashTransformation>;
++template class CRYPTOPP_DLL IteratedHashBase<word64, MessageAuthenticationCode>;
++#endif
++template class CRYPTOPP_DLL OAEP<SHA>;
++#ifdef CRYPTOPP_IS_DLL
++template class CRYPTOPP_DLL PKCS_DigestDecoration<SHA>;
++#endif
++template class CRYPTOPP_DLL QuotientRing<EuclideanDomainOf<PolynomialMod2> >;
++template class CRYPTOPP_DLL SimpleKeyedTransformation<BlockTransformation>;
++template class CRYPTOPP_DLL SimpleKeyedTransformation<HashTransformation>;
++template class CRYPTOPP_DLL SimpleKeyedTransformation<StreamTransformation>;
++template class CRYPTOPP_DLL StringSinkTemplate<std::string>;
++template class CRYPTOPP_DLL TwoBases<SymmetricCipher, RandomNumberGenerator>;
++#endif // __GNUC__ > 3
++
+ template<> const byte PKCS_DigestDecoration<SHA>::decoration[] = {0x30,0x21,0x30,0x09,0x06,0x05,0x2B,0x0E,0x03,0x02,0x1A,0x05,0x00,0x04,0x14};
+ template<> const unsigned int PKCS_DigestDecoration<SHA>::length = sizeof(PKCS_DigestDecoration<SHA>::decoration);
+ 
+diff -u gost.h gost.h
+--- gost.h	2004-07-21 19:09:48.000000000 +0200
++++ gost.h	2006-04-02 17:45:28.000000000 +0200
+@@ -18,7 +18,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#GOST">GOST</a>
+ class GOST : public GOST_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<GOST_Info>
++	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<GOST_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length);
+diff -u hmac.h hmac.h
+--- hmac.h	2004-07-21 19:09:48.000000000 +0200
++++ hmac.h	2006-04-02 17:46:12.000000000 +0200
+@@ -9,7 +9,7 @@
+ NAMESPACE_BEGIN(CryptoPP)
+ 
+ //! _
+-class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE HMAC_Base : public VariableKeyLength<16, 0, UINT_MAX>, public MessageAuthenticationCode
++class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE HMAC_Base : public VariableKeyLength<16, 0, UINT_MAX>, public MessageAuthenticationCode, public SimpledKeyed_Helper
+ {
+ public:
+ 	HMAC_Base() : m_innerHashKeyed(false) {}
+diff -u iterhash.h iterhash.h
+--- iterhash.h	2004-07-21 19:09:48.000000000 +0200
++++ iterhash.h	2006-04-02 17:35:27.000000000 +0200
+@@ -75,7 +75,7 @@
+ class CRYPTOPP_NO_VTABLE IteratedHash : public IteratedHashBase2<T_HashWordType, T_Endianness, T_Base>
+ {
+ public:
+-	enum {BLOCKSIZE = T_BlockSize};
++	enum GCC4FIX2 {BLOCKSIZE = T_BlockSize};
+ 	CRYPTOPP_COMPILE_ASSERT((BLOCKSIZE & (BLOCKSIZE - 1)) == 0);		// blockSize is a power of 2
+ 
+ protected:
+@@ -88,7 +88,7 @@
+ 	: public ClonableImpl<T_Transform, AlgorithmImpl<IteratedHash<T_HashWordType, T_Endianness, T_BlockSize>, T_Transform> >
+ {
+ public:
+-	enum {DIGESTSIZE = T_DigestSize};
++	enum GCC4FIX4 {DIGESTSIZE = T_DigestSize};
+ 	unsigned int DigestSize() const {return DIGESTSIZE;};
+ 
+ protected:
+diff -u lubyrack.h lubyrack.h
+--- lubyrack.h	2004-07-21 19:09:48.000000000 +0200
++++ lubyrack.h	2006-04-02 17:46:39.000000000 +0200
+@@ -23,7 +23,7 @@
+ template <class T>
+ class LR : public LR_Info<T>, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<LR_Info<T> >
++	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<LR_Info<T> >, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		// VC60 workaround: have to define these functions within class definition
+diff -u mars.h mars.h
+--- mars.h	2004-07-21 19:09:48.000000000 +0200
++++ mars.h	2006-04-02 17:47:09.000000000 +0200
+@@ -18,7 +18,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#MARS">MARS</a>
+ class MARS : public MARS_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<MARS_Info>
++	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<MARS_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length);
+diff -u md5mac.h md5mac.h
+--- md5mac.h	2004-07-21 19:09:48.000000000 +0200
++++ md5mac.h	2006-04-02 17:47:30.000000000 +0200
+@@ -9,7 +9,7 @@
+ 
+ NAMESPACE_BEGIN(CryptoPP)
+ 
+-class CRYPTOPP_NO_VTABLE MD5MAC_Base : public FixedKeyLength<16>, public IteratedHash<word32, LittleEndian, 64, MessageAuthenticationCode>
++class CRYPTOPP_NO_VTABLE MD5MAC_Base : public FixedKeyLength<16>, public IteratedHash<word32, LittleEndian, 64, MessageAuthenticationCode>, public SimpledKeyed_Helper
+ {
+ public:
+ 	static std::string StaticAlgorithmName() {return "MD5-MAC";}
+diff -u mdc.h mdc.h
+--- mdc.h	2004-07-21 19:09:48.000000000 +0200
++++ mdc.h	2006-04-02 17:47:53.000000000 +0200
+@@ -23,7 +23,7 @@
+ template <class T>
+ class MDC : public MDC_Info<T>
+ {
+-	class CRYPTOPP_NO_VTABLE Enc : public BlockCipherImpl<MDC_Info<T> >
++	class CRYPTOPP_NO_VTABLE Enc : public BlockCipherImpl<MDC_Info<T> >, public SimpledKeyed_Helper
+ 	{
+ 		typedef typename T::HashWordType HashWordType;
+ 
+diff -u rijndael.h rijndael.h
+--- rijndael.h	2004-07-21 19:09:50.000000000 +0200
++++ rijndael.h	2006-04-02 17:48:11.000000000 +0200
+@@ -18,7 +18,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#Rijndael">Rijndael</a>
+ class CRYPTOPP_DLL Rijndael : public Rijndael_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<Rijndael_Info>
++	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<Rijndael_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length);
+diff -u seckey.h seckey.h
+--- seckey.h	2004-07-21 19:09:50.000000000 +0200
++++ seckey.h	2006-04-02 17:50:16.000000000 +0200
+@@ -21,7 +21,7 @@
+ class FixedBlockSize
+ {
+ public:
+-	enum {BLOCKSIZE = N};
++	enum GCC4FIX0 {BLOCKSIZE = N};
+ };
+ 
+ // ************** rounds ***************
+@@ -31,7 +31,7 @@
+ class FixedRounds
+ {
+ public:
+-	enum {ROUNDS = R};
++	enum GCC4FIX1 {ROUNDS = R};
+ 
+ protected:
+ 	template <class T>
+@@ -50,7 +50,7 @@
+ class VariableRounds
+ {
+ public:
+-	enum {DEFAULT_ROUNDS = D, MIN_ROUNDS = N, MAX_ROUNDS = M};
++	enum GCC4FIX3 {DEFAULT_ROUNDS = D, MIN_ROUNDS = N, MAX_ROUNDS = M};
+ 	static unsigned int StaticGetDefaultRounds(unsigned int keylength) {return DEFAULT_ROUNDS;}
+ 
+ protected:
+@@ -123,19 +123,21 @@
+ 
+ // ************** implementation helper for SimpledKeyed ***************
+ 
+-template <class T>
+-static inline void CheckedSetKey(T *obj, Empty empty, const byte *key, unsigned int length, const NameValuePairs &param)
+-{
+-	obj->ThrowIfInvalidKeyLength(length);
+-	obj->UncheckedSetKey(key, length);
+-}
+-
+-template <class T>
+-static inline void CheckedSetKey(T *obj, CipherDir dir, const byte *key, unsigned int length, const NameValuePairs &param)
+-{
+-	obj->ThrowIfInvalidKeyLength(length);
+-	obj->UncheckedSetKey(dir, key, length);
+-}
++struct SimpledKeyed_Helper {
++	template <class T>
++	static inline void CheckedSetKey(T *obj, Empty empty, const byte *key, unsigned int length, const NameValuePairs &param)
++	{
++		obj->ThrowIfInvalidKeyLength(length);
++		obj->UncheckedSetKey(key, length);
++	}
++ 
++	template <class T>
++	static inline void CheckedSetKey(T *obj, CipherDir dir, const byte *key, unsigned int length, const NameValuePairs &param)
++	{
++		obj->ThrowIfInvalidKeyLength(length);
++		obj->UncheckedSetKey(dir, key, length);
++	}
++};
+ 
+ //! _
+ template <class BASE, class INFO = BASE>
+@@ -176,7 +178,7 @@
+ 
+ 	void SetKey(const byte *key, unsigned int length, const NameValuePairs &param = g_nullNameValuePairs)
+ 	{
+-		CheckedSetKey(this, DIR, key, length, param);
++		BASE::CheckedSetKey(this, DIR, key, length, param);
+ 	}
+ };
+ 
+@@ -187,7 +189,7 @@
+ public:
+ 	void SetKey(const byte *key, unsigned int length, const NameValuePairs &params = g_nullNameValuePairs)
+ 	{
+-		CheckedSetKey(this, Empty(), key, length, params);
++		BASE::CheckedSetKey(this, Empty(), key, length, params);
+ 	}
+ };
+ 
+diff -u shacal2.h shacal2.h
+--- shacal2.h	2004-07-21 19:09:50.000000000 +0200
++++ shacal2.h	2006-04-02 18:01:39.000000000 +0200
+@@ -18,7 +18,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#SHACAL-2">SHACAL-2</a>
+ class SHACAL2 : public SHACAL2_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<SHACAL2_Info>
++	class CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<SHACAL2_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length);
+diff -u skipjack.h skipjack.h
+--- skipjack.h	2004-07-21 19:09:50.000000000 +0200
++++ skipjack.h	2006-04-02 18:01:57.000000000 +0200
+@@ -18,7 +18,7 @@
+ /// <a href="http://www.weidai.com/scan-mirror/cs.html#SKIPJACK">SKIPJACK</a>
+ class SKIPJACK : public SKIPJACK_Info, public BlockCipherDocumentation
+ {
+-	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<SKIPJACK_Info>
++	class CRYPTOPP_DLL CRYPTOPP_NO_VTABLE Base : public BlockCipherImpl<SKIPJACK_Info>, public SimpledKeyed_Helper
+ 	{
+ 	public:
+ 		void UncheckedSetKey(CipherDir direction, const byte *userKey, unsigned int length);
+Common subdirectories: TestVectors and TestVectors
+diff -u ttmac.h ttmac.h
+--- ttmac.h	2004-07-21 19:09:50.000000000 +0200
++++ ttmac.h	2006-04-02 18:02:12.000000000 +0200
+@@ -9,7 +9,7 @@
+ NAMESPACE_BEGIN(CryptoPP)
+ 
+ //! _
+-class CRYPTOPP_NO_VTABLE TTMAC_Base : public FixedKeyLength<20>, public IteratedHash<word32, LittleEndian, 64, MessageAuthenticationCode>
++class CRYPTOPP_NO_VTABLE TTMAC_Base : public FixedKeyLength<20>, public IteratedHash<word32, LittleEndian, 64, MessageAuthenticationCode>, public SimpledKeyed_Helper
+ {
+ public:
+ 	static std::string StaticAlgorithmName() {return std::string("Two-Track-MAC");}
