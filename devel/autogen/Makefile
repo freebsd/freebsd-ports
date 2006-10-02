@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	autogen
-PORTVERSION=	5.8.4
+PORTVERSION=	5.8.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU:S/$/:gnu/}
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/rel${PORTVERSION}/:gnu
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,gnu
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The Automated Program Generator
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
@@ -23,7 +23,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes
+CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes --datadir=${PREFIX}/share \
+		--infodir=${PREFIX}/info --mandir=${PREFIX}/man
 USE_LDCONFIG=	yes
 
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
