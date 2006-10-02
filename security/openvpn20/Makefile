@@ -10,10 +10,10 @@ PORTNAME=	openvpn
 # DO NOT BOTHER TO SEND NOTICES ABOUT 2.0.8 AS IT FIXES
 # WINDOWS-ONLY BUGS THAT DON'T AFFECT *BSD AND THUS
 # DOES NOT WARRANT A PORT UPGRADE! AND UPGRADE REQUESTS
-# WILL BE DROPPED.       -- Matthias Andree, 2006-09-13
+# WILL BE DROPPED.       -- Matthias Andree, 2006-10-01
 # -----------------------------------------------------
 PORTVERSION=	2.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--enable-password-save
 
 post-build:
 	cd ${WRKSRC}/plugin/down-root && ${MAKE}
-	cd ${WRKSRC}/plugin/auth-pam && ${CC} ${CFLAGS} ${CPPFLAGS} -I../.. -DDLOPEN_PAM=0 -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
+	cd ${WRKSRC}/plugin/auth-pam && ${CC} ${CPPFLAGS} -I../.. -DDLOPEN_PAM=0 ${CFLAGS} -fPIC -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
 	@# self-tests here
 .if !defined(WITHOUT_CHECK)
 	cd ${WRKSRC} && ${MAKE} check
