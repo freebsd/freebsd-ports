@@ -234,6 +234,9 @@ freenet6-client-*	net/freenet6		Must agree to License Agreement
 						before downloading
 freqship/*		sysutils/freqsdwn	License agreement is required
 						to download
+fretsonfire/FretsOnFire-*-linux*	games/fretsonfire-data	Only Unreal Voodoo 
+								site is allowed to 
+								distribute the music
 ftree-*			misc/ftree		Cannot distribute commercially
 fwtk/*			security/fwtk		No redistribution allowed
 Frisk-*			games/xfrisk		Copyright/trademark violation?
