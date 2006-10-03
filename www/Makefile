@@ -958,6 +958,7 @@
     SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-redcloth
+    SUBDIR += sahana2
     SUBDIR += sarg
     SUBDIR += sbox-dtc
     SUBDIR += scout
