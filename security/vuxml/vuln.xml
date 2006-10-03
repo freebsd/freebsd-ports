@@ -235,6 +235,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+	  <cvename>CVE-2006-5116</cvename>
+	  <cvename>CVE-2006-5117</cvename>
       <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2006-5</url>
       <url>http://secunia.com/advisories/22126/</url>
       <bid>20253</bid>
@@ -242,6 +244,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-28</discovery>
       <entry>2006-10-02</entry>
+      <modified>2006-10-03</modified>
     </dates>
   </vuln>
 
