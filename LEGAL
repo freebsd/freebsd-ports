@@ -90,6 +90,7 @@ cap60/*			net/cap			Do not sell for profit
 ccc-*.alpha.rpm		lang/compaq-cc		Distribution not allowed
 checkpassword-*.tar.gz	security/checkpassword	Unsure of djb's license
 citrix_ica-*-de.tar.gz	german/citrix_ica	License prohibits redistribution
+citrix_ica-*-ja.tar.gz	japanese/citrix_ica	License prohibits redistribution
 citrix_ica-*.tar.gz	net/citrix_ica		License prohibits redistribution
 cfs-*			security/cfs		Crypto; export-controlled
 clibpdf*.tar.gz		print/clibpdf		Needs a license to bundle with
