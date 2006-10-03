@@ -7,7 +7,6 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/ \
@@ -16,16 +15,16 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${DIST_VER}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
-DIST_VER=	${PORTNAME}-2006-06-09
+DIST_VER=	${PORTNAME}-2006-09-28
 USE_PHP=	gd mbstring pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
 DOKUWIKI_DIR?=	www/${PORTNAME}
-WRKSRC=		${WRKDIR}/${DIST_VER}
+WRKSRC=		${WRKDIR}/${DIST_VER:S/-/-rc/}
 PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
 TEMP_PLIST=		${WRKDIR}/temp-pkg-plist
 
@@ -81,17 +80,20 @@ pre-everything::
 .endif
 
 pre-patch:
-# Fix http://bugs.splitbrain.org/?do=details&id=926
-	@${REINPLACE_CMD} -e '25,26 s,=,= (int),' ${WRKSRC}/lib/exe/fetch.php
-	@${FIND} ${WRKSRC}/lib/exe -name "*.php.bak" -delete
 .if defined(WIKI_LANG)
 	@${REINPLACE_CMD} -e 's|lang\(.*\)'en'|lang\1'${WIKI_LANG}'|g' \
 		${WRKSRC}/conf/dokuwiki.php
 	@${FIND} ${WRKSRC}/conf -name "*.php.bak" -delete
 .endif
 
-post-patch:
-	@${TOUCH} ${WRKSRC}/data/changes.log
+x-generate-plist:
+	@make makesum
+	@make patch
+	@cd ${WRKSRC} && ${FIND} -s . -type f | \
+		${SED} -e 's|^./||;s|^|%%DOKUWIKI_DIR%%/|' > ${TEMP_PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm %%DOKUWIKI_DIR%%/|' >> ${TEMP_PLIST} \
+		&& ${ECHO_CMD} "@dirrmtry %%DOKUWIKI_DIR%%" >> ${TEMP_PLIST}
 
 do-install:
 # Data files

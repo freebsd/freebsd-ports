@@ -6,8 +6,8 @@
     #
     Alias /%%PORTNAME%% "%%PREFIX%%/%%DOKUWIKI_DIR%%/"[m
 
-2) Remember to edit the following file:
-    [1;36m%%PREFIX%%/%%DOKUWIKI_DIR%%/conf/local.php[m
+2) Open the following page in your browser and follow the instructions:
+    [1;36mhttp://www.your.host/dokuwiki/install.php[m
 
   For FULL configuration instructions see
   http://wiki.splitbrain.org/wiki:config
