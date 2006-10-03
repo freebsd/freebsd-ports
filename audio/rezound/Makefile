@@ -99,6 +99,16 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.if defined(GCCVERSION)
+.   if ${GCCVERSION} < 030000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fbsd4
+.   endif
+.else
+.   if ${OSVERSION} < 500035
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-fbsd4
+.   endif
+.endif
+
 post-patch: .SILENT
 .if ${OSVERSION} > 500027
 	${REINPLACE_CMD} -e '/atoll/d' ${WRKSRC}/config/platform/bsd.h
@@ -108,6 +118,10 @@ post-patch: .SILENT
 .endif
 .if ${OSVERSION} > 502120
 	${REINPLACE_CMD} -e '/nearbyint/d' ${WRKSRC}/config/platform/bsd.h
+.endif
+.if ${OSVERSION} < 500028
+	${REINPLACE_CMD} -e '22586,$$s/stdint/inttypes/' \
+		-e '21693s/$$srcdir/..\/../' ${WRKSRC}/configure
 .endif
 	${REINPLACE_CMD} -E 's,(_nl_expand_alias \()\),\1...),' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,$$(prefix)/doc,$$(datadir)/doc,' \
