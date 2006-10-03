@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	waimea
-PORTVERSION=	0.5.0.20050825
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://dev.gentoo.org/~nixphoeni/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	danfe
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -18,13 +18,9 @@ COMMENT=	An X11 window manager designed for maximum efficiency
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
-BROKEN=		Configure fails
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
 LATEST_LINK=	${PORTNAME}-devel
 
-USE_BZIP2=	yes
+USE_AUTOTOOLS=	automake:19:env
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
@@ -48,6 +44,8 @@ CONFIGURE_ARGS+=	--disable-png
 LIB_DEPENDS+=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 .else
 CONFIGURE_ARGS+=	--disable-svg
+MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
 .if defined(WITH_THREAD)
@@ -55,5 +53,10 @@ CONFIGURE_ARGS+=	--enable-thread
 .endif
 
 MAN1=		waimea.1
+
+post-extract:
+.for f in config.guess config.sub depcomp install-sh mkinstalldirs missing
+	@${LN} -fs ${AUTOMAKE_DIR}/${f} ${WRKSRC}/config/${f}
+.endfor
 
 .include <bsd.port.post.mk>

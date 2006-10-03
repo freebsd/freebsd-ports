@@ -1,0 +1,505 @@
+--- src/Event.cc.orig	2005-01-25 22:15:21.000000000 +0000
++++ src/Event.cc	2006-05-13 13:34:39.000000000 +0000
+@@ -149,11 +149,15 @@
+             
+             static cairo_t *cr = NULL;
+             if (cr == NULL) {
+-                cr = cairo_create();
+                 /* XXX: cairo need a call to this function for text
+                    support to be initialized, will probably dissapear soon. */
+-                cairo_set_target_drawable(cr, waimea->display,
+-                                          DefaultRootWindow(waimea->display));
++                cairo_surface_t *surface = 
++                    cairo_xlib_surface_create(waimea->display,
++                        DefaultRootWindow(waimea->display),
++                        DefaultVisual(waimea->display, DefaultScreen(waimea->display)),
++                        DisplayWidth(waimea->display, DefaultScreen(waimea->display)),
++                        DisplayHeight(waimea->display, DefaultScreen(waimea->display)));
++                cr = cairo_create(surface);
+             }
+ 
+             dw->renderWindow(cr);
+--- src/Render.cc.orig	2005-01-25 22:15:21.000000000 +0000
++++ src/Render.cc	2006-05-15 05:20:47.000000000 +0000
+@@ -359,19 +359,19 @@
+         if (crsurface) {
+             groupsurface =
+                 cairo_surface_create_similar(crsurface,
+-                                             CAIRO_FORMAT_ARGB32,
++                                             CAIRO_CONTENT_COLOR_ALPHA,
+                                              width, height);
+         } else if (parent_surface) {
+           groupsurface =
+                 cairo_surface_create_similar(parent_surface,
+-                                             CAIRO_FORMAT_ARGB32,
++                                             CAIRO_CONTENT_COLOR_ALPHA,
+                                              width, height);
+         } else {
+             if (ws->waimea->client_side_rendering) {
+                 data = new unsigned char[width * height * sizeof(WaPixel)];
+                 memset (data, 0, width * height * sizeof(WaPixel));
+                 groupsurface =
+-                    cairo_surface_create_for_image((char *) data,
++                    cairo_image_surface_create_for_data(data,
+                                                    CAIRO_FORMAT_ARGB32,
+                                                    width, height, width * 4);
+             } else {
+@@ -412,8 +412,9 @@
+             }
+         }
+         
+-        cairo_set_target_surface(cr, groupsurface);
+-        cairo_default_matrix(cr);
++        cairo_destroy(cr);
++        cr = cairo_create(groupsurface);
++        cairo_identity_matrix(cr);
+         cairo_set_operator(cr, RENDER_OPERATOR_DEFAULT);
+         list<RenderOp *>::iterator oit = operations.begin();
+         for (; oit != operations.end(); oit++) {
+@@ -431,13 +432,18 @@
+     }
+ 
+     if (crsurface) {
+-        cairo_set_target_surface(cr, crsurface);
++        cairo_destroy(cr);
++        cr = cairo_create(crsurface);
+         cairo_set_operator(cr, RENDER_OPERATOR_DEFAULT);
+         if (xrop_set) cairo_set_operator(cr, xrop);
+         cairo_translate(cr, x, y);
+         cairo_rotate(cr, rotation);
+-        cairo_set_alpha(cr, opacity);
+-        cairo_show_surface(cr, cache_surface->crsurface, width, height);
++        // XXX: I think I may've screwed this up, at least as to whether there
++        // should be any clipping. -mjmt
++        cairo_set_source_surface(cr, cache_surface->crsurface, 0., 0.);
++        cairo_rectangle(cr, 0., 0., width, height);
++        cairo_clip(cr);
++        cairo_paint_with_alpha(cr, opacity);
+     }
+ 
+     if (return_surface)
+@@ -832,13 +838,9 @@
+       pattern = cairo_pattern_create_radial (cx, cy, 0.0, cx, cy, ry);
+ 
+       if (rx != ry) {
+-        cairo_matrix_t *matrix;
+-
+-        matrix = cairo_matrix_create ();
+-        cairo_matrix_scale (matrix, ry / rx, 1.0);
+-        cairo_pattern_set_matrix (pattern, matrix);
+-        
+-        cairo_matrix_destroy (matrix);
++        cairo_matrix_t matrix;
++        cairo_matrix_init_scale (&matrix, ry / rx, 1.0);
++        cairo_pattern_set_matrix (pattern, &matrix);
+       }
+     } break;
+     case GroupPatternType: {
+@@ -854,13 +856,13 @@
+         group->return_surface = NULL;
+         group->parent_surface = NULL;
+ 
+-        cairo_default_matrix(cr);
++        cairo_identity_matrix(cr);
+         cairo_move_to(cr, 0.0, 0.0);
+         pattern = cairo_pattern_create_for_surface(subsurface->crsurface);
+         subsurface->unref();
+         cairo_restore(cr);
+       } else {
+-        cairo_set_rgb_color (cr, 1.0, 1.0, 1.0);
++        cairo_set_source_rgb (cr, 1.0, 1.0, 1.0);
+         return;
+       }
+     } break;
+@@ -869,7 +871,7 @@
+   int stops = 0;
+   list<WaColorStop *>::iterator it = color_stops.begin();
+   for (; it != color_stops.end(); ++it) {
+-    cairo_pattern_add_color_stop (pattern, (*it)->offset,
++    cairo_pattern_add_color_stop_rgba (pattern, (*it)->offset,
+                                   (*it)->color->red,
+                                   (*it)->color->green,
+                                   (*it)->color->blue,
+@@ -878,14 +880,14 @@
+   }
+ 
+   if (stops == 0) {
+-    cairo_pattern_add_color_stop (pattern, 0.0, 0.0, 0.0, 0.0, 1.0);
+-    cairo_pattern_add_color_stop (pattern, 1.0, 1.0, 1.0, 1.0, 1.0);
++    cairo_pattern_add_color_stop_rgba (pattern, 0.0, 0.0, 0.0, 0.0, 1.0);
++    cairo_pattern_add_color_stop_rgba (pattern, 1.0, 1.0, 1.0, 1.0, 1.0);
+   }
+       
+   cairo_pattern_set_filter (pattern, filter);
+   cairo_pattern_set_extend (pattern, extend);
+ 
+-  cairo_set_pattern (cr, pattern);
++  cairo_set_source (cr, pattern);
+ 
+   cairo_pattern_destroy (pattern);
+ }
+@@ -1110,7 +1112,12 @@
+           fill_color.setcairo_color(cr);
+           if (fill_pattern)
+             fill_pattern->setcairo_pattern(dwo, cr, NULL, w, h);
+-          cairo_set_alpha(cr, fill_color.alpha);
++          //cairo_set_alpha(cr, fill_color.alpha);
++          cairo_set_source_rgba(cr,
++                                fill_color.red,
++                                fill_color.green,
++                                fill_color.blue,
++                                fill_color.alpha);
+           cairo_fill(cr);
+           cairo_restore(cr);
+         }
+@@ -1429,7 +1436,7 @@
+     if (name) delete [] name;
+     if (bg_group) bg_group->unref();
+     clear();
+-    if (font) cairo_font_destroy(font);
++    if (font) cairo_font_face_destroy(font);
+ }
+ 
+ void RenderOpText::clear(void) {
+@@ -1604,10 +1611,10 @@
+     calc_length(bottom_spacing, bottom_spacing_u, dwo->ws->vdpi, h,
+                 &bottom_space);
+ 
+-    cairo_default_matrix(cr);
++    cairo_identity_matrix(cr);
+ 
+     if (!font) {
+-        cairo_select_font(cr, family, slant, weight);
++        cairo_select_font_face (cr, family, slant, weight);
+         /* font = cairo_current_font(cr);
+         if (!font)
+           return;
+@@ -1615,9 +1622,9 @@
+         cairo_font_reference (font);
+         */
+     } else
+-      cairo_set_font (cr, font);
++        cairo_set_font_face (cr, font);
+     
+-    cairo_scale_font (cr, font_size);    
++    cairo_set_font_size (cr, font_size);    
+     
+     if (is_static)
+         text = utf8;
+@@ -1657,7 +1664,7 @@
+             str[end_offset] = '\0';
+             sinfo->text = str;
+             
+-            cairo_text_extents(cr, (unsigned char *) sinfo->text, &extents);
++            cairo_text_extents(cr, sinfo->text, &extents);
+             str_y_pos = extents.height - extents.y_bearing;
+             str_width = extents.width;
+             str_height = extents.height;
+@@ -1670,9 +1677,9 @@
+             if (textptr[end_offset] == '\t') {
+                 double tab, with_space;
+                 if (space_width < 0.0) {
+-                    cairo_text_extents(cr, (unsigned char *) "1 1", &extents);
++                    cairo_text_extents(cr, "1 1", &extents);
+                     with_space = extents.width;
+-                    cairo_text_extents(cr, (unsigned char *) "11", &extents);
++                    cairo_text_extents(cr, "11", &extents);
+                     space_width = with_space - extents.width;
+                 }
+                 tab = ceil((linfo->width + space_width) / tab_space);
+@@ -1743,13 +1750,14 @@
+     cairo_save(cr);
+ 
+     text_region = cairo_surface_create_similar(
+-        cairo_current_target_surface(cr), CAIRO_FORMAT_ARGB32,
++        cairo_get_target(cr), CAIRO_CONTENT_COLOR_ALPHA,
+         (unsigned int) ceil(width), (unsigned int) ceil(height));
+ 
+-    cairo_set_target_surface(cr, text_region);
++    cairo_destroy(cr);
++    cr = cairo_create(crsurface);
+     
+     if (bg_group) {
+-        bg_group->parent_surface = cairo_current_target_surface(cr);
++        bg_group->parent_surface = cairo_get_target(cr);
+         bg_group->return_surface = &subsurface;
+         cairo_save(cr);
+         bg_group->render(dwo, cr, NULL, (unsigned int) ceil(width),
+@@ -1762,9 +1770,9 @@
+             cairo_pattern_t *pattern;
+             
+             cairo_save(cr);
+-            cairo_surface_set_repeat(subsurface->crsurface, true);
+             pattern = cairo_pattern_create_for_surface(subsurface->crsurface);
+-            cairo_set_pattern(cr, pattern);
++            cairo_pattern_set_extend(pattern, CAIRO_EXTEND_REPEAT);
++            cairo_set_source(cr, pattern);
+             cairo_pattern_destroy(pattern);
+             cairo_rectangle(cr, 0.0, 0.0, ceil(width), ceil(height));
+             cairo_fill(cr);
+@@ -1789,7 +1797,7 @@
+             if (stroke || fill_pattern) {
+               cairo_move_to(cr, (int) (left_space + (*sit)->x + pos_x),
+                             (int) (y_off + y_pos));
+-              cairo_text_path(cr, (unsigned char *) (*sit)->text);
++              cairo_text_path(cr, (*sit)->text);
+               cairo_move_to(cr, 0.0, 0.0);
+               draw(dwo, cr, crsurface, WA_ROUND_U(width),
+                    WA_ROUND_U(height));
+@@ -1799,12 +1807,12 @@
+                 cairo_move_to(cr, (int) (left_space + (*sit)->x + pos_x +
+                                          shadow_x_offset),
+                               (int) (y_off + y_pos + shadow_y_offset));
+-                cairo_show_text(cr, (unsigned char *) (*sit)->text);
++                cairo_show_text(cr, (*sit)->text);
+               }
+               fill_color.setcairo_color(cr);
+               cairo_move_to(cr, (int) (left_space + (*sit)->x + pos_x),
+                             (int) (y_off + y_pos));
+-              cairo_show_text(cr, (unsigned char *) (*sit)->text);
++              cairo_show_text(cr, (*sit)->text);
+             }
+         }
+             
+@@ -1816,8 +1824,10 @@
+     if (x || y) cairo_translate(cr, x, y);
+     if (xrop_set) cairo_set_operator(cr, xrop);
+     if (rotation) cairo_rotate(cr, rotation);
+-    cairo_show_surface(cr, text_region, (unsigned int) ceil(width),
+-                       (unsigned int) ceil(height));
++    cairo_set_source_surface(cr, text_region, 0., 0.);
++    cairo_rectangle(cr, 0., 0., ceil(width), ceil(height));
++    cairo_clip(cr);
++    cairo_paint(cr);
+     
+     cairo_surface_destroy(text_region);
+ 
+@@ -1860,7 +1870,7 @@
+     calcPositionAndSize(w, h, dwo->ws->hdpi, dwo->ws->vdpi, &x, &y,
+                         &width, &height);
+     
+-    if (color.alpha == 1.0) cairo_set_operator(cr, CAIRO_OPERATOR_SRC);
++    if (color.alpha == 1.0) cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
+     if (xrop_set) cairo_set_operator(cr, xrop);
+     color.setcairo_color(cr);
+     cairo_rectangle(cr, x, y, width, height);
+@@ -1946,54 +1956,63 @@
+     
+     switch (scale) {
+         case ImageNormalScaleType:
+-            cairo_default_matrix(cr);
++            cairo_identity_matrix(cr);
+             
+             if (width != img->width || height != img->height) {
+                 if (xrop_set) cairo_set_operator(cr, xrop);
+-                cairo_operator_t op = cairo_current_operator(cr);
++                cairo_operator_t op = cairo_get_operator(cr);
+             
+-                cairo_surface_t *target = cairo_current_target_surface(cr);
++                cairo_surface_t *target = cairo_get_target(cr);
+                 cairo_surface_t *scaled =
+-                    cairo_surface_create_similar(target, CAIRO_FORMAT_ARGB32,
++                    cairo_surface_create_similar(target, CAIRO_CONTENT_COLOR_ALPHA,
+                                                  (int) width + 2,
+                                                  (int) height + 2);
+-                cairo_set_target_surface(cr, scaled);
++                cairo_destroy(cr);
++                cr = cairo_create(scaled);
+                 cairo_scale(cr, (double) width / (img->width -
+                                                   ((img->width > 1)? 1: 0)),
+                             (double) height / (img->height -
+                                                ((img->height > 1)? 1: 0)));
+-                cairo_surface_set_filter(img->crsurface, filter);
+-                cairo_set_operator(cr, CAIRO_OPERATOR_SRC);
+-                cairo_show_surface(cr, img->crsurface,
+-                                   img->width + 1, img->height + 1);
+-                cairo_set_target_surface(cr, target);
+-                cairo_default_matrix(cr);
++                cairo_pattern_t *img_pattern =
++                    cairo_pattern_create_for_surface(img->crsurface);
++                cairo_pattern_set_filter(img_pattern, filter);
++                cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
++                cairo_set_source(cr, img_pattern);
++                cairo_rectangle(cr, 0., 0., img->width + 1, img->height + 1);
++                cairo_fill(cr);
++                cairo_identity_matrix(cr);
++                cairo_pattern_destroy(img_pattern);
++
++                cairo_destroy(cr);
++                cr = cairo_create(target);
+                 cairo_translate(cr, x, y);
+                 cairo_set_operator(cr, op);
+-                cairo_show_surface(cr, scaled, (int) width + 2,
+-                                   (int) height + 2);
++                cairo_set_source_surface(cr, scaled, 0., 0.);
++                cairo_rectangle(cr, 0., 0., width + 2., height + 2.);
++                cairo_fill(cr);                
+                 cairo_surface_destroy(scaled);
+             } else {
+                 if (xrop_set) cairo_set_operator(cr, xrop);
+                 cairo_translate(cr, x, y);
+                 cairo_rotate(cr, rotation);
+-                cairo_show_surface(cr, img->crsurface,
+-                                   img->width + 1, img->height + 1);
++                cairo_set_source_surface(cr, img->crsurface, 0., 0.);
++                cairo_rectangle(cr, 0., 0., img->width + 1., img->height + 1.);
++                cairo_fill(cr);
+             }
+             break;
+         case ImageTileScaleType: {
+-            cairo_default_matrix(cr);
+-            cairo_surface_set_repeat(img->crsurface, true);
++            cairo_identity_matrix(cr);
+             cairo_translate(cr, x, y);
+             cairo_rectangle(cr, 0, 0, width, height);
+             cairo_move_to(cr, 0.0, 0.0);
+-            cairo_default_matrix(cr);
++            cairo_identity_matrix(cr);
+             pattern = cairo_pattern_create_for_surface(img->crsurface);
+-            cairo_set_pattern(cr, pattern);
++            cairo_pattern_set_extend(pattern, CAIRO_EXTEND_REPEAT);
++            cairo_set_source(cr, pattern);
+             cairo_pattern_destroy(pattern);
+             if (xrop_set) cairo_set_operator(cr, xrop);
+             cairo_fill(cr);
+-            cairo_surface_set_repeat(img->crsurface, false);
++            //cairo_surface_set_repeat(img->crsurface, false);
+         } break;
+     }
+     
+@@ -2047,7 +2066,7 @@
+                          cairo_surface_t *,
+                          unsigned int w, unsigned int h) {
+     double x, y, width, height;
+-    int svg_w, svg_h;
++    unsigned int svg_w, svg_h;
+     
+     calcPositionAndSize(w, h, dwo->ws->hdpi, dwo->ws->vdpi,
+                         &x, &y, &width, &height);
+@@ -2287,16 +2306,16 @@
+     cairo_operator_t crop;
+ } operator_map[] = {
+     { "clear", CAIRO_OPERATOR_CLEAR },
+-    { "src", CAIRO_OPERATOR_SRC },
+-    { "dst", CAIRO_OPERATOR_DST },
++    { "src", CAIRO_OPERATOR_SOURCE },
++    { "dst", CAIRO_OPERATOR_DEST },
++    { "dst_over", CAIRO_OPERATOR_DEST_OVER },
++    { "dst_in", CAIRO_OPERATOR_DEST_IN },
++    { "dst_out", CAIRO_OPERATOR_DEST_OUT },
++    { "dst_atop", CAIRO_OPERATOR_DEST_ATOP },
+     { "over", CAIRO_OPERATOR_OVER },
+-    { "overreverse", CAIRO_OPERATOR_OVER_REVERSE },
+     { "in", CAIRO_OPERATOR_IN },
+-    { "inreverse", CAIRO_OPERATOR_IN_REVERSE },
+     { "out", CAIRO_OPERATOR_OUT },
+-    { "outreverse", CAIRO_OPERATOR_OUT_REVERSE },
+     { "atop", CAIRO_OPERATOR_ATOP },
+-    { "atopreverse", CAIRO_OPERATOR_ATOP_REVERSE },
+     { "xor", CAIRO_OPERATOR_XOR },
+     { "add", CAIRO_OPERATOR_ADD },
+     { "saturate", CAIRO_OPERATOR_SATURATE }
+--- src/Render.hh.orig	2005-01-25 22:15:21.000000000 +0000
++++ src/Render.hh	2006-04-28 18:13:34.000000000 +0000
+@@ -246,8 +246,7 @@
+     double getOpacity(void) { return alpha; }
+ 
+     inline void setcairo_color(cairo_t *cr) {
+-        cairo_set_rgb_color(cr, red, green, blue);
+-        cairo_set_alpha(cr, alpha);
++        cairo_set_source_rgba(cr, red, green, blue, alpha);
+     }    
+ 
+     double red, green, blue, alpha;
+@@ -502,7 +501,7 @@
+     HorizontalAlignment text_halign;
+     WaColor shadow_color;
+     char *family;
+-    cairo_font_t *font;
++    cairo_font_face_t *font;
+     RenderGroup *bg_group;
+     cairo_font_weight_t weight;
+     cairo_font_slant_t slant;
+--- src/Screen.cc.orig	2005-01-25 22:15:21.000000000 +0000
++++ src/Screen.cc	2006-05-13 13:34:39.000000000 +0000
+@@ -1549,7 +1549,7 @@
+ 
+     if (waimea->client_side_rendering) {
+         data = rgba;
+-        surface = cairo_surface_create_for_image((char *) rgba,
++        surface = cairo_image_surface_create_for_data(rgba,
+                                                  CAIRO_FORMAT_ARGB32,
+                                                  width, height,
+                                                  width * sizeof(WaPixel));
+--- src/Style.cc.orig	2005-01-25 22:15:21.000000000 +0000
++++ src/Style.cc	2006-05-13 13:34:39.000000000 +0000
+@@ -656,7 +656,7 @@
+                   (bgsurface)? bgsurface->height: 0,
+                   p_x, p_y, w, h);
+                 root_surface =
+-                  cairo_surface_create_for_image((char *) root_data,
++                  cairo_image_surface_create_for_data(root_data,
+                                                  CAIRO_FORMAT_ARGB32,
+                                                  w, h, w * sizeof(WaPixel));
+               } else {
+@@ -688,13 +688,17 @@
+         sb->style->parent_surface = NULL;
+         
+         if (alpha || shape) {
+-            cairo_set_target_surface(cr, root_surface);
++            cairo_destroy(cr);
++            cr = cairo_create(root_surface);
+             cairo_set_operator(cr, RENDER_OPERATOR_DEFAULT);
+             if (sb->style->xrop_set)
+                 cairo_set_operator(cr, sb->style->xrop);
+-            cairo_set_alpha(cr, sb->style->opacity);
+-            cairo_default_matrix(cr);
+-            cairo_show_surface(cr, return_surface->crsurface, w, h);
++            cairo_identity_matrix(cr);
++            cairo_set_source_surface(cr, return_surface->crsurface, 0., 0.);
++            cairo_rectangle(cr, 0., 0., w, h);
++            cairo_clip(cr);
++            cairo_paint_with_alpha(cr, sb->style->opacity);
++            cairo_reset_clip(cr);
+         }
+         
+         if (shape) {
+@@ -704,7 +708,7 @@
+                 shape_data = new unsigned char[w * h * sizeof(WaPixel)];
+                 memset (shape_data, 0, w * h * sizeof(WaPixel));
+                 alpha_surface =
+-                    cairo_surface_create_for_image((char *) shape_data,
++                    cairo_image_surface_create_for_data(shape_data,
+                                                    CAIRO_FORMAT_ARGB32,
+                                                    w, h, w * sizeof(WaPixel));
+             } else {
+@@ -724,15 +728,26 @@
+                                               ws->colormap);
+             }
+ 
+-            cairo_set_target_surface(cr, alpha_surface);
++            cairo_destroy(cr);
++            cr = cairo_create(alpha_surface);
++            cairo_set_operator(cr, CAIRO_OPERATOR_SOURCE);
++            cairo_set_source_surface(cr, return_surface->crsurface, 0., 0.);
++            cairo_set_source_rgb(cr, 0.0, 0.0, 0.0);
++            cairo_rectangle(cr, 0, 0, w, h);
++            cairo_clip(cr);
++            cairo_paint_with_alpha(cr, sb->style->opacity);
++            cairo_reset_clip(cr);
+             
+             if (sb->style->shapemask) {
+                 cairo_set_operator(cr, CAIRO_OPERATOR_OVER);
+                 sb->style->shapemask->render(this, cr, alpha_surface, w, h);
+             } else {
+                 cairo_set_operator(cr, CAIRO_OPERATOR_OVER);
+-                cairo_set_alpha(cr, sb->style->opacity);
+-                cairo_show_surface(cr, return_surface->crsurface, w, h);
++                cairo_set_source_surface(cr, return_surface->crsurface, 0., 0.);
++                cairo_rectangle(cr, 0.0, 0.0, w, h);
++                cairo_clip(cr);
++                cairo_paint_with_alpha(cr, sb->style->opacity);
++                cairo_reset_clip(cr);
+             }
+             
+             if (ws->waimea->client_side_rendering) {
