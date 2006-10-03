@@ -1,0 +1,20 @@
+#!/bin/sh
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+snd1_file=$PKG_PREFIX/share/fretsonfire/songs/bangbang/song.ini
+snd2_file=$PKG_PREFIX/share/fretsonfire/songs/defy/song.ini
+snd3_file=$PKG_PREFIX/share/fretsonfire/songs/twibmpg/song.ini
+snd4_file=$PKG_PREFIX/share/fretsonfire/songs/tutorial/song.ini
+
+chown root:wheel $snd1_file 2>/dev/null
+chmod 666 $snd1_file
+
+chown root:wheel $snd2_file 2>/dev/null
+chmod 666 $snd2_file
+
+chown root:wheel $snd3_file 2>/dev/null
+chmod 666 $snd3_file
+
+chown root:wheel $snd4_file 2>/dev/null
+chmod 666 $snd4_file
