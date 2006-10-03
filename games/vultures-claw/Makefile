@@ -9,9 +9,9 @@ PORTNAME=	vultures
 PORTVERSION=	2.1.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/downloads/${PORTVERSION}/
+MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/attachment/wiki/downloads/${PORTVERSION}/
 PKGNAMESUFFIX=	-claw
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
+DISTFILES=	${DISTNAME}-full${EXTRACT_SUFX}?format=raw
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An isometric interface to Slash'EM based on Falcon's Eye
@@ -41,9 +41,6 @@ post-configure:
 		"s|^PREFIX|\#PREFIX|g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		"s|slashemdir|share/vultures-claw|g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e \
-		's|../$$(BUILD)|../../../$$(BUILD)|g' \
-		${WRKSRC}/win/vultures/GNUmakefile
 	@${REINPLACE_CMD} -e \
 		's|#include <SDL_image.h>||g' \
 		${WRKSRC}/win/vultures/vultures_gfl.c
