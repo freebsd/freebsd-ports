@@ -1,0 +1,11 @@
+--- configure.orig	Mon Sep 18 02:20:15 2006
++++ configure	Mon Sep 18 02:20:37 2006
+@@ -2959,7 +2959,7 @@
+ 
+ 
+ 		echo > config.asciidoc-unsafe.txt
+-		if "$ASCIIDOC" --unsafe config.asciidoc-unsafe.txt >&/dev/null; then
++		if "$ASCIIDOC" --unsafe config.asciidoc-unsafe.txt 2>&1 >/dev/null; then
+ 			ASCIIDOC_FLAGS=--unsafe
+ 		fi
+ 		rm config.asciidoc-unsafe.*

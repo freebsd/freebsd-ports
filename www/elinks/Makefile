@@ -37,7 +37,7 @@ OPTIONS=	88COLORS	"Enable 88 color support"	on \
 		NNTP		"Enable NNTP (News) protocol support" off \
 		FTP		"Enable FTP protocol support" on \
 		FSP		"Enable FSP protocol support (via fsplib)" off \
-		SMB		"Enable SMP protocol support (via smbclient)" off \
+		SMB		"Enable SMB protocol support (via smbclient)" off \
 		EXMODE		"Enable exmode (CLI) support" on \
 		HIGHLIGHT	"Enable HTML highlighting using DOM engine" on \
 		IDN		"Enable international domain name support" off \
@@ -193,6 +193,14 @@ CONFIGURE_ARGS+=	--disable-sm-scripting --without-spidermonkey
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+.endif
+
+#
+# Elinks will try to use it if exists
+#
+.if exists(${LOCALBASE}/include/execinfo.h)
+LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
 .endif
 
 .include <bsd.port.post.mk>
