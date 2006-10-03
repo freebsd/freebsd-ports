@@ -1,0 +1,142 @@
+@unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -f ${dir}/mime.types ]; then (/bin/cat ${dir}/mime.types | /usr/bin/grep -v "application/x-ica" > ${dir}/mime.types.tmp; mv ${dir}/mime.types.tmp ${dir}/mime.types); fi ; done
+@unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -f ${dir}/mailcap ]; then (/bin/cat ${dir}/mailcap | /usr/bin/grep -v "application/x-ica" > ${dir}/mailcap.tmp; /bin/mv ${dir}/mailcap.tmp ${dir}/mailcap); fi ; done
+@unexec for dir in /usr/local/libexec/netscape /usr/local/libexec/netscape-linux /usr/local/netscape /usr/local/netscape-linux /usr/local/lib/netscape /usr/local/lib/netscape-linux %%MOZILLA_HOME%% %D/lib/netscape-linux; do if [ -e ${dir}/plugins/npica.so ]; then (/bin/rm ${dir}/plugins/npica.so); fi ; done
+ICAClient/.config/appsrv.ini
+ICAClient/.config/keyboard.ini
+ICAClient/.config/module.ini
+ICAClient/.config/wfclient.ini
+ICAClient/libctxssl.so
+ICAClient/Npica
+ICAClient/Npica.ad
+ICAClient/CHARICONV.DLL
+ICAClient/NDS.DLL
+ICAClient/PDCRYPT1.DLL
+ICAClient/PDCRYPT2.DLL
+ICAClient/TW1.DLL
+ICAClient/VDCM.DLL
+ICAClient/VDSCARD.DLL
+ICAClient/VDSPMIKE.DLL
+ICAClient/Wfcmgr
+ICAClient/Wfcmgr.ad
+ICAClient/Wfica
+ICAClient/Wfica.ad
+ICAClient/config/.server
+ICAClient/config/appsrv.ini
+ICAClient/config/module.ini
+ICAClient/config/wfclient.ini
+ICAClient/desktop/wfcmgr.desktop
+ICAClient/desktop/Citrix_PNA.desktop
+ICAClient/eula.txt
+ICAClient/help/index.htm
+ICAClient/icons/citrix16.xpm
+ICAClient/icons/citrix32.xpm
+ICAClient/icons/citrix48.xpm
+ICAClient/install.txt
+ICAClient/keyboard/age2.kbd
+ICAClient/keyboard/agex2.kbd
+ICAClient/keyboard/automatic.kbd
+ICAClient/keyboard/dcint401.kbd
+ICAClient/keyboard/dcintpcx.kbd
+ICAClient/keyboard/dcus401.kbd
+ICAClient/keyboard/dcuspcx.kbd
+ICAClient/keyboard/dec401.kbd
+ICAClient/keyboard/dec401uk.kbd
+ICAClient/keyboard/decpcx.kbd
+ICAClient/keyboard/decpcxuk.kbd
+ICAClient/keyboard/dg.kbd
+ICAClient/keyboard/dgfr.kbd
+ICAClient/keyboard/dggr.kbd
+ICAClient/keyboard/dguk.kbd
+ICAClient/keyboard/dgus.kbd
+ICAClient/keyboard/hp101.kbd
+ICAClient/keyboard/hpfritf.kbd
+ICAClient/keyboard/hpgritf.kbd
+ICAClient/keyboard/hpint101.kbd
+ICAClient/keyboard/hpintps2.kbd
+ICAClient/keyboard/hpitf.kbd
+ICAClient/keyboard/hpps2.kbd
+ICAClient/keyboard/hpuk101.kbd
+ICAClient/keyboard/hpukitf.kbd
+ICAClient/keyboard/hpukps2.kbd
+ICAClient/keyboard/hpus101.kbd
+ICAClient/keyboard/hpusitf.kbd
+ICAClient/keyboard/hpusps2.kbd
+ICAClient/keyboard/ibm.kbd
+ICAClient/keyboard/keyboard.ini
+ICAClient/keyboard/linux.kbd
+ICAClient/keyboard/linux-ja.kbd
+ICAClient/keyboard/mac101.kbd
+ICAClient/keyboard/ncdn-101.kbd
+ICAClient/keyboard/ncdn-102.kbd
+ICAClient/keyboard/netbsd.kbd
+ICAClient/keyboard/scoos5.kbd
+ICAClient/keyboard/scouw2.kbd
+ICAClient/keyboard/sg.kbd
+ICAClient/keyboard/sgindy.kbd
+ICAClient/keyboard/sgindyfr.kbd
+ICAClient/keyboard/sgindygr.kbd
+ICAClient/keyboard/sgindyuk.kbd
+ICAClient/keyboard/sgindyus.kbd
+ICAClient/keyboard/sngr.kbd
+ICAClient/keyboard/sparc3.kbd
+ICAClient/keyboard/sparc4.kbd
+ICAClient/keyboard/sparc5.kbd
+ICAClient/keyboard/sparc6usb.kbd
+ICAClient/keyboard/sparcfr4.kbd
+ICAClient/keyboard/sparcfr5.kbd
+ICAClient/keyboard/sparcgr4.kbd
+ICAClient/keyboard/sparcgr5.kbd
+ICAClient/keyboard/sparcuk4.kbd
+ICAClient/keyboard/sparcuk5.kbd
+ICAClient/keyboard/sparcus3.kbd
+ICAClient/keyboard/sparcus4.kbd
+ICAClient/keyboard/sparcus5.kbd
+ICAClient/keyboard/trimodal.kbd
+ICAClient/keystore/cacerts/BTCTRoot.crt
+ICAClient/keystore/cacerts/Class3PCA_G2_v2.crt
+ICAClient/keystore/cacerts/Class4PCA_G2_v2.crt
+ICAClient/keystore/cacerts/GTECTGlobalRoot.crt
+ICAClient/keystore/cacerts/GTECTRoot.crt
+ICAClient/keystore/cacerts/Pcs3ss_v4.crt
+ICAClient/keystore/cacerts/SecureServer.crt
+ICAClient/nls/C
+ICAClient/nls/ja/pna.nls
+ICAClient/nls/en/pna.nls
+ICAClient/npica.so
+ICAClient/pkginf/F.core.linuxx86
+ICAClient/pkginf/Ver.core.linuxx86
+ICAClient/pkginf/changeno.dat
+ICAClient/readme.txt
+ICAClient/setupwfc
+ICAClient/util/XCapture
+ICAClient/util/XCapture.ad
+ICAClient/util/echo_cmd
+ICAClient/util/hinst
+ICAClient/util/icalicense.sh
+ICAClient/util/nslaunch
+ICAClient/util/pacexec
+ICAClient/util/pac.js
+ICAClient/util/xcapture
+ICAClient/wfcmgr
+ICAClient/wfica
+ICAClient/wfica.sh
+ICAClient/wfica_assoc.sh
+bin/wfcmgr
+bin/wfica
+@dirrm ICAClient/.config
+@dirrm ICAClient/cache/zlcache
+@unexec find %D/ICAClient/cache/ -type f -exec rm {} \; 2>&1 >/dev/null || true
+@dirrm ICAClient/cache
+@dirrm ICAClient/config
+@dirrm ICAClient/desktop
+@dirrm ICAClient/help
+@dirrm ICAClient/icons
+@dirrm ICAClient/keyboard
+@dirrm ICAClient/keystore/cacerts
+@dirrm ICAClient/keystore
+@dirrm ICAClient/nls/ja
+@dirrm ICAClient/nls/en
+@dirrm ICAClient/nls
+@dirrm ICAClient/pkginf
+@dirrm ICAClient/util
+@dirrm ICAClient
