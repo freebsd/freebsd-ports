@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldap
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	net ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby interface to LDAP API based on RFC1823
 
 WITH_LDAP?=	openldap2
@@ -27,7 +27,7 @@ USE_OPENLDAP=	yes
 .elif ${WITH_LDAP} == ldapsdk
 LIB_DEPENDS=	${LOCALBASE}/mozilla/directory/lib/libldap.so.1:${PORTSDIR}/net/ldapsdk
 .else
-IGNORE=	Cannot install: WITH_LDAP must be set to one of "openldap1", "openldap2" and "ldapsdk"
+IGNORE=		you should set WITH_LDAP variable to openldap1, openldap2 or ldapsdk
 .endif
 
 USE_RUBY=	yes
@@ -52,10 +52,16 @@ CONFIGURE_ARGS?=	--with-netscape \
 			--with-ldap-dir="${LOCALBASE}/mozilla/directory"
 .endif
 
-#WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog FAQ README TODO
+
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|/usr/local/openldap|, "${PREFIX}"' \
@@ -64,12 +70,10 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${CP} -R ${WRKSRC}/test/* ${WRKSRC}/example/* ${RUBY_MODEXAMPLESDIR}/
-	${LN} -fs . ${RUBY_MODEXAMPLESDIR}/test
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+	@(cd ${WRKSRC}/test/ && ${COPYTREE_SHARE} \* ${RUBY_MODEXAMPLESDIR}/)
+	@(cd ${WRKSRC}/example/ && ${COPYTREE_SHARE} \* ${RUBY_MODEXAMPLESDIR}/)
+	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>
