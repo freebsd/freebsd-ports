@@ -406,6 +406,7 @@
     SUBDIR += p5-Fuse-Simple
     SUBDIR += p5-LJ-Cache
     SUBDIR += p5-LJ-TextMessage
+    SUBDIR += p5-Proc-PidUtil
     SUBDIR += p5-Quota
     SUBDIR += p5-Schedule-At
     SUBDIR += p5-Schedule-Cron
