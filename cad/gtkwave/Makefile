@@ -14,7 +14,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/amulet/gtkwave/2.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
