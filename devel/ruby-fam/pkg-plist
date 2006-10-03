@@ -1,7 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/fam.so
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dirmon.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/famtest.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
@@ -41,6 +38,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/event_codes.txt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dirmon.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/famtest.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam/Request.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src
@@ -49,3 +50,8 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
