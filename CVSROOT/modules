@@ -4618,6 +4618,7 @@ ja-celrw	ports/japanese/celrw
 ja-chasen	ports/japanese/chasen
 ja-chasen-base	ports/japanese/chasen-base
 ja-chimera	ports/japanese/chimera
+ja-citrix_ica	ports/japanese/citrix_ica
 ja-csrd		ports/japanese/csrd
 ja-dbskkd-cdb	ports/japanese/dbskkd-cdb
 ja-ddskk	ports/japanese/ddskk
