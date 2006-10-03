@@ -9,7 +9,7 @@ PORTNAME=	Services_Delicious
 PORTVERSION=	0.4.0
 CATEGORIES=	www pear
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR Client for the del.icio.us web service
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

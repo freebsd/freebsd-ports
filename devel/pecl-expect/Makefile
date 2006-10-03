@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A PHP extension for expect library
 
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c

@@ -9,7 +9,7 @@ PORTNAME=	Console_Getopt
 PORTVERSION=	1.2
 CATEGORIES=	devel pear
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PHP class that provides Command-line option parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

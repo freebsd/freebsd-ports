@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/G/GP/GPHAT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Powerful, extensible charting
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.25:${PORTSDIR}/devel/p5-Class-Accessor \

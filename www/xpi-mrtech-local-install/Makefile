@@ -10,7 +10,7 @@ DISTVERSION=	5.2
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+nv+zm+sb+tb
 CATEGORIES=	www
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Manage extensions and themes locally
 
 XPI_DISTNAME=	mr_tech_local_install

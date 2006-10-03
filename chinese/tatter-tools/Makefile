@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://bbs.ilc.edu.tw/chinsan/distfiles/ \
 		http://www.twtt.org/ttfile/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.zh_TW.UTF-8
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Cute and easy blog Tool with Traditional-Chinese(zh_TW.UTF-8)
 
 USE_PHP=	mysql pcre session xml

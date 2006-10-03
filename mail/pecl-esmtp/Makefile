@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PECL ESMTP client extenion
 
 LIB_DEPENDS=	esmtp:${PORTSDIR}/mail/libesmtp

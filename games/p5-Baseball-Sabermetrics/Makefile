@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Baseball/VICTOR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A Baseball Statistics Module
 
 BUILD_DEPENDS=	p5-Data-Serializer>=0.29:${PORTSDIR}/devel/p5-Data-Serializer \

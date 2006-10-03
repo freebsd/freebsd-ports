@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A PECL extension which provides word stemming
 
 USE_PHP=	yes

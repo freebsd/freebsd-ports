@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AG/AGROLMS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Perl extension providing access to the GSSAPIv2 library
 
 PERL_CONFIGURE=	yes

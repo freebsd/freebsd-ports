@@ -13,7 +13,7 @@ MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 PKGNAMESUFFIX=	-tw
 DISTNAME=	phpBB-tw-${PORTVERSION}
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	The Traditional Chinese version of phpBB
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear

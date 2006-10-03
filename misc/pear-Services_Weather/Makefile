@@ -9,7 +9,7 @@ PORTNAME=	Services_Weather
 PORTVERSION=	1.4.0
 CATEGORIES=	misc www pear
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR interface to various online weather-services
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

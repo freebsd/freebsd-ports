@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	zh-
 DISTFILES=	ttf-arphic-uming_${PORTVERSION}.orig.tar.gz:uming \
 		ttf-arphic-ukai_${PORTVERSION}.orig.tar.gz:ukai
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	CJKUnifonts TrueType Font is a combine of Arphic Ming and Kai fonts
 
 DIST_SUBDIR=	${PORTNAME}

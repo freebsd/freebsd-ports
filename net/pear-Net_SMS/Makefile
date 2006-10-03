@@ -9,7 +9,7 @@ PORTNAME=	Net_SMS
 PORTVERSION=	0.1.0
 CATEGORIES=	net pear
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR SMS functionality
 
 BUILD_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://www.emma-soft.com/projects/epdfview/chrome/site/releases/
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A lightweight PDF document viewer
 
 LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \

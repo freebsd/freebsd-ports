@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A text-based utility for work with dictionaries in StarDict's format
 
 NOT_FOR_ARCHS=	sparc64

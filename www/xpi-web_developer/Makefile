@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	An extension to add various web developer tools
 
 XPI_ID=		{c45c406e-ab73-11d8-be73-000a95be3b12}

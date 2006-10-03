@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A PHP extension for CVS pserver client
 
 USE_PHP=	yes

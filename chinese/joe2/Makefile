@@ -12,7 +12,7 @@ PATCH_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 PATCHFILES=	zh-joe-2.9.8.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 
 LATEST_LINK=	${PKGNAMEPREFIX}joe2
 

@@ -9,7 +9,7 @@ PORTNAME=	PEAR_Info
 PORTVERSION=	1.6.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Show Information about your PEAR install and its packages
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
 USE_X_PREFIX=	YES
