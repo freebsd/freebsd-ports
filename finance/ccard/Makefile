@@ -8,13 +8,15 @@
 PORTNAME=	ccard
 PORTVERSION=	1.1
 CATEGORIES=	finance
-MASTER_SITES=	http://www.canb.auug.org.au/~millerp/ \
-		http://critical.ch/distfiles/ \
+MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line offline credit card validator/analyzer
+
+DEPRECATED=	Project disappeared from the internet
+EXPIRATION_DATE=2006-12-03
 
 GNU_CONFIGURE=	yes
 
