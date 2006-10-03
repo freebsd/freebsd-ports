@@ -45,9 +45,9 @@ post-patch: .SILENT
 		${WRKSRC}/common/mem.c
 	cd ${WRKSRC}/common && ${SH} -c 'for i in *.h; do \
 		${ECHO_CMD} >> $${i}; done'
-	# Reorganize #include's
-	${ECHO_MSG} -e '35t30\n36d\nwq' | ${ED} -s ${WRKSRC}/common/net.h
-	${ECHO_MSG} -e '9t7\n10d\nwq' | ${ED} -s ${WRKSRC}/common/net.c
+	# Reorganize #include's (use /bin/ed to avoid a patch)
+	${ECHO_CMD} -e '35t30\n36d\nwq' | ${ED} -s ${WRKSRC}/common/net.h
+	${ECHO_CMD} -e '9t7\n10d\nwq' | ${ED} -s ${WRKSRC}/common/net.c
 
 post-install:
 .if !defined(NOPORTDOCS)
