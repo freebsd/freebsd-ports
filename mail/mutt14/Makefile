@@ -118,6 +118,14 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
+.if !defined(WITHOUT_GSSAPI)
+.if exists(${LOCALBASE}/bin/krb5-config)
+LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
+CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-gss
+.endif
+.endif
 MAN1=		mutt.1 mutt_dotlock.1
 MAN5=		mbox.5 muttrc.5
 
@@ -139,6 +147,11 @@ post-patch::
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
+.if !exists(${LOCALBASE}/bin/krb5-config)
+	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
+	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \
+		${WRKSRC}/imap/auth_gss.c
+.endif
 
 # XXX
 # this should be done automagically by aclocal but ....
