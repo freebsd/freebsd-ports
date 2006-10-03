@@ -7,6 +7,7 @@
 
 PORTNAME=	gorilla
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.fpx.de/fp/Software/Gorilla/download/
 
@@ -24,13 +25,16 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/gorilla
-	@${INSTALL_DATA} ${WRKSRC}/*.tcl ${PREFIX}/lib/gorilla
-	${TAR} -C ${WRKSRC} -cf - blowfish pics pwsafe twofish | \
+	@${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${PREFIX}/lib/gorilla
+	${TAR} -C ${WRKSRC} -cf - blowfish pics pwsafe twofish sha1 | \
 		${TAR} -C ${PREFIX}/lib/gorilla --unlink -xf -
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gorilla
-	@${CHMOD} ugo+x ${PREFIX}/bin/gorilla
+	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/blowfish/*.tcl
+	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/pwsafe/*.tcl
+	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/twofish/*.tcl
+	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/sha1/*.tcl
 
 .include <bsd.port.mk>
