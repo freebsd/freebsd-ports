@@ -10,7 +10,7 @@ DISTVERSION=	0.5.2
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
 CATEGORIES=	www mail
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Manage multiple Gmail accounts and receive new mail notifications
 
 XPI_DISTNAME=	gmail_manager

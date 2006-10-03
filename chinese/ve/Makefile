@@ -12,7 +12,7 @@ MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 
 .include <bsd.port.pre.mk>

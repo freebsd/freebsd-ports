@@ -11,7 +11,7 @@ CATEGORIES=	x11-fm deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PCMan File Manager
 
 USE_GNOME=	gtk20 intlhack gnomedesktop

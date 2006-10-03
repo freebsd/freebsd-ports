@@ -9,7 +9,7 @@ PORTNAME=	UDDI
 PORTVERSION=	0.2.3
 CATEGORIES=	www pear finance
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PEAR UDDI for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \

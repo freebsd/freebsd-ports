@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	An extension to Open URL without sending referrers information
 
 XPI_ID=		{e806da17-8400-4b6b-9c34-1bb4fe84aedc}

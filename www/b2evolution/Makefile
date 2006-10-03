@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evocms
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A multilingual, multiuser, multi-blog engine
 
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	An extension to simple CSS property viewer
 
 XPI_ID=		{8be51513-0433-45c1-9203-7b45019df871}

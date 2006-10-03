@@ -12,7 +12,7 @@ MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/xpi/ \
 		ftp://chinsan2.twbbs.org/distfiles/xpi/
 # The unversioned dist is at http://dl.google.com/firefox/google-notebook.xpi
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	An extension to allow notetaking while browsing
 
 XPI_ID=		notebook@google.com

@@ -11,7 +11,7 @@ MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	The automatic localization for Traditional Chinese zh_TW.Big5 locale
 
 RUN_DEPENDS=	${FASTEST_CVSUP}:${PORTSDIR}/sysutils/fastest_cvsup

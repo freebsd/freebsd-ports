@@ -9,7 +9,7 @@ PORTNAME=	Console_Table
 PORTVERSION=	1.0.4
 CATEGORIES=	devel pear
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PHP class that makes it easy to build console style tables
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	VenusEnvy comic strip archive and retrieval module
 
 RUN_DEPENDS=	p5-Test-Pod>=1.24:${PORTSDIR}/devel/p5-Test-Pod \

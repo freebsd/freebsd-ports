@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	CSME
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	An extension to convert embedded plug-ins to html links
 
 XPI_ID=		unplug@compunach

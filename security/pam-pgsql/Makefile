@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	libpam-pgsql-${PORTVERSION}
 
-MAINTAINER=	chinsan.tw@gmail.com
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A pam module for authenticating with PostgreSQL
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
