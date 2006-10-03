@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	libepp-nicbr
-PORTVERSION=	1.0
-CATEGORIES=	sysutils
+PORTVERSION=	1.3
+CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.registro.br/pub/libepp-nicbr/
 
 MAINTAINER=	jmelo@FreeBSD.org
