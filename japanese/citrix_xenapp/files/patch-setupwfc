@@ -1,0 +1,11 @@
+--- setupwfc.orig	Tue Dec  6 11:25:39 2005
++++ setupwfc	Fri May 26 10:15:09 2006
+@@ -420,7 +420,7 @@
+                # We assume that an Intel-based linux system will have an x86
+                # processor. We also assume that this is reported by uname -m
+                # "ix86" where x is some number.
+-               if uname -m | grep 86 2>&1 >/dev/null ;then
++               if uname -m | grep i[3456]86 2>&1 >/dev/null ;then
+ 		   if grep uClibc /etc/issue 2>&1 > /dev/null ;then
+                    	PLATFORM=uclibc
+                    	DISP_PLATFORM="Linux (uClibc)"

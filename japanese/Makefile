@@ -29,6 +29,7 @@
     SUBDIR += chasen
     SUBDIR += chasen-base
     SUBDIR += chimera
+    SUBDIR += citrix_ica
     SUBDIR += csrd
     SUBDIR += dbskkd-cdb
     SUBDIR += ddskk
