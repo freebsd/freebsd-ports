@@ -341,6 +341,7 @@
     SUBDIR += sazanami-ttf
     SUBDIR += scim-anthy
     SUBDIR += scim-canna
+    SUBDIR += scim-honoka
     SUBDIR += scim-prime
     SUBDIR += scim-skk
     SUBDIR += scim-tables
