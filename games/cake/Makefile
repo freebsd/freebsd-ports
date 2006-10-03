@@ -42,16 +42,16 @@ pre-everything::
 	@${ECHO_MSG} "Define WITH_FREEGLUT to build against FreeGLUT"
 .endif
 
-post-extract:
-	@${FIND} -E ${WRKDIR} -type f \( -iregex ".*\.(cpp|h)" -or -name Makefile \) \
+post-extract: .SILENT
+	${FIND} -E ${WRKDIR} -type f \( -iregex ".*\.(cpp|h)" -or -name Makefile \) \
 		-exec ${REINPLACE_CMD} -E -e 's/[[:cntrl:]]*$$//' \
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*push[[:blank:]]*,[[:blank:]]*1[[:blank:]]*\)/#pragma pack(1)/g' \
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*pop[[:blank:]]*\)/#pragma pack()/g' '{}' \;
-	@${REINPLACE_CMD} -e 's/ENABLE_SOUND 1/ENABLE_SOUND 0/' \
+	${REINPLACE_CMD} -e 's/ENABLE_SOUND 1/ENABLE_SOUND 0/' \
 		${WRKSRC}/cake/sound.h
-	@${REINPLACE_CMD} -e 's/167/96/' ${WRKSRC}/main.cpp
+	${REINPLACE_CMD} -e 's/167/96/' ${WRKSRC}/main.cpp
 	# GCC 4.x fix
-	@${REINPLACE_CMD} -e 's/Mat3x2:://' ${WRKSRC}/cake/math.h
+	${REINPLACE_CMD} -e 's/Mat3x2:://' ${WRKSRC}/cake/math.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main ${PREFIX}/bin/cake
