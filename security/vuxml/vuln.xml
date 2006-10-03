@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="35f2679f-52d7-11db-8f1a-000a48049292">
+    <topic>postnuke -- admin section SQL injection</topic>
+    <affects>
+      <package>
+	<name>postnuke</name>
+	<range><lt>0.800</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISS X-Force reports:</p>
+	<blockquote cite="http://xforce.iss.net/xforce/xfdb/29271">
+	  <p>PostNuke is vulnerable to SQL injection. A remote attacker
+	    could send specially-crafted SQL statements to the admin
+	    section using the hits parameter, which could allow the
+	    attacker to view, add, modify or delete information in the
+	    back-end database.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5121</cvename>
+      <url>http://xforce.iss.net/xforce/xfdb/29271</url>
+      <url>http://www.securityfocus.com/archive/1/archive/1/447361/100/0/threaded</url>
+    </references>
+    <dates>
+      <discovery>2006-09-29</discovery>
+      <entry>2006-10-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b975763f-5210-11db-8f1a-000a48049292">
     <topic>freetype -- LWFN Files Buffer Overflow Vulnerability</topic>
     <affects>
