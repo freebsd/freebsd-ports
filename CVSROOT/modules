@@ -12983,6 +12983,7 @@ safesh		ports/security/safesh
 safestr		ports/devel/safestr
 sagasu		ports/textproc/sagasu
 sage		ports/graphics/sage
+sahana2		ports/www/sahana2
 saint		ports/security/saint
 salias		ports/misc/salias
 sam		ports/editors/sam
