@@ -9,9 +9,9 @@ PORTNAME=	vultures
 PORTVERSION=	2.1.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/downloads/${PORTVERSION}/
+MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/attachment/wiki/downloads/${PORTVERSION}/
 PKGNAMESUFFIX=	-eye
-DISTFILES=	${DISTNAME}${PKGNAMESUFFIX}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-full${EXTRACT_SUFX}?format=raw
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	A graphical interface for NetHack 3.4.3 forked from Falcon's Eye
