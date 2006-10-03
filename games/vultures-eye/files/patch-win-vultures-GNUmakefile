@@ -9,12 +9,3 @@
  		else
  			SDL_CONFIG := sdl-config
  		endif
-@@ -34,7 +34,7 @@
- OUTPUT_OBJ := $(BUILDDIR)/vultures.o
- 
- 
--NHDIR := ../$(BUILD)
-+NHDIR := ../..
- NHSRC := $(NHDIR)/src
- INCLUDE := -I $(NHDIR)/include/  -I . -I $(BUILDDIR)/
- 
