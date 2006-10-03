@@ -14,8 +14,7 @@ MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR driver based class to calculate holidays
 
 BUILD_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date \
-		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer \
-		${PEARDIR}/Console/Getargs.php:${PORTSDIR}/devel/pear-Console_Getargs
+		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Date
