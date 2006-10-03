@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	k3bmonkeyaudioplugin
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	k3b
@@ -19,12 +19,9 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/kde3
+USE_LDCONFIG=	${PREFIX}/lib/kde3
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/config.h.in
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
