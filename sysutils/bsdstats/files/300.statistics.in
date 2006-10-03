@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.30 2006-10-02 12:07:30 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.31 2006-10-03 01:33:11 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -171,14 +171,14 @@ case "$monthly_statistics_enable" in
              ;;
           *) 
              echo "Posting monthly device/CPU statistics disabled"
-             echo '    set monthly_statistics_report_devices="YES" in $periodic_conf'
+             echo "    set monthly_statistics_report_devices=\"YES\" in $periodic_conf"
              ;;
       esac
       do_fetch disable_token.php?key=$TOKEN\&token=$KEY
       ;;
     *) 
       echo "Posting monthly OS statistics disabled"
-      echo '    set monthly_statistics_enable="YES" in $periodic_conf'
+      echo "    set monthly_statistics_enable=\"YES\" in $periodic_conf"
     ;;
 esac
 
