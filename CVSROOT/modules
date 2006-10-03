@@ -4930,6 +4930,7 @@ ja-scim-anthy	ports/japanese/scim-anthy
 ja-scim-canna	ports/japanese/scim-canna
 ja-scim-honoka	ports/japanese/scim-honoka
 ja-scim-honoka-plugin-romkan	ports/japanese/scim-honoka-plugin-romkan
+ja-scim-honoka-plugin-wnn	ports/japanese/scim-honoka-plugin-wnn
 ja-scim-prime	ports/japanese/scim-prime
 ja-scim-skk	ports/japanese/scim-skk
 ja-scim-tables	ports/japanese/scim-tables
