@@ -79,6 +79,15 @@
  		 				return 0;
  					} else {
  						// right->left will become aktnode
+@@ -843,7 +843,7 @@
+ 
+ #ifdef DEBUG
+ 
+-class ostream;
++#include "Str.h"
+ 
+ template <class T>
+ void recurse_AVLTout ( ostream & out, AVLItem<T> * item,
 @@ -893,9 +893,9 @@
  	return out;
  }

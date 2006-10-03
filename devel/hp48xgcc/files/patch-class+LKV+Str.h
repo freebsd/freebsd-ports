@@ -30,16 +30,20 @@
  		return (unsigned char *) adr;
  	}
  	
-@@ -168,6 +177,8 @@
+@@ -168,10 +177,10 @@
  Str FtoStr(double val);
  Str LtoStr(long);
  
+-class ostream;
 +#include <iostream.h>
 +
- class ostream;
  ostream & operator<< (ostream & o, const Str & s);
  
-@@ -180,4 +191,4 @@
+-class istream;
+ istream & operator>> (istream & i, Str & s);
+ 
+ class BOstream;
+@@ -180,4 +189,4 @@
  class BIstream;
  BIstream & operator>> (BIstream & i, Str & s);
  

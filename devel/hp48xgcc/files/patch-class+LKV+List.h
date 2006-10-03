@@ -1,15 +1,15 @@
 --- class/LKV/List.h	3 Nov 2004 06:57:51 -0000	1.1
 +++ class/LKV/List.h	20 Feb 2006 11:08:10 -0000
-@@ -12,6 +12,8 @@
+@@ -12,7 +12,7 @@
  
  #include "AllocBuf.h"
  
+-class ostream;
 +#include "Bstream.h"
-+
- class ostream;
  
  template <class T>
-@@ -35,13 +37,13 @@
+ class List;
+@@ -35,13 +35,13 @@
  	ListItem( void ) : T()
  #ifdef DEBUG
  	 , next((ListItem *)0), prev((ListItem *)0)
@@ -25,7 +25,7 @@
  	  { };
  
  	ListItem * get_next(void) const {
-@@ -59,6 +61,9 @@
+@@ -59,6 +59,9 @@
  
  
  template <class T>
@@ -35,7 +35,7 @@
  class List {
  	
  protected:
-@@ -239,7 +244,7 @@
+@@ -239,7 +242,7 @@
  		return last;
  	};
  	
@@ -44,7 +44,7 @@
  };
  
  template <class T>
-@@ -306,4 +311,4 @@
+@@ -306,4 +309,4 @@
  }
  
  
