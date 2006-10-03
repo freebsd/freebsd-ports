@@ -2221,7 +2221,6 @@ lang/ruby18-nopthreads||2006-03-31|Removed since pthread support of ruby18 is di
 net-mgmt/nfdump-devel|net-mgmt/nfdump|2006-04-02|Development port no longer needed
 devel/py-twistedXish|net-im/py-twistedWords|2006-04-05|Incorporated into net-im/py-twistedWords
 devel/upp602|devel/upp|2006-04-05|Was created in a bad directory
-mail/mulberry||2006-04-06|Has expired: mastersite disappeared, no longer maintained by author
 textproc/pyenchant|textproc/py-enchant|2006-04-06|Rename to consistency with other Python ports
 security/skip||2006-04-06|Port has become obsolete
 mail/prom-mew||2006-04-07|Has expired: mastersite disappeared, no longer maintained by author
