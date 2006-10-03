@@ -7,6 +7,7 @@
 
 PORTNAME=	daapd
 PORTVERSION=	0.2.4b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 EXTRACT_SUFX=	.tgz
@@ -35,9 +36,8 @@ DAAPD_GROUP=	daapd
 
 LOGDIR=		/var/log
 CACHE=		/var/db/daapd.cache
-FILES_SUB=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} \
-		PREFIX=${PREFIX} LOGDIR=${LOGDIR} DOCSDIR=${DOCSDIR} \
-		LOCALBASE=${LOCALBASE} CACHE=${CACHE} RC_SUBR=${RC_SUBR}
+SUB_LIST+=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} \
+		LOGDIR=${LOGDIR} CACHE=${CACHE}
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 OPTIONS+=	HOWL "Use howl for Zeroconf/Rendezvous" on
@@ -56,22 +56,22 @@ MAKE_ENV+=	MPEG4_ENABLE=1
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/${MAKEFILE} \
 		${WRKSRC}/README \
 		${WRKSRC}/daapd.cc \
 		${WRKSRC}/daapd.8
 
 pre-install:
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-install > ${PKGINSTALL}
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/daapd-example.conf ${PREFIX}/etc/daapd.conf.sample
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
