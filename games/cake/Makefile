@@ -50,6 +50,8 @@ post-extract:
 	@${REINPLACE_CMD} -e 's/ENABLE_SOUND 1/ENABLE_SOUND 0/' \
 		${WRKSRC}/cake/sound.h
 	@${REINPLACE_CMD} -e 's/167/96/' ${WRKSRC}/main.cpp
+	# GCC 4.x fix
+	@${REINPLACE_CMD} -e 's/Mat3x2:://' ${WRKSRC}/cake/math.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main ${PREFIX}/bin/cake
