@@ -7,7 +7,7 @@
 
 PORTNAME=	instiki
 PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	arsptr@internode.on.net
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/sqlite3_api.so:${PORTSDIR}/databases/ruby-sqlite3
-BUILD_DEPENDS+=	${RUN_DEPENDS} rake:${PORTSDIR}/devel/rubygem-rake
+LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	1.8
