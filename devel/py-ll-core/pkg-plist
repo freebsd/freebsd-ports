@@ -2,6 +2,9 @@
 %%PYTHON_SITELIBDIR%%/ll/__init__.py
 %%PYTHON_SITELIBDIR%%/ll/misc.py
 %%PYTHON_SITELIBDIR%%/ll/ansistyle.py
+%%PYTHON_SITELIBDIR%%/ll/astyle.py
+%%PYTHON_SITELIBDIR%%/ll/astyle.pyc
+%%PYTHON_SITELIBDIR%%/ll/astyle.pyo
 %%PYTHON_SITELIBDIR%%/ll/color.py
 %%PYTHON_SITELIBDIR%%/ll/make.py
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.py
@@ -25,4 +28,7 @@
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.pyo
 %%PYTHON_SITELIBDIR%%/ll/url.pyo
 %%PYTHON_SITELIBDIR%%/ll/xpit.pyo
+%%PYTHON_SITELIBDIR%%/ll/daemon.py
+%%PYTHON_SITELIBDIR%%/ll/daemon.pyc
+%%PYTHON_SITELIBDIR%%/ll/daemon.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/ll
