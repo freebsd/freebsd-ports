@@ -76,14 +76,11 @@ bdc*			security/bdc		License does not allow
 						redistribution
 bicom*			archivers/bicom		Contact author personally
 						regarding commercial use
-bk-*-x86-freebsd*	devel/bitkeeper		Redistribution is not permitted
 blast-freebsd*		biology/blast		Must be downloaded from vendor site
 boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding
 						redistribution licensing
 bsp_upektfmess-*	security/bsp_upektfmess	License prohibits redistribution
-bugseeker2ee*		java/bugseeker		License does not allow
-						redistribution
 bzip-*			archivers/bzip		Some algorithms used may
 						infringe certain US patents.
 						Opinions differ.  Commercial
@@ -212,7 +209,6 @@ festival/voice_jph_di-*	audio/festvox-jph	No commercial use
 festival/voice_mwm_di-*	audio/festvox-mwm	No commercial use
 festival/voice_ogirab_di-* audio/festvox-ogirab No commercial use
 festival/voice_tll_di-*	audio/festvox-tll	No commercial use
-ffj30_ce_ml.class	java/forte		Restrictive license
 fMSX*			emulators/fmsx		Unclear legal status of
 						distributed ROMs
 foiltex*		textproc/foiltex	Redistribution on a not-for-profit
@@ -252,12 +248,9 @@ gibi-*			french/gibi		Only free for use in conjunction with
 						you have to acquire a license
 giftool-*		graphics/giftool	Do not redistribute for profit
 glimpse-*		textproc/glimpse	Do not sell for profit
-gnome2/MCity-Alloy-*    x11-themes/metacity-theme-alloy-c Themes may contain artwork not
+gnome2/MCity-microGUI*	x11-themes/metacity-theme-microgui Themes may contain artwork not
 						done by the author.  Keep FreeBSD safe
 						if the theme author violated copyrights
-gnome2/MCity-Hacked-2*	x11-themes/metacity-theme-hacked-2 See x11-themes/metacity-theme-alloy-c
-gnome2/MCity-Iridium-rounded* x11-themes/metacity-theme-iridium-rounded See x11-themes/metacity-theme-alloy-c
-gnome2/MCity-microGUI*	x11-themes/metacity-theme-microgui See x11-themes/metacity-theme-alloy-c
 gnupg-*			security/gnupg		Crypto; export-controlled
 goemon.tgz		audio/timidity		Uses copyrighted patches
 gogo239b.tgz		audio/gogo		Condition is not clear
@@ -384,7 +377,7 @@ linunace*		archivers/linux-unace	Distribution is permitted within the
 						original package only
 Linux-ACU-Driver-v*	sysutils/linux-acu	Redistribution not allowed
 linux-gtk2		x11-toolkits/linux-gtk2	LGPL binary, no source
-linuxq3ademo-*		games/linux-q3ademo	Restrictive license by Loki Software
+linuxq3ademo-*		games/linux-quake3-demo	Restrictive license by Loki Software
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so
 						binaries should not be
 						distributed.  Contains crypto
@@ -438,7 +431,6 @@ ncftpd-*		ftp/ncftpd		30 day evaluation license
 netbeans-*		java/netbeans		Restrictive copyright
 netcomponents-*		java/netcomponents	No redistribution except as part
 						of a substantially different product
-netscape-*-us-*		www/netscape*		Crypto; export-controlled
 netshow_linux.gz	multimedia/netshow	Commercial software
 nfbtr758.zip		textproc/nfbtrans	Unclear copyright status
 nntpcache-*		news/nntpcache		Commercial or government use
@@ -446,7 +438,6 @@ nntpcache-*		news/nntpcache		Commercial or government use
 nsc2ke.*		math/nsc2ke		No resale, contact author for
 						commercial usage
 nte-1.*			mbone/nte		Crypto; export-controlled
-nwrite-*		misc/nwrite		Ownership in dispute
 MRONWnn6.tgz		japanese/Wnn6		You should buy from Omron
 						Software Co., Ltd.
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from
@@ -474,7 +465,6 @@ PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on
 						usage and distribution
 perforce/*		devel/perforce		Restricted distribution
 pgp*			security/pgp*		Various locality restrictions
-pim6dd-*.tar.gz		net/pim6dd		Cannot be sold for profit
 platon*			biology/platon		US$ 5000 for commercial users,
 						(free for academic)
 pmake-*.tar.Z		devel/pmake		Non-commercial use only
@@ -562,7 +552,6 @@ svm_light.tar.gz	science/svmlight	The software must not be further
 swing1_1_1*		java/jfc		Do not distribute without
 						value-added application
 systemc-2*.tgz		cad/systemc		License agreement required.
-tasks.zip		www/tasks		License prohibits redistribution
 tcetest_*		games/linux-enemyterritory-tce Redistribution limited
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed
 						with any commercial product
@@ -635,7 +624,6 @@ webglimpse-*.src.tar.gz	www/webglimpse		Depends on glimpse
 wgetpro*		ftp/wgetpro		U.S. Patent 6,041,345
 win32/*			multimedia/win32-codecs	Licensing status of the
 						codecs is unknown
-xbarcode-*.tar.gz	graphics/xbarcode	Must not be sold
 xchada01.lzh		games/xchadance		Contains commercial character
 						data
 xephem-*		astro/xephem		Personal use only
@@ -651,7 +639,6 @@ xmame-*			emulators/xmame		Do not sell for fee
 X-Plane-Net-Install.gz	games/linux-x-plane-net-installer	Redistribution prohibited
 XLIN*.tar.bz2		games/linux-x-plane	Redistribution prohibited
 xmdiary-*		deskutils/xmdiary	Do not sell for profit
-xothello.tgz		games/xothello		Possible trademark infringement
 xrisk-*			games/xrisk		Copyright/trademark violation?
 xsmbrowser-*		net/xsmbrowser		Commercial software
 xteddy-*		games/xteddy		Do not sell for profit
