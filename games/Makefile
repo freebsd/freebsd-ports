@@ -212,6 +212,8 @@
     SUBDIR += freedroidrpg
     SUBDIR += freesci
     SUBDIR += freesweep
+    SUBDIR += fretsonfire
+    SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
     SUBDIR += frotz
     SUBDIR += frozenbubble

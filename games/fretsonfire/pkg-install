@@ -1,0 +1,18 @@
+#!/bin/sh
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+log_file=$PKG_PREFIX/lib/fretsonfire/FretsOnFire/fretsonfire.log
+ini_file=$PKG_PREFIX/lib/fretsonfire/FretsOnFire/fretsonfire.ini
+
+if ! [ -e $log_file ]; then
+	touch $log_file
+	chown root:wheel $log_file 2>/dev/null
+	chmod 666 $log_file
+fi
+
+if ! [ -e $ini_file ]; then
+	touch $ini_file
+	chown root:wheel $ini_file 2>/dev/null
+	chmod 666 $ini_file
+fi
