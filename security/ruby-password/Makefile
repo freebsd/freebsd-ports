@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	password
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby library to create, verify and manipulate passwords
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/termios.so:${PORTSDIR}/comms/ruby-termios
+RUN_DEPENDS=	${LOCALBASE}/${SADIR}/termios.so:${PORTSDIR}/comms/ruby-termios
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_SHEBANG_FILES=	example/*
+SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 CONFIGURE_ARGS=	--with-crack-dict="${LOCALBASE}/libdata/cracklib/pw_dict.pwd"
 INSTALL_TARGET=	site-install
@@ -31,16 +32,18 @@ MANCOMPRESSED=	no
 
 DOCS_EN=	CHANGES README
 
+post-patch:
+	@${REINPLACE_CMD} -E -e 's,([^[:alpha:]]+)crack.h,\1packer.h,g' \
+		${WRKSRC}/rbcrack.c ${WRKSRC}/extconf.rb
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/example/pwgen ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/pwgen.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example/*.rb ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/example/*.rb ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>
