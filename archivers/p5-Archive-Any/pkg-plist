@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any/.packlist
+%%SITE_PERL%%/Archive/Any.pm
+%%SITE_PERL%%/Archive/Any/Plugin.pm
+%%SITE_PERL%%/Archive/Any/Plugin/Tar.pm
+%%SITE_PERL%%/Archive/Any/Plugin/Zip.pm
+@dirrmtry %%SITE_PERL%%/Archive/Any/Plugin
+@dirrmtry %%SITE_PERL%%/Archive/Any
+@dirrmtry %%SITE_PERL%%/Archive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive

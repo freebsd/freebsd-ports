@@ -62,6 +62,7 @@
     SUBDIR += nwreckdum
     SUBDIR += ocaml-zip
     SUBDIR += orange
+    SUBDIR += p5-Archive-Any
     SUBDIR += p5-Archive-Extract
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Zip
