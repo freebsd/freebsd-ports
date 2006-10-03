@@ -373,6 +373,14 @@ CONFIGURE_ARGS+=	--enable-gpgme
 .else
 CONFIGURE_ARGS+=	--disable-gpgme
 .endif
+.if !defined(WITHOUT_GSSAPI)
+.if exists(${LOCALBASE}/bin/krb5-config)
+LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
+CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-gss
+.endif
+.endif
 
 PATCH_DIST_STRIP=	-p1
 
@@ -441,6 +449,11 @@ post-patch::
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
+.if !exists(${LOCALBASE}/bin/krb5-config)
+	@${ECHO_CMD} "#define HAVE_HEIMDAL" >> ${WRKSRC}/config.h.in
+	@${REINPLACE_CMD} -e 's|<gssapi/gssapi\.h>|<gssapi.h>|' \
+		${WRKSRC}/imap/auth_gss.c
+.endif
 
 .if defined(MUTT_SLAVE_HTML_PAGES)
 SCRIPTS_ENV+=	MUTT_SLAVE_HTML_PAGES="${MUTT_SLAVE_HTML_PAGES}"
