@@ -7,7 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		${MASTER_SITE_BERLIOS}
@@ -97,7 +97,7 @@ LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.49:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
 .endif
 
 .if defined(WITH_VORBIS)
