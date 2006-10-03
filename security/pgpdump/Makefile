@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	security
 MASTER_SITES=	http://pgp.iijlab.net/pgpdump/
 
