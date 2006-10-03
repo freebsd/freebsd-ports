@@ -26,5 +26,7 @@ post-extract:
 .for f in config.guess config.sub install-sh missing mkinstalldirs
 	@${LN} -sf ${LOCALBASE}/share/automake14/${f} ${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's,"getopt\.h",<unistd.h>,' \
+		${WRKSRC}/src/main.cc
 
 .include <bsd.port.mk>
