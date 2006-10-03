@@ -343,6 +343,7 @@
     SUBDIR += scim-canna
     SUBDIR += scim-honoka
     SUBDIR += scim-honoka-plugin-romkan
+    SUBDIR += scim-honoka-plugin-wnn
     SUBDIR += scim-prime
     SUBDIR += scim-skk
     SUBDIR += scim-tables
