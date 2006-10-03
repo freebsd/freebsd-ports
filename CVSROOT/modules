@@ -2863,6 +2863,7 @@ freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
 freqsdwn	ports/sysutils/freqsdwn
+fretsonfire	ports/games/fretsonfire
 fretsonfire-data	ports/games/fretsonfire-data
 freshmeat-submit	ports/misc/freshmeat-submit
 fressh		ports/security/fressh
