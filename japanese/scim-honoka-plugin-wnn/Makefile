@@ -1,0 +1,42 @@
+# New ports collection makefile for:    ja-scim-honoka-plugin-wnn
+# Date created:		4 Jun 2006
+# Whom:			Masashi CHIBA 
+#
+# $FreeBSD$
+#
+
+PORTNAME=	scim-honoka-plugin-wnn
+PORTVERSION=	0.9.0
+CATEGORIES=	japanese
+MASTER_SITES=	http://nop.net-p.org/files/honoka/
+DISTNAME=	honoka-plugin-wnn-${PORTVERSION}
+
+MAINTAINER=	chiba.masashi@gmail.com
+COMMENT=	Honoka plugin for using wnn7
+
+BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
+		${X11BASE}/lib/scim-1.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka
+LIB_DEPENDS=	wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	${X11BASE}/lib/scim-1.0/honoka/plugin-romkan.so:${PORTSDIR}/japanese/scim-honoka-plugin-romkan
+
+USE_GETTEXT=	yes
+USE_GNOME=	lthack gnomehack
+USE_X_PREFIX=	yes
+USE_ICONV=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+IGNORE=		does not build in FreeBSD < 5.x
+.else
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+.endif
+
+.include <bsd.port.post.mk>
