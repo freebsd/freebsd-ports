@@ -9830,6 +9830,7 @@ p5-Proc-Daemon	ports/devel/p5-Proc-Daemon
 p5-Proc-Fork	ports/devel/p5-Proc-Fork
 p5-Proc-PID-File	ports/devel/p5-Proc-PID-File
 p5-Proc-PIDFile	ports/devel/p5-Proc-PIDFile
+p5-Proc-PidUtil	ports/sysutils/p5-Proc-PidUtil
 p5-Proc-ProcessTable	ports/devel/p5-Proc-ProcessTable
 p5-Proc-Queue	ports/devel/p5-Proc-Queue
 p5-Proc-Reliable	ports/devel/p5-Proc-Reliable
