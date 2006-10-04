@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.9.7.0
+PORTVERSION=	2.9.8.0
 #PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
@@ -35,6 +35,8 @@ MAN8=		dansguardian.8
 
 OPTIONS=	DG_APACHE  "Enable Apache support for access denied page" on \
 		DG_DMGR    "Enable the fancy download manager" on \
+		DG_TRICKLE "Enable the trickle download manager" on \
+		DG_CLISCAN "Enable support for CLI content scanners" off \
 		DG_CLAMD   "Enable ClamAV daemon support (clamd)" off \
 		DG_CLAMAV  "Enable ClamAV library support (libclamav)" off \
 		DG_ICAP    "Enable ICAP AV content scanner support (testing)" off \
@@ -53,9 +55,20 @@ RESTRICTED=	Redistribution and commercial download is restricted. Check ${DG_URL
 USE_APACHE=	1.3+
 .endif
 
+.if !defined(WITHOUT_DG_TRICKLE)
+CONFIGURE_ARGS+=	--enable-trickledm
+.endif
+
+.if defined(WITH_DG_CLISCAN)
+CONFIGURE_ARGS+=	--enable-commandline=yes
+PLIST_SUB+=		CLISCANCONF=""
+.else
+PLIST_SUB+=		CLISCANCONF="@comment "
+.endif
+
 .if defined(WITH_DG_CLAMAV)
 #IGNORE=		please use the clamd plugin support.  It's much more flexible, usable, tested, and just generally better
-CONFIGURE_ARGS+=	--enable-clamav=yes
+CONFIGURE_ARGS+=	--enable-clamav
 LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav
 PLIST_SUB+=		CLAMAVCONF=""
 .else
@@ -63,7 +76,7 @@ PLIST_SUB+=		CLAMAVCONF="@comment "
 .endif
 
 .if defined(WITH_DG_CLAMD)
-CONFIGURE_ARGS+=	--enable-clamd=yes
+CONFIGURE_ARGS+=	--enable-clamd
 RUN_DEPENDS+=		${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
 PLIST_SUB+=		CLAMDCONF=""
 .else
@@ -86,7 +99,7 @@ PLIST_SUB+=		KAVDCONF=""
 PLIST_SUB+=		KAVDCONF="@comment "
 .endif
 
-.if defined(WITH_DG_CLAMD) || defined(WITH_DG_CLAMAV) || defined(WITH_DG_ICAP) || defined(WITH_DG_KASP)
+.if defined(WITH_DG_CLAMD) || defined(WITH_DG_CLAMAV) || defined(WITH_DG_ICAP) || defined(WITH_DG_KASP) || defined(WITH_CLISCANCONF)
 PLIST_SUB+=		SCANNERS=""
 .else
 PLIST_SUB+=		SCANNERS="@comment "
