@@ -1,0 +1,15 @@
+@unexec if cmp -s %D/etc/mysqlard.cnf %D/www/mysqlard/mysqlard.cnf; then rm -f %D/etc/mysqlard.cnf; fi
+@exec [ -f %D/etc/mysqlard.cnf ] || cp %D/www/mysqlard/mysqlard.cnf %D/etc
+bin/mysqlar_graph
+sbin/mysqlard
+www/mysqlard/mysql.gif
+www/mysqlard/mysqlar.daily
+www/mysqlard/mysqlar.monthly
+www/mysqlard/mysqlar.php
+www/mysqlard/mysqlar.weekly
+www/mysqlard/mysqlard.cnf
+www/mysqlard/mysqlard.server
+www/mysqlard/rrdtool.gif
+www/mysqlard/sos.gif
+www/mysqlard/style.css
+@dirrm www/mysqlard

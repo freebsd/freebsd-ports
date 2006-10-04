@@ -1,0 +1,25 @@
+==============================================================================
+
+1) Add the 'mysqlar' user with USAGE privileges to your mysql server:
+
+$ mysql -u root -p mysql
+mysql> GRANT USAGE ON *.* TO mysqlar@localhost;
+mysql> FLUSH PRIVILEGES;
+
+2) Add the mysqlard crontab to root's crontab:
+
+*/5 * * * * hourly=1 daily=1 weekly=1 monthly=1 \
+%%PREFIX%%/bin/mysqlar_graph > /dev/null
+
+3) Add a line like this to your apache's httpd.conf:
+
+Alias /mysqlar/ %%PREFIX%%/www/mysqlard/
+<Directory "%%PREFIX%%/www/mysqlard">
+  Options Indexes FollowSymLinks MultiViews ExecCGI
+  AllowOverride All
+  Order allow,deny
+  Allow from all
+  DirectoryIndex mysqlar.php
+</Directory>
+
+==============================================================================
