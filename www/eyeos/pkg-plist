@@ -518,6 +518,7 @@
 %%EYEDIR%%/system/gfx/btn/config.png
 %%EYEDIR%%/system/gfx/btn/delete.png
 %%EYEDIR%%/system/gfx/btn/deletefile.png
+%%EYEDIR%%/system/gfx/btn/do.png
 %%EYEDIR%%/system/gfx/btn/download.png
 %%EYEDIR%%/system/gfx/btn/edit.png
 %%EYEDIR%%/system/gfx/btn/help.png
@@ -530,6 +531,7 @@
 %%EYEDIR%%/system/gfx/btn/save.png
 %%EYEDIR%%/system/gfx/btn/sortDn.png
 %%EYEDIR%%/system/gfx/btn/sortUp.png
+%%EYEDIR%%/system/gfx/btn/up.png
 %%EYEDIR%%/system/gfx/btn/upload.png
 %%EYEDIR%%/system/gfx/btn/view.png
 %%EYEDIR%%/system/gfx/icon.gif
