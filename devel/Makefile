@@ -654,6 +654,7 @@
     SUBDIR += mingw-opengl-headers
     SUBDIR += mingw32-bin-msvcrt
     SUBDIR += mingw32-binutils
+    SUBDIR += mingw32-directx
     SUBDIR += mingw32-gcc
     SUBDIR += mingw32-pdcurses
     SUBDIR += mingw32-pthreads

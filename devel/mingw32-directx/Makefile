@@ -1,0 +1,30 @@
+# New ports collection makefile for:	mingw32-directx
+# Date created:				25 July 2006
+# Whom:					Ed Schouten <ed@fxq.nl>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	directx
+PORTVERSION=	20020518
+CATEGORIES=	devel
+MASTER_SITES=	http://www.libsdl.org/extras/win32/cygwin/
+PKGNAMEPREFIX=	mingw32-
+DISTNAME=	${PORTNAME}-devel
+
+MAINTAINER=	ed@fxq.nl
+COMMENT=	DirectX header files for use with MinGW
+
+BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
+		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
+
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+
+do-install:
+.for f in d3dtypes.h ddraw.h dinput.h directx.h dsound.h
+	${INSTALL_DATA} ${WRKSRC}/include/w32api/$f \
+	    ${LOCALBASE}/mingw32/include/
+.endfor
+
+.include <bsd.port.mk>
