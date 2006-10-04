@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.9.3
+PORTVERSION=	5.10.0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -90,6 +90,10 @@ pre-everything::
 	@${ECHO} "  WITH_GCL     Build with GNU Common Lisp"
 	@${ECHO} "  WITH_SBCL    Build with Steel Bank Common Lisp (default)"
 	@${ECHO} ""
+
+# rebuild older aclocal.m4
+pre-configure:
+	(cd ${WRKSRC} ; ${CP} -p aclocal.m4 aclocal.m4.orig ; ${ACLOCAL})
 
 post-install:
 	@${RM} -f ${PREFIX}/info/contrib.info
