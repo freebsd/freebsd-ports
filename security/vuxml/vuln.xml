@@ -1057,14 +1057,18 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>19831</bid>
+      <cvename>CVE-2006-2191</cvename>
       <cvename>CVE-2006-2941</cvename>
       <cvename>CVE-2006-3636</cvename>
+      <cvename>CVE-2006-4624</cvename>
       <url>http://secunia.com/advisories/21732/</url>
       <url>http://sourceforge.net/project/shownotes.php?group_id=103&amp;release_id=444295</url>
     </references>
     <dates>
-      <discovery>2006-09-04</discovery>
+      <discovery>2006-06-09</discovery>
       <entry>2006-09-04</entry>
+      <modified>2006-10-04</modified>
     </dates>
   </vuln>
 
