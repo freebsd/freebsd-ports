@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qsf
-PORTVERSION=	1.1.13
+PORTVERSION=	1.2.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GDBM)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=	--without-gdbm
 .endif
