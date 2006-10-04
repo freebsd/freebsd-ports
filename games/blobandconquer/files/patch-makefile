@@ -3,14 +3,14 @@
 @@ -13,16 +13,16 @@
  
  PREFIX=$(DESTDIR)/usr
- BINDIR = $(PREFIX)/games/
--DATADIR = $(PREFIX)/share/games/blobAndConquer/
--DOCDIR = $(PREFIX)/share/doc/$(PROG)/
+ BINDIR = $(PREFIX)/games
+-DATADIR = $(PREFIX)/share/games/blobAndConquer
+-DOCDIR = $(PREFIX)/share/doc/$(PROG)
 +DATADIR := $(DATADIR)/
 +DOCDIR = $(DOCSDIR)/
- ICONDIR = $(PREFIX)/share/icons/
- KDE = $(PREFIX)/share/applnk/Games/Arcade/
- GNOME = $(PREFIX)/share/gnome/apps/Games/
+ ICONDIR = $(PREFIX)/share/icons
+ KDE = $(PREFIX)/share/applnk/Games/Arcade
+ GNOME = $(PREFIX)/share/gnome/apps/Games
  
 -CFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
 -CFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall -pedantic
