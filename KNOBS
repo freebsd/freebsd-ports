@@ -50,6 +50,7 @@ GNOME			Adds GNOME support
 GNUTLS			Adds GnuTLS support
 GSASL			Adds GSASL support
 GSM			GSM audio codec support
+GSSAPI			GSSAPI (Kerberos) support
 GSTREAMER		Gstreamer multimedia support
 GTK1			Adds Gtk+1 support
 GTK2			Adds Gtk+2 support
