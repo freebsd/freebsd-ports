@@ -72,6 +72,7 @@
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-DNS-Codes
     SUBDIR += p5-Net-DNS-SEC
+    SUBDIR += p5-Net-DNS-ToolKit
     SUBDIR += p5-Net-DNS-ZoneCheck
     SUBDIR += p5-Net-DNS-ZoneFile
     SUBDIR += p5-Net-DNS-ZoneFile-Fast

@@ -1,0 +1,62 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/Debug.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/Question.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/A.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/AAAA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/CNAME.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/HINFO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MG.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/MX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/NS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/NULL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/PTR.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/SOA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/TXT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR/Template.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/Utilities.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug/print_buf.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug/print_head.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/ToolKit.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/ToolKit.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/dns_ans.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/dns_ns.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/dns_ptr.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/dns_udpresp.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/dns_udpsend.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/id.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/query.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/question.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/revIP.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/rlook_rcv.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities/rlook_send.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/collapse.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_ancount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_arcount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_nscount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/get_qdcount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/getflags.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/newhead.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/put_ancount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/put_arcount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/put_nscount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/put_qdcount.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/sec2time.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/strip.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/ttlAlpha2Num.al
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Utilities
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit/Debug
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/ToolKit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/RR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
