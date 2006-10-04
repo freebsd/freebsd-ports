@@ -22,6 +22,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache20 \
 WRKSRC=		${WRKDIR}/${DISTNAME}-2
 USE_PERL5_RUN=	yes
 
+EXPIRATION_DATE=2006-12-04
+DEPRECATED=	No longer available for download, the website is gone
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
