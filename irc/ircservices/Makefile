@@ -8,15 +8,17 @@
 PORTNAME=	ircservices
 PORTVERSION=	5.0.${PATCHLEVEL}
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.esper.net/ircservices/ \
-	http://www.ircservices.esper.net/download/ \
-	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/ \
-	http://banana.irc.gr/ircservices/
+MASTER_SITES=	http://www.ircservices.za.net/download/ \
+	ftp://ftp.esper.net/ircservices/ \
+	ftp://ftp.ircd.com.br/ircservices/ \
+	http://banana.irc.gr/ircservices/ \
+	http://ircservices.swissirc.ch/ \
+	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/ 
 
 DISTNAME=	${PORTNAME}-5.0.0
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHLEVEL=	58
+PATCHLEVEL=	59
 PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
