@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	rss
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	.alt
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby library for handling RSS (alternative impl.)
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
-# You can use ruby-xmlscan as an alternative XML parser to REXML:
-#		${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
-# Or ruby-xmlparser:
-#		${RUBY_SITELIBDIR}/xmlscan/parser.rb:${PORTSDIR}/textproc/ruby-xmlscan
+RUN_DEPENDS=	${LOCALBASE}/${SADIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 
 CONFLICTS=	ruby-rss-*
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 USE_RUBY_FEATURES=	rexml
+SADIR=	lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 DOCS_EN=	README.en Tutorial.en
 DOCS_JA=	README.ja Tutorial.ja
@@ -34,12 +31,8 @@ DOCS_JA=	README.ja Tutorial.ja
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
-.endfor
+	${INSTALL_DATA} ${DOCS_EN:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${DOCS_JA:S,^,${WRKSRC}/,} ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>
