@@ -2,6 +2,7 @@ bin/lynx
 @unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
+etc/lynx.lss
 @exec mkdir -p %D/share/lynx_help
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYHEADER
