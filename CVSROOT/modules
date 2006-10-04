@@ -4129,6 +4129,7 @@ hil-aspell	ports/textproc/hil-aspell
 hilite		ports/sysutils/hilite
 himenobench	ports/benchmarks/himenobench
 hinfo		ports/net/hinfo
+hinventory-client	ports/www/hinventory-client
 histring	ports/misc/histring
 hk_classes	ports/databases/hk_classes
 hlfl		ports/security/hlfl
