@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="86526ba4-53c8-11db-8f1a-000a48049292">
+    <topic>phpbb -- NULL byte injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<name>zh-phpbb-tw</name>
+	<range><lt>2.0.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/22188/">
+	  <p>ShAnKaR has discovered a vulnerability in phpBB, which can
+	    be exploited by malicious users to compromise a vulnerable
+	    system.</p>
+	  <p>Input passed to the "avatar_path" parameter in
+	    admin/admin_board.php is not properly sanitised before
+	    being used as a configuration variable to store avatar
+	    images. This can be exploited to upload and execute
+	    arbitrary PHP code by changing "avatar_path" to a file with
+	    a trailing NULL byte.</p>
+	  <p>Successful exploitation requires privileges to the
+	    administration section.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4758</cvename>
+      <url>http://secunia.com/advisories/22188/</url>
+      <url>http://xforce.iss.net/xforce/xfdb/28884</url>
+      <url>http://www.security.nnov.ru/Odocument221.html</url>
+    </references>
+    <dates>
+      <discovery>2006-09-12</discovery>
+      <entry>2006-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35f2679f-52d7-11db-8f1a-000a48049292">
     <topic>postnuke -- admin section SQL injection</topic>
     <affects>
