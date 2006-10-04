@@ -1,0 +1,5 @@
+This is the FreeBSD client for the h-inventory Web application.
+This is a sh script that creates an XML file and can upload it.
+You will obtain the hardware/software on your FreeBSD computer.
+
+WWW: http://www.h-inventory.com/
