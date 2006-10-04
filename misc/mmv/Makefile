@@ -6,37 +6,29 @@
 #
 
 PORTNAME=	mmv
-PORTVERSION=	1.01b
+PORTVERSION=	1.01b.14
 CATEGORIES=	misc
-MASTER_SITES=	http://www.xs4all.nl/~tournoij/distfiles/ \
-		ftp://ftp.unicamp.br/pub/unix-c/file-mgmt/ \
-		http://carpetsmoker.xs4all.nl/distfiles/
-DISTNAME=	mmv
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_1.01b.orig
 
-MAINTAINER=	carpetsmoker@gmail.com
-COMMENT=	Move/copy/append/link multiple files with sophisticated wildcard matching
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}_1.01b-14.diff.gz
+PATCH_DIST_STRIP=	-p1
 
-RESTRICTED=	No modification or redistribution for charge
-CFLAGS+=	-DDIRENT
-MAKE_FLAGS=	-e
+MAINTAINER=	simon@olofsson.de
+COMMENT=	Move/Copy/Append/Link multiple files
+
+CFLAGS+=	-DHAS_DIRENT
 MAN1=		mmv.1
-PLIST_FILES=	bin/mad \
-		bin/mcp \
-		bin/mln \
-		bin/mmv
+PLIST_FILES=	bin/mmv
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.01b.orig
 
-post-extract:
-	(cd ${WRKSRC} ; \
-	 ${CAT} mmv.c.? >mmv.c ; \
-	 ${PATCH} mmv.c < mmv.patch1 ; )
+do-build:
+	@(cd ${WRKSRC} ; \
+	${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c ; )
 
 do-install:
-	(cd ${PREFIX}/bin ; ${RM} -f mmv mad mcp mln ; \
-	 ${INSTALL_PROGRAM} ${WRKSRC}/mmv ${PREFIX}/bin ; \
-	 ${LN} -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
-	 ${LN} -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
-	 ${LN} -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
-	 ${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1 ; )
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1/mmv.1
 
 .include <bsd.port.mk>
