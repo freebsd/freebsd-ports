@@ -1,0 +1,15 @@
+--- makefile.orig	Sun Jun 18 16:37:40 2000
++++ makefile	Sun Oct  1 20:39:39 2006
+@@ -11,9 +11,9 @@
+     TARGET_MARK = glclockmark
+ 
+ 
+-       COMPILER = g++ -c
+-         LINKER = g++
+-            OPT = -O2
++       COMPILER = $(CXX) -c
++         LINKER = $(CXX)
++            OPT = $(CFLAGS)
+ 
+    INCLUDE_PATH = -I/usr/X11R6/include
+        LIB_PATH = -L/usr/X11R6/lib
