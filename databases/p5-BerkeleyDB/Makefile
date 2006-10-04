@@ -16,7 +16,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 interface to the Berkeley DB package
 
 USE_BDB=	yes
-USE_GCC=	3.2+
 
 PERL_CONFIGURE=	yes
 
