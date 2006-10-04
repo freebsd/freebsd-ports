@@ -1,8 +1,10 @@
-Mutagen is a Python module to handle audio metadata.  It supports
-reading ID3 (all versions), APEv2, Ogg Vorbis, FLAC, and Ogg FLAC,
-and writing ID3v1.1, ID3v2.4, APEv2, Ogg Vorbis, FLAC, and Ogg FLAC.
-It can also read MPEG audio and Xing headers, FLAC stream info
-blocks, and Ogg Vorbis and Ogg FLAC stream headers. Finally, it
-includes a module to handle generic Ogg bitstreams.
+Mutagen is a Python module to handle audio metadata. It supports
+FLAC, M4A, Musepack, MP3, Ogg FLAC, Ogg Speex, Ogg Theora, Ogg
+Vorbis, MonkeysAudio, True Audio, and WavPack audio files. All
+versions of ID3v2 are supported, and all standard ID3v2.4 frames
+are parsed. It can read Xing headers to accurately calculate the
+bitrate and length of MP3s. ID3 and APEv2 tags can be edited
+regardless of audio format. It can also manipulate Ogg streams
+on an individual packet/page level.
 
 WWW: http://www.sacredchao.net/quodlibet/wiki/Development/Mutagen
