@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	SMS-Send
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	comms perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-#MASTER_SITE_SUBDIR=	CPAN/ADAMK
 MASTER_SITE_SUBDIR=	SMS
 PKGNAMEPREFIX=	p5-
 
@@ -29,10 +28,6 @@ MAN3=		SMS::Send.3 \
 		SMS::Send::Test.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-RUN_DEPENDS+=	${SITE_PERL}/base.pm:${PORTSDIR}/devel/p5-Class-Fields
-.endif
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires perl 5.6.0 due to dependency. Install lang/perl5.8 and try again
