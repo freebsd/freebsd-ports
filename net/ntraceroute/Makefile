@@ -19,15 +19,15 @@ COMMENT=	Ubiquitous network routing analysis tool
 
 WRKSRC=		${WRKDIR}
 
-NOMAN=		defined
+EXTRACT_CMD=		${CP}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	.
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
+NOMAN=		defined
 
 do-build:
 	${CC} -o ${WRKSRC}/${PORTNAME} -lm \
-	    ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+	    ${WRKSRC}/${DISTFILES}
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o root -g wheel -m 04555 \
