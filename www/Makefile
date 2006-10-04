@@ -183,6 +183,7 @@
     SUBDIR += gurlchecker
     SUBDIR += harvest
     SUBDIR += havp
+    SUBDIR += hinventory-client
     SUBDIR += horde
     SUBDIR += horde-passwd
     SUBDIR += hotjava

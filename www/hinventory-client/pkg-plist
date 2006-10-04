@@ -1,0 +1,5 @@
+bin/hinventory_FreeBSD.sh
+etc/hinventory.conf
+@cwd /
+@exec mkdir -p %D/var/spool/hinventory
+@dirrmtry var/spool/hinventory
