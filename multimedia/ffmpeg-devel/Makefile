@@ -306,7 +306,7 @@ FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .endif
 # x264
 .ifdef(WITH_X264)
-LIB_DEPENDS+=		x264.49:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=		x264.50:${PORTSDIR}/multimedia/x264
 
 CONFIGURE_ARGS+=	--enable-x264
 .endif
