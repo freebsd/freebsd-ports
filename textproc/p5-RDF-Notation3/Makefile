@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	RDF-Notation3
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RDF
@@ -35,5 +34,6 @@ MAN3=		RDF::Notation3.3 RDF::Notation3::PrefTriples.3 \
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.pm" | \
 	${XARGS} ${PERL} -pi -e 's!^require 5.005_62;!!'
+	${MV} ${WRKSRC}/doc/*.pod ${WRKSRC}/lib/RDF
 
 .include <bsd.port.mk>
