@@ -4,15 +4,14 @@
 %%SITE_PERL%%/HTML/Template/Compiled/Classic.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Compiler.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Expression/Conditional.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression/Expressions.pm
-%%SITE_PERL%%/HTML/Template/Compiled/Expression/Function.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Filter.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Lazy.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Parser.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Plugin/DHTML.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Plugin/XMLEscape.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Reference.pod
+%%SITE_PERL%%/HTML/Template/Compiled/Token.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Utils.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Compiler/Classic.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Compiled
