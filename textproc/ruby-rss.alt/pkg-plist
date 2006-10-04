@@ -1,3 +1,4 @@
+%%RUBY_SITELIBDIR%%/rss.rb
 %%RUBY_SITELIBDIR%%/rss/0.9.rb
 %%RUBY_SITELIBDIR%%/rss/1.0.rb
 %%RUBY_SITELIBDIR%%/rss/2.0.rb
@@ -26,12 +27,16 @@
 %%RUBY_SITELIBDIR%%/rss/xml-stylesheet.rb
 %%RUBY_SITELIBDIR%%/rss/xmlparser.rb
 %%RUBY_SITELIBDIR%%/rss/xmlscanner.rb
-@dirrm %%RUBY_SITELIBDIR%%/rss/maker
-@dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
-@dirrm %%RUBY_SITELIBDIR%%/rss
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tutorial.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Tutorial.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrm %%RUBY_SITELIBDIR%%/rss/maker
+@dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
+@dirrm %%RUBY_SITELIBDIR%%/rss
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
