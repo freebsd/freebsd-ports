@@ -16,6 +16,7 @@
 %%SITE_PERL%%/FLV/ToSWF.pm
 %%SITE_PERL%%/FLV/VideoTag.pm
 bin/flv2mp3
+bin/flv2flv
 bin/flv2swf
 bin/flvinfo
 bin/swf2flv
