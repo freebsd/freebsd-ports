@@ -1,0 +1,6 @@
+The MySQL Activity Report package is a tool to help MySQL database
+administrators to collect several database parameters and variables.
+These collected values can be used for server monitoring or
+performance tuning purposes.
+
+WWW: http://gert.sos.be/en/projects/mysqlar/

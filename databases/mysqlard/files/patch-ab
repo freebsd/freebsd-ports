@@ -1,0 +1,8 @@
+--- src/mysqlar.monthly.sh.orig	Tue Aug  1 11:23:19 2006
++++ src/mysqlar.monthly.sh	Tue Aug  1 11:10:54 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ #
+ #  $Id: mysqlar.monthly.sh 35 2004-03-10 15:48:41Z dewitge $
+ #	
