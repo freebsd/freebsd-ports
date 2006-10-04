@@ -33,8 +33,9 @@ MAKE_ENV+=	OPTIMIZED_CFLAGS=N
 MAKE_ENV+=	USE_X86_ASM=N
 .endif
 
-.if ${OSVERSION} < 500000
 post-patch:
+	@${REINPLACE_CMD} -e '/-mtune/d' ${WRKSRC}/${MAKEFILE}
+.if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
 		${WRKSRC}/common/model.c ${WRKSRC}/include/bspfile.h
 .endif
