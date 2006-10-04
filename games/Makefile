@@ -33,6 +33,7 @@
     SUBDIR += alienarena-data
     SUBDIR += alienblaster
     SUBDIR += alienwave
+    SUBDIR += allacrost
     SUBDIR += amphetamine
     SUBDIR += amy
     SUBDIR += an
