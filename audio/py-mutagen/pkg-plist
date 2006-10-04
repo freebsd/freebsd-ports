@@ -30,6 +30,9 @@ bin/mid3iconv
 %%PYTHON_SITELIBDIR%%/mutagen/m4a.py
 %%PYTHON_SITELIBDIR%%/mutagen/m4a.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/m4a.pyo
+%%PYTHON_SITELIBDIR%%/mutagen/monkeysaudio.py
+%%PYTHON_SITELIBDIR%%/mutagen/monkeysaudio.pyc
+%%PYTHON_SITELIBDIR%%/mutagen/monkeysaudio.pyo
 %%PYTHON_SITELIBDIR%%/mutagen/mp3.py
 %%PYTHON_SITELIBDIR%%/mutagen/mp3.pyc
 %%PYTHON_SITELIBDIR%%/mutagen/mp3.pyo
