@@ -26,6 +26,7 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/docs/README.chartrans
 %%DOCSDIR%%/docs/README.defines
 %%DOCSDIR%%/docs/README.jp
+%%DOCSDIR%%/docs/README.metrics
 %%DOCSDIR%%/docs/README.rootcerts
 %%DOCSDIR%%/docs/README.ssl
 %%DOCSDIR%%/docs/README.sslcerts
@@ -51,6 +52,7 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/samples/mailto-form.pl
 %%DOCSDIR%%/samples/mild-colors.lss
 %%DOCSDIR%%/samples/mime.types
+%%DOCSDIR%%/samples/oldlynx
 %%DOCSDIR%%/test/ALT88592.html
 %%DOCSDIR%%/test/ISO_LATIN1_test.html
 %%DOCSDIR%%/test/README.txt
@@ -66,6 +68,7 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/test/special_urls.html
 %%DOCSDIR%%/test/tabtest.html
 %%DOCSDIR%%/test/tags.html
+%%DOCSDIR%%/test/test-styles.html
 %%DOCSDIR%%/test/unicode.html
 %%DOCSDIR%%/test/utf-8-demo.html
 %%NLS%%share/locale/ca/LC_MESSAGES/lynx.mo
