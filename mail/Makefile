@@ -45,6 +45,7 @@
     SUBDIR += courier
     SUBDIR += courier-authlib-vchkpw
     SUBDIR += courier-imap
+    SUBDIR += courier-pythonfilter
     SUBDIR += couriergraph
     SUBDIR += crashecho
     SUBDIR += crm114
