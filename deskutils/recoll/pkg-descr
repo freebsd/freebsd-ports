@@ -9,7 +9,7 @@ Features:
       - Natively: text, html, OpenOffice files, maildir and mailbox 
         (Mozilla and Thunderbird mail ok), gaim log files.
       - With external helpers:  pdf (pdftotext), postscript (ghostscript),
-        msword (antiword), rtf (unrtf).
+        msword (antiword), rtf (unrtf)
     * Powerful query facilities, with boolean searches, phrases, filter on
       file types and directory tree. 
     * Support for multiple charsets. Internal processing and storage uses
