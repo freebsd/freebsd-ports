@@ -163,6 +163,7 @@ etc/dansguardian/lists/phraselists/games/weighted
 etc/dansguardian/lists/phraselists/goodphrases/weighted_general
 etc/dansguardian/lists/phraselists/goodphrases/weighted_general_danish
 etc/dansguardian/lists/phraselists/goodphrases/weighted_general_dutch
+etc/dansguardian/lists/phraselists/goodphrases/weighted_general_malay
 etc/dansguardian/lists/phraselists/goodphrases/weighted_general_portuguese
 etc/dansguardian/lists/phraselists/goodphrases/weighted_news
 etc/dansguardian/lists/phraselists/goodphrases/exception
@@ -183,18 +184,21 @@ etc/dansguardian/lists/phraselists/nudism/weighted
 etc/dansguardian/lists/phraselists/peer2peer/weighted
 etc/dansguardian/lists/phraselists/personals/weighted
 etc/dansguardian/lists/phraselists/personals/weighted_portuguese
+etc/dansguardian/lists/phraselists/pornography/banned
+etc/dansguardian/lists/phraselists/pornography/banned_portuguese
 etc/dansguardian/lists/phraselists/pornography/weighted
+etc/dansguardian/lists/phraselists/pornography/weighted_chinese
 etc/dansguardian/lists/phraselists/pornography/weighted_danish
 etc/dansguardian/lists/phraselists/pornography/weighted_dutch
 etc/dansguardian/lists/phraselists/pornography/weighted_french
 etc/dansguardian/lists/phraselists/pornography/weighted_german
 etc/dansguardian/lists/phraselists/pornography/weighted_italian
+etc/dansguardian/lists/phraselists/pornography/weighted_japanese
+etc/dansguardian/lists/phraselists/pornography/weighted_malay
 etc/dansguardian/lists/phraselists/pornography/weighted_norgwegian
 etc/dansguardian/lists/phraselists/pornography/weighted_portuguese
 etc/dansguardian/lists/phraselists/pornography/weighted_russian
 etc/dansguardian/lists/phraselists/pornography/weighted_spanish
-etc/dansguardian/lists/phraselists/pornography/banned
-etc/dansguardian/lists/phraselists/pornography/banned_portuguese
 etc/dansguardian/lists/phraselists/proxies/weighted
 etc/dansguardian/lists/phraselists/sport/weighted
 etc/dansguardian/lists/phraselists/violence/weighted
@@ -228,10 +232,12 @@ etc/dansguardian/lists/exceptionregexpurllist
 %%SCANNERS%%etc/dansguardian/lists/contentscanners/exceptionvirusurllist
 etc/dansguardian/downloadmanagers/default.conf
 etc/dansguardian/downloadmanagers/fancy.conf
+etc/dansguardian/downloadmanagers/trickle.conf
 %%CLAMAVCONF%%etc/dansguardian/contentscanners/clamav.conf
 %%CLAMDCONF%%etc/dansguardian/contentscanners/clamdscan.conf
 %%KAVDCONF%%etc/dansguardian/contentscanners/kavdscan.conf
 %%ICAPCONF%%etc/dansguardian/contentscanners/icapscan.conf
+%%CLISCANCONF%%etc/dansguardian/contentscanners/commandlinescan.conf
 etc/dansguardian/dansguardian.conf
 etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/scripts
