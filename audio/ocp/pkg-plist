@@ -41,6 +41,8 @@ lib/ocp/playgmi.so
 lib/ocp/playit.so
 lib/ocp/playmp2.so
 lib/ocp/playogg.so
+lib/ocp/aytype.so
+lib/ocp/playay.so
 %%ADPLUG%%lib/ocp/playopl.so
 %%LIBSIDPLAY%%lib/ocp/playsid.so
 %%LIBSIDPLAY%%lib/ocp/sidtype.so
