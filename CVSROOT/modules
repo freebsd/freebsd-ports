@@ -1411,6 +1411,7 @@ courier-authlib-userdb	ports/databases/courier-authlib-userdb
 courier-authlib-usergdbm	ports/databases/courier-authlib-usergdbm
 courier-authlib-vchkpw	ports/mail/courier-authlib-vchkpw
 courier-imap	ports/mail/courier-imap
+courier-pythonfilter	ports/mail/courier-pythonfilter
 couriergraph	ports/mail/couriergraph
 courierpassd	ports/security/courierpassd
 courierpasswd	ports/security/courierpasswd
