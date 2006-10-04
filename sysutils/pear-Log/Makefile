@@ -9,7 +9,7 @@ PORTNAME=	Log
 PORTVERSION=	1.9.8
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR logging utilities
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -36,8 +36,6 @@ _SQLSDIR=	misc
 LATEST_LINK=	pear-Log
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
 		PEAR_MDB2 "PEAR::MDB2 support" off
-
-LOCALBASE?=	/usr/local
 
 .if exists(${LOCALBASE}/etc/php.conf)
 .include "${LOCALBASE}/etc/php.conf"
