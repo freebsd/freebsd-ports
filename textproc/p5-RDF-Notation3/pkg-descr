@@ -3,6 +3,3 @@ results in whatever format (as far as there are subclasses supporting your
 desired format available).
 
 WWW: http://search.cpan.org/dist/RDF-Notation3/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
