@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pkgfe
-PORTVERSION=	20060929
-PORTREVISION=	1
+PORTVERSION=	20061003
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kodu.neti.ee/~madis555/pkgfe/releases/ \
 		http://ketas.life.ee/pkgfe/releases/ \
