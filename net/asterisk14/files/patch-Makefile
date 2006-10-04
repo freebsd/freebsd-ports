@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
+--- Makefile.orig	Tue Sep 26 18:41:55 2006
++++ Makefile	Tue Sep 26 18:47:32 2006
 @@ -19,8 +19,8 @@
  # CROSS_COMPILE=/opt/montavista/pro/devkit/arm/xscale_be/bin/xscale_be-
  # CROSS_COMPILE_BIN=/opt/montavista/pro/devkit/arm/xscale_be/bin/
@@ -14,7 +11,7 @@ $FreeBSD$
  # CROSS_ARCH=Linux
  # CROSS_PROC=arm
  # SUB_PROC=xscale # or maverick
-@@ -46,14 +46,14 @@
+@@ -47,14 +47,14 @@
  #K6OPT  = -DK6OPT
  
  #Tell gcc to optimize the code
@@ -32,7 +29,7 @@ $FreeBSD$
  
  #Set NOCRYPTO to yes if you do not want to have crypto support or 
  #dependencies
-@@ -85,7 +85,7 @@
+@@ -88,7 +88,7 @@
  
  # Where to install asterisk after compiling
  # Default -> leave empty
@@ -41,7 +38,7 @@ $FreeBSD$
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -108,17 +108,17 @@
+@@ -111,17 +111,17 @@
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
  ifneq ($(OSARCH),SunOS)
@@ -68,7 +65,7 @@ $FreeBSD$
    MODULES_DIR=$(ASTLIBDIR)/modules
    AGI_DIR=$(ASTVARLIBDIR)/agi-bin
  else
-@@ -220,25 +220,25 @@
+@@ -226,25 +226,25 @@
  endif
  
  INCLUDE+=-Iinclude -I../include
@@ -100,7 +97,7 @@ $FreeBSD$
  else
    ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/osp/osp.h),)
      ASTCFLAGS+=-DOSP_SUPPORT -I$(CROSS_COMPILE_TARGET)/usr/include/osp
-@@ -247,27 +247,24 @@
+@@ -253,27 +253,24 @@
  
  ifeq ($(OSARCH),FreeBSD)
    BSDVERSION=$(shell make -V OSVERSION -f $(CROSS_COMPILE_TARGET)/usr/share/mk/bsd.port.subdir.mk)
@@ -142,16 +139,7 @@ $FreeBSD$
  
  endif # FreeBSD
  
-@@ -283,7 +280,7 @@
- 
- ifeq ($(OSARCH),SunOS)
-   ASTCFLAGS+=-Wcast-align -DSOLARIS
--  INCLUDE+=-Iinclude/solaris-compat -I$(CROSS_COMPILE_TARGET)/usr/local/ssl/include
-+  INCLUDE+=-Iinclude/solaris-compat -I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/ssl/include
- endif
- 
- ifeq ($(findstring CYGWIN,$(OSARCH)),CYGWIN)
-@@ -298,7 +295,7 @@
+@@ -307,7 +304,7 @@
  
  ifndef WITHOUT_ZAPTEL
  
@@ -160,20 +148,7 @@ $FreeBSD$
    ASTCFLAGS+=-DZAPTEL_OPTIMIZATIONS
  endif
  
-@@ -390,10 +387,10 @@
- endif
- 
- ifeq ($(OSARCH),SunOS)
--  LIBS+=-lpthread -ldl -lnsl -lsocket -lresolv -L$(CROSS_COMPILE_TARGET)/usr/local/ssl/lib
-+  LIBS+=-lpthread -ldl -lnsl -lsocket -lresolv -L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/ssl/lib
-   OBJS+=strcompat.o
-   ASTLINK=
--  SOLINK=-shared -fpic -L$(CROSS_COMPILE_TARGET)/usr/local/ssl/lib
-+  SOLINK=-shared -fpic -L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/ssl/lib
- endif
- 
- ifeq ($(MAKETOPLEVEL),$(MAKELEVEL))
-@@ -401,7 +398,7 @@
+@@ -414,7 +411,7 @@
  endif
  
  # This is used when generating the doxygen documentation
@@ -182,7 +157,7 @@ $FreeBSD$
    HAVEDOT=yes
  else
    HAVEDOT=no
-@@ -420,7 +417,7 @@
+@@ -431,7 +428,7 @@
  	@echo " +               $(MAKE) install                +"  
  	@echo " +-------------------------------------------+"  
  
@@ -191,7 +166,7 @@ $FreeBSD$
  
  #ifneq ($(wildcard tags),)
  ctags: tags
-@@ -439,13 +436,13 @@
+@@ -450,13 +447,13 @@
  	cd editline && unset CFLAGS LIBS && test -f config.h || CFLAGS="$(OPTIMIZE)" ./configure
  	$(MAKE) -C editline libedit.a
  
@@ -212,7 +187,7 @@ $FreeBSD$
  
  ifneq ($(wildcard .depend),)
    include .depend
-@@ -469,10 +466,10 @@
+@@ -480,10 +477,10 @@
  
  manpage: asterisk.8
  
@@ -227,7 +202,7 @@ $FreeBSD$
  
  asterisk.pdf: asterisk.sgml
  	docbook2pdf asterisk.sgml
-@@ -512,14 +509,14 @@
+@@ -523,14 +520,14 @@
  cygwin_a:
  	$(MAKE) -C cygwin all
  
@@ -244,7 +219,7 @@ $FreeBSD$
  
  muted: muted.o
  	$(CC) $(AUDIO_LIBS) -o muted muted.o
-@@ -541,38 +538,38 @@
+@@ -552,38 +549,38 @@
  
  datafiles: all
  	if [ x`$(ID) -un` = xroot ]; then sh mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
@@ -292,9 +267,9 @@ $FreeBSD$
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -580,18 +577,18 @@
+@@ -591,18 +588,18 @@
  	done
- 	for x in sounds/demo-* sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-* sounds/queue-* sounds/spy-* sounds/priv-* sounds/screen-* sounds/hello-*; do \
+ 	for x in sounds/demo-* sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-* sounds/queue-* sounds/spy-* sounds/priv-* sounds/screen-* sounds/hello-* sounds/hours* sounds/minute* sounds/second* ; do \
  		if $(GREP) -q "^%`basename $$x`%" sounds.txt; then \
 -			$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds ; \
 +			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds ; \
@@ -316,7 +291,7 @@ $FreeBSD$
  
  update: 
  	@if [ -d .svn ]; then \
-@@ -620,47 +617,47 @@
+@@ -631,47 +628,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  bininstall: all
@@ -348,7 +323,7 @@ $FreeBSD$
 +	if [ -f asterisk ]; then $(BSD_INSTALL_PROGRAM) asterisk $(DESTDIR)$(ASTSBINDIR)/; fi
 +	if [ -f cygwin/asterisk.exe ]; then $(BSD_INSTALL_PROGRAM) cygwin/asterisk.exe $(DESTDIR)$(ASTSBINDIR)/; fi
 +	if [ -f asterisk.dll ]; then $(BSD_INSTALL_PROGRAM) asterisk.dll $(DESTDIR)$(ASTSBINDIR)/; fi
- 	ln -sf asterisk $(DESTDIR)$(ASTSBINDIR)/rasterisk
+ 	$(LN) -sf asterisk $(DESTDIR)$(ASTSBINDIR)/rasterisk
 -	$(INSTALL) -m 755 contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
 -	$(INSTALL) -m 755 contrib/scripts/autosupport $(DESTDIR)$(ASTSBINDIR)/	
 +	$(BSD_INSTALL_SCRIPT) contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
@@ -396,7 +371,7 @@ $FreeBSD$
  	else \
  		echo "You need to do cvs update -d not just cvs update" ; \
  	fi 
-@@ -690,46 +687,28 @@
+@@ -701,46 +698,28 @@
  		echo " WARNING WARNING WARNING" ;\
  	fi
  
@@ -450,7 +425,7 @@ $FreeBSD$
  		if [ -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ]; then \
  			if [ "$(OVERWRITE)" = "y" ]; then \
  				if cmp -s $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` $$x ; then \
-@@ -742,7 +721,7 @@
+@@ -753,7 +732,7 @@
  				continue; \
  			fi ;\
  		fi ; \
@@ -459,7 +434,7 @@ $FreeBSD$
  	done
  	if [ "$(OVERWRITE)" = "y" ] || [ ! -f $(DESTDIR)$(ASTCONFPATH) ]; then \
  		( \
-@@ -802,25 +781,25 @@
+@@ -813,25 +792,25 @@
  		echo "; Default: strict"; \
  		echo ";"; \
  		echo ";translation_algorithm = strict"; \
@@ -491,7 +466,7 @@ $FreeBSD$
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -834,9 +813,9 @@
+@@ -845,9 +824,9 @@
  	@[ -d $(DESTDIR)$(HTTP_DOCSDIR)/ ] || ( printf "http docs directory not found.\nUpdate assignment of variable HTTP_DOCSDIR in Makefile!\n" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTP_CGIDIR) ] || ( printf "cgi-bin directory not found.\nUpdate assignment of variable HTTP_CGIDIR in Makefile!\n" && exit 1 )
  	$(INSTALL) -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTP_CGIDIR)/vmail.cgi
@@ -503,7 +478,7 @@ $FreeBSD$
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -863,10 +842,10 @@
+@@ -874,10 +853,10 @@
  
  __rpm: include/asterisk/version.h spec
  	rm -rf /tmp/asterisk ; \
