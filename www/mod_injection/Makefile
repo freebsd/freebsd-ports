@@ -18,6 +18,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 APXS?=		${LOCALBASE}/sbin/apxs
 
+EXPIRATION_DATE=2006-12-04
+DEPRECATED=	No longer available for download, the website is gone
+
 do-build:
 	@(cd ${WRKSRC}/src && ${APXS} -c ${PORTNAME}.c)
 
