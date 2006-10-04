@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	gwyddion
-PORTVERSION=	1.99.9
+PORTVERSION=	2.0
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCHFILES=	gwyddion-1-99-9-crashes.patch
-PATCH_SITES=	${MASTER_SITES}
-PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 
 MAINTAINER=	yeti@gwyddion.net
 COMMENT=	A gtk2 based SPM data visualization and analysis tool
@@ -63,4 +59,15 @@ post-patch:
 	@${REINPLACE_CMD} -e '/# Install the pseudo-library/,/^$$/d' ${WRKSRC}/ltmain.sh
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/,/[^\]$$/d' ${WRKSRC}/devel-docs/Makefile.in
 
-.include <bsd.port.mk>
+# Remove private header installed by mistake
+post-install:
+	${RM} ${PREFIX}/include/gwyddion/libgwydgets/gwydgetmarshals.h
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS+=	${LOCALBASE}/bin/pod2man:${PORTSDIR}/textproc/p5-podlators
+CONFIGURE_ENV+=	POD2MAN="${LOCALBASE}/bin/pod2man"
+.endif
+
+.include <bsd.port.post.mk>
