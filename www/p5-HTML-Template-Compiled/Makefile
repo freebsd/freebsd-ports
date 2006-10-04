@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Template-Compiled
-PORTVERSION=	0.75
+PORTVERSION=	0.77
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -28,13 +28,15 @@ PERL_CONFIGURE=	yes
 MAN3=		HTML::Template::Compiled.3 \
 		HTML::Template::Compiled::Compiler.3 \
 		HTML::Template::Compiled::Compiler::Classic.3 \
+		HTML::Template::Compiled::Plugin::DHTML.3 \
 		HTML::Template::Compiled::Expression.3 \
 		HTML::Template::Compiled::Filter.3 \
 		HTML::Template::Compiled::Parser.3 \
 	       	HTML::Template::Compiled::Classic.3 \
 	       	HTML::Template::Compiled::Lazy.3 \
-	       	HTML::Template::Compiled::Reference.3 \
 		HTML::Template::Compiled::Plugin::XMLEscape.3 \
+	       	HTML::Template::Compiled::Reference.3 \
+		HTML::Template::Compiled::Token.3 \
 	       	HTML::Template::Compiled::Utils.3
 
 .include <bsd.port.pre.mk>
