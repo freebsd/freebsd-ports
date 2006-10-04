@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.2
 CATEGORIES=	print
 MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/ \
 		http://olofsson.de/mirror/distfiles/
@@ -77,27 +76,27 @@ pre-everything::
 post-configure:
 	@${REINPLACE_CMD} ${SUBST_CMD} ${WRKSRC}/extra/cups-pdf.conf
 	@${REINPLACE_CMD} -e \
-	's,CPCONFIG "/etc/cups/cups-pdf.conf",CPCONFIG "${LOCALBASE}/etc/cups/cups-pdf.conf",' \
+	's,CPCONFIG "/etc/cups/cups-pdf.conf",CPCONFIG "${PREFIX}/etc/cups/cups-pdf.conf",' \
 	${WRKSRC}/src/cups-pdf.h
 
 do-build:
 	cd ${WRKSRC}/src; ${CC} ${CFLAGS} -o cups-pdf cups-pdf.c
 
 do-install:
-	${INSTALL} -o root -g wheel -m 0700 ${WRKSRC}/src/cups-pdf ${LOCALBASE}/libexec/cups/backend
-	${INSTALL_DATA} ${WRKSRC}/extra/PostscriptColor_rev3b.ppd.gz \
-	${LOCALBASE}/share/cups/model/PostscriptColor.ppd.gz
+	${INSTALL} -o root -g wheel -m 0700 ${WRKSRC}/src/cups-pdf ${PREFIX}/libexec/cups/backend
+	${INSTALL_DATA} ${WRKSRC}/extra/PostscriptColor.ppd \
+	${PREFIX}/share/cups/model/PostscriptColor.ppd
+	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
+	${PREFIX}/etc/cups/cups-pdf.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
-	${LOCALBASE}/etc/cups/cups-pdf.conf.sample
 .endif
 
 post-install:
-	@if [ ! -f ${LOCALBASE}/etc/cups/cups-pdf.conf ]; then \
-	${CP} -p ${LOCALBASE}/etc/cups/cups-pdf.conf.sample \
-	${LOCALBASE}/etc/cups/cups-pdf.conf ; \
+	@if [ ! -f ${PREFIX}/etc/cups/cups-pdf.conf ]; then \
+	${CP} -p ${PREFIX}/etc/cups/cups-pdf.conf.sample \
+	${PREFIX}/etc/cups/cups-pdf.conf ; \
 	fi
 
 .include <bsd.port.post.mk>
