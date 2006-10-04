@@ -15,8 +15,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	3D modeling/rendering/animation/gaming package
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
-		 ${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
+BUILD_DEPENDS=	${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
@@ -29,6 +28,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
 USE_PYTHON=	2.3
+USE_SCONS=	yes
 USE_SDL=	sdl
 USE_GL=		yes
 
@@ -47,9 +47,6 @@ pre-everything::
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
-
-do-build:
-	@cd ${WRKSRC} && scons
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/../install/freebsd/blender ${PREFIX}/bin
