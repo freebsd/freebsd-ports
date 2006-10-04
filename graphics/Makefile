@@ -118,6 +118,7 @@
     SUBDIR += f-spot
     SUBDIR += fbm
     SUBDIR += feh
+    SUBDIR += ffff
     SUBDIR += fig2pstricks
     SUBDIR += fig2sxd
     SUBDIR += figurine
