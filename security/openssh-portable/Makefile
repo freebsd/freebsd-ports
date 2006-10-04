@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	4.4p1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
@@ -133,10 +134,9 @@ EXTRA_PATCHES+=		${FILESDIR}/scardpin.patch
 .endif
 
 .if defined(WITH_HPN)
-IGNORE=			option HPN is temporary disabled, waiting patch for new openssh release
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.3p2-hpn12.diff.gz
+PATCHFILES+=		openssh-4.4p1-hpn.diff.gz
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
@@ -148,9 +148,9 @@ PREFIX=			/usr
 ETCSSH=			/etc/ssh
 USE_RC_SUBR=		yes
 SUB_FILES+=		openssh
-SUB_LIST+=		ETCSSH="${ETCSSH}"
 PLIST_SUB+=		NOTBASE="@comment "
 PLIST_SUB+=		BASE=""
+PLIST_SUB+=		BASEPREFIX="${PREFIX}"
 .else
 .if exists(/var/empty)
 EMPTYDIR=		/var/empty
@@ -159,12 +159,12 @@ EMPTYDIR=		${PREFIX}/empty
 .endif
 ETCSSH=			${PREFIX}/etc/ssh
 USE_RC_SUBR=		openssh
-SUB_LIST+=		ETCSSH="${ETCSSH}"
 PLIST_SUB+=		NOTBASE=""
 PLIST_SUB+=		BASE="@comment "
 .endif
 
 # After all
+SUB_LIST+=		ETCSSH="${ETCSSH}"
 PLIST_SUB+=		EMPTYDIR="${EMPTYDIR}"
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
 

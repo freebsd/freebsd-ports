@@ -1,3 +1,6 @@
 MD5 (openssh-4.4p1.tar.gz) = 793a709a8de695c22f523024d7e9bf07
 SHA256 (openssh-4.4p1.tar.gz) = 0252474af4009129cde6a2df2893fb1ac24316436758796f6adc043ac73b35ac
 SIZE (openssh-4.4p1.tar.gz) = 1044334
+MD5 (openssh-4.4p1-hpn.diff.gz) = d5f07fcb10360b52bdcacf3c7de803b6
+SHA256 (openssh-4.4p1-hpn.diff.gz) = 6febe17260ff66a8dbb7b466252889f855dcc5dec50c93eff25050839cf65977
+SIZE (openssh-4.4p1-hpn.diff.gz) = 16258
