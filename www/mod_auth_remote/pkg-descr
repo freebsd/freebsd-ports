@@ -7,4 +7,4 @@ userid:passwd. mod_auth_remote then makes a HEAD request to the authentication
 server. On reciept of a 2XX response, the client is validated; for all other
 responses the client is not validated.
 
-WWW: http://puggy.symonds.net/~srp/stuff/
+WWW: http://saju.pillai.googlepages.com/mod_auth_remote
