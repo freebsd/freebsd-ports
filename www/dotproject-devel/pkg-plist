@@ -31,6 +31,7 @@ www/dotproject/db/upgrade_permissions.php
 www/dotproject/db/upgrade_to_20.php
 www/dotproject/db/upgrade_to_201.php
 www/dotproject/db/upgrade_to_202.php
+www/dotproject/db/upgrade_to_204.php
 www/dotproject/db/upgrade_to_20beta.php
 www/dotproject/files/.cvsignore
 www/dotproject/files/.htaccess
@@ -828,6 +829,7 @@ www/dotproject/modules/tasks/tasks.php
 www/dotproject/modules/tasks/tasksperuser.php
 www/dotproject/modules/tasks/tasksperuser_sub.php
 www/dotproject/modules/tasks/todo.php
+www/dotproject/modules/tasks/todo_gantt_sub.php
 www/dotproject/modules/tasks/todo_tasks_sub.php
 www/dotproject/modules/tasks/view.js
 www/dotproject/modules/tasks/view.php

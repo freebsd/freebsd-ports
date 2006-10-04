@@ -4,5 +4,15 @@ It is suggested that you add the following to httpd.conf:
 
     Alias /dotproject/ "%%DOTPROJECTDIR%%/"
 
+dotProject has bugs when using MySQL servers later then version 3.23.
+If you had not previously installed MySQL 3.23, you will need access
+to a 3.23 server.  You will not be able to install one from this
+ports tree.  You can use a remote server, or install one in a jail.
+To install a local MySQL 3.23 server you will need to create a jail
+and install databases/mysql323-server.
+
+Another option is to patch dotProject to use MySQL 5.  See
+http://www.dotproject.net/vbulletin/archive/index.php/t-5292.html
+
 Then access http://<host>/dotproject and follow the instructions to
 complete the installation.
