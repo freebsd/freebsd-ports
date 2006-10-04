@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	bugmenot
-PORTVERSION=	0.8
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	www
 MASTER_SITES=	http://extensions.roachfiend.com/
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_1
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	${GECKO} extension to bypass compulsory web registration
