@@ -6901,6 +6901,7 @@ mingw-gcc	ports/devel/mingw-gcc
 mingw-opengl-headers	ports/devel/mingw-opengl-headers
 mingw32-bin-msvcrt	ports/devel/mingw32-bin-msvcrt
 mingw32-binutils	ports/devel/mingw32-binutils
+mingw32-directx	ports/devel/mingw32-directx
 mingw32-gcc	ports/devel/mingw32-gcc
 mingw32-pdcurses	ports/devel/mingw32-pdcurses
 mingw32-pthreads	ports/devel/mingw32-pthreads
