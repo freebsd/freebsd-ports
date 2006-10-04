@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.31 2006-10-03 01:33:11 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.32 2006-10-04 04:46:01 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -22,11 +22,12 @@ fi
 oldmask=$(umask)
 umask 066
 
-version="4.5"
-checkin_server=${monthly_statistics_checkin_server:-"rpt.bsdstats.org"}
+version="4.7"
+checkin_server=${monthly_statistics_checkin_server:-"bsdstats.org"}
+bsdstats_log=${monthly_statistics_logfile:-"/var/log/bsdstats"}
 id_token_file='/var/db/bsdstats'
 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
 export PATH
 
 unset HTTP_USER_AGENT
@@ -38,6 +39,43 @@ random () {
   jot -r 1 0 900
 }
 
+# RFC 2396
+uri_escape () {
+    echo ${1+$@} | sed -e '
+        s/%/%25/g
+        s/;/%3b/g
+        s,/,%2f,g
+        s/?/%3f/g
+        s/:/%3a/g
+        s/@/%40/g
+        s/&/%26/g
+        s/=/%3d/g
+        s/+/%2b/g
+        s/\$/%24/g
+        s/,/%2c/g
+        s/ /%20/g
+        '
+}
+
+do_fetch () {
+    url="http://$checkin_server/scripts/$1"
+    case $(uname) in
+	FreeBSD )	
+		/usr/bin/fetch -q -o - "$url"
+		;;
+	* )
+		/usr/bin/ftp -V -o - "$url"
+		;;
+    esac
+}
+
+check_dns () {
+    if [ `dig bsdstats.org txt | grep TXT | grep UP | wc -l` = 0 ] 
+    then
+      echo "DNS not reachable, Network Down?"
+      exit
+    fi
+}
 send_devices () {
     case $(uname) in
 	FreeBSD )
@@ -49,7 +87,7 @@ send_devices () {
 	      query_string=$query_string`echo \&dev[]=$DRIVER:$DEV:$CLASS`
 	    done
 
-	    do_fetch report_devices.php?token=$TOKEN\&key=$KEY$query_string
+	    report_devices
 	    ;;
 	* )
 	    # Not supported
@@ -57,6 +95,32 @@ send_devices () {
     esac
 }
 
+report_devices () {
+      do_fetch report_devices.php?token=$TOKEN\&key=$KEY$query_string | { 
+          local IFS
+          IFS='=
+'
+
+           while read var val
+             do
+             case $var in
+                 STATUS)
+                     if [ $val = "OK" ]
+                     then
+                       echo "[`date`] System Devices reported"
+                     else
+                       echo "[`date`] System Devices not reported, exiting"
+                       exit
+                     fi
+                 ;;
+                 *)
+                     echo "[`date`] Error with fetch to server"
+                     exit
+                 ;;
+                 esac
+           done  
+       } >> $bsdstats_log
+}
 
 get_id_token () {
     if [ -f $id_token_file ]
@@ -108,44 +172,114 @@ get_id_token () {
     TOKEN=$( uri_escape $TOKEN )
 }
 
-# RFC 2396
-uri_escape () {
-    echo ${1+$@} | sed -e '
-        s/%/%25/g
-        s/;/%3b/g
-        s,/,%2f,g
-        s/?/%3f/g
-        s/:/%3a/g
-        s/@/%40/g
-        s/&/%26/g
-        s/=/%3d/g
-        s/+/%2b/g
-        s/\$/%24/g
-        s/,/%2c/g
-        s/ /%20/g
-        '
+
+enable_token () {
+      do_fetch enable_token.php?key=$TOKEN\&token=$KEY | {
+          local IFS
+          IFS='=
+'
+
+           while read var val
+             do
+             case $var in
+                 STATUS)
+                     if [ $val = "OK" ]
+                     then
+                       echo "[`date`] System enabled"
+                     else
+                       echo "[`date`] System not enabled, exiting"
+                       exit
+                     fi
+                 ;;
+                 *)
+                     echo "[`date`] Error with fetch to server"
+                     exit
+                 ;;
+                 esac
+           done  
+       } >> $bsdstats_log
 }
 
-do_fetch () {
-    url="http://$checkin_server/scripts/$1"
-    case $(uname) in
-	FreeBSD )	
-		/usr/bin/fetch -q -o - "$url"
-		;;
-	* )
-		/usr/bin/ftp -V -o - "$url"
-		;;
-    esac
+disable_token () {
+      do_fetch disable_token.php?key=$TOKEN\&token=$KEY | {
+          local IFS
+          IFS='=
+'
+
+           while read var val
+             do
+             case $var in
+                 STATUS)
+                     if [ $val = "OK" ]
+                     then
+                       echo "[`date`] System disabled"
+                     else
+                       echo "[`date`] System not disabled, exiting"
+                       exit
+                     fi
+                 ;;
+                 *)
+                     echo "[`date`] Error with fetch to server"
+                     exit
+                 ;;
+                 esac
+           done  
+       } >> $bsdstats_log
 }
 
-check_dns () {
-    if [ `dig bsdstats.org txt | grep TXT | grep UP | wc -l` = 0 ] 
-    then
-      echo "DNS not reachable, Network Down?"
-      exit
-    fi
+report_system () {
+      do_fetch report_system.php?token=$TOKEN\&key=$KEY\&rel=$REL\&arch=$ARCH\&opsys=$OS | {
+          local IFS
+          IFS='=
+'
+
+           while read var val
+             do
+             case $var in
+                 STATUS)
+                     if [ $val = "OK" ]
+                     then
+                       echo "[`date`] System reported"
+                     else
+                       echo "[`date`] System report failed, exiting"
+                       exit
+                     fi
+                 ;;
+                 *)
+                     echo "[`date`] Error with fetch to server"
+                     exit
+                 ;;
+                 esac
+           done  
+       } >> $bsdstats_log
 }
 
+report_cpu () {
+    do_fetch report_cpu.php?token=$TOKEN\&key=$KEY\&cpus=$count\&vendor=$VEN\&cpu_type=$DEV | {
+          local IFS
+          IFS='=
+'
+
+           while read var val
+             do
+             case $var in
+                 STATUS)
+                     if [ $val = "OK" ]
+                     then
+                       echo "[`date`] System CPU reported"
+                     else
+                       echo "[`date`] System CPU report failed, exiting"
+                       exit
+                     fi
+                 ;;
+                 *)
+                     echo "[`date`] Error with fetch to server"
+                     exit
+                 ;;
+                 esac
+           done  
+       } >> $bsdstats_log
+}
 case "$monthly_statistics_enable" in
     [Yy][Ee][Ss])
       check_dns
@@ -155,8 +289,8 @@ case "$monthly_statistics_enable" in
       OS=`/usr/bin/uname -s`
       get_id_token
       sleep `random`
-      do_fetch enable_token.php?key=$TOKEN\&token=$KEY
-      do_fetch report_system.php?token=$TOKEN\&key=$KEY\&rel=$REL\&arch=$ARCH\&opsys=$OS
+      enable_token
+      report_system
       echo "Posting monthly OS statistics to $checkin_server"
       case "$monthly_statistics_report_devices" in
           [Yy][Ee][Ss])
@@ -166,7 +300,7 @@ case "$monthly_statistics_enable" in
               VEN=$( echo $line | cut -d ' ' -f 1 )
               DEV=$( uri_escape $( echo $line | cut -d ' ' -f 2- ) )
               count=$( sysctl -n hw.ncpu )
-              do_fetch report_cpu.php?token=$TOKEN\&key=$KEY\&cpus=$count\&vendor=$VEN\&cpu_type=$DEV
+              report_cpu
               echo "Posting monthly CPU statistics to $checkin_server"
              ;;
           *) 
@@ -174,7 +308,7 @@ case "$monthly_statistics_enable" in
              echo "    set monthly_statistics_report_devices=\"YES\" in $periodic_conf"
              ;;
       esac
-      do_fetch disable_token.php?key=$TOKEN\&token=$KEY
+      disable_token
       ;;
     *) 
       echo "Posting monthly OS statistics disabled"
