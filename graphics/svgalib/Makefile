@@ -30,12 +30,16 @@ MAN${i}!=	${CAT} ${FILESDIR}/man${i}
 .endif
 .endfor
 
-pre-patch:
+pre-patch: .SILENT
 	for file in ${WRKSRC}/utils/gtf/*.h; do \
 		${TR} -d '\015' < $${file} > $${file}.new; \
 		${MV} $${file}.new $${file}; \
 	done
 	${MKDIR} ${WRKSRC}/include/linux
+	# Fix for GCC 4.1
+	${REINPLACE_CMD} '30d' ${WRKSRC}/src/vgabg.h
+	${REINPLACE_CMD} -e 's,^   (unsigned [[:alpha:]]*),,' \
+		${WRKSRC}/src/apm.c
 
 post-install:
 	${MKDIR} ${PREFIX}/include/linux
