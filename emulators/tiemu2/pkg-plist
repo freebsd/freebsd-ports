@@ -85,6 +85,7 @@ bin/tiemu-2
 %%DATADIR%%/misc/iodefs_ti89_hw1.txt
 %%DATADIR%%/misc/iodefs_ti89_hw2.txt
 %%DATADIR%%/misc/iodefs_ti89t_hw3.txt
+%%DATADIR%%/misc/iodefs_ti89t_hw4.txt
 %%DATADIR%%/misc/iodefs_ti92_hw1.txt
 %%DATADIR%%/misc/iodefs_ti92p_hw1.txt
 %%DATADIR%%/misc/iodefs_ti92p_hw2.txt
