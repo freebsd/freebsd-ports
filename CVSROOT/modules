@@ -6294,6 +6294,7 @@ libyaml		ports/textproc/libyaml
 libytnef	ports/devel/libytnef
 libzdb		ports/databases/libzdb
 libzip		ports/archivers/libzip
+libzrtpcpp	ports/devel/libzrtpcpp
 libzvbi		ports/devel/libzvbi
 libzvt		ports/x11-toolkits/libzvt
 licq		ports/net-im/licq
