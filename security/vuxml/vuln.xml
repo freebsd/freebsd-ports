@@ -39,6 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>tin</name>
+	<name>zh-tin</name>
 	<range><lt>1.8.2</lt></range>
       </package>
     </affects>
