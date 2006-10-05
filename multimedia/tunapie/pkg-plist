@@ -19,10 +19,6 @@ bin/tunapie
 %%DATADIR%%/tplogo.jpg
 %%DATADIR%%/tuner.py
 %%DATADIR%%/tuner.pyc
-%%DATADIR%%/tuneradult.py
-%%DATADIR%%/tuneradult.pyc
-%%DATADIR%%/tunersafe.py
-%%DATADIR%%/tunersafe.pyc
 %%DESKTOPDIR%%/tunapie.desktop
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
