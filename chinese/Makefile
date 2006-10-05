@@ -93,6 +93,7 @@
     SUBDIR += p5-Encode-HanExtra
     SUBDIR += p5-Lingua-Han-Utils
     SUBDIR += p5-Lingua-ZH-BPMFConvert
+    SUBDIR += p5-Lingua-ZH-HanDetect
     SUBDIR += p5-Lingua-ZH-Keywords
     SUBDIR += p5-Lingua-ZH-Numbers
     SUBDIR += p5-Lingua-ZH-Summarize

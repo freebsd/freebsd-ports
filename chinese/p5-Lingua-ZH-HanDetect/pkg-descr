@@ -1,0 +1,12 @@
+Lingua::ZH::HanDetect uses statistical measures to test a text string
+to see if it's in Traditional or Simplified Chinese, as well as which
+encoding it is in.
+
+If the string does not contain Chinese characters, both the encoding
+and variant values will be set to the empty string.
+
+This module is needed because the various encodings for Chinese text
+tend to occupy the similar byte ranges, rendering Encode::Guess
+ineffective.
+
+WWW:	http://search.cpan.org/dist/Lingua-ZH-HanDetect/
