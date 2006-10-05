@@ -113,8 +113,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>php4</name>
 	<name>php5</name>
-	<range><lt>4.4.5</lt></range>
-	<range><ge>5</ge><lt>5.1.7</lt></range>
+	<range><ge>0</ge></range>
       </package>
       <package>
 	<name>php4-cli</name>
@@ -167,6 +166,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-10-02</discovery>
       <entry>2006-10-05</entry>
+      <modified>2006-10-05</modified>
     </dates>
   </vuln>
 
@@ -176,7 +176,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>phpbb</name>
 	<name>zh-phpbb-tw</name>
-	<range><lt>2.0.22</lt></range>
+	<range><ge>0</ge></range>
       </package>
     </affects>
     <description>
@@ -206,6 +206,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-12</discovery>
       <entry>2006-10-04</entry>
+      <modified>2006-10-05</modified>
     </dates>
   </vuln>
 
@@ -830,8 +831,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>zope</name>
-	<range><ge>2.7.0</ge><lt>2.7.9_1</lt></range>
-	<range><ge>2.8.0</ge><lt>2.8.8_1</lt></range>
+	<range><ge>0</ge></range>
       </package>
     </affects>
     <description>
@@ -855,6 +855,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-08-21</discovery>
       <entry>2006-09-22</entry>
+      <modified>2006-10-05</modified>
     </dates>
   </vuln>
 
