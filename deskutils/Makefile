@@ -130,6 +130,7 @@
     SUBDIR += plans
     SUBDIR += preferences.app
     SUBDIR += py-dosage
+    SUBDIR += pybookreader
     SUBDIR += pypanel
     SUBDIR += recoll
     SUBDIR += remember.el
