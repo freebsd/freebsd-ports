@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION:S|.r4.3|-rc4-3|}
 
 MAINTAINER=	nivit@email.it
 COMMENT=	Tuner for streaming internet radio and TV
