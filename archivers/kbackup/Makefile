@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kbackup
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	archivers kde
 MASTER_SITES=	http://www.kde-apps.org/content/files/
 DISTNAME=	44998-${PORTNAME}-${PORTVERSION}
