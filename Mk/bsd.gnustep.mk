@@ -64,7 +64,7 @@
 #	call install target with GNUstep.sh sourced in the current shell
 #
 # USE_GNUSTEP_MAKE=yes
-#       require GNUstep.sh for build and install
+#	require GNUstep.sh for build and install
 #
 # USE_GNUSTEP_SYSTEM_LIBS=	Renaissance:x11-toolkits/renaissance
 #	depends on a shared lib in System directrory
