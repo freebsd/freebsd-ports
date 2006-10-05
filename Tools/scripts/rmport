@@ -144,7 +144,7 @@ check_dep()
 		fi
 
 		# check if some Makefiles mention the port to be deleted
-		portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]+|$)"
+		portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]|/|$)"
 		r="`find ${PORTSDIR} -mindepth 2 -maxdepth 3 \( -name "Makefile*" -or -path "*Mk/*.mk" \) \
 			|xargs grep -EH "${portdir_grep}" \
 			|grep -vE "^(${rmcatports})" || :`"
