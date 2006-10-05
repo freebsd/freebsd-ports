@@ -19,6 +19,8 @@
 %%PYTHON_SITELIBDIR%%/gst-0.10/gst/interfaces.so
 %%PYTHON_SITELIBDIR%%/pygst.pth
 %%PYTHON_SITELIBDIR%%/pygst.py
+%%PYTHON_SITELIBDIR%%/pygst.pyc
+%%PYTHON_SITELIBDIR%%/pygst.pyo
 libdata/pkgconfig/gst-python-0.10.pc
 share/gst-python/0.10/defs/base.defs
 share/gst-python/0.10/defs/gst-extrafuncs.defs
