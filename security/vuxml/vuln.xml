@@ -34,6 +34,69 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="edabe438-542f-11db-a5ae-00508d6a62df">
+    <topic>php -- open_basedir Race Condition Vulnerability</topic>
+    <affects>
+      <package>
+	<name>php4</name>
+	<name>php5</name>
+	<range><lt>4.4.5</lt></range>
+	<range><ge>5</ge><lt>5.1.7</lt></range>
+      </package>
+      <package>
+	<name>php4-cli</name>
+	<name>php5-cli</name>
+	<name>php4-cgi</name>
+	<name>php5-cgi</name>
+	<name>php4-dtc</name>
+	<name>php5-dtc</name>
+	<name>php4-horde</name>
+	<name>php5-horde</name>
+	<name>php4-nms</name>
+	<name>php5-nms</name>
+	<name>mod_php4</name>
+	<name>mod_php5</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports:</p>
+	<blockquote cite="http://www.hardened-php.net/advisory_082006.132.html">
+	  <p>PHP's open_basedir feature is meant to disallow scripts to
+	    access files outside a set of configured base directories.
+	    The checks for this are placed within PHP functions dealing
+	    with files before the actual open call is performed.</p>
+	  <p>Obviously there is a little span of time between the check
+	    and the actual open call. During this time span the checked
+	    path could have been altered and point to a file that is
+	    forbidden to be accessed due to open_basedir restrictions.</p>
+	  <p>Because the open_basedir restrictions often not call PHP
+	    functions but 3rd party library functions to actually open
+	    the file it is impossible to close this time span in a
+	    general way. It would only be possible to close it when PHP
+	    handles the actual opening on it's own.</p>
+	  <p>While it seems hard to change the path during this little
+	    time span it is very simple with the use of the symlink()
+	    function combined with a little trick. PHP's symlink()
+	    function ensures that source and target of the symlink
+	    operation are allowed by open_basedir restrictions (and
+	    safe_mode). However it is possible to point a symlink to
+	    any file by the use of mkdir(), unlink() and at least two
+	    symlinks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hardened-php.net/advisory_082006.132.html</url>
+      <url>http://secunia.com/advisories/22235/</url>
+    </references>
+    <dates>
+      <discovery>2006-10-02</discovery>
+      <entry>2006-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86526ba4-53c8-11db-8f1a-000a48049292">
     <topic>phpbb -- NULL byte injection vulnerability</topic>
     <affects>
