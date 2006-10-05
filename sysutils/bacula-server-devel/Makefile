@@ -7,6 +7,7 @@
 
 PORTNAME=	bacula
 DISTVERSION=	1.39.24.20061002
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -162,16 +163,8 @@ CONFIGURE_ARGS+=	--with-openssl
 .if defined(WITH_CLIENT_ONLY)
 MAN8=bacula-fd.8 bconsole.8
 .else
-MAN8=bacula-dir.8 bacula-sd.8 bacula.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 dbcheck.8
-MAN1=bsmtp.1
-.endif
-
-.if defined(WITH_GNOMECONSOLE)
-	MAN1+=bacula-console-gnome.1
-.endif
-
-.if defined(WITH_WXCONSOLE)
-	MAN1+=bacula-wxconsole.1
+MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
+MAN1=bsmtp.1 bacula-console-gnome.1 bacula-tray-monitor.1 bacula-wxconsole.1
 .endif
 
 pre-everything::
@@ -224,11 +217,9 @@ pre-install:
 		${ECHO_CMD} "${BACULA_DIR} already exists"; \
 	fi
 
-.if !defined(WITH_CLIENT_ONLY)
 # 	Extend /etc/services and install UID/GID
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-.endif
 
 post-install:
 .if defined(MAN8)

@@ -20,5 +20,12 @@ case "$2" in
 	if [ -d ${BACULA_DIR} ]; then
 	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port"
 	fi
+
+	# Note how to delete UID/GID
+	USER=bacula
+	GROUP=${USER}
+	if pw groupshow "${USER}" 2>/dev/null 1>&2; then
+	    echo "To delete Bacula group permanently, use 'pw groupdel ${GROUP}'"
+	fi
         ;;
 esac
