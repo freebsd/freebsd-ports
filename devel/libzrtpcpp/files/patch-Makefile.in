@@ -1,0 +1,11 @@
+--- Makefile.in	Wed Oct  4 22:52:54 2006
++++ Makefile.in	Wed Oct  4 22:54:10 2006
+@@ -219,7 +219,7 @@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = src
+ EXTRA_DIST = README AUTHORS COPYING *.pc* *.spec* autoconf/* reconfig
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)data/pkgconfig
+ pkgconfig_DATA = libzrtpcpp.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

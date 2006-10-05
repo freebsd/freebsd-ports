@@ -595,6 +595,7 @@
     SUBDIR += libvc
     SUBDIR += libxalloc
     SUBDIR += libytnef
+    SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
     SUBDIR += lincvs
