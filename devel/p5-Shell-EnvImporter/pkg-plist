@@ -1,0 +1,18 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/EnvImporter/.packlist
+%%SITE_PERL%%/Shell/EnvImporter.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell.pm
+%%SITE_PERL%%/Shell/EnvImporter/Result.pm
+%%SITE_PERL%%/Shell/EnvImporter/Change.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/sh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/perl.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/tcsh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/zsh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/ksh.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/bash.pm
+%%SITE_PERL%%/Shell/EnvImporter/Shell/csh.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/EnvImporter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/EnvImporter
+@dirrm %%SITE_PERL%%/Shell/EnvImporter/Shell
+@dirrm %%SITE_PERL%%/Shell/EnvImporter
+@dirrmtry %%SITE_PERL%%/Shell
