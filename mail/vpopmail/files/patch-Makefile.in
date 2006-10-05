@@ -1,6 +1,16 @@
---- Makefile.in.orig	Sat Sep 17 02:37:34 2005
-+++ Makefile.in	Thu Jun 15 16:58:59 2006
-@@ -101,7 +101,6 @@
+diff -urN -x .svn ../../vendor/vpopmail/Makefile.in ./Makefile.in
+--- ../../vendor/vpopmail/Makefile.in	Tue Oct  3 17:40:12 2006
++++ ./Makefile.in	Wed Oct  4 15:48:16 2006
+@@ -97,7 +97,7 @@
+ 
+ COMMONSOURCES = vpopmail.c md5.c bigdir.c vauth.c file_lock.c vpalias.c seek.c vlimits.c maildirquota.c
+ 
+-CONFIG_CLEAN_FILES = vauth.c
++CONFIG_CLEAN_FILES = vauth.c cdb/conf-cc cdb/conf-ld cdb/compile cdb/load
+ 
+ MYSQLCONF = $(DESTDIR)@vpopmaildir@/etc/vpopmail.mysql
+ VLIMITS = $(DESTDIR)@vpopmaildir@/etc/vlimits.default
+@@ -106,7 +106,6 @@
  
  libvpopmail_a_SOURCES = $(COMMONSOURCES) 
  libvpopmail_a_LIBADD = cdb/*.o
@@ -8,7 +18,7 @@
  
  vpopmailbindir = @vpopmaildir@/bin
  vpopmailbin_PROGRAMS = vchkpw vdelivermail clearopensmtp vadddomain \
-@@ -861,6 +860,8 @@
+@@ -880,6 +879,8 @@
  	echo "-L@vpopmaildir@/lib -lvpopmail @auth_libs@ @LIBS@" > \
  	 $(DESTDIR)@vpopmaildir@/etc/lib_deps
  
@@ -17,7 +27,7 @@
  	if test ! -r $(VLIMITS); then \
  	  $(INSTALL) -o @vpopuser@ -m 0644 -g @vpopgroup@ \
  	    vlimits.default $(VLIMITS); \
-@@ -878,7 +879,6 @@
+@@ -897,7 +898,6 @@
  	    echo "# settings for each line:" >> $(MYSQLCONF); \
  	    echo "# host|port|user|password|database" >> $(MYSQLCONF); \
  	    echo "#" >> $(MYSQLCONF); \

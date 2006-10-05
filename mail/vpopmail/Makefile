@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.13
+PORTVERSION=	5.4.17
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -76,6 +76,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 # WITH_MYSQL_LOG - enable auth logging to a MySQL database [deprecateed]
 # WITH_PGSQL_LOG - enable auth logging to a PostgreSQL database [deprecated]
 # WITH_SQL_LOG  - enable auth logging to the selected SQL database
+# WITH_SQL_LOG_REMOVE_DELETED - remove log entries for deleted users/domains
 # QMAIL_PREFIX  - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
@@ -187,10 +188,17 @@ WITH_SQL_LOG=		yes
 
 .if defined(WITH_SQL_LOG)
 CONFIGURE_ARGS+=	--enable-sql-logging
+.if defined(WITH_SQL_LOG_REMOVE_DELETED)
+EXTRA_PATCHES+=	${FILESDIR}/sql-remove-deleted.patch
+.endif
 .endif
 
 .if defined(WITH_SMTP_AUTH_PATCH)
 EXTRA_PATCHES+=	${FILESDIR}/vchkpw-smtp-auth.patch
+.endif
+
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/Makefile.in-noportdocs.patch
 .endif
 
 .include <bsd.port.pre.mk>
@@ -289,6 +297,12 @@ CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
 			--enable-spam-threshold=${SPAM_THRESHOLD}
 .endif
 
+DOCS=		README README.filelocking \
+		README.ipaliasdomains README.ldap README.mysql \
+		README.oracle README.pgsql README.quotas \
+		README.roamingusers README.sybase README.vlimits \
+		README.vpopmaild README.vpopmaild README.vqmaillocal
+
 #
 # This port doesn't honour PREFIX, it honours vpopmail's home directory.
 # Since we create vpopmail if it doesn't exist, we set it so that it
@@ -373,5 +387,8 @@ post-install:
 	${CHMOD} ug+s ${PREFIX}/vpopmail/bin/vchkpw
 .endif
 	@${TOUCH} ${QMAIL_PREFIX}/control/locals
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${PREFIX}/vpopmail/doc/
+.endif
 
 .include <bsd.port.post.mk>
