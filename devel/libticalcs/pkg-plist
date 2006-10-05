@@ -15,7 +15,7 @@ include/tilp/update.h
 lib/libticalcs.a
 lib/libticalcs.la
 lib/libticalcs.so
-lib/libticalcs.so.9
+lib/libticalcs.so.10
 libdata/pkgconfig/ticalcs.pc
 share/locale/fr/LC_MESSAGES/libticalcs.mo
 @dirrmtry include/tilp
