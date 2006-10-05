@@ -1,0 +1,22 @@
+# New ports collection makefile for:	p5-Lingua-ZH-HanDetect
+# Date created:		2006-09-25
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Lingua-ZH-HanDetect
+PORTVERSION=	0.04
+CATEGORIES=	chinese perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Lingua
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	Guess Chinese text\'s variant and encoding
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Lingua::ZH::HanDetect.3
+
+.include <bsd.port.mk>
