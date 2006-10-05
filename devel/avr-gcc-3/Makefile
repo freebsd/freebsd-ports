@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gcc
+PORTNAME=	gcc-3
 PORTVERSION=	3.4.6
-PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
