@@ -36,7 +36,7 @@ OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
 .if defined(WITH_COMPILER_LINKS)
 CCLINKDIR?=		libexec/distcc
 PLIST_DIRS=		${CCLINKDIR}
-GNU_COMPILERS=		295 32 33 34 40 41
+GNU_COMPILERS=		295 32 33 34 40 41 42
 DISTCC_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH} == "i386"
 DISTCC_COMPILERS+=	icc icpc
