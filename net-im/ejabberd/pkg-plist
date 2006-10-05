@@ -9,6 +9,7 @@ etc/%%PORTNAME%%/%%PORTNAME%%.inetrc.example
 @exec [ ! -f %D/etc/%%PORTNAME%%/%%PORTNAME%%.inetrc ] && cp %D/etc/%%PORTNAME%%/%%PORTNAME%%.inetrc.example %D/etc/%%PORTNAME%%/%%PORTNAME%%.inetrc
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.app
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_admin.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_app.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_auth.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_auth_anonymous.beam
@@ -38,6 +39,9 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_update.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web_admin.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_zlib.beam
+%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_odbc.beam
+%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_odbc_sup.beam
+%%ODBC%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/odbc_queries.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ELDAPv3.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/XmppAddr.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/acl.beam
@@ -48,6 +52,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_digest.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_plain.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejd2odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_filter.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/extauth.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_iq_handler.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_mod.beam
@@ -97,6 +102,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/expat_erl.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/iconv_erl.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/stringprep_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/tls_drv.so
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/cs.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/de.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/es.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/fr.msg
@@ -105,27 +111,28 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/pl.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/pt-br.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/pt.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ru.msg
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/sk.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/sv.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/uk.msg
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/dev.tex
+%%PORTDOCS%%%%DOCSDIR%%/dev.html
 %%PORTDOCS%%%%DOCSDIR%%/disco.png
 %%PORTDOCS%%%%DOCSDIR%%/discorus.png
 %%PORTDOCS%%%%DOCSDIR%%/features.tex
-%%PORTDOCS%%%%DOCSDIR%%/features2.tex
+%%PORTDOCS%%%%DOCSDIR%%/features.html
 %%PORTDOCS%%%%DOCSDIR%%/flow.dot
 %%PORTDOCS%%%%DOCSDIR%%/guide.html
 %%PORTDOCS%%%%DOCSDIR%%/guide.tex
-%%PORTDOCS%%%%DOCSDIR%%/guide.tex.flc
-%%PORTDOCS%%%%DOCSDIR%%/hevea.sty
 %%PORTDOCS%%%%DOCSDIR%%/introduction.tex
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/release_notes_%%PORTVERSION%%.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.8.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_1.0.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/version.tex
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
