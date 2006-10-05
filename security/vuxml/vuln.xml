@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ae7124ff-547c-11db-8f1a-000a48049292">
+    <topic>openldap -- slapd acl selfwrite Security Issue</topic>
+    <affects>
+      <package>
+	<name>openldap-server</name>
+	<name>openldap-sasl-server</name>
+	<range><lt>2.3.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Howard Chu reports:</p>
+	<blockquote cite="http://www.openldap.org/its/index.cgi/Software%20Bugs?id=4587">
+	  <p>An ACL of the form 'access to dn.subtree="ou=groups,
+	    dc=example,dc=com" attr=member by * selfwrite' is intended
+	    to only allow users to add/delete their own DN to the
+	    target attribute. Currently it allows any DNs to be
+	    modified.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>19832</bid>
+      <cvename>CVE-2006-4600</cvename>
+      <url>http://www.openldap.org/its/index.cgi/Software%20Bugs?id=4587</url>
+      <url>http://www.openldap.org/lists/openldap-announce/200608/msg00000.html</url>
+      <url>http://secunia.com/advisories/21721</url>
+      <url>http://securitytracker.com/alerts/2006/Sep/1016783.html</url>
+    </references>
+    <dates>
+      <discovery>2006-06-14</discovery>
+      <entry>2006-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5a39a22e-5478-11db-8f1a-000a48049292">
     <topic>mono -- "System.CodeDom.Compiler" Insecure Temporary Creation</topic>
     <affects>
