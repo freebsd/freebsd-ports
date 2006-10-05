@@ -5,56 +5,88 @@
 # $FreeBSD$
 
 PORTNAME=	coda
-PORTVERSION=	${CODA_VERSION}
+PORTVERSION=	6.1.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
+# as of 5 Oct 2006 the archive is not present on ftp.wu-wien.ac.at
+# but maybe it'll appear there soon
+MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/ \
+		ftp://ftp.planetmirror.com/pub/coda/src/ \
+		ftp://ftp.nctu.edu.tw/mirror/Coda/src/ \
+		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/
 PKGNAMESUFFIX=	-${CODA_SUITE}
-DISTNAME=	coda-${PORTVERSION}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
-		rpc2.6:${PORTSDIR}/devel/rpc2 \
+		rpc2.8:${PORTSDIR}/devel/rpc2 \
 		rvm.3:${PORTSDIR}/devel/rvm
 
-CONFLICTS=	coda-server-5.*
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 ALL_TARGET=	coda
 INSTALL_TARGET=	${CODA_SUITE}-install
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-
 CODA_SUITE?=	server
-CODA_VERSION?=	6.0.7
 
 .if ${CODA_SUITE} == server
-MAN5=		vicetab.5	passwd.coda.5
-MAN8=		pdbtool.8	auth2.8	initpw.8 norton.8
+MAN5=	backuplogs.5 \
+	dumpfile.5 \
+	dumplist.5 \
+	maxgroupid.5 \
+	passwd.coda.5 \
+	servers.5 \
+	vicetab.5 \
+	volumelist.5 \
+	vrdb.5
+MAN8=	auth2.8 \
+	backup.8 \
+	bldvldb.sh.8 \
+	codasrv.8 \
+	createvol_rep.8 \
+	initpw.8 \
+	merge.8 \
+	norton.8 \
+	pdbtool.8 \
+	purgevol_rep.8 \
+	readdump.8 \
+	startserver.8 \
+	updateclnt.8 \
+	updatesrv.8 \
+	vice-setup.8 \
+	volutil.8 \
+	vutil.8
 .else
-MAN1=	clog.1	cpasswd.1	ctokens.1	cunlog.1 \
-	repair.1	cfs.1	cmon.1	coda_replay.1 \
-	hoard.1	spy.1
-MAN8=	au.8	venus.8
+MAN1=	au.1 \
+	cfs.1 \
+	clog.1 \
+	cmon.1 \
+	coda_replay.1 \
+	cpasswd.1 \
+	ctokens.1 \
+	cunlog.1 \
+	hoard.1 \
+	mkcodabf.1 \
+	repair.1 \
+	spy.1
+MAN8=	venus-setup.8 \
+	venus.8 \
+	volmunge.8
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${CODA_SUITE} == client
 .if ${OSVERSION} < 501106
-IGNORE=		lacks kernel support on this version of FreeBSD
+IGNORE=	lacks kernel support on this version of FreeBSD
 .endif
-.if ${OSVERSION} >= 600000
-IGNORE=		makes a kernel panic on this version of FreeBSD
+# this needs testing with the new version (6.1.1)
+#.if ${OSVERSION} >= 600000
+#IGNORE=	makes a kernel panic on this version of FreeBSD
+#.endif
 .endif
-.endif
-
-.if ${OSVERSION} > 505000
-BROKEN=		does not compile
-.endif
-
-DEPRECATED=	compiles neither on 5-STABLE nor 6-STABLE; current version is quite old
-EXPIRATION_DATE=	2006-10-11
 
 .include <bsd.port.post.mk>
