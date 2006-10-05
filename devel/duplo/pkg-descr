@@ -1,0 +1,4 @@
+Duplicated source code blocks can harm maintainability of software systems.
+Duplo is a tool to find duplicated code blocks in large C/C++/Java systems.
+
+WWW: http://duplo.giants.ch/
