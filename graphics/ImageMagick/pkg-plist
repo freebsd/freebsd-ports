@@ -448,6 +448,7 @@ libdata/pkgconfig/Wand.pc
 %%DATADIR%%/config/coder.xml
 %%DATADIR%%/config/log.xml
 %%DATADIR%%/config/magic.xml
+%%DATADIR%%/config/thresholds.xml
 %%DATADIR%%-%%PORTVERSION%%/LICENSE
 %%DATADIR%%-%%PORTVERSION%%/ChangeLog
 %%DATADIR%%-%%PORTVERSION%%/NEWS
