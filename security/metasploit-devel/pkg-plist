@@ -1,0 +1,1257 @@
+bin/msfcli
+bin/msfconsole
+bin/msfd
+bin/msfencode
+bin/msflicense
+bin/msfopcode
+bin/msfpayload
+bin/msfpescan
+bin/msfweb
+bin/msfwx
+%%DATADIR%%/BUGS.txt
+%%DATADIR%%/README
+%%DATADIR%%/VERSION
+%%DATADIR%%/data/meterpreter/ext_server_priv.dll
+%%DATADIR%%/data/meterpreter/ext_server_stdapi.dll
+%%DATADIR%%/data/meterpreter/metsrv.dll
+%%DATADIR%%/data/msfpescan/identify.txt
+%%DATADIR%%/data/msfweb/exploits.rhtml
+%%DATADIR%%/data/msfweb/favicon.ico
+%%DATADIR%%/data/msfweb/images/aix.gif
+%%DATADIR%%/data/msfweb/images/amiga.gif
+%%DATADIR%%/data/msfweb/images/any.gif
+%%DATADIR%%/data/msfweb/images/be.gif
+%%DATADIR%%/data/msfweb/images/bsd.gif
+%%DATADIR%%/data/msfweb/images/cisco.gif
+%%DATADIR%%/data/msfweb/images/hpux.gif
+%%DATADIR%%/data/msfweb/images/irix.gif
+%%DATADIR%%/data/msfweb/images/linux.gif
+%%DATADIR%%/data/msfweb/images/logo.jpg
+%%DATADIR%%/data/msfweb/images/novell.gif
+%%DATADIR%%/data/msfweb/images/os2.gif
+%%DATADIR%%/data/msfweb/images/osx.gif
+%%DATADIR%%/data/msfweb/images/sun.gif
+%%DATADIR%%/data/msfweb/images/unknown.gif
+%%DATADIR%%/data/msfweb/images/win32.gif
+%%DATADIR%%/data/msfweb/index.rhtml
+%%DATADIR%%/data/msfweb/msfweb_common.rb
+%%DATADIR%%/data/msfweb/payloads.rhtml
+%%DATADIR%%/data/msfweb/style.css
+%%DATADIR%%/data/msfwx/auxiliary.xpm
+%%DATADIR%%/data/msfwx/encoders.xpm
+%%DATADIR%%/data/msfwx/exploits.xpm
+%%DATADIR%%/data/msfwx/mod_exploit.xpm
+%%DATADIR%%/data/msfwx/mod_payload.xpm
+%%DATADIR%%/data/msfwx/modules.xpm
+%%DATADIR%%/data/msfwx/msfwx.xpm
+%%DATADIR%%/data/msfwx/nops.xpm
+%%DATADIR%%/data/msfwx/payloads.xpm
+%%DATADIR%%/data/passivex/passivex.dll
+%%DATADIR%%/data/sql/postgres.sql
+%%DATADIR%%/data/sql/sqlite.sql
+%%DATADIR%%/data/sql/sqlite2.db
+%%DATADIR%%/data/sql/sqlite3.db
+%%DATADIR%%/data/templates/template.exe
+%%DATADIR%%/data/vncdll.dll
+%%DATADIR%%/documentation/COPYING
+%%DATADIR%%/documentation/ChangeLog
+%%DATADIR%%/documentation/LICENSE
+%%DATADIR%%/documentation/database.txt
+%%DATADIR%%/documentation/developers_guide.pdf
+%%DATADIR%%/documentation/msfopcode.txt
+%%DATADIR%%/documentation/samples/framework/dump_module_info.rb
+%%DATADIR%%/documentation/samples/framework/encode_file.rb
+%%DATADIR%%/documentation/samples/framework/enumerate_modules.rb
+%%DATADIR%%/documentation/samples/framework/run_exploit_using_base.rb
+%%DATADIR%%/documentation/samples/framework/run_exploit_using_core.rb
+%%DATADIR%%/documentation/samples/modules/encoders/sample.rb
+%%DATADIR%%/documentation/samples/modules/exploits/sample.rb
+%%DATADIR%%/documentation/samples/modules/nops/sample.rb
+%%DATADIR%%/documentation/samples/modules/payloads/singles/sample.rb
+%%DATADIR%%/external/source/meterpreter/output/client/metcli.exe
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_client_fs.dll
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_client_net.dll
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_client_process.dll
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_client_sys.dll
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_server_fs.dll
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_server_net.dll
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_server_process.dll
+%%DATADIR%%/external/source/meterpreter/output/extensions/ext_server_sys.dll
+%%DATADIR%%/external/source/meterpreter/output/server/metsrv.dll
+%%DATADIR%%/external/source/meterpreter/source/client/console.c
+%%DATADIR%%/external/source/meterpreter/source/client/console.h
+%%DATADIR%%/external/source/meterpreter/source/client/local_dispatch.c
+%%DATADIR%%/external/source/meterpreter/source/client/metcli.c
+%%DATADIR%%/external/source/meterpreter/source/client/metcli.def
+%%DATADIR%%/external/source/meterpreter/source/client/metcli.h
+%%DATADIR%%/external/source/meterpreter/source/client/module.c
+%%DATADIR%%/external/source/meterpreter/source/client/module.h
+%%DATADIR%%/external/source/meterpreter/source/client/remote_dispatch.c
+%%DATADIR%%/external/source/meterpreter/source/common/args.c
+%%DATADIR%%/external/source/meterpreter/source/common/args.h
+%%DATADIR%%/external/source/meterpreter/source/common/base.c
+%%DATADIR%%/external/source/meterpreter/source/common/base.h
+%%DATADIR%%/external/source/meterpreter/source/common/base_dispatch.c
+%%DATADIR%%/external/source/meterpreter/source/common/buffer.c
+%%DATADIR%%/external/source/meterpreter/source/common/buffer.h
+%%DATADIR%%/external/source/meterpreter/source/common/channel.c
+%%DATADIR%%/external/source/meterpreter/source/common/channel.h
+%%DATADIR%%/external/source/meterpreter/source/common/common.c
+%%DATADIR%%/external/source/meterpreter/source/common/common.h
+%%DATADIR%%/external/source/meterpreter/source/common/core.c
+%%DATADIR%%/external/source/meterpreter/source/common/core.h
+%%DATADIR%%/external/source/meterpreter/source/common/crypto/xor.c
+%%DATADIR%%/external/source/meterpreter/source/common/crypto/xor.h
+%%DATADIR%%/external/source/meterpreter/source/common/crypto.h
+%%DATADIR%%/external/source/meterpreter/source/common/linkage.h
+%%DATADIR%%/external/source/meterpreter/source/common/remote.c
+%%DATADIR%%/external/source/meterpreter/source/common/remote.h
+%%DATADIR%%/external/source/meterpreter/source/common/scheduler.c
+%%DATADIR%%/external/source/meterpreter/source/common/scheduler.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/boiler/client/boiler.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/boiler/server/boiler.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/priv.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/server/fs.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/server/fs.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/server/passwd.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/server/passwd.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/server/precomp.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/server/priv.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/priv/server/timestomp.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/fs/dir.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/fs/file.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/fs/fs.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/fs/fs_util.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/general.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net/config/interface.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net/config/route.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net/net.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net/net.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net/socket/tcp.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/precomp.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/resource/hook.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/resource/hook.dll
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/resource/resource.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/resource/stdapi.rc
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/stdapi.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/config/config.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/config/config.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/eventlog/eventlog.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/eventlog/eventlog.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/power/power.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/power/power.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/image.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/in-mem-exe.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/in-mem-exe.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/memory.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/process.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/process.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/thread.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process/util.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/registry/registry.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/registry/registry.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/sys.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/ui/idle.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/ui/keyboard.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/ui/mouse.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/ui/ui.c
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/ui/ui.h
+%%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/stdapi.h
+%%DATADIR%%/external/source/meterpreter/source/server/libloader.c
+%%DATADIR%%/external/source/meterpreter/source/server/libloader.h
+%%DATADIR%%/external/source/meterpreter/source/server/metsrv.c
+%%DATADIR%%/external/source/meterpreter/source/server/metsrv.def
+%%DATADIR%%/external/source/meterpreter/source/server/metsrv.h
+%%DATADIR%%/external/source/meterpreter/source/server/metsrv_test.c
+%%DATADIR%%/external/source/meterpreter/source/server/metsrv_test.exe
+%%DATADIR%%/external/source/meterpreter/source/server/metsrv_test.obj
+%%DATADIR%%/external/source/meterpreter/source/server/remote_dispatch.c
+%%DATADIR%%/external/source/meterpreter/source/server/remote_dispatch.h
+%%DATADIR%%/external/source/meterpreter/workspace/common/common.dsp
+%%DATADIR%%/external/source/meterpreter/workspace/ext_server_priv/ext_server_priv.dsp
+%%DATADIR%%/external/source/meterpreter/workspace/ext_server_stdapi/ext_server_stdapi.dsp
+%%DATADIR%%/external/source/meterpreter/workspace/metcli/metcli.dsp
+%%DATADIR%%/external/source/meterpreter/workspace/meterpreter.dsw
+%%DATADIR%%/external/source/meterpreter/workspace/metsrv/metsrv.dsp
+%%DATADIR%%/external/source/passivex/CPassiveX.cpp
+%%DATADIR%%/external/source/passivex/CPassiveX.h
+%%DATADIR%%/external/source/passivex/HttpTunnel.cpp
+%%DATADIR%%/external/source/passivex/HttpTunnel.h
+%%DATADIR%%/external/source/passivex/PassiveX.bin
+%%DATADIR%%/external/source/passivex/PassiveX.cpp
+%%DATADIR%%/external/source/passivex/PassiveX.idl
+%%DATADIR%%/external/source/passivex/PassiveXLib.h
+%%DATADIR%%/external/source/passivex/passivex.def
+%%DATADIR%%/external/source/passivex/passivex.dsp
+%%DATADIR%%/external/source/passivex/passivex.dsw
+%%DATADIR%%/external/source/passivex/passivex.rc
+%%DATADIR%%/external/source/passivex/resource.h
+%%DATADIR%%/external/source/vncdll/BUILDING.txt
+%%DATADIR%%/external/source/vncdll/LICENCE.txt
+%%DATADIR%%/external/source/vncdll/README.txt
+%%DATADIR%%/external/source/vncdll/REALVNC.README.txt
+%%DATADIR%%/external/source/vncdll/REALVNC.README_BINARY.txt
+%%DATADIR%%/external/source/vncdll/Xregion/Region.c
+%%DATADIR%%/external/source/vncdll/Xregion/Xregion.dsp
+%%DATADIR%%/external/source/vncdll/Xregion/Xregion.h
+%%DATADIR%%/external/source/vncdll/Xregion/Xregion.vcproj
+%%DATADIR%%/external/source/vncdll/Xregion/region.h
+%%DATADIR%%/external/source/vncdll/rdr/Exception.h
+%%DATADIR%%/external/source/vncdll/rdr/FdInStream.cxx
+%%DATADIR%%/external/source/vncdll/rdr/FdInStream.h
+%%DATADIR%%/external/source/vncdll/rdr/FdOutStream.cxx
+%%DATADIR%%/external/source/vncdll/rdr/FdOutStream.h
+%%DATADIR%%/external/source/vncdll/rdr/FixedMemOutStream.h
+%%DATADIR%%/external/source/vncdll/rdr/InStream.cxx
+%%DATADIR%%/external/source/vncdll/rdr/InStream.h
+%%DATADIR%%/external/source/vncdll/rdr/Makefile.in
+%%DATADIR%%/external/source/vncdll/rdr/MemInStream.h
+%%DATADIR%%/external/source/vncdll/rdr/MemOutStream.h
+%%DATADIR%%/external/source/vncdll/rdr/NullOutStream.cxx
+%%DATADIR%%/external/source/vncdll/rdr/NullOutStream.h
+%%DATADIR%%/external/source/vncdll/rdr/OutStream.h
+%%DATADIR%%/external/source/vncdll/rdr/ZlibInStream.cxx
+%%DATADIR%%/external/source/vncdll/rdr/ZlibInStream.h
+%%DATADIR%%/external/source/vncdll/rdr/ZlibOutStream.cxx
+%%DATADIR%%/external/source/vncdll/rdr/ZlibOutStream.h
+%%DATADIR%%/external/source/vncdll/rdr/rdr.dsp
+%%DATADIR%%/external/source/vncdll/rdr/rdr.vcproj
+%%DATADIR%%/external/source/vncdll/rdr/types.h
+%%DATADIR%%/external/source/vncdll/rfb/Makefile.in
+%%DATADIR%%/external/source/vncdll/rfb/d3des.c
+%%DATADIR%%/external/source/vncdll/rfb/d3des.h
+%%DATADIR%%/external/source/vncdll/rfb/rfbproto.h
+%%DATADIR%%/external/source/vncdll/rfb/vncauth.c
+%%DATADIR%%/external/source/vncdll/rfb/vncauth.h
+%%DATADIR%%/external/source/vncdll/rfb/zrleDecode.h
+%%DATADIR%%/external/source/vncdll/rfb/zrleEncode.h
+%%DATADIR%%/external/source/vncdll/winvnc/VNC DLL Injection.sln
+%%DATADIR%%/external/source/vncdll/winvnc/VNC DLL Injection.suo
+%%DATADIR%%/external/source/vncdll/winvnc/history.txt
+%%DATADIR%%/external/source/vncdll/winvnc/omnithread/omnithread/nt.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/omnithread/omnithread/nt.h
+%%DATADIR%%/external/source/vncdll/winvnc/omnithread/omnithread.dsp
+%%DATADIR%%/external/source/vncdll/winvnc/omnithread/omnithread.h
+%%DATADIR%%/external/source/vncdll/winvnc/vncdll/vncdll.dsp
+%%DATADIR%%/external/source/vncdll/winvnc/vncdll/vncdll.dsw
+%%DATADIR%%/external/source/vncdll/winvnc/vncdll/vncdll.vcproj
+%%DATADIR%%/external/source/vncdll/winvnc/vnchooks/VNCHooks.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/vnchooks/VNCHooks.def
+%%DATADIR%%/external/source/vncdll/winvnc/vnchooks/VNCHooks.h
+%%DATADIR%%/external/source/vncdll/winvnc/vnchooks/resource.h
+%%DATADIR%%/external/source/vncdll/winvnc/vnchooks/vnchooks.dsp
+%%DATADIR%%/external/source/vncdll/winvnc/vnchooks/vnchooks.rc
+%%DATADIR%%/external/source/vncdll/winvnc/vnchooks/vnchooks.vcproj
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/buildtime.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/d3des.c
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/d3des.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/keysymdef.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/minmax.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/animatedmemoryimagesource.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/authenticationpanel.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/clipboardframe.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/descipher.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/icon1.ico
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/optionsframe.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/rfbproto.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/vnc.bmp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/vnccanvas.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/vncviewer.class
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/vncviewer.jar
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/res/winvnc.ico
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/resource.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfb.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbMisc.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbRect.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbRegion.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbRegion_X11.cxx
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbRegion_X11.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbRegion_win32.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbRegion_win32.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbUpdateTracker.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/rfbUpdateTracker.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/stdhdrs.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/stdhdrs.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/tableinitcmtemplate.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/tableinittctemplate.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/tabletranstemplate.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/translate.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/translate.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncabout.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncabout.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncacceptdialog.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncacceptdialog.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncauth.c
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncauth.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncbuffer.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncbuffer.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncclient.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncclient.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncconndialog.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncconndialog.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnccorbaconnect.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncdesktop.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncdesktop.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencodecorre.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencodecorre.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencodehext.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencodehext.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencodemgr.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencoder.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencoder.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencoderre.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencoderre.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencodezrle.cxx
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncencodezrle.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnchttpconnect.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnchttpconnect.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncinsthandler.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncinsthandler.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnckeymap.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnckeymap.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnclog.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnclog.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncmenu.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncmenu.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncpasswd.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncproperties.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncproperties.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncserver.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncserver.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncservice.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncservice.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncsk.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncsockconnect.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vncsockconnect.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnctimedmsgbox.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vnctimedmsgbox.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vsocket.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vsocket.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/vtypes.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/winvnc.cpp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/winvnc.def
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/winvnc.dsp
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/winvnc.h
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/winvnc.rc
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc/winvnc.vcproj
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc.dsw
+%%DATADIR%%/external/source/vncdll/winvnc/winvnc.opt
+%%DATADIR%%/external/source/vncdll/zlib/ChangeLog
+%%DATADIR%%/external/source/vncdll/zlib/FAQ
+%%DATADIR%%/external/source/vncdll/zlib/INDEX
+%%DATADIR%%/external/source/vncdll/zlib/Make_vms.com
+%%DATADIR%%/external/source/vncdll/zlib/Makefile
+%%DATADIR%%/external/source/vncdll/zlib/Makefile.in
+%%DATADIR%%/external/source/vncdll/zlib/Makefile.riscos
+%%DATADIR%%/external/source/vncdll/zlib/README
+%%DATADIR%%/external/source/vncdll/zlib/adler32.c
+%%DATADIR%%/external/source/vncdll/zlib/algorithm.txt
+%%DATADIR%%/external/source/vncdll/zlib/compress.c
+%%DATADIR%%/external/source/vncdll/zlib/configure
+%%DATADIR%%/external/source/vncdll/zlib/crc32.c
+%%DATADIR%%/external/source/vncdll/zlib/deflate.c
+%%DATADIR%%/external/source/vncdll/zlib/deflate.h
+%%DATADIR%%/external/source/vncdll/zlib/descrip.mms
+%%DATADIR%%/external/source/vncdll/zlib/example.c
+%%DATADIR%%/external/source/vncdll/zlib/gzio.c
+%%DATADIR%%/external/source/vncdll/zlib/infblock.c
+%%DATADIR%%/external/source/vncdll/zlib/infblock.h
+%%DATADIR%%/external/source/vncdll/zlib/infcodes.c
+%%DATADIR%%/external/source/vncdll/zlib/infcodes.h
+%%DATADIR%%/external/source/vncdll/zlib/inffast.c
+%%DATADIR%%/external/source/vncdll/zlib/inffast.h
+%%DATADIR%%/external/source/vncdll/zlib/inffixed.h
+%%DATADIR%%/external/source/vncdll/zlib/inflate.c
+%%DATADIR%%/external/source/vncdll/zlib/inftrees.c
+%%DATADIR%%/external/source/vncdll/zlib/inftrees.h
+%%DATADIR%%/external/source/vncdll/zlib/infutil.c
+%%DATADIR%%/external/source/vncdll/zlib/infutil.h
+%%DATADIR%%/external/source/vncdll/zlib/maketree.c
+%%DATADIR%%/external/source/vncdll/zlib/minigzip.c
+%%DATADIR%%/external/source/vncdll/zlib/trees.c
+%%DATADIR%%/external/source/vncdll/zlib/trees.h
+%%DATADIR%%/external/source/vncdll/zlib/uncompr.c
+%%DATADIR%%/external/source/vncdll/zlib/zconf.h
+%%DATADIR%%/external/source/vncdll/zlib/zlib.3
+%%DATADIR%%/external/source/vncdll/zlib/zlib.dsp
+%%DATADIR%%/external/source/vncdll/zlib/zlib.h
+%%DATADIR%%/external/source/vncdll/zlib/zlib.html
+%%DATADIR%%/external/source/vncdll/zlib/zlib.vcproj
+%%DATADIR%%/external/source/vncdll/zlib/zutil.c
+%%DATADIR%%/external/source/vncdll/zlib/zutil.h
+%%DATADIR%%/lib/msf/base/config.rb
+%%DATADIR%%/lib/msf/base/logging.rb
+%%DATADIR%%/lib/msf/base/persistent_storage/flatfile.rb
+%%DATADIR%%/lib/msf/base/persistent_storage.rb
+%%DATADIR%%/lib/msf/base/serializer/readable_text.rb
+%%DATADIR%%/lib/msf/base/sessions/command_shell.rb
+%%DATADIR%%/lib/msf/base/sessions/command_shell.rb.ut.rb
+%%DATADIR%%/lib/msf/base/sessions/meterpreter.rb
+%%DATADIR%%/lib/msf/base/sessions/vncinject.rb
+%%DATADIR%%/lib/msf/base/simple/auxiliary.rb
+%%DATADIR%%/lib/msf/base/simple/buffer.rb
+%%DATADIR%%/lib/msf/base/simple/encoder.rb
+%%DATADIR%%/lib/msf/base/simple/exploit.rb
+%%DATADIR%%/lib/msf/base/simple/framework.rb
+%%DATADIR%%/lib/msf/base/simple/module.rb
+%%DATADIR%%/lib/msf/base/simple/nop.rb
+%%DATADIR%%/lib/msf/base/simple/payload.rb
+%%DATADIR%%/lib/msf/base/simple/statistics.rb
+%%DATADIR%%/lib/msf/base/simple.rb
+%%DATADIR%%/lib/msf/base.rb
+%%DATADIR%%/lib/msf/base.rb.ts.rb
+%%DATADIR%%/lib/msf/core/auxiliary/dos.rb
+%%DATADIR%%/lib/msf/core/auxiliary/recon.rb
+%%DATADIR%%/lib/msf/core/auxiliary.rb
+%%DATADIR%%/lib/msf/core/constants.rb
+%%DATADIR%%/lib/msf/core/data_store.rb
+%%DATADIR%%/lib/msf/core/db.rb
+%%DATADIR%%/lib/msf/core/db_manager.rb
+%%DATADIR%%/lib/msf/core/db_objects.rb
+%%DATADIR%%/lib/msf/core/encoded_payload.rb
+%%DATADIR%%/lib/msf/core/encoder/alphanum.rb
+%%DATADIR%%/lib/msf/core/encoder/nonalpha.rb
+%%DATADIR%%/lib/msf/core/encoder/nonupper.rb
+%%DATADIR%%/lib/msf/core/encoder/xor.rb
+%%DATADIR%%/lib/msf/core/encoder/xor_additive_feedback.rb
+%%DATADIR%%/lib/msf/core/encoder.rb
+%%DATADIR%%/lib/msf/core/encoding/xor.rb
+%%DATADIR%%/lib/msf/core/event_dispatcher.rb
+%%DATADIR%%/lib/msf/core/exceptions.rb
+%%DATADIR%%/lib/msf/core/exceptions.rb.ut.rb
+%%DATADIR%%/lib/msf/core/exploit/arkeia.rb
+%%DATADIR%%/lib/msf/core/exploit/brute.rb
+%%DATADIR%%/lib/msf/core/exploit/brutetargets.rb
+%%DATADIR%%/lib/msf/core/exploit/dcerpc.rb
+%%DATADIR%%/lib/msf/core/exploit/dcerpc.rb.ut.rb
+%%DATADIR%%/lib/msf/core/exploit/egghunter.rb
+%%DATADIR%%/lib/msf/core/exploit/ftp.rb
+%%DATADIR%%/lib/msf/core/exploit/http.rb
+%%DATADIR%%/lib/msf/core/exploit/imap.rb
+%%DATADIR%%/lib/msf/core/exploit/mssql.rb
+%%DATADIR%%/lib/msf/core/exploit/ndmp.rb
+%%DATADIR%%/lib/msf/core/exploit/seh.rb
+%%DATADIR%%/lib/msf/core/exploit/seh.rb.ut.rb
+%%DATADIR%%/lib/msf/core/exploit/smb.rb
+%%DATADIR%%/lib/msf/core/exploit/sunrpc.rb
+%%DATADIR%%/lib/msf/core/exploit/tcp.rb
+%%DATADIR%%/lib/msf/core/exploit/tcp.rb.ut.rb
+%%DATADIR%%/lib/msf/core/exploit/udp.rb
+%%DATADIR%%/lib/msf/core/exploit.rb
+%%DATADIR%%/lib/msf/core/exploit.rb.ut.rb
+%%DATADIR%%/lib/msf/core/exploit_driver.rb
+%%DATADIR%%/lib/msf/core/framework.rb
+%%DATADIR%%/lib/msf/core/handler/bind_tcp.rb
+%%DATADIR%%/lib/msf/core/handler/bind_tcp.rb.ut.rb
+%%DATADIR%%/lib/msf/core/handler/find_port.rb
+%%DATADIR%%/lib/msf/core/handler/find_shell.rb
+%%DATADIR%%/lib/msf/core/handler/find_tag.rb
+%%DATADIR%%/lib/msf/core/handler/none.rb
+%%DATADIR%%/lib/msf/core/handler/passivex.rb
+%%DATADIR%%/lib/msf/core/handler/reverse_tcp.rb
+%%DATADIR%%/lib/msf/core/handler/reverse_tcp.rb.ut.rb
+%%DATADIR%%/lib/msf/core/handler/reverse_tcp_double.rb
+%%DATADIR%%/lib/msf/core/handler.rb
+%%DATADIR%%/lib/msf/core/module/author.rb
+%%DATADIR%%/lib/msf/core/module/author.rb.ut.rb
+%%DATADIR%%/lib/msf/core/module/auxiliary_action.rb
+%%DATADIR%%/lib/msf/core/module/platform.rb
+%%DATADIR%%/lib/msf/core/module/platform_list.rb
+%%DATADIR%%/lib/msf/core/module/platform_list.rb.ut.rb
+%%DATADIR%%/lib/msf/core/module/reference.rb
+%%DATADIR%%/lib/msf/core/module/reference.rb.ut.rb
+%%DATADIR%%/lib/msf/core/module/target.rb
+%%DATADIR%%/lib/msf/core/module/target.rb.ut.rb
+%%DATADIR%%/lib/msf/core/module.rb
+%%DATADIR%%/lib/msf/core/module_manager.rb
+%%DATADIR%%/lib/msf/core/nop.rb
+%%DATADIR%%/lib/msf/core/option_container.rb
+%%DATADIR%%/lib/msf/core/option_container.rb.ut.rb
+%%DATADIR%%/lib/msf/core/payload/single.rb
+%%DATADIR%%/lib/msf/core/payload/stager.rb
+%%DATADIR%%/lib/msf/core/payload/windows/dllinject.rb
+%%DATADIR%%/lib/msf/core/payload/windows/exec.rb
+%%DATADIR%%/lib/msf/core/payload/windows.rb
+%%DATADIR%%/lib/msf/core/payload.rb
+%%DATADIR%%/lib/msf/core/payload_set.rb
+%%DATADIR%%/lib/msf/core/plugin.rb
+%%DATADIR%%/lib/msf/core/plugin_manager.rb
+%%DATADIR%%/lib/msf/core/session/basic.rb
+%%DATADIR%%/lib/msf/core/session/comm.rb
+%%DATADIR%%/lib/msf/core/session/interactive.rb
+%%DATADIR%%/lib/msf/core/session/provider/multi_command_execution.rb
+%%DATADIR%%/lib/msf/core/session/provider/multi_command_shell.rb
+%%DATADIR%%/lib/msf/core/session/provider/single_command_execution.rb
+%%DATADIR%%/lib/msf/core/session/provider/single_command_shell.rb
+%%DATADIR%%/lib/msf/core/session.rb
+%%DATADIR%%/lib/msf/core/session_manager.rb
+%%DATADIR%%/lib/msf/core/session_manager.rb.ut.rb
+%%DATADIR%%/lib/msf/core.rb
+%%DATADIR%%/lib/msf/core.rb.ts.rb
+%%DATADIR%%/lib/msf/sanity.rb
+%%DATADIR%%/lib/msf/ui/banner.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher/auxiliary.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher/core.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher/db.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher/encoder.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher/exploit.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher/nop.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher/payload.rb
+%%DATADIR%%/lib/msf/ui/console/command_dispatcher.rb
+%%DATADIR%%/lib/msf/ui/console/driver.rb
+%%DATADIR%%/lib/msf/ui/console/framework_event_manager.rb
+%%DATADIR%%/lib/msf/ui/console/table.rb
+%%DATADIR%%/lib/msf/ui/console.rb
+%%DATADIR%%/lib/msf/ui/driver.rb
+%%DATADIR%%/lib/msf/ui/web/driver.rb
+%%DATADIR%%/lib/msf/ui/web.rb
+%%DATADIR%%/lib/msf/ui/wx/app.rb
+%%DATADIR%%/lib/msf/ui/wx/constants.rb
+%%DATADIR%%/lib/msf/ui/wx/controls.rb
+%%DATADIR%%/lib/msf/ui/wx/driver.rb
+%%DATADIR%%/lib/msf/ui/wx/frame.rb
+%%DATADIR%%/lib/msf/ui/wx.rb
+%%DATADIR%%/lib/msf/ui.rb
+%%DATADIR%%/lib/rex/arch/sparc.rb
+%%DATADIR%%/lib/rex/arch/sparc.rb.ut.rb
+%%DATADIR%%/lib/rex/arch/x86.rb
+%%DATADIR%%/lib/rex/arch/x86.rb.ut.rb
+%%DATADIR%%/lib/rex/arch.rb
+%%DATADIR%%/lib/rex/assembly/nasm.rb
+%%DATADIR%%/lib/rex/assembly/nasm.rb.ut.rb
+%%DATADIR%%/lib/rex/codepage.map
+%%DATADIR%%/lib/rex/compat.rb
+%%DATADIR%%/lib/rex/constants.rb
+%%DATADIR%%/lib/rex/encoder/alpha2/alpha_mixed.rb
+%%DATADIR%%/lib/rex/encoder/alpha2/alpha_upper.rb
+%%DATADIR%%/lib/rex/encoder/alpha2/generic.rb
+%%DATADIR%%/lib/rex/encoder/alpha2/unicode_mixed.rb
+%%DATADIR%%/lib/rex/encoder/alpha2/unicode_upper.rb
+%%DATADIR%%/lib/rex/encoder/alpha2.rb
+%%DATADIR%%/lib/rex/encoder/ndr.rb
+%%DATADIR%%/lib/rex/encoder/ndr.rb.ut.rb
+%%DATADIR%%/lib/rex/encoder/nonalpha.rb
+%%DATADIR%%/lib/rex/encoder/nonupper.rb
+%%DATADIR%%/lib/rex/encoder/xdr.rb
+%%DATADIR%%/lib/rex/encoder/xdr.rb.ut.rb
+%%DATADIR%%/lib/rex/encoder/xor/dword.rb
+%%DATADIR%%/lib/rex/encoder/xor/dword_additive.rb
+%%DATADIR%%/lib/rex/encoder/xor.rb
+%%DATADIR%%/lib/rex/encoders/xor_dword.rb
+%%DATADIR%%/lib/rex/encoders/xor_dword.rb.ut.rb
+%%DATADIR%%/lib/rex/encoders/xor_dword_additive.rb
+%%DATADIR%%/lib/rex/encoders/xor_dword_additive.rb.ut.rb
+%%DATADIR%%/lib/rex/encoding/xor/byte.rb
+%%DATADIR%%/lib/rex/encoding/xor/byte.rb.ut.rb
+%%DATADIR%%/lib/rex/encoding/xor/dword.rb
+%%DATADIR%%/lib/rex/encoding/xor/dword.rb.ut.rb
+%%DATADIR%%/lib/rex/encoding/xor/dword_additive.rb
+%%DATADIR%%/lib/rex/encoding/xor/dword_additive.rb.ut.rb
+%%DATADIR%%/lib/rex/encoding/xor/exceptions.rb
+%%DATADIR%%/lib/rex/encoding/xor/generic.rb
+%%DATADIR%%/lib/rex/encoding/xor/generic.rb.ut.rb
+%%DATADIR%%/lib/rex/encoding/xor/word.rb
+%%DATADIR%%/lib/rex/encoding/xor/word.rb.ut.rb
+%%DATADIR%%/lib/rex/encoding/xor.rb
+%%DATADIR%%/lib/rex/encoding/xor.rb.ts.rb
+%%DATADIR%%/lib/rex/evasion.rb
+%%DATADIR%%/lib/rex/evasion.rb.ut.rb
+%%DATADIR%%/lib/rex/exceptions.rb
+%%DATADIR%%/lib/rex/exceptions.rb.ut.rb
+%%DATADIR%%/lib/rex/exploitation/egghunter.rb
+%%DATADIR%%/lib/rex/exploitation/egghunter.rb.ut.rb
+%%DATADIR%%/lib/rex/exploitation/opcodedb.rb
+%%DATADIR%%/lib/rex/exploitation/opcodedb.rb.ut.rb
+%%DATADIR%%/lib/rex/exploitation/seh.rb
+%%DATADIR%%/lib/rex/exploitation/seh.rb.ut.rb
+%%DATADIR%%/lib/rex/file.rb
+%%DATADIR%%/lib/rex/file.rb.ut.rb
+%%DATADIR%%/lib/rex/io/datagram_abstraction.rb
+%%DATADIR%%/lib/rex/io/stream.rb
+%%DATADIR%%/lib/rex/io/stream_abstraction.rb
+%%DATADIR%%/lib/rex/io/stream_server.rb
+%%DATADIR%%/lib/rex/job_container.rb
+%%DATADIR%%/lib/rex/logging/log_dispatcher.rb
+%%DATADIR%%/lib/rex/logging/log_sink.rb
+%%DATADIR%%/lib/rex/logging/sinks/flatfile.rb
+%%DATADIR%%/lib/rex/nop/opty2.rb
+%%DATADIR%%/lib/rex/nop/opty2.rb.ut.rb
+%%DATADIR%%/lib/rex/nop/opty2_tables.rb
+%%DATADIR%%/lib/rex/parser/arguments.rb
+%%DATADIR%%/lib/rex/parser/arguments.rb.ut.rb
+%%DATADIR%%/lib/rex/parser/ini.rb
+%%DATADIR%%/lib/rex/parser/ini.rb.ut.rb
+%%DATADIR%%/lib/rex/peparsey/exceptions.rb
+%%DATADIR%%/lib/rex/peparsey/image_source/disk.rb
+%%DATADIR%%/lib/rex/peparsey/image_source/image_source.rb
+%%DATADIR%%/lib/rex/peparsey/image_source/memory.rb
+%%DATADIR%%/lib/rex/peparsey/image_source.rb
+%%DATADIR%%/lib/rex/peparsey/pe.rb
+%%DATADIR%%/lib/rex/peparsey/pe_memdump.rb
+%%DATADIR%%/lib/rex/peparsey/pebase.rb
+%%DATADIR%%/lib/rex/peparsey/section.rb
+%%DATADIR%%/lib/rex/peparsey.rb
+%%DATADIR%%/lib/rex/pescan/analyze.rb
+%%DATADIR%%/lib/rex/pescan/scanner.rb
+%%DATADIR%%/lib/rex/pescan/search.rb
+%%DATADIR%%/lib/rex/pescan.rb
+%%DATADIR%%/lib/rex/poly/block.rb
+%%DATADIR%%/lib/rex/poly/register/x86.rb
+%%DATADIR%%/lib/rex/poly/register.rb
+%%DATADIR%%/lib/rex/poly.rb
+%%DATADIR%%/lib/rex/post/dir.rb
+%%DATADIR%%/lib/rex/post/dispatch_ninja/client.rb
+%%DATADIR%%/lib/rex/post/dispatch_ninja/dir.rb
+%%DATADIR%%/lib/rex/post/dispatch_ninja/file.rb
+%%DATADIR%%/lib/rex/post/dispatch_ninja/file_stat.rb
+%%DATADIR%%/lib/rex/post/dispatch_ninja/i_o.rb
+%%DATADIR%%/lib/rex/post/dispatch_ninja/process.rb
+%%DATADIR%%/lib/rex/post/dispatch_ninja/t_o_d_o
+%%DATADIR%%/lib/rex/post/dispatch_ninja.rb
+%%DATADIR%%/lib/rex/post/file.rb
+%%DATADIR%%/lib/rex/post/file_stat.rb
+%%DATADIR%%/lib/rex/post/gen.pl
+%%DATADIR%%/lib/rex/post/io.rb
+%%DATADIR%%/lib/rex/post/meterpreter/channel.rb
+%%DATADIR%%/lib/rex/post/meterpreter/channel_container.rb
+%%DATADIR%%/lib/rex/post/meterpreter/channels/pool.rb
+%%DATADIR%%/lib/rex/post/meterpreter/channels/pools/file.rb
+%%DATADIR%%/lib/rex/post/meterpreter/channels/pools/stream_pool.rb
+%%DATADIR%%/lib/rex/post/meterpreter/channels/stream.rb
+%%DATADIR%%/lib/rex/post/meterpreter/channels/streams/.cvskeep
+%%DATADIR%%/lib/rex/post/meterpreter/client.rb
+%%DATADIR%%/lib/rex/post/meterpreter/client_core.rb
+%%DATADIR%%/lib/rex/post/meterpreter/dependencies.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extension.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/priv/fs.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/priv/passwd.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/priv/priv.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/priv/tlv.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/constants.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/fs/dir.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/fs/file.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/fs/file_stat.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/fs/io.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/net/config.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/net/interface.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/net/route.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/net/socket.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/net/socket_subsystem/tcp_client_channel.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/stdapi.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/config.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/event_log.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/event_log_subsystem/event_record.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/power.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/process.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/process_subsystem/image.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/process_subsystem/io.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/process_subsystem/memory.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/process_subsystem/thread.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/registry.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/registry_subsystem/registry_key.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/registry_subsystem/registry_value.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/thread.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/tlv.rb
+%%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/ui.rb
+%%DATADIR%%/lib/rex/post/meterpreter/inbound_packet_handler.rb
+%%DATADIR%%/lib/rex/post/meterpreter/object_aliases.rb
+%%DATADIR%%/lib/rex/post/meterpreter/packet.rb
+%%DATADIR%%/lib/rex/post/meterpreter/packet_dispatcher.rb
+%%DATADIR%%/lib/rex/post/meterpreter/packet_parser.rb
+%%DATADIR%%/lib/rex/post/meterpreter/packet_response_waiter.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/core.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/priv/passwd.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/priv/timestomp.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/priv.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/stdapi/fs.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/stdapi/net.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/stdapi/sys.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/stdapi/ui.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/stdapi.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console/interactive_channel.rb
+%%DATADIR%%/lib/rex/post/meterpreter/ui/console.rb
+%%DATADIR%%/lib/rex/post/meterpreter.rb
+%%DATADIR%%/lib/rex/post/permission.rb
+%%DATADIR%%/lib/rex/post/process.rb
+%%DATADIR%%/lib/rex/post/thread.rb
+%%DATADIR%%/lib/rex/post/ui.rb
+%%DATADIR%%/lib/rex/post.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/client.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/client.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/errors.txt
+%%DATADIR%%/lib/rex/proto/dcerpc/exceptions.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/handle.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/handle.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/ndr.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/ndr.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/packet.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/packet.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/response.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/response.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/uuid.rb
+%%DATADIR%%/lib/rex/proto/dcerpc/uuid.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/dcerpc.rb
+%%DATADIR%%/lib/rex/proto/dcerpc.rb.ts.rb
+%%DATADIR%%/lib/rex/proto/http/client.rb
+%%DATADIR%%/lib/rex/proto/http/client.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http/handler/erb.rb
+%%DATADIR%%/lib/rex/proto/http/handler/erb.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http/handler/erb.rb.ut.rb.rhtml
+%%DATADIR%%/lib/rex/proto/http/handler/proc.rb
+%%DATADIR%%/lib/rex/proto/http/handler/proc.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http/handler.rb
+%%DATADIR%%/lib/rex/proto/http/header.rb
+%%DATADIR%%/lib/rex/proto/http/header.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http/packet.rb
+%%DATADIR%%/lib/rex/proto/http/packet.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http/request.rb
+%%DATADIR%%/lib/rex/proto/http/request.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http/response.rb
+%%DATADIR%%/lib/rex/proto/http/response.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http/server.rb
+%%DATADIR%%/lib/rex/proto/http/server.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/http.rb
+%%DATADIR%%/lib/rex/proto/http.rb.ts.rb
+%%DATADIR%%/lib/rex/proto/smb/client.rb
+%%DATADIR%%/lib/rex/proto/smb/client.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/smb/constants.rb
+%%DATADIR%%/lib/rex/proto/smb/constants.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/smb/crypt.rb
+%%DATADIR%%/lib/rex/proto/smb/crypt.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/smb/errors.txt
+%%DATADIR%%/lib/rex/proto/smb/evasions.rb
+%%DATADIR%%/lib/rex/proto/smb/exceptions.rb
+%%DATADIR%%/lib/rex/proto/smb/simpleclient.rb
+%%DATADIR%%/lib/rex/proto/smb/simpleclient.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/smb/utils.rb
+%%DATADIR%%/lib/rex/proto/smb/utils.rb.ut.rb
+%%DATADIR%%/lib/rex/proto/smb.rb
+%%DATADIR%%/lib/rex/proto/smb.rb.ts.rb
+%%DATADIR%%/lib/rex/proto/sunrpc/client.rb
+%%DATADIR%%/lib/rex/proto/sunrpc/xdr.rb
+%%DATADIR%%/lib/rex/proto/sunrpc.rb
+%%DATADIR%%/lib/rex/proto.rb
+%%DATADIR%%/lib/rex/proto.rb.ts.rb
+%%DATADIR%%/lib/rex/service.rb
+%%DATADIR%%/lib/rex/service_manager.rb
+%%DATADIR%%/lib/rex/service_manager.rb.ut.rb
+%%DATADIR%%/lib/rex/services/local_relay.rb
+%%DATADIR%%/lib/rex/socket/comm/local.rb
+%%DATADIR%%/lib/rex/socket/comm/local.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/comm.rb
+%%DATADIR%%/lib/rex/socket/parameters.rb
+%%DATADIR%%/lib/rex/socket/parameters.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/ssl_tcp.rb
+%%DATADIR%%/lib/rex/socket/ssl_tcp.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/ssl_tcp_server.rb
+%%DATADIR%%/lib/rex/socket/ssl_tcp_server.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/subnet_walker.rb
+%%DATADIR%%/lib/rex/socket/subnet_walker.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/switch_board.rb
+%%DATADIR%%/lib/rex/socket/switch_board.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/tcp.rb
+%%DATADIR%%/lib/rex/socket/tcp.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/tcp_server.rb
+%%DATADIR%%/lib/rex/socket/tcp_server.rb.ut.rb
+%%DATADIR%%/lib/rex/socket/udp.rb
+%%DATADIR%%/lib/rex/socket/udp.rb.ut.rb
+%%DATADIR%%/lib/rex/socket.rb
+%%DATADIR%%/lib/rex/socket.rb.ut.rb
+%%DATADIR%%/lib/rex/struct2/c_struct.rb
+%%DATADIR%%/lib/rex/struct2/c_struct_template.rb
+%%DATADIR%%/lib/rex/struct2/constant.rb
+%%DATADIR%%/lib/rex/struct2/element.rb
+%%DATADIR%%/lib/rex/struct2/generic.rb
+%%DATADIR%%/lib/rex/struct2/restraint.rb
+%%DATADIR%%/lib/rex/struct2/s_string.rb
+%%DATADIR%%/lib/rex/struct2/s_struct.rb
+%%DATADIR%%/lib/rex/struct2.rb
+%%DATADIR%%/lib/rex/sync/event.rb
+%%DATADIR%%/lib/rex/sync/read_write_lock.rb
+%%DATADIR%%/lib/rex/sync/ref.rb
+%%DATADIR%%/lib/rex/sync/thread_safe.rb
+%%DATADIR%%/lib/rex/test.rb
+%%DATADIR%%/lib/rex/text.rb
+%%DATADIR%%/lib/rex/text.rb.ut.rb
+%%DATADIR%%/lib/rex/time.rb
+%%DATADIR%%/lib/rex/transformer.rb
+%%DATADIR%%/lib/rex/transformer.rb.ut.rb
+%%DATADIR%%/lib/rex/ui/interactive.rb
+%%DATADIR%%/lib/rex/ui/output/none.rb
+%%DATADIR%%/lib/rex/ui/output.rb
+%%DATADIR%%/lib/rex/ui/progress_tracker.rb
+%%DATADIR%%/lib/rex/ui/subscriber.rb
+%%DATADIR%%/lib/rex/ui/text/color.rb
+%%DATADIR%%/lib/rex/ui/text/color.rb.ut.rb
+%%DATADIR%%/lib/rex/ui/text/dispatcher_shell.rb
+%%DATADIR%%/lib/rex/ui/text/input/readline.rb
+%%DATADIR%%/lib/rex/ui/text/input/socket.rb
+%%DATADIR%%/lib/rex/ui/text/input/stdio.rb
+%%DATADIR%%/lib/rex/ui/text/input.rb
+%%DATADIR%%/lib/rex/ui/text/irb_shell.rb
+%%DATADIR%%/lib/rex/ui/text/output/buffer.rb
+%%DATADIR%%/lib/rex/ui/text/output/socket.rb
+%%DATADIR%%/lib/rex/ui/text/output/stdio.rb
+%%DATADIR%%/lib/rex/ui/text/output.rb
+%%DATADIR%%/lib/rex/ui/text/progress_tracker.rb
+%%DATADIR%%/lib/rex/ui/text/progress_tracker.rb.ut.rb
+%%DATADIR%%/lib/rex/ui/text/shell.rb
+%%DATADIR%%/lib/rex/ui/text/table.rb
+%%DATADIR%%/lib/rex/ui/text/table.rb.ut.rb
+%%DATADIR%%/lib/rex/ui.rb
+%%DATADIR%%/lib/rex.rb
+%%DATADIR%%/lib/rex.rb.ts.rb
+%%DATADIR%%/modules/auxiliary/dos/windows/smb/mailslot_srvsys.rb
+%%DATADIR%%/modules/auxiliary/dos/windows/smb/rras_vls_null_deref.rb
+%%DATADIR%%/modules/auxiliary/recon.rb
+%%DATADIR%%/modules/auxiliary/test.rb
+%%DATADIR%%/modules/encoders/cmd/generic_sh.rb
+%%DATADIR%%/modules/encoders/encoder_test.rb.ut.rb
+%%DATADIR%%/modules/encoders/generic/none.rb
+%%DATADIR%%/modules/encoders/generic/none.rb.ut.rb
+%%DATADIR%%/modules/encoders/ppc/longxor.rb
+%%DATADIR%%/modules/encoders/ppc/longxor_tag.rb
+%%DATADIR%%/modules/encoders/sparc/longxor_tag.rb
+%%DATADIR%%/modules/encoders/x86/alpha_mixed.rb
+%%DATADIR%%/modules/encoders/x86/alpha_upper.rb
+%%DATADIR%%/modules/encoders/x86/call4_dword_xor.rb
+%%DATADIR%%/modules/encoders/x86/call4_dword_xor.rb.ut.rb
+%%DATADIR%%/modules/encoders/x86/countdown.rb
+%%DATADIR%%/modules/encoders/x86/countdown.rb.ut.rb
+%%DATADIR%%/modules/encoders/x86/fnstenv_mov.rb
+%%DATADIR%%/modules/encoders/x86/fnstenv_mov.rb.ut.rb
+%%DATADIR%%/modules/encoders/x86/jmp_call_additive.rb
+%%DATADIR%%/modules/encoders/x86/nonalpha.rb
+%%DATADIR%%/modules/encoders/x86/nonupper.rb
+%%DATADIR%%/modules/encoders/x86/shikata_ga_nai.rb
+%%DATADIR%%/modules/encoders/x86/unicode_mixed.rb
+%%DATADIR%%/modules/encoders/x86/unicode_upper.rb
+%%DATADIR%%/modules/exploits/hpux/lpd/cleanup_exec.rb
+%%DATADIR%%/modules/exploits/irix/lpd/tagprinter_exec.rb
+%%DATADIR%%/modules/exploits/linux/games/ut2004_secure.rb
+%%DATADIR%%/modules/exploits/linux/http/peercast_url.rb
+%%DATADIR%%/modules/exploits/linux/ids/snortbopre.rb
+%%DATADIR%%/modules/exploits/multi/browser/firefox_queryinterface.rb
+%%DATADIR%%/modules/exploits/multi/browser/mozilla_compareto.rb
+%%DATADIR%%/modules/exploits/multi/browser/mozilla_navigatorjava.rb
+%%DATADIR%%/modules/exploits/multi/ftp/wuftpd_site_exec.rb
+%%DATADIR%%/modules/exploits/osx/afp/loginext.rb
+%%DATADIR%%/modules/exploits/osx/arkeia/type77.rb
+%%DATADIR%%/modules/exploits/osx/browser/safari_metadata_archive.rb
+%%DATADIR%%/modules/exploits/osx/ftp/webstar_ftp_user.rb
+%%DATADIR%%/modules/exploits/osx/samba/trans2open.rb
+%%DATADIR%%/modules/exploits/solaris/dtspcd/heap_noir.rb
+%%DATADIR%%/modules/exploits/solaris/lpd/cascade_delete.rb
+%%DATADIR%%/modules/exploits/solaris/lpd/sendmail_exec.rb
+%%DATADIR%%/modules/exploits/solaris/samba/trans2open.rb
+%%DATADIR%%/modules/exploits/solaris/sunrpc/solaris_sadmind_exec.rb
+%%DATADIR%%/modules/exploits/solaris/telnet/ttyprompt.rb
+%%DATADIR%%/modules/exploits/unix/http/php_vbulletin_template.rb
+%%DATADIR%%/modules/exploits/unix/http/php_xmlrpc_eval.rb
+%%DATADIR%%/modules/exploits/unix/misc/distcc_exec.rb
+%%DATADIR%%/modules/exploits/windows/arkeia/type77.rb
+%%DATADIR%%/modules/exploits/windows/backupexec/name_service.rb
+%%DATADIR%%/modules/exploits/windows/backupexec/remote_agent.rb
+%%DATADIR%%/modules/exploits/windows/brightstor/discovery_tcp.rb
+%%DATADIR%%/modules/exploits/windows/brightstor/discovery_udp.rb
+%%DATADIR%%/modules/exploits/windows/brightstor/sql_agent.rb
+%%DATADIR%%/modules/exploits/windows/brightstor/universal_agent.rb
+%%DATADIR%%/modules/exploits/windows/browser/aim_goaway.rb
+%%DATADIR%%/modules/exploits/windows/browser/ms03_020_ie_objecttype.rb
+%%DATADIR%%/modules/exploits/windows/browser/ms06_001_wmf_setabortproc.rb
+%%DATADIR%%/modules/exploits/windows/browser/winamp_playlist_unc.rb
+%%DATADIR%%/modules/exploits/windows/dcerpc/ms03_026_dcom.rb
+%%DATADIR%%/modules/exploits/windows/dcerpc/ms05_017_msmq.rb
+%%DATADIR%%/modules/exploits/windows/ftp/3cdaemon_ftp_user.rb
+%%DATADIR%%/modules/exploits/windows/ftp/freeftpd_user.rb
+%%DATADIR%%/modules/exploits/windows/ftp/globalscapeftp_input.rb
+%%DATADIR%%/modules/exploits/windows/ftp/netterm_netftpd_user.rb
+%%DATADIR%%/modules/exploits/windows/ftp/oracle9i_xdb_ftp_pass.rb
+%%DATADIR%%/modules/exploits/windows/ftp/oracle9i_xdb_ftp_unlock.rb
+%%DATADIR%%/modules/exploits/windows/ftp/servu_mdtm.rb
+%%DATADIR%%/modules/exploits/windows/ftp/slimftpd_list_concat.rb
+%%DATADIR%%/modules/exploits/windows/ftp/warftpd_165_user.rb
+%%DATADIR%%/modules/exploits/windows/ftp/wsftp_server_503_mkd.rb
+%%DATADIR%%/modules/exploits/windows/games/ut2004_secure.rb
+%%DATADIR%%/modules/exploits/windows/http/altn_webadmin.rb
+%%DATADIR%%/modules/exploits/windows/http/edirectory_imonitor.rb
+%%DATADIR%%/modules/exploits/windows/http/icecast_header.rb
+%%DATADIR%%/modules/exploits/windows/http/maxdb_webdbm_get_overflow.rb
+%%DATADIR%%/modules/exploits/windows/http/minishare_get_overflow.rb
+%%DATADIR%%/modules/exploits/windows/http/novell_messenger_acceptlang.rb
+%%DATADIR%%/modules/exploits/windows/http/peercast_url.rb
+%%DATADIR%%/modules/exploits/windows/http/shoutcast_format.rb
+%%DATADIR%%/modules/exploits/windows/http/trackercam_phparg_overflow.rb
+%%DATADIR%%/modules/exploits/windows/iis/ms01_023_printer.rb
+%%DATADIR%%/modules/exploits/windows/iis/ms02_018_htr.rb
+%%DATADIR%%/modules/exploits/windows/iis/ms03_007_ntdll_webdav.rb
+%%DATADIR%%/modules/exploits/windows/imap/imail_delete.rb
+%%DATADIR%%/modules/exploits/windows/imap/mailenable_status.rb
+%%DATADIR%%/modules/exploits/windows/imap/mailenable_w3c_select.rb
+%%DATADIR%%/modules/exploits/windows/imap/mdaemon_cram_md5.rb
+%%DATADIR%%/modules/exploits/windows/imap/mercury_rename.rb
+%%DATADIR%%/modules/exploits/windows/isapi/fp30reg_chunked.rb
+%%DATADIR%%/modules/exploits/windows/isapi/nsiislog_post.rb
+%%DATADIR%%/modules/exploits/windows/isapi/rsa_webagent_redirect.rb
+%%DATADIR%%/modules/exploits/windows/isapi/w3who_query.rb
+%%DATADIR%%/modules/exploits/windows/ldap/imail_thc.rb
+%%DATADIR%%/modules/exploits/windows/license/sentinel_lm7_udp.rb
+%%DATADIR%%/modules/exploits/windows/mssql/ms02_039_slammer.rb
+%%DATADIR%%/modules/exploits/windows/mssql/ms02_056_hello.rb
+%%DATADIR%%/modules/exploits/windows/novell/zenworks_desktop_agent.rb
+%%DATADIR%%/modules/exploits/windows/proxy/bluecoat_winproxy_host.rb
+%%DATADIR%%/modules/exploits/windows/smb/ms04_007_killbill.rb
+%%DATADIR%%/modules/exploits/windows/smb/ms04_011_lsass.rb
+%%DATADIR%%/modules/exploits/windows/smb/ms04_031_netdde.rb
+%%DATADIR%%/modules/exploits/windows/smb/ms05_039_pnp.rb
+%%DATADIR%%/modules/exploits/windows/smb/ms06_025_rasmans_reg.rb
+%%DATADIR%%/modules/exploits/windows/smb/ms06_025_rras.rb
+%%DATADIR%%/modules/exploits/windows/ssl/ms04_011_pct.rb
+%%DATADIR%%/modules/exploits/windows/tftp/tftpd32_long_filename.rb
+%%DATADIR%%/modules/exploits/windows/unicenter/cam_log_security.rb
+%%DATADIR%%/modules/exploits/windows/wins/ms04_045_wins.rb
+%%DATADIR%%/modules/modules.rb.ts.rb
+%%DATADIR%%/modules/nops/nop_test.rb.ut.rb
+%%DATADIR%%/modules/nops/ppc/simple.rb
+%%DATADIR%%/modules/nops/sparc/random.rb
+%%DATADIR%%/modules/nops/x86/opty2.rb
+%%DATADIR%%/modules/nops/x86/single_byte.rb
+%%DATADIR%%/modules/payloads/singles/bsd/sparc/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/bsd/sparc/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/singles/bsd/x86/exec.rb
+%%DATADIR%%/modules/payloads/singles/bsd/x86/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/bsd/x86/shell_find_port.rb
+%%DATADIR%%/modules/payloads/singles/bsd/x86/shell_find_tag.rb
+%%DATADIR%%/modules/payloads/singles/bsd/x86/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/singles/bsdi/x86/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/bsdi/x86/shell_find_port.rb
+%%DATADIR%%/modules/payloads/singles/bsdi/x86/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/singles/cmd/unix/bind_inetd.rb
+%%DATADIR%%/modules/payloads/singles/cmd/unix/bind_perl.rb
+%%DATADIR%%/modules/payloads/singles/cmd/unix/generic.rb
+%%DATADIR%%/modules/payloads/singles/cmd/unix/interact.rb
+%%DATADIR%%/modules/payloads/singles/cmd/unix/reverse.rb
+%%DATADIR%%/modules/payloads/singles/cmd/unix/reverse_bash.rb
+%%DATADIR%%/modules/payloads/singles/cmd/unix/reverse_perl.rb
+%%DATADIR%%/modules/payloads/singles/linux/x86/adduser.rb
+%%DATADIR%%/modules/payloads/singles/linux/x86/exec.rb
+%%DATADIR%%/modules/payloads/singles/linux/x86/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/linux/x86/shell_find_port.rb
+%%DATADIR%%/modules/payloads/singles/linux/x86/shell_find_tag.rb
+%%DATADIR%%/modules/payloads/singles/linux/x86/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/singles/osx/ppc/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/osx/ppc/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/singles/osx/x86/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/solaris/sparc/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/solaris/sparc/shell_find_port.rb
+%%DATADIR%%/modules/payloads/singles/solaris/sparc/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/singles/solaris/x86/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/solaris/x86/shell_find_port.rb
+%%DATADIR%%/modules/payloads/singles/solaris/x86/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/singles/windows/adduser.rb
+%%DATADIR%%/modules/payloads/singles/windows/exec.rb
+%%DATADIR%%/modules/payloads/singles/windows/shell_bind_tcp.rb
+%%DATADIR%%/modules/payloads/singles/windows/shell_reverse_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/bsd/x86/bind_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/bsd/x86/find_tag.rb
+%%DATADIR%%/modules/payloads/stagers/bsd/x86/reverse_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/bsdi/x86/bind_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/bsdi/x86/reverse_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/linux/x86/bind_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/linux/x86/find_tag.rb
+%%DATADIR%%/modules/payloads/stagers/linux/x86/reverse_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/osx/ppc/bind_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/osx/ppc/find_tag.rb
+%%DATADIR%%/modules/payloads/stagers/osx/ppc/reverse_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/windows/bind_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/windows/findtag_ord.rb
+%%DATADIR%%/modules/payloads/stagers/windows/passivex.rb
+%%DATADIR%%/modules/payloads/stagers/windows/reverse_ord_tcp.rb
+%%DATADIR%%/modules/payloads/stagers/windows/reverse_tcp.rb
+%%DATADIR%%/modules/payloads/stages/bsd/x86/shell.rb
+%%DATADIR%%/modules/payloads/stages/bsdi/x86/shell.rb
+%%DATADIR%%/modules/payloads/stages/linux/x86/shell.rb
+%%DATADIR%%/modules/payloads/stages/osx/ppc/shell.rb
+%%DATADIR%%/modules/payloads/stages/windows/dllinject.rb
+%%DATADIR%%/modules/payloads/stages/windows/meterpreter.rb
+%%DATADIR%%/modules/payloads/stages/windows/shell.rb
+%%DATADIR%%/modules/payloads/stages/windows/upexec.rb
+%%DATADIR%%/modules/payloads/stages/windows/vncinject.rb
+%%DATADIR%%/msfcli
+%%DATADIR%%/msfconsole
+%%DATADIR%%/msfd
+%%DATADIR%%/msfencode
+%%DATADIR%%/msflicense
+%%DATADIR%%/msfopcode
+%%DATADIR%%/msfpayload
+%%DATADIR%%/msfpescan
+%%DATADIR%%/msfweb
+%%DATADIR%%/msfwx
+%%DATADIR%%/plugins/db_postgres.rb
+%%DATADIR%%/plugins/db_sqlite2.rb
+%%DATADIR%%/plugins/db_sqlite3.rb
+%%DATADIR%%/plugins/db_tracker.rb
+%%DATADIR%%/plugins/ips_filter.rb
+%%DATADIR%%/plugins/msfd.rb
+%%DATADIR%%/plugins/sample.rb
+%%DATADIR%%/plugins/thread.rb
+%%DATADIR%%/tools/nasm_shell.rb
+%%DATADIR%%/tools/pattern_create.rb
+%%DATADIR%%/tools/pattern_offset.rb
+@dirrm %%DATADIR%%/data/meterpreter
+@dirrm %%DATADIR%%/data/msfpescan
+@dirrm %%DATADIR%%/data/msfweb/images
+@dirrm %%DATADIR%%/data/msfweb
+@dirrm %%DATADIR%%/data/msfwx
+@dirrm %%DATADIR%%/data/passivex
+@dirrm %%DATADIR%%/data/sql
+@dirrm %%DATADIR%%/data/templates
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/documentation/samples/framework
+@dirrm %%DATADIR%%/documentation/samples/modules/encoders
+@dirrm %%DATADIR%%/documentation/samples/modules/exploits
+@dirrm %%DATADIR%%/documentation/samples/modules/nops
+@dirrm %%DATADIR%%/documentation/samples/modules/payloads/singles
+@dirrm %%DATADIR%%/documentation/samples/modules/payloads
+@dirrm %%DATADIR%%/documentation/samples/modules
+@dirrm %%DATADIR%%/documentation/samples
+@dirrm %%DATADIR%%/documentation
+@dirrm %%DATADIR%%/external/source/meterpreter/output/client
+@dirrm %%DATADIR%%/external/source/meterpreter/output/extensions
+@dirrm %%DATADIR%%/external/source/meterpreter/output/server
+@dirrm %%DATADIR%%/external/source/meterpreter/output
+@dirrm %%DATADIR%%/external/source/meterpreter/source/client
+@dirrm %%DATADIR%%/external/source/meterpreter/source/common/crypto
+@dirrm %%DATADIR%%/external/source/meterpreter/source/common
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/boiler/client
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/boiler/server
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/boiler
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/priv/server
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/priv
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/fs
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net/config
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net/socket
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/net
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/resource
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/config
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/eventlog
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/power
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/process
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys/registry
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/sys
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server/ui
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi/server
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions/stdapi
+@dirrm %%DATADIR%%/external/source/meterpreter/source/extensions
+@dirrm %%DATADIR%%/external/source/meterpreter/source/server
+@dirrm %%DATADIR%%/external/source/meterpreter/source
+@dirrm %%DATADIR%%/external/source/meterpreter/workspace/common
+@dirrm %%DATADIR%%/external/source/meterpreter/workspace/ext_server_priv
+@dirrm %%DATADIR%%/external/source/meterpreter/workspace/ext_server_stdapi
+@dirrm %%DATADIR%%/external/source/meterpreter/workspace/metcli
+@dirrm %%DATADIR%%/external/source/meterpreter/workspace/metsrv
+@dirrm %%DATADIR%%/external/source/meterpreter/workspace
+@dirrm %%DATADIR%%/external/source/meterpreter
+@dirrm %%DATADIR%%/external/source/passivex
+@dirrm %%DATADIR%%/external/source/vncdll/Xregion
+@dirrm %%DATADIR%%/external/source/vncdll/rdr
+@dirrm %%DATADIR%%/external/source/vncdll/rfb
+@dirrm %%DATADIR%%/external/source/vncdll/winvnc/omnithread/omnithread
+@dirrm %%DATADIR%%/external/source/vncdll/winvnc/omnithread
+@dirrm %%DATADIR%%/external/source/vncdll/winvnc/vncdll
+@dirrm %%DATADIR%%/external/source/vncdll/winvnc/vnchooks
+@dirrm %%DATADIR%%/external/source/vncdll/winvnc/winvnc/res
+@dirrm %%DATADIR%%/external/source/vncdll/winvnc/winvnc
+@dirrm %%DATADIR%%/external/source/vncdll/winvnc
+@dirrm %%DATADIR%%/external/source/vncdll/zlib
+@dirrm %%DATADIR%%/external/source/vncdll
+@dirrm %%DATADIR%%/external/source
+@dirrm %%DATADIR%%/external
+@dirrm %%DATADIR%%/lib/msf/base/persistent_storage
+@dirrm %%DATADIR%%/lib/msf/base/serializer
+@dirrm %%DATADIR%%/lib/msf/base/sessions
+@dirrm %%DATADIR%%/lib/msf/base/simple
+@dirrm %%DATADIR%%/lib/msf/base
+@dirrm %%DATADIR%%/lib/msf/core/auxiliary
+@dirrm %%DATADIR%%/lib/msf/core/encoder
+@dirrm %%DATADIR%%/lib/msf/core/encoding
+@dirrm %%DATADIR%%/lib/msf/core/exploit
+@dirrm %%DATADIR%%/lib/msf/core/handler
+@dirrm %%DATADIR%%/lib/msf/core/module
+@dirrm %%DATADIR%%/lib/msf/core/payload/windows
+@dirrm %%DATADIR%%/lib/msf/core/payload
+@dirrm %%DATADIR%%/lib/msf/core/session/provider
+@dirrm %%DATADIR%%/lib/msf/core/session
+@dirrm %%DATADIR%%/lib/msf/core
+@dirrm %%DATADIR%%/lib/msf/ui/console/command_dispatcher
+@dirrm %%DATADIR%%/lib/msf/ui/console
+@dirrm %%DATADIR%%/lib/msf/ui/web
+@dirrm %%DATADIR%%/lib/msf/ui/wx
+@dirrm %%DATADIR%%/lib/msf/ui
+@dirrm %%DATADIR%%/lib/msf
+@dirrm %%DATADIR%%/lib/rex/arch
+@dirrm %%DATADIR%%/lib/rex/assembly
+@dirrm %%DATADIR%%/lib/rex/encoder/alpha2
+@dirrm %%DATADIR%%/lib/rex/encoder/xor
+@dirrm %%DATADIR%%/lib/rex/encoder
+@dirrm %%DATADIR%%/lib/rex/encoders
+@dirrm %%DATADIR%%/lib/rex/encoding/xor
+@dirrm %%DATADIR%%/lib/rex/encoding
+@dirrm %%DATADIR%%/lib/rex/exploitation
+@dirrm %%DATADIR%%/lib/rex/io
+@dirrm %%DATADIR%%/lib/rex/logging/sinks
+@dirrm %%DATADIR%%/lib/rex/logging
+@dirrm %%DATADIR%%/lib/rex/nop
+@dirrm %%DATADIR%%/lib/rex/parser
+@dirrm %%DATADIR%%/lib/rex/peparsey/image_source
+@dirrm %%DATADIR%%/lib/rex/peparsey
+@dirrm %%DATADIR%%/lib/rex/pescan
+@dirrm %%DATADIR%%/lib/rex/poly/register
+@dirrm %%DATADIR%%/lib/rex/poly
+@dirrm %%DATADIR%%/lib/rex/post/dispatch_ninja
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/channels/pools
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/channels/streams
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/channels
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/priv
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/fs
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/net/socket_subsystem
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/net
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/event_log_subsystem
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/process_subsystem
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys/registry_subsystem
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi/sys
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions/stdapi
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/extensions
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/priv
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher/stdapi
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/ui/console/command_dispatcher
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/ui/console
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter/ui
+@dirrm %%DATADIR%%/lib/rex/post/meterpreter
+@dirrm %%DATADIR%%/lib/rex/post
+@dirrm %%DATADIR%%/lib/rex/proto/dcerpc
+@dirrm %%DATADIR%%/lib/rex/proto/http/handler
+@dirrm %%DATADIR%%/lib/rex/proto/http
+@dirrm %%DATADIR%%/lib/rex/proto/smb
+@dirrm %%DATADIR%%/lib/rex/proto/sunrpc
+@dirrm %%DATADIR%%/lib/rex/proto
+@dirrm %%DATADIR%%/lib/rex/services
+@dirrm %%DATADIR%%/lib/rex/socket/comm
+@dirrm %%DATADIR%%/lib/rex/socket
+@dirrm %%DATADIR%%/lib/rex/struct2
+@dirrm %%DATADIR%%/lib/rex/sync
+@dirrm %%DATADIR%%/lib/rex/ui/output
+@dirrm %%DATADIR%%/lib/rex/ui/text/input
+@dirrm %%DATADIR%%/lib/rex/ui/text/output
+@dirrm %%DATADIR%%/lib/rex/ui/text
+@dirrm %%DATADIR%%/lib/rex/ui
+@dirrm %%DATADIR%%/lib/rex
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/modules/auxiliary/dos/windows/smb
+@dirrm %%DATADIR%%/modules/auxiliary/dos/windows
+@dirrm %%DATADIR%%/modules/auxiliary/dos
+@dirrm %%DATADIR%%/modules/auxiliary
+@dirrm %%DATADIR%%/modules/encoders/cmd
+@dirrm %%DATADIR%%/modules/encoders/generic
+@dirrm %%DATADIR%%/modules/encoders/ppc
+@dirrm %%DATADIR%%/modules/encoders/sparc
+@dirrm %%DATADIR%%/modules/encoders/x86
+@dirrm %%DATADIR%%/modules/encoders
+@dirrm %%DATADIR%%/modules/exploits/hpux/lpd
+@dirrm %%DATADIR%%/modules/exploits/hpux
+@dirrm %%DATADIR%%/modules/exploits/irix/lpd
+@dirrm %%DATADIR%%/modules/exploits/irix
+@dirrm %%DATADIR%%/modules/exploits/linux/games
+@dirrm %%DATADIR%%/modules/exploits/linux/http
+@dirrm %%DATADIR%%/modules/exploits/linux/ids
+@dirrm %%DATADIR%%/modules/exploits/linux
+@dirrm %%DATADIR%%/modules/exploits/multi/browser
+@dirrm %%DATADIR%%/modules/exploits/multi/ftp
+@dirrm %%DATADIR%%/modules/exploits/multi
+@dirrm %%DATADIR%%/modules/exploits/osx/afp
+@dirrm %%DATADIR%%/modules/exploits/osx/arkeia
+@dirrm %%DATADIR%%/modules/exploits/osx/browser
+@dirrm %%DATADIR%%/modules/exploits/osx/ftp
+@dirrm %%DATADIR%%/modules/exploits/osx/samba
+@dirrm %%DATADIR%%/modules/exploits/osx
+@dirrm %%DATADIR%%/modules/exploits/solaris/dtspcd
+@dirrm %%DATADIR%%/modules/exploits/solaris/lpd
+@dirrm %%DATADIR%%/modules/exploits/solaris/samba
+@dirrm %%DATADIR%%/modules/exploits/solaris/sunrpc
+@dirrm %%DATADIR%%/modules/exploits/solaris/telnet
+@dirrm %%DATADIR%%/modules/exploits/solaris
+@dirrm %%DATADIR%%/modules/exploits/test/multi
+@dirrm %%DATADIR%%/modules/exploits/test
+@dirrm %%DATADIR%%/modules/exploits/unix/http
+@dirrm %%DATADIR%%/modules/exploits/unix/misc
+@dirrm %%DATADIR%%/modules/exploits/unix
+@dirrm %%DATADIR%%/modules/exploits/windows/arkeia
+@dirrm %%DATADIR%%/modules/exploits/windows/backupexec
+@dirrm %%DATADIR%%/modules/exploits/windows/brightstor
+@dirrm %%DATADIR%%/modules/exploits/windows/browser
+@dirrm %%DATADIR%%/modules/exploits/windows/dcerpc
+@dirrm %%DATADIR%%/modules/exploits/windows/ftp
+@dirrm %%DATADIR%%/modules/exploits/windows/games
+@dirrm %%DATADIR%%/modules/exploits/windows/http
+@dirrm %%DATADIR%%/modules/exploits/windows/iis
+@dirrm %%DATADIR%%/modules/exploits/windows/imap
+@dirrm %%DATADIR%%/modules/exploits/windows/isapi
+@dirrm %%DATADIR%%/modules/exploits/windows/ldap
+@dirrm %%DATADIR%%/modules/exploits/windows/license
+@dirrm %%DATADIR%%/modules/exploits/windows/mssql
+@dirrm %%DATADIR%%/modules/exploits/windows/novell
+@dirrm %%DATADIR%%/modules/exploits/windows/proxy
+@dirrm %%DATADIR%%/modules/exploits/windows/smb
+@dirrm %%DATADIR%%/modules/exploits/windows/ssl
+@dirrm %%DATADIR%%/modules/exploits/windows/tftp
+@dirrm %%DATADIR%%/modules/exploits/windows/unicenter
+@dirrm %%DATADIR%%/modules/exploits/windows/wins
+@dirrm %%DATADIR%%/modules/exploits/windows
+@dirrm %%DATADIR%%/modules/exploits
+@dirrm %%DATADIR%%/modules/nops/ppc
+@dirrm %%DATADIR%%/modules/nops/sparc
+@dirrm %%DATADIR%%/modules/nops/x86
+@dirrm %%DATADIR%%/modules/nops
+@dirrm %%DATADIR%%/modules/payloads/singles/bsd/sparc
+@dirrm %%DATADIR%%/modules/payloads/singles/bsd/x86
+@dirrm %%DATADIR%%/modules/payloads/singles/bsd
+@dirrm %%DATADIR%%/modules/payloads/singles/bsdi/x86
+@dirrm %%DATADIR%%/modules/payloads/singles/bsdi
+@dirrm %%DATADIR%%/modules/payloads/singles/cmd/unix
+@dirrm %%DATADIR%%/modules/payloads/singles/cmd
+@dirrm %%DATADIR%%/modules/payloads/singles/linux/x86
+@dirrm %%DATADIR%%/modules/payloads/singles/linux
+@dirrm %%DATADIR%%/modules/payloads/singles/osx/ppc
+@dirrm %%DATADIR%%/modules/payloads/singles/osx/x86
+@dirrm %%DATADIR%%/modules/payloads/singles/osx
+@dirrm %%DATADIR%%/modules/payloads/singles/solaris/sparc
+@dirrm %%DATADIR%%/modules/payloads/singles/solaris/x86
+@dirrm %%DATADIR%%/modules/payloads/singles/solaris
+@dirrm %%DATADIR%%/modules/payloads/singles/windows
+@dirrm %%DATADIR%%/modules/payloads/singles
+@dirrm %%DATADIR%%/modules/payloads/stagers/bsd/x86
+@dirrm %%DATADIR%%/modules/payloads/stagers/bsd
+@dirrm %%DATADIR%%/modules/payloads/stagers/bsdi/x86
+@dirrm %%DATADIR%%/modules/payloads/stagers/bsdi
+@dirrm %%DATADIR%%/modules/payloads/stagers/linux/x86
+@dirrm %%DATADIR%%/modules/payloads/stagers/linux
+@dirrm %%DATADIR%%/modules/payloads/stagers/osx/ppc
+@dirrm %%DATADIR%%/modules/payloads/stagers/osx
+@dirrm %%DATADIR%%/modules/payloads/stagers/windows
+@dirrm %%DATADIR%%/modules/payloads/stagers
+@dirrm %%DATADIR%%/modules/payloads/stages/bsd/x86
+@dirrm %%DATADIR%%/modules/payloads/stages/bsd
+@dirrm %%DATADIR%%/modules/payloads/stages/bsdi/x86
+@dirrm %%DATADIR%%/modules/payloads/stages/bsdi
+@dirrm %%DATADIR%%/modules/payloads/stages/linux/x86
+@dirrm %%DATADIR%%/modules/payloads/stages/linux
+@dirrm %%DATADIR%%/modules/payloads/stages/osx/ppc
+@dirrm %%DATADIR%%/modules/payloads/stages/osx
+@dirrm %%DATADIR%%/modules/payloads/stages/windows
+@dirrm %%DATADIR%%/modules/payloads/stages
+@dirrm %%DATADIR%%/modules/payloads
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%
