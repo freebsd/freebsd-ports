@@ -455,6 +455,7 @@ MASTER_SITE_GNUPG+= 	\
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
 MASTER_SITE_GNUSTEP+= \
 	http://downloads.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
 	ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/GNUstep/pub/gnustep/%SUBDIR%/
 .endif
