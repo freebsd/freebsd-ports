@@ -2018,6 +2018,7 @@ dungeon		ports/games/dungeon
 dungeoncrawl	ports/games/dungeoncrawl
 dupfind		ports/sysutils/dupfind
 duplicity	ports/sysutils/duplicity
+duplo		ports/devel/duplo
 durep		ports/sysutils/durep
 dusage		ports/sysutils/dusage
 dv2jpg		ports/multimedia/dv2jpg
