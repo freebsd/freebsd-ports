@@ -242,6 +242,7 @@
     SUBDIR += dprog
     SUBDIR += drpython
     SUBDIR += dumb
+    SUBDIR += duplo
     SUBDIR += dwarfdump
     SUBDIR += e4graph
     SUBDIR += ebnf2yacc
