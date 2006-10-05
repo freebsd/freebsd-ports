@@ -1,5 +1,5 @@
 --- glib/gunicollate.c.orig	Sun Nov 27 21:15:41 2005
-+++ glib/gunicollate.c	Wed Jul 19 01:06:32 2006
++++ glib/gunicollate.c	Thu Oct  5 17:11:44 2006
 @@ -26,10 +26,57 @@
  #include <wchar.h>
  #endif
@@ -99,14 +99,14 @@
 +      UChar *wstr = utf8_to_uchar(str, len, &wstr_len);
 +      if (wstr != NULL)
 +	{
-+	  uint8_t dummy;
 +	  int32_t result_len;
 +
 +	  /* get size of result */
-+	  result_len = ucol_getSortKey(icu_collator, wstr, wstr_len, &dummy, 1);
++	  result_len = ucol_getSortKey(icu_collator, wstr, wstr_len, NULL, 0);
 +
 +	  result = g_new(char, result_len);
 +	  ucol_getSortKey(icu_collator, wstr, wstr_len, result, result_len);
++	  g_free(wstr);
 +
 +	  return result;
 +	}
