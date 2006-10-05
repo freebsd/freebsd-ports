@@ -1,22 +1,25 @@
 PEAR::DB is a database abstraction layer providing:
+
 * an OO-style query API
-* portability features that make programs written for one DBMS work with other
-DBMS's
+* portability features that make programs written for one DBMS work
+with other DBMS's
 * a DSN (data source name) format for specifying database servers
-* prepare/execute (bind) emulation for databases that don't support it natively
+* prepare/execute (bind) emulation for databases that don't support
+it natively
 * a result object for each query response
 * portable error codes
 * sequence emulation
 * sequential and non-sequential row fetching as well as bulk fetching
-* formats fetched rows as associative arrays, ordered arrays or objects
+* formats fetched rows as associative arrays, ordered arrays or
+objects
 * row limit support
 * transactions support
 * table information interface
 * DocBook and phpDocumentor API documentation
 
-Drivers for the following extensions pass the complete test suite and provide
-interchangeability when all of DB's portability options are enabled: fbsql, 
-ibase, informix, msql, mssql, mysql, mysqli, oci8, odbc, pgsql, sqlite and
-sybase.
+Drivers for the following extensions pass the complete test suite
+and provide interchangeability when all of DB's portability options
+are enabled: fbsql, ibase, informix, msql, mssql, mysql, mysqli,
+oci8, odbc, pgsql, sqlite and sybase.
 
 WWW: http://pear.php.net/package/DB/
