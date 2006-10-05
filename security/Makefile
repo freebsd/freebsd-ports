@@ -254,6 +254,7 @@
     SUBDIR += mdcrack
     SUBDIR += medusa
     SUBDIR += metasploit
+    SUBDIR += metasploit-devel
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += mosref
