@@ -95,7 +95,7 @@ HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fcl"
-OPT=	-Fuunits/${ARCH}-freebsd -Fu../units/${ARCH}-freebsd \
+OPT+=	-Fuunits/${ARCH}-freebsd -Fu../units/${ARCH}-freebsd \
 	-Fuxml/units/${ARCH}-freebsd -Fu../xml/units/${ARCH}-freebsd \
 	-Fudb/units/${ARCH}-freebsd -Fu../db/units/${ARCH}-freebsd \
 	-Fu../../units/${ARCH}-freebsd -Fu../passrc/units/${ARCH}-freebsd
