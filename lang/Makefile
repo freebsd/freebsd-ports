@@ -327,6 +327,7 @@
     SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yap
+    SUBDIR += yarv
     SUBDIR += yorick
     SUBDIR += yorick-doc
 
