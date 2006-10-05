@@ -1,5 +1,6 @@
---- vdelivermail.c.orig	Fri Sep  2 20:47:29 2005
-+++ vdelivermail.c	Sun Jul  2 15:17:29 2006
+diff -urN -x .svn ../../vendor/vpopmail/vdelivermail.c ./vdelivermail.c
+--- ../../vendor/vpopmail/vdelivermail.c	Wed Oct  4 13:19:16 2006
++++ ./vdelivermail.c	Wed Oct  4 15:44:20 2006
 @@ -66,6 +66,7 @@
  
  #define FILE_SIZE 156
@@ -8,7 +9,17 @@
  
  #define MSG_BUF_SIZE 5000
  char msgbuf[MSG_BUF_SIZE];
-@@ -93,7 +94,10 @@
+@@ -78,9 +79,6 @@
+ #define EXIT_OK 0
+ #define EXIT_OVERQUOTA EXIT_BOUNCE
+ 
+-/* from qmail's wait.h for run_command() */
+-#define wait_exitcode(w) ((w) >> 8)
+-
+ /* Forward declarations */
+ int process_valias(void);
+ void get_arguments(int argc, char **argv);
+@@ -93,7 +91,10 @@
  void usernotfound(void);
  int is_loop_match( const char *dt, const char *address);
  int deliver_quota_warning(const char *dir, const char *q);
@@ -20,7 +31,7 @@
  
  /* print an error string and then exit
   * vexit() never returns, so vexiterr() and vexit() should actually return void
-@@ -201,7 +205,7 @@
+@@ -201,7 +202,7 @@
      if ( is_domain_valid(TheDomain) != 0 )
          vexiterr (EXIT_BOUNCE, "invalid domain name");
  
@@ -29,7 +40,7 @@
  
  #ifdef QMAIL_EXT
      /* !! Shouldn't this work its way backwards, and try all possibilities?
-@@ -247,7 +251,7 @@
+@@ -247,7 +248,7 @@
  
      /* check for wildcard if there's no match */
      if(tmpstr == NULL) {
@@ -38,16 +49,18 @@
              if(TheUser[i-1]=='-') {
                  tmpuser[0] = '\0';
                  strncat(tmpuser,TheUser,i); 
-@@ -410,6 +414,8 @@
+@@ -410,6 +411,10 @@
    char local_file_new[FILE_SIZE];
    size_t headerlen;
    int write_fd;
++#ifdef SPAMC
 +  int nread;
 +  int pim[2];
++#endif
    char quota[80];
  
      headerlen = strlen (extra_headers);
-@@ -434,6 +440,49 @@
+@@ -435,6 +440,49 @@
          return(-2);
      }
  
@@ -97,7 +110,7 @@
      if (fdcopy (write_fd, read_fd, extra_headers, headerlen) != 0) {
          /* Did the write fail because we were over quota? */
          if ( errno == EDQUOT ) {
-@@ -547,10 +596,10 @@
+@@ -549,10 +597,10 @@
              if (user_over_maildirquota(address,format_maildirquota(quota))==1) {
  
                  /* check for over quota message in domain */
@@ -110,7 +123,7 @@
                      fs=fopen(tmp_file, "r");
                  }
  
-@@ -577,10 +626,10 @@
+@@ -579,10 +627,10 @@
          if (domain_over_maildirquota(address)==1)
          {
              /* check for over quota message in domain */
@@ -123,7 +136,23 @@
                  fs=fopen(tmp_file, "r");
              }
  
-@@ -769,6 +818,7 @@
+@@ -673,9 +721,12 @@
+       }
+ 
+       close(fdm);
+-      waitpid(inject_pid,&child,0);
+-      xcode = wait_exitcode(child);
+-      if (xcode == 0) return;
++      if (waitpid(inject_pid,&child,0) <= 0 || !WIFEXITED(child)) {
++	      xcode = EXIT_DEFER;
++      } else {
++	      xcode = WEXITSTATUS(child);
++	      if (xcode == 0) return;
++      }
+       vexiterr (xcode, "system error calling qmail-inject");
+     }
+ }
+@@ -775,6 +826,7 @@
       printf("Unable to fork: %d.", errno); 
       vexit(EXIT_DEFER);
     case 0:
@@ -131,7 +160,20 @@
       args[0] = "/bin/sh"; args[1] = "-c"; args[2] = prog; args[3] = 0;
       sig_catch(SIGPIPE,SIG_DFL);
       execv(*args,args);
-@@ -824,9 +874,13 @@
+@@ -782,9 +834,9 @@
+      exit(EXIT_DEFER);    /* the child's exit code will get caught below */
+   }
+ 
+-  wait(&wstat);
+-  waitpid(wstat,&child,0);
+-  switch(wait_exitcode(wstat))
++  if (waitpid(child,&wstat,0) < 0 || !WIFEXITED(wstat))
++    vexit(EXIT_DEFER);
++  switch(WEXITSTATUS(wstat))
+    {
+     case 64: case 65: case 70: case 76: case 77: case 78: case 100: case 112: vexit(EXIT_BOUNCE);
+     case 99: vexit(99);	/* not sure about this, when does it exit 99? */
+@@ -830,9 +882,13 @@
  
          /* if we find the line, return error (looping) */
          if (is_loop_match(loop_buf, address)==1 ) {
@@ -145,7 +187,7 @@
              /* end of headers return not found looping message value */
              return(0);
          }
-@@ -943,10 +997,10 @@
+@@ -949,10 +1005,10 @@
        FILE *fs;
        char tmp_file[256];
  
@@ -158,7 +200,7 @@
              fs=fopen(tmp_file, "r");
          }
          if ( fs == NULL ) {
-@@ -993,7 +1047,7 @@
+@@ -999,7 +1055,7 @@
   struct stat     sb;
   char quotawarnmsg[BUFF_SIZE];
  
@@ -167,7 +209,7 @@
      time(&tm);
  
      /* Send only one warning every 24 hours */
-@@ -1011,12 +1065,12 @@
+@@ -1017,12 +1073,12 @@
      close(fd);
  
      /* Look in the domain for a .quotawarn.msg */
@@ -182,7 +224,7 @@
          if ( ((read_fd = open(quotawarnmsg, O_RDONLY)) < 0) || 
                (stat(quotawarnmsg, &sb) != 0)) {
              return 0;
-@@ -1057,3 +1111,97 @@
+@@ -1063,3 +1119,97 @@
  
      return (strcasecmp (compare, (dt+14)) == 0);
  }
