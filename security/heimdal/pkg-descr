@@ -1,5 +1,5 @@
-Heimdal is an implementation of Kerberos 5. It
-is freely available under a three clause BSD
-style license.
+Heimdal is an implementation of Kerberos 5, largely written in Sweden
+(due to crypto export legal issues in the US at the time). It is freely
+available under a three clause BSD style license.
 
-WWW:	http://www.pdc.kth.se/heimdal/
+WWW: http://www.pdc.kth.se/heimdal/
