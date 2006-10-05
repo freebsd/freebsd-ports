@@ -46,8 +46,7 @@ COMMENT=	Basic packages for Linux mode from SUSE 9.1/i386
 
 EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
-		linux_base-fc* linux_base-gentoo* linux_base-rh-9* \
+CONFLICTS=	linux_base-fc* linux_base-gentoo* \
 		linux_base-suse-9.2* linux_base-suse-9.3*
 
 NO_LATEST_LINK=		yes

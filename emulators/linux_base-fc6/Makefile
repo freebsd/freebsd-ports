@@ -97,9 +97,7 @@ SRC_DISTFILES+=	acl-2.2.32-1.FC4.2.src.rpm \
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
-			linux_base-rh-9* linux_base-suse-9* linux_base-8* \
-			linux_base-fc3 linux_locale*
+CONFLICTS=		linux_base-gentoo* linux_base-suse-9*
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes
