@@ -8232,6 +8232,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>lynx</name>
+	<name>ja-lynx</name>
 	<range><lt>2.8.5_1</lt></range>
 	<range><gt>2.8.6*</gt><lt>2.8.6d14</lt></range>
       </package>
@@ -8261,7 +8262,7 @@ Note:  Please add new entries to the beginning of this file.
     </references> <dates>
       <discovery>2005-10-17</discovery>
       <entry>2005-10-30</entry>
-      <modified>2005-11-01</modified>
+      <modified>2006-10-05</modified>
     </dates>
   </vuln>
 
