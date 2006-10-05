@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twinkle
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -15,12 +14,13 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Soft phone for your VoIP communcations using the SIP protocol
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	ccgnu2-1.4.0:${PORTSDIR}/devel/commoncpp \
-		ccrtp1-1.4.0:${PORTSDIR}/devel/ccrtp \
+LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp \
+		ccrtp1-1.5.0:${PORTSDIR}/devel/ccrtp \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		boost_regex.3:${PORTSDIR}/devel/boost \
 		speex.3:${PORTSDIR}/audio/speex \
-		ilbc.0:${PORTSDIR}/net/ilbc
+		ilbc.0:${PORTSDIR}/net/ilbc \
+		zrtpcpp-0.9.0:${PORTSDIR}/devel/libzrtpcpp
 
 USE_X_PREFIX=	yes
 USE_GCC=	3.4+
