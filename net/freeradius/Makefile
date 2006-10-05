@@ -7,6 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		http://freeradius.portal-to-web.de/
@@ -66,7 +67,7 @@ WITH_KERBEROS=	yes
 
 .ifdef(WITH_KERBEROS)
 .ifdef(WITH_HEIMDAL)
-LIB_DEPENDS+=	krb5.20:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.21:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
