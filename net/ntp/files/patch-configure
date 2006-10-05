@@ -1,8 +1,8 @@
---- configure	Tue Dec 18 19:27:28 2001
-+++ configure	Sat Dec 22 00:41:29 2001
-@@ -1276,6 +1276,11 @@
-  mips-sgi-irix*)
-     ans=yes
+--- configure.orig	Sun Jul  9 04:08:43 2006
++++ configure	Thu Oct  5 11:20:15 2006
+@@ -1479,6 +1479,11 @@
+       done
+     done
      ;;
 + i?86-*-freebsd[[123]].*)
 +    ;;
@@ -10,5 +10,15 @@
 +    ans=yes
 +    ;;
  esac
- ac_cv_var_no_parenb_ignpar=$ans])
- case "$ac_cv_var_no_parenb_ignpar" in
+ done
+ 
+@@ -25384,6 +25389,9 @@
+   ans=no
+     case "$host" in
+      *-*-linux*)
++        ans=yes
++        ;;
++    *-*-freebsd*)
+         ans=yes
+         ;;
+     esac
