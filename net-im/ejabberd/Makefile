@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/en/projects/ejabberd/download/${PORTVERSION}/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
+
+OPTIONS=	ODBC	"Enable ODBC support"		off
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
@@ -33,8 +34,18 @@ SUB_FILES=	${PORTNAME} pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ODBC)
+CONFIGURE_ARGS+=--enable-odbc
+PLIST_SUB+=	ODBC=""
+.else
+PLIST_SUB+=	ODBC="@comment "
+.endif
+
 pre-install:
-	${FIND} ${WRKSRC} '(' -name \*.orig -or -name \*.bak ')' -delete
+	@${FIND} ${WRKSRC} '(' -name \*.orig -or -name \*.bak ')' -delete
+	@${RM} -f ${WRKSRC}/../doc/release_note_1.1.2.txt
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${WRKSRC}/../tools/${PORTNAME}ctl ${PREFIX}/bin
@@ -56,4 +67,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
