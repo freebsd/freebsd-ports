@@ -23,6 +23,9 @@ BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binu
 RUN_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
 		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 
+DEPRECATED=	use mingw32-* ports instead
+EXPIRATION_DATE=2006-11-4
+
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}-20010828
 
 USE_AUTOTOOLS=	autoconf:253:env

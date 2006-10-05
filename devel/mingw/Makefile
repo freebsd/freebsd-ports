@@ -21,6 +21,9 @@ RUN_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
 RUN_DEPENDS+=	${LOCALBASE}/i386-mingw32msvc/include/GL/gl.h:${PORTSDIR}/devel/mingw-opengl-headers
 .endif
 
+DEPRECATED=	use mingw32-* ports instead
+EXPIRATION_DATE=2006-11-4
+
 NO_BUILD=	yes
 
 do-install:
