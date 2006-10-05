@@ -69,9 +69,7 @@
     SUBDIR += cnd
     SUBDIR += cnet
     SUBDIR += cnupm
-    SUBDIR += coda5_client
     SUBDIR += coda5_doc
-    SUBDIR += coda5_server
     SUBDIR += coda6_client
     SUBDIR += coda6_server
     SUBDIR += corkscrew
