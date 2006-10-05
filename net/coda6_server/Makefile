@@ -87,6 +87,13 @@ IGNORE=	lacks kernel support on this version of FreeBSD
 #.if ${OSVERSION} >= 600000
 #IGNORE=	makes a kernel panic on this version of FreeBSD
 #.endif
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "WARNING:"
+	@${ECHO_CMD} "This version ${PORTVERSION} of the coda client has not been tested at all under FreeBSD."
+	@${ECHO_CMD} "Previous version 6.0.7 was known to cause a kernel panic."
+	@${ECHO_CMD} "If you make some tests, please send the results to ports@FreeBSD.org"
+	@${ECHO_CMD} ""
 .endif
 
 .include <bsd.port.post.mk>
