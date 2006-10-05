@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tenshi
-PORTVERSION=		0.5.1
+PORTVERSION=		0.6
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.gentoo.org/~lcars/%SUBDIR%/
 MASTER_SITE_SUBDIR=	tenshi
