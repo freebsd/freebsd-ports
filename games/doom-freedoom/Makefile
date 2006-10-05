@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedoom
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,13 +20,21 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 
 DATADIR=	${DMDIR}/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 PLIST_FILES=	%%DATADIR%%/doom2.wad
 PLIST_DIRS=	%%DATADIR%%
+PORTDOCS=	ChangeLog NEWS README
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doom2.wad ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
