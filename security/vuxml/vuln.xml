@@ -34,6 +34,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8a5770b4-54b5-11db-a5ae-00508d6a62df">
+    <topic>mambo -- multiple SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mambo</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>James Bercegay reports:</p>
+	<blockquote cite="http://www.gulftech.org/?node=research&amp;article_id=00116-10042006">
+	  <p>Mambo is vulnerable to an Authentication Bypass issue that
+	    is due to an SQL Injection in the login function. The SQL
+	    Injection is possible because the $passwd variable is only
+	    sanitized when it is not passed as an argument to the
+	    function.</p>
+	</blockquote>
+	<p>Omid reports:</p>
+	<blockquote cite="http://seclists.org/bugtraq/2006/Aug/0491.html">
+	  <p>There are several sql injections in Mambo 4.6 RC2 &amp;
+	    Joomla 1.0.10 (and maybe other versions):</p>
+	  <ul>
+	    <li>When a user edits a content, the "id" parameter is not
+	      checked properly in /components/com_content/content.php,
+	      which can cause 2 sql injections.</li>
+	    <li>The "limit" parameter in the administration section is
+	      not checked. This affects many pages of administration
+	      section</li>
+	    <li>In the administration section, while editing/creating a
+	      user, the "gid" parameter is not checked properly.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>19719</bid>
+      <bid>19734</bid>
+      <url>http://www.gulftech.org/?node=research&amp;article_id=00116-10042006</url>
+      <url>http://seclists.org/bugtraq/2006/Aug/0491.html</url>
+      <url>http://www.frsirt.com/english/advisories/2006/3918</url>
+      <url>http://mamboxchange.com/forum/forum.php?forum_id=7704</url>
+      <url>http://secunia.com/advisories/21644/</url>
+      <url>http://secunia.com/advisories/22221/</url>
+    </references>
+    <dates>
+      <discovery>2006-08-26</discovery>
+      <entry>2006-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19a92df1-548d-11db-8f1a-000a48049292">
     <topic>tin -- buffer overflow vulnerabilities</topic>
     <affects>
@@ -2352,16 +2403,21 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>16775</bid>
+      <cvename>CVE-2006-0871</cvename>
+      <cvename>CVE-2006-1794</cvename>
       <cvename>CVE-2006-3262</cvename>
       <cvename>CVE-2006-3263</cvename>
       <mlist msgid="20060617123242.1684.qmail@securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=115056811230529</mlist>
+      <url>http://secunia.com/advisories/18935/</url>
       <url>http://secunia.com/advisories/20745/</url>
       <url>http://www.mamboserver.com/?option=com_content&amp;task=view&amp;id=207</url>
+      <url>http://www.gulftech.org/?node=research&amp;article_id=00104-02242006</url>
     </references>
     <dates>
       <discovery>2006-06-19</discovery>
       <entry>2006-07-05</entry>
-      <modified>2006-07-11</modified>
+      <modified>2006-10-05</modified>
     </dates>
   </vuln>
 
