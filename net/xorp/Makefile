@@ -7,6 +7,7 @@
 
 PORTNAME=	xorp
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
 		http://www2.xorp.org/releases/${PORTVERSION}/	\
@@ -21,26 +22,37 @@ NOMAN=		defined
 
 USE_GMAKE=	yes
 
-#
-# XXX: The default prefix needs to be overridden, because the install
-# targets create a replica of the XORP build tree containing only
-# the binaries and template files, rooted at ${PREFIX}.
-#
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--prefix=${PREFIX}/xorp \
-			--program-prefix="" ${CONFIGURE_TARGET}
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--prefix=${PREFIX}/${PORTNAME}			\
+			--with-comment='FreeBSD port: ${PKGNAME}'	\
+			--with-openssl=/usr				\
+			${CONFIGURE_TARGET}
+
 CONFIGURE_ENV+=		CXXFLAGS="-Wno-uninitialized"
 
 OPTIONS=								\
 	    ADVMCAST	 "Build with Advanced Multicast API" On		\
 	    IPV6	 "Build with IPv6 support" On			\
-	    SNMP	 "Build with SNMP MIB support (BROKEN)" Off	\
+	    SNMP	 "Build with SNMP MIB support" Off		\
 	    OPTIMIZATION "Build with optimization" Off			\
 	    CHECK	 "Build with regression test dependencies " Off	\
 	    DEBUGGING	 "Enable debugging" Off				\
 	    PROFILING	 "Enable profiling" Off
 
+pre-everything::
+.if !defined(PREFIX) || ${PREFIX} == "/usr/local"
+	@${ECHO_MSG} "XORP does not currently follow the hier(7) filesystem layout."
+	@${ECHO_MSG} "It will therefore install all its directories relative to ${PREFIX}."
+	@${ECHO_MSG} "If you do not want this, hit ^C now and set PREFIX in the"
+	@${ECHO_MSG} "build environment to something other than ${PREFIX}."
+.endif
+
 .include <bsd.port.pre.mk>
+
+XORP_GROUP=	xorp
+USE_RC_SUBR=	xorp
 
 .if defined(WITH_ADVMCAST)
 CONFIGURE_ARGS+=	--enable-advanced-mcast-api
@@ -52,13 +64,15 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-# XXX: The net-snmp MIB tests are currently broken; the MIBs
-# will therefore not build.
 .if defined(WITH_SNMP)
-BUILD_DEPENDS=	${LOCALBASE}/bin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
-CONFIGURE_ARGS+=	--with-snmp \
-	--with-path-to-snmpd=${LOCALBASE}/bin/snmpd \
-	--with-path-to-net-snmpd-config=${LOCALBASE}/bin/net-snmp-config
+BUILD_DEPENDS=		${LOCALBASE}/sbin/snmpd:${PORTSDIR}/net-mgmt/net-snmp
+CONFIGURE_ARGS+=	--with-snmp					 \
+	--with-path-to-snmpd=${LOCALBASE}/sbin				 \
+	--with-path-to-net-snmpd-config=${LOCALBASE}/bin/net-snmp-config \
+	--enable-shared
+PLIST_SUB+=		XORP_SNMP=""
+.else
+PLIST_SUB+=		XORP_SNMP="@comment "
 .endif
 
 .if defined(WITH_OPTIMIZATION)
@@ -78,5 +92,8 @@ CONFIGURE_ARGS+=	--enable-debug-msgs --enable-debug-fnames
 .if defined(WITH_PROFILING)
 CONFIGURE_ARGS+=	--enable-profile
 .endif
+
+post-install:
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
