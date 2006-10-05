@@ -26,7 +26,9 @@ KMODDIR=	/boot/modules
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
 BROKEN=		Does not compile
+.endif
 
 ONLY_FOR_ARCHS=	i386 amd64
 
