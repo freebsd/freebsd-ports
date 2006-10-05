@@ -76,13 +76,14 @@
 # LUA_INCDIR	- The directory where Lua and tolua header files are installed.
 # LUA_LIBDIR	- The directory where Lua and tolua libraries are installed.
 # LUA_MODLIBDIR	- The directory where Lua modules (.lua) are installed.
-# LUA_MODSHAREDIR	- The directory where Lua module libraries (.so) are
-#					  installed.
-# LUA_PKGNAMEPREFIX	- The package name prefix used by Lua modules.
+# LUA_MODSHAREDIR
+#				- The directory where Lua module libraries (.so) are installed.
+# LUA_PKGNAMEPREFIX
+#				- The package name prefix used by Lua modules.
 #
 # Examples:
 # - A port that needs Lua 4.0 and tolua (also 4.0) libraries (lua for building
-#   and running and tolua for building).
+#	and running and tolua for building).
 #	USE_LUA=	4.0
 #	LUA_COMPS=	lua tolua
 # - A port that needs Ruby bindings for Lua 5.0 for building and running.
@@ -94,7 +95,7 @@
 # - A port that needs Lua version 5.0 or higher for building and running.
 #	USE_LUA=	5.0+
 # - A port that needs Lua of any version other than 5.1 for building and
-#   running.
+#	running.
 #	USE_LUA_NOT=5.1
 #
 
