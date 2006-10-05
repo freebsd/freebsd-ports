@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/
+MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/ \
+		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
+		ftp://ftp.planetmirror.com/pub/coda/src/ \
+		ftp://ftp.nctu.edu.tw/mirror/Coda/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A persistent VM library
@@ -18,6 +20,8 @@ LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

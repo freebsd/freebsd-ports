@@ -6,18 +6,23 @@
 #
 
 PORTNAME=	rpc2
-PORTVERSION=	1.28
+PORTVERSION=	2.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/
+MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/ \
+		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
+		ftp://ftp.planetmirror.com/pub/coda/src/ \
+		ftp://ftp.nctu.edu.tw/mirror/Coda/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interprocess communication library
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PERL5=	yes
-INSTALLS_SHLIB=	yes
+
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -1,30 +1,32 @@
+bin/au
 bin/cfs
 bin/clog
 bin/cmon
+bin/coda_replay
 bin/codacon
 bin/cpasswd
 bin/ctokens
 bin/cunlog
 bin/filerepair
 bin/hoard
+bin/mkcodabf
 bin/mklka
 bin/parser
 bin/removeinc
 bin/repair
-bin/coda_replay
 bin/spy
+bin/vcodacon
 bin/xaskuser
 bin/xfrepair
 etc/coda/realms
 etc/coda/sidekick.intr.ex
 etc/coda/venus.conf.ex
-sbin/au
+sbin/asrlauncher
 sbin/coda-client-logrotate
-sbin/coda-setup-ports
 sbin/codaconfedit
 sbin/sidekick
 sbin/venus
 sbin/venus-setup
 sbin/volmunge
 sbin/vutil
-@dirrm etc/coda
+@dirrmtry etc/coda

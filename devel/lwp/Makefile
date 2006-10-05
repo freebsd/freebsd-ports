@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	lwp
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/
+MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/ \
+		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
+		ftp://ftp.planetmirror.com/pub/coda/src/ \
+		ftp://ftp.nctu.edu.tw/mirror/Coda/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A userspace thread library
@@ -17,12 +19,7 @@ COMMENT=	A userspace thread library
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

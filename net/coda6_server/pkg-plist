@@ -4,7 +4,7 @@ bin/rpc2ping
 bin/rvmsizer
 bin/smon2
 etc/coda/server.conf.ex
-@dirrm etc/coda
+@dirrmtry etc/coda
 sbin/auth2
 sbin/backup
 sbin/backup.sh
@@ -12,7 +12,6 @@ sbin/bldvldb.sh
 sbin/codadump2tar
 sbin/codaconfedit
 sbin/coda-server-logrotate
-sbin/coda-setup-ports
 sbin/codasrv
 sbin/codastart
 sbin/createvol_rep
@@ -25,10 +24,8 @@ sbin/parserecdump
 sbin/partial-reinit.sh
 sbin/pdbtool
 sbin/printvrdb
-sbin/purgevol
 sbin/purgevol_rep
 sbin/readdump
-sbin/rpc2portmap
 sbin/startserver
 sbin/tape.pl
 sbin/updateclnt

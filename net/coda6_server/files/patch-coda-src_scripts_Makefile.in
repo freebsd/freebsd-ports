@@ -1,0 +1,24 @@
+
+coda-setup-ports is useless with a recent /etc/services and it is the only
+file installed by both server and client thus remove it to avoid conflicting
+plists
+
+--- coda-src/scripts/Makefile.in.orig	Wed Apr 27 03:12:50 2005
++++ coda-src/scripts/Makefile.in	Thu Oct  5 19:36:14 2006
+@@ -25,14 +25,14 @@
+ # Need to conditionalize this
+ include $(TOPDIR)/Makeconf
+ 
+-VENUS-SCRIPTS = vutil volmunge venus-setup coda-setup-ports \
++VENUS-SCRIPTS = vutil volmunge venus-setup \
+     coda-client-logrotate
+ 
+ VOL-SCRIPTS	= createvol_rep purgevol_rep bldvldb.sh
+ VICE-SCRIPTS	= startserver codastart coda-server-logrotate
+ REINIT-SCRIPTS	= partial-reinit.sh
+ UPGRADE-SCRIPTS	= #pwdtopdbtool.py
+-VICE-SETUP      = vice-setup vice-setup-rvm vice-setup-scm vice-setup-srvdir vice-setup-user vice-killvolumes coda-setup-ports
++VICE-SETUP      = vice-setup vice-setup-rvm vice-setup-scm vice-setup-srvdir vice-setup-user vice-killvolumes
+ 
+ BACKUP-SCRIPTS	= backup.sh tape.pl
+ 
