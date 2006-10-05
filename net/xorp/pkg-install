@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+if [ -z "${XORP_GROUP}" ]; then
+	XORP_GROUP=xorp
+fi
+
+case $2 in
+        POST-INSTALL)
+		if [ ! -f ${PREFIX}/etc/xorp.conf.sample ]; then \
+			cp ${WRKSRC}/rtrmgr/config.boot.sample ${PREFIX}/etc/xorp.conf.sample; \
+		fi
+		if pw group show "${XORP_GROUP}" 2>/dev/null; then \
+			echo "You already have a group \"${XORP_GROUP}\", so I will use it."; \
+		else \
+			echo "Adding group \"${XORP_GROUP}\"."; \
+			pw groupadd -n ${XORP_GROUP} 2>/dev/null; \
+		fi
+		echo ""
+		echo "Add the following lines to /etc/rc.conf to enable xorp:"
+		echo ""
+		echo "defaultrouter=\"NO\""
+		echo "xorp_enable=\"YES\""
+		echo ""
+		echo "A sample configuration has been installed at"
+		echo "${PREFIX}/etc/xorp.conf.sample.  Copy it to ${PREFIX}/etc/xorp.conf"
+		echo "before editing.  It MUST be edited before use."
+		echo ""
+		echo "Users who will be changing the xorp configuration via xorpsh"
+		echo "must be members of the group xorp."
+		echo ""
+	;;
+esac

@@ -1,0 +1,18 @@
+--- configure.in.orig	Tue Jul  4 22:25:21 2006
++++ configure.in	Tue Jul  4 22:26:40 2006
+@@ -807,14 +807,9 @@
+ dnl utils/flower_malloc related
+ dnl ---------------------------------------------------------------------------
+ 
+-dnl flower_malloc in utils is an interposer and is only known to
+-dnl work on systems supporting -shared.  AFAICT this needs some work for
+-dnl a real test.  As a stop gap, we assume that if we are on *BSD or Linux
+-dnl things work okay.  Only known failure case is OS X.
++dnl disabled in FreeBSD 6.1 port
+ 
+ case "${host_os}" in
+-    *bsd*)  FLOWER_MALLOC=flower_malloc ;;
+-    linux*) FLOWER_MALLOC=flower_malloc ;;
+     *) ;;
+ esac
+ AC_SUBST(FLOWER_MALLOC)

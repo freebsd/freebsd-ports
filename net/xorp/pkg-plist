@@ -1,126 +1,138 @@
-xorp/BUGS
-xorp/BUILD_NOTES
-xorp/ERRATA
-xorp/LICENSE
-xorp/README
-xorp/RELEASE_NOTES
-xorp/TODO
-xorp/VERSION
-xorp/bgp/xorp_bgp
-xorp/bgp/tools/print_peers
-xorp/bgp/tools/print_routes
-xorp/bgp/tools/xorpsh_print_peers
-xorp/bgp/tools/xorpsh_print_routes
-xorp/cli/tools/send_cli_processor_xrl
-xorp/etc/templates/bgp.cmds
-xorp/etc/templates/bgp.tp
-xorp/etc/templates/fea.cmds
-xorp/etc/templates/fea.tp
-xorp/etc/templates/fib2mrib.tp
-xorp/etc/templates/host.cmds
-xorp/etc/templates/igmp.cmds
-xorp/etc/templates/igmp.tp
-xorp/etc/templates/interfaces.tp
-xorp/etc/templates/mfea.cmds
-xorp/etc/templates/mfea4.tp
-xorp/etc/templates/mfea6.cmds
-xorp/etc/templates/mfea6.tp
-xorp/etc/templates/misc.cmds
-xorp/etc/templates/mld.cmds
-xorp/etc/templates/mld.tp
-xorp/etc/templates/ospfv2.cmds
-xorp/etc/templates/ospfv2.tp
-xorp/etc/templates/pim.cmds
-xorp/etc/templates/pim6.cmds
-xorp/etc/templates/rib.tp
-xorp/etc/templates/pimsm4.tp
-xorp/etc/templates/pimsm6.tp
-xorp/etc/templates/plumbing.tp
-xorp/etc/templates/policy.tp
-xorp/etc/templates/protocols.tp
-xorp/etc/templates/rib.cmds
-xorp/etc/templates/rip.cmds
-xorp/etc/templates/rip.tp
-xorp/etc/templates/ripng.tp
-xorp/etc/templates/rtrmgr.tp
-xorp/etc/templates/snmp.tp
-xorp/etc/templates/static_routes.tp
-xorp/etc/templates/xorpsh.cmds
-xorp/fea/xorp_fea
-xorp/fea/xorp_fea_dummy
-xorp/fea/tools/show_interfaces
-xorp/fib2mrib/xorp_fib2mrib
-xorp/libxipc/call_xrl
-xorp/libxipc/xorp_finder
-xorp/mld6igmp/xorp_igmp
-xorp/mld6igmp/xorp_mld
-xorp/ospf/xorp_ospfv2
-xorp/ospf/xorp_ospfv3
-xorp/ospf/tools/print_lsas
-xorp/ospf/tools/print_neighbours
-xorp/pim/xorp_pimsm4
-xorp/pim/xorp_pimsm6
-xorp/policy/xorp_policy
-xorp/rib/add_route
-xorp/rib/main_routemap
-xorp/rib/xorp_rib
-xorp/rib/tools/show_routes
-xorp/rtrmgr/xorpsh
-xorp/rtrmgr/xorp_profiler
-xorp/rtrmgr/xorp_rtrmgr
-xorp/static_routes/xorp_static_routes
-xorp/xrl/targets/bgp.xrls
-xorp/xrl/targets/bgp4_mib.xrls
-xorp/xrl/targets/cli.xrls
-xorp/xrl/targets/coord.xrls
-xorp/xrl/targets/fea.xrls
-xorp/xrl/targets/demo_fea_ifmgr_client.xrls
-xorp/xrl/targets/fea_ifmgr_mirror.xrls
-xorp/xrl/targets/fib2mrib.xrls
-xorp/xrl/targets/finder.xrls
-xorp/xrl/targets/finder_client.xrls
-xorp/xrl/targets/mfea.xrls
-xorp/xrl/targets/mld6igmp.xrls
-xorp/xrl/targets/ospfv2.xrls
-xorp/xrl/targets/ospfv3.xrls
-xorp/xrl/targets/packet_acl.xrls
-xorp/xrl/targets/pim.xrls
-xorp/xrl/targets/policy.xrls
-xorp/xrl/targets/profiler.xrls
-xorp/xrl/targets/rib.xrls
-xorp/xrl/targets/ribclient.xrls
-xorp/xrl/targets/rip.xrls
-xorp/xrl/targets/ripng.xrls
-xorp/xrl/targets/rtrmgr.xrls
-xorp/xrl/targets/show_routes.xrls
-xorp/xrl/targets/socket_server.xrls
-xorp/xrl/targets/static_routes.xrls
-xorp/xrl/targets/test.xrls
-xorp/xrl/targets/test_fea_ifmgr_mirror.xrls
-xorp/xrl/targets/test_finder_events.xrls
-xorp/xrl/targets/test_peer.xrls
-xorp/xrl/targets/test_socket4.xrls
-xorp/xrl/targets/test_socket6.xrls
-xorp/xrl/targets/test_xrls.xrls
-xorp/xrl/targets/xorp_if_mib.xrls
-xorp/xrl/targets/xorpsh.xrls
-@dirrm xorp/xrl/targets
-@dirrm xorp/xrl
-@dirrm xorp/static_routes
-@dirrm xorp/rtrmgr
-@dirrm xorp/rip/tools
-@dirrm xorp/rip
-@dirrm xorp/rib
-@dirrm xorp/pim
-@dirrm xorp/ospf/tools
-@dirrm xorp/ospf
-@dirrm xorp/mld6igmp
-@dirrm xorp/libxipc
-@dirrm xorp/fea
-@dirrm xorp/etc/templates
-@dirrm xorp/etc/rc.d
-@dirrm xorp/etc
-@dirrm xorp/cli/tools
-@dirrm xorp/cli
-@dirrm xorp/bgp/tools
-@dirrm xorp/bgp
+bin/call_xrl
+bin/xorp_profiler
+bin/xorp_rtrmgr
+bin/xorpsh
+bgp/xorp_bgp
+bgp/tools/xorpsh_print_peers
+bgp/tools/xorpsh_print_routes
+cli/tools/send_cli_processor_xrl
+etc/xorp.conf.sample
+etc/templates/bgp.cmds
+etc/templates/bgp.tp
+etc/templates/fea.cmds
+etc/templates/fea.tp
+etc/templates/fib2mrib.tp
+etc/templates/host.cmds
+etc/templates/igmp.cmds
+etc/templates/igmp.tp
+etc/templates/interfaces.tp
+etc/templates/mfea.cmds
+etc/templates/mfea4.tp
+etc/templates/mfea6.cmds
+etc/templates/mfea6.tp
+etc/templates/misc.cmds
+etc/templates/mld.cmds
+etc/templates/mld.tp
+etc/templates/ospfv2.cmds
+etc/templates/ospfv2.tp
+etc/templates/pim.cmds
+etc/templates/pim6.cmds
+etc/templates/rib.tp
+etc/templates/pimsm4.tp
+etc/templates/pimsm6.tp
+etc/templates/plumbing.tp
+etc/templates/policy.tp
+etc/templates/protocols.tp
+etc/templates/rib.cmds
+etc/templates/rip.cmds
+etc/templates/rip.tp
+etc/templates/ripng.tp
+etc/templates/rtrmgr.tp
+etc/templates/snmp.tp
+etc/templates/static_routes.tp
+etc/templates/xorpsh.cmds
+fea/xorp_fea
+fea/xorp_fea_click_config_generator
+fea/xorp_fea_dummy
+fea/tools/show_interfaces
+fib2mrib/xorp_fib2mrib
+libxipc/xorp_finder
+mld6igmp/xorp_igmp
+mld6igmp/xorp_mld
+ospf/xorp_ospfv2
+ospf/xorp_ospfv3
+ospf/tools/print_lsas
+ospf/tools/print_neighbours
+pim/xorp_pimsm4
+pim/xorp_pimsm6
+policy/xorp_policy
+rib/xorp_rib
+rib/tools/show_routes
+rip/xorp_rip
+rip/xorp_ripng
+rip/tools/show_peer_stats
+rip/tools/show_stats
+static_routes/xorp_static_routes
+xrl/targets/bgp.xrls
+xrl/targets/bgp4_mib.xrls
+xrl/targets/cli.xrls
+xrl/targets/coord.xrls
+xrl/targets/fea.xrls
+xrl/targets/demo_fea_ifmgr_client.xrls
+xrl/targets/fea_ifmgr_mirror.xrls
+xrl/targets/fib2mrib.xrls
+xrl/targets/finder.xrls
+xrl/targets/finder_client.xrls
+xrl/targets/mfea.xrls
+xrl/targets/mld6igmp.xrls
+xrl/targets/ospfv2.xrls
+xrl/targets/ospfv3.xrls
+xrl/targets/packet_acl.xrls
+xrl/targets/pim.xrls
+xrl/targets/policy.xrls
+xrl/targets/profiler.xrls
+xrl/targets/rib.xrls
+xrl/targets/ribclient.xrls
+xrl/targets/rip.xrls
+xrl/targets/ripng.xrls
+xrl/targets/rtrmgr.xrls
+xrl/targets/show_routes.xrls
+xrl/targets/socket_server.xrls
+xrl/targets/static_routes.xrls
+xrl/targets/test.xrls
+xrl/targets/test_fea_ifmgr_mirror.xrls
+xrl/targets/test_finder_events.xrls
+xrl/targets/test_peer.xrls
+xrl/targets/test_socket4.xrls
+xrl/targets/test_socket6.xrls
+xrl/targets/test_xrls.xrls
+xrl/targets/xorp_if_mib.xrls
+xrl/targets/xorpsh.xrls
+%%XORP_SNMP%%mibs/bgp4_mib_1657.la
+%%XORP_SNMP%%mibs/bgp4_mib_1657.so
+%%XORP_SNMP%%mibs/libnetsnmpxorp.la
+%%XORP_SNMP%%mibs/libnetsnmpxorp.so
+%%XORP_SNMP%%mibs/ospf_mib_1850.la
+%%XORP_SNMP%%mibs/ospf_mib_1850.so
+%%XORP_SNMP%%mibs/xorp_if_mib_module.la
+%%XORP_SNMP%%mibs/xorp_if_mib_module.so
+%%XORP_SNMP%%mibs/snmpdscripts/getbgppeertable
+%%XORP_SNMP%%mibs/snmpdscripts/getbgpversion
+%%XORP_SNMP%%mibs/snmpdscripts/startsnmp
+%%XORP_SNMP%%mibs/snmpdscripts/stopsnmp
+@dirrm xrl/targets
+@dirrm xrl
+@dirrm static_routes
+@dirrm rip/tools
+@dirrm rip
+@dirrm rib/tools
+@dirrm rib
+@dirrm policy
+@dirrm pim
+@dirrm ospf/tools
+@dirrm ospf
+@dirrm mld6igmp
+%%XORP_SNMP%%@dirrm mibs/snmpdscripts
+%%XORP_SNMP%%@dirrm mibs
+@dirrm libxipc
+@dirrm fib2mrib
+@dirrmtry fea/tools
+@dirrm fea
+@dirrmtry etc/templates
+@dirrmtry etc/rc.d
+@dirrmtry etc
+@dirrm cli/tools
+@dirrm cli
+@dirrmtry bin
+@dirrm bgp/tools
+@dirrm bgp

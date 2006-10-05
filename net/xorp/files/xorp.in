@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# A sample XORP startup script.
+#
+
+# PROVIDE: xorp
+# REQUIRE: netif routing mountcritlocal
+# BEFORE:  NETWORKING
+
+# Add the following lines to /etc/rc.conf to enable xorp:
+#
+#xorp_enable="YES"
+#xorp_config_boot="%%PREFIX%%/etc/xorp.conf.sample"
+#
+
+. %%RC_SUBR%%
+
+name="xorp"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${xorp_enable="NO"}
+: ${xorp_config_boot="%%PREFIX%%/etc/xorp.conf.sample"}
+: ${xorp_flags=""}
+: ${xorp_rtrmgr_pidfile="/var/run/xorp_rtrmgr.pid"}
+
+required_files=${xorp_config_boot}
+command=%%PREFIX%%/rtrmgr/xorp_rtrmgr
+command_args="-b ${xorp_config_boot}"
+pidfile=${xorp_rtrmgr_pidfile}
+sig_stop=INT
+
+run_rc_command "$1"
