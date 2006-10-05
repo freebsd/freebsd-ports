@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	kiax
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.51
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	kiax-0.8.5-src
+DISTNAME=	kiax-${PORTVERSION}-src
 
 MAINTAINER=	kjelderg@gmail.com
 COMMENT=	An Asterisk (IAX) client written in QT for KDE
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
-	lrelease:${PORTSDIR}/x11-toolkits/qt33
+		lrelease:${PORTSDIR}/x11-toolkits/qt33
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
