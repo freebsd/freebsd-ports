@@ -35,8 +35,6 @@ sbin/dbcheck
 %%DATADIR%%/make_%%DBTYPE%%_tables
 %%DATADIR%%/mtx-changer
 %%DATADIR%%/query.sql
-%%DATADIR%%/startmysql
-%%DATADIR%%/stopmysql
 %%DATADIR%%/update_bacula_tables
 %%DATADIR%%/update_%%DBTYPE%%_tables
 
