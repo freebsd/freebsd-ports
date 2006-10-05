@@ -5230,7 +5230,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>curl</name>
-	<range><ge>7.15.0</ge><lt>7.15.3</lt></range>
+	<name>linux-curl</name>
+	<range><gt>7.14.1</gt><lt>7.15.3</lt></range>
       </package>
     </affects>
     <description>
@@ -5257,6 +5258,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-03-20</discovery>
       <entry>2006-03-20</entry>
+      <modified>2006-10-05</modified>
     </dates>
   </vuln>
 
