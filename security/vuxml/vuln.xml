@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5a39a22e-5478-11db-8f1a-000a48049292">
+    <topic>mono -- "System.CodeDom.Compiler" Insecure Temporary Creation</topic>
+    <affects>
+      <package>
+	<name>mono</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>mono-devel</name>
+	<name>mono-svn</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sebastian Krahmer reports:</p>
+	<blockquote cite="http://www.ubuntu.com/usn/usn-357-1">
+	  <p>Sebastian Krahmer of the SuSE security team discovered
+	    that the System.CodeDom.Compiler classes used temporary
+	    files in an insecure way. This could allow a symbolic link
+	    attack to create or overwrite arbitrary files with the
+	    privileges of the user invoking the program. Under some
+	    circumstances, a local attacker could also exploit this to
+	    inject arbitrary code into running Mono processes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-5072</cvename>
+      <url>http://www.ubuntu.com/usn/usn-357-1</url>
+      <url>http://secunia.com/advisories/22237/</url>
+    </references>
+    <dates>
+      <discovery>2006-10-04</discovery>
+      <entry>2006-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="edabe438-542f-11db-a5ae-00508d6a62df">
     <topic>php -- open_basedir Race Condition Vulnerability</topic>
     <affects>
