@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libticalcs
-PORTVERSION=	4.5.9
-PORTREVISION=	1
+PORTVERSION=	4.6.1
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -22,6 +21,6 @@ USE_GETTEXT=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
