@@ -55,6 +55,6 @@ BROKEN=		does not compile
 .endif
 
 DEPRECATED=	compiles neither on 5-STABLE nor 6-STABLE; current version is quite old
-EXPIRATION_DATE=	2006-10-04
+EXPIRATION_DATE=	2006-10-11
 
 .include <bsd.port.post.mk>
