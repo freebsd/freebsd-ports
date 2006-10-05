@@ -7,7 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.6
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
@@ -15,16 +15,20 @@ MASTER_SITES=		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.6/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.6/unix-linux/ \
 			http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \
-			http://www.squeakland.org/installers/
+			http://www.squeakland.org/installers/ \
+			http://www.squeakland.jp/plugin/installers/ \
+			http://squeak.610t.org/patches/
 DISTFILES=		Squeak-${VMVERSION}.src.tar.gz \
 			Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip \
 			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip \
 			SqueakPlugin.zip \
-			SqueakV3.sources.gz
+			SqueakV3.sources.gz \
+			${XIM_PATCH} \
+			${JAPANESE_PLUGIN_IMAGE}
 EXTRACT_ONLY=		Squeak-${VMVERSION}.src.tar.gz
 
 ##################################################
-MAINTAINER=		chris@chrisburkert.de
+MAINTAINER=		mutoh@openedu.org
 COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.
@@ -41,8 +45,14 @@ OPTIONS+=		NPSQUEAK	"browser plugin support" on
 OPTIONS+=		RFB		"remote frame buffer support" on
 OPTIONS+=		FFI		"libffi support" off
 OPTIONS+=		X		"X Windows support" on
+OPTIONS+=		XIM		"XIM support (Implies X)" off
 
 .include <bsd.port.pre.mk>
+
+##################################################
+XIM_PATCH=		SqueakImmX11Plugin2c.tar.gz
+PLUGIN_IMAGE=		SqueakPlugin.zip
+JAPANESE_PLUGIN_IMAGE=		SqueakPlugin2005J.zip
 
 ##################################################
 DIST_SUBDIR=		squeak
@@ -113,6 +123,16 @@ CONFIGURE_ARGS+=	--without-ffi
 PLIST_FFI=		"@comment feature not wanted - "
 .endif
 
+.if defined(WITH_XIM)
+PLIST_XIM=
+WITH_X=			yes
+USE_ICONV=		yes
+PLUGIN_IMAGE=		${JAPANESE_PLUGIN_IMAGE}
+EXT_PLUGINS+=		ImmX11Plugin
+.else
+PLIST_XIM=		"@comment feature not wanted - "
+.endif
+
 .ifdef (CC)
 MAKE_ARGS+=		CC="${CC}"
 .endif
@@ -130,7 +150,8 @@ PLIST_SUB=		IMAGEVERSION=${IMAGEVERSION}\
 			VMVERSION=${VMVERSION}\
 			PLIST_NPSQUEAK=${PLIST_NPSQUEAK}\
 			PLIST_X=${PLIST_X} \
-			PLIST_FFI=${PLIST_FFI}
+			PLIST_FFI=${PLIST_FFI} \
+			PLIST_XIM=${PLIST_XIM}
 
 ##################################################
 post-patch:
@@ -139,6 +160,12 @@ post-patch:
 		-e "s,%%X11BASE%%,${X11BASE},g" \
 		${WRKSRC}/platforms/unix/npsqueak/npsqueakregister.in \
 		${WRKSRC}/platforms/unix/npsqueak/Makefile
+.if defined(WITH_XIM)
+	@cd ${WRKSRC} && \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${XIM_PATCH} ${EXTRACT_AFTER_ARGS}
+	@cd ${WRKSRC} && \
+		${PATCH} -p0 < ImmX11.patch
+.endif
 # Fix external plugins
 	@${ECHO_MSG} "EXTERNAL_PLUGINS = B3DAcceleratorPlugin UnixOSProcessPlugin XDisplayControlPlugin ${EXT_PLUGINS}" > ${WRKSRC}/src/plugins.ext
 
@@ -164,7 +191,7 @@ post-install:
 	(cd ${WRKDIR} && ${GZIP_CMD} ${file} && ${INSTALL_DATA} ${file}.gz ${PREFIX}/share/squeak/)
 .endfor
 .if defined(WITH_NPSQUEAK)
-	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u SqueakPlugin.zip -d ${WRKDIR})
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -u ${PLUGIN_IMAGE} -d ${WRKDIR})
 	(cd ${WRKDIR} && ${INSTALL_DATA} SqueakPlugin.image ${PREFIX}/share/squeak/npsqueak.image)
 .endif
 	${SED}	-e 's|VERSION=3.5-5180|VERSION=${IMAGEVERSION}-${PATCHNUMBER}|' \

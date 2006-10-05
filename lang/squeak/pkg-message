@@ -13,5 +13,10 @@
 
  If you want to use web browser plugin,
     run %%PREFIX%%/share/squeak/npsqueakregister.
+
+ If you want to use (Japanese) XIM at full screen,
+    you get changeset at
+	http://squeak.610t.org/patches/CompositionFocus.1.cs
+     and file in it.
  ------------------ Thanks for your attention! ------------------
 
