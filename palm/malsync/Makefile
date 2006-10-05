@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.tomw.org/malsync/ \
 MASTER_SITE_SUBDIR=	fenner
 DISTNAME=	malsync_2.2.0.src
 
-MAINTAINER=	stefan.tell@crashmail.de
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Sync to Mobile Application Link (MAL) compliant servers
 
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
