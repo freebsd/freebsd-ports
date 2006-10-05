@@ -1156,6 +1156,7 @@ cgiwrap		ports/www/cgiwrap
 cgoban		ports/games/cgoban
 cgoban2		ports/games/cgoban2
 cgprof		ports/devel/cgprof
+ch		ports/shells/ch
 chaco		ports/math/chaco
 chameleon	ports/lang/chameleon
 chanta		ports/games/chanta
