@@ -8,7 +8,7 @@
 PORTNAME=	linux-ut
 PORTVERSION=	451
 CATEGORIES=	games linux
-MASTER_SITES=	http://liflg.org/?what=dl\&catid=6\&gameid=51\&filename=/:p436 \
+MASTER_SITES=	http://liflg.0wnitsch.de/files/native/:p436 \
 		http://www.utpg.org/patches/:p451
 DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
@@ -18,10 +18,6 @@ MAINTAINER=	sean-freebsd@farley.org
 COMMENT=	Unreal Tournament for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
-
-# A redirect will occur, so have fetch save the file with the correct name.
-FETCH_CMD=	/usr/bin/fetch -Rr
-FETCH_BEFORE_ARGS=	-o $${file}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
