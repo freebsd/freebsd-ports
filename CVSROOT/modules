@@ -15711,6 +15711,7 @@ yap		ports/lang/yap
 yape		ports/emulators/yape
 yaph		ports/net/yaph
 yaps		ports/comms/yaps
+yarv		ports/lang/yarv
 yasm		ports/devel/yasm
 yasql		ports/databases/yasql
 yatex		ports/print/yatex
