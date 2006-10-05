@@ -1,0 +1,5 @@
+%%SITE_PERL%%/WWW/Hotmail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Hotmail/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Hotmail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW
