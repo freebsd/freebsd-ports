@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -34,7 +35,8 @@ OPTIONS=	LDAP "LDAP keyserver interface" off \
 		LIBICONV "use libiconv" off \
 		LIBUSB "use libusb" off \
 		SUID_GPG "install GPG with suid" off \
-		NLS "Native Language Support" on
+		NLS "Native Language Support" on \
+		CURL "use libcurl for the keyserver interface" on
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +69,15 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_CURL)
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
+# Work around a GnuPG configure buglet
+CONFIGURE_ENV+=	_libcurl_config=${LOCALBASE}/bin/curl-config
+.else
+CONFIGURE_ARGS+=--without-libcurl
 .endif
 
 post-install:
