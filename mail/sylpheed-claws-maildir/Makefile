@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maildir
-PORTVERSION=	0.24.1
+PORTVERSION=	0.24.2
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed-claws.net/downloads/plugins/
 PKGNAMEPREFIX=	sylpheed-claws-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	sylpheed-claws-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Maildir++ plugin for sylpheed-claws
 
-BUILD_DEPENDS=	sylpheed-claws>=2.0:${PORTSDIR}/mail/sylpheed-claws
-RUN_DEPENDS=	sylpheed-claws>=2.0:${PORTSDIR}/mail/sylpheed-claws
+BUILD_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
+RUN_DEPENDS=	sylpheed-claws>=2.5:${PORTSDIR}/mail/sylpheed-claws
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
