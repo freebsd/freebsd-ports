@@ -1,10 +1,14 @@
 bin/xmoto
 bin/xmoto-edit
+%%NLS%%share/locale/de/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xmoto.mo
+%%DATADIR%%/credits.rpl
 %%DATADIR%%/editor.dat
 %%DATADIR%%/fonts.dat
 %%DATADIR%%/xmoto.bin
 %%DATADIR%%/xmoto.ogg
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
 %%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr
 @dirrm %%DATADIR%%
