@@ -218,6 +218,7 @@ fonts-ttf-gentium-*	x11-fonts/gentium	License forbids commercial
 						distribution without permission
 fp-freebsd-ws-*		security/f-prot		Free for personal use only
 FreeFem++*		math/freefem++		No resale, not for commercial usage
+framework-*		security/metasploit-devel	May not be re-sold
 freefonts-*		x11-fonts/freefonts	Some of the fonts are
 						shareware.  Some are freeware.
 						Permission must be obtained
