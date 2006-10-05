@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cursor-polar-theme
-PORTVERSION=	1.3
+PORTNAME=	polar-theme
+PORTVERSION=	1.4
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.kde-look.org/content/files/ \
-		http://dl.droso.net/FreeBSD/distfiles/
-DISTNAME=	27913-PolarCursorTheme
+MASTER_SITES=	http://www.kde-look.org/content/files/
+PKGNAMEPREFIX=	cursor-
+DISTNAME=	27913-PolarCursorThemes
 
 MAINTAINER=	decept0@gmail.com
 COMMENT=	Polar is a smooth and simple cursor set
@@ -19,11 +19,19 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 
-WRKSRC=		${WRKDIR}/PolarCursorTheme
+WRKSRC=		${WRKDIR}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/icons/PolarCursorTheme/cursors
-	cd ${WRKSRC}/cursors \
-	&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/PolarCursorTheme/cursors
+		@${MKDIR} ${PREFIX}/lib/X11/icons/polar/cursors
+		cd ${WRKSRC}/PolarCursorTheme/cursors \
+			&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/polar/cursors
+
+		@${MKDIR} ${PREFIX}/lib/X11/icons/polarblue/cursors
+		cd ${WRKSRC}/PolarCursorTheme-Blue/cursors \
+			&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/polarblue/cursors
+
+		@${MKDIR} ${PREFIX}/lib/X11/icons/polargreen/cursors
+		cd ${WRKSRC}/PolarCursorTheme-Green/cursors \
+			&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/polargreen/cursors
 
 .include <bsd.port.mk>
