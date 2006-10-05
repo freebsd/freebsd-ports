@@ -12150,6 +12150,7 @@ pybench		ports/benchmarks/pybench
 pybliographer	ports/misc/pybliographer
 pyblosxom	ports/www/pyblosxom
 pybook		ports/textproc/pybook
+pybookreader	ports/deskutils/pybookreader
 pychecker	ports/devel/pychecker
 pyching		ports/games/pyching
 pychm		ports/textproc/pychm
