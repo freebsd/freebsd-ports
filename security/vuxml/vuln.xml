@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="19a92df1-548d-11db-8f1a-000a48049292">
+    <topic>tin -- buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>tin</name>
+	<range><lt>1.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="ftp://ftp.tin.org/pub/news/clients/tin/stable/CHANGES">
+	  <p>Urs Janssen and Aleksey Salow report possible buffer
+	    overflows in tin versions 1.8.0 and 1.8.1.</p>
+	</blockquote>
+	<blockquote cite="http://www.openpkg.org/security/advisories/OpenPKG-SA-2006.005-tin.html">
+	  <p>OpenPKG project elaborates there is an allocation
+	    off-by-one bug in version 1.8.0 which can lead to a buffer
+	    overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>ftp://ftp.tin.org/pub/news/clients/tin/stable/CHANGES</url>
+      <url>http://www.openpkg.org/security/advisories/OpenPKG-SA-2006.005-tin.html</url>
+    </references>
+    <dates>
+      <discovery>2006-02-15</discovery>
+      <entry>2006-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae7124ff-547c-11db-8f1a-000a48049292">
     <topic>openldap -- slapd acl selfwrite Security Issue</topic>
     <affects>
