@@ -7,13 +7,14 @@
 
 PORTNAME=	fxsudoku
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.fifthplanet.net/files/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	An implementation of the Sudoku game
 
-LIB_DEPENDS=	FOX-1.6.1:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS=	FOX-1.6.14:${PORTSDIR}/x11-toolkits/fox16
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
