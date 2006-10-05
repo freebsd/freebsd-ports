@@ -7,6 +7,7 @@
 
 PORTNAME=	arla
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
@@ -20,9 +21,7 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"security/heimdal is broken"
-.elif ${OSVERSION} < 600007
+.if ${OSVERSION} < 600007
 BROKEN=		"compiles but overwrites files from a dependency (security/heimdal)"
 .else
 BROKEN=		"does not compile"
@@ -39,7 +38,7 @@ CONFIGURE_ARGS=	--with-roken=${LOCALBASE}
 .if defined(WITHOUT_KRB5)
 CONFIGURE_ARGS+=--without-krb5
 .elif !defined(WITH_SYSTEM_HEIMDAL)
-LIB_DEPENDS+=	krb5.20:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.21:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-krb5=/usr
