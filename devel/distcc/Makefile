@@ -7,11 +7,11 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.18.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
@@ -36,7 +36,7 @@ OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
 .if defined(WITH_COMPILER_LINKS)
 CCLINKDIR?=		libexec/distcc
 PLIST_DIRS=		${CCLINKDIR}
-GNU_COMPILERS=		295 32 33 34 35 40 41
+GNU_COMPILERS=		295 32 33 34 40 41
 DISTCC_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH} == "i386"
 DISTCC_COMPILERS+=	icc icpc
