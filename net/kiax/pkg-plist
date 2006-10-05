@@ -1,5 +1,6 @@
 bin/kiax
 %%DATADIR%%/i18n/kiax_bg.qm
+%%DATADIR%%/i18n/kiax_bm.qm
 %%DATADIR%%/i18n/kiax_cs.qm
 %%DATADIR%%/i18n/kiax_de.qm
 %%DATADIR%%/i18n/kiax_en.qm
