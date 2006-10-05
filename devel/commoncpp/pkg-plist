@@ -37,13 +37,13 @@ include/cc++/unix.h
 include/cc++/url.h
 include/cc++/xml.h
 include/cc++/zstream.h
-lib/libccext2-1.4.so
-lib/libccext2-1.4.so.0
+lib/libccext2-1.5.so
+lib/libccext2-1.5.so.0
 lib/libccext2.a
 lib/libccext2.la
 lib/libccext2.so
-lib/libccgnu2-1.4.so
-lib/libccgnu2-1.4.so.0
+lib/libccgnu2-1.5.so
+lib/libccgnu2-1.5.so.0
 lib/libccgnu2.a
 lib/libccgnu2.la
 lib/libccgnu2.so
