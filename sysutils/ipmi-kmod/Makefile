@@ -26,6 +26,8 @@ KMODDIR=	/boot/modules
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		Does not compile
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 # Don't strip module on amd64 systems
