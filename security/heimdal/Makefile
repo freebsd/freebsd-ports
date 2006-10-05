@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	heimdal
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/pub/heimdal/src/ \
 		ftp://ftp.ayamura.org/pub/heimdal/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A re-implementation of Kerberos V
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	heimdal-0.7.2-setuid-patch.txt
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	shaun@FreeBSD.org
+COMMENT=	A popular BSD-licensed implementation of Kerberos 5
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]*
 
-OPTIONS+=	LDAP     "Use OpenLDAP as the KDC backend" off
-OPTIONS+=	CRACKLIB "Use CrackLib for password quality checking" off
-OPTIONS+=	X11      "Build X11 utilies" off
+OPTIONS+=	LDAP	 "Use OpenLDAP as the KDC backend"		off
+OPTIONS+=	CRACKLIB "Use CrackLib for password quality checking"	off
+OPTIONS+=	X11	 "Build X11 utilies"				off
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -32,10 +35,6 @@ INFO=		heimdal
 PLIST=		${WRKDIR}/PLIST
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		Incomplete pkg-plist on FreeBSD >= 7.0
-.endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
