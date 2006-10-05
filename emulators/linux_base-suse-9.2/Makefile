@@ -50,7 +50,8 @@ EXTRACT_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 BROKEN=			Does not build
 
-CONFLICTS=		linux_base-fc* linux_base-gentoo* \
+CONFLICTS=		linux_base-7* linux_base-8* linux_base-debian* \
+			linux_base-fc* linux_base-gentoo* linux_base-rh* \
 			linux_base-suse-9.1* linux_base-suse-9.3*
 
 RESTRICTED=	binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt
