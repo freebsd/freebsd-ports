@@ -1326,9 +1326,7 @@ cocktail	ports/devel/cocktail
 coco		ports/textproc/coco
 cocoon		ports/www/cocoon
 cocor		ports/lang/cocor
-coda5_client	ports/net/coda5_client
 coda5_doc	ports/net/coda5_doc
-coda5_server	ports/net/coda5_server
 coda6_client	ports/net/coda6_client
 coda6_server	ports/net/coda6_server
 code-browser	ports/editors/code-browser

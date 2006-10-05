@@ -2480,3 +2480,5 @@ www/mediawiki14||2006-10-02|Has expired: No longer supported, please upgrade you
 comms/pstngw||2006-10-02|Has expired
 net/openh323-112||2006-10-02|Has expired
 devel/pwlib152||2006-10-02|Has expired
+net/coda5_server||2006-10-05|Has expired: no longer available from mastersite
+net/coda5_client||2006-10-05|Has expired: no longer available from mastersite
