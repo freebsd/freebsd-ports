@@ -3,9 +3,32 @@ $FreeBSD$
 
 --- Bin/build-perl-modules.pl.orig
 +++ Bin/build-perl-modules.pl
-@@ -54,6 +54,13 @@
+@@ -24,14 +24,14 @@
  
- 		'env' => [qw(DBI-1.46/blib/lib: DBI-1.46/blib/arch)],
+ # The list of all the packages needed.
+ my %packages = (
+-	'Compress::Zlib'     => 'Compress-Zlib-1.41.tar.gz',
+-	'DBI'                => 'DBI-1.50.tar.gz',
+-	'DBD::mysql'         => 'DBD-mysql-3.0002.tar.gz',
+-	'Digest::SHA1'       => 'Digest-SHA1-2.11.tar.gz',
+-	'HTML::Parser'       => 'HTML-Parser-3.48.tar.gz',
+-	'Template'           => 'Template-Toolkit-2.14.tar.gz',
+-	'Time::HiRes'        => 'Time-HiRes-1.86.tar.gz',
+-	'XML::Parser::Expat' => 'XML-Parser-2.34.tar.gz',
++#	'Compress::Zlib'     => 'Compress-Zlib-1.41.tar.gz',
++#	'DBI'                => 'DBI-1.50.tar.gz',
++#	'DBD::mysql'         => 'DBD-mysql-3.0002.tar.gz',
++#	'Digest::SHA1'       => 'Digest-SHA1-2.11.tar.gz',
++#	'HTML::Parser'       => 'HTML-Parser-3.48.tar.gz',
++#	'Template'           => 'Template-Toolkit-2.14.tar.gz',
++#	'Time::HiRes'        => 'Time-HiRes-1.86.tar.gz',
++#	'XML::Parser::Expat' => 'XML-Parser-2.34.tar.gz',
+ 	'YAML::Syck'         => 'YAML-Syck-0.64.tar.gz',
+ );
+ 
+@@ -57,6 +57,13 @@
+ 
+ 		'env' => [qw(DBI-1.50/blib/lib: DBI-1.50/blib/arch)],
  	},
 +
 +	'XML-Parser-2.34' => {
@@ -17,7 +40,7 @@ $FreeBSD$
  );
  
  sub main {
-@@ -74,28 +81,14 @@
+@@ -73,28 +80,14 @@
  
  	print "*** Ignore any warnings about AppConfig. ***\n\n";
  
@@ -48,7 +71,7 @@ $FreeBSD$
  
  	unless (-d $slimServerPath) {
  		die "Couldn't find a valid SlimServer path. Exiting.\n";
-@@ -107,12 +100,7 @@
+@@ -109,12 +102,7 @@
  	# This is where the binaries will end up.
  	my $cpanDest = "$slimServerPath/CPAN/arch/$version/$archname/auto";
  
@@ -62,7 +85,7 @@ $FreeBSD$
  
  	# Remove trailing slash
  	$downloadPath =~ s|^(.+?)/$|$1|;
-@@ -125,32 +113,6 @@
+@@ -127,30 +115,6 @@
  
  	my $pwd = cwd();
  
@@ -74,10 +97,7 @@ $FreeBSD$
 -
 -		for my $cmd (qw(curl wget)) {
 -
--			system("which $cmd >/dev/null 2>&1");
--
--			unless ($? >> 8) {
--				$downloadUsing = $cmd;
+-			if ($downloadUsing = which($cmd)) {
 -				last;
 -			}
 -		}
@@ -92,13 +112,19 @@ $FreeBSD$
 -	} else {
 -		print "Downloads will use $downloadUsing to fetch tarballs.\n";
 -	}
+-
+ 	# Only download the packages that were passsed.
+ 	my @packages = ();
  
- 	for my $package (@packages) {
+@@ -189,30 +153,9 @@
  
-@@ -161,18 +123,7 @@
- 		# Remove any previous version.
- 		unlink $package;
+ 		chdir($pwd) or die "Couldn't change to $pwd : $!";
  
+-		print "\nDownloading $package to: $pwd\n";
+-
+-		# Remove any previous version.
+-		unlink $package;
+-
 -		if ($downloadUsing eq 'lwp') {
 -
 -			LWP::Simple::getstore("$SOURCE/$package?view=auto", $package);
@@ -111,7 +137,15 @@ $FreeBSD$
 -
 -			`$downloadUsing -q -O $package $SOURCE/$package?view=auto`;
 -		}
-+		`cp %%DISTDIR%%/$package .`;
+-
+-		unless (-r $package) {
+-			print "Something looks wrong - I couldn't read $pwd/$package, which I just downloaded.\n";
+-		}
++		print "\nExtracting $package in: $pwd\n";
  
- 		unless (-r $package) {
- 			print "Something looks wrong - I couldn't read $pwd/$package, which I just downloaded.\n";
+-		print "Uncompressing..\n";
+-		`gzip -d < $package | tar xvf -`;
++		`tar xfvz %%DISTDIR%%/$package`;
+ 
+ 		unlink $package;
+ 

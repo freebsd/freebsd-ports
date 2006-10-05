@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	6.3.1
+PORTVERSION=	6.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
@@ -19,35 +19,40 @@ COMMENT=	Slim Devices audio streaming server
 # SB3 devices and wired SB1 devices.
 OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 		FAAD "Support AAC input via FAAD" on \
-		FLAC "Support FLAC output (and inputs on older devices)" on \
+		FLAC "Support FLAC output (and input on SliMP3 and SB1)" on \
 		LAME "Support MP3 output via LAME" off \
 		MUSEPACK "Support musepack input" on \
 		SHORTEN "Support Shorten input" off \
-		VORBIS "Support OGG Vorbis input" on
+		VORBIS "Support OGG Vorbis input (SliMP3 and SB1)" on
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
 WRKSRC=		${WRKDIR}/SlimServer_v${PORTVERSION}
 
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
+RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 USE_PERL5=	yes
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	50
 
-SLIMCPANPKGS=	Compress-Zlib-1.33.tar.gz \
-		DBI-1.46.tar.gz \
-		DBD-SQLite-1.08.tar.gz \
-		Digest-SHA1-2.11.tar.gz \
-		HTML-Parser-3.45.tar.gz \
-		Template-Toolkit-2.13.tar.gz \
-		Time-HiRes-1.66.tar.gz \
-		XML-Parser-2.34.tar.gz
-
+SLIMCPANPKGS=	YAML-Syck-0.64.tar.gz
 ALLFILES=	${DISTFILES} ${SLIMCPANPKGS}
 
 .include <bsd.port.pre.mk>
+
+# We need a dependency on the server because slimserver runs the binary
+# directly with a non-standard config.
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
 .if !defined(WITHOUT_APE)
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
@@ -71,8 +76,8 @@ RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=		perl 5.8 or newer required. Install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500803
+IGNORE=		perl 5.8.3 or newer required. Install lang/perl5.8 and try again
 .endif
 
 .if ${OSVERSION} < 502110
@@ -88,7 +93,7 @@ TMP_DOCSDIR=	${WRKDIR}/doc
 CPANWRKDIR=	${WRKDIR}/cpantemp
 DOCFILES=	Changelog.html Installation.txt License.txt
 CONFFILES=	convert.conf types.conf
-EXCEPTFILES=	${DOCFILES} ${CONFFILES}
+EXCEPTFILES=	${DOCFILES} ${CONFFILES} MySQL/errmsg.txt MySQL/errmsg.sys
 EXCEPTDIRS=	Bin \
 		CPAN/arch
 
@@ -119,11 +124,11 @@ post-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|%%PERL%%|${PERL}|' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		-e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
-		-e 's|%%CPANWRKDIR%%|${CPANWRKDIR}|' \
-		-e 's|%%DISTDIR%%|${_DISTDIR}|' ${WRKSRC}/Bin/build-perl-modules.pl
+	    -e 's|%%PERL%%|${PERL}|' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
+	    -e 's|%%CPANWRKDIR%%|${CPANWRKDIR}|' \
+	    -e 's|%%DISTDIR%%|${_DISTDIR}|' ${WRKSRC}/Bin/build-perl-modules.pl
 
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
@@ -155,6 +160,8 @@ post-build:
 	    ${SED} -e 's|${TMP_SLIMDIR}|%%SLIMDIR%%|' | \
 	    ${SORT} >> ${PLIST}
 	@${ECHO} "${SLIMDIR}/Cache" >> ${PLIST}
+	@${ECHO} "${SLIMDIR}/MySQL/errmsg.txt" >> ${PLIST}
+	@${ECHO} "${SLIMDIR}/MySQL/errmsg.sys" >> ${PLIST}
 	@${FIND} ${TMP_SLIMDIR} -type d | \
 	    ${SED} -e 's|${TMP_SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
@@ -177,6 +184,10 @@ do-install:
 	@cd ${TMP_SLIMDIR} && \
 	    ${FIND} . | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}
+	@${LN} -s ${LOCALBASE}/share/mysql/errmsg.txt \
+	    ${PREFIX}/${SLIMDIR}/MySQL/
+	@${LN} -s ${LOCALBASE}/share/mysql/english/errmsg.sys \
+	    ${PREFIX}/${SLIMDIR}/MySQL/
 	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
