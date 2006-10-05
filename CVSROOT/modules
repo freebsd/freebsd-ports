@@ -6830,6 +6830,7 @@ metamail	ports/mail/metamail
 metaocaml	ports/lang/metaocaml
 metapixel	ports/graphics/metapixel
 metasploit	ports/security/metasploit
+metasploit-devel	ports/security/metasploit-devel
 metis		ports/math/metis
 metis-edf	ports/math/metis-edf
 metromap	ports/misc/metromap
