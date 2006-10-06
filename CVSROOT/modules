@@ -625,7 +625,7 @@ avifonts	ports/x11-fonts/avifonts
 avinfo		ports/multimedia/avinfo
 avltree		ports/devel/avltree
 avr-binutils	ports/devel/avr-binutils
-avr-gcc		ports/devel/avr-gcc
+avr-gcc-3	ports/devel/avr-gcc-3
 avr-gcc-devel	ports/devel/avr-gcc-devel
 avr-gdb		ports/devel/avr-gdb
 avr-libc	ports/devel/avr-libc
