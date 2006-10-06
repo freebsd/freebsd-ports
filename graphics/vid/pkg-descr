@@ -1,0 +1,22 @@
+The ovtvid-bsd project has written for FreeBSD and NetBSD) a simple-minded
+image capture program for USB webcams based on the OmniVision Technologies
+OV511/OV511+ bridge chip attached to an OV7610 CCD imager.
+
+This includes inexpensive webcams such as:
+    * Creative Labs WebCam 3
+    * D-Link DSB-C300
+    * Puretek PT-6007
+    * Alpha Vision Koala-Cam
+    * Lifeview RoboCam
+    * AverMedia InterCam Elite
+    * MediaForte MV300
+    * Trust Spacec@m 300
+
+The program is heavily based on the OV511 Linux driver by Mark W. McClelland.
+Recent versions of that driver support a wider array of cameras; if it supports
+something that this program doesn't then contact us and we'll see what we can do.
+
+WWW: http://ovtvid-bsd.sourceforge.net/
+
+- Olivier Smedts
+olivier@freebsd.org
