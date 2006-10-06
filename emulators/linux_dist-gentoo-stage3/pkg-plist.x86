@@ -1,7 +1,4 @@
 %%PREFIX_SUBDIR%%etc/resolv.conf
-%%PREFIX_SUBDIR%%lib/udev/devices/console
-%%PREFIX_SUBDIR%%lib/udev/devices/null
-%%PREFIX_SUBDIR%%lib/udev/devices/zero
 %%PREFIX_SUBDIR%%bin/unlink
 %%PREFIX_SUBDIR%%bin/bzgrep
 %%PREFIX_SUBDIR%%bin/who
@@ -698,15 +695,12 @@
 %%PREFIX_SUBDIR%%lib/libnss_nis-2.3.5.so
 %%PREFIX_SUBDIR%%lib/libcidn.so.1
 %%PREFIX_SUBDIR%%lib/librt.so.1
-%%PREFIX_SUBDIR%%lib/udev-state/.keep
-%%PREFIX_SUBDIR%%lib/udev-state/devices.tar.bz2
 %%PREFIX_SUBDIR%%lib/cpp
 %%PREFIX_SUBDIR%%lib/libnss_hesiod.so.2
 %%PREFIX_SUBDIR%%lib/libutil-2.3.5.so
 %%PREFIX_SUBDIR%%lib/libuuid.so.1.2
 %%PREFIX_SUBDIR%%lib/libnsl.so.1
 %%PREFIX_SUBDIR%%lib/libwrap.so.0
-%%PREFIX_SUBDIR%%lib/udev/raid-devfs.sh
 %%PREFIX_SUBDIR%%lib/libcidn-2.3.5.so
 %%PREFIX_SUBDIR%%lib/libpam_misc.so
 %%PREFIX_SUBDIR%%lib/libpam.so.0
@@ -33318,9 +33312,6 @@
 @dirrm %%PREFIX_SUBDIR%%mnt/floppy
 @dirrm %%PREFIX_SUBDIR%%mnt/cdrom
 @dirrm %%PREFIX_SUBDIR%%mnt
-@dirrm %%PREFIX_SUBDIR%%lib/udev/devices
-@dirrm %%PREFIX_SUBDIR%%lib/udev-state
-@dirrm %%PREFIX_SUBDIR%%lib/udev
 @dirrm %%PREFIX_SUBDIR%%lib/security/pam_filter
 @dirrm %%PREFIX_SUBDIR%%lib/security
 @dirrm %%PREFIX_SUBDIR%%lib/rcscripts/sh
