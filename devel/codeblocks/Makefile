@@ -7,6 +7,7 @@
 
 PORTNAME=		codeblocks
 PORTVERSION=		1.0r2
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,12 +18,12 @@ MAINTAINER=	m.sund@arcor.de
 COMMENT=	Open source, cross-platform, free C/C++ IDE
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk2_xrc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
+LIB_DEPENDS=	wx_gtk2u_xrc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 TARGETS=	tinyXML scintilla sdk wxDockit src console_runner doc
 PLUGINS=	Astyle CompilerGCC DebuggerGDB CodeCompletion ClassWizard DefMimeHandler PluginsWizard ToDo XPManifest
