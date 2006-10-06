@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zope
-PORTVERSION=	2.9.4
+PORTNAME=	zope29
+PORTVERSION=	2.9.5
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
@@ -17,7 +17,7 @@ MAINTAINER=	yasi@yasi.to
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	yes
-USE_RC_SUBR=	${PORTNAME}29.sh zeo29.sh
+USE_RC_SUBR=	${PORTNAME}.sh zeo29.sh
 LATEST_LINK=	zope29
 
 # Note: the notes that follow reflect the decisions of prior maintainers
@@ -80,7 +80,7 @@ post-install:
 	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 
-	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w
+	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
 
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
