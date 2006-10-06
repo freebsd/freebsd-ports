@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CFLAGS=		-O2 -fno-strict-aliasing -pipe
 INSTALLS_ICONS=	yes
 
 MANLANG=	"" de
