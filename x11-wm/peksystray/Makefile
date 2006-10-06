@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	stefan.tell@crashmail.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system tray dockapp similar to the GNOME notification area applet
 
 USE_X_PREFIX=	yes
