@@ -7,6 +7,7 @@
 
 PORTNAME=	PDO_SQLITE
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,13 +19,12 @@ COMMENT=	SQLite v3 Interface driver for PDO
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases/pecl-PDO
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=5
 PHP_MODNAME=	pdo_sqlite
 
-CONFIGURE_ARGS+=--with-pdo-sqlite=${LOCALBASE}
+CONFIGURE_ARGS+=--with-pdo-sqlite
 
 .include <bsd.port.mk>
