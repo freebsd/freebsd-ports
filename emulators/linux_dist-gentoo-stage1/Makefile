@@ -7,7 +7,7 @@
 
 PORTNAME=	gentoo-stage1
 PORTVERSION=	2006.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages
@@ -75,7 +75,8 @@ pre-fetch:
 do-install:
 	@${MKDIR} ${PREFIX}/${PREFIX_SUBDIR}
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${TAR} --exclude=./dev -xpy --exclude=./proc -C ${PREFIX}/${PREFIX_SUBDIR} \
+	@${TAR} --exclude=./dev -xpy --exclude=./proc --exclude=./lib/udev-state \
+		-C ${PREFIX}/${PREFIX_SUBDIR} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 	@${CP} -p /etc/resolv.conf ${PREFIX}/${PREFIX_SUBDIR}/etc/
 	@${FIND} ${PREFIX}/${PREFIX_SUBDIR}bin ${PREFIX}/${PREFIX_SUBDIR}sbin/ \
