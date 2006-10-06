@@ -10,6 +10,8 @@ If you use MySQL as your database go to the directory
 a demo database:
 
   mysql -u [username] -p [db_name] < rth.sql
+If you are upgrading from a prior version of rth note
+update instructions at %%PREFIX%%/www/rth/sql.
 
 To make rth available through your web site, I suggest
 that you add something like the following to httpd.conf:
