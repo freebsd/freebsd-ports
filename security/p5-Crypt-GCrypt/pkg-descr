@@ -1,0 +1,3 @@
+Crypt::GCrypt provides an object interface to the C libgcrypt library.
+It currently supports symmetric encryption/decryption, while asymmetric
+cryptography is being worked on.
