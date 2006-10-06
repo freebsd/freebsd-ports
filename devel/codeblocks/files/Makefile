@@ -11,13 +11,13 @@
 include ./gcc.defs
 
 ### Variables used in this Makefile
-LIB_WXXRC=wx_gtk2_xrc-2.6
+LIB_WXXRC=wx_gtk2u_xrc-2.6
 
 ### Compiler/linker options
 tinyXML_GLOBAL_CFLAGS=
-tinyXML_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+tinyXML_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 tinyXML_GLOBAL_LDFLAGS=
-tinyXML_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+tinyXML_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 tinyXML_GLOBAL_INCS= -I/usr/include
 tinyXML_PROJECT_INCS= -Isdk/wxscintilla/include
 tinyXML_GLOBAL_LIBDIRS= -L/usr/lib
@@ -25,9 +25,9 @@ tinyXML_PROJECT_LIBDIRS= -Lsdk/tinyxml
 tinyXML_GLOBAL_LIBS=
 tinyXML_PROJECT_LIBS=
 scintilla_GLOBAL_CFLAGS=
-scintilla_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+scintilla_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 scintilla_GLOBAL_LDFLAGS=
-scintilla_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+scintilla_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 scintilla_GLOBAL_INCS= -I/usr/include
 scintilla_PROJECT_INCS= -Isdk/wxscintilla/include
 scintilla_GLOBAL_LIBDIRS= -L/usr/lib
@@ -35,9 +35,9 @@ scintilla_PROJECT_LIBDIRS= -Lsdk/tinyxml
 scintilla_GLOBAL_LIBS=
 scintilla_PROJECT_LIBS=
 sdk_GLOBAL_CFLAGS=
-sdk_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+sdk_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 sdk_GLOBAL_LDFLAGS=
-sdk_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+sdk_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 sdk_GLOBAL_INCS= -I/usr/include
 sdk_PROJECT_INCS= -Isdk/wxscintilla/include
 sdk_GLOBAL_LIBDIRS= -L/usr/lib
@@ -45,9 +45,9 @@ sdk_PROJECT_LIBDIRS= -Lsdk/tinyxml
 sdk_GLOBAL_LIBS=
 sdk_PROJECT_LIBS=
 wxDockit_GLOBAL_CFLAGS=
-wxDockit_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+wxDockit_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 wxDockit_GLOBAL_LDFLAGS=
-wxDockit_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+wxDockit_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 wxDockit_GLOBAL_INCS= -I/usr/include
 wxDockit_PROJECT_INCS= -Isdk/wxscintilla/include
 wxDockit_GLOBAL_LIBDIRS= -L/usr/lib
@@ -55,9 +55,9 @@ wxDockit_PROJECT_LIBDIRS= -Lsdk/tinyxml
 wxDockit_GLOBAL_LIBS=
 wxDockit_PROJECT_LIBS=
 src_GLOBAL_CFLAGS=
-src_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+src_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 src_GLOBAL_LDFLAGS=
-src_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+src_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 src_GLOBAL_INCS= -I/usr/include
 src_PROJECT_INCS= -Isdk/wxscintilla/include
 src_GLOBAL_LIBDIRS= -L/usr/lib
@@ -65,9 +65,9 @@ src_PROJECT_LIBDIRS= -Lsdk/tinyxml
 src_GLOBAL_LIBS=
 src_PROJECT_LIBS=
 plugin_Astyle_GLOBAL_CFLAGS=
-plugin_Astyle_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_Astyle_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_Astyle_GLOBAL_LDFLAGS=
-plugin_Astyle_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_Astyle_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_Astyle_GLOBAL_INCS= -I/usr/include
 plugin_Astyle_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_Astyle_GLOBAL_LIBDIRS= -L/usr/lib
@@ -75,9 +75,9 @@ plugin_Astyle_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_Astyle_GLOBAL_LIBS=
 plugin_Astyle_PROJECT_LIBS=
 plugin_CompilerGCC_GLOBAL_CFLAGS=
-plugin_CompilerGCC_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_CompilerGCC_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_CompilerGCC_GLOBAL_LDFLAGS=
-plugin_CompilerGCC_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_CompilerGCC_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_CompilerGCC_GLOBAL_INCS= -I/usr/include
 plugin_CompilerGCC_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_CompilerGCC_GLOBAL_LIBDIRS= -L/usr/lib
@@ -85,9 +85,9 @@ plugin_CompilerGCC_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_CompilerGCC_GLOBAL_LIBS=
 plugin_CompilerGCC_PROJECT_LIBS=
 plugin_DebuggerGDB_GLOBAL_CFLAGS=
-plugin_DebuggerGDB_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_DebuggerGDB_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_DebuggerGDB_GLOBAL_LDFLAGS=
-plugin_DebuggerGDB_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_DebuggerGDB_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_DebuggerGDB_GLOBAL_INCS= -I/usr/include
 plugin_DebuggerGDB_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_DebuggerGDB_GLOBAL_LIBDIRS= -L/usr/lib
@@ -95,9 +95,9 @@ plugin_DebuggerGDB_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_DebuggerGDB_GLOBAL_LIBS=
 plugin_DebuggerGDB_PROJECT_LIBS=
 plugin_CodeCompletion_GLOBAL_CFLAGS=
-plugin_CodeCompletion_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_CodeCompletion_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_CodeCompletion_GLOBAL_LDFLAGS=
-plugin_CodeCompletion_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_CodeCompletion_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_CodeCompletion_GLOBAL_INCS= -I/usr/include
 plugin_CodeCompletion_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_CodeCompletion_GLOBAL_LIBDIRS= -L/usr/lib
@@ -105,9 +105,9 @@ plugin_CodeCompletion_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_CodeCompletion_GLOBAL_LIBS=
 plugin_CodeCompletion_PROJECT_LIBS=
 plugin_ClassWizard_GLOBAL_CFLAGS=
-plugin_ClassWizard_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_ClassWizard_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_ClassWizard_GLOBAL_LDFLAGS=
-plugin_ClassWizard_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_ClassWizard_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_ClassWizard_GLOBAL_INCS= -I/usr/include
 plugin_ClassWizard_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_ClassWizard_GLOBAL_LIBDIRS= -L/usr/lib
@@ -115,9 +115,9 @@ plugin_ClassWizard_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_ClassWizard_GLOBAL_LIBS=
 plugin_ClassWizard_PROJECT_LIBS=
 plugin_DefMimeHandler_GLOBAL_CFLAGS=
-plugin_DefMimeHandler_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_DefMimeHandler_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_DefMimeHandler_GLOBAL_LDFLAGS=
-plugin_DefMimeHandler_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_DefMimeHandler_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_DefMimeHandler_GLOBAL_INCS= -I/usr/include
 plugin_DefMimeHandler_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_DefMimeHandler_GLOBAL_LIBDIRS= -L/usr/lib
@@ -125,9 +125,9 @@ plugin_DefMimeHandler_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_DefMimeHandler_GLOBAL_LIBS=
 plugin_DefMimeHandler_PROJECT_LIBS=
 plugin_PluginsWizard_GLOBAL_CFLAGS=
-plugin_PluginsWizard_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_PluginsWizard_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_PluginsWizard_GLOBAL_LDFLAGS=
-plugin_PluginsWizard_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_PluginsWizard_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_PluginsWizard_GLOBAL_INCS= -I/usr/include
 plugin_PluginsWizard_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_PluginsWizard_GLOBAL_LIBDIRS= -L/usr/lib
@@ -135,9 +135,9 @@ plugin_PluginsWizard_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_PluginsWizard_GLOBAL_LIBS=
 plugin_PluginsWizard_PROJECT_LIBS=
 plugin_ToDo_GLOBAL_CFLAGS=
-plugin_ToDo_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_ToDo_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_ToDo_GLOBAL_LDFLAGS=
-plugin_ToDo_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_ToDo_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_ToDo_GLOBAL_INCS= -I/usr/include
 plugin_ToDo_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_ToDo_GLOBAL_LIBDIRS= -L/usr/lib
@@ -145,9 +145,9 @@ plugin_ToDo_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_ToDo_GLOBAL_LIBS=
 plugin_ToDo_PROJECT_LIBS=
 plugin_XPManifest_GLOBAL_CFLAGS=
-plugin_XPManifest_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+plugin_XPManifest_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 plugin_XPManifest_GLOBAL_LDFLAGS=
-plugin_XPManifest_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+plugin_XPManifest_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 plugin_XPManifest_GLOBAL_INCS= -I/usr/include
 plugin_XPManifest_PROJECT_INCS= -Isdk/wxscintilla/include
 plugin_XPManifest_GLOBAL_LIBDIRS= -L/usr/lib
@@ -155,9 +155,9 @@ plugin_XPManifest_PROJECT_LIBDIRS= -Lsdk/tinyxml
 plugin_XPManifest_GLOBAL_LIBS=
 plugin_XPManifest_PROJECT_LIBS=
 update_GLOBAL_CFLAGS=
-update_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+update_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 update_GLOBAL_LDFLAGS=
-update_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+update_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 update_GLOBAL_INCS= -I/usr/include
 update_PROJECT_INCS= -Isdk/wxscintilla/include
 update_GLOBAL_LIBDIRS= -L/usr/lib
@@ -165,9 +165,9 @@ update_PROJECT_LIBDIRS= -Lsdk/tinyxml
 update_GLOBAL_LIBS=
 update_PROJECT_LIBS=
 console_runner_GLOBAL_CFLAGS=
-console_runner_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+console_runner_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 console_runner_GLOBAL_LDFLAGS=
-console_runner_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+console_runner_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 console_runner_GLOBAL_INCS= -I/usr/include
 console_runner_PROJECT_INCS= -Isdk/wxscintilla/include
 console_runner_GLOBAL_LIBDIRS= -L/usr/lib
@@ -175,9 +175,9 @@ console_runner_PROJECT_LIBDIRS= -Lsdk/tinyxml
 console_runner_GLOBAL_LIBS=
 console_runner_PROJECT_LIBS=
 doc_GLOBAL_CFLAGS=
-doc_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2-2.6-config --cflags`
+doc_PROJECT_CFLAGS= -Wall -fPIC -g -pipe -fno-pcc-struct-return -fno-rtti -fmessage-length=0 `wxgtk2u-2.6-config --cflags`
 doc_GLOBAL_LDFLAGS=
-doc_PROJECT_LDFLAGS= `wxgtk2-2.6-config --libs`
+doc_PROJECT_LDFLAGS= `wxgtk2u-2.6-config --libs`
 doc_GLOBAL_INCS= -I/usr/include
 doc_PROJECT_INCS= -Isdk/wxscintilla/include
 doc_GLOBAL_LIBDIRS= -L/usr/lib
