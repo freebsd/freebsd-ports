@@ -1,0 +1,36 @@
+--- mmv.1	Thu Oct  5 19:09:58 2006
++++ mmv.1	Thu Oct  5 19:12:46 2006
+@@ -345,7 +345,7 @@
+ with embedded
+ .I wildcard
+ .IR indexes ,
+-where an index consists of the character '#'
++where an index consists of the character '#' or '='
+ followed by a string of digits.
+ When a source file matches a
+ .I from
+@@ -406,7 +406,7 @@
+ However, if "dir2\*(SLa" already exists and is itself a directory,
+ this is considered an error.
+ .PP
+-To strip any character (e.g. '*', '?', or '#')
++To strip any character (e.g. '*', '?', '#', or '=')
+ of its special meaning to
+ .IR mmv ,
+ as when the actual replacement name must contain the character '#',
+@@ -639,6 +639,15 @@
+ .SH "SEE ALSO"
+ mv(1), cp(1), ln(1), umask(1)
+ \}
++.SH "HISTORY"
++The original FreeBSD port of mmv was derived from the Usenet
++comp.sources.unix postings <2438@litchi.bbn.com>,
++<2439@litchi.bbn.com>, and <2643@litchi.bbn.com>.
++The current port is based on the comp.binaries.ibm.pc postings 
++(no messageids available).
++The Unix version used '=' as the index escape character,
++while the MS-DOS version used '#'.
++This port allows both.
+ .SH "AUTHOR"
+ Vladimir Lanin
+ .br
