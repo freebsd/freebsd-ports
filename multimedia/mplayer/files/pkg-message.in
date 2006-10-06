@@ -1,11 +1,32 @@
+
+===================================================================
+MPlayer comes with useful documentation covering many topics like
+output devices, video encoding, repairing broken files etc.
+They are installed in
+
+%%DOCSDIR%%
+
+for references.
+===================================================================
+MPlayer's system-wide configuration dir is
+
+%%PREFIX%%/etc/mplayer
+
+If you want to install configuration files into this location
+in order to change mplayer's default settings for all users on
+your system, you find some examples in
+
+%%DATADIR%%/examples/etc
+===================================================================
 This port provides a simple and easy to use
-tool to provide fonts in OSD.
+tool to provide bitmap fonts in OSD.
 Just cd to the ports directory and type
 
 make install-user
 
 Note: This is only for the bitmap fonts! If you've compiled
-mplayer with truetype support, this won't work.
+mplayer with truetype support, i.e. it is linked to freetype,
+which is the preferred and supported default setting, this won't
+work as expected.
+===================================================================
 
-Please take a look at docs in
-%%DOCSDIR%%
