@@ -16,6 +16,7 @@
     SUBDIR += apan
     SUBDIR += argus
     SUBDIR += argus-clients
+    SUBDIR += arpalert
     SUBDIR += arpscan
     SUBDIR += arpwatch
     SUBDIR += arpwatch-devel
