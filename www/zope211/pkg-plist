@@ -719,6 +719,8 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testApplication.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportHooks.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportHooks.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFTPInterface.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFTPInterface.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFileAndImage.py
@@ -745,6 +747,8 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testSimpleItem.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_Uninstalled.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_Uninstalled.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/www/ControlPanel_icon.gif
@@ -1053,6 +1057,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Five/tests/boilerplate.py
 %%ZOPEBASEDIR%%/lib/python/Products/Five/tests/boilerplate.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/tests/bridge.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Five/tests/classes.py
+%%ZOPEBASEDIR%%/lib/python/Products/Five/tests/classes.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/tests/directives.zcml
 %%ZOPEBASEDIR%%/lib/python/Products/Five/tests/event.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/tests/framework.py
@@ -2507,6 +2513,8 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testZODBCompat.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testZopeTestCase.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/testZopeTestCase.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/tests.py
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/threadutils.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/threadutils.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/utils.py
@@ -2521,16 +2529,21 @@
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/framework.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/functional.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/functional.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/layerextraction.txt
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/runalltests.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/runalltests.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testAuthHeaderTest.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testAuthHeaderTest.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testFunctionalDocTest.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testFunctionalDocTest.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testLayerExtraction.py
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testLayerExtraction.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testWarningsTest.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testWarningsTest.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testZopeDocTest.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/testZopeDocTest.pyc
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/tests.py
+%%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/zopedoctest/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/ztc_common.py
 %%ZOPEBASEDIR%%/lib/python/Testing/ZopeTestCase/ztc_common.pyc
 %%ZOPEBASEDIR%%/lib/python/Testing/__init__.py
@@ -3041,6 +3054,8 @@
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/generate_conflicts.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testBaseRequest.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testBaseRequest.pyc
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testBeforeTraverse.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testBeforeTraverse.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRangeSupport.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRangeSupport.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPRequest.py
@@ -4727,6 +4742,8 @@
 %%ZOPEBASEDIR%%/lib/python/webdav/tests/testLockItem.pyc
 %%ZOPEBASEDIR%%/lib/python/webdav/tests/testNullResource.py
 %%ZOPEBASEDIR%%/lib/python/webdav/tests/testNullResource.pyc
+%%ZOPEBASEDIR%%/lib/python/webdav/tests/testPUT_factory.py
+%%ZOPEBASEDIR%%/lib/python/webdav/tests/testPUT_factory.pyc
 %%ZOPEBASEDIR%%/lib/python/webdav/tests/testResource.py
 %%ZOPEBASEDIR%%/lib/python/webdav/tests/testResource.pyc
 %%ZOPEBASEDIR%%/lib/python/webdav/www/davlock.gif
@@ -5746,6 +5763,8 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_intwidget.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_objectwidget.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_objectwidget.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_selectwidget.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_selectwidget.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_textareawidget.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_textareawidget.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/ftests/test_textwidget.py
@@ -5937,6 +5956,10 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/tests/test_unauthorized.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/unauthorized.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/unauthorized.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/test_put.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/test_put.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/httpdate.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/httpdate.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/interfaces.py
@@ -7331,6 +7354,8 @@
 %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/untrusted/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/untrusted/untrusted.py
 %%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/untrusted/untrusted.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/ustr.py
+%%ZOPEBASEDIR%%/lib/python/zope/documenttemplate/ustr.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/dottedname/resolve.py
@@ -7363,10 +7388,15 @@
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/errors.py
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/errors.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/errors.txt
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/form.py
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/form.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/form.txt
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/formlib-configure.zcml
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/ftests.py
+%%ZOPEBASEDIR%%/lib/python/zope/formlib/ftests.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/i18n.py
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/i18n.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/formlib/interfaces.py
@@ -8610,6 +8640,7 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testing/renormalizing.py
 %%ZOPEBASEDIR%%/lib/python/zope/testing/renormalizing.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-arguments.txt
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-coverage-win32.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-coverage.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-debugging.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-edge-cases.txt
@@ -8770,6 +8801,7 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-ex/usecompiled/package/compiletest.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-gc.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-knit.txt
+%%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-layers-api.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-layers-ntd.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-layers.txt
 %%ZOPEBASEDIR%%/lib/python/zope/testing/testrunner-leaks-err.txt
@@ -9066,6 +9098,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/i18n/browser
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/i18n
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http
