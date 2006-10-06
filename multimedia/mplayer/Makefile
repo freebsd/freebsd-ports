@@ -84,7 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -262,7 +262,7 @@ CATEGORIES+=	ipv6
 .if !defined(WITHOUT_GUI)
 PLIST_SUB+=	GMPLAYER=""
 .if !defined(WITHOUT_SKINS)
-RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
+RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/skins:${PORTSDIR}/multimedia/mplayer-skins
 .endif
 
 .if ( ${OSVERSION} < 500000 )
@@ -594,8 +594,10 @@ post-install:
 	@${CHMOD} 755 ${DATADIR}
 	@${MKDIR} ${DATADIR}/tools
 	@${CHMOD} 755 ${DATADIR}/tools
+	@${MKDIR} ${DATADIR}/examples/etc
+	@${CHMOD} 755 ${DATADIR}/examples/etc
 .for conf in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}/examples/etc
 .endfor
 .for tool in ${TOOLFILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/TOOLS/${tool} ${DATADIR}/tools

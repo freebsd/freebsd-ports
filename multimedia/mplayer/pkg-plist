@@ -118,11 +118,13 @@ bin/mplayer
 %%DATADIR%%/tools/w32codec_dl.pl
 %%DATADIR%%/tools/wma2ogg.pl
 %%DATADIR%%/tools/x2mpsub.sh
-%%DATADIR%%/example.conf
-%%DATADIR%%/input.conf
-%%DATADIR%%/menu.conf
-%%DATADIR%%/dvb-menu.conf
+%%DATADIR%%/examples/etc/example.conf
+%%DATADIR%%/examples/etc/input.conf
+%%DATADIR%%/examples/etc/menu.conf
+%%DATADIR%%/examples/etc/dvb-menu.conf
 @dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/examples/etc
+@dirrm %%DATADIR%%/examples
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%VIDIX%%@dirrm lib/mplayer/vidix
