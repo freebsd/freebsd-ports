@@ -262,8 +262,6 @@
 %%PREFIX_SUBDIR%%lib/libnss_nis-2.3.5.so
 %%PREFIX_SUBDIR%%lib/libcidn.so.1
 %%PREFIX_SUBDIR%%lib/librt.so.1
-%%PREFIX_SUBDIR%%lib/udev-state/.keep
-%%PREFIX_SUBDIR%%lib/udev-state/devices.tar.bz2
 %%PREFIX_SUBDIR%%lib/libnss_hesiod.so.2
 %%PREFIX_SUBDIR%%lib/libutil-2.3.5.so
 %%PREFIX_SUBDIR%%lib/libnsl.so.1
@@ -5639,7 +5637,6 @@
 @dirrm %%PREFIX_SUBDIR%%mnt/floppy
 @dirrm %%PREFIX_SUBDIR%%mnt/cdrom
 @dirrm %%PREFIX_SUBDIR%%mnt
-@dirrm %%PREFIX_SUBDIR%%lib/udev-state
 @dirrm %%PREFIX_SUBDIR%%lib/rcscripts/sh
 @dirrm %%PREFIX_SUBDIR%%lib/rcscripts/net.modules.d/helpers.d
 @dirrm %%PREFIX_SUBDIR%%lib/rcscripts/net.modules.d
