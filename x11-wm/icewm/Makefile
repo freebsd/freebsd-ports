@@ -8,10 +8,9 @@
 PORTNAME=	icewm
 PORTVERSION=	1.2.28
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 USE_X_PREFIX=	yes
