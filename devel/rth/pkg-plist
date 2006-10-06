@@ -31,8 +31,8 @@ www/rth/api/testset_api.php
 www/rth/api/timer_api.php
 www/rth/api/user_api.php
 www/rth/api/admin_api.php
-www/rth/api/.#error_api.php.1.1.1.1
 www/rth/lang/strings_english.txt
+www/rth/lang/strings_french.txt
 www/rth/jpgraph-1.8/src/utils/misc/adjimg.php
 www/rth/jpgraph-1.8/src/utils/misc/gencolorchart.php
 www/rth/jpgraph-1.8/src/utils/misc/imgdbschema.inc
@@ -1603,6 +1603,7 @@ www/rth/docs/WinRunner/demo_script/header
 www/rth/docs/WinRunner/demo_script/script
 www/rth/docs/WinRunner/README
 www/rth/docs/WinRunner/wrun.ini_updates
+www/rth/docs/mantis/rth_api.php
 www/rth/docs/INSTALL
 www/rth/docs/LICENSE
 www/rth/docs/README
@@ -1776,6 +1777,9 @@ www/rth/adodb-4.65/adodb-lib.inc.php
 www/rth/adodb-4.65/adodb-pager.inc.php
 www/rth/adodb-4.65/adodb-pear.inc.php
 www/rth/adodb-4.65/adodb-perf.inc.php
+www/rth/sql/1.5.9_update_db.sql
+www/rth/sql/1.5.8_update_db.sql
+www/rth/sql/1.5.7_update_db.sql
 www/rth/sql/1.5.1_update_db.sql
 www/rth/sql/rth.sql
 www/rth/sql/rth_demo.sql
@@ -3122,6 +3126,7 @@ www/rth/build_page.php
 www/rth/build_edit_page.php
 www/rth/build_edit_action.php
 www/rth/build_add_action.php
+www/rth/bug_upload_file_action.php
 www/rth/bug_update_action.php
 www/rth/bug_page.php
 www/rth/bug_group_action_page.php
@@ -3153,6 +3158,7 @@ www/rth/testset_signoff_page.php
 @dirrmtry www/rth/rth_file_upload/DEMO_test_run_docs
 @dirrmtry www/rth/rth_file_upload/DEMO_test_plan_docs
 @dirrmtry www/rth/rth_file_upload/DEMO_test_docs
+@dirrmtry www/rth/rth_file_upload/DEMO_defect_docs
 @dirrmtry www/rth/docs/WinRunner/wr_initialization/db
 @dirrmtry www/rth/docs/WinRunner/wr_initialization
 @dirrmtry www/rth/docs/WinRunner/verify.fun/db
@@ -3160,6 +3166,7 @@ www/rth/testset_signoff_page.php
 @dirrmtry www/rth/docs/WinRunner/demo_script/db
 @dirrmtry www/rth/docs/WinRunner/demo_script
 @dirrmtry www/rth/docs/WinRunner
+@dirrmtry www/rth/docs/mantis
 @dirrmtry www/rth/docs
 @dirrmtry www/rth/sql
 @dirrmtry www/rth/rth_file_upload/DEMO_req_docs
