@@ -13714,6 +13714,7 @@ sudoscript	ports/security/sudoscript
 sudosh		ports/security/sudosh
 sudsol		ports/games/sudsol
 sugarcrm	ports/deskutils/sugarcrm
+suitesparse	ports/math/suitesparse
 sulci		ports/net-im/sulci
 sun-wtk		ports/java/sun-wtk
 sunbird		ports/deskutils/sunbird
