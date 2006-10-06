@@ -43,7 +43,7 @@ OPTIONS=	CLI "Build CLI version" on \
 		CGI "Build CGI version" on \
 		APACHE "Build Apache module" off \
 		DEBUG "Enable debug" off \
-		SUHOSIN "Enable Suhosin protection system" off \
+		SUHOSIN "Enable Suhosin protection system" on \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
 		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
@@ -57,7 +57,7 @@ MAN1=		php-config.1 phpize.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SUHOSIN)
+.if !defined(WITHOUT_SUHOSIN)
 PATCHFILES=	suhosin-patch-${PORTVERSION}-0.9.5.patch.gz
 PATCH_SITES=	http://www.hardened-php.net/suhosin/_media/
 PATCH_DIST_STRIP=	-p1
