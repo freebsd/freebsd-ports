@@ -1,0 +1,40 @@
+***************************************************************
+You can find example configuration in
+
+	%%PREFIX%%/share/examples/torque/var/spool/torque
+
+On all machines, both server and computing nodes, copy it's
+contents into
+
+	/var/spool/torque/
+
+and put hostname of the server into
+
+	/var/spool/torque/server_name
+
+On computing nodes, put '$pbsserver ip.address.of.server' into
+	
+	/var/spool/torque/mom_priv/config
+
+On server, put hostnames of computing nodes, one per line, into
+
+	/var/spool/torque/server_priv/nodes
+
+On computing nodes, add the following line to /etc/rc.conf:
+
+	pbs_mom_enable="YES"
+
+On TORQUE server, add the following lines to /etc/rc.conf:
+
+	pbs_server_enable="YES"
+	pbs_sched_enable="YES"
+
+To configure queues on server, execute
+
+	%%PREFIX%%/share/examples/torque/torque.setup <admin>
+
+For further information, see
+
+	http://www.clusterresources.com/torquedocs21/
+
+***************************************************************

@@ -594,6 +594,7 @@
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
     SUBDIR += topless
+    SUBDIR += torque
     SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tree

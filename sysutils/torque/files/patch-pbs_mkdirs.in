@@ -1,0 +1,19 @@
+--- buildutils/dpbs_mkdirs.in.orig	Tue Jun 20 02:22:46 2006
++++ buildutils/pbs_mkdirs.in	Thu Sep 14 15:06:48 2006
+@@ -105,6 +105,7 @@
+ #
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
++DESTDIR=@prefix@
+ CHK_TREE=${DESTDIR}@bindir@/chk_tree
+ 
+ PBS_DEFAULT_SERVER=@PBS_DEFAULT_SERVER@
+@@ -112,7 +113,7 @@
+ # PBS_SERVER_HOME is defined without DESTDIR so that DEFAULT_FILE and EVIRON
+ # can be based on SERVER_HOME.  SERVER_HOME is defined a second time to pick
+ # up DESTDIR
+-test -n "$PBS_SERVER_HOME" || PBS_SERVER_HOME=@PBS_SERVER_HOME@
++test -n "$PBS_SERVER_HOME" || PBS_SERVER_HOME=/share/examples/torque/var/spool/torque/
+ test -n "$PBS_DEFAULT_FILE" || PBS_DEFAULT_FILE=${DESTDIR}@PBS_DEFAULT_FILE@
+ test -n "$PBS_ENVIRON" || PBS_ENVIRON=${DESTDIR}@PBS_ENVIRON@
+ 
