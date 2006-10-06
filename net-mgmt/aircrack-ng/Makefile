@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aircrack-ng
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -14,11 +14,11 @@ MASTER_SITES=	http://download.aircrack-ng.org/ \
 MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Aircrack-ng is the next generation of aircrack
 
-ALL_TARGET=	aircrack-ng airdecap-ng arpforge-ng ivstools kstats
+ALL_TARGET=	aircrack-ng airdecap-ng packetforge-ng ivstools kstats
 
-PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/arpforge-ng bin/ivstools \
+PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/packetforge-ng bin/ivstools \
 		bin/kstats
-MAN1=		aircrack-ng.1 airdecap-ng.1 arpforge-ng.1 ivstools.1
+MAN1=		aircrack-ng.1 airdecap-ng.1 packetforge-ng.1 ivstools.1
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +33,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aircrack-ng ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/airdecap-ng ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/arpforge-ng ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/packetforge-ng ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ivstools ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/kstats ${PREFIX}/bin
 .for manpage in ${MAN1}
