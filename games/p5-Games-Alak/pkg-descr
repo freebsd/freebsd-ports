@@ -1,0 +1,10 @@
+This module implements a simple game-tree system for the computer to
+play against the user in a game of Alak. You can just play the game
+for fun; or you can use this module as a starting point for
+understanding game trees (and implementing smarter strategy -- the
+module's current logic is fairly simple-minded), particularly after
+reading my Perl Journal #18 article on trees, which discusses this
+module's implementation of game trees as an example of general
+tree-shaped data structures.
+
+WWW:	http://search.cpan.org/dist/Games-Alak/

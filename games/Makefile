@@ -498,6 +498,7 @@
     SUBDIR += p5-Algorithm-Pair-Best
     SUBDIR += p5-Algorithm-Pair-Swiss
     SUBDIR += p5-Baseball-Sabermetrics
+    SUBDIR += p5-Games-Alak
     SUBDIR += p5-Games-AlphaBeta
     SUBDIR += p5-Games-Bingo
     SUBDIR += p5-Games-Bingo-Bot
