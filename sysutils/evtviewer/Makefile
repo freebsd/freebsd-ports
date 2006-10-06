@@ -8,7 +8,9 @@
 PORTNAME=	evtViewer
 PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://contribs.martymac.com/evtViewer/
+MASTER_SITES=	http://contribs.martymac.com/evtViewer/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com
