@@ -328,6 +328,7 @@
     SUBDIR += pgpool
     SUBDIR += pgtop
     SUBDIR += pgworksheet
+    SUBDIR += php-sqlite3
     SUBDIR += php-sqlrelay
     SUBDIR += php4-dba
     SUBDIR += php4-dbase

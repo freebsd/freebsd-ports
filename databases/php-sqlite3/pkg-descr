@@ -1,0 +1,16 @@
+php-sqlite3 is a PHP extension that lets you access SQLite3 databases
+within your scripts.  PHP4 and PHP5 have already built-in support for this
+RDBM, but this is limited to the 2.x releases.  This extension adds support
+for SQLite 3.x release.
+
+Please note that this project is still alpha-quality. Please test and report
+if it works for you and if you have ideas on how it can be enhanced.
+
+Current (or planned) features include:
+
+    * In-memory databases support
+    * UTF-16 encoding
+    * User-level SQL functions
+    * PEAR::DB driver class 
+
+WWW: http://php-sqlite3.sourceforge.net/
