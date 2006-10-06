@@ -3263,6 +3263,7 @@ gindent		ports/devel/gindent
 gini		ports/net/gini
 ginsu		ports/net-im/ginsu
 giram		ports/graphics/giram
+gish-demo	ports/games/gish-demo
 git		ports/misc/git
 gj		ports/java/gj
 gj-jdk11	ports/java/gj-jdk11
