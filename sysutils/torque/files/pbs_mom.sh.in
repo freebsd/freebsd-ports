@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: pbs_mom
+# REQUIRE: 
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pbs_mom_enable (bool):   Set to NO by default.
+#               Set it to YES to enable pbs_mom.
+#
+
+. %%RC_SUBR%%
+
+name="pbs_mom"
+rcvar=${name}_enable
+
+pidfile=/var/spool/torque/mom_priv/mom.lock
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${pbs_mom_enable="NO"}
+
+command_args=""
+
+run_rc_command "$1"

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: pbs_sched
+# REQUIRE: pbs_server
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pbs_sched_enable (bool):   Set to NO by default.
+#               Set it to YES to enable pbs_sched.
+#
+
+. %%RC_SUBR%%
+
+name="pbs_sched"
+rcvar=${name}_enable
+
+pidfile=/var/spool/torque/sched_priv/sched.lock
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${pbs_sched_enable="NO"}
+
+command_args=""
+
+run_rc_command "$1"
