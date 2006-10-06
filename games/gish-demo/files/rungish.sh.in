@@ -1,0 +1,12 @@
+#!/bin/sh
+
+LD_PRELOAD_ALUT=%%LINUXBASE%%/usr/lib/libalut.so.0
+
+if [ -n "$LD_PRELOAD" ]; then
+    export LD_PRELOAD="$LD_PRELOAD_ALUT:$LD_PRELOAD"
+else
+    export LD_PRELOAD="$LD_PRELOAD_ALUT"
+fi
+
+cd %%DATADIR%% || exit 1
+exec ./gish "$@"

@@ -240,6 +240,7 @@
     SUBDIR += ggz-sdl-games
     SUBDIR += ggz-txt-client
     SUBDIR += gillo
+    SUBDIR += gish-demo
     SUBDIR += gl-117
     SUBDIR += glasteroids
     SUBDIR += glaxium
