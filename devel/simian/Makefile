@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simian
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.12
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.redhillconsulting.com.au/products/simian/
 
@@ -44,7 +44,7 @@ SUB_LIST+=	MONO="@comment "
 .endif
 
 .if defined(PACKAGE_BUILDING)
-RESTRICTED=	"Have to agree to license before download"
+RESTRICTED=	Have to agree to license before download
 .endif
 
 SUB_FILES=	simian
