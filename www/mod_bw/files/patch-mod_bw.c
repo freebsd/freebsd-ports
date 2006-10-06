@@ -1,20 +1,5 @@
 --- mod_bw.c.orig	Mon Apr 24 03:10:44 2006
 +++ mod_bw.c	Tue May 16 14:01:56 2006
-@@ -51,6 +51,14 @@
- #include "http_core.h"
- #include "scoreboard.h"
- 
-+#if APR_MAJOR_VERSION == 0
-+#define	apr_atomic_set32(mem,val)	(atomic_set_32(mem,val),mem)
-+#define	apr_atomic_inc32(mem)		(atomic_add_32(mem,1),mem)
-+#define	apr_atomic_dec32(mem)		(atomic_subtract_32(mem,1),mem)
-+#define	apr_atomic_add32(mem,val)	(atomic_add_32(mem,val),mem)
-+#define apr_atomic_cas32		apr_atomic_cas
-+#endif
-+
- #define MIN_BW 256              /* Minimal bandwidth 256 bytes  */
- #define PACKET 8192             /* Default packet at 8192 bytes */
- 
 @@ -715,8 +723,10 @@
  
          /* If we are too busy, deny connection */
