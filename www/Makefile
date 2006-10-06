@@ -496,6 +496,7 @@
     SUBDIR += p5-Bigtop
     SUBDIR += p5-Bundle-Slash
     SUBDIR += p5-Bundle-Sledge
+    SUBDIR += p5-Business-PayPal
     SUBDIR += p5-CGI-Ajax
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-Application-Plugin-DBH
