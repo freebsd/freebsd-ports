@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Tue Nov 30 21:49:32 2004
++++ Makefile.in	Tue Nov 30 21:50:05 2004
+@@ -31,9 +31,11 @@
+ 	$(INSTALL) -d $(DESTDIR)$(DATADIR)/$(AUDACITY_NAME)
+ 	-test -f audacity-1.2-help.htb && $(INSTALL) -m 644 audacity-1.2-help.htb \
+ 		$(DESTDIR)$(DATADIR)/$(AUDACITY_NAME)/audacity-1.2-help.htb
++ifeq ($(DOC),yes)
+ 	$(INSTALL) -d $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)
+ 	$(INSTALL) -m 644 README.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/README.txt
+ 	$(INSTALL) -m 644 LICENSE.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/LICENSE.txt
++endif
+ 
+ 	# install manpage
+ 	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man1
