@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e329550b-54f7-11db-a5ae-00508d6a62df">
+    <topic>php -- _ecalloc Integer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.1.6_1</lt></range>
+      </package>
+      <package>
+	<name>php5-cli</name>
+	<name>php5-cgi</name>
+	<name>php5-dtc</name>
+	<name>php5-horde</name>
+	<name>php5-nms</name>
+	<name>mod_php5</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://cvs.php.net/viewvc.cgi/ZendEngine2/zend_alloc.c?view=log#rev1.162">
+	  <p>Ilia Alshanetsky reports lack of safety checks against
+	    integer overflow in Zend Engine II.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4812</cvename>
+      <url>http://secunia.com/advisories/22280/</url>
+    </references>
+    <dates>
+      <discovery>2006-09-30</discovery>
+      <entry>2006-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a5770b4-54b5-11db-a5ae-00508d6a62df">
     <topic>mambo -- multiple SQL injection vulnerabilities</topic>
     <affects>
