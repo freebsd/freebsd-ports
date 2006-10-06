@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ufsparse
+PORTNAME=	suitesparse
 PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	math
