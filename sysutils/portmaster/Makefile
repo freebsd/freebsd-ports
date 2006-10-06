@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portmaster
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none

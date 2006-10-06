@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd August 12, 2006
+.Dd October 5, 2006
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -32,28 +32,28 @@
 .Nd manage your ports without external databases or languages
 .Sh SYNOPSIS
 .Nm
-.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Op Ar name of port directory in
-.Pa /var/db/pkg
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Ar full name of port directory in /var/db/pkg
 .Nm
-.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Op Ar glob pattern from
-.Pa /var/db/pkg
-.Nm
-.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Op Fl p Ar port directory in /usr/ports
-.Nm
-.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op Ar full path to /usr/ports/foo/bar
 .Nm
-.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Ar Multiple full names/paths from either of the above
+.Nm
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Ar glob pattern from /var/db/pkg
+.Nm
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Fl p Ar port directory in /usr/ports
+.Nm
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Fl o Ar <new port dir in /usr/ports> <installed port>
 .Nm
-.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
-.Fl r Ar name/glob of port in
-.Pa /var/db/pkg
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Fl r Ar name/glob of port in /var/db/pkg
 .Nm
-.Op Fl CGbgnv [uf|i] [D|d] m Ar arguments for make
+.Op Fl CGgnv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Fl a
 .Nm
 .Fl [l|L]
@@ -127,15 +127,37 @@ questions about the deletion of stale distfiles.
 This can be eliminated with the
 .Fl d
 option.
+.Pp
+While checking dependencies, if a port has CONFLICTS
+set, the list will be checked against your installed ports,
+and if you have installed an alternate version of a port
+that is required by the port you are building,
+it will be used in place of the default dependency.
+.Pp
+If there is no
+.Fl B
+option specified when updating an existing port,
+a backup package will be created before
+.Xr pkg_delete 1
+is called.
+If there is no
+.Fl b
+option specified, the backup package will be deleted
+once the new version of the port is successfully installed.
+If the installation fails for whatever reason,
+a helpful message will be printed, along with instructions
+on where to find the backup package.
 .Sh OPTIONS
 The options are as follows:
 .Bl -tag -width F1
+.It Fl B
+prevents creation of the backup package for the installed port
 .It Fl C
 prevents 'make clean' being run in port directory
 .It Fl G
 prevents the recursive 'make config'
 .It Fl b
-create a backup package of the installed port (if any)
+create and keep a backup package of an installed port
 .It Fl g
 create a package of the new port
 .It Fl n
@@ -183,6 +205,11 @@ clean out stale ports that used to be depended on
 .It Fl h
 display help file
 .El
+.Sh MAKE ENVIRONMENT
+If the directory pointed to by the PKGREPOSITORY
+variable exists (by default
+.Pa /usr/ports/packages/All )
+then it will be used to store new and backup packages.
 .Sh FILES
 .Bl -tag -width ".Pa $HOME/.portmasterrc" -compact
 .It Pa /etc/portmaster.rc
@@ -206,6 +233,7 @@ command:
 .Pp
 .Dl "portmaster fooport-1.23"
 .Dl "portmaster fooport"
+.Dl "portmaster fooport-1.23 barport-4.56"
 .Dl "portmaster -p /usr/ports/foo/fooport"
 .Dl "portmaster foo/fooport"
 .Dl "portmaster -r fooport-1.23"
