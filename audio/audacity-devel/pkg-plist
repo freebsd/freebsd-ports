@@ -1,0 +1,65 @@
+bin/audacity
+%%DATADIR%%/nyquist/bug.lsp
+%%DATADIR%%/nyquist/dspprims.lsp
+%%DATADIR%%/nyquist/evalenv.lsp
+%%DATADIR%%/nyquist/follow.lsp
+%%DATADIR%%/nyquist/init.lsp
+%%DATADIR%%/nyquist/misc.lsp
+%%DATADIR%%/nyquist/nyinit.lsp
+%%DATADIR%%/nyquist/nyqmisc.lsp
+%%DATADIR%%/nyquist/nyquist.lsp
+%%DATADIR%%/nyquist/printrec.lsp
+%%DATADIR%%/nyquist/profile.lsp
+%%DATADIR%%/nyquist/seq.lsp
+%%DATADIR%%/nyquist/seqfnint.lsp
+%%DATADIR%%/nyquist/seqmidi.lsp
+%%DATADIR%%/nyquist/sndfnint.lsp
+%%DATADIR%%/nyquist/system.lsp
+%%DATADIR%%/nyquist/test.lsp
+%%DATADIR%%/nyquist/xlinit.lsp
+%%DATADIR%%/plug-ins/SilenceMarker.ny
+%%DATADIR%%/plug-ins/clicktrack.ny
+%%DATADIR%%/plug-ins/crossfadein.ny
+%%DATADIR%%/plug-ins/crossfadeout.ny
+%%DATADIR%%/plug-ins/delay.ny
+%%DATADIR%%/plug-ins/highpass.ny
+%%DATADIR%%/plug-ins/lowpass.ny
+%%DATADIR%%/plug-ins/pluck.ny
+%%DATADIR%%/plug-ins/tremolo.ny
+%%DATADIR%%/audacity-1.2-help.htb
+share/locale/ar/LC_MESSAGES/audacity.mo
+share/locale/bg/LC_MESSAGES/audacity.mo
+share/locale/ca/LC_MESSAGES/audacity.mo
+share/locale/cs/LC_MESSAGES/audacity.mo
+share/locale/da/LC_MESSAGES/audacity.mo
+share/locale/de/LC_MESSAGES/audacity.mo
+share/locale/el/LC_MESSAGES/audacity.mo
+share/locale/es/LC_MESSAGES/audacity.mo
+share/locale/eu/LC_MESSAGES/audacity.mo
+share/locale/fi/LC_MESSAGES/audacity.mo
+share/locale/fr/LC_MESSAGES/audacity.mo
+share/locale/ga/LC_MESSAGES/audacity.mo
+share/locale/hu/LC_MESSAGES/audacity.mo
+share/locale/it/LC_MESSAGES/audacity.mo
+share/locale/ja/LC_MESSAGES/audacity.mo
+share/locale/lt/LC_MESSAGES/audacity.mo
+share/locale/mk/LC_MESSAGES/audacity.mo
+share/locale/nb/LC_MESSAGES/audacity.mo
+share/locale/nl/LC_MESSAGES/audacity.mo
+share/locale/pl/LC_MESSAGES/audacity.mo
+share/locale/pt/LC_MESSAGES/audacity.mo
+share/locale/ru/LC_MESSAGES/audacity.mo
+share/locale/sl/LC_MESSAGES/audacity.mo
+share/locale/sv/LC_MESSAGES/audacity.mo
+share/locale/uk/LC_MESSAGES/audacity.mo
+share/locale/zh/LC_MESSAGES/audacity.mo
+share/locale/zh_TW/LC_MESSAGES/audacity.mo
+@dirrm %%DATADIR%%/plug-ins
+@dirrm %%DATADIR%%/nyquist
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/mime/packages/audacity.xml
+share/applications/audacity.desktop
+@dirrmtry share/applications

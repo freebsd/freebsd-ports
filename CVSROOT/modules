@@ -581,6 +581,7 @@ auctex		ports/print/auctex
 audacious	ports/multimedia/audacious
 audacious-crossfade	ports/audio/audacious-crossfade
 audacity	ports/audio/audacity
+audacity-devel	ports/audio/audacity-devel
 audit		ports/security/audit
 august		ports/www/august
 aumix		ports/audio/aumix

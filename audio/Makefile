@@ -37,6 +37,7 @@
     SUBDIR += aube
     SUBDIR += audacious-crossfade
     SUBDIR += audacity
+    SUBDIR += audacity-devel
     SUBDIR += aumix
     SUBDIR += aureal-kmod
     SUBDIR += autocd
