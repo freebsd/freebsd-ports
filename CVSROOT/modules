@@ -14148,6 +14148,7 @@ tor-devel		ports/security/tor-devel
 tora		ports/databases/tora
 torcs		ports/games/torcs
 tornado		ports/games/tornado
+torque		ports/sysutils/torque
 torrent		ports/games/torrent
 torrentflux	ports/net-p2p/torrentflux
 torrentsniff	ports/net-p2p/torrentsniff
