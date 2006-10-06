@@ -19,11 +19,14 @@ EXTRACT_SUFX=
 DIST_SUBDIR=	rpm/i386/suse
 EXTRACT_ONLY=
 
-MAINTAINER=	freebsd-emulation@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFree86 libraries, Linux binary
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
+
+DEPRECATED=	superseeded by linux-xorg-libs port
+EXPITATION_DATE=2006-12-10
 
 CONFLICTS=	linux_base-7* linux_base-deb* linux-xorg-libs*
 USE_LINUX_PREFIX=yes
