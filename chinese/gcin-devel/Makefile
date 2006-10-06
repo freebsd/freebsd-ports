@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
@@ -52,7 +53,7 @@ pre-patch:
 		s/gcc/$$CC/; s/gcin-$$GCIN_VERSION/gcin/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/qsort/mergesort/' ${WRKSRC}/gcin2tab.c
 	@${REINPLACE_CMD} -e 's/modify-XIM //; 8,10 d' ${WRKSRC}/scripts/Makefile
-	@${REINPLACE_CMD} -e 's/bash/sh/;' ${WRKSRC}/scripts/gcin-user-setup
+	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//;' ${WRKSRC}/scripts/gcin-user-setup
 	@${REINPLACE_CMD} -e 's/bash/sh/; s/&//; s/opt\/gnome/usr\/X11R6/;' \
 		${WRKSRC}/scripts/utf8-edit
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,' \
