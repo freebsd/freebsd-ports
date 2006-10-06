@@ -324,6 +324,7 @@
     SUBDIR += spooles-mpich
     SUBDIR += ss
     SUBDIR += stepulator
+    SUBDIR += suitesparse
     SUBDIR += superlu
     SUBDIR += superlu_mt
     SUBDIR += surf
@@ -335,7 +336,6 @@
     SUBDIR += triangle
     SUBDIR += truthtable
     SUBDIR += tvmet
-    SUBDIR += ufsparse
     SUBDIR += umatrix
     SUBDIR += umfpack
     SUBDIR += ump
