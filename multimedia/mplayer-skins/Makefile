@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer-skins
 PORTVERSION=	1.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp5.mplayerhq.hu/mplayer/Skin/ \
@@ -162,7 +162,7 @@ OPTIONS+=	SKIN_XMMPLAYER "XMMS lookalike" off
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
-myDATADIR=	share/${PORTNAME:S/-skins//}/Skin
+myDATADIR=	share/${PORTNAME:S/-skins//}/skins
 # Used by other ports to detect if this is installed
 DETECTION_FILE=	${LOCALBASE}/${myDATADIR}/${PKGNAME}
 
