@@ -16,6 +16,8 @@ IGNOREFILES=	hcwPVRP2.sys	# Varies from month to month
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
 
+CONFLICTS=	pvrxxx-*
+
 PVRTOOLS=	pvr250-1.2
 CXMSHAR=	cxm-${PORTVERSION}.shar
 
