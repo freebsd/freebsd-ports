@@ -649,6 +649,7 @@
     SUBDIR += urt
     SUBDIR += vcg
     SUBDIR += vertex
+    SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += vigra
     SUBDIR += vips
