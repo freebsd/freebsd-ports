@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	portsentry
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/IDS
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	sentrytools
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port scan detection and active defense
@@ -18,6 +18,7 @@ SUB_FILES=	portsentry.sh
 ALL_TARGET=	freebsd
 CFLAGS+=	-DPREFIX=\"${PREFIX}\"
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+WRKSRC=		${WRKDIR}/portsentry_beta
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/psionic/portsentry,${PREFIX}/etc,g' \
