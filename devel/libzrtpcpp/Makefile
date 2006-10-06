@@ -7,6 +7,7 @@
 
 PORTNAME=	libzrtpcpp
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=ccrtp
@@ -30,6 +31,8 @@ USE_LDCONFIG=	yes
 
 post-patch:
 	@cd ${WRKSRC}/src && \
-		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \;
+		${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<malloc.h>|<stdlib.h>|g" "{}" \; && \
+			${FIND} * -type f -exec ${REINPLACE_CMD} -i "" -e "s|<stdint.h>|<inttypes.h>|g" "{}" \;
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
