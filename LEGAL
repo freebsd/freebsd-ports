@@ -480,6 +480,9 @@ prodosemu.*		emulators/prodosemu	Restrictive copyright on the ROM image
 hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM
 						distribution coming with the
 						TV card
+hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM
+						distribution coming with the
+						TV card
 qkmj95p5-freebsd	games/qkmj		Do not sell for profit
 qmail*			mail/qmail-*		Restricted binary distribution
 						of modified versions
