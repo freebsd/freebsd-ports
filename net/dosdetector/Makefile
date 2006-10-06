@@ -8,11 +8,11 @@
 # until the release of DosDetector 0.1
 
 PORTNAME=	dosdetector
-PORTVERSION=	20060203
+PORTVERSION=	20060621
 CATEGORIES=	net
 MASTER_SITES=	http://darkzone.ma.cx/resources/unix/dosdetector/
 
-MAINTAINER=	msciciel@darkzone.ma.cx
+MAINTAINER=	msciciel@dark-zone.eu
 COMMENT=	Detect suspicious network traffic
 
 HAS_CONFIGURE=	yes
