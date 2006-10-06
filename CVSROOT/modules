@@ -480,6 +480,7 @@ armagetron	ports/games/armagetron
 arp-sk		ports/net/arp-sk
 arpack		ports/math/arpack
 arpack++	ports/math/arpack++
+arpalert	ports/net-mgmt/arpalert
 arpd		ports/net/arpd
 arpdig		ports/net/arpdig
 arping		ports/net/arping
