@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrtech-local-install
-DISTVERSION=	5.2
+DISTVERSION=	5.3
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+nv+zm+sb+tb
 CATEGORIES=	www
 
