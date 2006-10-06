@@ -1,4 +1,3 @@
-bin/amaya
 bin/amaya-%%GUI%%
 %%DATADIR%%/amaya/Amaya.svg
 %%DATADIR%%/amaya/AmayaPage.html
@@ -47,6 +46,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/amaya/SVGP.PRS
 %%DATADIR%%/amaya/SVGT.TRA
 %%DATADIR%%/amaya/SVGTX.TRA
+%%DATADIR%%/amaya/Template.en
 %%DATADIR%%/amaya/TextFile.STR
 %%DATADIR%%/amaya/TextFile.conf
 %%DATADIR%%/amaya/TextFile.en
@@ -119,6 +119,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/config/XKeysymDB
 %%DATADIR%%/config/amaya.emacs
 %%DATADIR%%/config/amaya.kb
+%%DATADIR%%/config/amaya.kb-mac
 %%DATADIR%%/config/amaya.keyboard
 %%DATADIR%%/config/amaya.profiles
 %%DATADIR%%/config/annot.schemas
@@ -138,14 +139,15 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/config/fi-libdialogue
 %%DATADIR%%/config/fonts.gl
 %%DATADIR%%/config/fonts.gl.deb
+%%DATADIR%%/config/fonts.gl.deb1
 %%DATADIR%%/config/fonts.gl.mac
-%%DATADIR%%/config/fonts.gl.mac.def
 %%DATADIR%%/config/fonts.gl.rd
 %%DATADIR%%/config/fonts.gl.win
 %%DATADIR%%/config/fonts.gl.win.nt
 %%DATADIR%%/config/fonts.tmpl
 %%DATADIR%%/config/fonts.unix
 %%DATADIR%%/config/fonts.unix.deb
+%%DATADIR%%/config/fonts.unix.rd
 %%DATADIR%%/config/fonts.win
 %%DATADIR%%/config/fr-amayadialogue
 %%DATADIR%%/config/fr-amayamsg
@@ -157,6 +159,9 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/config/it-amayadialogue
 %%DATADIR%%/config/it-amayamsg
 %%DATADIR%%/config/it-libdialogue
+%%DATADIR%%/config/ka-amayadialogue
+%%DATADIR%%/config/ka-amayamsg
+%%DATADIR%%/config/ka-libdialogue
 %%DATADIR%%/config/libconfig/Forward.png
 %%DATADIR%%/config/libconfig/Forward.svg
 %%DATADIR%%/config/libconfig/arrow1.png
@@ -293,6 +298,12 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/doc/WX/Searching.html.fr
 %%DATADIR%%/doc/WX/Selecting.html
 %%DATADIR%%/doc/WX/Selecting.html.fr
+%%DATADIR%%/doc/WX/ShortCuts-Linux.html
+%%DATADIR%%/doc/WX/ShortCuts-Linux.html.fr
+%%DATADIR%%/doc/WX/ShortCuts-MacOSX.html
+%%DATADIR%%/doc/WX/ShortCuts-MacOSX.html.fr
+%%DATADIR%%/doc/WX/ShortCuts-Windows.html
+%%DATADIR%%/doc/WX/ShortCuts-Windows.html.fr
 %%DATADIR%%/doc/WX/ShortCuts.html
 %%DATADIR%%/doc/WX/ShortCuts.html.fr
 %%DATADIR%%/doc/WX/SpellChecking.html
@@ -373,6 +384,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/doc/html/HTML-elements/headings.html.de
 %%DATADIR%%/doc/html/HTML-elements/headings.html.es
 %%DATADIR%%/doc/html/HTML-elements/headings.html.fr
+%%DATADIR%%/doc/html/HTML-elements/headings.html.old
 %%DATADIR%%/doc/html/HTML-elements/headings.html.ru
 %%DATADIR%%/doc/html/HTML-elements/infoTypes.html
 %%DATADIR%%/doc/html/HTML-elements/infoTypes.html.de
@@ -972,21 +984,11 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/doc/html/viewing/working_with_document_views.html.ru
 %%DATADIR%%/doc/images/Back.gif
 %%DATADIR%%/doc/images/Browser.gif
-%%DATADIR%%/doc/images/BrowsingMenu-fr.gif
-%%DATADIR%%/doc/images/CacheMenu-fr.gif
-%%DATADIR%%/doc/images/CacheMenu.gif
-%%DATADIR%%/doc/images/ColorMenu-de.gif
-%%DATADIR%%/doc/images/ColorMenu-fr.gif
-%%DATADIR%%/doc/images/ColorMenu.gif
 %%DATADIR%%/doc/images/CooperationMenu.gif
 %%DATADIR%%/doc/images/CooperationPreferences.gif
 %%DATADIR%%/doc/images/DL.gif
-%%DATADIR%%/doc/images/Editor.gif
 %%DATADIR%%/doc/images/Em.gif
 %%DATADIR%%/doc/images/Forward.gif
-%%DATADIR%%/doc/images/GeneralMenu-fr.gif
-%%DATADIR%%/doc/images/GeomMenu-fr.gif
-%%DATADIR%%/doc/images/GeomMenu.gif
 %%DATADIR%%/doc/images/Graph.gif
 %%DATADIR%%/doc/images/H1.gif
 %%DATADIR%%/doc/images/H2.gif
@@ -994,8 +996,6 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/doc/images/IDMenu.png
 %%DATADIR%%/doc/images/Image.gif
 %%DATADIR%%/doc/images/Langue.png
-%%DATADIR%%/doc/images/LangueNegotiation-fr.gif
-%%DATADIR%%/doc/images/LangueNegotiation.gif
 %%DATADIR%%/doc/images/LibraryDocDefaultStyle.gif
 %%DATADIR%%/doc/images/Link.gif
 %%DATADIR%%/doc/images/Math.gif
@@ -1004,17 +1004,9 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/doc/images/NumList.gif
 %%DATADIR%%/doc/images/OList.gif
 %%DATADIR%%/doc/images/Print.gif
-%%DATADIR%%/doc/images/ProfilesMenu-fr.gif
-%%DATADIR%%/doc/images/ProfilesMenu.gif
-%%DATADIR%%/doc/images/ProxyMenu-fr.gif
-%%DATADIR%%/doc/images/ProxyMenu.gif
-%%DATADIR%%/doc/images/PublishMenu-fr.gif
-%%DATADIR%%/doc/images/PublishMenu.gif
 %%DATADIR%%/doc/images/Reload.gif
 %%DATADIR%%/doc/images/Reload.png
 %%DATADIR%%/doc/images/SVGLibrary.gif
-%%DATADIR%%/doc/images/SaveAs-fr.gif
-%%DATADIR%%/doc/images/SaveAs.gif
 %%DATADIR%%/doc/images/Strong.gif
 %%DATADIR%%/doc/images/align-de.png
 %%DATADIR%%/doc/images/alternateview-de.jpg
@@ -1046,14 +1038,10 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/doc/images/configuration_for_annotations-de.png
 %%DATADIR%%/doc/images/configuration_for_annotations-es.png
 %%DATADIR%%/doc/images/configuration_for_annotations.png
-%%DATADIR%%/doc/images/configurebox-fr.png
-%%DATADIR%%/doc/images/configurebox.png
 %%DATADIR%%/doc/images/createRule-de.png
 %%DATADIR%%/doc/images/create_image-fr.png
 %%DATADIR%%/doc/images/create_link-fr.png
 %%DATADIR%%/doc/images/create_table-fr.png
-%%DATADIR%%/doc/images/css-fr.gif
-%%DATADIR%%/doc/images/css.gif
 %%DATADIR%%/doc/images/dialog_save_as-de.png
 %%DATADIR%%/doc/images/doc48x.gif
 %%DATADIR%%/doc/images/enrichissement_lib.png
@@ -1136,8 +1124,8 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/fonts/icones.pcf
 %%DATADIR%%/fonts/icones1.fb
 %%DATADIR%%/fonts/icones11.fb
-%%DATADIR%%/%%GUI%%/bin/amaya
-%%DATADIR%%/%%GUI%%/bin/print
+%%DATADIR%%/gtk/bin/amaya
+%%DATADIR%%/gtk/bin/print
 %%DATADIR%%/resources/icons/16x16/BG_norepeat.png
 %%DATADIR%%/resources/icons/16x16/BG_repeat.png
 %%DATADIR%%/resources/icons/16x16/BG_repeat_x.png
@@ -1155,6 +1143,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/16x16/MATHML_frac.png
 %%DATADIR%%/resources/icons/16x16/MATHML_greek.png
 %%DATADIR%%/resources/icons/16x16/MATHML_insert.png
+%%DATADIR%%/resources/icons/16x16/MATHML_int.png
 %%DATADIR%%/resources/icons/16x16/MATHML_matrix.png
 %%DATADIR%%/resources/icons/16x16/MATHML_mscript.png
 %%DATADIR%%/resources/icons/16x16/MATHML_over.png
@@ -1163,6 +1152,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/16x16/MATHML_sqrt.png
 %%DATADIR%%/resources/icons/16x16/MATHML_sub.png
 %%DATADIR%%/resources/icons/16x16/MATHML_subsup.png
+%%DATADIR%%/resources/icons/16x16/MATHML_sum.png
 %%DATADIR%%/resources/icons/16x16/MATHML_sup.png
 %%DATADIR%%/resources/icons/16x16/MATHML_under.png
 %%DATADIR%%/resources/icons/16x16/XHTML_B.png
@@ -1170,6 +1160,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/16x16/XHTML_Comment.png
 %%DATADIR%%/resources/icons/16x16/XHTML_DL.png
 %%DATADIR%%/resources/icons/16x16/XHTML_DelTarget.png
+%%DATADIR%%/resources/icons/16x16/XHTML_Div.png
 %%DATADIR%%/resources/icons/16x16/XHTML_H1.png
 %%DATADIR%%/resources/icons/16x16/XHTML_H2.png
 %%DATADIR%%/resources/icons/16x16/XHTML_H3.png
@@ -1181,51 +1172,41 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/16x16/XHTML_Table.png
 %%DATADIR%%/resources/icons/16x16/XHTML_Target.png
 %%DATADIR%%/resources/icons/16x16/XHTML_br.png
+%%DATADIR%%/resources/icons/16x16/XHTML_date.png
 %%DATADIR%%/resources/icons/16x16/XHTML_hr.png
 %%DATADIR%%/resources/icons/16x16/XHTML_quote.png
 %%DATADIR%%/resources/icons/16x16/about.png
 %%DATADIR%%/resources/icons/16x16/append.png
 %%DATADIR%%/resources/icons/16x16/back.png
+%%DATADIR%%/resources/icons/16x16/border.png
 %%DATADIR%%/resources/icons/16x16/border_bottom.png
 %%DATADIR%%/resources/icons/16x16/border_left.png
 %%DATADIR%%/resources/icons/16x16/border_right.png
 %%DATADIR%%/resources/icons/16x16/border_top.png
+%%DATADIR%%/resources/icons/16x16/c1.png
 %%DATADIR%%/resources/icons/16x16/cancel.png
 %%DATADIR%%/resources/icons/16x16/char.png
 %%DATADIR%%/resources/icons/16x16/circle.png
 %%DATADIR%%/resources/icons/16x16/close_tab.png
 %%DATADIR%%/resources/icons/16x16/colorize.png
 %%DATADIR%%/resources/icons/16x16/copy.png
+%%DATADIR%%/resources/icons/16x16/css.png
 %%DATADIR%%/resources/icons/16x16/cut.png
 %%DATADIR%%/resources/icons/16x16/default.png
-%%DATADIR%%/resources/icons/16x16/document_annot.gif
 %%DATADIR%%/resources/icons/16x16/document_annot.png
-%%DATADIR%%/resources/icons/16x16/document_bookmark.gif
 %%DATADIR%%/resources/icons/16x16/document_bookmark.png
-%%DATADIR%%/resources/icons/16x16/document_css.gif
 %%DATADIR%%/resources/icons/16x16/document_css.png
-%%DATADIR%%/resources/icons/16x16/document_default.gif
 %%DATADIR%%/resources/icons/16x16/document_default.png
-%%DATADIR%%/resources/icons/16x16/document_html.gif
 %%DATADIR%%/resources/icons/16x16/document_html.png
-%%DATADIR%%/resources/icons/16x16/document_image.gif
 %%DATADIR%%/resources/icons/16x16/document_image.png
 %%DATADIR%%/resources/icons/16x16/document_info.png
-%%DATADIR%%/resources/icons/16x16/document_library.gif
 %%DATADIR%%/resources/icons/16x16/document_library.png
-%%DATADIR%%/resources/icons/16x16/document_log.gif
 %%DATADIR%%/resources/icons/16x16/document_log.png
-%%DATADIR%%/resources/icons/16x16/document_math.gif
 %%DATADIR%%/resources/icons/16x16/document_math.png
-%%DATADIR%%/resources/icons/16x16/document_source.gif
 %%DATADIR%%/resources/icons/16x16/document_source.png
-%%DATADIR%%/resources/icons/16x16/document_svg.gif
 %%DATADIR%%/resources/icons/16x16/document_svg.png
-%%DATADIR%%/resources/icons/16x16/document_text.gif
 %%DATADIR%%/resources/icons/16x16/document_text.png
-%%DATADIR%%/resources/icons/16x16/document_xml.gif
 %%DATADIR%%/resources/icons/16x16/document_xml.png
-%%DATADIR%%/resources/icons/16x16/dummy.gif
 %%DATADIR%%/resources/icons/16x16/dummy.ico
 %%DATADIR%%/resources/icons/16x16/dummy.png
 %%DATADIR%%/resources/icons/16x16/editdelete.png
@@ -1238,6 +1219,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/16x16/format_right.png
 %%DATADIR%%/resources/icons/16x16/forward.png
 %%DATADIR%%/resources/icons/16x16/fullscreen.png
+%%DATADIR%%/resources/icons/16x16/green.png
 %%DATADIR%%/resources/icons/16x16/home.png
 %%DATADIR%%/resources/icons/16x16/insert.png
 %%DATADIR%%/resources/icons/16x16/insert_table_col_after.png
@@ -1254,6 +1236,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/16x16/preferences.png
 %%DATADIR%%/resources/icons/16x16/print.png
 %%DATADIR%%/resources/icons/16x16/rectangle.png
+%%DATADIR%%/resources/icons/16x16/red.png
 %%DATADIR%%/resources/icons/16x16/redo.png
 %%DATADIR%%/resources/icons/16x16/refresh.png
 %%DATADIR%%/resources/icons/16x16/reload.png
@@ -1271,108 +1254,15 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/16x16/undo.png
 %%DATADIR%%/resources/icons/16x16/zoom_minus.png
 %%DATADIR%%/resources/icons/16x16/zoom_plus.png
-%%DATADIR%%/resources/icons/22x22/BG_norepeat.png
-%%DATADIR%%/resources/icons/22x22/BG_repeat.png
-%%DATADIR%%/resources/icons/22x22/BG_repeat_x.png
-%%DATADIR%%/resources/icons/22x22/BG_repeat_y.png
-%%DATADIR%%/resources/icons/22x22/MATHML_Bmath.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_divers.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_fleches.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_greek.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_greek_maj.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_maths.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_operateurs.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_relations_binaires.png
-%%DATADIR%%/resources/icons/22x22/MATHML_F_relations_negation.png
-%%DATADIR%%/resources/icons/22x22/MATHML_fence.png
-%%DATADIR%%/resources/icons/22x22/MATHML_frac.png
-%%DATADIR%%/resources/icons/22x22/MATHML_greek.png
-%%DATADIR%%/resources/icons/22x22/MATHML_insert.png
-%%DATADIR%%/resources/icons/22x22/MATHML_matrix.png
-%%DATADIR%%/resources/icons/22x22/MATHML_mscript.png
-%%DATADIR%%/resources/icons/22x22/MATHML_over.png
-%%DATADIR%%/resources/icons/22x22/MATHML_overunder.png
-%%DATADIR%%/resources/icons/22x22/MATHML_root.png
-%%DATADIR%%/resources/icons/22x22/MATHML_sqrt.png
-%%DATADIR%%/resources/icons/22x22/MATHML_sub.png
-%%DATADIR%%/resources/icons/22x22/MATHML_subsup.png
-%%DATADIR%%/resources/icons/22x22/MATHML_sup.png
-%%DATADIR%%/resources/icons/22x22/MATHML_under.png
-%%DATADIR%%/resources/icons/22x22/XHTML_B.png
-%%DATADIR%%/resources/icons/22x22/XHTML_Bullet.png
-%%DATADIR%%/resources/icons/22x22/XHTML_Comment.png
-%%DATADIR%%/resources/icons/22x22/XHTML_DL.png
-%%DATADIR%%/resources/icons/22x22/XHTML_DelTarget.png
-%%DATADIR%%/resources/icons/22x22/XHTML_H1.png
-%%DATADIR%%/resources/icons/22x22/XHTML_H2.png
-%%DATADIR%%/resources/icons/22x22/XHTML_H3.png
-%%DATADIR%%/resources/icons/22x22/XHTML_I.png
-%%DATADIR%%/resources/icons/22x22/XHTML_Image.png
-%%DATADIR%%/resources/icons/22x22/XHTML_Link.png
-%%DATADIR%%/resources/icons/22x22/XHTML_Num.png
-%%DATADIR%%/resources/icons/22x22/XHTML_T.png
-%%DATADIR%%/resources/icons/22x22/XHTML_Table.png
-%%DATADIR%%/resources/icons/22x22/XHTML_Target.png
-%%DATADIR%%/resources/icons/22x22/XHTML_br.png
-%%DATADIR%%/resources/icons/22x22/XHTML_hr.png
-%%DATADIR%%/resources/icons/22x22/XHTML_quote.png
-%%DATADIR%%/resources/icons/22x22/about.png
 %%DATADIR%%/resources/icons/22x22/back.png
-%%DATADIR%%/resources/icons/22x22/border_bottom.png
-%%DATADIR%%/resources/icons/22x22/border_left.png
-%%DATADIR%%/resources/icons/22x22/border_right.png
-%%DATADIR%%/resources/icons/22x22/border_top.png
-%%DATADIR%%/resources/icons/22x22/cancel.png
-%%DATADIR%%/resources/icons/22x22/circle.png
-%%DATADIR%%/resources/icons/22x22/close_tab.png
-%%DATADIR%%/resources/icons/22x22/colorize.png
-%%DATADIR%%/resources/icons/22x22/copy.png
-%%DATADIR%%/resources/icons/22x22/cut.png
-%%DATADIR%%/resources/icons/22x22/document_info.png
-%%DATADIR%%/resources/icons/22x22/dummy.gif
-%%DATADIR%%/resources/icons/22x22/dummy.ico
-%%DATADIR%%/resources/icons/22x22/dummy.png
-%%DATADIR%%/resources/icons/22x22/editdelete.png
-%%DATADIR%%/resources/icons/22x22/exit.png
 %%DATADIR%%/resources/icons/22x22/find.png
-%%DATADIR%%/resources/icons/22x22/format_center.png
-%%DATADIR%%/resources/icons/22x22/format_justify.png
-%%DATADIR%%/resources/icons/22x22/format_left.png
-%%DATADIR%%/resources/icons/22x22/format_right.png
 %%DATADIR%%/resources/icons/22x22/forward.png
-%%DATADIR%%/resources/icons/22x22/fullscreen.png
 %%DATADIR%%/resources/icons/22x22/home.png
-%%DATADIR%%/resources/icons/22x22/insert.png
-%%DATADIR%%/resources/icons/22x22/insert_table_col_after.png
-%%DATADIR%%/resources/icons/22x22/insert_table_col_before.png
-%%DATADIR%%/resources/icons/22x22/insert_table_row_after.png
-%%DATADIR%%/resources/icons/22x22/insert_table_row_before.png
-%%DATADIR%%/resources/icons/22x22/ledgreen.png
-%%DATADIR%%/resources/icons/22x22/ledred.png
 %%DATADIR%%/resources/icons/22x22/logo.png
-%%DATADIR%%/resources/icons/22x22/ok.png
-%%DATADIR%%/resources/icons/22x22/open.png
-%%DATADIR%%/resources/icons/22x22/paste.png
-%%DATADIR%%/resources/icons/22x22/polygon.png
-%%DATADIR%%/resources/icons/22x22/preferences.png
 %%DATADIR%%/resources/icons/22x22/print.png
-%%DATADIR%%/resources/icons/22x22/rectangle.png
-%%DATADIR%%/resources/icons/22x22/redo.png
 %%DATADIR%%/resources/icons/22x22/reload.png
 %%DATADIR%%/resources/icons/22x22/save.png
-%%DATADIR%%/resources/icons/22x22/saveas.png
-%%DATADIR%%/resources/icons/22x22/setup_and_print.png
-%%DATADIR%%/resources/icons/22x22/spellcheck.png
-%%DATADIR%%/resources/icons/22x22/split_horizontaly.png
-%%DATADIR%%/resources/icons/22x22/split_verticaly.png
 %%DATADIR%%/resources/icons/22x22/stop.png
-%%DATADIR%%/resources/icons/22x22/sub.png
-%%DATADIR%%/resources/icons/22x22/super.png
-%%DATADIR%%/resources/icons/22x22/synchronize.png
-%%DATADIR%%/resources/icons/22x22/trash.png
-%%DATADIR%%/resources/icons/22x22/undo.png
-%%DATADIR%%/resources/icons/22x22/zoom_minus.png
-%%DATADIR%%/resources/icons/22x22/zoom_plus.png
 %%DATADIR%%/resources/icons/misc/black_white.png
 %%DATADIR%%/resources/icons/misc/detach.png
 %%DATADIR%%/resources/icons/misc/detach_floating.png
@@ -1386,9 +1276,9 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/icons/misc/logo.ico
 %%DATADIR%%/resources/icons/misc/right.png
 %%DATADIR%%/resources/icons/misc/switch_colors.png
+%%DATADIR%%/resources/icons/misc/toc.png
 %%DATADIR%%/resources/icons/misc/up.png
 %%DATADIR%%/resources/xrc/AuthentDlgWX.xrc
-%%DATADIR%%/resources/xrc/BgImageDlgWX.xrc
 %%DATADIR%%/resources/xrc/CheckedListDlgWX.xrc
 %%DATADIR%%/resources/xrc/ConfirmCloseTab.xrc
 %%DATADIR%%/resources/xrc/CreateTableDlgWX.xrc
@@ -1399,6 +1289,7 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/xrc/InitConfirmDlgWX.xrc
 %%DATADIR%%/resources/xrc/ListDlgWX.xrc
 %%DATADIR%%/resources/xrc/ListEditDlgWX.xrc
+%%DATADIR%%/resources/xrc/MakeIdDlgWX.xrc
 %%DATADIR%%/resources/xrc/NewTemplateDocDlgWX.xrc
 %%DATADIR%%/resources/xrc/NumDlgWX.xrc
 %%DATADIR%%/resources/xrc/ObjectDlgWX.xrc
@@ -1423,18 +1314,35 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/resources/xrc/TitleDlgWX.xrc
 %%DATADIR%%/resources/xrc/Toolbar.xrc
 %%DATADIR%%/resources/xrc/WinPrintDlgWX.xrc
-share/applications/amaya-8.8.1.desktop
-share/pixmaps/amaya-8.8.1.png
-@dirrmtry share/applications
-@dirrmtry share/pixmaps
+%%DATADIR%%/templates/en/cv.css
+%%DATADIR%%/templates/en/cv.html
+%%DATADIR%%/templates/en/cv2.css
+%%DATADIR%%/templates/en/cv2.html
+%%DATADIR%%/templates/en/page-template.html
+%%DATADIR%%/templates/en/right.png
+%%DATADIR%%/templates/en/style.css
+%%DATADIR%%/templates/fr/cv.css
+%%DATADIR%%/templates/fr/cv.html
+%%DATADIR%%/templates/fr/cv2.css
+%%DATADIR%%/templates/fr/cv2.html
+%%DATADIR%%/templates/fr/fax_template.html
+%%DATADIR%%/templates/fr/page-template.html
+%%DATADIR%%/templates/fr/reunion.html
+%%DATADIR%%/templates/fr/right.png
+%%DATADIR%%/templates/fr/style.css
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm %%DATADIR%%/templates/fr
+@dirrm %%DATADIR%%/templates/en
+@dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/resources/xrc
 @dirrm %%DATADIR%%/resources/icons/misc
 @dirrm %%DATADIR%%/resources/icons/22x22
 @dirrm %%DATADIR%%/resources/icons/16x16
 @dirrm %%DATADIR%%/resources/icons
 @dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%/%%GUI%%/bin
-@dirrm %%DATADIR%%/%%GUI%%
+@dirrm %%DATADIR%%/gtk/bin
+@dirrm %%DATADIR%%/gtk
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/doc/images
 @dirrm %%DATADIR%%/doc/html/viewing

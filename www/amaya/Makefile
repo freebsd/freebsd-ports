@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	9.2.1
-PORTREVISION=	1
+PORTVERSION=	9.51
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -29,10 +28,6 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-FORBIDDEN=	http://www.vuxml.org/freebsd/dc930435-d59f-11da-8098-00123ffe8333.html
-DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=2006-12-01
-
 WRKSRC=		${WRKDIR}/Amaya/obj
 
 USE_GMAKE=	yes
@@ -42,12 +37,13 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ARGS=		--with-gtk
+CONFIGURE_ARGS+=	--prefix=/tmp/local
 
 OPTIONS=	BOOKMARKS "Enable bookmark support (experimental)" off \
 		OPENGL "Enable OpenGL support" off \
 		TEMPLATES "Enable template support (experimental)" off
 
-REALVERSION=	8.8.1
+REALVERSION=	8.8.51
 DATADIR=	${PREFIX}/Amaya-${REALVERSION}
 PLIST_SUB=	REALVERSION="${REALVERSION}"
 
