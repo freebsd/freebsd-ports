@@ -18,10 +18,10 @@ COMMENT=	A C and math library for the Atmel AVR controller family
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		avr-gcc:${PORTSDIR}/devel/avr-gcc
+		avr-gcc:${PORTSDIR}/devel/avr-gcc-3
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		avr-gcc:${PORTSDIR}/devel/avr-gcc
+		avr-gcc:${PORTSDIR}/devel/avr-gcc-3
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX \
