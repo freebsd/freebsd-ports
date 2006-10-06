@@ -14,6 +14,9 @@ MASTER_SITES=	${MASTER_SITE_NETBSD}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small graphical configuration utility for the Ice Window Manager
 
+DEPRECATED=	is for IceWM version 1.04 (6 years old)
+EXPIRATION_DATE=2006-11-05
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
