@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gff2ps
-PORTVERSION=	0.97b
+PORTVERSION=	0.98d
 CATEGORIES=	biology
 MASTER_SITES=	ftp://www1.imim.es/pub/gff_tools/gff2ps/:prog \
 		http://www1.imim.es/software/gfftools/gff2ps_docs/manual/:doc
