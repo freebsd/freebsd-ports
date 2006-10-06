@@ -11749,6 +11749,7 @@ pvm++		ports/net/pvm++
 pvmpov		ports/graphics/pvmpov
 pvpgn		ports/games/pvpgn
 pvr250		ports/multimedia/pvr250
+pvrxxx		ports/multimedia/pvrxxx
 pwauth		ports/security/pwauth
 pwcbsd		ports/multimedia/pwcbsd
 pwd_unmkdb	ports/sysutils/pwd_unmkdb
