@@ -14527,6 +14527,7 @@ vi-xvnkb	ports/vietnamese/xvnkb
 vic		ports/mbone/vic
 vice		ports/emulators/vice
 vicq		ports/net-im/vicq
+vid		ports/graphics/vid
 vida		ports/security/vida
 videogen	ports/sysutils/videogen
 videotext	ports/misc/videotext
