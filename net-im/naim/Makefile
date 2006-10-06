@@ -10,7 +10,7 @@ PORTVERSION=	0.11.8.2
 CATEGORIES=	net-im irc
 MASTER_SITES=	http://shell.n.ml.org/n/naim/
 
-MAINTAINER=	tlp@LiquidX.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
 
 GNU_CONFIGURE=	yes
