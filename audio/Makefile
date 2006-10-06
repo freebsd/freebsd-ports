@@ -588,6 +588,7 @@
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += umodplayer
+    SUBDIR += ventrilo-server
     SUBDIR += voipong
     SUBDIR += volumecontrol.app
     SUBDIR += vorbis-tools
