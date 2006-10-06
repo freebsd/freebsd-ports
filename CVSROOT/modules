@@ -10985,6 +10985,7 @@ php-gtk		ports/x11-toolkits/php-gtk
 php-magickwand	ports/graphics/php-magickwand
 php-mode.el	ports/lang/php-mode.el
 php-screw	ports/www/php-screw
+php-sqlite3	ports/databases/php-sqlite3
 php-sqlrelay	ports/databases/php-sqlrelay
 php-suhosin	ports/security/php-suhosin
 php-templates	ports/www/php-templates
