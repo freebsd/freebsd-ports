@@ -449,30 +449,30 @@ lib/m3/pkg/m3core/src/time/Common/Tick_i3.html
 lib/m3/pkg/m3core/src/time/Common/Time.i3
 lib/m3/pkg/m3core/src/time/Common/Time_i3.html
 lib/m3/pkg/m3core/src/time/POSIX/TimePosix.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Udir.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uerror.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uexec.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ugrp.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uin.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uipc.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Umman.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Umsg.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Unetdb.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Unix.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uprocess.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Upwd.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uresource.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usem.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ushm.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usignal.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usocket.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ustat.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usyslog.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Utime.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Utypes.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uugid.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uuio.i3
-lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uutmp.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Udir.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uerror.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uexec.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Ugrp.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uin.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uipc.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Umman.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Umsg.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Unetdb.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Unix.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uprocess.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Upwd.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uresource.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Usem.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Ushm.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Usignal.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Usocket.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Ustat.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Usyslog.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Utime.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Utypes.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uugid.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uuio.i3
+lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%/Uutmp.i3
 lib/m3/pkg/m3core/src/weakref/WeakRef.i3
 lib/m3/pkg/m3core/src/weakref/WeakRef_i3.html
 lib/m3/pkg/m3core/src/word/Word.i3
@@ -982,7 +982,7 @@ lib/m3/pkg/tempfiles/src/TempFiles.i3
 @dirrm lib/m3/pkg/m3doc
 @dirrm lib/m3/pkg/m3core/src/word
 @dirrm lib/m3/pkg/m3core/src/weakref
-@dirrm lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%
+@dirrm lib/m3/pkg/m3core/src/unix/%%INST_TARGET%%
 @dirrm lib/m3/pkg/m3core/src/unix
 @dirrm lib/m3/pkg/m3core/src/time/POSIX
 @dirrm lib/m3/pkg/m3core/src/time/Common
