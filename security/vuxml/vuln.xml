@@ -403,7 +403,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>cscope</name>
-	<range><ge>0</ge></range>
+	<range><le>15.6</le></range>
       </package>
     </affects>
     <description>
@@ -436,6 +436,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-08-20</discovery>
       <entry>2006-10-02</entry>
+      <modified>2006-10-06</modified>
     </dates>
   </vuln>
 
