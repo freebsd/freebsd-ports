@@ -18,9 +18,8 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Collection of network protocol implementations for Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
-		${JAVAJARDIR}/jakarta-oro.jar:${PORTSDIR}/java/jakarta-oro
-
-RUN_DEPENDS=	${JAVAJARDIR}/jakarta-oro.jar:${PORTSDIR}/java/jakarta-oro
+		${JAVAJARDIR}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
+RUN_DEPENDS=	${JAVAJARDIR}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
