@@ -7,7 +7,7 @@
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -48,6 +48,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		PUBLISHPLANET "Publish::Planet Support" on \
 		PUBLISHCSV "Publish::CSV Support" off \
 		AUTHORNAME "Filter::ExtractAuthorName Support" off \
+		GUESSLANG "Filter::GuessLanguage Support" off \
 		PUBLISHMT "Publish::MT Support" off \
 		PUBSERLZR "Publish-Serializer Support" off \
 		ROMANIZE "Filter::Romanize Support" off \
@@ -77,6 +78,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		AGRXANGO "Aggregator::Xango Support" off \
 		HATENADIARY "Filter::HatenaDiaryKeywordLink Support" off \
 		LIVEDOOR "Subscription::LivedoorReader Support" off \
+		PINGSERVER "Subscription::PingServer Support" off \
 		IMAGEINFO "Filter::ImageInfo Support" off \
 		FILMRKDWN "Filter::Markdown Support" off \
 		PUBLISHIMAP "Publish::IMAP Support" off \
@@ -89,8 +91,6 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		FILHTMLSCRB "Filter::HTMLScrubber Support" on \
 		PLANETINI "Subscription::PlanetINI Support" off
 # The below options are not supported yet due to missing depending modules
-#		GUESSLANGUAGE "Filter::GuessLanguage Support" off \
-#		PINGSERVER "Subscription::PingServer Support" off \
 #		PUBLISHSWF "Publish::SWF Support" off \
 
 .include <bsd.port.pre.mk>
@@ -136,6 +136,11 @@ BUILD_DEPENDS+=	${SITE_PERL}/Text/CSV_PP.pm:${PORTSDIR}/textproc/p5-Text-CSV_PP
 
 .if defined(WITH_AUTHORNAME)
 BUILD_DEPENDS+=	${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address
+.endif
+
+.if defined(WITH_GUESSLANG)
+BUILD_DEPENDS+=	${SITE_PERL}/Lingua/ZH/HanDetect.pm:${PORTSDIR}/chinese/p5-Lingua-ZH-HanDetect \
+		${SITE_PERL}/Text/Language/Guess.pm:${PORTSDIR}/textproc/p5-Text-Language-Guess
 .endif
 
 .if defined(WITH_PUBLISHMT)
@@ -261,6 +266,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 .if defined(WITH_LIVEDOOR)
 BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
 		${SITE_PERL}/${PERL_ARCH}/JSON/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
+.endif
+
+.if defined(WITH_PINGSERVER)
+BUILD_DEPENDS+=	${SITE_PERL}/HTML/RSSAutodiscovery.pm:${PORTSDIR}/www/p5-HTML-RSSAutodiscovery
 .endif
 
 .if defined(WITH_IMAGEINFO)
