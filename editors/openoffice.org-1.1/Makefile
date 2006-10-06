@@ -108,6 +108,7 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
 BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
+RUN_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
 # FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
