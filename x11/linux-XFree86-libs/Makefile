@@ -26,7 +26,7 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 DEPRECATED=	superseeded by linux-xorg-libs port
-EXPITATION_DATE=2006-12-10
+EXPIRATION_DATE=2006-12-10
 
 CONFLICTS=	linux_base-7* linux_base-deb* linux-xorg-libs*
 USE_LINUX_PREFIX=yes
