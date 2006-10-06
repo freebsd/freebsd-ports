@@ -40,6 +40,12 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 MAN1=		sntp.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=         Will not build under 4.X.
+.endif
+
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}
@@ -50,4 +56,4 @@ post-install:
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
