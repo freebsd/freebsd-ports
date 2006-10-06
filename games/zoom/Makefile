@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	zoom
-PORTVERSION=	1.0.2a
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	games
-MASTER_SITES=	http://www.logicalshift.demon.co.uk/unix/${PORTNAME}/
-DISTNAME=	zoom-1.0.2alpha1
+MASTER_SITES=	http://www.logicalshift.co.uk/unix/zoom/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z-Interpreter for X with full V6 support
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		expat.6:${PORTSDIR}/textproc/expat2
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		t1.5:${PORTSDIR}/devel/t1lib \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_PERL5=	yes
 USE_XLIB=	yes
