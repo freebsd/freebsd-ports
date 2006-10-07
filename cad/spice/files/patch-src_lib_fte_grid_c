@@ -1,6 +1,15 @@
---- src/lib/fte/grid.c.orig	Sun Apr 25 16:53:11 1993
-+++ src/lib/fte/grid.c	Thu Jul 17 00:47:51 2003
-@@ -1230,7 +1230,10 @@
+--- src/lib/fte/grid.c.orig	Sun Apr 25 23:53:11 1993
++++ src/lib/fte/grid.c	Sat Oct  7 16:00:37 2006
+@@ -26,6 +26,8 @@
+ static void arcset();
+ static double cliparc();
+ static void adddeglabel(), addradlabel();
++static drawloggrid();
++static drawlingrid();
+ 
+ typedef enum { x_axis, y_axis } Axis;
+ 
+@@ -1230,7 +1232,10 @@
  
      /* SetLinestyle(1); takes too long */
      /* Problems with Suns on very large radii && linestyle */
@@ -12,7 +21,7 @@
  
      /* Now plot all the arc sets.  Go as high as 5 times the radius that
       * will fit on the screen.  The base magnitude is one more than 
-@@ -1409,7 +1412,10 @@
+@@ -1409,7 +1414,10 @@
      /* Let's be lazy and just draw everything -- we won't get called too
       * much and the circles get clipped anyway...
       */
@@ -24,7 +33,7 @@
  
      cliparc((double) (centx + xoffset + radoff - rad),
  	    (double) (centy + yoffset), rad, 2*angle,
-@@ -1424,7 +1430,10 @@
+@@ -1424,7 +1432,10 @@
              M_PI - 2 * angle, centx, centy, maxrad, 0);
  
      /* Draw the upper and lower circles.  */
@@ -36,7 +45,7 @@
      aclip = cliparc((double) (centx + xoffset + radoff),
  	    (double) (centy + yoffset + irad), irad,
  	    (double) (M_PI * 1.5 + 2 * iangle),
-@@ -1441,7 +1450,10 @@
+@@ -1441,7 +1452,10 @@
  	adddeglabel(graph, ndeg, xlab, ylab,
  	    gr_xcenter, gr_ycenter, gr_xcenter, gr_ycenter);
   */
@@ -48,7 +57,7 @@
  	}
      }
      aclip = cliparc((double) (centx + xoffset + radoff),
-@@ -1455,7 +1467,10 @@
+@@ -1455,7 +1469,10 @@
  	SetColor(1);
  	adddeglabel(graph, ndeg, xlab, ylab,
  	    gr_xcenter, gr_ycenter, gr_xcenter, gr_ycenter);
