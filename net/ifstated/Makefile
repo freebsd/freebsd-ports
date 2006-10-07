@@ -10,28 +10,21 @@ PORTVERSION=	20050505
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.secureworks.net/pub/ifstated/
 
-MAINTAINER=	mdg@secureworks.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface State daemon
 
 INSTALL_TARGET=	install install-man
 MAN8=		ifstated.8
 
-PLIST_FILES=	sbin/ifstated \
-		etc/ifstated.conf etc/rc.d/ifstated.sh
+PLIST_FILES=	sbin/ifstated etc/ifstated.conf
+SUB_FILES=	pkg-message
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	ifstated
 
 post-patch:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/ifstated.sh > ${WRKDIR}/ifstated.sh
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/ifstated.c ${WRKSRC}/ifstated.8
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/ifstated.sh ${PREFIX}/etc/rc.d/ifstated.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
