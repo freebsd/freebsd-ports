@@ -1,14 +1,15 @@
---- ginsh/ginsh_parser.yy.orig	Wed Feb 28 20:55:04 2001
-+++ ginsh/ginsh_parser.yy	Tue Mar  6 16:45:06 2001
-@@ -29,6 +29,7 @@
+--- ginsh/ginsh_parser.yy.orig	Sat Aug  5 22:36:18 2006
++++ ginsh/ginsh_parser.yy	Fri Oct  6 21:54:20 2006
+@@ -28,6 +28,8 @@
+ 
  %{
  #include "config.h"
- 
 +#include <sys/time.h>
++
+ #ifdef HAVE_RUSAGE
  #include <sys/resource.h>
- 
- #if HAVE_UNISTD_H
-@@ -720,6 +721,8 @@
+ #else
+@@ -888,6 +890,8 @@
  /*
   *  Main program
   */
