@@ -7,6 +7,7 @@
 
 PORTNAME=	spampd
 PORTVERSION=	2.30
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.worlddesign.com/Content/rd/mta/spampd/
 
@@ -17,10 +18,11 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		${SITE_PERL}/Net/Server/PreForkSimple.pm:${PORTSDIR}/net/p5-Net-Server
 
 NO_BUILD=	yes
+PLIST_FILES=	sbin/spampd
+USE_RC_SUBR=	spampd
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/spampd ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${FILESDIR}/spampd.sh.sample ${PREFIX}/etc/rc.d
 
 .include <bsd.port.pre.mk>
 
