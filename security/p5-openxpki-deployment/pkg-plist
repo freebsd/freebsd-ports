@@ -1,0 +1,34 @@
+bin/openxpki-configure
+bin/openxpki-metaconf
+bin/openxpkiadm
+bin/openxpkictl
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+share/openxpki/templates/default/acl.xml
+share/openxpki/templates/default/auth.xml
+share/openxpki/templates/default/config.xml
+share/openxpki/templates/default/database.xml
+share/openxpki/templates/default/log.conf
+share/openxpki/templates/default/openxpki.conf
+share/openxpki/templates/default/profile.xml
+share/openxpki/templates/default/token.xml
+share/openxpki/templates/default/workflow.xml
+share/openxpki/templates/default/workflow_activity.xml
+share/openxpki/templates/default/workflow_activity_certificate_issuance.xml
+share/openxpki/templates/default/workflow_activity_certificate_signing_request.xml
+share/openxpki/templates/default/workflow_activity_crl_issuance.xml
+share/openxpki/templates/default/workflow_activity_dataexchange.xml
+share/openxpki/templates/default/workflow_activity_null.xml
+share/openxpki/templates/default/workflow_condition.xml
+share/openxpki/templates/default/workflow_def_certificate_issuance.xml
+share/openxpki/templates/default/workflow_def_certificate_signing_request.xml
+share/openxpki/templates/default/workflow_def_certificate_signing_request_dataonly.xml
+share/openxpki/templates/default/workflow_def_certificate_signing_request_offline.xml
+share/openxpki/templates/default/workflow_def_certificate_signing_request_online.xml
+share/openxpki/templates/default/workflow_def_crl_issuance.xml
+share/openxpki/templates/default/workflow_def_dataexchange_export.xml
+share/openxpki/templates/default/workflow_def_dataexchange_import.xml
+share/openxpki/templates/default/workflow_validator_certificate_signing_request.xml
+@dirrm share/openxpki/templates/default
+@dirrm share/openxpki/templates
+@dirrm share/openxpki
