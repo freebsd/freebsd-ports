@@ -8,9 +8,9 @@
 PORTNAME=	gksu
 PORTVERSION=	1.3.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.debian.org/~kov/gksu/gksu/
+MASTER_SITES=	http://people.debian.org/~kov/gksu/old_stuff/gksu/
 
-MAINTAINER=	bsam@ipt.ru
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Graphical frontend to su
 
 LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
