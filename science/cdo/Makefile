@@ -7,15 +7,13 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	science
 MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 		http://sunpoet.net/distfiles/
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Climate Data Operators
-
-BROKEN=		Does not build
 
 GNU_CONFIGURE=	yes
 
