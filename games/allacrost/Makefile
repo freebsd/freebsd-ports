@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_LUA=	5.0
 USE_SDL=	sdl ttf mixer
 USE_GL=		yes
-USE_GCC=	3.4+
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--datadir=${DATADIR}
@@ -36,6 +35,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if ${OSVERSION} < 500000
 BROKEN=		does not compile on 4.x
+.endif
+
+.if ${OSVERSION} < 600000
+USE_GCC=	4.0+
 .endif
 
 post-patch:
