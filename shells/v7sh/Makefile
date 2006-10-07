@@ -29,6 +29,7 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 
 NO_WRKSUBDIR=	yes
 MAN1=		${PORTNAME}.1
+MANCOMPRESSED=	yes
 
 OPTIONS=	V7SH_SYSIII	"System III enhancements"	on \
 		V7SH_RENO	"4.3BSD-Reno enhancements"	on \

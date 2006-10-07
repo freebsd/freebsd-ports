@@ -1,6 +1,5 @@
-diff -u -x CVS -x work -x core -x *.core -x #* -x *~ -x *.orig -x *.rej -I $Id.*$ -I $.+BSD.*$ mode.h.orig mode.h
---- mode.h.orig	Fri Jun  4 02:51:02 2004
-+++ mode.h	Sat Jun 19 18:42:23 2004
+--- mode.h.orig	Mon Oct  2 15:16:25 2006
++++ mode.h	Mon Oct  2 15:17:01 2006
 @@ -1,6 +1,10 @@
  #
  /*
@@ -57,16 +56,17 @@ diff -u -x CVS -x work -x core -x *.core -x #* -x *~ -x *.orig -x *.rej -I $Id.*
  STRUCT forknod	*FORKPTR;
  STRUCT comnod	*COMPTR;
  STRUCT swnod	*SWPTR;
-@@ -44,7 +63,7 @@
+@@ -43,8 +62,7 @@
+ STRUCT namnod	*NAMPTR;
  STRUCT sysnod	SYSNOD;
  STRUCT sysnod	*SYSPTR;
- STRUCT sysnod	SYSTAB[];
+-STRUCT sysnod	SYSTAB[];
 -#define NIL	((char*)0)
 +#define NIL	((void*)0)
  
  
  /* the following nonsense is required
-@@ -52,8 +71,12 @@
+@@ -52,8 +70,12 @@
   * into an Rvalue so two cheats
   * are necessary, one for each context.
   */
@@ -81,7 +81,7 @@ diff -u -x CVS -x work -x core -x *.core -x #* -x *~ -x *.orig -x *.rej -I $Id.*
  #define Rcheat(a)	((int)(a))
  
  
-@@ -69,11 +92,13 @@
+@@ -69,11 +91,13 @@
  	BLKPTR	_blkptr;
  	NAMPTR	_namptr;
  	BYTPTR	_bytptr;
@@ -96,7 +96,7 @@ diff -u -x CVS -x work -x core -x *.core -x #* -x *~ -x *.orig -x *.rej -I $Id.*
  
  
  /* heap storage */
-@@ -90,7 +115,7 @@
+@@ -90,7 +114,7 @@
  	STRING	fnxt;
  	STRING	fend;
  	STRING	*feval;
@@ -105,7 +105,7 @@ diff -u -x CVS -x work -x core -x *.core -x #* -x *~ -x *.orig -x *.rej -I $Id.*
  	CHAR	fbuf[BUFSIZ];
  };
  
-@@ -103,21 +128,15 @@
+@@ -103,20 +127,16 @@
  	STRING	fnxt;
  	STRING	fend;
  	STRING	*feval;
@@ -125,11 +125,11 @@ diff -u -x CVS -x work -x core -x *.core -x #* -x *~ -x *.orig -x *.rej -I $Id.*
 -	INT	tretyp;
 -	IOPTR	treio;
 -};
--
++STRUCT sysnod	SYSTAB[];
+ 
  /* dummy for access only */
  struct argnod {
- 	ARGPTR	argnxt;
-@@ -203,3 +222,16 @@
+@@ -203,3 +223,16 @@
  #define	PARTYPE		(sizeof(struct parnod))
  #define	LSTTYPE		(sizeof(struct lstnod))
  #define	IOTYPE		(sizeof(struct ionod))
