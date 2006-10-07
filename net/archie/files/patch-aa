@@ -1,14 +1,6 @@
---- Makefile.orig	Mon Oct 26 15:11:04 1992
-+++ Makefile	Tue Jul 28 09:44:38 1998
-@@ -2,14 +2,14 @@
- # Makefile for the minimal build for an archie Prospero client.
- #
- # Your C compiler:
--#CC=cc
-+CC=cc
- 
- # For most systems, these OPTIONS will suffice.  Exceptions:
- #
+--- Makefile.orig	Tue Oct 27 00:11:04 1992
++++ Makefile	Sun Oct  1 23:06:07 2006
+@@ -9,7 +9,7 @@
  #	* If you're on a Stardent, add  -43
  #	* If you're running EP/IX, you may need to add  -systype bsd43
  #	  but try it without it first.
@@ -35,6 +27,15 @@
  
  #	Usually LDFLAGS is empty; if, after you build this, archie
  #	 complains that it can't resolve ARCHIE.ANS.NET (or whatever
+@@ -73,7 +73,7 @@
+ # Yer' done....make archie.
+ # =========================
+ #
+-CFLAGS=$(OPTIONS) $(DEFINES) -DARCHIE_HOST=\"$(ARCHIE)\"
++CFLAGS+=$(OPTIONS) $(DEFINES) -DARCHIE_HOST=\"$(ARCHIE)\"
+ 
+ VERSION=1.4.1
+ VMS_VERSION=`echo $(VERSION) | sed -e 's,\\.,_,g'`
 @@ -84,6 +84,10 @@
  	vlalloc.o vl_comp.o
  
