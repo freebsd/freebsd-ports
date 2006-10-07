@@ -258,7 +258,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mono</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.1.13.8.1</lt></range>
       </package>
     </affects>
     <description>
