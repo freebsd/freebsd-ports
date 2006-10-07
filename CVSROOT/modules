@@ -487,7 +487,6 @@ arping		ports/net/arping
 arprelease	ports/net/arprelease
 arpscan		ports/net-mgmt/arpscan
 arpwatch	ports/net-mgmt/arpwatch
-arpwatch-devel	ports/net-mgmt/arpwatch-devel
 artemis		ports/biology/artemis
 arts		ports/audio/arts
 arts++		ports/net-mgmt/arts++
