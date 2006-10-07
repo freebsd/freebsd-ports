@@ -465,6 +465,7 @@
     SUBDIR += p5-Tree-Authz
     SUBDIR += p5-openxpki
     SUBDIR += p5-openxpki-client
+    SUBDIR += p5-openxpki-client-cli
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
