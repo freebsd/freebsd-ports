@@ -132,6 +132,7 @@
     SUBDIR += linpack
     SUBDIR += linux-relview
     SUBDIR += lp_solve
+    SUBDIR += ltl
     SUBDIR += mathomatic
     SUBDIR += matrix
     SUBDIR += maxima
