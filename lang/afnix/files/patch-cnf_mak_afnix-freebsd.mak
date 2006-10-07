@@ -1,5 +1,5 @@
---- cnf/mak/afnix-freebsd.mak.orig	Wed Aug 31 21:59:00 2005
-+++ cnf/mak/afnix-freebsd.mak	Wed Aug 31 22:00:29 2005
+--- cnf/mak/afnix-freebsd.mak.orig	Sat Oct  7 20:11:57 2006
++++ cnf/mak/afnix-freebsd.mak	Sat Oct  7 20:14:17 2006
 @@ -18,21 +18,21 @@
  # - compiler and linker section                                              -
  # ----------------------------------------------------------------------------
@@ -27,7 +27,7 @@
  DBGDEFINES      = -DDEBUG
  OPTDEFINES      =
  STDINCLUDE      =
-@@ -75,8 +75,8 @@
+@@ -75,14 +75,11 @@
  
  # adjust for freebsd platform
  ifeq ($(PLATNAME),freebsd)
@@ -38,7 +38,13 @@
  ARFLAGS		= rc
  LDFLAGS		= -shared
  AFXCPPLIBS	=
-@@ -93,7 +93,7 @@
+-ifeq ($(LKMODE),soname)
+-LDFLAGS	       += -Wl,-soname,$(SONAME)
+-endif
+ endif
+ 
+ # ----------------------------------------------------------------------------
+@@ -93,7 +90,7 @@
  
  # adjust linker flags for freebsd
  ifeq ($(PLATNAME),freebsd)
