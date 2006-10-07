@@ -7,6 +7,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/pub/heimdal/src/ \
@@ -43,6 +44,13 @@ CFLAGS+=	-fPIC
 .if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
+EXTRA_PATCHES+=		${FILESDIR}/extrapatch-lib_hdb_hdb-ldap.c
+.  if defined(LDAP_SOCKET_PATH)
+_SOCK=		${LDAP_SOCKET_PATH:C|/|%2f|g}
+.  else
+LDAP_RUN_DIR?=	/var/run/openldap
+_SOCK=		${LDAP_RUN_DIR:C|/|%2f|g}%2fldapi
+.  endif
 .endif
 
 .if defined(WITH_CRACKLIB)
@@ -63,6 +71,10 @@ CONFLICTS+=	wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
 .endif
 
 post-patch:
+.if defined(WITH_LDAP)
+	@${REINPLACE_CMD} -e 's|%%LDAP_SOCKET%%|${_SOCK:Q}|g' \
+		${WRKSRC}/lib/hdb/hdb-ldap.c
+.endif
 	@${REINPLACE_CMD} -e 's|$$ac_cv_header_fnmatch_h|yes|' \
 		${WRKSRC}/configure
 
