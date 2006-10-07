@@ -214,6 +214,7 @@
     SUBDIR += isc-dhcp3-devel
     SUBDIR += isc-dhcp3-relay
     SUBDIR += isc-dhcp3-server
+    SUBDIR += iscsi-target
     SUBDIR += iwi-firmware
     SUBDIR += iwi-firmware-kmod
     SUBDIR += jags

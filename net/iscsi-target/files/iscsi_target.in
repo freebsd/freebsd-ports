@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# PROVIDE: iscsi_target
+# REQUIRE: NETWORKING mountall quota
+
+. %%RC_SUBR%%
+
+name="iscsi_target"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/iscsi-target"
+required_files="%%PREFIX%%/etc/iscsi/targets"
+pidfile="/var/run/iscsi-target.pid"
+
+load_rc_config $name
+
+: ${iscsi_target_enable="NO"}
+: ${iscsi_target_config="%%PREFIX%%/etc/iscsi/targets"}
+
+command_args="-f $iscsi_target_config"
+
+run_rc_command "$1"
