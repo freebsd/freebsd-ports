@@ -1,4 +1,4 @@
-# New ports collection makefile for:	p5-WWW-GMail
+# New ports collection makefile for:	p5-WWW-Hotmail
 # Date created:		2006-07-20
 # Whom:			Steven Kreuzer <skreuzer@f2o.org>
 #
