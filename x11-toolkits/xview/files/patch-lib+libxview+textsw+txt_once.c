@@ -1,5 +1,5 @@
---- lib/libxview/textsw/txt_once.c.orig	Sun Oct  5 12:27:25 2003
-+++ lib/libxview/textsw/txt_once.c	Sun Oct  5 13:37:04 2003
+--- lib/libxview/textsw/txt_once.c.orig	Thu Oct  5 19:18:11 2006
++++ lib/libxview/textsw/txt_once.c	Thu Oct  5 19:51:36 2006
 @@ -44,7 +44,9 @@
  #ifdef OW_I18N
  #include <xview_private/draw_impl.h>
@@ -19,11 +19,12 @@
      ev_destroy(view->e_view);
      free((char *) view);
  }
-@@ -1350,6 +1353,7 @@
+@@ -1350,6 +1353,8 @@
  	    
  	xv_destroy(view->drop_site);
  	textsw_view_cleanup(view);
-+	VIEW_PRIVATE(view_public) = NULL; /* WG Mar '95 */
++
++	((Xv_textsw_view *) (view_public))->private_data = NULL;
  	break;
  
        default:			/* Conservative in face of new cases. */
