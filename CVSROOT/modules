@@ -2046,6 +2046,7 @@ dvorakng	ports/misc/dvorakng
 dvts		ports/multimedia/dvts
 dwarfdump	ports/devel/dwarfdump
 dwatch		ports/sysutils/dwatch
+dwdiff		ports/textproc/dwdiff
 dwm		ports/x11-wm/dwm
 dxf2fig		ports/cad/dxf2fig
 dxpc		ports/x11/dxpc
