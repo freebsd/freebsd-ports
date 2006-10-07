@@ -4,6 +4,7 @@
     COMMENT = X11 clocks
 
     SUBDIR += abclock
+    SUBDIR += aclock
     SUBDIR += alltraxclock
     SUBDIR += asclock
     SUBDIR += asclock-gtk
