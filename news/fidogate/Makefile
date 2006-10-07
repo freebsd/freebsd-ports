@@ -28,6 +28,8 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
 		gatebau/msgid.tex gatebau/msgid.txt
 
+MAKE_ENV+=	CC=${CC}
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
@@ -39,6 +41,7 @@ pre-configure:
 	${RM} -f ${WRKSRC}/doc/fidogate.info-?
 	${RM} -f ${WRKSRC}/doc/fidogate.txt
 	@${PERL5} -pi -e "s=.{PREFIX}=${PREFIX}=g" ${WRKSRC}/config.make
+	@${PERL5} -pi -e "s=^CC=#CC=" ${WRKSRC}/config.make
 .if defined(FIDOGATE_RUNAS)
 	@${PERL5} -pi -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \
 		${WRKSRC}/config.make
