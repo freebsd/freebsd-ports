@@ -8,13 +8,10 @@
 PORTNAME=	xpilot
 PORTVERSION=	4.5.4
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
-		ftp://ftp.xpilot.org/pub/xpilot/old/ \
-		ftp://xpilot.doit.org/pub/xpilot-sounds/ \
-		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games/multiplayer
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xpilotgame
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	Xpilot(client) and xpilots(server)
 
 USE_IMAKE=	yes
