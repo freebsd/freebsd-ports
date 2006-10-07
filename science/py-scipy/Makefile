@@ -8,7 +8,7 @@
 
 PORTNAME=	scipy
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scipy
@@ -22,11 +22,11 @@ BUILD_DEPENDS=	${PYNUMERIC} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft \
 		f2py:${PORTSDIR}/lang/f2py \
 		${PYTHON_SITELIBDIR}/wx/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython24
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+OPTIONS=	ATLAS "Use optimized blas library" OFF
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
@@ -34,8 +34,14 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.1:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
 IGNORE=	Atlas needs to be built with WITH_STATICLIB for scipy to function properly
+.endif
+.else
+LIB_DEPENDS+=	lapack.3:${PORTSDIR}/math/lapack \
+		blas.1:${PORTSDIR}/math/blas	
 .endif
 
 post-install:
