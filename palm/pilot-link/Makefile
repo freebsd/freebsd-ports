@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	pilot-link
-DISTVERSION=	0.12.1
+PORTVERSION=	0.12.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
@@ -18,7 +19,7 @@ COMMENT=	Suite of tools used to connect and sync your Palm handled
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETOPT_LONG=yes
-USE_GNOME=	gnometarget gnomehack
+USE_GNOME=	gnometarget gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}  --with-included-popt --enable-conduits \
@@ -34,13 +35,18 @@ OPTIONS=	PNG "build with png support" off \
 
 .if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
-LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if defined(WITH_USB)
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 CONFIGURE_ARGS+=--enable-libusb
-CONFIGURE_ENV+="LDFLAGS=${LDFLAGS} -L${PREFIX}/lib -lusb"
+CONFIGURE_ENV+=LDFLAGS="${LDFLAGS} -L${PREFIX}/lib -lusb"
+
+.if defined(WITHOUT_THREADS)
+IGNORE=		cannot be built: USB support requires THREADS turned on.  Please reconfigure using 'make config'
+.else
+LDFLAGS+=	${PTHREAD_LIBS}
+.endif
 .endif
 
 .if defined(WITH_PNG)
@@ -51,5 +57,10 @@ CONFIGURE_ARGS+=	--disable-png
 .endif
 
 .include "${.CURDIR}/manpages.mk"
+
+post-patch:
+.if !defined(WITHOUT_THREADS)
+	@${REINPLACE_CMD} -e 's|Libs: |Libs: ${PTHREAD_LIBS} |' ${WRKSRC}/pilot-link.pc.in ${WRKSRC}/pilot-link-pp.pc.in
+.endif
 
 .include <bsd.port.post.mk>
