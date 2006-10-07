@@ -1,0 +1,35 @@
+# New ports collection makefile for:	versuch
+# Date created:				1 October 2006
+# Whom:					warlock
+#
+# $FreeBSD$
+#
+
+PORTNAME=	versuch
+PORTVERSION=	1.01
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
+		http://warlock.elcat.kg/
+MASTER_SITE_SUBDIR=	versuch
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+MAINTAINER=	warlock@elcat.kg
+COMMENT=	H323 voice&video proxy
+
+LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib \
+		h323_r.1:${PORTSDIR}/net/openh323 \
+		pcre++.0:${PORTSDIR}/devel/pcre++
+
+WRKSRC=		${WRKDIR}/versuch
+
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	autoconf:259
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not find pthread libraries on 4.x
+.endif
+
+.include <bsd.port.post.mk>
