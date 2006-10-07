@@ -1,0 +1,9 @@
+%%SITE_PERL%%/OpenXPKI/Client/SOAP/Lite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP/Lite/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/SOAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
+@dirrmtry %%SITE_PERL%%/OpenXPKI/Client/SOAP
+@dirrmtry %%SITE_PERL%%/OpenXPKI/Client
+@dirrmtry %%SITE_PERL%%/OpenXPKI
