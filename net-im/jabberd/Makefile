@@ -7,7 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://jabberstudio.rediris.es/jabberd2/ \
 		http://jabberstudio.2nw.net/jabberd2/
