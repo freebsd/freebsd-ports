@@ -464,6 +464,7 @@
     SUBDIR += p5-Tie-EncryptedHash
     SUBDIR += p5-Tree-Authz
     SUBDIR += p5-openxpki
+    SUBDIR += p5-openxpki-client
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
