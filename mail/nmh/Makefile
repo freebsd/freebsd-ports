@@ -61,6 +61,7 @@ MASTER_SITE_SUBDIR=	nmh
 MAINTAINER=	scott+ports@sabami.seaslug.org
 COMMENT=	A cleaned up MH mailer suite
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
 USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
