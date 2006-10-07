@@ -6125,6 +6125,7 @@ libodbc++	ports/databases/libodbc++
 libofa		ports/audio/libofa
 libofx		ports/finance/libofx
 libogg		ports/audio/libogg
+liboggz		ports/audio/liboggz
 liboil		ports/devel/liboil
 libol		ports/devel/libol
 libole2		ports/devel/libole2
