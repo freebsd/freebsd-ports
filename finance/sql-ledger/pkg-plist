@@ -109,7 +109,7 @@ sql-ledger/doc/UPGRADE-2.4.0-2.4.2
 sql-ledger/doc/UPGRADE-2.4.16-2.6.0
 sql-ledger/doc/UPGRADE-2.4.2-2.4.3
 sql-ledger/doc/UPGRADE-2.4.3-2.4.16
-sql-ledger/doc/UPGRADE-2.6.0-2.6.15
+sql-ledger/doc/UPGRADE-2.6.0-2.6.19
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -462,6 +462,7 @@ sql-ledger/locale/co_utf/locales.pl
 sql-ledger/locale/co_utf/login
 sql-ledger/locale/co_utf/menu
 sql-ledger/locale/co_utf/oe
+sql-ledger/locale/co_utf/op
 sql-ledger/locale/co_utf/pe
 sql-ledger/locale/co_utf/pos
 sql-ledger/locale/co_utf/ps
@@ -879,6 +880,37 @@ sql-ledger/locale/fi/ps
 sql-ledger/locale/fi/pw
 sql-ledger/locale/fi/rc
 sql-ledger/locale/fi/rp
+sql-ledger/locale/fi_utf/COPYING
+sql-ledger/locale/fi_utf/LANGUAGE
+sql-ledger/locale/fi_utf/aa
+sql-ledger/locale/fi_utf/admin
+sql-ledger/locale/fi_utf/all
+sql-ledger/locale/fi_utf/am
+sql-ledger/locale/fi_utf/ap
+sql-ledger/locale/fi_utf/ar
+sql-ledger/locale/fi_utf/arap
+sql-ledger/locale/fi_utf/arapprn
+sql-ledger/locale/fi_utf/bp
+sql-ledger/locale/fi_utf/ca
+sql-ledger/locale/fi_utf/cp
+sql-ledger/locale/fi_utf/ct
+sql-ledger/locale/fi_utf/gl
+sql-ledger/locale/fi_utf/hr
+sql-ledger/locale/fi_utf/ic
+sql-ledger/locale/fi_utf/io
+sql-ledger/locale/fi_utf/ir
+sql-ledger/locale/fi_utf/is
+sql-ledger/locale/fi_utf/jc
+sql-ledger/locale/fi_utf/locales.pl
+sql-ledger/locale/fi_utf/login
+sql-ledger/locale/fi_utf/menu
+sql-ledger/locale/fi_utf/oe
+sql-ledger/locale/fi_utf/pe
+sql-ledger/locale/fi_utf/pos
+sql-ledger/locale/fi_utf/ps
+sql-ledger/locale/fi_utf/pw
+sql-ledger/locale/fi_utf/rc
+sql-ledger/locale/fi_utf/rp
 sql-ledger/locale/fr/COPYING
 sql-ledger/locale/fr/LANGUAGE
 sql-ledger/locale/fr/Num2text
@@ -2426,6 +2458,7 @@ etc/sql-ledger-httpd.conf
 @dirrm sql-ledger/locale/hu
 @dirrm sql-ledger/locale/gr
 @dirrm sql-ledger/locale/fr
+@dirrm sql-ledger/locale/fi_utf
 @dirrm sql-ledger/locale/fi
 @dirrm sql-ledger/locale/es_utf
 @dirrm sql-ledger/locale/es
