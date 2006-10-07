@@ -1,0 +1,26 @@
+Index: src/inet6rth.h
+===================================================================
+--- src/inet6rth.h	(revision 345)
++++ src/inet6rth.h	(revision 347)
+@@ -75,7 +75,7 @@
+ #  define IPV6_RECVRTHDR 56
+ #  define IPV6_RTHDR 57
+ # elif defined (__FreeBSD__) || defined (__FreeBSD_kernel__) \
+-       defined (__NetBSD__)  || defined (__NetBSD_kernel__)
++    || defined (__NetBSD__)  || defined (__NetBSD_kernel__)
+ #  define IPV6_RECVRTHDR 38
+ #  define IPV6_RTHDR 51
+ # else
+Index: src/traceroute.c
+===================================================================
+--- src/traceroute.c	(revision 345)
++++ src/traceroute.c	(revision 347)
+@@ -54,7 +54,7 @@
+ # if defined (__linux__)
+ #  define IPV6_TCLASS 67
+ # elif defined (__FreeBSD__) || defined (__FreeBSD_kernel__) \
+-       defined (__NetBSD__)  || defined (__NetBSD_kernel__)
++    || defined (__NetBSD__)  || defined (__NetBSD_kernel__)
+ #  define IPV6_TCLASS 61
+ # else
+ #  warning Traffic class support missing! Define IPV6_TCLASS!
