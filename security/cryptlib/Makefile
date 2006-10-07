@@ -26,6 +26,7 @@ NO_WRKSUBDIR=		yes
 USE_GMAKE=		yes
 MAKEFILE=		makefile
 ALL_TARGET=		default FreeBSD shared
+USE_GCC=		3.2+
 USE_LDCONFIG=		yes
 
 PORTDOCS=		README
