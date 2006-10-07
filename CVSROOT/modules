@@ -10560,6 +10560,7 @@ p5-openxpki-client-cli	ports/security/p5-openxpki-client-cli
 p5-openxpki-client-html-mason	ports/security/p5-openxpki-client-html-mason
 p5-openxpki-client-scep	ports/security/p5-openxpki-client-scep
 p5-openxpki-client-soap-lite	ports/security/p5-openxpki-client-soap-lite
+p5-openxpki-i18n	ports/security/p5-openxpki-i18n
 p5-orz		ports/devel/p5-orz
 p5-pdonkey	ports/net-p2p/p5-pdonkey
 p5-perl-ldap	ports/net/p5-perl-ldap
