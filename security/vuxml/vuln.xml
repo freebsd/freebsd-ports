@@ -93,7 +93,6 @@ Note:  Please add new entries to the beginning of this file.
       <url>https://launchpad.net/distros/ubuntu/+source/python2.4/+bug/56633</url>
       <url>http://www.ubuntu.com/usn/usn-359-1</url>
       <url>http://secunia.com/advisories/22276/</url>
-      <url></url>
     </references>
     <dates>
       <discovery>2006-08-15</discovery>
