@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abills
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	liettneff@bk.ru
-COMMENT=	Billing system for dialup and VPN users
+COMMENT=	Billing system for dialup, VPN and VoIP management
 
 RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
