@@ -8,7 +8,8 @@
 PORTNAME=	wily
 PORTVERSION=	0.13.42
 CATEGORIES=	editors plan9
-MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	A clone of the Plan9 editor `acme'
