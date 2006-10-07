@@ -13,6 +13,7 @@
     SUBDIR += ImageMagick
     SUBDIR += OpenEXR
     SUBDIR += SciPlot
+    SUBDIR += a2png
     SUBDIR += aalib
     SUBDIR += acidwarp
     SUBDIR += agg
