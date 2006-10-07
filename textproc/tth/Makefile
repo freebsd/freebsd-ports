@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tth
-PORTVERSION=	3.74
+PORTVERSION=	3.76
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/
 DISTNAME=	tth_C
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bsam@ipt.ru
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	A TeX to HTML translator
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
