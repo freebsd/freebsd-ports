@@ -85,6 +85,8 @@ include/Inventor/SoPickedPoint.h
 include/Inventor/SoPrimitiveVertex.h
 include/Inventor/SoSceneManager.h
 include/Inventor/SoType.h
+include/Inventor/oivwin32.h
+include/Inventor/non_winsys.h
 include/Inventor/VRMLnodes/SoVRML.h
 include/Inventor/VRMLnodes/SoVRMLAnchor.h
 include/Inventor/VRMLnodes/SoVRMLAppearance.h
@@ -168,7 +170,9 @@ include/Inventor/actions/SoHandleEventAction.h
 include/Inventor/actions/SoLineHighlightRenderAction.h
 include/Inventor/actions/SoPickAction.h
 include/Inventor/actions/SoRayPickAction.h
+include/Inventor/actions/SoReorganizeAction.h
 include/Inventor/actions/SoSearchAction.h
+include/Inventor/actions/SoSimplifyAction.h
 include/Inventor/actions/SoSubAction.h
 include/Inventor/actions/SoToVRML2Action.h
 include/Inventor/actions/SoToVRMLAction.h
@@ -281,6 +285,7 @@ include/Inventor/elements/SoGLTextureEnabledElement.h
 include/Inventor/elements/SoGLTextureImageElement.h
 include/Inventor/elements/SoGLTextureMatrixElement.h
 include/Inventor/elements/SoGLUpdateAreaElement.h
+include/Inventor/elements/SoGLVBOElement.h
 include/Inventor/elements/SoGLViewingMatrixElement.h
 include/Inventor/elements/SoGLViewportRegionElement.h
 include/Inventor/elements/SoInt32Element.h
@@ -421,6 +426,7 @@ include/Inventor/fields/SoMFVec4f.h
 include/Inventor/fields/SoMField.h
 include/Inventor/fields/SoSFBitMask.h
 include/Inventor/fields/SoSFBool.h
+include/Inventor/fields/SoSFBox3f.h
 include/Inventor/fields/SoSFBox3s.h
 include/Inventor/fields/SoSFColor.h
 include/Inventor/fields/SoSFEngine.h
