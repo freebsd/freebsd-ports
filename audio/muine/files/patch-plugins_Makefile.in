@@ -19,24 +19,3 @@
  
  install-exec-am:
  
-@@ -602,14 +603,14 @@
- TrayIcon.dll: $(TRAY_ICON_CSFILES) $(top_builddir)/PluginLib/muine-plugin.dll
- 	$(CSC) -target:library $(LIBFLAGS) -out:$@ $(TRAY_ICON_CSFILES) $(TRAY_ICON_EXTRA_CSFILES) $(ASSEMBLIES) $(TRAY_ICON_EXTRA_ASSEMBLIES) $(TRAY_ICON_RESOURCES)
- 
--InotifyPlugin.dll: $(INOTIFY_CSFILES) $(top_builddir)/PluginLib/muine-plugin.dll
--	$(CSC) -unsafe -target:library $(LIBFLAGS) -out:$@ $(INOTIFY_CSFILES) $(ASSEMBLIES) $(INOTIFY_EXTRA_ASSEMBLIES)
-+#InotifyPlugin.dll: $(INOTIFY_CSFILES) $(top_builddir)/PluginLib/muine-plugin.dll
-+#	$(CSC) -unsafe -target:library $(LIBFLAGS) -out:$@ $(INOTIFY_CSFILES) $(ASSEMBLIES) $(INOTIFY_EXTRA_ASSEMBLIES)
- 
--InotifyPlugin.dll.config: $(srcdir)/InotifyPlugin.dll.config.in
--	sed -e "s|\@pkglibdir\@|$(pkglibdir)|" \
--	< $^ > $@
-+#InotifyPlugin.dll.config: $(srcdir)/InotifyPlugin.dll.config.in
-+#	sed -e "s|\@pkglibdir\@|$(pkglibdir)|" \
-+#	< $^ > $@
- 
--all: DashboardPlugin.dll TrayIcon.dll InotifyPlugin.dll
-+all: DashboardPlugin.dll TrayIcon.dll
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
