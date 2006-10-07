@@ -20,6 +20,8 @@ PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/packetforge-ng bin/ivstools \
 		bin/kstats
 MAN1=		aircrack-ng.1 airdecap-ng.1 packetforge-ng.1 ivstools.1
 
+SUB_FILES+=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -41,6 +43,6 @@ do-install:
 .endfor
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

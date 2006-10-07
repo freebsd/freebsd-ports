@@ -5,5 +5,5 @@ are too Linux-specific to be built on FreeBSD.
 However aircrack-ng can read  Kismet's dumpfile.
 
 If you manage to patch the port so that the missing tools can be built
-on FreeBSD, please contact the port maintainer.
+on FreeBSD, please contact the port's maintainer.
 ======================================================================
