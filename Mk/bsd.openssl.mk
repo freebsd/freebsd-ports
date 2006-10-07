@@ -2,18 +2,18 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.31 2006-08-04 12:34:41 erwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.32 2006-10-07 08:15:48 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
 # the user/port can now set this options in the makefiles.
 #
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
-# WITH_OPENSSL_PORT=yes	- Use the port, even if base if up to date
+# WITH_OPENSSL_PORT=yes	- Use the port, even if base is up to date
 # WITH_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
 # WITH_OPENSSL_STABLE=yes	- Use an older openssl version
 #
-# USE_OPENSSL_RPATH=yes	- pass RFLAGS options in CFLAGS,
+# USE_OPENSSL_RPATH=yes	- Pass RFLAGS options in CFLAGS,
 #			  needed for ports who don't use LDFLAGS
 #
 # Overrideable defaults:
@@ -118,6 +118,19 @@ OPENSSL_SHLIBVER?=	4
 OPENSSL_SHLIBVER?=	3
 .endif
 .else
+.if	!defined(OPENSSL_PORT) && \
+	exists(${LOCALBASE}/lib/libcrypto.so)
+# find installed port and use it for dependency
+PKG_DBDIR?=		${DESTDIR}/var/db/pkg
+OPENSSL_INSTALLED!=	grep -l -r "libssl.so." "${PKG_DBDIR}" | \
+			while read contents; do \
+				sslprefix=`grep "^@cwd " "$${contents}" | ${HEAD} -n 1`; \
+				if test "$${sslprefix}" = "@cwd ${LOCALBASE_REL}" ; then \
+					echo "$${contents}"; break; fi; done
+OPENSSL_PORT!=		grep "^@comment ORIGIN:" "${OPENSSL_INSTALLED}" | ${CUT} -d : -f 2
+OPENSSL_SHLIBFILE!=	grep "^lib/libssl.so." "${OPENSSL_INSTALLED}"
+OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
+.endif
 OPENSSL_PORT?=		security/openssl
 .if ( ${OSVERSION} >= 600100 )
 OPENSSL_SHLIBVER?=	5
