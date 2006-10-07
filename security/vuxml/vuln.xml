@@ -260,11 +260,6 @@ Note:  Please add new entries to the beginning of this file.
 	<name>mono</name>
 	<range><ge>0</ge></range>
       </package>
-      <package>
-	<name>mono-devel</name>
-	<name>mono-svn</name>
-	<range><ge>0</ge></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
