@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fe83eb5b-55e1-11db-a5ae-00508d6a62df">
+    <topic>python -- buffer overrun in repr() for unicode strings</topic>
+    <affects>
+      <package>
+	<name>python</name>
+	<name>python23</name>
+	<name>python22</name>
+	<name>python-devel</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Benjamin C. Wiley Sittler reports:</p>
+	<blockquote cite="https://launchpad.net/distros/ubuntu/+source/python2.4/+bug/56633">
+	  <p>I discovered a [buffer overrun in repr() for unicode
+	    strings]. This causes an unpatched non-debug wide
+	    (UTF-32/UCS-4) build of python to abort.</p>
+	</blockquote>
+	<p>Ubuntu security team reports:</p>
+	<blockquote cite="http://www.ubuntu.com/usn/usn-359-1">
+	  <p>If an application uses repr() on arbitrary untrusted data,
+	    this [bug] could be exploited to execute arbitrary code
+	    with the privileges of the python application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-4980</cvename>
+      <url>https://launchpad.net/distros/ubuntu/+source/python2.4/+bug/56633</url>
+      <url>http://www.ubuntu.com/usn/usn-359-1</url>
+      <url>http://secunia.com/advisories/22276/</url>
+      <url></url>
+    </references>
+    <dates>
+      <discovery>2006-08-15</discovery>
+      <entry>2006-10-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e329550b-54f7-11db-a5ae-00508d6a62df">
     <topic>php -- _ecalloc Integer Overflow Vulnerability</topic>
     <affects>
