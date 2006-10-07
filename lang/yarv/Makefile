@@ -31,6 +31,9 @@ OPTIONS=	DEBUG "Enable debugging information" off \
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=--enable-ipv6
+.if ${OSVERSION} < 500000
+CONFIGURE_ARGS+=--enable-wide-getaddrinfo
+.endif
 .endif
 
 .if defined(NOPORTDOCS)
