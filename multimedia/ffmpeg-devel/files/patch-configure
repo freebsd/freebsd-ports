@@ -1,5 +1,14 @@
---- configure.orig	Sun Mar 19 03:31:32 2006
-+++ configure	Thu Mar 23 15:15:34 2006
+--- configure.orig	Sun Mar 19 01:31:55 2006
++++ configure	Thu Sep 28 20:27:49 2006
+@@ -138,7 +138,7 @@
+     cpu="x86"
+   ;;
+   x86_64|amd64)
+-    cpu="x86"
++    cpu="x86_64"
+     canon_arch="`cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
+     if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
+       if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
 @@ -1107,6 +1107,8 @@
  builtin_vector=no
  if $cc -msse -o $TMPO $TMPC 2> /dev/null ; then

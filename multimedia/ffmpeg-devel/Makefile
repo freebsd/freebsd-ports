@@ -85,7 +85,7 @@ LIB_FILES=	libavcodec/libavcodec.a \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+.if ${ARCH} == "ia64"
 BROKEN=		Does not compile on ${ARCH}
 .endif
 
@@ -547,7 +547,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E \
-		-e 's|#include <SDL|#include <SDL11/SDL|'
+		-e 's|#include <SDL|#include <SDL/SDL|'
 .endif
 .ifndef(WITHOUT_POSTPROCESS)
 	@${LN} -sf libpostproc.so \
@@ -570,7 +570,7 @@ post-configure:
 .endif
 .ifdef(WITH_DTS)
 	@${REINPLACE_CMD} -E \
-		-e 's|-ldts|${LOCALBASE}/lib/libdts.a|' \
+		-e 's|-ldts|${LOCALBASE}/lib/libdts_pic.a|' \
 		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
 			${WRKSRC}/config.mak \
 			${WRKSRC}/libavcodec/Makefile
