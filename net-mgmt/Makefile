@@ -19,7 +19,6 @@
     SUBDIR += arpalert
     SUBDIR += arpscan
     SUBDIR += arpwatch
-    SUBDIR += arpwatch-devel
     SUBDIR += arts++
     SUBDIR += aspathtree
     SUBDIR += asused
