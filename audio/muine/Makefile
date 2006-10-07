@@ -3,12 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.45 2006/02/15 17:16:54 tmclau02 Exp $
+#   $Id: Makefile,v 1.47 2006/08/06 23:48:40 tmclau02 Exp $
 #
 
 PORTNAME=	muine
-PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTVERSION=	0.8.5
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine-player.org/releases/
 
@@ -51,6 +50,7 @@ CONFIGURE_ARGS+=	--enable-xine=yes
 LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
 .else
 USE_GSTREAMER80+=	gconf
+CONFIGURE_ARGS+=	--enable-gstreamer=0.8
 .endif
 
 post-patch:
