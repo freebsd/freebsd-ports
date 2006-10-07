@@ -3117,7 +3117,6 @@ gdesklets-clock	ports/x11-clocks/gdesklets-clock
 gdesklets-cornerxmms	ports/audio/gdesklets-cornerxmms
 gdesklets-countdown	ports/x11-clocks/gdesklets-countdown
 gdesklets-ebichuclock	ports/x11-clocks/gdesklets-ebichuclock
-gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-irc	ports/irc/gdesklets-irc
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-sensor-displayconstraints	ports/deskutils/gdesklets-sensor-displayconstraints
