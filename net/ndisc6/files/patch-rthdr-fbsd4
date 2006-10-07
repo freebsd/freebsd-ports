@@ -1,0 +1,15 @@
+Index: src/inet6rth.h
+===================================================================
+--- src/inet6rth.h	(revision 347)
++++ src/inet6rth.h	(revision 348)
+@@ -26,6 +26,10 @@
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ 
++#define inet6_rth_space working_inet6_rth_space
++#define inet6_rth_init working_inet6_rth_init
++#define inet6_rth_add working_inet6_rth_add
++
+ #ifndef IPV6_RTHDR_TYPE_0
+ # define IPV6_RTHDR_TYPE_0 0
+ #endif
