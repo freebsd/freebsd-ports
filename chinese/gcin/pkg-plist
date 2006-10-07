@@ -1,5 +1,6 @@
 bin/gcin
 bin/gcin-gb-toggle
+bin/gcin-message
 bin/gcin-setup
 bin/gcin2tab
 bin/juyin-learn
@@ -37,6 +38,9 @@ lib/libgcin-im-client.so
 %%DATADIR%%/table/pho.tab
 %%DATADIR%%/table/phrase.table
 %%DATADIR%%/table/pinyin.gtab
+%%DATADIR%%/table/pinyin.kbm
+%%DATADIR%%/table/pinyin-asdf.kbm
+%%DATADIR%%/table/pin-juyin.xlt
 %%DATADIR%%/table/simplex.gtab
 %%DATADIR%%/table/symbol-table
 %%DATADIR%%/table/tsin-1.src
