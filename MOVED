@@ -2485,3 +2485,4 @@ net/coda5_doc||2006-10-05|Has expired: coda5 removed
 math/ufspase|math/suitespase|2006-10-05|portname has been changed
 devel/avr-gcc|devel/avr-gcc-3|2006-10-05|retire AVR-GCC 3.x
 devel/avr-gcc-devel|devel/avr-gcc|2006-10-06|make AVR-GCC 4.x the default version
+astro/gdesklets-goodweather||2006-10-07|Expired: no longer downloadable
