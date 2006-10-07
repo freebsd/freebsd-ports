@@ -3,15 +3,15 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.28 2006/04/05 01:11:37 tmclau02 Exp $
+#   $Id: Makefile,v 1.31 2006/10/03 02:37:44 tmclau02 Exp $
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.1.11
-PORTREVISION=	4
+PORTVERSION=	0.2.1
+PORTVERSION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Personal photo management to the GNOME desktop
@@ -38,6 +38,8 @@ post-patch:
 	@${REINPLACE_CMD} 's|target="liblcms.so.1"|target="liblcms.so"|g ; \
 		s|target="libexif.so.@EXIF_SOVERSION@"|target="libexif.so"|g' \
 		${WRKSRC}/src/f-spot.exe.config.in
+	@${REINPLACE_CMD} 's|target="libgphoto2.so.2"|target="libgphoto2.so"|g'\
+	    	${WRKSRC}/libgphoto2-sharp/libgphoto2-sharp.dll.config
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
