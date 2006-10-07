@@ -1,10 +1,11 @@
---- vtmouse.c.orig	Sat Jun  3 14:05:57 2000
-+++ vtmouse.c	Wed Jun 18 04:46:02 2003
-@@ -8,6 +8,7 @@
+--- vtmouse.c.orig	Sat Jun  3 23:05:57 2000
++++ vtmouse.c	Sat Oct  7 14:37:42 2006
+@@ -8,6 +8,8 @@
  #define SPLITVT_SOURCE
  
  #include <stdio.h>
 +#include <stdlib.h>
++#include <string.h>
  #include "vtmouse.h"
  
  extern FILE *safe_popen();		/* From misc.c */

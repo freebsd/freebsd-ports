@@ -1,5 +1,12 @@
 --- config.c.orig	Sun May  4 06:48:04 2003
 +++ config.c	Sat Feb 19 11:30:53 2005
+@@ -1,5 +1,6 @@
+ #include	<sys/types.h>
+ #include	<stdio.h>
++#include	<stdlib.h>
+ #include	<sys/stat.h>
+ #include	<signal.h>
+ 
 @@ -238,8 +238,8 @@
  	fprintf(makefile, "\nclean: \n\trm -f *.o core \n");
  	fprintf(makefile, "\ndistclean: clean\n\trm -f splitvt Makefile\n");
