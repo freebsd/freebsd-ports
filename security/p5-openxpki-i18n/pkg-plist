@@ -1,0 +1,7 @@
+share/locale/de_DE/LC_MESSAGES/openxpki.mo
+share/locale/en_GB/LC_MESSAGES/openxpki.mo
+share/locale/ru_RU/LC_MESSAGES/openxpki.mo
+@dirrmtry share/locale/ru_RU/LC_MESSAGES
+@dirrmtry share/locale/ru_RU
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
