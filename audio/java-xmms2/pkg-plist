@@ -1,2 +1,2 @@
 lib/libxmms2java.so
-%%JAVALIBDIR%%/xmms2java.jar
+%%JAVAJARDIR%%/xmms2java.jar
