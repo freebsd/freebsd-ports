@@ -1,30 +1,29 @@
---- sysintf.c.orig	Thu Feb  2 05:39:56 2006
-+++ sysintf.c	Mon May  1 18:33:02 2006
-@@ -596,13 +596,12 @@
+--- sysintf.c.orig	Sun Oct  8 00:23:30 2006
++++ sysintf.c	Sun Oct  8 00:23:30 2006
+@@ -608,13 +608,12 @@
     if( tmpdir == NIL(char) )
        tmpdir = "/tmp";
  
 -   while( --tries )
 -   {
 +   do {
-       if( (fd = Create_temp(tmpdir, path, suff)) != -1)
+       if( (fd = Create_temp(tmpdir, path)) != -1)
           break;
  
-       free(*path);
+       free(*path); /* free var if creating temp failed. */
 -   }
-+   } while( --tries ); 
++   } while( --tries );
  
     if( fd != -1)
     {
-@@ -839,8 +838,9 @@
+@@ -881,8 +880,8 @@
        }
  
        if( Verbose & V_MAKE )
 -	 printf( "%s:  <<<< Set [%s] time stamp to %lu\n",
 -		 Pname, tcp->CE_NAME, tcp->ce_time );
-+        printf( "%s:  <<<< Set [%s] time stamp to %llu\n",
-+                Pname, tcp->CE_NAME, (unsigned long long)tcp->ce_time );
-+
++	 printf( "%s:  <<<< Set [%s] time stamp to %llu\n",
++		 Pname, tcp->CE_NAME, (unsigned long long)tcp->ce_time );
  
        if( Measure & M_TARGET )
  	 Do_profile_output( "e", M_TARGET, tcp );

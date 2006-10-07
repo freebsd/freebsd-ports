@@ -1,10 +1,10 @@
 bin/dmake
-share/dmake/startup/config.mk
-share/dmake/startup/startup.mk
-share/dmake/startup/unix/linux/macros.mk
-share/dmake/startup/unix/macros.mk
-share/dmake/startup/unix/recipes.mk
-@dirrm share/dmake/startup/unix/linux
-@dirrm share/dmake/startup/unix
-@dirrm share/dmake/startup
-@dirrm share/dmake
+%%DATADIR%%/startup/config.mk
+%%DATADIR%%/startup/startup.mk
+%%DATADIR%%/startup/unix/linux/macros.mk
+%%DATADIR%%/startup/unix/macros.mk
+%%DATADIR%%/startup/unix/recipes.mk
+@dirrm %%DATADIR%%/startup/unix/linux
+@dirrm %%DATADIR%%/startup/unix
+@dirrm %%DATADIR%%/startup
+@dirrm %%DATADIR%%
