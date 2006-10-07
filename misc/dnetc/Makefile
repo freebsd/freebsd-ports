@@ -48,22 +48,31 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == sparc64 || ${ARCH} == alpha
-VERSION=	2.9003.481
-.elif ${ARCH} == amd64
-VERSION=	2.9011.496
-.else
+.if ${ARCH} == i386
 VERSION=	2.9012.497
+.if ${OSVERSION} >= 503000
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
 .endif
-
-.if ${ARCH} == i386 && ${OSVERSION} >= 503000
-MASTER_SITE_SUBDIR=	prerelease/rc
 .if ${OSVERSION} >= 600034
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
-.else
-DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
 .endif
+.endif
+
+.if ${ARCH} == amd64
+.if ${OSVERSION} >= 503000
+VERSION=	2.9011.496
+#DISTNAME=	dnetc${PORTVERSION:E}-freebsd5-${ARCH:S/i386/x86/}-elf
+.endif
+.if ${OSVERSION} >= 600034
+VERSION=	2.9012.497
+DISTNAME=	dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd6-${ARCH:S/i386/x86/}-elf
+.endif
+.endif
+
+.if ${ARCH} == sparc64 || ${ARCH} == alpha
+VERSION=	2.9003.481
 .endif
 
 do-configure:
