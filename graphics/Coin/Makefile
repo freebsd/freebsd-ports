@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Coin
-PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTVERSION=	2.4.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/
@@ -24,6 +23,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe \
 		--enable-3ds-import --enable-sound
 USE_LDCONFIG=	yes
+MAKE_ENV=	LANG=C
 
 MAN1=		coin-config.1
 

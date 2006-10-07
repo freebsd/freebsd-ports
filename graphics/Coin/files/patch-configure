@@ -1,0 +1,15 @@
+--- configure.orig	Fri Oct  6 23:42:10 2006
++++ configure	Fri Oct  6 23:42:13 2006
+@@ -28865,9 +28865,9 @@
+   echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+ 
+-cat >>confdefs.h <<\_ACEOF
+-#define HAVE__DUP 1
+-_ACEOF
++#cat >>confdefs.h <<\_ACEOF
++##define HAVE__DUP 1
++#_ACEOF
+ 
+ 
+ else
