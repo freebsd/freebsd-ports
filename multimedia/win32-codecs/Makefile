@@ -7,6 +7,7 @@
 
 PORTNAME=	win32-codecs
 PORTVERSION=	3.${CODEC_MPLAYER_VERSION:S/pre/.p/}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/ \
@@ -25,7 +26,6 @@ EXTRACT_ONLY=	all-20060611.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
 
-FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/24f6b1eb-43d5-11db-81e1-000e0c2e438a.html
 RESTRICTED=	Unsure of codec\'s license
 
 ONLY_FOR_ARCHS=	i386
@@ -40,16 +40,40 @@ CODEC_MPLAYER_VERSION=	1.0pre8
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
 # additional codec packs
-ADDITIONAL_CODECS_DISTFILES=	qt63dlls-20050115.tar.bz2 \
-				qtextras-20041107.tar.bz2 \
-				rp9codecs-20050115.tar.bz2 \
-				rp9codecs-win32-20050115.tar.bz2 \
-				xanimdlls-20040626.tar.bz2
+ADDITIONAL_CODECS_DISTFILES=	xanimdlls-20040626.tar.bz2
 
 # extraction wrksrc
 ADDITIONAL_CODECS_WRKSRC=	${DISTFILES:S/.tar.bz2//}
 
+# list of quicktime codecs that will be removed
+REMOVE_CODECS_FILES=	AvidQTAVUICodec.qtx QuickTimeEssentials.qtx QuickTime.qts \
+			QuickTimeInternetExtras.qtx qtmlClient.dll BeHereiVideo.qtx
+
+OPTIONS=	QUICKTIME	"Install quicktime codec"	off \
+		REALPLAYER	"Install realplayer codec"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_QUICKTIME)
+FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/24f6b1eb-43d5-11db-81e1-000e0c2e438a.html
+ADDITIONAL_CODECS_DISTFILES+=	qt63dlls-20050115.tar.bz2 \
+				qtextras-20041107.tar.bz2
+PLIST_SUB+=	QUICKTIME=""
+.else
+PLIST_SUB+=	QUICKTIME="@comment "
+.endif
+
+.if !defined(WITHOUT_REALPLAYER)
+ADDITIONAL_CODECS_DISTFILES+=	rp9codecs-20050115.tar.bz2 \
+				rp9codecs-win32-20050115.tar.bz2
+PLIST_SUB+=	REALPLAYER=""
+.else
+PLIST_SUB+=	REALPLAYER="@comment "
+.endif
+
 post-extract:
+	@cd ${WRKDIR}/all-20060611 && \
+		${RM} ${REMOVE_CODECS_FILES}
 .for file in ${ADDITIONAL_CODECS_DISTFILES}
 	@cd ${WRKDIR} && ${TAR} xyf \
 		${DISTDIR}/${DIST_SUBDIR}/${file}
@@ -67,4 +91,4 @@ do-install:
 	@${CP} /dev/null ${PREFIX}/lib/win32/${PKGNAME}
 	@${CHMOD} 0444 ${PREFIX}/lib/win32/${PKGNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
