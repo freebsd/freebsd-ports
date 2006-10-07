@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mutt-ng
-PORTVERSION=	20060630
-PORTREVISION=	1
+PORTVERSION=	20060915
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/		\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -30,7 +29,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
 .if defined(WITHOUT_MUTT_ICONV)
-BROKEN=	The WITHOUT_MUTT_ICONV knob of the mutt port only works if WITHOUT_NLS is also given
+BROKEN=		The WITHOUT_MUTT_ICONV knob of the mutt port only works if WITHOUT_NLS is also given
 .endif
 .elif !defined(WITHOUT_MUTT_ICONV)
 USE_ICONV=	yes
@@ -42,21 +41,21 @@ CONFIGURE_ARGS+=	--disable-nls
 CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
-OPTIONS=	POP "Enable pop3 support" on \
-		IMAP "Enable imap support" on \
-		NNTP "Enable nntp support" off \
-		COMPRESSED "Enable compressed folder support" on \
-		FLOCK "Enable flock to lock files" on \
-		HCACHE_DB4 "Enable headers caching via DB4" on \
-		HCACHE_GDBM "Enable headers caching via gdbm" off \
-		HCACHE_QDBM "Enable headers caching via qdbm" off \
-		ESMTP "Enable libesmtp support for sending mail" off \
-		SLANG "Compile with SLANG frontend" off \
-		NCURSES_PORT "Compile with ncurses frontend via port" off \
-		SASL2 "Compile with sasl2 support for authentication" off \
-		GNUTLS "Compile with SSL support via GNUTLS" off \
-		LIBIDN "Enable international domain names" off \
-		DEBUG "Compile a debug version" on
+OPTIONS=	POP		"Enable pop3 support"				on  \
+		IMAP		"Enable imap support"				on  \
+		NNTP		"Enable nntp support"				off \
+		COMPRESSED	"Enable compressed folder support"		on  \
+		FLOCK		"Enable flock to lock files"			on  \
+		HCACHE_DB4	"Enable headers caching via DB4"		on  \
+		HCACHE_GDBM	"Enable headers caching via gdbm"		off \
+		HCACHE_QDBM	"Enable headers caching via qdbm"		off \
+		ESMTP		"Enable libesmtp support for sending mail"	off \
+		SLANG		"Compile with SLANG frontend"			off \
+		NCURSES_PORT	"Compile with ncurses frontend via port"	off \
+		SASL2		"Compile with sasl2 support for authentication"	off \
+		GNUTLS		"Compile with SSL support via GNUTLS"		off \
+		LIBIDN		"Enable international domain names"		off \
+		DEBUG		"Compile a debug version"			on
 
 .include <bsd.port.pre.mk>
 
