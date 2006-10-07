@@ -14521,6 +14521,7 @@ vera		ports/misc/vera
 verbiste	ports/french/verbiste
 verlihub	ports/net-p2p/verlihub
 verlihub-plugins	ports/net-p2p/verlihub-plugins
+versuch		ports/devel/versuch
 vertex		ports/graphics/vertex
 vexim		ports/mail/vexim
 vgb		ports/emulators/vgb
