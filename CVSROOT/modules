@@ -4549,6 +4549,7 @@ isc-dhcp3-client	ports/net/isc-dhcp3-client
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
 isc-dhcp3-relay	ports/net/isc-dhcp3-relay
 isc-dhcp3-server	ports/net/isc-dhcp3-server
+iscsi-target	ports/net/iscsi-target
 isearch		ports/textproc/isearch
 iselect		ports/misc/iselect
 ish		ports/converters/ish
