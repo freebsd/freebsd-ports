@@ -19,14 +19,15 @@ PORTVERSION=	2.1.6
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
-		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
-		ftp://ftp.tux.org/pub/net/postfix/official/ \
-		ftp://ftp.utoronto.ca/mirror/packages/postfix/official/ \
-		ftp://ftp.samurai.com/pub/postfix/official/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/:postfix \
+		ftp://ftp.tux.org/pub/net/postfix/official/:postfix \
+		ftp://ftp.utoronto.ca/mirror/packages/postfix/official/:postfix \
+		ftp://ftp.samurai.com/pub/postfix/official/:postfix \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}:postfix \
+		http://mirror.inerd.com/FreeBSD/distfiles/postfix21/:pfix
 MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:postfix
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mnag@FreeBSD.org
