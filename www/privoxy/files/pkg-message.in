@@ -1,10 +1,25 @@
 ***********************************************************
-** Before running privoxy you must modify the file       **
+** Privoxy's default configuration file is:              **
 ** %%PREFIX%%/etc/privoxy/config                         **
+** It gets overwritten on (re)install, if you make your  **
+** own modifications, you should rename it first.        **
 **                                                       **
-** Start privoxy with:                                   **
-** %%PREFIX%%/sbin/privoxy %%PREFIX%%/etc/privoxy/config **
+** To start Privoxy on boot, add: privoxy_enable="YES"   **
+** to /etc/rc.conf. If you changed the location of the   **
+** configuration file, additionally add:                 **
+** privoxy_config="%%PREFIX%%/etc/privoxy/your-config"   **
 **                                                       **
-** For documentation see:                                **  
+** To start Privoxy manually, run:                       **
+** %%PREFIX%%/etc/rc.d/privoxy forcestart                **
+** The script understands most of the commands listed    **
+** in rc(8), it also contains a list of other rc         **
+** variables you can use.                                **
+**                                                       **
+** If you installed Privoxy as package and are using the **
+** default configuration, you have to make sure the      **
+** directories /var/log/privoxy and /var/run/privoxy     **
+** exist and are owned by privoxy:privoxy.               **
+**                                                       **
+** For documentation see:                                **
 ** %%PREFIX%%/share/doc/privoxy-manual or 'man privoxy'  **
 ***********************************************************

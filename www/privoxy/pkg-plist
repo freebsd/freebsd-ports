@@ -1,6 +1,7 @@
 sbin/privoxy
 etc/privoxy/config
 etc/privoxy/default.action
+etc/privoxy/standard.action
 etc/privoxy/default.filter
 etc/privoxy/trust
 etc/privoxy/templates/blocked
