@@ -9,7 +9,7 @@ PORTNAME=	fastest_cvsup
 PORTVERSION=	0.2.9
 PORTREVISION=	4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
+MASTER_SITES=	http://www.is-root.com/myports/
 
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Finds fastest CVSup server
