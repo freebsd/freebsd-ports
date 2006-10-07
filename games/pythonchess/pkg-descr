@@ -2,5 +2,3 @@ pythonchess is a computer chess program for human vs. computer games.
 pythonchess is a complete chess program with alpha-beta search, hashing,
 pondering, iterative deepening, etc. implemented in Python programming
 language.
-
-WWW: http://www.kolumbus.fi/jyrki.alakuijala/pychess.html
