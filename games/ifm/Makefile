@@ -8,24 +8,22 @@
 PORTNAME=	ifm
 PORTVERSION=	5.1
 CATEGORIES=	games tk84
-MASTER_SITES=	http://www.ifarchive.org/%SUBDIR%/ \
-		ftp://ftp.ifarchive.org/%SUBDIR%/ \
-		ftp://ftp.funet.fi/pub/misc/%SUBDIR%/
+MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
+		http://www.ifarchive.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	if-archive/mapping-tools
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spear@protect-ya-neck.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4
 
 post-patch:
-	@${PERL} -pi -e 's|lib doc progs|lib progs|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|lib doc progs|lib progs|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
