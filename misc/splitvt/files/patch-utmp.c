@@ -1,10 +1,11 @@
---- utmp.c.orig	Sat Jan 13 13:48:13 2001
-+++ utmp.c	Wed Jun 18 04:45:38 2003
-@@ -6,13 +6,14 @@
+--- utmp.c.orig	Sat Jan 13 22:48:13 2001
++++ utmp.c	Sat Oct  7 14:35:08 2006
+@@ -6,13 +6,15 @@
  #include	<fcntl.h>
  #include	<utmp.h>
  #include	<stdio.h>
 +#include	<unistd.h>
++#include	<string.h>
  
  #ifdef DEBUG_UTMP
  #undef  UTMP_FILE
