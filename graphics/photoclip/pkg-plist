@@ -1,0 +1,10 @@
+Local/Applications/PhotoClip.app/PhotoClip
+Local/Applications/PhotoClip.app/Resources/Info-gnustep.plist
+Local/Applications/PhotoClip.app/Resources/PhotoClip.tiff
+Local/Applications/PhotoClip.app/Resources/PhotoClip.desktop
+Local/Applications/PhotoClip.app/Resources/KeyBindings.dict
+Local/Applications/PhotoClip.app/Resources/sample.jpg
+Local/Applications/PhotoClip.app/library_paths.openapp
+Local/Applications/PhotoClip.app/stamp.make
+@dirrm Local/Applications/PhotoClip.app/Resources
+@dirrm Local/Applications/PhotoClip.app

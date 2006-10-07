@@ -487,6 +487,7 @@
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += pho
+    SUBDIR += photoclip
     SUBDIR += photopc
     SUBDIR += php-magickwand
     SUBDIR += php4-exif
