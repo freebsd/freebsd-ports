@@ -21,7 +21,7 @@ COMMENT=	FSF binutils-2.11.90 for Windows cross-development
 CONFLICTS=	libbfd-[0-9]*
 
 DEPRECATED=	use mingw32-* ports instead
-EXPIRATION_DATE=2006-11-4
+EXPIRATION_DATE=2006-11-04
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
 

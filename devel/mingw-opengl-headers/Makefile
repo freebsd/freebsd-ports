@@ -20,7 +20,7 @@ COMMENT=	OpenGL headers from Microsoft(TM) for Windows development with Mingw
 BUILD_DEPENDS=	mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 
 DEPRECATED=	use mingw32-* ports instead
-EXPIRATION_DATE=2006-11-4
+EXPIRATION_DATE=2006-11-04
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
