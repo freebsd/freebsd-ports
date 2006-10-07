@@ -3,12 +3,11 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.58 2006/04/15 02:00:25 tmclau02 Exp $
+#   $Id: Makefile,v 1.62 2006/10/07 02:36:33 tmclau02 Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.1.13.6
-PORTREVISION=	1
+PORTVERSION=	1.1.13.8.1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono-1.1/ \
 		${MASTER_SITE_LOCAL}
