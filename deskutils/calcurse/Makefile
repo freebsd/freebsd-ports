@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		calcurse
-PORTVERSION=		1.5
+PORTVERSION=		1.6
 CATEGORIES=		deskutils
 MASTER_SITES=		ftp://ftp2.culot.org/culot/
 
@@ -27,4 +27,10 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not compile on 4.x
+.endif
+
+.include <bsd.port.post.mk>
