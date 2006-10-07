@@ -3,17 +3,18 @@
 This is a port of the virus signature files for F-Prot Antivirus.
 You will need to install the port security/f-prot to make use of them.
 
-The port disables verifying the checksum of the distfiles due to their 
-frequency of change. If you wish to verify the files yourself you may use
-the PGP signature files that have been installed in:
+The port disables verifying the checksum of the distfiles due to
+their frequency of change. If you wish to verify the files yourself
+you may use the PGP signature files that have been installed in:
 
 %%PREFIX%%/f-prot/
 
-The F-RISK public PGP key is located at:
+The FRISK public PGP key is located at:
 
 http://www.f-prot.com/company/KEY.ASC
 
-NOTE: The script check-updates.pl is all ready included with the f-prot 
-port and can be used as a secondary means of updating virus signature files.
+NOTE: The script check-updates.pl is already included with the
+f-prot port port and can be used as a secondary means of updating
+virus signature files.
 
 ***************************************************************************
