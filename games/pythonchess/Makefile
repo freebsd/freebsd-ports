@@ -8,7 +8,8 @@
 PORTNAME=	pythonchess
 PORTVERSION=	0.6
 CATEGORIES=	games
-MASTER_SITES=	http://www.kolumbus.fi/jyrki.alakuijala/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alepulver
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alepulver@FreeBSD.org
