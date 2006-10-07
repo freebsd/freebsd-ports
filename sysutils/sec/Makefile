@@ -7,6 +7,7 @@
 
 PORTNAME=	sec
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	simple-evcorr
@@ -16,6 +17,9 @@ COMMENT=	Simple event (logs) correlator
 
 USE_PERL5_RUN=	YES
 NO_BUILD=	YES
+
+USE_RC_SUBR=	sec
+SUB_LIST=	PERL=${PERL}
 
 MAN8=		sec.8
 PORTDOCS=	ChangeLog README convert.pl itostream.c
