@@ -141,7 +141,7 @@ do-install:
 	${APXS} -i -n caucho -a ${WRKSRC}/src/c/plugin/apache2/mod_caucho.so
 .endif
 .if (defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
-	${APXS} -i -n caucho -a ${WRKSRC}/src/c/plugin/apache1/mod_caucho.so
+	${APXS} -i -n caucho -a ${WRKSRC}/src/c/plugin/apache/mod_caucho.so
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
