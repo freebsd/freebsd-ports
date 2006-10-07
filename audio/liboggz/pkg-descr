@@ -1,0 +1,20 @@
+Oggz provides a simple programming interface for reading and writing
+Ogg files and streams. Ogg is an interleaving data container developed
+by Monty at Xiph.Org, originally to support the Ogg Vorbis audio
+format.
+
+liboggz supports the flexibility afforded by the Ogg file format while
+presenting the following API niceties:
+* Strict adherence to the formatting requirements of Ogg bitstreams,
+  to ensure that only valid bitstreams are generated
+* A simple, callback based open/read/close or open/write/close interface
+  to raw Ogg files
+* A customisable seeking abstraction for seeking on multitrack Ogg data
+* A packet queue for feeding incoming packets for writing, with
+  callback based notification when this queue is empty
+* A means of overriding the IO functions used by Oggz, for easier
+  integration with media frameworks and similar systems.
+* A handy table structure for storing information on each logical
+  bitstream
+
+WWW: http://www.annodex.net/software/liboggz/html/

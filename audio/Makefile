@@ -314,6 +314,7 @@
     SUBDIR += libnoise
     SUBDIR += libofa
     SUBDIR += libogg
+    SUBDIR += liboggz
     SUBDIR += libsamplerate
     SUBDIR += libshout
     SUBDIR += libshout2
