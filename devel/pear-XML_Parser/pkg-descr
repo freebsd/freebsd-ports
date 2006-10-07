@@ -1,15 +1,16 @@
 This is an XML parser based on PHPs built-in xml extension.
-It supports two basic modes of operation: "func" and "event". In "func" mode,
-it will look for a function named after each element (xmltag_ELEMENT for start
-tags and xmltag_ELEMENT_ for end tags), and in "event" mode it uses a set of 
-generic callbacks.
 
-Since version 1.2.0 there's a new XML_Parser_Simple class that makes parsing
-of most XML documents easier, by automatically providing a stack for the
-elements.
+It supports two basic modes of operation: "func" and "event". In
+"func" mode, it will look for a function named after each element
+(xmltag_ELEMENT for start tags and xmltag_ELEMENT_ for end tags),
+and in "event" mode it uses a set of generic callbacks.
 
-Furthermore its now possible to split the parser from the handler object, so
-you do not have to extend XML_Parser anymore in order to parse a document
-with it.
+Since version 1.2.0 there's a new XML_Parser_Simple class that makes
+parsing of most XML documents easier, by automatically providing a
+stack for the elements.
+
+Furthermore its now possible to split the parser from the handler
+object, so you do not have to extend XML_Parser anymore in order
+to parse a document with it.
 
 WWW: http://pear.php.net/package/XML_Parser/
