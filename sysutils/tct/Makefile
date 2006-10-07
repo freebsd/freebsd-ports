@@ -16,6 +16,8 @@ COMMENT=	Analyzer for forensic data
 USE_PERL5=	yes
 MAKE_ENV=	OPT="${CFLAGS}"
 
+CONFLICTS=	file-[0-9]*
+
 MAN1=		file-tct.1 grave-robber.1 icat.1 ils.1 lastcomm.1 lazarus.1 \
 		mactime.1 major_minor.1 md5-tct.1 pcat.1 timeout.1 unrm.1
 MAN5=		magic.5 tm-format.5
