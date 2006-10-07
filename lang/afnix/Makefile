@@ -42,5 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/\.rtf/d' ${WRKSRC}/etc/Makefile
 	@${REINPLACE_CMD} -e '/^MANDIR/s/SHRDIR/MANPREFIX/' \
 		${WRKSRC}/cnf/mak/afnix-defs.mak
+	@${REINPLACE_CMD} -e '/uname -r/s/\\\./[.-]/' \
+		${WRKSRC}/cnf/bin/afnix-guess
 
 .include <bsd.port.post.mk>
