@@ -6,3 +6,10 @@ sshd : ALL : allow
 2. issue the following command if /etc/hosts.deniedssh does not exist yet
 touch /etc/hosts.deniedssh 
 -------------------------------------------------------------------------------
+Warning:
+
+syslogd should ideally be run with the -c option; this will ensure that
+denyhosts notices multiple repeated login attempts.
+
+To do this, add syslogd_flags="-c" to /etc/rc.conf
+-------------------------------------------------------------------------------
