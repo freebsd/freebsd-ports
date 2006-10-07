@@ -1,0 +1,11 @@
+--- modules/files/Makefile.orig	Tue Aug  1 18:10:57 2006
++++ modules/files/Makefile	Tue Aug  1 18:11:07 2006
+@@ -6,7 +6,7 @@
+ STRIP=
+ SRCS= files_grp.c files_ht.c files_htinfo.c files_htnode.c files_pwd.c
+ WARNS?=2
+-CFLAGS+=-pthread -I${.CURDIR}/../../include
++CFLAGS+=-pthread -I${.CURDIR}/../../include -DINET6
+ LDFLAGS+=-nostdlib
+ NOMAN= 1
+ 

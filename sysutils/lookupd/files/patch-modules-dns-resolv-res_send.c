@@ -1,5 +1,5 @@
---- modules/dns/resolv/res_send.c.orig	Fri Jul  2 15:31:44 2004
-+++ modules/dns/resolv/res_send.c	Wed Aug 10 18:09:22 2005
+--- modules/dns/resolv/res_send.c.orig	Tue Aug  1 18:10:57 2006
++++ modules/dns/resolv/res_send.c	Tue Aug  1 18:11:02 2006
 @@ -201,7 +201,7 @@
  	if (_res.options & RES_DEBUG) {
  		if (getnameinfo(address, address->sa_len, abuf, sizeof(abuf),
