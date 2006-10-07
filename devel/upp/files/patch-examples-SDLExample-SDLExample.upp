@@ -1,12 +1,10 @@
---- examples/SDLExample/SDLExample.upp.orig	Tue Jun  6 20:57:56 2006
-+++ examples/SDLExample/SDLExample.upp	Tue Jun  6 21:18:25 2006
-@@ -7,6 +7,10 @@
+--- examples/SDLExample/SDLExample.upp.orig	Wed Oct  4 23:58:12 2006
++++ examples/SDLExample/SDLExample.upp	Thu Oct  5 00:00:08 2006
+@@ -7,6 +7,8 @@
  
  library(LINUX) "SDL SDLmain";
  
-+library(FREEBSD) "SDL-1.1 m vgl X11 Xext vga aa usbhid";
-+
-+link(FREEBSD) -pthread;
++library(FREEBSD) "SDL SDLmain X11 Xext Xrandr Xrender vga vgl aa usbhid ncurses";
 +
  file
  	main.cpp;

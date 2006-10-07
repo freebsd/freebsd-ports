@@ -1,0 +1,11 @@
+--- uppsrc/Core/Core.upp.orig	Thu Oct  5 00:00:40 2006
++++ uppsrc/Core/Core.upp	Thu Oct  5 00:01:06 2006
+@@ -7,6 +7,8 @@
+ 
+ library(LINUX) "pthread dl";
+ 
++library(FREEBSD) "pthread";
++
+ library(WIN32) "advapi32 shell32 winmm";
+ 
+ library(SOLARIS) "posix4 dl";
