@@ -3,15 +3,14 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.21 2005/12/03 04:03:17 tmclau02 Exp $
+#   $Id: Makefile,v 1.23 2006/09/16 21:53:04 tmclau02 Exp $
 #
 
 PORTNAME=	evolution-sharp
-PORTVERSION=	0.10.2
-PORTREVISION=	5
+PORTVERSION=	0.11.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono bindings for evolution
