@@ -53,17 +53,19 @@ PORTABLE_SUFFIX=	-portable
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
 
-OPTIONS=	PAM		"Enable pam(3) support"			on \
-		TCP_WRAPPERS	"Enable tcp_wrappers support"		on \
-		LIBEDIT		"Enable readline support to sftp(1)"	on \
-		KERBEROS	"Enable kerberos (autodetection)"	on \
-		SUID_SSH	"Enable suid SSH (Recommended off)"	off \
-		GSSAPI		"Enable GSSAPI support"			off \
-		OPENSSH_CHROOT	"Enable CHROOT support"			off \
-		OPENSC		"Enable OpenSC smartcard support"	off \
-		OPENSCPINPATCH	"Enable OpenSC PIN patch"		off \
-		HPN		"Enable HPN-SSH patch"			off \
-		OVERWRITE_BASE	"OpenSSH overwrite base"		off
+OPTIONS=	PAM		"Enable pam(3) support"				on \
+		TCP_WRAPPERS	"Enable tcp_wrappers support"			on \
+		LIBEDIT		"Enable readline support to sftp(1)"		on \
+		KERBEROS	"Enable kerberos (autodetection)"		on \
+		SUID_SSH	"Enable suid SSH (Recommended off)"		off \
+		GSSAPI		"Enable GSSAPI support (req: KERBEROS)"		off \
+		KERB_GSSAPI	"Enable Kerberos/GSSAPI patch (req: GSSAPI)"	off \
+		OPENSSH_CHROOT	"Enable CHROOT support"				off \
+		OPENSC		"Enable OpenSC smartcard support"		off \
+		OPENSCPINPATCH	"Enable OpenSC PIN patch"			off \
+		HPN		"Enable HPN-SSH patch"				off \
+		LPK		"Enable LDAP Public Key (LPK) patch"		off \
+		OVERWRITE_BASE	"OpenSSH overwrite base"			off
 
 .include <bsd.port.pre.mk>
 
@@ -97,6 +99,11 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 
 .if !defined(WITHOUT_KERBEROS)
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
+.if defined(WITH_KERB_GSSAPI)
+PATCH_DIST_STRIP=	-p0
+PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
+PATCHFILES+=		openssh-4.4p1-gsskex-20061002.patch
+.endif
 PORTABLE_SUFFIX=	# empty
 GSSAPI_SUFFIX=		-gssapi
 CONFLICTS+=		openssh-portable-*-[0-9]*
@@ -133,10 +140,23 @@ CONFIGURE_ARGS+=	--with-opensc=${LOCALBASE}
 EXTRA_PATCHES+=		${FILESDIR}/scardpin.patch
 .endif
 
+.if defined(WITH_HPN) && defined(WITH_LPK)
+BROKEN=			HPN and LPK patches are incompatible
+.endif
+
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
 PATCHFILES+=		openssh-4.4p1-hpn.diff.gz
+.endif
+
+.if defined(WITH_LPK)
+PATCH_DIST_STRIP=	-p0
+EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk.patch
+USE_OPENLDAP=		yes
+CPPFLAGS+=		"-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY"
+CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L/usr/local/lib' \
+			--with-cppflags='-I/usr/local/include -DWITH_LDAP_PUBKEY'
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
