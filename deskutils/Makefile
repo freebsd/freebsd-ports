@@ -57,7 +57,6 @@
     SUBDIR += gnome-pim
     SUBDIR += gnome-utils
     SUBDIR += gnotime
-    SUBDIR += goats
     SUBDIR += gourmet
     SUBDIR += gruler
     SUBDIR += gtimer
