@@ -7066,6 +7066,7 @@ mod_gzip	ports/www/mod_gzip
 mod_hosts_access	ports/www/mod_hosts_access
 mod_index_rss	ports/www/mod_index_rss
 mod_injection	ports/www/mod_injection
+mod_jail	ports/www/mod_jail
 mod_jk		ports/www/mod_jk
 mod_jk-apache2	ports/www/mod_jk-apache2
 mod_jk2		ports/www/mod_jk2
