@@ -18,6 +18,9 @@ COMMENT=	Compact desklet that allows you to control your XMMS from your desktop
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
+DEPRECATED=	Disappeared from the internet
+EXPIRATION_DATE=2006-12-07
+
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 
