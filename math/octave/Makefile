@@ -9,20 +9,22 @@ PORTNAME=	octave
 PORTVERSION=	2.1.73
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
+		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/ \
+		http://neacm.fe.up.pt/pub/octave/bleeding-edge/ \
+		ftp://ftp.lublin.pl/site/octave/bleeding-edge/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	High-level interactive language for numerical computations
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		atlas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	${PREFIX}/lib/octave-${OCTAVE_VERSION}
 
 INFO=		octave liboctave
 MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
@@ -38,8 +40,6 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		F77="${F77}" \
 		FFLAGS="${FFLAGS}"
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
-		--with-blas="-L${LOCALBASE}/lib -lf77blas -lcblas -latlas" \
-		--with-lapack=-lalapack \
 		--enable-shared
 
 SUB_FILES=	octave
@@ -48,11 +48,20 @@ SUB_LIST=	OCTAVE_VERSION="${OCTAVE_VERSION}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+BROKEN=		Does not compile on FreeBSD 4.x
 .endif
 
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=	--disable-readline
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=		yes
+.endif
+
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=		atlas.1:${PORTSDIR}/math/atlas
+CONFIGURE_ARGS+=	--with-blas="-L${LOCALBASE}/lib -lf77blas -lcblas -latlas" \
+			--with-lapack=-lalapack
+.else
+LIB_DEPENDS+=		blas.1:${PORTSDIR}/math/blas
+CONFIGURE_ARGS+=	--with-blas="-L${LOCALBASE}/lib -lblas"
 .endif
 
 post-install:
