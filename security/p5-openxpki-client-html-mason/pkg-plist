@@ -1,0 +1,12 @@
+%%SITE_PERL%%/OpenXPKI/Client/HTML/Mason.pm
+%%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Javascript.pm
+%%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Menu.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
+@dirrmtry %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason
+@dirrmtry %%SITE_PERL%%/OpenXPKI/Client/HTML
+@dirrmtry %%SITE_PERL%%/OpenXPKI/Client
+@dirrmtry %%SITE_PERL%%/OpenXPKI
