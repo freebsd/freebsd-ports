@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.2p2
-PORTREVISION=	1
+PORTVERSION=	4.2.2p3
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-4.2/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
@@ -22,6 +21,7 @@ LATEST_LINK=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_AUTOTOOLS=	automake:19
 
 .if defined(ENABLE_RAWDCF)
 CONFIGURE_ARGS+=	--enable-RAWDCF
@@ -41,10 +41,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 MAN1=		sntp.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=         Will not build under 4.X.
-.endif
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
