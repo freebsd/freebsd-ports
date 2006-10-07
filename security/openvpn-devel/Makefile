@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_beta15
+DISTVERSION=	2.1_beta16
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -62,6 +62,7 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/plugin/down-root && ${MAKE}
+	cd ${WRKSRC}/plugin/auth-pam && ${CC} ${CPPFLAGS} -I../.. -DDLOPEN_PAM=0 ${CFLAGS} -fPIC -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
 	@# self-tests here
 .if !defined(WITHOUT_CHECK)
 	cd ${WRKSRC} && ${MAKE} check
@@ -72,12 +73,12 @@ pre-install:
 
 post-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so \
-		${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/plugin/auth-pam/openvpn-auth-pam.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README \
-		${DOCSDIR}/README.openvpn-down-root
+	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README ${DOCSDIR}/README.openvpn-down-root
+	${INSTALL_DATA} ${WRKSRC}/plugin/auth-pam/README ${DOCSDIR}/README.openvpn-auth-pam
 .for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL NEWS \
 	PORTS README
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
