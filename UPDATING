@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20061007:
+  AFFECTS: users of security/p5-openxpki
+  AUTHOR: svysh@cryptocom.ru
+
+  Old port security/p5-openxpki has been split into 8 new ports:
+   p5-openxpki: core for server part
+   p5-openxpki-client: base class for actual clients
+   p5-openxpki-i18n: internationalization of the user interface
+   p5-openxpki-client-cli: command line interface to local OpenXPKI daemon
+   p5-openxpki-client-html-mason: web interface to local OpenXPKI daemon
+   p5-openxpki-client-scep: set of SCEP tools
+   p5-openxpki-client-soap-lite: set of SOAP-Lite tools
+   p5-openxpki-deployment: set of deployment tools
+
+  Please see security/p5-openxpki/pkg-descr for their interdependencies.
+
 20060926:
   AFFECTS: users of security/libgpg-error and any port that depends on it
   AUTHOR: novel@FreeBSD.org
