@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72f21372-55e4-11db-a5ae-00508d6a62df">
+    <topic>torrentflux -- User-Agent XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>torrentflux</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://www.stevenroddis.com.au/2006/10/06/torrentflux-user-agent-xss-vulnerability/">
+	  <p>Steven Roddis reports that User-Agent string is not
+	    properly escaped when handled by torrentflux. This allows
+	    for arbitrary code insertion.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.stevenroddis.com.au/2006/10/06/torrentflux-user-agent-xss-vulnerability/</url>
+      <url>http://secunia.com/advisories/22293/</url>
+    </references>
+    <dates>
+      <discovery>2006-09-30</discovery>
+      <entry>2006-10-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe83eb5b-55e1-11db-a5ae-00508d6a62df">
     <topic>python -- buffer overrun in repr() for unicode strings</topic>
     <affects>
