@@ -13,11 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A text-based utility for work with dictionaries in StarDict's format
 
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON_sparc64=	does not compile
-
 USE_BZIP2=	yes
-#USE_GCC=	3.3+
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -44,8 +40,8 @@ MAN1=		sdcv.1
 BROKEN=	Doesn't build on FreeBSD 4.x
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=	Doesn't build on 64-bit platforms
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Doesn't build on 64-bit platforms
 .endif
 
 post-patch:
