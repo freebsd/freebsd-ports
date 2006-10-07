@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unidesc
-PORTVERSION=	2.21
+PORTVERSION=	2.22
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
