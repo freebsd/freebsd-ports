@@ -108,12 +108,12 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #					JDK 1.2 or later, this is ${JAVA_HOME}/jre/lib/rt.jar.
 #					Earlier JDK's use ${JAVA_HOME}/lib/classes.zip.
 #
-# JAVASHAREDIR      The base directory for all shared Java resources.
+# JAVASHAREDIR		The base directory for all shared Java resources.
 #
-# JAVAJARDIR        The directory where a port should install JAR files.
+# JAVAJARDIR		The directory where a port should install JAR files.
 #
-# JAVALIBDIR        The directory where JAR files installed by other ports
-#                   are located.
+# JAVALIBDIR		The directory where JAR files installed by other ports
+#					are located.
 #
 # HAVE_JIKES		Defined and set to "yes" whenever the port will effectively
 #					use Jikes. See stage 6 header for further detail.
@@ -130,7 +130,7 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 # Stage 1: Define constants
 # Stage 2: bsd.java.mk 1.0 backward compatibility
 # Stage 3: Determine which JDK ports are installed and which JDK ports are
-#          suitable
+#		   suitable
 # Stage 4: <REMOVED> (merged in stage 3)
 # Stage 5: Decide the exact JDK to use (or install)
 # Stage 6: Add any dependencies if necessary
@@ -146,7 +146,7 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 
 # System-global directories
 # NB: If the value of JAVALIBDIR is altered here it must also be altered
-#     in java/javavmwrapper/Makefile.
+#	  in java/javavmwrapper/Makefile.
 JAVASHAREDIR?=	${PREFIX}/share/java
 JAVAJARDIR?=	${JAVASHAREDIR}/classes
 JAVALIBDIR?=	${LOCALBASE}/share/java/classes
