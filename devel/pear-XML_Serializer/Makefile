@@ -9,7 +9,7 @@ PORTNAME=	XML_Serializer
 PORTVERSION=	0.18.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thomas@goodking.ca
 COMMENT=	PEAR Swiss-army knive for reading and writing XML files
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
