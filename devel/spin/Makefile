@@ -7,6 +7,7 @@
 
 PORTNAME=	spin
 PORTVERSION=	4.2.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
@@ -43,11 +44,9 @@ pre-patch:
 
 .if !defined(WITHOUT_XSPIN)
 post-patch:
-	@WISH=`(cd ${LOCALBASE}/bin ; ${LS} wish8* ) | tail -1` ; \
-	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
-	${REINPLACE_CMD} \
+	@${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
-		-e "s|%%WISH%%|$$WISH|g" ${XSPIN_TCL}
+		-e "s|%%WISH%%|wish8.4|g" ${XSPIN_TCL}
 .endif
 
 do-install:
