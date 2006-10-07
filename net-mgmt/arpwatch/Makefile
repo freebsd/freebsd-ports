@@ -18,8 +18,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]*)$/\1/}
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	Monitor arp & rarp requests
 
-CONFLICTS=	arpwatch-devel-2.*
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
