@@ -54,7 +54,7 @@
      int   dsize = sizeof(md4_t);
      while (dsize--) {
 -	unsigned char d = *((unsigned char *)digest)++;
-+	unsigned char d = (*((unsigned char *)digest))++;
++	unsigned char d = *(((unsigned char *)digest)++);
  	*(str++) = hdigit(d >> 4 );
  	*(str++) = hdigit(d & 0xf);
      }
