@@ -18,8 +18,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
-BROKEN=		Incorrect pkg-plist
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
@@ -45,8 +43,8 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/xmms2java.jar \
-	${JAVALIBDIR}/xmms2java.jar
+	${JAVAJARDIR}/xmms2java.jar
 	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/libxmms2java.so \
-	${TARGETDIR}/lib/libxmms2java.so
+	${PREFIX}/lib/libxmms2java.so
 
 .include "${MASTERDIR}/Makefile"
