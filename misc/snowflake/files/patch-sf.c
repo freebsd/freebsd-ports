@@ -1,6 +1,17 @@
---- sf.c.orig	Mon Dec 21 08:18:55 1998
-+++ sf.c	Sat Nov  8 21:20:24 2003
-@@ -47,6 +47,7 @@
+--- sf.c.orig	Mon Dec 21 00:18:55 1998
++++ sf.c	Sat Oct  7 16:19:50 2006
+@@ -23,9 +23,8 @@
+ #include <sys/shm.h>
+ #include <sys/sem.h>
+ 
+-#include "sf.h"
+-
+ #include "getopt.h"
++#include "sf.h"
+ 
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ 
+@@ -47,6 +46,7 @@
  
  struct option long_options[] =
  {
@@ -8,7 +19,7 @@
    { "view-geometry",    1, 0, c_VIEW_GEOMETRY    },
    { "control-geometry", 1, 0, c_CONTROL_GEOMETRY },
    { "minimize",         0, 0, c_MINIMIZE         },
-@@ -77,6 +78,8 @@
+@@ -77,6 +77,8 @@
  
  help_info_line help_info[] =
  {
@@ -17,7 +28,7 @@
    { "view-geometry",    c_VIEW_GEOMETRY,    "+x+y",
      "Control window placement" },
    { "control-geometry", c_CONTROL_GEOMETRY, "+x+y",
-@@ -134,7 +137,7 @@
+@@ -134,7 +136,7 @@
  
  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
  
@@ -26,7 +37,7 @@
  {
    int   i;
    char* shop;
-@@ -175,7 +178,14 @@
+@@ -175,7 +177,14 @@
                   help_info[i].description );
  
        exit( 0 );
