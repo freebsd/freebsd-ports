@@ -1,6 +1,12 @@
---- src/f-spot.in.orig	Wed Mar  1 02:51:19 2006
-+++ src/f-spot.in	Mon Apr 24 09:31:17 2006
-@@ -17,4 +17,4 @@
+--- src/f-spot.in.orig	Thu Sep  7 17:56:20 2006
++++ src/f-spot.in	Mon Oct  2 22:35:40 2006
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+@@ -24,4 +24,4 @@
  	echo "*** Running F-Spot in Debug Mode ***"
  esac
  
