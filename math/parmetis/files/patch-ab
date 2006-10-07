@@ -4,7 +4,7 @@
  
  # Which compiler to use
 -CC = mpicc
-+CC = ${PREFIX}/mpich/bin/mpicc
++CC = ${LOCALBASE}/mpich2/bin/mpicc
  
  
  # What optimization level to use
@@ -13,7 +13,7 @@
  
  # Which loader to use
 -LD = mpicc
-+LD = ${PREFIX}/mpich/bin/mpicc
++LD = ${LOCALBASE}/mpich2/bin/mpicc
  
  # In which directories to look for any additional libraries
  LIBDIR = 
