@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
-		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
+		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.surf.org.uk/downloads/:ldap_mysql \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/:ldap_mysql \
 		${MASTER_SITE_SOURCEFORGE:S/$/:ldap_mysql/}
