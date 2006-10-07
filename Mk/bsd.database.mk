@@ -51,33 +51,38 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				- Detected PostgreSQL version.
 ##
 # USE_BDB		- Add Berkeley DB library dependency.
-#                 If no version is given (by the maintainer via the port or
-#                 by the user via defined variable), try to find the
-#                 currently installed version.  Fall back to default if
-#                 necessary (db41+).
-# INVALID_BDB_VER	- This variable can be defined when the port doesn't
-#			  support one or more versions of Berkeley DB.
-# WANT_BDB_VER		- Maintainer can set a version of Berkeley DB to always
-#			  build this port with (overrides WITH_BDB_VER).
-# WITH_BDB_VER		- User defined global variable to set Berkeley DB version
-# <UNIQUENAME>_WITH_BDB_VER - User defined port specific variable to set
-#			  Berkeley DB version
-# WITH_BDB_HIGHEST	- Use the highest installed version of Berkeley DB
-# BDB_LIB_NAME		- This variable is automatically set to the name of the
-#			  Berkeley DB library (default: db41)
-# BDB_LIB_CXX_NAME	- This variable is automatically set to the name of the
-#			  Berkeley DB c++ library (default: db41_cxx)
-# BDB_INCLUDE_DIR	- This variable is automatically set to the location of
-#			  the Berkeley DB include directory.
-#			  (default: ${LOCALBASE}/include/db41)
-# BDB_LIB_DIR		- This variable is automatically set to the location of
-#			  the Berkeley DB library directory.
+#				  If no version is given (by the maintainer via the port or
+#				  by the user via defined variable), try to find the
+#				  currently installed version.  Fall back to default if
+#				  necessary (db41+).
+# INVALID_BDB_VER
+#				- This variable can be defined when the port doesn't
+#				  support one or more versions of Berkeley DB.
+# WANT_BDB_VER	- Maintainer can set a version of Berkeley DB to always
+#				  build this port with (overrides WITH_BDB_VER).
+# WITH_BDB_VER	- User defined global variable to set Berkeley DB version
+# <UNIQUENAME>_WITH_BDB_VER
+#				- User defined port specific variable to set
+#				  Berkeley DB version
+# WITH_BDB_HIGHEST
+#				- Use the highest installed version of Berkeley DB
+# BDB_LIB_NAME	- This variable is automatically set to the name of the
+#				  Berkeley DB library (default: db41)
+# BDB_LIB_CXX_NAME
+#				- This variable is automatically set to the name of the
+#				  Berkeley DB c++ library (default: db41_cxx)
+# BDB_INCLUDE_DIR
+#				- This variable is automatically set to the location of
+#				  the Berkeley DB include directory.
+#				  (default: ${LOCALBASE}/include/db41)
+# BDB_LIB_DIR	- This variable is automatically set to the location of
+#				  the Berkeley DB library directory.
 # BDB_VER		- Detected Berkeley DB version.
 ##
 # USE_SQLITE	- Add dependency on sqlite library. Valid values are:
 #				  3 and 2. If version is not specified directly then
 #				  sqlite3 is used (if USE_SQLITE= yes).
-# SQLITE_VER		- Detected sqlite version.
+# SQLITE_VER	- Detected sqlite version.
 ##
 # USE_FIREBIRD	- Add dependency on Firebird library. Valid values are:
 #				  2 and 1. If no version is given by the maintainer (if
@@ -85,7 +90,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				  WITH_FIREBIRD_VER variable, fall back to default "2".
 # WITH_FIREBIRD_VER
 #				- User defined variable to set Firebird version.
-# FIREBIRD_VER		- Detected Firebird version.
+# FIREBIRD_VER	- Detected Firebird version.
 
 .if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	50
