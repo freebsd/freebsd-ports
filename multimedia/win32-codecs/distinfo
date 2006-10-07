@@ -1,6 +1,9 @@
 MD5 (win32/all-20060611.tar.bz2) = 0f2f5adfb539ef0a40fc72a2b46a0349
 SHA256 (win32/all-20060611.tar.bz2) = 7eae86ca5565fc93030a9f4299bd0d45ff195bf11e4ed24916c3f58b4102b589
 SIZE (win32/all-20060611.tar.bz2) = 13806629
+MD5 (win32/xanimdlls-20040626.tar.bz2) = a7c980a1a94fbac6ebd34c7485a1891d
+SHA256 (win32/xanimdlls-20040626.tar.bz2) = 389bd7722dacf99bb453c85c2a2740b676aeed3ab2ca54d66ede86e33086b4ce
+SIZE (win32/xanimdlls-20040626.tar.bz2) = 318850
 MD5 (win32/qt63dlls-20050115.tar.bz2) = dbb2e77156a69179473b86f7498e9b29
 SHA256 (win32/qt63dlls-20050115.tar.bz2) = e2e68180b3f7b95ed9d03244ed9f39431861894eea7d0b696236a7dd7b313c48
 SIZE (win32/qt63dlls-20050115.tar.bz2) = 2694390
@@ -13,6 +16,3 @@ SIZE (win32/rp9codecs-20050115.tar.bz2) = 510136
 MD5 (win32/rp9codecs-win32-20050115.tar.bz2) = 6b56c1c127f5ac0c4c8a9878f24477ca
 SHA256 (win32/rp9codecs-win32-20050115.tar.bz2) = f1a8ae1861263411ee6233373b8f98490e334e9ca058af1149ce5eec11d737b7
 SIZE (win32/rp9codecs-win32-20050115.tar.bz2) = 540641
-MD5 (win32/xanimdlls-20040626.tar.bz2) = a7c980a1a94fbac6ebd34c7485a1891d
-SHA256 (win32/xanimdlls-20040626.tar.bz2) = 389bd7722dacf99bb453c85c2a2740b676aeed3ab2ca54d66ede86e33086b4ce
-SIZE (win32/xanimdlls-20040626.tar.bz2) = 318850
