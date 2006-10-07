@@ -1,12 +1,12 @@
 bin/bless
-lib/bless-0.4.0/bin/bless.exe
-lib/bless-0.4.0/data/bless-16-bytes-per-row.layout
-lib/bless-0.4.0/data/bless-48x48.png
-lib/bless-0.4.0/data/bless-about.png
-lib/bless-0.4.0/data/bless-all-number-bases.layout
-lib/bless-0.4.0/data/bless-default.layout
-lib/bless-0.4.0/data/default-preferences.xml
-lib/bless-0.4.0/data/help_script.sh
+lib/bless-0.4.1/bin/bless.exe
+lib/bless-0.4.1/data/bless-16-bytes-per-row.layout
+lib/bless-0.4.1/data/bless-48x48.png
+lib/bless-0.4.1/data/bless-about.png
+lib/bless-0.4.1/data/bless-all-number-bases.layout
+lib/bless-0.4.1/data/bless-default.layout
+lib/bless-0.4.1/data/default-preferences.xml
+lib/bless-0.4.1/data/help_script.sh
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -30,6 +30,7 @@ lib/bless-0.4.0/data/help_script.sh
 %%PORTDOCS%%%%DOCSDIR%%/user/ch05s02.html
 %%PORTDOCS%%%%DOCSDIR%%/user/ch05s03.html
 %%PORTDOCS%%%%DOCSDIR%%/user/ch06.html
+%%PORTDOCS%%%%DOCSDIR%%/user/ch07.html
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_area_focus.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_display_tag.png
 %%PORTDOCS%%%%DOCSDIR%%/user/figures/bless_edit_mode.png
@@ -53,6 +54,6 @@ share/gnome/pixmaps/bless-48x48.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/bless-0.4.0/data
-@dirrm lib/bless-0.4.0/bin
-@dirrm lib/bless-0.4.0
+@dirrm lib/bless-0.4.1/data
+@dirrm lib/bless-0.4.1/bin
+@dirrm lib/bless-0.4.1
