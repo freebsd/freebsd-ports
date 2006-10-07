@@ -2,6 +2,7 @@
 bin/ganttproject
 %%DATADIR%%/eclipsito.jar
 %%DATADIR%%/ganttproject-eclipsito-config.xml
+%%DATADIR%%/HouseBuildingSample.gan
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_de.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_canada.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_england.calendar
