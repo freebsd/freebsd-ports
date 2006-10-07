@@ -1,0 +1,8 @@
+versuch/gateways.cfg
+versuch/peers.cfg
+versuch/scripts/versuch_ctl.sh
+versuch/scripts/versuch_watcher.sh
+versuch/versuch
+versuch/versuch.ini
+@dirrm versuch/scripts
+@dirrm versuch
