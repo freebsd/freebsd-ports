@@ -1,5 +1,4 @@
 sbin/lookupd
-etc/rc.d/lookupd.sh
 lib/lkpd_files.so
 lib/lkpd_files.so.1
 lib/lkpd_dns.so
