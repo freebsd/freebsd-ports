@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	PCSC-Card
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	pcsc-perl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
