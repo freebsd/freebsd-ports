@@ -338,6 +338,7 @@
     SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss
     SUBDIR += mod_injection
+    SUBDIR += mod_jail
     SUBDIR += mod_jk
     SUBDIR += mod_jk-apache2
     SUBDIR += mod_jk2
