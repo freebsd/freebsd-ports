@@ -467,6 +467,7 @@
     SUBDIR += p5-openxpki-client
     SUBDIR += p5-openxpki-client-cli
     SUBDIR += p5-openxpki-client-html-mason
+    SUBDIR += p5-openxpki-client-scep
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
