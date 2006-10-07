@@ -12,9 +12,9 @@ bin/starplot
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/starplot.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/starplot.mo
 %%NLS%%share/locale/es/LC_MESSAGES/starplot.mo
-share/starplot/sample.stars
-share/starplot/test.stars
-@dirrm share/starplot
+%%DATADIR%%/sample.stars
+%%DATADIR%%/test.stars
+@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%/html/images
 @dirrm %%DOCSDIR%%/html
