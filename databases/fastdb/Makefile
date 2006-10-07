@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fastdb
-PORTVERSION=	3.29
+PORTVERSION=	3.30
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
@@ -23,7 +23,7 @@ MAKE_ENV=	OSTYPE="${OPSYS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	makefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PORTDOCS=	FastDB.htm
 
