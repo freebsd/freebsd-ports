@@ -11,10 +11,10 @@ PORTVERSION=	0.10.5
 PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/:tarball \
-		http://wikitest.freebsd.org/classic/img/:pixmap
+		http://wikitest.freebsd.org/wiki/common/:pixmap
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${EXTRACT_ONLY}:tarball \
-		moinmoin.png:pixmap
+		logo-beastie.png:pixmap
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -42,7 +42,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/moinmoin.png ${DATADIR}/beastie.png
+	${INSTALL_DATA} ${DISTDIR}/logo-beastie.png ${DATADIR}/beastie.png
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
