@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binuti
 		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 
 DEPRECATED=	use mingw32-* ports instead
-EXPIRATION_DATE=2006-11-4
+EXPIRATION_DATE=2006-11-04
 
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}-20010828
 

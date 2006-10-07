@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${LOCALBASE}/i386-mingw32msvc/include/GL/gl.h:${PORTSDIR}/devel/mi
 .endif
 
 DEPRECATED=	use mingw32-* ports instead
-EXPIRATION_DATE=2006-11-4
+EXPIRATION_DATE=2006-11-04
 
 NO_BUILD=	yes
 

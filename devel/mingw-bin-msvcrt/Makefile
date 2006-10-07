@@ -22,7 +22,7 @@ COMMENT=	Headers and Libraries for Windows cross-development
 CONFLICTS=	mingw32-bin-msvcrt-*
 
 DEPRECATED=	use mingw32-* ports instead
-EXPIRATION_DATE=2006-11-4
+EXPIRATION_DATE=2006-11-04
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
