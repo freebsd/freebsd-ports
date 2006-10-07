@@ -22,5 +22,10 @@ post-patch:
 	@${CP} ${FILESDIR}/package.xml ${WRKDIR}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		uninstall failed on amd64 platforms
+.endif
+
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
