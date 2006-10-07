@@ -7,13 +7,13 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
-MAINTAINER=	freebsd-listen@fabiankeil.de
+MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:253
 
-USE_RC_SUBR=	privoxy.sh
+USE_RC_SUBR=	privoxy
 SUB_FILES=	pkg-message
 
 MAKEFILE=	GNUmakefile
@@ -32,7 +32,6 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's,^\(confdir\) \.,\1 ${PREFIX}/etc/privoxy,' \
 		-e 's,^\(logdir\) \.,\1 /var/log/privoxy,' \
-		-e 's,^\(actionsfile standard\),#\1,' \
 		-e 's,^\(actionsfile user\),#\1,' \
 	${WRKSRC}/config
 
@@ -47,7 +46,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/privoxy/templates
 	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
 	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${PREFIX}/etc/privoxy/templates
-.for file in config default.action default.filter trust
+.for file in config default.action standard.action default.filter trust
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc/privoxy
 .endfor
 	@${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${MANPREFIX}/man/man1

@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+#
+# PROVIDE: privoxy
+# REQUIRE: NETWORKING
+# BEFORE: LOGIN
+#
+# This rc script understands the following variables
+# which are read from /etc/rc.conf:
+#
+# privoxy_enable  (bool): Set to "NO" by default.
+#                         Set it to "YES" to enable Privoxy.
+# privoxy_config   (str): Privoxy's configuration file. Default is:
+#                         %%PREFIX%%/etc/privoxy/config.
+# privoxy_flags    (str): List of additional Privoxy options you want
+#                         to use. None set by default.
+# privoxy_pidfile  (str): Default is /var/run/privoxy/privoxy.pid.
+# privoxy_user     (str): Privoxy Daemon user. Default is privoxy.
+#
+# Usage:
+# %%PREFIX%%/etc/rc.d/privoxy [fast|force|one](start|stop|restart|rcvar|status|poll)
+
+. %%RC_SUBR%%
+
+name="privoxy"
+rcvar=${name}_enable
+load_rc_config ${name}
+
+: ${privoxy_enable="NO"}
+: ${privoxy_config="%%PREFIX%%/etc/privoxy/config"}
+: ${privoxy_flags=""}
+: ${privoxy_user="privoxy"}
+: ${privoxy_pidfile="/var/run/privoxy/privoxy.pid"}
+
+
+command="%%PREFIX%%/sbin/privoxy"
+command_args="${privoxy_flags} --pidfile ${privoxy_pidfile} ${privoxy_config}"
+
+run_rc_command "$1"
+
