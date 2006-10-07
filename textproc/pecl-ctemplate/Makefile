@@ -18,6 +18,7 @@ COMMENT=	A PECL extension for google ctemplate library
 
 LIB_DEPENDS=	ctemplate.0:${PORTSDIR}/textproc/google-ctemplate
 
+USE_GCC=	3.2+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
