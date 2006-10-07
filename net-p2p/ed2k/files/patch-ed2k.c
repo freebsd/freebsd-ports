@@ -1,5 +1,5 @@
 --- ed2k.c.orig	Sun Jun 13 19:47:20 2004
-+++ ed2k.c	Wed Nov  9 07:55:38 2005
++++ ed2k.c	Sat Oct  7 20:04:07 2006
 @@ -32,7 +32,7 @@
  #include <sys/stat.h>
  
@@ -49,6 +49,15 @@
      return ((q >= 10) ? 'W' : '0') + q;
  }
  
+@@ -95,7 +106,7 @@
+     char *str   = internal_str;
+     int   dsize = sizeof(md4_t);
+     while (dsize--) {
+-	unsigned char d = *((unsigned char *)digest)++;
++	unsigned char d = (*((unsigned char *)digest))++;
+ 	*(str++) = hdigit(d >> 4 );
+ 	*(str++) = hdigit(d & 0xf);
+     }
 @@ -181,6 +192,7 @@
  }
  
