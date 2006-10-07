@@ -20,6 +20,9 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/tpager
 
+DEPRECATED=	Unmaintained and disappears from MASTER_SITE on a regular basis
+EXPIRATION_DATE=2007-12-07	
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/X11R6#${X11BASE}#' ${WRKSRC}/Makefile
 
