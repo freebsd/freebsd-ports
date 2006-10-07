@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Example-InstantCRUD
-DISTVERSION=	v0.0.16
+DISTVERSION=	v0.0.17
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/Z/ZB/ZBY
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 	p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
-	p5-Catalyst-Model-DBIC>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC \
 p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
 	p5-Catalyst-Plugin-Authentication-Store-DBIC>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication-Store-DBIC \
 	p5-Catalyst-Plugin-ConfigLoader>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
@@ -53,7 +52,7 @@ MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
 	Catalyst::Helper::Model::InstantCRUD.3 \
 	Catalyst::Helper::View::InstantCRUD.3 \
 	Catalyst::Plugin::Auth::Utils.3 \
-	DBIx::Class::InstantCRUD.3 \
+	HTML::Widget::DBIC.3 \
 	HTML::Widget::Element::DoubleSelect.3
 
 .include <bsd.port.pre.mk>
