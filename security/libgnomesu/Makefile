@@ -23,8 +23,6 @@ CONFIGURE_ARGS+=--disable-install-pam
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-CONFLICTS=	gnomesu-[0-9]*
-
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.4.x.sample ${EXAMPLESDIR}
