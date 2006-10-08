@@ -3,16 +3,15 @@
 # Whom:		Christopher Nehren <apeiron+ports@coitusmentis.info>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.10 2006/01/11 03:54:20 tmclau02 Exp $
+#   $Id: Makefile,v 1.12 2006/10/08 01:11:28 killfill Exp $
 #
 
 PORTNAME=	nant
-DISTVERSION=	0.85r3
-PORTREVISION=	2
+DISTVERSION=	0.85r4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.85-rc3-src
+DISTNAME=	${PORTNAME}-0.85-rc4-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A .NET build tool inspired by Ant
