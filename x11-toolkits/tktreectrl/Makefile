@@ -28,6 +28,7 @@ TKPKG=		treectrl${PORTVERSION}
 TKLIBVER=	2.1
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}
 USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
+MANN=	treectrl.n
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/${TKPKG}/libtreectrl${TKLIBVER}.so \
