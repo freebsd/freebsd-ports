@@ -1,0 +1,49 @@
+# New ports collection makefile for:	libxcb
+# Date Created:				2006-08-23
+# Whom:					Ashish Shukla <wahjava@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libxcb
+PORTVERSION=	0.9.92
+CATEGORIES=	x11
+MASTER_SITES=	http://xcb.freedesktop.org/dist/
+
+MAINTAINER=	wahjava@gmail.com
+COMMENT=	The X protocol C-language Binding (XCB) library
+
+BUILD_DEPENDS=	${LIB_PC_DEPENDS} \
+		${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
+		xsltproc:${PORTSDIR}/textproc/libxslt
+RUN_DEPENDS=	${LIB_PC_DEPENDS}
+
+USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack pkgconfig
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-check=${LOCALBASE}
+.for f in XPROTO_CFLAGS XPROTO_LIBS XDMCP_CFLAGS XDMCP_LIBS XAU_CFLAGS XAU_LIBS
+CONFIGURE_ARGS+=${f}="${${f}}"
+.endfor
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-proto
+
+XAU_CFLAGS=	-I${X11BASE}/include
+XAU_LIBS=	-L${X11BASE}/lib -lXau
+
+XDMCP_CFLAGS=	-I${X11BASE}/include
+XDMCP_LIBS=	-L${X11BASE}/lib -lXdmcp
+
+XPROTO_CFLAGS=	-I${X11BASE}/include
+XPROTO_LIBS=	-L${X11BASE}/lib
+
+post-build:
+	DISPLAY= ${GMAKE} -C ${WRKSRC} check
+
+.include <bsd.port.mk>
