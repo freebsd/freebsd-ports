@@ -1,0 +1,8 @@
+The Tile Widget Set is a next-generation re-implementation of many of the core
+Tk widgets, along with the addition of several new widgets. With Tile, Tk
+applications can achieve an appearance much closer to native platform widgets,
+as well as take advantage of a modern, highly dynamic theme engine to produce a
+wide variety of alternative user interface styles. Tile widgets complement the
+existing Tk widgets, and Tile is currently being incorporated directly into Tk.
+
+WWW: http://tktable.sourceforge.net/tile/

@@ -210,6 +210,7 @@
     SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt31
+    SUBDIR += tile
     SUBDIR += tix
     SUBDIR += tk80
     SUBDIR += tk82
