@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	1.7.1
+PORTVERSION=	1.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.shortest.de/download/ \
 		http://schot.a-eskwadraat.nl/files/
