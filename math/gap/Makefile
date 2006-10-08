@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gap
-PORTVERSION=	4.4.7.${GAP_PKGDATE}
+PORTVERSION=	4.4.8.${GAP_PKGDATE}
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/ \
 		ftp://ftp.stack.nl/pub/users/johans/gap/ \
 		ftp://ftp.gap-system.org/pub/gap/gap4/old/
 DISTFILES=	packages-${GAP_PKGTIME}.tar.bz2 \
-		gap4r4p7.tar.bz2 \
+		gap4r4p8.tar.bz2 \
 		xtom1r1p2.tar.bz2
 DIST_SUBDIR=	gap
 
@@ -24,18 +24,17 @@ OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \
 		COHOMOLO		"Build binaries for cohomolo"	Off \
 		EDIM			"Build binaries for edim"	Off \
 		EXAMPLE			"Build binaries for example"	Off \
-		GRAPE			"Build binaries for grape"	Off \
 		KBMAG			"Build binaries for kbmag"	Off \
-		OPENMATH		"Build binaries for openmath"	Off \
 		PARGAP			"Build binaries for pargap"	Off \
 		XGAP			"Build binaries for xgap"	Off
+#		GRAPE			"Build binaries for grape"	Off
 
 #todo anupq fplsa/guava/nq (malloc.h build error) qaos
 
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2006_05_11-20_30_UTC
+GAP_PKGTIME=	2006_09_13-09_49_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
@@ -44,7 +43,7 @@ PLIST_FILES=	bin/gap
 do-extract:
 	(${MKDIR} ${WRKSRC}; \
 	cd ${WRKSRC}; \
-	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p7.tar.bz2; \
+	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p8.tar.bz2; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/xtom1r1p2.tar.bz2 ; \
 	cd ${GAP_WRKSRC}/pkg; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-${GAP_PKGTIME}.tar.bz2 )
@@ -74,9 +73,9 @@ post-build:
 .if defined(WITH_EXAMPLE)
 	(cd ${GAP_WRKSRC}/pkg/example; ./configure ../..; make )
 .endif
-.if defined(WITH_GRAPE)
-	(cd ${GAP_WRKSRC}/pkg/grape; ./configure ../..; make linux-gcc )
-.endif
+#.if defined(WITH_GRAPE)
+#	(cd ${GAP_WRKSRC}/pkg/grape; ./configure ../..; make linux-gcc )
+#.endif
 .if defined(WITH_KBMAG)
 	(cd ${GAP_WRKSRC}/pkg/kbmag; ./configure ../..; make )
 .endif
