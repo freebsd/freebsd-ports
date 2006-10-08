@@ -65,11 +65,13 @@ Note:  Please add new entries to the beginning of this file.
     <topic>python -- buffer overrun in repr() for unicode strings</topic>
     <affects>
       <package>
-	<name>python</name>
-	<name>python23</name>
-	<name>python22</name>
-	<name>python-devel</name>
+	<name>python+ipv6</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>python</name>
+	<range><lt>2.4.3_1</lt></range>
+	<range><gt>2.5.*</gt><lt>2.5.c2</lt></range>
       </package>
     </affects>
     <description>
@@ -97,6 +99,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-08-15</discovery>
       <entry>2006-10-07</entry>
+      <modified>2006-10-08</modified>
     </dates>
   </vuln>
 
