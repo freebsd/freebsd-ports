@@ -147,6 +147,7 @@ include/fltk/ThumbWheel.h
 include/fltk/TiledGroup.h
 include/fltk/TiledImage.h
 include/fltk/ToggleButton.h
+include/fltk/ToggleItem.h
 include/fltk/Tooltip.h
 include/fltk/Valuator.h
 include/fltk/ValueInput.h
