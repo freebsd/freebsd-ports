@@ -10,7 +10,8 @@ PORTVERSION=	0.2.d.7
 CATEGORIES?=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-0.2DrGonzo
+DISTVERSION=	0.2DrGonzo
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
@@ -164,6 +165,9 @@ PLIST_SUB+=	SAMBA="@comment "
 .endif
 
 .if !defined(WITHOUT_DAAP)
+.if ${OSVERSION} < 500000
+IGNORE=	DAAP support is broken on FreeBSD 4.x
+.endif
 PLIST_SUB+=	DAAP=""
 .else
 EXCLUDE+=	daap
