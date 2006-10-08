@@ -232,7 +232,6 @@
     SUBDIR += gnome-system-tools
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
-    SUBDIR += gnomesu
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
