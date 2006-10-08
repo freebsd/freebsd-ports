@@ -1330,8 +1330,6 @@ bin/amaya-%%GUI%%
 %%DATADIR%%/templates/fr/reunion.html
 %%DATADIR%%/templates/fr/right.png
 %%DATADIR%%/templates/fr/style.css
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%DATADIR%%/templates/fr
 @dirrm %%DATADIR%%/templates/en
 @dirrm %%DATADIR%%/templates

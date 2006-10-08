@@ -20,8 +20,6 @@ lib/perl5/site_perl/5.8.8/Mail/DKIM/SignerPolicy.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/SigningFilter.pm
 lib/perl5/site_perl/5.8.8/Mail/DKIM/Verifier.pm
 lib/perl5/site_perl/5.8.8/mach/auto/Mail/DKIM/.packlist
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm lib/perl5/site_perl/5.8.8/mach/auto/Mail/DKIM
 @dirrm lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization
 @dirrm lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm

@@ -12,8 +12,6 @@
 %%DOCSDIR%%/docs/README.schema.txt
 %%DOCSDIR%%/docs/README.security.txt
 %%DOCSDIR%%/docs/README.upgrade.txt
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 %%WWWROOT%%/config/.htaccess
 %%WWWROOT%%/config/config.cfg
 %%WWWROOT%%/config/config.cfg_sample
