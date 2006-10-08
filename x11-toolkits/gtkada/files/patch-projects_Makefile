@@ -1,0 +1,12 @@
+diff -ruN projects/Makefile projects/Makefile
+--- projects/Makefile	Fri Oct  8 12:59:36 2004
++++ projects/Makefile	Thu Jun 15 18:32:43 2006
+@@ -3,6 +3,6 @@
+ MKDIR = mkdir -p
+
+ install:
+-	${MKDIR} $(prefix)/projects/
+-	cp *.gpr $(prefix)/projects/
++	${MKDIR} $(prefix)/share/gtkada/projects/
++	cp *.gpr $(prefix)/share/gtkada/projects/
+
