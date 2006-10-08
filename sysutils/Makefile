@@ -145,6 +145,7 @@
     SUBDIR += e2fsprogs
     SUBDIR += eiciel
     SUBDIR += eject
+    SUBDIR += empower
     SUBDIR += enteruser
     SUBDIR += env4801
     SUBDIR += epylog
@@ -155,6 +156,7 @@
     SUBDIR += eventwatcher
     SUBDIR += evtviewer
     SUBDIR += extipl
+    SUBDIR += extrackt
     SUBDIR += ezjail
     SUBDIR += fanout
     SUBDIR += fastest_cvsup
