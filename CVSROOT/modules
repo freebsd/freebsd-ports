@@ -2072,6 +2072,7 @@ e17-module-flame	ports/x11/e17-module-flame
 e17-module-language	ports/x11/e17-module-language
 e17-module-mail	ports/x11/e17-module-mail
 e17-module-mem	ports/x11/e17-module-mem
+e17-module-mixer	ports/x11/e17-module-mixer
 e17-module-moon	ports/x11/e17-module-moon
 e17-module-rain	ports/x11/e17-module-rain
 e17-module-screenshot	ports/x11/e17-module-screenshot
@@ -2079,6 +2080,7 @@ e17-module-slideshow	ports/x11/e17-module-slideshow
 e17-module-snow	ports/x11/e17-module-snow
 e17-module-uptime	ports/x11/e17-module-uptime
 e17-module-weather	ports/x11/e17-module-weather
+e17-module-winselector	ports/x11/e17-module-winselector
 e17-splash-azul	ports/x11-themes/e17-splash-azul
 e17-splash-blue	ports/x11-themes/e17-splash-blue
 e17-splash-fortune	ports/x11-themes/e17-splash-fortune
@@ -2095,6 +2097,7 @@ e17-theme-detour	ports/x11-themes/e17-theme-detour
 e17-theme-gant	ports/x11-themes/e17-theme-gant
 e17-theme-grey	ports/x11-themes/e17-theme-grey
 e17-theme-japan2007	ports/x11-themes/e17-theme-japan2007
+e17-theme-kor	ports/x11-themes/e17-theme-kor
 e17-theme-mclaren	ports/x11-themes/e17-theme-mclaren
 e17-theme-milky	ports/x11-themes/e17-theme-milky
 e17-theme-neptun	ports/x11-themes/e17-theme-neptun
@@ -2173,6 +2176,7 @@ edenmath	ports/math/edenmath
 edith		ports/editors/edith
 editss		ports/games/editss
 edje		ports/graphics/edje
+edje_viewer	ports/graphics/edje_viewer
 edonkey-gui-gtk	ports/net-p2p/edonkey-gui-gtk
 edonkey-gui-gtk-urlslave	ports/net-p2p/edonkey-gui-gtk-urlslave
 edonkey-tool-hash	ports/net-p2p/edonkey-tool-hash
@@ -2269,7 +2273,9 @@ emms		ports/audio/emms
 emotion		ports/multimedia/emotion
 emovix		ports/multimedia/emovix
 emp		ports/www/emp
+emphasis	ports/audio/emphasis
 empire		ports/games/empire
+empower		ports/sysutils/empower
 nmpty		ports/net/empty
 emu		ports/x11/emu
 emu10kx		ports/audio/emu10kx
@@ -2283,9 +2289,11 @@ enfle		ports/graphics/enfle
 engine_pkcs11	ports/security/engine_pkcs11
 engradient	ports/x11-themes/engradient
 engrave		ports/devel/engrave
+enhance		ports/x11-toolkits/enhance
 enigmail	ports/mail/enigmail
 enigmail-seamonkey	ports/mail/enigmail-seamonkey
 enigmail-thunderbird	ports/mail/enigmail-thunderbird
+enity		ports/x11/enity
 enjoympeg	ports/multimedia/enjoympeg
 enlightenment	ports/x11-wm/enlightenment
 enlightenment-devel	ports/x11-wm/enlightenment-devel
@@ -2300,11 +2308,13 @@ enscript-letter	ports/print/enscript-letter
 enscript-letterdj	ports/print/enscript-letterdj
 enscriptfonts	ports/print/enscriptfonts
 ensemblist	ports/games/ensemblist
+enterminus	ports/x11/enterminus
 enteruser	ports/sysutils/enteruser
 entice		ports/graphics/entice
 entity		ports/devel/entity
 entitymib	ports/net/entitymib
 entropy		ports/math/entropy
+entropyfm	ports/x11-fm/entropyfm
 env4801		ports/sysutils/env4801
 envelope	ports/print/envelope
 eo-aspell	ports/textproc/eo-aspell
@@ -2360,6 +2370,7 @@ espeak		ports/audio/espeak
 est		ports/sysutils/est
 estctrl		ports/sysutils/estctrl
 estic		ports/misc/estic
+estickies	ports/deskutils/estickies
 estraier	ports/textproc/estraier
 esvn		ports/devel/esvn
 et-aspell	ports/textproc/et-aspell
@@ -2369,6 +2380,7 @@ eterm		ports/x11/eterm
 eterm-bg	ports/graphics/eterm-bg
 etherape	ports/net-mgmt/etherape
 etherboot	ports/net/etherboot
+etk		ports/x11-toolkits/etk
 etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 etox		ports/x11-toolkits/etox
@@ -2386,6 +2398,7 @@ evas		ports/graphics/evas
 eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
 everygui	ports/deskutils/everygui
+evfs		ports/devel/evfs
 evidence	ports/x11-fm/evidence
 evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
@@ -2410,6 +2423,7 @@ execline	ports/lang/execline
 exhaust		ports/games/exhaust
 exhaust-doc	ports/games/exhaust-doc
 exhaust-ma	ports/games/exhaust-ma
+exhibit		ports/graphics/exhibit
 exif		ports/graphics/exif
 exifprobe	ports/graphics/exifprobe
 exiftags	ports/graphics/exiftags
@@ -2440,6 +2454,7 @@ exrtools	ports/graphics/exrtools
 exslt		ports/textproc/exslt
 extace		ports/audio/extace
 extipl		ports/sysutils/extipl
+extrackt	ports/sysutils/extrackt
 extract-xiso	ports/emulators/extract-xiso
 exult		ports/games/exult
 eyeclock	ports/x11-clocks/eyeclock
