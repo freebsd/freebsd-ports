@@ -10,6 +10,9 @@
 %%PYTHON_SITELIBDIR%%/urwid/escape.py
 %%PYTHON_SITELIBDIR%%/urwid/escape.pyc
 %%PYTHON_SITELIBDIR%%/urwid/escape.pyo
+%%PYTHON_SITELIBDIR%%/urwid/font.py
+%%PYTHON_SITELIBDIR%%/urwid/font.pyc
+%%PYTHON_SITELIBDIR%%/urwid/font.pyo
 %%PYTHON_SITELIBDIR%%/urwid/graphics.py
 %%PYTHON_SITELIBDIR%%/urwid/graphics.pyc
 %%PYTHON_SITELIBDIR%%/urwid/graphics.pyo
