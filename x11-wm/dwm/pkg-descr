@@ -6,4 +6,4 @@ It consists of a single binary and configuration is done by editing the source
 code, which makes it fast and secure. dwm reads from standard input to print
 arbitrary status text such as the date and/or system load.
 
-WWW: http://10kloc.org/dwm/
+WWW: http://www.shortest.de/view/dynamic+window+manager/
