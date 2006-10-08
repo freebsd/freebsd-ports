@@ -24,6 +24,11 @@ Bugfixes:
 - PostgreSQL fails to connect (always)
 - LDAP client will not build due to header missing from makefile
 
+Port changes:
+- added Cyrus's 2.3 deliver as LDA OPTION (on 2006-10-08) [1]
+
+[1] ports/103910 by Steffen Rick <srick@srick.org>
+
 
 ###########################################################################
 # dspam-3.6.7
