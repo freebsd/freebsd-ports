@@ -14047,6 +14047,7 @@ tightvnc	ports/net/tightvnc
 tik		ports/net-im/tik
 tikiwiki	ports/www/tikiwiki
 tilda		ports/x11/tilda
+tile		ports/x11-toolkits/tile
 tilem		ports/emulators/tilem
 tileworld	ports/games/tileworld
 tilp		ports/comms/tilp
