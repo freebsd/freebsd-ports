@@ -1,0 +1,144 @@
+diff -ruN src/gtk-clist.ads src/gtk-clist.ads
+--- src/gtk-clist.ads	Thu Jun 15 23:07:17 2006
++++ src/gtk-clist.ads	Thu Jun 15 23:10:21 2006
+@@ -65,7 +65,7 @@
+ with Unchecked_Conversion;
+ 
+ package Gtk.Clist is
+-   pragma Obsolescent ("Use Gtk.Tree_View instead");
++   --  pragma Obsolescent ("Use Gtk.Tree_View instead");
+ 
+    type Gtk_Clist_Record is new Gtk.Container.Gtk_Container_Record
+      with private;
+diff -ruN src/gtk-combo.ads src/gtk-combo.ads
+--- src/gtk-combo.ads	Thu Jun  8 18:17:54 2006
++++ src/gtk-combo.ads	Thu Jun 15 23:10:27 2006
+@@ -66,7 +66,7 @@
+ with Gtk.Enums; use Gtk.Enums;
+ 
+ package Gtk.Combo is
+-   pragma Obsolescent;
++   --  pragma Obsolescent;
+ 
+    type Gtk_Combo_Record is new Gtk.Box.Gtk_Box_Record with private;
+    type Gtk_Combo is access all Gtk_Combo_Record'Class;
+diff -ruN src/gtk-ctree.ads src/gtk-ctree.ads
+--- src/gtk-ctree.ads	Tue Jun  6 10:07:41 2006
++++ src/gtk-ctree.ads	Thu Jun 15 23:10:41 2006
+@@ -65,7 +65,7 @@
+ with Gtkada.Types;         use Gtkada.Types;
+ 
+ package Gtk.Ctree is
+-   pragma Obsolescent ("use Gtk.Tree_View instead");
++   --  pragma Obsolescent ("use Gtk.Tree_View instead");
+    pragma Elaborate_Body;
+ 
+    pragma Warnings (Off); --  Gtk.Clist is obsolescent;
+diff -ruN src/gtk-item_factory.ads src/gtk-item_factory.ads
+--- src/gtk-item_factory.ads	Tue Jun  6 10:07:41 2006
++++ src/gtk-item_factory.ads	Thu Jun 15 23:10:46 2006
+@@ -41,7 +41,7 @@
+ with Gtkada.Types;
+ 
+ package Gtk.Item_Factory is
+-   pragma Obsolescent;
++   --  pragma Obsolescent;
+ 
+    type Gtk_Item_Factory_Record is new Object.Gtk_Object_Record with private;
+    type Gtk_Item_Factory is access all Gtk_Item_Factory_Record'Class;
+diff -ruN src/gtk-list.ads src/gtk-list.ads
+--- src/gtk-list.ads	Tue Jun  6 10:07:41 2006
++++ src/gtk-list.ads	Thu Jun 15 23:10:31 2006
+@@ -38,7 +38,7 @@
+ with Gtk.Widget; use Gtk.Widget;
+ 
+ package Gtk.List is
+-   pragma Obsolescent;  --  Gtk.List
++   --  pragma Obsolescent;  --  Gtk.List
+ 
+    type Gtk_List_Record is new Gtk.Container.Gtk_Container_Record with private;
+    type Gtk_List is access all Gtk_List_Record'Class;
+diff -ruN src/gtk-list_item.ads src/gtk-list_item.ads
+--- src/gtk-list_item.ads	Mon Jun  5 17:33:34 2006
++++ src/gtk-list_item.ads	Thu Jun 15 23:10:51 2006
+@@ -33,7 +33,7 @@
+ with Gtk.Item;
+ 
+ package Gtk.List_Item is
+-   pragma Obsolescent;
++   --  pragma Obsolescent;
+ 
+    type Gtk_List_Item_Record is new Gtk.Item.Gtk_Item_Record with private;
+    type Gtk_List_Item is access all Gtk_List_Item_Record'Class;
+diff -ruN src/gtk-option_menu.ads src/gtk-option_menu.ads
+--- src/gtk-option_menu.ads	Thu Jun  8 14:35:40 2006
++++ src/gtk-option_menu.ads	Thu Jun 15 23:10:54 2006
+@@ -42,7 +42,7 @@
+ with Gtk.Widget;
+ 
+ package Gtk.Option_Menu is
+-   pragma Obsolescent;
++   --  pragma Obsolescent;
+ 
+    type Gtk_Option_Menu_Record is new Button.Gtk_Button_Record with private;
+    type Gtk_Option_Menu is access all Gtk_Option_Menu_Record'Class;
+diff -ruN src/gtk-pixmap.ads src/gtk-pixmap.ads
+--- src/gtk-pixmap.ads	Mon Jun  5 17:33:34 2006
++++ src/gtk-pixmap.ads	Thu Jun 15 23:10:58 2006
+@@ -37,7 +37,7 @@
+ with Gtkada.Types;
+ 
+ package Gtk.Pixmap is
+-   pragma Obsolescent ("Use Gtk.Image instead");
++   --  pragma Obsolescent ("Use Gtk.Image instead");
+ 
+    type Gtk_Pixmap_Record is new Gtk.Misc.Gtk_Misc_Record with private;
+    type Gtk_Pixmap is access all Gtk_Pixmap_Record'Class;
+diff -ruN src/gtk-preview.ads src/gtk-preview.ads
+--- src/gtk-preview.ads	Tue Jun  6 10:07:41 2006
++++ src/gtk-preview.ads	Thu Jun 15 23:11:07 2006
+@@ -40,7 +40,7 @@
+ with Gtk.Widget;
+ 
+ package Gtk.Preview is
+-   pragma Obsolescent;
++   --  pragma Obsolescent;
+ 
+    type Gtk_Preview_Record is new Gtk.Widget.Gtk_Widget_Record with private;
+    type Gtk_Preview is access all Gtk_Preview_Record'Class;
+diff -ruN src/gtk-progress.ads src/gtk-progress.ads
+--- src/gtk-progress.ads	Tue Jun  6 16:54:33 2006
++++ src/gtk-progress.ads	Thu Jun 15 23:11:12 2006
+@@ -39,7 +39,7 @@
+ with Glib.Properties;
+ 
+ package Gtk.Progress is
+-   pragma Obsolescent; --  Gtk.Progress
++   --  pragma Obsolescent; --  Gtk.Progress
+ 
+    type Gtk_Progress_Record is new Gtk.Widget.Gtk_Widget_Record with private;
+    type Gtk_Progress is access all Gtk_Progress_Record'Class;
+diff -ruN src/gtk-text.ads src/gtk-text.ads
+--- src/gtk-text.ads	Mon Jun  5 17:33:35 2006
++++ src/gtk-text.ads	Thu Jun 15 23:11:16 2006
+@@ -45,7 +45,7 @@
+ with Gdk.Window;
+ 
+ package Gtk.Text is
+-   pragma Obsolescent;
++   --  pragma Obsolescent;
+ 
+    type Gtk_Text_Record is new
+      Gtk.Old_Editable.Gtk_Old_Editable_Record with private;
+diff -ruN src/gtk-tips_query.ads src/gtk-tips_query.ads
+--- src/gtk-tips_query.ads	Mon Jun  5 17:33:35 2006
++++ src/gtk-tips_query.ads	Thu Jun 15 23:11:26 2006
+@@ -35,7 +35,7 @@
+ with Gtk.Widget;
+ 
+ package Gtk.Tips_Query is
+-   pragma Obsolescent;
++   --  pragma Obsolescent;
+ 
+    type Gtk_Tips_Query_Record is new Gtk.Label.Gtk_Label_Record with private;
+    type Gtk_Tips_Query is access all Gtk_Tips_Query_Record'Class;
