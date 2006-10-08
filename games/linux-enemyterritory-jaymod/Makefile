@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	jaymod
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	games linux
 MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://budjb.com/lib/downloads/ \
 		http://www.zenenterprises.org/bud/jaymod/ \
 		http://www.spherens.com/zen/et/distro/
 PKGNAMEPREFIX=	linux-enemyterritory-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
@@ -21,13 +21,11 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary
 USE_LINUX=	yes
-NO_WRKSUBDIR=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
-
-PLIST_SUB=	VERSION="${PORTVERSION}"
 
 do-build:
 .for f in et etded
@@ -41,15 +39,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
-.for f in jaymod-${PORTVERSION}.pk3 jaymod.cfg-sample
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.   for f in jaymod-${PORTVERSION}.pdf readme.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.   endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/pentium4/qagame.mp.i386.so ${DATADIR}
 
 .include <bsd.port.mk>
