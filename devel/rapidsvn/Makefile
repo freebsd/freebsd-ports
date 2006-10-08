@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rapidsvn
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rapidsvn.org/download/
 
@@ -15,31 +14,28 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
 BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr-svn \
-		${WXCONFIG}:${PORTSDIR}/x11-toolkits/${WXPORT} \
 		neon-config:${PORTSDIR}/www/neon \
-		${SVNDEP}:${PORTSDIR}/devel/subversion \
+		svn:${PORTSDIR}/devel/subversion \
+		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl
 
+USE_WX=	2.6
+WX_CONF_ARGS=	absolute
+
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	autoconf:259 libtool:15
-CONFIGURE_ARGS=	--with-wx-config=${WXCONFIG} \
-	--with-apr-config=apr-1-config \
+USE_AUTOTOOLS=	autoconf:259 libtool:15 automake:19
+CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \
-	--with-docbook-xsl=${LOCALBASE}/share/xsl/docbook
-CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
+	--with-neon-config=neon-config \
+	--with-xsltproc=xsltproc \
+	--with-docbook-xsl-manpages=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl \
+	--with-manpage=yes
+
 INSTALLS_SHLIB=	yes
 MAN1=		rapidsvn.1
 
-.if exists(${X11BASE}/bin/wxgtk2-2.6-config)
-WXPORT=		wxgtk26
-WXCONFIG=	wxgtk2-2.6-config
-.elif exists(${X11BASE}/bin/wxgtk2u-2.6-config)
-WXPORT=		wxgtk26-unicode
-WXCONFIG=	wxgtk2u-2.6-config
-.else
-WXPORT=		wxgtk24
-WXCONFIG=	wxgtk2-2.4-config
-.endif
-SVNDEP=		${LOCALBASE}/include/subversion-1/svn_types.h
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/manpage/rapidsvn.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
