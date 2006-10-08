@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	v6
-PORTVERSION=	0.014
+PORTVERSION=	0.015
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FG/FGLOCK
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Data-Bind>=0.28:${PORTSDIR}/devel/p5-Data-Bind \
 		p5-Devel-Caller>=0.10:${PORTSDIR}/devel/p5-Devel-Caller \
 		p5-Module-Compile>=0.17:${PORTSDIR}/devel/p5-Module-Compile \
 		p5-Moose>=0.10:${PORTSDIR}/devel/p5-Moose \
-		p5-Pugs-Compiler-Rule>=0.16:${PORTSDIR}/lang/p5-Pugs-Compiler-Rule \
+		p5-Pugs-Compiler-Rule>=0.17:${PORTSDIR}/lang/p5-Pugs-Compiler-Rule \
 		p5-Sub-Multi>=0:${PORTSDIR}/devel/p5-Sub-Multi
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
