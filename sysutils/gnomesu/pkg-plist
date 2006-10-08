@@ -1,4 +1,0 @@
-bin/gnomesu
-share/gnome/apps/Applications/xsu.desktop
-share/gnomesu/xsu.glade
-@dirrm share/gnomesu
