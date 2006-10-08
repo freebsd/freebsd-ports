@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	etpro
-PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTVERSION=	3.2.6
 CATEGORIES=	games linux
 MASTER_SITES=	http://bani.anime.net/etpro/ \
 		http://dl.vpclan.de/etpro/ \
@@ -25,6 +24,7 @@ COMMENT=	ET Pro - The Enemy Territory Competition Mod
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary
 USE_ZIP=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
