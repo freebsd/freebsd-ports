@@ -608,13 +608,13 @@ Note:  Please add new entries to the beginning of this file.
     <topic>openssh -- multiple vulnerabilities</topic>
     <affects>
       <system>
-        <name>FreeBSD</name>
-        <range><ge>6.1</ge><lt>6.1_10</lt></range>
-        <range><ge>6.0</ge><lt>6.0_15</lt></range>
-        <range><ge>5.5</ge><lt>5.5_8</lt></range>
-        <range><ge>5.4</ge><lt>5.4_22</lt></range>
-        <range><ge>5.0</ge><lt>5.3_37</lt></range>
-        <range><lt>4.11_25</lt></range>
+	<name>FreeBSD</name>
+	<range><ge>6.1</ge><lt>6.1_10</lt></range>
+	<range><ge>6.0</ge><lt>6.0_15</lt></range>
+	<range><ge>5.5</ge><lt>5.5_8</lt></range>
+	<range><ge>5.4</ge><lt>5.4_22</lt></range>
+	<range><ge>5.0</ge><lt>5.3_37</lt></range>
+	<range><lt>4.11_25</lt></range>
       </system>
       <package>
 	<name>openssh</name>
@@ -630,23 +630,23 @@ Note:  Please add new entries to the beginning of this file.
 	<h1>Problem Description</h1>
 	<p>The CRC compensation attack detector in the sshd(8) daemon,
 	  upon receipt of duplicate blocks, uses CPU time cubic in the
-	  number of duplicate blocks received.  [CVE-2006-4924]</p>
+	  number of duplicate blocks received.	[CVE-2006-4924]</p>
 	<p>A race condition exists in a signal handler used by the
 	  sshd(8) daemon to handle the LoginGraceTime option, which
 	  can potentially cause some cleanup routines to be executed
 	  multiple times.  [CVE-2006-5051]</p>
 	<h1>Impact</h1>
 	<p>An attacker sending specially crafted packets to sshd(8)
-          can cause a Denial of Service by using 100% of CPU time
-          until a connection timeout occurs.  Since this attack can be
-          performed over multiple connections simultaneously, it is
-          possible to cause up to MaxStartups (10 by default) sshd
-          processes to use all the CPU time they can obtain.
-          [CVE-2006-4924]</p>
+	  can cause a Denial of Service by using 100% of CPU time
+	  until a connection timeout occurs.  Since this attack can be
+	  performed over multiple connections simultaneously, it is
+	  possible to cause up to MaxStartups (10 by default) sshd
+	  processes to use all the CPU time they can obtain.
+	  [CVE-2006-4924]</p>
 	<p>The OpenSSH project believe that the race condition can
-          lead to a Denial of Service or potentially remote code
-          execution, but the FreeBSD Security Team has been unable to
-          verify the exact impact.  [CVE-2006-5051]</p>
+	  lead to a Denial of Service or potentially remote code
+	  execution, but the FreeBSD Security Team has been unable to
+	  verify the exact impact.  [CVE-2006-5051]</p>
 	<h1>Workaround</h1>
 	<p>The attack against the CRC compensation attack detector can
 	  be avoided by disabling SSH Protocol version 1 support in
