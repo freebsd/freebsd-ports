@@ -1,0 +1,28 @@
+--- doc/en/Makefile.in.orig	Sat Jan  7 14:03:58 2006
++++ doc/en/Makefile.in	Thu May  4 02:01:10 2006
+@@ -274,11 +274,11 @@
+ #>- 	cd $(top_srcdir) && \
+ #>- 	  $(AUTOMAKE) --gnu  doc/en/Makefile
+ #>+ 3
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  doc/en/Makefile
+-	cd $(top_srcdir) && perl admin/am_edit doc/en/Makefile.in
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
++#	cd $(top_srcdir) && \
++#	  $(AUTOMAKE) --gnu  doc/en/Makefile
++#	cd $(top_srcdir) && perl admin/am_edit doc/en/Makefile.in
++#Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
++#	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+@@ -297,7 +297,7 @@
+ 
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 1
+-DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
++DISTFILES = $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+ 
+ top_distdir = ../..
+ distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)

@@ -1,11 +1,96 @@
---- Makefile.in.orig	Tue Apr 26 01:39:03 2005
-+++ Makefile.in	Wed Sep 14 12:22:15 2005
-@@ -274,7 +274,7 @@
+--- Makefile.in.orig	Sat Jan  7 14:03:58 2006
++++ Makefile.in	Thu May  4 02:07:19 2006
+@@ -161,7 +161,7 @@
+ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+-TOPSUBDIRS = @TOPSUBDIRS@
++TOPSUBDIRS = src doc
+ UIC = @UIC@
+ UIC_TR = @UIC_TR@
+ USER_INCLUDES = @USER_INCLUDES@
+@@ -295,26 +295,26 @@
  
- MAINTAINERCLEANFILES = subdirs configure.in acinclude.m4 configure.files 
- applnkApplication_DATA = klog.desktop
--applnkApplicationdir = $(kde_appsdir)/Application
-+applnkApplicationdir = $(kde_appsdir)/Applications
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
+  configure.lineno
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
++#$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+ #>- 	cd $(top_srcdir) && \
+ #>- 	  $(AUTOMAKE) --gnu  Makefile
+ #>+ 3
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  Makefile
+-	cd $(top_srcdir) && perl admin/am_edit Makefile.in
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
+-
+-$(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
+-$(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
++#	cd $(top_srcdir) && \
++#	  $(AUTOMAKE) --gnu  Makefile
++#	cd $(top_srcdir) && perl admin/am_edit Makefile.in
++#Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
++#	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
++
++#$(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
++#	$(SHELL) ./config.status --recheck
++#$(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+ #>- 	cd $(srcdir) && $(AUTOCONF)
+ #>+ 2
+-	cd $(srcdir) && rm -f configure
+-	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure
++#	cd $(srcdir) && rm -f configure
++#	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure
+ 
+-$(ACLOCAL_M4):  configure.in acinclude.m4
+-	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
++#$(ACLOCAL_M4):  configure.in acinclude.m4
++#	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+ 
+ config.h: stamp-h1
+ 	@if test ! -f $@; then \
+@@ -326,9 +326,9 @@
+ 	@rm -f stamp-h1
+ 	cd $(top_builddir) && $(SHELL) ./config.status config.h
+ 
+-$(srcdir)/config.h.in:  $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOHEADER)
+-	touch $(srcdir)/config.h.in
++#$(srcdir)/config.h.in:  $(top_srcdir)/configure.in $(ACLOCAL_M4) 
++#	cd $(top_srcdir) && $(AUTOHEADER)
++#	touch $(srcdir)/config.h.in
+ 
+ distclean-hdr:
+ 	-rm -f config.h stamp-h1
+@@ -701,8 +701,8 @@
+ 	uninstall-info-recursive uninstall-recursive
+ 
+ 
+-$(top_srcdir)/configure.in: configure.in.in $(top_srcdir)/subdirs
+-	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.in ;
++#$(top_srcdir)/configure.in: configure.in.in $(top_srcdir)/subdirs
++#	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common configure.in ;
+ 
+ $(top_srcdir)/subdirs:
+ 	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common subdirs
+@@ -712,7 +712,7 @@
+ 
+ package-messages:
+ 	cd $(top_srcdir) && $(MAKE) -f admin/Makefile.common package-messages
+-	$(MAKE) -C po merge
++	$(MAKE) -C merge
+ 
+ dist-hook:
+ 	cd $(top_distdir) && perl admin/am_edit -padmin
+@@ -721,8 +721,9 @@
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+ 
++
+ #>+ 2
+-KDE_DIST=stamp-h.in subdirs Makefile.in configure.files klog.kdevelop.pcs Makefile.cvs klog.kdevses klog.kdevelop Doxyfile 
++KDE_DIST=stamp-h.in subdirs Makefile.in configure.files Makefile.cvs configure.lineno 
+ 
+ #>+ 2
+ docs-am:
