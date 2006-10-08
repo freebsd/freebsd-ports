@@ -6293,6 +6293,7 @@ libwpd		ports/textproc/libwpd
 libwww		ports/www/libwww
 libx3dtk	ports/graphics/libx3dtk
 libxalloc	ports/devel/libxalloc
+libxcb		ports/x11/libxcb
 libxdiff	ports/textproc/libxdiff
 libxfce4gui	ports/x11-toolkits/libxfce4gui
 libxfce4mcs	ports/x11/libxfce4mcs
