@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dokuwiki
-PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
+PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g:S/rc//g}
 CATEGORIES=	www
 MASTER_SITES=	http://chinsan2.twbbs.org/distfiles/ \
 		ftp://chinsan2.twbbs.org/distfiles/ \
-		http://dev.splitbrain.org/browse/snapshots/
+		http://www.splitbrain.org/_media/projects/dokuwiki/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${DIST_VER}
 EXTRACT_SUFX=	.tgz
@@ -18,13 +18,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
-DIST_VER=	${PORTNAME}-2006-09-28
+DIST_VER=	${PORTNAME}-rc2006-10-08
 USE_PHP=	gd mbstring pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
 DOKUWIKI_DIR?=	www/${PORTNAME}
-WRKSRC=		${WRKDIR}/${DIST_VER:S/-/-rc/}
+WRKSRC=		${WRKDIR}/${DIST_VER}
 PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
 TEMP_PLIST=		${WRKDIR}/temp-pkg-plist
 
