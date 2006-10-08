@@ -7,6 +7,7 @@
 
 PORTNAME=	awstats-devel
 PORTVERSION=	6.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://awstats.sourceforge.net/files/
 DISTNAME=	awstats-${PORTVERSION}
