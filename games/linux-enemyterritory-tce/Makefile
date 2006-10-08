@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	enemyterritory-tce
-PORTVERSION=	0.48
-PORTREVISION=	3
+PORTVERSION=	0.49
 CATEGORIES=	games linux
-MASTER_SITES=	http://ftp.games.skynet.be/pub/www.filesnetwork.com/Wolfenstein_Enemy_Territory/Mods/Total_Conversions/:full,update \
-		http://darkstar.ist.utl.pt/pub/games/:full,update \
-		http://ftp.wireplay.co.uk/pub/enemyterritory/mods/tcelite/Linux/:full \
-		http://et2.migamer.com/:full \
-		http://jogos.bragatel.pt/downloads/et/tcE/linux/:update
+MASTER_SITES=	http://ftp.games.skynet.be/pub/www.filesnetwork.com/Wolfenstein_Enemy_Territory/Mods/Total_Conversions/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	tcetest
-DISTFILES=	tcetest_0209_full.zip:full \
-		tcetest_0.48_update.zip:update
+DISTFILES=	tcetest049.zip
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A modern tactical Enemy Territory modification
@@ -27,9 +21,17 @@ RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_LINUX=	yes
-NO_PACKAGE=	Distfiles are 135MB, set FORCE_PACKAGE if you really want to build this package
+NO_PACKAGE=	Distfile size is 450MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/enemyterritory
+PORTDOCS=	*
+
+DESKTOP_ENTRIES="Enemy Territory TrueCombat:Elite" \
+		"Play Enemy Territory TrueCombat:Elite" \
+		"${ETDIR}/tcetest/tce_icon_pc.ico" \
+		"et-tce" \
+		"" \
+		false
 
 do-build:
 .for f in et etded
@@ -43,8 +45,9 @@ do-install:
 .endfor
 
 	${MKDIR} ${ETDIR}/tcetest
-.for f in cgame.mp.i386.so elitelogoicon.ico maps.cfg mp_bin.pk3 pak0.pk3 \
-	pak1.pk3 pak2.pk3 pak3.pk3 qagame.mp.i386.so server.cfg ui.mp.i386.so
+.for f in autoexec.cfg cgame.mp.i386.so mp_bin.pk3 official.dat pak0.pk3 \
+	pak1.pk3 pak2.pk3 pak3.pk3 qagame.mp.i386.so tce_icon_pc.ico \
+	ui.mp.i386.so
 	${INSTALL_DATA} ${WRKSRC}/${f} ${ETDIR}/tcetest
 .endfor
 .for f in cgame.mp.i386.so qagame.mp.i386.so ui.mp.i386.so
@@ -54,7 +57,7 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in README.TXT TCEeula1.0.rtf changelog.txt description.txt
+.for f in *.txt *.rtf
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
