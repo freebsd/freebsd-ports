@@ -643,6 +643,7 @@
     SUBDIR += tifmerge
     SUBDIR += timeless
     SUBDIR += tintfu
+    SUBDIR += tkpng
     SUBDIR += togl
     SUBDIR += truevision
     SUBDIR += tulip
