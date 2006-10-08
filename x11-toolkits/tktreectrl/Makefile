@@ -1,0 +1,36 @@
+# New ports collection makefile for:	tktreectrl
+# Date created:		08 October 2006
+# Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	tktreectrl
+PORTVERSION=	2.1.1
+CATEGORIES=	x11-toolkits tk84
+MASTER_SITES=	SF
+
+MAINTAINER=	infofarmer@FreeBSD.org
+COMMENT=	Multi-column hierarchical listbox widget
+
+LIB_DEPENDS=	tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
+
+USE_TK=		yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
+		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
+		--exec-prefix=${PREFIX} --enable-shared
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${TCL_INCLUDES} ${TK_INCLUDES}"
+TCL_INCLUDES=	-I${LOCALBASE}/include/tcl${TK_VER} -I${LOCALBASE}/include/tcl${TK_VER}/generic
+TK_INCLUDES=	-I${LOCALBASE}/include/tk${TK_VER} -I${LOCALBASE}/include/tk${TK_VER}/generic \
+		-I${LOCALBASE}/include/tk${TK_VER}/unix
+TKPKG=		treectrl${PORTVERSION}
+TKLIBVER=	2.1
+PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}
+USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
+
+post-install:
+	@${LN} -sf ${PREFIX}/lib/${TKPKG}/libtreectrl${TKLIBVER}.so \
+		${PREFIX}/lib/${TKPKG}/libtreectrl${TKLIBVER}.so.0
+
+.include <bsd.port.mk>
