@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpdump
-PORTVERSION=	3.9.4
+PORTVERSION=	3.9.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/ \
 		http://www.icrew.org/mirror/tcp_dump/tcpdump_3_9/
