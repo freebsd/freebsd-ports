@@ -7,7 +7,8 @@
 PORTNAME=	kannel
 PORTVERSION=	1.4.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.kannel.org/download/%SUBDIR%/
+MASTER_SITES=	http://www.kannel.org/download/%SUBDIR%/ \
+		http://farrokhi.net/distfiles/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
@@ -19,6 +20,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \
 		--enable-pcre=yes --enable-docs=no --with-malloc=native \
@@ -42,14 +44,14 @@ post-patch:
 		 s|-lkse||g' ${WRKSRC}/configure
 
 post-install:
-.for file in wapkannel.conf smskannel.conf
-	${INSTALL_DATA} ${WRKSRC}/gw/${file} ${PREFIX}/etc/${file}.sample
+.for filename in wapkannel.conf smskannel.conf
+	${INSTALL_DATA} ${WRKSRC}/gw/${filename} ${PREFIX}/etc/${filename}.sample
 .endfor
-.for file in mtbatch seewbmp wmlsc wmlsdasm
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+.for filename in mtbatch seewbmp wmlsc wmlsdasm
+	@${STRIP_CMD} ${PREFIX}/bin/${filename}
 .endfor
-.for file in bearerbox run_kannel_box smsbox wapbox
-	@${STRIP_CMD} ${PREFIX}/sbin/${file}
+.for filename in bearerbox run_kannel_box smsbox wapbox
+	@${STRIP_CMD} ${PREFIX}/sbin/${filename}
 .endfor
 
 .include <bsd.port.post.mk>
