@@ -1,13 +1,12 @@
 bin/geany
-%%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_keys.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_templ.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_tools.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%%%DOCSDIR%%/html/geany.css
+share/applications/geany.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ScintillaLicense.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/html/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apb.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apbs02.html
@@ -29,28 +28,24 @@ bin/geany
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s07.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s08.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s09.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04s02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04s03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/geany.css
+%%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_interface.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_keys.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_templ.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_toolbar.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_tools.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/ScintillaLicense.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%share/locale/de/LC_MESSAGES/geany.mo
-%%NLS%%share/locale/es/LC_MESSAGES/geany.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
-%%NLS%%share/locale/be/LC_MESSAGES/geany.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/geany.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
-share/applications/geany.desktop
-share/pixmaps/geany.png
-@dirrmtry share/applications
-%%DATADIR%%/global.tags
 %%DATADIR%%/GPL-2
+%%DATADIR%%/filetype_extensions.conf
 %%DATADIR%%/filetypes.asm
 %%DATADIR%%/filetypes.c
 %%DATADIR%%/filetypes.caml
@@ -58,7 +53,12 @@ share/pixmaps/geany.png
 %%DATADIR%%/filetypes.conf
 %%DATADIR%%/filetypes.cpp
 %%DATADIR%%/filetypes.css
+%%DATADIR%%/filetypes.d
+%%DATADIR%%/filetypes.diff
 %%DATADIR%%/filetypes.docbook
+%%DATADIR%%/filetypes.ferite
+%%DATADIR%%/filetypes.fortran
+%%DATADIR%%/filetypes.html
 %%DATADIR%%/filetypes.java
 %%DATADIR%%/filetypes.latex
 %%DATADIR%%/filetypes.makefile
@@ -72,4 +72,26 @@ share/pixmaps/geany.png
 %%DATADIR%%/filetypes.sql
 %%DATADIR%%/filetypes.tcl
 %%DATADIR%%/filetypes.xml
-@dirrmtry %%DATADIR%%
+%%DATADIR%%/global.tags
+%%DATADIR%%/html_entities.tags
+%%DATADIR%%/latex.tags
+%%DATADIR%%/pascal.tags
+%%DATADIR%%/php.tags
+%%NLS%%share/locale/be/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/de/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/es/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/geany.mo
+share/pixmaps/geany.ico
+share/pixmaps/geany.png
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/html/images
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrmtry share/pixmaps
+@dirrmtry share/applications
