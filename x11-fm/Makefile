@@ -10,6 +10,7 @@
     SUBDIR += dfm
     SUBDIR += emelfm2
     SUBDIR += endeavour
+    SUBDIR += entropyfm
     SUBDIR += evidence
     SUBDIR += ezfm
     SUBDIR += filerunner
