@@ -28,12 +28,6 @@ MLINKS=		rltraceroute6.8 tcptraceroute6.8 \
 
 PORTDOCS=	AUTHORS NEWS README
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on 4.x
-.endif
-
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -42,4 +36,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
