@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neonpp
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www
 MASTER_SITES=	http://files.beep-media-player.org/releases/neonpp/
 
