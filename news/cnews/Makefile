@@ -75,6 +75,10 @@ PGPVERIFY?=	pgpverify-1.12
 PATCHFILES+=	c-news-patch-gawk3
 .endif
 
+.if defined(WITH_SENDMAIL) || defined(WITH_CNEWS_SENDMAIL)
+EXTRA_PATCHES+=	${FILESDIR}/sendmail.patch
+.endif
+
 pre-patch:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}
 
