@@ -298,6 +298,10 @@ Note:  Please add new entries to the beginning of this file.
 	<range><ge>0</ge></range>
       </package>
       <package>
+	<name>php-suhosin</name>
+	<range><lt>0.9.6</lt></range>
+      </package>
+      <package>
 	<name>php4-cli</name>
 	<name>php5-cli</name>
 	<name>php4-cgi</name>
@@ -348,7 +352,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-10-02</discovery>
       <entry>2006-10-05</entry>
-      <modified>2006-10-05</modified>
+      <modified>2006-10-08</modified>
     </dates>
   </vuln>
 
