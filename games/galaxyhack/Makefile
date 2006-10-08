@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	galaxyhack
-PORTVERSION=	1.69
-PORTREVISION=	1
+PORTVERSION=	1.74
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -31,7 +29,7 @@ OPTIONS=	FLEETS "Install additional fleets" off \
 
 ALL_TARGET=	${PORTNAME}
 SUB_FILES=	${PORTNAME}-sh
-FLEETS_FILE=	gh_fleets_170406.zip
+FLEETS_FILE=	gh_fleets_020906.zip
 
 .include <bsd.port.pre.mk>
 
@@ -60,7 +58,8 @@ do-install:
 	${CP} -R ${WRKSRC}/../${d} ${DATADIR}
 .endfor
 .if defined(WITH_FLEETS)
-	@${UNZIP_CMD} -o ${_DISTDIR}/${FLEETS_FILE} -d ${DATADIR}/fleets
+	@${UNZIP_CMD} -o ${DISTDIR}/${FLEETS_FILE} -x "*/CVS/*" "*/.svn/*" \
+		-d ${DATADIR}
 .endif
 
 post-install:

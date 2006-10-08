@@ -1,16 +1,11 @@
 bin/galaxyhack
 libexec/galaxyhack
-%%DATADIR%%/fleets/Morennians/Moravator.dat
-%%DATADIR%%/fleets/Morennians/Morennian Corvette.dat
-%%DATADIR%%/fleets/Morennians/Morennians.dat
-%%DATADIR%%/fleets/Morennians/X-Fighter.dat
-%%DATADIR%%/fleets/Morennians/attackcapship.ai
-%%DATADIR%%/fleets/Morennians/moveandfire.ai
-%%DATADIR%%/fleets/Zenennians/Damascus.dat
-%%DATADIR%%/fleets/Zenennians/Emperor.dat
-%%DATADIR%%/fleets/Zenennians/Solar Cruiser.dat
-%%DATADIR%%/fleets/Zenennians/Zenennians.dat
-%%DATADIR%%/fleets/Zenennians/patrolandattack.ai
+%%FLEETS%%%%DATADIR%%/fleets/Argonnians/Argonnians.dat
+%%FLEETS%%%%DATADIR%%/fleets/Argonnians/Bomber.dat
+%%FLEETS%%%%DATADIR%%/fleets/Argonnians/Carrier.dat
+%%FLEETS%%%%DATADIR%%/fleets/Argonnians/Fighter.dat
+%%FLEETS%%%%DATADIR%%/fleets/Argonnians/bomb.ai
+%%FLEETS%%%%DATADIR%%/fleets/Argonnians/guard.ai
 %%FLEETS%%%%DATADIR%%/fleets/Attrition/Attrition.dat
 %%FLEETS%%%%DATADIR%%/fleets/Attrition/Bait.dat
 %%FLEETS%%%%DATADIR%%/fleets/Attrition/EndGame.dat
@@ -219,6 +214,12 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/Kpovieta/Kpovieta_ft1.dat
 %%FLEETS%%%%DATADIR%%/fleets/Kpovieta/dhaosfrigs.ai
 %%FLEETS%%%%DATADIR%%/fleets/Kpovieta/kdhaosdefense.ai
+%%FLEETS%%%%DATADIR%%/fleets/MMM/MMM.dat
+%%FLEETS%%%%DATADIR%%/fleets/MMM/cap2.dat
+%%FLEETS%%%%DATADIR%%/fleets/MMM/capital.ai
+%%FLEETS%%%%DATADIR%%/fleets/MMM/capital.dat
+%%FLEETS%%%%DATADIR%%/fleets/MMM/fighter.ai
+%%FLEETS%%%%DATADIR%%/fleets/MMM/fighter.dat
 %%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/CapShip.ai
 %%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/CapShip.dat
 %%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/CapShip2.dat
@@ -230,6 +231,12 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders2.dat
 %%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders3.ai
 %%FLEETS%%%%DATADIR%%/fleets/MiserableStingers/Murders3.dat
+%%DATADIR%%/fleets/Morennians/Moravator.dat
+%%DATADIR%%/fleets/Morennians/Morennian Corvette.dat
+%%DATADIR%%/fleets/Morennians/Morennians.dat
+%%DATADIR%%/fleets/Morennians/X-Fighter.dat
+%%DATADIR%%/fleets/Morennians/attackcapship.ai
+%%DATADIR%%/fleets/Morennians/moveandfire.ai
 %%FLEETS%%%%DATADIR%%/fleets/Morennians/movetocapship.ai
 %%FLEETS%%%%DATADIR%%/fleets/Morennians/movetoslow.ai
 %%FLEETS%%%%DATADIR%%/fleets/Omicron/Bomber.dat
@@ -301,6 +308,22 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship/Buster.png
 %%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship/Fighter.png
 %%FLEETS%%%%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship/Lancer.png
+%%FLEETS%%%%DATADIR%%/fleets/Qurennians/Battleship.dat
+%%FLEETS%%%%DATADIR%%/fleets/Qurennians/Fighter.dat
+%%FLEETS%%%%DATADIR%%/fleets/Qurennians/Qurennians.dat
+%%FLEETS%%%%DATADIR%%/fleets/Qurennians/attack.ai
+%%FLEETS%%%%DATADIR%%/fleets/Qurennians/cap.ai
+%%FLEETS%%%%DATADIR%%/fleets/Renennians/Bomber.dat
+%%FLEETS%%%%DATADIR%%/fleets/Renennians/Destroyer.dat
+%%FLEETS%%%%DATADIR%%/fleets/Renennians/Renennians.dat
+%%FLEETS%%%%DATADIR%%/fleets/Renennians/attack.ai
+%%FLEETS%%%%DATADIR%%/fleets/Renennians/cap.ai
+%%FLEETS%%%%DATADIR%%/fleets/Rushers/Rushers.dat
+%%FLEETS%%%%DATADIR%%/fleets/Rushers/bomber.ai
+%%FLEETS%%%%DATADIR%%/fleets/Rushers/bomber.dat
+%%FLEETS%%%%DATADIR%%/fleets/Rushers/capital.ai
+%%FLEETS%%%%DATADIR%%/fleets/Rushers/capital.dat
+%%FLEETS%%%%DATADIR%%/fleets/Rushers/frigate.dat
 %%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Alpha Squadron.dat
 %%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Blue Squadron.dat
 %%FLEETS%%%%DATADIR%%/fleets/SS-Rings-2/Cruiser Group 1.dat
@@ -398,6 +421,42 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/Tedingtons/unitpictures/green/capship/ed1.png
 %%FLEETS%%%%DATADIR%%/fleets/Tedingtons/unitpictures/red/capship/ed1.png
 %%FLEETS%%%%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/capship/ed1.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/Battle Cruiser Class.dat
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/Destroyer Class.dat
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/Night Hawk Class.dat
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/The VKY.dat
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/Version History.txt
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/capship.ai
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/fighter.ai
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/blue/capship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/blue/capship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/blue/frigate/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/blue/frigate/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/blue/smallship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/green/capship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/green/capship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/green/frigate/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/green/frigate/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/green/smallship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/green/smallship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/red/capship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/red/frigate/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/red/frigate/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/red/smallship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/red/smallship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/yellow/capship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/yellow/capship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/yellow/frigate/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/yellow/frigate/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/yellow/smallship/0001.png
+%%FLEETS%%%%DATADIR%%/fleets/The VKY/unitpictures/yellow/smallship/Thumbs.db
+%%FLEETS%%%%DATADIR%%/fleets/Tiamat/Capital Interceptors 2.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tiamat/Capital Interceptors.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tiamat/Flak Frigate 3.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tiamat/Flak Frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tiamat/Tiamat.dat
+%%FLEETS%%%%DATADIR%%/fleets/Tiamat/Warp Anchor 2.ai
+%%FLEETS%%%%DATADIR%%/fleets/Tiamat/Warp Anchor.dat
 %%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/0'bar.dat
 %%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/Ilmavalvonta.dat
 %%FLEETS%%%%DATADIR%%/fleets/Tikkakoskelaiset/Luonet.dat
@@ -426,6 +485,20 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/Vaas/closeaggpatrol.ai
 %%FLEETS%%%%DATADIR%%/fleets/Vaas/frg-closeaggpatrol.ai
 %%FLEETS%%%%DATADIR%%/fleets/Vaas/kamikaza.ai
+%%FLEETS%%%%DATADIR%%/fleets/Varin/Behemoth.dat
+%%FLEETS%%%%DATADIR%%/fleets/Varin/Corvette.dat
+%%FLEETS%%%%DATADIR%%/fleets/Varin/Fighter.dat
+%%FLEETS%%%%DATADIR%%/fleets/Varin/Sneaker.dat
+%%FLEETS%%%%DATADIR%%/fleets/Varin/Varin.dat
+%%FLEETS%%%%DATADIR%%/fleets/Varin/bomber.ai
+%%FLEETS%%%%DATADIR%%/fleets/Varin/capital.ai
+%%FLEETS%%%%DATADIR%%/fleets/Varin/frigate.ai
+%%FLEETS%%%%DATADIR%%/fleets/Varin/guard.ai
+%%DATADIR%%/fleets/Zenennians/Damascus.dat
+%%DATADIR%%/fleets/Zenennians/Emperor.dat
+%%DATADIR%%/fleets/Zenennians/Solar Cruiser.dat
+%%DATADIR%%/fleets/Zenennians/Zenennians.dat
+%%DATADIR%%/fleets/Zenennians/patrolandattack.ai
 %%FLEETS%%%%DATADIR%%/fleets/alfarninas/abd.ai
 %%FLEETS%%%%DATADIR%%/fleets/alfarninas/alfa 2.dat
 %%FLEETS%%%%DATADIR%%/fleets/alfarninas/alfarninas.dat
@@ -470,6 +543,7 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/atenyn/unitpictures/yellow/smallship/atenyn-hunter.png
 %%FLEETS%%%%DATADIR%%/fleets/hive/capital.dat
 %%FLEETS%%%%DATADIR%%/fleets/hive/capitals.ai
+%%FLEETS%%%%DATADIR%%/fleets/hive/capitalso.ai
 %%FLEETS%%%%DATADIR%%/fleets/hive/frigate.dat
 %%FLEETS%%%%DATADIR%%/fleets/hive/frigates.ai
 %%FLEETS%%%%DATADIR%%/fleets/hive/hive.dat
@@ -544,6 +618,7 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/hive4k/hive4k.dat
 %%FLEETS%%%%DATADIR%%/fleets/hive4k/small.ai
 %%FLEETS%%%%DATADIR%%/fleets/hive4k/small.dat
+%%FLEETS%%%%DATADIR%%/fleets/hive4k/small2.dat
 %%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/blue/capship/Gen.png
 %%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/blue/capship/Maj.png
 %%FLEETS%%%%DATADIR%%/fleets/hive4k/unitpictures/blue/frigate/frigate.png
@@ -606,6 +681,15 @@ libexec/galaxyhack
 %%FLEETS%%%%DATADIR%%/fleets/sitducks/hitduck.dat
 %%FLEETS%%%%DATADIR%%/fleets/sitducks/sitduck.dat
 %%FLEETS%%%%DATADIR%%/fleets/sitducks/sitducks.dat
+%%FLEETS%%%%DATADIR%%/fleets/the_m/bomber.ai
+%%FLEETS%%%%DATADIR%%/fleets/the_m/bomber.dat
+%%FLEETS%%%%DATADIR%%/fleets/the_m/capital.ai
+%%FLEETS%%%%DATADIR%%/fleets/the_m/capital.dat
+%%FLEETS%%%%DATADIR%%/fleets/the_m/fighter.ai
+%%FLEETS%%%%DATADIR%%/fleets/the_m/fighter.dat
+%%FLEETS%%%%DATADIR%%/fleets/the_m/frigate.ai
+%%FLEETS%%%%DATADIR%%/fleets/the_m/frigate.dat
+%%FLEETS%%%%DATADIR%%/fleets/the_m/the_m.dat
 %%DATADIR%%/gamedata/equip.dat
 %%DATADIR%%/graphics/boldfont.png
 %%DATADIR%%/graphics/csexplode10.png
@@ -716,8 +800,24 @@ libexec/galaxyhack
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/graphics
 @dirrm %%DATADIR%%/gamedata
-@dirrm %%DATADIR%%/fleets/Zenennians
-@dirrm %%DATADIR%%/fleets/Morennians
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/sitducks
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/quiters
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/hunters/unitpictures/yellow/smallship
@@ -864,6 +964,9 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas
+@dirrm %%DATADIR%%/fleets/Zenennians
+@dirrm %%DATADIR%%/fleets/Morennians
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Varin
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Vaas
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red/frigate
@@ -871,6 +974,25 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures/red
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tikkakoskelaiset
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tiamat
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/capship
@@ -910,6 +1032,26 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Space Superiority
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/SS-Rings-2
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/SS-Rings
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Renennians
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Qurennians
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Quorien Alliance/unitpictures/yellow/capship
@@ -950,6 +1092,24 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue/smallship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue/frigate
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue/capship
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Kpovieta
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Kamikaza
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/IR4 Fishers096
@@ -1068,5 +1228,6 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Beholders
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Avarice
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Attrition
+%%FLEETS%%@dirrm %%DATADIR%%/fleets/Argonnians
 @dirrm %%DATADIR%%/fleets
 @dirrm %%DATADIR%%
