@@ -19,68 +19,72 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #
 # The variables:
 #
-# PYTHONBASE:	Python port's installation prefix.
-#				default: ${LOCALBASE}
+# PYTHONBASE		- Python port's installation prefix.
+#					  default: ${LOCALBASE}
 #
-# PYTHON_CMD:	Python's command line file name, including the version
-#				number (used for dependencies).
-#				default: ${PYTHONBASE}/bin/${PYTHON_VERSION}
+# PYTHON_CMD		- Python's command line file name, including the version
+#					  number (used for dependencies).
+#					  default: ${PYTHONBASE}/bin/${PYTHON_VERSION}
 #
-# PYTHON_DISTFILE:	The ${DISTFILE} for your python version. Needed for
-#					extensions like Tkinter, py-gdbm and py-expat, which
-#					are built from sources contained in the Python
-#					distribution.
+# PYTHON_DISTFILE	- The ${DISTFILE} for your python version. Needed for
+#					  extensions like Tkinter, py-gdbm and py-expat, which
+#					  are built from sources contained in the Python
+#					  distribution.
 #
-# PYTHON_MASTER_SITES:	The ${MASTER_SITES} for your python version. (You must
-#						use this instead of ${MASTER_SITE_PYTHON} to support
-#						python-devel port.)
+# PYTHON_MASTER_SITES
+#					- The ${MASTER_SITES} for your python version. (You must
+#					  use this instead of ${MASTER_SITE_PYTHON} to support
+#					  python-devel port.)
 #
-# PYTHON_MASTER_SITE_SUBDIR:	The ${MASTER_SITE_SUBDIR} for your python
-#								version.
+# PYTHON_MASTER_SITE_SUBDIR
+#					- The ${MASTER_SITE_SUBDIR} for your python version.
 #
-# PYTHON_INCLUDEDIR:	Location of the Python include files.
-#						default: ${PYTHONBASE}/include/${PYTHON_VERSION}
+# PYTHON_INCLUDEDIR	- Location of the Python include files.
+#					  default: ${PYTHONBASE}/include/${PYTHON_VERSION}
 #
-# PYTHON_LIBDIR:	Base of the python library tree
-#					default: ${PYTHONBASE}/lib/${PYTHON_VERSION}
+# PYTHON_LIBDIR		- Base of the python library tree
+#					  default: ${PYTHONBASE}/lib/${PYTHON_VERSION}
 #
-# PYTHON_PKGNAMEPREFIX:	Use this as a ${PKGNAMEPREFIX} to distinguish
-#						packages for different Python versions.
-#						default: py${PYTHON_SUFFIX}-
+# PYTHON_PKGNAMEPREFIX
+#					- Use this as a ${PKGNAMEPREFIX} to distinguish
+#					  packages for different Python versions.
+#					  default: py${PYTHON_SUFFIX}-
 #
-# PYTHON_PKGNAMESUFFIX:	If your port's name is more popular without `py-'
-#						prefix, use this as a ${PKGNAMESUFFIX} alternatively.
-#						default: -py${PYTHON_SUFFIX}
+# PYTHON_PKGNAMESUFFIX
+#					- If your port's name is more popular without `py-'
+#					  prefix, use this as a ${PKGNAMESUFFIX} alternatively.
+#					  default: -py${PYTHON_SUFFIX}
 #
-# PYTHON_PLATFORM:	Python's idea of the OS release.
-#					XXX This is faked with ${OPSYS} and ${OSREL} until I
-#					find out how to delay defining a variable until after
-#					a certain target has been built.
+# PYTHON_PLATFORM	- Python's idea of the OS release.
+#					  XXX This is faked with ${OPSYS} and ${OSREL} until I
+#					  find out how to delay defining a variable until after
+#					  a certain target has been built.
 #
-# PYTHON_PORTSDIR:	The source of your binary's port. Needed for the
-#					RUN_DEPENDS.
+# PYTHON_PORTSDIR	- The source of your binary's port. Needed for the
+#					  RUN_DEPENDS.
 #
-# PYTHON_PORTVERSION:	Version number suitable for ${PORTVERSION}.
+# PYTHON_PORTVERSION
+#					- Version number suitable for ${PORTVERSION}.
 #
-# PYTHON_REL:		Version number in numerical format, to ease
-#					comparison in makefiles
+# PYTHON_REL		- Version number in numerical format, to ease
+#					  comparison in makefiles
 #
-# PYTHON_SITELIBDIR:	Location of the site-packages tree. Don't change,
-#					unless you know what you do.
-#						default: ${PYTHON_LIBDIR}/site-packages
+# PYTHON_SITELIBDIR	- Location of the site-packages tree. Don't change,
+#					  unless you know what you do.
+#					  default: ${PYTHON_LIBDIR}/site-packages
 #
-# PYTHON_SUFFIX:	Yet another short version number, primarily intended
-#					for ${PYTHON_PKGNAMEPREFIX}.
+# PYTHON_SUFFIX		- Yet another short version number, primarily intended
+#					  for ${PYTHON_PKGNAMEPREFIX}.
 #
-# PYTHON_VERSION:	Version of the python binary in your ${PATH}, in the
-#					format "python2.0".	Set this in your makefile in case you
-#					want to build extensions with an older binary.
-#					default: depends on the version of your python binary
+# PYTHON_VERSION	- Version of the python binary in your ${PATH}, in the
+#					  format "python2.0". Set this in your makefile in case you
+#					  want to build extensions with an older binary.
+#					  default: depends on the version of your python binary
 #
-# PYTHON_WRKSRC:	The ${WRKSRC} for your python version. Needed for
-#					extensions like Tkinter, py-gdbm and py-expat, which
-#					are built from sources contained in the Python
-#					distribution.
+# PYTHON_WRKSRC		- The ${WRKSRC} for your python version. Needed for
+#					  extensions like Tkinter, py-gdbm and py-expat, which
+#					  are built from sources contained in the Python
+#					  distribution.
 #
 # There are PREFIX-clean variants of the PYTHON_*DIR variables above.
 # They are meant to be used in the installation targets.
@@ -89,63 +93,70 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 # PYTHONPREFIX_LIBDIR:		default: ${PREFIX}/lib/${PYTHON_VERSION}
 # PYTHONPREFIX_SITELIBDIR:	default: ${PYTHONPREFIX_LIBDIR}/site-packages
 #
-# PYDISTUTILS:	Dependency line for the distutils extension. As of Python-2.0,
-#				the distutils are in the base distribution.
+# PYDISTUTILS		- Dependency line for the distutils extension. As of
+#					  Python-2.0, the distutils are in the base distribution.
 #
-# PYNUMERIC:	Dependency line for the numeric extension. Py-Numeric-17
-#				is the last release that works with Python versions older
-#				than 1.6.
+# PYNUMERIC			- Dependency line for the numeric extension. Py-Numeric-17
+#					  is the last release that works with Python versions older
+#					  than 1.6.
 #
-# PYXML:		Dependency line for the XML extension. As of Python-2.0,
-#				this extension is in the base distribution.
+# PYXML				- Dependency line for the XML extension. As of Python-2.0,
+#					  this extension is in the base distribution.
 #
-# USE_PYTHON_PREFIX:	Says that the port installs in ${PYTHONBASE}.
+# USE_PYTHON_PREFIX	- Says that the port installs in ${PYTHONBASE}.
 #
-# USE_PYDISTUTILS:	Use distutils as do-configure, do-build and do-install
-#					targets.
+# USE_PYDISTUTILS	- Use distutils as do-configure, do-build and do-install
+#					  targets.
 #
-# PYDISTUTILS_CONFIGURE_TARGET:	Pass this command to distutils on configure
-#								stage.	default: config
+# PYDISTUTILS_CONFIGURE_TARGET
+#					- Pass this command to distutils on configure stage.
+#					  default: config
 #
-# PYDISTUTILS_BUILD_TARGET:	Pass this command to distutils on build stage.
-#							default: build
+# PYDISTUTILS_BUILD_TARGET
+#					- Pass this command to distutils on build stage.
+#					  default: build
 #
-# PYDISTUTILS_INSTALL_TARGET:	Pass this command to distutils on install
-#								stage.	default: install
+# PYDISTUTILS_INSTALL_TARGET
+#					- Pass this command to distutils on install stage.
+#					  default: install
 #
-# PYDISTUTILS_CONFIGUREARGS:	Arguments to config with distutils.
-#								default: <empty>
+# PYDISTUTILS_CONFIGUREARGS
+#					- Arguments to config with distutils.
+#					  default: <empty>
 #
-# PYDISTUTILS_BUILDARGS:	Arguments to build with distutils.
-#							default: <empty>
+# PYDISTUTILS_BUILDARGS
+#					- Arguments to build with distutils.
+#					  default: <empty>
 #
-# PYDISTUTILS_INSTALLARGS:	Arguments to install with distutils.
-#							default: -c -O1 --prefix=${PREFIX}
+# PYDISTUTILS_INSTALLARGS
+#					- Arguments to install with distutils.
+#					  default: -c -O1 --prefix=${PREFIX}
 #
-# PYSETUP:		Name of the setup script used by the distutils package.
-#				default: setup.py
+# PYSETUP			- Name of the setup script used by the distutils package.
+#					  default: setup.py
 #
-# USE_TWISTED:	If this option is just yes then build and run
-#				the dependence to twistedCore is added. Alternatively here
-#				can be listed specific components of twisted framework, 
-#				available components are: web, web2, lore, news, words, pair,
-#				mail, names, xish, runner, flow and conch. Note that 
-#				core component is required for any of this optional components.
+# USE_TWISTED		- If this option is just yes then build and run
+#					  the dependence to twistedCore is added. Alternatively
+#					  here can be listed specific components of twisted
+#					  framework, available components are: web, web2, lore,
+#					  news, words, pair,mail, names, xish, runner, flow and
+#					  conch. Note that core component is required for any of
+#					  this optional components.
 #
-# USE_TWISTED_BUILD:		Same as previous but add only build dependency.
+# USE_TWISTED_BUILD	- Same as previous but add only build dependency.
 #
-# USE_TWISTED_RUN:			Same as USE_TWISTED but add only run dependency.
+# USE_TWISTED_RUN	- Same as USE_TWISTED but add only run dependency.
 #
-# USE_ZOPE:		Use Zope - an object-based web application platform, this
-#				also sets up ZOPEBASEDIR - relative base directory of zope 
-#				server, SZOPEBASEDIR - absolute base directory of zope that
-#				is ${LOCALBASE}/${SZOPEBASEDIR} by default, 
-#				ZOPEPRODUCTDIR - directory, where products for zope can be 
-#				found.
+# USE_ZOPE			- Use Zope - an object-based web application platform, this
+#					  also sets up:
+# ZOPEBASEDIR		- relative base directory of zope server
+# SZOPEBASEDIR		- absolute base directory of zope that is
+#					  ${LOCALBASE}/${SZOPEBASEDIR} by default, 
+# ZOPEPRODUCTDIR	- directory, where products for zope can be found
 #
-# ZOPE_VERSION:	Version of zope that will be used in the port. Set this in
-#				your /etc/make.conf in case you want to use a specific
-#				version of zope.
+# ZOPE_VERSION		- Version of zope that will be used in the port. Set this
+#					  in your /etc/make.conf in case you want to use a
+#					  specific version of zope.
 #
 
 _PYTHON_PORTBRANCH=		2.4
