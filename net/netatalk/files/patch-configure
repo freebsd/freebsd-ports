@@ -1,11 +1,78 @@
---- configure.orig	Sat Aug 28 03:20:01 2004
-+++ configure	Sat Aug 28 03:20:14 2004
-@@ -15118,7 +15118,7 @@
+--- configure.orig	Tue May 17 18:14:29 2005
++++ configure	Sun Oct  8 14:47:02 2006
+@@ -15057,7 +15057,7 @@ if test "x$bdb_required" = "xyes"; then
  	trybdbdir=""
  	dobdbsearch=yes
  	bdb_search_dirs="/usr/local/include /usr/include"
 -	search_subdirs="/db4.2 /db42 /db4.1 /db41 /db4 /"
-+	search_subdirs="/%%BDB_NAME%% /db4.2 /db42 /db4.1 /db41 /db4 /"
++	search_subdirs="/%%DB_NAME%% /db4.2 /db42 /db4.1 /db41 /db4 /"
  
  	DB_MAJOR_REQ=4
  	DB_MINOR_REQ=1
+@@ -15198,6 +15198,66 @@ echo "${ECHO_T}yes" >&6
+ 			  LDFLAGS="-L$bdblibdir $LDFLAGS"
+ 
+ atalk_cv_lib_db=no
++if test $atalk_cv_lib_db = no ; then
++	echo "$as_me:$LINENO: checking for Berkeley DB link (%%DB_LIB%%)" >&5
++echo $ECHO_N "checking for Berkeley DB link (%%DB_LIB%%)... $ECHO_C" >&6
++	atalk_DB_LIB=%%DB_LIB%%
++	atalk_LIBS=$LIBS
++	LIBS="$atalk_DB_LIB $LIBS"
++
++	cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++#include <db.h>
++
++int
++main ()
++{
++
++	char *version;
++	int major, minor, patch;
++
++	version = db_version( &major, &minor, &patch );
++	return (0);
++
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  atalk_cv_db_db_lib=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++atalk_cv_db_db_lib=no
++fi
++rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
++
++	echo "$as_me:$LINENO: result: $atalk_cv_db_db_lib" >&5
++echo "${ECHO_T}$atalk_cv_db_db_lib" >&6
++	LIBS="$atalk_LIBS"
++	if test $atalk_cv_db_db_lib = yes ; then
++		atalk_cv_lib_db=%%DB_LIB%%
++	fi
++fi
++
+ if test $atalk_cv_lib_db = no ; then
+ 	echo "$as_me:$LINENO: checking for Berkeley DB link (-ldb-4.2)" >&5
+ echo $ECHO_N "checking for Berkeley DB link (-ldb-4.2)... $ECHO_C" >&6

@@ -86,7 +86,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%BDB_NAME%%|${BDB_INCLUDE_DIR:T}|' \
+	@${REINPLACE_CMD} -e 's|%%BDB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
+	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g' \
 		${WRKSRC}/configure
 
 post-install:
