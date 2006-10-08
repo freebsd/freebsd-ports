@@ -245,6 +245,7 @@
     SUBDIR += xbindkeys_config
     SUBDIR += xcalib
     SUBDIR += xcb
+    SUBDIR += xcb-proto
     SUBDIR += xclip
     SUBDIR += xcmd
     SUBDIR += xco
