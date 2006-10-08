@@ -1,0 +1,25 @@
+libdata/pkgconfig/xcb-proto.pc
+%%DATADIR%%/bigreq.xml
+%%DATADIR%%/composite.xml
+%%DATADIR%%/damage.xml
+%%DATADIR%%/dpms.xml
+%%DATADIR%%/glx.xml
+%%DATADIR%%/randr.xml
+%%DATADIR%%/record.xml
+%%DATADIR%%/render.xml
+%%DATADIR%%/res.xml
+%%DATADIR%%/screensaver.xml
+%%DATADIR%%/shape.xml
+%%DATADIR%%/shm.xml
+%%DATADIR%%/sync.xml
+%%DATADIR%%/xc_misc.xml
+%%DATADIR%%/xcb.xsd
+%%DATADIR%%/xevie.xml
+%%DATADIR%%/xf86dri.xml
+%%DATADIR%%/xfixes.xml
+%%DATADIR%%/xprint.xml
+%%DATADIR%%/xproto.xml
+%%DATADIR%%/xtest.xml
+%%DATADIR%%/xv.xml
+%%DATADIR%%/xvmc.xml
+@dirrm %%DATADIR%%
