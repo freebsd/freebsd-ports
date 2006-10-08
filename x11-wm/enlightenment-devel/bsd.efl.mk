@@ -243,16 +243,16 @@ _USE_EFL_ESMART+=	${COMP} ${_esmart_${COMP}_DEPENDS}
 .endif
 
 # Get rid of duplicates
-.if ${OSVERSION} > 700016
-_USE_EFL_ESMART_UQ=	${_USE_EFL_ESMART:O:u}
-.else
+#.if ${OSVERSION} > 700016
+#_USE_EFL_ESMART_UQ=	${_USE_EFL_ESMART:O:u}
+#.else
 _USE_EFL_ESMART_UQ=	#empty
 . for COMP in ${_USE_EFL_ESMART}
 .  if ${_USE_EFL_ESMART_UQ:M${COMP}}==""
 _USE_EFL_ESMART_UQ+=	${COMP}
 .  endif
 . endfor
-.endif
+#.endif
 
 .for COMP in ${_USE_EFL_ESMART_UQ}
 LIB_DEPENDS+=	${_esmart_${COMP}_SLIB}.${_esmart_${COMP}_VERSION}:${PORTSDIR}/${_esmart_${COMP}_CATEGORY}/${_esmart_${COMP}_PORTNAME}
