@@ -77,8 +77,8 @@ share/locale/zh_CN/LC_MESSAGES/cpplib.mo
 share/locale/zh_CN/LC_MESSAGES/gcc.mo
 share/locale/zh_TW/LC_MESSAGES/cpplib.mo
 share/locale/zh_TW/LC_MESSAGES/gcc.mo
-@unexec /bin/rmdir %D/share/locale/rw/LC_MESSAGES 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/locale/rw 2>/dev/null || /usr/bin/true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm lib/gcc/avr/4.1.1/avr3
 @dirrm lib/gcc/avr/4.1.1/avr4
 @dirrm lib/gcc/avr/4.1.1/avr5
