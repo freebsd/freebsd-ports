@@ -16,7 +16,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/awstats_upgrade.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_webmin.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_what.html
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats.ico
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats.png
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo2.gif
