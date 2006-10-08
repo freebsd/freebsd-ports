@@ -95,6 +95,7 @@
     SUBDIR += dynamechs
     SUBDIR += ecg2png
     SUBDIR += edje
+    SUBDIR += edje_viewer
     SUBDIR += electriceyes
     SUBDIR += enblend
     SUBDIR += enfle
@@ -111,6 +112,7 @@
     SUBDIR += evas
     SUBDIR += evince
     SUBDIR += evolvotron
+    SUBDIR += exhibit
     SUBDIR += exif
     SUBDIR += exifprobe
     SUBDIR += exiftags
