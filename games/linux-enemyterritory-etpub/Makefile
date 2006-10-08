@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	etpub
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	games linux
 MASTER_SITES=	http://et.tjw.org/etpub/dist/
 PKGNAMEPREFIX=	linux-enemyterritory-
@@ -21,13 +20,14 @@ COMMENT=	ET Pub - An Enemy Territory Modification
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary
 USE_ZIP=	yes
 USE_LINUX=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 
-CLIENT_PK3=	${PORTNAME}_client-20060310.pk3
+CLIENT_PK3=	${PORTNAME}_client-20060818.pk3
 PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 
 pre-patch:
@@ -49,10 +49,13 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/glibc-2.1/qagame.mp.i386.so ${DATADIR}
 	${INSTALL_DATA} ${DISTDIR}/${CLIENT_PK3} ${DATADIR}
-	${CP} -R ${WRKSRC}/extra ${DATADIR}
+	${MKDIR} ${DATADIR}/extra
+.for f in PHP etadmin_mod
+	${CP} -R ${WRKSRC}/extra/${f} ${DATADIR}/extra
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.   for f in ChangeLog.txt Install.txt Upgrade-0.6.txt
+.   for f in ChangeLog.txt Install.txt Upgrade-0.7.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .   endfor
 	${CP} -R ${WRKSRC}/docs ${DOCSDIR}
