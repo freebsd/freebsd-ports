@@ -38,7 +38,8 @@ test:
 	    ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${.TARGET} || \
 		${ECHO_MSG} Please, review test failures and consider \
 			reporting them via \
-			http://forums.oracle.com/forums/forum.jspa?forumID=273
+			http://forums.oracle.com/forums/forum.jspa?forumID=273 \
+			&& ${FALSE}
 
 .include <bsd.port.pre.mk>
 
