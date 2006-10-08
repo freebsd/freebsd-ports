@@ -270,6 +270,7 @@
     SUBDIR += error
     SUBDIR += esdl
     SUBDIR += esvn
+    SUBDIR += evfs
     SUBDIR += evolution-gconf-tools
     SUBDIR += excalibur-configuration
     SUBDIR += f77flow
