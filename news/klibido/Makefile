@@ -11,7 +11,7 @@ CATEGORIES=		news
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		conrads@cox.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A very fast and efficient KDE/QT-based downloader for Usenet binaries
 
 LIB_DEPENDS=		uu.3:${PORTSDIR}/converters/uulib \
