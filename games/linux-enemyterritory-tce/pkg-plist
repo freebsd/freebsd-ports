@@ -1,20 +1,14 @@
 bin/et-tce
 bin/etded-tce
+lib/enemyterritory/tcetest/autoexec.cfg
 lib/enemyterritory/tcetest/cgame.mp.i386.so
-lib/enemyterritory/tcetest/elitelogoicon.ico
-lib/enemyterritory/tcetest/maps.cfg
 lib/enemyterritory/tcetest/mp_bin.pk3
+lib/enemyterritory/tcetest/official.dat
 lib/enemyterritory/tcetest/pak0.pk3
 lib/enemyterritory/tcetest/pak1.pk3
 lib/enemyterritory/tcetest/pak2.pk3
 lib/enemyterritory/tcetest/pak3.pk3
 lib/enemyterritory/tcetest/qagame.mp.i386.so
-lib/enemyterritory/tcetest/server.cfg
+lib/enemyterritory/tcetest/tce_icon_pc.ico
 lib/enemyterritory/tcetest/ui.mp.i386.so
-%%PORTDOCS%%%%DOCSDIR%%/README.TXT
-%%PORTDOCS%%%%DOCSDIR%%/TCEeula1.0.rtf
-%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/description.txt
 @dirrm lib/enemyterritory/tcetest
-@dirrmtry lib/enemyterritory
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
