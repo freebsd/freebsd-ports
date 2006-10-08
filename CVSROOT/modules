@@ -91,8 +91,8 @@ DarwinStreamingServer	ports/net/DarwinStreamingServer
 EZWGL		ports/graphics/EZWGL
 Ebnf2ps		ports/textproc/Ebnf2ps
 ElectricFence	ports/devel/ElectricFence
-Flock		ports/www/flock
 FSViewer	ports/x11-fm/FSViewer
+Flock		ports/www/flock
 GeoIP		ports/net/GeoIP
 GiNaC		ports/math/GiNaC
 Gofer		ports/lang/Gofer
@@ -628,8 +628,8 @@ avifonts	ports/x11-fonts/avifonts
 avinfo		ports/multimedia/avinfo
 avltree		ports/devel/avltree
 avr-binutils	ports/devel/avr-binutils
-avr-gcc-3	ports/devel/avr-gcc-3
 avr-gcc		ports/devel/avr-gcc
+avr-gcc-3	ports/devel/avr-gcc-3
 avr-gdb		ports/devel/avr-gdb
 avr-libc	ports/devel/avr-libc
 avra		ports/devel/avra
@@ -2885,10 +2885,10 @@ freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
 freqsdwn	ports/sysutils/freqsdwn
-fretsonfire	ports/games/fretsonfire
-fretsonfire-data	ports/games/fretsonfire-data
 freshmeat-submit	ports/misc/freshmeat-submit
 fressh		ports/security/fressh
+fretsonfire	ports/games/fretsonfire
+fretsonfire-data	ports/games/fretsonfire-data
 fribidi		ports/converters/fribidi
 frikqcc		ports/games/frikqcc
 frink		ports/devel/frink
@@ -3448,9 +3448,9 @@ gnoemoe		ports/net/gnoemoe
 gnofin		ports/finance/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
+gnome-applets	ports/x11/gnome-applets
 gnome-art	ports/x11-themes/gnome-art
 gnome-audio	ports/audio/gnome-audio
-gnome-applets	ports/x11/gnome-applets
 gnome-backgrounds	ports/x11-themes/gnome-backgrounds
 gnome-blog	ports/deskutils/gnome-blog
 gnome-bluecurve-theme	ports/x11-themes/gnome-bluecurve-theme
@@ -3643,8 +3643,8 @@ gone		ports/misc/gone
 gonvert		ports/misc/gonvert
 gonzui		ports/devel/gonzui
 goobox		ports/audio/goobox
-google-earth	ports/astro/google-earth
 google-ctemplate	ports/textproc/google-ctemplate
+google-earth	ports/astro/google-earth
 google-sitemapgen	ports/www/google-sitemapgen
 google-sparsehash	ports/devel/google-sparsehash
 googolplex	ports/net/googolplex
@@ -3825,9 +3825,9 @@ gstreamer-plugins-flac80	ports/audio/gstreamer-plugins-flac80
 gstreamer-plugins-gconf		ports/devel/gstreamer-plugins-gconf
 gstreamer-plugins-gconf80	ports/devel/gstreamer-plugins-gconf80
 gstreamer-plugins-gdkpixbuf80	ports/graphics/gstreamer-plugins-gdkpixbuf80
-gstreamer-plugins-gnonlin 	ports/multimedia/gstreamer-plugins-gnonlin
 gstreamer-plugins-gnomevfs	ports/devel/gstreamer-plugins-gnomevfs
 gstreamer-plugins-gnomevfs80	ports/devel/gstreamer-plugins-gnomevfs80
+gstreamer-plugins-gnonlin 	ports/multimedia/gstreamer-plugins-gnonlin
 gstreamer-plugins-good	ports/multimedia/gstreamer-plugins-good
 gstreamer-plugins-gsm		ports/audio/gstreamer-plugins-gsm
 gstreamer-plugins-gsm80		ports/audio/gstreamer-plugins-gsm80
@@ -12127,6 +12127,7 @@ py-testgears	ports/devel/py-testgears
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-tlslite	ports/security/py-tlslite
 py-tofu		ports/net/py-tofu
+py-trustedpickle	ports/security/py-trustedpickle
 py-turbogears	ports/www/py-turbogears
 py-tvgrab	ports/textproc/py-tvgrab
 py-twisted	ports/devel/py-twisted
@@ -14272,7 +14273,6 @@ trophy		ports/games/trophy
 trove4j		ports/java/trove4j
 trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
-py-trustedpickle	ports/security/py-trustedpickle
 trustedqsl	ports/comms/trustedqsl
 truthtable	ports/math/truthtable
 tsclient	ports/net/tsclient
@@ -14380,9 +14380,9 @@ udunits		ports/science/udunits
 uebimiau	ports/mail/uebimiau
 uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
+ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
 ufoai		ports/games/ufoai
 ufoai-data	ports/games/ufoai-data
-ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
 ufraw		ports/graphics/ufraw
 ufs_copy	ports/sysutils/ufs_copy
 uhexen		ports/games/uhexen
