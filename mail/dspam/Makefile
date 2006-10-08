@@ -22,7 +22,7 @@ COMMENT=	Bayesian spam filter - stable maintenance version
 
 PORTVER_MAJ=	3.6.8
 #SNAP_DATE=	.20060421.2101
-_UPD_LINE_NO=	14
+_UPD_LINE_NO=	13
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.6
 
@@ -77,6 +77,7 @@ OPTIONS+=	DOMAIN_SCALE "File structure for multiple domains" off
 ## MTA and LDA
 OPTIONS+=	CYRUS21_LDA "Use Cyrus's 2.1 deliver as LDA" off
 OPTIONS+=	CYRUS22_LDA "Use Cyrus's 2.2 deliver as LDA" off
+OPTIONS+=	CYRUS23_LDA "Use Cyrus's 2.3 deliver as LDA" off
 OPTIONS+=	EXIM_LDA "Use Exim as local delivery agent" off
 OPTIONS+=	MAILDROP_LDA "Use Maildrop as local delivery agent" off
 OPTIONS+=	PROCMAIL_LDA "Use Procmail as local delivery agent" off
@@ -91,7 +92,7 @@ OPTIONS+=	LIGHTTPD "RUN_DEPEND on LightHTTPD, not Apache" off
 
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 #CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
@@ -338,7 +339,7 @@ CONFIGURE_ARGS+=	--enable-domain-scale
 .endif
 
 # add one 'o' here for each new LDA
-LDA_TOTAL_COUNT=	ooooooo	# 7
+LDA_TOTAL_COUNT=	oooooooo	# 8
 LDA_COUNT=	${LDA_TOTAL_COUNT}
 
 .if defined(WITH_CYRUS21_LDA)
@@ -349,6 +350,12 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 
 .if defined(WITH_CYRUS22_LDA)
 RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd22
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
+LDA_COUNT:=	${LDA_COUNT:S/o//}
+.endif
+
+.if defined(WITH_CYRUS23_LDA)
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd23
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
