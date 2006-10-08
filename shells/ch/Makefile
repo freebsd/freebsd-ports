@@ -11,7 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://www.softintegration.com/download/software/release/FreeBSD/
 DISTNAME=	chstandard-${PORTVERSION}.freebsd5.1
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An embeddable C/C++ interpreter/shell
 
 # possibly ia64?
