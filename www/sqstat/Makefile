@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	sqstat
-PORTVERSION=	1.10
+PORTVERSION=	1.20
 CATEGORIES=	www
-MASTER_SITES=	http://samm.kiev.ua/sqstat/
+MASTER_SITES=	http://samm.kiev.ua/sqstat/ \
+		${MASTER_SITE_SOURCEFORGE}
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A script which allows to look through active squid users connections
