@@ -1,0 +1,131 @@
+$FreeBSD$
+
+--- ../../j2se/src/solaris/native/java/net/PlainDatagramSocketImpl.c.orig	Mon Oct 31 21:54:39 2005
++++ ../../j2se/src/solaris/native/java/net/PlainDatagramSocketImpl.c	Tue Nov  1 13:13:05 2005
+@@ -226,8 +226,15 @@ Java_java_net_PlainDatagramSocketImpl_bi
+ 
+     NET_InetAddressToSockaddr(env, iaObj, localport, (struct sockaddr *)&him, &len);
+ #if defined(_ALLBSD_SOURCE)
+-            if (cannotMap4to6(env, iaObj))
+-                return;
++#if defined(IPV6_V6ONLY)
++    if (((struct sockaddr *)&him)->sa_family == AF_INET6) {
++	int t = 0;
++	JVM_SetSockOpt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&t, sizeof(t));
++    }
++#else
++    if (cannotMap4to6(env, iaObj))
++	return;
++#endif /* IPV6_V6ONLY */
+ #endif /* _ALLBSD_SOURCE */
+ 
+ 
+@@ -292,8 +299,15 @@ Java_java_net_PlainDatagramSocketImpl_co
+ 
+     NET_InetAddressToSockaddr(env, address, port, (struct sockaddr *)&rmtaddr, &len);
+ #if defined(_ALLBSD_SOURCE)
+-            if (cannotMap4to6(env, address))
+-                return;
++#if defined(IPV6_V6ONLY)
++    if (((struct sockaddr *)&rmtaddr)->sa_family == AF_INET6) {
++	int t = 0;
++	JVM_SetSockOpt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&t, sizeof(t));
++    }
++#else
++    if (cannotMap4to6(env, address))
++	return;
++#endif /* IPV6_V6ONLY */
+ #endif /* _ALLBSD_SOURCE */
+ 
+ 
+@@ -2191,11 +2205,18 @@ static void mcast_join_leave(JNIEnv *env
+ 	jbyte caddr[16];
+ 	jint family;
+ 	jint address;
++#if defined(_ALLBSD_SOURCE) && defined(IPV6_V6ONLY)
++	int t = 0;
++#endif
+ 	family = (*env)->GetIntField(env, iaObj, ia_familyID) == IPv4? AF_INET : AF_INET6;
+ 
+ #if defined(_ALLBSD_SOURCE)
+-	    if (cannotMap4to6(env, iaObj))
+-		return;
++#if defined(IPV6_V6ONLY)
++	JVM_SetSockOpt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&t, sizeof(t));
++#else
++	if (cannotMap4to6(env, iaObj))
++	    return;
++#endif /* IPV6_V6ONLY */
+ #endif /* _ALLBSD_SOURCE */
+ 
+ 	if (family == AF_INET) { /* will convert to IPv4-mapped address */
+--- ../../j2se/src/solaris/native/java/net/PlainSocketImpl.c.orig	Mon Oct 31 21:54:39 2005
++++ ../../j2se/src/solaris/native/java/net/PlainSocketImpl.c	Tue Nov  1 13:11:57 2005
+@@ -323,8 +323,15 @@ Java_java_net_PlainSocketImpl_socketConn
+     /* connect */
+     NET_InetAddressToSockaddr(env, iaObj, port, (struct sockaddr *)&him, &len);
+ #if defined(_ALLBSD_SOURCE)
+-            if (cannotMap4to6(env, iaObj))
+-                return;
++#if defined(IPV6_V6ONLY)
++    if (((struct sockaddr *)&him)->sa_family == AF_INET6) {
++	int t = 0;
++	JVM_SetSockOpt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&t, sizeof(t));
++    }
++#else
++    if (cannotMap4to6(env, iaObj))
++	return;
++#endif /* IPV6_V6ONLY */
+ #endif /* _ALLBSD_SOURCE */
+ 
+ #ifdef AF_INET6
+@@ -579,8 +586,15 @@ Java_java_net_PlainSocketImpl_socketBind
+     /* bind */
+     NET_InetAddressToSockaddr(env, iaObj, localport, (struct sockaddr *)&him, &len);
+ #if defined(_ALLBSD_SOURCE)
+-            if (cannotMap4to6(env, iaObj))
+-                return;
++#if defined(IPV6_V6ONLY)
++    if (((struct sockaddr *)&him)->sa_family == AF_INET6) {
++	int t = 0;
++	JVM_SetSockOpt(fd, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&t, sizeof(t));
++    }
++#else
++    if (cannotMap4to6(env, iaObj))
++	return;
++#endif /* IPV6_V6ONLY */
+ #endif /* _ALLBSD_SOURCE */
+ 
+     if (NET_Bind(fd, (struct sockaddr *)&him, len) < 0) {
+--- ../../j2se/src/solaris/native/java/net/net_util_md.c.orig	Mon Oct 31 21:54:39 2005
++++ ../../j2se/src/solaris/native/java/net/net_util_md.c	Tue Nov  1 13:14:35 2005
+@@ -1129,7 +1129,7 @@ NET_Bind(int fd, struct sockaddr *him, i
+     return rv;
+ }
+ 
+-#if defined(_ALLBSD_SOURCE)
++#if defined(_ALLBSD_SOURCE) && !defined(IPV6_V6ONLY)
+ 
+ /*
+  * If net.inet6.ip6.v6only is set to 1, then IPv4 mapped addresses usage
+--- ../../j2se/src/solaris/native/java/net/net_util_md.h.orig	Mon Oct 31 21:54:39 2005
++++ ../../j2se/src/solaris/native/java/net/net_util_md.h	Tue Nov  1 13:15:39 2005
+@@ -24,6 +24,9 @@
+ #endif
+ #endif /* !_ALLBSD_SOURCE */
+ 
++#if defined(IPV6_V6ONLY) && defined(__OpenBSD__)
++#undef IPV6_V6ONLY
++#endif
+ /*
+  * Linux header files define sockaddr_in6 incorrectly (missing the
+  * sin6_scope_id field) so we use our own definition.
+@@ -144,7 +147,7 @@
+ /*
+  * Check for disabled IPv4 mapped addresses.
+  */
+-#if defined(_ALLBSD_SOURCE)
++#if defined(_ALLBSD_SOURCE) && !defined(IPV6_V6ONLY)
+ int cannotMap4to6(JNIEnv *env, jobject iaObj);
+ #endif
+ 
