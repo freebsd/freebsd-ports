@@ -29,6 +29,7 @@
     SUBDIR += ample
     SUBDIR += amrcoder
     SUBDIR += anthem
+    SUBDIR += aqualung
     SUBDIR += arts
     SUBDIR += artswrapper
     SUBDIR += ascd
