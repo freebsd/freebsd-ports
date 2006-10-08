@@ -1,3 +1,5 @@
-GtkAda provides Ada programmes with a full Gtk binding.
+GtkAda is an Ada95 graphical toolkit based on Gtk+, providing the complete set
+of Gtk+ widgets using the Object-Oriented features of this language. GtkAda
+supports the latest 2.2 and 2.4 stable releases.
 
 WWW: https://libre2.adacore.com/GtkAda/

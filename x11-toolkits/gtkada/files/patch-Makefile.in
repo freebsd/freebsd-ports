@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Fri Jul  7 16:07:08 2006
++++ Makefile.in	Fri Jul  7 16:08:36 2006
+@@ -21,7 +21,9 @@
+ 	$(MAKE) -C $(src_dir) install
+ 	$(MAKE) -C $(projects_dir) install
+ 	$(MAKE) -C $(testgtk_dir) install
++ifndef NOPORTDOCS
+ 	$(MAKE) -C $(doc_dir) install
++endif
+ 	$(MAKE) -C $(example_dir) install
+
+ clean-generic:

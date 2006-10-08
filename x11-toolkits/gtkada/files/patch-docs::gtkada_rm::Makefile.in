@@ -6,7 +6,7 @@ $FreeBSD$
 @@ -1,5 +1,5 @@
  prefix = @prefix@
 -docdir = $(prefix)/doc/GtkAda/gtkada_rm
-+docdir = $(prefix)/share/doc/GtkAda/gtkada_rm
++docdir = $(prefix)/share/doc/gtkada/gtkada_rm
  
  MKDIR = mkdir -p
  INSTALL = @INSTALL@
