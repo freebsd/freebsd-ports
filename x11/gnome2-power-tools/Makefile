@@ -34,7 +34,6 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany/2.14/extensions/libgesturesextension.so:${P
 		eiciel:${PORTSDIR}/sysutils/eiciel \
 		gtk-send-pr:${PORTSDIR}/sysutils/gtk-send-pr \
 		thefish:${PORTSDIR}/sysutils/thefish \
-		bpm:${PORTSDIR}/sysutils/bpm \
 		pbrowser:${PORTSDIR}/sysutils/portbrowser
 
 MASTERDIR=	${.CURDIR}/../gnome2
