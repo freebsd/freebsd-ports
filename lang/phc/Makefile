@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	phc
-DISTVERSION=	0.1.6rc1
+PORTVERSION=	0.1.7
 CATEGORIES=	lang
 MASTER_SITES=	http://www.phpcompiler.org/src/archive/
 
@@ -18,6 +18,10 @@ USE_GCC=	3.4+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/phc
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 500000
+IGNORE=	doesn't build on FreeBSD 4.x
+.endif
+
+.include <bsd.port.post.mk>
