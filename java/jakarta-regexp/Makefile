@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	jakarta-regexp
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	regexp/binaries
@@ -30,7 +29,7 @@ PORTDOCS=	*
 do-build:
 	@if [ ! -f ${WRKSRC}/lib ]; then ${MKDIR} ${WRKSRC}/lib; fi
 	@cd ${WRKSRC} && \
-		${SETENV} JAVA_HOME=${JAVA_HOME} ant -Djakarta-site2.dir=${WRKSRC} test package
+		${SETENV} JAVA_HOME=${JAVA_HOME} ant -Djakarta-site.dir=${WRKSRC} test package
 
 pre-install:
 	@${RM} -f ${PLIST}
