@@ -715,8 +715,6 @@
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Zipinfo/test.py
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Zipinfo/test.pyc
 %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Zipinfo/test.pyo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Zipinfo
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/WordStats
 @dirrm %%PYTHON_LIBDIR%%/site-packages/supybot/plugins/Webserver

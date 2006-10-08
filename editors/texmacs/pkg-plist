@@ -2209,8 +2209,6 @@ share/TeXmacs/texts/test/fonts-2.tm
 share/TeXmacs/texts/test/fonts-3.tm
 share/TeXmacs/texts/test/fonts.tm
 share/TeXmacs/texts/test/overview.tm
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm share/TeXmacs/texts/test
 @dirrm share/TeXmacs/texts
 @dirrm share/TeXmacs/styles/test

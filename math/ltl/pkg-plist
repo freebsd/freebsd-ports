@@ -77,8 +77,6 @@ include/LTL/ltl/util/u_exception.h
 include/LTL/ltl/util/utdate.h
 include/LTL/ltl/wcs.h
 lib/libltl.a
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm include/LTL/ltl/util
 @dirrm include/LTL/ltl/misc
 @dirrm include/LTL/ltl/marray

@@ -62,8 +62,6 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/snmptrap.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/snmptrapd.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/snmpwalk.py
-%%PORTDOCS%%@dirrm share/nls/en_US.US-ASCII
-%%PORTDOCS%%@dirrm share/nls/POSIX
 %%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/contribution
 %%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%

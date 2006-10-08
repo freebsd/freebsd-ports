@@ -1,7 +1,5 @@
 %%SITE_PERL%%/WWW/Google/News.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/News/.packlist
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/News
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

@@ -152,8 +152,6 @@ bin/hattrickorganizer
 %%DATADIR%%/sprache/Ukranian.properties
 %%DATADIR%%/sprache/languages.properties
 %%DATADIR%%/version.txt
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%DATADIR%%/sprache
 @dirrm %%DATADIR%%/flags
 @dirrm %%DATADIR%%

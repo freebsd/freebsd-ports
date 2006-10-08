@@ -1232,8 +1232,6 @@ lib/libAfterStep.a
 %%DATADIR%%/themes/Default
 %%DATADIR%%/wharf
 %%DATADIR%%/winlist
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 share/xsessions/AfterStep.desktop
 @dirrm share/xsessions
 @dirrm %%DATADIR%%_old

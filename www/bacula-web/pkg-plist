@@ -1,6 +1,4 @@
 etc/bacula-web.conf.sample
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 www/bacula-web/CONTACT
 www/bacula-web/COPYING
 www/bacula-web/ChangeLog

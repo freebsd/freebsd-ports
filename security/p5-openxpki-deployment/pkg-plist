@@ -2,8 +2,6 @@ bin/openxpki-configure
 bin/openxpki-metaconf
 bin/openxpkiadm
 bin/openxpkictl
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 share/openxpki/templates/default/acl.xml
 share/openxpki/templates/default/auth.xml
 share/openxpki/templates/default/config.xml
