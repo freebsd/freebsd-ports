@@ -1,14 +1,14 @@
---- ./Makefile.orig	Mon Apr 17 16:33:33 2006
-+++ ./Makefile	Sat Jun 10 17:00:12 2006
-@@ -9,10 +9,13 @@
+--- Makefile.orig	Wed Oct  4 22:32:43 2006
++++ Makefile	Wed Oct  4 22:34:18 2006
+@@ -9,9 +9,13 @@
  INSTALL_DIR=/usr/local/share
  INSTALL_BIN_DIR=/usr/local/bin
  
 -CXX = g++
 -CXXFLAGS = $(shell sdl-config --cflags) -O3
-+CXXFLAGS += $(shell $(SDL_CONFIG) --cflags)
- DEFINES = -D__linux__
 -LDFLAGS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer -lboost_filesystem
++CXX ?= g++
++CXXFLAGS += $(shell $(SDL_CONFIG) --cflags)
 +LDFLAGS += $(shell $(SDL_CONFIG) --libs) -lSDL_image -lSDL_mixer -lboost_filesystem
 +
 +ifdef OPTIMIZED_CFLAGS
@@ -16,4 +16,4 @@
 +endif
  
  OBJS = AIInterpreter.o AutoFireUnit.o BCCompiler.o DerivedGroups.o DragWindow.o \
- 	ForceSelect.o ForceSelectWin.o GenWindow.o GenWindow_Base.o Globals.o \
+ 	ForceSelect.o ForceSelectWin.o GenWindow.o GenWindow_Base.o GFX.o Globals.o \

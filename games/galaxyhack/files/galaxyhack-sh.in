@@ -5,16 +5,16 @@
 # ~/.galaxyhack, and create symlinks to the data files, but the configuration
 # file is copied, and write permission for the user is added to it.
 
-cd %%DATADIR%% || exit 1
-
-find * -type d -exec mkdir -p ~/.galaxyhack/{} \; || exit 1
-
-test -f ~/.galaxyhack/settings.dat || cp settings.dat ~/.galaxyhack && \
-chmod u+w ~/.galaxyhack/settings.dat
-
-find * -type f -exec ln -s %%DATADIR%%/{} ~/.galaxyhack/{} \; 2>/dev/null || \
-exit 1
+if [ -d ~/.galaxyhack ]
+then
+	echo "Using existing ~/.galaxyhack directory."
+else
+	echo "Creating ~/.galaxyhack directory."
+	cd %%DATADIR%% || exit 1
+	find * -type d -exec mkdir -p ~/.galaxyhack/{} \;
+	cp settings.dat ~/.galaxyhack && chmod u+w ~/.galaxyhack/settings.dat
+	find * -type f -exec ln -s %%DATADIR%%/{} ~/.galaxyhack/{} \; 2>/dev/null
+fi
 
 cd ~/.galaxyhack || exit 1
-
 exec %%PREFIX%%/libexec/galaxyhack "$@"
