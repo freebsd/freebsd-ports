@@ -14116,6 +14116,7 @@ tkman		ports/misc/tkman
 tkmerge		ports/devel/tkmerge
 tkmoo		ports/games/tkmoo
 tkp4		ports/devel/tkp4
+tkpng		ports/graphics/tkpng
 tkrat2		ports/mail/tkrat2
 tkref		ports/devel/tkref
 tkregexp	ports/misc/tkregexp
