@@ -1,0 +1,69 @@
+--- src/readjpeg.c.orig	Sun Oct 31 15:54:26 2004
++++ src/readjpeg.c	Sun Oct  8 22:43:59 2006
+@@ -92,11 +92,18 @@
+ 	int *real_width,int *real_height)
+ {
+ static FILE *in;
++/*
++Patch imported from Gentoo Bug #127008 to fix CVE-2006-1060
++VuXML ID 	a813a219-d2d4-11da-a672-000e0c2e438a
++<http://bugs.gentoo.org/show_bug.cgi?id=127008>
++*/
++static int cmyk;
+ struct my_error_mgr jerr;
+ int row_stride;		/* physical row width in output buffer */
+ int tmp,f;
+-unsigned char *ptr;
++unsigned char *ptr,*ptr2;
+ 
++cmyk=0;
+ use_errmsg=0;
+ theimage=NULL;
+ howfar=howfarfunc;
+@@ -161,6 +168,15 @@
+     pal[f]=pal[256+f]=pal[512+f]=f;
+   }
+ 
++if(cinfo.jpeg_color_space==JCS_CMYK)
++  cmyk=1;
++
++if(cinfo.jpeg_color_space==JCS_YCCK)
++  {
++  cmyk=1;
++  cinfo.out_color_space=JCS_CMYK;
++  }
++
+ width=cinfo.image_width;
+ height=cinfo.image_height;
+ 
+@@ -191,7 +207,7 @@
+   }
+ 
+ if(WH_BAD(width,height) ||
+-   (theimage=(byte *)malloc(pixelsize*width*height))==NULL)
++   (theimage=(byte *)malloc(pixelsize*width*(height+cmyk)))==NULL)
+   {
+   jpegerr("Out of memory");	/* XXX misleading if width/height are bad */
+   longjmp(jerr.setjmp_buffer,1);
+@@ -222,7 +238,20 @@
+   while(cinfo.output_scanline<height)
+     {
+     jpeg_read_scanlines(&cinfo,&ptr,1);
+-    for(f=0;f<width;f++) { tmp=*ptr; *ptr=ptr[2]; ptr[2]=tmp; ptr+=3; }
++    if(!cmyk)
++      for(f=0;f<width;f++) { tmp=*ptr; *ptr=ptr[2]; ptr[2]=tmp; ptr+=3; }
++    else
++      {
++      ptr2=ptr;
++      for(f=0;f<width;f++,ptr+=3,ptr2+=4)
++        {
++        tmp=ptr2[3];
++        ptr[0]=(tmp*ptr2[2])/255;
++        ptr[1]=(tmp*ptr2[1])/255;
++        ptr[2]=(tmp*ptr2[0])/255;
++        }
++      }
++
+     if(howfar!=NULL) howfar(cinfo.output_scanline,height);
+     }
+ 

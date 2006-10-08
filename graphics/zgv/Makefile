@@ -7,16 +7,13 @@
 
 PORTNAME=	zgv
 PORTVERSION=	5.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics viewer for SVGAlib
-
-FORBIDDEN=	http://vuxml.freebsd.org/a813a219-d2d4-11da-a672-000e0c2e438a.html
-DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=2006-12-01
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		vga.1:${PORTSDIR}/graphics/svgalib \
