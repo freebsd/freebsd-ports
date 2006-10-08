@@ -31,6 +31,7 @@
     SUBDIR += dragstack
     SUBDIR += drivel
     SUBDIR += egroupware
+    SUBDIR += estickies
     SUBDIR += etask
     SUBDIR += everygui
     SUBDIR += evolution-jescs
