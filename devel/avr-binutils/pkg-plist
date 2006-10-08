@@ -72,6 +72,8 @@ share/locale/vi/LC_MESSAGES/ld.mo
 share/locale/zh_CN/LC_MESSAGES/binutils.mo
 share/locale/zh_CN/LC_MESSAGES/ld.mo
 share/locale/zh_TW/LC_MESSAGES/binutils.mo
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrm avr/lib/ldscripts
 @dirrm avr/lib
 @dirrm avr/bin
