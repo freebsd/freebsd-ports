@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +15,9 @@ COMMENT=	Curses-based user interface library for Python
 
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
+
+post-patch:
+	@# disable setuptools for now
+	${REINPLACE_CMD} 's/setuptools/xxsetuptools/g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
