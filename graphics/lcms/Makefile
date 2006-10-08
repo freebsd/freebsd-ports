@@ -7,19 +7,43 @@
 
 PORTNAME=	lcms
 PORTVERSION=	1.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.littlecms.com/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
 USE_GNOME=	gnomehack gnometarget lthack
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-jpeg --without-tiff
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
+
+OPTIONS=	TIFFICC "Build color profile applier for tiff" off \
+		JPEGICC "Build color profile applier for JPEG" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TIFFICC)
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+PLIST_SUB+=	TIFFICC=""
+.else
+CONFIGURE_ARGS=	--without-tiff
+PLIST_SUB+=	TIFFICC="@comment "
+.endif
+
+.if defined(WITH_TIFFICC)
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+PLIST_SUB+=	JPEGICC=""
+.else
+CONFIGURE_ARGS=	--without-jpeg
+PLIST_SUB+=	JPEGICC="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -36,7 +60,17 @@ post-install:
 .endfor
 .endif
 
+.if defined(WITH_TIFFICC)
+	@(cd ${WRKSRC}/tifficc && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} Makefile all install)
+.endif
+
+.if defined(WITH_JPEGICC)
+	@(cd ${WRKSRC}/jpegicc && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} Makefile all install)
+.endif
+
 post-build test:
 	cd ${WRKSRC}/testbed && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

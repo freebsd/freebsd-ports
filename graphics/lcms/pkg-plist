@@ -1,3 +1,6 @@
+%%JPEGICC%%bin/jpegicc
+%%TIFFICC%%bin/tiffdiff
+%%TIFFICC%%bin/tifficc
 include/icc34.h
 include/lcms.h
 lib/liblcms.a
