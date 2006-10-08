@@ -3,6 +3,7 @@ bin/sketchy
 include/sketchy.h
 lib/libsketchy.a
 lib/libsketchy.so
+lib/libsketchy.so.0
 %%DATADIR%%/LICENSE
 %%DATADIR%%/lib/abs.scm
 %%DATADIR%%/lib/append.scm
@@ -110,6 +111,7 @@ lib/libsketchy.so
 %%DATADIR%%/lib/times.scm
 %%DATADIR%%/lib/zerop.scm
 %%DATADIR%%/sketchy.image
+%%DATADIR%%/src/amk.scm
 %%DATADIR%%/src/anyp.scm
 %%DATADIR%%/src/bottles.scm
 %%DATADIR%%/src/bubblesort.scm
@@ -159,6 +161,7 @@ lib/libsketchy.so
 %%DATADIR%%/src/unlet.scm
 %%DATADIR%%/src/unsort.scm
 %%DATADIR%%/src/vqueens.scm
+%%DATADIR%%/src/zebra.scm
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/library/abs.html
 %%DOCSDIR%%/library/append.html
@@ -267,6 +270,7 @@ lib/libsketchy.so
 %%DOCSDIR%%/library/zerop.html
 %%DOCSDIR%%/license.html
 %%DOCSDIR%%/ndx2.html
+%%DOCSDIR%%/prog/amk.html
 %%DOCSDIR%%/prog/bottles.html
 %%DOCSDIR%%/prog/draw-tree.html
 %%DOCSDIR%%/prog/fact.html
@@ -279,6 +283,7 @@ lib/libsketchy.so
 %%DOCSDIR%%/prog/qsort.html
 %%DOCSDIR%%/prog/queens.html
 %%DOCSDIR%%/prog/read-line.html
+%%DOCSDIR%%/prog/zebra.html
 %%DOCSDIR%%/progs.html
 %%DOCSDIR%%/sk01.html
 %%DOCSDIR%%/sk02.html
