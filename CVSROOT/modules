@@ -2276,7 +2276,7 @@ emp		ports/www/emp
 emphasis	ports/audio/emphasis
 empire		ports/games/empire
 empower		ports/sysutils/empower
-nmpty		ports/net/empty
+empty		ports/net/empty
 emu		ports/x11/emu
 emu10kx		ports/audio/emu10kx
 en-aspell	ports/textproc/en-aspell
