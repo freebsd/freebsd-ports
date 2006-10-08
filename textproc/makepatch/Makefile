@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	makepatch
-PORTVERSION=	2.00a
-PORTREVISION=	1
+PORTVERSION=	2.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/JV
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl scripts to assist in the generation and application of patches
 
 PERL_CONFIGURE=	yes
