@@ -7477,6 +7477,7 @@ nehquake	ports/games/nehquake
 nemesis		ports/net/nemesis
 nenscript	ports/print/nenscript
 neon		ports/www/neon
+neonpp		ports/www/neonpp
 neowebscript	ports/www/neowebscript
 nepenthes	ports/net/nepenthes
 nepim		ports/net/nepim
