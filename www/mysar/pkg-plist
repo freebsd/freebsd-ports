@@ -1,3 +1,4 @@
+%%MYSAR%%/CHANGELOG
 %%MYSAR%%/COPYING
 %%MYSAR%%/INSTALL
 %%MYSAR%%/README
@@ -92,6 +93,15 @@
 %%MYSAR%%/www-templates/header.tpl
 %%MYSAR%%/www-templates/index.tpl
 %%MYSAR%%/www-templates/siteusers.tpl
+%%MYSAR%%/www-templates.fr_FR/header.tpl
+%%MYSAR%%/www-templates.fr_FR/IPSummary.tpl
+%%MYSAR%%/www-templates.fr_FR/details.tpl
+%%MYSAR%%/www-templates.fr_FR/allsites.tpl
+%%MYSAR%%/www-templates.fr_FR/siteusers.tpl
+%%MYSAR%%/www-templates.fr_FR/index.tpl
+%%MYSAR%%/www-templates.fr_FR/IPSitesSummary.tpl
+%%MYSAR%%/www-templates.fr_FR/footer.tpl
+%%MYSAR%%/www-templates.fr_FR/administration.tpl
 %%MYSAR%%/www-templates.pt_BR/header.tpl
 %%MYSAR%%/www-templates.pt_BR/IPSummary.tpl
 %%MYSAR%%/www-templates.pt_BR/details.tpl
@@ -107,18 +117,18 @@
 %%MYSAR%%/www/images/up-arrow.gif
 %%MYSAR%%/www/index.php
 %%MYSAR%%/www/install/index.php
-
-@dirrm %%MYSAR%%/bin
-@dirrm %%MYSAR%%/etc
-@dirrm %%MYSAR%%/inc/smarty/internals
-@dirrm %%MYSAR%%/inc/smarty/plugins
-@dirrm %%MYSAR%%/inc/smarty
-@dirrm %%MYSAR%%/inc
-@dirrm %%MYSAR%%/smarty-tmp
-@dirrm %%MYSAR%%/log
-@dirrm %%MYSAR%%/www-templates.pt_BR
-@dirrm %%MYSAR%%/www-templates
-@dirrm %%MYSAR%%/www/images
-@dirrm %%MYSAR%%/www/install
-@dirrm %%MYSAR%%/www
-@dirrm %%MYSAR%%
+@dirrmtry %%MYSAR%%/bin
+@dirrmtry %%MYSAR%%/etc
+@dirrmtry %%MYSAR%%/inc/smarty/internals
+@dirrmtry %%MYSAR%%/inc/smarty/plugins
+@dirrmtry %%MYSAR%%/inc/smarty
+@dirrmtry %%MYSAR%%/inc
+@dirrmtry %%MYSAR%%/smarty-tmp
+@dirrmtry %%MYSAR%%/log
+@dirrmtry %%MYSAR%%/www-templates.fr_FR
+@dirrmtry %%MYSAR%%/www-templates.pt_BR
+@dirrmtry %%MYSAR%%/www-templates
+@dirrmtry %%MYSAR%%/www/images
+@dirrmtry %%MYSAR%%/www/install
+@dirrmtry %%MYSAR%%/www
+@dirrmtry %%MYSAR%%
