@@ -17,7 +17,6 @@ share/NAnt/bin/NAnt.NUnit1Tasks.xml
 share/NAnt/bin/NAnt.NUnit2Tasks.dll
 share/NAnt/bin/NAnt.NUnit2Tasks.dll.mdb
 share/NAnt/bin/NAnt.NUnit2Tasks.xml
-share/NAnt/bin/NAnt.Resources.dll
 share/NAnt/bin/NAnt.SourceControlTasks.dll
 share/NAnt/bin/NAnt.SourceControlTasks.dll.mdb
 share/NAnt/bin/NAnt.SourceControlTasks.xml
@@ -146,13 +145,13 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.AssemblyAttribute.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.CompilerWarning.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.DataTypeCollectionBase.html
+%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.EmbeddedResourceCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.LibDirectorySet.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.NamespaceImport.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.Package.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.NUnit.Types.FormatterElement.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.NUnit1.Types.NUnitTest.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.NUnit2.Types.Category.html
-%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.NUnit2.Types.CategoryCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.NUnit2.Types.NUnit2Test.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.SourceControl.Tasks.AbstractCvsTask.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.SourceControl.Tasks.AbstractSourceControlTask.html
@@ -160,6 +159,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.VisualCpp.Types.Library.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.VisualCpp.Types.Symbol.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Compression.Tasks.TarCompressionMethod.html
+%%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Compression.Types.DuplicateHandling.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Level.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.AvailableTask.ResourceType.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.LoopTask.LoopItem.html
@@ -192,6 +192,12 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-double.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-int.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-string.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-location.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/task.get-assembly.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-dos-path.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-unix-path.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-windows-path.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-week.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-year.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day.html
@@ -362,6 +368,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/introduction/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/help/style.css
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/al.html
+%%PORTDOCS%%%%DOCSDIR%%/help/tasks/regasm.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/asminfo.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/attrib.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/available.html
@@ -435,7 +442,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/xmlpoke.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/zip.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/assemblyfileset.html
-%%PORTDOCS%%%%DOCSDIR%%/help/types/categoryset.html
+%%PORTDOCS%%%%DOCSDIR%%/help/types/categories.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/credential.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/cvsfileset.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/dirset.html
