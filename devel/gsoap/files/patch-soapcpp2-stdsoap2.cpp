@@ -1,5 +1,5 @@
---- soapcpp2/stdsoap2.cpp.orig	Mon Jun 26 23:36:38 2006
-+++ soapcpp2/stdsoap2.cpp	Sat Aug  5 12:18:51 2006
+--- soapcpp2/stdsoap2.c.orig	Mon Jun 26 21:36:38 2006
++++ soapcpp2/stdsoap2.cpp	Fri Sep 29 14:22:34 2006
 @@ -3282,7 +3282,7 @@
      soap->errnum = h_errno;
    }
@@ -18,3 +18,12 @@
              for (j = 0; j < sk_CONF_VALUE_num(val); j++)
              { CONF_VALUE *nval = sk_CONF_VALUE_value(val, j);
                if (nval && !strcmp(nval->name, "DNS") && !strcmp(nval->value, host))
+@@ -7616,7 +7616,7 @@
+         break;
+     }
+     if (!tp)
+-    { tp = (struct soap_attribute*)SOAP_MALLOC(soap, sizeof(struct soap_attribute) + strlen(soap->tmpbuf));
++    { tp = (struct soap_attribute*)SOAP_MALLOC(soap, sizeof(struct soap_attribute) + strlen(soap->tmpbuf) + 1);
+       if (!tp)
+         return soap->error = SOAP_EOM;
+       strcpy(tp->name, soap->tmpbuf);
