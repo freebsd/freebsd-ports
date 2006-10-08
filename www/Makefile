@@ -412,6 +412,7 @@
     SUBDIR += nanoblogger
     SUBDIR += nd
     SUBDIR += neon
+    SUBDIR += neonpp
     SUBDIR += neowebscript
     SUBDIR += netoffice
     SUBDIR += netrik

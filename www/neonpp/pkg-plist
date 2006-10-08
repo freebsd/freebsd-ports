@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+include/neon++-1.0/neon++/session.hh
+include/neon++-1.0/neon++/request.hh
+include/neon++-1.0/neon++/neonpp-exception.hh
+lib/libneonpp.so.0
+lib/libneonpp.so
+lib/libneonpp.la
+libdata/pkgconfig/libneon++.pc
+@dirrmtry include/neon++-1.0/neon++
+@dirrmtry include/neon++-1.0
