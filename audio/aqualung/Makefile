@@ -25,7 +25,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		mpcdec.4:${PORTSDIR}/audio/libmpcdec \
 		mac.2:${PORTSDIR}/audio/mac \
 		tag.5:${PORTSDIR}/audio/taglib \
-		lrdf.2:${PORTSDIR}/audio/liblrdf \
+		lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		cddb.3:${PORTSDIR}/audio/libcddb
 
 USE_GETTEXT=	yes
