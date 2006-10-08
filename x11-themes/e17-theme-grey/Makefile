@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	e17-theme-
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Modified default E17 theme using grey-ish colors
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
@@ -24,6 +24,10 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	share/enlightenment/data/themes/grey.edj
+
+IGNORE=		doesn't work with recent e17
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2006-11-01
 
 do-extract:
 	${MKDIR} ${WRKDIR}

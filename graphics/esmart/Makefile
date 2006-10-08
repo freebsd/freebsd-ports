@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	esmart
-PORTVERSION=	0.9.0.007
+PORTVERSION=	20060926
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://enlightenment.freedesktop.org/files/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Evas smart objects development libraries
 
 LIB_DEPENDS=	epsilon.0:${PORTSDIR}/graphics/epsilon
 
-USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl:15
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
-INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_EFL=	ecore evas epsilon edje
+USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>

@@ -6,30 +6,37 @@
 #
 
 PORTNAME=	ecore
-PORTVERSION=	20060516
+PORTVERSION=	20061008
+PORTREVISION=	0
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-ecore-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby bindings for Ecore library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake \
-		${RUBY_SITEARCHLIBDIR}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas
-LIB_DEPENDS=	ecore.1:${PORTSDIR}/x11/ecore
+		${RUBY_SA}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_EFL=	ecore
+
+RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} "s#%%X11BASE%%#${X11BASE}#g" ${WRKSRC}/Rakefile
+
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ECORE_PREFIX=${X11BASE} \
+	@(cd ${WRKSRC}; ${SETENV} ECORE_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake)
 
 do-install:
-	@(cd ${WRKSRC}; ${SETENV} ECORE_PREFIX=${X11BASE} \
+	@(cd ${WRKSRC}; ${SETENV} ECORE_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake install)
 
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

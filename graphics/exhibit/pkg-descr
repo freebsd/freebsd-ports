@@ -1,0 +1,7 @@
+Exhibit is an image viewer that uses Etk as its toolkit. Exhibit supports
+image previews for image types supported by Evas and allows for directory
+changing using a point and click interface or a text input box with tab
+autocompletion support.
+
+Author:	Hisham 'CodeWarrior' Mardambey <hisham.mardambey@gmail.com>
+WWW:	http://www.enlightenment.org/

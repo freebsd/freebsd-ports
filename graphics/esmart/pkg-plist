@@ -7,6 +7,15 @@ include/Esmart/Esmart_File_Dialog.h
 include/Esmart/Esmart_Text_Entry.h
 include/Esmart/Esmart_Thumb.h
 include/Esmart/Esmart_Trans_X11.h
+lib/esmart/layout/default.a
+lib/esmart/layout/default.la
+lib/esmart/layout/default.so
+lib/esmart/layout/engage.a
+lib/esmart/layout/engage.la
+lib/esmart/layout/engage.so
+lib/esmart/layout/entice.a
+lib/esmart/layout/entice.la
+lib/esmart/layout/entice.so
 lib/libesmart_container.a
 lib/libesmart_container.la
 lib/libesmart_container.so
@@ -31,15 +40,6 @@ lib/libesmart_trans_x11.a
 lib/libesmart_trans_x11.la
 lib/libesmart_trans_x11.so
 lib/libesmart_trans_x11.so.0
-lib/esmart/layout/default.a
-lib/esmart/layout/default.la
-lib/esmart/layout/default.so
-lib/esmart/layout/engage.a
-lib/esmart/layout/engage.la
-lib/esmart/layout/engage.so
-lib/esmart/layout/entice.a
-lib/esmart/layout/entice.la
-lib/esmart/layout/entice.so
 libdata/pkgconfig/esmart.pc
 %%DATADIR%%/esmart.png
 @dirrm %%DATADIR%%

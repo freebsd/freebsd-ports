@@ -1,17 +1,18 @@
+bin/eap_to_desktop
 bin/enlightenment
 bin/enlightenment-config
 bin/enlightenment_eapp
-bin/enlightenment_eapp_cache_gen
 bin/enlightenment_imc
 bin/enlightenment_remote
 bin/enlightenment_start
+bin/enlightenment_sys
 bin/enlightenment_thumb
+etc/enlightenment/sysactions.conf
 include/enlightenment/e.h
 include/enlightenment/e_about.h
 include/enlightenment/e_actions.h
 include/enlightenment/e_alert.h
 include/enlightenment/e_apps.h
-include/enlightenment/e_apps_cache.h
 include/enlightenment/e_apps_error.h
 include/enlightenment/e_atoms.h
 include/enlightenment/e_bg.h
@@ -19,7 +20,9 @@ include/enlightenment/e_bindings.h
 include/enlightenment/e_border.h
 include/enlightenment/e_box.h
 include/enlightenment/e_canvas.h
+include/enlightenment/e_color.h
 include/enlightenment/e_color_class.h
+include/enlightenment/e_color_dialog.h
 include/enlightenment/e_config.h
 include/enlightenment/e_config_dialog.h
 include/enlightenment/e_configure.h
@@ -32,29 +35,21 @@ include/enlightenment/e_deskpreview.h
 include/enlightenment/e_dialog.h
 include/enlightenment/e_dnd.h
 include/enlightenment/e_eap_editor.h
+include/enlightenment/e_editable.h
 include/enlightenment/e_entry.h
 include/enlightenment/e_entry_dialog.h
 include/enlightenment/e_error.h
 include/enlightenment/e_exebuf.h
 include/enlightenment/e_exehist.h
-include/enlightenment/e_file_dialog.h
-include/enlightenment/e_file_selector.h
-include/enlightenment/e_fileman.h
-include/enlightenment/e_fileman_file.h
-include/enlightenment/e_fileman_icon.h
-include/enlightenment/e_fileman_mime.h
-include/enlightenment/e_fileman_smart.h
+include/enlightenment/e_fdo_menu_to_order.h
 include/enlightenment/e_fm.h
+include/enlightenment/e_fm_mime.h
 include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
 include/enlightenment/e_gadcon.h
-include/enlightenment/e_gadget.h
-include/enlightenment/e_gadman.h
 include/enlightenment/e_grabinput.h
 include/enlightenment/e_hints.h
 include/enlightenment/e_icon.h
-include/enlightenment/e_icon_canvas.h
-include/enlightenment/e_icon_grid.h
 include/enlightenment/e_ilist.h
 include/enlightenment/e_includes.h
 include/enlightenment/e_init.h
@@ -63,8 +58,7 @@ include/enlightenment/e_int_border_locks.h
 include/enlightenment/e_int_border_menu.h
 include/enlightenment/e_int_border_prop.h
 include/enlightenment/e_int_border_remember.h
-include/enlightenment/e_int_config_background.h
-include/enlightenment/e_int_config_background_import.h
+include/enlightenment/e_int_config_apps.h
 include/enlightenment/e_int_config_cfgdialogs.h
 include/enlightenment/e_int_config_cursor.h
 include/enlightenment/e_int_config_desklock.h
@@ -73,21 +67,28 @@ include/enlightenment/e_int_config_display.h
 include/enlightenment/e_int_config_exebuf.h
 include/enlightenment/e_int_config_focus.h
 include/enlightenment/e_int_config_fonts.h
-include/enlightenment/e_int_config_hinting.h
+include/enlightenment/e_int_config_icon_themes.h
+include/enlightenment/e_int_config_intl.h
 include/enlightenment/e_int_config_keybindings.h
-include/enlightenment/e_int_config_startup.h
 include/enlightenment/e_int_config_menus.h
 include/enlightenment/e_int_config_modules.h
+include/enlightenment/e_int_config_mousebindings.h
 include/enlightenment/e_int_config_paths.h
 include/enlightenment/e_int_config_performance.h
-include/enlightenment/e_int_config_shelf.h
+include/enlightenment/e_int_config_sh%%PORTOBJFORMAT%%.h
+include/enlightenment/e_int_config_startup.h
 include/enlightenment/e_int_config_theme.h
+include/enlightenment/e_int_config_theme_import.h
+include/enlightenment/e_int_config_transitions.h
+include/enlightenment/e_int_config_wallpaper.h
+include/enlightenment/e_int_config_wallpaper_gradient.h
+include/enlightenment/e_int_config_wallpaper_import.h
 include/enlightenment/e_int_config_window_display.h
 include/enlightenment/e_int_config_window_manipulation.h
 include/enlightenment/e_int_config_winlist.h
 include/enlightenment/e_int_gadcon_config.h
 include/enlightenment/e_int_menus.h
-include/enlightenment/e_int_shelf_config.h
+include/enlightenment/e_int_sh%%PORTOBJFORMAT%%_config.h
 include/enlightenment/e_intl.h
 include/enlightenment/e_ipc.h
 include/enlightenment/e_ipc_codec.h
@@ -102,6 +103,7 @@ include/enlightenment/e_mmx.h
 include/enlightenment/e_module.h
 include/enlightenment/e_moveresize.h
 include/enlightenment/e_msg.h
+include/enlightenment/e_obj_dialog.h
 include/enlightenment/e_object.h
 include/enlightenment/e_pan.h
 include/enlightenment/e_path.h
@@ -113,11 +115,13 @@ include/enlightenment/e_remember.h
 include/enlightenment/e_resist.h
 include/enlightenment/e_scrollframe.h
 include/enlightenment/e_sha1.h
-include/enlightenment/e_shelf.h
+include/enlightenment/e_sh%%PORTOBJFORMAT%%.h
 include/enlightenment/e_signals.h
 include/enlightenment/e_slider.h
+include/enlightenment/e_spectrum.h
 include/enlightenment/e_startup.h
 include/enlightenment/e_stolen.h
+include/enlightenment/e_sys.h
 include/enlightenment/e_table.h
 include/enlightenment/e_test.h
 include/enlightenment/e_theme.h
@@ -129,13 +133,14 @@ include/enlightenment/e_utils.h
 include/enlightenment/e_widget.h
 include/enlightenment/e_widget_button.h
 include/enlightenment/e_widget_check.h
+include/enlightenment/e_widget_color_well.h
 include/enlightenment/e_widget_config_list.h
+include/enlightenment/e_widget_csel.h
+include/enlightenment/e_widget_cslider.h
 include/enlightenment/e_widget_entry.h
-include/enlightenment/e_widget_fileman.h
 include/enlightenment/e_widget_framelist.h
 include/enlightenment/e_widget_frametable.h
 include/enlightenment/e_widget_fsel.h
-include/enlightenment/e_widget_iconsel.h
 include/enlightenment/e_widget_ilist.h
 include/enlightenment/e_widget_image.h
 include/enlightenment/e_widget_label.h
@@ -144,6 +149,7 @@ include/enlightenment/e_widget_preview.h
 include/enlightenment/e_widget_radio.h
 include/enlightenment/e_widget_scrollframe.h
 include/enlightenment/e_widget_slider.h
+include/enlightenment/e_widget_spectrum.h
 include/enlightenment/e_widget_table.h
 include/enlightenment/e_widget_textblock.h
 include/enlightenment/e_widget_tlist.h
@@ -151,45 +157,58 @@ include/enlightenment/e_win.h
 include/enlightenment/e_winlist.h
 include/enlightenment/e_xinerama.h
 include/enlightenment/e_zone.h
-lib/enlightenment/modules/battery/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/battery/module.eap
-lib/enlightenment/modules/battery/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/battery/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/clock/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/clock/module.eap
-lib/enlightenment/modules/clock/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/clock/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/freqset
-lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/cpufreq/module.eap
-lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/dropshadow/module.eap
-lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/ibar/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/ibar/module.eap
-lib/enlightenment/modules/ibar/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/ibar/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/ibox/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/ibox/module.eap
-lib/enlightenment/modules/ibox/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/ibox/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/pager/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/pager/module.eap
-lib/enlightenment/modules/pager/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/pager/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/start/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/start/module.eap
-lib/enlightenment/modules/start/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/start/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/temperature/module.eap
-lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/battery/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/battery/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/battery/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/battery/module.desktop
+lib/enlightenment/modules/battery/module.edj
+lib/enlightenment/modules/clock/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/clock/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/clock/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/clock/module.desktop
+lib/enlightenment/modules/clock/module.edj
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/freqset
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/cpufreq/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/cpufreq/module.desktop
+lib/enlightenment/modules/cpufreq/module.edj
+lib/enlightenment/modules/dropshadow/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/dropshadow/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/dropshadow/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/dropshadow/module.desktop
+lib/enlightenment/modules/dropshadow/module.edj
+lib/enlightenment/modules/ibar/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/ibar/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/ibar/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/ibar/module.desktop
+lib/enlightenment/modules/ibar/module.edj
+lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/ibox/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/ibox/module.desktop
+lib/enlightenment/modules/ibox/module.edj
+lib/enlightenment/modules/pager/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/pager/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/pager/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/pager/module.desktop
+lib/enlightenment/modules/pager/module.edj
+lib/enlightenment/modules/start/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/start/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/start/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/start/module.desktop
+lib/enlightenment/modules/start/module.edj
+lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/temperature/module.desktop
+lib/enlightenment/modules/temperature/module.edj
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
+%%DATADIR%%/data/backgrounds/Blue_Sky_Tree.edj
+%%DATADIR%%/data/backgrounds/Cracked_Earth.edj
+%%DATADIR%%/data/backgrounds/Ivy_Wall.edj
+%%DATADIR%%/data/backgrounds/Ladybug.edj
 %%DATADIR%%/data/fonts/Vera.COPYING
 %%DATADIR%%/data/fonts/Vera.ttf
 %%DATADIR%%/data/fonts/VeraBI.ttf
@@ -203,6 +222,10 @@ lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.so
 %%DATADIR%%/data/fonts/VeraSeBd.ttf
 %%DATADIR%%/data/fonts/fonts.alias
 %%DATADIR%%/data/fonts/fonts.dir
+%%DATADIR%%/data/icons/audio_player.png
+%%DATADIR%%/data/icons/video_player.png
+%%DATADIR%%/data/icons/web_browser.png
+%%DATADIR%%/data/icons/xterm.png
 %%DATADIR%%/data/images/button_in.png
 %%DATADIR%%/data/images/button_out.png
 %%DATADIR%%/data/images/e.png
@@ -210,7 +233,7 @@ lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.so
 %%DATADIR%%/data/images/test.edj
 %%DATADIR%%/data/images/test.jpg
 %%DATADIR%%/data/images/test.png
-%%DATADIR%%/data/init/init.edj
+%%DATADIR%%/data/init/default.edj
 %%DATADIR%%/data/input_methods/iiimf.imc
 %%DATADIR%%/data/input_methods/scim.imc
 %%DATADIR%%/data/input_methods/uim.imc
@@ -218,6 +241,8 @@ lib/enlightenment/modules/temperature/%%MODULE_ARCH%%/module.so
 %%DATADIR%%/data/other/efm_favorites.tar.gz
 %%DATADIR%%/data/other/icon_example.tar.gz
 %%DATADIR%%/data/themes/default.edj
+%%DATADIR%%/doc/FDO.txt
+%%DATADIR%%/doc/cache.txt
 %%DATADIR%%/doc/documentation.html
 %%DATADIR%%/doc/enlightenment.png
 share/locale/bg/LC_MESSAGES/enlightenment.mo
@@ -243,34 +268,55 @@ share/locale/sv/LC_MESSAGES/enlightenment.mo
 share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
 share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
 share/xsessions/enlightenment.desktop
+@dirrmtry share/xsessions
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/data/themes
 @dirrm %%DATADIR%%/data/other
-@dirrm %%DATADIR%%/data/init
 @dirrm %%DATADIR%%/data/input_methods
+@dirrm %%DATADIR%%/data/init
 @dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data/backgrounds
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry share/xsessions
-@dirrm lib/enlightenment/modules/temperature/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/temperature/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/temperature
-@dirrm lib/enlightenment/modules/start/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/start/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/start
-@dirrm lib/enlightenment/modules/pager/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/pager/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/pager
-@dirrm lib/enlightenment/modules/ibox/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/ibox/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/ibox
-@dirrm lib/enlightenment/modules/ibar/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/ibar/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/ibar
-@dirrm lib/enlightenment/modules/dropshadow/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/dropshadow/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/dropshadow
-@dirrm lib/enlightenment/modules/cpufreq/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/cpufreq/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/cpufreq
-@dirrm lib/enlightenment/modules/clock/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/clock/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/clock
-@dirrm lib/enlightenment/modules/battery/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/battery/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/battery
 @dirrm lib/enlightenment/modules
 @dirrm lib/enlightenment
 @dirrm include/enlightenment
+@dirrm etc/enlightenment

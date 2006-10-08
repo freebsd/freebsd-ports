@@ -26,4 +26,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+IGNORE=		doesn't work with recent e17 and obsoleted
+DEPRECATED=	${IGNORE} 
+EXPIRATION_DATE=2006-11-01
+
 .include <bsd.port.mk>

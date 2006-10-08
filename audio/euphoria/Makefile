@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	euphoria
-PORTVERSION=	20062006
-PORTREVISION=	1
+PORTVERSION=	20061008
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://mbsd.msk.ru/dist/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	XMMS2 GUI frontend written with Enlightenment e17 libraries
 
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
@@ -27,6 +27,7 @@ SADIR=		${RUBY_SITEARCHLIBDIR}
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+RUBY_SHEBANG_FILES=	${WRKSRC}/bin/euphoria
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "ia64"

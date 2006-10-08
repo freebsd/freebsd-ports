@@ -6,21 +6,49 @@
 #
 
 PORTNAME=	epsilon
-PORTVERSION=	0.3.0.007
+PORTVERSION=	20060926
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://enlightenment.freedesktop.org/files/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A small, display independent, and quick thumbnailing library
 
-LIB_DEPENDS=	epeg.9:${PORTSDIR}/graphics/epeg \
-		edje.5:${PORTSDIR}/graphics/edje
-
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget
-INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_EFL=	edje imlib2
+USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+OPTIONS=	PNG	"Enable PNG thumbnailer" on \
+		EPEG	"Enable Epeg thumbnailer" on \
+		XINE	"Enable Xine thumbnailer" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PNG) || exists(${LOCALBASE}/lib/libpng.so.5)
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+PLIST_SUB+=	PNG=""
+.else
+PLIST_SUB+=	PNG="@comment "
+.endif
+
+.if defined(WITH_EPEG) || exists(${LOCALBASE}/lib/libepeg.so.9)
+USE_EFL+=	epeg
+PLIST_SUB+=	EPEG=""
+.else
+PLIST_SUB+=	EPEG="@comment "
+.endif
+
+.if defined(WITH_XINE)
+LIB_DEPENDS+=	xine.15:${PORTSDIR}/multimedia/libxine
+CONFIGURE_ARGS+=--enable-thumbnailer-xine
+PLIST_SUB+=	XINE=""
+.else
+CONFIGURE_ARGS+=--disable-thumbnailer-xine
+PLIST_SUB+=	XINE="@comment "
+.endif
+
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>

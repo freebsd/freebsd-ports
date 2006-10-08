@@ -1,0 +1,8 @@
+bin/enterminus
+bin/enterminus-config
+%%DATADIR%%/VeraMono.ttf
+%%DATADIR%%/black.png
+%%DATADIR%%/checkered_bg.png
+%%DATADIR%%/grey.png
+%%DATADIR%%/white.png
+@dirrm %%DATADIR%%

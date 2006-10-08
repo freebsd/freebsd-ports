@@ -6,31 +6,35 @@
 #
 
 PORTNAME=	esmart
-PORTVERSION=	20060516
+PORTVERSION=	20061008
+PORTREVISION=	0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-esmart-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby bindings for Esmart library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake \
-		${RUBY_SITEARCHLIBDIR}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas \
-		${RUBY_SITEARCHLIBDIR}/ecore/rb_window.h:${PORTSDIR}/devel/ruby-ecore
-LIB_DEPENDS=	esmart_trans_x11.0:${PORTSDIR}/graphics/esmart
+		${RUBY_SA}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas \
+		${RUBY_SA}/ecore/rb_window.h:${PORTSDIR}/devel/ruby-ecore
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_EFL_ESMART=	trans_x11
+
+RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
 .include <bsd.port.pre.mk>
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ESMART_PREFIX=${X11BASE} \
+	@(cd ${WRKSRC}; ${SETENV} ESMART_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake)
 
 do-install:
-	@(cd ${WRKSRC}; ${SETENV} ESMART_PREFIX=${X11BASE} \
+	@(cd ${WRKSRC}; ${SETENV} ESMART_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake install)
 
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

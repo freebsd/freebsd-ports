@@ -1,9 +1,12 @@
+lib/enlightenment/modules/mail/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/mail/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/mail/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mail/mail.edj
-lib/enlightenment/modules/mail/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/mail/module.eap
-lib/enlightenment/modules/mail/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/mail/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/mail/module.desktop
+lib/enlightenment/modules/mail/module.edj
 lib/enlightenment/modules/mail/module_icon.png
-lib/enlightenment/modules/mail/newmail.png
-@dirrm lib/enlightenment/modules/mail/%%MODULE_ARCH%%
+share/locale/it/LC_MESSAGES/mail.mo
+@dirrm lib/enlightenment/modules/mail/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mail
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

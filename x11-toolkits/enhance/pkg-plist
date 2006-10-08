@@ -1,0 +1,6 @@
+bin/enhance-config
+include/Enhance.h
+lib/libenhance.a
+lib/libenhance.la
+lib/libenhance.so
+lib/libenhance.so.0

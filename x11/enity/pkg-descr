@@ -1,0 +1,10 @@
+Enity allows users to create Etk dialogs using shell scripts or other
+scripting languages that can call programs. The basic idea is to ease
+the development of quick interfaces for input, configuration,
+installation, etc...
+
+The List feature is currently disabled due to unresolved problems in
+implementation.
+
+Author:	Hisham 'CodeWarrior' Mardambey <hisham.mardambey@gmail.com>
+WWW:	http://www.enlightenment.org/

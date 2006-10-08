@@ -1,0 +1,8 @@
+bin/estickies
+%%DATADIR%%/images/estickies.png
+%%DATADIR%%/themes/default.edj
+%%DATADIR%%/themes/mc.edj
+%%DATADIR%%/themes/postit.edj
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

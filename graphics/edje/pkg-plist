@@ -167,19 +167,19 @@ libdata/pkgconfig/edje.pc
 %%DATADIR%%/data/test/images/item_title.png
 %%DATADIR%%/data/test/images/shadow.png
 %%DATADIR%%/include/edje.inc
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/data/test/images
-@dirrm %%DATADIR%%/data/test/fonts
-@dirrm %%DATADIR%%/data/test
-@dirrm %%DATADIR%%/data/template/programs
-@dirrm %%DATADIR%%/data/template/parts
-@dirrm %%DATADIR%%/data/template/macros
-@dirrm %%DATADIR%%/data/template/images
-@dirrm %%DATADIR%%/data/template/hashes
-@dirrm %%DATADIR%%/data/template/fonts
-@dirrm %%DATADIR%%/data/template/embryo
-@dirrm %%DATADIR%%/data/template
-@dirrm %%DATADIR%%/data/src
-@dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/include
+@dirrmtry %%DATADIR%%/data/test/images
+@dirrmtry %%DATADIR%%/data/test/fonts
+@dirrmtry %%DATADIR%%/data/test
+@dirrmtry %%DATADIR%%/data/template/programs
+@dirrmtry %%DATADIR%%/data/template/parts
+@dirrmtry %%DATADIR%%/data/template/macros
+@dirrmtry %%DATADIR%%/data/template/images
+@dirrmtry %%DATADIR%%/data/template/hashes
+@dirrmtry %%DATADIR%%/data/template/fonts
+@dirrmtry %%DATADIR%%/data/template/embryo
+@dirrmtry %%DATADIR%%/data/template
+@dirrmtry %%DATADIR%%/data/src
+@dirrmtry %%DATADIR%%/data/images
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%

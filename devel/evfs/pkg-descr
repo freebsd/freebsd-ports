@@ -1,0 +1,7 @@
+EVFS is a comprehensive virtual filesystem library with plugin support. It was
+written for Enlightenment desktop, but can be used besides it.
+
+Authors:Alex Taylor <alex@logisticchaos.com>,
+	Christian Kreibich <cK@whoop.org>,
+	John Kha
+WWW:	http://www.enlightenment.org/

@@ -5,8 +5,12 @@ bin/euphoria
 %%RUBY_SITELIBDIR%%/euphoria/playlist_item.rb
 %%RUBY_SITELIBDIR%%/euphoria/playtime_updater.rb
 %%RUBY_SITELIBDIR%%/euphoria/slider.rb
+%%RUBY_SITELIBDIR%%/euphoria/volume_box.rb
 %%DATADIR%%/themes/iio.edj
 %%DATADIR%%/themes/winter.edj
 @dirrm %%RUBY_SITELIBDIR%%/euphoria
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%

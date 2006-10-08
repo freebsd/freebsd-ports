@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	mail
-PORTVERSION=	20060707
-PORTREVISION=	1
+PORTVERSION=	20060926
+PORTREVISION=	0
 CATEGORIES=	x11
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An e17 module to check your mailboxes (like xbiff does)
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
 
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget pkgconfig
+USE_EFL=	edje
 
-PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>

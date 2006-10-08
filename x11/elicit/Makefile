@@ -7,31 +7,24 @@
 #
 
 PORTNAME=	elicit
-PORTVERSION=	20060719
+PORTVERSION=	20060926
 CATEGORIES=	x11
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Screen zoomer/color picker for e17
 
-LIB_DEPENDS=	ecore.1:${PORTSDIR}/x11/ecore \
-		edb.1:${PORTSDIR}/databases/edb \
-		edje.5:${PORTSDIR}/graphics/edje \
-		eet.9:${PORTSDIR}/devel/eet \
-		esmart_trans_x11.0:${PORTSDIR}/graphics/esmart \
-		evas.1:${PORTSDIR}/graphics/evas \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2
-
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_GNOME=	gnometarget pkgconfig
+USE_EFL=	ecore edb eet edje evas imlib2
+USE_EFL_ESMART=	trans_x11
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "ia64"
 BROKEN=		edje is broken on ia64
 .endif
 
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

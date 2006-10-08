@@ -6,27 +6,25 @@
 #
 
 PORTNAME=	weather
-PORTVERSION=	23062006
-PORTREVISION=	2
+PORTVERSION=	20060926
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An e17 weather module
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
 
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget pkgconfig
+USE_EFL=	edje
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -36,4 +34,6 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>

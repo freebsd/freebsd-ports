@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	exml
-PORTVERSION=	20060707
+PORTVERSION=	20060926
 CATEGORIES=	textproc
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	EXML is an abstracted, generalized interface to libxml
-
-LIB_DEPENDS=	ecore.1:${PORTSDIR}/x11/ecore
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	libxml2 gnomehack gnometarget
-INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GNOME=	libxml2 libxslt gnomehack gnometarget pkgconfig
+USE_EFL=	ecore
+USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>
