@@ -7,14 +7,22 @@
 
 PORTNAME=	intercal
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"
+
+post-patch:
+#
+# Respect PREFIX
+#
+	@${REINPLACE_CMD} -E -e "s,/usr/local,${PREFIX},g" \
+		${WRKSRC}/perpetrate.c
 
 .include <bsd.port.mk>
