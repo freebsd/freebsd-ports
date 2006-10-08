@@ -6,6 +6,7 @@
 
 PORTNAME=	lookupd_ldap
 PORTVERSION=	0.1.a
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.rsu.ru/~bushman/lookupd/ldap/downloads/
 
@@ -14,12 +15,10 @@ COMMENT=	The LDAP plugin for the lookupd daemon
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/lookupd:${PORTSDIR}/sysutils/lookupd
 
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
+
+PLIST_FILES=	lib/lkpd_ldap.so lib/lkpd_ldap.so.1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

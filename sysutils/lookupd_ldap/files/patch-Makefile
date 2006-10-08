@@ -1,0 +1,14 @@
+--- Makefile.orig	Sat Oct  7 19:15:49 2006
++++ Makefile	Sat Oct  7 19:17:26 2006
+@@ -13,8 +13,9 @@
+ 
+ WARNS?=2
+ STRIP=
+-LDFLAGS+=-nostdlib -lc -shared -L${PREFIX}/lib -lldap_r
+-CFLAGS+=-pthread -I${PREFIX}/include/lookupd -I${PREFIX}/include
++LDFLAGS+=-nostdlib -lc -shared -L${LOCALBASE}/lib -lldap_r
++CFLAGS+=-pthread -I${LOCALBASE}/include/lookupd -I${LOCALBASE}/include \
++	-DLDAP_DEPRECATED=1
+ NOMAN= 1
+ 
+ .include <bsd.lib.mk>
