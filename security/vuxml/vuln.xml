@@ -17651,9 +17651,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>python</name>
-	<name>python23</name>
-	<name>python22</name>
-        <name>python-devel</name>
+	<name>python+ipv6</name>
 	<range><ge>2.2</ge><lt>2.2.3_7</lt></range>
 	<range><ge>2.3</ge><lt>2.3.4_4</lt></range>
 	<range><ge>2.4</ge><lt>2.4_1</lt></range>
@@ -17695,6 +17693,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-02-03</discovery>
       <entry>2005-02-03</entry>
+      <modified>2006-10-08</modified>
     </dates>
   </vuln>
 
