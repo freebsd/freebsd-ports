@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -49,6 +49,13 @@ LIB_DEPENDS+=	tasn1.3:${PORTSDIR}/security/libtasn1
 .if ${OSVERSION} < 600000
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
+.endif
+
+.if defined(WITHOUT_CXX)
+CONFIGURE_ARGS+=	--disable-cxx
+PLIST_SUB+=		CXX="@comment "
+.else
+PLIST_SUB+=		CXX=""
 .endif
 
 .if defined(WITHOUT_NLS)
