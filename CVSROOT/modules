@@ -3358,6 +3358,7 @@ glean		ports/graphics/glean
 glest		ports/games/glest
 glest-data		ports/games/glest-data
 glew		ports/graphics/glew
+glexcess	ports/graphics/glexcess
 glflow		ports/net/glflow
 glfw		ports/graphics/glfw
 glgraph		ports/math/glgraph
