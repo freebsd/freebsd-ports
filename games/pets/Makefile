@@ -9,9 +9,9 @@
 PORTNAME=	pets
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.loria.fr/~rougier/software/downloads/
+MASTER_SITES=	http://www.loria.fr/~rougier/pub/Softwares/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Funny pets to follow your mouse pointer
 
 WRKSRC=		${WRKDIR}/pet-${PORTVERSION}
