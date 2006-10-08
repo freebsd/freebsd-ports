@@ -22,9 +22,9 @@ bin/eclair_wsz2edj
 %%DATADIR%%/themes/swallow_me.edj
 %%DATADIR%%/widget_themes/default.edj
 %%DATADIR%%/wsz2edj/wsz2edj_edc.tar.gz
-@dirrmtry %%DATADIR%%/wsz2edj
-@dirrmtry %%DATADIR%%/widget_themes
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/wsz2edj
+@dirrm %%DATADIR%%/widget_themes
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%

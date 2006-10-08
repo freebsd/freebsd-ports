@@ -1,0 +1,15 @@
+Enhance is a library that takes advantage of Glade's .glade XML files, EXML,
+and Etk to easy application GUI development and cut down on its time.
+
+After using Glade to design a GUI, you can save generate the .glade XML file
+that describes the interface design and use it in Enhance to generate an Etk
+equivalent. Enhance works at runtime, ie, it does not generate C code. It
+will parse the XML at application launch and will do the appropriate work to
+create the GUI and the required callbacks for you. There are several examples
+in the examples directory for you to take a look at.
+
+Please note that Etk does not support all of the GTK+ widgets. As widgets are
+added to Etk, Enhance will be updated to support those new widgets.
+
+Author:	Hisham 'CodeWarrior' Mardam Bey <hisham.mardambey@gmail.com>
+WWW:	http://www.enlightenment.org/

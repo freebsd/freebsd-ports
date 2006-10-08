@@ -13,6 +13,6 @@ lib/libemotion.so
 lib/libemotion.so.0
 libdata/pkgconfig/emotion.pc
 %%DATADIR%%/data/theme.edj
-@dirrmtry share/emotion/data
-@dirrmtry share/emotion
-@dirrmtry lib/emotion
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+@dirrm lib/emotion

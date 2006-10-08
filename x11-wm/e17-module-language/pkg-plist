@@ -1,6 +1,6 @@
-lib/enlightenment/modules/language/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/language/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/language/%%MODULE_ARCH%%/module.so
+lib/enlightenment/modules/language/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/language/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/language/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/language/images/AFG_flag.png
 lib/enlightenment/modules/language/images/ALB_flag.png
 lib/enlightenment/modules/language/images/AND_flag.png
@@ -72,11 +72,14 @@ lib/enlightenment/modules/language/images/UZB_flag.png
 lib/enlightenment/modules/language/images/VNM_flag.png
 lib/enlightenment/modules/language/images/ZAR_flag.png
 lib/enlightenment/modules/language/images/unknown_flag.png
-lib/enlightenment/modules/language/language.edc
 lib/enlightenment/modules/language/language.edj
-lib/enlightenment/modules/language/module.eap
+lib/enlightenment/modules/language/module.desktop
+lib/enlightenment/modules/language/module.edj
+share/locale/eo/LC_MESSAGES/language.mo
+share/locale/it/LC_MESSAGES/language.mo
+share/locale/sv/LC_MESSAGES/language.mo
 @dirrm lib/enlightenment/modules/language/images
-@dirrm lib/enlightenment/modules/language/%%MODULE_ARCH%%
+@dirrm lib/enlightenment/modules/language/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/language
 @dirrmtry lib/enlightenment/modules
 @dirrmtry lib/enlightenment

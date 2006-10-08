@@ -1,0 +1,45 @@
+# New ports collection makefile for:	exhibit
+# Date created:		2006-08-15
+# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
+#
+# $MBSDlabs$
+# $FreeBSD$
+#
+
+PORTNAME=	exhibit
+PORTVERSION=	20060926
+CATEGORIES=	graphics
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+
+MAINTAINER=	stas@FreeBSD.org
+COMMENT=	An ETK-based image viewer
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_EFL=	evas eet ecore edje etk epsilon
+WANT_EFL=	yes
+GNU_CONFIGURE=	yes
+
+OPTIONS=	ENGRAVE "Enable E17 desktop wallpaper support" on \
+		ENLIGHTENMENT "Enable e17 desktop integration" off
+
+PLIST_FILES=	bin/exhibit %%DATADIR%%/gui.edj
+PLIST_DIRS=	%%DATADIR%%
+
+.include <bsd.port.pre.mk>
+BEFOREPORTMK=	yes
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.undef BEFOREPORTMK
+
+.if !defined(WITHOUT_ENGRAVE) || ${HAVE_EFL:Mengrave}
+USE_EFL+=	engrave
+.endif
+
+.if defined(WITH_ENLIGHTENMENT) || exists(${X11BASE}/bin/enlightenment_remote)
+BUILD_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
+RUN_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
+.endif
+
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>

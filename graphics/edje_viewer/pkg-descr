@@ -1,0 +1,5 @@
+A simple viewer for edj files. Should provide more ease of use than the edje
+viewer that comes with edje itself.
+
+Author:	urandom <vkojouharov@gmail.com>
+WWW:	http://www.enlightenment.otg/

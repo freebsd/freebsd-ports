@@ -1,0 +1,14 @@
+bin/emphasis
+%%DATADIR%%/config.glade
+%%DATADIR%%/emphasis.glade
+%%DATADIR%%/images/haricot_musique-amor.png
+%%DATADIR%%/images/haricot_musique-grrrr.png
+%%DATADIR%%/images/haricot_musique-lalaa.png
+%%DATADIR%%/images/haricot_musique-mario.png
+%%DATADIR%%/images/haricot_musique-mooo.png
+%%DATADIR%%/images/haricot_musique.png
+%%DATADIR%%/images/note.png
+%%DATADIR%%/images/sound_high.png
+%%DATADIR%%/images/sound_low.png
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

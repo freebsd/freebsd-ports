@@ -18,15 +18,13 @@ bin/exige
 %%DATADIR%%/data/e17genmenu/icons/package_toys.png
 %%DATADIR%%/data/e17genmenu/icons/package_utilities.png
 %%DATADIR%%/data/e17genmenu/icons/package_wordprocessing.png
-%%DATADIR%%/data/emblem/default.edj
-%%DATADIR%%/data/emblem/gant.edj
 %%DATADIR%%/data/entangle/default.edj
 %%DATADIR%%/data/exige/default.edj
 share/enlightenment/config-apps/entangle.eap
+@dirrmtry share/enlightenment
 @dirrmtry share/enlightenment/config-apps
 @dirrm %%DATADIR%%/data/exige
 @dirrm %%DATADIR%%/data/entangle
-@dirrm %%DATADIR%%/data/emblem
 @dirrm %%DATADIR%%/data/e17genmenu/icons
 @dirrm %%DATADIR%%/data/e17genmenu
 @dirrm %%DATADIR%%/data

@@ -1,0 +1,27 @@
+# New ports collection makefile for:	enhance
+# Date created:		2006-08-14
+# Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
+#
+# $MBSDlabs$
+# $FreeBSD$
+#
+
+PORTNAME=	enhance
+PORTVERSION=	20060926
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+
+MAINTAINER=	stas@FreeBSD.org
+COMMENT=	A library for rapid application development with ETK/Glade
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_LDCONFIG=	yes
+USE_EFL=	ecore etk exml
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>

@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	edje
-PORTVERSION=	20060516
+PORTVERSION=	20061008
+PORTREVISION=	0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-edje-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby bindings for Edje library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake \
-		${RUBY_SITEARCHLIBDIR}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas
-LIB_DEPENDS=	edje.5:${PORTSDIR}/graphics/edje
+		${RUBY_SA}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_EFL=	edje
+
+RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -35,4 +38,5 @@ do-install:
 	@(cd ${WRKSRC}; ${SETENV} EDJE_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake install)
 
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

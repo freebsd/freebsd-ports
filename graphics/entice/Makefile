@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	entice
-PORTVERSION=	0.9.3.004
-PORTREVISION=	2
+PORTVERSION=	20060926
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	vanilla
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An image viewer written using libraries for Enlightenment 0.17
 
 LIB_DEPENDS=	esmart_thumb.0:${PORTSDIR}/graphics/esmart
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+USE_BZIP2=	yes
+USE_GNOME=	gnometarget pkgconfig
+USE_EFL=	imlib2 evas edb ecore edje epsilon
+USE_EFL_ESMART=	thumb
 
 .include <bsd.port.pre.mk>
 
@@ -29,4 +29,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 BROKEN=		does not install on ${ARCH}
 .endif
 
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

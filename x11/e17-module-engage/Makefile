@@ -13,7 +13,7 @@ MASTER_SITES=	http://mbsd.msk.ru/dist/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Alternative e17 application launcher with tray support
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
@@ -30,5 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
+
+IGNORE=		doesn't compile with recent e17
 
 .include <bsd.port.mk>

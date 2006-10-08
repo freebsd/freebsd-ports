@@ -2,6 +2,6 @@ bin/elicit
 %%DATADIR%%/images/grid_cell.png
 %%DATADIR%%/themes/summer.edj
 %%DATADIR%%/themes/winter.edj
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%/images
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

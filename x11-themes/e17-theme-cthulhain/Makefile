@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	cthulhain
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
-		http://mbsd.msk.ru/dist/
+		http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	e17-theme-
-DISTNAME=	cthulhain-0.3pre2
+DISTNAME=	cthulhain-0.3pre5
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Cthulhain theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/enlightenment/data/themes/cthulhain-0.3pre2.edj
+PLIST_FILES=	share/enlightenment/data/themes/${DISTNAME}${EXTRACT_SUFX}
 
 do-extract:
 	${MKDIR} ${WRKDIR}

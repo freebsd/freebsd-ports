@@ -1,6 +1,6 @@
---- configure.orig	Tue Jul 18 17:40:53 2006
-+++ configure	Tue Jul 18 17:41:01 2006
-@@ -21861,27 +21861,6 @@
+--- configure.orig	Wed Sep 27 19:06:08 2006
++++ configure	Wed Sep 27 19:08:36 2006
+@@ -22241,27 +22241,6 @@
  _ACEOF
  
  
@@ -25,6 +25,6 @@
 -
 -
 -
- # Check whether --with-eet-prefix or --without-eet-prefix was given.
+ # Check whether --with-eet-prefix was given.
  if test "${with_eet_prefix+set}" = set; then
-   withval="$with_eet_prefix"
+   withval=$with_eet_prefix; eet_config_prefix="$withval"

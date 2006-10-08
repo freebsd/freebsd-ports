@@ -6,33 +6,25 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.999.032
+PORTVERSION=	20060926
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://enlightenment.freedesktop.org/files/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+DISTNAME=	e-${PORTVERSION}
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
-		evas.1:${PORTSDIR}/graphics/evas \
-		edje.5:${PORTSDIR}/graphics/edje \
-		ecore.1:${PORTSDIR}/x11/ecore \
-		embryo.9:${PORTSDIR}/lang/embryo \
-		eet.9:${PORTSDIR}/devel/eet
-
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_EFL=	imlib2 evas edje ecore embryo eet
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
 
 .include <bsd.port.pre.mk>
 
@@ -40,4 +32,5 @@ PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
 IGNORE=	does not build on 4.X
 .endif
 
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

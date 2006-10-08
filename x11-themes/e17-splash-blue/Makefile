@@ -8,18 +8,19 @@
 
 PORTNAME=	blue
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www0.get-e.org/Themes/Startup/_files/
+MASTER_SITES=	http://www0.get-e.org/Themes/Startup/_files/ \
+		http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	e17-splash-
 DISTNAME=	init_blue
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Blue splash screen for e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

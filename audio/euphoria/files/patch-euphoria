@@ -1,8 +1,0 @@
---- bin/euphoria.orig	Thu Jun 22 21:38:08 2006
-+++ bin/euphoria	Thu Jun 22 21:38:53 2006
-@@ -1,4 +1,4 @@
--#!/usr/bin/ruby -w
-+#!/usr/local/bin/ruby -w
- 
- # $Id: euphoria,v 1.38 2006/05/13 14:59:17 tilman Exp $
- 

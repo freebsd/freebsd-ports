@@ -1,0 +1,7 @@
+bin/extrackt
+%%DATADIR%%/etk_fe/etk_fe.edj
+%%DATADIR%%/etk_fe/extrackt.glade
+%%DATADIR%%/images/extrackt_icon.png
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/etk_fe
+@dirrm %%DATADIR%%

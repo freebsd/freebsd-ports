@@ -6,26 +6,21 @@
 #
 
 PORTNAME=	edje
-PORTVERSION=	0.5.0.032
+PORTVERSION=	20060926
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://enlightenment.freedesktop.org/files/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine
 
-LIB_DEPENDS=	embryo.9:${PORTSDIR}/lang/embryo \
-		eet.9:${PORTSDIR}/devel/eet \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
-		evas.1:${PORTSDIR}/graphics/evas \
-		ecore.1:${PORTSDIR}/x11/ecore
-
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomehack pkgconfig gnometarget
-INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_EFL=	embryo eet evas ecore imlib2
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -34,7 +29,8 @@ IGNORE=	does not build on 4.X
 .endif
 
 .if ${ARCH} == "ia64"
-BROKEN=         edje is broken on ia64
+BROKEN=		edje is broken on ia64
 .endif
 
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

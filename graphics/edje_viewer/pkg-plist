@@ -1,0 +1,7 @@
+bin/edje_viewer
+%%DATADIR%%/data/images/bg.png
+%%DATADIR%%/data/images/border.png
+%%DATADIR%%/data/images/shadow.png
+@dirrm %%DATADIR%%/data/images
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

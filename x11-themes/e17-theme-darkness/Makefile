@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	darkness
-PORTVERSION=	0.99.032.3
+PORTVERSION=	0.99.032.4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
 		http://www5.get-e.org/Themes/E17/_files/ \
-		http://mbsd.msk.ru/dist/
+		http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	e17-theme-
 DISTNAME=	${PORTNAME}_${PORTVERSION:S,.,_,g}
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Darkness theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

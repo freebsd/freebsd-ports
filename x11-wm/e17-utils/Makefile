@@ -7,35 +7,27 @@
 #
 
 PORTNAME=	utils
-PORTVERSION=	20060719
+PORTVERSION=	20060926
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 PKGNAMEPREFIX=	e17-
 DISTNAME=	e_${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Various supplementary utilities for e17 window manager
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
-		evas.1:${PORTSDIR}/graphics/evas \
-		edje.5:${PORTSDIR}/graphics/edje \
-		ecore.1:${PORTSDIR}/x11/ecore \
-		embryo.9:${PORTSDIR}/lang/embryo \
-		eet.9:${PORTSDIR}/devel/eet \
-		ewl.0:${PORTSDIR}/x11-toolkits/ewl \
-		engrave.1:${PORTSDIR}/devel/engrave \
-		epsilon.0:${PORTSDIR}/graphics/epsilon \
-		esmart_trans_x11.0:${PORTSDIR}/graphics/esmart
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
 
 DATADIR=	${PREFIX}/share/e_utils
 
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget pkgconfig
+USE_EFL=	imlib2 evas edje ecore embryo eet ewl engrave epsilon
+USE_EFL_ESMART=	trans_x11
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
+.include <bsd.port.post.mk>
