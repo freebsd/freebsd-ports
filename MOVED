@@ -2487,3 +2487,4 @@ devel/avr-gcc-devel|devel/avr-gcc|2006-10-06|make AVR-GCC 4.x the default versio
 astro/gdesklets-goodweather||2006-10-07|Expired: no longer downloadable
 deskutils/goats||2006-10-07|Expired: no longer downloadable
 net-mgmt/arpwatch-devel|net-mgmt/arpwatch|2006-10-07|Devel port no longer needed
+sysutils/gnomesu|security/libgnomesu|2006-10-08|Was broken, similar functionality provided by libgnomesu
