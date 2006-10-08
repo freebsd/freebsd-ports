@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dmenu
-PORTVERSION=	0.9
+PORTVERSION=	1.2
 CATEGORIES=	x11
-MASTER_SITES=	http://10kloc.org/download/ \
+MASTER_SITES=	http://www.shortest.de/download/ \
 		http://schot.a-eskwadraat.nl/files/
 
 MAINTAINER=	schot@a-eskwadraat.nl
