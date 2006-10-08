@@ -25,7 +25,7 @@ MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 
 MAKEFILE=	GNUmakefile
 USE_GMAKE=	yes
-USE_GCC=	3.2+
+USE_GCC=	3.3+
 USE_TCL=	84
 USE_TCL_BUILD=	84
 USE_SDL=	sdl image
@@ -35,4 +35,11 @@ USE_SDL=	sdl image
 MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} < 503000
+	@${REINPLACE_CMD} -e 's/round/rint/' ${WRKSRC}/src/Math.hh
+.endif
+
+.include <bsd.port.post.mk>
