@@ -1,8 +1,18 @@
-bin/dtplite
-lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/aes/aes.tcl
+lib/tcllib%%PORTVERSION%%/aes/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/aes
 lib/tcllib%%PORTVERSION%%/asn/asn.tcl
 lib/tcllib%%PORTVERSION%%/asn/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/asn
+lib/tcllib%%PORTVERSION%%/base32/base32.tcl
+lib/tcllib%%PORTVERSION%%/base32/base32_c.tcl
+lib/tcllib%%PORTVERSION%%/base32/base32_tcl.tcl
+lib/tcllib%%PORTVERSION%%/base32/base32core.tcl
+lib/tcllib%%PORTVERSION%%/base32/base32hex.tcl
+lib/tcllib%%PORTVERSION%%/base32/base32hex_c.tcl
+lib/tcllib%%PORTVERSION%%/base32/base32hex_tcl.tcl
+lib/tcllib%%PORTVERSION%%/base32/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/base32
 lib/tcllib%%PORTVERSION%%/base64/base64.tcl
 lib/tcllib%%PORTVERSION%%/base64/base64c.tcl
 lib/tcllib%%PORTVERSION%%/base64/pkgIndex.tcl
@@ -12,9 +22,21 @@ lib/tcllib%%PORTVERSION%%/base64/yencode.tcl
 lib/tcllib%%PORTVERSION%%/bee/bee.tcl
 lib/tcllib%%PORTVERSION%%/bee/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/bee
+lib/tcllib%%PORTVERSION%%/bench/bench.tcl
+lib/tcllib%%PORTVERSION%%/bench/bench_read.tcl
+lib/tcllib%%PORTVERSION%%/bench/bench_wcsv.tcl
+lib/tcllib%%PORTVERSION%%/bench/bench_wtext.tcl
+lib/tcllib%%PORTVERSION%%/bench/libbench.tcl
+lib/tcllib%%PORTVERSION%%/bench/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/bench
+lib/tcllib%%PORTVERSION%%/bibtex/bibtex.tcl
+lib/tcllib%%PORTVERSION%%/bibtex/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/bibtex
+lib/tcllib%%PORTVERSION%%/blowfish/blowfish.tcl
+lib/tcllib%%PORTVERSION%%/blowfish/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/blowfish
 lib/tcllib%%PORTVERSION%%/cmdline/cmdline.tcl
 lib/tcllib%%PORTVERSION%%/cmdline/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/cmdline/typedCmdline.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/cmdline
 lib/tcllib%%PORTVERSION%%/comm/comm.tcl
 lib/tcllib%%PORTVERSION%%/comm/pkgIndex.tcl
@@ -42,13 +64,23 @@ lib/tcllib%%PORTVERSION%%/csv/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/csv
 lib/tcllib%%PORTVERSION%%/des/des.tcl
 lib/tcllib%%PORTVERSION%%/des/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/des/tcldes.tcl
+lib/tcllib%%PORTVERSION%%/des/tcldesjr.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/des
 lib/tcllib%%PORTVERSION%%/dns/dns.tcl
 lib/tcllib%%PORTVERSION%%/dns/ip.tcl
+lib/tcllib%%PORTVERSION%%/dns/ipMore.tcl
+lib/tcllib%%PORTVERSION%%/dns/ipMoreC.tcl
+lib/tcllib%%PORTVERSION%%/dns/msgs/en.msg
+@dirrm lib/tcllib%%PORTVERSION%%/dns/msgs
 lib/tcllib%%PORTVERSION%%/dns/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/dns/resolv.tcl
 lib/tcllib%%PORTVERSION%%/dns/spf.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/dns
+lib/tcllib%%PORTVERSION%%/docstrip/docstrip.tcl
+lib/tcllib%%PORTVERSION%%/docstrip/docstrip_util.tcl
+lib/tcllib%%PORTVERSION%%/docstrip/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/docstrip
 lib/tcllib%%PORTVERSION%%/doctools/api.tcl
 lib/tcllib%%PORTVERSION%%/doctools/api_idx.tcl
 lib/tcllib%%PORTVERSION%%/doctools/api_toc.tcl
@@ -71,6 +103,7 @@ lib/tcllib%%PORTVERSION%%/doctools/mpformats/_xml.tcl
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/c.msg
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/de.msg
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/en.msg
+lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.desc
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.html
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.latex
 lib/tcllib%%PORTVERSION%%/doctools/mpformats/fmt.list
@@ -99,6 +132,7 @@ lib/tcllib%%PORTVERSION%%/exif/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/exif
 lib/tcllib%%PORTVERSION%%/fileutil/fileutil.tcl
 lib/tcllib%%PORTVERSION%%/fileutil/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/fileutil/traverse.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/fileutil
 lib/tcllib%%PORTVERSION%%/ftp/ftp.tcl
 lib/tcllib%%PORTVERSION%%/ftp/ftp_geturl.tcl
@@ -107,27 +141,50 @@ lib/tcllib%%PORTVERSION%%/ftp/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/ftpd/ftpd.tcl
 lib/tcllib%%PORTVERSION%%/ftpd/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ftpd
+lib/tcllib%%PORTVERSION%%/fumagic/cfront.tcl
+lib/tcllib%%PORTVERSION%%/fumagic/cgen.tcl
+lib/tcllib%%PORTVERSION%%/fumagic/filetypes.tcl
+lib/tcllib%%PORTVERSION%%/fumagic/mimetypes.tcl
+lib/tcllib%%PORTVERSION%%/fumagic/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/fumagic/rtcore.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/fumagic
 lib/tcllib%%PORTVERSION%%/grammar_fa/dacceptor.tcl
 lib/tcllib%%PORTVERSION%%/grammar_fa/dexec.tcl
 lib/tcllib%%PORTVERSION%%/grammar_fa/fa.tcl
 lib/tcllib%%PORTVERSION%%/grammar_fa/faop.tcl
 lib/tcllib%%PORTVERSION%%/grammar_fa/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/grammar_fa
+lib/tcllib%%PORTVERSION%%/grammar_me/gasm.tcl
+lib/tcllib%%PORTVERSION%%/grammar_me/me_cpu.tcl
+lib/tcllib%%PORTVERSION%%/grammar_me/me_cpucore.tcl
+lib/tcllib%%PORTVERSION%%/grammar_me/me_tcl.tcl
+lib/tcllib%%PORTVERSION%%/grammar_me/me_util.tcl
+lib/tcllib%%PORTVERSION%%/grammar_me/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/grammar_me
+lib/tcllib%%PORTVERSION%%/grammar_peg/peg.tcl
+lib/tcllib%%PORTVERSION%%/grammar_peg/peg_interp.tcl
+lib/tcllib%%PORTVERSION%%/grammar_peg/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/grammar_peg
 lib/tcllib%%PORTVERSION%%/html/html.tcl
 lib/tcllib%%PORTVERSION%%/html/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/html
-lib/tcllib%%PORTVERSION%%/http/autoproxy.tcl
-lib/tcllib%%PORTVERSION%%/http/pkgIndex.tcl
-@dirrm lib/tcllib%%PORTVERSION%%/http
 lib/tcllib%%PORTVERSION%%/htmlparse/htmlparse.tcl
 lib/tcllib%%PORTVERSION%%/htmlparse/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/htmlparse
+lib/tcllib%%PORTVERSION%%/http/autoproxy.tcl
+lib/tcllib%%PORTVERSION%%/http/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/http
 lib/tcllib%%PORTVERSION%%/ident/ident.tcl
 lib/tcllib%%PORTVERSION%%/ident/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ident
 lib/tcllib%%PORTVERSION%%/inifile/ini.tcl
 lib/tcllib%%PORTVERSION%%/inifile/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/inifile
+lib/tcllib%%PORTVERSION%%/interp/deleg_method.tcl
+lib/tcllib%%PORTVERSION%%/interp/deleg_proc.tcl
+lib/tcllib%%PORTVERSION%%/interp/interp.tcl
+lib/tcllib%%PORTVERSION%%/interp/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/interp
 lib/tcllib%%PORTVERSION%%/irc/irc.tcl
 lib/tcllib%%PORTVERSION%%/irc/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/irc
@@ -137,14 +194,24 @@ lib/tcllib%%PORTVERSION%%/javascript/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/jpeg/jpeg.tcl
 lib/tcllib%%PORTVERSION%%/jpeg/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/jpeg
+lib/tcllib%%PORTVERSION%%/json/json.tcl
+lib/tcllib%%PORTVERSION%%/json/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/json
 lib/tcllib%%PORTVERSION%%/ldap/ldap.tcl
+lib/tcllib%%PORTVERSION%%/ldap/ldapx.tcl
 lib/tcllib%%PORTVERSION%%/ldap/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ldap
 lib/tcllib%%PORTVERSION%%/log/log.tcl
 lib/tcllib%%PORTVERSION%%/log/logger.tcl
+lib/tcllib%%PORTVERSION%%/log/loggerAppender.tcl
+lib/tcllib%%PORTVERSION%%/log/loggerUtils.tcl
+lib/tcllib%%PORTVERSION%%/log/msgs/en.msg
+@dirrm lib/tcllib%%PORTVERSION%%/log/msgs
 lib/tcllib%%PORTVERSION%%/log/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/log
 lib/tcllib%%PORTVERSION%%/math/bessel.tcl
+lib/tcllib%%PORTVERSION%%/math/bigfloat.tcl
+lib/tcllib%%PORTVERSION%%/math/bigfloat2.tcl
 lib/tcllib%%PORTVERSION%%/math/bignum.tcl
 lib/tcllib%%PORTVERSION%%/math/calculus.tcl
 lib/tcllib%%PORTVERSION%%/math/classic_polyns.tcl
@@ -156,6 +223,7 @@ lib/tcllib%%PORTVERSION%%/math/fourier.tcl
 lib/tcllib%%PORTVERSION%%/math/fuzzy.tcl
 lib/tcllib%%PORTVERSION%%/math/geometry.tcl
 lib/tcllib%%PORTVERSION%%/math/interpolate.tcl
+lib/tcllib%%PORTVERSION%%/math/linalg.tcl
 lib/tcllib%%PORTVERSION%%/math/liststat.tcl
 lib/tcllib%%PORTVERSION%%/math/math.tcl
 lib/tcllib%%PORTVERSION%%/math/misc.tcl
@@ -166,6 +234,7 @@ lib/tcllib%%PORTVERSION%%/math/plotstat.tcl
 lib/tcllib%%PORTVERSION%%/math/polynomials.tcl
 lib/tcllib%%PORTVERSION%%/math/qcomplex.tcl
 lib/tcllib%%PORTVERSION%%/math/rational_funcs.tcl
+lib/tcllib%%PORTVERSION%%/math/romannumerals.tcl
 lib/tcllib%%PORTVERSION%%/math/special.tcl
 lib/tcllib%%PORTVERSION%%/math/statistics.tcl
 lib/tcllib%%PORTVERSION%%/math/tclIndex
@@ -184,7 +253,6 @@ lib/tcllib%%PORTVERSION%%/md5crypt/md5cryptc.tcl
 lib/tcllib%%PORTVERSION%%/md5crypt/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/md5crypt
 lib/tcllib%%PORTVERSION%%/mime/mime.tcl
-lib/tcllib%%PORTVERSION%%/mime/performance.tcl
 lib/tcllib%%PORTVERSION%%/mime/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/mime/smtp.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/mime
@@ -194,19 +262,71 @@ lib/tcllib%%PORTVERSION%%/multiplexer/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/ncgi/ncgi.tcl
 lib/tcllib%%PORTVERSION%%/ncgi/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ncgi
+lib/tcllib%%PORTVERSION%%/nmea/nmea.tcl
+lib/tcllib%%PORTVERSION%%/nmea/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/nmea
 lib/tcllib%%PORTVERSION%%/nntp/nntp.tcl
 lib/tcllib%%PORTVERSION%%/nntp/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/nntp
 lib/tcllib%%PORTVERSION%%/ntp/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/ntp/time.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ntp
+lib/tcllib%%PORTVERSION%%/otp/otp.tcl
+lib/tcllib%%PORTVERSION%%/otp/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/otp
+lib/tcllib%%PORTVERSION%%/page/analysis_peg_emodes.tcl
+lib/tcllib%%PORTVERSION%%/page/analysis_peg_minimize.tcl
+lib/tcllib%%PORTVERSION%%/page/analysis_peg_reachable.tcl
+lib/tcllib%%PORTVERSION%%/page/analysis_peg_realizable.tcl
+lib/tcllib%%PORTVERSION%%/page/compiler_peg_mecpu.tcl
+lib/tcllib%%PORTVERSION%%/page/gen_peg_canon.tcl
+lib/tcllib%%PORTVERSION%%/page/gen_peg_cpkg.tcl
+lib/tcllib%%PORTVERSION%%/page/gen_peg_hb.tcl
+lib/tcllib%%PORTVERSION%%/page/gen_peg_me.tcl
+lib/tcllib%%PORTVERSION%%/page/gen_peg_mecpu.tcl
+lib/tcllib%%PORTVERSION%%/page/gen_peg_ser.tcl
+lib/tcllib%%PORTVERSION%%/page/gen_tree_text.tcl
+lib/tcllib%%PORTVERSION%%/page/parse_lemon.tcl
+lib/tcllib%%PORTVERSION%%/page/parse_peg.tcl
+lib/tcllib%%PORTVERSION%%/page/parse_peghb.tcl
+lib/tcllib%%PORTVERSION%%/page/parse_pegser.tcl
+lib/tcllib%%PORTVERSION%%/page/peg_grammar.tcl
+lib/tcllib%%PORTVERSION%%/page/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/page/pluginmgr.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/config_peg.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/reader_hb.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/reader_lemon.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/reader_peg.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/reader_ser.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/reader_treeser.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/transform_mecpu.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/transform_reachable.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/transform_realizable.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_hb.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_identity.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_me.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_mecpu.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_null.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_peg.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_ser.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_tpc.tcl
+lib/tcllib%%PORTVERSION%%/page/plugins/writer_tree.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/page/plugins
+lib/tcllib%%PORTVERSION%%/page/util_flow.tcl
+lib/tcllib%%PORTVERSION%%/page/util_norm_lemon.tcl
+lib/tcllib%%PORTVERSION%%/page/util_norm_peg.tcl
+lib/tcllib%%PORTVERSION%%/page/util_peg.tcl
+lib/tcllib%%PORTVERSION%%/page/util_quote.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/page
+lib/tcllib%%PORTVERSION%%/pluginmgr/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/pluginmgr/pluginmgr.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/pluginmgr
 lib/tcllib%%PORTVERSION%%/png/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/png/png.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/png
-lib/tcllib%%PORTVERSION%%/pop3/clnt.tcl
 lib/tcllib%%PORTVERSION%%/pop3/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/pop3/pop3.tcl
-lib/tcllib%%PORTVERSION%%/pop3/srv.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/pop3
 lib/tcllib%%PORTVERSION%%/pop3d/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/pop3d/pop3d.tcl
@@ -220,21 +340,38 @@ lib/tcllib%%PORTVERSION%%/rc4/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/rc4/rc4.tcl
 lib/tcllib%%PORTVERSION%%/rc4/rc4c.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/rc4
+lib/tcllib%%PORTVERSION%%/rcs/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/rcs/rcs.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/rcs
+lib/tcllib%%PORTVERSION%%/report/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/report/report.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/report
 lib/tcllib%%PORTVERSION%%/ripemd/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/ripemd/ripemd128.tcl
 lib/tcllib%%PORTVERSION%%/ripemd/ripemd160.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/ripemd
-lib/tcllib%%PORTVERSION%%/report/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/report/report.tcl
-@dirrm lib/tcllib%%PORTVERSION%%/report
+lib/tcllib%%PORTVERSION%%/sasl/gtoken.tcl
+lib/tcllib%%PORTVERSION%%/sasl/ntlm.tcl
+lib/tcllib%%PORTVERSION%%/sasl/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/sasl/sasl.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/sasl
 lib/tcllib%%PORTVERSION%%/sha1/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/sha1/sha1.tcl
+lib/tcllib%%PORTVERSION%%/sha1/sha1c.tcl
+lib/tcllib%%PORTVERSION%%/sha1/sha1v1.tcl
+lib/tcllib%%PORTVERSION%%/sha1/sha256.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/sha1
 lib/tcllib%%PORTVERSION%%/smtpd/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/smtpd/smtpd.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/smtpd
+lib/tcllib%%PORTVERSION%%/snit/main1.tcl
+lib/tcllib%%PORTVERSION%%/snit/main1_83.tcl
+lib/tcllib%%PORTVERSION%%/snit/main2.tcl
 lib/tcllib%%PORTVERSION%%/snit/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/snit/snit.tcl
+lib/tcllib%%PORTVERSION%%/snit/snit2.tcl
+lib/tcllib%%PORTVERSION%%/snit/snit_tcl83_utils.tcl
+lib/tcllib%%PORTVERSION%%/snit/validate.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/snit
 lib/tcllib%%PORTVERSION%%/soundex/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/soundex/soundex.tcl
@@ -252,7 +389,6 @@ lib/tcllib%%PORTVERSION%%/struct/matrix.tcl
 lib/tcllib%%PORTVERSION%%/struct/matrix1.tcl
 lib/tcllib%%PORTVERSION%%/struct/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/struct/pool.tcl
-lib/tcllib%%PORTVERSION%%/struct/pooltest.tcl
 lib/tcllib%%PORTVERSION%%/struct/prioqueue.tcl
 lib/tcllib%%PORTVERSION%%/struct/queue.tcl
 lib/tcllib%%PORTVERSION%%/struct/record.tcl
@@ -263,33 +399,70 @@ lib/tcllib%%PORTVERSION%%/struct/struct.tcl
 lib/tcllib%%PORTVERSION%%/struct/struct1.tcl
 lib/tcllib%%PORTVERSION%%/struct/tree.tcl
 lib/tcllib%%PORTVERSION%%/struct/tree1.tcl
+lib/tcllib%%PORTVERSION%%/struct/tree_c.tcl
+lib/tcllib%%PORTVERSION%%/struct/tree_tcl.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/struct
 lib/tcllib%%PORTVERSION%%/tar/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/tar/tar.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/tar
-lib/tcllib%%PORTVERSION%%/tie/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/tie/tie.tcl
-lib/tcllib%%PORTVERSION%%/tie/tie_array.tcl
-lib/tcllib%%PORTVERSION%%/tie/tie_dsource.tcl
-lib/tcllib%%PORTVERSION%%/tie/tie_file.tcl
-lib/tcllib%%PORTVERSION%%/tie/tie_log.tcl
-lib/tcllib%%PORTVERSION%%/tie/tie_rarray.tcl
-@dirrm lib/tcllib%%PORTVERSION%%/tie
-lib/tcllib%%PORTVERSION%%/treeql/pkgIndex.tcl
-lib/tcllib%%PORTVERSION%%/treeql/treeql.tcl
-lib/tcllib%%PORTVERSION%%/treeql/treeql84.tcl
-@dirrm lib/tcllib%%PORTVERSION%%/treeql
+lib/tcllib%%PORTVERSION%%/term/ansi/code.tcl
+lib/tcllib%%PORTVERSION%%/term/ansi/code/attr.tcl
+lib/tcllib%%PORTVERSION%%/term/ansi/code/ctrl.tcl
+lib/tcllib%%PORTVERSION%%/term/ansi/code/macros.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/term/ansi/code
+lib/tcllib%%PORTVERSION%%/term/ansi/ctrlunix.tcl
+lib/tcllib%%PORTVERSION%%/term/ansi/send.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/term/ansi
+lib/tcllib%%PORTVERSION%%/term/bind.tcl
+lib/tcllib%%PORTVERSION%%/term/imenu.tcl
+lib/tcllib%%PORTVERSION%%/term/ipager.tcl
+lib/tcllib%%PORTVERSION%%/term/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/term/receive.tcl
+lib/tcllib%%PORTVERSION%%/term/send.tcl
+lib/tcllib%%PORTVERSION%%/term/term.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/term
 lib/tcllib%%PORTVERSION%%/textutil/adjust.tcl
 lib/tcllib%%PORTVERSION%%/textutil/dehypht.tex
 lib/tcllib%%PORTVERSION%%/textutil/eshyph_vo.tex
 lib/tcllib%%PORTVERSION%%/textutil/expander.tcl
 lib/tcllib%%PORTVERSION%%/textutil/ithyph.tex
 lib/tcllib%%PORTVERSION%%/textutil/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/textutil/repeat.tcl
 lib/tcllib%%PORTVERSION%%/textutil/split.tcl
+lib/tcllib%%PORTVERSION%%/textutil/string.tcl
 lib/tcllib%%PORTVERSION%%/textutil/tabify.tcl
 lib/tcllib%%PORTVERSION%%/textutil/textutil.tcl
 lib/tcllib%%PORTVERSION%%/textutil/trim.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/textutil
+lib/tcllib%%PORTVERSION%%/tie/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/tie/tie.tcl
+lib/tcllib%%PORTVERSION%%/tie/tie_array.tcl
+lib/tcllib%%PORTVERSION%%/tie/tie_dsource.tcl
+lib/tcllib%%PORTVERSION%%/tie/tie_file.tcl
+lib/tcllib%%PORTVERSION%%/tie/tie_growfile.tcl
+lib/tcllib%%PORTVERSION%%/tie/tie_log.tcl
+lib/tcllib%%PORTVERSION%%/tie/tie_rarray.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/tie
+lib/tcllib%%PORTVERSION%%/tiff/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/tiff/tiff.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/tiff
+lib/tcllib%%PORTVERSION%%/transfer/connect.tcl
+lib/tcllib%%PORTVERSION%%/transfer/copyops.tcl
+lib/tcllib%%PORTVERSION%%/transfer/ddest.tcl
+lib/tcllib%%PORTVERSION%%/transfer/dsource.tcl
+lib/tcllib%%PORTVERSION%%/transfer/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/transfer/receiver.tcl
+lib/tcllib%%PORTVERSION%%/transfer/tqueue.tcl
+lib/tcllib%%PORTVERSION%%/transfer/transmitter.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/transfer
+lib/tcllib%%PORTVERSION%%/treeql/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/treeql/treeql.tcl
+lib/tcllib%%PORTVERSION%%/treeql/treeql84.tcl
+lib/tcllib%%PORTVERSION%%/treeql/treeql85.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/treeql
+lib/tcllib%%PORTVERSION%%/units/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/units/units.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/units
 lib/tcllib%%PORTVERSION%%/uri/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/uri/uri.tcl
 lib/tcllib%%PORTVERSION%%/uri/urn-scheme.tcl
@@ -297,4 +470,5 @@ lib/tcllib%%PORTVERSION%%/uri/urn-scheme.tcl
 lib/tcllib%%PORTVERSION%%/uuid/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/uuid/uuid.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/uuid
+lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%
