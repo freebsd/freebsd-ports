@@ -3950,6 +3950,7 @@ gtk20		ports/x11-toolkits/gtk20
 gtk20-reference	ports/x11-toolkits/gtk20-reference
 gtkabale	ports/games/gtkabale
 gtkada		ports/x11-toolkits/gtkada
+gtkada-devel	ports/x11-toolkits/gtkada-devel
 gtkam		ports/graphics/gtkam
 gtkatlantic	ports/games/gtkatlantic
 gtkballs	ports/games/gtkballs
