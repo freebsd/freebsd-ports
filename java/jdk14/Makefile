@@ -7,13 +7,14 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
 SCSL_SRCFILE=	j2sdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
 SCSL_BINFILE=	j2sdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk14-patches-${JDK_PATCHSET_VERSION}.tar.gz
+POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
 DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
@@ -24,9 +25,13 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/include/nspr/prtypes.h:${PORTSDIR}/devel/nspr
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-.if !defined(MINIMAL)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
-.endif
+
+
+OPTIONS=	DEBUG	"Enable debugging support"	off \
+		IPV6	"Enable IPv6 support"		off \
+		IPV6_ONLY	"Only support IPv6"		off \
+		POLICY	"Install the Unlimited Strength Policy Files"	off \
+		WEB	"Enable the browser plugin and Java Web Start"	on
 
 .if defined(WITH_OPENMOTIF_JDK)
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/open-motif-jdk:extract
@@ -64,6 +69,19 @@ LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2_03 \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_POLICY)
+DISTFILES+=	${POLICYFILE}
+EXTRACT_ONLY+=	${POLICYFILE}
+.endif
+
+.if defined(WITH_WEB)
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
+.endif
+
+.if defined(WITH_IPV6_ONLY)
+CFLAGS+=	-DIPV6_V6ONLY
+.endif
+
 .if defined(WITH_OPENMOTIF_JDK)
 OPENMOTIF_DIR=	${WRKDIR}/jdkmotif
 .else
@@ -98,7 +116,7 @@ BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 
 # workaround to handle both 'zip' and 'tar.gz' distfiles
 USE_ZIP=	YES
-EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
+EXTRACT_ONLY+=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	YES
@@ -113,7 +131,7 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
 		MAKEFLAGS=""
-.if defined(MINIMAL)
+.if defined(WITHOUT_WEB)
 MAKE_ENV+=	NO_PLUGIN="YES" \
 		NO_JAVAWS="YES"
 .endif
@@ -126,11 +144,11 @@ PLIST_DIRS=	jdk${JDK_VERSION}/jre/.systemPrefs
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i586/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i586/j2sdk-debug-image
 
-.if !defined(WITH_IPV6)
+.if defined(WITHOUT_IPV6)
 EXTRA_PATCHES+=	${PATCHDIR}/disable-ipv6.patch
 .endif
 
-.if defined(MINIMAL)
+.if defined(WITHOUT_WEB)
 PKGNAMESUFFIX=	-minimal
 .endif
 
@@ -147,7 +165,7 @@ PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 LD_LIBRARY_PATH_FILES=	../../hotspot/src/os/bsd/vm/os_bsd.cpp
 
 # Check for JDK sources and patch file
-.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
@@ -167,11 +185,20 @@ IGNORE += and the\n
 IGNORE += SCSL Binaries file, ${SCSL_BINFILE}
 .endif#}
 IGNORE += .\n\n
+.if !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#{
+IGNORE += In addition, please
+.endif#}
+.elif !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#}{
+IGNORE += Please
+.endif#}
+.if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
+IGNORE += open http://java.sun.com/products/jce/index-14.html\n\
+in a web browser and follow the \"Download JCE Unlimited Strength\n\
+Jurisdiction Policy Files\" link for \"Other Downloads\" to obtain the\n\
+JCE policy file, ${POLICYFILE}.\n\n
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
 IGNORE += In addition, please
 .endif#}
-.elif !exists(${DISTDIR}/${PATCHSETFILE})
-IGNORE += Please
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
 IGNORE += download the patchset, ${PATCHSETFILE}, from\n\
@@ -214,16 +241,6 @@ pre-fetch:	check-os
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
 .endif
-	@${ECHO_MSG} "Following port compile time options are available:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "    WITH_DEBUG  - install JDK binaries and libraries"
-	@${ECHO_MSG} "                  with debuging support"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "    MINIMAL     - don't build/install mozilla java"
-	@${ECHO_MSG} "                  plugin, javaws and JDK demos"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "    WITH_IPV6   - enable JDK IPv6 support"
-	@${ECHO_MSG}
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
@@ -301,13 +318,7 @@ post-build:
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja_JP.eucJP
 
 pre-install:
-.if !defined(WITH_DEBUG)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Please use \`make -DWITH_DEBUG' if you want to install libraries and binaries"
-	@${ECHO_MSG} "with debugging support."
-	@${ECHO_MSG}
-.endif
-.if defined(MINIMAL)
+.if defined(WITHOUT_WEB)
 	@${RM} -rf ${JDKIMAGEDIR}/demo
 .endif
 
@@ -326,7 +337,10 @@ do-install:
 .endif
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 		${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
-.if !defined(MINIMAL)
+.if defined(WITH_POLICY)
+	${INSTALL_DATA} ${WRKDIR}/jce/*.jar ${PREFIX}/jdk${JDK_VERSION}/jre/lib/security
+.endif
+.if defined(WITH_WEB)
 	${INSTALL_DATA} ${FILESDIR}/cacerts \
 		${PREFIX}/jdk${JDK_VERSION}/jre/javaws/cacerts
 .endif
@@ -335,7 +349,7 @@ do-install:
 	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${TMPPLIST}
 
 post-install:
-.if !defined(MINIMAL)
+.if defined(WITH_WEB)
 	${FIND} "${PREFIX}/jdk${JDK_VERSION}/jre/plugin" -type d | ${XARGS} ${CHMOD} a+rx
 .endif
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
