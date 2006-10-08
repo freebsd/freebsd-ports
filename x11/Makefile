@@ -49,6 +49,7 @@
     SUBDIR += e17-module-language
     SUBDIR += e17-module-mail
     SUBDIR += e17-module-mem
+    SUBDIR += e17-module-mixer
     SUBDIR += e17-module-moon
     SUBDIR += e17-module-rain
     SUBDIR += e17-module-screenshot
@@ -56,11 +57,14 @@
     SUBDIR += e17-module-snow
     SUBDIR += e17-module-uptime
     SUBDIR += e17-module-weather
+    SUBDIR += e17-module-winselector
     SUBDIR += ebuttons
     SUBDIR += ecore
     SUBDIR += electricsheep
     SUBDIR += elicit
     SUBDIR += emu
+    SUBDIR += enity
+    SUBDIR += enterminus
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += examine
