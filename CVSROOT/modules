@@ -440,6 +440,7 @@ aqbanking	ports/finance/aqbanking
 aqbubble	ports/games/aqbubble
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
+aqualung	ports/audio/aqualung
 ar-ae_fonts_mono	ports/arabic/ae_fonts_mono
 ar-ae_fonts_ttf	ports/arabic/ae_fonts_ttf
 ar-arabtex	ports/arabic/arabtex
