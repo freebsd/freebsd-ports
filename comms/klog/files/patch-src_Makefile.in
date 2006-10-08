@@ -1,0 +1,42 @@
+--- src/Makefile.in.orig	Sun Jan 15 14:40:13 2006
++++ src/Makefile.in	Thu May  4 02:28:53 2006
+@@ -111,7 +111,7 @@
+ LIBS = @LIBS@
+ LIBSM = @LIBSM@
+ LIBSOCKET = @LIBSOCKET@
+-LIBTOOL = @LIBTOOL@
++LIBTOOL = libtool
+ LIBUCB = @LIBUCB@
+ LIBUTIL = @LIBUTIL@
+ LIBZ = @LIBZ@
+@@ -396,7 +396,7 @@
+ 
+ HEADERS = $(noinst_HEADERS)
+ 
+-DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.in Makefile.am
++DIST_COMMON = $(noinst_HEADERS)
+ SOURCES = $(klog_SOURCES)
+ 
+ #>- all: all-am
+@@ -405,15 +405,15 @@
+ 
+ .SUFFIXES:
+ .SUFFIXES: .cpp .lo .o .obj
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
++#$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+ #>- 	cd $(top_srcdir) && \
+ #>- 	  $(AUTOMAKE) --gnu  src/Makefile
+ #>+ 3
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  src/Makefile
+-	cd $(top_srcdir) && perl admin/am_edit src/Makefile.in
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
++#	cd $(top_srcdir) && \
++#	  $(AUTOMAKE) --gnu  src/Makefile
++#	cd $(top_srcdir) && perl admin/am_edit src/Makefile.in
++#Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
++#	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)

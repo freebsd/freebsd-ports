@@ -1,0 +1,33 @@
+--- doc/Makefile.in.orig	Sat Jan  7 14:03:58 2006
++++ doc/Makefile.in	Thu May  4 01:00:17 2006
+@@ -290,15 +290,15 @@
+ all: docs-am  all-recursive
+ 
+ .SUFFIXES:
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
++#$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+ #>- 	cd $(top_srcdir) && \
+ #>- 	  $(AUTOMAKE) --gnu  doc/Makefile
+ #>+ 3
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  doc/Makefile
+-	cd $(top_srcdir) && perl admin/am_edit doc/Makefile.in
+-Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+-	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
++#	cd $(top_srcdir) && \
++#	  $(AUTOMAKE) --gnu  doc/Makefile
++#	cd $(top_srcdir) && perl admin/am_edit doc/Makefile.in
++#Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
++#	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ 
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+@@ -435,7 +435,7 @@
+ 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 1
+-DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
++DISTFILES = $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+ 
+ top_distdir = ..
+ distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
