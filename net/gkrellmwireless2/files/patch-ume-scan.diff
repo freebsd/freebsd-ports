@@ -1,0 +1,137 @@
+Index: wireless.c
+diff -u wireless.c.orig wireless.c
+--- wireless.c.orig	Sat Dec  6 22:19:55 2003
++++ wireless.c	Mon May 15 00:18:15 2006
+@@ -94,6 +94,37 @@
+ #if defined(__FreeBSD__) || defined(__NetBSD__)
+ /* FreeBSD & NetBSD specific */
+ 
++#if defined(__FreeBSD__) && __FreeBSD_version >= 600034
++static gint
++find_scan_card(void) {
++  gint ret = FALSE;
++  struct ifaddrs *res = NULL, *ifa = NULL;
++  struct ifmediareq ifmr;
++  int s;
++
++  if (getifaddrs(&res) != 0)
++    return ret;
++  if ((s = socket(PF_INET, SOCK_DGRAM, 0)) < 0) {
++    freeifaddrs(res);
++    return ret;
++  }
++  for (ifa = res; ifa; ifa = ifa->ifa_next) {
++    memset(&ifmr, 0, sizeof(ifmr));
++    strncpy(ifmr.ifm_name, ifa->ifa_name, sizeof(ifmr.ifm_name));
++    if (ioctl(s, SIOCGIFMEDIA, (caddr_t)&ifmr) < 0)
++      continue;
++    if (!(ifmr.ifm_status & IFM_AVALID))
++      continue;
++    if (IFM_TYPE(ifmr.ifm_active) != IFM_IEEE80211)
++      continue;
++    if (found_wcard(ifa->ifa_name) != NULL)
++      ret = TRUE;
++  }
++  close(s);
++  freeifaddrs(res);
++  return ret;
++}
++#else
+ static int
+ find_wi_card(void) {
+   /* possible interfaces */
+@@ -162,18 +193,55 @@
+   return ret;
+ }
+ #endif /* !defined(__NetBSD__) */
++#endif /* defined(__FreeBSD__) && __FreeBSD_version >= 600034 */
+ 
+ static gint 
+ find_wlancard(void) {
+   gint ret = FALSE;
+- 
++
++#if defined(__FreeBSD__) && __FreeBSD_version >= 600034
++  ret = find_scan_card();
++#else
+   ret = find_wi_card();
+ #if !defined(__NetBSD__)
+   ret = find_an_card() || ret;
+ #endif /* !defined(__NetBSD__) */
++#endif /* defined(__FreeBSD__) && __FreeBSD_version >= 600034 */
+   return ret;
+ }
+ 
++#if defined(__FreeBSD__) && __FreeBSD_version >= 600034
++static int
++get_scan_link_quality(wcard_t *card, float *quality, float *level, float *noise) {
++  int s;
++  uint8_t buf[24 * 1024];
++  struct ieee80211req ireq;
++  struct ieee80211req_scan_result *sr;
++
++  /* open a socket for ioctl's */
++  if ((s = socket(AF_INET, SOCK_DGRAM, 0)) == -1) return FALSE;
++
++  memset(&ireq, 0, sizeof(ireq));
++  strncpy(ireq.i_name, card->ifname, sizeof(ireq.i_name));
++  ireq.i_type = IEEE80211_IOC_SCAN_RESULTS;
++  ireq.i_data = buf;
++  ireq.i_len = sizeof(buf);
++  if (ioctl(s, SIOCG80211, &ireq) < 0) {
++    close(s);
++    return FALSE;
++  }
++  close(s);
++  if (ireq.i_len < sizeof(struct ieee80211req_scan_result))
++    return FALSE;
++
++  sr = (struct ieee80211req_scan_result *) buf;
++  *quality = sr->isr_intval;
++  *level = sr->isr_rssi;
++  *noise = sr->isr_noise;
++  return TRUE;
++}
++#endif /* defined(__FreeBSD__) && __FreeBSD_version >= 600034 */
++
+ static int
+ get_wi_link_quality(wcard_t *card, float *quality, float *level, float *noise) {
+   /* wireless info request struct */
+@@ -257,6 +325,13 @@
+ 
+ static int
+ get_link_quality(wcard_t *card, float *quality, float *level, float *noise) {
++#if defined(__FreeBSD__) && __FreeBSD_version >= 600034
++  if (strncmp(card->ifname, "an", 2) == 0 && isnumber(card->ifname[2]))
++    return get_an_link_quality(card,quality,level,noise);
++  else if (strncmp(card->ifname, "wi", 2) == 0 && isnumber(card->ifname[2]))
++    return get_wi_link_quality(card,quality,level,noise);
++  return get_scan_link_quality(card,quality,level,noise);
++#else
+   switch (card->ifname[0]) { 
+ #if !defined(__NetBSD__)
+     case 'a': /* an card */
+@@ -266,6 +341,7 @@
+       return get_wi_link_quality(card,quality,level,noise);
+   }
+   return FALSE;
++#endif
+ }
+ 
+ static int
+Index: wireless.h
+diff -u wireless.h.orig wireless.h
+--- wireless.h.orig	Sat Dec  6 22:19:55 2003
++++ wireless.h	Sun May 14 23:45:09 2006
+@@ -24,6 +24,11 @@
+   #include <sys/socket.h>
+   #include <sys/sockio.h>
+   #include <net/if.h>
++#if __FreeBSD_version >= 600034
++  #include <net/if_media.h>
++  #include <net80211/ieee80211_ioctl.h>
++  #include <ifaddrs.h>
++#endif
+   #if __FreeBSD_version >= 470000
+     #include <dev/wi/if_wavelan_ieee.h>
+   #else
