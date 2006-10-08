@@ -1,9 +1,5 @@
 bin/et-omni-bot
 bin/etded-omni-bot
-%%ETPUB%%@exec cd %D/%%DATADIR%%/etpub && mv qagame.mp.i386.so qagame.mp.i386.so.old
-%%ETPUB%%%%DATADIR%%/etpub/qagame.mp.i386.so
-%%ETPUB%%@unexec cd %D/%%DATADIR%%/etpub && mv qagame.mp.i386.so.old qagame.mp.i386.so
-%%ETPUB%%%%DATADIR%%/etpub/omnibot_etpub.pk3
 %%DATADIR%%/omni-bot/et/nav/et_custom_wps.zip
 %%DATADIR%%/omni-bot/et/nav/et_mapscripts.zip
 %%DATADIR%%/omni-bot/et/nav/et_official_wps.zip
