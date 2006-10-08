@@ -1,0 +1,11 @@
+--- inject/injnews.orig	Thu Sep  8 21:35:53 1994
++++ inject/injnews	Sat Oct  7 19:51:47 2006
+@@ -118,7 +118,7 @@
+ 			# unApproved article: mail to a moderator.
+ 			moderator="` modroute $ng `"
+ 			echo "mailing your article to $moderator"
+-			mail "$moderator" <$censart
++			/usr/sbin/sendmail -oem -odb -oi "$moderator" <$censart
+ 			;;
+ 		esac
+ 		trap "$justcleanup" 0	# normal exit - no dead.article
