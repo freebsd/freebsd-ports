@@ -8,8 +8,8 @@ HelixPlayer/hxplay
 HelixPlayer/hxplay.bin
 HelixPlayer/lib/libgtkhx.so
 HelixPlayer/lib/libgtkhx.so.0
-HelixPlayer/mozilla/nphelix.so
-HelixPlayer/mozilla/nphelix.xpt
+%%PLUGIN%%HelixPlayer/mozilla/nphelix.so
+%%PLUGIN%%HelixPlayer/mozilla/nphelix.xpt
 HelixPlayer/plugins/audplin.so
 HelixPlayer/plugins/aufformat.so
 HelixPlayer/plugins/authmgr.so
@@ -22,7 +22,7 @@ HelixPlayer/plugins/hxsdp.so
 HelixPlayer/plugins/hxxml.so
 HelixPlayer/plugins/jpgfformat.so
 HelixPlayer/plugins/jpgrender.so
-HelixPlayer/plugins/memfsys.so
+%%PLUGIN%%HelixPlayer/plugins/memfsys.so
 HelixPlayer/plugins/oggfformat.so
 HelixPlayer/plugins/pcmrend.so
 HelixPlayer/plugins/pngfformat.so
@@ -184,7 +184,7 @@ share/applications/hxplay.desktop
 @dirrm HelixPlayer/share
 @dirrm HelixPlayer/postinst
 @dirrm HelixPlayer/plugins
-@dirrm HelixPlayer/mozilla
+%%PLUGIN%%@dirrm HelixPlayer/mozilla
 @dirrm HelixPlayer/lib
 @dirrm HelixPlayer/doc
 @dirrm HelixPlayer/common
