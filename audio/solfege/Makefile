@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,7 +41,7 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .else
 .if !defined(DISPLAY) || ${DISPLAY} == ""
-IGNORE=		Requires an active X session (and DISPLAY variable).  Please compile this while running X.
+IGNORE=		requires an active X session (and DISPLAY variable).  Please compile this while running X
 .endif
 .endif
 
