@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +17,10 @@ COMMENT=	A C and math library for the Atmel AVR controller family
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		avr-gcc:${PORTSDIR}/devel/avr-gcc-3
+		avr-gcc:${PORTSDIR}/devel/avr-gcc
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		avr-gcc:${PORTSDIR}/devel/avr-gcc-3
+		avr-gcc:${PORTSDIR}/devel/avr-gcc
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		latex:${PORTSDIR}/print/teTeX \

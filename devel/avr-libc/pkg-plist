@@ -36,8 +36,12 @@ avr/include/avr/iom162.h
 avr/include/avr/iom163.h
 avr/include/avr/iom164.h
 avr/include/avr/iom165.h
+avr/include/avr/iom165p.h
 avr/include/avr/iom168.h
 avr/include/avr/iom169.h
+avr/include/avr/iom169p.h
+avr/include/avr/iom2560.h
+avr/include/avr/iom2561.h
 avr/include/avr/iom32.h
 avr/include/avr/iom323.h
 avr/include/avr/iom324.h
@@ -89,6 +93,7 @@ avr/include/avr/iousbxx6_7.h
 avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
 avr/include/avr/portpins.h
+avr/include/avr/power.h
 avr/include/avr/sfr_defs.h
 avr/include/avr/signal.h
 avr/include/avr/sleep.h
@@ -146,8 +151,10 @@ avr/lib/avr5/crtm162.o
 avr/lib/avr5/crtm163.o
 avr/lib/avr5/crtm164p.o
 avr/lib/avr5/crtm165.o
+avr/lib/avr5/crtm165p.o
 avr/lib/avr5/crtm168.o
 avr/lib/avr5/crtm169.o
+avr/lib/avr5/crtm169p.o
 avr/lib/avr5/crtm32.o
 avr/lib/avr5/crtm323.o
 avr/lib/avr5/crtm324p.o
@@ -174,6 +181,14 @@ avr/lib/avr5/libprintf_flt.a
 avr/lib/avr5/libprintf_min.a
 avr/lib/avr5/libscanf_flt.a
 avr/lib/avr5/libscanf_min.a
+avr/lib/avr6/crtm2560.o
+avr/lib/avr6/crtm2561.o
+avr/lib/avr6/libc.a
+avr/lib/avr6/libm.a
+avr/lib/avr6/libprintf_flt.a
+avr/lib/avr6/libprintf_min.a
+avr/lib/avr6/libscanf_flt.a
+avr/lib/avr6/libscanf_min.a
 avr/lib/crt86401.o
 avr/lib/crtc8534.o
 avr/lib/crts1200.o
