@@ -1,3 +1,6 @@
+bin/dtplit
+bin/page
+bin/tcldocstrip
 lib/tcllib%%PORTVERSION%%/aes/aes.tcl
 lib/tcllib%%PORTVERSION%%/aes/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/aes
