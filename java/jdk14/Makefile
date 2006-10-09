@@ -29,7 +29,6 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 OPTIONS=	DEBUG	"Enable debugging support"	off \
 		IPV6	"Enable IPv6 support"		off \
-		IPV6_ONLY	"Only support IPv6"		off \
 		POLICY	"Install the Unlimited Strength Policy Files"	off \
 		WEB	"Enable the browser plugin and Java Web Start"	on
 
@@ -76,10 +75,6 @@ EXTRACT_ONLY+=	${POLICYFILE}
 
 .if defined(WITH_WEB)
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
-.endif
-
-.if defined(WITH_IPV6_ONLY)
-CFLAGS+=	-DIPV6_V6ONLY
 .endif
 
 .if defined(WITH_OPENMOTIF_JDK)
