@@ -15,6 +15,7 @@ DISTNAME=	cynthiune.app_${PORTVERSION}.orig
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Romantic music player for GNUstep
 
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 LIB_DEPENDS+=	tag.5:${PORTSDIR}/audio/taglib
 LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
 LIB_DEPENDS+=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
