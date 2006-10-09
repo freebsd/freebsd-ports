@@ -1,50 +1,44 @@
 # New ports collection makefile for:	mysqltcl
-# Date created:				August 31, 1999
-# Whom:					Mikhail Teterin <mi@aldan.algebra.com>
+# Date created:				Thu Sep 28 16:07:00 CET 2006
+# Whom:					Martin Matuska <martin@matuska.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mysqltcl
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	databases tcl83 tcl84
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
 MAINTAINER=	bkoenig@cs.tu-berlin.de
 COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 
-LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
-
+USE_LDCONFIG=	yes
 USE_MYSQL=	yes
-TCL_VERSION?=	tcl8.4
-TCL_NODOT=	${TCL_VERSION:S/.//}
-SQL_DIR=	${PREFIX}/lib/${TCL_VERSION}/mysqltcl
-PLIST_SUB+=	TCL_VERSION=${TCL_VERSION} LIB_NAME=${LIB_NAME}
+USE_TCL=	yes
+USE_TCL_BUILD=	yes
+
 MANN=		mysqltcl.n
-MAKE_ENV+=	PORTVERSION="${PORTVERSION}" \
-		TCL_VERSION="${TCL_VERSION}" \
-		TCL_NODOT="${TCL_NODOT}"
-MAKEFILE=	${FILESDIR}/Makefile.bsd
-ALL_TARGET=	shlib
-REINPLACE_ARGS=	-i ''
+
+GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
+			--with-mysql-include=${LOCALBASE}/include/mysql \
+			--with-mysql-lib=${LOCALBASE}/lib/mysql
+
+PLIST_SUB+=		LIB_DIR=${PORTNAME}-${PORTVERSION} \
+			LIB_NAME=libmysqltcl${PORTVERSION}.so
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's, *,,' ${WRKSRC}/generic/*.[ch]
 
-do-install:
-	@${MKDIR} ${SQL_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/${LIB_NAME} ${SQL_DIR}
-	@${ECHO} "package ifneeded mysqltcl ${PORTVERSION} {load ${SQL_DIR}/${LIB_NAME}}" \
-		> ${SQL_DIR}/pkgIndex.tcl
-	@${INSTALL_MAN} ${WRKSRC}/doc/${MANN} ${PREFIX}/man/mann
-
 post-install:
 	@${TEST} ! -f ${PKGMESSAGE} || ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 
 .if ${MYSQL_VER} == 323 || ${MYSQL_VER} == 40
 PKGMESSAGE=	${PKGDIR}/pkg-message-legacy
 .endif
-
-LIB_NAME!=	${MAKE_ENV} ${MAKE} -f ${FILESDIR}/Makefile.bsd -V SHLIB_NAME

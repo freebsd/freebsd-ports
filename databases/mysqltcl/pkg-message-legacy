@@ -14,7 +14,6 @@
   - nextresult
   - warningcount
   - setserverversion
-  - shutdown
 
  This is not supported by the author of mysqltcl. Please
  send comments and questions solely to me.
