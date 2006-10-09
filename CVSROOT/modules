@@ -3195,6 +3195,7 @@ gentium		ports/x11-fonts/gentium
 gentoo		ports/x11-fm/gentoo
 geogebra-i18n	ports/math/geogebra-i18n
 geolizer	ports/www/geolizer
+geomgui		ports/sysutils/geomgui
 geomorph	ports/graphics/geomorph
 geomview	ports/graphics/geomview
 geonext		ports/math/geonext
