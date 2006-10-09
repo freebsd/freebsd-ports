@@ -103,6 +103,8 @@
 %%PYTHON_SITELIBDIR%%/myghty/paster_templates/simple/setup.py_tmpl
 %%PYTHON_SITELIBDIR%%/myghty/request.py
 %%PYTHON_SITELIBDIR%%/myghty/request.pyc
+%%PYTHON_SITELIBDIR%%/myghty/requestbuffer.py
+%%PYTHON_SITELIBDIR%%/myghty/requestbuffer.pyc
 %%PYTHON_SITELIBDIR%%/myghty/resolver.py
 %%PYTHON_SITELIBDIR%%/myghty/resolver.pyc
 %%PYTHON_SITELIBDIR%%/myghty/session.py
