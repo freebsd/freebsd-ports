@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BSD-Sysctl
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DL/DLAND
@@ -14,9 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Fetch sysctl values from BSD-like systems
-
-NOT_FOR_ARCHS=	amd64
-NOT_FOR_ARCHS_REASON_amd64=	lack of machine/bootinfo.h to compile
 
 PERL_CONFIGURE=	yes
 
