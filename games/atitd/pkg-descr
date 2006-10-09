@@ -6,13 +6,14 @@ A free 24 hour demo period is provided for new users to evaluate this game.
 System Requirements:
 
 	Required:
-		Pentium 400
-		192Mb Ram
-		3D Accelerator
+		Pentium III 700
+		512 MB RAM
+		32MB 3D Accelerator Graphics Card
+
 	Recommended:
-		Pentium 700+
-		256Mb Ram
-		GeForce video card
+		Pentium 4 1 GHz
+		768 MB RAM
+		GeForce FX/Radeon 9600+
 
 - NVIDIA users may have to reinstall the nvidia-driver port as installing
   this port may cause the linux_dri port to be installed.  Alternately move
