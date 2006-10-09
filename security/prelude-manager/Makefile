@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.6.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -19,7 +19,7 @@ LIB_DEPENDS+=	prelude.[6-?]:${PORTSDIR}/security/libprelude \
 USE_GPG=	yes
 SIG_SUFFIX=	.sig
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
