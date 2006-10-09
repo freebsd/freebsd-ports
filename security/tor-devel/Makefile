@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.2.1
+PORTVERSION=	0.1.2.2
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/ \
 		http://mirror.onionland.org/dist/
@@ -51,9 +51,10 @@ pre-install:
 		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${MKDIR} /var/run/tor
+	@${CHOWN} _tor:_tor /var/run/tor
 	@${TOUCH} /var/log/tor
 	@${CHOWN} _tor:_tor /var/log/tor
-	@${MKDIR} /var/db/tor
 	@${MKDIR} /var/db/tor/data
 	@${CHOWN} _tor:_tor /var/db/tor
 	@${CAT} ${PKGMESSAGE}
