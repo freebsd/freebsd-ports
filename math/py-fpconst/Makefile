@@ -13,6 +13,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=		rui@ruilopes.com
 COMMENT=		Utilities for handling IEEE 754 floating point special values
 
+MASTER_SITE_FREEBSD=	yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
