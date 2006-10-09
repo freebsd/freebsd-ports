@@ -421,6 +421,7 @@
     SUBDIR += p5-Net-Address-Ethernet
     SUBDIR += p5-Net-Address-IPv4-Local
     SUBDIR += p5-Net-Amazon
+    SUBDIR += p5-Net-Amazon-S3
     SUBDIR += p5-Net-Analysis
     SUBDIR += p5-Net-BGP
     SUBDIR += p5-Net-Blogger
