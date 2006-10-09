@@ -74,6 +74,7 @@ test:
 	@set -x ; if ! (cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test);	\
 	then	\
 		${CAT} ${WRKSRC}/testlog.failures;	\
+		${UNAME} -a	\
 		${FALSE};	\
 	fi
 
