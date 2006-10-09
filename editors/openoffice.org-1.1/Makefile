@@ -107,16 +107,15 @@ PKGNAMEPREFIX=          ${LANG_PKGNAME}-
 PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
-BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
-RUN_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
+BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 # FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
-CC=	ccache gcc33
-CXX=	ccache g++33
+CC=	ccache gcc32
+CXX=	ccache g++32
 .else
-CC=	gcc33
-CXX=	g++33
+CC=	gcc32
+CXX=	g++32
 .endif
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -135,7 +134,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf --enable-crashdump --enable-symbols=SMALL
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf #--enable-crashdump --enable-symbols=SMALL #gcc3.2.3 is broken with -g1
 
 .include <${FILESDIR}/Makefile.knobs>
 
