@@ -22,6 +22,7 @@ include/gretl/gretl_intl.h
 include/gretl/gretl_list.h
 include/gretl/gretl_matrix.h
 include/gretl/gretl_model.h
+include/gretl/gretl_panel.h
 include/gretl/gretl_paths.h
 include/gretl/gretl_prn.h
 include/gretl/gretl_restrict.h
@@ -55,34 +56,90 @@ include/gretl/tsls.h
 include/gretl/usermat.h
 include/gretl/var.h
 include/gretl/varprint.h
+lib/gretl-gtk2/arma.a
+lib/gretl-gtk2/arma.la
 lib/gretl-gtk2/arma.so
+lib/gretl-gtk2/arma_x12.a
+lib/gretl-gtk2/arma_x12.la
 lib/gretl-gtk2/arma_x12.so
 lib/gretl-gtk2/data/urcdata.gz
+lib/gretl-gtk2/eviews_import.a
+lib/gretl-gtk2/eviews_import.la
 lib/gretl-gtk2/eviews_import.so
+lib/gretl-gtk2/excel_import.a
+lib/gretl-gtk2/excel_import.la
 lib/gretl-gtk2/excel_import.so
+lib/gretl-gtk2/fractals.a
+lib/gretl-gtk2/fractals.la
 lib/gretl-gtk2/fractals.so
+lib/gretl-gtk2/garch.a
+lib/gretl-gtk2/garch.la
 lib/gretl-gtk2/garch.so
+lib/gretl-gtk2/gnumeric_import.a
+lib/gretl-gtk2/gnumeric_import.la
 lib/gretl-gtk2/gnumeric_import.so
+lib/gretl-gtk2/gretlzip.a
+lib/gretl-gtk2/gretlzip.la
+lib/gretl-gtk2/gretlzip.so
+lib/gretl-gtk2/jmulti_import.a
+lib/gretl-gtk2/jmulti_import.la
+lib/gretl-gtk2/jmulti_import.so
+lib/gretl-gtk2/johansen.a
+lib/gretl-gtk2/johansen.la
 lib/gretl-gtk2/johansen.so
+lib/gretl-gtk2/kernel.a
+lib/gretl-gtk2/kernel.la
 lib/gretl-gtk2/kernel.so
+lib/gretl-gtk2/lad.a
+lib/gretl-gtk2/lad.la
 lib/gretl-gtk2/lad.so
+lib/gretl-gtk2/leverage.a
+lib/gretl-gtk2/leverage.la
 lib/gretl-gtk2/leverage.so
+lib/gretl-gtk2/mailer.a
+lib/gretl-gtk2/mailer.la
 lib/gretl-gtk2/mailer.so
+lib/gretl-gtk2/mp_ols.a
+lib/gretl-gtk2/mp_ols.la
 lib/gretl-gtk2/mp_ols.so
+lib/gretl-gtk2/nistcheck.a
+lib/gretl-gtk2/nistcheck.la
 lib/gretl-gtk2/nistcheck.so
-lib/gretl-gtk2/panel_data.so
+lib/gretl-gtk2/pca.a
+lib/gretl-gtk2/pca.la
 lib/gretl-gtk2/pca.so
+lib/gretl-gtk2/poisson.a
+lib/gretl-gtk2/poisson.la
 lib/gretl-gtk2/poisson.so
+lib/gretl-gtk2/progress_bar.a
+lib/gretl-gtk2/progress_bar.la
 lib/gretl-gtk2/progress_bar.so
+lib/gretl-gtk2/range-mean.a
+lib/gretl-gtk2/range-mean.la
 lib/gretl-gtk2/range-mean.so
+lib/gretl-gtk2/stata_import.a
+lib/gretl-gtk2/stata_import.la
 lib/gretl-gtk2/stata_import.so
+lib/gretl-gtk2/stats_tables.a
+lib/gretl-gtk2/stats_tables.la
 lib/gretl-gtk2/stats_tables.so
+lib/gretl-gtk2/sysest.a
+lib/gretl-gtk2/sysest.la
 lib/gretl-gtk2/sysest.so
+lib/gretl-gtk2/tobit.a
+lib/gretl-gtk2/tobit.la
 lib/gretl-gtk2/tobit.so
+lib/gretl-gtk2/tramo-x12a.a
+lib/gretl-gtk2/tramo-x12a.la
 lib/gretl-gtk2/tramo-x12a.so
+lib/gretl-gtk2/urcdist.a
+lib/gretl-gtk2/urcdist.la
 lib/gretl-gtk2/urcdist.so
+lib/gretl-gtk2/vif.a
+lib/gretl-gtk2/vif.la
 lib/gretl-gtk2/vif.so
 lib/libgretl-1.0.a
+lib/libgretl-1.0.la
 lib/libgretl-1.0.so
 lib/libgretl-1.0.so.0
 libdata/pkgconfig/gretl.pc
@@ -208,6 +265,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/djclose.gdt
 %%DATADIR%%/data/misc/ects_nls.gdt
 %%DATADIR%%/data/misc/hamilton.gdt
+%%DATADIR%%/data/misc/hendry_jae.gdt
 %%DATADIR%%/data/misc/jgm-data.gdt
 %%DATADIR%%/data/misc/klein.gdt
 %%DATADIR%%/data/misc/kmenta.gdt
@@ -216,6 +274,8 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/mccullagh.gdt
 %%DATADIR%%/data/misc/mrw.gdt
 %%DATADIR%%/data/misc/np.gdt
+%%DATADIR%%/data/misc/nysewk.gdt
+%%DATADIR%%/data/misc/penngrow.gdt
 %%DATADIR%%/data/misc/poisson.gdt
 %%DATADIR%%/data/misc/sw_ch12.gdt
 %%DATADIR%%/data/misc/sw_ch14.gdt
@@ -232,8 +292,10 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/nist/Wampler5.dat
 %%DATADIR%%/db/fedstl.bin
 %%DATADIR%%/db/fedstl.idx
-%%DATADIR%%/doc/gretl-guide.pdf
-%%DATADIR%%/doc/gretl-ref.pdf
+%%DATADIR%%/fonts/luxisr.ttf
+%%DATADIR%%/functions/gretlfunc.dtd
+%%NOGNOME:%%%%DATADIR%%/gtksourceview/gnuplot.lang
+%%NOGNOME:%%%%DATADIR%%/gtksourceview/gretl.lang
 %%DATADIR%%/gretl-logo.xpm
 %%DATADIR%%/gretl.stamp
 %%DATADIR%%/gretlcli.hlp
@@ -273,6 +335,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/helpfigs/syssigma1.png
 %%DATADIR%%/helpfigs/syssigma2.png
 %%DATADIR%%/helpfigs/vif.png
+%%DATADIR%%/helpfigs/wlsr2.png
 %%DATADIR%%/scripts/greene11_3.inp
 %%DATADIR%%/scripts/greene12_1.inp
 %%DATADIR%%/scripts/greene14_1.inp
@@ -288,14 +351,17 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/arma.inp
 %%DATADIR%%/scripts/misc/armaloop.inp
 %%DATADIR%%/scripts/misc/bjg.inp
+%%DATADIR%%/scripts/misc/denmark.inp
 %%DATADIR%%/scripts/misc/ects_nls.inp
 %%DATADIR%%/scripts/misc/garch.inp
+%%DATADIR%%/scripts/misc/hamilton.inp
 %%DATADIR%%/scripts/misc/jgm-1996.inp
 %%DATADIR%%/scripts/misc/klein.inp
 %%DATADIR%%/scripts/misc/kmenta.inp
 %%DATADIR%%/scripts/misc/leverage.inp
 %%DATADIR%%/scripts/misc/longley.inp
 %%DATADIR%%/scripts/misc/mrw.inp
+%%DATADIR%%/scripts/misc/penngrow.inp
 %%DATADIR%%/scripts/misc/perron97.inp
 %%DATADIR%%/scripts/misc/ps_descriptions
 %%DATADIR%%/scripts/misc/pscoin.inp
@@ -398,14 +464,16 @@ share/locale/tr/LC_MESSAGES/gretl.mo
 @dirrm %%DATADIR%%/scripts/misc
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/helpfigs
-@dirrm %%DATADIR%%/doc
+%%NOGNOME:%%@dirrm %%DATADIR%%/gtksourceview
+@dirrm %%DATADIR%%/functions
+@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/db
 @dirrm %%DATADIR%%/data/nist
 @dirrm %%DATADIR%%/data/misc
 @dirrm %%DATADIR%%/data/greene
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-%%GNOMEUI%%@dirrmtry share/gnome
+%%GNOME:%%@dirrmtry share/gnome
 @dirrm lib/gretl-gtk2/data
 @dirrm lib/gretl-gtk2
 @dirrm include/gretl
