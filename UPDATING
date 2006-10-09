@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041202:
+  AFFECTS: users of any ports using Python
+  AUTHOR: perky@FreeBSD.org
+
+  After upgrading of lang/python, you must rebuild all its consumer
+  ports to make them get ready to Python 2.5.
+
+  To do this, you will need to:
+    pkgdb -uf && cd /usr/ports/lang/python && make upgrade-site-packages
+
 20061007:
   AFFECTS: users of security/p5-openxpki
   AUTHOR: svysh@cryptocom.ru

@@ -7,7 +7,7 @@
 .if !defined(_POSTMKINCLUDED) && !defined(Python_Pre_Include)
 
 Python_Pre_Include=			bsd.python.mk
-Python_Include_MAINTAINER=	perky@FreeBSD.org
+Python_Include_MAINTAINER=	python@FreeBSD.org
 
 # This file contains some variable definitions that are supposed to
 # make your life easier when dealing with ports related to the Python
@@ -159,8 +159,8 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 #					  specific version of zope.
 #
 
-_PYTHON_PORTBRANCH=		2.4
-_PYTHON_ALLBRANCHES=	2.4 2.3 2.2 2.1 2.5 # preferred first
+_PYTHON_PORTBRANCH=		2.5
+_PYTHON_ALLBRANCHES=	2.5 2.4 2.3 2.2 2.1 # preferred first
 _ZOPE_PORTBRANCH=		2.7
 _ZOPE_ALLBRANCHES=		2.7 2.8 2.9 3.2
 
@@ -309,15 +309,15 @@ PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 
 # Python-2.5
 .if ${PYTHON_VERSION} == "python2.5"
-PYTHON_PORTVERSION?=2.5.c2
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-devel
+PYTHON_PORTVERSION?=2.5
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python25
 PYTHON_REL=			250
 PYTHON_SUFFIX=		25
 
 # Python-2.4
 .elif ${PYTHON_VERSION} == "python2.4"
 PYTHON_PORTVERSION?=2.4.3
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python24
 PYTHON_REL=			243
 PYTHON_SUFFIX=		24
 
@@ -358,22 +358,15 @@ check-makevars::
 	@${ECHO} "  python2.1"
 	@${ECHO} "  python2.2"
 	@${ECHO} "  python2.3"
-	@${ECHO} "  python2.4 (default)"
-	@${ECHO} "  python2.5"
+	@${ECHO} "  python2.4"
+	@${ECHO} "  python2.5 (default)"
 	@${FALSE}
 .endif
 
-.if defined(PYTHON_REL) && ${PYTHON_REL} == 250
-PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
-PYTHON_MASTER_SITE_SUBDIR=	ftp/python/2.5
-PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION:S/5.c/5c/}.tgz
-PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION:S/5.c/5c/}
-.else
 PYTHON_MASTER_SITES=		${MASTER_SITE_PYTHON}
 PYTHON_MASTER_SITE_SUBDIR=	ftp/python/${PYTHON_PORTVERSION}
 PYTHON_DISTFILE=			Python-${PYTHON_PORTVERSION}.tgz
 PYTHON_WRKSRC=				${WRKDIR}/Python-${PYTHON_PORTVERSION}
-.endif	# defined(PYTHON_REL) && ${PYTHON_REL} == 250
 
 PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}
