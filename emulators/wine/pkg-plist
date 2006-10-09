@@ -446,6 +446,7 @@ lib/wine/capi2032.dll.so
 lib/wine/cards.dll.so
 lib/wine/cfgmgr32.dll.so
 lib/wine/clock.exe.so
+lib/wine/clusapi.dll.so
 lib/wine/cmd.exe.so
 lib/wine/comcat.dll.so
 lib/wine/comctl32.dll.so
@@ -533,6 +534,7 @@ lib/wine/libcabinet.def
 lib/wine/libcapi2032.def
 lib/wine/libcards.def
 lib/wine/libcfgmgr32.def
+lib/wine/libclusapi.def
 lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
 lib/wine/libcompstui.def
@@ -588,6 +590,7 @@ lib/wine/libmsvcrt40.def
 lib/wine/libmsvcrtd.def
 lib/wine/libmsvfw32.def
 lib/wine/libmswsock.def
+lib/wine/libnddeapi.def
 lib/wine/libnetapi32.def
 lib/wine/libnewdev.def
 lib/wine/libntdll.def
@@ -686,6 +689,7 @@ lib/wine/msvidc32.dll.so
 lib/wine/msvideo.dll16
 lib/wine/mswsock.dll.so
 lib/wine/msxml3.dll.so
+lib/wine/nddeapi.dll.so
 lib/wine/netapi32.dll.so
 lib/wine/newdev.dll.so
 lib/wine/notepad.exe.so
