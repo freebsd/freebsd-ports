@@ -1,3 +1,3 @@
-lib/%%TCL_VERSION%%/mysqltcl/%%LIB_NAME%%
-lib/%%TCL_VERSION%%/mysqltcl/pkgIndex.tcl
-@dirrm lib/%%TCL_VERSION%%/mysqltcl
+lib/%%LIB_DIR%%/%%LIB_NAME%%
+lib/%%LIB_DIR%%/pkgIndex.tcl
+@dirrm lib/%%LIB_DIR%%
