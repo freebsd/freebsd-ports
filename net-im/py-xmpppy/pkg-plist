@@ -25,6 +25,9 @@
 %%PYTHON_SITELIBDIR%%/xmpp/filetransfer.py
 %%PYTHON_SITELIBDIR%%/xmpp/filetransfer.pyc
 %%PYTHON_SITELIBDIR%%/xmpp/filetransfer.pyo
+%%PYTHON_SITELIBDIR%%/xmpp/jep0106.py
+%%PYTHON_SITELIBDIR%%/xmpp/jep0106.pyc
+%%PYTHON_SITELIBDIR%%/xmpp/jep0106.pyo
 %%PYTHON_SITELIBDIR%%/xmpp/protocol.py
 %%PYTHON_SITELIBDIR%%/xmpp/protocol.pyc
 %%PYTHON_SITELIBDIR%%/xmpp/protocol.pyo
@@ -40,4 +43,4 @@
 %%PYTHON_SITELIBDIR%%/xmpp/transports.py
 %%PYTHON_SITELIBDIR%%/xmpp/transports.pyc
 %%PYTHON_SITELIBDIR%%/xmpp/transports.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/xmpp
+@dirrmtry %%PYTHON_SITELIBDIR%%/xmpp
