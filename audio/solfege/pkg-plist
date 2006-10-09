@@ -3,6 +3,7 @@ bin/solfege
 etc/solfege
 share/gnome/applications/solfege.desktop
 share/gnome/pixmaps/solfege.png
+share/gnome/solfege/debugtree.txt
 share/gnome/solfege/default.config
 share/gnome/solfege/example-lesson-files/chord-satb
 share/gnome/solfege/example-lesson-files/harmonic-progression-dictation
@@ -57,10 +58,6 @@ share/gnome/solfege/feta/feta20-rests-4.xpm
 share/gnome/solfege/feta/feta20-rests-5.xpm
 share/gnome/solfege/feta/feta20-rests-6.xpm
 share/gnome/solfege/feta/feta20-rests-7.xpm
-share/gnome/solfege/gnomeemu/gnome/__init__.py
-share/gnome/solfege/gnomeemu/gnome/canvas.py
-share/gnome/solfege/gnomeemu/gnome/ui.py
-share/gnome/solfege/gnomeemu/gnome/uiconsts.py
 share/gnome/solfege/graphics/chord-voicing.png
 share/gnome/solfege/graphics/chord.png
 share/gnome/solfege/graphics/compare-intervals.png
@@ -142,9 +139,12 @@ share/gnome/solfege/help/C/chord.html
 share/gnome/solfege/help/C/compareintervals-module.html
 share/gnome/solfege/help/C/dictation-module.html
 share/gnome/solfege/help/C/dictation.html
+share/gnome/solfege/help/C/elembuilder-module.html
+share/gnome/solfege/help/C/elembuilder.html
 share/gnome/solfege/help/C/extending-solfege.html
 share/gnome/solfege/help/C/figures/chord.png
 share/gnome/solfege/help/C/figures/dictation.png
+share/gnome/solfege/help/C/figures/elembuilder-harmonic-progressions.png
 share/gnome/solfege/help/C/figures/id-interval-buttons-thirds.png
 share/gnome/solfege/help/C/figures/id-interval-piano.png
 share/gnome/solfege/help/C/figures/idbyname-chords.png
@@ -175,18 +175,6 @@ share/gnome/solfege/help/C/idtone.html
 share/gnome/solfege/help/C/index.html
 share/gnome/solfege/help/C/inverting-intervals.html
 share/gnome/solfege/help/C/ly/inverting-intervals.png
-share/gnome/solfege/help/C/ly/scale-aeolian.png
-share/gnome/solfege/help/C/ly/scale-dorian-bebop.png
-share/gnome/solfege/help/C/ly/scale-dorian.png
-share/gnome/solfege/help/C/ly/scale-harmonic-minor.png
-share/gnome/solfege/help/C/ly/scale-ionian.png
-share/gnome/solfege/help/C/ly/scale-locrian.png
-share/gnome/solfege/help/C/ly/scale-lydian.png
-share/gnome/solfege/help/C/ly/scale-major-bebop.png
-share/gnome/solfege/help/C/ly/scale-melodic-minor.png
-share/gnome/solfege/help/C/ly/scale-mixolydian-bebop.png
-share/gnome/solfege/help/C/ly/scale-mixolydian.png
-share/gnome/solfege/help/C/ly/scale-phrygian.png
 share/gnome/solfege/help/C/ly/theory-intervals-1.png
 share/gnome/solfege/help/C/ly/theory-intervals-fifths-1.png
 share/gnome/solfege/help/C/ly/theory-intervals-fifths-2.png
@@ -217,6 +205,7 @@ share/gnome/solfege/help/C/singinterval-module.html
 share/gnome/solfege/help/C/singinterval.html
 share/gnome/solfege/help/C/solfege-exercise-helps.html
 share/gnome/solfege/help/C/solfege-intro.html
+share/gnome/solfege/help/C/theory-intervals.html
 share/gnome/solfege/help/C/twelvetone.html
 share/gnome/solfege/help/C/welcome.html
 share/gnome/solfege/help/fr/apb.html
@@ -226,6 +215,8 @@ share/gnome/solfege/help/fr/chord.html
 share/gnome/solfege/help/fr/compareintervals-module.html
 share/gnome/solfege/help/fr/dictation-module.html
 share/gnome/solfege/help/fr/dictation.html
+share/gnome/solfege/help/fr/elembuilder-module.html
+share/gnome/solfege/help/fr/elembuilder.html
 share/gnome/solfege/help/fr/extending-solfege.html
 share/gnome/solfege/help/fr/figures/chord.png
 share/gnome/solfege/help/fr/figures/dictation.png
@@ -275,6 +266,7 @@ share/gnome/solfege/help/fr/singinterval-module.html
 share/gnome/solfege/help/fr/singinterval.html
 share/gnome/solfege/help/fr/solfege-exercise-helps.html
 share/gnome/solfege/help/fr/solfege-intro.html
+share/gnome/solfege/help/fr/theory-intervals.html
 share/gnome/solfege/help/fr/twelvetone.html
 share/gnome/solfege/help/fr/welcome.html
 share/gnome/solfege/help/no/apb.html
@@ -284,6 +276,8 @@ share/gnome/solfege/help/no/chord.html
 share/gnome/solfege/help/no/compareintervals-module.html
 share/gnome/solfege/help/no/dictation-module.html
 share/gnome/solfege/help/no/dictation.html
+share/gnome/solfege/help/no/elembuilder-module.html
+share/gnome/solfege/help/no/elembuilder.html
 share/gnome/solfege/help/no/extending-solfege.html
 share/gnome/solfege/help/no/figures/chord.png
 share/gnome/solfege/help/no/figures/dictation.png
@@ -333,6 +327,7 @@ share/gnome/solfege/help/no/singinterval-module.html
 share/gnome/solfege/help/no/singinterval.html
 share/gnome/solfege/help/no/solfege-exercise-helps.html
 share/gnome/solfege/help/no/solfege-intro.html
+share/gnome/solfege/help/no/theory-intervals.html
 share/gnome/solfege/help/no/twelvetone.html
 share/gnome/solfege/help/no/welcome.html
 share/gnome/solfege/help/tr/apb.html
@@ -342,6 +337,8 @@ share/gnome/solfege/help/tr/chord.html
 share/gnome/solfege/help/tr/compareintervals-module.html
 share/gnome/solfege/help/tr/dictation-module.html
 share/gnome/solfege/help/tr/dictation.html
+share/gnome/solfege/help/tr/elembuilder-module.html
+share/gnome/solfege/help/tr/elembuilder.html
 share/gnome/solfege/help/tr/extending-solfege.html
 share/gnome/solfege/help/tr/figures/chord.png
 share/gnome/solfege/help/tr/figures/dictation.png
@@ -391,6 +388,7 @@ share/gnome/solfege/help/tr/singinterval-module.html
 share/gnome/solfege/help/tr/singinterval.html
 share/gnome/solfege/help/tr/solfege-exercise-helps.html
 share/gnome/solfege/help/tr/solfege-intro.html
+share/gnome/solfege/help/tr/theory-intervals.html
 share/gnome/solfege/help/tr/twelvetone.html
 share/gnome/solfege/help/tr/welcome.html
 share/gnome/solfege/help-menu.xml
@@ -522,6 +520,91 @@ share/gnome/solfege/lesson-files/rhythm-mid
 share/gnome/solfege/lesson-files/rhythm-self-config-binary
 share/gnome/solfege/lesson-files/rhythm-self-config-ternary
 share/gnome/solfege/lesson-files/rhythm-ternary
+share/gnome/solfege/lesson-files/sc-6tones
+share/gnome/solfege/lesson-files/sc-8tones
+share/gnome/solfege/lesson-files/sc-beb
+share/gnome/solfege/lesson-files/sc-beb-a
+share/gnome/solfege/lesson-files/sc-beb-d
+share/gnome/solfege/lesson-files/sc-beb-s
+share/gnome/solfege/lesson-files/sc-church
+share/gnome/solfege/lesson-files/sc-dha
+share/gnome/solfege/lesson-files/sc-dha-a
+share/gnome/solfege/lesson-files/sc-dha-d
+share/gnome/solfege/lesson-files/sc-dha-f
+share/gnome/solfege/lesson-files/sc-dha-g
+share/gnome/solfege/lesson-files/sc-dha-s
+share/gnome/solfege/lesson-files/sc-dha-t
+share/gnome/solfege/lesson-files/sc-dom
+share/gnome/solfege/lesson-files/sc-dom-jazz
+share/gnome/solfege/lesson-files/sc-east
+share/gnome/solfege/lesson-files/sc-greek
+share/gnome/solfege/lesson-files/sc-hal
+share/gnome/solfege/lesson-files/sc-hal-jazz
+share/gnome/solfege/lesson-files/sc-ham
+share/gnome/solfege/lesson-files/sc-ham-a
+share/gnome/solfege/lesson-files/sc-ham-d
+share/gnome/solfege/lesson-files/sc-ham-f
+share/gnome/solfege/lesson-files/sc-ham-g
+share/gnome/solfege/lesson-files/sc-ham-s
+share/gnome/solfege/lesson-files/sc-ham-t
+share/gnome/solfege/lesson-files/sc-har
+share/gnome/solfege/lesson-files/sc-har-a
+share/gnome/solfege/lesson-files/sc-har-d
+share/gnome/solfege/lesson-files/sc-har-f
+share/gnome/solfege/lesson-files/sc-har-g
+share/gnome/solfege/lesson-files/sc-har-s
+share/gnome/solfege/lesson-files/sc-har-t
+share/gnome/solfege/lesson-files/sc-hum-g
+share/gnome/solfege/lesson-files/sc-hun
+share/gnome/solfege/lesson-files/sc-hun-a
+share/gnome/solfege/lesson-files/sc-hun-d
+share/gnome/solfege/lesson-files/sc-hun-f
+share/gnome/solfege/lesson-files/sc-hun-g
+share/gnome/solfege/lesson-files/sc-hun-s
+share/gnome/solfege/lesson-files/sc-hun-t
+share/gnome/solfege/lesson-files/sc-maj
+share/gnome/solfege/lesson-files/sc-maj-a
+share/gnome/solfege/lesson-files/sc-maj-d
+share/gnome/solfege/lesson-files/sc-maj-f
+share/gnome/solfege/lesson-files/sc-maj-g
+share/gnome/solfege/lesson-files/sc-maj-s
+share/gnome/solfege/lesson-files/sc-maj-t
+share/gnome/solfege/lesson-files/sc-mau
+share/gnome/solfege/lesson-files/sc-mau-jazz
+share/gnome/solfege/lesson-files/sc-mel
+share/gnome/solfege/lesson-files/sc-mel-a
+share/gnome/solfege/lesson-files/sc-mel-d
+share/gnome/solfege/lesson-files/sc-mel-f
+share/gnome/solfege/lesson-files/sc-mel-g
+share/gnome/solfege/lesson-files/sc-mel-s
+share/gnome/solfege/lesson-files/sc-mel-t
+share/gnome/solfege/lesson-files/sc-min
+share/gnome/solfege/lesson-files/sc-min-jazz
+share/gnome/solfege/lesson-files/sc-nat-g
+share/gnome/solfege/lesson-files/sc-nea
+share/gnome/solfege/lesson-files/sc-nea-a
+share/gnome/solfege/lesson-files/sc-nea-d
+share/gnome/solfege/lesson-files/sc-nea-f
+share/gnome/solfege/lesson-files/sc-nea-g
+share/gnome/solfege/lesson-files/sc-nea-s
+share/gnome/solfege/lesson-files/sc-nea-t
+share/gnome/solfege/lesson-files/sc-nem
+share/gnome/solfege/lesson-files/sc-nem-a
+share/gnome/solfege/lesson-files/sc-nem-d
+share/gnome/solfege/lesson-files/sc-nem-f
+share/gnome/solfege/lesson-files/sc-nem-g
+share/gnome/solfege/lesson-files/sc-nem-s
+share/gnome/solfege/lesson-files/sc-nem-t
+share/gnome/solfege/lesson-files/sc-pen
+share/gnome/solfege/lesson-files/sc-pen-a
+share/gnome/solfege/lesson-files/sc-pen-d
+share/gnome/solfege/lesson-files/sc-pen-g
+share/gnome/solfege/lesson-files/sc-pen-s
+share/gnome/solfege/lesson-files/sc-plagal
+share/gnome/solfege/lesson-files/sc-sim
+share/gnome/solfege/lesson-files/sc-sim-a
+share/gnome/solfege/lesson-files/sc-sim-d
+share/gnome/solfege/lesson-files/sc-sim-s
 share/gnome/solfege/lesson-files/scales
 share/gnome/solfege/lesson-files/scales-all
 share/gnome/solfege/lesson-files/scales-bebop
@@ -535,6 +618,8 @@ share/gnome/solfege/lesson-files/share/fifth-small-247.5.wav
 share/gnome/solfege/lesson-files/share/fifth-small-293.33.wav
 share/gnome/solfege/lesson-files/share/fil1.orc
 share/gnome/solfege/lesson-files/share/fil1.sco
+share/gnome/solfege/lesson-files/share/progression-elements
+share/gnome/solfege/lesson-files/share/sc-master
 share/gnome/solfege/lesson-files/sing-chord-tone
 share/gnome/solfege/lesson-files/sing-intervals
 share/gnome/solfege/lesson-files/sing-intervals-10
@@ -604,7 +689,7 @@ share/gnome/solfege/src/const.py
 share/gnome/solfege/src/dataparser.py
 share/gnome/solfege/src/dictation.py
 share/gnome/solfege/src/docviewer.py
-share/gnome/solfege/src/example.py
+share/gnome/solfege/src/elembuilder.py
 share/gnome/solfege/src/gethomedir.py
 share/gnome/solfege/src/gpath.py
 share/gnome/solfege/src/gu.py
@@ -693,8 +778,6 @@ share/locale/tr/LC_MESSAGES/solfege.mo
 @dirrm share/gnome/solfege/help/C
 @dirrm share/gnome/solfege/help
 @dirrm share/gnome/solfege/graphics
-@dirrm share/gnome/solfege/gnomeemu/gnome
-@dirrm share/gnome/solfege/gnomeemu
 @dirrm share/gnome/solfege/feta
 @dirrm share/gnome/solfege/example-lesson-files
 @dirrm share/gnome/solfege
