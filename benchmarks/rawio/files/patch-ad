@@ -1,5 +1,5 @@
---- rawio.c.orig	Sun Nov 26 22:28:19 2000
-+++ rawio.c	Tue Nov  1 11:55:33 2005
+--- rawio.c.orig	Mon Nov 27 04:28:19 2000
++++ rawio.c	Tue Jun 20 23:03:20 2006
 @@ -58,6 +58,9 @@
  #endif
  #ifdef BSD4_4
@@ -125,8 +125,8 @@
 -		 strerror (errno));
 -      else if ((iocount = read (file, buf, length)) != length)
 +		  % (maxchunk * 2) + sectorsize) & ~(sectorsize - 1);	    /* length of this transfer */
-+      offset = ((((off_t) (myrandom2 (proc + nproc * i)) * sectorsize)
-+		 % (filesize - SKIPSTART - length)) & ~(sectorsize - 1)) + SKIPSTART;
++      offset = (((((off_t) myrandom2 (proc + nproc * i)) * sectorsize)
++		 % (filesize - SKIPSTART - length)) & ~((off_t)sectorsize - 1)) + SKIPSTART;
 +      if ((iocount = pread (file, buf, length, pos = offset)) != length)
  	{
  	int Errno = errno;
@@ -140,10 +140,10 @@
        offset = SKIPSTART;				    /* start at the beginning */
      else						    /* random start */
 -      offset = ((((off_t) (myrandom (proc + nproc)) * DEV_BSIZE)
-+      offset = ((((off_t) (myrandom (proc + nproc)) * sectorsize)
++      offset = (((((off_t) myrandom (proc + nproc)) * sectorsize)
  		 % (filesize - SKIPSTART		    /* decide where to start */
 -		    - (maxrecs * length))) & ~0x1ff) + SKIPSTART;
-+		    - (maxrecs * length))) & ~(sectorsize - 1)) + SKIPSTART;
++		    - (maxrecs * length))) & ~((off_t)sectorsize - 1)) + SKIPSTART;
      if ((offset + maxrecs * length) > filesize)		    /* XXX */
        {
        printf ("Overrun: offset %" Quad "d, end %" Quad "d, file size %" Quad "d\n",
@@ -168,7 +168,15 @@
  
  	fprintf (stderr,
  		 "offset %" Quad "d, filesize %" Quad "d\n",
-@@ -976,30 +973,28 @@
+@@ -965,6 +962,7 @@
+ 	{
+ 	childinfo [proc].reads++;
+ 	childinfo [proc].bytes_read += iocount;
++	offset += iocount;
+ 	}
+       }
+     break;
+@@ -976,30 +974,28 @@
  	length = maxchunk;
        else
  	length = (myrandom (proc + nproc * i * 2)
@@ -179,8 +187,8 @@
 -	fprintf (stderr, "Child %d can't seek: %s", proc, strerror (errno));
 -      else
 +		  % (maxchunk * 2) + sectorsize) & ~(sectorsize - 1);	    /* length of this transfer */
-+      offset = ((((off_t) (myrandom2 (proc + nproc * i)) * sectorsize)
-+		 % (filesize - SKIPSTART - length)) & ~(sectorsize - 1)) + SKIPSTART;
++      offset = (((((off_t) myrandom2 (proc + nproc * i)) * sectorsize)
++		 % (filesize - SKIPSTART - length)) & ~((off_t)sectorsize - 1)) + SKIPSTART;
 +      if (1)
  	{
  	if ((RWfrac == 100)
@@ -206,12 +214,12 @@
  
  	  fprintf (stderr,
  		   "offset %" Quad "d, filesize %" Quad "d\n", offset,
-@@ -1032,36 +1027,30 @@
+@@ -1032,36 +1028,30 @@
      if (fixedoffset)
        offset = SKIPSTART;				    /* start at the beginning */
      else						    /* random start */
 -      offset = ((((off_t) (myrandom (proc + nproc)) * DEV_BSIZE)
-+      offset = ((((off_t) (myrandom (proc + nproc)) * sectorsize)
++      offset = (((((off_t) myrandom (proc + nproc)) * sectorsize)
  		 % (filesize - SKIPSTART		    /* decide where to start */
 -		    - (maxrecs * length))) & ~0x1ff) + SKIPSTART;
 -    if (lseek (file, offset, SEEK_SET) < 0)
@@ -221,7 +229,7 @@
 -	       offset,
 -	       strerror (errno));
 -    else if ((verbose > 2) && ! fixedoffset)
-+		    - (maxrecs * length))) & ~(sectorsize - 1)) + SKIPSTART;
++		    - (maxrecs * length))) & ~((off_t)sectorsize - 1)) + SKIPSTART;
 +    if ((verbose > 2) && ! fixedoffset)
        printf ("Child %d writing to %" Quad "d\n", proc, offset);
      for (i = 1; i <= maxrecs; i++)
@@ -249,3 +257,14 @@
  
  	fprintf (stderr,
  		 "offset %" Quad "d, filesize %" Quad "d\n",
+@@ -1082,6 +1072,10 @@
+ 		   iocount,
+ 		   length );
+ 	exit (1);
++	}
++      else
++	{
++	offset += iocount;
+ 	}
+       }
+     break;
