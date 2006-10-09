@@ -1,0 +1,6 @@
+bin/%%SGUILDIR%%/log_packets.sh
+bin/%%SGUILDIR%%/sensor_agent.tcl
+etc/log_packets.conf-sample
+%%USESANCP%%etc/sancp.conf-sample
+etc/sensor_agent.conf-sample
+@dirrm bin/%%SGUILDIR%%

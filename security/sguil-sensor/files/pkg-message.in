@@ -1,0 +1,28 @@
+            ***********************************
+            * !!!!!!!!!!! WARNING !!!!!!!!!!! *
+            ***********************************
+
+If you already had barnyard installed, this port will NOT deinstall
+it and install the barnyard-sguil6 port instead.  You will need to
+deinstall the barnyard port and install the barnyard-sguil6 port yourself
+instead.  This port WILL NOT WORK without the barnyard-sguil6 port!!
+
+You MUST edit the log_packets.conf file (located in %%PREFIX%%/etc/)
+to fit your configuration before running the log_packets.sh script.
+See the %%DOCSDIR%%/INSTALL doc for details on the 
+configuration and for croning the script.  
+
+WARNING!!!  Sguil et al will fill up your /tmp directory very 
+quickly.  You should probably configure sguil et al to log to
+another partition/location (e.g. /nsm/tmp/).
+
+You must ALSO edit the sensor_agent.conf file (located in 
+%%PREFIX%%/etc/) to reflect your configuration before 
+starting the sensor_agent.
+
+If you chose to run sancp, and you already had a sancp.conf file in
+%%PREFIX%%/etc, copy it to sancp.conf.orig before creating the new one.
+The new sancp.conf-sample file contains the settings for squil.
+If you still want to maintain the customized sancp.conf file, then copy 
+the new sancp.conf-sample file to sguild-sancp.conf (for example) and 
+add sancp_conf=%%PREFIX%%/etc/sguild-sancp.conf to /etc/rc.conf.
