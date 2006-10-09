@@ -1485,7 +1485,6 @@ cs-aspell	ports/textproc/cs-aspell
 csb-aspell	ports/textproc/csb-aspell
 cscope		ports/devel/cscope
 cscout		ports/devel/cscout
-cscout-devel	ports/devel/cscout-devel
 csharp-mode.el	ports/lang/csharp-mode.el
 csmash		ports/games/csmash
 csound		ports/audio/csound
