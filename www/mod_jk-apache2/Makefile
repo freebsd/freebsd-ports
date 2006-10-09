@@ -6,8 +6,9 @@
 #
 
 MASTERDIR=	${.CURDIR}/../mod_jk
-WITH_APACHE2=	YES
+USE_APACHE=	2.0+
 PORTEPOCH=	0
+LATEST_LINK=	mod_jk-ap2
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Apache2 JK module for connecting to Tomcat using AJP1X

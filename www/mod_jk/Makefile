@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.18
+PORTVERSION=	1.2.19
 PORTREVISION=	0
 PORTEPOCH?=	1
 CATEGORIES=	www
@@ -17,11 +17,12 @@ DISTNAME=	tomcat-connectors-${PORTVERSION}-src
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
-USE_APACHE=	1.3+
+USE_APACHE?=	1.3+
 
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} >= 20
+PKGNAMESUFFIX=	-ap2
 APACHE_VER=	2.0
 .else
 APACHE_VER=	1.3
