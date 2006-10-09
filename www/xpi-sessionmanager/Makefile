@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sessionmanager
-PORTVERSION=	0.4.1.1
-DISTVERSIONSUFFIX=	-fx+fl+mz+zm
+PORTVERSION=	0.4.3
+DISTVERSIONSUFFIX=	-fx+fl+zm
 CATEGORIES=	www
 
 MAINTAINER=	anray@FreeBSD.org
