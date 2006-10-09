@@ -173,7 +173,7 @@ eagle-*.tgz		cad/linux-eagle		Usage permitted for non-commercial
 						purposes only
 eawpats*		audio/eawpats		Some of the patches are not
 						for commercial use
-eClient-linux.run	games/atitd		Redistribution not allowed
+eClient-linux-i686.run	games/atitd		Redistribution not allowed
 eclipse/jp.azzurri.clay.core_*.bin.dist.* java/eclipse-clay-core License
 						agreement is required to download
 edith*			editors/edith		Redistribution not allowed
