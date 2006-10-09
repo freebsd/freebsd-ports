@@ -7,7 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	0.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www-nh.scphys.kyoto-u.ac.jp/~thitoshi/ruby/pdflib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ COMMENT=	A Ruby extension library to access PDFlib
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		pdf.7:${PORTSDIR}/print/pdflib
+		pdf.8:${PORTSDIR}/print/pdflib
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

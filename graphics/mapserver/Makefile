@@ -7,7 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		4.4.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics www
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--with-ming=${LOCALBASE}
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=		pdf.7:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=		pdf.8:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .endif
 

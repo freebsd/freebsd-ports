@@ -8,14 +8,14 @@
 
 PORTNAME=	ipdf
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates indexed pdf documents from text files
 
-LIB_DEPENDS=	pdf.7:${PORTSDIR}/print/pdflib \
+LIB_DEPENDS=	pdf.8:${PORTSDIR}/print/pdflib \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

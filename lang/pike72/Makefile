@@ -7,7 +7,7 @@
 
 PORTNAME=	pike72
 PORTVERSION=	7.2.570
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pike/7.2/unofficial/ \
 		ftp://ftp.us.caudium.net/pub/pike/7.2/unofficial/ 
@@ -96,7 +96,7 @@ WITH_IODBC=	yes
 WITH_SANE=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libpdf.so.7)
+.if exists(${LOCALBASE}/lib/libpdf.so.8)
 WITH_PDF=	yes
 .endif
 
@@ -170,7 +170,7 @@ CONFIGURE_ARGS+= --without-sane
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.7:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	pdf.8:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+= --with-libpdf
 .else
 CONFIGURE_ARGS+= --without-libpdf

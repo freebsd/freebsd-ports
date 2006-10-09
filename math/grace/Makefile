@@ -7,6 +7,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.20
+PORTREVISION=	1
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
@@ -27,7 +28,7 @@ LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
 		png.5:${PORTSDIR}/graphics/png		\
 		t1:${PORTSDIR}/devel/t1lib		\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml \
-		pdf.7:${PORTSDIR}/print/pdflib
+		pdf.8:${PORTSDIR}/print/pdflib
 
 MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
 

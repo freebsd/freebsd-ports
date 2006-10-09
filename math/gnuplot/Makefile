@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--with-gd=${LOCALBASE}
 .if defined(WITHOUT_PDF)
 CONFIGURE_ARGS+=	--without-pdf
 .else
-LIB_DEPENDS+=		pdf.7:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=		pdf.8:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .endif
 
