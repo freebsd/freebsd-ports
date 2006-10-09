@@ -30,6 +30,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.NoMatch-class.html
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.NotAny-class.html
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.OneOrMore-class.html
+%%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.OnlyOnce-class.html
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.Optional-class.html
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.Or-class.html
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.ParseBaseException-class.html
@@ -53,6 +54,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.White-class.html
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.Word-class.html
 %%PORTDOCS%%%%DOCSDIR%%/parserFwk.pyparsing.ZeroOrMore-class.html
+%%PORTDOCS%%%%DOCSDIR%%/robots.txt
 %%PORTDOCS%%%%DOCSDIR%%/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-parserFwk.pyparsing-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc.html
@@ -78,15 +80,20 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/greetingInKorean.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/httpServerLogParser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/idlParse.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/linenoExample.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/listAllMatches.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/makeHTMLTagExample.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/mozilla.ics
 %%PORTDOCS%%%%EXAMPLESDIR%%/mozillaCalendarParser.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/parseListString.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pgn.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pythonGrammarParser.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/removeLineBreaks.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/romanNumerals.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/scanExamples.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/searchparser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/simpleSQL.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simpleWiki.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/sparser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/urlExtractor.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/urlExtractorNew.py
