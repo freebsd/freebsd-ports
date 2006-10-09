@@ -1,0 +1,89 @@
+--- doc/Makefile.in.orig	Sat Oct  1 16:32:08 2005
++++ doc/Makefile.in	Fri Oct  7 10:07:40 2005
+@@ -52,8 +52,12 @@
+ CONFIG_CLEAN_FILES =
+ SOURCES =
+ DIST_SOURCES =
++.if defined(NOPORTDOCS)
++INFO_DEPS =
++.else
+ INFO_DEPS = cfengine-Reference.info cfengine-Tutorial.info \
+ 	cfengine-Anomalies.info
++.endif
+ am__TEXINFO_TEX_DIR = $(srcdir)
+ DVIS = cfengine-Reference.dvi cfengine-Tutorial.dvi \
+ 	cfengine-Anomalies.dvi
+@@ -205,15 +209,23 @@
+ 
+ # Info used in building and installing HTML files
+ htmlfiles = $(info_TEXINFOS:.texinfo=.html)
+-htmldir = $(pkgdatadir)/html
++htmldir = $(docdir)
++.if defined(NOPORTDOCS)
++html_DATA = 
++.else
+ html_DATA = $(htmlfiles)
++.endif
+ 
+ # Info used in building and installing Postscript files
+ psfiles = $(info_TEXINFOS:.texinfo=.ps)
+ pdffiles = $(info_TEXINFOS:.texinfo=.pdf)
+ dvifiles = $(info_TEXINFOS:.texinfo=.dvi)
+-docdir = $(pkgdatadir)/doc
++docdir = $(prefix)/share/doc/cfengine
++.if defined(NOPORTDOCS)
++doc_DATA = 
++.else
+ doc_DATA = $(psfiles) $(pdffiles)
++.endif
+ 
+ # Make sure these get distributed with everything else.
+ EXTRA_DIST = cfagent.8 cfenvd.8 cfenvgraph.8 cfexecd.8 cfkey.8 cfrun.8 cfservd.8 cfengine.8 cfshow.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 texinfo.tex $(htmlfiles) $(infofiles)  $(psfiles) $(dvifiles) $(pdffiles)
+@@ -579,6 +591,7 @@
+ 	  rm -f "$(DESTDIR)$(man8dir)/$$inst"; \
+ 	done
+ install-docDATA: $(doc_DATA)
++.if !defined(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -587,6 +600,7 @@
+ 	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+ 	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
++.endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -596,6 +610,7 @@
+ 	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
+ 	done
+ install-htmlDATA: $(html_DATA)
++.if !defined(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(htmldir)" || $(mkdir_p) "$(DESTDIR)$(htmldir)"
+ 	@list='$(html_DATA)'; for p in $$list; do \
+@@ -604,6 +619,7 @@
+ 	  echo " $(htmlDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(htmldir)/$$f'"; \
+ 	  $(htmlDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(htmldir)/$$f"; \
+ 	done
++.endif
+ 
+ uninstall-htmlDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -712,6 +728,7 @@
+ install-info: install-info-am
+ 
+ install-info-am: $(INFO_DEPS)
++.if !defined(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(infodir)" || $(mkdir_p) "$(DESTDIR)$(infodir)"
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+@@ -741,6 +758,7 @@
+ 	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
+ 	  done; \
+ 	else : ; fi
++.endif
+ install-man: install-man8
+ 
+ installcheck-am:
