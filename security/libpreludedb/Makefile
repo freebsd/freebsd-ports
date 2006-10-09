@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpreludedb
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 MAINTAINER=	r.gruyters@yirdis.nl
 COMMENT=	Framework library for access to Prelude NIDS database
 
-LIB_DEPENDS=	prelude.[8-9]:${PORTSDIR}/security/libprelude
+LIB_DEPENDS=	prelude.9:${PORTSDIR}/security/libprelude
 
 USE_GPG=		yes
 SIG_SUFFIX=		.sig
@@ -28,8 +28,6 @@ OPTIONS=		PERL "Include Perl bindings" off \
 			MYSQL "Use MySQL backend" on \
 			PGSQL "Use PostgreSQL backend" off \
 			SQLITE "Use SQLite backend" off
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
@@ -89,4 +87,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
