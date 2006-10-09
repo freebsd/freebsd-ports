@@ -1,5 +1,4 @@
 bin/oregano
-bin/oregano_parser.pl
 share/gnome/applications/oregano.desktop
 share/gnome/help/oregano/C/legal.xml
 share/gnome/help/oregano/C/oregano.xml
@@ -28,6 +27,13 @@ share/gnome/oregano/dialogs/splash.glade2
 share/gnome/oregano/dialogs/splash.xpm
 share/gnome/oregano/dialogs/textbox-properties-dialog.glade2
 share/gnome/oregano/dialogs/view-netlist.glade2
+share/gnome/oregano/examples/Full-wave bridge rectifier.oregano
+share/gnome/oregano/examples/carga_capacitor.oregano
+share/gnome/oregano/examples/opamp.oregano
+share/gnome/oregano/examples/opamp_ideal.oregano
+share/gnome/oregano/examples/pasa_altos.oregano
+share/gnome/oregano/examples/simple.oregano
+share/gnome/oregano/examples/simple2.oregano
 share/gnome/oregano/libraries/cmos.oreglib
 share/gnome/oregano/libraries/cpu.oreglib
 share/gnome/oregano/libraries/default.oreglib
@@ -41,22 +47,11 @@ share/gnome/oregano/libraries/power.oreglib
 share/gnome/oregano/libraries/ttl.oreglib
 share/gnome/oregano/models/12AX7A.model
 share/gnome/oregano/models/1N750.model
+share/gnome/oregano/models/DiodeBridge.model
 share/gnome/oregano/models/NPN.model
 share/gnome/oregano/models/PNP.model
 share/gnome/oregano/models/TLC555.model
 share/gnome/oregano/models/UA741.model
-share/gnome/oregano/samples/12ax7a.oregano
-share/gnome/oregano/samples/555.oregano
-share/gnome/oregano/samples/741.oregano
-share/gnome/oregano/samples/OP177B.oregano
-share/gnome/oregano/samples/carga_capacitor.oregano
-share/gnome/oregano/samples/opamp.oregano
-share/gnome/oregano/samples/opamp_ideal.oregano
-share/gnome/oregano/samples/pasa_altos.oregano
-share/gnome/oregano/samples/simple.oregano
-share/gnome/oregano/samples/simple2.oregano
-share/gnome/oregano/samples/transistors.oregano
-share/gnome/oregano/samples/zener.oregano
 share/gnome/pixmaps/gnome-oregano.svg
 share/locale/ca/LC_MESSAGES/oregano.mo
 share/locale/de/LC_MESSAGES/oregano.mo
@@ -64,15 +59,14 @@ share/locale/es/LC_MESSAGES/oregano.mo
 share/locale/fr/LC_MESSAGES/oregano.mo
 share/locale/it/LC_MESSAGES/oregano.mo
 share/locale/ja/LC_MESSAGES/oregano.mo
-share/locale/pl/LC_MESSAGES/oregano.mo
 share/locale/pt_BR/LC_MESSAGES/oregano.mo
 share/locale/ro/LC_MESSAGES/oregano.mo
 share/locale/ru/LC_MESSAGES/oregano.mo
 share/locale/sv/LC_MESSAGES/oregano.mo
 share/mime/packages/oregano.xml
-@dirrm share/gnome/oregano/samples
 @dirrm share/gnome/oregano/models
 @dirrm share/gnome/oregano/libraries
+@dirrm share/gnome/oregano/examples
 @dirrm share/gnome/oregano/dialogs
 @dirrm share/gnome/oregano
 @dirrm share/gnome/omf/oregano

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.50.0
+PORTVERSION=	0.60.0
 CATEGORIES=	cad gnome
-MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/80/
+MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/84/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
@@ -17,8 +17,10 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
 		libgnomeprintui libgnomeui
+USE_SCONS=	yes
 INSTALLS_OMF=	yes
 
 .include <bsd.port.pre.mk>
@@ -26,23 +28,13 @@ INSTALLS_OMF=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-Wall|${CFLAGS}|g ; \
 		 s|'/share'|'/share/gnome'|g ; \
-		 s|'gnome/apps/Applications'|'applications'|g ; \
-		 /oregano\.xml/d" ${WRKSRC}/SConstruct
+		 s|'share/applications'|'share/gnome/applications'|g ; \
+		 s|'share/mime-info'|'share/gnome/mime-info'|g" ${WRKSRC}/SConstruct
 	@${FIND} ${WRKSRC} -name "SConscript" | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|share/oregano|share/gnome/oregano|g"
 
-do-build:
-	@cd ${BUILD_WRKSRC} && scons PREFIX=${PREFIX}
-
-do-install:
-	@cd ${BUILD_WRKSRC} && scons install PREFIX=${PREFIX}
+post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/oregano
-	@${MKDIR} ${PREFIX}/share/gnome/oregano/models
-	${INSTALL_DATA} ${WRKSRC}/data/models/*.model \
-		${PREFIX}/share/gnome/oregano/models
-	@${MKDIR} ${PREFIX}/share/gnome/oregano/samples
-	${INSTALL_DATA} ${WRKSRC}/src/samples/*.oregano \
-		${PREFIX}/share/gnome/oregano/samples
 .for lang in C es fr
 	@${MKDIR} ${PREFIX}/share/gnome/help/oregano/${lang}
 	${INSTALL_DATA} ${WRKSRC}/help/${lang}/*.xml \
@@ -53,8 +45,5 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/gnome-oregano.svg \
 		${PREFIX}/share/gnome/pixmaps/gnome-oregano.svg
-	${INSTALL_DATA} ${WRKSRC}/oregano.xml.in \
-		${PREFIX}/share/mime/packages/oregano.xml
-	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>
