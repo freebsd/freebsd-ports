@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 		http://www.yuanjue.net/download/
@@ -13,19 +13,28 @@ MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 MAINTAINER=	yuanjue@yuanjue.net
 COMMENT=	KDE frontend for Subversion
 
-EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+
+WRKSRC=		${WRKDIR}/${DISTNAME}-build
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+
+CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
+		-DCMAKE_C_COMPILER:STRING='${CC}' \
+		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
+		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}"
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 		svn_client-1:${PORTSDIR}/devel/subversion \
 		neon:${PORTSDIR}/www/neon
 
+USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=--with-apr-config=apr-1-config \
-		--with-apu-config=apu-1-config
+CXXFLAGS+=	-lc
+
+MAN1=	kdesvn.1 kdesvnaskpass.1
 
 .include <bsd.port.pre.mk>
 
@@ -33,7 +42,15 @@ CONFIGURE_ARGS+=--with-apr-config=apr-1-config \
 BROKEN=		Does not compile on 4.x
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
+post-extract:
+	${MKDIR} ${WRKSRC}
+
+do-configure:
+	@(cd ${WRKSRC}; \
+	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${PATCH_WRKSRC})
+
+post-install:
+	@${MV} ${PREFIX}/share/man/man1/kdesvn.1 ${PREFIX}/man/man1/kdesvn.1
+	@${MV} ${PREFIX}/share/man/man1/kdesvnaskpass.1 ${PREFIX}/man/man1/kdesvnaskpass.1
 
 .include <bsd.port.post.mk>
