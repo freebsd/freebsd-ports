@@ -19,23 +19,28 @@ MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	PostgreSQL ODBC client support
 
 # PostgreSQL ODBC support needs an ODBC driver manager to be
-# installed, and it supports both iODBC and unixODBC.  The following
-# variable may be set at built-time to either "iodbc" or "unixodbc",
-# with the former being the default:
-DRIVER_MANAGER?=	iodbc
+# installed, and it supports both iODBC and unixODBC.
+
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+.endif
+
+.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
+WITH_IODBC?=	yes
+.endif
 
 # Note that there is a potential conflict between unixODBC's and
 # postgres' libodbcpsql.so. unixODBC installs versions `1' & `2' of
 # the named lib, while postgres installs version `0'. The postgres
 # folks say their is the best, so you might be better off removing
 # the others?
-.if ${DRIVER_MANAGER} == "unixodbc"
+.if defined(WITH_IODBC)
+LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+CONFIGURE_ARGS+=	--with-iodbc --with-odbcinst=${LOCALBASE}/etc/libiodbc
+.elif defined(WITH_UNIXODBC)
 PKGNAMESUFFIX=		-unixodbc
 CONFIGURE_ARGS+=	--with-unixodbc
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
-.else	# assume we're using iodbc
-LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
-CONFIGURE_ARGS+=	--with-iodbc --with-odbcinst=${LOCALBASE}/etc/libiodbc
 .endif
 
 USE_GMAKE=	YES

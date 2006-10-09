@@ -316,16 +316,21 @@ PLIST_SUB+=		BACK_PERL="@comment "
 CONFIGURE_ARGS+=	--enable-spasswd
 .endif
 
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+.endif
+
+.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
+WITH_IODBC?=	yes
+.endif
+
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+=	--enable-sql=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_SQL=${BACKEND_PLIST}
-WITH_ODBC_TYPE?=	iODBC
-.if ${WITH_ODBC_TYPE:L} == iodbc
+.if defined(WITH_IODBC)
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
-.elif ${WITH_ODBC_TYPE:L} == unixodbc
+.elif defined(WITH_UNIXODBC)
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
-.else
-BROKEN=			choose either iODBC or unixODBC for WITH_ODBC_TYPE
 .endif
 .else
 PLIST_SUB+=		BACK_SQL="@comment "

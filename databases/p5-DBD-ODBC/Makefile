@@ -21,23 +21,24 @@ CONFIGURE_ARGS+=	-o ${LOCALBASE}
 
 MAN3=		DBD::ODBC.3
 
-OPTIONS=	IODBC "Link with libiodbc" on \
-		ODBC "Link with unixODBC (Only with 5.x+)" off
-
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IODBC) && defined(WITH_ODBC)
-BROKEN=	"Should only select one of ODBC and IODBC"
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
 .endif
-.if defined(WITH_ODBC) && ${OSVERSION} < 500016
+
+.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
+WITH_IODBC?=	yes
+.endif
+
+.if defined(WITH_UNIXODBC) && ${OSVERSION} < 500016
 IGNORE=	Due to some obscure -pthread things, you can not have this work
 .endif
 
-.if !defined(WITHOUT_IODBC)
+.if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 MYODBC=	iodbc
-.endif
-.if defined(WITH_ODBC)
+.elif defined(WITH_UNIXODBC)
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 MYODBC=	unixodbc
 post-configure:
