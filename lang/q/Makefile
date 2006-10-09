@@ -57,15 +57,20 @@ CONFIGURE_ARGS+=	--with-pthread="${PTHREAD_LIBS}"
 .endif
 
 # The odbc module needs an ODBC driver manager to be installed, and it
-# supports both iODBC and unixODBC. The following variable may be set at
-# build-time to either "iodbc" or "unixodbc", with the former being the
-# default:
-ODBC?=		iodbc
+# supports both iODBC and unixODBC.
 
-.if ${ODBC} == "unixodbc"
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+.endif
+
+.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
+WITH_IODBC?=	yes
+.endif
+
+.if defined(WITH_UNIXODBC)
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=-lodbc
-.else	# assume we're using iodbc
+.elif defined(WITH_IODBC)
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-odbc=-liodbc
 .endif

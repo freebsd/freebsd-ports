@@ -32,22 +32,30 @@ PLIST_SUB=	VER=${PORTVERSION}
 PORTDOCS=	README
 
 # MyODBC needs an ODBC driver manager to be installed, and it supports both
-# iODBC and unixODBC.  The following variable may be set at built-time to
-# either "iodbc" or "unixodbc", with the former being the default:
-DRIVER_MANAGER?=	unixodbc
+# iODBC and unixODBC.
 
-.if ${DRIVER_MANAGER} == "unixodbc"
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+.endif
+
+.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
+WITH_UNIXODBC?=	yes
+.endif
+
+.if defined(WITH_UNIXODBC)
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/odbc.ini \
 			--with-unixODBC=${LOCALBASE}
 CFLAGS+=		${PTHREAD_LIBS}
-.else	# assume we're using iodbc
+DRIVER_MANAGER=		unixodbc
+.elif defined(WITH_IODBC)
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iODBC=${LOCALBASE} \
 			--with-iodbc-includes=${LOCALBASE}/include \
 			--with-iodbc-libs=${LOCALBASE}/lib \
 			--with-odbc-ini=${LOCALBASE}/etc/libiodbc/odbc.ini
 EXTRA_PATCHES=		${PATCHDIR}/myodbc-iodbc-patch
+DRIVER_MANAGER=		iodbc
 .endif
 
 post-patch:

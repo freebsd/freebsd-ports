@@ -23,14 +23,20 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-isqlxx
 
 # libodbc++ needs an ODBC driver manager to be installed, and it supports
-# both iODBC and unixODBC.  The following variable may be set at build-time
-# to either "iodbc" or "unixodbc", with the latter being the default:
-DRIVER_MANAGER?=	unixodbc
+# both iODBC and unixODBC.
 
-.if ${DRIVER_MANAGER} == "iodbc"
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=		selected mutually exclusive options: WITH_IODBC and WITH_UNIXODBC
+.endif
+
+.if !defined(WITH_IODBC) && !defined(WITH_UNIXODBC)
+WITH_IODBC?=	yes
+.endif
+
+.if defined(WITH_IODBC)
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
-.else	# assume we're using unixODBC
+.elif defined(WITH_UNIXODBC)
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
