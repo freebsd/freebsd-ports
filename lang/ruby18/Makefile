@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
@@ -123,6 +123,9 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
 		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
+# Macros to change variables in rbconfig.rb
+RB_SET_CONF_VAR=${SH} -c '${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' --
+
 post-extract:
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
 
@@ -156,10 +159,14 @@ pre-configure:
 
 post-build:
 #
-# Hack to allow modules to be installed into separate PREFIX
+# Hack to allow modules to be installed into separate PREFIX and/or under user
+# privilegies
 #
-	@${REINPLACE_CMD} -E -e \
-		"s,(CONFIG\[\"prefix\"\][[:space:]]*=[[:space:]]*\()(.*),\1ENV\['PREFIX'\] || \2," ${WRKSRC}/rbconfig.rb
+	@${RB_SET_CONF_VAR} "prefix" "ENV['PREFIX'] || \3"
+	@${RB_SET_CONF_VAR} "INSTALL" "ENV['RB_USER_INSTALL'] ? '/usr/bin/install -c' : '/usr/bin/install -c ${_BINOWNGRP}'"
+	@${RB_SET_CONF_VAR} "INSTALL_PROGRAM" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} ${STRIP} -m ${BINMODE}' : '${INSTALL_PROGRAM}'"
+	@${RB_SET_CONF_VAR} "INSTALL_SCRIPT" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${BINMODE}' : '${INSTALL_SCRIPT}'"
+	@${RB_SET_CONF_VAR} "INSTALL_DATA" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${SHAREMODE}' : '${INSTALL_DATA}'"
 
 pre-install:
 	${MKDIR}	${RUBY_DOCDIR}		\
@@ -276,7 +283,7 @@ plist::
 	@${ECHO_CMD} "@exec env LC_TIME=C /bin/date > %D/%%RUBY_SITERIDIR%%/created.rid"  >> pkg-plist
 	@${ECHO_CMD} "@unexec /bin/rm -f %D/%%RUBY_SITERIDIR%%/created.rid" \
 		>> pkg-plist
-	
+
 	@${ECHO_CMD} "@dirrmtry %%RUBY_SITERIDIR%%" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry %%RUBY_RIDIR%%" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry share/ri/%%RUBY_VER%%" >> pkg-plist
