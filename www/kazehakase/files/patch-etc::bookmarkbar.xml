@@ -13,7 +13,7 @@
 +  <folder>
 +    <title>FreshPorts</title>
 +    <info>
-+      <metadata owner="http://kazehakase.sourceforge.jp/" kz:location="http://www.freshports.org/news.php">
++      <metadata owner="http://kazehakase.sourceforge.jp/" kz:location="http://www.freshports.org/backend/rss2.0.php">
 +      </metadata>
 +    </info>
 +  </folder>
