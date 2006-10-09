@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.9.0
-PORTREVISION=	3
+DISTVERSION=	0.10.0-rc4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,8 @@ BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame \
-		gocr:${PORTSDIR}/graphics/gocr
+		gocr:${PORTSDIR}/graphics/gocr \
+		gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
@@ -29,16 +29,16 @@ LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
 		dvdread:${PORTSDIR}/multimedia/libdvdread \
 		enchant:${PORTSDIR}/textproc/enchant
 
-BROKEN=		Incomplete pkg-plist
-
-USE_GNOME=	gtk20 glib20 gconf2 libglade2
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	gtk20 glib20 gconf2 libglade2 intlhack
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
 GCONF_SCHEMAS=	ogmrip.schemas
 
 CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/libdata
+GMAKE_ENV+=	GMSGFMT=${localbase}/bin/msgfmt
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-devel-mode

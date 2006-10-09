@@ -3,7 +3,14 @@ bin/dvdcpy
 bin/ogmrip
 bin/srttool
 bin/subp2pgm
-include/ogmdvd.h
+include/ogmdvd/ogmdvd.h
+include/ogmdvd/ogmdvd-audio-chooser.h
+include/ogmdvd/ogmdvd-chapter-list.h
+include/ogmdvd/ogmdvd-drive-chooser.h
+include/ogmdvd/ogmdvd-drive-dialog.h
+include/ogmdvd/ogmdvd-gtk.h
+include/ogmdvd/ogmdvd-subtitle-chooser.h
+include/ogmdvd/ogmdvd-title-chooser.h
 include/ogmrip/ogmrip-acopy.h
 include/ogmrip/ogmrip-audio.h
 include/ogmrip/ogmrip-avi.h
@@ -12,11 +19,15 @@ include/ogmrip/ogmrip-container.h
 include/ogmrip/ogmrip-dvdcpy.h
 include/ogmrip/ogmrip-lavc.h
 %%MKV_SUPPORT%%include/ogmrip/ogmrip-mkv.h
+include/ogmrip/ogmrip-chapters.h
+include/ogmrip/ogmrip-fs.h
+include/ogmrip/ogmrip-init.h
 include/ogmrip/ogmrip-mp3.h
+include/ogmrip/ogmrip-mp4.h
+include/ogmrip/ogmrip-theora.h
 include/ogmrip/ogmrip-ogg.h
 include/ogmrip/ogmrip-srt.h
 include/ogmrip/ogmrip-subp.h
-include/ogmrip/ogmrip-tools.h
 include/ogmrip/ogmrip-video.h
 include/ogmrip/ogmrip-vobsub.h
 include/ogmrip/ogmrip-vorbis.h
@@ -24,25 +35,35 @@ include/ogmrip/ogmrip-wav.h
 %%X264_SUPPORT%%include/ogmrip/ogmrip-x264.h
 include/ogmrip/ogmrip-xvid.h
 include/ogmrip/ogmrip.h
-include/ogmspawn/ogmsp-bin.h
-include/ogmspawn/ogmsp-container.h
-include/ogmspawn/ogmsp-enums.h
-include/ogmspawn/ogmsp-exec.h
-include/ogmspawn/ogmsp-list.h
-include/ogmspawn/ogmsp-marshal.h
-include/ogmspawn/ogmsp-pipeline.h
-include/ogmspawn/ogmsp-queue.h
-include/ogmspawn/ogmsp-spawn.h
-include/ogmspawn/ogmspawn.h
+include/ogmjob/ogmjob-bin.h
+include/ogmjob/ogmjob-container.h
+include/ogmjob/ogmjob-enums.h
+include/ogmjob/ogmjob-exec.h
+include/ogmjob/ogmjob-list.h
+include/ogmjob/ogmjob-marshal.h
+include/ogmjob/ogmjob-pipeline.h
+include/ogmjob/ogmjob-queue.h
+include/ogmjob/ogmjob-spawn.h
+include/ogmjob/ogmjob.h
 lib/libogmdvd.a
+lib/libogmdvd.la
+lib/libogmdvd.so
 lib/libogmdvd.so.0
+lib/libogmdvd-gtk.a
+lib/libogmdvd-gtk.la
+lib/libogmdvd-gtk.so
+lib/libogmdvd-gtk.so.0
 lib/libogmrip.a
+lib/libogmrip.la
+lib/libogmrip.so
 lib/libogmrip.so.0
-lib/libogmspawn.a
-lib/libogmspawn.so.0
+lib/libogmjob.a
+lib/libogmjob.la
+lib/libogmjob.so
+lib/libogmjob.so.0
 libdata/pkgconfig/ogmdvd.pc
 libdata/pkgconfig/ogmrip.pc
-libdata/pkgconfig/ogmspawn.pc
+libdata/pkgconfig/ogmjob.pc
 share/applications/ogmrip.desktop
 %%DATADIR%%/ogmrip-crop.glade
 %%DATADIR%%/ogmrip-main.glade
@@ -51,7 +72,12 @@ share/applications/ogmrip.desktop
 %%DATADIR%%/ogmrip-progress.glade
 %%DATADIR%%/ogmrip-spell.glade
 %%DATADIR%%/ogmrip-ui.xml
+%%DATADIR%%/ogmrip.xml
+%%DATADIR%%/ogmrip.xsd
+%%DATADIR%%/xml.xsd
 share/pixmaps/ogmrip.png
 @dirrm include/ogmrip
-@dirrm include/ogmspawn
+@dirrm include/ogmjob
+@dirrm include/ogmdvd
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
