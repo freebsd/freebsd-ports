@@ -7,7 +7,7 @@
 
 PORTNAME=	pike76
 PORTVERSION=	7.6.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -188,7 +188,7 @@ CONFIGURE_ARGS+=	--without-sane
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.7:${PORTSDIR}/print/pdflib \
+LIB_DEPENDS+=	pdf.8:${PORTSDIR}/print/pdflib \
 		panda.0:${PORTSDIR}/print/panda
 CONFIGURE_ARGS+=	--with-libpdf --with-libpanda
 .else

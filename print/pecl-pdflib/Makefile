@@ -7,6 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to create PDF on the fly
 
-LIB_DEPENDS=	pdf.7:${PORTSDIR}/print/pdflib
+LIB_DEPENDS=	pdf.8:${PORTSDIR}/print/pdflib
 
 USE_PHP=	gd
 USE_PHP_BUILD=	yes
