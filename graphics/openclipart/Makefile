@@ -16,9 +16,11 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open Clip Art Library
 
 USE_BZIP2=	yes
-PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${SVGPNG}
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/pkg-plist
+
+OPTIONS=	PNG "Install png files" on
 
 .include <bsd.port.pre.mk>
 
@@ -26,13 +28,6 @@ NO_BUILD=	yes
 SVGPNG=	-full
 .else
 SVGPNG=	-svgonly
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_PNG)
-	@${ECHO_MSG} "Disable the install of png files by defining"
-	@${ECHO_MSG} "WITHOUT_PNG=yes"
-	@${ECHO_MSG} ""
 .endif
 
 pre-install:
@@ -46,6 +41,8 @@ pre-install:
 
 do-install:
 	cd ${WRKSRC} && ${FIND} . | \
-		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${DATADIR}
+		${CPIO} -vpdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 
 .include <bsd.port.post.mk>
