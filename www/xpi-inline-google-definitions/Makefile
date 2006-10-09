@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inline-google-definitions
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
