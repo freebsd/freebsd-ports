@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eyeOS
-DISTVERSION=	0.9.1-3
+DISTVERSION=	0.9.1-4
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -26,7 +26,7 @@ PLIST_SUB+=	EYEDIR="${EYEDIR:S,^${PREFIX}/,,}"
 SUB_LIST+=	EYEDIR=${EYEDIR}
 
 post-extract:
-	@${RM} -f ${WRKSRC}/DOCS/gpl-license.txt ${WRKSRC}/CHANGES.txt
+	@${RM} -f ${WRKSRC}/DOCS/gpl-license.txt
 	@${MV} ${WRKSRC}/README.txt ${WRKSRC}/DOCS/USER.MANUAL
 
 post-patch:
