@@ -1621,7 +1621,6 @@ devel/korelib||2005-10-18|master site up but distfile not available, last releas
 devel/qtk||2005-10-18|master site disappeared
 devel/wizard||2005-10-18|master site disappeared, author stopped work 2002
 devel/yacl||2005-10-18|master site disappeared, author stopped work 2002
-sysutils/cfengine|sysutils/cfengine2|2005-10-20|removed - use cfengine-2.x
 editors/joe-devel|editors/joe|2005-10-21|moved
 games/ctetris|games/ctris|2005-10-21|moved
 security/opensc-esteid|security/opensc|2005-10-30|functionality folded into master port
@@ -2490,3 +2489,4 @@ net-mgmt/arpwatch-devel|net-mgmt/arpwatch|2006-10-07|Devel port no longer needed
 sysutils/gnomesu|security/libgnomesu|2006-10-08|Was broken, similar functionality provided by libgnomesu
 databases/java-db||2006-10-08|Duplicate with java/berkeley-db
 devel/cscout-devel||2006-10-09|Has expired: The (long overdue) release of 2.2 has made this port obsolete.  Use devel/cscout
+sysutils/cfengine2|sysutils/cfengine|2006-10-09|moved to systuils/cfengine
