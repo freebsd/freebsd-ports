@@ -1,0 +1,58 @@
+--- build/build/BIF/build.bif	Sun Oct  8 21:25:57 2006
++++ build/build/BIF/build.bif	Mon Oct  9 00:11:25 2006
+@@ -5458,7 +5458,7 @@
+         HELIX_FEATURE_AUDIO_VORBIS=1
+       </defines>
+       <dependlist>
+-        player player_plugin player_app_doc player_installer_postinst player_installer_common
++        player player_app_doc player_installer_postinst player_installer_common
+         installer
+       </dependlist>
+     </module>
+@@ -5644,7 +5644,7 @@
+     </module>
+ 
+     <!-- PLAYER_PLUGIN -->
+-    <module id="player_plugin" name="player/app/plugin" group="player">
++    <!--<module id="player_plugin" name="player/app/plugin" group="player">
+       <location file="/home/build/build/bif-cvs/helix/2006%2f04%2f12%2012%253a50%253a16/client/build/BIF/realplay_gtk_release.bif" line="0"/>
+       <cvstag id="bingo_release_10_0_3" type="tag"/>
+     
+@@ -5661,7 +5661,7 @@
+       <source_dependlist>
+         client_include player_widget
+       </source_dependlist>
+-    </module>
++    </module>-->
+ 
+     <!-- PLAYER_WIDGET -->
+     <module id="player_widget" name="player/common/gtk" group="player">
+--- player/installer/archive/make_tempdir	Wed Feb  2 00:59:08 2005
++++ player/installer/archive/make_tempdir	Mon Oct  9 00:42:02 2006
+@@ -69,7 +69,6 @@
+     "share",
+     "doc",
+     "lib",
+-    "mozilla",
+     "postinst")
+ 
+ 
+@@ -99,12 +98,12 @@
+ # widget lib
+ inst.CopyModuleDlls(("player/common/gtk", "libgtkhx", "lib/libgtkhx"))
+ 
+-# mozilla plugin
+-inst.CopyModuleDlls(
+-    ("filesystem/memory", "memfsys", "plugins/memfsys"),
+-    ("player/app/plugin", "nphelix", "mozilla/nphelix"))
+-inst.CopyFiles(
+-    ("../../../player/app/plugin/nphelix.xpt", "mozilla/nphelix.xpt"))
++## mozilla plugin
++#inst.CopyModuleDlls(
++#    ("filesystem/memory", "memfsys", "plugins/memfsys"))
++#    ("player/app/plugin", "nphelix", "mozilla/nphelix"))
++#inst.CopyFiles(
++#    ("../../../player/app/plugin/nphelix.xpt", "mozilla/nphelix.xpt"))
+ 
+ # client core
+ inst.CopyModuleDlls(

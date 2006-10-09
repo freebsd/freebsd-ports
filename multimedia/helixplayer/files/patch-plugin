@@ -21,15 +21,15 @@ The latter is not safe on 64-bit systems...
 -	"common/import/gecko-sdk/dom/include"
 -)
 +project.includes.append(
-+	"/usr/local/include/nspr",
-+	"/usr/local/include/firefox",
-+	"/usr/local/include/firefox/java",
-+	"/usr/local/include/firefox/xpcom",
-+	"/usr/local/include/firefox/plugin",
-+	"/usr/local/include/firefox/windowwatcher",
-+	"/usr/local/include/firefox/string",
-+	"/usr/local/include/firefox/uconv",
-+	"/usr/local/include/firefox/dom"
++	"%%GECKO_PREFIX%%/include/nspr",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%/java",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%/xpcom",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%/plugin",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%/windowwatcher",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%/string",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%/uconv",
++	"%%GECKO_PREFIX%%/include/%%GECKO%%/dom"
 +)
  
 --- player/app/plugin/hxbackend.h	Mon Nov 22 19:24:25 2004

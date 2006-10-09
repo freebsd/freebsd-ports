@@ -8,7 +8,9 @@
 PORTNAME=	hxplay
 PORTVERSION=	1.0.7
 CATEGORIES=	multimedia
-MASTER_SITES=	https://helixcommunity.org/download.php/1950/
+MASTER_SITES=	https://helixcommunity.org/frs/download.php/1950/	\
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	shaun
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	The Helix Community's open source media player
@@ -24,10 +26,10 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_DOS2UNIX=	player/app/plugin/unix.pcf
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/HelixPlayer/lib
 
-SUB_FILES=	pkg-message
+SUB_FILES=	msg.withplugin
 
 CF2FIX=		gcc.cf freebsd.cf freebsd-5.0-i586.cf freebsd-4.0-i386.cf	\
 		freebsd-4.0-i586.cf freebsd-6.0-i586.cf freebsd-7.0-i586.cf
@@ -37,6 +39,28 @@ EXCLUDE=	common/import datatype/image/jpg/import \
 		datatype/image/png/import               \
 		build/BIF/build.bif
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S,^,--exclude ${DISTNAME}/,}
+
+OPTIONS=	PLUGIN	"Build with Gecko browser plug-in" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PLUGIN)
+USE_GECKO=	firefox mozilla firefox-devel seamonkey
+PLIST_SUB+=	PLUGIN=""
+PKGMESSAGE=	${WRKDIR}/msg.withplugin
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-noplugin
+PLIST_SUB+=	PLUGIN="@comment "
+.endif
+
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+
+.if defined(PACKAGE_BUILDING)
+FAIL_ACTION=	${CAT} "${WRKSRC}/build.out"; \
+		${ECHO_MSG} ==================================================
+.else
+FAIL_ACTION=	${TRUE}
+.endif
 
 pre-patch:
 	${LN} ${WRKSRC}/build/umakecf/freebsd-6.0-i586.cf			\
@@ -65,6 +89,11 @@ pre-configure:
 		> ${WRKSRC}/buildrc
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|"				\
 		${WRKSRC}/player/app/gtk/hxplay
+.if defined(WITH_PLUGIN)
+	${REINPLACE_CMD} -e 's|%%GECKO%%|${GECKO}|g' \
+	                 -e 's|"%%GECKO_PREFIX%%/include\(.*\)"|"${LOCALBASE}/include\1", "${X11BASE}/include\1"|' \
+		${WRKSRC}/player/app/plugin/unix.pcf
+.endif
 
 post-build:
 	@if ! ${TAIL} "${WRKSRC}/build.out" | ${GREP} -qF ', 0 of' ; \
@@ -73,6 +102,7 @@ post-build:
 		${ECHO_MSG} Something failed, please examine the log file;	\
 		${ECHO_MSG} ${WRKSRC}/build.out;				\
 		${ECHO_MSG} ==================================================; \
+		${FAIL_ACTION};	\
 		${FALSE};	\
 	fi
 
@@ -92,16 +122,8 @@ do-install:
 	${LN} -sf ${PREFIX}/HelixPlayer/share/hxplay.desktop ${DESKTOPDIR}
 
 post-install:
+.if defined (WITH_PLUGIN)
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-
-BROKEN=		fails to install
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
-.if ${ARCH}==ia64
-BROKEN=		does not compile on ${ARCH} due to coredump
 .endif
 
 .include <bsd.port.post.mk>
