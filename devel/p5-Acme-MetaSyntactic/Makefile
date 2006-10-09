@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Acme-MetaSyntactic
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Acme
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Themed metasyntactic variables names
 
 RUN_DEPENDS=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils

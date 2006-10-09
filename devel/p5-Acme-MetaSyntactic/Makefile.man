@@ -46,6 +46,7 @@ MAN3+=	Acme::MetaSyntactic::jabberwocky.3
 MAN3+=	Acme::MetaSyntactic::jamesbond.3
 MAN3+=	Acme::MetaSyntactic::jerkcity.3
 MAN3+=	Acme::MetaSyntactic::invasions.3
+MAN3+=	Acme::MetaSyntactic::linux.3
 MAN3+=	Acme::MetaSyntactic::loremipsum.3
 MAN3+=	Acme::MetaSyntactic::lotr.3
 MAN3+=	Acme::MetaSyntactic::magic8ball.3

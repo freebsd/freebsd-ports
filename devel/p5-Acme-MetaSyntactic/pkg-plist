@@ -43,6 +43,7 @@
 %%SITE_PERL%%/Acme/MetaSyntactic/jabberwocky.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/jamesbond.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/jerkcity.pm
+%%SITE_PERL%%/Acme/MetaSyntactic/linux.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/loremipsum.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/lotr.pm
 %%SITE_PERL%%/Acme/MetaSyntactic/magic8ball.pm
