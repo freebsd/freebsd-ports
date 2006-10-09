@@ -2,6 +2,7 @@
 %%DOKUWIKI_DIR%%/COPYING
 %%DOKUWIKI_DIR%%/README
 %%DOKUWIKI_DIR%%/VERSION
+%%DOKUWIKI_DIR%%/bin/.htaccess
 %%DOKUWIKI_DIR%%/bin/dwpage.php
 %%DOKUWIKI_DIR%%/bin/indexer.php
 %%DOKUWIKI_DIR%%/bin/wantedpages.php
@@ -29,6 +30,7 @@
 %%DOKUWIKI_DIR%%/data/pages/wiki/syntax.txt
 %%DOKUWIKI_DIR%%/doku.php
 %%DOKUWIKI_DIR%%/feed.php
+%%DOKUWIKI_DIR%%/inc/.htaccess
 %%DOKUWIKI_DIR%%/inc/DifferenceEngine.php
 %%DOKUWIKI_DIR%%/inc/HTTPClient.php
 %%DOKUWIKI_DIR%%/inc/JSON.php
