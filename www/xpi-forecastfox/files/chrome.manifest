@@ -47,6 +47,6 @@ locale	forecastfox	sl-SI	jar:chrome/forecastfox.jar!/locale/sl-SI/forecastfox/
 
 locale	forecastfox	sv-SE	jar:chrome/forecastfox.jar!/locale/sv-SE/forecastfox/
 
-locale	forecastfox	zh-TW	jar:chrome/forecastfox.jar!/locale/zh-TW/forecastfox/
-
 locale	forecastfox	zh-CN	jar:chrome/forecastfox.jar!/locale/zh-CN/forecastfox/
+
+locale	forecastfox	zh-TW	jar:chrome/forecastfox.jar!/locale/zh-TW/forecastfox/
