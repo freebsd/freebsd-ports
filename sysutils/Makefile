@@ -211,6 +211,7 @@
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gdmap
+    SUBDIR += geomgui
     SUBDIR += gfslicer
     SUBDIR += ghasher
     SUBDIR += gkfreq
