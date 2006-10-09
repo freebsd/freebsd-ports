@@ -1,5 +1,5 @@
---- share/Makefile.in.orig	Thu Feb  2 03:39:37 2006
-+++ share/Makefile.in	Tue Jun 13 22:39:26 2006
+--- share/Makefile.in.orig	Wed Aug 30 10:23:29 2006
++++ share/Makefile.in	Sun Oct  8 02:56:33 2006
 @@ -1,15 +1,16 @@
  topsrc = @top_srcdir@
  
@@ -12,14 +12,14 @@
 +gretldir = $(datadir)/gretl
  tooldir = $(topsrc)/tools
  sharesrc = $(topsrc)/share
- pdfdir = $(topsrc)/doc/tex
+ pdfdir = ../doc/tex
  
 -INSTALL_DATA = cp -fp
 +INSTALL_DATA = @INSTALL_DATA@
  
- ifeq ($(build_docs),yes)
-   AUTO_HELPFILES = \
-@@ -46,17 +47,17 @@
+ EN_GUI_HLP = $(sharesrc)/gretlgui.hlp
+ EN_CMD_HLP = $(sharesrc)/gretlcmd.hlp
+@@ -41,17 +42,17 @@
  all: $(AUTO_HELPFILES)
  
  $(AUTO_HELPFILES): 
@@ -32,16 +32,16 @@
 -	make -C ../doc/commands help-all
 +	$(MAKE) -C ../doc/commands help-all
  
- install: installdirs install_datafiles install_scripts install_help \
- 	$(INSTALL_GUI_SCRIPT_HELP) $(INSTALL_HELP_FIGS)
+ install: installdirs install_datafiles install_scripts install_functions \
+ 	install_help install_fonts
  	$(INSTALL_DATA) $(sharesrc)/gretl.stamp $(gretldir)/gretl.stamp
 -	make -C bcih install
 +	$(MAKE) -C bcih install
  
  install-strip: install
  
-@@ -79,8 +80,8 @@
- 	$(INSTALL_DATA) $$f $(gretldir)/scripts/misc ; done
+@@ -77,12 +78,12 @@
+ 	$(INSTALL_DATA) $(sharesrc)/functions/gretlfunc.dtd $(gretldir)/functions 
  
  install_man: gretl.1
 -	$(tooldir)/mkinstalldirs $(prefix)/share/man/man1
@@ -49,5 +49,21 @@
 +	$(tooldir)/mkinstalldirs $(prefix)/man/man1
 +	$(INSTALL_DATA) $(topsrc)/gretl.1 $(prefix)/man/man1
  
- install_helpfigs: 
+ install_help: $(AUTO_HELPFILES)
+ 	$(tooldir)/mkinstalldirs $(gretldir)
+-	$(tooldir)/mkinstalldirs $(gretldir)/doc
++#	$(tooldir)/mkinstalldirs $(gretldir)/doc
  	$(tooldir)/mkinstalldirs $(gretldir)/helpfigs
+ 	$(INSTALL_DATA) $(EN_GUI_HLP) $(gretldir)/gretlgui.hlp
+ 	$(INSTALL_DATA) $(EN_CMD_HLP) $(gretldir)/gretlcmd.hlp
+@@ -95,8 +96,8 @@
+ 	$(INSTALL_DATA) $(IT_CLI_HLP) $(gretldir)/gretlcli.hlp.it
+ 	for f in $(sharesrc)/texfigs/*.png ; do \
+ 	$(INSTALL_DATA) $$f $(gretldir)/helpfigs ; done
+-	for f in $(pdfdir)/gretl-ref.pdf $(pdfdir)/gretl-guide.pdf ; do \
+-	if test -f $$f ; then $(INSTALL_DATA) $$f $(gretldir)/doc ; fi ; done
++#	for f in $(pdfdir)/gretl-ref.pdf $(pdfdir)/gretl-guide.pdf ; do \
++#	if test -f $$f ; then $(INSTALL_DATA) $$f $(gretldir)/doc ; fi ; done
+ 
+ install_fonts:
+ 	for f in $(sharesrc)/fonts/*.ttf ; do \

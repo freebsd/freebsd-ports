@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	Thu Dec  8 00:25:48 2005
-+++ lib/Makefile.in	Sun Jan 15 14:54:18 2006
+--- lib/Makefile.in.orig	Tue May 23 18:27:51 2006
++++ lib/Makefile.in	Sun Oct  8 02:07:54 2006
 @@ -22,6 +22,11 @@
  
  have_gtk = @have_gtk@
@@ -32,8 +32,12 @@
  
  #### End of system configuration section. ####
  
-@@ -186,7 +191,7 @@
- LIBTOOL = ../libtool
+@@ -187,10 +192,10 @@
+ LOBJS = $(SRCS:.c=.lo)
+ AUX_LOBJ = $(CEPHES_SRC:.c=.lo) $(MINPACK_SRC:.c=.lo)
+ 
+-LIBTOOL = ../libtool
++LIBTOOL = @LIBTOOL@
  
  override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(XML_CFLAGS) $(GLIB_CFLAGS) \
 -	$(GMP_CFLAGS) -DHAVE_CONFIG_H
@@ -41,7 +45,7 @@
  
  COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
  
-@@ -195,7 +200,7 @@
+@@ -199,7 +204,7 @@
  	$(CC) $(CFLAGS) -MM -MT $*.lo $< > .deps/$*.d
  
  $(LIBGRETL): .deps $(LOBJS) $(AUX_LOBJ)

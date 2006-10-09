@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +27,7 @@ USE_GNOME=	gnometarget gtk20 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
@@ -51,10 +50,8 @@ PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
 GCONF_SCHEMAS=	gretl.schemas
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
-PLIST_SUB+=	GNOMEUI=""
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
-PLIST_SUB+=	GNOMEUI="@comment "
 .endif
 
 .include <bsd.port.post.mk>

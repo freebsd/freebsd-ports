@@ -1,5 +1,5 @@
---- plugin/Makefile.in.orig	Sun May 22 12:11:20 2005
-+++ plugin/Makefile.in	Wed Jul  6 02:05:05 2005
+--- plugin/Makefile.in.orig	Tue Sep 12 22:53:16 2006
++++ plugin/Makefile.in	Sun Oct  8 02:08:19 2006
 @@ -8,6 +8,10 @@
  INSTALL = @INSTALL@
  LN = @LN_S@
@@ -11,16 +11,25 @@
  build_gui = @build_gui@
  have_gtk = @have_gtk@
  have_gmp = @have_gmp@
-@@ -145,7 +149,7 @@
+@@ -45,7 +49,7 @@
+ 
+ override CFLAGS += -I.. -I$(topsrc)/gui2 -DHAVE_CONFIG_H
+ 
+-LIBTOOL = ../libtool
++LIBTOOL = @LIBTOOL@
+ COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
+ LINK = $(LIBTOOL) --mode=link $(CC) -module -avoid-version -rpath $(plugindir)
+ 
+@@ -163,7 +167,7 @@
  URCDATA = $(topsrc)/plugin/data/urcdata.gz
  
- override CFLAGS += $(GRETLINC) $(GTK_CFLAGS) $(GMP_CFLAGS) $(XML_CFLAGS) \
--	$(LIBOLE2_CFLAGS) $(AUDIO_CFLAGS) -I. $(GMPDEF)
-+	$(LIBOLE2_CFLAGS) $(AUDIO_CFLAGS) -I. $(GMPDEF) $(CPPFLAGS)
+ override CFLAGS += $(GRETLINC) $(GTK_CFLAGS) $(GMP_CFLAGS) $(MPFR_CFLAGS) \
+-	$(XML_CFLAGS) $(GRETL_LIBOLE2_CFLAGS) $(ZIP_CFLAGS) $(AUDIO_CFLAGS) -I. $(GMPDEF)
++	$(XML_CFLAGS) $(GRETL_LIBOLE2_CFLAGS) $(ZIP_CFLAGS) $(AUDIO_CFLAGS) -I. $(GMPDEF) $(CPPFLAGS)
  
  %.lo: %.c
  	$(COMPILE) $< 
-@@ -239,12 +243,12 @@
+@@ -266,12 +270,12 @@
  .PHONY: 
  
  install: $(GRETLLIB) $(PLUGINS) $(URCDATA) installdirs 
