@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	bmpx
-PORTVERSION=	0.20.3
-PORTREVISION=	1
+PORTVERSION=	0.32.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://files.beep-media-player.org/releases/${PORTVERSION:C/\.[0-9]*$//}/
+MASTER_SITES=	http://files.beep-media-player.org/releases/0.30/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Media player geared towards usability, technical efficiency and looks
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
-		cairo.2:${PORTSDIR}/graphics/cairo \
+		cairomm-1.0.0:${PORTSDIR}/graphics/cairomm \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		neon.25:${PORTSDIR}/www/neon \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
@@ -58,14 +57,6 @@ PLIST_SUB+=		NLS="@comment "
 .else
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
-.endif
-
-.if !defined(WITHOUT_LIBNOTIFY)
-CONFIGURE_ARGS+=	--enable-libnotify
-LIB_DEPENDS+=	notify.2:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS+=	${X11BASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
-.else
-CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
 .include <bsd.port.mk>
