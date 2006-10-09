@@ -6,31 +6,30 @@
 #
 
 PORTNAME=	ctpp
-PORTVERSION=	1.7.5
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.reki.ru/products/ctpp/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to use templates in C/C++ projects
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-.if defined(WITH_CTPP_PERF_TUNING)
-CONFIGURE_ARGS+=	--enable-optimization
-.endif
+do-configure:
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/cmake ${WRKSRC}
 
-.if defined(WITH_CTPP_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/libctpp-st.a ${PREFIX}/lib/libctpp.a
+	${INSTALL_DATA} ${WRKSRC}/libctpp.so.1.8.0 ${PREFIX}/lib/libctpp.so
+	@${MKDIR} ${PREFIX}/include/ctpp
+	cd ${WRKSRC}/include && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include/ctpp
 .if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install-doc
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
-
-post-patch:
-	@${RM} -f ${WRKSRC}/obj/*.o
 
 .include <bsd.port.mk>
