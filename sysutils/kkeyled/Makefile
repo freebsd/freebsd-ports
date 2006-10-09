@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	kkeyled
-PORTVERSION=	0.8.9
-PORTREVISION=	4
+PORTVERSION=	0.8.11
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://www.truesoft.ch/dieter/kkeyled/software/
+MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Panel applet to display the keyboard's LED states
 
+USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -20,7 +20,5 @@ USE_AUTOTOOLS=	libtool:15
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|/opt/kde3|${PREFIX}|g' \
-		${WRKSRC}/kkeyled/Themicons/kkeyledrc
 
 .include <bsd.port.mk>
