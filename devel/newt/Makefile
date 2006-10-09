@@ -65,6 +65,7 @@ post-patch:
 
 .if defined(WITH_PYTHON)
 post-build:
+	@${LN} -sf ${WRKSRC}/libnewt.so.${SOVERSION} ${WRKSRC}/libnewt.so
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py build
 
 post-install:
