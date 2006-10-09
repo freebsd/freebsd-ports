@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	forecastfox
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.3.1
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
 CATEGORIES=	www
 
