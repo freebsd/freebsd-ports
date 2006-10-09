@@ -7,10 +7,10 @@
 
 PORTNAME=	atitd
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games graphics linux
-MASTER_SITES=	http://www.atitd.com/
-DISTNAME=	eClient-linux.run
+MASTER_SITES=	http://game3.atitd.com/dl/files/
+DISTNAME=	eClient-linux-i686.run
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
@@ -18,10 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
 RUN_DEPENDS=	${X11BASE}/bin/xhost:${X_CLIENTS_PORT}
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 .include <bsd.port.pre.mk>
 
@@ -39,16 +35,16 @@ PLIST_FILES=	bin/atitd
 USE_LINUX=	yes
 
 ONLY_FOR_ARCHS=	i386
-NO_CDROM=	"Redistribution not allowed"
-NO_PACKAGE=	"Not packagable."
+NO_CDROM=	Redistribution not allowed
+NO_PACKAGE=	Not packagable.
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 LINUX_SH=	${LINUXBASE}/bin/sh
 ECLIENT=	${DISTDIR}/${DISTFILES}
 
-checksum:
-	@${LINUX_SH} ${ECLIENT} --check
+#checksum:
+#	@${LINUX_SH} ${ECLIENT} --check
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/atitd.sh > ${WRKSRC}/atitd.sh
