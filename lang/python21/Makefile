@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	python
+PORTNAME=	python21
 PORTVERSION=	2.1.3
 PORTREVISION=	8
 CATEGORIES=	lang python
@@ -13,7 +13,7 @@ MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python

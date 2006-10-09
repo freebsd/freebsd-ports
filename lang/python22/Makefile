@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	python
+PORTNAME=	python22
 PORTVERSION=	2.2.3
 PORTREVISION=	9
 CATEGORIES=	lang python ipv6
@@ -16,7 +16,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 PATCH_SITES=	http://www.python.org/security/PSF-2005-001/
 PATCHFILES=	patch-2.2.txt
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python

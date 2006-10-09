@@ -1,13 +1,13 @@
-# New ports collection makefile for:    python
+# New ports collection makefile for:    python24
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
 # $FreeBSD$
 #
 
-PORTNAME=	python
+PORTNAME=	python24
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -16,7 +16,6 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
-CONFLICTS=	python-mode.el-1.*
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
@@ -24,8 +23,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
 INSTALLS_SHLIB=	yes
-INSTALL_TARGET=	install
-MAN1=		python.1
+INSTALL_TARGET=	altinstall
+MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.4
@@ -182,12 +181,11 @@ post-install:
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
-	cd ${PREFIX}/bin; \
-		${LN} -f ${PYTHON_VERSION:S/thon/thon-shared/} python-shared
 
 	@# additional files installing by ports
-	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
-		${PREFIX}/share/emacs/site-lisp
+	@${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
+		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
 		${WRKDIR}/smtpd2.4.py ${PREFIX}/bin
 
@@ -201,27 +199,5 @@ post-install:
 .endif
 
 	@${CAT} ${PKGMESSAGE}
-
-PORTUPGRADE?=	${LOCALBASE}/sbin/portupgrade
-PKG_WHICH?=	${LOCALBASE}/sbin/pkg_which
-upgrade-site-packages:
-	@if [ -x ${PORTUPGRADE} ]; then \
-		for ver in 2.1 2.2 2.3; do \
-			if [ -d ${PREFIX}/lib/python$$ver ]; then \
-				UPD=`${FIND} ${PREFIX}/lib/python$$ver \
-						-type f -print0 | \
-					${XARGS} -0 ${PKG_WHICH} | \
-					${GREP} -Fv '?' | \
-					${GREP} -v '^python-2' | \
-					${SORT} -u`; \
-				if [ "$$UPD" ]; then \
-					${PORTUPGRADE} -f $$UPD; \
-				fi; \
-			fi; \
-		done; \
-	 else \
-		${ECHO_MSG} "Please install sysutils/portupgrade."; \
-		${FALSE}; \
-	 fi
 
 .include <bsd.port.post.mk>

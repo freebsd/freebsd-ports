@@ -1,10 +1,17 @@
+bin/idle
 bin/idle%%PYVER%%
+bin/pydoc
 bin/pydoc%%PYVER%%
+bin/python
 bin/python%%PYVER%%
 bin/python%%PYVER%%-config
+bin/python-config
+bin/python-shared
 bin/python-shared%%PYVER%%
 bin/python-shared%%PYVER%%-config
+bin/python-shared-config
 bin/smtpd%%PYVER%%.py
+bin/smtpd.py
 %%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/Python.h
 %%PYTHON_INCLUDEDIR%%/abstract.h
