@@ -7,14 +7,15 @@
 
 PORTNAME=	tmda
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	mail python
-MASTER_SITES=	http://tmda.sourceforge.net/releases/ \
+MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
+		http://tmda.sourceforge.net/releases/ \
 		http://tmda.mirrors.summersault.com/releases/ \
 		http://mirrors.standblue.net/tmda.net/releases/ \
 		http://tmda.paracoda.com/releases/ \
-		http://tmda.rtin.bz/releases/ \
-		http://ftp.heanet.ie/mirrors/tmda.net/releases/ \
-		http://tmda.mosquito.net/releases/ \
+		ftp://ftp.heanet.ie/mirrors/tmda.net/releases/ \
+		ftp://gd.tuwien.ac.at/infosys/mail/tmda/releases/ \
 		http://dl.ambiweb.de/mirrors/www.tmda.net/releases/ \
 		http://tmda.pradnik.net/releases/ \
 		http://tmda.planetmirror.com/releases/
@@ -27,11 +28,11 @@ COMMENT=	Python-based SPAM reduction system
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
 .endif
 
-USE_PYTHON=	2.1+
+USE_PYTHON=	2.3+
 
 SUB_FILES=	pkg-message
 
-DOCS=		CODENAMES CRYPTO README THANKS UPGRADE \
+DOCS=		CODENAMES CRYPTO README THANKS NEWS UPGRADE \
 		htdocs/README htdocs/*.html htdocs/*.css
 SAMPLES=	tmda.el tofmipd.sysconfig vtmdarc
 SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
