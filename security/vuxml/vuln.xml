@@ -4042,7 +4042,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>zgv</name>
-	<range><gt>0</gt></range>
+	<range><lt>5.9_1</lt></range>
       </package>
       <package>
 	<name>xzgv</name>
@@ -4073,6 +4073,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-04-21</discovery>
       <entry>2006-04-23</entry>
+      <modified>2006-10-09</modified>
     </dates>
   </vuln>
 
