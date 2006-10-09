@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	${PYTHON_PORTVERSION}
+PORTVERSION=	2.5
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,6 +16,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	The "meta-port" for the stable version of Python interpreter
 
 USE_PYTHON=	yes
+PYTHON_VERSION=	python2.5
 NO_BUILD=	yes
 
 do-install: # empty
