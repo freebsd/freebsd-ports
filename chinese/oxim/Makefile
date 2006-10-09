@@ -7,6 +7,7 @@
 
 PORTNAME=	oxim
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
@@ -22,7 +23,8 @@ RUN_DEPENDS=	zh-fireflyttf>=0:${PORTSDIR}/chinese/fireflyttf
 
 OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 		CHEWING "Enable Chewing input module" On \
-		UNICODE "Enable Unicode input module" On
+		UNICODE "Enable Unicode input module" On \
+		SETUP "Enable GUI Setup Tool" On
 
 USE_GCC=	3.2+
 USE_ICONV=	yes
@@ -39,8 +41,7 @@ CONFIGURE_ARGS+=--disable-bimsphone-module \
 		--disable-static \
 		--with-conf-dir=${TARGETDIR}/etc/${PORTNAME}
 # oxim requires qinputcontextplugin.h which only exists in Debian package
-CONFIGURE_ARGS+=--disable-qt-immodule \
-		--disable-setup-tool
+CONFIGURE_ARGS+=--disable-qt-immodule
 
 .include <bsd.port.pre.mk>
 
@@ -72,6 +73,23 @@ PLIST_SUB+=	UNICODE=""
 .else
 CONFIGURE_ARGS+=	--disable-unicode-module
 PLIST_SUB+=	UNICODE="@comment "
+.endif
+
+.if !defined(WITHOUT_SETUP)
+BUILD_DEPENDS+=	qmake:${PORTSDIR}/devel/qmake
+
+CONFIGURE_ARGS+=	--enable-setup-tool
+PLIST_SUB+=	SETUP=""
+
+USE_QT_VER=	3
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
+
+QMAKESPEC?=	freebsd-g++
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" QTDIR="${QT_PREFIX}"
+MAKE_ARGS+=	LOCALBASE="${LOCALBASE}" MAKE="${MAKE}" QMAKESPEC="${QMAKESPEC}"
+.else
+CONFIGURE_ARGS+=	--disable-setup-tool
+PLIST_SUB+=	SETUP="@comment "
 .endif
 
 # TODO WITHOUT_NLS knob

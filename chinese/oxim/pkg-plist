@@ -1,5 +1,6 @@
 bin/oxim
 bin/oxim-conv
+%%SETUP%%bin/oxim-setup
 bin/oxim2tab
 etc/oxim/locale.list
 etc/oxim/oxim.conf
