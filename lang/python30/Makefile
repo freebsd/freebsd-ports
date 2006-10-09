@@ -1,17 +1,17 @@
-# New ports collection makefile for:    python-devel
+# New ports collection makefile for:    python25
 # Date created:         3 July 2003
 # Whom:                 Hye-Shik Chang <perky@FreeBSD.org>
 #
 # $FreeBSD$
 
-PORTNAME=	python
-PORTVERSION=	2.5.c2
+PORTNAME=	python25
+PORTVERSION=	2.5
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
@@ -23,8 +23,8 @@ CONFIGURE_SCRIPT=	../configure # must be relative
 CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
 INSTALLS_SHLIB=	yes
-INSTALL_TARGET=	altinstall
-MAN1=		${PYTHON_VERSION}.1
+INSTALL_TARGET=	install
+MAN1=		python.1 ${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.5
@@ -33,7 +33,7 @@ LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
 SHARED_WRKSRC=	${PYTHON_WRKSRC}/portbld.shared
 PLIST=		${WRKDIR}/PLIST
-PLIST_TEMPLATE=	${PKGDIR}/pkg-plist
+PLIST_TEMPLATE?=${PKGDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYVER_WITHPAT=${PORTVERSION:S/.c/c/}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
@@ -202,6 +202,10 @@ post-install:
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
+	cd ${PREFIX}/bin; \
+		${LN} -f ${PYTHON_VERSION:S/thon/thon-shared/} python-shared; \
+		${LN} -f ${PYTHON_VERSION:S/thon/thon-shared/}-config \
+			python-shared-config; \
 
 	@# additional files installing by ports
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.5 ${WRKDIR}/idle2.5 \
@@ -218,5 +222,7 @@ post-install:
 	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
 		(cd ${DEMODIR}; ${TAR} -xf -)
 .endif
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

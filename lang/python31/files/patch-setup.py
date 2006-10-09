@@ -1,5 +1,5 @@
---- setup.py.orig	Fri Jun 30 15:18:39 2006
-+++ setup.py	Thu Aug 10 18:41:33 2006
+--- setup.py.orig	Thu Aug 10 08:42:18 2006
++++ setup.py	Thu Oct  5 13:26:43 2006
 @@ -15,7 +15,7 @@
  from distutils.command.install_lib import install_lib
  
@@ -18,13 +18,12 @@
  
  
          # Modules that provide persistent dictionary-like semantics.  You will
-@@ -1498,8 +1500,7 @@
-           ext_modules=[Extension('_struct', ['_struct.c'])],
- 
-           # Scripts to install
--          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
--                     'Lib/smtpd.py']
-+          scripts = []
-         )
- 
- # --install-platlib
+@@ -903,7 +905,7 @@
+         # Curses support, requiring the System V version of curses, often
+         # provided by the ncurses library.
+         panel_library = 'panel'
+-        if (self.compiler.find_library_file(lib_dirs, 'ncursesw')):
++        if (self.compiler.find_library_file(lib_dirs, 'xxxncursesw')):
+             curses_libs = ['ncursesw']
+             # Bug 1464056: If _curses.so links with ncursesw,
+             # _curses_panel.so must link with panelw.

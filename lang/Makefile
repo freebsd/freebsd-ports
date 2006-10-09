@@ -234,7 +234,6 @@
     SUBDIR += py-mx-base
     SUBDIR += py-prolog
     SUBDIR += python
-    SUBDIR += python-devel
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
     SUBDIR += python-doc-pdf-letter
@@ -244,6 +243,8 @@
     SUBDIR += python21
     SUBDIR += python22
     SUBDIR += python23
+    SUBDIR += python24
+    SUBDIR += python25
     SUBDIR += q
     SUBDIR += qscheme
     SUBDIR += quack

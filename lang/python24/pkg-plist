@@ -1,13 +1,8 @@
-bin/idle
 bin/idle%%PYVER%%
-bin/pydoc
 bin/pydoc%%PYVER%%
-bin/python
 bin/python%%PYVER%%
-bin/python-shared
 bin/python-shared%%PYVER%%
 bin/smtpd%%PYVER%%.py
-bin/smtpd.py
 %%PYTHON_INCLUDEDIR%%/Python.h
 %%PYTHON_INCLUDEDIR%%/abstract.h
 %%PYTHON_INCLUDEDIR%%/bitset.h
@@ -1183,7 +1178,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/xmllib.py
 %%PYTHON_LIBDIR%%/xmlrpclib.py
 %%PYTHON_LIBDIR%%/zipfile.py
-share/emacs/site-lisp/python-mode.el
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/cgi/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/cgi/cgi0.sh

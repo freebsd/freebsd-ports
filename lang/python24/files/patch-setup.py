@@ -1,5 +1,5 @@
---- setup.py.orig	Sat Aug 12 12:46:21 2006
-+++ setup.py	Sat Aug 12 12:47:00 2006
+--- setup.py.orig	Mon Oct  9 22:08:07 2006
++++ setup.py	Mon Oct  9 22:08:42 2006
 @@ -15,7 +15,7 @@
  from distutils.command.install_lib import install_lib
  
@@ -27,3 +27,13 @@
              curses_libs = ['ncursesw']
              exts.append( Extension('_curses', ['_cursesmodule.c'],
                                     libraries = curses_libs) )
+@@ -1187,8 +1187,7 @@
+           ext_modules=[Extension('struct', ['structmodule.c'])],
+ 
+           # Scripts to install
+-          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
+-                     'Lib/smtpd.py']
++          scripts = []
+         )
+ 
+ # --install-platlib

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	python
+PORTNAME=	python23
 PORTVERSION=	2.3.5
 PORTREVISION=	1
 CATEGORIES=	lang python ipv6
@@ -13,7 +13,7 @@ MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT?=	An interpreted object-oriented programming language
 
 CONFLICTS=	stackless_python-*
