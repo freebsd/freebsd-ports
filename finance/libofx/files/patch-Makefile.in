@@ -1,20 +1,29 @@
---- Makefile.in.orig	Mon Aug  1 03:46:41 2005
-+++ Makefile.in	Mon Aug  1 14:09:23 2005
-@@ -206,7 +206,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
--SUBDIRS = inc dtd lib doc . ofx2qif ofxdump ofxconnect 
-+SUBDIRS = inc dtd lib . ofx2qif ofxdump ofxconnect 
- docdir = ${prefix}/share/doc/libofx
- doc_DATA = \
-   AUTHORS \
-@@ -621,7 +621,7 @@
+--- Makefile.in.orig	Sat Aug 26 01:24:29 2006
++++ Makefile.in	Mon Oct  9 12:29:18 2006
+@@ -73,7 +73,7 @@
+ DATA = $(doc_DATA) $(pkgconfig_DATA)
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = inc dtd lib doc . ofx2qif ofxdump ofxconnect
++DIST_SUBDIRS = inc dtd lib . ofx2qif ofxdump ofxconnect
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)
+@@ -238,7 +238,7 @@
+   totest.txt \
+   libofx.lsm
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libofx.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+@@ -669,7 +669,7 @@
  
  info-am:
  
--install-data-am: install-docDATA
-+install-data-am:
+-install-data-am: install-docDATA install-pkgconfigDATA
++install-data-am: install-pkgconfigDATA
  
  install-exec-am:
  
