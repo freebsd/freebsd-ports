@@ -26,10 +26,6 @@ KMODDIR=	/boot/modules
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile
-.endif
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 # Don't strip module on amd64 systems
@@ -45,6 +41,11 @@ IGNORE=		requires kernel source to be installed
 IGNORE=		already in the base system
 .elif ${OSVERSION} < 503000
 IGNORE=		does not support FreeBSD before 5.3
+.endif
+
+# Need to include this extra path on 5.x.
+.if ${OSVERSION} < 600000
+CFLAGS+=	-I@/contrib/dev/acpica
 .endif
 
 do-install:
