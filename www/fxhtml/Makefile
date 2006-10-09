@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side extension to HTML eliminating the need for CGI scripts
 
+EXPIRATION_DATE=2006-12-01
+DEPRECATED=	crusty old a.out binary, not useful any more
+
 pre-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin ${PREFIX}/www/data
 
