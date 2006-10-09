@@ -1,25 +1,27 @@
-@comment $FreeBSD$
 bin/qsheff
-@unexec if cmp -s %D/etc/qsheff/qsheff.attach %D/etc/qsheff/qsheff.attach-default; then rm -f %D/etc/qsheff/qsheff.attach; fi
-etc/qsheff/qsheff.attach-default
+@unexec if cmp -s %D/etc/qsheff-II/qsheff.attach %D/etc/qsheff-II/qsheff.attach-default; then rm -f %D/etc/qsheff-II/qsheff.attach; fi
+etc/qsheff-II/qsheff.attach-default
 @exec [ -f %B/qsheff.attach ] || cp %B/%f %B/qsheff.attach
-@unexec if cmp -s %D/etc/qsheff/qsheff.conf %D/etc/qsheff/qsheff.conf-default; then rm -f %D/etc/qsheff/qsheff.conf; fi
-etc/qsheff/qsheff.conf-default
-@unexec if cmp -s %D/etc/qsheff/qsheff.rules %D/etc/qsheff/qsheff.rules-default; then rm -f %D/etc/qsheff/qsheff.rules; fi
-etc/qsheff/qsheff.rules-default
+@unexec if cmp -s %D/etc/qsheff-II/qsheff.conf %D/etc/qsheff-II/qsheff.conf-default; then rm -f %D/etc/qsheff-II/qsheff.conf; fi
+etc/qsheff-II/qsheff.conf-default
+@unexec if cmp -s %D/etc/qsheff-II/qsheff.rules %D/etc/qsheff-II/qsheff.rules-default; then rm -f %D/etc/qsheff-II/qsheff.rules; fi
+etc/qsheff-II/qsheff.rules-default
 @exec [ -f %B/qsheff.rules ] || cp %B/%f %B/qsheff.attach
-@unexec if cmp -s %D/etc/qsheff/qsheff.wblist %D/etc/qsheff/qsheff.wblist-default; then rm -f %D/etc/qsheff/qsheff.wblist; fi
-etc/qsheff/qsheff.wblist-default
-@exec [ -f %B/qsheff.wblist ] || cp %B/%f %B/qsheff.attach
-etc/qsheff/install-wrapper.sh
-etc/qsheff/uninstall-wrapper.sh
-%%DATADIR%%/developer.notes
-%%DATADIR%%/eicar.com.txt
-%%DATADIR%%/sample-OK.msg
-%%DATADIR%%/sample-SPAM.msg
-%%DATADIR%%/sample-VIRUS.msg
-@dirrmtry etc/qsheff
-@dirrm %%DATADIR%%
+@unexec if cmp -s %D/etc/qsheff-II/qsheff.ignore %D/etc/qsheff-II/qsheff.ignore-default; then rm -f %D/etc/qsheff-II/qsheff.ignore; fi
+etc/qsheff-II/qsheff.ignore-default
+@exec [ -f %B/qsheff.ignore ] || cp %B/%f %B/qsheff.attach
+etc/qsheff-II/install-wrapper.sh
+etc/qsheff-II/uninstall-wrapper.sh
+%%PORTDOCS%%%%DOCSDIR%%/spamass-qsheff.en.html
+%%PORTDOCS%%%%DOCSDIR%%/handbook.en.txt
+%%PORTDOCS%%%%DOCSDIR%%/handbook.tr.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample-OK.msg
+%%PORTDOCS%%%%DOCSDIR%%/sample-SPAM.msg
+%%PORTDOCS%%%%DOCSDIR%%/sample-VIRUS.msg
+%%PORTDOCS%%%%DOCSDIR%%/qsheff-patch.diff
+%%PORTDOCS%%%%DOCSDIR%%/qq-custom-error-patch.diff
+%%PORTDOCS%%%%DOCSDIR%%/qq-patch.diff
+@dirrmtry etc/qsheff-II
 @unexec echo
-@unexec echo "Type '%%PREFIX%%/etc/qsheff/uninstall-wrapper.sh' to uninstall qSheff completely."
+@unexec echo "Type '%%PREFIX%%/etc/qsheff-II/uninstall-wrapper.sh' to uninstall qSheff completely."
 @unexec echo
