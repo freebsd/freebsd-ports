@@ -148,14 +148,16 @@
  endif
  
  echo-requires-recursive::
---- security/manager/ssl/src/Makefile.in.orig	Tue Jan 31 07:24:14 2006
-+++ security/manager/ssl/src/Makefile.in	Tue Mar 28 15:30:44 2006
-@@ -119,17 +119,16 @@
+--- security/manager/ssl/src/Makefile.in.orig	Mon Aug 14 19:22:52 2006
++++ security/manager/ssl/src/Makefile.in	Thu Aug 31 15:17:20 2006
+@@ -124,19 +124,19 @@
  		  pipboot \
  		  $(NULL)
  
 -EXTRA_DEPS = $(NSS_DEP_LIBS)
--
+ 
+ DEFINES += -DNSS_ENABLE_ECC
+ 
  # Use local includes because they are inserted before INCLUDES
  # so that Mozilla's nss.h is used, not glibc's
 -LOCAL_INCLUDES += $(NSS_CFLAGS)

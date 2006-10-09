@@ -3,21 +3,20 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/firefox-devel/Makefile,v 1.26 2006/03/29 18:31:20 ahze Exp $
-#
+#   $MCom: ports/www/firefox-devel/Makefile,v 1.30 2006/10/08 22:01:05 ahze Exp $
 
 PORTNAME=	firefox
-DISTVERSION=	2.0a3
-PORTREVISION=	1
+DISTVERSION=	2.0rc2
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	MOZILLA_EXTENDED
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/bonecho/alpha3/source
-#DISTNAME=	${PORTNAME}-${DISTVERSION}-source
-DISTNAME=	bonecho-alpha3-source
+MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
+
+BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
 
 LATEST_LINK=	firefox2
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
@@ -29,11 +28,12 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
-
+LIBS=		-Wl,-Bsymbolic -lc
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
 
@@ -109,10 +109,5 @@ post-install:
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default.xpm
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
 
-.include "${.CURDIR}/../mozilla/Makefile.common"
-test:
-	@${REINPLACE_CMD} -e 's|${MOZILLA}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
-		s|progbase=`basename "$progname"`|${MOZILLA:S/${MOZILLA_SUFX}//}|' \
-		${FAKEDIR}/bin/${MOZILLA} \
-		${FAKEDIR}/bin/${MOZILLA}-config
+.include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>
