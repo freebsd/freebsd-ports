@@ -16,6 +16,7 @@ MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK2 module for connecting to Tomcat using AJP1X
 
 DEPRECATED=	"JK2 is officially unsupported, no further development will take place."
+EXPIRATION_DATE=2006-11-15
 
 USE_APACHE=	yes
 USE_GMAKE=	YES
