@@ -7,12 +7,14 @@
 
 PORTNAME=	cvm
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool15
 LIB_DEPENDS=	bg.1:${PORTSDIR}/devel/bglibs
 
 CONFLICTS=	bglibs-1.00*
