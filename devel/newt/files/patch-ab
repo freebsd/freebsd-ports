@@ -12,8 +12,8 @@
 -ifeq ($(RPM_OPT_FLAGS),)
 -CFLAGS += -g 
 -endif
-+CFLAGS += -I${LOCALBASE}/include -I${PREFIX}/include
-+LDFLAGS += -L${LOCALBASE}/lib -L${PREFIX}/lib
++CFLAGS += -I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include
++LDFLAGS += -L/usr/lib -L${LOCALBASE}/lib -L${PREFIX}/lib
  
  VERSION = @VERSION@
  CVSTAG = r$(subst .,-,$(VERSION))
