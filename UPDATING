@@ -7,6 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061009:
+  AFFECTS: users of ports using ODBC (databases/libiodbc or databases/unixODBC)
+  AUTHOR: ganael.laplanche@martymac.com
+
+  All the ports have been modified to use the same way of choosing
+  between ODBC flavors (IODBC and UNIXODBC).
+
+  This way is defining either WITH_IODBC or WITH_UNIXODBC.
+
+20061009:
   AFFECTS: users of any ports using Python
   AUTHOR: perky@FreeBSD.org
 
