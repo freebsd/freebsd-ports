@@ -1,8 +1,6 @@
 bin/yafray
 etc/gram.yafray
-lib/libyafraycore.la
 lib/libyafraycore.so
-lib/libyafrayplugin.la
 lib/libyafrayplugin.so
 lib/yafray/libpathlight.so
 lib/yafray/libsunlight.so
@@ -19,5 +17,7 @@ lib/yafray/libbasicblocks.so
 lib/yafray/libmixblocks.so
 lib/yafray/libblendershader.so
 lib/yafray/libhdri.so
+lib/yafray/libshaderback.so
+lib/yafray/libsss.so
 lib/yafray/libsunsky.so
 @dirrm lib/yafray

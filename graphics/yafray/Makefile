@@ -5,22 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	yafray
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.9
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.coala.uniovi.es/~jandro/noname/downloads/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
+MASTER_SITES=	http://www.yafray.org/sec/2/downloads/
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A fast XML based raytracer
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_SCONS=	yes
 USE_GETOPT_LONG=yes
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
@@ -38,26 +36,7 @@ pre-everything::
 USE_GCC=3.4+
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | \
-		${XARGS} ${REINPLACE_CMD} -E -e \
-		's|^CXX =.+$$|CXX=${CXX}|; \
-		s|-O3||; \
-		s|-D_PTHREADS||; \
-		s|-pthread|-lpthread|g; \
-		s|-lpthread|${PTHREAD_LIBS}|g; \
-		s|-ffast-math||; \
-		s|-ldl||; \
-		s|-Wall|${CXXFLAGS}|'
-
-	@${FIND} ${WRKSRC} -name "configure.in" \
-		-or -name "configure" | ${XARGS} \
-		${REINPLACE_CMD} -E -e \
-		's|-pthread|-lpthread|g; \
-		s|-lpthread|${PTHREAD_LIBS}|g'
-
-#make sure we don't need to run auto****
-	@${TOUCH} ${TOUCH_FLAGS} -t 199705212205.21 \
-		${WRKSRC}/configure.in
+pre-patch:
+	@${MV} ${WRKSRC}/linux-settings.py ${WRKSRC}/freebsd-settings.py
 
 .include <bsd.port.post.mk>
