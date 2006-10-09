@@ -178,7 +178,6 @@
     SUBDIR += crossgo32-djgpp2-pdcurses
     SUBDIR += cscope
     SUBDIR += cscout
-    SUBDIR += cscout-devel
     SUBDIR += cssc
     SUBDIR += cstringbuffer
     SUBDIR += ctags

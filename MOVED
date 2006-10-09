@@ -2489,3 +2489,4 @@ deskutils/goats||2006-10-07|Expired: no longer downloadable
 net-mgmt/arpwatch-devel|net-mgmt/arpwatch|2006-10-07|Devel port no longer needed
 sysutils/gnomesu|security/libgnomesu|2006-10-08|Was broken, similar functionality provided by libgnomesu
 databases/java-db||2006-10-08|Duplicate with java/berkeley-db
+devel/cscout-devel||2006-10-09|Has expired: The (long overdue) release of 2.2 has made this port obsolete.  Use devel/cscout
