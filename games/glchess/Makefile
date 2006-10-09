@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glchess
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.11
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D OpenGL based chess game
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
+RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -42,6 +43,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif #NOPORTDOCS
+	@-update-mime-database ${PREFIX}/share/mime
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
