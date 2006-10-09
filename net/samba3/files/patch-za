@@ -1,0 +1,129 @@
+--- nsswitch/wb_common.c.orig	Thu Apr 20 04:29:21 2006
++++ nsswitch/wb_common.c	Mon Sep 25 12:49:04 2006
+@@ -525,15 +525,11 @@
+ NSS_STATUS winbindd_send_request(int req_type, struct winbindd_request *request)
+ {
+ 	struct winbindd_request lrequest;
+-	char *env;
+-	int  value;
+-	
++
+ 	/* Check for our tricky environment variable */
+ 
+-	if ( (env = getenv(WINBINDD_DONT_ENV)) != NULL ) {
+-		value = atoi(env);
+-		if ( value == 1 )
+-			return NSS_STATUS_NOTFOUND;
++	if (winbind_env_set()) {
++		return NSS_STATUS_NOTFOUND;
+ 	}
+ 
+ 	if (!request) {
+@@ -632,3 +628,14 @@
+ 	return putenv(s) != -1;
+ }
+ 
++BOOL winbind_env_set( void )
++{
++	char *env;
++	
++	if ((env=getenv(WINBINDD_DONT_ENV)) != NULL) {
++		if(strequal(env, "1")) {
++			return True;
++		}
++	}
++	return False;
++}
+--- passdb/pdb_interface.c.orig	Wed Aug 23 18:16:38 2006
++++ passdb/pdb_interface.c	Mon Sep 25 13:10:15 2006
+@@ -1321,27 +1321,25 @@
+ 	struct group *grp;
+ 	char **gr;
+ 	struct passwd *pwd;
+-	char *winbindd_env;
++	BOOL winbind_env;
+  
+ 	*pp_uids = NULL;
+ 	*p_num = 0;
+ 
+ 	/* We only look at our own sam, so don't care about imported stuff */
+-
+-	winbindd_env = getenv(WINBINDD_DONT_ENV);
++	winbind_env = winbind_env_set();
+ 	winbind_off();
+ 
+ 	if ((grp = getgrgid(gid)) == NULL) {
+ 		/* allow winbindd lookups, but only if they weren't already disabled */
+-		if ( !(winbindd_env && strequal(winbindd_env, "1")) ) {
++		if (!winbind_env) {
+ 			winbind_on();
+ 		}
+-
++		
+ 		return False;
+ 	}
+ 
+ 	/* Primary group members */
+-
+ 	setpwent();
+ 	while ((pwd = getpwent()) != NULL) {
+ 		if (pwd->pw_gid == gid) {
+@@ -1352,7 +1350,6 @@
+ 	endpwent();
+ 
+ 	/* Secondary group members */
+-
+ 	for (gr = grp->gr_mem; (*gr != NULL) && ((*gr)[0] != '\0'); gr += 1) {
+ 		struct passwd *pw = getpwnam(*gr);
+ 
+@@ -1362,11 +1359,10 @@
+ 	}
+ 
+ 	/* allow winbindd lookups, but only if they weren't already disabled */
+-
+-	if ( !(winbindd_env && strequal(winbindd_env, "1")) ) {
++	if (!winbind_env) {
+ 		winbind_on();
+ 	}
+-
++	
+ 	return True;
+ }
+ 
+--- lib/system_smbd.c.orig	Thu Apr 20 04:29:23 2006
++++ lib/system_smbd.c	Mon Sep 25 12:53:54 2006
+@@ -120,19 +120,15 @@
+ static int sys_getgrouplist(const char *user, gid_t gid, gid_t *groups, int *grpcnt)
+ {
+ 	int retval;
+-	char *winbindd_env;
++	BOOL winbind_env;
+ 
+ 	DEBUG(10,("sys_getgrouplist: user [%s]\n", user));
+ 
+-	/* Save the winbindd state and not just blindly turn it back on */
+-
+-	winbindd_env = getenv(WINBINDD_DONT_ENV);
+-	
+ 	/* This is only ever called for Unix users, remote memberships are
+ 	 * always determined by the info3 coming back from auth3 or the
+ 	 * PAC. */
+-
+-	winbind_off() ;
++	winbind_env = winbind_env_set();
++	winbind_off();
+ 
+ #ifdef HAVE_GETGROUPLIST
+ 	retval = getgrouplist(user, gid, groups, grpcnt);
+@@ -142,9 +138,8 @@
+ 	unbecome_root();
+ #endif
+ 
+-	/* allow winbindd lookups , but only if they were not already disabled */
+-
+-	if ( !(winbindd_env && strequal(winbindd_env, "1")) ) {
++	/* allow winbindd lookups, but only if they were not already disabled */
++	if (!winbind_env) {
+ 		winbind_on();
+ 	}
+ 

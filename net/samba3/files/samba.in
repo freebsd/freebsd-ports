@@ -51,8 +51,8 @@ smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
 samba_parm="${testparm_command} -s -v --parameter-name"
 %%WINBIND%%samba_idmap=$(${samba_parm} 'idmap uid' ${samba_config} 2>/dev/null)
 samba_lockdir=$(${samba_parm} 'lock directory' ${samba_config} 2>/dev/null)
-# Setup slave variables
-if [ -n "${samba_enable}" ] && checkyesno samba_enable; then
+# Setup dependent variables
+if [ -n "${rcvar}" ] && checkyesno ${rcvar}; then
     nmbd_enable=${nmbd_enable="YES"}
     smbd_enable=${smbd_enable="YES"}
 %%WINBIND%%    # Check that winbindd is actually configured
@@ -60,7 +60,9 @@ if [ -n "${samba_enable}" ] && checkyesno samba_enable; then
 %%WINBIND%%	winbindd_enable=${winbindd_enable="YES"}
 %%WINBIND%%    fi
 fi
-# Defaults for slave variables
+# Hack to enable check of dependent variables
+eval real_${rcvar}=\${${rcvar}:="NO"}	${rcvar}="YES"
+# Defaults for dependent variables
 nmbd_enable=${nmbd_enable:="NO"}
 nmbd_flags=${nmbd_flags="-D"}
 smbd_enable=${smbd_enable:="NO"}
@@ -102,13 +104,14 @@ samba_rcvar_cmd() {
     # Check master variable
     echo "# ${name}"
     if [ -n "${rcvar}" ]; then
-	if checkyesno ${rcvar}; then
+	# Use original configured value
+	if checkyesno "real_${rcvar}"; then
 	    echo "\$${rcvar}=YES"
 	else
 	    echo "\$${rcvar}=NO"
 	fi
     fi
-    # Check slave variables
+    # Check dependent variables
     samba_cmd "${_rc_prefix}${rc_arg}" ${rc_extra_args}
 }
 
