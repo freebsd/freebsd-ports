@@ -1,0 +1,12 @@
+--- inputs/Makefile.in.orig     Mon Sep 13 19:25:42 2004
++++ inputs/Makefile.in  Mon Sep 13 19:25:57 2004
+@@ -17,7 +17,7 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(prefix)/share/examples/cfengine
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ..
+
