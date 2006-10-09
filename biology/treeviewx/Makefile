@@ -8,6 +8,7 @@
 
 PORTNAME=	treeviewx
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/download/${PORTVERSION:S/.1//}/
 DISTNAME=	tv-${PORTVERSION}
@@ -15,12 +16,10 @@ DISTNAME=	tv-${PORTVERSION}
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A phylogenetic tree viewer
 
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24 \
-		wx_gtk2_dcsvg-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk24-contrib
-
+USE_WX=		yes
+WX_COMPS=	wx contrib
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.4-config"
 
 PLIST_FILES=	bin/tv
 
