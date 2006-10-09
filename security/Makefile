@@ -622,6 +622,7 @@
     SUBDIR += sectok
     SUBDIR += secure_delete
     SUBDIR += sfs
+    SUBDIR += sguil-sensor
     SUBDIR += sha
     SUBDIR += shishi
     SUBDIR += shttpscanner

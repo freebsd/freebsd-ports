@@ -1,0 +1,46 @@
+#!/bin/sh
+# 
+
+# PROVIDE: sensor_agent
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD shutdown
+
+# Add the following lines to /etc/rc.conf to enable sensor_agent:
+# sensor_agent_enable (bool):	Set to YES to enable sensor_agent
+# 				Default: NO
+# sensor_agent_flags (str):         Extra flags passed to sensor_agent
+#                               Default: -D
+# sensor_agent_conf (str):	Sensor_agent configuration file
+#				Default: %%PREFIX%%/etc/sensor_agent.conf
+#
+
+. %%RC_SUBR%%
+
+name="sensor_agent"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/%%SGUILDIR%%/sensor_agent.tcl"
+procname="%%PREFIX%%/bin/tclsh8.4"
+check_process="${command} /bin/sh"
+stop_cmd="sensor_agent_stop"
+
+[ -z "$sensor_agent_enable" ]    && sensor_agent_enable="NO"
+[ -z "$sensor_agent_conf" ]      && sensor_agent_conf="%%PREFIX%%/etc/sensor_agent.conf"
+[ -z "$sensor_agent_flags" ]     && sensor_agent_flags="-D"
+
+[ -n "$sensor_agent_conf" ]      && sensor_agent_flags="$sensor_agent_flags -c $sensor_agent_conf"
+
+sensor_agent_stop() {
+  if [ -z "${rc_pid}" ]; then
+    echo "${name} not running?"
+  else
+    echo "Stopping ${name}"
+    kill ${sig_stop} ${rc_pid}
+    wait_for_pids ${rc_pid}
+    if [ -f "/var/run/${name}.pid" ]; then
+      `rm -f /var/run/${name}.pid`
+    fi
+  fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
