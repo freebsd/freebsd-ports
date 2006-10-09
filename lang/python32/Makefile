@@ -179,13 +179,6 @@ pre-su-install:
 .endfor
 
 pre-install:
-	@if [ -f ${PREFIX}/bin/python ]; then \
-		${ECHO_CMD} "=============================="; \
-		${ECHO_CMD} "If you're upgrading it using portupgrade, try portupgrade -o lang/python25 python-2.4.x"; \
-		${ECHO_CMD} "=============================="; \
-		${FALSE}; \
-	fi
-
 	${EGREP} -v ${PLIST_EXCLUDE} ${PLIST_TEMPLATE} | \
 	${AWK} '{ print $$0; } \
 	/LIBDIR.*\.py$$/ && !/\/bad/ { print $$0 "o"; print $$0 "c"; }'	> ${PLIST}
