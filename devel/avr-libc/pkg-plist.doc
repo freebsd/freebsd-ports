@@ -1,5 +1,9 @@
 share/doc/avr-libc/avr-libc-user-manual.pdf
 share/doc/avr-libc/avr-libc-user-manual.ps
+share/doc/avr-libc/examples/asmdemo/Makefile
+share/doc/avr-libc/examples/asmdemo/asmdemo.c
+share/doc/avr-libc/examples/asmdemo/isrs.S
+share/doc/avr-libc/examples/asmdemo/project.h
 share/doc/avr-libc/examples/demo/Makefile
 share/doc/avr-libc/examples/demo/demo.c
 share/doc/avr-libc/examples/demo/iocompat.h
@@ -20,6 +24,7 @@ share/doc/avr-libc/examples/twitest/twitest.c
 @dirrm share/doc/avr-libc/examples/stdiodemo
 @dirrm share/doc/avr-libc/examples/largedemo
 @dirrm share/doc/avr-libc/examples/demo
+@dirrm share/doc/avr-libc/examples/asmdemo
 @dirrm share/doc/avr-libc/examples
 @dirrm share/doc/avr-libc/man/man3
 @dirrm share/doc/avr-libc/man
