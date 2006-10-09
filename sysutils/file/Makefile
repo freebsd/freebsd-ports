@@ -16,9 +16,11 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-fsect-man5
+
+CONFLICTS=	tct-[0-9]*
 
 MAN1=		file.1
 MAN3=		libmagic.3
