@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	6.0.3
+PORTVERSION=	7.0.0
 CATEGORIES=	print
-MASTER_SITES=	http://pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
+MASTER_SITES=	http://www.pdflib.de/binaries/PDFlib/${PORTVERSION:S/.//g}/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
-RESTRICTED=	"many odd restrictions on usage and distribution"
+RESTRICTED=	many odd restrictions on usage and distribution
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--with-java=no --with-py=no --with-tcl=no
+CONFIGURE_ARGS=	--with-java=no --with-py=no --with-ruby=no --with-tcl=no
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
@@ -39,7 +39,7 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=--enable-64bit
 .endif
 post-patch:
-	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=5|\1=7|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=6|\1=8|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's^\$$(top_builddir)/libtool^${LIBTOOL}^' ${WRKSRC}/config/mkcommon.inc.in
 
 post-install:
