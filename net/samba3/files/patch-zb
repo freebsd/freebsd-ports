@@ -1,0 +1,26 @@
+--- param/loadparm.c.orig	Fri Aug 25 13:40:09 2006
++++ param/loadparm.c	Fri Aug 25 13:46:28 2006
+@@ -3852,7 +3852,7 @@
+ 
+ BOOL dump_a_parameter(int snum, char *parm_name, FILE * f, BOOL isGlobal)
+ {
+-	service * pService = ServicePtrs[snum];
++	service * pService = NULL;
+ 	int i;
+ 	BOOL result = False;
+ 	parm_class p_class;
+@@ -3883,8 +3883,13 @@
+ 	if (isGlobal) {
+ 		p_class = P_GLOBAL;
+ 		flag = FLAG_GLOBAL;
+-	} else
++	} else {
++		if (!VALID_SNUM(snum)) {
++			return False;
++		}
++		pService = ServicePtrs[snum];
+ 		p_class = P_LOCAL;
++	}
+ 
+ 	for (i = 0; parm_table[i].label; i++) {
+ 		if (strwicmp(parm_table[i].label, parm_name) == 0 &&
