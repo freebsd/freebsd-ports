@@ -7,16 +7,14 @@
 #
 
 PORTNAME=	cdpr
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.monkeymental.com/mmfiles/ \
-		http://freebsdcluster.org/~mich/software/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Cisco Discovery Protocol Reporter
 
-CFLAGS+=	-ggdb
 LDFLAGS+=	-L${LOCALBASE}/lib -lpcap
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
