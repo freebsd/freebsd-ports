@@ -7,10 +7,10 @@
 
 PORTNAME=	libmpeg3
 PORTVERSION=	1.7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	heroines
+MASTER_SITES=	SF/heroines
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Advanced editing and manipulation of MPEG streams
@@ -28,7 +28,8 @@ MAKE_ENV=	NASM=${NASM} INSTALL='${INSTALL}' ARCH=${ARCH} PTHREAD_LIBS=${PTHREAD_
 
 PORTDOCS=	index.html
 MPEG3_UTILS=	mpeg3cat mpeg3dump mpeg3peek mpeg3toc
-PLIST_FILES=	${MPEG3_UTILS:S,^,bin/,} include/libmpeg3.h include/mpeg3private.h lib/libmpeg3.a
+PLIST_FILES=	${MPEG3_UTILS:S,^,bin/,} include/libmpeg3.h include/mpeg3private.h \
+		include/mpeg3protos.h lib/libmpeg3.a
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' -print0 \
@@ -37,7 +38,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${MPEG3_UTILS:S,^,${WRKSRC}/${ARCH}/,} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/${ARCH}/libmpeg3.a ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libmpeg3.h ${WRKSRC}/mpeg3private.h ${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/libmpeg3.h ${WRKSRC}/mpeg3private.h \
+		${WRKSRC}/mpeg3protos.h ${PREFIX}/include/
 .ifndef (NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/index.html ${DOCSDIR}/
