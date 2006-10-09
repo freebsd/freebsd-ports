@@ -10,14 +10,9 @@ PORTVERSION=	0.6.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://asic-linux.com.mx/~izto/checkinstall/files/source/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A file creation/modification logger
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
 
 DOCS=		BUGS CHANGELOG INSTALL README TODO
 
