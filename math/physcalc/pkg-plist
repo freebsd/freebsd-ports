@@ -1,11 +1,11 @@
 bin/physcalc
-share/physcalc/astro.phy
-share/physcalc/bits.phy
-share/physcalc/british.phy
-share/physcalc/light.phy
-share/physcalc/math.phy
-share/physcalc/money.phy
-share/physcalc/nuclear.phy
-share/physcalc/paper.phy
-share/physcalc/physcalc.phy
-@dirrm share/physcalc
+%%DATADIR%%/astro.phy
+%%DATADIR%%/bits.phy
+%%DATADIR%%/british.phy
+%%DATADIR%%/light.phy
+%%DATADIR%%/math.phy
+%%DATADIR%%/money.phy
+%%DATADIR%%/nuclear.phy
+%%DATADIR%%/paper.phy
+%%DATADIR%%/physcalc.phy
+@dirrm %%DATADIR%%
