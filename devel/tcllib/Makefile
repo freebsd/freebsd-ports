@@ -73,7 +73,7 @@ test:
 .endif
 	@set -x ; if ! (cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test);	\
 	then	\
-		${CAT} ${WRKSRC}/work/tcllib-1.9/testlog.failures;	\
+		${CAT} ${WRKSRC}/testlog.failures;	\
 		${FALSE};	\
 	fi
 
