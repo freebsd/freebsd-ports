@@ -138,6 +138,7 @@
     SUBDIR += firefox-remote
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
+    SUBDIR += flat-frog
     SUBDIR += flock
     SUBDIR += flood
     SUBDIR += fluxcms
