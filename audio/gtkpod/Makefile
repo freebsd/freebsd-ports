@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkpod
-PORTVERSION=	0.99.4
+PORTVERSION=	0.99.8
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI for Apple iPods using GTK2
 
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
-		gpod.302:${PORTSDIR}/audio/libgpod
+		gpod.400:${PORTSDIR}/audio/libgpod
 RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
 		iconv:${PORTSDIR}/converters/libiconv
 
@@ -26,15 +26,15 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 
-OPTIONS=	AAC	"Enable AAC support with MPEG4IP" off
+OPTIONS=	MPEG4IP	"Enable AAC and H.264 support with MPEG4IP" off
 
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libmp4v2.so)
-WITH_AAC=	YES
+WITH_MPEG4IP=	YES
 .endif
 
-.if defined(WITH_AAC)
+.if defined(WITH_MPEG4IP)
 LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 .endif
 
