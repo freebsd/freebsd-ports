@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dwarfdump
-PORTVERSION=	20041122
+DISTVERSION=	20060421
 CATEGORIES=	devel
-MASTER_SITES=	http://reality.sgi.com/davea/
+MASTER_SITES=	http://reality.sgiweb.org/davea/
 DISTNAME=	libdwarf-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
