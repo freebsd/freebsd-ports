@@ -7,7 +7,7 @@
 
 PORTNAME=	projectmanager
 PORTVERSION=	20060123
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
@@ -15,11 +15,14 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 PKGNAMEPREFIX=	geda-
 DISTNAME=	geda-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's project manager
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -28,5 +31,10 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

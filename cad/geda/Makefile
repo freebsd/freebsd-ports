@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	geda
-PORTVERSION=	20060123
-PORTREVISION=	1
+PORTVERSION=	20060906
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The "meta-port" for gEDA
 
 RUN_DEPENDS=	${DATADIR}/sym:${PORTSDIR}/cad/geda-symbols \
@@ -34,7 +34,7 @@ RUN_DEPENDS+=	${EXAMPLESDIR}/README:${PORTSDIR}/cad/geda-examples
 .endif
 
 .if !defined(WITHOUT_DOCS)
-RUN_DEPENDS+=	${DOCSDIR}/attributes/index.html:${PORTSDIR}/cad/geda-docs
+RUN_DEPENDS+=	${DOCSDIR}/gedadocs.html:${PORTSDIR}/cad/geda-docs
 .endif
 
 do-install:	# empty

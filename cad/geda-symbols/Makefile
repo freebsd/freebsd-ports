@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	symbols
-PORTVERSION=	20060123
-PORTREVISION=	1
+PORTVERSION=	20060906
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 PKGNAMEPREFIX=	geda-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's symbols
 
 DATADIR=	${PREFIX}/share/geda
@@ -25,6 +25,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
+		${WRKSRC}/configure
 
 post-install:
 	@${TOUCH} ${DATADIR}/sym/local/.keep_me
