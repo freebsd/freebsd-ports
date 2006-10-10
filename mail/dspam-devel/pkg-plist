@@ -23,6 +23,7 @@ include/dspam/decode.h
 include/dspam/diction.h
 include/dspam/error.h
 include/dspam/heap.h
+include/dspam/ldap_client.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
@@ -58,7 +59,6 @@ libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/exim.txt
 %%PORTDOCS%%%%DOCSDIR%%/markov.txt
 %%PORTDOCS%%%%DOCSDIR%%/mysql_drv.txt
-%%PORTDOCS%%%%DOCSDIR%%/ora_drv.txt
 %%PORTDOCS%%%%DOCSDIR%%/pgsql_drv.txt
 %%PORTDOCS%%%%DOCSDIR%%/pop3filter.txt
 %%PORTDOCS%%%%DOCSDIR%%/postfix.txt
