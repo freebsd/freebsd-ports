@@ -37,7 +37,7 @@
  #
  #ServerPort		24
  #ServerQueueSize	32
-+# keep this is sync with /usr/local/etc/rc.d/dspam.rc script
++# keep this is sync with /usr/local/etc/rc.d/dspam[.sh] rc.d script
  #ServerPID              /var/run/dspam.pid
  
  #
@@ -46,7 +46,7 @@
  # much of the bandwidth overhead.
  #
 -#ServerDomainSocketPath  "/tmp/dspam.sock"
-+# keep this is sync with /usr/local/etc/rd.d/dspam.rc script
++# keep this is sync with /usr/local/etc/rd.d/dspam[.sh] rc.d script
 +#ServerDomainSocketPath  "/var/run/dspam.sock"
  
  #

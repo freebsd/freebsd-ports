@@ -19,9 +19,9 @@ MASTER_SITES=	# set later
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.6.7
-SNAP_DATE=	.20060604.1555
-_UPD_LINE_NO=	36
+PORTVER_MAJ=	3.6.8
+SNAP_DATE=	.20061010.1118
+_UPD_LINE_NO=	23
 
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.6
 
@@ -62,7 +62,6 @@ OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
 OPTIONS+=	MYSQL_LOCAL "RUN_DEPEND on selected MySQL server ver." off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" on
 OPTIONS+=	POSTGRESQL_LOCAL "RUN_DEPEND on PostgreSQL server" off
-OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
 OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" off
 OPTIONS+=	SQLITE3 "Use SQLite v3.x as back-end" on
 OPTIONS+=	HASH "Use hash driver" on
@@ -80,6 +79,7 @@ OPTIONS+=	DOMAIN_SCALE "File structure for multiple domains" off
 ## MTA and LDA
 OPTIONS+=	CYRUS21_LDA "Use Cyrus's 2.1 deliver as LDA" off
 OPTIONS+=	CYRUS22_LDA "Use Cyrus's 2.2 deliver as LDA" off
+OPTIONS+=       CYRUS23_LDA "Use Cyrus's 2.3 deliver as LDA" off
 OPTIONS+=	EXIM_LDA "Use Exim as local delivery agent" off
 OPTIONS+=	MAILDROP_LDA "Use Maildrop as local delivery agent" off
 OPTIONS+=	PROCMAIL_LDA "Use Procmail as local delivery agent" off
@@ -131,6 +131,10 @@ DSPAM_HOME_GROUP?=	${DSPAM_GROUP}
 DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 699999
+BROKEN=	for now dspam doesn't build on HEAD with PGSQL DB driver; it should be OK with any other driver
+.endif
 
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
@@ -185,24 +189,27 @@ SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 _SED_SCRIPT+=	-e '/%%DAEMON%%/D'
 .endif
 
-.ifndef(WITHOUT_CLAMAV) && !defined(WITHOUT_CLAMAV_LOCAL)
+.ifndef(WITHOUT_CLAMAV)
 CONFIGURE_ARGS+=	--enable-clamav
+.	ifndef(WITHOUT_CLAMAV_LOCAL)
 RUN_DEPENDS+=	clamav>=0:${PORTSDIR}/security/clamav
 SUB_LIST+=	CLAMD=clamd
+.	else
+SUB_LIST+=	CLAMD=
+.	endif
 .endif
-.ifdef(WITH_CLAMAV_DEVEL)  && !defined(WITHOUT_CLAMAV_LOCAL)
+.ifdef(WITH_CLAMAV_DEVEL)
 CONFIGURE_ARGS+=	--enable-clamav
+.	ifndef(WITHOUT_CLAMAV_LOCAL)
 RUN_DEPENDS+=	clamav-devel>=0:${PORTSDIR}/security/clamav-devel
 SUB_LIST+=	CLAMD=clamd
-.endif
-.ifdef(WITHOUT_CLAMAV_LOCAL)
+.	else
 SUB_LIST+=	CLAMD=
+.	endif
 .endif
 
 # we need to know if we are building statically or dynamicaly for the plist
 _DBDRV_COUNT=	# blank, but defined so we can check against it
-#_DBDRV_ALL=	pgsql_drv,ora_drv,libdb4_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv
-# above won't work because ORACLE support is broken so
 _DBDRV=		pgsql_drv,sqlite3_drv,sqlite_drv,hash_drv,mysql_drv,
 
 .ifndef(WITHOUT_POSTGRESQL)
@@ -221,16 +228,6 @@ SUB_LIST+=	PGSQL=
 .else
 PLIST_SUB+=	PGSQL="@comment "
 _DBDRV:=	${_DBDRV:S/pgsql_drv,//}
-.endif
-
-.if defined(WITH_ORACLE)
-#BUILD_DEPENDS=	${LOCALBASE}/oracle7/rdbms/lib/libnlsrtl3.a:\
-#	${PORTSDIR}/databases/oracle7-client
-#CONFIGURE_ARGS+=	--with-oracle-home=	${LOCALBASE}/oracle7
-#PKGNAMESUFFIX=	-oracle
-#_DBDRV_COUNT:=	${_DBDRV_COUNT}o
-#.else
-#_DBDRV:=	${_DBDRV:S/ora_drv,//}
 .endif
 
 .ifndef(WITHOUT_SQLITE3)
@@ -339,7 +336,7 @@ CONFIGURE_ARGS+=	--enable-domain-scale
 .endif
 
 # add one 'o' here for each new LDA
-LDA_TOTAL_COUNT=	ooooooo	# 7
+LDA_TOTAL_COUNT=	oooooooo	# 8
 LDA_COUNT=	${LDA_TOTAL_COUNT}
 
 .if defined(WITH_CYRUS21_LDA)
@@ -350,6 +347,12 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 
 .if defined(WITH_CYRUS22_LDA)
 RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd22
+CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
+LDA_COUNT:=	${LDA_COUNT:S/o//}
+.endif
+
+.if defined(WITH_CYRUS23_LDA)
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd23
 CONFIGURE_ARGS+=	--with-delivery-agent='${LOCALBASE}/cyrus/bin/deliver'
 LDA_COUNT:=	${LDA_COUNT:S/o//}
 .endif
@@ -441,9 +444,9 @@ MLINKS+=	libdspam.3 dspam_destroy.3
 MLINKS+=	libdspam.3 dspam_detach.3
 
 _DOCS=	CHANGELOG LICENSE README README.FreeBSD RELEASE.NOTES UPGRADING
-_DOCSL=	courier.txt exim.txt markov.txt mysql_drv.txt ora_drv.txt \
-	pgsql_drv.txt pop3filter.txt postfix.txt qmail.txt relay.txt \
-	sendmail.txt sqlite_drv.txt
+_DOCSL=	courier.txt exim.txt markov.txt mysql_drv.txt pgsql_drv.txt\
+	pop3filter.txt postfix.txt qmail.txt relay.txt sendmail.txt \
+	sqlite_drv.txt
 
 pre-everything::
 .ifndef(MAINT)
@@ -487,8 +490,6 @@ post-patch:
 		${WRKSRC}/src/tools.mysql_drv/purge-4.1.sql
 	@${REINPLACE_CMD} -e 's|WHERE CURRENT_DATE - created_on > 14;|WHERE CURRENT_DATE - created_on > ${SIGNATURE_LIFE};|' \
 		${WRKSRC}/src/tools.pgsql_drv/purge.sql
-	@${REINPLACE_CMD} -e 's|where SYSDATE-created_on > 14|where SYSDATE-created_on > ${SIGNATURE_LIFE};|' \
-		${WRKSRC}/src/tools.ora_drv/purge.sql
 	@${REINPLACE_CMD} -e "s|where date('now')-date(created_on) > 14;|where date('now')-date(created_on) > ${SIGNATURE_LIFE};|" \
 		${WRKSRC}/src/tools.sqlite_drv/purge-2.sql
 	@${REINPLACE_CMD} -e "s|where julianday('now')-julianday(created_on) > 14;|where julianday('now')-julianday(created_on) > ${SIGNATURE_LIFE};|" \
@@ -508,8 +509,8 @@ pre-configure:
 	@${FALSE}
 .endif
 .if defined(WITH_VIRT_USERS) && !(defined(USE_MYSQL) || \
-	!defined(WITHOUT_POSTGRESQL) || defined(WITH_ORACLE) || !defined(WITHOUT_HASH) )
-	@${ECHO_CMD} "You need MySQL, POSTGRESQL, HASH or ORACLE for virtual users."
+	!defined(WITHOUT_POSTGRESQL) || !defined(WITHOUT_HASH) )
+	@${ECHO_CMD} "You need MySQL, POSTGRESQL or HASH for virtual users."
 	@${FALSE}
 .endif
 .if defined(WITH_PREF_EXT) && !( defined(USE_MYSQL) || \
@@ -582,11 +583,6 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/src/tools.sqlite_drv && \
 		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/sqlite
-.endif
-.ifdef(WITH_ORACLE)
-	@${MKDIR} ${EXAMPLESDIR}/oracle
-	cd ${WRKSRC}/src/tools.ora_drv && \
-		${INSTALL_DATA} *.sql ${EXAMPLESDIR}/oracle
 .endif
 
 .ifdef(WITH_CGI)

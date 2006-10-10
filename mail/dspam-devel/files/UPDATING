@@ -11,6 +11,30 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.6.8.20061010.1118
+#
+
+Port changes:
+- fix longtime standing bug regarding CLAMAV: if "WITHOUT_CLAMAV_LOCAL=true"
+clamav support wasn't compiled in
+- added Cyrus's 2.3 deliver as LDA OPTION (on 2006-10-08) [1]
+
+Change features:
+- removed oracle driver (unmaintained, didn't work on FreeBSD anyway)
+
+New features:
+- ability to add tagline to messages based on their classification; see
+tagSpam and tagNonspam preferences in README
+
+Bug fixes:
+- fixed bugs from last release causing pgsql to fail on connection + other
+fixes
+- bugfix for segfault on mysql fail and null strlen calls for username
+
+[1] ports/103910 for mail/dspam by Steffen Rick <srick@srick.org>
+
+
+###########################################################################
 # dspam-devel-3.6.7.20060604.1555
 #
 
