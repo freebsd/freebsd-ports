@@ -7,6 +7,16 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061010:
+  AFFECTS: user of sysutils/flexbackup
+  AUTHOR: Marcus von Appen <mva@sysfault.org>
+
+  The port now respects PREFIX:
+   Before:
+   /etc/flexbackup.conf for PREFIX=whatever, WITH_PREFIX_CONF unset
+   Now:
+   PREFIX/etc/flexbackup.conf for PREFIX=whatever
+
+20061010:
   AFFECTS: users of audio/gtkpod
   AUTHOR: danfe@FreeBSD.org
 
