@@ -6,22 +6,27 @@
 #
 
 PORTNAME=	lp_solve
-PORTVERSION=	5.5
-PORTREVISION=	1
+PORTVERSION=	${PORTMAJOR_VER}.0.9
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_LOCAL} # http://groups.yahoo.com/group/lp_solve/
-MASTER_SITE_SUBDIR=	maho
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} # http://groups.yahoo.com/group/lp_solve/
+MASTER_SITE_SUBDIR=	lpsolve
 DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear Programming Solver
 
-USE_BISON=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+PORTMAJOR_VER=	5.5
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTMAJOR_VER}
 INSTALLS_SHLIB=	yes
 
+.if ${MACHINE_ARCH} == "sparc64"
+PICFLAG?=       -fPIC
+.else
+PICFLAG?=       -fpic
+.endif
+
 pre-build:
-	@${REINPLACE_CMD} -e 's:%%CFLAGS%%:${CFLAGS}:g' -e 's:%%CC%%:${CC}:g' ${WRKSRC}/lp_solve/ccc ${WRKSRC}/demo/ccc ${WRKSRC}/lpsolve55/ccc
+	@${REINPLACE_CMD} -e 's:%%CFLAGS%%:${CFLAGS}:g' -e 's:%%PICFLAG%%:${PICFLAG}:g'  -e 's:%%CC%%:${CC}:g' ${WRKSRC}/lp_solve/ccc ${WRKSRC}/demo/ccc ${WRKSRC}/lpsolve55/ccc
 
 do-build:
 	cd ${WRKSRC}/lp_solve  ; ${SH} -x ccc
