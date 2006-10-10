@@ -2,15 +2,30 @@
     <app>
         <name>simap</name>
     </app>
+    <app>
+        <name>hmmer</name>
+    </app>
     <file_info>
-        <name>%%DISTNAME%%</name>
+        <name>%%SIMAP_BINARY%%</name>
+        <executable/>
+    </file_info>
+    <file_info>
+        <name>%%HMMER_BINARY%%</name>
         <executable/>
     </file_info>
     <app_version>
         <app_name>simap</app_name>
-        <version_num>%%APPVERSION%%</version_num>
+        <version_num>%%SIMAP_APPVERSION%%</version_num>
        <file_ref>
-            <file_name>%%DISTNAME%%</file_name>
+            <file_name>%%SIMAP_BINARY%%</file_name>
+            <main_program/>
+        </file_ref>
+    </app_version>
+    <app_version>
+        <app_name>hmmer</app_name>
+        <version_num>%%HMMER_APPVERSION%%</version_num>
+       <file_ref>
+            <file_name>%%HMMER_BINARY%%</file_name>
             <main_program/>
         </file_ref>
     </app_version>
