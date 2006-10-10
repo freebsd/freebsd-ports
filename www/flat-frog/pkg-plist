@@ -1,0 +1,58 @@
+@comment $FreeBSD$
+%%DATADIR%%/class.compiler.php
+%%DATADIR%%/class.config.php
+%%DATADIR%%/class.template.php
+%%DATADIR%%/plugins/block.capture.php
+%%DATADIR%%/plugins/block.strip.php
+%%DATADIR%%/plugins/function.counter.php
+%%DATADIR%%/plugins/function.cycle.php
+%%DATADIR%%/plugins/function.html_checkbox.php
+%%DATADIR%%/plugins/function.html_hidden.php
+%%DATADIR%%/plugins/function.html_image.php
+%%DATADIR%%/plugins/function.html_input.php
+%%DATADIR%%/plugins/function.html_options.php
+%%DATADIR%%/plugins/function.html_radio.php
+%%DATADIR%%/plugins/function.html_textbox.php
+%%DATADIR%%/plugins/function.urlencode.php
+%%DATADIR%%/plugins/modifier.bbcode2html.php
+%%DATADIR%%/plugins/modifier.capitalize.php
+%%DATADIR%%/plugins/modifier.count.php
+%%DATADIR%%/plugins/modifier.date.php
+%%DATADIR%%/plugins/modifier.default.php
+%%DATADIR%%/plugins/modifier.lower.php
+%%DATADIR%%/plugins/modifier.nl2br.php
+%%DATADIR%%/plugins/modifier.number_format.php
+%%DATADIR%%/plugins/modifier.replace.php
+%%DATADIR%%/plugins/modifier.string_format.php
+%%DATADIR%%/plugins/modifier.strip.php
+%%DATADIR%%/plugins/modifier.strip_tags.php
+%%DATADIR%%/plugins/modifier.truncate.php
+%%DATADIR%%/plugins/modifier.upper.php
+%%DATADIR%%/plugins/modifier.urlencode.php
+%%DATADIR%%/plugins/modifier.wordwrap.php
+%%EXAMPLESDIR%%/templates/footer.tpl
+%%EXAMPLESDIR%%/templates/header.tpl
+%%EXAMPLESDIR%%/templates/index.tpl
+%%EXAMPLESDIR%%/templates/test.conf
+%%EXAMPLESDIR%%/test.php
+%%PORTDOCS%%%%DOCSDIR%%/appendix.caching.html
+%%PORTDOCS%%%%DOCSDIR%%/appendix.groups.html
+%%PORTDOCS%%%%DOCSDIR%%/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/flat-frog-doc.css
+%%PORTDOCS%%%%DOCSDIR%%/flat-frog-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/getting.started.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/language.config.html
+%%PORTDOCS%%%%DOCSDIR%%/language.functions.custom.html
+%%PORTDOCS%%%%DOCSDIR%%/language.functions.html
+%%PORTDOCS%%%%DOCSDIR%%/language.modifiers.combining.html
+%%PORTDOCS%%%%DOCSDIR%%/language.modifiers.html
+%%PORTDOCS%%%%DOCSDIR%%/language.variables.html
+%%PORTDOCS%%%%DOCSDIR%%/programming.methods.html
+%%PORTDOCS%%%%DOCSDIR%%/programming.variables.html
+%%PORTDOCS%%%%DOCSDIR%%/what.is.html
+@dirrm %%EXAMPLESDIR%%/templates
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
