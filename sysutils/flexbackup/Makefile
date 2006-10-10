@@ -7,22 +7,38 @@
 
 PORTNAME=	flexbackup
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		http://www.reynoldsnet.org/flexbackup/tarball/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar/star
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
-MAKE_ARGS=	PERLPATH=${PERL}
+MAKE_ARGS=	PERLPATH=${PERL} CONFDIR=${PREFIX} \
+		CONFFILE=${PREFIX}/etc/flexbackup.conf
+CONFDIR=	${PREFIX}
 
 USE_PERL5=	yes
 
-.if defined(WITH_PREFIX_CONF)
-MAKE_ARGS+=	CONFFILE=${PREFIX}/etc/flexbackup.conf
-CONFDIR=	${PREFIX}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+OPTIONS=	AFIO	"Enable afio support" Off \
+		BUFFER	"Enable buffer support" Off \
+		STAR	"Enable star support" Off \
+		ZIP	"Eanble zip support" Off
+
+.include <bsd.port.pre.mk>
+
+# Releases previous to 5.3 do not need a special gtar handling as GNU tar
+# is the default here. >= 503001 to < 60022 have GNU tar renamed to gtar
+# under circumstances, thus rely on gtar here. 600022 removed gtar.
+TAR_CMD=	/usr/bin/tar
+.if ${OSVERSION} >= 600022
+RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+TAR_CMD=	${PREFIX}/bin/gtar
+.elif ${OSVERSION} >= 503001 && ${OSVERSION} < 600022
+TAR_CMD=	/usr/bin/gtar
 .endif
 
 .if defined(WITH_AFIO)
@@ -41,39 +57,22 @@ RUN_DEPENDS+=	star:${PORTSDIR}/archivers/star
 RUN_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 .endif
 
-.if defined(WITH_GTAR)
-RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-.endif
-
-pre-fetch:
-	@${ECHO} "----------------------------------------------------------"
-	@${ECHO} "This port can utilize afio, star, zip, and buffer."
-	@${ECHO} "You may use the following build options to make:"
-	@${ECHO}
-	@${ECHO} "  WITH_AFIO=yes   enable the use of afio"
-	@${ECHO} "  WITH_STAR=yes   enable the use of star"
-	@${ECHO} "  WITH_ZIP=yes    enable the use of zip"
-	@${ECHO} "  WITH_BUFFER=yes enable the use of buffer"
-	@${ECHO}
-	@${ECHO} "----------------------------------------------------------"
-	@${ECHO}
-	@${ECHO} "If you are using and older version of FreeBSD that does not have GNU Tar"
-	@${ECHO} "imported as the system 'tar,' configure this port using WITH_GTAR=yes"
-	@${ECHO} "to enable the port dependency and use the 'path' variable in the"
-	@${ECHO} "flexbackup.conf file to point to 'gtar'"
-	@${ECHO}
-
 MAN1=		flexbackup.1
 MAN5=		flexbackup.conf.5
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%TAR_CMD%%|'${TAR_CMD}'|g' \
+		${WRKSRC}/flexbackup.conf
+
+post-configure:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' -e 's|%%CONFDIR%%|${CONFDIR}|g' \
+		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/fb.install ${PREFIX}/bin/flexbackup
 	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf ${PREFIX}/etc/flexbackup.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/flexbackup.1 ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 ${MAN5PREFIX}/man/man5
-
-post-configure:
-	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" -e "s:%%CONFDIR%%:${CONFDIR}:g" ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -84,4 +83,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
