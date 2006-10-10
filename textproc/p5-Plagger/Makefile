@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Plagger
-PORTVERSION=	0.7.12
-PORTREVISION=	2
+PORTVERSION=	0.7.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
@@ -51,6 +50,7 @@ OPTIONS=	BETTERENCODING "Better Encoding detection Support" off \
 		GUESSLANG "Filter::GuessLanguage Support" off \
 		PUBLISHMT "Publish::MT Support" off \
 		PUBSERLZR "Publish-Serializer Support" off \
+		PUBICAL "Publish::iCal Support" off \
 		ROMANIZE "Filter::Romanize Support" off \
 		JAVASCRIPT "Publish::JavaScript Support" off \
 		EMOTICON "Filter::Emoticon Support" off \
@@ -149,6 +149,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Net/MovableType.pm:${PORTSDIR}/net/p5-Net-MovableTy
 
 .if defined(WITH_PUBSERLZR)
 BUILD_DEPENDS+=	${SITE_PERL}/Data/Serializer.pm:${PORTSDIR}/devel/p5-Data-Serializer
+.endif
+
+.if defined(WITH_PUBICAL)
+BUILD_DEPENDS+=	${SITE_PERL}/Data/ICal.pm:${PORTSDIR}/deskutils/p5-Data-ICal
 .endif
 
 .if defined(WITH_ROMANIZE)
@@ -338,6 +342,7 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::CustomFeed::MixiDiarySearch.3 \
 		Plagger::Plugin::CustomFeed::POP3.3 \
 		Plagger::Plugin::CustomFeed::PerlMonks.3 \
+		Plagger::Plugin::CustomFeed::Script.3 \
 		Plagger::Plugin::CustomFeed::SVNLog.3 \
 		Plagger::Plugin::CustomFeed::Simple.3 \
 		Plagger::Plugin::CustomFeed::YouTube.3 \
@@ -375,6 +380,7 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Filter::HatenaFormat.3 \
 		Plagger::Plugin::Filter::HatenaKeywordTag.3 \
 		Plagger::Plugin::Filter::ImageInfo.3 \
+		Plagger::Plugin::Filter::LivedoorClipUsersCount.3 \
 		Plagger::Plugin::Filter::LivedoorKeywordUnlink.3 \
 		Plagger::Plugin::Filter::Markdown.3 \
 		Plagger::Plugin::Filter::POPFile.3 \
@@ -408,6 +414,8 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Notify::IRC.3 \
 		Plagger::Plugin::Notify::MSAgent.3 \
 		Plagger::Plugin::Notify::NetSend.3 \
+		Plagger::Plugin::Notify::OpenBrowser.3 \
+		Plagger::Plugin::Notify::OpenBrowser::FirefoxRemote.3 \
 		Plagger::Plugin::Notify::SSTP.3 \
 		Plagger::Plugin::Notify::Tiarra.3 \
 		Plagger::Plugin::Notify::UpdatePing.3 \
@@ -438,6 +446,7 @@ MAN3=		Plagger.3 \
 		Plagger::Plugin::Publish::Serializer.3 \
 		Plagger::Plugin::Publish::Speech::MacOSX.3 \
 		Plagger::Plugin::Publish::Takahashi.3 \
+		Plagger::Plugin::Publish::iCal.3 \
 		Plagger::Plugin::Search::Estraier.3 \
 		Plagger::Plugin::Search::Grep.3 \
 		Plagger::Plugin::Search::KinoSearch.3 \
