@@ -12,11 +12,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Avahi mDNS system
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/gdbm.so:${PORTSDIR}/databases/py-gdbm \
-		${PYTHON_SITELIBDIR}/dbus.pth:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm \
+    		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi
-RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/gdbm.so:${PORTSDIR}/databases/py-gdbm \
-		${PYTHON_SITELIBDIR}/dbus.pth:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm \
+    		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
 MASTERDIR=	${.CURDIR}/../avahi
 BUILD_WRKSRC=	${WRKSRC}/avahi-python
