@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine-pgp-filters
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	mail security
 MASTER_SITES=	http://dougbarton.us/Downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	Simple, fast, sh-based filters to integrate Pine with gnupg, or pgp6
+COMMENT=	Simple, fast, /bin/sh-based filters to integrate Pine with gnupg
 
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 

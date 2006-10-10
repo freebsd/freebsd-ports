@@ -1,10 +1,11 @@
-Simple, fast, sh-based filters to integrate Pine with gnupg, or pgp6.
+Simple, fast, /bin/sh-based filters to integrate Pine with gnupg.
 
-In addition to the standard functions of encrypt/decrypt and sign/verify, I've
-added pseudo-filters to verify or decrypt messages that were sent using MIME
-encoding to. See INSTALL for how to use it. It's not possible for a sending
-filter to create these kinds of MIME messages, since Pine does not give the
-user the ability to twiddle attachments.
+In addition to the standard functions of encrypt/decrypt and sign/verify
+for inline messages, I added pseudo-filters to verify or decrypt messages
+that were sent using MIME encoding.
+
+See the INSTALL file for instructions on how to configure Pine to use these
+filters.
 
 WWW: http://dougbarton.us/Downloads/
 
