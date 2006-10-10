@@ -10,7 +10,7 @@ upgrades.
   AFFECTS: users of audio/gtkpod
   AUTHOR: danfe@FreeBSD.org
 
-  WITH_AAC knob has been remamed to WITH_MPEG4IP since it now covers
+  WITH_AAC knob has been renamed to WITH_MPEG4IP since it now covers
   not only AAC, but H.264 support as well.
 
 20061009:
@@ -82,7 +82,7 @@ upgrades.
   release.  1.1 is now the stable branch, 1.0 branch has been obsoleted.
 
   Changes include:
-  - ~/.tmdarc configuration file has been obsoleted by ~/.tmda/ dir; 
+  - ~/.tmdarc configuration file has been obsoleted by ~/.tmda/ dir;
     see ${PREFIX}/share/examples/dot-tmda for sample configuration
   - only minimal set of HTML documentation is now installed;
     please see http://wiki.tmda.net/ for full documentation
@@ -97,10 +97,10 @@ upgrades.
   Its functionality has been split into several modules that are now
   installed into ${PREFIX}/libexec/mailfront. Various *front-* commands
   are now merely shell script wrappers around the newly introduced
-  mailfront command and its new modules. 
+  mailfront command and its new modules.
 
-  The smtpfront-reject command has been removed completely, 
-  being deprecated in favor of using a plugin. 
+  The smtpfront-reject command has been removed completely,
+  being deprecated in favor of using a plugin.
 
   Please refer to http://untroubled.org/mailfront/NEWS for further details.
 
@@ -119,11 +119,11 @@ upgrades.
   Revision of Samba 3.0.23c port had changed location of the directory,
   where Samba stores it's smbpasswd files from $PREFIX/private to a more
   common $PREFIX/etc/samba.
-  
-  You need to move *.tdb files from an old to new location and remove old 
+
+  You need to move *.tdb files from an old to new location and remove old
   directory if you use tdbsam backend for Samba user authentication.
-  
-  Starting with the 3.0.23c release, the officially supported passdb 
+
+  Starting with the 3.0.23c release, the officially supported passdb
   backends (smbpasswd, tdbsam, and ldapsam) now operate identically with
   regards to the historical RID algorithm for unmapped users and groups
   (i.e. accounts not in the passdb or group mapping table). The resulting
@@ -132,9 +132,9 @@ upgrades.
   domain. Previously, when using the smbpasswd passdb, such users and
   groups would resolve to an algorithmic SID in the machine's own domain
   (S-1-5-XX-XX-XX). However, the smbpasswd backend still utilizes the RID
-  algorithm when creating new user accounts or allocating a RID for a new 
+  algorithm when creating new user accounts or allocating a RID for a new
   group mapping entry.
-  
+
   With the changes in the 3.0.23c release, it is now possible to resolve
   a uid/gid, name, or SID in any direction and always obtain a symmetric
   mapping. This is important so that values for smb.conf parameters such
@@ -157,7 +157,7 @@ upgrades.
   AFFECTS: users of net-p2p/linuxdcpp
   AUTHOR: mezz@FreeBSD.org
 
-  The name of binary, datadir and docsdir have been renamed from ldcpp to
+  The name of binary, datadir, and docsdir have been renamed from ldcpp to
   linuxdcpp by the linuxdcpp developer.
 
 20060831:
@@ -250,16 +250,16 @@ upgrades.
   AFFECTS: users of net/samba3
   AUTHOR: timur@gnu.org
 
-  Since Samba 3.0.8, it has been recommended that all domain accounts 
-  listed in smb.conf on a member server be fully qualified with the 
-  domain name. This is now a requirement. All unqualified names are 
-  assumed to be local to the Unix host, either as part of the server's 
-  local passdb or in the local system list of accounts (e.g. /etc/passwd 
+  Since Samba 3.0.8, it has been recommended that all domain accounts
+  listed in smb.conf on a member server be fully qualified with the
+  domain name. This is now a requirement. All unqualified names are
+  assumed to be local to the Unix host, either as part of the server's
+  local passdb or in the local system list of accounts (e.g. /etc/passwd
   or /etc/group).
 
-  If the member server is not running winbindd at all, domain 
+  If the member server is not running winbindd at all, domain
   accounts will be implicitly mapped to local accounts and their
-  tokens will be modified appropriately to reflect the local 
+  tokens will be modified appropriately to reflect the local
   SID and group membership.
 
 20060804:
@@ -292,7 +292,7 @@ upgrades.
 
   libtunepimp has been updated to 0.5. But it breaks some ports depend
   on it such as audio/juk and audio/amarok. To fix this kind of problem,
-  try to install audio/libtunepimp-old, which is previous version of 
+  try to install audio/libtunepimp-old, which is previous version of
   audio/libtunepimp.
 
 20060731:
@@ -407,7 +407,7 @@ upgrades.
 
   The default mapping entries for groups such as "Domain Admins" are
   no longer created when using an smbpasswd file or a tdbsam passdb
-  backend. Use 'net groupmap add' rather than 'net groupmap modify' 
+  backend. Use 'net groupmap add' rather than 'net groupmap modify'
   to set these entries.
 
   A substring matching rule has been added to the sambaSID attribute
@@ -473,12 +473,12 @@ upgrades.
   - run 'pkgdb -fu' *before* upgrading and take a look on the output.
     You can see database format there as: format:XXX, where XXX is your
     current database format.
-  - Go to portupgrade port directory and configure the port with 
+  - Go to portupgrade port directory and configure the port with
     `make config' command. If you have bdb_* format, then turn on the BDB4
     option. If you have bdb1_* format, then turn off BDB4 and turn on
     the BDB1 option. If you have dbd_hash format, then turn off all options.
   - Upgrade portupgrade.
-  
+
   Note: if you change database format with changing port options,
   you should remove the ruby-bdb* port that you don't need anymore.
   Alternatively, you can hard code database format in your pkgtools.conf.
@@ -511,8 +511,8 @@ upgrades.
   AUTHOR: alex@foxybanana.com
 
   The default database directory has been changed to /var/db/mt-daapd. The
-  default mp3 dir has been changed to ${PREFIX}/share/mt-daapd. Old 
-  configuration files will be maintained, if present, so no updating should 
+  default mp3 dir has been changed to ${PREFIX}/share/mt-daapd. Old
+  configuration files will be maintained, if present, so no updating should
   be required.
 
 20060624:
@@ -719,7 +719,7 @@ upgrades.
   tinyproxy now installs a rc.d script. To enable tinyproxy at boot
   time, set the following in rc.conf(5):
       tinyproxy_enable="YES"
-  The confiration file for tinyproxy has been moved to
+  The configuration file for tinyproxy has been moved to
   ${PREFIX}/etc/tinyproxy.conf. Any old configuration files will need
   to be migrated over to the new location.
 
@@ -770,7 +770,7 @@ upgrades.
   AUTHOR: ale@FreeBSD.org
 
   The old PHP slave ports (phpN-cli, phpN-cgi and mod_phpN) were removed
-  in favour of unified PHP ports that allow building any combination of
+  in favor of unified PHP ports that allow building any combination of
   PHP SAPIs (cli, cgi and apache module).
   The PHP CGI binary was renamed to php-cgi, so you should update
   the path in your script. To simplify the update process, *only* for
@@ -789,9 +789,9 @@ upgrades.
   incompatible with the version 5.0, which is used in a number of applications,
   most notable in the Kile and Kate editors (the latter being part of a base
   KDE installation).
-  
+
   If you're having troubles running those, such as error dialogs saying "Check
-  your KDE installation", make sure to downgrade your lua installation back 
+  your KDE installation", make sure to downgrade your lua installation back
   to 5.0:
 
   portupgrade -f -o lang/lua50 lua-5.1
@@ -966,14 +966,14 @@ portupgrade -a
   config file.
 
   If you want to install the ports into $LOCALBASE (/usr/local, the old
-  behaviour), you can still do so by setting PREFIX manually. But you
+  behavior), you can still do so by setting PREFIX manually. But you
   will have to take care of conflicting ports yourself.
 
 20060330:
   AFFECTS: users of x11/kdebase3
   AUTHOR: kde@freebsd.org
 
-  The genkdmconf.sh rc-script has been removed in favour of a kdm wrapper
+  The genkdmconf.sh rc-script has been removed in favor of a kdm wrapper
   script, which now handles both launching kdm and automatically updating or
   generating kdm's configuration files. The actual kdm binaries have been
   renamed to 'kdm-bin', 'kdm-bin_config' and 'kdm-bin_greet' respectively.
@@ -990,7 +990,7 @@ portupgrade -a
   the ups daemon 'upsd'.
 
   The ups monitor 'upsmon' and the ups logger 'upslog' are now handled by
-  seperate scripts to get more control over the different services.
+  separate scripts to get more control over the different services.
   Please take a look into the nut, nut_upslog and nut_upsmon scripts
   installed in ${PREFIX}/etc/rc.d/ for possible rc.conf values and their
   defaults.
@@ -1019,7 +1019,7 @@ portupgrade -a
   AUTHOR: delphij@FreeBSD.org
 
   docproj now installs a set of CJK (Chinese, Japanese, Korean)
-  related stuff in case that you have choosen to install the
+  related stuff in case that you have chosen to install the
   jadetex feature. Because the CJK part could be potentially
   large for those who do not want it, this feature can be disabled
   by defining WITHOUT_CJK=yes.
@@ -1172,7 +1172,7 @@ portupgrade -a
 
   enlightenment 0.16 change binary name from 'enlightenment' to 'e16'.
   you should change it on your .xinit file.
- 
+
 20060212:
   AFFECTS: users of mail/dcc-dccd
   AUTHOR: ehaupt@FreeBSD.org
@@ -1192,7 +1192,7 @@ portupgrade -a
   dccifd and dccm man pages.
 
 20060207:
-  AFFECTS: users of www/jakarta-tomcat4, www/jakarta-tomcat41, 
+  AFFECTS: users of www/jakarta-tomcat4, www/jakarta-tomcat41,
            www/jakarta-tomcat5, www/jakarta-tomcat55, and www/tomcat55
   AUTHOR: lawrance@FreeBSD.org
 
@@ -1231,7 +1231,7 @@ portupgrade -a
   AFFECTS: users of x11/tilda
   AUTHOR: barner@FreeBSD.org
 
-  The configuration file syntax has changed. Users of x11/tilda must 
+  The configuration file syntax has changed. Users of x11/tilda must
   delete their old ones and re-create them.
 
 20060131:
