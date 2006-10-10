@@ -23,6 +23,12 @@ ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
 
 MAN1=	cscout.1 cswc.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		fails to work on versions of FreeBSD before 6.0 (it installs FreeBSD 6.x binaries)
+.endif
+
 post-patch:
 .if exists(/usr/include/g++/)
 	${REINPLACE_CMD} -i "" -e 's:g++-3:g++:g' \
@@ -61,4 +67,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
