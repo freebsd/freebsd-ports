@@ -58,27 +58,36 @@ MANN=	aes.n asn.n ansi_cmacros.n ansi_cctrl.n ansi_cattr.n           \
 MANCOMPRESSED=	no
 
 post-patch:
-	# Substituting the pretty progress report with detailed output of
-	# vendors' self-tests:
+	#
+	# Ensure, the detailed output of vendors' self-tests is
+	# available in addition to the pretty progress report:
+	#
 	${REINPLACE_CMD} -e 's,test run,test run -l testlog,' \
 		${WRKSRC}/Makefile.in
 
-test:
-.ifdef DISPLAY
+.include <bsd.port.pre.mk>
+
+RUNTEST=	${SETENV} LANG=C DISPLAY= ${MAKE} -C ${WRKSRC} test
+MYID	!=	${ID} -u
+.if ${MYID} == 0
+RUNTEST:=	${SU_CMD:S/root/-m nobody/} "${RUNTEST}"
+pre-build:
 	#
-	# DISPLAY environment variable appears to be set (${DISPLAY}).
-	# Tcllib may perform some additional Tk-only tests.
+	# Preparing to run the tests as `nobody'
 	#
-	-${TEST} -t 1 && sleep 2
+	${FIND} ${WRKSRC} -type d | ${XARGS} ${CHOWN} nobody
 .endif
-	@set -x ; if ! (cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test);	\
+
+test:
+	@set -x ; if ! ${RUNTEST};	\
 	then	\
+		${AWK} '$$NF == "FAILED" { echo = 1 }	\
+			echo { if ($$NF == "start") echo = 0; else print }'	\
+				${WRKSRC}/testlog.log;	\
 		${CAT} ${WRKSRC}/testlog.failures;	\
-		${UNAME} -a	\
+		${UNAME} -a;	\
 		${FALSE};	\
 	fi
-
-.include <bsd.port.pre.mk>
 
 post-build:	test
 

@@ -1,4 +1,4 @@
-bin/dtplit
+bin/dtplite
 bin/page
 bin/tcldocstrip
 lib/tcllib%%PORTVERSION%%/aes/aes.tcl
