@@ -6,7 +6,7 @@ bin/raw2gw
 %%NLS%%share/locale/it/LC_MESSAGES/geda.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/geda.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/geda.mo
-@dirrmtry share/locale/fr_FR/LC_MESSAGES
-@dirrmtry share/locale/fr_FR
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/fr_FR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr_FR
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE

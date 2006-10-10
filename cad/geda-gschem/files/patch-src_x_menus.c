@@ -1,14 +1,14 @@
---- src/x_menus.c.orig	Thu Jul 13 14:21:07 2006
-+++ src/x_menus.c	Thu Jul 13 14:21:49 2006
-@@ -284,9 +284,11 @@
-    */
-   item_factory = gtk_item_factory_new(GTK_TYPE_MENU, "<popup>",
- 				      accel_group);
+--- src/x_menus.c.orig	Sun Aug  6 20:18:09 2006
++++ src/x_menus.c	Tue Oct 10 03:24:55 2006
+@@ -241,7 +241,11 @@
+ static gchar* gettext_fn(const gchar *path,
+ 			 gpointer func_data __attribute__((unused)))
+ {
 +#if defined(ENABLE_NLS)
-   gtk_item_factory_set_translate_func(item_factory,
- 				      (GtkTranslateFunc) gettext,
- 				      NULL, NULL);
+ 	return gettext(path);
++#else
++	return path;
 +#endif
-   /* This function creates the pop-up menu itself & attaches it to the
-      GtkItemFactory. Pass the item factory,
-      the number of items in the array, the array itself, and any
+ }
+ 
+ GtkWidget *get_main_popup(TOPLEVEL *w_current)

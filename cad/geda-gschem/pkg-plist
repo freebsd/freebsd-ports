@@ -1,5 +1,4 @@
 bin/gschem
-%%DOCSDIR%%/man/gschem.html
 %%DATADIR%%/bitmap/gschem-bus.xpm
 %%DATADIR%%/bitmap/gschem-comp.xpm
 %%DATADIR%%/bitmap/gschem-copy.xpm
@@ -20,11 +19,15 @@ bin/gschem
 %%DATADIR%%/gschem-darkbg
 %%DATADIR%%/gschem-gtkrc
 %%DATADIR%%/gschem-lightbg
+%%DATADIR%%/scheme/auto-place-attribs.scm
 %%DATADIR%%/scheme/auto-uref.scm
 %%DATADIR%%/scheme/generate_netlist.scm
 %%DATADIR%%/scheme/gschem.scm
+%%DATADIR%%/scheme/image.scm
 %%DATADIR%%/scheme/list-keys.scm
+%%DATADIR%%/scheme/pcb.scm
 %%DATADIR%%/scheme/print-NB-attribs.scm
+%%DATADIR%%/scheme/print.scm
 %%DATADIR%%/system-gschemrc
 %%NLS%%share/locale/de_DE/LC_MESSAGES/geda-gschem.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/geda-gschem.mo
@@ -34,18 +37,16 @@ bin/gschem
 %%NLS%%share/locale/nl_NL/LC_MESSAGES/geda-gschem.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/geda-gschem.mo
-@dirrmtry share/locale/nl_NL/LC_MESSAGES
-@dirrmtry share/locale/nl_NL
-@dirrmtry share/locale/ja_JP/LC_MESSAGES
-@dirrmtry share/locale/ja_JP
-@dirrmtry share/locale/it_IT/LC_MESSAGES
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/fr_FR/LC_MESSAGES
-@dirrmtry share/locale/fr_FR
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja_JP
+%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/fr_FR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr_FR
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
 @dirrmtry %%DATADIR%%/scheme
 @dirrmtry %%DATADIR%%/bitmap
 @dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%/man
-@dirrmtry %%DOCSDIR%%

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libgeda
-PORTVERSION=	20060123
-PORTREVISION=	1
+PORTVERSION=	20060906
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's tools base utility library
 
 LIB_DEPENDS=	gdgeda.6:${PORTSDIR}/graphics/libgdgeda \
@@ -27,6 +27,9 @@ CONFIGURE_ARGS=	--enable-gdgeda
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-INFO=		libgedadoc
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
