@@ -3,12 +3,5 @@ standard MPL format, LP format or be accessed directly from your code
 via API calls from a library. This lp_solve versions is released under
 the LGPL license. See LGPL.txt.
 
-Bug reports, success stories and requests for changes are welcome at:
-
-Michel Berkelaar
-michel@ics.ele.tue.nl
-________
-NOTE: Current development of this tool is done on Yahoo's "lp_solve"
-group (below).
-
 WWW: http://groups.yahoo.com/group/lp_solve/
+     http://sourceforge.net/projects/lpsolve/
