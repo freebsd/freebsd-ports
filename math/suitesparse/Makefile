@@ -14,7 +14,9 @@ DISTNAME=	SuiteSparse
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=	UFspace is a set of packages for sparse matrices calculation
+COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
+
+CONFLICTS=	elmer-umfpack-4*
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
 
