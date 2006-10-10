@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
@@ -25,7 +25,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 OPTIONS=	MAD "MAD MP3 support" on \
 		VORBIS "Ogg Vorbis support" on \
-		SNDFILE "libsndfile support" off
+		SNDFILE "libsndfile support" on \
+		LIBAO "LibAO support (breaks chroot)" off
 
 PLIST_FILES=	bin/herrie \
 		share/locale/nl/LC_MESSAGES/herrie.mo
@@ -48,6 +49,10 @@ MAKE_ENV+=	NO_VORBIS=yes
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .else
 MAKE_ENV+=	NO_SNDFILE=yes
+.endif
+.if !defined(WITHOUT_LIBAO)
+LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
+MAKE_ARGS+=	AUDIO_OUTPUT=ao
 .endif
 
 .include <bsd.port.post.mk>
