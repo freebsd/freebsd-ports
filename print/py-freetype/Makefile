@@ -15,6 +15,9 @@ DISTNAME=	PyFT-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python wrapping of the FreeType 1.2 fonts rendering engine
 
+DEPRECATED=	Project has disappeared and is no longer fetchable
+EXPIRATION_DATE=2006-12-09
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_FREETYPE=	yes
