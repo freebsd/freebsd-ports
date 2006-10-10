@@ -7,6 +7,7 @@
 
 PORTNAME=	ZendOptimizer
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${DISTVERSION}-freebsd${VER}-${ARCH}
 
@@ -16,8 +17,6 @@ COMMENT=	An optimizer for PHP code
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_PHP=	yes
-
-RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -40,9 +39,9 @@ VER=		6.0
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
-Because of licensing restrictions, you must fetch the source distribution\n\
-manually from the http://www.zend.com/free_download/optimizer URL.\n\
-Download the source file, ${DISTNAME}${EXTRACT_SUFX},\n\
+You have to fetch the binary distribution manually from the\n\
+http://www.zend.com/free_download/optimizer URL.\n\
+Download the file ${DISTNAME}${EXTRACT_SUFX},\n\
 and place it in ${DISTDIR}.\n
 .endif
 .endif
@@ -70,6 +69,8 @@ do-install:
 		${PREFIX}/lib/php/${PHP_EXT_DIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/EULA-ZendOptimizer ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README-ZendOptimizer ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/data/doc/* ${DOCSDIR}
 .endif
 
