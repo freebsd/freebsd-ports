@@ -39,7 +39,7 @@ MAN8=	dnet.8
 .endif
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION}" < 500000
+.if ${OSVERSION} < 500000
 IGNORE=		doesn't build on FreeBSD 4.x
 .endif
 
