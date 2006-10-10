@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libdwarf
-PORTVERSION=	20041122
+PORTVERSION=	20060421
 CATEGORIES=	devel
-MASTER_SITES=	http://reality.sgi.com/davea/
+MASTER_SITES=	http://reality.sgiweb.org/davea/
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A library to analyze DWARF debugging information in ELF files
