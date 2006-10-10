@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvd-slideshow
-PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTVERSION=	0.7.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,17 +33,17 @@ OPTIONS=	DVDRWTOOLS "Needed to record/burn DVD" off \
 PLIST_FILES=	bin/dvd-slideshow \
 		bin/dvd-menu \
 		bin/dir2slideshow \
-		bin/gallery2slideshow \
+		bin/gallery1-to-slideshow \
 		bin/jigl2slideshow
 
 MAN1=		dvd-slideshow.1 \
 		dvd-menu.1 \
 		dir2slideshow.1 \
-		gallery2slideshow.1 \
+		gallery1-to-slideshow.1 \
 		jigl2slideshow.1
 
 .if !defined(NOPORTDOCS)
-DOC_FILES=	README.html changelog.html gallery2slideshow.html \
+DOC_FILES=	changelog.html gallery1-to-slideshow.html \
 		dir2slideshow.html jigl2slideshow.html \
 		dvd-menu.html dvd-slideshow.html
 PLIST_FILES+=	${DOC_FILES:S,^,%%DOCSDIR%%/,}
@@ -75,7 +74,7 @@ RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
 post-patch:
-.for FILE in dvd-slideshow dvd-menu dir2slideshow gallery2slideshow jigl2slideshow
+.for FILE in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!${PREFIX}/bin/bash|g ; \
 			      s|/usr/share/fonts/|${X11BASE}/lib/X11/fonts/|g ; \
 			      s|seq |seq2 |g' \
@@ -83,7 +82,7 @@ post-patch:
 .endfor
 
 do-install:
-.for FILE in dvd-slideshow dvd-menu dir2slideshow gallery2slideshow jigl2slideshow
+.for FILE in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
 	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
 	@${ECHO_MSG} "Installing man files."
