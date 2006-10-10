@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	qfaxreader
-DISTVERSION=	0.3
+DISTVERSION=	0.3.1
 CATEGORIES=	comms graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +23,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
 CONFIGURE_ENV=	QTDIR=${QT_PREFIX} PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --mandir=${MANPREFIX}/man
 
 MAN1=		qfaxreader.1
+MANCOMPRESSED=	yes
 
 OPTIONS=	GDBM "For sender-id look-up (recomended)" on
 
