@@ -36,6 +36,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/POP3.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/PerlMonks.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/SVNLog.pm
+%%SITE_PERL%%/Plagger/Plugin/CustomFeed/Script.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/Simple.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/YouTube.pm
 %%SITE_PERL%%/Plagger/Plugin/CustomFeed/iTunesRecentPlay.pm
@@ -73,6 +74,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Filter/HatenaFormat.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/HatenaKeywordTag.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/ImageInfo.pm
+%%SITE_PERL%%/Plagger/Plugin/Filter/LivedoorClipUsersCount.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/LivedoorKeywordUnlink.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/Markdown.pm
 %%SITE_PERL%%/Plagger/Plugin/Filter/POPFile.pm
@@ -113,6 +115,11 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Notify/IRC.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/MSAgent.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/NetSend.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/OpenBrowser.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/OpenBrowser/FirefoxRemote.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/OpenBrowser/darwin.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/OpenBrowser/linux.pm
+%%SITE_PERL%%/Plagger/Plugin/Notify/OpenBrowser/mswin32.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/SSTP.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/Tiarra.pm
 %%SITE_PERL%%/Plagger/Plugin/Notify/UpdatePing.pm
@@ -148,6 +155,7 @@ bin/plagger-ircbot
 %%SITE_PERL%%/Plagger/Plugin/Publish/Speech/MacOSX.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/Speech/Win32.pm
 %%SITE_PERL%%/Plagger/Plugin/Publish/Takahashi.pm
+%%SITE_PERL%%/Plagger/Plugin/Publish/iCal.pm
 %%SITE_PERL%%/Plagger/Plugin/Search/Estraier.pm
 %%SITE_PERL%%/Plagger/Plugin/Search/Grep.pm
 %%SITE_PERL%%/Plagger/Plugin/Search/KinoSearch.pm
@@ -218,12 +226,14 @@ bin/plagger-ircbot
 %%PORTDOCS%%%%EXAMPLESDIR%%/planet.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/podcast.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/rss2email.yaml
+%%PORTDOCS%%%%EXAMPLESDIR%%/schema.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/search.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/weather-notify.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/xoxo-planet.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/xoxo2opml.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/yapcvideo.yaml
 %%DATADIR%%/assets/common/mail.tt
+%%DATADIR%%/assets/common/html.tt
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/2ch.pl
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/actiblog_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/akibablog.yaml
@@ -239,6 +249,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/blog_goo_ne_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/blog_japan_cnet_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/blog_pasonatech_co_jp.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/blog_smatch_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/blog_tech.rikunabi_next.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/bounce.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/business-i.yaml
@@ -250,7 +261,9 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/cnn.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/computerworld_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/cookpad.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/cyberpolice_go_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/daily_sports.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/dailymotion.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/debian_administration_org.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/distrowatch.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/docs_info_apple_com.yaml
@@ -319,6 +332,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/slashdot_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/sponichi.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/sportsnavi.yaml
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/stage6.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/technobahn_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/tencount.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/theinquirer.yaml
@@ -329,6 +343,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/tiyu_to.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/usatoday.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/usewill_com_diary.pl
+%%DATADIR%%/assets/plugins/Filter-EntryFullText/video_mina-kuru_jp.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/wired_com.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/wordpress.pl
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/worldtimes.yaml
@@ -341,8 +356,10 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/zakzak.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/zianplus_net.yaml
 %%DATADIR%%/assets/plugins/Filter-EntryFullText/zzz_google_adsense.pl
+%%DATADIR%%/assets/plugins/Filter-FindEnclosures/dailymotion.pl
 %%DATADIR%%/assets/plugins/Filter-FindEnclosures/impress_watch.pl
 %%DATADIR%%/assets/plugins/Filter-FindEnclosures/mainichi_msn.pl
+%%DATADIR%%/assets/plugins/Filter-FindEnclosures/stage6.pl
 %%DATADIR%%/assets/plugins/Filter-FindEnclosures/typepad_images.pl
 %%DATADIR%%/assets/plugins/Filter-FindEnclosures/yourfilehost.pl
 %%DATADIR%%/assets/plugins/Filter-FindEnclosures/youtube.pl
@@ -361,6 +378,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/2chrss.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/blogpeople.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/cnet_podcast.yaml
+%%DATADIR%%/assets/plugins/Filter-TruePermalink/dailymotion.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/google_groups.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/imenu.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/joltmark.yaml
@@ -372,6 +390,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/reddit.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/refrss.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/rssquery.yaml
+%%DATADIR%%/assets/plugins/Filter-TruePermalink/stage6.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/tech_souken.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/tiyu_to.yaml
 %%DATADIR%%/assets/plugins/Filter-TruePermalink/yahoo_blog_search.yaml
@@ -417,6 +436,7 @@ bin/plagger-ircbot
 %%DATADIR%%/assets/plugins/Widget-Simple/hatena_bookmark.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/hatena_bookmark_users.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/livedoor_clip.yaml
+%%DATADIR%%/assets/plugins/Widget-Simple/livedoor_clip_users.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/mm.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/reddit.yaml
 %%DATADIR%%/assets/plugins/Widget-Simple/technorati.yaml
@@ -432,6 +452,7 @@ bin/plagger-ircbot
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Search
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Publish/Speech
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Publish
+@dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/OpenBrowser
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/Eject
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Notify/Audio
 @dirrm %%SITE_PERL%%/Plagger/Plugin/Notify
