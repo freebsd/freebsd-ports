@@ -149,6 +149,7 @@ pre-patch:
 		${PATCH_WRKSRC}/Misc/python-config.in > ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config
 
 .if defined(WITH_FPECTL) && ${ARCH} == i386
+	${MKDIR} ${WRKSRC}/Modules
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
 .endif
 
