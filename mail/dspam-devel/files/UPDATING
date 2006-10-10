@@ -17,7 +17,7 @@ make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 Port changes:
 - fix longtime standing bug regarding CLAMAV: if "WITHOUT_CLAMAV_LOCAL=true"
 clamav support wasn't compiled in
-- added Cyrus's 2.3 deliver as LDA OPTION (on 2006-10-08) [1]
+- added Cyrus's 2.3 deliver as LDA OPTION [1]
 
 Change features:
 - removed oracle driver (unmaintained, didn't work on FreeBSD anyway)
