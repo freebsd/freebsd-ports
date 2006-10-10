@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbfd
-PORTVERSION=	2.16.1
+PORTVERSION=	2.17
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -33,13 +33,8 @@ INFO=		bfd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 .if ${ARCH} == "amd64"
 ARCH=		x86_64
 .endif
-
 
 .include <bsd.port.post.mk>
