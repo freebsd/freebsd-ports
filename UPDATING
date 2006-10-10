@@ -7,6 +7,34 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20061010:
+  AFFECTS: users of devel/avr-gcc*
+  AUTHOR: joerg@FreeBSD.org
+
+  The old avr-gcc port has been renamed into avr-gcc-3, and continues
+  support for GCC 3.x (for a while).
+
+  The former avr-gcc-devel port has been moved into avr-gcc, so GCC
+  4.x is now the default.
+
+  There is an entry in MOVED for the latter change but not for the
+  former one, as the automated tools (e.g. portupgrade) got confused
+  otherwise.
+
+  If you've previously been using avr-gcc-devel, these tools should
+  automatically take notice (based on the entry in MOVED), and change
+  the installed package to avr-gcc.
+
+  If you've previously been using avr-gcc, and want to move on to the
+  new default GCC 4.x, this should be fully automatic, as the port
+  name just stays, and the version increases.
+
+  If you've previously been using avr-gcc, and want to stay at GCC 3.x
+  for some reason, please manually perform a portupgrade to the new
+  name:
+
+  portupgrade -o devel/avr-gcc-3 avr-gcc
+
+20061010:
   AFFECTS: user of sysutils/flexbackup
   AUTHOR: Marcus von Appen <mva@sysfault.org>
 
