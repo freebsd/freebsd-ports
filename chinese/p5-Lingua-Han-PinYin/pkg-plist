@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/PinYin/.packlist
+%%SITE_PERL%%/Lingua/Han/PinYin.pm
+%%SITE_PERL%%/Lingua/Han/PinYin/Mandarin.dat
+@dirrmtry %%SITE_PERL%%/Lingua/Han/PinYin
+@dirrmtry %%SITE_PERL%%/Lingua/Han
+@dirrmtry %%SITE_PERL%%/Lingua
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/PinYin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
