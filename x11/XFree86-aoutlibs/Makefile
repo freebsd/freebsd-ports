@@ -15,6 +15,9 @@ COMMENT=	XFree86 a.out compatibility libraries
 
 ONLY_FOR_ARCHS=	i386
 
+DEPRECATED=	Requires a.out ld.so and support libraries
+EXPIRATION_DATE=2006-12-01
+
 NO_BUILD=	yes
 PORTOBJFORMAT=	aout
 
