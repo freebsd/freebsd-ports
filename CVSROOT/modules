@@ -2653,6 +2653,7 @@ flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
 flashplugin-mozilla	ports/www/flashplugin-mozilla
 flasm		ports/graphics/flasm
+flat-frog	ports/www/flat-frog
 flatzebra	ports/devel/flatzebra
 flawfinder	ports/security/flawfinder
 fldiff		ports/textproc/fldiff
