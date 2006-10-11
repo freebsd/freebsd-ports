@@ -7,6 +7,7 @@
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	# http://www.clearskyinstitute.com/xephem/
 
@@ -62,7 +63,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/xephem
 	${TAR} -C ${WRKSRC} -cf - auxil catalogs fifos fits gallery help lo tools \
 		| ${TAR} -C ${PREFIX}/lib/X11/xephem --unlink -xf -
-	@${FIND} ${PREFIX}/lib/X11/xephem | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREMODE}
+	@${FIND} ${PREFIX}/lib/X11/xephem | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGROUP}
 	@${FIND} ${PREFIX}/lib/X11/xephem -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 
 .include <bsd.port.post.mk>
