@@ -25,7 +25,7 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		HTDIG "htdig integration patches" off
 
 HAS_CONFIGURE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
