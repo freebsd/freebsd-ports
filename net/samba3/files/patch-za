@@ -28,7 +28,7 @@
 +	char *env;
 +	
 +	if ((env=getenv(WINBINDD_DONT_ENV)) != NULL) {
-+		if(strequal(env, "1")) {
++		if(strcmp(env, "1")) {
 +			return True;
 +		}
 +	}
