@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://star.arm.ac.uk/~spm/software/
 DISTNAME=	liveice-xmms
 
-MAINTAINER=	esk@ira.uka.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use XMMS for streaming audio to Icecast servers
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
