@@ -25,7 +25,7 @@ do-install:
 .if ${OSVERSION} < 500000
 ONLY_FOR_ARCHS=	i386
 .else
-ONLY_FOR_ARCHS=	alpha i386 amd64
+ONLY_FOR_ARCHS=	alpha i386
 .endif
 
 .include <bsd.port.post.mk>
