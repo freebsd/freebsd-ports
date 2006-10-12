@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sysbench
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	benchmarks databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
-
-BROKEN=		Does not compile
 
 USE_AUTOTOOLS=	libtool:15
 
