@@ -17,6 +17,8 @@ COMMENT=        Plugins for the Verlihub Linux/Unix Direct Connect Hub Software
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
 
+BROKEN=		Does not compile
+
 WRKSRC=         ${WRKDIR}/vh_plugins-0.1
 
 USE_GMAKE=	yes
