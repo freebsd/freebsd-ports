@@ -7,9 +7,13 @@
 
 PORTNAME=	libmikmod
 PORTVERSION=	3.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://mikmod.raphnet.net/files/
+
+PATCH_SITES=	http://mikmod.raphnet.net/files/
+PATCHFILES=	libmikmod-3.1.11-a.diff
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	david@dyn-ns.net
 COMMENT=	MikMod Sound Library

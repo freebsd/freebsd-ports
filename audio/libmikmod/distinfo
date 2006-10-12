@@ -1,3 +1,6 @@
 MD5 (libmikmod-3.1.11.tar.gz) = 705106da305e8de191549f1e7393185c
 SHA256 (libmikmod-3.1.11.tar.gz) = 2d7598cd2a8c61c023f27c9c7c1aca8bbfd92aadbee2f98b7a6d421eae35c929
 SIZE (libmikmod-3.1.11.tar.gz) = 611590
+MD5 (libmikmod-3.1.11-a.diff) = 5e56be5a32eecf3cfa195379a5ecb0ef
+SHA256 (libmikmod-3.1.11-a.diff) = 4d546e905fd9f93da02701fc813f557f79b17084dc1f9ba5626475f4577eedbc
+SIZE (libmikmod-3.1.11-a.diff) = 67970
