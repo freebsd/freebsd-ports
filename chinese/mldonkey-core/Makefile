@@ -13,6 +13,8 @@ CATEGORIES=	chinese
 MAINTAINER=	piaip@csie.ntu.edu.tw
 COMMENT=	Client 'core' for MLDonkey with Traditional Chinese (Big5) support
 
+BROKEN=		Fails to patch
+
 WITHOUT_GUI=	yes
 MASTERDIR=	${.CURDIR}/../../net-p2p/mldonkey
 EXTRA_PATCHES=	${.CURDIR}/files/patch-driverControlers.ml
