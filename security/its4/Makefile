@@ -8,13 +8,11 @@
 PORTNAME=	its4
 PORTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=
+MASTER_SITES=	# Empty
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to scan C/C++ source for potential vulnerabilities
-
-BROKEN=		Checksum mismatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
@@ -25,7 +23,9 @@ MAN1=		its4.1
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=	"The source to this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the source manually at: http://www.cigital.com/its4/download.html  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build"
+IGNORE=	may not be automatically fetched due to licensing restrictions.\
+You MUST fetch the source manually from: http://www.cigital.com/its4/download.html; Once\
+${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build
 .endif
 
 post-install:
