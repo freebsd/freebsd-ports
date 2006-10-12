@@ -23,6 +23,8 @@ WANT_PHP_WEB=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
 
+BROKEN=		does not package; depends on multiple versions of PHP
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You have to configure PHP either with MySQL or PostgreSQL"
