@@ -18,6 +18,8 @@ COMMENT=	Explore, Search and Discover
 BUILD_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+BROKEN=		Incomplete pkg-plist
+
 RESTRICTED=	Not sure about redistribution rights
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
