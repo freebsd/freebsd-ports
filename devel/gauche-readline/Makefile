@@ -20,6 +20,8 @@ COMMENT=	A pure gauche/scheme implementation of the Readline library
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 BUILD_DEPENDS=	gauche-config:${PORTSDIR}/lang/gauche
 
+BROKEN=		Changes permissions on installed file
+
 GAUCHE_LIBDIR=	share/gauche/site/lib
 PLIST_SUB+=	GAUCHE_LIBDIR=${GAUCHE_LIBDIR}
 
