@@ -16,6 +16,8 @@ COMMENT=	Pubcookie user authentication for the Drupal CMS
 
 RUN_DEPENDS=	${LOCALBASE}/pubcookie/keyclient:${PORTSDIR}/www/mod_pubcookie
 
+BROKEN=		Unfetchable
+
 USE_PHP=	ldap
 
 DRUPAL_MODULE=	yes
