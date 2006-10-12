@@ -2480,7 +2480,7 @@ devel/pwlib152||2006-10-02|Has expired
 net/coda5_server||2006-10-05|Has expired: no longer available from mastersite
 net/coda5_client||2006-10-05|Has expired: no longer available from mastersite
 net/coda5_doc||2006-10-05|Has expired: coda5 removed
-math/ufspase|math/suitespase|2006-10-05|portname has been changed
+math/ufsparse|math/suitesparse|2006-10-05|portname has been changed
 devel/avr-gcc-devel|devel/avr-gcc|2006-10-06|make AVR-GCC 4.x the default version
 astro/gdesklets-goodweather||2006-10-07|Expired: no longer downloadable
 deskutils/goats||2006-10-07|Expired: no longer downloadable
