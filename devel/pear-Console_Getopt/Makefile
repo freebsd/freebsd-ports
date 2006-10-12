@@ -15,6 +15,8 @@ COMMENT=	PHP class that provides Command-line option parser
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incorrect pkg-plist
+
 CATEGORY=	Console
 FILES=		Console/Getopt.php
 
