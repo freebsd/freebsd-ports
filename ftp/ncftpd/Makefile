@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${ARCH}-export
 MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	A well known commercial FTP daemon with a 30-day evaluation license
 
+BROKEN=		Size mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386
