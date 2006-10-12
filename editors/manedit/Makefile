@@ -15,6 +15,8 @@ COMMENT=	A UNIX manual page editor and viewer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
+BROKEN=		Size mismatch
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 MAKEFILE=	Makefile.FreeBSD
