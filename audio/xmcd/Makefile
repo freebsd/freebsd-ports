@@ -18,6 +18,8 @@ LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.7:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
+BROKEN=		Incomplete pkg-plist
+
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAN1=		cda.1 xmcd.1
