@@ -27,13 +27,3 @@
              curses_libs = ['ncursesw']
              exts.append( Extension('_curses', ['_cursesmodule.c'],
                                     libraries = curses_libs) )
-@@ -1187,8 +1187,7 @@
-           ext_modules=[Extension('struct', ['structmodule.c'])],
- 
-           # Scripts to install
--          scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
--                     'Lib/smtpd.py']
-+          scripts = []
-         )
- 
- # --install-platlib
