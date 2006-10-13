@@ -23,11 +23,24 @@ WRKSRC=		${WRKDIR}/dwarf-${PORTVERSION}/dwarfdump
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+.if (${MACHINE_ARCH} == "amd64")
+ARCH=		x86_64
+.endif
 
 MAN1=		dwarfdump.1
+
+.include <bsd.port.pre.mk>
+
+FILES_TO_PATCH=print_reloc.c
+
+post-patch:
+	${REINPLACE_CMD} \
+	-e 's/Elf64_Xword/Elf64_Word/g' \
+	-e 's/Elf64_Sxword/Elf64_Sword/g' \
+	${FILES_TO_PATCH:S,^,${WRKSRC}/,}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/dwarfdump ${PREFIX}/bin
 		${INSTALL_DATA} ${WRKSRC}/dwarfdump.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
