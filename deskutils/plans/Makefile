@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.7.6
+PORTVERSION=	7.7.6.1
+DISTVERSION=	7.7.6
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
 		http://www.freebsd.org/gifs/:logo
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:plans \
 		danish.pl:addons \
 		nl_dutch.pl:addons \
@@ -20,8 +21,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:plans \
 		it_italian.pl:addons \
 		zh_tw.pl:addons \
 		powerani.gif:logo
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}/rerolled
+EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Good Web Calendar
