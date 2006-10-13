@@ -63,11 +63,6 @@ libdata/pkgconfig/oggz.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__table_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__write_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/oggz__write_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tab_b.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
-%%PORTDOCS%%%%DOCSDIR%%/latex/FreeSans.ttf
 %%PORTDOCS%%%%DOCSDIR%%/latex/Helvetica.ttf
 %%PORTDOCS%%%%DOCSDIR%%/latex/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/latex/dir_000000.tex
