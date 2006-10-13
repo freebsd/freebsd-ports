@@ -65,6 +65,8 @@ IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
 post-patch:
 	@${GREP} -lR "/usr/local/bin/perl" ${WRKSRC} | ${XARGS} \
 		${PERL} -pi -e "s!/usr/local/bin/perl!${PERL}!"
+	@${GREP} -lR "x86_64" ${WRKSRC} | ${XARGS} \
+	    	${PERL} -pi -e "s!x86_64!amd64!"
 
 test:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make test
