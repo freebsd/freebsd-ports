@@ -17,11 +17,6 @@ LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
 		confuse.0:${PORTSDIR}/devel/libconfuse \
 		popt.0:${PORTSDIR}/devel/popt
 
-BROKEN=		Configure fails
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
-USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -29,8 +24,9 @@ GNU_CONFIGURE=	yes
 MAN1=	unieject.1
 MAN5=	unieject.conf.5
 
-CONFIGURE_ENV=	CONFUSE_CFLAGS="-I${LOCALBASE}/include" \
-		CONFUSE_LIBS="-L${LOCALBASE}/lib -lconfuse"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -lcdio -lconfuse
+CONFIGURE_ENV=	PKG_CONFIG="${TRUE}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
 		--with-libpopt-prefix=${LOCALBASE} --mandir=${MANPREFIX}/man
 
