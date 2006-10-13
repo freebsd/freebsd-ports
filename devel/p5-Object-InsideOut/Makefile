@@ -7,6 +7,7 @@
 
 PORTNAME=	Object-InsideOut
 PORTVERSION=	2.05
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Object
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Object::InsideOut.3
+MAN3=	Object::InsideOut.3 Object::InsideOut::Metadata.3
 
 .include <bsd.port.pre.mk>
 
