@@ -19,6 +19,7 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} --program-transform-name=""
+CONFIGURE_ENV=	HAVE_DOCBOOK2HTML=false HAVE_DOCBOOKTOMAN=false HAVE_DOXYGEN=false HAVE_VALGRIND=false
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^pkgconfigdir/s!=.*!= ${PREFIX}/libdata/pkgconfig!' ${WRKSRC}/Makefile.in
