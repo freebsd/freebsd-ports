@@ -7,7 +7,7 @@
 
 PORTNAME=	python24
 PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -23,8 +23,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
 INSTALLS_SHLIB=	yes
-INSTALL_TARGET=	altinstall
-MAN1=		${PYTHON_VERSION}.1
+INSTALL_TARGET=	install
+MAN1=		python.1 ${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.4
@@ -181,6 +181,8 @@ post-install:
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
+	cd ${PREFIX}/bin; \
+		${LN} -f ${PYTHON_VERSION:S/thon/thon-shared/} python-shared
 
 	@# additional files installing by ports
 	@${MKDIR} ${MANPREFIX}/man/man1

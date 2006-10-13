@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.5
+PORTVERSION=	2.4.3
+PORTEPOCH=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,7 +17,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	The "meta-port" for the stable version of Python interpreter
 
 USE_PYTHON_RUN=	yes
-PYTHON_VERSION=	python2.5
+PYTHON_VERSION=	python2.4
 NO_BUILD=	yes
 
 do-install: # empty
@@ -26,13 +27,13 @@ PORTUPGRADE?=	${LOCALBASE}/sbin/portupgrade
 PKG_WHICH?=	${LOCALBASE}/sbin/pkg_which
 upgrade-site-packages:
 	@if [ -x ${PORTUPGRADE} ]; then \
-		for ver in 2.1 2.2 2.3 2.4; do \
+		for ver in 2.1 2.2 2.3 2.5; do \
 			if [ -d ${PREFIX}/lib/python$$ver ]; then \
 				UPD=`${FIND} ${PREFIX}/lib/python$$ver \
 						-type f -print0 | \
 					${XARGS} -0 ${PKG_WHICH} | \
 					${GREP} -Fv '?' | \
-					${EGREP} -v '^python2?[0-4]?-2' | \
+					${EGREP} -v '^python2?[0-5]?-2' | \
 					${SORT} -u`; \
 				if [ "$$UPD" ]; then \
 					${PORTUPGRADE} -f $$UPD; \
