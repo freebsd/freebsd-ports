@@ -32,8 +32,8 @@ pre-everything::
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 500000
-USE_GCC=3.4+
+.if ${OSVERSION} < 700014
+BROKEN=		depends on posix_memalign(3)
 .endif
 
 pre-patch:
