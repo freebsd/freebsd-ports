@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	ctpp
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://www.reki.ru/products/ctpp/download/
+MASTER_SITES=	http://www.reki.ru/products/ctpp/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to use templates in C/C++ projects
