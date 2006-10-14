@@ -119,6 +119,7 @@
     SUBDIR += nautilus-sendto
     SUBDIR += notification-daemon
     SUBDIR += offix-trash
+    SUBDIR += ontv
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Goo
     SUBDIR += pal

@@ -1,0 +1,103 @@
+%%PYTHON_SITELIBDIR%%/ontv/AboutDialog.py
+%%PYTHON_SITELIBDIR%%/ontv/AboutDialog.pyc
+%%PYTHON_SITELIBDIR%%/ontv/AboutDialog.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Channel.py
+%%PYTHON_SITELIBDIR%%/ontv/Channel.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Channel.pyo
+%%PYTHON_SITELIBDIR%%/ontv/ChannelDialog.py
+%%PYTHON_SITELIBDIR%%/ontv/ChannelDialog.pyc
+%%PYTHON_SITELIBDIR%%/ontv/ChannelDialog.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Configuration.py
+%%PYTHON_SITELIBDIR%%/ontv/Configuration.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Configuration.pyo
+%%PYTHON_SITELIBDIR%%/ontv/DBus.py
+%%PYTHON_SITELIBDIR%%/ontv/DBus.pyc
+%%PYTHON_SITELIBDIR%%/ontv/DBus.pyo
+%%PYTHON_SITELIBDIR%%/ontv/GUI.py
+%%PYTHON_SITELIBDIR%%/ontv/GUI.pyc
+%%PYTHON_SITELIBDIR%%/ontv/GUI.pyo
+%%PYTHON_SITELIBDIR%%/ontv/KeyBinder.py
+%%PYTHON_SITELIBDIR%%/ontv/KeyBinder.pyc
+%%PYTHON_SITELIBDIR%%/ontv/KeyBinder.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Listings.py
+%%PYTHON_SITELIBDIR%%/ontv/Listings.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Listings.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Main.py
+%%PYTHON_SITELIBDIR%%/ontv/Main.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Main.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Notification.py
+%%PYTHON_SITELIBDIR%%/ontv/Notification.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Notification.pyo
+%%PYTHON_SITELIBDIR%%/ontv/OnTVApplet.py
+%%PYTHON_SITELIBDIR%%/ontv/OnTVApplet.pyc
+%%PYTHON_SITELIBDIR%%/ontv/OnTVApplet.pyo
+%%PYTHON_SITELIBDIR%%/ontv/PreferencesDialog.py
+%%PYTHON_SITELIBDIR%%/ontv/PreferencesDialog.pyc
+%%PYTHON_SITELIBDIR%%/ontv/PreferencesDialog.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Program.py
+%%PYTHON_SITELIBDIR%%/ontv/Program.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Program.pyo
+%%PYTHON_SITELIBDIR%%/ontv/ProgramDialog.py
+%%PYTHON_SITELIBDIR%%/ontv/ProgramDialog.pyc
+%%PYTHON_SITELIBDIR%%/ontv/ProgramDialog.pyo
+%%PYTHON_SITELIBDIR%%/ontv/ProgramWindow.py
+%%PYTHON_SITELIBDIR%%/ontv/ProgramWindow.pyc
+%%PYTHON_SITELIBDIR%%/ontv/ProgramWindow.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Reminders.py
+%%PYTHON_SITELIBDIR%%/ontv/Reminders.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Reminders.pyo
+%%PYTHON_SITELIBDIR%%/ontv/SearchDialog.py
+%%PYTHON_SITELIBDIR%%/ontv/SearchDialog.pyc
+%%PYTHON_SITELIBDIR%%/ontv/SearchDialog.pyo
+%%PYTHON_SITELIBDIR%%/ontv/TimeSpan.py
+%%PYTHON_SITELIBDIR%%/ontv/TimeSpan.pyc
+%%PYTHON_SITELIBDIR%%/ontv/TimeSpan.pyo
+%%PYTHON_SITELIBDIR%%/ontv/XMLTVFile.py
+%%PYTHON_SITELIBDIR%%/ontv/XMLTVFile.pyc
+%%PYTHON_SITELIBDIR%%/ontv/XMLTVFile.pyo
+%%PYTHON_SITELIBDIR%%/ontv/__init__.py
+%%PYTHON_SITELIBDIR%%/ontv/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ontv/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ontv/keybinder/__init__.py
+%%PYTHON_SITELIBDIR%%/ontv/keybinder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ontv/keybinder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ontv/keybinder/_keybinder.a
+%%PYTHON_SITELIBDIR%%/ontv/keybinder/_keybinder.la
+%%PYTHON_SITELIBDIR%%/ontv/keybinder/_keybinder.so
+%%PYTHON_SITELIBDIR%%/ontv/xmltv.py
+%%PYTHON_SITELIBDIR%%/ontv/xmltv.pyc
+%%PYTHON_SITELIBDIR%%/ontv/xmltv.pyo
+libdata/bonobo/servers/GNOME_OnTVApplet.server
+libexec/ontv
+share/gnome/gnome-2.0/ui/GNOME_OnTVApplet.xml
+share/gnome/ontv/ontv-logo-downloading.png
+share/gnome/ontv/ontv.glade
+share/gnome/pixmaps/ontv.png
+share/locale/bg/LC_MESSAGES/ontv.mo
+share/locale/de/LC_MESSAGES/ontv.mo
+share/locale/en_CA/LC_MESSAGES/ontv.mo
+share/locale/en_GB/LC_MESSAGES/ontv.mo
+share/locale/es/LC_MESSAGES/ontv.mo
+share/locale/fi/LC_MESSAGES/ontv.mo
+share/locale/fr/LC_MESSAGES/ontv.mo
+share/locale/lv/LC_MESSAGES/ontv.mo
+share/locale/nb/LC_MESSAGES/ontv.mo
+share/locale/nl/LC_MESSAGES/ontv.mo
+share/locale/pa/LC_MESSAGES/ontv.mo
+share/locale/pl/LC_MESSAGES/ontv.mo
+share/locale/pt_BR/LC_MESSAGES/ontv.mo
+share/locale/sv/LC_MESSAGES/ontv.mo
+share/locale/uk/LC_MESSAGES/ontv.mo
+share/locale/vi/LC_MESSAGES/ontv.mo
+share/locale/zh_CN/LC_MESSAGES/ontv.mo
+@dirrm share/gnome/ontv
+@dirrm %%PYTHON_SITELIBDIR%%/ontv/keybinder
+@dirrm %%PYTHON_SITELIBDIR%%/ontv
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
